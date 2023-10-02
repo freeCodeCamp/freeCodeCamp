@@ -1,0 +1,11 @@
+.certification-settings tr {
+  height: 57px;
+}
+
+.certification-settings .project-title > a {
+  line-height: 40px;
+}
+
+.modal {
+  overflow-y: auto;
+}

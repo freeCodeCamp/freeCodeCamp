@@ -1,0 +1,23 @@
+---
+id: 5e611829481575a52dc59c0e
+title: Сертифікація «Забезпечення якості»
+certification: quality-assurance
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 587d8249367417b2b2512c41
+    title: Метрично-імперський конвертер
+  - 
+    id: 587d8249367417b2b2512c42
+    title: Система відстеження помилок
+  - 
+    id: 587d824a367417b2b2512c43
+    title: Персональна бібліотека
+  - 
+    id: 5e601bf95ac9d0ecd8b94afd
+    title: Програма для розв'язування судоку
+  - 
+    id: 5e601c0d5ac9d0ecd8b94afe
+    title: Перекладач з американської на британську
+

@@ -1,0 +1,647 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`challenge parser it should not parse directives we do not use 1`] = `
+{
+  "assignments": [],
+  "description": "<section id="description">
+<p>:root appears, :import appears</p>
+<p>the next paragraph should appear</p>
+::import
+<p>even though it's an import directive, but if we use the full syntax <code>::directive-name{attr="name" attr2="a/path"}</code></p>
+<p>it goes.</p>
+<p>::: name [inline-content] {key=val}
+a container directive
+:::</p>
+</section>",
+  "solutions": [],
+  "tests": [],
+}
+`;
+
+exports[`challenge parser it should parse video questions 1`] = `
+{
+  "assignments": [],
+  "description": "<section id="description">
+<p>Paragraph 1</p>
+<pre><code class="language-html">code example
+</code></pre>
+</section>",
+  "instructions": "<section id="instructions">
+<p>Paragraph 0</p>
+<pre><code class="language-html">code example 0
+</code></pre>
+</section>",
+  "question": {
+    "answers": [
+      "<p>Some inline <code>code</code></p>",
+      "<p>Some <em>italics</em></p>
+<p>A second answer paragraph.</p>",
+      "<p><code> code in </code> code tags</p>",
+    ],
+    "solution": 3,
+    "text": "<p>Question line 1</p>
+<pre><code class="language-js">  var x = 'y';
+</code></pre>",
+  },
+  "solutions": [],
+  "tests": [],
+}
+`;
+
+exports[`challenge parser should import md from other files 1`] = `
+{
+  "assignments": [],
+  "challengeFiles": [
+    {
+      "contents": "<html>
+  <body>
+  </body>
+</html>",
+      "editableRegionBoundaries": [],
+      "ext": "html",
+      "head": "",
+      "id": "",
+      "name": "index",
+      "tail": "",
+    },
+    {
+      "contents": "body {
+  background: green;
+}",
+      "editableRegionBoundaries": [],
+      "ext": "css",
+      "head": "",
+      "id": "",
+      "name": "styles",
+      "tail": "",
+    },
+    {
+      "contents": "var x = 'y';
+for (let index = 0; index < array.length; index++) {
+  const element = array[index];
+  // imported from script.md
+}",
+      "editableRegionBoundaries": [],
+      "ext": "js",
+      "head": "",
+      "id": "custom-name",
+      "name": "script",
+      "tail": "",
+    },
+  ],
+  "description": "<section id="description">
+<p>Paragraph 1</p>
+<pre><code class="language-html">code example
+</code></pre>
+</section>",
+  "instructions": "<section id="instructions">
+<p>Paragraph 0</p>
+<pre><code class="language-html">code example 0
+</code></pre>
+</section>",
+  "solutions": [],
+  "tests": [
+    {
+      "testString": "// test code",
+      "text": "<p>First hint</p>",
+    },
+    {
+      "testString": "// more test code",
+      "text": "<p>Second hint with <code>code</code></p>",
+    },
+  ],
+}
+`;
+
+exports[`challenge parser should not mix other YAML with the frontmatter 1`] = `
+{
+  "assignments": [],
+  "challengeFiles": [
+    {
+      "contents": "<html>
+  <body>
+  </body>
+</html>",
+      "editableRegionBoundaries": [],
+      "ext": "html",
+      "head": "",
+      "id": "",
+      "name": "index",
+      "tail": "",
+    },
+    {
+      "contents": "body {
+  background: green;
+}",
+      "editableRegionBoundaries": [],
+      "ext": "css",
+      "head": "",
+      "id": "",
+      "name": "styles",
+      "tail": "",
+    },
+    {
+      "contents": "var x = 'y';",
+      "editableRegionBoundaries": [],
+      "ext": "js",
+      "head": "",
+      "id": "",
+      "name": "script",
+      "tail": "",
+    },
+  ],
+  "description": "<section id="description">
+<p>Paragraph 1</p>
+<pre><code class="language-html">code example
+</code></pre>
+<pre><code class="language-yaml">key:
+  - subkey: value
+    anothersubkey: another value
+</code></pre>
+</section>",
+  "instructions": "<section id="instructions">
+<p>Paragraph 0</p>
+<pre><code class="language-html">code example 0
+</code></pre>
+</section>",
+  "solutions": [],
+  "tests": [
+    {
+      "testString": "// test code",
+      "text": "<p>First hint</p>",
+    },
+    {
+      "testString": "// more test code",
+      "text": "<p>Second hint with <code>code</code></p>",
+    },
+  ],
+}
+`;
+
+exports[`challenge parser should parse a more realistic md file 1`] = `
+{
+  "assignments": [],
+  "challengeFiles": [
+    {
+      "contents": "<html>
+  <body>
+    <h1>CatPhotoApp</h1>
+    <main>
+      <section>
+        <h2>Cat Photos</h2>
+        <!-- TODO: Add link to cat photos -->
+        <p>
+          Click here to view more
+          <a target="_blank" href="https://www.freecodecamp.org/cat-photos"
+            >cat photos</a
+          >.
+        </p>
+        <a href="https://www.freecodecamp.org/cat-photos"
+          ><img
+            src="https://bit.ly/fcc-relaxing-cat"
+            alt="A cute orange cat lying on its back."
+        /></a>
+      </section>
+      <section>
+        <h2>Cat Lists</h2>
+      </section>
+    </main>
+  </body>
+</html>",
+      "editableRegionBoundaries": [
+        19,
+        23,
+      ],
+      "ext": "html",
+      "head": "",
+      "id": "html-key",
+      "name": "index",
+      "tail": "",
+    },
+    {
+      "contents": "body {
+  background: white;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+
+a {
+  color: green;
+}",
+      "editableRegionBoundaries": [
+        7,
+        9,
+      ],
+      "ext": "css",
+      "head": "",
+      "id": "",
+      "name": "styles",
+      "tail": "",
+    },
+    {
+      "contents": "var x = 'y';",
+      "editableRegionBoundaries": [],
+      "ext": "js",
+      "head": "  // this runs before the user's code is evaluated.",
+      "id": "final-key",
+      "name": "script",
+      "tail": "",
+    },
+  ],
+  "description": "<section id="description">
+<p>When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.</p>
+<p>After the last <code>h2</code> element of the second <code>section</code> element, add an <code>h3</code> element with the text <code>Things cats love:</code>.</p>
+<blockquote>
+  <p>Some text in a blockquote</p>
+  <p>
+    Some text in a blockquote, with <code>code</code>
+  </p>
+</blockquote>
+</section>",
+  "instructions": "<section id="instructions">
+<p>Do something with the <code>code</code>.</p>
+<p>To test that adjacent tags are handled correctly:</p>
+<p>a bit of <code>code</code> <tag>with more after a space</tag> and another pair of <strong>elements</strong> <em>with a space</em></p>
+</section>",
+  "solutions": [
+    [
+      {
+        "contents": "<html>
+  <body>
+    <h1>CatPhotoApp</h1>
+    <main>
+      <section>
+        <h2>Cat Photos</h2>
+        <!-- TODO: Add link to cat photos -->
+        <p>
+          Click here to view more
+          <a target="_blank" href="https://www.freecodecamp.org/cat-photos"
+            >cat photos</a
+          >.
+        </p>
+        <a href="https://www.freecodecamp.org/cat-photos"
+          ><img
+            src="https://bit.ly/fcc-relaxing-cat"
+            alt="A cute orange cat lying on its back."
+        /></a>
+      </section>
+      <section>
+        <h2>Cat Lists</h2>
+      </section>
+    </main>
+  </body>
+</html>",
+        "ext": "html",
+        "head": "",
+        "id": "html-key",
+        "name": "index",
+        "tail": "",
+      },
+      {
+        "contents": "body {
+  background: white;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+
+a {
+  color: green;
+}",
+        "ext": "css",
+        "head": "",
+        "id": "",
+        "name": "styles",
+        "tail": "",
+      },
+      {
+        "contents": "var x = 'y';",
+        "ext": "js",
+        "head": "",
+        "id": "final-key",
+        "name": "script",
+        "tail": "",
+      },
+    ],
+  ],
+  "tests": [
+    {
+      "testString": "assert(
+  document.querySelectorAll('main > section')[1] &&
+    code.match(/\\<\\/section>/g).length == 2
+);",
+      "text": "<p>The second <code>section</code> element appears to be missing or does not have both an opening and closing tag.</p>",
+    },
+    {
+      "testString": "assert(
+  document.querySelectorAll('main > section')[1].lastElementChild.nodeName ===
+    'H3'
+);",
+      "text": "<p>There should be an <code>h3</code> element right above the second <code>section</code> element's closing tag.</p>",
+    },
+    {
+      "testString": "assert(
+  document
+    .querySelectorAll('main > section')[1]
+    .lastElementChild.innerText.toLowerCase()
+    .replace(/\\s+/g, ' ') === 'things cats love:'
+);",
+      "text": "<p>The <code>h3</code> element right above the second <code>section</code> element's closing tag should have the text <code>Things cats love:</code>. Make sure to include the colon at the end of the text.</p>",
+    },
+    {
+      "testString": "const secondSectionLastElemNode = document.querySelectorAll('main > section')[1]
+  .lastElementChild;
+assert(
+  secondSectionLastElemNode.nodeName === 'H3' &&
+    secondSectionLastElemNode.previousElementSibling.innerText
+      .toLowerCase()
+      .replace(/\\s+/g, ' ') === 'cat lists'
+);",
+      "text": "<p>There should be an <code>h2</code> element with the text <code>Cat Lists</code> above the last <code>h3</code> element that is nested in the last <code>section</code> element'. You may have accidentally deleted the <code>h2</code> element.</p>",
+    },
+  ],
+}
+`;
+
+exports[`challenge parser should parse a simple md file 1`] = `
+{
+  "assignments": [],
+  "challengeFiles": [
+    {
+      "contents": "<html>
+  <body>
+  </body>
+</html>",
+      "editableRegionBoundaries": [],
+      "ext": "html",
+      "head": "",
+      "id": "",
+      "name": "index",
+      "tail": "",
+    },
+    {
+      "contents": "body {
+  background: green;
+}",
+      "editableRegionBoundaries": [],
+      "ext": "css",
+      "head": "",
+      "id": "",
+      "name": "styles",
+      "tail": "",
+    },
+    {
+      "contents": "var x = 'y';",
+      "editableRegionBoundaries": [],
+      "ext": "js",
+      "head": "",
+      "id": "",
+      "name": "script",
+      "tail": "",
+    },
+  ],
+  "description": "<section id="description">
+<p>Paragraph 1</p>
+<pre><code class="language-html">code example
+</code></pre>
+</section>",
+  "instructions": "<section id="instructions">
+<p>Paragraph 0</p>
+<pre><code class="language-html">code example 0
+</code></pre>
+</section>",
+  "solutions": [
+    [
+      {
+        "contents": "<html>
+  <body>
+  </body>
+</html>",
+        "ext": "html",
+        "head": "",
+        "id": "html-key",
+        "name": "index",
+        "tail": "",
+      },
+      {
+        "contents": "body {
+  background: white;
+}",
+        "ext": "css",
+        "head": "",
+        "id": "",
+        "name": "styles",
+        "tail": "",
+      },
+      {
+        "contents": "var x = 'y';
+\`\`",
+        "ext": "js",
+        "head": "",
+        "id": "",
+        "name": "script",
+        "tail": "",
+      },
+    ],
+  ],
+  "tests": [
+    {
+      "testString": "// test code",
+      "text": "<p>First hint</p>",
+    },
+    {
+      "testString": "// more test code",
+      "text": "<p>Second hint with <code>code</code></p>",
+    },
+    {
+      "testString": "// more test code
+if(let x of xs) {
+  console.log(x);
+}",
+      "text": "<p>Third <em>hint</em> with <code>code</code> and <code>inline code</code></p>",
+    },
+  ],
+}
+`;
+
+exports[`challenge parser should parse frontmatter 1`] = `
+{
+  "assignments": [],
+  "challengeFiles": [
+    {
+      "contents": "<html>
+  <body>
+  </body>
+</html>",
+      "editableRegionBoundaries": [],
+      "ext": "html",
+      "head": "",
+      "id": "",
+      "name": "index",
+      "tail": "",
+    },
+    {
+      "contents": "body {
+  background: green;
+}",
+      "editableRegionBoundaries": [],
+      "ext": "css",
+      "head": "",
+      "id": "",
+      "name": "styles",
+      "tail": "",
+    },
+    {
+      "contents": "var x = 'y';",
+      "editableRegionBoundaries": [],
+      "ext": "js",
+      "head": "",
+      "id": "",
+      "name": "script",
+      "tail": "",
+    },
+  ],
+  "challengeType": 0,
+  "description": "<section id="description">
+<p>Paragraph 1</p>
+<pre><code class="language-html">code example
+</code></pre>
+</section>",
+  "forumTopicId": 18276,
+  "id": "bd7123c8c441eddfaeb5bdef",
+  "isHidden": false,
+  "solutions": [],
+  "tests": [
+    {
+      "testString": "// test code",
+      "text": "<p>First hint</p>",
+    },
+    {
+      "testString": "// more test code",
+      "text": "<p>Second hint with <code>code</code></p>",
+    },
+  ],
+  "title": "Say Hello to HTML Elements",
+  "videoUrl": "https://scrimba.com/p/pVMPUv/cE8Gpt2",
+}
+`;
+
+exports[`challenge parser should parse gfm strikethrough and frontmatter 1`] = `
+{
+  "assignments": [],
+  "challengeFiles": [
+    {
+      "contents": "<html>
+  <body>
+  </body>
+</html>",
+      "editableRegionBoundaries": [],
+      "ext": "html",
+      "head": "",
+      "id": "",
+      "name": "index",
+      "tail": "",
+    },
+    {
+      "contents": "body {
+  background: green;
+}",
+      "editableRegionBoundaries": [],
+      "ext": "css",
+      "head": "",
+      "id": "",
+      "name": "styles",
+      "tail": "",
+    },
+    {
+      "contents": "var x = 'y';",
+      "editableRegionBoundaries": [],
+      "ext": "js",
+      "head": "",
+      "id": "",
+      "name": "script",
+      "tail": "",
+    },
+  ],
+  "description": "<section id="description">
+<p>Paragraph 1 <del>Strikethrough text</del>. https://should.not.be.autolinked</p>
+<pre><code class="language-html">code example
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>example</th>
+<th>of a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gfm</td>
+<td>table</td>
+</tr>
+</tbody>
+</table>
+</section>",
+  "instructions": "<section id="instructions">
+<p>Paragraph 0</p>
+<pre><code class="language-html">code example 0
+</code></pre>
+</section>",
+  "solutions": [
+    [
+      {
+        "contents": "<html>
+  <body>
+  </body>
+</html>",
+        "ext": "html",
+        "head": "",
+        "id": "html-key",
+        "name": "index",
+        "tail": "",
+      },
+      {
+        "contents": "body {
+  background: white;
+}",
+        "ext": "css",
+        "head": "",
+        "id": "",
+        "name": "styles",
+        "tail": "",
+      },
+      {
+        "contents": "var x = 'y';
+\`\`",
+        "ext": "js",
+        "head": "",
+        "id": "",
+        "name": "script",
+        "tail": "",
+      },
+    ],
+  ],
+  "tests": [
+    {
+      "testString": "// test code",
+      "text": "<p>First hint</p>",
+    },
+    {
+      "testString": "// more test code",
+      "text": "<p>Second hint with <code>code</code></p>",
+    },
+    {
+      "testString": "// more test code
+if(let x of xs) {
+  console.log(x);
+}",
+      "text": "<p>Third <em>hint</em> with <code>code</code> and <code>inline code</code></p>",
+    },
+  ],
+}
+`;

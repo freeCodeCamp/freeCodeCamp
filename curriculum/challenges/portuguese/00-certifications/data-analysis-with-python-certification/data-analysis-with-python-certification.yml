@@ -1,0 +1,23 @@
+---
+id: 5e46fc95ac417301a38fb934
+title: Certificação de análise de dados com Python
+certification: data-analysis-with-python
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 5e46f7e5ac417301a38fb928
+    title: Calculadora de média, variância e desvio padrão
+  - 
+    id: 5e46f7e5ac417301a38fb929
+    title: Analisador de dados demográficos
+  - 
+    id: 5e46f7f8ac417301a38fb92a
+    title: Visualizador de dados médicos
+  - 
+    id: 5e46f802ac417301a38fb92b
+    title: Visualizador de séries temporais de visitas de páginas
+  - 
+    id: 5e4f5c4b570f7e3a4949899f
+    title: Previsor de nível do mar
+

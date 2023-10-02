@@ -1,0 +1,15 @@
+textarea {
+  display: block;
+  margin: auto;
+  width: 500px;
+  max-width: 100vw;
+  height: 500px;
+}
+
+.CodeMirror {
+  /* need to add important to overwrite the specifity of the classes in the dependecy */
+  height: 70vh !important;
+  max-width: 80vw;
+  margin: auto;
+  text-align: left;
+}

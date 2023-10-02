@@ -1,0 +1,23 @@
+---
+id: 5e46fc95ac417301a38fb935
+title: Сертифікація «Машинне навчання з Python»
+certification: machine-learning-with-python
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 5e46f8d6ac417301a38fb92d
+    title: Камінь-ножиці-папір
+  - 
+    id: 5e46f8dcac417301a38fb92e
+    title: Класифікатор зображень котів і собак
+  - 
+    id: 5e46f8e3ac417301a38fb92f
+    title: Інструмент рекомендацій книг із використанням KNN
+  - 
+    id: 5e46f8edac417301a38fb930
+    title: Калькулятор лінійної регресії витрат на охорону здоров'я
+  - 
+    id: 5e46f8edac417301a38fb931
+    title: Нейронна мережа для класифікації текстів SMS
+

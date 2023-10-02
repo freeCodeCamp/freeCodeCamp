@@ -1,0 +1,23 @@
+---
+id: 5e46fc95ac417301a38fb935
+title: Python 与机器学习认证
+certification: machine-learning-with-python
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 5e46f8d6ac417301a38fb92d
+    title: 剪刀石头布
+  - 
+    id: 5e46f8dcac417301a38fb92e
+    title: 猫和狗图像分类器
+  - 
+    id: 5e46f8e3ac417301a38fb92f
+    title: 基于 KNN 的图书推荐引擎
+  - 
+    id: 5e46f8edac417301a38fb930
+    title: 线性回归健康成本计算器
+  - 
+    id: 5e46f8edac417301a38fb931
+    title: 神经网络短信分类器
+

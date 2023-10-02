@@ -1,0 +1,22 @@
+---
+id: 561add10cb82ac38a17213bc
+title: شهادة أمن المعلومات التراثية وشهادة ضمان الجودة
+certification: legacy-information-security-and-quality-assurance
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 587d8249367417b2b2512c41
+    title: محول Metric-Imperial
+  - 
+    id: 587d8249367417b2b2512c42
+    title: متعقب المشكلة (Issue Tracker)
+  - 
+    id: 587d824a367417b2b2512c43
+    title: المكتبة الشخصية
+  - 
+    id: 587d824a367417b2b2512c44
+    title: مدقق أسعار الأسهم
+  - 
+    id: 587d824a367417b2b2512c45
+    title: لوحة الرسائل المجهولة

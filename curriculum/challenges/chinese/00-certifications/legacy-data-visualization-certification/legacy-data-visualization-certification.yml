@@ -1,0 +1,37 @@
+---
+id: 561add10cb82ac39a17513bc
+title: 旧版数据可视化认证
+certification: legacy-data-visualization
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7157d8c242eddfaeb5bd13
+    title: 创建一个 Markdown 文件预览器
+  - 
+    id: bd7156d8c242eddfaeb5bd13
+    title: 建立一个 Camper 排行榜
+  - 
+    id: bd7155d8c242eddfaeb5bd13
+    title: 建立一个食谱盒
+  - 
+    id: bd7154d8c242eddfaeb5bd13
+    title: 构建生命游戏
+  - 
+    id: bd7153d8c242eddfaeb5bd13
+    title: 创建 Roguelike Dungeon Crawler 游戏
+  - 
+    id: bd7168d8c242eddfaeb5bd13
+    title: 用条形图可视化数据
+  - 
+    id: bd7178d8c242eddfaeb5bd13
+    title: 用散点图可视化数据
+  - 
+    id: bd7188d8c242eddfaeb5bd13
+    title: 用热图可视化数据
+  - 
+    id: bd7198d8c242eddfaeb5bd13
+    title: 用力导向图显示国家接壤
+  - 
+    id: bd7108d8c242eddfaeb5bd13
+    title: 全球地图数据

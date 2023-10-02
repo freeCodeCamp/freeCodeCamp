@@ -1,0 +1,23 @@
+---
+id: 5e611829481575a52dc59c0e
+title: Certificação de garantia de qualidade
+certification: quality-assurance
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 587d8249367417b2b2512c41
+    title: Conversor de medidas dos sistemas métrico e imperial
+  - 
+    id: 587d8249367417b2b2512c42
+    title: Rastreador de problemas
+  - 
+    id: 587d824a367417b2b2512c43
+    title: Biblioteca pessoal
+  - 
+    id: 5e601bf95ac9d0ecd8b94afd
+    title: Solucionador de Sudoku
+  - 
+    id: 5e601c0d5ac9d0ecd8b94afe
+    title: Tradutor americano britânico
+

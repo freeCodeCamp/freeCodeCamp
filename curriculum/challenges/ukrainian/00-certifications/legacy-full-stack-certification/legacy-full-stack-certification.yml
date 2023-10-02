@@ -1,0 +1,25 @@
+---
+id: 561add10cb82ac38a17213bd
+title: Застаріла сертифікація «Full Stack»
+certification: legacy-full-stack
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 561add10cb82ac38a17513bc
+    title: Сертифікація «Адаптивний вебдизайн»
+  - 
+    id: 561abd10cb81ac38a17513bc
+    title: Сертифікація «Алгоритми та структури даних JavaScript»
+  - 
+    id: 561acd10cb82ac38a17513bc
+    title: Сертифікація «Бібліотеки Front End»
+  - 
+    id: 5a553ca864b52e1d8bceea14
+    title: Сертифікація «Унаочнювання даних»
+  - 
+    id: 561add10cb82ac38a17523bc
+    title: Сертифікація «API та мікросервіси»
+  - 
+    id: 561add10cb82ac38a17213bc
+    title: Застаріла сертифікація «Інформаційна безпека та забезпечення якості»

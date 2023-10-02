@@ -1,0 +1,1 @@
+export { Image } from './image';

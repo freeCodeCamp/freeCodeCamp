@@ -1,0 +1,22 @@
+---
+id: 5e44431b903586ffb414c951
+title: Python 與科學計算認證
+certification: scientific-computing-with-python
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 5e44412c903586ffb414c94c
+    title: 算數格式化
+  - 
+    id: 5e444136903586ffb414c94d
+    title: 時間計算器
+  - 
+    id: 5e44413e903586ffb414c94e
+    title: 預算應用
+  - 
+    id: 5e444147903586ffb414c94f
+    title: 多邊形面積計算器
+  - 
+    id: 5e44414f903586ffb414c950
+    title: 概率計算器

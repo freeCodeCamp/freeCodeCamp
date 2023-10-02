@@ -1,0 +1,171 @@
+.fcc_searchBar {
+  border-bottom: 0.0625rem solid var(--gray-45);
+  height: var(--header-sub-element-height);
+  padding: 6px 15px;
+  width: 100%;
+}
+
+@media (min-width: 980px) {
+  .fcc_searchBar {
+    border: 0;
+    height: auto;
+    max-width: 500px;
+    padding: 0;
+  }
+}
+
+.fcc_searchBar strong,
+.fcc_searchBar a:hover {
+  color: var(--gray-00);
+}
+
+.ais-SearchBox-loadingIndicator {
+  display: none;
+}
+
+.ais-SearchBox-input {
+  padding-block: 0;
+  padding-inline-start: 5px;
+  font-size: 18px;
+  display: inline-block;
+  height: 26px;
+}
+
+.ais-SearchBox-submit,
+.ais-SearchBox-reset {
+  height: 26px;
+  width: 26px;
+  background-color: var(--gray-75);
+}
+
+.ais-SearchBox-submit {
+  padding-inline: 3px;
+}
+
+.ais-SearchBox-reset {
+  padding-block: 0 2px;
+}
+
+.fcc_searchBar .ais-SearchBox-input,
+.fcc_searchBar .ais-Hits {
+  z-index: 100;
+  background-color: var(--gray-75);
+  color: var(--gray-00);
+}
+
+/* hits */
+.fcc_searchBar .ais-Highlight-highlighted {
+  background-color: transparent;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.ais-Highlight-nonHighlighted {
+  font-weight: 300;
+}
+
+.fcc_hits_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.fcc_suggestion_item {
+  display: block;
+  padding: 5px;
+  color: var(--gray-00) !important;
+  text-decoration: none;
+}
+
+.fcc_suggestion_item [class^='ais-'] {
+  font-size: 17px;
+}
+
+.fcc_suggestion_item:hover {
+  cursor: pointer;
+}
+
+.no-hits-footer.fcc_suggestion_item:hover {
+  cursor: default;
+}
+
+.fcc_sr_only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.ais-Hits-item {
+  background-color: var(--gray-75);
+}
+
+/* Hit selected with arrow keys or mouse */
+.selected {
+  background-color: var(--blue-dark);
+}
+
+/* Override for rule in global.css to prevent
+multiple highlighted hits with the mouse
+and arrow keys */
+.fcc_suggestion_item:focus,
+.fcc_suggestion_item:hover {
+  background-color: transparent;
+}
+
+/* Dropdown footer */
+.fcc_suggestion_footer {
+  padding: 6.5px 8px 8px;
+}
+
+.fcc_suggestion_footer .hit-name .ais-Highlight {
+  font-weight: bold;
+}
+
+.no-hits-footer {
+  border-top: 0px;
+  font-weight: 300;
+}
+
+.fcc_searchBar .ais-SearchBox-form {
+  align-content: center;
+  background-color: var(--gray-75);
+  display: grid;
+  gap: 0.25em;
+  grid-template-areas: 'submit input reset';
+  grid-template-columns: 26px auto 36px;
+  margin-bottom: 0;
+}
+
+.fcc_search_wrapper {
+  position: relative;
+}
+
+.ais-SearchBox-input {
+  grid-area: input;
+}
+
+.ais-SearchBox-submit {
+  grid-area: submit;
+}
+
+.ais-SearchBox-reset {
+  grid-area: reset;
+}
+
+@media (min-width: 980px) {
+  .ais-SearchBox-input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .fcc_searchBar .ais-Hits {
+    top: auto;
+    width: 100%;
+    max-width: 100%;
+    left: 0px;
+  }
+}

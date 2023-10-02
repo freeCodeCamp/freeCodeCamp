@@ -1,0 +1,23 @@
+---
+id: 5e46fc95ac417301a38fb935
+title: Certificação de aprendizagem de máquina com Python
+certification: machine-learning-with-python
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 5e46f8d6ac417301a38fb92d
+    title: Pedra, papel ou tesoura
+  - 
+    id: 5e46f8dcac417301a38fb92e
+    title: Classificador de imagens de gatos e cachorros
+  - 
+    id: 5e46f8e3ac417301a38fb92f
+    title: Mecanismo de recomendação de livros usando KNN
+  - 
+    id: 5e46f8edac417301a38fb930
+    title: Calculadora de custos de saúde de regressão linear
+  - 
+    id: 5e46f8edac417301a38fb931
+    title: Classificador de texto SMS baseado em rede neural
+

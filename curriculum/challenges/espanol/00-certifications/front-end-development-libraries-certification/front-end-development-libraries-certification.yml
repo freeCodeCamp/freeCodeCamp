@@ -1,0 +1,22 @@
+---
+id: 561acd10cb82ac38a17513bc
+title: Certificación en Librerías de Desarrollo Front End
+certification: front-end-development-libraries
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c442eddfaeb5bd13
+    title: Construye una Máquina de Frases Aleatorias
+  - 
+    id: bd7157d8c242eddfaeb5bd13
+    title: Construye un Previsualizador de Markdown
+  - 
+    id: 587d7dbc367417b2b2512bae
+    title: Construye una Caja de Ritmos
+  - 
+    id: bd7158d8c442eddfaeb5bd17
+    title: Construye una Calculadora JavaScript
+  - 
+    id: bd7158d8c442eddfaeb5bd0f
+    title: Construye un Reloj 25 + 5

@@ -1,0 +1,23 @@
+---
+id: 5e46fc95ac417301a38fb934
+title: Python 與數據分析認證
+certification: data-analysis-with-python
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 5e46f7e5ac417301a38fb928
+    title: 均值-方差-標準差計算器
+  - 
+    id: 5e46f7e5ac417301a38fb929
+    title: 人口統計數據分析器
+  - 
+    id: 5e46f7f8ac417301a38fb92a
+    title: 醫療數據可視化工具
+  - 
+    id: 5e46f802ac417301a38fb92b
+    title: 頁面訪問量的時間序列可視化工具
+  - 
+    id: 5e4f5c4b570f7e3a4949899f
+    title: 海平面預測器
+

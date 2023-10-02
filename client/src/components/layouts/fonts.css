@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'Lato';
+  src: url('../../../static/fonts/lato/Lato-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../../../static/fonts/lato/Lato-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../../../static/fonts/lato/Lato-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../../../static/fonts/lato/Lato-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../../../static/fonts/lato/Lato-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: fallback;
+}
+
+/* NotoSansArabic */
+
+@font-face {
+  font-family: 'NotoSansArabic';
+  src: url('../../../static/fonts/noto-sans-arabic/NotoSansArabic-Light.woff')
+    format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'NotoSansArabic';
+  src: url('../../../static/fonts/noto-sans-arabic/NotoSansArabic-Regular.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'NotoSansArabic';
+  src: url('../../../static/fonts/noto-sans-arabic/NotoSansArabic-Bold.woff')
+    format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'NotoSansArabic';
+  src: url('../../../static/fonts/noto-sans-arabic/NotoSansArabic-Black.woff')
+    format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: fallback;
+}
+
+/* hack zeroslash */
+
+@font-face {
+  font-family: 'Hack-ZeroSlash';
+  src: url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff2')
+      format('woff2'),
+    url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'Hack-ZeroSlash';
+  src: url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Bold.woff2')
+      format('woff2'),
+    url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Bold.woff')
+      format('woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Hack-ZeroSlash';
+  src: url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff2')
+      format('woff2'),
+    url('../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff')
+      format('woff');
+  font-style: italic;
+}

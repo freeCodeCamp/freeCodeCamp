@@ -1,0 +1,22 @@
+---
+id: 561add10cb82ac38a17513bc
+title: Certificação de design responsivo para a web
+certification: responsive-web-design
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c442eddfaeb5bd18
+    title: Criar uma página de homenagem
+  - 
+    id: 587d78af367417b2b2512b03
+    title: Criar um formulário de pesquisa
+  - 
+    id: 587d78af367417b2b2512b04
+    title: Criar uma página inicial para um produto
+  - 
+    id: 587d78b0367417b2b2512b05
+    title: Criar uma página de documentação técnica
+  - 
+    id: bd7158d8c242eddfaeb5bd13
+    title: Criar uma página de portfólio pessoal

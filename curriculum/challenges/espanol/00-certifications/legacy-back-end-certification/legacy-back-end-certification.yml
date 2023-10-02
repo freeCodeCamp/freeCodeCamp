@@ -1,0 +1,37 @@
+---
+id: 660add10cb82ac38a17513be
+title: Certificación en Back End Heredado
+certification: legacy-back-end
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c443edefaeb5bdef
+    title: Microservicio de Marca de Tiempo
+  - 
+    id: bd7158d8c443edefaeb5bdff
+    title: Microservicio de Analizador de Solicitud de Encabezado
+  - 
+    id: bd7158d8c443edefaeb5bd0e
+    title: Microservicio de Abreviador de URL
+  - 
+    id: bd7158d8c443edefaeb5bdee
+    title: Capa de Abstracción de Búsqueda de Imagen
+  - 
+    id: bd7158d8c443edefaeb5bd0f
+    title: Microservicio de Metadatos de Archivo
+  - 
+    id: bd7158d8c443eddfaeb5bdef
+    title: Construye una Aplicación de Sufragio
+  - 
+    id: bd7158d8c443eddfaeb5bdff
+    title: Construye una Aplicación de Coordinación de Vida Nocturna
+  - 
+    id: bd7158d8c443eddfaeb5bd0e
+    title: Traza el Mercado de Valores
+  - 
+    id: bd7158d8c443eddfaeb5bd0f
+    title: Administrar un Club de Intercambio de Libros
+  - 
+    id: bd7158d8c443eddfaeb5bdee
+    title: Construye una Copia de Pinterest

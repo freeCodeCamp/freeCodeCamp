@@ -1,0 +1,62 @@
+:root {
+  --nav-background: #0a0a23;
+  --background: #1b1b32;
+  --content: #f5f6f7;
+  --grey: #3b3b4f;
+  --font-family-sans-serif: 'Lato', sans-serif;
+  --font-family-monospace: 'Hack-ZeroSlash', monospace;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../public/Lato-Regular.woff');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-sans-serif);
+  text-align: center;
+  background: var(--background);
+  color: var(--content);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+p,
+li {
+  font-size: 1.2rem;
+}
+
+a {
+  color: var(--content);
+}
+
+button {
+  text-align: center;
+  vertical-align: middle;
+  border: 3px solid var(--content);
+  font-size: 16pt;
+  padding: 6px 12px;
+  margin: 10px auto;
+  background: var(--grey);
+  color: var(--content);
+  cursor: pointer;
+}
+
+button:active {
+  color: var(--background);
+  background: var(--content);
+}
+
+code {
+  background: var(--grey);
+}
+
+.breadcrumb {
+  font-size: 1.2rem;
+  font-style: italic;
+}

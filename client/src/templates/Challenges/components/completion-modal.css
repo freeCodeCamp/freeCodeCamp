@@ -1,0 +1,148 @@
+.completion-message {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.completion-modal-body {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.video-modal-body {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-inline-start: 30px;
+}
+
+.completion-challenge-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.completion-success-icon {
+  width: 200px;
+  height: 200px;
+  transform: scale(1.5);
+  opacity: 0;
+  animation: success-icon-animation 150ms linear 100ms forwards;
+}
+
+.challenge-success-modal .btn-cta-big {
+  max-width: 100%;
+  font-size: 1.3rem;
+}
+
+@keyframes success-icon-animation {
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.completion-block-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+  max-width: 500px;
+}
+
+.completion-block-name {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.completion-block-meta {
+  color: var(--quaternary-color);
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.completion-block-details .completion-block-name {
+  font-size: 1.2rem;
+}
+
+.completion-block-details .completion-block-meta {
+  font-size: 1rem;
+}
+
+.progress-bar-wrap {
+  width: 100%;
+  position: relative;
+}
+
+.progress-bar-background {
+  width: 100%;
+  height: 10px;
+  color: var(--primary-color);
+  background-color: var(--quaternary-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress-bar-percent {
+  width: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--primary-color);
+  transition: width 0ms linear;
+}
+
+.progress-bar-foreground {
+  color: var(--primary-background);
+  width: 400px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 991px) {
+  .challenge-success-modal .btn-lg {
+    font-size: 1rem;
+  }
+  .challenge-success-modal .btn-cta-big {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+  .completion-modal-body {
+    min-height: 340px;
+  }
+
+  .progress-bar-wrap,
+  .progress-bar-background,
+  .progress-bar-foreground {
+    height: 10px;
+  }
+
+  .completion-success-icon {
+    width: 160px;
+    height: 160px;
+  }
+
+  .completion-message {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .completion-challenge-name,
+  .completion-block-name {
+    font-size: 1rem;
+  }
+}

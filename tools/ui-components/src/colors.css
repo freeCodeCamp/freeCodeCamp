@@ -1,0 +1,128 @@
+:root {
+  --gray00: #ffffff;
+  --gray05: #f5f6f7;
+  --gray10: #dfdfe2;
+  --gray15: #d0d0d5;
+  --gray45: #858591;
+  --gray75: #3b3b4f;
+  --gray80: #2a2a40;
+  --gray85: #1b1b32;
+  --gray90: #0a0a23;
+
+  --purple10: #dbb8ff;
+  --purple50: #9400d3;
+  --purple90: #5a01a7;
+
+  --yellow05: #fcf8e3;
+  --yellow10: #faebcc;
+  --yellow40: #ffc300;
+  --yellow45: #ffbf00;
+  --yellow50: #f1be32;
+  --yellow70: #8a6d3b;
+  --yellow90: #4d3800;
+
+  --blue05: #d9edf7;
+  --blue10: #bce8f1;
+  --blue30: #99c9ff;
+  --blue50: #198eee;
+  --blue70: #31708f;
+  --blue90: #002ead;
+
+  --green05: #dff0d8;
+  --green10: #d6e9c6;
+  --green40: #acd157;
+  --green70: #3c763d;
+  --green90: #00471b;
+
+  --red05: #f2dede;
+  --red10: #ebccd1;
+  --red15: #ffadad;
+  --red30: #f8577c;
+  --red70: #a94442;
+  --red80: #f82153;
+  --red90: #850000;
+}
+
+/* Export the variables in order to use them on the Color System Storybook page */
+:export {
+  --gray00: var(--gray00);
+  --gray05: var(--gray05);
+  --gray10: var(--gray10);
+  --gray15: var(--gray15);
+  --gray45: var(--gray45);
+  --gray75: var(--gray75);
+  --gray80: var(--gray80);
+  --gray85: var(--gray85);
+  --gray90: var(--gray90);
+
+  --purple10: var(--purple10);
+  --purple50: var(--purple50);
+  --purple90: var(--purple90);
+
+  --yellow05: var(--yellow05);
+  --yellow10: var(--yellow10);
+  --yellow40: var(--yellow40);
+  --yellow45: var(--yellow45);
+  --yellow50: var(--yellow50);
+  --yellow70: var(--yellow70);
+  --yellow90: var(--yellow90);
+
+  --blue05: var(--blue05);
+  --blue10: var(--blue10);
+  --blue30: var(--blue30);
+  --blue50: var(--blue50);
+  --blue70: var(--blue70);
+  --blue90: var(--blue90);
+
+  --green05: var(--green05);
+  --green10: var(--green10);
+  --green40: var(--green40);
+  --green70: var(--green70);
+  --green90: var(--green90);
+
+  --red05: var(--red05);
+  --red10: var(--red10);
+  --red15: var(--red15);
+  --red30: var(--red30);
+  --red70: var(--red70);
+  --red80: var(--red80);
+  --red90: var(--red90);
+}
+
+.light-palette {
+  --foreground-primary: var(--gray90);
+  --foreground-secondary: var(--gray85);
+  --foreground-tertiary: var(--gray80);
+  --foreground-quaternary: var(--gray75);
+  --foreground-danger: var(--red15);
+  --foreground-info: var(--blue30);
+  --foreground-warning: var(--yellow45);
+
+  --background-primary: var(--gray00);
+  --background-secondary: var(--gray05);
+  --background-tertiary: var(--gray10);
+  --background-quaternary: var(--gray15);
+  --background-danger: var(--red90);
+  --background-info: var(--blue90);
+
+  --focus-outline-color: var(--blue50);
+}
+
+.dark-palette {
+  --foreground-primary: var(--gray00);
+  --foreground-secondary: var(--gray05);
+  --foreground-tertiary: var(--gray10);
+  --foreground-quaternary: var(--gray15);
+  --foreground-danger: var(--red90);
+  --foreground-info: var(--blue90);
+  --foreground-warning: var(--yellow40);
+
+  --background-primary: var(--gray90);
+  --background-secondary: var(--gray85);
+  --background-tertiary: var(--gray80);
+  --background-quaternary: var(--gray75);
+  --background-danger: var(--red15);
+  --background-info: var(--blue30);
+
+  --focus-outline-color: var(--blue50);
+}

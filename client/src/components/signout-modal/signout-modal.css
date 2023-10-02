@@ -1,0 +1,12 @@
+.btn-signout {
+  background-color: var(--danger-color);
+  color: var(--danger-background);
+  border-color: var(--danger-background);
+}
+
+.btn-signout:hover,
+.btn-signout:focus {
+  color: var(--danger-color);
+  background-color: var(--danger-background);
+  border-color: var(--danger-background);
+}

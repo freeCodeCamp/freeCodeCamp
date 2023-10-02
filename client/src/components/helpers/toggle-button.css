@@ -1,0 +1,51 @@
+.toggle-active.btn[disabled] {
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
+  opacity: 1;
+}
+
+:is(
+    .about-settings,
+    .privacy-settings,
+    .email-settings,
+    #usernameSettings,
+    #camper-identity,
+    #internet-presence,
+    #portfolio-items,
+    #honesty-policy
+  )
+  :is(
+    button[aria-disabled='true'],
+    button[aria-disabled='true']:is(:focus, :hover)
+  ) {
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.toggle-not-active {
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
+}
+.toggle-not-active:hover {
+  color: var(--secondary-background);
+}
+
+.toggle-not-active:hover,
+.toggle-not-active:focus {
+  background-color: var(--secondary-color);
+}
+
+.btn-group .btn.toggle-not-active,
+.btn-group .btn.toggle-active {
+  border-color: var(--tertiary-color);
+  padding-inline: 30px;
+  display: flex;
+}
+
+.btn-group .btn-primary,
+.btn-group .btn-primary:focus,
+.btn-group .btn-primary:hover {
+  border-color: var(--secondary-color);
+}

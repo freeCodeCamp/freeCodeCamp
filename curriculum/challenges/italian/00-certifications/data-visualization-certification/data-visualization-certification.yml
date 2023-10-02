@@ -1,0 +1,22 @@
+---
+id: 5a553ca864b52e1d8bceea14
+title: Certificazione Visualizzazione Dati
+certification: data-visualization
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7168d8c242eddfaeb5bd13
+    title: Visualizza i dati con un grafico a barre
+  - 
+    id: bd7178d8c242eddfaeb5bd13
+    title: Visualizza i dati con un grafico a dispersione
+  - 
+    id: bd7188d8c242eddfaeb5bd13
+    title: Visualizza i dati con una mappa di calore
+  - 
+    id: 587d7fa6367417b2b2512bbf
+    title: Visualizza i dati con una mappa a colori Coropletica
+  - 
+    id: 587d7fa6367417b2b2512bc0
+    title: Visualizza i dati con un diagramma ad albero

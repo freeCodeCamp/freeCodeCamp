@@ -1,0 +1,25 @@
+---
+id: 561add10cb82ac38a17213bd
+title: 舊版全棧證書
+certification: legacy-full-stack
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 561add10cb82ac38a17513bc
+    title: 響應式 Web 設計認證
+  - 
+    id: 561abd10cb81ac38a17513bc
+    title: JavaScript 算法和數據結構認證
+  - 
+    id: 561acd10cb82ac38a17513bc
+    title: 前端庫認證
+  - 
+    id: 5a553ca864b52e1d8bceea14
+    title: 數據可視化認證
+  - 
+    id: 561add10cb82ac38a17523bc
+    title: API 和微服務認證
+  - 
+    id: 561add10cb82ac38a17213bc
+    title: 舊版信息安全和質量保證認證

@@ -1,0 +1,22 @@
+---
+id: 561add10cb82ac38a17523bc
+title: Сертифікація «Розробка Back End та API»
+certification: back-end-development-and-apis
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c443edefaeb5bdef
+    title: Мікросервіс Timestamp
+  - 
+    id: bd7158d8c443edefaeb5bdff
+    title: Мікросервіс синтаксичного аналізатора заголовків запиту
+  - 
+    id: bd7158d8c443edefaeb5bd0e
+    title: Мікросервіс скорочування URL-адрес
+  - 
+    id: 5a8b073d06fa14fcfde687aa
+    title: Фітнес-трекер
+  - 
+    id: bd7158d8c443edefaeb5bd0f
+    title: Мікросервіс метаданих файлу
