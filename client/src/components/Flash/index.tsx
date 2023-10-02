@@ -26,7 +26,7 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
   return (
     <TransitionGroup>
       <CSSTransition classNames='flash-message' key={id} timeout={500}>
-        <Alert variant={flashStyle} className='flash-message'>
+        <Alert variant={flashStyle} className='flash-message' data-playwright-test-label='flash-message'>
           {t(message, variables)}
           <CloseButton
             onClick={handleClose}
