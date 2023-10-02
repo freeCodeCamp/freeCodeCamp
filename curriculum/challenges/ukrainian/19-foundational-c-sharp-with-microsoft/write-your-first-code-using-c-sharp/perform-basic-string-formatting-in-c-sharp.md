@@ -14,6 +14,10 @@ dashedName: perform-basic-string-formatting-in-c-sharp
 
 # --question--
 
+## --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-basic-formatting/" target="_blank" rel="noreferrer">«Виконайте базове форматування рядків в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Який з перелічених рядків правильно використовує інтерполяцію рядка, припускаючи, що значення змінної є рядком?
