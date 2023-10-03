@@ -1,13 +1,13 @@
 ---
 id: 60f85a62fb30c80bcea0cedb
-title: Step 25
+title: Крок 25
 challengeType: 0
 dashedName: step-25
 ---
 
 # --description--
 
-Користувачам буде дозволено вибирати `Personal Account` або `Business Account`.
+Users will be allowed to choose either a `Personal` or `Business`.
 
 Для цього потрібно до кожного з перших двох елементів `label` додати по одному елементу `input`, що мають `type="radio"`.
 
@@ -56,7 +56,6 @@ assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"
       </fieldset>
 --fcc-editable-region--
       <fieldset>
-        <label></label>
         <label></label>
         <label></label>
       </fieldset>
