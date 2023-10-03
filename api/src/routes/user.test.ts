@@ -251,6 +251,19 @@ const modifiedProgressData = {
 };
 
 const userTokenId = 'dummy-id';
+const otherUserId = 'aaaaaaaaaaaaaaaaaaaaaaaa';
+
+const msUsernameData = [
+  { msUsername: 'foobar', userId: defaultUserId, ttl: 123 },
+  { msUsername: 'foobar2', userId: defaultUserId, ttl: 123 },
+  { msUsername: 'foobar3', userId: otherUserId, ttl: 123 }
+];
+
+const tokenData = [
+  { created: new Date(), id: '123', ttl: 1000, userId: defaultUserId },
+  { created: new Date(), id: '456', ttl: 1000, userId: defaultUserId },
+  { created: new Date(), id: '789', ttl: 1000, userId: otherUserId }
+];
 
 describe('userRoutes', () => {
   setupServer();
@@ -263,7 +276,17 @@ describe('userRoutes', () => {
     });
 
     describe('/account/delete', () => {
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.userToken.deleteMany({
+          where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
+        });
+        await fastifyTestInstance.prisma.msUsername.deleteMany({
+          where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
+        });
+      });
+
       test('POST returns 200 status code with empty object', async () => {
+        expect(await fastifyTestInstance.prisma.user.count()).toBe(1);
         const response = await superRequest('/account/delete', {
           method: 'POST',
           setCookies
@@ -276,6 +299,32 @@ describe('userRoutes', () => {
         expect(response.body).toStrictEqual({});
         expect(response.status).toBe(200);
         expect(userCount).toBe(0);
+      });
+
+      test('POST deletes Microsoft usernames associated with the user', async () => {
+        await fastifyTestInstance.prisma.msUsername.createMany({
+          data: msUsernameData
+        });
+
+        await superRequest('/account/delete', {
+          method: 'POST',
+          setCookies
+        });
+
+        expect(await fastifyTestInstance.prisma.msUsername.count()).toBe(1);
+      });
+
+      test('POST deletes userTokens associated with the user', async () => {
+        await fastifyTestInstance.prisma.userToken.createMany({
+          data: tokenData
+        });
+
+        await superRequest('/account/delete', {
+          method: 'POST',
+          setCookies
+        });
+
+        expect(await fastifyTestInstance.prisma.userToken.count()).toBe(1);
       });
     });
 
@@ -680,7 +729,7 @@ Thanks and regards,
       describe('DELETE', () => {
         afterEach(async () => {
           await fastifyTestInstance.prisma.msUsername.deleteMany({
-            where: { userId: 'aaaaaaaaaaaaaaaaaaaaaaaa' }
+            where: { userId: otherUserId }
           });
         });
 
@@ -708,11 +757,7 @@ Thanks and regards,
         test('does not delete Microsoft usernames associated with other users', async () => {
           await fastifyTestInstance.prisma.msUsername.createMany({
             data: [
-              {
-                msUsername: 'foobar',
-                userId: 'aaaaaaaaaaaaaaaaaaaaaaaa',
-                ttl: 123
-              },
+              { msUsername: 'foobar', userId: otherUserId, ttl: 123 },
               { msUsername: 'foobar2', userId: defaultUserId, ttl: 123 }
             ]
           });
