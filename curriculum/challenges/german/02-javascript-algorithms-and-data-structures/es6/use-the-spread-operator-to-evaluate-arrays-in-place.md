@@ -42,7 +42,7 @@ const spreaded = ...arr;
 
 # --instructions--
 
-Copy all contents of `arr1` into another array `arr2` using the spread operator.
+Kopiere alle Inhalte von `arr1` in ein anderes Array `arr2`, indem du den Spread-Operator benutzt.
 
 # --hints--
 
@@ -58,7 +58,7 @@ Der Spread-Operator `...` sollte zum Duplizieren von `arr1` verwendet werden.
 assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
 ```
 
-`arr2` should remain unchanged when `arr1` is changed.
+`arr2` sollte unverändert bleiben, wenn `arr1` geändert wird.
 
 ```js
 assert((arr1, arr2) => {

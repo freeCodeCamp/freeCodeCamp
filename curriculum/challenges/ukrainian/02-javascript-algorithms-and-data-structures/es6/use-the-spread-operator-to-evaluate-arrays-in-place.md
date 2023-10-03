@@ -42,23 +42,23 @@ const spreaded = ...arr;
 
 # --instructions--
 
-Copy all contents of `arr1` into another array `arr2` using the spread operator.
+Скопіюйте весь вміст `arr1` до іншого масиву `arr2`, використовуючи оператор розширення.
 
 # --hints--
 
-`arr2` should be correct copy of `arr1`.
+`arr2` повинен бути правильною копією `arr1`.
 
 ```js
 assert(arr2.every((v, i) => v === arr1[i]) && arr2.length);
 ```
 
-`...` spread operator should be used to duplicate `arr1`.
+Для дублювання `arr1` потрібно використати оператор розширення (`...`).
 
 ```js
 assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
 ```
 
-`arr2` should remain unchanged when `arr1` is changed.
+`arr2` повинен залишатись без змін, а `arr1` повинен бути зміненим.
 
 ```js
 assert((arr1, arr2) => {
