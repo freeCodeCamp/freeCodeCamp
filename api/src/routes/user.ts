@@ -84,6 +84,9 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         await fastify.prisma.userToken.deleteMany({
           where: { userId: req.session.user.id }
         });
+        await fastify.prisma.msUsername.deleteMany({
+          where: { userId: req.session.user.id }
+        });
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
           data: {

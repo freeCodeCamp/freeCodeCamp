@@ -329,6 +329,14 @@ describe('userRoutes', () => {
     });
 
     describe('/account/reset-progress', () => {
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.userToken.deleteMany({
+          where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
+        });
+        await fastifyTestInstance.prisma.msUsername.deleteMany({
+          where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
+        });
+      });
       test('POST returns 200 status code with empty object', async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: testUserData.email },
@@ -349,6 +357,32 @@ describe('userRoutes', () => {
 
         expect(user?.progressTimestamps).toHaveLength(1);
         expect(user).toMatchObject(baseProgressData);
+      });
+
+      test('POST deletes Microsoft usernames associated with the user', async () => {
+        await fastifyTestInstance.prisma.msUsername.createMany({
+          data: msUsernameData
+        });
+
+        await superRequest('/account/reset-progress', {
+          method: 'POST',
+          setCookies
+        });
+
+        expect(await fastifyTestInstance.prisma.msUsername.count()).toBe(1);
+      });
+
+      test('POST deletes userTokens associated with the user', async () => {
+        await fastifyTestInstance.prisma.userToken.createMany({
+          data: tokenData
+        });
+
+        await superRequest('/account/reset-progress', {
+          method: 'POST',
+          setCookies
+        });
+
+        expect(await fastifyTestInstance.prisma.userToken.count()).toBe(1);
       });
     });
 
