@@ -1,17 +1,15 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
+let page: Page;
 
-test('FourOhFourPage renders without errors', async ({ page }) => {
-  // Navigate to your Gatsby page
-  await page.goto('http://localhost:8000/four-oh-four'); // Adjust the URL as per your project structure
+test('The component FourOhFour renders correctly', async () => {
+  const image404 = page.getByTestId('404-page-image');
+  await expect(image404).toBeVisible();
 
-  // Wait for the page to load
-  await page.waitForLoadState('load');
+  const H1_404 = page.getByTestId('page-not-found');
+  await expect(H1_404).toHaveText('Page not found.');
 
-  // Check if the component is rendered
-  const componentExists = await page.isVisible(
-    '[data-testid="four-oh-four-page"]'
+  const P_Msg = page.getByTestId('paragraph-message');
+  await expect(P_Msg).toHaveText(
+    "We couldn't find what you were looking for, but here is a quote:"
   );
-  expect(componentExists).toBeTruthy();
-
-  // You can add more assertions as needed
 });
