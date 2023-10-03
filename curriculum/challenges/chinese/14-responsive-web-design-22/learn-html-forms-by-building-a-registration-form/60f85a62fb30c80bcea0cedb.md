@@ -1,6 +1,6 @@
 ---
 id: 60f85a62fb30c80bcea0cedb
-title: 步骤 25
+title: Step 25
 challengeType: 0
 dashedName: step-25
 ---
