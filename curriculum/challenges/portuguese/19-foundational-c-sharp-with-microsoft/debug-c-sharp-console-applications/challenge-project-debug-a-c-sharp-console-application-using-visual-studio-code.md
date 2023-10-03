@@ -14,6 +14,10 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 
 # --question--
 
+## --assignment--
+
+Complete o projeto de desafio <a href="https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank" rel="noreferrer">Depurar uma aplicação de console em C# usando o Visual Studio Code</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
 ## --text--
 
 Qual das seguintes opções pode ser usada para definir um ponto de interrupção no Visual Studio Code?

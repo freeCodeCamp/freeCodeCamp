@@ -14,6 +14,10 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 
 # --question--
 
+## --assignment--
+
+Complete o projeto guiado <a href="https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/" target="_blank" rel="noreferrer">Desenvolver estruturas de ramificação condicional e de repetição em C#</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
 ## --text--
 
 Quando é apropriado usar um bloco `switch-case` ao invés de um bloco `if-elseif-else`?

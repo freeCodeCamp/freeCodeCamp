@@ -14,6 +14,10 @@ dashedName: guided-project-develop-conditional-branching-and-looping-structures-
 
 # --question--
 
+## --assignment--
+
+Виконайте керований проєкт <a href="https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/" target="_blank" rel="noreferrer">«Розробіть умовні гілкові та циклові структури в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 У якому випадку краще використати конструкцію `switch-case`, а не `if-elseif-else`?

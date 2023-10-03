@@ -14,6 +14,10 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 
 # --question--
 
+## --assignment--
+
+Complete o projeto guiado <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-final-gpa/" target="_blank" rel="noreferrer">Calcule o GPA final</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
 ## --text--
 
 Suponha que `decimal gradePointAverage = 3.99872831m;`.

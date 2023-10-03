@@ -14,6 +14,10 @@ dashedName: implement-exception-handling-in-c-sharp-console-applications
 
 # --question--
 
+## --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/" target="_blank" rel="noreferrer">«Імплементуйте оброблення винятків в консольних застосунках C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Коли викидається виняток `ArrayTypeMismatchException`?

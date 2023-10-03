@@ -14,6 +14,10 @@ dashedName: guided-project-calculate-final-gpa
 
 # --question--
 
+## --assignment--
+
+Виконайте керований проєкт <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-final-gpa/" target="_blank" rel="noreferrer">«Розрахунок GPA»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Припустимо, що `decimal gradePointAverage = 3.99872831m;`.

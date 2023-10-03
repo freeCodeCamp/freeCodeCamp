@@ -1,8 +1,8 @@
 ---
 id: 60fadce90f85c50d0bb0dd4f
-title: Paso 46
+title: Step 47
 challengeType: 0
-dashedName: step-46
+dashedName: step-47
 ---
 
 # --description--

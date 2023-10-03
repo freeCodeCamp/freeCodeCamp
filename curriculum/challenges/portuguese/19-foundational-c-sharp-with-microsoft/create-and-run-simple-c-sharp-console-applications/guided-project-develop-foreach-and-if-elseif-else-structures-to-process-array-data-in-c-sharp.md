@@ -14,6 +14,10 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 
 # --question--
 
+## --assignment--
+
+Complete o projeto de desafio <a href="https://learn.microsoft.com/training/modules/guided-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">Desenvolva estruturas `foreach` e `if-elseif-else` para processar dados de arrays em C#</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
 ## --text--
 
 Um desenvolvedor escreve uma aplicação que usa um laço `foreach` para iterar através de um array contendo 20 elementos. Após a conclusão da aplicação, o desenvolvedor descobre que o array deve ser atualizado para incluir 40 elementos. A aplicação precisa examinar todos os 40 elementos do array. Quais dos itens a seguir descreve o código de atualização necessário?
