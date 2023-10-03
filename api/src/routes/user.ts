@@ -226,6 +226,30 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  fastify.delete(
+    '/user/ms-username',
+    {
+      schema: schemas.deleteMsUsername
+    },
+    async (req, reply) => {
+      try {
+        await fastify.prisma.msUsername.deleteMany({
+          where: { userId: req.session.user.id }
+        });
+
+        // TODO(Post-MVP): return a generic success message.
+        return { msUsername: null };
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        void reply.send({
+          message: 'flash.ms.transcript.unlink-err',
+          type: 'error'
+        });
+      }
+    }
+  );
+
   done();
 };
 

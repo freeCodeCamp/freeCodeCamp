@@ -675,6 +675,60 @@ Thanks and regards,
         });
       });
     });
+
+    describe('/user/ms-username', () => {
+      describe('DELETE', () => {
+        afterEach(async () => {
+          await fastifyTestInstance.prisma.msUsername.deleteMany({
+            where: { userId: 'aaaaaaaaaaaaaaaaaaaaaaaa' }
+          });
+        });
+
+        test('deletes all Microsoft usernames associated with the user', async () => {
+          await fastifyTestInstance.prisma.msUsername.createMany({
+            data: [
+              { msUsername: 'foobar', userId: defaultUserId, ttl: 123 },
+              { msUsername: 'foobar2', userId: defaultUserId, ttl: 123 }
+            ]
+          });
+
+          const response = await superRequest('/user/ms-username', {
+            method: 'DELETE',
+            setCookies
+          });
+
+          const msUsernames =
+            await fastifyTestInstance.prisma.msUsername.count();
+
+          expect(msUsernames).toBe(0);
+          expect(response.body).toStrictEqual({ msUsername: null });
+          expect(response.statusCode).toBe(200);
+        });
+
+        test('does not delete Microsoft usernames associated with other users', async () => {
+          await fastifyTestInstance.prisma.msUsername.createMany({
+            data: [
+              {
+                msUsername: 'foobar',
+                userId: 'aaaaaaaaaaaaaaaaaaaaaaaa',
+                ttl: 123
+              },
+              { msUsername: 'foobar2', userId: defaultUserId, ttl: 123 }
+            ]
+          });
+
+          await superRequest('/user/ms-username', {
+            method: 'DELETE',
+            setCookies
+          });
+
+          const msUsernames =
+            await fastifyTestInstance.prisma.msUsername.count();
+
+          expect(msUsernames).toBe(1);
+        });
+      });
+    });
   });
 
   describe('Unauthenticated user', () => {
@@ -690,7 +744,8 @@ Thanks and regards,
       { path: '/account/reset-progress', method: 'POST' },
       { path: '/user/get-session-user', method: 'GET' },
       { path: '/user/user-token', method: 'DELETE' },
-      { path: '/user/user-token', method: 'POST' }
+      { path: '/user/user-token', method: 'POST' },
+      { path: '/user/ms-username', method: 'DELETE' }
     ];
 
     endpoints.forEach(({ path, method }) => {
