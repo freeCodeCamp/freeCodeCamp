@@ -14,6 +14,10 @@ dashedName: store-and-iterate-through-sequences-of-data-using-arrays-and-the-for
 
 # --question--
 
+## --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-arrays/" target="_blank" rel="noreferrer">«Збережіть та переберіть послідовність даних, використовуючи масиви та інструкцію foreach в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Яка з перелічених інструкцій foreach синтаксично правильна?

@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the <a href="https://learn.microsoft.com/training/modules/csharp-evaluate-boolean-expressions/" target="_blank" rel="noreferrer">Evaluate Boolean Expressions to Make Decisions in C#</a> module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 Which of the following lines of code is a valid use of the conditional operator?

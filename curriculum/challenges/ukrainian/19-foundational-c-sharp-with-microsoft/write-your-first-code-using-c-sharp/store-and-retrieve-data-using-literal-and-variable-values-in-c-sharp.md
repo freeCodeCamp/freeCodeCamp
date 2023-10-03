@@ -14,6 +14,10 @@ dashedName: store-and-retrieve-data-using-literal-and-variable-values-in-c-sharp
 
 # --question--
 
+## --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-literals-variables/" target="_blank" rel="noreferrer">«Збережіть та отримайте дані, використовуючи значення літералів та змінних в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Який з перелічених рядків правильно створює змінну?
