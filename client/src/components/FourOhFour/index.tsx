@@ -18,9 +18,11 @@ const FourOhFour = (_props: RouteComponentProps): JSX.Element => {
       <Helmet title={t('404.page-not-found') + '| freeCodeCamp'} />
       <img alt={t('404.not-found')} src={notFoundLogo} />
       <Spacer size='medium' />
-      <h1 id='content-start'>{t('404.page-not-found')}.</h1>
+      <h1 id='content-start' data-playwright-test-label='main-heading'>
+        {t('404.page-not-found')}.
+      </h1>
       <Spacer size='medium' />
-      <div>
+      <div data-playwright-test-label='404-body-text'>
         <p>{t('404.heres-a-quote')}</p>
         <Spacer size='medium' />
         <blockquote className='quote-wrapper'>
@@ -29,7 +31,11 @@ const FourOhFour = (_props: RouteComponentProps): JSX.Element => {
         </blockquote>
       </div>
       <Spacer size='large' />
-      <Link className='btn btn-cta' to='/learn'>
+      <Link
+        data-playwright-test-label='view-curriculum-link'
+        className='btn btn-cta'
+        to='/learn'
+      >
         {t('buttons.view-curriculum')}
       </Link>
     </div>
