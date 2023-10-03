@@ -607,22 +607,31 @@ describe('settingRoutes', () => {
 
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
-      const res = await superRequest('/', { method: 'GET' });
+      const res = await superRequest('/status/ping', { method: 'GET' });
       setCookies = res.get('Set-Cookie');
     });
 
-    test.each([
-      '/update-my-profileui',
-      '/update-my-theme',
-      '/update-privacy-terms',
-      '/update-my-username',
-      '/update-my-portfolio'
-    ])('PUT %s should return 401 status code', async endpoint => {
-      const response = await superRequest(endpoint, {
-        method: 'PUT',
-        setCookies
+    const endpoints: { path: string; method: 'PUT' }[] = [
+      { path: '/update-my-profileui', method: 'PUT' },
+      { path: '/update-my-theme', method: 'PUT' },
+      { path: '/update-my-username', method: 'PUT' },
+      { path: '/update-my-keyboard-shortcuts', method: 'PUT' },
+      { path: '/update-my-socials', method: 'PUT' },
+      { path: '/update-my-quincy-email', method: 'PUT' },
+      { path: '/update-my-about', method: 'PUT' },
+      { path: '/update-my-honesty', method: 'PUT' },
+      { path: '/update-privacy-terms', method: 'PUT' },
+      { path: '/update-my-portfolio', method: 'PUT' }
+    ];
+
+    endpoints.forEach(({ path, method }) => {
+      test(`${method} ${path} returns 401 status code with error message`, async () => {
+        const response = await superRequest(path, {
+          method,
+          setCookies
+        });
+        expect(response.statusCode).toBe(401);
       });
-      expect(response.statusCode).toEqual(401);
     });
   });
 });
