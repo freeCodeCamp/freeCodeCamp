@@ -1,13 +1,13 @@
 ---
 id: 60f85a62fb30c80bcea0cedb
-title: Step 25
+title: Schritt 25
 challengeType: 0
 dashedName: step-25
 ---
 
 # --description--
 
-Benutzer haben die Möglichkeit, zwischen einem `Personal Account` oder `Business Account` zu wählen.
+Users will be allowed to choose either a `Personal` or `Business`.
 
 Um dies zu tun, füge innerhalb jedes der beiden ersten `label`-Element ein `input`-Element mit `type="radio"` hinzu.
 
@@ -56,7 +56,6 @@ assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"
       </fieldset>
 --fcc-editable-region--
       <fieldset>
-        <label></label>
         <label></label>
         <label></label>
       </fieldset>
