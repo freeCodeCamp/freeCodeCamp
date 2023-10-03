@@ -100,7 +100,7 @@ describe('multifileCertProjects', function () {
       .type('{ctrl}{enter}', { release: false, delay: 100 });
     cy.get('canvas').then(canvases => {
       const currentCanvasCount = canvases.length;
-      cy.contains('Check Your Code (Ctrl + Enter)').click();
+      cy.contains('Run the Tests (Ctrl + Enter)').click();
       cy.get('canvas').should('have.length', currentCanvasCount + 1);
     });
   });
