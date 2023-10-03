@@ -14,7 +14,7 @@ describe('server', () => {
 
   describe('CSRF protection', () => {
     it('should receive a new CSRF token with the expected properties', async () => {
-      const response = await superRequest('/', { method: 'GET' });
+      const response = await superRequest('/status/ping', { method: 'GET' });
       const newCookies = response.get('Set-Cookie');
       const csrfTokenCookie = newCookies.find(cookie =>
         cookie.includes('csrf_token')
