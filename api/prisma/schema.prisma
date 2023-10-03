@@ -195,6 +195,14 @@ model sessions {
   @@index([expires], map: "expires_1")
 }
 
+model MsUsername {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  userId     String @db.ObjectId
+  ttl        Int
+  msUsername String
+  @@index([userId, id], map: "userId_1__id_1")
+}
+
 model Exam {
   id                      String         @id @map("_id") @db.ObjectId
   numberOfQuestionsInExam Int            @db.Int
