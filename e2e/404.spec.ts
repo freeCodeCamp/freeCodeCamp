@@ -13,17 +13,17 @@ test.describe('404 Page', () => {
   });
 
   test('Should have a relevant page title', async () => {
-    await expect(page).toHaveTitle('404 Page Not Found');
+    await expect(page).toHaveTitle('Page not found| freeCodeCamp');
   });
 
   test('Should display a message indicating a 404 error', async () => {
-    await expect(
+    expect(
       page.locator("text=The page you're looking for does not exist.")
     ).toBeVisible();
   });
 
   test('Should have a link to the homepage', async () => {
-    const homepageLink = await page.locator(
+    const homepageLink = page.locator(
       '[data-playwright-test-label="homepage-link"]'
     );
     await expect(homepageLink).toBeVisible();
