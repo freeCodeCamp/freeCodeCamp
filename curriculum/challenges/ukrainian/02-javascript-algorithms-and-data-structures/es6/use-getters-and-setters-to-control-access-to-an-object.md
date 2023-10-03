@@ -46,7 +46,7 @@ console.log(novel.writer);
 
 Використайте ключове слово `class`, щоб створити клас `Thermostat`. `constructor` приймає температуру в градусах Фаренгейта.
 
-In the class, create a `getter` to obtain the temperature in Celsius and a `setter` that accepts a temperature in Celsius.
+У класі створіть `getter`, щоб отримати температуру в градусах Цельсія, та `setter`, що приймає температуру в градусах Цельсія.
 
 Пам’ятайте, що `C = 5/9 * (F - 32)` та `F = C * 9.0 / 5 + 32`, де `F` є значенням температури за Фаренгейтом, а `C` є значенням за Цельсієм.
 

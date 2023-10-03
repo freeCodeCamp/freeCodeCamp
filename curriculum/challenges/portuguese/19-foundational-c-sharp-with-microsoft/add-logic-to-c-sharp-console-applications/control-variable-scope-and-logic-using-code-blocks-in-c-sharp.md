@@ -14,21 +14,25 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 
 # --question--
 
+## --assignment--
+
+Complete o módulo <a href="https://learn.microsoft.com/training/modules/csharp-code-blocks/" target="_blank" rel="noreferrer">Controle o escopo de variáveis e a lógica usando blocos de código em C#</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
 ## --text--
 
-Qual das opções abaixo descreve o efeito de uma instrução `using`?
+Qual das afirmações a seguir é verdadeira sobre exibir/remover chaves para blocos de código associados a uma instrução `if`?
 
 ## --answers--
 
-Afeta apenas o primeiro bloco de código no arquivo.
+As chaves não podem ser removidas do bloco de código para `else if` e `else`.
 
 ---
 
-Afeta apenas o bloco de código atual no arquivo.
+Se as chaves forem removidas dos blocos de código de um `if-elseif-else`, o espaço em branco também deve ser removido.
 
 ---
 
-Afeta todo o código no arquivo.
+Sempre escolha um estilo que melhore a legibilidade.
 
 ## --video-solution--
 

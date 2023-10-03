@@ -14,6 +14,10 @@ dashedName: guided-project-plan-a-petting-zoo-visit
 
 # --question--
 
+## --assignment--
+
+Виконайте керований проєкт <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">«Сплануйте візит до контактного зоопарку»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Навіщо потрібно визначати додатковий параметр в методі?

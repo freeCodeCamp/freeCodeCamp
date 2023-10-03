@@ -1,6 +1,6 @@
 ---
 id: 5900f5191000cf542c51002b
-title: 'Problem 428: Necklace of Circles'
+title: 'Завдання 428: намисто кіл'
 challengeType: 1
 forumTopicId: 302098
 dashedName: problem-428-necklace-of-circles
@@ -16,18 +16,18 @@ dashedName: problem-428-necklace-of-circles
 
 Нехай $C_{\text{out}}$ буде колом з діаметром $WZ$.
 
-The triplet ($a$, $b$, $c$) is called a *necklace triplet* if you can place $k ≥ 3$ distinct circles $C_1, C_2, \ldots, C_k$ such that:
+Триплет ($a$, $b$, $c$) називають *триплетом намиста*, якщо можна розмістити $k ≥ 3$ окремих кіл $C_1, C_2, \ldots, C_k$, за яких:
 
-- $C_i$ has no common interior points with any $C_j$ for $1 ≤ i$, $j ≤ k$ and $i ≠ j$,
-- $C_i$ is tangent to both $C_{\text{in}}$ and $C_{\text{out}}$ for $1 ≤ i ≤ k$,
-- $C_i$ is tangent to $C_{i + 1}$ for $1 ≤ i &lt; k$, and
-- $C_k$ is tangent to $C_1$.
+- $C_i$ не має спільних внутрішніх точок з $C_j$ за умови $1 ≤ i$, $j ≤ k$ та $i ≠ j$,
+- $C_i$ дотикається $C_{\text{in}}$ та $C_{\text{out}}$ за умови $1 ≤ i ≤ k$,
+- $C_i$ дотикається $C_{i + 1}$ за умови $1 ≤ i &lt; k$, та
+- $C_k$ дотикається $C_1$.
 
-For example, (5, 5, 5) and (4, 3, 21) are necklace triplets, while it can be shown that (2, 2, 5) is not.
+Наприклад, (5, 5, 5) та (4, 3, 21) є триплетами намиста, а (2, 2, 5) — ні.
 
-<img class="img-responsive center-block" alt="a visual representation of a necklace triplet" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="візуальний приклад триплету намиста" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px;" />
 
-Let $T(n)$ be the number of necklace triplets $(a, b, c)$ such that $a$, $b$ and $c$ are positive integers, and $b ≤ n$. Наприклад, $T(1) = 9$, $T(20) = 732$ та $T(3\\,000) = 438\\,106$.
+Нехай $T(n)$ буде кількістю триплетів намиста $(a, b, c)$, за яких $a$, $b$ та $c$ є натуральними числами і $b ≤ n$. Наприклад, $T(1) = 9$, $T(20) = 732$ та $T(3\\,000) = 438\\,106$.
 
 Знайдіть $T(1\\,000\\,000\\,000)$.
 

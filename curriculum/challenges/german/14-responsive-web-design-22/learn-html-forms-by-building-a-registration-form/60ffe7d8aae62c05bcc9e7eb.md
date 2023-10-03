@@ -7,7 +7,7 @@ dashedName: step-57
 
 # --description--
 
-With a `display` of `block` the submit button sits flush against the left edge of its parent.
+Mit einem `display`, der auf `block` gesetzt ist, liegt der Bestätigungsbutton direkt an der linken Kante des Elternelements.
 
 Verwende das gleiche Verfahren, dass beim Zentrieren der `form` verwendet wurde, um den Bestätigungsbutton zu zentrieren.
 

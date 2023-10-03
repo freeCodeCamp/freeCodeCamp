@@ -14,6 +14,10 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 
 # --question--
 
+## --assignment--
+
+Complete o módulo <a href="https://learn.microsoft.com/training/modules/csharp-choose-data-type/" target="_blank" rel="noreferrer">Escolha o tipo de dados correto para o código em C#</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
 ## --text--
 
 Um trecho de código deve armazenar valores numéricos inteiros entre `1,000,000` positivo e negativo. Que tipo de dado você deve escolher?

@@ -14,6 +14,10 @@ dashedName: implement-the-visual-studio-code-debugging-tools-for-c-sharp
 
 # --question--
 
+## --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/" target="_blank" rel="noreferrer">«Імплементуйте інструменти налагодження Visual Studio Code до C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Який з розділів RUN AND DEBUG використовують, щоб відслідкувати поточну точку виконання в запущеному застосунку?

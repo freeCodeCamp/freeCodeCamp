@@ -14,6 +14,10 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 
 # --question--
 
+## --assignment--
+
+Complete o projeto guiado <a href="https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">Trabalhe com dados variáveis em C#</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
 ## --text--
 
 Para o código `decimal.TryParse(numberString, out myConvert))` quando o tipo `numberString` é uma String.
