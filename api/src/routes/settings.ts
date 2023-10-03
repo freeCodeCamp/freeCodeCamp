@@ -143,9 +143,9 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
         }
       });
       const newEmail = req.body.email.toLowerCase();
-      const currentEmailFormated = user.email.toLowerCase();
+      const currentEmailFormatted = user.email.toLowerCase();
       const isVerifiedEmail = user.emailVerified;
-      const isOwnEmail = newEmail === currentEmailFormated;
+      const isOwnEmail = newEmail === currentEmailFormatted;
       if (isOwnEmail && isVerifiedEmail) {
         void reply.code(400);
         return {
