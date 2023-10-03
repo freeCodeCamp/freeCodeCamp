@@ -45,7 +45,7 @@ test.describe('Signout Modal component', () => {
       .getByRole('button', { name: translations.signout.certain })
       .click();
 
-    await expect(page).toHaveURL('/learn');
+    await expect(page).toHaveURL(/.*\/learn\/?$/);
   });
 
   test('closes modal after user cancels signing out', async ({ page }) => {
