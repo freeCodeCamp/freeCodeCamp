@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { omit } from 'lodash';
+
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import {
+  defaultUserId,
   devLogin,
   setupServer,
   superRequest,
@@ -539,7 +541,8 @@ describe('challengeRoutes', () => {
             completedDate: expect.any(Number)
           });
 
-          // It should return an updated completedDate
+          // If a challenge has already been completed, it should return the
+          // original completedDate
           expect(resUpdate.body.completedDate).not.toBe(
             resOriginal.body.completedDate
           );
@@ -1101,9 +1104,272 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(200);
         });
       });
+      describe('/ms-trophy-challenge-completed', () => {
+        // Add Logic to C# Console Applications's id:
+        const trophyChallengeId = '647f882207d29547b3bee1c0';
+        // Create and Run Simple C# Console Applications's id:
+        const trophyChallengeId2 = '647f87dc07d29547b3bee1bf';
+        const nonTrophyChallengeId = 'bd7123c8c441eddfaeb5bdef';
+        const msTrophyId = 'learn.wwl.get-started-c-sharp-part-3.trophy';
+        const msTrophyId2 = 'learn.wwl.get-started-c-sharp-part-2.trophy';
+
+        const nonTrophyIdResponse = {
+          type: 'error',
+          message: 'flash.ms.trophy.err-2'
+        } as const;
+        const noMSUsernameResponse = {
+          type: 'error',
+          message: 'flash.ms.trophy.err-1'
+        } as const;
+        const noTrophyResponse = {
+          type: 'error',
+          message: 'flash.ms.trophy.err-3'
+        } as const;
+
+        const mockSuccessResponse = () =>
+          Promise.resolve({
+            ok: true,
+            json: () => Promise.resolve({ awardType: 'Trophy' })
+          });
+
+        describe('validation', () => {
+          test('POST rejects requests without valid ids', async () => {
+            const resNoId = await superRequest(
+              '/ms-trophy-challenge-completed',
+              {
+                method: 'POST',
+                setCookies
+              }
+            );
+
+            expect(resNoId.body).toStrictEqual(nonTrophyIdResponse);
+            expect(resNoId.statusCode).toBe(400);
+
+            const resBadId = await superRequest(
+              '/ms-trophy-challenge-completed',
+              {
+                method: 'POST',
+                setCookies
+              }
+            ).send({ id: nonTrophyChallengeId });
+
+            expect(resBadId.body).toStrictEqual(nonTrophyIdResponse);
+            expect(resBadId.statusCode).toBe(400);
+          });
+
+          // TODO(Post-MVP): give a more specific error message
+          test('POST rejects requests without valid ObjectIDs', async () => {
+            const response = await superRequest(
+              '/ms-trophy-challenge-completed',
+              {
+                method: 'POST',
+                setCookies
+              }
+            ).send({ id: 'not-a-valid-id' });
+
+            expect(response.body).toStrictEqual(nonTrophyIdResponse);
+            expect(response.statusCode).toBe(400);
+          });
+        });
+
+        describe('handling', () => {
+          async function createMSUsernameRecord(msUsername: string) {
+            await fastifyTestInstance.prisma.msUsername.create({
+              data: {
+                msUsername,
+                ttl: 123,
+                userId: defaultUserId
+              }
+            });
+          }
+          afterEach(async () => {
+            await fastifyTestInstance.prisma.msUsername.deleteMany({
+              where: { userId: defaultUserId }
+            });
+          });
+          test('POST rejects requests if the user does not have a Microsoft username', async () => {
+            const res = await superRequest('/ms-trophy-challenge-completed', {
+              method: 'POST',
+              setCookies
+            }).send({ id: trophyChallengeId });
+
+            expect(res.body).toStrictEqual(noMSUsernameResponse);
+            expect(res.statusCode).toBe(403);
+          });
+          test("POST rejects requests if Microsoft's api responds that they do not have the trophy", async () => {
+            mockedFetch.mockImplementationOnce(() =>
+              Promise.resolve({
+                ok: false
+              })
+            );
+            const msUsername = 'ANRandom';
+            await createMSUsernameRecord(msUsername);
+            const trophyResWithVariables = {
+              ...noTrophyResponse,
+              variables: {
+                msUsername
+              }
+            };
+
+            const res = await superRequest('/ms-trophy-challenge-completed', {
+              method: 'POST',
+              setCookies
+            }).send({ id: trophyChallengeId });
+
+            expect(res.body).toStrictEqual(trophyResWithVariables);
+            expect(res.statusCode).toBe(403);
+
+            mockedFetch.mockImplementationOnce(() =>
+              Promise.resolve({
+                ok: true,
+                json: () => Promise.resolve({ awardType: 'not-a-trophy' })
+              })
+            );
+            const res2 = await superRequest('/ms-trophy-challenge-completed', {
+              method: 'POST',
+              setCookies
+            }).send({ id: trophyChallengeId });
+
+            expect(res2.body).toStrictEqual(trophyResWithVariables);
+            expect(res2.statusCode).toBe(403);
+          });
+
+          test("POST calls Microsoft's api with the trophy id", async () => {
+            mockedFetch.mockClear();
+            const msUsername = 'ANRandom';
+            await createMSUsernameRecord(msUsername);
+
+            await superRequest('/ms-trophy-challenge-completed', {
+              method: 'POST',
+              setCookies
+            }).send({ id: trophyChallengeId });
+
+            const expectedMSUrl = `https://learn.microsoft.com/api/gamestatus/achievements/${msTrophyId}?username=${msUsername}&locale=en-us`;
+
+            expect(mockedFetch).toHaveBeenCalledTimes(1);
+            expect(mockedFetch).toHaveBeenCalledWith(expectedMSUrl);
+          });
+
+          test('POST updates the user record with a new completed challenge', async () => {
+            mockedFetch.mockImplementationOnce(mockSuccessResponse);
+            const msUsername = 'ANRandom';
+            await createMSUsernameRecord(msUsername);
+            const now = Date.now();
+            const expectedMSUrl = `https://learn.microsoft.com/api/gamestatus/achievements/${msTrophyId}?username=${msUsername}&locale=en-us`;
+
+            const res = await superRequest('/ms-trophy-challenge-completed', {
+              method: 'POST',
+              setCookies
+            }).send({ id: trophyChallengeId });
+
+            const user =
+              await fastifyTestInstance.prisma.user.findUniqueOrThrow({
+                where: { id: defaultUserId }
+              });
+            const completedDate = user.completedChallenges[0]?.completedDate;
+
+            expect(user).toMatchObject({
+              completedChallenges: [
+                {
+                  id: trophyChallengeId,
+                  solution: expectedMSUrl,
+                  completedDate: expect.any(Number)
+                }
+              ]
+            });
+            // TODO: use a custom matcher for this
+            expect(completedDate).toBeGreaterThan(now);
+            expect(completedDate).toBeLessThan(now + 1000);
+            expect(res.body).toStrictEqual({
+              alreadyCompleted: false,
+              points: 1,
+              completedDate
+            });
+            expect(res.statusCode).toBe(200);
+          });
+
+          it('POST correctly handles multiple requests', async () => {
+            mockedFetch.mockImplementationOnce(() =>
+              Promise.resolve({
+                ok: true,
+                json: () => Promise.resolve({ awardType: 'Trophy' })
+              })
+            );
+            const msUsername = 'ANRandom';
+            await createMSUsernameRecord(msUsername);
+            const expectedMSUrl = `https://learn.microsoft.com/api/gamestatus/achievements/${msTrophyId}?username=${msUsername}&locale=en-us`;
+            const expectedMSUrl2 = `https://learn.microsoft.com/api/gamestatus/achievements/${msTrophyId2}?username=${msUsername}&locale=en-us`;
+
+            const resOne = await superRequest(
+              '/ms-trophy-challenge-completed',
+              {
+                method: 'POST',
+                setCookies
+              }
+            ).send({ id: trophyChallengeId });
+
+            mockedFetch.mockImplementationOnce(mockSuccessResponse);
+            const resTwo = await superRequest(
+              '/ms-trophy-challenge-completed',
+              {
+                method: 'POST',
+                setCookies
+              }
+            ).send({ id: trophyChallengeId2 });
+
+            // sending the second trophy challenge again should not change
+            // anything
+            mockedFetch.mockImplementationOnce(mockSuccessResponse);
+            const resUpdate = await superRequest(
+              '/ms-trophy-challenge-completed',
+              {
+                method: 'POST',
+                setCookies
+              }
+            ).send({ id: trophyChallengeId2 });
+
+            const user =
+              await fastifyTestInstance.prisma.user.findUniqueOrThrow({
+                where: { id: defaultUserId }
+              });
+
+            const expectedProgressTimestamps = user?.completedChallenges.map(
+              challenge => challenge.completedDate
+            );
+
+            expect(user).toMatchObject({
+              completedChallenges: [
+                {
+                  id: trophyChallengeId,
+                  solution: expectedMSUrl,
+                  completedDate: resOne.body.completedDate
+                },
+                {
+                  id: trophyChallengeId2,
+                  solution: expectedMSUrl2,
+                  completedDate: resTwo.body.completedDate
+                }
+              ],
+              progressTimestamps: expectedProgressTimestamps
+            });
+
+            expect(resUpdate.body).toStrictEqual({
+              alreadyCompleted: true,
+              points: 2,
+              completedDate: expect.any(Number)
+            });
+
+            // If a challenge has already been completed, it should return the
+            // original completedDate
+            expect(resUpdate.body.completedDate).toBe(
+              resTwo.body.completedDate
+            );
+            expect(resUpdate.statusCode).toBe(200);
+          });
+        });
+      });
     });
   });
-
   describe('Unauthenticated user', () => {
     let setCookies: string[];
 
@@ -1119,7 +1385,8 @@ describe('challengeRoutes', () => {
       { path: '/backend-challenge-completed', method: 'POST' },
       { path: '/modern-challenge-completed', method: 'POST' },
       { path: '/save-challenge', method: 'POST' },
-      { path: '/exam/647e22d18acb466c97ccbef8', method: 'GET' }
+      { path: '/exam/647e22d18acb466c97ccbef8', method: 'GET' },
+      { path: '/ms-trophy-challenge-completed', method: 'POST' }
     ];
 
     endpoints.forEach(({ path, method }) => {
