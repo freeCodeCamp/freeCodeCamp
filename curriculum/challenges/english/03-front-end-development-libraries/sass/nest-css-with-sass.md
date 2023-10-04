@@ -13,31 +13,31 @@ Sass allows nesting of CSS rules, which is a useful way of organizing a style sh
 Normally, each element is targeted on a different line to style it, like so:
 
 ```scss
-nav {
-  background-color: red;
+div {
+  height: 200px;
 }
 
-nav ul {
-  list-style: none;
+div p {
+  color: white;
 }
 
-nav ul li {
-  display: inline-block;
+div ul {
+  color: blue;
 }
 ```
 
 For a large project, the CSS file will have many lines and rules. This is where nesting can help organize your code by placing child style rules within the respective parent elements:
 
 ```scss
-nav {
-  background-color: red;
+div {
+  height: 200px;
+
+  p {
+    color: white;
+  }
 
   ul {
-    list-style: none;
-
-    li {
-      display: inline-block;
-    }
+      color: blue;
   }
 }
 
