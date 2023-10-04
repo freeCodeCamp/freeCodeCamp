@@ -175,7 +175,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
     }
   );
- 
+
   fastify.post(
     '/user/report-user',
     {
