@@ -307,12 +307,8 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     '/user/report-user',
     {
       schema: schemas.reportUser,
-      preValidation: (req, reply, done) => {
-        // NOTE: Is this the right hook?
-        req.body = {
-          ...req.body,
-          reportDescription: trimTags(req.body.reportDescription)
-        };
+      preHandler: (req, _reply, done) => {
+        req.body.reportDescription = trimTags(req.body.reportDescription);
         done();
       }
     },

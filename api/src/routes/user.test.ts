@@ -609,7 +609,7 @@ describe('userRoutes', () => {
       });
 
       test('POST sanitises report description', async () => {
-        const response = await superRequest('/user/report-user', {
+        await superRequest('/user/report-user', {
           method: 'POST',
           setCookies
         }).send({
@@ -618,29 +618,14 @@ describe('userRoutes', () => {
             '<script>const breath = "loud"</script>Luke, I am your father'
         });
 
-        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
-          where: { email: 'foo@bar.com' }
-        });
-
         expect(sendEmailSpy).toBeCalledTimes(1);
-        expect(sendEmailSpy).toBeCalledWith({
-          from: 'team@freecodecamp.org',
-          to: 'support@freecodecamp.org',
-          cc: user?.email,
-          subject: "Abuse Report: Reporting darth-vader's profile",
-          text: generateReportEmail(
-            user,
-            'darth-vader',
-            'Luke, I am your father'
-          )
-        });
-
-        expect(response.statusCode).toBe(200);
-        expect(response.body).toStrictEqual({
-          type: 'info',
-          message: 'flash.report-sent',
-          variables: { email: user?.email }
-        });
+        expect(sendEmailSpy).toBeCalledWith(
+          expect.objectContaining({
+            text: expect.stringContaining(
+              'Report Details:\n\nLuke, I am your father'
+            )
+          })
+        );
       });
 
       test('POST returns 200 status code with "success" message', async () => {
@@ -660,7 +645,7 @@ describe('userRoutes', () => {
         expect(sendEmailSpy).toBeCalledWith({
           from: 'team@freecodecamp.org',
           to: 'support@freecodecamp.org',
-          cc: user?.email,
+          cc: user.email,
           subject: "Abuse Report: Reporting darth-vader's profile",
           text: generateReportEmail(
             user,
@@ -673,7 +658,7 @@ describe('userRoutes', () => {
         expect(response.body).toStrictEqual({
           type: 'info',
           message: 'flash.report-sent',
-          variables: { email: user?.email }
+          variables: { email: user.email }
         });
       });
     });
