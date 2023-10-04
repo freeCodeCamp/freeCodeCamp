@@ -1113,15 +1113,15 @@ describe('challengeRoutes', () => {
         const msTrophyId = 'learn.wwl.get-started-c-sharp-part-3.trophy';
         const msTrophyId2 = 'learn.wwl.get-started-c-sharp-part-2.trophy';
 
-        const nonTrophyIdResponse = {
+        const idIsMissingOrInvalid = {
           type: 'error',
           message: 'flash.ms.trophy.err-2'
         } as const;
-        const noMSUsernameResponse = {
+        const userHasNotLinkedTheirAccount = {
           type: 'error',
           message: 'flash.ms.trophy.err-1'
         } as const;
-        const noTrophyResponse = {
+        const userDoesNotHaveTheTrophy = {
           type: 'error',
           message: 'flash.ms.trophy.err-3'
         } as const;
@@ -1142,7 +1142,7 @@ describe('challengeRoutes', () => {
               }
             );
 
-            expect(resNoId.body).toStrictEqual(nonTrophyIdResponse);
+            expect(resNoId.body).toStrictEqual(idIsMissingOrInvalid);
             expect(resNoId.statusCode).toBe(400);
 
             const resBadId = await superRequest(
@@ -1153,7 +1153,7 @@ describe('challengeRoutes', () => {
               }
             ).send({ id: nonTrophyChallengeId });
 
-            expect(resBadId.body).toStrictEqual(nonTrophyIdResponse);
+            expect(resBadId.body).toStrictEqual(idIsMissingOrInvalid);
             expect(resBadId.statusCode).toBe(400);
           });
 
@@ -1167,7 +1167,7 @@ describe('challengeRoutes', () => {
               }
             ).send({ id: 'not-a-valid-id' });
 
-            expect(response.body).toStrictEqual(nonTrophyIdResponse);
+            expect(response.body).toStrictEqual(idIsMissingOrInvalid);
             expect(response.statusCode).toBe(400);
           });
         });
@@ -1193,7 +1193,7 @@ describe('challengeRoutes', () => {
               setCookies
             }).send({ id: trophyChallengeId });
 
-            expect(res.body).toStrictEqual(noMSUsernameResponse);
+            expect(res.body).toStrictEqual(userHasNotLinkedTheirAccount);
             expect(res.statusCode).toBe(403);
           });
           test("POST rejects requests if Microsoft's api responds that they do not have the trophy", async () => {
@@ -1204,19 +1204,19 @@ describe('challengeRoutes', () => {
             );
             const msUsername = 'ANRandom';
             await createMSUsernameRecord(msUsername);
-            const trophyResWithVariables = {
-              ...noTrophyResponse,
-              variables: {
-                msUsername
-              }
-            };
 
             const res = await superRequest('/ms-trophy-challenge-completed', {
               method: 'POST',
               setCookies
             }).send({ id: trophyChallengeId });
 
-            expect(res.body).toStrictEqual(trophyResWithVariables);
+            const responseIfUserDoesNotHaveTrophy = {
+              ...userDoesNotHaveTheTrophy,
+              variables: {
+                msUsername
+              }
+            };
+            expect(res.body).toStrictEqual(responseIfUserDoesNotHaveTrophy);
             expect(res.statusCode).toBe(403);
 
             mockedFetch.mockImplementationOnce(() =>
@@ -1230,7 +1230,7 @@ describe('challengeRoutes', () => {
               setCookies
             }).send({ id: trophyChallengeId });
 
-            expect(res2.body).toStrictEqual(trophyResWithVariables);
+            expect(res2.body).toStrictEqual(responseIfUserDoesNotHaveTrophy);
             expect(res2.statusCode).toBe(403);
           });
 
@@ -1289,12 +1289,7 @@ describe('challengeRoutes', () => {
           });
 
           it('POST correctly handles multiple requests', async () => {
-            mockedFetch.mockImplementationOnce(() =>
-              Promise.resolve({
-                ok: true,
-                json: () => Promise.resolve({ awardType: 'Trophy' })
-              })
-            );
+            mockedFetch.mockImplementationOnce(mockSuccessResponse);
             const msUsername = 'ANRandom';
             await createMSUsernameRecord(msUsername);
             const expectedMSUrl = `https://learn.microsoft.com/api/gamestatus/achievements/${msTrophyId}?username=${msUsername}&locale=en-us`;
