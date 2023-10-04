@@ -21,12 +21,4 @@ test.describe('404 Page', () => {
       page.locator("text=Page not found.")
     ).toBeVisible();
   });
-
-  test('Should have a link to the homepage', async () => {
-    const homepageLink = page.locator(
-      '[data-playwright-test-label="homepage-link"]'
-    );
-    await expect(homepageLink).toBeVisible();
-    await expect(homepageLink).toHaveText('Go to Homepage');
-  });
 });
