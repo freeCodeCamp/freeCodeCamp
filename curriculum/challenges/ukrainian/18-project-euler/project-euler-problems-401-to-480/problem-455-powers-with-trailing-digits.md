@@ -1,6 +1,6 @@
 ---
 id: 5900f5331000cf542c510046
-title: 'Problem 455: Powers With Trailing Digits'
+title: 'Завдання 455: кінцеві цифри степеня'
 challengeType: 1
 forumTopicId: 302129
 dashedName: problem-455-powers-with-trailing-digits
@@ -8,7 +8,7 @@ dashedName: problem-455-powers-with-trailing-digits
 
 # --description--
 
-Let $f(n)$ be the largest positive integer $x$ less than ${10}^9$ such that the last 9 digits of $n^x$ form the number $x$ (including leading zeros), or zero if no such integer exists.
+Нехай $f(n)$ буде найбільшим натуральним числом $x$, меншим за ${10}^9$, за якого останні дев’ять цифр $n^x$ утворюють число $x$ (включно з провідними нулями), або нуль, якщо такого числа не існує.
 
 Наприклад:
 

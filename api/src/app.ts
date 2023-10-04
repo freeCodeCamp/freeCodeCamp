@@ -1,4 +1,15 @@
-import fastifyAuth0 from 'fastify-auth0-verify';
+import fastifyCookie from '@fastify/cookie';
+import fastifyCsrfProtection from '@fastify/csrf-protection';
+import middie from '@fastify/middie';
+import fastifySession from '@fastify/session';
+import fastifySwagger from '@fastify/swagger';
+import fastifySwaggerUI from '@fastify/swagger-ui';
+import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
+import fastifySentry from '@immobiliarelabs/fastify-sentry';
+import Ajv from 'ajv';
+import addFormats from 'ajv-formats';
+import MongoStore from 'connect-mongo';
+import uriResolver from 'fast-uri';
 import Fastify, {
   FastifyBaseLogger,
   FastifyHttpOptions,
@@ -7,51 +18,39 @@ import Fastify, {
   RawRequestDefaultExpression,
   RawServerDefault
 } from 'fastify';
-import Ajv from 'ajv';
-import middie from '@fastify/middie';
-import fastifySession from '@fastify/session';
-import fastifyCookie from '@fastify/cookie';
-import MongoStore from 'connect-mongo';
-import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
-import fastifySwagger from '@fastify/swagger';
-import fastifySwaggerUI from '@fastify/swagger-ui';
-import fastifyCsrfProtection from '@fastify/csrf-protection';
-import fastifySentry from '@immobiliarelabs/fastify-sentry';
-import uriResolver from 'fast-uri';
-import addFormats from 'ajv-formats';
+import fastifyAuth0 from 'fastify-auth0-verify';
 
+import prismaPlugin from './db/prisma';
+import { testMiddleware } from './middleware';
 import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import { NodemailerProvider } from './plugins/mail-providers/nodemailer';
 import { SESProvider } from './plugins/mail-providers/ses';
 import mailer from './plugins/mailer';
+import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
-import redirectWithMessage from './plugins/redirect-with-message';
-import { settingRoutes } from './routes/settings';
-import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { auth0Routes, devLoginCallback } from './routes/auth';
-import { testMiddleware } from './middleware';
-import prismaPlugin from './db/prisma';
-
+import { challengeRoutes } from './routes/challenge';
+import { deprecatedEndpoints } from './routes/deprecated-endpoints';
+import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
+import { donateRoutes } from './routes/donate';
+import { settingRoutes } from './routes/settings';
+import { statusRoute } from './routes/status';
+import { userGetRoutes, userRoutes } from './routes/user';
 import {
+  API_LOCATION,
   AUTH0_AUDIENCE,
   AUTH0_DOMAIN,
   COOKIE_DOMAIN,
+  EMAIL_PROVIDER,
+  FCC_ENABLE_DEV_LOGIN_MODE,
+  FCC_ENABLE_SWAGGER_UI,
   FREECODECAMP_NODE_ENV,
   MONGOHQ_URL,
-  SESSION_SECRET,
-  FCC_ENABLE_SWAGGER_UI,
-  API_LOCATION,
-  FCC_ENABLE_DEV_LOGIN_MODE,
   SENTRY_DSN,
-  EMAIL_PROVIDER
+  SESSION_SECRET
 } from './utils/env';
-import { challengeRoutes } from './routes/challenge';
-import { userRoutes } from './routes/user';
-import { donateRoutes } from './routes/donate';
-import { statusRoute } from './routes/status';
-import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
 import { isObjectID } from './utils/validation';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
@@ -214,6 +213,7 @@ export const build = async (
   void fastify.register(settingRoutes);
   void fastify.register(donateRoutes);
   void fastify.register(userRoutes);
+  void fastify.register(userGetRoutes);
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);
   void fastify.register(unsubscribeDeprecated);
