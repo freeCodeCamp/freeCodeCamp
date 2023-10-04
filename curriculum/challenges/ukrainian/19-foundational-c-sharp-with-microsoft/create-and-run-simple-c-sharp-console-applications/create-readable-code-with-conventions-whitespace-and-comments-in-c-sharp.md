@@ -14,6 +14,10 @@ dashedName: create-readable-code-with-conventions-whitespace-and-comments-in-c-s
 
 # --question--
 
+## --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-readable-code/" target="_blank" rel="noreferrer">«Створіть читабельний код з конвенціями, пробілами та коментарями в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 З якою метою краще не використовувати коментар в коді?

@@ -14,6 +14,10 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 
 # --question--
 
+## --assignment--
+
+Complete o projeto de desafio <a href="https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">Trabalhe com dados variáveis em C#</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
 ## --text--
 
 Para ordenar um array de strings, por que é importante usar o método `String.Trim()` em cada elemento do array antes de ordená-lo?

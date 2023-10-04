@@ -14,6 +14,10 @@ dashedName: format-alphanumeric-data-for-presentation-in-c-sharp
 
 # --question--
 
+## --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-format-strings/" target="_blank" rel="noreferrer">«Відформатуйте буквено-цифрові дані для представлення в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Який очікуваний вивід коду `Console.WriteLine("C110".PadLeft(6, '0'));`?

@@ -14,6 +14,10 @@ dashedName: create-c-sharp-methods-with-parameters
 
 # --question--
 
+## --assignment--
+
+Виконайте метод <a href="https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/" target="_blank" rel="noreferrer">«Створіть методи C# з параметрами»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Вам надано сигнатуру методу:

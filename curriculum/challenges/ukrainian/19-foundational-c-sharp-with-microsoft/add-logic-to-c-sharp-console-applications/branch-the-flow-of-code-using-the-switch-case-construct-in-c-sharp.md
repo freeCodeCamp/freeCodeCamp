@@ -14,6 +14,10 @@ dashedName: branch-the-flow-of-code-using-the-switch-case-construct-in-c-sharp
 
 # --question--
 
+## --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-switch-case/" target="_blank" rel="noreferrer">«Розгалужте потік коду, використовуючи конструкцію switch-case в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Яка мета ключового слова `break`?

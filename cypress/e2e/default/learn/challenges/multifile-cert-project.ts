@@ -8,6 +8,34 @@ const editorElements = {
   closeFlash: '.close'
 };
 
+const portfolioChallenge = {
+  url: '/learn/2022/responsive-web-design/build-a-personal-portfolio-webpage-project/build-a-personal-portfolio-webpage'
+};
+
+const portfolioChallengeSolution = `<head>
+<style>
+@media (max-width: 500px){
+nav{
+display: none;
+}
+}
+</style>
+</head>
+<body>
+<nav id="navbar">
+<a href="#projects">text</a> |
+</nav>
+<main>
+<section id="welcome-section">
+<h1>text</h1>
+</section><hr>
+<section id="projects">
+<h1>Projects</h1>
+<h2 class="project-tile"><a id="profile-link" target="_blank" href="https://freecodecamp.org">text</a></h2>
+</section><hr>
+</body>
+</html>`;
+
 describe('multifileCertProjects', function () {
   before(() => {
     cy.task('seed');
@@ -62,5 +90,18 @@ describe('multifileCertProjects', function () {
       .wait(500)
       .type(`{ctrl+s}`);
     cy.contains('Your code was not saved.');
+  });
+
+  it('Should show the confetti when a cert challenge is completed', () => {
+    cy.visit(portfolioChallenge.url);
+    cy.get('[data-cy=editor-container-indexhtml]')
+      .click()
+      .type(portfolioChallengeSolution)
+      .type('{ctrl}{enter}', { release: false, delay: 100 });
+    cy.get('canvas').then(canvases => {
+      const currentCanvasCount = canvases.length;
+      cy.contains('Run the Tests (Ctrl + Enter)').click();
+      cy.get('canvas').should('have.length', currentCanvasCount + 1);
+    });
   });
 });

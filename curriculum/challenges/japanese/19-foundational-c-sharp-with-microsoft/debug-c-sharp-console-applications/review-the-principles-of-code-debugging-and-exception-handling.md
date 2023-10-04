@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the <a href="https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank" rel="noreferrer">Review the Principles of Code Debugging and Exception Handling</a> module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 What is the relationship between the type of exception and the information it contains?

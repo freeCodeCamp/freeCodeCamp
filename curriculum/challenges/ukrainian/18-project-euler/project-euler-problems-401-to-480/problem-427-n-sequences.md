@@ -1,6 +1,6 @@
 ---
 id: 5900f5181000cf542c51002a
-title: 'Problem 427: n-sequences'
+title: 'Завдання 427: n-послідовності'
 challengeType: 1
 forumTopicId: 302097
 dashedName: problem-427-n-sequences
@@ -8,15 +8,15 @@ dashedName: problem-427-n-sequences
 
 # --description--
 
-A sequence of integers $S = \\{s_i\\}$ is called an $n$-sequence if it has $n$ elements and each element $s_i$ satisfies $1 ≤ s_i ≤ n$. Thus there are $n^n$ distinct $n$-sequences in total.
+Послідовність цілих чисел $S = \\{s_i\\}$ називається $n$-послідовністю, якщо складається з $n$ елементів та кожен елемент $s_i$ задовільняє умову $1 ≤ s_i ≤ n$. Таким чином, всього існує $n^n$ різних $n$-послідовностей.
 
-For example, the sequence $S = \\{1, 5, 5, 10, 7, 7, 7, 2, 3, 7\\}$ is a 10-sequence.
+Наприклад, послідовність $S = \\{1, 5, 5, 10, 7, 7, 7, 2, 3, 7\\}$ є 10-послідовністю.
 
-For any sequence $S$, let $L(S)$ be the length of the longest contiguous subsequence of $S$ with the same value. For example, for the given sequence $S$ above, $L(S) = 3$, because of the three consecutive 7's.
+Нехай $L(S)$ буде довжиною найдовшої сусідньої вкладеної послідовності $S$ з однакових значень для послідовності $S$. Наприклад, для послідовності $S$ вище $L(S) = 3$, оскільки вона містить три сусідні 7.
 
-Let $f(n) = \sum L(S)$ for all $n$-sequences $S$.
+Нехай $f(n) = \sum L(S)$ для всіх $n$-послідовностей $S$.
 
-For example, $f(3) = 45$, $f(7) = 1\\,403\\,689$ and $f(11) = 481\\,496\\,895\\,121$.
+Наприклад, $f(3) = 45$, $f(7) = 1\\,403\\,689$ та $f(11) = 481\\,496\\,895\\,121$.
 
 Знайдіть $f(7\\,500\\,000)\bmod 1\\,000\\,000\\,009$.
 
