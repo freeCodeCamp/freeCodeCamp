@@ -1,47 +1,47 @@
 ---
 id: bd7158d8c442eddfaeb5bd13
-title: Створити генератор випадкових цитат
+title: Створіть генератор випадкових цитат
 challengeType: 3
 forumTopicId: 301374
 dashedName: build-a-random-quote-machine
 ---
 
 # --description--
-**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
+**Примітка:** **React 18 містить відомі несумісності з тестами цього проєкту (див. [проблему](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-**Objective:** Build an app that is functionally similar to this: <a href="https://random-quote-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://random-quote-machine.freecodecamp.rocks/</a>.
+**Мета:** створити застосунок, функціонально схожий до <a href="https://random-quote-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://random-quote-machine.freecodecamp.rocks/</a>.
 
-Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
+Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
-You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
+Для виконання цього проєкту можна використати різне поєднання HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux та jQuery. Потрібно використати фронтенд фреймворк (наприклад, React), оскільки цей розділ стосується їх вивчення. Ми не рекомендуємо використовувати інші технології та ресурси, що не були вказані вище, але ви можете застосовувати їх на власний розсуд. Ми розглядаємо використання інших фронтенд фреймворків, серед яких Angular та Vue, але наразі вони не підтримуються. Ми візьмемо до уваги і спробуємо виправити всі звіти, що використовують запропонований технологічний стек у цьому проєкті. Щасливого програмування!
 
-**User Story #1:** I can see a wrapper element with a corresponding `id="quote-box"`.
+**Історія користувача №1:** я бачу обгортковий елемент з відповідним `id="quote-box"`.
 
-**User Story #2:** Within `#quote-box`, I can see an element with a corresponding `id="text"`.
+**Історія користувача №2:** я бачу елемент з відповідним `id="text"` в межах `#quote-box`.
 
-**User Story #3:** Within `#quote-box`, I can see an element with a corresponding `id="author"`.
+**Історія користувача №3:** я бачу елемент з відповідним `id="author"` в межах `#quote-box`.
 
-**User Story #4:** Within `#quote-box`, I can see a clickable element with a corresponding `id="new-quote"`.
+**Історія користувача №4:** я бачу активний елемент з відповідним `id="new-quote"` в межах `#quote-box`.
 
-**User Story #5:** Within `#quote-box`, I can see a clickable `a` element with a corresponding `id="tweet-quote"`.
+**Історія користувача №5:** я бачу активний елемент `a` з відповідним `id="tweet-quote"` в межах `#quote-box`.
 
-**User Story #6:** On first load, my quote machine displays a random quote in the element with `id="text"`.
+**Історія користувача №6:** мій генератор цитат показує випадкову цитату в елементі з `id="text"` при першому завантаженні.
 
-**User Story #7:** On first load, my quote machine displays the random quote's author in the element with `id="author"`.
+**Історія користувача №7:** мій генератор цитат показує автора випадкової цитати в елементі з `id="author"` при першому завантаженні.
 
-**User Story #8:** When the `#new-quote` button is clicked, my quote machine should fetch a new quote and display it in the `#text` element.
+**Історія користувача №8:** мій генератор цитат вибирає нову цитату та показує її в елементі `#text`, коли натиснуто кнопку `#new-quote`.
 
-**User Story #9:** My quote machine should fetch the new quote's author when the `#new-quote` button is clicked and display it in the `#author` element.
+**Історія користувача №9:** мій генератор вибирає автора нової цитати та показує його в елементі `#author`, коли натиснуто кнопку `#new-quote`.
 
-**User Story #10:** I can tweet the current quote by clicking on the `#tweet-quote` `a` element. This `a` element should include the `"twitter.com/intent/tweet"` path in its `href` attribute to tweet the current quote.
+**Історія користувача №10:** я можу твітнути отриману цитату, натиснувши елемент `a` `#tweet-quote`. Цей елемент `a` має містити шлях `"twitter.com/intent/tweet"` в атрибуті `href`, щоб твітнути отриману цитату.
 
-**User Story #11:** The `#quote-box` wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.
+**Історія користувача №11:** обгортковий елемент `#quote-box` має бути горизонтально відцентрованим. Виконайте тести зі збільшенням браузера до 100% і розгорнутою сторінкою.
 
-You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Ви можете створити свій проєкт, <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">використавши цей шаблон CodePen</a> та натиснувши `Save`. Або ж ви можете скористатися цим посиланням CDN, щоб виконати тести в будь-якому середовищі: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Once you're done, submit the URL to your working project with all its tests passing.
+Як тільки закінчите, надайте посилання на свій проєкт з усіма пройденими тестами.
 
-**Note:** Twitter does not allow links to be loaded in an iframe. Try using the `target="_blank"` or `target="_top"` attribute on the `#tweet-quote` element if your tweet won't load. `target="_top"` will replace the current tab so make sure your work is saved.
+**Примітка:** твіттер не дозволяє завантажувати посилання в iframe. Спробуйте використати атрибут `target="_blank"` або `target="_top"` до елемента `#tweet-quote`, якщо твіт не завантажується. `target="_top"` замінить поточну вкладку, тому переконайтесь, що зберегли роботу.
 
 # --solutions--
 

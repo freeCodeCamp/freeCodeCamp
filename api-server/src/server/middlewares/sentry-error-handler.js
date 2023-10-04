@@ -1,5 +1,5 @@
 import { Handlers, captureException } from '@sentry/node';
-import { sentry } from '../../../../config/secrets';
+import { sentry } from '../../../config/secrets';
 import { isHandledError } from '../utils/create-handled-error';
 
 // sends directly to Sentry

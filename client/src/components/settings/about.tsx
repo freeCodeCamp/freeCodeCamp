@@ -165,7 +165,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
 
   handlePictureChange = (e: React.FormEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     if (isURL(value, { require_protocol: true })) {
       this.validationImage.src = encodeURI(value);
     } else {
@@ -205,7 +204,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       toggleSoundMode,
       toggleKeyboardShortcuts
     } = this.props;
-    const ariaLabel = t('settings.headings.personal-info');
     return (
       <>
         <UsernameSettings username={username} />
@@ -213,7 +211,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
         <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
         <FullWidthRow>
           <form id='camper-identity' onSubmit={this.handleSubmit}>
-            <div role='group' aria-label={ariaLabel}>
+            <div role='group' aria-label={t('settings.headings.personal-info')}>
               <FormGroup controlId='about-name'>
                 <ControlLabel>
                   <strong>{t('settings.labels.name')}</strong>

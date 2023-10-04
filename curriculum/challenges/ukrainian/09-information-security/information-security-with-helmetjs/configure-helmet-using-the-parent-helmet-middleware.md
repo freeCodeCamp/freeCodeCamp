@@ -8,9 +8,9 @@ dashedName: configure-helmet-using-the-parent-helmet-middleware
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Нагадуємо, що цей проєкт створюється на основі стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-`app.use(helmet())` автоматично міститиме в собі вищезгадане проміжне програмне забезпечення, окрім `noCache()` та `contentSecurityPolicy()`, але їх можна увімкнути в разі потреби. Ви також можете відключити або налаштувати будь-яке інше проміжне програмне забезпечення самостійно, використовуючи об'єкт конфігурації.
+`app.use(helmet())` автоматично міститиме в собі вищезгадане проміжне програмне забезпечення, окрім `noCache()` та `contentSecurityPolicy()`, але їх можна увімкнути в разі потреби. Ви також можете відключити або налаштувати будь-яке інше проміжне програмне забезпечення самостійно, використовуючи об’єкт конфігурації.
 
 **Наприклад:**
 

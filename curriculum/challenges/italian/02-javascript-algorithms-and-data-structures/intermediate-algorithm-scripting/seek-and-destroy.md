@@ -8,9 +8,9 @@ dashedName: seek-and-destroy
 
 # --description--
 
-Ti verrà fornito un array iniziale (il primo argomento nella funzione `destroyer`), seguito da uno o più argomenti. Rimuovi dall'array iniziale tutti gli elementi che hanno lo stesso valore di questi argomenti.
+Ti verrà fornito un array iniziale come primo argomento nella funzione `destroyer`, seguito da uno o più argomenti. Rimuovi dall'array iniziale tutti gli elementi che hanno lo stesso valore di questi argomenti.
 
-**Nota:** È necessario utilizzare l'oggetto `arguments`.
+La funzione deve accettare un numero indeterminato di argomenti: tale funzione è anche nota come funzione variadica. È possibile accedere agli argomenti aggiuntivi aggiungendo un parametro rest alla definizione della funzione o utilizzando l'oggetto `arguments`.
 
 # --hints--
 

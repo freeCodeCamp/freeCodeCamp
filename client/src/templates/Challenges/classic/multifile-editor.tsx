@@ -87,7 +87,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
   const targetEditor = getTargetEditor(challengeFiles);
 
   // Only one editor should be focused and that should happen once, after it has
-  // been mounted. This ref allows the editors to co-ordinate, without having to
+  // been mounted. This ref allows the editors to coordinate, without having to
   // resort to redux.
   const canFocusOnMountRef = useRef(true);
 

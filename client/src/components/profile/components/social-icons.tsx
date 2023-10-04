@@ -1,7 +1,7 @@
 import {
   faLinkedin,
   faGithub,
-  faTwitter
+  faXTwitter
 } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -34,7 +34,7 @@ function LinkedInIcon(linkedIn: string, username: string): JSX.Element {
   );
 }
 
-function GithubIcon(ghURL: string, username: string): JSX.Element {
+function GitHubIcon(ghURL: string, username: string): JSX.Element {
   const { t } = useTranslation();
   return (
     <a
@@ -71,7 +71,7 @@ function TwitterIcon(handle: string, username: string): JSX.Element {
       rel='noopener noreferrer'
       target='_blank'
     >
-      <FontAwesomeIcon icon={faTwitter} size='2x' />
+      <FontAwesomeIcon icon={faXTwitter} size='2x' />
     </a>
   );
 }
@@ -87,7 +87,7 @@ function SocialIcons(props: SocialIconsProps): JSX.Element | null {
     <Row>
       <Col className='text-center social-media-icons' sm={6} smOffset={3}>
         {linkedin ? LinkedInIcon(linkedin, username) : null}
-        {githubProfile ? GithubIcon(githubProfile, username) : null}
+        {githubProfile ? GitHubIcon(githubProfile, username) : null}
         {website ? WebsiteIcon(website, username) : null}
         {twitter ? TwitterIcon(twitter, username) : null}
       </Col>

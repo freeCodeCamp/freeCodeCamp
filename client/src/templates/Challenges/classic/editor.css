@@ -30,6 +30,7 @@ textarea.inputarea {
   font-size: 16px;
   margin: 0;
   padding: 10px;
+  height: var(--breadcrumbs-height);
 }
 
 .editor-upper-jaw,
@@ -134,7 +135,6 @@ textarea.inputarea {
   margin-top: 1rem;
 }
 
-#lowerjaw-qoute,
 .test-status-description,
 .hint-description {
   display: flex;

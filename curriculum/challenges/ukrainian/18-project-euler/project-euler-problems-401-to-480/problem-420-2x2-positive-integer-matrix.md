@@ -1,6 +1,6 @@
 ---
 id: 5900f5111000cf542c510023
-title: 'Problem 420: 2x2 positive integer matrix'
+title: 'Завдання 420: натуральна матриця 2x2'
 challengeType: 1
 forumTopicId: 302090
 dashedName: problem-420-2x2-positive-integer-matrix
@@ -8,9 +8,9 @@ dashedName: problem-420-2x2-positive-integer-matrix
 
 # --description--
 
-A positive integer matrix is a matrix whose elements are all positive integers.
+Натуральна матриця — це матриця, всі елементи якої є натуральними числами.
 
-Some positive integer matrices can be expressed as a square of a positive integer matrix in two different ways. Here is an example:
+Деякі натуральні матриці можуть бути виражені у вигляді квадрата натуральної матриці двома різними способами. Ось приклад:
 
 $$\begin{pmatrix}   40 & 12 \\\\
   48 & 40 \end{pmatrix} =
@@ -21,9 +21,9 @@ $$\begin{pmatrix}   40 & 12 \\\\
   6 & 1 \\\\
   4 & 6 \end{pmatrix}}^2$$
 
-We define $F(N)$ as the number of the 2x2 positive integer matrices which have a trace less than N and which can be expressed as a square of a positive integer matrix in two different ways.
+Визначимо $F(N)$ як кількість натуральних матриць 2x2, слід яких менший за N, та які можна виразити як квадрат натуральної матриці двома різними способами.
 
-We can verify that $F(50) = 7$ and $F(1000) = 1019$.
+Можна довести, що $F(50) = 7$ та $F(1000) = 1019$.
 
 Знайдіть $F({10}^7)$.
 

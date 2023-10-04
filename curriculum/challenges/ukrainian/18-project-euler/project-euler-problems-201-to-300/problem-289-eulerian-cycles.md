@@ -18,7 +18,7 @@ The image below shows $E(3,3)$ and an example of an Eulerian non-crossing path.
 
 <img class="img-responsive center-block" alt="Eulerian cycle E(3, 3) and Eulerian non-crossing path" src="https://cdn.freecodecamp.org/curriculum/project-euler/eulerian-cycles.gif" style="background-color: white; padding: 10px;" />
 
-Let $L(m,n)$ be the number of Eulerian non-crossing paths on $E(m,n)$. For example, $L(1,2) = 2$, $L(2,2) = 37$ and $L(3,3) = 104290$.
+Let $L(m,n)$ be the number of Eulerian non-crossing paths on $E(m,n)$. Наприклад, $L(1,2) = 2$, $L(2,2) = 37$ та $L(3,3) = 104290$.
 
 Знайдіть $L(6,10)\bmod {10}^{10}$.
 

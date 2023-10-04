@@ -1,6 +1,5 @@
 describe('Donate page', () => {
   before(() => {
-    cy.clearCookies();
     cy.task('seed');
     cy.login();
   });
@@ -17,7 +16,7 @@ describe('Donate page', () => {
     '25--5-clock'
   ];
 
-  it('Should be able to submit projects', () => {
+  it('Should be possible to submit projects', () => {
     const submitProject = (str: string) => {
       cy.visit(
         `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${str}`
@@ -33,9 +32,8 @@ describe('Donate page', () => {
     };
 
     projects.forEach(project => submitProject(project));
-  });
 
-  it('Should have a pop up modal', () => {
+    // pop up modal
     cy.contains(
       'Nicely done. You just completed Front End Development Libraries Projects.'
     );

@@ -1,5 +1,4 @@
 export { default as FullWidthRow } from './full-width-row';
-export { default as SlimWidthRow } from './slim-width-row';
 export { default as Loader } from './loader';
 export { default as SkeletonSprite } from './skeleton-sprite';
 export { default as Spacer } from './spacer';

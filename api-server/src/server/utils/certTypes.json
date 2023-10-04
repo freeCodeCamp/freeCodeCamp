@@ -15,5 +15,6 @@
   "machineLearningPyV7": "isMachineLearningPyCertV7",
   "fullStack": "isFullStackCert",
   "relationalDatabaseV8": "isRelationalDatabaseV8",
-  "collegeAlgebraPyV8": "isCollegeAlgebraPyCertV8"
+  "collegeAlgebraPyV8": "isCollegeAlgebraPyCertV8",
+  "foundationalCSharpV8": "isFoundationalCSharpCertV8"
 }

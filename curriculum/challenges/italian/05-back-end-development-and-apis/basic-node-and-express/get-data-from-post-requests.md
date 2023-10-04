@@ -22,7 +22,7 @@ GET - Leggi una risorsa esistente senza modificarla,
 
 PUT o PATCH (a volte POST) - Aggiorna una risorsa utilizzando i dati inviati,
 
-DELETE => Elimina una risorsa.
+DELETE - Delete a resource.
 
 Ci sono anche un paio di altri metodi che vengono utilizzati per negoziare una connessione con il server. Tranne che da GET, tutti gli altri metodi sopra elencati possono avere un carico utile (cioè i dati nel corpo della richiesta). Il middleware body-parser funziona anche con questi metodi.
 

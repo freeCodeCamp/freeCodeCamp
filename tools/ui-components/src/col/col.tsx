@@ -3,13 +3,16 @@ import React from 'react';
 import { ColProps } from './types';
 
 const ExtraSmallClasses = {
-  12: 'sm:w-full',
-  8: 'sm:w-[66.6%]'
+  6: 'sm:w-[50%]',
+  8: 'sm:w-[66.6%]',
+  10: 'sm:w-[83.3%]',
+  12: 'sm:w-full'
 };
 
 const ExtraSmallOffsetClasses = {
-  3: 'ml-[25%]',
-  2: 'ml-[16.6%]'
+  1: 'ml-[8.3%]',
+  2: 'ml-[16.6%]',
+  3: 'ml-[25%]'
 };
 
 const SmallClasses = {

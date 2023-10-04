@@ -29,7 +29,6 @@ function AvatarRenderer({
     if (
       // we probably have loads of records in the database with this default avatar URL set. To prevent making a request to the image we know will 404.
       !/freecodecamp\.com\/sample-image/.test(picture) &&
-      // eslint-disable-next-line @typescript-eslint/naming-convention
       isURL(picture, { require_protocol: true })
     ) {
       validationImage.src = picture;

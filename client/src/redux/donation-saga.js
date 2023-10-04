@@ -15,7 +15,7 @@ import {
   postChargeStripeCard
 } from '../utils/ajax';
 import { stringifyDonationEvents } from '../utils/analytics-strings';
-import { PaymentProvider } from '../../../config/donation-settings';
+import { PaymentProvider } from '../../../shared/config/donation-settings';
 import { actionTypes as appTypes } from './action-types';
 import {
   openDonationModal,
@@ -88,7 +88,7 @@ export function* postChargeSaga({
       // If the user is signed in and the payment goes through call api
       let isSignedIn = yield select(isSignedInSelector);
       // look into skip add donation
-      // what to do with "data" that comes throug
+      // what to do with "data" that comes through
       if (isSignedIn) yield call(addDonation, { amount, duration });
     }
     if (

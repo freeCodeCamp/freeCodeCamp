@@ -11,7 +11,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { Container } from '@freecodecamp/ui';
-import { SuperBlocks } from '../../../../config/superblocks';
+import { SuperBlocks } from '../../../../shared/config/superblocks';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
@@ -242,7 +242,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 {t(`intro:misc-text.browse-other`)}
               </h3>
               <Spacer size='medium' />
-              <Map currentSuperBlock={superBlock} />
+              <Map />
               <Spacer size='large' />
             </Col>
           </Row>
