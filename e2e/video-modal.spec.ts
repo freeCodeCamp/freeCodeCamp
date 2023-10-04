@@ -6,6 +6,10 @@ const currentUrlPath =
 
 test.beforeEach(async ({ page }) => {
   await page.goto(currentUrlPath);
+  await page
+    .getByRole('button', { name: translations.buttons['get-help'] })
+    .click();
+  await page.getByTestId('watch-a-video').click();
 });
 
 test.afterEach(async ({ page }) => {
@@ -16,13 +20,6 @@ test.describe('Exit Video Modal E2E Test Suite', () => {
   test('Verifies the Correct Rendering of the Video Modal', async ({
     page
   }) => {
-    await page
-      .getByRole('button', { name: translations.buttons['get-help'] })
-      .click();
-    await page
-      .getByRole('button', { name: translations.buttons['watch-video'] })
-      .click();
-
     await expect(page.getByTestId('video-modal-title')).toBeVisible();
     await expect(
       page.getByTestId('video-modal-video-player-iframe')
