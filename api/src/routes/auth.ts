@@ -5,7 +5,7 @@ import {
 } from 'fastify';
 
 import { defaultUser } from '../utils/default-user';
-import { AUTH0_DOMAIN } from '../utils/env';
+import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env';
 
 declare module 'fastify' {
   interface Session {
@@ -53,7 +53,7 @@ const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
  * user.
  *
  * @param fastify The Fastify instance.
- * @param _options Fastify options I guess?
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
  * @param done Callback to signal that the logic has completed.
  */
 // TODO: 1) use POST 2) make sure we prevent login CSRF
@@ -78,7 +78,7 @@ export const devLoginCallback: FastifyPluginCallback = (
  * Route handler for Auth0 authentication.
  *
  * @param fastify The Fastify instance.
- * @param _options Fastify options I guess?
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
  * @param done Callback to signal that the logic has completed.
  */
 // TODO: 1) use POST 2) make sure we prevent login CSRF
@@ -93,5 +93,38 @@ export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
     await req.session.save();
   });
 
+  done();
+};
+
+/**
+ * Legacy route handler for development login. This mimics the behaviour of old
+ * api-server which the client depends on for authentication. The key difference
+ * is that this uses a different cookie (not jwt_access_token), and, if we want
+ * to use this for real, we will need to account for that.
+ *
+ * @deprecated
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin,
+ * options)`.
+ * @param done Callback to signal that the logic has completed.
+ */
+export const devLegacyAuthRoutes: FastifyPluginCallback = (
+  fastify,
+  _options,
+  done
+) => {
+  fastify.get('/signin', async (req, reply) => {
+    const email = 'foo@bar.com';
+
+    const { id } = await findOrCreateUser(fastify, email);
+    req.session.user = { id };
+    await req.session.save();
+    await reply.redirect(HOME_LOCATION + '/learn');
+  });
+
+  fastify.get('/signout', async (req, reply) => {
+    await req.session.destroy();
+    await reply.redirect(HOME_LOCATION + '/learn');
+  });
   done();
 };
