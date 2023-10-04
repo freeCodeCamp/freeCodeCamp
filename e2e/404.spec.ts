@@ -17,7 +17,7 @@ test.describe('404 Page', () => {
   });
 
   test('Should display a message indicating a 404 error', async () => {
-    expect(
+    await expect(
       page.locator("text=The page you're looking for does not exist.")
     ).toBeVisible();
   });
