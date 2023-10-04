@@ -4,7 +4,7 @@ test.describe('Should show the progress bar showing the completed percent on  ch
   test('Should enter code in the editor and show the progress bar', async ({
     page
   }) => {
-    test.slow();
+
     await page.goto(
       '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
     );
