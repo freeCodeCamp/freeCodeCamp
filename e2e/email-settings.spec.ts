@@ -74,8 +74,15 @@ test.describe('Email Settings', () => {
     ).toContainText("We have updated your subscription to Quincy's email");
 
     // Undo subscription change
-    await page
-      .getByTestId(settingsPageElement.emailSubscriptionNoThanksButton)
-      .click();
+    await Promise.all([
+      page.waitForResponse(
+        response =>
+          response.url().includes('update-my-quincy-email') &&
+          response.status() === 200
+      ),
+      page
+        .getByTestId(settingsPageElement.emailSubscriptionNoThanksButton)
+        .click()
+    ]);
   });
 });
