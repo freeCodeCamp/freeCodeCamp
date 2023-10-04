@@ -1,6 +1,6 @@
 ---
 id: 5900f52d1000cf542c510040
-title: 'Problem 449: Chocolate covered candy'
+title: 'Завдання 449: цукерки, покриті шоколадом'
 challengeType: 1
 forumTopicId: 302121
 dashedName: problem-449-chocolate-covered-candy
@@ -8,15 +8,15 @@ dashedName: problem-449-chocolate-covered-candy
 
 # --description--
 
-Phil the confectioner is making a new batch of chocolate covered candy. Each candy centre is shaped like an ellipsoid of revolution defined by the equation: $b^2x^2 + b^2y^2 + a^2z^2 = a^2b^2$.
+Кондитер Філ створює нову партію цукерок, покритих шоколадом. Середина кожної цукерки має форму еліпсоїда обертання, визначеного рівнянням $b^2x^2 + b^2y^2 + a^2z^2 = a^2b^2$.
 
-Phil wants to know how much chocolate is needed to cover one candy centre with a uniform coat of chocolate one millimeter thick.
+Філ хоче знати, скільки шоколаду потрібно, щоб покрити один центр цукерки однорідним шаром шоколаду, товщиною в один міліметр.
 
-If $a = 1$ mm and $b = 1$ mm, the amount of chocolate required is $\frac{28}{3} \pi$ mm<sup>3</sup>
+Якщо $a = 1$ мм та $b = 1$ мм, потрібно $\frac{28}{3} \pi$ мм<sup>3</sup> шоколаду.
 
-If $a = 2$ mm and $b = 1$ mm, the amount of chocolate required is approximately 60.35475635 mm<sup>3</sup>.
+Якщо $a = 2$ мм та $b = 1$ мм, потрібно приблизно 60.35475635 мм<sup>3</sup> шоколаду.
 
-Find the amount of chocolate in mm<sup>3</sup> required if $a = 3$ mm and $b = 1$ mm. Дайте відповідь у вигляді числа, заокругленого до восьми знаків після коми.
+Знайдіть необхідну кількість шоколаду в мм<sup>3</sup>, якщо $a = 3$ мм та $b = 1$ мм. Дайте відповідь у вигляді числа, заокругленого до восьми знаків після коми.
 
 # --hints--
 
