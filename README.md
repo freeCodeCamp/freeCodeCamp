@@ -92,7 +92,7 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Bar Chart](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart), [Scatterplot Graph](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph), [Heat Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map), [Choropleth Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map), [Treemap Diagram](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram)
 
-#### 5. [Relational Database](https://www.freecodecamp.org/learn/relational-database/)
+#### 5. [Relational Databases](https://www.freecodecamp.org/learn/relational-database/)
 
 - [Learn Bash by Building a Boilerplate](https://www.freecodecamp.org/learn/relational-database/#learn-bash-by-building-a-boilerplate)
 - [Learn Relational Databases by Building a Mario Database](https://www.freecodecamp.org/learn/relational-database/#learn-relational-databases-by-building-a-mario-database)

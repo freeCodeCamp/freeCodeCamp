@@ -1,1 +1,0 @@
-- [Translations](_translations.md)
