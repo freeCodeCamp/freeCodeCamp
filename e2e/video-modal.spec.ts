@@ -6,9 +6,7 @@ const currentUrlPath =
 
 test.beforeEach(async ({ page }) => {
   await page.goto(currentUrlPath);
-  await page
-    .getByRole('button', { name: translations.buttons['get-help'] })
-    .click();
+  await page.getByTestId('get-help-dropdown').click();
   await page.getByTestId('watch-a-video').click();
 });
 
