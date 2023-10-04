@@ -11,16 +11,16 @@ Use arrow syntax to create an `updateTaskContainer` function. Then move the `tas
 
 # --hints--
 
-You should use `const` and arrow syntax to create a `addTaskToTaskContainer` function.
+You should use `const` and arrow syntax to create a `updateTaskContainer` function.
 
 ```js
-assert.match(code, /const\s*addTaskToTaskContainer\s*=\s*\(\)\s*=>\s*\{/)
+assert.match(code, /const\s*updateTaskContainer\s*=\s*\(\)\s*=>\s*\{/)
 ```
 
-You should move `taskData.forEach()` and its content into the `addTaskToTaskContainer()` function.
+You should move `taskData.forEach()` and its content into the `updateTaskContainer()` function.
 
 ```js
-assert.match(code, /const\s+addTaskToTaskContainer\s+=\s*\(\)\s*=>\s*\{\s*taskData\.forEach\(\s*\(\{\s*id,\s*title,\s*date,\s*description\s*\}\)\s*=>\s*\(tasksContainer\.innerHTML\s*\+=\s*`\s*<div\s+class=('|")task\1\s*id=\1\$\{id\}\1>\s*<p><strong>Title:<\/strong>\s*\$\{title\}<\/p>\s*<p><strong>Date:<\/strong>\s*\$\{date\}<\/p>\s*<p><strong>Description:<\/strong>\s*\$\{description\}<\/p>\s*<button\s+type=\1button\1\s*class=\1btn\1>Edit<\/button>\s*<button\s+type=\1button\1\s*class=\1btn\1>Delete<\/button>\s*<\/div>\s*`\)\s*\);?\s*\};?/)
+assert.match(code, /const\s+updateTaskContainer\s+=\s*\(\)\s*=>\s*\{\s*taskData\.forEach\(\s*\(\{\s*id,\s*title,\s*date,\s*description\s*\}\)\s*=>\s*\(tasksContainer\.innerHTML\s*\+=\s*`\s*<div\s+class=('|")task\1\s*id=\1\$\{id\}\1>\s*<p><strong>Title:<\/strong>\s*\$\{title\}<\/p>\s*<p><strong>Date:<\/strong>\s*\$\{date\}<\/p>\s*<p><strong>Description:<\/strong>\s*\$\{description\}<\/p>\s*<button\s+type=\1button\1\s*class=\1btn\1>Edit<\/button>\s*<button\s+type=\1button\1\s*class=\1btn\1>Delete<\/button>\s*<\/div>\s*`\)\s*\);?\s*\};?/)
 ```
 
 # --seed--
