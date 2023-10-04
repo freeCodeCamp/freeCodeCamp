@@ -3,7 +3,6 @@ import type { FastifyError, FastifyReply, FastifyRequest } from 'fastify';
 import { getMinutes, isBefore, sub } from 'date-fns';
 import { isProfane } from 'no-profanity';
 
-import { isValidUsername } from '../../../shared/utils/validate';
 import { blocklistedUsernames } from '../../../shared/config/constants';
 import { isValidUsername } from '../../../shared/utils/validate';
 import { schemas } from '../schemas';
