@@ -551,7 +551,9 @@
     "how-update": "Ich habe eine monatliche Spende eingerichtet, aber ich muss die monatliche Zahlung aktualisieren oder aussetzen. Wie kann ich das tun?",
     "take-care-of-this": "Schicke einfach eine deiner monatlichen Spendenquittungen an donors@freecodecamp.org und sag uns, was wir für dich tun sollen. Wir erledigen das für dich und schicken dir eine Bestätigung.",
     "anything-else": "Gibt es noch etwas, was ich über das Spenden an freeCodeCamp.org erfahren kann?",
-    "other-support": "If there is some other way you'd like to support our charity and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org."
+    "other-support": "If there is some other way you'd like to support our charity and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org.",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "Du musst angemeldet sein, um einen Benutzer zu melden",
