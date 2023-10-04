@@ -528,7 +528,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       const challengeId = req.body.id;
-
       const challenge = msTrophyChallenges.find(
         challenge => challenge.id === challengeId
       );
@@ -577,23 +576,18 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
       const { completedChallenges } = user;
       const progressTimestamps = user.progressTimestamps as ProgressTimestamp[];
-
       const oldChallenge = completedChallenges.find(
         ({ id }) => id === challengeId
       );
-
       const alreadyCompleted = !!oldChallenge;
+      const completedDate = alreadyCompleted
+        ? oldChallenge.completedDate
+        : Date.now();
 
-      if (alreadyCompleted) {
-        return {
-          alreadyCompleted,
-          points: getPoints(progressTimestamps),
-          completedDate: oldChallenge.completedDate
-        };
-      } else {
+      if (!alreadyCompleted) {
         const newChallenge = {
           id: challengeId,
-          completedDate: Date.now(),
+          completedDate,
           solution: msTrophyApiUrl
         };
         await fastify.prisma.user.update({
@@ -602,18 +596,16 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             completedChallenges: {
               push: newChallenge
             },
-            progressTimestamps: [
-              ...progressTimestamps,
-              newChallenge.completedDate
-            ]
+            progressTimestamps: [...progressTimestamps, completedDate]
           }
         });
-        return {
-          alreadyCompleted,
-          points: getPoints(progressTimestamps) + 1,
-          completedDate: newChallenge.completedDate
-        };
       }
+
+      return {
+        alreadyCompleted,
+        points: getPoints(progressTimestamps) + (alreadyCompleted ? 0 : 1),
+        completedDate
+      };
     }
   );
 

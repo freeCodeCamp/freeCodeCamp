@@ -576,7 +576,6 @@ export const schemas = {
       id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 })
     }),
     response: {
-      // 200: Type.Object({}),
       200: Type.Object({
         completedDate: Type.Number(),
         points: Type.Number(),
