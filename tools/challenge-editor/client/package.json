@@ -6,14 +6,14 @@
     "@testing-library/jest-dom": "5.17.0",
     "@testing-library/react": "12.1.5",
     "@testing-library/user-event": "13.5.0",
-    "@vitejs/plugin-react": "^4.1.0",
+    "@vitejs/plugin-react": "4.1.0",
     "codemirror": "5.65.15",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-router-dom": "6.16.0",
     "typescript": "4.9.5",
-    "vite": "^4.4.9",
-    "vite-tsconfig-paths": "^4.2.1"
+    "vite": "4.4.9",
+    "vite-tsconfig-paths": "4.2.1"
   },
   "scripts": {
     "start": "cross-env PORT=3300 vite",
