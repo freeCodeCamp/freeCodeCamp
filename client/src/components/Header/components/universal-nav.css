@@ -266,7 +266,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 }
 
 /**
- * Borders modifiers inidicating user type
+ * Borders modifiers indicating user type
  */
 .gold-border {
   border-color: var(--yellow-gold);

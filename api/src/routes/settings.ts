@@ -1,10 +1,11 @@
-import type { FastifyError, FastifyReply, FastifyRequest } from 'fastify';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import type { FastifyError, FastifyReply, FastifyRequest } from 'fastify';
 import { getMinutes, isBefore, sub } from 'date-fns';
 import { isProfane } from 'no-profanity';
 
 import { isValidUsername } from '../../../shared/utils/validate';
 import { blocklistedUsernames } from '../../../shared/config/constants';
+import { isValidUsername } from '../../../shared/utils/validate';
 import { schemas } from '../schemas';
 
 // TODO: move getWaitMessage and getWaitPeriod to own module and add tests

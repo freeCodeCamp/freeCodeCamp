@@ -2,7 +2,6 @@ import { FastifyPluginCallback, type FastifyReply } from 'fastify';
 import fp from 'fastify-plugin';
 // TODO: (POST MVP)use node's querystring and just JSON stringify the message.
 // No need for query-string on either side.
-
 import qs from 'query-string';
 
 declare module 'fastify' {

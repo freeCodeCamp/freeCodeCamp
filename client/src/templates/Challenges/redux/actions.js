@@ -70,6 +70,9 @@ export const challengeMounted = createAction(actionTypes.challengeMounted);
 export const sendRenderTime = createAction(actionTypes.sendRenderTime);
 export const checkChallenge = createAction(actionTypes.checkChallenge);
 export const executeChallenge = createAction(actionTypes.executeChallenge);
+export const executeChallengeComplete = createAction(
+  actionTypes.executeChallengeComplete
+);
 export const resetChallenge = createAction(actionTypes.resetChallenge);
 export const stopResetting = createAction(actionTypes.stopResetting);
 export const submitChallenge = createAction(actionTypes.submitChallenge);
