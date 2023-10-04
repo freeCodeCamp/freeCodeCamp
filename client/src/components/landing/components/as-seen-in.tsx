@@ -7,8 +7,17 @@ const AsSeenIn = (): JSX.Element => {
   const { t } = useTranslation();
 
   return (
-    <Container fluid={true} className='as-seen-in text-center'>
-      <p className='big-heading'>{t('landing.as-seen-in')}</p>
+    <Container
+      fluid={true}
+      className='as-seen-in text-center'
+      data-playwright-test-label='landing-as-seen-in-container'
+    >
+      <p
+        className='big-heading'
+        data-playwright-test-label='landing-as-seen-in-text'
+      >
+        {t('landing.as-seen-in')}
+      </p>
       <AsSeenInText fill='light' />
     </Container>
   );

@@ -20,7 +20,7 @@ import { Spacer, Loader } from '../components/helpers';
 import CampersImage from '../components/landing/components/campers-image';
 import { executeGA } from '../redux/actions';
 import { signInLoadingSelector, userSelector } from '../redux/selectors';
-import { PaymentContext } from '../../../config/donation-settings';
+import { PaymentContext } from '../../../shared/config/donation-settings';
 
 export interface ExecuteGaArg {
   event: string;
@@ -75,9 +75,13 @@ function DonatePage({
                 <Row>
                   <Col className={'text-center'} xs={12}>
                     {isDonating ? (
-                      <h2>{t('donate.thank-you')}</h2>
+                      <h2 data-playwright-test-label='main-head'>
+                        {t('donate.thank-you')}
+                      </h2>
                     ) : (
-                      <h2>{t('donate.help-more')}</h2>
+                      <h2 data-playwright-test-label='main-head'>
+                        {t('donate.help-more')}
+                      </h2>
                     )}
                     <Spacer size='medium' />
                   </Col>
@@ -99,7 +103,9 @@ function DonatePage({
                 <Row className='donate-support' id='FAQ'>
                   <Col className={'text-center'} xs={12}>
                     <hr />
-                    <h2>{t('donate.faq')}</h2>
+                    <h2 data-playwright-test-label='faq-head'>
+                      {t('donate.faq')}
+                    </h2>
                     <Spacer size='medium' />
                   </Col>
                   <Col xs={12}>

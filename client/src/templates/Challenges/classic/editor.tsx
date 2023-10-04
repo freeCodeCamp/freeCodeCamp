@@ -37,7 +37,7 @@ import { editorNotes } from '../../../utils/tone/editor-notes';
 import {
   challengeTypes,
   isFinalProject
-} from '../../../../../config/challenge-types';
+} from '../../../../../shared/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,
@@ -247,7 +247,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   // editorDidMount are called, we cannot use useState.  Reason being that will
   // only take effect during the next render, which is too late. We could use
   // plain objects here, but useRef is shared between instances, so avoids
-  // unecessary object creation.
+  // unnecessary object creation.
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
   const dataRef = useRef<EditorProperties>({ ...initialData });
@@ -747,6 +747,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const jawHeading = isChallengeCompleted
       ? document.createElement('div')
       : document.createElement('h1');
+    jawHeading.setAttribute('id', 'content-start');
     if (isChallengeCompleted) {
       jawHeading.classList.add('challenge-description-header');
       const challengeTitle = document.createElement('h1');

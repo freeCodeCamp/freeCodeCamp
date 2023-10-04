@@ -13,7 +13,7 @@ exports[`should check certification page consistency 1`] = `
       profile.timeline
     </h2>
     <table
-      className="table table-striped table-condensed"
+      className="table-auto w-full max-w-full border-collapse text-left text-foreground-tertiary [&_th]:font-normal [&_td]:p-1 [&_th]:p-1 [&>tbody>tr:nth-of-type(odd)]:bg-background-tertiary"
     >
       <thead>
         <tr>

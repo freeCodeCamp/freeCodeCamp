@@ -137,7 +137,6 @@ function EmailSettings({
     newEmailValidation !== 'success' ||
     confirmEmailValidation !== 'success' ||
     isPristine;
-  const ariaLabel = t('settings.email.heading');
   if (!currentEmail) {
     return (
       <div>
@@ -185,7 +184,7 @@ function EmailSettings({
             <ControlLabel>{t('settings.email.current')}</ControlLabel>
             <FormControl.Static>{currentEmail}</FormControl.Static>
           </FormGroup>
-          <div role='group' aria-label={ariaLabel}>
+          <div role='group' aria-label={t('settings.email.heading')}>
             <FormGroup
               controlId='new-email'
               validationState={newEmailValidation}

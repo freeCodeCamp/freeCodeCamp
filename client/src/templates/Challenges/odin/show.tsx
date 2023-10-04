@@ -20,6 +20,7 @@ import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
 import CompletionModal from '../components/completion-modal';
+import HelpModal from '../components/help-modal';
 import PrismFormatted from '../components/prism-formatted';
 import {
   challengeMounted,
@@ -46,7 +47,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
-      openCompletionModal: () => openModal('completion')
+      openCompletionModal: () => openModal('completion'),
+      openHelpModal: () => openModal('help')
     },
     dispatch
   );
@@ -58,6 +60,7 @@ interface ShowOdinProps {
   description: string;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
+  openHelpModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
@@ -211,12 +214,14 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             videoId,
             videoLocaleIds,
             bilibiliIds,
+            fields: { blockName },
             question: { text, answers, solution },
             assignments
           }
         }
       },
       openCompletionModal,
+      openHelpModal,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
@@ -226,7 +231,6 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
-    const ariaLabel = t('aria.answer');
     return (
       <Hotkeys
         executeChallenge={() => {
@@ -306,7 +310,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     {answers.map((option, index) => (
                       <label className='video-quiz-option-label' key={index}>
                         <input
-                          aria-label={ariaLabel}
+                          aria-label={t('aria.answer')}
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
                           name='quiz'
@@ -359,9 +363,19 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 >
                   {t('buttons.check-answer')}
                 </Button>
+                <Button
+                  block={true}
+                  bsSize='large'
+                  bsStyle='primary'
+                  className='btn-invert'
+                  onClick={openHelpModal}
+                >
+                  {t('buttons.ask-for-help')}
+                </Button>
                 <Spacer size='large' />
               </Col>
               <CompletionModal />
+              <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Container>
         </LearnLayout>
@@ -400,6 +414,7 @@ export const query = graphql`
         block
         fields {
           slug
+          blockName
         }
         question {
           text

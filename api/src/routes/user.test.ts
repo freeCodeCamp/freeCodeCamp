@@ -88,7 +88,6 @@ const testUserData: Prisma.userCreateInput = {
       ]
     }
   ],
-  sound: true,
   yearsTopContributor: ['2018'],
   twitter: '@foobar',
   linkedin: 'linkedin.com/foobar'
@@ -215,7 +214,6 @@ const publicUserData = {
   sendQuincyEmail: testUserData.sendQuincyEmail,
   theme: testUserData.theme,
   twitter: 'https://twitter.com/foobar',
-  sound: testUserData.sound,
   keyboardShortcuts: testUserData.keyboardShortcuts,
   completedChallengeCount: 3,
   acceptedPrivacyTerms: testUserData.acceptedPrivacyTerms,
@@ -668,59 +666,24 @@ describe('userRoutes', () => {
     let setCookies: string[];
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
-      const res = await superRequest('/', { method: 'GET' });
+      const res = await superRequest('/status/ping', { method: 'GET' });
       setCookies = res.get('Set-Cookie');
     });
 
-    describe('/account/delete', () => {
-      test('POST returns 401 status code with error message', async () => {
-        const response = await superRequest('/account/delete', {
-          method: 'POST',
+    const endpoints: { path: string; method: 'GET' | 'POST' | 'DELETE' }[] = [
+      { path: '/account/delete', method: 'POST' },
+      { path: '/account/reset-progress', method: 'POST' },
+      { path: '/user/get-session-user', method: 'GET' },
+      { path: '/user/user-token', method: 'DELETE' },
+      { path: '/user/user-token', method: 'POST' }
+    ];
+
+    endpoints.forEach(({ path, method }) => {
+      test(`${method} ${path} returns 401 status code with error message`, async () => {
+        const response = await superRequest(path, {
+          method,
           setCookies
         });
-
-        expect(response.statusCode).toBe(401);
-      });
-    });
-
-    describe('/account/reset-progress', () => {
-      test('POST returns 401 status code with error message', async () => {
-        const response = await superRequest('/account/reset-progress', {
-          method: 'POST',
-          setCookies
-        });
-
-        expect(response.statusCode).toBe(401);
-      });
-    });
-
-    describe('/user/get-user-session', () => {
-      test('GET returns 401 status code with error message', async () => {
-        const response = await superRequest('/user/get-session-user', {
-          method: 'GET',
-          setCookies
-        });
-
-        expect(response.statusCode).toBe(401);
-      });
-    });
-
-    describe('/user/user-token', () => {
-      test('DELETE returns 401 status code with error message', async () => {
-        const response = await superRequest('/user/user-token', {
-          method: 'DELETE',
-          setCookies
-        });
-
-        expect(response.statusCode).toBe(401);
-      });
-
-      test('POST returns 401 status code with error message', async () => {
-        const response = await superRequest('/user/user-token', {
-          method: 'POST',
-          setCookies
-        });
-
         expect(response.statusCode).toBe(401);
       });
     });

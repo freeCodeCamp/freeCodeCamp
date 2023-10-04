@@ -14,8 +14,10 @@ import {
   certIds,
   oldDataVizId,
   currentCertifications,
-  upcomingCertifications
-} from '../../../../config/certification-settings';
+  upcomingCertifications,
+  legacyCertifications,
+  legacyFullStackCertification
+} from '../../../../shared/config/certification-settings';
 import { reportError } from '../middlewares/sentry-error-handler.js';
 
 import { deprecatedEndpoint } from '../utils/disabled-endpoints';
@@ -41,7 +43,7 @@ const {
   machineLearningPyV7Id,
   relationalDatabaseV8Id,
   collegeAlgebraPyV8Id,
-  foundationalCSharpId
+  foundationalCSharpV8Id
 } = certIds;
 
 const log = debug('fcc:certification');
@@ -77,10 +79,15 @@ export function getFallbackFullStackDate(completedChallenges, completedDate) {
   return latestCertDate ? latestCertDate : completedDate;
 }
 
-function ifNoCertification404(req, res, next) {
+export function ifNoCertification404(req, res, next) {
   const { certSlug } = req.body;
   if (!certSlug) return res.status(404).end();
-  if (currentCertifications.includes(certSlug)) return next();
+  if (
+    currentCertifications.includes(certSlug) ||
+    legacyCertifications.includes(certSlug) ||
+    legacyFullStackCertification.includes(certSlug)
+  )
+    return next();
   if (
     process.env.SHOW_UPCOMING_CHANGES === 'true' &&
     upcomingCertifications.includes(certSlug)
@@ -134,8 +141,8 @@ function createCertTypeIds(allChallenges) {
       collegeAlgebraPyV8Id,
       allChallenges
     ),
-    [certTypes.foundationalCSharp]: getCertById(
-      foundationalCSharpId,
+    [certTypes.foundationalCSharpV8]: getCertById(
+      foundationalCSharpV8Id,
       allChallenges
     )
   };
@@ -174,7 +181,8 @@ function sendCertifiedEmail(
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8
+    isCollegeAlgebraPyCertV8,
+    isFoundationalCSharpCertV8
   },
   send$
 ) {
@@ -191,7 +199,8 @@ function sendCertifiedEmail(
     !isDataAnalysisPyCertV7 ||
     !isMachineLearningPyCertV7 ||
     !isRelationalDatabaseCertV8 ||
-    !isCollegeAlgebraPyCertV8
+    !isCollegeAlgebraPyCertV8 ||
+    !isFoundationalCSharpCertV8
   ) {
     return Observable.just(false);
   }

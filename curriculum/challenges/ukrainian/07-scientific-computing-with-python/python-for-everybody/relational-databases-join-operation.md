@@ -14,7 +14,7 @@ dashedName: relational-databases-join-operation
 
 ## --text--
 
-Що робіть ON під час використання умови JOIN в інструкції SQL?
+Що робить ON під час використання умови JOIN в інструкції SQL?
 
 ## --answers--
 

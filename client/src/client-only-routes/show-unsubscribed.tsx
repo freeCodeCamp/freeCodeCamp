@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
 import { Container } from '@freecodecamp/ui';
-import envData from '../../../config/env.json';
+import envData from '../../config/env.json';
 import { Spacer } from '../components/helpers';
 import FullWidthRow from '../components/helpers/full-width-row';
 

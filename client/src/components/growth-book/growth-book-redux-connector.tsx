@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import React, { ReactNode, useEffect } from 'react';
 
 import { useFeature } from '@growthbook/growthbook-react';

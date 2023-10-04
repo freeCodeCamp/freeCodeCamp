@@ -406,7 +406,7 @@ copy sample.env .env
 4. Install the dependencies for the freeCodeCamp repo:
 
     ```console
-    pnpm install && pnpm run create:config
+    pnpm install && pnpm run create:shared
     ```
 
 5. Generate the challenge data JSON file:
@@ -422,7 +422,7 @@ copy sample.env .env
 #### **macOS/Linux**
 
 ```console
-cp ./config/curriculum.json ../mobile/mobile-app/curriculum.json
+cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
 ```
 
 #### **Windows**

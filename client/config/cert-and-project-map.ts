@@ -3,8 +3,8 @@ import {
   legacyCertifications,
   upcomingCertifications,
   currentCertifications
-} from '../../config/certification-settings';
-import config from '../../config/env.json';
+} from '../../shared/config/certification-settings';
+import config from '../config/env.json';
 
 const { showUpcomingChanges } = config;
 
@@ -747,7 +747,6 @@ const allStandardCerts = [
       }
     ]
   },
-  // Upcoming Certifications
   {
     id: '647e3159823e0ef219c7359b',
     title: 'Foundational C# with Microsoft',
@@ -761,6 +760,7 @@ const allStandardCerts = [
       }
     ]
   },
+  // Upcoming Certifications
   {
     id: '64514fda6c245de4d11eb7bb',
     title: 'Example Certification',

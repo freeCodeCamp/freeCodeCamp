@@ -33,6 +33,20 @@ const toneUrls = {
   [FlashMessages.IncompleteSteps]: TRY_AGAIN,
   [FlashMessages.LocalCodeSaved]: CHAL_COMP,
   [FlashMessages.LocalCodeSaveError]: TRY_AGAIN,
+  [FlashMessages.MsTranscriptErr1]: TRY_AGAIN,
+  [FlashMessages.MsTranscriptErr2]: TRY_AGAIN,
+  [FlashMessages.MsTranscriptErr3]: TRY_AGAIN,
+  [FlashMessages.MsTranscriptErr4]: TRY_AGAIN,
+  [FlashMessages.MsTranscriptErr5]: TRY_AGAIN,
+  [FlashMessages.MsTranscriptErr6]: TRY_AGAIN,
+  [FlashMessages.MsTranscriptLinked]: CHAL_COMP,
+  [FlashMessages.MsTranscriptUnlinked]: CHAL_COMP,
+  [FlashMessages.MsTranscriptUnlinkErr]: TRY_AGAIN,
+  [FlashMessages.MsTrophyErr1]: TRY_AGAIN,
+  [FlashMessages.MsTrophyErr2]: TRY_AGAIN,
+  [FlashMessages.MsTrophyErr3]: TRY_AGAIN,
+  [FlashMessages.MsTrophyErr4]: TRY_AGAIN,
+  [FlashMessages.MsTrophyVerified]: CHAL_COMP,
   [FlashMessages.NameNeeded]: TRY_AGAIN,
   // [FlashMessages.None]: '',
   [FlashMessages.NotEligible]: TRY_AGAIN,
@@ -63,7 +77,12 @@ const toneUrls = {
   [FlashMessages.WrongName]: TRY_AGAIN,
   [FlashMessages.WrongUpdating]: TRY_AGAIN,
   [FlashMessages.WentWrong]: TRY_AGAIN,
-  [FlashMessages.MSTrophyMissing]: TRY_AGAIN
+  [FlashMessages.MsTrophyErr]: TRY_AGAIN,
+  [FlashMessages.MsTrophyVerified]: CHAL_COMP,
+  [FlashMessages.MsLinked]: CHAL_COMP,
+  [FlashMessages.MsLinkErr]: TRY_AGAIN,
+  [FlashMessages.MsUnlinked]: CHAL_COMP,
+  [FlashMessages.MsUnlinkErr]: TRY_AGAIN
 } as const;
 
 type ToneStates = keyof typeof toneUrls;

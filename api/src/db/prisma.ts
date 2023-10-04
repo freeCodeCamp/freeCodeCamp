@@ -1,3 +1,4 @@
+import { execSync } from 'node:child_process';
 import fp from 'fastify-plugin';
 import { FastifyPluginAsync } from 'fastify';
 import { PrismaClient } from '@prisma/client';
@@ -18,6 +19,19 @@ const isTest = (workerId: string | undefined): workerId is string =>
   !!workerId && FREECODECAMP_NODE_ENV === 'development';
 
 const prismaPlugin: FastifyPluginAsync = fp(async (server, _options) => {
+  if (isTest(process.env.JEST_WORKER_ID)) {
+    // push the schema to the test db to setup indexes, unique constraints, etc
+    execSync('pnpm prisma db push', {
+      env: {
+        ...process.env,
+        MONGOHQ_URL: createTestConnectionURL(
+          MONGOHQ_URL,
+          process.env.JEST_WORKER_ID
+        )
+      }
+    });
+  }
+
   const prisma = isTest(process.env.JEST_WORKER_ID)
     ? new PrismaClient({
         datasources: {

@@ -15,7 +15,7 @@ import uuid from 'uuid/v4';
 import { isEmail } from 'validator';
 
 import { isProfane } from 'no-profanity';
-import { blocklistedUsernames } from '../../../../config/constants';
+import { blocklistedUsernames } from '../../../../shared/config/constants';
 
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
 import {

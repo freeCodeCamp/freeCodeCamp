@@ -233,7 +233,7 @@ As chaves no arquivo `.env` _não_ precisam ser alteradas para executar o aplica
 Esta etapa vai instalar as dependências necessárias para a execução da aplicação:
 
 ```console
-pnpm install && pnpm run create:config
+pnpm install && pnpm run create:shared
 ```
 
 #### Passo 3: Inicie o MongoDB e crie o banco de dados

@@ -2,7 +2,7 @@ import i18next from 'i18next';
 import { ofType } from 'redux-observable';
 import { mapTo, tap } from 'rxjs/operators';
 
-import envData from '../../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import { transformEditorLink } from '../utils';
 import { actionTypes } from './action-types';
 import { closeModal } from './actions';
@@ -119,9 +119,11 @@ function createQuestionEpic(action$, state$, { window }) {
       const addCodeThree = i18next.t('forum-help.add-code-three');
       const altTextMessage = `${whatsHappeningHeading}\n\n${camperCodeHeading}\n\n${warning}\n\n${tooLongOne}\n\n${tooLongTwo}\n\n${tooLongThree}\n\n\`\`\`text\n${addCodeOne}\n${addCodeTwo}\n${addCodeThree}\n\`\`\`\n\n${endingText}`;
 
-      const titleText = `${i18next.t(
-        `intro:${superBlock}.blocks.${block}.title`
-      )} - ${challengeTitle}`;
+      const titleText = window.encodeURIComponent(
+        `${i18next.t(
+          `intro:${superBlock}.blocks.${block}.title`
+        )} - ${challengeTitle}`
+      );
 
       const category = window.encodeURIComponent(
         i18next.t('links:help.' + helpCategory || 'Help')
