@@ -9,7 +9,7 @@ This guide will help new moderators get up and running with the processes and pr
 
 ### First Steps
 
-The first thing you may notice after being given moderator status on the forum is that your interface will look somewhat different, with new admin tools to explore and access the Mod-Team subforum.
+The first thing you may notice after being given moderator status on the forum is that your interface will look somewhat different, with new admin tools to explore and access to the Mod-Team subforum.
 
 Some of the new tools will appear inside a new menu item that looks like a wrench. Some will appear as new tabs or buttons, or even new enabled options within the forum menus.
 
@@ -28,7 +28,7 @@ All moderator actions can be followed by reviewing the [action logs](https://for
 
 For the first week or so you will want to pay attention to what is getting flagged and what is being reviewed, and compare that to the actions being taken upon the flagged posts. You may see the system account flag a post because the user created it too quickly. In many cases, the moderators will unflag the post by clicking on the "Approve Post" button or mark it as "Not Spam" (depending on the flag type).
 
-Commonly, spam flags can also be raised by members or moderators. Common duplicitous behavior would involve opening an account, making a post that seems harmless, then editing that post, later on, to add a link to an external site to advertise it. In this case, the member account is usually fairly new and has only made this one post thus far, which indicates that the account was opened solely for spamming the community. The decision should be made to delete the account after the first offense in this case. The same applies to accounts whose first post is deemed to be spam.
+Commonly, spam flags can also be raised by members or moderators. Common duplicitous behavior would involve opening an account, making a post that seems harmless, then editing that post later on to add a link to an external site to advertise it. In this case, the member account is usually fairly new and has only made this one post thus far, which indicates that the account was opened solely for spamming the community. The decision should be made to delete the account after the first offense in this case. The same applies to accounts whose first post is deemed to be spam.
 
 You may notice moderators performing a procedure called 'split topic'. This may be a case where a moderator has split a post that was made erroneously on an existing topic into a new topic, or a moderator merged duplicate topics that a single user has created for the same question. Watching this procedure will highlight different actions and their causes.
 
