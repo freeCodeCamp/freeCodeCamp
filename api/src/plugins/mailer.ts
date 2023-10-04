@@ -1,5 +1,4 @@
-import { FastifyPluginCallback } from 'fastify';
-
+import type { FastifyPluginCallback } from 'fastify';
 import fp from 'fastify-plugin';
 
 declare module 'fastify' {

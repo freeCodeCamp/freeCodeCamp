@@ -1,8 +1,9 @@
-import type { FastifyError, FastifyReply, FastifyRequest } from 'fastify';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import type { FastifyError, FastifyReply, FastifyRequest } from 'fastify';
 import { isProfane } from 'no-profanity';
-import { isValidUsername } from '../../../shared/utils/validate';
+
 import { blocklistedUsernames } from '../../../shared/config/constants';
+import { isValidUsername } from '../../../shared/utils/validate';
 import { schemas } from '../schemas';
 
 /**
