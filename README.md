@@ -184,10 +184,10 @@ Once you have earned the Responsive Web Design, Algorithms and Data Structures, 
 
 We also have 4 legacy certifications dating back to our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
 
-- Legacy Front End Development Certification
-- Legacy Data Visualization Certification
-- Legacy Back End Development Certification
-- Legacy Information Security and Quality Assurance Certification
+- Legacy Front End Development Certification.
+- Legacy Data Visualization Certification.
+- Legacy Back End Development Certification.
+- Legacy Information Security and Quality Assurance Certification.
 
 ### Free professional certifications
 
