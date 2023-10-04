@@ -1,13 +1,13 @@
 ---
 id: 60f85a62fb30c80bcea0cedb
-title: Step 25
+title: 步骤 25
 challengeType: 0
 dashedName: step-25
 ---
 
 # --description--
 
-用户可以选择 `Personal Account` 或者 `Business Account`。
+Users will be allowed to choose either a `Personal` or `Business`.
 
 在前两个 `label` 元素里，添加一个 `type="radio"` 的 `input` 元素。
 
@@ -56,7 +56,6 @@ assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"
       </fieldset>
 --fcc-editable-region--
       <fieldset>
-        <label></label>
         <label></label>
         <label></label>
       </fieldset>

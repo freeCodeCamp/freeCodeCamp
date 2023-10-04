@@ -7,7 +7,7 @@ dashedName: step-25
 
 # --description--
 
-Gli utenti potranno scegliere tra `Personal Account` e `Business Account`.
+Users will be allowed to choose either a `Personal` or `Business`.
 
 Per fare ciò, all'interno di ciascuno dei primi due elementi `label`, aggiungi un elemento `input` con `type="radio"`.
 
@@ -56,7 +56,6 @@ assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"
       </fieldset>
 --fcc-editable-region--
       <fieldset>
-        <label></label>
         <label></label>
         <label></label>
       </fieldset>

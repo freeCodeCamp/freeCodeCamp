@@ -1,13 +1,13 @@
 ---
 id: 60f85a62fb30c80bcea0cedb
-title: Step 25
+title: ステップ 25
 challengeType: 0
 dashedName: step-25
 ---
 
 # --description--
 
-ユーザーが `Personal Account` または `Business Account` のいずれかを選択できるようにします。
+Users will be allowed to choose either a `Personal` or `Business`.
 
 そのためには、最初の 2 つの `label` 要素内にそれぞれ 1 つずつ、`type="radio"` を持つ `input` 要素を追加してください。
 
@@ -56,7 +56,6 @@ assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"
       </fieldset>
 --fcc-editable-region--
       <fieldset>
-        <label></label>
         <label></label>
         <label></label>
       </fieldset>
