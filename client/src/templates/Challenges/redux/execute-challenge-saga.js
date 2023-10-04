@@ -38,6 +38,7 @@ import { executeGA } from '../../../redux/actions';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
+  executeChallengeComplete,
   initConsole,
   initLogs,
   logsToConsole,
@@ -51,6 +52,7 @@ import {
   challengeMetaSelector,
   challengeTestsSelector,
   isBuildEnabledSelector,
+  isExecutingSelector,
   portalDocumentSelector
 } from './selectors';
 
@@ -147,6 +149,7 @@ function* executeChallengeSaga({ payload }) {
   } catch (e) {
     yield put(updateConsole(e));
   } finally {
+    yield put(executeChallengeComplete());
     consoleProxy.close();
   }
 }
@@ -230,7 +233,10 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
   const proxyLogger = args => logProxy.put(args);
 
   try {
-    if (flushLogs) {
+    const isExecuting = yield select(isExecutingSelector);
+    // executeChallengeSaga flushes the logs, so there's no need to if that's
+    // just happened.
+    if (flushLogs && !isExecuting) {
       yield put(initLogs());
       yield put(initConsole(''));
     }
