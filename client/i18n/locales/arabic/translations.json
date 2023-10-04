@@ -551,7 +551,9 @@
     "how-update": "لقد قمت بإعداد تبرع شهري، ولكن أحتاج إلى تحديث أو إيقاف تكرار ذلك شهريا. كيف يمكنني القيام بذلك؟",
     "take-care-of-this": "فقط قم بإرسال واحد من إيصالاتك الشهرية للتبرع إلى donors@freecodecamp.org و أخبرنا بما تريد منا أن نفعل. سنعتني بهذا من أجلك ونرسل لك تأكيدات.",
     "anything-else": "هل هناك أي شيء آخر يمكنني معرفته حول التبرع إلى freeCodeCamp.org؟",
-    "other-support": "إذا كانت هناك طريقة أخرى غير مدرجة هنا ترغب بها في دعم منظمتنا الخيرية ومهمتها، أو إذا كان لديك أي أسئلة على الإطلاق، فيرجى إرسال بريد إلكتروني إلى Quincy على العنوان quincy@freecodecamp.org."
+    "other-support": "إذا كانت هناك طريقة أخرى غير مدرجة هنا ترغب بها في دعم منظمتنا الخيرية ومهمتها، أو إذا كان لديك أي أسئلة على الإطلاق، فيرجى إرسال بريد إلكتروني إلى Quincy على العنوان quincy@freecodecamp.org.",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "تحتاج إلى تسجيل الدخول للإبلاغ عن المستخدم",
