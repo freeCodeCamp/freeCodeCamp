@@ -14,6 +14,7 @@ export const isObjectID = (id?: string): boolean =>
 // Refer : http://stackoverflow.com/a/430240/1932901
 /**
  * Sanitizes a input by removing HTML tags.
+ * @deprecated
  * @param value A string to sanitize.
  * @returns A string with HTML tags removed.
  */
