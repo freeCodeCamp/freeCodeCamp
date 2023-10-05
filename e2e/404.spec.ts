@@ -2,13 +2,8 @@ import { test, expect, Page } from '@playwright/test';
 
 test.describe('404 Page', () => {
 
-  test.beforeAll(async ({ browser }) => {
-    page = await browser.newPage();
-    await page.goto('/404');
-  });
-
-  test.afterAll(async () => {
-    await page.close();
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/settings');
   });
 
   test('Should have a relevant page title', async () => {
