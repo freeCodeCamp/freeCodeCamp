@@ -78,7 +78,7 @@ async function updateIntroJson(
   void withTrace(
     fs.writeFile,
     introJsonPath,
-    await format(JSON.stringify(newIntro), { parser: 'json' })
+    format(JSON.stringify(newIntro), { parser: 'json' })
   );
 }
 
@@ -107,7 +107,7 @@ async function createMetaJson(
   void withTrace(
     fs.writeFile,
     path.resolve(metaDir, `${block}/meta.json`),
-    await format(JSON.stringify(newMeta), { parser: 'json' })
+    format(JSON.stringify(newMeta), { parser: 'json' })
   );
 }
 
