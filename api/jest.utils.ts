@@ -1,7 +1,7 @@
 import request from 'supertest';
 
 import { build } from './src/app';
-import { defaultUser } from './src/utils/default-user';
+import { createUserInput } from './src/utils/create-user';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
@@ -84,7 +84,7 @@ export async function devLogin(): Promise<string[]> {
 
   await fastifyTestInstance.prisma.user.create({
     data: {
-      ...defaultUser,
+      ...createUserInput(),
       id: defaultUserId,
       email: defaultUserEmail
     }
