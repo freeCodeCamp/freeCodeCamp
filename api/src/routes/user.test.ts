@@ -18,8 +18,7 @@ import { JWT_SECRET } from '../utils/env';
 
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {
-  ...createUserInput(),
-  email: defaultUserEmail,
+  ...createUserInput(defaultUserEmail),
   username: 'foobar',
   usernameDisplay: 'Foo Bar',
   progressTimestamps: [1520002973119, 1520440323273],

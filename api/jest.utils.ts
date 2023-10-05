@@ -84,9 +84,8 @@ export async function devLogin(): Promise<string[]> {
 
   await fastifyTestInstance.prisma.user.create({
     data: {
-      ...createUserInput(),
-      id: defaultUserId,
-      email: defaultUserEmail
+      ...createUserInput(defaultUserEmail),
+      id: defaultUserId
     }
   });
   const res = await superRequest('/auth/dev-callback', { method: 'GET' });

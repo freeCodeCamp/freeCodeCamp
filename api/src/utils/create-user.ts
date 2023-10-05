@@ -4,12 +4,10 @@ import { type Prisma } from '@prisma/client';
 
 /**
  * Creates the necessary data to create a new user.
+ * @param email The email address of the new user.
  * @returns Default data for a new user.
  */
-export const createUserInput: () => Omit<
-  Prisma.userCreateInput,
-  'email'
-> = () => {
+export function createUserInput(email: string): Prisma.userCreateInput {
   const username = 'fcc-' + crypto.randomUUID();
   const externalId = crypto.randomUUID();
   return {
@@ -18,6 +16,7 @@ export const createUserInput: () => Omit<
     acceptedPrivacyTerms: false,
     completedChallenges: [],
     currentChallengeId: '',
+    email,
     emailVerified: true, // this should be true until a user changes their email address
     // TODO(Post-MVP): remove externalId?
     externalId,
@@ -66,4 +65,4 @@ export const createUserInput: () => Omit<
     username,
     usernameDisplay: username
   };
-};
+}
