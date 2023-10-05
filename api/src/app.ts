@@ -30,7 +30,11 @@ import mailer from './plugins/mailer';
 import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
-import { auth0Routes, devLoginCallback } from './routes/auth';
+import {
+  auth0Routes,
+  devLoginCallback,
+  devLegacyAuthRoutes
+} from './routes/auth';
 import { challengeRoutes } from './routes/challenge';
 import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
@@ -208,6 +212,7 @@ export const build = async (
   void fastify.register(auth0Routes, { prefix: '/auth' });
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
+    void fastify.register(devLegacyAuthRoutes);
   }
   void fastify.register(challengeRoutes);
   void fastify.register(settingRoutes);

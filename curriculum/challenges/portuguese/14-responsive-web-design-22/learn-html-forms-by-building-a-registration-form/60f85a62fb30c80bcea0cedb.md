@@ -7,7 +7,7 @@ dashedName: step-25
 
 # --description--
 
-Users will be allowed to choose either a `Personal` or `Business`.
+Os usuários poderão escolher uma conta pessoal, `Personal`, ou uma conta corporativa, `Business`.
 
 Para fazer isso, dentro dos dois primeiros elementos `label`, adicione um elemento `input` com `type="radio"`.
 
