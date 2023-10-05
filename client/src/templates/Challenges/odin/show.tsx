@@ -237,7 +237,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
         executeChallenge={() => {
           this.handleSubmit(solution, openCompletionModal, assignments);
         }}
-        ref={this._container}
+        containerRef={this._container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

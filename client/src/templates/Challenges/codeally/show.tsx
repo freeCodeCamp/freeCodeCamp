@@ -251,7 +251,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       </LearnLayout>
     ) : (
       <Hotkeys
-        ref={this._container}
+        containerRef={this._container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

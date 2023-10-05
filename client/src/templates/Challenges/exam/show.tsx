@@ -514,7 +514,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       </Container>
     ) : (
       <Hotkeys
-        ref={this._container}
+        containerRef={this._container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

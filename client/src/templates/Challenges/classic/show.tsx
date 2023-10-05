@@ -415,7 +415,7 @@ function ShowClassic({
     <Hotkeys
       challengeType={challengeType}
       executeChallenge={executeChallenge}
-      ref={containerRef}
+      containerRef={containerRef}
       instructionsPanelRef={instructionsPanelRef}
       nextChallengePath={nextChallengePath}
       prevChallengePath={prevChallengePath}

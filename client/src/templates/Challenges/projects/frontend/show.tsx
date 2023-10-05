@@ -163,7 +163,7 @@ class Project extends Component<ProjectProps> {
 
     return (
       <Hotkeys
-        ref={this.container}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

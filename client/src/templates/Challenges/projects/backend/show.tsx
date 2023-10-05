@@ -222,7 +222,7 @@ class BackEnd extends Component<BackEndProps> {
 
     return (
       <Hotkeys
-        ref={this.container}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

@@ -214,7 +214,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
         executeChallenge={() => {
           this.handleSubmit(solution, openCompletionModal);
         }}
-        ref={this.container}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

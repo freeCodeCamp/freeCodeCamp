@@ -179,7 +179,7 @@ class MsTrophy extends Component<MsTrophyProps> {
 
     return (
       <Hotkeys
-        ref={this._container}
+        containerRef={this._container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
