@@ -15,7 +15,6 @@ import {
   superRequest
 } from '../../jest.utils';
 import { JWT_SECRET } from '../utils/env';
-import { generateReportEmail } from '../utils/email-templates';
 
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {
@@ -635,28 +634,36 @@ describe('userRoutes', () => {
           reportDescription: 'Luke, I am your father'
         });
 
-        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
-          where: { email: 'foo@bar.com' }
-        });
-
         expect(sendEmailSpy).toBeCalledTimes(1);
         expect(sendEmailSpy).toBeCalledWith({
           from: 'team@freecodecamp.org',
           to: 'support@freecodecamp.org',
-          cc: user.email,
+          cc: 'foo@bar.com',
           subject: "Abuse Report: Reporting darth-vader's profile",
-          text: generateReportEmail(
-            user,
-            'darth-vader',
-            'Luke, I am your father'
-          )
+          text: `
+Hello Team,
+
+This is to report the profile of darth-vader.
+
+Report Details:
+
+Luke, I am your father
+
+
+Reported by:
+Username: 
+Name: 
+Email: foo@bar.com
+
+Thanks and regards,
+`
         });
 
         expect(response.statusCode).toBe(200);
         expect(response.body).toStrictEqual({
           type: 'info',
           message: 'flash.report-sent',
-          variables: { email: user.email }
+          variables: { email: 'foo@bar.com' }
         });
       });
     });

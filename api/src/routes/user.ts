@@ -216,6 +216,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        // TODO: redirect to the reported user's profile if there's an error
         void reply.code(500);
         return {
           type: 'danger',
