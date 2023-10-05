@@ -33,6 +33,7 @@ export function transformEditorLink(url: string): string {
     );
 }
 
+// Adds region role and accessible name to PrismJS code blocks
 export function enhancePrismAccessibility(
   prismEnv: Prism.hooks.ElementHighlightedEnvironment
 ): void {
@@ -52,17 +53,24 @@ export function enhancePrismAccessibility(
     pug: 'pug'
   };
   const parent = prismEnv?.element?.parentElement;
-  if (parent && parent.nodeName === 'PRE' && parent.tabIndex === 0) {
-    parent.setAttribute('role', 'region');
-    const codeType = prismEnv.element?.className
-      .replace(/language-(.*)/, '$1')
-      .toLowerCase();
-    const codeName = langs[codeType] || '';
-    parent.setAttribute(
-      'aria-label',
-      i18next.t('aria.code-example', {
-        codeName
-      })
-    );
+  if (
+    !parent ||
+    parent.nodeName !== 'PRE' ||
+    parent.tabIndex !== 0 ||
+    parent.dataset.noAria === 'true'
+  ) {
+    return;
   }
+
+  parent.setAttribute('role', 'region');
+  const codeType = prismEnv.element?.className
+    .replace(/language-(.*)/, '$1')
+    .toLowerCase();
+  const codeName = langs[codeType] || '';
+  parent.setAttribute(
+    'aria-label',
+    i18next.t('aria.code-example', {
+      codeName
+    })
+  );
 }

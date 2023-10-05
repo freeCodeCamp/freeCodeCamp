@@ -551,7 +551,9 @@
     "how-update": "I set up a monthly donation, but I need to update or pause the monthly recurrence. How can I do this?",
     "take-care-of-this": "Just forward one of your monthly donation receipts to donors@freecodecamp.org and tell us what you'd like us to do. We'll take care of this for you and send you confirmation.",
     "anything-else": "Is there anything else I can learn about donating to freeCodeCamp.org?",
-    "other-support": "If there is some other way you'd like to support our charity and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org."
+    "other-support": "If there is some other way you'd like to support our charity and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org.",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "You need to be signed in to report a user",

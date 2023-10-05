@@ -551,7 +551,9 @@
     "how-update": "Criei uma doação mensal, mas preciso atualizar ou pausar a recorrência mensal. Como posso fazer isso?",
     "take-care-of-this": "Apenas encaminhe um de seus recibos mensais para donors@freecodecamp.org e diga-nos o que você gostaria que fizéssemos. Cuidaremos disso para você e enviaremos sua confirmação.",
     "anything-else": "Há mais alguma coisa que eu possa aprender sobre doações para freeCodeCamp.org?",
-    "other-support": "Se você quiser apoiar a nossa organização beneficente e a sua missão de alguma outra forma que não estiver listada aqui, ou se você tiver alguma dúvida, envie um e-mail para quincy@freecodecamp.org."
+    "other-support": "Se você quiser apoiar a nossa organização beneficente e a sua missão de alguma outra forma que não estiver listada aqui, ou se você tiver alguma dúvida, envie um e-mail para quincy@freecodecamp.org.",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "Você precisa estar logado para denunciar um usuário",
