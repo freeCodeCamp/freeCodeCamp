@@ -551,7 +551,9 @@
     "how-update": "Я налаштував(-ла) щомісячний внесок, але мені потрібно оновити або призупинити повторюваність. Як це зробити?",
     "take-care-of-this": "Просто перешліть одну із щомісячних квитанцій на donors@freecodecamp.org та повідомте, чим ми можемо допомогти. Ми подбаємо про це та надішлемо вам підтвердження.",
     "anything-else": "Чи можу я дізнатись ще щось про внески до freeCodeCamp.org?",
-    "other-support": "Якщо ви хочете підтримати нашу некомерційну організацію іншим шляхом, або ж маєте будь-які інші питання — напишіть Квінсі на quincy@freecodecamp.org."
+    "other-support": "Якщо ви хочете підтримати нашу некомерційну організацію іншим шляхом, або ж маєте будь-які інші питання — напишіть Квінсі на quincy@freecodecamp.org.",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "Щоб повідомити про порушення користувача, ви повинні ввійти в систему",

@@ -551,7 +551,9 @@
     "how-update": "Ho impostato una donazione mensile, ma ho bisogno di aggiornarla o metterla in pausa. Come posso fare?",
     "take-care-of-this": "Inoltra una delle tue ricevute a donors@freecodecamp.org e dicci cosa vorresti fare. Ce ne occuperemo e ti risponderemo con una conferma.",
     "anything-else": "C'è altro da sapere su donare a freeCodeCamp.org?",
-    "other-support": "Se ci sono altri modi in cui vorresti supportare il nostro ente benefico e la sua missione che non sono elencati in questa pagina, o se hai qualsiasi domanda, per favore scrivi a Quincy a quincy@freecodecamp.org."
+    "other-support": "Se ci sono altri modi in cui vorresti supportare il nostro ente benefico e la sua missione che non sono elencati in questa pagina, o se hai qualsiasi domanda, per favore scrivi a Quincy a quincy@freecodecamp.org.",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "Devi essere loggato per segnalare un utente",

@@ -551,7 +551,9 @@
     "how-update": "我設置了每月捐款，但我需要更新或暫停每月的重複。我如何做？",
     "take-care-of-this": "只需轉發你的每月捐款記錄中的一個記錄給 donors@freecodecamp.org， 並告訴我們你要做什麼。我們會爲你處理這個問題，並向你發送確認。",
     "anything-else": "還有什麼關於爲 freeCodeCamp.org 捐贈可以瞭解的嗎？",
-    "other-support": "如果你想要通過此處未列出的其他方式支持我們的慈善組織和它的使命，或者如果你有任何問題，請給 Quincy 發送電子郵件到 quincy@freecodecamp.org。"
+    "other-support": "如果你想要通過此處未列出的其他方式支持我們的慈善組織和它的使命，或者如果你有任何問題，請給 Quincy 發送電子郵件到 quincy@freecodecamp.org。",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "你需要先登錄才能舉報用戶",
