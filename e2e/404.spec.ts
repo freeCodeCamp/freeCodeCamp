@@ -1,7 +1,6 @@
 import { test, expect, Page } from '@playwright/test';
 
 test.describe('404 Page', () => {
-  let page: Page;
 
   test.beforeAll(async ({ browser }) => {
     page = await browser.newPage();
