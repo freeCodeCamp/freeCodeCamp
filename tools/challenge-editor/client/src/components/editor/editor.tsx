@@ -31,7 +31,7 @@ const Editor = () => {
 
   const fetchData = () => {
     setLoading(true);
-    fetch(`${API_LOCATION}/${superblock}/${block}/${challenge}`)
+    fetch(`${API_LOCATION}/${superblock || ''}/${block || ''}/${challenge || ''}`)
       .then(res => res.json() as Promise<ChallengeContent>)
       .then(
         content => {
@@ -83,7 +83,7 @@ const Editor = () => {
         content={stepContent}
       />
       <p>
-        <Link to={`/${superblock}/${block}`}>Return to Block</Link>
+        <Link to={`/${superblock || ''}/${block || ''}`}>Return to Block</Link>
       </p>
     </div>
   );

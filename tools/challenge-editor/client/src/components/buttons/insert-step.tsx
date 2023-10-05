@@ -6,7 +6,7 @@ const InsertStep = ({ superblock, block }: BlockRequiredProps) => {
   const [num, setNum] = useState(0);
 
   const click = handleRequest(() =>
-    fetch(`${API_LOCATION}/${superblock}/${block}/_tools/insert-step`, {
+    fetch(`${API_LOCATION}/${superblock || ''}/${block || ''}/_tools/insert-step`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

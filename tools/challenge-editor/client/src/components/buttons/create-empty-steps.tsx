@@ -6,7 +6,7 @@ const CreateEmptySteps = ({ superblock, block }: BlockRequiredProps) => {
   const [num, setNum] = useState(0);
 
   const click = handleRequest(() =>
-    fetch(`${API_LOCATION}/${superblock}/${block}/_tools/create-empty-steps`, {
+    fetch(`${API_LOCATION}/${superblock || ''}/${block || ''}/_tools/create-empty-steps`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

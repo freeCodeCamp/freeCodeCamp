@@ -9,7 +9,7 @@ const SaveChallenge = ({
   content
 }: ChallengeContentRequiredProps) => {
   const click = handleRequest(() =>
-    fetch(`${API_LOCATION}/${superblock}/${block}/${challenge}`, {
+    fetch(`${API_LOCATION}/${superblock || ''}/${block || ''}/${challenge || ''}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
