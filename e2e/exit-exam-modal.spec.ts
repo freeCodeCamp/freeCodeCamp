@@ -1,23 +1,14 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
-let page: Page;
-const startUrl = '/learn';
+test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
 const examUrl =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';
 const cancelExamUrl =
   '/learn/foundational-c-sharp-with-microsoft/#foundational-c-sharp-with-microsoft-certification-exam';
 
-test.beforeAll(async ({ browser }) => {
-  page = await browser.newPage();
-  await page.goto(startUrl);
-  //sign-in
-  await page
-    .getByRole('link', { name: translations.buttons['sign-in'], exact: true })
-    .click();
-});
-
-test.beforeEach(async () => {
+test.beforeEach(async ({ page }) => {
   await page.goto(examUrl);
   await page
     .getByRole('button', {
@@ -31,12 +22,10 @@ test.beforeEach(async () => {
     .click();
 });
 
-test.afterAll(async () => {
-  await page.close();
-});
-
 test.describe('Exit exam Modal E2E Test Suite', () => {
-  test('Verifies the Correct Rendering of the Exit exam Modal', async () => {
+  test('Verifies the Correct Rendering of the Exit exam Modal', async ({
+    page
+  }) => {
     await expect(
       page.getByText(translations.learn.exam['exit-header'])
     ).toBeVisible();
@@ -58,7 +47,9 @@ test.describe('Exit exam Modal E2E Test Suite', () => {
     ).toBeVisible();
   });
 
-  test('Closes the Exit exam Modal When the User clicks on exit-no button', async () => {
+  test('Closes the Exit exam Modal When the User clicks on exit-no button', async ({
+    page
+  }) => {
     await page
       .getByRole('button', { name: translations.learn.exam['exit-no'] })
       .click();
@@ -68,7 +59,9 @@ test.describe('Exit exam Modal E2E Test Suite', () => {
     await expect(page).toHaveURL(examUrl);
   });
 
-  test('Closes the Modal when the User clicks on exit-yes button', async () => {
+  test('Closes the Modal when the User clicks on exit-yes button', async ({
+    page
+  }) => {
     await page
       .getByRole('button', { name: translations.learn.exam['exit-yes'] })
       .click();
@@ -79,7 +72,9 @@ test.describe('Exit exam Modal E2E Test Suite', () => {
     await expect(page).toHaveURL(cancelExamUrl);
   });
 
-  test('Closes the Modal when the User clicks on X button', async () => {
+  test('Closes the Modal when the User clicks on X button', async ({
+    page
+  }) => {
     await page
       .getByRole('button', {
         name: translations.buttons.close
