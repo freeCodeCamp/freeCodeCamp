@@ -24,13 +24,13 @@ All letters will be uppercase. Do not transform any non-alphabetic character (i.
 assert(rot13('SERR PBQR PNZC') === 'FREE CODE CAMP');
 ```
 
-`rot13("SERR CVMMN!")` should decode to the string `FREE PIZZA!`
+`rot13("SERR CVMMN!")`this should decode to the string `FREE PIZZA!`
 
 ```js
 assert(rot13('SERR CVMMN!') === 'FREE PIZZA!');
 ```
 
-`rot13("SERR YBIR?")` should decode to the string `FREE LOVE?`
+`rot13("SERR YBIR?")`this should decode to the string `FREE LOVE?`
 
 ```js
 assert(rot13('SERR YBIR?') === 'FREE LOVE?');
