@@ -61,7 +61,7 @@ const Editor = () => {
     <div>
       <h1>{items.name}</h1>
       <span className='breadcrumb'>
-        {superblock} / {block}
+        {superblock || ''} / {block || ''}
       </span>
       <CodeMirror
         value={stepContent}
@@ -77,8 +77,8 @@ const Editor = () => {
         }}
       />
       <SaveChallenge
-        superblock={superblock}
-        block={block}
+        superblock={superblock || ''}
+        block={block || ''}
         challenge={challenge}
         content={stepContent}
       />
