@@ -13,15 +13,15 @@ Sass allows nesting of CSS rules, which is a useful way of organizing a style sh
 Normally, each element is targeted on a different line to style it, like so:
 
 ```scss
-div {
+article {
   height: 200px;
 }
 
-div p {
+article p {
   color: white;
 }
 
-div ul {
+article ul {
   color: blue;
 }
 ```
@@ -29,7 +29,7 @@ div ul {
 For a large project, the CSS file will have many lines and rules. This is where nesting can help organize your code by placing child style rules within the respective parent elements:
 
 ```scss
-div {
+article {
   height: 200px;
 
   p {
@@ -37,7 +37,7 @@ div {
   }
 
   ul {
-      color: blue;
+    color: blue;
   }
 }
 
