@@ -73,11 +73,7 @@ export type HotkeysProps = Pick<
   > &
   Pick<
     EditorProps,
-    | 'containerRef'
-    | 'tests'
-    | 'challengeFiles'
-    | 'submitChallenge'
-    | 'setEditorFocusability'
+    'tests' | 'challengeFiles' | 'submitChallenge' | 'setEditorFocusability'
   > & {
     canFocusEditor: boolean;
     children: React.ReactElement;
@@ -88,112 +84,121 @@ export type HotkeysProps = Pick<
     user: User;
   };
 
-function Hotkeys({
-  canFocusEditor,
-  challengeType,
-  children,
-  instructionsPanelRef,
-  editorRef,
-  executeChallenge,
-  containerRef,
-  nextChallengePath,
-  prevChallengePath,
-  setEditorFocusability,
-  setIsAdvancing,
-  submitChallenge,
-  tests,
-  usesMultifileEditor,
-  openShortcutsModal,
-  user: { keyboardShortcuts }
-}: HotkeysProps): JSX.Element {
-  const handlers = {
-    executeChallenge: (keyEvent?: KeyboardEvent) => {
-      // the 'enter' part of 'ctrl+enter' stops HotKeys from listening, so it
-      // needs to be prevented.
-      // TODO: 'enter' on its own also disables HotKeys, but default behaviour
-      // should not be prevented in that case.
-      keyEvent?.preventDefault();
-
-      if (!executeChallenge) return;
-
-      const testsArePassing = tests.every(test => test.pass && !test.err);
-
-      if (
-        usesMultifileEditor &&
-        typeof challengeType == 'number' &&
-        !isFinalProject(challengeType)
-      ) {
-        if (testsArePassing) {
-          submitChallenge();
-        } else {
-          executeChallenge();
-        }
-      } else {
-        executeChallenge({ showCompletionModal: true });
-      }
+const Hotkeys = React.forwardRef<HTMLElement, HotkeysProps>(
+  (
+    {
+      canFocusEditor,
+      challengeType,
+      children,
+      instructionsPanelRef,
+      editorRef,
+      executeChallenge,
+      nextChallengePath,
+      prevChallengePath,
+      setEditorFocusability,
+      setIsAdvancing,
+      submitChallenge,
+      tests,
+      usesMultifileEditor,
+      openShortcutsModal,
+      user: { keyboardShortcuts }
     },
-    ...(keyboardShortcuts
-      ? {
-          focusEditor: (keyEvent?: KeyboardEvent) => {
-            keyEvent?.preventDefault();
-            if (editorRef && editorRef.current) {
-              editorRef.current.focus();
-            }
-          },
-          focusInstructionsPanel: () => {
-            if (instructionsPanelRef && instructionsPanelRef.current) {
-              instructionsPanelRef.current.focus();
-            }
-          },
-          navigationMode: () => setEditorFocusability(false),
-          navigatePrev: () => {
-            if (!canFocusEditor) {
-              if (prevChallengePath) {
-                setIsAdvancing(true);
-                void navigate(prevChallengePath);
-              } else {
-                void navigate('/learn');
+    ref
+  ) => {
+    const handlers = {
+      executeChallenge: (keyEvent?: KeyboardEvent) => {
+        // the 'enter' part of 'ctrl+enter' stops HotKeys from listening, so it
+        // needs to be prevented.
+        // TODO: 'enter' on its own also disables HotKeys, but default behaviour
+        // should not be prevented in that case.
+        keyEvent?.preventDefault();
+
+        if (!executeChallenge) return;
+
+        const testsArePassing = tests.every(test => test.pass && !test.err);
+
+        if (
+          usesMultifileEditor &&
+          typeof challengeType == 'number' &&
+          !isFinalProject(challengeType)
+        ) {
+          if (testsArePassing) {
+            submitChallenge();
+          } else {
+            executeChallenge();
+          }
+        } else {
+          executeChallenge({ showCompletionModal: true });
+        }
+      },
+      ...(keyboardShortcuts
+        ? {
+            focusEditor: (keyEvent?: KeyboardEvent) => {
+              keyEvent?.preventDefault();
+              if (editorRef && editorRef.current) {
+                editorRef.current.focus();
               }
-            }
-          },
-          navigateNext: () => {
-            if (!canFocusEditor) {
-              if (nextChallengePath) {
-                setIsAdvancing(true);
-                void navigate(nextChallengePath);
-              } else {
-                void navigate('/learn');
+            },
+            focusInstructionsPanel: () => {
+              if (instructionsPanelRef && instructionsPanelRef.current) {
+                instructionsPanelRef.current.focus();
               }
-            }
-          },
-          showShortcuts: (keyEvent?: KeyboardEvent) => {
-            if (!canFocusEditor && keyEvent?.shiftKey && keyEvent.key === '?') {
-              openShortcutsModal();
+            },
+            navigationMode: () => setEditorFocusability(false),
+            navigatePrev: () => {
+              if (!canFocusEditor) {
+                if (prevChallengePath) {
+                  setIsAdvancing(true);
+                  void navigate(prevChallengePath);
+                } else {
+                  void navigate('/learn');
+                }
+              }
+            },
+            navigateNext: () => {
+              if (!canFocusEditor) {
+                if (nextChallengePath) {
+                  setIsAdvancing(true);
+                  void navigate(nextChallengePath);
+                } else {
+                  void navigate('/learn');
+                }
+              }
+            },
+            showShortcuts: (keyEvent?: KeyboardEvent) => {
+              if (
+                !canFocusEditor &&
+                keyEvent?.shiftKey &&
+                keyEvent.key === '?'
+              ) {
+                openShortcutsModal();
+              }
             }
           }
-        }
-      : {})
-  };
-  // GlobalHotKeys is always mounted and tracks all keypresses. Without it,
-  // keyup events can be missed and react-hotkeys assumes that that key is still
-  // being pressed.
-  // allowChanges is necessary if the handlers depend on props (in this case
-  // canFocusEditor)
-  return (
-    <>
-      <HotKeys
-        id='editor-layout'
-        allowChanges={true}
-        handlers={handlers}
-        innerRef={containerRef}
-        keyMap={keyMap}
-      >
-        {children}
-        <GlobalHotKeys />
-      </HotKeys>
-    </>
-  );
-}
+        : {})
+    };
+    // GlobalHotKeys is always mounted and tracks all keypresses. Without it,
+    // keyup events can be missed and react-hotkeys assumes that that key is still
+    // being pressed.
+    // allowChanges is necessary if the handlers depend on props (in this case
+    // canFocusEditor)
+    return (
+      <>
+        <HotKeys
+          id='editor-layout'
+          allowChanges={true}
+          handlers={handlers}
+          // assert type because react-hotkeys doesn't expect forward the ref like
+          innerRef={ref as React.RefObject<HTMLElement>}
+          keyMap={keyMap}
+        >
+          {children}
+          <GlobalHotKeys />
+        </HotKeys>
+      </>
+    );
+  }
+);
 
 Hotkeys.displayName = 'Hotkeys';
 

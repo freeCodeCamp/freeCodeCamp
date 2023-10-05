@@ -20,7 +20,7 @@ import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import CompletionModal from '../components/completion-modal';
 import GreenPass from '../../../assets/icons/green-pass';
 import HelpModal from '../components/help-modal';
-import Hotkeys, { type HotkeysProps } from '../components/hotkeys';
+import Hotkeys from '../components/hotkeys';
 import { hideCodeAlly, tryToShowCodeAlly } from '../../../redux/actions';
 import {
   completedChallengesSelector,
@@ -113,7 +113,8 @@ interface ShowCodeAllyProps {
 
 class ShowCodeAlly extends Component<ShowCodeAllyProps> {
   static displayName: string;
-  private _container: HotkeysProps['containerRef'] | undefined;
+  private _container: React.RefObject<HTMLElement> | undefined =
+    React.createRef();
 
   componentDidMount(): void {
     const {
@@ -133,7 +134,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container = React.createRef();
     this._container?.current?.focus();
   }
 
@@ -251,7 +251,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       </LearnLayout>
     ) : (
       <Hotkeys
-        containerRef={this._container}
+        ref={this._container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

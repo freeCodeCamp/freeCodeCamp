@@ -21,7 +21,7 @@ import {
   Test
 } from '../../../../redux/prop-types';
 import ChallengeDescription from '../../components/challenge-description';
-import Hotkeys, { type HotkeysProps } from '../../components/hotkeys';
+import Hotkeys from '../../components/hotkeys';
 import ChallengeTitle from '../../components/challenge-title';
 import CompletionModal from '../../components/completion-modal';
 import HelpModal from '../../components/help-modal';
@@ -100,7 +100,8 @@ interface BackEndProps {
 // Component
 class BackEnd extends Component<BackEndProps> {
   static displayName: string;
-  private _container: HotkeysProps['containerRef'] | undefined;
+  private container: React.RefObject<HTMLElement> | undefined;
+
   constructor(props: BackEndProps) {
     super(props);
     this.state = {};
@@ -111,8 +112,8 @@ class BackEnd extends Component<BackEndProps> {
   componentDidMount() {
     this.initializeComponent();
     window.addEventListener('resize', () => this.updateDimensions());
-    this._container = React.createRef();
-    this._container?.current?.focus();
+    this.container = React.createRef();
+    this.container?.current?.focus();
   }
 
   updateDimensions() {
@@ -221,7 +222,7 @@ class BackEnd extends Component<BackEndProps> {
 
     return (
       <Hotkeys
-        containerRef={this._container}
+        ref={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

@@ -17,7 +17,7 @@ import Loader from '../../../components/helpers/loader';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
-import Hotkeys, { type HotkeysProps } from '../components/hotkeys';
+import Hotkeys from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
@@ -83,7 +83,7 @@ interface ShowOdinState {
 // Component
 class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
   static displayName: string;
-  private _container: HotkeysProps['containerRef'] | undefined;
+  private _container: React.RefObject<HTMLElement> | undefined;
 
   constructor(props: ShowOdinProps) {
     super(props);
@@ -237,7 +237,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
         executeChallenge={() => {
           this.handleSubmit(solution, openCompletionModal, assignments);
         }}
-        containerRef={this._container}
+        ref={this._container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
