@@ -14,7 +14,7 @@ const FourOhFour = (_props: RouteComponentProps): JSX.Element => {
   const { t } = useTranslation();
   const quote = randomQuote();
   return (
-    <div className='notfound-page-wrapper'>
+    <div className='notfound-page-wrapper' data-testid='four-oh-four-page'>
       <Helmet title={t('404.page-not-found') + '| freeCodeCamp'} />
       <img alt={t('404.not-found')} src={notFoundLogo} />
       <Spacer size='medium' />
