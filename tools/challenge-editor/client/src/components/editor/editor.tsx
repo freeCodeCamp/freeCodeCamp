@@ -31,7 +31,9 @@ const Editor = () => {
 
   const fetchData = () => {
     setLoading(true);
-    fetch(`${API_LOCATION}/${superblock || ''}/${block || ''}/${challenge || ''}`)
+    fetch(
+      `${API_LOCATION}/${superblock || ''}/${block || ''}/${challenge || ''}`
+    )
       .then(res => res.json() as Promise<ChallengeContent>)
       .then(
         content => {
