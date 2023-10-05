@@ -1,12 +1,21 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
+let page: Page;
 const examUrl =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';
 const cancelExamUrl =
   '/learn/foundational-c-sharp-with-microsoft/#foundational-c-sharp-with-microsoft-certification-exam';
+
+test.beforeAll(async ({ browser }) => {
+  page = await browser.newPage();
+});
+
+test.afterAll(async () => {
+  await page.close();
+});
 
 test.beforeEach(async ({ page }) => {
   await page.goto(examUrl);
