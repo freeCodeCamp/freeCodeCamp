@@ -24,9 +24,19 @@ To learn how to write Playwright tests, or 'specs', please see Playwright's offi
 
  This section will explain in detail about best practices for writing and documenting E2E tests based on Playwright documentation and our community code-style.
 
+### - Imports
+  
+Always start with necessary imports at the beginning of the file.
+  
+For example:
+  
+```ts
+import { test, expect, type Page } from '@playwright/test';
+```
+
 ### - Identifying a DOM element
 
-Playwright comes with [multiple built-in locators](https://playwright.dev/docs/locators#quick-guide), but we recommend priritizing the following locators:
+Playwright comes with [multiple built-in locators](https://playwright.dev/docs/locators#quick-guide), but we recommend prioritizing the following locators:
   - `getByRole` for querying semantic elements, whose role is important and allows assistive technology to perceive the page correctly. 
   - `getByText` for querying non-semantic elements such as `div`, `span`, or `p`.
 
@@ -52,16 +62,6 @@ For example:
 
 ```ts
 await expect(page.getByTestId('landing-page-figure')).toBeVisible();
-```
-
-### - Imports
-  
-Always start with necessary imports at the beginning of the file.
-  
-For example:
-  
-```ts
-import { test, expect, type Page } from '@playwright/test';
 ```
 
 ### - Constants
