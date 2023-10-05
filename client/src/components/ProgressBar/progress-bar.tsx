@@ -73,7 +73,7 @@ function ProgressBar({
   return (
     <div
       className='progress-bar-container'
-      data-playwright-test-label='progress-bar-contanier'
+      data-playwright-test-label='progress-bar-container'
     >
       <ProgressBarInner
         title={blockTitle}

@@ -13,14 +13,12 @@ test.afterAll(async () => {
   await page.close();
 });
 
-test.describe('Should show the progress bar showing the completed percent on  challenges', () => {
-  test('Should enter code in the editor and show the progress bar', async () => {
-    const monacoEditor = page.locator(
-      '.react-monaco-editor-container textarea'
-    );
+test.describe('Progress bar component', () => {
+  test('Should appear with the correct content after the user has submitted their code', async () => {
+    const monacoEditor = page.getByLabel('Editor content');
     await monacoEditor.click();
-
     await page.keyboard.press('Control+A');
+    //Meta + A works in webkit
     await page.keyboard.press('Meta+A');
     await page.keyboard.press('Backspace');
 
@@ -30,11 +28,11 @@ test.describe('Should show the progress bar showing the completed percent on  ch
     const lowerCheckButton = page.getByText('Check Your Code (Ctrl + Enter)');
 
     await lowerCheckButton.click({ force: true });
-    const progressBarContanier = page.getByTestId('progress-bar-contanier');
-    await expect(progressBarContanier).toContainText(
+    const progressBarContainer = page.getByTestId('progress-bar-container');
+    await expect(progressBarContainer).toContainText(
       'Learn HTML by Building a Cat Photo App'
     );
-    await expect(progressBarContanier).toContainText('0% complete');
+    await expect(progressBarContainer).toContainText('0% complete');
     const submitCheckButton = page.getByText('Submit and go to next challenge');
     await expect(submitCheckButton).toBeVisible();
   });
