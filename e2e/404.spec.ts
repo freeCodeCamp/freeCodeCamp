@@ -6,7 +6,7 @@ test.describe('404 Page', () => {
     await page.goto('/settings');
   });
 
-  test('Should have a relevant page title', async () => {
+  test('Should have a relevant page title', async ({ page }) => {
     await expect(page).toHaveTitle('Page not found| freeCodeCamp');
   });
 
