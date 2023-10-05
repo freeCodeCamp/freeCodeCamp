@@ -1,14 +1,7 @@
-// ToDo: update to prettier 3.x.x
-// We need to update prettier to 3.0.3, which should fix this as it does include the types of the function by default
-// but this cascade to role-up, and role-up expect the types to based to it, which stops the creation of enviornments
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { existsSync } from 'fs';
 import fs from 'fs/promises';
 import path from 'path';
 import { prompt } from 'inquirer';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import { format } from 'prettier';
 
 import ObjectID from 'bson-objectid';
