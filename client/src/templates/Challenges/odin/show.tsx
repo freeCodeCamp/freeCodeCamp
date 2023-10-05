@@ -83,7 +83,7 @@ interface ShowOdinState {
 // Component
 class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
   static displayName: string;
-  private _container: React.RefObject<HTMLElement> | undefined;
+  private container: React.RefObject<HTMLElement> | undefined;
 
   constructor(props: ShowOdinProps) {
     super(props);
@@ -119,8 +119,8 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container = React.createRef();
-    this._container?.current?.focus();
+    this.container = React.createRef();
+    this.container?.current?.focus();
   }
 
   componentDidUpdate(prevProps: ShowOdinProps): void {
@@ -237,7 +237,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
         executeChallenge={() => {
           this.handleSubmit(solution, openCompletionModal, assignments);
         }}
-        containerRef={this._container}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

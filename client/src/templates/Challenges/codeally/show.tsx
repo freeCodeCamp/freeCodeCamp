@@ -113,7 +113,7 @@ interface ShowCodeAllyProps {
 
 class ShowCodeAlly extends Component<ShowCodeAllyProps> {
   static displayName: string;
-  private _container: React.RefObject<HTMLElement> | undefined =
+  private container: React.RefObject<HTMLElement> | undefined =
     React.createRef();
 
   componentDidMount(): void {
@@ -134,7 +134,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container?.current?.focus();
+    this.container?.current?.focus();
   }
 
   componentWillUnmount() {
@@ -251,7 +251,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       </LearnLayout>
     ) : (
       <Hotkeys
-        containerRef={this._container}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
