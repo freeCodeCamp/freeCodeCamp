@@ -1,9 +1,9 @@
 export interface BlockRequiredProps {
-  superblock?: string;
-  block?: string;
+  superblock: string;
+  block: string;
 }
 
 export interface ChallengeContentRequiredProps extends BlockRequiredProps {
-  challenge?: string;
+  challenge: string;
   content: string;
 }
