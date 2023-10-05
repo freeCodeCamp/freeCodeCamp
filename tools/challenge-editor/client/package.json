@@ -22,12 +22,6 @@
     "test": "echo \"no tests here yet\"",
     "postinstall": "shx cp ./sample.env ./.env"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "devDependencies": {
     "@types/codemirror": "5.60.10",
     "@types/react": "16.14.48",
