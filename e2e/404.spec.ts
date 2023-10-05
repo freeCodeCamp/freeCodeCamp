@@ -10,7 +10,7 @@ test.describe('404 Page', () => {
     await expect(page).toHaveTitle('Page not found| freeCodeCamp');
   });
 
-  test('Should display a message indicating a 404 error', async () => {
+  test('Should display a message indicating a 404 error', async ({ page }) => {
     await expect(page.getByText('Page not found.')).toBeVisible();
   });
 });
