@@ -45,15 +45,23 @@ describe('Donate', () => {
   });
 
   describe('Unauthenticated User', () => {
-    describe('POST /donate/add-donation', () => {
-      it('should return 403', async () => {
-        const response = await superRequest('/donate/add-donation', {
-          method: 'POST'
-        }).send({
-          isDonating: true
-        });
+    let setCookies: string[];
+    // Get the CSRF cookies from an unprotected route
+    beforeAll(async () => {
+      const res = await superRequest('/status/ping', { method: 'GET' });
+      setCookies = res.get('Set-Cookie');
+    });
+    const endpoints: { path: string; method: 'POST' }[] = [
+      { path: '/donate/add-donation', method: 'POST' }
+    ];
 
-        expect(response.status).toBe(403);
+    endpoints.forEach(({ path, method }) => {
+      test(`${method} ${path} returns 401 status code with error message`, async () => {
+        const response = await superRequest(path, {
+          method,
+          setCookies
+        });
+        expect(response.statusCode).toBe(401);
       });
     });
   });

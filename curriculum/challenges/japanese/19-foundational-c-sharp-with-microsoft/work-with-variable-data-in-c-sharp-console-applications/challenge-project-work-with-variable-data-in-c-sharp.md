@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">Work with Variable Data in C#</a> challenge project on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 To sort a string array, why is it important to use the `String.Trim()` method on each array element before sorting?

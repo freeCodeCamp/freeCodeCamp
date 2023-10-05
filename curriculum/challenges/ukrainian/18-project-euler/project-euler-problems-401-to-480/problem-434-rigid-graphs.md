@@ -1,6 +1,6 @@
 ---
 id: 5900f51f1000cf542c510031
-title: 'Problem 434: Rigid graphs'
+title: 'Завдання 434: жорсткі графи'
 challengeType: 1
 forumTopicId: 302105
 dashedName: problem-434-rigid-graphs
@@ -8,7 +8,7 @@ dashedName: problem-434-rigid-graphs
 
 # --description--
 
-Recall that a graph is a collection of vertices and edges connecting the vertices, and that two vertices connected by an edge are called adjacent.
+Пригадайте, що граф — це набір вершин та ребер, які з’єднують ці вершини. Дві вершини, з’єднані ребром, називаються прилеглими.
 
 Graphs can be embedded in Euclidean space by associating each vertex with a point in the Euclidean space.
 
@@ -30,13 +30,13 @@ Note that for the purposes of this problem, we do not consider changing the orie
 
 Let $R(m, n)$ be the number of ways to make the $m × n$ grid graph rigid.
 
-E.g. $R(2, 3) = 19$ and $R(5, 5) = 23\\,679\\,901$.
+Наприклад, $R(2, 3) = 19$ та $R(5, 5) = 23\\,679\\,901$.
 
-Define $S(N)$ as $\sum R(i, j)$ for $1 ≤ i$, $j ≤ N$.
+Визначимо $S(N)$ як $\sum R(i, j)$ за умови $1 ≤ i$, $j ≤ N$.
 
-E.g. $S(5) = 25\\,021\\,721$.
+Наприклад, $S(5) = 25\\,021\\,721$.
 
-Find $S(100)$, give your answer modulo $1\\,000\\,000\\,033$.
+Знайдіть $S(100)$. Надайте відповідь за модулем $1\\,000\\,000\\,033$.
 
 # --hints--
 

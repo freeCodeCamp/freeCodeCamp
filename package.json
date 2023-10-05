@@ -108,7 +108,7 @@
     "@testing-library/user-event": "13.5.0",
     "@types/jest": "29.5.5",
     "@types/lodash": "4.14.199",
-    "@types/node": "18.17.19",
+    "@types/node": "18.18.1",
     "@types/store": "2.0.3",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",

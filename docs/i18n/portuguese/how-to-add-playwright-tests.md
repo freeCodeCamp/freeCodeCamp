@@ -160,7 +160,7 @@ Para aprender a escrever testes do Playwright ou 'specs', confira a [documentaç
 
 ### 1. Veja se as aplicações de client e do MongoDB estão em execução
 
-- [Inicie o MongoDB e crie o banco de dados](how-to-setup-**freecodecamp**-locally.md#step-3-start-mongodb-and-seed-the-database)
+- [Inicie o MongoDB e crie o banco de dados](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
 - [Inicie também a aplicação de client do freeCodeCamp e o servidor da API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
@@ -242,7 +242,7 @@ npx playwright show-report
 
 ### 5. Solução de problemas
 
-O Playwright, geralmente, é uma ferramenta com pouquíssimas chances de erro. The contributor has already configured the tests to run on all OS machines, including major distributions of Windows, MacOS and Linux.
+O Playwright, geralmente, é uma ferramenta com pouquíssimas chances de erro. O colaborador já configurou os testes para serem executados em máquinas com todos os sistemas operacionais, incluindo as distribuições mais significativas do Windows, MacOS e Linux.
 
 - (MacOs e Linux) Se executar o Playwright resultar em um erro devido a dependências do kernel, execute o seguinte comando:
 

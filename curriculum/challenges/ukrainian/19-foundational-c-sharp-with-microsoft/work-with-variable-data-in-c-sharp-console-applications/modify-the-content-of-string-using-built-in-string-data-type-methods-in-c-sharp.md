@@ -14,6 +14,10 @@ dashedName: modify-the-content-of-string-using-built-in-string-data-type-methods
 
 # --question--
 
+## --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-modify-content/" target="_blank" rel="noreferrer">«Змініть вміст рядків, використовуючи вбудовані методи даних рядків в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Який метод знаходить наступний індекс символа `-`, `=` або `_`?

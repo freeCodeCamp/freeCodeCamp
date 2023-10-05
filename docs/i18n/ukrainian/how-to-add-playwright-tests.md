@@ -160,7 +160,7 @@ pnpm run playwright:install-build-tools
 
 ### 1. Переконайтеся, що MongoDB і клієнтські програми запущені
 
-- [Запустіть MongoDB і заповнiть базу даних](how-to-setup-**freecodecamp**-locally.md#step-3-start-mongodb-and-seed-the-database)
+- [Запустіть MongoDB і заповнiть базу даних](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
 - [Запустіть клієнтський застосунок freeCodeCamp і сервер API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
@@ -242,7 +242,7 @@ npx playwright show-report
 
 ### 5. Розв’язання проблем розробки
 
-Playwright, як правило, є інструментом з дуже малим шансом на помилку. The contributor has already configured the tests to run on all OS machines, including major distributions of Windows, MacOS and Linux.
+Playwright, як правило, є інструментом з дуже малим шансом на помилку. Помічник вже налаштував тести для виконання на машинах з усіма операційними системами, включно з найважливішими дистрибутивами Windows, MacOS і Linux.
 
 - (MacOs та Linux) Якщо запуск Playwright призводить до помилки через залежності ядра, запустіть цю команду:
 
