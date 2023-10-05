@@ -129,7 +129,7 @@ for (const logo of await logos.all()) {
 
 ### - Tests for mobile screens
 
-Use the `isMobile` argument to run tests that incude logic that varies for mobile screens.
+Use the `isMobile` argument to run tests that include logic that varies for mobile screens.
 
 For example:
 
