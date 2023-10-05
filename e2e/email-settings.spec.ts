@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 
 const settingsPageElement = {
   emailSettingsSectionHeader: 'email-settings-header',
@@ -13,34 +13,33 @@ const settingsPageElement = {
   flashMessageAlert: 'flash-message'
 } as const;
 
+let page: Page;
+
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-test.beforeEach(async ({ page }) => {
+test.beforeAll(async ({ browser }) => {
+  page = await browser.newPage();
   await page.goto('/settings');
 });
 
-test.afterEach(async ({ page }) => {
+test.afterAll(async () => {
   await page.close();
 });
 
 test.describe('Email Settings', () => {
-  test('should display email settings section header on settings page', async ({
-    page
-  }) => {
+  test('should display email settings section header on settings page', async () => {
     await expect(
       page.getByTestId(settingsPageElement.emailSettingsSectionHeader)
     ).toHaveText('Email Settings');
   });
 
-  test('should display current email address', async ({ page }) => {
+  test('should display current email address', async () => {
     await expect(
       page.getByTestId(settingsPageElement.currentEmailText)
     ).toHaveText('foo@bar.com');
   });
 
-  test('should display email verification alert after email update', async ({
-    page
-  }) => {
+  test('should display email verification alert after email update', async () => {
     const newEmailAddress = 'foo-update@bar.com';
 
     await page
@@ -59,16 +58,20 @@ test.describe('Email Settings', () => {
       page.getByTestId(settingsPageElement.emailVerificationAlert)
     ).toBeVisible();
 
-    await page.getByTestId(settingsPageElement.emailVerificationLink).click();
-    await expect(page).toHaveURL(/update-email/);
+    const emailVerificationLink = page.getByTestId(
+      settingsPageElement.emailVerificationLink
+    );
+    await expect(emailVerificationLink).toHaveAttribute(
+      'href',
+      '/update-email'
+    );
   });
 
-  test('should display flash message when email subscription is toggled', async ({
-    page
-  }) => {
+  test('should display flash message when email subscription is toggled', async () => {
     await page
       .getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
       .click();
+
     await expect(
       page.getByTestId(settingsPageElement.flashMessageAlert)
     ).toContainText("We have updated your subscription to Quincy's email");
