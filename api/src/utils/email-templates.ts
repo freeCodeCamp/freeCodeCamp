@@ -12,13 +12,21 @@ export const generateReportEmail = (
   abuser: string,
   reportDesc: string
 ) => {
-  const intro = `Hello Team,\n\nThis is to report the profile of ${abuser}.`;
-  const reportDetails = `Report Details:\n\n${reportDesc}`;
-  const reporterUsername = `Username: ${reporter.username}`;
-  const reporterName = `Name: ${reporter.name ?? ''}`;
-  const reporterEmail = `Email: ${reporter.email}`;
-  const reportedBy = `Reported by:\n${reporterUsername}\n${reporterName}\n${reporterEmail}`;
-  const signature = `Thanks and regards,\n${reporter.name ?? ''}`;
+  return `
+Hello Team,
 
-  return `${intro}\n\n${reportDetails}\n\n\n${reportedBy}\n\n${signature}`;
+This is to report the profile of ${abuser}.
+
+Report Details:
+
+${reportDesc}
+
+
+Reported by:
+Username: ${reporter.username}
+Name: ${reporter.name ?? ''}
+Email: ${reporter.email}
+
+Thanks and regards,
+${reporter.name ?? ''}`;
 };
