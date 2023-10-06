@@ -2,6 +2,7 @@ import { existsSync } from 'fs';
 import fs from 'fs/promises';
 import path from 'path';
 import { prompt } from 'inquirer';
+
 import { format } from 'prettier';
 
 import ObjectID from 'bson-objectid';

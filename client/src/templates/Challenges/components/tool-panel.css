@@ -11,6 +11,7 @@
 .tool-panel-group-mobile {
   display: flex;
   flex-direction: row-reverse;
+  height: 37px;
   width: 100%;
   background-color: var(--tertiary-background);
   position: absolute;
@@ -36,6 +37,10 @@
 
 .tool-panel-group-mobile .btn {
   margin: 0 !important;
+}
+
+.tool-panel-group-mobile #get-help-dropdown {
+  height: 37px;
 }
 
 .tool-panel-group-mobile *:focus-visible {

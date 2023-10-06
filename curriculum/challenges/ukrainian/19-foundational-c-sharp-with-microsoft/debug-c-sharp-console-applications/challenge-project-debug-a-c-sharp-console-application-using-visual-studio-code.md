@@ -14,6 +14,10 @@ dashedName: challenge-project-debug-a-c-sharp-console-application-using-visual-s
 
 # --question--
 
+## --assignment--
+
+Виконайте проєкт завдання <a href="https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank" rel="noreferrer">«Налагодьте консольний застосунок C#, використовуючи Visual Studio Code»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Що з переліченого можна використати, щоб встановити точку зупинки в Visual Studio Code?

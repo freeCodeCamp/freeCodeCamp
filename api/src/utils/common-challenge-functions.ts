@@ -16,10 +16,6 @@ export const multifileCertProjectIds = getChallenges()
   .filter(c => c.challengeType === challengeTypes.multifileCertProject)
   .map(c => c.id);
 
-const savableChallenges = getChallenges()
-  .filter(c => c.challengeType === challengeTypes.multifileCertProject)
-  .map(c => c.id);
-
 type SavedChallengeFile = {
   key: string;
   ext: string; // NOTE: This is Ext type in client
@@ -64,6 +60,39 @@ export type CompletedChallenge = {
   isManuallyApproved?: boolean | null;
   files?: CompletedChallengeFile[];
 };
+
+/**
+ * Helper function to save a user's challenge data. Used in challenge
+ * submission endpoints.
+ *
+ * @param challengeId The id of the submitted challenge.
+ * @param savedChallenges The user's saved challenges array.
+ * @param challenge The saveble challenge.
+ * @returns Update or push the saved challenges.
+ */
+export function saveUserChallengeData(
+  challengeId: string,
+  savedChallenges: SavedChallenge[],
+  challenge: Omit<SavedChallenge, 'lastSavedDate'>
+) {
+  const challengeToSave: SavedChallenge = {
+    id: challengeId,
+    lastSavedDate: Date.now(),
+    files: challenge.files?.map(file =>
+      pick(file, ['contents', 'key', 'name', 'ext', 'history'])
+    )
+  };
+
+  const savedIndex = savedChallenges.findIndex(({ id }) => challengeId === id);
+
+  if (savedIndex >= 0) {
+    savedChallenges[savedIndex] = challengeToSave;
+  } else {
+    savedChallenges.push(challengeToSave);
+  }
+
+  return savedChallenges;
+}
 
 /**
  * Helper function to update a user's challenge data. Used in challenge
@@ -152,7 +181,7 @@ export async function updateUserChallengeData(
     userCompletedChallenges.push(finalChallenge);
   }
 
-  if (savableChallenges.includes(challengeId)) {
+  if (multifileCertProjectIds.includes(challengeId)) {
     const challengeToSave: SavedChallenge = {
       id: challengeId,
       lastSavedDate: newProgressTimeStamp,

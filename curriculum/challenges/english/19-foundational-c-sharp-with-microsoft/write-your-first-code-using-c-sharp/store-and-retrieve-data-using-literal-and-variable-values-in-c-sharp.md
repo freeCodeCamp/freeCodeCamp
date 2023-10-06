@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the <a href="https://learn.microsoft.com/training/modules/csharp-literals-variables/" target="_blank" rel="noreferrer">Store and Retrieve Data Using Literal and Variable Values in C#</a> module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 Which of the following lines of code creates a variable correctly?

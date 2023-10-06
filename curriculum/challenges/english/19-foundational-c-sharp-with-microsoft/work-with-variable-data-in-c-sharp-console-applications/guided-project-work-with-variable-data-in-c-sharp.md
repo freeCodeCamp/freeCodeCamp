@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the <a href="https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">Work with Variable Data in C#</a> guided project on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 For the code `decimal.TryParse(numberString, out myConvert))` when the type of `numberString` is a String.

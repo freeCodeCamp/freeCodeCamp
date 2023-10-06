@@ -12,7 +12,6 @@ module.exports = defineConfig({
     projectId: 'ke77ns',
     retries: { openMode: 1, runMode: 4 },
     chromeWebSecurity: false,
-
     // This is the default spec pattern, that we use on /learn proper
     //
     // For special ones like the third- party or the mobile app specs,

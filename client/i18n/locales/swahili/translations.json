@@ -551,7 +551,9 @@
     "how-update": "Ninaanzisha mchango wa kila mwezi, lakini ninahitaji kusasisha au kusitisha ujirudiaji wa kila mwezi. Ninawezaje kufanya hili?",
     "take-care-of-this": "Tuma moja ya risiti zako za michango ya kila mwezi kwa donors@freecodecamp.org na utuambie kile ungependa tufanye. Tutakushughulikia na kukutumia uthibitisho.",
     "anything-else": "Kuna kitu kingine chochote ninachoweza kujifunza kuhusu kuchangia freeCodeCamp.org?",
-    "other-support": "Ikiwa kuna njia nyingine ungependa kusaidia shirika letu la kutoa msaada na dhamira yake ambayo haijaorodheshwa hapa, au ikiwa una maswali yoyote, tafadhali tuma barua pepe kwa Quincy kupitia quincy@freecodecamp.org."
+    "other-support": "Ikiwa kuna njia nyingine ungependa kusaidia shirika letu la kutoa msaada na dhamira yake ambayo haijaorodheshwa hapa, au ikiwa una maswali yoyote, tafadhali tuma barua pepe kwa Quincy kupitia quincy@freecodecamp.org.",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "Unahitaji kuingia ili kuripoti mtumiaji",
@@ -718,12 +720,26 @@
     "challenge-submit-too-big": "Samahani, huwezi kuwasilisha msimbo wako. Msimbo wako ni baiti {{user-size}}. Tunaruhusu upeo wa baiti {{max-size}}. Tafadhali punguza msimbo wako na ujaribu tena au uombe usaidizi katika https://forum.freecodecamp.org",
     "invalid-update-flag": "Unajaribu kufikia rasilimali zilizopigwa marufuku. Tafadhali omba usaidizi katika https://forum.freecodecamp.org ikiwa hili ni ombi halali.",
     "generate-exam-error": "Hitilafu ilitokea wakati wa kujaribu kuunda mtihani wako.",
-    "ms-trophy-err": "We were unable to verify your trophy from Microsoft's learning platform.",
-    "ms-trophy-verified": "Your trophy from Microsoft's learning platform was verified.",
-    "ms-linked": "Your Microsoft username been linked to your freeCodeCamp account.",
-    "ms-link-err": "An error occurred trying to link your Microsoft username to your freeCodeCamp account.",
-    "ms-unlinked": "The link to your Microsoft username has been removed.",
-    "ms-unlink-err": "An error occurred trying to remove the link to your Microsoft username."
+    "ms": {
+      "transcript": {
+        "link-err-1": "Please include a Microsoft transcript URL in the request.",
+        "link-err-2": "Something went wrong trying to get your transcript from Microsoft.",
+        "link-err-3": "A username was not found in your Microsoft transcript.",
+        "link-err-4": "That Microsoft username is being used by another freeCodeCamp account.",
+        "link-err-5": "Something went wrong trying to save your Microsoft account.",
+        "link-err-6": "Something went wrong trying to link your Microsoft username to your freeCodeCamp account.",
+        "linked": "Your Microsoft username has been linked to your freeCodeCamp account.",
+        "unlinked": "The link to your Microsoft username has been removed.",
+        "unlink-err": "Something went wrong trying to remove the link to your Microsoft username."
+      },
+      "trophy": {
+        "err-1": "We could not find a Microsoft username associated with your freeCodeCamp account.",
+        "err-2": "You are trying to submit a challenge that does not appear to be a trophy challenge.",
+        "err-3": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
+        "err-4": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "verified": "Your trophy from Microsoft's learning platform was verified."
+      }
+    }
   },
   "validation": {
     "max-characters": "Kuna upeo wa juu wa herufi 288, umesalia na {{charsLeft}}",
@@ -750,6 +766,7 @@
     "verify": "Thibitisha uthibitishaji huu kwenye:",
     "issued": "Iliyotolewa",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
+    "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "Kama sehemu ya uthibitishaji huu wa Legacy Full Stack, {{user}} alikamilisha uthibitishaji ufuatao:",
       "heading": "Kama sehemu ya uthibitishaji huu, {{user}} aliunda miradi ifuatayo na akapita majaribio yote ya majaribio ya kiotomatiki:",
@@ -933,8 +950,8 @@
     "nevermind": "Usijali, sitaki kuondoka"
   },
   "staging-warning": {
-    "heading": "Warning: This is an Early Access - Test Deployment",
-    "p1": "We welcome you to test this release in a test-only mode and get early access to upcoming platform features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "heading": "Warning: This is an early access test deployment",
+    "p1": "We welcome you to try this platform in a test-only mode and get early access to upcoming features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
     "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
     "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
     "certain": "Accept and Dismiss"

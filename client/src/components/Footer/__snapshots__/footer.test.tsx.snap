@@ -9,6 +9,7 @@ exports[`<Footer /> matches snapshot 1`] = `
   >
     <div
       className="footer-desc-col"
+      data-playwright-test-label="footer-desc-col"
     >
       <p>
         footer.tax-exempt-status
@@ -37,11 +38,13 @@ exports[`<Footer /> matches snapshot 1`] = `
     >
       <h2
         className="col-header"
+        data-playwright-test-label="trending-guides-col-header"
       >
         footer.trending-guides
       </h2>
       <div
         className="trending-guides-articles"
+        data-playwright-test-label="trending-guides-articles"
       >
         <span>
           <a
@@ -321,11 +324,13 @@ exports[`<Footer /> matches snapshot 1`] = `
   >
     <h2
       className="col-header"
+      data-playwright-test-label="footer-bottom-col-header"
     >
       footer.our-nonprofit
     </h2>
     <div
       className="our-nonprofit"
+      data-playwright-test-label="our-nonprofit"
     >
       <a
         href="links:footer.about-url"

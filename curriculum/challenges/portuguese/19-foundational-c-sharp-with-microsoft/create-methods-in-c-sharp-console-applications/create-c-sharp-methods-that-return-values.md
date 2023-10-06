@@ -14,6 +14,10 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 
 # --question--
 
+## --assignment--
+
+Complete o módulo <a href="https://learn.microsoft.com/training/modules/create-c-sharp-methods-return-values/" target="_blank" rel="noreferrer">Crie métodos em C# que retornem valores</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
 ## --text--
 
 Qual das opções a seguir retorna corretamente um valor do tipo `string`?

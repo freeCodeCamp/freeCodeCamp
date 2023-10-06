@@ -40,6 +40,28 @@ dashedName: serve-static-assets
   );
 ```
 
+Застосунок не повинен обслуговувати файли з будь-яких інших папок, окрім директорії `/public`
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/server.js').then(
+    (data) => {
+       assert.equal(
+        data?.status + '',
+        404 + '',
+        'Your app must serve files only from "public" directory'
+      );
+    },
+    (xhr) => {
+      assert.equal(
+        xhr?.status + '',
+        404 + '',
+        'Your app must serve files only from "public" directory'
+      );
+    }
+  );
+```
+
 # --solutions--
 
 ```js

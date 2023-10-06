@@ -18,7 +18,6 @@ export interface Source {
 
 export interface Context {
   window?: Window &
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     typeof globalThis & { i18nContent?: i18n; __pyodide: unknown };
   document?: FrameDocument | PythonDocument;
   element: HTMLIFrameElement;

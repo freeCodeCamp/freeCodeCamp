@@ -260,15 +260,19 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                     {answers.map((option, index) => (
                       // answers are static and have no natural id property, so
                       // index should be fine as a key:
-                      <label className='video-quiz-option-label' key={index}>
+                      <label
+                        className='video-quiz-option-label'
+                        key={index}
+                        htmlFor={`mc-question-${index}`}
+                      >
                         <input
-                          aria-label={t('aria.answer')}
                           checked={this.state.selectedOption === index}
-                          className='video-quiz-input-hidden'
+                          className='sr-only'
                           name='quiz'
                           onChange={this.handleOptionChange}
                           type='radio'
                           value={index}
+                          id={`mc-question-${index}`}
                         />{' '}
                         <span className='video-quiz-input-visible'>
                           {this.state.selectedOption === index ? (
@@ -277,7 +281,9 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                         </span>
                         <PrismFormatted
                           className={'video-quiz-option'}
-                          text={option}
+                          text={option.replace(/^<p>|<\/p>$/g, '')}
+                          useSpan
+                          noAria
                         />
                       </label>
                     ))}

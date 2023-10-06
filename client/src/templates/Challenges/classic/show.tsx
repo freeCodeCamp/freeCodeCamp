@@ -333,11 +333,6 @@ function ShowClassic({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    initializeComponent(title);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tests, title]);
-
   const initializeComponent = (title: string): void => {
     initConsole('');
 

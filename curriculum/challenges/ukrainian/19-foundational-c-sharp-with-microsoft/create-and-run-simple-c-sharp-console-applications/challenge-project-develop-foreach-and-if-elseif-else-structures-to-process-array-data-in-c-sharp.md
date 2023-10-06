@@ -14,6 +14,10 @@ dashedName: challenge-project-develop-foreach-and-if-elseif-else-structures-to-p
 
 # --question--
 
+## --assignment--
+
+Виконайте проєкт завдання <a href="https://learn.microsoft.com/training/modules/challenge-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">«Розробіть структури foreach та if-elseif-else, щоб обробити дані масиву в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Розробник працює з двома іншими розробниками над оновленням застосунків. Вони використовуватимуть коментарі під час процесу оновлення. У якому випадку доречно використовувати коментарі в коді?
