@@ -96,7 +96,6 @@ h6 {
 h4,
 h5,
 h6,
-p,
 td,
 th {
   color: var(--secondary-color);
@@ -107,6 +106,9 @@ th {
 
 p {
   line-height: 1.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0 0 1.2rem;
 }
 
 .big-heading {
