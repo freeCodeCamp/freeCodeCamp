@@ -1,4 +1,6 @@
 import { devLogin, setupServer, superRequest } from '../../jest.utils';
+import { defaultUser } from '../utils/default-user';
+
 import { isPictureWithProtocol } from './settings';
 
 const baseProfileUI = {
@@ -23,6 +25,11 @@ const profileUI = {
   showName: true,
   showPortfolio: true
 };
+
+const developerUserEmail = 'foo@bar.com';
+const otherDeveloperUserEmail = 'bar@bar.com';
+const unusedEmailOne = 'nobody@would.com';
+const unusedEmailTwo = 'would@they.com';
 
 const updateErrorResponse = {
   type: 'danger',
@@ -92,9 +99,22 @@ describe('settingRoutes', () => {
       // profileUI, but we're interested in how the profileUI is updated. As
       // such, setting this explicitly isolates these tests.
       await fastifyTestInstance.prisma.user.updateMany({
-        where: { email: 'foo@bar.com' },
+        where: { email: developerUserEmail },
         data: { profileUI: baseProfileUI }
       });
+
+      const otherUser = await fastifyTestInstance.prisma.user.findFirst({
+        where: { email: otherDeveloperUserEmail }
+      });
+
+      if (!otherUser) {
+        await fastifyTestInstance.prisma.user.create({
+          data: {
+            ...defaultUser,
+            email: otherDeveloperUserEmail
+          }
+        });
+      }
     });
 
     describe('/update-my-profileui', () => {
@@ -107,7 +127,7 @@ describe('settingRoutes', () => {
         });
 
         const user = await fastifyTestInstance.prisma.user.findFirst({
-          where: { email: 'foo@bar.com' }
+          where: { email: developerUserEmail }
         });
 
         expect(response.body).toEqual({
@@ -130,7 +150,7 @@ describe('settingRoutes', () => {
         });
 
         const user = await fastifyTestInstance.prisma.user.findFirst({
-          where: { email: 'foo@bar.com' }
+          where: { email: developerUserEmail }
         });
 
         expect(user?.profileUI).toEqual(profileUI);
@@ -154,6 +174,166 @@ describe('settingRoutes', () => {
         expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
       });
+    });
+
+    describe('/update-my-email', () => {
+      beforeEach(async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: developerUserEmail },
+          data: {
+            newEmail: null,
+            emailVerified: true,
+            emailVerifyTTL: null,
+            emailAuthLinkTTL: null
+          }
+        });
+      });
+      test('PUT returns 200 status code with "success" message', async () => {
+        const response = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: 'foo@foo.com' });
+
+        expect(response?.body).toEqual({
+          message: 'flash.email-valid',
+          type: 'success'
+        });
+        expect(response?.statusCode).toEqual(200);
+      });
+
+      test("PUT updates the user's record in preparation for receiving auth email", async () => {
+        const response = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: unusedEmailOne });
+
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+          where: { email: developerUserEmail },
+          select: { emailVerifyTTL: true, emailVerified: true, newEmail: true }
+        });
+        const emailVerifyTTL = user?.emailVerifyTTL;
+        expect(emailVerifyTTL).toBeTruthy();
+        // This throw is to mollify TS (if this is necessary a lot, create a
+        // helper)
+        if (!emailVerifyTTL) {
+          throw new Error('emailVerifyTTL is not defined');
+        }
+
+        expect(response?.statusCode).toEqual(200);
+
+        // expect the emailVerifyTTL to be within 10 seconds of the current time
+        const tenSeconds = 10 * 1000;
+        expect(emailVerifyTTL.getTime()).toBeGreaterThan(
+          Date.now() - tenSeconds
+        );
+        expect(emailVerifyTTL.getTime()).toBeLessThan(Date.now() + tenSeconds);
+
+        expect(user?.emailVerified).toEqual(false);
+        expect(user?.newEmail).toEqual(unusedEmailOne);
+      });
+
+      test('PUT rejects invalid email addresses', async () => {
+        const response = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: 'invalid' });
+
+        // We cannot use fastify's default validation failure response here
+        // because the client consumes the response and displays it to the user.
+        expect(response?.body).toEqual({
+          type: 'danger',
+          message: 'Email format is invalid'
+        });
+        expect(response?.statusCode).toEqual(400);
+      });
+
+      test('PUT accepts requests to update to the current email address (ignoring case) if it is not verified', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: developerUserEmail },
+          data: { emailVerified: false }
+        });
+        const response = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: developerUserEmail.toUpperCase() });
+
+        expect(response?.statusCode).toEqual(200);
+        expect(response?.body).toEqual({
+          message: 'flash.email-valid',
+          type: 'success'
+        });
+      });
+
+      test('PUT rejects a request to update to the existing email (ignoring case) address', async () => {
+        const response = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: developerUserEmail.toUpperCase() });
+
+        expect(response?.body).toEqual({
+          type: 'info',
+          message: `${developerUserEmail} is already associated with this account.
+You can update a new email address instead.`
+        });
+        expect(response?.statusCode).toEqual(400);
+      });
+
+      test('PUT rejects a request to update to the same email (ignoring case) twice', async () => {
+        const successResponse = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: unusedEmailOne });
+
+        expect(successResponse?.statusCode).toEqual(200);
+
+        const failResponse = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: unusedEmailOne.toUpperCase() });
+
+        expect(failResponse?.body).toEqual({
+          type: 'info',
+          message: `We have already sent an email confirmation request to ${unusedEmailOne}.
+Please wait 5 minutes to resend an authentication link.`
+        });
+        expect(failResponse?.statusCode).toEqual(429);
+      });
+
+      test('PUT rejects a request if the new email is already in use', async () => {
+        const response = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: otherDeveloperUserEmail });
+
+        expect(response?.body).toEqual({
+          type: 'info',
+          message: `${otherDeveloperUserEmail} is already associated with another account.`
+        });
+        expect(response?.statusCode).toEqual(400);
+      });
+
+      test('PUT rejects the second request if is immediately after the first', async () => {
+        const successResponse = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: unusedEmailOne });
+
+        expect(successResponse?.statusCode).toEqual(200);
+
+        const failResponse = await superRequest('/update-my-email', {
+          method: 'PUT',
+          setCookies
+        }).send({ email: unusedEmailTwo });
+
+        expect(failResponse?.statusCode).toEqual(429);
+
+        expect(failResponse?.body).toEqual({
+          type: 'info',
+          message: `Please wait 5 minutes to resend an authentication link.`
+        });
+      });
+
+      // TODO: test that the correct email gets sent
     });
 
     describe('/update-my-theme', () => {

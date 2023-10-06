@@ -1,11 +1,11 @@
 import {
   HelpBlock,
-  Alert,
   FormGroup,
   ControlLabel,
   FormControl,
   Button
 } from '@freecodecamp/react-bootstrap';
+import { Alert } from '@freecodecamp/ui';
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
 import type { TFunction } from 'i18next';
@@ -159,11 +159,7 @@ function EmailSettings({
       {isEmailVerified ? null : (
         <FullWidthRow>
           <HelpBlock>
-            <Alert
-              bsStyle='info'
-              className='text-center'
-              closeLabel={t('buttons.close')}
-            >
+            <Alert variant='info' className='text-center'>
               {t('settings.email.not-verified')}
               <br />
               <Trans i18nKey='settings.email.check'>
