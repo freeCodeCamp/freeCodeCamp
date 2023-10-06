@@ -85,7 +85,30 @@ export const devLoginCallback: FastifyPluginCallback = (
 export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.addHook('onRequest', fastify.authenticate);
 
-  fastify.get('/callback', async req => {
+  fastify.get('/auth0/callback', async req => {
+    const email = await getEmailFromAuth0(req);
+
+    const { id } = await findOrCreateUser(fastify, email);
+    req.session.user = { id };
+    await req.session.save();
+  });
+
+  done();
+};
+
+/**
+ * Route handler for Mobile authentication.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
+ * @param done Callback to signal that the logic has completed.
+ */
+export const mobileAuth0Routes: FastifyPluginCallback = (
+  fastify,
+  _options,
+  done
+) => {
+  fastify.get('/mobile-login', async req => {
     const email = await getEmailFromAuth0(req);
 
     const { id } = await findOrCreateUser(fastify, email);

@@ -33,7 +33,8 @@ import sessionAuth from './plugins/session-auth';
 import {
   auth0Routes,
   devLoginCallback,
-  devLegacyAuthRoutes
+  devLegacyAuthRoutes,
+  mobileAuth0Routes
 } from './routes/auth';
 import { challengeRoutes } from './routes/challenge';
 import { deprecatedEndpoints } from './routes/deprecated-endpoints';
@@ -146,6 +147,7 @@ export const build = async (
     secret: SESSION_SECRET,
     rolling: false,
     saveUninitialized: false,
+    // cookieName: 'jwt_access_token', NOTE: Confirm if we want to use different cookie name for session token
     cookie: {
       maxAge: 1000 * 60 * 60, // 1 hour
       secure: FREECODECAMP_NODE_ENV !== 'development'
@@ -210,6 +212,7 @@ export const build = async (
   void fastify.register(prismaPlugin);
 
   void fastify.register(auth0Routes, { prefix: '/auth' });
+  void fastify.register(mobileAuth0Routes);
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
     void fastify.register(devLegacyAuthRoutes);
