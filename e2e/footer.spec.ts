@@ -1,15 +1,12 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import links from '../client/i18n/locales/english/links.json';
 
-let page: Page;
-
-test.beforeEach(async ({ browser }) => {
-  page = await browser.newPage();
+test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
-test.afterAll(async () => {
+test.afterAll(async ({ page }) => {
   await page.close();
 });
 
@@ -21,7 +18,7 @@ const footerComponentElements = {
   footerBottomLinks: 'our-nonprofit'
 } as const;
 
-test('Has descriptions', async () => {
+test('Has descriptions', async ({ page }) => {
   const descriptions = page
     .getByTestId(footerComponentElements.descriptions)
     .locator('p');
@@ -31,14 +28,14 @@ test('Has descriptions', async () => {
   }
 });
 
-test('Has header for trending guides', async () => {
+test('Has header for trending guides', async ({ page }) => {
   const trendingGuidesHeader = page.getByTestId(
     footerComponentElements.trendingGuidesHeader
   );
   await expect(trendingGuidesHeader).toBeVisible();
 });
 
-test('Has 30 trending guide articles', async () => {
+test('Has 30 trending guide articles', async ({ page }) => {
   const trendingGuideArticles = page
     .getByTestId(footerComponentElements.trendingGuideArticles)
     .locator('a');
@@ -48,7 +45,7 @@ test('Has 30 trending guide articles', async () => {
   }
 });
 
-test('Has header for footer bottom', async ({ isMobile }) => {
+test('Has header for footer bottom', async ({ isMobile, page }) => {
   const footerBottomHeader = page.getByTestId(
     footerComponentElements.footerBottomHeader
   );
@@ -59,7 +56,7 @@ test('Has header for footer bottom', async ({ isMobile }) => {
   }
 });
 
-test('Has 11 nonprofits', async () => {
+test('Has 11 nonprofits', async ({ page }) => {
   const footerBottomLinks = page
     .getByTestId(footerComponentElements.footerBottomLinks)
     .locator('a');
@@ -70,7 +67,7 @@ test('Has 11 nonprofits', async () => {
 });
 
 test.describe('Footer component left section', () => {
-  test('should render footer tax exempt statement text', async () => {
+  test('should render footer tax exempt statement text', async ({ page }) => {
     const footerTaxExemptText = page.getByTestId('footer-tax-exempt-status');
     await expect(footerTaxExemptText).toBeVisible();
     await expect(footerTaxExemptText).toContainText(
@@ -78,7 +75,7 @@ test.describe('Footer component left section', () => {
     );
   });
 
-  test('should render footer mission statement text', async () => {
+  test('should render footer mission statement text', async ({ page }) => {
     const footerMissionStatement = page.getByTestId('footer-mission-statement');
     await expect(footerMissionStatement).toBeVisible();
     await expect(footerMissionStatement).toContainText(
@@ -86,7 +83,7 @@ test.describe('Footer component left section', () => {
     );
   });
 
-  test('should render footer donation initiative text', async () => {
+  test('should render footer donation initiative text', async ({ page }) => {
     const footerDonationInitiative = page.getByTestId(
       'footer-donation-initiatives-text'
     );
@@ -96,14 +93,14 @@ test.describe('Footer component left section', () => {
     );
   });
 
-  test('should correctly link to donations page', async () => {
+  test('should correctly link to donations page', async ({ page }) => {
     const donationPageLink = page.getByTestId('footer-donation-page-link');
     await expect(donationPageLink).toHaveAttribute('href', '/donate');
   });
 });
 
 test.describe('Footer bottom links', () => {
-  test('should display correct link to about us page', async () => {
+  test('should display correct link to about us page', async ({ page }) => {
     const link = page.getByTestId('footer-about-url');
 
     expect(await link.isVisible()).toBe(true);
@@ -111,7 +108,7 @@ test.describe('Footer bottom links', () => {
     await expect(link).toHaveText(translations.footer.links.about);
   });
 
-  test('should display correct link to alumni page', async () => {
+  test('should display correct link to alumni page', async ({ page }) => {
     const link = page.getByTestId('footer-alumni-url');
 
     expect(await link.isVisible()).toBe(true);
@@ -122,7 +119,7 @@ test.describe('Footer bottom links', () => {
     await expect(link).toHaveText(translations.footer.links.alumni);
   });
 
-  test('should display correct link to open-source page', async () => {
+  test('should display correct link to open-source page', async ({ page }) => {
     const link = page.getByTestId('footer-open-source-url');
 
     expect(await link.isVisible()).toBe(true);
@@ -133,7 +130,7 @@ test.describe('Footer bottom links', () => {
     await expect(link).toHaveText(translations.footer.links['open-source']);
   });
 
-  test('should display correct link to shop', async () => {
+  test('should display correct link to shop', async ({ page }) => {
     const link = page.getByTestId('footer-shop-url');
 
     expect(await link.isVisible()).toBe(true);
@@ -141,7 +138,7 @@ test.describe('Footer bottom links', () => {
     await expect(link).toHaveText(translations.footer.links.shop);
   });
 
-  test('should display correct link to support page', async () => {
+  test('should display correct link to support page', async ({ page }) => {
     const link = page.getByTestId('footer-support-url');
 
     expect(await link.isVisible()).toBe(true);
@@ -149,7 +146,7 @@ test.describe('Footer bottom links', () => {
     await expect(link).toHaveText(translations.footer.links.support);
   });
 
-  test('should display correct link to sponsors page', async () => {
+  test('should display correct link to sponsors page', async ({ page }) => {
     const link = page.getByTestId('footer-sponsors-url');
 
     expect(await link.isVisible()).toBe(true);
@@ -157,7 +154,7 @@ test.describe('Footer bottom links', () => {
     await expect(link).toHaveText(translations.footer.links.sponsors);
   });
 
-  test('should display correct link to honesty page', async () => {
+  test('should display correct link to honesty page', async ({ page }) => {
     const link = page.getByTestId('footer-honesty-url');
 
     expect(await link.isVisible()).toBe(true);
@@ -165,7 +162,7 @@ test.describe('Footer bottom links', () => {
     await expect(link).toHaveText(translations.footer.links.honesty);
   });
 
-  test('should display correct link to coc page', async () => {
+  test('should display correct link to coc page', async ({ page }) => {
     const link = page.getByTestId('footer-coc-url');
 
     expect(await link.isVisible()).toBe(true);
@@ -173,7 +170,7 @@ test.describe('Footer bottom links', () => {
     await expect(link).toHaveText(translations.footer.links.coc);
   });
 
-  test('should display correct link to privacy page', async () => {
+  test('should display correct link to privacy page', async ({ page }) => {
     const link = page.getByTestId('footer-privacy-url');
 
     expect(await link.isVisible()).toBe(true);
@@ -181,7 +178,7 @@ test.describe('Footer bottom links', () => {
     await expect(link).toHaveText(translations.footer.links.privacy);
   });
 
-  test('should display correct link to tos page', async () => {
+  test('should display correct link to tos page', async ({ page }) => {
     const link = page.getByTestId('footer-tos-url');
 
     expect(await link.isVisible()).toBe(true);
@@ -189,7 +186,7 @@ test.describe('Footer bottom links', () => {
     await expect(link).toHaveText(translations.footer.links.tos);
   });
 
-  test('should display correct link to copyright page', async () => {
+  test('should display correct link to copyright page', async ({ page }) => {
     const link = page.getByTestId('footer-copyright-url');
 
     expect(await link.isVisible()).toBe(true);
