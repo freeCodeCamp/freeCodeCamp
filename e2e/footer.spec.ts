@@ -6,10 +6,6 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
-test.afterAll(async ({ page }) => {
-  await page.close();
-});
-
 const footerComponentElements = {
   descriptions: 'footer-desc-col',
   trendingGuidesHeader: 'trending-guides-col-header',
