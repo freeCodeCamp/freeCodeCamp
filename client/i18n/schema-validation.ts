@@ -235,7 +235,9 @@ const readJsonFile = async (language: string, fileName: string) => {
   return fileJson;
 };
 
-const translatedLangs = availableLangs.client.filter(x => x !== 'english');
+const translatedLangs = availableLangs.client.filter(
+  x => String(x) !== 'english'
+);
 
 translationSchemaValidation(translatedLangs);
 motivationSchemaValidation(translatedLangs);

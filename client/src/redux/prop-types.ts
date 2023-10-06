@@ -345,7 +345,7 @@ export type ChallengeFile = {
   name: string;
   editableRegionBoundaries?: number[];
   usesMultifileEditor?: boolean;
-  error: null | string | unknown;
+  error: null | string;
   head: string;
   tail: string;
   seed: string;
