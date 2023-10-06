@@ -98,7 +98,7 @@ export const isProcessingSelector = state => {
 export const userByNameSelector = username => state => {
   const { user } = state[MainApp];
   // return initial state empty user empty object instead of empty
-  // object litteral to prevent components from re-rendering unnecessarily
+  // object literal to prevent components from re-rendering unnecessarily
   // TODO: confirm if "initialState" can be moved here or action-types.js
   return user[username] ?? {};
 };

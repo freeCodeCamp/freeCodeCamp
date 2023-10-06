@@ -28,6 +28,8 @@ import ProgressBar from '../../../components/ProgressBar';
 import GreenPass from '../../../assets/icons/green-pass';
 
 import './completion-modal.css';
+import { fireConfetti } from '../../../utils/fire-confetti';
+import { certsToProjects } from '../../../../config/cert-and-project-map';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -40,7 +42,7 @@ const mapStateToProps = createSelector(
   isSubmittingSelector,
   (
     challengeFiles: ChallengeFiles,
-    { dashedName }: { dashedName: string },
+    { dashedName, id }: { dashedName: string; id: string },
     completedChallengesIds: string[],
     isOpen: boolean,
     isSignedIn: boolean,
@@ -49,6 +51,7 @@ const mapStateToProps = createSelector(
     isSubmitting: boolean
   ) => ({
     challengeFiles,
+    id,
     dashedName,
     completedChallengesIds,
     isOpen,
@@ -77,6 +80,11 @@ interface CompletionModalsProps extends StateProps {
 interface CompletionModalState {
   downloadURL: null | string;
 }
+
+const isCertificationProject = (id: string) =>
+  Object.values(certsToProjects).some(cert =>
+    cert.some(project => project.id === id)
+  );
 
 class CompletionModal extends Component<
   CompletionModalsProps,
@@ -149,18 +157,26 @@ class CompletionModal extends Component<
     const {
       close,
       isOpen,
+      id,
       isSignedIn,
       isSubmitting,
       message,
       t,
       dashedName,
-      submitChallenge
+      submitChallenge,
+      completedChallengesIds
     } = this.props;
 
     if (isOpen) {
       executeGA({ event: 'pageview', pagePath: '/completion-modal' });
+      if (
+        isCertificationProject(id) &&
+        !completedChallengesIds.includes(id) &&
+        !isSubmitting
+      ) {
+        fireConfetti();
+      }
     }
-
     return (
       <Modal
         data-cy='completion-modal'

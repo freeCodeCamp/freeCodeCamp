@@ -14,6 +14,10 @@ dashedName: write-your-first-c-sharp-code
 
 # --question--
 
+## --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank" rel="noreferrer">«Напишіть свій перший код C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Яка різниця між `Console.Write` та `Console.WriteLine`?
