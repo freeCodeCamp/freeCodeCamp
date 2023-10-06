@@ -39,18 +39,17 @@ const {
   PAYPAL_WEBHOOK_ID
 } = process.env;
 
+require('dotenv').config();
+
+const { MONGODB, MONGOHQ_URL, } = process.env;
+
+if (!MONGODB && !MONGOHQ_URL) {
+  throw new Error('MongoDB connection URL is missing');
+}
+
 module.exports = {
   db: MONGODB || MONGOHQ_URL,
-
-  cookieSecret: COOKIE_SECRET,
-  jwtSecret: JWT_SECRET,
-  sessionSecret: SESSION_SECRET,
-
-  auth0: {
-    clientID: AUTH0_CLIENT_ID,
-    clientSecret: AUTH0_CLIENT_SECRET,
-    domain: AUTH0_DOMAIN
-  },
+};
 
   facebook: {
     clientID: FACEBOOK_ID,
