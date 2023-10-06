@@ -1,39 +1,19 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { devLogin, setupServer, superRequest } from '../../jest.utils';
 
-const mockSubCreate = jest.fn();
-const subsDefaultReply = () =>
-  Promise.resolve({
-    id: 'cust_111',
-    latest_invoice: {
-      payment_intent: {
-        client_secret: 'superSecret',
-        status: 'intentStatus'
-      }
-    }
-  });
 const chargeStripeCardReqBody = {
   paymentMethodId: 'UID',
   amount: 500,
   duration: 'month'
 };
-const requiresSourceActionReply = () =>
+const mockSubCreate = jest.fn();
+const generateMockSubCreate = (status: string) => () =>
   Promise.resolve({
     id: 'cust_111',
     latest_invoice: {
       payment_intent: {
         client_secret: 'superSecret',
-        status: 'requires_source_action'
-      }
-    }
-  });
-const requiresSourceReply = () =>
-  Promise.resolve({
-    id: 'cust_111',
-    latest_invoice: {
-      payment_intent: {
-        client_secret: 'superSecret',
-        status: 'requires_source'
+        status
       }
     }
   });
@@ -72,44 +52,54 @@ describe('Donate', () => {
 
     describe('POST /donate/charge-stripe-card', () => {
       it('should return 200 and update the user', async () => {
-        mockSubCreate.mockImplementationOnce(subsDefaultReply);
+        mockSubCreate.mockImplementationOnce(
+          generateMockSubCreate('we only care about specific error cases')
+        );
         const response = await superRequest('/donate/charge-stripe-card', {
           method: 'POST',
           setCookies
         }).send(chargeStripeCardReqBody);
-        expect(response.status).toBe(200);
         expect(response.body).toEqual({ isDonating: true, type: 'success' });
+        expect(response.status).toBe(200);
       });
 
       it('should return 402 with client_secret if subscription status requires source action', async () => {
-        mockSubCreate.mockImplementationOnce(requiresSourceActionReply);
+        mockSubCreate.mockImplementationOnce(
+          generateMockSubCreate('requires_source_action')
+        );
         const response = await superRequest('/donate/charge-stripe-card', {
           method: 'POST',
           setCookies
         }).send(chargeStripeCardReqBody);
-        expect(response.status).toBe(402);
+
         expect(response.body).toEqual({
           type: 'UserActionRequired',
           message: 'Payment requires user action',
           client_secret: 'superSecret'
         });
+        expect(response.status).toBe(402);
       });
 
       it('should return 402 if subscription status requires source', async () => {
-        mockSubCreate.mockImplementationOnce(requiresSourceReply);
+        mockSubCreate.mockImplementationOnce(
+          generateMockSubCreate('requires_source')
+        );
         const response = await superRequest('/donate/charge-stripe-card', {
           method: 'POST',
           setCookies
         }).send(chargeStripeCardReqBody);
-        expect(response.status).toBe(402);
+
         expect(response.body).toEqual({
           type: 'PaymentMethodRequired',
           message: 'Card has been declined'
         });
+        expect(response.status).toBe(402);
       });
 
       it('should return 400 if the user is already donating', async () => {
-        mockSubCreate.mockImplementationOnce(subsDefaultReply);
+        mockSubCreate.mockImplementationOnce(
+          generateMockSubCreate('still does not matter')
+        );
         const successResponse = await superRequest(
           '/donate/charge-stripe-card',
           {
@@ -117,6 +107,7 @@ describe('Donate', () => {
             setCookies
           }
         ).send(chargeStripeCardReqBody);
+
         expect(successResponse.status).toBe(200);
         const failResponse = await superRequest('/donate/charge-stripe-card', {
           method: 'POST',
