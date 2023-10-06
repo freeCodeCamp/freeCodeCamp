@@ -185,7 +185,11 @@ class InternetSettings extends Component<InternetProps, InternetState> {
       <>
         <SectionHeader>{t('settings.headings.internet')}</SectionHeader>
         <FullWidthRow>
-          <form id='internet-presence' onSubmit={this.handleSubmit}>
+          <form
+            id='internet-presence'
+            onSubmit={this.handleSubmit}
+            data-playwright-test-label='internet-presence'
+          >
             <div role='group' aria-label={t('settings.headings.internet')}>
               <FormGroup
                 controlId='internet-github'
