@@ -18,6 +18,8 @@ duck instanceof Bird;
 
 In order, these expressions would evaluate to `false`, `true`, and `true`.
 
+Notice: The `duck` instance should be created after setting the prototype to a new object.
+
 To fix this, whenever a prototype is manually set to a new object, remember to define the `constructor` property:
 
 ```js
