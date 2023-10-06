@@ -57,7 +57,7 @@ type DonateModalProps = {
   show: boolean;
 };
 
-const Ilustration = ({
+const Illustration = ({
   recentlyClaimedBlock
 }: {
   recentlyClaimedBlock: RecentlyClaimedBlock;
@@ -462,7 +462,7 @@ function DonateModal({
     >
       <Modal.Body className='no-delay-fade-in'>
         <div className='donation-icon-container'>
-          <Ilustration recentlyClaimedBlock={recentlyClaimedBlock} />
+          <Illustration recentlyClaimedBlock={recentlyClaimedBlock} />
         </div>
         {showMultiTier ? (
           <MultiTierDonationBody

@@ -66,7 +66,7 @@ describe('isMicrosoftTranscriptLink', () => {
       expect(isMicrosoftTranscriptLink('https://lean.microsoft.com')).toBe(
         false
       );
-      expect(isMicrosoftTranscriptLink('https://learn.microsft.com')).toBe(
+      expect(isMicrosoftTranscriptLink('https://learn.microsoft.com')).toBe(
         false
       );
     }
