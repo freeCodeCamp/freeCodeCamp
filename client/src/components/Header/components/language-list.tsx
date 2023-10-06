@@ -161,7 +161,7 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
               data-value={lang}
               onClick={handleLanguageChange}
               onKeyDown={event => getHandleLanguageKeys(event, index)}
-              {...(clientLocale === lang && { 'aria-current': true })}
+              {...(clientLocale === String(lang) && { 'aria-current': true })}
               {...(LangCodes[lang] && {
                 lang: LangCodes[lang]
               })}
