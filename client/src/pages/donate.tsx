@@ -1,4 +1,5 @@
-import { Row, Col, Alert } from '@freecodecamp/react-bootstrap';
+import { Row, Col } from '@freecodecamp/react-bootstrap';
+import { Alert, Container } from '@freecodecamp/ui';
 import type { TFunction } from 'i18next';
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
@@ -8,7 +9,6 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { Container } from '@freecodecamp/ui';
 import DonateForm from '../components/Donation/donate-form';
 import {
   DonationText,
@@ -87,7 +87,7 @@ function DonatePage({
                   </Col>
                 </Row>
                 {isDonating ? (
-                  <Alert data-cy='donate-alert' closeLabel={t('buttons.close')}>
+                  <Alert variant='info' data-cy='donate-alert'>
                     <p data-cy='donate.thank-you'>{t('donate.thank-you')}</p>
                     <br />
                     <DonationOptionsAlertText />

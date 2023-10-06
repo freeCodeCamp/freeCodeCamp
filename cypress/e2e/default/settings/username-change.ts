@@ -11,11 +11,7 @@ describe('Username input field', () => {
   it('Should show message when validating name', () => {
     cy.typeUsername('twaha');
 
-    cy.contains('Validating username...')
-      .should('have.attr', 'role', 'alert')
-      // We are checking for classes here to check for proper styling
-      // This will be replaced with Percy in the future
-      .should('have.class', 'alert alert-info');
+    cy.contains('Validating username...').should('have.attr', 'role', 'alert');
   });
 
   it('Should show username is available if it is', () => {
@@ -23,10 +19,7 @@ describe('Username input field', () => {
 
     cy.contains('Username is available')
       .should('be.visible')
-      .should('have.attr', 'role', 'alert')
-      // We are checking for classes here to check for proper styling
-      // This will be replaced with Percy in the future
-      .should('have.class', 'alert alert-success');
+      .should('have.attr', 'role', 'alert');
   });
 
   it('Should info message if username is available', () => {
@@ -37,10 +30,7 @@ describe('Username input field', () => {
         'the URL to your profile and your certifications.'
     )
       .should('be.visible')
-      .should('have.attr', 'role', 'alert')
-      // We are checking for classes here to check for proper styling
-      // This will be replaced with Percy in the future
-      .should('have.class', 'alert alert-info');
+      .should('have.attr', 'role', 'alert');
   });
 
   it('Should be able to click the `Save` button if username is available', () => {
@@ -56,10 +46,7 @@ describe('Username input field', () => {
 
     cy.contains('Username not available')
       .should('be.visible')
-      .should('have.attr', 'role', 'alert')
-      // We are checking for classes here to check for proper styling
-      // This will be replaced with Percy in the future
-      .should('have.class', 'alert alert-warning');
+      .should('have.attr', 'role', 'alert');
   });
 
   it('Should not be possible to click the `Save` button if username is unavailable', () => {
@@ -98,10 +85,7 @@ describe('Username input field', () => {
 
     cy.contains('Username "Quincy Larson" contains invalid characters')
       .should('be.visible')
-      .should('have.attr', 'role', 'alert')
-      // We are checking for classes here to check for proper styling
-      // This will be replaced with Percy in the future
-      .should('have.class', 'alert alert-danger');
+      .should('have.attr', 'role', 'alert');
   });
 
   it('Should not be able to click the `Save` button if username includes invalid character', () => {
@@ -140,15 +124,9 @@ describe('Username input field', () => {
 
     cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 
-    cy.contains('We have updated your username to nhcarrigan')
-      .should('be.visible')
-      // We are checking for classes here to check for proper styling
-      // This will be replaced with Percy in the future
-      .should(
-        'have.class',
-        'flash-message alert alert-success alert-dismissable'
-      );
-
+    cy.contains('We have updated your username to nhcarrigan').should(
+      'be.visible'
+    );
     cy.resetUsername();
   });
 
