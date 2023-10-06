@@ -3,6 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Spinner from 'react-spinkit';
 import { Alert } from '@freecodecamp/ui';
+import { Spacer } from '../helpers';
 
 type DonateCompletionProps = {
   error: string | null;
@@ -35,9 +36,8 @@ function DonateCompletion({
 
   return (
     <Alert variant={style} className='donation-completion'>
-      <h4>
-        <b>{heading}</b>
-      </h4>
+      <b>{heading}</b>
+      <Spacer size={'medium'} />
       <div className='donation-completion-body'>
         {(processing || redirecting) && (
           <Spinner

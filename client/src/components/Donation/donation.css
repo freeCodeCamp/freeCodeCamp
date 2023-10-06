@@ -533,7 +533,7 @@ a.patreon-button:hover {
   font-weight: bold;
 }
 
-.donate-page-wrapper .alert.alert-info a:hover {
+.donate-page-wrapper [role='alert'] a:hover {
   color: #327290;
   background-color: #acdef3;
 }
