@@ -10,12 +10,16 @@ import { type Prisma } from '@prisma/client';
 export function createUserInput(email: string): Prisma.userCreateInput {
   const username = 'fcc-' + crypto.randomUUID();
   const externalId = crypto.randomUUID();
+  // This explicitly includes all array fields. This is not strictly necessary -
+  // Prisma will return an empty array even if the property is missing, but it's
+  // probably best to add them to the document, at least until we normalise the
+  // data.
   return {
-    // TODO: audit this object to find out which properties need to be updated.
     about: '',
     acceptedPrivacyTerms: false,
-    completedChallenges: [],
+    completedChallenges: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
     currentChallengeId: '',
+    donationEmails: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
     email,
     emailVerified: true, // this should be true until a user changes their email address
     // TODO(Post-MVP): remove externalId?
@@ -46,7 +50,9 @@ export function createUserInput(email: string): Prisma.userCreateInput {
     location: '',
     name: '',
     unsubscribeId: '',
+    partiallyCompletedChallenges: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
     picture: '',
+    portfolio: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
     profileUI: {
       isLocked: false,
       showAbout: false,
@@ -59,10 +65,12 @@ export function createUserInput(email: string): Prisma.userCreateInput {
       showPortfolio: false,
       showTimeLine: false
     },
-    progressTimestamps: [],
+    progressTimestamps: [], // TODO(Post-MVP): This may need normalising before we can omit it.
+    savedChallenges: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
     sendQuincyEmail: false,
     theme: 'default',
     username,
-    usernameDisplay: username
+    usernameDisplay: username,
+    yearsTopContributor: [] // TODO: Omit this from the document? (prisma will always return [])
   };
 }
