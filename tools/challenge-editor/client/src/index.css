@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'Lato';
-  src: url('../public/Lato-Regular.woff');
+  src: url('./fonts/Lato-Regular.woff');
 }
 
 body {
