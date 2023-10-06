@@ -1,22 +1,21 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 
 test.describe('Template Challenges Show', () => {
-  let page: Page;
-
-  test.beforeAll(async ({ browser }) => {
-    page = await browser.newPage();
+  test.beforeEach(async ({ page }) => {
     await page.goto(
       '/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/write-your-first-c-sharp-code'
     );
   });
 
-  test.afterAll(async () => {
-    await page.close();
+  test.afterAll(async ({ browser }) => {
+    await browser.close();
   });
 
-  test('should display a success dialog when the user submits the form, and they have completed the quiz and the assignments correctly', async () => {
+  test('should display a success dialog when the user submits the form, and they have completed the quiz and the assignments correctly', async ({
+    page
+  }) => {
     // Tick the assignment box
     await page.getByRole('checkbox').check();
 
