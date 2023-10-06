@@ -252,6 +252,9 @@ importers:
       query-string:
         specifier: 7.1.3
         version: 7.1.3
+      stripe:
+        specifier: 8.205.0
+        version: 8.205.0
     devDependencies:
       '@total-typescript/ts-reset':
         specifier: 0.5.1
