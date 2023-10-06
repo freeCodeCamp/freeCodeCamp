@@ -4,7 +4,7 @@ import links from '../client/i18n/locales/english/links.json';
 
 let page: Page;
 
-test.beforeAll(async ({ browser }) => {
+test.beforeEach(async ({ browser }) => {
   page = await browser.newPage();
   await page.goto('/');
 });
@@ -21,11 +21,7 @@ const footerComponentElements = {
   footerBottomLinks: 'our-nonprofit'
 } as const;
 
-test.beforeEach(async ({ page }) => {
-  await page.goto('/');
-});
-
-test('Has descriptions', async ({ page }) => {
+test('Has descriptions', async () => {
   const descriptions = page
     .getByTestId(footerComponentElements.descriptions)
     .locator('p');
@@ -35,14 +31,14 @@ test('Has descriptions', async ({ page }) => {
   }
 });
 
-test('Has header for trending guides', async ({ page }) => {
+test('Has header for trending guides', async () => {
   const trendingGuidesHeader = page.getByTestId(
     footerComponentElements.trendingGuidesHeader
   );
   await expect(trendingGuidesHeader).toBeVisible();
 });
 
-test('Has 30 trending guide articles', async ({ page }) => {
+test('Has 30 trending guide articles', async () => {
   const trendingGuideArticles = page
     .getByTestId(footerComponentElements.trendingGuideArticles)
     .locator('a');
@@ -52,7 +48,7 @@ test('Has 30 trending guide articles', async ({ page }) => {
   }
 });
 
-test('Has header for footer bottom', async ({ page, isMobile }) => {
+test('Has header for footer bottom', async ({ isMobile }) => {
   const footerBottomHeader = page.getByTestId(
     footerComponentElements.footerBottomHeader
   );
@@ -63,7 +59,7 @@ test('Has header for footer bottom', async ({ page, isMobile }) => {
   }
 });
 
-test('Has 11 nonprofits', async ({ page }) => {
+test('Has 11 nonprofits', async () => {
   const footerBottomLinks = page
     .getByTestId(footerComponentElements.footerBottomLinks)
     .locator('a');
