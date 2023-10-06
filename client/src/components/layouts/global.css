@@ -511,6 +511,10 @@ hr {
   text-align: center;
 }
 
+.challenge-instructions table tbody tr:nth-of-type(odd) {
+  background-color: var(--tertiary-background);
+}
+
 .help-block {
   color: var(--quaternary-color);
 }
