@@ -169,7 +169,8 @@ describe('Donate', () => {
       setCookies = res.get('Set-Cookie');
     });
     const endpoints: { path: string; method: 'POST' }[] = [
-      { path: '/donate/add-donation', method: 'POST' }
+      { path: '/donate/add-donation', method: 'POST' },
+      { path: '/donate/charge-stripe-card', method: 'POST' }
     ];
     endpoints.forEach(({ path, method }) => {
       test(`${method} ${path} returns 401 status code with error message`, async () => {
@@ -178,14 +179,6 @@ describe('Donate', () => {
           setCookies
         });
         expect(response.statusCode).toBe(401);
-      });
-    });
-    describe('POST /donate/charge-stripe-card', () => {
-      it('should return 403', async () => {
-        const response = await superRequest('/donate/charge-stripe-card', {
-          method: 'POST'
-        }).send(chargeStripeCardReqBody);
-        expect(response.status).toBe(403);
       });
     });
   });
