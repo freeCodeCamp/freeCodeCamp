@@ -202,6 +202,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
           className='fcc_searchBar'
           data-testid='fcc_searchBar'
           ref={innerRef}
+          data-playwright-test-label='fcc-searchbar'
         >
           <HotKeys handlers={this.keyHandlers} keyMap={this.keyMap}>
             <div className='fcc_search_wrapper'>

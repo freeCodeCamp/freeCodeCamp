@@ -143,6 +143,7 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
         ref={listButtonRef}
         onBlur={handleBlur}
         onClick={handleClick}
+        data-playwright-test-label='toggle-language-button'
       >
         <LanguageGlobe />
       </button>

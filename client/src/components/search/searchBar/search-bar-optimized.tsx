@@ -27,7 +27,12 @@ const SearchBarOptimized = ({
   };
 
   return (
-    <div className='fcc_searchBar' data-testid='fcc_searchBar' ref={innerRef}>
+    <div
+      className='fcc_searchBar'
+      data-testid='fcc_searchBar'
+      ref={innerRef}
+      data-playwright-test-label='fcc-searchbar'
+    >
       <div className='fcc_search_wrapper'>
         <div className='ais-SearchBox' data-cy='ais-SearchBox'>
           <form

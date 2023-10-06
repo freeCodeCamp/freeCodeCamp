@@ -49,12 +49,18 @@ const MenuButton = ({
       onBlur={handleBlur}
       onClick={handleClick}
       ref={innerRef}
+      data-playwright-test-label='menu-button'
     >
       <span className='menu-btn-icon'>
         <FontAwesomeIcon icon={faBars} />
         <span className='sr-only'>{t('buttons.menu')}</span>
       </span>
-      <span className='menu-btn-text'>{t('buttons.menu')}</span>
+      <span
+        className='menu-btn-text'
+        data-playwright-test-label='menu-button-text'
+      >
+        {t('buttons.menu')}
+      </span>
     </button>
   );
 };
