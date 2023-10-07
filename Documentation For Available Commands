@@ -1,0 +1,138 @@
+Audit challenges:
+audit-challenges: This script runs the challenge auditor, which checks for any potential problems with the challenges in the curriculum.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Bundle analysis:
+analyze-bundle: This script runs the webpack bundle analyzer, which generates a report of the project's bundle size and composition.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Building:
+prebuild: This script runs the create:shared script, which compiles the shared code.
+build: This script runs the build:client, build:curriculum, and build:server scripts, which build the client, curriculum, and server code, respectively.
+build-workers: This script builds the worker code for the client.
+build:client: This script builds the client code.
+build:curriculum: This script builds the curriculum code.
+build:server: This script builds the server code.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Challenge editor:
+challenge-editor: This script runs the challenge editor, which is a web-based tool for creating and editing challenges.
+challenge-editor:client: This script starts the challenge editor client.
+challenge-editor:server: This script starts the challenge editor server.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Cleaning:
+clean: This script runs the clean:client, clean:server, clean:curriculum, and clean:packages scripts, which clean the client, server, curriculum, and package
+directories, respectively.
+clean-and-develop: This script runs the clean and develop scripts.
+clean:api: This script cleans the API directory.
+clean:client: This script cleans the client directory.
+clean:curriculum: This script cleans the curriculum directory.
+clean:packages: This script cleans the node_modules and package directories of all subdirectories.
+clean:server: This script cleans the server directory.
+Creating the shared code:
+create:shared: This script compiles the shared code.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Cypress:
+precypress: This script installs Cypress, which is a JavaScript end-to-end testing framework.
+cypress: This script runs Cypress.
+cypress:dev:run: This script runs Cypress in development mode.
+cypress:dev:watch: This script watches for changes to the code and automatically runs Cypress tests.
+cypress:install: This script installs Cypress.
+cypress:install-build-tools: This script installs the build tools needed for Cypress.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Developing:
+predevelop: This script runs the create:shared and build:curriculum scripts, which compile the shared code and build the curriculum code, respectively.
+develop: This script runs the develop:client and develop:server scripts, which start the development servers for the client and server, respectively.
+develop:client: This script starts the development server for the client.
+develop:server: This script starts the development server for the server.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Documentation:
+docs:serve: This script serves the documentation locally.
+End-to-end testing:
+e2e: This script runs the end-to-end tests.
+e2e:dev:run: This script runs the end-to-end tests in development mode.
+e2e:dev:watch: This script watches for changes to the code and automatically runs the end-to-end tests.
+e2e:prd:run: This script runs the end-to-end tests in production mode.
+e2e:prd:watch: This script watches for changes to the code and automatically runs the end-to-end tests in production mode.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Formatting:
+format: This script runs the format:eslint and format:prettier scripts, which format the code using ESLint and Prettier, respectively.
+format:eslint: This script formats the code using ESLint.
+format:prettier: This script formats the code using Prettier.
+Knip:
+knip: This script runs Knip, a tool that can be used to generate code snippets from documentation.
+knip:all: This script runs Knip on all of the documentation in the project.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Linting:
+prelint: This script runs the -F=client predevelop script, which compiles the shared code and builds the curriculum code.
+lint: This script runs the create:shared and lint:* scripts, which compile the shared code and lint the code for all subdirectories, respectively.
+lint:challenges: This script lints the code for the challenges in the curriculum.
+lint:js: This script lints the JavaScript code.
+lint:ts: This script lints the TypeScript code.
+lint:prettier: This script lints the code for formatting using Prettier.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Reloading the server:
+reload:server: This script reloads the server using PM2.
+Seeding the database:
+preseed: This script runs the create:shared script, which compiles the shared code.
+seed: This script seeds the database with a demo user.
+seed:certified-user: This script seeds the database with a certified demo user.
+seed:exams: This script seeds the database with exams.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Serving the client:
+serve:client: This script serves the client code locally.
+serve:client-ci: This script serves the client code locally in a way that is compatible with CI/CD pipelines.
+Starting the project:
+start: This script runs the create:shared, develop:server, and serve:client scripts, which compiles the shared code, starts the development server for the server,
+and serves the client code locally, respectively.
+start-ci: This script runs the create:shared, start:server, and serve:client-ci scripts, which compiles the shared code, starts the development server for the server, 
+and serves the client code locally in a way that is compatible with CI/CD pipelines, respectively.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Storybook:
+storybook: This script starts the Storybook development server for the UI components.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Testing:
+test: This script runs the create:shared, build:curriculum, build-workers, and test:* scripts, which compile the shared code, build the curriculum code, build 
+the worker code for the client, and run all of the tests, respectively.
+test:source: This script runs the Jest tests for the source code.
+test:api: This script runs the Jest tests for the API code.
+test:curriculum: This script runs the Jest tests for the curriculum code.
+test-curriculum-full-output: This script runs the Jest tests for the curriculum code and displays the full output.
+test-client: This script runs the Jest tests for the client code.
+test-config: This script runs the Jest tests for the configuration code.
+test-curriculum-js: This script runs the Jest tests for the JavaScript code in the curriculum.
+test-server: This script runs the Jest tests for the server code.
+test-tools: This script runs the Jest tests for the tools code.
+test-utils: This script runs the Jest tests for the utils code.
+test-ui-components: This script runs the Jest tests for the UI components code.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Post-installation scripts:
+postinstall: This script runs the cypress cache prune command, which prunes the Cypress cache.
+Prepare script:
+prepare: This script runs the husky install command, which installs Husky, a tool that can be used to automate pre-commit and post-push hooks.
+
