@@ -4,17 +4,17 @@ import metaTags from '../client/i18n/locales/english/meta-tags.json';
 
 let page: Page;
 
-test.afterEach(async () => {
+test.afterAll(async () => {
   await page.close();
 });
 
-test.describe('The unsubscribed page without Id', () => {
-  test.beforeEach(async ({ browser }) => {
+test.describe('The unsubscribed page without unsubscribeId', () => {
+  test.beforeAll(async ({ browser }) => {
     page = await browser.newPage();
     await page.goto('/unsubscribed');
   });
 
-  test('page renders with correct title', async () => {
+  test('The page renders with correct title', async () => {
     await expect(page).toHaveTitle(
       `${metaTags['youre-unsubscribed']} | freeCodeCamp.org`
     );
@@ -35,17 +35,25 @@ test.describe('The unsubscribed page without Id', () => {
       translations.misc['keep-coding']
     );
   });
+
+  test('The page has no button to resubscribe', async () => {
+    const resubscribeButton = page.getByRole('link', {
+      name: translations.buttons['resubscribe']
+    });
+
+    await expect(resubscribeButton).not.toBeVisible();
+  });
 });
 
-test.describe('The unsubscribed page with Id', () => {
-  const randomId = Math.floor(Math.random() * 1000000000);
+test.describe('The unsubscribed page with unsubscribeId', () => {
+  const unsubscribeId = Math.floor(Math.random() * 1000000000);
 
-  test.beforeEach(async ({ browser }) => {
+  test.beforeAll(async ({ browser }) => {
     page = await browser.newPage();
-    await page.goto(`/unsubscribed/${randomId}`);
+    await page.goto(`/unsubscribed/${unsubscribeId}`);
   });
 
-  test('page renders with correct title', async () => {
+  test('The page renders with correct title', async () => {
     await expect(page).toHaveTitle(
       `${metaTags['youre-unsubscribed']} | freeCodeCamp.org`
     );
@@ -74,6 +82,6 @@ test.describe('The unsubscribed page with Id', () => {
 
     await expect(resubscribeButton).toBeVisible();
     const resubscribeButtonHref = await resubscribeButton.getAttribute('href');
-    expect(resubscribeButtonHref).toContain(`/resubscribe/${randomId}`);
+    expect(resubscribeButtonHref).toContain(`/resubscribe/${unsubscribeId}`);
   });
 });
