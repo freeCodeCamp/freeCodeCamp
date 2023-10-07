@@ -1,13 +1,13 @@
 # Curriculum File Structure
 
-Our core instructional content is located within the conveniently named `curriculum` directory. This page will break down how these files are organized.
+Our core instructional content is located within the conveniently named `curriculum` directory. This page will break down how these files are structured.
 
 ## Terminology
 
 There are a few terms we use when discussing our curriculum content.
 
 - `certification` : When referring to a certification in this instance, it is talking about the actual certificate that users claim. Which is separate from the name of the superBlock.
-- `superBlock` : A superblock is the top level collection of challenges. Each superblock corresponds to a certification in the curriculum (e.g. Responsive Web Design).
+- `superBlock` : A superblock is a top-level collection of challenges. Each superblock corresponds to a certification in the curriculum (e.g. Responsive Web Design).
 - `block` : A block is a section within a superblock. A block corresponds to a group of challenges in a given certification (e.g. Basic HTML and HTML5)
 - `challenge` : A challenge is a single lesson within the curriculum (e.g. Say Hello to HTML Elements)
 
@@ -37,8 +37,7 @@ The `_meta` directory is a special directory which contains `.json` files. These
 There may be times when you need to rename a certificate, superblock, block, or challenge. This section will outline the steps needed to avoid build errors when doing so.
 
 > [!ATTENTION]
-> Renaming files within the curriculum structure will often change the path (or URL) of the content on the main webpage. Doing so should be done with care, as redirects have to be set up for each change that is made.
-
+> Renaming files inside the curriculum structure will frequently affect the path (or URL) of the information on the main homepage; do so with caution, since redirects must be put up for each change made.
 ### Renaming a Certification
 
 When renaming a certification, you will likely want to rename the associated superblock along with it. Do the following to rename only the certificate:
@@ -86,7 +85,7 @@ When renaming a curriculum block, you need to:
 1. Change the name of the block folder in the `_meta` directory.
 1. Update the `name` and `dashedName` property for that block's `meta.json` file.
 1. Update the block folder in `client/src/pages/learn/{superBlock}`.
-1. In the `index.md` file of the above folder, update the `block` value in the frontmatter.
+1. In the above folder's `index.md` file, update the `block` value in the front matter.
 1. In the `client/i18n/locales/{language}/intro.json` files, update the block name to the new name for all the languages. In the English `intro.json` file, update the `title` as well.
 1. Update the main `README.md` file to the new name.
 
@@ -96,8 +95,8 @@ When renaming a single challenge file, you need to:
 
 1. Change the name of the challenge file in the `curriculum/challenges/english` directory.
 1. Change the name of the `title` and `dashedName` within that file.
-1. Change the name of the file, and the `dashedName` in those files for _all_ of the other language directories to match.
-1. Update the name of the challenge in the relevant `meta.json` file. The challenge names here are not used in the build, but provide a user-friendly way to identify the challenge order.
+1. Change the file's name, and the `dashedName` in those files for _all_ of the other language directories to match.
+1. Update the name of the challenge in the relevant `meta.json` file. The challenge names here are not used in the build but provide a user-friendly way to identify the challenge order.
 1. If the challenge is a certificate project, update the YAML file in `curriculum/english/12-certificates/<superBlock>` to the new name.
 1. If the challenge is a certificate project, update the `title` and `link` in `client/src/resources/cert-and-project-map.ts`
 1. If the challenge is a certificate project, update the main `README.md` file to the new name.
