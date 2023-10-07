@@ -14,7 +14,6 @@ const settingsTestIds = {
 
 const settingsObject = {
   email: 'foo@bar.com',
-  developmentUsername: 'developmentuser',
   certifiedUsername: 'certifieduser',
   testEmail: 'test@gmail.com',
   pageTitle: `${translations.buttons.settings} | freeCodeCamp.org`,
@@ -48,21 +47,12 @@ test.describe('Settings', () => {
   test('Should display the correct header', async () => {
     const header = page.getByTestId(settingsTestIds.settingsHeading);
     await expect(header).toBeVisible();
-    if (process.env.FREECODECAMP_NODE_ENV === 'development') {
-      await expect(header).toContainText(
-        `${translations.settings.for.replace(
-          settingsObject.userNamePlaceholder,
-          settingsObject.developmentUsername
-        )}`
-      );
-    } else {
-      await expect(header).toContainText(
-        `${translations.settings.for.replace(
-          settingsObject.userNamePlaceholder,
-          settingsObject.certifiedUsername
-        )}`
-      );
-    }
+    await expect(header).toContainText(
+      `${translations.settings.for.replace(
+        settingsObject.userNamePlaceholder,
+        settingsObject.certifiedUsername
+      )}`
+    );
   });
 
   test('Should validate Username Settings', async () => {
@@ -115,11 +105,7 @@ test.describe('Settings', () => {
     ).toBeVisible();
     await page
       .getByTestId(settingsTestIds.usernameSettings)
-      .fill(
-        process.env.FREECODECAMP_NODE_ENV === 'development'
-          ? settingsObject.developmentUsername
-          : settingsObject.certifiedUsername
-      );
+      .fill(settingsObject.certifiedUsername);
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
