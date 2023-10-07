@@ -61,9 +61,10 @@ test.describe('Email Settings', () => {
     const getSessionUserResponseBody = await getSessionUserResponse.json();
     const isEmailVerified =
       getSessionUserResponseBody.user.certifieduser.isEmailVerified;
-    expect(isEmailVerified, JSON.stringify(getSessionUserResponseBody)).toBe(
-      false
-    );
+    expect(
+      isEmailVerified,
+      JSON.stringify(await page.context().cookies(), null, 2)
+    ).toBe(false);
 
     await expect(
       page.getByTestId(settingsPageElement.emailVerificationAlert)
@@ -87,7 +88,9 @@ test.describe('Email Settings', () => {
       .click();
     const subscriptionResponse = await subscriptionResponsePromise;
     const subscriptionRequestHeaders = JSON.stringify(
-      await subscriptionResponse.request().allHeaders()
+      await subscriptionResponse.request().allHeaders(),
+      null,
+      2
     );
 
     expect(subscriptionResponse.status(), subscriptionRequestHeaders).toBe(200);
