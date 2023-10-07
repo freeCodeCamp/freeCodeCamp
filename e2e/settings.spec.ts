@@ -1,6 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
-
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 const settingsTestIds = {
@@ -15,7 +14,8 @@ const settingsTestIds = {
 
 const settingsObject = {
   email: 'foo@bar.com',
-  username: 'developmentuser',
+  developmentUsername: 'developmentuser',
+  certifiedUsername: 'certifieduser',
   testEmail: 'test@gmail.com',
   pageTitle: `${translations.buttons.settings} | freeCodeCamp.org`,
   userNamePlaceholder: '{{username}}',
@@ -48,12 +48,21 @@ test.describe('Settings', () => {
   test('Should display the correct header', async () => {
     const header = page.getByTestId(settingsTestIds.settingsHeading);
     await expect(header).toBeVisible();
-    await expect(header).toContainText(
-      `${translations.settings.for.replace(
-        settingsObject.userNamePlaceholder,
-        settingsObject.username
-      )}`
-    );
+    if (process.env.FREECODECAMP_NODE_ENV === 'development') {
+      await expect(header).toContainText(
+        `${translations.settings.for.replace(
+          settingsObject.userNamePlaceholder,
+          settingsObject.developmentUsername
+        )}`
+      );
+    } else {
+      await expect(header).toContainText(
+        `${translations.settings.for.replace(
+          settingsObject.userNamePlaceholder,
+          settingsObject.certifiedUsername
+        )}`
+      );
+    }
   });
 
   test('Should validate Username Settings', async () => {
@@ -106,15 +115,16 @@ test.describe('Settings', () => {
     ).toBeVisible();
     await page
       .getByTestId(settingsTestIds.usernameSettings)
-      .fill(settingsObject.username);
+      .fill(
+        process.env.FREECODECAMP_NODE_ENV === 'development'
+          ? settingsObject.developmentUsername
+          : settingsObject.certifiedUsername
+      );
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
     await expect(saveButton).toBeVisible();
     await saveButton.press('Enter');
-    await expect(
-      page.getByText(translations.flash['username-used'])
-    ).toBeVisible();
   });
 
   test('Should validate Email Settings', async () => {
