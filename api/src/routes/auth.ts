@@ -4,7 +4,7 @@ import {
   FastifyRequest
 } from 'fastify';
 
-import { defaultUser } from '../utils/default-user';
+import { createUserInput } from '../utils/create-user';
 import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env';
 
 declare module 'fastify' {
@@ -41,7 +41,7 @@ const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
   return (
     existingUser ??
     (await fastify.prisma.user.create({
-      data: { ...defaultUser, email },
+      data: createUserInput(email),
       select: { id: true }
     }))
   );
