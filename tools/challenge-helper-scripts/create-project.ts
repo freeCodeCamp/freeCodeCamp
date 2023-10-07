@@ -3,8 +3,8 @@ import fs from 'fs/promises';
 import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
-
 import ObjectID from 'bson-objectid';
+
 import { SuperBlocks } from '../../shared/config/superblocks';
 import { createStepFile } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
@@ -78,7 +78,7 @@ async function updateIntroJson(
   void withTrace(
     fs.writeFile,
     introJsonPath,
-    format(JSON.stringify(newIntro), { parser: 'json' })
+    await format(JSON.stringify(newIntro), { parser: 'json' })
   );
 }
 
@@ -107,7 +107,7 @@ async function createMetaJson(
   void withTrace(
     fs.writeFile,
     path.resolve(metaDir, `${block}/meta.json`),
-    format(JSON.stringify(newMeta), { parser: 'json' })
+    await format(JSON.stringify(newMeta), { parser: 'json' })
   );
 }
 

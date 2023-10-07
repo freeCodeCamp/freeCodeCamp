@@ -91,6 +91,11 @@
   border: 2px solid var(--primary-color);
 }
 
+input:focus-visible + .video-quiz-input-visible {
+  outline: 3px solid var(--focus-outline-color);
+  outline-offset: 2px;
+}
+
 .video-quiz-selected-input {
   width: 10px;
   height: 10px;
