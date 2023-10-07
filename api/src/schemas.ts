@@ -216,6 +216,25 @@ export const schemas = {
       })
     }
   },
+  updateMyEmail: {
+    body: Type.Object({
+      email: Type.String({ format: 'email', maxLength: 1024 })
+    }),
+    response: {
+      200: Type.Object({
+        message: Type.Literal('flash.email-valid'),
+        type: Type.Literal('success')
+      }),
+      '4xx': Type.Object({
+        message: Type.String(),
+        type: Type.Union([Type.Literal('danger'), Type.Literal('info')])
+      }),
+      500: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      })
+    }
+  },
   // User:
   deleteMyAccount: {
     response: {
@@ -460,6 +479,33 @@ export const schemas = {
         message: Type.Literal(
           'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
         )
+      })
+    }
+  },
+  chargeStripeCard: {
+    body: Type.Object({
+      paymentMethodId: Type.String(),
+      amount: Type.Number(),
+      duration: Type.Literal('month')
+    }),
+    response: {
+      200: Type.Object({
+        isDonating: Type.Boolean(),
+        type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.String(),
+        type: Type.Literal('info')
+      }),
+      402: Type.Object({
+        message: Type.String(),
+        type: Type.String(),
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        client_secret: Type.Optional(Type.String())
+      }),
+      500: Type.Object({
+        message: Type.String(),
+        type: Type.Literal('danger')
       })
     }
   },

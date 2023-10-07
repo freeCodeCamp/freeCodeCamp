@@ -17,6 +17,7 @@
     "ajv": "8.12.0",
     "ajv-formats": "2.1.1",
     "connect-mongo": "4.6.0",
+    "date-fns": "2.30.0",
     "dotenv": "16.3.1",
     "fast-uri": "2.2.0",
     "fastify": "4.21.0",
@@ -30,6 +31,7 @@
     "nodemailer": "6.9.5",
     "nodemon": "2.0.22",
     "pino-pretty": "10.2.0",
+    "stripe": "8.205.0",
     "query-string": "7.1.3"
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",

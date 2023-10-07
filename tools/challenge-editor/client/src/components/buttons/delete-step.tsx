@@ -6,13 +6,16 @@ const DeleteStep = ({ superblock, block }: BlockRequiredProps) => {
   const [num, setNum] = useState(0);
 
   const click = handleRequest(() =>
-    fetch(`${API_LOCATION}/${superblock}/${block}/_tools/delete-step`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ num })
-    })
+    fetch(
+      `${API_LOCATION}/${superblock || ''}/${block || ''}/_tools/delete-step`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ num })
+      }
+    )
   );
 
   const changeNum = (e: React.ChangeEvent<HTMLInputElement>) => {

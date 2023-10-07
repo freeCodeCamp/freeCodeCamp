@@ -6,7 +6,7 @@ import type { Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 import _ from 'lodash';
 
-import { defaultUser } from '../utils/default-user';
+import { createUserInput } from '../utils/create-user';
 import {
   defaultUserId,
   defaultUserEmail,
@@ -18,8 +18,7 @@ import { JWT_SECRET } from '../utils/env';
 
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {
-  ...defaultUser,
-  email: defaultUserEmail,
+  ...createUserInput(defaultUserEmail),
   username: 'foobar',
   usernameDisplay: 'Foo Bar',
   progressTimestamps: [1520002973119, 1520440323273],
