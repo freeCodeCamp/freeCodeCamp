@@ -1,4 +1,4 @@
-import { test, expect, typePage, except } from '@playwright/test';
+import { test, expect, type Page, except } from '@playwright/test';
 
 let page: Page;
 const userId = '5f2e0c3d9b2e6f0017a7b5d3';
