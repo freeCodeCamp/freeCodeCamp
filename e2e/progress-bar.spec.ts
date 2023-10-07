@@ -25,15 +25,17 @@ test.describe('Progress bar component', () => {
     await page.keyboard.insertText(
       '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2></body></html>'
     );
-    const lowerCheckButton = page.getByText('Check Your Code (Ctrl + Enter)');
+    await page
+      .getByRole('button', { name: 'Check Your Code (Ctrl + Enter)' })
+      .click();
 
-    await lowerCheckButton.click({ force: true });
     const progressBarContainer = page.getByTestId('progress-bar-container');
     await expect(progressBarContainer).toContainText(
       'Learn HTML by Building a Cat Photo App'
     );
     await expect(progressBarContainer).toContainText('0% complete');
-    const submitCheckButton = page.getByText('Submit and go to next challenge');
-    await expect(submitCheckButton).toBeVisible();
+    await page
+      .getByRole('button', { name: 'Submit and go to next challenge' })
+      .click();
   });
 });
