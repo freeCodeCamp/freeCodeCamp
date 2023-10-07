@@ -25,7 +25,7 @@ test.describe('Unsubscribed page tests', () => {
   // Test for correct heading on page
   test('should display the unsubscribed heading', async () => {
     const unSubscribedHeading = page.getByTestId('unsubscribed-heading');
-    except(unSubscribedHeading.not.toBeNull());
+    except(unSubscribedHeading).not.toBeNull();
     except(await unSubscribedHeading.textContent()).toBe(
       'You have successfully been unsubscribed'
     );
@@ -34,7 +34,7 @@ test.describe('Unsubscribed page tests', () => {
   // Test for correct text on page
   test('should display the unsubscribed text', async () => {
     const unSubscribedText = page.getByTestId('unsubscribed-text');
-    except(unSubscribedText.not.toBeNull());
+    except(unSubscribedText).not.toBeNull();
     except(await unSubscribedText.textContent()).toBe(
       'Whatever you go on to, keep coding!'
     );
@@ -43,7 +43,7 @@ test.describe('Unsubscribed page tests', () => {
   // Test for correct link on page for resubscribing
   test('should display the resubscribe link', async () => {
     const resubscribeLink = page.getByTestId('resubscribe-button');
-    except(resubscribeLink.not.toBeNull());
+    except(resubscribeLink).not.toBeNull();
     except(await resubscribeLink.textContent()).toBe(
       'You can click here to resubscribe'
     );
