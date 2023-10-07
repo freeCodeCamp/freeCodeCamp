@@ -161,7 +161,11 @@ function EmailSettings({
       {isEmailVerified ? null : (
         <FullWidthRow>
           <HelpBlock>
-            <Alert variant='info' className='text-center' data-playwright-test-label='email-verification-alert'>
+            <Alert
+              variant='info'
+              className='text-center'
+              data-playwright-test-label='email-verification-alert'
+            >
               {t('settings.email.not-verified')}
               <br />
               <Trans i18nKey='settings.email.check'>
