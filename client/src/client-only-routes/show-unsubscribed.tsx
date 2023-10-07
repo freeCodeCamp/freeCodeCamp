@@ -30,8 +30,12 @@ function ShowUnsubscribed({
             <Spacer size='large' />
             <Panel bsStyle='primary' className='text-center'>
               <Spacer size='medium' />
-              <h2>{t('misc.unsubscribed')}</h2>
-              <p>{t('misc.keep-coding')}</p>
+              <h2
+              data-playwright-test-label='unsubscribed-heading'
+              >{t('misc.unsubscribed')}</h2>
+              <p
+              data-playwright-test-label='unsubscribed-text'
+              >{t('misc.keep-coding')}</p>
             </Panel>
           </FullWidthRow>
           {unsubscribeId ? (
@@ -40,6 +44,7 @@ function ShowUnsubscribed({
                 block={true}
                 bsSize='lg'
                 bsStyle='primary'
+                data-playwright-test-label='resubscribe-button'
                 href={`${apiLocation}/resubscribe/${unsubscribeId}`}
               >
                 {t('buttons.resubscribe')}
