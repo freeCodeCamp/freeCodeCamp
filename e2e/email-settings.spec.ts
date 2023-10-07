@@ -53,7 +53,18 @@ test.describe('Email Settings', () => {
       page.getByTestId(settingsPageElement.flashMessageAlert)
     ).toBeVisible();
 
+    const getSessionUserResponsePromise = page.waitForResponse(response =>
+      response.url().includes('get-session-user')
+    );
     await page.reload();
+    const getSessionUserResponse = await getSessionUserResponsePromise;
+    const getSessionUserResponseBody = await getSessionUserResponse.json();
+    const isEmailVerified =
+      getSessionUserResponseBody.user.certifieduser.isEmailVerified;
+    expect(isEmailVerified, JSON.stringify(getSessionUserResponseBody)).toBe(
+      false
+    );
+
     await expect(
       page.getByTestId(settingsPageElement.emailVerificationAlert)
     ).toBeVisible();
@@ -68,9 +79,18 @@ test.describe('Email Settings', () => {
   });
 
   test('should display flash message when email subscription is toggled', async () => {
+    const subscriptionResponsePromise = page.waitForResponse(response =>
+      response.url().includes('update-my-quincy-email')
+    );
     await page
       .getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
       .click();
+    const subscriptionResponse = await subscriptionResponsePromise;
+    const subscriptionRequestHeaders = JSON.stringify(
+      await subscriptionResponse.request().allHeaders()
+    );
+
+    expect(subscriptionResponse.status(), subscriptionRequestHeaders).toBe(200);
 
     await expect(
       page.getByTestId(settingsPageElement.flashMessageAlert)
