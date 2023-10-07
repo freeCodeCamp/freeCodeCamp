@@ -1,7 +1,7 @@
 import { test, expect, typePage, except } from '@playwright/test';
 
 let page: Page;
-let userId = '5f2e0c3d9b2e6f0017a7b5d3';
+const userId = '5f2e0c3d9b2e6f0017a7b5d3';
 
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();
