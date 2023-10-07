@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
-import envData from '../client/config/env.json';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
@@ -15,8 +14,8 @@ test.describe('Staging Warning Modal E2E Test Suite', () => {
     page
   }) => {
     if (
-      envData.deploymentEnv === 'staging' &&
-      envData.environment === 'production'
+      process.env.DEPLOYMENT_ENV === 'staging' &&
+      process.env.FREECODECAMP_NODE_ENV === 'production'
     ) {
       await expect(
         page.getByText(translations['staging-warning'].heading)
@@ -62,8 +61,8 @@ test.describe('Staging Warning Modal E2E Test Suite', () => {
     page
   }) => {
     if (
-      envData.deploymentEnv === 'staging' &&
-      envData.environment === 'production'
+      process.env.DEPLOYMENT_ENV === 'staging' &&
+      process.env.FREECODECAMP_NODE_ENV === 'production'
     ) {
       await page
         .getByRole('button', { name: translations.buttons.close })
@@ -78,8 +77,8 @@ test.describe('Staging Warning Modal E2E Test Suite', () => {
     page
   }) => {
     if (
-      envData.deploymentEnv === 'staging' &&
-      envData.environment === 'production'
+      process.env.DEPLOYMENT_ENV === 'staging' &&
+      process.env.FREECODECAMP_NODE_ENV === 'production'
     ) {
       await page
         .getByRole('button', { name: translations['staging-warning'].certain })
