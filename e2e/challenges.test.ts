@@ -36,6 +36,10 @@ test.describe('Legacy Challenge Path Redirection Tests', () => {
         await page.goto(input);
         const currentPath = new URL(page.url()).pathname;
         expect(currentPath).toBe(expected);
+        // Due to inconsistent URL behavior in WebKit & Mobile Safari.
+        // The URL may not correctly reflect the page.
+        // Fallback to running a DOM test and validate page content.
+        // Ensures we are on the expected page despite URL.
       } catch (error) {
         console.log(
           `Failed to redirect from ${input} to ${expected}. Running DOM tests.`
