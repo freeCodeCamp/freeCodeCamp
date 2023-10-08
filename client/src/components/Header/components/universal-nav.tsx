@@ -41,24 +41,30 @@ const UniversalNav = ({
 
   const search =
     typeof window !== `undefined` && isLanding(window.location.pathname) ? (
-      <SearchBarOptimized innerRef={searchBarRef} />
+      <SearchBarOptimized innerRef={searchBarRef} data-playwright-test-label='header-search-bar' />
     ) : (
-      <SearchBar innerRef={searchBarRef} />
+      <SearchBar innerRef={searchBarRef} data-playwright-test-label='header-search-bar' />
     );
 
   return (
     <nav
       aria-label={t('aria.primary-nav')}
       className='universal-nav'
+      data-playwright-test-label='universal-nav'
       id='universal-nav'
     >
       {isSearchExposedWidth && (
         <div className='universal-nav-left'>{search}</div>
       )}
-      <Link className='universal-nav-logo' id='universal-nav-logo' to='/learn'>
+      <Link
+        className='universal-nav-logo'
+        id='universal-nav-logo'
+        data-playwright-test-label='universal-nav-logo'
+        to='/learn'
+      >
         <NavLogo />
       </Link>
-      <div className='universal-nav-right main-nav'>
+      <div className='universal-nav-right main-nav' data-playwright-test-label='main-nav'>
         {pending ? (
           <div className='nav-skeleton'>
             <SkeletonSprite />
