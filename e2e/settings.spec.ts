@@ -28,6 +28,31 @@ const settingsObject = {
   supportEmailPlaceholder: '<0>{{email}}</0>'
 };
 
+const certifications = [
+  translations.certification.title['Responsive Web Design'],
+  translations.certification.title['JavaScript Algorithms and Data Structures'],
+  translations.certification.title['Front End Development Libraries'],
+  translations.certification.title['Data Visualization'],
+  translations.certification.title['Relational Database'],
+  translations.certification.title['Back End Development and APIs'],
+  translations.certification.title['Quality Assurance'],
+  translations.certification.title['Scientific Computing with Python'],
+  translations.certification.title['Data Analysis with Python'],
+  translations.certification.title['Information Security'],
+  translations.certification.title['Machine Learning with Python'],
+  translations.certification.title['College Algebra with Python'],
+  translations.certification.title['Foundational C# with Microsoft']
+];
+
+const legacyCertifications = [
+  translations.certification.title['Legacy Front End'],
+  translations.certification.title['Legacy Back End'],
+  translations.certification.title['Legacy Data Visualization'],
+  translations.certification.title[
+    'Legacy Information Security and Quality Assurance'
+  ]
+];
+
 test.describe('Settings', () => {
   let page: Page;
 
@@ -359,6 +384,99 @@ test.describe('Settings', () => {
           settingsObject.supportEmail
         )
       )
+    ).toBeVisible();
+  });
+  test('Should validate Certification Settings', async () => {
+    await expect(
+      page.getByRole('heading', {
+        name: translations.settings.headings.certs,
+        exact: true
+      })
+    ).toBeVisible();
+    for (let i = 0; i < certifications.length; i++) {
+      await expect(
+        page.getByRole('heading', {
+          name: certifications[i],
+          exact: true
+        })
+      ).toBeVisible();
+      await expect(
+        page.getByRole('link', {
+          name: `${translations.buttons['show-cert']} ${certifications[i]}`
+        })
+      ).toBeVisible();
+    }
+  });
+
+  test('Should validate Legacy Certification Settings', async () => {
+    await expect(
+      page.getByRole('heading', {
+        name: translations.settings.headings['legacy-certs'],
+        exact: true
+      })
+    ).toBeVisible();
+    for (let i = 0; i < legacyCertifications.length; i++) {
+      await expect(
+        page.getByRole('heading', {
+          name: legacyCertifications[i],
+          exact: true
+        })
+      ).toBeVisible();
+      await expect(
+        page.getByRole('link', {
+          name: `${translations.buttons['show-cert']} ${legacyCertifications[i]}`,
+          exact: true
+        })
+      ).toBeVisible();
+    }
+  });
+  test('Should validate Danger Section Settings', async () => {
+    await expect(
+      page.getByRole('tab', {
+        name: translations.settings.danger.heading,
+        exact: true
+      })
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.settings.danger['be-careful'], {
+        exact: true
+      })
+    ).toBeVisible();
+    await page
+      .getByRole('button', {
+        name: translations.settings.danger.reset,
+        exact: true
+      })
+      .click();
+    await page
+      .getByRole('button', {
+        name: translations.settings.danger['nevermind-2'],
+        exact: true
+      })
+      .click();
+    await expect(
+      page.getByRole('button', {
+        name: translations.settings.danger['reset-confirm'],
+        exact: true
+      })
+    ).toBeVisible();
+    await page
+      .getByRole('button', {
+        name: translations.settings.danger.delete,
+        exact: true
+      })
+      .click();
+    await page
+      .getByRole('button', {
+        name: translations.settings.danger.nevermind,
+        exact: true
+      })
+      .click();
+    await expect(
+      page.getByRole('button', {
+        name: translations.settings.danger.certain,
+        exact: true
+      })
     ).toBeVisible();
   });
 });
