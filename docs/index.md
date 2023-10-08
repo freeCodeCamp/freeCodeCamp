@@ -33,7 +33,7 @@ Certifications are already live in some major world languages like below:
 - [Japanese (日本語)](https://www.freecodecamp.org/japanese/learn)
 - [German (Deutsch)](https://www.freecodecamp.org/german/learn)
 
-We encourage you to read the [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and share it with your friends to get them excited about this.
+We encourage you to read the [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and share it with your friends to get them excited about it.
 
 **If you're interested in translating, here's [how to translate freeCodeCamp's resources](how-to-translate-files.md).**
 
