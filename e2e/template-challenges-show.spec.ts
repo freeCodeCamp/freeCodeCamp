@@ -9,8 +9,8 @@ test.describe('Template Challenges Show', () => {
     );
   });
 
-  test.afterAll(async ({ browser }) => {
-    await browser.close();
+  test.afterEach(async ({ page }) => {
+    await page.close();
   });
 
   test('should display a success dialog when the user submits the form, and they have completed the quiz and the assignments correctly', async ({
