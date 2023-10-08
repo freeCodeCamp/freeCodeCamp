@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('404 Page', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/settings');
+    await page.goto('/404');
   });
 
   test('Should have a relevant page title', async ({ page }) => {
