@@ -57,7 +57,12 @@ function HelpModal({
     executeGA({ event: 'pageview', pagePath: '/help-modal' });
   }
   return (
-    <Modal dialogClassName='help-modal' onHide={closeHelpModal} show={isOpen}>
+    <Modal
+      dialogClassName='help-modal'
+      onHide={closeHelpModal}
+      show={isOpen}
+      data-playwright-test-label='ask-for-help-modal'
+    >
       <Modal.Header className='help-modal-header fcc-modal' closeButton={true}>
         <Modal.Title className='text-center'>
           {t('buttons.ask-for-help')}
@@ -96,6 +101,7 @@ function HelpModal({
           bsSize='lg'
           bsStyle='primary'
           onClick={createQuestion}
+          data-playwright-test-label='create-post-button'
         >
           {t('buttons.create-post')}
         </Button>
@@ -104,6 +110,7 @@ function HelpModal({
           bsSize='lg'
           bsStyle='primary'
           onClick={closeHelpModal}
+          data-playwright-test-label='cancel-button'
         >
           {t('buttons.cancel')}
         </Button>
