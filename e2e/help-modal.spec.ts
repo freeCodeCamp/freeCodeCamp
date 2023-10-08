@@ -47,10 +47,15 @@ test.describe('Help Modal component', () => {
     ).toBeVisible();
   });
 
-  test('Create Post button closes the modal', async ({ page }) => {
+  test('Create Post button closes help modal and creates new page with forum url', async ({
+    context,
+    page
+  }) => {
     await page
       .getByRole('button', { name: translations.buttons['ask-for-help'] })
       .click();
+
+    const newPagePromise = context.waitForEvent('page');
 
     await page
       .getByRole('button', {
@@ -64,6 +69,11 @@ test.describe('Help Modal component', () => {
         exact: true
       })
     ).not.toBeVisible();
+
+    const newPage = await newPagePromise;
+    await newPage.waitForLoadState();
+
+    await expect(newPage).toHaveURL(/.*forum\.freecodecamp.org.*/);
   });
 
   test('Cancel button closes the modal', async ({ page }) => {
