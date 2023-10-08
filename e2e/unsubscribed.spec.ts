@@ -46,27 +46,25 @@ test.describe('The unsubscribed page without unsubscribeId', () => {
 });
 
 test.describe('The unsubscribed page with unsubscribeId', () => {
-  const unsubscribeId = Math.floor(Math.random() * 1000000000);
+  const encoded_rul_text =
+    '?messages=success%5B0%5D%3DWe%2527ve%2520successfully%2520updated%2520your%2520email%2520preferences.%2520Thank%2520you%2520for%2520resubscribing.';
+  const unsubscribeId = 'tBX8stC5jiustPBteF2mV';
 
   test.beforeAll(async ({ browser }) => {
     page = await browser.newPage();
     await page.goto(`/unsubscribed/${unsubscribeId}`);
   });
 
-  test('The page renders with correct title', async () => {
+  test('The page renders with correct title and other texts', async () => {
     await expect(page).toHaveTitle(
       `${metaTags['youre-unsubscribed']} | freeCodeCamp.org`
     );
-  });
 
-  test('The page has correct main heading', async () => {
     const mainHeading = page.getByTestId('main-heading');
 
     await expect(mainHeading).toBeVisible();
     await expect(mainHeading).toContainText(translations.misc['unsubscribed']);
-  });
 
-  test('The page has correct motivation text', async () => {
     const motivationText = page.getByTestId('motivation-text');
 
     await expect(motivationText).toBeVisible();
@@ -75,7 +73,7 @@ test.describe('The unsubscribed page with unsubscribeId', () => {
     );
   });
 
-  test('The page has button to resubscribe', async () => {
+  test('Resubscribe and redirect to home with encoded text in the url', async () => {
     const resubscribeButton = page.getByRole('link', {
       name: translations.buttons['resubscribe']
     });
@@ -83,5 +81,8 @@ test.describe('The unsubscribed page with unsubscribeId', () => {
     await expect(resubscribeButton).toBeVisible();
     const resubscribeButtonHref = await resubscribeButton.getAttribute('href');
     expect(resubscribeButtonHref).toContain(`/resubscribe/${unsubscribeId}`);
+    await resubscribeButton.click();
+
+    await expect(page).toHaveURL(`${encoded_rul_text}`);
   });
 });
