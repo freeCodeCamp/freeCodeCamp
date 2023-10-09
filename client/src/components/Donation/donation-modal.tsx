@@ -1,5 +1,11 @@
-import { Modal, Button, Col, Row } from '@freecodecamp/react-bootstrap';
-import { Tabs, TabsContent, TabsTrigger, TabsList } from '@freecodecamp/ui';
+import { Modal, Button, Row } from '@freecodecamp/react-bootstrap';
+import {
+  Tabs,
+  TabsContent,
+  TabsTrigger,
+  TabsList,
+  Col
+} from '@freecodecamp/ui';
 import { WindowLocation } from '@reach/router';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -8,6 +14,7 @@ import { useFeature } from '@growthbook/growthbook-react';
 import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
+
 import {
   PaymentContext,
   subscriptionAmounts,
