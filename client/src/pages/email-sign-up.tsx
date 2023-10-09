@@ -60,7 +60,7 @@ function EmailListOptIn({
   const { t } = useTranslation();
   if (isSignedIn) {
     return (
-      <Row>
+      <Row data-playwright-test-label="user-email-buttons">
         <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
           <Button
             block={true}
@@ -97,6 +97,7 @@ function EmailListOptIn({
           bsStyle='primary'
           className='big-cta-btn'
           href={`${apiLocation}/signin`}
+          data-playwright-test-label="email-sign-up-button"
         >
           {t('buttons.sign-up-email-list')}
         </Button>
@@ -150,7 +151,9 @@ function AcceptPrivacyTerms({
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Spacer size='small' />
-            <IntroDescription />
+            <IntroDescription 
+            data-playwright-test-label="learn-read-this-section"
+            />
             <hr />
           </Col>
         </Row>
