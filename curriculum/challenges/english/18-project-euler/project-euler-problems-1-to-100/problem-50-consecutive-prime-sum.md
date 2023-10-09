@@ -101,10 +101,10 @@ class PrimeSeive {
 };
 
 function consecutivePrimeSum(limit) {
-  // Initalize seive
+  // Initialize seive
   const primeSeive = new PrimeSeive(limit);
 
-  // Initalize for longest sum < 100
+  // Initialize for longest sum < 100
   let bestPrime = 41;
   let bestI = 0;
   let bestJ = 5;
