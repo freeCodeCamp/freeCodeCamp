@@ -4,7 +4,7 @@ const challengeUrl =
 const superBlockUrl = '/learn/responsive-web-design';
 const courseUrl = '/learn/responsive-web-design/#basic-html-and-html5';
 
-describe('The breadcumbs should work corectly', () => {
+describe('The breadcumbs should work correctly', () => {
   it('It should have a superblock and a course', () => {
     cy.visit(challengeUrl);
     cy.get('.ellipsis').contains('Responsive Web Design').and('be.visible');
