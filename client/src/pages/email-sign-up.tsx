@@ -1,4 +1,4 @@
-import { Row, Col, Button } from '@freecodecamp/react-bootstrap';
+import { Row, Button } from '@freecodecamp/react-bootstrap';
 import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, Trans } from 'react-i18next';
@@ -6,7 +6,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container } from '@freecodecamp/ui';
+import { Container, Col } from '@freecodecamp/ui';
+
 import IntroDescription from '../components/Intro/components/intro-description';
 import createRedirect from '../components/create-redirect';
 import { Spacer, Loader, Link } from '../components/helpers';
