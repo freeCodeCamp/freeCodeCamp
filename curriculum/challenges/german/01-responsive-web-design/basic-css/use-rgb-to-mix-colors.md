@@ -15,7 +15,7 @@ Genau wie bei Hex-Code, kannst du Farben in RGB durch Kombinationen unterschiedl
 
 Ersetze die Hex-Codes in unserem `style`-Element mit entsprechenden RGB-Werten.
 
-<table class='table table-striped'><tbody><tr><th>Farbe</th><th>RGB</th></tr><tr><td>Blau</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>Rot</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>Orchideen-Lila</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>Siena-Braun</td><td><code>rgb(160, 82, 45)</code></td></tr></tbody></table>
+<table><tbody><tr><th>Farbe</th><th>RGB</th></tr><tr><td>Blau</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>Rot</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>Orchideen-Lila</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>Siena-Braun</td><td><code>rgb(160, 82, 45)</code></td></tr></tbody></table>
 
 # --hints--
 

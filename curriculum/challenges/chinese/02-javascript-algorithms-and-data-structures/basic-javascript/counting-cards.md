@@ -13,7 +13,7 @@ dashedName: counting-cards
 
 牌桌上的大值的卡牌更多，对玩家有利。 根据下面的表格，每张卡牌都被分配了一个值。 如果卡牌的值大于 0，那么玩家应该追加赌注。 如果卡牌的值为 0 或负数，玩家应该追加少许赌注甚至不追加赌注。
 
-<table class='table table-striped'><thead><tr><th>计数</th><th>卡牌</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K', 'A'</td></tr></tbody></table>
+<table><thead><tr><th>计数</th><th>卡牌</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K', 'A'</td></tr></tbody></table>
 
 请写一个函数实现 21 点算法。 它根据参数 `card` 的值（见表格，可能是数字或者字符串）来递增或递减全局变量 `count`。 然后函数返回一个由当前 count（计数）和 `Bet`（当 count > 0 时）或 `Hold`（当 count <= 0 时) 拼接的字符串。 注意 count（计数）和玩家的决定（`Bet` 或 `Hold`）之间应该有空格。
 

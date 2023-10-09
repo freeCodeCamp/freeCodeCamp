@@ -11,7 +11,7 @@ dashedName: issue-tracker
 构建一个 JavaScript 全栈应用，在功能上与 <a href="https://issue-tracker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://issue-tracker.freecodecamp.rocks/</a> 类似。 可以采用下面的任意一种方式完成这个挑战：
 
 -   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow">这个 GitHub 仓库</a>，并在本地完成你的项目。
--   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow">我们的 Replit 初始化项目</a>来完成你的项目。
+-   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
 -   使用一个你喜欢的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
 
 如果你使用 Replit，请按照以下步骤设置项目：
