@@ -319,9 +319,12 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   return (
     <Container className='certificate-outer-wrapper'>
       {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
-      <div className='certificate-wrapper'>
+      <div
+        className='certificate-wrapper'
+        data-playwright-test-label='cert-wrapper'
+      >
         <div className='certification-namespace'>
-          <header>
+          <header data-playwright-test-label='cert-header'>
             <Col sm={12}>
               {isMicrosoftCert ? (
                 <>
@@ -340,7 +343,10 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             </Col>
           </header>
           <main className='information'>
-            <div className='information-container'>
+            <div
+              className='information-container'
+              data-playwright-test-label='cert-info-container'
+            >
               <Trans
                 i18nKey={
                   isMicrosoftCert
@@ -379,7 +385,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
               </Trans>
             </div>
           </main>
-          <footer>
+          <footer data-playwright-test-label='cert-footer'>
             <div className='signatures'>
               {isMicrosoftCert ? (
                 <>
@@ -454,7 +460,10 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           </footer>
         </div>
       </div>
-      <div className='row certificate-links'>
+      <div
+        className='row certificate-links'
+        data-playwright-test-label='cert-links'
+      >
         <Spacer size='large' />
         {signedInUserName === username ? shareCertBtns : ''}
         <Spacer size='large' />
