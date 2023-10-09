@@ -139,7 +139,7 @@ sections that need to stay left to right
   flex-direction: row-reverse;
 }
 
-/* new Font Family because 'Hack-ZeroSlash' add letter spacing in Arabic letter which is extermely bad */
+/* new Font Family because 'Hack-ZeroSlash' add letter spacing in Arabic letter which is extremely bad */
 
 [dir='rtl'] body,
 [dir='rtl'] .signup-btn,
