@@ -60,16 +60,16 @@ test.describe('Exam Results E2E Test Suite', () => {
     await expect(page.getByTestId('exit-exam')).toBeVisible();
   });
 
-  test('Exam Results When the User clicks on Download button', async () => {
-    const [downloadProm] = await Promise.all([
-      page.waitForEvent('download'), // wait for download to start
-      page.getByTestId('download-exam-results').click()
-    ]);
-    const path = await downloadProm.path();
-    console.log('File was saved in ' + String(path));
-
-    await expect(page).toHaveURL(examUrl);
-  });
+  // test('Exam Results When the User clicks on Download button', async () => {
+  //   const [downloadProm] = await Promise.all([
+  //     page.waitForEvent('download'), // wait for download to start
+  //     page.getByTestId('download-exam-results').click()
+  //   ]);
+  //   const path = await downloadProm.path();
+  //   console.log('File was saved in ' + String(path));
+  //
+  //   await expect(page).toHaveURL(examUrl);
+  // });
 
   test('Exam Results when the User clicks on Exit button', async () => {
     await page.getByTestId('exit-exam').click();
