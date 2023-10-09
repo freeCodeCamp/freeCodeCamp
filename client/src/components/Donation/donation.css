@@ -92,6 +92,15 @@
   margin-bottom: 0;
 }
 
+@media (min-width: 1200px) {
+  /*
+  This style allows multi columns in the same row.
+  It will become a functionality once the Grid system is updated. 
+  */
+  .donate-page-wrapper > div > div {
+    float: left;
+  }
+}
 .donate-input-element {
   padding-top: 8px;
 }
