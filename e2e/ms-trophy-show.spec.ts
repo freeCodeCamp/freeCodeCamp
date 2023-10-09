@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
-const verifyTrophy = translations.buttons['verify-trophy'];
-const askForHelpButton = translations.buttons['ask-for-help'];
+const verifyTrophyButtonText = translations.buttons['verify-trophy'];
+const askForHelpButtonText = translations.buttons['ask-for-help'];
 
 test.beforeEach(async ({ page }) => {
   await page.goto(
@@ -21,13 +21,17 @@ test('the page should render with correct title', async ({ page }) => {
 });
 
 test('Correct Verify Trophy button', async ({ page }) => {
-  const askHelp = page.getByTestId('verify-trophy-button');
-  await expect(askHelp).toBeVisible();
-  await expect(askHelp).toContainText(verifyTrophy);
+  const askHelpButton = page.getByRole('button', {
+    name: verifyTrophyButtonText
+  });
+  await expect(askHelpButton).toBeVisible();
+  await expect(askHelpButton).toHaveText(verifyTrophyButtonText);
 });
 
 test('Correct Ask for help button', async ({ page }) => {
-  const checkAnswer = page.getByTestId('ask-for-help-button');
-  await expect(checkAnswer).toBeVisible();
-  await expect(checkAnswer).toContainText(askForHelpButton);
+  const checkAnswerButton = page.getByRole('button', {
+    name: askForHelpButtonText
+  });
+  await expect(checkAnswerButton).toBeVisible();
+  await expect(checkAnswerButton).toContainText(askForHelpButtonText);
 });
