@@ -19,19 +19,18 @@ test("should have a skip to content link", async ({ page }) => {
 });
 
 test("Has header logo", async ({ page }) => {
-  const headerLogo = page.getByTestId(
-    headerComponentElements.headerLogo
-  );
+  const headerLogo = page.getByTestId(headerComponentElements.headerLogo);
   await expect(headerLogo).toBeVisible();
 });
 
-test("should hide search box input on mobile (unless menu button is clicked) and show on desktop on navbar", async ({ page, isMobile}) => {
+test("should hide search box input on mobile (unless menu button is clicked) and show on desktop on navbar", async ({
+  page,
+  isMobile,
+}) => {
   const aisSearchBoxInput = page.getByTestId(
-    headerComponentElements.aisSearchBoxInput
+    headerComponentElements.aisSearchBoxInput,
   );
-  const menuButton = page.getByTestId(
-    headerComponentElements.toggleButtonNav
-  );
+  const menuButton = page.getByTestId(headerComponentElements.toggleButtonNav);
   if (isMobile) {
     await expect(aisSearchBoxInput).toBeHidden();
     await menuButton.click();
@@ -43,19 +42,19 @@ test("should hide search box input on mobile (unless menu button is clicked) and
 
 test("Has toggle lang button", async ({ page }) => {
   const toggleLangButton = page.getByTestId(
-    headerComponentElements.toggleLangButton
+    headerComponentElements.toggleLangButton,
   );
   await expect(toggleLangButton).toBeVisible();
 });
 
-test("should display language list on lang button is clicked", async ({ page }) => {
+test("should display language list on lang button is clicked", async ({
+  page,
+}) => {
   const toggleLangButton = page.getByTestId(
-    headerComponentElements.toggleLangButton
+    headerComponentElements.toggleLangButton,
   );
   await toggleLangButton.click();
-  const navLangList = page.getByTestId(
-    headerComponentElements.navLangList
-  );
+  const navLangList = page.getByTestId(headerComponentElements.navLangList);
   await expect(navLangList).toBeVisible();
   const navLangListOptions = navLangList.locator(".nav-lang-list-option");
   await expect(navLangListOptions).toHaveCount(8);
@@ -66,14 +65,14 @@ test("should display language list on lang button is clicked", async ({ page }) 
 
 test("Has toggle button nav", async ({ page }) => {
   const toggleButtonNav = page.getByTestId(
-    headerComponentElements.toggleButtonNav
+    headerComponentElements.toggleButtonNav,
   );
   await expect(toggleButtonNav).toBeVisible();
 });
 
 test("should display menu list on menu button is clicked", async ({ page }) => {
   const toggleButtonNav = page.getByTestId(
-    headerComponentElements.toggleButtonNav
+    headerComponentElements.toggleButtonNav,
   );
   await toggleButtonNav.click();
   const displayMenu = page.locator(".display-menu");
@@ -86,8 +85,6 @@ test("should display menu list on menu button is clicked", async ({ page }) => {
 });
 
 test("Has sign up button", async ({ page }) => {
-  const signupBtn = page.getByTestId(
-    headerComponentElements.signupBtn
-  );
+  const signupBtn = page.getByTestId(headerComponentElements.signupBtn);
   await expect(signupBtn).toBeVisible();
 });
