@@ -1,5 +1,5 @@
-import { Row, Col } from '@freecodecamp/react-bootstrap';
-import { Alert, Container } from '@freecodecamp/ui';
+import { Row } from '@freecodecamp/react-bootstrap';
+import { Alert, Container, Col } from '@freecodecamp/ui';
 import type { TFunction } from 'i18next';
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
@@ -68,57 +68,47 @@ function DonatePage({
     <>
       <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
       <Container className='donate-page-wrapper'>
-        <Spacer size='large'>
-          <Row>
-            <>
-              <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
-                <Row>
-                  <Col className={'text-center'} xs={12}>
-                    {isDonating ? (
-                      <h2 data-playwright-test-label='main-head'>
-                        {t('donate.thank-you')}
-                      </h2>
-                    ) : (
-                      <h2 data-playwright-test-label='main-head'>
-                        {t('donate.help-more')}
-                      </h2>
-                    )}
-                    <Spacer size='medium' />
-                  </Col>
-                </Row>
-                {isDonating ? (
-                  <Alert variant='info' data-cy='donate-alert'>
-                    <p data-cy='donate.thank-you'>{t('donate.thank-you')}</p>
-                    <br />
-                    <DonationOptionsAlertText />
-                  </Alert>
-                ) : null}
-                <DonationText />
-                <Row>
-                  <Col xs={12}>
-                    <DonateForm paymentContext={PaymentContext.DonatePage} />
-                  </Col>
-                </Row>
-                <Spacer size='exLarge' />
-                <Row className='donate-support' id='FAQ'>
-                  <Col className={'text-center'} xs={12}>
-                    <hr />
-                    <h2 data-playwright-test-label='faq-head'>
-                      {t('donate.faq')}
-                    </h2>
-                    <Spacer size='medium' />
-                  </Col>
-                  <Col xs={12}>
-                    <DonationFaqText />
-                  </Col>
-                </Row>
-              </Col>
-              <Col lg={6}>
-                <CampersImage pageName='donate' />
-              </Col>
-            </>
-          </Row>
-        </Spacer>
+        <Spacer size='medium' />
+        <Row>
+          <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
+            {isDonating ? (
+              <h2
+                data-playwright-test-label='main-head'
+                className='text-center'
+              >
+                {t('donate.thank-you')}
+              </h2>
+            ) : (
+              <h2
+                data-playwright-test-label='main-head'
+                className='text-center'
+              >
+                {t('donate.help-more')}
+              </h2>
+            )}
+            <Spacer size='medium' />
+            {isDonating ? (
+              <Alert variant='info' data-cy='donate-alert'>
+                <p data-cy='donate.thank-you'>{t('donate.thank-you')}</p>
+                <br />
+                <DonationOptionsAlertText />
+              </Alert>
+            ) : null}
+            <DonationText />
+            <DonateForm paymentContext={PaymentContext.DonatePage} />
+            <Spacer size='exLarge' />
+            <hr />
+            <h2 data-playwright-test-label='faq-head' className={'text-center'}>
+              {t('donate.faq')}
+            </h2>
+            <Spacer size='medium' />
+            <DonationFaqText />
+          </Col>
+          <Col lg={6}>
+            <CampersImage pageName='donate' />
+          </Col>
+        </Row>
+        <Spacer size='medium' />
       </Container>
     </>
   );
