@@ -2,9 +2,9 @@ import {
   FormGroup,
   ControlLabel,
   FormControl,
-  HelpBlock,
-  Alert
+  HelpBlock
 } from '@freecodecamp/react-bootstrap';
+import { Alert } from '@freecodecamp/ui';
 import React, { Component } from 'react';
 
 import type { TFunction } from 'i18next';
@@ -55,7 +55,7 @@ const ShowImageValidationWarning = ({
 }) => {
   return (
     <HelpBlock>
-      <Alert bsStyle='info'>{alertContent}</Alert>
+      <Alert variant='info'>{alertContent}</Alert>
     </HelpBlock>
   );
 };
@@ -165,7 +165,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
 
   handlePictureChange = (e: React.FormEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     if (isURL(value, { require_protocol: true })) {
       this.validationImage.src = encodeURI(value);
     } else {

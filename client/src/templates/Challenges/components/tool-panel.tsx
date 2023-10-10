@@ -104,23 +104,36 @@ function ToolPanel({
         </Button>
       )}
       <Dropdown dropup>
-        <Dropdown.Toggle id={'get-help-dropdown'}>
+        <Dropdown.Toggle
+          id={'get-help-dropdown'}
+          data-playwright-test-label='get-help-dropdown'
+        >
           {isMobile ? t('buttons.help') : t('buttons.get-help')}
         </Dropdown.Toggle>
         <Dropdown.Menu>
           {guideUrl ? (
-            <MenuItem href={guideUrl} target='_blank'>
+            <MenuItem
+              href={guideUrl}
+              target='_blank'
+              data-playwright-test-label='get-hint'
+            >
               {t('buttons.get-hint')}{' '}
               <FontAwesomeIcon icon={faExternalLinkAlt} />
               <span className='sr-only'>, {t('aria.opens-new-window')}</span>
             </MenuItem>
           ) : null}
           {videoUrl ? (
-            <MenuItem onClick={openVideoModal}>
+            <MenuItem
+              onClick={openVideoModal}
+              data-playwright-test-label='watch-a-video'
+            >
               {t('buttons.watch-video')}
             </MenuItem>
           ) : null}
-          <MenuItem onClick={openHelpModal}>
+          <MenuItem
+            onClick={openHelpModal}
+            data-playwright-test-label='ask-for-help'
+          >
             {t('buttons.ask-for-help')}
           </MenuItem>
         </Dropdown.Menu>

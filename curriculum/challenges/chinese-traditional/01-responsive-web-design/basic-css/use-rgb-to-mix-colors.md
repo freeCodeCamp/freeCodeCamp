@@ -15,7 +15,7 @@ dashedName: use-rgb-to-mix-colors
 
 將 `style` 標籤裏面中的十六進制編碼替換爲正確的 RGB 值。
 
-<table class='table table-striped'><tbody><tr><th>顏色</th><th>RGB</th></tr><tr><td>藍色</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>紅色</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>淡紫色</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>赭黃色</td><td><code>rgb(160, 82, 45)</code></td></tr></tbody></table>
+<table><tbody><tr><th>顏色</th><th>RGB</th></tr><tr><td>藍色</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>紅色</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>淡紫色</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>赭黃色</td><td><code>rgb(160, 82, 45)</code></td></tr></tbody></table>
 
 # --hints--
 

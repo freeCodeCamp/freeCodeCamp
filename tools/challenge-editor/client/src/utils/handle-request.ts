@@ -5,5 +5,5 @@ export const handleRequest = (makeRequest: () => Promise<Response>) => () => {
     .catch(err => console.error(err));
 };
 
-export const API_LOCATION = process.env
-  .REACT_APP_CHALLENGE_EDITOR_API_LOCATION as string;
+export const API_LOCATION = import.meta.env
+  .VITE_CHALLENGE_EDITOR_API_LOCATION as string;

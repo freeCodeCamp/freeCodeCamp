@@ -14,6 +14,10 @@ dashedName: convert-data-types-using-casting-and-conversion-techniques-in-c-shar
 
 # --question--
 
+## --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-convert-cast/" target="_blank" rel="noreferrer">«Конвертуйте типи даних, використовуючи приведення та перетворення в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Яка дія виконується при зміні `float` на `int`?

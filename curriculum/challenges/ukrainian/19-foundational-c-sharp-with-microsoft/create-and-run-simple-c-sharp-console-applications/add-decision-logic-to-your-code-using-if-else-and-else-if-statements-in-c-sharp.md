@@ -14,6 +14,10 @@ dashedName: add-decision-logic-to-your-code-using-if-else-and-else-if-statements
 
 # --question--
 
+## --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-if-elseif-else/" target="_blank" rel="noreferrer">«Додайте логіку рішень до коду, використовуючи інструкції if, else та else if в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Що з переліченого не є дійсним оператором в C#?

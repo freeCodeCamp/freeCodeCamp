@@ -3,7 +3,6 @@ import {
   FormControl,
   ControlLabel,
   Row,
-  Col,
   Button
 } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
@@ -17,8 +16,8 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import isEmail from 'validator/lib/isEmail';
+import { Container, Col } from '@freecodecamp/ui';
 
-import { Container } from '@freecodecamp/ui';
 import { Spacer } from '../components/helpers';
 import './update-email.css';
 import { userSelector } from '../redux/selectors';
@@ -72,11 +71,19 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
       </Helmet>
       <Container>
         <Spacer size='medium' />
-        <h2 className='text-center'>{t('misc.update-email-2')}</h2>
+        <h2
+          className='text-center'
+          data-playwright-test-label='update-email-heading'
+        >
+          {t('misc.update-email-2')}
+        </h2>
         <Row>
           <Col sm={6} smOffset={3}>
             <Row>
-              <form onSubmit={handleSubmit}>
+              <form
+                onSubmit={handleSubmit}
+                data-playwright-test-label='update-email-form'
+              >
                 <FormGroup
                   className='update-email-field'
                   controlId='emailInput'
@@ -88,6 +95,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
                     placeholder='camperbot@example.com'
                     required={true}
                     type='email'
+                    data-playwright-test-label='update-email-input'
                   />
                 </FormGroup>
                 <Button
@@ -96,6 +104,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
                   bsStyle='primary'
                   disabled={getEmailValidationState() !== 'success'}
                   type='submit'
+                  data-playwright-test-label='update-email-submit-button'
                 >
                   {isNewEmail
                     ? t('buttons.update-email')
@@ -103,7 +112,12 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
                 </Button>
               </form>
               <p className='text-center'>
-                <Link to='/signout'>{t('buttons.sign-out')}</Link>
+                <Link
+                  to='/signout'
+                  data-playwright-test-label='update-email-sign-out-button'
+                >
+                  {t('buttons.sign-out')}
+                </Link>
               </p>
             </Row>
           </Col>

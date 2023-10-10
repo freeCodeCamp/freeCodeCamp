@@ -9,11 +9,11 @@ dashedName: step-20
 
 A differenza degli altri elementi di contenuto che hai utilizzato finora, l'elemento `div` è utilizzato principalmente per il design del layout. Aggiungi un elemento `div` all'interno dell'elemento `body` e poi sposta tutti gli altri elementi all'interno del nuovo elemento `div`.
 
-Inside the opening `div` tag, add the `id` attribute with a value of `menu`.
+All'interno del tag `div` di apertura, aggiungi l'attributo `id` con il valore `menu`.
 
 # --hints--
 
-Your opening `<div>` tag should have an `id` attribute set to `menu`.
+Il tag di apertura `<div>` dovrebbe avere un attributo `id` impostato su `menu`.
 
 ```js
 const div = $('div')[0];

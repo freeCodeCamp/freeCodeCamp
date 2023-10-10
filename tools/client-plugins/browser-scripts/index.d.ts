@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-
 import { PyodideInterface } from 'pyodide';
 
 export interface FrameDocument extends Document {

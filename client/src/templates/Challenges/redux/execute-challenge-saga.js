@@ -34,9 +34,11 @@ import {
   updateProjectPreview
 } from '../utils/build';
 import { runPythonInFrame, mainPreviewId } from '../utils/frame';
+import { executeGA } from '../../../redux/actions';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
+  executeChallengeComplete,
   initConsole,
   initLogs,
   logsToConsole,
@@ -50,6 +52,7 @@ import {
   challengeMetaSelector,
   challengeTestsSelector,
   isBuildEnabledSelector,
+  isExecutingSelector,
   portalDocumentSelector
 } from './selectors';
 
@@ -127,6 +130,16 @@ function* executeChallengeSaga({ payload }) {
       playTone('tests-completed');
     } else {
       playTone('tests-failed');
+      if (challengeMeta.certification === 'responsive-web-design') {
+        yield put(
+          executeGA({
+            event: 'challenge_failed',
+            challenge_id: challengeMeta.id,
+            challenge_path: window?.location?.pathname,
+            challenge_files: challengeData.challengeFiles
+          })
+        );
+      }
     }
     if (challengeComplete && payload?.showCompletionModal) {
       yield put(openModal('completion'));
@@ -136,6 +149,7 @@ function* executeChallengeSaga({ payload }) {
   } catch (e) {
     yield put(updateConsole(e));
   } finally {
+    yield put(executeChallengeComplete());
     consoleProxy.close();
   }
 }
@@ -219,7 +233,10 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
   const proxyLogger = args => logProxy.put(args);
 
   try {
-    if (flushLogs) {
+    const isExecuting = yield select(isExecutingSelector);
+    // executeChallengeSaga flushes the logs, so there's no need to if that's
+    // just happened.
+    if (flushLogs && !isExecuting) {
       yield put(initLogs());
       yield put(initConsole(''));
     }

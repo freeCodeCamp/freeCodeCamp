@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the <a href="https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/" target="_blank" rel="noreferrer">Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code</a> guided project on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 When is an `ArgumentOutOfRangeException` exception thrown?

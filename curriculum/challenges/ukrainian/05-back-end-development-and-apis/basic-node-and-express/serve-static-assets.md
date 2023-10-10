@@ -40,7 +40,7 @@ dashedName: serve-static-assets
   );
 ```
 
-Your app should not serve files from any other folders except from `/public` directory
+Застосунок не повинен обслуговувати файли з будь-яких інших папок, окрім директорії `/public`
 
 ```js
 (getUserInput) =>

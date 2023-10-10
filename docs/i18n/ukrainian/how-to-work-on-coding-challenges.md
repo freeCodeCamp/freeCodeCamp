@@ -567,18 +567,18 @@ pnpm run update-challenge-order
 
 Він проведе вас через інтерактивний процес, який допоможе впорядкувати завдання.
 
-## Troubleshooting
+## Розв’язання проблем розробки
 
-### Infinite Loop Detected
+### Виявлено нескінченний цикл
 
-If you see the following error in the console while previewing a challenge:
+Якщо ви бачите цю помилку в консолі під час попереднього перегляду завдання:
 
 ```text
 Potential infinite loop detected on line <number>...
 ```
 
-This means that the loop-protect plugin has found a long-running loop or recursive function. If your challenge needs to do that (e.g. it contains an event loop that is supposed to run indefinitely), then you can prevent the plugin from being used in the preview. To do so, add `disableLoopProtectPreview: true` to the block's `meta.json` file.
+Це означає, що плагін для захисту циклу знайшов довгий цикл або рекурсивну функцію. Якщо ваше завдання передбачає їх (тобто містить нескінченний цикл), ви можете запобігти використанню плагіну в попередньому перегляді. Для цього додайте `disableLoopProtectPreview: true` до файлу блоку `meta.json`.
 
-If your tests are computationally intensive, then you may see this error when they run. If this happens then you can add `disableLoopProtectTests: true` to the block's `meta.json` file.
+Якщо ваші тести інтенсивно обчислюються, ви можете побачити цю помилку під час запуску. Якщо це відбувається, додайте `disableLoopProtectTests: true` до файлу блоку `meta.json`.
 
-It's not typically necessary to have both set to true, so only set them as needed.
+Значенням обох необов’язково має бути true, тому налаштовуйте їх лише за потреби.

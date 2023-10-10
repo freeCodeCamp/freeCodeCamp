@@ -1,13 +1,15 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
 import { uniqBy } from 'lodash';
+
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import { schemas } from '../schemas';
 import {
   jsCertProjectIds,
   multifileCertProjectIds,
   updateUserChallengeData,
-  type CompletedChallenge
+  type CompletedChallenge,
+  saveUserChallengeData
 } from '../utils/common-challenge-functions';
 import { JWT_SECRET } from '../utils/env';
 import {
@@ -355,6 +357,61 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           completedDate: completedChallenge.completedDate,
           savedChallenges
         };
+      } catch (error) {
+        fastify.log.error(error);
+        void reply.code(500);
+        return {
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
+          type: 'danger'
+        } as const;
+      }
+    }
+  );
+
+  fastify.post(
+    '/save-challenge',
+    {
+      schema: schemas.saveChallenge,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          return formatProjectCompletedValidation(error.validation);
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const { files, id: challengeId } = req.body;
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id }
+        });
+        const challenge = {
+          id: challengeId,
+          files
+        };
+
+        if (!multifileCertProjectIds.includes(challengeId)) {
+          void reply.code(403);
+          return 'That challenge type is not savable.';
+        }
+
+        const userSavedChallenges = saveUserChallengeData(
+          challengeId,
+          user.savedChallenges,
+          challenge
+        );
+
+        await fastify.prisma.user.update({
+          where: { id: user.id },
+          data: {
+            savedChallenges: userSavedChallenges
+          }
+        });
+
+        return { savedChallenges: userSavedChallenges };
       } catch (error) {
         fastify.log.error(error);
         void reply.code(500);

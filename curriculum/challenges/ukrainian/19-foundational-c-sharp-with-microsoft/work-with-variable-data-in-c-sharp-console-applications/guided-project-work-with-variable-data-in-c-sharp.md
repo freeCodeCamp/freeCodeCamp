@@ -14,6 +14,10 @@ dashedName: guided-project-work-with-variable-data-in-c-sharp
 
 # --question--
 
+## --assignment--
+
+Виконайте керований проєкт <a href="https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">«Попрацюйте з даними змінних в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Дано код `decimal.TryParse(numberString, out myConvert))`, де типом `numberString` є рядок.
