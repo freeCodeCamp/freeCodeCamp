@@ -25,7 +25,7 @@ function deleteStep(stepNum: number): void {
   deleteStepFromMeta({ stepNum });
   updateStepTitles();
 
-  console.log(`Sucessfully deleted step #${stepNum}`);
+  console.log(`Successfully deleted step #${stepNum}`);
 }
 
 function insertStep(stepNum: number): void {
@@ -53,7 +53,7 @@ function insertStep(stepNum: number): void {
 
   insertStepIntoMeta({ stepNum, stepId });
   updateStepTitles();
-  console.log(`Sucessfully inserted new step #${stepNum}`);
+  console.log(`Successfully inserted new step #${stepNum}`);
 }
 
 function createEmptySteps(num: number): void {
@@ -67,7 +67,7 @@ function createEmptySteps(num: number): void {
     const stepId = createStepFile({ stepNum });
     insertStepIntoMeta({ stepNum, stepId });
   }
-  console.log(`Sucessfully added ${num} steps`);
+  console.log(`Successfully added ${num} steps`);
 }
 
 export { deleteStep, insertStep, createEmptySteps };
