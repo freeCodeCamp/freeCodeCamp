@@ -138,7 +138,7 @@ function convertMd(md: string): string {
 
 class ShowExam extends Component<ShowExamProps, ShowExamState> {
   static displayName: string;
-  private container: RefObject<HTMLElement> | undefined;
+  private container: RefObject<HTMLElement> | undefined = React.createRef();
   timerInterval!: NodeJS.Timeout;
 
   constructor(props: ShowExamProps) {
@@ -179,7 +179,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     });
     challengeMounted(challengeMeta.id);
 
-    this.container = React.createRef();
     this.container?.current?.focus();
   }
 

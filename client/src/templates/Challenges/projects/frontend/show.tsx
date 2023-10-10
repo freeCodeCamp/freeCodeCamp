@@ -65,7 +65,8 @@ interface ProjectProps {
 // Component
 class Project extends Component<ProjectProps> {
   static displayName: string;
-  private container: React.RefObject<HTMLElement> | undefined;
+  private container: React.RefObject<HTMLElement> | undefined =
+    React.createRef();
 
   constructor(props: ProjectProps) {
     super(props);
@@ -89,7 +90,6 @@ class Project extends Component<ProjectProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this.container = React.createRef();
     this.container?.current?.focus();
   }
 

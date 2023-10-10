@@ -100,7 +100,8 @@ interface BackEndProps {
 // Component
 class BackEnd extends Component<BackEndProps> {
   static displayName: string;
-  private container: React.RefObject<HTMLElement> | undefined;
+  private container: React.RefObject<HTMLElement> | undefined =
+    React.createRef();
 
   constructor(props: BackEndProps) {
     super(props);
@@ -112,7 +113,6 @@ class BackEnd extends Component<BackEndProps> {
   componentDidMount() {
     this.initializeComponent();
     window.addEventListener('resize', () => this.updateDimensions());
-    this.container = React.createRef();
     this.container?.current?.focus();
   }
 

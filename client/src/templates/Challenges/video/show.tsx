@@ -83,7 +83,8 @@ interface ShowVideoState {
 // Component
 class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
   static displayName: string;
-  private container: React.RefObject<HTMLElement> | undefined;
+  private container: React.RefObject<HTMLElement> | undefined =
+    React.createRef();
 
   constructor(props: ShowVideoProps) {
     super(props);
@@ -117,7 +118,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this.container = React.createRef();
     this.container?.current?.focus();
   }
 
