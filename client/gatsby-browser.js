@@ -1,4 +1,3 @@
-import cookies from 'browser-cookies';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
@@ -31,8 +30,3 @@ wrapRootElement.propTypes = {
 export const wrapPageElement = layoutSelector;
 
 export const disableCorePrefetching = () => true;
-
-export const onClientEntry = () => {
-  // the token must be erased since it is only valid for the old _csrf secret
-  cookies.erase('csrf_token');
-};
