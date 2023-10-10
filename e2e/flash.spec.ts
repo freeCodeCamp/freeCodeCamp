@@ -14,6 +14,7 @@ test.describe('Flash Message component E2E test', () => {
   test('renders the flash message when click on night mode', async ({
     page
   }) => {
+    await page.waitForTimeout(5000);
     await page
       .getByRole('button', { name: translations.buttons.menu, exact: true })
       .click();
@@ -31,6 +32,7 @@ test.describe('Flash Message component E2E test', () => {
   test('renders the flash message when click on campfire mode', async ({
     page
   }) => {
+    await page.waitForTimeout(5000);
     await page
       .getByLabel(translations.settings.labels['sound-mode'])
       .getByRole('button', { name: translations.buttons.on })
