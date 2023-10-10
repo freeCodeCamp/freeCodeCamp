@@ -33,8 +33,8 @@ export function CloseButton({
     'active:before:opacity-20',
     // Focus state
     'focus:outline-none', // Hide the default browser outline
-    'focus:ring',
-    'focus:ring-focus-outline-color',
+    'focus-visible:ring',
+    'focus-visible:ring-focus-outline-color',
     // Content positioning
     'flex',
     'justify-center',
