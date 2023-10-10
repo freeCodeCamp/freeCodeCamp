@@ -27,6 +27,7 @@ export enum FlashMessages {
   MsTranscriptLinked = 'flash.ms.transcript.linked',
   MsTranscriptUnlinked = 'flash.ms.transcript.unlinked',
   MsTranscriptUnlinkErr = 'flash.ms.transcript.unlink-err',
+  MsProfileErr = 'flash.ms.profile.err',
   MsTrophyErr1 = 'flash.ms.trophy.err-1',
   MsTrophyErr2 = 'flash.ms.trophy.err-2',
   MsTrophyErr3 = 'flash.ms.trophy.err-3',

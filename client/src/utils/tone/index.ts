@@ -42,6 +42,7 @@ const toneUrls = {
   [FlashMessages.MsTranscriptLinked]: CHAL_COMP,
   [FlashMessages.MsTranscriptUnlinked]: CHAL_COMP,
   [FlashMessages.MsTranscriptUnlinkErr]: TRY_AGAIN,
+  [FlashMessages.MsProfileErr]: TRY_AGAIN,
   [FlashMessages.MsTrophyErr1]: TRY_AGAIN,
   [FlashMessages.MsTrophyErr2]: TRY_AGAIN,
   [FlashMessages.MsTrophyErr3]: TRY_AGAIN,
