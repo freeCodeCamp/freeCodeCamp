@@ -75,7 +75,7 @@ const redirect = (pathSegments: PathSegments) => ({
 });
 
 // DRY this with [id]'s version
-const fourOhFour = () => ({ notFound: true, revalidate: 10 } as const);
+const fourOhFour = () => ({ notFound: true, revalidate: 10 }) as const;
 
 // DRY this with [id]'s version
 const pathExists = (pathSegments: PathSegments, params?: ParsedUrlQuery) => {

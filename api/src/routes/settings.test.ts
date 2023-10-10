@@ -1,5 +1,5 @@
 import { devLogin, setupServer, superRequest } from '../../jest.utils';
-import { defaultUser } from '../utils/default-user';
+import { createUserInput } from '../utils/create-user';
 
 import { isPictureWithProtocol } from './settings';
 
@@ -109,10 +109,7 @@ describe('settingRoutes', () => {
 
       if (!otherUser) {
         await fastifyTestInstance.prisma.user.create({
-          data: {
-            ...defaultUser,
-            email: otherDeveloperUserEmail
-          }
+          data: createUserInput(otherDeveloperUserEmail)
         });
       }
     });

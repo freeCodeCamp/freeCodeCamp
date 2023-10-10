@@ -23,7 +23,7 @@ El dígito `F` es el número más alto en hex code, y representa el brillo máxi
 
 Reemplaza las palabras clave de color en nuestro elemento `style` con los códigos hexadecimales correctos.
 
-<table class='table table-striped'><tbody><tr><th>Color</th><th>Hex Code</th></tr><tr><td>Dodger Blue (azul dodger)</td><td><code>#1E90FF</code></td></tr><tr><td>Green (verde)</td><td><code>#00FF00</code></td></tr><tr><td>Orange (naranja)</td><td><code>#FFA500</code></td></tr><tr><td>Red (rojo)</td><td><code>#FF0000</code></td></tr></tbody></table>
+<table><tbody><tr><th>Color</th><th>Hex Code</th></tr><tr><td>Dodger Blue (azul dodger)</td><td><code>#1E90FF</code></td></tr><tr><td>Green (verde)</td><td><code>#00FF00</code></td></tr><tr><td>Orange (naranja)</td><td><code>#FFA500</code></td></tr><tr><td>Red (rojo)</td><td><code>#FF0000</code></td></tr></tbody></table>
 
 # --hints--
 

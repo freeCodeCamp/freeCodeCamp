@@ -1,6 +1,6 @@
 ---
 id: 5900f54c1000cf542c51005f
-title: 'Problem 480: The Last Question'
+title: 'Завдання 480: останнє питання'
 challengeType: 1
 forumTopicId: 302158
 dashedName: problem-480-the-last-question
@@ -8,13 +8,13 @@ dashedName: problem-480-the-last-question
 
 # --description--
 
-Consider all the words which can be formed by selecting letters, in any order, from the phrase:
+Розглянемо усі слова, які можна утворити з літер наданої фрази у будь-якому порядку:
 
 $$\mathbf{\text{thereisasyetinsufficientdataforameaningfulanswer}}$$
 
-Suppose those with 15 letters or less are listed in alphabetical order and numbered sequentially starting at 1.
+Припустимо, що слова з 15 чи менше літер записані в алфавітному порядку та пронумеровані послідовно, починаючи з 1.
 
-The list would include:
+Список міститиме:
 
 $$\begin{align}   & 1: \text{a} \\\\
   & 2: \text{aa} \\\\   & 3: \text{aaa} \\\\
@@ -32,11 +32,11 @@ $$\begin{align}   & 1: \text{a} \\\\
   & ... \\\\   & 525069350231428029: \text{ywuuttttssssrrr} \\\\
 \end{align}$$
 
-Define $P(w)$ as the position of the word $w$.
+Визначимо $P(w)$ як номер слова $w$.
 
-Define $W(p)$ as the word in position $p$.
+Визначимо $W(p)$ як слово під номером $p$.
 
-We can see that $P(w)$ and $W(p)$ are inverses: $P(W(p)) = p$ and $W(P(w)) = w$.
+Бачимо, що $P(w)$ та $W(p)$ є оберненими: $P(W(p)) = p$ та $W(P(w)) = w$.
 
 Приклади:
 
@@ -46,7 +46,7 @@ $$\begin{align}   & W(10) = \text{ aaaaaacdee} \\\\
 
 Знайдіть $$W(P(\text{legionary}) + P(\text{calorimeters}) - P(\text{annihilate}) + P(\text{orchestrated}) - P(\text{fluttering})).$$
 
-Give your answer using lowercase characters (no punctuation or space).
+Відповідь запишіть малими літерами (без пунктуації та пробілів).
 
 # --hints--
 

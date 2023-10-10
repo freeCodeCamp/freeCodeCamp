@@ -33,7 +33,7 @@
   border-left: none;
   border-bottom: none;
 }
-.donation-elements.failed-submition {
+.donation-elements.failed-submission {
   border: solid 3px #eb1c26;
 }
 
@@ -92,6 +92,15 @@
   margin-bottom: 0;
 }
 
+@media (min-width: 1200px) {
+  /*
+  This style allows multi columns in the same row.
+  It will become a functionality once the Grid system is updated. 
+  */
+  .donate-page-wrapper > div > div {
+    float: left;
+  }
+}
 .donate-input-element {
   padding-top: 8px;
 }
@@ -103,7 +112,8 @@
 .donation-form .form-control:focus {
   border-color: #66afe9;
   outline-color: transparent;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+  box-shadow:
+    inset 0 1px 1px rgba(0, 0, 0, 0.075),
     0 0 8px rgba(102, 175, 233, 0.6);
 }
 
@@ -533,7 +543,7 @@ a.patreon-button:hover {
   font-weight: bold;
 }
 
-.donate-page-wrapper .alert.alert-info a:hover {
+.donate-page-wrapper [role='alert'] a:hover {
   color: #327290;
   background-color: #acdef3;
 }

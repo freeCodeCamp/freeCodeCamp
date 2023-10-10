@@ -13,7 +13,7 @@ dashedName: golf-code
 
 関数は引数として `par` と `strokes` を受け取ります。 次の表に対応した正しい文字列を返してください。この表はスコアの良い順 (最高から最低の順) にストロークを並べて記載しています。
 
-<table class='table table-striped'><thead><tr><th>ストローク</th><th>戻り値</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
+<table><thead><tr><th>ストローク</th><th>戻り値</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
 
 `par` と `strokes` は常に正の数値になります。 すべての名称を含む配列をすでに追加してあります。
 

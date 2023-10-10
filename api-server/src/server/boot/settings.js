@@ -139,7 +139,7 @@ function updateMyPortfolio(...args) {
   )(...args);
 }
 
-// This API is reponsible for what campers decide to make public in their porfoile, and what is private.
+// This API is responsible for what campers decide to make public in their profile, and what is private.
 function updateMyProfileUI(req, res, next) {
   const {
     user,

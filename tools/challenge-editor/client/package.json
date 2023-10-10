@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "@types/codemirror": "5.60.10",
-    "@types/prettier": "^2.7.3",
     "@types/react": "16.14.48",
     "@types/react-dom": "^16.9.17",
     "@uiw/react-codemirror": "3.2.10",
