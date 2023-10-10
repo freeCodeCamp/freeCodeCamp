@@ -306,7 +306,7 @@ importers:
         version: 1.3.8
       axios:
         specifier: 0.23.0
-        version: 0.23.0(debug@2.2.0)
+        version: 0.23.0(debug@2.6.9)
       body-parser:
         specifier: 1.20.0
         version: 1.20.0
@@ -332,8 +332,8 @@ importers:
         specifier: 1.30.1
         version: 1.30.1
       debug:
-        specifier: 2.2.0
-        version: 2.2.0
+        specifier: 2.6.9
+        version: 2.6.9
       dedent:
         specifier: 0.7.0
         version: 0.7.0
@@ -411,7 +411,7 @@ importers:
         version: 0.4.1
       passport-auth0:
         specifier: 1.4.2
-        version: 1.4.2(debug@2.2.0)
+        version: 1.4.2(debug@2.6.9)
       passport-local:
         specifier: 1.0.0
         version: 1.0.0
@@ -1396,8 +1396,8 @@ importers:
   tools/scripts/seed:
     devDependencies:
       debug:
-        specifier: 4.3.4
-        version: 4.3.4(supports-color@8.1.1)
+        specifier: 2.6.9
+        version: 2.6.9
       dotenv:
         specifier: 16.3.1
         version: 16.3.1
@@ -11337,18 +11337,18 @@ packages:
     transitivePeerDependencies:
       - debug
 
-  /axios@0.22.0(debug@2.2.0):
+  /axios@0.22.0(debug@2.6.9):
     resolution: {integrity: sha512-Z0U3uhqQeg1oNcihswf4ZD57O3NrR1+ZXhxaROaWpDmsDTx7T2HNBV2ulBtie2hwJptu8UvgnJoK+BIqdzh/1w==}
     dependencies:
-      follow-redirects: 1.15.3(debug@2.2.0)
+      follow-redirects: 1.15.3(debug@2.6.9)
     transitivePeerDependencies:
       - debug
     dev: false
 
-  /axios@0.23.0(debug@2.2.0):
+  /axios@0.23.0(debug@2.6.9):
     resolution: {integrity: sha512-NmvAE4i0YAv5cKq8zlDoPd1VLKAqX5oLuZKs8xkJa4qi6RGn0uhCYFjWtHHC9EM/MwOwYWOs53W+V0aqEXq1sg==}
     dependencies:
-      follow-redirects: 1.15.3(debug@2.2.0)
+      follow-redirects: 1.15.3(debug@2.6.9)
     transitivePeerDependencies:
       - debug
     dev: false
@@ -14500,16 +14500,6 @@ packages:
     resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
     dev: true
 
-  /debug@2.2.0:
-    resolution: {integrity: sha512-X0rGvJcskG1c3TgSCPqHJ0XJgwlcvOC7elJ5Y0hYuKBZoVqWpAMfLOeIh2UI/DCQ5ruodIjvsugZtjUYUw2pUw==}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-    dependencies:
-      ms: 0.7.1
-
   /debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     peerDependencies:
@@ -17141,7 +17131,7 @@ packages:
       readable-stream: 2.3.8
     dev: true
 
-  /follow-redirects@1.15.3(debug@2.2.0):
+  /follow-redirects@1.15.3(debug@2.6.9):
     resolution: {integrity: sha512-1VzOtuEM8pC9SFU1E+8KfTjZyMztRsgEfwQl44z8A25uy13jSzTj6dyK2Df52iV0vgHCfBwLhDWevLn95w5v6Q==}
     engines: {node: '>=4.0'}
     peerDependencies:
@@ -17150,7 +17140,7 @@ packages:
       debug:
         optional: true
     dependencies:
-      debug: 2.2.0
+      debug: 2.6.9
     dev: false
 
   /follow-redirects@1.15.3(debug@3.2.7):
@@ -21788,7 +21778,7 @@ packages:
       bluebird: 3.7.2
       body-parser: 1.20.0
       canonical-json: 0.0.4
-      debug: 2.2.0
+      debug: 2.6.9
       depd: 1.1.2
       ejs: 2.7.4
       express: 4.18.2
@@ -23369,9 +23359,6 @@ packages:
     resolution: {integrity: sha512-hzzEagAgDyoU1Q6yg5uI+AorQgdvMCur3FcKf7NhMKWsaYg+RnbTyHRa/9IlLF9rf455MOCtcqqrQQ83pPP7Uw==}
     engines: {node: '>=10'}
 
-  /ms@0.7.1:
-    resolution: {integrity: sha512-lRLiIR9fSNpnP6TC4v8+4OU7oStC01esuNowdQ34L+Gk8e5Puoc88IqJ+XAY/B3Mn2ZKis8l8HX90oU8ivzUHg==}
-
   /ms@2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
 
@@ -24464,10 +24451,10 @@ packages:
     resolution: {integrity: sha512-XHXfu/yOQRy9vYOtUDVMN60OEJjW013GoObG1o+xwQTpB9eYJX/BjXMsdW13ZDPruFhYYn0AG22w0xgQMwl3Nw==}
     engines: {node: '>=0.10.0'}
 
-  /passport-auth0@1.4.2(debug@2.2.0):
+  /passport-auth0@1.4.2(debug@2.6.9):
     resolution: {integrity: sha512-cIPIhN0WbgXWxU0VrKXLT0eF/3jeZ6JJwkypUMpxjH4MOVDIUfU0qBeZBVZySd8WkkIzRNG/EY0lZqKflYJIFA==}
     dependencies:
-      axios: 0.22.0(debug@2.2.0)
+      axios: 0.22.0(debug@2.6.9)
       passport-oauth: 1.0.0
       passport-oauth2: 1.7.0
     transitivePeerDependencies:
@@ -27876,7 +27863,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       base: 0.11.2
-      debug: 2.2.0
+      debug: 2.6.9
       define-property: 0.2.5
       extend-shallow: 2.0.1
       map-cache: 0.2.2

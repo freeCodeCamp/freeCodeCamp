@@ -1,6 +1,7 @@
 import React from 'react';
-import { Col } from '@freecodecamp/react-bootstrap';
 import { useTranslation } from 'react-i18next';
+import { Col } from '@freecodecamp/ui';
+
 import { Spacer } from '../../helpers';
 import BigCallToAction from './big-call-to-action';
 
