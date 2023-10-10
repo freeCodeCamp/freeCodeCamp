@@ -32,6 +32,7 @@ export enum FlashMessages {
   MsTrophyErr2 = 'flash.ms.trophy.err-2',
   MsTrophyErr3 = 'flash.ms.trophy.err-3',
   MsTrophyErr4 = 'flash.ms.trophy.err-4',
+  MsTrophyErr5 = 'flash.ms.trophy.err-5',
   MsTrophyVerified = 'flash.ms.trophy.verified',
   NameNeeded = 'flash.name-needed',
   None = '',
