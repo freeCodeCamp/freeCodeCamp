@@ -68,34 +68,6 @@
     <!-- App with its own nav, search and sidebar -->
     <div id="app"></div>
     <script>
-      const elements = document.querySelectorAll('*');
-      const theme = localStorage.getItem('theme');
-
-      function toggleTheme() {
-        for (const el of elements) {
-          el.classList.toggle('dark');
-        }
-        localStorage.setItem('theme', theme === 'dark' ? 'light' : 'dark');
-      }
-
-      switch (theme) {
-        case 'dark':
-          for (const el of elements) {
-            el.classList.add('dark');
-          }
-          break;
-        case 'light':
-          for (const el of elements) {
-            el.classList.add('light');
-          }
-          break;
-        default:
-          for (const el of elements) {
-            el.classList.add('light');
-          }
-          break;
-      }
-
       window.$docsify = {
         homepage: 'index',
 
@@ -259,6 +231,34 @@
           }
         ]
       };
+
+      const elements = document.querySelectorAll('*');
+      const theme = localStorage.getItem('theme');
+
+      function toggleTheme() {
+        for (const el of elements) {
+          el.classList.toggle('dark');
+        }
+        localStorage.setItem('theme', theme === 'dark' ? 'light' : 'dark');
+      }
+
+      switch (theme) {
+        case 'dark':
+          for (const el of elements) {
+            el.classList.add('dark');
+          }
+          break;
+        case 'light':
+          for (const el of elements) {
+            el.classList.add('light');
+          }
+          break;
+        default:
+          for (const el of elements) {
+            el.classList.add('light');
+          }
+          break;
+      }
     </script>
     <!-- docsify (latest v4.x.x)-->
     <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
