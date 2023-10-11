@@ -17,7 +17,7 @@ test.describe('The unsubscribed page without unsubscribeId', () => {
     );
   });
 
-  test('The page has correct main heading', async () => {
+  test('The page has correct main heading', async ({ page }) => {
     const mainHeading = page.getByTestId('main-heading');
 
     await expect(mainHeading).toBeVisible();
