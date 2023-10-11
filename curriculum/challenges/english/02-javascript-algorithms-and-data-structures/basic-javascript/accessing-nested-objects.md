@@ -61,15 +61,16 @@ Do not modify the shape of the `myStorage` object.
 
 ```js
 const expectedMyStorage = {
-  "car": {
-    "inside": {
-      "glove box": "maps",
-      "passenger seat": "crumbs"
+  "car":{
+    "inside":{
+      "glove box":"maps",
+      "passenger seat":"crumbs"
     },
-    "outside": {
-      "trunk": "jack"
+    "outside":{
+      "trunk":"jack"
     }
-  };
+  }
+};
 assert.deepStrictEqual(myStorage, expectedMyStorage);
 ```
 
