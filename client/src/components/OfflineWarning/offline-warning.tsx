@@ -20,7 +20,6 @@ function OfflineWarning({
   const { t } = useTranslation();
   const [showWarning, setShowWarning] = React.useState(false);
   let message;
-
   if (!isSignedIn || (isOnline && isServerOnline)) {
     clearTimeout(id);
     if (showWarning) setShowWarning(false);
@@ -42,10 +41,10 @@ function OfflineWarning({
   }
 
   return showWarning ? (
-    <>
+    <div data-playwright-test-label='offline-warning'>
       <div className='offline-warning alert-info'>{message}</div>
       <div style={{ height: `38px` }} />
-    </>
+    </div>
   ) : null;
 }
 
