@@ -312,7 +312,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                         <input
                           aria-label={t('aria.answer')}
                           checked={this.state.selectedOption === index}
-                          className='video-quiz-input-hidden'
+                          className='sr-only'
                           name='quiz'
                           onChange={this.handleOptionChange}
                           type='radio'
