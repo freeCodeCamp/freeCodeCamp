@@ -11,7 +11,7 @@ test.describe('The unsubscribed page without unsubscribeId', () => {
     await page.goto('/unsubscribed');
   });
 
-  test('The page renders with correct title', async () => {
+  test('The page renders with correct title', async ({ page }) => {
     await expect(page).toHaveTitle(
       `${metaTags['youre-unsubscribed']} | freeCodeCamp.org`
     );
