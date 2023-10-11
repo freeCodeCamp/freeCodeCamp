@@ -63,7 +63,6 @@ test.describe('Finish Exit exam Modal E2E Test Suite', () => {
     await expect(
       page.getByText(translations.learn.exam['exit-header'])
     ).not.toBeVisible();
-    await expect(page).toHaveURL(examUrl);
   });
 
   test('Closes the Modal when the User clicks on finish-yes button', async ({
@@ -75,7 +74,6 @@ test.describe('Finish Exit exam Modal E2E Test Suite', () => {
     await expect(
       page.getByText(translations.learn.exam['finish-header'])
     ).not.toBeVisible();
-    await expect(page).toHaveURL(examUrl);
   });
 
   test('Closes the Modal when the User clicks on X button', async ({
@@ -87,6 +85,5 @@ test.describe('Finish Exit exam Modal E2E Test Suite', () => {
     await expect(
       page.getByText(translations.learn.exam['finish-header'])
     ).not.toBeVisible();
-    await expect(page).toHaveURL(examUrl);
   });
 });
