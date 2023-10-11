@@ -21,7 +21,7 @@ const isTest = (workerId: string | undefined): workerId is string =>
 const prismaPlugin: FastifyPluginAsync = fp(async (server, _options) => {
   if (isTest(process.env.JEST_WORKER_ID)) {
     // push the schema to the test db to setup indexes, unique constraints, etc
-    execSync('pnpm prisma db push', {
+    execSync('pnpm prisma db push -- --skip-generate', {
       env: {
         ...process.env,
         MONGOHQ_URL: createTestConnectionURL(

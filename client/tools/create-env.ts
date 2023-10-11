@@ -115,10 +115,9 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   checkCurriculumLocale();
   if (fs.existsSync(`${configPath}/env.json`)) {
     /* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment */
-    const {
-      showNewCurriculum,
-      showUpcomingChanges
-    } = require(`${configPath}/env.json`);
+    const { showNewCurriculum, showUpcomingChanges } = require(
+      `${configPath}/env.json`
+    );
     /* eslint-enable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment */
     if (
       env['showUpcomingChanges'] !== showUpcomingChanges ||

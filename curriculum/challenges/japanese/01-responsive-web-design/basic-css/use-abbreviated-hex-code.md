@@ -19,7 +19,7 @@ dashedName: use-abbreviated-hex-code
 
 短縮形の 16 進数コードを使用して、正しい要素に色を付けてみましょう。
 
-<table class='table table-striped'><tbody><tr><th>色</th><th>短縮 16 進数コード</th></tr><tr><td>シアン</td><td><code>#0FF</code></td></tr><tr><td>緑</td><td><code>#0F0</code></td></tr><tr><td>赤</td><td><code>#F00</code></td></tr><tr><td>フューシャ</td><td><code>#F0F</code></td></tr></tbody></table>
+<table><tbody><tr><th>色</th><th>短縮 16 進数コード</th></tr><tr><td>シアン</td><td><code>#0FF</code></td></tr><tr><td>緑</td><td><code>#0F0</code></td></tr><tr><td>赤</td><td><code>#F00</code></td></tr><tr><td>フューシャ</td><td><code>#F0F</code></td></tr></tbody></table>
 
 # --hints--
 

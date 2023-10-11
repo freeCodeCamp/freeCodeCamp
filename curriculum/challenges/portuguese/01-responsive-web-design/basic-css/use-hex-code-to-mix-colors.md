@@ -23,7 +23,7 @@ O dígito `F` é o número mais alto em código hexadecimal e representa o brilh
 
 Substitua as palavras que representam cores no elemento `style` por seus códigos hexadecimais corretos.
 
-<table class='table table-striped'><tbody><tr><th>Cor</th><th>Código hexadecimal</th></tr><tr><td>Azul dodger</td><td><code>#1E90FF</code></td></tr><tr><td>Verde</td><td><code>#00FF00</code></td></tr><tr><td>Laranja</td><td><code>#FFA500</code></td></tr><tr><td>Vermelho</td><td><code>#FF0000</code></td></tr></tbody></table>
+<table><tbody><tr><th>Cor</th><th>Código hexadecimal</th></tr><tr><td>Azul dodger</td><td><code>#1E90FF</code></td></tr><tr><td>Verde</td><td><code>#00FF00</code></td></tr><tr><td>Laranja</td><td><code>#FFA500</code></td></tr><tr><td>Vermelho</td><td><code>#FF0000</code></td></tr></tbody></table>
 
 # --hints--
 
