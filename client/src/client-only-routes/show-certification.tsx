@@ -340,15 +340,24 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             <Col sm={12}>
               {isMicrosoftCert ? (
                 <>
-                  <div className='dual-logo fcc-logo'>
+                  <div
+                    className='dual-logo fcc-logo'
+                    data-playwright-test-label='cert-fcc-logo'
+                  >
                     <FreeCodeCampLogo aria-hidden='true' />
                   </div>
-                  <div className='dual-logo ms-logo'>
+                  <div
+                    className='dual-logo ms-logo'
+                    data-playwright-test-label='cert-microsoft-logo'
+                  >
                     <MicrosoftLogo aria-hidden='true' />
                   </div>
                 </>
               ) : (
-                <div className='logo'>
+                <div
+                  className='logo'
+                  data-playwright-test-label='cert-fcc-logo'
+                >
                   <FreeCodeCampLogo aria-hidden='true' />
                 </div>
               )}
@@ -421,6 +430,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   <div className='microsoft-signature'>
                     <Image
                       data-cy='microsoft-signature'
+                      data-playwright-test-label='microsoft-signature'
                       alt="Julia Liusons's Signature"
                       src={
                         'https://cdn.freecodecamp.org' +
