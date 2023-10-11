@@ -1,5 +1,5 @@
 // Package Utilities
-import { Col, Row, Button } from '@freecodecamp/react-bootstrap';
+import { Row, Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Alert } from '@freecodecamp/ui';
+import { Container, Col, Alert } from '@freecodecamp/ui';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';

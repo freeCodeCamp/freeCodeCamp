@@ -71,7 +71,10 @@ function ProgressBar({
           percent: completedPercent
         });
   return (
-    <div className='progress-bar-container'>
+    <div
+      className='progress-bar-container'
+      data-playwright-test-label='progress-bar-container'
+    >
       <ProgressBarInner
         title={blockTitle}
         meta={meta}

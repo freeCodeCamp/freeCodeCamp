@@ -13,7 +13,7 @@ dashedName: golf-code
 
 函數將會傳送兩個參數，`par` 和 `strokes`。 根據下表返回正確的字符串。下表列出不同揮杆次數（從高到低）對應的字符串。
 
-<table class='table table-striped'><thead><tr><th>揮杆次數</th><th>返回字符串</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
+<table><thead><tr><th>揮杆次數</th><th>返回字符串</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
 
 `par` 和 `strokes` 必須是數字而且是正數。 題目已定義字符串的數組，便於你操作。
 

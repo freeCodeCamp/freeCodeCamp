@@ -19,7 +19,7 @@ Esto reduce el número total de colores posibles a alrededor de 4.000. Sin embar
 
 ¡Pruébalo! Intenta usar los códigos hexadecimales abreviados para asignar colores a los elementos como se indica a continuación.
 
-<table class='table table-striped'><tbody><tr><th>Color</th><th>Hex code abreviado</th></tr><tr><td>Cyan (cian)</td><td><code>#0FF</code></td></tr><tr><td>Green (verde)</td><td><code>#0F0</code></td></tr><tr><td>Red (rojo)</td><td><code>#F00</code></td></tr><tr><td>Fuchsia (fucsia)</td><td><code>#F0F</code></td></tr></tbody></table>
+<table><tbody><tr><th>Color</th><th>Hex code abreviado</th></tr><tr><td>Cyan (cian)</td><td><code>#0FF</code></td></tr><tr><td>Green (verde)</td><td><code>#0F0</code></td></tr><tr><td>Red (rojo)</td><td><code>#F00</code></td></tr><tr><td>Fuchsia (fucsia)</td><td><code>#F0F</code></td></tr></tbody></table>
 
 # --hints--
 

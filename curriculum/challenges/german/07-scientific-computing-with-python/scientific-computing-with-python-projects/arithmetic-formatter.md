@@ -84,7 +84,7 @@ Die Unit-Tests für dieses Projekt sind in `test_module.py`. Wir haben die Tests
 
 ## Absenden
 
-Kopiere die URL deines Projekts und sende sie an freeCodeCamp.
+Copy your project's URL and submit it to freeCodeCamp.
 
 # --hints--
 

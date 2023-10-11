@@ -13,31 +13,31 @@ Sass permite anidar las reglas CSS, que es una forma útil de organizar una hoja
 Normalmente, cada elemento está dirigido a una línea diferente para darle estilo, así:
 
 ```scss
-nav {
-  background-color: red;
+article {
+  height: 200px;
 }
 
-nav ul {
-  list-style: none;
+article p {
+  color: white;
 }
 
-nav ul li {
-  display: inline-block;
+article ul {
+  color: blue;
 }
 ```
 
 Para un proyecto grande, el archivo CSS tendrá muchas líneas y reglas. Aquí es donde la anidación puede ayudar a organizar tu código colocando reglas de estilo hijo dentro de los respectivos elementos padres:
 
 ```scss
-nav {
-  background-color: red;
+article {
+  height: 200px;
+
+  p {
+    color: white;
+  }
 
   ul {
-    list-style: none;
-
-    li {
-      display: inline-block;
-    }
+    color: blue;
   }
 }
 

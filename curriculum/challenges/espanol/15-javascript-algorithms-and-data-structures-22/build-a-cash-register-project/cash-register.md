@@ -20,7 +20,7 @@ Devuelve `{status: "CLOSED", change: [...]}` si el efectivo en caja como valor d
 
 En cualquier otro caso, devuelve `{status: "OPEN", change: [...]}`, con el cambio a entregar en monedas y billetes, ordenados de mayor a menor, como valor de la clave `change`.
 
-<table class='table table-striped'><tbody><tr><th>Unidad Monetaria</th><th>Importe</th></tr><tr><td>Centavo</td><td>$0.01 (CENTAVO)</td></tr><tr><td>Níquel</td><td>$0.05 (NÍQUEL)</td></tr><tr><td>Díez Centavos</td><td>$0.1 (DÍEZ CENTAVOS)</td></tr><tr><td>25 centavos</td><td>$0.25 (QUARTER)</td></tr><tr><td>Dólar</td><td>$1 (UNO)</td></tr><tr><td>Cinco dólares</td><td>$5 (CINCO)</td></tr><tr><td>Diez dólares</td><td>$10 (DÍEZ)</td></tr><tr><td>Veinte dólares</td><td>$20 (VEINTE)</td></tr><tr><td>Cien dólares</td><td>$100 (CIEN)</td></tr></tbody></table>
+<table><tbody><tr><th>Unidad Monetaria</th><th>Importe</th></tr><tr><td>Centavo</td><td>$0.01 (CENTAVO)</td></tr><tr><td>Níquel</td><td>$0.05 (NÍQUEL)</td></tr><tr><td>Díez Centavos</td><td>$0.1 (DÍEZ CENTAVOS)</td></tr><tr><td>25 centavos</td><td>$0.25 (QUARTER)</td></tr><tr><td>Dólar</td><td>$1 (UNO)</td></tr><tr><td>Cinco dólares</td><td>$5 (CINCO)</td></tr><tr><td>Diez dólares</td><td>$10 (DÍEZ)</td></tr><tr><td>Veinte dólares</td><td>$20 (VEINTE)</td></tr><tr><td>Cien dólares</td><td>$100 (CIEN)</td></tr></tbody></table>
 
 Vea a continuación un ejemplo de un arreglo de efectivo en caja:
 
