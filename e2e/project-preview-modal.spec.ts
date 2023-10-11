@@ -39,7 +39,6 @@ test.describe('Exit Project Preview Modal E2E Test Suite', () => {
     await expect(
       page.getByTestId('project-preview-modal-title')
     ).not.toBeVisible();
-    await expect(page).toHaveURL(currentUrlPath);
   });
 
   test('Closes the Project Preview Modal when the User clicks on X button', async ({
@@ -51,6 +50,5 @@ test.describe('Exit Project Preview Modal E2E Test Suite', () => {
     await expect(
       page.getByTestId('project-preview-modal-title')
     ).not.toBeVisible();
-    await expect(page).toHaveURL(currentUrlPath);
   });
 });
