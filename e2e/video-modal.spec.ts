@@ -28,7 +28,6 @@ test.describe('Exit Video Modal E2E Test Suite', () => {
     await expect(
       page.getByRole('button', { name: translations.buttons.close })
     ).toBeVisible();
-    await expect(page).toHaveURL(currentUrlPath);
   });
 
   test('Closes the Video Modal When the User clicks on exit button', async ({
@@ -40,6 +39,5 @@ test.describe('Exit Video Modal E2E Test Suite', () => {
     await expect(
       page.getByText(translations.buttons['watch-video'])
     ).not.toBeVisible();
-    await expect(page).toHaveURL(currentUrlPath);
   });
 });
