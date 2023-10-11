@@ -53,7 +53,9 @@ test.describe('The unsubscribed page with unsubscribeId', () => {
     await page.goto(`/unsubscribed/${unsubscribeId}`);
   });
 
-  test('The page renders with correct title and other texts', async ({ page }) => {
+  test('The page renders with correct title and other texts', async ({
+    page
+  }) => {
     await expect(page).toHaveTitle(
       `${metaTags['youre-unsubscribed']} | freeCodeCamp.org`
     );
@@ -71,7 +73,9 @@ test.describe('The unsubscribed page with unsubscribeId', () => {
     );
   });
 
-  test('Resubscribe and redirect to home with encoded text in the url', async ({ page }) => {
+  test('Resubscribe and redirect to home with encoded text in the url', async ({
+    page
+  }) => {
     const resubscribeButton = page.getByRole('link', {
       name: translations.buttons['resubscribe']
     });
