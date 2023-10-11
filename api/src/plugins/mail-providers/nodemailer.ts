@@ -36,13 +36,15 @@ export class NodemailerProvider implements MailProvider {
    * @param param.from Email address to send from.
    * @param param.subject Email subject.
    * @param param.text Email body (raw text only).
+   * @param param.cc [Optional] Email address to CC.
    */
-  async send({ to, from, subject, text }: SendEmailArgs) {
+  async send({ to, from, subject, text, cc }: SendEmailArgs) {
     await this.transporter.sendMail({
       from,
       to,
       subject,
-      text
+      text,
+      cc
     });
   }
 }

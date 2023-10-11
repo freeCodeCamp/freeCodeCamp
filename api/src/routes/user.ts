@@ -16,6 +16,8 @@ import {
   type ProgressTimestamp
 } from '../utils/progress';
 import { encodeUserToken } from '../utils/user-token';
+import { trimTags } from '../utils/validation';
+import { generateReportEmail } from '../utils/email-templates';
 
 // Loopback creates a 64 character string for the user id, this customizes
 // nanoid to do the same.  Any unique key _should_ be fine, though.
@@ -164,6 +166,57 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         return { userToken: null };
       } catch (err) {
         fastify.log.error(err);
+        void reply.code(500);
+        return {
+          type: 'danger',
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        } as const;
+      }
+    }
+  );
+
+  fastify.post(
+    '/user/report-user',
+    {
+      schema: schemas.reportUser,
+      preHandler: (req, _reply, done) => {
+        req.body.reportDescription = trimTags(req.body.reportDescription);
+        done();
+      }
+    },
+    async (req, reply) => {
+      try {
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id }
+        });
+        const { username, reportDescription: report } = req.body;
+
+        if (!username || !report || report === '') {
+          // NOTE: Do we want to log these instances?
+          void reply.code(400);
+          return {
+            type: 'danger',
+            message: 'flash.provide-username'
+          } as const;
+        }
+
+        await fastify.sendEmail({
+          from: 'team@freecodecamp.org',
+          to: 'support@freecodecamp.org',
+          cc: user.email,
+          subject: `Abuse Report: Reporting ${username}'s profile`,
+          text: generateReportEmail(user, username, report)
+        });
+
+        return {
+          type: 'info',
+          message: 'flash.report-sent',
+          variables: { email: user.email }
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        // TODO: redirect to the reported user's profile if there's an error
         void reply.code(500);
         return {
           type: 'danger',
