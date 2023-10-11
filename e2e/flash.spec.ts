@@ -1,20 +1,25 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.beforeEach(async ({ page }) => {
-  await page.goto('/settings');
+  await page.goto('/settings', { waitUntil: 'load' });
 });
 
 test.afterEach(async ({ page }) => {
   await page.close();
 });
 
+const checkFlashMessageVisibility = async (page: Page, translation: string) => {
+  const flashMessage = page.getByText(translation);
+  await expect(flashMessage).toBeVisible();
+  const closeButton = page.getByRole('button', { name: 'close' });
+  await closeButton.click();
+  await expect(flashMessage).not.toBeVisible();
+};
+
 test.describe('Flash Message component E2E test', () => {
-  test('renders the flash message when click on night mode', async ({
-    page
-  }) => {
-    await page.waitForTimeout(5000);
+  test('Flash Message Visibility for Night Mode Toggle', async ({ page }) => {
     await page
       .getByRole('button', { name: translations.buttons.menu, exact: true })
       .click();
@@ -24,21 +29,20 @@ test.describe('Flash Message component E2E test', () => {
         exact: true
       })
       .click();
-    await expect(
-      page.getByText(translations.flash['updated-themes'])
-    ).toBeVisible();
+    await checkFlashMessageVisibility(
+      page,
+      translations.flash['updated-themes']
+    );
   });
 
-  test('renders the flash message when click on campfire mode', async ({
-    page
-  }) => {
-    await page.waitForTimeout(5000);
+  test('Flash Message Visibility for Sound Mode Toggle', async ({ page }) => {
     await page
       .getByLabel(translations.settings.labels['sound-mode'])
       .getByRole('button', { name: translations.buttons.on })
       .click();
-    await expect(
-      page.getByText(translations.flash['updated-sound'])
-    ).toBeVisible();
+    await checkFlashMessageVisibility(
+      page,
+      translations.flash['updated-sound']
+    );
   });
 });
