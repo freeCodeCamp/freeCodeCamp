@@ -355,15 +355,15 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       title: string;
     };
 
-    let missingPrequisites: Prerequisite[] = [];
+    let missingPrerequisites: Prerequisite[] = [];
     if (prerequisites) {
-      missingPrequisites = prerequisites?.filter(
+      missingPrerequisites = prerequisites?.filter(
         prerequisite =>
           !completedChallenges.find(({ id }) => prerequisite.id === id)
       );
     }
 
-    const qualifiedForExam = missingPrequisites.length === 0;
+    const qualifiedForExam = missingPrerequisites.length === 0;
 
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
@@ -539,7 +539,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     <p>{t('learn.exam.not-qualified')}</p>
                     <Spacer size='small' />
                     <ul>
-                      {missingPrequisites.map(({ title, id }) => (
+                      {missingPrerequisites.map(({ title, id }) => (
                         <li key={id}>{title}</li>
                       ))}
                     </ul>

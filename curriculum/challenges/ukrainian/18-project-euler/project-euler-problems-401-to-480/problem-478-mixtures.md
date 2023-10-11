@@ -1,6 +1,6 @@
 ---
 id: 5900f54c1000cf542c51005e
-title: 'Problem 478: Mixtures'
+title: 'Завдання 478: суміші'
 challengeType: 1
 forumTopicId: 302155
 dashedName: problem-478-mixtures
@@ -8,23 +8,23 @@ dashedName: problem-478-mixtures
 
 # --description--
 
-Let us consider mixtures of three substances: $A$, $B$ and $C$. A mixture can be described by a ratio of the amounts of $A$, $B$, and $C$ in it, i.e., $(a : b : c)$. For example, a mixture described by the ratio (2 : 3 : 5) contains 20% $A$, 30% $B$ and 50% $C$.
+Розглянемо суміш трьох речовин: $A$, $B$ та $C$. Суміші можна описати за співвідношенням речовин $A$, $B$ та $C$, тобто $(a : b : c)$. Наприклад, суміш зі співвідношенням (2 : 3 : 5) містить 20% $A$, 30% $B$ та 50% $C$.
 
-For the purposes of this problem, we cannot separate the individual components from a mixture. However, we can combine different amounts of different mixtures to form mixtures with new ratios.
+У цьому завданні ми не можемо розділити суміш на окремі компоненти. Однак ми можемо поєднати різну кількість різних сумішей, щоб утворити суміші з новими співвідношеннями.
 
-For example, say we have three mixtures with ratios (3 : 0 : 2), (3 : 6 : 11) and (3 : 3 : 4). By mixing 10 units of the first, 20 units of the second and 30 units of the third, we get a new mixture with ratio (6 : 5 : 9), since: ($10 \times \frac{3}{5} + 20 \times \frac{3}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{0}{5} + 20 \times \frac{6}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{2}{5} + 20 \times \frac{11}{20} + 30 \times \frac{4}{10}$) = (18 : 15 : 27) = (6 : 5 : 9)
+Наприклад, у нас є три суміші зі співвідношеннями (3 : 0 : 2), (3 : 6 : 11) та (3 : 3 : 4). Змішуючи 10 одиниць першої, 20 одиниць другої та 30 одиниць третьої, ми отримуємо нову суміш зі співвідношенням (6 : 5 : 9), оскільки: ($10 \times \frac{3}{5} + 20 \times \frac{3}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{0}{5} + 20 \times \frac{6}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{2}{5} + 20 \times \frac{11}{20} + 30 \times \frac{4}{10}$) = (18 : 15 : 27) = (6 : 5 : 9)
 
-However, with the same three mixtures, it is impossible to form the ratio (3 : 2 : 1), since the amount of $B$ is always less than the amount of $C$.
+Однак з трьома однаковими сумішами неможливо утворити співвідношення (3 : 2 : 1), оскільки кількість $B$ завжди менша за кількість $C$.
 
-Нехай $n$ буде натуральним числом. Suppose that for every triple of integers $(a, b, c)$ with $0 ≤ a, b, c ≤ n$ and $gcd(a, b, c) = 1$, we have a mixture with ratio $(a : b : c)$. Let $M(n)$ be the set of all such mixtures.
+Нехай $n$ буде натуральним числом. Припустимо, що для кожної трійки цілих чисел $(a, b, c)$ за умови $0 ≤ a, b, c ≤ n$ та $gcd(a, b, c) = 1$, ми маємо суміш зі співвідношенням $(a : b : c)$. Нехай $M(n)$ буде множиною таких сумішей.
 
-For example, $M(2)$ contains the 19 mixtures with the following ratios:
+Наприклад, $M(2)$ містить 19 сумішей з такими співвідношеннями:
 
 {(0 : 0 : 1), (0 : 1 : 0), (0 : 1 : 1), (0 : 1 : 2), (0 : 2 : 1), (1 : 0 : 0), (1 : 0 : 1), (1 : 0 : 2), (1 : 1 : 0), (1 : 1 : 1), (1 : 1 : 2), (1 : 2 : 0), (1 : 2 : 1), (1 : 2 : 2), (2 : 0 : 1), (2 : 1 : 0), (2 : 1 : 1), (2 : 1 : 2), (2 : 2 : 1)}.
 
-Let $E(n)$ be the number of subsets of $M(n)$ which can produce the mixture with ratio (1 : 1 : 1), i.e., the mixture with equal parts $A$, $B$ and $C$.
+Нехай $E(n)$ буде кількістю підмножин $M(n)$, які можуть утворити суміш зі співвідношенням (1 : 1 : 1), тобто суміш з рівними частинами $A$, $B$ та $C$.
 
-We can verify that $E(1) = 103$, $E(2) = 520\\,447$, $E(10)\bmod {11}^8 = 82\\,608\\,406$ and $E(500)\bmod {11}^8 = 13\\,801\\,403$.
+Можна довести, що $E(1) = 103$, $E(2) = 520\\,447$, $E(10)\bmod {11}^8 = 82\\,608\\,406$ та $E(500)\bmod {11}^8 = 13\\,801\\,403$.
 
 Знайдіть $E(10\\,000\\,000)\bmod {11}^8$.
 

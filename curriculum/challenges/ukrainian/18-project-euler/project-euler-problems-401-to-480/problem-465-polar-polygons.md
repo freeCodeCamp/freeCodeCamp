@@ -1,6 +1,6 @@
 ---
 id: 5900f53d1000cf542c510050
-title: 'Problem 465: Polar polygons'
+title: 'Завдання 465: полярні багатокутники'
 challengeType: 1
 forumTopicId: 302140
 dashedName: problem-465-polar-polygons
@@ -8,19 +8,19 @@ dashedName: problem-465-polar-polygons
 
 # --description--
 
-The kernel of a polygon is defined by the set of points from which the entire polygon's boundary is visible. We define a polar polygon as a polygon for which the origin is strictly contained inside its kernel.
+Ядро багатокутника визначається сукупністю точок, з яких утворюється межа багатокутника. Визначимо полярний багатокутник як багатокутник, початок якого розташований всередині ядра.
 
-For this problem, a polygon can have collinear consecutive vertices. However, a polygon still cannot have self-intersection and cannot have zero area.
+У цьому завданні багатокутник може мати послідовні колінеарні вершини. Однак він не може перетинатися та мати нульову площу.
 
-For example, only the first of the following is a polar polygon (the kernels of the second, third, and fourth do not strictly contain the origin, and the fifth does not have a kernel at all):
+Наприклад, тільки перший з наведених багатокутників є полярним (ядра другого, третього та четвертого не містять початок повністю, а п’ятий взагалі не має ядра):
 
-<img class="img-responsive center-block" alt="five example polygons" src="https://cdn.freecodecamp.org/curriculum/project-euler/polar-polygons.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="п’ять прикладів багатокутників" src="https://cdn.freecodecamp.org/curriculum/project-euler/polar-polygons.png" style="background-color: white; padding: 10px;" />
 
-Notice that the first polygon has three consecutive collinear vertices.
+Зверніть увагу, що перший багатокутник має три послідовні колінеарні вершини.
 
-Let $P(n)$ be the number of polar polygons such that the vertices $(x, y)$ have integer coordinates whose absolute values are not greater than $n$.
+Нехай $P(n)$ буде кількістю полярних багатокутників, вершини $(x, y)$ яких мають цілочислові координати, абсолютні значення яких не більші за $n$.
 
-Note that polygons should be counted as different if they have different set of edges, even if they enclose the same area. For example, the polygon with vertices [(0,0), (0,3), (1,1), (3,0)] is distinct from the polygon with vertices [(0,0), (0,3), (1,1), (3,0), (1,0)].
+Зверніть увагу, що багатокутники вважаються різними, якщо вони мають різну множину сторін, навіть якщо оточують однакову площу. Наприклад, багатокутник з вершинами [(0,0), (0,3), (1,1), (3,0)] відрізняється від багатокутника з вершинами [(0,0), (0,3), (1,1), (3,0), (1,0)].
 
 Наприклад, $P(1) = 131$, $P(2) = 1\\,648\\,531$, $P(3) = 1\\,099\\,461\\,296\\,175$ та $P(343)\bmod 1\\,000\\,000\\,007 = 937\\,293\\,740$.
 

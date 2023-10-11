@@ -1,6 +1,6 @@
 ---
 id: 5900f52e1000cf542c510041
-title: 'Problem 450: Hypocycloid and Lattice points'
+title: 'Завдання 450: гіпоциклоїда та точки сітки'
 challengeType: 1
 forumTopicId: 302123
 dashedName: problem-450-hypocycloid-and-lattice-points
@@ -22,7 +22,7 @@ Let $S(R, r) = \sum\_{(x,y) \in C(R, r)} |x| + |y|$ be the sum of the absolute v
 
 Let $T(N) = \sum_{R = 3}^N \sum_{r=1}^{\left\lfloor \frac{R - 1}{2} \right\rfloor} S(R, r)$ be the sum of $S(R, r)$ for $R$ and $r$ positive integers, $R\leq N$ and $2r &lt; R$.
 
-You are given:
+Дано:
 
 $$\begin{align}   C(3, 1) = & \\{(3, 0), (-1, 2), (-1,0), (-1,-2)\\} \\\\
   C(2500, 1000) = & \\{(2500, 0), (772, 2376), (772, -2376), (516, 1792), (516, -1792), (500, 0), (68, 504), \\\\ &(68, -504),(-1356, 1088), (-1356, -1088), (-1500, 1000), (-1500, -1000)\\} \end{align}$$

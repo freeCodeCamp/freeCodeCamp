@@ -20,7 +20,7 @@ Let $R(n)$ be the number of retractions for $n$.
 
 $$\sum_{k = 1}^{99\\,999} R(\displaystyle\binom{100\\,000}{k}) \equiv 628\\,701\\,600\bmod 1\\,000\\,000\\,007$$
 
-Find $$\sum_{k = 1}^{9\\,999\\,999} R(\displaystyle\binom{10\\,000\\,000}{k})$$ Give your answer modulo $1\\,000\\,000\\,007$.
+Знайдіть $$\sum_{k = 1}^{9\\,999\\,999} R(\displaystyle\binom{10\\,000\\,000}{k})$$ Дайте відповідь за модулем $1\\,000\\,000\\,007$.
 
 # --hints--
 
