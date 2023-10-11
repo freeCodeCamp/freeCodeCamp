@@ -40,14 +40,14 @@ const iconMap = {
   [SuperBlocks.UpcomingPython]: PythonIcon
 };
 
-const generateIconComponent = (
-  superBlock: SuperBlocks,
-  className: string
-): JSX.Element => {
+type SuperBlockIconProps = {
+  superBlock: SuperBlocks;
+} & React.SVGProps<SVGSVGElement>;
+
+export function SuperBlockIcon(props: SuperBlockIconProps): JSX.Element {
+  const { superBlock, className } = props;
   // fallback in case super block doesn't exist and for tests
   const Icon = iconMap[superBlock] ? iconMap[superBlock] : ResponsiveDesign;
 
-  return <Icon className={className} />;
-};
-
-export { generateIconComponent };
+  return <Icon className={className} {...props} />;
+}

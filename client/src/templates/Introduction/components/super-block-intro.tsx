@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
-import { generateIconComponent } from '../../../assets/icons';
+import { SuperBlockIcon } from '../../../assets/icons/superblock-icon';
 import { Spacer } from '../../../components/helpers';
 
 interface SuperBlockIntroProps {
@@ -29,7 +29,7 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
         {i18nSuperBlock}
       </h1>
       <Spacer size='medium' />
-      {generateIconComponent(superBlock, 'cert-header-icon')}
+      <SuperBlockIcon className='cert-header-icon' superBlock={superBlock} />
       <Spacer size='medium' />
       {superBlockIntroText.map((str, i) => (
         <p key={i}>{str}</p>
