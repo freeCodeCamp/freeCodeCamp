@@ -6,11 +6,12 @@
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 [![Discord](https://img.shields.io/discord/692816967895220344)](https://discord.gg/PRyKn3Vbay)
 
-## freeCodeCamp.org's open-source codebase and curriculum
+## Basis kode dan kurikulum sumber terbuka freeCodeCamp.org
 
-[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) charity](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 40,000 people get their first developer job.
+[freeCodeCamp.org](https://www.freecodecamp.org) adalah komunitas ramah tempat Anda dapat belajar coding secara gratis. Dijalankan oleh  [donor-supported 501(c)(3) charity](https://www.freecodecamp.org/donate) 
+untuk membantu jutaan orang dewasa yang sibuk beralih ke teknologi. Komunitas kami telah membantu lebih dari 40.000 orang mendapatkan pekerjaan pengembang pertama mereka.
 
-Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+Kurikulum pengembangan web dan pembelajaran mesin kami yang lengkap sepenuhnya gratis dan dapat diatur sendiri. Kami memiliki ribuan tantangan pengkodean interaktif untuk membantu Anda mengembangkan keterampilan Anda.
 
 ## Table of Contents
 
@@ -22,19 +23,18 @@ Our full-stack web development and machine learning curriculum is completely fre
 - [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
 - [License](#license)
 
-### Certifications
+### Sertifikasi
 
-freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginner programmer around 300 hours to earn.
 
-Each of these 50 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally and ensure you've fulfilled all the user stories before you submit it.
+Masing-masing dari 50 proyek dalam kurikulum freeCodeCamp.org ini memiliki kisah pengguna tangkas dan pengujian otomatisnya sendiri. Ini membantu Anda membangun proyek Anda secara bertahap dan memastikan Anda telah memenuhi semua cerita pengguna sebelum Anda mengirimkannya.
 
-You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Replit - or even on your local computer's development environment.
+Anda dapat menggunakan rangkaian pengujian ini melalui [CDN freeCodeCamp](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). Ini berarti Anda dapat membangun proyek ini di situs web seperti CodePen dan Replit - atau bahkan di lingkungan pengembangan komputer lokal Anda.
 
-Once you've earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or resume. And when your prospective employers or freelance clients click that link, they'll see a verified certification specific to you.
+Setelah Anda mendapatkan sertifikasi, Anda akan selalu memilikinya. Anda selalu dapat menautkannya dari LinkedIn atau resume Anda. Dan ketika calon pemberi kerja atau klien lepas Anda mengeklik tautan tersebut, mereka akan melihat sertifikasi terverifikasi khusus untuk Anda.
 
-The one exception to this is if we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/news/academic-honesty-policy/). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
+Satu-satunya pengecualian adalah jika kami menemukan pelanggaran terhadap [Kebijakan Kejujuran Akademik](https://www.freecodecamp.org/news/academic-honesty-policy/). Ketika kami menangkap orang-orang yang melakukan plagiat (mengirimkan kode atau proyek orang lain sebagai milik mereka tanpa kutipan), kami melakukan apa yang harus dilakukan oleh semua lembaga pembelajaran yang ketat - kami mencabut sertifikasi mereka dan melarang orang-orang tersebut.
 
-Here are our ten core certifications:
+Berikut adalah sepuluh sertifikasi inti kami:
 
 #### 1. [Responsive Web Design Certification](https://www.freecodecamp.org/learn/2022/responsive-web-design/)
 
@@ -176,18 +176,19 @@ Here are our ten core certifications:
     <br />
     **Projects**: [Multi-Function Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-multi-function-calculator-project), [Graphing Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-graphing-calculator-project), [Three Math Games](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-three-math-games-project), [Financial Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-financial-calculator-project), [Data Graph Explorer](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-data-graph-explorer-project)
 
-#### Legacy Full Stack Development Certification
+#### Sertifikasi Pengembangan Full Stack Lama
 
-Once you have earned the Responsive Web Design, Algorithms and Data Structures, Front End Development Libraries, Data Visualization, Back End Development and APIs, and Legacy Information Security and Quality Assurance certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This distinction signifies that you've completed around 1,800 hours of coding with a wide range of web development tools.
+Setelah Anda mendapatkan Desain Web Responsif, Algoritma dan Struktur Data, Pustaka Pengembangan Ujung Depan, Visualisasi Data, Pengembangan dan API Ujung Belakang, serta sertifikasi Keamanan Informasi dan Jaminan Kualitas Lama, Anda akan dapat mengklaim Tumpukan Penuh freeCodeCamp.org Anda Sertifikasi Pembangunan. Perbedaan ini menandakan bahwa Anda telah menyelesaikan sekitar 1.800 jam coding dengan berbagai alat pengembangan web.
 
-#### Legacy Certifications
+#### Sertifikasi Warisan
 
-We also have 4 legacy certifications dating back to our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
+Kami juga memiliki 4 sertifikasi warisan sejak kurikulum 2015, yang masih tersedia. Semua proyek yang diperlukan untuk sertifikasi lama ini akan tetap tersedia di freeCodeCamp.org.
 
-- Legacy Front End Development Certification
-- Legacy Data Visualization Certification
-- Legacy Back End Development Certification
-- Legacy Information Security and Quality Assurance Certification
+- Sertifikasi Pengembangan Front End Warisan
+- Sertifikasi Visualisasi Data Lama
+- Sertifikasi Pengembangan Back End Warisan
+- Sertifikasi Keamanan Informasi dan Jaminan Kualitas Warisan
+
 
 ### Free professional certifications
 
@@ -203,11 +204,11 @@ We also have 4 legacy certifications dating back to our 2015 curriculum, which a
   <br />
   **Exam**: [Foundational C# with Microsoft Certification Exam](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam)
 
-### The Learning Platform
+### Platform Pembelajaran
 
-This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
+Kode ini ditayangkan langsung di [freeCodeCamp.org](https://www.freecodecamp.org).
 
-Our community also has:
+Komunitas kami juga punya:
 
 - A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
 - A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
@@ -216,21 +217,21 @@ Our community also has:
 
 > #### [Join the community here](https://www.freecodecamp.org/signin).
 
-### Reporting Bugs and Issues
+### Melaporkan Bug dan Masalah
 
-If you think you've found a bug, first read the [how to report a bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
+Jika Anda merasa menemukan bug, baca dulu artikel [cara melaporkan bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) dan ikuti instruksinya .
 
-If you're confident it's a new bug and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
+Jika Anda yakin ini adalah bug baru dan telah mengonfirmasi bahwa orang lain juga menghadapi masalah yang sama, lanjutkan dan buat masalah GitHub baru. Pastikan untuk menyertakan informasi sebanyak mungkin sehingga kami dapat mereproduksi bug tersebut.
 
-### Reporting Security Issues and Responsible Disclosure
+### Melaporkan Masalah Keamanan dan Pengungkapan yang Bertanggung Jawab
 
-We appreciate responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
+Kami menghargai pengungkapan kerentanan yang bertanggung jawab yang mungkin berdampak pada integritas platform dan pengguna kami.
 
 > #### [Read our security policy and follow these steps to report a vulnerability](https://contribute.freecodecamp.org/#/security).
 
-### Contributing
+### Berkontribusi
 
-The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
+Komunitas freeCodeCamp.org terwujud berkat ribuan sukarelawan yang baik hati seperti Anda. Kami menyambut semua kontribusi kepada komunitas dan sangat senang menyambut Anda.
 
 > #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
 
@@ -242,7 +243,7 @@ The general platform status for all our applications is available at [`status.fr
 
 Copyright © 2023 freeCodeCamp.org
 
-The content of this repository is bound by the following licenses:
+Konten repositori ini terikat oleh lisensi berikut:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
 - The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories thereon are copyright © 2023 freeCodeCamp.org
