@@ -4,8 +4,13 @@ import {
   FastifyRequest
 } from 'fastify';
 
+import rateLimit from 'express-rate-limit';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import MongoStoreRL from 'rate-limit-mongo';
+
 import { defaultUser } from '../utils/default-user';
-import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env';
+import { AUTH0_DOMAIN, HOME_LOCATION, MONGOHQ_URL } from '../utils/env';
 
 declare module 'fastify' {
   interface Session {
@@ -108,6 +113,21 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
   _options,
   done
 ) => {
+  void fastify.register(rateLimit, {
+    windowMs: 15 * 60 * 1000,
+    max: 10,
+    standardHeaders: true,
+    legacyHeaders: false,
+    keyGenerator: (req: FastifyRequest) => {
+      return (req.headers['x-forwarded-for'] as string) || 'localhost';
+    },
+    store: new MongoStoreRL({
+      collectionName: 'UserRateLimit',
+      uri: url,
+      expireTimeMs: 15 * 60 * 1000
+    })
+  });
+
   fastify.get('/mobile-login', async req => {
     const email = await getEmailFromAuth0(req);
 
