@@ -59,13 +59,23 @@ function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
       show={isOpen}
     >
       <Modal.Header className='reset-modal-header' closeButton={true}>
-        <Modal.Title className='text-center'>{t('learn.reset')}</Modal.Title>
+        <Modal.Title
+          className='text-center'
+          data-playwright-test-label='reset-text'
+        >
+          {t('learn.reset')}
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body className='reset-modal-body'>
         <div className='text-center'>
-          <p>{t('learn.reset-warn')}</p>
+          <p data-playwright-test-label='reset-warn-text'>
+            {t('learn.reset-warn')}
+          </p>
           <p>
-            <em>{t('learn.reset-warn-2')}</em>.
+            <em data-playwright-test-label='reset-warn-text-2'>
+              {t('learn.reset-warn-2')}
+            </em>
+            .
           </p>
         </div>
       </Modal.Body>
@@ -75,6 +85,7 @@ function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
           block={true}
           bsSize='large'
           bsStyle='danger'
+          data-playwright-test-label='reset-lesson-button'
           onClick={withActions(reset, close)}
         >
           {t('buttons.reset-lesson')}
