@@ -13,7 +13,6 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Col, Row } from '@freecodecamp/ui';
 
-import { Row } from '@freecodecamp/ui';
 import Login from '../components/Header/components/login';
 
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
