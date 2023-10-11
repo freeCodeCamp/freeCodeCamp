@@ -71,7 +71,7 @@ test.describe('The unsubscribed page with unsubscribeId', () => {
     );
   });
 
-  test('Resubscribe and redirect to home with encoded text in the url', async () => {
+  test('Resubscribe and redirect to home with encoded text in the url', async ({ page }) => {
     const resubscribeButton = page.getByRole('link', {
       name: translations.buttons['resubscribe']
     });
