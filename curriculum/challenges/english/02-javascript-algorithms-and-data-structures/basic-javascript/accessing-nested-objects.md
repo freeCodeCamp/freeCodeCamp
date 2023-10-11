@@ -54,7 +54,7 @@ assert.match(code, /myStorage\.car\.inside/);
 `gloveBoxContents` should still be declared with `const`.
 
 ```js
-assert.match(code, /const\s+gloveBoxContents\s*=\s*.*;\s*$/);
+assert.match(code, /const\s+gloveBoxContents\s*=/);
 ```
 
 You should not change the `myStorage` object.
