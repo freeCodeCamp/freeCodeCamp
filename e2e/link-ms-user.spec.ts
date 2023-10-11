@@ -3,14 +3,13 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 let page: Page;
 
-test.beforeEach(async ({ browser }) => {
-  page = await browser.newPage();
+test.beforeEach(async ({ page }) => {
   await page.goto(
     '/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/trophy-write-your-first-code-using-c-sharp'
   );
 });
 
-test.afterEach(async () => {
+test.afterEach(async ({ page }) => {
   await page.close();
 });
 
