@@ -49,8 +49,7 @@ test.describe('The unsubscribed page with unsubscribeId', () => {
   // The file certified-user-data.js is used to seed the database before running the tests.
   const unsubscribeId = 'tBX8stC5jiustPBteF2mV';
 
-  test.beforeAll(async ({ browser }) => {
-    page = await browser.newPage();
+  test.beforeEach(async ({ page }) => {
     await page.goto(`/unsubscribed/${unsubscribeId}`);
   });
 
