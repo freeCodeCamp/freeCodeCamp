@@ -39,7 +39,7 @@ test.describe('Link MS user component (unlinked signedIn user)', () => {
     await expect(linkSignInText).toBeVisible();
   });
 
-  test('Component has proper list of actions', async () => {
+  test('Component has proper list of actions', async ({ page }) => {
     const linkText1 = page.getByTestId('link-li-1-text');
     await expect(linkText1).toBeVisible();
     await expect(linkText1).toContainText(
