@@ -10,5 +10,7 @@ shared/config/superblocks.js
 web/**
 docs/**/*.md
 tools/ui-components/dist/**
-playwright.config.ts
 tools/ui-components/types/**
+tools/ui-components/.rollup.cache/**
+tools/ui-components/tsconfig.tsbuildinfo
+playwright.config.ts
