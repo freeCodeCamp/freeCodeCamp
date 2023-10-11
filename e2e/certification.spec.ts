@@ -34,7 +34,7 @@ test.describe('Certification page', () => {
     await expect(QunicySignature).toBeVisible();
   });
 
-  test('The certificate itslef has relevant information in it', async ({
+  test('The certificate itself has relevant information in it', async ({
     page
   }) => {
     const infoContainer = page.getByTestId('cert-info-container');
@@ -44,9 +44,7 @@ test.describe('Certification page', () => {
     await expect(certTitle).toHaveText('Responsive Web Design');
   });
 
-  test('The certificate page has certificate/social/project links', async ({
-    page
-  }) => {
+  test('Validate certificate/social/project links', async ({ page }) => {
     const certLink = page.getByTestId('cert-links');
     await expect(certLink).toBeVisible();
 
