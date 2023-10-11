@@ -1,8 +1,6 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import metaTags from '../client/i18n/locales/english/meta-tags.json';
-
-let page: Page;
 
 test.afterEach(async ({ page }) => {
   await page.close();
