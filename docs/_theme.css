@@ -143,7 +143,7 @@ body .content {
   line-height: 24px;
   font-size: 16px;
   margin: 2px 0;
-  padding: 4px 4px;
+  padding: 4px;
 }
 
 /****** Cover Page ******/
@@ -268,6 +268,7 @@ section.cover.show ~ .sidebar-toggle {
 .sidebar {
   background-color: var(--primary-background);
   color: var(--quaternary-color);
+  padding: 0;
 }
 
 .sidebar ul li a {
@@ -292,10 +293,6 @@ section.cover.show ~ .sidebar-toggle {
 .sidebar,
 .content {
   margin-top: 38px;
-}
-
-.sidebar {
-  padding: 0;
 }
 
 .sidebar-toggle {
@@ -387,8 +384,8 @@ body.close .github-corner {
 }
 
 .markdown-section code {
-  background-color: #f8f8f8;
-  color: #525252;
+  background-color: var(--quaternary-background);
+  color: var(--quaternary-color);
   padding: 0.05em 0.15em 0.15em;
   margin: 0.05em;
   font-size: 16px;
@@ -420,11 +417,6 @@ body.close .github-corner {
 .markdown-section pre > code {
   background-color: var(--primary-background);
   color: var(--secondary-color);
-}
-
-.markdown-section code {
-  background-color: var(--quaternary-background);
-  color: var(--quaternary-color);
 }
 
 .markdown-section a > code,
