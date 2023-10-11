@@ -9,7 +9,7 @@ import rateLimit from 'express-rate-limit';
 // @ts-ignore
 import MongoStoreRL from 'rate-limit-mongo';
 
-import { defaultUser } from '../utils/default-user';
+import { createUserInput } from '../utils/create-user';
 import { AUTH0_DOMAIN, HOME_LOCATION, MONGOHQ_URL } from '../utils/env';
 
 declare module 'fastify' {
@@ -46,7 +46,7 @@ const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
   return (
     existingUser ??
     (await fastify.prisma.user.create({
-      data: { ...defaultUser, email },
+      data: createUserInput(email),
       select: { id: true }
     }))
   );
@@ -123,7 +123,7 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
     },
     store: new MongoStoreRL({
       collectionName: 'UserRateLimit',
-      uri: url,
+      uri: MONGOHQ_URL,
       expireTimeMs: 15 * 60 * 1000
     })
   });

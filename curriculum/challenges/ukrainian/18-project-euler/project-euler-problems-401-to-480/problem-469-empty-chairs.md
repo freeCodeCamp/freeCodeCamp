@@ -1,6 +1,6 @@
 ---
 id: 5900f5411000cf542c510053
-title: 'Problem 469: Empty chairs'
+title: 'Завдання 469: порожні стільці'
 challengeType: 1
 forumTopicId: 302144
 dashedName: problem-469-empty-chairs
@@ -8,15 +8,15 @@ dashedName: problem-469-empty-chairs
 
 # --description--
 
-In a room $N$ chairs are placed around a round table.
+У кімнаті навколо круглого столу розміщено $N$ стільців.
 
-Knights enter the room one by one and choose at random an available empty chair.
+Лицарі входять до кімнати по одному і навмання обирають порожній стілець.
 
-To have enough elbow room the knights always leave at least one empty chair between each other.
+Щоб мати достатньо місця для ліктів, лицарі залишають принаймні один порожній стілець між собою.
 
-When there aren't any suitable chairs left, the fraction $C$ of empty chairs is determined. We also define $E(N)$ as the expected value of $C$.
+Коли немає місця, щоб сісти, визначається частина порожніх стільців $C$. Також визначимо $E(N)$ як очікуване значення $C$.
 
-We can verify that $E(4) = \frac{1}{2}$ and $E(6) = \frac{5}{9}$.
+Можна довести, що $E(4) = \frac{1}{2}$ та $E(6) = \frac{5}{9}$.
 
 Знайдіть $E({10}^{18})$. Дайте відповідь, заокруглену до чотирнадцяти знаків після коми у форматі 0.abcdefghijklmn.
 

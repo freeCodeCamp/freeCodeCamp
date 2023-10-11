@@ -40,7 +40,7 @@ const WalletsButton = ({
   const [paymentRequest, setPaymentRequest] = useState<PaymentRequest | null>(
     null
   );
-  const [canMakePayment, checkpaymentPossiblity] = useState(false);
+  const [canMakePayment, checkPaymentPossibility] = useState(false);
 
   useEffect(() => {
     if (!stripe) {
@@ -71,9 +71,9 @@ const WalletsButton = ({
     void pr.canMakePayment().then(canMakePaymentRes => {
       if (canMakePaymentRes) {
         setPaymentRequest(pr);
-        checkpaymentPossiblity(true);
+        checkPaymentPossibility(true);
       } else {
-        checkpaymentPossiblity(false);
+        checkPaymentPossibility(false);
       }
     });
   }, [label, amount, stripe, postPayment, handlePaymentButtonLoad]);

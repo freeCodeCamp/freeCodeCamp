@@ -2,9 +2,9 @@ import {
   FormGroup,
   ControlLabel,
   FormControl,
-  HelpBlock,
-  Alert
+  HelpBlock
 } from '@freecodecamp/react-bootstrap';
+import { Alert } from '@freecodecamp/ui';
 import React, { Component } from 'react';
 
 import type { TFunction } from 'i18next';
@@ -55,7 +55,7 @@ const ShowImageValidationWarning = ({
 }) => {
   return (
     <HelpBlock>
-      <Alert bsStyle='info'>{alertContent}</Alert>
+      <Alert variant='info'>{alertContent}</Alert>
     </HelpBlock>
   );
 };

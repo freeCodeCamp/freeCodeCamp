@@ -16,7 +16,7 @@ Ci sono vari metodi per selezionare diversi colori che portano ad una combinazio
 
 Qui vediamo tre colori creati utilizzando lo schema split-complement:
 
-<table class='table table-striped'><thead><tr><th>Colore</th><th>Codice esadecimale</th></tr></thead><thead></thead><tbody><tr><td>orange</td><td>#FF7F00</td></tr><tr><td>cyan</td><td>#00FFFF</td></tr><tr><td>raspberry</td><td>#FF007F</td></tr></tbody></table>
+<table><thead><tr><th>Colore</th><th>Codice esadecimale</th></tr></thead><thead></thead><tbody><tr><td>orange</td><td>#FF7F00</td></tr><tr><td>cyan</td><td>#00FFFF</td></tr><tr><td>raspberry</td><td>#FF007F</td></tr></tbody></table>
 
 # --instructions--
 

@@ -18,7 +18,7 @@ exports[`<Profile/> renders correctly 1`] = `
         class="row"
       >
         <div
-          class="avatar-camper col-xs-12"
+          class="avatar-camper min-h-[1px] px-[15px] w-full         "
         >
           <div
             class="avatar-container default-border"
@@ -169,7 +169,7 @@ exports[`<Profile/> renders correctly 1`] = `
         class="row"
       >
         <div
-          class="text-center social-media-icons col-sm-6 col-sm-offset-3"
+          class="text-center social-media-icons min-h-[1px] px-[15px]  md:w-1/2    md:ml-[25%]    "
         >
           <a
             aria-label="aria.linkedin"

@@ -1,7 +1,7 @@
-.flash-message {
+div.flash-message {
   display: flex;
   justify-content: space-around;
-  flex-direction: row-reverse;
+  flex-direction: row;
   margin-bottom: 0px;
   padding-top: 3px;
   padding-bottom: 3px;
