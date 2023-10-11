@@ -33,7 +33,7 @@ test.describe('The unsubscribed page without unsubscribeId', () => {
     );
   });
 
-  test('The page has no button to resubscribe', async () => {
+  test('The page has no button to resubscribe', async ({ page }) => {
     const resubscribeButton = page.getByRole('link', {
       name: translations.buttons['resubscribe']
     });
