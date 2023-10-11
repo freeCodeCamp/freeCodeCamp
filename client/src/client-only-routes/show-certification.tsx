@@ -248,17 +248,29 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   );
 
   const donationSection = (
-    <div className='donation-section'>
+    <div
+      className='donation-section'
+      data-playwright-test-label='donation-section'
+    >
       <Spacer size='large' />
       {!isDonationSubmitted && (
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-            <p>{t('donate.only-you')}</p>
+            <p data-playwright-test-label='donation-text'>
+              {t('donate.only-you')}
+            </p>
           </Col>
         </Row>
       )}
       <Row>
-        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+        <Col
+          lg={8}
+          lgOffset={2}
+          sm={10}
+          smOffset={1}
+          xs={12}
+          data-playwright-test-label='donation-form'
+        >
           <DonateForm
             defaultTheme={Themes.Default}
             handleProcessing={handleProcessing}
@@ -392,6 +404,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   <div>
                     <Image
                       data-cy='quincy-signature'
+                      data-playwright-test-label='quincy-signature'
                       alt="Quincy Larson's Signature"
                       src={
                         'https://cdn.freecodecamp.org' +
@@ -427,6 +440,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 <div>
                   <Image
                     data-cy='quincy-signature'
+                    data-playwright-test-label='quincy-signature'
                     alt="Quincy Larson's Signature"
                     src={
                       'https://cdn.freecodecamp.org' +
