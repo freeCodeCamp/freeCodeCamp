@@ -26,7 +26,7 @@ test.describe('Link MS user component (unlinked signedOut user)', () => {
 test.describe('Link MS user component (unlinked signedIn user)', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-  test('Component has proper main heading and relevant sections', async () => {
+  test('Component has proper main heading and relevant sections', async ({ page }) => {
     const mainHeading = page.getByRole('heading', {
       name: translations.learn.ms['link-header']
     });
