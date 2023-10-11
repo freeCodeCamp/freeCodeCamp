@@ -12,7 +12,7 @@ test.afterEach(async ({ page }) => {
 });
 
 test.describe('Link MS user component (unlinked signedOut user)', () => {
-  test('Component has proper main heading and relevant sections', async () => {
+  test('Component has proper main heading and relevant sections', async ({ page }) => {
     const mainHeading = page.getByRole('heading', {
       name: translations.learn.ms['link-header']
     });
