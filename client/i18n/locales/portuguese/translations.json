@@ -739,7 +739,8 @@
         "err-4": "Algo deu errado ao tentar verificar seu troféu. Confira isso e tente novamente.",
         "verified": "Seu troféu da plataforma de aprendizado da Microsoft foi verificado."
       }
-    }
+    },
+    "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",

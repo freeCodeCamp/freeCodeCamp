@@ -356,6 +356,10 @@
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
         "title": "通過創建數字排序器學習基本算法思維",
         "intro": ["", ""]
+      },
+      "learn-localstorage-by-building-a-todo-app": {
+        "title": "Learn localStorage by Building a Todo App",
+        "intro": ["", ""]
       }
     }
   },
