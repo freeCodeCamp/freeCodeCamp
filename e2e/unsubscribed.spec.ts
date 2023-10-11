@@ -24,7 +24,7 @@ test.describe('The unsubscribed page without unsubscribeId', () => {
     await expect(mainHeading).toContainText(translations.misc['unsubscribed']);
   });
 
-  test('The page has correct motivation text', async () => {
+  test('The page has correct motivation text', async ({ page }) => {
     const motivationText = page.getByTestId('motivation-text');
 
     await expect(motivationText).toBeVisible();
