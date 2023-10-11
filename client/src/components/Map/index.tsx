@@ -8,7 +8,7 @@ import {
   getFirstNotAuditedSuperBlock,
   superBlockOrder
 } from '../../../../shared/config/superblocks';
-import { generateIconComponent } from '../../assets/icons';
+import { SuperBlockIcon } from '../../assets/icons/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { Link, Spacer } from '../helpers';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
@@ -77,7 +77,7 @@ function MapLi({
       >
         <Link className='btn link-btn btn-lg' to={`/learn/${superBlock}/`}>
           <div style={linkSpacingStyle}>
-            {generateIconComponent(superBlock, 'map-icon')}
+            <SuperBlockIcon className='map-icon' superBlock={superBlock} />
             {getSuperBlockTitleForMap(superBlock)}
           </div>
           {landing && <LinkButton />}
