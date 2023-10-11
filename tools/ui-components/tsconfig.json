@@ -12,7 +12,6 @@
     "declaration": true,
     "declarationDir": "types",
     // can be removed, when we move the components into its own repo.
-    "composite": true,
     "declarationMap": true
   },
   "exclude": ["node_modules", "dist", "types"],

@@ -11,6 +11,4 @@ web/**
 docs/**/*.md
 tools/ui-components/dist/**
 tools/ui-components/types/**
-tools/ui-components/.rollup.cache/**
-tools/ui-components/tsconfig.tsbuildinfo
 playwright.config.ts
