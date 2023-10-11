@@ -109,11 +109,8 @@ const minimalUserData: Prisma.userCreateInput = {
 const computedProperties = {
   calendar: {},
   completedChallengeCount: 0,
-  completedChallenges: [], // we don't need to provide an empty array, prisma will create it
   isEmailVerified: minimalUserData.emailVerified,
   points: 1,
-  portfolio: [],
-  yearsTopContributor: [],
   // This is the default value if profileUI is missing. If individual properties
   // are missing from the db, they will be omitted from the response.
   profileUI: {
@@ -305,6 +302,7 @@ describe('userRoutes', () => {
         expect(user).toMatchObject(baseProgressData);
       });
     });
+
     describe('/user/user-token', () => {
       beforeEach(async () => {
         await fastifyTestInstance.prisma.userToken.create({
@@ -518,6 +516,7 @@ describe('userRoutes', () => {
 
         expect(tokenData.id).toBe(userToken);
       });
+
       test('GET returns a minimal user when all optional properties are missing', async () => {
         // To get a minimal test user we first delete the existing one...
         await fastifyTestInstance.prisma.user.deleteMany({
@@ -539,8 +538,17 @@ describe('userRoutes', () => {
         const publicUser = {
           ..._.omit(minimalUserData, ['externalId', 'unsubscribeId']),
           ...computedProperties,
-          id: testUser?.id,
-          joinDate: new ObjectId(testUser?.id).getTimestamp().toISOString()
+          id: testUser.id,
+          joinDate: new ObjectId(testUser.id).getTimestamp().toISOString(),
+          // the following properties are defaults provided if the field is
+          // missing in the user document.
+          completedChallenges: [],
+          // TODO: add completedExams when /generate-exam is implemented
+          // completedExams: [],
+          partiallyCompletedChallenges: [],
+          portfolio: [],
+          savedChallenges: [],
+          yearsTopContributor: []
         };
 
         const response = await superRequest('/user/get-session-user', {
@@ -555,6 +563,113 @@ describe('userRoutes', () => {
         };
 
         expect(testuser).toStrictEqual(publicUser);
+      });
+    });
+
+    describe('/user/report-user', () => {
+      let sendEmailSpy: jest.SpyInstance;
+      beforeEach(() => {
+        sendEmailSpy = jest
+          .spyOn(fastifyTestInstance, 'sendEmail')
+          .mockImplementation(jest.fn());
+      });
+
+      afterEach(() => {
+        jest.clearAllMocks();
+      });
+
+      test('POST returns 400 for empty username', async () => {
+        const response = await superRequest('/user/report-user', {
+          method: 'POST',
+          setCookies
+        }).send({
+          username: '',
+          reportDescription: 'Test Report'
+        });
+
+        expect(response.statusCode).toBe(400);
+        expect(response.body).toStrictEqual({
+          type: 'danger',
+          message: 'flash.provide-username'
+        });
+      });
+
+      test('POST returns 400 for empty report', async () => {
+        const response = await superRequest('/user/report-user', {
+          method: 'POST',
+          setCookies
+        }).send({
+          username: 'darth-vader',
+          reportDescription: ''
+        });
+
+        expect(response.statusCode).toBe(400);
+        expect(response.body).toStrictEqual({
+          type: 'danger',
+          message: 'flash.provide-username'
+        });
+      });
+
+      test('POST sanitises report description', async () => {
+        await superRequest('/user/report-user', {
+          method: 'POST',
+          setCookies
+        }).send({
+          username: 'darth-vader',
+          reportDescription:
+            '<script>const breath = "loud"</script>Luke, I am your father'
+        });
+
+        expect(sendEmailSpy).toBeCalledTimes(1);
+        expect(sendEmailSpy).toBeCalledWith(
+          expect.objectContaining({
+            text: expect.stringContaining(
+              'Report Details:\n\nLuke, I am your father'
+            )
+          })
+        );
+      });
+
+      test('POST returns 200 status code with "success" message', async () => {
+        const response = await superRequest('/user/report-user', {
+          method: 'POST',
+          setCookies
+        }).send({
+          username: 'darth-vader',
+          reportDescription: 'Luke, I am your father'
+        });
+
+        expect(sendEmailSpy).toBeCalledTimes(1);
+        expect(sendEmailSpy).toBeCalledWith({
+          from: 'team@freecodecamp.org',
+          to: 'support@freecodecamp.org',
+          cc: 'foo@bar.com',
+          subject: "Abuse Report: Reporting darth-vader's profile",
+          text: `
+Hello Team,
+
+This is to report the profile of darth-vader.
+
+Report Details:
+
+Luke, I am your father
+
+
+Reported by:
+Username: 
+Name: 
+Email: foo@bar.com
+
+Thanks and regards,
+`
+        });
+
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toStrictEqual({
+          type: 'info',
+          message: 'flash.report-sent',
+          variables: { email: 'foo@bar.com' }
+        });
       });
     });
   });
@@ -581,6 +696,17 @@ describe('userRoutes', () => {
           method,
           setCookies
         });
+        expect(response.statusCode).toBe(401);
+      });
+    });
+
+    describe('/user/report-user', () => {
+      test('POST returns 401 status code with error message', async () => {
+        const response = await superRequest('/user/report-user', {
+          method: 'POST',
+          setCookies
+        });
+
         expect(response.statusCode).toBe(401);
       });
     });
