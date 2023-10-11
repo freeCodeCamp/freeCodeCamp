@@ -1,5 +1,4 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { isEmpty } from 'lodash';
 import { ObjectId } from 'mongodb';
 import { customAlphabet } from 'nanoid';
 
@@ -325,8 +324,6 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           progressTimestamps,
           twitter,
           profileUI,
-          savedChallenges,
-          partiallyCompletedChallenges,
           ...publicUser
         } = user;
 
@@ -340,19 +337,11 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               calendar: getCalendar(
                 progressTimestamps as ProgressTimestamp[] | null
               ),
-              partiallyCompletedChallenges: isEmpty(
-                partiallyCompletedChallenges
-              )
-                ? undefined
-                : partiallyCompletedChallenges,
               // This assertion is necessary until the database is normalized.
               points: getPoints(
                 progressTimestamps as ProgressTimestamp[] | null
               ),
               profileUI: normalizeProfileUI(profileUI),
-              savedChallenges: isEmpty(savedChallenges)
-                ? undefined
-                : savedChallenges,
               // TODO(Post-MVP) remove this and just use emailVerified
               isEmailVerified: user.emailVerified,
               joinDate: new ObjectId(user.id).getTimestamp().toISOString(),

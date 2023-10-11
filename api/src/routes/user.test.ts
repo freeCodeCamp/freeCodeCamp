@@ -109,11 +109,8 @@ const minimalUserData: Prisma.userCreateInput = {
 const computedProperties = {
   calendar: {},
   completedChallengeCount: 0,
-  completedChallenges: [], // we don't need to provide an empty array, prisma will create it
   isEmailVerified: minimalUserData.emailVerified,
   points: 1,
-  portfolio: [],
-  yearsTopContributor: [],
   // This is the default value if profileUI is missing. If individual properties
   // are missing from the db, they will be omitted from the response.
   profileUI: {
@@ -541,8 +538,17 @@ describe('userRoutes', () => {
         const publicUser = {
           ..._.omit(minimalUserData, ['externalId', 'unsubscribeId']),
           ...computedProperties,
-          id: testUser?.id,
-          joinDate: new ObjectId(testUser?.id).getTimestamp().toISOString()
+          id: testUser.id,
+          joinDate: new ObjectId(testUser.id).getTimestamp().toISOString(),
+          // the following properties are defaults provided if the field is
+          // missing in the user document.
+          completedChallenges: [],
+          // TODO: add completedExams when /generate-exam is implemented
+          // completedExams: [],
+          partiallyCompletedChallenges: [],
+          portfolio: [],
+          savedChallenges: [],
+          yearsTopContributor: []
         };
 
         const response = await superRequest('/user/get-session-user', {
