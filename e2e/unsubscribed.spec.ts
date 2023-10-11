@@ -4,13 +4,12 @@ import metaTags from '../client/i18n/locales/english/meta-tags.json';
 
 let page: Page;
 
-test.afterAll(async () => {
+test.afterEach(async ({ page }) => {
   await page.close();
 });
 
 test.describe('The unsubscribed page without unsubscribeId', () => {
-  test.beforeAll(async ({ browser }) => {
-    page = await browser.newPage();
+  test.beforeEach(async ({ page }) => {
     await page.goto('/unsubscribed');
   });
 
