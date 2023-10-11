@@ -12,7 +12,9 @@ test.afterEach(async ({ page }) => {
 });
 
 test.describe('Link MS user component (unlinked signedOut user)', () => {
-  test('Component has proper main heading and relevant sections', async ({ page }) => {
+  test('Component has proper main heading and relevant sections', async ({
+    page
+  }) => {
     const mainHeading = page.getByRole('heading', {
       name: translations.learn.ms['link-header']
     });
@@ -26,7 +28,9 @@ test.describe('Link MS user component (unlinked signedOut user)', () => {
 test.describe('Link MS user component (unlinked signedIn user)', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-  test('Component has proper main heading and relevant sections', async ({ page }) => {
+  test('Component has proper main heading and relevant sections', async ({
+    page
+  }) => {
     const mainHeading = page.getByRole('heading', {
       name: translations.learn.ms['link-header']
     });
