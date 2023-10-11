@@ -48,7 +48,6 @@ test.describe('Certification page - Non Microsoft', () => {
   });
 
   test('Validate certificate/social/project links', async ({ page }) => {
-    const urlRegex = `.*${encodeURIComponent('Responsive%20Web%20Design')}.*`;
     const certLink = page.getByTestId('cert-links');
     await expect(certLink).toBeVisible();
 
@@ -59,12 +58,6 @@ test.describe('Certification page - Non Microsoft', () => {
       `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Responsive%20Web%20Design&organizationId=4831032&issueYear=2018&issueMonth=8&certUrl=https://freecodecamp.org/certification/certifieduser/responsive-web-design`
     );
 
-    const linkedInPopup = page.waitForEvent('popup');
-    await linkedinLink.click();
-    const popupLinkedIn = await linkedInPopup;
-    await popupLinkedIn.waitForLoadState();
-    await expect(popupLinkedIn).toHaveURL(new RegExp(urlRegex));
-
     const twitterLink = certLink.getByTestId('twitter-share-btn');
     await expect(twitterLink).toBeVisible();
     await expect(twitterLink).toHaveAttribute(
@@ -72,13 +65,53 @@ test.describe('Certification page - Non Microsoft', () => {
       `https://twitter.com/intent/tweet?text=I just earned the Responsive%20Web%20Design certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/responsive-web-design`
     );
 
-    const twitterPopup = page.waitForEvent('popup');
-    await twitterLink.click();
-    const popupTwitter = await twitterPopup;
-    await popupTwitter.waitForLoadState();
-    await expect(popupTwitter).toHaveURL(new RegExp(urlRegex));
+    const projectLinks = certLink.getByTestId('project-links');
+    await expect(projectLinks).toBeVisible();
 
-    await expect(page.getByTestId('project-links')).toBeVisible();
+    const surveyFormLink = projectLinks.getByRole('link', {
+      name: 'Build a Survey Form'
+    });
+    await expect(surveyFormLink).toBeVisible();
+    await expect(surveyFormLink).toHaveAttribute(
+      'href',
+      '/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form'
+    );
+
+    const tributePageLink = projectLinks.getByRole('link', {
+      name: 'Build a Tribute Page'
+    });
+    await expect(tributePageLink).toBeVisible();
+    await expect(tributePageLink).toHaveAttribute(
+      'href',
+      '/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
+    );
+
+    const technicalDocumentationPageLink = projectLinks.getByRole('link', {
+      name: 'Build a Technical Documentation Page'
+    });
+    await expect(technicalDocumentationPageLink).toBeVisible();
+    await expect(technicalDocumentationPageLink).toHaveAttribute(
+      'href',
+      '/learn/2022/responsive-web-design/build-a-technical-documentation-page-project/build-a-technical-documentation-page'
+    );
+
+    const productLandingPageLink = projectLinks.getByRole('link', {
+      name: 'Build a Product Landing Page'
+    });
+    await expect(productLandingPageLink).toBeVisible();
+    await expect(productLandingPageLink).toHaveAttribute(
+      'href',
+      '/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page'
+    );
+
+    const personalPortfolioWebpageLink = projectLinks.getByRole('link', {
+      name: 'Build a Personal Portfolio Webpage'
+    });
+    await expect(personalPortfolioWebpageLink).toBeVisible();
+    await expect(personalPortfolioWebpageLink).toHaveAttribute(
+      'href',
+      '/learn/2022/responsive-web-design/build-a-personal-portfolio-webpage-project/build-a-personal-portfolio-webpage'
+    );
   });
 });
 
@@ -129,9 +162,6 @@ test.describe('Certification page - Microsoft', () => {
   });
 
   test('Validate certificate/social/project links', async ({ page }) => {
-    const urlRegex = `.*${encodeURIComponent(
-      'Foundational%20C%23%20with%20Microsoft'
-    )}.*`;
     const certLink = page.getByTestId('cert-links');
     await expect(certLink).toBeVisible();
 
@@ -142,12 +172,6 @@ test.describe('Certification page - Microsoft', () => {
       'https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Foundational%20C%23%20with%20Microsoft&organizationId=4831032&issueYear=2023&issueMonth=9&certUrl=https://freecodecamp.org/certification/certifieduser/foundational-c-sharp-with-microsoft'
     );
 
-    const linkedInPopup = page.waitForEvent('popup');
-    await linkedinLink.click();
-    const popupLinkedIn = await linkedInPopup;
-    await popupLinkedIn.waitForLoadState();
-    await expect(popupLinkedIn).toHaveURL(new RegExp(urlRegex));
-
     const twitterLink = certLink.getByTestId('twitter-share-btn');
     await expect(twitterLink).toBeVisible();
     await expect(twitterLink).toHaveAttribute(
@@ -155,12 +179,16 @@ test.describe('Certification page - Microsoft', () => {
       'https://twitter.com/intent/tweet?text=I just earned the Foundational%20C%23%20with%20Microsoft certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/foundational-c-sharp-with-microsoft'
     );
 
-    const twitterPopup = page.waitForEvent('popup');
-    await twitterLink.click();
-    const popupTwitter = await twitterPopup;
-    await popupTwitter.waitForLoadState();
-    await expect(popupTwitter).toHaveURL(new RegExp(urlRegex));
+    const projectLinks = certLink.getByTestId('project-links');
+    await expect(projectLinks).toBeVisible();
 
-    await expect(page.getByTestId('project-links')).toBeVisible();
+    const surveyFormLink = projectLinks.getByRole('link', {
+      name: 'Foundational C# with Microsoft Certification Exam'
+    });
+    await expect(surveyFormLink).toBeVisible();
+    await expect(surveyFormLink).toHaveAttribute(
+      'href',
+      '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam'
+    );
   });
 });
