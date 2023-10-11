@@ -103,3 +103,5 @@ export const SES_ID = process.env.SES_ID;
 export const SES_SECRET = process.env.SES_SECRET;
 export const SES_REGION = process.env.SES_REGION;
 export const EMAIL_PROVIDER = process.env.EMAIL_PROVIDER;
+export const SHOW_UPCOMING_CHANGES =
+  process.env.SHOW_UPCOMING_CHANGES === 'true';

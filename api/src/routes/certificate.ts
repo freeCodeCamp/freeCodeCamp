@@ -7,10 +7,14 @@ import {
   certSlugTypeMap,
   certTypeTitleMap,
   certTypes,
-  currentCertifications
+  currentCertifications,
+  legacyCertifications,
+  legacyFullStackCertification,
+  upcomingCertifications
 } from '../../../shared/config/certification-settings';
 import { removeNulls } from '../utils/normalize';
 import { CompletedChallenge } from '../utils/common-challenge-functions';
+import { SHOW_UPCOMING_CHANGES } from '../utils/env';
 
 const {
   legacyFrontEndChallengeId,
@@ -30,7 +34,8 @@ const {
   machineLearningPyV7Id,
   relationalDatabaseV8Id,
   collegeAlgebraPyV8Id,
-  foundationalCSharpV8Id
+  foundationalCSharpV8Id,
+  upcomingPythonV8Id
 } = certIds;
 
 /**
@@ -62,12 +67,21 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       const { certSlug } = req.body;
 
-      if (!assertCertSlugIsKeyofCertSlugTypeMap(certSlug)) {
+      // const certExists = assertCertSlugIsKeyofCertSlugTypeMap(certSlug);
+      // const isCertAllowed =
+      //   (SHOW_UPCOMING_CHANGES && upcomingCertifications.includes(certSlug)) ||
+      //   (certExists && !upcomingCertifications.includes(certSlug));
+
+      if (
+        !assertCertSlugIsKeyofCertSlugTypeMap(certSlug) ||
+        !isCertAllowed(certSlug)
+      ) {
         void reply.code(400);
         return {
           type: 'danger',
           // message: 'Certificate type not found'
-          message: 'flash.wrong-name'
+          message: 'flash.wrong-name',
+          variables: { name: certSlug }
         } as const;
       }
 
@@ -217,6 +231,20 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
   done();
 };
 
+function isCertAllowed(certSlug: string): boolean {
+  if (
+    currentCertifications.includes(certSlug) ||
+    legacyCertifications.includes(certSlug) ||
+    legacyFullStackCertification.includes(certSlug)
+  ) {
+    return true;
+  }
+  if (SHOW_UPCOMING_CHANGES && upcomingCertifications.includes(certSlug)) {
+    return true;
+  }
+  return false;
+}
+
 // TODO: Current api is a bit LB specific. Look into templating.
 function renderCertifiedEmail({
   username,
@@ -293,7 +321,10 @@ function createCertTypeIds(challenges: ReturnType<typeof getChallenges>) {
     [certTypes.foundationalCSharpV8]: getCertById(
       foundationalCSharpV8Id,
       challenges
-    )
+    ),
+
+    // upcoming
+    [certTypes.upcomingPythonv8]: getCertById(upcomingPythonV8Id, challenges)
   };
 }
 
@@ -342,6 +373,7 @@ interface CertI {
   isRelationalDatabaseCertV8?: boolean;
   isCollegeAlgebraPyCertV8?: boolean;
   isFoundationalCSharpCertV8?: boolean;
+  isUpcomingPythonCertV8?: boolean;
 }
 
 function getUserIsCertMap(user: CertI) {
@@ -363,7 +395,8 @@ function getUserIsCertMap(user: CertI) {
     isMachineLearningPyCertV7 = false,
     isRelationalDatabaseCertV8 = false,
     isCollegeAlgebraPyCertV8 = false,
-    isFoundationalCSharpCertV8 = false
+    isFoundationalCSharpCertV8 = false,
+    isUpcomingPythonCertV8 = false
   } = user;
 
   return {
@@ -384,6 +417,7 @@ function getUserIsCertMap(user: CertI) {
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
     isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8
+    isFoundationalCSharpCertV8,
+    isUpcomingPythonCertV8
   };
 }

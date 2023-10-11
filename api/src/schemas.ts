@@ -630,7 +630,10 @@ export const schemas = {
         }),
         Type.Object({
           type: Type.Literal('danger'),
-          message: Type.Union([Type.Literal('flash.wrong-name')])
+          message: Type.Union([Type.Literal('flash.wrong-name')]),
+          variables: Type.Object({
+            name: Type.String()
+          })
         }),
         Type.Object({
           response: Type.Object({

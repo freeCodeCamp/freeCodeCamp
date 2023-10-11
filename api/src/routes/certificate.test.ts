@@ -1,3 +1,4 @@
+import { Certification } from '../../../shared/config/certification-settings';
 import {
   defaultUserEmail,
   defaultUserId,
@@ -253,6 +254,53 @@ describe('certificate routes', () => {
         expect(user).toMatchObject({ isRespWebDesignCert: true });
         expect(response.text).toContain('flash.cert-claim-success');
         expect(response.status).toBe(200);
+      });
+
+      // Tests for all certifications as to what may currently be claimed, and what may no longer be claimed
+      test('should return 400 if certSlug is not allowed', async () => {
+        const claimableCerts = [
+          Certification.RespWebDesign,
+          Certification.JsAlgoDataStruct,
+          Certification.FrontEndDevLibs,
+          Certification.DataVis,
+          Certification.RelationalDb,
+          Certification.BackEndDevApis,
+          Certification.QualityAssurance,
+          Certification.SciCompPy,
+          Certification.DataAnalysisPy,
+          Certification.InfoSec,
+          Certification.MachineLearningPy,
+          Certification.CollegeAlgebraPy,
+          Certification.FoundationalCSharp,
+          Certification.LegacyFrontEnd,
+          Certification.LegacyBackEnd,
+          Certification.LegacyDataVis,
+          Certification.LegacyInfoSecQa,
+          Certification.LegacyFullStack
+        ];
+        const unclaimableCerts = [Certification.UpcomingPython];
+
+        for (const certSlug of claimableCerts) {
+          const response = await superRequest('/certificate/verify', {
+            method: 'PUT',
+            setCookies
+          }).send({
+            certSlug
+          });
+
+          expect(response.status).toBe(200);
+        }
+
+        for (const certSlug of unclaimableCerts) {
+          const response = await superRequest('/certificate/verify', {
+            method: 'PUT',
+            setCookies
+          }).send({
+            certSlug
+          });
+
+          expect(response.status).toBe(400);
+        }
       });
     });
   });

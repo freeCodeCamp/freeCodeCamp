@@ -111,6 +111,7 @@ model user {
   is2018DataVisCert            Boolean? // Undefined
   is2018FullStackCert          Boolean? // Undefined
   isCollegeAlgebraPyCertV8     Boolean? // Undefined
+  isUpcomingPythonCertV8     Boolean? // Undefined
   keyboardShortcuts            Boolean? // Undefined
   linkedin                     String? // Null | Undefined
   location                     String? // Null
