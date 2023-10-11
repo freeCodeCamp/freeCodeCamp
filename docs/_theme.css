@@ -36,7 +36,7 @@
   --line-height: 2rem;
 }
 
-:root {
+.light {
   --primary-color: var(--gray-90);
   --secondary-color: var(--gray-85);
   --tertiary-color: var(--gray-80);
@@ -56,31 +56,29 @@
   --editor-background: var(--editor-background-light);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-color: var(--gray-00);
-    --secondary-color: var(--gray-05);
-    --tertiary-color: var(--gray-10);
-    --quaternary-color: var(--gray-15);
-    --quaternary-background: var(--gray-75);
-    --tertiary-background: var(--gray-80);
-    --secondary-background: var(--gray-85);
-    --primary-background: var(--gray-90);
-    --highlight-color: var(--blue-light);
-    --highlight-background: var(--blue-dark);
-    --selection-color: var(--blue-light-translucent);
-    --success-color: var(--green-light);
-    --success-background: var(--green-dark);
-    --danger-color: var(--red-light);
-    --danger-background: var(--red-dark);
-    --love-color: var(--love-light);
-    --editor-background: var(--editor-background-dark);
-  }
+.dark {
+  --primary-color: var(--gray-00);
+  --secondary-color: var(--gray-05);
+  --tertiary-color: var(--gray-10);
+  --quaternary-color: var(--gray-15);
+  --quaternary-background: var(--gray-75);
+  --tertiary-background: var(--gray-80);
+  --secondary-background: var(--gray-85);
+  --primary-background: var(--gray-90);
+  --highlight-color: var(--blue-light);
+  --highlight-background: var(--blue-dark);
+  --selection-color: var(--blue-light-translucent);
+  --success-color: var(--green-light);
+  --success-background: var(--green-dark);
+  --danger-color: var(--red-light);
+  --danger-background: var(--red-dark);
+  --love-color: var(--love-light);
+  --editor-background: var(--editor-background-dark);
 }
 
 body {
   font-size: 100%;
-  line-height: 2em;
+  line-height: 2.3em;
   background: var(--secondary-background);
   color: var(--secondary-color);
 }
@@ -136,6 +134,16 @@ body .content {
   body .content {
     max-width: 100%;
   }
+}
+
+.theme-toggle {
+  background-color: var(--tertiary-background);
+  position: fixed;
+  left: 10px;
+  line-height: 24px;
+  font-size: 16px;
+  margin: 2px 0;
+  padding: 4px 4px;
 }
 
 /****** Cover Page ******/
@@ -477,6 +485,10 @@ body.close .github-corner {
 
 .search input {
   background-color: var(--secondary-background);
+  color: var(--secondary-color);
+}
+
+.search .search-keyword {
   color: var(--secondary-color);
 }
 
