@@ -1,7 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
-import translations from '../client/i18n/locales/english/translations.json';
-
-let page: Page;
+import { test, expect } from '@playwright/test';
 
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();
