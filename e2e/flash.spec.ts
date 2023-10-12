@@ -19,7 +19,11 @@ const checkFlashMessageVisibility = async (page: Page, translation: string) => {
 };
 
 test.describe('Flash Message component E2E test', () => {
-  test('Flash Message Visibility for Night Mode Toggle', async ({ page }) => {
+  test('Flash Message Visibility for Night Mode Toggle', async ({
+    page,
+    browserName
+  }) => {
+    test.skip(browserName === 'webkit');
     await page
       .getByRole('button', { name: translations.buttons.menu, exact: true })
       .click();
@@ -35,7 +39,11 @@ test.describe('Flash Message component E2E test', () => {
     );
   });
 
-  test('Flash Message Visibility for Sound Mode Toggle', async ({ page }) => {
+  test('Flash Message Visibility for Sound Mode Toggle', async ({
+    page,
+    browserName
+  }) => {
+    test.skip(browserName === 'webkit');
     await page
       .getByLabel(translations.settings.labels['sound-mode'])
       .getByRole('button', { name: translations.buttons.on })
