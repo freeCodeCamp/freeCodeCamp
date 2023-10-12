@@ -10,21 +10,15 @@ import {
   Close
 } from '@radix-ui/react-dialog';
 
-type ModalProps = React.ComponentProps<typeof Root> & { bsSize?: 'lg' };
+type ModalProps = React.ComponentProps<typeof Root> & { size?: 'lg' };
 type ModalHeaderProps = React.ComponentPropsWithoutRef<'div'> & {
   closeButton?: boolean;
 };
 
 const ModalContext = createContext<string | undefined>(undefined);
 
-export const ModalOverlay = Overlay;
-export const ModalPortal = Portal;
-export const ModalTrigger = Trigger;
-export const ModalFooter = Description;
-export const ModalClose = Close;
-
-export const Modal = ({ bsSize, ...rest }: ModalProps) => {
-  const context = bsSize;
+const Modal = ({ size, ...rest }: ModalProps) => {
+  const context = size;
   return (
     <ModalContext.Provider value={context}>
       <Root {...rest} />
@@ -32,48 +26,54 @@ export const Modal = ({ bsSize, ...rest }: ModalProps) => {
   );
 };
 
-export const ModalBody = React.forwardRef<
-  React.ElementRef<typeof Content>,
-  React.ComponentPropsWithoutRef<typeof Content>
+const ModalOverlay = React.forwardRef<
+  React.ElementRef<typeof Overlay>,
+  React.ComponentPropsWithoutRef<typeof Overlay>
 >(({ className, ...props }, ref) => {
-  const bsSize = React.useContext(ModalContext);
   return (
-    <Content
+    <Overlay
+      className={`fixed inset-0 bg-background-secondary bg-opacity-50 data-[state=open]:animate-overlayShow ${
+        className ?? ''
+      }`}
       ref={ref}
-      className={`bg-background-secondary border border-foreground-secondary border-solid relative md:shadow-lg md:w-[600px] md:mx-auto md:my-[30px] ${
-        bsSize === 'lg' ? 'min-[992px]:w-[900px]' : ''
-      } ${className ?? ''}`}
       {...props}
     />
   );
 });
 
-export const ModalHeader = React.forwardRef<
-  React.ElementRef<'div'>,
-  ModalHeaderProps
->(({ className, children, closeButton, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={`p-4 border-t-[0px] border-r-[0px] border-l-[0px] border-b-3 border-solid border-foreground-secondary ${
-      className ?? ''
-    }`}
-    {...props}
-  >
-    {children}
-    {closeButton && (
-      <ModalClose
-        className='bg-transparent text-inherit text-lg opacity-50'
-        asChild
-      >
-        <button>
-          x<span className='sr-only'>Close</span>
-        </button>
-      </ModalClose>
-    )}
-  </div>
-));
+const ModalBody = React.forwardRef<
+  React.ElementRef<typeof Content>,
+  React.ComponentPropsWithoutRef<typeof Content>
+>((props, ref) => {
+  return (
+    <Portal>
+      <ModalOverlay />
+      <ModalContent ref={ref} {...props} />
+    </Portal>
+  );
+});
 
-export const ModalTitle = React.forwardRef<
+const ModalHeader = React.forwardRef<React.ElementRef<'div'>, ModalHeaderProps>(
+  ({ className, children, closeButton, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={`p-4 border-t-[0px] border-r-[0px] border-l-[0px] border-b-3 border-solid border-foreground-secondary flex justify-between items-center ${
+        className ?? ''
+      }`}
+      {...props}
+    >
+      {children}
+      {closeButton && (
+        <Close className='bg-transparent text-inherit text-lg opacity-50 border-none p-2'>
+          <span className='sr-only'>Close</span>
+          <span aria-hidden='true'>x</span>
+        </Close>
+      )}
+    </div>
+  )
+);
+
+const ModalTitle = React.forwardRef<
   React.ElementRef<typeof Title>,
   React.ComponentPropsWithoutRef<typeof Title>
 >(({ className, ...props }, ref) => (
@@ -86,6 +86,32 @@ export const ModalTitle = React.forwardRef<
   />
 ));
 
+const ModalContent = React.forwardRef<
+  React.ElementRef<typeof Content>,
+  React.ComponentPropsWithoutRef<typeof Content>
+>(({ className, ...props }, ref) => {
+  const size = React.useContext(ModalContext);
+  return (
+    <Content
+      ref={ref}
+      className={`bg-background-secondary border border-foreground-secondary border-solid relative md:shadow-lg md:w-[600px] md:mx-auto md:my-[30px] ${
+        size === 'lg' ? 'min-[992px]:w-[900px]' : ''
+      } ${className ?? ''}`}
+      {...props}
+    />
+  );
+});
+
 ModalHeader.displayName = 'ModalHeader';
 ModalBody.displayName = 'ModalBody';
 ModalTitle.displayName = 'ModalTitle';
+ModalOverlay.displayName = 'ModalOverlay';
+ModalContent.displayName = 'ModalContent';
+
+Modal.Body = ModalBody;
+Modal.Close = Close;
+Modal.Header = ModalHeader;
+Modal.Footer = Description;
+Modal.Trigger = Trigger;
+
+export { Modal };
