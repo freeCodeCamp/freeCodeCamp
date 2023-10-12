@@ -8,26 +8,26 @@ dashedName: problem-450-hypocycloid-and-lattice-points
 
 # --description--
 
-A hypocycloid is the curve drawn by a point on a small circle rolling inside a larger circle. The parametric equations of a hypocycloid centered at the origin, and starting at the right most point is given by:
+Гіпоциклоїда — це крива, яка окреслюється точкою малого кола, що котиться всередині більшого кола. Параметричні рівняння гіпоциклоїди з центром на початку координат, починаючи з дальньої правої точки, задано як:
 
 $$x(t) = (R - r) \cos(t) + r \cos(\frac{R - r}{r}t)$$
 
 $$y(t) = (R - r) \sin(t) - r \sin(\frac{R - r}{r} t)$$
 
-Where $R$ is the radius of the large circle and $r$ the radius of the small circle.
+Де $R$ є радіусом великого кола, а $r$ є радіусом малого кола.
 
-Let $C(R, r)$ be the set of distinct points with integer coordinates on the hypocycloid with radius $R$ and $r$ and for which there is a corresponding value of $t$ such that $\sin(t)$ and $\cos(t)$ are rational numbers.
+Нехай $C(R, r)$ буде множиною окремих точок з цілочисловими координатами на гіпоциклоїді з радіусами $R$ та $r$, для яких існує відповідне значення $t$, за якого $\sin(t)$ та $\cos(t)$ є раціональними числами.
 
-Let $S(R, r) = \sum\_{(x,y) \in C(R, r)} |x| + |y|$ be the sum of the absolute values of the $x$ and $y$ coordinates of the points in $C(R, r)$.
+Нехай $S(R, r) = \sum\_{(x,y) \in C(R, r)} |x| + |y|$ буде сумою абсолютних значень координат $x$ та $y$ точок в $C(R, r)$.
 
-Let $T(N) = \sum_{R = 3}^N \sum_{r=1}^{\left\lfloor \frac{R - 1}{2} \right\rfloor} S(R, r)$ be the sum of $S(R, r)$ for $R$ and $r$ positive integers, $R\leq N$ and $2r &lt; R$.
+Нехай $T(N) = \sum_{R = 3}^N \sum_{r=1}^{\left\lfloor \frac{R - 1}{2} \right\rfloor} S(R, r)$ буде сумою $S(R, r)$ для натуральних $R$ та $r$, $R\leq N$ та $2r &lt; R$.
 
 Дано:
 
 $$\begin{align}   C(3, 1) = & \\{(3, 0), (-1, 2), (-1,0), (-1,-2)\\} \\\\
   C(2500, 1000) = & \\{(2500, 0), (772, 2376), (772, -2376), (516, 1792), (516, -1792), (500, 0), (68, 504), \\\\ &(68, -504),(-1356, 1088), (-1356, -1088), (-1500, 1000), (-1500, -1000)\\} \end{align}$$
 
-**Note:** (-625, 0) is not an element of $C(2500, 1000)$ because $\sin(t)$ is not a rational number for the corresponding values of $t$.
+**Примітка:** (-625, 0) не є елементом $C(2500, 1000)$, оскільки $\sin(t)$ не є раціональним числом для відповідних значень $t$.
 
 $S(3, 1) = (|3| + |0|) + (|-1| + |2|) + (|-1| + |0|) + (|-1| + |-2|) = 10$
 

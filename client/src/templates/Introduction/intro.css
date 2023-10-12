@@ -341,12 +341,19 @@ a.map-grid-item.challenge-completed {
   margin-top: 1.45rem;
 }
 
-.intro-toc .list-group-item {
-  margin: 5px auto;
+.intro-toc {
+  margin-bottom: 20px;
+  padding-left: 0;
+  list-style-type: none;
 }
 
-.intro-toc .list-group-item:hover {
-  background-color: var(--secondary-background);
+.intro-toc li {
+  margin: 5px auto;
+  padding: 10px 15px;
+}
+
+.intro-toc li:hover {
+  background-color: var(--tertiary-background);
 }
 
 .intro-toc a:hover {

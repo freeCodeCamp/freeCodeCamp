@@ -1,9 +1,8 @@
-import { Row } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Col } from '@freecodecamp/ui';
+import { Col, Row } from '@freecodecamp/ui';
 
 import { certificatesByNameSelector } from '../../../redux/selectors';
 import type { CurrentCert } from '../../../redux/prop-types';
