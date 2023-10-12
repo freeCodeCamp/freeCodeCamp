@@ -15,25 +15,24 @@ test.beforeEach(async ({ page }) => {
       name: translations.buttons['click-start-exam']
     })
     .click();
-  for (let i = 0; i < 4; i++) {
-    await page.getByTestId('exam-answer-label-0').check();
-    await page
-      .getByRole('button', {
-        name: translations.buttons['next-question']
-      })
-      .click();
+  for (let i = 0; i < 5; i++) {
+    const quizOptions = await page.getByRole('radio').all();
+    await quizOptions[0].check({ force: true });
+
+    if (i < 4) {
+      await page
+        .getByRole('button', {
+          name: translations.buttons['next-question']
+        })
+        .click();
+    } else {
+      await page
+        .getByRole('button', {
+          name: translations.buttons['finish-exam']
+        })
+        .click();
+    }
   }
-  await page.getByTestId('exam-answer-label-0').check();
-  await page
-    .getByRole('button', {
-      name: translations.buttons['finish-exam']
-    })
-    .click();
-  await page
-    .getByRole('button', {
-      name: translations.learn.exam['finish-yes']
-    })
-    .click();
 });
 
 test.afterEach(async ({ page }) => {

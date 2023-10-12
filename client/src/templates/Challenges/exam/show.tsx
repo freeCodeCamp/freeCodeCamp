@@ -417,8 +417,14 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                   <Spacer size='large' />
                   <div className='exam-answers'>
                     {generatedExamQuestions[currentQuestionIndex].answers.map(
-                      ({ answer, id }) => (
-                        <label className='exam-answer-label' key={id}>
+                      (item, index) => (
+                        <label
+                          className='exam-answer-label'
+                          data-playwright-test-label={
+                            'exam-answer-label-' + String(index)
+                          }
+                          key={item.id}
+                        >
                           <input
                             aria-label={t('aria.answer')}
                             checked={
