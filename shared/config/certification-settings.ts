@@ -91,7 +91,7 @@ export const certTypes = {
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
   foundationalCSharpV8: 'isFoundationalCSharpCertV8',
-  upcomingPythonv8: 'isUpcomingPythonCertV8'
+  upcomingPythonV8: 'isUpcomingPythonCertV8'
 } as const;
 
 export const certIds = {
@@ -135,7 +135,7 @@ export const completionHours = {
   [certTypes.relationalDatabaseV8]: 300,
   [certTypes.collegeAlgebraPyV8]: 300,
   [certTypes.foundationalCSharpV8]: 300,
-  [certTypes.upcomingPythonv8]: 300
+  [certTypes.upcomingPythonV8]: 300
 };
 
 export const certSlugTypeMap = {
@@ -162,7 +162,7 @@ export const certSlugTypeMap = {
   [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
 
   // upcoming
-  [Certification.UpcomingPython]: certTypes.upcomingPythonv8
+  [Certification.UpcomingPython]: certTypes.upcomingPythonV8
 };
 
 export const superBlockCertTypeMap = {
@@ -194,7 +194,7 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStruct,
 
   // upcoming
-  [SuperBlocks.UpcomingPython]: certTypes.upcomingPythonv8
+  [SuperBlocks.UpcomingPython]: certTypes.upcomingPythonV8
 };
 
 export const certTypeIdMap = {
@@ -216,7 +216,7 @@ export const certTypeIdMap = {
   [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id,
   [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id,
   [certTypes.foundationalCSharpV8]: certIds.foundationalCSharpV8Id,
-  [certTypes.upcomingPythonv8]: certIds.upcomingPythonV8Id
+  [certTypes.upcomingPythonV8]: certIds.upcomingPythonV8Id
 };
 
 export const certTypeTitleMap = {
@@ -238,7 +238,7 @@ export const certTypeTitleMap = {
   [certTypes.relationalDatabaseV8]: 'Relational Database',
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
-  [certTypes.upcomingPythonv8]: 'Upcoming Python'
+  [certTypes.upcomingPythonV8]: 'Upcoming Python'
 };
 
 export const oldDataVizId = '561add10cb82ac38a17513b3';
