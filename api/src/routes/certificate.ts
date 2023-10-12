@@ -67,21 +67,18 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       const { certSlug } = req.body;
 
-      // const certExists = assertCertSlugIsKeyofCertSlugTypeMap(certSlug);
-      // const isCertAllowed =
-      //   (SHOW_UPCOMING_CHANGES && upcomingCertifications.includes(certSlug)) ||
-      //   (certExists && !upcomingCertifications.includes(certSlug));
-
       if (
         !assertCertSlugIsKeyofCertSlugTypeMap(certSlug) ||
         !isCertAllowed(certSlug)
       ) {
         void reply.code(400);
         return {
-          type: 'danger',
-          // message: 'Certificate type not found'
-          message: 'flash.wrong-name',
-          variables: { name: certSlug }
+          response: {
+            type: 'danger',
+            // message: 'Certificate type not found'
+            message: 'flash.wrong-name',
+            variables: { name: certSlug }
+          }
         } as const;
       }
 
@@ -245,7 +242,6 @@ function isCertAllowed(certSlug: string): boolean {
   return false;
 }
 
-// TODO: Current api is a bit LB specific. Look into templating.
 function renderCertifiedEmail({
   username,
   name
@@ -324,7 +320,7 @@ function createCertTypeIds(challenges: ReturnType<typeof getChallenges>) {
     ),
 
     // upcoming
-    [certTypes.upcomingPythonv8]: getCertById(upcomingPythonV8Id, challenges)
+    [certTypes.upcomingPythonV8]: getCertById(upcomingPythonV8Id, challenges)
   };
 }
 
@@ -334,7 +330,7 @@ function getCertById(
 ): { id: string; tests: { id: string }[]; challengeType: number } {
   const challengeById = challenges.filter(({ id }) => id === challengeId)[0];
   if (!challengeById) {
-    throw new Error(`Challenge with id ${challengeId} not found`);
+    throw new Error(`Challenge with id '${challengeId}' not found`);
   }
   const { id, tests, challengeType } = challengeById;
   assertTestsExist(tests);

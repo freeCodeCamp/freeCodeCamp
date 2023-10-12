@@ -17,6 +17,10 @@ describe('certificate routes', () => {
       setCookies = await devLogin();
     });
 
+    afterEach(() => {
+      jest.restoreAllMocks();
+    });
+
     describe('PUT /certificate/verify', () => {
       beforeEach(async () => {
         await fastifyTestInstance.prisma.user.updateMany({
@@ -47,7 +51,7 @@ describe('certificate routes', () => {
           method: 'PUT',
           setCookies
         }).send({ certSlug: undefined });
-        expect(JSON.parse(response.text)).toMatchObject({
+        expect(response.body).toMatchObject({
           code: 'FST_ERR_FAILED_ERROR_SERIALIZATION'
         });
         expect(response.status).toBe(500);
@@ -64,18 +68,18 @@ describe('certificate routes', () => {
       });
 
       test('should return 500 if user not found in db', async () => {
-        // eslint-disable-next-line @typescript-eslint/unbound-method
-        const temp = fastifyTestInstance.prisma.user.findUnique;
-        // @ts-expect-error `null` is assignable to `null`, but don't tell TS that 🤫
-        fastifyTestInstance.prisma.user.findUnique = () => null;
+        jest
+          .spyOn(fastifyTestInstance.prisma.user, 'findUnique')
+          .mockImplementation(
+            // @ts-expect-error `null` is assignable to `null`, but don't tell TS that 🤫
+            () => null
+          );
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',
           setCookies
         }).send({
-          certSlug: 'responsive-web-design'
+          certSlug: Certification.RespWebDesign
         });
-
-        fastifyTestInstance.prisma.user.findUnique = temp;
 
         expect(response.status).toBe(500);
       });
@@ -92,31 +96,31 @@ describe('certificate routes', () => {
           method: 'PUT',
           setCookies
         }).send({
-          certSlug: 'responsive-web-design'
+          certSlug: Certification.RespWebDesign
         });
 
         expect(response.status).toBe(400);
       });
 
       test('should return 200 if user already claimed cert', async () => {
-        // eslint-disable-next-line @typescript-eslint/unbound-method
-        const temp = fastifyTestInstance.prisma.user.findUnique;
-        // @ts-expect-error `null` is assignable to `null`, but don't tell TS that 🤫
-        fastifyTestInstance.prisma.user.findUnique = () => ({
-          name: 'fcc',
-          isRespWebDesignCert: true,
-          completedChallenges: []
-        });
+        jest
+          .spyOn(fastifyTestInstance.prisma.user, 'findUnique')
+          .mockImplementation(
+            // @ts-expect-error The full object is not needed for the test
+            () => ({
+              name: 'fcc',
+              isRespWebDesignCert: true,
+              completedChallenges: []
+            })
+          );
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',
           setCookies
         }).send({
-          certSlug: 'responsive-web-design'
+          certSlug: Certification.RespWebDesign
         });
 
-        fastifyTestInstance.prisma.user.findUnique = temp;
-
-        expect(JSON.parse(response.text)).toMatchObject({
+        expect(response.body).toMatchObject({
           response: {
             type: 'info',
             message: 'flash.already-claimed',
@@ -146,10 +150,12 @@ describe('certificate routes', () => {
           method: 'PUT',
           setCookies
         }).send({
-          certSlug: 'responsive-web-design'
+          certSlug: Certification.RespWebDesign
         });
 
-        expect(response.text).toContain('flash.incomplete-steps');
+        expect(response.body).toMatchObject({
+          response: { message: 'flash.incomplete-steps' }
+        });
         expect(response.status).toBe(400);
       });
 
@@ -166,21 +172,21 @@ describe('certificate routes', () => {
             ]
           }
         });
-        // eslint-disable-next-line @typescript-eslint/unbound-method
-        const temp = fastifyTestInstance.prisma.user.update;
-        fastifyTestInstance.prisma.user.update = () => {
-          throw new Error('test');
-        };
+        jest
+          .spyOn(fastifyTestInstance.prisma.user, 'update')
+          .mockImplementation(() => {
+            throw new Error('test');
+          });
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',
           setCookies
         }).send({
-          certSlug: 'responsive-web-design'
+          certSlug: Certification.RespWebDesign
         });
 
-        fastifyTestInstance.prisma.user.update = temp;
-
-        expect(response.text).toContain('flash.went-wrong');
+        expect(response.body).toMatchObject({
+          message: 'flash.went-wrong'
+        });
         expect(response.status).toBe(500);
       });
 
@@ -218,7 +224,7 @@ describe('certificate routes', () => {
           method: 'PUT',
           setCookies
         }).send({
-          certSlug: 'responsive-web-design'
+          certSlug: Certification.RespWebDesign
         });
 
         expect(spy).toHaveBeenCalled();
@@ -244,7 +250,7 @@ describe('certificate routes', () => {
           method: 'PUT',
           setCookies
         }).send({
-          certSlug: 'responsive-web-design'
+          certSlug: Certification.RespWebDesign
         });
 
         const user = await fastifyTestInstance.prisma.user.findFirst({
@@ -252,7 +258,9 @@ describe('certificate routes', () => {
         });
 
         expect(user).toMatchObject({ isRespWebDesignCert: true });
-        expect(response.text).toContain('flash.cert-claim-success');
+        expect(response.body).toMatchObject({
+          response: { message: 'flash.cert-claim-success' }
+        });
         expect(response.status).toBe(200);
       });
 
@@ -288,7 +296,11 @@ describe('certificate routes', () => {
             certSlug
           });
 
-          expect(response.status).toBe(200);
+          // `flash.incomplete-steps` comes after the check for whether a certification may be claimed or not.
+          expect(response.body).toMatchObject({
+            response: { message: 'flash.incomplete-steps' }
+          });
+          expect(response.status).toBe(400);
         }
 
         for (const certSlug of unclaimableCerts) {
@@ -299,6 +311,12 @@ describe('certificate routes', () => {
             certSlug
           });
 
+          expect(response.body).toMatchObject({
+            response: {
+              variables: { name: certSlug },
+              message: 'flash.wrong-name'
+            }
+          });
           expect(response.status).toBe(400);
         }
       });
