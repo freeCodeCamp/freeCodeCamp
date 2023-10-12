@@ -9,31 +9,27 @@ const challengeButtons = [
 
 const editorButtons = ['index.html', 'styles.css'];
 
-let page: Page;
-
-test.beforeAll(async ({ browser }) => {
-  page = await browser.newPage();
+test.beforeEach(async ({ page }) => {
   await page.goto(
     '/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form'
   );
 });
-
-test.afterAll(async () => {
+test.afterEach(async ({ page }) => {
   await page.close();
 });
 
-function getActionRowLocator(): Locator {
+function getActionRowLocator(page: Page): Locator {
   return page.getByTestId('action-row');
 }
 
-function getTabsRowLocator(): Locator {
+function getTabsRowLocator(page: Page): Locator {
   return page.getByTestId('action-row');
 }
 
-test('Action row buttons are visible', async ({ isMobile }) => {
+test('Action row buttons are visible', async ({ isMobile, page }) => {
   const previewFrame = page.getByTitle('challenge preview');
-  const actionRow = getActionRowLocator();
-  const tabsRow = getTabsRowLocator();
+  const actionRow = getActionRowLocator(page);
+  const tabsRow = getTabsRowLocator(page);
 
   // if it's mobile action row component does not render
   if (isMobile) {
@@ -49,10 +45,11 @@ test('Action row buttons are visible', async ({ isMobile }) => {
 });
 
 test('Clicking instructions button hides editor buttons', async ({
-  isMobile
+  isMobile,
+  page
 }) => {
   const instructionsButton = page.getByTestId('instructions-button');
-  const tabsRow = getTabsRowLocator();
+  const tabsRow = getTabsRowLocator(page);
 
   if (isMobile) {
     await expect(tabsRow).toBeHidden();
@@ -72,9 +69,12 @@ test('Clicking instructions button hides editor buttons', async ({
   }
 });
 
-test('Clicking Console button shows console panel', async ({ isMobile }) => {
-  const actionRow = getActionRowLocator();
-  const tabsRow = getTabsRowLocator();
+test('Clicking Console button shows console panel', async ({
+  isMobile,
+  page
+}) => {
+  const actionRow = getActionRowLocator(page);
+  const tabsRow = getTabsRowLocator(page);
   const consoleBtn = tabsRow.getByRole('button', { name: 'Console' });
 
   if (isMobile) {
@@ -87,10 +87,10 @@ test('Clicking Console button shows console panel', async ({ isMobile }) => {
   }
 });
 
-test('Clicking Preview button hides preview', async ({ isMobile }) => {
+test('Clicking Preview button hides preview', async ({ isMobile, page }) => {
   const previewButton = page.getByTestId('preview-button');
   const previewFrame = page.getByTitle('challenge preview');
-  const actionRow = getActionRowLocator();
+  const actionRow = getActionRowLocator(page);
 
   if (isMobile) {
     await expect(actionRow).toBeHidden();
