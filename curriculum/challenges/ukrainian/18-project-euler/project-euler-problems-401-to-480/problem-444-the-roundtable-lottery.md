@@ -1,6 +1,6 @@
 ---
 id: 5900f52a1000cf542c51003b
-title: 'Problem 444: The Roundtable Lottery'
+title: 'Завдання 444: лотерея за круглим столом'
 challengeType: 1
 forumTopicId: 302116
 dashedName: problem-444-the-roundtable-lottery
@@ -8,24 +8,24 @@ dashedName: problem-444-the-roundtable-lottery
 
 # --description--
 
-A group of $p$ people decide to sit down at a round table and play a lottery-ticket trading game. Each person starts off with a randomly-assigned, unscratched lottery ticket. Each ticket, when scratched, reveals a whole-pound prize ranging anywhere from £1 to £$p$, with no two tickets alike. The goal of the game is for each person to maximize his ticket winnings upon leaving the game.
+Група з $p$ людей вирішила сісти за круглий стіл та зіграти гру в обмін лотерейними білетами. Кожен гравець починає гру з випадковим неподряпаним білетом. Під захисним покриттям на кожному білеті написано виграш від £1 до £$p$, причому всі білети різні. Мета гри для кожного з учасників полягає в тому, щоб максимально збільшити свій виграш до кінця гри.
 
-An arbitrary person is chosen to be the first player. Going around the table, each player has only one of two options:
+Першим гравцем обирають довільну людину. Наступні гравці ходять по колу. Кожен гравець має два варіанти дій:
 
-1.  The player can scratch his ticket and reveal its worth to everyone at the table.
-2.  The player can trade his unscratched ticket for a previous player's scratched ticket, and then leave the game with that ticket. The previous player then scratches his newly-acquired ticket and reveals its worth to everyone at the table.
+1.  Гравець може стерти захисне покриття білету та показати його вартість всім за столом.
+2.  Гравець може обміняти свій білет з нестертим покриттям на білет попереднього гравця зі стертим покриттям та завершити гру з цим білетом. Потім попередній гравець стирає покриття нового білету та оголошує його вартість всім за столом.
 
-The game ends once all tickets have been scratched. All players still remaining at the table must leave with their currently-held tickets.
+Гра закінчується, коли зі всіх білетів стерто покриття. Всі гравці, які залишилися за столом, мають закінчити гру зі своїми поточними білетами.
 
-Assume that each player uses the optimal strategy for maximizing the expected value of his ticket winnings.
+Припустимо, що кожен гравець використовує оптимальну стратегію, щоб збільшити очікуваний виграш свого білету.
 
-Let $E(p)$ represent the expected number of players left at the table when the game ends in a game consisting of $p$ players (e.g. $E(111) = 5.2912$ when rounded to 5 significant digits).
+Нехай $E(p)$ буде очікуваною кількістю гравців, які залишились за столом під кінець гри, в яку грали $p$ гравців (тобто $E(111) = 5.2912$, якщо заокруглити до 5 знаків).
 
-Let $S_1(N) = \displaystyle\sum_{p = 1}^N E(p)$.
+Нехай $S_1(N) = \displaystyle\sum_{p = 1}^N E(p)$.
 
-Let $S_k(N) = \displaystyle\sum_{p = 1}^N S_{k - 1}(p)$ for $k > 1$.
+Нехай $S_k(N) = \displaystyle\sum_{p = 1}^N S_{k - 1}(p)$ за умови $k > 1$.
 
-Find $S_{20}({10}^{14})$ and write the answer as a string in scientific notation rounded to 10 significant digits. Use a lowercase `e` to separate mantissa and exponent. For example, the answer for $S_3(100)$ would be `5.983679014e5`.
+Знайдіть $S_{20}({10}^{14})$ та надайте відповідь у вигляді рядка в експоненційному записі, заокругливши до десяти знаків після коми. Використайте `e` в нижньому регістрі, щоб розділити мантису та показник степеня. Наприклад, відповіддю для $S_3(100)$ буде `5.983679014e5`.
 
 # --hints--
 

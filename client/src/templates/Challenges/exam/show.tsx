@@ -1,5 +1,5 @@
 // Package Utilities
-import { Alert, Col, Row, Button } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql, navigate } from 'gatsby';
 
 import React, { Component, RefObject } from 'react';
@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container } from '@freecodecamp/ui';
+import { Container, Col, Alert, Row } from '@freecodecamp/ui';
 import { micromark } from 'micromark';
 
 // Local Utilities
@@ -355,15 +355,15 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       title: string;
     };
 
-    let missingPrequisites: Prerequisite[] = [];
+    let missingPrerequisites: Prerequisite[] = [];
     if (prerequisites) {
-      missingPrequisites = prerequisites?.filter(
+      missingPrerequisites = prerequisites?.filter(
         prerequisite =>
           !completedChallenges.find(({ id }) => prerequisite.id === id)
       );
     }
 
-    const qualifiedForExam = missingPrequisites.length === 0;
+    const qualifiedForExam = missingPrerequisites.length === 0;
 
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
@@ -531,15 +531,15 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                 <Spacer size='medium' />
 
                 {qualifiedForExam ? (
-                  <Alert id='qualified-for-exam' bsStyle='info'>
+                  <Alert id='qualified-for-exam' variant='info'>
                     <p>{t('learn.exam.qualified')}</p>
                   </Alert>
                 ) : (
-                  <Alert id='not-qualified-for-exam' bsStyle='danger'>
+                  <Alert id='not-qualified-for-exam' variant='danger'>
                     <p>{t('learn.exam.not-qualified')}</p>
                     <Spacer size='small' />
                     <ul>
-                      {missingPrequisites.map(({ title, id }) => (
+                      {missingPrerequisites.map(({ title, id }) => (
                         <li key={id}>{title}</li>
                       ))}
                     </ul>

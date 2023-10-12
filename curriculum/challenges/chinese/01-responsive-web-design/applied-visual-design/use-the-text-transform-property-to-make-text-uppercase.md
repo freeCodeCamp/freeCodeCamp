@@ -13,7 +13,7 @@ CSS 里的 `text-transform` 属性可以改变英文字母的大小写。 使用
 
 下面的表格展示了 `text-transform` 的不同值对文字 “Transform me” 的影响：
 
-<table class='table table-striped'><thead><tr><th>值</th><th>结果</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"transform me"</td></tr><tr><td><code>uppercase</code></td><td>"TRANSFORM ME"</td></tr><tr><td><code>capitalize</code></td><td>"Transform Me"</td></tr><tr><td><code>initial</code></td><td>使用默认值</td></tr><tr><td><code>inherit</code></td><td>使用父元素的 <code>text-transform</code> 值。</td></tr><tr><td><code>none</code></td><td><strong>Default:</strong>不改变文字。</td></tr></tbody></table>
+<table><thead><tr><th>值</th><th>结果</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"transform me"</td></tr><tr><td><code>uppercase</code></td><td>"TRANSFORM ME"</td></tr><tr><td><code>capitalize</code></td><td>"Transform Me"</td></tr><tr><td><code>initial</code></td><td>使用默认值</td></tr><tr><td><code>inherit</code></td><td>使用父元素的 <code>text-transform</code> 值。</td></tr><tr><td><code>none</code></td><td><strong>Default:</strong>不改变文字。</td></tr></tbody></table>
 
 # --instructions--
 

@@ -9,14 +9,30 @@ function Footer(): JSX.Element {
   return (
     <footer className='site-footer'>
       <div className='footer-top'>
-        <div className='footer-desc-col'>
-          <p>{t('footer.tax-exempt-status')}</p>
-          <p>{t('footer.mission-statement')}</p>
-          <p>{t('footer.donation-initiatives')}</p>
-          <p className='footer-donation'>
+        <div
+          className='footer-desc-col'
+          data-playwright-test-label='footer-desc-col'
+        >
+          <p data-playwright-test-label='footer-tax-exempt-status'>
+            {t('footer.tax-exempt-status')}
+          </p>
+          <p data-playwright-test-label='footer-mission-statement'>
+            {t('footer.mission-statement')}
+          </p>
+          <p data-playwright-test-label='footer-donation-initiatives-text'>
+            {t('footer.donation-initiatives')}
+          </p>
+          <p
+            className='footer-donation'
+            data-playwright-test-label='footer-donation-text'
+          >
             <Trans i18nKey='footer.donate-text'>
               You can
-              <Link className='inline' to='/donate'>
+              <Link
+                className='inline'
+                to='/donate'
+                data-playwright-test-label='footer-donation-page-link'
+              >
                 make a tax-deductible donation here
               </Link>
               .
@@ -24,8 +40,16 @@ function Footer(): JSX.Element {
           </p>
         </div>
         <div className='trending-guides'>
-          <h2 className='col-header'>{t('footer.trending-guides')}</h2>
-          <div className='trending-guides-articles'>
+          <h2
+            className='col-header'
+            data-playwright-test-label='trending-guides-col-header'
+          >
+            {t('footer.trending-guides')}
+          </h2>
+          <div
+            className='trending-guides-articles'
+            data-playwright-test-label='trending-guides-articles'
+          >
             {/* the span elements were add so the link can be inline and its text would be the only active target */}
             <span>
               <Link external={false} to={t('trending:article0link')}>
@@ -181,47 +205,93 @@ function Footer(): JSX.Element {
         </div>
       </div>
       <div className='footer-bottom'>
-        <h2 className='col-header'>{t('footer.our-nonprofit')}</h2>
-        <div className='our-nonprofit'>
-          <Link external={false} to={t('links:footer.about-url')}>
+        <h2
+          className='col-header'
+          data-playwright-test-label='footer-bottom-col-header'
+        >
+          {t('footer.our-nonprofit')}
+        </h2>
+        <div
+          className='our-nonprofit'
+          data-playwright-test-label='our-nonprofit'
+        >
+          <Link
+            external={false}
+            to={t('links:footer.about-url')}
+            data-playwright-test-label='footer-about-url'
+          >
             {t('footer.links.about')}
           </Link>
           <Link
             external={false}
             sameTab={false}
             to={'https://www.linkedin.com/school/free-code-camp/people/'}
+            data-playwright-test-label='footer-alumni-url'
           >
             {t('footer.links.alumni')}
           </Link>
-          <Link external={false} to={'https://github.com/freeCodeCamp/'}>
+          <Link
+            external={false}
+            to={'https://github.com/freeCodeCamp/'}
+            data-playwright-test-label='footer-open-source-url'
+          >
             {t('footer.links.open-source')}
           </Link>
           <Link
             external={false}
             sameTab={false}
             to={t('links:footer.shop-url')}
+            data-playwright-test-label='footer-shop-url'
           >
             {t('footer.links.shop')}
           </Link>
-          <Link external={false} to={t('links:footer.support-url')}>
+          <Link
+            external={false}
+            to={t('links:footer.support-url')}
+            data-playwright-test-label='footer-support-url'
+          >
             {t('footer.links.support')}
           </Link>
-          <Link external={false} to={t('links:footer.sponsors-url')}>
+          <Link
+            external={false}
+            to={t('links:footer.sponsors-url')}
+            data-playwright-test-label='footer-sponsors-url'
+          >
             {t('footer.links.sponsors')}
           </Link>
-          <Link external={false} to={t('links:footer.honesty-url')}>
+          <Link
+            external={false}
+            to={t('links:footer.honesty-url')}
+            data-playwright-test-label='footer-honesty-url'
+          >
             {t('footer.links.honesty')}
           </Link>
-          <Link external={false} to={t('links:footer.coc-url')}>
+          <Link
+            external={false}
+            to={t('links:footer.coc-url')}
+            data-playwright-test-label='footer-coc-url'
+          >
             {t('footer.links.coc')}
           </Link>
-          <Link external={false} to={t('links:footer.privacy-url')}>
+          <Link
+            external={false}
+            to={t('links:footer.privacy-url')}
+            data-playwright-test-label='footer-privacy-url'
+          >
             {t('footer.links.privacy')}
           </Link>
-          <Link external={false} to={t('links:footer.tos-url')}>
+          <Link
+            external={false}
+            to={t('links:footer.tos-url')}
+            data-playwright-test-label='footer-tos-url'
+          >
             {t('footer.links.tos')}
           </Link>
-          <Link external={false} to={t('links:footer.copyright-url')}>
+          <Link
+            external={false}
+            to={t('links:footer.copyright-url')}
+            data-playwright-test-label='footer-copyright-url'
+          >
             {t('footer.links.copyright')}
           </Link>
         </div>

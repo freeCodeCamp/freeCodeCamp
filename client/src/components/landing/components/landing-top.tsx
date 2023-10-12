@@ -1,7 +1,7 @@
-import { Col, Row } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Container } from '@freecodecamp/ui';
+import { Container, Col, Row } from '@freecodecamp/ui';
+
 import { clientLocale } from '../../../../config/env.json';
 import {
   AmazonLogo,

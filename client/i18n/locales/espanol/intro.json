@@ -356,6 +356,10 @@
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
         "title": "Aprende el pensamiento algorítmico básico construyendo un ordenador de números",
         "intro": ["", ""]
+      },
+      "learn-localstorage-by-building-a-todo-app": {
+        "title": "Learn localStorage by Building a Todo App",
+        "intro": ["", ""]
       }
     }
   },

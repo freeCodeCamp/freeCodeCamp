@@ -551,7 +551,9 @@
     "how-update": "毎月の寄付を設定しましたが、月次の処理を変更または停止したいです。どうしたらいいですか？",
     "take-care-of-this": "毎月の寄付の領収書を donors@freecodecamp.org まで転送し、ご希望の変更内容をお伝えください。こちらで処理を行い、確認のご連絡を差し上げます。",
     "anything-else": "freeCodeCamp.org への寄付についてもっと知ることはできますか？",
-    "other-support": "こちらに挙げた以外の方法で当団体を支援したいとお考えの場合、またはその他のお問い合わせつきましては、Quincy 宛てに quincy@freecodecamp.org までメールでご連絡ください。"
+    "other-support": "こちらに挙げた以外の方法で当団体を支援したいとお考えの場合、またはその他のお問い合わせつきましては、Quincy 宛てに quincy@freecodecamp.org までメールでご連絡ください。",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "ユーザーを報告するためにはサインインする必要があります",
@@ -737,7 +739,8 @@
         "err-4": "Something went wrong trying to verify your trophy. Please check and try again.",
         "verified": "Your trophy from Microsoft's learning platform was verified."
       }
-    }
+    },
+    "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
     "max-characters": "上限は 288 文字です。残り {{charsLeft}} 文字です。",

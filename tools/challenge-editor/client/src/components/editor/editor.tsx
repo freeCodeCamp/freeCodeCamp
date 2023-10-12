@@ -31,7 +31,9 @@ const Editor = () => {
 
   const fetchData = () => {
     setLoading(true);
-    fetch(`${API_LOCATION}/${superblock}/${block}/${challenge}`)
+    fetch(
+      `${API_LOCATION}/${superblock || ''}/${block || ''}/${challenge || ''}`
+    )
       .then(res => res.json() as Promise<ChallengeContent>)
       .then(
         content => {
@@ -61,7 +63,7 @@ const Editor = () => {
     <div>
       <h1>{items.name}</h1>
       <span className='breadcrumb'>
-        {superblock} / {block}
+        {superblock || ''} / {block || ''}
       </span>
       <CodeMirror
         value={stepContent}
@@ -77,13 +79,13 @@ const Editor = () => {
         }}
       />
       <SaveChallenge
-        superblock={superblock}
-        block={block}
+        superblock={superblock || ''}
+        block={block || ''}
         challenge={challenge}
         content={stepContent}
       />
       <p>
-        <Link to={`/${superblock}/${block}`}>Return to Block</Link>
+        <Link to={`/${superblock || ''}/${block || ''}`}>Return to Block</Link>
       </p>
     </div>
   );

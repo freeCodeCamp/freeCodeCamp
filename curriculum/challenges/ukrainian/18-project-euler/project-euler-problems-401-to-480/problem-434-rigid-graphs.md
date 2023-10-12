@@ -10,25 +10,25 @@ dashedName: problem-434-rigid-graphs
 
 Пригадайте, що граф — це набір вершин та ребер, які з’єднують ці вершини. Дві вершини, з’єднані ребром, називаються прилеглими.
 
-Graphs can be embedded in Euclidean space by associating each vertex with a point in the Euclidean space.
+Графи можна вбудувати в Евклідів простір, призначивши кожній вершині точку Евклідового простору.
 
-A flexible graph is an embedding of a graph where it is possible to move one or more vertices continuously so that the distance between at least two nonadjacent vertices is altered while the distances between each pair of adjacent vertices is kept constant.
+Гнучкий граф — це граф, вершини якого можна переміщувати неперервно так, що відстань між принаймні двома несуміжними вершинами змінюється, а відстань між всіма парами суміжних вершин залишається незмінною.
 
-A rigid graph is an embedding of a graph which is not flexible.
+Жорсткий граф — це граф, який не є гнучким.
 
-Informally, a graph is rigid if by replacing the vertices with fully rotating hinges and the edges with rods that are unbending and inelastic, no parts of the graph can be moved independently from the rest of the graph.
+Якщо просто, то граф є жорстким, якщо при повній заміні його вершин обертовими шарнірами та ребер стрижнями, які не є еластичними та не розгинаються, жодну частину графа не можна буде перемістити незалежно від решти графа.
 
-The grid graphs embedded in the Euclidean plane are not rigid, as the following animation demonstrates:
+Сітчасті графи, вбудовані в Евклідовому просторі, не є жорсткими, як зображено на анімації:
 
-<img class="img-responsive center-block" alt="animation showing grid graphs are not rigid in Euclidean plane" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="анімація з сітчастими графами в Евклідовому просторі, які не є жорсткими" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px;" />
 
-However, one can make them rigid by adding diagonal edges to the cells. For example, for the 2x3 grid graph, there are 19 ways to make the graph rigid:
+Однак їх можна зробити жорсткими, додавши діагональні ребра до сіток. Наприклад, для сітчастого графа 2х3 існує 19 способів зробити граф жорстким:
 
-<img class="img-responsive center-block" alt="19 ways to make 2x3 grid graph rigid" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="19 способів зробити сітчастий граф 2х3 жорстким" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-2.png" style="background-color: white; padding: 10px;" />
 
-Note that for the purposes of this problem, we do not consider changing the orientation of a diagonal edge or adding both diagonal edges to a cell as a different way of making a grid graph rigid.
+Зверніть увагу, що у цьому завданні ми не розглядаємо зміну напряму діагонального ребра або додавання обох діагональних ребер до сітки як інший спосіб зробити сітчастий граф жорстким.
 
-Let $R(m, n)$ be the number of ways to make the $m × n$ grid graph rigid.
+Нехай $R(m, n)$ буде кількістю способів зробити сітчастий граф $m × n$ жорстким.
 
 Наприклад, $R(2, 3) = 19$ та $R(5, 5) = 23\\,679\\,901$.
 

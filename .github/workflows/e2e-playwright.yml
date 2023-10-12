@@ -129,7 +129,9 @@ jobs:
           pnpm run build:server
 
       - name: Seed Database with Certified User
-        run: pnpm run seed:certified-user
+        run: |
+          pnpm run seed:certified-user
+          pnpm run seed:exams
 
       # start-ci uses pm2, so it needs to be installed globally
       - name: Install pm2
