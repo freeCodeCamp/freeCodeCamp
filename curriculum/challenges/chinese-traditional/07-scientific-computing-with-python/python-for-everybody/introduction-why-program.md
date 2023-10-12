@@ -32,9 +32,17 @@ dashedName: introduction-why-program
 
 大學生。
 
+### --feedback--
+
+College students should learn to program, but there's a better answer.
+
 ---
 
 想成爲軟件開發者的人。
+
+### --feedback--
+
+People who want to become software developers should learn to program, but there's a better answer.
 
 ---
 

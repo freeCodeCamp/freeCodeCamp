@@ -47,9 +47,14 @@ export type MarkdownRemark = {
   };
 };
 
+export type MultipleChoiceAnswer = {
+  answer: string;
+  feedback: string;
+};
+
 export type Question = {
   text: string;
-  answers: string[];
+  answers: MultipleChoiceAnswer[];
   solution: number;
 };
 export type Fields = {
