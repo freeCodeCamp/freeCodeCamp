@@ -39,6 +39,7 @@ assert.ok(process.env.FCC_ENABLE_SWAGGER_UI);
 assert.ok(process.env.FCC_ENABLE_DEV_LOGIN_MODE);
 assert.ok(process.env.JWT_SECRET);
 assert.ok(process.env.STRIPE_SECRET_KEY);
+assert.ok(process.env.SHOW_UPCOMING_CHANGES);
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.SES_ID);
