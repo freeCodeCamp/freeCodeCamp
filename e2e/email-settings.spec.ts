@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 const settingsPageElement = {
   emailSettingsSectionHeader: 'email-settings-header',
@@ -13,33 +13,37 @@ const settingsPageElement = {
   flashMessageAlert: 'flash-message'
 } as const;
 
-let page: Page;
-
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-test.beforeAll(async ({ browser }) => {
-  page = await browser.newPage();
+test.beforeEach(async ({ page }) => {
   await page.goto('/settings');
 });
 
-test.afterAll(async () => {
+test.afterEach(async ({ page }) => {
   await page.close();
 });
 
 test.describe('Email Settings', () => {
-  test('should display email settings section header on settings page', async () => {
+  test('should display email settings section header on settings page', async ({
+    page
+  }) => {
     await expect(
       page.getByTestId(settingsPageElement.emailSettingsSectionHeader)
     ).toHaveText('Email Settings');
   });
 
-  test('should display current email address', async () => {
+  test('should display current email address', async ({ page }) => {
     await expect(
       page.getByTestId(settingsPageElement.currentEmailText)
     ).toHaveText('foo@bar.com');
   });
 
-  test('should display email verification alert after email update', async () => {
+  test('should display email verification alert after email update', async ({
+    page,
+    browserName
+  }) => {
+    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+
     const newEmailAddress = 'foo-update@bar.com';
 
     await page
@@ -67,7 +71,12 @@ test.describe('Email Settings', () => {
     );
   });
 
-  test('should display flash message when email subscription is toggled', async () => {
+  test('should display flash message when email subscription is toggled', async ({
+    page,
+    browserName
+  }) => {
+    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+
     await page
       .getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
       .click();
