@@ -1,10 +1,11 @@
-import { Modal, Button, Row } from '@freecodecamp/react-bootstrap';
+import { Modal, Button } from '@freecodecamp/react-bootstrap';
 import {
   Tabs,
   TabsContent,
   TabsTrigger,
   TabsList,
-  Col
+  Col,
+  Row
 } from '@freecodecamp/ui';
 import { WindowLocation } from '@reach/router';
 import React, { useEffect, useState } from 'react';
@@ -64,7 +65,7 @@ type DonateModalProps = {
   show: boolean;
 };
 
-const Ilustration = ({
+const Illustration = ({
   recentlyClaimedBlock
 }: {
   recentlyClaimedBlock: RecentlyClaimedBlock;
@@ -469,7 +470,7 @@ function DonateModal({
     >
       <Modal.Body className='no-delay-fade-in'>
         <div className='donation-icon-container'>
-          <Ilustration recentlyClaimedBlock={recentlyClaimedBlock} />
+          <Illustration recentlyClaimedBlock={recentlyClaimedBlock} />
         </div>
         {showMultiTier ? (
           <MultiTierDonationBody
