@@ -14,14 +14,13 @@ test.afterEach(async ({ page }) => {
 
 test.describe('Flash Component Tests', () => {
   test('should display the correct flash message', async ({ page }) => {
-    const flashMessage = page.getByTestId('flash-message');
-    await expect(flashMessage).toContainText('We have updated your theme');
+    await expect(page.getByTestId('flash-message')).toContainText(
+      'We have updated your theme'
+    );
   });
 
   test('should close the flash message', async ({ page }) => {
-    const flashMessage = page.getByTestId('flash-message');
-    const closeButton = page.getByRole('button', { name: 'close' });
-    await closeButton.click();
-    await expect(flashMessage).not.toBeVisible();
+    await page.getByRole('button', { name: 'close' }).click();
+    await expect(page.getByTestId('flash-message')).not.toBeVisible();
   });
 });
