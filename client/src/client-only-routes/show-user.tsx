@@ -3,8 +3,7 @@ import {
   FormControl,
   FormGroup,
   ControlLabel,
-  Button,
-  Row
+  Button
 } from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
 import Helmet from 'react-helmet';
@@ -12,7 +11,7 @@ import type { TFunction } from 'i18next';
 import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Col } from '@freecodecamp/ui';
+import { Col, Row } from '@freecodecamp/ui';
 
 import Login from '../components/Header/components/login';
 

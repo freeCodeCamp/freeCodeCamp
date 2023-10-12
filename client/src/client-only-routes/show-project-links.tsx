@@ -175,7 +175,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   if (!isCertName(certName)) return <div> Unknown Certification</div>;
 
   return (
-    <div data-cy='solution-widget'>
+    <div data-cy='solution-widget' data-playwright-test-label='project-links'>
       {t(
         certName === 'Legacy Full Stack'
           ? 'certification.project.heading-legacy-full-stack'

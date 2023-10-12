@@ -73,7 +73,7 @@ substringDivisibility(5);
 
 ```js
 function substringDivisibility(n) {
-  function isSubDivisable(digits) {
+  function isSubDivisible(digits) {
     const factors = [2, 3, 5, 7, 11, 13, 17];
 
     for (let i = 1; i < digits.length - 2; i++) {
@@ -108,17 +108,17 @@ function substringDivisibility(n) {
   }
 
   const allowedDigits = [...new Array(n + 1).keys()];
-  const divisablePandigitals = [];
+  const divisiblePandigitals = [];
   heapsPermutations(
     allowedDigits.length,
     allowedDigits,
-    isSubDivisable,
-    divisablePandigitals
+    isSubDivisible,
+    divisiblePandigitals
   );
 
   let sum = 0;
-  for (let i = 0; i < divisablePandigitals.length; i++) {
-    sum += divisablePandigitals[i];
+  for (let i = 0; i < divisiblePandigitals.length; i++) {
+    sum += divisiblePandigitals[i];
   }
 
   return sum;
