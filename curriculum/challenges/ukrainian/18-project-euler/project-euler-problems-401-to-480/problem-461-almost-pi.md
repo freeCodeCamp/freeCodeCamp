@@ -1,6 +1,6 @@
 ---
 id: 5900f53a1000cf542c51004c
-title: 'Problem 461: Almost Pi'
+title: 'Завдання 461: майже число пі'
 challengeType: 1
 forumTopicId: 302136
 dashedName: problem-461-almost-pi
@@ -8,15 +8,15 @@ dashedName: problem-461-almost-pi
 
 # --description--
 
-Let `f(k, n)` = $e^\frac{k}{n} - 1$, for all non-negative integers `k`.
+Нехай `f(k, n)` = $e^\frac{k}{n} - 1$ для всіх невід’ємних цілих чисел `k`.
 
-Remarkably, `f(6, 200) + f(75, 200) + f(89, 200) + f(226, 200)` = 3.1415926… ≈ π.
+Примітно, що `f(6, 200) + f(75, 200) + f(89, 200) + f(226, 200)` = 3.1415926… ≈ π.
 
-In fact, it is the best approximation of π of the form `f(a, 200) + f(b, 200) + f(c, 200) + f(d, 200)`.
+Фактично, це найбільш наближене визначення π вигляду `f(a, 200) + f(b, 200) + f(c, 200) + f(d, 200)`.
 
-Let `almostPi(n)` = a<sup>2</sup> + b<sup>2</sup> + c<sup>2</sup> + d<sup>2</sup> for a, b, c, d that minimize the error: $\lvert f(a,n) + f(b,n) + f(c,n) + f(d,n) - \Pi\rvert$
+Нехай `almostPi(n)` = a<sup>2</sup> + b<sup>2</sup> + c<sup>2</sup> + d<sup>2</sup> для таких a, b, c, d, що мінімізують помилку: $\lvert f(a,n) + f(b,n) + f(c,n) + f(d,n) - \Pi\rvert$
 
-You are given `almostPi(200)` = 6<sup>2</sup> + 75<sup>2</sup> + 89<sup>2</sup> + 226<sup>2</sup> = 64658.
+Дано, що `almostPi(200)` = 6<sup>2</sup> + 75<sup>2</sup> + 89<sup>2</sup> + 226<sup>2</sup> = 64658.
 
 # --hints--
 

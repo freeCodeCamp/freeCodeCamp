@@ -1,6 +1,6 @@
 ---
 id: 5900f5241000cf542c510036
-title: 'Problem 437: Fibonacci primitive roots'
+title: 'Завдання 437: примітивні корені Фібоначчі'
 challengeType: 1
 forumTopicId: 302108
 dashedName: problem-437-fibonacci-primitive-roots
@@ -8,13 +8,13 @@ dashedName: problem-437-fibonacci-primitive-roots
 
 # --description--
 
-When we calculate $8^n$ modulo 11 for $n = 0$ to 9 we get: 1, 8, 9, 6, 4, 10, 3, 2, 5, 7.
+Якщо вичислити $8^n$ mod 11 для n від 0 до 9, то отримаємо 1, 8, 9, 6, 4, 10, 3, 2, 5, 7.
 
-As we see all possible values from 1 to 10 occur. So 8 is a primitive root of 11.
+Як бачимо, ми отримали всі можливі значення від 1 до 10. Отже, 8 є примітивним коренем 11.
 
-But there is more:
+Проте це не все:
 
-If we take a closer look we see:
+Якщо розглянути детальніше, то:
 
 $$\begin{align}   & 1 + 8 = 9 \\\\
   & 8 + 9 = 17 ≡ 6\bmod 11 \\\\   & 9 + 6 = 15 ≡ 4\bmod 11 \\\\
@@ -22,11 +22,11 @@ $$\begin{align}   & 1 + 8 = 9 \\\\
   & 10 + 3 = 13 ≡ 2\bmod 11 \\\\   & 3 + 2 = 5 \\\\
   & 2 + 5 = 7 \\\\ & 5 + 7 = 12 ≡ 1\bmod 11. \end{align}$$
 
-So the powers of 8 mod 11 are cyclic with period 10, and $8^n + 8^{n + 1} ≡ 8^{n + 2} (\text{mod } 11)$. 8 is called a Fibonacci primitive root of 11.
+Отже, степені 8 mod 11 циклічні з періодом 10, а $8^n + 8^{n + 1} ≡ 8^{n + 2} (\text{mod } 11)$. Число 8 називають примітивним коренем Фібоначчі по модулю 11.
 
-Not every prime has a Fibonacci primitive root. There are 323 primes less than 10000 with one or more Fibonacci primitive roots and the sum of these primes is 1480491.
+Не кожне просте число має примітивний корінь Фібоначчі. Існує 323 простих чисел, менших за 10000, з одним чи більше примітивними коренями Фібоначчі, а сума цих простих чисел дорівнює 1480491.
 
-Find the sum of the primes less than $100\\,000\\,000$ with at least one Fibonacci primitive root.
+Знайдіть суму простих чисел, менших за $100\\,000\\,000$ з принаймні одним примітивним коренем Фібоначчі.
 
 # --hints--
 

@@ -39,11 +39,13 @@ export class SESProvider implements MailProvider {
    * @param param.from Email address to send from.
    * @param param.subject Email subject.
    * @param param.text Email body (raw text only).
+   * @param param.cc [Optional] Email address to CC.
    */
-  async send({ to, from, subject, text }: SendEmailArgs) {
+  async send({ to, from, subject, text, cc }: SendEmailArgs) {
     const opts = new SendEmailCommand({
       Destination: {
-        ToAddresses: [to]
+        ToAddresses: [to],
+        CcAddresses: cc ? [cc] : []
       },
       Message: {
         Subject: {
