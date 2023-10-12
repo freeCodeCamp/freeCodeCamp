@@ -5,7 +5,7 @@ const defaultClassNames = [
   'relative',
   'cursor-pointer',
   'inline-block',
-  'border-0',
+  'border-3',
   'text-center',
   'no-underline',
   'active:before:w-full',
