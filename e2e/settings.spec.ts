@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
@@ -54,22 +54,19 @@ const legacyCertifications = [
 ];
 
 test.describe('Settings', () => {
-  let page: Page;
-
-  test.beforeAll(async ({ browser }) => {
-    page = await browser.newPage();
+  test.beforeEach(async ({ page }) => {
     await page.goto('/settings');
   });
 
-  test.afterAll(async () => {
+  test.afterEach(async ({ page }) => {
     await page.close();
   });
 
-  test('Should have the correct page title', async () => {
+  test('Should have the correct page title', async ({ page }) => {
     await expect(page).toHaveTitle(settingsObject.pageTitle);
   });
 
-  test('Should display the correct header', async () => {
+  test('Should display the correct header', async ({ page }) => {
     const header = page.getByTestId(settingsTestIds.settingsHeading);
     await expect(header).toBeVisible();
     await expect(header).toContainText(
@@ -80,7 +77,7 @@ test.describe('Settings', () => {
     );
   });
 
-  test('Should validate Username Settings', async () => {
+  test('Should validate Username Settings', async ({ page }) => {
     await expect(
       page
         .locator('strong')
@@ -138,7 +135,7 @@ test.describe('Settings', () => {
     await saveButton.press('Enter');
   });
 
-  test('Should validate Email Settings', async () => {
+  test('Should validate Email Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', { name: translations.settings.email.heading })
     ).toBeVisible();
@@ -178,7 +175,7 @@ test.describe('Settings', () => {
     ).toBeVisible();
   });
 
-  test('Should validate Privacy Settings', async () => {
+  test('Should validate Privacy Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings.privacy
@@ -254,7 +251,7 @@ test.describe('Settings', () => {
     await downloadButton.click();
   });
 
-  test('Should validate Internet Presence Settings', async () => {
+  test('Should validate Internet Presence Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings.internet
@@ -269,7 +266,7 @@ test.describe('Settings', () => {
     await expect(saveButton).toBeVisible();
     await saveButton.press('Enter');
   });
-  test('Should validate Portfolio Settings', async () => {
+  test('Should validate Portfolio Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings.portfolio
@@ -298,7 +295,7 @@ test.describe('Settings', () => {
     await removeButton.click();
   });
 
-  test('Should validate Personal Portfolio Settings', async () => {
+  test('Should validate Personal Portfolio Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings['personal-info']
@@ -345,7 +342,7 @@ test.describe('Settings', () => {
     await expect(removeButton).toBeVisible();
     await removeButton.click();
   });
-  test('Should validate Accademy Honesty Settings', async () => {
+  test('Should validate Accademy Honesty Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings.honesty
@@ -386,7 +383,7 @@ test.describe('Settings', () => {
       )
     ).toBeVisible();
   });
-  test('Should validate Certification Settings', async () => {
+  test('Should validate Certification Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings.certs,
@@ -408,7 +405,7 @@ test.describe('Settings', () => {
     }
   });
 
-  test('Should validate Legacy Certification Settings', async () => {
+  test('Should validate Legacy Certification Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings['legacy-certs'],
@@ -430,7 +427,7 @@ test.describe('Settings', () => {
       ).toBeVisible();
     }
   });
-  test('Should validate Danger Section Settings', async () => {
+  test('Should validate Danger Section Settings', async ({ page }) => {
     await expect(
       page.getByRole('tab', {
         name: translations.settings.danger.heading,
