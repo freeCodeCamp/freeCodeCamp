@@ -544,17 +544,6 @@ pre {
   border-radius: 0;
 }
 
-.list-group-item {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-}
-
-.intro-toc .list-group-item:hover {
-  background-color: var(--tertiary-background) !important;
-  border-radius: 0;
-}
-
 .panel-primary > .panel-heading {
   background-color: transparent;
   border-color: var(--primary-color);
