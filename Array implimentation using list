@@ -1,0 +1,117 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node
+{
+	int data;
+	struct node*next;
+};
+struct node * head = 0,*temp,*newnode,*check;
+void push(int x)
+{
+    temp = head;
+    newnode = (struct node*)malloc(sizeof(struct node));
+    if(head == NULL)
+    {
+	
+    	newnode -> data = x;
+    	newnode -> next = head;
+    	head = newnode;
+	}
+	else
+	{
+		while(temp -> next != NULL)
+		{
+			temp = temp -> next;
+		}
+		temp -> next = newnode;
+		newnode -> data = x;
+		newnode -> next  = NULL;
+	}
+}
+void display()
+{
+	temp = head;
+	if (temp == 0)
+	{
+		printf("Empty");
+	}
+	else
+	{
+		while(temp != 0)
+		{
+			printf("%d ",temp -> data);
+			temp = temp -> next;
+		}
+	}
+
+}
+void compare()
+{
+	temp = head;
+	check = head;
+	int comp = 0;
+	if (temp == NULL)
+	{
+		printf("Empty");
+	}
+	else
+	{
+		while(temp != NULL)
+		{
+			check = temp;
+			while( check != NULL)
+			{
+				comp = 0;
+				if(check->data > temp->data)
+				{
+					comp = 1;
+					temp->data = check->data;
+					check = check-> next;
+					break;
+				}
+				check= check->next;
+			}
+			if (comp != 1)
+			{
+				temp->data = 0;
+			}
+				temp = temp-> next;
+		}
+	}
+	
+}
+void result(int x)
+{
+	int arr[x];
+	int i = 0;
+	temp = head;
+	while (temp != NULL)
+	{
+		arr[i] = temp->data;
+		temp = temp->next;
+		i++;
+	}
+	printf("Result Array : \n");
+	for( i =0;i < x;i++)
+	{
+		printf("%d ",arr[i]);
+	}
+}
+
+void main()
+{
+	int value,i,num;
+	printf("How many numbers?");
+	scanf("%d",&num);
+	for (i = 0;i< num;i++)
+	{
+		printf("Enter the value : ");
+		scanf("%d",&value);
+		push(value);
+	}
+	display();
+	compare();
+	result(num);
+	
+}
