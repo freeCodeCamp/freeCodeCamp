@@ -45,7 +45,7 @@ body {
 }
 
 /*
-  Row from @freecodecamp/react-bootstrap adds some negative margin which causes
+  Row from @freecodecamp/ui adds some negative margin which causes
   a little bit of horizontal overflow on certain pages. This eliminates that
   for those pages.
 */

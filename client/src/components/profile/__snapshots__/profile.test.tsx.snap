@@ -15,7 +15,7 @@ exports[`<Profile/> renders correctly 1`] = `
     />
     <div>
       <div
-        class="row"
+        class="mx-[-15px] "
       >
         <div
           class="avatar-camper min-h-[1px] px-[15px] w-full         "
@@ -166,7 +166,7 @@ exports[`<Profile/> renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="row"
+        class="mx-[-15px] "
       >
         <div
           class="text-center social-media-icons min-h-[1px] px-[15px]  md:w-1/2    md:ml-[25%]    "
@@ -279,7 +279,7 @@ exports[`<Profile/> renders correctly 1`] = `
       style="padding: 15px 0px;"
     />
     <div
-      class="text-center row"
+      class="mx-[-15px] text-center"
     >
       <a
         href="/user/string/report-user"
