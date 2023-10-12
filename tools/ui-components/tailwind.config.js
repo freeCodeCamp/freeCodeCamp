@@ -14,7 +14,7 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extends: {
+    extend: {
       colors: {
         transparent: 'transparent',
         'dark-theme-background': 'var(--gray90)',
