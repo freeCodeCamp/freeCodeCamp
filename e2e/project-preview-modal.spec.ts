@@ -14,7 +14,7 @@ test.afterEach(async ({ page }) => {
 });
 
 test.describe('Exit Project Preview Modal E2E Test Suite', () => {
-  test('Verifies the Correct Rendering of the Project Preview Modal Modal', async ({
+  test('Verifies the Correct Rendering of the Project Preview Modal', async ({
     page
   }) => {
     await expect(
@@ -26,7 +26,7 @@ test.describe('Exit Project Preview Modal E2E Test Suite', () => {
     await expect(
       page.locator('div.modal-body').getByTestId('preview-iframe')
     ).toBeVisible();
-    //js  will generate 2 iframes, the right one should be choosen
+    // JS will generate 2 iframes, the right one should be chosen
     await expect(
       page.getByTestId('project-preview-modal-closeButton')
     ).toBeVisible();
