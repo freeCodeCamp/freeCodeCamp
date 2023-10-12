@@ -20,7 +20,7 @@ dashedName: cash-register
 
 それ以外の場合は、`{status: "OPEN", change: [...]}` を返し、コインや紙幣のお釣りを `change` キーの値として、最大値から最小値の順にソートして一緒に返してください。
 
-<table class='table table-striped'><tbody><tr><th>通貨単位</th><th>金額</th></tr><tr><td>ペニー</td><td>$0.01 (PENNY)</td></tr><tr><td>ニッケル</td><td>$0.05 (NICKEL)</td></tr><tr><td>ダイム</td><td>$0.1 (DIME)</td></tr><tr><td>クォーター</td><td>$0.25 (QUARTER)</td></tr><tr><td>1 ドル札</td><td>$1 (ONE)</td></tr><tr><td>5 ドル札</td><td>$5 (FIVE)</td></tr><tr><td>10 ドル札</td><td>$10 (TEN)</td></tr><tr><td>20 ドル札</td><td>$20 (TWENTY)</td></tr><tr><td>100 ドル札</td><td>$100 (ONE HUNDRED)</td></tr></tbody></table>
+<table><tbody><tr><th>通貨単位</th><th>金額</th></tr><tr><td>ペニー</td><td>$0.01 (PENNY)</td></tr><tr><td>ニッケル</td><td>$0.05 (NICKEL)</td></tr><tr><td>ダイム</td><td>$0.1 (DIME)</td></tr><tr><td>クォーター</td><td>$0.25 (QUARTER)</td></tr><tr><td>1 ドル札</td><td>$1 (ONE)</td></tr><tr><td>5 ドル札</td><td>$5 (FIVE)</td></tr><tr><td>10 ドル札</td><td>$10 (TEN)</td></tr><tr><td>20 ドル札</td><td>$20 (TWENTY)</td></tr><tr><td>100 ドル札</td><td>$100 (ONE HUNDRED)</td></tr></tbody></table>
 
 キャッシュインドロワー配列の例は以下を参照してください。
 

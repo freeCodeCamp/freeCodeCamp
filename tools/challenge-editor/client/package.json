@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "5.17.0",
-    "@testing-library/react": "12.1.5",
-    "@testing-library/user-event": "13.5.0",
     "@vitejs/plugin-react": "4.1.0",
     "codemirror": "5.65.15",
     "react": "16.14.0",
@@ -25,7 +22,7 @@
   "devDependencies": {
     "@types/codemirror": "5.60.10",
     "@types/react": "16.14.48",
-    "@types/react-dom": "^16.9.17",
+    "@types/react-dom": "16.9.17",
     "@uiw/react-codemirror": "3.2.10",
     "cross-env": "7.0.3",
     "eslint-plugin-react-hooks": "4.6.0",

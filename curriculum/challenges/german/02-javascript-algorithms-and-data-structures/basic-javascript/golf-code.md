@@ -13,7 +13,7 @@ Beim Golf hat jedes Loch einen `par`, also die durchschnittliche Anzahl von `str
 
 Deiner Funktion werden die Argumente `par` und `strokes` übergeben. Gib den richtigen String gemäß dieser Tabelle zurück, die die Schläge in der Reihenfolge ihrer Priorität auflistet: von oben (am höchsten) nach unten (am niedrigsten):
 
-<table class='table table-striped'><thead><tr><th>Schläge</th><th>Ausgabe</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
+<table><thead><tr><th>Schläge</th><th>Ausgabe</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
 
 `par` und `strokes` werden immer numerisch und positiv sein. Wir haben eine Liste mit allen Namen für dich zusammengestellt.
 

@@ -2,8 +2,6 @@ import {
   FormGroup,
   FormControl,
   ControlLabel,
-  Row,
-  Col,
   Button
 } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
@@ -17,8 +15,8 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import isEmail from 'validator/lib/isEmail';
+import { Container, Col, Row } from '@freecodecamp/ui';
 
-import { Container } from '@freecodecamp/ui';
 import { Spacer } from '../components/helpers';
 import './update-email.css';
 import { userSelector } from '../redux/selectors';

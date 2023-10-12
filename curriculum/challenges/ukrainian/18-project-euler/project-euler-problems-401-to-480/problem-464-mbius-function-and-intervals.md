@@ -1,6 +1,6 @@
 ---
 id: 5900f53d1000cf542c51004f
-title: 'Problem 464: Möbius function and intervals'
+title: 'Завдання 464: функція Мебіуса та інтервали'
 challengeType: 1
 forumTopicId: 302139
 dashedName: problem-464-mbius-function-and-intervals
@@ -8,18 +8,18 @@ dashedName: problem-464-mbius-function-and-intervals
 
 # --description--
 
-The Möbius function, denoted $μ(n)$, is defined as:
+Функція Мебіуса, позначена $μ(n)$, визначається таким чином:
 
-- $μ(n) = (-1)^{ω(n)}$ if $n$ is squarefree (where $ω(n)$ is the number of distinct prime factors of $n$)
-- $μ(n) = 0$ if $n$ is not squarefree.
+- $μ(n) = (-1)^{ω(n)}$, якщо $n$ є безквадратним (де $ω(n)$ є кількістю різних простих множників $n$)
+- $μ(n) = 0$, якщо $n$ не є безквадратним.
 
-Let $P(a, b)$ be the number of integers $n$ in the interval $[a, b]$ such that $μ(n) = 1$.
+Нехай $P(a, b)$ буде кількістю цілих чисел $n$ в інтервалі $[a, b]$, за яких $μ(n) = 1$.
 
-Let $N(a, b)$ be the number of integers $n$ in the interval $[a, b]$ such that $μ(n) = -1$.
+Нехай $N(a, b)$ буде кількістю цілих чисел $n$ в інтервалі $[a, b]$, за яких $μ(n) = -1$.
 
 Наприклад, $P(2, 10) = 2$ та $N(2, 10) = 4$.
 
-Let $C(n)$ be the number of integer pairs $(a, b)$ such that:
+Нехай $C(n)$ буде кількістю пар цілих чисел $(a, b)$, за яких:
 
 - $1 ≤ a ≤ b ≤ n$,
 - $99 \times N(a, b) ≤ 100 \times P(a, b)$, та

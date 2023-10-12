@@ -20,7 +20,7 @@ Gib `{status: "CLOSED", change: [...]}` mit dem vorhandenen Wechselgeld als Wert
 
 Otherwise, return `{status: "OPEN", change: [...]}`, with the change due in coins and bills, sorted in highest to lowest order, as the value of the `change` key.
 
-<table class='table table-striped'><tbody><tr><th>Währungseinheit</th><th>Betrag</th></tr><tr><td>Penny</td><td>$0.01 (PENNY)</td></tr><tr><td>Nickel</td><td>$0.05 (NICKEL)</td></tr><tr><td>Dime</td><td>$0.1 (DIME)</td></tr><tr><td>Quarter</td><td>$0.25 (QUARTER)</td></tr><tr><td>Dollar</td><td>$1 (ONE)</td></tr><tr><td>Fünf Dollar</td><td>$5 (FIVE)</td></tr><tr><td>Zehn Dollar</td><td>$10 (TEN)</td></tr><tr><td>Zwanzig Dollar</td><td>$20 (TWENTY)</td></tr><tr><td>Einhundert Dollar</td><td>$100 (ONE HUNDRED)</td></tr></tbody></table>
+<table><tbody><tr><th>Währungseinheit</th><th>Betrag</th></tr><tr><td>Penny</td><td>$0.01 (PENNY)</td></tr><tr><td>Nickel</td><td>$0.05 (NICKEL)</td></tr><tr><td>Dime</td><td>$0.1 (DIME)</td></tr><tr><td>Quarter</td><td>$0.25 (QUARTER)</td></tr><tr><td>Dollar</td><td>$1 (ONE)</td></tr><tr><td>Fünf Dollar</td><td>$5 (FIVE)</td></tr><tr><td>Zehn Dollar</td><td>$10 (TEN)</td></tr><tr><td>Zwanzig Dollar</td><td>$20 (TWENTY)</td></tr><tr><td>Einhundert Dollar</td><td>$100 (ONE HUNDRED)</td></tr></tbody></table>
 
 Anbei ein Beispiel für einen Array mit Wechselgeld:
 

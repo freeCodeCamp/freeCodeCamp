@@ -110,6 +110,10 @@
       "type": "boolean",
       "default": false
     },
+    "isClassroomAccount": {
+      "type": "boolean",
+      "default": false
+    },
     "currentChallengeId": {
       "type": "string",
       "description": "The challenge last visited by the user",
