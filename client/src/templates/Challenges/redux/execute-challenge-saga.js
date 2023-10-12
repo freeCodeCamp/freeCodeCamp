@@ -35,6 +35,7 @@ import {
 } from '../utils/build';
 import { runPythonInFrame, mainPreviewId } from '../utils/frame';
 import { executeGA } from '../../../redux/actions';
+import { fireConfetti } from '../../../utils/fire-confetti';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
@@ -128,6 +129,7 @@ function* executeChallengeSaga({ payload }) {
     const challengeComplete = testResults.every(test => test.pass && !test.err);
     if (challengeComplete) {
       playTone('tests-completed');
+      fireConfetti();
     } else {
       playTone('tests-failed');
       if (challengeMeta.certification === 'responsive-web-design') {
@@ -141,6 +143,7 @@ function* executeChallengeSaga({ payload }) {
         );
       }
     }
+
     if (challengeComplete && payload?.showCompletionModal) {
       yield put(openModal('completion'));
     }
