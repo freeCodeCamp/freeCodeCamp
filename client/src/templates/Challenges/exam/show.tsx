@@ -1,5 +1,5 @@
 // Package Utilities
-import { Row, Button } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql, navigate } from 'gatsby';
 
 import React, { Component, RefObject } from 'react';
@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Alert } from '@freecodecamp/ui';
+import { Container, Col, Alert, Row } from '@freecodecamp/ui';
 import { micromark } from 'micromark';
 
 // Local Utilities

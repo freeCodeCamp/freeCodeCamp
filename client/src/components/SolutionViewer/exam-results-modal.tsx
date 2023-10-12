@@ -1,8 +1,10 @@
-import { Button, Modal, Row } from '@freecodecamp/react-bootstrap';
+import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { GeneratedExamResults } from '../../redux/prop-types';
+import { Row } from '@freecodecamp/ui';
+
+import type { GeneratedExamResults } from '../../redux/prop-types';
 import { closeModal } from '../../templates/Challenges/redux/actions';
 import { isExamResultsModalOpenSelector } from '../../templates/Challenges/redux/selectors';
 import { formatSecondsToTime } from '../../utils/format-seconds';

@@ -16,7 +16,8 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
   const { type, message, id, variables } = flashMessage;
   const { t } = useTranslation();
 
-  const flashStyle = type as AlertProps['variant'];
+  const flashStyle =
+    type === 'error' ? 'danger' : (type as AlertProps['variant']);
 
   function handleClose() {
     removeFlashMessage();

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Row } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
-import { Container, Col } from '@freecodecamp/ui';
+import { Container, Col, Row } from '@freecodecamp/ui';
 
 import { Spacer } from '../components/helpers';
 

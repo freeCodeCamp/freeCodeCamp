@@ -90,7 +90,8 @@ export const certTypes = {
   fullStack: 'isFullStackCert',
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
-  foundationalCSharpV8: 'isFoundationalCSharpCertV8'
+  foundationalCSharpV8: 'isFoundationalCSharpCertV8',
+  upcomingPythonV8: 'isUpcomingPythonCertV8'
 } as const;
 
 export const certIds = {
@@ -111,7 +112,8 @@ export const certIds = {
   machineLearningPyV7Id: '5e46fc95ac417301a38fb935',
   relationalDatabaseV8Id: '606243f50267e718b1e755f4',
   collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800',
-  foundationalCSharpV8Id: '647f7da207d29547b3bee1ba'
+  foundationalCSharpV8Id: '647f7da207d29547b3bee1ba',
+  upcomingPythonV8Id: '64afc4e8f3b37856e035b85f'
 };
 
 export const completionHours = {
@@ -132,7 +134,8 @@ export const completionHours = {
   [certTypes.machineLearningPyV7]: 300,
   [certTypes.relationalDatabaseV8]: 300,
   [certTypes.collegeAlgebraPyV8]: 300,
-  [certTypes.foundationalCSharpV8]: 300
+  [certTypes.foundationalCSharpV8]: 300,
+  [certTypes.upcomingPythonV8]: 300
 };
 
 export const certSlugTypeMap = {
@@ -156,7 +159,10 @@ export const certSlugTypeMap = {
   [Certification.MachineLearningPy]: certTypes.machineLearningPyV7,
   [Certification.RelationalDb]: certTypes.relationalDatabaseV8,
   [Certification.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
-  [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8
+  [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
+
+  // upcoming
+  [Certification.UpcomingPython]: certTypes.upcomingPythonV8
 };
 
 export const superBlockCertTypeMap = {
@@ -185,7 +191,10 @@ export const superBlockCertTypeMap = {
   // post-modern
   // TODO: use enum
   [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
-  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStruct
+  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStruct,
+
+  // upcoming
+  [SuperBlocks.UpcomingPython]: certTypes.upcomingPythonV8
 };
 
 export const certTypeIdMap = {
@@ -206,7 +215,8 @@ export const certTypeIdMap = {
   [certTypes.machineLearningPyV7]: certIds.machineLearningPyV7Id,
   [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id,
   [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id,
-  [certTypes.foundationalCSharpV8]: certIds.foundationalCSharpV8Id
+  [certTypes.foundationalCSharpV8]: certIds.foundationalCSharpV8Id,
+  [certTypes.upcomingPythonV8]: certIds.upcomingPythonV8Id
 };
 
 export const certTypeTitleMap = {
@@ -227,7 +237,8 @@ export const certTypeTitleMap = {
   [certTypes.machineLearningPyV7]: 'Machine Learning with Python',
   [certTypes.relationalDatabaseV8]: 'Relational Database',
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
-  [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft'
+  [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
+  [certTypes.upcomingPythonV8]: 'Upcoming Python'
 };
 
 export const oldDataVizId = '561add10cb82ac38a17513b3';
