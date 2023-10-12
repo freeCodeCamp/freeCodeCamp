@@ -18,10 +18,7 @@ function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
       aria-label={t('aria.breadcrumb-nav')}
     >
       <ol>
-        <li
-          className='breadcrumb-left'
-          data-playwright-test-label='breadcrumb-left'
-        >
+        <li className='breadcrumb-left'>
           <Link
             state={{ breadcrumbBlockClick: block }}
             to={`/learn/${superBlock}`}
@@ -31,10 +28,7 @@ function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
             </span>
           </Link>
         </li>
-        <li
-          className='breadcrumb-right'
-          data-playwright-test-label='breadcrumb-right'
-        >
+        <li className='breadcrumb-right'>
           <Link
             state={{ breadcrumbBlockClick: block }}
             to={`/learn/${superBlock}/#${block}`}
