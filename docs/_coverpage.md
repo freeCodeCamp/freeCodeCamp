@@ -1,4 +1,4 @@
-> ## Contribute to freeCodeCamp.org
+# Contribute to freeCodeCamp.org
 
 ## This community is possible thanks to thousands of kind volunteers like you.
 

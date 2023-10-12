@@ -739,7 +739,8 @@
         "err-4": "Не вдалось підтвердити трофей. Будь ласка, перевірте і повторіть спробу.",
         "verified": "Ваш трофей на навчальній платформі Microsoft підтверджено."
       }
-    }
+    },
+    "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",

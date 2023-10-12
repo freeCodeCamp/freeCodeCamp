@@ -205,6 +205,7 @@ class MsTrophy extends Component<MsTrophyProps> {
                 <Button
                   block={true}
                   bsStyle='primary'
+                  data-playwright-test-label='verify-trophy-button'
                   className='btn-invert'
                   disabled={!msUsername || isProcessing}
                   onClick={this.handleSubmit}
@@ -214,6 +215,7 @@ class MsTrophy extends Component<MsTrophyProps> {
                 <Button
                   block={true}
                   bsStyle='primary'
+                  data-playwright-test-label='ask-for-help-button'
                   className='btn-invert'
                   onClick={openHelpModal}
                 >
