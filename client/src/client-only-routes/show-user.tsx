@@ -84,7 +84,7 @@ function ShowUser({
       <main>
         <FullWidthRow>
           <Spacer size='large' />
-          <Panel varient='primary' className='text-center'>
+          <Panel variant='primary' className='text-center'>
             <Panel.Heading>
               <Panel.Title>{t('report.sign-in')}</Panel.Title>
             </Panel.Heading>

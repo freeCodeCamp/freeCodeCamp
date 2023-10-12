@@ -32,7 +32,7 @@ class UserToken extends Component<UserTokenProps> {
     return (
       <div data-cy='user-token' className='user-token text-center'>
         <FullWidthRow>
-          <Panel varient='info'>
+          <Panel variant='info'>
             <Panel.Heading>{t('user-token.title')}</Panel.Heading>
             <Spacer size='medium' />
             <p>{t('user-token.delete-p1')}</p>

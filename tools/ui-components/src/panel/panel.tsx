@@ -2,7 +2,7 @@ import React, { createContext, useContext } from 'react';
 
 import { PanelProps } from './types';
 
-type PanelContextProps = Pick<PanelProps, 'varient'>;
+type PanelContextProps = Pick<PanelProps, 'variant'>;
 const PanelContext = createContext<PanelContextProps>({});
 
 const border = {
@@ -36,10 +36,10 @@ export const Heading = ({
   className,
   ...props
 }: React.ComponentProps<'div'>): JSX.Element => {
-  const { varient } = useContext(PanelContext);
+  const { variant } = useContext(PanelContext);
 
-  const headingStyles = varient
-    ? heading[varient]
+  const headingStyles = variant
+    ? heading[variant]
     : 'outline outline-[1px] outline-background-tertiary';
   const classes = [className, headingStyles, 'px-3.5 py-2.5'].join(' ');
 
@@ -64,18 +64,18 @@ export const Title = ({
 export const Panel = ({
   children,
   className,
-  varient,
+  variant,
   ...restProps
 }: PanelProps): JSX.Element => {
-  const varientClass = varient ? border[varient] : 'border-background-tertiary';
+  const variantClass = variant ? border[variant] : 'border-background-tertiary';
   const panelClassed = [
     'border-1 border-solid shadow-sm mb-6',
-    varientClass,
+    variantClass,
     className
   ].join(' ');
 
   return (
-    <PanelContext.Provider value={{ varient }}>
+    <PanelContext.Provider value={{ variant }}>
       <div className={panelClassed} {...restProps}>
         {children}
       </div>
