@@ -236,7 +236,7 @@ For example, if you have the publication in your language, you can replace the U
 
 #### `meta-tags.json`
 
-This file contains metadata for the web page of `/learn` in your language. You can translate the values for `"title"`, `"description"`, and `"social-description"`. The value for `"youre-unsubscribed"` is used when someone unsubscribes from Quincy's weekly email.
+This file contains metadata for the web page of `/learn` in your language. You can translate the values for `"title"`, `"description"`, and `"social-description"`. The value for `"your-unsubscribed"` is used when someone unsubscribes from Quincy's weekly email.
 
 Also, you can translate or add relevant keywords in your language to the `"keywords"` array.
 
