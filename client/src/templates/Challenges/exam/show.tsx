@@ -423,7 +423,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                               userExamQuestions[currentQuestionIndex].answer
                                 .id === id
                             }
-                            className='exam-answer-input-hidden'
+                            className='sr-only'
                             name={id}
                             onChange={() =>
                               this.selectAnswer(
