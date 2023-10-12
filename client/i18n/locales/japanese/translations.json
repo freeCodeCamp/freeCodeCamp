@@ -447,11 +447,12 @@
       "linked": "The Microsoft account with username \"{{ msUsername }}\" is currently linked to your freeCodeCamp account. If this is not your Microsoft username, remove the link.",
       "unlinked": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account by following these instructions:",
       "link-li-1": "Using a browser where you are logged into your Microsoft account, go to <0>https://learn.microsoft.com/users/me/transcript</0>",
-      "link-li-2": "Find and click the \"Share link\" button.",
-      "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
-      "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
-      "link-li-5": "Paste the URL into the input below, it should look similar to this: <0>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</0>",
-      "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
+      "link-li-2": "Make sure \"Private Mode\" is off in private settings of your Microsoft account, as this hides your profile publicly.",
+      "link-li-3": "Find and click the \"Share link\" button.",
+      "link-li-4": "If you do not have a transcript link, click the \"Create link\" button to create one.",
+      "link-li-5": "Click the \"Copy link\" button to copy the transcript URL.",
+      "link-li-6": "Paste the URL into the input below, it should look similar to this: <0>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</0>",
+      "link-li-7": "Click \"Link Account\" to link your Microsoft username.",
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
     }
