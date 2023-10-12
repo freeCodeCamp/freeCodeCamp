@@ -1,14 +1,13 @@
 import {
-  Alert,
   ControlLabel,
   FormControl,
   FormGroup,
   HelpBlock
 } from '@freecodecamp/react-bootstrap';
+import { Alert } from '@freecodecamp/ui';
 import normalizeUrl from 'normalize-url';
 import React from 'react';
 import { Field } from 'react-final-form';
-import { useTranslation } from 'react-i18next';
 import {
   editorValidator,
   localhostValidator,
@@ -33,7 +32,6 @@ type FormFieldsProps = {
 };
 
 function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
-  const { t } = useTranslation();
   const {
     ignored = [],
     placeholders = {},
@@ -75,10 +73,7 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
       validationWarning) as string;
     return message ? (
       <HelpBlock>
-        <Alert
-          bsStyle={error || validationError ? 'danger' : 'info'}
-          closeLabel={t('buttons.close')}
-        >
+        <Alert variant={error || validationError ? 'danger' : 'info'}>
           {message}
         </Alert>
       </HelpBlock>

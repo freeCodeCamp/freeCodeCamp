@@ -107,8 +107,7 @@ export const LangCodes = {
 /**
  * This array contains languages that should NOT appear in the language selector.
  */
-// German is temporarily disabled until the new RWD is fully translated
-export const hiddenLangs = [Languages.Arabic, Languages.German];
+export const hiddenLangs = [Languages.Arabic];
 
 /**
  * This array contains languages that use the RTL layouts.

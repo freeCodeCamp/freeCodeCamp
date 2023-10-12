@@ -12,6 +12,7 @@ export type SendEmailArgs = {
   from: string;
   subject: string;
   text: string;
+  cc?: string;
 };
 
 type SendEmail = (args: SendEmailArgs) => Promise<void>;

@@ -65,7 +65,7 @@ assert.strictEqual(
 );
 ```
 
-Натискання на кнопку має перемикати значення властивості `visibility` між `true` та `false`.
+Натискання на кнопку має перемикати значення властивості `visibility` між `true` та `false` і умовно відтворити елемент `h1`.
 
 ```js
 (() => {
@@ -76,11 +76,11 @@ assert.strictEqual(
   };
   const second = () => {
     mockedComponent.find('button').simulate('click');
-    return mockedComponent.state('visibility');
+    return mockedComponent.state('visibility') && mockedComponent.find('h1').exists();
   };
   const third = () => {
     mockedComponent.find('button').simulate('click');
-    return mockedComponent.state('visibility');
+    return mockedComponent.state('visibility') && mockedComponent.find('h1').exists();
   };
   const firstValue = first();
   const secondValue = second();

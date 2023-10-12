@@ -18,11 +18,11 @@ Para se familiarizar com as novas ferramentas e poderes, você pode combinar um 
 
 ### Familiarize-se com as ferramentas administrativas do Discourse
 
-O fórum do freeCodeCamp é, na verdade, um fórum do Discourse e segue muitas das mesmas orientações de outros fóruns criados na plataforma. Para começar a se familiarizar com o Discourse e o papel de moderação, primeiro leia o [novo guia do usuário](https://meta.discourse.org/t/discourse-new-user-guide/96331) e o [novo guia do moderador](https://meta.discourse.org/t/discourse-moderation-guide/63116) do Discourse.
+O fórum do freeCodeCamp é um fórum do Discourse e segue muitas das mesmas orientações de outros fóruns criados na plataforma. Para começar a se familiarizar com o Discourse e o papel de moderação, primeiro leia o [novo guia do usuário](https://meta.discourse.org/t/discourse-new-user-guide/96331) e o [novo guia do moderador](https://meta.discourse.org/t/discourse-moderation-guide/63116) do Discourse.
 
 ### Acompanhe de perto um moderador
 
-Todas as ações dos moderadores podem ser seguidas analisando os [logs de ação](https://forum.freecodecamp.org/admin/logs/staff_action_logs). As ações tomadas por ferramentas automatizadas como o `akistmet` ou o `system` podem ser, em grande parte, ignoradas até que resultem em uma postagem que precisa ser analisada. Publicações a serem revisadas aparecerão na área do fórum chamada [Review](https://forum.freecodecamp.org/review).
+Todas as ações dos moderadores podem ser seguidas analisando os [logs de ação](https://forum.freecodecamp.org/admin/logs/staff_action_logs). As ações tomadas por ferramentas automatizadas como o `Akismet` ou o `system` podem ser, em grande parte, ignoradas até que resultem em uma postagem que precisa ser analisada. Publicações a serem revisadas aparecerão na área do fórum chamada [Review](https://forum.freecodecamp.org/review).
 
 Na primeira semana, aproximadamente, você vai querer prestar atenção ao que está sendo sinalizado e ao que está sendo analisado. Compare isso com as ações que estão sendo tomadas sobre os posts sinalizados. Você pode ver a conta do sistema sinalizar uma publicação porque o usuário a criou muito rapidamente. Em muitos casos, os moderadores desmarcarão a publicação clicando no botão "Approve post" ou a marcarão como "Not Spam" (dependendo do tipo de sinalização).
 

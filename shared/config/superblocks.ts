@@ -144,10 +144,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.UpcomingPython
   ],
   [Languages.German]: [
-    SuperBlocks.RespWebDesignNew,
     SuperBlocks.RelationalDb,
     SuperBlocks.QualityAssurance,
-    SuperBlocks.DataAnalysisPy,
     SuperBlocks.InfoSec,
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CollegeAlgebraPy,
