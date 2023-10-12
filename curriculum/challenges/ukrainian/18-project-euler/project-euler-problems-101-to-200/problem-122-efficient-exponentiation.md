@@ -31,10 +31,10 @@ $$\begin{align}   & n × n = n^2\\\\
 
 # --hints--
 
-`efficientExponentation()` має повернути `1582`.
+`efficientExponentiation()` має повернути `1582`.
 
 ```js
-assert.strictEqual(efficientExponentation(), 1582);
+assert.strictEqual(efficientExponentiation(), 1582);
 ```
 
 # --seed--
@@ -42,12 +42,12 @@ assert.strictEqual(efficientExponentation(), 1582);
 ## --seed-contents--
 
 ```js
-function efficientExponentation() {
+function efficientExponentiation() {
 
   return true;
 }
 
-efficientExponentation();
+efficientExponentiation();
 ```
 
 # --solutions--

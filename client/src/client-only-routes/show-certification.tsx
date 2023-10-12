@@ -248,17 +248,29 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   );
 
   const donationSection = (
-    <div className='donation-section'>
+    <div
+      className='donation-section'
+      data-playwright-test-label='donation-section'
+    >
       <Spacer size='large' />
       {!isDonationSubmitted && (
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-            <p>{t('donate.only-you')}</p>
+            <p data-playwright-test-label='donation-text'>
+              {t('donate.only-you')}
+            </p>
           </Col>
         </Row>
       )}
       <Row>
-        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+        <Col
+          lg={8}
+          lgOffset={2}
+          sm={10}
+          smOffset={1}
+          xs={12}
+          data-playwright-test-label='donation-form'
+        >
           <DonateForm
             defaultTheme={Themes.Default}
             handleProcessing={handleProcessing}
@@ -319,28 +331,43 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   return (
     <Container className='certificate-outer-wrapper'>
       {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
-      <div className='certificate-wrapper'>
+      <div
+        className='certificate-wrapper'
+        data-playwright-test-label='cert-wrapper'
+      >
         <div className='certification-namespace'>
-          <header>
+          <header data-playwright-test-label='cert-header'>
             <Col sm={12}>
               {isMicrosoftCert ? (
                 <>
-                  <div className='dual-logo fcc-logo'>
+                  <div
+                    className='dual-logo fcc-logo'
+                    data-playwright-test-label='cert-fcc-logo'
+                  >
                     <FreeCodeCampLogo aria-hidden='true' />
                   </div>
-                  <div className='dual-logo ms-logo'>
+                  <div
+                    className='dual-logo ms-logo'
+                    data-playwright-test-label='cert-microsoft-logo'
+                  >
                     <MicrosoftLogo aria-hidden='true' />
                   </div>
                 </>
               ) : (
-                <div className='logo'>
+                <div
+                  className='logo'
+                  data-playwright-test-label='cert-fcc-logo'
+                >
                   <FreeCodeCampLogo aria-hidden='true' />
                 </div>
               )}
             </Col>
           </header>
           <main className='information'>
-            <div className='information-container'>
+            <div
+              className='information-container'
+              data-playwright-test-label='cert-info-container'
+            >
               <Trans
                 i18nKey={
                   isMicrosoftCert
@@ -379,13 +406,14 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
               </Trans>
             </div>
           </main>
-          <footer>
+          <footer data-playwright-test-label='cert-footer'>
             <div className='signatures'>
               {isMicrosoftCert ? (
                 <>
                   <div>
                     <Image
                       data-cy='quincy-signature'
+                      data-playwright-test-label='quincy-signature'
                       alt="Quincy Larson's Signature"
                       src={
                         'https://cdn.freecodecamp.org' +
@@ -402,6 +430,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   <div className='microsoft-signature'>
                     <Image
                       data-cy='microsoft-signature'
+                      data-playwright-test-label='microsoft-signature'
                       alt="Julia Liusons's Signature"
                       src={
                         'https://cdn.freecodecamp.org' +
@@ -421,6 +450,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 <div>
                   <Image
                     data-cy='quincy-signature'
+                    data-playwright-test-label='quincy-signature'
                     alt="Quincy Larson's Signature"
                     src={
                       'https://cdn.freecodecamp.org' +
@@ -454,7 +484,10 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           </footer>
         </div>
       </div>
-      <div className='row certificate-links'>
+      <div
+        className='row certificate-links'
+        data-playwright-test-label='cert-links'
+      >
         <Spacer size='large' />
         {signedInUserName === username ? shareCertBtns : ''}
         <Spacer size='large' />

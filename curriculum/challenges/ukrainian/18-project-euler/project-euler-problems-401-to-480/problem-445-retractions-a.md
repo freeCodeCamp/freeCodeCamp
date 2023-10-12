@@ -1,6 +1,6 @@
 ---
 id: 5900f52a1000cf542c51003c
-title: 'Problem 445: Retractions A'
+title: 'Завдання 445: ретракції А'
 challengeType: 1
 forumTopicId: 302117
 dashedName: problem-445-retractions-a
@@ -8,13 +8,13 @@ dashedName: problem-445-retractions-a
 
 # --description--
 
-For every integer $n > 1$, the family of functions $f_{n, a, b}$ is defined by:
+Сімейство функцій $f_{n, a, b}$ для кожного цілого числа $n > 1$ задано як:
 
-$f_{n, a, b}(x) ≡ ax + b\bmod n$ for $a, b, x$ integer and $0 \lt a \lt n$, $0 \le b \lt n$, $0 \le x \lt n$.
+$f_{n, a, b}(x) ≡ ax + b\bmod n$ для цілих $a, b, x$ та $0 \lt a \lt n$, $0 \le b \lt n$, $0 \le x \lt n$.
 
-We will call $f_{n, a, b}$ a retraction if $f_{n, a, b}(f_{n, a, b}(x)) \equiv f_{n, a, b}(x)\bmod n$ for every $0 \le x \lt n$.
+Назвемо $f_{n, a, b}$ ретракцією, якщо $f_{n, a, b}(f_{n, a, b}(x)) \equiv f_{n, a, b}(x)\bmod n$ для кожного $0 \le x \lt n$.
 
-Let $R(n)$ be the number of retractions for $n$.
+Нехай $R(n)$ буде кількістю ретракцій для $n$.
 
 Дано
 
