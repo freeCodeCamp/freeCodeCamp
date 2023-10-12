@@ -77,17 +77,17 @@
     "change-language": "Cambia lingua",
     "resume-project": "Riprendi progetto",
     "start-project": "Avvia il progetto",
-    "tweet": "Tweet",
+    "tweet": "Twitta",
     "previous-question": "Domanda precedente",
     "next-question": "Domanda successiva",
-    "exit-exam": "Exit the exam",
-    "exit": "Exit",
+    "exit-exam": "Abbandona l'esame",
+    "exit": "Esci",
     "finish-exam": "Termina l'esame",
-    "finish": "Finish",
+    "finish": "Termina",
     "submit-exam-results": "Invia i risultati",
-    "verify-trophy": "Verify Trophy",
-    "link-account": "Link Account",
-    "unlink-account": "Unlink Account"
+    "verify-trophy": "Verifica Trofeo",
+    "link-account": "Collega Account",
+    "unlink-account": "Scollega Account"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -95,7 +95,7 @@
     "big-heading-3": "Ottieni certificazioni.",
     "h2-heading": "Dal 2014, più di 40.000 studenti di freeCodeCamp.org hanno ottenuto posti di lavoro presso aziende tecnologiche, tra cui:",
     "hero-img-description": "Studenti di un gruppo di studio locale di freeCodeCamp in Corea del Sud.",
-    "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
+    "hero-img-alt": "Un gruppo di persone, tra cui un uomo bianco, una donna di colore e una donna asiatica, riuniti intorno a un computer portatile.",
     "as-seen-in": "Hanno parlato di noi:",
     "testimonials": {
       "heading": "Ecco cosa dicono i nostri allievi su freeCodeCamp:",
@@ -116,9 +116,9 @@
       }
     },
     "certification-heading": "Ottieni certificazioni verificate gratuite in:",
-    "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
-    "professional-certs-heading": "Earn free professional certifications:",
-    "interview-prep-heading": "Prepare for the developer interview job search:",
+    "core-certs-heading": "Ottieni certificazioni verificate e gratuite con il curriculum base di freeCodeCamp:",
+    "professional-certs-heading": "Ottieni certificazioni professionali gratuite:",
+    "interview-prep-heading": "Preparati per la ricerca di colloqui di lavoro da sviluppatore:",
     "upcoming-heading": "Upcoming curriculum:",
     "faq": "Domande frequenti:",
     "faqs": [
@@ -214,7 +214,7 @@
       "project-name": "Nome Progetto",
       "solution": "Soluzione",
       "solution-for": "Soluzione di {{projectTitle}}",
-      "results-for": "Results for {{projectTitle}}",
+      "results-for": "Risultati per {{projectTitle}}",
       "my-profile": "Il mio profilo",
       "my-name": "Il mio nome",
       "my-location": "La mia posizione",
@@ -365,7 +365,7 @@
     "console-output": "// output della console",
     "sign-in-save": "Accedi per salvare i tuoi progressi",
     "download-solution": "Scarica la mia soluzione",
-    "download-results": "Download my results",
+    "download-results": "Scarica i miei risultati",
     "percent-complete": "{{percent}}% completato",
     "project-complete": "Completati {{completedChallengesInBlock}} di {{totalChallengesInBlock}} progetti di certificazione",
     "tried-rsa": "Se hai già provato il metodo <0>Leggi-Cerca-Chiedi</0>, allora puoi chiedere aiuto sul forum freeCodeCamp.",
@@ -739,7 +739,8 @@
         "err-4": "Something went wrong trying to verify your trophy. Please check and try again.",
         "verified": "Your trophy from Microsoft's learning platform was verified."
       }
-    }
+    },
+    "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
     "max-characters": "C'è un limite massimo di 288 caratteri, hai {{charsLeft}} rimanenti",

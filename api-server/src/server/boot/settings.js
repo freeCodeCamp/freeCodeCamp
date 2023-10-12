@@ -51,6 +51,7 @@ export default function settingsController(app) {
   );
   api.put('/update-my-honesty', ifNoUser401, updateMyHonesty);
   api.put('/update-my-quincy-email', ifNoUser401, updateMyQuincyEmail);
+  api.put('/update-my-classroom-mode', ifNoUser401, updateMyClassroomMode);
 
   app.use(api);
 }
@@ -316,6 +317,17 @@ function updateMyQuincyEmail(...args) {
     buildUpdate,
     validate,
     'flash.subscribe-to-quincy-updated'
+  )(...args);
+}
+
+export function updateMyClassroomMode(...args) {
+  const buildUpdate = body => _.pick(body, 'isClassroomAccount');
+  const validate = ({ isClassroomAccount }) =>
+    typeof isClassroomAccount === 'boolean';
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'flash.classroom-mode-updated'
   )(...args);
 }
 

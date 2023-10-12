@@ -1,6 +1,6 @@
 ---
 id: 5900f5221000cf542c510033
-title: 'Problem 436: Unfair wager'
+title: 'Завдання 436: нечесне парі'
 challengeType: 1
 forumTopicId: 302107
 dashedName: problem-436-unfair-wager
@@ -8,25 +8,25 @@ dashedName: problem-436-unfair-wager
 
 # --description--
 
-Julie proposes the following wager to her sister Louise.
+Джулія пропонує своїй сестрі Луїзі парі.
 
-She suggests they play a game of chance to determine who will wash the dishes.
+Вона пропонує зіграти в азартну гру, щоб визначити, хто буде мити посуд.
 
-For this game, they shall use a generator of independent random numbers uniformly distributed between 0 and 1.
+Для цієї гри вони використають генератор незалежних випадкових чисел, рівномірно розподілених між 0 і 1.
 
-The game starts with $S = 0$.
+Гра починається з $S = 0$.
 
-The first player, Louise, adds to $S$ different random numbers from the generator until $S > 1$ and records her last random number '$x$'.
+Перший гравець (Луїза) додає до $S$ різні випадкові числа з генератора, допоки $S > 1$ і записує своє останнє випадкове число $x$.
 
-The second player, Julie, continues adding to $S$ different random numbers from the generator until $S > 2$ and records her last random number '$y$'.
+Другий гравець (Джулія) продовжує додавати до $S$ різні випадкові числа з генератора допоки $S > 2$ і записує своє останнє випадкове число $y$.
 
-The player with the highest number wins and the loser washes the dishes, i.e. if $y > x$ the second player wins.
+Гравець з найбільшим числом виграє, а той, хто програв — миє посуд. Тобто, якщо $y > x$, то виграє другий гравець.
 
-For example, if the first player draws 0.62 and 0.44, the first player turn ends since $0.62 + 0.44 > 1$ and $x = 0.44$. If the second players draws 0.1, 0.27 and 0.91, the second player turn ends since $0.62 + 0.44 + 0.1 + 0.27 + 0.91 > 2$ and $y = 0.91$. Since $y > x$, the second player wins.
+Наприклад, якщо перший гравець витягує 0.62 та 0.44, хід першого гравця закінчується, оскільки $0.62 + 0.44 > 1$ та $x = 0.44$. Якщо другий гравець витягує 0.1, 0.27 та 0.91, хід другого гравця закінчується, бо $0.62 + 0.44 + 0.1 + 0.27 + 0.91 > 2$ та $y = 0.91$. Оскільки $y > x$, другий гравець перемагає.
 
-Louise thinks about it for a second, and objects: "That's not fair".
+Луїза на секунду замислюється й заявляє, що це несправедливо.
 
-What is the probability that the second player wins? Дайте відповідь, заокруглену до десяти знаків після коми у форматі 0.abcdefghij
+Яка ймовірність того, що виграє другий гравець? Дайте відповідь, заокруглену до десяти знаків після коми у форматі 0.abcdefghij
 
 # --hints--
 

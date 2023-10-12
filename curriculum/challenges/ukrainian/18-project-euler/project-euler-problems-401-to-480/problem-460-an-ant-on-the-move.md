@@ -1,6 +1,6 @@
 ---
 id: 5900f5381000cf542c51004b
-title: 'Problem 460: An ant on the move'
+title: 'Завдання 460: мураха на ходу'
 challengeType: 1
 forumTopicId: 302135
 dashedName: problem-460-an-ant-on-the-move
@@ -8,24 +8,24 @@ dashedName: problem-460-an-ant-on-the-move
 
 # --description--
 
-On the Euclidean plane, an ant travels from point $A(0, 1)$ to point $B(d, 1)$ for an integer $d$.
+На Евклідовій площині мураха подорожує з точки $A(0, 1)$ до точки $B(d, 1)$ за цілого числа $d$.
 
-In each step, the ant at point ($x_0$, $y_0$) chooses one of the lattice points ($x_1$, $y_1$) which satisfy $x_1 ≥ 0$ and $y_1 ≥ 1$ and goes straight to ($x_1$, $y_1$) at a constant velocity $v$. The value of $v$ depends on $y_0$ and $y_1$ as follows:
+На кожному кроці мураха на точці ($x_0$, $y_0$) обирає одну з точок сітки ($x_1$, $y_1$), що задовільняє умову $x_1 ≥ 0$ та $y_1 ≥ 1$, і переходить до ($x_1$, $y_1$) з постійною швидкістю $v$. Значення $v$ залежить від $y_0$ та $y_1$:
 
-- If $y_0 = y_1$, the value of $v$ equals $y_0$.
-- If $y_0 ≠ y_1$, the value of $v$ equals $\frac{y_1 - y_0}{\ln y_1 - \ln y_0}$.
+- Якщо $y_0 = y_1$, то значення $v$ дорівнює $y_0$.
+- Якщо $y_0 ≠ y_1$, то значення $v$ дорівнює $\frac{y_1 - y_0}{\ln y_1 - \ln y_0}$.
 
-The left image is one of the possible paths for $d = 4$. First the ant goes from $A(0, 1)$ to $P_1(1, 3)$ at velocity $\frac{3 - 1}{\ln 3 - \ln 1} ≈ 1.8205$. Then the required time is $\frac{\sqrt{5}}{1.820} ≈ 1.2283$.
+Зображення ліворуч показує один із можливих шляхів за умови $d = 4$. Спочатку мураха рушає з $A(0, 1)$ до $P_1(1, 3)$ зі швидкістю $\frac{3 - 1}{\ln 3 - \ln 1} ≈ 1.8205$. Тоді необхідний час дорівнює $\frac{\sqrt{5}}{1.820} ≈ 1.2283$.
 
-From $P_1(1, 3)$ to $P_2(3, 3)$ the ant travels at velocity 3 so the required time is $\frac{2}{3} ≈ 0.6667$. From $P_2(3, 3)$ to $B(4, 1)$ the ant travels at velocity $\frac{1 - 3}{\ln 1 - \ln 3} ≈ 1.8205$ so the required time is $\frac{\sqrt{5}}{1.8205} ≈ 1.2283$.
+Мураха подорожує з $P_1(1, 3)$ до $P_2(3, 3)$ зі швидкістю 3, тому необхідний час дорівнює $\frac{2}{3} ≈ 0.6667$. Мураха подорожує з $P_2(3, 3)$ до $B(4, 1)$ зі швидкістю $\frac{1 - 3}{\ln 1 - \ln 3} ≈ 1.8205$, тому необхідний час дорівнює $\frac{\sqrt{5}}{1.8205} ≈ 1.2283$.
 
-Thus the total required time is $1.2283 + 0.6667 + 1.2283 = 3.1233$.
+Таким чином, загальний необхідний час дорівнює $1.2283 + 0.6667 + 1.2283 = 3.1233$.
 
-The right image is another path. The total required time is calculated as $0.98026 + 1 + 0.98026 = 2.96052$. It can be shown that this is the quickest path for $d = 4$.
+Зображення праворуч демонструє інший шлях. Загальний необхідний час вираховується як $0.98026 + 1 + 0.98026 = 2.96052$. Як бачимо, це найшвидший шлях за умови $d = 4$.
 
-<img class="img-responsive center-block" alt="two possible paths for d = 4" src="https://cdn.freecodecamp.org/curriculum/project-euler/an-ant-on-the-move.jpg" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="два можливих шляхи за умови d = 4" src="https://cdn.freecodecamp.org/curriculum/project-euler/an-ant-on-the-move.jpg" style="background-color: white; padding: 10px;" />
 
-Let $F(d)$ be the total required time if the ant chooses the quickest path. Наприклад, $F(4) ≈ 2.960\\,516\\,287$. We can verify that $F(10) ≈ 4.668\\,187\\,834$ and $F(100) ≈ 9.217\\,221\\,972$.
+Нехай $F(d)$ буде загальним необхідним часом, якщо мураха обирає найшвидший шлях. Наприклад, $F(4) ≈ 2.960\\,516\\,287$. Можна довести, що $F(10) ≈ 4.668\\,187\\,834$ та $F(100) ≈ 9.217\\,221\\,972$.
 
 Знайдіть $F(10\\,000)$. Дайте відповідь, заокруглену до дев’яти знаків після коми.
 

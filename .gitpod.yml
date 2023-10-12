@@ -65,25 +65,6 @@ tasks:
       pnpm run develop:client -- -H '0.0.0.0'
     openMode: split-right
 
-github:
-  prebuilds:
-    # enable for the master/default branch (defaults to true)
-    master: true
-    # enable for all branches in this repo (defaults to false)
-    branches: true
-    # enable for pull requests coming from this repo (defaults to true)
-    pullRequests: true
-    # enable for pull requests coming from forks (defaults to false)
-    pullRequestsFromForks: true
-    # add a check to pull requests (defaults to true)
-    addCheck: false
-    # add a "Review in Gitpod" button as a comment to pull requests (defaults to false)
-    addComment: true
-    # add a "Review in Gitpod" button to the pull request's description (defaults to false)
-    addBadge: false
-    # add a label once the prebuild is ready to pull requests (defaults to false)
-    addLabel: false
-
 vscode:
   extensions:
     - dbaeumer.vscode-eslint

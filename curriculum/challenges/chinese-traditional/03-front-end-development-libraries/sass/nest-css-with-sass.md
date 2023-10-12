@@ -13,31 +13,31 @@ Sass 允許 CSS 規則的嵌套，這在組織樣式表的時候會很有用。
 在 CSS 裏，每個元素的樣式都需要寫在獨立的代碼塊中，如下所示：
 
 ```scss
-nav {
-  background-color: red;
+article {
+  height: 200px;
 }
 
-nav ul {
-  list-style: none;
+article p {
+  color: white;
 }
 
-nav ul li {
-  display: inline-block;
+article ul {
+  color: blue;
 }
 ```
 
 對於一個大型項目，CSS 規則會很複雜。 這時，引入嵌套功能（即在對應的父元素中寫子元素的樣式）可以有效地簡化代碼：
 
 ```scss
-nav {
-  background-color: red;
+article {
+  height: 200px;
+
+  p {
+    color: white;
+  }
 
   ul {
-    list-style: none;
-
-    li {
-      display: inline-block;
-    }
+    color: blue;
   }
 }
 

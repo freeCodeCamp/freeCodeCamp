@@ -719,14 +719,42 @@ function createMsTrophyChallengeCompleted(app) {
       }
 
       const { msTrophyId = '' } = challenge;
-      const msTrophyApiUrl = `https://learn.microsoft.com/api/gamestatus/achievements/${msTrophyId}?username=${msUsername}&locale=en-us`;
-      const msApiRes = await fetch(msTrophyApiUrl);
-      const msTrophyJson = await msApiRes.json();
 
-      if (!msApiRes.ok || msTrophyJson.awardType !== 'Trophy') {
+      const msProfileApi = `https://learn.microsoft.com/api/profiles/${msUsername}`;
+      const msProfileApiRes = await fetch(msProfileApi);
+      const msProfileJson = await msProfileApiRes.json();
+
+      if (!msProfileApiRes.ok || !msProfileJson.userId) {
         return res.status(403).json({
           type: 'error',
-          message: 'flash.ms.trophy.err-3',
+          message: 'flash.ms.profile.err',
+          variables: {
+            msUsername
+          }
+        });
+      }
+
+      const { userId } = msProfileJson;
+
+      const msGameStatusApi = `https://learn.microsoft.com/api/gamestatus/${userId}`;
+      const msGameStatusApiRes = await fetch(msGameStatusApi);
+      const msGameStatusJson = await msGameStatusApiRes.json();
+
+      if (!msGameStatusApiRes.ok) {
+        return res.status(403).json({
+          type: 'error',
+          message: 'flash.ms.trophy.err-3'
+        });
+      }
+
+      const hasEarnedTrophy = msGameStatusJson.achievements?.some(
+        a => a.awardUid === msTrophyId
+      );
+
+      if (!hasEarnedTrophy) {
+        return res.status(403).json({
+          type: 'error',
+          message: 'flash.ms.trophy.err-4',
           variables: {
             msUsername
           }
@@ -735,7 +763,7 @@ function createMsTrophyChallengeCompleted(app) {
 
       const completedChallenge = pick(body, ['id']);
 
-      completedChallenge.solution = msTrophyApiUrl;
+      completedChallenge.solution = msGameStatusApi;
       completedChallenge.completedDate = Date.now();
 
       try {
@@ -765,7 +793,7 @@ function createMsTrophyChallengeCompleted(app) {
       log(e);
       return res.status(500).json({
         type: 'error',
-        message: 'flash.ms.trophy.err-4'
+        message: 'flash.ms.trophy.err-5'
       });
     }
   };
