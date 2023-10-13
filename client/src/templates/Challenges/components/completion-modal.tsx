@@ -200,6 +200,7 @@ class CompletionModal extends Component<
             <GreenPass
               className='completion-success-icon'
               data-testid='fcc-completion-success-icon'
+              data-playwright-test-label='completion-success-icon'
             />
           </div>
           <div className='completion-block-details'>

@@ -1,6 +1,6 @@
 ---
 id: 5900f5231000cf542c510034
-title: 'Problem 438: Integer part of polynomial equation''s solutions'
+title: 'Завдання 438: ціла частина розв’язків поліноміального рівняння'
 challengeType: 1
 forumTopicId: 302109
 dashedName: problem-438-integer-part-of-polynomial-equations-solutions
@@ -8,18 +8,18 @@ dashedName: problem-438-integer-part-of-polynomial-equations-solutions
 
 # --description--
 
-For an $n$-tuple of integers $t = (a_1, \ldots, a_n)$, let $(x_1, \ldots, x_n)$ be the solutions of the polynomial equation $x^n + a_1x^{n - 1} + a_2x^{n - 2} + \ldots + a_{n - 1}x + a_n = 0$.
+Нехай $(x_1, \ldots, x_n)$ будуть розв’язками для поліноміального рівняння $x^n + a_1x^{n - 1} + a_2x^{n - 2} + \ldots + a_{n - 1}x + a_n = 0$ для кортежу з $n$ цілих чисел $t = (a_1, \ldots, a_n)$.
 
-Consider the following two conditions:
+Розглянемо дві умови:
 
-- $x_1, \ldots, x_n$ are all real.
-- If $x_1, ..., x_n$ are sorted, $⌊x_i⌋ = i$ for $1 ≤ i ≤ n$. ($⌊·⌋:$ floor function.)
+- $x_1, \ldots, x_n$ є дійсними числами.
+- Якщо $x_1, ..., x_n$ відсортовані, то $⌊x_i⌋ = i$ за умови $1 ≤ i ≤ n$. ($⌊·⌋:$ функція підлоги.)
 
-In the case of $n = 4$, there are 12 $n$-tuples of integers which satisfy both conditions.
+Якщо $n = 4$, то існує 12 кортежів з $n$ цілих чисел, що задовільняють обидві умови.
 
-We define $S(t)$ as the sum of the absolute values of the integers in $t$.
+Визначимо $S(t)$ як суму абсолютних значень цілих чисел в $t$.
 
-For $n = 4$ we can verify that $\sum S(t) = 2087$ for all $n$-tuples $t$ which satisfy both conditions.
+Якщо $n = 4$, то можна довести, що $\sum S(t) = 2087$ для всіх кортежів $t$ з $n$ цілих чисел, що задовільняють обидві умови.
 
 Знайдіть $\sum S(t)$ за умови $n = 7$.
 

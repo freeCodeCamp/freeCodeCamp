@@ -383,6 +383,26 @@ export const schemas = {
       })
     }
   },
+  reportUser: {
+    body: Type.Object({
+      username: Type.String(),
+      reportDescription: Type.String()
+    }),
+    response: {
+      200: Type.Object({
+        type: Type.Literal('info'),
+        message: Type.Literal('flash.report-sent'),
+        variables: Type.Object({
+          email: Type.String()
+        })
+      }),
+      400: Type.Object({
+        type: Type.Literal('danger'),
+        message: Type.Literal('flash.provide-username')
+      }),
+      500: generic500
+    }
+  },
   // Deprecated endpoints:
   deprecatedEndpoints: {
     response: {

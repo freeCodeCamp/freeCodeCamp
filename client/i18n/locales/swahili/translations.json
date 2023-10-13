@@ -739,7 +739,8 @@
         "err-4": "Something went wrong trying to verify your trophy. Please check and try again.",
         "verified": "Your trophy from Microsoft's learning platform was verified."
       }
-    }
+    },
+    "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
     "max-characters": "Kuna upeo wa juu wa herufi 288, umesalia na {{charsLeft}}",
