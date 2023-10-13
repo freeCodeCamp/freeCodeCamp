@@ -1,10 +1,10 @@
-import { Panel, Button } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import type { RouteComponentProps } from '@reach/router';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
+import { Container, Panel } from '@freecodecamp/ui';
 
-import { Container } from '@freecodecamp/ui';
 import envData from '../../config/env.json';
 import { Spacer } from '../components/helpers';
 import FullWidthRow from '../components/helpers/full-width-row';
@@ -28,7 +28,7 @@ function ShowUnsubscribed({
         <main>
           <FullWidthRow>
             <Spacer size='large' />
-            <Panel bsStyle='primary' className='text-center'>
+            <Panel variant='primary' className='text-center'>
               <Spacer size='medium' />
               <h2 data-playwright-test-label='main-heading'>
                 {t('misc.unsubscribed')}
