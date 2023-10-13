@@ -1,3 +1,6 @@
+// Yes, putting this above the imports is a hack to get around the fact that
+// jest.mock() must be called at the top level of the file.
+const mockVerifyTrophyWithMicrosoft = jest.fn();
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { omit } from 'lodash';
@@ -13,6 +16,20 @@ import {
 } from '../../jest.utils';
 import { completedTrophyChallenges } from '../../__mocks__/exam';
 import { GeneratedAnswer } from '../utils/exam-types';
+
+jest.mock('node-fetch');
+const mockedFetch = fetch as unknown as jest.Mock;
+jest.mock('./helpers/challenge-helpers', () => {
+  const originalModule = jest.requireActual<
+    typeof import('./helpers/challenge-helpers')
+  >('./helpers/challenge-helpers');
+
+  return {
+    __esModule: true,
+    ...originalModule,
+    verifyTrophyWithMicrosoft: mockVerifyTrophyWithMicrosoft
+  };
+});
 
 const isValidChallengeCompletionErrorMsg = {
   type: 'error',
@@ -1111,8 +1128,6 @@ describe('challengeRoutes', () => {
         // Create and Run Simple C# Console Applications's id:
         const trophyChallengeId2 = '647f87dc07d29547b3bee1bf';
         const nonTrophyChallengeId = 'bd7123c8c441eddfaeb5bdef';
-        const msTrophyId = 'learn.wwl.get-started-c-sharp-part-3.trophy';
-        const msTrophyId2 = 'learn.wwl.get-started-c-sharp-part-2.trophy';
         const solutionUrl = `https://learn.microsoft.com/api/gamestatus/${msUserId}`;
 
         const msProfileRequestFailed = {
@@ -1146,17 +1161,6 @@ describe('challengeRoutes', () => {
             json: () => Promise.resolve({ userId: msUserId })
           });
 
-        const mockGamestatusResponse = () =>
-          Promise.resolve({
-            ok: true,
-            json: () =>
-              Promise.resolve({
-                achievements: [
-                  { awardUid: msTrophyId },
-                  { awardUid: msTrophyId2 }
-                ]
-              })
-          });
 
         describe('validation', () => {
           test('POST rejects requests without valid ids', async () => {
@@ -1239,9 +1243,14 @@ describe('challengeRoutes', () => {
               variables: { msUsername }
             };
             await createMSUsernameRecord(msUsername);
-            mockedFetch.mockImplementationOnce(() =>
+
+            mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
-                ok: false
+                type: 'error',
+                message: 'flash.ms.profile.err',
+                variables: {
+                  msUsername
+                }
               })
             );
 
@@ -1253,33 +1262,17 @@ describe('challengeRoutes', () => {
             expect(res.body).toStrictEqual(msProfileRequestFailedResponse);
             expect(res.statusCode).toBe(403);
 
-            // userId missing:
-            mockedFetch.mockImplementationOnce(() =>
-              Promise.resolve({
-                ok: true,
-                json: () => Promise.resolve({})
-              })
-            );
-
-            const resNoId = await superRequest(
-              '/ms-trophy-challenge-completed',
-              {
-                method: 'POST',
-                setCookies
-              }
-            ).send({ id: trophyChallengeId });
-
-            expect(resNoId.body).toStrictEqual(msProfileRequestFailedResponse);
-            expect(resNoId.statusCode).toBe(403);
+            // TODO: Since the verifyTrophyWithMicrosoft function gives the same
+            // response for both !response.ok and when the response is missing the
+            // userId, there's no need for a second test here. However,
+            // verifyTrophyWithMicrosoft itself should be tested.
           });
 
           test("POST rejects requests if Microsoft's api responds that they do not have the trophy", async () => {
-            // Mock request to Microsoft's profile api:
-            mockedFetch.mockImplementationOnce(mockProfileResponse);
-            // Mock request to Microsoft's gamestatus api:
-            mockedFetch.mockImplementationOnce(() =>
+            mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
-                ok: false
+                type: 'error',
+                message: 'flash.ms.trophy.err-3'
               })
             );
             const msUsername = 'ANRandom';
@@ -1293,13 +1286,13 @@ describe('challengeRoutes', () => {
             expect(res.body).toStrictEqual(msGamestatusRequestFailed);
             expect(res.statusCode).toBe(403);
 
-            // Mock request to Microsoft's profile api:
-            mockedFetch.mockImplementationOnce(mockProfileResponse);
-            // Mock request to Microsoft's gamestatus api:
-            mockedFetch.mockImplementationOnce(() =>
+            mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
-                ok: true,
-                json: () => Promise.resolve({ achievements: [] })
+                type: 'error',
+                message: 'flash.ms.trophy.err-4',
+                variables: {
+                  msUsername
+                }
               })
             );
             const res2 = await superRequest('/ms-trophy-challenge-completed', {
@@ -1316,6 +1309,7 @@ describe('challengeRoutes', () => {
             expect(res2.statusCode).toBe(403);
           });
 
+          // TODO: move this to tests of verifyTrophyWithMicrosoft
           test("POST calls Microsoft's profile and gamestatus apis", async () => {
             const userId = 'abc123';
             mockedFetch.mockClear();
@@ -1336,7 +1330,7 @@ describe('challengeRoutes', () => {
           });
 
           test('POST handle expected errors', async () => {
-            mockedFetch.mockImplementationOnce(() => {
+            mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() => {
               throw new Error('Network error');
             });
             const msUsername = 'ANRandom';
@@ -1352,8 +1346,12 @@ describe('challengeRoutes', () => {
           });
 
           test('POST updates the user record with a new completed challenge', async () => {
-            mockedFetch.mockImplementationOnce(mockProfileResponse);
-            mockedFetch.mockImplementationOnce(mockGamestatusResponse);
+            mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
+              Promise.resolve({
+                type: 'success',
+                msGameStatusApiUrl: solutionUrl
+              })
+            );
             const msUsername = 'ANRandom';
             await createMSUsernameRecord(msUsername);
             const now = Date.now();
@@ -1363,10 +1361,9 @@ describe('challengeRoutes', () => {
               setCookies
             }).send({ id: trophyChallengeId });
 
-            const user =
-              await fastifyTestInstance.prisma.user.findUniqueOrThrow({
-                where: { id: defaultUserId }
-              });
+            const user = await fastifyTestInstance.prisma.user.findUniqueOrThrow({
+              where: { id: defaultUserId }
+            });
             const completedDate = user.completedChallenges[0]?.completedDate;
 
             expect(res.body).toStrictEqual({
@@ -1392,33 +1389,39 @@ describe('challengeRoutes', () => {
           });
 
           it('POST correctly handles multiple requests', async () => {
-            mockedFetch.mockImplementationOnce(mockProfileResponse);
-            mockedFetch.mockImplementationOnce(mockGamestatusResponse);
+            mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
+              Promise.resolve({
+                type: 'success',
+                msGameStatusApiUrl: solutionUrl
+              })
+            );
             const msUsername = 'ANRandom';
             await createMSUsernameRecord(msUsername);
 
-            const resOne = await superRequest(
-              '/ms-trophy-challenge-completed',
-              {
-                method: 'POST',
-                setCookies
-              }
-            ).send({ id: trophyChallengeId });
+            const resOne = await superRequest('/ms-trophy-challenge-completed', {
+              method: 'POST',
+              setCookies
+            }).send({ id: trophyChallengeId });
 
-            mockedFetch.mockImplementationOnce(mockProfileResponse);
-            mockedFetch.mockImplementationOnce(mockGamestatusResponse);
-            const resTwo = await superRequest(
-              '/ms-trophy-challenge-completed',
-              {
-                method: 'POST',
-                setCookies
-              }
-            ).send({ id: trophyChallengeId2 });
+            mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
+              Promise.resolve({
+                type: 'success',
+                msGameStatusApiUrl: solutionUrl
+              })
+            );
+            const resTwo = await superRequest('/ms-trophy-challenge-completed', {
+              method: 'POST',
+              setCookies
+            }).send({ id: trophyChallengeId2 });
 
             // sending the second trophy challenge again should not change
             // anything
-            mockedFetch.mockImplementationOnce(mockProfileResponse);
-            mockedFetch.mockImplementationOnce(mockGamestatusResponse);
+            mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
+              Promise.resolve({
+                type: 'success',
+                msGameStatusApiUrl: solutionUrl
+              })
+            );
             const resUpdate = await superRequest(
               '/ms-trophy-challenge-completed',
               {
