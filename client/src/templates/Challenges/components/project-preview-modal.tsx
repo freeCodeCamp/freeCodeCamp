@@ -68,7 +68,12 @@ function ProjectPreviewModal({
         className='project-preview-modal-header fcc-modal'
         closeButton={true}
       >
-        <Modal.Title className='text-center'>{previewTitle}</Modal.Title>
+        <Modal.Title
+          className='text-center'
+          data-playwright-test-label='project-preview-modal-title'
+        >
+          {previewTitle}
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body className='project-preview-modal-body text-center'>
         <Preview
@@ -83,6 +88,7 @@ function ProjectPreviewModal({
           block={true}
           bsSize='lg'
           bsStyle='primary'
+          data-playwright-test-label='project-preview-modal-closeButton'
           onClick={() => {
             closeModal('projectPreview');
             setEditorFocusability(true);
