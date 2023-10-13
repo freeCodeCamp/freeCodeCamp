@@ -1,6 +1,8 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import Link from '../helpers/link';
+import googleBadge from '../../assets/images/landing/google.png';
+import appleBadge from '../../assets/images/landing/apple.png';
 import './footer.css';
 
 function Footer(): JSX.Element {
@@ -201,6 +203,22 @@ function Footer(): JSX.Element {
                 {t('trending:article29title')}
               </Link>
             </span>
+          </div>
+          <div className='mobile-ads flex-col'>
+            <h2
+              className='ad-header'
+              data-playwright-test-label='footer-bottom-col-header'
+            >
+              {'Mobile'}
+            </h2>
+            <div className='ad-container'>
+              <a href='https://play.google.com/store/apps/details?id=org.freecodecamp'>
+                <img alt='Get it on Google Play' src={googleBadge} />
+              </a>
+              <a href='https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200'>
+                <img alt='Get it on App Store' src={appleBadge} />
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -164,3 +164,24 @@ p.footer-donation a:hover {
     border-top-color: var(--quaternary-background);
   }
 }
+
+.ad-header {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+.ad-container {
+  display: flex;
+  padding-top: 1em;
+  align-items: flex-start;
+  place-content: flex-start;
+}
+.mobile-ads {
+  align-items: flex-start;
+  display: flex;
+  padding-top: 2em;
+}
+a img {
+  width: 160px;
+  height: 60px;
+}
