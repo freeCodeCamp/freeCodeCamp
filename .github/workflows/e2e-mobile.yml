@@ -32,13 +32,13 @@ jobs:
           # cypress-io/github-action caches the store, so we should not cache it
           # here.
 
-      - name: Setup Flutter 3.3.x
+      - name: Setup Flutter 3.13.x
         uses: subosito/flutter-action@48cafc24713cca54bbe03cdc3a423187d413aafa # v2
         with:
-          flutter-version: '3.3.x'
+          flutter-version: '3.13.x'
           channel: 'stable'
           cache: true
-          cache-key: flutter-3.3.x
+          cache-key: flutter-3.13.x
           cache-path: ${{ runner.tool_cache }}/flutter
 
       - name: Set freeCodeCamp Environment Variables

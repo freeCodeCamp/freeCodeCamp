@@ -8,7 +8,7 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
 >
   
   <div
-    className="row"
+    className="mx-[-15px] "
   >
     <div
       className=" min-h-[1px] px-[15px] w-full md:w-5/6 min-[992px]:w-2/3   md:ml-[8.3%] min-[992px]:ml-[16.6%]   "
@@ -123,7 +123,7 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
     </div>
   </div>
   <div
-    className="email-sign-up row"
+    className="mx-[-15px] email-sign-up"
     data-cy="email-sign-up"
   >
     <div

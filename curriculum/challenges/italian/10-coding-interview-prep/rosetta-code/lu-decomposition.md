@@ -80,7 +80,7 @@ $PA = LU$
 
 # --instructions--
 
-Il compito è quello di implementare una routine che richiederà una matrice quadrata nxn $A$ e restituirà una matrice triangolare inferiore $L$, una matrice triangolare superiore $U$ e una matrice di permutazione $P$, in modo che l'equazione di cui sopra sia soddisfatta. Il valore restituito dovrebbe essere nella forma `[L, U, P]`.
+The task is to implement a routine which will take a square nxn matrix $A$ and return a lower triangular matrix $L$, a upper triangular matrix $U$ and a permutation matrix $P$, so that the above equation is fulfilled. Il valore restituito dovrebbe essere nella forma `[L, U, P]`.
 
 # --hints--
 

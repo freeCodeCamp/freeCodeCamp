@@ -11,7 +11,9 @@ export default function ToggleButtonSetting({
   flagName,
   toggleFlag,
   offLabel,
-  onLabel
+  onLabel,
+  dataPlaywrightTestOffLabel,
+  dataPlaywrightTestOnLabel
 }: ToggleSettingProps): JSX.Element {
   return (
     <fieldset
@@ -29,6 +31,7 @@ export default function ToggleButtonSetting({
       </div>
       <div className='toggle-button-group'>
         <button
+          data-playwright-test-label={dataPlaywrightTestOnLabel}
           aria-pressed={flag}
           {...(!flag && { onClick: toggleFlag })}
           value='1'
@@ -40,6 +43,7 @@ export default function ToggleButtonSetting({
           </span>
         </button>
         <button
+          data-playwright-test-label={dataPlaywrightTestOffLabel}
           aria-pressed={!flag}
           {...(flag && { onClick: toggleFlag })}
           value='2'

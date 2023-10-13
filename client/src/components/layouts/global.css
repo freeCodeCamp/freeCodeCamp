@@ -45,7 +45,7 @@ body {
 }
 
 /*
-  Row from @freecodecamp/react-bootstrap adds some negative margin which causes
+  Row from @freecodecamp/ui adds some negative margin which causes
   a little bit of horizontal overflow on certain pages. This eliminates that
   for those pages.
 */
@@ -541,17 +541,6 @@ pre {
   color: inherit;
   background-color: inherit;
   border: none;
-  border-radius: 0;
-}
-
-.list-group-item {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-}
-
-.intro-toc .list-group-item:hover {
-  background-color: var(--tertiary-background) !important;
   border-radius: 0;
 }
 
