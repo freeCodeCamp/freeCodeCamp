@@ -98,7 +98,7 @@ function EmailListOptIn({
           bsStyle='primary'
           className='big-cta-btn'
           href={`${apiLocation}/signin`}
-          data-playwright-test-label="email-sign-up-button"
+          data-playwright-test-label='email-sign-up-button'
         >
           {t('buttons.sign-up-email-list')}
         </Button>
