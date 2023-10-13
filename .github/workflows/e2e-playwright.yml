@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
       - name: Checkout Source Files
@@ -78,7 +78,7 @@ jobs:
       fail-fast: false
       matrix:
         browsers: [chromium, firefox, webkit]
-        node-version: [18.x]
+        node-version: [20.x]
 
     services:
       mongodb:
