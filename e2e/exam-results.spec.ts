@@ -15,11 +15,12 @@ test.beforeEach(async ({ page }) => {
       name: translations.buttons['click-start-exam']
     })
     .click();
-  for (let i = 0; i < 5; i++) {
+  const QUESTION_COUNT = 5;
+  for (let i = 0; i < QUESTION_COUNT; i++) {
     const quizOptions = await page.getByRole('radio').all();
     await quizOptions[0].check({ force: true });
 
-    if (i < 4) {
+    if (i < QUESTION_COUNT - 1) {
       await page
         .getByRole('button', {
           name: translations.buttons['next-question']
@@ -59,13 +60,8 @@ test.describe('Exam Results E2E Test Suite', () => {
   test('Exam Results When the User clicks on Download button', async ({
     page
   }) => {
-    const [downloadProm] = await Promise.all([
-      page.waitForEvent('download'), // wait for download to start
-      page.getByTestId('download-exam-results').click()
-    ]);
-    const path = await downloadProm.path();
-    console.log('File was saved in ' + String(path));
-
+    await page.waitForEvent('download'); // wait for download to start
+    await page.getByTestId('download-exam-results').click();
     await expect(page).toHaveURL(examUrl);
   });
 
