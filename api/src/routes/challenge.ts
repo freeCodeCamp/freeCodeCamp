@@ -527,122 +527,132 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const challengeId = req.body.id;
-      const challenge = msTrophyChallenges.find(
-        challenge => challenge.id === challengeId
-      );
+      try {
+        const challengeId = req.body.id;
+        const challenge = msTrophyChallenges.find(
+          challenge => challenge.id === challengeId
+        );
 
-      if (!challenge) {
-        return reply
-          .code(400)
-          .send({ type: 'error', message: 'flash.ms.trophy.err-2' });
-      }
+        if (!challenge) {
+          return reply
+            .code(400)
+            .send({ type: 'error', message: 'flash.ms.trophy.err-2' });
+        }
 
-      const msUser = await fastify.prisma.msUsername.findFirst({
-        where: { userId: req.session.user.id }
-      });
-
-      if (!msUser || !msUser.msUsername) {
-        return reply
-          .code(403)
-          .send({ type: 'error', message: 'flash.ms.trophy.err-1' });
-      }
-
-      const { msUsername } = msUser;
-
-      // TODO: log error if msTrophyId not found?
-      const msTrophyId = challenge.msTrophyId ?? '';
-
-      const msProfileApi = `https://learn.microsoft.com/api/profiles/${msUsername}`;
-      const msProfileApiRes = await fetch(msProfileApi);
-
-      if (!msProfileApiRes.ok) {
-        return reply.code(403).send({
-          type: 'error',
-          message: 'flash.ms.profile.err',
-          variables: {
-            msUsername
-          }
+        const msUser = await fastify.prisma.msUsername.findFirst({
+          where: { userId: req.session.user.id }
         });
-      }
 
-      const { userId } = (await msProfileApiRes.json()) as {
-        userId: string;
-      };
+        if (!msUser || !msUser.msUsername) {
+          return reply
+            .code(403)
+            .send({ type: 'error', message: 'flash.ms.trophy.err-1' });
+        }
 
-      // TODO: DRY the error response, but make sure not to call .json() twice
-      if (!userId) {
-        return reply.code(403).send({
-          type: 'error',
-          message: 'flash.ms.profile.err',
-          variables: {
-            msUsername
-          }
-        });
-      }
+        const { msUsername } = msUser;
 
-      const msGameStatusApi = `https://learn.microsoft.com/api/gamestatus/${userId}`;
-      const msGameStatusApiRes = await fetch(msGameStatusApi);
+        // TODO: log error if msTrophyId not found?
+        const msTrophyId = challenge.msTrophyId ?? '';
 
-      if (!msGameStatusApiRes.ok) {
-        return reply.code(403).send({
-          type: 'error',
-          message: 'flash.ms.trophy.err-3'
-        });
-      }
+        const msProfileApi = `https://learn.microsoft.com/api/profiles/${msUsername}`;
+        const msProfileApiRes = await fetch(msProfileApi);
 
-      const { achievements } = (await msGameStatusApiRes.json()) as {
-        achievements?: { awardUid: string }[];
-      };
-      const earnedTrophy = achievements?.some(a => a.awardUid === msTrophyId);
+        if (!msProfileApiRes.ok) {
+          return reply.code(403).send({
+            type: 'error',
+            message: 'flash.ms.profile.err',
+            variables: {
+              msUsername
+            }
+          });
+        }
 
-      if (!earnedTrophy) {
-        return reply.code(403).send({
-          type: 'error',
-          message: 'flash.ms.trophy.err-4',
-          variables: {
-            msUsername
-          }
-        });
-      }
-
-      const user = await fastify.prisma.user.findUniqueOrThrow({
-        where: { id: req.session.user.id },
-        select: { completedChallenges: true, progressTimestamps: true }
-      });
-
-      const { completedChallenges } = user;
-      const progressTimestamps = user.progressTimestamps as ProgressTimestamp[];
-      const oldChallenge = completedChallenges.find(
-        ({ id }) => id === challengeId
-      );
-      const alreadyCompleted = !!oldChallenge;
-      const completedDate = alreadyCompleted
-        ? oldChallenge.completedDate
-        : Date.now();
-
-      if (!alreadyCompleted) {
-        const newChallenge = {
-          id: challengeId,
-          completedDate,
-          solution: msGameStatusApi
+        const { userId } = (await msProfileApiRes.json()) as {
+          userId: string;
         };
-        await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
-          data: {
-            completedChallenges: {
-              push: newChallenge
-            },
-            progressTimestamps: [...progressTimestamps, completedDate]
-          }
-        });
-      }
 
-      return {
-        alreadyCompleted,
-        points: getPoints(progressTimestamps) + (alreadyCompleted ? 0 : 1),
-        completedDate
-      };
+        // TODO: DRY the error response, but make sure not to call .json() twice
+        if (!userId) {
+          return reply.code(403).send({
+            type: 'error',
+            message: 'flash.ms.profile.err',
+            variables: {
+              msUsername
+            }
+          });
+        }
+
+        const msGameStatusApi = `https://learn.microsoft.com/api/gamestatus/${userId}`;
+        const msGameStatusApiRes = await fetch(msGameStatusApi);
+
+        if (!msGameStatusApiRes.ok) {
+          return reply.code(403).send({
+            type: 'error',
+            message: 'flash.ms.trophy.err-3'
+          });
+        }
+
+        const { achievements } = (await msGameStatusApiRes.json()) as {
+          achievements?: { awardUid: string }[];
+        };
+        const earnedTrophy = achievements?.some(a => a.awardUid === msTrophyId);
+
+        if (!earnedTrophy) {
+          return reply.code(403).send({
+            type: 'error',
+            message: 'flash.ms.trophy.err-4',
+            variables: {
+              msUsername
+            }
+          });
+        }
+
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id },
+          select: { completedChallenges: true, progressTimestamps: true }
+        });
+
+        const { completedChallenges } = user;
+        const progressTimestamps =
+          user.progressTimestamps as ProgressTimestamp[];
+        const oldChallenge = completedChallenges.find(
+          ({ id }) => id === challengeId
+        );
+        const alreadyCompleted = !!oldChallenge;
+        const completedDate = alreadyCompleted
+          ? oldChallenge.completedDate
+          : Date.now();
+
+        if (!alreadyCompleted) {
+          const newChallenge = {
+            id: challengeId,
+            completedDate,
+            solution: msGameStatusApi
+          };
+          await fastify.prisma.user.update({
+            where: { id: req.session.user.id },
+            data: {
+              completedChallenges: {
+                push: newChallenge
+              },
+              progressTimestamps: [...progressTimestamps, completedDate]
+            }
+          });
+        }
+
+        return {
+          alreadyCompleted,
+          points: getPoints(progressTimestamps) + (alreadyCompleted ? 0 : 1),
+          completedDate
+        };
+      } catch (error) {
+        fastify.log.error(error);
+        void reply.code(500);
+        return {
+          type: 'error',
+          message: 'flash.ms.trophy.err-5'
+        } as const;
+      }
     }
   );
 

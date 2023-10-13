@@ -608,7 +608,11 @@ export const schemas = {
             msUsername: Type.String()
           })
         })
-      ])
+      ]),
+      500: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.trophy.err-5')
+      })
     }
   },
   saveChallenge: {

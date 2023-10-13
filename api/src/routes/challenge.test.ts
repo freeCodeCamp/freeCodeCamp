@@ -1135,6 +1135,10 @@ describe('challengeRoutes', () => {
           type: 'error',
           message: 'flash.ms.trophy.err-4'
         } as const;
+        const unexpectedError = {
+          type: 'error',
+          message: 'flash.ms.trophy.err-5'
+        } as const;
 
         const mockProfileResponse = () =>
           Promise.resolve({
@@ -1205,6 +1209,7 @@ describe('challengeRoutes', () => {
             });
           }
           afterEach(async () => {
+            mockedFetch.mockReset();
             await fastifyTestInstance.prisma.msUsername.deleteMany({
               where: { userId: defaultUserId }
             });
@@ -1330,7 +1335,21 @@ describe('challengeRoutes', () => {
             expect(mockedFetch).toHaveBeenNthCalledWith(2, gamestatusUrl);
           });
 
-          test.todo('Test unexpected error handling');
+          test('POST handle expected errors', async () => {
+            mockedFetch.mockImplementationOnce(() => {
+              throw new Error('Network error');
+            });
+            const msUsername = 'ANRandom';
+            await createMSUsernameRecord(msUsername);
+
+            const res = await superRequest('/ms-trophy-challenge-completed', {
+              method: 'POST',
+              setCookies
+            }).send({ id: trophyChallengeId });
+
+            expect(res.body).toStrictEqual(unexpectedError);
+            expect(res.statusCode).toBe(500);
+          });
 
           test('POST updates the user record with a new completed challenge', async () => {
             mockedFetch.mockImplementationOnce(mockProfileResponse);
@@ -1350,6 +1369,17 @@ describe('challengeRoutes', () => {
               });
             const completedDate = user.completedChallenges[0]?.completedDate;
 
+            expect(res.body).toStrictEqual({
+              alreadyCompleted: false,
+              points: 1,
+              completedDate
+            });
+
+            // TODO: use a custom matcher for thisu
+            expect(completedDate).toBeGreaterThan(now);
+            expect(completedDate).toBeLessThan(now + 1000);
+            expect(res.statusCode).toBe(200);
+
             expect(user).toMatchObject({
               completedChallenges: [
                 {
@@ -1359,15 +1389,6 @@ describe('challengeRoutes', () => {
                 }
               ]
             });
-            // TODO: use a custom matcher for this
-            expect(completedDate).toBeGreaterThan(now);
-            expect(completedDate).toBeLessThan(now + 1000);
-            expect(res.body).toStrictEqual({
-              alreadyCompleted: false,
-              points: 1,
-              completedDate
-            });
-            expect(res.statusCode).toBe(200);
           });
 
           it('POST correctly handles multiple requests', async () => {
