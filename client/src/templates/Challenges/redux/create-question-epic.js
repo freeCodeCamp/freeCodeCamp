@@ -94,8 +94,7 @@ function createQuestionEpic(action$, state$, { window }) {
       });
       const challengeHeading = i18next.t('forum-help.challenge');
       const blockTitle = i18next.t(`intro:${superBlock}.blocks.${block}.title`);
-      const challengeLinkHeading = i18next.t('forum-help.challenge-link');
-      const endingText = `### ${browserInfoHeading}\n\n${userAgentHeading}\n\n### ${challengeHeading} ${blockTitle} - ${challengeTitle}\n\n${challengeLinkHeading}\n${challengeUrl}`;
+      const endingText = `### ${browserInfoHeading}\n\n${userAgentHeading}\n\n### ${challengeHeading}\n${blockTitle} - ${challengeTitle}\n${challengeUrl}`;
 
       const camperCodeHeading = i18next.t('forum-help.camper-code');
 
