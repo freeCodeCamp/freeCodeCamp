@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Email sign-up page', () => {
 
-  test('The page renders with correct title', async () => {
+  test('The page renders with correct title', async ({ page }) => {
     await expect(page).toHaveTitle(
         `Email Sign Up | freeCodeCamp.org`
       );
