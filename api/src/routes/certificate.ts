@@ -62,7 +62,20 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/certificate/verify',
     {
-      schema: schemas.certificateVerify
+      schema: schemas.certificateVerify,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400).send({
+            response: {
+              type: 'danger',
+              message: 'flash.wrong-name',
+              variables: { name: '' }
+            }
+          });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
     },
     async (req, reply) => {
       const { certSlug } = req.body;

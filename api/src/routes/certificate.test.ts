@@ -52,10 +52,14 @@ describe('certificate routes', () => {
           method: 'PUT',
           setCookies
         }).send({ certSlug: undefined });
+
         expect(response.body).toMatchObject({
-          code: 'FST_ERR_FAILED_ERROR_SERIALIZATION'
+          response: {
+            message: 'flash.wrong-name',
+            variables: { name: '' }
+          }
         });
-        expect(response.status).toBe(500);
+        expect(response.status).toBe(400);
       });
 
       test('should return 400 if certSlug is invalid', async () => {
