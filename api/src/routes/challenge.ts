@@ -554,57 +554,13 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         // TODO: log error if msTrophyId not found?
         const msTrophyId = challenge.msTrophyId ?? '';
 
-        const msProfileApi = `https://learn.microsoft.com/api/profiles/${msUsername}`;
-        const msProfileApiRes = await fetch(msProfileApi);
+        const msTrophyStatus = await verifyTrophyWithMicrosoft({
+          msUsername,
+          msTrophyId
+        });
 
-        if (!msProfileApiRes.ok) {
-          return reply.code(403).send({
-            type: 'error',
-            message: 'flash.ms.profile.err',
-            variables: {
-              msUsername
-            }
-          });
-        }
-
-        const { userId } = (await msProfileApiRes.json()) as {
-          userId: string;
-        };
-
-        // TODO: DRY the error response, but make sure not to call .json() twice
-        if (!userId) {
-          return reply.code(403).send({
-            type: 'error',
-            message: 'flash.ms.profile.err',
-            variables: {
-              msUsername
-            }
-          });
-        }
-
-        const msGameStatusApi = `https://learn.microsoft.com/api/gamestatus/${userId}`;
-        const msGameStatusApiRes = await fetch(msGameStatusApi);
-
-        if (!msGameStatusApiRes.ok) {
-          return reply.code(403).send({
-            type: 'error',
-            message: 'flash.ms.trophy.err-3'
-          });
-        }
-
-        const { achievements } = (await msGameStatusApiRes.json()) as {
-          achievements?: { awardUid: string }[];
-        };
-        const earnedTrophy = achievements?.some(a => a.awardUid === msTrophyId);
-
-        if (!earnedTrophy) {
-          return reply.code(403).send({
-            type: 'error',
-            message: 'flash.ms.trophy.err-4',
-            variables: {
-              msUsername
-            }
-          });
+        if (msTrophyStatus.type === 'error') {
+          return reply.code(403).send(msTrophyStatus);
         }
 
         const user = await fastify.prisma.user.findUniqueOrThrow({
@@ -627,7 +583,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           const newChallenge = {
             id: challengeId,
             completedDate,
-            solution: msGameStatusApi
+            solution: msTrophyStatus.msGameStatusApiUrl
           };
           await fastify.prisma.user.update({
             where: { id: req.session.user.id },
@@ -658,3 +614,60 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
   done();
 };
+
+async function verifyTrophyWithMicrosoft({
+  msUsername,
+  msTrophyId
+}: {
+  msUsername: string;
+  msTrophyId: string;
+}) {
+  const msProfileApi = `https://learn.microsoft.com/api/profiles/${msUsername}`;
+  const msProfileApiRes = await fetch(msProfileApi);
+
+  const profileError = {
+    type: 'error',
+    message: 'flash.ms.profile.err',
+    variables: {
+      msUsername
+    }
+  } as const;
+
+  if (!msProfileApiRes.ok) return profileError;
+
+  const { userId } = (await msProfileApiRes.json()) as {
+    userId: string;
+  };
+
+  if (!userId) return profileError;
+
+  const msGameStatusApiUrl = `https://learn.microsoft.com/api/gamestatus/${userId}`;
+  const msGameStatusApiRes = await fetch(msGameStatusApiUrl);
+
+  if (!msGameStatusApiRes.ok) {
+    return {
+      type: 'error',
+      message: 'flash.ms.trophy.err-3'
+    } as const;
+  }
+
+  const { achievements } = (await msGameStatusApiRes.json()) as {
+    achievements?: { awardUid: string }[];
+  };
+  const earnedTrophy = achievements?.some(a => a.awardUid === msTrophyId);
+
+  if (!earnedTrophy) {
+    return {
+      type: 'error',
+      message: 'flash.ms.trophy.err-4',
+      variables: {
+        msUsername
+      }
+    } as const;
+  }
+
+  return {
+    type: 'success',
+    msGameStatusApiUrl
+  } as const;
+}
