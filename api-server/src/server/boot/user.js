@@ -140,8 +140,7 @@ function createPostMsUsername(app) {
       });
     }
 
-    const msTranscriptId = getMsTranscriptApiUrl(msTranscriptUrl);
-    const msTranscriptApiUrl = `https://learn.microsoft.com/api/profiles/transcript/share/${msTranscriptId}`;
+    const msTranscriptApiUrl = getMsTranscriptApiUrl(msTranscriptUrl);
 
     try {
       const msApiRes = await fetch(msTranscriptApiUrl);
