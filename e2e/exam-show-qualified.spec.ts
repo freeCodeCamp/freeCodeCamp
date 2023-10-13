@@ -1,32 +1,28 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import intro from '../client/i18n/locales/english/intro.json';
 import translations from '../client/i18n/locales/english/translations.json';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-let page: Page;
 const examUrl =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';
 
-test.afterAll(async () => {
+test.afterAll(async ({ page }) => {
   await page.close();
 });
 
-test.beforeAll(async ({ browser }) => {
-  page = await browser.newPage();
-});
-
-test.beforeEach(async () => {
+test.beforeEach(async ({ page }) => {
   await page.goto(examUrl);
 });
+
 test.describe('Exam Show E2E Test Suite for qualified user', () => {
-  test('The page renders with correct title', async () => {
+  test('The page renders with correct title', async ({ page }) => {
     await expect(page).toHaveTitle(
       'Foundational C# with Microsoft Certification Exam: Foundational C# with Microsoft Certification Exam | freeCodeCamp.org'
     );
   });
 
-  test('The page has correct header', async () => {
+  test('The page has correct header', async ({ page }) => {
     const header = page.getByTestId('challenge-title');
     await expect(header).toBeVisible();
     await expect(header).toContainText(
@@ -36,7 +32,7 @@ test.describe('Exam Show E2E Test Suite for qualified user', () => {
     );
   });
 
-  test('The page has qualified for exam alert ', async () => {
+  test('The page has qualified for exam alert ', async ({ page }) => {
     await expect(
       page.getByText(translations.learn.exam['not-qualified'])
     ).not.toBeVisible();
@@ -45,7 +41,7 @@ test.describe('Exam Show E2E Test Suite for qualified user', () => {
     ).toBeVisible();
   });
 
-  test('Verifies the Correct Rendering of the Exam show', async () => {
+  test('Verifies the Correct Rendering of the Exam show', async ({ page }) => {
     const startExam = page.getByRole('button', {
       name: translations.buttons['click-start-exam']
     });
@@ -58,7 +54,9 @@ test.describe('Exam Show E2E Test Suite for qualified user', () => {
     ).toBeVisible();
   });
 
-  test('Exam Show When the User clicks on Start exam button', async () => {
+  test('Exam Show When the User clicks on Start exam button', async ({
+    page
+  }) => {
     await page
       .getByRole('button', {
         name: translations.buttons['click-start-exam']

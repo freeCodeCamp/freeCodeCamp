@@ -26,8 +26,9 @@ test.describe('Exam Show E2E Test Suite for non-qualified user', () => {
     );
   });
 
-  test('The page has non-qualified for exam alert ', async ({ page }) => {
-    await page.goto(examUrl);
+  test('The page has an alert informing the user of their eligibility', async ({
+    page
+  }) => {
     await expect(
       page.getByText(translations.learn.exam.qualified)
     ).not.toBeVisible();

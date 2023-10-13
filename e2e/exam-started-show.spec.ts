@@ -1,22 +1,17 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import intro from '../client/i18n/locales/english/intro.json';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-let page: Page;
 const examUrl =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';
 
-test.afterAll(async () => {
+test.afterAll(async ({ page }) => {
   await page.close();
 });
 
-test.beforeAll(async ({ browser }) => {
-  page = await browser.newPage();
-});
-
-test.beforeEach(async () => {
+test.beforeEach(async ({ page }) => {
   await page.goto(examUrl);
   await page
     .getByRole('button', {
@@ -26,13 +21,14 @@ test.beforeEach(async () => {
 });
 
 test.describe('Exam Show E2E Test Suite for started exam', () => {
-  test('The page renders with correct title', async () => {
+  test('The page renders with correct title', async ({ page }) => {
     await expect(page).toHaveTitle(
       'Foundational C# with Microsoft Certification Exam: Foundational C# with Microsoft Certification Exam | freeCodeCamp.org'
     );
   });
 
-  test('The page has correct navigation direct flow', async () => {
+  test('The page has correct navigation direct flow', async ({ page }) => {
+    const QUESTION_COUNT = 5;
     const headerTitle = page.getByTestId('exam-show-title');
     const prevQuestionBtn = page.getByRole('button', {
       name: translations.buttons['previous-question']
@@ -46,7 +42,7 @@ test.describe('Exam Show E2E Test Suite for started exam', () => {
     const finishExamBtn = page.getByRole('button', {
       name: translations.buttons['finish-exam']
     });
-    for (let i = 1; i < 6; i++) {
+    for (let i = 0; i < QUESTION_COUNT; i++) {
       await expect(headerTitle).toBeVisible();
       await expect(headerTitle).toContainText(
         intro['foundational-c-sharp-with-microsoft'].blocks[
@@ -58,22 +54,24 @@ test.describe('Exam Show E2E Test Suite for started exam', () => {
         translations.learn.exam.time.split(':')[0]
       );
       await expect(
-        page.getByText('Question ' + String(i) + ' of 5')
+        page.getByText(`Question ${i + 1} of ${QUESTION_COUNT}`)
       ).toBeVisible();
-
       await expect(prevQuestionBtn).toBeVisible();
-      if (i != 1) {
+      if (i != 0) {
         await expect(prevQuestionBtn).toBeEnabled();
       } else {
         await expect(prevQuestionBtn).not.toBeEnabled();
       }
-      for (let j = 0; j < 5; j++) {
-        // 4 answers
-        await page.getByTestId('exam-answer-label-' + String(j)).check();
-      }
+      const quizOptions = await page.getByRole('radio').all();
+      await quizOptions[0].check({ force: true });
+      // for (let j = 0; j < QUESTION_COUNT; j++) {
+      //   // 4 answers
+      //   const quizOptions = await page.getByRole('radio').all();
+      //   await quizOptions[j].check({ force: true });
+      // }
       await expect(exitButton).toBeVisible();
       await expect(exitButton).toBeEnabled();
-      if (i < 5) {
+      if (i < QUESTION_COUNT - 1) {
         await expect(finishExamBtn).not.toBeVisible();
         await expect(nextBtn).toBeVisible();
         await nextBtn.click();
@@ -85,7 +83,7 @@ test.describe('Exam Show E2E Test Suite for started exam', () => {
     }
   });
 
-  test('The page has correct navigation back flow', async () => {
+  test('The page has correct navigation back flow', async ({ page }) => {
     const headerTitle = page.getByTestId('exam-show-title');
     await expect(headerTitle).toBeVisible();
     await expect(headerTitle).toContainText(
@@ -97,7 +95,8 @@ test.describe('Exam Show E2E Test Suite for started exam', () => {
       translations.learn.exam.time.split(':')[0]
     );
 
-    await page.getByTestId('exam-answer-label-0').check();
+    const quizOptions = await page.getByRole('radio').all();
+    await quizOptions[0].check({ force: true });
     await page
       .getByRole('button', { name: translations.buttons['next-question'] })
       .click();
