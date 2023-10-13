@@ -6,5 +6,5 @@ import { sagas as settingsSagas } from './settings';
 import { sagas as appSagas } from '.';
 
 export default function* rootSaga() {
-  yield all([...errorSagas, ...appSagas, ...challengeSagas, ...settingsSagas]);
+  yield all([...errorSagas, ...appSagas, ...challengeSagas, ...settingsSagas,...confettiSaga]);
 }
