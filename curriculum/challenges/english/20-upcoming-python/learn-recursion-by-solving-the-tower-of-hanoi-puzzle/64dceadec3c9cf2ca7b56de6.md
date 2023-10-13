@@ -7,7 +7,7 @@ dashedName: step-23
 
 # --description--
 
-Next, add an `if` statement to execute when `forward` is `True`. Inside this conditional, print the following f-string: `f'Moving disk {rods[source][-1]} from {source} to {target}'`.
+Next, below the nested `elif` statement, add another `if` statement to execute when `forward` is `True`. Inside this conditional, print the following f-string: `f'Moving disk {rods[source][-1]} from {source} to {target}'`.
 
 # --hints--
 
