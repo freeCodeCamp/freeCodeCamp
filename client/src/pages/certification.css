@@ -309,11 +309,15 @@
 
   .certification-namespace h3,
   .certification-namespace h4 {
-    font-size: 20px;
+    font-size: 4vw;
   }
 
   .certification-namespace h1 {
-    font-size: 25px;
+    font-size: 6vw;
+  }
+
+  .certification-namespace .signatures {
+    margin: 2rem auto;
   }
 }
 
