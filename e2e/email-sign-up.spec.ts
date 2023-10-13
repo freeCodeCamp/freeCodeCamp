@@ -19,8 +19,8 @@ test.describe('Email sign-up page', () => {
 
   test('The page renders the correct content', async ({ page }) => {
       await expect(
-        page.locator(
-          "text=freeCodeCamp is a proven path to your first software developer job."
+        page.getByText(
+          'freeCodeCamp is a proven path to your first software developer job.
         )
       ).toBeVisible();
 });
