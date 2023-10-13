@@ -10,7 +10,7 @@ dashedName: catch-misspelled-variable-and-function-names
 
 `console.log()` と `typeof` メソッドの 2 つは、中間値やプログラム出力の型を確認する場合によく使用されます。 よくあるバグの原因として、 スペルミスがあります。タイピングの速い人が起こしがちな構文レベルの問題の 1 つです。
 
-変数名や関数名の文字が、入れ替わっていたり、不足していたり、大文字小文字が間違っていたりすると、ブラウザーで存在しないオブジェクトが検索され、結果として参照エラーという形でエラーが表示されます。 JavaScript の変数名や関数名は大文字と小文字が区別されます。
+Transposed, missing, or miscapitalized characters in a variable or function name will have the browser looking for an object that doesn't exist - and complain in the form of a reference error. JavaScript の変数名や関数名は大文字と小文字が区別されます。
 
 # --instructions--
 

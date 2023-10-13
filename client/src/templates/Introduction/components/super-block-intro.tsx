@@ -16,7 +16,14 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
     title: string;
     intro: string[];
     note: string;
-  } = t(`intro:${superBlock}`);
+  } = t<
+    string,
+    string & {
+      title: string;
+      intro: string[];
+      note: string;
+    }
+  >(`intro:${superBlock}`);
   const {
     title: i18nSuperBlock,
     intro: superBlockIntroText,

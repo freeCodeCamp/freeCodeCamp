@@ -80,7 +80,7 @@ $PA = LU$
 
 # --instructions--
 
-Завдання полягає в тому, щоб реалізувати процедуру, яка знайде матрицю nxn $A$ і поверне нижчу трикутну матрицю $L$, верхню трикутну матрицю $U$ і матрицю перестановки $P$, так, щоб розв'язати вищезгадане рівняння. Повернене значення має бути у вигляді `[L, U, P]`.
+The task is to implement a routine which will take a square nxn matrix $A$ and return a lower triangular matrix $L$, a upper triangular matrix $U$ and a permutation matrix $P$, so that the above equation is fulfilled. Повернене значення має бути у вигляді `[L, U, P]`.
 
 # --hints--
 

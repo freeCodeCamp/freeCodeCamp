@@ -1,4 +1,3 @@
-import { ListGroup, ListGroupItem } from '@freecodecamp/react-bootstrap';
 import { Link, graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
@@ -14,15 +13,15 @@ import './intro.css';
 
 function Challenges({ challengeNodes }: { challengeNodes: AllChallengeNode }) {
   return (
-    <ListGroup className='intro-toc'>
+    <ul className='intro-toc'>
       {challengeNodes.edges
         .map(({ node: { challenge } }) => challenge)
         .map(({ title, fields: { slug } }) => (
-          <ListGroupItem key={'intro-' + slug}>
+          <li key={'intro-' + slug}>
             <Link to={slug}>{title}</Link>
-          </ListGroupItem>
+          </li>
         ))}
-    </ListGroup>
+    </ul>
   );
 }
 
