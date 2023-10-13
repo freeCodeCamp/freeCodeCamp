@@ -6,10 +6,6 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test.describe('Challenge Description Component Tests', () => {
   test('should be visible', async ({ page }) => {
     const challengeDescription = page.getByTestId('challenge-description');

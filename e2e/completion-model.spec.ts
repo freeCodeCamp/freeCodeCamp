@@ -11,10 +11,6 @@ test.beforeEach(async ({ page }) => {
     .click();
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
   test('should render the modal correctly', async ({ page }) => {
     await expect(page.getByRole('heading')).toBeVisible();
