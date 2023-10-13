@@ -6,10 +6,6 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test.describe('Challenge Video Player Component Tests', () => {
   test('should render video player and play button', async ({ page }) => {
     await expect(
