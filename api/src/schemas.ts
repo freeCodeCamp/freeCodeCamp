@@ -592,7 +592,18 @@ export const schemas = {
         }),
         Type.Object({
           type: Type.Literal('error'),
-          message: Type.Literal('flash.ms.trophy.err-3'),
+          message: Type.Literal('flash.ms.trophy.err-3')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.trophy.err-4'),
+          variables: Type.Object({
+            msUsername: Type.String()
+          })
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.profile.err'),
           variables: Type.Object({
             msUsername: Type.String()
           })

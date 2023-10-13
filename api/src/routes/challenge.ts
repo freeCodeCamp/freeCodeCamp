@@ -552,17 +552,54 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
       // TODO: log error if msTrophyId not found?
       const msTrophyId = challenge.msTrophyId ?? '';
-      const msTrophyApiUrl = `https://learn.microsoft.com/api/gamestatus/achievements/${msTrophyId}?username=${msUsername}&locale=en-us`;
-      const msApiRes = await fetch(msTrophyApiUrl);
 
-      if (
-        !msApiRes.ok ||
-        ((await msApiRes.json()) as { awardType: string }).awardType !==
-          'Trophy'
-      ) {
+      const msProfileApi = `https://learn.microsoft.com/api/profiles/${msUsername}`;
+      const msProfileApiRes = await fetch(msProfileApi);
+
+      if (!msProfileApiRes.ok) {
         return reply.code(403).send({
           type: 'error',
-          message: 'flash.ms.trophy.err-3',
+          message: 'flash.ms.profile.err',
+          variables: {
+            msUsername
+          }
+        });
+      }
+
+      const { userId } = (await msProfileApiRes.json()) as {
+        userId: string;
+      };
+
+      // TODO: DRY the error response, but make sure not to call .json() twice
+      if (!userId) {
+        return reply.code(403).send({
+          type: 'error',
+          message: 'flash.ms.profile.err',
+          variables: {
+            msUsername
+          }
+        });
+      }
+
+      const msGameStatusApi = `https://learn.microsoft.com/api/gamestatus/${userId}`;
+      const msGameStatusApiRes = await fetch(msGameStatusApi);
+
+      if (!msGameStatusApiRes.ok) {
+        return reply.code(403).send({
+          type: 'error',
+          message: 'flash.ms.trophy.err-3'
+        });
+      }
+
+      const { achievements } = (await msGameStatusApiRes.json()) as {
+        achievements?: { awardUid: string }[];
+      };
+      const earnedTrophy = achievements?.some(a => a.awardUid === msTrophyId);
+
+      if (!earnedTrophy) {
+        return reply.code(403).send({
+          type: 'error',
+          message: 'flash.ms.trophy.err-4',
           variables: {
             msUsername
           }
@@ -588,7 +625,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const newChallenge = {
           id: challengeId,
           completedDate,
-          solution: msTrophyApiUrl
+          solution: msGameStatusApi
         };
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
