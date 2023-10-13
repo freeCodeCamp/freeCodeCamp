@@ -58,7 +58,7 @@ play(player, quincy, 1000, verbose=True)
 
 ## Надсилання
 
-Copy your project's URL and submit it to freeCodeCamp.
+Скопіюйте URL-адресу свого проєкту та відправте її до freeCodeCamp.
 
 # --hints--
 
