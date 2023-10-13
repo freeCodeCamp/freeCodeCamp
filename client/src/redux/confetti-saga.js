@@ -1,0 +1,2 @@
+export const CONFETTI_START = 'CONFETTI_START';
+export const CONFETTI_STOP = 'CONFETTI_STOP';
