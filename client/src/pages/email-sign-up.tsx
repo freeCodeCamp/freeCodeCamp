@@ -61,7 +61,7 @@ function EmailListOptIn({
   const { t } = useTranslation();
   if (isSignedIn) {
     return (
-      <Row data-playwright-test-label="user-email-buttons">
+      <Row data-playwright-test-label='user-email-buttons'>
         <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
           <Button
             block={true}
