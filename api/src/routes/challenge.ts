@@ -615,16 +615,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
   done();
 };
 
-async function verifyTrophyWithMicrosoft({
-  msUsername,
-  msTrophyId
-}: {
-  msUsername: string;
-  msTrophyId: string;
-}) {
-  const msProfileApi = `https://learn.microsoft.com/api/profiles/${msUsername}`;
-  const msProfileApiRes = await fetch(msProfileApi);
-
+async function getMSProfile(msUsername: string) {
   const profileError = {
     type: 'error',
     message: 'flash.ms.profile.err',
@@ -633,15 +624,38 @@ async function verifyTrophyWithMicrosoft({
     }
   } as const;
 
+  const msProfileApi = `https://learn.microsoft.com/api/profiles/${msUsername}`;
+  const msProfileApiRes = await fetch(msProfileApi);
+
   if (!msProfileApiRes.ok) return profileError;
 
   const { userId } = (await msProfileApiRes.json()) as {
     userId: string;
   };
 
-  if (!userId) return profileError;
+  return userId ? ({ type: 'success', userId } as const) : profileError;
+}
 
-  const msGameStatusApiUrl = `https://learn.microsoft.com/api/gamestatus/${userId}`;
+/**
+ * Handles all communication with the Microsoft Learn APIs.
+ *
+ * @param requestData The data needed by the Microsoft Learn APIs.
+ * @param requestData.msUsername The Microsoft username used to get the profile.
+ * @param requestData.msTrophyId The Microsoft trophy ID to verify.
+ * @returns An object with 'type' of success|error and information about the success or failure.
+ */
+export async function verifyTrophyWithMicrosoft({
+  msUsername,
+  msTrophyId
+}: {
+  msUsername: string;
+  msTrophyId: string;
+}) {
+  const msProfile = await getMSProfile(msUsername);
+
+  if (msProfile.type === 'error') return msProfile;
+
+  const msGameStatusApiUrl = `https://learn.microsoft.com/api/gamestatus/${msProfile.userId}`;
   const msGameStatusApiRes = await fetch(msGameStatusApiUrl);
 
   if (!msGameStatusApiRes.ok) {
@@ -656,7 +670,12 @@ async function verifyTrophyWithMicrosoft({
   };
   const earnedTrophy = achievements?.some(a => a.awardUid === msTrophyId);
 
-  if (!earnedTrophy) {
+  if (earnedTrophy) {
+    return {
+      type: 'success',
+      msGameStatusApiUrl
+    } as const;
+  } else {
     return {
       type: 'error',
       message: 'flash.ms.trophy.err-4',
@@ -665,9 +684,4 @@ async function verifyTrophyWithMicrosoft({
       }
     } as const;
   }
-
-  return {
-    type: 'success',
-    msGameStatusApiUrl
-  } as const;
 }
