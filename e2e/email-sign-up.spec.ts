@@ -1,12 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test.beforeAll(async ({ browser }) => {
-  page = await browser.newPage();
+test.beforeEach(async ({ page }) => {
   await page.goto('/email-sign-up');
-});
-
-test.afterAll(async () => {
-  await page.close();
 });
 
 test.describe('Email sign-up page', () => {
