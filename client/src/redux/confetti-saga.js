@@ -1,14 +1,11 @@
-import { takeEvery, put } from 'redux-saga/effects';
-import { CONFETTI_ACTION, showConfetti, hideConfetti } from './actions'; // Import relevant actions
+import { takeEvery, put, delay, all } from 'redux-saga/effects'; // Import 'all' from 'redux-saga/effects'
+import { CONFETTI_ACTION, showConfetti, hideConfetti } from './actions';
 
 function* confettiLogic() {
-  // Add the logic to show the confetti here, for example:
   yield put(showConfetti());
 
-  // Simulate confetti for a few seconds
-  yield delay(5000); // You might need to import 'delay' from 'redux-saga/effects' or implement it differently
+  yield delay(5000);
 
-  // Hide the confetti after a certain duration
   yield put(hideConfetti());
 }
 
@@ -19,3 +16,4 @@ function* watchConfettiAction() {
 export default function* confettiSaga() {
   yield all([watchConfettiAction()]);
 }
+
