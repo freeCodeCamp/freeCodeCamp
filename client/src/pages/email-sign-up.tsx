@@ -152,9 +152,7 @@ function AcceptPrivacyTerms({
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Spacer size='small' />
-            <IntroDescription 
-            data-playwright-test-label="learn-read-this-section"
-            />
+            <IntroDescription data-playwright-test-label='learn-read-this-section' />
             <hr />
           </Col>
         </Row>
