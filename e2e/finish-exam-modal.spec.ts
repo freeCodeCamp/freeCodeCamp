@@ -58,7 +58,7 @@ test.describe('Finish Exit exam Modal E2E Test Suite', () => {
     ).toBeVisible();
   });
 
-  test('Closes the Finish Exit exam Modal When the User clicks on finish-no button', async ({
+  test('Closes the Finish Exit exam Modal When the User clicks on exit-no button', async ({
     page
   }) => {
     await page
