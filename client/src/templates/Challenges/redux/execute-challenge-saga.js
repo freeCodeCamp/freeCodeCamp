@@ -35,6 +35,7 @@ import {
 } from '../utils/build';
 import { runPythonInFrame, mainPreviewId } from '../utils/frame';
 import { executeGA } from '../../../redux/actions';
+import { fireConfetti } from '../../../utils/fire-confetti';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
@@ -52,6 +53,7 @@ import {
   challengeMetaSelector,
   challengeTestsSelector,
   isBuildEnabledSelector,
+  completedPercentageSelector,
   isExecutingSelector,
   portalDocumentSelector
 } from './selectors';
@@ -109,6 +111,8 @@ function* executeChallengeSaga({ payload }) {
 
     const challengeData = yield select(challengeDataSelector);
     const challengeMeta = yield select(challengeMetaSelector);
+    const completedPercent = yield select(completedPercentageSelector);
+
     const buildData = yield buildChallengeData(challengeData, {
       preview: false,
       disableLoopProtectTests: challengeMeta.disableLoopProtectTests,
@@ -128,6 +132,9 @@ function* executeChallengeSaga({ payload }) {
     const challengeComplete = testResults.every(test => test.pass && !test.err);
     if (challengeComplete) {
       playTone('tests-completed');
+      if (completedPercent === 100) {
+        fireConfetti();
+      }
     } else {
       playTone('tests-failed');
       if (challengeMeta.certification === 'responsive-web-design') {
