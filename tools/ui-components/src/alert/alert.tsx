@@ -27,7 +27,7 @@ export const Alert = ({
   const variantClass = variantClasses[variant];
 
   const classes = [
-    'p-4 mb-6 border border-solid border-1 break-words',
+    'px-4 py-1 mb-6 border border-solid border-1 break-words',
     variantClass,
     className
   ].join(' ');

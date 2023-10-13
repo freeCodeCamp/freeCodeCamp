@@ -13,9 +13,10 @@ type FlashProps = {
 };
 
 function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
-  const { type, message, id, variables } = flashMessage;
+  const { type, message, id, variables = {} } = flashMessage;
   const { t } = useTranslation();
 
+  // The flash type returned from the API is 'error' and needs to be mapped to 'danger'.
   const flashStyle =
     type === 'error' ? 'danger' : (type as AlertProps['variant']);
 
@@ -25,7 +26,7 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
 
   return (
     <TransitionGroup>
-      <CSSTransition classNames='flash-message' key={id} timeout={500}>
+      <CSSTransition key={id} timeout={500}>
         <Alert
           variant={flashStyle}
           className='flash-message'
