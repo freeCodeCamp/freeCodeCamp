@@ -75,6 +75,7 @@ function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
           block={true}
           bsSize='large'
           bsStyle='danger'
+          data-playwright-test-label='reset-lesson-btn'
           onClick={withActions(reset, close)}
         >
           {t('buttons.reset-lesson')}
