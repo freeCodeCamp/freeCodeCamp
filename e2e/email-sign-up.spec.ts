@@ -20,7 +20,7 @@ test.describe('Email sign-up page', () => {
       ).toBeVisible();
 });
 
-  test('The sign up button renders and functions', async() => {
+  test('The sign up button renders and functions', async({ page }) => {
     const button = page.getByTestId('email-sign-up-button')
 
     await expect(button).toBeVisible()
