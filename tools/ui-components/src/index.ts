@@ -2,7 +2,7 @@
 // export { Button } from './button';
 export { Alert, type AlertProps } from './alert';
 export { CloseButton } from './close-button';
-// export { Image } from './image';
+export { Image } from './image';
 export { Table } from './table';
 export { Panel } from './panel';
 // export { ToggleButton } from './toggle-button';
