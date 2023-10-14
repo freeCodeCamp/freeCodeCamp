@@ -6,12 +6,9 @@ import {
   SuperBlockStages,
   superBlockOrder
 } from '../shared/config/superblocks';
+
 test.beforeEach(async ({ page }) => {
   await page.goto('/learn');
-});
-
-test.afterEach(async ({ page }) => {
-  await page.close();
 });
 
 const superBlocksWithLinks = [
@@ -22,8 +19,8 @@ const superBlocksWithLinks = [
   ...superBlockOrder[SuperBlockStages.Extra]
 ];
 
-test.describe('Map Component E2E Test Suite', () => {
-  test('Verifies the headings', async ({ page }) => {
+test.describe('Map Component', () => {
+  test('should render correctly', async ({ page }) => {
     await expect(
       page.getByText(translations.landing['core-certs-heading'])
     ).toBeVisible();
@@ -33,11 +30,6 @@ test.describe('Map Component E2E Test Suite', () => {
     await expect(
       page.getByText(translations.landing['interview-prep-heading'])
     ).toBeVisible();
-  });
-
-  test('verifies all the certifications links rendered correctly', async ({
-    page
-  }) => {
     const curriculumBtns = page.getByTestId('curriculum-map-button');
     await expect(curriculumBtns).toHaveCount(15);
     for (let i = 0; i < superBlocksWithLinks.length; i++) {
