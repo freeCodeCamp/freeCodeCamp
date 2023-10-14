@@ -54,7 +54,8 @@ import {
   challengeTestsSelector,
   isBuildEnabledSelector,
   isExecutingSelector,
-  portalDocumentSelector
+  portalDocumentSelector,
+  isBlockNewlyCompletedSelector
 } from './selectors';
 
 // How long before bailing out of a preview.
@@ -127,9 +128,12 @@ function* executeChallengeSaga({ payload }) {
     yield put(updateTests(testResults));
 
     const challengeComplete = testResults.every(test => test.pass && !test.err);
+    const isBlockCompleted = yield select(isBlockNewlyCompletedSelector);
     if (challengeComplete) {
       playTone('tests-completed');
-      fireConfetti();
+      if (isBlockCompleted) {
+        fireConfetti();
+      }
     } else {
       playTone('tests-failed');
       if (challengeMeta.certification === 'responsive-web-design') {
