@@ -167,7 +167,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       return {
         state: 'error',
         message: t('validation.invalid-protocol')
-      } as const;
+      };
     }
     if (isImage && !maybeUrl) {
       return { state: null, message: '' };
