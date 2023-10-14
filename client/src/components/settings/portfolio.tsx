@@ -170,17 +170,17 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       } as const;
     }
     if (isImage && !maybeUrl) {
-      return { state: null, message: '' } as const;
+      return { state: null, message: '' };
     }
     if (isImage && !/\.(png|jpg|jpeg|gif)$/.test(maybeUrl)) {
       return {
         state: 'error',
         message: t('validation.url-not-image')
-      } as const;
+      };
     }
     return isURL(maybeUrl)
-      ? ({ state: 'success', message: '' } as const)
-      : ({ state: 'warning', message: t('validation.use-valid-url') } as const);
+      ? { state: 'success', message: '' }
+      : { state: 'warning', message: t('validation.use-valid-url') };
   }
 
   formCorrect(portfolio: PortfolioProjectData) {
