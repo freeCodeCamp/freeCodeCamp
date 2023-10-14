@@ -10,10 +10,6 @@ test.beforeEach(async ({ page }) => {
   await page.getByTestId('watch-a-video').click();
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test.describe('Exit Video Modal E2E Test Suite', () => {
   test('Verifies the Correct Rendering of the Video Modal', async ({
     page

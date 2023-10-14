@@ -14,9 +14,6 @@ test.beforeEach(async ({ page }) => {
     '/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form'
   );
 });
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
 
 function getActionRowLocator(page: Page): Locator {
   return page.getByTestId('action-row');
