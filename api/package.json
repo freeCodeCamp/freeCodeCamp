@@ -23,6 +23,7 @@
     "fastify": "4.21.0",
     "fastify-auth0-verify": "1.2.0",
     "fastify-plugin": "4.5.1",
+    "joi": "17.9.2",
     "jsonwebtoken": "9.0.2",
     "lodash": "4.17.21",
     "mongodb": "4.17.1",
@@ -31,8 +32,8 @@
     "nodemailer": "6.9.5",
     "nodemon": "2.0.22",
     "pino-pretty": "10.2.0",
-    "stripe": "8.205.0",
-    "query-string": "7.1.3"
+    "query-string": "7.1.3",
+    "stripe": "8.205.0"
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
