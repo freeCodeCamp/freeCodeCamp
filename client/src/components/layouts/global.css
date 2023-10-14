@@ -470,11 +470,6 @@ code {
   white-space: break-spaces;
 }
 
-.panel {
-  border-radius: 0;
-  background-color: transparent;
-}
-
 hr {
   border-top: 1px solid var(--quaternary-background);
 }
@@ -511,10 +506,6 @@ hr {
   background-color: var(--tertiary-background);
 }
 
-.panel-default > .panel-heading {
-  background-color: transparent;
-}
-
 .challenge-output span {
   font-size: 1rem;
 }
@@ -536,19 +527,9 @@ pre {
   border-radius: 0;
 }
 
-.panel-primary > .panel-heading {
-  background-color: transparent;
-  border-color: var(--primary-color);
-  color: var(--primary-color);
-}
-
 .solution-viewer,
 .solution-viewer pre {
   margin-bottom: 0;
-}
-
-.panel-primary {
-  border-color: var(--primary-color);
 }
 
 blockquote footer,

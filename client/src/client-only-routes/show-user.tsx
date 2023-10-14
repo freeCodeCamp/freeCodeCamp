@@ -1,4 +1,4 @@
-import { Panel, Button } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
@@ -9,6 +9,7 @@ import {
   FormGroup,
   FormControl,
   ControlLabel,
+  Panel,
   Col,
   Row
 } from '@freecodecamp/ui';
@@ -83,11 +84,9 @@ function ShowUser({
       <main>
         <FullWidthRow>
           <Spacer size='large' />
-          <Panel bsStyle='info' className='text-center'>
+          <Panel variant='primary' className='text-center'>
             <Panel.Heading>
-              <Panel.Title componentClass='h3'>
-                {t('report.sign-in')}
-              </Panel.Title>
+              <Panel.Title>{t('report.sign-in')}</Panel.Title>
             </Panel.Heading>
             <Panel.Body className='text-center'>
               <Spacer size='large' />
