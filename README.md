@@ -56,6 +56,7 @@ Here are our ten core certifications:
   <br />
   <br />
   **Projects**: [Survey Form](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form), [Tribute Page](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page), [Technical Documentation Page](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-technical-documentation-page-project/build-a-technical-documentation-page), [Product Landing Page](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page), [Personal Portfolio Webpage](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-personal-portfolio-webpage-project/build-a-personal-portfolio-webpage)
+>
 
 #### 2. [JavaScript Algorithms and Data Structures Certification](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
 
@@ -155,7 +156,7 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Rock Paper Scissors](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/rock-paper-scissors), [Cat and Dog Image Classifier](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/cat-and-dog-image-classifier), [Book Recommendation Engine using KNN](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/book-recommendation-engine-using-knn), [Linear Regression Health Costs Calculator](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/linear-regression-health-costs-calculator), [Neural Network SMS Text Classifier](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/neural-network-sms-text-classifier)
 
-  #### 12. [College Algebra with Python](https://www.freecodecamp.org/learn/college-algebra-with-python/)
+#### 12. [College Algebra with Python](https://www.freecodecamp.org/learn/college-algebra-with-python/)
 
   - [Learn Ratios and Proportions](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-ratios-and-proportions)
   - [Learn How to Solve for X](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-solve-for-x)
@@ -176,11 +177,11 @@ Here are our ten core certifications:
     <br />
     **Projects**: [Multi-Function Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-multi-function-calculator-project), [Graphing Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-graphing-calculator-project), [Three Math Games](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-three-math-games-project), [Financial Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-financial-calculator-project), [Data Graph Explorer](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-data-graph-explorer-project)
 
-#### Legacy Full Stack Development Certification
+### Legacy Full Stack Development Certification
 
 Once you have earned the Responsive Web Design, Algorithms and Data Structures, Front End Development Libraries, Data Visualization, Back End Development and APIs, and Legacy Information Security and Quality Assurance certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This distinction signifies that you've completed around 1,800 hours of coding with a wide range of web development tools.
 
-#### Legacy Certifications
+### Legacy Certifications
 
 We also have 4 legacy certifications dating back to our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
 
