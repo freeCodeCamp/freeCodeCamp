@@ -1,3 +1,4 @@
+import { Exam, Question } from '@prisma/client';
 import {
   examJson,
   userExam1,
@@ -6,11 +7,11 @@ import {
   mockResults2
 } from '../../__mocks__/exam';
 import { generateRandomExam, createExamResults } from './exam';
-import { GeneratedQuestion, Question } from './exam-types';
+import { GeneratedExam, GeneratedQuestion } from './exam-types';
 
 describe('Exam helpers', () => {
   describe('generateRandomExam()', () => {
-    const randomizedExam = generateRandomExam(examJson);
+    const randomizedExam: GeneratedExam = generateRandomExam(examJson as Exam);
 
     it('should have one question', () => {
       expect(randomizedExam.length).toBe(1);
@@ -40,8 +41,8 @@ describe('Exam helpers', () => {
 
   describe('createExamResults()', () => {
     examJson.numberOfQuestionsInExam = 2;
-    const examResults1 = createExamResults(userExam1, examJson);
-    const examResults2 = createExamResults(userExam2, examJson);
+    const examResults1 = createExamResults(userExam1, examJson as Exam);
+    const examResults2 = createExamResults(userExam2, examJson as Exam);
 
     it('failing exam should return correct results', () => {
       expect(examResults1).toEqual(mockResults1);

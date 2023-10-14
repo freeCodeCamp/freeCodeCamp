@@ -3,6 +3,12 @@ export const examJson = {
   title: 'Exam Certification',
   numberOfQuestionsInExam: 1,
   passingPercent: 70,
+  prerequisites: [
+    {
+      id: '647f85d407d29547b3bee1bb',
+      title: 'challenge-title'
+    }
+  ],
   questions: [
     {
       id: '3bbl2mx2mq',
@@ -38,6 +44,14 @@ export const examJson = {
     }
   ]
 };
+
+export const completedTrophyChallenges = [
+  {
+    id: '647f85d407d29547b3bee1bb',
+    solution: 'challenge-solution',
+    completedDate: 1695064765244
+  }
+];
 
 // failed
 export const userExam1 = {

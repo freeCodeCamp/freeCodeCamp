@@ -1,14 +1,13 @@
-// TODO: Refactor - most of the examFromDbSchema is validated by prisma
+import { Answer, Exam, Question } from '@prisma/client';
 import Joi from 'joi';
-import JoiObjectId from 'joi-objectid';
-
-Joi.objectId = JoiObjectId(Joi);
+import { ExamResults, GeneratedExam, UserExam } from './exam-types';
 
 const nanoIdRE = new RegExp('[a-z0-9]{10}');
+const objectIdRE = new RegExp('^[0-9a-fA-F]{24}$');
 
 // Exam from database schema
 const DbPrerequisitesJoi = Joi.object().keys({
-  id: Joi.objectId().required(),
+  id: Joi.string().regex(objectIdRE).required(),
   title: Joi.string()
 });
 
@@ -25,17 +24,18 @@ const DbQuestionJoi = Joi.object().keys({
   wrongAnswers: Joi.array()
     .items(DbAnswerJoi)
     .required()
-    .custom((value, helpers) => {
+    .custom((value: Answer[], helpers) => {
       const nonDeprecatedCount = value.reduce(
-        (count, answer) => (answer.deprecated ? count : count + 1),
+        (count: number, answer: Answer) =>
+          answer.deprecated ? count : count + 1,
         0
       );
       const minimumAnswers = 4;
 
       if (nonDeprecatedCount < minimumAnswers) {
-        return helpers.message(
-          `'wrongAnswers' must have at least ${minimumAnswers} non-deprecated answers.`
-        );
+        return helpers.message({
+          en: `'wrongAnswers' must have at least ${minimumAnswers} non-deprecated answers.`
+        });
       }
 
       return value;
@@ -43,17 +43,18 @@ const DbQuestionJoi = Joi.object().keys({
   correctAnswers: Joi.array()
     .items(DbAnswerJoi)
     .required()
-    .custom((value, helpers) => {
+    .custom((value: Answer[], helpers) => {
       const nonDeprecatedCount = value.reduce(
-        (count, answer) => (answer.deprecated ? count : count + 1),
+        (count: number, answer: Answer) =>
+          answer.deprecated ? count : count + 1,
         0
       );
       const minimumAnswers = 1;
 
       if (nonDeprecatedCount < minimumAnswers) {
-        return helpers.message(
-          `'correctAnswers' must have at least ${minimumAnswers} non-deprecated answer.`
-        );
+        return helpers.message({
+          en: `'correctAnswers' must have at least ${minimumAnswers} non-deprecated answer.`
+        });
       }
 
       return value;
@@ -62,15 +63,16 @@ const DbQuestionJoi = Joi.object().keys({
 
 const examFromDbSchema = Joi.object().keys({
   // TODO: make sure _id and title match what's in the challenge markdown file
-  id: Joi.objectId().required(),
+  id: Joi.string().regex(objectIdRE).required(),
   title: Joi.string().required(),
   numberOfQuestionsInExam: Joi.number()
     .min(1)
     .max(
       Joi.ref('questions', {
-        adjust: questions => {
+        adjust: (questions: Question[]) => {
           const nonDeprecatedCount = questions.reduce(
-            (count, question) => (question.deprecated ? count : count + 1),
+            (count: number, question: Question) =>
+              question.deprecated ? count : count + 1,
             0
           );
           return nonDeprecatedCount;
@@ -83,7 +85,13 @@ const examFromDbSchema = Joi.object().keys({
   questions: Joi.array().items(DbQuestionJoi).min(1).required()
 });
 
-export const validateExamFromDbSchema = examFromDb => {
+/**
+ * Function to validate the exam data from the database.
+ *
+ * @param examFromDb The exam object from the database.
+ * @returns JOI Validation object.
+ */
+export const validateExamFromDbSchema = (examFromDb: Exam) => {
   return examFromDbSchema.validate(examFromDb);
 };
 
@@ -104,8 +112,18 @@ const generatedExamSchema = Joi.array()
   .min(1)
   .required();
 
-export const validateGeneratedExamSchema = (exam, numberOfQuestionsInExam) => {
-  if (!exam.length === numberOfQuestionsInExam) {
+/**
+ * Function to validate a generated exam.
+ *
+ * @param exam The exam that was generated.
+ * @param numberOfQuestionsInExam The number of questions in the exam.
+ * @returns JOI Validation object.
+ */
+export const validateGeneratedExamSchema = (
+  exam: GeneratedExam,
+  numberOfQuestionsInExam: number
+) => {
+  if (exam.length !== numberOfQuestionsInExam) {
     throw new Error(
       'The number of exam questions generated does not match the number of questions required.'
     );
@@ -132,12 +150,19 @@ const userCompletedExamSchema = Joi.object().keys({
   examTimeInSeconds: Joi.number().min(0)
 });
 
+/**
+ * Function to validate a user completed exam.
+ *
+ * @param exam The exam the camper completed.
+ * @param numberOfQuestionsInExam The number of questions in the exam.
+ * @returns JOI Validation object.
+ */
 export const validateUserCompletedExamSchema = (
-  exam,
-  numberOfQuestionsInExam
+  exam: UserExam,
+  numberOfQuestionsInExam: number
 ) => {
   // TODO: Validate that the properties exist
-  if (!exam.length === numberOfQuestionsInExam) {
+  if (exam.userExamQuestions.length !== numberOfQuestionsInExam) {
     throw new Error(
       'The number of exam questions answered does not match the number of questions required.'
     );
@@ -156,6 +181,12 @@ const examResultsSchema = Joi.object().keys({
   examTimeInSeconds: Joi.number().min(0)
 });
 
-export const validateExamResultsSchema = examResults => {
+/**
+ * Function to validate generated exam results after a camper submits their exam.
+ *
+ * @param examResults The exam results that were generated.
+ * @returns JOI Validation object.
+ */
+export const validateExamResultsSchema = (examResults: ExamResults) => {
   return examResultsSchema.validate(examResults);
 };

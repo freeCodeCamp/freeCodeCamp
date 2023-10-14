@@ -436,7 +436,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       errorHandler(error, request, reply) {
         if (error.validation) {
           void reply.code(400);
-          return { error: 'id not found in request.' };
+          return { error: `Valid 'id' not found in request parameters.` };
         } else {
           fastify.errorHandler(error, request, reply);
         }
@@ -452,11 +452,19 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             select: { completedChallenges: true }
           });
 
-        const examFromDb = await fastify.prisma.exam.findUniqueOrThrow({
+        const examFromDb = await fastify.prisma.exam.findUnique({
           where: { id }
         });
 
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        console.log(examFromDb);
+
+        if (!examFromDb) {
+          void reply.code(500);
+          return {
+            error: 'An error occurred trying to get the exam from the database.'
+          };
+        }
+
         const validExamFromDbSchema = validateExamFromDbSchema(examFromDb);
 
         if ('error' in validExamFromDbSchema) {
@@ -467,16 +475,12 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           };
         }
 
-        const {
-          prerequisites,
-          numberOfQuestionsInExam,
-          title = ''
-        } = examFromDb;
+        const { prerequisites, numberOfQuestionsInExam, title } = examFromDb;
 
         // Validate User has completed prerequisite challenges
-        prerequisites?.forEach(prerequisite => {
-          const prerequisiteCompleted = completedChallenges.find(
-            challenge => challenge.id === prerequisite.id
+        for (let i = 0; i < prerequisites.length; i++) {
+          const prerequisiteCompleted = completedChallenges.some(
+            challenge => challenge.id === prerequisites[i]?.id
           );
 
           if (!prerequisiteCompleted) {
@@ -485,15 +489,16 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
               error: `You have not completed the required challenges to start the '${title}'.`
             };
           }
-        });
+        }
 
         const randomizedExam = generateRandomExam(examFromDb);
-
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
         const validGeneratedExamSchema = validateGeneratedExamSchema(
           randomizedExam,
           numberOfQuestionsInExam
         );
+
+        console.log('validGeneratedExamSchema');
+        console.log(validGeneratedExamSchema);
 
         if ('error' in validGeneratedExamSchema) {
           void reply.code(500);
@@ -504,11 +509,12 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           generatedExam: randomizedExam
         };
       } catch (error) {
+        console.log('catching error');
         fastify.log.error(error);
         void reply.code(500);
         return {
           error: 'Something went wrong trying to generate your exam.'
-        } as const;
+        };
       }
     }
   );

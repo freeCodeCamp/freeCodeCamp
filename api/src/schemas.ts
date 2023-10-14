@@ -618,6 +618,9 @@ export const schemas = {
       400: Type.Object({
         error: Type.String()
       }),
+      403: Type.Object({
+        error: Type.String()
+      }),
       500: Type.Object({
         error: Type.String()
       })

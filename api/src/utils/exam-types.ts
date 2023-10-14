@@ -23,3 +23,12 @@ export interface UserExam {
   userExamQuestions: UserQuestion[];
   examTimeInSeconds: number;
 }
+
+export interface ExamResults {
+  numberOfCorrectAnswers: number;
+  numberOfQuestionsInExam: number;
+  percentCorrect: number;
+  passingPercent: number;
+  passed: boolean;
+  examTimeInSeconds: number;
+}
