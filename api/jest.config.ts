@@ -8,7 +8,7 @@ envConfig({ path: envPath });
 
 const config: Config = {
   verbose: true,
-  testRegex: '(exam|challenge)\\.test\\.ts$',
+  testRegex: '\\.test\\.ts$',
   transform: {
     '^.+\\.ts$': 'ts-jest'
   },
