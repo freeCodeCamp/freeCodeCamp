@@ -7,11 +7,6 @@ test.describe('Tool Panel', () => {
       '/learn/javascript-algorithms-and-data-structures/basic-javascript/increment-a-number-with-javascript'
     );
   });
-
-  test.afterEach(async ({ page }) => {
-    await page.close();
-  });
-
   test('should display "//running tests" in console after clicking "Run the Tests (Ctrl+Enter)" button', async ({
     page
   }) => {
@@ -36,16 +31,16 @@ test.describe('Tool Panel', () => {
     page
   }) => {
     const expectedHelpLinks = [
-      `${translations.buttons['get-hint']} \n, ${translations.aria['opens-new-window']}`,
+      `${translations.buttons['get-hint']} , ${translations.aria['opens-new-window']}`,
       translations.buttons['watch-video'],
       translations.buttons['ask-for-help']
     ];
     const helpLinks = [];
 
     await page.getByTestId('get-help-dropdown').click();
-    helpLinks.push(await page.getByTestId('get-hint').innerText());
-    helpLinks.push(await page.getByTestId('watch-a-video').innerText());
-    helpLinks.push(await page.getByTestId('ask-for-help').innerText());
+    helpLinks.push(await page.getByTestId('get-hint').textContent());
+    helpLinks.push(await page.getByTestId('watch-a-video').textContent());
+    helpLinks.push(await page.getByTestId('ask-for-help').textContent());
 
     expect(helpLinks).toEqual(expectedHelpLinks);
   });
