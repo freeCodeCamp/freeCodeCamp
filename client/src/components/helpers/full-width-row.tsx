@@ -1,5 +1,4 @@
-import { Row } from '@freecodecamp/react-bootstrap';
-import { Col } from '@freecodecamp/ui';
+import { Col, Row } from '@freecodecamp/ui';
 import React from 'react';
 
 interface FullWidthRowProps {

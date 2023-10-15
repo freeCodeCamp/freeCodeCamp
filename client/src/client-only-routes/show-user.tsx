@@ -1,10 +1,8 @@
 import {
-  Panel,
   FormControl,
   FormGroup,
   ControlLabel,
-  Button,
-  Row
+  Button
 } from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
 import Helmet from 'react-helmet';
@@ -12,7 +10,7 @@ import type { TFunction } from 'i18next';
 import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Col } from '@freecodecamp/ui';
+import { Col, Row, Panel } from '@freecodecamp/ui';
 
 import Login from '../components/Header/components/login';
 
@@ -85,11 +83,9 @@ function ShowUser({
       <main>
         <FullWidthRow>
           <Spacer size='large' />
-          <Panel bsStyle='info' className='text-center'>
+          <Panel variant='primary' className='text-center'>
             <Panel.Heading>
-              <Panel.Title componentClass='h3'>
-                {t('report.sign-in')}
-              </Panel.Title>
+              <Panel.Title>{t('report.sign-in')}</Panel.Title>
             </Panel.Heading>
             <Panel.Body className='text-center'>
               <Spacer size='large' />
