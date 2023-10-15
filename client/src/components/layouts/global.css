@@ -470,11 +470,6 @@ code {
   white-space: break-spaces;
 }
 
-.panel {
-  border-radius: 0;
-  background-color: transparent;
-}
-
 .help-block em {
   font-size: 0.8rem;
 }
@@ -519,10 +514,6 @@ hr {
   color: var(--quaternary-color);
 }
 
-.panel-default > .panel-heading {
-  background-color: transparent;
-}
-
 .challenge-output span {
   font-size: 1rem;
 }
@@ -542,12 +533,6 @@ pre {
   background-color: inherit;
   border: none;
   border-radius: 0;
-}
-
-.panel-primary > .panel-heading {
-  background-color: transparent;
-  border-color: var(--primary-color);
-  color: var(--primary-color);
 }
 
 .solution-viewer,
@@ -591,10 +576,6 @@ pre {
 .has-warning .form-control:focus,
 .has-success .form-control:focus {
   border-color: var(--tertiary-color);
-}
-
-.panel-primary {
-  border-color: var(--primary-color);
 }
 
 blockquote footer,

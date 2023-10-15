@@ -15,7 +15,10 @@ function ChallengeDescription(challenge: Challenge): JSX.Element {
   const bClass = challenge.block ? challenge.block : '';
 
   return (
-    <div className={`challenge-instructions ${sbClass} ${bClass}`}>
+    <div
+      className={`challenge-instructions ${sbClass} ${bClass}`}
+      data-playwright-test-label='challenge-description'
+    >
       {challenge.description && <PrismFormatted text={challenge.description} />}
       {challenge.instructions && (
         <>

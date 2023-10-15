@@ -582,7 +582,7 @@ export const schemas = {
           ])
         )
       }),
-      403: Type.Literal('That challenge type is not savable.'),
+      403: Type.Literal('That challenge type is not saveable.'),
       500: Type.Object({
         type: Type.Literal('danger'),
         message: Type.Literal(

@@ -353,6 +353,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   block={true}
                   bsSize='large'
                   bsStyle='primary'
+                  data-playwright-test-label='check-answer-button'
                   onClick={() =>
                     this.handleSubmit(
                       solution,
@@ -368,6 +369,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   bsSize='large'
                   bsStyle='primary'
                   className='btn-invert'
+                  data-playwright-test-label='ask-for-help-button'
                   onClick={openHelpModal}
                 >
                   {t('buttons.ask-for-help')}

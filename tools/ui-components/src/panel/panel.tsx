@@ -2,34 +2,30 @@ import React, { createContext, useContext } from 'react';
 
 import { PanelProps } from './types';
 
-type PanelContextProps = Pick<PanelProps, 'bsStyle'>;
+type PanelContextProps = Pick<PanelProps, 'variant'>;
 const PanelContext = createContext<PanelContextProps>({});
 
-const styles = 'border-1 border-solid shadow-sm mb-6';
-const defaultBorder = 'border-background-tertiary';
-const primaryBorder = 'border-foreground-primary';
-const dangerBorder = 'border-foreground-danger';
-const infoBorder = 'border-foreground-info';
-const defaultHeadingStyle =
-  'border-b-1 border-solid border-background-tertiary';
-const primaryHeadingStyle =
-  'border-b-1 border-solid border-foreground-primary text-foreground-primary';
-const infoHeadingStyle = 'text-background-info bg-foreground-info';
-const dangerHeadingStyle = 'text-background-danger bg-foreground-danger';
-const headingPadding = 'px-2.5 py-3.5 ';
+const border = {
+  primary: 'border-foreground-primary',
+  danger: 'border-foreground-danger',
+  info: 'border-foreground-info'
+};
 
-let bsStyleClass = defaultBorder;
-let headingStyles = headingPadding + defaultHeadingStyle;
+const heading = {
+  primary:
+    'outline-[1px] outline outline-foreground-primary text-foreground-primary',
+  danger: 'bg-foreground-danger text-background-danger',
+  info: 'bg-foreground-info text-background-info'
+};
 
 const Body = ({
   children,
-  props
-}: {
-  children?: React.ReactNode;
-  props?: React.ComponentProps<'div'>;
-}): JSX.Element => {
+  className,
+  ...props
+}: React.ComponentProps<'div'>): JSX.Element => {
+  const classes = [className, 'p-3.5'].join(' ');
   return (
-    <div className='p-3.5' {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );
@@ -37,18 +33,18 @@ const Body = ({
 
 export const Heading = ({
   children,
-  props
-}: {
-  children?: React.ReactNode;
-  props?: React.ComponentProps<'div'>;
-}): JSX.Element => {
-  const { bsStyle } = useContext(PanelContext);
-  if (bsStyle === 'primary') headingStyles = primaryHeadingStyle;
-  else if (bsStyle === 'danger') headingStyles = dangerHeadingStyle;
-  else if (bsStyle === 'info') headingStyles = infoHeadingStyle;
+  className,
+  ...props
+}: React.ComponentProps<'div'>): JSX.Element => {
+  const { variant } = useContext(PanelContext);
+
+  const headingStyles = variant
+    ? heading[variant]
+    : 'outline outline-[1px] outline-background-tertiary';
+  const classes = [className, headingStyles, 'px-3.5 py-2.5'].join(' ');
 
   return (
-    <div className={headingStyles} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );
@@ -56,11 +52,8 @@ export const Heading = ({
 
 export const Title = ({
   children,
-  props
-}: {
-  children?: React.ReactNode;
-  props?: React.ComponentProps<'h3'>;
-}): JSX.Element => {
+  ...props
+}: React.ComponentProps<'h3'>): JSX.Element => {
   return (
     <h3 className='text-inherit mb-0 text-xl' {...props}>
       {children}
@@ -71,17 +64,18 @@ export const Title = ({
 export const Panel = ({
   children,
   className,
-  bsStyle,
+  variant,
   ...restProps
 }: PanelProps): JSX.Element => {
-  if (bsStyle === 'primary') bsStyleClass = primaryBorder;
-  else if (bsStyle === 'danger') bsStyleClass = dangerBorder;
-  else if (bsStyle === 'info') bsStyleClass = infoBorder;
-
-  const panelClassed = [styles, bsStyleClass, className].join(' ');
+  const variantClass = variant ? border[variant] : 'border-background-tertiary';
+  const panelClassed = [
+    'border-1 border-solid shadow-sm mb-6',
+    variantClass,
+    className
+  ].join(' ');
 
   return (
-    <PanelContext.Provider value={{ bsStyle }}>
+    <PanelContext.Provider value={{ variant }}>
       <div className={panelClassed} {...restProps}>
         {children}
       </div>
