@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import fs from 'fs';
+import { join } from 'path';
 import ObjectID from 'bson-objectid';
 import glob from 'glob';
 import matter from 'gray-matter';
-import mock from 'mock-fs';
 
 // NOTE:
 // Use `console.log()` before mocking the filesystem or use
@@ -29,18 +29,39 @@ import {
   updateStepTitles
 } from './utils';
 
+const metaPath = join(
+  process.cwd(),
+  'curriculum',
+  'challenges',
+  '_meta',
+  'project'
+);
+const superBlockPath = join(
+  process.cwd(),
+  'curriculum',
+  'challenges',
+  'english',
+  'superblock'
+);
+const projectPath = join(superBlockPath, 'project');
+
 describe('Challenge utils helper scripts', () => {
   describe('createStepFile util', () => {
     it('should create next step and return its identifier', () => {
-      mock({
-        'project/': {
-          'step-001.md': 'Lorem ipsum...',
-          'step-002.md': 'Lorem ipsum...'
-        }
-      });
-
+      fs.mkdirSync(superBlockPath);
+      fs.mkdirSync(projectPath);
+      fs.writeFileSync(
+        join(projectPath, 'step-001.md'),
+        'Lorem ipsum...',
+        'utf-8'
+      );
+      fs.writeFileSync(
+        join(projectPath, 'step-002.md'),
+        'Lorem ipsum...',
+        'utf-8'
+      );
+      process.env.CALLING_DIR = projectPath;
       const step = createStepFile({
-        projectPath: 'project/',
         stepNum: 3
       });
 
@@ -52,64 +73,73 @@ describe('Challenge utils helper scripts', () => {
       expect(getStepTemplate).toHaveBeenCalledTimes(1);
 
       // - Should write a file with a given name and template
-      const files = glob.sync(`project/*.md`);
+      const files = glob.sync(`${projectPath}/*.md`);
 
       expect(files).toEqual([
-        `project/${mockChallengeId}.md`,
-        `project/step-001.md`,
-        `project/step-002.md`
+        `${projectPath}/${mockChallengeId}.md`,
+        `${projectPath}/step-001.md`,
+        `${projectPath}/step-002.md`
       ]);
     });
   });
 
   describe('createChallengeFile util', () => {
     it('should create the challenge', () => {
-      mock({
-        'project/': {
-          'fake-challenge.md': 'Lorem ipsum...',
-          'so-many-fakes.md': 'Lorem ipsum...'
-        }
-      });
+      fs.mkdirSync(superBlockPath);
+      fs.mkdirSync(projectPath);
+      fs.writeFileSync(
+        join(projectPath, 'fake-challenge.md'),
+        'Lorem ipsum...',
+        'utf-8'
+      );
+      fs.writeFileSync(
+        join(projectPath, 'so-many-fakes.md'),
+        'Lorem ipsum...',
+        'utf-8'
+      );
 
-      createChallengeFile('hi', 'pretend this is a template', 'project/');
+      process.env.CALLING_DIR = projectPath;
+
+      createChallengeFile('hi', 'pretend this is a template');
       // - Should write a file with a given name and template
-      const files = glob.sync(`project/*.md`);
+      const files = glob.sync(`${projectPath}/*.md`);
 
       expect(files).toEqual([
-        `project/fake-challenge.md`,
-        `project/hi.md`,
-        `project/so-many-fakes.md`
+        `${projectPath}/fake-challenge.md`,
+        `${projectPath}/hi.md`,
+        `${projectPath}/so-many-fakes.md`
       ]);
     });
   });
 
   describe('insertStepIntoMeta util', () => {
     it('should update the meta with a new file id and name', () => {
-      mock({
-        '_meta/project/': {
-          'meta.json': `{"id": "mock-id",
-          "challengeOrder": [
-            {
-              "id": "id-1",
-              "title": "Step 1"
-            },
-            {
-              "id": "id-2",
-              "title": "Step 2"
-            },
-            {
-              "id": "id-3",
-              "title": "Step 3"
-            }
-          ]}`
-        }
-      });
-      process.env.CALLING_DIR = 'english/superblock/project';
+      fs.mkdirSync(metaPath);
+      fs.writeFileSync(
+        join(metaPath, 'meta.json'),
+        `{"id": "mock-id",
+        "challengeOrder": [
+          {
+            "id": "id-1",
+            "title": "Step 1"
+          },
+          {
+            "id": "id-2",
+            "title": "Step 2"
+          },
+          {
+            "id": "id-3",
+            "title": "Step 3"
+          }
+        ]}`,
+        'utf-8'
+      );
+      process.env.CALLING_DIR = projectPath;
 
       insertStepIntoMeta({ stepNum: 3, stepId: new ObjectID(mockChallengeId) });
 
       const meta = JSON.parse(
-        fs.readFileSync('_meta/project/meta.json').toString('utf-8')
+        fs.readFileSync(join(metaPath, 'meta.json')).toString('utf-8')
       );
       expect(meta).toEqual({
         id: 'mock-id',
@@ -137,48 +167,60 @@ describe('Challenge utils helper scripts', () => {
 
   describe('updateStepTitles util', () => {
     it('should apply meta.challengeOrder to step files', () => {
-      mock({
-        '_meta/project/': {
-          'meta.json':
-            '{"id": "mock-id", "challengeOrder": [{"id": "id-1", "title": "Step 1"}, {"id": "id-3", "title": "Step 2"}, {"id": "id-2", "title": "Step 3"}]}'
-        },
-        'english/superblock/project/': {
-          'id-1.md': `---
+      fs.mkdirSync(metaPath);
+      fs.writeFileSync(
+        join(metaPath, 'meta.json'),
+        `{"id": "mock-id", "challengeOrder": [{"id": "id-1", "title": "Step 1"}, {"id": "id-3", "title": "Step 2"}, {"id": "id-2", "title": "Step 3"}]}`,
+        'utf-8'
+      );
+      fs.mkdirSync(superBlockPath);
+      fs.mkdirSync(projectPath);
+      fs.writeFileSync(
+        join(projectPath, 'id-1.md'),
+        `---
 id: id-1
 title: Step 2
 challengeType: a
 dashedName: step-2
 ---
 `,
-          'id-2.md': `---
+        'utf-8'
+      );
+      fs.writeFileSync(
+        join(projectPath, 'id-2.md'),
+        `---
 id: id-2
 title: Step 1
 challengeType: b
 dashedName: step-1
 ---
 `,
-          'id-3.md': `---
+        'utf-8'
+      );
+      fs.writeFileSync(
+        join(projectPath, 'id-3.md'),
+        `---
 id: id-3
 title: Step 3
 challengeType: c
 dashedName: step-3
 ---
-`
-        }
-      });
+`,
+        'utf-8'
+      );
 
-      process.env.CALLING_DIR = 'english/superblock/project';
+      process.env.CALLING_DIR = projectPath;
 
       updateStepTitles();
 
       const expected1 = fs
-        .readFileSync('english/superblock/project/id-1.md')
+        .readFileSync(join(projectPath, 'id-1.md'))
         .toString('utf-8');
       const expected2 = fs
-        .readFileSync('english/superblock/project/id-2.md')
+        .readFileSync(join(projectPath, 'id-2.md'))
         .toString('utf-8');
       const expected3 = fs
-        .readFileSync('english/superblock/project/id-3.md')
+        .readFileSync(join(projectPath, 'id-3.md'))
         .toString('utf-8');
       expect(matter(expected1).data).toEqual({
         id: 'id-1',
@@ -201,7 +243,16 @@ dashedName: step-3
     });
   });
   afterEach(() => {
-    mock.restore();
     delete process.env.CALLING_DIR;
+    try {
+      fs.rmSync(superBlockPath, { recursive: true });
+    } catch (err) {
+      console.log('Could not remove superblock mock folder. ');
+    }
+    try {
+      fs.rmSync(metaPath, { recursive: true });
+    } catch (err) {
+      console.log('Could not remove meta mock folder.');
+    }
   });
 });
