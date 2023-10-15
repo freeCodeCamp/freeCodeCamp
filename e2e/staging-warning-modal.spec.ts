@@ -5,10 +5,6 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test.describe('Staging Warning Modal E2E Test Suite', () => {
   test('Verifies the Correct Rendering of the Staging Warning Modal', async ({
     page

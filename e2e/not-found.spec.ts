@@ -16,10 +16,6 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/404');
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test.describe('Not-Found Page Tests', () => {
   test('should display correct page title', async ({ page }) => {
     await expect(page).toHaveTitle(
