@@ -1,3 +1,4 @@
+import { readFileSync } from 'fs';
 import { readdir } from 'fs/promises';
 import { join } from 'path';
 
@@ -12,7 +13,10 @@ export const getChallengeOrderFromFileTree = async (): Promise<
   const path = getProjectPath();
   const fileList = await readdir(path);
   const challengeOrder = fileList
-    .map(file => matter.read(join(path, file)))
+    .map(file => {
+      const contents = readFileSync(join(path, file)).toString('utf-8');
+      return matter(contents);
+    })
     .map(({ data }) => ({
       id: data.id as string,
       title: data.title as string

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import ObjectID from 'bson-objectid';
-import * as matter from 'gray-matter';
+import matter from 'gray-matter';
 import { parseMDSync } from '../challenge-parser/parser';
 import { getMetaData, updateMetaData } from './helpers/project-metadata';
 import { getProjectPath } from './helpers/get-project-info';
@@ -82,7 +82,8 @@ const updateStepTitles = (): void => {
 
   fileNames.forEach(fileName => {
     const filePath = `${getProjectPath()}${fileName}`;
-    const frontMatter = matter.read(filePath);
+    const fileContents = fs.readFileSync(filePath).toString('utf-8');
+    const frontMatter = matter(fileContents);
     const newStepNum =
       meta.challengeOrder.findIndex(({ id }) => id === frontMatter.data.id) + 1;
     const title = `Step ${newStepNum}`;
