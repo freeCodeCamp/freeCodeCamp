@@ -50,10 +50,6 @@
   margin: 0;
 }
 
-.certification-namespace .col-sm-12 {
-  padding: 0;
-}
-
 /* center the certificate vertically */
 .certificate-outer-wrapper {
   display: flex;

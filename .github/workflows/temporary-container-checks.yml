@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
       - name: Checkout Source Files
@@ -76,7 +76,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
       - name: Checkout Source Files
@@ -102,7 +102,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
       - name: Checkout Source Files
@@ -123,7 +123,7 @@ jobs:
       matrix:
         # To avoid wasting resources we're only using chrome for now.
         browsers: [chrome]
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
       - name: Set Action Environment Variables

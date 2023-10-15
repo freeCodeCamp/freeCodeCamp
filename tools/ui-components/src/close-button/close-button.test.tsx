@@ -10,6 +10,12 @@ describe('<CloseButton>', () => {
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
+  it('should have "Close" as the default label', () => {
+    render(<CloseButton onClick={jest.fn()} />);
+
+    expect(screen.getByRole('button', { name: 'Close' })).toBeInTheDocument();
+  });
+
   it('should set "aria-label" to "label" prop', () => {
     const expectedLabel = 'Close me please';
     render(<CloseButton label={expectedLabel} onClick={jest.fn()} />);
