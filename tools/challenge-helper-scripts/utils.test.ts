@@ -5,11 +5,6 @@ import ObjectID from 'bson-objectid';
 import glob from 'glob';
 import matter from 'gray-matter';
 
-// NOTE:
-// Use `console.log()` before mocking the filesystem or use
-// `process.stdout.write()` instead. There are issues when using `mock-fs` and
-// `require`.
-
 jest.mock('bson-objectid', () => {
   return jest.fn(() => ({ toString: () => mockChallengeId }));
 });
@@ -139,7 +134,7 @@ describe('Challenge utils helper scripts', () => {
       insertStepIntoMeta({ stepNum: 3, stepId: new ObjectID(mockChallengeId) });
 
       const meta = JSON.parse(
-        fs.readFileSync(join(metaPath, 'meta.json')).toString('utf-8')
+        fs.readFileSync(join(metaPath, 'meta.json'), 'utf-8')
       );
       expect(meta).toEqual({
         id: 'mock-id',
@@ -213,28 +208,19 @@ dashedName: step-3
 
       updateStepTitles();
 
-      const expected1 = fs
-        .readFileSync(join(projectPath, 'id-1.md'))
-        .toString('utf-8');
-      const expected2 = fs
-        .readFileSync(join(projectPath, 'id-2.md'))
-        .toString('utf-8');
-      const expected3 = fs
-        .readFileSync(join(projectPath, 'id-3.md'))
-        .toString('utf-8');
-      expect(matter(expected1).data).toEqual({
+      expect(matter.read(join(projectPath, 'id-1.md')).data).toEqual({
         id: 'id-1',
         title: 'Step 1',
         challengeType: 'a',
         dashedName: 'step-1'
       });
-      expect(matter(expected2).data).toEqual({
+      expect(matter.read(join(projectPath, 'id-2.md')).data).toEqual({
         id: 'id-2',
         title: 'Step 3',
         challengeType: 'b',
         dashedName: 'step-3'
       });
-      expect(matter(expected3).data).toEqual({
+      expect(matter.read(join(projectPath, 'id-3.md')).data).toEqual({
         id: 'id-3',
         title: 'Step 2',
         challengeType: 'c',
