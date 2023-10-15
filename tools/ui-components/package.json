@@ -75,7 +75,7 @@
     "build-storybook": "build-storybook",
     "build": "pnpm run build:css && pnpm run build:js && tsc",
     "build:js": "cross-env NODE_ENV=production rollup -c",
-    "build:css": "pnpm dlx tailwindcss -i ./src/base.css -o ./dist/base.css --minify",
+    "build:css": "npx -y tailwindcss -i ./src/base.css -o ./dist/base.css --minify",
     "dev:js": "cross-env NODE_ENV=development rollup -c -w ",
     "dev:css": "pnpm tailwindcss -i ./src/base.css -o ./dist/base.css --watch",
     "develop": "npm-run-all --parallel dev:css dev:js storybook",
