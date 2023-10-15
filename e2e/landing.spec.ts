@@ -79,7 +79,6 @@ test('The campers landing page figure is visible on desktop and hidden on mobile
   isMobile
 }) => {
   const landingPageImage = page.getByTestId('landing-page-figure');
-
   if (isMobile) {
     await expect(landingPageImage).toBeHidden();
   } else {
@@ -106,9 +105,7 @@ test('Testimonial section has a header', async () => {
 
 test('Testimonial endorser people have images, occupation, location and testimony visible', async () => {
   const cards = page.getByTestId('testimonial-card');
-
   await expect(cards).toHaveCount(3);
-
   for (const card of await cards.all()) {
     await expect(card).toBeVisible();
     for (let i = 0; i < testimonialEndorser.length; i++) {
