@@ -1,11 +1,12 @@
+import { Button } from '@freecodecamp/react-bootstrap';
 import {
   HelpBlock,
+  Alert,
   FormGroup,
-  ControlLabel,
+  FormGroupProps,
   FormControl,
-  Button
-} from '@freecodecamp/react-bootstrap';
-import { Alert } from '@freecodecamp/ui';
+  ControlLabel
+} from '@freecodecamp/ui';
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
 import type { TFunction } from 'i18next';
@@ -44,6 +45,11 @@ interface EmailForm {
   isPristine: boolean;
 }
 
+interface EmailValidation {
+  state: FormGroupProps['validationState'];
+  message: string;
+}
+
 function EmailSettings({
   email,
   isEmailVerified,
@@ -78,7 +84,7 @@ function EmailSettings({
     };
   }
 
-  function getValidationForNewEmail() {
+  function getValidationForNewEmail(): EmailValidation {
     const { newEmail, currentEmail } = emailForm;
     if (!maybeEmailRE.test(newEmail)) {
       return {
@@ -102,7 +108,7 @@ function EmailSettings({
     }
   }
 
-  function getValidationForConfirmEmail() {
+  function getValidationForConfirmEmail(): EmailValidation {
     const { confirmNewEmail, newEmail } = emailForm;
     if (!maybeEmailRE.test(newEmail)) {
       return {
@@ -181,6 +187,7 @@ function EmailSettings({
       <FullWidthRow>
         <form
           id='form-update-email'
+          data-cy='form-update-email'
           {...(!isDisabled
             ? { onSubmit: handleSubmit }
             : { onSubmit: e => e.preventDefault() })}
@@ -198,13 +205,16 @@ function EmailSettings({
             >
               <ControlLabel>{t('settings.email.new')}</ControlLabel>
               <FormControl
+                data-cy='email-input'
                 data-playwright-test-label='new-email-input'
                 onChange={createHandleEmailFormChange('newEmail')}
                 type='email'
                 value={newEmail}
               />
               {newEmailValidationMessage ? (
-                <HelpBlock>{newEmailValidationMessage}</HelpBlock>
+                <HelpBlock data-cy='validation-message'>
+                  {newEmailValidationMessage}
+                </HelpBlock>
               ) : null}
             </FormGroup>
             <FormGroup
@@ -213,13 +223,16 @@ function EmailSettings({
             >
               <ControlLabel>{t('settings.email.confirm')}</ControlLabel>
               <FormControl
+                data-cy='confirm-email'
                 data-playwright-test-label='confirm-email-input'
                 onChange={createHandleEmailFormChange('confirmNewEmail')}
                 type='email'
                 value={confirmNewEmail}
               />
               {confirmEmailValidationMessage ? (
-                <HelpBlock>{confirmEmailValidationMessage}</HelpBlock>
+                <HelpBlock data-cy='validation-message'>
+                  {confirmEmailValidationMessage}
+                </HelpBlock>
               ) : null}
             </FormGroup>
           </div>

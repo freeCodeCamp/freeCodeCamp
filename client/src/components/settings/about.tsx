@@ -1,15 +1,15 @@
+import React, { Component } from 'react';
 import {
   FormGroup,
-  ControlLabel,
   FormControl,
-  HelpBlock
-} from '@freecodecamp/react-bootstrap';
-import { Alert } from '@freecodecamp/ui';
-import React, { Component } from 'react';
-
+  HelpBlock,
+  Alert,
+  ControlLabel
+} from '@freecodecamp/ui';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
+
 import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import type { CamperProps } from '../profile/components/camper';
@@ -114,7 +114,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     );
   };
 
-  handleSubmit = (e: React.FormEvent) => {
+  handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { formValues } = this.state;
     const { submitNewAbout } = this.props;
@@ -127,7 +127,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     }
   };
 
-  handleNameChange = (e: React.FormEvent<HTMLInputElement>) => {
+  handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
     return this.setState(state => ({
       formValues: {
@@ -137,7 +137,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     }));
   };
 
-  handleLocationChange = (e: React.FormEvent<HTMLInputElement>) => {
+  handleLocationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
     return this.setState(state => ({
       formValues: {
@@ -163,7 +163,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       isPictureUrlValid: state.formValues.picture === ''
     }));
 
-  handlePictureChange = (e: React.FormEvent<HTMLInputElement>) => {
+  handlePictureChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
     if (isURL(value, { require_protocol: true })) {
       this.validationImage.src = encodeURI(value);
@@ -180,7 +180,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     }));
   };
 
-  handleAboutChange = (e: React.FormEvent<HTMLInputElement>) => {
+  handleAboutChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
     return this.setState(state => ({
       formValues: {
