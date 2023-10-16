@@ -1,0 +1,4 @@
+Binary Search algorithm significantly reduces time complexity of the executed search and is therefore more efficient than the traditional linear search method.
+
+Time Complexity using Linear Search = O(n)
+Time Complexity using Binary Search = O(log n)
