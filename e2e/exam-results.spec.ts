@@ -31,6 +31,9 @@ test.beforeEach(async ({ page }) => {
           name: translations.buttons['finish-exam']
         })
         .click();
+      await page
+        .getByRole('button', { name: translations.learn.exam['finish-yes'] })
+        .click();
     }
   }
 });
@@ -59,8 +62,9 @@ test.describe('Exam Results E2E Test Suite', () => {
   test('Exam Results When the User clicks on Download button', async ({
     page
   }) => {
-    await page.waitForEvent('download'); // wait for download to start
+    const downloadPromise = page.waitForEvent('download');
     await page.getByTestId('download-exam-results').click();
+    await downloadPromise;
     await expect(page).toHaveURL(examUrl);
   });
 
