@@ -1,4 +1,3 @@
-import { Row } from '@freecodecamp/react-bootstrap';
 import { WindowLocation } from '@reach/router';
 import { graphql } from 'gatsby';
 import { uniq } from 'lodash-es';
@@ -9,7 +8,7 @@ import { connect } from 'react-redux';
 import { configureAnchors } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col } from '@freecodecamp/ui';
+import { Container, Col, Row } from '@freecodecamp/ui';
 
 import { SuperBlocks } from '../../../../shared/config/superblocks';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';

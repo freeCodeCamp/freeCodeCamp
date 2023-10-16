@@ -45,7 +45,7 @@ body {
 }
 
 /*
-  Row from @freecodecamp/react-bootstrap adds some negative margin which causes
+  Row from @freecodecamp/ui adds some negative margin which causes
   a little bit of horizontal overflow on certain pages. This eliminates that
   for those pages.
 */
@@ -470,15 +470,6 @@ code {
   white-space: break-spaces;
 }
 
-.panel {
-  border-radius: 0;
-  background-color: transparent;
-}
-
-.help-block em {
-  font-size: 0.8rem;
-}
-
 hr {
   border-top: 1px solid var(--quaternary-background);
 }
@@ -515,14 +506,6 @@ hr {
   background-color: var(--tertiary-background);
 }
 
-.help-block {
-  color: var(--quaternary-color);
-}
-
-.panel-default > .panel-heading {
-  background-color: transparent;
-}
-
 .challenge-output span {
   font-size: 1rem;
 }
@@ -544,68 +527,9 @@ pre {
   border-radius: 0;
 }
 
-.list-group-item {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-}
-
-.intro-toc .list-group-item:hover {
-  background-color: var(--tertiary-background) !important;
-  border-radius: 0;
-}
-
-.panel-primary > .panel-heading {
-  background-color: transparent;
-  border-color: var(--primary-color);
-  color: var(--primary-color);
-}
-
 .solution-viewer,
 .solution-viewer pre {
   margin-bottom: 0;
-}
-
-.has-success .help-block,
-.has-success .control-label,
-.has-success .radio,
-.has-success .checkbox,
-.has-success .radio-inline,
-.has-success .checkbox-inline,
-.has-success.radio label,
-.has-success.checkbox label,
-.has-success.radio-inline label,
-.has-success.checkbox-inline label {
-  color: var(--highlight-color);
-}
-
-.has-error .help-block,
-.has-error .control-label,
-.has-error .radio,
-.has-error .checkbox,
-.has-error .radio-inline,
-.has-error .checkbox-inline,
-.has-error.radio label,
-.has-error.checkbox label,
-.has-error.radio-inline label,
-.has-error.checkbox-inline label {
-  color: var(--danger-color);
-}
-
-.has-error .form-control,
-.has-warning .form-control,
-.has-success .form-control {
-  border-color: var(--quaternary-background);
-}
-
-.has-error .form-control:focus,
-.has-warning .form-control:focus,
-.has-success .form-control:focus {
-  border-color: var(--tertiary-color);
-}
-
-.panel-primary {
-  border-color: var(--primary-color);
 }
 
 blockquote footer,
