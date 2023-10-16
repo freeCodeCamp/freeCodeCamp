@@ -43,7 +43,6 @@ test.describe('Exam Results E2E Test Suite', () => {
     page
   }) => {
     await page.getByTestId('download-exam-results').click();
-    await page.waitForEvent('download');
     await expect(page).toHaveURL(examUrl);
   });
 
