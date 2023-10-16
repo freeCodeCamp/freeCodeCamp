@@ -24,7 +24,7 @@ const config = {
   plugins: [
     postcss(),
     resolve(),
-    typescript({ sourceMap: false, declaration: false }),
+    typescript({ sourceMap: true, declaration: true }),
     babel({ babelHelpers: 'bundled' }),
     commonjs(),
     production && terser()
