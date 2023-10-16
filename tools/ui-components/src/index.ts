@@ -11,4 +11,8 @@ export { MenuItem } from './drop-down/menu-item';
 export { Container } from './container';
 export { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
 export { Col } from './col';
+export { ControlLabel } from './control-label';
+export { FormGroup, type FormGroupProps } from './form-group';
+export { FormControl } from './form-control';
+export { HelpBlock } from './help-block';
 export { Row } from './row';
