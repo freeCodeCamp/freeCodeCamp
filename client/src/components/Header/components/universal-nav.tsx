@@ -60,7 +60,11 @@ const UniversalNav = ({
         className='universal-nav-logo'
         id='universal-nav-logo'
         to='/learn'
+<<<<<<< HEAD
         data-playwright-test-label='header-universal-nav-logo'
+=======
+        data-playwright-test-label='site-header-logo-link'
+>>>>>>> 9f2028eb (Add Playwright tests for Header component)
       >
         <NavLogo />
       </Link>
