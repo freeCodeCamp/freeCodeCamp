@@ -7,10 +7,6 @@ test.use({ storageState: 'playwright/.auth/certified-user.json' });
 const examUrl =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';
 
-test.afterAll(async ({ page }) => {
-  await page.close();
-});
-
 test.beforeEach(async ({ page }) => {
   await page.goto(examUrl);
   await page
@@ -89,8 +85,7 @@ test.describe('Exam Show E2E Test Suite for started exam', () => {
       translations.learn.exam.time.split(':')[0]
     );
 
-    const quizOptions = await page.getByRole('radio').all();
-    await quizOptions[0].check({ force: true });
+    await page.getByRole('radio').first().check({ force: true });
     await page
       .getByRole('button', { name: translations.buttons['next-question'] })
       .click();
