@@ -38,10 +38,6 @@ test.beforeEach(async ({ page }) => {
   }
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test.describe('Exam Results E2E Test Suite', () => {
   test('Verifies the Correct Rendering of the Exam results', async ({
     page
