@@ -326,6 +326,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           <BlockSaveButton
             disabled={isButtonDisabled}
             size='large'
+            data-cy='portfolio-save'
             {...(isButtonDisabled && { tabIndex: -1 })}
           >
             {t('buttons.save-portfolio')}
