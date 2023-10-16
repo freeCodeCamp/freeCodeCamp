@@ -17,8 +17,7 @@ test.beforeEach(async ({ page }) => {
     .click();
   const QUESTION_COUNT = 5;
   for (let i = 0; i < QUESTION_COUNT; i++) {
-    const quizOptions = await page.getByRole('radio').all();
-    await quizOptions[0].check({ force: true });
+    await page.getByRole('radio').first().check({ force: true });
 
     if (i < QUESTION_COUNT - 1) {
       await page
