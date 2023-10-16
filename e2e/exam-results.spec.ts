@@ -58,9 +58,8 @@ test.describe('Exam Results E2E Test Suite', () => {
   test('Exam Results When the User clicks on Download button', async ({
     page
   }) => {
-    const downloadPromise = page.waitForEvent('download');
     await page.getByTestId('download-exam-results').click();
-    await downloadPromise;
+    await page.waitForEvent('download');
     await expect(page).toHaveURL(examUrl);
   });
 
