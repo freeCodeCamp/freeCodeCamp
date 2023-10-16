@@ -6,6 +6,9 @@ test.use({ storageState: 'playwright/.auth/certified-user.json' });
 const examUrl =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';
 
+const exitUrl =
+  '/learn/foundational-c-sharp-with-microsoft/#foundational-c-sharp-with-microsoft-certification-exam';
+
 test.beforeEach(async ({ page }) => {
   await page.goto(examUrl);
   await page
@@ -51,5 +54,11 @@ test.describe('Exam Results E2E Test Suite', () => {
     await expect(page.getByTestId('exam-time')).toBeVisible();
     await expect(page.getByTestId('download-exam-results')).toBeVisible();
     await expect(page.getByTestId('exit-exam')).toBeVisible();
+  });
+
+  test('Exam Results when the User clicks on Exit button', async ({ page }) => {
+    await page.getByTestId('exit-exam').click();
+    await expect(page.getByTestId('exam-results-header')).not.toBeVisible();
+    await expect(page).toHaveURL(exitUrl);
   });
 });
