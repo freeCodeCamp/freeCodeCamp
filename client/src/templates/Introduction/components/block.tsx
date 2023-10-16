@@ -162,7 +162,7 @@ class Block extends Component<BlockProps> {
       <>
         {' '}
         <ScrollableAnchor id={blockDashedName}>
-          <div className={`block ${isExpanded ? 'open' : ''}`}>
+          <div className={`cert-block ${isExpanded ? 'open' : ''}`}>
             <div className='block-header'>
               <h3 className='big-block-title'>{blockTitle}</h3>
               {!isAudited && (
@@ -219,7 +219,7 @@ class Block extends Component<BlockProps> {
     const ProjectBlock = (
       <>
         <ScrollableAnchor id={blockDashedName}>
-          <div className='block'>
+          <div className='cert-block'>
             <div className='block-header'>
               <h3 className='big-block-title'>{blockTitle}</h3>
               {!isAudited && (
@@ -258,7 +258,7 @@ class Block extends Component<BlockProps> {
       <>
         {' '}
         <ScrollableAnchor id={blockDashedName}>
-          <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
+          <div className={`cert-block block-grid ${isExpanded ? 'open' : ''}`}>
             <h3 className='block-grid-title'>
               <button
                 aria-expanded={isExpanded ? 'true' : 'false'}
@@ -310,7 +310,7 @@ class Block extends Component<BlockProps> {
 
     const GridProjectBlock = (
       <ScrollableAnchor id={blockDashedName}>
-        <div className='block block-grid grid-project-block'>
+        <div className='cert-block block-grid grid-project-block'>
           <div className='tags-wrapper'>
             <span className='cert-tag' aria-hidden='true'>
               {t('misc.certification-project')}

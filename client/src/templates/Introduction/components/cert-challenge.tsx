@@ -124,7 +124,7 @@ const CertChallenge = ({
         : createFlashMessage(honestyInfoMessage);
     };
   return (
-    <div className='block'>
+    <>
       {isSignedIn && (
         <Button
           block={true}
@@ -139,7 +139,7 @@ const CertChallenge = ({
           <span className='sr-only'>{title}</span>
         </Button>
       )}
-    </div>
+    </>
   );
 };
 

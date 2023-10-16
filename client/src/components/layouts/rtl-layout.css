@@ -34,7 +34,7 @@ the "not" and "is" selector is used to stop it from affecting other section and 
 
 /* arrow icon */
 [dir='rtl']
-  :is(.block:is(:not(.open)), .faq-item:is(:not(.open)))
+  :is(.cert-block:is(:not(.open)), .faq-item:is(:not(.open)))
   .map-title:not(.title-wrapper, .block-header-button-text)
   > svg:first-child {
   transform: rotate(180deg);

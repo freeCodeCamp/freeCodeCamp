@@ -9,7 +9,7 @@
 }
 
 @media (max-width: 640px) {
-  .map-ui .block ul {
+  .map-ui .cert-block ul {
     padding-inline-start: 6px;
     font-size: 0.9rem;
   }

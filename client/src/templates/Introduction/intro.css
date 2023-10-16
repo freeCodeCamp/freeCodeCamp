@@ -138,7 +138,7 @@ button.map-title {
   padding-inline-start: 15px;
 }
 
-.block .map-cert-title {
+.cert-block .map-cert-title {
   display: flex;
   align-items: center;
   padding: 18px 8px;
@@ -148,24 +148,24 @@ button.map-title {
   width: 100%;
 }
 
-.block .no-cursor {
+.cert-block .no-cursor {
   cursor: default;
 }
 
-.block .no-cursor h3 {
+.cert-block .no-cursor h3 {
   cursor: text;
 }
 
-.block .map-is-cert:hover {
+.cert-block .map-is-cert:hover {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
 }
 
-.block-ui .block {
+.block-ui .cert-block {
   background: var(--primary-background);
 }
 
-.block-ui .block .block-description {
+.block-ui .cert-block .block-description {
   padding: 0 15px 15px;
   border-bottom: 3px solid var(--secondary-background);
 }
