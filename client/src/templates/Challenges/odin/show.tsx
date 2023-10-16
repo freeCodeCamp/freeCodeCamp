@@ -83,8 +83,7 @@ interface ShowOdinState {
 // Component
 class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
   static displayName: string;
-  private container: React.RefObject<HTMLElement> | undefined =
-    React.createRef();
+  private container: React.RefObject<HTMLElement> = React.createRef();
 
   constructor(props: ShowOdinProps) {
     super(props);
@@ -120,7 +119,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this.container?.current?.focus();
+    this.container.current?.focus();
   }
 
   componentDidUpdate(prevProps: ShowOdinProps): void {

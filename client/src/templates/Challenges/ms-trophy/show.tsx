@@ -84,8 +84,7 @@ interface MsTrophyProps {
 // Component
 class MsTrophy extends Component<MsTrophyProps> {
   static displayName: string;
-  private container: React.RefObject<HTMLElement> | undefined =
-    React.createRef();
+  private container: React.RefObject<HTMLElement> = React.createRef();
 
   constructor(props: MsTrophyProps) {
     super(props);
@@ -109,7 +108,7 @@ class MsTrophy extends Component<MsTrophyProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this.container?.current?.focus();
+    this.container.current?.focus();
   }
 
   componentDidUpdate(prevProps: MsTrophyProps): void {
