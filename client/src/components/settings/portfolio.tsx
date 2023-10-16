@@ -1,14 +1,15 @@
-import {
-  Button,
-  FormGroup,
-  ControlLabel,
-  FormControl,
-  HelpBlock
-} from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import { findIndex, find, isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
+import {
+  FormGroup,
+  FormControl,
+  ControlLabel,
+  HelpBlock,
+  FormGroupProps
+} from '@freecodecamp/ui';
 import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 import { PortfolioProjectData } from '../../redux/prop-types';
@@ -31,6 +32,11 @@ type PortfolioState = {
   portfolio: PortfolioProjectData[];
   unsavedItemId: string | null;
 };
+
+interface ProfileValidation {
+  state: FormGroupProps['validationState'];
+  message: string;
+}
 
 function createEmptyPortfolioItem(): PortfolioProjectData {
   return {
@@ -61,9 +67,9 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
 
   createOnChangeHandler =
     (id: string, key: 'description' | 'image' | 'title' | 'url') =>
-    (e: React.FormEvent<HTMLInputElement>) => {
+    (e: React.ChangeEvent<HTMLInputElement>) => {
       e.preventDefault();
-      const userInput = (e.target as HTMLInputElement).value.slice();
+      const userInput = e.target.value.slice();
       return this.setState(state => {
         const { portfolio: currentPortfolio } = state;
         const mutablePortfolio = currentPortfolio.slice(0);
@@ -114,7 +120,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     return isEqual(original, edited);
   };
 
-  getDescriptionValidation(description: string) {
+  getDescriptionValidation(description: string): ProfileValidation {
     const { t } = this.props;
     const len = description.length;
     const charsLeft = 288 - len;
@@ -136,10 +142,13 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     return { state: 'success', message: '' };
   }
 
-  getTitleValidation(title: string) {
+  getTitleValidation(title: string): ProfileValidation {
     const { t } = this.props;
     if (!title) {
-      return { state: 'error', message: t('validation.title-required') };
+      return {
+        state: 'error',
+        message: t('validation.title-required')
+      };
     }
     const len = title.length;
     if (len < 2) {
@@ -155,7 +164,10 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     const { t } = this.props;
     const len = maybeUrl.length;
     if (len >= 4 && !hasProtocolRE.test(maybeUrl)) {
-      return { state: 'error', message: t('validation.invalid-protocol') };
+      return {
+        state: 'error',
+        message: t('validation.invalid-protocol')
+      };
     }
     if (isImage && !maybeUrl) {
       return { state: null, message: '' };
@@ -242,7 +254,6 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       if (isButtonDisabled) return null;
       return this.updateItem(id);
     };
-
     return (
       <FullWidthRow key={id}>
         <form onSubmit={e => handleSubmit(e, id)} id='portfolio-items'>
@@ -258,8 +269,11 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               required={true}
               type='text'
               value={title}
+              data-cy='portfolio-title'
             />
-            {titleMessage ? <HelpBlock>{titleMessage}</HelpBlock> : null}
+            {titleMessage ? (
+              <HelpBlock data-cy='validation-message'>{titleMessage}</HelpBlock>
+            ) : null}
           </FormGroup>
           <FormGroup
             controlId={`${id}-url`}
@@ -271,8 +285,11 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               required={true}
               type='url'
               value={url}
+              data-cy='portfolio-url'
             />
-            {urlMessage ? <HelpBlock>{urlMessage}</HelpBlock> : null}
+            {urlMessage ? (
+              <HelpBlock data-cy='validation-message'>{urlMessage}</HelpBlock>
+            ) : null}
           </FormGroup>
           <FormGroup
             controlId={`${id}-image`}
@@ -283,8 +300,11 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               onChange={this.createOnChangeHandler(id, 'image')}
               type='url'
               value={image}
+              data-cy='portfolio-image'
             />
-            {imageMessage ? <HelpBlock>{imageMessage}</HelpBlock> : null}
+            {imageMessage ? (
+              <HelpBlock data-cy='validation-message'>{imageMessage}</HelpBlock>
+            ) : null}
           </FormGroup>
           <FormGroup
             controlId={`${id}-description`}
@@ -295,9 +315,12 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               componentClass='textarea'
               onChange={this.createOnChangeHandler(id, 'description')}
               value={description}
+              data-cy='portfolio-description'
             />
             {descriptionMessage ? (
-              <HelpBlock>{descriptionMessage}</HelpBlock>
+              <HelpBlock data-cy='validation-message'>
+                {descriptionMessage}
+              </HelpBlock>
             ) : null}
           </FormGroup>
           <BlockSaveButton
@@ -339,6 +362,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           <p>{t('settings.share-projects')}</p>
           <Spacer size='small' />
           <Button
+            data-cy='add-portfolio'
             block={true}
             bsSize='lg'
             bsStyle='primary'
