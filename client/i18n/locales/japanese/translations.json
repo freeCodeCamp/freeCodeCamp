@@ -732,11 +732,15 @@
         "unlinked": "The link to your Microsoft username has been removed.",
         "unlink-err": "Something went wrong trying to remove the link to your Microsoft username."
       },
+      "profile": {
+        "err": "We could not find a Microsoft user ID for Microsoft user \"{{msUsername}}\""
+      },
       "trophy": {
         "err-1": "We could not find a Microsoft username associated with your freeCodeCamp account.",
         "err-2": "You are trying to submit a challenge that does not appear to be a trophy challenge.",
-        "err-3": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
-        "err-4": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-3": "We could not get your Microsoft profile from your Microsoft ID.",
+        "err-4": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
+        "err-5": "Something went wrong trying to verify your trophy. Please check and try again.",
         "verified": "Your trophy from Microsoft's learning platform was verified."
       }
     },
@@ -905,8 +909,7 @@
   "forum-help": {
     "browser-info": "**ブラウザ情報:**",
     "user-agent": "ユーザーエージェント: <code>{{userAgent}}</code>",
-    "challenge": "**チャレンジ:**",
-    "challenge-link": "**チャレンジへのリンク:**",
+    "challenge": "**Challenge Information:**",
     "whats-happening": "**状況を説明しましょう:**",
     "describe": "質問内容をここに詳しく記入してください。",
     "camper-project": "**プロジェクトのリンク**",
