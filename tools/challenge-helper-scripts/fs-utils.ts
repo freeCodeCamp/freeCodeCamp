@@ -23,6 +23,7 @@ export function getSuperBlockSubPath(superBlock: SuperBlocks): string {
     [SuperBlocks.ProjectEuler]: '18-project-euler',
     [SuperBlocks.FoundationalCSharp]: '19-foundational-c-sharp-with-microsoft',
     [SuperBlocks.UpcomingPython]: '20-upcoming-python',
+    [SuperBlocks.A2English]: '21-a2-english-for-developers',
     [SuperBlocks.ExampleCertification]: '99-example-certification'
   };
   return pathMap[superBlock];

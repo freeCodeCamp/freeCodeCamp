@@ -1,0 +1,26 @@
+{
+    "name": "Learn Conversation Starters in the Break Room",
+    "isUpcomingChange": true,
+    "dashedName": "learn-conversation-starters-in-the-break-room",
+    "order": 2,
+    "time": "5 hours",
+    "template": "",
+    "required": [],
+    "superBlock": "a2-english-for-developers",
+    "isBeta": true,
+    "challengeOrder": [
+      {
+        "id": "651dd5ae6ffb500e3f2ce47c",
+        "title": "Challenge 1"
+      },
+      {
+        "id": "651dd5d86ffb500e3f2ce47d",
+        "title": "Challenge 2"
+      },
+      {
+        "id": "651dd5f41d697d0aab7833b5",
+        "title": "Challenge 3"
+      }
+    ],
+    "helpCategory": "HTML-CSS"
+  }

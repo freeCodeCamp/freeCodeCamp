@@ -27,6 +27,7 @@ export enum Certification {
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
   // Upcoming certifications
   UpcomingPython = 'upcoming-python-v8',
+  A2English = 'a2-english-for-developers-v8',
   // Legacy certifications
   LegacyFrontEnd = 'legacy-front-end',
   LegacyBackEnd = 'legacy-back-end',
@@ -70,7 +71,10 @@ export const legacyFullStackCertification = [
 
 // "Upcoming" certifications are standard certifications that are not live unless
 // showUpcomingChanges is true.
-export const upcomingCertifications = [Certification.UpcomingPython] as const;
+export const upcomingCertifications = [
+  Certification.UpcomingPython,
+  Certification.A2English
+] as const;
 
 export const certTypes = {
   frontEnd: 'isFrontEndCert',

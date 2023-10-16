@@ -33,7 +33,7 @@ const schema = Joi.object()
     challengeOrder: Joi.number(),
     removeComments: Joi.bool().required(),
     certification: Joi.string().regex(slugRE),
-    challengeType: Joi.number().min(0).max(20).required(),
+    challengeType: Joi.number().min(0).max(21).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
@@ -73,7 +73,7 @@ const schema = Joi.object()
     }),
     // video challenges only:
     videoId: Joi.when('challengeType', {
-      is: challengeTypes.video,
+      is: [challengeTypes.video, challengeTypes.englishDialogue],
       then: Joi.string().required()
     }),
     videoLocaleIds: Joi.when('challengeType', {
@@ -112,7 +112,11 @@ const schema = Joi.object()
         crossDomain: Joi.bool()
       })
     ),
-    assignments: Joi.array().items(Joi.string()),
+    assignments: Joi.when('challengeType', {
+      is: challengeTypes.englishDialogue,
+      then: Joi.array().items(Joi.string()).required(),
+      otherwise: Joi.array().items(Joi.string())
+    }),
     solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
     superBlock: Joi.string().regex(slugWithSlashRE),
     superOrder: Joi.number(),

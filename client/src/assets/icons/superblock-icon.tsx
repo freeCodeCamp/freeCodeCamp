@@ -37,7 +37,8 @@ const iconMap = {
   [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra,
   [SuperBlocks.FoundationalCSharp]: CSharpLogo,
   [SuperBlocks.ExampleCertification]: ResponsiveDesign,
-  [SuperBlocks.UpcomingPython]: PythonIcon
+  [SuperBlocks.UpcomingPython]: PythonIcon,
+  [SuperBlocks.A2English]: Graduation
 };
 
 type SuperBlockIconProps = {
