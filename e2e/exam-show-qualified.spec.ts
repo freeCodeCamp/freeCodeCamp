@@ -7,10 +7,6 @@ test.use({ storageState: 'playwright/.auth/certified-user.json' });
 const examUrl =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';
 
-test.afterAll(async ({ page }) => {
-  await page.close();
-});
-
 test.beforeEach(async ({ page }) => {
   await page.goto(examUrl);
 });

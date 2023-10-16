@@ -62,13 +62,7 @@ test.describe('Exam Show E2E Test Suite for started exam', () => {
       } else {
         await expect(prevQuestionBtn).not.toBeEnabled();
       }
-      const quizOptions = await page.getByRole('radio').all();
-      await quizOptions[0].check({ force: true });
-      // for (let j = 0; j < QUESTION_COUNT; j++) {
-      //   // 4 answers
-      //   const quizOptions = await page.getByRole('radio').all();
-      //   await quizOptions[j].check({ force: true });
-      // }
+      await page.getByRole('radio').first().check({ force: true });
       await expect(exitButton).toBeVisible();
       await expect(exitButton).toBeEnabled();
       if (i < QUESTION_COUNT - 1) {
