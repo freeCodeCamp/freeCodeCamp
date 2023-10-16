@@ -1,10 +1,10 @@
 import {
-  ControlLabel,
   FormControl,
   FormGroup,
+  ControlLabel,
+  Alert,
   HelpBlock
-} from '@freecodecamp/react-bootstrap';
-import { Alert } from '@freecodecamp/ui';
+} from '@freecodecamp/ui';
 import normalizeUrl from 'normalize-url';
 import React from 'react';
 import { Field } from 'react-final-form';

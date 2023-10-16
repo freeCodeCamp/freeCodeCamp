@@ -5,9 +5,6 @@ test.beforeEach(async ({ page }) => {
     '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
   );
 });
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
 
 test.describe('Editor Component', () => {
   test('Should be clicked and able to insert text', async ({ page }) => {

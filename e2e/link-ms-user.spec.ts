@@ -7,10 +7,6 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test.describe('Link MS user component (unlinked signedOut user)', () => {
   test('Component has proper main heading and relevant sections', async ({
     page
