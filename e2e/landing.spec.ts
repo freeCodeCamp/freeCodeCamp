@@ -43,10 +43,6 @@ test.beforeAll(async ({ browser }) => {
   await page.goto('/');
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test('The component Landing-top renders correctly', async () => {
   const landingHeading1 = page.getByTestId('landing-big-heading-1');
   await expect(landingHeading1).toHaveText(
