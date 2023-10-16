@@ -67,6 +67,7 @@ function EmailListOptIn({
             bsSize='lg'
             bsStyle='primary'
             className='big-cta-btn'
+            data-playwright-test-label='yes-please-button'
             onClick={() => acceptTerms(true)}
           >
             {t('buttons.yes-please')}
@@ -79,6 +80,7 @@ function EmailListOptIn({
             bsSize='lg'
             bsStyle='primary'
             className='big-cta-btn'
+            data-playwright-test-label='no-thanks-button'
             onClick={() => acceptTerms(false)}
           >
             {t('buttons.no-thanks')}
@@ -96,6 +98,7 @@ function EmailListOptIn({
           bsSize='lg'
           bsStyle='primary'
           className='big-cta-btn'
+          data-playwright-test-label='signup-email-list'
           href={`${apiLocation}/signin`}
         >
           {t('buttons.sign-up-email-list')}
@@ -128,7 +131,9 @@ function AcceptPrivacyTerms({
   ) : (
     <>
       <Helmet>
-        <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
+        <title data-playwright-test-label='misc-email-signup'>
+          {t('misc.email-signup')} | freeCodeCamp.org
+        </title>
       </Helmet>
       <Container>
         {isSignedIn && completedChallengeCount < 1 ? (
