@@ -96,9 +96,8 @@ export async function devLogin(): Promise<string[]> {
 
 export async function seedExam(): Promise<void> {
   const query = { where: { id: examJson.id } };
-  const testExamExists = await fastifyTestInstance.prisma.exam.findUnique(
-    query
-  );
+  const testExamExists =
+    await fastifyTestInstance.prisma.exam.findUnique(query);
 
   if (testExamExists) {
     await fastifyTestInstance.prisma.exam.deleteMany(query);
