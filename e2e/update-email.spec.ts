@@ -8,10 +8,6 @@ test.beforeAll(async ({ browser }) => {
   await page.goto('/update-email');
 });
 
-test.afterAll(async () => {
-  await page.close();
-});
-
 test.describe('The update-email page', () => {
   test('The page renders with correct title', async () => {
     await expect(page).toHaveTitle(

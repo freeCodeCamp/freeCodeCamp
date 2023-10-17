@@ -74,7 +74,7 @@ export interface EditorProps {
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
   challengeType: number;
-  containerRef: MutableRefObject<HTMLElement | undefined>;
+  containerRef?: React.RefObject<HTMLElement>;
   description: string;
   dimensions?: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
@@ -825,7 +825,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function focusOnHotkeys() {
-    const currContainerRef = props.containerRef.current;
+    const currContainerRef = props.containerRef?.current;
     if (currContainerRef) {
       currContainerRef.focus();
     }

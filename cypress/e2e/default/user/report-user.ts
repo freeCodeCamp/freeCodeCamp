@@ -11,7 +11,7 @@ describe('Report User', () => {
     // cy.contains('Preview custom 404 page').click();
     cy.contains("Flag This User's Account for Abuse").click();
     cy.contains("Do you want to report twaha's portfolio for abuse?");
-    cy.get('[id=report-user-textarea]').type('Some details');
+    cy.get('[data-cy="report-user"]').type('Some details');
     cy.contains('Submit the report').click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/learn');
