@@ -45,9 +45,11 @@ const Testimonials = (): JSX.Element => {
               </p>
             </div>
             <div className='testimony'>
-              <p data-playwright-test-label='testimonials-endorser-testimony'>
-                <Trans>landing.testimonials.shawn.testimony</Trans>
-              </p>
+              <blockquote>
+                <p data-playwright-test-label='testimonials-endorser-testimony'>
+                  <Trans>landing.testimonials.shawn.testimony</Trans>
+                </p>
+              </blockquote>
             </div>
           </div>
         </div>
@@ -78,9 +80,11 @@ const Testimonials = (): JSX.Element => {
               </p>
             </div>
             <div className='testimony'>
-              <p data-playwright-test-label='testimonials-endorser-testimony'>
-                <Trans>landing.testimonials.sarah.testimony</Trans>
-              </p>
+              <blockquote>
+                <p data-playwright-test-label='testimonials-endorser-testimony'>
+                  <Trans>landing.testimonials.sarah.testimony</Trans>
+                </p>
+              </blockquote>
             </div>
           </div>
         </div>
@@ -111,9 +115,11 @@ const Testimonials = (): JSX.Element => {
               </p>
             </div>
             <div className='testimony'>
-              <p data-playwright-test-label='testimonials-endorser-testimony'>
-                <Trans>landing.testimonials.emma.testimony</Trans>
-              </p>
+              <blockquote>
+                <p data-playwright-test-label='testimonials-endorser-testimony'>
+                  <Trans>landing.testimonials.emma.testimony</Trans>
+                </p>
+              </blockquote>
             </div>
           </div>
         </div>

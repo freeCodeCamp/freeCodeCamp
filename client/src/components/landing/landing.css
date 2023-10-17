@@ -169,6 +169,11 @@ figcaption.caption {
   justify-content: center;
 }
 
+.testimony blockquote {
+  padding: 0;
+  border: 0;
+}
+
 .landing-top,
 .as-seen-in,
 .certification-section,
