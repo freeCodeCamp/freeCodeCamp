@@ -1,6 +1,6 @@
 ---
 id: 64e4ebc7eabc5a6babd479cd
-title: Step 9
+title: Passo 9
 challengeType: 0
 dashedName: step-9
 ---
@@ -19,7 +19,7 @@ You should call the `addEventListener()` method on your `discardBtn` variable.
 assert.match(code, /discardBtn\.addEventListener\(/)
 ```
 
-Your event listener should listen for a `click` event.
+O "ouvinte" de evento deve "ouvir" o evento de `click`.
 
 ```js
 assert.match(code, /discardBtn\.addEventListener\(('|"|`)click\1/)

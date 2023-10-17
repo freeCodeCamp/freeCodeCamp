@@ -31,10 +31,6 @@ test.beforeAll(async ({ browser }) => {
   await page.goto('/donate');
 });
 
-test.afterAll(async () => {
-  await page.close();
-});
-
 test.describe('Donate Page', () => {
   test('should display the correct title', async () => {
     await expect(page).toHaveTitle(

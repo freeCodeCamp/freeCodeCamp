@@ -10,18 +10,6 @@
   background-color: var(--danger-background);
   border-color: var(--danger-background);
 }
-
-.danger-zone .panel-heading {
-  color: var(--danger-color);
-  background-color: var(--danger-background);
-  border-radius: 0;
-  border: none;
-}
-
-.danger-zone .panel-danger {
-  border-color: var(--danger-background);
-}
-
 .danger-zone p {
   color: var(--danger-color);
 }

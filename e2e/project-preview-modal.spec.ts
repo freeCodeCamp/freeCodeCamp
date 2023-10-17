@@ -9,10 +9,6 @@ test.beforeEach(async ({ page }) => {
   await page.goto(currentUrlPath);
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test.describe('Exit Project Preview Modal E2E Test Suite', () => {
   test('Verifies the Correct Rendering of the Project Preview Modal', async ({
     page
