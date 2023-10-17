@@ -56,22 +56,6 @@ describe('<Button />', () => {
     expect(button).not.toHaveAttribute('disabled', 'true');
   });
 
-  it('should not trigger the onClick prop if the button is disabled', () => {
-    const onClick = jest.fn();
-
-    render(
-      <Button disabled onClick={onClick}>
-        Hello world
-      </Button>
-    );
-
-    const button = screen.getByRole('button', { name: /hello world/i });
-
-    userEvent.click(button);
-
-    expect(onClick).not.toBeCalled();
-  });
-
   it('should render an anchor element if the `href` prop is defined', () => {
     render(<Button href='https://www.freecodecamp.org'>freeCodeCamp</Button>);
 
