@@ -60,54 +60,55 @@ function DonatePage({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return showLoading ? (
-    <Loader fullScreen={true} />
-  ) : (
+  return (
     <>
-      <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
-      <Container className='donate-page-wrapper'>
-        <Spacer size='medium' />
-        <Row>
-          <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
-            {isDonating ? (
-              <h2
-                data-playwright-test-label='main-head'
-                className='text-center'
-              >
-                {t('donate.thank-you')}
-              </h2>
-            ) : (
-              <h2
-                data-playwright-test-label='main-head'
-                className='text-center'
-              >
-                {t('donate.help-more')}
-              </h2>
-            )}
-            <Spacer size='medium' />
-            {isDonating ? (
-              <Alert variant='info' data-cy='donate-alert'>
-                <p data-cy='donate.thank-you'>{t('donate.thank-you')}</p>
-                <br />
-                <DonationOptionsAlertText />
-              </Alert>
-            ) : null}
-            <DonationText />
-            <DonateForm paymentContext={PaymentContext.DonatePage} />
-            <Spacer size='exLarge' />
-            <hr />
-            <h2 data-playwright-test-label='faq-head' className={'text-center'}>
-              {t('donate.faq')}
+    {showLoading ? <Loader fullScreen={true} /> : 
+
+    <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
+    <Container className='donate-page-wrapper'>
+      <Spacer size='medium' />
+      <Row>
+        <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
+          {isDonating ? (
+            <h2
+              data-playwright-test-label='main-head'
+              className='text-center'
+            >
+              {t('donate.thank-you')}
             </h2>
-            <Spacer size='medium' />
-            <DonationFaqText />
-          </Col>
-          <Col lg={6}>
-            <CampersImage pageName='donate' />
-          </Col>
-        </Row>
-        <Spacer size='medium' />
-      </Container>
+          ) : (
+            <h2
+              data-playwright-test-label='main-head'
+              className='text-center'
+            >
+              {t('donate.help-more')}
+            </h2>
+          )}
+          <Spacer size='medium' />
+          {isDonating ? (
+            <Alert variant='info' data-cy='donate-alert'>
+              <p data-cy='donate.thank-you'>{t('donate.thank-you')}</p>
+              <br />
+              <DonationOptionsAlertText />
+            </Alert>
+          ) : null}
+          <DonationText />
+          <DonateForm paymentContext={PaymentContext.DonatePage} />
+          <Spacer size='exLarge' />
+          <hr />
+          <h2 data-playwright-test-label='faq-head' className={'text-center'}>
+            {t('donate.faq')}
+          </h2>
+          <Spacer size='medium' />
+          <DonationFaqText />
+        </Col>
+        <Col lg={6}>
+          <CampersImage pageName='donate' />
+        </Col>
+      </Row>
+      <Spacer size='medium' />
+    </Container>
+}
     </>
   );
 }
