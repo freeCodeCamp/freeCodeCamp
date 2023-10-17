@@ -1,9 +1,6 @@
 import React from 'react';
 import type { ButtonProps } from './types';
 
-const defaultClassNames =
-  'relative cursor-pointer border-3 border-solid text-center no-underline active:before:w-full active:before:h-full active:before:absolute active:before:inset-0 active:before:border-3 active:before:border-transparent active:before:bg-gray-900 active:before:opacity-20 aria-disabled:cursor-not-allowed aria-disabled:opacity-50 focus:outline-none focus:ring focus:ring-focus-outline-color';
-
 const computeClassNames = ({
   size,
   variant,
@@ -15,7 +12,9 @@ const computeClassNames = ({
   disabled?: boolean;
   block?: boolean;
 }) => {
-  const classNames = [];
+  const classNames = [
+    'relative cursor-pointer border-3 border-solid text-center no-underline active:before:w-full active:before:h-full active:before:absolute active:before:inset-0 active:before:border-3 active:before:border-transparent active:before:bg-gray-900 active:before:opacity-20 aria-disabled:cursor-not-allowed aria-disabled:opacity-50 focus:outline-none focus:ring focus:ring-focus-outline-color'
+  ];
 
   if (block) {
     classNames.push('block', 'w-full');
@@ -80,8 +79,6 @@ const computeClassNames = ({
     default:
       classNames.push('px-3 py-1.5 text-md');
   }
-
-  classNames.push(defaultClassNames);
 
   return classNames.join(' ');
 };
