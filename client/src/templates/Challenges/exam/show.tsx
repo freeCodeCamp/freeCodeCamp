@@ -548,14 +548,13 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                 <PrismFormatted text={description} />
                 <Spacer size='medium' />
                 <PrismFormatted text={instructions} />
-
                 <Button
                   block={true}
                   variant='primary'
                   data-cy='start-exam'
                   disabled={!qualifiedForExam}
                   onClick={() => {
-                    void this.runExam;
+                    void this.runExam();
                   }}
                 >
                   {t('buttons.click-start-exam')}

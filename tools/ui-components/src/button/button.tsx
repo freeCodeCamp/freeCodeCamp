@@ -92,7 +92,9 @@ const StylessButton = React.forwardRef<React.ElementRef<'button'>, ButtonProps>(
     return (
       <button
         className={className}
-        {...(disabled ? { onClick: () => void {} } : { onClick: onClick })}
+        {...(disabled === true
+          ? { onClick: () => void {} }
+          : { onClick: onClick })}
         aria-disabled={disabled}
         ref={ref}
         type={type ?? 'button'}
