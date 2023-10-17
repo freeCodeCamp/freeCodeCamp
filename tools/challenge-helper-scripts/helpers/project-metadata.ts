@@ -19,7 +19,7 @@ export type Meta = {
 };
 
 function getMetaData(): Meta {
-  const metaData = fs.readFileSync(getProjectMetaPath(), 'utf8');
+  const metaData = fs.readFileSync(getProjectMetaPath(), 'utf-8');
   return JSON.parse(metaData) as Meta;
 }
 

@@ -42,6 +42,7 @@ type MultifileEditorProps = Pick<
 > & {
   visibleEditors: VisibleEditors;
 };
+
 const mapStateToProps = createSelector(
   visibleEditorsSelector,
   canFocusEditorSelector,
