@@ -9,8 +9,13 @@ export const getFileName = async (id: string): Promise<string | null> => {
     if (!file.endsWith('.md')) {
       continue;
     }
-    const frontMatter = matter.read(`${path}${file}`);
-    if (String(frontMatter.data.id) === id) {
+    let frontMatter = null;
+    try {
+      frontMatter = matter.read(`${path}${file}`);
+    } catch (err) {
+      frontMatter = null;
+    }
+    if (String(frontMatter?.data.id) === id) {
       return file;
     }
   }

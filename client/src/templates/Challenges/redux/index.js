@@ -32,6 +32,7 @@ const initialState = {
   userCompletedExam: null,
   hasCompletedBlock: false,
   isBuildEnabled: true,
+  isExecuting: false,
   isResetting: false,
   logsOut: [],
   modal: {
@@ -234,7 +235,12 @@ export const reducer = handleActions(
     [actionTypes.executeChallenge]: state => ({
       ...state,
       currentTab: 3,
-      attempts: state.attempts + 1
+      attempts: state.attempts + 1,
+      isExecuting: true
+    }),
+    [actionTypes.executeChallengeComplete]: state => ({
+      ...state,
+      isExecuting: false
     }),
     [actionTypes.setEditorFocusability]: (state, { payload }) => ({
       ...state,

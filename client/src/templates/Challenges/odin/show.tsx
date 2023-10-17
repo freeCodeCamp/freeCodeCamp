@@ -1,5 +1,5 @@
 // Package Utilities
-import { Button, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container } from '@freecodecamp/ui';
+import { Container, Col, Row } from '@freecodecamp/ui';
 
 // Local Utilities
 import Loader from '../../../components/helpers/loader';
@@ -83,7 +83,7 @@ interface ShowOdinState {
 // Component
 class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
   static displayName: string;
-  private _container: HTMLElement | null | undefined;
+  private container: React.RefObject<HTMLElement> = React.createRef();
 
   constructor(props: ShowOdinProps) {
     super(props);
@@ -119,7 +119,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container?.focus();
+    this.container.current?.focus();
   }
 
   componentDidUpdate(prevProps: ShowOdinProps): void {
@@ -236,7 +236,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
         executeChallenge={() => {
           this.handleSubmit(solution, openCompletionModal, assignments);
         }}
-        innerRef={(c: HTMLElement | null) => (this._container = c)}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
@@ -312,7 +312,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                         <input
                           aria-label={t('aria.answer')}
                           checked={this.state.selectedOption === index}
-                          className='video-quiz-input-hidden'
+                          className='sr-only'
                           name='quiz'
                           onChange={this.handleOptionChange}
                           type='radio'
@@ -353,6 +353,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   block={true}
                   bsSize='large'
                   bsStyle='primary'
+                  data-playwright-test-label='check-answer-button'
                   onClick={() =>
                     this.handleSubmit(
                       solution,
@@ -368,6 +369,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   bsSize='large'
                   bsStyle='primary'
                   className='btn-invert'
+                  data-playwright-test-label='ask-for-help-button'
                   onClick={openHelpModal}
                 >
                   {t('buttons.ask-for-help')}

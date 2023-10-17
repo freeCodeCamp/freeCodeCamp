@@ -1,7 +1,7 @@
 import request from 'supertest';
 
 import { build } from './src/app';
-import { defaultUser } from './src/utils/default-user';
+import { createUserInput } from './src/utils/create-user';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
@@ -64,7 +64,8 @@ export function setupServer(): void {
     await fastify.ready();
 
     global.fastifyTestInstance = fastify;
-  });
+    // allow a little time to setup the db
+  }, 10000);
 
   afterAll(async () => {
     // Due to a prisma bug, this is not enough, we need to --force-exit jest:
@@ -83,9 +84,8 @@ export async function devLogin(): Promise<string[]> {
 
   await fastifyTestInstance.prisma.user.create({
     data: {
-      ...defaultUser,
-      id: defaultUserId,
-      email: defaultUserEmail
+      ...createUserInput(defaultUserEmail),
+      id: defaultUserId
     }
   });
   const res = await superRequest('/auth/dev-callback', { method: 'GET' });

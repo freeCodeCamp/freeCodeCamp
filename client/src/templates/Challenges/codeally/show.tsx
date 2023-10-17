@@ -1,7 +1,7 @@
 // Package Utilities
-import { Alert, Col, Row, Button } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
-import React, { Component, RefObject } from 'react';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { Trans, withTranslation } from 'react-i18next';
@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container } from '@freecodecamp/ui';
+import { Container, Col, Row, Alert } from '@freecodecamp/ui';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
@@ -113,7 +113,7 @@ interface ShowCodeAllyProps {
 
 class ShowCodeAlly extends Component<ShowCodeAllyProps> {
   static displayName: string;
-  private _container: RefObject<HTMLElement> | undefined;
+  private container: React.RefObject<HTMLElement> = React.createRef();
 
   componentDidMount(): void {
     const {
@@ -133,8 +133,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-
-    this._container?.current?.focus();
+    this.container.current?.focus();
   }
 
   componentWillUnmount() {
@@ -237,7 +236,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       challenge => challenge.id === challengeId
     );
     const titleContext = t('learn.github-link');
-
     return showCodeAlly ? (
       <LearnLayout>
         <Helmet title={windowTitle} />
@@ -252,7 +250,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       </LearnLayout>
     ) : (
       <Hotkeys
-        innerRef={this._container}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
@@ -313,7 +311,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       <Spacer size='medium' />
                     </>
                   )}
-                <Alert id='codeally-cookie-warning' bsStyle='info'>
+                <Alert id='codeally-cookie-warning' variant='info'>
                   <p>{t(`intro:misc-text.enable-cookies`)}</p>
                 </Alert>
                 <Button

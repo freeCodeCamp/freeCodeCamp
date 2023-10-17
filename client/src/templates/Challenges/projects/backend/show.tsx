@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
-import { Col, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -10,8 +9,8 @@ import { withTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Container, Col, Row } from '@freecodecamp/ui';
 
-import { Container } from '@freecodecamp/ui';
 import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
 import { isSignedInSelector } from '../../../../redux/selectors';
@@ -100,8 +99,8 @@ interface BackEndProps {
 // Component
 class BackEnd extends Component<BackEndProps> {
   static displayName: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  private _container: any;
+  private container: React.RefObject<HTMLElement> = React.createRef();
+
   constructor(props: BackEndProps) {
     super(props);
     this.state = {};
@@ -112,7 +111,7 @@ class BackEnd extends Component<BackEndProps> {
   componentDidMount() {
     this.initializeComponent();
     window.addEventListener('resize', () => this.updateDimensions());
-    this._container.focus();
+    this.container.current?.focus();
   }
 
   updateDimensions() {
@@ -221,7 +220,7 @@ class BackEnd extends Component<BackEndProps> {
 
     return (
       <Hotkeys
-        innerRef={(c: HTMLElement | null) => (this._container = c)}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert } from '@freecodecamp/react-bootstrap';
+import { Alert } from '@freecodecamp/ui';
 import { useFeature } from '@growthbook/growthbook-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from '../helpers';
@@ -19,7 +19,7 @@ const LearnAlert = ({
   const seasonalMessage = useFeature('seasonal-alert');
 
   const researchRecruitmentAlert = (
-    <Alert>
+    <Alert variant='info' className='annual-donation-alert'>
       <p>
         <b>Launching Oct 19</b>: freeCodeCamp is teaming up with researchers
         from Stanford and UPenn to study how to help people build strong coding
@@ -43,7 +43,7 @@ const LearnAlert = ({
   );
 
   const seasonalMessageAlert = (
-    <Alert bsStyle='info' className='annual-donation-alert'>
+    <Alert variant='info' className='annual-donation-alert'>
       <p>
         <b>{t('learn.season-greetings-fcc')}</b>
       </p>
@@ -64,7 +64,7 @@ const LearnAlert = ({
   );
 
   const universityCreationAlert = (
-    <Alert bsStyle='info' className='annual-donation-alert'>
+    <Alert variant='info' className='annual-donation-alert'>
       <p>
         <b>{t('learn.building-a-university')}</b>
       </p>

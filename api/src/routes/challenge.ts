@@ -1,6 +1,7 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
 import { uniqBy } from 'lodash';
+
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import { schemas } from '../schemas';
 import {
@@ -394,7 +395,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         if (!multifileCertProjectIds.includes(challengeId)) {
           void reply.code(403);
-          return 'That challenge type is not savable.';
+          return 'That challenge type is not saveable.';
         }
 
         const userSavedChallenges = saveUserChallengeData(

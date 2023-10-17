@@ -551,7 +551,9 @@
     "how-update": "He configurado una donación mensual, pero necesito actualizar o pausar la recurrencia mensual. ¿Cómo puedo hacerlo?",
     "take-care-of-this": "Manda uno de tus recibos mensuales de donación a donors@freecodecamp.org y dinos lo que te gustaría que hiciéramos. Nos ocuparemos de esto y te enviaremos confirmación.",
     "anything-else": "¿Hay algo más que pueda aprender sobre cómo hacer una donación a freeCodeCamp.org?",
-    "other-support": "Si hay alguna otra forma en la que te gustaría apoyar a nuestra organización sin fines de lucro y su misión que no aparece aquí, o si tienes alguna pregunta, envía un correo electrónico a Quincy a quincy@freecodecamp.org."
+    "other-support": "Si hay alguna otra forma en la que te gustaría apoyar a nuestra organización sin fines de lucro y su misión que no aparece aquí, o si tienes alguna pregunta, envía un correo electrónico a Quincy a quincy@freecodecamp.org.",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "Necesitas iniciar sesión para reportar a un usuario",
@@ -730,14 +732,19 @@
         "unlinked": "The link to your Microsoft username has been removed.",
         "unlink-err": "Something went wrong trying to remove the link to your Microsoft username."
       },
+      "profile": {
+        "err": "We could not find a Microsoft user ID for Microsoft user \"{{msUsername}}\""
+      },
       "trophy": {
         "err-1": "We could not find a Microsoft username associated with your freeCodeCamp account.",
         "err-2": "You are trying to submit a challenge that does not appear to be a trophy challenge.",
-        "err-3": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
-        "err-4": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-3": "We could not get your Microsoft profile from your Microsoft ID.",
+        "err-4": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
+        "err-5": "Something went wrong trying to verify your trophy. Please check and try again.",
         "verified": "Your trophy from Microsoft's learning platform was verified."
       }
-    }
+    },
+    "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
@@ -902,8 +909,7 @@
   "forum-help": {
     "browser-info": "**Información de tu navegador:**",
     "user-agent": "El agente de usuario es: <code>{{userAgent}}</code>",
-    "challenge": "**Desafío:**",
-    "challenge-link": "**Enlaza al desafío:**",
+    "challenge": "**Challenge Information:**",
     "whats-happening": "**Cuéntanos qué está pasando:**",
     "describe": "Describe tu problema en detalle aquí.",
     "camper-project": "**Enlace(s) de tu proyecto**",

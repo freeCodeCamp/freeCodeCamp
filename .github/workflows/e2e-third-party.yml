@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
     services:
       mongodb:
         image: mongo:4.4

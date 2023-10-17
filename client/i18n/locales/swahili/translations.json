@@ -551,7 +551,9 @@
     "how-update": "Ninaanzisha mchango wa kila mwezi, lakini ninahitaji kusasisha au kusitisha ujirudiaji wa kila mwezi. Ninawezaje kufanya hili?",
     "take-care-of-this": "Tuma moja ya risiti zako za michango ya kila mwezi kwa donors@freecodecamp.org na utuambie kile ungependa tufanye. Tutakushughulikia na kukutumia uthibitisho.",
     "anything-else": "Kuna kitu kingine chochote ninachoweza kujifunza kuhusu kuchangia freeCodeCamp.org?",
-    "other-support": "Ikiwa kuna njia nyingine ungependa kusaidia shirika letu la kutoa msaada na dhamira yake ambayo haijaorodheshwa hapa, au ikiwa una maswali yoyote, tafadhali tuma barua pepe kwa Quincy kupitia quincy@freecodecamp.org."
+    "other-support": "Ikiwa kuna njia nyingine ungependa kusaidia shirika letu la kutoa msaada na dhamira yake ambayo haijaorodheshwa hapa, au ikiwa una maswali yoyote, tafadhali tuma barua pepe kwa Quincy kupitia quincy@freecodecamp.org.",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "Unahitaji kuingia ili kuripoti mtumiaji",
@@ -730,14 +732,19 @@
         "unlinked": "The link to your Microsoft username has been removed.",
         "unlink-err": "Something went wrong trying to remove the link to your Microsoft username."
       },
+      "profile": {
+        "err": "We could not find a Microsoft user ID for Microsoft user \"{{msUsername}}\""
+      },
       "trophy": {
         "err-1": "We could not find a Microsoft username associated with your freeCodeCamp account.",
         "err-2": "You are trying to submit a challenge that does not appear to be a trophy challenge.",
-        "err-3": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
-        "err-4": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-3": "We could not get your Microsoft profile from your Microsoft ID.",
+        "err-4": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
+        "err-5": "Something went wrong trying to verify your trophy. Please check and try again.",
         "verified": "Your trophy from Microsoft's learning platform was verified."
       }
-    }
+    },
+    "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
     "max-characters": "Kuna upeo wa juu wa herufi 288, umesalia na {{charsLeft}}",
@@ -902,8 +909,7 @@
   "forum-help": {
     "browser-info": "**Maelezo ya kivinjari chako:**",
     "user-agent": "Wakala wa Mtumiaji ni: <code>{{userAgent}}</code>",
-    "challenge": "**Changamoto:**",
-    "challenge-link": "**Kiungo kwenda kwa changamoto:**",
+    "challenge": "**Challenge Information:**",
     "whats-happening": "**Tuambie kinachoendelea:**",
     "describe": "Eleza suala lako kwa undani hapa.",
     "camper-project": "**Viungo vya mradi wako**",

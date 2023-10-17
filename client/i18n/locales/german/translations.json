@@ -551,7 +551,9 @@
     "how-update": "Ich habe eine monatliche Spende eingerichtet, aber ich muss die monatliche Zahlung aktualisieren oder aussetzen. Wie kann ich das tun?",
     "take-care-of-this": "Schicke einfach eine deiner monatlichen Spendenquittungen an donors@freecodecamp.org und sag uns, was wir für dich tun sollen. Wir erledigen das für dich und schicken dir eine Bestätigung.",
     "anything-else": "Gibt es noch etwas, was ich über das Spenden an freeCodeCamp.org erfahren kann?",
-    "other-support": "If there is some other way you'd like to support our charity and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org."
+    "other-support": "If there is some other way you'd like to support our charity and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org.",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "Du musst angemeldet sein, um einen Benutzer zu melden",
@@ -730,14 +732,19 @@
         "unlinked": "The link to your Microsoft username has been removed.",
         "unlink-err": "Something went wrong trying to remove the link to your Microsoft username."
       },
+      "profile": {
+        "err": "We could not find a Microsoft user ID for Microsoft user \"{{msUsername}}\""
+      },
       "trophy": {
         "err-1": "We could not find a Microsoft username associated with your freeCodeCamp account.",
         "err-2": "You are trying to submit a challenge that does not appear to be a trophy challenge.",
-        "err-3": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
-        "err-4": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-3": "We could not get your Microsoft profile from your Microsoft ID.",
+        "err-4": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
+        "err-5": "Something went wrong trying to verify your trophy. Please check and try again.",
         "verified": "Your trophy from Microsoft's learning platform was verified."
       }
-    }
+    },
+    "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
     "max-characters": "Es gibt eine maximale Grenze von 288 Zeichen, du hast noch {{charsLeft}} übrig",
@@ -902,8 +909,7 @@
   "forum-help": {
     "browser-info": "**Deine Browser-Informationen:**",
     "user-agent": "User Agent ist: <code>{{userAgent}}</code>",
-    "challenge": "**Challenge:**",
-    "challenge-link": "**Link zur Herausforderung: **",
+    "challenge": "**Challenge Information:**",
     "whats-happening": "**Sag uns, was vor sich geht:**",
     "describe": "Beschreibe hier dein Problem im Detail.",
     "camper-project": "**Deine Projekt-Link(s)**",

@@ -551,7 +551,9 @@
     "how-update": "毎月の寄付を設定しましたが、月次の処理を変更または停止したいです。どうしたらいいですか？",
     "take-care-of-this": "毎月の寄付の領収書を donors@freecodecamp.org まで転送し、ご希望の変更内容をお伝えください。こちらで処理を行い、確認のご連絡を差し上げます。",
     "anything-else": "freeCodeCamp.org への寄付についてもっと知ることはできますか？",
-    "other-support": "こちらに挙げた以外の方法で当団体を支援したいとお考えの場合、またはその他のお問い合わせつきましては、Quincy 宛てに quincy@freecodecamp.org までメールでご連絡ください。"
+    "other-support": "こちらに挙げた以外の方法で当団体を支援したいとお考えの場合、またはその他のお問い合わせつきましては、Quincy 宛てに quincy@freecodecamp.org までメールでご連絡ください。",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "ユーザーを報告するためにはサインインする必要があります",
@@ -730,14 +732,19 @@
         "unlinked": "The link to your Microsoft username has been removed.",
         "unlink-err": "Something went wrong trying to remove the link to your Microsoft username."
       },
+      "profile": {
+        "err": "We could not find a Microsoft user ID for Microsoft user \"{{msUsername}}\""
+      },
       "trophy": {
         "err-1": "We could not find a Microsoft username associated with your freeCodeCamp account.",
         "err-2": "You are trying to submit a challenge that does not appear to be a trophy challenge.",
-        "err-3": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
-        "err-4": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-3": "We could not get your Microsoft profile from your Microsoft ID.",
+        "err-4": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
+        "err-5": "Something went wrong trying to verify your trophy. Please check and try again.",
         "verified": "Your trophy from Microsoft's learning platform was verified."
       }
-    }
+    },
+    "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
     "max-characters": "上限は 288 文字です。残り {{charsLeft}} 文字です。",
@@ -902,8 +909,7 @@
   "forum-help": {
     "browser-info": "**ブラウザ情報:**",
     "user-agent": "ユーザーエージェント: <code>{{userAgent}}</code>",
-    "challenge": "**チャレンジ:**",
-    "challenge-link": "**チャレンジへのリンク:**",
+    "challenge": "**Challenge Information:**",
     "whats-happening": "**状況を説明しましょう:**",
     "describe": "質問内容をここに詳しく記入してください。",
     "camper-project": "**プロジェクトのリンク**",

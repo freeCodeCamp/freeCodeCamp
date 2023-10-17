@@ -1,11 +1,4 @@
-import {
-  FormGroup,
-  FormControl,
-  ControlLabel,
-  Row,
-  Col,
-  Button
-} from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
 import { isString } from 'lodash-es';
 import React, { useState, type FormEvent, type ChangeEvent } from 'react';
@@ -17,8 +10,15 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import isEmail from 'validator/lib/isEmail';
+import {
+  Container,
+  FormGroup,
+  FormControl,
+  ControlLabel,
+  Col,
+  Row
+} from '@freecodecamp/ui';
 
-import { Container } from '@freecodecamp/ui';
 import { Spacer } from '../components/helpers';
 import './update-email.css';
 import { userSelector } from '../redux/selectors';
@@ -49,12 +49,12 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
     updateMyEmail(emailValue);
   }
 
-  function onChange(event: ChangeEvent) {
-    const change = (event.target as HTMLInputElement).value;
-    if (!isString(change)) {
+  function onChange(event: ChangeEvent<HTMLInputElement>) {
+    const newEmailValue = event.target.value;
+    if (!isString(newEmailValue)) {
       return null;
     }
-    setEmailValue(change);
+    setEmailValue(newEmailValue);
     return null;
   }
 
