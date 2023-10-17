@@ -161,7 +161,7 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
         }
       />
       <a
-        className="big-cta-btn block w-full border-foreground-secondary bg-background-quaternary text-foreground-secondary hover:bg-foreground-primary hover:text-background-primary dark:hover:bg-background-primary dark:hover:text-foreground-primary px-4 py-[10px] text-lg relative cursor-pointer border-3 border-solid text-center no-underline active:before:w-full active:before:h-full active:before:absolute active:before:inset-0 active:before:border-3 active:before:border-transparent active:before:bg-gray-900 active:before:opacity-20 aria-disabled:cursor-not-allowed aria-disabled:opacity-50 focus:outline-none focus:ring focus:ring-focus-outline-color"
+        className="big-cta-btn relative cursor-pointer border-3 border-solid text-center no-underline active:before:w-full active:before:h-full active:before:absolute active:before:inset-0 active:before:border-3 active:before:border-transparent active:before:bg-gray-900 active:before:opacity-20 aria-disabled:cursor-not-allowed aria-disabled:opacity-50 focus:outline-none focus:ring focus:ring-focus-outline-color block w-full border-foreground-secondary bg-background-quaternary text-foreground-secondary hover:bg-foreground-primary hover:text-background-primary dark:hover:bg-background-primary dark:hover:text-foreground-primary px-4 py-[10px] text-lg"
         href="http://localhost:3000/signin"
       >
         buttons.sign-up-email-list
