@@ -11,7 +11,7 @@ Comece instalando o software pré-requisito para seu sistema operacional.
 | Pré-requisito                   | Versão | Observações                                  |
 | ------------------------------- | ------ | -------------------------------------------- |
 | [Flutter](https://flutter.dev/) | `3.x`  | -                                            |
-| Dart (vem junto com o Flutter)  | `2.x`  | Utilizamos a versão integrada com o Flutter. |
+| Dart (vem junto com o Flutter)  | `3.x`  | Utilizamos a versão integrada com o Flutter. |
 
 > [!ATTENTION] Se você tem uma versão diferente, instale a versão recomendada. Só podemos dar suporte a problemas de instalação para versões recomendadas.
 
