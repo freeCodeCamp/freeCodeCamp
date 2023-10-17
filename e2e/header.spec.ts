@@ -9,13 +9,13 @@ const headerComponentElements = {
   examNavLogo: 'header-exam-nav-microsoft-logo',
   universalNav: 'header-universal-nav',
   universalNavLogo: 'header-universal-nav-logo',
-  search: 'header-search',
-  toggleLangButton: 'header-toggle-lang-button',
-  languageList: 'header-lang-list',
-  languageButton: 'header-lang-list-option',
-  menuButton: 'header-menu-button',
-  menu: 'header-menu',
-  signInButton: 'header-sign-in-button'
+  search: 'site-header-search',
+  toggleLangButton: 'site-header-toggle-lang-button',
+  languageList: 'site-header-lang-list',
+  languageButton: 'site-header-lang-list-option',
+  menuButton: 'site-header-menu-button',
+  menu: 'site-header-menu',
+  signInButton: 'site-header-sign-in-button'
 } as const;
 
 const examUrl =
