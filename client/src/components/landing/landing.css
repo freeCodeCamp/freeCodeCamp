@@ -70,6 +70,8 @@ figcaption.caption {
 .faq-question {
   font-weight: bold;
   font-size: 1.25rem;
+  font-family: var(--font-family-sans-serif);
+  margin-bottom: 1.2rem;
 }
 
 @media (min-width: 370px) {

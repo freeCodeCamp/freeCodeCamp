@@ -24,7 +24,7 @@ const Faq = (): JSX.Element => {
           data-playwright-test-label='landing-page-faq'
           key={i}
         >
-          <p className='faq-question'>{faq.question}</p>
+          <h3 className='faq-question'>{faq.question}</h3>
           {faq.answer.map((answer, i) => (
             <p key={i}>{answer}</p>
           ))}
