@@ -5,8 +5,8 @@ test.use({ storageState: 'playwright/.auth/certified-user.json' });
 const settingsTestIds = {
   settingsHeading: 'settings-heading',
   usernameSettings: 'username-settings',
-  newEmail: 'new-email',
-  confirmEmail: 'confirm-email',
+  newEmail: 'new-email-input',
+  confirmEmail: 'confirm-email-input',
   internetPresence: 'internet-presence',
   portfolioItems: 'portfolio-items',
   camperIdentity: 'camper-identity'

@@ -210,7 +210,6 @@ function EmailSettings({
                 onChange={createHandleEmailFormChange('newEmail')}
                 type='email'
                 value={newEmail}
-                data-playwright-test-label='new-email'
               />
               {newEmailValidationMessage ? (
                 <HelpBlock data-cy='validation-message'>
@@ -229,7 +228,6 @@ function EmailSettings({
                 onChange={createHandleEmailFormChange('confirmNewEmail')}
                 type='email'
                 value={confirmNewEmail}
-                data-playwright-test-label='confirm-email'
               />
               {confirmEmailValidationMessage ? (
                 <HelpBlock data-cy='validation-message'>
