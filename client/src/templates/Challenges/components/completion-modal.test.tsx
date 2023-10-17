@@ -8,7 +8,7 @@ import CompletionModal from './completion-modal';
 
 jest.mock('../../../analytics');
 jest.mock('../../../utils/fire-confetti');
-jest.mock('../../../components/ProgressBar');
+jest.mock('../../../components/Progress');
 const mockFireConfetti = fireConfetti as jest.Mock;
 
 const completedChallengesIds = ['1', '3', '5'],
