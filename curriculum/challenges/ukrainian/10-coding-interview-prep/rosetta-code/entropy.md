@@ -10,7 +10,7 @@ dashedName: entropy
 
 Обчислити інформаційну ентропію заданого вхідного рядка.
 
-Зважаючи на дискретну випадкову змінну $X$, яка є рядком для $N$ "символів" (всіх символів), що складається з $n$ різних символів (n=2 для бінарних), інформаційна ентропія для X в бітах/символах є:
+Given the discrete random variable $X$ that is a string of $N$ "symbols" (total characters) consisting of $n$ different characters (n=2 for binary), the Shannon entropy of X in bits/symbol is:
 
 $H_2(X) = -\\sum\_{i=1}^n \\frac{count_i}{N} \\log_2 \\left(\\frac{count_i}{N}\\right)$
 
