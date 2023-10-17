@@ -11,21 +11,29 @@ exports[`<Footer /> matches snapshot 1`] = `
       className="footer-desc-col"
       data-playwright-test-label="footer-desc-col"
     >
-      <p>
+      <p
+        data-playwright-test-label="footer-tax-exempt-status"
+      >
         footer.tax-exempt-status
       </p>
-      <p>
+      <p
+        data-playwright-test-label="footer-mission-statement"
+      >
         footer.mission-statement
       </p>
-      <p>
+      <p
+        data-playwright-test-label="footer-donation-initiatives-text"
+      >
         footer.donation-initiatives
       </p>
       <p
         className="footer-donation"
+        data-playwright-test-label="footer-donation-text"
       >
         You can
         <a
           className="inline"
+          data-playwright-test-label="footer-donation-page-link"
           href="/donate"
         >
           make a tax-deductible donation here
@@ -333,6 +341,7 @@ exports[`<Footer /> matches snapshot 1`] = `
       data-playwright-test-label="our-nonprofit"
     >
       <a
+        data-playwright-test-label="footer-about-url"
         href="links:footer.about-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -340,6 +349,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.about
       </a>
       <a
+        data-playwright-test-label="footer-alumni-url"
         href="https://www.linkedin.com/school/free-code-camp/people/"
         rel="noopener noreferrer"
         target="_blank"
@@ -347,6 +357,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.alumni
       </a>
       <a
+        data-playwright-test-label="footer-open-source-url"
         href="https://github.com/freeCodeCamp/"
         rel="noopener noreferrer"
         target="_blank"
@@ -354,6 +365,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.open-source
       </a>
       <a
+        data-playwright-test-label="footer-shop-url"
         href="links:footer.shop-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -361,6 +373,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.shop
       </a>
       <a
+        data-playwright-test-label="footer-support-url"
         href="links:footer.support-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -368,6 +381,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.support
       </a>
       <a
+        data-playwright-test-label="footer-sponsors-url"
         href="links:footer.sponsors-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -375,6 +389,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.sponsors
       </a>
       <a
+        data-playwright-test-label="footer-honesty-url"
         href="links:footer.honesty-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -382,6 +397,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.honesty
       </a>
       <a
+        data-playwright-test-label="footer-coc-url"
         href="links:footer.coc-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -389,6 +405,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.coc
       </a>
       <a
+        data-playwright-test-label="footer-privacy-url"
         href="links:footer.privacy-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -396,6 +413,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.privacy
       </a>
       <a
+        data-playwright-test-label="footer-tos-url"
         href="links:footer.tos-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -403,6 +421,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.tos
       </a>
       <a
+        data-playwright-test-label="footer-copyright-url"
         href="links:footer.copyright-url"
         rel="noopener noreferrer"
         target="_blank"

@@ -10,7 +10,7 @@ dashedName: catch-misspelled-variable-and-function-names
 
 يكونا `console.log()` و `typeof` الطرقتان الرئيستان للتحقق من القيم وأنواعها في الكود. الآن حان الوقت للدخول في الأشكال الشائعة التي تأخذها الأخطاء (bugs). أحد المشاكل ويقع فيه بالذات الكتبة السريعين هو الخطأ الإملائي المتواضع (humble spelling error).
 
-الأحرف المبدلة، المفقودة، أو الأحرف كبيرة بالخطأ (mis-capitalized) في اسم متغير أو وظيفة سيجعل المتصفح يبحث عن شيء غير موجود - ويبلغ عن خطأ مرجعي (reference error). في لغة JavaScript أسماء المتغير والوظائف هي حساسة لحالة الأحرف (case-sensitive).
+Transposed, missing, or miscapitalized characters in a variable or function name will have the browser looking for an object that doesn't exist - and complain in the form of a reference error. في لغة JavaScript أسماء المتغير والوظائف هي حساسة لحالة الأحرف (case-sensitive).
 
 # --instructions--
 

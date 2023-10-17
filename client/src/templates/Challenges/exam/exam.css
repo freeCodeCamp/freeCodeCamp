@@ -55,11 +55,6 @@
   margin: 0;
 }
 
-.exam-answer-input-hidden {
-  position: absolute;
-  left: -9999px;
-}
-
 .exam-answer-input-visible {
   margin-inline-end: 15px;
   position: relative;

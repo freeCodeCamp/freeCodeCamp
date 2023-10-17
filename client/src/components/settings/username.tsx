@@ -1,10 +1,5 @@
 /* eslint-disable @typescript-eslint/unbound-method */
-import {
-  ControlLabel,
-  FormControl,
-  FormGroup
-} from '@freecodecamp/react-bootstrap';
-import { Alert } from '@freecodecamp/ui';
+import { FormControl, Alert, FormGroup, ControlLabel } from '@freecodecamp/ui';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';

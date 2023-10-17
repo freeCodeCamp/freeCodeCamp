@@ -11,7 +11,7 @@ dashedName: issue-tracker
 Створіть повний пакет застосунку JavaScript, який функціонально схожий до <a href="https://issue-tracker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://issue-tracker.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
--   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
+-   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Для виконання проєкту використайте конструктор сайту на власний вибір. Переконайтеся, що приєднали усі файли з нашого репозиторію GitHub.
 
 Якщо ви використовуєте Replit, виконайте наступні кроки для налаштування проєкту:
@@ -231,13 +231,13 @@ async (getUserInput) => {
     };
     const url = getUserInput('url') + '/api/issues/fcc-project';
     const itemToUpdate = await $.post(url, initialData);
-    const updateSucccess = await $.ajax({
+    const updateSuccess = await $.ajax({
       url: url,
       type: 'PUT',
       data: { _id: itemToUpdate._id, issue_text: 'New Issue Text' }
     });
-    assert.isObject(updateSucccess);
-    assert.deepEqual(updateSucccess, {
+    assert.isObject(updateSuccess);
+    assert.deepEqual(updateSuccess, {
       result: 'successfully updated',
       _id: itemToUpdate._id
     });
