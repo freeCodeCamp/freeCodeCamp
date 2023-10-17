@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/ui';
 import { Trans, useTranslation } from 'react-i18next';
 
 import store from 'store';
@@ -51,7 +52,7 @@ function StagingWarningModal(): JSX.Element {
         <hr />
         <Button
           block={true}
-          bsStyle='danger'
+          variant='danger'
           data-testid='accepts-warning'
           className='btn-invert'
           onClick={handleClick}
