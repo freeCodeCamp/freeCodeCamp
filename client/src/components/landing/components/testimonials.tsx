@@ -36,10 +36,10 @@ const Testimonials = (): JSX.Element => {
 
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
-              <p data-playwright-test-label='testimonials-endorser-location'>
+              <h3 data-playwright-test-label='testimonials-endorser-location'>
                 {' '}
                 <Trans>landing.testimonials.shawn.location</Trans>
-              </p>
+              </h3>
               <p data-playwright-test-label='testimonials-endorser-occupation'>
                 <Trans>landing.testimonials.shawn.occupation</Trans>
               </p>
@@ -69,10 +69,10 @@ const Testimonials = (): JSX.Element => {
 
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
-              <p data-playwright-test-label='testimonials-endorser-location'>
+              <h3 data-playwright-test-label='testimonials-endorser-location'>
                 {' '}
                 <Trans>landing.testimonials.sarah.location</Trans>
-              </p>
+              </h3>
               <p data-playwright-test-label='testimonials-endorser-occupation'>
                 <Trans>landing.testimonials.sarah.occupation</Trans>
               </p>
@@ -102,10 +102,10 @@ const Testimonials = (): JSX.Element => {
 
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
-              <p data-playwright-test-label='testimonials-endorser-location'>
+              <h3 data-playwright-test-label='testimonials-endorser-location'>
                 {' '}
                 <Trans>landing.testimonials.emma.location</Trans>
-              </p>
+              </h3>
               <p data-playwright-test-label='testimonials-endorser-occupation'>
                 <Trans>landing.testimonials.emma.occupation</Trans>
               </p>

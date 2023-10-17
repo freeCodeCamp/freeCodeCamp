@@ -143,6 +143,13 @@ figcaption.caption {
   padding: 10px 0 30px;
 }
 
+.testimonial-meta h3 {
+  font-family: var(--font-family-sans-serif);
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
 .testimonial-meta p,
 .testimonial-meta strong {
   font-size: 1.2rem;
