@@ -22,7 +22,7 @@
   position: absolute;
   bottom: 0;
 }
-/* delete them again */
+/* ToDo: swap the styles with the library component */
 .tool-panel-group-mobile > .btn-block {
   margin: 0 2px 0 0;
   padding: 5px 0;

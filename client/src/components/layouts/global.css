@@ -227,7 +227,7 @@ input[type='submit'],
   white-space: pre-line;
 }
 
-button:hover:not([aria-disabled='true']),
+button:hover:not([aria-disabled='true'], [role='menuitem']),
 input[type='submit']:hover,
 .btn:hover,
 .btn-primary:hover {
