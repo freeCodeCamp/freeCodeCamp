@@ -21,7 +21,7 @@ describe('<CompletionModal />', () => {
     beforeEach(() => {
       mockFireConfetti.mockClear();
     });
-    test('should fire if certification project has been completed', () => {
+    test('should not fire if certification project has been completed', () => {
       const store = createStore({
         challenge: {
           modal: { completion: true },
@@ -31,12 +31,10 @@ describe('<CompletionModal />', () => {
           }
         }
       });
-
       render(<CompletionModal />, store);
 
-      expect(mockFireConfetti).toHaveBeenCalledTimes(1);
+      expect(mockFireConfetti).toHaveBeenCalledTimes(0);
     });
-
     test('should NOT fire if the challenge is not a project', () => {
       const store = createStore({
         challenge: {
