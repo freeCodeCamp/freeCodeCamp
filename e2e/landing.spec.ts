@@ -12,8 +12,6 @@ const landingPageElements = {
   faq: 'landing-page-faq'
 } as const;
 
-let page: Page;
-
 const superBlocks = [
   translations.certification.title['Responsive Web Design'],
   translations.certification.title['JavaScript Algorithms and Data Structures'],
@@ -31,6 +29,8 @@ const superBlocks = [
   intro['coding-interview-prep'].title,
   intro['project-euler'].title
 ];
+
+let page: Page;
 
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();
@@ -78,7 +78,9 @@ test('The campers landing page figure is visible on desktop and hidden on mobile
 
 test('The as seen in container is visible with featured logos', async () => {
   const asSeenInContainer = page.getByTestId('landing-as-seen-in-text');
-  await expect(asSeenInContainer).toHaveText(translations.landing['as-seen-in']);
+  await expect(asSeenInContainer).toHaveText(
+    translations.landing['as-seen-in']
+  );
   const featuredLogos = page.getByTestId('landing-as-seen-in-container-logos');
   await expect(featuredLogos).toBeVisible();
 });
