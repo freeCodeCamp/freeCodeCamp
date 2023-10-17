@@ -15,9 +15,6 @@ const Template: Story<typeof Modal> = () => {
       </Modal.Trigger>
       <Modal.Body>
         <Modal.Header closeButton={true}>Edit profile</Modal.Header>
-        <Modal.Footer>
-          Make changes to your profile here. Click save when you&apos;re done.
-        </Modal.Footer>
         <fieldset>
           <label htmlFor='name'>Name</label>
           <input id='name' defaultValue='Pedro Duarte' />
@@ -26,15 +23,12 @@ const Template: Story<typeof Modal> = () => {
           <label htmlFor='username'>Username</label>
           <input id='username' defaultValue='@peduarte' />
         </fieldset>
-        <div
-          style={{
-            display: 'flex',
-            marginTop: 25,
-            justifyContent: 'flex-end'
-          }}
-        >
-          <Modal.Close>Save changes</Modal.Close>
-        </div>
+        <Modal.Footer>
+          Click save when you&apos;re done.
+          <Modal.Close className='ml-1 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none'>
+            Save changes
+          </Modal.Close>
+        </Modal.Footer>
       </Modal.Body>
     </Modal>
   );

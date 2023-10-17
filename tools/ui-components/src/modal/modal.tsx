@@ -32,10 +32,26 @@ const ModalOverlay = React.forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <Overlay
-      className={`fixed inset-0 bg-background-secondary bg-opacity-50 data-[state=open]:animate-overlayShow ${
+      className={`fixed inset-0 bg-background-secondary bg-opacity-50 ${
         className ?? ''
       }`}
       ref={ref}
+      {...props}
+    />
+  );
+});
+
+const ModalContent = React.forwardRef<
+  React.ElementRef<typeof Content>,
+  React.ComponentPropsWithoutRef<typeof Content>
+>(({ className, ...props }, ref) => {
+  const size = React.useContext(ModalContext);
+  return (
+    <Content
+      ref={ref}
+      className={`bg-background-secondary border border-foreground-secondary border-solid relative md:shadow-lg md:w-[600px] md:mx-auto md:my-[30px] ${
+        size === 'lg' ? 'min-[992px]:w-[900px]' : ''
+      } ${className ?? ''}`}
       {...props}
     />
   );
@@ -64,7 +80,7 @@ const ModalHeader = React.forwardRef<React.ElementRef<'div'>, ModalHeaderProps>(
     >
       {children}
       {closeButton && (
-        <Close className='bg-transparent text-inherit text-lg opacity-50 border-none p-2'>
+        <Close className='bg-transparent text-inherit text-[28px] opacity-50 border-none focus-visible:text-inherit focus-visible:opacity-100 hover:text-inherit hover:opacity-100'>
           <span className='sr-only'>Close</span>
           <span aria-hidden='true'>x</span>
         </Close>
@@ -86,15 +102,15 @@ const ModalTitle = React.forwardRef<
   />
 ));
 
-const ModalContent = React.forwardRef<
-  React.ElementRef<typeof Content>,
-  React.ComponentPropsWithoutRef<typeof Content>
+const ModalDescription = React.forwardRef<
+  React.ElementRef<typeof Description>,
+  React.ComponentPropsWithoutRef<typeof Description>
 >(({ className, ...props }, ref) => {
   const size = React.useContext(ModalContext);
   return (
-    <Content
+    <Description
       ref={ref}
-      className={`bg-background-secondary border border-foreground-secondary border-solid relative md:shadow-lg md:w-[600px] md:mx-auto md:my-[30px] ${
+      className={`text-right p-[15px] border border-foreground-secondary border-solid m-0 ${
         size === 'lg' ? 'min-[992px]:w-[900px]' : ''
       } ${className ?? ''}`}
       {...props}
@@ -107,11 +123,12 @@ ModalBody.displayName = 'ModalBody';
 ModalTitle.displayName = 'ModalTitle';
 ModalOverlay.displayName = 'ModalOverlay';
 ModalContent.displayName = 'ModalContent';
+ModalDescription.displayName = 'ModalDescription';
 
 Modal.Body = ModalBody;
 Modal.Close = Close;
 Modal.Header = ModalHeader;
-Modal.Footer = Description;
+Modal.Footer = ModalDescription;
 Modal.Trigger = Trigger;
 
 export { Modal };
