@@ -1,5 +1,5 @@
 describe('Add Portfolio Item', () => {
-  before(() => {
+  beforeEach(() => {
     cy.task('seed');
     cy.login();
   });
