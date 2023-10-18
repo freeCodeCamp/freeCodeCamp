@@ -1,5 +1,5 @@
 // Package Utilities
-import { Button, Row } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col } from '@freecodecamp/ui';
+import { Container, Col, Row } from '@freecodecamp/ui';
 
 // Local Utilities
 import Loader from '../../../components/helpers/loader';
@@ -83,7 +83,7 @@ interface ShowVideoState {
 // Component
 class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
   static displayName: string;
-  private _container: HTMLElement | null | undefined;
+  private container: React.RefObject<HTMLElement> = React.createRef();
 
   constructor(props: ShowVideoProps) {
     super(props);
@@ -117,7 +117,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container?.focus();
+    this.container.current?.focus();
   }
 
   componentDidUpdate(prevProps: ShowVideoProps): void {
@@ -213,7 +213,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
         executeChallenge={() => {
           this.handleSubmit(solution, openCompletionModal);
         }}
-        innerRef={(c: HTMLElement | null) => (this._container = c)}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

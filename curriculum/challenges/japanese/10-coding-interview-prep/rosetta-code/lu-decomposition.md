@@ -80,7 +80,7 @@ $PA = LU$
 
 # --instructions--
 
-タスクは、nxn の正方行列 $A$ を取り、下三角行列 $L$、上三角行列 $U$、および置換行列 $P$ を返すルーチンを実装して、上記の式が満たされるようにすることです。 戻り値は、 `[L, U, P]` の形式でなければなりません。
+The task is to implement a routine which will take a square nxn matrix $A$ and return a lower triangular matrix $L$, a upper triangular matrix $U$ and a permutation matrix $P$, so that the above equation is fulfilled. 戻り値は、 `[L, U, P]` の形式でなければなりません。
 
 # --hints--
 

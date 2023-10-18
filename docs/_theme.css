@@ -1,20 +1,86 @@
 :root {
   --theme-color: #0a0a23;
-  --theme-color-dark: #002ead;
+  --yellow-gold: #ffbf00;
+  --gray-00: #ffffff;
+  --gray-05: #f5f6f7;
+  --gray-10: #dfdfe2;
+  --gray-15: #d0d0d5;
+  --gray-45: #858591;
+  --gray-75: #3b3b4f;
+  --gray-80: #2a2a40;
+  --gray-85: #1b1b32;
+  --gray-90: #0a0a23;
+  --purple-light: #dbb8ff;
+  --purple-dark: #5a01a7;
+  --yellow-light: #ffc300;
+  --yellow-dark: #4d3800;
+  --blue-light: rgb(153, 201, 255);
+  --blue-light-translucent: rgba(153, 201, 255, 0.3);
+  --blue-dark: rgb(0, 46, 173);
+  --blue-dark-translucent: rgba(0, 46, 173, 0.3);
+  --green-light: #acd157;
+  --blue-mid: #198eee;
+  --purple-mid: #9400d3;
+  --green-dark: #00471b;
+  --red-light: #ffadad;
+  --red-dark: #850000;
+  --love-light: #f8577c;
+  --love-dark: #f82153;
+  --editor-background-light: #fffffe;
+  --editor-background-dark: #2a2b40;
+  --focus-outline-color: var(--blue-mid);
+  --font-family-sans-serif: 'Lato', sans-serif;
+  --font-family-monospace: 'Hack-ZeroSlash', monospace;
 
-  --text-color-base: #2e2e46;
-  --text-color-secondary: #646473;
-  --text-color-tertiary: #81818e;
-
-  --line-height: 2rem;
-  --bg-color: #ffffff;
   --size: 1.5rem;
+  --line-height: 2rem;
+}
+
+.light {
+  --primary-color: var(--gray-90);
+  --secondary-color: var(--gray-85);
+  --tertiary-color: var(--gray-80);
+  --quaternary-color: var(--gray-75);
+  --quaternary-background: var(--gray-15);
+  --tertiary-background: var(--gray-10);
+  --secondary-background: var(--gray-05);
+  --primary-background: var(--gray-00);
+  --highlight-color: var(--blue-dark);
+  --highlight-background: var(--blue-light);
+  --selection-color: var(--blue-dark-translucent);
+  --success-color: var(--green-dark);
+  --success-background: var(--green-light);
+  --danger-color: var(--red-dark);
+  --danger-background: var(--red-light);
+  --love-color: var(--love-dark);
+  --editor-background: var(--editor-background-light);
+}
+
+.dark {
+  --primary-color: var(--gray-00);
+  --secondary-color: var(--gray-05);
+  --tertiary-color: var(--gray-10);
+  --quaternary-color: var(--gray-15);
+  --quaternary-background: var(--gray-75);
+  --tertiary-background: var(--gray-80);
+  --secondary-background: var(--gray-85);
+  --primary-background: var(--gray-90);
+  --highlight-color: var(--blue-light);
+  --highlight-background: var(--blue-dark);
+  --selection-color: var(--blue-light-translucent);
+  --success-color: var(--green-light);
+  --success-background: var(--green-dark);
+  --danger-color: var(--red-light);
+  --danger-background: var(--red-dark);
+  --love-color: var(--love-light);
+  --editor-background: var(--editor-background-dark);
 }
 
 body {
   font-size: 100%;
-  line-height: 2em;
-  color: var(--text-color);
+  line-height: 2.3em;
+  background: var(--secondary-background);
+  color: var(--secondary-color);
 }
 
 * {
@@ -42,7 +108,7 @@ body .content {
 }
 
 .universal-nav a.translations-link {
-  color: var(--bg-color);
+  color: var(--gray-00);
   position: fixed;
   right: 50px;
   line-height: 24px;
@@ -70,14 +136,24 @@ body .content {
   }
 }
 
+.theme-toggle {
+  background-color: var(--tertiary-background);
+  position: fixed;
+  left: 10px;
+  line-height: 24px;
+  font-size: 16px;
+  margin: 2px 0;
+  padding: 4px;
+}
+
 /****** Cover Page ******/
 
 section.cover {
   padding-bottom: 112px;
   height: auto;
   min-height: 100vh;
-  background: var(--bg-color) !important;
-  color: var(--theme-color);
+  background: var(--secondary-background) !important;
+  color: var(--secondary-color);
 }
 
 section.cover .cover-main {
@@ -89,28 +165,29 @@ section.cover .cover-main {
   padding: 32px 16px 0;
 }
 
-section.cover img {
-  width: 400px;
-}
-
 section.cover h1 {
-  margin: 0.625rem 0 1rem;
+  font-weight: bold;
+  font-size: 2.3rem;
+  margin: 2em 0;
 }
 
-section.cover blockquote,
-section.cover blockquote p {
-  margin: 1.5em 0;
+section.cover span {
+  background-color: var(--secondary-background);
+  color: var(--secondary-color);
 }
 
 section.cover a {
   text-decoration: none;
-  border-bottom: 0.01rem solid var(--theme-color);
+  border-bottom: 0.01rem solid var(--secondary-color);
+  color: var(--secondary-color);
+  background-color: var(--secondary-background);
   transition: all 0.3s ease;
 }
 
 section.cover a:hover {
-  border-color: var(--theme-color-dark);
-  color: var(--theme-color-dark);
+  background-color: var(--tertiary-background);
+  color: var(--tertiary-color);
+  border: none;
 }
 
 section.cover a.anchor {
@@ -136,15 +213,17 @@ section.cover ul {
 section.cover .cover-main > p:last-child a:last-child {
   font-size: var(--size);
   line-height: var(--line-height);
-  background-color: var(--theme-color);
-  color: var(--bg-color);
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
+  border-radius: 0;
+  border: 3px solid var(--secondary-color);
 }
 
 section.cover .cover-main > p:last-child a:last-child:hover {
   font-size: var(--size);
   line-height: var(--line-height);
-  background-color: var(--theme-color-dark);
-  color: var(--bg-color);
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
   opacity: 1;
 }
 
@@ -186,12 +265,26 @@ section.cover.show ~ .sidebar-toggle {
 
 /****** Sidebar ******/
 
-.sidebar ul li a:hover {
-  color: var(--theme-color);
+.sidebar {
+  background-color: var(--primary-background);
+  color: var(--quaternary-color);
+  padding: 0;
+}
+
+.sidebar ul li a {
+  color: var(--quaternary-color);
+}
+
+.sidebar ul li > a:hover {
+  color: var(--primary-color);
 }
 
 .sidebar .search .clear-button {
   cursor: pointer;
+}
+
+.sidebar ul li.active > a {
+  color: var(--primary-color);
 }
 
 /****** Sidebar Toggle ******/
@@ -200,10 +293,6 @@ section.cover.show ~ .sidebar-toggle {
 .sidebar,
 .content {
   margin-top: 38px;
-}
-
-.sidebar {
-  padding: 0;
 }
 
 .sidebar-toggle {
@@ -222,7 +311,7 @@ body .sidebar-toggle {
 }
 
 body .sidebar-toggle span {
-  background-color: var(--theme-color);
+  background-color: var(--secondary-color);
   height: 0.2rem;
   width: var(--size);
   position: absolute;
@@ -234,6 +323,7 @@ body .sidebar-toggle span {
 
 body.close .sidebar-toggle {
   transition: left 0.25s ease-out;
+  background-color: var(--secondary-background);
   width: var(--size);
   height: var(--size);
   left: var(--size);
@@ -277,9 +367,15 @@ body.close .github-corner {
 
 /****** Markdown General ******/
 
+/* Undo vue.css defaults */
+.anchor span {
+  all: unset;
+}
+
 .markdown-section h1,
 .markdown-section h2 {
   margin: 1em 0;
+  color: var(--secondary-color);
 }
 
 .markdown-section p {
@@ -288,8 +384,8 @@ body.close .github-corner {
 }
 
 .markdown-section code {
-  background-color: #f8f8f8;
-  color: #525252;
+  background-color: var(--quaternary-background);
+  color: var(--quaternary-color);
   padding: 0.05em 0.15em 0.15em;
   margin: 0.05em;
   font-size: 16px;
@@ -298,23 +394,35 @@ body.close .github-corner {
 
 .markdown-section a {
   text-decoration: none;
-  color: var(--theme-color);
-  border-bottom: 0.1rem solid var(--theme-color);
+  color: var(--secondary-color);
+  border-bottom: 0.1rem solid var(--secondary-color);
 }
 
 .markdown-section a:hover {
-  border-color: var(--theme-color-dark);
-  color: var(--theme-color-dark);
+  background-color: var(--tertiary-background);
+  border: none;
 }
 
 .markdown-section a.anchor {
   border: none;
 }
 
+.markdown-section strong {
+  color: var(--primary-color);
+}
+
+.markdown-section pre {
+  background-color: var(--primary-background);
+}
+.markdown-section pre > code {
+  background-color: var(--primary-background);
+  color: var(--secondary-color);
+}
+
 .markdown-section a > code,
 .markdown-section a > strong > code {
-  background-color: #f8f8f8;
-  color: #525252;
+  background-color: var(--primary-color);
+  color: var(--tertiary-background);
   padding: 0.05em 0.15em 0;
   margin: 0.05em;
 }
@@ -331,7 +439,11 @@ body.close .github-corner {
 
 .markdown-section em,
 .markdown-section blockquote {
-  color: var(--text-color-tertiary);
+  color: var(--tertiary-color);
+}
+
+.markdown-section tr:nth-child(2n) {
+  background-color: var(--tertiary-background);
 }
 
 @media screen and (max-width: 768px) {
@@ -343,18 +455,16 @@ body.close .github-corner {
 
 /****** CODE HIGHLIGHTING ******/
 
+.token.punctuation {
+  color: var(--yellow-gold);
+}
+
+.token.attr-value {
+  color: var(--blue-mid);
+}
+
 .token.string {
-  color: #42b983;
-}
-
-.token.boolean,
-.token.number {
-  color: var(--theme-color);
-}
-
-.lang-bash .token.function,
-.lang-json .token.property {
-  color: #e96900;
+  color: var(--love-dark);
 }
 
 /****** COPY TO CLIPBOARD ******/
@@ -364,6 +474,15 @@ body.close .github-corner {
 }
 
 /****** Others ******/
+
+.search input {
+  background-color: var(--secondary-background);
+  color: var(--secondary-color);
+}
+
+.search .search-keyword {
+  color: var(--secondary-color);
+}
 
 .i18n-lang-list ul {
   height: 10em;
@@ -384,4 +503,12 @@ body.close .github-corner {
 .i18n-lang-list li {
   text-align: left;
   width: 10em;
+}
+
+.docsify-tabs__tab:not(.docsify-tabs__tab--active) {
+  color: var(--secondary-background) !important;
+}
+
+.docsify-tabs__tab:not(.docsify-tabs__tab--active):hover {
+  cursor: pointer;
 }
