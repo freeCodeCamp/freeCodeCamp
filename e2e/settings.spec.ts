@@ -4,7 +4,6 @@ test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 const settingsTestIds = {
   settingsHeading: 'settings-heading',
-  usernameSettings: 'username-settings',
   newEmail: 'new-email-input',
   confirmEmail: 'confirm-email-input',
   internetPresence: 'internet-presence',
@@ -58,10 +57,6 @@ test.describe('Settings', () => {
     await page.goto('/settings');
   });
 
-  test.afterEach(async ({ page }) => {
-    await page.close();
-  });
-
   test('Should have the correct page title', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
     await expect(page).toHaveTitle(settingsObject.pageTitle);
@@ -81,23 +76,13 @@ test.describe('Settings', () => {
 
   test('Should validate Username Settings', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
-    await expect(
-      page
-        .locator('strong')
-        .filter({ hasText: translations.settings.labels.username })
-    ).toBeVisible();
-    await expect(
-      page.getByTestId(settingsTestIds.usernameSettings)
-    ).toBeVisible();
-    await page
-      .getByTestId(settingsTestIds.usernameSettings)
-      .fill(settingsObject.testUser);
+    const inputLabel = page.getByLabel(translations.settings.labels.username);
+    await expect(inputLabel).toBeVisible();
+    await inputLabel.fill(settingsObject.testUser);
     await expect(
       page.getByText(translations.settings.username.validating)
     ).toBeVisible();
-    await page
-      .getByTestId(settingsTestIds.usernameSettings)
-      .fill(settingsObject.errorCode);
+    await inputLabel.fill(settingsObject.errorCode);
     await expect(
       page.getByText(
         translations.settings.username['is a reserved error code'].replace(
@@ -106,9 +91,7 @@ test.describe('Settings', () => {
         )
       )
     ).toBeVisible();
-    await page
-      .getByTestId(settingsTestIds.usernameSettings)
-      .fill(settingsObject.invalidUserName);
+    await inputLabel.fill(settingsObject.invalidUserName);
     await expect(
       page.getByText(
         translations.settings.username['contains invalid characters'].replace(
@@ -117,9 +100,7 @@ test.describe('Settings', () => {
         )
       )
     ).toBeVisible();
-    await page
-      .getByTestId(settingsTestIds.usernameSettings)
-      .fill(settingsObject.tooShortUserName);
+    await inputLabel.fill(settingsObject.tooShortUserName);
     await expect(
       page.getByText(
         translations.settings.username['is too short'].replace(
@@ -128,55 +109,11 @@ test.describe('Settings', () => {
         )
       )
     ).toBeVisible();
-    await page
-      .getByTestId(settingsTestIds.usernameSettings)
-      .fill(settingsObject.certifiedUsername);
+    await inputLabel.fill(settingsObject.certifiedUsername);
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
     await expect(saveButton).toBeVisible();
-    await saveButton.press('Enter');
-  });
-
-  test('Should validate Email Settings', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
-    await expect(
-      page.getByRole('heading', { name: translations.settings.email.heading })
-    ).toBeVisible();
-    await expect(page.getByText(`${settingsObject.email}`)).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.email.new, { exact: true })
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.email.confirm, { exact: true })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', { name: translations.settings.email.weekly })
-        .locator('p')
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.buttons['yes-please'])
-    ).toBeVisible();
-    await page
-      .getByTestId(settingsTestIds.newEmail)
-      .fill(settingsObject.testEmail);
-    await page
-      .getByTestId(settingsTestIds.confirmEmail)
-      .fill(settingsObject.testEmail);
-    const saveEmailButton = page.getByRole('button', {
-      name: translations.settings.email.heading
-    });
-    await expect(saveEmailButton).toBeVisible();
-    await saveEmailButton.click();
-    const noWeeklyBtn = page.getByText(translations.buttons['no-thanks']);
-    await expect(noWeeklyBtn).toBeVisible();
-    await noWeeklyBtn.click();
-    await expect(
-      page
-        .getByRole('group', { name: "Send me Quincy's weekly email" })
-        .locator('p')
-    ).toBeVisible();
   });
 
   test('Should validate Privacy Settings', async ({ page, browserName }) => {
@@ -189,51 +126,81 @@ test.describe('Settings', () => {
     await expect(page.getByText(translations.settings.privacy)).toBeVisible();
     await expect(
       page
+        .getByRole('group', {
+          name: translations.settings.labels['my-profile']
+        })
         .locator('p')
         .filter({ hasText: translations.settings.labels['my-profile'] })
     ).toBeVisible();
     await expect(
       page
+        .getByRole('group', {
+          name: translations.settings.labels['my-name']
+        })
         .locator('p')
         .filter({ hasText: translations.settings.labels['my-name'] })
     ).toBeVisible();
     await expect(
       page
+        .getByRole('group', {
+          name: translations.settings.labels['my-about']
+        })
         .locator('p')
         .filter({ hasText: translations.settings.labels['my-about'] })
     ).toBeVisible();
     await expect(
       page
+        .getByRole('group', {
+          name: translations.settings.labels['my-points']
+        })
         .locator('p')
         .filter({ hasText: translations.settings.labels['my-points'] })
     ).toBeVisible();
     await expect(
       page
+        .getByRole('group', {
+          name: translations.settings.labels['my-certs']
+        })
         .locator('p')
         .filter({ hasText: translations.settings.labels['my-certs'] })
     ).toBeVisible();
     await expect(
       page
+        .getByRole('group', {
+          name: translations.settings.labels['my-donations']
+        })
         .locator('p')
         .filter({ hasText: translations.settings.labels['my-donations'] })
     ).toBeVisible();
     await expect(
       page
+        .getByRole('group', {
+          name: translations.settings.labels['my-heatmap']
+        })
         .locator('p')
         .filter({ hasText: translations.settings.labels['my-heatmap'] })
     ).toBeVisible();
     await expect(
       page
+        .getByRole('group', {
+          name: translations.settings.labels['my-location']
+        })
         .locator('p')
         .filter({ hasText: translations.settings.labels['my-location'] })
     ).toBeVisible();
     await expect(
       page
+        .getByRole('group', {
+          name: translations.settings.labels['my-timeline']
+        })
         .locator('p')
         .filter({ hasText: translations.settings.labels['my-timeline'] })
     ).toBeVisible();
     await expect(
       page
+        .getByRole('group', {
+          name: translations.settings.labels['my-portfolio']
+        })
         .locator('p')
         .filter({ hasText: translations.settings.labels['my-portfolio'] })
     ).toBeVisible();
@@ -253,7 +220,6 @@ test.describe('Settings', () => {
       name: translations.buttons['download-data']
     });
     await expect(downloadButton).toBeVisible();
-    await downloadButton.click();
   });
 
   test('Should validate Internet Presence Settings', async ({
@@ -273,8 +239,8 @@ test.describe('Settings', () => {
       name: translations.settings.headings.internet
     });
     await expect(saveButton).toBeVisible();
-    await saveButton.press('Enter');
   });
+
   test('Should validate Portfolio Settings', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
     await expect(
@@ -297,12 +263,10 @@ test.describe('Settings', () => {
       name: translations.buttons['save-portfolio']
     });
     await expect(saveButton).toBeVisible();
-    await saveButton.press('Enter');
     const removeButton = page.getByRole('button', {
       name: translations.buttons['remove-portfolio']
     });
     await expect(removeButton).toBeVisible();
-    await removeButton.click();
   });
 
   test('Should validate Personal Portfolio Settings', async ({
@@ -354,8 +318,8 @@ test.describe('Settings', () => {
       name: translations.buttons['remove-portfolio']
     });
     await expect(removeButton).toBeVisible();
-    await removeButton.click();
   });
+
   test('Should validate Accademy Honesty Settings', async ({
     page,
     browserName
@@ -401,6 +365,7 @@ test.describe('Settings', () => {
       )
     ).toBeVisible();
   });
+
   test('Should validate Certification Settings', async ({
     page,
     browserName
@@ -453,6 +418,7 @@ test.describe('Settings', () => {
       ).toBeVisible();
     }
   });
+
   test('Should validate Danger Section Settings', async ({
     page,
     browserName

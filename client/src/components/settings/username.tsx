@@ -214,7 +214,6 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
               value={formValue}
               data-cy='username-input'
               id='username-settings'
-              data-playwright-test-label='username-settings'
             />
           </FormGroup>
         </FullWidthRow>
