@@ -135,9 +135,6 @@ importers:
       markdownlint:
         specifier: 0.31.0
         version: 0.31.0
-      mock-fs:
-        specifier: 5.2.0
-        version: 5.2.0
       npm-run-all:
         specifier: 4.1.5
         version: 4.1.5
@@ -1142,9 +1139,6 @@ importers:
       '@types/inquirer':
         specifier: ^8.2.5
         version: 8.2.5
-      '@types/mock-fs':
-        specifier: 4.13.2
-        version: 4.13.2
       bson-objectid:
         specifier: 2.0.4
         version: 2.0.4
@@ -9594,12 +9588,6 @@ packages:
     resolution: {integrity: sha512-U5icWpv7YnZYGsN4/cmh3WD2onMY0aJIiTE6+51TwJCttdHvtCYmkBNOobHlXwrJRL0nkH9jH4kD+1FAdMN4Tg==}
     dependencies:
       '@types/node': 20.8.0
-
-  /@types/mock-fs@4.13.2:
-    resolution: {integrity: sha512-mSIMAOjrNTVUFmZgJEigSIm+GlS4hbrk8U5+M8EB45uMrykKdN9TidjjSaOY1yFph2+TD7bsIfB4r+IrMYVyPQ==}
-    dependencies:
-      '@types/node': 20.8.0
-    dev: true
 
   /@types/ms@0.7.32:
     resolution: {integrity: sha512-xPSg0jm4mqgEkNhowKgZFBNtwoEwF6gJ4Dhww+GFpm3IgtNseHQZ5IqdNwnquZEoANxyDAKDRAdVo4Z72VvD/g==}
@@ -23196,11 +23184,6 @@ packages:
       yargs: 16.2.0
       yargs-parser: 20.2.4
       yargs-unparser: 2.0.0
-    dev: true
-
-  /mock-fs@5.2.0:
-    resolution: {integrity: sha512-2dF2R6YMSZbpip1V1WHKGLNjr/k48uQClqMVb5H3MOvwc9qhYis3/IWbj02qIg/Y8MDXKFF4c5v0rxx2o6xTZw==}
-    engines: {node: '>=12.0.0'}
     dev: true
 
   /mock-require@3.0.3:

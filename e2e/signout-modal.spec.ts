@@ -7,10 +7,6 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test.describe('Signout Modal component', () => {
   test('renders the modal correctly', async ({ page }) => {
     await page.getByRole('button', { name: translations.buttons.menu }).click();

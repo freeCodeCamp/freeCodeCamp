@@ -1,7 +1,6 @@
 import React from 'react';
 import { Story } from '@storybook/react';
 import { HelpBlock } from './help-block';
-import { HelpBlockProps } from './types';
 
 const story = {
   title: 'Example/HelpBlock',
@@ -13,7 +12,7 @@ const story = {
   }
 };
 
-const Template: Story<HelpBlockProps> = args => {
+const Template: Story<React.ComponentPropsWithRef<'span'>> = args => {
   return <HelpBlock {...args} />;
 };
 

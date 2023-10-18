@@ -6,10 +6,6 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/settings');
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 const checkFlashMessageVisibility = async (page: Page, translation: string) => {
   const flashMessage = page.getByText(translation);
   await expect(flashMessage).toBeVisible();
