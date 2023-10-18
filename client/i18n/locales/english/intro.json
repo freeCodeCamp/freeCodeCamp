@@ -314,29 +314,29 @@
       "build-a-cash-register-project": {
         "title": "Build a Cash Register Project",
         "intro": [
-          "In this certification project, you will need to build a functioning cash register.  Your project should take in an input of the user cash and output the status of the cash register as well as any change due, if necessary.",
-          "You will need to use HTML, CSS and JavaScript and pass all of the required user stories."
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a cash register web app."
         ]
       },
       "build-a-palindrome-checker-project": {
         "title": "Build a Palindrome Checker Project",
         "intro": [
-          "In this certification project, you will need to build an application to check if a word is a palindrome. A palindrome is a word that can be read the same way in either direction.",
-          "You will need to use HTML, CSS and JavaScript and pass all of the required user stories."
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build an application that checks if a word is a palindrome."
         ]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Build a Roman Numeral Converter Project",
         "intro": [
-          "In this certification project, you will need to build an application that takes in an integer and outputs a roman numeral. If the user does not provide a valid input, then a message should display on the screen prompting them to provide a valid number.",
-          "You will need to use HTML, CSS and JavaScript and pass all of the required user stories."
+          "This is one of the required projects to claim your certification.",
+          "For this project, you will build an application that converts integers to Roman numerals."
         ]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Build a Telephone Number Validator Project",
         "intro": [
-          "In this certification project, you will need to build an application that takes in a number input and checks if it is a valid United States phone number. If the number is valid, then a message should show on the screen that it is in fact a valid number. Other a message should show that it is an invalid number.",
-          "You will need to use HTML, CSS and JavaScript and pass all of the required user stories."
+          "This is one of the required projects to claim your certification.",
+          "For this project, you will build an application that checks if a number is a valid United States phone number."
         ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
