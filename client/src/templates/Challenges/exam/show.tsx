@@ -138,7 +138,7 @@ function convertMd(md: string): string {
 
 class ShowExam extends Component<ShowExamProps, ShowExamState> {
   static displayName: string;
-  private _container: RefObject<HTMLElement> | undefined;
+  private container: RefObject<HTMLElement> | undefined = React.createRef();
   timerInterval!: NodeJS.Timeout;
 
   constructor(props: ShowExamProps) {
@@ -179,7 +179,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     });
     challengeMounted(challengeMeta.id);
 
-    this._container?.current?.focus();
+    this.container?.current?.focus();
   }
 
   componentWillUnmount() {
@@ -387,9 +387,11 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
             ) : (
               <div className='exam-wrapper'>
                 <div className='exam-header'>
-                  <div>{title}</div>
+                  <div data-playwright-test-label='exam-show-title'>
+                    {title}
+                  </div>
                   <span>|</span>
-                  <div>
+                  <div data-playwright-test-label='exam-show-question-time'>
                     {t('learn.exam.time', {
                       t: formatSecondsToTime(examTimeInSeconds)
                     })}
@@ -513,7 +515,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       </Container>
     ) : (
       <Hotkeys
-        innerRef={this._container}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

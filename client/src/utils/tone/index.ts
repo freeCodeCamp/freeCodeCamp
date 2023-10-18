@@ -48,6 +48,7 @@ const toneUrls = {
   [FlashMessages.MsTrophyErr3]: TRY_AGAIN,
   [FlashMessages.MsTrophyErr4]: TRY_AGAIN,
   [FlashMessages.MsTrophyErr5]: TRY_AGAIN,
+  [FlashMessages.MsTrophyErr6]: TRY_AGAIN,
   [FlashMessages.MsTrophyVerified]: CHAL_COMP,
   [FlashMessages.NameNeeded]: TRY_AGAIN,
   // [FlashMessages.None]: '',
@@ -78,13 +79,7 @@ const toneUrls = {
   [FlashMessages.UserNotCertified]: TRY_AGAIN,
   [FlashMessages.WrongName]: TRY_AGAIN,
   [FlashMessages.WrongUpdating]: TRY_AGAIN,
-  [FlashMessages.WentWrong]: TRY_AGAIN,
-  [FlashMessages.MsTrophyErr]: TRY_AGAIN,
-  [FlashMessages.MsTrophyVerified]: CHAL_COMP,
-  [FlashMessages.MsLinked]: CHAL_COMP,
-  [FlashMessages.MsLinkErr]: TRY_AGAIN,
-  [FlashMessages.MsUnlinked]: CHAL_COMP,
-  [FlashMessages.MsUnlinkErr]: TRY_AGAIN
+  [FlashMessages.WentWrong]: TRY_AGAIN
 } as const;
 
 type ToneStates = keyof typeof toneUrls;

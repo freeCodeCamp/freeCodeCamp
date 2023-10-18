@@ -732,15 +732,19 @@
         "unlinked": "O link para seu nome de usuário da Microsoft foi removido.",
         "unlink-err": "Algo deu errado ao tentar remover o link para o seu nome de usuário da Microsoft."
       },
+      "profile": {
+        "err": "Não foi possível encontrar um ID de usuário da Microsoft para o usuário \"{{msUsername}}\""
+      },
       "trophy": {
         "err-1": "Não foi possível encontrar um nome de usuário da Microsoft associado à sua conta do freeCodeCamp.",
         "err-2": "Você está tentando enviar um desafio que não parece ser um desafio de troféu.",
-        "err-3": "Parece que o usuário da Microsoft \"{{msUsername}}\" não tem esse troféu.",
-        "err-4": "Algo deu errado ao tentar verificar seu troféu. Confira isso e tente novamente.",
+        "err-3": "Não foi possível obter seu perfil da Microsoft a partir do seu ID da Microsoft.",
+        "err-4": "Parece que o usuário da Microsoft \"{{msUsername}}\" não tem esse troféu.",
+        "err-5": "Algo deu errado ao tentar verificar seu troféu. Confira isso e tente novamente.",
         "verified": "Seu troféu da plataforma de aprendizado da Microsoft foi verificado."
       }
     },
-    "classroom-mode-updated": "We have updated your classroom mode settings"
+    "classroom-mode-updated": "Atualizamos suas configurações do modo de sala de aula"
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",
@@ -905,8 +909,7 @@
   "forum-help": {
     "browser-info": "**Informações de seu navegador:**",
     "user-agent": "Agente de usuário: <code>{{userAgent}}</code>",
-    "challenge": "**Desafio:**",
-    "challenge-link": "**Link para o desafio:**",
+    "challenge": "**Informações do desafio:**",
     "whats-happening": "**Conte-nos o que está acontecendo:**",
     "describe": "Descreva detalhadamente o problema aqui.",
     "camper-project": "**O(s) link(s) para seu projeto**",
