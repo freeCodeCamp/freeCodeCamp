@@ -115,9 +115,9 @@ test('Testimonial endorser people have images, occupation, location and testimon
 test('Has links to all superblocks', async () => {
   const curriculumBtns = page.getByTestId(landingPageElements.curriculumBtns);
   await expect(curriculumBtns).toHaveCount(15);
-  for (let item = 0; item < superBlocks.length; item++) {
-    const btn = curriculumBtns.nth(item);
-    await expect(btn).toContainText(superBlocks[item]);
+  for (let index = 0; index < superBlocks.length; index++) {
+    const btn = curriculumBtns.nth(index);
+    await expect(btn).toContainText(superBlocks[index]);
   }
 });
 
