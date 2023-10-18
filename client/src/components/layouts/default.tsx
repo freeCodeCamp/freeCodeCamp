@@ -39,7 +39,6 @@ import {
 import BreadCrumb from '../../templates/Challenges/components/bread-crumb';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
-import SignoutModal from '../signout-modal';
 import StagingWarningModal from '../staging-warning-modal';
 import Footer from '../Footer';
 import Header from '../Header';
@@ -247,7 +246,6 @@ function DefaultLayout({
               removeFlashMessage={removeFlashMessage}
             />
           ) : null}
-          <SignoutModal />
           {isChallenge && !showCodeAlly && !examInProgress && (
             <div className='breadcrumbs-demo'>
               <BreadCrumb
