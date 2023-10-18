@@ -134,21 +134,10 @@ Die Standard-API-Schlüssel und Umgebungsvariablen sind in der Datei `sample.env
 # Trage die notwendigen API-Schlüssel und Secrets in die Datei ein:
 ```
 
-<!-- tabs:start -->
-
-#### **macOS/Linux**
-
 ```console
 cp sample.env .env
 ```
 
-#### **Windows**
-
-```console
-copy sample.env .env
-```
-
-<!-- tabs:end -->
 
 Die Schlüssel in der `.env` Datei müssen _nicht_ geändert werden, um die App lokal auszuführen. Du kannst die aus `sample.env` kopierten Standardwerte so belassen, wie sie sind.
 
@@ -380,21 +369,9 @@ Folge diesen Schritten:
 
 3. Make a copy of the `.env` file:
 
-<!-- tabs:start -->
-
-#### **macOS/Linux**
-
-```console
-cp sample.env .env
-```
-
-#### **Windows**
-
-```console
-copy sample.env .env
-```
-
-<!-- tabs:end -->
+    ```console
+    cp sample.env .env
+    ```
 
 4. Install the dependencies for the freeCodeCamp repo:
 
@@ -410,21 +387,9 @@ copy sample.env .env
 
 6. Copy the generated JSON file to the mobile app:
 
-<!-- tabs:start -->
-
-#### **macOS/Linux**
-
-```console
-cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
-```
-
-#### **Windows**
-
-```console
-copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
-```
-
-<!-- tabs:end -->
+    ```console
+    cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
+    ```
 
 7. Change directory to the mobile app:
 
