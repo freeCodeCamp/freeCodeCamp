@@ -10,7 +10,11 @@ test.describe('Tool Panel', () => {
   test('should display "//running tests" in console after clicking "Run the Tests (Ctrl+Enter)" button', async ({
     page
   }) => {
-    await page.getByTestId('run-the-tests-btn').click();
+    await page
+      .getByRole('button', {
+        name: translations.buttons['run-test'].replace(/\([^)]*\)/, '')
+      })
+      .click();
 
     await expect(page.getByTestId('output-text')).toContainText(
       translations.learn['running-tests']
@@ -24,7 +28,9 @@ test.describe('Tool Panel', () => {
       .getByRole('button', { name: translations.buttons['reset-lesson'] })
       .click();
 
-    await expect(page.getByTestId('reset-lesson-btn')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { name: translations.learn.reset })
+    ).toBeVisible();
   });
 
   test('should display list with expected links after clicking "Get Help"', async ({

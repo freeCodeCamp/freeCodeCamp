@@ -78,7 +78,6 @@ function ToolPanel({
         aria-label='Run the tests use shortcut Ctrl+enter'
         block={true}
         bsStyle='primary'
-        data-playwright-test-label='run-the-tests-btn'
         onClick={handleRunTests}
       >
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
