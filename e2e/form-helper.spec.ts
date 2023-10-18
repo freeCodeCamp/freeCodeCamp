@@ -3,7 +3,6 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-
 test.describe('Test form with only solution link', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(
