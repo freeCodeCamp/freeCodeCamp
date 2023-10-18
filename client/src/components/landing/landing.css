@@ -51,6 +51,7 @@ figcaption.caption {
 
 .as-seen-in .big-heading {
   color: var(--gray-15);
+  margin-top: 0;
 }
 
 .landing-page .big-heading {
