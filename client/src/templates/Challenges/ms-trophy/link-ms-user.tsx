@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import {
-  Button,
-  FormGroup,
-  ControlLabel,
-  FormControl,
-  HelpBlock
-} from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import { ConnectedProps, connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Trans, useTranslation } from 'react-i18next';
+import {
+  ControlLabel,
+  FormControl,
+  FormGroup,
+  HelpBlock
+} from '@freecodecamp/ui';
 
 import { Spacer } from '../../../components/helpers';
 import { isMicrosoftTranscriptLink } from '../../../../../shared/utils/validate';

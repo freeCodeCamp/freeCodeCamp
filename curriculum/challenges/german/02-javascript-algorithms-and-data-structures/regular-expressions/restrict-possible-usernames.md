@@ -12,7 +12,7 @@ Nutzernamen werden überall im Internet verwendet. Sie geben den Nutzern eine ei
 
 Du musst alle Benutzernamen in einer Datenbank überprüfen. Hier sind einige einfache Regeln, die du bei der Erstellung deines Benutzernamens beachten musst.
 
-1) Nutzernamen dürfen nur alphanumerische Zeichen enthalten.
+1) Usernames can only use alphanumeric characters.
 
 2) Die einzigen Zahlen im Benutzernamen müssen am Ende stehen. Am Ende können es null oder mehr sein. Der Benutzername darf nicht mit einer Zahl beginnen.
 
