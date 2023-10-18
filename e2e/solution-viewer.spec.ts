@@ -8,9 +8,6 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
 
 test.describe('Solution Viewer component', () => {
   test('renders the modal correctly', async ({ page }) => {
