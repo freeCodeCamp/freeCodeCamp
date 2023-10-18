@@ -359,7 +359,7 @@
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
         "title": "Learn Intermediate OOP by Building a Platformer Game",
-        "intro": ["", ""]
+        "intro": ["Building games allows you to grasp fundamental programming principles while creating a dynamic and interactive gaming experience.", "In this platformer game project, you will continue to learn about classes, objects, inheritance, and encapsulation. You will also learn how to design and organize game elements efficiently and gain insights into problem-solving and code reusability."]
       },
       "learn-localstorage-by-building-a-todo-app": {
         "title": "Learn localStorage by Building a Todo App",
