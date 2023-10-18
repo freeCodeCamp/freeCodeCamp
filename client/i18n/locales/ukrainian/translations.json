@@ -909,7 +909,7 @@
   "forum-help": {
     "browser-info": "**Інформація про ваш браузер:**",
     "user-agent": "Агент користувача: <code>{{userAgent}}</code>",
-    "challenge": "**Challenge Information:**",
+    "challenge": "**Інформація про завдання:**",
     "whats-happening": "**Розкажіть нам, що сталося:**",
     "describe": "Детально опишіть свою проблему тут.",
     "camper-project": "**Посилання на ваші проєкти**",
