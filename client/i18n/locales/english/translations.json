@@ -979,7 +979,7 @@
       },
       "q2": {
         "q": "Prior to this course, how experienced were you with .NET and C#?",
-        "o1": "Novice (no experience)",
+        "o1": "Novice (no prior experience)",
         "o2": "Beginner",
         "o3": "Intermediate",
         "o4": "Advanced",
