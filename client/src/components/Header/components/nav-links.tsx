@@ -291,7 +291,11 @@ function NavLinks({
               className='text-center'
               closeButton={true}
             >
-              {t('signout.heading')}
+              <Modal.Title id='modal-title'>
+                <span style={{ fontWeight: 'bold' }}>
+                  {t('signout.heading')}
+                </span>
+              </Modal.Title>
             </Modal.Header>
             <Modal.Body className='text-center'>
               <p>

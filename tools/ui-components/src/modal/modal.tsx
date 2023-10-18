@@ -49,7 +49,7 @@ const ModalContent = React.forwardRef<
   return (
     <Content
       ref={ref}
-      className={`bg-background-secondary border border-foreground-secondary border-solid relative md:shadow-lg md:w-[600px] md:mx-auto md:my-[30px] ${
+      className={`bg-background-secondary border border-foreground-secondary border-solid fixed top-[25%] left-[25%] md:shadow-lg md:w-[600px] md:mx-auto md:my-[30px] ${
         size === 'lg' ? 'min-[992px]:w-[900px]' : ''
       } ${className ?? ''}`}
       {...props}
@@ -128,6 +128,7 @@ ModalDescription.displayName = 'ModalDescription';
 Modal.Body = ModalBody;
 Modal.Close = Close;
 Modal.Header = ModalHeader;
+Modal.Title = ModalTitle;
 Modal.Footer = ModalDescription;
 Modal.Trigger = Trigger;
 
