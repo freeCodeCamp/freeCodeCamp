@@ -8,7 +8,6 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-
 test.describe('Solution Viewer component', () => {
   test('renders the modal correctly', async ({ page }) => {
     await page.getByRole('button').filter({ hasText: /view/i }).first().click();
