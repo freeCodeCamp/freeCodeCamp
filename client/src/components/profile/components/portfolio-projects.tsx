@@ -19,7 +19,12 @@ export const PortfolioProjects = ({
   }
   return (
     <>
-      <h2 className='text-center'>{t('profile.portfolio')}</h2>
+      <h2
+        className='text-center'
+        data-playwright-test-label='portfolio-projects'
+      >
+        {t('profile.portfolio')}
+      </h2>
       {portfolioProjects.map(({ title, url, image, description, id }) => (
         <div className='portfolio-container' key={id}>
           <h3>{title}</h3>
