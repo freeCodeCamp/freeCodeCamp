@@ -64,7 +64,7 @@ test.describe('Your Internet Presence', () => {
       await page.getByTestId(settingsPageElement.saveButton).click();
       await expect(
         page.getByTestId(settingsPageElement.flashMessageAlert)
-      ).toBeVisible();
+      ).toContainText('We have updated your social links');
 
       // clear value before next test
       await page.getByTestId(social.inputTestId).clear();
