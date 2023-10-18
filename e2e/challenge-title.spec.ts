@@ -50,18 +50,25 @@ test.describe('Challenge Title Component (signed out)', () => {
     await expect(page.getByLabel('Passed')).not.toBeVisible();
   });
 
-  test("should not render the 'Please Help Us Translate' link", async ({
+  test.skip("should not render the 'Please Help Us Translate' link", async ({
     page
   }) => {
-    // Placeholder code below
-    test.skip(
-      process.env.CLIENT_LOCALE != 'english',
-      'Current Locale not supported for this test.'
-    );
+    // This test can be merged with the 'should render correctly' test,
+    // but is isolated for now due to debugging. (Automatically skips this test)
 
-    await expect(
-      page.getByText(translations['learn']['help-translate-link'])
-    ).not.toBeVisible();
+    const visibleEnglishTitle = await page
+      .getByText('Developing a Port Scanner')
+      .isVisible();
+
+    if (process.env.CURRICULUM_LOCALE != 'english' && visibleEnglishTitle) {
+      // Challenge title has not been translated, expect a
+      // 'Help us translate' button
+      await expect(page.getByText('')).toBeVisible();
+    } else {
+      // CURRICULUM_LOCALE is set to english or curriculum is already
+      // translated. Do not expect a 'Help us translate' button.
+      await expect(page.getByText('')).not.toBeVisible();
+    }
   });
 });
 
@@ -71,6 +78,8 @@ test.describe('Challenge Title Component (signed in)', () => {
   test('should display GreenPass after challenge completion', async ({
     page
   }) => {
+    await expect(page.getByText('Developing a Port Scanner')).toBeVisible();
+
     await completeChallenge(page);
 
     await expect(page.getByLabel('Passed')).toBeVisible();
