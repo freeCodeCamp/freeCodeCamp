@@ -31,7 +31,7 @@ const Faq = (): JSX.Element => {
           <Spacer size='small' />
         </div>
       ))}
-      <h3>{t('learn.read-this.p12')}</h3>
+      <h2 className='landing-page-happy'>{t('learn.read-this.p12')}</h2>
       <Spacer size='medium' />
       <BigCallToAction />
       <Spacer size='large' />

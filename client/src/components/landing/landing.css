@@ -30,6 +30,12 @@
   font-family: var(--font-family-sans-serif);
 }
 
+.landing-page h2.landing-page-happy {
+  font-family: var(--font-family-monospace);
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
 figcaption.caption {
   margin: 10px 0 0;
   font-weight: 600;
