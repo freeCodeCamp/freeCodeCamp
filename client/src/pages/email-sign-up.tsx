@@ -68,6 +68,7 @@ function EmailListOptIn({
             bsSize='lg'
             bsStyle='primary'
             className='big-cta-btn'
+            data-playwright-test-label='yes-please-button'
             onClick={() => acceptTerms(true)}
           >
             {t('buttons.yes-please')}
@@ -80,6 +81,7 @@ function EmailListOptIn({
             bsSize='lg'
             bsStyle='primary'
             className='big-cta-btn'
+            data-playwright-test-label='no-thanks-button'
             onClick={() => acceptTerms(false)}
           >
             {t('buttons.no-thanks')}
@@ -97,6 +99,7 @@ function EmailListOptIn({
           bsSize='lg'
           bsStyle='primary'
           className='big-cta-btn'
+          data-playwright-test-label='signup-email-list'
           href={`${apiLocation}/signin`}
         >
           {t('buttons.sign-up-email-list')}
@@ -129,14 +132,21 @@ function AcceptPrivacyTerms({
   ) : (
     <>
       <Helmet>
-        <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
+        <title data-playwright-test-label='misc-email-signup'>
+          {t('misc.email-signup')} | freeCodeCamp.org
+        </title>
       </Helmet>
       <Container>
         {isSignedIn && completedChallengeCount < 1 ? (
           <Row>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <Spacer size='large' />
-              <h1 className='text-center'>{t('misc.brand-new-account')}</h1>
+              <h1
+                className='text-center'
+                data-playwright-test-label='brand-new-account'
+              >
+                {t('misc.brand-new-account')}
+              </h1>
               <Spacer size='small' />
               <p>
                 <Trans i18nKey='misc.duplicate-account-warning'>
@@ -158,7 +168,9 @@ function AcceptPrivacyTerms({
         <Row className='email-sign-up' data-cy='email-sign-up'>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Spacer size='small' />
-            <p>{t('misc.email-blast')}</p>
+            <p data-playwright-test-label='misc-email-blast'>
+              {t('misc.email-blast')}
+            </p>
             <Spacer size='small' />
           </Col>
           {showLoading ? (
