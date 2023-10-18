@@ -209,7 +209,10 @@
       },
       "learn-intermediate-css-by-building-a-cat-painting": {
         "title": "Aprenda CSS intermediário criando a pintura de um gato",
-        "intro": ["", ""]
+        "intro": [
+          "Dominar o posicionamento em CSS é essencial para criar layouts visualmente atraentes e responsivos para a web",
+          "Neste curso, você criará a pintura de um gato. Você aprenderá a trabalhar com o posicionamento absoluto, com a propriedade z-index e com a propriedade transform."
+        ]
       }
     }
   },
