@@ -64,7 +64,7 @@ interface ProjectProps {
 // Component
 class Project extends Component<ProjectProps> {
   static displayName: string;
-  private _container: HTMLElement | null = null;
+  private container: React.RefObject<HTMLElement> = React.createRef();
 
   constructor(props: ProjectProps) {
     super(props);
@@ -88,7 +88,7 @@ class Project extends Component<ProjectProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container?.focus();
+    this.container.current?.focus();
   }
 
   componentDidUpdate(prevProps: ProjectProps): void {
@@ -161,7 +161,7 @@ class Project extends Component<ProjectProps> {
 
     return (
       <Hotkeys
-        innerRef={(c: HTMLElement | null) => (this._container = c)}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

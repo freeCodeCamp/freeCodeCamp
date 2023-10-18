@@ -211,7 +211,7 @@ function ShowClassic({
   const { t } = useTranslation();
   const [resizing, setResizing] = useState(false);
   const [usingKeyboardInTablist, setUsingKeyboardInTablist] = useState(false);
-  const containerRef = useRef<HTMLElement>();
+  const containerRef = useRef<HTMLElement>(null);
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const instructionsPanelRef = useRef<HTMLDivElement>(null);
   const isMobile = useMediaQuery({
@@ -415,12 +415,12 @@ function ShowClassic({
     <Hotkeys
       challengeType={challengeType}
       executeChallenge={executeChallenge}
-      innerRef={containerRef}
+      containerRef={containerRef}
       instructionsPanelRef={instructionsPanelRef}
       nextChallengePath={nextChallengePath}
       prevChallengePath={prevChallengePath}
       usesMultifileEditor={usesMultifileEditor}
-      {...(editorRef && { editorRef: editorRef })}
+      editorRef={editorRef}
     >
       <LearnLayout hasEditableBoundaries={hasEditableBoundaries}>
         <Helmet title={windowTitle} />

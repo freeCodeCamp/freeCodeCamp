@@ -926,7 +926,7 @@ describe('challengeRoutes', () => {
             setCookies
           }).send({
             savedChallenges: {
-              // valid mongo id, but not a savable one
+              // valid mongo id, but not a saveable one
               id: 'aaaaaaaaaaaaaaaaaaaaaaa',
               files: multiFileCertProjectBody.files
             }
