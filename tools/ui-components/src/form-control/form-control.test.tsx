@@ -5,21 +5,21 @@ import { FormControl } from '.';
 
 describe('<FormControl />', () => {
   it('should render correctly', () => {
-    render(<FormControl testId='test' />);
-    expect(screen.getByTestId('test')).toBeInTheDocument();
+    render(<FormControl aria-label='test' />);
+    expect(screen.getByLabelText('test')).toBeInTheDocument();
   });
 });
 
 describe('<FormControl.Static />', () => {
   it('should render correctly', () => {
-    render(<FormControl.Static testId='test' />);
-    expect(screen.getByTestId('test')).toBeInTheDocument();
+    render(<FormControl.Static aria-label='test' />);
+    expect(screen.getByLabelText('test')).toBeInTheDocument();
   });
 });
 
 describe('<FormControl.Feedback />', () => {
   it('should render correctly', () => {
-    render(<FormControl.Feedback testId='test' />);
-    expect(screen.getByTestId('test')).toBeInTheDocument();
+    render(<FormControl.Feedback aria-label='test' />);
+    expect(screen.getByLabelText('test')).toBeInTheDocument();
   });
 });

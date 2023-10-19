@@ -12,7 +12,9 @@ export const getChallengeOrderFromFileTree = async (): Promise<
   const path = getProjectPath();
   const fileList = await readdir(path);
   const challengeOrder = fileList
-    .map(file => matter.read(join(path, file)))
+    .map(file => {
+      return matter.read(join(path, file));
+    })
     .map(({ data }) => ({
       id: data.id as string,
       title: data.title as string

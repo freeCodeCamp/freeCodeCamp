@@ -67,7 +67,7 @@
 
 | Передумова                                                                                    | Версія  | Примітки                                                                                          |
 | --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                  | `18.x`  | Ми використовуємо версію «Active LTS», див. [розклад LTS](https://nodejs.org/en/about/releases/). |
+| [Node.js](http://nodejs.org)                                                                  | `20.x`  | Ми використовуємо версію «Active LTS», див. [розклад LTS](https://nodejs.org/en/about/releases/). |
 | [pnpm](https://pnpm.io/installation)                                                          | `8.x`   | -                                                                                                 |
 | [Сервер спільноти MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `5.0.x` | -                                                                                                 |
 
