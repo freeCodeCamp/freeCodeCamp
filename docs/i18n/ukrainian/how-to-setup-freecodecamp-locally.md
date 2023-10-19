@@ -208,9 +208,21 @@ pnpm -v
 # Заповніть її необхідними ключами та секретами API:
 ```
 
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
 ```console
 cp sample.env .env
 ```
+
+#### **Windows**
+
+```console
+copy sample.env .env
+```
+
+<!-- tabs:end -->
 
 Для локального запуску застосунку _необов’язково_ змінювати ключі у файлі `.env`. Ви можете залишити значення за замовчуванням, скопійовані з `sample.env`.
 
@@ -234,10 +246,25 @@ pnpm install && pnpm run create:shared
 
 Запустіть сервер MongoDB в окремому терміналі:
 
+  <!-- tabs:start -->
+
+#### **macOS/Linux**
+
 ```console
 mongod
 ```
 
+#### **Windows**
+
+- На Windows ви повинні вказати повний шлях до двійкового файлу `mongod`
+
+```console
+"C:\Program Files\MongoDB\Server\3.6\bin\mongod"
+```
+
+Не забудьте змінити `3.6` на свою версію
+
+  <!-- tabs:end -->
 
 > [!TIP] Ви можете не запускати MongoDB кожного разу, встановивши його як фонову службу. Для детальнішої інформації див. [документацію MongoDB для вашої ОС](https://docs.mongodb.com/manual/administration/install-community/)
 

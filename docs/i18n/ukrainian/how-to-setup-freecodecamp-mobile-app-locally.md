@@ -134,10 +134,21 @@ dart --version
 # Заповніть її необхідними ключами та секретами API:
 ```
 
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
 ```console
 cp sample.env .env
 ```
 
+#### **Windows**
+
+```console
+copy sample.env .env
+```
+
+<!-- tabs:end -->
 
 Для локального запуску застосунку _необов’язково_ змінювати ключі у файлі `.env`. Ви можете залишити значення за замовчуванням, скопійовані з `sample.env`.
 
@@ -369,9 +380,21 @@ flutter run
 
 3. Зробіть копію файлу `.env`:
 
-    ```console
-    cp sample.env .env
-    ```
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
+```console
+cp sample.env .env
+```
+
+#### **Windows**
+
+```console
+copy sample.env .env
+```
+
+<!-- tabs:end -->
 
 4. Встановіть залежності для репозиторію freeCodeCamp:
 
@@ -387,9 +410,21 @@ flutter run
 
 6. Скопіюйте створений файл JSON до мобільного застосунку:
 
-    ```console
-    copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
-    ```
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
+```console
+cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
+```
+
+#### **Windows**
+
+```console
+copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+```
+
+<!-- tabs:end -->
 
 7. Змініть каталог на мобільний застосунок:
 

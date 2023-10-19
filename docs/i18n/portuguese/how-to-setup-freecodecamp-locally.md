@@ -208,9 +208,21 @@ As chaves de API padrão e variáveis de ambiente são armazenadas no arquivo `s
 # Preencher com as chaves e segredos de API necessários:
 ```
 
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
 ```console
 cp sample.env .env
 ```
+
+#### **Windows**
+
+```console
+copy sample.env .env
+```
+
+<!-- tabs:end -->
 
 As chaves no arquivo `.env` _não_ precisam ser alteradas para executar o aplicativo localmente. Você pode deixar os valores padrão copiados de `sample.env` como estão.
 
@@ -234,10 +246,25 @@ Antes de executar a aplicação localmente, você precisará iniciar o serviço 
 
 Inicie o servidor do MongoDB em um terminal separado:
 
+  <!-- tabs:start -->
+
+#### **macOS/Linux**
+
 ```console
 mongod
 ```
 
+#### **Windows**
+
+- No Windows, você deve especificar o caminho completo para o binário `mongod`
+
+```console
+"C:\Arquivos de programa\MongoDB\Server\3.6\bin\mongod"
+```
+
+Certifique-se de substituir `3.6` pela versão que você instalou
+
+  <!-- tabs:end -->
 
 > [!TIP] Você pode evitar ter que executar o MongoDB toda vez instalando-o como um serviço em segundo plano. Você pode [aprender mais sobre isso na documentação para seu OS](https://docs.mongodb.com/manual/administration/install-community/)
 
