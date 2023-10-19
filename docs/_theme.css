@@ -506,7 +506,7 @@ body.close .github-corner {
 }
 
 .docsify-tabs__tab:not(.docsify-tabs__tab--active) {
-  color: var(--secondary-background) !important;
+  background-color: var(--primary-background) !important;
 }
 
 .docsify-tabs__tab:not(.docsify-tabs__tab--active):hover {
