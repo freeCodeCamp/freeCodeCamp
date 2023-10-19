@@ -37,9 +37,9 @@ const completeChallenge = async (page: Page) => {
 
 test.describe('Challenge Title Component (signed out)', () => {
   test('should render correctly', async ({ page }) => {
-    await expect(page.getByText('Developing a Port Scanner')).toBeVisible();
-
     await expect(page.getByLabel('Passed')).not.toBeVisible();
+
+    await expect(page.getByText('Developing a Port Scanner')).toBeVisible();
   });
 
   test('should not display GreenPass after challenge completion', async ({
@@ -50,7 +50,7 @@ test.describe('Challenge Title Component (signed out)', () => {
     await expect(page.getByLabel('Passed')).not.toBeVisible();
   });
 
-  test.skip("should not render the 'Please Help Us Translate' link", async ({
+  test("should appropriately render 'Please Help Us Translate' link", async ({
     page
   }) => {
     // This test can be merged with the 'should render correctly' test,
@@ -63,11 +63,11 @@ test.describe('Challenge Title Component (signed out)', () => {
     if (process.env.CURRICULUM_LOCALE != 'english' && visibleEnglishTitle) {
       // Challenge title has not been translated, expect a
       // 'Help us translate' button
-      await expect(page.getByText('')).toBeVisible();
+      await expect(page.getByText('Help us translate')).toBeVisible();
     } else {
       // CURRICULUM_LOCALE is set to english or curriculum is already
       // translated. Do not expect a 'Help us translate' button.
-      await expect(page.getByText('')).not.toBeVisible();
+      await expect(page.getByText('Help us translate')).not.toBeVisible();
     }
   });
 });
