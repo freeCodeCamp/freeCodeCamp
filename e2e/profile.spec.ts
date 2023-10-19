@@ -74,12 +74,8 @@ test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.beforeEach(async ({ page }) => {
   await page.goto('/certifieduser');
 
-  const previewButton = page.getByRole('button', {
-    name: 'Preview custom 404 page'
-  });
-
-  await expect(previewButton).toBeVisible();
-  await previewButton.click();
+  // The following line is required if you're running the test in local development
+  // await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
 });
 
 test.describe('Profile component', () => {
