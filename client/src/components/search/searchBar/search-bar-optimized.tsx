@@ -27,7 +27,12 @@ const SearchBarOptimized = ({
   };
 
   return (
-    <div className='fcc_searchBar' data-testid='fcc_searchBar' ref={innerRef}>
+    <div
+      className='fcc_searchBar'
+      data-testid='fcc_searchBar'
+      data-playwright-test-label='fcc-search-bar'
+      ref={innerRef}
+    >
       <div className='fcc_search_wrapper'>
         <div className='ais-SearchBox' data-cy='ais-SearchBox'>
           <form
@@ -46,6 +51,7 @@ const SearchBarOptimized = ({
               autoCorrect='off'
               id='ais-SearchBox-input'
               className='ais-SearchBox-input'
+              data-playwright-test-label='fcc-search-input'
               maxLength={512}
               onChange={onChange}
               placeholder={placeholder}
@@ -54,7 +60,11 @@ const SearchBarOptimized = ({
               value={value}
               ref={inputElementRef}
             />
-            <button className='ais-SearchBox-submit' type='submit'>
+            <button
+              className='ais-SearchBox-submit'
+              data-playwright-test-label='fcc-search-button'
+              type='submit'
+            >
               <Magnifier />
             </button>
             {value && (

@@ -45,6 +45,7 @@ const MenuButton = ({
     <button
       aria-expanded={displayMenu}
       className='exposed-button-nav'
+      data-playwright-test-label='fcc-menu-button'
       id='toggle-button-nav'
       onBlur={handleBlur}
       onClick={handleClick}
