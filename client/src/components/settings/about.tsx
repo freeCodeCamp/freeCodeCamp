@@ -210,7 +210,11 @@ class AboutSettings extends Component<AboutProps, AboutState> {
         <Spacer size='medium' />
         <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
         <FullWidthRow>
-          <form id='camper-identity' onSubmit={this.handleSubmit}>
+          <form
+            id='camper-identity'
+            onSubmit={this.handleSubmit}
+            data-playwright-test-label='camper-identity'
+          >
             <div role='group' aria-label={t('settings.headings.personal-info')}>
               <FormGroup controlId='about-name'>
                 <ControlLabel>
