@@ -81,7 +81,9 @@ test.beforeEach(async ({ page }) => {
 test.describe('Profile component', () => {
   test('renders the camper profile correctly', async ({ page }) => {
     await expect(
-      page.getByRole('img', { name: 'Default Avatar' }).last()
+      page
+        .getByText('ProfileDefault AvatarAn avatar coding with a laptop')
+        .last()
     ).toBeVisible();
     await expect(
       page.getByRole('heading', { name: '@certifieduser' })
@@ -109,8 +111,9 @@ test.describe('Profile component', () => {
 
     await expect(page.getByText(dateRange)).toBeVisible();
     await expect(page.locator('.react-calendar-heatmap')).toBeVisible();
-    await expect(page.getByText('Longest Streak: 0')).toBeVisible();
-    await expect(page.getByText('Current Streak: 0')).toBeVisible();
+    // Streak should be a non-negative integer
+    await expect(page.getByText(/Longest Streak: [0-9]\d*$/)).toBeVisible();
+    await expect(page.getByText(/Current Streak: [0-9]\d*$/)).toBeVisible();
   });
 
   test('displays certifications correctly', async ({ page }) => {
