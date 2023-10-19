@@ -76,10 +76,6 @@ test.beforeEach(async ({ page }) => {
   await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test.describe('Profile component', () => {
   test('renders the camper profile correctly', async ({ page }) => {
     await expect(
