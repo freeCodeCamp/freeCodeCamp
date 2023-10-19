@@ -50,7 +50,10 @@ test('get danger zone link', async ({ page }) => {
 });
 
 test('get emails', async ({ page }) => {
-  await expect(page.getByTestId('misc-email-blast')).toHaveText(
+  /* await expect(page.getByTestId('misc-email-blast')).toHaveText(
+    translations.misc['email-blast']
+  ); */
+  await expect(page.getByTestId('misc-email-blast')).toHaveScreenshot(
     translations.misc['email-blast']
   );
 });
