@@ -48,7 +48,7 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
   const { t } = useTranslation();
   return (
     <>
-      <Row>
+      <Row className='certifications text-center'>
         <Col className='certifications' sm={10} smOffset={1}>
           <Link
             className='btn btn-lg btn-primary btn-block'
