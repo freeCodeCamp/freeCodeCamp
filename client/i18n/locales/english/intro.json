@@ -533,10 +533,17 @@
       },
       "d3-dashboard": {
         "title": "D3 Dashboard",
+<<<<<<< HEAD
         "intro": [
           "",
           ""
         ]
+=======
+        "intro": [
+          "",
+          ""
+        ]
+>>>>>>> f1e583cdcd (Save work in progress)
       }
     }
   },
