@@ -138,12 +138,14 @@ The default API keys and environment variables are stored in the file `sample.en
 # Populate it with the necessary API keys and secrets:
 ```
 
-macOS/Linux:
+#### **macOS/Linux**
+
 ```console
 cp sample.env .env
 ```
 
-Windows:
+#### **Windows**
+
 ```console
 copy sample.env .env
 ```
@@ -381,12 +383,14 @@ Follow these steps:
 
 3. Make a copy of the `.env` file:
 
-    macOS/Linux:
+    #### **macOS/Linux**
+
     ```console
     cp sample.env .env
     ```
 
-    Windows:
+    #### **Windows**
+
     ```console
     copy sample.env .env
     ```
@@ -405,12 +409,13 @@ Follow these steps:
 
 6. Copy the generated JSON file to the mobile app:
 
-    macOS/Linux:
+    #### **macOS/Linux**
+
     ```console
     cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
     ```
 
-    Windows:
+    #### **Windows**
     ```console
     copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
     ```
