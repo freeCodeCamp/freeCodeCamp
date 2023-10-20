@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/ui';
 import { noop } from 'lodash-es';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
@@ -28,8 +29,6 @@ import ProgressBar from '../../../components/ProgressBar';
 import GreenPass from '../../../assets/icons/green-pass';
 
 import './completion-modal.css';
-import { fireConfetti } from '../../../utils/fire-confetti';
-import { certsToProjects } from '../../../../config/cert-and-project-map';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -80,11 +79,6 @@ interface CompletionModalsProps extends StateProps {
 interface CompletionModalState {
   downloadURL: null | string;
 }
-
-const isCertificationProject = (id: string) =>
-  Object.values(certsToProjects).some(cert =>
-    cert.some(project => project.id === id)
-  );
 
 class CompletionModal extends Component<
   CompletionModalsProps,
@@ -157,45 +151,33 @@ class CompletionModal extends Component<
     const {
       close,
       isOpen,
-      id,
       isSignedIn,
       isSubmitting,
       message,
       t,
       dashedName,
-      submitChallenge,
-      completedChallengesIds
+      submitChallenge
     } = this.props;
 
     if (isOpen) {
       executeGA({ event: 'pageview', pagePath: '/completion-modal' });
-      if (
-        isCertificationProject(id) &&
-        !completedChallengesIds.includes(id) &&
-        !isSubmitting
-      ) {
-        fireConfetti();
-      }
     }
+
+    console.log(isOpen);
+
     return (
       <Modal
         data-cy='completion-modal'
-        animation={false}
-        bsSize='lg'
         dialogClassName='challenge-success-modal'
         keyboard={true}
         onHide={close}
         // eslint-disable-next-line @typescript-eslint/unbound-method
         onKeyDown={isOpen ? this.handleKeypress : noop}
-        show={isOpen}
+        open={isOpen}
       >
-        <Modal.Header
-          className='challenge-list-header fcc-modal'
-          closeButton={true}
-        >
-          <Modal.Title className='completion-message'>{message}</Modal.Title>
-        </Modal.Header>
         <Modal.Body className='completion-modal-body'>
+          <h1 className='completion-message'>{message}</h1>
+          <br />
           <div className='completion-challenge-details'>
             <GreenPass
               className='completion-success-icon'
@@ -206,8 +188,6 @@ class CompletionModal extends Component<
           <div className='completion-block-details'>
             <ProgressBar />
           </div>
-        </Modal.Body>
-        <Modal.Footer>
           {isSignedIn ? null : (
             <Login block={true}>{t('learn.sign-in-save')}</Login>
           )}
@@ -234,7 +214,7 @@ class CompletionModal extends Component<
               {t('learn.download-solution')}
             </Button>
           ) : null}
-        </Modal.Footer>
+        </Modal.Body>
       </Modal>
     );
   }
