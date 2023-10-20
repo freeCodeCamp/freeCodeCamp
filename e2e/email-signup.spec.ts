@@ -50,14 +50,7 @@ test('get danger zone link', async ({ page }) => {
 });
 
 test('get emails', async ({ page }) => {
-  /*await expect(page.getByTestId('misc-email-blast')).toHaveText(
-    translations.misc['email-blast']
-  ); */
-<<<<<<< HEAD
-  await expect(page.getByText(translations.misc['email-blast'])).toHaveScreenshot();
-=======
   await expect(page.getByTestId('misc-email-blast')).toHaveScreenshot(
     translations.misc['email-blast']
   );
->>>>>>> f0ebd9873f (commit "modified email-signup.spec.ts")
 });
