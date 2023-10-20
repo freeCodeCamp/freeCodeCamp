@@ -3,9 +3,8 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-1'
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
   );
-  await page.keyboard.press('Escape');
 });
 
 test.describe('Challenge Preview Component Tests', () => {
@@ -22,7 +21,7 @@ test.describe('Challenge Preview Component Tests', () => {
       page
         .frameLocator('.challenge-preview-frame')
         .first()
-        .getByRole('heading', { name: 'Hello World' })
+        .getByRole('heading', { name: 'CatPhotoApp' })
     ).toBeVisible();
   });
 
