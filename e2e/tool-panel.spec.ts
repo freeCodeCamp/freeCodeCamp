@@ -12,7 +12,7 @@ test.describe('Tool Panel', () => {
   }) => {
     await page
       .getByRole('button', {
-        name: translations.buttons['run-test'].replace(/\([^)]*\)/, '')
+        name: 'Run the Test'
       })
       .click();
 
