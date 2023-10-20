@@ -504,11 +504,3 @@ body.close .github-corner {
   text-align: left;
   width: 10em;
 }
-
-.docsify-tabs__tab:not(.docsify-tabs__tab--active) {
-  color: var(--secondary-background) !important;
-}
-
-.docsify-tabs__tab:not(.docsify-tabs__tab--active):hover {
-  cursor: pointer;
-}
