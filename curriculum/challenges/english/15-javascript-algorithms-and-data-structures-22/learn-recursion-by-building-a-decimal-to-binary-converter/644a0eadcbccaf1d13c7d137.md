@@ -93,11 +93,12 @@ body {
   background-color: var(--dark-blue);
   font-family: "Times New Roman", Times, serif;
   color: var(--light-grey);
+  margin: 0 15px;
 }
 
 h1 {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin: 20px 0;
 }
 
@@ -119,9 +120,11 @@ h1 {
 }
 
 #result {
-  width: 200px;
+  min-width: 200px;
+  width: fit-content;
   min-height: 80px;
-  padding: 15px 0;
+  word-break: break-word;
+  padding: 15px;
   margin: 30px auto 0;
   border: 5px solid var(--orange);
   font-size: 2rem;
@@ -139,6 +142,12 @@ h1 {
   border: 5px solid var(--orange);
   font-size: 1.2rem;
   text-align: center;
+}
+
+@media screen and (min-width: 640px) {
+  #result {
+    max-width: 600px;
+  }
 }
 ```
 
