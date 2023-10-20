@@ -41,6 +41,14 @@ test.describe('Exam Results E2E Test Suite', () => {
   test('Verifies the Correct Rendering of the Exam results', async ({
     page
   }) => {
+    const pageWrapper = await page.locator('div.page-wrapper').innerHTML();
+    console.log(pageWrapper);
+
+    const exWrapper = await page
+      .locator('div.exam-results-wrapper')
+      .innerHTML();
+    console.log(exWrapper);
+
     await expect(
       page
         .locator('div.exam-results-wrapper')
@@ -79,6 +87,14 @@ test.describe('Exam Results E2E Test Suite', () => {
   });
 
   test('Exam Results when the User clicks on Exit button', async ({ page }) => {
+    const pageWrapper = await page.locator('div.page-wrapper').innerHTML();
+    console.log(pageWrapper);
+
+    const exWrapper = await page
+      .locator('div.exam-results-wrapper')
+      .innerHTML();
+    console.log(exWrapper);
+
     await page
       .locator('div.exam-results-wrapper')
       .getByRole('button', { name: translations.buttons.exit })
@@ -99,6 +115,14 @@ test.describe('Exam Results E2E Test Suite', () => {
     test('Exam Results When the User clicks on Download button', async ({
       page
     }) => {
+      const pageWrapper = await page.locator('div.page-wrapper').innerHTML();
+      console.log(pageWrapper);
+
+      const exWrapper = await page
+        .locator('div.exam-results-wrapper')
+        .innerHTML();
+      console.log(exWrapper);
+
       const downloadbutton = page
         .locator('div.exam-results-wrapper')
         .getByTestId('download-exam-results');
