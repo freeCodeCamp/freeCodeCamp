@@ -309,7 +309,10 @@
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "Build a Caesars Cipher Project",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "build-a-cash-register-project": {
         "title": "Build a Cash Register Project",
@@ -422,6 +425,13 @@
           "Working with dates in JavaScript can be both powerful and challenging, as you navigate through various methods, formats, and time zones. In this project you will learn how to work with the JavaScript Date object, including its methods and properties, and learn how to format dates effectively.",
           "This project will cover concepts such as the <code>getDate()</code>, <code>getMonth()</code>, and <code>getFullYear()</code> methods."
         ]
+      },
+      "learn-basic-string-and-array-methods-by-building-a-music-player": {
+        "title": "Learn Basic String and Array Methods by Building a Music Player",
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
@@ -521,7 +531,13 @@
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
       },
-      "d3-dashboard": { "title": "D3 Dashboard", "intro": ["", ""] }
+      "d3-dashboard": {
+        "title": "D3 Dashboard",
+        "intro": [
+          "",
+          ""
+        ]
+      }
     }
   },
   "relational-database": {
@@ -854,7 +870,9 @@
       },
       "learn-functions-and-graphing": {
         "title": "Learn Functions and Graphing",
-        "intro": ["This unit will teach you about math functions."]
+        "intro": [
+          "This unit will teach you about math functions."
+        ]
       },
       "learn-linear-functions": {
         "title": "Learn Linear Functions",
@@ -1008,35 +1026,51 @@
     "blocks": {
       "top-learn-html-foundations": {
         "title": "Learn HTML Foundations",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "A description is to be determined"
+        ]
       },
       "top-working-with-text": {
         "title": "Working with Text",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "A description is to be determined"
+        ]
       },
       "top-links-and-images": {
         "title": "Links and Images",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "A description is to be determined"
+        ]
       },
       "top-build-a-recipe-project": {
         "title": "Learn HTML Foundations by Building a Recipe Page",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "A description is to be determined"
+        ]
       },
       "top-learn-css-foundations": {
         "title": "Learn CSS Foundations",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "A description is to be determined"
+        ]
       },
       "top-learn-css-foundations-projects": {
         "title": "Learn CSS Foundations Projects",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "A description is to be determined"
+        ]
       },
       "top-learn-css-specificity": {
         "title": "Learn CSS Specificity",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "A description is to be determined"
+        ]
       },
       "top-the-box-model": {
         "title": "Learn the Box Model",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "A description is to be determined"
+        ]
       }
     }
   },
@@ -1134,15 +1168,22 @@
   },
   "upcoming-python": {
     "title": "Upcoming Python",
-    "intro": ["placeholder"],
+    "intro": [
+      "placeholder"
+    ],
     "blocks": {
       "learn-python-by-building-a-blackjack-game": {
         "title": "Learn Python by Building a Blackjack Game",
-        "intro": ["Learn Python.", ""]
+        "intro": [
+          "Learn Python.",
+          ""
+        ]
       },
       "upcoming-python-project": {
         "title": "Upcoming Python Project",
-        "intro": ["placeholder"]
+        "intro": [
+          "placeholder"
+        ]
       }
     }
   },
@@ -1155,25 +1196,35 @@
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "Learn Greetings in your First Day at the Office",
-        "intro": ["Learn greetings."]
+        "intro": [
+          "Learn greetings."
+        ]
       },
       "learn-introductions-in-an-online-team-meeting": {
         "title": "Learn Introductions in an Online Team Meeting",
-        "intro": ["Learn introductions."]
+        "intro": [
+          "Learn introductions."
+        ]
       },
       "learn-conversation-starters-in-the-break-room": {
         "title": "Learn Conversation Starters in the Break Room",
-        "intro": ["Learn conversation starters."]
+        "intro": [
+          "Learn conversation starters."
+        ]
       }
     }
   },
   "example-certification": {
     "title": "Example Certification",
-    "intro": ["placeholder"],
+    "intro": [
+      "placeholder"
+    ],
     "blocks": {
       "example-certification-exam": {
         "title": "Example Certification Exam",
-        "intro": ["placeholder"]
+        "intro": [
+          "placeholder"
+        ]
       }
     }
   },
