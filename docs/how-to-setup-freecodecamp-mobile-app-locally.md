@@ -138,8 +138,14 @@ The default API keys and environment variables are stored in the file `sample.en
 # Populate it with the necessary API keys and secrets:
 ```
 
+macOS/Linux:
 ```console
 cp sample.env .env
+```
+
+Windows:
+```console
+copy sample.env .env
 ```
 
 The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
@@ -375,8 +381,14 @@ Follow these steps:
 
 3. Make a copy of the `.env` file:
 
+    macOS/Linux:
     ```console
     cp sample.env .env
+    ```
+
+    Windows:
+    ```console
+    copy sample.env .env
     ```
 
 4. Install the dependencies for the freeCodeCamp repo:
@@ -393,8 +405,14 @@ Follow these steps:
 
 6. Copy the generated JSON file to the mobile app:
 
+    macOS/Linux:
     ```console
     cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
+    ```
+
+    Windows:
+    ```console
+    copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
     ```
 
 7. Change directory to the mobile app:
