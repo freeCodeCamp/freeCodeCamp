@@ -1,0 +1,29 @@
+{
+  "name": "Learn Basic String and Array Methods by Building a Music Player",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-basic-string-and-array-methods-by-building-a-music-player",
+  "order": 42,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "superOrder": 4,
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "652f948489abbb81e6bf5a01",
+      "title": "Step 1"
+    },
+    {
+      "id": "652fa2aee6374ad29b5d49b4",
+      "title": "Step 2"
+    },
+    {
+      "id": "652fa3c4968fa9d6f8f6d873",
+      "title": "Step 3"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
