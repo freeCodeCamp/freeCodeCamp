@@ -97,7 +97,12 @@ function FormFields({
               const isURL = types[name] === 'url';
               return (
                 <FormGroup key={name}>
-                  <ControlLabel htmlFor={name}>{label}</ControlLabel>
+                  <ControlLabel
+                    htmlFor={name}
+                    data-playwright-test-label={`${name}-control-label`}
+                  >
+                    {label}
+                  </ControlLabel>
                   <FormControl
                     id={name}
                     name={name}
@@ -111,6 +116,7 @@ function FormFields({
                     })}
                     type='url'
                     value={value as string}
+                    data-playwright-test-label={`${name}-form-control`}
                   />
                   {nullOrWarning(
                     value as string,

@@ -256,7 +256,11 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     };
     return (
       <FullWidthRow key={id}>
-        <form onSubmit={e => handleSubmit(e, id)} id='portfolio-items'>
+        <form
+          onSubmit={e => handleSubmit(e, id)}
+          id='portfolio-items'
+          data-playwright-test-label='portfolio-items'
+        >
           <FormGroup
             controlId={`${id}-title`}
             validationState={

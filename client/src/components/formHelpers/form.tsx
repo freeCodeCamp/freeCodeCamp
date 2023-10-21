@@ -111,6 +111,7 @@ export const StrictSolutionForm = ({
               ? { onSubmit: handleSubmit as (e: FormEvent) => void }
               : { onSubmit: e => e.preventDefault() })}
             style={{ width: '100%' }}
+            data-playwright-test-label='form-helper-form'
           >
             <FormFields formFields={formFields} options={options} isDisabled />
             <BlockSaveButton disabled={isDisabled}>
