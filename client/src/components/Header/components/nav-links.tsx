@@ -5,15 +5,13 @@ import {
   faHeart
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Modal } from '@freecodecamp/ui';
 import React, { Fragment } from 'react';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-
-import { radioLocation, apiLocation } from '../../../../config/env.json';
-import { hardGoTo as navigate } from '../../../redux/actions';
+import { radioLocation } from '../../../../config/env.json';
+import { openSignoutModal } from '../../../redux/actions';
 import { updateMyTheme } from '../../../redux/settings/actions';
-import { Link, Spacer } from '../../helpers';
+import { Link } from '../../helpers';
 import { type ThemeProps, Themes } from '../../settings/theme';
 import { User } from '../../../redux/prop-types';
 
@@ -23,12 +21,12 @@ export interface NavLinksProps extends Pick<ThemeProps, 'toggleNightMode'> {
   hideMenu: () => void;
   user?: User;
   menuButtonRef: React.RefObject<HTMLButtonElement>;
-  navigate: typeof navigate;
+  openSignoutModal: () => void;
 }
 
 const mapDispatchToProps = {
   toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
-  navigate
+  openSignoutModal
 };
 
 interface DonateButtonProps {
@@ -86,11 +84,11 @@ const toggleTheme = (
 
 function NavLinks({
   menuButtonRef,
+  openSignoutModal,
   hideMenu,
   displayMenu,
   toggleNightMode,
-  user,
-  navigate
+  user
 }: NavLinksProps) {
   const { t } = useTranslation();
   const {
@@ -147,8 +145,9 @@ function NavLinks({
     DoKeyPress.get(event.key)?.select();
   };
 
-  const handleSignout = () => {
-    navigate(`${apiLocation}/signout`);
+  const handleSignOutClick = (): void => {
+    hideMenu();
+    openSignoutModal();
   };
 
   return (
@@ -278,47 +277,14 @@ function NavLinks({
       </li>
       {currentUserName && (
         <li className='nav-line' key='sign-out'>
-          <Modal aria-labelledby='modal-title' size='lg'>
-            <Modal.Trigger
-              className='nav-link nav-link-signout'
-              data-value='sign-out-button'
-              onKeyDown={handleSignOutKeys}
-            >
-              {t('buttons.sign-out')}
-            </Modal.Trigger>
-            <Modal.Header
-              id='modal-title'
-              className='text-center'
-              closeButton={true}
-            >
-              <Modal.Title id='modal-title'>
-                <span style={{ fontWeight: 'bold' }}>
-                  {t('signout.heading')}
-                </span>
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body className='text-center'>
-              <p>
-                <span style={{ fontWeight: 'bold' }}>{t('signout.p1')}</span>
-              </p>
-              <p>{t('signout.p2')}</p>
-              <hr />
-              <Modal.Close
-                data-test-label='cancel-signout'
-                className='btn-invert'
-              >
-                {t('signout.nevermind')}
-              </Modal.Close>
-              <Spacer size='small' />
-              <Modal.Close
-                data-test-label='signout'
-                className='btn-signout'
-                onClick={handleSignout}
-              >
-                {t('signout.certain')}
-              </Modal.Close>
-            </Modal.Body>
-          </Modal>
+          <button
+            className='nav-link nav-link-signout'
+            data-value='sign-out-button'
+            onClick={handleSignOutClick}
+            onKeyDown={handleSignOutKeys}
+          >
+            {t('buttons.sign-out')}
+          </button>
         </li>
       )}
     </ul>

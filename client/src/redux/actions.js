@@ -109,3 +109,4 @@ export const setMsUsername = createAction(actionTypes.setMsUsername);
 export const setIsProcessing = createAction(actionTypes.setIsProcessing);
 
 export const closeSignoutModal = createAction(actionTypes.closeSignoutModal);
+export const openSignoutModal = createAction(actionTypes.openSignoutModal);
