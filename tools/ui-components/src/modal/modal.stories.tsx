@@ -4,39 +4,66 @@ import { Modal } from '.';
 
 const story = {
   title: 'Example/Modal',
-  component: Modal
+  component: Modal,
+  argTypes: {
+    size: { control: { type: 'text' } }
+  }
 };
 
-const Template: Story<typeof Modal> = () => {
+const TriggerButton: Story<typeof Modal> = () => {
   return (
-    <Modal>
-      <Modal.Trigger asChild>
-        <button>Edit profile</button>
-      </Modal.Trigger>
-      <Modal.Body>
+    <Modal size='lg'>
+      <Modal.Trigger>Edit profile</Modal.Trigger>
+      <Modal.Layer>
         <Modal.Header closeButton={true}>Edit profile</Modal.Header>
-        <fieldset>
-          <label htmlFor='name'>Name</label>
-          <input id='name' defaultValue='Pedro Duarte' />
-        </fieldset>
-        <fieldset>
-          <label htmlFor='username'>Username</label>
-          <input id='username' defaultValue='@peduarte' />
-        </fieldset>
+        <Modal.Body>
+          <fieldset>
+            <label htmlFor='name'>Name</label>
+            <input id='name' defaultValue='Pedro Duarte' />
+          </fieldset>
+          <fieldset>
+            <label htmlFor='username'>Username</label>
+            <input id='username' defaultValue='@peduarte' />
+          </fieldset>
+        </Modal.Body>
         <Modal.Footer>
           Click save when you&apos;re done.
           <Modal.Close className='ml-1 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none'>
             Save changes
           </Modal.Close>
         </Modal.Footer>
-      </Modal.Body>
+      </Modal.Layer>
     </Modal>
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  // default props go here
+const AutoTrigger: Story<typeof Modal> = () => {
+  return (
+    <Modal open={true}>
+      <Modal.Layer>
+        <Modal.Header closeButton={true}>Edit profile</Modal.Header>
+        <Modal.Body>
+          <fieldset>
+            <label htmlFor='name'>Name</label>
+            <input id='name' defaultValue='Pedro Duarte' />
+          </fieldset>
+          <fieldset>
+            <label htmlFor='username'>Username</label>
+            <input id='username' defaultValue='@peduarte' />
+          </fieldset>
+        </Modal.Body>
+        <Modal.Footer>
+          Click save when you&apos;re done.
+          <Modal.Close className='ml-1 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none'>
+            Save changes
+          </Modal.Close>
+        </Modal.Footer>
+      </Modal.Layer>
+    </Modal>
+  );
 };
+
+export const Default = TriggerButton.bind({});
+export const AutoOpen = AutoTrigger.bind({});
 
 export default story;

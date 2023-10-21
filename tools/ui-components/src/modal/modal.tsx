@@ -32,7 +32,7 @@ const ModalOverlay = React.forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <Overlay
-      className={`fixed inset-0 bg-background-secondary bg-opacity-50 ${
+      className={`fixed inset-0 bg-background-secondary opacity-50 z-10 ${
         className ?? ''
       }`}
       ref={ref}
@@ -49,7 +49,7 @@ const ModalContent = React.forwardRef<
   return (
     <Content
       ref={ref}
-      className={`bg-background-secondary border border-foreground-secondary border-solid fixed top-[25%] left-[25%] md:shadow-lg md:w-[600px] md:mx-auto md:my-[30px] ${
+      className={`bg-background-secondary border border-foreground-secondary border-solid fixed top-[25%] left-[25%] md:shadow-lg md:w-[600px] md:mx-auto md:my-[30px] z-20 ${
         size === 'lg' ? 'min-[992px]:w-[900px]' : ''
       } ${className ?? ''}`}
       {...props}
@@ -57,7 +57,7 @@ const ModalContent = React.forwardRef<
   );
 });
 
-const ModalBody = React.forwardRef<
+const ModalLayer = React.forwardRef<
   React.ElementRef<typeof Content>,
   React.ComponentPropsWithoutRef<typeof Content>
 >((props, ref) => {
@@ -102,13 +102,13 @@ const ModalTitle = React.forwardRef<
   />
 ));
 
-const ModalDescription = React.forwardRef<
-  React.ElementRef<typeof Description>,
-  React.ComponentPropsWithoutRef<typeof Description>
+const ModalFooter = React.forwardRef<
+  React.ElementRef<'div'>,
+  React.ComponentPropsWithoutRef<'div'>
 >(({ className, ...props }, ref) => {
   const size = React.useContext(ModalContext);
   return (
-    <Description
+    <div
       ref={ref}
       className={`text-right p-[15px] border border-foreground-secondary border-solid m-0 ${
         size === 'lg' ? 'min-[992px]:w-[900px]' : ''
@@ -118,18 +118,19 @@ const ModalDescription = React.forwardRef<
   );
 });
 
-ModalHeader.displayName = 'ModalHeader';
-ModalBody.displayName = 'ModalBody';
+ModalLayer.displayName = 'ModalLayer';
 ModalTitle.displayName = 'ModalTitle';
+ModalHeader.displayName = 'ModalHeader';
 ModalOverlay.displayName = 'ModalOverlay';
 ModalContent.displayName = 'ModalContent';
-ModalDescription.displayName = 'ModalDescription';
+ModalFooter.displayName = 'ModalDescription';
 
-Modal.Body = ModalBody;
 Modal.Close = Close;
-Modal.Header = ModalHeader;
-Modal.Title = ModalTitle;
-Modal.Footer = ModalDescription;
 Modal.Trigger = Trigger;
+Modal.Body = Description;
+Modal.Layer = ModalLayer;
+Modal.Title = ModalTitle;
+Modal.Header = ModalHeader;
+Modal.Footer = ModalFooter;
 
 export { Modal };
