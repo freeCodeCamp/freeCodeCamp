@@ -52,6 +52,7 @@ function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
   }
   return (
     <Modal
+      data-testid='reset-modal'
       animation={false}
       dialogClassName='reset-modal'
       keyboard={true}

@@ -98,6 +98,7 @@ const LowerButtonsPanel = ({
       <hr />
       <div className='utility-bar'>
         <button
+          data-testid='lowerJaw-reset-button'
           className='btn fade-in'
           data-cy='reset-code-button'
           onClick={resetButtonEvent}
@@ -131,6 +132,7 @@ const LowerJawTips = ({
   return (
     <>
       <div
+        data-testid='lowerJaw-failing-test-feedback'
         data-cy='failing-test-feedback'
         className='test-status fade-in'
         aria-hidden={showFeedback}
@@ -138,7 +140,11 @@ const LowerJawTips = ({
         <Fail aria-hidden='true' />
         <p>{learnEncouragementText}</p>
       </div>
-      <div className='hint-status fade-in' aria-hidden={showFeedback}>
+      <div
+        data-testid='lowerJaw-failing-hint'
+        className='hint-status fade-in'
+        aria-hidden={showFeedback}
+      >
         <LightBulb aria-hidden='true' />
         <div
           className='hint-description'
@@ -301,6 +307,7 @@ const LowerJaw = ({
         </Button>
       )}
       <button
+        data-testid='lowerJaw-submit-button'
         className={lowerJawButtonStyle}
         data-cy='submit-lowerJaw-button'
         onClick={tryToSubmitChallenge}
@@ -310,6 +317,7 @@ const LowerJaw = ({
         {t('buttons.submit-and-go')}
       </button>
       <button
+        data-testid='lowerJaw-check-button'
         className={lowerJawButtonStyle}
         data-cy='check-lowerJaw-button'
         onClick={tryToExecuteChallenge}
@@ -350,6 +358,7 @@ const LowerJaw = ({
         )}
         {hintRef.current && !challengeIsCompleted && (
           <LowerJawTips
+            data-testid='lowerJaw-tips'
             showFeedback={isFeedbackHidden}
             testText={t('learn.test')}
             htmlDescription={`${hintRef.current}`}
