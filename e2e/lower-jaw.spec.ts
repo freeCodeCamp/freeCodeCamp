@@ -9,11 +9,28 @@ test.beforeEach(async ({ page }) => {
   await page.goto(classicChallengeUrl);
 });
 
-test.describe('Displays UI Correctly', () => {
-  test('should render correctly', async ({ page }) => {
+test.describe('<LowerJaw /> tests', () => {
+  test('Should render UI correctly', async ({ page }) => {
     const codeCheckButton = page.getByRole('button', {
       name: 'Check Your Code'
     });
-    expect(codeCheckButton).toContain('Check Your Code (Ctrl + Enter)'); //  Test on mobile it just display's Check Your Code
+    const lowerJawTips = page.getByTestId('failing-test-feedback');
+    await expect(codeCheckButton).toHaveText('Check Your Code (Ctrl + Enter)');
+    await expect(lowerJawTips).toHaveCount(0);
+    await codeCheckButton.click();
+  });
+
+  test('Should display full button text on desktop but hide (Ctrl + Enter on mobile)', async ({
+    page,
+    isMobile
+  }) => {
+    const codeCheckButton = page.getByRole('button', {
+      name: 'Check Your Code'
+    });
+    await expect(codeCheckButton).toHaveText('Check Your Code (Ctrl + Enter)');
+
+    if (isMobile) {
+      await expect(codeCheckButton).toHaveText('Check Your Code');
+    }
   });
 });
