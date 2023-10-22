@@ -7,7 +7,7 @@ const NavLogo = (): JSX.Element => {
   return (
     <FreeCodeCampLogo
       aria-label={t('aria.fcc-curriculum')}
-      data-playwright-test-label='site-header-logo'
+      data-playwright-test-label='header-logo'
     />
   );
 };

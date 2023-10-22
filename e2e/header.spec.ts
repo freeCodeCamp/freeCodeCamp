@@ -9,13 +9,13 @@ const headerComponentElements = {
   examNavLogo: 'header-exam-nav-microsoft-logo',
   universalNav: 'header-universal-nav',
   universalNavLogo: 'header-universal-nav-logo',
-  search: 'site-header-search',
-  toggleLangButton: 'site-header-toggle-lang-button',
-  languageList: 'site-header-lang-list',
-  languageButton: 'site-header-lang-list-option',
-  menuButton: 'site-header-menu-button',
-  menu: 'site-header-menu',
-  signInButton: 'site-header-sign-in-button'
+  search: 'header-search',
+  toggleLangButton: 'header-toggle-lang-button',
+  languageList: 'header-lang-list',
+  languageButton: 'header-lang-list-option',
+  menuButton: 'header-menu-button',
+  menu: 'header-menu',
+  signInButton: 'header-sign-in-button'
 } as const;
 
 const examUrl =
@@ -24,21 +24,17 @@ const examUrl =
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.beforeEach(async ({ page }) => {
-  await page.goto(examUrl);
-});
-
-test.afterEach(async ({ page }) => {
-  await page.close();
+  await page.goto('/');
 });
 
 test.describe('Header Component', () => {
-  test('Has link for skip content', async ({ page }) => {
+  test('Should contain a skip link', async ({ page }) => {
     const skipContent = page.getByTestId(headerComponentElements.skipContent);
     await expect(skipContent).toBeVisible();
     await expect(skipContent).toHaveAttribute('href', '#content-start');
   });
 
-  test('Has nav for universal', async ({ page }) => {
+  test('Renders universal nav by default', async ({ page }) => {
     const universalNavigation = page.getByTestId(
       headerComponentElements.universalNav
     );
@@ -50,7 +46,10 @@ test.describe('Header Component', () => {
     await expect(universalNavigationLogo).toHaveAttribute('href', '/learn');
   });
 
-  test('Has nav for exams', async ({ page }) => {
+  test('Renders exam nav for Foundational C# with Microsoft exam', async ({
+    page
+  }) => {
+    await page.goto(examUrl);
     await page
       .getByRole('button', {
         name: translations.buttons['click-start-exam']
@@ -155,15 +154,22 @@ test.describe('Header Component', () => {
     ];
 
     for (const menuLink of menuLinks) {
-      const link = page
-        .getByRole('link', { name: menuLink.name })
-        .filter({ hasText: menuLink.name }); // need to distinguish from freeCodeCamp logo link in header
+      const link = page.getByRole('link', { name: menuLink.name, exact: true });
       await expect(link).toBeVisible();
       await expect(link).toHaveAttribute('href', menuLink.href);
     }
   });
 
-  test('The Sign In button should redirect to api/signin', async ({ page }) => {
+  test('The Sign In button should redirect to api/signin', async ({
+    browser
+  }) => {
+    // Sign out user in order to test Sign In button
+    const context = await browser.newContext({
+      storageState: { cookies: [], origins: [] }
+    });
+    const page = await context.newPage();
+    await page.goto('/');
+
     const signInButton = page.getByRole('link', {
       name: translations.buttons['sign-in']
     });
