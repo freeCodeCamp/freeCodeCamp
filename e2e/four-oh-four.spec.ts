@@ -13,6 +13,12 @@ const elements = {
 };
 
 test.beforeEach(async ({ page }) => {
+  /**
+   * TODO: an experimental component testing API is out,
+   * try and use it when it's available.
+   * read https://playwright.dev/docs/test-components
+   */
+
   await page.goto('/404');
 });
 
