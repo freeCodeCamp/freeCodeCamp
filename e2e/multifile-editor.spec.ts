@@ -21,7 +21,7 @@ test.describe('MultifileEditor Component', () => {
     expect(editors.length).toBe(2);
 
     // Test text insertion works in both editors
-    const test_string = 'multiline_editor_test_string';
+    const test_string = 'TestString';
     let index = 0;
     for (const editor of editors) {
       await editor.click();
