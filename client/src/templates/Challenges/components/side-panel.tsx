@@ -75,6 +75,7 @@ export function SidePanel({
   return (
     <div
       className='instructions-panel'
+      data-playwright-test-label='instructions-panel'
       ref={instructionsPanelRef}
       tabIndex={-1}
     >
