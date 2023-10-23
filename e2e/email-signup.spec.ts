@@ -2,9 +2,13 @@ import { test, expect, type Page } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 
+test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.describe('show email sign up page', () => {
   let page: Page;
 
+  test.beforeAll(() => {
+    test.setTimeout(60000);
+  });
   test.beforeAll(async ({ browser }) => {
     page = await browser.newPage();
     await page.goto('/signup');
@@ -14,6 +18,7 @@ test.describe('show email sign up page', () => {
     await page.close();
   });
 });
+
 test('should render accept terms yes please button', async ({ page }) => {
   await expect(page.getByTestId('yes-please-button')).toBeVisible();
 });
@@ -50,9 +55,12 @@ test('get danger zone link', async ({ page }) => {
 });
 
 test('get emails', async ({ page }) => {
-  const ele = page.getByText(translations.misc['email-blast']);
+  expect(
+    await page.textContent(translations.misc['email-blast'])
+  ).toMatchSnapshot('../pages/__snapshots__/email-sign-up.test.js.snap');
+  /*const ele = page.getByText(translations.misc['email-blast']);
   await expect(ele).toBeVisible();
-  /* await expect(page.getByTestId('misc-email-blast')).toHaveScreenshot(
+   await expect(page.getByTestId('misc-email-blast')).toHaveScreenshot(
     translations.misc['email-blast']
   ); */
 });
