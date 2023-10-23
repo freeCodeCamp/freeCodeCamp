@@ -11,7 +11,7 @@ Start by installing the prerequisite software for your operating system.
 | Prerequisite                      | Version | Notes                                    |
 | --------------------------------- | ------- | ---------------------------------------- |
 | [Flutter](https://flutter.dev/)   | `3.x`   | -                                        |
-| Dart (comes bundled with Flutter) | `2.x`   | We use the version bundled with Flutter. |
+| Dart (comes bundled with Flutter) | `3.x`   | We use the version bundled with Flutter. |
 
 > [!ATTENTION] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions.
 

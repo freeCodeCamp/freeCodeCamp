@@ -112,6 +112,17 @@ function deleteUserTokenResponse(req, res) {
   return res.send({ userToken: null });
 }
 
+export const getMsTranscriptApiUrl = msTranscript => {
+  // example msTranscriptUrl: https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo
+  const url = new URL(msTranscript);
+
+  const transcriptUrlRegex = /\/transcript\/([^/]+)\/?/;
+  const id = transcriptUrlRegex.exec(url.pathname)?.[1];
+  return `https://learn.microsoft.com/api/profiles/transcript/share/${
+    id ?? ''
+  }`;
+};
+
 function createPostMsUsername(app) {
   const { MsUsername } = app.models;
 
@@ -129,8 +140,7 @@ function createPostMsUsername(app) {
       });
     }
 
-    const msTranscriptId = msTranscriptUrl.split('/').pop();
-    const msTranscriptApiUrl = `https://learn.microsoft.com/api/profiles/transcript/share/${msTranscriptId}`;
+    const msTranscriptApiUrl = getMsTranscriptApiUrl(msTranscriptUrl);
 
     try {
       const msApiRes = await fetch(msTranscriptApiUrl);
