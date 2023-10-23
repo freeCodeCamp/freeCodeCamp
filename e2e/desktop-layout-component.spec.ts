@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-test.describe('Classic challengs - 3 pane desktop layout component', () => {
+test.describe('Classic challenge - 3 pane desktop layout component', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(
       'learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form'
@@ -35,14 +35,14 @@ test.describe('Classic challengs - 3 pane desktop layout component', () => {
   });
 });
 
-test.describe('Classic challengs - 2 pane desktop layout component', () => {
+test.describe('Classic challenge - 2 pane desktop layout component', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(
       'learn/javascript-algorithms-and-data-structures/basic-javascript/use-recursion-to-create-a-range-of-numbers'
     );
   });
 
-  test('The page has desktop layout with instructions/editor pan', async ({
+  test('The page has desktop layout with instructions/editor pane', async ({
     page
   }) => {
     const desktopLayout = page.getByTestId('desktop-layout');
