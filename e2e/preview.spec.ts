@@ -7,8 +7,8 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-test.describe('Challenge Preview Component Tests', () => {
-  test('should render correct ouptput of default code', async ({
+test.describe('Challenge Preview Component', () => {
+  test('should render correct output of default code', async ({
     page,
     isMobile
   }) => {
