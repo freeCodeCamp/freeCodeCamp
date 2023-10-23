@@ -3,15 +3,13 @@ import { test, expect } from '@playwright/test';
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.describe('Classic challenge - 3 pane desktop layout component', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto(
-      'learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form'
-    );
-  });
-
   test('The page has desktop layout with instructions/editor/preview pane', async ({
     page
   }) => {
+    await page.goto(
+      'learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form'
+    );
+
     const desktopLayout = page.getByTestId('desktop-layout');
     await expect(desktopLayout).toBeVisible();
 
@@ -36,15 +34,13 @@ test.describe('Classic challenge - 3 pane desktop layout component', () => {
 });
 
 test.describe('Classic challenge - 2 pane desktop layout component', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto(
-      'learn/javascript-algorithms-and-data-structures/basic-javascript/use-recursion-to-create-a-range-of-numbers'
-    );
-  });
-
   test('The page has desktop layout with instructions/editor pane', async ({
     page
   }) => {
+    await page.goto(
+      'learn/javascript-algorithms-and-data-structures/basic-javascript/use-recursion-to-create-a-range-of-numbers'
+    );
+
     const desktopLayout = page.getByTestId('desktop-layout');
     await expect(desktopLayout).toBeVisible();
 
