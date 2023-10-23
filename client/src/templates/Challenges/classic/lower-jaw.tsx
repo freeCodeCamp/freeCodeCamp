@@ -98,7 +98,7 @@ const LowerButtonsPanel = ({
       <hr />
       <div className='utility-bar'>
         <button
-          data-testid='lowerJaw-reset-button'
+          data-playwright-test-label='lowerJaw-reset-button'
           className='btn fade-in'
           data-cy='reset-code-button'
           onClick={resetButtonEvent}
@@ -132,7 +132,7 @@ const LowerJawTips = ({
   return (
     <>
       <div
-        data-testid='lowerJaw-failing-test-feedback'
+        data-playwright-test-label='lowerJaw-failing-test-feedback'
         data-cy='failing-test-feedback'
         className='test-status fade-in'
         aria-hidden={showFeedback}
@@ -141,7 +141,7 @@ const LowerJawTips = ({
         <p>{learnEncouragementText}</p>
       </div>
       <div
-        data-testid='lowerJaw-failing-hint'
+        data-playwright-test-label='lowerJaw-failing-hint'
         className='hint-status fade-in'
         aria-hidden={showFeedback}
       >
@@ -307,7 +307,7 @@ const LowerJaw = ({
         </Button>
       )}
       <button
-        data-testid='lowerJaw-submit-button'
+        data-playwright-test-label='lowerJaw-submit-button'
         className={lowerJawButtonStyle}
         data-cy='submit-lowerJaw-button'
         onClick={tryToSubmitChallenge}
@@ -317,7 +317,7 @@ const LowerJaw = ({
         {t('buttons.submit-and-go')}
       </button>
       <button
-        data-testid='lowerJaw-check-button'
+        data-playwright-test-label='lowerJaw-check-button'
         className={lowerJawButtonStyle}
         data-cy='check-lowerJaw-button'
         onClick={tryToExecuteChallenge}
