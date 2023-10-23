@@ -1,4 +1,4 @@
-import { Image } from '@freecodecamp/react-bootstrap';
+import { Image } from '@freecodecamp/ui';
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
@@ -50,7 +50,6 @@ function AvatarRenderer({
         <Image
           alt={t('profile.avatar', { username: userName })}
           className='avatar'
-          responsive={true}
           src={picture}
         />
       )}

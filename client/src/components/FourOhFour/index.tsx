@@ -13,9 +13,10 @@ import './404.css';
 const FourOhFour = (_props: RouteComponentProps): JSX.Element => {
   const { t } = useTranslation();
   const quote = randomQuote();
+
   return (
     <div className='notfound-page-wrapper'>
-      <Helmet title={t('404.page-not-found') + '| freeCodeCamp'} />
+      <Helmet title={t('404.page-not-found') + ' | freeCodeCamp.org'} />
       <img
         alt={t('404.not-found')}
         src={notFoundLogo}

@@ -1,6 +1,6 @@
 ---
 id: 64fad9cd2eeb1e7ca2ca8c8b
-title: Step 31
+title: Passo 31
 challengeType: 0
 dashedName: step-31
 ---

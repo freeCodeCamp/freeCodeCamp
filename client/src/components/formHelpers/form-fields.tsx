@@ -1,10 +1,10 @@
 import {
-  ControlLabel,
   FormControl,
   FormGroup,
+  ControlLabel,
+  Alert,
   HelpBlock
-} from '@freecodecamp/react-bootstrap';
-import { Alert } from '@freecodecamp/ui';
+} from '@freecodecamp/ui';
 import normalizeUrl from 'normalize-url';
 import React from 'react';
 import { Field } from 'react-final-form';
@@ -92,7 +92,12 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
               const isURL = types[name] === 'url';
               return (
                 <FormGroup key={name}>
-                  <ControlLabel htmlFor={name}>{label}</ControlLabel>
+                  <ControlLabel
+                    htmlFor={name}
+                    data-playwright-test-label={`${name}-control-label`}
+                  >
+                    {label}
+                  </ControlLabel>
                   <FormControl
                     id={name}
                     name={name}
@@ -102,6 +107,7 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
                     rows={4}
                     type='url'
                     value={value as string}
+                    data-playwright-test-label={`${name}-form-control`}
                   />
                   {nullOrWarning(
                     value as string,

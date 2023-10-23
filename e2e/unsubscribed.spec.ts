@@ -2,10 +2,6 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import metaTags from '../client/i18n/locales/english/meta-tags.json';
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test.describe('The unsubscribed page without unsubscribeId', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/unsubscribed');

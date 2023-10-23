@@ -1,7 +1,3 @@
-.user-panel {
-  border-color: var(--highlight-background);
-}
-
 .btn-info {
   background-color: var(--highlight-color);
   color: var(--highlight-background);
@@ -12,17 +8,6 @@
 .btn-info:focus {
   color: var(--highlight-color);
   background-color: var(--highlight-background);
-  border-color: var(--highlight-background);
-}
-
-.user-token .panel-heading {
-  color: var(--highlight-color);
-  background-color: var(--highlight-background);
-  border-radius: 0;
-  border: none;
-}
-
-.user-token .panel-info {
   border-color: var(--highlight-background);
 }
 
