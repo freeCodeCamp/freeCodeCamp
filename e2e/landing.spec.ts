@@ -65,6 +65,31 @@ test('Has 5 brand logos', async () => {
   }
 });
 
+test('The landing-top & testimonial sections should contain call-to-action', async () => {
+  const ctas = page.locator("[data-test-label='landing-big-cta']");
+
+  for (const cta of await ctas.all()) {
+    await expect(cta).toBeVisible();
+  }
+});
+
+test('The landing-top & testimonial sections call to action should contain a descriptive text content', async () => {
+  const ctas = page.locator("[data-test-label='landing-big-cta']");
+
+  for (const cta of await ctas.all()) {
+    await expect(cta).toHaveText(translations.buttons['logged-in-cta-btn']);
+  }
+});
+
+test("The landing-top should contain a descriptive text explaining the camper's image", async () => {
+  const campersCaption = page.locator(
+    "[data-test-label='landing-page-figure-caption']"
+  );
+  await expect(campersCaption).toHaveText(
+    translations.landing['hero-img-description']
+  );
+});
+
 test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({
   isMobile
 }) => {

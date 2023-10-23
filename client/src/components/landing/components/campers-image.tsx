@@ -37,7 +37,10 @@ function CampersImage({ pageName }: CampersImageProps): JSX.Element {
           src={wideImg}
           style={figureSize}
         />
-        <figcaption className='caption'>
+        <figcaption
+          className='caption'
+          data-test-label='landing-page-figure-caption'
+        >
           {t('landing.hero-img-description')}
         </figcaption>
       </figure>
