@@ -89,7 +89,7 @@ function* executeCancellableChallengeSaga(payload) {
   yield cancel(task);
 }
 
-function* executeChallengeSaga({ payload }) {
+export function* executeChallengeSaga({ payload }) {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
