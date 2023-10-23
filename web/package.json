@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "pnpm": "8"
+    "pnpm": "^8.0.0"
   },
   "repository": {
     "type": "git",
