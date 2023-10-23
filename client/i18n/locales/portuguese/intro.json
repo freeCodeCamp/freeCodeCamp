@@ -301,8 +301,11 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "Algoritmos e estruturas de dados em JavaScript (Beta)",
-    "intro": ["placeholder", "placeholder"],
-    "note": "",
+    "intro": [
+      "Enquanto o HTML e o CSS controlam o conteúdo e o estilo de uma página, o JavaScript é usado para torná-lo interativo. Na certificação de Algoritmos e Estruturas de Dados em JavaScript, você aprenderá os fundamentos do JavaScript, incluindo variáveis, arrays, objetos, laços, funções, o DOM e mais.",
+      "Além do básico, você aprenderá sobre Programação Orientada a Objetos (OOP), Programação Funcional (FP), pensamento algorítmico, como trabalhar com armazenamento local e como buscar dados de uma API."
+    ],
+    "note": "Observação: algumas extensões de navegador, como bloqueadores de anúncios e bloqueadores de scripts, podem interferir nos testes. Se você tiver problemas, recomendamos desabilitar extensões que modifiquem ou bloqueiem o conteúdo das páginas durante o curso.",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "Projeto de criação da Cifra de César",
@@ -310,59 +313,108 @@
       },
       "build-a-cash-register-project": {
         "title": "Projeto de criação de Caixa registradora",
-        "intro": ["", ""]
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma aplicação para a web de caixa registradora."
+        ]
       },
       "build-a-palindrome-checker-project": {
         "title": "Projeto de criação de Verificador de palíndromo",
-        "intro": ["", ""]
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma aplicação que verifica se uma palavra é um palíndromo."
+        ]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Projeto de criação de Conversor de números romanos",
-        "intro": ["", ""]
+        "intro": [
+          "Este é um dos projetos necessários para solicitar sua certificação.",
+          "Para este projeto, você criará uma aplicação que converte números inteiros em números romanos."
+        ]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Projeto de criação de Validador de números de telefone",
-        "intro": ["", ""]
+        "intro": [
+          "Este é um dos projetos necessários para solicitar sua certificação.",
+          "Para este projeto, você criará uma aplicação que verifica se um número é um número de telefone válido nos Estados Unidos."
+        ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Aprenda JavaScript básico criando um jogo de RPG",
-        "intro": ["", ""]
+        "intro": [
+          "O JavaScript é uma linguagem de script que você pode usar para tornar as páginas da web interativas. É uma das principais tecnologias da web, juntamente com o HTML e o CSS e tem o suporte de todos os navegadores modernos.",
+          "Neste projeto prático, você aprenderá conceitos básicos de programação em JavaScript criando um jogo de RPG. Você aprenderá a trabalhar com arrays, strings, objetos, funções, laços, instruções if/else e muito mais."
+        ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Aprenda validação de formulários construindo um contador de calorias",
-        "intro": ["", ""]
+        "intro": [
+          "Ao criar aplicações para a web, haverá momentos em que você precisará trabalhar com a entrada do usuário e com validação de formulário. Neste projeto de contador de calorias, você aprenderá a lidar com entradas do usuário, a realizar cálculos com base nessa entrada e a atualizar dinamicamente a interface para exibir os resultados.",
+          "Neste projeto prático, você aprenderá expressões regulares básicas, template literals, o método <code>addEventListener()</code> e muito mais."
+        ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Aprenda programação funcional criando uma planilha",
-        "intro": ["", ""]
+        "intro": [
+          "Programação funcional é uma abordagem popular em desenvolvimento de software. Na programação funcional, o código é organizado em funções menores e básicas, que podem ser combinadas para criar programas complexos.",
+          "Neste projeto de aplicação de planilhas, você aprenderá a analisar e avaliar expressões matemáticas, a implementar funções de planilha manipular referências de células e a criar interfaces para a web interativas, com atualizações de conteúdo dinâmicas baseadas na entrada do usuário. O projeto abrangerá conceitos como os métodos <code>map()</code>, <code>find()</code>, <code>parseInt()</code>, <code>includes()</code> e mais."
+        ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
         "title": "Aprenda métodos modernos de JavaScript criando cards de equipes de futebol",
-        "intro": ["", ""]
+        "intro": [
+          "Um aspecto comum da criação de aplicações para a web é trabalhar com conjuntos de dados e com o resultado dessas informações na tela. Neste projeto de cards de equipes de futebol, você aprenderá a trabalhar com manipulação do DOM, desestruturação de objetos, manipulação de eventos e filtragem de dados.",
+          "Este projeto abrangerá conceitos como a instrução switch, parâmetros padrão, <code>Object.freeze()</code>, o método <code>map()</code> e mais."
+        ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "Aprenda métodos de arrays avançados criando uma calculadora de estatística",
-        "intro": ["", ""]
+        "intro": [
+          "Sentir-se confortável para trabalhar com métodos de manipulação de array, como <code>map()</code>, <code>reduce()</code> e <code>filter()</code>, é uma parte fundamental de JavaScript.",
+          "Neste projeto de calculadora de estatísticas, você ganhará experiência com o tratamento da entrada de usuário, com a manipulação do DOM e com o encadeamento de métodos, realizando cálculos estatísticos como média, moda, variância e desvio-padrão."
+        ]
       },
       "learn-data-structures-by-building-a-shopping-cart": {
         "title": "Aprenda estruturas de dados criando um carrinho de compras",
-        "intro": ["", ""]
+        "intro": [
+          "A POO, ou Programação Orientada a Objetos, é uma das abordagens principais do processo de desenvolvimento de software. Na POO, os objetos e as classes são usados para organizar o código, descrever coisas e o que elas podem fazer.",
+          "Neste projeto de carrinho de compras, você aprenderá a definir e utilizar classes, a criar instâncias de classe e a implementar métodos para a manipulação de dados. Este projeto tratará de conceitos como a inclusão de operadores ternários, operador spread, a palavra-chave <code>this</code> e mais."
+        ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
         "title": "Aprenda Fetch e Promises criando uma página de autores do fCC",
-        "intro": ["", ""]
+        "intro": [
+          "Um aspecto comum do desenvolvimento para a web é aprender a buscar dados de uma API externa e trabalhar com JavaScript assíncrono. Este projeto de página de autores do freeCodeCamp mostrará a você como trabalhar com o método fetch e como atualizar dinamicamente o DOM para exibir os dados obtidos.",
+          "Este projeto também ensinará a paginar seus dados para que você possa carregar os resultados em lotes. "
+        ]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
         "title": "Aprenda expressões regulares criando um filtro de spam",
-        "intro": ["", ""]
+        "intro": [
+          "Expressões regulares, muitas vezes abreviadas como \"regex\" ou \"regexp\", são padrões que ajudam programadores a encontrar correspondências, pesquisar e substituir texto. Expressões regulares são muito poderosas, mas podem ser difíceis de ler porque usam caracteres especiais para fazer correspondências mais complexas e flexíveis.",
+          "Neste projeto de filtro de spam, você aprenderá a usar caracteres especiais, grupos de captura, buscas positivas e negativas e outras técnicas para encontrar correspondências com o texto desejado."
+        ]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
         "title": "Aprenda o raciocínio básico de Algoritmos criando uma ordenação numérica",
-        "intro": ["", ""]
+        "intro": [
+          "Na ciência da computação, existem algoritmos de classificação fundamentais que todos os desenvolvedores devem aprender. Neste projeto de criação de um ordenador de números, você aprenderá a implementar e visualizar diferentes algoritmos de classificação, como Bubble Sort, Selection Sort e Insertion Sort usando JavaScript.",
+          "Este projeto ajudará você a entender os conceitos fundamentais por trás desses algoritmos e como eles podem ser aplicados para ordenar dados numéricos em uma aplicação para a web."
+        ]
+      },
+      "learn-intermediate-oop-by-building-a-platformer-game": {
+        "title": "Aprenda OOP intermediário construindo um jogo de plataforma",
+        "intro": [
+          "Criar jogos permite que você entenda os princípios básicos de programação ao mesmo tempo em que cria uma experiência dinâmica e interativa de jogos.",
+          "Neste projeto de jogo de plataforma, você continuará aprendendo sobre classes, objetos, herança e encapsulamento. Você também aprenderá a criar e a organizar elementos de jogo de maneira eficiente e a obter informações sobre a resolução de problemas e a reutilização de código."
+        ]
       },
       "learn-localstorage-by-building-a-todo-app": {
         "title": "Aprenda sobre armazenamento local criando uma aplicação de lista de tarefas",
-        "intro": ["", ""]
+        "intro": [
+          "O armazenamento local é uma funcionalidade do navegador da web que permite que aplicações da web armazenem pares de chave-valor de maneira persistente dentro do navegador de um usuário, permitindo que os dados sejam salvos e recuperados nas sessões das páginas.",
+          "Nesta aplicação de lista de tarefas, você aprenderá a lidar com entradas de formulário, a gerenciar o armazenamento local, a executar operações do CRUD (criar, ler, atualizar e apagar) em tarefas, a implementar \"ouvintes\" de eventos e a ativar/desativar elementos da UI."
+        ]
       }
     }
   },
