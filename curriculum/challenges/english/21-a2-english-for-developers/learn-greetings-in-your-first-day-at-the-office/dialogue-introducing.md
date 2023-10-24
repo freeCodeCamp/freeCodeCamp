@@ -1,9 +1,9 @@
 ---
 id: 651dd3e06ffb500e3f2ce478
-title: Challenge 1
+title: "Dialogue: Introducing"
 challengeType: 21
 videoId: nLDychdBwUg
-dashedName: challenge-1
+dashedName: dialogue-introducing
 ---
 
 # --description--

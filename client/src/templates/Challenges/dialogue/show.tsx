@@ -13,25 +13,25 @@ import { createSelector } from 'reselect';
 import { Container, Col, Row } from '@freecodecamp/ui';
 
 // Local Utilities
-import Loader from '../../../../components/helpers/loader';
-import Spacer from '../../../../components/helpers/spacer';
-import LearnLayout from '../../../../components/layouts/learn';
-import { ChallengeNode, ChallengeMeta } from '../../../../redux/prop-types';
-import Hotkeys from '../../components/hotkeys';
-import VideoPlayer from '../../components/video-player';
-import CompletionModal from '../../components/completion-modal';
-import HelpModal from '../../components/help-modal';
-import PrismFormatted from '../../components/prism-formatted';
+import Loader from '../../../components/helpers/loader';
+import Spacer from '../../../components/helpers/spacer';
+import LearnLayout from '../../../components/layouts/learn';
+import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
+import Hotkeys from '../components/hotkeys';
+import VideoPlayer from '../components/video-player';
+import CompletionModal from '../components/completion-modal';
+import HelpModal from '../components/help-modal';
+import PrismFormatted from '../components/prism-formatted';
 import {
   challengeMounted,
   updateChallengeMeta,
   openModal
-} from '../../redux/actions';
-import { isChallengeCompletedSelector } from '../../redux/selectors';
+} from '../redux/actions';
+import { isChallengeCompletedSelector } from '../redux/selectors';
 
 // Styles
-import '../../odin/show.css';
-import '../../video.css';
+import '../odin/show.css';
+import '../video.css';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -53,7 +53,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   );
 
 // Types
-interface ShowEnglishDialogueProps {
+interface ShowDialogueProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
   description: string;
@@ -67,7 +67,7 @@ interface ShowEnglishDialogueProps {
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
 }
 
-interface ShowEnglishDialogueState {
+interface ShowDialogueState {
   subtitles: string;
   downloadURL: string | null;
   assignmentsCompleted: number;
@@ -76,14 +76,11 @@ interface ShowEnglishDialogueState {
 }
 
 // Component
-class ShowEnglishDialogue extends Component<
-  ShowEnglishDialogueProps,
-  ShowEnglishDialogueState
-> {
+class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
   static displayName: string;
   private container: React.RefObject<HTMLElement> = React.createRef();
 
-  constructor(props: ShowEnglishDialogueProps) {
+  constructor(props: ShowDialogueProps) {
     super(props);
     this.state = {
       subtitles: '',
@@ -117,7 +114,7 @@ class ShowEnglishDialogue extends Component<
     this.container.current?.focus();
   }
 
-  componentDidUpdate(prevProps: ShowEnglishDialogueProps): void {
+  componentDidUpdate(prevProps: ShowDialogueProps): void {
     const {
       data: {
         challengeNode: {
@@ -307,15 +304,15 @@ class ShowEnglishDialogue extends Component<
   }
 }
 
-ShowEnglishDialogue.displayName = 'ShowEnglishDialogue';
+ShowDialogue.displayName = 'ShowDialogue';
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withTranslation()(ShowEnglishDialogue));
+)(withTranslation()(ShowDialogue));
 
 export const query = graphql`
-  query EnglishDialogue($slug: String!) {
+  query Dialogue($slug: String!) {
     challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
       challenge {
         videoId

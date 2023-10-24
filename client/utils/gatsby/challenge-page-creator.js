@@ -49,9 +49,9 @@ const msTrophy = path.resolve(
   '../../src/templates/Challenges/ms-trophy/show.tsx'
 );
 
-const englishDialogue = path.resolve(
+const dialogue = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/english/dialogue/show.tsx'
+  '../../src/templates/Challenges/dialogue/show.tsx'
 );
 
 const views = {
@@ -64,7 +64,7 @@ const views = {
   odin,
   exam,
   msTrophy,
-  englishDialogue
+  dialogue
   // quiz: Quiz
 };
 

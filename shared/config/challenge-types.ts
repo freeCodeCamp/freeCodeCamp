@@ -20,7 +20,7 @@ const exam = 17;
 const msTrophy = 18;
 const multipleChoice = 19;
 const python = 20;
-const englishDialogue = 21;
+const dialogue = 21;
 
 export const challengeTypes = {
   html,
@@ -45,7 +45,7 @@ export const challengeTypes = {
   msTrophy,
   multipleChoice,
   python,
-  englishDialogue
+  dialogue
 };
 
 export const isFinalProject = (challengeType: number) => {
@@ -74,7 +74,7 @@ export const hasNoTests = (challengeType: number): boolean =>
   challengeType === multipleChoice ||
   challengeType === theOdinProject ||
   challengeType === video ||
-  challengeType === englishDialogue;
+  challengeType === dialogue;
 
 // determine the component view for each challenge
 export const viewTypes = {
@@ -98,7 +98,7 @@ export const viewTypes = {
   [msTrophy]: 'msTrophy',
   [multipleChoice]: 'odin',
   [python]: 'modern',
-  [englishDialogue]: 'englishDialogue'
+  [dialogue]: 'dialogue'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -127,5 +127,5 @@ export const submitTypes = {
   [msTrophy]: 'msTrophy',
   [multipleChoice]: 'tests',
   [python]: 'tests',
-  [englishDialogue]: 'tests'
+  [dialogue]: 'tests'
 };

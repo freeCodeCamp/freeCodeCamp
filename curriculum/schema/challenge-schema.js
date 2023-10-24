@@ -73,7 +73,7 @@ const schema = Joi.object()
     }),
     // video challenges only:
     videoId: Joi.when('challengeType', {
-      is: [challengeTypes.video, challengeTypes.englishDialogue],
+      is: [challengeTypes.video, challengeTypes.dialogue],
       then: Joi.string().required()
     }),
     videoLocaleIds: Joi.when('challengeType', {
@@ -113,7 +113,7 @@ const schema = Joi.object()
       })
     ),
     assignments: Joi.when('challengeType', {
-      is: challengeTypes.englishDialogue,
+      is: challengeTypes.dialogue,
       then: Joi.array().items(Joi.string()).required(),
       otherwise: Joi.array().items(Joi.string())
     }),
