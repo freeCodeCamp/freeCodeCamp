@@ -40,8 +40,8 @@ importers:
         specifier: 13.5.0
         version: 13.5.0(@testing-library/dom@8.20.1)
       '@types/jest':
-        specifier: 29.5.5
-        version: 29.5.5
+        specifier: 29.5.6
+        version: 29.5.6
       '@types/lodash':
         specifier: 4.14.199
         version: 4.14.199
@@ -805,8 +805,8 @@ importers:
         specifier: 1.0.7
         version: 1.0.7
       '@types/jest':
-        specifier: 29.5.5
-        version: 29.5.5
+        specifier: 29.5.6
+        version: 29.5.6
       '@types/jquery':
         specifier: ^3.5.16
         version: 3.5.20
@@ -1499,8 +1499,8 @@ importers:
         specifier: 12.1.5
         version: 12.1.5(react-dom@16.14.0)(react@16.14.0)
       '@types/jest':
-        specifier: 29.5.5
-        version: 29.5.5
+        specifier: 29.5.6
+        version: 29.5.6
       '@types/react':
         specifier: 16.14.48
         version: 16.14.48
@@ -10572,8 +10572,8 @@ packages:
     dependencies:
       '@types/istanbul-lib-report': 3.0.1
 
-  /@types/jest@29.5.5:
-    resolution: {integrity: sha512-ebylz2hnsWR9mYvmBFbXJXr+33UPc4+ZdxyDXh5w0FlPBTfCVN3wPL+kuOiQt3xvrK419v7XWeAs+AeOksafXg==}
+  /@types/jest@29.5.6:
+    resolution: {integrity: sha512-/t9NnzkOpXb4Nfvg17ieHE6EeSjDS2SGSpNYfoLbUAeL/EOueU/RSdOWFpfQTXBEM7BguYW1XQ0EbM+6RlIh6w==}
     dependencies:
       expect: 29.7.0
       pretty-format: 29.7.0
@@ -10829,7 +10829,7 @@ packages:
   /@types/resolve@1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
-      '@types/node': 20.8.0
+      '@types/node': 20.8.2
     dev: true
 
   /@types/responselike@1.0.1:
@@ -10914,7 +10914,7 @@ packages:
   /@types/testing-library__jest-dom@5.14.5:
     resolution: {integrity: sha512-SBwbxYoyPIvxHbeHxTZX2Pe/74F/tX2/D3mMvzabdeJ25bBojfW0TyB8BHrbq/9zaaKICJZjLP+8r6AeZMFCuQ==}
     dependencies:
-      '@types/jest': 29.5.5
+      '@types/jest': 29.5.6
 
   /@types/through@0.0.31:
     resolution: {integrity: sha512-LpKpmb7FGevYgXnBXYs6HWnmiFyVG07Pt1cnbgM1IhEacITTiUaBXXvOR3Y50ksaJWGSfhbEvQFivQEFGCC55w==}
