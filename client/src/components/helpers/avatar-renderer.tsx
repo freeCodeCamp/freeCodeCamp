@@ -1,4 +1,4 @@
-import { Image } from '@freecodecamp/react-bootstrap';
+import { Image } from '@freecodecamp/ui';
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
@@ -29,7 +29,6 @@ function AvatarRenderer({
     if (
       // we probably have loads of records in the database with this default avatar URL set. To prevent making a request to the image we know will 404.
       !/freecodecamp\.com\/sample-image/.test(picture) &&
-      // eslint-disable-next-line @typescript-eslint/naming-convention
       isURL(picture, { require_protocol: true })
     ) {
       validationImage.src = picture;
@@ -51,7 +50,6 @@ function AvatarRenderer({
         <Image
           alt={t('profile.avatar', { username: userName })}
           className='avatar'
-          responsive={true}
           src={picture}
         />
       )}

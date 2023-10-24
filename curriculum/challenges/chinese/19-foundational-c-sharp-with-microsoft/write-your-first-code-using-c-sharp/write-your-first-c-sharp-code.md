@@ -14,6 +14,10 @@ dashedName: write-your-first-c-sharp-code
 
 # --question--
 
+## --assignment--
+
+Complete the <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank" rel="noreferrer">Write Your First C# Code</a> module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 `Console.Write` 和 `Console.WriteLine`有什么区别？

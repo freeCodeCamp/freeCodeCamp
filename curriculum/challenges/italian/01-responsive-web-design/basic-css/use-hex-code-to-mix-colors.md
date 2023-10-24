@@ -23,7 +23,7 @@ La cifra `F` è il numero più alto in codice esadecimale e rappresenta la massi
 
 Sostituisci i nomi dei colori nel nostro elemento `style` con i codici esadecimali corretti.
 
-<table class='table table-striped'><tbody><tr><th>Colore</th><th>Codice esadecimale</th></tr><tr><td>Blu Dodger</td><td><code>#1E90FF</code></td></tr><tr><td>Verde</td><td><code>#00FF00</code></td></tr><tr><td>Arancione</td><td><code>#FFA500</code></td></tr><tr><td>Rosso</td><td><code>#FF0000</code></td></tr></tbody></table>
+<table><tbody><tr><th>Colore</th><th>Codice esadecimale</th></tr><tr><td>Blu Dodger</td><td><code>#1E90FF</code></td></tr><tr><td>Verde</td><td><code>#00FF00</code></td></tr><tr><td>Arancione</td><td><code>#FFA500</code></td></tr><tr><td>Rosso</td><td><code>#FF0000</code></td></tr></tbody></table>
 
 # --hints--
 

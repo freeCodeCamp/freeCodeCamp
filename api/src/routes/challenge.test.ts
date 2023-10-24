@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { omit } from 'lodash';
@@ -918,6 +917,76 @@ describe('challengeRoutes', () => {
         });
       });
     });
+
+    describe('/save-challenge', () => {
+      describe('validation', () => {
+        test('POST returns 403 status for unsavable challenges', async () => {
+          const response = await superRequest('/save-challenge', {
+            method: 'POST',
+            setCookies
+          }).send({
+            savedChallenges: {
+              // valid mongo id, but not a saveable one
+              id: 'aaaaaaaaaaaaaaaaaaaaaaa',
+              files: multiFileCertProjectBody.files
+            }
+          });
+
+          expect(response.body).toEqual({
+            message: 'That does not appear to be a valid challenge submission.',
+            type: 'error'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+      });
+
+      describe('handling', () => {
+        afterEach(async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: 'foo@bar.com' },
+            data: {
+              savedChallenges: []
+            }
+          });
+        });
+
+        test('POST update the user savedchallenges and return them', async () => {
+          const response = await superRequest('/save-challenge', {
+            method: 'POST',
+            setCookies
+          }).send({
+            id: multiFileCertProjectId,
+            files: updatedMultiFileCertProjectBody.files
+          });
+
+          const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+          const savedDate = user.savedChallenges[0]?.lastSavedDate;
+
+          expect(user).toMatchObject({
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: savedDate,
+                files: updatedMultiFileCertProjectBody.files
+              }
+            ]
+          });
+          expect(response.body).toEqual({
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: savedDate,
+                files: updatedMultiFileCertProjectBody.files
+              }
+            ]
+          });
+          expect(response.statusCode).toBe(200);
+        });
+      });
+    });
   });
 
   describe('Unauthenticated user', () => {
@@ -925,48 +994,26 @@ describe('challengeRoutes', () => {
 
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
-      const res = await superRequest('/', { method: 'GET' });
+      const res = await superRequest('/status/ping', { method: 'GET' });
       setCookies = res.get('Set-Cookie');
     });
 
-    describe('/coderoad-challenge-completed', () => {
-      test('POST returns 401 status code with error message', async () => {
-        const response = await superRequest('/coderoad-challenge-completed', {
-          method: 'POST',
+    const endpoints: { path: string; method: 'POST' }[] = [
+      { path: '/coderoad-challenge-completed', method: 'POST' },
+      { path: '/project-completed', method: 'POST' },
+      { path: '/backend-challenge-completed', method: 'POST' },
+      { path: '/modern-challenge-completed', method: 'POST' },
+      { path: '/save-challenge', method: 'POST' }
+    ];
+
+    endpoints.forEach(({ path, method }) => {
+      test(`${method} ${path} returns 401 status code with error message`, async () => {
+        const response = await superRequest(path, {
+          method,
           setCookies
         });
-
-        expect(response?.statusCode).toBe(401);
-      });
-    });
-
-    describe('/project-completed', () => {
-      test('POST returns 401 status code with error message', async () => {
-        const response = await superRequest('/project-completed', {
-          method: 'POST',
-          setCookies
-        });
-
         expect(response.statusCode).toBe(401);
       });
-    });
-
-    test('POST /backend-challenge-completed returns 401 status code for un-authenticated-user', async () => {
-      const response = await superRequest('/backend-challenge-completed', {
-        method: 'POST',
-        setCookies
-      });
-
-      expect(response.statusCode).toBe(401);
-    });
-
-    test('POST /modern-challenge-completed returns 401 status code with error message', async () => {
-      const response = await superRequest('/modern-challenge-completed', {
-        method: 'POST',
-        setCookies
-      });
-
-      expect(response?.statusCode).toBe(401);
     });
   });
 });

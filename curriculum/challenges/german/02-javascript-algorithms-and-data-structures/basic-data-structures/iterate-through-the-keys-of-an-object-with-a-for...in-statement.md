@@ -29,7 +29,7 @@ We defined the variable `food` in the loop head and this variable was set to eac
 
 # --instructions--
 
-Wir haben eine Funktion `countOnline` definiert, die ein Argument (ein Nutzer-Objekt) `allUsers` akzeptiert. Use a <dfn>for...in</dfn> statement inside this function to loop through the `allUsers` object and return the number of users whose `online` property is set to `true`. Ein Beispiel für ein Objekt, das an `countOnline` übergeben werden könnte, ist unten abgebildet. Jeder Nutzer wird eine `online`-Eigenschaft mit entweder einem `true` oder `false`-Wert besitzen.
+Wir haben eine Funktion `countOnline` definiert, die ein Argument (ein Nutzer-Objekt) `allUsers` akzeptiert. Verwende eine <dfn>for...in</dfn>-Anweisung innerhalb dieser Funktion, um das `allUsers`-Objekt zu durchlaufen und die Anzahl der Benutzer zurückzugeben, deren `online`-Eigenschaft auf `true` gesetzt ist. Ein Beispiel für ein Objekt, das an `countOnline` übergeben werden könnte, ist unten abgebildet. Jeder Nutzer wird eine `online`-Eigenschaft mit entweder einem `true` oder `false`-Wert besitzen.
 
 ```js
 {

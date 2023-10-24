@@ -14,6 +14,10 @@ dashedName: call-methods-from-the-dot-net-class-library-using-c-sharp
 
 # --question--
 
+## --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-call-methods/" target="_blank" rel="noreferrer">«Викличте методи з бібліотеки класів .NET, використовуючи C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Що таке об’єкт?

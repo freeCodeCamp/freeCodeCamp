@@ -1,7 +1,8 @@
-import { Panel } from '@freecodecamp/react-bootstrap';
 import Prism from 'prismjs';
 import React from 'react';
-import { ChallengeFile } from '../../redux/prop-types';
+import { Panel } from '@freecodecamp/ui';
+
+import type { ChallengeFile } from '../../redux/prop-types';
 
 type Props = {
   challengeFiles: Solution[] | null;
@@ -25,7 +26,7 @@ function SolutionViewer({ challengeFiles, solution }: Props): JSX.Element {
   return (
     <>
       {solutions.map(({ fileKey, ext, contents }) => (
-        <Panel bsStyle='primary' className='solution-viewer' key={fileKey}>
+        <Panel variant='primary' className='solution-viewer' key={fileKey}>
           <Panel.Heading>{ext.toUpperCase()}</Panel.Heading>
           <Panel.Body>
             <pre>

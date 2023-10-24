@@ -36,18 +36,20 @@ const Testimonials = (): JSX.Element => {
 
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
-              <p data-playwright-test-label='testimonials-endorser-location'>
+              <h3 data-playwright-test-label='testimonials-endorser-location'>
                 {' '}
                 <Trans>landing.testimonials.shawn.location</Trans>
-              </p>
+              </h3>
               <p data-playwright-test-label='testimonials-endorser-occupation'>
                 <Trans>landing.testimonials.shawn.occupation</Trans>
               </p>
             </div>
             <div className='testimony'>
-              <p data-playwright-test-label='testimonials-endorser-testimony'>
-                <Trans>landing.testimonials.shawn.testimony</Trans>
-              </p>
+              <blockquote>
+                <p data-playwright-test-label='testimonials-endorser-testimony'>
+                  <Trans>landing.testimonials.shawn.testimony</Trans>
+                </p>
+              </blockquote>
             </div>
           </div>
         </div>
@@ -69,18 +71,20 @@ const Testimonials = (): JSX.Element => {
 
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
-              <p data-playwright-test-label='testimonials-endorser-location'>
+              <h3 data-playwright-test-label='testimonials-endorser-location'>
                 {' '}
                 <Trans>landing.testimonials.sarah.location</Trans>
-              </p>
+              </h3>
               <p data-playwright-test-label='testimonials-endorser-occupation'>
                 <Trans>landing.testimonials.sarah.occupation</Trans>
               </p>
             </div>
             <div className='testimony'>
-              <p data-playwright-test-label='testimonials-endorser-testimony'>
-                <Trans>landing.testimonials.sarah.testimony</Trans>
-              </p>
+              <blockquote>
+                <p data-playwright-test-label='testimonials-endorser-testimony'>
+                  <Trans>landing.testimonials.sarah.testimony</Trans>
+                </p>
+              </blockquote>
             </div>
           </div>
         </div>
@@ -102,18 +106,20 @@ const Testimonials = (): JSX.Element => {
 
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
-              <p data-playwright-test-label='testimonials-endorser-location'>
+              <h3 data-playwright-test-label='testimonials-endorser-location'>
                 {' '}
                 <Trans>landing.testimonials.emma.location</Trans>
-              </p>
+              </h3>
               <p data-playwright-test-label='testimonials-endorser-occupation'>
                 <Trans>landing.testimonials.emma.occupation</Trans>
               </p>
             </div>
             <div className='testimony'>
-              <p data-playwright-test-label='testimonials-endorser-testimony'>
-                <Trans>landing.testimonials.emma.testimony</Trans>
-              </p>
+              <blockquote>
+                <p data-playwright-test-label='testimonials-endorser-testimony'>
+                  <Trans>landing.testimonials.emma.testimony</Trans>
+                </p>
+              </blockquote>
             </div>
           </div>
         </div>

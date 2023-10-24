@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the <a href="https://learn.microsoft.com/training/modules/csharp-call-methods/" target="_blank" rel="noreferrer">Call Methods from the .NET Class Library Using C#</a> module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 What is an object?

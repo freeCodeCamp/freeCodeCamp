@@ -1,6 +1,6 @@
 ---
 id: 5900f5271000cf542c51003a
-title: 'Problem 443: GCD sequence'
+title: 'Завдання 443: послідовність НСД'
 challengeType: 1
 forumTopicId: 302115
 dashedName: problem-443-gcd-sequence
@@ -8,12 +8,12 @@ dashedName: problem-443-gcd-sequence
 
 # --description--
 
-Let $g(n)$ be a sequence defined as follows:
+Нехай $g(n)$ буде послідовністю, яка визначена так:
 
 $$\begin{align}   & g(4) = 13, \\\\
-  & g(n) = g(n-1) + gcd(n, g(n - 1)) \text{ for } n > 4. \end{align}$$
+  & g(n) = g(n-1) + нсд(n, g(n - 1)) \text{ за умови } n > 4. \end{align}$$
 
-The first few values are:
+Ось декілька перших значень:
 
 $$\begin{array}{l}   n    & 4  & 5  & 6  & 7  & 8  & 9  & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & \ldots \\\\
   g(n) & 13 & 14 & 16 & 17 & 18 & 27 & 28 & 29 & 30 & 31 & 32 & 33 & 34 & 51 & 54 & 55 & 60 & \ldots \end{array}$$

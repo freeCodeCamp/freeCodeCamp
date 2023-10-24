@@ -1,5 +1,4 @@
-import { FastifyPluginCallback } from 'fastify';
-
+import type { FastifyPluginCallback } from 'fastify';
 import fp from 'fastify-plugin';
 
 declare module 'fastify' {
@@ -13,6 +12,7 @@ export type SendEmailArgs = {
   from: string;
   subject: string;
   text: string;
+  cc?: string;
 };
 
 type SendEmail = (args: SendEmailArgs) => Promise<void>;
