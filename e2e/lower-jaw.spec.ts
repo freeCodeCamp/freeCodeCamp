@@ -18,22 +18,22 @@ test('Check the initial states of submit button and "check your code" button', a
   expect(submitButtonState).toBe('true');
 });
 
-// test('Click on the "check your code" button', async ({ page }) => {
-//   const checkButton = page.getByTestId('lowerJaw-check-button');
+test('Click on the "check your code" button', async ({ page }) => {
+  const checkButton = page.getByTestId('lowerJaw-check-button');
 
-//   await checkButton.click();
+  await checkButton.click();
 
-//   const failing = page.getByTestId('lowerJaw-failing-test-feedback');
-//   const hint = page.getByTestId('lowerJaw-failing-hint');
-//   await expect(failing).toBeVisible();
-//   await expect(hint).toBeVisible();
-// });
+  const failing = page.getByTestId('lowerJaw-failing-test-feedback');
+  const hint = page.getByTestId('lowerJaw-failing-hint');
+  await expect(failing).toBeVisible();
+  await expect(hint).toBeVisible();
+});
 
-// test('Click on the "Reset" button', async ({ page }) => {
-//   const resetButton = page.getByTestId('lowerJaw-reset-button');
-//   await resetButton.click();
+test('Click on the "Reset" button', async ({ page }) => {
+  const resetButton = page.getByTestId('lowerJaw-reset-button');
+  await resetButton.click();
 
-//   const resetModal = page.getByTestId('reset-modal');
+  const resetModal = page.getByTestId('reset-modal');
 
-//   await expect(resetModal).toBeVisible();
-// });
+  await expect(resetModal).toBeVisible();
+});
