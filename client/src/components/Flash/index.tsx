@@ -16,7 +16,9 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
   const { type, message, id, variables = {} } = flashMessage;
   const { t } = useTranslation();
 
-  // The flash type returned from the API is 'error' and needs to be mapped to 'danger'.
+  // Some APIs are returning 'error' as a flash type, and it needs to be mapped to 'danger'.
+  // TODO: Standardize the value of `type`.
+  // Tracking issue: https://github.com/freeCodeCamp/freeCodeCamp/issues/50184
   const flashStyle =
     type === 'error' ? 'danger' : (type as AlertProps['variant']);
 
