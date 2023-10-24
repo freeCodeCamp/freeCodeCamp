@@ -1,6 +1,6 @@
 import fastifyCookie from '@fastify/cookie';
 import fastifyCsrfProtection from '@fastify/csrf-protection';
-import middie from '@fastify/middie';
+import express from '@fastify/express';
 import fastifySession from '@fastify/session';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
@@ -107,7 +107,7 @@ export const build = async (
     return { hello: 'world' };
   });
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
-  await fastify.register(middie);
+  await fastify.register(express);
   if (SENTRY_DSN) {
     await fastify.register(fastifySentry, { dsn: SENTRY_DSN });
   }
@@ -207,7 +207,7 @@ export const build = async (
   void fastify.register(jwtAuthz);
   void fastify.register(sessionAuth);
 
-  void fastify.use('/test', testMiddleware);
+  // void fastify.use('/test', testMiddleware);
 
   void fastify.register(prismaPlugin);
 

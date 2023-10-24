@@ -113,20 +113,25 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
   _options,
   done
 ) => {
-  void fastify.register(rateLimit, {
-    windowMs: 15 * 60 * 1000,
-    max: 10,
-    standardHeaders: true,
-    legacyHeaders: false,
-    keyGenerator: (req: FastifyRequest) => {
-      return (req.headers['x-forwarded-for'] as string) || 'localhost';
-    },
-    store: new MongoStoreRL({
-      collectionName: 'UserRateLimit',
-      uri: MONGOHQ_URL,
-      expireTimeMs: 15 * 60 * 1000
+  // Rate limit for mobile login
+  // 10 requests per 15 minute windows
+  void fastify.use(
+    rateLimit({
+      windowMs: 15 * 60 * 1000,
+      max: 10,
+      standardHeaders: true,
+      legacyHeaders: false,
+      keyGenerator: req => {
+        return (req.headers['x-forwarded-for'] as string) || 'localhost';
+      },
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+      store: new MongoStoreRL({
+        collectionName: 'UserRateLimit',
+        uri: MONGOHQ_URL,
+        expireTimeMs: 15 * 60 * 1000
+      })
     })
-  });
+  );
 
   fastify.get('/mobile-login', async req => {
     const email = await getEmailFromAuth0(req);
