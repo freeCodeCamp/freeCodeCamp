@@ -260,8 +260,8 @@ importers:
         specifier: 0.5.1
         version: 0.5.1
       '@types/express-session':
-        specifier: 1.17.8
-        version: 1.17.8
+        specifier: 1.17.9
+        version: 1.17.9
       '@types/jsonwebtoken':
         specifier: 9.0.3
         version: 9.0.3
@@ -10456,10 +10456,10 @@ packages:
       '@types/range-parser': 1.2.5
       '@types/send': 0.17.2
 
-  /@types/express-session@1.17.8:
-    resolution: {integrity: sha512-bFF7/3wOldMn+56XyFRGY9ZzCr3JWhNSP2ajMPgTlbZR6BQOCHdAbNA9W5dMBPgMywpIP4zkmhxP6Opm/NRYMQ==}
+  /@types/express-session@1.17.9:
+    resolution: {integrity: sha512-yIqficLlTPdloeEPhOVenpOUWILkdaXHUWhTOqFGx9JoSuTgeatNjb97k8VvJehbTk0kUSUAHy5r27PXMga89Q==}
     dependencies:
-      '@types/express': 4.17.18
+      '@types/express': 4.17.20
     dev: true
 
   /@types/express@4.17.18:
@@ -10469,6 +10469,7 @@ packages:
       '@types/express-serve-static-core': 4.17.37
       '@types/qs': 6.9.8
       '@types/serve-static': 1.15.3
+    dev: false
 
   /@types/express@4.17.20:
     resolution: {integrity: sha512-rOaqlkgEvOW495xErXMsmyX3WKBInbhG5eqojXYi3cGUaLoRDlXa5d52fkfWZT963AZ3v2eZ4MbKE6WpDAGVsw==}
