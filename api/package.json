@@ -37,7 +37,7 @@
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
     "@total-typescript/ts-reset": "0.5.1",
-    "@types/express-session": "1.17.8",
+    "@types/express-session": "1.17.9",
     "@types/jsonwebtoken": "9.0.3",
     "@types/nodemailer": "6.4.11",
     "@types/supertest": "2.0.13",
