@@ -21,7 +21,6 @@ import Fastify, {
 import fastifyAuth0 from 'fastify-auth0-verify';
 
 import prismaPlugin from './db/prisma';
-import { testMiddleware } from './middleware';
 import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import { NodemailerProvider } from './plugins/mail-providers/nodemailer';
@@ -206,8 +205,6 @@ export const build = async (
   });
   void fastify.register(jwtAuthz);
   void fastify.register(sessionAuth);
-
-  // void fastify.use('/test', testMiddleware);
 
   void fastify.register(prismaPlugin);
 
