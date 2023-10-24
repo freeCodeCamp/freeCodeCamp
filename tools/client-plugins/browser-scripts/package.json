@@ -31,7 +31,7 @@
     "@freecodecamp/curriculum-helpers": "1.1.0",
     "@types/chai": "4.3.9",
     "@types/copy-webpack-plugin": "^8.0.1",
-    "@types/enzyme": "3.10.14",
+    "@types/enzyme": "3.10.15",
     "@types/enzyme-adapter-react-16": "1.0.7",
     "@types/jquery": "3.5.20",
     "@types/lodash-es": "4.17.9",
