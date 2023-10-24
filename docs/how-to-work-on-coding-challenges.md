@@ -463,7 +463,7 @@ pnpm run test:curriculum
 2. To test single challenge, you can use it challenge id with following command
 
 ```
-FCC_ID=646cf6cbca98e258da65c979 pnpm run test:curriculum
+FCC_CHALLENGE_ID=646cf6cbca98e258da65c979 pnpm run test:curriculum
 ```
 
 3. You can also test a block or a superblock of challenges with these commands

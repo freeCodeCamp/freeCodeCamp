@@ -110,12 +110,12 @@ async function setup() {
   if (
     [
       process.env.FCC_BLOCK,
-      process.env.FCC_ID,
+      process.env.FCC_CHALLENGE_ID,
       process.env.FCC_SUPERBLOCK
     ].filter(Boolean).length > 1
   ) {
     throw new Error(
-      `Please use at most single input from: block, id, superblock.`
+      `Please use at most single input from: block, challenge id, superblock.`
     );
   }
 
@@ -187,13 +187,15 @@ async function setup() {
     }
   }
 
-  if (process.env.FCC_ID) {
-    console.log(`\nId being tested: ${process.env.FCC_ID}`);
+  if (process.env.FCC_CHALLENGE_ID) {
+    console.log(`\nChallenge Id being tested: ${process.env.FCC_CHALLENGE_ID}`);
     const challengeIndex = challenges.findIndex(
-      challenge => challenge.id === process.env.FCC_ID
+      challenge => challenge.id === process.env.FCC_CHALLENGE_ID
     );
     if (challengeIndex === -1) {
-      throw new Error(`No challenge found with id "${process.env.FCC_ID}"`);
+      throw new Error(
+        `No challenge found with id "${process.env.FCC_CHALLENGE_ID}"`
+      );
     }
     const { solutions = [] } = challenges[challengeIndex];
     if (isEmpty(solutions)) {
@@ -265,7 +267,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
 
-  if (!process.env.FCC_BLOCK && !process.env.FCC_ID) {
+  if (!process.env.FCC_BLOCK && !process.env.FCC_CHALLENGE_ID) {
     describe('Assert meta order', function () {
       /** This array can be used to skip a superblock - we'll use this
        * when we are working on the new project-based curriculum for
@@ -318,7 +320,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
       // challenge to test (current challenge) might not have solution.
       // Instead seed from next challenge is tested against tests from
       // current challenge. Next challenge is skipped from testing.
-      if (process.env.FCC_ID && id > 0) return;
+      if (process.env.FCC_CHALLENGE_ID && id > 0) return;
 
       const dashedBlockName = challenge.block;
       // TODO: once certifications are not included in the list of challenges,
