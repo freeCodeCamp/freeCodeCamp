@@ -58,12 +58,18 @@ jobs:
           echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
 
+      - name: Install node_modules
+        run: pnpm install
+
+      - name: Check formatting
+        run: |
+          pnpm prettier --check . || [ $? -eq 1 ] && printf "\nTip: Run 'pnpm run format' in your terminal to fix this.\n\n"
+
       # The two prefixed installs are for the client update which are not,
       # currently, built as workspaces.
       - name: Lint Source Files
         run: |
           echo pnpm version $(pnpm -v)
-          pnpm install
           pnpm run create:shared
           npm i --prefix=curriculum-server
           npm i --prefix=web
