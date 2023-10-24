@@ -134,8 +134,6 @@ dart --version
 # Заповніть її необхідними ключами та секретами API:
 ```
 
-<!-- tabs:start -->
-
 #### **macOS/Linux**
 
 ```console
@@ -147,8 +145,6 @@ cp sample.env .env
 ```console
 copy sample.env .env
 ```
-
-<!-- tabs:end -->
 
 Для локального запуску застосунку _необов’язково_ змінювати ключі у файлі `.env`. Ви можете залишити значення за замовчуванням, скопійовані з `sample.env`.
 
@@ -378,91 +374,82 @@ flutter run
     cd freeCodeCamp
     ```
 
-3. Зробіть копію файлу `.env`:
+3. Make a copy of the `.env` file:
 
-<!-- tabs:start -->
+    #### **macOS/Linux**
 
-#### **macOS/Linux**
+    ```console
+    cp sample.env .env
+    ```
 
-```console
-cp sample.env .env
-```
+    #### **Windows**
 
-#### **Windows**
+    ```console
+    copy sample.env .env
+    ```
 
-```console
-copy sample.env .env
-```
-
-<!-- tabs:end -->
-
-4. Встановіть залежності для репозиторію freeCodeCamp:
+4. Install the dependencies for the freeCodeCamp repo:
 
     ```console
     pnpm install && pnpm run create:shared
     ```
 
-5. Створіть файл JSON з даними завдань:
+5. Generate the challenge data JSON file:
 
     ```console
     pnpm run build:curriculum
     ```
 
-6. Скопіюйте створений файл JSON до мобільного застосунку:
+6. Copy the generated JSON file to the mobile app:
 
-<!-- tabs:start -->
+    #### **macOS/Linux**
 
-#### **macOS/Linux**
+    ```console
+    cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
+    ```
 
-```console
-cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
-```
+    #### **Windows**
+    ```console
+    copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+    ```
 
-#### **Windows**
-
-```console
-copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
-```
-
-<!-- tabs:end -->
-
-7. Змініть каталог на мобільний застосунок:
+7. Change directory to the mobile app:
 
     ```console
     cd ../mobile/mobile-app
     ```
 
-8. Встановіть залежності для мобільного застосунку:
+8. Install the dependencies for the mobile app:
 
     ```console
     flutter pub get
     ```
 
-9. Оновіть файл тестів, щоб використовувати файл JSON з даними завдань:
+9. Update the test file to use the challenge data JSON file:
 
     ```console
-    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart  
+    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
     ```
 
-10. Створіть файли завдань:
+10. Generate the challenge files:
 
     ```console
     flutter test test/widget_test.dart
     ```
 
-11. Запустіть локальний сервер для обслуговування файлів завдань за допомогою пакету `serve`:
+11. Start a local server to serve the challenge files with the help of `serve` package:
 
     ```console
     npx serve
     ```
 
-12. В іншому терміналі поверніться до репозиторію freeCodeCamp:
+12. In a different terminal go back to the freeCodeCamp repo:
 
     ```console
     cd ../../freeCodeCamp
     ```
 
-13. Запустіть тести cypress:
+13. Run the cypress tests:
 
     ```console
     pnpm cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome

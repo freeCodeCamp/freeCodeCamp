@@ -52,27 +52,13 @@ git clean -ifdX
 
 Si no puedes iniciar sesión, y en cambio ves un banner con un mensaje de error de que será reportado a freeCodeCamp, por favor, verifique otra vez de que tu puerto local `3000` no esté en uso por un programa diferente.
 
-<!-- tabs:start -->
-
-#### **macOS/Linux/WSL en Windows - Desde la terminal:**
-
+#### **From Terminal:**
 ```console
 netstat -a | grep "3000"
 
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-#### **En Windows - Desde PowerShell con permisos de administrador:**
-
-```powershell
-netstat -ab | Select-String "3000"
-
-TCP    0.0.0.0:3000           DESKTOP      LISTENING
-```
-
-<!-- tabs:end -->
-
----
 
 ## Issues Signing Out while Navigating
 
