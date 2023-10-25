@@ -134,8 +134,6 @@ As chaves de API padrão e variáveis de ambiente são armazenadas no arquivo `s
 # Preencha-o com as chaves e segredos de API necessários:
 ```
 
-<!-- tabs:start -->
-
 #### **macOS/Linux**
 
 ```console
@@ -147,8 +145,6 @@ cp sample.env .env
 ```console
 copy sample.env .env
 ```
-
-<!-- tabs:end -->
 
 As chaves no arquivo `.env` _ não _ precisam ser alteradas para executar o aplicativo localmente. Você pode deixar os valores padrão copiados de `sample.env` como estão.
 
@@ -378,23 +374,19 @@ Siga estes passos:
     cd freeCodeCamp
     ```
 
-3. Fazer uma cópia do arquivo `.env`:
+3. Faça uma cópia do arquivo `.env`:
 
-<!-- tabs:start -->
+    #### **macOS/Linux**
 
-#### **macOS/Linux**
+    ```console
+    cp sample.env .env
+    ```
 
-```console
-cp sample.env .env
-```
+    #### **Windows**
 
-#### **Windows**
-
-```console
-copy sample.env .env
-```
-
-<!-- tabs:end -->
+    ```console
+    copy sample.env .env
+    ```
 
 4. Instale as dependências para o repositório do freeCodeCamp:
 
@@ -410,21 +402,16 @@ copy sample.env .env
 
 6. Copie o arquivo JSON gerado para a aplicação para dispositivos móveis:
 
-<!-- tabs:start -->
+    #### **macOS/Linux**
 
-#### **macOS/Linux**
+    ```console
+    cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
+    ```
 
-```console
-cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
-```
-
-#### **Windows**
-
-```console
-copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
-```
-
-<!-- tabs:end -->
+    #### **Windows**
+    ```console
+    copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+    ```
 
 7. Mude o diretório para o diretório da aplicação para dispositivos móveis:
 
@@ -441,7 +428,7 @@ copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
 9. Atualize o arquivo de testes para que use o arquivo JSON de dados do desafio:
 
     ```console
-    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart  
+    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
     ```
 
 10. Gere os arquivos do desafio:

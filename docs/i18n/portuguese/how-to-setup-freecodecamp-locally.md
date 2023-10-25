@@ -205,24 +205,12 @@ As chaves de API padrão e variáveis de ambiente são armazenadas no arquivo `s
 
 ```console
 # Crie uma cópia da "sample.env" e a nomeie como ".env".
-# Preencher com as chaves e segredos de API necessários:
+# Preencha-o com as chaves e segredos de API necessários
 ```
-
-<!-- tabs:start -->
-
-#### **macOS/Linux**
 
 ```console
 cp sample.env .env
 ```
-
-#### **Windows**
-
-```console
-copy sample.env .env
-```
-
-<!-- tabs:end -->
 
 As chaves no arquivo `.env` _não_ precisam ser alteradas para executar o aplicativo localmente. Você pode deixar os valores padrão copiados de `sample.env` como estão.
 
@@ -246,25 +234,9 @@ Antes de executar a aplicação localmente, você precisará iniciar o serviço 
 
 Inicie o servidor do MongoDB em um terminal separado:
 
-  <!-- tabs:start -->
-
-#### **macOS/Linux**
-
 ```console
 mongod
 ```
-
-#### **Windows**
-
-- No Windows, você deve especificar o caminho completo para o binário `mongod`
-
-```console
-"C:\Arquivos de programa\MongoDB\Server\3.6\bin\mongod"
-```
-
-Certifique-se de substituir `3.6` pela versão que você instalou
-
-  <!-- tabs:end -->
 
 > [!TIP] Você pode evitar ter que executar o MongoDB toda vez instalando-o como um serviço em segundo plano. Você pode [aprender mais sobre isso na documentação para seu OS](https://docs.mongodb.com/manual/administration/install-community/)
 
@@ -284,19 +256,19 @@ pnpm run seed:certified-user
 
 #### Passo 4: Inicie o aplicativo de client do freeCodeCamp e o servidor de API
 
-Agora você pode iniciar o servidor de API e as aplicações de client.
+Agora você pode iniciar o servidor de API e os aplicativos do client.
 
 ```console
 pnpm run develop
 ```
 
-Este único comando vai disparar todos os serviços, incluindo o servidor API e as aplicações de client disponíveis para você trabalhar.
+Este único comando vai disparar todos os serviços, incluindo o servidor API e os aplicativos do cliente disponíveis para você trabalhar.
 
-Uma vez pronto, abra um navegador e acesse <http://localhost:8000>. Se a aplicação carregar, faça o login. Parabéns – está tudo pronto! Agora você tem uma cópia da plataforma do freeCodeCamp de aprendizagem inteira funcionando em sua máquina local.
+Uma vez pronto, abra um navegador e acesse <http://localhost:8000>. Se o aplicativo carregar, faça o login. Parabéns – está tudo pronto! Agora você tem uma cópia da plataforma do freeCodeCamp de aprendizagem inteira rodando em sua máquina local.
 
 O servidor de API serve os endpoints em `http://localhost:3000`. O aplicativo Gatsby atende a aplicação de client em `http://localhost:8000`.
 
-Estando conectando, se você visitar <http://localhost:3000/explorer> poderá ver as APIs disponíveis.
+Quando estiver conectado, se você visitar <http://localhost:3000/explorer> poderá ver as APIs disponíveis.
 
 > [!WARNING] Limpar seus cookies ou executar `pnpm run seed:certified-user` desconectará você e será preciso fazer o login novamente.
 
