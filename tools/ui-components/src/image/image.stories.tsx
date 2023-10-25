@@ -23,8 +23,8 @@ const Template: Story<ImageProps> = args => {
 
 export const Default = Template.bind({});
 Default.args = {
-  alt: "Quincy Larson's signature",
-  src: 'https://cdn.freecodecamp.org/platform/english/images/quincy-larson-signature.svg',
+  alt: "camper's avatar",
+  src: 'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png',
   responsive: false
 };
 
