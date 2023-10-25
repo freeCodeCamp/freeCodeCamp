@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-test.describe('Challenge Side Panel Component Tests', () => {
+test.describe('Challenge Side Panel Component', () => {
   test('should render correctly', async ({ page }) => {
     await expect(page.getByTestId('challenge-title')).toBeVisible();
     await expect(page.getByTestId('challenge-description')).toBeVisible();
