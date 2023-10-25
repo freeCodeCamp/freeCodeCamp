@@ -29,8 +29,13 @@ function handleError(err, client) {
   }
 }
 
+const surveyIds = [
+  new ObjectId('651c5a2a5f9b639b584028bc'),
+  new ObjectId('651c5a4c5f9b639b584028bd')
+];
+
 const defaultUserSurvey = {
-  _id: new ObjectId('651c5a2a5f9b639b584028bc'),
+  _id: surveyIds[0],
   title: 'Foundational C# with Microsoft Survey',
   responses: [
     {
@@ -40,19 +45,19 @@ const defaultUserSurvey = {
     {
       question:
         'Prior to this course, how experienced were you with .NET and C#?',
-      response: 'Advanced'
+      response: 'Novice (no prior experience)'
     }
   ],
   userId: new ObjectId('5bd30e0f1caf6ac3ddddddb5')
 };
 
 const certifiedUserSurvey = {
-  _id: new ObjectId('651c5a4c5f9b639b584028bd'),
+  _id: surveyIds[1],
   title: 'Foundational C# with Microsoft Survey',
   responses: [
     {
       question: 'Please describe your role:',
-      response: 'Experienced developer (more than 2 years experience)'
+      response: 'Experienced developer (more than 5 years experience)'
     },
     {
       question:
@@ -71,9 +76,14 @@ const db = client.db('freecodecamp');
 const survey = db.collection('Survey');
 
 const run = async () => {
+  await survey.deleteMany({
+    _id: {
+      $in: surveyIds
+    }
+  });
   await survey.insertOne(defaultUserSurvey);
   await survey.insertOne(certifiedUserSurvey);
-  log('survey info seeded');
+  log('Survey info seeded');
 };
 
 run()
