@@ -49,8 +49,8 @@ function AvatarRenderer({
       ) : (
         <Image
           alt={t('profile.avatar', { username: userName })}
-          className='avatar'
           src={picture}
+          responsive
         />
       )}
     </div>
