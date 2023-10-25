@@ -456,8 +456,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           where: { id }
         });
 
-        console.log(examFromDb);
-
         if (!examFromDb) {
           void reply.code(500);
           return {
@@ -478,17 +476,16 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const { prerequisites, numberOfQuestionsInExam, title } = examFromDb;
 
         // Validate User has completed prerequisite challenges
-        for (let i = 0; i < prerequisites.length; i++) {
-          const prerequisiteCompleted = completedChallenges.some(
-            challenge => challenge.id === prerequisites[i]?.id
-          );
+        const prerequisiteIds = prerequisites.map(p => p.id);
+        const completedPrerequisites = completedChallenges.filter(c =>
+          prerequisiteIds.includes(c.id)
+        );
 
-          if (!prerequisiteCompleted) {
-            void reply.code(403);
-            return {
-              error: `You have not completed the required challenges to start the '${title}'.`
-            };
-          }
+        if (completedPrerequisites.length !== prerequisiteIds.length) {
+          void reply.code(403);
+          return {
+            error: `You have not completed the required challenges to start the '${title}'.`
+          };
         }
 
         const randomizedExam = generateRandomExam(examFromDb);
@@ -496,9 +493,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           randomizedExam,
           numberOfQuestionsInExam
         );
-
-        console.log('validGeneratedExamSchema');
-        console.log(validGeneratedExamSchema);
 
         if ('error' in validGeneratedExamSchema) {
           void reply.code(500);
@@ -509,7 +503,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           generatedExam: randomizedExam
         };
       } catch (error) {
-        console.log('catching error');
         fastify.log.error(error);
         void reply.code(500);
         return {
