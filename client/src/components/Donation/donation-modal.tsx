@@ -18,6 +18,7 @@ import {
 import { isLocationSuperBlock } from '../../utils/path-parsers';
 import { playTone } from '../../utils/tone';
 import { Spacer } from '../helpers';
+import { PaymentContext } from '../../../../shared/config/donation-settings'; //
 import MultiTierDonationForm from './multi-tier-donation-form';
 
 type RecentlyClaimedBlock = null | { block: string; superBlock: string };
@@ -171,6 +172,8 @@ function DonateModal({
         <MultiTierDonationForm
           setShowHeaderAndFooter={setShowHeaderAndFooter}
           handleProcessing={handleProcessing}
+          paymentContext={PaymentContext.Modal}
+          isMinimalForm={true}
         />
         {showHeaderAndFooter && (
           <CloseButtonRow

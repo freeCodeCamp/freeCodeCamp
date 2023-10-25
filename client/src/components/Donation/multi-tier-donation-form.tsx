@@ -13,15 +13,19 @@ import { Spacer } from '../helpers';
 import {
   PaymentContext,
   subscriptionAmounts,
-  defaultDonation,
+  defaultTierAmount,
   type DonationAmount
 } from '../../../../shared/config/donation-settings'; // You can further extract these into separate components and import them
+import { Themes } from '../settings/theme';
 import { formattedAmountLabel, convertToTimeContributed } from './utils';
 import DonateForm from './donate-form';
 
 type MultiTierDonationFormProps = {
   setShowHeaderAndFooter?: (show: boolean) => void;
-  handleProcessing: () => void;
+  handleProcessing?: () => void;
+  paymentContext: PaymentContext;
+  isMinimalForm?: boolean;
+  defaultTheme?: Themes;
 };
 function SelectionTabs({
   donationAmount,
@@ -34,7 +38,7 @@ function SelectionTabs({
 }) {
   const { t } = useTranslation();
   return (
-    <Row className={'donate-btn-group'}>
+    <Row className={'donate-btn-group donation-tier-selection'}>
       <Col xs={12}>
         <b>
           {t('donate.confirm-monthly', {
@@ -94,12 +98,12 @@ function SelectionTabs({
 
 function DonationFormRow({
   handleProcessing,
-
+  isMinimalForm,
   setShowDonateForm,
   donationAmount
 }: {
-  handleProcessing: () => void;
-
+  handleProcessing?: () => void;
+  isMinimalForm?: boolean;
   setShowDonateForm: React.Dispatch<React.SetStateAction<boolean>>;
   donationAmount: DonationAmount;
 }) {
@@ -108,7 +112,7 @@ function DonationFormRow({
       <Col xs={12}>
         <DonateForm
           handleProcessing={handleProcessing}
-          isMinimalForm={true}
+          isMinimalForm={isMinimalForm}
           paymentContext={PaymentContext.Modal}
           editAmount={() => setShowDonateForm(false)}
           selectedDonationAmount={donationAmount}
@@ -121,11 +125,10 @@ function DonationFormRow({
 
 const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
   handleProcessing,
-  setShowHeaderAndFooter
+  setShowHeaderAndFooter,
+  isMinimalForm
 }) => {
-  const [donationAmount, setDonationAmount] = useState(
-    defaultDonation.donationAmount
-  );
+  const [donationAmount, setDonationAmount] = useState(defaultTierAmount);
 
   const [showDonateForm, setShowDonateForm] = useState(false);
 
@@ -147,6 +150,7 @@ const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
           donationAmount={donationAmount}
           handleProcessing={handleProcessing}
           setShowDonateForm={setShowDonateForm}
+          isMinimalForm={isMinimalForm}
         />
       </div>
     </>

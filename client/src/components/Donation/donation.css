@@ -328,15 +328,17 @@ li.disabled > a {
   }
 }
 
-.donation-modal [role='tablist'] button {
+.donation-tier-selection [role='tablist'] button {
   background-color: transparent;
 }
-.donation-modal [role='tablist'] button:hover:not([data-state='active']) {
+.donation-tier-selection
+  [role='tablist']
+  button:hover:not([data-state='active']) {
   background-color: var(--quaternary-background);
   color: var(--quaternary-color);
 }
 
-.donation-modal [role='tablist'] button[data-state='active'] {
+.donation-tier-selection [role='tablist'] button[data-state='active'] {
   background-color: var(--quaternary-color);
 }
 
