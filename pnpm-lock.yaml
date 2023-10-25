@@ -1298,8 +1298,8 @@ importers:
         specifier: 1.0.7
         version: 1.0.7
       '@types/jquery':
-        specifier: 3.5.20
-        version: 3.5.20
+        specifier: 3.5.25
+        version: 3.5.25
       '@types/lodash-es':
         specifier: 4.17.9
         version: 4.17.9
@@ -10580,6 +10580,12 @@ packages:
 
   /@types/jquery@3.5.20:
     resolution: {integrity: sha512-UI+EGhgYD4LdSZ8gaiziFqXYIIB38VQSDsnAs8jL/div7FGrzrShx4HKCykVzk3tPfiIlusdNP9Wi3G60LCF2Q==}
+    dependencies:
+      '@types/sizzle': 2.3.4
+    dev: true
+
+  /@types/jquery@3.5.25:
+    resolution: {integrity: sha512-gykx2c+OZf5nx2tv/5fDQqmvGgTiXshELy5jf9IgXPtVfSBl57IUYByN4osbwMXwJijWGOEYQABzGaFZE79A0Q==}
     dependencies:
       '@types/sizzle': 2.3.4
     dev: true
