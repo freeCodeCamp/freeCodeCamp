@@ -63,41 +63,34 @@ const Illustration = ({
 };
 
 function ModalHeader({
-  closeLabel,
   recentlyClaimedBlock
 }: {
-  closeLabel: boolean;
   recentlyClaimedBlock: RecentlyClaimedBlock;
 }) {
   const { t } = useTranslation();
   return (
-    <div className='text-center block-modal-text'>
-      <Row>
-        {!closeLabel && (
-          <Col sm={10} smOffset={1} xs={12}>
-            {recentlyClaimedBlock !== null && (
-              <b>
-                {t('donate.nicely-done', {
-                  block: t(
-                    `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
-                  )
-                })}
-              </b>
-            )}
-            <h2>{t('donate.help-us-develop')}</h2>
-          </Col>
+    <Row className='text-center block-modal-text'>
+      <Col sm={10} smOffset={1} xs={12}>
+        {recentlyClaimedBlock !== null && (
+          <b>
+            {t('donate.nicely-done', {
+              block: t(
+                `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
+              )
+            })}
+          </b>
         )}
-      </Row>
-      <Spacer size='small' />
-    </div>
+        <h2>{t('donate.help-us-develop')}</h2>
+      </Col>
+    </Row>
   );
 }
 
 function CloseButtonRow({
-  closeLabel,
+  donationAttempted,
   closeDonationModal
 }: {
-  closeLabel: boolean;
+  donationAttempted: boolean;
   closeDonationModal: () => void;
 }) {
   const { t } = useTranslation();
@@ -111,7 +104,7 @@ function CloseButtonRow({
           onClick={closeDonationModal}
           tabIndex='0'
         >
-          {closeLabel ? t('buttons.close') : t('buttons.ask-later')}
+          {donationAttempted ? t('buttons.close') : t('buttons.ask-later')}
         </Button>
       </Col>
     </Row>
@@ -125,11 +118,11 @@ function DonateModal({
   location,
   recentlyClaimedBlock
 }: DonateModalProps): JSX.Element {
-  const [closeLabel, setCloseLabel] = useState(false);
+  const [donationAttempted, setDonationAttempted] = useState(false);
   const [showHeaderAndFooter, setShowHeaderAndFooter] = useState(true);
 
   const handleProcessing = () => {
-    setCloseLabel(true);
+    setDonationAttempted(true);
   };
 
   useEffect(() => {
@@ -163,22 +156,20 @@ function DonateModal({
         <div className='donation-icon-container'>
           <Illustration recentlyClaimedBlock={recentlyClaimedBlock} />
         </div>
-        {showHeaderAndFooter && (
-          <ModalHeader
-            closeLabel={closeLabel}
-            recentlyClaimedBlock={recentlyClaimedBlock}
-          />
+        {showHeaderAndFooter && !donationAttempted && (
+          <ModalHeader recentlyClaimedBlock={recentlyClaimedBlock} />
         )}
+        <Spacer size='small' />
         <MultiTierDonationForm
           setShowHeaderAndFooter={setShowHeaderAndFooter}
           handleProcessing={handleProcessing}
           paymentContext={PaymentContext.Modal}
           isMinimalForm={true}
         />
-        {showHeaderAndFooter && (
+        {(showHeaderAndFooter || donationAttempted) && (
           <CloseButtonRow
             closeDonationModal={closeDonationModal}
-            closeLabel={closeLabel}
+            donationAttempted={donationAttempted}
           />
         )}
       </Modal.Body>
