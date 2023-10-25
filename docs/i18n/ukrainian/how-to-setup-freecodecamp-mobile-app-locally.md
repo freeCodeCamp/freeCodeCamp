@@ -374,7 +374,7 @@ flutter run
     cd freeCodeCamp
     ```
 
-3. Make a copy of the `.env` file:
+3. Зробіть копію файлу `.env`:
 
     #### **macOS/Linux**
 
@@ -388,19 +388,19 @@ flutter run
     copy sample.env .env
     ```
 
-4. Install the dependencies for the freeCodeCamp repo:
+4. Встановіть залежності для репозиторію freeCodeCamp:
 
     ```console
     pnpm install && pnpm run create:shared
     ```
 
-5. Generate the challenge data JSON file:
+5. Створіть файл JSON з даними завдань:
 
     ```console
     pnpm run build:curriculum
     ```
 
-6. Copy the generated JSON file to the mobile app:
+6. Скопіюйте створений файл JSON до мобільного застосунку:
 
     #### **macOS/Linux**
 
@@ -413,43 +413,43 @@ flutter run
     copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
     ```
 
-7. Change directory to the mobile app:
+7. Змініть каталог на мобільний застосунок:
 
     ```console
     cd ../mobile/mobile-app
     ```
 
-8. Install the dependencies for the mobile app:
+8. Встановіть залежності для мобільного застосунку:
 
     ```console
     flutter pub get
     ```
 
-9. Update the test file to use the challenge data JSON file:
+9. Оновіть файл тестів, щоб використовувати файл JSON з даними завдань:
 
     ```console
     sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
     ```
 
-10. Generate the challenge files:
+10. Створіть файли завдань:
 
     ```console
     flutter test test/widget_test.dart
     ```
 
-11. Start a local server to serve the challenge files with the help of `serve` package:
+11. Запустіть локальний сервер для обслуговування файлів завдань за допомогою пакету `serve`:
 
     ```console
     npx serve
     ```
 
-12. In a different terminal go back to the freeCodeCamp repo:
+12. В іншому терміналі поверніться до репозиторію freeCodeCamp:
 
     ```console
     cd ../../freeCodeCamp
     ```
 
-13. Run the cypress tests:
+13. Запустіть тести cypress:
 
     ```console
     pnpm cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome
