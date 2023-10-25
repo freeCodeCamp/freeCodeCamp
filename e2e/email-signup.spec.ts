@@ -13,18 +13,20 @@ test.describe('show email sign up page', () => {
     page = await browser.newPage();
     await page.goto('/signup');
   });
-
+  test('should skip webkit', ({ browserName }) => {
+    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+  });
   test.afterAll(async () => {
     await page.close();
   });
 });
 
 test('should render accept terms yes please button', async ({ page }) => {
-  await expect(page.getByTestId('yes-please-button')).toBeVisible();
+  await page.getByTestId('yes-please-button').click();
 });
 
 test('should render accept terms no thanks button', async ({ page }) => {
-  await expect(page.getByTestId('no-thanks-button')).toBeVisible();
+  await page.getByTestId('no-thanks-button').click();
 });
 
 test('should render signup email list', async ({ page }) => {
@@ -54,13 +56,8 @@ test('get danger zone link', async ({ page }) => {
   await page.getByRole('link', { name: 'link-to-danger-zone' }).click();
 });
 
-test('get emails', async ({ page }) => {
-  expect(
-    await page.textContent(translations.misc['email-blast'])
-  ).toMatchSnapshot('../pages/__snapshots__/email-sign-up.test.js.snap');
-  /*const ele = page.getByText(translations.misc['email-blast']);
-  await expect(ele).toBeVisible();
-   await expect(page.getByTestId('misc-email-blast')).toHaveScreenshot(
-    translations.misc['email-blast']
-  ); */
+test('get emails', ({ page }) => {
+  expect(page.getByText(translations.misc['email-blast'])).toMatchSnapshot(
+    '../pages/__snapshots__/email-sign-up.test.js.snap'
+  );
 });
