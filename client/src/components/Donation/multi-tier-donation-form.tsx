@@ -86,6 +86,7 @@ function SelectionTabs({
           bsStyle='primary'
           className='text-center confirm-donation-btn donate-btn-group'
           type='submit'
+          data-cy='donation-tier-selection-button'
           onClick={() => setShowDonateForm(true)}
         >
           {t('buttons.donate')}
