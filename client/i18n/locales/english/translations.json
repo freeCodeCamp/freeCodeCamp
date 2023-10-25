@@ -973,9 +973,9 @@
       "q1": {
         "q": "Please describe your role:",
         "o1": "Student developer",
-        "o2": "Startup developer",
-        "o3": "Beginner developer (less than 2 years experience)",
-        "o4": "Experienced developer (more than 2 years experience)"
+        "o2": "Beginner developer (less than 2 years experience)",
+        "o3": "Intermediate developer (between 2 and 5 years experience)",
+        "o4": "Experienced developer (more than 5 years experience)"
       },
       "q2": {
         "q": "Prior to this course, how experienced were you with .NET and C#?",
