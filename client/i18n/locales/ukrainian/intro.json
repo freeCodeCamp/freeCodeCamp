@@ -210,8 +210,8 @@
       "learn-intermediate-css-by-building-a-cat-painting": {
         "title": "Вивчіть перехідний CSS, створивши малюнок кота",
         "intro": [
-          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts",
-          "In this course, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+          "Позиціювання CSS важливо опанувати для того, щоб створювати візуально привабливі та адаптивні вебмакети",
+          "У цьому курсі ви створите малюнок кота. Ви дізнаєтесь, як працювати з абсолютним позиціюванням, властивістю z-index та властивістю transform."
         ]
       }
     }
@@ -301,8 +301,11 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "Алгоритми JavaScript та структури даних (бета-версія)",
-    "intro": ["заповнювач", "заповнювач"],
-    "note": "",
+    "intro": [
+      "Якщо HTML та CSS відповідають за вміст і стилізацію сторінки, то JavaScript робить її інтерактивною. У сертифікації «Алгоритми JavaScript та структури даних» ви вивчите основи JavaScript, включно зі змінними, масивами, об’єктами, циклами, функціями, об’єктною моделлю документа та багато іншого.",
+      "In addition to the fundamentals, you will learn about Object Oriented Programming (OOP), Functional Programming (FP), algorithmic thinking, how to work with local storage and how to fetch data from an API."
+    ],
+    "note": "Примітка: деякі розширення браузера (як блокувальники реклами та скриптів) можуть втручатися в тести. Якщо ви зіткнулися з подібними проблемами, ми рекомендуємо вимкнути розширення, які змінюють або блокують вміст сторінок під час виконання курсу.",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "Проєкт «Створіть шифр Цезаря»",
@@ -310,59 +313,108 @@
       },
       "build-a-cash-register-project": {
         "title": "Проєкт «Створіть касовий апарат»",
-        "intro": ["", ""]
+        "intro": [
+          "Цей проєкт потрібно виконати, щоб отримати сертифікацію.",
+          "For this project, you will build a cash register web app."
+        ]
       },
       "build-a-palindrome-checker-project": {
         "title": "Проєкт «Створіть перевірку паліндрома»",
-        "intro": ["", ""]
+        "intro": [
+          "Цей проєкт потрібно виконати, щоб отримати сертифікацію.",
+          "For this project, you will build an application that checks if a word is a palindrome."
+        ]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Проєкт «Створіть конвертер римських чисел»",
-        "intro": ["", ""]
+        "intro": [
+          "Цей проєкт потрібно виконати, щоб отримати сертифікацію.",
+          "For this project, you will build an application that converts integers to Roman numerals."
+        ]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Проєкт «Створіть валідатор мобільного номера»",
-        "intro": ["", ""]
+        "intro": [
+          "Цей проєкт потрібно виконати, щоб отримати сертифікацію.",
+          "For this project, you will build an application that checks if a number is a valid United States phone number."
+        ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Вивчіть основи JavaScript, створивши рольову гру",
-        "intro": ["", ""]
+        "intro": [
+          "JavaScript is a scripting language you can use to make web pages interactive. It is one of the core technologies of the web, along with HTML and CSS, and is supported by all modern browsers.",
+          "In this practice project, you'll learn fundamental programming concepts in JavaScript by building a role playing game. You'll learn to work with arrays, strings, objects, functions, loops, if/else statements, and more."
+        ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Вивчіть валідацію форм, створивши лічильник калорій",
-        "intro": ["", ""]
+        "intro": [
+          "When building out web applications, there will be times where you will need to work with user input and form validation. In this calorie counter project, you will learn how to handle user input, perform calculations based on that input, and dynamically update the interface to display the results.",
+          "In this practice project, you'll learn basic regular expressions, template literals, the <code>addEventListener()</code> method and more."
+        ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Вивчіть функційне програмування, створивши електронну таблицю",
-        "intro": ["", ""]
+        "intro": [
+          "Functional Programming is a popular approach to software development. In Functional Programming, code is organized into smaller, basic functions that can be combined to build complex programs.",
+          "In this spreadsheet application project, you'll learn about parsing and evaluating mathematical expressions, implementing spreadsheet functions, handling cell references, and creating interactive web interfaces with dynamic content updates based on user input.  This project will cover concepts like the <code>map()</code> method, <code>find()</code> method, <code>parseInt()</code>, the <code>includes()</code> method and more."
+        ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
         "title": "Вивчіть сучасні методи JavaScript, побудувавши карточки футбольних команд",
-        "intro": ["", ""]
+        "intro": [
+          "A common aspect of building web applications is to work with data sets and output that information on the screen. In this football team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
+          "This project will cover concepts like the switch statement, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method and more."
+        ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "Вивчіть передові методи масиву, створивши статистичний калькулятор",
-        "intro": ["", ""]
+        "intro": [
+          "Getting comfortable with working with array manipulation methods such as <code>map()</code>, <code>reduce()</code>, and <code>filter()</code> is a fundamental part of JavaScript.",
+          "In this statistics calculator project, you'll gain experience in handling user input, DOM manipulation, and method chaining by performing statistical calculations like mean, median, mode, variance, and standard deviation."
+        ]
       },
       "learn-data-structures-by-building-a-shopping-cart": {
         "title": "Вивчіть структури даних, створивши візок для покупок",
-        "intro": ["", ""]
+        "intro": [
+          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, objects and classes organize code to describe things and what they can do.",
+          "In this shopping cart project, you'll learn learn how to define and utilize classes, create class instances, and implement methods for data manipulation. This project will cover concepts including the ternary operator, spread operator, the <code>this</code> keyword and more."
+        ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
         "title": "Вивчіть fetch та promises, побудувавши сторінку автора fCC",
-        "intro": ["", ""]
+        "intro": [
+          "A common aspect of web development is learning how to fetch data from an external API and work with asynchronous JavaScript.  This freeCodeCamp authors page project will show you how to work with the fetch method and dynamically update the DOM to display the fetched data,",
+          "This project will also teach you how to paginate your data so you can load results in batches. "
+        ]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
         "title": "Вивчіть регулярні вирази, побудувавши спам-фільтр",
-        "intro": ["", ""]
+        "intro": [
+          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are very powerful, but can be hard to read because they use special characters to make more complex, flexible matches.",
+          "In this spam filter project, you'll learn how to use special characters, capture groups, positive and negative lookaheads, and other techniques to match any text you want."
+        ]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
         "title": "Вивчіть базове алгоритмічне мислення, побудувавши сортувальник чисел",
-        "intro": ["", ""]
+        "intro": [
+          "In computer science there are fundamental sorting algorithms that all developers should learn.  In this number sorter project, you will learn how to implement and visualize different sorting algorithms like bubble sort, selection sort, and insertion sort using JavaScript.",
+          "This project will help you understand the fundamental concepts behind these algorithms and how they can be applied to sort numerical data in a web applications."
+        ]
+      },
+      "learn-intermediate-oop-by-building-a-platformer-game": {
+        "title": "Learn Intermediate OOP by Building a Platformer Game",
+        "intro": [
+          "Building games allows you to grasp fundamental programming principles while creating a dynamic and interactive gaming experience.",
+          "In this platformer game project, you will continue to learn about classes, objects, inheritance, and encapsulation. You will also learn how to design and organize game elements efficiently and gain insights into problem-solving and code reusability."
+        ]
       },
       "learn-localstorage-by-building-a-todo-app": {
         "title": "Вивчіть localStorage, створивши застосунок зі списком справ",
-        "intro": ["", ""]
+        "intro": [
+          "Local storage is a web browser feature that allows web applications to store key-value pairs persistently within a user's browser, enabling data to be saved and retrieved across page sessions.",
+          "In this TODO application, you will learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implementing event listeners, and toggling UI elements."
+        ]
       }
     }
   },

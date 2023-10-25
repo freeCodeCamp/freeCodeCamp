@@ -205,24 +205,12 @@ The default API keys and environment variables are stored in the file `sample.en
 
 ```console
 # Erstelle eine Kopie der "sample.env" und nenne sie ".env".
-# Befülle sie mit den notwendigen API-Schlüsseln und Secrets:
+# Populate it with the necessary API keys and secrets
 ```
-
-<!-- tabs:start -->
-
-#### **macOS/Linux**
 
 ```console
 cp sample.env .env
 ```
-
-#### **Windows**
-
-```console
-copy sample.env .env
-```
-
-<!-- tabs:end -->
 
 The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
 
@@ -246,25 +234,9 @@ Before you can run the application locally, you will need to start the MongoDB s
 
 Start the MongoDB server in a separate terminal:
 
-  <!-- tabs:start -->
-
-#### **macOS/Linux**
-
 ```console
 mongod
 ```
-
-#### **Windows**
-
-- On Windows, you must specify the full path to the `mongod` binary
-
-```console
-"C:\Program Files\MongoDB\Server\3.6\bin\mongod"
-```
-
-Make sure to replace `3.6` with the version you have installed
-
-  <!-- tabs:end -->
 
 > [!TIP] You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
 

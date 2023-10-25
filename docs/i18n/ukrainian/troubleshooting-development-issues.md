@@ -52,27 +52,13 @@ git clean -ifdX
 
 Якщо ви не можете увійти, а замість цього бачите банер з повідомленням про помилку, яка буде відправлена до freeCodeCamp, будь ласка, перевірте, чи не використовується ваш локальний порт `3000` іншою програмою.
 
-<!-- tabs:start -->
-
-#### **macOS/Linux/WSL на Windows — у терміналі:**
-
+#### **From Terminal:**
 ```console
 netstat -a | grep "3000"
 
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-#### **На Windows — у PowerShell із привілеями:**
-
-```powershell
-netstat -ab | Select-String "3000"
-
-TCP    0.0.0.0:3000           DESKTOP      LISTENING
-```
-
-<!-- tabs:end -->
-
----
 
 ## Проблеми з виходом під час перегляду
 

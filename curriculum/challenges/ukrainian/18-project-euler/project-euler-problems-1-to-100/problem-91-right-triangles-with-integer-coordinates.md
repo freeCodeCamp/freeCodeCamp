@@ -8,11 +8,11 @@ dashedName: problem-91-right-triangles-with-integer-coordinates
 
 # --description--
 
-The points ${P}(x_1, y_1)$ and ${Q}(x_2, y_2)$ are plotted at integer coordinates and are joined to the origin, ${O}(0, 0)$, to form ${\Delta}OPQ$.
+Точки ${P}(x_1, y_1)$ та ${Q}(x_2, y_2)$ нанесені на координатах та з’єднані з координатами ${O}(0, 0)$, утворюючи ${\Delta}OPQ$.
 
 <img class="img-responsive center-block" alt="графік, що зображує точки P (x_1, y_1) і Q(x_2, y_2) у цілочисельних координатах, які приєднуються до координат O (0, 0)" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px;" />
 
-There are exactly fourteen triangles containing a right angle that can be formed when each coordinate lies between 0 and 2 inclusive; that is, $0 ≤ x_1, y_1, x_2, y_2 ≤ 2$.
+Існує чотирнадцять трикутників з прямим кутом, який можна утворити, коли кожна координата знаходиться між 0 та 2 включно; тобто, $0 ≤ x_1, y_1, x_2, y_2 ≤ 2$.
 
 <img class="img-responsive center-block" alt="діаграма, що показує 14 трикутників, які містять прямий кут, що може бути утворений, якщо кожна координата знаходиться між 0 та 2" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px;" />
 

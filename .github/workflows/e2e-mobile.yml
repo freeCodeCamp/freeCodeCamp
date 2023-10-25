@@ -26,14 +26,14 @@ jobs:
           version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
+        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3
         with:
           node-version: ${{ matrix.node-version }}
           # cypress-io/github-action caches the store, so we should not cache it
           # here.
 
       - name: Setup Flutter 3.13.x
-        uses: subosito/flutter-action@48cafc24713cca54bbe03cdc3a423187d413aafa # v2
+        uses: subosito/flutter-action@cc97e1648fff6ca5cc647fa67f47e70f7895510b # v2
         with:
           flutter-version: '3.13.x'
           channel: 'stable'
