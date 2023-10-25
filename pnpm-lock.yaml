@@ -802,8 +802,8 @@ importers:
         specifier: ^3.10.12
         version: 3.10.14
       '@types/enzyme-adapter-react-16':
-        specifier: 1.0.7
-        version: 1.0.7
+        specifier: 1.0.8
+        version: 1.0.8
       '@types/jest':
         specifier: 29.5.6
         version: 29.5.6
@@ -1295,8 +1295,8 @@ importers:
         specifier: 3.10.15
         version: 3.10.15
       '@types/enzyme-adapter-react-16':
-        specifier: 1.0.7
-        version: 1.0.7
+        specifier: 1.0.8
+        version: 1.0.8
       '@types/jquery':
         specifier: 3.5.25
         version: 3.5.25
@@ -10394,10 +10394,10 @@ packages:
     dependencies:
       '@types/ms': 0.7.32
 
-  /@types/enzyme-adapter-react-16@1.0.7:
-    resolution: {integrity: sha512-BQLgUf3vbuzi37iCjhXNG/iBmCzuLxlIxhkafO8AJisXxRbGOfbuJi1Stwlwr5oj/6/Ea7mViKG7Wh54n0ULXw==}
+  /@types/enzyme-adapter-react-16@1.0.8:
+    resolution: {integrity: sha512-nzYumRvxSh2Vbk7mkseYbInmpMbVZRc1EJQVeQmXhNCNVmLg2VOKAJujc7YJ/gDdPW+X03wYrDGa1Bj0Q/NTaw==}
     dependencies:
-      '@types/enzyme': 3.10.14
+      '@types/enzyme': 3.10.15
     dev: true
 
   /@types/enzyme@3.10.14:
