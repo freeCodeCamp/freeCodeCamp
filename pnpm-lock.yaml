@@ -826,8 +826,8 @@ importers:
         specifier: ^1.26.0
         version: 1.26.0
       '@types/reach__router':
-        specifier: 1.3.12
-        version: 1.3.12
+        specifier: 1.3.13
+        version: 1.3.13
       '@types/react':
         specifier: 16.14.48
         version: 16.14.48
@@ -10747,8 +10747,8 @@ packages:
   /@types/range-parser@1.2.5:
     resolution: {integrity: sha512-xrO9OoVPqFuYyR/loIHjnbvvyRZREYKLjxV4+dY6v3FQR3stQ9ZxIGkaclF7YhI9hfjpuTbu14hZEy94qKLtOA==}
 
-  /@types/reach__router@1.3.12:
-    resolution: {integrity: sha512-DyDionxE76G/48FclCcQ5CMigX9FTMfbcMMNvsZ4ti1ZR33wEOgiIVDgVsHEDv1bEi6FfTBQ9aRF4LSELUe+CQ==}
+  /@types/reach__router@1.3.13:
+    resolution: {integrity: sha512-1vbCXT/emPNCd7Pywr9mPp/FsdTwUfxHeMx0k3Rpz4ghPr/k5W1rejbg724BbkC8LkehS6y6mf3wOfrApA4NrA==}
     dependencies:
       '@types/react': 16.14.48
 
@@ -18774,7 +18774,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.20.13
       '@gatsbyjs/reach-router': 1.3.9(react-dom@16.14.0)(react@16.14.0)
-      '@types/reach__router': 1.3.12
+      '@types/reach__router': 1.3.13
       prop-types: 15.8.1
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)

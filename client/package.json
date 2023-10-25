@@ -157,7 +157,7 @@
     "@types/lodash-es": "^4.17.6",
     "@types/node-fetch": "2",
     "@types/prismjs": "^1.26.0",
-    "@types/reach__router": "1.3.12",
+    "@types/reach__router": "1.3.13",
     "@types/react": "16.14.48",
     "@types/react-dom": "16.9.20",
     "@types/react-gtm-module": "2.0.1",
