@@ -153,6 +153,7 @@ function NavLinks({
   return (
     <ul
       aria-labelledby='toggle-button-nav'
+      data-playwright-test-label='header-menu'
       className={`nav-list${displayMenu ? ' display-menu' : ''}`}
     >
       <DonateButton

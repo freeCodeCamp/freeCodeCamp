@@ -205,7 +205,7 @@ pnpm -v
 
 ```console
 # Створіть копію «sample.env» та назвіть її «.env».
-# Populate it with the necessary API keys and secrets
+# Заповніть її необхідними ключами та секретами API
 ```
 
 ```console
@@ -216,7 +216,7 @@ cp sample.env .env
 
 > [!TIP] Майте на увазі, якщо ви використовуватимете Auth0 або Algolia, вам потрібно отримати власні ключі API для цих служб та відредагувати введені дані у файлі `.env`.
 
-#### Step 2: Install Dependencies
+#### Крок 2: встановіть залежності
 
 У цьому кроці буде встановлено залежності, необхідні для запуску застосунку:
 
@@ -224,7 +224,7 @@ cp sample.env .env
 pnpm install && pnpm run create:shared
 ```
 
-#### Step 3: Start MongoDB and Seed the Database
+#### Крок 3: запустіть MongoDB та додайте базу даних
 
 Перш ніж локально запустити застосунок, потрібно запустити службу MongoDB.
 
@@ -240,13 +240,13 @@ mongod
 
 > [!TIP] Ви можете не запускати MongoDB кожного разу, встановивши його як фонову службу. Для детальнішої інформації див. [документацію MongoDB для вашої ОС](https://docs.mongodb.com/manual/administration/install-community/)
 
-Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
+Тепер додамо базу даних. На цьому кроці ми запускаємо нижченаведену команду, яка заповнює сервер MongoDB деякими початковими наборами даних, потрібних службам. До них належать деякі схеми та інше.
 
 ```console
 pnpm run seed
 ```
 
-By default, you will be signed in as a new user without any completed certifications. Run the following command if you need to develop with completed certifications:
+Ви увійдете як новий користувач без будь-яких завершених сертифікацій за замовчуванням. Запустіть цю команду, якщо потрібні наявні виконані сертифікації:
 
 ```console
 pnpm run seed:certified-user
@@ -254,29 +254,29 @@ pnpm run seed:certified-user
 
 > [!WARNING] Якщо запустити `pnpm run seed:certified-user`, ви вийдете з облікового запису. Вам доведеться очистити cookies свого браузера та увійти знову.
 
-#### Step 4: Start the freeCodeCamp Client Application and API Server
+#### Крок 4: запустіть клієнтську програму freeCodeCamp та сервер API
 
-You can now start up the API server and the client applications.
+Тепер ви можете запустити сервер API та клієнтську програму.
 
 ```console
 pnpm run develop
 ```
 
-This single command will fire up all the services, including the API server and the client applications available for you to work on.
+Ця команда запустить всі служби, включно з сервером API та клієнтською програмою, з якими ви можете працювати.
 
-Once ready, open a web browser and visit <http://localhost:8000>. If the app loads, sign in. Congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
+Після цього відкрийте веббраузер та відвідайте <http://localhost:8000>. Якщо застосунок завантажується, увійдіть в систему. Вітання — все готово! Тепер ви маєте копію повної навчальної платформи freeCodeCamp на своїй локальній машині.
 
-The API server serves endpoints at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`.
+Сервер API обслуговує кінцеві точки на `http://localhost:3000`. Gatsby обслуговує клієнтську програму на `http://localhost:8000`.
 
-While you are logged in, if you visit <http://localhost:3000/explorer> you should see the available APIs.
+Якщо ви увійшли в систему, відвідайте <http://localhost:3000/explorer> і побачите доступні API.
 
 > [!WARNING] Якщо очистити cookies чи запустити `pnpm run seed:certified-user`, ви вийдете з системи та вам доведеться увійти знову.
 
-If you have issues while installing it, check out the [troubleshooting section](troubleshooting-development-issues.md).
+Якщо у вас виникли проблеми, див. розділ з [розв’язання проблем розробки](troubleshooting-development-issues.md).
 
 ## Коротко про команди
 
-A quick reference to the commands that you will need when working locally.
+Короткий довідник команд, які знадобляться при локальній роботі.
 
 | команда                        | опис                                                                                                |
 | ------------------------------ | --------------------------------------------------------------------------------------------------- |
