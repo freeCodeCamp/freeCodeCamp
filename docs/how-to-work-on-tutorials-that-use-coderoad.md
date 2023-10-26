@@ -123,7 +123,7 @@ If you have write access to the freeCodeCamp repo, have verified the `CHANGELOG`
 
 ### How to Revert to a Previous Version
 
-- Create a new branch of the latest `main` with `git checkout -b revert/to-version-X.X.X`
+- Create a new branch off of the latest `main` with `git checkout -b revert/to-version-X.X.X`
 - Revert all commits on this branch up to and including the commit of the version after the one you want to revert to. For example, you may have commits that look like this:
 
 ```
