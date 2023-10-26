@@ -124,7 +124,7 @@ pnpm run delete-step X # where X is the step number to be deleted.
 
 ### update-step-titles
 
-A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) matches the meta's challengeOrder.
+A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) matches the meta's `challengeOrder`.
 
 #### How to Run the Script
 
