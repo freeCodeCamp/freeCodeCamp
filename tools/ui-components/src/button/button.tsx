@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { ButtonProps, ButtonSize, ButtonVariant } from './types';
 
 const defaultClassNames = [
-  // Positioning and spacing
+  // Positioning
   'relative',
   'inline-block',
   'mt-[0.5px]',
@@ -197,23 +197,35 @@ export const HeadlessButton = React.forwardRef<
 export const Button = React.forwardRef<
   React.ElementRef<'button' | 'a'>,
   ButtonProps
->(({ className, size, disabled, variant = 'primary', block, ...rest }, ref) => {
-  const classes = useMemo(
-    () => computeClassNames({ size, variant, disabled, block }),
-    [size, variant, disabled, block]
-  );
+>(
+  (
+    {
+      className,
+      size = 'medium',
+      disabled,
+      variant = 'primary',
+      block,
+      ...rest
+    },
+    ref
+  ) => {
+    const classes = useMemo(
+      () => computeClassNames({ size, variant, disabled, block }),
+      [size, variant, disabled, block]
+    );
 
-  const buttonStyle = [className, classes].join(' ');
+    const buttonStyle = [className, classes].join(' ');
 
-  return (
-    <HeadlessButton
-      className={buttonStyle}
-      ref={ref}
-      disabled={disabled}
-      {...rest}
-    />
-  );
-});
+    return (
+      <HeadlessButton
+        className={buttonStyle}
+        ref={ref}
+        disabled={disabled}
+        {...rest}
+      />
+    );
+  }
+);
 
 Button.displayName = 'Button';
 HeadlessButton.displayName = 'HeadlessButton';
