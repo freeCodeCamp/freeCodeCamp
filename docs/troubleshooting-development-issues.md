@@ -49,7 +49,7 @@ git clean -ifdX
 
 ## Issues with API, login, Challenge Submissions, etc.
 
-If you can't sign in, and instead you see a banner with an error message that will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
+If you can't sign in, and instead you see a banner with an error message saying that the error will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
 #### **From Terminal:**
 ```console
