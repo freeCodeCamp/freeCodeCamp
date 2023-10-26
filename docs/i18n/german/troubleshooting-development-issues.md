@@ -52,27 +52,13 @@ git clean -ifdX
 
 If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
-<!-- tabs:start -->
-
-#### **macOS/Linux/WSL on Windows - From Terminal:**
-
+#### **From Terminal:**
 ```console
 netstat -a | grep "3000"
 
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-#### **On Windows - From Elevated PowerShell:**
-
-```powershell
-netstat -ab | Select-String "3000"
-
-TCP    0.0.0.0:3000           DESKTOP      LISTENING
-```
-
-<!-- tabs:end -->
-
----
 
 ## Issues Signing Out while Navigating
 

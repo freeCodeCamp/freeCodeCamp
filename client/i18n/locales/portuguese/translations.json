@@ -741,6 +741,7 @@
         "err-3": "Não foi possível obter seu perfil da Microsoft a partir do seu ID da Microsoft.",
         "err-4": "Parece que o usuário da Microsoft \"{{msUsername}}\" não tem esse troféu.",
         "err-5": "Algo deu errado ao tentar verificar seu troféu. Confira isso e tente novamente.",
+        "err-6": "Parece que sua conta da Microsoft é privada. Defina-a como pública e tente novamente.",
         "verified": "Seu troféu da plataforma de aprendizado da Microsoft foi verificado."
       }
     },
