@@ -862,8 +862,8 @@ importers:
         specifier: 3.0.9
         version: 3.0.9
       '@types/react-test-renderer':
-        specifier: 16.9.8
-        version: 16.9.8
+        specifier: 16.9.10
+        version: 16.9.10
       '@types/react-transition-group':
         specifier: 4.4.7
         version: 4.4.7
@@ -10824,8 +10824,8 @@ packages:
       '@types/react': 16.14.48
     dev: true
 
-  /@types/react-test-renderer@16.9.8:
-    resolution: {integrity: sha512-5zmgK3rWLQLX8VwcK94KqCnXTmirDFgsJOElNbnvNJ7v6QIg3SBqZgH/b5Z5VVQVCTiXc4ZzETF4H0yq3VwHCQ==}
+  /@types/react-test-renderer@16.9.10:
+    resolution: {integrity: sha512-RsxiwnYix2RW495o418qDmFMKuTN1/SP/UjKTb4KK4xaCWp2Ak2arNvxZgOuuVW/RxqTRVPLVArLgZV7NkcvSw==}
     dependencies:
       '@types/react': 16.14.48
     dev: true
