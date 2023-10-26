@@ -350,7 +350,7 @@ http://suicide.org/international-suicide-hotlines.html
 
 ## A Note on Free Speech
 
-Sometimes people will defend something offensive or incendiary that they say as "free speech."
+Sometimes people will defend something offensive or incendiary that they said as "free speech."
 
 This XKCD comic summarizes perfectly most communities' thoughts on free speech.
 
