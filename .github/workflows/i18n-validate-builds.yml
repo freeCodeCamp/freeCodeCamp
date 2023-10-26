@@ -7,7 +7,7 @@ on:
 jobs:
   ci:
     name: Validate i18n Builds
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         node-version: [20.x]

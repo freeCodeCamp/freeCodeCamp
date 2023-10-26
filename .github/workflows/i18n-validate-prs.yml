@@ -9,7 +9,7 @@ jobs:
     name: Validate i18n Builds
     # run only on PRs that camperbot opens with title that matches the curriculum sync
     if: ${{ github.event.pull_request.user.login == 'camperbot' && contains(github.event.pull_request.title, 'chore(i18n,learn)') }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         node-version: [20.x]
