@@ -161,7 +161,7 @@
     "@types/react": "16.14.48",
     "@types/react-dom": "16.9.20",
     "@types/react-gtm-module": "2.0.1",
-    "@types/react-helmet": "6.1.7",
+    "@types/react-helmet": "6.1.8",
     "@types/react-instantsearch-core": "6.26.5",
     "@types/react-instantsearch-dom": "6.12.4",
     "@types/react-redux": "7.1.27",
