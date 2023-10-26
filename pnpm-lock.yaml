@@ -853,8 +853,8 @@ importers:
         specifier: 7.1.28
         version: 7.1.28
       '@types/react-responsive':
-        specifier: 8.0.6
-        version: 8.0.6
+        specifier: 8.0.7
+        version: 8.0.7
       '@types/react-scrollable-anchor':
         specifier: 0.6.2
         version: 0.6.2
@@ -10806,8 +10806,8 @@ packages:
       hoist-non-react-statics: 3.3.2
       redux: 4.2.1
 
-  /@types/react-responsive@8.0.6:
-    resolution: {integrity: sha512-A4fNUPGf7ckF+iIiw3cDlEmJId7SKtdoXhfOs05hA5TiX+olg4hd4aq0mYW+De3U+hi7fZ1TBJlPKTooiXHIRQ==}
+  /@types/react-responsive@8.0.7:
+    resolution: {integrity: sha512-JKMqMQU8Z0DGYOOdr3YCDyCepH1e/R13Aq+hqeDA6ueot7YGcWvuVKnNXtPGHTQ9MG6yq+IIGeJ1XWIyF4XYBw==}
     dependencies:
       '@types/react': 16.14.48
     dev: true
