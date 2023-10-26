@@ -835,8 +835,8 @@ importers:
         specifier: 16.9.20
         version: 16.9.20
       '@types/react-gtm-module':
-        specifier: 2.0.1
-        version: 2.0.1
+        specifier: 2.0.2
+        version: 2.0.2
       '@types/react-helmet':
         specifier: 6.1.8
         version: 6.1.8
@@ -10764,8 +10764,8 @@ packages:
       '@types/react': 16.14.48
     dev: true
 
-  /@types/react-gtm-module@2.0.1:
-    resolution: {integrity: sha512-T/DN9gAbCYk5wJ1nxf4pSwmXz4d1iVjM++OoG+mwMfz9STMAotGjSb65gJHOS5bPvl6vLSsJnuC+y/43OQrltg==}
+  /@types/react-gtm-module@2.0.2:
+    resolution: {integrity: sha512-1BwWKEtpbUB3lojX6SlQOH32CKEc/F4kKxUToSYuraeN9I0tgqtcoLC1TGDHB3X6dSmyUyOz5ZHADtucpUeyzw==}
     dev: true
 
   /@types/react-helmet@6.1.8:
