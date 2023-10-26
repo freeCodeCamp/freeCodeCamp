@@ -57,7 +57,13 @@ test('get danger zone link', async ({ page }) => {
 });
 
 test('get emails', ({ page }) => {
-  expect(page.getByText(translations.misc['email-blast'])).toMatchSnapshot();
+  expect(
+    page
+      .locator('paragraph')
+      .filter({ hasText: translations.misc['email-blast'] })
+      .first()
+  ).toMatchSnapshot();
+  //expect(page.getByText(translations.misc['email-blast'])).toMatchSnapshot();
   //expect(page.getByTestId('misc-email-blast')).toContainText(translations.misc['email-blast'])
   /*await page
     .locator('paragraph')
