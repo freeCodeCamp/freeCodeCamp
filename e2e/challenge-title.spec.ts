@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 test.beforeEach(async ({ page }) => {
@@ -11,30 +11,6 @@ test.afterEach(async ({ page }) => {
   await page.close();
 });
 
-const completeChallenge = async (page: Page) => {
-  await page
-    .getByText(
-      'If there is an error or if no host is found, .connect() raises an exception while .connect_ex() returns an error code.'
-    )
-    .click({ force: true });
-
-  await page
-    .getByText(translations['buttons']['check-answer'], { exact: true })
-    .click({ force: true });
-
-  await page
-    .getByText(translations['buttons']['go-to-next'])
-    .click({ force: true });
-
-  await page.waitForLoadState('domcontentloaded');
-
-  await page.goto(
-    '/learn/information-security/python-for-penetration-testing/developing-a-port-scanner'
-  );
-
-  await page.waitForLoadState();
-};
-
 test.describe('Challenge Title Component (signed out)', () => {
   test('should render correctly', async ({ page }) => {
     await expect(page.getByLabel('Passed')).not.toBeVisible();
@@ -45,7 +21,29 @@ test.describe('Challenge Title Component (signed out)', () => {
   test('should not display GreenPass after challenge completion', async ({
     page
   }) => {
-    await completeChallenge(page);
+    await page
+      .getByText(
+        'If there is an error or if no host is found, .connect() raises an exception while .connect_ex() returns an error code.'
+      )
+      .click();
+
+    await page
+      .getByRole('button', { name: translations.buttons['check-answer'] })
+      .click();
+
+    await page
+      .getByRole('button', { name: translations.buttons['go-to-next'] })
+      .click();
+
+    await page.waitForLoadState('domcontentloaded');
+
+    // After clicking 'go-to-next' button, page redirects to courses list.
+    // Returning back to the challenge, to verify that GreenPass is rendered on the challenge itself.
+    await page.goto(
+      '/learn/information-security/python-for-penetration-testing/developing-a-port-scanner'
+    );
+
+    await page.waitForLoadState();
 
     await expect(page.getByLabel('Passed')).not.toBeVisible();
   });
@@ -53,8 +51,7 @@ test.describe('Challenge Title Component (signed out)', () => {
   test("should appropriately render 'Please Help Us Translate' link", async ({
     page
   }) => {
-    // This test can be merged with the 'should render correctly' test,
-    // but is isolated for now due to debugging. (Automatically skips this test)
+    // Test has been isolated for debugging purposes.
 
     const visibleEnglishTitle = await page
       .getByText('Developing a Port Scanner')
@@ -80,7 +77,29 @@ test.describe('Challenge Title Component (signed in)', () => {
   }) => {
     await expect(page.getByText('Developing a Port Scanner')).toBeVisible();
 
-    await completeChallenge(page);
+    await page
+      .getByText(
+        'If there is an error or if no host is found, .connect() raises an exception while .connect_ex() returns an error code.'
+      )
+      .click();
+
+    await page
+      .getByRole('button', { name: translations.buttons['check-answer'] })
+      .click();
+
+    await page
+      .getByRole('button', { name: translations.buttons['go-to-next'] })
+      .click();
+
+    await page.waitForLoadState('domcontentloaded');
+
+    // After clicking 'go-to-next' button, page redirects to courses list.
+    // Returning back to the challenge, to verify that GreenPass is rendered on the challenge itself.
+    await page.goto(
+      '/learn/information-security/python-for-penetration-testing/developing-a-port-scanner'
+    );
+
+    await page.waitForLoadState();
 
     await expect(page.getByLabel('Passed')).toBeVisible();
   });
