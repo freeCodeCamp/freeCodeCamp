@@ -459,7 +459,13 @@ Bevor du [einen Pull-Request](how-to-open-a-pull-request.md) für deine Änderun
 pnpm run test:curriculum
 ```
 
-2. Du kannst auch einen Block oder einen Superblock von Aufgaben mit diesen Befehlen testen
+2. To test single challenge, you can use it challenge id with following command
+
+```
+FCC_CHALLENGE_ID=646cf6cbca98e258da65c979 pnpm run test:curriculum
+```
+
+3. You can also test a block or a superblock of challenges with these commands
 
 ```
 FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
@@ -469,15 +475,15 @@ FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
-Du kannst eine Aufgabe auch einzeln testen, indem du die folgenden Schritte ausführst:
+You are also able to test challenges by title by performing the following steps:
 
-1. Wechsle in das Verzeichnis "Curriculum":
+1. Switch to the `curriculum` directory:
 
    ```
    cd curriculum
    ```
 
-2. Führe das Folgende für jede Aufgabendatei aus, für die du Änderungen vorgenommen hast (ersetze dabei `Aufgabentitel hier eintragen` durch den vollständigen Titel der Aufgabe):
+2. Run the following for each challenge file for which you have changed (replacing `challenge-title-goes-here` with the full title of the challenge):
 
    ```
    pnpm run test -- -g challenge-title-goes-here

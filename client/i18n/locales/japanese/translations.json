@@ -741,6 +741,7 @@
         "err-3": "We could not get your Microsoft profile from your Microsoft ID.",
         "err-4": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
         "err-5": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-6": "It looks like your Microsoft account might be private. Set it to public and try again.",
         "verified": "Your trophy from Microsoft's learning platform was verified."
       }
     },
