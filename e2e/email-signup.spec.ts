@@ -56,13 +56,13 @@ test('get danger zone link', async ({ page }) => {
   await page.getByRole('link', { name: 'link-to-danger-zone' }).click();
 });
 
-test('get emails', ({ page }) => {
-  expect(
+test('get emails', async ({ page }) => {
+  await expect(
     page
       .locator('paragraph')
       .filter({ hasText: translations.misc['email-blast'] })
       .first()
-  ).toMatchSnapshot();
+  ).toHaveScreenshot();
   //expect(page.getByText(translations.misc['email-blast'])).toMatchSnapshot();
   //expect(page.getByTestId('misc-email-blast')).toContainText(translations.misc['email-blast'])
   /*await page
