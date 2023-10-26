@@ -46,7 +46,7 @@ Once you have the prerequisites installed, you need to prepare your development 
 
 [Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of the repository (a.k.a _repo_) on GitHub.
 
-This is essential, as it allows you to work on your own copy of freeCodeCamp mobile app on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
+This is essential, as it allows you to work on your own copy of the freeCodeCamp mobile app on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
 
 > [!TIP]
 > The main repository at `https://github.com/freeCodeCamp/mobile` is often referred to as the `upstream` repository.
@@ -368,14 +368,14 @@ Follow these steps:
 > [!NOTE]
 > You only need to follow this section if you're modifying the challenge test runner in the mobile app. Otherwise, you can go to the next section on [how to open a pull request](#proposing-a-pull-request-pr).
 
-1. Clone a copy of the [freeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) locally outside of your local copy of freeCodeCamp mobile repo. Your folder structure should look like this:
+1. Clone a copy of the [freeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) locally outside of your local copy of the freeCodeCamp mobile repo. Your folder structure should look like this:
 
     ```console
     ├── freeCodeCamp
     ├── mobile
     ```
 
-2. Change directory to the freeCodeCamp repo:
+2. Change the directory to the freeCodeCamp repo:
 
     ```console
     cd freeCodeCamp
