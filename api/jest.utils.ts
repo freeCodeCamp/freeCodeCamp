@@ -2,6 +2,7 @@ import request from 'supertest';
 
 import { build } from './src/app';
 import { createUserInput } from './src/utils/create-user';
+import { examJson } from './__mocks__/exam';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
@@ -91,4 +92,20 @@ export async function devLogin(): Promise<string[]> {
   const res = await superRequest('/auth/dev-callback', { method: 'GET' });
   expect(res.status).toBe(200);
   return res.get('Set-Cookie');
+}
+
+export async function seedExam(): Promise<void> {
+  const query = { where: { id: examJson.id } };
+  const testExamExists =
+    await fastifyTestInstance.prisma.exam.findUnique(query);
+
+  if (testExamExists) {
+    await fastifyTestInstance.prisma.exam.deleteMany(query);
+  }
+
+  await fastifyTestInstance.prisma.exam.create({
+    data: {
+      ...examJson
+    }
+  });
 }
