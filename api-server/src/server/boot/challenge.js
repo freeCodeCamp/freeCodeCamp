@@ -747,6 +747,13 @@ function createMsTrophyChallengeCompleted(app) {
         });
       }
 
+      if (msGameStatusJson.achievements?.length === 0) {
+        return res.status(403).json({
+          type: 'error',
+          message: 'flash.ms.trophy.err-6'
+        });
+      }
+
       const hasEarnedTrophy = msGameStatusJson.achievements?.some(
         a => a.awardUid === msTrophyId
       );
