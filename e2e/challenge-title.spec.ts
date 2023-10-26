@@ -1,28 +1,19 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
-let page: Page;
-
-test.beforeAll(async ({ browser }) => {
-  page = await browser.newPage();
+test.beforeEach(async ({ page }) => {
   await page.goto(
-    '/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/trophy-write-your-first-code-using-c-sharp'
+    '/learn/information-security/python-for-penetration-testing/developing-a-port-scanner'
   );
 });
 
-test.afterAll(async () => {
+test.afterEach(async ({ page }) => {
   await page.close();
 });
 
-test.describe('Challenge Title Component tests', () => {
-  test('Entire Component is rendered correctly', async () => {
-    await expect(page.getByTestId('challenge-title-wrap')).toBeVisible();
-    await expect(page.getByTestId('challenge-title')).toBeVisible();
-  });
+test.describe('Challenge Title Component', () => {
+  test('should render correctly', async ({ page }) => {
+    await expect(page.getByText('Developing a Port Scanner')).toBeVisible();
 
-  test('Title Displays correctly', async () => {
-    const title = page.getByText('Trophy - Write Your First Code Using C#', {
-      exact: true
-    });
-    await expect(title).toBeVisible();
+    await expect(page.getByLabel('Passed')).not.toBeVisible();
   });
 });

@@ -17,10 +17,7 @@ function ChallengeTitle({
   translationPending
 }: ChallengeTitleProps): JSX.Element {
   return (
-    <div
-      className='challenge-title-wrap'
-      data-playwright-test-label='challenge-title-wrap'
-    >
+    <div className='challenge-title-wrap'>
       {translationPending && (
         <>
           <Link
