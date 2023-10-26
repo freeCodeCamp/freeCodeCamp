@@ -487,7 +487,7 @@ If you are on a different OS and/or are still running into issues, see [getting 
 
 ### Issues with the UI, build errors, etc.
 
-If you face issues with the UI, or builds errors a cleanup can be useful:
+If you face issues with the UI, or build errors a cleanup can be useful:
 
 ```console
 flutter clean
@@ -495,7 +495,7 @@ flutter clean
 
 ### Issues Installing Dependencies
 
-If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
+If you get errors while installing the dependencies, please make sure that you are not in a restricted network or that your firewall settings do not prevent you from accessing resources.
 
 Be patient as the first-time setup can take a while depending on your network bandwidth.
 
