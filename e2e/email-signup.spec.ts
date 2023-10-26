@@ -56,11 +56,12 @@ test('get danger zone link', async ({ page }) => {
   await page.getByRole('link', { name: 'link-to-danger-zone' }).click();
 });
 
-test('get emails', async ({ page }) => {
+test('get emails', ({ page }) => {
+  expect(page.getByText(translations.misc['email-blast'])).toMatchSnapshot();
   //expect(page.getByTestId('misc-email-blast')).toContainText(translations.misc['email-blast'])
-  await page
+  /*await page
     .locator('paragraph')
     .filter({ hasText: translations.misc['email-blast'] })
     .first()
-    .isVisible();
+    .isVisible() */
 });
