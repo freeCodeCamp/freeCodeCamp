@@ -143,7 +143,7 @@ When you are working on regular bugs and features on our development branch `mai
 
 ### For Upcoming Curriculum and Features
 
-When you are working on features for our upcoming curriculum `next-*` branches, you have to cherry pick:
+When you are working on features for our upcoming curriculum `next-*` branches, you have to do a `cherry-pick`:
 
 1. Make sure your upstream comes in sync with your local:
 
