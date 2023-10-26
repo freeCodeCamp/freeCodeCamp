@@ -2,7 +2,15 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { omit } from 'lodash';
 import { challengeTypes } from '../../../shared/config/challenge-types';
-import { devLogin, setupServer, superRequest } from '../../jest.utils';
+import {
+  devLogin,
+  setupServer,
+  superRequest,
+  seedExam,
+  defaultUserEmail
+} from '../../jest.utils';
+import { completedTrophyChallenges } from '../../__mocks__/exam';
+import { GeneratedAnswer } from '../utils/exam-types';
 
 const isValidChallengeCompletionErrorMsg = {
   type: 'error',
@@ -987,6 +995,113 @@ describe('challengeRoutes', () => {
         });
       });
     });
+
+    describe('GET /exam/:id', () => {
+      beforeAll(async () => {
+        await seedExam();
+      });
+
+      describe('validation', () => {
+        test('GET rejects requests without id param', async () => {
+          const response = await superRequest('/exam/', {
+            method: 'GET',
+            setCookies
+          });
+
+          expect(response.body).toStrictEqual({
+            error: `Valid 'id' not found in request parameters.`
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('GET rejects requests when id param is not a 24-character string', async () => {
+          const response = await superRequest('/exam/fake-id', {
+            method: 'GET',
+            setCookies
+          });
+
+          expect(response.body).toStrictEqual({
+            error: `Valid 'id' not found in request parameters.`
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('GET rejects requests with non-existent id param', async () => {
+          const response = await superRequest(
+            '/exam/123412341234123412341234',
+            {
+              method: 'GET',
+              setCookies
+            }
+          );
+
+          expect(response.body).toStrictEqual({
+            error: 'An error occurred trying to get the exam from the database.'
+          });
+          expect(response.statusCode).toBe(500);
+        });
+
+        test('GET rejects requests where camper has not completed prerequisites', async () => {
+          const response = await superRequest(
+            '/exam/647e22d18acb466c97ccbef8',
+            {
+              method: 'GET',
+              setCookies
+            }
+          );
+
+          expect(response.body).toStrictEqual({
+            error: `You have not completed the required challenges to start the 'Exam Certification'.`
+          });
+          expect(response.statusCode).toBe(403);
+        });
+      });
+
+      describe('handling', () => {
+        test('GET returns a generatedExam array with the correct objects', async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: defaultUserEmail },
+            data: { completedChallenges: completedTrophyChallenges }
+          });
+
+          const response = await superRequest(
+            '/exam/647e22d18acb466c97ccbef8',
+            {
+              method: 'GET',
+              setCookies
+            }
+          );
+
+          expect(response.body).toHaveProperty('generatedExam');
+
+          const { generatedExam } = response.body;
+
+          expect(Array.isArray(generatedExam)).toBe(true);
+          expect(generatedExam).toHaveLength(1);
+
+          expect(generatedExam[0]).toHaveProperty('question');
+          expect(typeof generatedExam[0].question).toBe('string');
+
+          expect(generatedExam[0]).toHaveProperty('id');
+          expect(typeof generatedExam[0].id).toBe('string');
+
+          expect(generatedExam[0]).toHaveProperty('answers');
+          expect(Array.isArray(generatedExam[0].answers)).toBe(true);
+          expect(generatedExam[0].answers).toHaveLength(5);
+
+          const answers = generatedExam[0].answers as GeneratedAnswer[];
+
+          answers.forEach(a => {
+            expect(a).toHaveProperty('answer');
+            expect(typeof a.answer).toBe('string');
+            expect(a).toHaveProperty('id');
+            expect(typeof a.id).toBe('string');
+          });
+
+          expect(response.statusCode).toBe(200);
+        });
+      });
+    });
   });
 
   describe('Unauthenticated user', () => {
@@ -998,12 +1113,13 @@ describe('challengeRoutes', () => {
       setCookies = res.get('Set-Cookie');
     });
 
-    const endpoints: { path: string; method: 'POST' }[] = [
+    const endpoints: { path: string; method: 'POST' | 'GET' }[] = [
       { path: '/coderoad-challenge-completed', method: 'POST' },
       { path: '/project-completed', method: 'POST' },
       { path: '/backend-challenge-completed', method: 'POST' },
       { path: '/modern-challenge-completed', method: 'POST' },
-      { path: '/save-challenge', method: 'POST' }
+      { path: '/save-challenge', method: 'POST' },
+      { path: '/exam/647e22d18acb466c97ccbef8', method: 'GET' }
     ];
 
     endpoints.forEach(({ path, method }) => {

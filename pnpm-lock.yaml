@@ -225,6 +225,9 @@ importers:
       fastify-plugin:
         specifier: 4.5.1
         version: 4.5.1
+      joi:
+        specifier: 17.9.2
+        version: 17.9.2
       jsonwebtoken:
         specifier: 9.0.2
         version: 9.0.2
