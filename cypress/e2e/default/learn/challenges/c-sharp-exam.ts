@@ -39,6 +39,7 @@ describe('C# Exam Challenge', () => {
   describe('After completing prerequisite challenges', () => {
     before(() => {
       cy.task('seed', ['--seed-trophy-challenges']);
+      cy.task('deleteSurveys');
       cy.login('trophy-user');
       cy.visit(examUrl);
     });
@@ -55,7 +56,7 @@ describe('C# Exam Challenge', () => {
       cy.get(el.surveyModal).should('be.visible');
       cy.get(el.submitSurveyBtn).should('be.disabled');
       cy.contains('Student developer').click();
-      cy.contains('Novice (no experience').click();
+      cy.contains('Novice (no prior experience').click();
       cy.get(el.submitSurveyBtn).should('be.enabled');
     });
   });

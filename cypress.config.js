@@ -14,6 +14,10 @@ function seedSurveys() {
   return execSync('node tools/scripts/seed/seed-surveys.js');
 }
 
+function deleteSurveys() {
+  return execSync('node tools/scripts/seed/seed-surveys.js delete-only');
+}
+
 module.exports = defineConfig({
   e2e: {
     baseUrl: 'http://localhost:8000',
@@ -45,7 +49,8 @@ module.exports = defineConfig({
       on('task', {
         seed,
         seedExams,
-        seedSurveys
+        seedSurveys,
+        deleteSurveys
       });
 
       config.env.API_LOCATION = 'http://localhost:3000';

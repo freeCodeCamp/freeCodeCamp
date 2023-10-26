@@ -5,11 +5,15 @@ const { MongoClient, ObjectId } = require('mongodb');
 
 const args = process.argv.slice(2);
 
-if (args.length > 1) {
-  throw new Error(
-    `Invalid arguments. No arguments are allowed when seeding survey data.`
-  );
-}
+const allowedArgs = ['delete-only'];
+
+// Check for invalid arguments
+args.forEach(arg => {
+  if (!allowedArgs.includes(arg))
+    throw new Error(
+      `Invalid argument ${arg}. Allowed arguments are ${allowedArgs.join(', ')}`
+    );
+});
 
 const log = debug('fcc:tools:seedSurveyInfo');
 const { MONGOHQ_URL } = process.env;
@@ -81,9 +85,13 @@ const run = async () => {
       $in: surveyIds
     }
   });
-  await survey.insertOne(defaultUserSurvey);
-  await survey.insertOne(certifiedUserSurvey);
-  log('Survey info seeded');
+  log('Survey info deleted');
+
+  if (!args.includes('delete-only')) {
+    await survey.insertOne(defaultUserSurvey);
+    await survey.insertOne(certifiedUserSurvey);
+    log('Survey info seeded');
+  }
 };
 
 run()
