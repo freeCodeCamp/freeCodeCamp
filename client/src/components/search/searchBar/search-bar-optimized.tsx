@@ -45,6 +45,7 @@ const SearchBarOptimized = ({
               autoComplete='off'
               autoCorrect='off'
               id='ais-SearchBox-input'
+              data-playwright-test-label='header-search'
               className='ais-SearchBox-input'
               maxLength={512}
               onChange={onChange}
