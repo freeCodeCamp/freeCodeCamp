@@ -1,9 +1,6 @@
-.super-block-intro-page p {
+/* General Styles */
+.super-block-intro-page p, .big-block-title {
   font-size: 1.17rem;
-}
-
-.super-block-intro-page .alert p {
-  font-size: inherit;
 }
 
 .big-subheading {
@@ -11,6 +8,7 @@
   overflow-wrap: break-word;
 }
 
+/* Block Header Styles */
 .block-header {
   display: flex;
   justify-content: space-between;
@@ -27,6 +25,7 @@
   background-color: var(--primary-background);
 }
 
+/* Certification Tag Styles */
 a.cert-tag:hover,
 a.cert-tag:focus,
 a.cert-tag:active {
@@ -34,20 +33,18 @@ a.cert-tag:active {
   background-color: var(--highlight-color);
 }
 
+/* More General Styles */
 .big-block-title {
   font-size: 1.5rem;
   overflow-wrap: break-word;
 }
 
-.block-grid-title {
-  margin: 0;
-  overflow-wrap: break-word;
-}
-
+.block-grid-title,
 .block-grid .challenge-jump-link {
-  margin: 0 25px 25px;
+  margin: 0;
 }
 
+/* Translation CTA Styles */
 .block-title-translation-cta {
   white-space: nowrap;
   padding: 0.2em 0.5em;
@@ -63,12 +60,12 @@ a.cert-tag:active {
   background-color: var(--highlight-color);
 }
 
+/* Block CTA Wrapper Styles */
 .block-cta-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-block: 10px 25px;
-  padding-inline: 0 15px;
+  padding: 10px 25px 0;
   margin: 0 0 0.6rem;
   flex-grow: 2;
   flex-basis: 0;
@@ -76,6 +73,7 @@ a.cert-tag:active {
   text-align: center;
 }
 
+/* Course Title Styles */
 .course-title {
   display: flex;
   align-items: center;
@@ -83,16 +81,19 @@ a.cert-tag:active {
   overflow-wrap: break-word;
 }
 
+/* Block Description Styles */
 .block-description pre {
   display: inline;
   padding: 0;
 }
 
+/* Super Block Image Styles */
 .superBlock-image {
   max-width: 100%;
   height: auto !important;
 }
 
+/* Block UI Styles */
 .block-ui {
   height: 100%;
   list-style: none;
@@ -104,6 +105,7 @@ a.cert-tag:active {
   text-decoration: none;
 }
 
+/* Map Title Styles */
 .map-title {
   display: flex;
   align-items: center;
@@ -119,25 +121,27 @@ button.map-title {
   padding: 18px 15px;
 }
 
-.map-title:hover {
+map-title:hover {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
 }
 
+/* Map Project Styles */
 .map-challenge-wrap > a,
 .map-project-wrap > a {
   display: flex;
   gap: 7px;
 }
 
-.map-project-wrap > a {
+map-project-wrap > a {
   justify-content: space-between;
 }
 
-.map-project-checkmark {
+map-project-checkmark {
   padding-inline-start: 15px;
 }
 
+/* Block Certification Title Styles */
 .block .map-cert-title {
   display: flex;
   align-items: center;
@@ -156,11 +160,13 @@ button.map-title {
   cursor: text;
 }
 
+/* Map Certification Styles */
 .block .map-is-cert:hover {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
 }
 
+/* Block UI Styles */
 .block-ui .block {
   background: var(--primary-background);
 }
@@ -170,88 +176,89 @@ button.map-title {
   border-bottom: 3px solid var(--secondary-background);
 }
 
-.map-cert-title > h3 {
+/* Map Certification Title Styles */
+map-cert-title > h3 {
   font-size: 1.17rem;
   margin-block: 0;
   margin-inline: 15px 0;
 }
 
-.map-cert-title > svg {
+map-cert-title > svg {
   display: inline-block;
   height: 40px;
   width: auto;
   min-width: 25px;
 }
 
-.map-title > h4 {
+/* More Map Title Styles */
+map-title > h4 {
   margin: 0;
 }
 
-.map-title-completed {
+map-title-completed,
+map-title-completed-big {
   margin-inline-start: auto;
   min-width: 100px;
   padding-inline-start: 20px;
 }
 
-.map-title-completed-big {
-  margin-inline-start: auto;
+map-title-completed-big {
   padding-inline-end: 15px;
-  padding-inline-start: 20px;
   position: relative;
   top: 4px;
 }
 
-.map-title svg {
+map-title svg {
   width: 14px;
   flex-shrink: 0;
   fill: var(--color-quaternary) !important;
   stroke: var(--color-quaternary);
 }
 
-.open > .map-title > svg:first-child {
+open > map-title > svg:first-child {
   transform: rotate(90deg);
 }
 
-.block-grid .map-title > svg:last-child {
+block-grid .map-title > svg:last-child {
   transform: rotate(180deg);
   margin-inline-start: auto;
 }
 
-.block-grid.open .map-title > svg:last-child {
+block-grid.open .map-title > svg:last-child {
   transform: rotate(0deg);
 }
 
-.map-challenges-ul {
+/* Map Challenges Styles */
+map-challenges-ul {
   padding-inline-start: 0;
   margin-bottom: 0;
 }
 
-.map-challenge-title {
+map-challenge-title {
   display: flex;
   align-items: center;
   width: 100%;
   font-size: 1.13rem;
 }
 
-.map-challenge-title a {
+map-challenge-title a {
   width: 100%;
   padding: 10px 15px;
   align-items: center;
 }
 
-.map-challenges-grid .map-challenge-title a {
+map-challenges-grid .map-challenge-title a {
   width: 3.4rem;
   height: 3.4rem;
   min-width: 24px;
   min-height: 24px;
   padding: 0;
+  &:focus {
+    outline-offset: 1px;
+  }
 }
 
-.map-challenges-grid .map-challenge-title a:focus {
-  outline-offset: 1px;
-}
-
-.map-challenges-grid {
+map-challenges-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 3.4rem);
   grid-gap: 3px;
@@ -259,61 +266,60 @@ button.map-title {
   margin: 0 auto 18px;
   width: calc(100% - 50px);
 }
-.map-challenge-title-grid {
+
+map-challenge-title-grid {
   flex: 0 1 60px;
 }
-.map-challenges-grid .map-project-wrap {
+
+map-challenges-grid .map-project-wrap {
   flex: 1 1 100px;
 }
-.map-challenge-title-grid a.map-grid-item {
+
+map-challenge-title-grid a.map-grid-item {
   margin: 6px 0;
   justify-content: center;
   border: 1px dashed var(--background-quaternary);
 }
 
-.block-description {
+/* More Block Description Styles */
+block-description {
   padding: 18px 0;
 }
 
-.block-description > p:last-child {
+block-description > p:last-child {
   margin-bottom: 0;
 }
 
+/* Challenge Completed Styles */
 a.map-grid-item.challenge-completed {
   background: var(--highlight-background);
   position: relative;
   border: 1px solid var(--primary-color);
 }
 
-.challenge-completed span {
+challenge-completed span {
   font-weight: 900;
   margin-top: -0.05rem;
 }
 
+/* Media Queries */
 @media screen and (max-width: 500px) {
   .super-block-intro-page p {
     font-size: 1rem;
   }
-
   .big-subheading {
     font-size: 1.35rem;
   }
-
   .big-block-title {
     font-size: 1.17rem;
   }
-
   .block-header {
     flex-direction: column;
   }
-
   .block-cta-wrapper {
     padding: 25px 15px 10px;
   }
-
-  .course-title,
-  .map-cert-title,
-  .map-challenge-title {
+  .course-title, .map-cert-title, .map-challenge-title {
     font-size: 1rem;
   }
 }
@@ -322,21 +328,19 @@ a.map-grid-item.challenge-completed {
   .intro-layout-container {
     padding: 0 10px;
   }
-
   button.map-title {
     width: 100%;
   }
-
   .map-challenge-title {
     max-width: 100%;
   }
-
   .map-title-completed {
     flex-shrink: 0;
     padding-inline-start: 15px;
   }
 }
 
+/* More Styles */
 .intro-layout {
   margin-top: 1.45rem;
 }
@@ -378,7 +382,7 @@ a.map-grid-item.challenge-completed {
   border-bottom: 4px solid var(--secondary-background);
 }
 
-.block-grid .block-header {
+block-grid .block-header {
   flex-direction: column;
   display: flex;
   background: transparent;
@@ -389,34 +393,33 @@ a.map-grid-item.challenge-completed {
   padding: 18px 15px;
 }
 
-.block-grid .block-header:hover {
+block-grid .block-header:hover {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
 }
 
-.block-grid .block-header[aria-expanded='true'] {
+block-grid .block-header[aria-expanded='true'] {
   border-bottom: 2px solid var(--secondary-background);
 }
 
-.block-header-button-text {
+block-header-button-text {
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.block-grid .block-header .block-link {
+block-grid .block-header .block-link {
   flex-direction: row;
 }
 
-.block-ui .block-grid .block-description {
+block-ui .block-grid .block-description {
   border: none;
   padding: 25px;
 }
 
-/* this margin is used to center the element.
-ToDo: find out why, and remove the need for it */
-.block-grid .map-title > svg {
+/* Margin Adjustment (Remove if possible) */
+block-grid .map-title > svg {
   margin-bottom: 4px;
 }
 
@@ -426,14 +429,12 @@ ToDo: find out why, and remove the need for it */
   align-items: center;
   width: 100%;
 }
-.course-title,
-.map-title,
-.block-header-button-text,
-.title-wrapper {
+
+course-title, map-title, block-header-button-text, title-wrapper {
   gap: 10px;
 }
 
-.block-grid .progress-wrapper {
+block-grid .progress-wrapper {
   width: 100%;
   text-align: left;
   font-family: var(--font-family-sans-serif);
@@ -443,11 +444,11 @@ ToDo: find out why, and remove the need for it */
   margin-bottom: 14px;
 }
 
-.block-grid .progress-wrapper span {
+block-grid .progress-wrapper span {
   color: var(--quaternary-color);
 }
 
-.block-grid .progress {
+block-grid .progress {
   height: 15px;
   background-color: var(--secondary-background);
   margin: 0 10px;
@@ -455,27 +456,27 @@ ToDo: find out why, and remove the need for it */
   border-radius: 0;
 }
 
-.block-grid .progress-bar {
+block-grid .progress-bar {
   background-color: var(--blue-mid);
 }
 
-.tags-wrapper {
+tags-wrapper {
   display: flex;
   width: 100%;
 }
 
-.grid-project-block {
+grid-project-block {
   margin-bottom: 50px;
   padding: 18px 15px;
   position: relative;
 }
 
-.grid-project-block:hover {
+grid-project-block:hover {
   cursor: pointer;
   background: var(--tertiary-background);
 }
 
-.grid-project-block a.block-header {
+grid-project-block a.block-header {
   padding: 0;
   display: flex;
   flex-direction: row;
@@ -484,8 +485,8 @@ ToDo: find out why, and remove the need for it */
   gap: 10px;
 }
 
-/* make entire certification card clickable */
-.grid-project-block a.block-header::after {
+/* Make entire certification card clickable */
+grid-project-block a.block-header::after {
   content: '';
   display: block;
   position: absolute;
@@ -495,11 +496,11 @@ ToDo: find out why, and remove the need for it */
   right: 0;
 }
 
-.grid-project-block .tags-wrapper a {
+grid-project-block .tags-wrapper a {
   position: relative;
   z-index: 100;
 }
 
-.grid-project-block:hover:has(.tags-wrapper a:hover) {
+grid-project-block:hover:has(.tags-wrapper a:hover) {
   background: var(--primary-background);
 }
