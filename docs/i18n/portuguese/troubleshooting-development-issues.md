@@ -52,27 +52,13 @@ git clean -ifdX
 
 Se você não conseguir fazer o login e se vir um banner com uma mensagem de erro dizendo que isso será reportado ao freeCodeCamp, verifique novamente se a porta local `3000` não está em uso por um programa diferente.
 
-<!-- tabs:start -->
-
-#### **macOS/Linux/WSL no Windows - No Terminal:**
-
+#### **A partir do Terminal:**
 ```console
 netstat -a | grep "3000"
 
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-#### **No Windows – no PowerShell com privilégios:**
-
-```powershell
-netstat -ab | Select-String "3000"
-
-TCP    0.0.0.0:3000           DESKTOP      LISTENING
-```
-
-<!-- tabs:end -->
-
----
 
 ## Problemas de logout ao navegar
 

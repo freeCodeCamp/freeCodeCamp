@@ -10,7 +10,7 @@ dashedName: catch-misspelled-variable-and-function-names
 
 Los métodos `console.log()` y `typeof` son las dos formas principales de comprobar los valores intermedios y los tipos de salida de un programa. Ahora es el momento de entrar en las formas comúnes que adoptan los errores (bugs). Un problema a nivel de sintaxis con el que las personas que escriben rápido pueden simpatizar es el humilde error ortográfico.
 
-Transposed, missing, or miscapitalized characters in a variable or function name will have the browser looking for an object that doesn't exist - and complain in the form of a reference error. Los nombres de variables y funciones de JavaScript distinguen entre mayúsculas y minúsculas.
+Los caracteres transpuestos, omitidos o mal escritos en el nombre de una variable o función harán que el navegador busque un objeto que no existe y se queje en forma de error de referencia. Los nombres de variables y funciones de JavaScript distinguen entre mayúsculas y minúsculas.
 
 # --instructions--
 
