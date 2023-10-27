@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 const searchElements = {
-  searchInput: 'fcc-search-input',
+  searchInput: 'header-search',
   searchButton: 'fcc-search-button',
   searchClear: 'fcc-search-clear'
 };

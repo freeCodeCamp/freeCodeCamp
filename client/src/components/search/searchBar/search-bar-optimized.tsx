@@ -54,7 +54,6 @@ const SearchBarOptimized = ({
               type='search'
               value={value}
               ref={inputElementRef}
-              data-playwright-test-label='fcc-search-input'
             />
             <button
               className='ais-SearchBox-submit'
