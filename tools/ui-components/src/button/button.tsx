@@ -120,7 +120,11 @@ const StylessButton = React.forwardRef<React.ElementRef<'button'>, ButtonProps>(
     // as `aria-disabled` marks the element disabled but still registers the click event.
     // Ref: https://css-tricks.com/making-disabled-buttons-more-inclusive/#aa-the-difference-between-disabled-and-aria-disabled
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-      if (!disabled && onClick) {
+      if (disabled) {
+        return;
+      }
+
+      if (onClick) {
         onClick(event);
       }
     };
@@ -183,7 +187,7 @@ export const HeadlessButton = React.forwardRef<
         <StylessButton
           className={className}
           onClick={onClick}
-          aria-disabled={disabled}
+          disabled={disabled}
           ref={ref as React.Ref<HTMLButtonElement>}
           {...rest}
         >
