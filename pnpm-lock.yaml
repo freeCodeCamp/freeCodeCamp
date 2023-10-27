@@ -49,8 +49,8 @@ importers:
         specifier: 18.18.7
         version: 18.18.7
       '@types/store':
-        specifier: 2.0.3
-        version: 2.0.3
+        specifier: 2.0.4
+        version: 2.0.4
       '@typescript-eslint/eslint-plugin':
         specifier: 5.62.0
         version: 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.50.0)(typescript@4.9.5)
@@ -10907,6 +10907,10 @@ packages:
 
   /@types/store@2.0.3:
     resolution: {integrity: sha512-hwArKS+x+2IMmkgOrW/dRaDOiRx6c7O7BBOvK7SYzLT6FJ/i5/wLkgAo0JYrnmZQXGGx/PxjsWW6zA+MVzannQ==}
+    dev: true
+
+  /@types/store@2.0.4:
+    resolution: {integrity: sha512-x7Pq0ASoOfu/1MrSVDvHihteHuJ/lAQfUsDGaK4+Tk+YM/rB155SBsNoNeKwn+3x+IgPJ/I5x1spVyZqwpfAuw==}
     dev: true
 
   /@types/superagent@4.1.19:
