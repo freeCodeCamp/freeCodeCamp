@@ -31,7 +31,7 @@
     "no-profanity": "1.5.1",
     "nodemailer": "6.9.7",
     "nodemon": "2.0.22",
-    "pino-pretty": "10.2.0",
+    "pino-pretty": "10.2.3",
     "query-string": "7.1.3",
     "stripe": "8.205.0"
   },
