@@ -11,10 +11,6 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test('Has Search Bar', async ({ page, isMobile }) => {
   if (isMobile) {
     await page.getByTestId(searchBarElements.menuButton).click();
