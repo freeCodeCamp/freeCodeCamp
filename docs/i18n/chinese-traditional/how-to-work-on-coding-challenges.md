@@ -460,7 +460,13 @@ Before you [create a pull request](how-to-open-a-pull-request.md) for your chang
 pnpm run test:curriculum
 ```
 
-2. You can also test a block or a superblock of challenges with these commands
+2. To test single challenge, you can use it challenge id with following command
+
+```
+FCC_CHALLENGE_ID=646cf6cbca98e258da65c979 pnpm run test:curriculum
+```
+
+3. You can also test a block or a superblock of challenges with these commands
 
 ```
 FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
@@ -470,7 +476,7 @@ FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
-You are also able to test one challenge individually by performing the following steps:
+You are also able to test challenges by title by performing the following steps:
 
 1. Switch to the `curriculum` directory:
 

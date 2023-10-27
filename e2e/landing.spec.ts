@@ -125,3 +125,10 @@ test('Has FAQ section', async () => {
   const faqs = page.getByTestId(landingPageElements.faq);
   await expect(faqs).toHaveCount(9);
 });
+
+test("Has CTA Get Started It's free buttons", async () => {
+  const ctaButtons = page.getByRole('link', {
+    name: "Get started (it's free)"
+  });
+  await expect(ctaButtons).toHaveCount(4);
+});
