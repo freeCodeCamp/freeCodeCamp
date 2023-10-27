@@ -1,7 +1,6 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { ObjectId } from 'mongodb';
 import { customAlphabet } from 'nanoid';
-import fetch from 'node-fetch';
 
 import { schemas } from '../schemas';
 import {
