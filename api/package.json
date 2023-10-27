@@ -21,7 +21,7 @@
     "dotenv": "16.3.1",
     "fast-uri": "2.2.0",
     "fastify": "4.21.0",
-    "fastify-auth0-verify": "1.2.0",
+    "fastify-auth0-verify": "1.2.1",
     "fastify-plugin": "4.5.1",
     "joi": "17.9.2",
     "jsonwebtoken": "9.0.2",
