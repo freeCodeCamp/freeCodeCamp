@@ -37,20 +37,18 @@ const donationFormStrings = {
     donationStringReplacements.usdPlaceHolder,
     '20'
   ),
-  twentyDollarDonationToHours: translations.donate['your-donation-2']
-    .replace(donationStringReplacements.usdPlaceHolder, '20')
-    .replace(donationStringReplacements.hoursPlaceHolder, '1,000'),
-  conformFiveDollar: translations.donate['confirm-monthly'].replace(
+  confirmFiveDollars: translations.donate['confirm-monthly'].replace(
     donationStringReplacements.usdPlaceHolder,
     '5'
   ),
-  fiveDollarDonationToHours: translations.donate['your-donation-2']
+  twentyDollarsLearningContribution: translations.donate['your-donation-2']
+    .replace(donationStringReplacements.usdPlaceHolder, '20')
+    .replace(donationStringReplacements.hoursPlaceHolder, '1,000'),
+  fiveDollarsLearningContribution: translations.donate['your-donation-2']
     .replace(donationStringReplacements.usdPlaceHolder, '5')
     .replace(donationStringReplacements.hoursPlaceHolder, '250'),
-  twentyDollarsConfirmation: translations.donate['confirm-multitier'].replace(
-    donationStringReplacements.usdPlaceHolder,
-    '20'
-  )
+  editAmount: translations.donate['edit-amount'],
+  donate: translations.buttons.donate
 };
 
 let page: Page;
@@ -87,7 +85,7 @@ test.describe('Donate Page', () => {
       }
     }
     await expect(
-      page.getByText(donationFormStrings.twentyDollarDonationToHours)
+      page.getByText(donationFormStrings.twentyDollarsLearningContribution)
     ).toBeVisible();
   });
 
@@ -95,36 +93,39 @@ test.describe('Donate Page', () => {
     await page.click('[role="tab"]:has-text("$5")');
 
     await expect(
-      page.getByText(donationFormStrings.conformFiveDollar)
+      page.getByText(donationFormStrings.confirmFiveDollars)
     ).toBeVisible();
 
     await expect(
-      page.getByText(donationFormStrings.fiveDollarDonationToHours)
+      page.getByText(donationFormStrings.fiveDollarsLearningContribution)
     ).toBeVisible();
-  });
-
-  test('should display donation form after choosing tier', async () => {
-    await page.click('[role="tab"]:has-text("$20")');
-    await page.click('button:has-text("Donate")');
-    await expect(
-      page.getByText(donationFormStrings.twentyDollarsConfirmation)
-    ).toBeVisible();
-    const isEditButtonVisible = await page.isVisible(
-      'button:has-text("edit amount")'
-    );
-    expect(isEditButtonVisible).toBeTruthy();
-    await expect(page.getByTestId('donation-form')).toBeVisible();
   });
 
   test('should switch between tier selection and payment options', async () => {
+    // Tier selection
     await page.click('[role="tab"]:has-text("$5")');
-    await page.click('button:has-text("Donate")');
-    await page.click('button:has-text("edit amount")');
     await expect(
-      page.getByText(donationFormStrings.conformFiveDollar)
+      page.getByText(donationFormStrings.confirmFiveDollars)
     ).toBeVisible();
     await expect(
-      page.getByText(donationFormStrings.fiveDollarDonationToHours)
+      page.getByText(donationFormStrings.fiveDollarsLearningContribution)
+    ).toBeVisible();
+    await page.click(`button:has-text("${donationFormStrings.donate}")`);
+
+    // Donation form
+    const isEditButtonVisible = await page.isVisible(
+      `button:has-text("${donationFormStrings.editAmount}")`
+    );
+    expect(isEditButtonVisible).toBeTruthy();
+    await expect(page.getByTestId('donation-form')).toBeVisible();
+    await page.click(`button:has-text("${donationFormStrings.editAmount}")`);
+
+    // Tier selection
+    await expect(
+      page.getByText(donationFormStrings.confirmFiveDollars)
+    ).toBeVisible();
+    await expect(
+      page.getByText(donationFormStrings.fiveDollarsLearningContribution)
     ).toBeVisible();
   });
 

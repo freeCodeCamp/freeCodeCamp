@@ -38,7 +38,10 @@ function SelectionTabs({
 }) {
   const { t } = useTranslation();
   return (
-    <Row className={'donate-btn-group donation-tier-selection'}>
+    <Row
+      className={'donate-btn-group donation-tier-selection'}
+      data-playwright-test-label='donation-tier-selector'
+    >
       <Col xs={12}>
         <b>
           {t('donate.confirm-monthly', {
