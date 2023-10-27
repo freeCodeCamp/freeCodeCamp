@@ -3,6 +3,11 @@
   font-size: 1rem;
 }
 
+.email-list-opt {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @media (min-width: 500px) {
   .email-sign-up strong,
   .email-sign-up p {
