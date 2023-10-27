@@ -45,6 +45,7 @@ const SearchBarOptimized = ({
               autoComplete='off'
               autoCorrect='off'
               id='ais-SearchBox-input'
+              data-playwright-test-label='header-search'
               className='ais-SearchBox-input'
               maxLength={512}
               onChange={onChange}
@@ -53,8 +54,13 @@ const SearchBarOptimized = ({
               type='search'
               value={value}
               ref={inputElementRef}
+              data-playwright-test-label='fcc-search-input'
             />
-            <button className='ais-SearchBox-submit' type='submit'>
+            <button
+              className='ais-SearchBox-submit'
+              type='submit'
+              data-playwright-test-label='fcc-search-button'
+            >
               <Magnifier />
             </button>
             {value && (
@@ -62,6 +68,7 @@ const SearchBarOptimized = ({
                 className='ais-SearchBox-reset'
                 onClick={onClick}
                 type='button'
+                data-playwright-test-label='fcc-search-clear'
               >
                 <InputReset />
               </button>

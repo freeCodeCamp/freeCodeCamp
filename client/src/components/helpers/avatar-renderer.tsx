@@ -9,12 +9,10 @@ interface AvatarRendererProps {
   isDonating?: boolean;
   isTopContributor?: boolean;
   picture: string;
-  userName: string;
 }
 
 function AvatarRenderer({
   picture,
-  userName,
   isDonating,
   isTopContributor
 }: AvatarRendererProps): JSX.Element {
@@ -44,14 +42,11 @@ function AvatarRenderer({
 
   return (
     <div className={`avatar-container ${borderColor}`}>
+      <span className='sr-only'>{t('buttons.profile')}</span>
       {isPlaceHolderImage ? (
         <DefaultAvatar className='avatar default-avatar' />
       ) : (
-        <Image
-          alt={t('profile.avatar', { username: userName })}
-          className='avatar'
-          src={picture}
-        />
+        <Image alt='' className='avatar' src={picture} />
       )}
     </div>
   );

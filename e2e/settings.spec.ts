@@ -320,7 +320,7 @@ test.describe('Settings', () => {
     await expect(removeButton).toBeVisible();
   });
 
-  test('Should validate Accademy Honesty Settings', async ({
+  test('Should validate Academy Honesty Settings', async ({
     page,
     browserName
   }) => {
