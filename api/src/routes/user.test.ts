@@ -323,8 +323,10 @@ describe('userRoutes', () => {
           method: 'POST',
           setCookies
         });
-
-        expect(await fastifyTestInstance.prisma.userToken.count()).toBe(1);
+        const userTokens =
+          await fastifyTestInstance.prisma.userToken.findMany();
+        expect(userTokens).toHaveLength(1);
+        expect(userTokens[0]?.userId).toBe(otherUserId);
       });
     });
 
@@ -382,7 +384,10 @@ describe('userRoutes', () => {
           setCookies
         });
 
-        expect(await fastifyTestInstance.prisma.userToken.count()).toBe(1);
+        const userTokens =
+          await fastifyTestInstance.prisma.userToken.findMany();
+        expect(userTokens).toHaveLength(1);
+        expect(userTokens[0]?.userId).toBe(otherUserId);
       });
     });
 
