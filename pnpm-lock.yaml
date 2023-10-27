@@ -1393,8 +1393,8 @@ importers:
         specifier: 4.17.21
         version: 4.17.21
       mongodb:
-        specifier: 5.9.0
-        version: 5.9.0
+        specifier: 5.9.1
+        version: 5.9.1
 
   tools/scripts/seed-exams:
     devDependencies:
@@ -1414,8 +1414,8 @@ importers:
         specifier: 4.17.21
         version: 4.17.21
       mongodb:
-        specifier: 5.9.0
-        version: 5.9.0
+        specifier: 5.9.1
+        version: 5.9.1
       nanoid:
         specifier: 4.0.2
         version: 4.0.2
@@ -24482,8 +24482,8 @@ packages:
       - aws-crt
     dev: false
 
-  /mongodb@5.9.0:
-    resolution: {integrity: sha512-g+GCMHN1CoRUA+wb1Agv0TI4YTSiWr42B5ulkiAfLLHitGK1R+PkSAf3Lr5rPZwi/3F04LiaZEW0Kxro9Fi2TA==}
+  /mongodb@5.9.1:
+    resolution: {integrity: sha512-NBGA8AfJxGPeB12F73xXwozt8ZpeIPmCUeWRwl9xejozTXFes/3zaep9zhzs1B/nKKsw4P3I4iPfXl3K7s6g+Q==}
     engines: {node: '>=14.20.1'}
     peerDependencies:
       '@aws-sdk/credential-providers': ^3.188.0
