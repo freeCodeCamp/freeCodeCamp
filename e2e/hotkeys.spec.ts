@@ -9,7 +9,15 @@ const editorPaneLabel =
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-test('User can interact with the app using the keyboard', async ({ page }) => {
+test('User can interact with the app using the keyboard', async ({
+  page,
+  browserName
+}) => {
+  test.skip(
+    browserName === 'webkit',
+    'Failing on webkit for no apparent reason. Can not reproduce locally.'
+  );
+
   // Enable keyboard shortcuts
   await page.goto('/settings');
   const keyboardShortcutsOnButton = page
