@@ -23,7 +23,7 @@
     "fastify": "4.21.0",
     "fastify-auth0-verify": "1.2.1",
     "fastify-plugin": "4.5.1",
-    "joi": "17.9.2",
+    "joi": "17.11.0",
     "jsonwebtoken": "9.0.2",
     "lodash": "4.17.21",
     "mongodb": "4.17.1",
