@@ -195,6 +195,34 @@ model sessions {
   @@index([expires], map: "expires_1")
 }
 
+model Exam {
+  id                      String         @id @map("_id") @db.ObjectId
+  numberOfQuestionsInExam Int            @db.Int
+  passingPercent          Int            @db.Int
+  prerequisites           Prerequisite[] // undefined | Prerequisite[]
+  title                   String
+  questions               Question[]
+}
+
+type Question {
+  id             String
+  question       String
+  wrongAnswers   Answer[]
+  correctAnswers Answer[]
+  deprecated     Boolean? // undefined
+}
+
+type Answer {
+  id         String
+  answer     String
+  deprecated Boolean? // undefined
+}
+
+type Prerequisite {
+  id    String @db.ObjectId
+  title String
+}
+
 type DonationEndDate {
   date DateTime @map("_date") @db.Date
   when String   @map("_when")

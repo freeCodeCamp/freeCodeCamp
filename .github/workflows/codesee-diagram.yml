@@ -14,7 +14,7 @@ permissions: read-all
 
 jobs:
   codesee:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: ${{ github.actor != 'renovate[bot]' && github.actor != 'camperbot' }}
     continue-on-error: true
     name: Analyze the repo with CodeSee

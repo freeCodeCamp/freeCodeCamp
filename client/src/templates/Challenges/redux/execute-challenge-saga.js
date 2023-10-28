@@ -35,6 +35,7 @@ import {
 } from '../utils/build';
 import { runPythonInFrame, mainPreviewId } from '../utils/frame';
 import { executeGA } from '../../../redux/actions';
+import { fireConfetti } from '../../../utils/fire-confetti';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
@@ -53,7 +54,8 @@ import {
   challengeTestsSelector,
   isBuildEnabledSelector,
   isExecutingSelector,
-  portalDocumentSelector
+  portalDocumentSelector,
+  isBlockNewlyCompletedSelector
 } from './selectors';
 
 // How long before bailing out of a preview.
@@ -87,7 +89,7 @@ function* executeCancellableChallengeSaga(payload) {
   yield cancel(task);
 }
 
-function* executeChallengeSaga({ payload }) {
+export function* executeChallengeSaga({ payload }) {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
@@ -126,8 +128,12 @@ function* executeChallengeSaga({ payload }) {
     yield put(updateTests(testResults));
 
     const challengeComplete = testResults.every(test => test.pass && !test.err);
+    const isBlockCompleted = yield select(isBlockNewlyCompletedSelector);
     if (challengeComplete) {
       playTone('tests-completed');
+      if (isBlockCompleted) {
+        fireConfetti();
+      }
     } else {
       playTone('tests-failed');
       if (challengeMeta.certification === 'responsive-web-design') {
@@ -141,6 +147,7 @@ function* executeChallengeSaga({ payload }) {
         );
       }
     }
+
     if (challengeComplete && payload?.showCompletionModal) {
       yield put(openModal('completion'));
     }
