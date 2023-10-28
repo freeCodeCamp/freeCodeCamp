@@ -9,7 +9,7 @@
     "@fastify/csrf-protection": "6.3.0",
     "@fastify/middie": "8.3",
     "@fastify/session": "10.5.0",
-    "@fastify/swagger": "8.10.1",
+    "@fastify/swagger": "8.12.0",
     "@fastify/swagger-ui": "1.9.3",
     "@fastify/type-provider-typebox": "3.5.0",
     "@immobiliarelabs/fastify-sentry": "7.1.1",
