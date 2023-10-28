@@ -9,19 +9,16 @@ const editorPaneLabel =
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-test.beforeAll(async ({ page }) => {
+test.beforeEach(async ({ page }) => {
+  // Enable keyboard shortcuts
   await page.goto('/settings');
-
   const keyboardShortcutsOnButton = page
     .getByRole('button', { name: translations.buttons.on, exact: true })
     .nth(2);
-
   await keyboardShortcutsOnButton.click();
-});
 
-test.beforeEach(async ({ page }) => {
+  // Open shortcuts modal
   await page.goto(course);
-
   await page.getByLabel(editorPaneLabel).press('Escape');
   await page.keyboard.press('Shift+?');
 });
