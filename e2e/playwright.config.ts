@@ -36,6 +36,7 @@ export default defineConfig({
     /* Use custom test attribute */
     testIdAttribute: 'data-playwright-test-label'
   },
+  updateSnapshots: 'missing',
 
   /* Configure projects for major browsers */
   projects: [
