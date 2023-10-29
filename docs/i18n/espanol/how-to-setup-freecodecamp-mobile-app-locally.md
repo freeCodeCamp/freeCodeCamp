@@ -134,8 +134,6 @@ Las claves de la API por defecto y las variables de entorno se almacenan en el a
 # Llenarlo con las keys y secrets de la API necesarios:
 ```
 
-<!-- tabs:start -->
-
 #### **macOS/Linux**
 
 ```console
@@ -147,8 +145,6 @@ cp sample.env .env
 ```console
 copy sample.env .env
 ```
-
-<!-- tabs:end -->
 
 Las claves dentro del archivo `.env`  _no_ requieren ser cambiadas para correr la aplicación de forma local. Puedes dejar los valores por defecto copiados desde `sample.env`.
 
@@ -380,21 +376,17 @@ Sigue estos pasos:
 
 3. Make a copy of the `.env` file:
 
-<!-- tabs:start -->
+    #### **macOS/Linux**
 
-#### **macOS/Linux**
+    ```console
+    cp sample.env .env
+    ```
 
-```console
-cp sample.env .env
-```
+    #### **Windows**
 
-#### **Windows**
-
-```console
-copy sample.env .env
-```
-
-<!-- tabs:end -->
+    ```console
+    copy sample.env .env
+    ```
 
 4. Install the dependencies for the freeCodeCamp repo:
 
@@ -410,21 +402,16 @@ copy sample.env .env
 
 6. Copy the generated JSON file to the mobile app:
 
-<!-- tabs:start -->
+    #### **macOS/Linux**
 
-#### **macOS/Linux**
+    ```console
+    cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
+    ```
 
-```console
-cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
-```
-
-#### **Windows**
-
-```console
-copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
-```
-
-<!-- tabs:end -->
+    #### **Windows**
+    ```console
+    copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+    ```
 
 7. Change directory to the mobile app:
 
@@ -441,7 +428,7 @@ copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
 9. Update the test file to use the challenge data JSON file:
 
     ```console
-    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart  
+    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
     ```
 
 10. Generate the challenge files:
