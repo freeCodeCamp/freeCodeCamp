@@ -216,6 +216,8 @@ Here are some example challenge names:
 
 ## Challenge descriptions/instructions
 
+Use American English only.
+
 Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
 Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
