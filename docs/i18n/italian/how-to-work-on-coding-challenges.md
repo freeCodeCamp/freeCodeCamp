@@ -4,7 +4,7 @@ Il nostro obiettivo è quello di sviluppare un'esperienza di apprendimento inter
 
 Progettare le sfide di programmazione interattiva è difficile. Sarebbe molto più facile scrivere una spiegazione lunga o creare un video tutorial. Ma per il nostro curriculum di base, ci atteniamo a ciò che funziona meglio per la maggior parte delle persone - un'esperienza completamente interattiva, come il videogioco.
 
-Vogliamo che i camper raggiungano uno stato di flusso. Vogliamo che costruiscano slancio e sfondino attraverso il nostro curriculum con il minor numero di intoppi possibile. Vogliamo che entrino nei progetti con fiducia e che si espongano ampiamente ai concetti di programmazione.
+Vogliamo che i camper raggiungano uno stato di flusso. Vogliamo che costruiscano slancio e sfondino attraverso il nostro curriculum con il minor numero di intoppi possibile. We want them to go into the projects with confidence and gain wide exposure to programming concepts.
 
 Nota che per la versione 7.0 del curriculum freeCodeCamp, ci stiamo muovendo verso [un modello interamente orientato al progetto con molta più ripetizione](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
@@ -554,7 +554,7 @@ b
 c
 ```
 
-And you choose `b`, your new order will be:
+If you choose `b`, your new order will be:
 
 ```bash
 a

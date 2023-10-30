@@ -123,7 +123,7 @@ Now that you have installed the pre-requisites, follow [our local setup guide](h
 
 > [!WARNING]
 > 
-> Please note, at this time the setup for Cypress tests (and related GUI needs) are a work in progress. You should still be able to work on most of the codebase.
+> Please note, at this time the setup for Cypress tests (and related GUI needs) is a work in progress. You should still be able to work on most of the codebase.
 
 ## Useful Links
 
