@@ -1,0 +1,20 @@
+const { chromium } = require('playwright');
+
+(async () => {
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+
+  // Navigate to a website
+  await page.goto('https://example.com');
+
+  // Click a button
+  await page.click('button#myButton');
+
+  // Wait for an element to appear
+  await page.waitForSelector('div#myElement');
+
+  // Capture a screenshot (optional)
+  await page.screenshot({ path: 'screenshot.png' });
+
+  await browser.close();
+})();
