@@ -20,10 +20,12 @@ test('User can interact with the app using the keyboard', async ({
 
   // Enable keyboard shortcuts
   await page.goto('/settings');
-  const keyboardShortcutsOnButton = page
+  const keyboardShortcutGroup = page.getByRole('group', {
+    name: translations.settings.labels['keyboard-shortcuts']
+  });
+  await keyboardShortcutGroup
     .getByRole('button', { name: translations.buttons.on, exact: true })
-    .nth(2);
-  await keyboardShortcutsOnButton.click();
+    .click();
 
   await page.goto(course);
 
