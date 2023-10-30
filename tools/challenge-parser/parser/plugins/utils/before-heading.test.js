@@ -2,7 +2,7 @@ const isArray = require('lodash/isArray');
 const simpleAst = require('../../__fixtures__/ast-simple.json');
 const getAllBefore = require('./before-heading');
 
-describe('between-headings', () => {
+describe('before-headings', () => {
   it('should return an array', () => {
     expect.assertions(1);
     const actual = getAllBefore(simpleAst, '--hints--');
@@ -19,6 +19,6 @@ describe('between-headings', () => {
   it('should include the whole AST before the marker', () => {
     expect.assertions(1);
     const actual = getAllBefore(simpleAst, '--hints--');
-    expect(actual.length === 6).toBe(true);
+    expect(actual).toHaveLength(6);
   });
 });

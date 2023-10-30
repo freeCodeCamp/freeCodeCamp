@@ -49,7 +49,7 @@ export type MarkdownRemark = {
 
 export type MultipleChoiceAnswer = {
   answer: string;
-  feedback: string;
+  feedback: string | null;
 };
 
 export type Question = {
