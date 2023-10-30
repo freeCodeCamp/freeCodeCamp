@@ -1,6 +1,6 @@
 ---
 id: 5900f4591000cf542c50ff6b
-title: 'Problem 236: Luxury Hampers'
+title: 'Завдання 236: подарункові кошики'
 challengeType: 1
 forumTopicId: 301881
 dashedName: problem-236-luxury-hampers
@@ -8,17 +8,17 @@ dashedName: problem-236-luxury-hampers
 
 # --description--
 
-Suppliers 'A' and 'B' provided the following numbers of products for the luxury hamper market:
+Постачальники А та Б надали таку кількість продукції для ринку подарункових кошиків:
 
-| Product            | 'A'  | 'B'  |
-| ------------------ | ---- | ---- |
-| Beluga Caviar      | 5248 | 640  |
-| Christmas Cake     | 1312 | 1888 |
-| Gammon Joint       | 2624 | 3776 |
-| Vintage Port       | 5760 | 3776 |
-| Champagne Truffles | 3936 | 5664 |
+| Товар               | A    | Б    |
+| ------------------- | ---- | ---- |
+| Чорна ікра          | 5248 | 640  |
+| Різдвяний пиріг     | 1312 | 1888 |
+| Хамон               | 2624 | 3776 |
+| Витриманий портвейн | 5760 | 3776 |
+| Трюфелі             | 3936 | 5664 |
 
-Although the suppliers try very hard to ship their goods in perfect condition, there is inevitably some spoilage - i.e. products gone bad.
+Хоча постачальники дуже стараються доставити свій товар в ідеальному стані, псування неминуче. Продукти зіпсувались.
 
 The suppliers compare their performance using two types of statistic:
 
