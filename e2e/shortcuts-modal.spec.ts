@@ -17,10 +17,12 @@ test.beforeEach(async ({ page, browserName }) => {
 
   // Enable keyboard shortcuts
   await page.goto('/settings');
-  const keyboardShortcutsOnButton = page
+  const keyboardShortcutGroup = page.getByRole('group', {
+    name: translations.settings.labels['keyboard-shortcuts']
+  });
+  await keyboardShortcutGroup
     .getByRole('button', { name: translations.buttons.on, exact: true })
-    .nth(2);
-  await keyboardShortcutsOnButton.click();
+    .click();
 
   // Open shortcuts modal
   await page.goto(course);
