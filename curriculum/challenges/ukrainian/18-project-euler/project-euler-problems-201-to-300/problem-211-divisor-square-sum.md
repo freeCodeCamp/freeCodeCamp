@@ -1,6 +1,6 @@
 ---
 id: 5900f43f1000cf542c50ff52
-title: 'Problem 211: Divisor Square Sum'
+title: 'Завдання 211: сума квадратів дільників'
 challengeType: 1
 forumTopicId: 301853
 dashedName: problem-211-divisor-square-sum
@@ -8,11 +8,11 @@ dashedName: problem-211-divisor-square-sum
 
 # --description--
 
-For a positive integer $n$, let $σ_2(n)$ be the sum of the squares of its divisors. Наприклад,
+Нехай $σ_2(n)$ буде сумою квадратів дільників натурального числа $n$. Наприклад,
 
 $$σ_2(10) = 1 + 4 + 25 + 100 = 130$$
 
-Find the sum of all $n$, $0 &lt; n &lt; 64\\,000\\,000$ such that $σ_2(n)$ is a perfect square.
+Знайдіть суму всіх $n$ за умови $0 &lt; n &lt; 64\\,000\\,000$, за яких $σ_2(n)$ є повним квадратом.
 
 # --hints--
 

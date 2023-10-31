@@ -603,12 +603,47 @@ export const schemas = {
           ])
         )
       }),
-      403: Type.Literal('That challenge type is not savable.'),
+      403: Type.Literal('That challenge type is not saveable.'),
       500: Type.Object({
         type: Type.Literal('danger'),
         message: Type.Literal(
           'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
         )
+      })
+    }
+  },
+  exam: {
+    params: Type.Object({
+      id: Type.String({
+        format: 'objectid',
+        maxLength: 24,
+        minLength: 24
+      })
+    }),
+    response: {
+      200: Type.Object({
+        generatedExam: Type.Array(
+          Type.Object({
+            id: Type.String(),
+            question: Type.String(),
+            answers: Type.Array(
+              Type.Object({
+                id: Type.String(),
+                answer: Type.String()
+              })
+            )
+          })
+        )
+      }),
+      // TODO: Standardize error responses - e.g. { type, message }
+      400: Type.Object({
+        error: Type.String()
+      }),
+      403: Type.Object({
+        error: Type.String()
+      }),
+      500: Type.Object({
+        error: Type.String()
       })
     }
   },
@@ -738,5 +773,5 @@ export const schemas = {
         message: Type.Literal('flash.went-wrong')
       })
     }
-  }
+  },
 };

@@ -146,9 +146,23 @@ function updateMyProfileUI(req, res, next) {
     user,
     body: { profileUI }
   } = req;
+
+  const update = {
+    isLocked: !!profileUI.isLocked,
+    showAbout: !!profileUI.showAbout,
+    showCerts: !!profileUI.showCerts,
+    showDonation: !!profileUI.showDonation,
+    showHeatMap: !!profileUI.showHeatMap,
+    showLocation: !!profileUI.showLocation,
+    showName: !!profileUI.showName,
+    showPoints: !!profileUI.showPoints,
+    showPortfolio: !!profileUI.showPortfolio,
+    showTimeLine: !!profileUI.showTimeLine
+  };
+
   user.updateAttribute(
     'profileUI',
-    profileUI,
+    update,
     createStandardHandler(req, res, next, 'flash.privacy-updated')
   );
 }

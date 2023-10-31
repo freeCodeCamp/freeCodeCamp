@@ -10,10 +10,6 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test('the page should render with correct title', async ({ page }) => {
   await expect(page).toHaveTitle(
     'Write Your First Code Using C# - Trophy - Write Your First Code Using C# | Learn | freeCodeCamp.org'

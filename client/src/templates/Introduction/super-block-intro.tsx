@@ -1,4 +1,3 @@
-import { Row } from '@freecodecamp/react-bootstrap';
 import { WindowLocation } from '@reach/router';
 import { graphql } from 'gatsby';
 import { uniq } from 'lodash-es';
@@ -9,7 +8,7 @@ import { connect } from 'react-redux';
 import { configureAnchors } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col } from '@freecodecamp/ui';
+import { Container, Col, Row } from '@freecodecamp/ui';
 
 import { SuperBlocks } from '../../../../shared/config/superblocks';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
@@ -207,32 +206,29 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               <Spacer size='medium' />
               <div className='block-ui'>
                 {defaultCurriculumNames.map(blockDashedName => (
-                  <Fragment key={blockDashedName}>
-                    <Block
-                      blockDashedName={blockDashedName}
-                      challenges={nodesForSuperBlock.filter(
-                        node => node.challenge.block === blockDashedName
-                      )}
-                      superBlock={superBlock}
-                    />
-                  </Fragment>
+                  <Block
+                    key={blockDashedName}
+                    blockDashedName={blockDashedName}
+                    challenges={nodesForSuperBlock.filter(
+                      node => node.challenge.block === blockDashedName
+                    )}
+                    superBlock={superBlock}
+                  />
                 ))}
                 {!superblockWithoutCert.includes(superBlock) && (
-                  <div>
-                    <CertChallenge
-                      certification={certification}
-                      superBlock={superBlock}
-                      title={title}
-                      user={user}
-                    />
-                  </div>
+                  <CertChallenge
+                    certification={certification}
+                    superBlock={superBlock}
+                    title={title}
+                    user={user}
+                  />
                 )}
               </div>
               {!isSignedIn && !signInLoading && (
-                <div>
+                <>
                   <Spacer size='large' />
                   <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
-                </div>
+                </>
               )}
               <Spacer size='large' />
               <h3

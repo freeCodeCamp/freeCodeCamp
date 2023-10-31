@@ -271,11 +271,13 @@ section.cover.show ~ .sidebar-toggle {
   padding: 0;
 }
 
-.sidebar ul li a {
+.sidebar ul li a,
+.search a {
   color: var(--quaternary-color);
 }
 
-.sidebar ul li > a:hover {
+.sidebar ul li > a:hover,
+.search a:hover {
   color: var(--primary-color);
 }
 
@@ -503,12 +505,4 @@ body.close .github-corner {
 .i18n-lang-list li {
   text-align: left;
   width: 10em;
-}
-
-.docsify-tabs__tab:not(.docsify-tabs__tab--active) {
-  color: var(--secondary-background) !important;
-}
-
-.docsify-tabs__tab:not(.docsify-tabs__tab--active):hover {
-  cursor: pointer;
 }

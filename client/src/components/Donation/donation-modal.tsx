@@ -1,10 +1,11 @@
-import { Modal, Button, Row } from '@freecodecamp/react-bootstrap';
+import { Modal, Button } from '@freecodecamp/react-bootstrap';
 import {
   Tabs,
   TabsContent,
   TabsTrigger,
   TabsList,
-  Col
+  Col,
+  Row
 } from '@freecodecamp/ui';
 import { WindowLocation } from '@reach/router';
 import React, { useEffect, useState } from 'react';
@@ -409,7 +410,7 @@ function DonateModal({
   const loadElementsIndividually = useFeature('load_elements_individually').on;
   const showMultiTier = useFeature('multi-tier').on;
 
-  // test wheather the conversions are being distributed properly
+  // test whether the conversions are being distributed properly
   useFeature('aa-test-in-component');
 
   const handleProcessing = () => {

@@ -1,4 +1,4 @@
-import { Image } from '@freecodecamp/react-bootstrap';
+import { Image } from '@freecodecamp/ui';
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
@@ -9,12 +9,10 @@ interface AvatarRendererProps {
   isDonating?: boolean;
   isTopContributor?: boolean;
   picture: string;
-  userName: string;
 }
 
 function AvatarRenderer({
   picture,
-  userName,
   isDonating,
   isTopContributor
 }: AvatarRendererProps): JSX.Element {
@@ -44,15 +42,11 @@ function AvatarRenderer({
 
   return (
     <div className={`avatar-container ${borderColor}`}>
+      <span className='sr-only'>{t('buttons.profile')}</span>
       {isPlaceHolderImage ? (
         <DefaultAvatar className='avatar default-avatar' />
       ) : (
-        <Image
-          alt={t('profile.avatar', { username: userName })}
-          className='avatar'
-          responsive={true}
-          src={picture}
-        />
+        <Image alt='' src={picture} responsive />
       )}
     </div>
   );

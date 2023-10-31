@@ -11,7 +11,7 @@
 | Передумова                      | Версія | Примітки                                      |
 | ------------------------------- | ------ | --------------------------------------------- |
 | [Flutter](https://flutter.dev/) | `3.x`  | -                                             |
-| Dart (разом із Flutter)         | `2.x`  | Ми використовуємо версію, з’єднану з Flutter. |
+| Dart (разом із Flutter)         | `3.x`  | Ми використовуємо версію, з’єднану з Flutter. |
 
 > [!ATTENTION] Якщо у вас інша версія, встановіть рекомендовану версію. Ми можемо розв’язати проблеми зі встановленням лише для рекомендованих версій.
 
@@ -134,8 +134,6 @@ dart --version
 # Заповніть її необхідними ключами та секретами API:
 ```
 
-<!-- tabs:start -->
-
 #### **macOS/Linux**
 
 ```console
@@ -147,8 +145,6 @@ cp sample.env .env
 ```console
 copy sample.env .env
 ```
-
-<!-- tabs:end -->
 
 Для локального запуску застосунку _необов’язково_ змінювати ключі у файлі `.env`. Ви можете залишити значення за замовчуванням, скопійовані з `sample.env`.
 
@@ -380,21 +376,17 @@ flutter run
 
 3. Зробіть копію файлу `.env`:
 
-<!-- tabs:start -->
+    #### **macOS/Linux**
 
-#### **macOS/Linux**
+    ```console
+    cp sample.env .env
+    ```
 
-```console
-cp sample.env .env
-```
+    #### **Windows**
 
-#### **Windows**
-
-```console
-copy sample.env .env
-```
-
-<!-- tabs:end -->
+    ```console
+    copy sample.env .env
+    ```
 
 4. Встановіть залежності для репозиторію freeCodeCamp:
 
@@ -410,21 +402,16 @@ copy sample.env .env
 
 6. Скопіюйте створений файл JSON до мобільного застосунку:
 
-<!-- tabs:start -->
+    #### **macOS/Linux**
 
-#### **macOS/Linux**
+    ```console
+    cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
+    ```
 
-```console
-cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
-```
-
-#### **Windows**
-
-```console
-copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
-```
-
-<!-- tabs:end -->
+    #### **Windows**
+    ```console
+    copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+    ```
 
 7. Змініть каталог на мобільний застосунок:
 
@@ -441,7 +428,7 @@ copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
 9. Оновіть файл тестів, щоб використовувати файл JSON з даними завдань:
 
     ```console
-    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart  
+    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
     ```
 
 10. Створіть файли завдань:

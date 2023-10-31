@@ -9,10 +9,6 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test.describe('Help Modal component', () => {
   test('renders the modal correctly', async ({ page }) => {
     await page

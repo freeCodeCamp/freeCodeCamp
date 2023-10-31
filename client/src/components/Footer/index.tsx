@@ -27,12 +27,7 @@ function Footer(): JSX.Element {
           </p>
         </div>
         <div className='trending-guides'>
-          <h2
-            className='col-header'
-            data-playwright-test-label='trending-guides-col-header'
-          >
-            {t('footer.trending-guides')}
-          </h2>
+          <h2 className='col-header'>{t('footer.trending-guides')}</h2>
           <div
             className='trending-guides-articles'
             data-playwright-test-label='trending-guides-articles'
@@ -192,16 +187,8 @@ function Footer(): JSX.Element {
         </div>
       </div>
       <div className='footer-bottom'>
-        <h2
-          className='col-header'
-          data-playwright-test-label='footer-bottom-col-header'
-        >
-          {t('footer.our-nonprofit')}
-        </h2>
-        <div
-          className='our-nonprofit'
-          data-playwright-test-label='our-nonprofit'
-        >
+        <h2 className='col-header'>{t('footer.our-nonprofit')}</h2>
+        <div className='our-nonprofit'>
           <Link external={false} to={t('links:footer.about-url')}>
             {t('footer.links.about')}
           </Link>

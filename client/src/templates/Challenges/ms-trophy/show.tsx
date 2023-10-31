@@ -84,7 +84,7 @@ interface MsTrophyProps {
 // Component
 class MsTrophy extends Component<MsTrophyProps> {
   static displayName: string;
-  private _container: HTMLElement | null = null;
+  private container: React.RefObject<HTMLElement> = React.createRef();
 
   constructor(props: MsTrophyProps) {
     super(props);
@@ -108,7 +108,7 @@ class MsTrophy extends Component<MsTrophyProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container?.focus();
+    this.container.current?.focus();
   }
 
   componentDidUpdate(prevProps: MsTrophyProps): void {
@@ -178,7 +178,7 @@ class MsTrophy extends Component<MsTrophyProps> {
 
     return (
       <Hotkeys
-        innerRef={(c: HTMLElement | null) => (this._container = c)}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
