@@ -37,6 +37,10 @@ function SelectionTabs({
   setShowDonateForm: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const { t } = useTranslation();
+  const switchTab = (value: string): void => {
+    setDonationAmount(Number(value) as DonationAmount);
+  };
+
   return (
     <Row
       className={'donate-btn-group donation-tier-selection'}
@@ -52,6 +56,7 @@ function SelectionTabs({
         <Tabs
           className={'donate-btn-group'}
           defaultValue={donationAmount.toString()}
+          onValueChange={switchTab}
         >
           <TabsList className='nav-lists'>
             {subscriptionAmounts.map(value => (
