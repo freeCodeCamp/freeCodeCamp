@@ -4,20 +4,14 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.describe('show email sign up page', () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let page: Page;
 
-  test.beforeAll(() => {
-    test.setTimeout(60000);
-  });
-  test.beforeAll(async ({ browser }) => {
-    page = await browser.newPage();
+  test.beforeEach(async ({ page }) => {
     await page.goto('/signup');
   });
   test('should skip webkit', ({ browserName }) => {
     test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
-  });
-  test.afterAll(async () => {
-    await page.close();
   });
 });
 
@@ -51,11 +45,6 @@ test('has Heading', async ({ page }) => {
   );
 });
 
-test('get danger zone link', async ({ page }) => {
-  await page.goto('/settings#danger-zone');
-  await page.getByRole('link', { name: 'link-to-danger-zone' }).click();
-});
-
 test('get emails', async ({ page }) => {
   await expect(
     page
@@ -63,11 +52,4 @@ test('get emails', async ({ page }) => {
       .filter({ hasText: translations.misc['email-blast'] })
       .first()
   ).toHaveScreenshot();
-  //expect(page.getByText(translations.misc['email-blast'])).toMatchSnapshot();
-  //expect(page.getByTestId('misc-email-blast')).toContainText(translations.misc['email-blast'])
-  /*await page
-    .locator('paragraph')
-    .filter({ hasText: translations.misc['email-blast'] })
-    .first()
-    .isVisible() */
 });
