@@ -2,7 +2,7 @@
 For some reason this `div` is needed in order to overidde 
 the CSS rules of `ui-components`'s Alert. 
 */
-div .flash-message {
+div.flash-message {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
