@@ -278,11 +278,6 @@ li.disabled > a {
   }
 }
 
-.donation-modal .btn-link:focus {
-  outline-width: 1px;
-  outline-style: solid;
-}
-
 .donation-modal .modal-title {
   text-align: center;
   font-weight: 600;
