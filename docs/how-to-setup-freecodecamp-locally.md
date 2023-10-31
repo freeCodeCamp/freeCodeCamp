@@ -7,7 +7,7 @@ Follow these guidelines for setting up a development environment for freeCodeCam
 > - You can't use Windows Command Prompt, Git Bash or PowerShell to build and run the codebase.
 > - Note that if using Windows, the hardware requirements need to be more than [what we mention](how-to-setup-freecodecamp-locally?id=how-to-prepare-your-local-machine) to accommodate for WSL-based setup.
 
-If you are looking to make a one-off contribution, you should use Gitpod to make changes. The Gitpod setup launches a ready-to-code environment in a few minutes in your web browser. For contributing long-term, we recommend you setup freeCodeCamp on your local machine.
+If you are looking to make a one-off contribution, you should use Gitpod to make changes. The Gitpod setup launches a ready-to-code environment in a few minutes in your web browser. To contribute long-term, we recommend you set up freeCodeCamp on your local machine.
 
 Here are some pros and cons which should help you decide which option is best for you:
 
@@ -22,9 +22,9 @@ Here are some pros and cons which should help you decide which option is best fo
 
 ### How to Prepare a Gitpod Workspace
 
-We have automated the process of installing all the dependencies & tools you will need. With Gitpod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
+We have automated the process of installing all the dependencies & tools you will need. With Gitpod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to a computer or want to make one-time changes.
 
-There are various ways to launch an Gitpod workspace:
+There are various ways to launch a Gitpod workspace:
 
 1. **(Fastest)** Prepend `gitpod.io/#` in front of any URL from GitHub.
 
@@ -166,7 +166,7 @@ Now that you have downloaded a copy of your fork, you will need to set up an `up
 
 You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
 
-1. Change directory to the new freeCodeCamp directory:
+1. Change the directory to the new freeCodeCamp directory:
 
    ```console
    cd freeCodeCamp
@@ -213,24 +213,12 @@ The default API keys and environment variables are stored in the file `sample.en
 
 ```console
 # Create a copy of the "sample.env" and name it ".env".
-# Populate it with the necessary API keys and secrets:
+# Populate it with the necessary API keys and secrets
 ```
-
-<!-- tabs:start -->
-
-#### **macOS/Linux**
 
 ```console
 cp sample.env .env
 ```
-
-#### **Windows**
-
-```console
-copy sample.env .env
-```
-
-<!-- tabs:end -->
 
 The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
 
@@ -256,25 +244,9 @@ Before you can run the application locally, you will need to start the MongoDB s
 
 Start the MongoDB server in a separate terminal:
 
-  <!-- tabs:start -->
-
-#### **macOS/Linux**
-
 ```console
 mongod
 ```
-
-#### **Windows**
-
-- On Windows, you must specify the full path to the `mongod` binary
-
-```console
-"C:\Program Files\MongoDB\Server\3.6\bin\mongod"
-```
-
-Make sure to replace `3.6` with the version you have installed
-
-  <!-- tabs:end -->
 
 > [!TIP]
 > You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)

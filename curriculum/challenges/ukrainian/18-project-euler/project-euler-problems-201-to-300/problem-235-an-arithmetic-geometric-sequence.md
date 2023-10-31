@@ -1,6 +1,6 @@
 ---
 id: 5900f4571000cf542c50ff6a
-title: 'Problem 235: An Arithmetic Geometric sequence'
+title: 'Завдання 235: арифметично-геометрична послідовність'
 challengeType: 1
 forumTopicId: 301879
 dashedName: problem-235-an-arithmetic-geometric-sequence
@@ -8,11 +8,11 @@ dashedName: problem-235-an-arithmetic-geometric-sequence
 
 # --description--
 
-Given is the arithmetic-geometric sequence $u(k) = (900 - 3k)r^{k - 1}$.
+Дано арифметично-геометричну послідовність $u(k) = (900 - 3k)r^{k - 1}$.
 
-Let $s(n) = \sum_{k=1 \ldots n} u(k)$.
+Нехай $s(n) = \sum_{k=1 \ldots n} u(k)$.
 
-Find the value of $r$ for which $s(5000) = -600\\,000\\,000\\,000$.
+Знайдіть значення $r$, за якого $s(5000) = -600\\,000\\,000\\,000$.
 
 Дайте відповідь, заокруглену до дванадцяти знаків після коми.
 

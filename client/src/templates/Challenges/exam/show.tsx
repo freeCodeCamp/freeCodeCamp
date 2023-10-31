@@ -387,9 +387,11 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
             ) : (
               <div className='exam-wrapper'>
                 <div className='exam-header'>
-                  <div>{title}</div>
+                  <div data-playwright-test-label='exam-show-title'>
+                    {title}
+                  </div>
                   <span>|</span>
-                  <div>
+                  <div data-playwright-test-label='exam-show-question-time'>
                     {t('learn.exam.time', {
                       t: formatSecondsToTime(examTimeInSeconds)
                     })}
