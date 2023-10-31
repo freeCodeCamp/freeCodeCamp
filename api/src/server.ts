@@ -3,7 +3,8 @@
 import '@total-typescript/ts-reset';
 import { build } from './app';
 import { FREECODECAMP_NODE_ENV, PORT } from './utils/env';
-
+import React from 'react';
+import reactDOM from 'reactDOM';
 const envToLogger = {
   development: {
     transport: {
