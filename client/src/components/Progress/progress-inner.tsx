@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 
 import BezierEasing from 'bezier-easing';
+import { ProgressBar } from './progress-bar';
 
-interface ProgressBarInnerProps {
+interface ProgressInnerProps {
   completedPercent: number;
   title: string;
   meta: string;
@@ -32,18 +33,17 @@ function useIsInViewport(ref: React.RefObject<HTMLDivElement>) {
 
   return isIntersecting;
 }
-function ProgressBarInner({
+function ProgressInner({
   completedPercent,
   title,
   meta
-}: ProgressBarInnerProps): JSX.Element {
+}: ProgressInnerProps): JSX.Element {
   const [shownPercent, setShownPercent] = useState(0);
-  const [progressBarInnerWidth, setProgressBarInnerWidth] = useState(0);
   const [lastShopwnPercent, setLastShownPercent] = useState(0);
-  const progressBarInnerWrap = useRef<HTMLDivElement>(null);
-  const isProgressBarInViewport = useIsInViewport(progressBarInnerWrap);
+  const progressInnerWrap = useRef<HTMLDivElement>(null);
+  const isProgressInViewport = useIsInViewport(progressInnerWrap);
 
-  const animateProgressBarInner = (completedPercent: number) => {
+  const animateProgressInner = (completedPercent: number) => {
     if (completedPercent > 100) completedPercent = 100;
     if (completedPercent < 0) completedPercent = 0;
 
@@ -66,17 +66,12 @@ function ProgressBarInner({
     }, intervalLength);
   };
   useEffect(() => {
-    if (lastShopwnPercent !== completedPercent && isProgressBarInViewport) {
+    if (lastShopwnPercent !== completedPercent && isProgressInViewport) {
       setLastShownPercent(completedPercent);
-      animateProgressBarInner(completedPercent);
+      animateProgressInner(completedPercent);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isProgressBarInViewport]);
-
-  useEffect(() => {
-    if (progressBarInnerWrap.current)
-      setProgressBarInnerWidth(progressBarInnerWrap.current.offsetWidth);
-  }, [progressBarInnerWrap]);
+  }, [isProgressInViewport]);
 
   return (
     <>
@@ -84,25 +79,15 @@ function ProgressBarInner({
       <div
         className='progress-bar-wrap'
         aria-hidden='true'
-        ref={progressBarInnerWrap}
+        ref={progressInnerWrap}
       >
-        <div className='progress-bar-background'></div>
-        <div
-          className='progress-bar-percent'
-          data-testid='fcc-progress-bar-percent'
-          style={{ width: `${shownPercent}%` }}
-        >
-          <div
-            className='progress-bar-foreground'
-            style={{ width: progressBarInnerWidth }}
-          ></div>
-        </div>
+        <ProgressBar now={shownPercent} />
       </div>
       <div className='completion-block-meta'>{meta}</div>
     </>
   );
 }
 
-ProgressBarInner.displayName = 'ProgressBarInner';
+ProgressInner.displayName = 'ProgressInner';
 
-export default ProgressBarInner;
+export default ProgressInner;
