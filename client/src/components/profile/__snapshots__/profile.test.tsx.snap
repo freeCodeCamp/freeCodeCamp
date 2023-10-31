@@ -23,7 +23,13 @@ exports[`<Profile/> renders correctly 1`] = `
           <div
             class="avatar-container default-border"
           >
+            <span
+              class="sr-only"
+            >
+              buttons.profile
+            </span>
             <svg
+              aria-hidden="true"
               class="avatar default-avatar"
               height="500px"
               version="1.1"

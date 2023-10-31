@@ -463,7 +463,13 @@ Antes de [criar um pull request](how-to-open-a-pull-request.md) para suas modifi
 pnpm run test:curriculum
 ```
 
-2. Você também pode testar um bloco ou superbloco de desafios com esses comandos
+2. To test single challenge, you can use it challenge id with following command
+
+```
+FCC_CHALLENGE_ID=646cf6cbca98e258da65c979 pnpm run test:curriculum
+```
+
+3. You can also test a block or a superblock of challenges with these commands
 
 ```
 FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
@@ -473,43 +479,43 @@ FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
-Você também é capaz de testar um desafio individualmente seguindo as seguintes etapas:
+You are also able to test challenges by title by performing the following steps:
 
-1.  Mude para o diretório `curriculum`:
+1. Switch to the `curriculum` directory:
 
    ```
    cd curriculum
    ```
 
-2. Execute o comando a seguir para cada arquivo de desafio no qual você fez alteraçõess (substituindo `challenge-title-goes-here` com o título completo do desafio):
+2. Run the following for each challenge file for which you have changed (replacing `challenge-title-goes-here` with the full title of the challenge):
 
    ```
-   pnpm run test -- -g titulo-do-desafio-aqui
+   pnpm run test -- -g challenge-title-goes-here
    ```
 
 > [!TIP]
-> Você pode definir a váriavel de ambiente `LOCALE` no arquivo `.env` para o idioma do(s) desafio(s) que você precisa testar.
+> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
 >
-> Os valores aceitos de momento são `english` e `chinese`, com `english` sendo o valor padrão.
+> The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
-## Propondo um Pull Request (PR)
+## Proposing a Pull Request (PR)
 
-Depois de fazer o commit de suas alterações, confira aqui [como abrir um Pull Request](how-to-open-a-pull-request.md).
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
-## Links úteis
+## Useful Links
 
-Criação e edição de desafios:
+Creating and Editing Challenges:
 
-1. [Tipos de desafio](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - o que significam os valores do tipo de desafio numérico (enum).
+1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
 
-2. [Contribuindo para o FreeCodeCamp - Escrevendo testes para desafios de ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - um vídeo que acompanha [Ethan Arrowood](https://twitter.com/ArrowoodTech) durante sua contribuição para a versão antiga do currículo.
+2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
 
-## Scripts auxiliares
+## Helper Scripts
 
 > [!NOTE]
-> Se estiver trabalhando com os desafios baseados em passos, consulte a seção [Trabalho com projetos práticos](how-to-work-on-practice-projects.md).
+> If you are working with the step-based challenges, refer to the [Work on Practice Projects](how-to-work-on-practice-projects.md) section.
 
-Existem alguns scripts auxiliares que podem ser usados para gerenciar os desafios em um bloco. Observe que todos esses comandos devem ser executados no diretório do bloco. Por exemplo:
+There are a few helper scripts that can be used to manage the challenges in a block. Note that these commands should all be run in the block directory. For example:
 
 ```bash
 cd curriculum/challenges/english/02-javascript-algorithms-and-data-structures/basic-algorithm-scripting
@@ -517,33 +523,33 @@ cd curriculum/challenges/english/02-javascript-algorithms-and-data-structures/ba
 
 ### Adicionar um novo desafio
 
-Para adicionar um novo desafio no final de um bloco, chame o script:
+To add a new challenge at the end of a block, call the script:
 
 ```bash
 pnpm run create-next-challenge
 ```
 
-Ele solicitará a informação do desafio e criará o arquivo de desafio, atualizando o arquivo `meta.json` com as novas informações de desafio.
+This will prompt you for the challenge information and create the challenge file, updating the `meta.json` file with the new challenge information.
 
 ### Excluir um desafio
 
-Para excluir um desafio, chame o script:
+To delete a challenge, call the script:
 
 ```bash
 pnpm run delete-challenge
 ```
 
-Ele solicitará que você selecione qual desafio deve ser excluído. Em seguida, excluirá o arquivo e atualizará o arquivo `meta.json` para remover o desafio da ordem.
+This will prompt you to select which challenge should be deleted, then delete the file and update the `meta.json` file to remove the challenge from the order.
 
 ### Inserir um desafio
 
-Para inserir um desafio antes de um desafio existente, chame o script:
+To insert a challenge before an existing challenge, call the script:
 
 ```bash
 pnpm run insert-challenge
 ```
 
-Ele solicitará a informação do desafio e, em seguida, o desafio será inserido antes do desafio informado. Por exemplo, se suas escolhas forem:
+This will prompt you for the challenge information, then for the challenge to insert before. For example, if your choices are:
 
 ```bash
 a
@@ -551,37 +557,37 @@ b
 c
 ```
 
-E se você escolher `b`, a nova ordem será:
+And you choose `b`, your new order will be:
 
 ```bash
 a
-novo desafio
+new challenge
 b
 c
 ```
 
 ### Atualizar a ordem dos desafios
 
-Se você precisar reordenar manualmente os desafios, chame o script:
+If you need to manually re-order the challenges, call the script:
 
 ```bash
 pnpm run update-challenge-order
 ```
 
-Ele vai orientá-lo através de um processo interativo para selecionar a ordem dos desafios.
+This will take you through an interactive process to select the order of the challenges.
 
 ## Solução de problemas
 
 ### Loop infinito detectado
 
-Se você ver o seguinte erro no console ao pré-visualizar um desafio:
+If you see the following error in the console while previewing a challenge:
 
 ```text
 Potential infinite loop detected on line <number>...
 ```
 
-Isso significa que o plug-in de proteção de loops encontrou um loop de longa duração ou uma função recursiva. Se o desafio precisar fazer isso (por exemplo, contém um loop de eventos que deve ser executado indefinidamente), então você pode impedir que o plug-in seja usado na visualização. Para fazer isso, adicione `disableLoopProtectPreview: true` ao arquivo `meta.json` do bloco.
+This means that the loop-protect plugin has found a long-running loop or recursive function. If your challenge needs to do that (e.g. it contains an event loop that is supposed to run indefinitely), then you can prevent the plugin from being used in the preview. To do so, add `disableLoopProtectPreview: true` to the block's `meta.json` file.
 
-Se os testes demandam muitos cálculos, você poderá ver esse erro quando eles forem executados. Se isso acontecer, adicione `disableLoopProtectPreview: true` ao arquivo `meta.json` do bloco.
+If your tests are computationally intensive, then you may see this error when they run. If this happens then you can add `disableLoopProtectTests: true` to the block's `meta.json` file.
 
-Normalmente, não é necessário ter os dois definidos como true, Defina-os, apenas, conforme necessário.
+It's not typically necessary to have both set to true, so only set them as needed.
