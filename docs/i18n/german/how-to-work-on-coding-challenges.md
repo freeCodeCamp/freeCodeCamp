@@ -4,7 +4,7 @@ Unser Ziel ist es, ein unterhaltsames und voll interaktives Lernerlebnis zu entw
 
 Sich interaktive Programmieraufgaben auszudenken ist schwierig. Es wäre viel einfacher, eine ausführliche Erklärung zu schreiben oder ein Video-Tutorial zu erstellen. Aber für unseren Hauptstudienplan bleiben wir bei dem, was für die meisten Menschen am besten funktioniert - ein vollständig interaktives, videospielähnliches Erlebnis.
 
-Wir wollen, dass die Teilnehmer einen Flow-Zustand erreichen. Wir wollen, dass sie in Schwung kommen und so schnell wie möglich Fortschritte in unserem Studienplan machen. Wir wollen, dass sie mit Selbstvertrauen in die Projekte gehen und einen umfassenden Einblick in Programmierkonzepte bekommen.
+Wir wollen, dass die Teilnehmer einen Flow-Zustand erreichen. Wir wollen, dass sie in Schwung kommen und so schnell wie möglich Fortschritte in unserem Studienplan machen. We want them to go into the projects with confidence and gain wide exposure to programming concepts.
 
 Beachte, dass wir für Version 7.0 des freeCodeCamp-Studienplan zu einem [vollständig projektorientierten Modell mit viel mehr Wiederholungen](https://www.freecodecamp.org/news/python-curriculum-is-live/) übergehen.
 
@@ -553,7 +553,7 @@ b
 c
 ```
 
-And you choose `b`, your new order will be:
+If you choose `b`, your new order will be:
 
 ```bash
 a
