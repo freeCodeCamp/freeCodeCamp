@@ -45,7 +45,6 @@ test('Should render UI correctly', async ({ page }) => {
   const lowerJawTips = page.getByTestId('failing-test-feedback');
   await expect(codeCheckButton).toHaveText('Check Your Code (Ctrl + Enter)');
   await expect(lowerJawTips).toHaveCount(0);
-  await codeCheckButton.click();
 });
 
 test('Should display full button text on desktop but hide (Ctrl + Enter on mobile)', async ({
