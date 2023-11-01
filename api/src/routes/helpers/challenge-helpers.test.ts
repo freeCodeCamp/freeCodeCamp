@@ -113,9 +113,27 @@ describe('Challenge Helpers', () => {
       });
     });
 
-    test("handles failure to find the trophy in the user's achievements", async () => {
+    test('handles the case where the user has no achievements', async () => {
       const fetchProfile = createFetchMock({ body: { userId } });
       const fetchGameStatus = createFetchMock({ body: { achievements: [] } });
+      jest
+        .spyOn(globalThis, 'fetch')
+        .mockImplementationOnce(fetchProfile)
+        .mockImplementationOnce(fetchGameStatus);
+
+      const verification = await verifyTrophyWithMicrosoft(verifyData);
+
+      expect(verification).toEqual({
+        type: 'error',
+        message: 'flash.ms.trophy.err-6'
+      });
+    });
+
+    test("handles failure to find the trophy in the user's achievements", async () => {
+      const fetchProfile = createFetchMock({ body: { userId } });
+      const fetchGameStatus = createFetchMock({
+        body: { achievements: [{ awardUid: 'fake-id' }] }
+      });
       jest
         .spyOn(globalThis, 'fetch')
         .mockImplementationOnce(fetchProfile)

@@ -603,6 +603,10 @@ export const schemas = {
         }),
         Type.Object({
           type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.trophy.err-6')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
           message: Type.Literal('flash.ms.profile.err'),
           variables: Type.Object({
             msUsername: Type.String()

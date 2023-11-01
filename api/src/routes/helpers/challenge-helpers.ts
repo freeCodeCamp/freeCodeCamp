@@ -112,6 +112,13 @@ export async function verifyTrophyWithMicrosoft({
   const { achievements } = (await msGameStatusApiRes.json()) as {
     achievements?: { awardUid: string }[];
   };
+
+  if (!achievements?.length)
+    return {
+      type: 'error',
+      message: 'flash.ms.trophy.err-6'
+    } as const;
+
   const earnedTrophy = achievements?.some(a => a.awardUid === msTrophyId);
 
   if (earnedTrophy) {
