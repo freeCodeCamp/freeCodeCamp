@@ -44,7 +44,7 @@ Sobald du die notwendigen Ressourcen installiert hast, musst du deine Entwicklun
 
 [Forking](https://help.github.com/articles/about-forks/) ist ein Schritt, bei dem du deine eigene Kopie des Repositorys (auch bekannt als _Repo_) auf GitHub erhältst.
 
-Dies ist wichtig, da es dir ermöglicht, an deiner eigenen Kopie der freeCodeCamp mobile App auf GitHub zu arbeiten oder dein Repository herunterzuladen (zu klonen), um lokal daran zu arbeiten. Später kannst du über einen Pull Request (PR) beantragen, dass Änderungen aus deinem Fork in das Haupt-Repository gezogen werden.
+This is essential, as it allows you to work on your own copy of the freeCodeCamp mobile app on GitHub, or to download (clone) your repository to work on locally. Später kannst du über einen Pull Request (PR) beantragen, dass Änderungen aus deinem Fork in das Haupt-Repository gezogen werden.
 
 > [!TIP] Das Haupt-Repository unter `https://github.com/freeCodeCamp/mobile` wird oft als `upstream`-Repository bezeichnet.
 > 
@@ -361,14 +361,14 @@ Folge diesen Schritten:
 
 > [!NOTE] You only need to follow this section if you're modifying the challenge test runner in the mobile app. Otherwise, you can go to the next section on [how to open a pull request](#proposing-a-pull-request-pr).
 
-1. Clone a copy of the [freeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) locally outside of your local copy of freeCodeCamp mobile repo. Your folder structure should look like this:
+1. Clone a copy of the [freeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) locally outside of your local copy of the freeCodeCamp mobile repo. Your folder structure should look like this:
 
     ```console
     ├── freeCodeCamp
     ├── mobile
     ```
 
-2. Change directory to the freeCodeCamp repo:
+2. Change the directory to the freeCodeCamp repo:
 
     ```console
     cd freeCodeCamp
@@ -480,7 +480,7 @@ Wenn du mit einem anderen Betriebssystem arbeitest und/oder immer noch Probleme 
 
 ### Probleme mit der Benutzeroberfläche, Build-Fehler usw.
 
-Wenn du Probleme mit der Benutzeroberfläche oder Build-Fehler hast, kann eine Bereinigung nützlich sein:
+If you face issues with the UI, or build errors a cleanup can be useful:
 
 ```console
 flutter clean
@@ -488,7 +488,7 @@ flutter clean
 
 ### Issues Installing Dependencies
 
-Wenn du bei der Installation der Abhängigkeiten Fehler erhältst, vergewissere dich bitte, dass du dich nicht in einem eingeschränkten Netzwerk befindest oder dass deine Firewall-Einstellungen den Zugriff auf die Ressourcen nicht verhindern.
+If you get errors while installing the dependencies, please make sure that you are not in a restricted network or that your firewall settings do not prevent you from accessing resources.
 
 Be patient as the first-time setup can take a while depending on your network bandwidth.
 

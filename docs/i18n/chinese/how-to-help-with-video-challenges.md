@@ -125,7 +125,7 @@ Add/Update the question text under the part that shows:
 ## --text--
 ```
 
-Add/Update answers (`Answer 1`, `Answer 2`, and so on) under `## --answers--`. Make sure to update the number under `## --video-solution--` with the correct answer number. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
+Add/Update answers (`Answer 1`, `Answer 2`, and so on) under `## --answers--`. Make sure to update the number under `## --video-solution--` with the correct answer number. You can add more possible answers using the same format. The questions and answers can be surrounded with quotation marks.
 
 ### Question examples
 

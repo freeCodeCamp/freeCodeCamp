@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
   binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
 }
 
@@ -200,6 +200,7 @@ model MsUsername {
   userId     String @db.ObjectId
   ttl        Int
   msUsername String
+
   @@index([userId, id], map: "userId_1__id_1")
 }
 

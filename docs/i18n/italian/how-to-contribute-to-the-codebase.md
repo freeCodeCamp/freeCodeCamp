@@ -23,7 +23,7 @@ Segui questi passaggi:
    nothing to commit, working directory clean
    ```
 
-   Se ottieni un messaggio diverso, allora non sei sul main oppure la cartella di lavoro non è pulita, quindi risolvi tutti i file/commit in sospeso e fai il checkout su `main`:
+   If you got a different message, then you aren't on main or your working directory isn't clean, resolve any outstanding files/commits and checkout `main`:
 
    ```console
    git checkout main
@@ -55,7 +55,7 @@ Segui questi passaggi:
    git push origin main --force
    ```
 
-   Puoi controllare che il tuo main attuale corrisponda con upstream/main facendo un diff:
+   You can validate that your current main matches the upstream/main by performing a diff:
 
    ```console
    git diff upstream/main
