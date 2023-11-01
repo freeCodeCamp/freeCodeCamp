@@ -752,7 +752,7 @@ Luke, I am your father
 
 Reported by:
 Username: ${testUser?.username ?? ''}
-Name:
+Name: 
 Email: foo@bar.com
 
 Thanks and regards,
