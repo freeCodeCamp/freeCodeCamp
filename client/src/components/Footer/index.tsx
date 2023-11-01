@@ -32,6 +32,7 @@ function Footer(): JSX.Element {
             aria-labelledby='trending-guides'
             className='trending-guides-articles list-none'
           >
+          {/*Footer articles are wraped inside li*/}
             <li>
               <Link external={false} to={t('trending:article0link')}>
                 {t('trending:article0title')}
