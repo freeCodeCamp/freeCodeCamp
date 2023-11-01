@@ -908,13 +908,13 @@
     "set-claim": "Solicite e veja sua certificação"
   },
   "forum-help": {
-    "browser-info": "**Informações de seu navegador:**",
+    "browser-info": "Your browser information:",
     "user-agent": "Agente de usuário: <code>{{userAgent}}</code>",
-    "challenge": "**Informações do desafio:**",
-    "whats-happening": "**Conte-nos o que está acontecendo:**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "Descreva detalhadamente o problema aqui.",
-    "camper-project": "**O(s) link(s) para seu projeto**",
-    "camper-code": "**Seu código até o momento**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "AVISO",
     "too-long-one": "O código de seed do desafio e/ou sua solução excederam o comprimento máximo que podemos transportar do desafio.",
     "too-long-two": "Você precisa realizar uma etapa adicional aqui para que o código que você escreveu apresente um formato de fácil leitura.",
