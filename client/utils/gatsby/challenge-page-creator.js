@@ -54,6 +54,11 @@ const dialogue = path.resolve(
   '../../src/templates/Challenges/dialogue/show.tsx'
 );
 
+const fillInTheBlank = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/fill-in-the-blank/show.tsx'
+);
+
 const views = {
   backend,
   classic,
@@ -64,7 +69,8 @@ const views = {
   odin,
   exam,
   msTrophy,
-  dialogue
+  dialogue,
+  fillInTheBlank
   // quiz: Quiz
 };
 
