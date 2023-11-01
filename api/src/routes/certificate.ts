@@ -49,7 +49,7 @@ function getFallbackFullStackDate(
  * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
  * @param done The callback to signal that the plugin is ready.
  */
-export const certRoutes: FastifyPluginCallbackTypebox = (
+export const certificateRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
   done
