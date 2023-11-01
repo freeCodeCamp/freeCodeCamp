@@ -32,13 +32,13 @@ assert.match(code, /const\s+Person\s*=\s*function\s*\(\s*first\s*,\s*last\s*\)\s
 Ви не повинні перепризначати параметр `first`.
 
 ```js
-assert.notMatch(code, /first\s*=\s*/);
+assert.notMatch(code, /\bfirst\s*=\s*/);
 ```
 
 Ви не повинні перепризначати параметр `last`.
 
 ```js
-assert.notMatch(code, /last\s*=\s*/);
+assert.notMatch(code, /\blast\s*=\s*/);
 ```
 
 Не треба додавати жодних властивостей. `Object.keys(Person).length` завжди має повертати 6.
