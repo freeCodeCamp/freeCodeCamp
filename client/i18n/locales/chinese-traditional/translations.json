@@ -908,13 +908,13 @@
     "set-claim": "領取並查看你的認證"
   },
   "forum-help": {
-    "browser-info": "**你的瀏覽器信息：**",
+    "browser-info": "Your browser information:",
     "user-agent": "用戶代理是： <code>{{userAgent}}</code>",
-    "challenge": "**Challenge Information:**",
-    "whats-happening": "**告訴我們發生了什麼：**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "在此詳細描述你的問題。",
-    "camper-project": "**你的項目鏈接**",
-    "camper-code": "**你目前的代碼**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "警告",
     "too-long-one": "挑戰的種子代碼和/或你的解決方案超過了我們從挑戰傳送的最大長度。",
     "too-long-two": "你需要在此採取額外步驟，以確保你寫的代碼可以輕鬆地被閱讀。",

@@ -908,13 +908,13 @@
     "set-claim": "领取并查看你的认证"
   },
   "forum-help": {
-    "browser-info": "**你的浏览器信息：**",
+    "browser-info": "Your browser information:",
     "user-agent": "用户代理是： <code>{{userAgent}}</code>",
-    "challenge": "**Challenge Information:**",
-    "whats-happening": "**告诉我们发生了什么：**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "在此详细描述你的问题。",
-    "camper-project": "**你的项目链接**",
-    "camper-code": "**你目前的代码**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "警告",
     "too-long-one": "挑战的种子代码和/或你的解决方案超过了我们从挑战传送的最大长度。",
     "too-long-two": "你需要在此采取额外步骤，以确保你写的代码可以轻松地被阅读。",
