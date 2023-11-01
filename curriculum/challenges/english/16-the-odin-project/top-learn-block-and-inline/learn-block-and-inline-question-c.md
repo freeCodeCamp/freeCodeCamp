@@ -1,5 +1,5 @@
 ---
-id: 6542186550bc5c6ed8abf740
+id: 6542213650bc5c6ed8abf748
 title: Learn Block and Inline Question C
 challengeType: 15
 dashedName: learn-block-and-inline-question-c
@@ -21,7 +21,7 @@ Which element is described as an inline element in the text?
 
 ## --answers--
 
-`<div>`tag
+`<div>` tag
 
 ---
 
