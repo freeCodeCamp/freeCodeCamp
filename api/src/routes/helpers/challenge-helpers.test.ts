@@ -3,6 +3,7 @@ import type {
   CompletedChallenge
 } from '@prisma/client';
 
+import { createFetchMock } from '../../../jest.utils';
 import {
   canSubmitCodeRoadCertProject,
   verifyTrophyWithMicrosoft
@@ -73,26 +74,80 @@ describe('Challenge Helpers', () => {
   });
 
   describe('verifyTrophyWithMicrosoft', () => {
-    test("calls Microsoft's profile and gamestatus apis", async () => {
-      const userId = 'abc123';
-      const mockedFetch = jest
-        .fn()
-        .mockResolvedValue(
-          Promise.resolve({ ok: true, json: () => Promise.resolve({ userId }) })
-        );
+    const userId = 'abc123';
+    const msUsername = 'ANRandom';
+    const msTrophyId = 'learn.wwl.get-started-c-sharp-part-3.trophy';
+    const verifyData = { msUsername, msTrophyId };
+    const gamestatusUrl = `https://learn.microsoft.com/api/gamestatus/${userId}`;
 
-      jest.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
+    afterEach(() => jest.clearAllMocks());
 
-      const msUsername = 'ANRandom';
-      const msTrophyId = 'learn.wwl.get-started-c-sharp-part-3.trophy';
-      const profileUrl = `https://learn.microsoft.com/api/profiles/${msUsername}`;
-      const gamestatusUrl = `https://learn.microsoft.com/api/gamestatus/${userId}`;
+    test("handles failure to reach Microsoft's profile api", async () => {
+      const notOk = createFetchMock({ ok: false });
+      jest.spyOn(globalThis, 'fetch').mockImplementation(notOk);
 
-      await verifyTrophyWithMicrosoft({ msUsername, msTrophyId });
+      const verification = await verifyTrophyWithMicrosoft(verifyData);
 
-      expect(mockedFetch).toHaveBeenCalledTimes(2);
-      expect(mockedFetch).toHaveBeenNthCalledWith(1, profileUrl);
-      expect(mockedFetch).toHaveBeenNthCalledWith(2, gamestatusUrl);
+      expect(verification).toEqual({
+        type: 'error',
+        message: 'flash.ms.profile.err',
+        variables: {
+          msUsername
+        }
+      });
+    });
+
+    test("handles failure to reach Microsoft's gamestatus api", async () => {
+      const fetchProfile = createFetchMock({ body: { userId } });
+      const fetchGameStatus = createFetchMock({ ok: false });
+      jest
+        .spyOn(globalThis, 'fetch')
+        .mockImplementationOnce(fetchProfile)
+        .mockImplementationOnce(fetchGameStatus);
+
+      const verification = await verifyTrophyWithMicrosoft(verifyData);
+
+      expect(verification).toEqual({
+        type: 'error',
+        message: 'flash.ms.trophy.err-3'
+      });
+    });
+
+    test("handles failure to find the trophy in the user's achievements", async () => {
+      const fetchProfile = createFetchMock({ body: { userId } });
+      const fetchGameStatus = createFetchMock({ body: { achievements: [] } });
+      jest
+        .spyOn(globalThis, 'fetch')
+        .mockImplementationOnce(fetchProfile)
+        .mockImplementationOnce(fetchGameStatus);
+
+      const verification = await verifyTrophyWithMicrosoft(verifyData);
+
+      expect(verification).toEqual({
+        type: 'error',
+        message: 'flash.ms.trophy.err-4',
+        variables: {
+          msUsername
+        }
+      });
+    });
+
+    test('returns msGameStatusApiUrl on success', async () => {
+      const fetchProfile = createFetchMock({ body: { userId } });
+      const fetchGameStatus = createFetchMock({
+        body: { achievements: [{ awardUid: msTrophyId }] }
+      });
+      jest
+        .spyOn(globalThis, 'fetch')
+        .mockImplementationOnce(fetchProfile)
+        .mockImplementationOnce(fetchGameStatus);
+
+      const verification = await verifyTrophyWithMicrosoft(verifyData);
+
+      expect(verification).toEqual({
+        type: 'success',
+        msGameStatusApiUrl: gamestatusUrl
+      });
     });
   });
 });
