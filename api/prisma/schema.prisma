@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
   binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
 }
 
@@ -193,6 +193,15 @@ model sessions {
   session String
 
   @@index([expires], map: "expires_1")
+}
+
+model MsUsername {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  userId     String @db.ObjectId
+  ttl        Int
+  msUsername String
+
+  @@index([userId, id], map: "userId_1__id_1")
 }
 
 model Exam {
