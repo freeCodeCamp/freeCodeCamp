@@ -12,11 +12,11 @@ dashedName: linear-equations
 
 這是<a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">和上兩個視頻配套的 Colab 筆記本</a>，這樣你就可以看到公式。
 
-# --question--
-
-## --任務--
+# --任務--
 
 在你的代數 Colab 筆記本上添加代碼，通過點或通過方程輸入繪製函數圖像。
+
+# --question--
 
 ## --text--
 

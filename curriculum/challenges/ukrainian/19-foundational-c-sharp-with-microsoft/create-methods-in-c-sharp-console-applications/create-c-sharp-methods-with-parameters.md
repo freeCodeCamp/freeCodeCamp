@@ -12,11 +12,11 @@ dashedName: create-c-sharp-methods-with-parameters
 1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/</a> та виконайте всі завдання модуля «Створіть методи C# з параметрами». Це **обов’язково**, щоб отримати трофей зі «Створення методів в консольних застосунках C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Виконайте метод <a href="https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/" target="_blank" rel="noreferrer">«Створіть методи C# з параметрами»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
+# --question--
 
 ## --text--
 

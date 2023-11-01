@@ -39,11 +39,11 @@ Por padrão, qualquer texto agregado a uma tag de âncora sem um atributo `href`
 
 Vale a pena notar que você pode usar tags de âncora para vincular qualquer tipo de recurso na internet, não apenas outros documentos HTML. Você pode vincular vídeos, arquivos em PDF, imagens e assim por diante. Na maioria das vezes, no entanto, você vinculará a tag a outros documentos HTML.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Assista ao vídeo de Kevin Powell sobre links do HTML acima.
+
+# --question--
 
 ## --text--
 

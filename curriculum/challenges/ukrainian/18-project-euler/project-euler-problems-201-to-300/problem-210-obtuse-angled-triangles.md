@@ -1,6 +1,6 @@
 ---
 id: 5900f43e1000cf542c50ff50
-title: 'Problem 210: Obtuse Angled Triangles'
+title: 'Завдання 210: тупокутні трикутники'
 challengeType: 1
 forumTopicId: 301852
 dashedName: problem-210-obtuse-angled-triangles
@@ -8,13 +8,13 @@ dashedName: problem-210-obtuse-angled-triangles
 
 # --description--
 
-Consider the set $S(r)$ of points ($x$,$y$) with integer coordinates satisfying $|x| + |y| ≤ r$.
+Розглянемо множину $S(r)$ точок ($x$,$y$) з цілочисельними координатами, які задовільняють умову $|x| + |y| ≤ r$.
 
-Let $O$ be the point (0,0) and $C$ the point ($\frac{r}{4}$,$\frac{r}{4}$).
+Нехай $O$ буде точкою (0,0) та $C$ буде точкою ($\frac{r}{4}$,$\frac{r}{4}$).
 
-Let $N(r)$ be the number of points $B$ in $S(r)$, so that the triangle $OBC$ has an obtuse angle, i.e. the largest angle $α$ satisfies $90°&lt;α&lt;180°$.
+Нехай $N(r)$ буде кількістю точок $B$ в $S(r)$, за яких трикутник $OBC$ має тупий кут, тобто найбільший кут $α$ задовільняє умову $90°&lt;α&lt;180°$.
 
-So, for example, $N(4)=24$ and $N(8)=100$.
+Таким чином, наприклад, $N(4)=24$ та $N(8)=100$.
 
 Чому дорівнює $N(1\\,000\\,000\\,000)$?
 
