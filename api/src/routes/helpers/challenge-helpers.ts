@@ -1,5 +1,4 @@
 import type { Prisma } from '@prisma/client';
-import fetch from 'node-fetch';
 
 import type { ProgressTimestamp } from '../../utils/progress';
 

@@ -17,8 +17,6 @@ import {
 import { completedTrophyChallenges } from '../../__mocks__/exam';
 import { GeneratedAnswer } from '../utils/exam-types';
 
-jest.mock('node-fetch');
-const mockedFetch = fetch as unknown as jest.Mock;
 jest.mock('./helpers/challenge-helpers', () => {
   const originalModule = jest.requireActual<
     typeof import('./helpers/challenge-helpers')
@@ -1155,13 +1153,6 @@ describe('challengeRoutes', () => {
           message: 'flash.ms.trophy.err-5'
         } as const;
 
-        const mockProfileResponse = () =>
-          Promise.resolve({
-            ok: true,
-            json: () => Promise.resolve({ userId: msUserId })
-          });
-
-
         describe('validation', () => {
           test('POST rejects requests without valid ids', async () => {
             const resNoId = await superRequest(
@@ -1213,7 +1204,6 @@ describe('challengeRoutes', () => {
             });
           }
           afterEach(async () => {
-            mockedFetch.mockReset();
             await fastifyTestInstance.prisma.msUsername.deleteMany({
               where: { userId: defaultUserId }
             });
@@ -1309,26 +1299,6 @@ describe('challengeRoutes', () => {
             expect(res2.statusCode).toBe(403);
           });
 
-          // TODO: move this to tests of verifyTrophyWithMicrosoft
-          test("POST calls Microsoft's profile and gamestatus apis", async () => {
-            const userId = 'abc123';
-            mockedFetch.mockClear();
-            mockedFetch.mockImplementationOnce(mockProfileResponse);
-            const msUsername = 'ANRandom';
-            await createMSUsernameRecord(msUsername);
-            const profileUrl = `https://learn.microsoft.com/api/profiles/${msUsername}`;
-            const gamestatusUrl = `https://learn.microsoft.com/api/gamestatus/${userId}`;
-
-            await superRequest('/ms-trophy-challenge-completed', {
-              method: 'POST',
-              setCookies
-            }).send({ id: trophyChallengeId });
-
-            expect(mockedFetch).toHaveBeenCalledTimes(2);
-            expect(mockedFetch).toHaveBeenNthCalledWith(1, profileUrl);
-            expect(mockedFetch).toHaveBeenNthCalledWith(2, gamestatusUrl);
-          });
-
           test('POST handle expected errors', async () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() => {
               throw new Error('Network error');
@@ -1361,9 +1331,10 @@ describe('challengeRoutes', () => {
               setCookies
             }).send({ id: trophyChallengeId });
 
-            const user = await fastifyTestInstance.prisma.user.findUniqueOrThrow({
-              where: { id: defaultUserId }
-            });
+            const user =
+              await fastifyTestInstance.prisma.user.findUniqueOrThrow({
+                where: { id: defaultUserId }
+              });
             const completedDate = user.completedChallenges[0]?.completedDate;
 
             expect(res.body).toStrictEqual({
@@ -1398,10 +1369,13 @@ describe('challengeRoutes', () => {
             const msUsername = 'ANRandom';
             await createMSUsernameRecord(msUsername);
 
-            const resOne = await superRequest('/ms-trophy-challenge-completed', {
-              method: 'POST',
-              setCookies
-            }).send({ id: trophyChallengeId });
+            const resOne = await superRequest(
+              '/ms-trophy-challenge-completed',
+              {
+                method: 'POST',
+                setCookies
+              }
+            ).send({ id: trophyChallengeId });
 
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
@@ -1409,10 +1383,13 @@ describe('challengeRoutes', () => {
                 msGameStatusApiUrl: solutionUrl
               })
             );
-            const resTwo = await superRequest('/ms-trophy-challenge-completed', {
-              method: 'POST',
-              setCookies
-            }).send({ id: trophyChallengeId2 });
+            const resTwo = await superRequest(
+              '/ms-trophy-challenge-completed',
+              {
+                method: 'POST',
+                setCookies
+              }
+            ).send({ id: trophyChallengeId2 });
 
             // sending the second trophy challenge again should not change
             // anything
