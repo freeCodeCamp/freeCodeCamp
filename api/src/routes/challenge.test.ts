@@ -1128,10 +1128,6 @@ describe('challengeRoutes', () => {
         const nonTrophyChallengeId = 'bd7123c8c441eddfaeb5bdef';
         const solutionUrl = `https://learn.microsoft.com/api/gamestatus/${msUserId}`;
 
-        const msProfileRequestFailed = {
-          type: 'error',
-          message: 'flash.ms.profile.err'
-        } as const;
         const idIsMissingOrInvalid = {
           type: 'error',
           message: 'flash.ms.trophy.err-2'
@@ -1139,14 +1135,6 @@ describe('challengeRoutes', () => {
         const userHasNotLinkedTheirAccount = {
           type: 'error',
           message: 'flash.ms.trophy.err-1'
-        } as const;
-        const msGamestatusRequestFailed = {
-          type: 'error',
-          message: 'flash.ms.trophy.err-3'
-        } as const;
-        const userDoesNotHaveTheTrophy = {
-          type: 'error',
-          message: 'flash.ms.trophy.err-4'
         } as const;
         const unexpectedError = {
           type: 'error',
@@ -1226,80 +1214,33 @@ describe('challengeRoutes', () => {
             expect(res.statusCode).toBe(403);
           });
 
-          test("POST rejects requests if Microsoft's profile api responds with an error", async () => {
-            const msUsername = 'ANRandom';
-            const msProfileRequestFailedResponse = {
-              ...msProfileRequestFailed,
-              variables: { msUsername }
-            };
-            await createMSUsernameRecord(msUsername);
-
-            mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
-              Promise.resolve({
-                type: 'error',
-                message: 'flash.ms.profile.err',
-                variables: {
-                  msUsername
-                }
-              })
-            );
-
-            const res = await superRequest('/ms-trophy-challenge-completed', {
-              method: 'POST',
-              setCookies
-            }).send({ id: trophyChallengeId });
-
-            expect(res.body).toStrictEqual(msProfileRequestFailedResponse);
-            expect(res.statusCode).toBe(403);
-
-            // TODO: Since the verifyTrophyWithMicrosoft function gives the same
-            // response for both !response.ok and when the response is missing the
-            // userId, there's no need for a second test here. However,
-            // verifyTrophyWithMicrosoft itself should be tested.
-          });
-
-          test("POST rejects requests if Microsoft's api responds that they do not have the trophy", async () => {
-            mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
-              Promise.resolve({
-                type: 'error',
-                message: 'flash.ms.trophy.err-3'
-              })
-            );
+          test("POST rejects requests if Microsoft's api responds with an error", async () => {
             const msUsername = 'ANRandom';
             await createMSUsernameRecord(msUsername);
-
-            const res = await superRequest('/ms-trophy-challenge-completed', {
-              method: 'POST',
-              setCookies
-            }).send({ id: trophyChallengeId });
-
-            expect(res.body).toStrictEqual(msGamestatusRequestFailed);
-            expect(res.statusCode).toBe(403);
-
-            mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
-              Promise.resolve({
-                type: 'error',
-                message: 'flash.ms.trophy.err-4',
-                variables: {
-                  msUsername
-                }
-              })
-            );
-            const res2 = await superRequest('/ms-trophy-challenge-completed', {
-              method: 'POST',
-              setCookies
-            }).send({ id: trophyChallengeId });
-
-            expect(res2.body).toStrictEqual({
-              ...userDoesNotHaveTheTrophy,
+            // This can be any error that the route can serialize. Other than
+            // that, the details do not matter, since whatever
+            // verifyTrophyWithMicrosoft returns will be returned by the route.
+            const verifyError = {
+              type: 'error',
+              message: 'flash.ms.profile.err',
               variables: {
                 msUsername
               }
-            });
-            expect(res2.statusCode).toBe(403);
+            };
+            mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
+              Promise.resolve(verifyError)
+            );
+
+            const res = await superRequest('/ms-trophy-challenge-completed', {
+              method: 'POST',
+              setCookies
+            }).send({ id: trophyChallengeId });
+
+            expect(res.body).toStrictEqual(verifyError);
+            expect(res.statusCode).toBe(403);
           });
 
-          test('POST handle expected errors', async () => {
+          test('POST handles unexpected errors', async () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() => {
               throw new Error('Network error');
             });
