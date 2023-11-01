@@ -60,7 +60,7 @@
     "method-override": "3.0.0",
     "moment": "2.29.3",
     "moment-timezone": "0.5.33",
-    "mongodb": "3.6.9",
+    "mongodb": "3.6.10",
     "morgan": "1.10.0",
     "nanoid": "3.3.4",
     "no-profanity": "^1.4.2",
