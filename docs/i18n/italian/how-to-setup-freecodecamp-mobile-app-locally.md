@@ -11,7 +11,7 @@ Inizia installando i prerequisiti software per il tuo sistema operativo.
 | Prerequisito                                  | Versione | Note                                         |
 | --------------------------------------------- | -------- | -------------------------------------------- |
 | [Flutter](https://flutter.dev/)               | `3.x`    | -                                            |
-| Dart (viene fornito in dotazione con Flutter) | `2.x`    | Usiamo la versione in dotazione con Flutter. |
+| Dart (viene fornito in dotazione con Flutter) | `3.x`    | Usiamo la versione in dotazione con Flutter. |
 
 > [!ATTENTION] Se hai una versione diversa, per favore installa la versione raccomandata. Possiamo supportare solo i problemi di installazione per le versioni consigliate.
 
@@ -44,7 +44,7 @@ Una volta che avrai installato i prerequisiti, dovrai preparare il tuo ambiente 
 
 Fare il [fork](https://help.github.com/articles/about-forks/) è il passaggio grazie a cui ottieni la tua copia del repository (_repo_) su GitHub.
 
-Questo è essenziale, in quanto consente di lavorare sulla propria copia dell'app di freeCodeCamp su GitHub, o di scaricare (clonare) il tuo repository per lavorare localmente. Più tardi, potrai richiedere che le tue modifiche siano integrate (pull) nel repository principale dal tuo fork tramite una pull request (PR).
+This is essential, as it allows you to work on your own copy of the freeCodeCamp mobile app on GitHub, or to download (clone) your repository to work on locally. Più tardi, potrai richiedere che le tue modifiche siano integrate (pull) nel repository principale dal tuo fork tramite una pull request (PR).
 
 > [!TIP] Il repository principale su `https://github.com/freeCodeCamp/mobile` è spesso indicato come il repository `upstream`.
 > 
@@ -134,8 +134,6 @@ Le chiavi API predefinite e le variabili d'ambiente sono memorizzate nel file `s
 # Popolalo con le chiavi API e i segreti necessari:
 ```
 
-<!-- tabs:start -->
-
 #### **macOS/Linux**
 
 ```console
@@ -147,8 +145,6 @@ cp sample.env .env
 ```console
 copy sample.env .env
 ```
-
-<!-- tabs:end -->
 
 _Non_ è necessario cambiare le chiavi nel file `.env` per eseguire l'applicazione localmente. Puoi lasciare i valori predefiniti copiati da `sample.env` così come sono.
 
@@ -365,14 +361,14 @@ Segui questi passaggi:
 
 > [!NOTE] You only need to follow this section if you're modifying the challenge test runner in the mobile app. Otherwise, you can go to the next section on [how to open a pull request](#proposing-a-pull-request-pr).
 
-1. Clone a copy of the [freeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) locally outside of your local copy of freeCodeCamp mobile repo. Your folder structure should look like this:
+1. Clone a copy of the [freeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) locally outside of your local copy of the freeCodeCamp mobile repo. Your folder structure should look like this:
 
     ```console
     ├── freeCodeCamp
     ├── mobile
     ```
 
-2. Change directory to the freeCodeCamp repo:
+2. Change the directory to the freeCodeCamp repo:
 
     ```console
     cd freeCodeCamp
@@ -380,21 +376,17 @@ Segui questi passaggi:
 
 3. Make a copy of the `.env` file:
 
-<!-- tabs:start -->
+    #### **macOS/Linux**
 
-#### **macOS/Linux**
+    ```console
+    cp sample.env .env
+    ```
 
-```console
-cp sample.env .env
-```
+    #### **Windows**
 
-#### **Windows**
-
-```console
-copy sample.env .env
-```
-
-<!-- tabs:end -->
+    ```console
+    copy sample.env .env
+    ```
 
 4. Install the dependencies for the freeCodeCamp repo:
 
@@ -410,21 +402,16 @@ copy sample.env .env
 
 6. Copy the generated JSON file to the mobile app:
 
-<!-- tabs:start -->
+    #### **macOS/Linux**
 
-#### **macOS/Linux**
+    ```console
+    cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
+    ```
 
-```console
-cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
-```
-
-#### **Windows**
-
-```console
-copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
-```
-
-<!-- tabs:end -->
+    #### **Windows**
+    ```console
+    copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+    ```
 
 7. Change directory to the mobile app:
 
@@ -441,7 +428,7 @@ copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
 9. Update the test file to use the challenge data JSON file:
 
     ```console
-    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart  
+    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
     ```
 
 10. Generate the challenge files:
@@ -493,7 +480,7 @@ Se sei su un sistema operativo diverso e/o continui ad avere dei problemi, visit
 
 ### Problemi con UI, errori di build, ecc.
 
-Se si verificano problemi con l'interfaccia utente o errori di compilazione, una pulizia potrebbe essere utile:
+If you face issues with the UI, or build errors a cleanup can be useful:
 
 ```console
 flutter clean
@@ -501,7 +488,7 @@ flutter clean
 
 ### Issues Installing Dependencies
 
-Se incontri degli errori durante l'installazione delle dipendenze, assicurati di non essere in una rete ristretta o che le impostazioni del tuo firewall non ti impediscono di accedere alle risorse.
+If you get errors while installing the dependencies, please make sure that you are not in a restricted network or that your firewall settings do not prevent you from accessing resources.
 
 Be patient as the first-time setup can take a while depending on your network bandwidth.
 

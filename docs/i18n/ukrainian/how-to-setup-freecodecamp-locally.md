@@ -2,7 +2,7 @@
 
 ## Оберіть між Gitpod чи власною машиною (локальне налаштування)
 
-> [!ATTENTION] **Примітка:** freeCodeCamp НЕ працює належним чином на Windows 10 чи 11, вам потрібно використовувати WSL2. Використовуйте [цей посібник](how-to-setup-wsl.md), щоб налаштувати WSL2. Ви не можете використовувати командний рядок, Git Bash або PowerShell для запуску freeCodeCamp на Windows.
+> [!ATTENTION] - freeCodeCamp не збирається та не запускається на Windows, тому вам [потрібно використати WSL2](how-to-setup-wsl.md) для налаштування типу Linux на Windows. - Ви не можете використовувати командний рядок Windows, Git Bash або PowerShell, щоб створити та запустити кодову базу. - Зверніть увагу, що вимоги до комп’ютерного устаткування при використанні Windows відрізнятимуться [від вказаних](how-to-setup-freecodecamp-locally?id=how-to-prepare-your-local-machine), щоб відповідати налаштуванню на основі WSL.
 
 Якщо ви бажаєте зробити одноразовий внесок, використовуйте Gitpod. Налаштування Gitpod надає готове середовище у вашому браузері за декілька хвилин. Для тривалих внесків ми рекомендуємо налаштувати freeCodeCamp на локальній машині.
 
@@ -67,7 +67,7 @@
 
 | Передумова                                                                                    | Версія  | Примітки                                                                                          |
 | --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                  | `18.x`  | Ми використовуємо версію «Active LTS», див. [розклад LTS](https://nodejs.org/en/about/releases/). |
+| [Node.js](http://nodejs.org)                                                                  | `20.x`  | Ми використовуємо версію «Active LTS», див. [розклад LTS](https://nodejs.org/en/about/releases/). |
 | [pnpm](https://pnpm.io/installation)                                                          | `8.x`   | -                                                                                                 |
 | [Сервер спільноти MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `5.0.x` | -                                                                                                 |
 
@@ -205,24 +205,12 @@ pnpm -v
 
 ```console
 # Створіть копію «sample.env» та назвіть її «.env».
-# Заповніть її необхідними ключами та секретами API:
+# Заповніть її необхідними ключами та секретами API
 ```
-
-<!-- tabs:start -->
-
-#### **macOS/Linux**
 
 ```console
 cp sample.env .env
 ```
-
-#### **Windows**
-
-```console
-copy sample.env .env
-```
-
-<!-- tabs:end -->
 
 Для локального запуску застосунку _необов’язково_ змінювати ключі у файлі `.env`. Ви можете залишити значення за замовчуванням, скопійовані з `sample.env`.
 
@@ -246,25 +234,9 @@ pnpm install && pnpm run create:shared
 
 Запустіть сервер MongoDB в окремому терміналі:
 
-  <!-- tabs:start -->
-
-#### **macOS/Linux**
-
 ```console
 mongod
 ```
-
-#### **Windows**
-
-- На Windows ви повинні вказати повний шлях до двійкового файлу `mongod`
-
-```console
-"C:\Program Files\MongoDB\Server\3.6\bin\mongod"
-```
-
-Не забудьте змінити `3.6` на свою версію
-
-  <!-- tabs:end -->
 
 > [!TIP] Ви можете не запускати MongoDB кожного разу, встановивши його як фонову службу. Для детальнішої інформації див. [документацію MongoDB для вашої ОС](https://docs.mongodb.com/manual/administration/install-community/)
 

@@ -10,6 +10,23 @@ const generic500 = Type.Object({
   type: Type.Literal('danger')
 });
 
+const file = Type.Object({
+  contents: Type.String(),
+  key: Type.String(),
+  ext: Type.String(),
+  name: Type.String(),
+  history: Type.Array(Type.String())
+});
+
+const saveChallengeBody = Type.Object({
+  id: Type.String({
+    format: 'objectid',
+    maxLength: 24,
+    minLength: 24
+  }),
+  files: Type.Array(file)
+});
+
 export const schemas = {
   // Settings:
   updateMyProfileUI: {
@@ -202,6 +219,25 @@ export const schemas = {
       })
     }
   },
+  updateMyEmail: {
+    body: Type.Object({
+      email: Type.String({ format: 'email', maxLength: 1024 })
+    }),
+    response: {
+      200: Type.Object({
+        message: Type.Literal('flash.email-valid'),
+        type: Type.Literal('success')
+      }),
+      '4xx': Type.Object({
+        message: Type.String(),
+        type: Type.Union([Type.Literal('danger'), Type.Literal('info')])
+      }),
+      500: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      })
+    }
+  },
   // User:
   deleteMyAccount: {
     response: {
@@ -315,19 +351,10 @@ export const schemas = {
             joinDate: Type.String(),
             savedChallenges: Type.Optional(
               Type.Array(
-                Type.Object({
-                  id: Type.String(),
-                  lastSavedDate: Type.Number(),
-                  files: Type.Array(
-                    Type.Object({
-                      contents: Type.String(),
-                      key: Type.String(),
-                      ext: Type.String(),
-                      name: Type.String(),
-                      history: Type.Array(Type.String())
-                    })
-                  )
-                })
+                Type.Intersect([
+                  saveChallengeBody,
+                  Type.Object({ lastSavedDate: Type.Number() })
+                ])
               )
             ),
             username: Type.String(),
@@ -357,6 +384,26 @@ export const schemas = {
         ),
         type: Type.Literal('danger')
       })
+    }
+  },
+  reportUser: {
+    body: Type.Object({
+      username: Type.String(),
+      reportDescription: Type.String()
+    }),
+    response: {
+      200: Type.Object({
+        type: Type.Literal('info'),
+        message: Type.Literal('flash.report-sent'),
+        variables: Type.Object({
+          email: Type.String()
+        })
+      }),
+      400: Type.Object({
+        type: Type.Literal('danger'),
+        message: Type.Literal('flash.provide-username')
+      }),
+      500: generic500
     }
   },
   // Deprecated endpoints:
@@ -458,6 +505,33 @@ export const schemas = {
       })
     }
   },
+  chargeStripeCard: {
+    body: Type.Object({
+      paymentMethodId: Type.String(),
+      amount: Type.Number(),
+      duration: Type.Literal('month')
+    }),
+    response: {
+      200: Type.Object({
+        isDonating: Type.Boolean(),
+        type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.String(),
+        type: Type.Literal('info')
+      }),
+      402: Type.Object({
+        message: Type.String(),
+        type: Type.String(),
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        client_secret: Type.Optional(Type.String())
+      }),
+      500: Type.Object({
+        message: Type.String(),
+        type: Type.Literal('danger')
+      })
+    }
+  },
   modernChallengeCompleted: {
     body: Type.Object({
       id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
@@ -480,23 +554,10 @@ export const schemas = {
         points: Type.Number(),
         alreadyCompleted: Type.Boolean(),
         savedChallenges: Type.Array(
-          Type.Object({
-            id: Type.String({
-              format: 'objectid',
-              maxLength: 24,
-              minLength: 24
-            }),
-            lastSavedDate: Type.Number(),
-            files: Type.Array(
-              Type.Object({
-                contents: Type.String(),
-                key: Type.String(),
-                ext: Type.String(),
-                name: Type.String(),
-                history: Type.Array(Type.String())
-              })
-            )
-          })
+          Type.Intersect([
+            saveChallengeBody,
+            Type.Object({ lastSavedDate: Type.Number() })
+          ])
         )
       }),
       400: Type.Object({
@@ -510,6 +571,61 @@ export const schemas = {
         message: Type.Literal(
           'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
         )
+      })
+    }
+  },
+  saveChallenge: {
+    body: saveChallengeBody,
+    response: {
+      200: Type.Object({
+        savedChallenges: Type.Array(
+          Type.Intersect([
+            saveChallengeBody,
+            Type.Object({ lastSavedDate: Type.Number() })
+          ])
+        )
+      }),
+      403: Type.Literal('That challenge type is not saveable.'),
+      500: Type.Object({
+        type: Type.Literal('danger'),
+        message: Type.Literal(
+          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        )
+      })
+    }
+  },
+  exam: {
+    params: Type.Object({
+      id: Type.String({
+        format: 'objectid',
+        maxLength: 24,
+        minLength: 24
+      })
+    }),
+    response: {
+      200: Type.Object({
+        generatedExam: Type.Array(
+          Type.Object({
+            id: Type.String(),
+            question: Type.String(),
+            answers: Type.Array(
+              Type.Object({
+                id: Type.String(),
+                answer: Type.String()
+              })
+            )
+          })
+        )
+      }),
+      // TODO: Standardize error responses - e.g. { type, message }
+      400: Type.Object({
+        error: Type.String()
+      }),
+      403: Type.Object({
+        error: Type.String()
+      }),
+      500: Type.Object({
+        error: Type.String()
       })
     }
   },
@@ -551,12 +667,6 @@ export const schemas = {
       400: Type.Object({
         message: Type.String(),
         type: Type.Literal('info')
-      }),
-      500: Type.Object({
-        type: Type.Literal('danger'),
-        message: Type.Literal(
-          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-        )
       })
     }
   }

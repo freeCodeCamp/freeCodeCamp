@@ -14,6 +14,10 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 
 # --question--
 
+## --assignment--
+
+Complete o módulo <a href="https://learn.microsoft.com/training/modules/csharp-readable-code/" target="_blank" rel="noreferrer">Crie um código legível com convenções, espaços em branco e comentários em C#</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
 ## --text--
 
 Qual das seguintes opções é uma razão inadequada para se usar um comentário de código?

@@ -1,6 +1,6 @@
 ---
 id: 5900f45d1000cf542c50ff70
-title: 'Problem 241: Perfection Quotients'
+title: 'Завдання 241: коефіцієнт досконалості'
 challengeType: 1
 forumTopicId: 301888
 dashedName: problem-241-perfection-quotients
@@ -8,13 +8,13 @@ dashedName: problem-241-perfection-quotients
 
 # --description--
 
-For a positive integer $n$, let $σ(n)$ be the sum of all divisors of $n$, so e.g. $σ(6) = 1 + 2 + 3 + 6 = 12$.
+Нехай $σ(n)$ за натурального числа $n$ буде сумою всіх дільників $n$. Наприклад, $σ(6) = 1 + 2 + 3 + 6 = 12$.
 
-A perfect number, as you probably know, is a number with $σ(n) = 2n$.
+Досконале число, як ви, напевно, знаєте, — це число, у котрого $σ(n) = 2n$.
 
-Let us define the perfection quotient of a positive integer as $p(n) = \frac{σ(n)}{n}$.
+Визначимо коефіцієнт досконалості натурального числа як $p(n) = \frac{σ(n)}{n}$.
 
-Find the sum of all positive integers $n ≤ {10}^{18}$ for which $p(n)$ has the form $k + \frac{1}{2}$, where $k$ is an integer.
+Знайдіть суму всіх натуральних чисел $n ≤ {10}^{18}$, за яких $p(n)$ має вигляд $k + \frac{1}{2}$, де $k$ є цілим числом.
 
 # --hints--
 

@@ -463,7 +463,13 @@ Antes de [criar um pull request](how-to-open-a-pull-request.md) para suas modifi
 pnpm run test:curriculum
 ```
 
-2. Você também pode testar um bloco ou superbloco de desafios com esses comandos
+2. Para testar um único desafio, você pode usar o id do desafio com o seguinte comando
+
+```
+FCC_CHALLENGE_ID=646cf6cbca98e258da65c979 pnpm run test:curriculum
+```
+
+3. Você também pode testar um bloco ou superbloco de desafios com esses comandos
 
 ```
 FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
@@ -473,7 +479,7 @@ FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
-Você também é capaz de testar um desafio individualmente seguindo as seguintes etapas:
+Você também pode testar desafios por título utilizando as seguintes etapas:
 
 1.  Mude para o diretório `curriculum`:
 
@@ -551,7 +557,7 @@ b
 c
 ```
 
-E se você escolher `b`, a nova ordem será:
+Se você escolher `b`, a nova ordem será:
 
 ```bash
 a

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import type { DefaultTFuncReturn, TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
-import { ProgressBar } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import envData from '../../../../config/env.json';
 import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
@@ -13,6 +13,7 @@ import Caret from '../../../assets/icons/caret';
 import DropDown from '../../../assets/icons/dropdown';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
+import { ProgressBar } from '../../../components/Progress/progress-bar';
 import { Link, Spacer } from '../../../components/helpers';
 import { completedChallengesSelector } from '../../../redux/selectors';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
@@ -153,7 +154,9 @@ class Block extends Component<BlockProps> {
 
     const progressBarRender = (
       <div aria-hidden='true' className='progress-wrapper'>
-        <ProgressBar now={percentageCompleted} />
+        <div>
+          <ProgressBar now={percentageCompleted} />
+        </div>
         <span>{`${percentageCompleted}%`}</span>
       </div>
     );

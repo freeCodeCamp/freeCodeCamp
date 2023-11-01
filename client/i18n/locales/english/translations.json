@@ -551,7 +551,9 @@
     "how-update": "I set up a monthly donation, but I need to update or pause the monthly recurrence. How can I do this?",
     "take-care-of-this": "Just forward one of your monthly donation receipts to donors@freecodecamp.org and tell us what you'd like us to do. We'll take care of this for you and send you confirmation.",
     "anything-else": "Is there anything else I can learn about donating to freeCodeCamp.org?",
-    "other-support": "If there is some other way you'd like to support our charity and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org."
+    "other-support": "If there is some other way you'd like to support our charity and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org.",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "You need to be signed in to report a user",
@@ -730,14 +732,20 @@
         "unlinked": "The link to your Microsoft username has been removed.",
         "unlink-err": "Something went wrong trying to remove the link to your Microsoft username."
       },
+      "profile": {
+        "err": "We could not find a Microsoft user ID for Microsoft user \"{{msUsername}}\""
+      },
       "trophy": {
         "err-1": "We could not find a Microsoft username associated with your freeCodeCamp account.",
         "err-2": "You are trying to submit a challenge that does not appear to be a trophy challenge.",
-        "err-3": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
-        "err-4": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-3": "We could not get your Microsoft profile from your Microsoft ID.",
+        "err-4": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
+        "err-5": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-6": "It looks like your Microsoft account might be private. Set it to public and try again.",
         "verified": "Your trophy from Microsoft's learning platform was verified."
       }
-    }
+    },
+    "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
     "max-characters": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",
@@ -900,14 +908,13 @@
     "set-claim": "Claim and view your certification"
   },
   "forum-help": {
-    "browser-info": "**Your browser information:**",
+    "browser-info": "Your browser information:",
     "user-agent": "User Agent is: <code>{{userAgent}}</code>",
-    "challenge": "**Challenge:**",
-    "challenge-link": "**Link to the challenge:**",
-    "whats-happening": "**Tell us what's happening:**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "Describe your issue in detail here.",
-    "camper-project": "**Your project link(s)**",
-    "camper-code": "**Your code so far**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "WARNING",
     "too-long-one": "The challenge seed code and/or your solution exceeded the maximum length we can port over from the challenge.",
     "too-long-two": "You will need to take an additional step here so the code you wrote presents in an easy to read format.",

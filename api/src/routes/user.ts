@@ -1,21 +1,22 @@
-import _, { isEmpty } from 'lodash';
+import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { ObjectId } from 'mongodb';
 import { customAlphabet } from 'nanoid';
-import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
 import { schemas } from '../schemas';
 import {
-  type ProgressTimestamp,
-  getCalendar,
-  getPoints
-} from '../utils/progress';
-import {
-  normalizeTwitter,
-  removeNulls,
+  normalizeChallenges,
   normalizeProfileUI,
-  normalizeChallenges
+  normalizeTwitter,
+  removeNulls
 } from '../utils/normalize';
+import {
+  getCalendar,
+  getPoints,
+  type ProgressTimestamp
+} from '../utils/progress';
 import { encodeUserToken } from '../utils/user-token';
+import { trimTags } from '../utils/validation';
+import { generateReportEmail } from '../utils/email-templates';
 
 // Loopback creates a 64 character string for the user id, this customizes
 // nanoid to do the same.  Any unique key _should_ be fine, though.
@@ -122,6 +123,127 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
     }
   );
+  // TODO(Post-MVP): POST -> PUT
+  fastify.post('/user/user-token', async req => {
+    await fastify.prisma.userToken.deleteMany({
+      where: { userId: req.session.user.id }
+    });
+
+    const token = await fastify.prisma.userToken.create({
+      data: {
+        created: new Date(),
+        id: nanoid(),
+        userId: req.session.user.id,
+        // TODO(Post-MVP): expire after ttl has passed.
+        ttl: 77760000000 // 900 * 24 * 60 * 60 * 1000
+      }
+    });
+
+    return {
+      userToken: encodeUserToken(token.id)
+    };
+  });
+
+  fastify.delete(
+    '/user/user-token',
+    {
+      schema: schemas.deleteUserToken
+    },
+    async (req, reply) => {
+      try {
+        const { count } = await fastify.prisma.userToken.deleteMany({
+          where: { userId: req.session.user.id }
+        });
+
+        if (count === 0) {
+          void reply.code(404);
+          return {
+            message: 'userToken not found',
+            type: 'info'
+          } as const;
+        }
+        return { userToken: null };
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return {
+          type: 'danger',
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        } as const;
+      }
+    }
+  );
+
+  fastify.post(
+    '/user/report-user',
+    {
+      schema: schemas.reportUser,
+      preHandler: (req, _reply, done) => {
+        req.body.reportDescription = trimTags(req.body.reportDescription);
+        done();
+      }
+    },
+    async (req, reply) => {
+      try {
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id }
+        });
+        const { username, reportDescription: report } = req.body;
+
+        if (!username || !report || report === '') {
+          // NOTE: Do we want to log these instances?
+          void reply.code(400);
+          return {
+            type: 'danger',
+            message: 'flash.provide-username'
+          } as const;
+        }
+
+        await fastify.sendEmail({
+          from: 'team@freecodecamp.org',
+          to: 'support@freecodecamp.org',
+          cc: user.email,
+          subject: `Abuse Report: Reporting ${username}'s profile`,
+          text: generateReportEmail(user, username, report)
+        });
+
+        return {
+          type: 'info',
+          message: 'flash.report-sent',
+          variables: { email: user.email }
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        // TODO: redirect to the reported user's profile if there's an error
+        void reply.code(500);
+        return {
+          type: 'danger',
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        } as const;
+      }
+    }
+  );
+
+  done();
+};
+
+/**
+ * Plugin containing GET routes for user account management. They are kept
+ * separate because they do not require CSRF protection.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
+ * @param done Callback to signal that the logic has completed.
+ */
+export const userGetRoutes: FastifyPluginCallbackTypebox = (
+  fastify,
+  _options,
+  done
+) => {
+  fastify.addHook('onRequest', fastify.authenticateSession);
+
   fastify.get(
     '/user/get-session-user',
     {
@@ -202,8 +324,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           progressTimestamps,
           twitter,
           profileUI,
-          savedChallenges,
-          partiallyCompletedChallenges,
           ...publicUser
         } = user;
 
@@ -217,19 +337,11 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
               calendar: getCalendar(
                 progressTimestamps as ProgressTimestamp[] | null
               ),
-              partiallyCompletedChallenges: isEmpty(
-                partiallyCompletedChallenges
-              )
-                ? undefined
-                : partiallyCompletedChallenges,
               // This assertion is necessary until the database is normalized.
               points: getPoints(
                 progressTimestamps as ProgressTimestamp[] | null
               ),
               profileUI: normalizeProfileUI(profileUI),
-              savedChallenges: isEmpty(savedChallenges)
-                ? undefined
-                : savedChallenges,
               // TODO(Post-MVP) remove this and just use emailVerified
               isEmailVerified: user.emailVerified,
               joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
@@ -244,58 +356,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         fastify.log.error(err);
         void res.code(500);
         return { user: {}, result: '' };
-      }
-    }
-  );
-
-  // TODO(Post-MVP): POST -> PUT
-  fastify.post('/user/user-token', async req => {
-    await fastify.prisma.userToken.deleteMany({
-      where: { userId: req.session.user.id }
-    });
-
-    const token = await fastify.prisma.userToken.create({
-      data: {
-        created: new Date(),
-        id: nanoid(),
-        userId: req.session.user.id,
-        // TODO(Post-MVP): expire after ttl has passed.
-        ttl: 77760000000 // 900 * 24 * 60 * 60 * 1000
-      }
-    });
-
-    return {
-      userToken: encodeUserToken(token.id)
-    };
-  });
-
-  fastify.delete(
-    '/user/user-token',
-    {
-      schema: schemas.deleteUserToken
-    },
-    async (req, reply) => {
-      try {
-        const { count } = await fastify.prisma.userToken.deleteMany({
-          where: { userId: req.session.user.id }
-        });
-
-        if (count === 0) {
-          void reply.code(404);
-          return {
-            message: 'userToken not found',
-            type: 'info'
-          } as const;
-        }
-        return { userToken: null };
-      } catch (err) {
-        fastify.log.error(err);
-        void reply.code(500);
-        return {
-          type: 'danger',
-          message:
-            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-        } as const;
       }
     }
   );

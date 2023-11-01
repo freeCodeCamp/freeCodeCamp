@@ -14,6 +14,10 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --question--
 
+## --assignment--
+
+Complete the <a href="https://learn.microsoft.com/training/modules/install-configure-visual-studio-code/" target="_blank" rel="noreferrer">Install and Configure Visual Studio Code</a> module on Microsoft Learn. Then, answer the question below.
+
 ## --text--
 
 Which of the following choices provides the best description of an Integrated Development Environment (IDE)?

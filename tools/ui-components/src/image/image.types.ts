@@ -1,7 +1,9 @@
 import React from 'react';
-export interface ImageProps {
+export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   alt: string;
-  className?: string;
   src: string;
-  ref: React.RefObject<HTMLImageElement>;
+  /**
+   * Whether the image should be resized and contained within its parent.
+   */
+  responsive?: boolean;
 }

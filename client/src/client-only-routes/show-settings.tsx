@@ -165,6 +165,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             id='content-start'
             className='text-center'
             style={{ overflowWrap: 'break-word' }}
+            data-playwright-test-label='settings-heading'
           >
             {t('settings.for', { username: username })}
           </h1>

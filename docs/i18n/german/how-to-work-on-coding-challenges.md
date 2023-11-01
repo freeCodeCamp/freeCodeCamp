@@ -4,7 +4,7 @@ Unser Ziel ist es, ein unterhaltsames und voll interaktives Lernerlebnis zu entw
 
 Sich interaktive Programmieraufgaben auszudenken ist schwierig. Es wäre viel einfacher, eine ausführliche Erklärung zu schreiben oder ein Video-Tutorial zu erstellen. Aber für unseren Hauptstudienplan bleiben wir bei dem, was für die meisten Menschen am besten funktioniert - ein vollständig interaktives, videospielähnliches Erlebnis.
 
-Wir wollen, dass die Teilnehmer einen Flow-Zustand erreichen. Wir wollen, dass sie in Schwung kommen und so schnell wie möglich Fortschritte in unserem Studienplan machen. Wir wollen, dass sie mit Selbstvertrauen in die Projekte gehen und einen umfassenden Einblick in Programmierkonzepte bekommen.
+Wir wollen, dass die Teilnehmer einen Flow-Zustand erreichen. Wir wollen, dass sie in Schwung kommen und so schnell wie möglich Fortschritte in unserem Studienplan machen. We want them to go into the projects with confidence and gain wide exposure to programming concepts.
 
 Beachte, dass wir für Version 7.0 des freeCodeCamp-Studienplan zu einem [vollständig projektorientierten Modell mit viel mehr Wiederholungen](https://www.freecodecamp.org/news/python-curriculum-is-live/) übergehen.
 
@@ -459,7 +459,13 @@ Bevor du [einen Pull-Request](how-to-open-a-pull-request.md) für deine Änderun
 pnpm run test:curriculum
 ```
 
-2. Du kannst auch einen Block oder einen Superblock von Aufgaben mit diesen Befehlen testen
+2. To test single challenge, you can use it challenge id with following command
+
+```
+FCC_CHALLENGE_ID=646cf6cbca98e258da65c979 pnpm run test:curriculum
+```
+
+3. You can also test a block or a superblock of challenges with these commands
 
 ```
 FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
@@ -469,15 +475,15 @@ FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
-Du kannst eine Aufgabe auch einzeln testen, indem du die folgenden Schritte ausführst:
+You are also able to test challenges by title by performing the following steps:
 
-1. Wechsle in das Verzeichnis "Curriculum":
+1. Switch to the `curriculum` directory:
 
    ```
    cd curriculum
    ```
 
-2. Führe das Folgende für jede Aufgabendatei aus, für die du Änderungen vorgenommen hast (ersetze dabei `Aufgabentitel hier eintragen` durch den vollständigen Titel der Aufgabe):
+2. Run the following for each challenge file for which you have changed (replacing `challenge-title-goes-here` with the full title of the challenge):
 
    ```
    pnpm run test -- -g challenge-title-goes-here
@@ -547,7 +553,7 @@ b
 c
 ```
 
-And you choose `b`, your new order will be:
+If you choose `b`, your new order will be:
 
 ```bash
 a

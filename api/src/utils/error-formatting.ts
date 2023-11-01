@@ -8,7 +8,7 @@ type FormattedError = {
   message: string;
 };
 
-// TODO(Post-MVP): Normalize error responses (either msg or messge, not both)
+// TODO(Post-MVP): Normalize error responses (either msg or message, not both)
 type CodeRoadError = {
   type: 'error';
   msg: string;

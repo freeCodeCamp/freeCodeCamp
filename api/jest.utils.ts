@@ -1,7 +1,8 @@
 import request from 'supertest';
 
 import { build } from './src/app';
-import { defaultUser } from './src/utils/default-user';
+import { createUserInput } from './src/utils/create-user';
+import { examJson } from './__mocks__/exam';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
@@ -14,7 +15,6 @@ type Options = {
   sendCSRFToken: boolean;
 };
 
-/* eslint-disable @typescript-eslint/naming-convention */
 const requests = {
   GET: (resource: string) => request(fastifyTestInstance?.server).get(resource),
   POST: (resource: string) =>
@@ -23,7 +23,6 @@ const requests = {
   DELETE: (resource: string) =>
     request(fastifyTestInstance?.server).delete(resource)
 };
-/* eslint-enable @typescript-eslint/naming-convention */
 
 export const getCsrfToken = (setCookies: string[]): string | undefined => {
   const csrfSetCookie = setCookies.find(str => str.includes('csrf_token'));
@@ -66,7 +65,8 @@ export function setupServer(): void {
     await fastify.ready();
 
     global.fastifyTestInstance = fastify;
-  });
+    // allow a little time to setup the db
+  }, 10000);
 
   afterAll(async () => {
     // Due to a prisma bug, this is not enough, we need to --force-exit jest:
@@ -85,12 +85,27 @@ export async function devLogin(): Promise<string[]> {
 
   await fastifyTestInstance.prisma.user.create({
     data: {
-      ...defaultUser,
-      id: defaultUserId,
-      email: defaultUserEmail
+      ...createUserInput(defaultUserEmail),
+      id: defaultUserId
     }
   });
   const res = await superRequest('/auth/dev-callback', { method: 'GET' });
   expect(res.status).toBe(200);
   return res.get('Set-Cookie');
+}
+
+export async function seedExam(): Promise<void> {
+  const query = { where: { id: examJson.id } };
+  const testExamExists =
+    await fastifyTestInstance.prisma.exam.findUnique(query);
+
+  if (testExamExists) {
+    await fastifyTestInstance.prisma.exam.deleteMany(query);
+  }
+
+  await fastifyTestInstance.prisma.exam.create({
+    data: {
+      ...examJson
+    }
+  });
 }

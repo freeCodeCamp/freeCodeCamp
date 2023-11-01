@@ -9,7 +9,10 @@ function Footer(): JSX.Element {
   return (
     <footer className='site-footer'>
       <div className='footer-top'>
-        <div className='footer-desc-col'>
+        <div
+          className='footer-desc-col'
+          data-playwright-test-label='footer-desc-col'
+        >
           <p>{t('footer.tax-exempt-status')}</p>
           <p>{t('footer.mission-statement')}</p>
           <p>{t('footer.donation-initiatives')}</p>
@@ -25,7 +28,10 @@ function Footer(): JSX.Element {
         </div>
         <div className='trending-guides'>
           <h2 className='col-header'>{t('footer.trending-guides')}</h2>
-          <div className='trending-guides-articles'>
+          <div
+            className='trending-guides-articles'
+            data-playwright-test-label='trending-guides-articles'
+          >
             {/* the span elements were add so the link can be inline and its text would be the only active target */}
             <span>
               <Link external={false} to={t('trending:article0link')}>

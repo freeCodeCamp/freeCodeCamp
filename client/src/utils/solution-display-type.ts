@@ -2,7 +2,6 @@ import type { CompletedChallenge } from '../redux/prop-types';
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import { maybeUrlRE } from '.';
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 type DisplayType =
   | 'none'
   | 'showMultifileProjectSolution'

@@ -25,7 +25,8 @@ const { filename: sassCompile } = sassData;
 
 const protectTimeout = 100;
 const testProtectTimeout = 1500;
-const loopsPerTimeoutCheck = 2000;
+const loopsPerTimeoutCheck = 100;
+const testLoopsPerTimeoutCheck = 2000;
 
 function loopProtectCB(line) {
   console.log(
@@ -54,11 +55,11 @@ async function loadBabel() {
   /* eslint-enable no-inline-comments */
   Babel.registerPlugin(
     'loopProtection',
-    protect(protectTimeout, loopProtectCB)
+    protect(protectTimeout, loopProtectCB, loopsPerTimeoutCheck)
   );
   Babel.registerPlugin(
     'testLoopProtection',
-    protect(testProtectTimeout, testLoopProtectCB, loopsPerTimeoutCheck)
+    protect(testProtectTimeout, testLoopProtectCB, testLoopsPerTimeoutCheck)
   );
 }
 
@@ -165,8 +166,8 @@ function getBabelOptions(
     disableLoopProtectPreview: false
   }
 ) {
-  // we always protect the preview, since it evaluates as the user types and
-  // they may briefly have infinite looping code accidentally
+  // we protect the preview unless specifically disabled, since it evaluates as
+  // the user types and they may briefly have infinite looping code accidentally
   if (preview && !disableLoopProtectPreview)
     return { ...presets, plugins: ['loopProtection'] };
   if (!disableLoopProtectTests)

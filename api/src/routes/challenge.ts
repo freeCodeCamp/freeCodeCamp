@@ -1,13 +1,15 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
 import { uniqBy } from 'lodash';
+
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import { schemas } from '../schemas';
 import {
   jsCertProjectIds,
   multifileCertProjectIds,
   updateUserChallengeData,
-  type CompletedChallenge
+  type CompletedChallenge,
+  saveUserChallengeData
 } from '../utils/common-challenge-functions';
 import { JWT_SECRET } from '../utils/env';
 import {
@@ -16,6 +18,11 @@ import {
 } from '../utils/error-formatting';
 import { getChallenges } from '../utils/get-challenges';
 import { ProgressTimestamp, getPoints } from '../utils/progress';
+import {
+  validateExamFromDbSchema,
+  validateGeneratedExamSchema
+} from '../utils/exam-schemas';
+import { generateRandomExam } from '../utils/exam';
 import {
   canSubmitCodeRoadCertProject,
   createProject,
@@ -363,6 +370,144 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
           type: 'danger'
         } as const;
+      }
+    }
+  );
+
+  fastify.post(
+    '/save-challenge',
+    {
+      schema: schemas.saveChallenge,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          return formatProjectCompletedValidation(error.validation);
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const { files, id: challengeId } = req.body;
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id }
+        });
+        const challenge = {
+          id: challengeId,
+          files
+        };
+
+        if (!multifileCertProjectIds.includes(challengeId)) {
+          void reply.code(403);
+          return 'That challenge type is not saveable.';
+        }
+
+        const userSavedChallenges = saveUserChallengeData(
+          challengeId,
+          user.savedChallenges,
+          challenge
+        );
+
+        await fastify.prisma.user.update({
+          where: { id: user.id },
+          data: {
+            savedChallenges: userSavedChallenges
+          }
+        });
+
+        return { savedChallenges: userSavedChallenges };
+      } catch (error) {
+        fastify.log.error(error);
+        void reply.code(500);
+        return {
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
+          type: 'danger'
+        } as const;
+      }
+    }
+  );
+
+  fastify.get(
+    '/exam/:id',
+    {
+      schema: schemas.exam,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          return { error: `Valid 'id' not found in request parameters.` };
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const { id } = req.params;
+
+        const { completedChallenges } =
+          await fastify.prisma.user.findUniqueOrThrow({
+            where: { id: req.session.user.id },
+            select: { completedChallenges: true }
+          });
+
+        const examFromDb = await fastify.prisma.exam.findUnique({
+          where: { id }
+        });
+
+        if (!examFromDb) {
+          void reply.code(500);
+          return {
+            error: 'An error occurred trying to get the exam from the database.'
+          };
+        }
+
+        const validExamFromDbSchema = validateExamFromDbSchema(examFromDb);
+
+        if ('error' in validExamFromDbSchema) {
+          void reply.code(500);
+          return {
+            error:
+              'An error occurred validating the exam information from the database.'
+          };
+        }
+
+        const { prerequisites, numberOfQuestionsInExam, title } = examFromDb;
+
+        // Validate User has completed prerequisite challenges
+        const prerequisiteIds = prerequisites.map(p => p.id);
+        const completedPrerequisites = completedChallenges.filter(c =>
+          prerequisiteIds.includes(c.id)
+        );
+
+        if (completedPrerequisites.length !== prerequisiteIds.length) {
+          void reply.code(403);
+          return {
+            error: `You have not completed the required challenges to start the '${title}'.`
+          };
+        }
+
+        const randomizedExam = generateRandomExam(examFromDb);
+        const validGeneratedExamSchema = validateGeneratedExamSchema(
+          randomizedExam,
+          numberOfQuestionsInExam
+        );
+
+        if ('error' in validGeneratedExamSchema) {
+          void reply.code(500);
+          return { error: 'An error occurred trying to randomize the exam.' };
+        }
+
+        return {
+          generatedExam: randomizedExam
+        };
+      } catch (error) {
+        fastify.log.error(error);
+        void reply.code(500);
+        return {
+          error: 'Something went wrong trying to generate your exam.'
+        };
       }
     }
   );

@@ -4,7 +4,7 @@
 
 インタラクティブなコーディングチャレンジの設計は難しいです。 長い説明を書いたり、ビデオチュートリアルを作成したりする方がはるかに簡単です。 しかし、私たちのコアカリキュラムは、多くの人にとって最適なものに固執しています。完全にインタラクティブでビデオゲームのような体験です。
 
-私たちはキャンパーにフロー状態を体験してほしいのです。 勢いをつけて大きな支障なくカリキュラムを突破してほしいと思っています。 自信を持ってプロジェクトに参加し、プログラミングの概念に広く触れてほしいと考えています。
+私たちはキャンパーにフロー状態を体験してほしいのです。 勢いをつけて大きな支障なくカリキュラムを突破してほしいと思っています。 We want them to go into the projects with confidence and gain wide exposure to programming concepts.
 
 freeCodeCamp カリキュラムのバージョン 7.0 では、[多くの繰り返しを伴うプロジェクトに焦点を当てたモデル](https://www.freecodecamp.org/news/python-curriculum-is-live/) に移行しています。
 
@@ -460,7 +460,13 @@ function myFunc() {
 pnpm run test:curriculum
 ```
 
-2. 次のコマンドでチャレンジのブロックやスーパーブロックをテストすることもできます。
+2. To test single challenge, you can use it challenge id with following command
+
+```
+FCC_CHALLENGE_ID=646cf6cbca98e258da65c979 pnpm run test:curriculum
+```
+
+3. You can also test a block or a superblock of challenges with these commands
 
 ```
 FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
@@ -470,15 +476,15 @@ FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
-次の手順を実行することで、1 つのチャレンジを個別にテストすることもできます。
+You are also able to test challenges by title by performing the following steps:
 
-1. `curriculum` ディレクトリに切り替えてください。
+1. Switch to the `curriculum` directory:
 
    ```
    cd curriculum
    ```
 
-2. 変更したチャレンジファイルごとに以下を実行します ( `challenge-title-goes-here` を正式なチャレンジのタイトルに置き換えてください)。
+2. Run the following for each challenge file for which you have changed (replacing `challenge-title-goes-here` with the full title of the challenge):
 
    ```
    pnpm run test -- -g challenge-title-goes-here
@@ -548,7 +554,7 @@ b
 c
 ```
 
-And you choose `b`, your new order will be:
+If you choose `b`, your new order will be:
 
 ```bash
 a

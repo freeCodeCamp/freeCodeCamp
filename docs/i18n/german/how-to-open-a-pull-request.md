@@ -140,7 +140,7 @@ Wenn du an regulären Bugs und Features auf unserem Entwicklungszweig `main` arb
 
 ### For Upcoming Curriculum and Features
 
-Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du Rosinenpickerei betreiben:
+When you are working on features for our upcoming curriculum `next-*` branches, you have to do a `cherry-pick`:
 
 1. Achte darauf, dass dein Upstream mit deinem Local übereinstimmt:
 
@@ -151,7 +151,7 @@ Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du
    git reset --hard upstream/next-python-projects
    ```
 
-2. Backup erstellen
+2. Take a backup
 
    a. Entweder löschst du deinen lokalen Branch, nachdem du ein Backup gemacht hast (wenn du ihn noch lokal hast):
 
@@ -169,7 +169,7 @@ Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du
    git branch -D <pr-branch-name>
    ```
 
-   b. Oder einfach ein Backup deines PR-Branch (wenn du ihn nicht lokal hast):
+   b. Or just a backup of your PR branch (if you do not have it locally):
 
    ```console
    git checkout -b <backup-branch-name> origin/<pr-branch-name>

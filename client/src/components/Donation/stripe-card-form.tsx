@@ -128,7 +128,6 @@ const StripeCardForm = ({
   ) => {
     if (stripe) {
       return stripe.confirmCardPayment(clientSecret, {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         payment_method: paymentMethod
       });
     }
@@ -142,7 +141,7 @@ const StripeCardForm = ({
     >
       <div
         className={`donation-elements${
-          !isSubmissionValid ? ' failed-submition' : ''
+          !isSubmissionValid ? ' failed-submission' : ''
         }`}
       >
         <CardNumberElement

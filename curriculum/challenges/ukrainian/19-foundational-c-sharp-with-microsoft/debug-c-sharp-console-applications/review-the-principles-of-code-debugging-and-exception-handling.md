@@ -14,6 +14,10 @@ dashedName: review-the-principles-of-code-debugging-and-exception-handling
 
 # --question--
 
+## --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank" rel="noreferrer">«Перегляньте принципи налагодження коду та оброблення винятків»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
 ## --text--
 
 Який зв’язок між типом винятку та інформацією, яку він містить?

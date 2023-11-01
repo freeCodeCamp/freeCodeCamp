@@ -1,6 +1,6 @@
 # Як додати тести Playwright
 
-## Installation
+## Встановлення
 
 Щоб встановити Playwright:
 
@@ -10,7 +10,7 @@ pnpm run playwright:install-build-tools
 
 Або ж ви можете дотримуватись офіційної документації:
 
-Щоб встановити та налаштувати Playwright на своїй машині, див. [документацію](https://playwright.dev/docs/intro#installing-playwright)
+Щоб встановити та налаштувати Playwright на своїй машині, див. [документацію](https://playwright.dev/docs/intro#installing-playwright).
 
 Щоб дізнатися, як писати тести Playwright, або «специфікації», зверніться до офіційної [документації Playwright](https://playwright.dev/docs/writing-tests).
 
@@ -20,147 +20,158 @@ pnpm run playwright:install-build-tools
 
 - Файли тестів Playwright завжди мають розширення `.spec.ts`.
 
-## Best Practices for writing e2e tests
+## Найкращі практики для написання тестів E2E
 
- This section will explain in detail about best practices for writing and documenting E2E tests based on playwright documentation and our community code-style.
+ Цей розділ детально пояснить найкращі практики написання та документування тестів E2E на основі документації Playwright та кодового стилю нашої спільноти.
 
-### - Identifying a DOM element
+### - Імпорт
 
-  Always use the `data-playwright-test-label` attribute to identify DOM elements. This attribute is used to identify elements in the DOM for testing with playwright only. It is not used for styling or any other purpose.
+Завжди починайте необхідні імпорти на початку файлу.
 
-  Наприклад:
+Наприклад:
 
-  ```html
-  <div data-playwright-test-label="landing-page-figure">
-    <img src="..." alt="..." />
-  </div>
-  ```
-
-  Make sure you use the getByTestId method to identify the element in the test file.
-
-  Наприклад:
-
-  ```ts
-  const landingPageFigure = page.getByTestId('landing-page-figure');
-  ```
-
-### - Imports
-
-  Always start with necessary imports at the beginning of the file.
-
-  Наприклад:
-
-  ```ts
-  import { test, expect, type Page } from '@playwright/test';
-  ```
-
-### - Constants
-
-  Define any constant elements, data sets, or configurations used throughout your tests for easy reference.
-
-  For example:
-
-  ```ts
-  const landingPageElements = { ... };
-  const superBlocks = [ ... ];
-  ```
-
-### - Shared Context
-
- If tests depend on a shared context (like a loaded web page), use beforeAll and afterAll hooks to set up and tear down that context.
-
-  For example:
-
-  ```ts
-  let page: Page;
-
-  beforeAll(async ({ browser }) => {
-    page = await browser.newPage();
-  });
-
-  afterAll(async () => {
-    await page.close();
-  });
-  ```
-
-### - Descriptive test names
-
- Each test block should have a clear and concise name describing exactly what it's testing.
-
-  For example:
-
-  ```ts
-  test('The component landing-top renders correctly', async ({ page }) => {
-    ...
-  });
-  ```
-
-### - Human readable assertions
-
-  Each assertion should be as human readable as possible. This makes it easier to understand what the test is doing and what it's expecting.
-
-  For example:
-
-  ```ts
-  await expect(landingHeading1).toHaveText('Learn to code — for free.');
-  ```
-
-### - Keep it DRY
-
-  Make sure that the tests are not repeating the same code over and over again. If you find yourself repeating the same code, consider refactoring it as a loop or a function.
-
-  For example:
-
-  ```ts
-  for (const logo of await logos.all()) {
-    await expect(logo).toBeVisible();
-  }
-  ```
-
-### - Tests for mobile screens
-
-  Use the 'isMobile' argument to run tests that incude logic that varies for mobile screens.
-
-  For example:
-
-  ```ts
-  test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({isMobile}) => 
-  {
-    const landingPageImage = page.getByTestId('landing-page-figure');
-
-    if (isMobile) {
-      await expect(landingPageImage).toBeHidden();
-    } else {
-      await expect(landingPageImage).toBeVisible();
-    }
-  });
+```ts
+import { test, expect, type Page } from '@playwright/test';
 ```
 
-### - Group related tests
+### - Визначення елемента DOM
 
-  Group related tests together using describe blocks. This makes it easier to understand what the tests are doing and what they're testing.
+Playwright поставляється з [декількома вбудованими локаторами](https://playwright.dev/docs/locators#quick-guide), але ми рекомендуємо взяти до уваги наступні:
+  - `getByRole` для запиту семантичних елементів, роль яких важлива та дозволяє технічним засобам реабілітації правильно сприймати сторінку.
+  - `getByText` для запитів не семантичних елементів, таких як `div`, `span` чи `p`.
 
-  For example:
+Наприклад:
+```ts
+await expect(page.getByRole('heading', { name: 'Sign up' })).toBeVisible();
+await expect(page.getByText('Hello World')).toBeVisible();
+```
 
-  ```ts
-  describe('The campers landing page', () => {
-    test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({isMobile}) => 
-    {
-      ...
-    });
+У крайніх випадках, коли запит елементів не можна здійснити за допомогою локаторів вище, використайте атрибут `data-playwright-test-label`. Цей атрибут використовують, щоб ідентифікувати елементи в DOM лише для тестування Playwright. Його не використовують для стилізації або будь-чого іншого.
 
-    test('The campers landing page figure has the correct image', async () => {
-      ...
-    });
+Наприклад:
+
+```html
+<div data-playwright-test-label="landing-page-figure">
+  <img src="..." alt="..." />
+</div>
+```
+
+У файлі тестів можна використати метод `getByTestId`, щоб ідентифікувати елемент.
+
+Наприклад:
+
+```ts
+await expect(page.getByTestId('landing-page-figure')).toBeVisible();
+```
+
+### - Константи
+
+Визначте будь-які константні елементи, набори даних чи конфігурації, використані в тестах, для спрощеного посилання.
+
+Наприклад:
+
+```ts
+const landingPageElements = { ... };
+const superBlocks = [ ... ];
+```
+
+### - Спільний контекст
+
+Якщо тести залежать від спільного контексту (наприклад, завантаженої сторінки), використайте хуки beforeAll та afterAll, щоб налаштувати та розбити контекст.
+
+Наприклад:
+
+```ts
+let page: Page;
+
+beforeAll(async ({ browser }) => {
+  page = await browser.newPage();
+});
+
+afterAll(async () => {
+  await page.close();
+});
+```
+
+### - Описові назви тестів
+
+Кожен тестовий блок повинен мати чітку і лаконічну назву, описуючи саме те, що перевіряє.
+
+Наприклад:
+
+```ts
+test('The component landing-top renders correctly', async ({ page }) => {
+ // ...
+});
+```
+
+### - Людиносприйнятні твердження
+
+Кожне твердження має бути максимально розбірливим для людини. Таким чином простіше зрозуміти, що робить тест та чого очікувати.
+
+Наприклад:
+
+```ts
+await expect(landingHeading1).toHaveText('Learn to code — for free.');
+```
+
+### - Дотримуйтесь принципу DRY
+
+Переконайтеся, що тести не повторюють однаковий код знову і знову. Якщо однаковий код повторюється, реорганізуйте його як цикл або функцію.
+
+Наприклад:
+
+```ts
+for (const logo of await logos.all()) {
+  await expect(logo).toBeVisible();
+}
+```
+
+### - Тести для мобільних екранів
+
+Використайте аргумент `isMobile`, щоб запустити тести, які містять логіку, що змінюється для мобільних екранів.
+
+Наприклад:
+
+```ts
+test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({
+    isMobile
+}) => {
+  const landingPageImage = page.getByTestId('landing-page-figure');
+
+  if (isMobile) {
+    await expect(landingPageImage).toBeHidden();
+  } else {
+    await expect(landingPageImage).toBeVisible();
+  }
+});
+```
+
+### - Групові тести
+
+Згрупуйте пов’язані тести, використовуючи описові блоки. Таким чином простіше зрозуміти, що роблять тести та чого очікувати.
+
+Наприклад:
+
+```ts
+describe('The campers landing page', () => {
+  test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({
+    isMobile
+  }) => {
+    // ...
   });
-  ```
 
+  test('The campers landing page figure has the correct image', async () => {
+      // ...
+  });
+});
+```
 
 ## Як проводити тести
 
 ### 1. Переконайтеся, що MongoDB і клієнтські програми запущені
 
-- [Запустіть MongoDB і заповнiть базу даних](how-to-setup-**freecodecamp**-locally.md#step-3-start-mongodb-and-seed-the-database)
+- [Запустіть MongoDB і заповнiть базу даних](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
 - [Запустіть клієнтський застосунок freeCodeCamp і сервер API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
@@ -186,7 +197,7 @@ pnpm run playwright:install-build-tools
   npx playwright test <filename>
   ```
 
-  For example:
+  Наприклад:
 
   ```console
   npx playwright test landing-page.spec.ts
@@ -198,7 +209,7 @@ pnpm run playwright:install-build-tools
   npx playwright test <pathToFolder1> <pathToFolder2>
   ```
 
-  For example:
+  Наприклад:
 
   ```console
   npx playwright test tests/todo-page/ tests/landing-page/
@@ -210,7 +221,7 @@ pnpm run playwright:install-build-tools
   npx playwright test -g <title>
   ```
 
-  For example:
+  Наприклад:
 
   ```console
   npx playwright test -g "add a todo item"

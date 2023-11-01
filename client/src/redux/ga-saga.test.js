@@ -14,7 +14,7 @@ describe('ga-saga', () => {
     };
     return (
       expectSaga(createGaSaga, actionTypes)
-        // Assert that the `call` with expected paramater will eventually happen.
+        // Assert that the `call` with expected parameter will eventually happen.
         .call(TagManager.dataLayer, { dataLayer: mockEventPayload })
 
         // Dispatch any actions that the saga will `take`.

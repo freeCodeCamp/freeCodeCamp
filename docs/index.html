@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -56,6 +56,7 @@
   <body>
     <!-- Navigation (we are using a div, instead of nav to avoid conflict with docsify's nav) -->
     <div class="universal-nav">
+      <button onClick="toggleTheme()" class="theme-toggle">💡</button>
       <a class="app-name-link" data-nosearch="" href="/">
         <img alt="freeCodeCamp.org" src="images/branding/primary_logo.svg" />
       </a>
@@ -155,14 +156,6 @@
           tag: 'remote-markdown-url'
         },
 
-        tabs: {
-          persist: true, // default
-          sync: true, // default
-          theme: 'classic', // default
-          tabComments: true, // default
-          tabHeadings: true // default
-        },
-
         plugins: [
           function (hook, vm) {
             hook.beforeEach(function (markdown) {
@@ -230,11 +223,37 @@
           }
         ]
       };
+
+      const elements = document.querySelectorAll('*');
+      const theme = localStorage.getItem('theme');
+
+      function toggleTheme() {
+        for (const el of elements) {
+          el.classList.toggle('dark');
+        }
+        localStorage.setItem('theme', theme === 'dark' ? 'light' : 'dark');
+      }
+
+      switch (theme) {
+        case 'dark':
+          for (const el of elements) {
+            el.classList.add('dark');
+          }
+          break;
+        case 'light':
+          for (const el of elements) {
+            el.classList.add('light');
+          }
+          break;
+        default:
+          for (const el of elements) {
+            el.classList.add('light');
+          }
+          break;
+      }
     </script>
     <!-- docsify (latest v4.x.x)-->
     <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-    <!-- docsify-tabs (latest v1.x.x) -->
-    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
 
     <!-- Theme -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script> -->

@@ -1,9 +1,16 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { omit } from 'lodash';
 import { challengeTypes } from '../../../shared/config/challenge-types';
-import { devLogin, setupServer, superRequest } from '../../jest.utils';
+import {
+  devLogin,
+  setupServer,
+  superRequest,
+  seedExam,
+  defaultUserEmail
+} from '../../jest.utils';
+import { completedTrophyChallenges } from '../../__mocks__/exam';
+import { GeneratedAnswer } from '../utils/exam-types';
 
 const isValidChallengeCompletionErrorMsg = {
   type: 'error',
@@ -918,6 +925,183 @@ describe('challengeRoutes', () => {
         });
       });
     });
+
+    describe('/save-challenge', () => {
+      describe('validation', () => {
+        test('POST returns 403 status for unsavable challenges', async () => {
+          const response = await superRequest('/save-challenge', {
+            method: 'POST',
+            setCookies
+          }).send({
+            savedChallenges: {
+              // valid mongo id, but not a saveable one
+              id: 'aaaaaaaaaaaaaaaaaaaaaaa',
+              files: multiFileCertProjectBody.files
+            }
+          });
+
+          expect(response.body).toEqual({
+            message: 'That does not appear to be a valid challenge submission.',
+            type: 'error'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+      });
+
+      describe('handling', () => {
+        afterEach(async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: 'foo@bar.com' },
+            data: {
+              savedChallenges: []
+            }
+          });
+        });
+
+        test('POST update the user savedchallenges and return them', async () => {
+          const response = await superRequest('/save-challenge', {
+            method: 'POST',
+            setCookies
+          }).send({
+            id: multiFileCertProjectId,
+            files: updatedMultiFileCertProjectBody.files
+          });
+
+          const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+          const savedDate = user.savedChallenges[0]?.lastSavedDate;
+
+          expect(user).toMatchObject({
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: savedDate,
+                files: updatedMultiFileCertProjectBody.files
+              }
+            ]
+          });
+          expect(response.body).toEqual({
+            savedChallenges: [
+              {
+                id: multiFileCertProjectId,
+                lastSavedDate: savedDate,
+                files: updatedMultiFileCertProjectBody.files
+              }
+            ]
+          });
+          expect(response.statusCode).toBe(200);
+        });
+      });
+    });
+
+    describe('GET /exam/:id', () => {
+      beforeAll(async () => {
+        await seedExam();
+      });
+
+      describe('validation', () => {
+        test('GET rejects requests without id param', async () => {
+          const response = await superRequest('/exam/', {
+            method: 'GET',
+            setCookies
+          });
+
+          expect(response.body).toStrictEqual({
+            error: `Valid 'id' not found in request parameters.`
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('GET rejects requests when id param is not a 24-character string', async () => {
+          const response = await superRequest('/exam/fake-id', {
+            method: 'GET',
+            setCookies
+          });
+
+          expect(response.body).toStrictEqual({
+            error: `Valid 'id' not found in request parameters.`
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('GET rejects requests with non-existent id param', async () => {
+          const response = await superRequest(
+            '/exam/123412341234123412341234',
+            {
+              method: 'GET',
+              setCookies
+            }
+          );
+
+          expect(response.body).toStrictEqual({
+            error: 'An error occurred trying to get the exam from the database.'
+          });
+          expect(response.statusCode).toBe(500);
+        });
+
+        test('GET rejects requests where camper has not completed prerequisites', async () => {
+          const response = await superRequest(
+            '/exam/647e22d18acb466c97ccbef8',
+            {
+              method: 'GET',
+              setCookies
+            }
+          );
+
+          expect(response.body).toStrictEqual({
+            error: `You have not completed the required challenges to start the 'Exam Certification'.`
+          });
+          expect(response.statusCode).toBe(403);
+        });
+      });
+
+      describe('handling', () => {
+        test('GET returns a generatedExam array with the correct objects', async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: defaultUserEmail },
+            data: { completedChallenges: completedTrophyChallenges }
+          });
+
+          const response = await superRequest(
+            '/exam/647e22d18acb466c97ccbef8',
+            {
+              method: 'GET',
+              setCookies
+            }
+          );
+
+          expect(response.body).toHaveProperty('generatedExam');
+
+          const { generatedExam } = response.body;
+
+          expect(Array.isArray(generatedExam)).toBe(true);
+          expect(generatedExam).toHaveLength(1);
+
+          expect(generatedExam[0]).toHaveProperty('question');
+          expect(typeof generatedExam[0].question).toBe('string');
+
+          expect(generatedExam[0]).toHaveProperty('id');
+          expect(typeof generatedExam[0].id).toBe('string');
+
+          expect(generatedExam[0]).toHaveProperty('answers');
+          expect(Array.isArray(generatedExam[0].answers)).toBe(true);
+          expect(generatedExam[0].answers).toHaveLength(5);
+
+          const answers = generatedExam[0].answers as GeneratedAnswer[];
+
+          answers.forEach(a => {
+            expect(a).toHaveProperty('answer');
+            expect(typeof a.answer).toBe('string');
+            expect(a).toHaveProperty('id');
+            expect(typeof a.id).toBe('string');
+          });
+
+          expect(response.statusCode).toBe(200);
+        });
+      });
+    });
   });
 
   describe('Unauthenticated user', () => {
@@ -925,48 +1109,27 @@ describe('challengeRoutes', () => {
 
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
-      const res = await superRequest('/', { method: 'GET' });
+      const res = await superRequest('/status/ping', { method: 'GET' });
       setCookies = res.get('Set-Cookie');
     });
 
-    describe('/coderoad-challenge-completed', () => {
-      test('POST returns 401 status code with error message', async () => {
-        const response = await superRequest('/coderoad-challenge-completed', {
-          method: 'POST',
+    const endpoints: { path: string; method: 'POST' | 'GET' }[] = [
+      { path: '/coderoad-challenge-completed', method: 'POST' },
+      { path: '/project-completed', method: 'POST' },
+      { path: '/backend-challenge-completed', method: 'POST' },
+      { path: '/modern-challenge-completed', method: 'POST' },
+      { path: '/save-challenge', method: 'POST' },
+      { path: '/exam/647e22d18acb466c97ccbef8', method: 'GET' }
+    ];
+
+    endpoints.forEach(({ path, method }) => {
+      test(`${method} ${path} returns 401 status code with error message`, async () => {
+        const response = await superRequest(path, {
+          method,
           setCookies
         });
-
-        expect(response?.statusCode).toBe(401);
-      });
-    });
-
-    describe('/project-completed', () => {
-      test('POST returns 401 status code with error message', async () => {
-        const response = await superRequest('/project-completed', {
-          method: 'POST',
-          setCookies
-        });
-
         expect(response.statusCode).toBe(401);
       });
-    });
-
-    test('POST /backend-challenge-completed returns 401 status code for un-authenticated-user', async () => {
-      const response = await superRequest('/backend-challenge-completed', {
-        method: 'POST',
-        setCookies
-      });
-
-      expect(response.statusCode).toBe(401);
-    });
-
-    test('POST /modern-challenge-completed returns 401 status code with error message', async () => {
-      const response = await superRequest('/modern-challenge-completed', {
-        method: 'POST',
-        setCookies
-      });
-
-      expect(response?.statusCode).toBe(401);
     });
   });
 });

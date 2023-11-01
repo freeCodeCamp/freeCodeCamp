@@ -9,6 +9,7 @@ exports[`<Footer /> matches snapshot 1`] = `
   >
     <div
       className="footer-desc-col"
+      data-playwright-test-label="footer-desc-col"
     >
       <p>
         footer.tax-exempt-status
@@ -42,6 +43,7 @@ exports[`<Footer /> matches snapshot 1`] = `
       </h2>
       <div
         className="trending-guides-articles"
+        data-playwright-test-label="trending-guides-articles"
       >
         <span>
           <a

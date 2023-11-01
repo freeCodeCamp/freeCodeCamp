@@ -2,9 +2,9 @@ Sigue estas directrices para configurar un entorno de desarrollo para freeCodeCa
 
 ## Choose between Gitpod or your Own Machine (local setup)
 
-> [!ATTENTION] **Note:** freeCodeCamp does NOT run natively on Windows 10 or 11, you will need to use WSL2. Puedes seguir [esta guía](how-to-setup-wsl.md) para configurar WSL2. No puedes utilizar Command Prompt, Git Bash o PowerShell para ejecutar freeCodeCamp de forma nativa dentro de windows.
+> [!ATTENTION] - freeCodeCamp does not build and run natively on Windows, you will [need to use WSL2](how-to-setup-wsl.md) for a Linux-like setup on Windows. - You can't use Windows Command Prompt, Git Bash or PowerShell to build and run the codebase. - Note that if using Windows, the hardware requirements need to be more than [what we mention](how-to-setup-freecodecamp-locally?id=how-to-prepare-your-local-machine) to accommodate for WSL-based setup.
 
-Si deseas hacer una contribución puntual, debes utilizar Gitpod para realizar cambios. La configuración de Gitpod lanza un entorno listo para codificar en pocos minutos en tu navegador web. Para contribuir a largo plazo, te recomendamos que instales freeCodeCamp en tu máquina local.
+Si deseas hacer una contribución puntual, debes utilizar Gitpod para realizar cambios. La configuración de Gitpod lanza un entorno listo para codificar en pocos minutos en tu navegador web. To contribute long-term, we recommend you set up freeCodeCamp on your local machine.
 
 Estos son algunos pros y contras que deberían ayudarte a decidir cuál es la mejor opción para ti:
 
@@ -19,9 +19,9 @@ Estos son algunos pros y contras que deberían ayudarte a decidir cuál es la me
 
 ### How to Prepare a Gitpod Workspace
 
-Hemos automatizado el proceso de instalación de todas las dependencias & herramientas que necesitarás. With Gitpod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
+Hemos automatizado el proceso de instalación de todas las dependencias & herramientas que necesitarás. With Gitpod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to a computer or want to make one-time changes.
 
-There are various ways to launch an Gitpod workspace:
+There are various ways to launch a Gitpod workspace:
 
 1. **(Más rápido)** Añade `gitpod.io/#` a cualquier URL de GitHub.
 
@@ -67,7 +67,7 @@ We primarily support development on Linux and Unix-based systems like Ubuntu and
 
 | Pre-requisitos                                                                                | Versión | Notas                                                                                         |
 | --------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                  | `18.x`  | Utilizamos la versión "Active LTS", Ve [LTS Schedule](https://nodejs.org/en/about/releases/). |
+| [Node.js](http://nodejs.org)                                                                  | `20.x`  | Utilizamos la versión "Active LTS", Ve [LTS Schedule](https://nodejs.org/en/about/releases/). |
 | [pnpm](https://pnpm.io/installation)                                                          | `8.x`   | -                                                                                             |
 | [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `5.0.x` | -                                                                                             |
 
@@ -158,7 +158,7 @@ Now that you have downloaded a copy of your fork, you will need to set up an `up
 
 You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
 
-1. Change directory to the new freeCodeCamp directory:
+1. Change the directory to the new freeCodeCamp directory:
 
    ```console
    cd freeCodeCamp
@@ -205,24 +205,12 @@ The default API keys and environment variables are stored in the file `sample.en
 
 ```console
 # Crear una copia de la "sample.env" y nombrarla ".env".
-# Completarlo con las claves y secretos de la API necesarios:
+# Populate it with the necessary API keys and secrets
 ```
-
-<!-- tabs:start -->
-
-#### **macOS/Linux**
 
 ```console
 cp sample.env .env
 ```
-
-#### **Windows**
-
-```console
-copy sample.env .env
-```
-
-<!-- tabs:end -->
 
 The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
 
@@ -246,25 +234,9 @@ Before you can run the application locally, you will need to start the MongoDB s
 
 Start the MongoDB server in a separate terminal:
 
-  <!-- tabs:start -->
-
-#### **macOS/Linux**
-
 ```console
 mongod
 ```
-
-#### **Windows**
-
-- On Windows, you must specify the full path to the `mongod` binary
-
-```console
-"C:\Program Files\MongoDB\Server\3.6\bin\mongod"
-```
-
-Make sure to replace `3.6` with the version you have installed
-
-  <!-- tabs:end -->
 
 > [!TIP] You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
 

@@ -13,7 +13,7 @@ Die `text-transform`-Eigenschaft in CSS wird verwendet, um das Aussehen von Text
 
 Die folgende Tabelle zeigt, wie die verschiedenen `text-transform`-Werte den Beispieltext "Transform me" verändern.
 
-<table class='table table-striped'><thead><tr><th>Wert</th><th>Ergebnis</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"transform me"</td></tr><tr><td><code>uppercase</code></td><td>"TRANSFORM ME"</td></tr><tr><td><code>capitalize</code></td><td>"Transform Me"</td></tr><tr><td><code>initial</code></td><td>Verwende den Standardwert</td></tr><tr><td><code>inherit</code></td><td>Verwendet den <code>text-transform</code>-Wert aus dem übergeordneten Element</td></tr><tr><td><code>none</code></td><td><strong>Standard:</strong> Verwendet den ursprünglichen Text</td></tr></tbody></table>
+<table><thead><tr><th>Wert</th><th>Ergebnis</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"transform me"</td></tr><tr><td><code>uppercase</code></td><td>"TRANSFORM ME"</td></tr><tr><td><code>capitalize</code></td><td>"Transform Me"</td></tr><tr><td><code>initial</code></td><td>Verwende den Standardwert</td></tr><tr><td><code>inherit</code></td><td>Verwendet den <code>text-transform</code>-Wert aus dem übergeordneten Element</td></tr><tr><td><code>none</code></td><td><strong>Standard:</strong> Verwendet den ursprünglichen Text</td></tr></tbody></table>
 
 # --instructions--
 
