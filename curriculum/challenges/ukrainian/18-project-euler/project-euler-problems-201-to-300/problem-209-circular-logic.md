@@ -1,6 +1,6 @@
 ---
 id: 5900f43e1000cf542c50ff4f
-title: 'Problem 209: Circular Logic'
+title: 'Завдання 209: кругова логіка'
 challengeType: 1
 forumTopicId: 301850
 dashedName: problem-209-circular-logic
@@ -8,7 +8,7 @@ dashedName: problem-209-circular-logic
 
 # --description--
 
-A $k$-input binary truth table is a map from $k$ input bits (binary digits, 0 [false] or 1 [true]) to 1 output bit. For example, the $2$-input binary truth tables for the logical $AND$ and $XOR$ functions are:
+Бінарна таблиця істинності з введенням $k$ — це карта від введеного біта $k$ (бінарні цифри: 0 [false] або 1 [true]) до вихідного біта 1. Наприклад, ось таблиця істинності з введенням $2$ для логічних функцій $AND$ та $XOR$:
 
 | x | y | x AND y |
 | - | - | ------- |
@@ -24,11 +24,11 @@ A $k$-input binary truth table is a map from $k$ input bits (binary digits, 0 [f
 | 1 | 0 | 1       |
 | 1 | 1 | 0       |
 
-How many $6$-input binary truth tables, $τ$, satisfy the formula
+Скільки бінарних таблиць істинності з введенням $6$ ($τ$) задовільняють формулу
 
 $$τ(a, b, c, d, e, f) \\; AND \\; τ(b, c, d, e, f, a \\; XOR \\; (b \\; AND \\; c)) = 0$$
 
-for all $6$-bit inputs ($a$, $b$, $c$, $d$, $e$, $f$)?
+за всіх $6$-бітних входів ($a$, $b$, $c$, $d$, $e$, $f$)?
 
 # --hints--
 

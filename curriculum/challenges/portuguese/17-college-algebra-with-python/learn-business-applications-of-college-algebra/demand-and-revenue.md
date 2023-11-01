@@ -16,11 +16,11 @@ Aqui está o <a href="https://colab.research.google.com/drive/1foxkSd90q1tHCSqyY
 
 \- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021), de Jean-Paul Oliver</a>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Resolva os problemas das páginas 155 e 163 do livro "Business Math, a Step-by-Step Handbook (2021)".
+
+# --question--
 
 ## --text--
 

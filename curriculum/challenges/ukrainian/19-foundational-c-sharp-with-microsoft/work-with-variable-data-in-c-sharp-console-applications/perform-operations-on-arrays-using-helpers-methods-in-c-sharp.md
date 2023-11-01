@@ -12,11 +12,11 @@ dashedName: perform-operations-on-arrays-using-helpers-methods-in-c-sharp
 1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/csharp-arrays-operations/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-arrays-operations/</a> та виконайте всі завдання модуля «Виконайте операції на масивах, використовуючи допоміжні методи в C#». Це **обов’язково**, щоб отримати трофей зі «Робота з даними змінних в консольних застосунках C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-arrays-operations/" target="_blank" rel="noreferrer">«Виконайте операції на масивах, використовуючи допоміжні методи в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
+# --question--
 
 ## --text--
 

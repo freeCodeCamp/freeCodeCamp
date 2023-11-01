@@ -14,12 +14,11 @@ dashedName: the-box-model-question-d
 
 ![Змінений стиль](https://cdn.statically.io/gh/TheOdinProject/curriculum/f8fd38fc62578d8e8368f5303126215a492847f0/foundations/html_css/inspecting-html-and-css/imgs/03.png)
 
-
-# --question--
-
-## --assignment--
+# --assignment--
 
 Розгляньте інструменти веброзробника Chrome та дізнайтесь, чи зможете відповісти на запитання.
+
+# --question--
 
 ## --text--
 

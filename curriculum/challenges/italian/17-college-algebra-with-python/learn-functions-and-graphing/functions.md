@@ -12,11 +12,11 @@ Questo primo video ti mostrerà cos'è una funzione e poi ti mostrerà le somigl
 
 Ecco il <a href="https://colab.research.google.com/drive/1d0e55NoKjKILIum34POv04h0OLpE_pkn" target="_blank" rel="noopener noreferrer nofollow">notebook Colab usato in questo video e nei prossimi.</a>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Aggiungi al tuo notebook Colab del codice che crea funzioni Python per le conversioni da decimali a frazioni
+
+# --question--
 
 ## --text--
 

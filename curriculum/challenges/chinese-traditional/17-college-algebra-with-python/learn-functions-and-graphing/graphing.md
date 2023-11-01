@@ -12,15 +12,15 @@ dashedName: graphing
 
 這是<a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">和上兩個視頻配套的 Colab 筆記本</a>，這樣你可以開始製作你自己的圖像。
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 在你的代數 Colab 筆記本上添加代碼，用於函數和圖像。
 
 ---
 
 運行下面的筆記本看看<a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">使用代數和 Python 創建圖像的更多方法</a>。
+
+# --question--
 
 ## --text--
 
