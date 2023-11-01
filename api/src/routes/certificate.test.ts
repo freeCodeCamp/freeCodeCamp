@@ -13,7 +13,7 @@ describe('certificationRoutes', () => {
   });
   test('should return user not found if we cannot find the user', async () => {
     const response = await superRequest(
-      'certification/not-a-valid-user-name/javascript-algorithms-and-data-structures',
+      'certificate/not-a-valid-user-name/javascript-algorithms-and-data-structures',
       {
         method: 'GET'
       }
@@ -33,7 +33,7 @@ describe('certificationRoutes', () => {
     });
 
     const response = await superRequest(
-      'certification/foobar/javascript-algorithms-and-data-structures',
+      'certificate/foobar/javascript-algorithms-and-data-structures',
       {
         method: 'GET'
       }
@@ -53,7 +53,7 @@ describe('certificationRoutes', () => {
     });
 
     const response = await superRequest(
-      'certification/foobar/javascript-algorithms-and-data-structures',
+      'certificate/foobar/javascript-algorithms-and-data-structures',
       {
         method: 'GET'
       }
@@ -74,7 +74,7 @@ describe('certificationRoutes', () => {
     });
 
     const response = await superRequest(
-      'certification/foobar/javascript-algorithms-and-data-structures',
+      'certificate/foobar/javascript-algorithms-and-data-structures',
       {
         method: 'GET'
       }
@@ -94,7 +94,7 @@ describe('certificationRoutes', () => {
       data: { username: 'foobar', name: 'foobar', isHonest: false }
     });
     const response = await superRequest(
-      'certification/foobar/javascript-algorithms-and-data-structures',
+      'certificate/foobar/javascript-algorithms-and-data-structures',
       {
         method: 'GET'
       }
@@ -118,7 +118,7 @@ describe('certificationRoutes', () => {
       }
     });
     const response = await superRequest(
-      'certification/foobar/javascript-algorithms-and-data-structures',
+      'certificate/foobar/javascript-algorithms-and-data-structures',
       {
         method: 'GET'
       }
@@ -142,7 +142,7 @@ describe('certificationRoutes', () => {
       }
     });
     const response = await superRequest(
-      'certification/foobar/javascript-algorithms-and-data-structures',
+      'certificate/foobar/javascript-algorithms-and-data-structures',
       {
         method: 'GET'
       }
@@ -166,7 +166,7 @@ describe('certificationRoutes', () => {
       }
     });
     const response = await superRequest(
-      'certification/foobar/javascript-algorithms-and-data-structures',
+      'certificate/foobar/javascript-algorithms-and-data-structures',
       {
         method: 'GET'
       }
