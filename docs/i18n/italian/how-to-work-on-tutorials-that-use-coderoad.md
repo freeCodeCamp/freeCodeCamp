@@ -56,7 +56,7 @@ Se vuoi testare i tuoi cambiamenti a `main` dopo aver usato le istruzioni preced
 - Segui le istruzioni nel repo [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) per creare un contenitore
 - Inizia il tutorial usando `tutorial.json` nel nuovo branch
 
-### Revisionare PR a `main`
+### Reviewing PRs to `main`
 
 Se stai revisionando un PR che fa cambiamenti a `main`solo con istruzioni o errori di grammatica come descritto sopra, i cambiamenti in `TUTORIAL.md` devono combaciare con i cambiamenti in `tutorial.json`.
 
@@ -119,11 +119,11 @@ Se hai permessi di scrittura al repo di freeCodeCamp, hai verificato i file `CHA
 - Fai un PR a `main` sul repo di freeCodeCamp
 - Se sei soddisfatto, fai il merge, o lascialo e chiedi una review da parte di qualcun altro
 - Dopo che è stato fatto il merge del PR, apri il tutotial seguendo le istruzioni nel [repo rdb-alpha](https://github.com/freeCodeCamp/rdb-alpha) per assicurarti che si carichi come si deve e che puoi procedere per qualche step
-- Infine, se esistono PR per questa versione, chiudile
+- Finally, if any PRs for this version exist, close them
 
 ### How to Revert to a Previous Version
 
-- Crea un nuovo branch dal `main` più recente con `git checkout -b revert/to-version-X.X.X`
+- Create a new branch off of the latest `main` with `git checkout -b revert/to-version-X.X.X`
 - Fai il revert di tutti i commit di questo branch fino a e includendo il commit della versione successiva a quella a cui vuoi tornare. Per esempio, se hai dei commit tipo questi:
 
 ```

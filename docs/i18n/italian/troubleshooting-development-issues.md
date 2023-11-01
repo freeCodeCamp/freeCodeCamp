@@ -31,7 +31,7 @@ Usa la scorciatoia
 pnpm run clean-and-develop
 ```
 
-Se continui a incontrare problemi con il build, è consigliato ripulire lo spazio di lavoro.
+If you continue to face issues with the build, cleaning up the workspace is recommended.
 
 Usa `git clean` in modalità interattiva:
 
@@ -50,7 +50,7 @@ git clean -ifdX
 
 ## Issues with API, login, Challenge Submissions, etc.
 
-Se non riesci ad accedere e invece vedi un banner con un messaggio di errore che verrà segnalato a freeCodeCamp, ti preghiamo di controllare che la porta locale `3000` non sia utilizzata da un programma diverso.
+If you can't sign in, and instead you see a banner with an error message saying that the error will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
 #### **From Terminal:**
 ```console
