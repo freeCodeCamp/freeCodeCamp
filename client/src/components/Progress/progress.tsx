@@ -10,7 +10,7 @@ import {
   completedPercentageSelector
 } from '../../templates/Challenges/redux/selectors';
 import { liveCerts } from '../../../config/cert-and-project-map';
-import ProgressBarInner from './progress-bar-inner';
+import ProgressInner from './progress-inner';
 
 const mapStateToProps = createSelector(
   currentBlockIdsSelector,
@@ -42,10 +42,10 @@ const mapStateToProps = createSelector(
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 
-interface ProgressBarProps extends StateProps {
+interface ProgressProps extends StateProps {
   t: TFunction;
 }
-function ProgressBar({
+function Progress({
   currentBlockIds,
   block,
   id,
@@ -53,7 +53,7 @@ function ProgressBar({
   completedChallengesInBlock,
   completedPercent,
   t
-}: ProgressBarProps): JSX.Element {
+}: ProgressProps): JSX.Element {
   const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
   // Always false for legacy full stack, since it has no projects.
   const isCertificationProject = liveCerts.some(
@@ -75,7 +75,7 @@ function ProgressBar({
       className='progress-bar-container'
       data-playwright-test-label='progress-bar-container'
     >
-      <ProgressBarInner
+      <ProgressInner
         title={blockTitle}
         meta={meta}
         completedPercent={completedPercent}
@@ -84,6 +84,6 @@ function ProgressBar({
   );
 }
 
-ProgressBar.displayName = 'ProgressBar';
+Progress.displayName = 'Progress';
 
-export default connect(mapStateToProps)(withTranslation()(ProgressBar));
+export default connect(mapStateToProps)(withTranslation()(Progress));

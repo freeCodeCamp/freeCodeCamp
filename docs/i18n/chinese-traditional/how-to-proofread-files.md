@@ -2,7 +2,7 @@
 
 Our proofreading team is responsible for ensuring that translations accurately reflect the source text. We trust our proofreaders to ensure that we have very high quality translations.
 
-All our translations are done by hand, by real humans. Proofreading ensures that there is a consistent tone across our all our translated resources like the curriculum.
+All our translations are done by hand, by real humans. Proofreading ensures that there is a consistent tone across all our translated resources like the curriculum.
 
 To begin proofreading, visit [our translation platform](https://translate.freecodecamp.org) and login. Select "Go to console" in the top navigation bar to switch from the public view to the workspace view.
 
@@ -49,6 +49,6 @@ Our staff team and community moderators teams are always looking for kind volunt
 
 ## Creating a Channel on Chat for a World Language
 
-For the most part we encourage you to use the [contributors chat](https://discord.gg/PRyKn3Vbay) room for all correspondence. However if the team of volunteer translators grows for a certain language, we can consider creating additional break-out channel for the language.
+For the most part, we encourage you to use the [contributors chat](https://discord.gg/PRyKn3Vbay) room for all correspondence. However if the team of volunteer translators grows for a certain language, we can consider creating an additional break-out channel for the language.
 
 If you are already a proofreader and are interested in having a dedicated channel on our chat servers for a specific language, [fill out this form](https://forms.gle/XU5CyutrYCgDYaVZA).

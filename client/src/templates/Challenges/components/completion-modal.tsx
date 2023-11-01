@@ -24,7 +24,7 @@ import {
   challengeMetaSelector,
   isSubmittingSelector
 } from '../redux/selectors';
-import ProgressBar from '../../../components/ProgressBar';
+import Progress from '../../../components/Progress';
 import GreenPass from '../../../assets/icons/green-pass';
 
 import './completion-modal.css';
@@ -189,7 +189,7 @@ class CompletionModal extends Component<
             />
           </div>
           <div className='completion-block-details'>
-            <ProgressBar />
+            <Progress />
           </div>
         </Modal.Body>
         <Modal.Footer>
