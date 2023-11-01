@@ -64,5 +64,14 @@ test.describe('Link MS user component (unlinked signedIn user)', () => {
     const linkText6 = page.getByTestId('link-li-6-text');
     await expect(linkText6).toBeVisible();
     await expect(linkText6).toHaveText(translations.learn.ms['link-li-6']);
+
+    const transcriptLinkInput = page.getByLabel(
+      translations.learn.ms['transcript-label']
+    );
+    await expect(transcriptLinkInput).toBeVisible();
+    await expect(transcriptLinkInput).toHaveAttribute(
+      'placeholder',
+      'https://learn.microsoft.com/en-us/users/username/transcript/transcriptId'
+    );
   });
 });
