@@ -53,7 +53,7 @@
 
 .trending-guides-articles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(11em, 1fr));
+  grid-template-columns: repeat(3, minmax(11em, 1fr));
   grid-column-gap: 3rem;
   grid-row-gap: 0.5rem;
 }

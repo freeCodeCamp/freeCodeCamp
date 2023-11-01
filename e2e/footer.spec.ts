@@ -23,7 +23,7 @@ test.describe('Footer component left section', () => {
   });
 });
 
-test.describe('Footer Trending Guides section', () => {
+test.describe('Footer bottom links', () => {
   test('should render the section with a header and 30 articles', async ({
     page
   }) => {
@@ -33,10 +33,7 @@ test.describe('Footer Trending Guides section', () => {
       })
     ).toBeVisible();
 
-    const articles = await page
-      .getByTestId('trending-guides-articles')
-      .getByRole('link')
-      .all();
+    const articles = await page.getByRole('list').all();
 
     expect(articles).toHaveLength(30);
 
@@ -44,9 +41,7 @@ test.describe('Footer Trending Guides section', () => {
       await expect(article).toBeVisible();
     }
   });
-});
 
-test.describe('Footer bottom links', () => {
   test('should display correct link to about us page', async ({ page }) => {
     const link = page.getByRole('link', {
       name: translations.footer.links.about
