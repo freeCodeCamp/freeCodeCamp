@@ -410,7 +410,7 @@ Sigue estos pasos:
 
     #### **Windows**
     ```console
-    copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+    copy .\shared\config\curriculum.json ..\mobile\mobile-app\curriculum.json
     ```
 
 7. Change directory to the mobile app:
@@ -428,7 +428,7 @@ Sigue estos pasos:
 9. Update the test file to use the challenge data JSON file:
 
     ```console
-    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
+    sed -i '' 's/..\/..\/shared\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
     ```
 
 10. Generate the challenge files:
