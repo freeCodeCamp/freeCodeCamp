@@ -4,6 +4,7 @@ const login = (user?: string) => {
     () => {
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       cy.visit(`${Cypress.env('API_LOCATION')}/signin`);
+      cy.url().should('include', '/learn');
       cy.contains('Welcome back');
     },
     {
