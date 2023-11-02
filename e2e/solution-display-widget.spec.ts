@@ -32,3 +32,40 @@ test('Multifile dropdown testing', async ({ page }) => {
     await expect(project_preview_modal).toBeVisible();
   }
 });
+
+test('Single Solution testing', async ({ page }) => {
+  const solution_button = page.getByRole('button', {
+    name: /Solution for Palindrome Checker/i
+  });
+  const isVisible = await solution_button.isVisible();
+  if (isVisible) {
+    await solution_button.click();
+    const solution_viewer_modal = page.getByTestId(
+      'project-solution-viewer-modal'
+    );
+    await expect(solution_viewer_modal).toBeVisible();
+  }
+});
+
+test('External solution testing', async ({ page }) => {
+  const solution_button = page
+    .getByRole('button', {
+      name: /Solution for Build a Random Quote Machine/i
+    })
+    .first();
+  const isVisible = await solution_button.isVisible();
+  if (isVisible) {
+    const browserContext = page.context();
+
+    const [newPage] = await Promise.all([
+      browserContext.waitForEvent('page'),
+      solution_button.click()
+    ]);
+
+    await newPage.waitForLoadState();
+
+    await expect(newPage).toHaveURL(/^https:\/\/codepen\.io/);
+
+    await newPage.close();
+  }
+});
