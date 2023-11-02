@@ -27,11 +27,7 @@ import Spacer from '../helpers/spacer';
 import { Themes } from '../settings/theme';
 import { DonateFormState } from '../../redux/types';
 import type { CompletedChallenge } from '../../redux/prop-types';
-import {
-  CENTS_IN_DOLLAR,
-  convertToTimeContributed,
-  formattedAmountLabel
-} from './utils';
+import { CENTS_IN_DOLLAR, formattedAmountLabel } from './utils';
 import DonateCompletion from './donate-completion';
 import PatreonButton from './patreon-button';
 import PaypalButton from './paypal-button';
@@ -220,9 +216,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     const showMinimalPayments =
       isSignedIn && (isMinimalForm || !isDonating) && threeChallengesCompleted;
 
-    const confirmationMessage = t('donate.confirm-monthly', {
-      usd: formattedAmountLabel(donationAmount)
-    });
     const confirmationWithEditAmount = (
       <>
         {t('donate.confirm-multitier', {
@@ -242,11 +235,12 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     };
     return (
       <>
-        <b className={confirmationClass()}>
-          {editAmount ? confirmationWithEditAmount : confirmationMessage}
-        </b>
+        <b className={confirmationClass()}>{confirmationWithEditAmount}</b>
         <Spacer size={editAmount ? 'small' : 'medium'} />
-        <fieldset className={'donate-btn-group security-legend'}>
+        <fieldset
+          data-playwright-test-label='donation-form'
+          className={'donate-btn-group security-legend'}
+        >
           <legend>
             <SecurityLockIcon />
             {t('donate.secure-donation')}
@@ -296,15 +290,8 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
   }
 
   renderPageForm() {
-    const { donationAmount } = this.state;
-    const { t } = this.props;
-    const usd = formattedAmountLabel(donationAmount);
-    const hours = convertToTimeContributed(donationAmount);
-    const donationDescription = t('donate.your-donation-2', { usd, hours });
-
     return (
       <>
-        <p className='donation-description'>{donationDescription}</p>
         <div>{this.renderButtonGroup()}</div>
       </>
     );
