@@ -28,6 +28,7 @@ const prerequisitesJoi = Joi.object().keys({
 
 const schema = Joi.object()
   .keys({
+    audioPath: Joi.string(),
     block: Joi.string().regex(slugRE).required(),
     blockId: Joi.objectId(),
     challengeOrder: Joi.number(),
@@ -38,7 +39,11 @@ const schema = Joi.object()
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
     description: Joi.when('challengeType', {
-      is: [challengeTypes.step, challengeTypes.video],
+      is: [
+        challengeTypes.step,
+        challengeTypes.video,
+        challengeTypes.fillInTheBlank
+      ],
       then: Joi.string().allow(''),
       otherwise: Joi.string().required()
     }),
