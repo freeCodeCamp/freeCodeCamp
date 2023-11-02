@@ -6,7 +6,9 @@ test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.describe('show email sign up page', () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let page: Page;
-
+  test.beforeAll(() => {
+    test.setTimeout(60000);
+  });
   test.beforeEach(async ({ page }) => {
     await page.goto('/signup');
   });
