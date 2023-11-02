@@ -15,12 +15,18 @@ test.describe('show email sign up page', () => {
   });
 });
 
-test('should render accept terms yes please button', async ({ page }) => {
+test('should render and has an element of yes please button', async ({
+  page
+}) => {
   await expect(page.getByTestId('yes-please-button')).toBeVisible();
+  await page.getByRole('button', { name: 'Yes Please' }).click();
 });
 
-test('should render accept terms no thanks button', async ({ page }) => {
+test('should render and has an element of no thanks button', async ({
+  page
+}) => {
   await page.getByTestId('no-thanks-button').click();
+  await expect(page.getByTestId('no-thanks-button')).toBeVisible();
 });
 
 test('should render signup email list', async ({ page }) => {
