@@ -3,6 +3,7 @@ const frontmatter = require('remark-frontmatter');
 const remark = require('remark-parse');
 const { readSync } = require('to-vfile');
 const unified = require('unified');
+const addFillInTheBlank = require('./plugins/add-fill-in-the-blank');
 const addFrontmatter = require('./plugins/add-frontmatter');
 const addSeed = require('./plugins/add-seed');
 const addSolution = require('./plugins/add-solution');
@@ -44,6 +45,7 @@ const processor = unified()
   // 'directives' will be from text like the css selector :root. These should be
   // converted back to text before they're added to the challenge object.
   .use(restoreDirectives)
+  .use(addFillInTheBlank)
   .use(addVideoQuestion)
   .use(addAssignment)
   .use(addTests)

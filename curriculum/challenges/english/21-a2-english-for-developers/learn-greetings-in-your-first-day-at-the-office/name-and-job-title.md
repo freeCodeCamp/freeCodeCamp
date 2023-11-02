@@ -1,8 +1,8 @@
 ---
 id: 6537e6ece93e5724eeb27c54
-title: "Challenge: Name and Job Title"
+title: Name and Job Title
 challengeType: 19
-dashedName: challenge-name-and-job-title
+dashedName: name-and-job-title
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
@@ -18,19 +18,35 @@ What is Maria's job role at the company?
 
 ## --answers--
 
-Graphic Designer
+`Graphic Designer`
+
+### --feedback--
+
+Focus on the term Maria used to describe herself.
 
 ---
 
-Team Member
+`Team Member`
+
+### --feedback--
+
+Focus on the term Maria used to describe herself.
 
 ---
 
-Team Lead
+`Team Lead`
+
+### --feedback--
+
+Focus on the term Maria used to describe herself.
 
 ---
 
-CEO
+`CEO`
+
+### --feedback--
+
+Focus on the term Maria used to describe herself.
 
 ## --video-solution--
 

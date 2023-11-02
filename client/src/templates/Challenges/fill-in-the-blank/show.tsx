@@ -16,7 +16,6 @@ import { Container, Col, Row } from '@freecodecamp/ui';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
-import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
@@ -70,14 +69,12 @@ interface ShowFillInTheBlankProps {
 }
 
 interface ShowFillInTheBlankState {
-  subtitles: string;
-  downloadURL: string | null;
-  selectedOption: number | null;
-  answer: number;
   showWrong: boolean;
   userAnswers: (string | undefined)[];
   answersCorrect: (boolean | undefined)[];
   allBlanksFilled: boolean;
+  feedback: string | null;
+  showFeedback: boolean;
 }
 
 // Component
@@ -90,15 +87,26 @@ class ShowFillInTheBlank extends Component<
 
   constructor(props: ShowFillInTheBlankProps) {
     super(props);
+
+    const {
+      data: {
+        challengeNode: {
+          challenge: {
+            fillInTheBlank: { blanks }
+          }
+        }
+      }
+    } = props;
+
+    const emptyArray = blanks.map(() => undefined);
+
     this.state = {
-      subtitles: '',
-      downloadURL: null,
-      selectedOption: null,
-      answer: 1,
       showWrong: false,
-      userAnswers: [],
-      answersCorrect: [],
-      allBlanksFilled: false
+      userAnswers: emptyArray,
+      answersCorrect: emptyArray,
+      allBlanksFilled: false,
+      feedback: null,
+      showFeedback: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -123,18 +131,6 @@ class ShowFillInTheBlank extends Component<
     });
     challengeMounted(challengeMeta.id);
     this.container.current?.focus();
-
-    const blanks = ['', '', ''];
-
-    const emptyArray = [];
-    for (let i = 0; i < blanks.length; i++) {
-      emptyArray.push(undefined);
-    }
-
-    this.setState({
-      userAnswers: emptyArray,
-      answersCorrect: emptyArray
-    });
   }
 
   componentDidUpdate(prevProps: ShowFillInTheBlankProps): void {
@@ -167,25 +163,46 @@ class ShowFillInTheBlank extends Component<
   }
 
   handleSubmit() {
-    const { openCompletionModal } = this.props;
+    const {
+      openCompletionModal,
+      data: {
+        challengeNode: {
+          challenge: {
+            fillInTheBlank: { blanks }
+          }
+        }
+      }
+    } = this.props;
     const { userAnswers } = this.state;
-    const blanks = ['You', 'are', 'right'];
+
+    const blankAnswers = blanks.map(b => b.answer);
 
     const newAnswersCorrect = userAnswers.map((userAnswer, i) => {
-      if (userAnswer === blanks[i]) {
+      if (userAnswer === blankAnswers[i]) {
         return true;
       } else {
         return false;
       }
     });
 
-    this.setState({
-      answersCorrect: newAnswersCorrect
-    });
-
     const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
     if (!hasWrongAnswer) {
+      this.setState({
+        answersCorrect: newAnswersCorrect
+      });
+
       openCompletionModal();
+    } else {
+      const firstWrongIndex = newAnswersCorrect.findIndex(a => a === false);
+      const feedback =
+        firstWrongIndex >= 0 ? blanks[firstWrongIndex].feedback : null;
+
+      this.setState({
+        answersCorrect: newAnswersCorrect,
+        showWrong: true,
+        showFeedback: true,
+        feedback: feedback
+      });
     }
   }
 
@@ -199,12 +216,15 @@ class ShowFillInTheBlank extends Component<
     const newAnswersCorrect = [...answersCorrect];
     newAnswersCorrect[inputIndex] = undefined;
 
-    const blankNotFilled = newUserAnswers.some(a => a === undefined);
+    const blankNotFilled = newUserAnswers.some(
+      a => a === undefined || a === ''
+    );
 
     this.setState({
       userAnswers: newUserAnswers,
       answersCorrect: newAnswersCorrect,
-      allBlanksFilled: blankNotFilled ? false : true
+      allBlanksFilled: blankNotFilled ? false : true,
+      showWrong: false
     });
   };
 
@@ -247,11 +267,12 @@ class ShowFillInTheBlank extends Component<
           challenge: {
             title,
             description,
+            instructions,
             superBlock,
             block,
             translationPending,
             fields: { blockName },
-            question: { text, answers },
+            fillInTheBlank: { sentence, blanks },
             audioPath
           }
         }
@@ -268,48 +289,10 @@ class ShowFillInTheBlank extends Component<
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
 
-    const feedback =
-      this.state.selectedOption !== null
-        ? answers[this.state.selectedOption].feedback
-        : undefined;
+    const { allBlanksFilled, feedback, showFeedback, showWrong } = this.state;
 
-    const fillInTheBlank = {
-      sentence:
-        // '<p><code>Hello! You</code> _ <code>the new graphic designer,</code> _ <code>?</code></p>',
-        //'<p><code>Hello! You _ the new graphic designer, _?</code></p>',
-        '<p><code>Hello! _ _ the new graphic designer, _?</code></p>',
-
-      blanks: ['You', 'are', 'right']
-    };
-
-    /*
-      # --fillInTheBlank--
-
-      ## --sentence--
-
-      `Hello! _ _ the new graphic designer, _ ?`
-
-      ## --blanks--
-
-      You
-
-      ---
-
-      are
-
-      ---
-
-      right
-    */
-
-    const sentence = fillInTheBlank.sentence
-      .replace(/^<p>|<\/p>$/g, '')
-      .split('_');
-
-    console.log(this.state);
-    const { blanks } = fillInTheBlank;
-
-    const { allBlanksFilled } = this.state;
+    const splitSentence = sentence.replace(/^<p>|<\/p>$/g, '').split('_');
+    const blankAnswers = blanks.map(b => b.answer);
 
     return (
       <Hotkeys
@@ -333,10 +316,12 @@ class ShowFillInTheBlank extends Component<
               </ChallengeTitle>
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                <PrismFormatted text={description} />
                 {audioPath && (
                   <>
                     {' '}
-                    <Spacer size='medium' />
+                    <Spacer size='small' />
+                    <Spacer size='small' />
                     {/* TODO: Add tracks for audio elements */}
                     {/* eslint-disable-next-line jsx-a11y/media-has-caption*/}
                     <audio className='audio' controls>
@@ -347,37 +332,37 @@ class ShowFillInTheBlank extends Component<
                     </audio>
                   </>
                 )}
-                <ChallengeDescription description={description} />
-                <span>Fill in the blank</span>
-                <PrismFormatted className={'line-numbers'} text={text} />
                 <Spacer size='medium' />
+                <PrismFormatted text={instructions} />
+                <Spacer size='medium' />
+                <h2>Fill in the blank</h2>
+                <Spacer size='small' />
                 <ObserveKeys>
                   <div>
-                    <h5>Here&apos;s the sentence:</h5>
                     <p>
-                      {sentence.map((s, i) => {
+                      {splitSentence.map((s, i) => {
                         return (
                           <>
                             <PrismFormatted
-                              text={this.addCodeTags(s, i, blanks.length)}
+                              text={this.addCodeTags(s, i, blankAnswers.length)}
                               className={`code-tag ${this.addPrismClass(
                                 i,
-                                blanks.length
+                                blankAnswers.length
                               )}`}
                               useSpan
                               noAria
                             />
-                            {blanks[i] && (
+                            {blankAnswers[i] && (
                               <input
                                 type='text'
-                                maxLength={blanks[i].length + 3}
+                                maxLength={blankAnswers[i].length + 3}
                                 className={`fill-in-the-blank-input ${this.addInputClass(
                                   i
                                 )}`}
                                 onChange={this.handleInputChange}
                                 data-index={i}
                                 style={{
-                                  width: `${blanks[i].length * 11 + 11}px`
+                                  width: `${blankAnswers[i].length * 11 + 11}px`
                                 }}
                               />
                             )}
@@ -388,22 +373,19 @@ class ShowFillInTheBlank extends Component<
                   </div>
                 </ObserveKeys>
                 <Spacer size='medium' />
+                {showFeedback && feedback && (
+                  <>
+                    <PrismFormatted text={feedback} />
+                    <Spacer size='small' />
+                  </>
+                )}
                 <div
                   style={{
                     textAlign: 'center'
                   }}
                 >
-                  {this.state.showWrong ? (
-                    <span>
-                      {feedback ? (
-                        <PrismFormatted
-                          className={'multiple-choice-feedback'}
-                          text={feedback}
-                        />
-                      ) : (
-                        t('learn.wrong-answer')
-                      )}
-                    </span>
+                  {showWrong ? (
+                    <span>{t('learn.wrong-answer')}</span>
                   ) : (
                     <span>{t('learn.check-answer')}</span>
                   )}
@@ -450,6 +432,7 @@ export const query = graphql`
       challenge {
         title
         description
+        instructions
         challengeType
         helpCategory
         superBlock
@@ -458,13 +441,12 @@ export const query = graphql`
           blockName
           slug
         }
-        question {
-          text
-          answers {
+        fillInTheBlank {
+          sentence
+          blanks {
             answer
             feedback
           }
-          solution
         }
         translationPending
         audioPath

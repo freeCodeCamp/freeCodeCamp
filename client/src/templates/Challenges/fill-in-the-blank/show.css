@@ -12,7 +12,7 @@
   border: 1px solid var(--secondary-color);
   border-left: none;
   border-right: none;
-  border-bottom-width: 3px;
+  border-bottom-width: 4px;
   border-bottom-color: var(--gray-45) !important;
 }
 
