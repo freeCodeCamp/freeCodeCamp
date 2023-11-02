@@ -1,4 +1,3 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import { isEmpty } from 'lodash-es';
 import { QRCodeSVG } from 'qrcode.react';
 import React, { useEffect, useState } from 'react';
@@ -6,7 +5,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Image } from '@freecodecamp/ui';
+import { Container, Col, Row, Image, Button } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
 import { getLangCode } from '../../../shared/config/i18n';
@@ -238,8 +237,8 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     <div>
       <Button
         block={true}
-        bsSize='sm'
-        bsStyle='primary'
+        size='small'
+        variant='primary'
         onClick={hideDonationSection}
       >
         {t('buttons.close')}
@@ -296,8 +295,8 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       <Col xs={12}>
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='primary'
+          size='large'
+          variant='primary'
           href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${urlFriendlyCertTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${
             certMonth + 1
           }&certUrl=${certURL}`}
@@ -309,8 +308,8 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         <Spacer size='medium' />
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='primary'
+          size='large'
+          variant='primary'
           href={`https://twitter.com/intent/tweet?text=${t('profile.tweet', {
             certTitle: urlFriendlyCertTitle,
             certURL: certURL
