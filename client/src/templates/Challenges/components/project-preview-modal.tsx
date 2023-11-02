@@ -55,6 +55,7 @@ function ProjectPreviewModal({
 
   return (
     <Modal
+      data-playwright-test-label='project-preview-modal'
       bsSize='lg'
       data-cy='project-preview-modal'
       dialogClassName='project-preview-modal'
