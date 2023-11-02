@@ -104,7 +104,7 @@ const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
       signedInUserName: string,
       userFetchState: UserFetchState,
       isDonating: boolean,
-      user
+      user: User
     ) => ({
       cert,
       fetchState,
