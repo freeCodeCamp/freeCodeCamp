@@ -12,11 +12,11 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 1. Acesse <a href="https://learn.microsoft.com/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/</a> e complete todas as tarefas do módulo "Projeto de desafio – desenvolver estruturas de ramificação e de repetição em C#". Isso é **necessário** para conquistar o troféu "Adicione lógica a aplicações de console do C#" da Microsoft Learn e para se qualificar para o exame de certificação.
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Complete o projeto de desafio <a href="https://learn.microsoft.com/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/" target="_blank" rel="noreferrer">Desenvolver estruturas de ramificação e de repetição em C#</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
+# --question--
 
 ## --text--
 

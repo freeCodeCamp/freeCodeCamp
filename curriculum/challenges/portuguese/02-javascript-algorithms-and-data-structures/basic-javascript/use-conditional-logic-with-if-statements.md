@@ -20,7 +20,7 @@ Quando a condição for `true`, o programa executará as instruções dentro das
 **Exemplo**
 
 ```js
-function test (myCondition) {
+function test(myCondition) {
   if (myCondition) {
     return "It was true";
   }

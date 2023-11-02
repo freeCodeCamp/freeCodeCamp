@@ -140,7 +140,7 @@ When you are working on regular bugs and features on our development branch `mai
 
 ### For Upcoming Curriculum and Features
 
-When you are working on features for our upcoming curriculum `next-*` branches, you have to do a cherry pick:
+When you are working on features for our upcoming curriculum `next-*` branches, you have to do a `cherry-pick`:
 
 1. Make sure your upstream comes in sync with your local:
 
@@ -151,7 +151,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    git reset --hard upstream/next-python-projects
    ```
 
-2. Take backup
+2. Take a backup
 
    a. Either delete your local branch after taking a backup (if you still have it locally):
 
@@ -169,7 +169,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    git branch -D <pr-branch-name>
    ```
 
-   b. Or just a backup of your pr branch (if you do not have it locally):
+   b. Or just a backup of your PR branch (if you do not have it locally):
 
    ```console
    git checkout -b <backup-branch-name> origin/<pr-branch-name>

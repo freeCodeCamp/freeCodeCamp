@@ -415,6 +415,13 @@
           "O armazenamento local é uma funcionalidade do navegador da web que permite que aplicações da web armazenem pares de chave-valor de maneira persistente dentro do navegador de um usuário, permitindo que os dados sejam salvos e recuperados nas sessões das páginas.",
           "Nesta aplicação de lista de tarefas, você aprenderá a lidar com entradas de formulário, a gerenciar o armazenamento local, a executar operações do CRUD (criar, ler, atualizar e apagar) em tarefas, a implementar \"ouvintes\" de eventos e a ativar/desativar elementos da UI."
         ]
+      },
+      "learn-the-date-object-by-building-a-date-formatter": {
+        "title": "Aprenda sobre o objeto Date criando um formatador de datas",
+        "intro": [
+          "Trabalhar com datas em JavaScript pode ser ao mesmo tempo poderoso e desafiador. Neste projeto, ao navegar através de vários métodos, formatos e fusos horários, você aprenderá a trabalhar com o objeto Date do JavaScript, incluindo os seus métodos e propriedades, e aprenderá a formatar datas de maneira eficaz.",
+          "Este projeto cobrirá conceitos como os métodos: <code>getDate()</code>, <code>getMonth()</code> e <code>getFullYear()</code>."
+        ]
       }
     }
   },

@@ -12,15 +12,15 @@ dashedName: how-to-solve-for-x-extra
 
 Ось <a href="https://colab.research.google.com/drive/1Jv6WxW93J_1GZao8DkNb4X0D93oVibbs" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього відео.</a> Використайте його, щоб заповнити свій блокнот Colab з алгебри.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Додайте код з відео для інших розв’язків рівняння до свого блокнота Colab.
 
 ---
 
 Відкрийте наступний блокнот Colab, запустіть секцію та <a href="https://colab.research.google.com/drive/1XjmHoERFKcvol7FPidQE-wgdvR82HV45" target="_blank" rel="noopener noreferrer nofollow">попрактикуйтесь над розв’язком прикладів з однією й двома діями.</a> Як бонус, гляньте на код, який генерує приклади для практики.
+
+# --question--
 
 ## --text--
 

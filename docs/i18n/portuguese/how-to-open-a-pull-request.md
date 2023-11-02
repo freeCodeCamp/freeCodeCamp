@@ -140,7 +140,7 @@ Quando se está trabalhando em erros normais e funcionalidades no seu branch `ma
 
 ### Para o próximo currículo e próximas funcionalidades
 
-Quando você estiver trabalhando em funcionalidades para nossos próximos branches `next-*` de currículo, você tem que fazer um cherry pick:
+Quando você estiver trabalhando em funcionalidades para nossos próximos branches `next-*` de currículo, você tem que fazer um `cherry-pick`:
 
 1. Certifique-se de que seu upstream esteja sincronizado com seu local:
 
@@ -169,7 +169,7 @@ Quando você estiver trabalhando em funcionalidades para nossos próximos branch
    git branch -D <pr-branch-nome>
    ```
 
-   b. Ou apenas faça um backup do seu branch de pr (se você não o tem localmente):
+   b. Ou apenas faça um backup do seu branch de PR (se você não o tem localmente):
 
    ```console
    git checkout -b <backup-branch-nome> origin/<pr-branch-nome>

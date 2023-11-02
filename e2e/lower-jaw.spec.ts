@@ -37,3 +37,26 @@ test('Click on the "Reset" button', async ({ page }) => {
 
   await expect(resetModal).toBeVisible();
 });
+
+test('Should render UI correctly', async ({ page }) => {
+  const codeCheckButton = page.getByRole('button', {
+    name: 'Check Your Code'
+  });
+  const lowerJawTips = page.getByTestId('failing-test-feedback');
+  await expect(codeCheckButton).toHaveText('Check Your Code (Ctrl + Enter)');
+  await expect(lowerJawTips).toHaveCount(0);
+});
+
+test('Should display full button text on desktop but hide (Ctrl + Enter on mobile)', async ({
+  page,
+  isMobile
+}) => {
+  const codeCheckButton = page.getByRole('button', {
+    name: 'Check Your Code'
+  });
+  await expect(codeCheckButton).toHaveText('Check Your Code (Ctrl + Enter)');
+
+  if (isMobile) {
+    await expect(codeCheckButton).toHaveText('Check Your Code');
+  }
+});

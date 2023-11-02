@@ -12,11 +12,11 @@ dashedName: branch-the-flow-of-code-using-the-switch-case-construct-in-c-sharp
 1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/csharp-switch-case/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-switch-case/</a> та виконайте всі завдання модуля «Розгалужте потік коду, використовуючи конструкцію switch-case в C#». Це **обов’язково**, щоб отримати трофей з «Додавання логіки до консольних застосунків C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-switch-case/" target="_blank" rel="noreferrer">«Розгалужте потік коду, використовуючи конструкцію switch-case в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
+# --question--
 
 ## --text--
 

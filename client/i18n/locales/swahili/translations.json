@@ -908,13 +908,13 @@
     "set-claim": "Dai na uangalie uthibitisho wako"
   },
   "forum-help": {
-    "browser-info": "**Maelezo ya kivinjari chako:**",
+    "browser-info": "Your browser information:",
     "user-agent": "Wakala wa Mtumiaji ni: <code>{{userAgent}}</code>",
-    "challenge": "**Challenge Information:**",
-    "whats-happening": "**Tuambie kinachoendelea:**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "Eleza suala lako kwa undani hapa.",
-    "camper-project": "**Viungo vya mradi wako**",
-    "camper-code": "**Msimbo wako kufikia sasa**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "ONYO",
     "too-long-one": "Msimbo wa mbegu wa changamoto na/au suluhu lako limezidi urefu wa juu tunaoweza kuvuka kutoka kwa changamoto.",
     "too-long-two": "Utahitaji kuchukua hatua ya ziada hapa ili msimbo ulioandika uwasilishe katika umbizo ambalo ni rahisi kusoma.",

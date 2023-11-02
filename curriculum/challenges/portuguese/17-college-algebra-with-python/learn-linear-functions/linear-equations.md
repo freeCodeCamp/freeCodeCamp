@@ -12,11 +12,11 @@ Este vídeo mostrará a matemática por trás do cálculo da interceptação do 
 
 Aqui está o <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory que acompanha os dois últimos vídeos</a> para que você possa ver as fórmulas.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Adicione código ao seu notebook do Colaboratory de álgebra para representar graficamente uma função a partir de pontos ou de entradas na equação.
+
+# --question--
 
 ## --text--
 

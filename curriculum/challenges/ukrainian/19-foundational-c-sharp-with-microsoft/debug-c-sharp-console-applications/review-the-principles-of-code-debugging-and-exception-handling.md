@@ -12,11 +12,11 @@ dashedName: review-the-principles-of-code-debugging-and-exception-handling
 1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/</a> та виконайте всі завдання модуля «Перегляньте принципи налагодження коду та оброблення винятків». Це **обов’язково**, щоб отримати трофей з «Налагодження консольних застосунків C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Виконайте модуль <a href="https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank" rel="noreferrer">«Перегляньте принципи налагодження коду та оброблення винятків»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
+# --question--
 
 ## --text--
 
