@@ -55,7 +55,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
   done
 ) => {
   fastify.get(
-    '/certificate/:username/:certSlug',
+    '/certificate/showCert/:username/:certSlug',
     {
       schema: schemas.certSlug,
       errorHandler(error, request, reply) {
@@ -101,7 +101,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             isMachineLearningPyCertV7: true,
             isRelationalDatabaseCertV8: true,
             isCollegeAlgebraPyCertV8: true,
-            // isFoundationalCSharpCertV8: true,
+            isFoundationalCSharpCertV8: true,
             isHonest: true,
             username: true,
             name: true,
@@ -109,17 +109,12 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             profileUI: true
           }
         });
+
         if (user === null) {
           return {
             type: 'info',
             message: 'flash.username-not-found',
             variables: { username }
-          } as const;
-        }
-        if (!user.name) {
-          return {
-            type: 'info',
-            message: 'flash.add-name'
           } as const;
         }
 
@@ -129,6 +124,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             message: 'flash.not-eligible'
           } as const;
         }
+
         if (!user.isHonest) {
           return {
             type: 'info',
@@ -144,6 +140,14 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             variables: { username }
           } as const;
         }
+
+        if (!user.name) {
+          return {
+            type: 'info',
+            message: 'flash.add-name'
+          } as const;
+        }
+
         if (!user.profileUI?.showCerts) {
           return {
             type: 'info',
@@ -151,6 +155,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             variables: { username }
           } as const;
         }
+
         if (!user.profileUI?.showTimeLine) {
           return {
             type: 'info',
@@ -165,8 +170,8 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             completedChallenges,
             ({ id }) => certId === id
           );
-          let { completedDate } = certChallenge || {};
 
+          let { completedDate } = certChallenge || {};
           if (!completedDate) completedDate = Date.now();
 
           // the challenge id has been rotated for isDataVisCert
@@ -179,14 +184,6 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             if (oldDataVisIdChall) {
               completedDate = oldDataVisIdChall.completedDate || completedDate;
             }
-          }
-
-          // if fullcert is not found, return the latest completedDate
-          if (certType === 'isFullStackCert' && !certChallenge) {
-            completedDate = getFallbackFullStackDate(
-              completedChallenges,
-              completedDate
-            );
           }
 
           // if fullcert is not found, return the latest completedDate
@@ -216,6 +213,12 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             name,
             date: completedDate,
             completionTime
+          };
+        } else {
+          return {
+            type: 'info',
+            message: 'flash.user-not-certified',
+            variables: { username, cert: certTypeTitleMap[certType] }
           };
         }
       } catch (err) {
