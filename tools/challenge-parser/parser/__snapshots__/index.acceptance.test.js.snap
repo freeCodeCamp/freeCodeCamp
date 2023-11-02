@@ -33,10 +33,19 @@ exports[`challenge parser it should parse video questions 1`] = `
 </section>",
   "question": {
     "answers": [
-      "<p>Some inline <code>code</code></p>",
-      "<p>Some <em>italics</em></p>
+      {
+        "answer": "<p>Some inline <code>code</code></p>",
+        "feedback": "<p>That is not correct.</p>",
+      },
+      {
+        "answer": "<p>Some <em>italics</em></p>
 <p>A second answer paragraph.</p>",
-      "<p><code> code in </code> code tags</p>",
+        "feedback": null,
+      },
+      {
+        "answer": "<p><code> code in </code> code tags</p>",
+        "feedback": null,
+      },
     ],
     "solution": 3,
     "text": "<p>Question line 1</p>

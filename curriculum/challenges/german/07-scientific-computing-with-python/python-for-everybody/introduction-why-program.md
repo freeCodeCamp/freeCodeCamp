@@ -32,9 +32,17 @@ Wer sollte programmieren lernen?
 
 College Studenten.
 
+### --feedback--
+
+College students should learn to program, but there's a better answer.
+
 ---
 
 Menschen, die Softwareentwickler werden wollen.
+
+### --feedback--
+
+People who want to become software developers should learn to program, but there's a better answer.
 
 ---
 
