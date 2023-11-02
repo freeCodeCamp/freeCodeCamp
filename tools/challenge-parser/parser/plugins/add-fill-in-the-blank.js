@@ -50,12 +50,11 @@ function getBlanks(blanksNodes) {
 
       return {
         answer: blanksNodes[0].children[0].value,
-        //answer: mdastToHtml(blanksNodes),
         feedback: mdastToHtml(feedbackNodes)
       };
     }
 
-    return { blank: blanksGroup, feedback: null };
+    return { answer: blanksGroup[0].children[0].value, feedback: null };
   });
 }
 

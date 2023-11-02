@@ -55,6 +55,17 @@ const schema = Joi.object()
       'C-Sharp'
     ),
     videoUrl: Joi.string().allow(''),
+    fillInTheBlank: Joi.object().keys({
+      sentence: Joi.string().required(),
+      blanks: Joi.array()
+        .items(
+          Joi.object().keys({
+            answer: Joi.string().required(),
+            feedback: Joi.string().allow(null)
+          })
+        )
+        .required()
+    }),
     forumTopicId: Joi.number(),
     id: Joi.objectId().required(),
     instructions: Joi.string().allow(''),

@@ -335,7 +335,7 @@ class ShowFillInTheBlank extends Component<
                 <Spacer size='medium' />
                 <PrismFormatted text={instructions} />
                 <Spacer size='medium' />
-                <h2>Fill in the blank</h2>
+                <h2>{t('fill-in-the-blank')}</h2>
                 <Spacer size='small' />
                 <ObserveKeys>
                   <div>
