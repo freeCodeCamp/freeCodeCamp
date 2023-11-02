@@ -257,10 +257,11 @@ Next, let's seed the database. In this step, we run the below command that fills
 pnpm run seed
 ```
 
-By default, you will be signed in as a new user without any completed certifications. Run the following command if you need to develop with completed certifications:
+By default, you will be signed in as a new user without any completed certifications. Run the following commands if you need to develop with completed certifications:
 
 ```console
 pnpm run seed:certified-user
+pnpm run seed:exams
 ```
 
 > [!WARNING]
@@ -296,5 +297,6 @@ A quick reference to the commands that you will need when working locally.
 | `pnpm install`          | Installs / re-installs all dependencies and bootstraps the different services. |
 | `pnpm run seed`    | Creates authorized test users and inserts them into MongoDB.        |
 | `pnpm run seed:certified-user`    | Creates authorized test users with certifications fully completed, and inserts them into MongoDB.        |
+| `pnpm run seed:exams`    | Creates exams and inserts them into MongoDB.        |
 | `pnpm run develop` | Starts the freeCodeCamp API Server and Client Applications.                   |
 | `pnpm run clean`   | Uninstalls all dependencies and cleans up caches.                             |
