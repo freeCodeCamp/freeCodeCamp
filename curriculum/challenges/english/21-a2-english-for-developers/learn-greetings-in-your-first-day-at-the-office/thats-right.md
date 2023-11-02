@@ -1,6 +1,6 @@
 ---
 id: 6543aaa9f5f028dba112f276
-title: "That's right"
+title: "That's Right"
 challengeType: 19
 dashedName: thats-right
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
