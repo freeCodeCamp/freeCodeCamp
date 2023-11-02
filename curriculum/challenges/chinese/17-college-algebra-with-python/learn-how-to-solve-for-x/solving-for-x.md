@@ -12,11 +12,11 @@ dashedName: solving-for-x
 
 这是<a href="https://colab.research.google.com/drive/11Zi77gs1FKoEqfPqYa2HtTENiWZyQAO2?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">和视频配套的 Colab 笔记本</a>。将视频中的代码添加到你的代数 Colab 笔记本中，看看如何用 Python 求解 X。 然后，如果你想的话，修改代码，进行测试，并与用纸笔解题的方法进行比较。 记住，方程输入需要使用 Python 语法。
 
-# --question--
-
-## --任务--
+# --任务--
 
 将视频中求解 x 的方法的代码添加到你的代数 Colab 笔记本中。
+
+# --question--
 
 ## --text--
 

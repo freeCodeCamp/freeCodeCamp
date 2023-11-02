@@ -126,7 +126,7 @@ Aggiungi/Cambia il testo della domanda sotto la parte che dice:
 ## --text--
 ```
 
-Add/Update answers (`Answer 1`, `Answer 2`, and so on) sotto `## --answers--`. Assicurati di aggiornare il numero sotto `## --video-solution--` con il numero della risposta corretta. Puoi aggiungere altre possibili domande seguendo lo stesso formato. Le domande e le risposte possono essere racchiuse tra virgolette.
+Add/Update answers (`Answer 1`, `Answer 2`, and so on) sotto `## --answers--`. Assicurati di aggiornare il numero sotto `## --video-solution--` con il numero della risposta corretta. Puoi aggiungere altre possibili domande seguendo lo stesso formato. The questions and answers can be surrounded with quotation marks.
 
 ### Esempi di domande
 

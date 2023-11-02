@@ -908,13 +908,13 @@
     "set-claim": "Zertifizierung beantragen und anzeigen"
   },
   "forum-help": {
-    "browser-info": "**Deine Browser-Informationen:**",
+    "browser-info": "Your browser information:",
     "user-agent": "User Agent ist: <code>{{userAgent}}</code>",
-    "challenge": "**Challenge Information:**",
-    "whats-happening": "**Sag uns, was vor sich geht:**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "Beschreibe hier dein Problem im Detail.",
-    "camper-project": "**Deine Projekt-Link(s)**",
-    "camper-code": "**Dein Code bisher**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "WARNUNG",
     "too-long-one": "Der Startcode der Herausforderung und/oder deine Lösung hat die maximale Länge überschritten, die wir von der Herausforderung übernehmen können.",
     "too-long-two": "Du musst hier einen zusätzlichen Schritt machen, damit der von dir geschriebene Code in einem einfach zu lesenden Format dargestellt wird.",

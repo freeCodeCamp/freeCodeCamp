@@ -4,7 +4,7 @@ Sigue estas directrices para configurar un entorno de desarrollo para freeCodeCa
 
 > [!ATTENTION] - freeCodeCamp does not build and run natively on Windows, you will [need to use WSL2](how-to-setup-wsl.md) for a Linux-like setup on Windows. - You can't use Windows Command Prompt, Git Bash or PowerShell to build and run the codebase. - Note that if using Windows, the hardware requirements need to be more than [what we mention](how-to-setup-freecodecamp-locally?id=how-to-prepare-your-local-machine) to accommodate for WSL-based setup.
 
-Si deseas hacer una contribución puntual, debes utilizar Gitpod para realizar cambios. La configuración de Gitpod lanza un entorno listo para codificar en pocos minutos en tu navegador web. Para contribuir a largo plazo, te recomendamos que instales freeCodeCamp en tu máquina local.
+Si deseas hacer una contribución puntual, debes utilizar Gitpod para realizar cambios. La configuración de Gitpod lanza un entorno listo para codificar en pocos minutos en tu navegador web. To contribute long-term, we recommend you set up freeCodeCamp on your local machine.
 
 Estos son algunos pros y contras que deberían ayudarte a decidir cuál es la mejor opción para ti:
 
@@ -19,9 +19,9 @@ Estos son algunos pros y contras que deberían ayudarte a decidir cuál es la me
 
 ### How to Prepare a Gitpod Workspace
 
-Hemos automatizado el proceso de instalación de todas las dependencias & herramientas que necesitarás. With Gitpod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
+Hemos automatizado el proceso de instalación de todas las dependencias & herramientas que necesitarás. With Gitpod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to a computer or want to make one-time changes.
 
-There are various ways to launch an Gitpod workspace:
+There are various ways to launch a Gitpod workspace:
 
 1. **(Más rápido)** Añade `gitpod.io/#` a cualquier URL de GitHub.
 
@@ -158,7 +158,7 @@ Now that you have downloaded a copy of your fork, you will need to set up an `up
 
 You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
 
-1. Change directory to the new freeCodeCamp directory:
+1. Change the directory to the new freeCodeCamp directory:
 
    ```console
    cd freeCodeCamp

@@ -908,13 +908,13 @@
     "set-claim": "認定証を取得して表示"
   },
   "forum-help": {
-    "browser-info": "**ブラウザ情報:**",
+    "browser-info": "Your browser information:",
     "user-agent": "ユーザーエージェント: <code>{{userAgent}}</code>",
-    "challenge": "**Challenge Information:**",
-    "whats-happening": "**状況を説明しましょう:**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "質問内容をここに詳しく記入してください。",
-    "camper-project": "**プロジェクトのリンク**",
-    "camper-code": "**現状のコード**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "注意",
     "too-long-one": "チャレンジの元コードとあなたの解答の両方、またはいずれかが、自動でコピーできる最大長を超えています。",
     "too-long-two": "記述したコードを読みやすいフォーマットで表示するために、追加の手順が必要です。",

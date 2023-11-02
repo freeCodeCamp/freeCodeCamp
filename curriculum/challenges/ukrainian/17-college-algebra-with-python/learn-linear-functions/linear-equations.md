@@ -12,11 +12,11 @@ dashedName: linear-equations
 
 Ось <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для двох останніх відео,</a> що ви могли бачити формули.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Додайте код для побудови графіків функції з точок чи вхідних рівнянь до свого блокнота Colab.
+
+# --question--
 
 ## --text--
 

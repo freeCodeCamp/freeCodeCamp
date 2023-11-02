@@ -140,7 +140,7 @@ Quando stai lavorando su normali bug e funzionalità sul nostro ramo di sviluppo
 
 ### For Upcoming Curriculum and Features
 
-Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, devi fare un cherry pick:
+When you are working on features for our upcoming curriculum `next-*` branches, you have to do a `cherry-pick`:
 
 1. Assicurati che il tuo upstream sia sincronizzato con il tuo repository locale:
 
@@ -151,7 +151,7 @@ Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, d
    git reset --hard upstream/next-python-projects
    ```
 
-2. Fai un backup
+2. Take a backup
 
    a. Elimina il ramo locale dopo aver effettuato un backup (se lo hai ancora localmente):
 
@@ -169,7 +169,7 @@ Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, d
    git branch -D <pr-branch-name>
    ```
 
-   b. O solo un backup del ramo pr (se non lo hai localmente):
+   b. Or just a backup of your PR branch (if you do not have it locally):
 
    ```console
    git checkout -b <backup-branch-name> origin/<pr-branch-name>

@@ -20,11 +20,11 @@ Você, provavelmente, usará o elemento `strong` muito mais em combinação com 
 
 Às vezes, você vai querer deixar o texto em negrito sem dar a ele um significado importante. Você aprenderá a fazer isso nas aulas de CSS, mais tarde no currículo.
 
-# --question--
-
-## --atividade
+# --atividade
 
 Assista ao vídeo de Kevin Powell sobre Negrito e Itálico do HTML acima.
+
+# --question--
 
 ## --text--
 

@@ -114,3 +114,7 @@ input:focus-visible + .video-quiz-input-visible {
   /* remove default prism background */
   background: none;
 }
+
+.multiple-choice-feedback p {
+  margin-bottom: 0;
+}

@@ -12,11 +12,11 @@ Questo video ti mostrerà la matematica necessaria per trovare l'intercetta sull
 
 Ecco il <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab per i prossimi due video,</a> che puoi usare per vedere le formule.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Aggiungi il codice al notebook Colab per tracciare una funzione dai punti o dall'input dell'equazione.
+
+# --question--
 
 ## --text--
 

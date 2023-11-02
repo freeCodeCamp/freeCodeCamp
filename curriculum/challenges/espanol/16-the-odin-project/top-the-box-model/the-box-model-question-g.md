@@ -20,11 +20,11 @@ Be sure to study the diagrams carefully.
 
 ![the box model](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/foundations/html_css/css-foundations/the-box-model/imgs/box-model.png)
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Add a border to every element on the page and see how the boxes are laid out.
+
+# --question--
 
 ## --text--
 

@@ -16,11 +16,11 @@ dashedName: demand-and-revenue
 
 \- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">《商业数学分步手册（2021）》，作者 Jean-Paul Oliver</a>
 
-# --question--
-
-## --作业--
+# --作业--
 
 完成《商业数学分步手册（2021）》第 155 和 163 页的问题。
+
+# --question--
 
 ## --text--
 

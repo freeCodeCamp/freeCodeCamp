@@ -16,15 +16,15 @@ Questo primo video tratterà le parole chiave che ti dicono quale operazione mat
 
 \- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry di Jay Abramson</a>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Completa i problemi alle pagine 63, 75, 85 e 118 da "Business Math, a Step-by-Step Handbook (2021)".
 
 ---
 
 Completa i problemi alle pagine 304, 308 e 321 da "Algebra and Trigonometry".
+
+# --question--
 
 ## --text--
 

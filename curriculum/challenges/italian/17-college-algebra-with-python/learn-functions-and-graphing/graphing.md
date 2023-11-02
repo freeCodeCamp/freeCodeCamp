@@ -12,15 +12,15 @@ Questo video ti mostrerà la connessione tra le funzioni e i grafici. Nota come 
 
 Ecco il <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">notebook Colab per gli ultimi due video</a>, usalo per iniziare a creare grafici.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Aggiungi al tuo notebook Colab del codice per le funzioni e i grafici.
 
 ---
 
 Esegui il seguente notebook per scoprire <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">altri modi per creare grafici usando l'algebra e Python.</a>
+
+# --question--
 
 ## --text--
 

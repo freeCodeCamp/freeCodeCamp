@@ -18,7 +18,7 @@ import CompletionModal from './completion-modal';
 
 jest.mock('../../../analytics');
 jest.mock('../../../utils/fire-confetti');
-jest.mock('../../../components/ProgressBar');
+jest.mock('../../../components/Progress');
 jest.mock('../redux/selectors');
 jest.mock('../utils/build');
 const mockFireConfetti = fireConfetti as jest.Mock;

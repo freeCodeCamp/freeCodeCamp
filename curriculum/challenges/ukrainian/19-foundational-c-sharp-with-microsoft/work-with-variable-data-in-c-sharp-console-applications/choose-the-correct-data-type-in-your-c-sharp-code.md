@@ -12,11 +12,11 @@ dashedName: choose-the-correct-data-type-in-your-c-sharp-code
 1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/csharp-choose-data-type/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-choose-data-type/</a> та виконайте всі завдання модуля «Виберіть правильний тип даних в коді C#». Це **обов’язково**, щоб отримати трофей зі «Робота з даними змінних в консольних застосунках C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-choose-data-type/" target="_blank" rel="noreferrer">«Виберіть правильний тип даних в коді C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
+# --question--
 
 ## --text--
 

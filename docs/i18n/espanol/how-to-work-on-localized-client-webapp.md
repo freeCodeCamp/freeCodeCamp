@@ -8,13 +8,13 @@ Once you have set up the project locally you should be able to follow this docum
 
 Esto podría ser útil cuando se está trabajando en una función que se dirige específicamente a algo que implica la localización, y requiere que valides, por ejemplo, la etiqueta de un botón en un idioma diferente.
 
-> [!TIP] No necesitas seguir este documento para traducir el currículo de  freeCodeCamp  o para contribuir con la documentación. En su lugar, lee  [esta guia](how-to-translate-files.md).
+> [!TIP] You do not need to follow this document to translate freeCodeCamp's curriculum or contributing documentation. En su lugar, lee  [esta guia](how-to-translate-files.md).
 
 Veamos cómo funcionan los marcos de trabajo y las herramientas de i18n.
 
 ## Estructura de archivos
 
-Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. Cada idioma tiene una carpeta dentro que contiene archivos JSON con las traducciones.
+Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. Each language has a directory that contains JSON files with the translations.
 
 ```console
   config
@@ -55,7 +55,7 @@ Most of the files for translating the platform are located in the [`client/i18n`
   └── validate-keys.ts
 ```
 
-Some of these files are translated on our translation platform (Crowdin) and some are translated or created via PR's on GitHub.
+Some of these files are translated on our translation platform (Crowdin) and some are translated or created via PRs on GitHub.
 
 **Archivos traducidos en nuestra plataforma de traducción:**
 

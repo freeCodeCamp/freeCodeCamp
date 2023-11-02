@@ -94,7 +94,14 @@ const schema = Joi.object()
     }),
     question: Joi.object().keys({
       text: Joi.string().required(),
-      answers: Joi.array().items(Joi.string()).required(),
+      answers: Joi.array()
+        .items(
+          Joi.object().keys({
+            answer: Joi.string().required(),
+            feedback: Joi.string().allow(null)
+          })
+        )
+        .required(),
       solution: Joi.number().required()
     }),
     required: Joi.array().items(

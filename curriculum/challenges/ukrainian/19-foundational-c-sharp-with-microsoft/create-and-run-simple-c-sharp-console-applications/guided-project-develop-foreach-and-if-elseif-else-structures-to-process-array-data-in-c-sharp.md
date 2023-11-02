@@ -12,11 +12,11 @@ dashedName: guided-project-develop-foreach-and-if-elseif-else-structures-to-proc
 1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/guided-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-arrays-iteration-selection/</a> та виконайте всі завдання модуля «Керований проєкт: розробіть структури foreach та if-elseif-else, щоб обробити дані масиву в C#». Це **обов’язково**, щоб отримати трофей зі «Створення та запуск простих консольних застосунків C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Виконайте керований проєкт <a href="https://learn.microsoft.com/training/modules/guided-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">«Розробіть структури foreach та if-elseif-else, щоб обробити дані масиву в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
+# --question--
 
 ## --text--
 

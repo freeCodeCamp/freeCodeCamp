@@ -52,6 +52,9 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         await fastify.prisma.userToken.deleteMany({
           where: { userId: req.session.user.id }
         });
+        await fastify.prisma.msUsername.deleteMany({
+          where: { userId: req.session.user.id }
+        });
         await fastify.prisma.user.delete({
           where: { id: req.session.user.id }
         });
@@ -79,6 +82,9 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         await fastify.prisma.userToken.deleteMany({
+          where: { userId: req.session.user.id }
+        });
+        await fastify.prisma.msUsername.deleteMany({
           where: { userId: req.session.user.id }
         });
         await fastify.prisma.user.update({
@@ -222,6 +228,30 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           message:
             'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
         } as const;
+      }
+    }
+  );
+
+  fastify.delete(
+    '/user/ms-username',
+    {
+      schema: schemas.deleteMsUsername
+    },
+    async (req, reply) => {
+      try {
+        await fastify.prisma.msUsername.deleteMany({
+          where: { userId: req.session.user.id }
+        });
+
+        // TODO(Post-MVP): return a generic success message.
+        return { msUsername: null };
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        void reply.send({
+          message: 'flash.ms.transcript.unlink-err',
+          type: 'error'
+        });
       }
     }
   );

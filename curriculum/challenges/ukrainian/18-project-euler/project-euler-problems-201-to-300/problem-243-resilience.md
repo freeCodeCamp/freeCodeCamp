@@ -1,6 +1,6 @@
 ---
 id: 5900f4601000cf542c50ff73
-title: 'Problem 243: Resilience'
+title: 'Завдання 243: стійкість'
 challengeType: 1
 forumTopicId: 301890
 dashedName: problem-243-resilience
@@ -8,19 +8,19 @@ dashedName: problem-243-resilience
 
 # --description--
 
-A positive fraction whose numerator is less than its denominator is called a proper fraction.
+Додатний дріб, у якого чисельник менший за знаменник, називається правильним.
 
-For any denominator, $d$, there will be $d−1$ proper fractions; for example, with $d = 12$:
+Для будь-якого знаменника $d$ існує $d−1$ правильних дробів. Наприклад, за умови $d = 12$:
 
 $$\frac{1}{12}, \frac{2}{12}, \frac{3}{12}, \frac{4}{12}, \frac{5}{12}, \frac{6}{12}, \frac{7}{12}, \frac{8}{12}, \frac{9}{12}, \frac{10}{12}, \frac{11}{12}$$
 
-We shall call a fraction that cannot be cancelled down a resilient fraction.
+Назвемо дріб, який неможливо скоротити, стійким.
 
-Furthermore we shall define the resilience of a denominator, $R(d)$, to be the ratio of its proper fractions that are resilient; for example, $R(12) = \frac{4}{11}$.
+Також визначимо стійкість знаменника $R(d)$ як відношення стійких правильних дробів до загальної кількості правильних дробів із цим знаменником. Наприклад, $R(12) = \frac{4}{11}$.
 
-In fact, $d = 12$ is the smallest denominator having a resilience $R(d) &lt; \frac{4}{10}$.
+Фактично, $d = 12$ є найменшим знаменником зі стійкістю $R(d) &lt; \frac{4}{10}$.
 
-Find the smallest denominator $d$, having a resilience $R(d) &lt; \frac{15\\,499}{94\\,744}$.
+Знайдіть найменший знаменник $d$ зі стійкістю $R(d) &lt; \frac{15\\,499}{94\\,744}$.
 
 # --hints--
 

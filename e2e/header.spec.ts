@@ -9,7 +9,6 @@ const headerComponentElements = {
   examNavLogo: 'header-exam-nav-microsoft-logo',
   universalNav: 'header-universal-nav',
   universalNavLogo: 'header-universal-nav-logo',
-  search: 'header-search',
   toggleLangButton: 'header-toggle-lang-button',
   languageList: 'header-lang-list',
   languageButton: 'header-lang-list-option',
@@ -68,15 +67,15 @@ test.describe('Header Component', () => {
     page,
     isMobile
   }) => {
-    const search = page.getByTestId(headerComponentElements.search);
+    const searchInput = page.getByLabel(translations.search.label);
     const menuButton = page.getByTestId(headerComponentElements.menuButton);
 
     if (isMobile) {
-      await expect(search).toBeHidden();
+      await expect(searchInput).toBeHidden();
       await menuButton.click();
-      await expect(search).toBeVisible();
+      await expect(searchInput).toBeVisible();
     } else {
-      await expect(search).toBeVisible();
+      await expect(searchInput).toBeVisible();
     }
   });
 
@@ -140,9 +139,18 @@ test.describe('Header Component', () => {
         name: translations.buttons.donate,
         href: '/donate'
       },
-      { name: translations.buttons.curriculum, href: '/learn' },
-      { name: translations.buttons.forum, href: links.nav.forum },
-      { name: translations.buttons.news, href: links.nav.news },
+      {
+        name: translations.buttons.curriculum,
+        href: '/learn'
+      },
+      {
+        name: translations.buttons.forum,
+        href: links.nav.forum
+      },
+      {
+        name: translations.buttons.news,
+        href: links.nav.news
+      },
       {
         name: translations.buttons.radio,
         href: process.env.RADIO_LOCATION || 'https://coderadio.freecodecamp.org'
@@ -154,7 +162,7 @@ test.describe('Header Component', () => {
     ];
 
     for (const menuLink of menuLinks) {
-      const link = page.getByRole('link', { name: menuLink.name, exact: true });
+      const link = menu.getByRole('link', { name: menuLink.name });
       await expect(link).toBeVisible();
       await expect(link).toHaveAttribute('href', menuLink.href);
     }
