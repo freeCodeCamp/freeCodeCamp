@@ -1,6 +1,6 @@
 import { RouteComponentProps } from '@reach/router';
 import { Link } from 'gatsby';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
@@ -11,8 +11,12 @@ import { Spacer } from '../helpers';
 import './404.css';
 
 const FourOhFour = (_props: RouteComponentProps): JSX.Element => {
+  const [quote, setQuote] = useState(randomQuote());
   const { t } = useTranslation();
-  const quote = randomQuote();
+
+  useEffect(() => {
+    setQuote(randomQuote());
+  }, []);
 
   return (
     <div className='notfound-page-wrapper'>
