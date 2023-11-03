@@ -634,5 +634,33 @@ export const schemas = {
         error: Type.String()
       })
     }
+  },
+  postMsUsername: {
+    body: Type.Object({
+      msTranscriptUrl: Type.String({ maxLength: 1000 })
+    }),
+    response: {
+      200: Type.Object({
+        msUsername: Type.String()
+      }),
+      404: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.transcript.link-err-2')
+      }),
+      403: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.transcript.link-err-4')
+      }),
+      500: Type.Union([
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.transcript.link-err-6')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.transcript.link-err-3')
+        })
+      ])
+    }
   }
 };

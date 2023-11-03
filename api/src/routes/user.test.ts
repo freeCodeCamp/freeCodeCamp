@@ -15,6 +15,10 @@ import {
   superRequest
 } from '../../jest.utils';
 import { JWT_SECRET } from '../utils/env';
+import { getMsTranscriptApiUrl } from './user';
+
+const mockedFetch = jest.fn();
+jest.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {
@@ -812,6 +816,236 @@ Thanks and regards,
           expect(msUsernames).toBe(1);
         });
       });
+
+      describe('POST', () => {
+        beforeEach(() => {
+          mockedFetch.mockClear();
+        });
+        afterEach(async () => {
+          await fastifyTestInstance.prisma.msUsername.deleteMany({
+            where: {
+              OR: [
+                { userId: defaultUserId },
+                { userId: 'aaaaaaaaaaaaaaaaaaaaaaaa' }
+              ]
+            }
+          });
+        });
+
+        it('handles missing transcript urls', async () => {
+          const response = await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-1'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
+        it('handles invalid transcript urls', async () => {
+          mockedFetch.mockImplementationOnce(() =>
+            Promise.resolve({
+              ok: false
+            })
+          );
+
+          const response = await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl: 'https://www.example.com'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-2'
+          });
+          expect(response.statusCode).toBe(404);
+        });
+
+        it('handles the case that MS does not return a username', async () => {
+          mockedFetch.mockImplementationOnce(() =>
+            Promise.resolve({
+              ok: true,
+              json: () => Promise.resolve({})
+            })
+          );
+
+          const response = await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl: 'https://www.example.com'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-3'
+          });
+          expect(response.statusCode).toBe(500);
+        });
+
+        it('handles duplicate Microsoft usernames', async () => {
+          mockedFetch.mockImplementationOnce(() =>
+            Promise.resolve({
+              ok: true,
+              json: () =>
+                Promise.resolve({
+                  userName: 'foobar'
+                })
+            })
+          );
+
+          await fastifyTestInstance.prisma.msUsername.create({
+            data: {
+              msUsername: 'foobar',
+              userId: defaultUserId,
+              ttl: 77760000000
+            }
+          });
+
+          const response = await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl: 'https://www.example.com'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-4'
+          });
+
+          expect(response.statusCode).toBe(403);
+        });
+
+        it('returns the username on success', async () => {
+          const msUsername = 'ms-user';
+          mockedFetch.mockImplementationOnce(() =>
+            Promise.resolve({
+              ok: true,
+              json: () =>
+                Promise.resolve({
+                  userName: msUsername
+                })
+            })
+          );
+          const response = await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl: 'https://www.example.com'
+          });
+
+          expect(response.body).toStrictEqual({
+            msUsername
+          });
+          expect(response.statusCode).toBe(200);
+        });
+
+        it('creates a record of the linked account', async () => {
+          const msUsername = 'super-user';
+          mockedFetch.mockImplementationOnce(() =>
+            Promise.resolve({
+              ok: true,
+              json: () =>
+                Promise.resolve({
+                  userName: msUsername
+                })
+            })
+          );
+
+          await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl: 'https://www.example.com'
+          });
+
+          const linkedAccount =
+            await fastifyTestInstance.prisma.msUsername.findFirstOrThrow({
+              where: { msUsername }
+            });
+
+          expect(linkedAccount).toStrictEqual({
+            id: expect.stringMatching(/^[a-f\d]{24}$/),
+            userId: defaultUserId,
+            ttl: 77760000000,
+            msUsername
+          });
+        });
+
+        it('removes any other accounts linked to the same user', async () => {
+          const msUsernameOne = 'super-user';
+          const msUsernameTwo = 'super-user-2';
+          mockedFetch
+            .mockImplementationOnce(() =>
+              Promise.resolve({
+                ok: true,
+                json: () =>
+                  Promise.resolve({
+                    userName: msUsernameOne
+                  })
+              })
+            )
+            .mockImplementationOnce(() =>
+              Promise.resolve({
+                ok: true,
+                json: () =>
+                  Promise.resolve({
+                    userName: msUsernameTwo
+                  })
+              })
+            );
+
+          await fastifyTestInstance.prisma.msUsername.create({
+            data: {
+              msUsername: 'dummy',
+              userId: 'aaaaaaaaaaaaaaaaaaaaaaaa',
+              ttl: 77760000000
+            }
+          });
+
+          await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl: 'https://www.example.com'
+          });
+          await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl: 'https://www.example.com'
+          });
+
+          const linkedAccounts =
+            await fastifyTestInstance.prisma.msUsername.findMany({});
+
+          expect(linkedAccounts).toHaveLength(2);
+          expect(linkedAccounts[1]?.msUsername).toBe(msUsernameTwo);
+        });
+
+        it('calls the Microsoft API with the correct url', async () => {
+          const msTranscriptUrl =
+            'https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo';
+
+          const msTranscriptApiUrl =
+            'https://learn.microsoft.com/api/profiles/transcript/share/8u6awert43q1plo';
+
+          await superRequest('/user/ms-username', {
+            method: 'POST',
+            setCookies
+          }).send({
+            msTranscriptUrl
+          });
+
+          expect(mockedFetch).toHaveBeenCalledWith(msTranscriptApiUrl);
+        });
+      });
     });
   });
 
@@ -829,7 +1063,9 @@ Thanks and regards,
       { path: '/user/get-session-user', method: 'GET' },
       { path: '/user/user-token', method: 'DELETE' },
       { path: '/user/user-token', method: 'POST' },
-      { path: '/user/ms-username', method: 'DELETE' }
+      { path: '/user/ms-username', method: 'DELETE' },
+      { path: '/user/report-user', method: 'POST' },
+      { path: '/user/ms-username', method: 'POST' }
     ];
 
     endpoints.forEach(({ path, method }) => {
@@ -841,16 +1077,33 @@ Thanks and regards,
         expect(response.statusCode).toBe(401);
       });
     });
+  });
+});
 
-    describe('/user/report-user', () => {
-      test('POST returns 401 status code with error message', async () => {
-        const response = await superRequest('/user/report-user', {
-          method: 'POST',
-          setCookies
-        });
+describe('Microsoft helpers', () => {
+  describe('getMsTranscriptApiUrl', () => {
+    const expectedUrl =
+      'https://learn.microsoft.com/api/profiles/transcript/share/8u6awert43q1plo';
 
-        expect(response.statusCode).toBe(401);
-      });
+    const urlWithoutSlash =
+      'https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo';
+    const urlWithSlash = `${urlWithoutSlash}/`;
+    const urlWithQueryParams = `${urlWithoutSlash}?foo=bar`;
+    const urlWithQueryParamsAndSlash = `${urlWithSlash}?foo=bar`;
+
+    it('should extract the transcript id from the url', () => {
+      expect(getMsTranscriptApiUrl(urlWithoutSlash)).toBe(expectedUrl);
+    });
+
+    it('should handle trailing slashes', () => {
+      expect(getMsTranscriptApiUrl(urlWithSlash)).toBe(expectedUrl);
+    });
+
+    it('should ignore query params', () => {
+      expect(getMsTranscriptApiUrl(urlWithQueryParams)).toBe(expectedUrl);
+      expect(getMsTranscriptApiUrl(urlWithQueryParamsAndSlash)).toBe(
+        expectedUrl
+      );
     });
   });
 });
