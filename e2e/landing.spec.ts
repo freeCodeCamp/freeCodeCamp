@@ -65,29 +65,28 @@ test('Has 5 brand logos', async () => {
   }
 });
 
-test('The landing-top & testimonial sections should contain call-to-action', async () => {
-  const ctas = page.locator("[data-test-label='landing-big-cta']");
+test('The landing-top & testimonial sections should contain call-to-action, and have a descriptive text content', async () => {
+  const ctas = await page
+    .getByRole('link', {
+      name: translations.buttons['logged-in-cta-btn']
+    })
+    .all();
 
-  for (const cta of await ctas.all()) {
+  expect(ctas).toHaveLength(4);
+
+  for (const cta of ctas) {
     await expect(cta).toBeVisible();
   }
 });
 
-test('The landing-top & testimonial sections call to action should contain a descriptive text content', async () => {
-  const ctas = page.locator("[data-test-label='landing-big-cta']");
-
-  for (const cta of await ctas.all()) {
-    await expect(cta).toHaveText(translations.buttons['logged-in-cta-btn']);
-  }
-});
-
 test("The landing-top should contain a descriptive text explaining the camper's image", async () => {
-  const campersCaption = page.locator(
-    "[data-test-label='landing-page-figure-caption']"
-  );
-  await expect(campersCaption).toHaveText(
+  const campersImage = page.getByAltText(translations.landing['hero-img-alt']);
+  const captionText = page.getByText(
     translations.landing['hero-img-description']
   );
+
+  await expect(campersImage).toBeVisible();
+  await expect(captionText).toBeVisible();
 });
 
 test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({

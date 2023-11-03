@@ -26,10 +26,6 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
-test.afterAll(async ({ page }) => {
-  await page.close();
-});
-
 test('Has link for skip content', async ({ page }) => {
   const skipContent = page.getByTestId(headerComponentElements.skipContent);
   await expect(skipContent).toBeVisible();
