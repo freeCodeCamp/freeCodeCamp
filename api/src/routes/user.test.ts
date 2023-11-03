@@ -723,9 +723,11 @@ describe('userRoutes', () => {
       });
 
       test('POST returns 200 status code with "success" message', async () => {
-        const testUser = await fastifyTestInstance.prisma.user.findFirst({
-          where: { email: testUserData.email }
-        });
+        const testUser = await fastifyTestInstance.prisma.user.findFirstOrThrow(
+          {
+            where: { email: testUserData.email }
+          }
+        );
         const response = await superRequest('/user/report-user', {
           method: 'POST',
           setCookies
@@ -751,8 +753,8 @@ Luke, I am your father
 
 
 Reported by:
-Username: ${testUser?.username ?? ''}
-Name: 
+Username: ${testUser.username}
+Name:
 Email: foo@bar.com
 
 Thanks and regards,
