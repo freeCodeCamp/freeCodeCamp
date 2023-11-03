@@ -1034,13 +1034,13 @@ describe('challengeRoutes', () => {
 
         describe('validation', () => {
           test('POST rejects requests without valid ids', async () => {
-            const resNoId = await superPost('/ms-trophy-challenge-completed'
-            );
+            const resNoId = await superPost('/ms-trophy-challenge-completed');
 
             expect(resNoId.body).toStrictEqual(idIsMissingOrInvalid);
             expect(resNoId.statusCode).toBe(400);
 
-            const resBadId = await superPost('/ms-trophy-challenge-completed'
+            const resBadId = await superPost(
+              '/ms-trophy-challenge-completed'
             ).send({ id: nonTrophyChallengeId });
 
             expect(resBadId.body).toStrictEqual(idIsMissingOrInvalid);
@@ -1049,7 +1049,8 @@ describe('challengeRoutes', () => {
 
           // TODO(Post-MVP): give a more specific error message
           test('POST rejects requests without valid ObjectIDs', async () => {
-            const response = await superPost('/ms-trophy-challenge-completed'
+            const response = await superPost(
+              '/ms-trophy-challenge-completed'
             ).send({ id: 'not-a-valid-id' });
 
             expect(response.body).toStrictEqual(idIsMissingOrInvalid);
@@ -1081,7 +1082,9 @@ describe('challengeRoutes', () => {
           });
 
           test('POST rejects requests if the user does not have a Microsoft username', async () => {
-            const res = await superPost('/ms-trophy-challenge-completed').send({ id: trophyChallengeId });
+            const res = await superPost('/ms-trophy-challenge-completed').send({
+              id: trophyChallengeId
+            });
 
             expect(res.body).toStrictEqual(userHasNotLinkedTheirAccount);
             expect(res.statusCode).toBe(403);
@@ -1104,7 +1107,9 @@ describe('challengeRoutes', () => {
               Promise.resolve(verifyError)
             );
 
-            const res = await superPost('/ms-trophy-challenge-completed').send({ id: trophyChallengeId });
+            const res = await superPost('/ms-trophy-challenge-completed').send({
+              id: trophyChallengeId
+            });
 
             expect(res.body).toStrictEqual(verifyError);
             expect(res.statusCode).toBe(403);
@@ -1117,7 +1122,9 @@ describe('challengeRoutes', () => {
             const msUsername = 'ANRandom';
             await createMSUsernameRecord(msUsername);
 
-            const res = await superPost('/ms-trophy-challenge-completed').send({ id: trophyChallengeId });
+            const res = await superPost('/ms-trophy-challenge-completed').send({
+              id: trophyChallengeId
+            });
 
             expect(res.body).toStrictEqual(unexpectedError);
             expect(res.statusCode).toBe(500);
@@ -1134,7 +1141,9 @@ describe('challengeRoutes', () => {
             await createMSUsernameRecord(msUsername);
             const now = Date.now();
 
-            const res = await superPost('/ms-trophy-challenge-completed').send({ id: trophyChallengeId });
+            const res = await superPost('/ms-trophy-challenge-completed').send({
+              id: trophyChallengeId
+            });
 
             const user =
               await fastifyTestInstance.prisma.user.findUniqueOrThrow({
@@ -1174,7 +1183,8 @@ describe('challengeRoutes', () => {
             const msUsername = 'ANRandom';
             await createMSUsernameRecord(msUsername);
 
-            const resOne = await superPost('/ms-trophy-challenge-completed'
+            const resOne = await superPost(
+              '/ms-trophy-challenge-completed'
             ).send({ id: trophyChallengeId });
 
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
@@ -1183,7 +1193,8 @@ describe('challengeRoutes', () => {
                 msGameStatusApiUrl: solutionUrl
               })
             );
-            const resTwo = await superPost('/ms-trophy-challenge-completed'
+            const resTwo = await superPost(
+              '/ms-trophy-challenge-completed'
             ).send({ id: trophyChallengeId2 });
 
             // sending the second trophy challenge again should not change
@@ -1194,7 +1205,8 @@ describe('challengeRoutes', () => {
                 msGameStatusApiUrl: solutionUrl
               })
             );
-            const resUpdate = await superPost('/ms-trophy-challenge-completed'
+            const resUpdate = await superPost(
+              '/ms-trophy-challenge-completed'
             ).send({ id: trophyChallengeId2 });
 
             const { completedChallenges, progressTimestamps } =
