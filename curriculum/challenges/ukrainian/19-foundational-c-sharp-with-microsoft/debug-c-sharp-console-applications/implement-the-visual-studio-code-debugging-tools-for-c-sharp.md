@@ -12,11 +12,11 @@ dashedName: implement-the-visual-studio-code-debugging-tools-for-c-sharp
 1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/</a> та виконайте всі завдання модуля «Імплементуйте інструменти налагодження Visual Studio Code до C#». Це **обов’язково**, щоб отримати трофей з «Налагодження консольних застосунків C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Виконайте модуль <a href="https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/" target="_blank" rel="noreferrer">«Імплементуйте інструменти налагодження Visual Studio Code до C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
+# --question--
 
 ## --text--
 

@@ -908,13 +908,13 @@
     "set-claim": "Claim and view your certification"
   },
   "forum-help": {
-    "browser-info": "**Your browser information:**",
+    "browser-info": "Your browser information:",
     "user-agent": "User Agent is: <code>{{userAgent}}</code>",
-    "challenge": "**Challenge Information:**",
-    "whats-happening": "**Tell us what's happening:**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "Describe your issue in detail here.",
-    "camper-project": "**Your project link(s)**",
-    "camper-code": "**Your code so far**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "WARNING",
     "too-long-one": "The challenge seed code and/or your solution exceeded the maximum length we can port over from the challenge.",
     "too-long-two": "You will need to take an additional step here so the code you wrote presents in an easy to read format.",

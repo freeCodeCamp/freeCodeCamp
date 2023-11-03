@@ -12,11 +12,11 @@ dashedName: solving-proportions
 
 这是<a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_nQ-X1JuLpUmtRD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">和视频配套的 Colab 笔记本</a>。如果你还没有这样做，请设置好上一个视频中你的代数 Colab 笔记本。 然后，将本视频中的代码添加到其中。
 
-# --question--
-
-## --任务--
+# --任务--
 
 将视频中的代码添加到你在第一步创建的代数 Colab 笔记本中。
+
+# --question--
 
 ## --text--
 

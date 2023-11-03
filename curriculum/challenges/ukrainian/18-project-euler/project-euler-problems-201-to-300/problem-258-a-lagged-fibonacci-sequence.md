@@ -1,6 +1,6 @@
 ---
 id: 5900f46e1000cf542c50ff81
-title: 'Problem 258: A lagged Fibonacci sequence'
+title: 'Завдання 258: послідовність Фібоначчі із запізнюваннями'
 challengeType: 1
 forumTopicId: 301906
 dashedName: problem-258-a-lagged-fibonacci-sequence
@@ -8,10 +8,10 @@ dashedName: problem-258-a-lagged-fibonacci-sequence
 
 # --description--
 
-A sequence is defined as:
+Послідовність визначається як:
 
-- $g_k = 1$, for $0 ≤ k ≤ 1999$
-- $g_k = g_{k - 2000} + g_{k - 1999}$, for $k ≥ 2000$.
+- $g_k = 1$, за умови $0 ≤ k ≤ 1999$
+- $g_k = g_{k - 2000} + g_{k - 1999}$, за умови $k ≥ 2000$.
 
 Знайдіть $g_k$ mod 20092010 за умови $k = {10}^{18}$.
 

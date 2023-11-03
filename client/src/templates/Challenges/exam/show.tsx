@@ -420,7 +420,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                       ({ answer, id }) => (
                         <label className='exam-answer-label' key={id}>
                           <input
-                            aria-label={t('aria.answer')}
                             checked={
                               userExamQuestions[currentQuestionIndex].answer
                                 .id === id

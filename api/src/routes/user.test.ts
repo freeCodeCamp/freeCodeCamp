@@ -251,6 +251,19 @@ const modifiedProgressData = {
 };
 
 const userTokenId = 'dummy-id';
+const otherUserId = 'aaaaaaaaaaaaaaaaaaaaaaaa';
+
+const msUsernameData = [
+  { msUsername: 'foobar', userId: defaultUserId, ttl: 123 },
+  { msUsername: 'foobar2', userId: defaultUserId, ttl: 123 },
+  { msUsername: 'foobar3', userId: otherUserId, ttl: 123 }
+];
+
+const tokenData = [
+  { created: new Date(), id: '123', ttl: 1000, userId: defaultUserId },
+  { created: new Date(), id: '456', ttl: 1000, userId: defaultUserId },
+  { created: new Date(), id: '789', ttl: 1000, userId: otherUserId }
+];
 
 describe('userRoutes', () => {
   setupServer();
@@ -263,7 +276,17 @@ describe('userRoutes', () => {
     });
 
     describe('/account/delete', () => {
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.userToken.deleteMany({
+          where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
+        });
+        await fastifyTestInstance.prisma.msUsername.deleteMany({
+          where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
+        });
+      });
+
       test('POST returns 200 status code with empty object', async () => {
+        expect(await fastifyTestInstance.prisma.user.count()).toBe(1);
         const response = await superRequest('/account/delete', {
           method: 'POST',
           setCookies
@@ -277,9 +300,45 @@ describe('userRoutes', () => {
         expect(response.status).toBe(200);
         expect(userCount).toBe(0);
       });
+
+      test('POST deletes Microsoft usernames associated with the user', async () => {
+        await fastifyTestInstance.prisma.msUsername.createMany({
+          data: msUsernameData
+        });
+
+        await superRequest('/account/delete', {
+          method: 'POST',
+          setCookies
+        });
+
+        expect(await fastifyTestInstance.prisma.msUsername.count()).toBe(1);
+      });
+
+      test('POST deletes userTokens associated with the user', async () => {
+        await fastifyTestInstance.prisma.userToken.createMany({
+          data: tokenData
+        });
+
+        await superRequest('/account/delete', {
+          method: 'POST',
+          setCookies
+        });
+        const userTokens =
+          await fastifyTestInstance.prisma.userToken.findMany();
+        expect(userTokens).toHaveLength(1);
+        expect(userTokens[0]?.userId).toBe(otherUserId);
+      });
     });
 
     describe('/account/reset-progress', () => {
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.userToken.deleteMany({
+          where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
+        });
+        await fastifyTestInstance.prisma.msUsername.deleteMany({
+          where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
+        });
+      });
       test('POST returns 200 status code with empty object', async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: testUserData.email },
@@ -300,6 +359,35 @@ describe('userRoutes', () => {
 
         expect(user?.progressTimestamps).toHaveLength(1);
         expect(user).toMatchObject(baseProgressData);
+      });
+
+      test('POST deletes Microsoft usernames associated with the user', async () => {
+        await fastifyTestInstance.prisma.msUsername.createMany({
+          data: msUsernameData
+        });
+
+        await superRequest('/account/reset-progress', {
+          method: 'POST',
+          setCookies
+        });
+
+        expect(await fastifyTestInstance.prisma.msUsername.count()).toBe(1);
+      });
+
+      test('POST deletes userTokens associated with the user', async () => {
+        await fastifyTestInstance.prisma.userToken.createMany({
+          data: tokenData
+        });
+
+        await superRequest('/account/reset-progress', {
+          method: 'POST',
+          setCookies
+        });
+
+        const userTokens =
+          await fastifyTestInstance.prisma.userToken.findMany();
+        expect(userTokens).toHaveLength(1);
+        expect(userTokens[0]?.userId).toBe(otherUserId);
       });
     });
 
@@ -675,6 +763,56 @@ Thanks and regards,
         });
       });
     });
+
+    describe('/user/ms-username', () => {
+      describe('DELETE', () => {
+        afterEach(async () => {
+          await fastifyTestInstance.prisma.msUsername.deleteMany({
+            where: { userId: otherUserId }
+          });
+        });
+
+        test('deletes all Microsoft usernames associated with the user', async () => {
+          await fastifyTestInstance.prisma.msUsername.createMany({
+            data: [
+              { msUsername: 'foobar', userId: defaultUserId, ttl: 123 },
+              { msUsername: 'foobar2', userId: defaultUserId, ttl: 123 }
+            ]
+          });
+
+          const response = await superRequest('/user/ms-username', {
+            method: 'DELETE',
+            setCookies
+          });
+
+          const msUsernames =
+            await fastifyTestInstance.prisma.msUsername.count();
+
+          expect(msUsernames).toBe(0);
+          expect(response.body).toStrictEqual({ msUsername: null });
+          expect(response.statusCode).toBe(200);
+        });
+
+        test('does not delete Microsoft usernames associated with other users', async () => {
+          await fastifyTestInstance.prisma.msUsername.createMany({
+            data: [
+              { msUsername: 'foobar', userId: otherUserId, ttl: 123 },
+              { msUsername: 'foobar2', userId: defaultUserId, ttl: 123 }
+            ]
+          });
+
+          await superRequest('/user/ms-username', {
+            method: 'DELETE',
+            setCookies
+          });
+
+          const msUsernames =
+            await fastifyTestInstance.prisma.msUsername.count();
+
+          expect(msUsernames).toBe(1);
+        });
+      });
+    });
   });
 
   describe('Unauthenticated user', () => {
@@ -690,7 +828,8 @@ Thanks and regards,
       { path: '/account/reset-progress', method: 'POST' },
       { path: '/user/get-session-user', method: 'GET' },
       { path: '/user/user-token', method: 'DELETE' },
-      { path: '/user/user-token', method: 'POST' }
+      { path: '/user/user-token', method: 'POST' },
+      { path: '/user/ms-username', method: 'DELETE' }
     ];
 
     endpoints.forEach(({ path, method }) => {

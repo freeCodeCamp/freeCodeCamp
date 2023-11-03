@@ -46,7 +46,7 @@ function AvatarRenderer({
       {isPlaceHolderImage ? (
         <DefaultAvatar className='avatar default-avatar' />
       ) : (
-        <Image alt='' className='avatar' src={picture} />
+        <Image alt='' src={picture} responsive />
       )}
     </div>
   );
