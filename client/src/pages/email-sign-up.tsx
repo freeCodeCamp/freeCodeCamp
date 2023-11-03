@@ -61,7 +61,7 @@ function EmailListOptIn({
   const { t } = useTranslation();
   if (isSignedIn) {
     return (
-      <Row className='email-list-opt'>
+      <Container className='email-list-opt'>
         <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
           <Button
             block={true}
@@ -86,7 +86,7 @@ function EmailListOptIn({
           </Button>
           <Spacer size='small' />
         </Col>
-      </Row>
+      </Container>
     );
   } else {
     return (
