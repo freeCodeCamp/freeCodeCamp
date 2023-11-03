@@ -9,7 +9,8 @@ import {
   multifileCertProjectIds,
   updateUserChallengeData,
   type CompletedChallenge,
-  saveUserChallengeData
+  saveUserChallengeData,
+  msTrophyChallenges
 } from '../utils/common-challenge-functions';
 import { JWT_SECRET } from '../utils/env';
 import {
@@ -26,7 +27,8 @@ import { generateRandomExam } from '../utils/exam';
 import {
   canSubmitCodeRoadCertProject,
   createProject,
-  updateProject
+  updateProject,
+  verifyTrophyWithMicrosoft
 } from './helpers/challenge-helpers';
 
 interface JwtPayload {
@@ -508,6 +510,105 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         return {
           error: 'Something went wrong trying to generate your exam.'
         };
+      }
+    }
+  );
+
+  fastify.post(
+    '/ms-trophy-challenge-completed',
+    {
+      schema: schemas.msTrophyChallengeCompleted,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          void reply.send({ type: 'error', message: 'flash.ms.trophy.err-2' });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const challengeId = req.body.id;
+        const challenge = msTrophyChallenges.find(
+          challenge => challenge.id === challengeId
+        );
+
+        if (!challenge) {
+          return reply
+            .code(400)
+            .send({ type: 'error', message: 'flash.ms.trophy.err-2' });
+        }
+
+        const msUser = await fastify.prisma.msUsername.findFirst({
+          where: { userId: req.session.user.id }
+        });
+
+        if (!msUser || !msUser.msUsername) {
+          return reply
+            .code(403)
+            .send({ type: 'error', message: 'flash.ms.trophy.err-1' });
+        }
+
+        const { msUsername } = msUser;
+
+        // TODO: log error if msTrophyId not found?
+        const msTrophyId = challenge.msTrophyId ?? '';
+
+        const msTrophyStatus = await verifyTrophyWithMicrosoft({
+          msUsername,
+          msTrophyId
+        });
+
+        if (msTrophyStatus.type === 'error') {
+          return reply.code(403).send(msTrophyStatus);
+        }
+
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id },
+          select: { completedChallenges: true, progressTimestamps: true }
+        });
+
+        const { completedChallenges } = user;
+        const progressTimestamps =
+          user.progressTimestamps as ProgressTimestamp[];
+        const oldChallenge = completedChallenges.find(
+          ({ id }) => id === challengeId
+        );
+        const alreadyCompleted = !!oldChallenge;
+        const completedDate = alreadyCompleted
+          ? oldChallenge.completedDate
+          : Date.now();
+
+        if (!alreadyCompleted) {
+          const newChallenge = {
+            id: challengeId,
+            completedDate,
+            solution: msTrophyStatus.msGameStatusApiUrl
+          };
+          await fastify.prisma.user.update({
+            where: { id: req.session.user.id },
+            data: {
+              completedChallenges: {
+                push: newChallenge
+              },
+              progressTimestamps: [...progressTimestamps, completedDate]
+            }
+          });
+        }
+
+        return {
+          alreadyCompleted,
+          points: getPoints(progressTimestamps) + (alreadyCompleted ? 0 : 1),
+          completedDate
+        };
+      } catch (error) {
+        fastify.log.error(error);
+        void reply.code(500);
+        return {
+          type: 'error',
+          message: 'flash.ms.trophy.err-5'
+        } as const;
       }
     }
   );
