@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import DonateForm from '../components/Donation/donate-form';
+import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
 import {
   DonationText,
   DonationOptionsAlertText,
@@ -93,7 +93,7 @@ function DonatePage({
               </Alert>
             ) : null}
             <DonationText />
-            <DonateForm paymentContext={PaymentContext.DonatePage} />
+            <MultiTierDonationForm paymentContext={PaymentContext.DonatePage} />
             <Spacer size='exLarge' />
             <hr />
             <h2 data-playwright-test-label='faq-head' className={'text-center'}>

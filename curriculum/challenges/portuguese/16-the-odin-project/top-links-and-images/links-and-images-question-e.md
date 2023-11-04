@@ -71,11 +71,11 @@ O atributo `alt` é usado para descrever uma imagem. Ele será usado no lugar da
 É assim que o logotipo do The Odin Project que você usou anteriormente fica com um atributo `alt` incluído:
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/ExXjoEp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=ExXjoEp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen incorporado" loading="lazy" id="cp_embed_ExXjoEp"></iframe>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Assista ao vídeo de Kevin Powell sobre imagens do HTML acima.
+
+# --question--
 
 ## --text--
 

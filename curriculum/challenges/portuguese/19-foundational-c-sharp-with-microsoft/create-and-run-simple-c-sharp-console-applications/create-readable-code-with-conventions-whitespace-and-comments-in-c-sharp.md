@@ -12,11 +12,11 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 1. Acesse <a href="https://learn.microsoft.com/training/modules/csharp-readable-code/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-readable-code/</a> e complete todas as tarefas do módulo "Crie um código legível com convenções, espaços em branco e comentários em C#". Isso é **necessário** para conquistar o troféu "Crie e execute aplicações de console simples em C#" da Microsoft Learn e para se qualificar para o exame de certificação.
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Complete o módulo <a href="https://learn.microsoft.com/training/modules/csharp-readable-code/" target="_blank" rel="noreferrer">Crie um código legível com convenções, espaços em branco e comentários em C#</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
+# --question--
 
 ## --text--
 

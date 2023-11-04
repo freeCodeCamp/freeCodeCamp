@@ -1,6 +1,6 @@
 ---
 id: 5900f4511000cf542c50ff62
-title: 'Problem 226: A Scoop of Blancmange'
+title: 'Завдання 226: крива бланманже'
 challengeType: 1
 forumTopicId: 301869
 dashedName: problem-226-a-scoop-of-blancmange
@@ -8,15 +8,15 @@ dashedName: problem-226-a-scoop-of-blancmange
 
 # --description--
 
-The blancmange curve is the set of points ($x$,$y$) such that $0 ≤ x ≤ 1$ and $\displaystyle y = \sum_{n = 0}^{\infty} \frac{s(2^nx)}{2^n}$, where $s(x)$ is the distance from $x$ to the nearest integer.
+Крива бланманже — це множина точок ($x$,$y$) за умов $0 ≤ x ≤ 1$ та $\displaystyle y = \sum_{n = 0}^{\infty} \frac{s(2^nx)}{2^n}$, де $s(x)$ є відстанню від $x$ до найближчого цілого числа.
 
-The area under the blancmange curve is equal to $\frac{1}{2}$, shown in pink in the diagram below.
+Площа під кривою бланманже дорівнює $\frac{1}{2}$, як показано на рисунку нижче рожевим.
 
-<img class="img-responsive center-block" alt="diagram of blancmange curve, with circle C shown on diagram" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="рисунок кривої бланманже з колом С" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px;" />
 
-Let $C$ be the circle with centre ($\frac{1}{4}$,$\frac{1}{2}$) and radius $\frac{1}{4}$, shown in black in the diagram.
+Нехай $C$ буде колом з центром ($\frac{1}{4}$,$\frac{1}{2}$) та радіусом $\frac{1}{4}$, як показано на рисунку чорним.
 
-What area under the blancmange curve is enclosed by $C$? Дайте відповідь, заокруглену до восьми знаків після коми у форматі 0.abcdefgh
+Яка площа під кривою бланманже обмежена колом $C$? Дайте відповідь, заокруглену до восьми знаків після коми у форматі 0.abcdefgh
 
 # --hints--
 

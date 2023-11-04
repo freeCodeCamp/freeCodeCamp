@@ -12,11 +12,11 @@ dashedName: call-methods-from-the-dot-net-class-library-using-c-sharp
 1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/csharp-call-methods/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-call-methods/</a> та виконайте всі завдання модуля «Викличте методи з бібліотеки класів .NET, використовуючи C#». Це **обов’язково**, щоб отримати трофей зі «Створення та запуск простих консольних застосунків C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-call-methods/" target="_blank" rel="noreferrer">«Викличте методи з бібліотеки класів .NET, використовуючи C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
+# --question--
 
 ## --text--
 

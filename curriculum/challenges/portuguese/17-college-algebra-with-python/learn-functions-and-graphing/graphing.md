@@ -12,15 +12,15 @@ Este próximo vídeo vai mostrar para você a conexão entre funções e gráfic
 
 Aqui está o <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory que acompanha os dois últimos vídeos</a> para que você possa começar a criar seus próprios gráficos.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Adicione código ao seu notebook do Colaboratory de álgebra para funções e gráficos.
 
 ---
 
 Execute o notebook a sefguir para ver <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">mais maneiras de criar gráficos usando álgebra e Python.</a>
+
+# --question--
 
 ## --text--
 

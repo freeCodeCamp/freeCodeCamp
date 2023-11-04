@@ -410,7 +410,7 @@ Siga estes passos:
 
     #### **Windows**
     ```console
-    copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+    copy .\shared\config\curriculum.json ..\mobile\mobile-app\curriculum.json
     ```
 
 7. Mude o diretório para o diretório da aplicação para dispositivos móveis:
@@ -428,7 +428,7 @@ Siga estes passos:
 9. Atualize o arquivo de testes para que use o arquivo JSON de dados do desafio:
 
     ```console
-    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
+    sed -i '' 's/..\/..\/shared\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
     ```
 
 10. Gere os arquivos do desafio:

@@ -32,9 +32,17 @@ Quem deveria aprender a programar?
 
 Estudantes universitários.
 
+### --feedback--
+
+College students should learn to program, but there's a better answer.
+
 ---
 
 Pessoas que querem se tornar desenvolvedores de software.
+
+### --feedback--
+
+People who want to become software developers should learn to program, but there's a better answer.
 
 ---
 

@@ -12,8 +12,6 @@ import envData from '../../config/env.json';
 import { getLangCode } from '../../../shared/config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';
-import DonateForm from '../components/Donation/donate-form';
-
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
 import RedirectHome from '../components/redirect-home';
@@ -41,6 +39,7 @@ import {
   certTypes,
   certTypeTitleMap
 } from '../../../shared/config/certification-settings';
+import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
 import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;
@@ -271,7 +270,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           xs={12}
           data-playwright-test-label='donation-form'
         >
-          <DonateForm
+          <MultiTierDonationForm
             defaultTheme={Themes.Default}
             handleProcessing={handleProcessing}
             isMinimalForm={true}

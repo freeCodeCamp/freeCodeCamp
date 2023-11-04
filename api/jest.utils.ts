@@ -109,3 +109,12 @@ export async function seedExam(): Promise<void> {
     }
   });
 }
+
+export function createFetchMock({ ok = true, body = {} } = {}) {
+  return jest.fn().mockResolvedValue(
+    Promise.resolve({
+      ok,
+      json: () => Promise.resolve(body)
+    })
+  );
+}

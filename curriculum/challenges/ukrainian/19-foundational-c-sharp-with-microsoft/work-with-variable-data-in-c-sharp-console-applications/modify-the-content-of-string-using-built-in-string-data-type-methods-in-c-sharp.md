@@ -12,11 +12,11 @@ dashedName: modify-the-content-of-string-using-built-in-string-data-type-methods
 1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/csharp-modify-content/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-modify-content/</a> та виконайте всі завдання модуля «Змініть вміст рядків, використовуючи вбудовані методи даних рядків в C#». Це **обов’язково**, щоб отримати трофей зі «Робота з даними змінних в консольних застосунках C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-modify-content/" target="_blank" rel="noreferrer">«Змініть вміст рядків, використовуючи вбудовані методи даних рядків в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
+# --question--
 
 ## --text--
 

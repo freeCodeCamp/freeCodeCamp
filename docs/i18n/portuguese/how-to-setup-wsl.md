@@ -123,7 +123,7 @@ Agora que você instalou os pré-requisitos, siga [nosso guia de instalação lo
 
 > [!WARNING]
 > 
-> Por favor note que, neste momento, a configuração para testes do Cypress (e necessidades relacionadas à GUI) são um trabalho em andamento. Você ainda deve ser capaz de trabalhar na maior parte do código.
+> Por favor note que, neste momento, a configuração para testes do Cypress (e necessidades relacionadas à GUI) é um trabalho em andamento. Você ainda deve ser capaz de trabalhar na maior parte do código.
 
 ## Links Úteis
 

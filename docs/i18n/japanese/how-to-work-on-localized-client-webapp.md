@@ -8,13 +8,13 @@ Once you have set up the project locally you should be able to follow this docum
 
 これは、ローカライゼーションを含むものを対象にし、例えば別の言語でボタンラベルを検証する必要がある機能に関して作業している場合に役立ちます。
 
-> [!TIP] freeCodeCamp のカリキュラムやコントリビューションドキュメントを翻訳するために、このドキュメントに従う必要はありません。 代わりに、[このガイド](how-to-translate-files.md) をお読みください。
+> [!TIP] You do not need to follow this document to translate freeCodeCamp's curriculum or contributing documentation. 代わりに、[このガイド](how-to-translate-files.md) をお読みください。
 
 i18n フレームワークとツールがどのように機能するかを理解しましょう。
 
 ## ファイル構成
 
-Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. 各言語には、翻訳付きの JSON ファイルを含むディレクトリがあります。
+Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. Each language has a directory that contains JSON files with the translations.
 
 ```console
   config
@@ -55,7 +55,7 @@ Most of the files for translating the platform are located in the [`client/i18n`
   └── validate-keys.ts
 ```
 
-Some of these files are translated on our translation platform (Crowdin) and some are translated or created via PR's on GitHub.
+Some of these files are translated on our translation platform (Crowdin) and some are translated or created via PRs on GitHub.
 
 **翻訳プラットフォーム上で翻訳されたファイル:**
 

@@ -14,11 +14,11 @@ When an element is selected, the Styles tab will show all the currently applied 
 
 ![Overwritten style](https://cdn.statically.io/gh/TheOdinProject/curriculum/f8fd38fc62578d8e8368f5303126215a492847f0/foundations/html_css/inspecting-html-and-css/imgs/03.png)
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Play around with Chrome Dev Tools and see if you can answer the following question.
+
+# --question--
 
 ## --text--
 

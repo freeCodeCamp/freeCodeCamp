@@ -12,11 +12,11 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 1. Acesse <a href="https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/</a> e complete todas as tarefas do módulo "Implemente o tratamento de exceções em aplicações de console em C#". Isso é **necessário** para conquistar o troféu "Depure aplicações de console do C#" da Microsoft Learn e para se qualificar para o exame de certificação.
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Complete o módulo <a href="https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/" target="_blank" rel="noreferrer">Implemente o tratamento de exceções em aplicações de console em C#</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
+# --question--
 
 ## --text--
 

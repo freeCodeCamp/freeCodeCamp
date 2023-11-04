@@ -15,7 +15,7 @@ import { apiLocation } from '../../../../config/env.json';
 import { ChallengeMeta } from '../../../redux/prop-types';
 import { Share } from '../../../components/share';
 import { ShareProps } from '../../../components/share/types';
-import ProgressBar from '../../../components/ProgressBar';
+import Progress from '../../../components/Progress';
 import Quote from '../../../assets/icons/quote';
 import {
   challengeMetaSelector,
@@ -370,7 +370,7 @@ const LowerJaw = ({
         <>
           <hr></hr>
           <div className='progress-bar-container'>
-            <ProgressBar />
+            <Progress />
           </div>
         </>
       )}

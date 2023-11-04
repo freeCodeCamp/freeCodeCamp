@@ -4,7 +4,7 @@ Nuestro objetivo es desarrollar una experiencia de aprendizaje interactiva y div
 
 Diseñar desafíos de codificación interactivos es difícil. Sería mucho más fácil escribir una explicación larga o crear un tutorial en vídeo. Pero para nuestro plan de estudios, estamos aferrándonos a lo que mejor funciona para la mayoría de la gente - una experiencia totalmente interactiva y de videojuegos.
 
-Queremos que los campistas entren en un estado de flujo. Queremos que generen impulso y exploten a través de nuestro plan de estudios con el menor número de trabas posible. Queremos que ingresen en los proyectos con confianza y se expongan ampliamente a los conceptos de programación.
+Queremos que los campistas entren en un estado de flujo. Queremos que generen impulso y exploten a través de nuestro plan de estudios con el menor número de trabas posible. We want them to go into the projects with confidence and gain wide exposure to programming concepts.
 
 Ten en cuenta que para la versión 7.0 del plan de estudios gratuito, estamos avanzando hacia [un modelo totalmente orientado al proyecto con mucha más repetición](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
@@ -558,7 +558,7 @@ b
 c
 ```
 
-And you choose `b`, your new order will be:
+If you choose `b`, your new order will be:
 
 ```bash
 a
