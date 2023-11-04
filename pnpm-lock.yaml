@@ -528,8 +528,8 @@ importers:
         specifier: workspace:*
         version: link:../tools/ui-components
       '@growthbook/growthbook-react':
-        specifier: 0.18.0
-        version: 0.18.0(react@16.14.0)
+        specifier: 0.20.0
+        version: 0.20.0(react@16.14.0)
       '@loadable/component':
         specifier: 5.15.3
         version: 5.15.3(react@16.14.0)
@@ -7021,21 +7021,21 @@ packages:
     dependencies:
       graphql: 15.8.0
 
-  /@growthbook/growthbook-react@0.18.0(react@16.14.0):
-    resolution: {integrity: sha512-Nuyn6j3nmSNN7hMcc4OEl0IhMH2nQ40zVXDYuw0q4IgfNN3gWvA8UrUeqK/p1vevBKtErXNZmETIRYe4iVoNeg==}
+  /@growthbook/growthbook-react@0.20.0(react@16.14.0):
+    resolution: {integrity: sha512-mFlp0z6oZv71uRcze7QMkr5xRqoWAFxXahY9DFa/mwHwLS1giqC7wE5DQUKz2ZaC8G3YZ7ORpXB9bOc9ucILZw==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^16.8.0-0 || ^17.0.0-0 || ^18.0.0-0
     dependencies:
-      '@growthbook/growthbook': 0.28.0
+      '@growthbook/growthbook': 0.30.0
       react: 16.14.0
     dev: false
 
-  /@growthbook/growthbook@0.28.0:
-    resolution: {integrity: sha512-RnrP29yHfL12nmAxtPbyHlY70BSB2f/LIOrYaBhqn2oBNdeuAxwGt9FO40dDJh0W+opaG5EbiPvZUxsy8J0aAw==}
+  /@growthbook/growthbook@0.30.0:
+    resolution: {integrity: sha512-ennMHKZIhAZokHHcnA9/tOTLFdBB4DQR0WHT8Lf1pD80jWVv8JBCAzsV1jzSjYUQhb8R8pLR2Kho0IfgjzIZGQ==}
     engines: {node: '>=10'}
     dependencies:
-      dom-mutator: 0.5.0
+      dom-mutator: 0.6.0
     dev: false
 
   /@hapi/address@2.1.4:
@@ -16460,8 +16460,8 @@ packages:
       csstype: 3.1.2
     dev: false
 
-  /dom-mutator@0.5.0:
-    resolution: {integrity: sha512-bbeX8HWE8JGzraFgbVBX4ws2g3heZFuTtrleQBuN7huy+7n2n7etSuVnot3/1z3jdY2MiwuvoS4Ep1UT2rrGBw==}
+  /dom-mutator@0.6.0:
+    resolution: {integrity: sha512-iCt9o0aYfXMUkz/43ZOAUFQYotjGB+GNbYJiJdz4TgXkyToXbbRy5S6FbTp72lRBtfpUMwEc1KmpFEU4CZeoNg==}
     engines: {node: '>=10'}
     dev: false
 
