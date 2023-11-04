@@ -155,7 +155,7 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Rock Paper Scissors](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/rock-paper-scissors), [Cat and Dog Image Classifier](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/cat-and-dog-image-classifier), [Book Recommendation Engine using KNN](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/book-recommendation-engine-using-knn), [Linear Regression Health Costs Calculator](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/linear-regression-health-costs-calculator), [Neural Network SMS Text Classifier](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/neural-network-sms-text-classifier)
 
-  #### 12. [College Algebra with Python](https://www.freecodecamp.org/learn/college-algebra-with-python/)
+#### 12. [College Algebra with Python](https://www.freecodecamp.org/learn/college-algebra-with-python/)
 
   - [Learn Ratios and Proportions](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-ratios-and-proportions)
   - [Learn How to Solve for X](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-solve-for-x)
