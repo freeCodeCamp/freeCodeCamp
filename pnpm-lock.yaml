@@ -856,8 +856,8 @@ importers:
         specifier: 8.0.7
         version: 8.0.7
       '@types/react-scrollable-anchor':
-        specifier: 0.6.2
-        version: 0.6.2
+        specifier: 0.6.3
+        version: 0.6.3
       '@types/react-spinkit':
         specifier: 3.0.9
         version: 3.0.9
@@ -11031,8 +11031,8 @@ packages:
       '@types/react': 16.14.50
     dev: true
 
-  /@types/react-scrollable-anchor@0.6.2:
-    resolution: {integrity: sha512-YzXGC2BytS4qa+X2t3pmO7pb0xng4W15Jh9u1PqCYaeEMRpH+rOy3MC45nMoVrObIDu4bUUNlsUhboLMhTo95Q==}
+  /@types/react-scrollable-anchor@0.6.3:
+    resolution: {integrity: sha512-PAY2WB80Ic3ni/EoVhWQVn/o8VPOP1vadnxTmyArqGqTwSLe5IAKfnA0WsqP708G8DM3Cr8y5AhoZ+PqURyIAQ==}
     dependencies:
       '@types/react': 16.14.50
     dev: true
