@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+import translations from '../client/i18n/locales/english/translations.json';
+
 const certs = [
   {
     name: 'Responsive Web Design',
@@ -80,11 +82,18 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Profile component', () => {
   test('renders the camper profile correctly', async ({ page }) => {
-    await expect(
-      page
-        .getByText('ProfileDefault AvatarAn avatar coding with a laptop')
-        .last()
-    ).toBeVisible();
+    // There are multiple avatars on the page, one is in the navbar, one is in the page body.
+    // The avatar we are interested in is the last one in the list
+    const avatar = page
+      .getByRole('img', {
+        name: translations.icons.avatar,
+        includeHidden: true // the svg has `aria-hidden` set to true
+      })
+      .last();
+
+    // "visible" as in the element is in the DOM, but it is hidden from non-sighted users
+    await expect(avatar).toBeVisible();
+
     await expect(
       page.getByRole('heading', { name: '@certifieduser' })
     ).toBeVisible();
@@ -146,7 +155,10 @@ test.describe('Profile component', () => {
   });
 
   test('should not show portfolio when empty', async ({ page }) => {
-    await expect(page.getByTestId('portfolio-projects')).not.toBeVisible();
+    // @certifieduser doesn't have portfolio information
+    await expect(
+      page.getByText(translations.profile.portfolio)
+    ).not.toBeVisible();
   });
 
   test('displays the timeline correctly', async ({ page }) => {
