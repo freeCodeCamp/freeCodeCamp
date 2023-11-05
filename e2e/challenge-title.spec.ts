@@ -7,10 +7,6 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test.describe('Challenge Title Component (signed out)', () => {
   test('should render correctly', async ({ page }) => {
     await expect(page.getByLabel('Passed')).not.toBeVisible();
