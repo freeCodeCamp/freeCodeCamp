@@ -8,20 +8,26 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Challenge Title Component (signed out)', () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
+
   test('should render correctly', async ({ page }) => {
     await expect(page.getByLabel('Passed')).not.toBeVisible();
 
-    await expect(page.getByText('Developing a Port Scanner')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { name: 'Developing a Port Scanner' })
+    ).toBeVisible();
   });
 
   test('should not display GreenPass after challenge completion', async ({
     page
   }) => {
+    // Set `force: true` to bypass Playwright's check
+    // as the radio is visually hidden and the click event is intercepted by the `span` element.
     await page
-      .getByText(
-        'If there is an error or if no host is found, .connect() raises an exception while .connect_ex() returns an error code.'
-      )
-      .click();
+      .getByRole('radio', {
+        name: 'If there is an error or if no host is found, .connect() raises an exception while .connect_ex() returns an error code.'
+      })
+      .click({ force: true });
 
     await page
       .getByRole('button', { name: translations.buttons['check-answer'] })
@@ -31,9 +37,13 @@ test.describe('Challenge Title Component (signed out)', () => {
       .getByRole('button', { name: translations.buttons['go-to-next'] })
       .click();
 
-    await page.waitForLoadState('domcontentloaded');
-
     // After clicking 'go-to-next' button, page redirects to courses list.
+    // We need to wait for this navigation to be completed before navigating to the next
+    // or Firefox will throw a NS_BINDING_ABORTED error.
+    await page.waitForURL(
+      '/learn/information-security/#python-for-penetration-testing'
+    );
+
     // Returning back to the challenge, to verify that GreenPass is rendered on the challenge itself.
     await page.goto(
       '/learn/information-security/python-for-penetration-testing/developing-a-port-scanner'
@@ -47,10 +57,8 @@ test.describe('Challenge Title Component (signed out)', () => {
   test("should appropriately render 'Please Help Us Translate' link", async ({
     page
   }) => {
-    // Test has been isolated for debugging purposes.
-
     const visibleEnglishTitle = await page
-      .getByText('Developing a Port Scanner')
+      .getByRole('heading', { name: 'Developing a Port Scanner' })
       .isVisible();
 
     if (process.env.CURRICULUM_LOCALE != 'english' && visibleEnglishTitle) {
@@ -69,15 +77,25 @@ test.describe('Challenge Title Component (signed in)', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
   test('should display GreenPass after challenge completion', async ({
-    page
+    page,
+    browserName
   }) => {
-    await expect(page.getByText('Developing a Port Scanner')).toBeVisible();
+    test.skip(
+      browserName === 'webkit',
+      'user does not seem to be authenticated on Safari'
+    );
 
+    await expect(
+      page.getByRole('heading', { name: 'Developing a Port Scanner' })
+    ).toBeVisible();
+
+    // Set `force: true` to bypass Playwright's check
+    // as the radio is visually hidden and the click event is intercepted by the `span` element.
     await page
-      .getByText(
-        'If there is an error or if no host is found, .connect() raises an exception while .connect_ex() returns an error code.'
-      )
-      .click();
+      .getByRole('radio', {
+        name: 'If there is an error or if no host is found, .connect() raises an exception while .connect_ex() returns an error code.'
+      })
+      .click({ force: true });
 
     await page
       .getByRole('button', { name: translations.buttons['check-answer'] })
@@ -87,9 +105,13 @@ test.describe('Challenge Title Component (signed in)', () => {
       .getByRole('button', { name: translations.buttons['go-to-next'] })
       .click();
 
-    await page.waitForLoadState('domcontentloaded');
-
     // After clicking 'go-to-next' button, page redirects to courses list.
+    // We need to wait for this navigation to be completed before navigating to the next
+    // or Firefox will throw a NS_BINDING_ABORTED error.
+    await page.waitForURL(
+      '/learn/information-security/#python-for-penetration-testing'
+    );
+
     // Returning back to the challenge, to verify that GreenPass is rendered on the challenge itself.
     await page.goto(
       '/learn/information-security/python-for-penetration-testing/developing-a-port-scanner'
