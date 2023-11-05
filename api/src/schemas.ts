@@ -46,6 +46,10 @@ export const schemas = {
         message: Type.Literal('flash.privacy-updated'),
         type: Type.Literal('success')
       }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
         type: Type.Literal('danger')
