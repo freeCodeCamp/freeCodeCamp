@@ -256,8 +256,8 @@ importers:
         specifier: 7.1.3
         version: 7.1.3
       stripe:
-        specifier: 8.205.0
-        version: 8.205.0
+        specifier: 8.222.0
+        version: 8.222.0
     devDependencies:
       '@total-typescript/ts-reset':
         specifier: 0.5.1
@@ -29649,6 +29649,14 @@ packages:
     engines: {node: ^8.1 || >=10.*}
     dependencies:
       '@types/node': 20.8.0
+      qs: 6.11.2
+    dev: false
+
+  /stripe@8.222.0:
+    resolution: {integrity: sha512-hrA79fjmN2Eb6K3kxkDzU4ODeVGGjXQsuVaAPSUro6I9MM3X+BvIsVqdphm3BXWfimAGFvUqWtPtHy25mICY1w==}
+    engines: {node: ^8.1 || >=10.*}
+    dependencies:
+      '@types/node': 20.8.2
       qs: 6.11.2
     dev: false
 
