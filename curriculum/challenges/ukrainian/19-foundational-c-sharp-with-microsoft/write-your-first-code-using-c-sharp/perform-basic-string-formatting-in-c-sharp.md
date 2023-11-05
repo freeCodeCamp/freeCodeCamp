@@ -12,11 +12,11 @@ dashedName: perform-basic-string-formatting-in-c-sharp
 1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/csharp-basic-formatting/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-basic-formatting/</a> та виконайте всі завдання модуля «Виконайте базове форматування рядків в C#». Це **обов’язково**, щоб отримати трофей з «Написання першого коду за допомогою C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-basic-formatting/" target="_blank" rel="noreferrer">«Виконайте базове форматування рядків в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
+# --question--
 
 ## --text--
 

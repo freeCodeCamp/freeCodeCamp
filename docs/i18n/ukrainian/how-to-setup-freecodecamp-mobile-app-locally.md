@@ -410,7 +410,7 @@ flutter run
 
     #### **Windows**
     ```console
-    copy .\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+    copy .\shared\config\curriculum.json ..\mobile\mobile-app\curriculum.json
     ```
 
 7. Змініть каталог на мобільний застосунок:
@@ -428,7 +428,7 @@ flutter run
 9. Оновіть файл тестів, щоб використовувати файл JSON з даними завдань:
 
     ```console
-    sed -i '' 's/..\/..\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
+    sed -i '' 's/..\/..\/shared\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
     ```
 
 10. Створіть файли завдань:

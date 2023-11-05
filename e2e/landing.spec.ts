@@ -65,6 +65,30 @@ test('Has 5 brand logos', async () => {
   }
 });
 
+test('The landing-top & testimonial sections should contain call-to-action, and have a descriptive text content', async () => {
+  const ctas = await page
+    .getByRole('link', {
+      name: translations.buttons['logged-in-cta-btn']
+    })
+    .all();
+
+  expect(ctas).toHaveLength(4);
+
+  for (const cta of ctas) {
+    await expect(cta).toBeVisible();
+  }
+});
+
+test("The landing-top should contain a descriptive text explaining the camper's image", async () => {
+  const campersImage = page.getByAltText(translations.landing['hero-img-alt']);
+  const captionText = page.getByText(
+    translations.landing['hero-img-description']
+  );
+
+  await expect(campersImage).toBeVisible();
+  await expect(captionText).toBeVisible();
+});
+
 test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({
   isMobile
 }) => {
@@ -124,4 +148,11 @@ test('Has links to all superblocks', async () => {
 test('Has FAQ section', async () => {
   const faqs = page.getByTestId(landingPageElements.faq);
   await expect(faqs).toHaveCount(9);
+});
+
+test("Has CTA Get Started It's free buttons", async () => {
+  const ctaButtons = page.getByRole('link', {
+    name: "Get started (it's free)"
+  });
+  await expect(ctaButtons).toHaveCount(4);
 });

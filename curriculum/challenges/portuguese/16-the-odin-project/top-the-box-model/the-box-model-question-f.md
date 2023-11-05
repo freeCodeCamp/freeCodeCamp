@@ -16,12 +16,11 @@ Cada objeto em uma página é uma caixa retangular. Essas caixas podem ter outra
 }
 ```
 
-
-# --question--
-
-## --assignment--
+# --assignment--
 
 Adicione uma borda a cada elemento na página e veja como as caixas são traçadas.
+
+# --question--
 
 ## --text--
 

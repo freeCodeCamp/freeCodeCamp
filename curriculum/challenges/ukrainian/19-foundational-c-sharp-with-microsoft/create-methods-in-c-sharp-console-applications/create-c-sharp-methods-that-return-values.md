@@ -12,11 +12,11 @@ dashedName: create-c-sharp-methods-that-return-values
 1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/create-c-sharp-methods-return-values/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/create-c-sharp-methods-return-values/</a> та виконайте всі завдання модуля «Створіть методи C#, які повертають значення». Це **обов’язково**, щоб отримати трофей зі «Створення методів в консольних застосунках C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Виконайте модуль <a href="https://learn.microsoft.com/training/modules/create-c-sharp-methods-return-values/" target="_blank" rel="noreferrer">«Створіть методи C#, які повертають значення»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
+# --question--
 
 ## --text--
 

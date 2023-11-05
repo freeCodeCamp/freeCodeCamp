@@ -13,7 +13,7 @@ export interface ButtonProps
   type?: 'submit' | 'button';
   disabled?: boolean;
   block?: boolean;
-  href?: string | null;
+  href?: string;
   download?: string;
   target?: React.HTMLAttributeAnchorTarget;
 }

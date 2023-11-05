@@ -908,13 +908,13 @@
     "set-claim": "قم بطلب شهادتك وعرض شهادتك"
   },
   "forum-help": {
-    "browser-info": "**معلومات المتصفح الخاصة بك:**",
+    "browser-info": "Your browser information:",
     "user-agent": "وكيل المستخدم هو: <code>{{userAgent}}</code>",
-    "challenge": "**Challenge Information:**",
-    "whats-happening": "**أخبرنا بما يحدث:**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "قم بوصف مشكلتك بالتفصيل هنا.",
-    "camper-project": "**رابط (روابط) المشروع**",
-    "camper-code": "**الكود الخاص بك حتى الآن**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "تحذير",
     "too-long-one": "تجاوز الكود الأولي للتحدي و / أو الحل الخاص بك الحد الأقصى للطول الذي يمكننا تجاوزه من التحدي.",
     "too-long-two": "سوف تحتاج إلى اتخاذ خطوة إضافية هنا حتى يكون الكود الذي كتبته يعرض في تنسيق سهل القراءة.",

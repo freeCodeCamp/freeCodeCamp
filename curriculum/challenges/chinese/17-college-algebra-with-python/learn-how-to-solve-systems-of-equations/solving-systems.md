@@ -12,11 +12,11 @@ dashedName: solving-systems
 
 这是<a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">这个视频中用到的 Colab 笔记本</a>。
 
-# --question--
-
-## --任务--
+# --任务--
 
 在你的笔记本上添加代码，以求解方程组和绘制图像。
+
+# --question--
 
 ## --text--
 

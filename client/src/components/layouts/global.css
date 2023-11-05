@@ -310,7 +310,6 @@ fieldset[disabled] .btn-primary.focus {
   text-decoration: underline;
   background: transparent;
   padding: 0;
-  outline-color: transparent;
 }
 .btn-link:hover,
 .btn-link:focus:active {

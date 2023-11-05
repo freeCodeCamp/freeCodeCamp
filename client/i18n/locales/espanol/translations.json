@@ -908,13 +908,13 @@
     "set-claim": "Reclama y mira tu certificado"
   },
   "forum-help": {
-    "browser-info": "**Información de tu navegador:**",
+    "browser-info": "Your browser information:",
     "user-agent": "El agente de usuario es: <code>{{userAgent}}</code>",
-    "challenge": "**Challenge Information:**",
-    "whats-happening": "**Cuéntanos qué está pasando:**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "Describe tu problema en detalle aquí.",
-    "camper-project": "**Enlace(s) de tu proyecto**",
-    "camper-code": "**Tu código hasta el momento**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "ADVERTENCIA",
     "too-long-one": "El código semilla del desafío y/o tu solución excedió la longitud máxima que podemos transferir del desafío.",
     "too-long-two": "Tendrás que dar un paso adicional aquí para que el código que escribiste se presente en un formato fácil de leer.",
