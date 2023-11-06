@@ -38,7 +38,7 @@ College students should learn to program, but there's a better answer.
 
 ---
 
-想成爲軟件開發者的人。
+People who want to become software developers.
 
 ### --feedback--
 
@@ -46,7 +46,7 @@ People who want to become software developers should learn to program, but there
 
 ---
 
-所有人。
+Everyone.
 
 ## --video-solution--
 
