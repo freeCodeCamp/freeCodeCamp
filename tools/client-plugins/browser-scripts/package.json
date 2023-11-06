@@ -33,7 +33,7 @@
     "@types/copy-webpack-plugin": "^8.0.1",
     "@types/enzyme": "3.10.15",
     "@types/enzyme-adapter-react-16": "1.0.8",
-    "@types/jquery": "3.5.25",
+    "@types/jquery": "3.5.26",
     "@types/lodash-es": "4.17.10",
     "babel-loader": "8.3.0",
     "buffer": "6.0.3",
