@@ -58,7 +58,7 @@
     "loopback-boot": "2.28.0",
     "loopback-connector-mongodb": "4.2.0",
     "method-override": "3.0.0",
-    "moment": "2.29.3",
+    "moment": "2.29.4",
     "moment-timezone": "0.5.35",
     "mongodb": "3.6.10",
     "morgan": "1.10.0",
