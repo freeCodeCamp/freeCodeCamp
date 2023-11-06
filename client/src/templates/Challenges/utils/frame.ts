@@ -309,7 +309,7 @@ const initMainFrame =
               ? ''
               : `Cannot retrieve ${urlAddr}, link status code: ${response.status}`;
           } catch {
-            return `${urlAddr} does not exist. Only files that can be sourced are styles.css, script.s, or remote files`;
+            return `${urlAddr} does not exist. Only files that can be sourced are styles.css, script.js, or remote files`;
           }
         });
 
