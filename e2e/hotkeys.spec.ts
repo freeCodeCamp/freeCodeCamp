@@ -35,7 +35,6 @@ test('User can interact with the app using the keyboard', async ({
 
   await page.keyboard.press('n');
   const nextCourse = '**/declare-javascript-variables';
-
   await page.waitForURL(nextCourse);
   // Ensure that the page content is loaded before simulating user interactions.
   await expect(
