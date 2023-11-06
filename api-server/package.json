@@ -59,7 +59,7 @@
     "loopback-connector-mongodb": "4.2.0",
     "method-override": "3.0.0",
     "moment": "2.29.3",
-    "moment-timezone": "0.5.33",
+    "moment-timezone": "0.5.35",
     "mongodb": "3.6.10",
     "morgan": "1.10.0",
     "nanoid": "3.3.4",
