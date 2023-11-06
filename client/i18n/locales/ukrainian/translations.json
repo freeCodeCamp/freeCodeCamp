@@ -908,13 +908,13 @@
     "set-claim": "Отримайте та перегляньте свої сертифікації"
   },
   "forum-help": {
-    "browser-info": "Your browser information:",
+    "browser-info": "Інформація про ваш браузер:",
     "user-agent": "Агент користувача: <code>{{userAgent}}</code>",
-    "challenge": "Challenge Information:",
-    "whats-happening": "Tell us what's happening:",
+    "challenge": "Інформація про завдання:",
+    "whats-happening": "Розкажіть нам, що сталося:",
     "describe": "Детально опишіть свою проблему тут.",
-    "camper-project": "Your project link(s)",
-    "camper-code": "Your code so far",
+    "camper-project": "Посилання на ваші проєкти",
+    "camper-code": "Ваш код",
     "warning": "УВАГА",
     "too-long-one": "Початковий код завдання та/або ваш розв’язок перевищили максимальну довжину, яку ми можемо перенести з завдання.",
     "too-long-two": "Вам потрібно зробити додатковий крок, щоб код, який ви написали був у форматі зручному для читання.",
