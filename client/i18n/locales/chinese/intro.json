@@ -208,10 +208,10 @@
         ]
       },
       "learn-intermediate-css-by-building-a-cat-painting": {
-        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "title": "通过制作一幅猫画学习中级 CSS",
         "intro": [
-          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts",
-          "In this course, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+          "掌握 CSS 定位对于创建具有视觉吸引力和响应式的 Web 布局至关重要",
+          "在本课程中，您将制作一幅猫画。您将了解如何使用绝对定位、z-index 属性和 transform 属性。"
         ]
       }
     }
