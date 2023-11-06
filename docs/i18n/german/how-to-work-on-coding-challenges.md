@@ -136,29 +136,41 @@ Lösungen werden für die CI-Tests verwendet, um sicherzustellen, dass Änderung
 // dritte Lösung usw. - Ihre Lösungen sollten in HTML geschrieben sein.
 ```
 
+# --assignments--
+
+This will show a checkbox that campers have to check before completing a challenge
+
+---
+
+This will show another checkbox that campers have to check before completing a challenge
+
 # --question--
 
-Diese Felder werden derzeit für die Multiple-Choice-Aufgaben in Python verwendet.
+These fields are currently used for the multiple-choice Python challenges.
 
 ## --text--
 
-Der Text der Frage steht hier.
+The question text goes here.
 
 ## --answers--
 
-Antwort 1
+Answer 1
+
+### --feedback--
+
+This will be shown as feedback when campers guess this answer
 
 ---
 
-Antwort 2
+Answer 2
 
 ---
 
-Weitere Antworten
+More answers
 
 ## --video-solution--
 
-Die Nummer für die richtige Antwort steht hier.
+The number for the correct answer goes here.
 ````
 
 > [!NOTE]
@@ -192,7 +204,7 @@ ObjectId("5a474d78df58bafeb3535d34")
 
 The result is a new id, for example, `5a474d78df58bafeb3535d34` above.
 
-Sobald du deine ID hast, fügst du sie in die Markdown-Datei als `id`-Feld am Anfang ein, z. B.
+Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
 
 ```yml
 ---
@@ -202,13 +214,13 @@ title: Aufgabentitel
 
 ## Aufgaben benennen
 
-Dinge zu benennen ist schwer. Wir haben es einfacher gemacht, indem wir ein paar Einschränkungen festgelegt haben.
+Naming things is hard. We've made it easier by imposing some constraints.
 
-Alle Aufgabentitel sollten eindeutig sein und diesem Muster folgen:
+All challenge titles should be explicit and should follow this pattern:
 
-\[Verb\]\[Objektsatz\]
+\[verb\]\[object clause\]
 
-Hier sind einige Beispielnamen für Aufgaben:
+Here are some example challenge names:
 
 - Verwende die Uhrzeiger-Notation, um das Padding eines Elements festzulegen
 - Arrays mit .reduce komprimieren
@@ -216,48 +228,48 @@ Hier sind einige Beispielnamen für Aufgaben:
 
 ## Aufgabenbeschreibungen/ Instruktionen
 
-Die Sätze sollten klar und präzise sein und möglichst wenig Fachjargon enthalten. Wenn Fachjargon verwendet wird, sollte er sofort in einfachem Englisch erklärt werden.
+Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
-Halte die Absätze kurz (etwa 1-4 Sätze). Es ist wahrscheinlicher, dass die Leute mehrere kurze Absätze lesen als eine Wand aus Text.
+Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
 
-Der Aufforderungstext sollte in der zweiten Person ("du") verfasst sein, um ihm einen unterhaltenden Ton zu verleihen. Auf diese Weise scheinen der Text und die Instruktionen direkt zu dem/der Teilnehmer/in zu sprechen, der/die die Aufgabe bearbeitet. Versuche, die Verwendung der ersten Person zu vermeiden ("ich", "wir", "lass uns" und "uns").
+Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
-Verwende keine ausgehenden Links. Sie unterbrechen den Fluss. Die Teilnehmer/innen sollten bei diesen Aufgaben nie etwas googeln müssen. Wenn du Ressourcen hast, von denen du denkst, dass sie für die Teilnehmer/innen nützlich sind, füge sie zu dem Artikel im Leitfaden für Aufgaben hinzu.
+Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
-Du kannst bei Bedarf Grafiken hinzufügen.
+You can add diagrams if necessary.
 
-Verwende keine Emojis oder Emoticons in Aufgaben. freeCodeCamp hat eine globale Community und die kulturelle Bedeutung eines Emojis oder Emoticons kann auf der ganzen Welt unterschiedlich sein. Außerdem können Emojis auf verschiedenen Systemen unterschiedlich dargestellt werden.
+Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
 
-Eigennamen sollten, wenn möglich, in korrekter Großschreibung verwendet werden. Im Folgenden findest du eine Liste der Wörter, wie sie in den Aufgaben vorkommen sollten.
+Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
 
 - JavaScript (Großbuchstaben bei "J" und "S" und keine Abkürzungen)
 - Node.js
 - Obwohl sie manchmal ungenau sind, sollten die nicht mit Bindestrichen versehenen Formen von "Back-End" und "Front-End" verwendet werden, da sie weiter verbreitet sind.
 
-### Die 2-Minuten-Regel
+### The 2-minute rule
 
-Jede Aufgabe sollte von einem englischen Muttersprachler, der die vorangegangenen Aufgaben gelöst hat, innerhalb von 120 Sekunden gelöst werden können. Dazu gehört auch die Zeit, die du brauchst, um die Instruktionen zu lesen, den vorgegebenen Code zu verstehen, deinen Code zu schreiben und alle Tests zu bestehen.
+Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their code and get all the tests to pass.
 
-Wenn du länger als zwei Minuten brauchst, um die Aufgabe zu lösen, hast du zwei Möglichkeiten:
+If it takes longer than two minutes to complete the challenge, you have two options:
 
 - vereinfache die Aufgabe, oder
 - Teile die Aufgabe in zwei Aufgaben auf.
 
 The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straightforward.
 
-Wir verfolgen, wie lange die Teilnehmer brauchen, um die Aufgaben zu lösen, und nutzen diese Informationen, um Aufgaben zu identifizieren, die vereinfacht oder aufgeteilt werden müssen.
+We track how long it takes for campers to solve challenges and use this information to identify challenges that need to be simplified or split.
 
-### Modularität
+### Modularity
 
-Jede Aufgabe sollte genau ein Konzept lehren, und dieses Konzept sollte aus dem Namen der Aufgabe ersichtlich sein.
+Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
 
-Wir können bereits behandelte Konzepte durch Wiederholungen und Variationen festigen - zum Beispiel h1-Elemente in einer Aufgabe und h3-Elemente ein paar Aufgaben später.
+We can reinforce previously covered concepts through repetition and variations - for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
 
-Unser Ziel ist es, tausende von 2-minütigen Aufgaben zu haben. Diese können ineinander übergehen und bereits gelernte Konzepte wiederholen.
+Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
 
-### Aufgabentext formatieren
+### Formatting challenge text
 
-Hier findest du spezielle Formatierungsrichtlinien für Aufgabentexte und einige Beispiele:
+Here are specific formatting guidelines for challenge text and examples:
 
 - Sprachliche Schlüsselwörter stehen in `` \` `` Backticks. Zum Beispiel HTML-Tag-Namen oder CSS-Eigenschaftsnamen.
 - Verweise auf Codeteile (d. h. Funktions-, Methoden- oder Variablennamen) sollten in `` \` ``-Backticks eingeschlossen werden. Siehe untenstehendes Beispiel:
@@ -270,9 +282,9 @@ Verwende `parseInt`, um die Variable `realNumber` in eine Integerzahl umzuwandel
 - Mehrzeiligen Codeblöcken **muss eine Leerzeile vorangestellt werden**. Die nächste Zeile muss mit drei Backticks beginnen, unmittelbar gefolgt von einer der [unterstützten Sprachen](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line that only has three backticks and **another empty line**. Siehe untenstehendes Beispiel:
 - Whitespace ist in Markdown wichtig, deshalb empfehlen wir, ihn in deinem Editor sichtbar zu machen.
 
-**Hinweis:** Wenn du einen Beispielcode in YAML verwendest, benutze `yaml` anstelle von `yml` für die Sprache rechts von den Backticks.
+**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
 
-Im Folgenden findest du ein Codebeispiel:
+The following is an example of code:
 
 ````md
 ```{Sprache}
@@ -316,13 +328,13 @@ Example of a valid single-line JavaScript comment:
 // Only change code below this line
 ````
 
-Beispiel für einen gültigen CSS-Kommentar:
+Example of a valid CSS comment:
 
 ```css
 /* Only change code above this line */
 ```
 
-Wenn eine Aufgabe nur eine einzige Stelle hat, an der Codeänderungen erforderlich sind, verwende bitte die Kommentare im folgenden Beispiel, um dem Teilnehmer mitzuteilen, wo die Änderungen vorgenommen werden sollen.
+If a challenge only has a single place where code changes are needed, please use the comments in the following example to instruct the user where changes should be made.
 
 ```js
 var a = 3;
@@ -335,7 +347,7 @@ b = 9 + b;
 c = c + 7;
 ```
 
-Wenn eine Aufgabe mehrere Stellen hat, an denen der Benutzer den Code ändern soll (z. B. die React-Aufgaben)
+If a challenge has multiple places where the user is expected to change code (i.e. the React challenges)
 
 ```jsx
 class MyComponent extends React.Component {
@@ -368,9 +380,9 @@ class MyComponent extends React.Component {
 
 ### Translation of Seed Code Comments
 
-Für jede Sprache gibt es ein eigenes Kommentarwörterbuch. The [English version of the comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.json`. Jedes Wörterbuch besteht aus einem Array von Objekten mit einer eindeutigen `id`-Eigenschaft und einer `text`-Eigenschaft. Nur der `text` sollte geändert werden, damit er die Übersetzung des entsprechenden englischen Kommentars enthält.
+There are separate comment dictionaries for each language. The [English version of the comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.json`. Each dictionary consists of an array of objects with a unique `id` property and a `text` property. Only the `text` should be modified to encompass the translation of the corresponding English comment.
 
-Einige Kommentare können ein Wort/einen Satz enthalten, das/der nicht übersetzt werden sollte. Zum Beispiel sollten Variablennamen oder Bibliotheksnamen wie "React" nicht übersetzt werden. Schau dir den Kommentar unten als Beispiel an. Das Wort `myGlobal` sollte nicht übersetzt werden.
+Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated. See the comment below as an example. The word `myGlobal` should not be translated.
 
 ```text
 Deklariere die Variable myGlobal unterhalb dieser Zeile
@@ -382,11 +394,11 @@ Deklariere die Variable myGlobal unterhalb dieser Zeile
 
 ## Hinweise und Lösungen
 
-Jede Aufgabe hat einen `Erhalte einen Tipp` Button, so dass ein Teilnehmer alle Tipps/Lösungen, die für die Aufgabe erstellt wurden, abrufen kann. Tipps und Lösungen für den Studienplan findest du in [unserem Forum](https://forum.freecodecamp.org/c/guide) unter der Kategorie `Guide`.
+Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://forum.freecodecamp.org/c/guide) under the `Guide` category.
 
-Wenn du ein Problem in einem bestehenden Thema für Tipps/Lösungen findest, kannst du in der [Kategorie contributors](https://forum.freecodecamp.org/c/contributors) im Forum Vorschläge machen. Moderatoren und Nutzer mit Vertrauensstufe 3 prüfen die Kommentare und entscheiden, ob die Änderungen in das entsprechende Hinweis-/Lösungsthema aufgenommen werden oder nicht.
+If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
 
-### Neue Aufgabenhinweise/Lösungsthemen hinzufügen
+### Adding new Challenge hints/solutions Topics
 
 Take the following steps when adding a new challenge hints/solutions-related topic.
 
@@ -397,7 +409,7 @@ Take the following steps when adding a new challenge hints/solutions-related top
 
 ### Guidelines for Content of Hints and Solutions Topics
 
-When proposing a solution for a curriculum challenge-related Guide topic, the full code must be added. Dies beinhaltet den gesamten ursprünglichen Startcode sowie alle Änderungen, die nötig sind, um alle Aufgabentests zu bestehen. Die folgende Vorlage sollte verwendet werden, wenn du neue Hinweise/Lösungen für Themen erstellst:
+When proposing a solution for a curriculum challenge-related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
 
 ````md
 # Aufgabentitel hier eintragen

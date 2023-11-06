@@ -136,6 +136,14 @@ Solutions are used for the CI tests to ensure that changes to the hints will sti
 // third solution etc. - Your solutions should be in HTML.
 ```
 
+# --assignments--
+
+This will show a checkbox that campers have to check before completing a challenge
+
+---
+
+This will show another checkbox that campers have to check before completing a challenge
+
 # --question--
 
 These fields are currently used for the multiple-choice Python challenges.
@@ -147,6 +155,10 @@ The question text goes here.
 ## --answers--
 
 Answer 1
+
+### --feedback--
+
+This will be shown as feedback when campers guess this answer
 
 ---
 
