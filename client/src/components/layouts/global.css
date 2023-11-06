@@ -72,6 +72,7 @@ h1 {
   font-family: var(--font-family-monospace);
   margin: 0.6rem 0;
 }
+
 h2 {
   color: var(--secondary-color);
   font-weight: 700;
@@ -79,6 +80,7 @@ h2 {
   font-family: var(--font-family-monospace);
   margin: 0.6rem 0;
 }
+
 h3 {
   color: var(--secondary-color);
   font-weight: 700;
@@ -124,15 +126,19 @@ p {
   .big-heading {
     font-size: 1.5rem !important;
   }
+
   h1 {
     font-size: 1.3rem;
   }
+
   h2 {
     font-size: 1.2rem;
   }
+
   h3 {
     font-size: 1.1rem;
   }
+
   .btn-cta,
   .btn-cta-big {
     font-size: 1rem;
@@ -156,7 +162,6 @@ p {
 a {
   color: inherit;
   text-decoration: underline;
-  text-underline-position: under;
 }
 
 @supports not (text-underline-position: under) {
@@ -171,6 +176,7 @@ a:focus {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
 }
+
 /* modal */
 
 .fcc-modal {
@@ -289,6 +295,7 @@ fieldset[disabled] .btn-primary.focus {
   border-color: #feac32;
   color: #0a0a23 !important;
 }
+
 .btn-cta:hover,
 .btn-cta:focus,
 .btn-cta:active:hover {
@@ -298,10 +305,12 @@ fieldset[disabled] .btn-primary.focus {
   background-image: none;
   color: #0a0a23 !important;
 }
+
 .btn-cta:active {
   background-image: none;
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
 }
+
 .btn-link,
 .btn-link:focus,
 .btn-link:active {
@@ -311,6 +320,7 @@ fieldset[disabled] .btn-primary.focus {
   background: transparent;
   padding: 0;
 }
+
 .btn-link:hover,
 .btn-link:focus:active {
   background: var(--tertiary-background);
@@ -395,10 +405,12 @@ fieldset[disabled] .btn-primary.focus {
   .link-btn {
     font-size: 1.1rem;
   }
+
   .map-icon {
     width: 45px;
     max-height: 55px;
   }
+
   .cert-header-icon {
     width: 100px;
     height: 100px;
@@ -409,6 +421,7 @@ fieldset[disabled] .btn-primary.focus {
   .map-icon {
     width: 50px;
   }
+
   .cert-header-icon {
     width: 120px;
     height: 120px;
@@ -418,6 +431,7 @@ fieldset[disabled] .btn-primary.focus {
 .button-group .btn:not(:last-child) {
   margin-bottom: 10px;
 }
+
 strong {
   color: var(--secondary-color);
 }
@@ -448,10 +462,12 @@ textarea {
 form {
   margin-bottom: 5px;
 }
+
 .form-control:focus,
 input:focus {
   border-color: var(--tertiary-color);
 }
+
 code {
   padding: 1px 4px;
   background-color: var(--quaternary-background);
@@ -461,7 +477,7 @@ code {
   overflow-wrap: anywhere;
 }
 
-:not(pre) > code {
+:not(pre)>code {
   border: 1px solid var(--secondary-color);
 }
 
@@ -548,6 +564,7 @@ blockquote .small {
   color: #31708f;
   border-color: #31708f;
 }
+
 .alert .btn:hover,
 .alert .btn:focus,
 .alert a:hover,
@@ -563,17 +580,13 @@ blockquote .small {
 }
 
 .annual-donation-alert {
-  background: linear-gradient(
-      -10deg,
+  background: linear-gradient(-10deg,
       rgba(217, 237, 247, 1) 35%,
       rgba(237, 202, 216, 0) 75%,
-      rgb(255 215 224) 100%
-    ),
-    radial-gradient(
-      circle,
+      rgb(255 215 224) 100%),
+    radial-gradient(circle,
       rgba(255, 202, 225, 1) 0%,
-      rgba(218, 234, 252, 1) 100%
-    );
+      rgba(218, 234, 252, 1) 100%);
 }
 
 /* gatsby 404 */
