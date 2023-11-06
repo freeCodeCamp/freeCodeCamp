@@ -1,3 +1,4 @@
+import { type PrismaPromise } from '@prisma/client';
 import { Certification } from '../../../shared/config/certification-settings';
 import {
   defaultUserEmail,
@@ -47,11 +48,11 @@ describe('certificate routes', () => {
         });
       });
 
-      test('should return 500 if no certSlug', async () => {
+      test('should return 400 if no certSlug', async () => {
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',
           setCookies
-        }).send({ certSlug: undefined });
+        }).send({});
 
         expect(response.body).toMatchObject({
           response: {
@@ -69,6 +70,12 @@ describe('certificate routes', () => {
         }).send({
           certSlug: 'non-existant'
         });
+        expect(response.body).toMatchObject({
+          response: {
+            message: 'flash.wrong-name',
+            variables: { name: 'non-existant' }
+          }
+        });
         expect(response.status).toBe(400);
       });
 
@@ -76,8 +83,7 @@ describe('certificate routes', () => {
         jest
           .spyOn(fastifyTestInstance.prisma.user, 'findUnique')
           .mockImplementation(
-            // @ts-expect-error `null` is assignable to `null`, but don't tell TS that 🤫
-            () => null
+            () => Promise.resolve(null) as PrismaPromise<null>
           );
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',
@@ -104,20 +110,44 @@ describe('certificate routes', () => {
           certSlug: Certification.RespWebDesign
         });
 
+        expect(response.body).toMatchObject({
+          response: {
+            type: 'info',
+            message: 'flash.name-needed'
+          },
+          isCertMap: {
+            is2018DataVisCert: false,
+            isApisMicroservicesCert: false,
+            isBackEndCert: false,
+            isCollegeAlgebraPyCertV8: false,
+            isDataAnalysisPyCertV7: false,
+            isDataVisCert: false,
+            isFoundationalCSharpCertV8: false,
+            isFrontEndCert: false,
+            isFrontEndLibsCert: false,
+            isFullStackCert: false,
+            isInfosecCertV7: false,
+            isInfosecQaCert: false,
+            isJsAlgoDataStructCert: false,
+            isMachineLearningPyCertV7: false,
+            isQaCertV7: false,
+            isRelationalDatabaseCertV8: false,
+            isRespWebDesignCert: false,
+            isSciCompPyCertV7: false
+          },
+          completedChallenges: []
+        });
         expect(response.status).toBe(400);
       });
 
       test('should return 200 if user already claimed cert', async () => {
-        jest
-          .spyOn(fastifyTestInstance.prisma.user, 'findUnique')
-          .mockImplementation(
-            // @ts-expect-error The full object is not needed for the test
-            () => ({
-              name: 'fcc',
-              isRespWebDesignCert: true,
-              completedChallenges: []
-            })
-          );
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: defaultUserEmail },
+          data: {
+            completedChallenges: [],
+            isRespWebDesignCert: true
+          }
+        });
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',
           setCookies
@@ -291,7 +321,7 @@ describe('certificate routes', () => {
           Certification.LegacyInfoSecQa,
           Certification.LegacyFullStack
         ];
-        const unclaimableCerts = [];
+        const unclaimableCerts = ['fake-slug'];
 
         if (SHOW_UPCOMING_CHANGES) {
           claimableCerts.push(Certification.UpcomingPython);

@@ -174,6 +174,32 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
                 challengeType
               }
             }
+          },
+          select: {
+            username: true,
+            email: true,
+            name: true,
+            completedChallenges: true,
+            is2018DataVisCert: true,
+            is2018FullStackCert: true,
+            isApisMicroservicesCert: true,
+            isBackEndCert: true,
+            isDataVisCert: true,
+            isCollegeAlgebraPyCertV8: true,
+            isDataAnalysisPyCertV7: true,
+            isFoundationalCSharpCertV8: true,
+            isFrontEndCert: true,
+            isFrontEndLibsCert: true,
+            isFullStackCert: true,
+            isInfosecCertV7: true,
+            isInfosecQaCert: true,
+            isJsAlgoDataStructCert: true,
+            isMachineLearningPyCertV7: true,
+            isQaCertV7: true,
+            isRelationalDatabaseCertV8: true,
+            isRespWebDesignCert: true,
+            isSciCompPyCertV7: true,
+            isUpcomingPythonCertV8: true
           }
         });
 
@@ -291,9 +317,9 @@ function hasCompletedTests(
 }
 
 function assertCertSlugIsKeyofCertSlugTypeMap(
-  certSlug: unknown
+  certSlug: string
 ): certSlug is keyof typeof certSlugTypeMap {
-  return typeof certSlug === 'string' && certSlug in certSlugTypeMap;
+  return certSlug in certSlugTypeMap;
 }
 
 function createCertTypeIds(challenges: ReturnType<typeof getChallenges>) {
@@ -350,14 +376,15 @@ function getCertById(
   return { id, tests, challengeType };
 }
 
-function assertTestsExist(tests: unknown): asserts tests is { id: string }[] {
+function assertTestsExist(
+  tests: ReturnType<typeof getChallenges>[number]['tests']
+): asserts tests is { id: string }[] {
   if (!Array.isArray(tests)) {
     throw new Error('Tests is not an array');
   }
   if (!tests.every(test => typeof test === 'object' && test !== null)) {
     throw new Error('Tests contains non-object values');
   }
-  // @ts-expect-error Safety: Checked all tests are objects and non-null, and cannot be undefined
   if (!tests.every(test => typeof test.id === 'string')) {
     throw new Error('Tests contain non-string ids');
   }
