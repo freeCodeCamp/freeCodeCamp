@@ -11,7 +11,7 @@ This guide covers some common steps with the setup of WSL2. Once some of the com
 
 ## Enable WSL
 
-Follow the instructions on the [official documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install WSL1 and followed by upgrading to WSL2.
+Follow the instructions on the [official documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install WSL2.
 
 ## Install Ubuntu
 
@@ -20,6 +20,8 @@ Follow the instructions on the [official documentation](https://docs.microsoft.c
    > [!NOTE]
    >
    > While you may use other non-Debian-based distributions, they all come with their own 'gotchas' that are beyond the scope of this guide.
+
+   As of November 2023, Ubuntu and Debian are the only Linux distributions [officially supported by Playwright](https://playwright.dev/docs/intro#system-requirements), the end-to-end testing library used by freeCodeCamp.
 
 2. Update the dependencies for the OS
 
@@ -71,12 +73,12 @@ This makes it so that the containers run on the WSL side instead of running on W
 
 Once you have configured Docker Desktop to work with WSL2, follow these steps to start a MongoDB service:
 
-1. Launch a new Ubuntu-18.04 terminal
+1. Launch a new Ubuntu terminal
 
-2. Pull `MongoDB 4.0.x` from Docker Hub
+2. Pull MongoDB from Docker Hub. Please refer to the [Prerequisites](how-to-setup-freecodecamp-locally.md#Prerequisites) table for the current version of MongoDB used by freeCodeCamp. For example, if the version number is `5.0.x`, replace `<x.y>` with `5.0` in the following two code snippets.
 
    ```console
-   docker pull mongo:4.0
+   docker pull mongo:<x.y>
    ```
 
 3. Start the MongoDB service at port `27017`, and configure it to run automatically on system restarts
@@ -87,7 +89,7 @@ Once you have configured Docker Desktop to work with WSL2, follow these steps to
      -p 27017:27017 \
      --name mongodb \
      --restart unless-stopped \
-     -d mongo:4.0
+     -d mongo:<x.y>
    ```
 
 4. You can now access the service from both Windows or Ubuntu at `mongodb://localhost:27017`.
@@ -96,21 +98,13 @@ Once you have configured Docker Desktop to work with WSL2, follow these steps to
 
 We recommend you install the LTS release for Node.js with a node version manager - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
-Once installed use these commands to install and use the Node.js version as needed
+Once installed use this command to install and use the latest Node.js LTS version:
 
 ```console
 nvm install --lts
-
-# OR
-# nvm install <version>
-
-nvm install 14
-
-# Usage
-# nvm use <version>
-
-nvm use 12
 ```
+
+For instructions on installing and using a different version of Node.js, please refer to the [nvm docs](https://github.com/nvm-sh/nvm#usage).
 
 Node.js comes bundled with `npm`, which you can use to install `pnpm`:
 
@@ -125,6 +119,98 @@ Now that you have installed the pre-requisites, follow [our local setup guide](h
 > [!WARNING]
 >
 > Please note, at this time the setup for Cypress tests (and related GUI needs) is a work in progress. You should still be able to work on most of the codebase.
+
+## Optimize Windows and WSL
+
+   > [!NOTE]
+   >
+   > The following tips were collected from across the web and have not gone through vigorous testing. Your mileage may vary.
+
+### Adjust processer scheduling for background services
+
+This may reduce incidents of Docker containers crashing due to lack of resources.
+
+Open the System Properties control panel by pressing <kbd>Win + R</kbd> and entering `sysdm.cpl`
+
+<details>
+    <summary>
+      Enter <code>sysdm.cpl</code> in the Run dialog (screenshot)
+    </summary>
+    <br>
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/run-sysdm.png" alt="Enter `sysdm.cpl` in the Run dialog">
+</details>
+<br>
+
+Go to Advanced -> Performance -> Settings…
+
+<details>
+    <summary>
+      Performance Settings button under Advanced tab in System Properties (screenshot)
+    </summary>
+    <br>
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/advanced-performance-settings.png" alt="Performance Settings button under Advanced tab in System Properties">
+</details>
+<br>
+
+Under Advanced -> Processor scheduling, choose "Background services". Do not close the window. Continue to the next tip.
+
+<details>
+    <summary>
+      Background services radio button under Advanced tab in Performance Options (screenshot)
+    </summary>
+    <br>
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/background-services.png" alt="Background services radio button under Advanced tab in Performance Options">
+</details>
+
+### Increase the size of Windows paging file for the system drive
+
+Under Advanced -> Virtual memory, click "Change…"
+
+<details>
+    <summary>
+      Change virtual memory button under Advanced tab in Performance Options (screenshot)
+    </summary>
+    <br>
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/advanced-virtual-memory.png" alt="Change virtual memory button under Advanced tab in Performance Options">
+</details>
+<br>
+
+Choose "Custom size". Set the initial size to 1.5x and the maximum size to 3x of your physical memory. Then click "Set".
+
+<details>
+    <summary>
+      Set custom size button in Virtual Memory window (screenshot)
+    </summary>
+    <br>
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/set-custom-size.png" alt="Set custom size button in Virtual Memory window">
+</details>
+
+### Increase the size of memory allocated to WSL
+
+Create a [`.wslconfig` file](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig) in your [`%UserProfile%` directory](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#wslconfig) (typically `C:\Users\<UserName>\.wslconfig`). Please read the [WSL documentation](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig) carefully and replace `x` with values that suit your own needs:
+
+```ini
+# Settings apply across all Linux distros running on WSL 2
+[wsl2]
+
+# How much memory to assign to the WSL 2 VM. The default value might not be enough
+memory=xGB
+
+# How much swap space to add to the WSL 2 VM, default is 25% of available RAM
+swap=xGB
+```
+
+### Increase Node.js max old space size
+
+This fixes the ["JavaScript heap out of memory" error](https://stackoverflow.com/a/54456814) with ESLint. Add the following to your `~/.bashrc` or `~/.zshrc`:
+
+```sh
+export NODE_OPTIONS="--max-old-space-size=4096"
+```
+
+### Avoid `pnpm run test`
+
+Instead, use the script [appropriate to your PR](https://forum.freecodecamp.org/t/wsl-performance-issues-while-working-on-the-codebase/644215/2#:~:text=usually%2C%20you%20just%20want%20to%20test%20something%20specific%20to%20either%20the%20curriculum%20or%20the%20client%20or%20the%20api%20-%20almost%20never%20all%203.); either `pnpm run test:api`, `pnpm run test:curriculum`, or `pnpm run test-client`.
 
 ## Useful Links
 
