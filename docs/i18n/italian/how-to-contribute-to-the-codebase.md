@@ -4,7 +4,7 @@ Ignorare questi passaggi può sporcare la tua copia, rendendo difficoltosi i pro
 
 ## Contribuire al codebase
 
-Ora puoi apportare modifiche ai file e fare dei commit con i tuoi cambiamenti al fork, che puoi preparare leggendo [come impostare freecodecamp](how-to-setup-freecodecamp-locally.md).
+You can now make changes to files and commit your changes to your fork, which you can prepare by reading [how to set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md).
 
 Segui questi passaggi:
 

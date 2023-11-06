@@ -4,7 +4,7 @@ Ignorar estos pasos puede empobrecer tu copia lo que hara que el proceso de cont
 
 ## Contribuir a la base del código
 
-Ya podes hacer modificaciones a los archivos y confimar estos cambios a tu bifurcación, la cual puedes realizar leyendo el tutorial [how to set up freeCodeCamp](how-to-setup-freecodecamp-locally.md).
+You can now make changes to files and commit your changes to your fork, which you can prepare by reading [how to set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md).
 
 Sigue estos pasos:
 
