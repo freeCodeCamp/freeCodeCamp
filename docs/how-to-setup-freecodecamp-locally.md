@@ -79,7 +79,7 @@ We primarily support development on Linux and Unix-based systems like Ubuntu and
 
 If Node.js is already installed on your machine, run the following commands to validate the versions:
 
-```console
+```bash
 node -v
 pnpm -v
 ```
@@ -150,7 +150,7 @@ Run these commands on your local machine:
 
 2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
 
-   ```console
+   ```bash
    git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
    ```
 
@@ -168,25 +168,25 @@ You need a reference from your local clone to the `upstream` repository in addit
 
 1. Change the directory to the new freeCodeCamp directory:
 
-   ```console
+   ```bash
    cd freeCodeCamp
    ```
 
 2. Add a remote reference to the main freeCodeCamp repository:
 
-   ```console
+   ```bash
    git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
    ```
 
 3. Ensure the configuration looks correct:
 
-   ```console
+   ```bash
    git remote -v
    ```
 
    The output should look something like below (replacing `YOUR_USER_NAME` with your GitHub username):
 
-   ```console
+   ```bash
    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
@@ -211,12 +211,12 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
 
-```console
+```bash
 # Create a copy of the "sample.env" and name it ".env".
 # Populate it with the necessary API keys and secrets
 ```
 
-```console
+```bash
 cp sample.env .env
 ```
 
@@ -229,7 +229,7 @@ The keys in the `.env` file are _not_ required to be changed to run the app loca
 
 This step will install the dependencies required for the application to run:
 
-```console
+```bash
 pnpm install && pnpm run create:shared
 ```
 
@@ -244,7 +244,7 @@ Before you can run the application locally, you will need to start the MongoDB s
 
 Start the MongoDB server in a separate terminal:
 
-```console
+```bash
 mongod
 ```
 
@@ -253,13 +253,13 @@ mongod
 
 Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
 
-```console
+```bash
 pnpm run seed
 ```
 
 By default, you will be signed in as a new user without any completed certifications. Run the following commands if you need to develop with completed certifications:
 
-```console
+```bash
 pnpm run seed:certified-user
 pnpm run seed:exams
 ```
@@ -271,7 +271,7 @@ pnpm run seed:exams
 
 You can now start up the API server and the client applications.
 
-```console
+```bash
 pnpm run develop
 ```
 

@@ -25,7 +25,7 @@ Follow the instructions on the [official documentation](https://docs.microsoft.c
 
 2. Update the dependencies for the OS
 
-   ```console
+   ```bash
    sudo apt update
    sudo apt upgrade -y
 
@@ -77,13 +77,13 @@ Once you have configured Docker Desktop to work with WSL2, follow these steps to
 
 2. Pull MongoDB from Docker Hub. Please refer to the [Prerequisites](how-to-setup-freecodecamp-locally.md#Prerequisites) table for the current version of MongoDB used by freeCodeCamp. For example, if the version number is `5.0.x`, replace `<x.y>` with `5.0` in the following two code snippets.
 
-   ```console
+   ```bash
    docker pull mongo:<x.y>
    ```
 
 3. Start the MongoDB service at port `27017`, and configure it to run automatically on system restarts
 
-   ```console
+   ```bash
    docker run -it \
      -v mongodata:/data/db \
      -p 27017:27017 \
@@ -100,7 +100,7 @@ We recommend you install the LTS release for Node.js with a node version manager
 
 Once installed use this command to install and use the latest Node.js LTS version:
 
-```console
+```bash
 nvm install --lts
 ```
 
@@ -108,7 +108,7 @@ For instructions on installing and using a different version of Node.js, please 
 
 Node.js comes bundled with `npm`, which you can use to install `pnpm`:
 
-```console
+```bash
 npm install -g pnpm
 ```
 
