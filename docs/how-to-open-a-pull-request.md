@@ -118,14 +118,14 @@ When you are working on regular bugs and features on our development branch `mai
 
 1. Rebase your local copy:
 
-   ```console
+   ```bash
    git checkout <pr-branch>
    git pull --rebase upstream main
    ```
 
 2. Resolve any conflicts and add / edit commits
 
-   ```console
+   ```bash
    # Either
    git add .
    git commit -m "chore: resolve conflicts"
@@ -137,7 +137,7 @@ When you are working on regular bugs and features on our development branch `mai
 
 3. Push back your changes to the PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch>
    ```
 
@@ -147,7 +147,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
 1. Make sure your upstream comes in sync with your local:
 
-   ```console
+   ```bash
    git checkout main
    git fetch --all --prune
    git checkout next-python-projects
@@ -158,7 +158,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
    a. Either delete your local branch after taking a backup (if you still have it locally):
 
-   ```console
+   ```bash
    git checkout <pr-branch-name>
 
    # example:
@@ -174,7 +174,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
    b. Or just a backup of your PR branch (if you do not have it locally):
 
-   ```console
+   ```bash
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
    # example:
@@ -183,14 +183,14 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
 3. Start off with a clean slate:
 
-   ```console
+   ```bash
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
 4. Resolve any conflicts, cleanup, and install dependencies and run tests
 
-   ```console
+   ```bash
    pnpm run clean
 
    pnpm install
@@ -204,6 +204,6 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
 5. If everything looks good, push back to the PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch-name>
    ```
