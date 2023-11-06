@@ -66,7 +66,7 @@
     "no-profanity": "^1.4.2",
     "node-fetch": "^2.6.7",
     "nodemailer-ses-transport": "1.5.1",
-    "passport": "0.4.1",
+    "passport": "0.6.0",
     "passport-auth0": "1.4.2",
     "passport-local": "1.0.0",
     "passport-mock-strategy": "2.0.0",
