@@ -94,7 +94,7 @@
     "lodash-es": "4.17.21",
     "micromark": "4.0.0",
     "monaco-editor": "0.28.1",
-    "nanoid": "3.3.6",
+    "nanoid": "3.3.7",
     "normalize-url": "4.5.1",
     "path-browserify": "1.0.1",
     "postcss": "8.4.31",
