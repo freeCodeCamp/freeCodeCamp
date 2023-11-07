@@ -225,8 +225,12 @@ function createPostSubmitSurvey(app) {
   return async function postSubmitSurvey(req, res) {
     const { user, body } = req;
     const { surveyResults } = body;
-    const { completedSurveys = [] } = user;
+    const { id: userId } = user;
     const { title } = surveyResults;
+
+    const completedSurveys = await Survey.find({
+      where: { userId }
+    });
 
     const surveyAlreadyTaken = completedSurveys.some(s => s.title === title);
     if (surveyAlreadyTaken) {
