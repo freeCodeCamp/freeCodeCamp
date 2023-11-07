@@ -160,7 +160,7 @@
     "@types/reach__router": "1.3.13",
     "@types/react": "16.14.50",
     "@types/react-dom": "16.9.21",
-    "@types/react-gtm-module": "2.0.2",
+    "@types/react-gtm-module": "2.0.3",
     "@types/react-helmet": "6.1.8",
     "@types/react-instantsearch-core": "6.26.7",
     "@types/react-instantsearch-dom": "6.12.5",
