@@ -844,8 +844,8 @@ importers:
         specifier: 6.1.8
         version: 6.1.8
       '@types/react-instantsearch-core':
-        specifier: 6.26.6
-        version: 6.26.6
+        specifier: 6.26.7
+        version: 6.26.7
       '@types/react-instantsearch-dom':
         specifier: 6.12.5
         version: 6.12.5
@@ -10719,8 +10719,8 @@ packages:
       '@types/react': 16.14.50
     dev: true
 
-  /@types/react-instantsearch-core@6.26.6:
-    resolution: {integrity: sha512-1OTGqQlcPjWsDnd+Hx/xMucHRPjDTUdVk3XkCMAmwVimo9jRneEnfIYqjsKnO2odQdIXe67oqYb9AdJZHveMTQ==}
+  /@types/react-instantsearch-core@6.26.7:
+    resolution: {integrity: sha512-lm+eHFTeBYkIEOgsTpBIyFy9wQi4OxlGsO3AyOdOhl6cRSgjlqwUZJIwLruJ9/o1tMBJBzH+8jdwQ77Gx1utfA==}
     dependencies:
       '@types/react': 16.14.50
       algoliasearch: 4.20.0
@@ -10731,7 +10731,7 @@ packages:
     resolution: {integrity: sha512-By+i8qih27ku557LRtNzBNQDOyb7bB0P4ihnh7BDj7eGeZ60XTjoTzJpezGueXSlOWHR0YQgoY5Y+fFfHb+AIQ==}
     dependencies:
       '@types/react': 16.14.50
-      '@types/react-instantsearch-core': 6.26.6
+      '@types/react-instantsearch-core': 6.26.7
     dev: true
 
   /@types/react-redux@7.1.28:
