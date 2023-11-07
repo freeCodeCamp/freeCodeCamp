@@ -20,7 +20,7 @@
     "date-fns": "2.30.0",
     "dotenv": "16.3.1",
     "fast-uri": "2.3.0",
-    "fastify": "4.21.0",
+    "fastify": "4.24.3",
     "fastify-auth0-verify": "1.2.1",
     "fastify-plugin": "4.5.1",
     "joi": "17.11.0",
@@ -39,7 +39,7 @@
   "devDependencies": {
     "@total-typescript/ts-reset": "0.5.1",
     "@types/express-session": "1.17.10",
-    "@types/jsonwebtoken": "9.0.4",
+    "@types/jsonwebtoken": "9.0.5",
     "@types/nodemailer": "6.4.13",
     "@types/supertest": "2.0.15",
     "dotenv-cli": "7.3.0",

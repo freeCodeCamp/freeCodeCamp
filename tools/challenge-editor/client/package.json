@@ -8,7 +8,7 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-router-dom": "6.18.0",
-    "typescript": "4.9.5",
+    "typescript": "5.2.2",
     "vite": "4.5.0",
     "vite-tsconfig-paths": "4.2.1"
   },

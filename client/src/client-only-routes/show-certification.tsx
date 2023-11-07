@@ -89,7 +89,7 @@ const requestedUserSelector = (state: unknown, { username = '' }) =>
 
 const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
   const isValidCert = liveCerts.some(
-    ({ certSlug }) => certSlug === props.certSlug
+    ({ certSlug }) => String(certSlug) === props.certSlug
   );
   return createSelector(
     showCertSelector,
