@@ -847,8 +847,8 @@ importers:
         specifier: 6.26.8
         version: 6.26.8
       '@types/react-instantsearch-dom':
-        specifier: 6.12.5
-        version: 6.12.5
+        specifier: 6.12.6
+        version: 6.12.6
       '@types/react-redux':
         specifier: 7.1.29
         version: 7.1.29
@@ -10731,8 +10731,8 @@ packages:
       algoliasearch-helper: 3.14.2(algoliasearch@4.20.0)
     dev: true
 
-  /@types/react-instantsearch-dom@6.12.5:
-    resolution: {integrity: sha512-By+i8qih27ku557LRtNzBNQDOyb7bB0P4ihnh7BDj7eGeZ60XTjoTzJpezGueXSlOWHR0YQgoY5Y+fFfHb+AIQ==}
+  /@types/react-instantsearch-dom@6.12.6:
+    resolution: {integrity: sha512-y1Xc6FMViD3Q3bUzBWvP8tMOZCtyOmzetE+5czZYG/nFKEDxqeM+rDGV1l2WA41Ljy3etuNICTwYHdsMe8lpBw==}
     dependencies:
       '@types/react': 16.14.50
       '@types/react-instantsearch-core': 6.26.8
