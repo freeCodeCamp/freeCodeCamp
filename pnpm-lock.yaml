@@ -1298,8 +1298,8 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1(webpack-cli@4.10.0)
       '@types/enzyme':
-        specifier: 3.10.15
-        version: 3.10.15
+        specifier: 3.10.16
+        version: 3.10.16
       '@types/enzyme-adapter-react-16':
         specifier: 1.0.8
         version: 1.0.8
@@ -10348,6 +10348,13 @@ packages:
 
   /@types/enzyme@3.10.15:
     resolution: {integrity: sha512-Tdm2XXW7TfyKhb/ddSLMpj8W0UgxbCOOauFNeLJH7+KzsfOBrHF6XPctw11SwGoOPyUglYQpvMoQNFXOF0uTwg==}
+    dependencies:
+      '@types/cheerio': 0.22.32
+      '@types/react': 16.14.50
+    dev: true
+
+  /@types/enzyme@3.10.16:
+    resolution: {integrity: sha512-17uMdJjSKjvdn/MhO/G2lRNPZGvJxFpvgONrsRoS1+khtJ6UcnCwC9v3gk2UqPyAkMZb6a1VYxScc/vOgkDl9w==}
     dependencies:
       '@types/cheerio': 0.22.32
       '@types/react': 16.14.50
