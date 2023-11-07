@@ -1113,8 +1113,8 @@ importers:
         version: 4.2.1(typescript@4.9.5)(vite@4.5.0)
     devDependencies:
       '@types/codemirror':
-        specifier: 5.60.12
-        version: 5.60.12
+        specifier: 5.60.13
+        version: 5.60.13
       '@types/react':
         specifier: 16.14.50
         version: 16.14.50
@@ -10274,8 +10274,8 @@ packages:
       '@types/node': 20.8.2
     dev: true
 
-  /@types/codemirror@5.60.12:
-    resolution: {integrity: sha512-SFSj5Tb/mtQoVgaltsipdRGG1PkcFu/L0OXPNBGCXYUQtwsNoAGRNNHOTl1jYcQUcEI77EiUfk94bgETTbSo/A==}
+  /@types/codemirror@5.60.13:
+    resolution: {integrity: sha512-qLWcKUwYDYB7mZpE++0Jn3i1TJ2GW8nlhALRAfjaKgb1HRnk2qcNqWxZ+BpPY1h4n4IQT0foThaOxWHxEL8MnQ==}
     dependencies:
       '@types/tern': 0.23.5
     dev: true
