@@ -24,6 +24,7 @@ import Hotkeys from '../components/hotkeys';
 import { clearExamResults, startExam, stopExam } from '../../../redux/actions';
 import {
   completedChallengesSelector,
+  completedSurveysSelector,
   isSignedInSelector,
   examInProgressSelector,
   examResultsSelector
@@ -47,30 +48,38 @@ import {
   UserExamQuestion,
   UserExam,
   GeneratedExamResults,
-  GeneratedExamQuestion
+  GeneratedExamQuestion,
+  PrerequisiteChallenge,
+  SurveyResults
 } from '../../../redux/prop-types';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { formatSecondsToTime } from '../../../utils/format-seconds';
 import ExitExamModal from './components/exit-exam-modal';
 import FinishExamModal from './components/finish-exam-modal';
 import ExamResults from './components/exam-results';
+import MissingPrerequisites from './components/missing-prerequisites';
+import FoundationCSharpSurveyAlert from './components/foundational-c-sharp-survey-alert';
+
 import './exam.css';
 
 // Redux
 const mapStateToProps = createSelector(
   completedChallengesSelector,
+  completedSurveysSelector,
   isChallengeCompletedSelector,
   isSignedInSelector,
   examInProgressSelector,
   examResultsSelector,
   (
     completedChallenges: CompletedChallenge[],
+    completedSurveys: SurveyResults[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean,
     examInProgress: boolean,
     examResults: GeneratedExamResults | null
   ) => ({
     completedChallenges,
+    completedSurveys,
     isChallengeCompleted,
     isSignedIn,
     examInProgress,
@@ -102,6 +111,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ShowExamProps {
   challengeMounted: (arg0: string) => void;
   completedChallenges: CompletedChallenge[];
+  completedSurveys: SurveyResults[];
   clearExamResults: () => void;
   createFlashMessage: typeof createFlashMessage;
   data: { challengeNode: ChallengeNode };
@@ -334,6 +344,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       examInProgress,
       examResults,
       completedChallenges,
+      completedSurveys,
       isChallengeCompleted,
       openExitExamModal,
       openFinishExamModal,
@@ -350,12 +361,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       userExamQuestions
     } = this.state;
 
-    type Prerequisite = {
-      id: string;
-      title: string;
-    };
-
-    let missingPrerequisites: Prerequisite[] = [];
+    let missingPrerequisites: PrerequisiteChallenge[] = [];
     if (prerequisites) {
       missingPrerequisites = prerequisites?.filter(
         prerequisite =>
@@ -363,7 +369,11 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       );
     }
 
-    const qualifiedForExam = missingPrerequisites.length === 0;
+    const surveyCompleted = completedSurveys.some(
+      s => s.title === 'Foundational C# with Microsoft Survey'
+    );
+    const prerequisitesComplete = missingPrerequisites.length === 0;
+    const qualifiedForExam = prerequisitesComplete && surveyCompleted;
 
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
@@ -391,7 +401,10 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     {title}
                   </div>
                   <span>|</span>
-                  <div data-playwright-test-label='exam-show-question-time'>
+                  <div
+                    data-cy='exam-time'
+                    data-playwright-test-label='exam-show-question-time'
+                  >
                     {t('learn.exam.time', {
                       t: formatSecondsToTime(examTimeInSeconds)
                     })}
@@ -456,7 +469,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     className='exam-button'
                     disabled={currentQuestionIndex <= 0}
                     bsStyle='primary'
-                    data-cy='previous-exam-question'
+                    data-cy='previous-exam-question-btn'
                     onClick={this.goToPreviousQuestion}
                   >
                     {t('buttons.previous-question')}
@@ -471,7 +484,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                       }
                       className='exam-button'
                       bsStyle='primary'
-                      data-cy='finish-exam'
+                      data-cy='finish-exam-btn'
                       onClick={openFinishExamModal}
                     >
                       {t('buttons.finish-exam')}
@@ -484,7 +497,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                       }
                       className='exam-button'
                       bsStyle='primary'
-                      data-cy='next-exam-question'
+                      data-cy='next-exam-question-btn'
                       onClick={this.goToNextQuestion}
                     >
                       {t('buttons.next-question')}
@@ -499,7 +512,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     block={true}
                     className='exam-button'
                     bsStyle='primary'
-                    data-cy='exit-exam'
+                    data-cy='exit-exam-btn'
                     onClick={openExitExamModal}
                   >
                     {t('buttons.exit-exam')}
@@ -532,19 +545,19 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                 <Spacer size='medium' />
 
                 {qualifiedForExam ? (
-                  <Alert id='qualified-for-exam' variant='info'>
+                  <Alert data-cy='qualified-for-exam-alert' variant='info'>
                     <p>{t('learn.exam.qualified')}</p>
                   </Alert>
                 ) : (
-                  <Alert id='not-qualified-for-exam' variant='danger'>
-                    <p>{t('learn.exam.not-qualified')}</p>
-                    <Spacer size='small' />
-                    <ul>
-                      {missingPrerequisites.map(({ title, id }) => (
-                        <li key={id}>{title}</li>
-                      ))}
-                    </ul>
-                  </Alert>
+                  <>
+                    {!prerequisitesComplete ? (
+                      <MissingPrerequisites
+                        missingPrerequisites={missingPrerequisites}
+                      />
+                    ) : (
+                      <FoundationCSharpSurveyAlert />
+                    )}
+                  </>
                 )}
 
                 <PrismFormatted text={description} />
@@ -554,7 +567,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                 <Button
                   block={true}
                   bsStyle='primary'
-                  data-cy='start-exam'
+                  data-cy='start-exam-btn'
                   disabled={!qualifiedForExam}
                   onClick={this.runExam}
                 >

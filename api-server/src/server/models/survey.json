@@ -1,0 +1,41 @@
+{
+  "name": "Survey",
+  "description": "Survey responses from campers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "strict": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "responses": {
+      "type": [
+        {
+          "question": "string",
+          "response": "string"
+        }
+      ],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

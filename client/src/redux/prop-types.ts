@@ -210,6 +210,7 @@ export type User = {
   about: string;
   acceptedPrivacyTerms: boolean;
   completedChallenges: CompletedChallenge[];
+  completedSurveys: SurveyResults[];
   currentChallengeId: string;
   email: string;
   emailVerified: boolean;
@@ -411,4 +412,15 @@ export interface GeneratedExamResults {
   passingPercent: number;
   passed: boolean;
   examTimeInSeconds: number;
+}
+
+// Survey related types
+export interface SurveyResponse {
+  question: string;
+  response: string;
+}
+
+export interface SurveyResults {
+  title: string;
+  responses: SurveyResponse[];
 }

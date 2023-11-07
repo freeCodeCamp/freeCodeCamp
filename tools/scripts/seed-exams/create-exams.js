@@ -42,7 +42,7 @@ function handleError(err, client) {
 const seed = async () => {
   for (const filename of examFilenames) {
     try {
-      const examPath = join('./exams', filename);
+      const examPath = join(__dirname, 'exams', filename);
       const examFile = readFileSync(examPath, { encoding: 'utf-8' });
       const examJson = yaml.load(examFile);
       const validExam = validateExamSchema(examJson);
