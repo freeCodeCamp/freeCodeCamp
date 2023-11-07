@@ -263,8 +263,8 @@ importers:
         specifier: 0.5.1
         version: 0.5.1
       '@types/express-session':
-        specifier: 1.17.9
-        version: 1.17.9
+        specifier: 1.17.10
+        version: 1.17.10
       '@types/jsonwebtoken':
         specifier: 9.0.4
         version: 9.0.4
@@ -10395,10 +10395,10 @@ packages:
       '@types/range-parser': 1.2.5
       '@types/send': 0.17.2
 
-  /@types/express-session@1.17.9:
-    resolution: {integrity: sha512-yIqficLlTPdloeEPhOVenpOUWILkdaXHUWhTOqFGx9JoSuTgeatNjb97k8VvJehbTk0kUSUAHy5r27PXMga89Q==}
+  /@types/express-session@1.17.10:
+    resolution: {integrity: sha512-U32bC/s0ejXijw5MAzyaV4tuZopCh/K7fPoUDyNbsRXHvPSeymygYD1RFL99YOLhF5PNOkzswvOTRaVHdL1zMw==}
     dependencies:
-      '@types/express': 4.17.20
+      '@types/express': 4.17.21
     dev: true
 
   /@types/express@4.17.18:
@@ -10409,15 +10409,6 @@ packages:
       '@types/qs': 6.9.8
       '@types/serve-static': 1.15.3
     dev: false
-
-  /@types/express@4.17.20:
-    resolution: {integrity: sha512-rOaqlkgEvOW495xErXMsmyX3WKBInbhG5eqojXYi3cGUaLoRDlXa5d52fkfWZT963AZ3v2eZ4MbKE6WpDAGVsw==}
-    dependencies:
-      '@types/body-parser': 1.19.3
-      '@types/express-serve-static-core': 4.17.37
-      '@types/qs': 6.9.8
-      '@types/serve-static': 1.15.3
-    dev: true
 
   /@types/express@4.17.21:
     resolution: {integrity: sha512-ejlPM315qwLpaQlQDTjPdsUFSc6ZsP4AN6AlWnogPjQ7CVi7PYF3YVz+CY3jE2pwYf7E/7HlDAN0rV2GxTG0HQ==}
