@@ -695,6 +695,10 @@ export const schemas = {
       200: Type.Object({
         msUsername: Type.String()
       }),
+      400: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.transcript.link-err-1')
+      }),
       404: Type.Object({
         type: Type.Literal('error'),
         message: Type.Literal('flash.ms.transcript.link-err-2')
