@@ -1073,8 +1073,8 @@ importers:
         specifier: ^2.8.13
         version: 2.8.13
       '@types/express':
-        specifier: 4.17.20
-        version: 4.17.20
+        specifier: 4.17.21
+        version: 4.17.21
       dotenv:
         specifier: 16.3.1
         version: 16.3.1
@@ -10417,6 +10417,15 @@ packages:
       '@types/express-serve-static-core': 4.17.37
       '@types/qs': 6.9.8
       '@types/serve-static': 1.15.3
+    dev: true
+
+  /@types/express@4.17.21:
+    resolution: {integrity: sha512-ejlPM315qwLpaQlQDTjPdsUFSc6ZsP4AN6AlWnogPjQ7CVi7PYF3YVz+CY3jE2pwYf7E/7HlDAN0rV2GxTG0HQ==}
+    dependencies:
+      '@types/body-parser': 1.19.3
+      '@types/express-serve-static-core': 4.17.37
+      '@types/qs': 6.9.8
+      '@types/serve-static': 1.15.3
 
   /@types/get-port@3.2.0:
     resolution: {integrity: sha512-TiNg8R1kjDde5Pub9F9vCwZA/BNW9HeXP5b9j7Qucqncy/McfPZ6xze/EyBdXS5FhMIGN6Fx3vg75l5KHy3V1Q==}
@@ -10672,7 +10681,7 @@ packages:
   /@types/passport@1.0.13:
     resolution: {integrity: sha512-XXURryL+EZAWtbQFOHX1eNB+RJwz5XMPPz1xrGpEKr2xUZCXM4NCPkHMtZQ3B2tTSG/1IRaAcTHjczRA4sSFCw==}
     dependencies:
-      '@types/express': 4.17.20
+      '@types/express': 4.17.21
     dev: false
 
   /@types/pretty-hrtime@1.0.1:
