@@ -805,8 +805,8 @@ importers:
         specifier: ^3.10.12
         version: 3.10.14
       '@types/enzyme-adapter-react-16':
-        specifier: 1.0.8
-        version: 1.0.8
+        specifier: 1.0.9
+        version: 1.0.9
       '@types/jest':
         specifier: 29.5.7
         version: 29.5.7
@@ -1301,8 +1301,8 @@ importers:
         specifier: 3.10.16
         version: 3.10.16
       '@types/enzyme-adapter-react-16':
-        specifier: 1.0.8
-        version: 1.0.8
+        specifier: 1.0.9
+        version: 1.0.9
       '@types/jquery':
         specifier: 3.5.26
         version: 3.5.26
@@ -10333,21 +10333,14 @@ packages:
     dependencies:
       '@types/ms': 0.7.32
 
-  /@types/enzyme-adapter-react-16@1.0.8:
-    resolution: {integrity: sha512-nzYumRvxSh2Vbk7mkseYbInmpMbVZRc1EJQVeQmXhNCNVmLg2VOKAJujc7YJ/gDdPW+X03wYrDGa1Bj0Q/NTaw==}
+  /@types/enzyme-adapter-react-16@1.0.9:
+    resolution: {integrity: sha512-z24MMxGtUL8HhXdye3tWzjp+19QTsABqLaX2oOZpxMPHRJgLfahQmOeTTrEBQd9ogW20+UmPBXD9j+XOasFHvw==}
     dependencies:
-      '@types/enzyme': 3.10.15
+      '@types/enzyme': 3.10.16
     dev: true
 
   /@types/enzyme@3.10.14:
     resolution: {integrity: sha512-JeTG2MNUX1bH2DqccwUe3SuPoLu+kUz5UgR3Tvl9nBdfNj7rBZscytctSjEatd5Ul9GXXGKaQBaxODIgJYVRqA==}
-    dependencies:
-      '@types/cheerio': 0.22.32
-      '@types/react': 16.14.50
-    dev: true
-
-  /@types/enzyme@3.10.15:
-    resolution: {integrity: sha512-Tdm2XXW7TfyKhb/ddSLMpj8W0UgxbCOOauFNeLJH7+KzsfOBrHF6XPctw11SwGoOPyUglYQpvMoQNFXOF0uTwg==}
     dependencies:
       '@types/cheerio': 0.22.32
       '@types/react': 16.14.50
