@@ -65,6 +65,10 @@ export const schemas = {
         message: Type.Literal('flash.updated-themes'),
         type: Type.Literal('success')
       }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
         type: Type.Literal('danger')
@@ -105,6 +109,10 @@ export const schemas = {
         message: Type.Literal('flash.updated-socials'),
         type: Type.Literal('success')
       }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
         type: Type.Literal('danger')
@@ -119,6 +127,10 @@ export const schemas = {
       200: Type.Object({
         message: Type.Literal('flash.keyboard-shortcut-updated'),
         type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
       }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
@@ -135,6 +147,10 @@ export const schemas = {
         message: Type.Literal('flash.subscribe-to-quincy-updated'),
         type: Type.Literal('success')
       }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
         type: Type.Literal('danger')
@@ -149,6 +165,10 @@ export const schemas = {
       200: Type.Object({
         message: Type.Literal('buttons.accepted-honesty'),
         type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
       }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
@@ -183,6 +203,10 @@ export const schemas = {
       200: Type.Object({
         message: Type.Literal('flash.privacy-updated'),
         type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
       }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
