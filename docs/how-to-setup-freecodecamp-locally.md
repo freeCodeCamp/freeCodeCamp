@@ -297,6 +297,6 @@ A quick reference to the commands that you will need when working locally.
 | `pnpm run seed`    | Creates authorized test users and inserts them into MongoDB. Also runs `seed:exams` and `seed:surveys` below. |
 | `pnpm run seed:certified-user`    | Creates authorized test users with certifications fully completed, and inserts them into MongoDB.        |
 | `pnpm run seed:exams`    | Creates exams and inserts them into MongoDB.        |
-| `pnpm run seed:surveys`  | Creates surveys for defaults users.         |
+| `pnpm run seed:surveys`  | Creates surveys for defaults users and inserts them into MongoDB.       |
 | `pnpm run develop` | Starts the freeCodeCamp API Server and Client Applications.                   |
 | `pnpm run clean`   | Uninstalls all dependencies and cleans up caches.                             |
