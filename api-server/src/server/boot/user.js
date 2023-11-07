@@ -7,6 +7,7 @@ import fetch from 'node-fetch';
 import {
   fixCompletedChallengeItem,
   fixCompletedExamItem,
+  fixCompletedSurveyItem,
   fixPartiallyCompletedChallengeItem,
   fixSavedChallengeItem
 } from '../../common/utils';
@@ -24,6 +25,7 @@ import {
   encodeUserToken
 } from '../middlewares/user-token';
 import { createDeleteMsUsername } from '../middlewares/ms-username';
+import { validateSurvey, createDeleteUserSurveys } from '../middlewares/survey';
 import { deprecatedEndpoint } from '../utils/disabled-endpoints';
 
 const log = debugFactory('fcc:boot:user');
@@ -39,6 +41,8 @@ function bootUser(app) {
   const deleteUserToken = createDeleteUserToken(app);
   const postMsUsername = createPostMsUsername(app);
   const deleteMsUsername = createDeleteMsUsername(app);
+  const postSubmitSurvey = createPostSubmitSurvey(app);
+  const deleteUserSurveys = createDeleteUserSurveys(app);
 
   api.get('/account', sendNonUserToHome, deprecatedEndpoint);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
@@ -48,6 +52,7 @@ function bootUser(app) {
     ifNoUser401,
     deleteUserToken,
     deleteMsUsername,
+    deleteUserSurveys,
     postDeleteAccount
   );
   api.post(
@@ -55,6 +60,7 @@ function bootUser(app) {
     ifNoUser401,
     deleteUserToken,
     deleteMsUsername,
+    deleteUserSurveys,
     postResetProgress
   );
   api.post(
@@ -78,6 +84,13 @@ function bootUser(app) {
     ifNoUser401,
     deleteMsUsername,
     deleteMsUsernameResponse
+  );
+
+  api.post(
+    '/user/submit-survey',
+    ifNoUser401,
+    validateSurvey,
+    postSubmitSurvey
   );
 
   app.use(api);
@@ -206,8 +219,50 @@ function deleteMsUsernameResponse(req, res) {
   return res.send({ msUsername: null });
 }
 
+function createPostSubmitSurvey(app) {
+  const { Survey } = app.models;
+
+  return async function postSubmitSurvey(req, res) {
+    const { user, body } = req;
+    const { surveyResults } = body;
+    const { completedSurveys = [] } = user;
+    const { title } = surveyResults;
+
+    const surveyAlreadyTaken = completedSurveys.some(s => s.title === title);
+    if (surveyAlreadyTaken) {
+      return res.status(400).json({
+        type: 'error',
+        message: 'flash.survey.err-2'
+      });
+    }
+
+    try {
+      const newSurvey = {
+        ...surveyResults,
+        userId: user.id
+      };
+
+      const createdSurvey = await Survey.create(newSurvey);
+      if (!createdSurvey) {
+        throw new Error('Error creating survey');
+      }
+
+      return res.json({
+        type: 'success',
+        message: 'flash.survey.success'
+      });
+    } catch (e) {
+      log(e);
+      return res.status(500).json({
+        type: 'error',
+        message: 'flash.survey.err-3'
+      });
+    }
+  };
+}
+
 function createReadSessionUser(app) {
-  const { MsUsername, UserToken } = app.models;
+  const { MsUsername, Survey, UserToken } = app.models;
 
   return async function getSessionUser(req, res, next) {
     const queryUser = req.user;
@@ -236,6 +291,18 @@ function createReadSessionUser(app) {
         : null;
 
       msUsername = msUser ? msUser.msUsername : undefined;
+    } catch (e) {
+      return next(e);
+    }
+
+    let completedSurveys;
+    try {
+      const userId = queryUser?.id;
+      completedSurveys = userId
+        ? await Survey.find({
+            where: { userId }
+          })
+        : [];
     } catch (e) {
       return next(e);
     }
@@ -282,7 +349,8 @@ function createReadSessionUser(app) {
             ...normaliseUserFields(user),
             joinDate: user.id.getTimestamp(),
             userToken: encodedUserToken,
-            msUsername
+            msUsername,
+            completedSurveys: completedSurveys.map(fixCompletedSurveyItem)
           }
         },
         result: user.username

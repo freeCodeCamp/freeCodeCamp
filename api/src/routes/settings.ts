@@ -1,5 +1,18 @@
-import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import type { FastifyError, FastifyReply, FastifyRequest } from 'fastify';
+import {
+  TypeBoxTypeProvider,
+  type FastifyPluginCallbackTypebox
+} from '@fastify/type-provider-typebox';
+import type {
+  ContextConfigDefault,
+  FastifyError,
+  FastifyReply,
+  FastifyRequest,
+  RawReplyDefaultExpression,
+  RawRequestDefaultExpression,
+  RawServerDefault,
+  RouteGenericInterface
+} from 'fastify';
+import { ResolveFastifyReplyType } from 'fastify/types/type-provider';
 import { getMinutes, isBefore, sub } from 'date-fns';
 import { isProfane } from 'no-profanity';
 
@@ -63,14 +76,35 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
 ) => {
   // The order matters here, since we want to reject invalid cross site requests
   // before checking if the user is authenticated.
+  // @ts-expect-error - @fastify/csrf-protection needs to update their types
   // eslint-disable-next-line @typescript-eslint/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
   fastify.addHook('onRequest', fastify.authenticateSession);
 
+  type CommonResponseSchema = {
+    response: { 400: (typeof schemas.updateMyProfileUI.response)[400] };
+  };
+
+  // TODO: figure out if there's a nicer way to generate this type
+  type UpdateReplyType = FastifyReply<
+    RawServerDefault,
+    RawRequestDefaultExpression<RawServerDefault>,
+    RawReplyDefaultExpression<RawServerDefault>,
+    RouteGenericInterface,
+    ContextConfigDefault,
+    CommonResponseSchema,
+    TypeBoxTypeProvider,
+    ResolveFastifyReplyType<
+      TypeBoxTypeProvider,
+      CommonResponseSchema,
+      RouteGenericInterface
+    >
+  >;
+
   function updateErrorHandler(
     error: FastifyError,
     request: FastifyRequest,
-    reply: FastifyReply
+    reply: UpdateReplyType
   ) {
     if (error.validation) {
       void reply.code(400);
