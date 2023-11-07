@@ -67,18 +67,24 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.addHook('onRequest', fastify.csrfProtection);
   fastify.addHook('onRequest', fastify.authenticateSession);
 
+  function updateErrorHandler<
+    E extends FastifyError,
+    Req extends FastifyRequest,
+    Reply extends FastifyReply
+  >(error: E, request: Req, reply: Reply) {
+    if (error.validation) {
+      void reply.code(400);
+      void reply.send({ message: 'flash.wrong-updating', type: 'danger' });
+    } else {
+      fastify.errorHandler(error, request, reply);
+    }
+  }
+
   fastify.put(
     '/update-my-profileui',
     {
       schema: schemas.updateMyProfileUI,
-      errorHandler(error, request, reply) {
-        if (error.validation) {
-          void reply.code(400);
-          return { message: 'flash.wrong-updating', type: 'danger' };
-        } else {
-          fastify.errorHandler(error, request, reply);
-        }
-      }
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -218,14 +224,7 @@ ${isLinkSentWithinLimitTTL}`
     '/update-my-theme',
     {
       schema: schemas.updateMyTheme,
-      errorHandler(error, request, reply) {
-        if (error.validation) {
-          void reply.code(400);
-          return { message: 'flash.wrong-updating', type: 'danger' };
-        } else {
-          fastify.errorHandler(error, request, reply);
-        }
-      }
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -252,14 +251,7 @@ ${isLinkSentWithinLimitTTL}`
     '/update-my-socials',
     {
       schema: schemas.updateMySocials,
-      errorHandler(error, request, reply) {
-        if (error.validation) {
-          void reply.code(400);
-          return { message: 'flash.wrong-updating', type: 'danger' };
-        } else {
-          fastify.errorHandler(error, request, reply);
-        }
-      }
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -407,14 +399,7 @@ ${isLinkSentWithinLimitTTL}`
     '/update-my-keyboard-shortcuts',
     {
       schema: schemas.updateMyKeyboardShortcuts,
-      errorHandler(error, request, reply) {
-        if (error.validation) {
-          void reply.code(400);
-          return { message: 'flash.wrong-updating', type: 'danger' };
-        } else {
-          fastify.errorHandler(error, request, reply);
-        }
-      }
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -441,14 +426,7 @@ ${isLinkSentWithinLimitTTL}`
     '/update-my-quincy-email',
     {
       schema: schemas.updateMyQuincyEmail,
-      errorHandler(error, request, reply) {
-        if (error.validation) {
-          void reply.code(400);
-          return { message: 'flash.wrong-updating', type: 'danger' };
-        } else {
-          fastify.errorHandler(error, request, reply);
-        }
-      }
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -475,14 +453,7 @@ ${isLinkSentWithinLimitTTL}`
     '/update-my-honesty',
     {
       schema: schemas.updateMyHonesty,
-      errorHandler(error, request, reply) {
-        if (error.validation) {
-          void reply.code(400);
-          return { message: 'flash.wrong-updating', type: 'danger' };
-        } else {
-          fastify.errorHandler(error, request, reply);
-        }
-      }
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -509,14 +480,7 @@ ${isLinkSentWithinLimitTTL}`
     '/update-privacy-terms',
     {
       schema: schemas.updateMyPrivacyTerms,
-      errorHandler(error, request, reply) {
-        if (error.validation) {
-          void reply.code(400);
-          return { message: 'flash.wrong-updating', type: 'danger' };
-        } else {
-          fastify.errorHandler(error, request, reply);
-        }
-      }
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -544,14 +508,7 @@ ${isLinkSentWithinLimitTTL}`
     '/update-my-portfolio',
     {
       schema: schemas.updateMyPortfolio,
-      errorHandler(error, request, reply) {
-        if (error.validation) {
-          void reply.code(400);
-          return { message: 'flash.wrong-updating', type: 'danger' };
-        } else {
-          fastify.errorHandler(error, request, reply);
-        }
-      }
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
