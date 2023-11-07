@@ -98,6 +98,7 @@ async function createMetaJson(
   newMeta.order = order;
   newMeta.superOrder = Object.values(SuperBlocks).indexOf(superBlock) + 1;
   newMeta.superBlock = superBlock;
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
   const newMetaDir = path.resolve(metaDir, block);
   if (!existsSync(newMetaDir)) {
