@@ -126,7 +126,7 @@
     "eslint-plugin-import": "2.29.0",
     "eslint-plugin-jest-dom": "3.9.4",
     "eslint-plugin-jsdoc": "44.2.7",
-    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-jsx-a11y": "6.8.0",
     "eslint-plugin-no-only-tests": "2.6.0",
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",
