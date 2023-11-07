@@ -162,7 +162,7 @@
     "@types/react-dom": "16.9.21",
     "@types/react-gtm-module": "2.0.3",
     "@types/react-helmet": "6.1.8",
-    "@types/react-instantsearch-core": "6.26.7",
+    "@types/react-instantsearch-core": "6.26.8",
     "@types/react-instantsearch-dom": "6.12.5",
     "@types/react-redux": "7.1.29",
     "@types/react-responsive": "8.0.7",
