@@ -1,6 +1,6 @@
 ---
 id: 5900f47f1000cf542c50ff91
-title: 'Problem 274: Divisibility Multipliers'
+title: 'Завдання 274: множники подільності'
 challengeType: 1
 forumTopicId: 301924
 dashedName: problem-274-divisibility-multipliers
@@ -8,21 +8,21 @@ dashedName: problem-274-divisibility-multipliers
 
 # --description--
 
-For each integer $p > 1$ coprime to 10 there is a positive divisibility multiplier $m &lt; p$ which preserves divisibility by $p$ for the following function on any positive integer, $n$:
+Для кожного цілого числа $p > 1$, яке є взаємно простим 10, існує множник подільності $m &lt; p$, який зберігає подільність на $p$ для наступної функції любого додатного цілого числа $n$:
 
-$f(n) = (\text{all but the last digit of} \\; n) + (\text{the last digit of} \\; n) \times m$
+$f(n) = (\text{всі, крім останньої цифри} \\; n) + (\text{остання цифра} \\; n) \times m$
 
-That is, if $m$ is the divisibility multiplier for $p$, then $f(n)$ is divisible by $p$ if and only if $n$ is divisible by $p$.
+Тому, якщо $m$ є множником подільності для $p$, то $f(n)$ ділиться на $p$ без остачі лише тоді, коли $n$ ділиться на $p$ без остачі.
 
-(When $n$ is much larger than $p$, $f(n)$ will be less than $n$ and repeated application of $f$ provides a multiplicative divisibility test for $p$.)
+(Коли $n$ набагато більше за $p$, то $f(n)$ буде меншим за $n$ та повторне застосування $f$ створює мультиплікативний тест на подільність для $p$.)
 
-For example, the divisibility multiplier for 113 is 34.
+Наприклад, множник подільності для 113 дорівнює 34.
 
-$f(76275) = 7627 + 5 \times 34 = 7797$: 76275 and 7797 are both divisible by 113
+$f(76275) = 7627 + 5 \times 34 = 7797$: 76275 та 7797 діляться на 113 без остачі
 
-$f(12345) = 1234 + 5 \times 34 = 1404$: 12345 and 1404 are both not divisible by 113
+$f(12345) = 1234 + 5 \times 34 = 1404$: 12345 та 1404 діляться на 113 без остачі
 
-The sum of the divisibility multipliers for the primes that are coprime to 10 and less than 1000 is 39517. What is the sum of the divisibility multipliers for the primes that are coprime to 10 and less than ${10}^7$?
+Сума множників подільності для простих чисел, які взаємно прості 10 та менші за 1000, становить 39517. Якою буде сума множників подільності для простих чисел, які взаємно прості 10 та менші за ${10}^7$?
 
 # --hints--
 
