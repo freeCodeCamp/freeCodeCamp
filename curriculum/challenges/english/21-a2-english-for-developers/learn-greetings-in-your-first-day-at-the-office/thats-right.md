@@ -8,7 +8,7 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 # --description--
 
-When someone makes a correct assumption or guess about you, you can confirm it using phrases like `that's right`. It's a way or agreeing or saying yes to what is said.
+When someone makes a correct assumption or guess about you, you can confirm it using phrases like `that's right`. It's a way of agreeing or saying yes to what is said.
 
 # --question--
 

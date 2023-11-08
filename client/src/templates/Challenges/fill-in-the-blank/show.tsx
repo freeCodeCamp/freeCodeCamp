@@ -1,7 +1,7 @@
 // Package Utilities
 import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import type { TFunction } from 'i18next';
@@ -70,8 +70,8 @@ interface ShowFillInTheBlankProps {
 
 interface ShowFillInTheBlankState {
   showWrong: boolean;
-  userAnswers: (string | undefined)[];
-  answersCorrect: (boolean | undefined)[];
+  userAnswers: (string | null)[];
+  answersCorrect: (boolean | null)[];
   allBlanksFilled: boolean;
   feedback: string | null;
   showFeedback: boolean;
@@ -98,7 +98,7 @@ class ShowFillInTheBlank extends Component<
       }
     } = props;
 
-    const emptyArray = blanks.map(() => undefined);
+    const emptyArray = blanks.map(() => null);
 
     this.state = {
       showWrong: false,
@@ -177,13 +177,9 @@ class ShowFillInTheBlank extends Component<
 
     const blankAnswers = blanks.map(b => b.answer);
 
-    const newAnswersCorrect = userAnswers.map((userAnswer, i) => {
-      if (userAnswer === blankAnswers[i]) {
-        return true;
-      } else {
-        return false;
-      }
-    });
+    const newAnswersCorrect = userAnswers.map(
+      (userAnswer, i) => userAnswer === blankAnswers[i]
+    );
 
     const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
     if (!hasWrongAnswer) {
@@ -214,50 +210,35 @@ class ShowFillInTheBlank extends Component<
     newUserAnswers[inputIndex] = e.target.value;
 
     const newAnswersCorrect = [...answersCorrect];
-    newAnswersCorrect[inputIndex] = undefined;
+    newAnswersCorrect[inputIndex] = null;
 
-    const blankNotFilled = newUserAnswers.some(
-      a => a === undefined || a === ''
-    );
+    const allBlanksFilled = newUserAnswers.every(a => a);
 
     this.setState({
       userAnswers: newUserAnswers,
       answersCorrect: newAnswersCorrect,
-      allBlanksFilled: blankNotFilled ? false : true,
+      allBlanksFilled,
       showWrong: false
     });
   };
 
   addCodeTags(str: string, index: number, numberOfBlanks: number): string {
-    if (index === 0) {
-      return `${str}</code>`;
-    } else if (index < numberOfBlanks) {
-      return `<code>${str}</code>`;
-    } else {
-      return `<code>${str}`;
-    }
+    if (index === 0) return `${str}</code>`;
+    if (index < numberOfBlanks) return `<code>${str}</code>`;
+    return `<code>${str}`;
   }
 
   addPrismClass(index: number, numberOfBlanks: number): string {
-    if (index === 0) {
-      return `first-code-tag`;
-    } else if (index < numberOfBlanks) {
-      return `middle-code-tag`;
-    } else {
-      return `last-code-tag`;
-    }
+    if (index === 0) return `first-code-tag`;
+    if (index < numberOfBlanks) return `middle-code-tag`;
+    return `last-code-tag`;
   }
 
   addInputClass(index: number): string {
     const { answersCorrect } = this.state;
-
-    if (answersCorrect[index] === true) {
-      return 'green-underline';
-    } else if (answersCorrect[index] === false) {
-      return 'red-underline';
-    } else {
-      return '';
-    }
+    if (answersCorrect[index] === true) return 'green-underline';
+    if (answersCorrect[index] === false) return 'red-underline';
+    return '';
   }
 
   render() {
@@ -319,7 +300,6 @@ class ShowFillInTheBlank extends Component<
                 <PrismFormatted text={description} />
                 {audioPath && (
                   <>
-                    {' '}
                     <Spacer size='small' />
                     <Spacer size='small' />
                     {/* TODO: Add tracks for audio elements */}
@@ -335,14 +315,14 @@ class ShowFillInTheBlank extends Component<
                 <Spacer size='medium' />
                 <PrismFormatted text={instructions} />
                 <Spacer size='medium' />
-                <h2>{t('fill-in-the-blank')}</h2>
+                <h2>{t('learn.fill-in-the-blank')}</h2>
                 <Spacer size='small' />
                 <ObserveKeys>
                   <div>
                     <p>
                       {splitSentence.map((s, i) => {
                         return (
-                          <>
+                          <Fragment key={i}>
                             <PrismFormatted
                               text={this.addCodeTags(s, i, blankAnswers.length)}
                               className={`code-tag ${this.addPrismClass(
@@ -366,7 +346,7 @@ class ShowFillInTheBlank extends Component<
                                 }}
                               />
                             )}
-                          </>
+                          </Fragment>
                         );
                       })}
                     </p>

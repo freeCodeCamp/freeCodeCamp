@@ -256,7 +256,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
                         <Spacer size='medium' />
                       </label>
                     ))}
-                  </div>{' '}
+                  </div>
                   <Spacer size='medium' />
                 </ObserveKeys>
 

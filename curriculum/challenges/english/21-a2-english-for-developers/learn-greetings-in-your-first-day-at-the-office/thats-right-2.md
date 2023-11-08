@@ -8,6 +8,8 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 # --description--
 
+Placeholder Description ___ __
+
 # --fillInTheBlank--
 
 ## --sentence--

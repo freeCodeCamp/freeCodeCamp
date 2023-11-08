@@ -2,7 +2,6 @@
 id: 651dd5386ffb500e3f2ce47a
 title: Right
 challengeType: 22
-videoId: nLDychdBwUg
 dashedName: right
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
