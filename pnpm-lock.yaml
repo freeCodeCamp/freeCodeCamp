@@ -175,8 +175,8 @@ importers:
         specifier: 9.1.0
         version: 9.1.0
       '@fastify/csrf-protection':
-        specifier: 6.4.0
-        version: 6.4.0
+        specifier: 6.4.1
+        version: 6.4.1
       '@fastify/middie':
         specifier: '8.3'
         version: 8.3.0
@@ -6627,11 +6627,11 @@ packages:
       fastify-plugin: 4.5.1
     dev: false
 
-  /@fastify/csrf-protection@6.4.0:
-    resolution: {integrity: sha512-x8JLaa18A5OMGXVLY35gN6nEaOBSI1uoUjjnNKRYqyXq/HMGCwc+ZuSOhgrN7zkhruVoAO5s4gQ0i7Fp+BvTrQ==}
+  /@fastify/csrf-protection@6.4.1:
+    resolution: {integrity: sha512-nP1xjruddvWMvqjxTVzpLqWVLAX7P/XWkeTaARg3bXVrVmpDWjDMN7KfV3swIT/XexjDooMo+QG/n0n6ynZaiw==}
     dependencies:
       '@fastify/csrf': 6.2.0
-      '@fastify/error': 3.3.0
+      '@fastify/error': 3.4.1
       fastify-plugin: 4.5.1
     dev: false
 
@@ -6660,7 +6660,7 @@ packages:
   /@fastify/jwt@6.7.1:
     resolution: {integrity: sha512-pvRcGeyF2H1U+HXaxlRBd6s1y99vbSZjhpxTWECIGIhMXKRxBTBSUPRF7LJGONlW1/pZstQ0/Dp/ZxBFlDuEnw==}
     dependencies:
-      '@fastify/error': 3.3.0
+      '@fastify/error': 3.4.1
       '@lukeed/ms': 2.0.1
       fast-jwt: 2.2.3
       fastify-plugin: 4.5.1
@@ -6670,7 +6670,7 @@ packages:
   /@fastify/jwt@7.2.1:
     resolution: {integrity: sha512-CAEL8UxIIn1Baxm6GIjH7j5VNUqAijeBWF3dvxLQd+RNDYCBnVt0RtK3JV4WbfOaMsKQ0IhrxrekroWwhXYOpw==}
     dependencies:
-      '@fastify/error': 3.3.0
+      '@fastify/error': 3.4.1
       '@lukeed/ms': 2.0.1
       fast-jwt: 3.3.0
       fastify-plugin: 4.5.1
