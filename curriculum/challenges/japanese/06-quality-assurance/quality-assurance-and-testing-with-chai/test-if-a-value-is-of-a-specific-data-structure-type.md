@@ -14,7 +14,7 @@ dashedName: test-if-a-value-is-of-a-specific-data-structure-type
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Objects` スイート内の `#17` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.typeOf` または `assert.notTypeOf` に変更してください。 アサートに渡された引数を変更しないでください。
+Within `tests/1_unit-tests.js` under the test labeled `#17` in the `Objects` suite, change each `assert` to either `assert.typeOf` or `assert.notTypeOf` to make the test pass (should evaluate to `true`). アサートに渡された引数を変更しないでください。
 
 # --hints--
 

@@ -14,7 +14,7 @@ Lembrando que este projeto está sendo construído a partir do <a href="https://
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste de número `#14` no grupo de testes `Strings`, modifique cada `assert` para `assert.include` ou para `assert.notInclude`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste de número `#14`, no grupo de testes `Strings`, modifique cada `assert` para `assert.include` ou para `assert.notInclude`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

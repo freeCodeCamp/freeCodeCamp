@@ -12,7 +12,7 @@ dashedName: compare-the-properties-of-two-elements
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Comparisons` スイート内の `#8` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isAbove` または `assert.isAtMost` に変更してください。 アサートに渡された引数を変更しないでください。
+Within `tests/1_unit-tests.js` under the test labeled `#8` in the `Comparisons` suite, change each `assert` to either `assert.isAbove` or `assert.isAtMost` to make the test pass (should evaluate to `true`). アサートに渡された引数を変更しないでください。
 
 # --hints--
 

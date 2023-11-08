@@ -14,7 +14,7 @@ dashedName: test-if-an-object-has-a-property
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#16` у наборі `Objects` змініть кожний `assert` на `assert.property` або `assert.notProperty`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
+Within `tests/1_unit-tests.js` under the test labeled `#16` in the `Objects` suite, change each `assert` to either `assert.property` or `assert.notProperty` to make the test pass (should evaluate to `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 

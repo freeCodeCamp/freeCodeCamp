@@ -14,7 +14,7 @@ Lembrando que este projeto está sendo construído a partir do <a href="https://
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste de número `#18` no grupo de testes `Objects`, modifique cada `assert` para `assert.instanceOf` ou para `assert.notInstanceOf`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste de número `#18`, no grupo de testes `Objects`, modifique cada `assert` para `assert.instanceOf` ou para `assert.notInstanceOf`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

@@ -12,7 +12,7 @@ Lembrando que este projeto está sendo construído a partir do <a href="https://
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste de número `#11` no grupo de testes `Arrays`, modifique cada `assert` para `assert.isArray` ou para `assert.isNotArray`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste de número `#11`, no grupo de testes `Arrays`, modifique cada `assert` para `assert.isArray` ou para `assert.isNotArray`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

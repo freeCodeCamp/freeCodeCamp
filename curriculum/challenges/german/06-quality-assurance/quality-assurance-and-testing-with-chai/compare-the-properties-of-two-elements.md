@@ -12,7 +12,7 @@ Zur Erinnerung: Dieses Projekt baut auf dem folgenden Startprojekt bei <a href="
 
 # --instructions--
 
-Passe innerhalb `tests/1_unit-tests.js` beim Test mit der Beschriftung `#8` in der `Comparisons`-Suite jedes `assert` entweder zu `assert.isAbove` an oder zu `assert.isAtMost`, damit der Test durchläuft (er sollte mit `true` ausgewertet werden). Verändere die an die Asserts übergebenen Argumente nicht.
+Within `tests/1_unit-tests.js` under the test labeled `#8` in the `Comparisons` suite, change each `assert` to either `assert.isAbove` or `assert.isAtMost` to make the test pass (should evaluate to `true`). Verändere die an die Asserts übergebenen Argumente nicht.
 
 # --hints--
 
