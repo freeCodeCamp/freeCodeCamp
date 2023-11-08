@@ -47,7 +47,7 @@ Normalmente, você não precisaria alterar nenhuma configuração ou compilar o 
 
 Instale o freeCodeCamp localmente ([veja o guia de instalação local](how-to-setup-freecodecamp-locally)). Nós empacotamos a CLI com as ferramentas de desenvolvimento para que você possa executar o comando abaixo, conforme necessário, a partir da raiz do repositório:
 
-```console
+```bash
 pnpm run docs:serve
 ```
 

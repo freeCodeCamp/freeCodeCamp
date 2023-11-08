@@ -10,13 +10,13 @@
 
 1. Переконайтесь, що знаходитесь на гілці `main`:
 
-   ```console
+   ```bash
    git status
    ```
 
    Ви повинні отримати такий вивід:
 
-   ```console
+   ```bash
    On branch main
    Your branch is up-to-date with 'origin/main'.
 
@@ -25,7 +25,7 @@
 
    Якщо ви отримали інше повідомлення, значить ви не перебуваєте на головній гілці (main) або ваш робочий каталог не чистий. Розв’яжіть будь-які невиконані файли/затвердження та перевірте `main`:
 
-   ```console
+   ```bash
    git checkout main
    ```
 
@@ -39,25 +39,25 @@
 
    Оновіть свою копію віддаленого репозиторію freeCodeCamp:
 
-   ```console
+   ```bash
    git fetch upstream
    ```
 
    Скиньте свою головну гілку з головною гілкою freeCodeCamp:
 
-   ```console
+   ```bash
    git reset --hard upstream/main
    ```
 
    Перемістіть свою головну гілку до джерела, щоб мати чисту історію розгалуження на GitHub:
 
-   ```console
+   ```bash
    git push origin main --force
    ```
 
    Ви можете переконатись, що ваша поточна головна гілка відповідає upstream/main, виконавши diff:
 
-   ```console
+   ```bash
    git diff upstream/main
    ```
 
@@ -69,7 +69,7 @@
 
    Переконайтесь, що знаходитесь на `main` та починайте розгалуження звідси:
 
-   ```console
+   ```bash
    git checkout -b fix/update-guide-for-xyz
    ```
 
@@ -93,13 +93,13 @@
 
 7. Перевірте та підтвердьте файли, які оновлюєте:
 
-   ```console
+   ```bash
    git status
    ```
 
    Має з’явитись список файлів `unstaged`, які ви відредагували.
 
-   ```console
+   ```bash
    On branch feat/documentation
    Your branch is up to date with 'upstream/feat/documentation'.
 
@@ -118,25 +118,25 @@
 
    У цьому кроці потрібно позначити лише ті файли, які редагували чи додавали самостійно. Якщо необхідно, ви можете виконати скидання та виправити файли, які не збираєтеся змінювати.
 
-   ```console
+   ```bash
    git add path/to/my/changed/file.ext
    ```
 
    Або ви можете додати всі файли `unstaged` до області тимчасового зберігання:
 
-   ```console
+   ```bash
    git add .
    ```
 
    Лише ті файли, які було переміщено до області тимчасового зберігання, будуть додані під час затвердження.
 
-   ```console
+   ```bash
    git status
    ```
 
    Вивід:
 
-   ```console
+   ```bash
    On branch feat/documentation
    Your branch is up to date with 'upstream/feat/documentation'.
 
@@ -151,7 +151,7 @@
 
    Тепер ви можете затвердити свої зміни, використовуючи коротке повідомлення:
 
-   ```console
+   ```bash
    git commit -m "fix: my short commit message"
    ```
 
@@ -181,7 +181,7 @@
 
 9. Якщо ви усвідомили, що вам потрібно відредагувати файл або оновити повідомлення коміту, після того, як зробили  коміт, ви можете зробити так після редагування файлів:
 
-   ```console
+   ```bash
    git commit --amend
    ```
 
@@ -189,7 +189,7 @@
 
 10. Тепер надішліть свої зміни до розгалуження:
 
-    ```console
+    ```bash
     git push origin branch/name-here
     ```
 

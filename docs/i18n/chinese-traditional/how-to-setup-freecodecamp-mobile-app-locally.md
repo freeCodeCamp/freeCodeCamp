@@ -17,7 +17,7 @@ Start by installing the prerequisite software for your operating system.
 
 If Flutter is already installed on your machine, run the following commands to validate the versions:
 
-```console
+```bash
 flutter --version
 dart --version
 ```
@@ -70,7 +70,7 @@ Run these commands on your local machine:
 
 2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
 
-   ```console
+   ```bash
    git clone --depth=1 https://github.com/YOUR_USER_NAME/mobile.git
    ```
 
@@ -88,25 +88,25 @@ You need a reference from your local clone to the `upstream` repository in addit
 
 1. Change directory to the new `mobile` directory:
 
-   ```console
+   ```bash
    cd mobile
    ```
 
 2. Add a remote reference to the main freeCodeCamp mobile repository:
 
-   ```console
+   ```bash
    git remote add upstream https://github.com/freeCodeCamp/mobile.git
    ```
 
 3. Ensure the configuration looks correct:
 
-   ```console
+   ```bash
    git remote -v
    ```
 
    The output should look something like below (replacing `YOUR_USER_NAME` with your GitHub username):
 
-   ```console
+   ```bash
    origin    https://github.com/YOUR_USER_NAME/mobile.git (fetch)
    origin    https://github.com/YOUR_USER_NAME/mobile.git (push)
    upstream    https://github.com/freeCodeCamp/mobile.git (fetch)
@@ -129,20 +129,20 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` which is accessed dynamically during the installation step. Remember to change the directory to `mobile-app` before running the following commands.
 
-```console
+```bash
 # Create a copy of the "sample.env" and name it ".env".
 # Populate it with the necessary API keys and secrets:
 ```
 
 #### **macOS/Linux**
 
-```console
+```bash
 cp sample.env .env
 ```
 
 #### **Windows**
 
-```console
+```bash
 copy sample.env .env
 ```
 
@@ -152,7 +152,7 @@ The keys in the `.env` file are _not_ required to be changed to run the app loca
 
 This step will install the dependencies required for the application to run:
 
-```console
+```bash
 flutter pub get
 ```
 
@@ -162,7 +162,7 @@ Start the emulator of your choice(Android or iOS) and wait for the bootup proces
 
 You can now start the app by running the following command:
 
-```console
+```bash
 flutter run
 ```
 
@@ -176,13 +176,13 @@ Follow these steps:
 
 1. Validate that you are on the `main` branch:
 
-   ```console
+   ```bash
    git status
    ```
 
    You should get an output like this:
 
-   ```console
+   ```bash
    On branch main
    Your branch is up-to-date with 'origin/main'.
 
@@ -191,7 +191,7 @@ Follow these steps:
 
    If you are not on main or your working directory is not clean, resolve any outstanding files/commits and checkout `main`:
 
-   ```console
+   ```bash
    git checkout main
    ```
 
@@ -205,25 +205,25 @@ Follow these steps:
 
    Update your local copy of the freeCodeCamp mobile upstream repository:
 
-   ```console
+   ```bash
    git fetch upstream
    ```
 
    Hard reset your main branch with the freeCodeCamp mobile main:
 
-   ```console
+   ```bash
    git reset --hard upstream/main
    ```
 
    Push your main branch to your origin to have a clean history on your fork on GitHub:
 
-   ```console
+   ```bash
    git push origin main --force
    ```
 
    You can validate that your current main matches the upstream/main by performing a diff:
 
-   ```console
+   ```bash
    git diff upstream/main
    ```
 
@@ -235,7 +235,7 @@ Follow these steps:
 
    Check that you are on `main` as explained previously, and branch off from there:
 
-   ```console
+   ```bash
    git checkout -b fix/update-guide-for-xyz
    ```
 
@@ -259,13 +259,13 @@ Follow these steps:
 
 7. Check and confirm the files you are updating:
 
-   ```console
+   ```bash
    git status
    ```
 
    This should show a list of `unstaged` files that you have edited.
 
-   ```console
+   ```bash
    On branch feat/documentation
    Your branch is up to date with 'upstream/feat/documentation'.
 
@@ -282,25 +282,25 @@ Follow these steps:
 
    In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
 
-   ```console
+   ```bash
    git add path/to/my/changed/file.ext
    ```
 
    Or you can add all the `unstaged` files to the staging area:
 
-   ```console
+   ```bash
    git add .
    ```
 
    Only the files that were moved to the staging area will be added when you make a commit.
 
-   ```console
+   ```bash
    git status
    ```
 
    Output:
 
-   ```console
+   ```bash
    On branch feat/documentation
    Your branch is up to date with 'upstream/feat/documentation'.
 
@@ -313,7 +313,7 @@ Follow these steps:
 
    Now, you can commit your changes with a short message like so:
 
-   ```console
+   ```bash
    git commit -m "fix: my short commit message"
    ```
 
@@ -345,7 +345,7 @@ Follow these steps:
 
 9. If you realize that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
 
-   ```console
+   ```bash
    git commit --amend
    ```
 
@@ -353,7 +353,7 @@ Follow these steps:
 
 10. Next, you can push your changes to your fork:
 
-    ```console
+    ```bash
     git push origin branch/name-here
     ```
 
@@ -363,14 +363,14 @@ Follow these steps:
 
 1. Clone a copy of the [freeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) locally outside of your local copy of the freeCodeCamp mobile repo. Your folder structure should look like this:
 
-    ```console
+    ```bash
     ├── freeCodeCamp
     ├── mobile
     ```
 
 2. Change the directory to the freeCodeCamp repo:
 
-    ```console
+    ```bash
     cd freeCodeCamp
     ```
 
@@ -378,25 +378,25 @@ Follow these steps:
 
     #### **macOS/Linux**
 
-    ```console
+    ```bash
     cp sample.env .env
     ```
 
     #### **Windows**
 
-    ```console
+    ```bash
     copy sample.env .env
     ```
 
 4. Install the dependencies for the freeCodeCamp repo:
 
-    ```console
+    ```bash
     pnpm install && pnpm run create:shared
     ```
 
 5. Generate the challenge data JSON file:
 
-    ```console
+    ```bash
     pnpm run build:curriculum
     ```
 
@@ -404,54 +404,54 @@ Follow these steps:
 
     #### **macOS/Linux**
 
-    ```console
+    ```bash
     cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
     ```
 
     #### **Windows**
-    ```console
+    ```bash
     copy .\shared\config\curriculum.json ..\mobile\mobile-app\curriculum.json
     ```
 
 7. Change directory to the mobile app:
 
-    ```console
+    ```bash
     cd ../mobile/mobile-app
     ```
 
 8. Install the dependencies for the mobile app:
 
-    ```console
+    ```bash
     flutter pub get
     ```
 
 9. Update the test file to use the challenge data JSON file:
 
-    ```console
+    ```bash
     sed -i '' 's/..\/..\/shared\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
     ```
 
 10. Generate the challenge files:
 
-    ```console
+    ```bash
     flutter test test/widget_test.dart
     ```
 
 11. Start a local server to serve the challenge files with the help of `serve` package:
 
-    ```console
+    ```bash
     npx serve
     ```
 
 12. In a different terminal go back to the freeCodeCamp repo:
 
-    ```console
+    ```bash
     cd ../../freeCodeCamp
     ```
 
 13. Run the cypress tests:
 
-    ```console
+    ```bash
     pnpm cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome
     ```
 
@@ -482,7 +482,7 @@ If you are on a different OS and/or are still running into issues, see [getting 
 
 If you face issues with the UI, or build errors a cleanup can be useful:
 
-```console
+```bash
 flutter clean
 ```
 

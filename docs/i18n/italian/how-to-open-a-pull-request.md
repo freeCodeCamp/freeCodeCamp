@@ -115,14 +115,14 @@ Quando stai lavorando su normali bug e funzionalità sul nostro ramo di sviluppo
 
 1. Esegui un rebase della tua copia locale:
 
-   ```console
+   ```bash
    git checkout <pr-branch>
    git pull --rebase upstream main
    ```
 
 2. Risolvi eventuali conflitti e aggiungi / modifica i commit
 
-   ```console
+   ```bash
    # O
    git add .
    git commit -m "chore: resolve conflicts"
@@ -134,7 +134,7 @@ Quando stai lavorando su normali bug e funzionalità sul nostro ramo di sviluppo
 
 3. Fai il push dei tuoi cambiamenti alla PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch>
    ```
 
@@ -144,7 +144,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
 1. Assicurati che il tuo upstream sia sincronizzato con il tuo repository locale:
 
-   ```console
+   ```bash
    git checkout main
    git fetch --all --prune
    git checkout next-python-projects
@@ -155,7 +155,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
    a. Elimina il ramo locale dopo aver effettuato un backup (se lo hai ancora localmente):
 
-   ```console
+   ```bash
    git checkout <pr-branch-name>
 
    # esempio:
@@ -171,7 +171,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
    b. Or just a backup of your PR branch (if you do not have it locally):
 
-   ```console
+   ```bash
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
    # esempio:
@@ -180,14 +180,14 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
 3. Inizia con una slate pulita:
 
-   ```console
+   ```bash
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
 4. Resolve any conflicts, cleanup, and install dependencies and run tests
 
-   ```console
+   ```bash
    pnpm run clean
 
    pnpm install
@@ -201,6 +201,6 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
 5. If everything looks good, push back to the PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch-name>
    ```
