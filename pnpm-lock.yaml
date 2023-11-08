@@ -40,8 +40,8 @@ importers:
         specifier: 13.5.0
         version: 13.5.0(@testing-library/dom@8.20.1)
       '@types/jest':
-        specifier: 29.5.7
-        version: 29.5.7
+        specifier: 29.5.8
+        version: 29.5.8
       '@types/lodash':
         specifier: 4.14.200
         version: 4.14.200
@@ -808,8 +808,8 @@ importers:
         specifier: 1.0.9
         version: 1.0.9
       '@types/jest':
-        specifier: 29.5.7
-        version: 29.5.7
+        specifier: 29.5.8
+        version: 29.5.8
       '@types/jquery':
         specifier: ^3.5.16
         version: 3.5.20
@@ -1505,8 +1505,8 @@ importers:
         specifier: 12.1.5
         version: 12.1.5(react-dom@16.14.0)(react@16.14.0)
       '@types/jest':
-        specifier: 29.5.7
-        version: 29.5.7
+        specifier: 29.5.8
+        version: 29.5.8
       '@types/react':
         specifier: 16.14.50
         version: 16.14.50
@@ -10515,8 +10515,8 @@ packages:
     dependencies:
       '@types/istanbul-lib-report': 3.0.1
 
-  /@types/jest@29.5.7:
-    resolution: {integrity: sha512-HLyetab6KVPSiF+7pFcUyMeLsx25LDNDemw9mGsJBkai/oouwrjTycocSDYopMEwFhN2Y4s9oPyOCZNofgSt2g==}
+  /@types/jest@29.5.8:
+    resolution: {integrity: sha512-fXEFTxMV2Co8ZF5aYFJv+YeA08RTYJfhtN5c9JSv/mFEMe+xxjufCb+PHL+bJcMs/ebPUsBu+UNTEz+ydXrR6g==}
     dependencies:
       expect: 29.7.0
       pretty-format: 29.7.0
@@ -10879,7 +10879,7 @@ packages:
   /@types/testing-library__jest-dom@5.14.5:
     resolution: {integrity: sha512-SBwbxYoyPIvxHbeHxTZX2Pe/74F/tX2/D3mMvzabdeJ25bBojfW0TyB8BHrbq/9zaaKICJZjLP+8r6AeZMFCuQ==}
     dependencies:
-      '@types/jest': 29.5.7
+      '@types/jest': 29.5.8
 
   /@types/through@0.0.31:
     resolution: {integrity: sha512-LpKpmb7FGevYgXnBXYs6HWnmiFyVG07Pt1cnbgM1IhEacITTiUaBXXvOR3Y50ksaJWGSfhbEvQFivQEFGCC55w==}
