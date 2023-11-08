@@ -859,8 +859,8 @@ importers:
         specifier: 0.6.4
         version: 0.6.4
       '@types/react-spinkit':
-        specifier: 3.0.9
-        version: 3.0.9
+        specifier: 3.0.10
+        version: 3.0.10
       '@types/react-test-renderer':
         specifier: 16.9.10
         version: 16.9.10
@@ -10765,8 +10765,8 @@ packages:
       '@types/react': 16.14.50
     dev: true
 
-  /@types/react-spinkit@3.0.9:
-    resolution: {integrity: sha512-jJxWrmWUxh5MBDDyUCxqBgHws/FYSYy7YoYnZJUaKc3LqXr06WAM29KgTeGHE54ZD2dhTAHZAr0jbRUOd1HUvw==}
+  /@types/react-spinkit@3.0.10:
+    resolution: {integrity: sha512-grNfPdesm/xVJPyohfW752bM8N9kuJUx2yFo0I41mZwF3BuXt4+IV4TwaCPcBtA1V3C5r2NUPyqfEUpNTtWbvA==}
     dependencies:
       '@types/react': 16.14.50
     dev: true
