@@ -745,6 +745,12 @@
         "verified": "Ваш трофей на навчальній платформі Microsoft підтверджено."
       }
     },
+    "survey": {
+      "err-1": "The survey submitted is not in the correct format.",
+      "err-2": "It looks like you have already completed this survey.",
+      "err-3": "Something went wrong trying to save your survey.",
+      "success": "Thank you. Your survey was submitted."
+    },
     "classroom-mode-updated": "Ваші налаштування режиму класу оновлено"
   },
   "validation": {
@@ -960,5 +966,31 @@
     "p2": "Ми вдячні за повідомлення про помилки, з якими ви стикаєтесь. Це допомагає покращити freeCodeCamp.org.",
     "p3": "Ваш прогрес МОЖЛИВО не буде збережним при наступному відвідуванні, а будь-які здобуті сертифікації не будуть дійсними. Дізнайтесь більше <0>тут</0>.",
     "certain": "Прийняти і відхилити"
+  },
+  "survey": {
+    "foundational-c-sharp": {
+      "title": "Foundational C# with Microsoft Survey",
+      "q1": {
+        "q": "Please describe your role:",
+        "o1": "Student developer",
+        "o2": "Beginner developer (less than 2 years experience)",
+        "o3": "Intermediate developer (between 2 and 5 years experience)",
+        "o4": "Experienced developer (more than 5 years experience)"
+      },
+      "q2": {
+        "q": "Prior to this course, how experienced were you with .NET and C#?",
+        "o1": "Novice (no prior experience)",
+        "o2": "Beginner",
+        "o3": "Intermediate",
+        "o4": "Advanced",
+        "o5": "Expert"
+      }
+    },
+    "misc": {
+      "take": "Take the survey",
+      "submit": "Submit the survey",
+      "exit": "Exit the survey",
+      "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
   }
 }
