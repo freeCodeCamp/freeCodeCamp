@@ -1,6 +1,6 @@
 ---
 id: 5900f4701000cf542c50ff82
-title: 'Problem 259: Reachable Numbers'
+title: 'Завдання 259: досяжні числа'
 challengeType: 1
 forumTopicId: 301907
 dashedName: problem-259-reachable-numbers
@@ -8,18 +8,18 @@ dashedName: problem-259-reachable-numbers
 
 # --description--
 
-A positive integer will be called reachable if it can result from an arithmetic expression obeying the following rules:
+Натуральне число називається досяжним, якщо його можна отримати через арифметичний вираз згідно з такими правилами:
 
-- Uses the digits 1 through 9, in that order and exactly once each.
-- Any successive digits can be concatenated (for example, using the digits 2, 3 and 4 we obtain the number 234).
-- Only the four usual binary arithmetic operations (addition, subtraction, multiplication and division) are allowed.
-- Each operation can be used any number of times, or not at all.
-- Unary minus is not allowed.
-- Any number of (possibly nested) parentheses may be used to define the order of operations.
+- Можна використовувати цифри від 1 до 9 саме в такому порядку і кожну цифру лише один раз.
+- Будь-які послідовні цифри можна об’єднати (наприклад, використовуючи цифри 2, 3 і 4, ми отримуємо число 234).
+- Можна застосовувати лише чотири звичайні бінарні арифметичні дії (додавання, віднімання, множення та ділення).
+- Кожну дію можна застосовувати будь-яку кількість разів або взагалі не застосовувати.
+- Унарний мінус використовувати не можна.
+- Можна використовувати будь-яку кількість (також і вкладених) дужок для визначення послідовності дій.
 
-For example, 42 is reachable, since $\frac{1}{23} \times ((4 \times 5) - 6) \times (78 - 9) = 42$.
+Наприклад, 42 досяжне, оскільки $\frac{1}{23} \times ((4 \times 5) - 6) \times (78 - 9) = 42$.
 
-What is the sum of all positive reachable integers?
+Якою буде сума всіх додатних досяжних цілих чисел?
 
 # --hints--
 

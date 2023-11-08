@@ -14,7 +14,7 @@ dashedName: use-regular-expressions-to-test-a-string
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#15` в наборі `Strings` змініть кожний `assert` на `assert.match` або `assert.notMatch`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
+Within `tests/1_unit-tests.js` under the test labeled `#15` in the `Strings` suite, change each `assert` to either `assert.match` or `assert.notMatch` to make the test pass (should evaluate to `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 

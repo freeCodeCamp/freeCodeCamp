@@ -14,7 +14,7 @@ Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza
 
 # --instructions--
 
-All'interno di `tests/1_unit-tests.js`, sotto il test etichettato con `#5`, nella suite `Equality`, cambia ogni asserzione `assert` in `assert.equal` o `assert.notEqual` per far passare il test (dovrebbe risultare `true`). Non alterare gli argomenti passati alle asserzioni.
+Within `tests/1_unit-tests.js` under the test labeled `#5` in the `Equality` suite, change each `assert` to either `assert.equal` or `assert.notEqual` to make the test pass (should evaluate to `true`). Non alterare gli argomenti passati alle asserzioni.
 
 # --hints--
 

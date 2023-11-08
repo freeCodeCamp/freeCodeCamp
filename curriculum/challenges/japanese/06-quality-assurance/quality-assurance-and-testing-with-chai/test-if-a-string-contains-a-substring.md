@@ -14,7 +14,7 @@ dashedName: test-if-a-string-contains-a-substring
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Strings` スイート内の `#14` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.include` または `assert.notInclude` に変更してください。 アサートに渡された引数を変更しないでください。
+Within `tests/1_unit-tests.js` under the test labeled `#14` in the `Strings` suite, change each `assert` to either `assert.include` or `assert.notInclude` to make the test pass (should evaluate to `true`). アサートに渡された引数を変更しないでください。
 
 # --hints--
 

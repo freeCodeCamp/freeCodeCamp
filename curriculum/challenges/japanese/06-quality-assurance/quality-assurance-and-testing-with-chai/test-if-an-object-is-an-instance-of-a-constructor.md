@@ -14,7 +14,7 @@ dashedName: test-if-an-object-is-an-instance-of-a-constructor
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Objects` スイート内の `#18` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.instanceOf` または `assert.notInstanceOf` に変更してください。 アサートに渡された引数を変更しないでください。
+Within `tests/1_unit-tests.js` under the test labeled `#18` in the `Objects` suite, change each `assert` to either `assert.instanceOf` or `assert.notInstanceOf` to make the test pass (should evaluate to `true`). アサートに渡された引数を変更しないでください。
 
 # --hints--
 

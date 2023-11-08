@@ -16,7 +16,7 @@ Per saperne di più sui valori veritieri e falsi, prova la nostra sfida <a href=
 
 # --instructions--
 
-All'interno di `tests/1_unit-tests.js`, sotto il test etichettato con `#3`, nella suite `Basic Assertions`, cambia ogni asserzione `assert` in `assert.isOk()` o `assert.isNotOk()` per far superare il test (dovrebbe risultare `true`). Non alterare gli argomenti passati alle asserzioni.
+Within `tests/1_unit-tests.js` under the test labeled `#3` in the `Basic Assertions` suite, change each `assert` to either `assert.isOk()` or `assert.isNotOk()` to make the test pass (should evaluate to `true`). Non alterare gli argomenti passati alle asserzioni.
 
 # --hints--
 
