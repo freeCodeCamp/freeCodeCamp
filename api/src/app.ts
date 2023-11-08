@@ -146,7 +146,6 @@ export const build = async (
     secret: SESSION_SECRET,
     rolling: false,
     saveUninitialized: false,
-    // cookieName: 'jwt_access_token', NOTE: Confirm if we want to use different cookie name for session token
     cookie: {
       maxAge: 1000 * 60 * 60, // 1 hour
       secure: FREECODECAMP_NODE_ENV !== 'development'
