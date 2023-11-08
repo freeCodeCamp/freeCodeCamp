@@ -108,7 +108,7 @@ void (async () => {
     }
   }
   const langsToCheck = availableLangs.curriculum.filter(
-    lang => lang !== 'english'
+    lang => String(lang) !== 'english'
   );
   for (const lang of langsToCheck) {
     console.log(`\n=== ${lang} ===`);

@@ -136,17 +136,29 @@ Soluções são usadas para os testes CI a fim de garantir que mudanças nas dic
 // terceira solução etc. - Suas soluções devem estar em HTML.
 ```
 
+# --assignments--
+
+Isto mostrará uma caixa de seleção que os campers precisam verificar antes de completar um desafio
+
+---
+
+Isto mostrará outra caixa de seleção que os campers precisam verificar antes de completar um desafio
+
 # --question--
 
 Esses espaços são utilizados geralmente para questões de múltipla escolha dos desafios de Python.
 
 ## --text--
 
-O texto da questão vêm aqui.
+O texto da questão vem aqui.
 
 ## --answers--
 
 Resposta 1
+
+### --feedback--
+
+Isto será exibido como feedback quando os campers adivinharem essa resposta
 
 ---
 
@@ -222,7 +234,7 @@ Mantenha os parágrafos curtos (em torno de 1-4 frases). É mais provável que a
 
 O desafio de texto deve usar a segunda pessoa ("você") para ajudar a dar um tom coloquial. Dessa forma, o texto e as instruções parecem falar diretamente ao usuário freeCodeCamp que está resolvendo o desafio. Tente evitar usar a primeira pessoa ("eu", "nós", "vamos").
 
-Não use links externos. Eles interrompem o fluxo. Os usuários do freeCodeCamp nunca devem precisar pesquisar nada no Google durante esses desafios. Se há recursos que você acha que os usuários irão se beneficiar, adicione-os no artigo relacionado ao guia do desafio.
+Não use links externos. Eles interrompem o fluxo. Os usuários do freeCodeCamp nunca devem precisar pesquisar nada no Google durante esses desafios. Se há recursos que você acha que os usuários aproveitarão, adicione-os no artigo relacionado ao guia do desafio.
 
 Você pode adicionar diagramas se necessário.
 

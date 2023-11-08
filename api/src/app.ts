@@ -114,9 +114,6 @@ export const build = async (
   await fastify.register(cors);
   await fastify.register(fastifyCookie);
 
-  // @ts-expect-error @fastify/csrf-protection is overly restrictive, here. It
-  // requires an hmacKey if getToken is provided, but that should only be a
-  // requirement if the getUserInfo function is provided.
   void fastify.register(fastifyCsrfProtection, {
     // TODO: consider signing cookies. We don't on the api-server, but we could
     // as an extra layer of security.

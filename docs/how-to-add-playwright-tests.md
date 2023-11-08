@@ -4,7 +4,7 @@
 
 To install Playwright run:
 
-```console
+```bash
 pnpm run playwright:install-build-tools
 ```
 
@@ -181,49 +181,49 @@ To run tests with Playwright check the following below
 
 - Make sure you navigate to the e2e repo first
 
-  ```console
+  ```bash
   cd e2e
   ```
 
 - To run tests in UI helper mode:
 
-  ```console
+  ```bash
   npx playwright test --ui
   ```
 
 - To run a single test:
 
-  ```console
+  ```bash
   npx playwright test <filename>
   ```
   
   For example:
 
-  ```console
+  ```bash
   npx playwright test landing-page.spec.ts
   ```
 
 - Run a set of test files in respective folders:
 
-  ```console
+  ```bash
   npx playwright test <pathToFolder1> <pathToFolder2>
   ```
 
   For example:
 
-  ```console
+  ```bash
   npx playwright test tests/todo-page/ tests/landing-page/
   ```
 
 - Run the test with the title:
 
-  ```console
+  ```bash
   npx playwright test -g <title>
   ```
 
   For example:
 
-  ```console
+  ```bash
   npx playwright test -g "add a todo item"
   ```
 
@@ -233,13 +233,13 @@ Since Playwright runs in Node.js, you can debug it with your debugger of choice 
 
 - Debugging all tests:
 
-  ```console
+  ```bash
   npx playwright test --debug
   ```
 
 - Debugging one test file:
 
-  ```console
+  ```bash
   npx playwright test example.spec.ts --debug
   ```
 
@@ -247,7 +247,7 @@ Since Playwright runs in Node.js, you can debug it with your debugger of choice 
 
 The HTML Reporter shows you a full report of your tests allowing you to filter the report by browsers, passed tests, failed tests, skipped tests and flaky tests.
 
-```console
+```bash
 npx playwright show-report 
 ```
 
@@ -257,13 +257,13 @@ Playwright is generally a solid bullet-proof tool. The contributor has already c
 
 - (MacOs and Linux) If running Playwright results in an error due to kernel dependencies, run the following command:
 
-  ```console
+  ```bash
   pnpm run playwright:install-build-tools-linux
   ```
 
 - A common error seen in playwright is as follows:
 
-  ```console
+  ```bash
     Error: page.goto: Could not connect: Connection refused
     =========================== logs ===========================
     navigating to "https://127.0.0.1:8000/", waiting until "load"
@@ -284,7 +284,7 @@ Playwright is generally a solid bullet-proof tool. The contributor has already c
 
 - Another common error seen in playwright is as follows:
 
-  ```console
+  ```bash
     Protocol error (Network.getResponseBody): Request content was evicted from inspector cache
   ```
 
@@ -305,25 +305,25 @@ If starting the Gitpod environment did not automatically develop the environment
 
 - Create the .env
 
-  ```console
+  ```bash
   cp sample.env .env
   ```
 
 - Create a config file.
 
-  ```console
+  ```bash
   pnpm run create:shared
   ```
 
 - Seed the database
 
-  ```console
+  ```bash
   pnpm run seed
   ```
 
 - Develop the server and client
 
-  ```console
+  ```bash
   pnpm run develop
   ```
 
@@ -331,7 +331,7 @@ If starting the Gitpod environment did not automatically develop the environment
 
 To install necessary dependencies for running Playwright run the following command:
 
-```console
+```bash
 pnpm run playwright:install-build-tools
 ```
 
@@ -339,6 +339,6 @@ pnpm run playwright:install-build-tools
 
 To run all Playwright tests, run the following command:
 
-```console
+```bash
 npx playwright test
 ```

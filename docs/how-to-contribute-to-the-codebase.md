@@ -10,13 +10,13 @@ Follow these steps:
 
 1. Validate that you are on the `main` branch:
 
-   ```console
+   ```bash
    git status
    ```
 
    You should get an output like this:
 
-   ```console
+   ```bash
    On branch main
    Your branch is up-to-date with 'origin/main'.
 
@@ -25,7 +25,7 @@ Follow these steps:
 
    If you got a different message, then you aren't on main or your working directory isn't clean, resolve any outstanding files/commits and checkout `main`:
 
-   ```console
+   ```bash
    git checkout main
    ```
 
@@ -40,25 +40,25 @@ Follow these steps:
 
    Update your copy of the freeCodeCamp upstream repository:
 
-   ```console
+   ```bash
    git fetch upstream
    ```
 
    Hard reset your main branch with the freeCodeCamp main:
 
-   ```console
+   ```bash
    git reset --hard upstream/main
    ```
 
    Push your main branch to your origin to have a clean history on your fork on GitHub:
 
-   ```console
+   ```bash
    git push origin main --force
    ```
 
    You can validate that your current main matches the upstream/main by performing a diff:
 
-   ```console
+   ```bash
    git diff upstream/main
    ```
 
@@ -70,7 +70,7 @@ Follow these steps:
 
    Check that you are on `main` as explained previously, and branch off from there:
 
-   ```console
+   ```bash
    git checkout -b fix/update-guide-for-xyz
    ```
 
@@ -94,13 +94,13 @@ Follow these steps:
 
 7. Check and confirm the files you are updating:
 
-   ```console
+   ```bash
    git status
    ```
 
    This should show a list of `unstaged` files that you have edited.
 
-   ```console
+   ```bash
    On branch feat/documentation
    Your branch is up to date with 'upstream/feat/documentation'.
 
@@ -119,25 +119,25 @@ Follow these steps:
 
    In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
 
-   ```console
+   ```bash
    git add path/to/my/changed/file.ext
    ```
 
    Or you can add all the `unstaged` files to the staging area:
 
-   ```console
+   ```bash
    git add .
    ```
 
    Only the files that were moved to the staging area will be added when you make a commit.
 
-   ```console
+   ```bash
    git status
    ```
 
    Output:
 
-   ```console
+   ```bash
    On branch feat/documentation
    Your branch is up to date with 'upstream/feat/documentation'.
 
@@ -152,7 +152,7 @@ Follow these steps:
 
    Now, you can commit your changes with a short message like so:
 
-   ```console
+   ```bash
    git commit -m "fix: my short commit message"
    ```
 
@@ -182,7 +182,7 @@ Follow these steps:
 
 9. If you realize that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
 
-   ```console
+   ```bash
    git commit --amend
    ```
 
@@ -190,7 +190,7 @@ Follow these steps:
 
 10. Next, you can push your changes to your fork:
 
-    ```console
+    ```bash
     git push origin branch/name-here
     ```
 

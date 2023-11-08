@@ -246,10 +246,11 @@ Em seguida, vamos criar o banco de dados. Nesta etapa, executamos o comando abai
 pnpm run seed
 ```
 
-Por padrão, você será conectado como um novo usuário sem nenhuma certificação concluída. Execute o seguinte comando se precisar desenvolver com certificados concluídos:
+Por padrão, você será conectado como um novo usuário sem nenhuma certificação concluída. Execute os seguintes comandos se precisar desenvolver com certificados concluídos:
 
 ```console
 pnpm run seed:certified-user
+pnpm run seed:exams
 ```
 
 > [!WARNING] Executar `pnpm run seed:certified-user` desconectará você. Você precisará limpar os cookies do seu navegador e fazer login novamente.
@@ -283,5 +284,6 @@ Uma rápida referência aos comandos que você precisará ao trabalhar localment
 | `pnpm install`                 | Instala/reinstala todas as dependências e inicializa os diferentes serviços.                       |
 | `pnpm run seed`                | Cria usuários de testes autorizados e os insere no MongoDB.                                        |
 | `pnpm run seed:certified-user` | Cria usuários de testes autorizados com certificações totalmente completas e os insere no MongoDB. |
+| `pnpm run seed:exams`          | Cria exames e os insere no MongoDB.                                                                |
 | `pnpm run develop`             | Inicia o servidor de API freeCodeCamp e aplicativos Cliente.                                       |
 | `pnpm run clean`               | Desinstala todas as dependências e limpa os caches.                                                |

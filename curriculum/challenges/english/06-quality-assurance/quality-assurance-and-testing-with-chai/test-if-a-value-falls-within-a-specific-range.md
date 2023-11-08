@@ -18,7 +18,7 @@ Asserts that the `actual` is equal to `expected`, to within a +/- `delta` range.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#10` in the `Comparisons` suite, change each `assert` to `assert.approximately` to make the test pass (should evaluate to `true`).
+Within `tests/1_unit-tests.js` under the test labeled `#10` in the `Comparisons` suite, change each `assert` to `assert.approximately` to make the test pass (should evaluate to `true`).
 
 Choose the minimum range (3rd parameter) to make the test always pass. It should be less than 1.
 

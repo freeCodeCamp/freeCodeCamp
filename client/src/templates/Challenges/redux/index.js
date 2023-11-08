@@ -43,6 +43,7 @@ const initialState = {
     exitExam: false,
     finishExam: false,
     examResults: false,
+    survey: false,
     projectPreview: false,
     shortcuts: false
   },

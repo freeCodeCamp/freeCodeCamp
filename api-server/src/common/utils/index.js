@@ -30,3 +30,5 @@ export const fixPartiallyCompletedChallengeItem = obj =>
 
 export const fixCompletedExamItem = obj =>
   pick(obj, ['id', 'completedDate', 'challengeType', 'examResults']);
+
+export const fixCompletedSurveyItem = obj => pick(obj, ['title', 'responses']);

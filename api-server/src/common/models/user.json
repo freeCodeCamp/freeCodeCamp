@@ -428,6 +428,11 @@
       "type": "hasMany",
       "model": "MsUsername",
       "foreignKey": "userId"
+    },
+    "surveys": {
+      "type": "hasMany",
+      "model": "Survey",
+      "foreignKey": "userId"
     }
   },
   "acls": [
