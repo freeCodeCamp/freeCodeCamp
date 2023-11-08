@@ -5,8 +5,6 @@ import {
 } from 'fastify';
 
 import rateLimit from 'express-rate-limit';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import MongoStoreRL from 'rate-limit-mongo';
 
 import { createUserInput } from '../utils/create-user';
