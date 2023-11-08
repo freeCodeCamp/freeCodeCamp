@@ -14,7 +14,7 @@ dashedName: use-regular-expressions-to-test-a-string
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，`Strings` 套件裏標有 `#15` 的測試下，將每個 `assert` 改成 `assert.match` 或 `assert.notMatch` 方法，通過測試（結果應該返回 `true`）。 不要修改傳給斷言的參數。
+Within `tests/1_unit-tests.js` under the test labeled `#15` in the `Strings` suite, change each `assert` to either `assert.match` or `assert.notMatch` to make the test pass (should evaluate to `true`). 不要修改傳給斷言的參數。
 
 # --hints--
 

@@ -26,25 +26,25 @@
 
 - Щоб запустити всі тести в каталозі `./cypress`:
 
-  ```console
+  ```bash
   pnpm run cypress:dev:run
   ```
 
 - Щоб запустити один тест:
 
-  ```console
+  ```bash
   pnpm run cypress run --spec=cypress/<path_to_test_file>
   ```
 
   Наприклад:
 
-  ```console
+  ```bash
   pnpm run cypress run --spec=cypress/e2e/default/landing.ts
   ```
 
 - Щоб створити збірку розробки, запустіть сервер розробки і виконайте всі наявні тести cypress:
 
-  ```console
+  ```bash
   pnpm run e2e:dev:run
   ```
 
@@ -57,25 +57,25 @@
 - Дотримуйтесь [посібнику з налаштування MongoDB](https://www.mongodb.com/basics/get-started).
 - Створіть конфігураційний файл.
 
-```console
+```bash
 pnpm run create:shared
 ```
 
 - Заповніть базу даних
 
-```console
+```bash
 pnpm run seed
 ```
 
 - Розробіть сервер та клієнта
 
-```console
+```bash
 pnpm run develop
 ```
 
 ### 2. Встановіть інструменти збірки Cypress
 
-```console
+```bash
 pnpm run cypress:install-build-tools
 ```
 

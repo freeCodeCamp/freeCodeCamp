@@ -1,6 +1,6 @@
 ---
 id: 5900f4701000cf542c50ff83
-title: 'Problem 260: Stone Game'
+title: 'Завдання 260: гра в камені'
 challengeType: 1
 forumTopicId: 301909
 dashedName: problem-260-stone-game
@@ -8,15 +8,15 @@ dashedName: problem-260-stone-game
 
 # --description--
 
-A game is played with three piles of stones and two players.
+В гру грають двоє гравців, використовуючи три купи каменів.
 
-On each player's turn, the player removes one or more stones from the piles. However, if the player takes stones from more than one pile, the same number of stones must be removed from each of the selected piles.
+На кожному ході гравець забирає один або кілька каменів з купи. Проте, якщо гравець бере камені з більше, ніж однієї купи, то з кожної вибраної купи необхідно забрати однакову кількість каменів.
 
-In other words, the player chooses some $N > 0$ and removes:
+Інакше кажучи, гравець обирає $N > 0$ каменів і забирає:
 
-- $N$ stones from any single pile; or
-- $N$ stones from each of any two piles ($2N$ total); or
-- $N$ stones from each of the three piles ($3N$ total).
+- $N$ камені з будь-якої купи; або
+- $N$ камені з кожної з двох куп ($2N$ загалом); або
+- $N$ камені з кожної з трьох куп ($3N$ загалом).
 
 The player taking the last stone(s) wins the game.
 

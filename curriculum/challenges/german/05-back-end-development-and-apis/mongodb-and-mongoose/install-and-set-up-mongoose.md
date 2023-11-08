@@ -28,7 +28,7 @@ Folge <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/
 
 # --instructions--
 
-`mongoose@^5.11.15` wurde der `package.json`-Datei deines Projekts hinzugefügt. Fordere zunächst Mongoose als `mongoose` in `myApp.js` an. Erstelle als Nächstes eine `.env`-Datei und füge dieser eine `MONGO_URI`-Variable hinzu. Ihr Wert sollte deine MongoDB-Atlas-Datenbank-URI sein. Be sure to surround the URI with single or double quotes, and remember that you can't use spaces around the `=` in environment variables. Zum Beispiel: `MONGO_URI='VALUE'`.
+`mongoose@^5.11.15` wurde der `package.json`-Datei deines Projekts hinzugefügt. Fordere zunächst Mongoose als `mongoose` in `myApp.js` an. Erstelle als Nächstes eine `.env`-Datei und füge dieser eine `MONGO_URI`-Variable hinzu. Ihr Wert sollte deine MongoDB-Atlas-Datenbank-URI sein. Achte darauf, die URI mit einfachen oder doppelten Anführungszeichen zu umgeben und denke daran, dass du keine Leerzeichen um die `=` in Umgebungsvariablen verwenden kannst. Zum Beispiel: `MONGO_URI='VALUE'`.
 
 **Hinweis:** Wenn du Replit nutzt, kannst du keine `.env`-Datei erstellen. Verwende stattdessen den eingebauten <dfn>SECRETS</dfn>-Tab, um die Variable hinzuzufügen. <em>Do not</em> surround the values with quotes when using the <em>SECRETS</em> tab.
 

@@ -18,7 +18,7 @@ Asserisce che `actual` sia uguale a `expected`, all'interno di un intervallo di 
 
 # --instructions--
 
-All'interno di `tests/1_unit-tests.js`, sotto il test etichettato con `#10`, nella suite `Comparisons`, cambia ogni asserzione `assert` in `assert.approximately` per far passare il test (dovrebbe risultare `true`).
+Within `tests/1_unit-tests.js` under the test labeled `#10` in the `Comparisons` suite, change each `assert` to `assert.approximately` to make the test pass (should evaluate to `true`).
 
 Scegli l'intervallo minimo (terzo parametro) per far passare sempre il test. Dovrebbe essere inferiore a 1.
 

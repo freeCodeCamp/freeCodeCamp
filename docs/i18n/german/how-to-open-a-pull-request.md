@@ -115,14 +115,14 @@ Wenn du an regulären Bugs und Features auf unserem Entwicklungszweig `main` arb
 
 1. Rebase deiner lokalen Kopie:
 
-   ```console
+   ```bash
    git checkout <pr-branch>
    git pull --rebase upstream main
    ```
 
 2. Löse alle Konflikte und füge Commits hinzu / bzw. bearbeite sie
 
-   ```console
+   ```bash
    # Entweder
    git add .
    git commit -m "chore: resolve conflicts"
@@ -134,7 +134,7 @@ Wenn du an regulären Bugs und Features auf unserem Entwicklungszweig `main` arb
 
 3. Schiebe deine Änderungen in den PR zurück
 
-   ```console
+   ```bash
    git push --force origin <pr-branch>
    ```
 
@@ -144,7 +144,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
 1. Achte darauf, dass dein Upstream mit deinem Local übereinstimmt:
 
-   ```console
+   ```bash
    git checkout main
    git fetch --all --prune
    git checkout next-python-projects
@@ -155,7 +155,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
    a. Entweder löschst du deinen lokalen Branch, nachdem du ein Backup gemacht hast (wenn du ihn noch lokal hast):
 
-   ```console
+   ```bash
    git checkout <pr-branch-name>
 
    # Beispiel:
@@ -171,7 +171,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
    b. Or just a backup of your PR branch (if you do not have it locally):
 
-   ```console
+   ```bash
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
    # Beispiel:
@@ -180,14 +180,14 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
 3. Beginne mit einer weißen Weste:
 
-   ```console
+   ```bash
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
 4. Resolve any conflicts, cleanup, and install dependencies and run tests
 
-   ```console
+   ```bash
    pnpm run clean
 
    pnpm install
@@ -201,6 +201,6 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
 5. If everything looks good, push back to the PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch-name>
    ```

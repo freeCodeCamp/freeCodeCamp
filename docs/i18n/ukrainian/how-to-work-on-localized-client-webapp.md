@@ -16,7 +16,7 @@
 
 Більшість файлів для перекладу платформи розташовані у папці [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n). Для кожної мови є каталог, що містить файли JSON з перекладами.
 
-```console
+```bash
   config
   └── i18n.ts
   ...

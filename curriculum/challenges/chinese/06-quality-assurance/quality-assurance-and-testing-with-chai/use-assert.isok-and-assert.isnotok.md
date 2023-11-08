@@ -16,7 +16,7 @@ dashedName: use-assert-isok-and-assert-isnotok
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，`Basic Assertions` 套件中标注为 `#3` 的测试下，修改每个 `assert` 为 `assert.isOk()` 或 `assert.isNotOk()`，通过测试（结果应为 `true`）。 不要修改传入断言的参数。
+Within `tests/1_unit-tests.js` under the test labeled `#3` in the `Basic Assertions` suite, change each `assert` to either `assert.isOk()` or `assert.isNotOk()` to make the test pass (should evaluate to `true`). 不要修改传入断言的参数。
 
 # --hints--
 

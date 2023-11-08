@@ -12,7 +12,7 @@ dashedName: test-if-a-variable-or-function-is-defined
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Basic Assertions` スイート内の `#2` に分類されたテストにおいて、テストに合格にする (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isDefined()` または `assert.isUndefined()` に変更してください。 アサートに渡された引数を変更しないでください。
+Within `tests/1_unit-tests.js` under the test labeled `#2` in the `Basic Assertions` suite, change each `assert` to either `assert.isDefined()` or `assert.isUndefined()` to make the test pass (should evaluate to `true`). アサートに渡された引数を変更しないでください。
 
 # --hints--
 

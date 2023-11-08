@@ -34,7 +34,7 @@ Estudantes universitários.
 
 ### --feedback--
 
-College students should learn to program, but there's a better answer.
+Alunos do ensino superior deveriam aprender a programar, mas há uma resposta melhor.
 
 ---
 
@@ -42,7 +42,7 @@ Pessoas que querem se tornar desenvolvedores de software.
 
 ### --feedback--
 
-People who want to become software developers should learn to program, but there's a better answer.
+Pessoas que querem se tornar desenvolvedores de software devem aprender a programar, mas há uma resposta melhor.
 
 ---
 
