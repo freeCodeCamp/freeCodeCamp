@@ -5,6 +5,7 @@ import {
 } from 'fastify';
 
 import rateLimit from 'express-rate-limit';
+// @ts-expect-error - no types
 import MongoStoreRL from 'rate-limit-mongo';
 
 import { createUserInput } from '../utils/create-user';
