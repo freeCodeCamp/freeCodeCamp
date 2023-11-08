@@ -40,7 +40,7 @@
     "@total-typescript/ts-reset": "0.5.1",
     "@types/express-session": "1.17.10",
     "@types/jsonwebtoken": "9.0.5",
-    "@types/nodemailer": "6.4.13",
+    "@types/nodemailer": "6.4.14",
     "@types/supertest": "2.0.15",
     "dotenv-cli": "7.3.0",
     "jest": "29.7.0",

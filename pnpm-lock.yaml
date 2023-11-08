@@ -269,8 +269,8 @@ importers:
         specifier: 9.0.5
         version: 9.0.5
       '@types/nodemailer':
-        specifier: 6.4.13
-        version: 6.4.13
+        specifier: 6.4.14
+        version: 6.4.14
       '@types/supertest':
         specifier: 2.0.15
         version: 2.0.15
@@ -10657,8 +10657,8 @@ packages:
   /@types/node@8.10.66:
     resolution: {integrity: sha512-tktOkFUA4kXx2hhhrB8bIFb5TbwzS4uOhKEmwiD+NoiL0qtP2OQ9mFldbgD4dV1djrlBYP6eBuQZiWjuHUpqFw==}
 
-  /@types/nodemailer@6.4.13:
-    resolution: {integrity: sha512-889Vq/77eEpidCwh52sVWpbnqQmIwL8yVBekNbrztVEaWKOCRH3Eq6hjIJh1jwsGDEAJEH0RR+YhpH9mfELLKA==}
+  /@types/nodemailer@6.4.14:
+    resolution: {integrity: sha512-fUWthHO9k9DSdPCSPRqcu6TWhYyxTBg382vlNIttSe9M7XfsT06y0f24KHXtbnijPGGRIcVvdKHTNikOI6qiHA==}
     dependencies:
       '@types/node': 20.8.2
     dev: true
