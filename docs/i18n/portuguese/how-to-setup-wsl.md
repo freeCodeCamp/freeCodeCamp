@@ -10,7 +10,7 @@ Este guia abrange algumas etapas comuns sobre a instalação do WSL2. Uma vez re
 
 ## Ative o WSL
 
-Siga as instruções na [documentação oficial](https://docs.microsoft.com/en-us/windows/wsl/install-win10) para instalar o WSL1 e atualizar para o WSL2.
+Siga as instruções na [documentação oficial](https://docs.microsoft.com/en-us/windows/wsl/install-win10) para instalar o WSL2.
 
 ## Instale o Ubuntu
 
@@ -20,9 +20,11 @@ Siga as instruções na [documentação oficial](https://docs.microsoft.com/en-u
    > 
    > Embora você possa usar outras distribuições não baseadas em Debian, todas vêm com seus próprios empecilhos, que estão além do escopo deste guia.
 
+   A partir de novembro de 2023, Ubuntu e Debian serão as únicas distribuições de Linux [oficialmente suportadas pelo Playwright](https://playwright.dev/docs/intro#system-requirements), a biblioteca de testes de ponta a ponta usada pelo freeCodeCamp.
+
 2. Atualize as dependências para o sistema operacional
 
-   ```console
+   ```bash
    sudo apt update
    sudo apt upgrade -y
 
@@ -70,23 +72,23 @@ Isso faz com que os contêineres sejam executados no lado do WSL em vez de serem
 
 Depois de ter configurado o Docker Desktop para trabalhar com o WSL2, siga essas etapas para iniciar um serviço no MongoDB:
 
-1. Inicie um novo terminal Ubuntu-18.04
+1. Inicie um novo terminal do Ubuntu
 
-2. Faça o pull `MongoDB 4.0.x` do Docker Hub
+2. Faça o pull do MongoDB a partir do Docker Hub. Consulte a tabela de [Pré-requisitos](how-to-setup-freecodecamp-locally.md#Prerequisites) para ver a versão atual do MongoDB usada pelo freeCodeCamp. Por exemplo, se o número da versão for `5.0.x`, substitua `<x.y>` por `5.0` nos dois trechos de código a seguir.
 
-   ```console
-   docker pull mongo:4.0
+   ```bash
+   docker pull mongo:<x.y>
    ```
 
 3. Inicie o serviço MongoDB na porta `27017` e configure-o para ser executado automaticamente ao reiniciar o sistema
 
-   ```console
+   ```bash
    docker run -it \
      -v mongodata:/data/db \
      -p 27017:27017 \
      --name mongodb \
      --restart unless-stopped \
-     -d mongo:4.0
+     -d mongo:<x.y>
    ```
 
 4. Agora você pode acessar o serviço no Windows ou Ubuntu em `mongodb://localhost:27017`.
@@ -95,25 +97,17 @@ Depois de ter configurado o Docker Desktop para trabalhar com o WSL2, siga essas
 
 Recomendamos que você instale a versão LTS para Node.js com um gerenciador de versões do node - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
-Uma vez instalado, use esses comandos para instalar e usar a versão do Node.js, conforme necessário
+Uma vez instalado, use este comando para instalar e usar a versão do Node.js LTS mais recente:
 
-```console
+```bash
 nvm install --lts
-
-# OU
-# nvm install <version>
-
-nvm install 14
-
-# Uso
-# nvm use <version>
-
-nvm use 12
 ```
+
+Para ver instruções de instalação e de uso de uma versão diferente do Node.js, consulte a [documentação do nvm](https://github.com/nvm-sh/nvm#usage).
 
 O Node.js vem com o `npm`, que você pode usar para instalar o `pnpm`:
 
-```console
+```bash
 npm install -g pnpm
 ```
 
@@ -125,7 +119,104 @@ Agora que você instalou os pré-requisitos, siga [nosso guia de instalação lo
 > 
 > Por favor note que, neste momento, a configuração para testes do Cypress (e necessidades relacionadas à GUI) é um trabalho em andamento. Você ainda deve ser capaz de trabalhar na maior parte do código.
 
-## Links Úteis
+## Otimizar o Windows e o WSL
+
+   > [!NOTE]
+   > 
+   > As dicas a seguir foram coletadas de toda a web e não passaram por diversos testes. A quilometragem pode variar.
+
+### Ajuste o agendamento do processador para serviços de segundo plano
+
+Isso pode reduzir os incidentes dos contêineres do Docker causando um crash devido à falta de recursos.
+
+Abra o painel de controle das Propriedades do Sistema pressionando <kbd>Win + R</kbd> e digitando `sysdm.cpl`
+
+<details>
+    <summary>
+      Digite <code>sysdm.cpl</code> na caixa de diálogo Executar (captura de tela)
+    </summary>
+
+    <br>
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/run-sysdm.png" alt="Digite `sysdm.cpl` na caixa de diálogo Executar" />
+</details>
+<br>
+
+Vá para Avançado -> Desempenho -> Configurações…
+
+<details>
+    <summary>
+      Botão de Configurações na parte de Desempenho na guia Avançado das Propriedades do Sistema (captura de tela)
+    </summary>
+
+    <br>
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/advanced-performance-settings.png" alt="Botão Configurações na parte de Desempenho na guia Avançado em Propriedades do Sistema" />
+</details>
+<br>
+
+Em Avançado -> Agendamento do processador, escolha "Serviços em segundo plano". Não feche a janela. Continue para a próxima dica.
+
+<details>
+    <summary>
+      Botão de seleção dos Serviços em segundo plano na aba Avançado em Opções de Desempenho (captura de tela)
+    </summary>
+
+    <br>
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/background-services.png" alt="Botão de opção dos Serviços em segundo plano na guia Avançado em Opções de Desempenho" />
+</details>
+
+### Aumente o tamanho do arquivo de paginação do Windows para a unidade do sistema
+
+Em Avançado -> Memória virtual, clique em "Alterar…"
+
+<details>
+    <summary>
+      Botão para alterar a memória virtual na aba Avançado em Opções de Desempenho (captura de tela)
+    </summary>
+
+    <br>
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/advanced-virtual-memory.png" alt="Botão de alterar a memória virtual na guia Avançado em Opções de Desempenho" />
+</details>
+<br>
+
+Escolha "Tamanho personalizado". Defina o tamanho inicial para 1.5x e o tamanho máximo para 3x da sua memória física. Em seguida, clique em "Definir".
+
+<details>
+    <summary>
+      Botão Definir o tamanho personalizado na janela de Memória Virtual (captura de tela)
+    </summary>
+
+    <br>
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/set-custom-size.png" alt="Botão Definir o tamanho personalizado na janela de Memória Virtual" />
+</details>
+
+### Aumentar o tamanho da memória alocada para o WSL
+
+Crie um arquivo [`.wslconfig`](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig) no diretório [`%UserProfile%`](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#wslconfig) (tipicamente `C:\Users\<NomeDoUsuário>\.wslconfig`). Leia a documentação do [WSL](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig) cuidadosamente e substitua `x` por valores que correspondam às suas próprias necessidades:
+
+```ini
+# As configurações se aplicam a todas as distribuições do Linux que rodam no WSL 2
+[wsl2]
+
+# Quanta memória atribuir à VM do WSL 2. O valor padrão pode não ser suficiente
+memory=xGB
+
+# Quanto de espaço de swap para adicionar à VM do WSL 2. O padrão é 25% da RAM disponível
+swap=xGB
+```
+
+### Aumentar o tamanho do espaço antigo máximo do Node.js
+
+Isso corrige o erro ["JavaScript heap out of memory"](https://stackoverflow.com/a/54456814) com o ESLint. Adicione o seguinte à sua `~/.bashrc` ou `~/.zshrc`:
+
+```sh
+export NODE_OPTIONS="--max-old-space-size=4096"
+```
+
+### Evite `pnpm run test`
+
+Ao invés disso, use o script [apropriado ao seu PR](https://forum.freecodecamp.org/t/wsl-performance-issues-while-working-on-the-codebase/644215/2#:~:text=usually%2C%20you%20just%20want%20to%20test%20something%20specific%20to%20either%20the%20curriculum%20or%20the%20client%20or%20the%20api%20-%20almost%20never%20all%203.): `pnpm run test:api`, `pnpm run test:curriculum` ou `pnpm run test-client`.
+
+## Links úteis
 
 - [Configuração de desenvolvimento do WSL2 com Ubuntu 20.04, Node.js, MongoDB, VS Code e Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - um artigo de Mrugesh Mohapatra (desenvolvedor da equipe do freeCodeCamp.org)
 - Perguntas frequentes sobre:

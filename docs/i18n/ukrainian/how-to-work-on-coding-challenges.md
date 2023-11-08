@@ -232,15 +232,17 @@ title: Challenge Title
 
 Надавайте перевагу коротким абзацам (1-4 речення). Найімовірніше, люди прочитають декілька коротких абзаців, а не суцільний текст.
 
-У тексті завдання потрібно використовувати 2-гу особу множини («ви»). У такий спосіб текст та інструкції будуть звернені напряму до учня, який виконує завдання. Намагайтеся уникати звертань у 1-й особі, як-от «я», «ми», «нам».
+Use american english, e.g., use `labeled` instead of `labelled`.
 
-Не використовуйте зовнішні посилання. Вони переривають робочий процес. Учні не повинні використовувати гугл під час виконання завдань. Якщо є ресурси, які, на вашу думку, допоможуть учням, додайте їх до статті, пов’язаної з керівництвом до завдання.
+Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
-В разі потреби можна додати діаграми.
+Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
-Не використовуйте емоджі в завданнях. freeCodeCamp — глобальна спільнота, а значення емоджі може відрізнятись в різних частинах світу. Крім цього, емоджі можуть по-різному зображатися у різних системах.
+You can add diagrams if necessary.
 
-Власні іменники потрібно писати з великої літери, коли це можливо. Нижче поданий список, у якому показано, як повинні писатись слова в завданнях.
+Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
+
+Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
 
 - JavaScript (великі літери «J» і «S», без скорочень)
 - Node.js
@@ -248,28 +250,28 @@ title: Challenge Title
 
 ### Правило двох хвилин
 
-Кожне завдання повинне бути вирішене протягом 120 секунд носієм англійської мови, який виконав попередні завдання. У цей час входять прочитання вказівок/інструкцій для розуміння початкового коду, написання власного коду і проходження всіх тестів.
+Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their code and get all the tests to pass.
 
-Якщо виконання завдання займає більше двох хвилин, у вас є два шляхи:
+If it takes longer than two minutes to complete the challenge, you have two options:
 
 - Спростіть завдання, або
 - Розділіть завдання на два кроки.
 
-Завдяки правилу двох хвилин ви зробите лаконічні вказівки, зрозумілий початковий код та прості тести.
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straightforward.
 
-Ми відстежуємо скільки часу займає розв’язок завдань та використовуємо цю інформацію, щоб виявити завдання, які потрібно спростити чи розділити.
+We track how long it takes for campers to solve challenges and use this information to identify challenges that need to be simplified or split.
 
 ### Модульність
 
-Кожне завдання повинне навчати лише одному поняттю, і це поняття повинне бути очевидним з назви завдання.
+Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
 
-Ми можемо закріпити раніше вивчені поняття за допомогою повторення та варіацій. Наприклад, ознайомити користувача з елементами h1 в одному завданні, а пізніше з елементами h3.
+We can reinforce previously covered concepts through repetition and variations - for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
 
-Наша мета — розробити тисячі двохвилинних завдань. Вони можуть йти нарівні, а також нагадувати про раніше вивчені поняття.
+Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
 
 ### Форматування тексту завдання
 
-Тут подано конкретні рекомендації щодо форматування тексту завдання та приклади:
+Here are specific formatting guidelines for challenge text and examples:
 
 - Ключові слова мови знаходяться у зворотних лапках `` \` ``. Наприклад, назви тегів HTML чи назви властивостей CSS.
 - Посилання на частини коду (тобто назви функцій, методів чи змінних) потрібно брати у зворотні лапки ``  \ ` ``. Розгляньте приклад нижче:
@@ -282,9 +284,9 @@ title: Challenge Title
 - Перед блоками багаторядкового коду **має бути порожній рядок**. Наступний рядок повинен починатись з трьох зворотних лапок, після яких йде одна з [підтримуваних мов](https://prismjs.com/#supported-languages). Щоб закінчити блок коду, потрібно почати новий рядок, який має лише три зворотні лапки та **ще один порожній рядок**. Розгляньте приклад нижче:
 - Пробіл має значення у markdown, тому ми рекомендуємо зробити його видимим у редакторі.
 
-**Примітка:** якщо ви збираєтесь використовувати код прикладу в YAML, використовуйте `yaml` замість `yml` для мови справа від зворотних лапок.
+**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
 
-Нижче поданий приклад коду:
+The following is an example of code:
 
 ````md
 ```{language}
@@ -306,7 +308,7 @@ title: Challenge Title
 
 Наша мета — пояснити поняття, описане в завданні, та перевірити, що його зрозуміли.
 
-Тести завдань можуть використовувати бібліотеки Node.js та Chai.js. Якщо необхідно, у змінній `code` можна отримати доступ до коду, створеного користувачами. Крім того, об’єкт `__helpers` надає декілька функцій, які полегшують процес написання тестів. Доступні функції визначені у _client/src/utils/curriculum-helpers.ts_.
+Тести завдань можуть використовувати бібліотеки Node.js та Chai.js. Якщо необхідно, у змінній `code` можна отримати доступ до коду, створеного користувачами. Крім того, об’єкт `__helpers` надає декілька функцій, які полегшують процес написання тестів. The available functions are defined in the [curriculum-helpers](https://github.com/freeCodeCamp/curriculum-helpers/blob/main/lib/index.ts) repo.
 
 ## Форматування вихідного коду
 
@@ -328,13 +330,13 @@ title: Challenge Title
 // Змініть код під цим рядком
 ````
 
-Приклад дійсного коментаря CSS:
+Example of a valid CSS comment:
 
 ```css
 /* Only change code above this line */
 ```
 
-Якщо завдання має лише одне місце, де потрібно змінити код, будь ласка, використайте коментарі з наступного прикладу, щоб проінформувати користувача, де потрібно внести зміни.
+If a challenge only has a single place where code changes are needed, please use the comments in the following example to instruct the user where changes should be made.
 
 ```js
 var a = 3;
@@ -347,7 +349,7 @@ b = 9 + b;
 c = c + 7;
 ```
 
-Якщо завдання має декілька місць, де користувач повинен змінити код (наприклад, завдання з React)
+If a challenge has multiple places where the user is expected to change code (i.e. the React challenges)
 
 ```jsx
 class MyComponent extends React.Component {
@@ -380,9 +382,9 @@ class MyComponent extends React.Component {
 
 ### Переклад коментарів початкового коду
 
-Існують окремі словники з коментарями для кожної мови. [Англійська версія словника з коментарями](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) є основою для перекладів іншомовних версій файлів. Китайська версія словника з коментарями буде розташована на `/curriculum/dictionaries/chinese/comments.json`. Кожен словник складається з масиву об’єктів з унікальною властивістю `id` та властивістю `text`. Щоб охопити переклад англійського коментаря, потрібно змінювати лише `text`.
+There are separate comment dictionaries for each language. The [English version of the comment dictionary](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/curriculum/dictionaries/english/comments.json) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.json`. Each dictionary consists of an array of objects with a unique `id` property and a `text` property. Only the `text` should be modified to encompass the translation of the corresponding English comment.
 
-Деякі коментарі можуть містити слова чи фрази, які не потрібно перекладати. Наприклад, назви змінних або власні назви бібліотек (як-от «React») не потрібно перекладати. Розгляньте приклад нижче. Слово `myGlobal` не потрібно перекладати.
+Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated. See the comment below as an example. The word `myGlobal` should not be translated.
 
 ```text
 Оголосіть змінну myGlobal під цим рядком
@@ -394,13 +396,13 @@ class MyComponent extends React.Component {
 
 ## Підказки та розв’язки
 
-Кожне завдання має кнопку `Get a Hint` для того, щоб користувач отримав доступ до будь-яких підказок/розв’язків, які були створені для цього завдання. Підказки та розв’язки навчальної програми розташовані на [нашому форумі](https://forum.freecodecamp.org/c/guide) у категорії `Guide`.
+Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://forum.freecodecamp.org/c/guide) under the `Guide` category.
 
-Якщо ви виявили помилку в наявних підказках чи розв’язках, повідомте про це на форумі [у розділі «Contributors»](https://forum.freecodecamp.org/c/contributors). Модератори й користувачі з 3-м рівнем довіри розглянуть коментарі та приймуть рішення щодо наданих вами змін.
+If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
 
 ### Додавання нових тем для підказок чи розв’язків завдань
 
-Виконайте наступні кроки, щоб додати нову тему для підказок чи розв’язків завдань.
+Take the following steps when adding a new challenge hints/solutions-related topic.
 
 1. Розпочніть з тих самих кроків для створення нової теми, але зверніть увагу на наступні щодо заголовка.
 2. Заголовок теми повинен починатись з `freeCodeCamp Challenge Guide:`, з’єднаного з назвою завдання навчальної програми. Наприклад, якщо завдання має назву `Chunky Monkey`, заголовком теми буде `freeCodeCamp Challenge Guide: Chunky Monkey`.
@@ -409,7 +411,7 @@ class MyComponent extends React.Component {
 
 ### Вказівки щодо змісту тем підказок і розв’язків
 
-Пропонуючи розв’язок до теми завдання навчальної програми, потрібно додати повний код. Сюди входить весь вихідний код та будь-які зміни, необхідні для проходження тестів. Використовуйте цей шаблон для створення нових тем підказок/розв’язків:
+When proposing a solution for a curriculum challenge-related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
 
 ````md
 # Тут назва завдання
@@ -496,35 +498,35 @@ FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
    cd curriculum
    ```
 
-2. Виконайте цю команду для кожного файлу завдання, до якого ви внесли зміни (замінивши `challenge-title-goes-here` на повну назву завдання):
+2. Run the following for each challenge file for which you have changed (replacing `challenge-title-goes-here` with the full title of the challenge):
 
    ```
    pnpm run test -- -g challenge-title-goes-here
    ```
 
 > [!TIP]
-> Ви можете встановити змінну середовища `LOCALE` у `.env` на мову завдань, які потрібно протестувати.
+> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
 >
-> Наразі прийнятними значеннями є `english` та `chinese` (`english` за замовчуванням).
+> The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
-## Відкриття запиту на злиття (PR)
+## Proposing a Pull Request (PR)
 
-Як тільки ви затвердили свої зміни, див. [як відкрити запит на злиття](how-to-open-a-pull-request.md).
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
-## Корисні посилання
+## Useful Links
 
-Створення та редагування завдань:
+Creating and Editing Challenges:
 
-1. [Види завдань](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) — що означають числові значення завдань (перелік).
+1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
 
-2. [Внесок до FreeCodeCamp: написання тестів до завдань ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) — відео [Ітана Арровуда](https://twitter.com/ArrowoodTech) про його внесок до старої версії навчальної програми.
+2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
 
-## Допоміжні скрипти
+## Helper Scripts
 
 > [!NOTE]
-> Якщо ви працюєте над покроковими завданнями, див. розділ щодо [роботи над практичними проєктами](how-to-work-on-practice-projects.md).
+> If you are working with the step-based challenges, refer to the [Work on Practice Projects](how-to-work-on-practice-projects.md) section.
 
-Існує декілька допоміжних скриптів, які можна використовувати для завдань у блоці. Зверніть увагу, що ці команди потрібно виконувати у каталозі блоків. Наприклад:
+There are a few helper scripts that can be used to manage the challenges in a block. Note that these commands should all be run in the block directory. For example:
 
 ```bash
 cd curriculum/challenges/english/02-javascript-algorithms-and-data-structures/basic-algorithm-scripting
@@ -532,33 +534,33 @@ cd curriculum/challenges/english/02-javascript-algorithms-and-data-structures/ba
 
 ### Додати нове завдання
 
-Щоб додати нове завдання в кінці блоку, викличте скрипт:
+To add a new challenge at the end of a block, call the script:
 
 ```bash
 pnpm run create-next-challenge
 ```
 
-Це допоможе отримати інформацію про завдання та створити файл з завданням, оновивши файл `meta.json` новою інформацією про завдання.
+This will prompt you for the challenge information and create the challenge file, updating the `meta.json` file with the new challenge information.
 
 ### Видалити завдання
 
-Щоб видалити завдання, викличте скрипт:
+To delete a challenge, call the script:
 
 ```bash
 pnpm run delete-challenge
 ```
 
-Це допоможе обрати потрібне завдання, видалити файл та оновити файл `meta.json`, щоб видалити завдання з порядку.
+This will prompt you to select which challenge should be deleted, then delete the file and update the `meta.json` file to remove the challenge from the order.
 
 ### Вставити завдання
 
-Щоб вставити завдання перед наявним завданням, викличте скрипт:
+To insert a challenge before an existing challenge, call the script:
 
 ```bash
 pnpm run insert-challenge
 ```
 
-Це допоможе отримати інформацію про нове завдання, а також про наявне завдання. Наприклад, якщо варіанти такі:
+This will prompt you for the challenge information, then for the challenge to insert before. For example, if your choices are:
 
 ```bash
 a
@@ -566,7 +568,7 @@ b
 c
 ```
 
-Якщо оберете `b`, то новим порядком буде:
+If you choose `b`, your new order will be:
 
 ```bash
 a
@@ -577,26 +579,26 @@ c
 
 ### Оновити порядок завдань
 
-Якщо вам потрібно змінити порядок завдань вручну, викличте скрипт:
+If you need to manually re-order the challenges, call the script:
 
 ```bash
 pnpm run update-challenge-order
 ```
 
-Він проведе вас через інтерактивний процес, який допоможе впорядкувати завдання.
+This will take you through an interactive process to select the order of the challenges.
 
 ## Розв’язання проблем розробки
 
 ### Виявлено нескінченний цикл
 
-Якщо ви бачите цю помилку в консолі під час попереднього перегляду завдання:
+If you see the following error in the console while previewing a challenge:
 
 ```text
 Potential infinite loop detected on line <number>...
 ```
 
-Це означає, що плагін для захисту циклу знайшов довгий цикл або рекурсивну функцію. Якщо ваше завдання передбачає їх (тобто містить нескінченний цикл), ви можете запобігти використанню плагіну в попередньому перегляді. Для цього додайте `disableLoopProtectPreview: true` до файлу блоку `meta.json`.
+This means that the loop-protect plugin has found a long-running loop or recursive function. If your challenge needs to do that (e.g. it contains an event loop that is supposed to run indefinitely), then you can prevent the plugin from being used in the preview. To do so, add `disableLoopProtectPreview: true` to the block's `meta.json` file.
 
-Якщо ваші тести інтенсивно обчислюються, ви можете побачити цю помилку під час запуску. Якщо це відбувається, додайте `disableLoopProtectTests: true` до файлу блоку `meta.json`.
+If your tests are computationally intensive, then you may see this error when they run. If this happens then you can add `disableLoopProtectTests: true` to the block's `meta.json` file.
 
-Значенням обох необов’язково має бути true, тому налаштовуйте їх лише за потреби.
+It's not typically necessary to have both set to true, so only set them as needed.

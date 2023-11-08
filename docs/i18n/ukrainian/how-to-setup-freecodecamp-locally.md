@@ -75,7 +75,7 @@
 
 Якщо на вашій машині вже встановлено Node.js, запустіть наступні команди для перевірки версій:
 
-```console
+```bash
 node -v
 pnpm -v
 ```
@@ -142,7 +142,7 @@ pnpm -v
 
 2. Клонуйте своє розгалуження freeCodeCamp, замінивши `YOUR_USER_NAME` на ім’я користувача GitHub
 
-   ```console
+   ```bash
    git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
    ```
 
@@ -160,25 +160,25 @@ pnpm -v
 
 1. Змініть каталог на новий каталог freeCodeCamp:
 
-   ```console
+   ```bash
    cd freeCodeCamp
    ```
 
 2. Додайте віддалене посилання на основний репозиторій freeCodeCamp:
 
-   ```console
+   ```bash
    git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
    ```
 
 3. Переконайтеся, що конфігурація правильна:
 
-   ```console
+   ```bash
    git remote -v
    ```
 
    Вивід повинен бути схожим на нижчеподаний приклад (замініть `YOUR_USER_NAME` на своє ім’я користувача GitHub):
 
-   ```console
+   ```bash
    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
@@ -203,12 +203,12 @@ pnpm -v
 
 Ключі API та змінні середовища за замовчуванням зберігаються у файлі `sample.env`. Цей файл потрібно скопіювати в новий файл під назвою `.env`, доступ до якого відкривається динамічно на кроці встановлення.
 
-```console
+```bash
 # Створіть копію «sample.env» та назвіть її «.env».
 # Заповніть її необхідними ключами та секретами API
 ```
 
-```console
+```bash
 cp sample.env .env
 ```
 
@@ -220,7 +220,7 @@ cp sample.env .env
 
 У цьому кроці буде встановлено залежності, необхідні для запуску застосунку:
 
-```console
+```bash
 pnpm install && pnpm run create:shared
 ```
 
@@ -234,7 +234,7 @@ pnpm install && pnpm run create:shared
 
 Запустіть сервер MongoDB в окремому терміналі:
 
-```console
+```bash
 mongod
 ```
 
@@ -242,15 +242,14 @@ mongod
 
 Тепер додамо базу даних. На цьому кроці ми запускаємо нижченаведену команду, яка заповнює сервер MongoDB деякими початковими наборами даних, потрібних службам. До них належать деякі схеми та інше.
 
-```console
+```bash
 pnpm run seed
 ```
 
 Ви увійдете як новий користувач без будь-яких завершених сертифікацій за замовчуванням. Запустіть ці команди, якщо потрібні наявні виконані сертифікації:
 
-```console
+```bash
 pnpm run seed:certified-user
-pnpm run seed:exams
 ```
 
 > [!WARNING] Якщо запустити `pnpm run seed:certified-user`, ви вийдете з облікового запису. Вам доведеться очистити cookies свого браузера та увійти знову.
@@ -259,7 +258,7 @@ pnpm run seed:exams
 
 Тепер ви можете запустити сервер API та клієнтську програму.
 
-```console
+```bash
 pnpm run develop
 ```
 
@@ -279,11 +278,12 @@ pnpm run develop
 
 Короткий довідник команд, які знадобляться при локальній роботі.
 
-| команда                        | опис                                                                                                |
-| ------------------------------ | --------------------------------------------------------------------------------------------------- |
-| `pnpm install`                 | Встановлює/перевстановлює всі залежності та запускає різні служби.                                  |
-| `pnpm run seed`                | Створює авторизованих тестових користувачів і розміщує їх у MongoDB.                                |
-| `pnpm run seed:certified-user` | Створює автоматизованих тестових користувачів, які завершили сертифікації, і розміщує їх у MongoDB. |
-| `pnpm run seed:exams`          | Створює екзамени та вставляє їх в MongoDB.                                                          |
-| `pnpm run develop`             | Запускає сервер API та клієнтські програми freeCodeCamp.                                            |
-| `pnpm run clean`               | Видаляє всі залежності й очищає кеш.                                                                |
+| команда                        | опис                                                                                                          |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| `pnpm install`                 | Встановлює/перевстановлює всі залежності та запускає різні служби.                                            |
+| `pnpm run seed`                | Creates authorized test users and inserts them into MongoDB. Also runs `seed:exams` and `seed:surveys` below. |
+| `pnpm run seed:certified-user` | Створює автоматизованих тестових користувачів, які завершили сертифікації, і розміщує їх у MongoDB.           |
+| `pnpm run seed:exams`          | Створює екзамени та вставляє їх в MongoDB.                                                                    |
+| `pnpm run seed:surveys`        | Creates surveys for defaults users and inserts them into MongoDB.                                             |
+| `pnpm run develop`             | Starts the freeCodeCamp API Server and Client Applications.                                                   |
+| `pnpm run clean`               | Uninstalls all dependencies and cleans up caches.                                                             |

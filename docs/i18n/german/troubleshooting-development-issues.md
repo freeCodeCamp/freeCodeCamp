@@ -16,7 +16,7 @@ If you are on a different OS or are still facing issues, see [getting help](#get
 
 When you build the client, Gatsby will cache the Fonts, language strings, and UI. If one of them isn't cached, run the following:
 
-```console
+```bash
 pnpm run clean
 pnpm install
 pnpm run seed
@@ -53,7 +53,7 @@ git clean -ifdX
 If you can't sign in, and instead you see a banner with an error message saying that the error will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
 #### **From Terminal:**
-```console
+```bash
 netstat -a | grep "3000"
 
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN

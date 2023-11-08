@@ -16,7 +16,7 @@ Vamos entender como o framework i18n e suas ferramentas funcionam.
 
 A maioria dos arquivos para tradução da plataforma ficam localizados na pasta [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n). Cada idioma tem uma pasta contendo arquivos JSON com as traduções.
 
-```console
+```bash
   config
   └── i18n.ts
   ...

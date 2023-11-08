@@ -4,7 +4,7 @@
 
 Щоб встановити Playwright:
 
-```console
+```bash
 pnpm run playwright:install-build-tools
 ```
 
@@ -181,49 +181,49 @@ describe('The campers landing page', () => {
 
 - Переконайтесь, що перейшли до репозиторію e2e:
 
-  ```console
+  ```bash
   cd e2e
   ```
 
 - Щоб запустити тести в режимі помічника UI:
 
-  ```console
+  ```bash
   npx playwright test --ui
   ```
 
 - Щоб запустити один тест:
 
-  ```console
+  ```bash
   npx playwright test <filename>
   ```
 
   Наприклад:
 
-  ```console
+  ```bash
   npx playwright test landing-page.spec.ts
   ```
 
 - Щоб запустити набір файлів тестів у відповідних папках:
 
-  ```console
+  ```bash
   npx playwright test <pathToFolder1> <pathToFolder2>
   ```
 
   Наприклад:
 
-  ```console
+  ```bash
   npx playwright test tests/todo-page/ tests/landing-page/
   ```
 
 - Щоб запустити тест із заголовком:
 
-  ```console
+  ```bash
   npx playwright test -g <title>
   ```
 
   Наприклад:
 
-  ```console
+  ```bash
   npx playwright test -g "add a todo item"
   ```
 
@@ -233,13 +233,13 @@ describe('The campers landing page', () => {
 
 - Налагодження всіх тестів:
 
-  ```console
+  ```bash
   npx playwright test --debug
   ```
 
 - Налагодження одного файлу тесту:
 
-  ```console
+  ```bash
   npx playwright test example.spec.ts --debug
   ```
 
@@ -247,7 +247,7 @@ describe('The campers landing page', () => {
 
 HTML Reporter надає повний звіт про ваші тести, що дає змогу фільтрувати звіт за браузерами, пройденими тестами, проваленими тестами, пропущеними тестами та ненадійними тестами.
 
-```console
+```bash
 npx playwright show-report 
 ```
 
@@ -257,13 +257,13 @@ Playwright, як правило, є інструментом з дуже мал�
 
 - (MacOs та Linux) Якщо запуск Playwright призводить до помилки через залежності ядра, запустіть цю команду:
 
-  ```console
+  ```bash
   pnpm run playwright:install-build-tools-linux
   ```
 
 - Поширена помилка в Playwright виглядає так:
 
-  ```console
+  ```bash
     Error: page.goto: Could not connect: Connection refused
     =========================== logs ===========================
     navigating to "https://127.0.0.1:8000/", waiting until "load"
@@ -284,7 +284,7 @@ Playwright, як правило, є інструментом з дуже мал�
 
 - Ще одна поширена помилка в Playwright виглядає так:
 
-  ```console
+  ```bash
     Protocol error (Network.getResponseBody): Request content was evicted from inspector cache
   ```
 
@@ -305,25 +305,25 @@ Playwright, як правило, є інструментом з дуже мал�
 
 - Створіть .env
 
-  ```console
+  ```bash
   cp sample.env .env
   ```
 
 - Створіть конфігураційний файл.
 
-  ```console
+  ```bash
   pnpm run create:shared
   ```
 
 - Заповніть базу даних
 
-  ```console
+  ```bash
   pnpm run seed
   ```
 
 - Розробіть сервер та клієнта
 
-  ```console
+  ```bash
   pnpm run develop
   ```
 
@@ -331,7 +331,7 @@ Playwright, як правило, є інструментом з дуже мал�
 
 Щоб встановити необхідні залежності для запуску Playwright, виконайте цю команду:
 
-```console
+```bash
 pnpm run playwright:install-build-tools
 ```
 
@@ -339,6 +339,6 @@ pnpm run playwright:install-build-tools
 
 Щоб запустити всі тести Playwright, виконайте цю команду:
 
-```console
+```bash
 npx playwright test
 ```
