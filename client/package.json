@@ -168,7 +168,7 @@
     "@types/react-responsive": "8.0.8",
     "@types/react-scrollable-anchor": "0.6.4",
     "@types/react-spinkit": "3.0.10",
-    "@types/react-test-renderer": "16.9.10",
+    "@types/react-test-renderer": "16.9.11",
     "@types/react-transition-group": "4.4.8",
     "@types/redux-actions": "2.6.4",
     "@types/sanitize-html": "^2.8.0",
