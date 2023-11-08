@@ -170,7 +170,7 @@
     "@types/react-spinkit": "3.0.10",
     "@types/react-test-renderer": "16.9.11",
     "@types/react-transition-group": "4.4.9",
-    "@types/redux-actions": "2.6.4",
+    "@types/redux-actions": "2.6.5",
     "@types/sanitize-html": "^2.8.0",
     "@types/store": "^2.0.2",
     "@types/testing-library__jest-dom": "^5.14.5",
