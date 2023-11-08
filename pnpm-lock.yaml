@@ -177,9 +177,9 @@ importers:
       '@fastify/csrf-protection':
         specifier: 6.4.1
         version: 6.4.1
-      '@fastify/middie':
-        specifier: '8.3'
-        version: 8.3.0
+      '@fastify/express':
+        specifier: ^2.3.0
+        version: 2.3.0
       '@fastify/session':
         specifier: 10.5.0
         version: 10.5.0
@@ -213,6 +213,9 @@ importers:
       dotenv:
         specifier: 16.3.1
         version: 16.3.1
+      express-rate-limit:
+        specifier: ^6.7.0
+        version: 6.7.0(express@4.18.2)
       fast-uri:
         specifier: 2.3.0
         version: 2.3.0
@@ -255,6 +258,9 @@ importers:
       query-string:
         specifier: 7.1.3
         version: 7.1.3
+      rate-limit-mongo:
+        specifier: ^2.3.2
+        version: 2.3.2
       stripe:
         specifier: 8.222.0
         version: 8.222.0
@@ -6646,12 +6652,17 @@ packages:
     resolution: {integrity: sha512-J8TOSBq3SoZbDhM9+R/u77hP93gz/rajSA+K2kGyijPpORPWUXHUpTaleoj+92As0S9uPRP7Oi8IqMf0u+ro6A==}
     dev: false
 
-  /@fastify/error@3.3.0:
-    resolution: {integrity: sha512-dj7vjIn1Ar8sVXj2yAXiMNCJDmS9MQ9XMlIecX2dIzzhjSHCyKo4DdXjXMs7wKW2kj6yvVRSpuQjOZ3YLrh56w==}
-    dev: false
-
   /@fastify/error@3.4.1:
     resolution: {integrity: sha512-wWSvph+29GR783IhmvdwWnN4bUxTD01Vm5Xad4i7i1VuAOItLvbPAb69sb0IQ2N57yprvhNIwAP5B6xfKTmjmQ==}
+    dev: false
+
+  /@fastify/express@2.3.0:
+    resolution: {integrity: sha512-jvvjlPPCfJsSHfF6tQDyARJ3+c3xXiqcxVZu6bi3xMWCWB3fl07vrjFDeaqnwqKhLZ9+m6cog5dw7gIMKEsTnQ==}
+    dependencies:
+      express: 4.18.2
+      fastify-plugin: 4.5.1
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@fastify/fast-json-stringify-compiler@4.3.0:
@@ -6678,15 +6689,6 @@ packages:
       fast-jwt: 3.3.0
       fastify-plugin: 4.5.1
       steed: 1.1.3
-    dev: false
-
-  /@fastify/middie@8.3.0:
-    resolution: {integrity: sha512-h+zBxCzMlkEkh4fM7pZaSGzqS7P9M0Z6rXnWPdUEPfe7x1BCj++wEk/pQ5jpyYY4pF8AknFqb77n7uwh8HdxEA==}
-    dependencies:
-      '@fastify/error': 3.3.0
-      fastify-plugin: 4.5.1
-      path-to-regexp: 6.2.1
-      reusify: 1.0.4
     dev: false
 
   /@fastify/send@2.1.0:
@@ -25799,10 +25801,6 @@ packages:
   /path-to-regexp@2.2.1:
     resolution: {integrity: sha512-gu9bD6Ta5bwGrrU8muHzVOBFFREpp2iRkVfhBJahwJ6p6Xw20SjT0MxLnwkjOibQmGSYhiUnf2FLe7k+jcFmGQ==}
     dev: true
-
-  /path-to-regexp@6.2.1:
-    resolution: {integrity: sha512-JLyh7xT1kizaEvcaXOQwOc2/Yhw6KZOvPf1S8401UyLk86CU79LN3vl7ztXGm/pZ+YjoyAJ4rxmHwbkBXJX+yw==}
-    dev: false
 
   /path-type@1.1.0:
     resolution: {integrity: sha512-S4eENJz1pkiQn9Znv33Q+deTOKmbl+jj1Fl+qiP/vYezj+S8x+J3Uo0ISrx/QoEvIlOaDWJhPaRd1flJ9HXZqg==}
