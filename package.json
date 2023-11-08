@@ -110,7 +110,7 @@
     "@types/jest": "29.5.8",
     "@types/lodash": "4.14.201",
     "@types/node": "18.18.9",
-    "@types/store": "2.0.4",
+    "@types/store": "2.0.5",
     "@typescript-eslint/eslint-plugin": "6.10.0",
     "@typescript-eslint/parser": "6.10.0",
     "babel-jest": "29.7.0",
