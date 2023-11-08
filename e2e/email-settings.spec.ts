@@ -19,10 +19,6 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/settings');
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 test.describe('Email Settings', () => {
   test('should display email settings section header on settings page', async ({
     page

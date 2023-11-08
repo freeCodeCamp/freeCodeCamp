@@ -9,10 +9,6 @@ test.beforeAll(async ({ browser }) => {
   );
 });
 
-test.afterAll(async () => {
-  await page.close();
-});
-
 test.describe('Progress bar component', () => {
   test('Should appear with the correct content after the user has submitted their code', async () => {
     const monacoEditor = page.getByLabel('Editor content');

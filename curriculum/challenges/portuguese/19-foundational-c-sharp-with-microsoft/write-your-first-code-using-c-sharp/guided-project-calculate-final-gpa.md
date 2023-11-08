@@ -12,11 +12,11 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 1. Acesse <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-final-gpa/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-calculate-final-gpa/</a> e complete todas as tarefas do módulo "Projeto guiado - calcular o GPA final". Isso é **necessário** para conquistar o troféu "Escreva seu primeiro código usando o C#" da Microsoft Learn e para se qualificar para o exame de certificação.
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Complete o projeto guiado <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-final-gpa/" target="_blank" rel="noreferrer">Calcule o GPA final</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
+# --question--
 
 ## --text--
 

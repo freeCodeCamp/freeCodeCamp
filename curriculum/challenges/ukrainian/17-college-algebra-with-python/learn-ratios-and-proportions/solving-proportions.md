@@ -12,11 +12,11 @@ dashedName: solving-proportions
 
 Ось <a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_nQ-X1JuLpUmtRD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього відео.</a> Налаштуйте свій блокнот з алгебри Colab, якщо ви цього досі не зробили. Потім додайте код цього відео до блокнота.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Додайте код з відео до блокнота з алгебри Colab, який ви створили у першому кроці.
+
+# --question--
 
 ## --text--
 

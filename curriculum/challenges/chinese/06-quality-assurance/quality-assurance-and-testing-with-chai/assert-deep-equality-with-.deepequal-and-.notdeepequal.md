@@ -14,7 +14,7 @@ dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，在标有 `#7` 的 `Equality` 套件里，将每个 `assert` 替换成 `assert.deepEqual` 或 `assert.notDeepEqual`，让测试通过（应该返回 `true`）。 不要改变传入断言的参数。
+Within `tests/1_unit-tests.js` under the test labeled `#7` in the `Equality` suite, change each `assert` to either `assert.deepEqual` or `assert.notDeepEqual` to make the test pass (should evaluate to `true`). 不要改变传入断言的参数。
 
 # --hints--
 

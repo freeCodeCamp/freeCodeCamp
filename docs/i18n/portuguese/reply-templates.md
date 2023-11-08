@@ -33,7 +33,7 @@ Once you resolve these issues, we will be able to review your PR and merge it. �
 
 ---
 
-Feel free to reference the [contributing guidelines](how-to-work-on-coding-challenges.md#testing-challenges) for instructions on running the CI build locally. ✅
+Feel free to reference the [contributing guidelines](https://contribute.freecodecamp.org/#/how-to-work-on-coding-challenges.md?id=testing-challenges) for instructions on running the CI build locally. ✅
 ```
 
 ## Sincronização de forks
@@ -230,7 +230,7 @@ Happy contributing.
 ```md
 We typically do not assign issues. Instead, we accept the first pull request that comprehensively solves the issue.
 
-Issues labelled with `help wanted` or `first timers only` are open for contributions.
+Issues labeled with `help wanted` or `first timers only` are open for contributions.
 
 Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/). We prioritize contributors following the instructions in our guide. Join us in [our chat room](https://discord.gg/PRyKn3Vbay) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing - our community will be happy to assist you.
 ```

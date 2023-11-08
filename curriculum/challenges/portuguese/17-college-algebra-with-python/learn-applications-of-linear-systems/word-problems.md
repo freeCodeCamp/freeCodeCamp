@@ -16,15 +16,15 @@ Este primeiro vídeo examinará as palavras-chave que dizem a você qual operaç
 
 \- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry, de Jay Abramson</a>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Resolva os problemas das páginas 63, 75, 85 e 118 do livro "Business Math, a Step-by-Step Handbook (2021)".
 
 ---
 
 Resolva os problemas das páginas 304, 308 e 321 do livro "Algebra and Trigonometry".
+
+# --question--
 
 ## --text--
 

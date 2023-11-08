@@ -14,7 +14,7 @@ dashedName: test-if-a-value-is-a-string
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Strings` スイート内の `#13` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isString` または `assert.isNotString` に変更してください。 アサートに渡された引数を変更しないでください。
+Within `tests/1_unit-tests.js` under the test labeled `#13` in the `Strings` suite, change each `assert` to either `assert.isString` or `assert.isNotString` to make the test pass (should evaluate to `true`). アサートに渡された引数を変更しないでください。
 
 # --hints--
 

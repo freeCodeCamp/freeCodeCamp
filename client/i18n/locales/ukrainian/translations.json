@@ -241,9 +241,9 @@
     "danger": {
       "heading": "Небезпечна зона",
       "be-careful": "Будь ласка, будьте обережні. Зміни в цьому розділі незворотні.",
-      "reset": "Скинути весь мій прогрес",
-      "delete": "Видалити мій обліковий запис",
-      "delete-title": "Видалити мій обліковий запис",
+      "reset": "Скинути весь прогрес",
+      "delete": "Видалити обліковий запис",
+      "delete-title": "Видалити обліковий запис",
       "delete-p1": "Це дійсно видалить усі ваші дані (включно з прогресом та даними облікового запису).",
       "delete-p2": "Ми не зможемо відновити ці дані для вас пізніше, навіть якщо ви передумаєте.",
       "delete-p3": "Якщо у вас є пропозиція щодо покращення проєкту, надішліть нам електронний лист, і ми зробимо все можливе: <0>{{email}}</0>",
@@ -732,15 +732,26 @@
         "unlinked": "Посилання на ім’я користувача Microsoft видалено.",
         "unlink-err": "При спробі видалити посилання на ім’я користувача Microsoft виникла помилка."
       },
+      "profile": {
+        "err": "Не знайдено ID користувача Microsoft {{msUsername}}"
+      },
       "trophy": {
         "err-1": "Не вдалось знайти ім’я користувача Microsoft, пов’язане з обліковим записом freeCodeCamp.",
         "err-2": "Ви намагаєтесь відправити завдання, яке не є трофейним.",
-        "err-3": "Схоже, користувач {{msUsername}} не отримав цей трофей.",
-        "err-4": "Не вдалось підтвердити трофей. Будь ласка, перевірте і повторіть спробу.",
+        "err-3": "Нам не вдалось отримати ваш обліковий запис Microsoft за Microsoft ID.",
+        "err-4": "Схоже, користувач {{msUsername}} не отримав цей трофей.",
+        "err-5": "Не вдалось підтвердити трофей. Будь ласка, перевірте і повторіть спробу.",
+        "err-6": "Схоже, ваш обліковий запис Microsoft приватний. Зробіть його загальнодоступним та спробуйте ще раз.",
         "verified": "Ваш трофей на навчальній платформі Microsoft підтверджено."
       }
     },
-    "classroom-mode-updated": "We have updated your classroom mode settings"
+    "survey": {
+      "err-1": "The survey submitted is not in the correct format.",
+      "err-2": "It looks like you have already completed this survey.",
+      "err-3": "Something went wrong trying to save your survey.",
+      "success": "Thank you. Your survey was submitted."
+    },
+    "classroom-mode-updated": "Ваші налаштування режиму класу оновлено"
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",
@@ -903,14 +914,13 @@
     "set-claim": "Отримайте та перегляньте свої сертифікації"
   },
   "forum-help": {
-    "browser-info": "**Інформація про ваш браузер:**",
+    "browser-info": "Інформація про ваш браузер:",
     "user-agent": "Агент користувача: <code>{{userAgent}}</code>",
-    "challenge": "**Завдання:**",
-    "challenge-link": "**Посилання на завдання:**",
-    "whats-happening": "**Розкажіть нам, що сталося:**",
+    "challenge": "Інформація про завдання:",
+    "whats-happening": "Розкажіть нам, що сталося:",
     "describe": "Детально опишіть свою проблему тут.",
-    "camper-project": "**Посилання на ваші проєкти**",
-    "camper-code": "**Ваш код**",
+    "camper-project": "Посилання на ваші проєкти",
+    "camper-code": "Ваш код",
     "warning": "УВАГА",
     "too-long-one": "Початковий код завдання та/або ваш розв’язок перевищили максимальну довжину, яку ми можемо перенести з завдання.",
     "too-long-two": "Вам потрібно зробити додатковий крок, щоб код, який ви написали був у форматі зручному для читання.",
@@ -956,5 +966,31 @@
     "p2": "Ми вдячні за повідомлення про помилки, з якими ви стикаєтесь. Це допомагає покращити freeCodeCamp.org.",
     "p3": "Ваш прогрес МОЖЛИВО не буде збережним при наступному відвідуванні, а будь-які здобуті сертифікації не будуть дійсними. Дізнайтесь більше <0>тут</0>.",
     "certain": "Прийняти і відхилити"
+  },
+  "survey": {
+    "foundational-c-sharp": {
+      "title": "Foundational C# with Microsoft Survey",
+      "q1": {
+        "q": "Please describe your role:",
+        "o1": "Student developer",
+        "o2": "Beginner developer (less than 2 years experience)",
+        "o3": "Intermediate developer (between 2 and 5 years experience)",
+        "o4": "Experienced developer (more than 5 years experience)"
+      },
+      "q2": {
+        "q": "Prior to this course, how experienced were you with .NET and C#?",
+        "o1": "Novice (no prior experience)",
+        "o2": "Beginner",
+        "o3": "Intermediate",
+        "o4": "Advanced",
+        "o5": "Expert"
+      }
+    },
+    "misc": {
+      "take": "Take the survey",
+      "submit": "Submit the survey",
+      "exit": "Exit the survey",
+      "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
   }
 }

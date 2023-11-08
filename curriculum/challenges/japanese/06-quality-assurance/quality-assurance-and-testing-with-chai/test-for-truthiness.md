@@ -22,7 +22,7 @@ assert.isTrue(1, 'This will NOT pass with the number value 1');
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Basic Assertions` スイート内の `#4` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isTrue` または `assert.isNotTrue` に変更してください。 アサートに渡された引数を変更しないでください。
+Within `tests/1_unit-tests.js` under the test labeled `#4` in the `Basic Assertions` suite, change each `assert` to either `assert.isTrue` or `assert.isNotTrue` to make the test pass (should evaluate to `true`). アサートに渡された引数を変更しないでください。
 
 # --hints--
 

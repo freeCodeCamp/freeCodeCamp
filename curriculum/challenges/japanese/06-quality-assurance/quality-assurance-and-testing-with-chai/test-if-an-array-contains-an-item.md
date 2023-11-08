@@ -12,7 +12,7 @@ dashedName: test-if-an-array-contains-an-item
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Arrays` スイート内の `#12` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.include` または `assert.notInclude` に変更してください。 アサートに渡された引数を変更しないでください。
+Within `tests/1_unit-tests.js` under the test labeled `#12` in the `Arrays` suite, change each `assert` to either `assert.include` or `assert.notInclude` to make the test pass (should evaluate to `true`). アサートに渡された引数を変更しないでください。
 
 # --hints--
 

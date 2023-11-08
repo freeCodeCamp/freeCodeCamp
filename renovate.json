@@ -1,5 +1,5 @@
 {
-  "extends": ["github>freecodecamp/renovate-config:schedule-hacktoberfest"],
+  "extends": ["github>freecodecamp/renovate-config"],
   "packageRules": [
     {
       "groupName": "Disabled",

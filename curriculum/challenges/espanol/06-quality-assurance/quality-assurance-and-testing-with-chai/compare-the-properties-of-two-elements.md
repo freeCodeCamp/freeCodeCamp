@@ -12,7 +12,7 @@ Como recordatorio, este proyecto está siendo construido con base en el siguient
 
 # --instructions--
 
-Dentro de `tests/1_unit-tests.js` bajo la prueba etiquetada `#8` en `Comparisons` suite, cambiar cada `assert` a `assert.isAbove` o `assert.isAtMost` para que el test sea aprovado (debe evaluarse a `true`). No modifiques los argumentos pasados ​​a los verificadores.
+Within `tests/1_unit-tests.js` under the test labeled `#8` in the `Comparisons` suite, change each `assert` to either `assert.isAbove` or `assert.isAtMost` to make the test pass (should evaluate to `true`). No modifiques los argumentos pasados ​​a los verificadores.
 
 # --hints--
 

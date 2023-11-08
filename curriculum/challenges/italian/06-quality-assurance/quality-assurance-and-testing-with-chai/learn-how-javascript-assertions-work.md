@@ -24,7 +24,7 @@ Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospi
 
 # --instructions--
 
-All'interno di `tests/1_unit-tests.js`, sotto il test etichettato con `#1`, nella suite `Basic Assertions`, cambia ogni asserzione `assert` in `assert.isNull` o `assert.isNotNull` per far superare il test (dovrebbe risultare `true`). Non cambiare gli argomenti passati alle asserzioni.
+Within `tests/1_unit-tests.js` under the test labeled `#1` in the `Basic Assertions` suite, change each `assert` to either `assert.isNull` or `assert.isNotNull` to make the test pass (should evaluate to `true`). Non cambiare gli argomenti passati alle asserzioni.
 
 # --hints--
 

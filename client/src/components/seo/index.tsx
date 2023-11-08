@@ -30,7 +30,7 @@ interface Item {
   };
 }
 
-interface ListItem {
+export interface ListItem {
   '@type': 'ListItem';
   position: number;
   item: Item;
@@ -97,7 +97,10 @@ const SEO: React.FC<SEOProps> = ({ title, children }) => {
 
   return (
     <Helmet title={seo.title}>
-      <script type='application/ld+json'>
+      <script
+        type='application/ld+json'
+        data-playwright-test-label='structured-data'
+      >
         {JSON.stringify(structuredData)}
       </script>
       {children}

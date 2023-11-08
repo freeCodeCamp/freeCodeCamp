@@ -22,7 +22,7 @@ assert.isTrue(1, 'This will NOT pass with the number value 1');
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#4` в наборі `Basic Assertions` змініть кожний `assert` на `assert.isTrue` або `assert.isNotTrue`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
+Within `tests/1_unit-tests.js` under the test labeled `#4` in the `Basic Assertions` suite, change each `assert` to either `assert.isTrue` or `assert.isNotTrue` to make the test pass (should evaluate to `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 

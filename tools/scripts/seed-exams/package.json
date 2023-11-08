@@ -19,12 +19,13 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "devDependencies": {
+    "debug": "4.3.4",
     "dotenv": "16.3.1",
-    "joi": "17.10.2",
+    "joi": "17.11.0",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.1.0",
     "lodash": "4.17.21",
-    "mongodb": "5.9.0",
+    "mongodb": "5.9.1",
     "nanoid": "4.0.2"
   },
   "type": "module"

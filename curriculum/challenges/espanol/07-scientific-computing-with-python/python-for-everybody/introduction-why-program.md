@@ -32,13 +32,21 @@ Más recursos:
 
 Estudiantes universitarios.
 
+### --feedback--
+
+College students should learn to program, but there's a better answer.
+
 ---
 
-Personas que quieren convertirse en desarrolladores de software.
+People who want to become software developers.
+
+### --feedback--
+
+People who want to become software developers should learn to program, but there's a better answer.
 
 ---
 
-Todo el mundo.
+Everyone.
 
 ## --video-solution--
 

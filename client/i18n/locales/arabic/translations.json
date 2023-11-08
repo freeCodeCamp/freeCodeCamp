@@ -732,13 +732,24 @@
         "unlinked": "The link to your Microsoft username has been removed.",
         "unlink-err": "Something went wrong trying to remove the link to your Microsoft username."
       },
+      "profile": {
+        "err": "We could not find a Microsoft user ID for Microsoft user \"{{msUsername}}\""
+      },
       "trophy": {
         "err-1": "We could not find a Microsoft username associated with your freeCodeCamp account.",
         "err-2": "You are trying to submit a challenge that does not appear to be a trophy challenge.",
-        "err-3": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
-        "err-4": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-3": "We could not get your Microsoft profile from your Microsoft ID.",
+        "err-4": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
+        "err-5": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-6": "It looks like your Microsoft account might be private. Set it to public and try again.",
         "verified": "Your trophy from Microsoft's learning platform was verified."
       }
+    },
+    "survey": {
+      "err-1": "The survey submitted is not in the correct format.",
+      "err-2": "It looks like you have already completed this survey.",
+      "err-3": "Something went wrong trying to save your survey.",
+      "success": "Thank you. Your survey was submitted."
     },
     "classroom-mode-updated": "We have updated your classroom mode settings"
   },
@@ -903,14 +914,13 @@
     "set-claim": "قم بطلب شهادتك وعرض شهادتك"
   },
   "forum-help": {
-    "browser-info": "**معلومات المتصفح الخاصة بك:**",
+    "browser-info": "Your browser information:",
     "user-agent": "وكيل المستخدم هو: <code>{{userAgent}}</code>",
-    "challenge": "**Challenge:**",
-    "challenge-link": "**رابط للتحدي:**",
-    "whats-happening": "**أخبرنا بما يحدث:**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "قم بوصف مشكلتك بالتفصيل هنا.",
-    "camper-project": "**رابط (روابط) المشروع**",
-    "camper-code": "**الكود الخاص بك حتى الآن**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "تحذير",
     "too-long-one": "تجاوز الكود الأولي للتحدي و / أو الحل الخاص بك الحد الأقصى للطول الذي يمكننا تجاوزه من التحدي.",
     "too-long-two": "سوف تحتاج إلى اتخاذ خطوة إضافية هنا حتى يكون الكود الذي كتبته يعرض في تنسيق سهل القراءة.",
@@ -956,5 +966,31 @@
     "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
     "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
     "certain": "Accept and Dismiss"
+  },
+  "survey": {
+    "foundational-c-sharp": {
+      "title": "Foundational C# with Microsoft Survey",
+      "q1": {
+        "q": "Please describe your role:",
+        "o1": "Student developer",
+        "o2": "Beginner developer (less than 2 years experience)",
+        "o3": "Intermediate developer (between 2 and 5 years experience)",
+        "o4": "Experienced developer (more than 5 years experience)"
+      },
+      "q2": {
+        "q": "Prior to this course, how experienced were you with .NET and C#?",
+        "o1": "Novice (no prior experience)",
+        "o2": "Beginner",
+        "o3": "Intermediate",
+        "o4": "Advanced",
+        "o5": "Expert"
+      }
+    },
+    "misc": {
+      "take": "Take the survey",
+      "submit": "Submit the survey",
+      "exit": "Exit the survey",
+      "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
   }
 }

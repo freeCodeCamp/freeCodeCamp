@@ -69,12 +69,12 @@ The `alt` attribute is used to describe an image. It will be used in place of th
 This is how the The Odin Project logo example you used earlier looks with an alt attribute included:
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/ExXjoEp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=ExXjoEp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_ExXjoEp"></iframe>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Read about the  <a href="https://www.internetingishard.com/html-and-css/links-and-images/#image-formats" target="_blank">four main image formats</a> that can be used on the web.
-    
+
+# --question--
+
 ## --text--
 
 What are the four main image formats that you can use for images on the web?

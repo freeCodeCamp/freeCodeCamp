@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs';
 import path, { join } from 'path';
 import { fileURLToPath } from 'url';
+import debug from 'debug';
 import dotenv from 'dotenv';
 import yaml from 'js-yaml';
 import { MongoClient, ObjectId } from 'mongodb';
@@ -9,6 +10,8 @@ import { validateExamSchema } from './exam-schema.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+const log = debug('fcc:tools:seedExams');
 
 dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
 const { MONGOHQ_URL } = process.env;
@@ -20,6 +23,8 @@ const examFilenames = [
 ];
 
 const client = new MongoClient(MONGOHQ_URL, { useUnifiedTopology: true });
+
+log('Connected successfully to mongo');
 
 const db = client.db('freecodecamp');
 const exams = db.collection('Exam');
@@ -42,7 +47,7 @@ function handleError(err, client) {
 const seed = async () => {
   for (const filename of examFilenames) {
     try {
-      const examPath = join('./exams', filename);
+      const examPath = join(__dirname, 'exams', filename);
       const examFile = readFileSync(examPath, { encoding: 'utf-8' });
       const examJson = yaml.load(examFile);
       const validExam = validateExamSchema(examJson);
@@ -62,13 +67,13 @@ const seed = async () => {
         { upsert: true }
       );
 
-      console.log(`'${examJson.title}' added to exams database.`);
+      log(`'${examJson.title}' added to exams database.`);
     } catch (err) {
       handleError(err, client);
     }
   }
 
-  console.log('Finished seeding exams.');
+  log('Finished seeding exams.');
 };
 
 seed()

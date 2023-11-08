@@ -47,7 +47,7 @@ In genere non è necessario modificare alcuna configurazione o costruire il sito
 
 Install freeCodeCamp locally ([see the local setup guide](how-to-setup-freecodecamp-locally)), we bundled the CLI with the development tools so you can run the command below as needed from the root of the repo:
 
-```console
+```bash
 pnpm run docs:serve
 ```
 

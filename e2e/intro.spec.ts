@@ -5,10 +5,6 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/learn');
 });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
-
 const IntroObject = {
   randomQuote: 'random-quote',
   randomAuthor: 'random-author',
