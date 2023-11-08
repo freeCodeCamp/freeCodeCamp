@@ -4,9 +4,10 @@ const log = debugFactory('fcc:boot:user');
 const allowedTitles = ['Foundational C# with Microsoft Survey'];
 
 export function validateSurvey(req, res, next) {
-  const {
-    surveyResults: { title = '', responses = [] }
-  } = req.body;
+  const { title, responses } = req.body.surveyResults || {
+    title: '',
+    responses: []
+  };
 
   if (
     !allowedTitles.includes(title) ||
