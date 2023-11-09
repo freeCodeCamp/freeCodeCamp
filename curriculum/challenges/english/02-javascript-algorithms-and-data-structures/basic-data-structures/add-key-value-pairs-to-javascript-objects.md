@@ -81,13 +81,12 @@ The `foods` object should have a key `strawberries` with a value of `27`.
 assert(foods.strawberries === 27);
 ```
 
-The key-value pairs should be set using dot or bracket notation.
+The `foods` object's first definition should not be changed directly.
 
 ```js
 assert(
-  code.search(/bananas:/) === -1 &&
-    code.search(/grapes:/) === -1 &&
-    code.search(/strawberries:/) === -1
+  code.search(/let foods/) === -1 &&
+  code.search(/const\s+foods\s*=\s*{[\s\S]*}(?![^;]*\b(?:bananas|grapes|strawberries)\s*:\s*[^:])/) !== -1
 );
 ```
 
