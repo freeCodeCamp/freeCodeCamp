@@ -26,7 +26,7 @@
     "jsonwebtoken": "9.0.0",
     "lodash": "4.17.21",
     "mongodb": "3.6.10",
-    "nanoid": "3",
+    "nanoid": "3.1.31",
     "no-profanity": "1.5.1",
     "nodemailer": "6.9.5",
     "nodemon": "2.0.22",
@@ -43,6 +43,7 @@
     "@types/supertest": "2.0.13",
     "dotenv-cli": "7.3.0",
     "jest": "29.7.0",
+    "nanoid": "3.1.31",
     "prisma": "5.3.1",
     "supertest": "6.3.3",
     "ts-jest": "29.1.1"
