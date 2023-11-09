@@ -96,7 +96,7 @@ assert(
 ## --seed-contents--
 
 ```js
-let foods = {
+const foods = {
   apples: 25,
   oranges: 32,
   plums: 28
