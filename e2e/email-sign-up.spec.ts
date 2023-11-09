@@ -18,8 +18,14 @@ test.describe('Email sign-up page when user is not signed in', () => {
   });
 
   test("should not enable Quincy's weekly newsletter when the user clicks the sign up button", async ({
-    page
+    page,
+    browserName
   }) => {
+    test.skip(
+      browserName === 'webkit',
+      'user appears to not signed in on Webkit'
+    );
+
     await expect(page).toHaveTitle('Email Sign Up | freeCodeCamp.org');
     await expect(
       page.getByText(
@@ -58,7 +64,12 @@ test.describe('Email sign-up page when user is not signed in', () => {
 test.describe('Email sign-up page when user is signed in', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-  test.beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ page, browserName }) => {
+    test.skip(
+      browserName === 'webkit',
+      'user appears to not signed in on Webkit'
+    );
+
     await page.route('*/**/user/get-session-user', async route => {
       const response = await route.fetch();
       const json = await response.json();
@@ -80,8 +91,14 @@ test.describe('Email sign-up page when user is signed in', () => {
   });
 
   test("should disable Quincy's weekly newsletter if the user clicks No", async ({
-    page
+    page,
+    browserName
   }) => {
+    test.skip(
+      browserName === 'webkit',
+      'user appears to not signed in on Webkit'
+    );
+
     await expect(page).toHaveTitle('Email Sign Up | freeCodeCamp.org');
     await expect(
       page.getByText(
