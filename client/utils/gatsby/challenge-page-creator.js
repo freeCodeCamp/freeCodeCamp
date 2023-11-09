@@ -49,6 +49,16 @@ const msTrophy = path.resolve(
   '../../src/templates/Challenges/ms-trophy/show.tsx'
 );
 
+const dialogue = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/dialogue/show.tsx'
+);
+
+const fillInTheBlank = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/fill-in-the-blank/show.tsx'
+);
+
 const views = {
   backend,
   classic,
@@ -58,7 +68,9 @@ const views = {
   codeAlly,
   odin,
   exam,
-  msTrophy
+  msTrophy,
+  dialogue,
+  fillInTheBlank
   // quiz: Quiz
 };
 

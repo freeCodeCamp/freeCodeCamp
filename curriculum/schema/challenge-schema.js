@@ -28,17 +28,22 @@ const prerequisitesJoi = Joi.object().keys({
 
 const schema = Joi.object()
   .keys({
+    audioPath: Joi.string(),
     block: Joi.string().regex(slugRE).required(),
     blockId: Joi.objectId(),
     challengeOrder: Joi.number(),
     removeComments: Joi.bool().required(),
     certification: Joi.string().regex(slugRE),
-    challengeType: Joi.number().min(0).max(20).required(),
+    challengeType: Joi.number().min(0).max(22).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
     description: Joi.when('challengeType', {
-      is: [challengeTypes.step, challengeTypes.video],
+      is: [
+        challengeTypes.step,
+        challengeTypes.video,
+        challengeTypes.fillInTheBlank
+      ],
       then: Joi.string().allow(''),
       otherwise: Joi.string().required()
     }),
@@ -55,6 +60,17 @@ const schema = Joi.object()
       'C-Sharp'
     ),
     videoUrl: Joi.string().allow(''),
+    fillInTheBlank: Joi.object().keys({
+      sentence: Joi.string().required(),
+      blanks: Joi.array()
+        .items(
+          Joi.object().keys({
+            answer: Joi.string().required(),
+            feedback: Joi.string().allow(null)
+          })
+        )
+        .required()
+    }),
     forumTopicId: Joi.number(),
     id: Joi.objectId().required(),
     instructions: Joi.string().allow(''),
@@ -73,7 +89,7 @@ const schema = Joi.object()
     }),
     // video challenges only:
     videoId: Joi.when('challengeType', {
-      is: challengeTypes.video,
+      is: [challengeTypes.video, challengeTypes.dialogue],
       then: Joi.string().required()
     }),
     videoLocaleIds: Joi.when('challengeType', {
@@ -112,7 +128,11 @@ const schema = Joi.object()
         crossDomain: Joi.bool()
       })
     ),
-    assignments: Joi.array().items(Joi.string()),
+    assignments: Joi.when('challengeType', {
+      is: challengeTypes.dialogue,
+      then: Joi.array().items(Joi.string()).required(),
+      otherwise: Joi.array().items(Joi.string())
+    }),
     solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
     superBlock: Joi.string().regex(slugWithSlashRE),
     superOrder: Joi.number(),
