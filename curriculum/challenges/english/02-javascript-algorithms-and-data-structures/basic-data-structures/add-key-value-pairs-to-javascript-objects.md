@@ -81,7 +81,7 @@ The `foods` object should have a key `strawberries` with a value of `27`.
 assert(foods.strawberries === 27);
 ```
 
-The `foods` object's first definition should not be changed directly.
+The definition of the `foods` object should not be changed.
 
 ```js
 assert(
