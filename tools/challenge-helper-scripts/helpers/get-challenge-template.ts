@@ -2,7 +2,7 @@
 import ObjectID from 'bson-objectid';
 
 const sanitizeTitle = (title: string) => {
-  return title.includes(':') ? `"${title}"` : title;
+  return title.includes(':') || title.includes("'") ? `"${title}"` : title;
 };
 
 export interface ChallengeOptions {
