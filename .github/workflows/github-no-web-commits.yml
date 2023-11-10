@@ -32,7 +32,7 @@ jobs:
                   org: context.repo.owner,
                   team_slug: team,
                   username: prAuthor
-                });
+                }).catch(() => ({status: 404})));
                 if (response.status == 200) {
                   isAllowListed = true;
                   break;
