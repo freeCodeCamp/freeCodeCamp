@@ -21,23 +21,16 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const prAuthor = context.payload.pull_request.user.login;
+            const response = await github.rest.teams
+              .getMembershipForUserInOrg({
+                org: context.repo.owner,
+                team_slug: 'moderators',
+                username: prAuthor
+              })
+              .catch(() => ({ status: 404 }));
             let isAllowListed = false;
-            if (prAuthor === 'renovate[bot]') {
+            if (prAuthor === 'renovate[bot]' || response.status === 200) {
               isAllowListed = true;
-            } else {
-              const teams = ['ops', 'bots', 'staff', 'dev-team', 'moderators'];
-              for (const team of teams) {
-                const response = await github.rest.teams.getMembershipForUserInOrg({
-                  org: context.repo.owner,
-                  team_slug: team,
-                  username: prAuthor
-                });
-                }).catch(() => ({status: 404}));
-                if (response.status == 200) {
-                  isAllowListed = true;
-                  break;
-                }
-              }
             }
             core.setOutput('is_allow_listed', isAllowListed);
 
