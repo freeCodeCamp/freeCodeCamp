@@ -238,8 +238,8 @@ importers:
         specifier: 3.6.10
         version: 3.6.10
       nanoid:
-        specifier: '3'
-        version: 3.3.4
+        specifier: 3.1.31
+        version: 3.1.31
       no-profanity:
         specifier: 1.5.1
         version: 1.5.1
@@ -305,8 +305,8 @@ importers:
         specifier: 1.3.8
         version: 1.3.8
       axios:
-        specifier: 0.23.0
-        version: 0.23.0(debug@2.6.9)
+        specifier: 1.6.0
+        version: 1.6.0(debug@2.6.9)
       body-parser:
         specifier: 1.20.0
         version: 1.20.0
@@ -383,11 +383,11 @@ importers:
         specifier: 3.0.0
         version: 3.0.0
       moment:
-        specifier: 2.29.3
-        version: 2.29.3
+        specifier: 2.29.4
+        version: 2.29.4
       moment-timezone:
-        specifier: 0.5.33
-        version: 0.5.33
+        specifier: 0.5.35
+        version: 0.5.35
       mongodb:
         specifier: 3.6.10
         version: 3.6.10
@@ -407,8 +407,8 @@ importers:
         specifier: 1.5.1
         version: 1.5.1
       passport:
-        specifier: 0.4.1
-        version: 0.4.1
+        specifier: 0.6.0
+        version: 0.6.0
       passport-auth0:
         specifier: 1.4.2
         version: 1.4.2(debug@2.6.9)
@@ -9919,19 +9919,6 @@ packages:
       source-map: 0.6.1
     dev: true
 
-<<<<<<< HEAD
-  /@types/websocket@1.0.2:
-    resolution: {integrity: sha512-B5m9aq7cbbD/5/jThEr33nUY8WEfVi6A2YKCTOvw5Ldy7mtsOkqRvGjnzy6g7iMMDsgu7xREuCzqATLDLQVKcQ==}
-    dependencies:
-      '@types/node': 20.8.2
-=======
-  /@types/whatwg-url@8.2.2:
-    resolution: {integrity: sha512-FtQu10RWgn3D9U4aazdwIE2yzphmTJREDqNdODHrbrZmmMqI0vMheC/6NE/J1Yveaj8H+ela+YwWTjq5PGmuhA==}
-    dependencies:
-      '@types/node': 20.8.2
-      '@types/webidl-conversions': 7.0.1
->>>>>>> main
-
   /@types/yargs-parser@21.0.1:
     resolution: {integrity: sha512-axdPBuLuEJt0c4yI5OZssC19K2Mq1uKdrfZBzuxLvaztgqUtFYZUNw7lETExPYJR9jdEoIg4mb7RQKRQzOkeGQ==}
 
@@ -11345,14 +11332,6 @@ packages:
       - debug
     dev: false
 
-  /axios@0.23.0(debug@2.6.9):
-    resolution: {integrity: sha512-NmvAE4i0YAv5cKq8zlDoPd1VLKAqX5oLuZKs8xkJa4qi6RGn0uhCYFjWtHHC9EM/MwOwYWOs53W+V0aqEXq1sg==}
-    dependencies:
-      follow-redirects: 1.15.3(debug@2.6.9)
-    transitivePeerDependencies:
-      - debug
-    dev: false
-
   /axios@0.27.2(debug@4.3.4):
     resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
     dependencies:
@@ -11361,6 +11340,16 @@ packages:
     transitivePeerDependencies:
       - debug
     dev: true
+
+  /axios@1.6.0(debug@2.6.9):
+    resolution: {integrity: sha512-EZ1DYihju9pwVB+jg67ogm+Tmqc6JmhamRN6I4Zt8DfZu5lbcQGw3ozH9lFejSJgs/ibaef3A9PMXPLeefFGJg==}
+    dependencies:
+      follow-redirects: 1.15.3(debug@2.6.9)
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /axobject-query@3.2.1:
     resolution: {integrity: sha512-jsyHu61e6N4Vbz/v18DHwWYKK0bSWLqn47eeDSKPB7m8tqMHF9YJ+mhIk2lVteyZrY8tnSj/jHOv4YiTCuCJgg==}
@@ -18289,7 +18278,7 @@ packages:
       mime: 2.6.0
       mini-css-extract-plugin: 1.6.2(webpack@5.88.2)
       mitt: 1.2.0
-      moment: 2.29.3
+      moment: 2.29.4
       multer: 1.4.5-lts.1
       node-fetch: 2.7.0
       node-html-parser: 5.4.2
@@ -23431,18 +23420,18 @@ packages:
       through2: 2.0.5
       xtend: 4.0.2
 
-  /moment-timezone@0.5.33:
-    resolution: {integrity: sha512-PTc2vcT8K9J5/9rDEPe5czSIKgLoGsH8UNpA4qZTVw0Vd/Uz19geE9abbIOQKaAQFcnQ3v5YEXrbSc5BpshH+w==}
+  /moment-timezone@0.5.35:
+    resolution: {integrity: sha512-cY/pBOEXepQvlgli06ttCTKcIf8cD1nmNwOKQQAdHBqYApQSpAqotBMX0RJZNgMp6i0PlZuf1mFtnlyEkwyvFw==}
     dependencies:
-      moment: 2.29.3
+      moment: 2.29.4
     dev: false
 
   /moment@2.29.1:
     resolution: {integrity: sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==}
     dev: false
 
-  /moment@2.29.3:
-    resolution: {integrity: sha512-c6YRvhEo//6T2Jz/vVtYzqBzwvPT95JBQ+smCytzf7c50oMZRsR/a4w88aD34I+/QVSfnoAnSBFPJHItlOMJVw==}
+  /moment@2.29.4:
+    resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
 
   /monaco-editor-webpack-plugin@4.2.0(monaco-editor@0.28.1)(webpack@5.88.2):
     resolution: {integrity: sha512-/P3sFiEgBl+Y50he4mbknMhbLJVop5gBUZiPS86SuHUDOOnQiQ5rL1jU5lwt1XKAwMEkhwZbUwqaHxTPkb1Utw==}
@@ -23623,6 +23612,12 @@ packages:
 
   /nanoid@2.1.11:
     resolution: {integrity: sha512-s/snB+WGm6uwi0WjsZdaVcuf3KJXlfGl2LcxgwkEwJF0D/BWzVWAZW/XY4bFaiR7s0Jk3FPvlnepg1H1b1UwlA==}
+    dev: false
+
+  /nanoid@3.1.31:
+    resolution: {integrity: sha512-ZivnJm0o9bb13p2Ot5CpgC2rQdzB9Uxm/mFZweqm5eMViqOJe3PV6LU2E30SiLgheesmcPrjquqraoolONSA0A==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
     dev: false
 
   /nanoid@3.3.3:
@@ -24705,6 +24700,15 @@ packages:
     dependencies:
       passport-strategy: 1.0.0
       pause: 0.0.1
+    dev: false
+
+  /passport@0.6.0:
+    resolution: {integrity: sha512-0fe+p3ZnrWRW74fe8+SvCyf4a3Pb2/h7gFkQ8yTJpAO50gDzlfjZUZTO1k5Eg9kUct22OxHLqDZoKUWRHOh9ug==}
+    engines: {node: '>= 0.4.0'}
+    dependencies:
+      passport-strategy: 1.0.0
+      pause: 0.0.1
+      utils-merge: 1.0.1
     dev: false
 
   /password-prompt@1.1.3:
@@ -25804,7 +25808,6 @@ packages:
 
   /proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
-    dev: true
 
   /proxy-middleware@0.15.0:
     resolution: {integrity: sha512-EGCG8SeoIRVMhsqHQUdDigB2i7qU7fCsWASwn54+nPutYO8n4q6EiwMzyfWlC+dzRFExP+kvcnDFdBDHoZBU7Q==}
