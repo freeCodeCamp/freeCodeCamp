@@ -208,6 +208,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
               <ObserveKeys except={['Space']}>
                 <div onFocus={this.handleFocus} role='textbox'>
                   <SearchBox
+                    data-playwright-test-label='header-search'
                     focusShortcuts={['83', '191']}
                     onChange={this.handleChange}
                     onSubmit={e => {

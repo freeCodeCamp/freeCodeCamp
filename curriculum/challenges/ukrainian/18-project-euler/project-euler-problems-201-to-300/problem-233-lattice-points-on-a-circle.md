@@ -1,6 +1,6 @@
 ---
 id: 5900f4551000cf542c50ff68
-title: 'Problem 233: Lattice points on a circle'
+title: 'Завдання 233: точки сітки на колі'
 challengeType: 1
 forumTopicId: 301877
 dashedName: problem-233-lattice-points-on-a-circle
@@ -8,11 +8,11 @@ dashedName: problem-233-lattice-points-on-a-circle
 
 # --description--
 
-Let $f(N)$ be the number of points with integer coordinates that are on a circle passing through $(0,0)$, $(N,0)$,$(0,N)$, and $(N,N)$.
+Нехай $f(N)$ буде кількістю точок з цілочисельними координатами, які знаходяться на колі, що проходить через $(0,0)$, $(N,0)$,$(0,N)$ та $(N,N)$.
 
-It can be shown that $f(10000) = 36$.
+Можна зобразити, що $f(10000) = 36$.
 
-What is the sum of all positive integers $N ≤ {10}^{11}$ such that $f(N) = 420$?
+Якою буде сума всіх натуральних чисел $N ≤ {10}^{11}$, за яких $f(N) = 420$?
 
 # --hints--
 

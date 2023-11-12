@@ -155,26 +155,26 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Rock Paper Scissors](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/rock-paper-scissors), [Cat and Dog Image Classifier](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/cat-and-dog-image-classifier), [Book Recommendation Engine using KNN](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/book-recommendation-engine-using-knn), [Linear Regression Health Costs Calculator](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/linear-regression-health-costs-calculator), [Neural Network SMS Text Classifier](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/neural-network-sms-text-classifier)
 
-  #### 12. [College Algebra with Python](https://www.freecodecamp.org/learn/college-algebra-with-python/)
+#### 12. [College Algebra with Python](https://www.freecodecamp.org/learn/college-algebra-with-python/)
 
-  - [Learn Ratios and Proportions](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-ratios-and-proportions)
-  - [Learn How to Solve for X](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-solve-for-x)
-  - [Learn Fractions and Decimals](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-fractions-and-decimals)
-  - [Learn Functions and Graphing](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-functions-and-graphing)
-  - [Learn Linear Functions](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-linear-functions)
-  - [Learn Common Factors and Square Roots](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-common-factors-and-square-roots)
-  - [Learn How to Graph Systems of Equations](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-graph-systems-of-equations)
-  - [Learn How to Solve Systems of Equations](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-solve-systems-of-equations)
-  - [Learn Applications of Linear Systems](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-applications-of-linear-systems)
-  - [Learn Quadratic Equations](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-quadratic-equations)
-  - [Learn Parent Graphs and Polynomials](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-parent-graphs-and-polynomials)
-  - [Learn Business Applications of College Algebra](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-business-applications-of-college-algebra)
-  - [Learn Simple and Compound Interest](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-simple-and-compound-interest)
-  - [Learn Exponents and Logarithms](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-exponents-and-logarithms)
-  - [College Algebra with Python: Conclusion](https://www.freecodecamp.org/learn/college-algebra-with-python/#college-algebra-with-python-conclusion)
-    <br />
-    <br />
-    **Projects**: [Multi-Function Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-multi-function-calculator-project), [Graphing Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-graphing-calculator-project), [Three Math Games](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-three-math-games-project), [Financial Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-financial-calculator-project), [Data Graph Explorer](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-data-graph-explorer-project)
+- [Learn Ratios and Proportions](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-ratios-and-proportions)
+- [Learn How to Solve for X](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-solve-for-x)
+- [Learn Fractions and Decimals](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-fractions-and-decimals)
+- [Learn Functions and Graphing](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-functions-and-graphing)
+- [Learn Linear Functions](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-linear-functions)
+- [Learn Common Factors and Square Roots](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-common-factors-and-square-roots)
+- [Learn How to Graph Systems of Equations](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-graph-systems-of-equations)
+- [Learn How to Solve Systems of Equations](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-solve-systems-of-equations)
+- [Learn Applications of Linear Systems](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-applications-of-linear-systems)
+- [Learn Quadratic Equations](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-quadratic-equations)
+- [Learn Parent Graphs and Polynomials](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-parent-graphs-and-polynomials)
+- [Learn Business Applications of College Algebra](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-business-applications-of-college-algebra)
+- [Learn Simple and Compound Interest](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-simple-and-compound-interest)
+- [Learn Exponents and Logarithms](https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-exponents-and-logarithms)
+- [College Algebra with Python: Conclusion](https://www.freecodecamp.org/learn/college-algebra-with-python/#college-algebra-with-python-conclusion)
+  <br />
+  <br />
+  **Projects**: [Multi-Function Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-multi-function-calculator-project), [Graphing Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-graphing-calculator-project), [Three Math Games](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-three-math-games-project), [Financial Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-financial-calculator-project), [Data Graph Explorer](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-data-graph-explorer-project)
 
 #### Legacy Full Stack Development Certification
 

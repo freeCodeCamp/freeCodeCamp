@@ -1,21 +1,21 @@
 import { SuperBlocks } from '../../../shared/config/superblocks';
 
 export function isNewRespCert(superBlock: string): boolean {
-  return superBlock === SuperBlocks.RespWebDesignNew;
+  return superBlock === String(SuperBlocks.RespWebDesignNew);
 }
 
 export function isOldRespCert(superBlock: string): boolean {
-  return superBlock === SuperBlocks.RespWebDesign;
+  return superBlock === String(SuperBlocks.RespWebDesign);
 }
 
 export function isNewJsCert(superBlock: string): boolean {
-  return superBlock === SuperBlocks.JsAlgoDataStructNew;
+  return superBlock === String(SuperBlocks.JsAlgoDataStructNew);
 }
 
 export function isRelationalDbCert(superBlock: string): boolean {
-  return superBlock === SuperBlocks.RelationalDb;
+  return superBlock === String(SuperBlocks.RelationalDb);
 }
 
 export function isCollegeAlgebraPyCert(superBlock: string): boolean {
-  return superBlock === SuperBlocks.CollegeAlgebraPy;
+  return superBlock === String(SuperBlocks.CollegeAlgebraPy);
 }

@@ -97,20 +97,11 @@
 }
 
 .progress-bar-percent {
-  width: 0;
+  height: 10px;
   overflow: hidden;
   position: relative;
   background-color: var(--primary-color);
   transition: width 0ms linear;
-}
-
-.progress-bar-foreground {
-  color: var(--primary-background);
-  width: 400px;
-  height: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 @media screen and (max-width: 991px) {

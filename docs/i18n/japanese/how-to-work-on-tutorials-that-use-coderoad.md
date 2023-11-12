@@ -56,7 +56,7 @@ Each of the freeCodeCamp tutorials that use CodeRoad has its own repo under the 
 - [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) の手順に従ってコンテナを実行します。
 - 新しいブランチの `tutorial.json` ファイルを使用してチュートリアルを開始します。
 
-### `main` の PR をレビューする
+### Reviewing PRs to `main`
 
 上述のように、指示もしくは文法問題に関わる `main` のみを変更する PR をレビューする場合、`TUTORIAL.md` の変更は、`tutorial.json` の変更と一致する必要があります。
 
@@ -119,11 +119,11 @@ freeCodeCamp リポジトリへの書き込みアクセス権を有しており�
 - freeCodeCamp リポジトリで `main` にPRを作成します。
 - 問題がない場合は、それをマージするか残して、レビューを依頼します。
 - PR がマージされた後、[rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) の指示に従ってチュートリアルを開き、正しく読み込まれていることと、いくつかのステップが実行できることを確認します。
-- 最後に、このバージョンの PR が存在する場合は、それらをクローズします。
+- Finally, if any PRs for this version exist, close them
 
 ### How to Revert to a Previous Version
 
-- `git checkout -b revert/to-version-X.X.X` で、最新 `main` の新しいブランチを作成します。
+- Create a new branch off of the latest `main` with `git checkout -b revert/to-version-X.X.X`
 - このブランチにおいて、元に戻したいバージョン以降のコミットをすべて元に戻します。 例えば、次のようなコミットです。
 
 ```

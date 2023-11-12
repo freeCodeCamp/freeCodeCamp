@@ -36,7 +36,6 @@ export type CamperProps = Pick<
   | 'picture'
   | 'name'
   | 'joinDate'
-  | 'twitter'
 >;
 
 function joinArray(array: string[], t: TFunction): string {

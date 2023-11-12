@@ -12,11 +12,11 @@ O primeiro vídeo mostrará a matemática por trás da resolução de um sistema
 
 Aqui está o <a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory usado neste vídeo.</a>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Adicione o código ao notebook para resolver e criar os gráficos dos sistemas de equações
+
+# --question--
 
 ## --text--
 

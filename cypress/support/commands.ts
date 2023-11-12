@@ -1,9 +1,21 @@
 const login = (user?: string) => {
-  cy.session(user ?? 'new-user', () => {
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    cy.visit(`${Cypress.env('API_LOCATION')}/signin`);
-    cy.contains('Welcome back');
-  });
+  cy.session(
+    user ?? 'new-user',
+    () => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      cy.visit(`${Cypress.env('API_LOCATION')}/signin`);
+      cy.url().should('include', '/learn');
+      cy.contains('Welcome back');
+    },
+    {
+      validate() {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        cy.request(`${Cypress.env('API_LOCATION')}/user/get-session-user`)
+          .its('status')
+          .should('eq', 200);
+      }
+    }
+  );
 };
 
 const setPrivacyTogglesToPublic = () => {

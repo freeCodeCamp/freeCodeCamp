@@ -83,7 +83,7 @@ interface ShowOdinState {
 // Component
 class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
   static displayName: string;
-  private _container: HTMLElement | null | undefined;
+  private container: React.RefObject<HTMLElement> = React.createRef();
 
   constructor(props: ShowOdinProps) {
     super(props);
@@ -119,7 +119,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container?.focus();
+    this.container.current?.focus();
   }
 
   componentDidUpdate(prevProps: ShowOdinProps): void {
@@ -216,7 +216,8 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             bilibiliIds,
             fields: { blockName },
             question: { text, answers, solution },
-            assignments
+            assignments,
+            audioPath
           }
         }
       },
@@ -231,12 +232,18 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
+
+    const feedback =
+      this.state.selectedOption !== null
+        ? answers[this.state.selectedOption].feedback
+        : undefined;
+
     return (
       <Hotkeys
         executeChallenge={() => {
           this.handleSubmit(solution, openCompletionModal, assignments);
         }}
-        innerRef={(c: HTMLElement | null) => (this._container = c)}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
@@ -270,7 +277,21 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 <Spacer size='medium' />
                 <h2>{title}</h2>
                 <PrismFormatted className={'line-numbers'} text={description} />
-                <Spacer size='medium' />
+                {audioPath && (
+                  <>
+                    <Spacer size='small' />
+                    <Spacer size='small' />
+                    {/* TODO: Add tracks for audio elements */}
+                    {/* eslint-disable-next-line jsx-a11y/media-has-caption*/}
+                    <audio className='audio' controls>
+                      <source
+                        src={`https://cdn.freecodecamp.org/${audioPath}`}
+                        type='audio/mp3'
+                      ></source>
+                    </audio>
+                    <Spacer size='medium' />
+                  </>
+                )}
                 <ObserveKeys>
                   {assignments.length > 0 && (
                     <>
@@ -307,7 +328,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   <h2>{t('learn.question')}</h2>
                   <PrismFormatted className={'line-numbers'} text={text} />
                   <div className='video-quiz-options'>
-                    {answers.map((option, index) => (
+                    {answers.map(({ answer }, index) => (
                       <label className='video-quiz-option-label' key={index}>
                         <input
                           aria-label={t('aria.answer')}
@@ -325,7 +346,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                         </span>
                         <PrismFormatted
                           className={'video-quiz-option'}
-                          text={option}
+                          text={answer}
                         />
                       </label>
                     ))}
@@ -338,7 +359,16 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   }}
                 >
                   {this.state.isWrongAnswer && (
-                    <span>{t('learn.wrong-answer')}</span>
+                    <span>
+                      {feedback ? (
+                        <PrismFormatted
+                          className={'multiple-choice-feedback'}
+                          text={feedback}
+                        />
+                      ) : (
+                        t('learn.wrong-answer')
+                      )}
+                    </span>
                   )}
                   {!this.state.allAssignmentsCompleted &&
                     assignments.length > 0 && (
@@ -420,11 +450,15 @@ export const query = graphql`
         }
         question {
           text
-          answers
+          answers {
+            answer
+            feedback
+          }
           solution
         }
         translationPending
         assignments
+        audioPath
       }
     }
   }

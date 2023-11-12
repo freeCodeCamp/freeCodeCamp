@@ -7,7 +7,7 @@ export type FormContextProps = Pick<
 >;
 export const FormContext = createContext<FormContextProps>({});
 
-const defaultClasses = 'mb-3.5';
+const defaultClasses = 'mb-3.5 relative';
 
 export const FormGroup = ({
   className,

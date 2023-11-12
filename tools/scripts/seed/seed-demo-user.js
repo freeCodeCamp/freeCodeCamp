@@ -10,6 +10,7 @@ const allowedArgs = [
   '--donor',
   '--top-contributor',
   '--unset-privacy-terms',
+  '--seed-trophy-challenges',
   'certified-user'
 ];
 
@@ -44,6 +45,45 @@ function handleError(err, client) {
     }
   }
 }
+
+const trophyChallenges = [
+  {
+    id: '647f85d407d29547b3bee1bb',
+    solution:
+      'https://learn.microsoft.com/api/gamestatus/achievements/learn.wwl.get-started-c-sharp-part-1.trophy?username=moT01&locale=en-us',
+    completedDate: 1695064765244
+  },
+  {
+    id: '647f87dc07d29547b3bee1bf',
+    solution:
+      'https://learn.microsoft.com/api/gamestatus/achievements/learn.wwl.get-started-c-sharp-part-2.trophy?username=moT01&locale=en-us',
+    completedDate: 1695064900926
+  },
+  {
+    id: '647f882207d29547b3bee1c0',
+    solution:
+      'https://learn.microsoft.com/api/gamestatus/achievements/learn.wwl.get-started-c-sharp-part-3.trophy?username=moT01&locale=en-us',
+    completedDate: 1695064949460
+  },
+  {
+    id: '647f867a07d29547b3bee1bc',
+    solution:
+      'https://learn.microsoft.com/api/gamestatus/achievements/learn.wwl.get-started-c-sharp-part-4.trophy?username=moT01&locale=en-us',
+    completedDate: 1695064986634
+  },
+  {
+    id: '647f877f07d29547b3bee1be',
+    solution:
+      'https://learn.microsoft.com/api/gamestatus/achievements/learn.wwl.get-started-c-sharp-part-5.trophy?username=moT01&locale=en-us',
+    completedDate: 1695065026465
+  },
+  {
+    id: '647f86ff07d29547b3bee1bd',
+    solution:
+      'https://learn.microsoft.com/api/gamestatus/achievements/learn.wwl.get-started-c-sharp-part-6.trophy?username=moT01&locale=en-us',
+    completedDate: 1695065060157
+  }
+];
 
 const demoUser = {
   _id: new ObjectId('5bd30e0f1caf6ac3ddddddb5'),
@@ -80,7 +120,9 @@ const demoUser = {
   isRelationalDatabaseCertV8: false,
   isCollegeAlgebraPyCertV8: false,
   isFoundationalCSharpCertV8: false,
-  completedChallenges: [],
+  completedChallenges: args.includes('--seed-trophy-challenges')
+    ? trophyChallenges
+    : [],
   portfolio: [],
   yearsTopContributor: args.includes('--top-contributor')
     ? ['2017', '2018', '2019']

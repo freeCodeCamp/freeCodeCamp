@@ -53,6 +53,10 @@ async function setupPyodide() {
 type Input = (text: string) => Promise<string>;
 type Print = (...args: unknown[]) => void;
 type ResetTerminal = () => void;
+type EvaluatedTeststring = {
+  input: string[];
+  test: () => Promise<unknown>;
+};
 
 function createJSFunctionsForPython(
   term: Terminal,
@@ -218,23 +222,36 @@ async function initTestFrame(e: InitTestFrameArg) {
     // debugger;
     try {
       // eval test string to get the dummy input and actual test
-      const { input, test } = await new Promise<{
-        input: string[];
-        test: () => Promise<unknown>;
-      }>((resolve, reject) =>
-        // To avoid race conditions, we have to run the test in a final
-        // frameDocument ready:
-        $(() => {
-          try {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-            const test: { input: string[]; test: () => Promise<unknown> } =
-              eval(testString);
-            resolve(test);
-          } catch (err) {
-            reject(err);
-          }
-        })
+      const evaluatedTestString = await new Promise<unknown>(
+        (resolve, reject) =>
+          // To avoid race conditions, we have to run the test in a final
+          // frameDocument ready:
+          $(() => {
+            try {
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              const test: { input: string[]; test: () => Promise<unknown> } =
+                eval(testString);
+              resolve(test);
+            } catch (err) {
+              reject(err);
+            }
+          })
       );
+
+      // If the test string does not evaluate to an object, then we assume that
+      // it's a standard JS test and any assertions have already passed.
+      if (typeof evaluatedTestString !== 'object') {
+        return { pass: true };
+      }
+
+      if (!evaluatedTestString || !('test' in evaluatedTestString)) {
+        throw new Error(
+          'Test string did not evaluate to an object with the test property'
+        );
+      }
+
+      const { input, test } = evaluatedTestString as EvaluatedTeststring;
+
       // TODO: throw helpful error if we run out of input values, since it's likely
       // that the user added too many input statements.
       const inputIterator = input ? input.values() : null;
@@ -252,10 +269,13 @@ async function initTestFrame(e: InitTestFrameArg) {
         resetTerminal: () => void 0
       });
 
-      // Make __pyodide available to the test code
-      const __pyodide: PyodideInterface = await this.__runPython(code);
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-      const __userGlobals = __pyodide.globals.get('__locals');
+      // We have to declare these variables in the scope of 'eval', so that they
+      // exist when the `testString` is evaluated. Otherwise, they will be
+      // undefined when `test` is called and the tests will not be able to use
+      // __pyodide or __userGlobals.
+      const __pyodide = await this.__runPython(code);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+      const __userGlobals = __pyodide.globals.get('__locals') as unknown;
       await test();
 
       return { pass: true };

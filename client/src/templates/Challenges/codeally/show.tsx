@@ -1,7 +1,7 @@
 // Package Utilities
 import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
-import React, { Component, RefObject } from 'react';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { Trans, withTranslation } from 'react-i18next';
@@ -113,7 +113,7 @@ interface ShowCodeAllyProps {
 
 class ShowCodeAlly extends Component<ShowCodeAllyProps> {
   static displayName: string;
-  private _container: RefObject<HTMLElement> | undefined;
+  private container: React.RefObject<HTMLElement> = React.createRef();
 
   componentDidMount(): void {
     const {
@@ -133,8 +133,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-
-    this._container?.current?.focus();
+    this.container.current?.focus();
   }
 
   componentWillUnmount() {
@@ -237,7 +236,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       challenge => challenge.id === challengeId
     );
     const titleContext = t('learn.github-link');
-
     return showCodeAlly ? (
       <LearnLayout>
         <Helmet title={windowTitle} />
@@ -252,7 +250,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       </LearnLayout>
     ) : (
       <Hotkeys
-        innerRef={this._container}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

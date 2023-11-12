@@ -91,6 +91,9 @@ export const msUsernameSelector = state => {
   return userSelector(state).msUsername;
 };
 
+export const completedSurveysSelector = state =>
+  userSelector(state).completedSurveys || [];
+
 export const isProcessingSelector = state => {
   return state[MainApp].isProcessing;
 };

@@ -177,7 +177,7 @@ function DefaultLayout({
           bodyAttributes={{
             class: useSystemTheme
               ? getSystemTheme()
-              : `${theme === 'night' ? 'dark' : 'light'}-palette`
+              : `${String(theme) === 'night' ? 'dark' : 'light'}-palette`
           }}
           meta={[
             {

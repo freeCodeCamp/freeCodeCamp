@@ -1,10 +1,10 @@
 # Manual de análise dos autores
 
-Se você é um autor com acesso à Propriedade do Google Analytics da publicação (editorial), pode usar este guia para visualizar o engajamento de seus artigos e pesquisar artigos no idioma da publicação.
+Se você é um autor com acesso à Propriedade do Google Analytics da publicação (editorial), pode usar este guia para visualizar o engajamento do seu artigo e pesquisar artigos no idioma da publicação.
 
 ## Pesquisar por idioma
 
-Para procurar relatórios de engajamento por um idioma específico:
+Para procurar relatórios de engajamento em um idioma específico:
 
 ![Imagem - Mostrar etapas para pesquisar por idioma no Google Analytics](https://contribute.freecodecamp.org/images/google-analytics/search-by-language.png)
 

@@ -8,6 +8,7 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
     className="challenge-title"
   >
     <h1
+      data-playwright-test-label="challenge-title"
       id="content-start"
     >
       title text

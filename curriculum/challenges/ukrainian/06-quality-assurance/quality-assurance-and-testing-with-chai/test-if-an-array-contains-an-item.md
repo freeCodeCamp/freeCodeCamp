@@ -12,7 +12,7 @@ dashedName: test-if-an-array-contains-an-item
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#12` в наборі `Arrays` змініть кожний `assert` на `assert.include` або `assert.notInclude`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
+Within `tests/1_unit-tests.js` under the test labeled `#12` in the `Arrays` suite, change each `assert` to either `assert.include` or `assert.notInclude` to make the test pass (should evaluate to `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 

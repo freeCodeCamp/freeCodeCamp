@@ -261,13 +261,6 @@ li.disabled > a {
   width: auto;
 }
 
-.two-seconds-delay-fade-in {
-  opacity: 0;
-  pointer-events: none;
-  animation: opacity-animation 1s linear 100ms forwards;
-  animation-delay: 2s;
-}
-
 .no-delay-fade-in {
   opacity: 0;
   pointer-events: none;
@@ -283,11 +276,6 @@ li.disabled > a {
     pointer-events: auto;
     opacity: 1;
   }
-}
-
-.donation-modal .btn-link:focus {
-  outline-width: 1px;
-  outline-style: solid;
 }
 
 .donation-modal .modal-title {
@@ -335,15 +323,17 @@ li.disabled > a {
   }
 }
 
-.donation-modal [role='tablist'] button {
+.donation-tier-selection [role='tablist'] button {
   background-color: transparent;
 }
-.donation-modal [role='tablist'] button:hover:not([data-state='active']) {
+.donation-tier-selection
+  [role='tablist']
+  button:hover:not([data-state='active']) {
   background-color: var(--quaternary-background);
   color: var(--quaternary-color);
 }
 
-.donation-modal [role='tablist'] button[data-state='active'] {
+.donation-tier-selection [role='tablist'] button[data-state='active'] {
   background-color: var(--quaternary-color);
 }
 

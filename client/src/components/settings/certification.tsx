@@ -131,7 +131,8 @@ const isCertMapSelector = createSelector(
     // TODO: remove Example Certification? Also, include Upcoming Python
     // Certification.
     'Example Certification': false,
-    'Upcoming Python Certification': false
+    'Upcoming Python Certification': false,
+    'A2 English for Developers': false
   })
 );
 

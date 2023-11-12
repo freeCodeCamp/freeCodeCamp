@@ -443,8 +443,10 @@ ToDo: find out why, and remove the need for it */
   margin-bottom: 14px;
 }
 
-.block-grid .progress-wrapper span {
-  color: var(--quaternary-color);
+.block-grid .progress-wrapper > div {
+  position: relative;
+  width: 80%;
+  padding-inline-end: 0.25em;
 }
 
 .block-grid .progress {

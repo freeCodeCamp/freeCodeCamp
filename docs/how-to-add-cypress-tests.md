@@ -27,25 +27,25 @@ To run tests against production builds, replace `dev` with `prd` below.
 
 - To run all tests in the `./cypress` directory:
 
-  ```console
+  ```bash
   pnpm run cypress:dev:run
   ```
 
 - To run a single test:
 
-  ```console
+  ```bash
   pnpm run cypress run --spec=cypress/<path_to_test_file>
   ```
   
   For example:
  
-  ```console
+  ```bash
   pnpm run cypress run --spec=cypress/e2e/default/landing.ts
   ```
 
 - To create a development build, start the development server, and run all existing cypress end-to-end tests:
 
-  ```console
+  ```bash
   pnpm run e2e:dev:run
   ```
 
@@ -58,25 +58,25 @@ If starting the Gitpod environment did not automatically develop the environment
 - Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
 - Create a config file.
 
-```console
+```bash
 pnpm run create:shared
 ```
 
 - Seed the database
 
-```console
+```bash
 pnpm run seed
 ```
 
 - Develop the server and client
 
-```console
+```bash
 pnpm run develop
 ```
 
 ### 2. Install Cypress Build Tools
 
-```console
+```bash
 pnpm run cypress:install-build-tools
 ```
 

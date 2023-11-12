@@ -107,6 +107,7 @@ export const StrictSolutionForm = ({
           id={`dynamic-${id}`}
           onSubmit={handleSubmit as (e: FormEvent) => void}
           style={{ width: '100%' }}
+          data-playwright-test-label='form-helper-form'
         >
           <FormFields formFields={formFields} options={options} />
           <BlockSaveButton

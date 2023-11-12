@@ -14,7 +14,7 @@ env:
 jobs:
   i18n-download-client-ui-translations:
     name: Client
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout Source Files

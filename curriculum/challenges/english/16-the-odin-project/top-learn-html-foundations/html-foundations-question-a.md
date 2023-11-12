@@ -25,12 +25,12 @@ HTML has a vast list of predefined tags that you can use to create all kinds of 
 
 Using the correct elements for content is called semantic HTML. You will explore this in much more depth later on in the curriculum.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Watch Kevin Powell’s [Introduction to HTML video](https://www.youtube.com/watch?v=LGQuIIv2RVA&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-)
-    
+
+# --question--
+
 ## --text--
 
 What are HTML tags?

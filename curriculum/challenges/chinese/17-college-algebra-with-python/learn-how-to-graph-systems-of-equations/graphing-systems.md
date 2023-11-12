@@ -12,11 +12,11 @@ This first video will show you how to graph systems of equations with written ma
 
 这是<a href="https://colab.research.google.com/drive/1N1JEZJctODxsntROnmg0VqMSHXYdIlFD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">这个视频中用到的 Colab 笔记本</a>。
 
-# --question--
-
-## --任务--
+# --任务--
 
 将视频中的代码添加到你正在创建的代数笔记本中，并使用不同的函数进行测试。
+
+# --question--
 
 ## --text--
 

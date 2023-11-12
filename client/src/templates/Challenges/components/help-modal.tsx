@@ -64,7 +64,7 @@ function HelpModal({
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className='help-modal-body text-center'>
-        <h3>
+        <h3 className='help-modal-heading'>
           <Trans i18nKey='learn.tried-rsa'>
             <a
               href={RSA}

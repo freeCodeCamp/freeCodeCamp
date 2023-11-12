@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-base-to-string */
 import ObjectID from 'bson-objectid';
 
 export interface ChallengeOptions {

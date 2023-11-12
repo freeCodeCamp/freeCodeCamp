@@ -20,11 +20,11 @@ dashedName: the-box-model-question-g
 
 ![блокова модель](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/foundations/html_css/css-foundations/the-box-model/imgs/box-model.png)
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Додайте кордон до кожного елемента на сторінці та подивіться, як розміщені блоки.
+
+# --question--
 
 ## --text--
 

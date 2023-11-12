@@ -10,11 +10,11 @@ dashedName: ratios-and-proportions-extra
 
 O último vídeo nesta seção vai mostrar para você como usar proporções em outras aplicações, como taxas de câmbio e conversão de unidades. Ele também mostrará mais sobre a configuração de seu notebook e sobre como realizar as tarefas práticas.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Abra o notebook do Colaboratory a seguir, execute a célula e <a href="https://colab.research.google.com/drive/1XjmHoERFKcvol7FPidQE-wgdvR82HV45" target="_blank" rel="noopener noreferrer nofollow">pratique a resolução de problemas de álgebra de uma etapa.</a> Como bônus, veja o código que gera os problemas da prática.
+
+# --question--
 
 ## --text--
 

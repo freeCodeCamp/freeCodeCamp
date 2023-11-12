@@ -14,7 +14,7 @@ dashedName: use-the-double-equals-to-assert-equality
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Equality` スイート内の `#5` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります)ために、それぞれの `assert` を `assert.equal` または `assert.notEqual` に変更してください。 アサートに渡された引数を変更しないでください。
+Within `tests/1_unit-tests.js` under the test labeled `#5` in the `Equality` suite, change each `assert` to either `assert.equal` or `assert.notEqual` to make the test pass (should evaluate to `true`). アサートに渡された引数を変更しないでください。
 
 # --hints--
 

@@ -51,6 +51,7 @@ const superBlockFolderMap = {
   'foundational-c-sharp-with-microsoft':
     '19-foundational-c-sharp-with-microsoft',
   'upcoming-python': '20-upcoming-python',
+  'a2-english-for-developers': '21-a2-english-for-developers',
   'example-certification': '99-example-certification'
 };
 
@@ -108,7 +109,7 @@ void (async () => {
     }
   }
   const langsToCheck = availableLangs.curriculum.filter(
-    lang => lang !== 'english'
+    lang => String(lang) !== 'english'
   );
   for (const lang of langsToCheck) {
     console.log(`\n=== ${lang} ===`);

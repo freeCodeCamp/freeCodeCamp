@@ -30,7 +30,7 @@ Si cualquiera de los dos argumentos no es un número válido, devuelve undefined
 assert.deepEqual(addTogether(2, 3), 5);
 ```
 
-`addTogether(23.4, 30)` should return 53.4.
+`addTogether(23.4, 30)` debe devolver 53.4.
 
 ```js
 assert.deepEqual(addTogether(23.4, 30), 53.4);

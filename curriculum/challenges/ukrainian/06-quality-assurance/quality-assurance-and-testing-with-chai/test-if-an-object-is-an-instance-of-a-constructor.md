@@ -14,7 +14,7 @@ dashedName: test-if-an-object-is-an-instance-of-a-constructor
 
 # --instructions--
 
-У межах `tests/1_unit-tests.js` під тестом з міткою `#18` в наборі `Objects` змініть кожний `assert` на `assert.instanceOf` або `assert.notInstanceOf`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
+Within `tests/1_unit-tests.js` under the test labeled `#18` in the `Objects` suite, change each `assert` to either `assert.instanceOf` or `assert.notInstanceOf` to make the test pass (should evaluate to `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 

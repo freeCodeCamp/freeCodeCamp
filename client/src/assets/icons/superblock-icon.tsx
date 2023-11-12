@@ -37,7 +37,8 @@ const iconMap = {
   [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra,
   [SuperBlocks.FoundationalCSharp]: CSharpLogo,
   [SuperBlocks.ExampleCertification]: ResponsiveDesign,
-  [SuperBlocks.UpcomingPython]: PythonIcon
+  [SuperBlocks.UpcomingPython]: PythonIcon,
+  [SuperBlocks.A2English]: Graduation
 };
 
 type SuperBlockIconProps = {
@@ -45,9 +46,9 @@ type SuperBlockIconProps = {
 } & React.SVGProps<SVGSVGElement>;
 
 export function SuperBlockIcon(props: SuperBlockIconProps): JSX.Element {
-  const { superBlock, className } = props;
+  const { superBlock, className, ...iconProps } = props;
   // fallback in case super block doesn't exist and for tests
   const Icon = iconMap[superBlock] ? iconMap[superBlock] : ResponsiveDesign;
 
-  return <Icon className={className} {...props} />;
+  return <Icon className={className} {...iconProps} />;
 }
