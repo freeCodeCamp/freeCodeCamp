@@ -1,6 +1,6 @@
 ---
 id: 5900f4751000cf542c50ff87
-title: 'Problem 264: Triangle Centres'
+title: 'Завдання 264: центри трикутників'
 challengeType: 1
 forumTopicId: 301913
 dashedName: problem-264-triangle-centres
@@ -8,15 +8,15 @@ dashedName: problem-264-triangle-centres
 
 # --description--
 
-Consider all the triangles having:
+Розглянемо всі трикутники, які задовільняють такі умови:
 
-- All their vertices on lattice points.
-- Circumcentre at the origin O.
-- Orthocentre at the point H(5, 0).
+- Усі вершини розташовані на точках сітки.
+- Центр описаного кола знаходиться на початку координат O.
+- Центр вписаного кола знаходиться на точці H(5, 0).
 
-There are nine such triangles having a $\text{perimeter} ≤ 50$.
+Існує дев’ять таких трикутників, які мають $\text{периметр} ≤ 50$.
 
-Listed and shown in ascending order of their perimeter, they are:
+Ось ці трикутники у порядку зростання за периметром:
 
 <table>
   <tbody>
@@ -34,14 +34,14 @@ A(8, 1), B(1, -8), C(-4, 7)<br>
 A(2, 9), B(9, -2), C(-6, -7)<br>
 A(9, 2), B(2, -9), C(-6, 7)<br>
       </td>
-      <td><img class="img-responsive center-block" alt="nine triangles ABC with perimeter ≤ 50" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangle-centres.gif" style="background-color: white; padding: 10px;"></td>
+      <td><img class="img-responsive center-block" alt="дев’ять трикутників ABC з периметром ≤ 50" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangle-centres.gif" style="background-color: white; padding: 10px;"></td>
     </tr>
   </tbody>
 </table>
 
-The sum of their perimeters, rounded to four decimal places, is 291.0089.
+Сума їхніх периметрів, округлена до чотирьох знаків після коми, дорівнює 291.0089.
 
-Find all such triangles with a $\text{perimeter} ≤ {10}^5$. Enter as your answer the sum of their perimeters rounded to four decimal places.
+Знайдіть усі такі трикутники з $\text{периметром} ≤ {10}^5$. У відповіді запишіть суму їхніх периметрів, заокруглену до чотирьох знаків після коми.
 
 # --hints--
 

@@ -22,15 +22,15 @@ Die Kindkomponente hat dann Zugriff auf die Array-Eigenschaft `colors`. Array-Me
 const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>
 ```
 
-This will join all `colors` array items into a comma separated string and produce: `<p>green, blue, red</p>`. Later, we will learn about other common methods to render arrays of data in React.
+Dies fügt alle `colors`-Arrayelemente zu einem durch Kommas getrennten String zusammen und erzeugt: `<p>green, blue, red</p>`. Später werden wir andere gängige Methoden zum Rendern von Datenarrays in React kennenlernen.
 
 # --instructions--
 
-There are `List` and `ToDo` components in the code editor. When rendering each `List` from the `ToDo` component, pass in a `tasks` property assigned to an array of to-do tasks, for example `["walk dog", "workout"]`. Then access this `tasks` array in the `List` component, showing its value within the `p` element. Use `join(", ")` to display the `props.tasks` array in the `p` element as a comma-separated list. Today's list should have at least 2 tasks and tomorrow's should have at least 3 tasks.
+Im Code-Editor gibt es `List`- und `ToDo`-Komponenten. When rendering each `List` from the `ToDo` component, pass in a `tasks` property assigned to an array of to-do tasks, for example `["walk dog", "workout"]`. Then access this `tasks` array in the `List` component, showing its value within the `p` element. Verwende `join(", ")`, um das `props.tasks`-Array im `p`-Element als kommagetrennte Liste anzuzeigen. Die heutige Liste sollte mindestens 2 Aufgaben und die Liste von morgen sollte mindestens 3 Aufgaben enthalten.
 
 # --hints--
 
-The `ToDo` component should return a single outer `div`.
+Die `ToDo`-Komponente sollte ein einzelnes äußeres `div` zurückgeben.
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 );
 ```
 
-Both instances of the `List` component should have a property called `tasks` and `tasks` should be of type array.
+Beide Instanzen der `List`-Komponente sollten eine Eigenschaft namens `tasks` enthalten und `tasks` sollte vom Typ Array sein.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-The first `List` component representing the tasks for today should have 2 or more items.
+Die erste `List`-Komponente, die die Aufgaben für den heutigen Tag darstellt, sollte 2 oder mehr Elemente enthalten.
 
 ```js
 assert(
@@ -88,7 +88,7 @@ assert(
 );
 ```
 
-The second `List` component representing the tasks for tomorrow should have 3 or more items.
+Die zweite `List`-Komponente, die die Aufgaben für den morgigen Tag darstellt, sollte 3 oder mehr Elemente enthalten.
 
 ```js
 assert(
@@ -99,7 +99,7 @@ assert(
 );
 ```
 
-The `List` component should render the value from the `tasks` prop in the `p` tag.
+Die `List`-Komponente sollte den Wert aus der `tasks`-Eigenschaft im `p`-Tag rendern.
 
 ```js
 assert(

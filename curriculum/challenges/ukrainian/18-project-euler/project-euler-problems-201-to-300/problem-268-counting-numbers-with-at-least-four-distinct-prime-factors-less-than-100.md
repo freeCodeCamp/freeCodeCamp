@@ -1,7 +1,7 @@
 ---
 id: 5900f4791000cf542c50ff8b
 title: >-
-  Problem 268: Counting numbers with at least four distinct prime factors less than 100
+  Завдання 268: підрахунок чисел з принаймні чотирма різними простими множниками меншими за 100
 challengeType: 1
 forumTopicId: 301917
 dashedName: >-
@@ -10,9 +10,9 @@ dashedName: >-
 
 # --description--
 
-It can be verified that there are 23 positive integers less than 1000 that are divisible by at least four distinct primes less than 100.
+Можна довести, що існує 23 натуральних числа менших за 1000, які діляться на принаймні чотири простих числа менших за 100 без остачі.
 
-Find how many positive integers less than ${10}^{16}$ are divisible by at least four distinct primes less than 100.
+Знайдіть кількість натуральних чисел менших за ${10}^{16}$, що діляться на принаймні чотири простих числа менших за 100 без остачі.
 
 # --hints--
 

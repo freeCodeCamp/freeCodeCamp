@@ -44,6 +44,7 @@
     "settings": "设置",
     "take-me": "访问课程",
     "check-answer": "查看你的答案",
+    "submit": "Submit",
     "get-hint": "获得提示",
     "ask-for-help": "请求帮助",
     "create-post": "在论坛发帖请求帮助",
@@ -304,7 +305,7 @@
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp 是捐助者支持的 501(c)(3) 条款下具有免税资格的慈善组织（税号：82-0779546）。",
-    "mission-statement": "我们的使命：帮助人们免费学习编程。我们通过创建成千上万的视频、文章和交互式编程课程——所有内容向公众免费开放——来实现这一目标。学员在世界各地自发成立数千个 freeCodeCamp 学习小组。",
+    "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.",
     "donation-initiatives": "所有给 freeCodeCamp 的捐款都将用于我们的教育项目，购买服务器和其他服务，以及聘用员工。",
     "donate-text": "你可以<1>在此处进行免税捐赠</1>。",
     "trending-guides": "精选文章",
@@ -417,6 +418,7 @@
     "building-a-university": "我们正在创建一个免费计算机科学大学学位课程",
     "if-help-university": "我们已取得了重大进展。请支持我们的慈善组织完成这项长期事业。",
     "preview-external-window": "Preview currently showing in external window.",
+    "fill-in-the-blank": "Fill in the blank",
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
@@ -890,6 +892,8 @@
       "college-algebra-with-python-v8": "Python 和大学代数认证",
       "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
+      "A2 English for Developers": "A2 English for Developers",
+      "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "旧版前端",
       "legacy-front-end": "前端认证",
       "Legacy Back End": "旧版后端",

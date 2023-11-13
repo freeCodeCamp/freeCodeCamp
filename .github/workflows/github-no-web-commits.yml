@@ -24,12 +24,10 @@ jobs:
             const response = await github.rest.teams
               .getMembershipForUserInOrg({
                 org: context.repo.owner,
-                team_slug: team,
+                team_slug: 'moderators',
                 username: prAuthor
               })
-              .catch(() => {
-                status: 404;
-              });
+              .catch(() => ({ status: 404 }));
             let isAllowListed = false;
             if (prAuthor === 'renovate[bot]' || response.status === 200) {
               isAllowListed = true;
