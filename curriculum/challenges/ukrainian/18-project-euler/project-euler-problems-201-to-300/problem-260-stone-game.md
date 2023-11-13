@@ -18,19 +18,19 @@ dashedName: problem-260-stone-game
 - $N$ камені з кожної з двох куп ($2N$ загалом); або
 - $N$ камені з кожної з трьох куп ($3N$ загалом).
 
-The player taking the last stone(s) wins the game.
+Виграє той, хто забере останній камінь.
 
-A winning configuration is one where the first player can force a win.
+Виграшна конфігурація — це така конфігурація, в якій перший гравець може зразу виграти.
 
-For example, (0,0,13), (0,11,11) and (5,5,5) are winning configurations because the first player can immediately remove all stones.
+Наприклад, (0,0,13), (0,11,11) та (5,5,5) є виграшними конфігураціями, оскільки перший гравець може одразу ж забрати всі камені.
 
-A losing configuration is one where the second player can force a win, no matter what the first player does.
+Програшна конфігурація — це така конфігурація, в якій другий гравець може зразу виграти, незалежно від того, що робить перший гравець.
 
-For example, (0,1,2) and (1,3,3) are losing configurations: any legal move leaves a winning configuration for the second player.
+Наприклад, (0,1,2) та (1,3,3) є програшними конфігураціями, оскільки в результаті ходів першого гравця утворюється виграшна конфігурація для другого гравця.
 
-Consider all losing configurations ($x_i$,$y_i$,$z_i$) where $x_i ≤ y_i ≤ z_i ≤ 100$. We can verify that $\sum (x_i + y_i + z_i) = 173\\,895$ for these.
+Розглянемо усі програшні конфігурації ($x_i$,$y_i$,$z_i$), де $x_i ≤ y_i ≤ z_i ≤ 100$. Можна довести, що $\sum (x_i + y_i + z_i) = 173\\,895$.
 
-Find $\sum (x_i + y_i + z_i)$ where ($x_i$,$y_i$,$z_i$) ranges over the losing configurations with $x_i ≤ y_i ≤ z_i ≤ 1000$.
+Знайдіть $\sum (x_i + y_i + z_i)$, де ($x_i$,$y_i$,$z_i$) є діапазоном всіх програшних конфігурацій за умови $x_i ≤ y_i ≤ z_i ≤ 1000$.
 
 # --hints--
 
