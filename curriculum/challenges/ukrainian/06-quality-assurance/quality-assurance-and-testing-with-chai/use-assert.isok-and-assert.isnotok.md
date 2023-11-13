@@ -16,7 +16,7 @@ dashedName: use-assert-isok-and-assert-isnotok
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labeled `#3` in the `Basic Assertions` suite, change each `assert` to either `assert.isOk()` or `assert.isNotOk()` to make the test pass (should evaluate to `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#3` в наборі `Basic Assertions` змініть кожний `assert` на `assert.isOk()` або `assert.isNotOk()`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 

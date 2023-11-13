@@ -14,7 +14,7 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labeled `#6` in the `Equality` suite, change each `assert` to either `assert.strictEqual` or `assert.notStrictEqual` to make the test pass (should evaluate to `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#6` в наборі `Equality` змініть кожний `assert` на `assert.strictEqual` або `assert.notStrictEqual`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 

@@ -14,7 +14,7 @@ dashedName: use-the-double-equals-to-assert-equality
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labeled `#5` in the `Equality` suite, change each `assert` to either `assert.equal` or `assert.notEqual` to make the test pass (should evaluate to `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#5` в наборі `Equality` змініть кожний `assert` на `assert.equal` або `assert.notEqual`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 

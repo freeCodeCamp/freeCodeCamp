@@ -9,17 +9,17 @@ dashedName: build-a-random-quote-machine
 # --description--
 **Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-**Objective:** Build an app that is functionally similar to this: <a href="https://random-quote-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://random-quote-machine.freecodecamp.rocks/</a>.
+**Aufgabe:** Erstelle eine Anwendung, die eine ähnliche Funktionalität wie <a href="https://random-quote-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://random-quote-machine.freecodecamp.rocks/</a> aufweist.
 
-Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Gib dem Ganzen deinen persönlichen Stil.
 
-You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
+Du kannst eine beliebige Mischung aus HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux und jQuery verwenden, um dieses Projekt fertigzustellen. Du solltest ein Frontend-Framework (wie zum Beispiel React) verwenden, da es in diesem Abschnitt um das Lernen von Frontend-Frameworks geht. Zusätzliche Technologien, die oben nicht aufgeführt sind, werden nicht empfohlen und ihre Verwendung erfolgt auf eigene Gefahr. Wir prüfen die Unterstützung anderer Frontend-Frameworks wie Angular und Vue, aber sie werden derzeit nicht unterstützt. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Viel Spaß beim Programmieren!
 
 **User Story #1:** I can see a wrapper element with a corresponding `id="quote-box"`.
 
-**User Story #2:** Within `#quote-box`, I can see an element with a corresponding `id="text"`.
+**User Story #2:** Innerhalb `#quote-box` sehe ich ein Element mit einer entsprechenden `id="text"`.
 
-**User Story #3:** Within `#quote-box`, I can see an element with a corresponding `id="author"`.
+**User Story #3:** Innerhalb `#quote-box` sehe ich ein Element mit einer entsprechenden `id="author"`.
 
 **User Story #4:** Within `#quote-box`, I can see a clickable element with a corresponding `id="new-quote"`.
 
@@ -41,7 +41,7 @@ You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' t
 
 Once you're done, submit the URL to your working project with all its tests passing.
 
-**Note:** Twitter does not allow links to be loaded in an iframe. Try using the `target="_blank"` or `target="_top"` attribute on the `#tweet-quote` element if your tweet won't load. `target="_top"` will replace the current tab so make sure your work is saved.
+**Hinweis:** Twitter erlaubt es nicht, dass Links in einem Iframe geladen werden. Versuche es mit dem `target="_blank"`- oder `target="_top"`-Attribut im `#tweet-quote`-Element, wenn dein Tweet nicht geladen werden kann. `target="_top"` wird die aktuelle Registerkarte ersetzen, stelle also sicher, dass deine Arbeit gespeichert ist.
 
 # --solutions--
 
