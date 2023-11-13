@@ -20,6 +20,7 @@ const SearchBarOptimized = ({
     if (value && value.length > 1) {
       window.open(`${searchUrl}?query=${encodeURIComponent(value)}`, '_blank');
     }
+    setValue('');
   };
   const onClick = () => {
     setValue('');
