@@ -14,7 +14,8 @@
           "cypress.config.js",
           "cypress/e2e/**/*.{js,ts}",
           "cypress/support/*.ts",
-          "cypress/plugins/index.js"
+          "cypress/plugins/index.js",
+          "cypress-install.js"
         ]
       }
     },
