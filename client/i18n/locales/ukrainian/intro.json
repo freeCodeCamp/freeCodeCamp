@@ -1149,6 +1149,27 @@
       }
     }
   },
+  "a2-english-for-developers": {
+    "title": "Англійська мова A2 для розробників (бета-версія)",
+    "intro": [
+      "Цей курс створений для вивчення англійської мови розробниками.",
+      "Більше тексту тут."
+    ],
+    "blocks": {
+      "learn-greetings-in-your-first-day-at-the-office": {
+        "title": "Learn Greetings in your First Day at the Office",
+        "intro": ["Learn greetings."]
+      },
+      "learn-introductions-in-an-online-team-meeting": {
+        "title": "Learn Introductions in an Online Team Meeting",
+        "intro": ["Learn introductions."]
+      },
+      "learn-conversation-starters-in-the-break-room": {
+        "title": "Learn Conversation Starters in the Break Room",
+        "intro": ["Learn conversation starters."]
+      }
+    }
+  },
   "example-certification": {
     "title": "Зразкова сертифікація",
     "intro": ["заповнювач"],

@@ -44,6 +44,7 @@
     "settings": "الإعدادات",
     "take-me": "خذني إلى التحديات",
     "check-answer": "تحقق من إجابتك",
+    "submit": "Submit",
     "get-hint": "الحصول على تلميح",
     "ask-for-help": "طلب المساعدة",
     "create-post": "إنشاء منشور مساعدة في المنتدى",
@@ -304,7 +305,7 @@
   },
   "footer": {
     "tax-exempt-status": "تكون مؤسسة freeCodeCamp خيرية معفاة ضريبياً 501(c)(3) يدعمها المتبرعين (الرقم التعريفي الضريبي الاتحادي للولايات المتحدة: 82-0779546)",
-    "mission-statement": "مهمتنا: مساعدة الناس على تعلم البرمجة مجاناً. ونحن نحقق ذلك بإنشاء آلاف الأشرطة من الفيديو والمقالات ودروس البرمجة التفاعلية - وجميعها متاحة مجاناً للجمهور. ولدينا أيضاً الآلاف من المجموعات الدراسية في freeCodeCamp حول العالم.",
+    "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.",
     "donation-initiatives": "التبرعات لـ freeCodeCamp تذهب لمبادراتنا التعليمية، وتساعد في دفع تكاليف الخوادم، والخدمات، والموظفين.",
     "donate-text": "يمكنك <1>تقديم تبرع قابل للخصم الضريبي هنا </1>.",
     "trending-guides": "أدلة إرشادية",
@@ -417,6 +418,7 @@
     "building-a-university": "نحن نبني برنامَج مجاني لشهادة جامعة علوم الكمبيوتر Computer Science",
     "if-help-university": "لقد حققنا قدرا كبيرا من التقدم بالفعل. أدعم منظمتنا الخيرية بالطريق الطويل الذي أمامنا.",
     "preview-external-window": "Preview currently showing in external window.",
+    "fill-in-the-blank": "Fill in the blank",
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
@@ -890,6 +892,8 @@
       "college-algebra-with-python-v8": "College Algebra with Python Certification",
       "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
+      "A2 English for Developers": "A2 English for Developers",
+      "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "الواجهة الأمامية التراثية",
       "legacy-front-end": "شهادة الواجهة الأمامية التراثية",
       "Legacy Back End": "الواجهة الخلفية التراثية",
