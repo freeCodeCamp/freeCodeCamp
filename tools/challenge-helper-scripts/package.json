@@ -30,7 +30,7 @@
     "glob": "^8.1.0",
     "gray-matter": "4.0.3",
     "inquirer": "8.2.6",
-    "prettier": "3.0.3",
+    "prettier": "3.1.0",
     "ts-node": "10.9.1",
     "typescript": "5.2.2"
   }
