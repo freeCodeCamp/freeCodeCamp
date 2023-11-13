@@ -44,9 +44,8 @@ export default async function bootChallenge(app, done) {
   const send200toNonUser = ifNoUserSend(true);
   const api = app.loopback.Router();
   const router = app.loopback.Router();
-  const challengeUrlResolver = await createChallengeUrlResolver(
-    getChallenges()
-  );
+  const challengeUrlResolver =
+    await createChallengeUrlResolver(getChallenges());
   const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
     challengeUrlResolver,
     normalizeParams,

@@ -29,10 +29,10 @@ function DonateCompletion({
   const heading = redirecting
     ? `${t('donate.redirecting')}`
     : processing
-    ? `${t('donate.processing')}`
-    : success
-    ? `${t('donate.thank-you')}`
-    : `${t('donate.error')}`;
+      ? `${t('donate.processing')}`
+      : success
+        ? `${t('donate.thank-you')}`
+        : `${t('donate.error')}`;
 
   return (
     <Alert variant={style} className='donation-completion'>
