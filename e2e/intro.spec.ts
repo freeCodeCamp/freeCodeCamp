@@ -56,6 +56,10 @@ test.describe('Intro Component E2E Test Suite with Signed In User', () => {
     expect(quote).not.toBeNull();
     expect(author).not.toBeNull();
   });
+
+  test('Verifies the "start-at-beginning" Section', async ({ page }) => {
+    await expect(page.getByTestId('start-at-beginning')).toBeVisible();
+  });
 });
 
 test.describe('Intro Component E2E Test Suite with Signed Out User', () => {
@@ -70,6 +74,7 @@ test.describe('Intro Component E2E Test Suite with Signed Out User', () => {
     for (let i = 0; i < IntroDescription.length; i++) {
       await expect(page.getByText(IntroDescription[i])).toBeVisible();
     }
+    await expect(page.getByText(translations.misc['quincy'])).toBeVisible();
   });
 
   test('Verifies Login CTA', async ({ page }) => {
