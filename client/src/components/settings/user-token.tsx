@@ -7,8 +7,6 @@ import { Panel, Button } from '@freecodecamp/ui';
 import { deleteUserToken } from '../../redux/actions';
 import { FullWidthRow, Spacer } from '../helpers';
 
-import './user-token.css';
-
 type UserTokenProps = {
   deleteUserToken: () => void;
   t: TFunction;
