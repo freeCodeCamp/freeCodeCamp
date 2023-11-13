@@ -1145,6 +1145,27 @@
       }
     }
   },
+  "a2-english-for-developers": {
+    "title": "A2 English for Developers (Beta)",
+    "intro": [
+      "This course teaches the English language, designed for developers.",
+      "More text here."
+    ],
+    "blocks": {
+      "learn-greetings-in-your-first-day-at-the-office": {
+        "title": "Learn Greetings in your First Day at the Office",
+        "intro": ["Learn greetings."]
+      },
+      "learn-introductions-in-an-online-team-meeting": {
+        "title": "Learn Introductions in an Online Team Meeting",
+        "intro": ["Learn introductions."]
+      },
+      "learn-conversation-starters-in-the-break-room": {
+        "title": "Learn Conversation Starters in the Break Room",
+        "intro": ["Learn conversation starters."]
+      }
+    }
+  },
   "example-certification": {
     "title": "示例认证",
     "intro": ["占位符"],

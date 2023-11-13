@@ -44,6 +44,7 @@
     "settings": "設定",
     "take-me": "チャレンジに移動",
     "check-answer": "解答をチェック",
+    "submit": "Submit",
     "get-hint": "ヒントを見る",
     "ask-for-help": "質問する",
     "create-post": "フォーラムにヘルプ投稿を作成",
@@ -304,7 +305,7 @@
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp は皆様のご寄付により支えられている非課税の 501(c)(3) 慈善団体です。(United States Federal Tax Identification Number: 82-0779546)",
-    "mission-statement": "私たちのミッション: 人々が無料でコーディングを学べるよう支援することです。その実現のため、何千もの動画、記事、インタラクティブなコーディングレッスンを作成し、すべて無料で公開しています。さらに、数千の freeCodeCamp スタディグループが世界中に存在します。",
+    "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.",
     "donation-initiatives": "freeCodeCamp へのご寄付は教育活動のために用いられ、サーバー、サービス、スタッフなどの費用に充てられます。",
     "donate-text": "<1>こちらからご寄付をお願いいたします</1>。(場合により税控除可能)",
     "trending-guides": "人気の記事",
@@ -417,6 +418,7 @@
     "building-a-university": "freeCodeCamp では無料のコンピューターサイエンス学位プログラムの設立に取り組んでいます。",
     "if-help-university": "すでに順調に進んでいますが、この先更に長い道のりが待っています。ぜひ私たちのチャリティー活動をご支援ください。",
     "preview-external-window": "Preview currently showing in external window.",
+    "fill-in-the-blank": "Fill in the blank",
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
@@ -890,6 +892,8 @@
       "college-algebra-with-python-v8": "Python を用いた代数学認定証",
       "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
+      "A2 English for Developers": "A2 English for Developers",
+      "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "(レガシー) フロントエンド",
       "legacy-front-end": "フロントエンド認定証",
       "Legacy Back End": "(レガシー) バックエンド",

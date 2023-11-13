@@ -44,6 +44,7 @@
     "settings": "Impostazioni",
     "take-me": "Portami alle Sfide",
     "check-answer": "Verifica la tua risposta",
+    "submit": "Submit",
     "get-hint": "Ottieni un suggerimento",
     "ask-for-help": "Chiedi aiuto",
     "create-post": "Crea un post di aiuto sul forum",
@@ -304,7 +305,7 @@
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp è un'organizzazione di beneficenza 501(c)(3) esentasse supportata da donazioni (Numero di identificazione per le tasse federali negli Stati Uniti d'America: 82-0779546)",
-    "mission-statement": "La nostra missione: aiutare le persone a imparare a programmare gratuitamente. Lo facciamo creando migliaia di video, articoli e lezioni di programmazione interattive - tutti liberamente disponibili al pubblico. Abbiamo anche migliaia di gruppi di studio freeCodeCamp in tutto il mondo.",
+    "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.",
     "donation-initiatives": "Le donazioni a freeCodeCamp vanno alle nostre iniziative educative e aiutano a pagare i server, i servizi e il personale.",
     "donate-text": "Puoi fare una <1>donazione deducibile dalle tasse qui</1>.",
     "trending-guides": "Guide Di Tendenza",
@@ -417,6 +418,7 @@
     "building-a-university": "Stiamo creando un corso di laurea gratuito in Scienze Informatiche",
     "if-help-university": "Abbiamo già fatto tanti progressi. Sostieni il nostro ente benefico con la lunga strada che ci attende.",
     "preview-external-window": "Preview currently showing in external window.",
+    "fill-in-the-blank": "Fill in the blank",
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
@@ -890,6 +892,8 @@
       "college-algebra-with-python-v8": "Certificazione di Algebra Universitaria con Python",
       "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
+      "A2 English for Developers": "A2 English for Developers",
+      "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "Front End Legacy",
       "legacy-front-end": "Certificazione Front End",
       "Legacy Back End": "Back End Legacy",
