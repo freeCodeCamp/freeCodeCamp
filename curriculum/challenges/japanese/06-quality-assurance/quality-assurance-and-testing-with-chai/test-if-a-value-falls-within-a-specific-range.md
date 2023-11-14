@@ -18,7 +18,7 @@ dashedName: test-if-a-value-falls-within-a-specific-range
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Comparisons` スイート内の `#10` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.approximately` に変更してください。
+Within `tests/1_unit-tests.js` under the test labeled `#10` in the `Comparisons` suite, change each `assert` to `assert.approximately` to make the test pass (should evaluate to `true`).
 
 テストを常に成功させるには、最小範囲 (3 番目のパラメータ) を選択してください。 範囲は、1 未満でなければなりません。
 

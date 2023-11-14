@@ -18,7 +18,7 @@ Comprueba que `actual` es igual a `expected`, dentro de un rango +/- `delta`.
 
 # --instructions--
 
-Dentro de `tests/1_unit-tests.js` bajo la prueba etiquetada `#10` en `Comparisons` suite, cambiar cada `assert` a `assert.approximately` para que el test sea superado (debe evaluarse a `true`).
+Within `tests/1_unit-tests.js` under the test labeled `#10` in the `Comparisons` suite, change each `assert` to `assert.approximately` to make the test pass (should evaluate to `true`).
 
 Elija el rango mínimo (3er parámetro), para hacer que la prueba sea superada. Esto debe ser inferior a 1.
 

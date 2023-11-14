@@ -51,6 +51,7 @@ const superBlockFolderMap = {
   'foundational-c-sharp-with-microsoft':
     '19-foundational-c-sharp-with-microsoft',
   'upcoming-python': '20-upcoming-python',
+  'a2-english-for-developers': '21-a2-english-for-developers',
   'example-certification': '99-example-certification'
 };
 

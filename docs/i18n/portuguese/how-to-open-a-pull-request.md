@@ -115,14 +115,14 @@ Quando se está trabalhando em erros normais e funcionalidades no seu branch `ma
 
 1. Faça um rebase na sua cópia local:
 
-   ```console
+   ```bash
    git checkout <pr-branch>
    git pull --rebase upstream main
    ```
 
 2. Resolva quaisquer conflitos e adicione / edite commits
 
-   ```console
+   ```bash
    # isso
    git add .
    git commit -m "chore: resolve conflitos"
@@ -134,7 +134,7 @@ Quando se está trabalhando em erros normais e funcionalidades no seu branch `ma
 
 3. Faça um push das suas alterações para o PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch>
    ```
 
@@ -144,7 +144,7 @@ Quando você estiver trabalhando em funcionalidades para nossos próximos branch
 
 1. Certifique-se de que seu upstream esteja sincronizado com seu local:
 
-   ```console
+   ```bash
    git checkout main
    git fetch --all --prune
    git checkout next-python-projects
@@ -155,7 +155,7 @@ Quando você estiver trabalhando em funcionalidades para nossos próximos branch
 
    a. Exclua seu branch local depois de ter feito um backup (se você ainda o tem localmente):
 
-   ```console
+   ```bash
    git checkout <pr-branch-nome>
 
    # exemplo:
@@ -171,7 +171,7 @@ Quando você estiver trabalhando em funcionalidades para nossos próximos branch
 
    b. Ou apenas faça um backup do seu branch de PR (se você não o tem localmente):
 
-   ```console
+   ```bash
    git checkout -b <backup-branch-nome> origin/<pr-branch-nome>
 
    # exemplo:
@@ -180,14 +180,14 @@ Quando você estiver trabalhando em funcionalidades para nossos próximos branch
 
 3. Comece do zero:
 
-   ```console
+   ```bash
    git checkout -b <pr-branch-nome> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
 4. Resolva os conflitos, faça a limpeza, instale as dependências e execute os testes
 
-   ```console
+   ```bash
    pnpm run clean
 
    pnpm install
@@ -201,6 +201,6 @@ Quando você estiver trabalhando em funcionalidades para nossos próximos branch
 
 5. Se tudo estiver correto, faça um push ao PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch-nome>
    ```

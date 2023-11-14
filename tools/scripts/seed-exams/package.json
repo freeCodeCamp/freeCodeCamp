@@ -19,6 +19,7 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "devDependencies": {
+    "debug": "4.3.4",
     "dotenv": "16.3.1",
     "joi": "17.11.0",
     "joi-objectid": "3.0.1",

@@ -232,6 +232,8 @@ As frases devem ser claras e resumidas com o mínimo de termos técnicos. Se usa
 
 Mantenha os parágrafos curtos (em torno de 1-4 frases). É mais provável que as pessoas leiam vários parágrafos curtos do que um parágrafo enorme.
 
+Use inglês americano. Por exemplo, use `labeled` em vez de `labelled`.
+
 O desafio de texto deve usar a segunda pessoa ("você") para ajudar a dar um tom coloquial. Dessa forma, o texto e as instruções parecem falar diretamente ao usuário freeCodeCamp que está resolvendo o desafio. Tente evitar usar a primeira pessoa ("eu", "nós", "vamos").
 
 Não use links externos. Eles interrompem o fluxo. Os usuários do freeCodeCamp nunca devem precisar pesquisar nada no Google durante esses desafios. Se há recursos que você acha que os usuários aproveitarão, adicione-os no artigo relacionado ao guia do desafio.
@@ -309,7 +311,7 @@ Desafios devem ter um número mínimo de testes necessários para verificar que 
 
 Nossa meta é comunicar o ponto que o desafio está tentando ensinar e testar se eles entenderam esse ponto.
 
-Os testes do desafio podem usar bibliotecas Node.js e Chai.js. Se necessário, o código gerado pro usuário pode ser acessado na variável `code` também. Além disso, os objetos `__helpers` expõem várias funções que simplificam o processo de escrita dos testes. As funções disponíveis estão definidas em _client/src/utils/curriculum-helpers.ts_.
+Os testes do desafio podem usar bibliotecas Node.js e Chai.js. Se necessário, o código gerado pro usuário pode ser acessado na variável `code` também. Além disso, os objetos `__helpers` expõem várias funções que simplificam o processo de escrita dos testes. As funções disponíveis estão definidas no repositório [curriculum-helpers](https://github.com/freeCodeCamp/curriculum-helpers/blob/main/lib/index.ts).
 
 ## Formatação do código seed
 

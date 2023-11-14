@@ -90,7 +90,8 @@ describe('external curriculum data build', () => {
       'foundational-c-sharp-with-microsoft',
       'the-odin-project',
       'upcoming-python',
-      'example-certification'
+      'example-certification',
+      'a2-english-for-developers'
     ];
 
     // TODO: this is a hack, we should have a single source of truth for the

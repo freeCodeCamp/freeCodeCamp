@@ -115,14 +115,14 @@
 
 1. Перебазуйте свою локальну копію:
 
-   ```console
+   ```bash
    git checkout <pr-branch>
    git pull --rebase upstream main
    ```
 
 2. Вирішіть будь-які конфлікти та додайте/редагуйте коміти
 
-   ```console
+   ```bash
    # Або
    git add .
    git commit -m "chore: resolve conflicts"
@@ -134,7 +134,7 @@
 
 3. Відправте зміни до PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch>
    ```
 
@@ -144,7 +144,7 @@
 
 1. Переконайтесь, що upstream синхронізовано з локальною гілкою:
 
-   ```console
+   ```bash
    git checkout main
    git fetch --all --prune
    git checkout next-python-projects
@@ -155,7 +155,7 @@
 
    a. Або видаліть локальну гілку після створення резервної копії (якщо вона досі існує локально):
 
-   ```console
+   ```bash
    git checkout <pr-branch-name>
 
    # приклад:
@@ -171,7 +171,7 @@
 
    b. Або зробіть резервну копію гілки PR (якщо вона не існує локально):
 
-   ```console
+   ```bash
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
    # приклад:
@@ -180,14 +180,14 @@
 
 3. Розпочніть з нуля:
 
-   ```console
+   ```bash
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
 4. Розв’яжіть будь-які конфлікти, поприбирайте, встановіть залежності та запустіть тести
 
-   ```console
+   ```bash
    pnpm run clean
 
    pnpm install
@@ -201,6 +201,6 @@
 
 5. Якщо все виглядає добре, передайте до PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch-name>
    ```

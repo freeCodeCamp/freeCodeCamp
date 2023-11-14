@@ -232,6 +232,8 @@ Sentences should be clear and concise with minimal jargon. If used, jargon shoul
 
 Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
 
+Use american english, e.g., use `labeled` instead of `labelled`.
+
 Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
 Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
@@ -306,7 +308,7 @@ Le sfide dovrebbero avere il numero minimo di test per verificare che un camper 
 
 Il nostro obbiettivo è comunicare il singolo punto che la sfida sta cercando di insegnare, e testare che abbiano capito il punto.
 
-I test delle sfide possono fare uso delle librerie di asserzioni Node.js e Chai.js. E, se necessario, il codice generato dall'utente può essere acceduto dalla variabile `code`. In aggiunta, l'oggetto `__helpers` mette a disposizione diverse funzioni che semplificano il processo di scrittura dei test. Le funzioni disponibili sono definite in _client/src/utils/curriculum-helpers.ts_.
+I test delle sfide possono fare uso delle librerie di asserzioni Node.js e Chai.js. E, se necessario, il codice generato dall'utente può essere acceduto dalla variabile `code`. In aggiunta, l'oggetto `__helpers` mette a disposizione diverse funzioni che semplificano il processo di scrittura dei test. The available functions are defined in the [curriculum-helpers](https://github.com/freeCodeCamp/curriculum-helpers/blob/main/lib/index.ts) repo.
 
 ## Formatting Seed Code
 

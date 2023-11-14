@@ -1,6 +1,6 @@
 import fastifyCookie from '@fastify/cookie';
 import fastifyCsrfProtection from '@fastify/csrf-protection';
-import middie from '@fastify/middie';
+import express from '@fastify/express';
 import fastifySession from '@fastify/session';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
@@ -21,7 +21,6 @@ import Fastify, {
 import fastifyAuth0 from 'fastify-auth0-verify';
 
 import prismaPlugin from './db/prisma';
-import { testMiddleware } from './middleware';
 import cors from './plugins/cors';
 import jwtAuthz from './plugins/fastify-jwt-authz';
 import { NodemailerProvider } from './plugins/mail-providers/nodemailer';
@@ -33,7 +32,8 @@ import sessionAuth from './plugins/session-auth';
 import {
   auth0Routes,
   devLoginCallback,
-  devLegacyAuthRoutes
+  devLegacyAuthRoutes,
+  mobileAuth0Routes
 } from './routes/auth';
 import { challengeRoutes } from './routes/challenge';
 import { deprecatedEndpoints } from './routes/deprecated-endpoints';
@@ -106,7 +106,7 @@ export const build = async (
     return { hello: 'world' };
   });
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
-  await fastify.register(middie);
+  await fastify.register(express);
   if (SENTRY_DSN) {
     await fastify.register(fastifySentry, { dsn: SENTRY_DSN });
   }
@@ -202,11 +202,10 @@ export const build = async (
   void fastify.register(jwtAuthz);
   void fastify.register(sessionAuth);
 
-  void fastify.use('/test', testMiddleware);
-
   void fastify.register(prismaPlugin);
 
   void fastify.register(auth0Routes, { prefix: '/auth' });
+  void fastify.register(mobileAuth0Routes);
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
     void fastify.register(devLegacyAuthRoutes);

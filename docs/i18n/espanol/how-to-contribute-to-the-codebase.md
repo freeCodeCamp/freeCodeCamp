@@ -10,13 +10,13 @@ Sigue estos pasos:
 
 1. 1. Utiliza el siguiente comando para confirmar que estes en la rama `main`:
 
-   ```console
+   ```bash
    git status
    ```
 
    el comando debería devolverte el siguiente resultado:
 
-   ```console
+   ```bash
    On branch main
    Your branch is up-to-date with 'origin/main'.
 
@@ -25,7 +25,7 @@ Sigue estos pasos:
 
    If you got a different message, then you aren't on main or your working directory isn't clean, resolve any outstanding files/commits and checkout `main`:
 
-   ```console
+   ```bash
    git checkout main
    ```
 
@@ -39,25 +39,25 @@ Sigue estos pasos:
 
    Actualizar tu copia del repositorio principal de freeCodeCamp:
 
-   ```console
+   ```bash
    git fetch upstream
    ```
 
    Formatea tu rama main con la rama main de freeCodeCamp:
 
-   ```console
+   ```bash
    git reset --hard upstream/main
    ```
 
    Hace push de tu rama main a tu bifurcación original para limpiar tu historial en GitHub:
 
-   ```console
+   ```bash
    git push origin main --force
    ```
 
    You can validate that your current main matches the upstream/main by performing a diff:
 
-   ```console
+   ```bash
    git diff upstream/main
    ```
 
@@ -69,7 +69,7 @@ Sigue estos pasos:
 
    Verificá que estás en `main` siguiendo los pasos ya explicados y empezá desde ahí:
 
-   ```console
+   ```bash
    git checkout -b fix/update-guide-for-xyz
    ```
 
@@ -93,13 +93,13 @@ Sigue estos pasos:
 
 7. Comprobá y confirmá los archivos que estás actualizando:
 
-   ```console
+   ```bash
    git status
    ```
 
    Este comando debería mostrar una lista de los archivos `unstaged` que editaste.
 
-   ```console
+   ```bash
    On branch feat/documentation
    Your branch is up to date with 'upstream/feat/documentation'.
 
@@ -118,25 +118,25 @@ Sigue estos pasos:
 
    En este paso, sólo deberías marcar los archivos que has editado o añadido tu mismo. Puede realizar un reseteo y resolver archivos que no tenías intención de cambiar si es necesario.
 
-   ```console
+   ```bash
    git add path/to/my/changed/file.ext
    ```
 
    O puedes añadir todos los archivos que no estén `unstaged` al área de staging:
 
-   ```console
+   ```bash
    git add .
    ```
 
    Sólo los archivos que fueron movidos al área de staging serán añadidos cuando hagas un commit.
 
-   ```console
+   ```bash
    git status
    ```
 
    Resultado:
 
-   ```console
+   ```bash
    On branch feat/documentation
    Your branch is up to date with 'upstream/feat/documentation'.
 
@@ -151,7 +151,7 @@ Sigue estos pasos:
 
    Ahora, puedes confirmar tus cambios con un mensaje corto así:
 
-   ```console
+   ```bash
    git commit -m "fix: my short commit message"
    ```
 
@@ -181,7 +181,7 @@ Sigue estos pasos:
 
 9. Si te das cuenta de que necesitas editar un archivo o actualizar el mensaje de confirmación después de hacer un commit puedes hacerlo después de editar los archivos con:
 
-   ```console
+   ```bash
    git commit --amend
    ```
 
@@ -189,7 +189,7 @@ Sigue estos pasos:
 
 10. A continuación, puedes enviar tus cambios a tu bifurcación:
 
-    ```console
+    ```bash
     git push origin branch/name-here
     ```
 

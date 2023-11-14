@@ -57,6 +57,12 @@ export type Question = {
   answers: MultipleChoiceAnswer[];
   solution: number;
 };
+
+export type FillInTheBlank = {
+  sentence: string;
+  blanks: MultipleChoiceAnswer[];
+};
+
 export type Fields = {
   slug: string;
   blockHashSlug: string;
@@ -102,6 +108,7 @@ export type ChallengeWithCompletedNode = {
 
 export type ChallengeNode = {
   challenge: {
+    audioPath: string;
     block: string;
     certification: string;
     challengeOrder: number;
@@ -110,6 +117,7 @@ export type ChallengeNode = {
     description: string;
     challengeFiles: ChallengeFiles;
     fields: Fields;
+    fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
     guideUrl: string;
     head: string[];
