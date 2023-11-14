@@ -19,7 +19,7 @@ function getCompletedIds(completedChallenges: ChallengeData[]): string[] {
   return completedChallenges.map((challenge: ChallengeData) => challenge.id);
 }
 
-describe('failed update flushing', function () {
+describe('failed update flushing', { browser: 'chrome' }, function () {
   before(() => {
     cy.task('seed');
     cy.login();

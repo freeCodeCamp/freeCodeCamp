@@ -44,6 +44,7 @@
     "settings": "Configurações",
     "take-me": "Leve-me aos desafios",
     "check-answer": "Confira sua resposta",
+    "submit": "Enviar",
     "get-hint": "Obter uma dica",
     "ask-for-help": "Pedir ajuda",
     "create-post": "Criar uma postagem de ajuda no fórum",
@@ -304,7 +305,7 @@
   },
   "footer": {
     "tax-exempt-status": "O freeCodeCamp é uma organização beneficente 501(c)(3), isenta de impostos e apoiada por doações (Número de identificação fiscal federal dos Estados Unidos: 82-0779546).",
-    "mission-statement": "Nossa missão: ajudar as pessoas a aprender a programar de graça. Nós conseguimos isso através da criação de milhares de vídeos, artigos e aulas interativas de programação – tudo disponível gratuitamente para o público. Também temos milhares de grupos de estudo do freeCodeCamp espalhados por todo o mundo.",
+    "mission-statement": "Nossa missão: ajudar as pessoas a aprender a programar de forma gratuita. Conseguimos isto criando milhares de vídeos, artigos e lições de programação interativas, todas disponíveis gratuitamente para o público.",
     "donation-initiatives": "Doações para o freeCodeCamp vão para as nossas iniciativas educacionais e ajudam a pagar por servidores, serviços e equipe.",
     "donate-text": "Você pode <1>fazer uma doação dedutível de imposto aqui</1>.",
     "trending-guides": "Guias em alta",
@@ -417,6 +418,7 @@
     "building-a-university": "Estamos criando um programa gratuito de graduação em Ciência da Computação",
     "if-help-university": "Já fizemos um progresso enorme. Apoie nossa organização sem fins lucrativos com o longo caminho que temos pela frente.",
     "preview-external-window": "Visualização exibida atualmente na janela externa.",
+    "fill-in-the-blank": "Preencha o espaço em branco",
     "exam": {
       "qualified": "Parabéns! Você completou todos os requisitos para se qualificar para o exame.",
       "not-qualified": "Você ainda não cumpriu os requisitos para ser elegível para o exame. Para se qualificar, complete os seguintes desafios:",
@@ -746,10 +748,10 @@
       }
     },
     "survey": {
-      "err-1": "The survey submitted is not in the correct format.",
-      "err-2": "It looks like you have already completed this survey.",
-      "err-3": "Something went wrong trying to save your survey.",
-      "success": "Thank you. Your survey was submitted."
+      "err-1": "A pesquisa enviada não está no formato correto.",
+      "err-2": "Parece que você já completou esta pesquisa.",
+      "err-3": "Algo deu errado ao tentar salvar sua pesquisa.",
+      "success": "Obrigado. Sua pesquisa foi enviada."
     },
     "classroom-mode-updated": "Atualizamos suas configurações do modo de sala de aula"
   },
@@ -890,6 +892,8 @@
       "college-algebra-with-python-v8": "Certificação de Álgebra do ensino superior com Python",
       "Foundational C# with Microsoft": "Fundamentos de C# com a Microsoft",
       "foundational-c-sharp-with-microsoft": "Fundamentos de C# com certificação da Microsoft",
+      "A2 English for Developers": "A2 Inglês para Desenvolvedores",
+      "a2-english-for-developers": "Certificação A2 Inglês para Desenvolvedores",
       "Legacy Front End": "Front-end legado",
       "legacy-front-end": "Certificação de front-end",
       "Legacy Back End": "Back-end legado",
@@ -969,28 +973,28 @@
   },
   "survey": {
     "foundational-c-sharp": {
-      "title": "Foundational C# with Microsoft Survey",
+      "title": "Pesquisa de Fundamentos de C# com a Microsoft",
       "q1": {
-        "q": "Please describe your role:",
-        "o1": "Student developer",
-        "o2": "Beginner developer (less than 2 years experience)",
-        "o3": "Intermediate developer (between 2 and 5 years experience)",
-        "o4": "Experienced developer (more than 5 years experience)"
+        "q": "Descreva sua função:",
+        "o1": "Desenvolvedor estudante",
+        "o2": "Desenvolvedor iniciante (experiência de menos de 2 anos)",
+        "o3": "Desenvolvedor intermediário (entre 2 e 5 anos de experiência)",
+        "o4": "Desenvolvedor experiente (experiência de mais de 5 anos)"
       },
       "q2": {
-        "q": "Prior to this course, how experienced were you with .NET and C#?",
-        "o1": "Novice (no prior experience)",
-        "o2": "Beginner",
-        "o3": "Intermediate",
-        "o4": "Advanced",
-        "o5": "Expert"
+        "q": "Antes desse curso, qual era seu nível de experiência com o .NET e C#?",
+        "o1": "Novato (sem experiência anterior)",
+        "o2": "Iniciante",
+        "o3": "Intermediário",
+        "o4": "Avançado",
+        "o5": "Especialista"
       }
     },
     "misc": {
-      "take": "Take the survey",
-      "submit": "Submit the survey",
-      "exit": "Exit the survey",
-      "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+      "take": "Responda à pesquisa",
+      "submit": "Envie a pesquisa",
+      "exit": "Saia da pesquisa",
+      "two-questions": "Parabéns por chegar até aqui. Antes de começar o teste, responda a estas duas breves perguntas de pesquisa."
     }
   }
 }
