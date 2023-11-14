@@ -13,7 +13,9 @@ const IntroObject = {
   forumPlaceholder: '<0>the freeCodeCamp forum</0>',
   forumText: 'the freeCodeCamp forum',
   userNamePlaceholder: '{{name}}',
-  userName: 'Full Stack User'
+  userName: 'Development User',
+  startAtBeginning:
+    'If you are new to coding, we recommend you start at the beginning.'
 };
 
 const IntroDescription = [
@@ -50,15 +52,15 @@ test.describe('Intro Component E2E Test Suite with Signed In User', () => {
     ).toBeVisible();
   });
 
-  test('Verifies the Random Quote Section', ({ page }) => {
+  test('Verifies the Random Quote Section and "Start at Beginning" text', async ({
+    page
+  }) => {
     const quote = page.getByTestId(IntroObject.randomQuote);
     const author = page.getByTestId(IntroObject.randomAuthor);
     expect(quote).not.toBeNull();
     expect(author).not.toBeNull();
-  });
-
-  test('Verifies the "start-at-beginning" Section', async ({ page }) => {
-    await expect(page.getByTestId('start-at-beginning')).toBeVisible();
+    const startAtBeginning = page.getByText(IntroObject.startAtBeginning);
+    await expect(startAtBeginning).toBeVisible();
   });
 });
 
