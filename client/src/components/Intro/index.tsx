@@ -67,7 +67,7 @@ const Intro = ({
         {completedChallengeCount && slug && completedChallengeCount < 15 ? (
           <div className='intro-description'>
             <Spacer size='medium' />
-            <p data-playwright-test-label='start-at-beginning'>
+            <p>
               <Trans i18nKey='learn.start-at-beginning'>
                 <Link to={slug} />
               </Trans>
