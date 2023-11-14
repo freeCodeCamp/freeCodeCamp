@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '@freecodecamp/react-bootstrap';
 import {
   Tabs,
   TabsContent,
@@ -89,16 +88,14 @@ function SelectionTabs({
             );
           })}
         </Tabs>
-        <Button
-          block={true}
-          bsStyle='primary'
+        <button
           className='text-center confirm-donation-btn donate-btn-group'
           type='submit'
           data-cy='donation-tier-selection-button'
           onClick={() => setShowDonateForm(true)}
         >
           {t('buttons.donate')}
-        </Button>
+        </button>
         <Spacer size='medium' />
       </Col>
     </Row>
