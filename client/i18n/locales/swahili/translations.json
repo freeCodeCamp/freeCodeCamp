@@ -44,6 +44,7 @@
     "settings": "Mipangilio",
     "take-me": "Nipeleke kwenye Changamoto",
     "check-answer": "Angalia jibu lako",
+    "submit": "Submit",
     "get-hint": "Pata kidokezo",
     "ask-for-help": "Ulizia Msaada",
     "create-post": "Unda chapisho la usaidizi kwenye jukwaa",
@@ -304,7 +305,7 @@
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp ni shirika la usaidizi la 501(c)(3) la kutotozwa ushuru linaloungwa mkono na wafadhili (Nambari ya Utambulisho ya Ushuru ya Shirikisho la Marekani: 82-0779546)",
-    "mission-statement": "Dhamira yet: kuwasaidia watu kujifunza kuweka msimbo bila malipo. Tunatimiza hili kwa kuunda maelfu ya video, makala, na masomo shirikishi ya usimbaji - yote yanapatikana bila malipo kwa umma. Pia tuna maelfu ya vikundi vya masomo vya freeCodeCamp kote ulimwenguni.",
+    "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.",
     "donation-initiatives": "Michango kwa freeCodeCamp huenda kwenye mipango yetu ya elimu na kusaidia kulipia seva, huduma na wafanyakazi.",
     "donate-text": "Unaweza <1>kutoa mchango unaokatwa kodi hapa</1>.",
     "trending-guides": "Miongozo inayovuma",
@@ -417,6 +418,7 @@
     "building-a-university": "Tunaunda Programu ya Bila Malipo wa Shahada ya Chuo Kikuu ya Computer Science",
     "if-help-university": "Tayari tumepiga hatua kubwa. Saidia hisani yetu kwa safari ndefu ya mbele.",
     "preview-external-window": "Onyesho la kukagua linaloonyeshwa kwa sasa kwenye dirisha la nje.",
+    "fill-in-the-blank": "Fill in the blank",
     "exam": {
       "qualified": "Hongera, umekamilisha mahitaji yote ya kufuzu kwa mtihani.",
       "not-qualified": "Hujatimiza masharti ili ustahiki mtihani. Ili kuhitimu, tafadhali kamilisha changamoto zifuatazo:",
@@ -890,6 +892,8 @@
       "college-algebra-with-python-v8": "Udhibitisho wa Algebra ya Chuo na Python",
       "Foundational C# with Microsoft": "Msingi wa C# na Microsoft",
       "foundational-c-sharp-with-microsoft": "Msingi C# na Cheti cha Microsoft",
+      "A2 English for Developers": "A2 English for Developers",
+      "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "Legacy Front End",
       "legacy-front-end": "Udhibitisho wa Front End",
       "Legacy Back End": "Legacy Back End",

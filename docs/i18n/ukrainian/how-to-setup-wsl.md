@@ -10,7 +10,7 @@
 
 ## Активуйте WSL
 
-Follow the instructions on the [official documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install WSL2.
+Дотримуйтесь інструкцій з [офіційної документації](https://docs.microsoft.com/en-us/windows/wsl/install-win10), щоб встановити WSL2.
 
 ## Встановіть Ubuntu
 
@@ -20,7 +20,7 @@ Follow the instructions on the [official documentation](https://docs.microsoft.c
    > 
    > Ви можете використовувати інші дистрибутиви, основою яких не є Debian, але у них наявні певні недоліки та вони виходять за рамки цього посібника.
 
-   As of November 2023, Ubuntu and Debian are the only Linux distributions [officially supported by Playwright](https://playwright.dev/docs/intro#system-requirements), the end-to-end testing library used by freeCodeCamp.
+   Станом на листопад 2023 року, Ubuntu та Debian є єдиними дистрибутивами Linux, [офіційно підтримуваними Playwright](https://playwright.dev/docs/intro#system-requirements) — наскрізною тестовою бібліотекою, яку використовує freeCodeCamp.
 
 2. Оновіть залежності ОС
 
@@ -72,9 +72,9 @@ git version 2.25.1
 
 Як тільки ви налаштували Docker Desktop для роботи з WSL2, дотримуйтесь цих кроків, щоб запустити службу MongoDB:
 
-1. Launch a new Ubuntu terminal
+1. Запустіть новий термінал Ubuntu
 
-2. Pull MongoDB from Docker Hub. Please refer to the [Prerequisites](how-to-setup-freecodecamp-locally.md#Prerequisites) table for the current version of MongoDB used by freeCodeCamp. For example, if the version number is `5.0.x`, replace `<x.y>` with `5.0` in the following two code snippets.
+2. Витягніть MongoDB із Docker Hub. Будь ласка, зверніться до таблиці з [передумовами](how-to-setup-freecodecamp-locally.md#Prerequisites) поточної версії MongoDB, яку використовує freeCodeCamp. Наприклад, якщо номером версії є `5.0.x`, замініть `<x.y>` на `5.0` у двох наступних фрагментах коду.
 
    ```bash
    docker pull mongo:<x.y>
@@ -97,15 +97,15 @@ git version 2.25.1
 
 Ми рекомендуємо встановити випуск LTS для Node.js за допомогою Node Version Manager ([nvm](https://github.com/nvm-sh/nvm#installing-and-updating)).
 
-Once installed use this command to install and use the latest Node.js LTS version:
+Як тільки його буде встановлено, використайте цю команду, щоб встановити та використовувати найновішу версію LTS Node.js:
 
 ```bash
 nvm install --lts
 ```
 
-For instructions on installing and using a different version of Node.js, please refer to the [nvm docs](https://github.com/nvm-sh/nvm#usage).
+Для інструкцій з встановлення та використання іншої версії Node.js, будь ласка, зверніться до [документації nvm](https://github.com/nvm-sh/nvm#usage).
 
-Node.js comes bundled with `npm`, which you can use to install `pnpm`:
+Node.js надходить разом з `npm`, який можна використати для встановлення `pnpm`:
 
 ```bash
 npm install -g pnpm
@@ -113,110 +113,110 @@ npm install -g pnpm
 
 ## Налаштуйте freeCodeCamp локально
 
-Now that you have installed the pre-requisites, follow [our local setup guide](how-to-setup-freecodecamp-locally.md) to clone, install and set up freeCodeCamp locally on your machine.
+Ви встановили передумови, тому дотримуйтесь [нашого посібника з локального налаштування](how-to-setup-freecodecamp-locally.md), щоб клонувати, встановити та налаштувати freeCodeCamp локально на своїй машині.
 
 > [!WARNING]
 > 
 > Зауважте, що наразі налаштування тестів Cypress (та пов’язаних потреб GUI) знаходяться в стадії розробки. Ви повинні вміти працювати над більшою частиною кодової бази.
 
-## Optimize Windows and WSL
+## Оптимізуйте Windows та WSL
 
    > [!NOTE]
    > 
-   > The following tips were collected from across the web and have not gone through vigorous testing. Your mileage may vary.
+   > Наступні поради були зібрані з різних джерел і не пройшли високоякісне тестування. Ваш результат може відрізнятися.
 
-### Adjust processer scheduling for background services
+### Налаштування розкладу процесора для фонових служб
 
-This may reduce incidents of Docker containers crashing due to lack of resources.
+Це може знизити випадки збоїв контейнерів Docker через брак ресурсів.
 
-Open the System Properties control panel by pressing <kbd>Win + R</kbd> and entering `sysdm.cpl`
+Відкрийте панель керування системними налаштуваннями, натиснувши <kbd>Win + R</kbd> та ввівши `sysdm.cpl`
 
 <details>
     <summary>
-      Enter <code>sysdm.cpl</code> in the Run dialog (screenshot)
+      Введіть <code>sysdm.cpl</code> у вікні діалогу (знімок екрану)
     </summary>
 
     <br>
-    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/run-sysdm.png" alt="Enter `sysdm.cpl` in the Run dialog" />
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/run-sysdm.png" alt="Введіть `sysdm.cpl` у вікні діалогу" />
 </details>
 <br>
 
-Go to Advanced -> Performance -> Settings…
+Перейдіть до Advanced -> Performance -> Settings…
 
 <details>
     <summary>
-      Performance Settings button under Advanced tab in System Properties (screenshot)
+      Кнопка Performance Settings розташована під вкладкою Advanced в System Properties (знімок екрану)
     </summary>
 
     <br>
-    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/advanced-performance-settings.png" alt="Performance Settings button under Advanced tab in System Properties" />
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/advanced-performance-settings.png" alt="Кнопка Performance Settings розташована під вкладкою Advanced в System Properties" />
 </details>
 <br>
 
-Under Advanced -> Processor scheduling, choose "Background services". Do not close the window. Continue to the next tip.
+Під Advanced -> Processor scheduling, виберіть Background services. Не закривайте вікно. Перейдіть до наступної поради.
 
 <details>
     <summary>
-      Background services radio button under Advanced tab in Performance Options (screenshot)
+      Радіокнопка Background services розташована під вкладкою Advanced в Performance Options (знімок екрана)
     </summary>
 
     <br>
-    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/background-services.png" alt="Background services radio button under Advanced tab in Performance Options" />
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/background-services.png" alt="Радіокнопка Background services розташована під вкладкою Advanced в Performance Options" />
 </details>
 
-### Increase the size of Windows paging file for the system drive
+### Збільшення розміру файлу сторінки Windows для системного диска
 
-Under Advanced -> Virtual memory, click "Change…"
+Під Advanced -> Virtual memory, натисніть Change…
 
 <details>
     <summary>
-      Change virtual memory button under Advanced tab in Performance Options (screenshot)
+      Кнопка Change virtual memory розташована під вкладкою Advanced в Performance Options (знімок екрану)
     </summary>
 
     <br>
-    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/advanced-virtual-memory.png" alt="Change virtual memory button under Advanced tab in Performance Options" />
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/advanced-virtual-memory.png" alt="Кнопка Change virtual memory розташована під вкладкою Advanced в Performance Options" />
 </details>
 <br>
 
-Choose "Custom size". Set the initial size to 1.5x and the maximum size to 3x of your physical memory. Then click "Set".
+Виберіть Custom size. Встановіть початковий розмір на 1.5x та максимальний розмір на 3x від фізичної пам’яті. Потім натисніть Set.
 
 <details>
     <summary>
-      Set custom size button in Virtual Memory window (screenshot)
+      Налаштування кнопки розміру у вікні Virtual Memory (знімок екрану)
     </summary>
 
     <br>
-    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/set-custom-size.png" alt="Set custom size button in Virtual Memory window" />
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/set-custom-size.png" alt="Налаштування кнопки розміру у вікні Virtual Memory" />
 </details>
 
-### Increase the size of memory allocated to WSL
+### Збільшення обсягу пам’яті, виділеної для WSL
 
-Create a [`.wslconfig` file](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig) in your [`%UserProfile%` directory](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#wslconfig) (typically `C:\Users\<UserName>\.wslconfig`). Please read the [WSL documentation](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig) carefully and replace `x` with values that suit your own needs:
+Створіть файл [`.wslconfig`](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig) у своєму каталозі [`%UserProfile%`](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#wslconfig) (зазвичай `C:\Users\<UserName>\.wslconfig`). Будь ласка, уважно прочитайте [документацію WSL](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig) та замініть `x` на потрібні значення:
 
 ```ini
-# Settings apply across all Linux distros running on WSL 2
+# Налаштування застосовуються до всіх дистрибутивів Linux, які працюють на WSL 2
 [wsl2]
 
-# How much memory to assign to the WSL 2 VM. The default value might not be enough
+# Кількість пам’яті, що призначається для віртуальної машини WSL 2. Значення за замовчуванням може бути недостатньо
 memory=xGB
 
-# How much swap space to add to the WSL 2 VM, default is 25% of available RAM
+# На скільки збільшити swap-простір в WSL 2 VM; за замовчуванням це 25% від доступної оперативної пам’яті
 swap=xGB
 ```
 
-### Increase Node.js max old space size
+### Збільшення максимального розміру старого простору Node.js
 
-This fixes the ["JavaScript heap out of memory" error](https://stackoverflow.com/a/54456814) with ESLint. Add the following to your `~/.bashrc` or `~/.zshrc`:
+Це виправляє помилку [«JavaScript heap out of memory»](https://stackoverflow.com/a/54456814) з ESLint. Додайте наступне до `~/.bashrc` або `~/.zshrc`:
 
 ```sh
 export NODE_OPTIONS="--max-old-space-size=4096"
 ```
 
-### Avoid `pnpm run test`
+### Уникайте `pnpm run test`
 
-Instead, use the script [appropriate to your PR](https://forum.freecodecamp.org/t/wsl-performance-issues-while-working-on-the-codebase/644215/2#:~:text=usually%2C%20you%20just%20want%20to%20test%20something%20specific%20to%20either%20the%20curriculum%20or%20the%20client%20or%20the%20api%20-%20almost%20never%20all%203.); either `pnpm run test:api`, `pnpm run test:curriculum`, or `pnpm run test-client`.
+Натомість використайте скрипт, [який відповідає вашому PR](https://forum.freecodecamp.org/t/wsl-performance-issues-while-working-on-the-codebase/644215/2#:~:text=usually%2C%20you%20just%20want%20to%20test%20something%20specific%20to%20either%20the%20curriculum%20or%20the%20client%20or%20the%20api%20-%20almost%20never%20all%203.): `pnpm run test:api`, `pnpm run test:curriculum` або `pnpm run test-client`.
 
-## Useful Links
+## Корисні посилання
 
 - [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code, and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) — стаття Мругеша Мохапатри (штатний розробник freeCodeCamp.org)
 - Часті питання:

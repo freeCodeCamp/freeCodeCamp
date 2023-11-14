@@ -16,18 +16,19 @@
   - [Trabalhar na aplicação para dispositivos móveis](how-to-setup-freecodecamp-mobile-app-locally.md)
   - [Trabalhar nos tutoriais com o CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
   - [Trabalhar na aplicação para a web localizada](how-to-work-on-localized-client-webapp.md)
-  - [Trabalhar em testes do Cypress](how-to-add-cypress-tests.md)
+  - [Work on Playwright Tests](how-to-add-playwright-tests.md)
   - [Trabalhar nos desafios em vídeo](how-to-help-with-video-challenges.md)
   - [Trabalhar com a documentação](how-to-work-on-the-docs-theme.md)
   - [Abrir um pull request](how-to-open-a-pull-request.md)
 - **Guias adicionais**
   - [Compreender a estrutura do arquivo do currículo](curriculum-file-structure.md)
   - [Depurar e-mails enviados localmente](how-to-catch-outgoing-emails-locally.md)
-  - [Configurar freeCodeCamp no Windows (WSL)](how-to-setup-wsl.md)
-  - [Usar o Docker no Windows Home](how-to-use-docker-on-windows-home.md)
-  - [Fluxo de trabalho do token de usuário](user-token-workflow.md)
-  - [Solucionar problemas de desenvolvimento](troubleshooting-development-issues.md)
-  - [Manual de análise dos autores](authors-analytics-manual.md)
+  - [Work on Cypress Tests](how-to-add-cypress-tests.md)
+  - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
+  - [Use Docker on Windows Home](how-to-use-docker-on-windows-home.md)
+  - [User Token Workflow](user-token-workflow.md)
+  - [Troubleshooting Development Issues](troubleshooting-development-issues.md)
+  - [Authors Analytics Manual](authors-analytics-manual.md)
 
 ---
 

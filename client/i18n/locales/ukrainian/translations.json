@@ -44,6 +44,7 @@
     "settings": "Налаштування",
     "take-me": "Перейти до завдань",
     "check-answer": "Перевірити відповідь",
+    "submit": "Надіслати",
     "get-hint": "Отримати підказку",
     "ask-for-help": "Попросити допомоги",
     "create-post": "Попросити допомоги на форумі",
@@ -304,7 +305,7 @@
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp — це некомерційна організація, яка підтримується спонсорськими внесками та звільнена від сплати податків 501(c)(3) (Федеральний ідентифікаційний номер платника податків США: 82-0779546)",
-    "mission-statement": "Ми хочемо допомогти людям безкоштовно навчитися програмувати. Ми досягаємо цього, створюючи тисячі відео, статей та інтерактивних уроків з програмування — вони усі доступні для широкого загалу. Також ми маємо тисячі безоплатних навчальних груп freeCodeCamp у всьому світі.",
+    "mission-statement": "Ми хочемо допомогти людям безоплатно навчитися програмувати. Ми досягаємо цього, створюючи тисячі відео, статей та інтерактивних уроків з програмування — вони усі доступні для широкого загалу.",
     "donation-initiatives": "Внески до freeCodeCamp йдуть на наші освітні програми та допомагають оплачувати сервери, послуги та персонал.",
     "donate-text": "Ви можете <1>зробити неоподаткований внесок тут</1>.",
     "trending-guides": "Популярні статті",
@@ -417,6 +418,7 @@
     "building-a-university": "Ми розробляємо безоплатну університетську програму «Комп’ютерні науки»",
     "if-help-university": "Ми вже зробили багато роботи. Підтримайте довгий шлях нашої благодійної організації.",
     "preview-external-window": "Попередній перегляд знаходиться у зовнішньому вікні.",
+    "fill-in-the-blank": "Заповніть порожні місця",
     "exam": {
       "qualified": "Вітаємо, ви виконали всі вимоги для допуску на екзамен.",
       "not-qualified": "Ви недопущені до екзамену, оскільки не виконали всі вимоги. Будь ласка, виконайте такі завдання:",
@@ -746,10 +748,10 @@
       }
     },
     "survey": {
-      "err-1": "The survey submitted is not in the correct format.",
-      "err-2": "It looks like you have already completed this survey.",
-      "err-3": "Something went wrong trying to save your survey.",
-      "success": "Thank you. Your survey was submitted."
+      "err-1": "Надіслане опитування не відповідає правильному формату.",
+      "err-2": "Схоже, ви вже пройшли це опитування.",
+      "err-3": "Під час спроби зберегти відповіді виникла помилка.",
+      "success": "Дякуємо. Ваші відповіді надіслано."
     },
     "classroom-mode-updated": "Ваші налаштування режиму класу оновлено"
   },
@@ -890,6 +892,8 @@
       "college-algebra-with-python-v8": "Сертифікація «Алгебра з Python»",
       "Foundational C# with Microsoft": "Основи C# з Microsoft",
       "foundational-c-sharp-with-microsoft": "Сертифікація «Основи C# з Microsoft»",
+      "A2 English for Developers": "Англійська мова A2 для розробників",
+      "a2-english-for-developers": "Сертифікація «Англійська мова A2 для розробників»",
       "Legacy Front End": "Застарілий Front End",
       "legacy-front-end": "Сертифікація «Front End»",
       "Legacy Back End": "Застарілий Back End",
@@ -969,28 +973,28 @@
   },
   "survey": {
     "foundational-c-sharp": {
-      "title": "Foundational C# with Microsoft Survey",
+      "title": "Опитування «Основи C# з Microsoft»",
       "q1": {
-        "q": "Please describe your role:",
-        "o1": "Student developer",
-        "o2": "Beginner developer (less than 2 years experience)",
-        "o3": "Intermediate developer (between 2 and 5 years experience)",
-        "o4": "Experienced developer (more than 5 years experience)"
+        "q": "Будь ласка, опишіть свою посаду:",
+        "o1": "Розробник-учень",
+        "o2": "Розробник-початківець (менше 2-ох років досвіду)",
+        "o3": "Розробник середнього рівня (від 2 до 5 років досвіду)",
+        "o4": "Досвідчений розробник (більше 5-ти років досвіду)"
       },
       "q2": {
-        "q": "Prior to this course, how experienced were you with .NET and C#?",
-        "o1": "Novice (no prior experience)",
-        "o2": "Beginner",
-        "o3": "Intermediate",
-        "o4": "Advanced",
-        "o5": "Expert"
+        "q": "Яким був ваш рівень з .NET та C# до цього курсу?",
+        "o1": "Новачок (без попереднього досвіду)",
+        "o2": "Початковий рівень",
+        "o3": "Середній рівень",
+        "o4": "Високий рівень",
+        "o5": "Експерт"
       }
     },
     "misc": {
-      "take": "Take the survey",
-      "submit": "Submit the survey",
-      "exit": "Exit the survey",
-      "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+      "take": "Пройти опитування",
+      "submit": "Надіслати опитування",
+      "exit": "Вийти з опитування",
+      "two-questions": "Вітаємо з досягненням цієї точки. Перш ніж розпочати екзамен, будь ласка, дайте відповідь на два короткі запитання."
     }
   }
 }
