@@ -1,6 +1,6 @@
 ---
 id: 5900f46b1000cf542c50ff7d
-title: 'Problem 254: Sums of Digit Factorials'
+title: 'Завдання 254: суми факторіалів цифр'
 challengeType: 1
 forumTopicId: 301902
 dashedName: problem-254-sums-of-digit-factorials
@@ -8,15 +8,15 @@ dashedName: problem-254-sums-of-digit-factorials
 
 # --description--
 
-Define $f(n)$ as the sum of the factorials of the digits of $n$. Наприклад, $f(342) = 3! + 4! + 2! = 32$.
+Визначимо $f(n)$ як суму факторіалів цифр числа $n$. Наприклад, $f(342) = 3! + 4! + 2! = 32$.
 
-Define $sf(n)$ as the sum of the digits of $f(n)$. So $sf(342) = 3 + 2 = 5$.
+Визначимо $sf(n)$ як суму цифр $f(n)$. Отже, $sf(342) = 3 + 2 = 5$.
 
-Define $g(i)$ to be the smallest positive integer $n$ such that $sf(n) = i$. Though $sf(342)$ is 5, $sf(25)$ is also 5, and it can be verified that $g(5)$ is 25.
+Визначимо $g(i)$ як найменше натуральне число $n$, за якого $sf(n) = i$. Хоча $sf(342)$ дорівнює 5, $sf(25)$ також дорівнює 5, і можна довести, що $g(5)$ дорівнює 25.
 
-Define $sg(i)$ as the sum of the digits of $g(i)$. So $sg(5) = 2 + 5 = 7$.
+Визначимо $sg(i)$ як суму цифр $g(i)$. Отже, $sg(5) = 2 + 5 = 7$.
 
-Further, it can be verified that $g(20)$ is 267 and $\sum sg(i)$ for $1 ≤ i ≤ 20$ is 156.
+Таким чином можна довести, що $g(20)$ дорівнює 267, а $\sum sg(i)$ за умови $1 ≤ i ≤ 20$ дорівнює 156.
 
 Чому дорівнює $\sum sg(i)$ за умови $1 ≤ i ≤ 150$?
 

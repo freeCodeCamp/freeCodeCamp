@@ -1,6 +1,10 @@
 /* eslint-disable @typescript-eslint/no-base-to-string */
 import ObjectID from 'bson-objectid';
 
+const sanitizeTitle = (title: string) => {
+  return title.includes(':') || title.includes("'") ? `"${title}"` : title;
+};
+
 export interface ChallengeOptions {
   challengeId: ObjectID;
   title: string;
@@ -15,7 +19,7 @@ const buildFrontMatter = ({
   challengeType
 }: ChallengeOptions) => `---
 id: ${challengeId.toString()}
-title: ${title}
+title: ${sanitizeTitle(title)}
 challengeType: ${challengeType}
 dashedName: ${dashedName}
 ---`;
@@ -28,9 +32,22 @@ const buildFrontMatterWithVideo = ({
 }: ChallengeOptions) => `---
 id: ${challengeId.toString()}
 videoId: ADD YOUR VIDEO ID HERE!!!
-title: ${title}
+title: ${sanitizeTitle(title)}
 challengeType: ${challengeType}
 dashedName: ${dashedName}
+---`;
+
+const buildFrontMatterWithAudio = ({
+  challengeId,
+  title,
+  dashedName,
+  challengeType
+}: ChallengeOptions) => `---
+id: ${challengeId.toString()}
+title: ${sanitizeTitle(title)}
+challengeType: ${challengeType}
+dashedName: ${dashedName}
+audioPath: Add the path to the audio file here. Or, delete this if you don't have audio.
 ---`;
 
 export const getLegacyChallengeTemplate = (
@@ -163,6 +180,77 @@ Answer 3
 1
 `;
 
+export const getMultipleChoiceChallengeTemplate = (
+  options: ChallengeOptions
+): string => `${buildFrontMatterWithAudio(options)}
+
+# --description--
+
+${options.title} description.
+
+# --question--
+
+## --text--
+
+${options.title} question?
+
+## --answers--
+
+Answer 1
+
+---
+
+Answer 2
+
+---
+
+Answer 3
+
+## --video-solution--
+
+1
+`;
+
+export const getFillInTheBlankChallengeTemplate = (
+  options: ChallengeOptions
+): string => `${buildFrontMatterWithAudio(options)}
+
+# --description--
+
+${options.title} description.
+
+# --fillInTheBlank--
+
+## --sentence--
+
+\`Fill _ the _ sentence.\`
+
+## --blanks--
+
+\`in\`
+
+### --feedback--
+
+It's \`in\`
+
+---
+
+\`blank\`
+`;
+
+export const getDialogueChallengeTemplate = (
+  options: ChallengeOptions
+): string => `${buildFrontMatterWithVideo(options)}
+
+# --description--
+
+${options.title} description.
+
+## --assignment--
+
+${options.title} assignment!
+`;
+
 /**
  * This should be kept in parity with the challengeTypes in the
  * client.
@@ -192,5 +280,8 @@ export const challengeTypeToTemplate: {
   16: null,
   17: null,
   18: null,
-  19: null
+  19: getMultipleChoiceChallengeTemplate,
+  20: null,
+  21: getDialogueChallengeTemplate,
+  22: getFillInTheBlankChallengeTemplate
 };

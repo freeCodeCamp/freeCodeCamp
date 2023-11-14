@@ -4,6 +4,11 @@ import { ChallengeData } from '../../../interfaces/challenge-data';
 import { API_LOCATION } from '../../utils/handle-request';
 import './block.css';
 
+const stepBasedSuperblocks = [
+  '14-responsive-web-design-22',
+  '15-javascript-algorithms-and-data-structures-22'
+];
+
 const Block = () => {
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
@@ -37,13 +42,19 @@ const Block = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+
+  const isStepBasedSuperblock = stepBasedSuperblocks.includes(
+    params.superblock
+  );
+
   return (
     <div>
       <h1>{params.block}</h1>
       <span className='breadcrumb'>{params.superblock}</span>
       <ul className='step-grid'>
-        {items.map(challenge => (
+        {items.map((challenge, i) => (
           <li key={challenge.name}>
+            {!isStepBasedSuperblock && <span>{`${i + 1}: `}</span>}
             <Link
               to={`/${params.superblock}/${params.block}/${challenge.path}`}
             >
@@ -57,12 +68,44 @@ const Block = () => {
       </p>
       <hr />
       <h2>Project Controls</h2>
-      <p>
-        Looking to add, remove, or edit steps?{' '}
-        <Link to={`/${params.superblock}/${params.block}/_tools`}>
-          Use the step tools.
-        </Link>
-      </p>
+      {isStepBasedSuperblock ? (
+        <p>
+          Looking to add, remove, or edit steps?{' '}
+          <Link to={`/${params.superblock}/${params.block}/_tools`}>
+            Use the step tools.
+          </Link>
+        </p>
+      ) : (
+        <>
+          <p>
+            Looking to add or remove challenges? Navigate to <br />
+            <code>
+              freeCodeCamp/curriculum/challenges/english
+              {`/${params.superblock}/${params.block}/`}
+            </code>
+            <br />
+            in your terminal and run the following commands:
+          </p>
+          <ul>
+            <li>
+              <code>pnpm create-next-challenge</code>: Create a new challenge at
+              the end of this block.
+            </li>
+            <li>
+              <code>pnpm insert-challenge</code>: Create a new challenge in the
+              middle of this block.
+            </li>
+            <li>
+              <code>pnpm delete-challenge</code>: Delete a challenge in this
+              block.
+            </li>
+          </ul>
+          <p>
+            Refresh the page after running a command to see the changes
+            reflected.
+          </p>
+        </>
+      )}
     </div>
   );
 };

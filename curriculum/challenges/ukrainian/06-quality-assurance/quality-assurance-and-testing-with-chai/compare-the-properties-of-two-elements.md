@@ -12,7 +12,7 @@ dashedName: compare-the-properties-of-two-elements
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labeled `#8` in the `Comparisons` suite, change each `assert` to either `assert.isAbove` or `assert.isAtMost` to make the test pass (should evaluate to `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#8` в наборі `Comparisons` змініть кожний `assert` на `assert.isAbove` або `assert.isAtMost`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 

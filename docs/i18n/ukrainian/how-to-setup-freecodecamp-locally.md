@@ -278,12 +278,12 @@ pnpm run develop
 
 Короткий довідник команд, які знадобляться при локальній роботі.
 
-| команда                        | опис                                                                                                          |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| `pnpm install`                 | Встановлює/перевстановлює всі залежності та запускає різні служби.                                            |
-| `pnpm run seed`                | Creates authorized test users and inserts them into MongoDB. Also runs `seed:exams` and `seed:surveys` below. |
-| `pnpm run seed:certified-user` | Створює автоматизованих тестових користувачів, які завершили сертифікації, і розміщує їх у MongoDB.           |
-| `pnpm run seed:exams`          | Створює екзамени та вставляє їх в MongoDB.                                                                    |
-| `pnpm run seed:surveys`        | Creates surveys for defaults users and inserts them into MongoDB.                                             |
-| `pnpm run develop`             | Starts the freeCodeCamp API Server and Client Applications.                                                   |
-| `pnpm run clean`               | Uninstalls all dependencies and cleans up caches.                                                             |
+| команда                        | опис                                                                                                                     |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `pnpm install`                 | Встановлює/перевстановлює всі залежності та запускає різні служби.                                                       |
+| `pnpm run seed`                | Створює авторизованих тестових користувачів і розміщує їх в MongoDB. Також виконує `seed:exams` та `seed:surveys` нижче. |
+| `pnpm run seed:certified-user` | Створює автоматизованих тестових користувачів, які завершили сертифікації, і розміщує їх у MongoDB.                      |
+| `pnpm run seed:exams`          | Створює екзамени та вставляє їх в MongoDB.                                                                               |
+| `pnpm run seed:surveys`        | Створює опитування для користувачів за замовчуванням та розміщує їх в MongoDB.                                           |
+| `pnpm run develop`             | Запускає сервер API та клієнтські програми freeCodeCamp.                                                                 |
+| `pnpm run clean`               | Видаляє всі залежності й очищає кеш.                                                                                     |

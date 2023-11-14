@@ -34,19 +34,19 @@ dashedName: introduction-why-program
 
 ### --feedback--
 
-College students should learn to program, but there's a better answer.
+Студенти повинні вчитись програмувати, але є краща відповідь.
 
 ---
 
-People who want to become software developers.
+Людям, які хочуть стати розробниками програмного забезпечення.
 
 ### --feedback--
 
-People who want to become software developers should learn to program, but there's a better answer.
+Люди, які хочуть стати розробниками програмного забезпечення, повинні вчитись програмувати, але є краща відповідь.
 
 ---
 
-Everyone.
+Всім.
 
 ## --video-solution--
 

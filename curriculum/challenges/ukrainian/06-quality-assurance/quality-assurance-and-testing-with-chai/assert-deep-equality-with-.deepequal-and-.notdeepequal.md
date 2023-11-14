@@ -14,7 +14,7 @@ dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labeled `#7` in the `Equality` suite, change each `assert` to either `assert.deepEqual` or `assert.notDeepEqual` to make the test pass (should evaluate to `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#7` в наборі `Equality` змініть кожний `assert` на `assert.deepEqual` або `assert.notDeepEqual`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 
