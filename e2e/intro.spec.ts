@@ -13,7 +13,7 @@ const IntroObject = {
   forumPlaceholder: '<0>the freeCodeCamp forum</0>',
   forumText: 'the freeCodeCamp forum',
   userNamePlaceholder: '{{name}}',
-  userName: 'Development User',
+  userName: 'Full Stack User',
   startAtBeginning:
     'If you are new to coding, we recommend you start at the beginning.'
 };
