@@ -51,4 +51,4 @@ pnpm-lock.yaml
 # Files that need attention from the mobile team
 # -------------------------------------------------
 
-/curriculum/schema/challenge-schema.js
+/curriculum/schema/challenge-schema.js @freeCodeCamp/mobile
