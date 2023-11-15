@@ -133,8 +133,8 @@ importers:
         specifier: 4.17.21
         version: 4.17.21
       markdownlint:
-        specifier: 0.31.0
-        version: 0.31.0
+        specifier: 0.32.1
+        version: 0.32.1
       npm-run-all:
         specifier: 4.1.5
         version: 4.1.5
@@ -23415,8 +23415,8 @@ packages:
   /markdown-escapes@1.0.4:
     resolution: {integrity: sha512-8z4efJYk43E0upd0NbVXwgSTQs6cT3T06etieCMEg7dRbzCbxUCK/GHlX8mhHRDcp+OLlHkPKsvqQTCvsRl2cg==}
 
-  /markdown-it@13.0.1:
-    resolution: {integrity: sha512-lTlxriVoy2criHP0JKRhO2VDG9c2ypWCsT237eDiLqi09rmbKoUetyGHq2uOIRoRS//kfoJckS0eUzzkDR+k2Q==}
+  /markdown-it@13.0.2:
+    resolution: {integrity: sha512-FtwnEuuK+2yVU7goGn/MJ0WBZMM9ZPgU9spqlFs7/A/pDIUNSOQZhUgOqYCficIuR2QaFnrt8LHqBWsbTAoI5w==}
     hasBin: true
     dependencies:
       argparse: 2.0.1
@@ -23436,11 +23436,11 @@ packages:
     engines: {node: '>=16'}
     dev: true
 
-  /markdownlint@0.31.0:
-    resolution: {integrity: sha512-e+jZGRGZrz1s0T4wiPDFtyQafq7sKgdbf2sdL46gRT8zLEvDDihQmGeSCV6VXp9BsfkuZ0dPTAg9hf4j6NFgjg==}
-    engines: {node: '>=16'}
+  /markdownlint@0.32.1:
+    resolution: {integrity: sha512-3sx9xpi4xlHlokGyHO9k0g3gJbNY4DI6oNEeEYq5gQ4W7UkiJ90VDAnuDl2U+yyXOUa6BX+0gf69ZlTUGIBp6A==}
+    engines: {node: '>=18'}
     dependencies:
-      markdown-it: 13.0.1
+      markdown-it: 13.0.2
       markdownlint-micromark: 0.1.7
     dev: true
 
