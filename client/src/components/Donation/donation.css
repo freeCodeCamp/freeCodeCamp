@@ -485,6 +485,13 @@ button.confirm-donation-btn:hover {
   background-color: #f2ba38;
   border-color: #f2ba38;
 }
+button.confirm-donation-btn:disabled {
+  cursor: not-allowed;
+  background-color: var(--quaternary-background);
+  border-color: var(--quaternary-color);
+  color: var(--quaternary-color);
+  opacity: 0.65;
+}
 
 a.patreon-button {
   border-radius: 5px;
