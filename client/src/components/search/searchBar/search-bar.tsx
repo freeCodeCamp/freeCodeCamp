@@ -129,7 +129,10 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
       query = (e.currentTarget?.children?.[0] as HTMLInputElement).value;
     }
     updateSearchQuery(query);
-
+    const searchInput = e.currentTarget?.children?.[0] as HTMLInputElement;
+    if (searchInput) {
+      searchInput.value = '';
+    }
     // For Learn search results page
     // return navigate('/search');
 
@@ -138,8 +141,8 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
     // are hits besides the footer
     return query && hits.length > 1
       ? window.location.assign(
-          `${searchUrl}?query=${encodeURIComponent(query)}`
-        )
+        `${searchUrl}?query=${encodeURIComponent(query)}`
+      )
       : false;
   };
 
