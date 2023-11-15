@@ -51,6 +51,23 @@ describe('<Intro />', () => {
     // eslint-disable-next-line testing-library/await-async-query
     expect(container.findAllByType('h1').length === 1).toBeTruthy();
   });
+
+  it('intro-description presents when loggedIn and completedChallengeCount is less than 15', () => {
+    const container = rendererCreateWithRedux(
+      <Intro {...introDescriptionProps} />
+    ).root;
+
+    expect(
+      /**
+       * This rules had to be disabled because the new lint rules are throwing false positives here.
+       * They were interpreting react-test-renderer functions as @testing-library/react functions.
+       */
+      // eslint-disable-next-line testing-library/await-async-query
+      container.findAllByProps({
+        className: 'intro-description'
+      }).length === 1
+    ).toBeTruthy();
+  });
 });
 
 const loggedInProps = {
@@ -75,4 +92,17 @@ const loggedOutProps = {
   username: '',
   isDonating: false,
   onDonationAlertClick: () => jest.fn()
+};
+
+const introDescriptionProps = {
+  complete: true,
+  isSignedIn: true,
+  name: 'Development User',
+  navigate: () => jest.fn(),
+  pending: false,
+  slug: '/',
+  username: 'DevelopmentUser',
+  isDonating: false,
+  onDonationAlertClick: () => jest.fn(),
+  completedChallengeCount: 10
 };
