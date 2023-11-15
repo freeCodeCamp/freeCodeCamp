@@ -50,9 +50,7 @@ test.describe('Intro Component E2E Test Suite with Signed In User', () => {
     ).toBeVisible();
   });
 
-  test('Verifies the Random Quote Section and "Start at Beginning" text', ({
-    page
-  }) => {
+  test('Verifies the Random Quote Section', ({ page }) => {
     const quote = page.getByTestId(IntroObject.randomQuote);
     const author = page.getByTestId(IntroObject.randomAuthor);
     expect(quote).not.toBeNull();
