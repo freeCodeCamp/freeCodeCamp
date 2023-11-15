@@ -651,7 +651,6 @@ a.patreon-button:hover {
   border-radius: 0;
   border: 3px solid var(--blue70);
   padding: 6px 12px;
-  margin-bottom: 0;
 }
 .try-again-button:focus,
 .try-again-button:hover,
