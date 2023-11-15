@@ -1,6 +1,6 @@
 ---
 id: 655283c039eb38f51e0e6f7e
-title: "Introducing Yourself"
+title: Introducing Yourself
 challengeType: 19
 dashedName: introducing-yourself
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3

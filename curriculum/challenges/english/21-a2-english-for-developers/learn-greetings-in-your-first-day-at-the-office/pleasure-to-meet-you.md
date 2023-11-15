@@ -1,6 +1,6 @@
 ---
 id: 65528a7c39eb38f51e0e6f7f
-title: "Pleasure to Meet You"
+title: Pleasure to Meet You
 challengeType: 19
 dashedName: pleasure-to-meet-you
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
