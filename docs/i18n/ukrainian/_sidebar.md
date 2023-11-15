@@ -16,19 +16,19 @@
   - [Робота над мобільним застосунком](how-to-setup-freecodecamp-mobile-app-locally.md)
   - [Робота над матеріалами з CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
   - [Робота над локалізованим вебзастосунком](how-to-work-on-localized-client-webapp.md)
-  - [Work on Playwright Tests](how-to-add-playwright-tests.md)
+  - [Робота над тестами Playwright](how-to-add-playwright-tests.md)
   - [Робота над відеозавданнями](how-to-help-with-video-challenges.md)
   - [Робота над документацією](how-to-work-on-the-docs-theme.md)
   - [Відкриття запиту на злиття](how-to-open-a-pull-request.md)
 - **Додаткові інструкції**
   - [Структура файлів навчальної програми](curriculum-file-structure.md)
   - [Налагодження вихідних е-листів локально](how-to-catch-outgoing-emails-locally.md)
-  - [Work on Cypress Tests](how-to-add-cypress-tests.md)
-  - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
-  - [Use Docker on Windows Home](how-to-use-docker-on-windows-home.md)
-  - [User Token Workflow](user-token-workflow.md)
-  - [Troubleshooting Development Issues](troubleshooting-development-issues.md)
-  - [Authors Analytics Manual](authors-analytics-manual.md)
+  - [Робота над тестами Cypress](how-to-add-cypress-tests.md)
+  - [Налаштування freeCodeCamp на Windows (WSL)](how-to-setup-wsl.md)
+  - [Використання Docker на Windows Home](how-to-use-docker-on-windows-home.md)
+  - [Робочий процес токенів користувача](user-token-workflow.md)
+  - [Розв’язання проблем розробки](troubleshooting-development-issues.md)
+  - [Керівництво з аналітики](authors-analytics-manual.md)
 
 ---
 

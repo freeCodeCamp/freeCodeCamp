@@ -27,7 +27,6 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
   [![Gitpod で開く](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- GitHub のインターフェースでファイルを編集するには、該当するファイルの鉛筆アイコンをクリックします。 これが最も速い方法ですが、GitHub 上で変更をテストすることができないため、**お勧めできません**。 もしメンテナーが、行った変更をローカルでテストする必要があると結論づけた場合は、上記の方法で行う必要があります。
 
 ### プラクティスプロジェクトに貢献する方法
 
