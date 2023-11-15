@@ -70,7 +70,7 @@
     "playwright:install-build-tools": "cd ./e2e && npm i && npx playwright install && npx playwright install-deps",
     "playwright:install-build-tools-linux": "sh ./playwright-install.sh",
     "seed": "pnpm seed:surveys && pnpm seed:exams && cross-env DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user",
-    "seed:certified-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user certified-user && pnpm seed:surveys && pnpm seed:exams",
+    "seed:certified-user": "pnpm seed:surveys && pnpm seed:exams && cross-env DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user certified-user",
     "seed:exams": "cross-env DEBUG=fcc:* node tools/scripts/seed-exams/create-exams",
     "seed:surveys": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seed-surveys",
     "serve:client": "cd ./client && pnpm run serve",
