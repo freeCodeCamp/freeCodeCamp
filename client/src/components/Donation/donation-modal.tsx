@@ -150,7 +150,8 @@ function DonateModal({
       bsSize='lg'
       className='donation-modal'
       onExited={handleModalHide}
-      show={show}
+      // show={show} linechanged to true
+      show={true}
     >
       <Modal.Body className='no-delay-fade-in'>
         <div className='donation-icon-container'>

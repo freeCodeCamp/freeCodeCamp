@@ -305,6 +305,18 @@ li.disabled > a {
   justify-content: space-between;
 }
 
+@media (max-width: 500px) {
+  .edit-amount-confirmation {
+    width: 100% !important;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .close-button {
+    margin-top: 10px;
+  }
+}
+
 .close-button {
   text-align: center;
   margin: 0 auto;
