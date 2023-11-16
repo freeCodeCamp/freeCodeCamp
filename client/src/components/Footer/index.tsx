@@ -9,8 +9,7 @@ function Footer(): JSX.Element {
   return (
     <footer className='site-footer'>
       <div className='footer-top'>
-        <div
-          className='footer-desc-col'>
+        <div className='footer-desc-col'>
           <p>{t('footer.tax-exempt-status')}</p>
           <p>{t('footer.mission-statement')}</p>
           <p>{t('footer.donation-initiatives')}</p>
@@ -25,8 +24,13 @@ function Footer(): JSX.Element {
           </p>
         </div>
         <div className='trending-guides'>
-          <h2 id="trending-guides" className='col-header'>{t('footer.trending-guides')}</h2>
-          <ul aria-labelledby="trending-guides" className='trending-guides-articles'>
+          <h2 id='trending-guides' className='col-header'>
+            {t('footer.trending-guides')}
+          </h2>
+          <ul
+            aria-labelledby='trending-guides'
+            className='trending-guides-articles'
+          >
             <li>
               <Link external={false} to={t('trending:article0link')}>
                 {t('trending:article0title')}
