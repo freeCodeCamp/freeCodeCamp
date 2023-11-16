@@ -1143,6 +1143,10 @@
       "upcoming-python-project": {
         "title": "Upcoming Python Project",
         "intro": ["placeholder"]
+      },
+      "learn-tree-traversal-by-building-a-binary-search-tree": {
+        "title": "Learn tree traversal",
+        "intro": ["", ""]
       }
     }
   },

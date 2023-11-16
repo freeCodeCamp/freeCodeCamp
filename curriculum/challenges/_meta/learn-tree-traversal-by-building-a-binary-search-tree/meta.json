@@ -1,0 +1,29 @@
+{
+  "name": "Learn tree traversal",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-tree-traversal-by-building-a-binary-search-tree",
+  "order": 42,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "upcoming-python",
+  "superOrder": 20,
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "65560f9380be92226084ef46",
+      "title": "Step 1"
+    },
+    {
+      "id": "65560ffdb7d05d248e012280",
+      "title": "Step 2"
+    },
+    {
+      "id": "65561022956c1024e7184add",
+      "title": "Step 3"
+    }
+  ],
+  "helpCategory": "Python"
+}
