@@ -1143,6 +1143,10 @@
       "upcoming-python-project": {
         "title": "Upcoming Python Project",
         "intro": ["placeholder"]
+      },
+      "learn-string-manipulation-by-building-a-cipher": {
+        "title": "Learn String Manipulation by Building a Cipher",
+        "intro": ["", ""]
       }
     }
   },
