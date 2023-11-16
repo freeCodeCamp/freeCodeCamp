@@ -117,8 +117,7 @@
   }
 
   .progress-bar-wrap,
-  .progress-bar-background,
-  .progress-bar-foreground {
+  .progress-bar-background {
     height: 10px;
   }
 
