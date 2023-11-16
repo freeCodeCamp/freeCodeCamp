@@ -20,7 +20,7 @@ Maria is introducing herself and confirming Tom's job role. `Are` is used in the
 
 ## --blanks--
 
-are
+`are`
 
 ### --feedback--
 
