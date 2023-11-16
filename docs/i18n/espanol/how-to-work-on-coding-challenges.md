@@ -27,7 +27,6 @@ Antes de trabajar en el plan de estudios, necesitarás configurar algunas herram
 
   [![Abrir en Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Editar los archivos de la interfaz de GitHub haciendo clic en el icono del lápiz del archivo correspondiente. Aunque esta es la manera más rápida, **no se recomienda**, ya que no puedes probar tus cambios en GitHub. Si nuestros administradores concluyen que los cambios que hiciste necesitan ser probados de forma local, entonces necesitarás seguir los métodos de encima.
 
 ### Cómo trabajar en proyectos de práctica
 
