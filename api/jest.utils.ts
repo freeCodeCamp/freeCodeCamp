@@ -58,6 +58,13 @@ export function superRequest(
   return req;
 }
 
+export function createSuperRequest(config: {
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE';
+  setCookies?: string[];
+}): (resource: string, options?: Options) => request.Test {
+  return (resource, options) => superRequest(resource, config, options);
+}
+
 export function setupServer(): void {
   let fastify: FastifyTestInstance;
   beforeAll(async () => {
