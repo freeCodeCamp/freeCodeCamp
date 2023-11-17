@@ -1,5 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { devLogin, setupServer, superRequest } from '../../jest.utils';
+import {
+  createSuperRequest,
+  devLogin,
+  setupServer,
+  superRequest
+} from '../../jest.utils';
 
 const chargeStripeCardReqBody = {
   paymentMethodId: 'UID',
@@ -44,10 +49,11 @@ describe('Donate', () => {
   setupServer();
 
   describe('Authenticated User', () => {
-    let setCookies: string[];
+    let superPost: ReturnType<typeof createSuperRequest>;
 
     beforeEach(async () => {
-      setCookies = await devLogin();
+      const setCookies = await devLogin();
+      superPost = createSuperRequest({ method: 'POST', setCookies });
     });
 
     describe('POST /donate/charge-stripe-card', () => {
@@ -55,10 +61,9 @@ describe('Donate', () => {
         mockSubCreate.mockImplementationOnce(
           generateMockSubCreate('we only care about specific error cases')
         );
-        const response = await superRequest('/donate/charge-stripe-card', {
-          method: 'POST',
-          setCookies
-        }).send(chargeStripeCardReqBody);
+        const response = await superPost('/donate/charge-stripe-card').send(
+          chargeStripeCardReqBody
+        );
         expect(response.body).toEqual({ isDonating: true, type: 'success' });
         expect(response.status).toBe(200);
       });
@@ -67,10 +72,9 @@ describe('Donate', () => {
         mockSubCreate.mockImplementationOnce(
           generateMockSubCreate('requires_source_action')
         );
-        const response = await superRequest('/donate/charge-stripe-card', {
-          method: 'POST',
-          setCookies
-        }).send(chargeStripeCardReqBody);
+        const response = await superPost('/donate/charge-stripe-card').send(
+          chargeStripeCardReqBody
+        );
 
         expect(response.body).toEqual({
           type: 'UserActionRequired',
@@ -84,10 +88,9 @@ describe('Donate', () => {
         mockSubCreate.mockImplementationOnce(
           generateMockSubCreate('requires_source')
         );
-        const response = await superRequest('/donate/charge-stripe-card', {
-          method: 'POST',
-          setCookies
-        }).send(chargeStripeCardReqBody);
+        const response = await superPost('/donate/charge-stripe-card').send(
+          chargeStripeCardReqBody
+        );
 
         expect(response.body).toEqual({
           type: 'PaymentMethodRequired',
@@ -100,28 +103,22 @@ describe('Donate', () => {
         mockSubCreate.mockImplementationOnce(
           generateMockSubCreate('still does not matter')
         );
-        const successResponse = await superRequest(
-          '/donate/charge-stripe-card',
-          {
-            method: 'POST',
-            setCookies
-          }
+        const successResponse = await superPost(
+          '/donate/charge-stripe-card'
         ).send(chargeStripeCardReqBody);
 
         expect(successResponse.status).toBe(200);
-        const failResponse = await superRequest('/donate/charge-stripe-card', {
-          method: 'POST',
-          setCookies
-        }).send(chargeStripeCardReqBody);
+        const failResponse = await superPost('/donate/charge-stripe-card').send(
+          chargeStripeCardReqBody
+        );
         expect(failResponse.status).toBe(400);
       });
 
       it('should return 500 if Stripe encountes an error', async () => {
         mockSubCreate.mockImplementationOnce(defaultError);
-        const response = await superRequest('/donate/charge-stripe-card', {
-          method: 'POST',
-          setCookies
-        }).send(chargeStripeCardReqBody);
+        const response = await superPost('/donate/charge-stripe-card').send(
+          chargeStripeCardReqBody
+        );
         expect(response.status).toBe(500);
         expect(response.body).toEqual({
           type: 'danger',
@@ -132,10 +129,7 @@ describe('Donate', () => {
 
     describe('POST /donate/add-donation', () => {
       it('should return 200 and update the user', async () => {
-        const response = await superRequest('/donate/add-donation', {
-          method: 'POST',
-          setCookies
-        }).send({
+        const response = await superPost('/donate/add-donation').send({
           anything: true,
           itIs: 'ignored'
         });
@@ -147,15 +141,11 @@ describe('Donate', () => {
       });
 
       it('should return 400 if the user is already donating', async () => {
-        const successResponse = await superRequest('/donate/add-donation', {
-          method: 'POST',
-          setCookies
-        }).send({});
+        const successResponse = await superPost('/donate/add-donation').send(
+          {}
+        );
         expect(successResponse.status).toBe(200);
-        const failResponse = await superRequest('/donate/add-donation', {
-          method: 'POST',
-          setCookies
-        }).send({});
+        const failResponse = await superPost('/donate/add-donation').send({});
         expect(failResponse.status).toBe(400);
       });
     });
