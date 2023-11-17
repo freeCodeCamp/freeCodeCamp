@@ -227,7 +227,7 @@ input[type='submit'],
   white-space: pre-line;
 }
 
-button:not['disabled']:hover,
+button:hover,
 input[type='submit']:hover,
 .btn:hover,
 .btn-default.active:hover,
