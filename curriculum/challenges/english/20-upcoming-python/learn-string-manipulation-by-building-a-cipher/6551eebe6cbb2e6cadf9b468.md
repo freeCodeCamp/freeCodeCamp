@@ -7,14 +7,14 @@ dashedName: step-2
 
 # --description--
 
-In Python you can use variables of different types. You've just used an integer value, but if you want to represent some text you need to use a string. Strings are sequences of characters enclosed by single or double quotes like this:
+In Python, you can use variables of different types. You've just used an integer value, but if you want to represent some text you need to use a string. Strings are sequences of characters enclosed by single or double quotes like this:
 
 ```py
 string_1 = "I am a string"
-string_2 = 'I am a string too'
+string_2 = 'I am also a string'
 ```
 
-You can use either single or double quotes to surround the text, the important thing is that you cannot use both together. For example, this is not valid code:
+You can use either single or double quotes to surround the text, the important thing is that you cannot use both together. For example, this is not a valid code:
 
 ```py
 string_3 = 'This is not valid"
