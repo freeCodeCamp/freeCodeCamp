@@ -594,6 +594,7 @@ function createExamChallengeCompleted(app) {
   return async function examChallengeCompleted(req, res, next) {
     const { body = {}, user } = req;
 
+    // get userCompletedChallenges
     try {
       await user.getCompletedChallenges$().toPromise();
     } catch (e) {
@@ -603,6 +604,7 @@ function createExamChallengeCompleted(app) {
     const { userCompletedExam = [], id } = body;
 
     try {
+      // get exam from database
       const examFromDb = await Exam.findById(id);
       if (!examFromDb) {
         res.status(500);
@@ -614,6 +616,7 @@ function createExamChallengeCompleted(app) {
       // This is cause there was struggles validating the exam directly from the db/loopback
       const examJson = JSON.parse(JSON.stringify(examFromDb));
 
+      // validate exam from db
       const validExamFromDbSchema = validateExamFromDbSchema(examJson);
       if (validExamFromDbSchema.error) {
         res.status(500);
