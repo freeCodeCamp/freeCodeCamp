@@ -1,0 +1,158 @@
+{
+  "name": "Learn How to Discuss Your Morning or Evening Routine",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-discuss-your-morning-or-evening-routine",
+  "order": 4,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "655699a46134fa74acaf6204",
+      "title": "Step 1"
+    },
+    {
+      "id": "65569ebbc9ef9f7b5b99827b",
+      "title": "Compliments"
+    },
+    {
+      "id": "6556ba2fe6c3f3846ea71ab2",
+      "title": "Expression of Personal Observation"
+    },
+    {
+      "id": "6556bc95e6ce5d850d37dd07",
+      "title": "Adjectives and Expressive Language"
+    },
+    {
+      "id": "6556be93f9fcb88ac9e88b0d",
+      "title": "Intro to Idiomatic Expressions"
+    },
+    {
+      "id": "6556bfd76c3fc38ba94ccf5e",
+      "title": "A Ton of Energy"
+    },
+    {
+      "id": "6556c1255efe438cbba5ce06",
+      "title": "Start The Day off Right"
+    },
+    {
+      "id": "6556c24670683b8d6d80bb32",
+      "title": "Routine Activities and Sequencing"
+    },
+    {
+      "id": "6556c3561e21d38e21518845",
+      "title": "Ordinary or Not"
+    },
+    {
+      "id": "6556c456a11da38ed3275f67",
+      "title": "Out of Ordinary Meaning"
+    },
+    {
+      "id": "6556c5977ba8d5900c230ce5",
+      "title": "Help To Wake Up"
+    },
+    {
+      "id": "6556c78eac427390aafa26ff",
+      "title": "Go Straight To"
+    },
+    {
+      "id": "65578ed1a4ae65a8fbc341f5",
+      "title": "Morning Fuel"
+    },
+    {
+      "id": "655792631f21afaa40c611e1",
+      "title": "Before and After"
+    },
+    {
+      "id": "655795519e1068aac3351755",
+      "title": "Clothing Vocabulary"
+    },
+    {
+      "id": "6557985a95ab6db1c4a31b6c",
+      "title": "Expressions with Take"
+    },
+    {
+      "id": "6557995f0d97e1b2837a3081",
+      "title": "Descriptive Adjectives"
+    },
+    {
+      "id": "65579a0e1613d5b31a034ee5",
+      "title": "The Many Uses of Get"
+    },
+    {
+      "id": "6557aee56ed7dcb5506a66d6",
+      "title": "Dress Code"
+    },
+    {
+      "id": "6557b169bc7ab4b66929672d",
+      "title": "Freshen Up"
+    },
+    {
+      "id": "6557b2f6f90e6eb703cd2307",
+      "title": "Adjective Practice"
+    },
+    {
+      "id": "6557b68486fe9bb7b52a4308",
+      "title": "Vocabulary Review"
+    },
+    {
+      "id": "6557bb81a99580b97a8b1c3b",
+      "title": "Sequence of Morning Routine"
+    },
+    {
+      "id": "6557bd443a1a57ba598bff47",
+      "title": "Keep Energy Up"
+    },
+    {
+      "id": "6557c1dff9d170bc911fd82b",
+      "title": "Balenced and Balence"
+    },
+    {
+      "id": "6557c30b85e792bd0c1e8206",
+      "title": "Breakfast Choices"
+    },
+    {
+      "id": "6557d6a229e541bfde2c560d",
+      "title": "Early x Late"
+    },
+    {
+      "id": "6557d782bc7613c06aa7dafd",
+      "title": "Exploring Never"
+    },
+    {
+      "id": "6557db51366bf6c15a966fb0",
+      "title": "Correct Verb Form After Preposition"
+    },
+    {
+      "id": "6557dc1aa6be93c1eb4e9efb",
+      "title": "If in Conditional Statements"
+    },
+    {
+      "id": "6557dea8c258c1c2a767deb7",
+      "title": "Even Before in Context"
+    },
+    {
+      "id": "6557e026c053f9c362a1983e",
+      "title": "Reviewing -ing"
+    },
+    {
+      "id": "6557e0adbee371c3ac455a01",
+      "title": "“I'll and Future Intentions”"
+    },
+    {
+      "id": "6557e2aca332a4c4c0359ed5",
+      "title": "Maybe and As Well"
+    },
+    {
+      "id": "6557e1ad953431c417763b3b",
+      "title": "Introducing \"Consistency\" and \"On the Right Foot\""
+    },
+    {
+      "id": "6557e5c6a854bfcad48808c4",
+      "title": "Summarizing James and Sarah's Dialogue"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}
