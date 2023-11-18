@@ -38,12 +38,7 @@ const ProjectModal = ({
         <SolutionViewer challengeFiles={challengeFiles} solution={solution} />
       </Modal.Body>
       <Modal.Footer>
-        <Button
-          data-playwright-test-label='close-project-solution-viewer'
-          onClick={handleSolutionModalHide}
-        >
-          {t('buttons.close')}
-        </Button>
+        <Button onClick={handleSolutionModalHide}>{t('buttons.close')}</Button>
       </Modal.Footer>
     </Modal>
   );
