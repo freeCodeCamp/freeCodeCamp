@@ -4,7 +4,7 @@ test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.beforeEach(async ({ page }) => {
   await page.goto(
-    '/certification/developmentuser/javascript-algorithms-and-data-structures'
+    '/certification/certifieduser/javascript-algorithms-and-data-structures'
   );
 });
 
