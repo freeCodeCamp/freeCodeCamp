@@ -14,7 +14,7 @@ The `y` transforms the noun `sleep` into an adjective describing a condition. Si
 
 `snow`+ `y` = `snowy` (having a lot of snow)
 
-`Rain`+ `y`= `rainy` (having a lot of rain)
+`Rain`+ `y` = `rainy` (having a lot of rain)
 
 # --question--
 

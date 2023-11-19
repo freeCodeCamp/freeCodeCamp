@@ -19,15 +19,15 @@ Regular verbs usually add `-ed` to form the past tense.
 
 Here are some other examples with regular verbs:
 
-`I walked to the store.` (Past tense of `walk`)
+`I walked to the store` (Past tense of `walk`)
 
-`She cleaned her room yesterday.` (Past tense of `clean`)
+`She cleaned her room yesterday` (Past tense of `clean`)
 
 Extra note to help with the audio:
 
 `Running around` means moving about in a hurried or energetic way, often chaotically. For example:
 
-`The kids are running around the playground.`
+`The kids are running around the playground`
 
 # --question--
 

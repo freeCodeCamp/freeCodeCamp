@@ -1,8 +1,8 @@
 ---
 id: 655a3470e882d10004441cf3
-title: The Meaning and Use of "Tempting"
+title: The Meaning of "Tempting"
 challengeType: 22
-dashedName: the-meaning-and-use-of-tempting
+dashedName: the-meaning-of-tempting
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
@@ -13,10 +13,10 @@ Expert: Absolutely! My first suggestion is: don't hit the snooze button multiple
 
 # --description--
 
-The word `tempting` is an adjective that describes something appealing or attractive, often making someone want to do or have it. It ends in `-ing` because it's derived from the verb `tempt`, meaning to cause atraction. For example:
-`The idea of sleeping in is tempting.` (suggests the idea is appealing)
+The word `tempting` is an adjective that describes something appealing or attractive, often making someone want to do or have it.
+For example:
 
-Listen to the expert's advice and identify the usage of `tempting` or `tempt` 
+`The idea of sleeping in is tempting` (suggests the idea is appealing)
 
 # --fillInTheBlank--
 

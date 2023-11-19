@@ -1,8 +1,8 @@
 ---
 id: 655a35731cb3fc0152ebcf60
-title: Understanding "Disrupts" and "Sleep Cycle"
+title: To Disrupt and Sleep Cycle
 challengeType: 19
-dashedName: understanding-disrupts-and-sleep-cycle
+dashedName: to-disrupt-and-sleep-cycle
 ---
 
 # --description--
@@ -12,9 +12,9 @@ dashedName: understanding-disrupts-and-sleep-cycle
 The term `sleep cycle` refers to the natural pattern of sleep, including different stages the body goes through while sleeping. 
 
 For example:
-`Loud noises disrupt my concentration.` (interrupts the concentration)
+`Loud noises disrupt my concentration` (interrupts the concentration)
 
-`A good sleep cycle is vital for restful sleep.` (refers to a healthy pattern of sleep)
+`A good sleep cycle is vital for restful sleep` (refers to a healthy pattern of sleep)
 
 # --question--
 
@@ -28,7 +28,7 @@ What does the expert mean when saying hitting the snooze button `disrupts your s
 
 ### --feedback--
 
-Disruption implies interference, not necessarily lengthening the sleep cycle.
+`To disrupt` implies interference, not necessarily lengthening the sleep cycle.
 
 ---
 
@@ -40,7 +40,7 @@ Disruption implies interference, not necessarily lengthening the sleep cycle.
 
 ### --feedback--
 
-'Disrupts' indicates a negative impact, not an improvement in sleep quality.
+`Disrupts` indicates a negative impact, not an improvement in sleep quality.
 
 ---
 
@@ -48,7 +48,7 @@ Disruption implies interference, not necessarily lengthening the sleep cycle.
 
 ### --feedback--
 
-'Disrupts' specifically implies that there is an impact or interference with the sleep cycle.
+`Disrupts` specifically implies that there is an impact or interference with the sleep cycle.
 
 ## --video-solution--
 

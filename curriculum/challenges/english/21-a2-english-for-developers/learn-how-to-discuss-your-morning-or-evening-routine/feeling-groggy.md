@@ -7,16 +7,16 @@ dashedName: feeling-groggy
 
 # --description--
 
-To `feel groggy` is an informal term that means to feel weak, tired, or not fully awake, often as a result of poor sleep or waking up suddenly. 
+`Feel groggy` is an informal term that means to feel weak, tired, or not fully awake, often as a result of poor sleep or waking up suddenly. 
 For example:
 
-`I feel groggy if I don't get enough sleep.` (describes feeling tired due to lack of sleep)
+`I feel groggy if I don't get enough sleep` (describes feeling tired due to lack of sleep)
 
 `Sluggish` is an adjective that describes a feeling of low energy, slow movement, or a lack of alertness. It's often used when someone feels tired, lethargic, or not able to think or move quickly. This term can apply to both physical and mental states. Here are some examples:
 
-`After a poor night's sleep, she felt sluggish and couldn't concentrate at work.` (describes a lack of mental alertness and energy)
+`After a poor night's sleep, she felt sluggish and couldn't concentrate at work` (describes a lack of mental alertness and energy)
 
-`The computer was running sluggishly, taking a long time to respond.` (describes slow performance, used metaphorically for an inanimate object)
+`The computer was running sluggishly, taking a long time to respond` (describes slow performance, used metaphorically for an inanimate object)
 
 
 # --question--

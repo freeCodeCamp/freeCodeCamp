@@ -13,13 +13,13 @@ Sophie: Wow, thanks! I'll try to include these changes into my morning routine.
 
 # --description--
 
-Listen to Sophie's statement and identify if she uses `I will` or `I'll.``
+Listen to Sophie's statement and identify if she uses `I will` or `I'll`
 
 # --fillInTheBlank--
 
 ## --sentence--
 
-Sophie: "Wow, thanks! _ try to include these changes into my morning routine."
+`Sophie: Wow, thanks! _ try to include these changes into my morning routine.``
 
 ## --blanks--
 

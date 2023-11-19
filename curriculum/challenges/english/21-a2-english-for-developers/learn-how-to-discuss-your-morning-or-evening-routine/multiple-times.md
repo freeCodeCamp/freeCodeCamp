@@ -11,7 +11,7 @@ dashedName: multiple-times
 
 For example:
 
-`He checked his phone multiple times during the meeting.` (indicates he checked his phone many times)
+`He checked his phone multiple times during the meeting` (indicates he checked his phone many times)
 
 # --question--
 

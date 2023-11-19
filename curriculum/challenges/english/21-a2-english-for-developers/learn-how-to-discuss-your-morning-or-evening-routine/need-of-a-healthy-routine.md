@@ -41,7 +41,7 @@ Her focus is on improving her morning routine, not on evening activities.
 
 ---
 
-`Advice on avoiding mornings altogether`
+`Advice on avoiding mornings`
 
 ### --feedback--
 

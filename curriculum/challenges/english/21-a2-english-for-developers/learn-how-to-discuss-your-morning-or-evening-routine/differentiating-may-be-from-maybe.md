@@ -17,7 +17,7 @@ Understanding `may be` and `maybe` is crucial for clear communication.
 
 `May` on its own also suggests possibility or permission.
 
-`May be` is a modal verb phrase suggesting a possibility or potentiality. 
+`May be` suggests a possibility or potentiality. 
 
 `Maybe` is an adverb indicating uncertainty or possibility. For example:
 

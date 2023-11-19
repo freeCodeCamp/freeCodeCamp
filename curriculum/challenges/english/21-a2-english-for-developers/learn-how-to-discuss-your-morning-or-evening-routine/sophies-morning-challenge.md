@@ -39,7 +39,7 @@ Sophie mentions feeling sleepy, not energetic, in the mornings.
 
 ### --feedback--
 
-While Sophie struggles in the morning, she doesn't express a dislike for mornings, just a lack of productivity.
+Sophie doesn't express a dislike for mornings, just a lack of productivity.
 
 ---
 

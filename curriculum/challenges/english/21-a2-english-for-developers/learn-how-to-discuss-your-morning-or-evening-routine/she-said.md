@@ -21,15 +21,15 @@ Some verbs change their form in the past tense, like `say` to `said`.
 
 For example:
 
-`Yesterday, she said she would join us.` (Past tense of 'say')
+`Yesterday, she said she would join us` (Past tense of `say`)
 
-`He said the meeting was at noon.` (Describes a past statement about the meeting time)
+`He said the meeting was at noon` (Describes a past statement about the meeting time)
 
 Another example of irregular verb is `tell`, which becomes `told` in the past tense. For example:
 
-`He told me about the plan last week.` (Past tense of `tell`)
+`He told me about the plan last week` (Past tense of `tell`)
 
-`Last night, they told stories around the campfire.` (Using `told` to describe a past action)
+`Last night, they told stories about our last project` (Using `told` to describe a past action)
 
 Don't worry if irregular verbs seem tricky; with practice, you'll get the hang of them!
 
@@ -45,7 +45,7 @@ What does Jake mean when he says, `Sophie said you have very good tips for a gre
 
 ### --feedback--
 
-'Said' is in the past tense, indicating that Sophie has already told Jake about the tips.
+`Said` is in the past tense, indicating that Sophie has already told Jake about the tips.
 
 ---
 
