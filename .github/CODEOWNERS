@@ -51,5 +51,5 @@ pnpm-lock.yaml
 # Files that need attention from the mobile team
 # -------------------------------------------------
 
-/curriculum/schema/challenge-schema.js @freeCodeCamp/mobile
-/client/src/redux/prop-types.ts @freeCodeCamp/mobile
+/curriculum/schema/challenge-schema.js @freeCodeCamp/dev-team @freeCodeCamp/mobile
+/client/src/redux/prop-types.ts @freeCodeCamp/dev-team @freeCodeCamp/mobile
