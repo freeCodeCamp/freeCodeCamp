@@ -8,7 +8,7 @@ dashedName: build-a-palindrome-checker
 
 # --description--
 
-A <dfn>palindrome</dfn> is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
+A <dfn>palindrome</dfn> is a word or phrase that can be read the same way forwards and backwards, ignoring punctuation, case, and spacing.
 
 **Objective:** Build an app that is functionally similar to <a href="https://palindrome-checker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://palindrome-checker.freecodecamp.rocks</a>
 
@@ -23,6 +23,7 @@ A <dfn>palindrome</dfn> is a word or sentence that's spelled the same way both f
 1. When `#text-input` contains the word `eye` and `#btn` is clicked, `#result` should contain the text `eye is a palindrome`
 1. When `#text-input` contains the words `race car` and `#btn` is clicked, `#result` should contain the text `race car is a palindrome`
 1. When `#text-input` contains the text `not a palindrome` and `#btn` is clicked, `#result` should contain the text `not a palindrome is not a palindrome`
+1. When `#text-input` contains the text `No one made killer apparel like Dame Noon` and `#btn` is clicked, `#result` should contain the text `No one made killer apparel like Dame Noon`
 1. When `#text-input` contains the text `saippuakivikauppias` and `#btn` is clicked, `#result` should contain the text `saippuakivikauppias is a palindrome`
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
@@ -124,6 +125,18 @@ const resultEl = document.getElementById('result');
 inputEl.value = 'not a palindrome';
 btnEl.click();
 assert(resultEl.innerText.trim().match(/^not a palindrome is not a palindrome/i));
+```
+
+When `#text-input` contains the text `No one made killer apparel like Dame Noon` and `#btn` is clicked, `#result` should contain the text `No one made killer apparel like Dame Noon is a palindrome`.
+
+```js
+const inputEl = document.getElementById('text-input');
+const btnEl = document.getElementById('btn');
+const resultEl = document.getElementById('result');
+
+inputEl.value = 'No one made killer apparel like Dame Noon';
+btnEl.click();
+assert(resultEl.innerText.trim().match(/^no one made killer apparel like dame noon is a palindrome/i));
 ```
 
 When `#text-input` contains the text `saippuakivikauppias` and `#btn` is clicked, `#result` should contain the text `saippuakivikauppias is a palindrome`.
