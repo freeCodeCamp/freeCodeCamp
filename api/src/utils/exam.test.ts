@@ -45,7 +45,6 @@ describe('Exam helpers', () => {
   });
 
   describe('createExamResults()', () => {
-    // examJson.numberOfQuestionsInExam = 3;
     const examResults1 = createExamResults(userExam1, examJson as Exam);
     const examResults2 = createExamResults(userExam2, examJson as Exam);
     const examResults3 = createExamResults(userExam3, examJson as Exam);
