@@ -638,7 +638,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const { id: userId } = req.session.user;
         const { userCompletedExam, id, challengeType } = req.body;
 
-        // 1 get user completedChallenges
         const { completedChallenges, completedExams, progressTimestamps } =
           await fastify.prisma.user.findUniqueOrThrow({
             where: { id: userId },
@@ -649,7 +648,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             }
           });
 
-        // 2 get exam from database
         const examFromDb = await fastify.prisma.exam.findUnique({
           where: { id }
         });
@@ -661,7 +659,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           };
         }
 
-        // 3 validate exam from db
         const validExamFromDbSchema = validateExamFromDbSchema(examFromDb);
         if ('error' in validExamFromDbSchema) {
           void reply.code(500);
@@ -673,7 +670,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         const { prerequisites, numberOfQuestionsInExam, title } = examFromDb;
 
-        // 4 Validate User has completed prerequisite challenges
         const prerequisiteIds = prerequisites.map(p => p.id);
         const completedPrerequisites = completedChallenges.filter(c =>
           prerequisiteIds.includes(c.id)
@@ -686,23 +682,20 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           };
         }
 
-        // 5 Validate user completed exam
         const validUserCompletedExam = validateUserCompletedExamSchema(
           userCompletedExam,
           numberOfQuestionsInExam
         );
         if ('error' in validUserCompletedExam) {
-          // check what is logged in the old route
+          fastify.log.error(validUserCompletedExam.error);
           void reply.code(400);
           return {
             error: 'An error occurred validating the submitted exam.'
           };
         }
 
-        // 6 create exam results
         const examResults = createExamResults(userCompletedExam, examFromDb);
 
-        // 7 validate exam results
         const validExamResults = validateExamResultsSchema(examResults);
         if ('error' in validExamResults) {
           fastify.log.error(validExamResults.error);
@@ -718,7 +711,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const newProgressTimeStamps = progressTimestamps as ProgressTimestamp[];
         const completedDate = Date.now();
 
-        // 8 create completedChallenge for db
         const newCompletedChallenge = {
           id,
           challengeType,
