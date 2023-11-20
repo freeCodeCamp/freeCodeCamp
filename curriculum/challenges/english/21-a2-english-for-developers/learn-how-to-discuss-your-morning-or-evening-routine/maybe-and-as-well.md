@@ -1,0 +1,58 @@
+---
+id: 6557e2aca332a4c4c0359ed5
+title: Maybe and As Well
+challengeType: 19
+dashedName: maybe-and-as-well
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+---
+
+<!--
+AUDIO REFERENCE: 
+James: Maybe I can get more productive in the morning as well.
+-->
+
+# --description--
+
+`Maybe` is a word used to express uncertainty or possibility. It indicates that something might happen or be true. For example:
+`Maybe I'll go for a walk if the weather is nice.` (indicates a possibility depending on the weather)
+
+`As well` is a phrase used to add something to what has just been said, similar to `also` or `too`. It's often used to include something or someone else in an action or statement. For example:
+`I'll have a coffee, and bring me a muffin as well.` (includes the muffin in addition to the coffee)
+
+# --question--
+
+## --text--
+
+What does James mean when he says, `Maybe I can get more productive in the morning as well`?
+
+## --answers--
+
+`He is certain about becoming more productive in the morning`
+
+### --feedback--
+
+`Maybe` expresses a possibility, not certainty.
+
+---
+
+`He doesn't want to change his morning routine`
+
+### --feedback--
+
+Using `maybe` and `as well` indicates considering a change to be more productive, not a lack of desire to change.
+
+---
+
+`He will become less productive in the morning`
+
+### --feedback--
+
+The phrase implies a possibility of increased productivity, not becoming less productive.
+
+---
+
+`He thinks it's possible for him to also become more productive in the morning`
+
+## --video-solution--
+
+4
