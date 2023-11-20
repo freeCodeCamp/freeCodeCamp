@@ -8,13 +8,13 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 # --description--
 
-Expressions like `It's a pleasure to meet you` are commonly used when meeting someone for the first time to show politeness and appreciation when meeting someone for the first time.
+Expressions like `It's a pleasure to meet you` are commonly used when meeting someone for the first time as a polite way to greet someone.
 
 # --question--
 
 ## --text--
 
-What does Tom say to express he is happy to meet Maria?
+What does Tom say to indicate he is happy to meet Maria?
 
 ## --answers--
 

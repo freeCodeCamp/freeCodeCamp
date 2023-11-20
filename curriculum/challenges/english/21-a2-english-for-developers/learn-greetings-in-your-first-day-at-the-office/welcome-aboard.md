@@ -38,7 +38,7 @@ Incorrect. The dialogue isn't about being on a boat.
 
 ---
 
-`Maria is greeting Tom to the board of directors.`
+`Maria is introducing Tom to the board of directors.`
 
 ### --feedback--
 
