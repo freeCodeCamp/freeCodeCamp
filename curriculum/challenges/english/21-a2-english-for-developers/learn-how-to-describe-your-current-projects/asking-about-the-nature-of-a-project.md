@@ -1,0 +1,53 @@
+---
+id: 655b5d955d8b2679be66a4db
+title: Asking About The Nature of a Project
+challengeType: 19
+dashedName: asking-about-the-nature-of-a-project
+audio: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+---
+<!--
+AUDIO REFERENCE:
+Sophie: Hey James, what's your cybersecurity project about?
+-->
+
+# --description--
+
+`What` is often used to ask for specific information. 
+
+# --question--
+
+## --text--
+
+`What does Sophie want to know from James?`
+
+## --answers--
+
+`How James is doing`
+
+### --feedback--
+
+Sophie is not asking about his personal well-being.
+
+---
+
+`Why James chose his project`
+
+### --feedback--
+
+Sophie is not asking the reason he chose this project.
+
+---
+
+`Where James works`
+
+### --feedback--
+
+That's not it.
+
+---
+
+`What James's cybersecurity project is about`
+
+## --video-solution--
+
+4

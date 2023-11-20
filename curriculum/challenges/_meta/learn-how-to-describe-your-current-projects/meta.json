@@ -1,0 +1,66 @@
+{
+  "name": "Learn How to Describe Your Current Project",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-describe-your-current-projects",
+  "order": 5,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "655b5899f2ef74716d069180",
+      "title": "Step 1"
+    },
+    {
+      "id": "655b5cc5a8b3897908c962f0",
+      "title": "Cybersecurity"
+    },
+    {
+      "id": "655b5d955d8b2679be66a4db",
+      "title": "Asking About The Nature of a Project"
+    },
+    {
+      "id": "655b5ef161f6777ae5eb3ba4",
+      "title": "Checking For Problems"
+    },
+    {
+      "id": "655b62a491cb2d7c687a1a2a",
+      "title": "To Be Safe"
+    },
+    {
+      "id": "655b63d0da84237d16c55d7e",
+      "title": "We Might Have Problems"
+    },
+    {
+      "id": "655b6522da78357de8428a19",
+      "title": "Why James Is  Using Special Tools "
+    },
+    {
+      "id": "655b672f02003c7ecec12ffe",
+      "title": "Responding to Potential Problems"
+    },
+    {
+      "id": "655b67f02eecf57fa75ceecf",
+      "title": "Stay Safe"
+    },
+    {
+      "id": "655b69293e6e9480ed5f6624",
+      "title": "Taking Cyber Security Lessons"
+    },
+    {
+      "id": "655b6a58626e2a82be5a78eb",
+      "title": "If Someone Tries to Steal"
+    },
+    {
+      "id": "655b6ca9c3e001838ac22d17",
+      "title": "Present Continuous Practice"
+    },
+    {
+      "id": "655b76340ecb8285060ab6d5",
+      "title": "Summarizing Actions"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}
