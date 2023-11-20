@@ -8,7 +8,7 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 # --description--
 
-Tom is introducing himself using a full name and an expression showing he is pleased.
+Tom is introducing himself using a full name.
 
 # --question--
 
