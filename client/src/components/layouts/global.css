@@ -459,6 +459,11 @@ code {
   border-radius: 0;
   font-family: var(--font-family-monospace);
   overflow-wrap: anywhere;
+  border: 1px solid var(--gray-45);
+  background: var(--tertiary-background);
+  border-radius: 4px;
+  font-family: 'courier';
+  color: var(--love-color);
 }
 
 :not(pre) > code {
