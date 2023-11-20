@@ -1,9 +1,9 @@
 ---
-id: 655a591ad34faa18c8338f9b
+id: 655b34a4b45a76689cb429c6
 videoId: nLDychdBwUg
-title: "Dialogue 3: Evening Routine… With Kids"
+title: "Dialogue 5: Sophie and Brian Talk About The Weekend"
 challengeType: 21
-dashedName: evening-routine-with-kids
+dashedName: dialogue-sophie-and-brian-talk-about-the-weekend
 ---
 
 # --description--

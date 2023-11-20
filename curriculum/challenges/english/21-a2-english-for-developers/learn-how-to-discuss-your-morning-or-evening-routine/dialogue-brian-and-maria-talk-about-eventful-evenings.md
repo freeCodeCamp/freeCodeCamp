@@ -1,11 +1,10 @@
 ---
-id: 655a591ad34faa18c8338f9b
+id: 655a9f8d6d3af8538a178166
 videoId: nLDychdBwUg
-title: "Dialogue 3: Evening Routine… With Kids"
+title: "Dialogue 4: Brian and Maria talk about eventful evenings"
 challengeType: 21
-dashedName: evening-routine-with-kids
+dashedName: dialogue-brian-and-maria-talk-about-eventful-evenings
 ---
-
 # --description--
 
 What the video above to understand the context of the upcoming lessons.

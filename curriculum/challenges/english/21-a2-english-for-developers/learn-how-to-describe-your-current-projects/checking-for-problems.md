@@ -1,0 +1,58 @@
+---
+id: 655b5ef161f6777ae5eb3ba4
+title: Checking For Problems
+challengeType: 19
+dashedName: checking-for-problems
+audio: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+---
+
+<!--
+AUDIO REFERENCE:
+James: Hi Sophie! I'm checking our network for problems.
+-->
+
+# --description--
+
+The preposition `for` is often used to explain the reason why we do something. Notice how `for` is followed by the reason or purpose of the action:
+
+`I'm studying English for my job,` (`for my job` explains the reason for studying English). 
+
+`I go to the gym for health,` (it means they go to the gym to stay healthy). 
+
+# --question--
+
+## --text--
+
+`Why is James checking the network in his project?`
+
+## --answers--
+
+`For learning about networks`
+
+### --feedback--
+
+While learning may be part of his job, the sentence specifically mentions checking for another thing.
+
+---
+
+`For finding problems`
+
+---
+
+`For fun`
+
+### --feedback--
+
+The context indicates a professional purpose.
+
+---
+
+`For making a report`
+
+### --feedback--
+
+The sentence specifies looking for another thing
+
+## --video-solution--
+
+2
