@@ -454,20 +454,15 @@ input:focus {
 }
 code {
   padding: 1px 4px;
-  background-color: var(--quaternary-background);
+  background-color: var(--tertiary-background);
   color: var(--tertiary-color);
   border-radius: 0;
   font-family: var(--font-family-monospace);
   overflow-wrap: anywhere;
-  border: 1px solid var(--gray-45);
-  background: var(--tertiary-background);
-  border-radius: 4px;
-  font-family: 'courier';
-  color: var(--love-color);
 }
 
 :not(pre) > code {
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--gray-45);
 }
 
 .challenge-instructions code {
