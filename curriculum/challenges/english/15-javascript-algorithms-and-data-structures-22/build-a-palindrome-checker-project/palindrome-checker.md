@@ -102,7 +102,7 @@ btnEl.click();
 assert(resultEl.innerText.trim().match(/^eye is a palindrome/i));
 ```
 
-When `#text-input` contains the words `race car` and `#btn` is clicked, `#result` should contain the text `race car is a palindrome`. (Currently broken due to project code)
+When `#text-input` contains the words `race car` and `#btn` is clicked, `#result` should contain the text `race car is a palindrome`.
 
 ```js
 const inputEl = document.getElementById('text-input');
@@ -114,7 +114,7 @@ btnEl.click();
 assert(resultEl.innerText.trim().match(/^race car is a palindrome/i));
 ```
 
-When `#text-input` contains the text `not a palindrome` and `#btn` is clicked, `#result` should contain the text `not a palindrome is not a palindrome`. (Currently broken due to project code)
+When `#text-input` contains the text `not a palindrome` and `#btn` is clicked, `#result` should contain the text `not a palindrome is not a palindrome`.
 
 ```js
 const inputEl = document.getElementById('text-input');
@@ -324,7 +324,9 @@ const checkPalindromeBtn = document.getElementById('btn');
 const resultDiv = document.getElementById('result');
 
 const checkForPalindrome = input => {
-  const hasSpecialCharactersOrDigits = /[\W\d_]/.test(input);
+  const originalInput = input; // Store for later output
+  // Remove whitespace before checking for special characters and digits
+  const hasSpecialCharactersOrDigits = /[\W\d_]/.test(input.replace(/\s/g, ''));
 
   if (input === '') {
     alert('Please input a value');
@@ -335,11 +337,11 @@ const checkForPalindrome = input => {
     alert('Input should not include numbers and special characters');
     return;
   }
-  // Remove the previous result
+  // Remove the previous result.
   resultDiv.replaceChildren();
 
   const lowerCaseStr = input.replace(/[^A-Z0-9]/gi, '').toLowerCase();
-  let resultMsg = `${input} ${
+  let resultMsg = `${originalInput} ${
     lowerCaseStr === [...lowerCaseStr].reverse().join('') ? 'is' : 'is not'
   } a palindrome.`;
 
@@ -348,7 +350,7 @@ const checkForPalindrome = input => {
   pTag.appendChild(document.createTextNode(resultMsg));
   resultDiv.appendChild(pTag);
 
-  // Show the result
+  // Show the result.
   resultDiv.classList.remove('hidden');
 };
 
