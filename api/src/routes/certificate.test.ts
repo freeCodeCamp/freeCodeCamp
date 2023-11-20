@@ -92,6 +92,10 @@ describe('certificate routes', () => {
           certSlug: Certification.RespWebDesign
         });
 
+        expect(response.body).toStrictEqual({
+          message: 'flash.went-wrong',
+          type: 'danger'
+        });
         expect(response.status).toBe(500);
       });
 
@@ -155,13 +159,12 @@ describe('certificate routes', () => {
           certSlug: Certification.RespWebDesign
         });
 
-        expect(response.body).toMatchObject({
-          response: {
-            type: 'info',
-            message: 'flash.already-claimed',
-            variables: {
-              name: 'Responsive Web Design'
-            }
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        expect(response.body.response).toStrictEqual({
+          type: 'info',
+          message: 'flash.already-claimed',
+          variables: {
+            name: 'Responsive Web Design'
           }
         });
 
@@ -188,8 +191,11 @@ describe('certificate routes', () => {
           certSlug: Certification.RespWebDesign
         });
 
-        expect(response.body).toMatchObject({
-          response: { message: 'flash.incomplete-steps' }
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        expect(response.body.response).toStrictEqual({
+          message: 'flash.incomplete-steps',
+          type: 'info',
+          variables: { name: 'Responsive Web Design' }
         });
         expect(response.status).toBe(400);
       });
@@ -219,8 +225,9 @@ describe('certificate routes', () => {
           certSlug: Certification.RespWebDesign
         });
 
-        expect(response.body).toMatchObject({
-          message: 'flash.went-wrong'
+        expect(response.body).toStrictEqual({
+          message: 'flash.went-wrong',
+          type: 'danger'
         });
         expect(response.status).toBe(500);
       });
