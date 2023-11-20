@@ -499,7 +499,7 @@ assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 11 55
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

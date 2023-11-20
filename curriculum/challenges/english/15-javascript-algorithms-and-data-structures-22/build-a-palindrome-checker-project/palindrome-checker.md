@@ -167,7 +167,7 @@ assert(resultEl.innerText.trim().match(/^saippuakivikauppias is a palindrome/i))
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>
