@@ -452,7 +452,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       try {
         const { id } = req.params;
 
-        // get user completedChallenges
         const { completedChallenges } =
           await fastify.prisma.user.findUniqueOrThrow({
             where: { id: req.session.user.id },

@@ -321,7 +321,7 @@ export const schemas = {
                 id: Type.String(),
                 completedDate: Type.Number(),
                 challengeType: Type.Optional(Type.Number()),
-                examResults: examResults
+                examResults
               })
             ),
             completedChallengeCount: Type.Number(),
@@ -784,7 +784,7 @@ export const schemas = {
         completedDate: Type.Number(),
         points: Type.Number(),
         alreadyCompleted: Type.Boolean(),
-        examResults: examResults
+        examResults
       }),
       400: Type.Object({
         error: Type.String()
