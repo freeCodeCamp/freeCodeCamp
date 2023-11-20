@@ -52,3 +52,4 @@ pnpm-lock.yaml
 # -------------------------------------------------
 
 /curriculum/schema/challenge-schema.js @freeCodeCamp/mobile
+/client/src/redux/prop-types.ts @freeCodeCamp/mobile
