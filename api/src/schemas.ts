@@ -24,6 +24,15 @@ const saveChallengeBody = Type.Object({
   files: Type.Array(file)
 });
 
+const examResults = Type.Object({
+  numberOfCorrectAnswers: Type.Number(),
+  numberOfQuestionsInExam: Type.Number(),
+  percentCorrect: Type.Number(),
+  passingPercent: Type.Number(),
+  passed: Type.Boolean(),
+  examTimeInSeconds: Type.Number()
+});
+
 export const schemas = {
   // Settings:
   updateMyProfileUI: {
@@ -307,7 +316,14 @@ export const schemas = {
                 isManuallyApproved: Type.Optional(Type.Boolean())
               })
             ),
-            // todo: add completed exams
+            completedExams: Type.Array(
+              Type.Object({
+                id: Type.String(),
+                completedDate: Type.Number(),
+                challengeType: Type.Optional(Type.Number()),
+                examResults: examResults
+              })
+            ),
             completedChallengeCount: Type.Number(),
             currentChallengeId: Type.Optional(Type.String()),
             email: Type.String(),
@@ -768,14 +784,7 @@ export const schemas = {
         completedDate: Type.Number(),
         points: Type.Number(),
         alreadyCompleted: Type.Boolean(),
-        examResults: Type.Object({
-          numberOfCorrectAnswers: Type.Number(),
-          numberOfQuestionsInExam: Type.Number(),
-          percentCorrect: Type.Number(),
-          passingPercent: Type.Number(),
-          passed: Type.Boolean(),
-          examTimeInSeconds: Type.Number()
-        })
+        examResults: examResults
       }),
       400: Type.Object({
         error: Type.String()

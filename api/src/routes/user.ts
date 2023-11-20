@@ -130,7 +130,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
             isRelationalDatabaseCertV8: false,
             isCollegeAlgebraPyCertV8: false,
             completedChallenges: [],
-            // completedExams: [],
+            completedExams: [],
             savedChallenges: [],
             partiallyCompletedChallenges: [],
             needsModeration: false
@@ -397,7 +397,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             about: true,
             acceptedPrivacyTerms: true,
             completedChallenges: true,
-            // completedExams: true
+            completedExams: true,
             currentChallengeId: true,
             email: true,
             emailVerified: true,

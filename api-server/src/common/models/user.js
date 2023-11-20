@@ -747,7 +747,6 @@ export default function initializeUser(User) {
       about,
       calendar,
       completedChallenges,
-      // completedExams?
       isDonating,
       joinDate,
       location,
