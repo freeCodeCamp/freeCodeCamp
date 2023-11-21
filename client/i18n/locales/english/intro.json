@@ -1212,6 +1212,30 @@
       "learn-how-to-discuss-tech-trends-and-updates": {
         "title": "Learn How to Discuss Tech Trends and Updates",
         "intro": ["", ""]
+      },
+      "learn-how-to-help-a-coworker-troubleshoot-on-github": {
+        "title": "Learn How to Help a Coworker Troubleshoot on GitHub",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
+        "title": "Learn How to Share Your Progress in Weekly Stand-up Meetings",
+        "intro": ["", ""]
+      },
+      "learn-how-to-ask-for-clarification-on-code-understanding": {
+        "title": "Learn How to Ask for Clarification on Code Understanding",
+        "intro": ["", ""]
+      },
+      "learn-how-to-document-code-for-a-project": {
+        "title": "Learn How to Document Code for a Project",
+        "intro": ["", ""]
+      },
+      "learn-how-to-read-and-understand-code-documentation": {
+        "title": "Learn How to Read and Understand Code Documentation",
+        "intro": ["", ""]
+      },
+      "learn-how-to-analyze-code-documentation": {
+        "title": "Learn How to Analyze Code Documentation",
+        "intro": ["", ""]
       }
     }
   },

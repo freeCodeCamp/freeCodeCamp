@@ -1,0 +1,16 @@
+{
+  "name": "Learn How to Share Your Progress in Weekly Stand-up Meetings",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-how-to-share-your-progress-in-weekly-stand-up-meetings",
+  "order": 16,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "superOrder": 21,
+  "isBeta": true,
+  "challengeOrder": [{ "id": "655c1337801e88911c2ef96b", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}
