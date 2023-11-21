@@ -78,7 +78,7 @@ const ActionRow = ({
             </button>
           )}
           <button
-            data-playwright-test-label='preview-button'
+            data-playwright-test-label='preview-pane-button'
             aria-expanded={!!showPreviewPane}
             onClick={() => togglePane('showPreviewPane')}
           >
@@ -86,6 +86,7 @@ const ActionRow = ({
             <span aria-hidden='true'>{t('learn.editor-tabs.preview')}</span>
           </button>
           <button
+            data-playwright-test-label='preview-portal-button'
             aria-expanded={!!showPreviewPortal}
             onClick={() => togglePane('showPreviewPortal')}
           >
