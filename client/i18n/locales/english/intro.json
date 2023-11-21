@@ -1236,6 +1236,34 @@
       "learn-how-to-analyze-code-documentation": {
         "title": "Learn How to Analyze Code Documentation",
         "intro": ["", ""]
+      },
+      "learn-how-to-follow-basic-email-convention": {
+        "title": "Learn How to Follow Basic Email Convention",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-progress-and-accomplishments": {
+        "title": "Learn How to Share Progress and Accomplishments",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
+        "title": "Learn How to Talk About Updates and Plans for Tasks and Projects",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-agreement-or-disagreement": {
+        "title": "Learn How to Express Agreement or Disagreement",
+        "intro": ["", ""]
+      },
+      "learn-how-to-offer-technical-support-and-guidance": {
+        "title": "Learn How to Offer Technical Support and Guidance",
+        "intro": ["", ""]
+      },
+      "learn-how-to-request-and-receive-guidance": {
+        "title": "Learn How to Request and Receive Guidance",
+        "intro": ["", ""]
+      },
+      "learn-how-to-provide-explanations-when-helping-others": {
+        "title": "Learn How to Provide Explanations When Helping Others",
+        "intro": ["", ""]
       }
     }
   },

@@ -1,0 +1,16 @@
+{
+  "name": "Learn How to Provide Explanations When Helping Others",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-how-to-provide-explanations-when-helping-others",
+  "order": 27,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "superOrder": 21,
+  "isBeta": true,
+  "challengeOrder": [{ "id": "655cd6e975fb4c9778bd5f3a", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}
