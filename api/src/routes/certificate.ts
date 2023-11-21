@@ -203,7 +203,9 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
           }
         });
 
-        const updatedIsCertMap = getUserIsCertMap(removeNulls(updatedUser));
+        const updatedUserSansNull = removeNulls(updatedUser);
+
+        const updatedIsCertMap = getUserIsCertMap(updatedUserSansNull);
 
         // TODO(POST-MVP): Consider sending email based on `user.isEmailVerified` as well
         const hasCompletedAllCerts = currentCertifications
@@ -246,7 +248,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             }
           },
           isCertMap: updatedIsCertMap,
-          completedChallenges: updatedUser.completedChallenges
+          completedChallenges: updatedUserSansNull.completedChallenges
         } as const;
       } catch (e) {
         fastify.log.error(e);

@@ -301,7 +301,46 @@ describe('certificate routes', () => {
 
         expect(user).toMatchObject({ isRespWebDesignCert: true });
         expect(response.body).toMatchObject({
-          response: { message: 'flash.cert-claim-success' }
+          response: {
+            message: 'flash.cert-claim-success',
+            variables: {
+              name: 'Responsive Web Design',
+              username: 'fcc'
+            }
+          },
+          isCertMap: {},
+          completedChallenges: [
+            {
+              completedDate: 123456789,
+              files: [],
+              id: 'bd7158d8c442eddfaeb5bd18'
+            },
+            {
+              completedDate: 123456789,
+              files: [],
+              id: '587d78af367417b2b2512b03'
+            },
+            {
+              completedDate: 123456789,
+              files: [],
+              id: '587d78af367417b2b2512b04'
+            },
+            {
+              completedDate: 123456789,
+              files: [],
+              id: '587d78b0367417b2b2512b05'
+            },
+            {
+              completedDate: 123456789,
+              files: [],
+              id: 'bd7158d8c242eddfaeb5bd13'
+            },
+            {
+              challengeType: 7,
+              files: [],
+              id: '561add10cb82ac38a17513bc'
+            }
+          ]
         });
         expect(response.status).toBe(200);
       });
