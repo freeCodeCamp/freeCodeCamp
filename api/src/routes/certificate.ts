@@ -205,16 +205,12 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
 
         const updatedIsCertMap = getUserIsCertMap(removeNulls(updatedUser));
 
-        const certMap = Object.entries(updatedIsCertMap);
         // TODO(POST-MVP): Consider sending email based on `user.isEmailVerified` as well
+        const hasCompletedAllCerts = currentCertifications
+          .map(x => certSlugTypeMap[x])
+          .every(certType => updatedIsCertMap[certType]);
         const shouldSendCertifiedEmailToCamper =
-          isEmail(updatedUser.email) &&
-          currentCertifications.every(cert => {
-            const certIsClaimed = certMap.some(
-              ([name, isClaimed]) => name === certSlugTypeMap[cert] && isClaimed
-            );
-            return certIsClaimed;
-          });
+          isEmail(updatedUser.email) && hasCompletedAllCerts;
 
         if (shouldSendCertifiedEmailToCamper) {
           const notifyUser = {
