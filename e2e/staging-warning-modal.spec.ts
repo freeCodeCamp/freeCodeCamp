@@ -29,7 +29,7 @@ test.describe('Staging Warning Modal E2E Test Suite', () => {
         })
       ).toBeVisible();
 
-      const link = page.getByRole('link', { name: 'link' });
+      const link = page.getByRole('link', { name: 'following this link' });
       await expect(link).toHaveAttribute(
         'href',
         'https://contribute.freecodecamp.org/#/devops?id=known-limitations'
