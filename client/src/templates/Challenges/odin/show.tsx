@@ -275,7 +275,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
               )}
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
-                <h2>{title}</h2>
+                <h2 data-playwright-test-label='title'>{title}</h2>
                 <PrismFormatted className={'line-numbers'} text={description} />
                 {audioPath && (
                   <>
@@ -295,8 +295,13 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 <ObserveKeys>
                   {assignments.length > 0 && (
                     <>
-                      <h2>{t('learn.assignments')}</h2>
-                      <div className='video-quiz-options'>
+                      <h2 data-playwright-test-label='assignments'>
+                        {t('learn.assignments')}
+                      </h2>
+                      <div
+                        className='video-quiz-options'
+                        data-playwright-test-label='assignments-section'
+                      >
                         {assignments.map((assignment, index) => (
                           <label
                             className='video-quiz-option-label'
@@ -325,9 +330,14 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     </>
                   )}
 
-                  <h2>{t('learn.question')}</h2>
+                  <h2 data-playwright-test-label='questions-header'>
+                    {t('learn.question')}
+                  </h2>
                   <PrismFormatted className={'line-numbers'} text={text} />
-                  <div className='video-quiz-options'>
+                  <div
+                    data-playwright-test-label='questions'
+                    className='video-quiz-options'
+                  >
                     {answers.map(({ answer }, index) => (
                       <label className='video-quiz-option-label' key={index}>
                         <input
