@@ -1,0 +1,16 @@
+{
+  "name": "Learn How to use Code-related Concepts and Terms",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-how-to-use-code-related-concepts-and-terms",
+  "order": 13,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "superOrder": 21,
+  "isBeta": true,
+  "challengeOrder": [{ "id": "655c12384a3d2e8a0d5e3efd", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

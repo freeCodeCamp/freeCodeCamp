@@ -1,0 +1,16 @@
+{
+  "name": "Learn How to have a Conversation About Preferences and Motivations",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-how-to-have-a-conversation-about-preferences-and-motivations",
+  "order": 9,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "superOrder": 21,
+  "isBeta": true,
+  "challengeOrder": [{ "id": "655c10e9f398358790a9ffa0", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

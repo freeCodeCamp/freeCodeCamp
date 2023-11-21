@@ -1188,6 +1188,30 @@
       "learn-to-discuss-roles-and-responsibilies": {
         "title": "Learn to Discuss Roles and Responsibilities",
         "intro": ["", ""]
+      },
+      "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
+        "title": "Learn How to have a Conversation About Preferences and Motivations",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-popular-trends-in-technology": {
+        "title": "Learn How to Discuss Popular Trends in Technology",
+        "intro": ["", ""]
+      },
+      "learn-how-to-clarify-information-in-different-interactions": {
+        "title": "Learn How to Clarify Information in Different Interactions",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
+        "title": "Learn How to use Basic Programming Vocabulary in Conversations",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-code-related-concepts-and-terms": {
+        "title": "Learn How to use Code-related Concepts and Terms",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-tech-trends-and-updates": {
+        "title": "Learn How to Discuss Tech Trends and Updates",
+        "intro": ["", ""]
       }
     }
   },
