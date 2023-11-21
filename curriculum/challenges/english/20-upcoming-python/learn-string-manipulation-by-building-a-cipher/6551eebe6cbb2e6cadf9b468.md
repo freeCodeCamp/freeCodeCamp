@@ -24,10 +24,22 @@ Now delete your `number` variable and its value. Then, create another variable c
 
 # --hints--
 
-Test 1
+You should declare a variable called `text`.
 
 ```js
+({ test: () => assert(__userGlobals.has("text")) })
+```
 
+You should assign the string `Hello World` to your `text` variable.
+
+```js
+({ test: () => assert.equal(__userGlobals.get("text"), "Hello World") })
+```
+
+You should delete the `number` variable and its value.
+
+```js
+({ test: () => assert.isFalse(/number\s*=\s*5/.test(code)) })
 ```
 
 # --seed--
