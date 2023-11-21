@@ -890,5 +890,5 @@ export const schemas = {
         message: Type.Literal('flash.went-wrong')
       })
     }
-  },
+  }
 };
