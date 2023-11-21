@@ -1,4 +1,4 @@
-import { Modal, Button } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import { Col, Row } from '@freecodecamp/ui';
 import { WindowLocation } from '@reach/router';
 import React, { useEffect, useState } from 'react';
@@ -98,15 +98,13 @@ function CloseButtonRow({
   return (
     <Row>
       <Col sm={4} smOffset={4} xs={8} xsOffset={2}>
-        <Button
-          bsSize='sm'
-          bsStyle='primary'
-          className='btn-link close-button'
+        <button
+          className='close-button'
+          type='button'
           onClick={closeDonationModal}
-          tabIndex='0'
         >
           {donationAttempted ? t('buttons.close') : t('buttons.ask-later')}
-        </Button>
+        </button>
       </Col>
     </Row>
   );
