@@ -27,7 +27,6 @@ Antes de trabalhar no currículo, você precisará configurar algumas ferramenta
 
   [![Abra no Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Edite os arquivos na interface do GitHub clicando no ícone do lápis no arquivo correspondente. Embora seja a maneira mais rápida, **não é recomendado**, porque você não pode testar suas alterações no GitHub. Se nossos mantedores concluirem que as mudanças que você fez precisam ser testadas localmente, você precisará seguir os métods acima.
 
 ### Trabalhe em projetos práticos
 

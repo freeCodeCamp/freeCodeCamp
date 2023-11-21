@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
+import { useFeature } from '@growthbook/growthbook-react';
 
 import BearProgressModal from '../../assets/images/components/bear-progress-modal';
 import BearBlockCompletion from '../../assets/images/components/bear-block-completion-modal';
@@ -124,6 +125,8 @@ function DonateModal({
   const handleProcessing = () => {
     setDonationAttempted(true);
   };
+
+  useFeature('aa-test-in-component');
 
   useEffect(() => {
     if (show) {

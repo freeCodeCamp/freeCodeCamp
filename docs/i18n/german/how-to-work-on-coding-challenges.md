@@ -27,7 +27,6 @@ Bevor du an dem Studienplan arbeitest, musst du einige Hilfsmittel einrichten, m
 
   [![In Gitpod öffnen](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Bearbeite die Dateien in der Benutzeroberfläche von GitHub, indem du auf das Bleistiftsymbol für die entsprechende Datei klickst. Das ist zwar der schnellste Weg, wird aber **nicht empfohlen**, weil du deine Änderungen nicht auf GitHub testen kannst. Wenn unsere Maintainer zu dem Schluss kommen, dass die von dir vorgenommenen Änderungen lokal getestet werden müssen, musst du stattdessen die oben genannten Methoden anwenden.
 
 ### Wie man an Praxisprojekten arbeitet
 
