@@ -8,6 +8,11 @@
   "required": [],
   "superBlock": "a2-english-for-developers",
   "isBeta": true,
-  "challengeOrder": [{ "id": "655c0f39ee87517d584d81f9", "title": "Dialogue: Placeholder" }],
+  "challengeOrder": [
+    {
+      "id": "655c0f39ee87517d584d81f9",
+      "title": "Dialogue: Placeholder"
+    }
+  ],
   "helpCategory": "HTML-CSS"
 }

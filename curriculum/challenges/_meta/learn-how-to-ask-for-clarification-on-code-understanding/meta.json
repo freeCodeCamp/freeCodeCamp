@@ -9,6 +9,11 @@
   "superBlock": "a2-english-for-developers",
   "superOrder": 21,
   "isBeta": true,
-  "challengeOrder": [{ "id": "655c13c143fbad91f96da5f3", "title": "Dialogue: Placeholder" }],
+  "challengeOrder": [
+    {
+      "id": "655c13c143fbad91f96da5f3",
+      "title": "Dialogue: Placeholder"
+    }
+  ],
   "helpCategory": "HTML-CSS"
 }
