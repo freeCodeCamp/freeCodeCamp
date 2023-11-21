@@ -2,7 +2,7 @@
 
 Unser Korrekturleseteam ist dafür verantwortlich, dass die Übersetzungen den Ausgangstext genau wiedergeben. Wir vertrauen darauf, dass unsere Korrekturleserinnen und -leser dafür sorgen, dass wir qualitativ hochwertige Übersetzungen erhalten.
 
-Alle unsere Übersetzungen werden von Hand erstellt, von echten Menschen. Durch das Korrekturlesen wird sichergestellt, dass alle unsere übersetzten Ressourcen wie der Studienplan einen einheitlichen Wortlaut aufweisen.
+Alle unsere Übersetzungen werden von Hand erstellt, von echten Menschen. Proofreading ensures that there is a consistent tone across all our translated resources like the curriculum.
 
 Um mit dem Korrekturlesen zu beginnen, besuche [unsere Übersetzungsplattform](https://translate.freecodecamp.org) und logge dich ein. Wähle "Go to console" in der oberen Navigationsleiste, um von der öffentlichen Ansicht zur Ansicht des Arbeitsbereichs zu wechseln.
 
@@ -49,6 +49,6 @@ Unser Mitarbeiterteam und unsere Community-Moderatoren sind immer auf der Suche 
 
 ## Creating a Channel on Chat for a World Language
 
-In der Regel empfehlen wir dir, den [Contributors Chat](https://discord.gg/PRyKn3Vbay) für die gesamte Kommunikation zu nutzen. Wenn jedoch das Team der freiwilligen Übersetzer für eine bestimmte Sprache wächst, können wir in Erwägung ziehen, einen zusätzlichen Break-Out-Channel für diese Sprache einzurichten.
+For the most part, we encourage you to use the [contributors chat](https://discord.gg/PRyKn3Vbay) room for all correspondence. However if the team of volunteer translators grows for a certain language, we can consider creating an additional break-out channel for the language.
 
 Wenn du bereits Korrekturleser/in bist und Interesse an einem eigenen Kanal auf unseren Chatservern für eine bestimmte Sprache hast, [fülle dieses Formular aus](https://forms.gle/XU5CyutrYCgDYaVZA).

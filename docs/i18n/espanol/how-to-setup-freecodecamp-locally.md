@@ -4,7 +4,7 @@ Sigue estas directrices para configurar un entorno de desarrollo para freeCodeCa
 
 > [!ATTENTION] - freeCodeCamp does not build and run natively on Windows, you will [need to use WSL2](how-to-setup-wsl.md) for a Linux-like setup on Windows. - You can't use Windows Command Prompt, Git Bash or PowerShell to build and run the codebase. - Note that if using Windows, the hardware requirements need to be more than [what we mention](how-to-setup-freecodecamp-locally?id=how-to-prepare-your-local-machine) to accommodate for WSL-based setup.
 
-Si deseas hacer una contribución puntual, debes utilizar Gitpod para realizar cambios. La configuración de Gitpod lanza un entorno listo para codificar en pocos minutos en tu navegador web. Para contribuir a largo plazo, te recomendamos que instales freeCodeCamp en tu máquina local.
+Si deseas hacer una contribución puntual, debes utilizar Gitpod para realizar cambios. La configuración de Gitpod lanza un entorno listo para codificar en pocos minutos en tu navegador web. To contribute long-term, we recommend you set up freeCodeCamp on your local machine.
 
 Estos son algunos pros y contras que deberían ayudarte a decidir cuál es la mejor opción para ti:
 
@@ -19,9 +19,9 @@ Estos son algunos pros y contras que deberían ayudarte a decidir cuál es la me
 
 ### How to Prepare a Gitpod Workspace
 
-Hemos automatizado el proceso de instalación de todas las dependencias & herramientas que necesitarás. With Gitpod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to computer or want to make one-time changes.
+Hemos automatizado el proceso de instalación de todas las dependencias & herramientas que necesitarás. With Gitpod you get a free ready-to-code environment in a few minutes, and is useful if you do not have access to a computer or want to make one-time changes.
 
-There are various ways to launch an Gitpod workspace:
+There are various ways to launch a Gitpod workspace:
 
 1. **(Más rápido)** Añade `gitpod.io/#` a cualquier URL de GitHub.
 
@@ -75,7 +75,7 @@ We primarily support development on Linux and Unix-based systems like Ubuntu and
 
 If Node.js is already installed on your machine, run the following commands to validate the versions:
 
-```console
+```bash
 node -v
 pnpm -v
 ```
@@ -142,7 +142,7 @@ Run these commands on your local machine:
 
 2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
 
-   ```console
+   ```bash
    git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
    ```
 
@@ -158,27 +158,27 @@ Now that you have downloaded a copy of your fork, you will need to set up an `up
 
 You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
 
-1. Change directory to the new freeCodeCamp directory:
+1. Change the directory to the new freeCodeCamp directory:
 
-   ```console
+   ```bash
    cd freeCodeCamp
    ```
 
 2. Add a remote reference to the main freeCodeCamp repository:
 
-   ```console
+   ```bash
    git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
    ```
 
 3. Ensure the configuration looks correct:
 
-   ```console
+   ```bash
    git remote -v
    ```
 
    The output should look something like below (replacing `YOUR_USER_NAME` with your GitHub username):
 
-   ```console
+   ```bash
    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
@@ -203,12 +203,12 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
 
-```console
+```bash
 # Crear una copia de la "sample.env" y nombrarla ".env".
 # Populate it with the necessary API keys and secrets
 ```
 
-```console
+```bash
 cp sample.env .env
 ```
 
@@ -220,7 +220,7 @@ The keys in the `.env` file are _not_ required to be changed to run the app loca
 
 This step will install the dependencies required for the application to run:
 
-```console
+```bash
 pnpm install && pnpm run create:shared
 ```
 
@@ -234,7 +234,7 @@ Before you can run the application locally, you will need to start the MongoDB s
 
 Start the MongoDB server in a separate terminal:
 
-```console
+```bash
 mongod
 ```
 
@@ -242,13 +242,13 @@ mongod
 
 Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
 
-```console
+```bash
 pnpm run seed
 ```
 
-By default, you will be signed in as a new user without any completed certifications. Run the following command if you need to develop with completed certifications:
+By default, you will be signed in as a new user without any completed certifications. Run the following commands if you need to develop with completed certifications:
 
-```console
+```bash
 pnpm run seed:certified-user
 ```
 
@@ -258,7 +258,7 @@ pnpm run seed:certified-user
 
 You can now start up the API server and the client applications.
 
-```console
+```bash
 pnpm run develop
 ```
 
@@ -278,10 +278,12 @@ If you have issues while installing it, check out the [troubleshooting section](
 
 A quick reference to the commands that you will need when working locally.
 
-| command                        | description                                                                                       |
-| ------------------------------ | ------------------------------------------------------------------------------------------------- |
-| `pnpm install`                 | Installs / re-installs all dependencies and bootstraps the different services.                    |
-| `pnpm run seed`                | Creates authorized test users and inserts them into MongoDB.                                      |
-| `pnpm run seed:certified-user` | Creates authorized test users with certifications fully completed, and inserts them into MongoDB. |
-| `pnpm run develop`             | Starts the freeCodeCamp API Server and Client Applications.                                       |
-| `pnpm run clean`               | Uninstalls all dependencies and cleans up caches.                                                 |
+| command                        | description                                                                                                   |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| `pnpm install`                 | Installs / re-installs all dependencies and bootstraps the different services.                                |
+| `pnpm run seed`                | Creates authorized test users and inserts them into MongoDB. Also runs `seed:exams` and `seed:surveys` below. |
+| `pnpm run seed:certified-user` | Creates authorized test users with certifications fully completed, and inserts them into MongoDB.             |
+| `pnpm run seed:exams`          | Creates exams and inserts them into MongoDB.                                                                  |
+| `pnpm run seed:surveys`        | Creates surveys for defaults users and inserts them into MongoDB.                                             |
+| `pnpm run develop`             | Starts the freeCodeCamp API Server and Client Applications.                                                   |
+| `pnpm run clean`               | Uninstalls all dependencies and cleans up caches.                                                             |

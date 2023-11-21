@@ -16,7 +16,7 @@ To learn more about truthy and falsy values, try our <a href="https://www.freeco
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#3` in the `Basic Assertions` suite, change each `assert` to either `assert.isOk()` or `assert.isNotOk()` to make the test pass (should evaluate to `true`). Die an die Asserts übergebenen Argumente dürfen nicht verändert werden.
+Within `tests/1_unit-tests.js` under the test labeled `#3` in the `Basic Assertions` suite, change each `assert` to either `assert.isOk()` or `assert.isNotOk()` to make the test pass (should evaluate to `true`). Die an die Asserts übergebenen Argumente dürfen nicht verändert werden.
 
 # --hints--
 

@@ -15,7 +15,7 @@ test.describe('Certification page - Non Microsoft', () => {
     const donationText = donationSection.getByTestId('donation-text');
     await expect(donationText).toHaveText(translations.donate['only-you']);
 
-    const donationForm = donationSection.getByTestId('donation-form');
+    const donationForm = donationSection.getByTestId('donation-tier-selector');
     await expect(donationForm).toBeVisible();
   });
 
@@ -129,7 +129,7 @@ test.describe('Certification page - Microsoft', () => {
     const donationText = donationSection.getByTestId('donation-text');
     await expect(donationText).toHaveText(translations.donate['only-you']);
 
-    const donationForm = donationSection.getByTestId('donation-form');
+    const donationForm = donationSection.getByTestId('donation-tier-selector');
     await expect(donationForm).toBeVisible();
   });
 

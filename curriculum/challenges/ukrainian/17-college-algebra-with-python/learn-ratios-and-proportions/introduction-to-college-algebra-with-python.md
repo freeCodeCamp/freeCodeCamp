@@ -16,11 +16,11 @@ dashedName: introduction-to-college-algebra-with-python
 
 \- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Алгебра та тригонометрія. Джей Абрамсон</a>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Створіть <a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer nofollow">блокнот з алгебри Colab на своєму гугл-диску</a>, щоб паралельно працювати з відео.
+
+# --question--
 
 ## --text--
 

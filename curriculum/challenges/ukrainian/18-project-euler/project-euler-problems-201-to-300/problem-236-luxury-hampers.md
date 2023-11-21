@@ -20,16 +20,16 @@ dashedName: problem-236-luxury-hampers
 
 Хоча постачальники дуже стараються доставити свій товар в ідеальному стані, псування неминуче. Продукти зіпсувались.
 
-The suppliers compare their performance using two types of statistic:
+Постачальники порівнюють свої показники, використовуючи два типи статистики:
 
-- The five per-product spoilage rates for each supplier are equal to the number of products gone bad divided by the number of products supplied, for each of the five products in turn.
-- The overall spoilage rate for each supplier is equal to the total number of products gone bad divided by the total number of products provided by that supplier.
+- П’ять відсотків браку кожного продукту для постачальника дорівнюють кількості зіпсованих продуктів, поділеній на кількість доставлених продуктів, кожного продукту окремо.
+- Загальний відсоток браку для постачальника дорівнює загальній кількості зіпсованих продуктів, поділеній на загальну кількість доставлених продуктів цього постачальника.
 
-To their surprise, the suppliers found that each of the five per-product spoilage rates was worse (higher) for 'B' than for 'A' by the same factor (ratio of spoilage rates), $m > 1$; and yet, paradoxically, the overall spoilage rate was worse for 'A' than for 'B', also by a factor of $m$.
+На своє здивування, постачальники виявили, що кожен з п’яти відсотків браку був гіршим (вищим) для Б, з однаковим коефіцієнтом (співвідношенням відсотків браку) $m > 1$. І все ж, парадоксально, загальний відсоток браку був гіршим для А, також з коефіцієнтом $m$.
 
-There are thirty-five $m > 1$ for which this surprising result could have occurred, the smallest of which is $\frac{1476}{1475}$.
+Існує тридцять п’ять значень $m > 1$, за яких відбувається такий результат. Найменшим є $\frac{1476}{1475}$.
 
-What's the largest possible value of $m$? Give your answer as a string with fraction reduced to its lowest terms, in the form `u/v`.
+Яке найбільше можливе значення $m$? Надайте відповідь у вигляді дробу, скороченого до найменших спільних знаменників у вигляді `u/v`.
 
 # --hints--
 

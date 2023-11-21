@@ -12,11 +12,11 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 1. Acesse <a href="https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/</a> e complete todas as tarefas do módulo "Revise os princípios de depuração de código e tratamento de exceções". Isso é **necessário** para conquistar o troféu "Depure aplicações de console do C#" da Microsoft Learn e para se qualificar para o exame de certificação.
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Complete o módulo <a href="https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank" rel="noreferrer">Revise os princípios de depuração de código e tratamento de exceções</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
+# --question--
 
 ## --text--
 

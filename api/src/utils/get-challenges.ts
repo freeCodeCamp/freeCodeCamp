@@ -19,6 +19,7 @@ interface Block {
     tests?: { id?: string }[];
     challengeType: number;
     url?: string;
+    msTrophyId?: string;
   }[];
 }
 

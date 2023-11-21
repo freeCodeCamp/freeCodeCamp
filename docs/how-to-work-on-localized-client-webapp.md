@@ -17,7 +17,7 @@ Let's understand how the i18n frameworks and tooling work.
 
 Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. Each language has a directory that contains JSON files with the translations.
 
-```console
+```bash
   config
   └── i18n.ts
   ...

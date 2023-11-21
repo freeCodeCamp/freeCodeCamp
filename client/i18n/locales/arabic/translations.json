@@ -44,6 +44,7 @@
     "settings": "الإعدادات",
     "take-me": "خذني إلى التحديات",
     "check-answer": "تحقق من إجابتك",
+    "submit": "Submit",
     "get-hint": "الحصول على تلميح",
     "ask-for-help": "طلب المساعدة",
     "create-post": "إنشاء منشور مساعدة في المنتدى",
@@ -304,7 +305,7 @@
   },
   "footer": {
     "tax-exempt-status": "تكون مؤسسة freeCodeCamp خيرية معفاة ضريبياً 501(c)(3) يدعمها المتبرعين (الرقم التعريفي الضريبي الاتحادي للولايات المتحدة: 82-0779546)",
-    "mission-statement": "مهمتنا: مساعدة الناس على تعلم البرمجة مجاناً. ونحن نحقق ذلك بإنشاء آلاف الأشرطة من الفيديو والمقالات ودروس البرمجة التفاعلية - وجميعها متاحة مجاناً للجمهور. ولدينا أيضاً الآلاف من المجموعات الدراسية في freeCodeCamp حول العالم.",
+    "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.",
     "donation-initiatives": "التبرعات لـ freeCodeCamp تذهب لمبادراتنا التعليمية، وتساعد في دفع تكاليف الخوادم، والخدمات، والموظفين.",
     "donate-text": "يمكنك <1>تقديم تبرع قابل للخصم الضريبي هنا </1>.",
     "trending-guides": "أدلة إرشادية",
@@ -417,6 +418,7 @@
     "building-a-university": "نحن نبني برنامَج مجاني لشهادة جامعة علوم الكمبيوتر Computer Science",
     "if-help-university": "لقد حققنا قدرا كبيرا من التقدم بالفعل. أدعم منظمتنا الخيرية بالطريق الطويل الذي أمامنا.",
     "preview-external-window": "Preview currently showing in external window.",
+    "fill-in-the-blank": "Fill in the blank",
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
@@ -524,7 +526,7 @@
     "download-irs": "يمكنك <0>تنزيل رسالة تحديد الـ IRS الخاصة بنا هنا </0>.",
     "download-990": "يمكنك <0>تنزيل أحدث 990 (التقرير الضريبي السنوي) هنا </0>.",
     "how-efficient": "ما مدى كفاءة freeCodeCamp؟",
-    "fcc-budget": "ميزانية freeCodeCamp أصغر بكثير من معظم المؤسسات خيرية المماثلة. نحن لم نجلب جامعي أموال محترفين. بدلاً من ذلك، Quincy يفعل كل شيء بنفسه.",
+    "fcc-budget": "freeCodeCamp's budget is much smaller than most comparable charities. We haven't brought in professional fundraisers. Instead, Quincy does everything himself.",
     "help-millions": "ومع ذلك، وبميزانية لا تتجاوز بضع مئات الآلاف من الدولارات سنويا، تمكنا من مساعدة ملايين الناس.",
     "how-one-time": "كيف يمكنني تقديم تبرع لمرة واحدة؟",
     "one-time": "إذا كنت تفضل تقديم تبرعات لمرة واحدة، يمكنك دعم مهمة freeCodeCamp كلما كان لديك lمقدار من المال لا تحتاجه. يمكنك استخدام <0>هذا الرابط للتبرع بأي مبلغ ترغب به من خلال PayPal</0>.",
@@ -745,6 +747,12 @@
         "verified": "Your trophy from Microsoft's learning platform was verified."
       }
     },
+    "survey": {
+      "err-1": "The survey submitted is not in the correct format.",
+      "err-2": "It looks like you have already completed this survey.",
+      "err-3": "Something went wrong trying to save your survey.",
+      "success": "Thank you. Your survey was submitted."
+    },
     "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
@@ -884,6 +892,8 @@
       "college-algebra-with-python-v8": "College Algebra with Python Certification",
       "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
+      "A2 English for Developers": "A2 English for Developers",
+      "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "الواجهة الأمامية التراثية",
       "legacy-front-end": "شهادة الواجهة الأمامية التراثية",
       "Legacy Back End": "الواجهة الخلفية التراثية",
@@ -908,13 +918,13 @@
     "set-claim": "قم بطلب شهادتك وعرض شهادتك"
   },
   "forum-help": {
-    "browser-info": "**معلومات المتصفح الخاصة بك:**",
+    "browser-info": "Your browser information:",
     "user-agent": "وكيل المستخدم هو: <code>{{userAgent}}</code>",
-    "challenge": "**Challenge Information:**",
-    "whats-happening": "**أخبرنا بما يحدث:**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "قم بوصف مشكلتك بالتفصيل هنا.",
-    "camper-project": "**رابط (روابط) المشروع**",
-    "camper-code": "**الكود الخاص بك حتى الآن**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "تحذير",
     "too-long-one": "تجاوز الكود الأولي للتحدي و / أو الحل الخاص بك الحد الأقصى للطول الذي يمكننا تجاوزه من التحدي.",
     "too-long-two": "سوف تحتاج إلى اتخاذ خطوة إضافية هنا حتى يكون الكود الذي كتبته يعرض في تنسيق سهل القراءة.",
@@ -960,5 +970,31 @@
     "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
     "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
     "certain": "Accept and Dismiss"
+  },
+  "survey": {
+    "foundational-c-sharp": {
+      "title": "Foundational C# with Microsoft Survey",
+      "q1": {
+        "q": "Please describe your role:",
+        "o1": "Student developer",
+        "o2": "Beginner developer (less than 2 years experience)",
+        "o3": "Intermediate developer (between 2 and 5 years experience)",
+        "o4": "Experienced developer (more than 5 years experience)"
+      },
+      "q2": {
+        "q": "Prior to this course, how experienced were you with .NET and C#?",
+        "o1": "Novice (no prior experience)",
+        "o2": "Beginner",
+        "o3": "Intermediate",
+        "o4": "Advanced",
+        "o5": "Expert"
+      }
+    },
+    "misc": {
+      "take": "Take the survey",
+      "submit": "Submit the survey",
+      "exit": "Exit the survey",
+      "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
   }
 }

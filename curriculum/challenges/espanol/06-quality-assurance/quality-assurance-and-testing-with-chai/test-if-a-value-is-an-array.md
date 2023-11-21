@@ -12,7 +12,7 @@ Como recordatorio, este proyecto está siendo construido con base en el siguient
 
 # --instructions--
 
-Dentro de `tests/1_unit-tests.js` bajo la prueba etiquetada `#11` en el `Arrays` suite, cambia cada `assert` a `assert.isArray` o `assert.isNotArray` para pasar la prueba (debe evaluarse como `true`). No modifiques los argumentos pasados ​​a los verificadores.
+Within `tests/1_unit-tests.js` under the test labeled `#11` in the `Arrays` suite, change each `assert` to either `assert.isArray` or `assert.isNotArray` to make the test pass (should evaluate to `true`). No modifiques los argumentos pasados ​​a los verificadores.
 
 # --hints--
 

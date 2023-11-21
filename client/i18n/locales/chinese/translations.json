@@ -44,6 +44,7 @@
     "settings": "设置",
     "take-me": "访问课程",
     "check-answer": "查看你的答案",
+    "submit": "Submit",
     "get-hint": "获得提示",
     "ask-for-help": "请求帮助",
     "create-post": "在论坛发帖请求帮助",
@@ -304,7 +305,7 @@
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp 是捐助者支持的 501(c)(3) 条款下具有免税资格的慈善组织（税号：82-0779546）。",
-    "mission-statement": "我们的使命：帮助人们免费学习编程。我们通过创建成千上万的视频、文章和交互式编程课程——所有内容向公众免费开放——来实现这一目标。学员在世界各地自发成立数千个 freeCodeCamp 学习小组。",
+    "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.",
     "donation-initiatives": "所有给 freeCodeCamp 的捐款都将用于我们的教育项目，购买服务器和其他服务，以及聘用员工。",
     "donate-text": "你可以<1>在此处进行免税捐赠</1>。",
     "trending-guides": "精选文章",
@@ -417,6 +418,7 @@
     "building-a-university": "我们正在创建一个免费计算机科学大学学位课程",
     "if-help-university": "我们已取得了重大进展。请支持我们的慈善组织完成这项长期事业。",
     "preview-external-window": "Preview currently showing in external window.",
+    "fill-in-the-blank": "Fill in the blank",
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
@@ -524,7 +526,7 @@
     "download-irs": "你可以<0>在此处下载我们的国税局认定函</0>。",
     "download-990": "你可以<0>在此处下载我们最新的 990 (年度税务报告)</0>。",
     "how-efficient": "freeCodeCamp 的效率如何？",
-    "fcc-budget": "freeCodeCamp 的预算比大多数慈善组织少得多。我们还没有引入专业募捐者，而是 Quincy 自己处理一切相关事务。",
+    "fcc-budget": "freeCodeCamp's budget is much smaller than most comparable charities. We haven't brought in professional fundraisers. Instead, Quincy does everything himself.",
     "help-millions": "然而，在每年仅有 10 万美元的预算中，我们能够帮助数百万人。",
     "how-one-time": "我如何进行一次性捐款？",
     "one-time": "如果你喜欢一次性捐款，你可以在有闲钱时支持 freeCodeCamp 的事业。你可以使用<0>此链接，通过 PayPal 捐你认为合适的金额</0>。",
@@ -745,6 +747,12 @@
         "verified": "Your trophy from Microsoft's learning platform was verified."
       }
     },
+    "survey": {
+      "err-1": "The survey submitted is not in the correct format.",
+      "err-2": "It looks like you have already completed this survey.",
+      "err-3": "Something went wrong trying to save your survey.",
+      "success": "Thank you. Your survey was submitted."
+    },
     "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
@@ -884,6 +892,8 @@
       "college-algebra-with-python-v8": "Python 和大学代数认证",
       "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
+      "A2 English for Developers": "A2 English for Developers",
+      "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "旧版前端",
       "legacy-front-end": "前端认证",
       "Legacy Back End": "旧版后端",
@@ -908,13 +918,13 @@
     "set-claim": "领取并查看你的认证"
   },
   "forum-help": {
-    "browser-info": "**你的浏览器信息：**",
+    "browser-info": "Your browser information:",
     "user-agent": "用户代理是： <code>{{userAgent}}</code>",
-    "challenge": "**Challenge Information:**",
-    "whats-happening": "**告诉我们发生了什么：**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "在此详细描述你的问题。",
-    "camper-project": "**你的项目链接**",
-    "camper-code": "**你目前的代码**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "警告",
     "too-long-one": "挑战的种子代码和/或你的解决方案超过了我们从挑战传送的最大长度。",
     "too-long-two": "你需要在此采取额外步骤，以确保你写的代码可以轻松地被阅读。",
@@ -960,5 +970,31 @@
     "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
     "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
     "certain": "Accept and Dismiss"
+  },
+  "survey": {
+    "foundational-c-sharp": {
+      "title": "Foundational C# with Microsoft Survey",
+      "q1": {
+        "q": "Please describe your role:",
+        "o1": "Student developer",
+        "o2": "Beginner developer (less than 2 years experience)",
+        "o3": "Intermediate developer (between 2 and 5 years experience)",
+        "o4": "Experienced developer (more than 5 years experience)"
+      },
+      "q2": {
+        "q": "Prior to this course, how experienced were you with .NET and C#?",
+        "o1": "Novice (no prior experience)",
+        "o2": "Beginner",
+        "o3": "Intermediate",
+        "o4": "Advanced",
+        "o5": "Expert"
+      }
+    },
+    "misc": {
+      "take": "Take the survey",
+      "submit": "Submit the survey",
+      "exit": "Exit the survey",
+      "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
   }
 }

@@ -22,7 +22,7 @@ Esistono anche `isFalse()` e `isNotFalse()`, si comportano in maniera simile all
 
 # --instructions--
 
-All'interno di `tests/1_unit-tests.js` sotto il test etichettato con `#4` nella suite `Basic Assertions`, cambia ogni `assert` con `assert.isTrue` oppure `assert.isNotTrue` per fare passare il test (dovrebbe essere uguale a `true`). Non cambiare gli argomenti passati alle asserzioni.
+Within `tests/1_unit-tests.js` under the test labeled `#4` in the `Basic Assertions` suite, change each `assert` to either `assert.isTrue` or `assert.isNotTrue` to make the test pass (should evaluate to `true`). Non cambiare gli argomenti passati alle asserzioni.
 
 # --hints--
 

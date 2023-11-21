@@ -163,6 +163,7 @@ const StripeCardForm = ({
         bsStyle='primary'
         className='confirm-donation-btn'
         disabled={!stripe || !elements || isSubmitting}
+        data-cy='donation-confirmation-button'
         type='submit'
       >
         {t('buttons.donate')}

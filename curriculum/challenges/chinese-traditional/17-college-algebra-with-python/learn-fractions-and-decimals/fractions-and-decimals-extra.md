@@ -12,15 +12,15 @@ dashedName: fractions-and-decimals-extra
 
 這是<a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">這個視頻中用到的 Colab 筆記本</a>，你可以把它作爲一個模型。
 
-# --question--
-
-## --任務--
+# --任務--
 
 在你的代數 Colab 筆記本上添加因數和求解變量的代碼。
 
 ---
 
 在下面的筆記本中運行代碼以<a href="https://colab.research.google.com/drive/1qON4GYbMkaZJA7MYd7-RcDROOkuuBJg9?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">練習轉換分數和小數</a>。作爲獎勵，看看用來產生練習問題的代碼。
+
+# --question--
 
 ## --text--
 

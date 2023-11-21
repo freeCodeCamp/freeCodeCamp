@@ -38,7 +38,7 @@ Cliccando questo pulsante aggiungerai un nuovo step alla fine del progetto. Ques
 
 #### Creare step vuoti
 
-Inserisci nell'input il numero di step che vuoi aggiungere. Poi, cliccando sul pulsante verrà creato il numero di step desiderati alla fine del progetto.
+Inserisci nell'input il numero di step che vuoi aggiungere. Then, clicking the button will create many empty steps at the end of the project.
 
 #### Inserire uno step
 
@@ -124,7 +124,7 @@ pnpm run delete-step X # dove X è il numero dello step da eliminare.
 
 ### update-step-titles
 
-Uno script una tantum che aggiorna automaticamente il frontmatter nei file di markdown di un progetto in modo che siano coerenti con il progetto meta.json. Fa in modo che il titolo di ogni step (e dashedName) corrisponda al challengeOrder in meta.
+Uno script una tantum che aggiorna automaticamente il frontmatter nei file di markdown di un progetto in modo che siano coerenti con il progetto meta.json. It ensures that each step's title (and dashedName) matches the meta's `challengeOrder`.
 
 #### How to Run the Script
 

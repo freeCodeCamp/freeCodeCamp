@@ -14,7 +14,7 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，在 `Equality` 套件里标有 `#6` 的测试下，将每个 `assert` 改为 `assert.strictEqual` 或 `assert.notStrictEqual`，让测试通过（应该返回 `true`）。 不要修改传给断言的参数。
+Within `tests/1_unit-tests.js` under the test labeled `#6` in the `Equality` suite, change each `assert` to either `assert.strictEqual` or `assert.notStrictEqual` to make the test pass (should evaluate to `true`). 不要修改传给断言的参数。
 
 # --hints--
 

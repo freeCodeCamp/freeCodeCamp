@@ -1,10 +1,10 @@
 # Authors Analytics Manual
 
-If you are an author with access to the publication's Google Analytics Property (News), you can use this guide to view your articles engagement and search for articles by publication language.
+If you are an author with access to the publication's Google Analytics Property (News), you can use this guide to view your article engagement and search for articles by publication language.
 
 ## Search by Language
 
-To search for engagement reports by a specific language:
+To search for engagement reports in a specific language:
 
 ![Image - Show steps to search by language on googla analytics](https://contribute.freecodecamp.org/images/google-analytics/search-by-language.png)
 

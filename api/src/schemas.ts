@@ -67,6 +67,10 @@ export const schemas = {
         message: Type.Literal('flash.privacy-updated'),
         type: Type.Literal('success')
       }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
         type: Type.Literal('danger')
@@ -81,6 +85,10 @@ export const schemas = {
       200: Type.Object({
         message: Type.Literal('flash.updated-themes'),
         type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
       }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
@@ -122,6 +130,10 @@ export const schemas = {
         message: Type.Literal('flash.updated-socials'),
         type: Type.Literal('success')
       }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
         type: Type.Literal('danger')
@@ -136,6 +148,10 @@ export const schemas = {
       200: Type.Object({
         message: Type.Literal('flash.keyboard-shortcut-updated'),
         type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
       }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
@@ -152,6 +168,10 @@ export const schemas = {
         message: Type.Literal('flash.subscribe-to-quincy-updated'),
         type: Type.Literal('success')
       }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
         type: Type.Literal('danger')
@@ -166,6 +186,10 @@ export const schemas = {
       200: Type.Object({
         message: Type.Literal('buttons.accepted-honesty'),
         type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
       }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
@@ -200,6 +224,10 @@ export const schemas = {
       200: Type.Object({
         message: Type.Literal('flash.privacy-updated'),
         type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
       }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
@@ -424,6 +452,15 @@ export const schemas = {
       500: generic500
     }
   },
+  deleteMsUsername: {
+    response: {
+      200: Type.Object({ msUsername: Type.Null() }),
+      500: Type.Object({
+        message: Type.Literal('flash.ms.transcript.unlink-err'),
+        type: Type.Literal('error')
+      })
+    }
+  },
   // Deprecated endpoints:
   deprecatedEndpoints: {
     response: {
@@ -592,6 +629,54 @@ export const schemas = {
       })
     }
   },
+  msTrophyChallengeCompleted: {
+    body: Type.Object({
+      id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 })
+    }),
+    response: {
+      200: Type.Object({
+        completedDate: Type.Number(),
+        points: Type.Number(),
+        alreadyCompleted: Type.Boolean()
+      }),
+      400: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.trophy.err-2')
+      }),
+      403: Type.Union([
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.trophy.err-1')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.trophy.err-3')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.trophy.err-4'),
+          variables: Type.Object({
+            msUsername: Type.String()
+          })
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.trophy.err-6')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.profile.err'),
+          variables: Type.Object({
+            msUsername: Type.String()
+          })
+        })
+      ]),
+      500: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.trophy.err-5')
+      })
+    }
+  },
   saveChallenge: {
     body: saveChallengeBody,
     response: {
@@ -645,6 +730,38 @@ export const schemas = {
       500: Type.Object({
         error: Type.String()
       })
+    }
+  },
+  postMsUsername: {
+    body: Type.Object({
+      msTranscriptUrl: Type.String({ maxLength: 1000 })
+    }),
+    response: {
+      200: Type.Object({
+        msUsername: Type.String()
+      }),
+      400: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.transcript.link-err-1')
+      }),
+      404: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.transcript.link-err-2')
+      }),
+      403: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.transcript.link-err-4')
+      }),
+      500: Type.Union([
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.transcript.link-err-6')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.transcript.link-err-3')
+        })
+      ])
     }
   },
   // /certificate/
@@ -773,5 +890,5 @@ export const schemas = {
         message: Type.Literal('flash.went-wrong')
       })
     }
-  }
+  },
 };

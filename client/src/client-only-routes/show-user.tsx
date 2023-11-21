@@ -1,4 +1,3 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
@@ -11,7 +10,8 @@ import {
   ControlLabel,
   Panel,
   Col,
-  Row
+  Row,
+  Button
 } from '@freecodecamp/ui';
 
 import Login from '../components/Header/components/login';
@@ -131,7 +131,7 @@ function ShowUser({
                 value={textarea}
               />
             </FormGroup>
-            <Button block={true} bsStyle='primary' type='submit'>
+            <Button block={true} variant='primary' type='submit'>
               {t('report.submit')}
             </Button>
             <Spacer size='medium' />

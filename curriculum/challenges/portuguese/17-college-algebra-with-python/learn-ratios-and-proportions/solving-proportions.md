@@ -12,11 +12,11 @@ Passemos, agora, ao conteúdo da matemática. Este vídeo mostrará como configu
 
 Aqui está o <a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_nQ-X1JuLpUmtRD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory que acompanha este vídeo.</a> Se você ainda não fez isso, configure seu notebook do Colaboratory de álgebra do vídeo passado. Em seguida, adicione o código deste vídeo a ele.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Adicione o código do vídeo ao notebook do Colaboratory de álgebra que você criou no primeiro passo.
+
+# --question--
 
 ## --text--
 

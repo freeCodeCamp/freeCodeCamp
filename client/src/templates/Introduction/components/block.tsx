@@ -35,7 +35,7 @@ const { curriculumLocale, showUpcomingChanges, showNewCurriculum } = envData;
 
 const mapStateToProps = (
   state: unknown,
-  ownProps: { blockDashedName: string } & unknown
+  ownProps: { blockDashedName: string }
 ) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
 

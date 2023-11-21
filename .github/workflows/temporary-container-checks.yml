@@ -8,13 +8,13 @@ on:
     types:
       - completed
   # TODO: refactor with a workflow_call
-  # pull_request:
-  #   paths-ignore:
-  #     - 'docs/**'
-  #   branches:
-  #     - 'main'
-  #     - 'next-**'
-  #     - 'e2e-**'
+  pull_request:
+    paths-ignore:
+      - 'docs/**'
+    branches:
+      - 'main'
+      - 'next-**'
+      - 'e2e-**'
 
 jobs:
   build-client:

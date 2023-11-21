@@ -24,7 +24,7 @@ ${reportDesc}
 
 Reported by:
 Username: ${reporter.username}
-Name: ${reporter.name ?? ''}
+Name:${reporter.name ? ' ' + reporter.name : ''}
 Email: ${reporter.email}
 
 Thanks and regards,

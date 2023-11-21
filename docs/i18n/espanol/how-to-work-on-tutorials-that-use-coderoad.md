@@ -56,7 +56,7 @@ Si deseas probar sus cambios en `main` después de seguir las instrucciones ante
 - Siga las instrucciones del [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) para ejecutar un contenedor
 - Comienza el tutorial usando el archivo `tutorial.json` en la nueva rama
 
-### Revisiando las relaciones públicas en `main`
+### Reviewing PRs to `main`
 
 Si revisa un PR que solo cambia `main` con problemas de instrucción o gramática como se describe anteriormente, los cambios en `TUTORIAL.md` deberían coincidir con los cambios en `tutorial.json`.
 
@@ -119,11 +119,11 @@ Si tienes acceso de escritura al repo de freeCodeCamp, has verificado los archiv
 - Hacer un PR a `main` en el repositorio freeCodeCamp
 - Si estás satisfecho, fusionalo o déjalo y pide una reseña a alguien
 - Después de fusionar las relaciones públicas, abra el tutorial siguiendo las instrucciones en el repositorio [rdb-alpha](https://github.com/freeCodeCamp/rdb-alpha) para asegurarse de que está cargando correctamente, y que usted puede pasar unos pasos
-- Finalmente, si existe algún PRs para esta versión, ciérrelos
+- Finally, if any PRs for this version exist, close them
 
 ### How to Revert to a Previous Version
 
-- Crea una nueva rama desde la última `main` con `git checkout -b revert/to-version-X.X.X`
+- Create a new branch off of the latest `main` with `git checkout -b revert/to-version-X.X.X`
 - Revertir todos los commits en esta rama hasta e incluyendo el commit de la versión después del que desea revertir. Por ejemplo, puede haber commits que se vean así:
 
 ```

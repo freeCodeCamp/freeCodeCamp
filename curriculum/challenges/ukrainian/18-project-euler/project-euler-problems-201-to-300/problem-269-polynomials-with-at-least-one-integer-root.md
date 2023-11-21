@@ -1,6 +1,6 @@
 ---
 id: 5900f4791000cf542c50ff8c
-title: 'Problem 269: Polynomials with at least one integer root'
+title: 'Приклад 269: многочлени з щонайменше одним цілим коренем'
 challengeType: 1
 forumTopicId: 301918
 dashedName: problem-269-polynomials-with-at-least-one-integer-root
@@ -8,19 +8,19 @@ dashedName: problem-269-polynomials-with-at-least-one-integer-root
 
 # --description--
 
-A root or zero of a polynomial $P(x)$ is a solution to the equation $P(x) = 0$.
+Корінь або нуль многочлена $P(x)$ є розв’язком рівняння $P(x) = 0$.
 
-Define $P_n$ as the polynomial whose coefficients are the digits of $n$.
+Визначимо $P_n$ як многочлен, коефіцієнтами якого є цифри числа $n$.
 
 Наприклад, $P_{5703}(x) = 5x^3 + 7x^2 + 3$.
 
-We can see that:
+Ми можемо побачити, що:
 
-- $P_n(0)$ is the last digit of $n$,
-- $P_n(1)$ is the sum of the digits of $n$,
-- $Pn(10)$ is $n$ itself.
+- $P_n(0)$ є останньою цифрою $n$,
+- $P_n(1)$ є сумою цифр $n$,
+- $Pn(10)$ є $n$.
 
-Define $Z(k)$ as the number of positive integers, $n$, not exceeding $k$ for which the polynomial $P_n$ has at least one integer root.
+Визначимо $Z(k)$ як кількість натуральних чисел $n$, менших за $k$, за яких многочлен $P_n$ має принаймні один цілий корінь.
 
 Можна довести, що $Z(100\\,000)$ дорівнює 14696.
 

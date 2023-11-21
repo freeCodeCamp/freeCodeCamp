@@ -27,7 +27,6 @@ Antes de trabalhar no currículo, você precisará configurar algumas ferramenta
 
   [![Abra no Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Edite os arquivos na interface do GitHub clicando no ícone do lápis no arquivo correspondente. Embora seja a maneira mais rápida, **não é recomendado**, porque você não pode testar suas alterações no GitHub. Se nossos mantedores concluirem que as mudanças que você fez precisam ser testadas localmente, você precisará seguir os métods acima.
 
 ### Trabalhe em projetos práticos
 
@@ -136,17 +135,29 @@ Soluções são usadas para os testes CI a fim de garantir que mudanças nas dic
 // terceira solução etc. - Suas soluções devem estar em HTML.
 ```
 
+# --assignments--
+
+Isto mostrará uma caixa de seleção que os campers precisam verificar antes de completar um desafio
+
+---
+
+Isto mostrará outra caixa de seleção que os campers precisam verificar antes de completar um desafio
+
 # --question--
 
 Esses espaços são utilizados geralmente para questões de múltipla escolha dos desafios de Python.
 
 ## --text--
 
-O texto da questão vêm aqui.
+O texto da questão vem aqui.
 
 ## --answers--
 
 Resposta 1
+
+### --feedback--
+
+Isto será exibido como feedback quando os campers adivinharem essa resposta
 
 ---
 
@@ -220,9 +231,11 @@ As frases devem ser claras e resumidas com o mínimo de termos técnicos. Se usa
 
 Mantenha os parágrafos curtos (em torno de 1-4 frases). É mais provável que as pessoas leiam vários parágrafos curtos do que um parágrafo enorme.
 
+Use inglês americano. Por exemplo, use `labeled` em vez de `labelled`.
+
 O desafio de texto deve usar a segunda pessoa ("você") para ajudar a dar um tom coloquial. Dessa forma, o texto e as instruções parecem falar diretamente ao usuário freeCodeCamp que está resolvendo o desafio. Tente evitar usar a primeira pessoa ("eu", "nós", "vamos").
 
-Não use links externos. Eles interrompem o fluxo. Os usuários do freeCodeCamp nunca devem precisar pesquisar nada no Google durante esses desafios. Se há recursos que você acha que os usuários irão se beneficiar, adicione-os no artigo relacionado ao guia do desafio.
+Não use links externos. Eles interrompem o fluxo. Os usuários do freeCodeCamp nunca devem precisar pesquisar nada no Google durante esses desafios. Se há recursos que você acha que os usuários aproveitarão, adicione-os no artigo relacionado ao guia do desafio.
 
 Você pode adicionar diagramas se necessário.
 
@@ -297,7 +310,7 @@ Desafios devem ter um número mínimo de testes necessários para verificar que 
 
 Nossa meta é comunicar o ponto que o desafio está tentando ensinar e testar se eles entenderam esse ponto.
 
-Os testes do desafio podem usar bibliotecas Node.js e Chai.js. Se necessário, o código gerado pro usuário pode ser acessado na variável `code` também. Além disso, os objetos `__helpers` expõem várias funções que simplificam o processo de escrita dos testes. As funções disponíveis estão definidas em _client/src/utils/curriculum-helpers.ts_.
+Os testes do desafio podem usar bibliotecas Node.js e Chai.js. Se necessário, o código gerado pro usuário pode ser acessado na variável `code` também. Além disso, os objetos `__helpers` expõem várias funções que simplificam o processo de escrita dos testes. As funções disponíveis estão definidas no repositório [curriculum-helpers](https://github.com/freeCodeCamp/curriculum-helpers/blob/main/lib/index.ts).
 
 ## Formatação do código seed
 
@@ -463,13 +476,13 @@ Antes de [criar um pull request](how-to-open-a-pull-request.md) para suas modifi
 pnpm run test:curriculum
 ```
 
-2. To test single challenge, you can use it challenge id with following command
+2. Para testar um único desafio, você pode usar o id do desafio com o seguinte comando
 
 ```
 FCC_CHALLENGE_ID=646cf6cbca98e258da65c979 pnpm run test:curriculum
 ```
 
-3. You can also test a block or a superblock of challenges with these commands
+3. Você também pode testar um bloco ou superbloco de desafios com esses comandos
 
 ```
 FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
@@ -479,43 +492,43 @@ FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
-You are also able to test challenges by title by performing the following steps:
+Você também pode testar desafios por título utilizando as seguintes etapas:
 
-1. Switch to the `curriculum` directory:
+1.  Mude para o diretório `curriculum`:
 
    ```
    cd curriculum
    ```
 
-2. Run the following for each challenge file for which you have changed (replacing `challenge-title-goes-here` with the full title of the challenge):
+2. Execute o comando a seguir para cada arquivo de desafio no qual você fez alteraçõess (substituindo `challenge-title-goes-here` com o título completo do desafio):
 
    ```
-   pnpm run test -- -g challenge-title-goes-here
+   pnpm run test -- -g titulo-do-desafio-aqui
    ```
 
 > [!TIP]
-> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
+> Você pode definir a váriavel de ambiente `LOCALE` no arquivo `.env` para o idioma do(s) desafio(s) que você precisa testar.
 >
-> The currently accepted values are `english` and `chinese`, with `english` being set by default.
+> Os valores aceitos de momento são `english` e `chinese`, com `english` sendo o valor padrão.
 
-## Proposing a Pull Request (PR)
+## Propondo um Pull Request (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+Depois de fazer o commit de suas alterações, confira aqui [como abrir um Pull Request](how-to-open-a-pull-request.md).
 
-## Useful Links
+## Links úteis
 
-Creating and Editing Challenges:
+Criação e edição de desafios:
 
-1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
+1. [Tipos de desafio](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - o que significam os valores do tipo de desafio numérico (enum).
 
-2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
+2. [Contribuindo para o FreeCodeCamp - Escrevendo testes para desafios de ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - um vídeo que acompanha [Ethan Arrowood](https://twitter.com/ArrowoodTech) durante sua contribuição para a versão antiga do currículo.
 
-## Helper Scripts
+## Scripts auxiliares
 
 > [!NOTE]
-> If you are working with the step-based challenges, refer to the [Work on Practice Projects](how-to-work-on-practice-projects.md) section.
+> Se estiver trabalhando com os desafios baseados em passos, consulte a seção [Trabalho com projetos práticos](how-to-work-on-practice-projects.md).
 
-There are a few helper scripts that can be used to manage the challenges in a block. Note that these commands should all be run in the block directory. For example:
+Existem alguns scripts auxiliares que podem ser usados para gerenciar os desafios em um bloco. Observe que todos esses comandos devem ser executados no diretório do bloco. Por exemplo:
 
 ```bash
 cd curriculum/challenges/english/02-javascript-algorithms-and-data-structures/basic-algorithm-scripting
@@ -523,33 +536,33 @@ cd curriculum/challenges/english/02-javascript-algorithms-and-data-structures/ba
 
 ### Adicionar um novo desafio
 
-To add a new challenge at the end of a block, call the script:
+Para adicionar um novo desafio no final de um bloco, chame o script:
 
 ```bash
 pnpm run create-next-challenge
 ```
 
-This will prompt you for the challenge information and create the challenge file, updating the `meta.json` file with the new challenge information.
+Ele solicitará a informação do desafio e criará o arquivo de desafio, atualizando o arquivo `meta.json` com as novas informações de desafio.
 
 ### Excluir um desafio
 
-To delete a challenge, call the script:
+Para excluir um desafio, chame o script:
 
 ```bash
 pnpm run delete-challenge
 ```
 
-This will prompt you to select which challenge should be deleted, then delete the file and update the `meta.json` file to remove the challenge from the order.
+Ele solicitará que você selecione qual desafio deve ser excluído. Em seguida, excluirá o arquivo e atualizará o arquivo `meta.json` para remover o desafio da ordem.
 
 ### Inserir um desafio
 
-To insert a challenge before an existing challenge, call the script:
+Para inserir um desafio antes de um desafio existente, chame o script:
 
 ```bash
 pnpm run insert-challenge
 ```
 
-This will prompt you for the challenge information, then for the challenge to insert before. For example, if your choices are:
+Ele solicitará a informação do desafio e, em seguida, o desafio será inserido antes do desafio informado. Por exemplo, se suas escolhas forem:
 
 ```bash
 a
@@ -557,37 +570,37 @@ b
 c
 ```
 
-And you choose `b`, your new order will be:
+Se você escolher `b`, a nova ordem será:
 
 ```bash
 a
-new challenge
+novo desafio
 b
 c
 ```
 
 ### Atualizar a ordem dos desafios
 
-If you need to manually re-order the challenges, call the script:
+Se você precisar reordenar manualmente os desafios, chame o script:
 
 ```bash
 pnpm run update-challenge-order
 ```
 
-This will take you through an interactive process to select the order of the challenges.
+Ele vai orientá-lo através de um processo interativo para selecionar a ordem dos desafios.
 
 ## Solução de problemas
 
 ### Loop infinito detectado
 
-If you see the following error in the console while previewing a challenge:
+Se você ver o seguinte erro no console ao pré-visualizar um desafio:
 
 ```text
 Potential infinite loop detected on line <number>...
 ```
 
-This means that the loop-protect plugin has found a long-running loop or recursive function. If your challenge needs to do that (e.g. it contains an event loop that is supposed to run indefinitely), then you can prevent the plugin from being used in the preview. To do so, add `disableLoopProtectPreview: true` to the block's `meta.json` file.
+Isso significa que o plug-in de proteção de loops encontrou um loop de longa duração ou uma função recursiva. Se o desafio precisar fazer isso (por exemplo, contém um loop de eventos que deve ser executado indefinidamente), então você pode impedir que o plug-in seja usado na visualização. Para fazer isso, adicione `disableLoopProtectPreview: true` ao arquivo `meta.json` do bloco.
 
-If your tests are computationally intensive, then you may see this error when they run. If this happens then you can add `disableLoopProtectTests: true` to the block's `meta.json` file.
+Se os testes demandam muitos cálculos, você poderá ver esse erro quando eles forem executados. Se isso acontecer, adicione `disableLoopProtectPreview: true` ao arquivo `meta.json` do bloco.
 
-It's not typically necessary to have both set to true, so only set them as needed.
+Normalmente, não é necessário ter os dois definidos como true, Defina-os, apenas, conforme necessário.
