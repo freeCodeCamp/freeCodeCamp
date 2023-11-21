@@ -1,9 +1,9 @@
 ---
 id: 655b5899f2ef74716d069180
-title: "Dialogue 1: Sophie and the network analyst discuss their projects"
+title: "Dialogue 1: Sophie and James Discuss Their Projects"
 videoId: nLDychdBwUg
 challengeType: 21
-dashedName: dialogue-sophie-and-the-nextwork-analyst-discuss-their-projects
+dashedName: dialogue-sophie-and-james-discuss-their-projects
 ---
 
 # --description--

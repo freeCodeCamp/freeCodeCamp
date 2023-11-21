@@ -3,7 +3,7 @@ id: 655b69293e6e9480ed5f6624
 title: Taking Cyber Security Lessons
 challengeType: 19
 dashedName: taking-cybersecurity-lessons
-audio: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 <!--
 AUDIO REFERENCE:

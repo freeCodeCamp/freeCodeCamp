@@ -1,0 +1,33 @@
+---
+id: 655cadb5df07e269cccaa056
+title: Key Words Amy Uses
+challengeType: 22
+dashedName: key-words-amy-uses
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+---
+<!--
+AUDIO REFERENCE: 
+Amy: Hi Brian, what's hapening with your projects?
+-->
+
+# --fillInTheBlank--
+
+## --sentence--
+
+`Amy: Hi Brian, what's _ with your _?`
+
+## --blanks--
+
+`happening`
+
+### --feedback--
+
+Asks about current events or activities in Brian's work.
+
+---
+
+`project`
+
+### --feedback--
+
+Refers to the specific work or task Brian is involved in.

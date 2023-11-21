@@ -3,7 +3,7 @@ id: 655b6522da78357de8428a19
 title: Why Is James Using Special Tools 
 challengeType: 19
 dashedName: why-is-james-using-special-tools
-audio: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--

@@ -3,7 +3,7 @@ id: 655b76340ecb8285060ab6d5
 title: Summarizing Actions
 challengeType: 19
 dashedName: summarizing-actions
-audio: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--

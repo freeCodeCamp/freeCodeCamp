@@ -11,7 +11,7 @@
   "challengeOrder": [
     {
       "id": "655b5899f2ef74716d069180",
-      "title": "Step 1"
+      "title": "Dialogue 1: Sophie and James Discuss Their Projects"
     },
     {
       "id": "655b5cc5a8b3897908c962f0",
@@ -35,7 +35,7 @@
     },
     {
       "id": "655b6522da78357de8428a19",
-      "title": "Why James Is  Using Special Tools "
+      "title": "Why James Is Using Special Tools"
     },
     {
       "id": "655b672f02003c7ecec12ffe",
@@ -60,6 +60,86 @@
     {
       "id": "655b76340ecb8285060ab6d5",
       "title": "Summarizing Actions"
+    },
+    {
+      "id": "655bd1b0faed39415ed2760f",
+      "title": "Dialogue 2: Data Analysis Team Discuss Their Projects"
+    },
+    {
+      "id": "655bd2158780e2421b674e61",
+      "title": "Customer Data"
+    },
+    {
+      "id": "655bd2f3caad89436a3dcc04",
+      "title": "Patterns In Data"
+    },
+    {
+      "id": "655bd57d0e13e146b2404569",
+      "title": "Sarah's Reason for Analyzing Customer Data"
+    },
+    {
+      "id": "655bd798ce91bd4861b69281",
+      "title": "Negative Sentences In Present Continuous"
+    },
+    {
+      "id": "655bd91a858b2b4a30da3cad",
+      "title": "Making Pictures"
+    },
+    {
+      "id": "655bda6270ef334ad8a7f005",
+      "title": "Bob's reasons"
+    },
+    {
+      "id": "655bdc7e9c4116509df13f34",
+      "title": "Using Tools"
+    },
+    {
+      "id": "655bdf9f7f844952b7e7f036",
+      "title": "Contrast in Sarah's Statement"
+    },
+    {
+      "id": "655be33b7a463a5593c91cb4",
+      "title": "Surely"
+    },
+    {
+      "id": "655c9a549835a8601764bd0b",
+      "title": "Dialogue 3: Maria And Mark Talk about Their Project"
+    },
+    {
+      "id": "655c9a89818e18606c18ca4b",
+      "title": "Mark's Project Update"
+    },
+    {
+      "id": "655c9b2e0bcbe16161996ab7",
+      "title": "Mark's Purpose in Testing Software"
+    },
+    {
+      "id": "655c9bcb5bedb4620acb6f18",
+      "title": "Reason for Additional Testing"
+    },
+    {
+      "id": "655c9d9470acf0643482b95b",
+      "title": "Think Thought"
+    },
+    {
+      "id": "655c9e73e89d886538976452",
+      "title": "Maria's Work Description"
+    },
+    {
+      "id": "655c9ee249f7ef65f6d2dd36",
+      "title": "Purpose of Communicating with the Client"
+    },
+    {
+      "id": "655ca014b022ff6692049b91",
+      "title": "Good Fortune"
+    },
+    {
+      "id": "655ca0a6639d6b67683ebbcd",
+      "title": "Brain Talks To Amy About Their Projects"
+    },
+    {
+      "id": "655cadb5df07e269cccaa056",
+      "title": "Key Words Amy Uses"
     }
   ],
   "helpCategory": "HTML-CSS"

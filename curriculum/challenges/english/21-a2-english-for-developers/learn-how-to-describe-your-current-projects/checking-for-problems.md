@@ -3,7 +3,7 @@ id: 655b5ef161f6777ae5eb3ba4
 title: Checking For Problems
 challengeType: 19
 dashedName: checking-for-problems
-audio: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--

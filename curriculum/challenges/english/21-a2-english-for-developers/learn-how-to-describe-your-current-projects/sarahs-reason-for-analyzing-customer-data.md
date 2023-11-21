@@ -1,0 +1,55 @@
+---
+id: 655bd57d0e13e146b2404569
+title: "Sarah's Reason for Analyzing Customer Data"
+challengeType: 19
+dashedName: sarahs-reason-for-analyzing-customer-data
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+---
+
+<!--
+AUDIO REFERENCE: 
+Bob: Hi Sarah, what are you doing now?
+Sarah: Hi Bob! I'm looking at customer data to find patterns. We're trying to understand what our customers like and what they buy.
+-->
+
+# --description--
+
+Pay attention to what Sarah says.
+
+# --question--
+
+## --text--
+
+Why is Sarah trying to find patterns in their customers data?
+
+## --answers--
+
+`To prepare a report for her manager`
+
+### --feedback--
+
+That's not it.
+
+---
+
+`To solve a technical issue with the customer database`
+
+### --feedback--
+
+That's not it.
+
+---
+
+`To understand customer like and what they buy`
+
+---
+
+`To decide on new products to develop`
+
+### --feedback--
+
+Sarah doesn't mention product development.
+
+## --video-solution--
+
+3

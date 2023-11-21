@@ -3,7 +3,7 @@ id: 655b6a58626e2a82be5a78eb
 title: If Someone Tries to Steal
 challengeType: 19
 dashedName: if-someone-tries-to-steal
-audio: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--

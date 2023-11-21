@@ -3,7 +3,7 @@ id: 655b672f02003c7ecec12ffe
 title: Responding to Potential Problems
 challengeType: 19
 dashedName: responding-to-potential-problems
-audio: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
