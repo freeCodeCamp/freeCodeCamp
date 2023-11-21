@@ -46,3 +46,10 @@ pnpm-lock.yaml
 
 # i18n Quotes
 **/motivation.json @freeCodeCamp/staff @freeCodeCamp/i18n
+
+# -------------------------------------------------
+# Files that need attention from the mobile team
+# -------------------------------------------------
+
+/curriculum/schema/challenge-schema.js @freeCodeCamp/dev-team @freeCodeCamp/mobile
+/client/src/redux/prop-types.ts @freeCodeCamp/dev-team @freeCodeCamp/mobile
