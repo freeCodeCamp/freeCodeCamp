@@ -6,7 +6,8 @@ import './block.css';
 
 const stepBasedSuperblocks = [
   '14-responsive-web-design-22',
-  '15-javascript-algorithms-and-data-structures-22'
+  '15-javascript-algorithms-and-data-structures-22',
+  '20-upcoming-python'
 ];
 
 const Block = () => {
