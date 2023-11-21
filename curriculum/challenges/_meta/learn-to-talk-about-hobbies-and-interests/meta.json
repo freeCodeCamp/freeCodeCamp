@@ -1,0 +1,16 @@
+{
+  "name": "Learn to Talk About Hobbies and Interests",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-to-talk-about-hobbies-and-interests",
+  "order": 7,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "superOrder": 21,
+  "isBeta": true,
+  "challengeOrder": [{ "id": "655c1008a9659e8059217d76", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

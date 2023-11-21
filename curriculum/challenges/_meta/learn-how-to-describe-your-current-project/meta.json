@@ -1,0 +1,16 @@
+{
+  "name": "Learn How to Describe Your Current Project",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-how-to-describe-your-current-project",
+  "order": 5,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "superOrder": 21,
+  "isBeta": true,
+  "challengeOrder": [{ "id": "655c0fad9e78217df1fdee80", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Learn to Discuss Roles and Responsibilities",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-to-discuss-roles-and-responsibilies",
+  "order": 8,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "superOrder": 21,
+  "isBeta": true,
+  "challengeOrder": [{ "id": "655c10318d878d812211966d", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

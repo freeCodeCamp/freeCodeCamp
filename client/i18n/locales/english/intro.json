@@ -1164,6 +1164,30 @@
       "learn-conversation-starters-in-the-break-room": {
         "title": "Learn Conversation Starters in the Break Room",
         "intro": ["Learn conversation starters."]
+      },
+      "learn-how-to-talk-about-a-typical-workday-and-tasks": {
+        "title": "Learn How to Talk About a Typical Workday and Tasks",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-your-morning-or-evening-routine": {
+        "title": "Learn How to Discuss Your Morning or Evening Routine",
+        "intro": ["", ""]
+      },
+      "learn-how-to-describe-your-current-project": {
+        "title": "Learn How to Describe Your Current Project",
+        "intro": ["", ""]
+      },
+      "learn-how-to-ask-and-share-about-educational-and-professional-background": {
+        "title": "Learn How to ask and Share About Educational and Professional Background",
+        "intro": ["", ""]
+      },
+      "learn-to-talk-about-hobbies-and-interests": {
+        "title": "Learn to Talk About Hobbies and Interests",
+        "intro": ["", ""]
+      },
+      "learn-to-discuss-roles-and-responsibilies": {
+        "title": "Learn to Discuss Roles and Responsibilities",
+        "intro": ["", ""]
       }
     }
   },
