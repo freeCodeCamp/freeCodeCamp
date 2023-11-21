@@ -1,16 +1,13 @@
 {
   "name": "Learn How to use Basic Programming Vocabulary in Conversations",
   "isUpcomingChange": true,
-  "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "dashedName": "learn-how-to-use-basic-programming-vocabulary-in-conversations",
   "order": 12,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "a2-english-for-developers",
-  "superOrder": 21,
   "isBeta": true,
-  "challengeOrder": [{ "id": "655c11781720d0897fc05353", "title": "Step 1" }],
+  "challengeOrder": [{ "id": "655c11781720d0897fc05353", "title": "Dialogue: Placeholder" }],
   "helpCategory": "HTML-CSS"
 }

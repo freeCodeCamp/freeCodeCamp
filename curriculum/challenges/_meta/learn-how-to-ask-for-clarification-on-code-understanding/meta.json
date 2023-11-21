@@ -1,8 +1,6 @@
 {
   "name": "Learn How to Ask for Clarification on Code Understanding",
   "isUpcomingChange": true,
-  "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "dashedName": "learn-how-to-ask-for-clarification-on-code-understanding",
   "order": 17,
   "time": "5 hours",
@@ -11,6 +9,6 @@
   "superBlock": "a2-english-for-developers",
   "superOrder": 21,
   "isBeta": true,
-  "challengeOrder": [{ "id": "655c13c143fbad91f96da5f3", "title": "Step 1" }],
+  "challengeOrder": [{ "id": "655c13c143fbad91f96da5f3", "title": "Dialogue: Placeholder" }],
   "helpCategory": "HTML-CSS"
 }

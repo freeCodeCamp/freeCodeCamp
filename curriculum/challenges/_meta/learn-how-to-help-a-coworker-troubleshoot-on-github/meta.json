@@ -1,16 +1,13 @@
 {
   "name": "Learn How to Help a Coworker Troubleshoot on GitHub",
   "isUpcomingChange": true,
-  "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "dashedName": "learn-how-to-help-a-coworker-troubleshoot-on-github",
   "order": 15,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "a2-english-for-developers",
-  "superOrder": 21,
   "isBeta": true,
-  "challengeOrder": [{ "id": "655c131291cbcb8febf21e64", "title": "Step 1" }],
+  "challengeOrder": [{ "id": "655c131291cbcb8febf21e64", "title": "Dialogue: Placeholder" }],
   "helpCategory": "HTML-CSS"
 }
