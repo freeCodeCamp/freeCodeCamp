@@ -14,33 +14,33 @@ A <dfn>palindrome</dfn> is a word or phrase that can be read the same way forwar
 
 **User Stories:**
 
-1. Your palindrome checker should have an `input` element with an `id` of `text-input`
-1. You should have a `button` element with an `id` of `btn` (is `check-btn` better?)
+1. You should have an `input` element with an `id` of `text-input`
+1. You should have a `button` element with an `id` of `check-btn`
 1. You should have a `div` element with an `id` of `result`
-1. When you click on `#btn` without providing an input, an alert should appear with the text `Please input a value`
-1. When `#text-input` contains special characters or digits and `#btn` is clicked, an alert should appear with the text `Input should not include numbers and special characters`
-1. When `#text-input` contains the letter `A` and `#btn` is clicked, `#result` should contain the text `A is a palindrome`
-1. When `#text-input` contains the word `eye` and `#btn` is clicked, `#result` should contain the text `eye is a palindrome`
-1. When `#text-input` contains the words `race car` and `#btn` is clicked, `#result` should contain the text `race car is a palindrome`
-1. When `#text-input` contains the text `not a palindrome` and `#btn` is clicked, `#result` should contain the text `not a palindrome is not a palindrome`
-1. When `#text-input` contains the text `No one made killer apparel like Dame Noon` and `#btn` is clicked, `#result` should contain the text `No one made killer apparel like Dame Noon`
-1. When `#text-input` contains the text `saippuakivikauppias` and `#btn` is clicked, `#result` should contain the text `saippuakivikauppias is a palindrome`
+1. When you click on the `#check-btn` element without entering a value into the `#text-input` element, an alert should appear with the text `Please input a value`
+1. When the `#text-input` element contains special characters or digits and the `#check-btn` element is clicked, an alert should appear with the text `Input should not include numbers and special characters`
+1. When the `#text-input` element contains the letter `A` and the `#check-btn` element is clicked, the `#result` element should contain the text `A is a palindrome`
+1. When the `#text-input` element contains the word `eye` and the `#check-btn` element is clicked, the `#result` element should contain the text `eye is a palindrome`
+1. When the `#text-input` element contains the words `race car` and the `#check-btn` element is clicked, the `#result` element should contain the text `race car is a palindrome`
+1. When the `#text-input` element contains the text `not a palindrome` and the `#check-btn` element is clicked, the `#result` element should contain the text `not a palindrome is not a palindrome`
+1. When the `#text-input` element contains the text `No one made killer apparel like Dame Noon` and the `#check-btn` element is clicked, the `#result` element should contain the text `No one made killer apparel like Dame Noon`
+1. When the `#text-input` element contains the text `saippuakivikauppias` and the `#check-btn` element is clicked, the `#result` element should contain the text `saippuakivikauppias is a palindrome`
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
 # --hints--
 
-Your palindrome checker should have an `input` element with an `id` of `text-input`.
+You should have an `input` element with an `id` of `text-input`.
 
 ```js
 const el = document.getElementById('text-input');
 assert(!!el && el.nodeName.toLowerCase() === 'input');
 ```
 
-You should have a `button` element with an `id` of `btn`.
+You should have a `button` element with an `id` of `check-btn`.
 
 ```js
-const el = document.getElementById('btn');
+const el = document.getElementById('check-btn');
 assert(!!el && el.nodeName.toLowerCase() === 'button');
 ```
 
@@ -51,103 +51,104 @@ const el = document.getElementById('result');
 assert(!!el && el.nodeName.toLowerCase() === 'div');
 ```
 
-When you click on `#btn` without providing an input, an alert should appear with the text `Please input a value`.
+
+When you click on the `#check-btn` element without entering a value into the `#text-input` element, an alert should appear with the text `Please input a value`.
 
 ```js
 const inputEl = document.getElementById('text-input');
-const btnEl = document.getElementById('btn');
+const checkBtn = document.getElementById('check-btn');
 // Override alert
 window.alert = (message) => {
   assert(message.trim().toLowerCase() === 'please input a value');
 };
 
 inputEl.value = '';
-btnEl.click();
+checkBtn.click();
 ```
 
-When `#text-input` contains special characters or digits and `#btn` is clicked, an alert should appear with the text `Input should not include numbers and special characters`.
+When the `#text-input` element contains special characters or digits and the `#check-btn` element is clicked, an alert should appear with the text `Input should not include numbers and special characters`.
 
 ```js
 const inputEl = document.getElementById('text-input');
-const btnEl = document.getElementById('btn');
+const checkBtn = document.getElementById('check-btn');
 // Override alert
 window.alert = (message) => {
   assert(message.trim().toLowerCase() === 'input should not include numbers and special characters');
 };
 
 inputEl.value = 'racecar123!';
-btnEl.click();
+checkBtn.click();
 ```
 
-When `#text-input` contains the letter `A` and `#btn` is clicked, `#result` should contain the text `A is a palindrome`.
+When the `#text-input` element contains the letter `A` and the `#check-btn` element is clicked, the `#result` element should contain the text `A is a palindrome`.
 
 ```js
 const inputEl = document.getElementById('text-input');
-const btnEl = document.getElementById('btn');
+const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'A';
-btnEl.click();
+checkBtn.click();
 assert(resultEl.innerText.trim().match(/^a is a palindrome/i));
 ```
 
-When `#text-input` contains the word `eye` and `#btn` is clicked, `#result` should contain the text `eye is a palindrome`.
+When the `#text-input` element contains the word `eye` and the `#check-btn` element is clicked, the `#result` element should contain the text `eye is a palindrome`.
 
 ```js
 const inputEl = document.getElementById('text-input');
-const btnEl = document.getElementById('btn');
+const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'eye';
-btnEl.click();
+checkBtn.click();
 assert(resultEl.innerText.trim().match(/^eye is a palindrome/i));
 ```
 
-When `#text-input` contains the words `race car` and `#btn` is clicked, `#result` should contain the text `race car is a palindrome`.
+When the `#text-input` element contains the words `race car` and the `#check-btn` element is clicked, the `#result` element should contain the text `race car is a palindrome`.
 
 ```js
 const inputEl = document.getElementById('text-input');
-const btnEl = document.getElementById('btn');
+const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'race car';
-btnEl.click();
+checkBtn.click();
 assert(resultEl.innerText.trim().match(/^race car is a palindrome/i));
 ```
 
-When `#text-input` contains the text `not a palindrome` and `#btn` is clicked, `#result` should contain the text `not a palindrome is not a palindrome`.
+When the `#text-input` element contains the text `not a palindrome` and the `#check-btn` element is clicked, the `#result` element should contain the text `not a palindrome is not a palindrome`.
 
 ```js
 const inputEl = document.getElementById('text-input');
-const btnEl = document.getElementById('btn');
+const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'not a palindrome';
-btnEl.click();
+checkBtn.click();
 assert(resultEl.innerText.trim().match(/^not a palindrome is not a palindrome/i));
 ```
 
-When `#text-input` contains the text `No one made killer apparel like Dame Noon` and `#btn` is clicked, `#result` should contain the text `No one made killer apparel like Dame Noon is a palindrome`.
+When the `#text-input` element contains the text `No one made killer apparel like Dame Noon` and the `#check-btn` element is clicked, the `#result` element should contain the text `No one made killer apparel like Dame Noon`.
 
 ```js
 const inputEl = document.getElementById('text-input');
-const btnEl = document.getElementById('btn');
+const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'No one made killer apparel like Dame Noon';
-btnEl.click();
+checkBtn.click();
 assert(resultEl.innerText.trim().match(/^no one made killer apparel like dame noon is a palindrome/i));
 ```
 
-When `#text-input` contains the text `saippuakivikauppias` and `#btn` is clicked, `#result` should contain the text `saippuakivikauppias is a palindrome`.
+When the `#text-input` element contains the text `saippuakivikauppias` and the `#check-btn` element is clicked, the `#result` element should contain the text `saippuakivikauppias is a palindrome`.
 
 ```js
 const inputEl = document.getElementById('text-input');
-const btnEl = document.getElementById('btn');
+const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'saippuakivikauppias';
-btnEl.click();
+checkBtn.click();
 assert(resultEl.innerText.trim().match(/^saippuakivikauppias is a palindrome/i));
 ```
 
@@ -197,7 +198,7 @@ assert(resultEl.innerText.trim().match(/^saippuakivikauppias is a palindrome/i))
           >Enter in text to check for a palindrome:
         </label>
         <input class="palindrome-input" id="text-input" value="" type="text" />
-        <button class="palindrome-btn" id="btn">Check</button>
+        <button class="check-btn" id="check-btn">Check</button>
         <div class="results-div hidden" id="result"></div>
       </div>
       <div class="palindrome-definition-div">
@@ -267,7 +268,7 @@ label {
   margin-bottom: 20px;
 }
 
-.palindrome-btn {
+.check-btn {
   width: 90px;
   border: none;
   padding: 10px;
@@ -333,7 +334,7 @@ label {
 
 ```js
 const userInput = document.getElementById("text-input");
-const checkPalindromeBtn = document.getElementById("btn");
+const checkPalindromeBtn = document.getElementById("check-btn");
 const resultDiv = document.getElementById("result");
 
 const checkForPalindrome = (input) => {
