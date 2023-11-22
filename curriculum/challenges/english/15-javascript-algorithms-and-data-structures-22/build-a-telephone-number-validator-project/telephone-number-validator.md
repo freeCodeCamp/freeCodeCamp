@@ -516,7 +516,6 @@ assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 11 55
     <title>Telephone Number Validator</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
     <main>
       <img
@@ -531,9 +530,7 @@ assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 11 55
         </div>
         <label for="user-input">Enter a Phone Number:</label>
         <input maxlength="20" type="text" id="user-input" value="" />
-
         <div id="results-div"></div>
-
         <div class="phone-footer">
           <button class="btn-styles" id="check-btn">Check</button>
           <button class="btn-styles" id="clear-btn">Clear</button>

@@ -424,7 +424,6 @@ async () => {
 
 ```css
 /* CSS reset */
-
 *,
 *::before,
 *::after {
@@ -444,7 +443,6 @@ img {
 }
 
 /* Project styling */
-
 body {
   font-family: sans-serif;
   background-color: #0a0a23;
@@ -593,7 +591,6 @@ th {
 }
 
 /* Special styling for Pokémon types */
-
 .normal {
   background-color: #b7b7aa;
 }
@@ -688,26 +685,26 @@ th {
 ```
 
 ```js
-const pokemonID = document.getElementById('pokemon-id');
-const pokemonName = document.getElementById('pokemon-name');
-const sprite = document.getElementById('sprite');
-const types = document.getElementById('types');
-const height = document.getElementById('height');
-const weight = document.getElementById('weight');
-const hp = document.getElementById('hp');
-const attack = document.getElementById('attack');
-const defense = document.getElementById('defense');
-const specialAttack = document.getElementById('special-attack');
-const specialDefense = document.getElementById('special-defense');
-const speed = document.getElementById('speed');
-const searchForm = document.getElementById('search-form');
-const searchInput = document.getElementById('search-input');
+const pokemonID = document.getElementById("pokemon-id");
+const pokemonName = document.getElementById("pokemon-name");
+const sprite = document.getElementById("sprite");
+const types = document.getElementById("types");
+const height = document.getElementById("height");
+const weight = document.getElementById("weight");
+const hp = document.getElementById("hp");
+const attack = document.getElementById("attack");
+const defense = document.getElementById("defense");
+const specialAttack = document.getElementById("special-attack");
+const specialDefense = document.getElementById("special-defense");
+const speed = document.getElementById("speed");
+const searchForm = document.getElementById("search-form");
+const searchInput = document.getElementById("search-input");
 
 const getPokemon = async () => {
   try {
     const pokemonNameOrId = searchInput.value.toLowerCase();
     const response = await fetch(
-      `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${pokemonNameOrId}`
+      `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${pokemonNameOrId}`,
     );
     const data = await response.json();
 
@@ -728,15 +725,15 @@ const getPokemon = async () => {
     speed.innerHTML = data.stats[5].base_stat;
 
     // Set types
-    let typesHTML = '';
+    let typesHTML = "";
 
-    data.types.forEach(obj => {
+    data.types.forEach((obj) => {
       typesHTML += `<span class="type ${obj.type.name}">${obj.type.name}</span>`;
     });
     types.innerHTML = typesHTML;
   } catch (err) {
     resetDisplay();
-    alert('Pokémon not found');
+    alert("Pokémon not found");
     console.log(`Pokémon not found: ${err}`);
   }
 };
@@ -745,24 +742,24 @@ const resetDisplay = () => {
   // reset to default display if pokemon is not found
 
   // reset image src and alt
-  sprite.src = '';
-  sprite.alt = '';
+  sprite.src = "";
+  sprite.alt = "";
 
   // reset stats
-  pokemonName.innerHTML = '';
-  pokemonID.innerHTML = '';
-  types.innerHTML = '';
-  height.innerHTML = '';
-  weight.innerHTML = '';
-  hp.innerHTML = '';
-  attack.innerHTML = '';
-  defense.innerHTML = '';
-  specialAttack.innerHTML = '';
-  specialDefense.innerHTML = '';
-  speed.innerHTML = '';
+  pokemonName.innerHTML = "";
+  pokemonID.innerHTML = "";
+  types.innerHTML = "";
+  height.innerHTML = "";
+  weight.innerHTML = "";
+  hp.innerHTML = "";
+  attack.innerHTML = "";
+  defense.innerHTML = "";
+  specialAttack.innerHTML = "";
+  specialDefense.innerHTML = "";
+  speed.innerHTML = "";
 };
 
-searchForm.addEventListener('submit', e => {
+searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   getPokemon();
 });

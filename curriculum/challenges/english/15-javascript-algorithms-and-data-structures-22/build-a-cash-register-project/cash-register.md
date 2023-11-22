@@ -219,10 +219,9 @@ assert(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().include
       type="image/png"
       href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"
     />
-    <title>Telephone Number Validator</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Cash Register</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
-
   <body>
     <main>
       <img
@@ -230,23 +229,49 @@ assert(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().include
         src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
         alt="freeCodeCamp Logo"
       />
-      <h1>Telephone Number Validator</h1>
-      <div class="phone-container">
-        <div class="phone-background">
-          <div class="phone-camera"></div>
+      <h1>Cash Register Project</h1>
+      <div id="change-due"></div>
+      <div class="input-div">
+        <label for="cash">Enter cash from customer:</label>
+        <input type="number" id="cash" class="user-input" value="" />
+        <button class="check-btn-styles" id="purchase-btn">Purchase</button>
+      </div>
+      <div class="container">
+        <div class="top-display-screen-container">
+          <p id="message" class="price-screen">Total: $4.23</p>
+          <div class="connector"></div>
         </div>
-        <label for="user-input">Enter a Phone Number:</label>
-        <input maxlength="20" type="text" id="user-input" value="" />
-
-        <div id="results-div"></div>
-
-        <div class="phone-footer">
-          <button class="btn-styles" id="check-btn">Check</button>
-          <button class="btn-styles" id="clear-btn">Clear</button>
+        <div class="top-register">
+          <div class="btns-container">
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+          </div>
+          <div id="cid" class="results">
+            <p class="change-title">Change in Drawer</p>
+            <p>Pennies: $1.01</p>
+            <p>Nickels: $2.05</p>
+            <p>Dimes: $3.10</p>
+            <p>Quarters: $4.25</p>
+            <p>Ones: $90</p>
+            <p>Fives: $55</p>
+            <p>Tens: $20</p>
+            <p>Twenties: $60</p>
+            <p>Hundreds: $100</p>
+          </div>
+        </div>
+        <div class="bottom-register">
+          <div class="circle"></div>
         </div>
       </div>
     </main>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
 ```
@@ -259,15 +284,13 @@ assert(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().include
 }
 
 :root {
-  --phone-colors: #dfdfe2;
-  --center-text: center;
-  --gray-00: #fff;
+  --light-gray: #dfdfe2;
+  --dark-blue: #0a0a23;
 }
 
 body {
-  background-color: #3b3b4f;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #0a0a23;
+  background-color: var(--dark-blue);
+  color: var(--light-gray);
 }
 
 main {
@@ -286,138 +309,229 @@ main {
 }
 
 h1 {
-  color: white;
-  width: 100%;
-  max-width: 480px;
-  margin: 15px 0;
-  text-align: var(--center-text);
+  font-size: 2.5rem;
+  margin: 20px 0;
+  text-align: center;
 }
 
-.phone-container {
-  position: relative;
-  background-color: var(--phone-colors);
-  width: 250px;
-  height: 460px;
-  margin: 30px auto;
-  border-radius: 15px;
-  border: 15px solid black;
+#change-due {
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.phone-background {
-  background-color: black;
-  width: 100%;
-  height: 25px;
-}
-
-.phone-camera {
-  background-color: var(--phone-colors);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin: auto;
+.input-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 0 20px;
 }
 
 label {
-  margin: 10px auto 5px;
+  font-size: 18px;
 }
 
-#user-input {
-  display: block;
-  margin: 10px auto;
-  padding: 5px;
-  border: 1px solid black;
-  border-radius: 10px;
-  text-align: var(--center-text);
-  width: 90%;
-  height: 42px;
-  font-size: 16px;
+.user-input {
+  height: 30px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 15px;
 }
 
-.phone-footer {
+.change-title {
+  font-weight: bold;
+}
+
+.price-screen {
+  border: 10px solid #99c9ff;
   background-color: black;
-  width: 100%;
-  height: 40px;
-  position: absolute;
-  bottom: 0;
+  height: 50px;
+  width: 200px;
+  margin-left: -40px;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
-.btn-styles {
+#price {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.connector {
+  margin-left: -20px;
+  background-color: #99c9ff;
+  height: 30px;
+  width: 40px;
+}
+
+.top-register {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 35px 35px 0 0;
+  padding-top: 20px;
+  background-color: #99c9ff;
+  height: 250px;
+  width: 325px;
+}
+
+.btns-container {
+  width: 25%;
+}
+
+.btn {
+  border-radius: 10%;
+  border: none;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+}
+
+.check-btn-styles {
   cursor: pointer;
   width: 100px;
+  height: 30px;
   margin: 10px;
   color: #0a0a23;
   font-size: 18px;
-  background-color: #ffffff;
-  background-image: linear-gradient(#ffffff, #928d86);
-  border-color: #ffffff;
+  font-weight: bold;
+  background-color: #feac32;
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border-color: #feac32;
   border-width: 3px;
 }
 
-#results-div {
-  overflow-y: auto;
-  height: 265px;
-  width: 100%;
+.results {
+  font-size: 1.1rem;
+  background-color: white;
+  width: 50%;
+  height: 95%;
+  color: black;
+  padding: 10px;
 }
 
-.results-text {
-  font-size: 1.2rem;
-  padding: 5px;
-  text-align: var(--center-text);
-  margin: 10px 0;
+.bottom-register {
+  background-color: #99c9ff;
+  height: 50px;
+  width: 325px;
+  margin-top: 10px;
+}
+
+.circle {
+  margin: 15px auto;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: black;
 }
 ```
 
 ```js
-const userInput = document.getElementById("user-input");
-const checkBtn = document.getElementById("check-btn");
-const clearBtn = document.getElementById("clear-btn");
-const resultsDiv = document.getElementById("results-div");
+// Do not change code below this line
+let price = 19.5;
+let cid = [
+  ["PENNY", 0.5],
+  ["NICKEL", 0],
+  ["DIME", 0],
+  ["QUARTER", 0],
+  ["ONE", 0],
+  ["FIVE", 0],
+  ["TEN", 0],
+  ["TWENTY", 0],
+  ["ONE HUNDRED", 0],
+];
+// Do not change code above this line
 
-const checkValidNumber = (input) => {
-  if (input === "") {
-    alert("Please provide a phone number");
-    return;
-  }
-  const countryCode = "^(1\\s?)?";
-  const areaCode = "(\\([0-9]{3}\\)|[0-9]{3})";
-  const spacesDashes = "[\\s\\-]?";
-  const phoneNumber = "[0-9]{3}[\\s\\-]?[0-9]{4}$";
-  const phoneRegex = new RegExp(
-    `${countryCode}${areaCode}${spacesDashes}${phoneNumber}`,
-  );
+const displayChangeDue = document.getElementById("change-due");
+const cash = document.getElementById("cash");
+const purchaseBtn = document.getElementById("purchase-btn");
 
-  const pTag = document.createElement("p");
-  pTag.className = "results-text";
-  phoneRegex.test(input)
-    ? (pTag.style.color = "#00471b")
-    : (pTag.style.color = "#4d3800");
-  pTag.appendChild(
-    document.createTextNode(
-      `${phoneRegex.test(input) ? "Valid" : "Invalid"} U.S. number: ${input}`,
-    ),
+const formatResults = (status, change) => {
+  displayChangeDue.innerHTML = `Status: ${status}`;
+  change.map(
+    (money) =>
+      (displayChangeDue.innerHTML += `<p>${money[0]}: $${money[1]}</p>`),
   );
-  resultsDiv.appendChild(pTag);
+  return;
 };
 
-checkBtn.addEventListener("click", () => {
-  checkValidNumber(userInput.value);
-  userInput.value = "";
-});
-
-userInput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    checkValidNumber(userInput.value);
-    userInput.value = "";
+const checkCashRegister = () => {
+  if (Number(cash.value) < price) {
+    alert("Customer does not have enough money to purchase the item");
+    cash.value = "";
+    return;
   }
-});
 
-clearBtn.addEventListener("click", () => {
-  resultsDiv.textContent = "";
+  if (Number(cash.value) === price) {
+    displayChangeDue.innerHTML =
+      "No change due - customer paid with exact cash";
+    cash.value = "";
+    return;
+  }
+
+  let changeDue = Number(cash.value) - price;
+  let reversedCid = [...cid].reverse();
+  let denominations = [100, 20, 10, 5, 1, 0.25, 0.1, 0.05, 0.01];
+  let result = { status: "OPEN", change: [] };
+  let totalCID = parseFloat(
+    cid
+      .map((total) => total[1])
+      .reduce((prev, curr) => prev + curr)
+      .toFixed(2),
+  );
+
+  if (totalCID < changeDue) {
+    return (displayChangeDue.innerHTML = "Status: INSUFFICIENT_FUNDS");
+  }
+
+  if (totalCID === changeDue) {
+    formatResults("CLOSED", cid);
+  }
+
+  for (let i = 0; i <= reversedCid.length; i++) {
+    if (changeDue > denominations[i] && changeDue > 0) {
+      let count = 0;
+      let total = reversedCid[i][1];
+      while (total > 0 && changeDue >= denominations[i]) {
+        total -= denominations[i];
+        changeDue = parseFloat((changeDue -= denominations[i]).toFixed(2));
+        count++;
+      }
+      result.change.push([reversedCid[i][0], count * denominations[i]]);
+    }
+  }
+  if (changeDue > 0) {
+    return (displayChangeDue.innerHTML = "Status: INSUFFICIENT_FUNDS");
+  }
+
+  formatResults(result.status, result.change);
+  cash.value = "";
+  return;
+};
+
+const checkResults = () => {
+  if (!cash.value) {
+    return;
+  }
+  checkCashRegister();
+};
+
+purchaseBtn.addEventListener("click", checkResults);
+cash.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    checkResults();
+  }
 });
 ```

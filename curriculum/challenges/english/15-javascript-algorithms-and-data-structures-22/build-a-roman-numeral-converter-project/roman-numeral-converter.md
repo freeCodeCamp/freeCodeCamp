@@ -252,7 +252,7 @@ assert(outputEl.innerText.trim() === 'MMMCMXCIX');
 body {
   min-height: 100vh;
   padding: 50px 20px;
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
   font-size: 18px;
   background-color: #dfdfe2;
   color: var(--gray-85);
@@ -278,7 +278,7 @@ h1 {
   text-align: center;
   margin: 20px auto;
   max-width: 350px;
-  font-family: 'Castoro Titling', cursive;
+  font-family: "Castoro Titling", cursive;
 }
 
 form {
@@ -367,25 +367,25 @@ button {
 ```
 
 ```js
-const form = document.getElementById('form');
-const convertButton = document.getElementById('convert-btn');
-const output = document.getElementById('output');
+const form = document.getElementById("form");
+const convertButton = document.getElementById("convert-btn");
+const output = document.getElementById("output");
 
-const convertToRoman = num => {
+const convertToRoman = (num) => {
   const ref = [
-    ['M', 1000],
-    ['CM', 900],
-    ['D', 500],
-    ['CD', 400],
-    ['C', 100],
-    ['XC', 90],
-    ['L', 50],
-    ['XL', 40],
-    ['X', 10],
-    ['IX', 9],
-    ['V', 5],
-    ['IV', 4],
-    ['I', 1]
+    ["M", 1000],
+    ["CM", 900],
+    ["D", 500],
+    ["CD", 400],
+    ["C", 100],
+    ["XC", 90],
+    ["L", 50],
+    ["XL", 40],
+    ["X", 10],
+    ["IX", 9],
+    ["V", 5],
+    ["IV", 4],
+    ["I", 1],
   ];
   const res = [];
 
@@ -396,18 +396,18 @@ const convertToRoman = num => {
     }
   });
 
-  return res.join('');
+  return res.join("");
 };
 
 const isValid = (str, int) => {
-  let errText = '';
+  let errText = "";
 
   if (!str || str.match(/[e.]/g)) {
-    errText = 'Please enter a valid number.';
+    errText = "Please enter a valid number.";
   } else if (int < 1) {
-    errText = 'Please enter a number greater than or equal to 1.';
+    errText = "Please enter a number greater than or equal to 1.";
   } else if (int > 3999) {
-    errText = 'Please enter a number less than or equal to 3999.';
+    errText = "Please enter a number less than or equal to 3999.";
   } else {
     // No errors detected
     return true;
@@ -415,30 +415,30 @@ const isValid = (str, int) => {
 
   // Handle error text and output styling
   output.innerText = errText;
-  output.classList.add('alert');
+  output.classList.add("alert");
 
   return false;
 };
 
 const clearOutput = () => {
-  output.innerText = '';
-  output.classList.remove('alert');
+  output.innerText = "";
+  output.classList.remove("alert");
 };
 
-form.addEventListener('submit', e => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   updateUI();
 });
 
-convertButton.addEventListener('click', () => {
+convertButton.addEventListener("click", () => {
   updateUI();
 });
 
 const updateUI = () => {
-  const numStr = document.getElementById('number').value;
+  const numStr = document.getElementById("number").value;
   const int = parseInt(numStr, 10);
 
-  output.classList.remove('hidden');
+  output.classList.remove("hidden");
 
   clearOutput();
 
