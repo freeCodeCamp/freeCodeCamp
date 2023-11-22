@@ -12,7 +12,7 @@ Consider all lattice points ($a$, $b$, $c$) with $0 ≤ a, b, c ≤ N$.
 
 From the origin $O(0, 0, 0)$ all lines are drawn to the other lattice points. Let $D(N)$ be the number of distinct such lines.
 
-Вам дано, що $D(1\\,000\\,000) = 831\\,909\\,254\\,469\\,114\\,121$.
+Дано, що $D(1\\,000\\,000) = 831\\,909\\,254\\,469\\,114\\,121$.
 
 Знайдіть $D({10}^{10})$. Give as your answer the first nine digits followed by the last nine digits.
 

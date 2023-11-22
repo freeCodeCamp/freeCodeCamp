@@ -1,6 +1,6 @@
 ---
 id: 651dd5a46ffb500e3f2ce47b
-title: Challenge 1
+title: Desafio 1
 challengeType: 11
 videoId: nLDychdBwUg
 dashedName: challenge-1
@@ -8,33 +8,33 @@ dashedName: challenge-1
 
 # --description--
 
-Here's the description
+Aqui está a descrição
 
 # --instructions--
 
-Here's the instructions
+Aqui estão as instruções
 
 # --question--
 
 ## --text--
 
-What is Maria doing when she says, `"You must be the new graphic designer"`?
+O que Maria está fazendo quando ela diz, `"You must be the new graphic designer"`?
 
 ## --answers--
 
-Asking about someone's job role.
+Perguntando sobre a função de alguém em seu local de trabalho.
 
 ***
 
-Giving a job description.
+Dando uma descrição do trabalho.
 
 ***
 
-Making a statement based on her assumption.
+Fazendo uma declaração baseada em sua suposição.
 
 ***
 
-Expressing a possibility.
+Expressando uma possibilidade.
 
 ## --video-solution--
 

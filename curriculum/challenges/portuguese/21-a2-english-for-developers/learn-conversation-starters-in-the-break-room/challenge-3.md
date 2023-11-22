@@ -1,6 +1,6 @@
 ---
 id: 651dd5f41d697d0aab7833b5
-title: Challenge 3
+title: Desafio 3
 challengeType: 11
 videoId: nLDychdBwUg
 dashedName: challenge-3
@@ -8,12 +8,12 @@ dashedName: challenge-3
 
 # --description--
 
-Here's the description
+Aqui está a descrição
 
 # --instructions--
 
-Here's the instructions
-Fill in the blank.
+Aqui estão as instruções
+Preencha a lacuna.
 
 Hello! You \_\_\_\_ \_\_ the new graphic designer. I'm Maria, the team lead.
 
@@ -21,7 +21,7 @@ Hello! You \_\_\_\_ \_\_ the new graphic designer. I'm Maria, the team lead.
 
 ## --text--
 
-What is Maria assuming about Tom?
+O que a Maria está assumindo sobre Tom?
 
 ## --answers--
 

@@ -12,7 +12,7 @@ Let $f(n)$ be the number of couples ($x$, $y$) with $x$ and $y$ positive integer
 
 Let $g$ be the summatory function of $f$, i.e.: $g(n) = \sum f(i)$ for $1 ≤ i ≤ n$.
 
-Вам дано, що $g({10}^6) = 37\\,429\\,395$.
+Дано, що $g({10}^6) = 37\\,429\\,395$.
 
 Знайдіть $g({10}^{12})$.
 

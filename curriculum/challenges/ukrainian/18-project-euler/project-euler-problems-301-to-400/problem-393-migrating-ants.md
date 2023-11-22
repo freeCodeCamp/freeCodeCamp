@@ -14,7 +14,7 @@ All ants decide to move simultaneously to an adjacent square (usually 4 possibil
 
 We define $f(n)$ to be the number of ways this can happen without any ants ending on the same square and without any two ants crossing the same edge between two squares.
 
-Вам дано, що $f(4) = 88$.
+Дано, що $f(4) = 88$.
 
 Знайдіть $f(10)$.
 

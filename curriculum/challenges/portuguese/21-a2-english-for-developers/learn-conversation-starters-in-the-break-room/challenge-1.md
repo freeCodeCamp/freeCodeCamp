@@ -1,6 +1,6 @@
 ---
 id: 651dd5ae6ffb500e3f2ce47c
-title: Challenge 1
+title: Desafio 1
 challengeType: 11
 videoId: nLDychdBwUg
 dashedName: challenge-1
@@ -8,33 +8,33 @@ dashedName: challenge-1
 
 # --description--
 
-Here's the description
+Aqui está a descrição
 
 # --instructions--
 
-Here's the instructions
+Aqui estão as instruções
 
 # --question--
 
 ## --text--
 
-What is Maria doing when she says, `"You must be the new graphic designer"`?
+O que Maria está fazendo quando ela diz, `"You must be the new graphic designer"`?
 
 ## --answers--
 
-Asking about someone's job role.
+Perguntando sobre a função de alguém em seu local de trabalho.
 
 ### --feedback--
 
-No, that's not correct
+Não, isso não está correto.
 
 ***
 
-Giving a job description.
+Dando uma descrição do trabalho.
 
 ### --feedback--
 
-No, that's not correct
+Não, isso não está correto.
 
 ```js
 console.log('with code');
@@ -42,51 +42,51 @@ console.log('with code');
 
 ***
 
-Making a statement based on her assumption.
+Fazendo uma declaração baseada em sua suposição.
 
 ### --feedback--
 
-No, that's not correct
+Não, isso não está correto.
 
 ***
 
-Expressing a possibility.
+Expressando uma possibilidade.
 
 ### --feedback--
 
-No, that's not correct
+Não, isso não está correto.
 
 ***
 
-Giving a job description.
+Dando uma descrição do trabalho.
 
 ### --feedback--
 
-No, that's not correct
+Não, isso não está correto.
 
 ***
 
-Giving a job description.
+Dando uma descrição do trabalho.
 
 ### --feedback--
 
-No, that's not correct
+Não, isso não está correto.
 
 ***
 
-Giving a job description.
+Dando uma descrição do trabalho.
 
 ### --feedback--
 
-No, that's not correct
+Não, isso não está correto.
 
 ***
 
-Giving a job description.
+Dando uma descrição do trabalho.
 
 ### --feedback--
 
-No, that's not correct
+Não, isso não está correto.
 
 ## --video-solution--
 

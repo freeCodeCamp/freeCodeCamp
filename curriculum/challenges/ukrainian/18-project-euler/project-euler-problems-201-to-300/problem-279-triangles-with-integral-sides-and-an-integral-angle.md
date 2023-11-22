@@ -1,6 +1,6 @@
 ---
 id: 5900f4841000cf542c50ff96
-title: 'Problem 279: Triangles with integral sides and an integral angle'
+title: 'Завдання 279: трикутники з цілими сторонами та цілим кутом'
 challengeType: 1
 forumTopicId: 301929
 dashedName: problem-279-triangles-with-integral-sides-and-an-integral-angle
@@ -8,7 +8,7 @@ dashedName: problem-279-triangles-with-integral-sides-and-an-integral-angle
 
 # --description--
 
-How many triangles are there with integral sides, at least one integral angle (measured in degrees), and a perimeter that does not exceed ${10}^8$?
+Скільки існує трикутників з цілими сторонами, принаймні одним цілим кутом (в градусах) та периметром, не більшим за ${10}^8$?
 
 # --hints--
 

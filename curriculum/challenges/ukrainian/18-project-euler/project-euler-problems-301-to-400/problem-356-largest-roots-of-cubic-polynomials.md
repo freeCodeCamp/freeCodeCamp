@@ -14,7 +14,7 @@ Let $a_n$ be the largest real root of a polynomial $g(x) = x^3 - 2^n \times x^2 
 
 Знайдіть останні 8 цифр в $\displaystyle\sum_{i = 1}^{30} \lfloor {a_i}^{987654321}\rfloor$.
 
-**Note:** $\lfloor a\rfloor$ represents the floor function.
+**Примітка:** $\lfloor a\rfloor$ позначає функцію підлоги.
 
 # --hints--
 

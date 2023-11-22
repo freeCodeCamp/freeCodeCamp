@@ -14,7 +14,7 @@ For example, consider two adjacent bowls containing 2 and 3 beans respectively, 
 
 <img class="img-responsive center-block" alt="animation of game when two adjacent bowls contain 2 and 3 beans respectively" src="https://cdn.freecodecamp.org/curriculum/project-euler/spilling-the-beans.gif" style="background-color: white; padding: 10px;" />
 
-You are given the following sequences:
+Дано такі послідовності:
 
 $$\begin{align}   & t_0 = 123456, \\\\
   & t_i = \begin{cases}          \frac{t_{i - 1}}{2},               & \text{if $t_{i - 1}$ is even} \\\\

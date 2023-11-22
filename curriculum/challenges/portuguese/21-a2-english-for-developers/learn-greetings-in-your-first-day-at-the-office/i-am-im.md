@@ -8,13 +8,13 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 # --description--
 
-In English, the verb `to be` is used to talk about identities, characteristics, and more. The contraction `I'm` is a combination of `I` and `am`. Here, Tom uses it to introduce himself.
+Em inglês, o verbo `to be` é usado para falar sobre identidades, características e muito mais. A contração `I'm` é uma combinação de `I` e `am`. Aqui, o Tom a usa para se apresentar.
 
 # --question--
 
 ## --text--
 
-Which operation correctly expands the contraction `I'm`?
+Qual operação expande corretamente a contração `I'm`?
 
 ## --answers--
 
@@ -22,7 +22,7 @@ Which operation correctly expands the contraction `I'm`?
 
 ### --feedback--
 
-Think about which verb form would correctly fit with `I` to talk about oneself in the present.
+Pense em qual forma verbal caberia corretamente com `I` para falar sobre você mesmo no presente.
 
 ***
 
@@ -34,7 +34,7 @@ Think about which verb form would correctly fit with `I` to talk about oneself i
 
 ### --feedback--
 
-Think about which verb form would correctly fit with `I` to talk about oneself in the present.
+Pense em qual forma verbal caberia corretamente com `I` para falar sobre você mesmo no presente.
 
 ***
 
@@ -42,7 +42,7 @@ Think about which verb form would correctly fit with `I` to talk about oneself i
 
 ### --feedback--
 
-Think about which verb form would correctly fit with `I` to talk about oneself in the present.
+Pense em qual forma verbal caberia corretamente com `I` para falar sobre você mesmo no presente.
 
 ## --video-solution--
 
