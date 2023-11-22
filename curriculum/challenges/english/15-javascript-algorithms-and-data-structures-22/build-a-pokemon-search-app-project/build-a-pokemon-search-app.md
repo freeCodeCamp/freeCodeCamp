@@ -150,7 +150,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 200)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
 
       const pokemonName = document.getElementById('pokemon-name');
       const pokemonID = document.getElementById('pokemon-id');
@@ -195,7 +195,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 200)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
 
       const sprite = document.getElementById('sprite');
       assert(sprite.src.endsWith('sprites/pokemon/25.png'));
@@ -219,7 +219,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 200)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
 
       const typesEl = document.getElementById('types');
       assert(typesEl.children.length === 1 && typesEl.children[0].innerText.trim().toLowerCase() === 'electric');
@@ -243,7 +243,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 200)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
 
       const pokemonName = document.getElementById('pokemon-name');
       const pokemonID = document.getElementById('pokemon-id');
@@ -288,7 +288,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 200)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
 
       const sprite = document.getElementById('sprite');
       assert(sprite.src.endsWith('sprites/pokemon/94.png'));
@@ -312,7 +312,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 200)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
 
       const typesEl = document.getElementById('types');
       const targetTypes = ['ghost', 'poison'];
