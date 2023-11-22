@@ -25,16 +25,16 @@ test.describe('Solution Viewer component', () => {
     await expect(page.getByText(/js/i)).toBeVisible();
     await expect(page.locator('pre').first()).toBeVisible();
 
-    const topLeftCloseButton = page.locator('button.close');
-    await topLeftCloseButton.click();
+    const closeButtons = await page
+      .getByRole('button', { name: 'Close' })
+      .all();
+
+    const topRightCloseButton = closeButtons[0];
+    await topRightCloseButton.click();
     await expect(projectSolutionViewerModal).toBeHidden();
 
-    await page.getByRole('button').filter({ hasText: /view/i }).first().click();
-    const bottomRightCloseButton = page
-      .getByRole('button', {
-        name: 'Close'
-      })
-      .nth(1);
+    await page.getByRole('button', { name: 'View' }).first().click();
+    const bottomRightCloseButton = closeButtons[1];
     await bottomRightCloseButton.click();
     await expect(projectSolutionViewerModal).toBeHidden();
   });
