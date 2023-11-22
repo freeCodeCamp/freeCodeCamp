@@ -8,7 +8,7 @@ dashedName: build-a-telephone-number-validator
 
 # --description--
 
-In the U.S., phone numbers can be formatted in many ways. Here are some examples of valid formats for U.S. phone numbers:
+In the US, phone numbers can be formatted in many ways. Here are some examples of valid formats for US phone numbers:
 
 <blockquote>
 1 555-555-5555<br>
@@ -32,34 +32,34 @@ Note that the area code is required. Also, if the country code is provided, you 
 1. You should have a `div` element with an `id` of `results-div`
 1. When you click on `#check-btn` without providing a value, an alert should appear with the text `Please provide a phone number`
 1. When you click on `#clear-btn` the content within `#results-div` should be removed
-1. When `#user-input` contains `1 555-555-5555` and `#check-btn` is clicked, `#results-div` should contain the text `Valid U.S. number: 1 555-555-5555`
-1. When `#user-input` contains `1 (555) 555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid U.S. number: 1 (555) 555-5555`
-1. When `#user-input` contains `5555555555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid U.S. number: 5555555555`
-1. When `#user-input` contains `555-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid U.S. number: 555-555-5555`
-1. When `#user-input` contains `(555)555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid U.S. number: (555)555-5555`
-1. When `#user-input` contains `1(555)555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid U.S. number: 1(555)555-5555`
-1. When `#user-input` contains `555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 555-5555`
-1. When `#user-input` contains `5555555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 5555555`
-1. When `#user-input` contains `1 555)555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 1 555)555-5555`
-1. When `#user-input` contains `1 555 555 5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid U.S. number: 1 555 555 5555`
-1. When `#user-input` contains `1 456 789 4444` and `#check-btn` is clicked, `#result-div` should contain the text `Valid U.S. number: 1 456 789 4444`
-1. When `#user-input` contains `123**&!!asdf#` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 123**&!!asdf#`
-1. When `#user-input` contains `55555555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 55555555`
-1. When `#user-input` contains `(6054756961)` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: (6054756961)`
-1. When `#user-input` contains `2 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 2 (757) 622-7382`
-1. When `#user-input` contains `0 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 0 (757) 622-7382`
-1. When `#user-input` contains `-1 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: -1 (757) 622-7382`
-1. When `#user-input` contains `2 757 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 2 757 622-7382`
-1. When `#user-input` contains `10 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 10 (757) 622-7382`
-1. When `#user-input` contains `27576227382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 27576227382`
-1. When `#user-input` contains `(275)76227382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: (275)76227382`
-1. When `#user-input` contains `2(757)6227382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 2(757)6227382`
-1. When `#user-input` contains `2(757)622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 2(757)622-7382`
-1. When `#user-input` contains `555)-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 555)-555-5555`
-1. When `#user-input` contains `(555-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: (555-555-5555`
-1. When `#user-input` contains `(555)5(55?)-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: (555)5(55?)-5555`
-1. When `#user-input` contains `55 55-55-555-5` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 55 55-55-555-5`
-1. When `#user-input` contains `11 555-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 11 555-555-5555`
+1. When `#user-input` contains `1 555-555-5555` and `#check-btn` is clicked, `#results-div` should contain the text `Valid US number: 1 555-555-5555`
+1. When `#user-input` contains `1 (555) 555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid US number: 1 (555) 555-5555`
+1. When `#user-input` contains `5555555555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid US number: 5555555555`
+1. When `#user-input` contains `555-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid US number: 555-555-5555`
+1. When `#user-input` contains `(555)555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid US number: (555)555-5555`
+1. When `#user-input` contains `1(555)555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid US number: 1(555)555-5555`
+1. When `#user-input` contains `555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 555-5555`
+1. When `#user-input` contains `5555555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 5555555`
+1. When `#user-input` contains `1 555)555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 1 555)555-5555`
+1. When `#user-input` contains `1 555 555 5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid US number: 1 555 555 5555`
+1. When `#user-input` contains `1 456 789 4444` and `#check-btn` is clicked, `#result-div` should contain the text `Valid US number: 1 456 789 4444`
+1. When `#user-input` contains `123**&!!asdf#` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 123**&!!asdf#`
+1. When `#user-input` contains `55555555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 55555555`
+1. When `#user-input` contains `(6054756961)` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: (6054756961)`
+1. When `#user-input` contains `2 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 2 (757) 622-7382`
+1. When `#user-input` contains `0 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 0 (757) 622-7382`
+1. When `#user-input` contains `-1 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: -1 (757) 622-7382`
+1. When `#user-input` contains `2 757 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 2 757 622-7382`
+1. When `#user-input` contains `10 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 10 (757) 622-7382`
+1. When `#user-input` contains `27576227382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 27576227382`
+1. When `#user-input` contains `(275)76227382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: (275)76227382`
+1. When `#user-input` contains `2(757)6227382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 2(757)6227382`
+1. When `#user-input` contains `2(757)622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 2(757)622-7382`
+1. When `#user-input` contains `555)-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 555)-555-5555`
+1. When `#user-input` contains `(555-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: (555-555-5555`
+1. When `#user-input` contains `(555)5(55?)-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: (555)5(55?)-5555`
+1. When `#user-input` contains `55 55-55-555-5` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 55 55-55-555-5`
+1. When `#user-input` contains `11 555-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 11 555-555-5555`
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
@@ -119,7 +119,7 @@ clearBtn.click();
 assert(resultsDiv.textContent === '');
 ```
 
-When `#user-input` contains `1 555-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid U.S. number: 1 555-555-5555`.
+When `#user-input` contains `1 555-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid US number: 1 555-555-5555`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -129,10 +129,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '1 555-555-5555';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'valid u.s. number: 1 555-555-5555');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'valid us number: 1 555-555-5555');
 ```
 
-When `#user-input` contains `1 (555) 555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid U.S. number: 1 (555) 555-5555`.
+When `#user-input` contains `1 (555) 555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid US number: 1 (555) 555-5555`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -142,10 +142,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '1 (555) 555-5555';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'valid u.s. number: 1 (555) 555-5555');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'valid us number: 1 (555) 555-5555');
 ```
 
-When `#user-input` contains `5555555555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid U.S. number: 5555555555`.
+When `#user-input` contains `5555555555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid US number: 5555555555`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -155,10 +155,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '5555555555';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'valid u.s. number: 5555555555');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'valid us number: 5555555555');
 ```
 
-When `#user-input` contains `555-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid U.S. number: 555-555-5555`.
+When `#user-input` contains `555-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid US number: 555-555-5555`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -168,10 +168,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '555-555-5555';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'valid u.s. number: 555-555-5555');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'valid us number: 555-555-5555');
 ```
 
-When `#user-input` contains `(555)555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid U.S. number: (555)555-5555`.
+When `#user-input` contains `(555)555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid US number: (555)555-5555`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -181,10 +181,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '(555)555-5555';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'valid u.s. number: (555)555-5555');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'valid us number: (555)555-5555');
 ```
 
-When `#user-input` contains `1(555)555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid U.S. number: 1(555)555-5555`.
+When `#user-input` contains `1(555)555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid US number: 1(555)555-5555`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -194,10 +194,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '1(555)555-5555';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'valid u.s. number: 1(555)555-5555');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'valid us number: 1(555)555-5555');
 ```
 
-When `#user-input` contains `555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 555-5555`.
+When `#user-input` contains `555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 555-5555`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -207,10 +207,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '555-5555';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 555-5555');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: 555-5555');
 ```
 
-When `#user-input` contains `5555555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 5555555`.
+When `#user-input` contains `5555555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 5555555`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -220,10 +220,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '5555555';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 5555555');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: 5555555');
 ```
 
-When `#user-input` contains `1 555)555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 1 555)555-5555`.
+When `#user-input` contains `1 555)555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 1 555)555-5555`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -233,10 +233,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '1 555)555-5555';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 1 555)555-5555');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: 1 555)555-5555');
 ```
 
-When `#user-input` contains `1 555 555 5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid U.S. number: 1 555 555 5555`.
+When `#user-input` contains `1 555 555 5555` and `#check-btn` is clicked, `#result-div` should contain the text `Valid US number: 1 555 555 5555`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -246,10 +246,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '1 555 555 5555';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'valid u.s. number: 1 555 555 5555');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'valid us number: 1 555 555 5555');
 ```
 
-When `#user-input` contains `1 456 789 4444` and `#check-btn` is clicked, `#result-div` should contain the text `Valid U.S. number: 1 456 789 4444`.
+When `#user-input` contains `1 456 789 4444` and `#check-btn` is clicked, `#result-div` should contain the text `Valid US number: 1 456 789 4444`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -259,10 +259,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '1 456 789 4444';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'valid u.s. number: 1 456 789 4444');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'valid us number: 1 456 789 4444');
 ```
 
-When `#user-input` contains `123**&!!asdf#` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 123**&!!asdf#`.
+When `#user-input` contains `123**&!!asdf#` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 123**&!!asdf#`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -272,10 +272,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '123**&!!asdf#';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 123**&!!asdf#');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: 123**&!!asdf#');
 ```
 
-When `#user-input` contains `55555555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 55555555`.
+When `#user-input` contains `55555555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 55555555`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -285,10 +285,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '55555555';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 55555555');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: 55555555');
 ```
 
-When `#user-input` contains `(6054756961)` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: (6054756961)`.
+When `#user-input` contains `(6054756961)` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: (6054756961)`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -298,10 +298,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '(6054756961)';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: (6054756961)');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: (6054756961)');
 ```
 
-When `#user-input` contains `2 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 2 (757) 622-7382`.
+When `#user-input` contains `2 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 2 (757) 622-7382`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -311,10 +311,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '2 (757) 622-7382';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 2 (757) 622-7382');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: 2 (757) 622-7382');
 ```
 
-When `#user-input` contains `0 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 0 (757) 622-7382`.
+When `#user-input` contains `0 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 0 (757) 622-7382`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -324,10 +324,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '0 (757) 622-7382';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 0 (757) 622-7382');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: 0 (757) 622-7382');
 ```
 
-When `#user-input` contains `-1 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: -1 (757) 622-7382`.
+When `#user-input` contains `-1 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: -1 (757) 622-7382`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -337,10 +337,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '-1 (757) 622-7382';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: -1 (757) 622-7382');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: -1 (757) 622-7382');
 ```
 
-When `#user-input` contains `2 757 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 2 757 622-7382`.
+When `#user-input` contains `2 757 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 2 757 622-7382`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -350,10 +350,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '2 757 622-7382';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 2 757 622-7382');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: 2 757 622-7382');
 ```
 
-When `#user-input` contains `10 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 10 (757) 622-7382`.
+When `#user-input` contains `10 (757) 622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 10 (757) 622-7382`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -363,10 +363,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '10 (757) 622-7382';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 10 (757) 622-7382');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: 10 (757) 622-7382');
 ```
 
-When `#user-input` contains `27576227382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 27576227382`.
+When `#user-input` contains `27576227382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 27576227382`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -376,10 +376,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '27576227382';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 27576227382');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: 27576227382');
 ```
 
-When `#user-input` contains `(275)76227382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: (275)76227382`.
+When `#user-input` contains `(275)76227382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: (275)76227382`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -389,10 +389,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '(275)76227382';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: (275)76227382');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: (275)76227382');
 ```
 
-When `#user-input` contains `2(757)6227382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 2(757)6227382`.
+When `#user-input` contains `2(757)6227382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 2(757)6227382`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -402,10 +402,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '2(757)6227382';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 2(757)6227382');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: 2(757)6227382');
 ```
 
-When `#user-input` contains `2(757)622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 2(757)622-7382`.
+When `#user-input` contains `2(757)622-7382` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 2(757)622-7382`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -415,10 +415,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '2(757)622-7382';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 2(757)622-7382');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: 2(757)622-7382');
 ```
 
-When `#user-input` contains `555)-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 555)-555-5555`.
+When `#user-input` contains `555)-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 555)-555-5555`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -428,10 +428,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '555)-555-5555';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 555)-555-5555');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: 555)-555-5555');
 ```
 
-When `#user-input` contains `(555-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: (555-555-5555`.
+When `#user-input` contains `(555-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: (555-555-5555`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -441,10 +441,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '(555-555-5555';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: (555-555-5555');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: (555-555-5555');
 ```
 
-When `#user-input` contains `(555)5(55?)-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: (555)5(55?)-5555`.
+When `#user-input` contains `(555)5(55?)-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: (555)5(55?)-5555`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -454,10 +454,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '(555)5(55?)-5555';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: (555)5(55?)-5555');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: (555)5(55?)-5555');
 ```
 
-When `#user-input` contains `55 55-55-555-5` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 55 55-55-555-5`.
+When `#user-input` contains `55 55-55-555-5` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 55 55-55-555-5`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -467,10 +467,10 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '55 55-55-555-5';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 55 55-55-555-5');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: 55 55-55-555-5');
 ```
 
-When `#user-input` contains `11 555-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid U.S. number: 11 555-555-5555`.
+When `#user-input` contains `11 555-555-5555` and `#check-btn` is clicked, `#result-div` should contain the text `Invalid US number: 11 555-555-5555`.
 
 ```js
 const userInput = document.getElementById('user-input');
@@ -480,7 +480,7 @@ const resultsDiv = document.getElementById('results-div');
 resultsDiv.innerHTML = '';
 userInput.value = '11 555-555-5555';
 checkBtn.click();
-assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid u.s. number: 11 555-555-5555');
+assert(resultsDiv.innerText.trim().toLowerCase() === 'invalid us number: 11 555-555-5555');
 ```
 
 # --seed--
@@ -690,7 +690,7 @@ const checkValidNumber = (input) => {
     : (pTag.style.color = "#4d3800");
   pTag.appendChild(
     document.createTextNode(
-      `${phoneRegex.test(input) ? "Valid" : "Invalid"} U.S. number: ${input}`,
+      `${phoneRegex.test(input) ? "Valid" : "Invalid"} US number: ${input}`,
     ),
   );
   resultsDiv.appendChild(pTag);
