@@ -28,12 +28,12 @@ In this project, you'll build an app that will search for Pokémon by name or ID
 1. You should have an element with an `id` of `special-attack`
 1. You should have an element with an `id` of `special-defense`
 1. You should have an element with an `id` of `speed`
-1. When the name `Pikachu` is entered into the `#search-input` element and the `#search-button` is clicked, the value in `#pokemon-name` should be `PIKACHU`, `#pokemon-id` should be `#25`, `#weight` should be `Weight: 60` or `60`, `#height` should be `Height: 4` or `4`, `#hp` should be `35`, `#attack` should be `55`, `#defense` should be `40`, `#special-attack` should be `50`, `#special-defense` should be `50`, and `#speed` should be `90`
-1. When the name `Pikachu` is entered into the `#search-input` element and the `#search-button` is clicked, the `src` attribute of the `#sprite` element should be set to the Pokémon's `front_default` sprite
-1. When the name `Pikachu` is entered into the `#search-input` element and the `#search-button` is clicked, the `#types` element should contain a single inner element with the text value `ELECTRIC`
-1. When the id `94` is entered into the `#search-input` element and the `#search-button` is clicked, the value in `#pokemon-name` should be `GENGAR`, `#pokemon-id` should be `#94`, `#weight` should be `Weight: 405` or `405`, `#height` should be `Height: 15` or `15`, `#hp` should be `60`, `#attack` should be `65`, `#defense` should be `60`, `#special-attack` should be `130`, `#special-defense` should be `75`, and `#speed` should be `110`
-1. When the id `94` is entered into the `#search-input` element and the `#search-button` is clicked, the `src` attribute of the `#sprite` element should be set to the Pokémon's `front_default` sprite
-1. When the id `94` is entered into the `#search-input` element and the `#search-button` is clicked, the `#types` element should contain a two inner element with the text values `GHOST` and `POISON`, respectively
+1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, and `#special-defense` elements should be `PIKACHU`, `#25` or `25`, `Weight: 60` or `60`, `Height: 4` or `4`, `35`, `55`, `40`, `50`, `50`, and `90`, respectively.
+1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `src` attribute of the `#sprite` element should be set to the Pokémon's `front_default` sprite
+1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `#types` element should contain a single inner element with the value `ELECTRIC`
+1. When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, and `#special-defense` elements should be `GENGAR`, `#94` or `94`, `Weight: 405` or `405`, `Height: 15` or `15`, `60`, `65`, `60`, `130`, `75`, and `110`, respectively
+1. When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `src` attribute of the `#sprite` element should be set to the Pokémon's `front_default` sprite
+1. When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `#types` element should contain a two inner element with the text values `GHOST` and `POISON`, respectively
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
@@ -137,7 +137,7 @@ const el = document.getElementById('speed');
 assert(!!el);
 ```
 
-When the name `Pikachu` is entered into the `#search-input` element and the `#search-button` is clicked, the value in `#pokemon-name` should be `PIKACHU`, `#pokemon-id` should be `#25`, `#weight` should be `Weight: 60` or `60`, `#height` should be `Height: 4` or `4`, `#hp` should be `35`, `#attack` should be `55`, `#defense` should be `40`, `#special-attack` should be `50`, `#special-defense` should be `50`, and `#speed` should be `90`.
+When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, and `#special-defense` elements should be `PIKACHU`, `#25` or `25`, `Weight: 60` or `60`, `Height: 4` or `4`, `35`, `55`, `40`, `50`, `50`, and `90`, respectively.
 
 ```js
 async () => {
@@ -165,7 +165,7 @@ async () => {
 
       assert(
         pokemonName.innerText.trim().toLowerCase() === 'pikachu' &&
-        pokemonID.innerText.trim() === '#25' &&
+        pokemonID.innerText.trim().replace('#', '') === '25' &&
         (weight.innerText.trim().toLowerCase() === 'weight: 60' || weight.innerText.trim() === '60') &&
         (height.innerText.trim().toLowerCase() === 'height: 4' || height.innerText.trim() === '4') &&
         hp.innerText.trim() === '35' &&
@@ -182,7 +182,7 @@ async () => {
 };
 ```
 
-When the name `Pikachu` is entered into the `#search-input` element and the `#search-button` is clicked, the `src` attribute of the `#sprite` element should be set to the Pokémon's `front_default` sprite.
+When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `src` attribute of the `#sprite` element should be set to the Pokémon's `front_default` sprite.
 
 ```js
 async () => {
@@ -206,7 +206,7 @@ async () => {
 };
 ```
 
-When the name `Pikachu` is entered into the `#search-input` element and the `#search-button` is clicked, the `#types` element should contain a single inner element with the text value `ELECTRIC`.
+When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `#types` element should contain a single inner element with the value `ELECTRIC`.
 
 ```js
 async () => {
@@ -230,7 +230,7 @@ async () => {
 };
 ```
 
-When the id `94` is entered into the `#search-input` element and the `#search-button` is clicked, the value in `#pokemon-name` should be `GENGAR`, `#pokemon-id` should be `#94`, `#weight` should be `Weight: 405` or `405`, `#height` should be `Height: 15` or `15`, `#hp` should be `60`, `#attack` should be `65`, `#defense` should be `60`, `#special-attack` should be `130`, `#special-defense` should be `75`, and `#speed` should be `110`.
+When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, and `#special-defense` elements should be `GENGAR`, `#94` or `94`, `Weight: 405` or `405`, `Height: 15` or `15`, `60`, `65`, `60`, `130`, `75`, and `110`, respectively.
 
 ```js
 async () => {
@@ -258,7 +258,7 @@ async () => {
 
       assert(
         pokemonName.innerText.trim().toLowerCase() === 'gengar' &&
-        pokemonID.innerText.trim() === '#94' &&
+        pokemonID.innerText.trim().replace('#', '') === '94' &&
         (weight.innerText.trim().toLowerCase() === 'weight: 405' || weight.innerText.trim() === '405') &&
         (height.innerText.trim().toLowerCase() === 'height: 15' || height.innerText.trim() === '15') &&
         hp.innerText.trim() === '60' &&
@@ -275,7 +275,7 @@ async () => {
 };
 ```
 
-When the id `94` is entered into the `#search-input` element and the `#search-button` is clicked, the `src` attribute of the `#sprite` element should be set to the Pokémon's `front_default` sprite.
+When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `src` attribute of the `#sprite` element should be set to the Pokémon's `front_default` sprite.
 
 ```js
 async () => {
@@ -299,7 +299,7 @@ async () => {
 };
 ```
 
-When the id `94` is entered into the `#search-input` element and the `#search-button` is clicked, the `#types` element should contain a two inner element with the text values `GHOST` and `POISON`, respectively.
+When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `#types` element should contain a two inner element with the text values `GHOST` and `POISON`, respectively.
 
 ```js
 async () => {
