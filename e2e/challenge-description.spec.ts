@@ -7,17 +7,11 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Challenge Description Component Tests', () => {
-  test('should be visible', async ({ page }) => {
+  test('check components rendering', async ({ page }) => {
     const challengeDescription = page.getByTestId('challenge-description');
     await expect(challengeDescription).toBeVisible();
-  });
-
-  test('should contain text', async ({ page }) => {
-    const challengeDescription = page.getByTestId('challenge-description');
     await expect(challengeDescription).toHaveText(/ */);
-  });
 
-  test('should contain a link', async ({ page }) => {
     const link = page.getByRole('link', { name: 'your achievements page' });
     await expect(link).toHaveAttribute(
       'href',
