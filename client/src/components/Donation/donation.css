@@ -305,11 +305,28 @@ li.disabled > a {
   justify-content: space-between;
 }
 
+/* 
+ * We currently cannot reuse the Button component from `ui-components`
+ * and are using the native `<button>` with custom CSS.
+ * This implementation is temporary until we can find a solution for this button use case.
+ * Ref: https://github.com/freeCodeCamp/freeCodeCamp/issues/52349
+ */
 .close-button {
   text-align: center;
   margin: 0 auto;
   display: block;
   padding: 0 10px;
+  font-weight: normal;
+  background-color: transparent;
+  border: 0;
+  text-decoration-line: underline;
+  /* This is required in order to improve text readability in Arabic */
+  text-underline-position: under;
+}
+.close-button:hover {
+  text-decoration-line: none;
+  background-color: var(--quaternary-background);
+  color: var(--quaternary-color);
 }
 
 .donation-modal h2 {
@@ -456,13 +473,26 @@ button.confirm-donation-btn {
   display: inline-flex;
   align-items: center;
 }
+button.confirm-donation-btn:focus,
 button.confirm-donation-btn:active,
-button.confirm-donation-btn:active:focus,
+button.confirm-donation-btn:active:focus {
+  background-color: var(--quaternary-background);
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
 button.confirm-donation-btn:hover {
   color: black;
   background-color: #f2ba38;
   border-color: #f2ba38;
 }
+button.confirm-donation-btn:disabled {
+  cursor: not-allowed;
+  background-color: var(--quaternary-background);
+  border-color: var(--quaternary-color);
+  color: var(--quaternary-color);
+  opacity: 0.65;
+}
+
 a.patreon-button {
   border-radius: 5px;
   background-color: #ff424d;
@@ -498,9 +528,26 @@ a.patreon-button:hover {
   display: none;
 }
 
-.donation-modal .btn-link:disabled {
-  opacity: 0;
-  cursor: default;
+/* 
+ * We currently cannot reuse the Button component from `ui-components`
+ * and are using the native `<button>` with custom CSS.
+ * This implementation is temporary until we can find a solution for this button use case.
+ * Ref: https://github.com/freeCodeCamp/freeCodeCamp/issues/52349
+ */
+.edit-amount-button {
+  font-weight: normal;
+  background-color: transparent;
+  border: 0;
+  text-decoration-line: underline;
+  /* This is required in order to improve text readability in Arabic */
+  text-underline-position: under;
+  padding: 0;
+}
+
+.edit-amount-button:hover {
+  text-decoration-line: none;
+  background-color: var(--quaternary-background);
+  color: var(--quaternary-color);
 }
 
 .donate-btn-group {
@@ -597,4 +644,25 @@ a.patreon-button:hover {
 
 .confirm-donation-btn svg.svg-inline--fa.fa-lock {
   margin-bottom: 2px;
+}
+
+/* 
+ * We currently cannot reuse the Button component from `ui-components`
+ * and are using the native `<button>` with custom CSS.
+ * This implementation is temporary until we can find a solution for this button use case.
+ * Ref: https://github.com/freeCodeCamp/freeCodeCamp/issues/52349
+ */
+.try-again-button {
+  background-color: var(--blue05);
+  color: var(--blue70);
+  border-radius: 0;
+  border: 3px solid var(--blue70);
+  padding: 6px 12px;
+}
+.try-again-button:focus,
+.try-again-button:hover,
+.try-again-button:active {
+  color: var(--blue05);
+  background-color: var(--blue70);
+  border-color: var(--blue70);
 }

@@ -19,6 +19,9 @@ const SearchBarOptimized = ({
     event.preventDefault();
     if (value && value.length > 1) {
       window.open(`${searchUrl}?query=${encodeURIComponent(value)}`, '_blank');
+      setValue('');
+      // Blur the input to remove the selection
+      inputElementRef.current?.blur();
     }
   };
   const onClick = () => {
