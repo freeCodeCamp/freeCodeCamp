@@ -424,6 +424,7 @@ async () => {
 
 ```css
 /* CSS reset */
+
 *,
 *::before,
 *::after {
@@ -443,6 +444,7 @@ img {
 }
 
 /* Project styling */
+
 body {
   font-family: sans-serif;
   background-color: #0a0a23;
@@ -591,6 +593,7 @@ th {
 }
 
 /* Special styling for Pokémon types */
+
 .normal {
   background-color: #b7b7aa;
 }
@@ -709,28 +712,27 @@ const getPokemon = async () => {
     const data = await response.json();
 
     // Set Pokémon info
-    pokemonName.innerHTML = `${data.name.toUpperCase()}`;
-    pokemonID.innerHTML = `#${data.id}`;
-    weight.innerHTML = `Weight: ${data.weight}`;
-    height.innerHTML = `Height: ${data.height}`;
+    pokemonName.textContent = `${data.name.toUpperCase()}`;
+    pokemonID.textContent = `#${data.id}`;
+    weight.textContent = `Weight: ${data.weight}`;
+    height.textContent = `Height: ${data.height}`;
     sprite.src = data.sprites.front_default;
     sprite.alt = `${data.name} front default sprite`;
 
     // Set stats
-    hp.innerHTML = data.stats[0].base_stat;
-    attack.innerHTML = data.stats[1].base_stat;
-    defense.innerHTML = data.stats[2].base_stat;
-    specialAttack.innerHTML = data.stats[3].base_stat;
-    specialDefense.innerHTML = data.stats[4].base_stat;
-    speed.innerHTML = data.stats[5].base_stat;
+    hp.textContent = data.stats[0].base_stat;
+    attack.textContent = data.stats[1].base_stat;
+    defense.textContent = data.stats[2].base_stat;
+    specialAttack.textContent = data.stats[3].base_stat;
+    specialDefense.textContent = data.stats[4].base_stat;
+    speed.textContent = data.stats[5].base_stat;
 
     // Set types
-    let typesHTML = "";
-
-    data.types.forEach((obj) => {
-      typesHTML += `<span class="type ${obj.type.name}">${obj.type.name}</span>`;
-    });
-    types.innerHTML = typesHTML;
+    types.innerHTML = data.types
+      .map(
+        (obj) => `<span class="type ${obj.type.name}">${obj.type.name}</span>`,
+      )
+      .join("");
   } catch (err) {
     resetDisplay();
     alert("Pokémon not found");
@@ -739,24 +741,22 @@ const getPokemon = async () => {
 };
 
 const resetDisplay = () => {
-  // reset to default display if pokemon is not found
-
   // reset image src and alt
   sprite.src = "";
   sprite.alt = "";
 
   // reset stats
-  pokemonName.innerHTML = "";
-  pokemonID.innerHTML = "";
+  pokemonName.textContent = "";
+  pokemonID.textContent = "";
   types.innerHTML = "";
-  height.innerHTML = "";
-  weight.innerHTML = "";
-  hp.innerHTML = "";
-  attack.innerHTML = "";
-  defense.innerHTML = "";
-  specialAttack.innerHTML = "";
-  specialDefense.innerHTML = "";
-  speed.innerHTML = "";
+  height.textContent = "";
+  weight.textContent = "";
+  hp.textContent = "";
+  attack.textContent = "";
+  defense.textContent = "";
+  specialAttack.textContent = "";
+  specialDefense.textContent = "";
+  speed.textContent = "";
 };
 
 searchForm.addEventListener("submit", (e) => {

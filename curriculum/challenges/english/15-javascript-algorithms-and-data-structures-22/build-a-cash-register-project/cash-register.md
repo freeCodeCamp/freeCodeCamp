@@ -254,7 +254,7 @@ assert(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().include
       </div>
       <div class="container">
         <div class="top-display-screen-container">
-          <p id="message" class="price-screen">Total: $4.23</p>
+          <p id="price-screen" class="price-screen"></p>
           <div class="connector"></div>
         </div>
         <div class="top-register">
@@ -269,18 +269,7 @@ assert(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().include
             <button class="btn"></button>
             <button class="btn"></button>
           </div>
-          <div id="cid" class="results">
-            <p class="change-title">Change in Drawer</p>
-            <p>Pennies: $1.01</p>
-            <p>Nickels: $2.05</p>
-            <p>Dimes: $3.10</p>
-            <p>Quarters: $4.25</p>
-            <p>Ones: $90</p>
-            <p>Fives: $55</p>
-            <p>Tens: $20</p>
-            <p>Twenties: $60</p>
-            <p>Hundreds: $100</p>
-          </div>
+          <div id="cash-drawer-display" class="cash-drawer-display"></div>
         </div>
         <div class="bottom-register">
           <div class="circle"></div>
@@ -362,10 +351,6 @@ label {
   font-size: 15px;
 }
 
-.change-title {
-  font-weight: bold;
-}
-
 .price-screen {
   border: 10px solid #99c9ff;
   background-color: black;
@@ -429,10 +414,10 @@ label {
   border-width: 3px;
 }
 
-.results {
+.cash-drawer-display {
   font-size: 1.1rem;
   background-color: white;
-  width: 50%;
+  width: 55%;
   height: 95%;
   color: black;
   padding: 10px;
@@ -455,25 +440,27 @@ label {
 ```
 
 ```js
-let price = 19.5;
+let price = 3.26;
 let cid = [
-  ["PENNY", 0.5],
-  ["NICKEL", 0],
-  ["DIME", 0],
-  ["QUARTER", 0],
-  ["ONE", 0],
-  ["FIVE", 0],
-  ["TEN", 0],
-  ["TWENTY", 0],
-  ["ONE HUNDRED", 0],
+  ["PENNY", 1.01],
+  ["NICKEL", 2.05],
+  ["DIME", 3.1],
+  ["QUARTER", 4.25],
+  ["ONE", 90],
+  ["FIVE", 55],
+  ["TEN", 20],
+  ["TWENTY", 60],
+  ["ONE HUNDRED", 100],
 ];
 
 const displayChangeDue = document.getElementById("change-due");
 const cash = document.getElementById("cash");
 const purchaseBtn = document.getElementById("purchase-btn");
+const priceScreen = document.getElementById("price-screen");
+const cashDrawerDisplay = document.getElementById("cash-drawer-display");
 
 const formatResults = (status, change) => {
-  displayChangeDue.innerHTML = `Status: ${status}`;
+  displayChangeDue.innerHTML = `<p>Status: ${status}</p>`;
   change.map(
     (money) =>
       (displayChangeDue.innerHTML += `<p>${money[0]}: $${money[1]}</p>`),
@@ -490,7 +477,7 @@ const checkCashRegister = () => {
 
   if (Number(cash.value) === price) {
     displayChangeDue.innerHTML =
-      "No change due - customer paid with exact cash";
+      "<p>No change due - customer paid with exact cash</p>";
     cash.value = "";
     return;
   }
@@ -507,7 +494,7 @@ const checkCashRegister = () => {
   );
 
   if (totalCID < changeDue) {
-    return (displayChangeDue.innerHTML = "Status: INSUFFICIENT_FUNDS");
+    return (displayChangeDue.innerHTML = "<p>Status: INSUFFICIENT_FUNDS</p>");
   }
 
   if (totalCID === changeDue) {
@@ -527,12 +514,11 @@ const checkCashRegister = () => {
     }
   }
   if (changeDue > 0) {
-    return (displayChangeDue.innerHTML = "Status: INSUFFICIENT_FUNDS");
+    return (displayChangeDue.innerHTML = "<p>Status: INSUFFICIENT_FUNDS</p>");
   }
 
   formatResults(result.status, result.change);
-  cash.value = "";
-  return;
+  updateUI(result.change);
 };
 
 const checkResults = () => {
@@ -542,10 +528,42 @@ const checkResults = () => {
   checkCashRegister();
 };
 
+const updateUI = (change) => {
+  const currencyNameMap = {
+    PENNY: "Pennies",
+    NICKEL: "Nickels",
+    DIME: "Dimes",
+    QUARTER: "Quarters",
+    ONE: "Ones",
+    FIVE: "Fives",
+    TEN: "Tens",
+    TWENTY: "Twenties",
+    "ONE HUNDRED": "Hundreds",
+  };
+  // Update cid if change is passed in
+  if (change) {
+    change.forEach((changeArr) => {
+      const targetArr = cid.find((cidArr) => cidArr[0] === changeArr[0]);
+      targetArr[1] = parseFloat((targetArr[1] - changeArr[1]).toFixed(2));
+    });
+  }
+
+  cash.value = "";
+  priceScreen.textContent = `Total: $${price}`;
+  cashDrawerDisplay.innerHTML = `<p><strong>Change in drawer:</strong></p>
+    ${cid
+      .map((money) => `<p>${currencyNameMap[money[0]]}: $${money[1]}</p>`)
+      .join("")}  
+  `;
+};
+
 purchaseBtn.addEventListener("click", checkResults);
+
 cash.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     checkResults();
   }
 });
+
+updateUI();
 ```
