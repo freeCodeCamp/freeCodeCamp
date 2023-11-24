@@ -182,6 +182,9 @@ p.footer-donation a:hover {
   padding-top: 2em;
 }
 a img {
-  width: 160px;
-  height: 60px;
+  display: block;
+  max-width: 160px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
 }
