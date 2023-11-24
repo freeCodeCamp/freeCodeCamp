@@ -115,14 +115,14 @@ Quando stai lavorando su normali bug e funzionalità sul nostro ramo di sviluppo
 
 1. Esegui un rebase della tua copia locale:
 
-   ```console
+   ```bash
    git checkout <pr-branch>
    git pull --rebase upstream main
    ```
 
 2. Risolvi eventuali conflitti e aggiungi / modifica i commit
 
-   ```console
+   ```bash
    # O
    git add .
    git commit -m "chore: resolve conflicts"
@@ -134,28 +134,28 @@ Quando stai lavorando su normali bug e funzionalità sul nostro ramo di sviluppo
 
 3. Fai il push dei tuoi cambiamenti alla PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch>
    ```
 
 ### For Upcoming Curriculum and Features
 
-Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, devi fare un cherry pick:
+When you are working on features for our upcoming curriculum `next-*` branches, you have to do a `cherry-pick`:
 
 1. Assicurati che il tuo upstream sia sincronizzato con il tuo repository locale:
 
-   ```console
+   ```bash
    git checkout main
    git fetch --all --prune
    git checkout next-python-projects
    git reset --hard upstream/next-python-projects
    ```
 
-2. Fai un backup
+2. Take a backup
 
    a. Elimina il ramo locale dopo aver effettuato un backup (se lo hai ancora localmente):
 
-   ```console
+   ```bash
    git checkout <pr-branch-name>
 
    # esempio:
@@ -169,9 +169,9 @@ Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, d
    git branch -D <pr-branch-name>
    ```
 
-   b. O solo un backup del ramo pr (se non lo hai localmente):
+   b. Or just a backup of your PR branch (if you do not have it locally):
 
-   ```console
+   ```bash
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
    # esempio:
@@ -180,14 +180,14 @@ Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, d
 
 3. Inizia con una slate pulita:
 
-   ```console
+   ```bash
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
 4. Resolve any conflicts, cleanup, and install dependencies and run tests
 
-   ```console
+   ```bash
    pnpm run clean
 
    pnpm install
@@ -201,6 +201,6 @@ Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, d
 
 5. If everything looks good, push back to the PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch-name>
    ```

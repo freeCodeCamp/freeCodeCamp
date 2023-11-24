@@ -54,7 +54,7 @@ Eine Anfrage an `/api/:date?` mit einem gültigen Datum sollte ein JSON-Objekt m
   );
 ```
 
-A request to `/api/:date?` with a valid date should return a JSON object with a `utc` key that is a string of the input date in the format: `Thu, 01 Jan 1970 00:00:00 GMT`
+Eine Anfrage an `/api/:date?` mit einem gültigen Datum sollte ein JSON-Objekt mit einem `utc`-Schlüssel zurückgeben, bei dem es sich um einen String des Eingabedatums im Format: `Thu, 01 Jan 1970 00:00:00 GMT` handelt
 
 ```js
 (getUserInput) =>

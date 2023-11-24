@@ -31,6 +31,8 @@ export const actionTypes = createTypes(
     'setMsUsername',
     'setIsProcessing',
     'submitComplete',
+    'submitSurvey',
+    'submitSurveyComplete',
     'updateComplete',
     'updateFailed',
     'updateDonationFormState',

@@ -37,6 +37,7 @@ const insertChallenge = async () => {
 
   const meta = getMetaData();
   meta.challengeOrder.splice(indexToInsert, 0, {
+    // eslint-disable-next-line @typescript-eslint/no-base-to-string
     id: challengeId.toString(),
     title: options.title
   });

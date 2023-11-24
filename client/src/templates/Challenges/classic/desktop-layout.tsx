@@ -188,7 +188,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   } = layoutState;
 
   return (
-    <div className='desktop-layout'>
+    <div className='desktop-layout' data-playwright-test-label='desktop-layout'>
       {(projectBasedChallenge || isMultifileCertProject) && (
         <ActionRow
           hasNotes={hasNotes}
@@ -199,11 +199,19 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           showPreviewPane={showPreviewPane}
           showPreviewPortal={showPreviewPortal}
           togglePane={togglePane}
+          data-playwright-test-label='action-row'
         />
       )}
-      <ReflexContainer orientation='vertical'>
+      <ReflexContainer
+        orientation='vertical'
+        data-playwright-test-label='main-container'
+      >
         {!projectBasedChallenge && showInstructions && (
-          <ReflexElement flex={instructionPane.flex} {...resizeProps}>
+          <ReflexElement
+            flex={instructionPane.flex}
+            {...resizeProps}
+            data-playwright-test-label='instruction-pane'
+          >
             {instructions}
           </ReflexElement>
         )}
@@ -211,7 +219,11 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           <ReflexSplitter propagate={true} {...resizeProps} />
         )}
 
-        <ReflexElement flex={editorPane.flex} {...resizeProps}>
+        <ReflexElement
+          flex={editorPane.flex}
+          {...resizeProps}
+          data-playwright-test-label='editor-pane'
+        >
           {challengeFile && (
             <ReflexContainer
               key={challengeFile.fileKey}
@@ -250,7 +262,11 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           <ReflexSplitter propagate={true} {...resizeProps} />
         )}
         {(displayPreviewPane || displayPreviewConsole) && (
-          <ReflexElement flex={previewPane.flex} {...resizeProps}>
+          <ReflexElement
+            flex={previewPane.flex}
+            {...resizeProps}
+            data-playwright-test-label='preview-pane'
+          >
             <ReflexContainer orientation='horizontal'>
               {displayPreviewPane && <ReflexElement>{preview}</ReflexElement>}
               {displayPreviewPane && displayPreviewConsole && (

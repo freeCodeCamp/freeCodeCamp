@@ -43,13 +43,15 @@ interface MobileLayoutProps {
   usesMultifileEditor: boolean;
 }
 
-enum Tab {
-  Editor = 'editor',
-  Preview = 'preview',
-  Console = 'console',
-  Notes = 'notes',
-  Instructions = 'instructions'
-}
+const tabs = {
+  editor: 'editor',
+  preview: 'preview',
+  console: 'console',
+  notes: 'notes',
+  instructions: 'instructions'
+} as const;
+
+type Tab = keyof typeof tabs;
 
 interface MobileLayoutState {
   currentTab: Tab;
@@ -83,7 +85,9 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   #toolPanelGroup!: HTMLElement;
 
   state: MobileLayoutState = {
-    currentTab: this.props.hasEditableBoundaries ? Tab.Editor : Tab.Instructions
+    currentTab: this.props.hasEditableBoundaries
+      ? tabs.editor
+      : tabs.instructions
   };
 
   switchTab = (tab: string): void => {
@@ -220,29 +224,33 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
         >
           <TabsList className='nav-lists'>
             {!hasEditableBoundaries && (
-              <TabsTrigger value={Tab.Instructions}>
+              <TabsTrigger value={tabs.instructions}>
                 {i18next.t('learn.editor-tabs.instructions')}
               </TabsTrigger>
             )}
-            <TabsTrigger value={Tab.Editor}>
+            <TabsTrigger value={tabs.editor}>
               {i18next.t('learn.editor-tabs.code')}
             </TabsTrigger>
             {hasNotes && usesMultifileEditor && (
-              <TabsTrigger value={Tab.Notes}>
+              <TabsTrigger value={tabs.notes}>
                 {i18next.t('learn.editor-tabs.notes')}
               </TabsTrigger>
             )}
-            <TabsTrigger value={Tab.Console}>
+            <TabsTrigger value={tabs.console}>
               {i18next.t('learn.editor-tabs.console')}
             </TabsTrigger>
             {hasPreview && (
-              <TabsTrigger value={Tab.Preview}>
+              <TabsTrigger value={tabs.preview}>
                 {i18next.t('learn.editor-tabs.preview')}
               </TabsTrigger>
             )}
           </TabsList>
 
-          <TabsContent tabIndex={-1} className='tab-content' value={Tab.Editor}>
+          <TabsContent
+            tabIndex={-1}
+            className='tab-content'
+            value={tabs.editor}
+          >
             {usesMultifileEditor && <EditorTabs />}
             {editor}
           </TabsContent>
@@ -250,7 +258,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             <TabsContent
               tabIndex={-1}
               className='tab-content'
-              value={Tab.Instructions}
+              value={tabs.instructions}
             >
               {instructions}
             </TabsContent>
@@ -258,7 +266,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           <TabsContent
             tabIndex={-1}
             className='tab-content'
-            value={Tab.Console}
+            value={tabs.console}
           >
             {testOutput}
           </TabsContent>
@@ -266,7 +274,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             <TabsContent
               tabIndex={-1}
               className='tab-content'
-              value={Tab.Notes}
+              value={tabs.notes}
             >
               {notes}
             </TabsContent>
@@ -275,7 +283,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             <TabsContent
               tabIndex={-1}
               className='tab-content'
-              value={Tab.Preview}
+              value={tabs.preview}
               forceMount
               // forceMount causes the preview tabpanel to never be hidden,
               // so we need to manually add it when preview is not active.

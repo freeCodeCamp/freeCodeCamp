@@ -49,7 +49,7 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
   return (
     <>
       <Row>
-        <Col className='certifications' sm={10} smPush={1}>
+        <Col className='certifications' sm={10} smOffset={1}>
           <Link
             className='btn btn-lg btn-primary btn-block'
             to={`/certification/${username}/${cert.certSlug}`}

@@ -51,11 +51,17 @@ const UniversalNav = ({
       aria-label={t('aria.primary-nav')}
       className='universal-nav'
       id='universal-nav'
+      data-playwright-test-label='header-universal-nav'
     >
       {isSearchExposedWidth && (
         <div className='universal-nav-left'>{search}</div>
       )}
-      <Link className='universal-nav-logo' id='universal-nav-logo' to='/learn'>
+      <Link
+        className='universal-nav-logo'
+        id='universal-nav-logo'
+        to='/learn'
+        data-playwright-test-label='header-universal-nav-logo'
+      >
         <NavLogo />
       </Link>
       <div className='universal-nav-right main-nav'>

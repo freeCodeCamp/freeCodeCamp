@@ -1,6 +1,6 @@
 ---
 id: 5900f47e1000cf542c50ff90
-title: 'Problem 273: Sum of Squares'
+title: 'Завдання 273: сума квадратів'
 challengeType: 1
 forumTopicId: 301923
 dashedName: problem-273-sum-of-squares
@@ -8,17 +8,17 @@ dashedName: problem-273-sum-of-squares
 
 # --description--
 
-Consider equations of the form: $a^2 + b^2 = N$, $0 ≤ a ≤ b$, $a$, $b$ and $N$ integer.
+Розглянемо рівняння вигляду $a^2 + b^2 = N$, $0 ≤ a ≤ b$, де $a$, $b$ та $N$ є цілими числами.
 
-For $N = 65$ there are two solutions:
+За умови $N = 65$ існує два розв’язки:
 
-$a = 1, b = 8$ and $a = 4, b = 7$.
+$a = 1, b = 8$ та $a = 4, b = 7$.
 
-We call $S(N)$ the sum of the values of $a$ of all solutions of $a^2 + b^2 = N$, $0 ≤ a ≤ b$, $a$, $b$ and $N$ integer.
+Назвемо $S(N)$ сумою значень $a$ усіх розв’язків $a^2 + b^2 = N$, $0 ≤ a ≤ b$, де $a$, $b$ та $N$ є цілими числами.
 
-Thus $S(65) = 1 + 4 = 5$.
+Таким чином $S(65) = 1 + 4 = 5$.
 
-Find $\sum S(N)$, for all squarefree $N$ only divisible by primes of the form $4k + 1$ with $4k + 1 &lt; 150$.
+Знайдіть $\sum S(N)$ для всіх безквадратних чисел $N$, які діляться лише на прості числа вигляду $4k + 1$, де $4k + 1 &lt; 150$.
 
 # --hints--
 

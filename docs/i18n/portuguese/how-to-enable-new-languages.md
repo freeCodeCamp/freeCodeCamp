@@ -229,7 +229,7 @@ Você não precisa ter tudo nestes 3 arquivos traduzidos no começo. É possíve
 
 Você pode substituir qualquer URL que tenha páginas correspondentes prontas no seu idioma.
 
-Por exemplo, se você tiver a publicação no seu idioma, você pode substituir o URL para `"news"`. Se quiser traduzir artigos listados nos links de rodapé, consulte [Como traduzir artigos nos links de rodapé](language-lead-handbook.md#how-to-translate-articles-in-the-footer-links).
+Por exemplo, se você tiver uma publicação no seu idioma, você pode substituir o URL para `"news"`. Se quiser traduzir artigos listados nos links de rodapé, consulte [Como traduzir artigos nos links de rodapé](language-lead-handbook.md#how-to-translate-articles-in-the-footer-links).
 
 #### `meta-tags.json`
 

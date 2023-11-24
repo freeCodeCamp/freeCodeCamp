@@ -26,25 +26,25 @@ Cypress テストもしくは「specs」の書き方については、Cypress �
 
 - `./cypress` ディレクトリで、すべてのテストを実行します。
 
-  ```console
+  ```bash
   pnpm run cypress:dev:run
   ```
 
 - 単一のテストを実行します。
 
-  ```console
+  ```bash
   pnpm run cypress run --spec=cypress/<path_to_test_file>
   ```
 
   For example:
 
-  ```console
+  ```bash
   pnpm run cypress run --spec=cypress/e2e/default/landing.ts
   ```
 
 - 開発ビルドを作成するには、開発サーバーを起動し、既存の cypress エンドツーエンドテストをすべて実行します。
 
-  ```console
+  ```bash
   pnpm run e2e:dev:run
   ```
 
@@ -57,25 +57,25 @@ If starting the Gitpod environment did not automatically develop the environment
 - Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
 - Create a config file.
 
-```console
+```bash
 pnpm run create:shared
 ```
 
 - データベースをシードします。
 
-```console
+```bash
 pnpm run seed
 ```
 
 - サーバーとクライアントを構築します。
 
-```console
+```bash
 pnpm run develop
 ```
 
 ### 2. Cypress ビルドツールをインストールする
 
-```console
+```bash
 pnpm run cypress:install-build-tools
 ```
 

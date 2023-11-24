@@ -208,6 +208,12 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
+
+    const feedback =
+      this.state.selectedOption !== null
+        ? answers[this.state.selectedOption].feedback
+        : undefined;
+
     return (
       <Hotkeys
         executeChallenge={() => {
@@ -257,7 +263,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 <Spacer size='medium' />
                 <ObserveKeys>
                   <div className='video-quiz-options'>
-                    {answers.map((option, index) => (
+                    {answers.map(({ answer }, index) => (
                       // answers are static and have no natural id property, so
                       // index should be fine as a key:
                       <label
@@ -281,7 +287,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                         </span>
                         <PrismFormatted
                           className={'video-quiz-option'}
-                          text={option.replace(/^<p>|<\/p>$/g, '')}
+                          text={answer.replace(/^<p>|<\/p>$/g, '')}
                           useSpan
                           noAria
                         />
@@ -296,7 +302,16 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                   }}
                 >
                   {this.state.showWrong ? (
-                    <span>{t('learn.wrong-answer')}</span>
+                    <span>
+                      {feedback ? (
+                        <PrismFormatted
+                          className={'multiple-choice-feedback'}
+                          text={feedback}
+                        />
+                      ) : (
+                        t('learn.wrong-answer')
+                      )}
+                    </span>
                   ) : (
                     <span>{t('learn.check-answer')}</span>
                   )}
@@ -365,7 +380,10 @@ export const query = graphql`
         }
         question {
           text
-          answers
+          answers {
+            answer
+            feedback
+          }
           solution
         }
         translationPending

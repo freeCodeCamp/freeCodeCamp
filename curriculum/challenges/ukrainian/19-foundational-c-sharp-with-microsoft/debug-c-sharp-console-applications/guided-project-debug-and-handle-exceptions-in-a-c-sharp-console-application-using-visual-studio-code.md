@@ -12,11 +12,11 @@ dashedName: guided-project-debug-and-handle-exceptions-in-a-c-sharp-console-appl
 1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/</a> та виконайте всі завдання модуля «Керований проєкт: налагодьте та обробіть винятки в консольному застосунку C#, використовуючи Visual Studio Code». Це **обов’язково**, щоб отримати трофей з «Налагодження консольних застосунків C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Виконайте керований проєкт <a href="https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/" target="_blank" rel="noreferrer">«Налагодьте та обробіть винятки в консольному застосунку C#, використовуючи Visual Studio Code»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
+# --question--
 
 ## --text--
 

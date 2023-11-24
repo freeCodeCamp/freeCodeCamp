@@ -2,12 +2,14 @@ import React, { useMemo } from 'react';
 import { ButtonProps, ButtonSize, ButtonVariant } from './types';
 
 const defaultClassNames = [
+  // Positioning
   'relative',
-  'cursor-pointer',
   'inline-block',
+  'mt-[0.5px]',
+  // Border
+  'border-solid',
   'border-3',
-  'text-center',
-  'no-underline',
+  // Active state
   'active:before:w-full',
   'active:before:h-full',
   'active:before:absolute',
@@ -16,12 +18,17 @@ const defaultClassNames = [
   'active:before:border-transparent',
   'active:before:bg-gray-900',
   'active:before:opacity-20',
+  // Disabled state
   'aria-disabled:cursor-not-allowed',
   'aria-disabled:opacity-50',
+  // Focus state
   'focus:outline-none', // Hide the default browser outline
-  'focus:ring',
-  'focus:ring-focus-outline-color',
-  'mt-[0.5px]'
+  'focus-visible:ring',
+  'focus-visible:ring-focus-outline-color',
+  // Misc
+  'text-center',
+  'cursor-pointer',
+  'no-underline' // For link
 ];
 
 const computeClassNames = ({
@@ -105,14 +112,19 @@ const computeClassNames = ({
 };
 
 const StylessButton = React.forwardRef<React.ElementRef<'button'>, ButtonProps>(
-  ({ className, onClick, disabled, children, type, ...rest }, ref) => {
-    // Manually prevent click event if the button is disabled
+  (
+    { className, onClick, disabled, children, type = 'button', ...rest },
+    ref
+  ) => {
+    // Manually prevent the click event if the button is disabled
     // as `aria-disabled` marks the element disabled but still registers the click event.
     // Ref: https://css-tricks.com/making-disabled-buttons-more-inclusive/#aa-the-difference-between-disabled-and-aria-disabled
-
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-      const ariaDisabled = event.currentTarget.getAttribute('aria-disabled');
-      if (!ariaDisabled && onClick) {
+      if (disabled) {
+        return;
+      }
+
+      if (onClick) {
         onClick(event);
       }
     };
@@ -123,7 +135,7 @@ const StylessButton = React.forwardRef<React.ElementRef<'button'>, ButtonProps>(
         onClick={handleClick}
         aria-disabled={disabled}
         ref={ref}
-        type={type ?? 'button'}
+        type={type}
         {...rest}
       >
         {children}
@@ -140,7 +152,7 @@ const Link = React.forwardRef<React.ElementRef<'a'>, ButtonProps>(
         download={download}
         target={target}
         ref={ref}
-        href={href ?? undefined}
+        href={href}
         {...rest}
       >
         {children}
@@ -175,7 +187,7 @@ export const HeadlessButton = React.forwardRef<
         <StylessButton
           className={className}
           onClick={onClick}
-          aria-disabled={disabled}
+          disabled={disabled}
           ref={ref as React.Ref<HTMLButtonElement>}
           {...rest}
         >
@@ -189,23 +201,35 @@ export const HeadlessButton = React.forwardRef<
 export const Button = React.forwardRef<
   React.ElementRef<'button' | 'a'>,
   ButtonProps
->(({ className, size, disabled, variant, block, ...rest }, ref) => {
-  const classes = useMemo(
-    () => computeClassNames({ size, variant, disabled, block }),
-    [size, variant, disabled, block]
-  );
+>(
+  (
+    {
+      className,
+      size = 'medium',
+      disabled,
+      variant = 'primary',
+      block,
+      ...rest
+    },
+    ref
+  ) => {
+    const classes = useMemo(
+      () => computeClassNames({ size, variant, disabled, block }),
+      [size, variant, disabled, block]
+    );
 
-  const buttonStyle = [className, classes].join(' ');
+    const buttonStyle = [className, classes].join(' ');
 
-  return (
-    <HeadlessButton
-      className={buttonStyle}
-      ref={ref}
-      disabled={disabled}
-      {...rest}
-    />
-  );
-});
+    return (
+      <HeadlessButton
+        className={buttonStyle}
+        ref={ref}
+        disabled={disabled}
+        {...rest}
+      />
+    );
+  }
+);
 
 Button.displayName = 'Button';
 HeadlessButton.displayName = 'HeadlessButton';

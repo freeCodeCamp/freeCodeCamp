@@ -26,6 +26,7 @@ const createStepFile = ({
     stepNum
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
   fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, template);
 
   return challengeId;
@@ -47,6 +48,7 @@ interface InsertOptions {
 function insertStepIntoMeta({ stepNum, stepId }: InsertOptions): void {
   const existingMeta = getMetaData();
   const oldOrder = [...existingMeta.challengeOrder];
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
   oldOrder.splice(stepNum - 1, 0, { id: stepId.toString(), title: '' });
   // rename all the files in challengeOrder
   const challengeOrder = oldOrder.map(({ id }, index) => ({

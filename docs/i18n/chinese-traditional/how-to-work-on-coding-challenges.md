@@ -4,7 +4,7 @@ Our goal is to develop a fun and clear interactive learning experience.
 
 Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
 
-We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
+We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain wide exposure to programming concepts.
 
 Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
@@ -27,7 +27,6 @@ Before you work on the curriculum, you would need to set up some tooling to help
 
   [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead.
 
 ### How to work on practice projects
 
@@ -136,6 +135,14 @@ Solutions are used for the CI tests to ensure that changes to the hints will sti
 // third solution etc. - Your solutions should be in HTML.
 ```
 
+# --assignments--
+
+This will show a checkbox that campers have to check before completing a challenge
+
+---
+
+This will show another checkbox that campers have to check before completing a challenge
+
 # --question--
 
 These fields are currently used for the multiple-choice Python challenges.
@@ -147,6 +154,10 @@ The question text goes here.
 ## --answers--
 
 Answer 1
+
+### --feedback--
+
+This will be shown as feedback when campers guess this answer
 
 ---
 
@@ -219,6 +230,8 @@ Here are some example challenge names:
 Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
 Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
+
+Use american english, e.g., use `labeled` instead of `labelled`.
 
 Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
@@ -294,7 +307,7 @@ Challenges should have the minimum number of tests necessary to verify that a ca
 
 Our goal is to communicate the single point that the challenge is trying to teach, and test that they have understood that point.
 
-Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable. In addition, the `__helpers` object exposes several functions that simplify the process of writing tests. The available functions are defined in _client/src/utils/curriculum-helpers.ts_.
+Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable. In addition, the `__helpers` object exposes several functions that simplify the process of writing tests. The available functions are defined in the [curriculum-helpers](https://github.com/freeCodeCamp/curriculum-helpers/blob/main/lib/index.ts) repo.
 
 ## Formatting Seed Code
 
@@ -460,7 +473,13 @@ Before you [create a pull request](how-to-open-a-pull-request.md) for your chang
 pnpm run test:curriculum
 ```
 
-2. You can also test a block or a superblock of challenges with these commands
+2. To test single challenge, you can use it challenge id with following command
+
+```
+FCC_CHALLENGE_ID=646cf6cbca98e258da65c979 pnpm run test:curriculum
+```
+
+3. You can also test a block or a superblock of challenges with these commands
 
 ```
 FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
@@ -470,7 +489,7 @@ FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
-You are also able to test one challenge individually by performing the following steps:
+You are also able to test challenges by title by performing the following steps:
 
 1. Switch to the `curriculum` directory:
 
@@ -548,7 +567,7 @@ b
 c
 ```
 
-And you choose `b`, your new order will be:
+If you choose `b`, your new order will be:
 
 ```bash
 a

@@ -4,8 +4,12 @@ import {
   FastifyRequest
 } from 'fastify';
 
+import rateLimit from 'express-rate-limit';
+// @ts-expect-error - no types
+import MongoStoreRL from 'rate-limit-mongo';
+
 import { createUserInput } from '../utils/create-user';
-import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env';
+import { AUTH0_DOMAIN, HOME_LOCATION, MONGOHQ_URL } from '../utils/env';
 
 declare module 'fastify' {
   interface Session {
@@ -85,7 +89,50 @@ export const devLoginCallback: FastifyPluginCallback = (
 export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.addHook('onRequest', fastify.authenticate);
 
-  fastify.get('/callback', async req => {
+  fastify.get('/auth0/callback', async req => {
+    const email = await getEmailFromAuth0(req);
+
+    const { id } = await findOrCreateUser(fastify, email);
+    req.session.user = { id };
+    await req.session.save();
+  });
+
+  done();
+};
+
+/**
+ * Route handler for Mobile authentication.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
+ * @param done Callback to signal that the logic has completed.
+ */
+export const mobileAuth0Routes: FastifyPluginCallback = (
+  fastify,
+  _options,
+  done
+) => {
+  // Rate limit for mobile login
+  // 10 requests per 15 minute windows
+  void fastify.use(
+    rateLimit({
+      windowMs: 15 * 60 * 1000,
+      max: 10,
+      standardHeaders: true,
+      legacyHeaders: false,
+      keyGenerator: req => {
+        return (req.headers['x-forwarded-for'] as string) || 'localhost';
+      },
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+      store: new MongoStoreRL({
+        collectionName: 'UserRateLimit',
+        uri: MONGOHQ_URL,
+        expireTimeMs: 15 * 60 * 1000
+      })
+    })
+  );
+
+  fastify.get('/mobile-login', async req => {
     const email = await getEmailFromAuth0(req);
 
     const { id } = await findOrCreateUser(fastify, email);

@@ -2,7 +2,7 @@
 
 Nuestro equipo de revisión es responsable de garantizar que las traducciones reflejen con precisión el texto original. Confiamos en nuestro equipo de revisión para asegurarnos de que tenemos traducciones de muy alta calidad.
 
-Todas nuestras traducciones están hechas a mano, por humanos reales. La revisión garantiza que haya un tono coherente en todos nuestros recursos traducidos, como el plan de estudios.
+Todas nuestras traducciones están hechas a mano, por humanos reales. Proofreading ensures that there is a consistent tone across all our translated resources like the curriculum.
 
 Para comenzar a revisar, visita [nuestra plataforma de traducción](https://translate.freecodecamp.org) e inicia sesión. Selecciona "Ir a la consola" en la barra de navegación superior para cambiar de la vista pública a la vista de espacio de trabajo.
 
@@ -50,6 +50,6 @@ Nuestro equipo de personal y de moderadores de la comunidad buscan constantement
 
 ## Creating a Channel on Chat for a World Language
 
-Mayormente, te recomendamos que utilices la sala de chat de [contribuidores](https://discord.gg/PRyKn3Vbay) para toda la correspondencia. Sin embargo, si el equipo de traductores voluntarios crece para un idioma determinado, podemos considerar la creación de un canal de escape adicional para el idioma.
+For the most part, we encourage you to use the [contributors chat](https://discord.gg/PRyKn3Vbay) room for all correspondence. However if the team of volunteer translators grows for a certain language, we can consider creating an additional break-out channel for the language.
 
 Si ya eres un revisor y estás interesado en tener un canal dedicado en nuestros servidores de chat para un idioma específico, [completa este formulario](https://forms.gle/XU5CyutrYCgDYaVZA).

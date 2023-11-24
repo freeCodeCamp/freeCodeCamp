@@ -1,6 +1,6 @@
 ---
 id: 5900f4531000cf542c50ff66
-title: 'Problem 231: The prime factorisation of binomial coefficients'
+title: 'Завдання 231: розклад біноміальних коефіцієнтів на прості множники'
 challengeType: 1
 forumTopicId: 301875
 dashedName: problem-231-the-prime-factorisation-of-binomial-coefficients
@@ -8,13 +8,13 @@ dashedName: problem-231-the-prime-factorisation-of-binomial-coefficients
 
 # --description--
 
-The binomial coefficient $\displaystyle\binom{10}{3} = 120$.
+Біноміальний коефіцієнт $\displaystyle\binom{10}{3} = 120$.
 
-$120 = 2^3 × 3 × 5 = 2 × 2 × 2 × 3 × 5$, and $2 + 2 + 2 + 3 + 5 = 14$.
+$120 = 2^3 × 3 × 5 = 2 × 2 × 2 × 3 × 5$ та $2 + 2 + 2 + 3 + 5 = 14$.
 
-So the sum of the terms in the prime factorisation of $\displaystyle\binom{10}{3}$ is $14$.
+Тож сумою членів розкладу на прості множники $\displaystyle\binom{10}{3}$ є $14$.
 
-Find the sum of the terms in the prime factorisation of $\binom{20\\,000\\,000}{15\\,000\\,000}$.
+Знайдіть суму членів розкладу на прості множники $\binom{20\\,000\\,000}{15\\,000\\,000}$.
 
 # --hints--
 

@@ -44,6 +44,7 @@
     "settings": "設定",
     "take-me": "チャレンジに移動",
     "check-answer": "解答をチェック",
+    "submit": "Submit",
     "get-hint": "ヒントを見る",
     "ask-for-help": "質問する",
     "create-post": "フォーラムにヘルプ投稿を作成",
@@ -304,7 +305,7 @@
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp は皆様のご寄付により支えられている非課税の 501(c)(3) 慈善団体です。(United States Federal Tax Identification Number: 82-0779546)",
-    "mission-statement": "私たちのミッション: 人々が無料でコーディングを学べるよう支援することです。その実現のため、何千もの動画、記事、インタラクティブなコーディングレッスンを作成し、すべて無料で公開しています。さらに、数千の freeCodeCamp スタディグループが世界中に存在します。",
+    "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.",
     "donation-initiatives": "freeCodeCamp へのご寄付は教育活動のために用いられ、サーバー、サービス、スタッフなどの費用に充てられます。",
     "donate-text": "<1>こちらからご寄付をお願いいたします</1>。(場合により税控除可能)",
     "trending-guides": "人気の記事",
@@ -417,6 +418,7 @@
     "building-a-university": "freeCodeCamp では無料のコンピューターサイエンス学位プログラムの設立に取り組んでいます。",
     "if-help-university": "すでに順調に進んでいますが、この先更に長い道のりが待っています。ぜひ私たちのチャリティー活動をご支援ください。",
     "preview-external-window": "Preview currently showing in external window.",
+    "fill-in-the-blank": "Fill in the blank",
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
@@ -524,7 +526,7 @@
     "download-irs": "<0>こちらで私たちの IRS Determination Letter をダウンロード</0>できます。",
     "download-990": "<0>こちらで私たちの最新の 990 (税金の年次報告書) をダウンロード</0>できます。",
     "how-efficient": "freeCodeCamp はどのくらい効率的なのでしょうか？",
-    "fcc-budget": "freeCodeCamp の予算は、同規模の他の慈善団体に比べ非常に少ない状況です。私たちはプロの資金調達者の力を借りることなく、Quincy 自身がその役目を担っています。",
+    "fcc-budget": "freeCodeCamp's budget is much smaller than most comparable charities. We haven't brought in professional fundraisers. Instead, Quincy does everything himself.",
     "help-millions": "しかしながら、私たちは年間わずか数十万ドルの予算で、数百万の人々を支援することができています。",
     "how-one-time": "一回ごとの寄付を行うにはどうしたらいいですか？",
     "one-time": "一回ごとの寄付をご希望の場合、いつでも経済的なゆとりがある時に、freeCodeCamp のミッションをご支援いただくことができます。<0>こちらのリンクから、PayPal を通して任意の金額を寄付することができます。</0>",
@@ -732,13 +734,24 @@
         "unlinked": "The link to your Microsoft username has been removed.",
         "unlink-err": "Something went wrong trying to remove the link to your Microsoft username."
       },
+      "profile": {
+        "err": "We could not find a Microsoft user ID for Microsoft user \"{{msUsername}}\""
+      },
       "trophy": {
         "err-1": "We could not find a Microsoft username associated with your freeCodeCamp account.",
         "err-2": "You are trying to submit a challenge that does not appear to be a trophy challenge.",
-        "err-3": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
-        "err-4": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-3": "We could not get your Microsoft profile from your Microsoft ID.",
+        "err-4": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
+        "err-5": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-6": "It looks like your Microsoft account might be private. Set it to public and try again.",
         "verified": "Your trophy from Microsoft's learning platform was verified."
       }
+    },
+    "survey": {
+      "err-1": "The survey submitted is not in the correct format.",
+      "err-2": "It looks like you have already completed this survey.",
+      "err-3": "Something went wrong trying to save your survey.",
+      "success": "Thank you. Your survey was submitted."
     },
     "classroom-mode-updated": "We have updated your classroom mode settings"
   },
@@ -879,6 +892,8 @@
       "college-algebra-with-python-v8": "Python を用いた代数学認定証",
       "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
+      "A2 English for Developers": "A2 English for Developers",
+      "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "(レガシー) フロントエンド",
       "legacy-front-end": "フロントエンド認定証",
       "Legacy Back End": "(レガシー) バックエンド",
@@ -903,14 +918,13 @@
     "set-claim": "認定証を取得して表示"
   },
   "forum-help": {
-    "browser-info": "**ブラウザ情報:**",
+    "browser-info": "Your browser information:",
     "user-agent": "ユーザーエージェント: <code>{{userAgent}}</code>",
-    "challenge": "**チャレンジ:**",
-    "challenge-link": "**チャレンジへのリンク:**",
-    "whats-happening": "**状況を説明しましょう:**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "質問内容をここに詳しく記入してください。",
-    "camper-project": "**プロジェクトのリンク**",
-    "camper-code": "**現状のコード**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "注意",
     "too-long-one": "チャレンジの元コードとあなたの解答の両方、またはいずれかが、自動でコピーできる最大長を超えています。",
     "too-long-two": "記述したコードを読みやすいフォーマットで表示するために、追加の手順が必要です。",
@@ -956,5 +970,31 @@
     "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
     "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
     "certain": "Accept and Dismiss"
+  },
+  "survey": {
+    "foundational-c-sharp": {
+      "title": "Foundational C# with Microsoft Survey",
+      "q1": {
+        "q": "Please describe your role:",
+        "o1": "Student developer",
+        "o2": "Beginner developer (less than 2 years experience)",
+        "o3": "Intermediate developer (between 2 and 5 years experience)",
+        "o4": "Experienced developer (more than 5 years experience)"
+      },
+      "q2": {
+        "q": "Prior to this course, how experienced were you with .NET and C#?",
+        "o1": "Novice (no prior experience)",
+        "o2": "Beginner",
+        "o3": "Intermediate",
+        "o4": "Advanced",
+        "o5": "Expert"
+      }
+    },
+    "misc": {
+      "take": "Take the survey",
+      "submit": "Submit the survey",
+      "exit": "Exit the survey",
+      "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
   }
 }

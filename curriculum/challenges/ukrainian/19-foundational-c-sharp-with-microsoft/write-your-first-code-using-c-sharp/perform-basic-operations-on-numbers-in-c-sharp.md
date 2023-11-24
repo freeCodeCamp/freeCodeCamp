@@ -12,11 +12,11 @@ dashedName: perform-basic-operations-on-numbers-in-c-sharp
 1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/csharp-basic-operations/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-basic-operations/</a> та виконайте всі завдання модуля «Виконайте базові операції з числами в C#». Це **обов’язково**, щоб отримати трофей з «Написання першого коду за допомогою C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-basic-operations/" target="_blank" rel="noreferrer">«Виконайте базові операції з числами в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
+# --question--
 
 ## --text--
 

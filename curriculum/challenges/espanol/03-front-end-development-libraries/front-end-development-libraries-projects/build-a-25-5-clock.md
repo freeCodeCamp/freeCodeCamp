@@ -52,13 +52,13 @@ Puedes utilizar cualquier combinación de HTML, JavaScript, CSS, Bootstrap, SASS
 
 **Historia de usuario #18:** Cuando hago clic por primera vez en el elemento con `id="start_stop"`, el temporizador debe empezar a correr desde el valor actualmente mostrado en `id="session-length"`, incluso si el valor ha sido incrementado o decrementado desde el valor original de 25.
 
-**User Story #19:** If the timer is running, the element with the id of `time-left` should display the remaining time in `mm:ss` format (decrementing by a value of 1 and updating the display every 1000ms).
+**Historia de usuario #19:** Si el temporizador está en marcha, el elemento con el id `time-left` debe mostrar el tiempo restante en formato `mm:ss` (decrementando en un valor de 1 y actualizando la pantalla cada 1000ms).
 
-**User Story #20:** If the timer is running and I click the element with `id="start_stop"`, the countdown should pause.
+**Historia de usuario #20:** Si el temporizador está en marcha y hago clic en el elemento con `id="start_stop"`, la cuenta atrás debería pausarse.
 
-**User Story #21:** If the timer is paused and I click the element with `id="start_stop"`, the countdown should resume running from the point at which it was paused.
+**Historia de usuario #21:** Si el temporizador está pausado y hago clic en el elemento `id="start_stop"`, la cuenta atrás debe reanudarse desde el punto en el que fue pausada.
 
-**User Story #22:** When a session countdown reaches zero (NOTE: timer MUST reach 00:00), and a new countdown begins, the element with the id of `timer-label` should display a string indicating a break has begun.
+**Historia de usuario #22:** Cuando la cuenta atrás de la sesión llega a cero (NOTA: el temporizador DEBE llegar a 00:00) y una nueva cuenta atrás comienza, el elemento cuyo id es `timer-label` debe mostrar una cadena en la que se indica que el descanso (break) ha comenzado.
 
 **User Story #23:** When a session countdown reaches zero (NOTE: timer MUST reach 00:00), a new break countdown should begin, counting down from the value currently displayed in the `id="break-length"` element.
 

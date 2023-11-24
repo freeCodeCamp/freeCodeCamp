@@ -14,7 +14,7 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
 
 # --instructions--
 
-`tests/1_unit-tests.js` 内で、`Equality` スイートの `#6` に分類されるテストにおいて、(`true` と評価する必要がある) テストに合格にするために、各 `assert` を `assert.strictEqual` または `assert.notStrictEqual` のいずれかに変更してください。 アサートに渡された引数を変更しないでください。
+Within `tests/1_unit-tests.js` under the test labeled `#6` in the `Equality` suite, change each `assert` to either `assert.strictEqual` or `assert.notStrictEqual` to make the test pass (should evaluate to `true`). アサートに渡された引数を変更しないでください。
 
 # --hints--
 

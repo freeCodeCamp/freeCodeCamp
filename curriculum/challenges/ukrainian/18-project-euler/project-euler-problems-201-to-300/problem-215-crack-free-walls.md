@@ -1,6 +1,6 @@
 ---
 id: 5900f4431000cf542c50ff56
-title: 'Problem 215: Crack-free Walls'
+title: 'Завдання 215: стіни без тріщин'
 challengeType: 1
 forumTopicId: 301857
 dashedName: problem-215-crack-free-walls
@@ -8,15 +8,15 @@ dashedName: problem-215-crack-free-walls
 
 # --description--
 
-Consider the problem of building a wall out of 2×1 and 3×1 bricks (horizontal×vertical dimensions) such that, for extra strength, the gaps between horizontally-adjacent bricks never line up in consecutive layers, i.e. never form a "running crack".
+Розглянемо задачу: потрібно побудувати стіну з цеглин 2×1 та 3×1 (горизонтальний × вертикальний розмір) таким чином, щоб сусідні горизонтальні цеглини не нагромаджувались в послідовні ряди. Іншими словами, щоб вони не утворювали «суцільну тріщину».
 
-For example, the following 9×3 wall is not acceptable due to the running crack shown in red:
+Наприклад, ця стіна 9×3 неправильна через тріщину, виділену червоним кольором:
 
-<img class="img-responsive center-block" alt="9x3 wall with one lined up gap between horizontally-adjacent bricks" src="https://cdn.freecodecamp.org/curriculum/project-euler/crack-free-walls.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Стіна 9x3 з проміжками, що утворили лінію між горизонтально-прилеглими цеглинами" src="https://cdn.freecodecamp.org/curriculum/project-euler/crack-free-walls.gif" style="background-color: white; padding: 10px;" />
 
-There are eight ways of forming a crack-free 9×3 wall, written $W(9,3) = 8$.
+Існує вісім способів утворити стіну 9×3 без тріщин. Запишемо як $W(9,3) = 8$.
 
-Calculate $W(32,10)$.
+Обчисліть $W(32,10)$.
 
 # --hints--
 

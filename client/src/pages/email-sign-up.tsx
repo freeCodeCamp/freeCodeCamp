@@ -61,32 +61,34 @@ function EmailListOptIn({
   const { t } = useTranslation();
   if (isSignedIn) {
     return (
-      <Row>
-        <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
-          <Button
-            block={true}
-            bsSize='lg'
-            bsStyle='primary'
-            className='big-cta-btn'
-            onClick={() => acceptTerms(true)}
-          >
-            {t('buttons.yes-please')}
-          </Button>
-          <Spacer size='small' />
-        </Col>
-        <Col md={4} sm={5} xs={12}>
-          <Button
-            block={true}
-            bsSize='lg'
-            bsStyle='primary'
-            className='big-cta-btn'
-            onClick={() => acceptTerms(false)}
-          >
-            {t('buttons.no-thanks')}
-          </Button>
-          <Spacer size='small' />
-        </Col>
-      </Row>
+      <Container>
+        <Row className='email-list-opt'>
+          <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='big-cta-btn'
+              onClick={() => acceptTerms(true)}
+            >
+              {t('buttons.yes-please')}
+            </Button>
+            <Spacer size='small' />
+          </Col>
+          <Col md={4} sm={5} xs={12}>
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='big-cta-btn'
+              onClick={() => acceptTerms(false)}
+            >
+              {t('buttons.no-thanks')}
+            </Button>
+            <Spacer size='small' />
+          </Col>
+        </Row>
+      </Container>
     );
   } else {
     return (

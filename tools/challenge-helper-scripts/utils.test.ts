@@ -60,6 +60,7 @@ describe('Challenge utils helper scripts', () => {
         stepNum: 3
       });
 
+      // eslint-disable-next-line @typescript-eslint/no-base-to-string
       expect(step.toString()).toEqual(mockChallengeId);
       expect(ObjectID).toHaveBeenCalledTimes(1);
 

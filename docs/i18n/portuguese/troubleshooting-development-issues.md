@@ -16,7 +16,7 @@ Se você está em um sistema operacional diferente ou se ainda está encontrando
 
 Quando você fizer a build no client, o Gatsby armazenará em cache as fontes, as strings de idioma e a interface do usuário. Se um deles não estiver em cache, execute o seguinte:
 
-```console
+```bash
 pnpm run clean
 pnpm install
 pnpm run seed
@@ -50,29 +50,15 @@ git clean -ifdX
 
 ## Problemas com API, login, envio de desafios, etc.
 
-Se você não conseguir fazer o login e se vir um banner com uma mensagem de erro dizendo que isso será reportado ao freeCodeCamp, verifique novamente se a porta local `3000` não está em uso por um programa diferente.
+Se você não conseguir fazer o login e se vir um banner com uma mensagem de erro dizendo que o erro será reportado ao freeCodeCamp, verifique novamente se a porta local `3000` não está em uso por um programa diferente.
 
-<!-- tabs:start -->
-
-#### **macOS/Linux/WSL no Windows - No Terminal:**
-
-```console
+#### **A partir do Terminal:**
+```bash
 netstat -a | grep "3000"
 
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-#### **No Windows – no PowerShell com privilégios:**
-
-```powershell
-netstat -ab | Select-String "3000"
-
-TCP    0.0.0.0:3000           DESKTOP      LISTENING
-```
-
-<!-- tabs:end -->
-
----
 
 ## Problemas de logout ao navegar
 

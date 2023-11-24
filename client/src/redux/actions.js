@@ -106,6 +106,11 @@ export const linkMsUsername = createAction(actionTypes.linkMsUsername);
 export const unlinkMsUsername = createAction(actionTypes.unlinkMsUsername);
 export const setMsUsername = createAction(actionTypes.setMsUsername);
 
+export const submitSurvey = createAction(actionTypes.submitSurvey);
+export const submitSurveyComplete = createAction(
+  actionTypes.submitSurveyComplete
+);
+
 export const setIsProcessing = createAction(actionTypes.setIsProcessing);
 
 export const closeSignoutModal = createAction(actionTypes.closeSignoutModal);
