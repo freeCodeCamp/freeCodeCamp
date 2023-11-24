@@ -130,6 +130,12 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
     }
     updateSearchQuery(query);
 
+    //clear input value
+    const searchInput = e.currentTarget?.children?.[0] as HTMLInputElement;
+    if (searchInput) {
+      searchInput.value = '';
+    }
+
     // For Learn search results page
     // return navigate('/search');
 
