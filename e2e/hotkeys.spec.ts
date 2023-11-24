@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 const course =
-  '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code';
+  '/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form';
 const editorPaneLabel =
   'Editor content;Press Alt+F1 for Accessibility Options.';
 
@@ -29,31 +29,35 @@ test('User can interact with the app using the keyboard', async ({
 
   await page.goto(course);
 
-  await expect(page.getByLabel(editorPaneLabel)).toBeFocused();
+  await page.getByLabel(editorPaneLabel).focus();
   await page.getByLabel(editorPaneLabel).press('Escape');
   await expect(page.getByLabel(editorPaneLabel)).not.toBeFocused();
+  await page.keyboard.press('r');
+  await expect(page.getByTestId('instructions-panel')).toBeFocused();
 
   await page.keyboard.press('n');
-  const nextCourse = '**/declare-javascript-variables';
+  const nextCourse =
+    '**/learn-the-css-box-model-by-building-a-rothko-painting/step-1';
   await page.waitForURL(nextCourse);
   // Ensure that the page content is loaded before simulating user interactions.
   await expect(
-    page.getByRole('heading', { name: 'Declare JavaScript Variables' })
+    page.getByText("Here's a preview of what you will build")
   ).toBeVisible();
 
   await page.keyboard.press('p');
-  const previousCourse = '**/comment-your-javascript-code';
+  const previousCourse = '**/build-a-survey-form';
   await page.waitForURL(previousCourse);
   // Ensure that the page content is loaded before simulating user interactions.
-  await expect(
-    page.getByRole('heading', { name: 'Comment Your JavaScript Code' })
-  ).toBeVisible();
+  await page.getByText('Start coding!').click();
 
+  await page.getByLabel(editorPaneLabel).focus();
+  await page.getByLabel(editorPaneLabel).press('Escape');
+  await expect(page.getByLabel(editorPaneLabel)).not.toBeFocused();
   await page.keyboard.press('e');
   await expect(page.getByLabel(editorPaneLabel)).toBeFocused();
 
   await page.keyboard.press('Control+Enter');
-  await expect(page.getByText('running test')).toBeVisible();
+  await expect(page.getByTestId('test-fail-icon').first()).toBeVisible();
 
   // Show shortcuts (shift+/) is covered by the shortcuts-modal tests
 });

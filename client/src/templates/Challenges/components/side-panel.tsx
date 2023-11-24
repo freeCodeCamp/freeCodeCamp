@@ -77,6 +77,7 @@ export function SidePanel({
       className='instructions-panel'
       ref={instructionsPanelRef}
       tabIndex={-1}
+      data-playwright-test-label='instructions-panel'
     >
       {challengeTitle}
       {challengeDescription}
