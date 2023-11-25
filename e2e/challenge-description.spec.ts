@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Challenge Description Component Tests', () => {
-  test('check components rendering', async ({ page }) => {
+  test('should display the content correctly', async ({ page }) => {
     const challengeDescription = page.getByTestId('challenge-description');
     await expect(challengeDescription).toBeVisible();
     await expect(challengeDescription).toHaveText(/ */);
