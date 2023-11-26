@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '@freecodecamp/react-bootstrap';
 import {
   Tabs,
   TabsContent,
@@ -89,16 +88,14 @@ function SelectionTabs({
             );
           })}
         </Tabs>
-        <Button
-          block={true}
-          bsStyle='primary'
+        <button
           className='text-center confirm-donation-btn donate-btn-group'
           type='submit'
           data-cy='donation-tier-selection-button'
           onClick={() => setShowDonateForm(true)}
         >
           {t('buttons.donate')}
-        </Button>
+        </button>
         <Spacer size='medium' />
       </Col>
     </Row>
@@ -109,12 +106,14 @@ function DonationFormRow({
   handleProcessing,
   isMinimalForm,
   setShowDonateForm,
-  donationAmount
+  donationAmount,
+  paymentContext
 }: {
   handleProcessing?: () => void;
   isMinimalForm?: boolean;
   setShowDonateForm: React.Dispatch<React.SetStateAction<boolean>>;
   donationAmount: DonationAmount;
+  paymentContext: PaymentContext;
 }) {
   return (
     <Row>
@@ -122,7 +121,7 @@ function DonationFormRow({
         <DonateForm
           handleProcessing={handleProcessing}
           isMinimalForm={isMinimalForm}
-          paymentContext={PaymentContext.Modal}
+          paymentContext={paymentContext}
           editAmount={() => setShowDonateForm(false)}
           selectedDonationAmount={donationAmount}
         />
@@ -135,7 +134,8 @@ function DonationFormRow({
 const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
   handleProcessing,
   setShowHeaderAndFooter,
-  isMinimalForm
+  isMinimalForm,
+  paymentContext
 }) => {
   const [donationAmount, setDonationAmount] = useState(defaultTierAmount);
 
@@ -160,6 +160,7 @@ const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
           handleProcessing={handleProcessing}
           setShowDonateForm={setShowDonateForm}
           isMinimalForm={isMinimalForm}
+          paymentContext={paymentContext}
         />
       </div>
     </>

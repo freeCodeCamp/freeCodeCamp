@@ -18,7 +18,7 @@ dashedName: problem-247-squares-under-a-hyperbola
 
 <img class="img-responsive center-block" alt="рисунок з квадратами під гіперболою" src="https://cdn.freecodecamp.org/curriculum/project-euler/squares-under-a-hyperbola.gif" style="background-color: white; padding: 10px;" />
 
-The diagram shows some such squares labeled by number.
+На рисунку зображено декілька таких квадратів, позначених числами.
 
 $S_2$ має один квадрат зліва та жодного знизу, тому індексом $S_2$ є (1, 0).
 
