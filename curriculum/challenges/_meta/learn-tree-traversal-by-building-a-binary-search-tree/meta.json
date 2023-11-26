@@ -281,12 +281,20 @@
       "title": "Step 67"
     },
     {
-      "id": "655a5908085cdf99b7630646",
+      "id": "6560fa87deedb9ebb3de0feb",
       "title": "Step 68"
     },
     {
-      "id": "655a59607b0d2e9b0f5d69e5",
+      "id": "655a5908085cdf99b7630646",
       "title": "Step 69"
+    },
+    {
+      "id": "655a59607b0d2e9b0f5d69e5",
+      "title": "Step 70"
+    },
+    {
+      "id": "6560fa1bd9ad1ee988648425",
+      "title": "Step 71"
     }
   ],
   "helpCategory": "Python"

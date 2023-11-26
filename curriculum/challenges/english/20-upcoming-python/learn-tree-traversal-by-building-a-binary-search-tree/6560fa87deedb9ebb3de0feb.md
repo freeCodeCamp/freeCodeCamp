@@ -1,22 +1,20 @@
 ---
-id: 655a59607b0d2e9b0f5d69e5
-title: Step 70
+id: 6560fa87deedb9ebb3de0feb
+title: Step 68
 challengeType: 20
-dashedName: step-70
+dashedName: step-68
 ---
 
 # --description--
 
-As a last step, search for 40. It should be deleted.
-
-With this, you have finished the implementation of the binary search tree.
+Now, delete 40 from the tree.
 
 # --hints--
 
-You should print the results of the search for 40 by calling the `search` method on `bst`
+Call the `delete` method on `bst` with the key `40`.
 
 ```js
-assert.match(code, /bst\.search\(40\)/);
+assert.match(code, /bst\.delete\(40\)/);
 ```
 
 # --seed--
@@ -33,6 +31,9 @@ class TreeNode:
 class BinarySearchTree:
         def __init__(self):
             self.root = None
+
+        def __str__(self):
+            return str(self.key)
 
         def insert(self,key):
             self.root = self._insert(self.root, key)
@@ -102,14 +103,9 @@ print("Inorder traversal:", bst.inorder_traversal())
 
 print("Search for 40:", bst.search(40))
 
-def __str__(self):
-    return str(self.key)
-
-bst.delete(40)
-
-print("Inorder traversal after deleting 40:", bst.inorder_traversal())
-
 --fcc-editable-region--
     
 --fcc-editable-region--
+
+
 ```
