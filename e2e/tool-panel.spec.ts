@@ -50,4 +50,31 @@ test.describe('Tool Panel', () => {
 
     expect(helpLinks).toEqual(expectedHelpLinks);
   });
+
+  // "Watch a Video" is done by "video-modal.spec.ts"
+  test('check the buttons in "Get Help" dropdown except "Watch a Video"', async ({
+    page
+  }) => {
+    await page.getByTestId('get-help-dropdown').click();
+
+    const hintButton = page.getByTestId('get-hint');
+    const browserContext = page.context();
+    const [newPage] = await Promise.all([
+      browserContext.waitForEvent('page'),
+      hintButton.click()
+    ]);
+    await newPage.waitForLoadState();
+    await expect(newPage).toHaveURL(
+      'https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-increment-a-number-with-javascript/18201'
+    );
+    await newPage.close();
+
+    await page.getByTestId('ask-for-help').click();
+    await expect(
+      page.getByRole('heading', {
+        name: translations.buttons['ask-for-help'],
+        exact: true
+      })
+    ).toBeVisible();
+  });
 });
