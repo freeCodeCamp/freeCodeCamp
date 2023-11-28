@@ -23,7 +23,7 @@ A <dfn>palindrome</dfn> is a word or phrase that can be read the same way forwar
 1. When the `#text-input` element contains the word `eye` and the `#check-btn` element is clicked, the `#result` element should contain the text `eye is a palindrome`
 1. When the `#text-input` element contains the words `race car` and the `#check-btn` element is clicked, the `#result` element should contain the text `race car is a palindrome`
 1. When the `#text-input` element contains the text `not a palindrome` and the `#check-btn` element is clicked, the `#result` element should contain the text `not a palindrome is not a palindrome`
-1. When the `#text-input` element contains the text `No one made killer apparel like Dame Noon` and the `#check-btn` element is clicked, the `#result` element should contain the text `No one made killer apparel like Dame Noon`
+1. When the `#text-input` element contains the text `No one made killer apparel like Dame Noon` and the `#check-btn` element is clicked, the `#result` element should contain the text `No one made killer apparel like Dame Noon is a palindrome.`
 1. When the `#text-input` element contains the text `saippuakivikauppias` and the `#check-btn` element is clicked, the `#result` element should contain the text `saippuakivikauppias is a palindrome`
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!

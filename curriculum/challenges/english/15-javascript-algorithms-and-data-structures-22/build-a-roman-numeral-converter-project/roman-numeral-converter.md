@@ -67,7 +67,7 @@ const el = document.getElementById('output');
 assert(!!el && el.nodeName.toLowerCase() === 'div');
 ```
 
-1. When you click on the `#convert-btn` element without entering a value into the `#number` element, an alert should appear with the text `Please enter a valid number`.
+When you click on the `#convert-btn` element without entering a value into the `#number` element, an alert should appear with the text `Please enter a valid number`.
 
 ```js
 const numberInputEl = document.getElementById('number');
