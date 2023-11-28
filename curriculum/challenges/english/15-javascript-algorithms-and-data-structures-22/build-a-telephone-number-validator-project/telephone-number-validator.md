@@ -98,13 +98,12 @@ When you click on the `#check-btn` element without entering a value into the `#u
 ```js
 const userInput = document.getElementById('user-input');
 const checkBtn = document.getElementById('check-btn');
-// Override alert
-window.alert = (message) => {
-  assert(message.trim().toLowerCase() === 'please provide a phone number');
-};
+let alertMessage;
+window.alert = (message) => alertMessage = message; // Override alert and store message
 
 userInput.value = '';
 checkBtn.click();
+assert(alertMessage.trim().replace(/[.,?!]/g, '').toLowerCase() === 'please provide a phone number');
 ```
 
 When you click on the `#clear-btn` element, the content within the `#results-div` element should be removed.
