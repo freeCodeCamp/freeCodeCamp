@@ -76,7 +76,7 @@ const outputEl = document.getElementById('output');
 
 numberInputEl.value = '';
 convertBtnEl.click();
-assert(outputEl.innerText.trim().replace(/[.,?!]/g, '').toLowerCase() === 'please enter a valid number');
+assert(outputEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase() === 'please enter a valid number');
 ```
 
 When the `#number` element contains the number `-1` and the `#convert-btn` element is clicked, the `#output` element should contain the text `Please enter a number greater than or equal to 1`
@@ -88,7 +88,7 @@ const outputEl = document.getElementById('output');
 
 numberInputEl.value = '-1';
 convertBtnEl.click();
-assert(outputEl.innerText.trim().replace(/[.,?!]/g, '').toLowerCase() === 'please enter a number greater than or equal to 1');
+assert(outputEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase() === 'please enter a number greater than or equal to 1');
 ```
 
 When the `#number` element contains the number `4000` or greater and the `#convert-btn` element is clicked, the `#output` element should contain the text `Please enter a number less than or equal to 3999`.
@@ -100,7 +100,7 @@ const outputEl = document.getElementById('output');
 
 numberInputEl.value = '4000';
 convertBtnEl.click();
-assert(outputEl.innerText.trim().replace(/[.,?!]/g, '').toLowerCase() === 'please enter a number less than or equal to 3999');
+assert(outputEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase() === 'please enter a number less than or equal to 3999');
 ```
 
 When the `#number` element contains the number `9` and the `#convert-btn` element is clicked, the `#output` element should contain the text `IX`.
