@@ -1,0 +1,16 @@
+{
+  "name": "Learn How to Work with Numbers and Strings by Implementing the Luhn Algorithm",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm",
+  "order": 43,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "upcoming-python",
+  "superOrder": 20,
+  "isBeta": true,
+  "challengeOrder": [{ "id": "6565a536ba1f9f25bd30e88b", "title": "Step 1" }],
+  "helpCategory": "Python"
+}
