@@ -20,7 +20,6 @@ In this project, you'll build an app that will search for Pokémon by name or ID
 1. You should have an element with an `id` of `pokemon-id`
 1. You should have an element with an `id` of `weight`
 1. You should have an element with an `id` of `height`
-1. You should have an `img` element with an `id` of `sprite`
 1. You should have an element with an `id` of `types`
 1. You should have an element with an `id` of `hp`
 1. You should have an element with an `id` of `attack`
@@ -28,22 +27,22 @@ In this project, you'll build an app that will search for Pokémon by name or ID
 1. You should have an element with an `id` of `special-attack`
 1. You should have an element with an `id` of `special-defense`
 1. You should have an element with an `id` of `speed`
-1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, and `#special-defense` elements should be `PIKACHU`, `#25` or `25`, `Weight: 60` or `60`, `Height: 4` or `4`, `35`, `55`, `40`, `50`, `50`, and `90`, respectively.
-1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `src` attribute of the `#sprite` element should be set to the Pokémon's `front_default` sprite
+1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, and `#special-defense` elements should be `PIKACHU`, `#25` or `25`, `Weight: 60` or `60`, `Height: 4` or `4`, `35`, `55`, `40`, `50`, `50`, and `90`, respectively
+1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, you should add an `img` element with the `id` of `sprite` and the `src` set to the Pokémon's `front_default` sprite to the page
 1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `#types` element should contain a single inner element with the value `ELECTRIC`
 1. When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, and `#special-defense` elements should be `GENGAR`, `#94` or `94`, `Weight: 405` or `405`, `Height: 15` or `15`, `60`, `65`, `60`, `130`, `75`, and `110`, respectively
-1. When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `src` attribute of the `#sprite` element should be set to the Pokémon's `front_default` sprite
+1. When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, you should add an `img` element with the `id` of `sprite` and the `src` set to the Pokémon's `front_default` sprite to the page
 1. When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `#types` element should contain a two inner element with the text values `GHOST` and `POISON`, respectively
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
 # --hints--
 
-You should have an `input` element with an `id` of `search-input`.
+You should have an `input` element with an `id` of `search-input` and is **required**.
 
 ```js
 const el = document.getElementById('search-input');
-assert(!!el && el.nodeName.toLowerCase() === 'input');
+assert(!!el && el.nodeName.toLowerCase() === 'input' && el.required);
 ```
 
 You should have a `button` element with an `id` of `search-button`.
@@ -78,13 +77,6 @@ You should have an element with an `id` of `height`.
 
 ```js
 const el = document.getElementById('height');
-assert(!!el);
-```
-
-You should have an `img` element with an `id` of `sprite`.
-
-```js
-const el = document.getElementById('sprite');
 assert(!!el);
 ```
 
@@ -182,7 +174,7 @@ async () => {
 };
 ```
 
-When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `src` attribute of the `#sprite` element should be set to the Pokémon's `front_default` sprite.
+When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, you should add an `img` element with the `id` of `sprite` and the `src` set to the Pokémon's `front_default` sprite to the page.
 
 ```js
 async () => {
@@ -275,7 +267,7 @@ async () => {
 };
 ```
 
-When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `src` attribute of the `#sprite` element should be set to the Pokémon's `front_default` sprite.
+When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, you should add an `img` element with the `id` of `sprite` and the `src` set to the Pokémon's `front_default` sprite to the page.
 
 ```js
 async () => {
@@ -380,7 +372,7 @@ async () => {
             <span id="weight"></span>
             <span id="height"></span>
           </div>
-          <div class="sprite-container"><img alt id="sprite" /></div>
+          <div id="sprite-container" class="sprite-container"></div>
           <div id="types"></div>
         </div>
         <div class="bottom-container">
@@ -690,7 +682,7 @@ th {
 ```js
 const pokemonID = document.getElementById("pokemon-id");
 const pokemonName = document.getElementById("pokemon-name");
-const sprite = document.getElementById("sprite");
+const spriteContainer = document.getElementById("sprite-container");
 const types = document.getElementById("types");
 const height = document.getElementById("height");
 const weight = document.getElementById("weight");
@@ -716,8 +708,9 @@ const getPokemon = async () => {
     pokemonID.textContent = `#${data.id}`;
     weight.textContent = `Weight: ${data.weight}`;
     height.textContent = `Height: ${data.height}`;
-    sprite.src = data.sprites.front_default;
-    sprite.alt = `${data.name} front default sprite`;
+    spriteContainer.innerHTML = `
+      <img id="sprite" src="${data.sprites.front_default}" alt="${data.name} front default sprite">
+    `;
 
     // Set stats
     hp.textContent = data.stats[0].base_stat;
@@ -741,9 +734,8 @@ const getPokemon = async () => {
 };
 
 const resetDisplay = () => {
-  // reset image src and alt
-  sprite.src = "";
-  sprite.alt = "";
+  const sprite = document.getElementById("sprite");
+  if (sprite) sprite.remove();
 
   // reset stats
   pokemonName.textContent = "";
