@@ -1,8 +1,8 @@
 {
-  "name": "Learn to Talk About Hobbies and Interests",
+  "name": "Learn How to Discuss Roles and Responsibilities",
   "isUpcomingChange": true,
-  "dashedName": "learn-to-talk-about-hobbies-and-interests",
-  "order": 7,
+  "dashedName": "learn-how-to-discuss-roles-and-responsibilies",
+  "order": 8,
   "time": "5 hours",
   "template": "",
   "required": [],
@@ -10,7 +10,7 @@
   "isBeta": true,
   "challengeOrder": [
     {
-      "id": "655c1008a9659e8059217d76",
+      "id": "655c10318d878d812211966d",
       "title": "Dialogue: Placeholder"
     }
   ],
