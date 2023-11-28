@@ -18,6 +18,9 @@ test.describe('Link MS user component (unlinked signedOut user)', () => {
 
     const linkSignInText = page.getByTestId('link-signin-text');
     await expect(linkSignInText).toBeVisible();
+
+    const signinButtons = page.getByTestId('header-sign-in-button');
+    await expect(signinButtons).toHaveCount(2);
   });
 });
 
@@ -73,5 +76,32 @@ test.describe('Link MS user component (unlinked signedIn user)', () => {
       'placeholder',
       'https://learn.microsoft.com/en-us/users/username/transcript/transcriptId'
     );
+
+    const linkAccountButton = page.getByRole('button', {
+      name: 'Link Account'
+    });
+    await expect(linkAccountButton).toBeVisible();
+  });
+
+  test('Check transcript link input field', async ({ page }) => {
+    const transcriptLinkInput = page.getByLabel(
+      translations.learn.ms['transcript-label']
+    );
+    const linkAccountButton = page.getByRole('button', {
+      name: 'Link Account'
+    });
+    await expect(linkAccountButton).toBeDisabled();
+
+    await transcriptLinkInput.fill('1');
+    const invalidText =
+      'Your transcript link is not correct, it should have the following form: https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID - check the UPPERCASE items in your link are correct.';
+    await expect(page.getByText(invalidText)).toBeVisible();
+    await expect(linkAccountButton).toBeDisabled();
+
+    await transcriptLinkInput.fill(
+      'https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/1'
+    );
+    await expect(page.getByText(invalidText)).not.toBeVisible();
+    await expect(linkAccountButton).toBeEnabled();
   });
 });
