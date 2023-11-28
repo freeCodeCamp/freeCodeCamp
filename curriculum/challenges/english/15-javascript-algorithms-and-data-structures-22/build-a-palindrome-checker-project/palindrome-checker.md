@@ -346,7 +346,7 @@ const checkForPalindrome = (input) => {
     return;
   }
 
-  if (hasSpecialCharactersOrDigits === true) {
+  if (hasSpecialCharactersOrDigits) {
     alert("Input should not include numbers and special characters");
     return;
   }
