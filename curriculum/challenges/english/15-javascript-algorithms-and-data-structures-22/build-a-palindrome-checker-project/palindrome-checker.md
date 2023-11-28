@@ -51,7 +51,6 @@ const el = document.getElementById('result');
 assert(!!el && el.nodeName.toLowerCase() === 'div');
 ```
 
-
 When you click on the `#check-btn` element without entering a value into the `#text-input` element, an alert should appear with the text `Please input a value`.
 
 ```js
