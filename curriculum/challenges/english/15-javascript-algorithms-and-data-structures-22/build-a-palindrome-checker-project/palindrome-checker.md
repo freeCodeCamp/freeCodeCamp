@@ -62,7 +62,7 @@ window.alert = (message) => alertMessage = message; // Override alert and store 
 
 inputEl.value = '';
 checkBtn.click();
-assert(alertMessage.trim().toLowerCase() === 'please input a value');
+assert(alertMessage.trim().replace(/[.,?!]/g, '').toLowerCase() === 'please input a value');
 ```
 
 When the `#text-input` element contains special characters or digits and the `#check-btn` element is clicked, an alert should appear with the text `Input should not include numbers and special characters`.
@@ -75,7 +75,7 @@ window.alert = (message) => alertMessage = message; // Override alert and store 
 
 inputEl.value = 'racecar123!';
 checkBtn.click();
-assert(alertMessage.trim().toLowerCase() === 'input should not include numbers and special characters');
+assert(alertMessage.trim().replace(/[.,?!]/g, '').toLowerCase() === 'input should not include numbers and special characters');
 ```
 
 When the `#text-input` element only contains the letter `A` and the `#check-btn` element is clicked, the `#result` element should contain the text `A is a palindrome`.
