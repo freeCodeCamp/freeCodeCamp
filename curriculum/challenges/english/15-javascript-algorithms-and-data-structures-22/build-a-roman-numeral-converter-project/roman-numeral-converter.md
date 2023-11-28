@@ -33,9 +33,9 @@ Roman numerals are based on seven symbols and can be written using various combi
 1. You should have an `input` element with an `id` of `number`
 1. You should have a `button` element with an `id` of `convert-btn`
 1. You should have a `div` element with an `id` of `output`
-1. When you click on the `#convert-btn` element without entering a value into the `#number` element, an alert should appear with the text `Please enter a valid number`
-1. When the `#number` element contains the number `-1` and the `#convert-btn` element is clicked, an alert should appear with the text `Please enter a number greater than or equal to 1`
-1. When the `#number` element contains the number `4000` or greater and the `#convert-btn` element is clicked, an alert should appear with the text `Please enter a number less than or equal to 3999`
+1. When you click on the `#convert-btn` element without entering a value into the `#number` element, the `#output` element should contain the text `Please enter a valid number`
+1. When the `#number` element contains the number `-1` and the `#convert-btn` element is clicked, the `#output` element should contain the text `Please enter a number greater than or equal to 1`
+1. When the `#number` element contains the number `4000` or greater and the `#convert-btn` element is clicked, the `#output` element should contain the text `Please enter a number less than or equal to 3999`
 1. When the `#number` element contains the number `9` and the `#convert-btn` element is clicked, the `#output` element should contain the text `IX`
 1. When the `#number` element contains the number `16` and the `#convert-btn` element is clicked, the `#output` element should contain the text `XVI`
 1. When the `#number` element contains the number `649` and the `#convert-btn` element is clicked, the `#output` element should contain the text `DCXLIX`
@@ -67,46 +67,40 @@ const el = document.getElementById('output');
 assert(!!el && el.nodeName.toLowerCase() === 'div');
 ```
 
-When you click on the `#convert-btn` element without entering a value into the `#number` element, an alert should appear with the text `Please enter a valid number`.
+When you click on the `#convert-btn` element without entering a value into the `#number` element, the `#output` element should contain the text `Please enter a valid number`.
 
 ```js
 const numberInputEl = document.getElementById('number');
 const convertBtnEl = document.getElementById('convert-btn');
-// Override alert
-window.alert = (message) => {
-  assert(message.trim().toLowerCase() === 'please enter a valid number');
-};
+const outputEl = document.getElementById('output');
 
 numberInputEl.value = '';
 convertBtnEl.click();
+assert(outputEl.innerText.trim().replace(/[.,?!]/g, '').toLowerCase() === 'please enter a valid number');
 ```
 
-When the `#number` element contains the number `-1` and the `#convert-btn` element is clicked, an alert should appear with the text `Please enter a number greater than or equal to 1`.
+When the `#number` element contains the number `-1` and the `#convert-btn` element is clicked, the `#output` element should contain the text `Please enter a number greater than or equal to 1`
 
 ```js
 const numberInputEl = document.getElementById('number');
 const convertBtnEl = document.getElementById('convert-btn');
-// Override alert
-window.alert = (message) => {
-  assert(message.trim().toLowerCase() === 'please enter a number greater than or equal to 1');
-};
+const outputEl = document.getElementById('output');
 
 numberInputEl.value = '-1';
 convertBtnEl.click();
+assert(outputEl.innerText.trim().replace(/[.,?!]/g, '').toLowerCase() === 'please enter a number greater than or equal to 1');
 ```
 
-When the `#number` element contains the number `4000` or greater and the `#convert-btn` element is clicked, an alert should appear with the text `Please enter a number less than or equal to 3999`.
+When the `#number` element contains the number `4000` or greater and the `#convert-btn` element is clicked, the `#output` element should contain the text `Please enter a number less than or equal to 3999`.
 
 ```js
 const numberInputEl = document.getElementById('number');
 const convertBtnEl = document.getElementById('convert-btn');
-// Override alert
-window.alert = (message) => {
-  assert(message.trim().toLowerCase() === 'please enter a number less than or equal to 3999');
-};
+const outputEl = document.getElementById('output');
 
 numberInputEl.value = '4000';
 convertBtnEl.click();
+assert(outputEl.innerText.trim().replace(/[.,?!]/g, '').toLowerCase() === 'please enter a number less than or equal to 3999');
 ```
 
 When the `#number` element contains the number `9` and the `#convert-btn` element is clicked, the `#output` element should contain the text `IX`.
