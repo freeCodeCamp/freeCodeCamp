@@ -23,7 +23,7 @@ A <dfn>palindrome</dfn> is a word or phrase that can be read the same way forwar
 1. When the `#text-input` element contains the word `eye` and the `#check-btn` element is clicked, the `#result` element should contain the text `eye is a palindrome`
 1. When the `#text-input` element contains the words `race car` and the `#check-btn` element is clicked, the `#result` element should contain the text `race car is a palindrome`
 1. When the `#text-input` element contains the text `not a palindrome` and the `#check-btn` element is clicked, the `#result` element should contain the text `not a palindrome is not a palindrome`
-1. When the `#text-input` element contains the text `No one made killer apparel like Dame Noon` and the `#check-btn` element is clicked, the `#result` element should contain the text `No one made killer apparel like Dame Noon is a palindrome.`
+1. When the `#text-input` element contains the text `No one made killer apparel like Dame Noon` and the `#check-btn` element is clicked, the `#result` element should contain the text `No one made killer apparel like Dame Noon is a palindrome`
 1. When the `#text-input` element contains the text `saippuakivikauppias` and the `#check-btn` element is clicked, the `#result` element should contain the text `saippuakivikauppias is a palindrome`
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
@@ -57,13 +57,12 @@ When you click on the `#check-btn` element without entering a value into the `#t
 ```js
 const inputEl = document.getElementById('text-input');
 const checkBtn = document.getElementById('check-btn');
-// Override alert
-window.alert = (message) => {
-  assert(message.trim().toLowerCase() === 'please input a value');
-};
+let alertMessage;
+window.alert = (message) => alertMessage = message; // Override alert and store message
 
 inputEl.value = '';
 checkBtn.click();
+assert(alertMessage.trim().toLowerCase() === 'please input a value');
 ```
 
 When the `#text-input` element contains special characters or digits and the `#check-btn` element is clicked, an alert should appear with the text `Input should not include numbers and special characters`.
@@ -71,16 +70,15 @@ When the `#text-input` element contains special characters or digits and the `#c
 ```js
 const inputEl = document.getElementById('text-input');
 const checkBtn = document.getElementById('check-btn');
-// Override alert
-window.alert = (message) => {
-  assert(message.trim().toLowerCase() === 'input should not include numbers and special characters');
-};
+let alertMessage;
+window.alert = (message) => alertMessage = message; // Override alert and store message
 
 inputEl.value = 'racecar123!';
 checkBtn.click();
+assert(alertMessage.trim().toLowerCase() === 'input should not include numbers and special characters');
 ```
 
-When the `#text-input` element contains the letter `A` and the `#check-btn` element is clicked, the `#result` element should contain the text `A is a palindrome`.
+When the `#text-input` element only contains the letter `A` and the `#check-btn` element is clicked, the `#result` element should contain the text `A is a palindrome`.
 
 ```js
 const inputEl = document.getElementById('text-input');
@@ -128,7 +126,7 @@ checkBtn.click();
 assert(resultEl.innerText.trim().match(/^not a palindrome is not a palindrome/i));
 ```
 
-When the `#text-input` element contains the text `No one made killer apparel like Dame Noon` and the `#check-btn` element is clicked, the `#result` element should contain the text `No one made killer apparel like Dame Noon`.
+When the `#text-input` element contains the text `No one made killer apparel like Dame Noon` and the `#check-btn` element is clicked, the `#result` element should contain the text `No one made killer apparel like Dame Noon is a palindrome`.
 
 ```js
 const inputEl = document.getElementById('text-input');
