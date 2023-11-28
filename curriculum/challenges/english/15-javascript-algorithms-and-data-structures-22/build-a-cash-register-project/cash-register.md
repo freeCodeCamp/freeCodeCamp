@@ -93,7 +93,7 @@ const el = document.getElementById('purchase-btn');
 assert(!!el && el.nodeName.toLowerCase() === 'button');
 ```
 
-1. When the value in the `#cash` element is less than `price`, an alert should appear with the text `Customer does not have enough money to purchase the item`.
+When the value in the `#cash` element is less than `price`, an alert should appear with the text `Customer does not have enough money to purchase the item`.
 
 ```js
 const cashInput = document.getElementById('cash');
