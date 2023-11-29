@@ -1,8 +1,8 @@
 ---
 id: 655b4bbff1dbf66cb2ed4dac
-title: Step 77
+title: Step 81
 challengeType: 0
-dashedName: step-77
+dashedName: step-81
 ---
 
 # --description--
@@ -725,7 +725,7 @@ const renderSongs = (array) => {
     .map((song)=> {
       return `
       <li id="song-${song.id}" class="playlist-song">
-      <button class="playlist-song-info">
+      <button class="playlist-song-info" onclick="playSong(${song.id})">
           <span class="playlist-song-title">${song.title}</span>
           <span class="playlist-song-artist">${song.artist}</span>
           <span class="playlist-song-duration">${song.duration}</span>

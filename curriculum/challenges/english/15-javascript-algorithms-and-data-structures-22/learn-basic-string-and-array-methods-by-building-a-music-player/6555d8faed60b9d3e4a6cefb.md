@@ -1,15 +1,15 @@
 ---
 id: 6555d8faed60b9d3e4a6cefb
-title: Step 53
+title: Step 56
 challengeType: 0
-dashedName: step-53
+dashedName: step-56
 ---
 
 # --description--
 
 Use the arrow function to define a function called `setPlayButtonAccessibleText`. 
 
-This function will set the `aria-label` to the current song, or to the first song in the playlist. And if the palylist is empty, it sets the `aria-label` to `"Play"`.
+This function will set the `aria-label` to the current song, or to the first song in the playlist. And if the playlist is empty, it sets the `aria-label` to `"Play"`.
 
 # --hints--
 
@@ -680,7 +680,7 @@ const renderSongs = (array) => {
     .map((song)=> {
       return `
       <li id="song-${song.id}" class="playlist-song">
-      <button class="playlist-song-info">
+      <button class="playlist-song-info" onclick="playSong(${song.id})">
           <span class="playlist-song-title">${song.title}</span>
           <span class="playlist-song-artist">${song.artist}</span>
           <span class="playlist-song-duration">${song.duration}</span>
