@@ -1,0 +1,18 @@
+{
+  "name": "Learn How to Analyze Code Documentation",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-analyze-code-documentation",
+  "order": 20,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "655c17377f3b199fff96fa7f",
+      "title": "Dialogue: Placeholder"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}
