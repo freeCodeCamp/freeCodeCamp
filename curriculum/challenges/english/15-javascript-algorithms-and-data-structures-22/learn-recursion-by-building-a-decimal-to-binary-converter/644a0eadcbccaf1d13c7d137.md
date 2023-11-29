@@ -161,7 +161,7 @@ h1 {
 ```
 
 ```js
-const numberInput = document.getElementById("number");
+const numberInput = document.getElementById("number-input");
 const convertBtn = document.getElementById("convert");
 const result = document.getElementById("result");
 

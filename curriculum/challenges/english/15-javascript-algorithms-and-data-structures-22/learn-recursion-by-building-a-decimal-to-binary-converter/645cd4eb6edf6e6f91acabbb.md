@@ -161,7 +161,7 @@ const c = () => {
 
 console.log(a());
 
-const numberInput = document.getElementById("number");
+const numberInput = document.getElementById("number-input");
 const convertBtn = document.getElementById("convert");
 const result = document.getElementById("result");
 
