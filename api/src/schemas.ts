@@ -794,9 +794,9 @@ export const schemas = {
           Type.Object({
             id: Type.String(),
             completedDate: Type.Number(),
-            solution: Type.Union([Type.String(), Type.Undefined()]),
-            githubLink: Type.Union([Type.String(), Type.Undefined()]),
-            challengeType: Type.Union([Type.Number(), Type.Undefined()]),
+            solution: Type.Optional(Type.String()),
+            githubLink: Type.Optional(Type.String()),
+            challengeType: Type.Optional(Type.Number()),
             // Technically, files is optional, but the db default was [] and
             // the client treats null, undefined and [] equivalently.
             // TODO(Post-MVP): make this optional.
@@ -806,7 +806,7 @@ export const schemas = {
                 key: Type.String(),
                 ext: Type.String(),
                 name: Type.String(),
-                path: Type.Union([Type.String(), Type.Undefined()])
+                path: Type.Optional(Type.String())
               })
             ),
             isManuallyApproved: Type.Optional(Type.Boolean())
