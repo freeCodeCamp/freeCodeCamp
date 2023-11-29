@@ -300,15 +300,36 @@ describe('certificate routes', () => {
         });
 
         expect(user).toMatchObject({ isRespWebDesignCert: true });
-        expect(response.body).toMatchObject({
+        console.log(response.body);
+        expect(response.body).toStrictEqual({
           response: {
             message: 'flash.cert-claim-success',
+            type: 'success',
             variables: {
               name: 'Responsive Web Design',
               username: 'fcc'
             }
           },
-          isCertMap: {},
+          isCertMap: {
+            isRespWebDesignCert: true,
+            isJsAlgoDataStructCert: false,
+            isFrontEndLibsCert: false,
+            is2018DataVisCert: false,
+            isApisMicroservicesCert: false,
+            isInfosecQaCert: false,
+            isQaCertV7: false,
+            isInfosecCertV7: false,
+            isFrontEndCert: false,
+            isBackEndCert: false,
+            isDataVisCert: false,
+            isFullStackCert: false,
+            isSciCompPyCertV7: false,
+            isDataAnalysisPyCertV7: false,
+            isMachineLearningPyCertV7: false,
+            isRelationalDatabaseCertV8: false,
+            isCollegeAlgebraPyCertV8: false,
+            isFoundationalCSharpCertV8: false
+          },
           completedChallenges: [
             {
               completedDate: 123456789,

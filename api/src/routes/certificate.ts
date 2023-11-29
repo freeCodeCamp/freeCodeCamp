@@ -249,7 +249,9 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             }
           },
           isCertMap: updatedIsCertMap,
-          completedChallenges: updatedUserSansNull.completedChallenges
+          completedChallenges: updatedUserSansNull.completedChallenges.map(x =>
+            removeNulls(x)
+          )
         } as const;
       } catch (e) {
         fastify.log.error(e);
