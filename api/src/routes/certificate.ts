@@ -12,7 +12,7 @@ import {
   legacyFullStackCertification,
   upcomingCertifications
 } from '../../../shared/config/certification-settings';
-import { removeNulls } from '../utils/normalize';
+import { normalizeChallenges, removeNulls } from '../utils/normalize';
 import { CompletedChallenge } from '../utils/common-challenge-functions';
 import { SHOW_UPCOMING_CHANGES } from '../utils/env';
 
@@ -124,7 +124,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
               message: 'flash.name-needed'
             },
             isCertMap,
-            completedChallenges
+            completedChallenges: normalizeChallenges(completedChallenges)
           } as const;
         }
 
@@ -139,7 +139,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
               }
             },
             isCertMap,
-            completedChallenges
+            completedChallenges: normalizeChallenges(completedChallenges)
           } as const;
         }
 
@@ -160,7 +160,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
               }
             },
             isCertMap,
-            completedChallenges
+            completedChallenges: normalizeChallenges(completedChallenges)
           } as const;
         }
 
@@ -249,8 +249,8 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             }
           },
           isCertMap: updatedIsCertMap,
-          completedChallenges: updatedUserSansNull.completedChallenges.map(x =>
-            removeNulls(x)
+          completedChallenges: normalizeChallenges(
+            updatedUserSansNull.completedChallenges
           )
         } as const;
       } catch (e) {
