@@ -31,6 +31,13 @@ const defaultFetchState = {
   error: null
 };
 
+const updateCardDefaultState = {
+  redirecting: false,
+  success: false,
+  complete: false,
+  error: null
+};
+
 export const defaultDonationFormState = {
   redirecting: false,
   processing: false,
@@ -75,6 +82,9 @@ const initialState = {
   renderStartTime: null,
   donationFormState: {
     ...defaultDonationFormState
+  },
+  updateCardState: {
+    ...updateCardDefaultState
   }
 };
 
@@ -142,6 +152,18 @@ export const reducer = handleActions(
         renderStartTime: payload
       };
     },
+    [actionTypes.updateCardError]: (state, { payload }) => ({
+      ...state,
+      updateCardState: { ...updateCardDefaultState, error: payload }
+    }),
+    [actionTypes.updateCardRedirecting]: state => ({
+      ...state,
+      updateCardState: { ...updateCardDefaultState, redirecting: true }
+    }),
+    [actionTypes.updateCardComplete]: state => ({
+      ...state,
+      updateCardState: { ...updateCardDefaultState, success: true }
+    }),
     [actionTypes.updateDonationFormState]: (state, { payload }) => ({
       ...state,
       donationFormState: { ...state.donationFormState, ...payload }

@@ -28,6 +28,7 @@ export const recentlyClaimedBlockSelector = state =>
   state[MainApp].recentlyClaimedBlock;
 export const donationFormStateSelector = state =>
   state[MainApp].donationFormState;
+export const updateCardStateSelector = state => state[MainApp].updateCardState;
 export const signInLoadingSelector = state =>
   userFetchStateSelector(state).pending;
 export const showCertSelector = state => state[MainApp].showCert;

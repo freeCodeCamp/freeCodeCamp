@@ -1,5 +1,6 @@
 import debug from 'debug';
 import Stripe from 'stripe';
+import { ObjectId } from 'mongodb';
 
 import { donationSubscriptionConfig } from '../../../../shared/config/donation-settings';
 import keys from '../../../config/secrets';
@@ -181,6 +182,50 @@ export default function donateBoot(app, done) {
       });
   }
 
+  async function handleStripeCardUpdate(req, res) {
+    const {
+      user: { id }
+    } = req;
+
+    const { Donation } = app.models;
+    log('Updating stripe card for user: ', ObjectId(id));
+
+    /* eslint-disable camelcase */
+    try {
+      // multiple donations support should be added
+      const donation = await Donation.findOne({
+        where: { userId: ObjectId(id) }
+      });
+
+      if (!donation) throw Error();
+
+      const { customerId, subscriptionId } = donation;
+
+      // updating customer payment method is handled by webhook handler
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        mode: 'setup',
+        customer: customerId,
+        setup_intent_data: {
+          metadata: {
+            customer_id: customerId,
+            subscription_id: subscriptionId
+          }
+        },
+        success_url: `${process.env.HOME_LOCATION}/update-stripe-card?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${process.env.HOME_LOCATION}/update-stripe-card`
+      });
+      // /* eslint-enable camelcase */
+      return res.status(200).json({ session_id: session.id });
+    } catch (err) {
+      log(err.message);
+      return res.status(500).send({
+        type: 'danger',
+        message: 'Something went wrong.'
+      });
+    }
+  }
+
   function updatePaypal(req, res) {
     const { headers, body } = req;
     return Promise.resolve(req)
@@ -220,6 +265,7 @@ export default function donateBoot(app, done) {
   } else {
     api.post('/charge-stripe', createStripeDonation);
     api.post('/charge-stripe-card', handleStripeCardDonation);
+    api.post('/update-stripe-card', handleStripeCardUpdate);
     api.post('/add-donation', addDonation);
     hooks.post('/update-paypal', updatePaypal);
     donateRouter.use('/donate', api);

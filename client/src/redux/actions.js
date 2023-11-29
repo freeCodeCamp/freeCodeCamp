@@ -68,6 +68,13 @@ export const postChargeProcessing = createAction(
 export const postChargeComplete = createAction(actionTypes.postChargeComplete);
 export const postChargeError = createAction(actionTypes.postChargeError);
 
+export const updateCard = createAction(actionTypes.updateCard);
+export const updateCardError = createAction(actionTypes.updateCardError);
+export const updateCardComplete = createAction(actionTypes.updateCardComplete);
+export const updateCardRedirecting = createAction(
+  actionTypes.updateCardRedirecting
+);
+
 export const fetchProfileForUser = createAction(
   actionTypes.fetchProfileForUser
 );

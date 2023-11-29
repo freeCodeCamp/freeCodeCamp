@@ -9,10 +9,14 @@ import {
   takeLeading
 } from 'redux-saga/effects';
 
+import { loadStripe } from '@stripe/stripe-js';
+import envData from '../../config/env.json';
+
 import {
   addDonation,
   postChargeStripe,
-  postChargeStripeCard
+  postChargeStripeCard,
+  updateStripeCard
 } from '../utils/ajax';
 import { stringifyDonationEvents } from '../utils/analytics-strings';
 import { PaymentProvider } from '../../../shared/config/donation-settings';
@@ -24,7 +28,9 @@ import {
   postChargeError,
   preventBlockDonationRequests,
   setCompletionCountWhenShownProgressModal,
-  executeGA
+  executeGA,
+  updateCardError,
+  updateCardRedirecting
 } from './actions';
 import {
   isDonatingSelector,
@@ -34,6 +40,9 @@ import {
 } from './selectors';
 
 const defaultDonationErrorMessage = i18next.t('donate.error-2');
+const updateCardErrorMessage = i18next.t('donate.error-3');
+
+const { stripePublicKey } = envData;
 
 function* showDonateModalSaga() {
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
@@ -155,10 +164,31 @@ export function* setDonationCookie() {
   }
 }
 
+function* updateCardSaga() {
+  yield put(updateCardRedirecting());
+  try {
+    const {
+      data: { session_id }
+    } = yield call(updateStripeCard, {
+      location: window.location.href
+    });
+
+    if (!session_id) throw new Error('No session_id');
+    const stripe = yield call(loadStripe, stripePublicKey);
+    stripe.redirectToCheckout({
+      sessionId: session_id
+    });
+  } catch (error) {
+    console.log('error');
+    yield put(updateCardError(updateCardErrorMessage));
+  }
+}
+
 export function createDonationSaga(types) {
   return [
     takeEvery(types.tryToShowDonationModal, showDonateModalSaga),
     takeLeading(types.postCharge, postChargeSaga),
-    takeEvery(types.fetchUserComplete, setDonationCookie)
+    takeEvery(types.fetchUserComplete, setDonationCookie),
+    takeLeading(types.updateCard, updateCardSaga)
   ];
 }
