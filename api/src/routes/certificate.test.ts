@@ -300,7 +300,6 @@ describe('certificate routes', () => {
         });
 
         expect(user).toMatchObject({ isRespWebDesignCert: true });
-        console.log(response.body);
         expect(response.body).toStrictEqual({
           response: {
             message: 'flash.cert-claim-success',
@@ -358,6 +357,9 @@ describe('certificate routes', () => {
             },
             {
               challengeType: 7,
+              // TODO: use matcher for date near now
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              completedDate: expect.any(Number),
               files: [],
               id: '561add10cb82ac38a17513bc'
             }
