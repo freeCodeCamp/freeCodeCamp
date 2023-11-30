@@ -1,8 +1,8 @@
 ---
 id: 655bda6270ef334ad8a7f005
-title: "Bob's Reasons"
+title: Task 18
 challengeType: 19
-dashedName: bobs-reasons
+dashedName: task-18
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 

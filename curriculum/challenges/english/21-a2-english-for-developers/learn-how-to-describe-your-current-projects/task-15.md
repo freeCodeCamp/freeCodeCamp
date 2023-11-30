@@ -1,8 +1,8 @@
 ---
 id: 655bd57d0e13e146b2404569
-title: "Sarah's Reason for Analyzing Customer Data"
+title: task 15
 challengeType: 19
-dashedName: sarahs-reason-for-analyzing-customer-data
+dashedName: task-15
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 

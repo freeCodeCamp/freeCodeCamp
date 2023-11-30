@@ -1,8 +1,8 @@
 ---
 id: 655be33b7a463a5593c91cb4
-title: Surely
+title: Task 21
 challengeType: 22
-dashedName: surely
+dashedName: task-21
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 <!--

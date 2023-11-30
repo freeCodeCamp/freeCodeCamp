@@ -1,8 +1,8 @@
 ---
 id: 655ca014b022ff6692049b91
-title: Good Fortune
+title: Task 28
 challengeType: 22
-dashedName: good-fortune
+dashedName: task-28
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 <!--

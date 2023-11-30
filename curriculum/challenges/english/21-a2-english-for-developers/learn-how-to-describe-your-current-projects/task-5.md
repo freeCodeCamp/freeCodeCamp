@@ -1,8 +1,8 @@
 ---
 id: 655b63d0da84237d16c55d7e
-title: We Might Have Problems
+title: Task 5
 challengeType: 22
-dashedName: we-might-have-problems
+dashedName: task-5
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 

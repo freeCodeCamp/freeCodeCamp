@@ -1,8 +1,8 @@
 ---
 id: 655b5d955d8b2679be66a4db
-title: Asking About The Nature of a Project
+title: Task 2
 challengeType: 19
-dashedName: asking-about-the-nature-of-a-project
+dashedName: task-2
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 <!--

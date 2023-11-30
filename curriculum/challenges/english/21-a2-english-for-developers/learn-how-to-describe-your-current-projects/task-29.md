@@ -1,8 +1,8 @@
 ---
 id: 655cadb5df07e269cccaa056
-title: Key Words Amy Uses
+title: Task 29
 challengeType: 22
-dashedName: key-words-amy-uses
+dashedName: task-29
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 <!--

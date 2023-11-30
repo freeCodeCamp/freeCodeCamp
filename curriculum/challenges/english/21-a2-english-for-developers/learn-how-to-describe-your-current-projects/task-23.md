@@ -1,8 +1,8 @@
 ---
 id: 655c9b2e0bcbe16161996ab7
-title: "Mark's Purpose in Testing Software"
+title: Task 23
 challengeType: 19
-dashedName: marks-purpose-in-testing-software
+dashedName: task-23
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 <!--

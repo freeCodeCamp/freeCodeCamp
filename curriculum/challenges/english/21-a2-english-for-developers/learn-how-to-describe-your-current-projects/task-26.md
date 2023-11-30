@@ -1,8 +1,8 @@
 ---
 id: 655c9e73e89d886538976452
-title: "Maria's Work Description"
+title: Task 26
 challengeType: 22
-dashedName: marias-work-description
+dashedName: task-26
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 

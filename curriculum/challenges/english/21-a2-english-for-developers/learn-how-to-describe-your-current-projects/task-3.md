@@ -1,8 +1,8 @@
 ---
 id: 655b5ef161f6777ae5eb3ba4
-title: Checking For Problems
+title: Task 3
 challengeType: 19
-dashedName: checking-for-problems
+dashedName: task-3
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 

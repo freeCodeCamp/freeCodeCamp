@@ -1,8 +1,8 @@
 ---
 id: 655bdf9f7f844952b7e7f036
-title: "Contrast in Sarah's Statement"
+title: Task 20
 challengeType: 19
-dashedName: contrast-in-sarahs-statement
+dashedName: task-20
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 

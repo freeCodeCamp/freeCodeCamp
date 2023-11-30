@@ -1,8 +1,8 @@
 ---
 id: 655b6ca9c3e001838ac22d17
-title: Present Continuous Practice
+title: Task 11
 challengeType: 22
-dashedName: present-continuous-practice
+dashedName: task-11
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 

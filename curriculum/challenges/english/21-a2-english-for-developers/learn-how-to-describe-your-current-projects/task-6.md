@@ -1,8 +1,8 @@
 ---
 id: 655b6522da78357de8428a19
-title: Why Is James Using Special Tools 
+title: Task 6
 challengeType: 19
-dashedName: why-is-james-using-special-tools
+dashedName: task-6
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 

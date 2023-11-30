@@ -1,8 +1,8 @@
 ---
 id: 655bdc7e9c4116509df13f34
-title: Using Tools
+title: Task 19
 challengeType: 22
-dashedName: using-tools
+dashedName: task-19
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 

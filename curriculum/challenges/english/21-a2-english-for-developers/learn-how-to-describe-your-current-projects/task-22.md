@@ -1,8 +1,8 @@
 ---
 id: 655c9a89818e18606c18ca4b
-title: "Mark's Project Update"
+title: Task 22
 challengeType: 19
-dashedName: marks-project-update
+dashedName: task-22
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 <!--

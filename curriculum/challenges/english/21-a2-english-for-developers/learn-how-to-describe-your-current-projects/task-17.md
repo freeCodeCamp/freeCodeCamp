@@ -1,8 +1,8 @@
 ---
 id: 655bd91a858b2b4a30da3cad
-title: Making Pictures
+title: Task 17
 challengeType: 22
-dashedName: making-pictures
+dashedName: task-17
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 

@@ -1,8 +1,8 @@
 ---
 id: 655b62a491cb2d7c687a1a2a
-title: To Be Safe
+title: Task 4
 challengeType: 19
-dashedName: to-be-safe
+dashedName: task-4
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 <!--

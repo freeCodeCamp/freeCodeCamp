@@ -1,8 +1,8 @@
 ---
 id: 655b67f02eecf57fa75ceecf
-title: Stay Safe
+title: Task 8
 challengeType: 22
-dashedName: stay-safe
+dashedName: task-8
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 

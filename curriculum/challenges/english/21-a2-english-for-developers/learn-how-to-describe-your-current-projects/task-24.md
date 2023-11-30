@@ -1,8 +1,8 @@
 ---
 id: 655c9bcb5bedb4620acb6f18
-title: Reason for Additional Testing
+title: Task 24
 challengeType: 19
-dashedName: reason-for-additional-testing
+dashedName: task-24
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 <!--

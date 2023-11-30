@@ -1,8 +1,8 @@
 ---
 id: 655b6a58626e2a82be5a78eb
-title: If Someone Tries to Steal
+title: Task 10
 challengeType: 19
-dashedName: if-someone-tries-to-steal
+dashedName: task-10
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 

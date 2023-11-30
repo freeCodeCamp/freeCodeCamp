@@ -1,8 +1,8 @@
 ---
 id: 655c9d9470acf0643482b95b
-title: Think Thought
+title: Task 25
 challengeType: 19
-dashedName: think-thought
+dashedName: task-25
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 <!--

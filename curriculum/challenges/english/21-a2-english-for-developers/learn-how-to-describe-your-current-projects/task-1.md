@@ -1,8 +1,8 @@
 ---
 id: 655b5cc5a8b3897908c962f0
-title: Cybersecurity
+title: Task 1
 challengeType: 22
-dashedName: cybersecurity
+dashedName: task-1
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 

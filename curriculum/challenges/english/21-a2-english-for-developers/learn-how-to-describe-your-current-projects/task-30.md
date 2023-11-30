@@ -1,0 +1,57 @@
+---
+id: 656918c77e73780c34392e17
+title: Task 30
+challengeType: 22
+dashedName: task-30
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+---
+
+<!--
+AUDIO REFERENCE: 
+Brian: Hey Amy! I'm not working on anything big at the moment. I'm taking a short break to learn more about the frontend. It's good to stop a bit and refresh my skills. How about you?
+-->
+
+# --description--
+
+`Refresh` means to update or improve something. `Learn` is to gain knowledge or skill in something. `Skills` are the abilities to do things well. For example:
+`I refresh my memory by reviewing notes.` (improve memory)
+`She is learning to play the guitar.` (gaining knowledge)
+`Good writing skills are important.` (abilities)
+
+# --fillInTheBlank--
+
+## --sentence--
+
+`Brian: Hey Amy! I'm not working on _ big at the moment. I'm taking a _ break to learn more about the _. It's good to stop a bit and _ my skills. How about you?`
+
+## --blanks--
+
+`anything`
+
+### --feedback--
+
+Means Brian isn't working on any big tasks right now.
+
+---
+
+`short`
+
+### --feedback--
+
+Describes the length of Brian's break as not very long.
+
+---
+
+`frontend`
+
+### --feedback--
+
+`Frontend` refers to the part of website development that involves what users see.
+
+---
+
+`refresh`
+
+### --feedback--
+
+`Refresh` means Brian is improving or updating his abilities.

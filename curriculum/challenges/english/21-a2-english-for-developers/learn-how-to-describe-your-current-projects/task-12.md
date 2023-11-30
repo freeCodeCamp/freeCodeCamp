@@ -1,8 +1,8 @@
 ---
 id: 655b76340ecb8285060ab6d5
-title: Summarizing Actions
+title: Task 12
 challengeType: 19
-dashedName: summarizing-actions
+dashedName: task-12
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 

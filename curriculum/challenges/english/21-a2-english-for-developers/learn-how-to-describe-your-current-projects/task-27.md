@@ -1,8 +1,8 @@
 ---
 id: 655c9ee249f7ef65f6d2dd36
-title: Purpose of Communicating with the Client
+title: Task 27
 challengeType: 19
-dashedName: purpose-of-communicating-with-the-client
+dashedName: task-27
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 <!--
