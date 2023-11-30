@@ -1,7 +1,7 @@
 .fill-in-the-blank-input {
   padding: 0;
   text-align: center;
-  background-color: var(--quaternary-background);
+  background-color: var(--tertiary-background);
   color: var(--tertiary-color);
   border-radius: 0;
   font-family: var(--font-family-monospace);
@@ -9,7 +9,7 @@
   line-height: 1.5rem;
   z-index: 1;
   position: relative;
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--gray-45);
   border-left: none;
   border-right: none;
   border-bottom-width: 4px;
