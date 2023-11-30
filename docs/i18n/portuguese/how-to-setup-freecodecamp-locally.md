@@ -246,7 +246,7 @@ Em seguida, vamos criar o banco de dados. Nesta etapa, executamos o comando abai
 pnpm run seed
 ```
 
-Por padrão, você será conectado como um novo usuário sem nenhuma certificação concluída. Execute os seguintes comandos se precisar desenvolver com certificados concluídos:
+Por padrão, você será conectado como um novo usuário sem nenhuma certificação concluída. Execute o seguinte comando se precisar desenvolver com certificados concluídos ou escrever testes do Playwright:
 
 ```bash
 pnpm run seed:certified-user
@@ -278,12 +278,12 @@ Se você tiver problemas durante a instalação, confira a [seção de solução
 
 Uma rápida referência aos comandos que você precisará ao trabalhar localmente.
 
-| comando                        | descrição                                                                                                     |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| `pnpm install`                 | Instala/reinstala todas as dependências e inicializa os diferentes serviços.                                  |
-| `pnpm run seed`                | Creates authorized test users and inserts them into MongoDB. Also runs `seed:exams` and `seed:surveys` below. |
-| `pnpm run seed:certified-user` | Cria usuários de testes autorizados com certificações totalmente completas e os insere no MongoDB.            |
-| `pnpm run seed:exams`          | Cria exames e os insere no MongoDB.                                                                           |
-| `pnpm run seed:surveys`        | Creates surveys for defaults users and inserts them into MongoDB.                                             |
-| `pnpm run develop`             | Starts the freeCodeCamp API Server and Client Applications.                                                   |
-| `pnpm run clean`               | Uninstalls all dependencies and cleans up caches.                                                             |
+| comando                        | descrição                                                                                                        |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| `pnpm install`                 | Instala/reinstala todas as dependências e inicializa os diferentes serviços.                                     |
+| `pnpm run seed`                | Cria usuários de testes autorizados e os insere no MongoDB. Também executa `seed:exams` e `seed:surveys` abaixo. |
+| `pnpm run seed:certified-user` | Cria usuários de testes autorizados com certificações totalmente completas e os insere no MongoDB.               |
+| `pnpm run seed:exams`          | Cria exames e os insere no MongoDB.                                                                              |
+| `pnpm run seed:surveys`        | Cria pesquisas para usuários padrão e as insere no MongoDB.                                                      |
+| `pnpm run develop`             | Inicia o servidor de API do freeCodeCamp e aplicações de client.                                                 |
+| `pnpm run clean`               | Desinstala todas as dependências e limpa os caches.                                                              |

@@ -14,7 +14,7 @@ dashedName: test-if-a-string-contains-a-substring
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labeled `#14` in the `Strings` suite, change each `assert` to either `assert.include` or `assert.notInclude` to make the test pass (should evaluate to `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#14` в наборі `Strings` змініть кожний `assert` на `assert.include` або `assert.notInclude`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 

@@ -287,11 +287,11 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                       <source
                         src={`https://cdn.freecodecamp.org/${audioPath}`}
                         type='audio/mp3'
-                      ></source>
+                      />
                     </audio>
-                    <Spacer size='medium' />
                   </>
                 )}
+                <Spacer size='medium' />
                 <ObserveKeys>
                   {assignments.length > 0 && (
                     <>

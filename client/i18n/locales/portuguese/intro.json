@@ -1149,6 +1149,27 @@
       }
     }
   },
+  "a2-english-for-developers": {
+    "title": "A2 Inglês para Desenvolvedores (Beta)",
+    "intro": [
+      "Este curso, projetado para desenvolvedores, ensina a língua inglesa.",
+      "Mais texto aqui."
+    ],
+    "blocks": {
+      "learn-greetings-in-your-first-day-at-the-office": {
+        "title": "Aprenda saudações em seu primeiro dia no escritório",
+        "intro": ["Aprenda saudações."]
+      },
+      "learn-introductions-in-an-online-team-meeting": {
+        "title": "Aprenda apresentações em uma reunião on-line com a equipe",
+        "intro": ["Aprenda apresentações."]
+      },
+      "learn-conversation-starters-in-the-break-room": {
+        "title": "Aprenda a começar uma conversa na sala de descanso",
+        "intro": ["Aprender a iniciar uma conversa."]
+      }
+    }
+  },
   "example-certification": {
     "title": "Certificação de exemplo",
     "intro": ["placeholder"],

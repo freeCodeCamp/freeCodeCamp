@@ -14,7 +14,7 @@ dashedName: test-if-a-value-is-a-string
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labeled `#13` in the `Strings` suite, change each `assert` to either `assert.isString` or `assert.isNotString` to make the test pass (should evaluate to `true`). Не змінюйте аргументи, передані до тверджень.
+У межах `tests/1_unit-tests.js` під тестом з міткою `#13` в наборі `Strings` змініть кожний `assert` на `assert.isString` або `assert.isNotString`, щоб пройти тест (повинен дорівнювати `true`). Не змінюйте аргументи, передані до тверджень.
 
 # --hints--
 

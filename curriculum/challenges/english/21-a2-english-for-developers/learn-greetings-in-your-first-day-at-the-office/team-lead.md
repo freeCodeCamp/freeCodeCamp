@@ -18,7 +18,7 @@ A `team lead` is a person who leads or manages a team. In the dialogue, Maria in
 
 ## --blanks--
 
-team
+`team`
 
 ### --feedback--
 
@@ -26,7 +26,7 @@ Focus on the term Maria used to describe herself.
 
 ---
 
-lead
+`lead`
 
 ### --feedback--
 

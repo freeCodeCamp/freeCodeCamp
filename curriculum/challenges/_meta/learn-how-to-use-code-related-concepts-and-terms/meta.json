@@ -1,0 +1,18 @@
+{
+  "name": "Learn How to Use Code-related Concepts and Terms",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-use-code-related-concepts-and-terms",
+  "order": 13,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "655c12384a3d2e8a0d5e3efd",
+      "title": "Dialogue: Placeholder"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}
