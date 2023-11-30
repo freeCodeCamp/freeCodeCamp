@@ -26,7 +26,6 @@
     "off": "Off",
     "on": "On",
     "sign-in": "Sign in",
-    "sign-in-card-update": "Sign in to update your card",
     "sign-up-email-list": "Sign up for Quincy's weekly emails",
     "sign-out": "Sign out",
     "curriculum": "Curriculum",
@@ -380,6 +379,7 @@
     "scrimba-tip": "Tip: If the mini-browser is covering the code, click and drag to move it. Also, feel free to stop and edit the code in the video at any time.",
     "chal-preview": "Challenge Preview",
     "donation-record-not-found": "Your donation record has not been found.",
+    "sign-in-card-update": "Sign in to update your card",
     "card-has-been-updated": "Your card has been updated successfully.",
     "contact-support-mistake": "If you think there has been a mistake, please contact support at donors@freecodecamp.org",
     "cert-map-estimates": {

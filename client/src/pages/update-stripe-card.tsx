@@ -96,7 +96,7 @@ function ConditionalContent({
   } else
     return (
       <>
-        <h1 className='text-center'>{t('buttons.sign-in-card-update')}</h1>
+        <h1 className='text-center'>{t('learn.sign-in-card-update')}</h1>
         <Spacer size='medium' />
         <BigCallToAction text={t('buttons.sign-in')} />
       </>
