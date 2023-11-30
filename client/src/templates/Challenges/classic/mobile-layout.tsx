@@ -318,7 +318,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             <div className='portal-button-wrap'>
               <button
                 className='portal-button'
-                data-playwright-test-label='preview-portal-button'
                 aria-expanded={!!showPreviewPortal}
                 onClick={() => togglePane('showPreviewPortal')}
               >
