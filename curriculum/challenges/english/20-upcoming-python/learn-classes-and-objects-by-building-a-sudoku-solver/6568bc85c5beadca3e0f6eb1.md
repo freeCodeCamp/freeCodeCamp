@@ -1,13 +1,13 @@
 ---
-id: 65689aa3d3f2b6aad204a59e
-title: Step 18
+id: 6568bc85c5beadca3e0f6eb1
+title: Step 27
 challengeType: 20
-dashedName: step-18
+dashedName: step-27
 ---
 
 # --description--
 
-If the previous condition is true, add a vertical separator(`'║'`) between the segments.
+After the loop completes for all rows, return the final `board_string`. This string contains the complete visual representation of the sudoku board in ASCII art style, including borders and separators.
 
 # --hints--
 
@@ -38,6 +38,21 @@ class Board:
             row_square = '|'.join(str(item) for item in part)
             row_list.extend(row_square)
               if square_no != 3:
+                row_list.append('║')
+
+              row = f'║ {" ".join(row_list)} ║\n'
+              row_empty = row.replace('0', ' ')
+              board_string += row_empty
+
+              if index < 8:
+                  if index % 3 == 2:
+                      board_string += f'╠═══{"╪═══"*2}{"╬═══"}{"╪═══"*2}{"╬═══"}{"╪═══"*2}╣\n'
+                  else:
+                      board_string += middle_lines
+
+              else:
+                  board_string += lower_lines
+
 --fcc-editable-region--
 
 --fcc-editable-region--
