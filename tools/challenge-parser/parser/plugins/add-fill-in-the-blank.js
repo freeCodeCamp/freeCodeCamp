@@ -49,12 +49,12 @@ function getBlanks(blanksNodes) {
       const feedbackNodes = getAllBetween(blanksTree, '--feedback--');
 
       return {
-        answer: blanksNodes[0].children[0].value,
+        answer: blanksNodes[0].value,
         feedback: mdastToHtml(feedbackNodes)
       };
     }
 
-    return { answer: blanksGroup[0].children[0].value, feedback: null };
+    return { answer: blanksTree.children[0].value, feedback: null };
   });
 }
 
