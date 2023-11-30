@@ -63,8 +63,6 @@ function ConditionalContent({
   const { t } = useTranslation();
 
   if (isSignedIn && !isDonating) {
-    // your donation records do not show up
-    // contact support if you think there has been a mistake
     return (
       <>
         <h1 className='text-center'>{t('learn.donation-record-not-found')}</h1>
@@ -73,7 +71,6 @@ function ConditionalContent({
       </>
     );
   } else if (isSignedIn && isDonating) {
-    // update your card information
     const { success, error, redirecting } = updateCardState;
     if (redirecting || error || success) {
       return (
