@@ -6,6 +6,11 @@ dashedName: team-lead
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
+<!--
+AUDIO REFERENCE:
+Maria: Hello! You are the new graphic designer, right? I'm Maria, the team lead.
+-->
+
 # --description--
 
 A `team lead` is a person who leads or manages a team. In the dialogue, Maria introduces herself as the team lead, meaning she has a leadership role.

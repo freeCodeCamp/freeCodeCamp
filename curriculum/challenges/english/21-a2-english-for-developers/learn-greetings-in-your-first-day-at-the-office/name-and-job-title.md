@@ -6,6 +6,11 @@ dashedName: name-and-job-title
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
+<!--
+AUDIO REFERENCE:
+Maria: I'm Maria, the team lead.
+-->
+
 # --description--
 
 In English, we often mention our job or role in a company by saying, `I'm [Name], the [Job title].` This lets others know our position or role.

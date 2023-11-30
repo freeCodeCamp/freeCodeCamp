@@ -6,6 +6,11 @@ dashedName: im
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
+<!--
+AUDIO REFERENCE:
+Tom: Hi, that's right! I'm Tom McKenzie.
+-->
+
 # --description--
 
 The word `I'm` is a contraction of `I am`. Contractions are a way to shorten common combinations of words, especially with verbs.

@@ -6,6 +6,11 @@ dashedName: you-are
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
+<!--
+AUDIO REFERENCE:
+Maria: Hello! You are the new graphic designer, right?
+-->
+
 # --description--
 
 In English, when making introductions or identifying someone, you use the verb `to be`. In this case, `You are` is used to address the person Maria is talking to and affirmatively identify their occupation.

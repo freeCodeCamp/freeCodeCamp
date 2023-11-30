@@ -6,6 +6,11 @@ dashedName: welcome-aboard
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
+<!--
+AUDIO REFERENCE:
+Maria: Welcome aboard, Tom! How do you like California so far?
+-->
+
 # --description--
 
 The expression `Welcome aboard` is used to greet someone who has just joined a group, team, or organization. It's a warm way of saying "We're glad you're here with us now".

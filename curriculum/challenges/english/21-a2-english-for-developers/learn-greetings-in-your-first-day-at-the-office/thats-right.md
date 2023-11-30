@@ -6,6 +6,11 @@ dashedName: thats-right
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
+<!--
+AUDIO REFERENCE:
+Tom: Hi, that's right! I'm Tom McKenzie. It's a pleasure to meet you.
+-->
+
 # --description--
 
 When someone makes a correct assumption or guess about you, you can confirm it using phrases like `that's right`. It's a way of agreeing or saying yes to what is said.

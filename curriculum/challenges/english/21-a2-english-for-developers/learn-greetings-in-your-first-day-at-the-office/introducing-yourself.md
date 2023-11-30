@@ -6,6 +6,11 @@ dashedName: introducing-yourself
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
+<!--
+AUDIO REFERENCE:
+Tom: Hi, that's right! I'm Tom McKenzie. It's a pleasure to meet you.
+-->
+
 # --description--
 
 Tom is introducing himself using a full name.

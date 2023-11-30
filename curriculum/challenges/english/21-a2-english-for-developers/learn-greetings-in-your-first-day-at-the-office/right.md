@@ -6,6 +6,11 @@ dashedName: right
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
+<!--
+AUDIO REFERENCE:
+Maria: Hello! You are the new graphic designer, right?
+-->
+
 # --description--
 
 In English, to check or confirm something people sometimes use tag questions. For example, `You are a programmer, right?` Here, `right?` is used as a tag to check or confirm the previous statement.

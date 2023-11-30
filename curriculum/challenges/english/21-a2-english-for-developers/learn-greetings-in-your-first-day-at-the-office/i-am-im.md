@@ -6,6 +6,11 @@ dashedName: i-am-im
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
+<!--
+AUDIO REFERENCE:
+Tom: Hi, that's right! I'm Tom McKenzie.
+-->
+
 # --description--
 
 In English, the verb `to be` is used to talk about identities, characteristics, and more. The contraction `I'm` is a combination of `I` and `am`. Here, Tom uses it to introduce himself.

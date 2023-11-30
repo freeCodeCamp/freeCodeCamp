@@ -6,6 +6,11 @@ dashedName: how-do-you-like
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
+<!--
+AUDIO REFERENCE:
+Maria: Welcome aboard, Tom! How do you like California so far?
+-->
+
 # --description--
 
 When you want to ask someone for their opinion or feelings about something, especially a place or an experience, you can use the phrase `How do you like`.

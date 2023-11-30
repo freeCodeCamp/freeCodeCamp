@@ -6,6 +6,11 @@ dashedName: pleasure-to-meet-you
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
+<!--
+AUDIO REFERENCE:
+Tom: Hi, that's right! I'm Tom McKenzie. It's a pleasure to meet you.
+-->
+
 # --description--
 
 Expressions like `It's a pleasure to meet you` are commonly used when meeting someone for the first time as a polite way to greet someone.
