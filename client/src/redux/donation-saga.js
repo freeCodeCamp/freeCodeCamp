@@ -164,14 +164,12 @@ export function* setDonationCookie() {
   }
 }
 
-function* updateCardSaga() {
+export function* updateCardSaga() {
   yield put(updateCardRedirecting());
   try {
     const {
       data: { session_id }
-    } = yield call(updateStripeCard, {
-      location: window.location.href
-    });
+    } = yield call(updateStripeCard);
 
     if (!session_id) throw new Error('No session_id');
     const stripe = yield call(loadStripe, stripePublicKey);
