@@ -12,11 +12,11 @@ dashedName: solving-for-x
 
 Ось <a href="https://colab.research.google.com/drive/11Zi77gs1FKoEqfPqYa2HtTENiWZyQAO2?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього відео.</a> Додайте код з відео до свого блокнота з алгебри Colab, щоб побачити, як знайти х за допомогою Python. Потім (якщо хочете) змініть код, перевірте його та порівняйте з розв’язком на папері. Пам’ятайте, що рівняння повинне бути у синтаксисі Python.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Додайте код з відео для розв’язку рівняння до свого блокнота Colab.
+
+# --question--
 
 ## --text--
 

@@ -1,4 +1,4 @@
-import { updateMySocials } from '../boot/settings';
+import { updateMySocials, updateMyClassroomMode } from '../boot/settings';
 
 export const mockReq = opts => {
   const req = {};
@@ -105,6 +105,36 @@ describe('boot/settings', () => {
       const res = mockRes();
       const next = jest.fn();
       updateMySocials(req, res, next);
+      expect(res.status).toHaveBeenCalledWith(200);
+    });
+  });
+
+  describe('updateMyClassroomMode', () => {
+    it('does not allow invalid classroomMode', () => {
+      const req = mockReq({
+        user: {},
+        body: {
+          isClassroomAccount: 'invalid'
+        }
+      });
+      const res = mockRes();
+      const next = jest.fn();
+      updateMyClassroomMode(req, res, next);
+      expect(res.status).toHaveBeenCalledWith(403);
+    });
+
+    it('allows valid classroomMode', () => {
+      const req = mockReq({
+        user: {
+          updateAttributes: (_, cb) => cb()
+        },
+        body: {
+          isClassroomAccount: true
+        }
+      });
+      const res = mockRes();
+      const next = jest.fn();
+      updateMyClassroomMode(req, res, next);
       expect(res.status).toHaveBeenCalledWith(200);
     });
   });

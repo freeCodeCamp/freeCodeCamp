@@ -4,13 +4,13 @@
 
 To install Playwright run:
 
-```console
+```bash
 pnpm run playwright:install-build-tools
 ```
 
 Alternatively you can follow official documentation referenced below:
 
-To install and configure Playwright on your machine check out this [documentation](https://playwright.dev/docs/intro#installing-playwright)
+To install and configure Playwright on your machine check out this [documentation](https://playwright.dev/docs/intro#installing-playwright).
 
 To learn how to write Playwright tests, or 'specs', please see Playwright's official [documentation](https://playwright.dev/docs/writing-tests).
 
@@ -20,147 +20,158 @@ To learn how to write Playwright tests, or 'specs', please see Playwright's offi
 
 - Playwright test files are always with a `.spec.ts` extension.
 
-## Best Practices for writing e2e tests
+## Best Practices for writing E2E tests
 
- This section will explain in detail about best practices for writing and documenting E2E tests based on playwright documentation and our community code-style.
-
-### - Identifying a DOM element
-
-  Always use the `data-playwright-test-label` attribute to identify DOM elements. This attribute is used to identify elements in the DOM for testing with playwright only. It is not used for styling or any other purpose.
-
-  For example:
-
-  ```html
-  <div data-playwright-test-label="landing-page-figure">
-    <img src="..." alt="..." />
-  </div>
-  ```
-
-  Make sure you use the getByTestId method to identify the element in the test file.
-
-  For example:
-
-  ```ts
-  const landingPageFigure = page.getByTestId('landing-page-figure');
-  ```
+ This section will explain in detail about best practices for writing and documenting E2E tests based on Playwright documentation and our community code-style.
 
 ### - Imports
 
-  Always start with necessary imports at the beginning of the file.
+Always start with necessary imports at the beginning of the file.
 
-  For example:
+For example:
 
-  ```ts
-  import { test, expect, type Page } from '@playwright/test';
-  ```
+```ts
+import { test, expect, type Page } from '@playwright/test';
+```
+
+### - Identifying a DOM element
+
+Playwright comes with [multiple built-in locators](https://playwright.dev/docs/locators#quick-guide), but we recommend prioritizing the following locators:
+  - `getByRole` for querying semantic elements, whose role is important and allows assistive technology to perceive the page correctly.
+  - `getByText` for querying non-semantic elements such as `div`, `span`, or `p`.
+
+For example:
+```ts
+await expect(page.getByRole('heading', { name: 'Sign up' })).toBeVisible();
+await expect(page.getByText('Hello World')).toBeVisible();
+```
+
+In cases where the elements cannot be queried using the above-mentioned locators, you can use the `data-playwright-test-label` attribute as the last resort. This attribute is used to identify elements in the DOM for testing with playwright only. It is not used for styling or any other purpose.
+
+For example:
+
+```html
+<div data-playwright-test-label="landing-page-figure">
+  <img src="..." alt="..." />
+</div>
+```
+
+In the test file, you can use the `getByTestId` method to identify the element.
+
+For example:
+
+```ts
+await expect(page.getByTestId('landing-page-figure')).toBeVisible();
+```
 
 ### - Constants
 
-  Define any constant elements, data sets, or configurations used throughout your tests for easy reference.
+Define any constant elements, data sets, or configurations used throughout your tests for easy reference.
 
-  For example:
+For example:
 
-  ```ts
-  const landingPageElements = { ... };
-  const superBlocks = [ ... ];
-  ```
+```ts
+const landingPageElements = { ... };
+const superBlocks = [ ... ];
+```
 
 ### - Shared Context
 
- If tests depend on a shared context (like a loaded web page), use beforeAll and afterAll hooks to set up and tear down that context.
+If tests depend on a shared context (like a loaded web page), use beforeAll and afterAll hooks to set up and tear down that context.
 
-  For example:
+For example:
 
-  ```ts
-  let page: Page;
+```ts
+let page: Page;
 
-  beforeAll(async ({ browser }) => {
-    page = await browser.newPage();
-  });
+beforeAll(async ({ browser }) => {
+  page = await browser.newPage();
+});
 
-  afterAll(async () => {
-    await page.close();
-  });
-  ```
+afterAll(async () => {
+  await page.close();
+});
+```
 
 ### - Descriptive test names
 
- Each test block should have a clear and concise name describing exactly what it's testing.
+Each test block should have a clear and concise name describing exactly what it's testing.
 
-  For example:
+For example:
 
-  ```ts
-  test('The component landing-top renders correctly', async ({ page }) => {
-    ...
-  });
-  ```
+```ts
+test('The component landing-top renders correctly', async ({ page }) => {
+ // ...
+});
+```
 
 ### - Human readable assertions
 
-  Each assertion should be as human readable as possible. This makes it easier to understand what the test is doing and what it's expecting.
+Each assertion should be as human readable as possible. This makes it easier to understand what the test is doing and what it's expecting.
 
-  For example:
+For example:
 
-  ```ts
-  await expect(landingHeading1).toHaveText('Learn to code — for free.');
-  ```
+```ts
+await expect(landingHeading1).toHaveText('Learn to code — for free.');
+```
 
 ### - Keep it DRY
 
-  Make sure that the tests are not repeating the same code over and over again. If you find yourself repeating the same code, consider refactoring it as a loop or a function.
+Make sure that the tests are not repeating the same code over and over again. If you find yourself repeating the same code, consider refactoring it as a loop or a function.
 
-  For example:
+For example:
 
-  ```ts
-  for (const logo of await logos.all()) {
-    await expect(logo).toBeVisible();
-  }
-  ```
+```ts
+for (const logo of await logos.all()) {
+  await expect(logo).toBeVisible();
+}
+```
 
 ### - Tests for mobile screens
 
-  Use the 'isMobile' argument to run tests that incude logic that varies for mobile screens.
+Use the `isMobile` argument to run tests that include logic that varies for mobile screens.
 
-  For example:
+For example:
 
-  ```ts
-  test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({isMobile}) => 
-  {
-    const landingPageImage = page.getByTestId('landing-page-figure');
+```ts
+test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({
+    isMobile
+}) => {
+  const landingPageImage = page.getByTestId('landing-page-figure');
 
-    if (isMobile) {
-      await expect(landingPageImage).toBeHidden();
-    } else {
-      await expect(landingPageImage).toBeVisible();
-    }
-  });
+  if (isMobile) {
+    await expect(landingPageImage).toBeHidden();
+  } else {
+    await expect(landingPageImage).toBeVisible();
+  }
+});
 ```
 
 ### - Group related tests
 
-  Group related tests together using describe blocks. This makes it easier to understand what the tests are doing and what they're testing.
+Group related tests together using describe blocks. This makes it easier to understand what the tests are doing and what they're testing.
 
-  For example:
+For example:
 
-  ```ts
-  describe('The campers landing page', () => {
-    test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({isMobile}) => 
-    {
-      ...
-    });
-
-    test('The campers landing page figure has the correct image', async () => {
-      ...
-    });
+```ts
+describe('The campers landing page', () => {
+  test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({
+    isMobile
+  }) => {
+    // ...
   });
-  ```
 
+  test('The campers landing page figure has the correct image', async () => {
+      // ...
+  });
+});
+```
 
 ## How to Run Tests
 
 ### 1. Ensure that MongoDB and Client Applications are Running
 
-- [Start MongoDB and seed the database](how-to-setup-**freecodecamp**-locally.md#step-3-start-mongodb-and-seed-the-database)
+- [Start MongoDB and seed the database](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
 - [Start the freeCodeCamp client application and API server](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
@@ -170,49 +181,49 @@ To run tests with Playwright check the following below
 
 - Make sure you navigate to the e2e repo first
 
-  ```console
+  ```bash
   cd e2e
   ```
 
 - To run tests in UI helper mode:
 
-  ```console
+  ```bash
   npx playwright test --ui
   ```
 
 - To run a single test:
 
-  ```console
+  ```bash
   npx playwright test <filename>
   ```
 
   For example:
 
-  ```console
+  ```bash
   npx playwright test landing-page.spec.ts
   ```
 
 - Run a set of test files in respective folders:
 
-  ```console
+  ```bash
   npx playwright test <pathToFolder1> <pathToFolder2>
   ```
 
   For example:
 
-  ```console
+  ```bash
   npx playwright test tests/todo-page/ tests/landing-page/
   ```
 
 - Run the test with the title:
 
-  ```console
+  ```bash
   npx playwright test -g <title>
   ```
 
   For example:
 
-  ```console
+  ```bash
   npx playwright test -g "add a todo item"
   ```
 
@@ -222,13 +233,13 @@ Since Playwright runs in Node.js, you can debug it with your debugger of choice 
 
 - Debugging all tests:
 
-  ```console
+  ```bash
   npx playwright test --debug
   ```
 
 - Debugging one test file:
 
-  ```console
+  ```bash
   npx playwright test example.spec.ts --debug
   ```
 
@@ -236,23 +247,23 @@ Since Playwright runs in Node.js, you can debug it with your debugger of choice 
 
 The HTML Reporter shows you a full report of your tests allowing you to filter the report by browsers, passed tests, failed tests, skipped tests and flaky tests.
 
-```console
+```bash
 npx playwright show-report 
 ```
 
 ### 5. Troubleshooting
 
-Playwright is generally a solid bullet-proof tool. The contributor has already configured the tests to run on all OS machines, including majpr distributions of Windows, MacOS and Linux.
+Playwright is generally a solid bullet-proof tool. The contributor has already configured the tests to run on all OS machines, including major distributions of Windows, MacOS and Linux.
 
 - (MacOs and Linux) If running Playwright results in an error due to kernel dependencies, run the following command:
 
-  ```console
+  ```bash
   pnpm run playwright:install-build-tools-linux
   ```
 
 - A common error seen in playwright is as follows:
 
-  ```console
+  ```bash
     Error: page.goto: Could not connect: Connection refused
     =========================== logs ===========================
     navigating to "https://127.0.0.1:8000/", waiting until "load"
@@ -273,7 +284,7 @@ Playwright is generally a solid bullet-proof tool. The contributor has already c
 
 - Another common error seen in playwright is as follows:
 
-  ```console
+  ```bash
     Protocol error (Network.getResponseBody): Request content was evicted from inspector cache
   ```
 
@@ -294,25 +305,25 @@ If starting the Gitpod environment did not automatically develop the environment
 
 - Create the .env
 
-  ```console
+  ```bash
   cp sample.env .env
   ```
 
 - Create a config file.
 
-  ```console
+  ```bash
   pnpm run create:shared
   ```
 
 - Seed the database
 
-  ```console
+  ```bash
   pnpm run seed
   ```
 
 - Develop the server and client
 
-  ```console
+  ```bash
   pnpm run develop
   ```
 
@@ -320,7 +331,7 @@ If starting the Gitpod environment did not automatically develop the environment
 
 To install necessary dependencies for running Playwright run the following command:
 
-```console
+```bash
 pnpm run playwright:install-build-tools
 ```
 
@@ -328,6 +339,6 @@ pnpm run playwright:install-build-tools
 
 To run all Playwright tests, run the following command:
 
-```console
+```bash
 npx playwright test
 ```

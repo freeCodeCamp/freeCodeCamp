@@ -13,7 +13,7 @@ Nel gioco di casinò Blackjack, un giocatore può determinare se nella mano succ
 
 Avere più carte alte rimanenti nel mazzo favorisce il giocatore. Ad ogni carta è assegnato un valore secondo la tabella sottostante. Quando il conteggio è positivo, il giocatore dovrebbe puntare alto. Quando il conteggio è zero o negativo, il giocatore dovrebbe puntare basso.
 
-<table class='table table-striped'><thead><tr><th>Cambio del conteggio</th><th>Carte</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K', 'A'</td></tr></tbody></table>
+<table><thead><tr><th>Cambio del conteggio</th><th>Carte</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K', 'A'</td></tr></tbody></table>
 
 Scriverai una funzione che conta le carte. Riceverà un parametro `card`, che può essere un numero o una stringa, e incrementerà o decrementerà la variabile globale `count` in base al valore della carta (vedi tabella). La funzione restituirà una stringa con il conteggio corrente e la stringa `Bet` se il conteggio è positivo, o `Hold` se il conteggio è zero o negativo. Il conteggio corrente e la decisione del giocatore (`Bet` o `Hold`) dovrebbero essere separati da un singolo spazio.
 

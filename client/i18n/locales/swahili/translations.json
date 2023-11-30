@@ -44,6 +44,7 @@
     "settings": "Mipangilio",
     "take-me": "Nipeleke kwenye Changamoto",
     "check-answer": "Angalia jibu lako",
+    "submit": "Submit",
     "get-hint": "Pata kidokezo",
     "ask-for-help": "Ulizia Msaada",
     "create-post": "Unda chapisho la usaidizi kwenye jukwaa",
@@ -304,7 +305,7 @@
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp ni shirika la usaidizi la 501(c)(3) la kutotozwa ushuru linaloungwa mkono na wafadhili (Nambari ya Utambulisho ya Ushuru ya Shirikisho la Marekani: 82-0779546)",
-    "mission-statement": "Dhamira yet: kuwasaidia watu kujifunza kuweka msimbo bila malipo. Tunatimiza hili kwa kuunda maelfu ya video, makala, na masomo shirikishi ya usimbaji - yote yanapatikana bila malipo kwa umma. Pia tuna maelfu ya vikundi vya masomo vya freeCodeCamp kote ulimwenguni.",
+    "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.",
     "donation-initiatives": "Michango kwa freeCodeCamp huenda kwenye mipango yetu ya elimu na kusaidia kulipia seva, huduma na wafanyakazi.",
     "donate-text": "Unaweza <1>kutoa mchango unaokatwa kodi hapa</1>.",
     "trending-guides": "Miongozo inayovuma",
@@ -417,6 +418,7 @@
     "building-a-university": "Tunaunda Programu ya Bila Malipo wa Shahada ya Chuo Kikuu ya Computer Science",
     "if-help-university": "Tayari tumepiga hatua kubwa. Saidia hisani yetu kwa safari ndefu ya mbele.",
     "preview-external-window": "Onyesho la kukagua linaloonyeshwa kwa sasa kwenye dirisha la nje.",
+    "fill-in-the-blank": "Fill in the blank",
     "exam": {
       "qualified": "Hongera, umekamilisha mahitaji yote ya kufuzu kwa mtihani.",
       "not-qualified": "Hujatimiza masharti ili ustahiki mtihani. Ili kuhitimu, tafadhali kamilisha changamoto zifuatazo:",
@@ -524,7 +526,7 @@
     "download-irs": "Unaweza <0>kupakua Barua yetu ya Uamuzi wa IRS hapa</0>.",
     "download-990": "Unaweza <0>kupakua 990 (ripoti yetu ya kodi ya kila mwaka) hapa</0>.",
     "how-efficient": "Je, freeCodeCamp ina ufanisi gani?",
-    "fcc-budget": "Bajeti ya freeCodeCamp ni ndogo sana kuliko hisani nyingi zinazoweza kulinganishwa. Hatujaleta uchangishaji wa kitaalamu. Badala yake, Quincy anafanya kila kitu mwenyewe.",
+    "fcc-budget": "freeCodeCamp's budget is much smaller than most comparable charities. We haven't brought in professional fundraisers. Instead, Quincy does everything himself.",
     "help-millions": "Hata hivyo, kwa bajeti ya dola laki chache tu kwa mwaka, tumeweza kusaidia mamilioni ya watu.",
     "how-one-time": "Ninawezaje kutoa mchango wa mara moja?",
     "one-time": "Iwapo ungependelea kutoa michango ya mara moja, unaweza kusaidia dhamira ya freeCodeCamp wakati wowote una pesa taslimu. Unaweza kutumia <0>kiungo hiki kuchangia kiasi chochote unachohisi kupitia PayPal</0>.",
@@ -551,7 +553,9 @@
     "how-update": "Ninaanzisha mchango wa kila mwezi, lakini ninahitaji kusasisha au kusitisha ujirudiaji wa kila mwezi. Ninawezaje kufanya hili?",
     "take-care-of-this": "Tuma moja ya risiti zako za michango ya kila mwezi kwa donors@freecodecamp.org na utuambie kile ungependa tufanye. Tutakushughulikia na kukutumia uthibitisho.",
     "anything-else": "Kuna kitu kingine chochote ninachoweza kujifunza kuhusu kuchangia freeCodeCamp.org?",
-    "other-support": "Ikiwa kuna njia nyingine ungependa kusaidia shirika letu la kutoa msaada na dhamira yake ambayo haijaorodheshwa hapa, au ikiwa una maswali yoyote, tafadhali tuma barua pepe kwa Quincy kupitia quincy@freecodecamp.org."
+    "other-support": "Ikiwa kuna njia nyingine ungependa kusaidia shirika letu la kutoa msaada na dhamira yake ambayo haijaorodheshwa hapa, au ikiwa una maswali yoyote, tafadhali tuma barua pepe kwa Quincy kupitia quincy@freecodecamp.org.",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "Unahitaji kuingia ili kuripoti mtumiaji",
@@ -718,12 +722,38 @@
     "challenge-submit-too-big": "Samahani, huwezi kuwasilisha msimbo wako. Msimbo wako ni baiti {{user-size}}. Tunaruhusu upeo wa baiti {{max-size}}. Tafadhali punguza msimbo wako na ujaribu tena au uombe usaidizi katika https://forum.freecodecamp.org",
     "invalid-update-flag": "Unajaribu kufikia rasilimali zilizopigwa marufuku. Tafadhali omba usaidizi katika https://forum.freecodecamp.org ikiwa hili ni ombi halali.",
     "generate-exam-error": "Hitilafu ilitokea wakati wa kujaribu kuunda mtihani wako.",
-    "ms-trophy-err": "We were unable to verify your trophy from Microsoft's learning platform.",
-    "ms-trophy-verified": "Your trophy from Microsoft's learning platform was verified.",
-    "ms-linked": "Your Microsoft username been linked to your freeCodeCamp account.",
-    "ms-link-err": "An error occurred trying to link your Microsoft username to your freeCodeCamp account.",
-    "ms-unlinked": "The link to your Microsoft username has been removed.",
-    "ms-unlink-err": "An error occurred trying to remove the link to your Microsoft username."
+    "ms": {
+      "transcript": {
+        "link-err-1": "Please include a Microsoft transcript URL in the request.",
+        "link-err-2": "Something went wrong trying to get your transcript from Microsoft.",
+        "link-err-3": "A username was not found in your Microsoft transcript.",
+        "link-err-4": "That Microsoft username is being used by another freeCodeCamp account.",
+        "link-err-5": "Something went wrong trying to save your Microsoft account.",
+        "link-err-6": "Something went wrong trying to link your Microsoft username to your freeCodeCamp account.",
+        "linked": "Your Microsoft username has been linked to your freeCodeCamp account.",
+        "unlinked": "The link to your Microsoft username has been removed.",
+        "unlink-err": "Something went wrong trying to remove the link to your Microsoft username."
+      },
+      "profile": {
+        "err": "We could not find a Microsoft user ID for Microsoft user \"{{msUsername}}\""
+      },
+      "trophy": {
+        "err-1": "We could not find a Microsoft username associated with your freeCodeCamp account.",
+        "err-2": "You are trying to submit a challenge that does not appear to be a trophy challenge.",
+        "err-3": "We could not get your Microsoft profile from your Microsoft ID.",
+        "err-4": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
+        "err-5": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-6": "It looks like your Microsoft account might be private. Set it to public and try again.",
+        "verified": "Your trophy from Microsoft's learning platform was verified."
+      }
+    },
+    "survey": {
+      "err-1": "The survey submitted is not in the correct format.",
+      "err-2": "It looks like you have already completed this survey.",
+      "err-3": "Something went wrong trying to save your survey.",
+      "success": "Thank you. Your survey was submitted."
+    },
+    "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
     "max-characters": "Kuna upeo wa juu wa herufi 288, umesalia na {{charsLeft}}",
@@ -862,6 +892,8 @@
       "college-algebra-with-python-v8": "Udhibitisho wa Algebra ya Chuo na Python",
       "Foundational C# with Microsoft": "Msingi wa C# na Microsoft",
       "foundational-c-sharp-with-microsoft": "Msingi C# na Cheti cha Microsoft",
+      "A2 English for Developers": "A2 English for Developers",
+      "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "Legacy Front End",
       "legacy-front-end": "Udhibitisho wa Front End",
       "Legacy Back End": "Legacy Back End",
@@ -886,14 +918,13 @@
     "set-claim": "Dai na uangalie uthibitisho wako"
   },
   "forum-help": {
-    "browser-info": "**Maelezo ya kivinjari chako:**",
+    "browser-info": "Your browser information:",
     "user-agent": "Wakala wa Mtumiaji ni: <code>{{userAgent}}</code>",
-    "challenge": "**Changamoto:**",
-    "challenge-link": "**Kiungo kwenda kwa changamoto:**",
-    "whats-happening": "**Tuambie kinachoendelea:**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "Eleza suala lako kwa undani hapa.",
-    "camper-project": "**Viungo vya mradi wako**",
-    "camper-code": "**Msimbo wako kufikia sasa**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "ONYO",
     "too-long-one": "Msimbo wa mbegu wa changamoto na/au suluhu lako limezidi urefu wa juu tunaoweza kuvuka kutoka kwa changamoto.",
     "too-long-two": "Utahitaji kuchukua hatua ya ziada hapa ili msimbo ulioandika uwasilishe katika umbizo ambalo ni rahisi kusoma.",
@@ -939,5 +970,31 @@
     "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
     "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
     "certain": "Accept and Dismiss"
+  },
+  "survey": {
+    "foundational-c-sharp": {
+      "title": "Foundational C# with Microsoft Survey",
+      "q1": {
+        "q": "Please describe your role:",
+        "o1": "Student developer",
+        "o2": "Beginner developer (less than 2 years experience)",
+        "o3": "Intermediate developer (between 2 and 5 years experience)",
+        "o4": "Experienced developer (more than 5 years experience)"
+      },
+      "q2": {
+        "q": "Prior to this course, how experienced were you with .NET and C#?",
+        "o1": "Novice (no prior experience)",
+        "o2": "Beginner",
+        "o3": "Intermediate",
+        "o4": "Advanced",
+        "o5": "Expert"
+      }
+    },
+    "misc": {
+      "take": "Take the survey",
+      "submit": "Submit the survey",
+      "exit": "Exit the survey",
+      "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
   }
 }

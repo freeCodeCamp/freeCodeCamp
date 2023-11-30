@@ -26,25 +26,25 @@ Para ejecutar pruebas en las compilaciones de producción, reemplaza `dev` con `
 
 - Para ejecutar todas las pruebas en el directorio `./cypress`:
 
-  ```console
+  ```bash
   pnpm run cypress:dev:run
   ```
 
 - Para ejecutar una sola prueba:
 
-  ```console
+  ```bash
   pnpm run cypress run --spec=cypress/<path_to_test_file>
   ```
 
   For example:
 
-  ```console
+  ```bash
   pnpm run cypress run --spec=cypress/e2e/default/landing.ts
   ```
 
 - Para crear una compilación de desarrollo, inicia el servidor de desarrollo y ejecuta todas las pruebas de cypress existentes de extremo a extremo:
 
-  ```console
+  ```bash
   pnpm run e2e:dev:run
   ```
 
@@ -57,25 +57,25 @@ If starting the Gitpod environment did not automatically develop the environment
 - Follow the [MongoDB installation guide](https://www.mongodb.com/basics/get-started).
 - Create a config file.
 
-```console
+```bash
 pnpm run create:shared
 ```
 
 - Propaga la base de datos
 
-```console
+```bash
 pnpm run seed
 ```
 
 - Inicia el servidor de desarrollo y cliente
 
-```console
+```bash
 pnpm run develop
 ```
 
 ### 2. Instala las herramientas de compilación de Cypress
 
-```console
+```bash
 pnpm run cypress:install-build-tools
 ```
 

@@ -19,11 +19,11 @@ But you will probably find yourself using the `strong` element much more in comb
 
 Sometimes you will want to make text bold without giving it an important meaning. You’ll learn how to do that in the CSS lessons later in the curriculum.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Watch Kevin Powell’s HTML Bold and Italic Text Video above.
+
+# --question--
 
 ## --text--
 

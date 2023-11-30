@@ -130,6 +130,12 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
     }
     updateSearchQuery(query);
 
+    //clear input value
+    const searchInput = e.currentTarget?.children?.[0] as HTMLInputElement;
+    if (searchInput) {
+      searchInput.value = '';
+    }
+
     // For Learn search results page
     // return navigate('/search');
 
@@ -208,6 +214,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
               <ObserveKeys except={['Space']}>
                 <div onFocus={this.handleFocus} role='textbox'>
                   <SearchBox
+                    data-playwright-test-label='header-search'
                     focusShortcuts={['83', '191']}
                     onChange={this.handleChange}
                     onSubmit={e => {

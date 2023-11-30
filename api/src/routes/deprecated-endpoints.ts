@@ -1,4 +1,5 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+
 import { schemas } from '../schemas';
 
 type Endpoints = [string, 'GET' | 'POST'][];

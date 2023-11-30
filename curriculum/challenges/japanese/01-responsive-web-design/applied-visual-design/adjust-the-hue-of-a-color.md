@@ -19,7 +19,7 @@ dashedName: adjust-the-hue-of-a-color
 
 こちらは彩度が最大、明度が標準の色を `hsl()` を使って表した例です。
 
-<table class='table table-striped'><thead><tr><th>色</th><th>HSL</th></tr></thead><tbody><tr><td>赤</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>黄色</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>緑</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>シアン</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>青</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>マゼンタ</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>
+<table><thead><tr><th>色</th><th>HSL</th></tr></thead><tbody><tr><td>赤</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>黄色</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>緑</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>シアン</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>青</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>マゼンタ</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>
 
 # --instructions--
 

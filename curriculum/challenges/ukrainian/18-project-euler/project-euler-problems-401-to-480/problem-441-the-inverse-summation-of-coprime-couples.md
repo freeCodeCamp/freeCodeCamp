@@ -1,6 +1,6 @@
 ---
 id: 5900f5261000cf542c510038
-title: 'Problem 441: The inverse summation of coprime couples'
+title: 'Завдання 441: обернена сума пар взаємно простих чисел'
 challengeType: 1
 forumTopicId: 302113
 dashedName: problem-441-the-inverse-summation-of-coprime-couples
@@ -8,15 +8,15 @@ dashedName: problem-441-the-inverse-summation-of-coprime-couples
 
 # --description--
 
-For an integer $M$, we define $R(M)$ as the sum of $\frac{1}{p·q}$ for all the integer pairs $p$ and $q$ which satisfy all of these conditions:
+Для цілого числа $M$ визначимо $R(M)$ як суму $\frac{1}{p·q}$ для всіх пар цілих чисел $p$ та $q$, які задовільняють такі умови:
 
 - $1 ≤ p &lt; q ≤ M$
 - $p + q ≥ M$
-- $p$ and $q$ are coprime.
+- $p$ та $q$ є взаємно простими числами.
 
-We also define $S(N)$ as the sum of $R(i)$ for $2 ≤ i ≤ N$.
+Також визначимо $S(N)$ як суму $R(i)$ за умови $2 ≤ i ≤ N$.
 
-We can verify that $S(2) = R(2) = \frac{1}{2}$, $S(10) ≈ 6.9147$ and $S(100) ≈ 58.2962$.
+Можна довести, що $S(2) = R(2) = \frac{1}{2}$, $S(10) ≈ 6.9147$ та $S(100) ≈ 58.2962$.
 
 Знайдіть $S({10}^7)$. Дайте відповідь, заокруглену до чотирьох знаків після коми.
 

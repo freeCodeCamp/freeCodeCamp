@@ -46,7 +46,7 @@ Notice the syntax used to invoke the getter and setter. They do not even look li
 
 Use the `class` keyword to create a `Thermostat` class. The `constructor` accepts a Fahrenheit temperature.
 
-In the class, create a `getter` to obtain the temperature in Celsius and a `setter` to set the temperature in Celsius.
+In the class, create a `getter` to obtain the temperature in Celsius and a `setter` that accepts a temperature in Celsius.
 
 Remember that `C = 5/9 * (F - 32)` and `F = C * 9.0 / 5 + 32`, where `F` is the value of temperature in Fahrenheit, and `C` is the value of the same temperature in Celsius.
 

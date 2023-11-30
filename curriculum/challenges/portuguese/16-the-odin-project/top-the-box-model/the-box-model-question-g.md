@@ -20,11 +20,11 @@ Lembre-se de estudar os diagramas cuidadosamente.
 
 ![o modelo de caixas](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/foundations/html_css/css-foundations/the-box-model/imgs/box-model.png)
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Adicione uma borda a cada elemento na página e veja como as caixas são traçadas.
+
+# --question--
 
 ## --text--
 

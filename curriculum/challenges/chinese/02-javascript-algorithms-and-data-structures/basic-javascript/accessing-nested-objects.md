@@ -54,7 +54,24 @@ assert.match(code, /myStorage\.car\.inside/);
 应该用 `const` 声明 `gloveBoxContents`。
 
 ```js
-assert.match(code, /const\s+gloveBoxContents\s*=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]|const\s*{\s*('|")glove box\2:\s*gloveBoxContents\s*}\s*=\s*myStorage\.car\.inside;/);
+assert.match(code, /const\s+gloveBoxContents\s*=/);
+```
+
+You should not change the `myStorage` object.
+
+```js
+const expectedMyStorage = {
+  "car":{
+    "inside":{
+      "glove box":"maps",
+      "passenger seat":"crumbs"
+    },
+    "outside":{
+      "trunk":"jack"
+    }
+  }
+};
+assert.deepStrictEqual(myStorage, expectedMyStorage);
 ```
 
 # --seed--

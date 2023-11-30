@@ -1,4 +1,3 @@
-import { Row } from '@freecodecamp/react-bootstrap';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import CalendarHeatMap from '@freecodecamp/react-calendar-heatmap';
@@ -10,6 +9,7 @@ import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import ReactTooltip from 'react-tooltip';
+import { Row } from '@freecodecamp/ui';
 
 import '@freecodecamp/react-calendar-heatmap/dist/styles.css';
 import './heatmap.css';

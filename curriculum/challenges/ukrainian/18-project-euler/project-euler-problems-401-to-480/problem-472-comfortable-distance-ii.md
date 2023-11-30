@@ -1,6 +1,6 @@
 ---
 id: 5900f5451000cf542c510057
-title: 'Problem 472: Comfortable Distance II'
+title: 'Завдання 472: комфортна відстань II'
 challengeType: 1
 forumTopicId: 302149
 dashedName: problem-472-comfortable-distance-ii
@@ -8,23 +8,23 @@ dashedName: problem-472-comfortable-distance-ii
 
 # --description--
 
-There are $N$ seats in a row. $N$ people come one after another to fill the seats according to the following rules:
+Ряд складається з $N$ місць. Приходить $N$ людей та вони починають займати місця згідно з такими правилами:
 
-1. No person sits beside another.
-1. The first person chooses any seat.
-1. Each subsequent person chooses the seat furthest from anyone else already seated, as long as it does not violate rule 1. If there is more than one choice satisfying this condition, then the person chooses the leftmost choice.
+1. Жодна людина не сидить поруч з іншою.
+1. Перша людина обирає будь-яке місце.
+1. Кожна наступна людина вибирає місце, найбільш віддалене від того, хто вже сидить, до тих пір, поки не порушує правило №1. Якщо існує більше одного варіанту, що задовільняє цю умову, то людина обирає місце зліва.
 
-Note that due to rule 1, some seats will surely be left unoccupied, and the maximum number of people that can be seated is less than $N$ (for $N > 1$).
+Зверніть увагу, що через правило №1, деякі місця, безумовно, будуть вільними, і максимальна кількість осіб, які можуть бути розміщені, менша за $N$ (за умови $N > 1$).
 
-Here are the possible seating arrangements for $N = 15$:
+Ось можливі розсадження за умови $N = 15$:
 
-<img class="img-responsive center-block" alt="seating arrangements for N = 15" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance-ii.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="розсадження за умови N = 15" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance-ii.png" style="background-color: white; padding: 10px;" />
 
-We see that if the first person chooses correctly, the 15 seats can seat up to 7 people. We can also see that the first person has 9 choices to maximize the number of people that may be seated.
+Як бачимо, якщо перша людина обирає правильне місце, то на 15 місцях можуть сісти не більше 7 людей. Ми також можемо бачити, що перша людина має 9 варіантів, щоб максимізувати кількість осіб, яких можна розмістити.
 
-Let $f(N)$ be the number of choices the first person has to maximize the number of occupants for $N$ seats in a row. Thus, $f(1) = 1$, $f(15) = 9$, $f(20) = 6$, and $f(500) = 16$.
+Нехай $f(N)$ буде кількістю можливих місць першої людини, щоб максимізувати кількість сидячих людей в ряді з $N$ місць. Таким чином, $f(1) = 1$, $f(15) = 9$, $f(20) = 6$ та $f(500) = 16$.
 
-Also, $\sum f(N) = 83$ for $1 ≤ N ≤ 20$ and $\sum f(N) = 13\\,343$ for $1 ≤ N ≤ 500$.
+Також $\sum f(N) = 83$ за умови $1 ≤ N ≤ 20$ та $\sum f(N) = 13\\,343$ за умови $1 ≤ N ≤ 500$.
 
 Знайдіть $\sum f(N)$ за умови $1 ≤ N ≤ {10}^{12}$. У відповіді запишіть 8 останніх цифр.
 

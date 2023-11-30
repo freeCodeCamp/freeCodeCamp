@@ -26,10 +26,10 @@ describe('<FormGroup>', () => {
   it('provided controlId to label and control', () => {
     render(
       <FormGroup controlId='my-control' data-testid='test-id'>
-        <FormControl role='switch' />
+        <FormControl aria-label='test' />
       </FormGroup>
     );
-    const input = screen.getByRole('switch');
+    const input = screen.getByLabelText('test');
     expect(input.id).toBe('my-control');
   });
 });

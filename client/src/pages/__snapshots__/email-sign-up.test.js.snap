@@ -8,10 +8,10 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
 >
   
   <div
-    className="row"
+    className="mx-[-15px] "
   >
     <div
-      className="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12"
+      className=" min-h-[1px] px-[15px] w-full md:w-5/6 min-[992px]:w-2/3   md:ml-[8.3%] min-[992px]:ml-[16.6%]   "
     >
       <div
         className="spacer"
@@ -123,11 +123,11 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
     </div>
   </div>
   <div
-    className="email-sign-up row"
+    className="mx-[-15px] email-sign-up"
     data-cy="email-sign-up"
   >
     <div
-      className="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12"
+      className=" min-h-[1px] px-[15px] w-full md:w-5/6 min-[992px]:w-2/3   md:ml-[8.3%] min-[992px]:ml-[16.6%]   "
     >
       <div
         className="spacer"
@@ -150,7 +150,7 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
       />
     </div>
     <div
-      className="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12"
+      className=" min-h-[1px] px-[15px] w-full md:w-5/6 min-[992px]:w-2/3   md:ml-[8.3%] min-[992px]:ml-[16.6%]   "
     >
       <div
         className="spacer"
@@ -178,7 +178,7 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
       />
     </div>
     <div
-      className="col-xs-12"
+      className=" min-h-[1px] px-[15px] w-full         "
     >
       <div
         className="spacer"

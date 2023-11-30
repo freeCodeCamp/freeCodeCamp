@@ -1,4 +1,4 @@
-import { Row, Col, Button } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, Trans } from 'react-i18next';
@@ -6,7 +6,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container } from '@freecodecamp/ui';
+import { Container, Col, Row } from '@freecodecamp/ui';
+
 import IntroDescription from '../components/Intro/components/intro-description';
 import createRedirect from '../components/create-redirect';
 import { Spacer, Loader, Link } from '../components/helpers';
@@ -60,32 +61,34 @@ function EmailListOptIn({
   const { t } = useTranslation();
   if (isSignedIn) {
     return (
-      <Row>
-        <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
-          <Button
-            block={true}
-            bsSize='lg'
-            bsStyle='primary'
-            className='big-cta-btn'
-            onClick={() => acceptTerms(true)}
-          >
-            {t('buttons.yes-please')}
-          </Button>
-          <Spacer size='small' />
-        </Col>
-        <Col md={4} sm={5} xs={12}>
-          <Button
-            block={true}
-            bsSize='lg'
-            bsStyle='primary'
-            className='big-cta-btn'
-            onClick={() => acceptTerms(false)}
-          >
-            {t('buttons.no-thanks')}
-          </Button>
-          <Spacer size='small' />
-        </Col>
-      </Row>
+      <Container>
+        <Row className='email-list-opt'>
+          <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='big-cta-btn'
+              onClick={() => acceptTerms(true)}
+            >
+              {t('buttons.yes-please')}
+            </Button>
+            <Spacer size='small' />
+          </Col>
+          <Col md={4} sm={5} xs={12}>
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='big-cta-btn'
+              onClick={() => acceptTerms(false)}
+            >
+              {t('buttons.no-thanks')}
+            </Button>
+            <Spacer size='small' />
+          </Col>
+        </Row>
+      </Container>
     );
   } else {
     return (

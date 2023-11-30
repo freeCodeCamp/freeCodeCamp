@@ -74,6 +74,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
             edges {
               node {
                 challenge {
+                  audioPath
                   block
                   certification
                   challengeType
@@ -83,6 +84,13 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   fields {
                     slug
                     blockHashSlug
+                  }
+                  fillInTheBlank {
+                    sentence
+                    blanks {
+                      answer
+                      feedback
+                    }
                   }
                   hasEditableBoundaries
                   id
@@ -287,12 +295,14 @@ exports.createSchemaCustomization = ({ actions }) => {
       challenge: Challenge
     }
     type Challenge {
+      audioPath: String
       challengeFiles: [FileContents]
       notes: String
       url: String
       assignments: [String]
       prerequisites: [PrerequisiteChallenge]
       msTrophyId: String
+      fillInTheBlank: FillInTheBlank
     }
     type FileContents {
       fileKey: String
@@ -306,6 +316,14 @@ exports.createSchemaCustomization = ({ actions }) => {
     type PrerequisiteChallenge {
       id: String
       title: String
+    }
+    type FillInTheBlank {
+      sentence: String
+      blanks: [Blank]
+    }
+    type Blank {
+      answer: String
+      feedback: String
     }
   `;
   createTypes(typeDefs);

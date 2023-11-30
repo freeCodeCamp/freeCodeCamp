@@ -23,7 +23,7 @@ dashedName: use-hex-code-to-mix-colors
 
 `style` 要素の中のカラーキーワードを正しい 16 進数カラーコードで置き換えてください。
 
-<table class='table table-striped'><tbody><tr><th>色</th><th>16 進数カラーコード</th></tr><tr><td>ドジャーブルー</td><td><code>#1E90FF</code></td></tr><tr><td>緑</td><td><code>#00FF00</code></td></tr><tr><td>オレンジ</td><td><code>#FFA500</code></td></tr><tr><td>赤</td><td><code>#FF0000</code></td></tr></tbody></table>
+<table><tbody><tr><th>色</th><th>16 進数カラーコード</th></tr><tr><td>ドジャーブルー</td><td><code>#1E90FF</code></td></tr><tr><td>緑</td><td><code>#00FF00</code></td></tr><tr><td>オレンジ</td><td><code>#FFA500</code></td></tr><tr><td>赤</td><td><code>#FF0000</code></td></tr></tbody></table>
 
 # --hints--
 

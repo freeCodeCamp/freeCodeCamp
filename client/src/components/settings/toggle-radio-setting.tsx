@@ -10,6 +10,8 @@ export type ToggleSettingProps = {
   toggleFlag: () => void;
   offLabel: string;
   onLabel: string;
+  dataPlaywrightTestOffLabel?: string;
+  dataPlaywrightTestOnLabel?: string;
 };
 
 export default function ToggleRadioSetting({

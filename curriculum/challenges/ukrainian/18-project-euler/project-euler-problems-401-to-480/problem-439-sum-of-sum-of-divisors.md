@@ -1,6 +1,6 @@
 ---
 id: 5900f5231000cf542c510035
-title: 'Problem 439: Sum of sum of divisors'
+title: 'Завдання 439: сума сум дільників'
 challengeType: 1
 forumTopicId: 302110
 dashedName: problem-439-sum-of-sum-of-divisors
@@ -8,9 +8,9 @@ dashedName: problem-439-sum-of-sum-of-divisors
 
 # --description--
 
-Let $d(k)$ be the sum of all divisors of $k$.
+Нехай $d(k)$ буде сумою всіх дільників числа $k$.
 
-We define the function $S(N) = \sum_{i = 1}^N \sum_{j = 1}^N d(i \times j)$.
+Визначимо функцію $S(N) = \sum_{i = 1}^N \sum_{j = 1}^N d(i \times j)$.
 
 Наприклад, $S(3) = d(1) + d(2) + d(3) + d(2) + d(4) + d(6) + d(3) + d(6) + d(9) = 59$.
 

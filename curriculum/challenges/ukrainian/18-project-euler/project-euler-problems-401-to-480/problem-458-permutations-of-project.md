@@ -1,6 +1,6 @@
 ---
 id: 5900f5361000cf542c510049
-title: 'Problem 458: Permutations of Project'
+title: 'Завдання 458: перестановка проєкту'
 challengeType: 1
 forumTopicId: 302132
 dashedName: problem-458-permutations-of-project
@@ -8,9 +8,9 @@ dashedName: problem-458-permutations-of-project
 
 # --description--
 
-Consider the alphabet $A$ made out of the letters of the word `project`: $A = \\{c, e, j, o, p, r, t\\}$.
+Розглянемо алфавіт $A$, утворений із літер слова `project`: $A = \\{c, e, j, o, p, r, t\\}$.
 
-Let $T(n)$ be the number of strings of length $n$ consisting of letters from $A$ that do not have a substring that is one of the 5040 permutations of `project`.
+Нехай $T(n)$ буде кількістю рядків довжиною $n$, які складаються з літер алфавіту $A$, які не мають вкладеного рядка, що є однією з 5040 перестановок слова `project`.
 
 $T(7) = 7^7 - 7! = 818\\,503$.
 

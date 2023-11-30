@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Alert } from '@freecodecamp/react-bootstrap';
+import { Alert } from '@freecodecamp/ui';
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { isOldRespCert, isRelationalDbCert } from '../../../utils/is-a-cert';
 import { Link } from '../../../components/helpers';
@@ -20,7 +20,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
   if (isOldRespCert(superBlock))
     return (
       <>
-        <Alert bsStyle='info'>
+        <Alert variant='info'>
           <p>
             {t('intro:misc-text.legacy-desc')}{' '}
             <Link sameTab={false} to={`/learn/2022/responsive-web-design`}>
@@ -35,11 +35,11 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
       <>
         <CodeAllyDown />
         {clientLocale != 'english' && (
-          <Alert bsStyle='info'>
+          <Alert variant='info'>
             <p>{t('intro:misc-text.english-only')}</p>
           </Alert>
         )}
-        <Alert bsStyle='info'>
+        <Alert variant='info'>
           <p>
             <Link
               external={true}

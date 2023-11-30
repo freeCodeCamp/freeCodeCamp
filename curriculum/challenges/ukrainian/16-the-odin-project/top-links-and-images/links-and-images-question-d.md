@@ -85,11 +85,11 @@ dashedName: links-and-images-question-d
 </body>
 ```
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Перегляньте відео Кевіна Павелла про структуру файлів у HTML.
+
+# --question--
 
 ## --text--
 

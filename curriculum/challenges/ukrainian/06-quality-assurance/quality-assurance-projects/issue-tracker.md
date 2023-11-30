@@ -231,13 +231,13 @@ async (getUserInput) => {
     };
     const url = getUserInput('url') + '/api/issues/fcc-project';
     const itemToUpdate = await $.post(url, initialData);
-    const updateSucccess = await $.ajax({
+    const updateSuccess = await $.ajax({
       url: url,
       type: 'PUT',
       data: { _id: itemToUpdate._id, issue_text: 'New Issue Text' }
     });
-    assert.isObject(updateSucccess);
-    assert.deepEqual(updateSucccess, {
+    assert.isObject(updateSuccess);
+    assert.deepEqual(updateSuccess, {
       result: 'successfully updated',
       _id: itemToUpdate._id
     });

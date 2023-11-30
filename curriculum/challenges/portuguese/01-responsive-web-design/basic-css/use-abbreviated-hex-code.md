@@ -19,7 +19,7 @@ Isso reduz o número total de cores possíveis para cerca de 4.000. Mas os naveg
 
 Tente usar os códigos hexadecimais abreviados para colorir os elementos corretos.
 
-<table class='table table-striped'><tbody><tr><th>Cor</th><th>Código hexadecimal abreviado</th></tr><tr><td>Ciano</td><td><code>#0FF</code></td></tr><tr><td>Verde</td><td><code>#0F0</code></td></tr><tr><td>Vermelho</td><td><code>#F00</code></td></tr><tr><td>Fúcsia</td><td><code>#F0F</code></td></tr></tbody></table>
+<table><tbody><tr><th>Cor</th><th>Código hexadecimal abreviado</th></tr><tr><td>Ciano</td><td><code>#0FF</code></td></tr><tr><td>Verde</td><td><code>#0F0</code></td></tr><tr><td>Vermelho</td><td><code>#F00</code></td></tr><tr><td>Fúcsia</td><td><code>#F0F</code></td></tr></tbody></table>
 
 # --hints--
 

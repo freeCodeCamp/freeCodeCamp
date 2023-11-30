@@ -27,7 +27,6 @@
 
   [![Відкрити у Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Редагуйте файли на GitHub, натиснувши на значок олівця для відповідного файлу. Хоча це найшвидший спосіб, він **нерекомендований**, оскільки ви не можете перевірити свої зміни на GitHub. Якщо технічна підтримка вирішить, що ваші зміни потрібно перевірити локально, вам потрібно буде дотримуватись методів, описаних вище.
 
 ### Як працювати над практичними проєктами
 
@@ -136,17 +135,29 @@ console.log('freeCodeCamp is awesome!');
 // третій розв’язок і т. д. - ваш розв’язок має бути на HTML.
 ```
 
+# --assignments--
+
+Це покаже прапорець, де кемпери мають поставити галочку перед тим, як завершити завдання
+
+---
+
+Це покаже інший прапорець, де кемпери мають поставити галочку перед тим, як завершити завдання
+
 # --question--
 
 Наразі ці поля використовуються для завдань з Python з декількома варіантами відповіді.
 
 ## --text--
 
-Текст запитання знаходиться тут.
+Запитання повинне бути тут.
 
 ## --answers--
 
 Відповідь 1
+
+### --feedback--
+
+Тут буде зворотний зв’язок після того, як кемпери вгадають відповідь
 
 ---
 
@@ -219,6 +230,8 @@ title: Challenge Title
 Речення повинні бути зрозумілими і стислими, з мінімальною кількістю жаргону. Якщо жаргон все-таки був використаний, то його потрібно пояснити звичайною мовою.
 
 Надавайте перевагу коротким абзацам (1-4 речення). Найімовірніше, люди прочитають декілька коротких абзаців, а не суцільний текст.
+
+Використовуйте американську англійську. Наприклад, `labeled` замість `labelled`.
 
 У тексті завдання потрібно використовувати 2-гу особу множини («ви»). У такий спосіб текст та інструкції будуть звернені напряму до учня, який виконує завдання. Намагайтеся уникати звертань у 1-й особі, як-от «я», «ми», «нам».
 
@@ -294,7 +307,7 @@ title: Challenge Title
 
 Наша мета — пояснити поняття, описане в завданні, та перевірити, що його зрозуміли.
 
-Тести завдань можуть використовувати бібліотеки Node.js та Chai.js. Якщо необхідно, у змінній `code` можна отримати доступ до коду, створеного користувачами. Крім того, об’єкт `__helpers` надає декілька функцій, які полегшують процес написання тестів. Доступні функції визначені у _client/src/utils/curriculum-helpers.ts_.
+Тести завдань можуть використовувати бібліотеки Node.js та Chai.js. Якщо необхідно, у змінній `code` можна отримати доступ до коду, створеного користувачами. Крім того, об’єкт `__helpers` надає декілька функцій, які полегшують процес написання тестів. Доступні функції визначені в [curriculum-helpers](https://github.com/freeCodeCamp/curriculum-helpers/blob/main/lib/index.ts).
 
 ## Форматування вихідного коду
 
@@ -460,7 +473,13 @@ function myFunc() {
 pnpm run test:curriculum
 ```
 
-2. Ви можете перевірити блок або суперблок завдань за допомогою цих команд
+2. Щоб перевірити окреме завдання, використайте його id з цією командою
+
+```
+FCC_CHALLENGE_ID=646cf6cbca98e258da65c979 pnpm run test:curriculum
+```
+
+3. Ви можете перевірити блок або суперблок завдань за допомогою цих команд
 
 ```
 FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
@@ -470,7 +489,7 @@ FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
-Ви також можете перевірити окремо одне завдання, виконавши наступні дії:
+Ви також можете перевірити завдання за заголовками, виконавши такі кроки:
 
 1. Перейдіть до каталогу `curriculum`:
 
@@ -548,7 +567,7 @@ b
 c
 ```
 
-Ви обираєте `b`, а новим порядком буде:
+Якщо оберете `b`, то новим порядком буде:
 
 ```bash
 a
@@ -567,18 +586,18 @@ pnpm run update-challenge-order
 
 Він проведе вас через інтерактивний процес, який допоможе впорядкувати завдання.
 
-## Troubleshooting
+## Розв’язання проблем розробки
 
-### Infinite Loop Detected
+### Виявлено нескінченний цикл
 
-If you see the following error in the console while previewing a challenge:
+Якщо ви бачите цю помилку в консолі під час попереднього перегляду завдання:
 
 ```text
 Potential infinite loop detected on line <number>...
 ```
 
-This means that the loop-protect plugin has found a long-running loop or recursive function. If your challenge needs to do that (e.g. it contains an event loop that is supposed to run indefinitely), then you can prevent the plugin from being used in the preview. To do so, add `disableLoopProtectPreview: true` to the block's `meta.json` file.
+Це означає, що плагін для захисту циклу знайшов довгий цикл або рекурсивну функцію. Якщо ваше завдання передбачає їх (тобто містить нескінченний цикл), ви можете запобігти використанню плагіну в попередньому перегляді. Для цього додайте `disableLoopProtectPreview: true` до файлу блоку `meta.json`.
 
-If your tests are computationally intensive, then you may see this error when they run. If this happens then you can add `disableLoopProtectTests: true` to the block's `meta.json` file.
+Якщо ваші тести інтенсивно обчислюються, ви можете побачити цю помилку під час запуску. Якщо це відбувається, додайте `disableLoopProtectTests: true` до файлу блоку `meta.json`.
 
-It's not typically necessary to have both set to true, so only set them as needed.
+Значенням обох необов’язково має бути true, тому налаштовуйте їх лише за потреби.

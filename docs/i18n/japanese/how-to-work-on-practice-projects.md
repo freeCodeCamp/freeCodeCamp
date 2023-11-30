@@ -38,7 +38,7 @@ Clicking this button will add a new step at the end of the project. This step wi
 
 #### Create Empty Steps
 
-Enter the number of steps you want to add in the input. Then, clicking the button will create that many empty steps at the end of the project.
+Enter the number of steps you want to add in the input. Then, clicking the button will create many empty steps at the end of the project.
 
 #### Insert Step
 
@@ -124,7 +124,7 @@ pnpm run delete-step X # where X is the step number to be deleted.
 
 ### update-step-titles
 
-A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) match the meta's challengeOrder.
+A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) matches the meta's `challengeOrder`.
 
 #### How to Run the Script
 

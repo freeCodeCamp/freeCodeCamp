@@ -13,7 +13,7 @@ Beim Kasinospiel Blackjack kann ein Spieler, indem er die relative Anzahl der im
 
 Wenn mehr hohe Karten im Deck verbleiben, ist der Spieler im Vorteil. Jeder Karte wird ein Wert gemäß der folgenden Tabelle zugewiesen. Wenn die Zählung positiv ist, sollte der Spieler hoch setzen. Wenn die Anzahl null oder negativ ist, sollte der Spieler niedrig setzen.
 
-<table class='table table-striped'><thead><tr><th>Veränderung der Zählung</th><th>Karten</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K', 'A'</td></tr></tbody></table>
+<table><thead><tr><th>Veränderung der Zählung</th><th>Karten</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K', 'A'</td></tr></tbody></table>
 
 Du wirst eine Funktion zum Zählen von Karten schreiben. Sie erhält einen `card`-Parameter, der eine Zahl oder ein String sein kann, und erhöht oder verringert die globale `count`-Variable entsprechend dem Wert der Karte (siehe Tabelle). Die Funktion gibt dann einen String mit dem aktuellen Zählerstand und dem String `Bet` zurück, wenn der Zählerstand positiv ist, oder `Hold`, wenn der Zählerstand null oder negativ ist. Die aktuelle Anzahl und die Entscheidung des Spielers (`Bet` oder `Hold`) sollten durch ein einzelnes Leerzeichen getrennt werden.
 

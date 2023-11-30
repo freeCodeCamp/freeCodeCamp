@@ -1,6 +1,6 @@
 ---
 id: 5900f5331000cf542c510045
-title: 'Problem 454: Diophantine reciprocals III'
+title: 'Завдання 454: обернені числа Діофанта ІІІ'
 challengeType: 1
 forumTopicId: 302127
 dashedName: problem-454-diophantine-reciprocals-iii
@@ -8,13 +8,13 @@ dashedName: problem-454-diophantine-reciprocals-iii
 
 # --description--
 
-In the following equation $x$, $y$, and $n$ are positive integers.
+У наданому рівнянні $x$, $y$ та $n$ є натуральними числами.
 
 $$\frac{1}{x} + \frac{1}{y} = \frac{1}{n}$$
 
-For a limit $L$ we define $F(L)$ as the number of solutions which satisfy $x &lt; y ≤ L$.
+Для обмеження $L$ визначимо $F(L)$ як кількість розв’язків, що задовільняють умову $x &lt; y ≤ L$.
 
-We can verify that $F(15) = 4$ and $F(1000) = 1069$.
+Можна довести, що $F(15) = 4$ та $F(1000) = 1069$.
 
 Знайдіть $F({10}^{12})$.
 

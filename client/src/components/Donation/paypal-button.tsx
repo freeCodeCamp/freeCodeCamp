@@ -98,7 +98,6 @@ class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
 
     return (
       <div className={'paypal-buttons-container'}>
-        {/* eslint-disable @typescript-eslint/naming-convention */}
         <PayPalButtonScriptLoader
           clientId={paypalClientId}
           createOrder={(
@@ -170,7 +169,6 @@ class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
             color: buttonColor
           }}
         />
-        {/* eslint-enable @typescript-eslint/naming-convention */}
       </div>
     );
   }

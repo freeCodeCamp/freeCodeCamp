@@ -1,6 +1,6 @@
 ---
 id: 5900f5481000cf542c51005b
-title: 'Problem 476: Circle Packing II'
+title: 'Завдання 476: укладка кіл II'
 challengeType: 1
 forumTopicId: 302153
 dashedName: problem-476-circle-packing-ii
@@ -8,13 +8,13 @@ dashedName: problem-476-circle-packing-ii
 
 # --description--
 
-Let $R(a, b, c)$ be the maximum area covered by three non-overlapping circles inside a triangle with edge lengths $a$, $b$ and $c$.
+Нехай $R(a, b, c)$ буде максимальною площею, покритою трьома колами, що не перетинаються, всередині трикутника зі сторонами $a$, $b$ та $c$.
 
-Let $S(n)$ be the average value of $R(a, b, c)$ over all integer triplets $(a, b, c)$ such that $1 ≤ a ≤ b ≤ c &lt; a + b ≤ n$.
+Нехай $S(n)$ буде середнім значенням $R(a, b, c)$ серед усіх триплетів $(a, b, c)$, за яких $1 ≤ a ≤ b ≤ c &lt; a + b ≤ n$.
 
-You are given $S(2) = R(1, 1, 1) ≈ 0.31998$, $S(5) ≈ 1.25899$.
+Дано, що $S(2) = R(1, 1, 1) ≈ 0.31998$, $S(5) ≈ 1.25899$.
 
-Find $S(1803)$ rounded to 5 decimal places behind the decimal point.
+Знайдіть $S(1803)$, заокругливши до п’яти знаків після коми.
 
 # --hints--
 

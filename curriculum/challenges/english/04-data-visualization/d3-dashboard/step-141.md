@@ -11,7 +11,7 @@ Now when you hover a label, you can see the data for the different years.
 
 Where you created the `text` elements for the x-axis labels, change the `font` to `bold 10px verdana` for the currently displayed year.
 
-To do this, create a "d function" in the `font` value area and return the above sting if `d` equals `year`. Otherwise, return the string that is currently there (`10px verdana`). It's easiest to use a ternary operator for this.
+To do this, create a "d function" in the `font` value area and return the above string if `d` equals `year`. Otherwise, return the string that is currently there (`10px verdana`). It's easiest to use a ternary operator for this.
 
 Here's a hint:
 

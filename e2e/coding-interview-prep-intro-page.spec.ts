@@ -8,10 +8,6 @@ test.describe('Certification intro page', () => {
     await page.goto('/learn/coding-interview-prep/');
   });
 
-  test.afterAll(async () => {
-    await page.close();
-  });
-
   test('Should have a relevant page title', async () => {
     await expect(page).toHaveTitle('Coding Interview Prep | freeCodeCamp.org');
   });

@@ -9,7 +9,7 @@ dashedName: step-21
 
 The piano needs the freeCodeCamp logo to make it official.
 
-Füge ein `img`-Element vor deinem `.keys`-Element ein. Give the `img` a `class` of `logo`, and set the `src` to `https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg`. Weise ihm den `alt`-Text `freeCodeCamp Logo` zu.
+Füge ein `img`-Element vor deinem `.keys`-Element ein. Weise dem `img` eine `class` von `logo` zu und setze die `src` auf `https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg`. Weise ihm den `alt`-Text `freeCodeCamp Logo` zu.
 
 # --hints--
 
@@ -19,7 +19,7 @@ Du solltest ein neues `img`-Element hinzufügen.
 assert(document.querySelectorAll('img')?.length === 1);
 ```
 
-Your `img` element should come before your first `.keys` element.
+Dein `img`-Element sollte vor deinem ersten `.keys`-Element stehen.
 
 ```js
 const img = document.querySelector('img');
@@ -47,7 +47,7 @@ Dein `img`-Element sollte ein `alt`-Attribut auf `freeCodeCamp Logo` gesetzt hab
 assert(document.querySelector('img')?.getAttribute('alt')?.toLowerCase() === 'freecodecamp logo');
 ```
 
-Remember that casing and spelling matter.
+Denke daran, dass Groß- und Kleinschreibung sowie Rechtschreibung wichtig sind.
 
 ```js
 assert(document.querySelector('img')?.getAttribute('alt') === 'freeCodeCamp Logo');

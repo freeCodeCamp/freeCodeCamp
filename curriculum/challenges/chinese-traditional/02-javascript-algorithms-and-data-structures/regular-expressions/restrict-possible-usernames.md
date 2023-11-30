@@ -12,7 +12,7 @@ dashedName: restrict-possible-usernames
 
 需要檢索數據庫中的所有用戶名。 以下是用戶在創建用戶名時必須遵守的一些簡單規則。
 
-1) 用戶名只能是數字字母字符。
+1) Usernames can only use alphanumeric characters.
 
 2) 用戶名中的數字必須在最後。 數字可以有零個或多個。 用戶名不能以數字開頭。
 

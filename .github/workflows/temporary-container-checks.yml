@@ -19,10 +19,10 @@ on:
 jobs:
   build-client:
     name: Build Client (Container)
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
       - name: Checkout Source Files
@@ -73,10 +73,10 @@ jobs:
 
   build-api:
     name: Build Api (Container)
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
       - name: Checkout Source Files
@@ -99,10 +99,10 @@ jobs:
 
   build-new-api:
     name: Build New Api (Container)
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
       - name: Checkout Source Files
@@ -116,14 +116,14 @@ jobs:
 
   cypress-run:
     name: Test
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: [build-client, build-api]
     strategy:
       fail-fast: false
       matrix:
         # To avoid wasting resources we're only using chrome for now.
         browsers: [chrome]
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
       - name: Set Action Environment Variables
@@ -143,7 +143,7 @@ jobs:
           version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
+        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3
         with:
           node-version: ${{ matrix.node-version }}
 

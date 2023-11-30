@@ -12,7 +12,7 @@ dashedName: test-if-a-value-is-an-array
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，`Arrays` 套件里标有 `#11` 的测试下，将每个 `assert` 改成 `assert.isArray` 或 `assert.isNotArray` 方法，通过测试（结果应该返回 `true`）。 不要改变传入断言的参数。
+Within `tests/1_unit-tests.js` under the test labeled `#11` in the `Arrays` suite, change each `assert` to either `assert.isArray` or `assert.isNotArray` to make the test pass (should evaluate to `true`). 不要改变传入断言的参数。
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f51a1000cf542c51002d
-title: 'Problem 430: Range flips'
+title: 'Завдання 430: рядкові перевертання'
 challengeType: 1
 forumTopicId: 302101
 dashedName: problem-430-range-flips
@@ -8,17 +8,17 @@ dashedName: problem-430-range-flips
 
 # --description--
 
-$N$ disks are placed in a row, indexed 1 to $N$ from left to right.
+$N$ дисків розміщені в ряд та пронумеровані зліва направо від 1 до $N$.
 
-Each disk has a black side and white side. Initially all disks show their white side.
+Кожен диск має чорну і білу сторону. Спочатку всі диски перевернуті білою стороною вгору.
 
-At each turn, two, not necessarily distinct, integers $A$ and $B$ between 1 and $N$ (inclusive) are chosen uniformly at random. All disks with an index from $A$ to $B$ (inclusive) are flipped.
+При кожному перевертанні випадково вибираються два, не обов’язково різні, цілі числа $A$ та $B$ між 1 та $N$ (включно). Перевертаються усі диски з номерами від $A$ до $B$ (включно).
 
-The following example shows the case $N = 8$. At the first turn $A = 5$ and $B = 2$, and at the second turn $A = 4$ and $B = 6$.
+Наведений приклад показує випадок, де $N = 8$. При першому перевертанні $A = 5$, а $B = 2$, при другому перевертанні $A = 4$, а $B = 6$.
 
-<img class="img-responsive center-block" alt="example for N = 8, with first turn A = 5 and B = 2, and second turn A = 4 and B = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/range-flips.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="приклад, де N = 8, після першого перевертання A = 5, а B = 2, після другого A = 4, а B = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/range-flips.gif" style="background-color: white; padding: 10px;" />
 
-Let $E(N, M)$ be the expected number of disks that show their white side after $M$ turns. We can verify that $E(3, 1) = \frac{10}{9}$, $E(3, 2) = \frac{5}{3}$, $E(10, 4) ≈ 5.157$ and $E(100, 10) ≈ 51.893$.
+Нехай $E(N, M)$ буде очікуваною кількістю дисків, які будуть перевернуті білою стороною вгору після $M$ перевертань. Можна довести, що $E(3, 1) = \frac{10}{9}$, $E(3, 2) = \frac{5}{3}$, $E(10, 4) ≈ 5.157$ та $E(100, 10) ≈ 51.893$.
 
 Знайдіть $E({10}^{10}, 4000)$. Дайте відповідь, заокруглену до двох знаків після коми.
 

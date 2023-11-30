@@ -12,11 +12,11 @@ Este primeiro vídeo mostrará a você como representar graficamente sistemas de
 
 Aqui está o <a href="https://colab.research.google.com/drive/1N1JEZJctODxsntROnmg0VqMSHXYdIlFD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory usado neste vídeo.</a>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Adicione o código do vídeo ao notebook de álgebra que você está criando e teste o código com diferentes funções.
+
+# --question--
 
 ## --text--
 

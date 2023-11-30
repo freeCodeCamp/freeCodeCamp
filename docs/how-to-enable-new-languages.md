@@ -144,7 +144,7 @@ export const rtlLangs = [''];
 
 ### Set Translated SuperBlocks
 
-In the [shared/config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/superblocks.ts) file, add the new language to the `notAuditedSuperBlocks` object. This lists all the superblocks which are not fully translated. Add an array of superblocks which have not been fully translated to it. For example:
+In the [shared/config/superblocks.ts](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/superblocks.ts) file, add the new language to the `notAuditedSuperBlocks` object. This lists all the superblocks which are not fully translated. Add an array of superblocks that have not been fully translated to it. For example:
 
 ```js
 export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
@@ -168,7 +168,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 }
 ```
 
-Be sure to only add the superblocks which are **not** fully translated and approved. The translated superblocks will be calculated from this object. When a new superblock is finished being fully translated, remove it from the array for that language.
+Be sure to only add the superblocks that are **not** fully translated and approved. The translated superblocks will be calculated from this object. When a new superblock is finished being fully translated, remove it from the array for that language.
 
 See the `SuperBlocks` enum at the beginning of the same file for the full list of superblocks.
 
@@ -176,7 +176,7 @@ See the `SuperBlocks` enum at the beginning of the same file for the full list o
 
 Next, open the [`client/src/utils/algolia-locale-setup.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/src/utils/algolia-locale-setup.ts) file. This data is used for the search bar that loads `/news` articles. While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
 
-Add an object for your language to the `algoliaIndices` object. You should use the the same values as the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
+Add an object for your language to the `algoliaIndices` object. You should use the same values as the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
 
 > [!NOTE]
 > If we have already deployed an instance of news in your target language, you can update the values to reflect the live instance. Otherwise, use the English values.
@@ -232,7 +232,7 @@ You don't have to have everything in these 3 files translated at first. It's pos
 
 You can replace any URLs that you have corresponding pages ready in your language.
 
-For example, if you have the publication in your language, you can replace the URL for `"news"`. If you want to translate articles listed in the footer links, see [How to Translate Articles in the Footer Links](language-lead-handbook.md#how-to-translate-articles-in-the-footer-links).
+For example, if you have a publication in your language, you can replace the URL for `"news"`. If you want to translate articles listed in the footer links, see [How to Translate Articles in the Footer Links](language-lead-handbook.md#how-to-translate-articles-in-the-footer-links).
 
 #### `meta-tags.json`
 
@@ -306,7 +306,7 @@ videoLocaleIds: Joi.when('challengeType', {
 
 If you would like to test translations locally, before adding them to our main repository - skip the Crowdin workflow changes. Follow the steps for enabling a language, then download the translations from Crowdin and load them into your local code.
 
-Because the language has not been approved for production, our scripts are not automatically downloading the translations yet. Only staff have the access to directly download the translations - you are welcome to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay), or you can translate the English markdown files locally for testing purposes.
+Because the language has not been approved for production, our scripts are not automatically downloading the translations yet. Only staff have access to directly download the translations - you are welcome to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay), or you can translate the English markdown files locally for testing purposes.
 
 Once you have the files, you will need to place them in the correct directory. For the curriculum challenges, you should place the certification folders (i.e. `01-responsive-web-design`) within the `curriculum/challenges/{lang}` directory. For our Dothraki translations, this would be `curriculum/challenges/dothraki`. The client translation `.json` files will go in the `client/i18n/locales/{lang}` directory.
 
@@ -330,7 +330,7 @@ In [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/m
 export const hiddenLangs = []; // Remove your language from the array
 ```
 
-When this PR is merged and gets deployed, the curriculum in your language will be live.
+When this PR is merged and deployed, the curriculum in your language will be live.
 
 # Deploying New Languages on `/news`
 

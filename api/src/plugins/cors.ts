@@ -1,6 +1,6 @@
 import { FastifyPluginCallback } from 'fastify';
-
 import fp from 'fastify-plugin';
+
 import { HOME_LOCATION } from '../utils/env';
 
 const allowedOrigins = [

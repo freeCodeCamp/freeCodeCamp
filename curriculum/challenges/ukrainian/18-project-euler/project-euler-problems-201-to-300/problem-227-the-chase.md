@@ -1,6 +1,6 @@
 ---
 id: 5900f44f1000cf542c50ff61
-title: 'Problem 227: The Chase'
+title: 'Завдання 227: погоня'
 challengeType: 1
 forumTopicId: 301870
 dashedName: problem-227-the-chase
@@ -8,19 +8,19 @@ dashedName: problem-227-the-chase
 
 # --description--
 
-"The Chase" is a game played with two dice and an even number of players.
+«Погоня» — це гра з двома кубиками та парною кількістю гравців.
 
-The players sit around a table; the game begins with two opposite players having one die each. On each turn, the two players with a die roll it.
+Гравці сидять за столом; гра починається з того, що два гравці навпроти одне одного отримують по гральному кубику. За кожен хід два гравці кидають кубики.
 
-If the player rolls a 1, he passes the die to his neighbour on the left.
+Якщо гравцю випаде 1, він передає кубик сусіду зліва.
 
-If the player rolls a 6, he passes the die to his neighbour on the right.
+Якщо гравцю випаде 6, він передає кубик сусіду справа.
 
-Otherwise, he keeps the die for the next turn.
+За інших умов гравець тримає кубик до наступного ходу.
 
-The game ends when one player has both dice after they have been rolled and passed; that player has then lost.
+Гра закінчується, коли хтось із гравців отримує обидва кубики. Це означає, що той гравець програв.
 
-In a game with 100 players, what is the expected number of turns the game lasts? Give your answer rounded to ten significant digits.
+Яка очікувана кількість ходів у грі зі 100 гравцями? Відповідь закругліть до десяти значущих цифр.
 
 # --hints--
 

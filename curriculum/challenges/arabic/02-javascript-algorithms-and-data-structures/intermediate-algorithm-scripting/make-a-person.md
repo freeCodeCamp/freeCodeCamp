@@ -32,13 +32,13 @@ assert.match(code, /const\s+Person\s*=\s*function\s*\(\s*first\s*,\s*last\s*\)\s
 You should not reassign the `first` parameter.
 
 ```js
-assert.notMatch(code, /first\s*=\s*/);
+assert.notMatch(code, /\bfirst\s*=\s*/);
 ```
 
 You should not reassign the `last` parameter.
 
 ```js
-assert.notMatch(code, /last\s*=\s*/);
+assert.notMatch(code, /\blast\s*=\s*/);
 ```
 
 No properties should be added. `Object.keys(Person).length` should always return 6.

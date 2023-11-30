@@ -39,8 +39,6 @@ describe('multifileCertProjects', function () {
     // since rapid clicks will cause the save requests to be ignored, we have to
     // purge the db:
     cy.task('seed');
-    // and the redux store:
-    cy.reload();
     cy.get(editorElements.container).find(editorElements.editor).click();
     cy.focused().clear().click().type(`${save2text}{ctrl+s}`);
     cy.get(editorElements.editor).contains(save2text);

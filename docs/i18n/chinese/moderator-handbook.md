@@ -18,7 +18,7 @@ freeCodeCamp 是一个包容的社区，我们需要保持这种状态。
 
 We have a single [Code of Conduct](https://code-of-conduct.freecodecamp.org) that governs our entire community. 规则越少，就越容易记住。 你可以在[这里](https://code-of-conduct.freecodecamp.org)阅读这些规则，并把它们记在心里。
 
-> [!NOTE] As a moderator, we would add you to one or more teams on GitHub, our community forums & chat servers. If you are missing access on a platform that you would like to moderate, please [reach out to a staff member](FAQ.md#additional-assistance).
+> [!NOTE] As a moderator, we would add you to one or more teams on GitHub, our community forums & chat servers. If you are missing access to a platform that you would like to moderate, please [reach out to a staff member](FAQ.md#additional-assistance).
 
 ## 管理 GitHub
 
@@ -164,7 +164,7 @@ As a moderator, you help keep our community an enjoyable place for anyone to lea
 
 Note that once you are a moderator on the forum, you will start to see blue moderator hints about forum members, like "this is the first time [person] has posted - let's welcome them to the community!" or "[person] hasn't posted in a long time - let's welcome them back."
 
-![A blue text message saying "this is the first time [person] has posted - let's welcome them to the community!](https://i.imgur.com/mPmVgzK.png)
+![A blue text message saying "This is the first time [person] has posted - let's welcome them to the community!](https://i.imgur.com/mPmVgzK.png)
 
 These are opportunities for you to welcome them and make them feel extra special. You never know which person who's marginally involved may become our next super-helper, helping many other people in their coding journey. Even the slightest kindness may trigger a cascade of good deeds.
 

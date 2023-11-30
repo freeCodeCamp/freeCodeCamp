@@ -19,6 +19,7 @@ const createNextChallenge = async () => {
 
   const meta = getMetaData();
   meta.challengeOrder.push({
+    // eslint-disable-next-line @typescript-eslint/no-base-to-string
     id: challengeId.toString(),
     title: options.title
   });

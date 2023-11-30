@@ -10,7 +10,7 @@ dashedName: problem-404-crisscross-ellipses
 
 $E_a$ є еліпсом, заданим рівнянням $x^2 + 4y^2 = 4a^2$.
 
-$E_a'$ є зображенням еліпса $E_a$, перевернутим на $θ$ градусів проти годинникової стрілки навколо початку координат $O(0, 0)$ для $0° &lt; θ &lt; 90°$.
+$E_a'$ є зображенням еліпса $E_a$, перевернутим на $θ$ градусів проти годинникової стрілки навколо початку координат $O(0, 0)$ за умови $0° &lt; θ &lt; 90°$.
 
 <img class="img-responsive center-block" alt="еліпс E_a та еліпс E_a' повернутий на θ градусів" src="https://cdn.freecodecamp.org/curriculum/project-euler/crisscross-ellipses.gif" style="background-color: white; padding: 10px;" />
 

@@ -80,7 +80,7 @@ $PA = LU$
 
 # --instructions--
 
-The task is to implement a routine which will take a square nxn matrix $A$ and return a lower triangular matrix $L$, a upper triangular matrix $U$ and a permutation matrix $P$, so that the above equation is fullfilled. The returned value should be in the form `[L, U, P]`.
+The task is to implement a routine which will take a square nxn matrix $A$ and return a lower triangular matrix $L$, a upper triangular matrix $U$ and a permutation matrix $P$, so that the above equation is fulfilled. The returned value should be in the form `[L, U, P]`.
 
 # --hints--
 

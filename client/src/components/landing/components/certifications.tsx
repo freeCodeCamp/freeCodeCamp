@@ -1,5 +1,6 @@
-import { Col } from '@freecodecamp/react-bootstrap';
 import React from 'react';
+import { Col } from '@freecodecamp/ui';
+
 import Map from '../../Map/index';
 import { Spacer } from '../../helpers';
 import BigCallToAction from './big-call-to-action';

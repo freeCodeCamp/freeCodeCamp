@@ -1,10 +1,9 @@
-import { Panel, Button } from '@freecodecamp/react-bootstrap';
 import type { RouteComponentProps } from '@reach/router';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
+import { Container, Panel, Button } from '@freecodecamp/ui';
 
-import { Container } from '@freecodecamp/ui';
 import envData from '../../config/env.json';
 import { Spacer } from '../components/helpers';
 import FullWidthRow from '../components/helpers/full-width-row';
@@ -28,18 +27,22 @@ function ShowUnsubscribed({
         <main>
           <FullWidthRow>
             <Spacer size='large' />
-            <Panel bsStyle='primary' className='text-center'>
+            <Panel variant='primary' className='text-center'>
               <Spacer size='medium' />
-              <h2>{t('misc.unsubscribed')}</h2>
-              <p>{t('misc.keep-coding')}</p>
+              <h2 data-playwright-test-label='main-heading'>
+                {t('misc.unsubscribed')}
+              </h2>
+              <p data-playwright-test-label='motivation-text'>
+                {t('misc.keep-coding')}
+              </p>
             </Panel>
           </FullWidthRow>
           {unsubscribeId ? (
             <FullWidthRow>
               <Button
                 block={true}
-                bsSize='lg'
-                bsStyle='primary'
+                size='large'
+                variant='primary'
                 href={`${apiLocation}/resubscribe/${unsubscribeId}`}
               >
                 {t('buttons.resubscribe')}

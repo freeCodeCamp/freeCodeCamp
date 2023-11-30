@@ -22,7 +22,7 @@ assert.isTrue(1, 'This will NOT pass with the number value 1');
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，`Basic Assertions` 套件中标注为 `#4` 的测试下，修改每个 `assert` 为 `assert.isTrue` 或 `assert.isNotTrue`，通过测试（结果应为 `true`）。 不要修改传入断言的参数。
+Within `tests/1_unit-tests.js` under the test labeled `#4` in the `Basic Assertions` suite, change each `assert` to either `assert.isTrue` or `assert.isNotTrue` to make the test pass (should evaluate to `true`). 不要修改传入断言的参数。
 
 # --hints--
 

@@ -26,10 +26,6 @@ test.beforeAll(async ({ browser }) => {
   await page.goto('/learn');
 });
 
-test.afterAll(async () => {
-  await page.close();
-});
-
 test('the page should render with correct title', async () => {
   await expect(page).toHaveTitle(
     'Learn to Code — For Free — Coding Courses for Busy People'

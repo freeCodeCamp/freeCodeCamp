@@ -3,10 +3,10 @@ import React from 'react';
 import { ColProps } from './types';
 
 const ExtraSmallClasses = {
-  6: 'sm:w-[50%]',
-  8: 'sm:w-[66.6%]',
-  10: 'sm:w-[83.3%]',
-  12: 'sm:w-full'
+  6: 'w-1/2',
+  8: 'w-2/3',
+  10: 'w-5/6',
+  12: 'w-full'
 };
 
 const ExtraSmallOffsetClasses = {
@@ -16,13 +16,13 @@ const ExtraSmallOffsetClasses = {
 };
 
 const SmallClasses = {
-  12: 'md:w-full',
-  10: 'md:w-[83.3%]',
-  8: 'md:w-[66.6%]',
-  6: 'md:w-[50%]',
-  5: 'md:w-[41.6%]',
-  4: 'md:w-[33.3%]',
-  2: 'md:w-[16.6%]'
+  2: 'md:w-1/6',
+  4: 'md:w-1/3',
+  5: 'md:w-5/12',
+  8: 'md:w-2/3',
+  6: 'md:w-1/2',
+  10: 'md:w-5/6',
+  12: 'md:w-full'
 };
 
 const SmallOffsetClasses = {
@@ -33,10 +33,10 @@ const SmallOffsetClasses = {
 };
 
 const MediumClasses = {
-  10: 'min-[992px]:w-[83.3%]',
-  8: 'min-[992px]:w-[66.6%]',
-  6: 'min-[992px]:w-[50%]',
-  4: 'min-[992px]:w-[33.3%]'
+  4: 'min-[992px]:w-1/3',
+  6: 'min-[992px]:w-1/2',
+  8: 'min-[992px]:w-2/3',
+  10: 'min-[992px]:w-5/6'
 };
 
 const MediumOffsetClasses = {
@@ -47,9 +47,9 @@ const MediumOffsetClasses = {
 };
 
 const LargeClasses = {
-  10: 'min-[1200px]:w-[83.3%]',
-  8: 'min-[1200px]:w-[66.6%]',
-  6: 'min-[1200px]:w-[50%]'
+  6: 'min-[1200px]:w-1/2',
+  8: 'min-[1200px]:w-2/3',
+  10: 'min-[1200px]:w-5/6'
 };
 
 const LargeOffsetClasses = {
@@ -80,13 +80,15 @@ export const Col = ({
   const mdClass = md ? MediumClasses[md] : '';
   const mdOffsetClass = mdOffset ? MediumOffsetClasses[mdOffset] : '';
   const lgClass = lg ? LargeClasses[lg] : '';
-  const lgOffsetClass = lgOffset ? LargeOffsetClasses[lgOffset] : '';
+  // we have to check condiontionally against undefined, because "lgOffset ?" clear the 0 value, maybe refactor LargeOffsetClasses[0] later to something isn't 0.
+  const lgOffsetClass =
+    lgOffset !== undefined ? LargeOffsetClasses[lgOffset] : '';
 
   return (
     <div
-      className={`relative min-h-[1px] px-[15px] float-left ${
+      className={`${
         className ?? ''
-      } ${xsClass} ${smClass} ${mdClass} ${lgClass} ${xsOffsetClass} ${smOffsetClass} ${mdOffsetClass} ${lgOffsetClass} ${smPushClass}`}
+      } min-h-[1px] px-[15px] ${xsClass} ${smClass} ${mdClass} ${lgClass} ${xsOffsetClass} ${smOffsetClass} ${mdOffsetClass} ${lgOffsetClass} ${smPushClass} `}
       {...props}
     >
       {children}

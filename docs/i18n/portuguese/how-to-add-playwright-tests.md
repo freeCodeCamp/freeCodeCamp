@@ -4,13 +4,13 @@
 
 Para instalar o Playwright, execute:
 
-```console
+```bash
 pnpm run playwright:install-build-tools
 ```
 
 Como alternativa, você pode seguir a documentação oficial referenciada abaixo:
 
-Para instalar e configurar o Playwright na sua máquina, confira a [documentação](https://playwright.dev/docs/intro#installing-playwright)
+Para instalar e configurar o Playwright na sua máquina, confira a [documentação](https://playwright.dev/docs/intro#installing-playwright).
 
 Para aprender a escrever testes do Playwright ou 'specs', confira a [documentação](https://playwright.dev/docs/writing-tests) oficial.
 
@@ -20,147 +20,158 @@ Para aprender a escrever testes do Playwright ou 'specs', confira a [documentaç
 
 - Os arquivos de teste do Playwright têm sempre uma extensão `.spec.ts`.
 
-## Melhores práticas para a escrita de testes e2e
+## Melhores práticas para a escrita de testes E2E
 
- Esta seção explicará em detalhes as melhores práticas para escrever e documentar testes E2E com base na documentação do playwright e no nosso estilo de código comunitário.
-
-### - Identificando um elemento do DOM
-
-  Sempre use o atributo `data-playwright-test-label` para identificar elementos do DOM. Esse atributo é usado para identificar elementos no DOM para testes somente com o playwright. Ele não é usado para estilização ou para qualquer outra finalidade.
-
-  Por exemplo:
-
-  ```html
-  <div data-playwright-test-label="landing-page-figure">
-    <img src="..." alt="..." />
-  </div>
-  ```
-
-  Certifique-se de usar o método getByTestId para identificar o elemento no arquivo de teste.
-
-  Por exemplo:
-
-  ```ts
-  const landingPageFigure = page.getByTestId('landing-page-figure');
-  ```
+ Esta seção explicará em detalhes as melhores práticas para escrever e documentar testes E2E com base na documentação do Playwright e no nosso estilo de código comunitário.
 
 ### - Importações
 
-  Sempre comece com as importações necessárias no início do arquivo.
+Sempre comece com as importações necessárias no início do arquivo.
 
-  Por exemplo:
+Por exemplo:
 
-  ```ts
-  import { test, expect, type Page } from '@playwright/test';
-  ```
+```ts
+import { test, expect, type Page } from '@playwright/test';
+```
+
+### - Identificando um elemento do DOM
+
+O Playwright vem com [vários localizadores integrados](https://playwright.dev/docs/locators#quick-guide), mas recomendamos a priorização dos seguintes localizadores:
+  - `getByRole` para consultar elementos semânticos de função importante e que permitam que a tecnologia assistiva perceba a página corretamente.
+  - `getByText` para consultar elementos não semânticos, como `div`, `span` ou `p`.
+
+Por exemplo:
+```ts
+await expect(page.getByRole('heading', { name: 'Sign up' })).toBeVisible();
+await expect(page.getByText('Hello World')).toBeVisible();
+```
+
+Nos casos em que os elementos não podem ser consultados usando os localizadores mencionados acima, você pode usar o atributo `data-playwright-test-label` como último recurso. Esse atributo é usado para identificar elementos no DOM para testes somente com o playwright. Ele não é usado para estilização ou para qualquer outra finalidade.
+
+Por exemplo:
+
+```html
+<div data-playwright-test-label="landing-page-figure">
+  <img src="..." alt="..." />
+</div>
+```
+
+No arquivo de teste, você pode usar o método `getByTestId` para identificar o elemento.
+
+Por exemplo:
+
+```ts
+await expect(page.getByTestId('landing-page-figure')).toBeVisible();
+```
 
 ### - Constantes
 
-  Defina quaisquer elementos constantes, conjuntos de dados ou configurações usadas durante seus testes para fácil referência.
+Defina quaisquer elementos constantes, conjuntos de dados ou configurações usadas durante seus testes para fácil referência.
 
-  Por exemplo:
+Por exemplo:
 
-  ```ts
-  const landingPageElements = { ... };
-  const superBlocks = [ ... ];
-  ```
+```ts
+const landingPageElements = { ... };
+const superBlocks = [ ... ];
+```
 
 ### - Contexto compartilhado
 
- Se os testes dependem de um contexto compartilhado (como uma página da web carregada), use os hooks beforeAll e afterAll para configurar e encerrar esse contexto.
+Se os testes dependem de um contexto compartilhado (como uma página da web carregada), use os hooks beforeAll e afterAll para configurar e encerrar esse contexto.
 
-  Por exemplo:
+Por exemplo:
 
-  ```ts
-  let page: Page;
+```ts
+let page: Page;
 
-  beforeAll(async ({ browser }) => {
-    page = await browser.newPage();
-  });
+beforeAll(async ({ browser }) => {
+  page = await browser.newPage();
+});
 
-  afterAll(async () => {
-    await page.close();
-  });
-  ```
+afterAll(async () => {
+  await page.close();
+});
+```
 
 ### - Nomes de testes descritivos
 
- Cada bloco de teste deve ter um nome claro e conciso descrevendo exatamente o que ele está testando.
+Cada bloco de teste deve ter um nome claro e conciso descrevendo exatamente o que ele está testando.
 
-  Por exemplo:
+Por exemplo:
 
-  ```ts
-  test('The component landing-top renders correctly', async ({ page }) => {
-    ...
-  });
-  ```
+```ts
+test('The component landing-top renders correctly', async ({ page }) => {
+ // ...
+});
+```
 
 ### - Declarações legíveis
 
-  Cada declaração deve ser o mais legível possível. Isso torna mais fácil entender o que o teste está fazendo e o que está esperando.
+Cada declaração deve ser o mais legível possível. Isso torna mais fácil entender o que o teste está fazendo e o que está esperando.
 
-  Por exemplo:
+Por exemplo:
 
-  ```ts
-  await expect(landingHeading1).toHaveText('Learn to code — for free.');
-  ```
+```ts
+await expect(landingHeading1).toHaveText('Learn to code — for free.');
+```
 
 ### - Evite repetições
 
-  Certifique-se de que os testes não estão repetindo o mesmo código várias vezes. Se você estiver repetindo o mesmo código, considere refatorá-lo como um laço ou uma função.
+Certifique-se de que os testes não estão repetindo o mesmo código várias vezes. Se você estiver repetindo o mesmo código, considere refatorá-lo como um laço ou uma função.
 
-  Por exemplo:
+Por exemplo:
 
-  ```ts
-  for (const logo of await logos.all()) {
-    await expect(logo).toBeVisible();
-  }
-  ```
+```ts
+for (const logo of await logos.all()) {
+  await expect(logo).toBeVisible();
+}
+```
 
 ### - Testes para telas de dispositivos móveis
 
-  Use o argumento 'isMobile' para executar testes que influenciam a lógica que varia para telas de dispositivos móveis.
+Use o argumento `'isMobile'` para executar testes que incluam lógica que varia para telas de dispositivos móveis.
 
-  Por exemplo:
+Por exemplo:
 
-  ```ts
-  test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({isMobile}) => 
-  {
-    const landingPageImage = page.getByTestId('landing-page-figure');
+```ts
+test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({
+    isMobile
+}) => {
+  const landingPageImage = page.getByTestId('landing-page-figure');
 
-    if (isMobile) {
-      await expect(landingPageImage).toBeHidden();
-    } else {
-      await expect(landingPageImage).toBeVisible();
-    }
-  });
+  if (isMobile) {
+    await expect(landingPageImage).toBeHidden();
+  } else {
+    await expect(landingPageImage).toBeVisible();
+  }
+});
 ```
 
 ### - Agrupamento de testes relacionados
 
-  Agrupe testes relacionados em conjunto usando blocos "descrite". Isso torna mais fácil entender o que os testes estão fazendo e o que estão testando.
+Agrupe testes relacionados em conjunto usando blocos "descrite". Isso torna mais fácil entender o que os testes estão fazendo e o que estão testando.
 
-  Por exemplo:
+Por exemplo:
 
-  ```ts
-  describe('The campers landing page', () => {
-    test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({isMobile}) => 
-    {
-      ...
-    });
-
-    test('The campers landing page figure has the correct image', async () => {
-      ...
-    });
+```ts
+describe('The campers landing page', () => {
+  test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({
+    isMobile
+  }) => {
+    // ...
   });
-  ```
 
+  test('The campers landing page figure has the correct image', async () => {
+      // ...
+  });
+});
+```
 
 ## Como executar testes
 
 ### 1. Veja se as aplicações de client e do MongoDB estão em execução
 
-- [Inicie o MongoDB e crie o banco de dados](how-to-setup-**freecodecamp**-locally.md#step-3-start-mongodb-and-seed-the-database)
+- [Inicie o MongoDB e crie o banco de dados](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
 - [Inicie também a aplicação de client do freeCodeCamp e o servidor da API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
@@ -170,49 +181,49 @@ Para executar testes com o Playwright, verifique o seguinte
 
 - Não se esqueça de navegar primeiro para o repositório e2e
 
-  ```console
+  ```bash
   cd e2e
   ```
 
 - Para executar testes no modo auxiliar de UI:
 
-  ```console
+  ```bash
   npx playwright test --ui
   ```
 
 - Para executar um único teste:
 
-  ```console
+  ```bash
   npx playwright test <nome_do_arquivo>
   ```
 
   Por exemplo:
 
-  ```console
+  ```bash
   npx playwright test landing-page.spec.ts
   ```
 
 - Para executar um conjunto de arquivos de teste nas respectivas pastas:
 
-  ```console
+  ```bash
   npx playwright test <caminho_da_pasta1> <caminho_da_pasta2>
   ```
 
   Por exemplo:
 
-  ```console
+  ```bash
   npx playwright test tests/todo-page/ tests/landing-page/
   ```
 
 - Para executar o teste com o título:
 
-  ```console
+  ```bash
   npx playwright test -g <título>
   ```
 
   Por exemplo:
 
-  ```console
+  ```bash
   npx playwright test -g "add a todo item"
   ```
 
@@ -222,13 +233,13 @@ Como o Playwright é executado no Node.js, você pode depurá-lo com seu depurad
 
 - Depuração de todos os testes:
 
-  ```console
+  ```bash
   npx playwright test --debug
   ```
 
 - Depuração de um arquivo de teste:
 
-  ```console
+  ```bash
   npx playwright test example.spec.ts --debug
   ```
 
@@ -236,7 +247,7 @@ Como o Playwright é executado no Node.js, você pode depurá-lo com seu depurad
 
 O HTML Reporter mostra um relatório completo de seus testes, que permite filtrar o relatório por navegadores, testes que passaram, testes que falharam, testes ignorados e testes não confiáveis.
 
-```console
+```bash
 npx playwright show-report 
 ```
 
@@ -246,13 +257,13 @@ O Playwright, geralmente, é uma ferramenta com pouquíssimas chances de erro. O
 
 - (MacOs e Linux) Se executar o Playwright resultar em um erro devido a dependências do kernel, execute o seguinte comando:
 
-  ```console
+  ```bash
   pnpm run playwright:install-build-tools-linux
   ```
 
 - Um erro comum visto no Playwright é o seguinte:
 
-  ```console
+  ```bash
     Error: page.goto: Could not connect: Connection refused
     =========================== logs ===========================
     navigating to "https://127.0.0.1:8000/", waiting until "load"
@@ -273,7 +284,7 @@ O Playwright, geralmente, é uma ferramenta com pouquíssimas chances de erro. O
 
 - Outro erro comum visto no Playwright é o seguinte:
 
-  ```console
+  ```bash
     Protocol error (Network.getResponseBody): Request content was evicted from inspector cache
   ```
 
@@ -294,25 +305,25 @@ Se, ao iniciar o ambiente do Gitpod, o ambiente não foi desenvolvido automatica
 
 - Criar o arquivo .env
 
-  ```console
+  ```bash
   cp sample.env .env
   ```
 
 - Crie um arquivo de configuração.
 
-  ```console
+  ```bash
   pnpm run create:shared
   ```
 
 - Crie o banco de dados
 
-  ```console
+  ```bash
   pnpm run seed
   ```
 
 - Desenvolva o servidor e o client
 
-  ```console
+  ```bash
   pnpm run develop
   ```
 
@@ -320,7 +331,7 @@ Se, ao iniciar o ambiente do Gitpod, o ambiente não foi desenvolvido automatica
 
 Para instalar as dependências necessárias para executar o Playwright, execute o seguinte comando:
 
-```console
+```bash
 pnpm run playwright:install-build-tools
 ```
 
@@ -328,6 +339,6 @@ pnpm run playwright:install-build-tools
 
 Para executar todos os testes do Playwright, execute o seguinte comando:
 
-```console
+```bash
 npx playwright test
 ```

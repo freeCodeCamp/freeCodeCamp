@@ -45,6 +45,7 @@
     "settings": "Settings",
     "take-me": "Take me to the Challenges",
     "check-answer": "Check your answer",
+    "submit": "Submit",
     "get-hint": "Get a Hint",
     "ask-for-help": "Ask for Help",
     "create-post": "Create a help post on the forum",
@@ -306,7 +307,7 @@
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546)",
-    "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.",
+    "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.",
     "donation-initiatives": "Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff.",
     "donate-text": "You can <1>make a tax-deductible donation here</1>.",
     "trending-guides": "Trending Guides",
@@ -422,6 +423,7 @@
     "building-a-university": "We're Building a Free Computer Science University Degree Program",
     "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead.",
     "preview-external-window": "Preview currently showing in external window.",
+    "fill-in-the-blank": "Fill in the blank",
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
@@ -532,7 +534,7 @@
     "download-irs": "You can <0>download our IRS Determination Letter here</0>.",
     "download-990": "You can <0>download our most recent 990 (annual tax report) here</0>.",
     "how-efficient": "How efficient is freeCodeCamp?",
-    "fcc-budget": "freeCodeCamp's budget is much smaller than most comparable charity. We haven't brought in professional fundraisers. Instead, Quincy does everything himself.",
+    "fcc-budget": "freeCodeCamp's budget is much smaller than most comparable charities. We haven't brought in professional fundraisers. Instead, Quincy does everything himself.",
     "help-millions": "However, on a budget of only a few hundred thousand dollars per year, we have been able to help millions of people.",
     "how-one-time": "How can I make a one-time donation?",
     "one-time": "If you'd prefer to make one-time donations, you can support freeCodeCamp's mission whenever you have cash to spare. You can use <0>this link to donate whatever amount feels right through PayPal</0>.",
@@ -559,7 +561,9 @@
     "how-update": "I set up a monthly donation, but I need to update or pause the monthly recurrence. How can I do this?",
     "take-care-of-this": "Just forward one of your monthly donation receipts to donors@freecodecamp.org and tell us what you'd like us to do. We'll take care of this for you and send you confirmation.",
     "anything-else": "Is there anything else I can learn about donating to freeCodeCamp.org?",
-    "other-support": "If there is some other way you'd like to support our charity and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org."
+    "other-support": "If there is some other way you'd like to support our charity and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org.",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "You need to be signed in to report a user",
@@ -739,14 +743,26 @@
         "unlinked": "The link to your Microsoft username has been removed.",
         "unlink-err": "Something went wrong trying to remove the link to your Microsoft username."
       },
+      "profile": {
+        "err": "We could not find a Microsoft user ID for Microsoft user \"{{msUsername}}\""
+      },
       "trophy": {
         "err-1": "We could not find a Microsoft username associated with your freeCodeCamp account.",
         "err-2": "You are trying to submit a challenge that does not appear to be a trophy challenge.",
-        "err-3": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
-        "err-4": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-3": "We could not get your Microsoft profile from your Microsoft ID.",
+        "err-4": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
+        "err-5": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-6": "It looks like your Microsoft account might be private. Set it to public and try again.",
         "verified": "Your trophy from Microsoft's learning platform was verified."
       }
-    }
+    },
+    "survey": {
+      "err-1": "The survey submitted is not in the correct format.",
+      "err-2": "It looks like you have already completed this survey.",
+      "err-3": "Something went wrong trying to save your survey.",
+      "success": "Thank you. Your survey was submitted."
+    },
+    "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
     "max-characters": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",
@@ -885,6 +901,8 @@
       "college-algebra-with-python-v8": "College Algebra with Python Certification",
       "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
+      "A2 English for Developers": "A2 English for Developers",
+      "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "Legacy Front End",
       "legacy-front-end": "Front End Certification",
       "Legacy Back End": "Legacy Back End",
@@ -909,14 +927,13 @@
     "set-claim": "Claim and view your certification"
   },
   "forum-help": {
-    "browser-info": "**Your browser information:**",
+    "browser-info": "Your browser information:",
     "user-agent": "User Agent is: <code>{{userAgent}}</code>",
-    "challenge": "**Challenge:**",
-    "challenge-link": "**Link to the challenge:**",
-    "whats-happening": "**Tell us what's happening:**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "Describe your issue in detail here.",
-    "camper-project": "**Your project link(s)**",
-    "camper-code": "**Your code so far**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "WARNING",
     "too-long-one": "The challenge seed code and/or your solution exceeded the maximum length we can port over from the challenge.",
     "too-long-two": "You will need to take an additional step here so the code you wrote presents in an easy to read format.",
@@ -962,5 +979,31 @@
     "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
     "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
     "certain": "Accept and Dismiss"
+  },
+  "survey": {
+    "foundational-c-sharp": {
+      "title": "Foundational C# with Microsoft Survey",
+      "q1": {
+        "q": "Please describe your role:",
+        "o1": "Student developer",
+        "o2": "Beginner developer (less than 2 years experience)",
+        "o3": "Intermediate developer (between 2 and 5 years experience)",
+        "o4": "Experienced developer (more than 5 years experience)"
+      },
+      "q2": {
+        "q": "Prior to this course, how experienced were you with .NET and C#?",
+        "o1": "Novice (no prior experience)",
+        "o2": "Beginner",
+        "o3": "Intermediate",
+        "o4": "Advanced",
+        "o5": "Expert"
+      }
+    },
+    "misc": {
+      "take": "Take the survey",
+      "submit": "Submit the survey",
+      "exit": "Exit the survey",
+      "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
   }
 }

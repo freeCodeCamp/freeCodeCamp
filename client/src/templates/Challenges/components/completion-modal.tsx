@@ -24,7 +24,7 @@ import {
   challengeMetaSelector,
   isSubmittingSelector
 } from '../redux/selectors';
-import ProgressBar from '../../../components/ProgressBar';
+import Progress from '../../../components/Progress';
 import GreenPass from '../../../assets/icons/green-pass';
 
 import './completion-modal.css';
@@ -40,7 +40,7 @@ const mapStateToProps = createSelector(
   isSubmittingSelector,
   (
     challengeFiles: ChallengeFiles,
-    { dashedName }: { dashedName: string },
+    { dashedName, id }: { dashedName: string; id: string },
     completedChallengesIds: string[],
     isOpen: boolean,
     isSignedIn: boolean,
@@ -49,6 +49,7 @@ const mapStateToProps = createSelector(
     isSubmitting: boolean
   ) => ({
     challengeFiles,
+    id,
     dashedName,
     completedChallengesIds,
     isOpen,
@@ -184,10 +185,11 @@ class CompletionModal extends Component<
             <GreenPass
               className='completion-success-icon'
               data-testid='fcc-completion-success-icon'
+              data-playwright-test-label='completion-success-icon'
             />
           </div>
           <div className='completion-block-details'>
-            <ProgressBar />
+            <Progress />
           </div>
         </Modal.Body>
         <Modal.Footer>

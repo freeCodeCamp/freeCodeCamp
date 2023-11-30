@@ -49,7 +49,7 @@ body {
 }
 
 /*
-  Row from @freecodecamp/react-bootstrap adds some negative margin which causes
+  Row from @freecodecamp/ui adds some negative margin which causes
   a little bit of horizontal overflow on certain pages. This eliminates that
   for those pages.
 */
@@ -100,7 +100,6 @@ h6 {
 h4,
 h5,
 h6,
-p,
 td,
 th {
   color: var(--secondary-color);
@@ -111,6 +110,9 @@ th {
 
 p {
   line-height: 1.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0 0 1.2rem;
 }
 
 .big-heading {
@@ -158,6 +160,7 @@ p {
 a {
   color: inherit;
   text-decoration: underline;
+  /* This is required in order to improve text readability in Arabic */
   text-underline-position: under;
 }
 
@@ -312,7 +315,6 @@ fieldset[disabled] .btn-primary.focus {
   text-decoration: underline;
   background: transparent;
   padding: 0;
-  outline-color: transparent;
 }
 .btn-link:hover,
 .btn-link:focus:active {
@@ -457,7 +459,7 @@ input:focus {
 }
 code {
   padding: 1px 4px;
-  background-color: var(--quaternary-background);
+  background-color: var(--tertiary-background);
   color: var(--tertiary-color);
   border-radius: 0;
   font-family: var(--font-family-monospace);
@@ -465,20 +467,11 @@ code {
 }
 
 :not(pre) > code {
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--gray-45);
 }
 
 .challenge-instructions code {
   white-space: break-spaces;
-}
-
-.panel {
-  border-radius: 0;
-  background-color: transparent;
-}
-
-.help-block em {
-  font-size: 0.8rem;
 }
 
 hr {
@@ -513,12 +506,8 @@ hr {
   text-align: center;
 }
 
-.help-block {
-  color: var(--quaternary-color);
-}
-
-.panel-default > .panel-heading {
-  background-color: transparent;
+.challenge-instructions table tbody tr:nth-of-type(odd) {
+  background-color: var(--tertiary-background);
 }
 
 .challenge-output span {
@@ -542,68 +531,9 @@ pre {
   border-radius: 0;
 }
 
-.list-group-item {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-}
-
-.intro-toc .list-group-item:hover {
-  background-color: var(--tertiary-background) !important;
-  border-radius: 0;
-}
-
-.panel-primary > .panel-heading {
-  background-color: transparent;
-  border-color: var(--primary-color);
-  color: var(--primary-color);
-}
-
 .solution-viewer,
 .solution-viewer pre {
   margin-bottom: 0;
-}
-
-.has-success .help-block,
-.has-success .control-label,
-.has-success .radio,
-.has-success .checkbox,
-.has-success .radio-inline,
-.has-success .checkbox-inline,
-.has-success.radio label,
-.has-success.checkbox label,
-.has-success.radio-inline label,
-.has-success.checkbox-inline label {
-  color: var(--highlight-color);
-}
-
-.has-error .help-block,
-.has-error .control-label,
-.has-error .radio,
-.has-error .checkbox,
-.has-error .radio-inline,
-.has-error .checkbox-inline,
-.has-error.radio label,
-.has-error.checkbox label,
-.has-error.radio-inline label,
-.has-error.checkbox-inline label {
-  color: var(--danger-color);
-}
-
-.has-error .form-control,
-.has-warning .form-control,
-.has-success .form-control {
-  border-color: var(--quaternary-background);
-}
-
-.has-error .form-control:focus,
-.has-warning .form-control:focus,
-.has-success .form-control:focus {
-  border-color: var(--tertiary-color);
-}
-
-.panel-primary {
-  border-color: var(--primary-color);
 }
 
 blockquote footer,
@@ -617,7 +547,8 @@ blockquote .small {
   overflow-wrap: break-word;
 }
 
-.alert .btn {
+.alert .btn,
+[role='alert'] .btn {
   background-color: #d9edf7;
   color: #31708f;
   border-color: #31708f;
@@ -625,7 +556,8 @@ blockquote .small {
 .alert .btn:hover,
 .alert .btn:focus,
 .alert a:hover,
-.alert a:focus {
+.alert a:focus,
+[role='alert'] :is(a, .btn):is(:hover, :focus) {
   background-color: #31708f;
   color: #d9edf7;
   border-color: #31708f;

@@ -14,7 +14,7 @@ Come promemoria, questo progetto verrà costruito a partira dalla seguente bozza
 
 # --instructions--
 
-All'interno di `tests/1_unit-tests.js`, sotto il test etichettato con `#7`, nella suite `Equality`, cambia ogni asserzione `assert` in `assert.deepEqual` o `assert.notDeepEqual` per far superare il test (dovrebbe risultare `true`). Non alterare gli argomenti passati alle asserzioni.
+Within `tests/1_unit-tests.js` under the test labeled `#7` in the `Equality` suite, change each `assert` to either `assert.deepEqual` or `assert.notDeepEqual` to make the test pass (should evaluate to `true`). Non alterare gli argomenti passati alle asserzioni.
 
 # --hints--
 

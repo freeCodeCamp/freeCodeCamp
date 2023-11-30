@@ -94,8 +94,7 @@ function createQuestionEpic(action$, state$, { window }) {
       });
       const challengeHeading = i18next.t('forum-help.challenge');
       const blockTitle = i18next.t(`intro:${superBlock}.blocks.${block}.title`);
-      const challengeLinkHeading = i18next.t('forum-help.challenge-link');
-      const endingText = `${browserInfoHeading}\n\n${userAgentHeading}\n\n${challengeHeading} ${blockTitle} - ${challengeTitle}\n\n${challengeLinkHeading}\n${challengeUrl}`;
+      const endingText = `### ${browserInfoHeading}\n\n${userAgentHeading}\n\n### ${challengeHeading}\n${blockTitle} - ${challengeTitle}\n${challengeUrl}`;
 
       const camperCodeHeading = i18next.t('forum-help.camper-code');
 
@@ -108,7 +107,7 @@ function createQuestionEpic(action$, state$, { window }) {
         projectFormValues
           ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n\n`)
           ?.join('') || filesToMarkdown(challengeFiles);
-      const textMessage = `${whatsHappeningHeading}\n${describe}\n\n${projectOrCodeHeading}\n\n${markdownCodeOrLinks}${endingText}`;
+      const textMessage = `### ${whatsHappeningHeading}\n${describe}\n\n### ${projectOrCodeHeading}\n\n${markdownCodeOrLinks}${endingText}`;
 
       const warning = i18next.t('forum-help.warning');
       const tooLongOne = i18next.t('forum-help.too-long-one');
@@ -117,7 +116,7 @@ function createQuestionEpic(action$, state$, { window }) {
       const addCodeOne = i18next.t('forum-help.add-code-one');
       const addCodeTwo = i18next.t('forum-help.add-code-two');
       const addCodeThree = i18next.t('forum-help.add-code-three');
-      const altTextMessage = `${whatsHappeningHeading}\n\n${camperCodeHeading}\n\n${warning}\n\n${tooLongOne}\n\n${tooLongTwo}\n\n${tooLongThree}\n\n\`\`\`text\n${addCodeOne}\n${addCodeTwo}\n${addCodeThree}\n\`\`\`\n\n${endingText}`;
+      const altTextMessage = `### ${whatsHappeningHeading}\n\n### ${camperCodeHeading}\n\n${warning}\n\n${tooLongOne}\n\n${tooLongTwo}\n\n${tooLongThree}\n\n\`\`\`text\n${addCodeOne}\n${addCodeTwo}\n${addCodeThree}\n\`\`\`\n\n${endingText}`;
 
       const titleText = window.encodeURIComponent(
         `${i18next.t(

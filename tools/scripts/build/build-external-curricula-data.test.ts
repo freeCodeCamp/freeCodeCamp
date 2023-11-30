@@ -47,7 +47,7 @@ describe('external curriculum data build', () => {
 
     if (result.error) {
       throw new AssertionError(
-        result.error.toString(),
+        result.error.message,
         `file: available-superblocks.json`
       );
     }
@@ -72,7 +72,7 @@ describe('external curriculum data build', () => {
 
         if (result.error) {
           throw new AssertionError(
-            result.error.toString(),
+            result.error.message,
             `file: ${fileInArray}`
           );
         }
@@ -90,7 +90,8 @@ describe('external curriculum data build', () => {
       'foundational-c-sharp-with-microsoft',
       'the-odin-project',
       'upcoming-python',
-      'example-certification'
+      'example-certification',
+      'a2-english-for-developers'
     ];
 
     // TODO: this is a hack, we should have a single source of truth for the

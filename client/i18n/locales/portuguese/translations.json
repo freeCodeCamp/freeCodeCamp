@@ -44,6 +44,7 @@
     "settings": "Configurações",
     "take-me": "Leve-me aos desafios",
     "check-answer": "Confira sua resposta",
+    "submit": "Enviar",
     "get-hint": "Obter uma dica",
     "ask-for-help": "Pedir ajuda",
     "create-post": "Criar uma postagem de ajuda no fórum",
@@ -304,7 +305,7 @@
   },
   "footer": {
     "tax-exempt-status": "O freeCodeCamp é uma organização beneficente 501(c)(3), isenta de impostos e apoiada por doações (Número de identificação fiscal federal dos Estados Unidos: 82-0779546).",
-    "mission-statement": "Nossa missão: ajudar as pessoas a aprender a programar de graça. Nós conseguimos isso através da criação de milhares de vídeos, artigos e aulas interativas de programação – tudo disponível gratuitamente para o público. Também temos milhares de grupos de estudo do freeCodeCamp espalhados por todo o mundo.",
+    "mission-statement": "Nossa missão: ajudar as pessoas a aprender a programar de forma gratuita. Conseguimos isto criando milhares de vídeos, artigos e lições de programação interativas, todas disponíveis gratuitamente para o público.",
     "donation-initiatives": "Doações para o freeCodeCamp vão para as nossas iniciativas educacionais e ajudam a pagar por servidores, serviços e equipe.",
     "donate-text": "Você pode <1>fazer uma doação dedutível de imposto aqui</1>.",
     "trending-guides": "Guias em alta",
@@ -417,6 +418,7 @@
     "building-a-university": "Estamos criando um programa gratuito de graduação em Ciência da Computação",
     "if-help-university": "Já fizemos um progresso enorme. Apoie nossa organização sem fins lucrativos com o longo caminho que temos pela frente.",
     "preview-external-window": "Visualização exibida atualmente na janela externa.",
+    "fill-in-the-blank": "Preencha o espaço em branco",
     "exam": {
       "qualified": "Parabéns! Você completou todos os requisitos para se qualificar para o exame.",
       "not-qualified": "Você ainda não cumpriu os requisitos para ser elegível para o exame. Para se qualificar, complete os seguintes desafios:",
@@ -551,7 +553,9 @@
     "how-update": "Criei uma doação mensal, mas preciso atualizar ou pausar a recorrência mensal. Como posso fazer isso?",
     "take-care-of-this": "Apenas encaminhe um de seus recibos mensais para donors@freecodecamp.org e diga-nos o que você gostaria que fizéssemos. Cuidaremos disso para você e enviaremos sua confirmação.",
     "anything-else": "Há mais alguma coisa que eu possa aprender sobre doações para freeCodeCamp.org?",
-    "other-support": "Se você quiser apoiar a nossa organização beneficente e a sua missão de alguma outra forma que não estiver listada aqui, ou se você tiver alguma dúvida, envie um e-mail para quincy@freecodecamp.org."
+    "other-support": "Se você quiser apoiar a nossa organização beneficente e a sua missão de alguma outra forma que não estiver listada aqui, ou se você tiver alguma dúvida, envie um e-mail para quincy@freecodecamp.org.",
+    "bear-progress-alt": "Ilustração de um ursinho de pelúcia adorável com um olhar triste e segurando um pote de dinheiro vazio.",
+    "bear-completion-alt": "Ilustração de um ursinho de pelúcia adorável segurando um grande troféu."
   },
   "report": {
     "sign-in": "Você precisa estar logado para denunciar um usuário",
@@ -718,12 +722,38 @@
     "challenge-submit-too-big": "Não foi possível enviar seu código. Seu código tem {{user-size}} bytes. É possível enviar, no máximo, {{max-size}} bytes. Diminua o tamanho do seu código e tente novamente ou peça assistência em https://forum.freecodecamp.org",
     "invalid-update-flag": "Você está tentando acessar recursos proibidos. Solicite assistência em https://forum.freecodecamp.org se sua solicitação for válida.",
     "generate-exam-error": "Ocorreu um erro ao tentar gerar seu exame.",
-    "ms-trophy-err": "Não conseguimos verificar seu troféu na plataforma de aprendizagem da Microsoft.",
-    "ms-trophy-verified": "Seu troféu da plataforma de aprendizado da Microsoft foi verificado.",
-    "ms-linked": "Seu nome de usuário da Microsoft foi vinculado à sua conta do freeCodeCamp.",
-    "ms-link-err": "Ocorreu um erro ao tentar vincular seu nome de usuário da Microsoft à sua conta do freeCodeCamp.",
-    "ms-unlinked": "O link para seu nome de usuário da Microsoft foi removido.",
-    "ms-unlink-err": "Ocorreu um erro ao tentar remover o link para o seu nome de usuário da Microsoft."
+    "ms": {
+      "transcript": {
+        "link-err-1": "Inclua um URL de transcrição da Microsoft na solicitação.",
+        "link-err-2": "Algo deu errado ao tentar obter sua transcrição da Microsoft.",
+        "link-err-3": "Um nome de usuário não foi encontrado na sua transcrição da Microsoft.",
+        "link-err-4": "O nome de usuário da Microsoft está sendo utilizado por outra conta do freeCodeCamp.",
+        "link-err-5": "Algo deu errado ao tentar salvar sua conta da Microsoft.",
+        "link-err-6": "Algo deu errado ao tentar vincular seu nome de usuário da Microsoft à sua conta do freeCodeCamp.",
+        "linked": "Seu nome de usuário da Microsoft foi vinculado à sua conta do freeCodeCamp.",
+        "unlinked": "O link para seu nome de usuário da Microsoft foi removido.",
+        "unlink-err": "Algo deu errado ao tentar remover o link para o seu nome de usuário da Microsoft."
+      },
+      "profile": {
+        "err": "Não foi possível encontrar um ID de usuário da Microsoft para o usuário \"{{msUsername}}\""
+      },
+      "trophy": {
+        "err-1": "Não foi possível encontrar um nome de usuário da Microsoft associado à sua conta do freeCodeCamp.",
+        "err-2": "Você está tentando enviar um desafio que não parece ser um desafio de troféu.",
+        "err-3": "Não foi possível obter seu perfil da Microsoft a partir do seu ID da Microsoft.",
+        "err-4": "Parece que o usuário da Microsoft \"{{msUsername}}\" não tem esse troféu.",
+        "err-5": "Algo deu errado ao tentar verificar seu troféu. Confira isso e tente novamente.",
+        "err-6": "Parece que sua conta da Microsoft é privada. Defina-a como pública e tente novamente.",
+        "verified": "Seu troféu da plataforma de aprendizado da Microsoft foi verificado."
+      }
+    },
+    "survey": {
+      "err-1": "A pesquisa enviada não está no formato correto.",
+      "err-2": "Parece que você já completou esta pesquisa.",
+      "err-3": "Algo deu errado ao tentar salvar sua pesquisa.",
+      "success": "Obrigado. Sua pesquisa foi enviada."
+    },
+    "classroom-mode-updated": "Atualizamos suas configurações do modo de sala de aula"
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",
@@ -750,7 +780,7 @@
     "verify": "Verificar esta certificação em:",
     "issued": "Emitido",
     "fulltext": "<0>Esta é a certificação de que</0> <1>{{user}}</1> <2>completou com sucesso a certificação de desenvolvedor</2> <3>{{title}}</3> <4>do freeCodeCamp. org em {{time}},</4> <5>representando aproximadamente {{completionTime}} horas de curso.</5>",
-    "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltextNoHours": "<0>Certificamos que</0> <1>{{user}}</1> <2>completou com sucesso a certificação de desenvolvedor</2> <3>{{title}}</3> <4>em {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "Como parte desta certificação de full-stack legada, {{user}} completou as seguintes certificações:",
       "heading": "Como parte da certificação, {{user}} concluiu os seguintes projetos e passou em todos os testes:",
@@ -862,6 +892,8 @@
       "college-algebra-with-python-v8": "Certificação de Álgebra do ensino superior com Python",
       "Foundational C# with Microsoft": "Fundamentos de C# com a Microsoft",
       "foundational-c-sharp-with-microsoft": "Fundamentos de C# com certificação da Microsoft",
+      "A2 English for Developers": "A2 Inglês para Desenvolvedores",
+      "a2-english-for-developers": "Certificação A2 Inglês para Desenvolvedores",
       "Legacy Front End": "Front-end legado",
       "legacy-front-end": "Certificação de front-end",
       "Legacy Back End": "Back-end legado",
@@ -886,14 +918,13 @@
     "set-claim": "Solicite e veja sua certificação"
   },
   "forum-help": {
-    "browser-info": "**Informações de seu navegador:**",
+    "browser-info": "Informações do seu navegador:",
     "user-agent": "Agente de usuário: <code>{{userAgent}}</code>",
-    "challenge": "**Desafio:**",
-    "challenge-link": "**Link para o desafio:**",
-    "whats-happening": "**Conte-nos o que está acontecendo:**",
+    "challenge": "Informações do desafio:",
+    "whats-happening": "Conte-nos o que está acontecendo:",
     "describe": "Descreva detalhadamente o problema aqui.",
-    "camper-project": "**O(s) link(s) para seu projeto**",
-    "camper-code": "**Seu código até o momento**",
+    "camper-project": "Os links para seu projeto",
+    "camper-code": "Seu código até o momento",
     "warning": "AVISO",
     "too-long-one": "O código de seed do desafio e/ou sua solução excederam o comprimento máximo que podemos transportar do desafio.",
     "too-long-two": "Você precisa realizar uma etapa adicional aqui para que o código que você escreveu apresente um formato de fácil leitura.",
@@ -934,10 +965,36 @@
     "nevermind": "Deixa para lá, eu não quero sair da minha conta"
   },
   "staging-warning": {
-    "heading": "Warning: This is an early access test deployment",
-    "p1": "We welcome you to try this platform in a test-only mode and get early access to upcoming features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "heading": "Aviso: esta é uma implantação de teste de acesso antecipado",
+    "p1": "Boas-vindas a você para experimentar esta plataforma em um modo apenas para teste e para ter acesso rápido aos recursos da próxima plataforma. Por vezes, essas mudanças são referidas como a próxima, a beta, a de staging – nomes, em geral, intercambiáveis.",
     "p2": "Agradecemos por relatar erros que encontra e ajuda para melhorar o freeCodeCamp.org.",
     "p3": "Seu progresso PODE NÃO estar salvo na sua próxima visita. Qualquer certificação solicitada nessa implantação não é válida. Saiba mais <0>seguindo este link</0>.",
     "certain": "Aceitar e dispensar"
+  },
+  "survey": {
+    "foundational-c-sharp": {
+      "title": "Pesquisa de Fundamentos de C# com a Microsoft",
+      "q1": {
+        "q": "Descreva sua função:",
+        "o1": "Desenvolvedor estudante",
+        "o2": "Desenvolvedor iniciante (experiência de menos de 2 anos)",
+        "o3": "Desenvolvedor intermediário (entre 2 e 5 anos de experiência)",
+        "o4": "Desenvolvedor experiente (experiência de mais de 5 anos)"
+      },
+      "q2": {
+        "q": "Antes desse curso, qual era seu nível de experiência com o .NET e C#?",
+        "o1": "Novato (sem experiência anterior)",
+        "o2": "Iniciante",
+        "o3": "Intermediário",
+        "o4": "Avançado",
+        "o5": "Especialista"
+      }
+    },
+    "misc": {
+      "take": "Responda à pesquisa",
+      "submit": "Envie a pesquisa",
+      "exit": "Saia da pesquisa",
+      "two-questions": "Parabéns por chegar até aqui. Antes de começar o teste, responda a estas duas breves perguntas de pesquisa."
+    }
   }
 }

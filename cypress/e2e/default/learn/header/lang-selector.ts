@@ -22,7 +22,7 @@ describe('language selector', () => {
       cy.get(toLangSelector(lang)).should('be.visible');
     });
 
-    if (lang === 'english') {
+    if (String(lang) === 'english') {
       return;
     }
     it(`should navigate to ${lang}`, () => {

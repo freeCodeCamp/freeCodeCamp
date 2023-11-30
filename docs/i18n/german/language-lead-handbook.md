@@ -339,7 +339,7 @@ In Crowdin, individuate the `User management` on the left-hand side menu.
 
 Dadurch wird die Benutzerverwaltung geöffnet, in der du die Liste aller Benutzer sehen kannst.
 
-Search for the user that will become a proofreader. Verwende das Menü mit den drei Punkten in der Benutzerzeile, um ein Menü zu öffnen und wähle "Add to team". Die Korrekturleserteams haben den Standardnamen `Proof Readers(<Sprache>)`, du kannst das Team über den Namen der Sprache suchen. Wenn du das Team ausgewählt hast, benutze den Button "ADD" unten auf der Seite, um den Vorgang abzuschließen.
+Search for the user who will become a proofreader. Verwende das Menü mit den drei Punkten in der Benutzerzeile, um ein Menü zu öffnen und wähle "Add to team". Die Korrekturleserteams haben den Standardnamen `Proof Readers(<Sprache>)`, du kannst das Team über den Namen der Sprache suchen. Wenn du das Team ausgewählt hast, benutze den Button "ADD" unten auf der Seite, um den Vorgang abzuschließen.
 
 Der Benutzer ist jetzt ein Korrekturleser.
 

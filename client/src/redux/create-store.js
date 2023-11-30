@@ -30,16 +30,18 @@ const composeEnhancers = composeWithDevTools({
   // options like actionSanitizer, stateSanitizer
 });
 
-export const createStore = () => {
+export const createStore = (preloadedState = {}) => {
   let store;
   if (environment === 'production') {
     store = reduxCreateStore(
       rootReducer,
+      preloadedState,
       applyMiddleware(sagaMiddleware, epicMiddleware)
     );
   } else {
     store = reduxCreateStore(
       rootReducer,
+      preloadedState,
       composeEnhancers(applyMiddleware(sagaMiddleware, epicMiddleware))
     );
   }

@@ -21,11 +21,11 @@ Escrever um comentário em HTML é simples: basta envolver o comentário com as 
 <!-- I am another html comment -->
 ```
 
-# --question--
-
-## --atividade
+# --atividade
 
 Para praticar um pouco o trabalho com textos em HTML, crie uma página simples de artigos de blog que use títulos diferentes e parágrafos. Coloque algum texto nos parágrafos em negritos e em itálico. Você pode usar o [Lorem Ipsum](https://loremipsum.io) para gerar texto fictício, no lugar do texto real, enquanto cria seus sites.
+
+# --question--
 
 ## --text--
 

@@ -15,15 +15,21 @@ exports[`<Profile/> renders correctly 1`] = `
     />
     <div>
       <div
-        class="row"
+        class="mx-[-15px] "
       >
         <div
-          class="avatar-camper col-xs-12"
+          class="avatar-camper min-h-[1px] px-[15px] w-full         "
         >
           <div
             class="avatar-container default-border"
           >
+            <span
+              class="sr-only"
+            >
+              buttons.profile
+            </span>
             <svg
+              aria-hidden="true"
               class="avatar default-avatar"
               height="500px"
               version="1.1"
@@ -166,10 +172,10 @@ exports[`<Profile/> renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="row"
+        class="mx-[-15px] "
       >
         <div
-          class="text-center social-media-icons col-sm-6 col-sm-offset-3"
+          class="text-center social-media-icons min-h-[1px] px-[15px]  md:w-1/2    md:ml-[25%]    "
         >
           <a
             aria-label="aria.linkedin"
@@ -279,7 +285,7 @@ exports[`<Profile/> renders correctly 1`] = `
       style="padding: 15px 0px;"
     />
     <div
-      class="text-center row"
+      class="mx-[-15px] text-center"
     >
       <a
         href="/user/string/report-user"

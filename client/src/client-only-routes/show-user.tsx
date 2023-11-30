@@ -1,21 +1,20 @@
-import {
-  Panel,
-  FormControl,
-  FormGroup,
-  ControlLabel,
-  Button,
-  Col,
-  Row
-} from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import {
+  FormGroup,
+  FormControl,
+  ControlLabel,
+  Panel,
+  Col,
+  Row,
+  Button
+} from '@freecodecamp/ui';
 
 import Login from '../components/Header/components/login';
-
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 import { reportUser } from '../redux/actions';
 import {
@@ -85,11 +84,9 @@ function ShowUser({
       <main>
         <FullWidthRow>
           <Spacer size='large' />
-          <Panel bsStyle='info' className='text-center'>
+          <Panel variant='primary' className='text-center'>
             <Panel.Heading>
-              <Panel.Title componentClass='h3'>
-                {t('report.sign-in')}
-              </Panel.Title>
+              <Panel.Title>{t('report.sign-in')}</Panel.Title>
             </Panel.Heading>
             <Panel.Body className='text-center'>
               <Spacer size='large' />
@@ -127,13 +124,14 @@ function ShowUser({
             <FormGroup controlId='report-user-textarea'>
               <ControlLabel>{t('report.what')}</ControlLabel>
               <FormControl
+                data-cy='report-user'
                 componentClass='textarea'
                 onChange={handleChange}
                 placeholder={t('report.details')}
                 value={textarea}
               />
             </FormGroup>
-            <Button block={true} bsStyle='primary' type='submit'>
+            <Button block={true} variant='primary' type='submit'>
               {t('report.submit')}
             </Button>
             <Spacer size='medium' />

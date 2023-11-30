@@ -18,7 +18,6 @@ type DropdownMenuProps = Props<
   MenuRenderPropArg,
   never,
   {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     __demoMode?: boolean;
   }
 >;

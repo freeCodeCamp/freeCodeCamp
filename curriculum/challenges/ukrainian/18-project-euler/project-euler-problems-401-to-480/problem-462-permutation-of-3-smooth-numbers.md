@@ -1,6 +1,6 @@
 ---
 id: 5900f53b1000cf542c51004d
-title: 'Problem 462: Permutation of 3-smooth numbers'
+title: 'Завдання 462: перестановка 3-гладких чисел'
 challengeType: 1
 forumTopicId: 302137
 dashedName: problem-462-permutation-of-3-smooth-numbers
@@ -8,21 +8,21 @@ dashedName: problem-462-permutation-of-3-smooth-numbers
 
 # --description--
 
-A 3-smooth number is an integer which has no prime factor larger than 3. For an integer $N$, we define $S(N)$ as the set of 3-smooth numbers less than or equal to $N$. Наприклад, $S(20) = \\{1, 2, 3, 4, 6, 8, 9, 12, 16, 18\\}$.
+3-гладке число — це ціле число, яке не має жодного простого множника, більшого за 3. Для цілого $N$ визначимо $S(N)$ як множину 3-гладких чисел, менших або рівних $N$. Наприклад, $S(20) = \\{1, 2, 3, 4, 6, 8, 9, 12, 16, 18\\}$.
 
-We define $F(N)$ as the number of permutations of $S(N)$ in which each element comes after all of its proper divisors.
+Визначимо $F(N)$ як кількість перестановок $S(N)$, де кожен елемент йде після всіх власних дільників.
 
-This is one of the possible permutations for $N = 20$.
+Це одна з можливих перестановок для $N = 20$.
 
 -   1, 2, 4, 3, 9, 8, 16, 6, 18, 12.
 
-This is not a valid permutation because 12 comes before its divisor 6.
+Дана перестановка не є допустимою, оскільки 12 йде перед своїм дільником 6.
 
 -   1, 2, 4, 3, 9, 8, 12, 16, 6, 18.
 
-We can verify that $F(6) = 5$, $F(8) = 9$, $F(20) = 450$ and $F(1000) ≈ 8.8521816557e\\,21$.
+Можна довести, що $F(6) = 5$, $F(8) = 9$, $F(20) = 450$ та $F(1000) ≈ 8.8521816557e\\,21$.
 
-Знайдіть $F({10}^{18})$. Give as your answer as a string in its scientific notation rounded to ten digits after the decimal point. When giving your answer, use a lowercase `e` to separate mantissa and exponent. E.g. if the answer is $112\\,233\\,445\\,566\\,778\\,899$ then the answer format would be `1.1223344557e17`.
+Знайдіть $F({10}^{18})$. Надайте відповідь у вигляді рядка в експоненційному записі, заокругливши до десяти знаків після коми. При цьому використайте `e` в нижньому регістрі, щоб розділити мантису та показник степеня. Наприклад, якщо відповідь дорівнює $112\\,233\\,445\\,566\\,778\\,899$, то форматом буде `1.1223344557e17`.
 
 # --hints--
 

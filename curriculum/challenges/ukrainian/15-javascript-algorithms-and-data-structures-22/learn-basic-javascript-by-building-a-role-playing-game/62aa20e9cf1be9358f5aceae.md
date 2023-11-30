@@ -7,7 +7,7 @@ dashedName: step-150
 
 # --description--
 
-Додайте інструкцію `else` до першої інструкції `if` всередині функції `attack()`. Використайте оператор `+=` в інструкції `else`, щоб додати текст `You miss.` в кінець `text.innerText`.
+Add an `else` statement to the first `if` statement inside your `attack()` function. Використайте оператор `+=` в інструкції `else`, щоб додати текст `You miss.` в кінець `text.innerText`.
 
 # --hints--
 
@@ -17,7 +17,7 @@ dashedName: step-150
 assert.match(attack.toString(), /if\s*\(isMonsterHit\(\)\s*\)\s*\{\s*monsterHealth\s*-=\s*weapons\[currentWeapon\]\.power\s*\+\s*Math\.floor\(Math\.random\(\)\s*\*\s*xp\)\s*\+\s*1;\s*\}\s*else/)
 ```
 
-Додайте текст `You miss.` у кінець `text.innerText`. Не забудьте використати складене присвоювання.
+Додайте текст `You miss.` у кінець `text.innerText`. Remember to use compound assignment and make sure there is a space before the word `You`.
 
 ```js
 assert.match(attack.toString(), /if\s*\(isMonsterHit\(\)\s*\)\s*\{\s*monsterHealth\s*-=\s*weapons\[currentWeapon\]\.power\s*\+\s*Math\.floor\(Math\.random\(\)\s*\*\s*xp\)\s*\+\s*1;\s*\}\s*else\s*\{\s*text\.innerText\s*\+=\s*('|")\sYou miss\.\1/)

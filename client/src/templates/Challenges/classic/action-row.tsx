@@ -50,17 +50,18 @@ const ActionRow = ({
   }
 
   return (
-    <div className='action-row'>
-      <div className='tabs-row'>
+    <div className='action-row' data-playwright-test-label='action-row'>
+      <div className='tabs-row' data-playwright-test-label='tabs-row'>
         {!isProjectBasedChallenge && (
           <button
+            data-playwright-test-label='instructions-button'
             aria-expanded={!!showInstructions}
             onClick={() => togglePane('showInstructions')}
           >
             {t('learn.editor-tabs.instructions')}
           </button>
         )}
-        <EditorTabs />
+        <EditorTabs data-playwright-test-label='editor-tabs' />
         <div className='panel-display-tabs'>
           <button
             aria-expanded={!!showConsole}
@@ -77,6 +78,7 @@ const ActionRow = ({
             </button>
           )}
           <button
+            data-playwright-test-label='preview-pane-button'
             aria-expanded={!!showPreviewPane}
             onClick={() => togglePane('showPreviewPane')}
           >
@@ -84,6 +86,7 @@ const ActionRow = ({
             <span aria-hidden='true'>{t('learn.editor-tabs.preview')}</span>
           </button>
           <button
+            data-playwright-test-label='preview-portal-button'
             aria-expanded={!!showPreviewPortal}
             onClick={() => togglePane('showPreviewPortal')}
           >

@@ -10,7 +10,7 @@ dashedName: catch-misspelled-variable-and-function-names
 
 `console.log()` 和 `typeof` 方法是檢查中間值和程序輸出類型的兩種主要方法。 現在是時候瞭解一下 bug 出現的常見的情形。 一個語法級別的問題是打字太快帶來的低級拼寫錯誤。
 
-變量或函數名的錯寫、漏寫或大小寫弄混都會讓瀏覽器嘗試查找並不存在的東西，並報出“引用錯誤”。 JavaScript 變量和函數名稱區分大小寫。
+Transposed, missing, or miscapitalized characters in a variable or function name will have the browser looking for an object that doesn't exist - and complain in the form of a reference error. JavaScript 變量和函數名稱區分大小寫。
 
 # --instructions--
 

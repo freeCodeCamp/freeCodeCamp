@@ -1,6 +1,6 @@
 ---
 id: 5900f4461000cf542c50ff58
-title: 'Problem 217: Balanced Numbers'
+title: 'Завдання 217: збалансовані числа'
 challengeType: 1
 forumTopicId: 301859
 dashedName: problem-217-balanced-numbers
@@ -8,13 +8,13 @@ dashedName: problem-217-balanced-numbers
 
 # --description--
 
-A positive integer with $k$ (decimal) digits is called balanced if its first $⌈\frac{k}{2}⌉$ digits sum to the same value as its last $⌈\frac{k}{2}⌉$ digits, where $⌈x⌉$, pronounced ceiling of $x$, is the smallest integer $≥ x$, thus $⌈π⌉ = 4$ and $⌈5⌉ = 5$.
+Натуральне число з $k$ (десятковими) числами називається збалансованим, якщо сума його перших $⌈\frac{k}{2}⌉$ чисел дорівнює сумі його останніх $⌈\frac{k}{2}⌉$ чисел, де $⌈x⌉$, що називається округленням $x$ вгору, є найменшим цілим числом $≥ x$. Таким чином $⌈π⌉ = 4$ та $⌈5⌉ = 5$.
 
-So, for example, all palindromes are balanced, as is 13722.
+Так, наприклад, всі паліндроми є збалансованими так само, як і 13722.
 
-Let $T(n)$ be the sum of all balanced numbers less than $10^n$.
+Нехай $T(n)$ буде сумою всіх збалансованих чисел, менших за $10^n$.
 
-Thus: $T(1) = 45$, $T(2) = 540$ and $T(5) = 334\\,795\\,890$.
+Таким чином $T(1) = 45$, $T(2) = 540$ та $T(5) = 334\\,795\\,890$.
 
 Знайдіть $T(47)\\,mod\\,3^{15}$
 

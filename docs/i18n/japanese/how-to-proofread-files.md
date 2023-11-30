@@ -2,7 +2,7 @@
 
 校正チームは、翻訳文が原文を正確に反映するようにする責任があります。 私たちは、非常に高い品質の翻訳文を提供してくれる校正者を信頼しています。
 
-翻訳はすべて実際の人間が作業しています。 校正により、カリキュラムなどの翻訳リソース全体で一貫したトーンが保証されます。
+翻訳はすべて実際の人間が作業しています。 Proofreading ensures that there is a consistent tone across all our translated resources like the curriculum.
 
 校正を始めるには、[翻訳プラットフォーム](https://translate.freecodecamp.org) にアクセスしてログインします。 上部ナビゲーションバーで「コンソールに移動」を選択し、パブリックビューからワークスペースビューに切り替えます。
 
@@ -49,6 +49,6 @@
 
 ## Creating a Channel on Chat for a World Language
 
-ほとんどの場合、すべての連絡に [「contributors」](https://discord.gg/PRyKn3Vbay) チャンネルを使用することをお勧めします。 しかし、ある言語のボランティア翻訳者のチームが成長した場合、その言語のブレイクアウトチャンネルを追加することを検討します。
+For the most part, we encourage you to use the [contributors chat](https://discord.gg/PRyKn3Vbay) room for all correspondence. However if the team of volunteer translators grows for a certain language, we can consider creating an additional break-out channel for the language.
 
 既に校正者であり、特定の言語のためのチャットサーバーに専用チャンネルを持つことに興味がある場合、[このフォーム](https://forms.gle/XU5CyutrYCgDYaVZA) に記入します。

@@ -1,4 +1,3 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import {
   CardNumberElement,
   CardExpiryElement,
@@ -128,7 +127,6 @@ const StripeCardForm = ({
   ) => {
     if (stripe) {
       return stripe.confirmCardPayment(clientSecret, {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         payment_method: paymentMethod
       });
     }
@@ -142,7 +140,7 @@ const StripeCardForm = ({
     >
       <div
         className={`donation-elements${
-          !isSubmissionValid ? ' failed-submition' : ''
+          !isSubmissionValid ? ' failed-submission' : ''
         }`}
       >
         <CardNumberElement
@@ -159,15 +157,14 @@ const StripeCardForm = ({
       <div className={'form-status'}>
         {!isSubmissionValid && <p>{t('donate.valid-card')}</p>}
       </div>
-      <Button
-        block={true}
-        bsStyle='primary'
+      <button
         className='confirm-donation-btn'
         disabled={!stripe || !elements || isSubmitting}
+        data-cy='donation-confirmation-button'
         type='submit'
       >
         {t('buttons.donate')}
-      </Button>
+      </button>
     </form>
   );
 };

@@ -14,7 +14,7 @@ dashedName: test-if-an-object-is-an-instance-of-a-constructor
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，`Objects` 套件里标有 `#18` 的测试下，将每个 `assert` 改成 `assert.instanceOf` 或 `assert.notInstanceOf` 方法，通过测试（结果应该返回 `true`）。 不要修改传给断言的参数。
+Within `tests/1_unit-tests.js` under the test labeled `#18` in the `Objects` suite, change each `assert` to either `assert.instanceOf` or `assert.notInstanceOf` to make the test pass (should evaluate to `true`). 不要修改传给断言的参数。
 
 # --hints--
 

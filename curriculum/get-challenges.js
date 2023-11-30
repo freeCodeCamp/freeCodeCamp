@@ -43,17 +43,13 @@ function createCommentMap(dictionariesDir) {
   );
 
   // get the english dicts
-  const COMMENTS_TO_TRANSLATE = require(path.resolve(
-    dictionariesDir,
-    'english',
-    'comments.json'
-  ));
+  const COMMENTS_TO_TRANSLATE = require(
+    path.resolve(dictionariesDir, 'english', 'comments.json')
+  );
 
-  const COMMENTS_TO_NOT_TRANSLATE = require(path.resolve(
-    dictionariesDir,
-    'english',
-    'comments-to-not-translate'
-  ));
+  const COMMENTS_TO_NOT_TRANSLATE = require(
+    path.resolve(dictionariesDir, 'english', 'comments-to-not-translate')
+  );
 
   // map from english comment text to translations
   const translatedCommentMap = Object.entries(COMMENTS_TO_TRANSLATE).reduce(
@@ -351,10 +347,9 @@ ${getFullPath('english', filePath)}
   async function createChallenge(filePath, maybeMeta) {
     const meta = maybeMeta
       ? maybeMeta
-      : require(path.resolve(
-          META_DIR,
-          `${getBlockNameFromPath(filePath)}/meta.json`
-        ));
+      : require(
+          path.resolve(META_DIR, `${getBlockNameFromPath(filePath)}/meta.json`)
+        );
 
     await validate(filePath, meta.superBlock);
 

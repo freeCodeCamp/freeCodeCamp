@@ -10,10 +10,6 @@ test.describe('Show certification own', () => {
     await page.goto('/certification/certifieduser/responsive-web-design');
   });
 
-  test.afterAll(async () => {
-    await page.close();
-  });
-
   test('should display the certificate details', async () => {
     await expect(page.getByTestId('successful-completion')).toBeVisible();
     await expect(page.getByTestId('certification-title')).toBeVisible();

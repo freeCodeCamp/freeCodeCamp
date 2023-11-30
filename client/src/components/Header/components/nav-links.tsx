@@ -153,6 +153,7 @@ function NavLinks({
   return (
     <ul
       aria-labelledby='toggle-button-nav'
+      data-playwright-test-label='header-menu'
       className={`nav-list${displayMenu ? ' display-menu' : ''}`}
     >
       <DonateButton
@@ -197,6 +198,8 @@ function NavLinks({
           to={t('links:nav.forum')}
         >
           <span>{t('buttons.forum')}</span>
+          <span className='sr-only'>, {t('aria.opens-new-window')}</span>
+
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
       </li>
@@ -209,6 +212,7 @@ function NavLinks({
           to={t('links:nav.news')}
         >
           <span>{t('buttons.news')}</span>
+          <span className='sr-only'>, {t('aria.opens-new-window')}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
       </li>
@@ -221,6 +225,7 @@ function NavLinks({
           to={radioLocation}
         >
           <span>{t('buttons.radio')}</span>
+          <span className='sr-only'>, {t('aria.opens-new-window')}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
       </li>
@@ -233,6 +238,7 @@ function NavLinks({
           to={t('links:nav.contribute')}
         >
           <span>{t('buttons.contribute')}</span>
+          <span className='sr-only'>, {t('aria.opens-new-window')}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
       </li>

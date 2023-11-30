@@ -303,19 +303,19 @@ doctl compute droplet list --format "ID,Name,PublicIPv4"
 
 Оновіть інформацію пакетів
 
-```console
+```bash
 sudo apt update
 ```
 
 Оновіть встановлені пакети
 
-```console
+```bash
 sudo apt upgrade -y
 ```
 
 Очистьте невикористані пакети
 
-```console
+```bash
 sudo apt autoremove -y
 ```
 
@@ -331,7 +331,7 @@ sudo apt autoremove -y
 
 1. Завантажте і налаштуйте NGINX з репозиторію.
 
-   ```console
+   ```bash
    sudo su
 
    cd /var/www/html
@@ -352,7 +352,7 @@ sudo apt autoremove -y
 
    Перемістіть наявні сертифікати:
 
-   ```console
+   ```bash
    # Local
    scp -r username@source-server-public-ip:/etc/nginx/ssl ./
    scp -pr ./ssl username@target-server-public-ip:/tmp/
@@ -364,7 +364,7 @@ sudo apt autoremove -y
 
    Оновіть головні конфігурації:
 
-   ```console
+   ```bash
    vi configs/upstreams.conf
    ```
 
@@ -382,7 +382,7 @@ sudo apt autoremove -y
 
 1. Перевірте стан служби NGINX за допомогою наступної команди:
 
-   ```console
+   ```bash
    sudo systemctl status nginx
    ```
 
@@ -396,13 +396,13 @@ sudo apt autoremove -y
 
 1. SSH в екземпляр і введіть sudo
 
-```console
+```bash
 sudo su
 ```
 
 2. Отримайте останній код конфігурації.
 
-```console
+```bash
 cd /etc/nginx
 git fetch --all --prune
 git reset --hard origin/main
@@ -410,7 +410,7 @@ git reset --hard origin/main
 
 3. Протестуйте та повторно завантажте конфігурації [з Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
 
-```console
+```bash
 nginx -t
 nginx -s reload
 ```
@@ -419,7 +419,7 @@ nginx -s reload
 
 1. Встановіть інструменти збірки для бінарних файлів node (`node-gyp`) тощо.
 
-```console
+```bash
 sudo apt install build-essential
 ```
 
@@ -431,19 +431,19 @@ sudo apt install build-essential
 
 2. Встановіть pnpm глобально.
 
-```console
+```bash
 npm install -g pnpm
 ```
 
 3. Встановіть pm2 глобально.
 
-```console
+```bash
 npm install -g pm2
 ```
 
 4. Клонуйте freeCodeCamp, налаштуйте середовище та ключі.
 
-```console
+```bash
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
 cd freeCodeCamp
 git checkout prod-current # or any other branch to be deployed
@@ -453,36 +453,36 @@ git checkout prod-current # or any other branch to be deployed
 
 6. Встановіть залежності
 
-```console
+```bash
 pnpm install
 ```
 
 7. Налаштуйте pm2 `logrotate` та запустіть під час завантаження
 
-```console
+```bash
 pm2 install pm2-logrotate
 pm2 startup
 ```
 
 8. Побудуйте сервер
 
-```console
+```bash
 pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
 9.  Запустіть екземпляри
 
-```console
+```bash
 pnpm start:server
 ```
 
 ### Журналювання та моніторинг
 
-```console
+```bash
 pm2 logs
 ```
 
-```console
+```bash
 pm2 monit
 ```
 
@@ -496,31 +496,31 @@ pm2 monit
 
 1. Зупиніть всі екземпляри
 
-```console
+```bash
 pm2 stop all
 ```
 
 2. Встановіть залежності
 
-```console
+```bash
 pnpm install
 ```
 
 3. Побудуйте сервер
 
-```console
+```bash
 pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
 4. Запустіть екземпляри
 
-```console
+```bash
 pnpm start:server && pm2 logs
 ```
 
 #### 2. Постійне оновлення: використовується для логічних змін коду.
 
-```console
+```bash
 pnpm reload:server && pm2 logs
 ```
 
@@ -532,7 +532,7 @@ pnpm reload:server && pm2 logs
 
 2. Оновіть pm2 для використання нової версії
 
-```console
+```bash
 pm2 update
 ```
 
@@ -540,7 +540,7 @@ pm2 update
 
 1. Встановіть інструменти збірки для бінарних файлів node (`node-gyp`) тощо.
 
-```console
+```bash
 sudo apt install build-essential
 ```
 
@@ -552,7 +552,7 @@ sudo apt install build-essential
 
 2. Оновіть `npm`, встановіть PM2, налаштуйте `logrotate` та запустіть під час завантаження
 
-   ```console
+   ```bash
    npm i -g npm@8
    npm i -g pm2@4
    npm install -g serve@13
@@ -562,7 +562,7 @@ sudo apt install build-essential
 
 3. Клонуйте конфігурацію клієнта, налаштування середовища та ключі.
 
-   ```console
+   ```bash
    git clone https://github.com/freeCodeCamp/client-config.git client
    cd client
    ```
@@ -571,7 +571,7 @@ sudo apt install build-essential
 
    > Завдання: це налаштування потрібно перемістити в сховище S3 або Azure Blob 
    > 
-   > ```console
+   > ```bash
    >    echo "serve -c ../serve.json -p 50505 www" > client-start-primary.sh
    >    chmod +x client-start-primary.sh
    >    pm2 delete client-primary
@@ -584,11 +584,11 @@ sudo apt install build-essential
 
 ### Журналювання та моніторинг
 
-```console
+```bash
 pm2 logs
 ```
 
-```console
+```bash
 pm2 monit
 ```
 
@@ -602,7 +602,7 @@ pm2 monit
 
 1. Зупиніть всі екземпляри
 
-   ```console
+   ```bash
    pm2 stop all
    ```
 
@@ -610,13 +610,13 @@ pm2 monit
 
 3. Запустіть екземпляри
 
-   ```console
+   ```bash
    pm2 start all --update-env && pm2 logs
    ```
 
 #### 2. Постійне оновлення: використовується для логічних змін коду.
 
-```console
+```bash
 pm2 reload all --update-env && pm2 logs
 ```
 
@@ -636,7 +636,7 @@ pm2 reload all --update-env && pm2 logs
 
 1. Завантажте і налаштуйте NGINX з репозиторію.
 
-   ```console
+   ```bash
    sudo su
 
    cd /var/www/html
@@ -657,7 +657,7 @@ pm2 reload all --update-env && pm2 logs
 
    Перемістіть наявні сертифікати:
 
-   ```console
+   ```bash
    # Локально
    scp -r username@source-server-public-ip:/etc/nginx/ssl ./
    scp -pr ./ssl username@target-server-public-ip:/tmp/
@@ -669,7 +669,7 @@ pm2 reload all --update-env && pm2 logs
 
    Оновіть головні конфігурації:
 
-   ```console
+   ```bash
    vi configs/upstreams.conf
    ```
 
@@ -687,7 +687,7 @@ pm2 reload all --update-env && pm2 logs
 
 1. Завантажте і налаштуйте Docker з репозиторію
 
-   ```console
+   ```bash
    git clone https://github.com/freeCodeCamp/chat-config.git chat
    cd chat
    ```
@@ -696,7 +696,7 @@ pm2 reload all --update-env && pm2 logs
 
 3. Запустіть сервер rocket-chat
 
-   ```console
+   ```bash
    docker-compose config
    docker-compose up -d
    ```
@@ -705,13 +705,13 @@ pm2 reload all --update-env && pm2 logs
 
 1. Перевірте стан служби NGINX за допомогою наступної команди:
 
-   ```console
+   ```bash
    sudo systemctl status nginx
    ```
 
 2. Перевірте стан запущених екземплярів docker за допомогою:
 
-   ```console
+   ```bash
    docker ps
    ```
 
@@ -723,13 +723,13 @@ pm2 reload all --update-env && pm2 logs
 
 1. SSH в екземпляр і введіть sudo
 
-   ```console
+   ```bash
    sudo su
    ```
 
 2. Отримайте останній код конфігурації.
 
-   ```console
+   ```bash
    cd /etc/nginx
    git fetch --all --prune
    git reset --hard origin/main
@@ -737,7 +737,7 @@ pm2 reload all --update-env && pm2 logs
 
 3. Протестуйте та повторно завантажте конфігурації [з Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
 
-   ```console
+   ```bash
    nginx -t
    nginx -s reload
    ```
@@ -746,44 +746,44 @@ pm2 reload all --update-env && pm2 logs
 
 1. SSH в екземпляр та перейдіть до шляху налаштування чату
 
-   ```console
+   ```bash
    cd ~/chat
    ```
 
 2. Отримайте останній код конфігурації.
 
-   ```console
+   ```bash
    git fetch --all --prune
    git reset --hard origin/main
    ```
 
 3. Отримайте останній образ docker для Rocket.Chat
 
-   ```console
+   ```bash
    docker-compose pull
    ```
 
 4. Оновіть запущені екземпляри
 
-   ```console
+   ```bash
    docker-compose up -d
    ```
 
 5. Переконайтесь, що екземпляри запущені
 
-   ```console
+   ```bash
    docker ps
    ```
 
 6. Вилучіть зайві ресурси
 
-   ```console
+   ```bash
    docker system prune --volumes
    ```
 
    Вивід:
 
-   ```console
+   ```bash
    WARNING! This will remove:
      - all stopped containers
      - all networks not used by at least one container
@@ -802,7 +802,7 @@ pm2 reload all --update-env && pm2 logs
 
 ssh у віртуальну машину (розміщену на Digital Ocean).
 
-```console
+```bash
 cd tools
 git pull origin master
 pnpm install
@@ -814,7 +814,7 @@ pm2 restart contribute-app
 
 Отримайте список наразі встановлених версій node та npm
 
-```console
+```bash
 nvm -v
 node -v
 npm -v
@@ -824,25 +824,25 @@ nvm ls
 
 Встановіть останню версію Node.js LTS і перевстановіть всі глобальні пакети
 
-```console
+```bash
 nvm install --lts --reinstall-packages-from=default
 ```
 
 Перевірте встановлені пакети
 
-```console
+```bash
 npm ls -g --depth=0
 ```
 
 Зробіть псевдонім версії Node.js `default` для поточної LTS (закріплена до останньої основної версії)
 
-```console
+```bash
 nvm alias default 16
 ```
 
 (Необов’язково) Видаліть старі версії
 
-```console
+```bash
 nvm uninstall <version>
 ```
 
@@ -852,31 +852,31 @@ nvm uninstall <version>
 
 Отримайте інструкції/команди видалення за допомогою команди `unstartup` та використайте вивід, щоб видалити служби systemctl
 
-```console
+```bash
 pm2 unstartup
 ```
 
 Отримайте інструкції/команди встановлення за допомогою команди `startup` та використайте вивід, щоб додати служби systemctl
 
-```console
+```bash
 pm2 startup
 ```
 
 Швидкі команди для PM2 для перерахування, відновлення збережених процесів і т. д.
 
-```console
+```bash
 pm2 ls
 ```
 
-```console
+```bash
 pm2 resurrect
 ```
 
-```console
+```bash
 pm2 save
 ```
 
-```console
+```bash
 pm2 logs
 ```
 
@@ -898,32 +898,32 @@ pm2 logs
 
 1. Перейдіть та перевірте статус служби
 
-   ```console
+   ```bash
    cd ~/azagent
    sudo ./svc.sh status
    ```
 
 2. Зупиніть службу
 
-   ```console
+   ```bash
    sudo ./svc.sh stop
    ```
 
 3. Видаліть службу
 
-   ```console
+   ```bash
    sudo ./svc.sh uninstall
    ```
 
 4. Видаліть агента з пулу конвеєра
 
-   ```console
+   ```bash
    ./config.sh remove
    ```
 
 5. Видаліть файли конфігурації
 
-   ```console
+   ```bash
    cd ~
    rm -rf ~/azagent
    ```
@@ -938,7 +938,7 @@ pm2 logs
 
 2. Налаштуйте сценарій, щоб отримати віддалений доступ до списку електронних пошт.
 
-   ```console
+   ```bash
    cd /home/freecodecamp/scripts/emails
    cp sample.env .env
    ```
@@ -947,7 +947,7 @@ pm2 logs
 
 3. Запустіть сценарій.
 
-   ```console
+   ```bash
    node get-emails.js emails.csv
    ```
 

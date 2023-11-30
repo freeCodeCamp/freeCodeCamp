@@ -1,4 +1,11 @@
-import { devLogin, setupServer, superRequest } from '../../jest.utils';
+import {
+  devLogin,
+  setupServer,
+  superRequest,
+  createSuperRequest
+} from '../../jest.utils';
+import { createUserInput } from '../utils/create-user';
+
 import { isPictureWithProtocol } from './settings';
 
 const baseProfileUI = {
@@ -23,6 +30,11 @@ const profileUI = {
   showName: true,
   showPortfolio: true
 };
+
+const developerUserEmail = 'foo@bar.com';
+const otherDeveloperUserEmail = 'bar@bar.com';
+const unusedEmailOne = 'nobody@would.com';
+const unusedEmailTwo = 'would@they.com';
 
 const updateErrorResponse = {
   type: 'danger',
@@ -83,31 +95,39 @@ describe('settingRoutes', () => {
   });
 
   describe('Authenticated user', () => {
-    let setCookies: string[];
+    let superPut: ReturnType<typeof createSuperRequest>;
 
     // Authenticate user
     beforeAll(async () => {
-      setCookies = await devLogin();
+      const setCookies = await devLogin();
+      superPut = createSuperRequest({ method: 'PUT', setCookies });
       // This is not strictly necessary, since the defaultUser has this
       // profileUI, but we're interested in how the profileUI is updated. As
       // such, setting this explicitly isolates these tests.
       await fastifyTestInstance.prisma.user.updateMany({
-        where: { email: 'foo@bar.com' },
+        where: { email: developerUserEmail },
         data: { profileUI: baseProfileUI }
       });
+
+      const otherUser = await fastifyTestInstance.prisma.user.findFirst({
+        where: { email: otherDeveloperUserEmail }
+      });
+
+      if (!otherUser) {
+        await fastifyTestInstance.prisma.user.create({
+          data: createUserInput(otherDeveloperUserEmail)
+        });
+      }
     });
 
     describe('/update-my-profileui', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await superRequest('/update-my-profileui', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-profileui').send({
           profileUI
         });
 
         const user = await fastifyTestInstance.prisma.user.findFirst({
-          where: { email: 'foo@bar.com' }
+          where: { email: developerUserEmail }
         });
 
         expect(response.body).toEqual({
@@ -119,10 +139,7 @@ describe('settingRoutes', () => {
       });
 
       test('PUT ignores invalid keys', async () => {
-        const response = await superRequest('/update-my-profileui', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-profileui').send({
           profileUI: {
             ...profileUI,
             invalidKey: 'invalidValue'
@@ -130,7 +147,7 @@ describe('settingRoutes', () => {
         });
 
         const user = await fastifyTestInstance.prisma.user.findFirst({
-          where: { email: 'foo@bar.com' }
+          where: { email: developerUserEmail }
         });
 
         expect(user?.profileUI).toEqual(profileUI);
@@ -138,10 +155,7 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with missing keys', async () => {
-        const response = await superRequest('/update-my-profileui', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-profileui').send({
           profileUI: {
             isLocked: true,
             showName: true,
@@ -156,12 +170,159 @@ describe('settingRoutes', () => {
       });
     });
 
+    describe('/update-my-email', () => {
+      beforeEach(async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: developerUserEmail },
+          data: {
+            newEmail: null,
+            emailVerified: true,
+            emailVerifyTTL: null,
+            emailAuthLinkTTL: null
+          }
+        });
+      });
+      test('PUT returns 200 status code with "success" message', async () => {
+        const response = await superPut('/update-my-email').send({
+          email: 'foo@foo.com'
+        });
+
+        expect(response?.body).toEqual({
+          message: 'flash.email-valid',
+          type: 'success'
+        });
+        expect(response?.statusCode).toEqual(200);
+      });
+
+      test("PUT updates the user's record in preparation for receiving auth email", async () => {
+        const response = await superPut('/update-my-email').send({
+          email: unusedEmailOne
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+          where: { email: developerUserEmail },
+          select: { emailVerifyTTL: true, emailVerified: true, newEmail: true }
+        });
+        const emailVerifyTTL = user?.emailVerifyTTL;
+        expect(emailVerifyTTL).toBeTruthy();
+        // This throw is to mollify TS (if this is necessary a lot, create a
+        // helper)
+        if (!emailVerifyTTL) {
+          throw new Error('emailVerifyTTL is not defined');
+        }
+
+        expect(response?.statusCode).toEqual(200);
+
+        // expect the emailVerifyTTL to be within 10 seconds of the current time
+        const tenSeconds = 10 * 1000;
+        expect(emailVerifyTTL.getTime()).toBeGreaterThan(
+          Date.now() - tenSeconds
+        );
+        expect(emailVerifyTTL.getTime()).toBeLessThan(Date.now() + tenSeconds);
+
+        expect(user?.emailVerified).toEqual(false);
+        expect(user?.newEmail).toEqual(unusedEmailOne);
+      });
+
+      test('PUT rejects invalid email addresses', async () => {
+        const response = await superPut('/update-my-email').send({
+          email: 'invalid'
+        });
+
+        // We cannot use fastify's default validation failure response here
+        // because the client consumes the response and displays it to the user.
+        expect(response?.body).toEqual({
+          type: 'danger',
+          message: 'Email format is invalid'
+        });
+        expect(response?.statusCode).toEqual(400);
+      });
+
+      test('PUT accepts requests to update to the current email address (ignoring case) if it is not verified', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: developerUserEmail },
+          data: { emailVerified: false }
+        });
+        const response = await superPut('/update-my-email').send({
+          email: developerUserEmail.toUpperCase()
+        });
+
+        expect(response?.statusCode).toEqual(200);
+        expect(response?.body).toEqual({
+          message: 'flash.email-valid',
+          type: 'success'
+        });
+      });
+
+      test('PUT rejects a request to update to the existing email (ignoring case) address', async () => {
+        const response = await superPut('/update-my-email').send({
+          email: developerUserEmail.toUpperCase()
+        });
+
+        expect(response?.body).toEqual({
+          type: 'info',
+          message: `${developerUserEmail} is already associated with this account.
+You can update a new email address instead.`
+        });
+        expect(response?.statusCode).toEqual(400);
+      });
+
+      test('PUT rejects a request to update to the same email (ignoring case) twice', async () => {
+        const successResponse = await superPut('/update-my-email').send({
+          email: unusedEmailOne
+        });
+
+        expect(successResponse?.statusCode).toEqual(200);
+
+        const failResponse = await superPut('/update-my-email').send({
+          email: unusedEmailOne.toUpperCase()
+        });
+
+        expect(failResponse?.body).toEqual({
+          type: 'info',
+          message: `We have already sent an email confirmation request to ${unusedEmailOne}.
+Please wait 5 minutes to resend an authentication link.`
+        });
+        expect(failResponse?.statusCode).toEqual(429);
+      });
+
+      test('PUT rejects a request if the new email is already in use', async () => {
+        const response = await superPut('/update-my-email').send({
+          email: otherDeveloperUserEmail
+        });
+
+        expect(response?.body).toEqual({
+          type: 'info',
+          message: `${otherDeveloperUserEmail} is already associated with another account.`
+        });
+        expect(response?.statusCode).toEqual(400);
+      });
+
+      test('PUT rejects the second request if is immediately after the first', async () => {
+        const successResponse = await superPut('/update-my-email').send({
+          email: unusedEmailOne
+        });
+
+        expect(successResponse?.statusCode).toEqual(200);
+
+        const failResponse = await superPut('/update-my-email').send({
+          email: unusedEmailTwo
+        });
+
+        expect(failResponse?.statusCode).toEqual(429);
+
+        expect(failResponse?.body).toEqual({
+          type: 'info',
+          message: `Please wait 5 minutes to resend an authentication link.`
+        });
+      });
+
+      // TODO: test that the correct email gets sent
+    });
+
     describe('/update-my-theme', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await superRequest('/update-my-theme', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-theme').send({
           theme: 'night'
         });
 
@@ -173,10 +334,7 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with invalid theme', async () => {
-        const response = await superRequest('/update-my-theme', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-theme').send({
           theme: 'invalid'
         });
 
@@ -187,10 +345,7 @@ describe('settingRoutes', () => {
 
     describe('/update-my-username', () => {
       test('PUT returns an error when the username uses special characters', async () => {
-        const response = await superRequest('/update-my-username', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-username').send({
           username: 'twaha@'
         });
 
@@ -202,10 +357,7 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns an error when the username is an endpoint', async () => {
-        const response = await superRequest('/update-my-username', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-username').send({
           username: 'german'
         });
 
@@ -217,10 +369,7 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns an error when the username is a bad word', async () => {
-        const response = await superRequest('/update-my-username', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-username').send({
           username: 'ass'
         });
 
@@ -232,10 +381,7 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns an error when the username is a https status code', async () => {
-        const response = await superRequest('/update-my-username', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-username').send({
           username: '404'
         });
 
@@ -247,10 +393,7 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns an error when the username is shorter than 3 characters', async () => {
-        const response = await superRequest('/update-my-username', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-username').send({
           username: 'fo'
         });
 
@@ -262,10 +405,7 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await superRequest('/update-my-username', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-username').send({
           username: 'TwaHa1'
         });
 
@@ -298,17 +438,9 @@ describe('settingRoutes', () => {
             unsubscribeId: 'unsubscribeId'
           }
         });
-        await superRequest('/update-my-username', {
-          method: 'PUT',
-          setCookies
-        }).send({
-          username: 'twaha2'
-        });
+        await superPut('/update-my-username').send({ username: 'twaha2' });
 
-        const secondUpdate = await superRequest('/update-my-username', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const secondUpdate = await superPut('/update-my-username').send({
           username: 'twaha2'
         });
 
@@ -320,10 +452,7 @@ describe('settingRoutes', () => {
 
         // Not allowed because, while the usernameDisplay is different, the
         // username is not
-        const existingUser = await superRequest('/update-my-username', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const existingUser = await superPut('/update-my-username').send({
           username: 'SemBauke'
         });
 
@@ -335,17 +464,9 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 200 status code with "success" message', async () => {
-        await superRequest('/update-my-username', {
-          method: 'PUT',
-          setCookies
-        }).send({
-          username: 'twaha3'
-        });
+        await superPut('/update-my-username').send({ username: 'twaha3' });
 
-        const response = await superRequest('/update-my-username', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-username').send({
           username: 'TWaha3'
         });
 
@@ -358,10 +479,7 @@ describe('settingRoutes', () => {
       });
       test('PUT /update-my-username returns 400 status code when username is too long', async () => {
         const username = 'a'.repeat(1001);
-        const response = await superRequest('/update-my-username', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-username').send({
           username
         });
 
@@ -375,10 +493,9 @@ describe('settingRoutes', () => {
 
     describe('/update-my-keyboard-shortcuts', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await superRequest('/update-my-keyboard-shortcuts', {
-          method: 'PUT',
-          setCookies
-        }).send({ keyboardShortcuts: true });
+        const response = await superPut('/update-my-keyboard-shortcuts').send({
+          keyboardShortcuts: true
+        });
 
         expect(response.body).toEqual({
           message: 'flash.keyboard-shortcut-updated',
@@ -388,10 +505,9 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with invalid shortcuts setting', async () => {
-        const response = await superRequest('/update-my-keyboard-shortcuts', {
-          method: 'PUT',
-          setCookies
-        }).send({ keyboardShortcuts: 'invalid' });
+        const response = await superPut('/update-my-keyboard-shortcuts').send({
+          keyboardShortcuts: 'invalid'
+        });
 
         expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
@@ -400,10 +516,7 @@ describe('settingRoutes', () => {
 
     describe('/update-my-socials', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await superRequest('/update-my-socials', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-socials').send({
           website: 'https://www.freecodecamp.org/',
           twitter: 'https://twitter.com/ossia',
           linkedin: 'https://www.linkedin.com/in/quincylarson',
@@ -418,10 +531,7 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with invalid socials setting', async () => {
-        const response = await superRequest('/update-my-socials', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-socials').send({
           website: 'invalid',
           twitter: 'invalid',
           linkedin: 'invalid',
@@ -435,10 +545,9 @@ describe('settingRoutes', () => {
 
     describe('/update-my-quincy-email', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await superRequest('/update-my-quincy-email', {
-          method: 'PUT',
-          setCookies
-        }).send({ sendQuincyEmail: true });
+        const response = await superPut('/update-my-quincy-email').send({
+          sendQuincyEmail: true
+        });
 
         expect(response.body).toEqual({
           message: 'flash.subscribe-to-quincy-updated',
@@ -448,10 +557,9 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with invalid sendQuincyEmail', async () => {
-        const response = await superRequest('/update-my-quincy-email', {
-          method: 'PUT',
-          setCookies
-        }).send({ sendQuincyEmail: 'invalid' });
+        const response = await superPut('/update-my-quincy-email').send({
+          sendQuincyEmail: 'invalid'
+        });
 
         expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
@@ -460,10 +568,7 @@ describe('settingRoutes', () => {
 
     describe('/update-my-about', () => {
       test('PUT updates the values in about settings', async () => {
-        const response = await superRequest('/update-my-about', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-about').send({
           about: 'Teacher at freeCodeCamp',
           name: 'Quincy Larson',
           location: 'USA',
@@ -490,10 +595,7 @@ describe('settingRoutes', () => {
       });
 
       test('PUT updates the values in about settings without image', async () => {
-        const response = await superRequest('/update-my-about', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-about').send({
           about: 'Teacher at freeCodeCamp',
           name: 'Quincy Larson',
           location: 'USA',
@@ -511,10 +613,9 @@ describe('settingRoutes', () => {
 
     describe('/update-my-honesty', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await superRequest('/update-my-honesty', {
-          method: 'PUT',
-          setCookies
-        }).send({ isHonest: true });
+        const response = await superPut('/update-my-honesty').send({
+          isHonest: true
+        });
 
         expect(response.body).toEqual({
           message: 'buttons.accepted-honesty',
@@ -524,10 +625,9 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with invalid honesty', async () => {
-        const response = await superRequest('/update-my-honesty', {
-          method: 'PUT',
-          setCookies
-        }).send({ isHonest: false });
+        const response = await superPut('/update-my-honesty').send({
+          isHonest: false
+        });
 
         expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
@@ -536,10 +636,9 @@ describe('settingRoutes', () => {
 
     describe('/update-privacy-terms', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await superRequest('/update-privacy-terms', {
-          method: 'PUT',
-          setCookies
-        }).send({ quincyEmails: true });
+        const response = await superPut('/update-privacy-terms').send({
+          quincyEmails: true
+        });
 
         expect(response.body).toEqual({
           message: 'flash.privacy-updated',
@@ -549,10 +648,9 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code with non-boolean data', async () => {
-        const response = await superRequest('/update-privacy-terms', {
-          method: 'PUT',
-          setCookies
-        }).send({ quincyEmails: '123' });
+        const response = await superPut('/update-privacy-terms').send({
+          quincyEmails: '123'
+        });
 
         expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
@@ -561,10 +659,7 @@ describe('settingRoutes', () => {
 
     describe('/update-my-portfolio', () => {
       test('PUT returns 200 status code with "success" message', async () => {
-        const response = await superRequest('/update-my-portfolio', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-portfolio').send({
           portfolio: [{}]
         });
 
@@ -576,20 +671,14 @@ describe('settingRoutes', () => {
       });
 
       test('PUT returns 400 status code when the portfolio property is missing', async () => {
-        const response = await superRequest('/update-my-portfolio', {
-          method: 'PUT',
-          setCookies
-        }).send({});
+        const response = await superPut('/update-my-portfolio').send({});
 
         expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
       });
 
       test('PUT returns 400 status code when any data is the wrong type', async () => {
-        const response = await superRequest('/update-my-portfolio', {
-          method: 'PUT',
-          setCookies
-        }).send({
+        const response = await superPut('/update-my-portfolio').send({
           portfolio: [
             { id: '', title: '', description: '', url: '', image: '' },
             { id: '', title: {}, description: '', url: '', image: '' }
@@ -607,22 +696,31 @@ describe('settingRoutes', () => {
 
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
-      const res = await superRequest('/', { method: 'GET' });
+      const res = await superRequest('/status/ping', { method: 'GET' });
       setCookies = res.get('Set-Cookie');
     });
 
-    test.each([
-      '/update-my-profileui',
-      '/update-my-theme',
-      '/update-privacy-terms',
-      '/update-my-username',
-      '/update-my-portfolio'
-    ])('PUT %s should return 401 status code', async endpoint => {
-      const response = await superRequest(endpoint, {
-        method: 'PUT',
-        setCookies
+    const endpoints: { path: string; method: 'PUT' }[] = [
+      { path: '/update-my-profileui', method: 'PUT' },
+      { path: '/update-my-theme', method: 'PUT' },
+      { path: '/update-my-username', method: 'PUT' },
+      { path: '/update-my-keyboard-shortcuts', method: 'PUT' },
+      { path: '/update-my-socials', method: 'PUT' },
+      { path: '/update-my-quincy-email', method: 'PUT' },
+      { path: '/update-my-about', method: 'PUT' },
+      { path: '/update-my-honesty', method: 'PUT' },
+      { path: '/update-privacy-terms', method: 'PUT' },
+      { path: '/update-my-portfolio', method: 'PUT' }
+    ];
+
+    endpoints.forEach(({ path, method }) => {
+      test(`${method} ${path} returns 401 status code with error message`, async () => {
+        const response = await superRequest(path, {
+          method,
+          setCookies
+        });
+        expect(response.statusCode).toBe(401);
       });
-      expect(response.statusCode).toEqual(401);
     });
   });
 });

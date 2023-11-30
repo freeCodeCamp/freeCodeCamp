@@ -1,4 +1,5 @@
 import { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+
 import { HOME_LOCATION } from '../utils/env';
 
 type Endpoint = [string, 'GET' | 'POST'];

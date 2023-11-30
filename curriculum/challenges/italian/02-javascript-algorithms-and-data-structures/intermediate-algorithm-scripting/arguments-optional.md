@@ -30,7 +30,7 @@ Se uno dei due argomenti non è un numero valido, restituisce undefined.
 assert.deepEqual(addTogether(2, 3), 5);
 ```
 
-`addTogether(23.4, 30)` should return 53.4.
+`addTogether(23.4, 30)` dovrebbe restituire 53.4.
 
 ```js
 assert.deepEqual(addTogether(23.4, 30), 53.4);

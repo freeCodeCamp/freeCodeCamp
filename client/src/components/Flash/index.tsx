@@ -1,4 +1,4 @@
-import { Alert } from '@freecodecamp/react-bootstrap';
+import { Alert, CloseButton, type AlertProps } from '@freecodecamp/ui';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
@@ -13,25 +13,33 @@ type FlashProps = {
 };
 
 function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
-  const { type, message, id, variables } = flashMessage;
+  const { type, message, id, variables = {} } = flashMessage;
   const { t } = useTranslation();
+
+  // Some APIs are returning 'error' as a flash type, and it needs to be mapped to 'danger'.
+  // TODO: Standardize the value of `type`.
+  // Tracking issue: https://github.com/freeCodeCamp/freeCodeCamp/issues/50184
+  const flashStyle =
+    type === 'error' ? 'danger' : (type as AlertProps['variant']);
 
   function handleClose() {
     removeFlashMessage();
   }
 
-  const flashStyle = type === 'error' ? 'danger' : type;
-
   return (
     <TransitionGroup>
-      <CSSTransition classNames='flash-message' key={id} timeout={500}>
+      <CSSTransition key={id} timeout={500}>
         <Alert
-          bsStyle={flashStyle}
+          variant={flashStyle}
           className='flash-message'
-          closeLabel={t('buttons.close')}
-          onDismiss={handleClose}
+          data-playwright-test-label='flash-message'
         >
           {t(message, variables)}
+          <CloseButton
+            onClick={handleClose}
+            label={t('buttons.close')}
+            className='close'
+          />
         </Alert>
       </CSSTransition>
     </TransitionGroup>

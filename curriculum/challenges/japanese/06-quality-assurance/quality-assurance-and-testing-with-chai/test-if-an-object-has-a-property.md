@@ -14,7 +14,7 @@ dashedName: test-if-an-object-has-a-property
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Objects` スイート内の `#16` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.property` または `assert.notProperty` に変更してください。 アサートに渡された引数を変更しないでください。
+Within `tests/1_unit-tests.js` under the test labeled `#16` in the `Objects` suite, change each `assert` to either `assert.property` or `assert.notProperty` to make the test pass (should evaluate to `true`). アサートに渡された引数を変更しないでください。
 
 # --hints--
 

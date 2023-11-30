@@ -41,12 +41,16 @@ function VideoModal({
   return (
     <Modal dialogClassName='video-modal' onHide={closeVideoModal} show={isOpen}>
       <Modal.Header className='video-modal-header fcc-modal' closeButton={true}>
-        <Modal.Title className='text-center'>
+        <Modal.Title
+          className='text-center'
+          data-playwright-test-label='video-modal-title'
+        >
           {t('buttons.watch-video')}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className='video-modal-body'>
         <iframe
+          data-playwright-test-label='video-modal-video-player-iframe'
           frameBorder='0'
           src={videoUrl}
           title={t('buttons.watch-video')}

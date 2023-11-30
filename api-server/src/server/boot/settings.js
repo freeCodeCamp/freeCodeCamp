@@ -51,6 +51,7 @@ export default function settingsController(app) {
   );
   api.put('/update-my-honesty', ifNoUser401, updateMyHonesty);
   api.put('/update-my-quincy-email', ifNoUser401, updateMyQuincyEmail);
+  api.put('/update-my-classroom-mode', ifNoUser401, updateMyClassroomMode);
 
   app.use(api);
 }
@@ -139,15 +140,29 @@ function updateMyPortfolio(...args) {
   )(...args);
 }
 
-// This API is reponsible for what campers decide to make public in their porfoile, and what is private.
+// This API is responsible for what campers decide to make public in their profile, and what is private.
 function updateMyProfileUI(req, res, next) {
   const {
     user,
     body: { profileUI }
   } = req;
+
+  const update = {
+    isLocked: !!profileUI.isLocked,
+    showAbout: !!profileUI.showAbout,
+    showCerts: !!profileUI.showCerts,
+    showDonation: !!profileUI.showDonation,
+    showHeatMap: !!profileUI.showHeatMap,
+    showLocation: !!profileUI.showLocation,
+    showName: !!profileUI.showName,
+    showPoints: !!profileUI.showPoints,
+    showPortfolio: !!profileUI.showPortfolio,
+    showTimeLine: !!profileUI.showTimeLine
+  };
+
   user.updateAttribute(
     'profileUI',
-    profileUI,
+    update,
     createStandardHandler(req, res, next, 'flash.privacy-updated')
   );
 }
@@ -316,6 +331,17 @@ function updateMyQuincyEmail(...args) {
     buildUpdate,
     validate,
     'flash.subscribe-to-quincy-updated'
+  )(...args);
+}
+
+export function updateMyClassroomMode(...args) {
+  const buildUpdate = body => _.pick(body, 'isClassroomAccount');
+  const validate = ({ isClassroomAccount }) =>
+    typeof isClassroomAccount === 'boolean';
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'flash.classroom-mode-updated'
   )(...args);
 }
 

@@ -1,5 +1,5 @@
 // Package Utilities
-import { Button, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container } from '@freecodecamp/ui';
+import { Container, Col, Row } from '@freecodecamp/ui';
 
 // Local Utilities
 import Loader from '../../../components/helpers/loader';
@@ -83,7 +83,7 @@ interface ShowVideoState {
 // Component
 class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
   static displayName: string;
-  private _container: HTMLElement | null | undefined;
+  private container: React.RefObject<HTMLElement> = React.createRef();
 
   constructor(props: ShowVideoProps) {
     super(props);
@@ -117,7 +117,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container?.focus();
+    this.container.current?.focus();
   }
 
   componentDidUpdate(prevProps: ShowVideoProps): void {
@@ -208,12 +208,18 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
+
+    const feedback =
+      this.state.selectedOption !== null
+        ? answers[this.state.selectedOption].feedback
+        : undefined;
+
     return (
       <Hotkeys
         executeChallenge={() => {
           this.handleSubmit(solution, openCompletionModal);
         }}
-        innerRef={(c: HTMLElement | null) => (this._container = c)}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
@@ -257,18 +263,22 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 <Spacer size='medium' />
                 <ObserveKeys>
                   <div className='video-quiz-options'>
-                    {answers.map((option, index) => (
+                    {answers.map(({ answer }, index) => (
                       // answers are static and have no natural id property, so
                       // index should be fine as a key:
-                      <label className='video-quiz-option-label' key={index}>
+                      <label
+                        className='video-quiz-option-label'
+                        key={index}
+                        htmlFor={`mc-question-${index}`}
+                      >
                         <input
-                          aria-label={t('aria.answer')}
                           checked={this.state.selectedOption === index}
-                          className='video-quiz-input-hidden'
+                          className='sr-only'
                           name='quiz'
                           onChange={this.handleOptionChange}
                           type='radio'
                           value={index}
+                          id={`mc-question-${index}`}
                         />{' '}
                         <span className='video-quiz-input-visible'>
                           {this.state.selectedOption === index ? (
@@ -277,7 +287,9 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                         </span>
                         <PrismFormatted
                           className={'video-quiz-option'}
-                          text={option}
+                          text={answer.replace(/^<p>|<\/p>$/g, '')}
+                          useSpan
+                          noAria
                         />
                       </label>
                     ))}
@@ -290,7 +302,16 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                   }}
                 >
                   {this.state.showWrong ? (
-                    <span>{t('learn.wrong-answer')}</span>
+                    <span>
+                      {feedback ? (
+                        <PrismFormatted
+                          className={'multiple-choice-feedback'}
+                          text={feedback}
+                        />
+                      ) : (
+                        t('learn.wrong-answer')
+                      )}
+                    </span>
                   ) : (
                     <span>{t('learn.check-answer')}</span>
                   )}
@@ -359,7 +380,10 @@ export const query = graphql`
         }
         question {
           text
-          answers
+          answers {
+            answer
+            feedback
+          }
           solution
         }
         translationPending

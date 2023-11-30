@@ -92,20 +92,26 @@
 }
 
 #mobile-layout .nav-lists {
-  margin: 0 1px;
+  margin: 0;
   padding: 0;
   display: flex;
   border-bottom: 1px solid var(--quaternary-color);
+  height: 2rem;
+  flex-shrink: 0;
 }
 
-/* Need to narrow width to make room for preview toggle button */
-#mobile-layout .nav-lists[data-haspreview='true'] {
-  width: calc(100% - 2rem - 2px);
+/* Need to narrow width of tabs to make room for preview toggle button */
+#mobile-layout[data-haspreview='true'] [role='tablist'] {
+  width: calc(100% - 2rem);
 }
 
 #mobile-layout .nav-lists > button {
-  height: 2.5em;
+  height: 100%;
   font-size: 0.8em;
+  /* Need to override radix-ui defaults on side padding to allow room for
+     four tabs and a preview toggle button at narrow view ports */
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
 }
 
 #mobile-layout .nav-lists button[data-state='active'] {
@@ -129,6 +135,9 @@
   width: 2rem;
   border: 0;
   padding: 0;
+  background-color: inherit;
+  font-size: 0.8rem;
+  height: 100%;
 }
 
 .portal-button[aria-expanded='true'] {
@@ -172,13 +181,12 @@
   flex-direction: column;
 }
 
-#mobile-layout .portal-button {
+#mobile-layout .portal-button-wrap {
+  position: absolute;
   top: calc(var(--header-height) + var(--breadcrumbs-height));
-}
-
-#mobile-layout .portal-button svg {
-  height: 18px;
-  padding-block-start: 3px;
+  right: 0;
+  height: 2rem;
+  border-bottom: 1px solid var(--quaternary-color);
 }
 
 #mobile-layout #mobile-layout-pane-instructions {

@@ -341,12 +341,19 @@ a.map-grid-item.challenge-completed {
   margin-top: 1.45rem;
 }
 
-.intro-toc .list-group-item {
-  margin: 5px auto;
+.intro-toc {
+  margin-bottom: 20px;
+  padding-left: 0;
+  list-style-type: none;
 }
 
-.intro-toc .list-group-item:hover {
-  background-color: var(--secondary-background);
+.intro-toc li {
+  margin: 5px auto;
+  padding: 10px 15px;
+}
+
+.intro-toc li:hover {
+  background-color: var(--tertiary-background);
 }
 
 .intro-toc a:hover {
@@ -436,20 +443,10 @@ ToDo: find out why, and remove the need for it */
   margin-bottom: 14px;
 }
 
-.block-grid .progress-wrapper span {
-  color: var(--quaternary-color);
-}
-
-.block-grid .progress {
-  height: 15px;
-  background-color: var(--secondary-background);
-  margin: 0 10px;
+.block-grid .progress-wrapper > div {
+  position: relative;
   width: 80%;
-  border-radius: 0;
-}
-
-.block-grid .progress-bar {
-  background-color: var(--blue-mid);
+  padding-inline-end: 0.25em;
 }
 
 .tags-wrapper {

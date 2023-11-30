@@ -1,6 +1,6 @@
 ---
 id: 5900f51b1000cf542c51002e
-title: 'Problem 431: Square Space Silo'
+title: 'Завдання 431: сховище квадратної форми'
 challengeType: 1
 forumTopicId: 302102
 dashedName: problem-431-square-space-silo
@@ -8,17 +8,17 @@ dashedName: problem-431-square-space-silo
 
 # --description--
 
-Fred the farmer arranges to have a new storage silo installed on his farm and having an obsession for all things square he is absolutely devastated when he discovers that it is circular. Quentin, the representative from the company that installed the silo, explains that they only manufacture cylindrical silos, but he points out that it is resting on a square base. Fred is not amused and insists that it is removed from his property.
+Фермер Фред домовляється про встановлення нового зерносховища на своїй фермі. Маючи одержимість квадратними речами, він розчаровується, коли дізнається, що нове сховище округлої форми. Квентін (представник компанії, що встановила сховище) пояснює, що компанія виробляє тільки циліндричні сховища, але зауважує, що воно має квадратний фундамент. Фреда відповідь не задовольнила і він вимагає, щоб сховище забрали із його території.
 
-Quick thinking Quentin explains that when granular materials are delivered from above a conical slope is formed and the natural angle made with the horizontal is called the angle of repose. For example if the angle of repose, $\alpha = 30°$, and grain is delivered at the centre of the silo then a perfect cone will form towards the top of the cylinder. In the case of this silo, which has a diameter of 6m, the amount of space wasted would be approximately 32.648388556 m<sup>3</sup>. However, if grain is delivered at a point on the top which has a horizontal distance of $x$ metres from the centre then a cone with a strangely curved and sloping base is formed. He shows Fred a picture.
+Кмітливий Квентін пояснив, що коли зерно подається згори, формується конічний схил, а кут, який утворюється із горизонтальною площиною, називається кутом природного укосу. Наприклад, якщо кут природного укосу $\alpha = 30°$ і зерно насипається у центр сховища, тоді формується ідеальний конус до вершини циліндра. У даному сховищі, що має діаметр 6 м, приблизний обсяг невикористовуваного місця дорівнюватиме 32.648388556 м<sup>3</sup>. Однак, якщо зерно буде насипатися в точку, яка має горизонтальну відстань $x$ метрів від центру, то буде формуватись конус з дивно вигнутою та похилою основою. Він показав Фреду зображення.
 
-<img class="img-responsive center-block" alt="image presenting forming of the perfect cone towards the top of the cylinder" src="https://cdn.freecodecamp.org/curriculum/project-euler/square-space-silo.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="зображення показує процес формування ідеального конуса до вершини циліндра" src="https://cdn.freecodecamp.org/curriculum/project-euler/square-space-silo.png" style="background-color: white; padding: 10px;" />
 
-We shall let the amount of space wasted in cubic metres be given by $V(x)$. If $x = 1.114\\,785\\,284$, which happens to have three squared decimal places, then the amount of space wasted, $V(1.114\\,785\\,284) \approx 36$. Given the range of possible solutions to this problem there is exactly one other option: $V(2.511\\,167\\,869) \approx 49$. It would be like knowing that the square is king of the silo, sitting in splendid glory on top of your grain.
+Позначимо обсяг невикористовуваного місця в кубічних метрах як $V(x)$. Якщо $x = 1.114\\,785\\,284$ (зверніть увагу на три знаки в квадраті після десяткової коми), то обсяг невикористовуваного місця дорівнюватиме $V(1.114\\,785\\,284) \approx 36$. Враховуючи діапазон можливих розв’язків даного завдання, існує ще один варіант: $V(2.511\\,167\\,869) \approx 49$. Ніби квадрат є королем сховища, який засідає на зерні.
 
-Fred's eyes light up with delight at this elegant resolution, but on closer inspection of Quentin's drawings and calculations his happiness turns to despondency once more. Fred points out to Quentin that it's the radius of the silo that is 6 metres, not the diameter, and the angle of repose for his grain is 40­°. However, if Quentin can find a set of solutions for this particular silo then he will be more than happy to keep it.
+Побачивши таке чудове рішення, очі Фреда загорілися від захвату, але під час прискіпливішої перевірки креслень та підрахунків Квентіна, його радість знову перетворилась на зневіру. Фред вказав Квентіну, що саме радіус сховища, а не діаметр, дорівнює 6 м, а кут природного укосу для зерна становить 40­°. Однак, якщо Квентіну вдасться знайти множину розв’язків для цього сховища, то він із задоволенням залишить його.
 
-If Quick thinking Quentin is to satisfy frustratingly fussy Fred the farmer's appetite for all things square then determine the values of $x$ for all possible square space wastage options and calculate $\sum x$ correct to 9 decimal places.
+Щоб кмітливий Квентін задовільнив апетит фермера Фреда до квадратних речей, потрібно визначити значення $x$ для усіх можливих об’ємів втраченого місця та обчислити $\sum x$, заокругливши до 9 знаків після коми.
 
 # --hints--
 

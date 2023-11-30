@@ -32,13 +32,13 @@ assert.match(code, /const\s+Person\s*=\s*function\s*\(\s*first\s*,\s*last\s*\)\s
 Você não deve reatribuir o parâmetro `first`.
 
 ```js
-assert.notMatch(code, /first\s*=\s*/);
+assert.notMatch(code, /\bfirst\s*=\s*/);
 ```
 
 Você não deve reatribuir o parâmetro `last`.
 
 ```js
-assert.notMatch(code, /last\s*=\s*/);
+assert.notMatch(code, /\blast\s*=\s*/);
 ```
 
 Nenhuma propriedade deve ser adicionada. `Object.keys(Person).length` deve sempre retornar 6.

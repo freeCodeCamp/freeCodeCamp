@@ -135,7 +135,7 @@ function createGetPasswordlessAuth(app) {
             );
           }
           // find user then validate and destroy email validation token
-          // finally retun user instance
+          // finally return user instance
           return User.findOne$({ where: { id: authToken.userId } }).flatMap(
             user => {
               if (!user) {

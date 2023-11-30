@@ -1,10 +1,9 @@
-import { Row } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 
-import { Container } from '@freecodecamp/ui';
+import { Container, Row } from '@freecodecamp/ui';
 import { FullWidthRow, Link, Spacer } from '../helpers';
 import { User } from './../../redux/prop-types';
 import Timeline from './components/time-line';

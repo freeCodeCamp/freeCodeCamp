@@ -1,6 +1,6 @@
 ---
 id: 5900f5481000cf542c51005a
-title: 'Problem 475: Music festival'
+title: 'Завдання 475: музичний фестиваль'
 challengeType: 1
 forumTopicId: 302152
 dashedName: problem-475-music-festival
@@ -8,15 +8,15 @@ dashedName: problem-475-music-festival
 
 # --description--
 
-$12n$ musicians participate at a music festival. On the first day, they form $3n$ quartets and practice all day.
+$12n$ музикантів беруть участь у музичному фестивалі. Першого дня вони створюють $3n$ квартетів і весь день практикуються.
 
-It is a disaster. At the end of the day, all musicians decide they will never again agree to play with any member of their quartet.
+Це катастрофа. Наприкінці дня всі музиканти вирішують, що більше ніколи не гратимуть з будь-яким учасником свого квартету.
 
-On the second day, they form $4n$ trios, each musician avoiding his previous quartet partners.
+Наступного дня вони створюють $4n$ тріо та кожен музикант уникає учасників свого квартету.
 
-Let $f(12n)$ be the number of ways to organize the trios amongst the $12n$ musicians.
+Нехай $f(12n)$ буде кількістю способів організувати тріо серед $12n$ музикантів.
 
-You are given $f(12) = 576$ and $f(24)\bmod 1\\,000\\,000\\,007 = 509\\,089\\,824$.
+Дано, що $f(12) = 576$ та $f(24)\bmod 1\\,000\\,000\\,007 = 509\\,089\\,824$.
 
 Знайдіть $f(600)\bmod 1\\,000\\,000\\,007$.
 
