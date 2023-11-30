@@ -1,0 +1,18 @@
+{
+  "name": "Learn How to Discuss Popular Trends in Technology",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-discuss-popular-trends-in-technology",
+  "order": 10,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "655c111ce03db7881e612a27",
+      "title": "Dialogue: Placeholder"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}
