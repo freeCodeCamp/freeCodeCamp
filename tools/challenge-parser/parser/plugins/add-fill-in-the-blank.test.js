@@ -1,4 +1,5 @@
 const mockFillInTheBlankAST = require('../__fixtures__/ast-fill-in-the-blank.json');
+const mockFillInTheBlankYouAreAST = require('../__fixtures__/ast-fill-in-the-blank-one-blank.json');
 const addFillInTheBlankQuestion = require('./add-fill-in-the-blank');
 
 describe('fill-in-the-blanks plugin', () => {
@@ -42,13 +43,16 @@ describe('fill-in-the-blanks plugin', () => {
     expect(testObject.blanks[2].feedback).toBeNull();
   });
 
-  it('should convert question and answer markdown into html', () => {
+  it('should convert feedback markdown into html', () => {
     plugin(mockFillInTheBlankAST, file);
     const testObject = file.data.fillInTheBlank;
 
     expect(testObject.blanks[0]).toStrictEqual({
       answer: 'are',
-      feedback: '<p>Feedback 1</p>'
+      feedback:
+        '<p>The verb <code>to be</code> is an irregular verb. ' +
+        'When conjugated with the pronoun <code>you</code>, <code>be</code> ' +
+        'becomes <code>are</code>. For example: <code>You are an English learner.</code></p>'
     });
 
     expect(testObject.blanks[1]).toStrictEqual({
@@ -59,6 +63,17 @@ describe('fill-in-the-blanks plugin', () => {
     expect(testObject.blanks[2]).toStrictEqual({
       answer: 'Nice',
       feedback: null
+    });
+  });
+
+  it('should handle one blank', () => {
+    plugin(mockFillInTheBlankYouAreAST, file);
+    const testObject = file.data.fillInTheBlank;
+
+    expect(testObject.blanks[0]).toStrictEqual({
+      answer: 'are',
+      feedback:
+        '<p>The verb <code>to be</code> is an irregular verb. When conjugated with the pronoun <code>you</code>, <code>be</code> becomes <code>are</code>. For example: <code>You are an English learner.</code></p>'
     });
   });
 });
