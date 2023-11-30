@@ -22,8 +22,8 @@ function CardUpdateAlertHandler({
   const heading = redirecting
     ? `${t('donate.redirecting')}`
     : success
-    ? `${t('donate.success-card-update')}`
-    : `${t('donate.error-card-update')}`;
+      ? `${t('donate.success-card-update')}`
+      : `${t('donate.error-card-update')}`;
 
   return (
     <Alert
