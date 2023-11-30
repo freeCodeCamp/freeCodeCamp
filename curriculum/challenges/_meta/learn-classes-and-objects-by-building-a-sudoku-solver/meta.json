@@ -1,0 +1,57 @@
+{
+  "name": "Learn Classes and Objects by Building a Sudoku Solver",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-classes-and-objects-by-building-a-sudoku-solver",
+  "order": 9,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "upcoming-python",
+  "superOrder": 20,
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "656873ffdc638f7e290f60de",
+      "title": "Step 1"
+    },
+    {
+      "id": "656874efd5102b81815c8ef7",
+      "title": "Step 2"
+    },
+    {
+      "id": "65688efcc78c9495e73acfc9",
+      "title": "Step 3"
+    },
+    {
+      "id": "65688f22703200963a85dfb7",
+      "title": "Step 4"
+    },
+    {
+      "id": "65688f737b0ef396bf0c22d6",
+      "title": "Step 5"
+    },
+    {
+      "id": "65688f93a1b6e9970f710f62",
+      "title": "Step 6"
+    },
+    {
+      "id": "65688fc27e8dda9760c45d7d",
+      "title": "Step 7"
+    },
+    {
+      "id": "65689020cfd5279803976b25",
+      "title": "Step 8"
+    },
+    {
+      "id": "6568904b83a2f29878578146",
+      "title": "Step 9"
+    },
+    {
+      "id": "6568917528820d99236ad811",
+      "title": "Step 10"
+    }
+  ],
+  "helpCategory": "Python"
+}
