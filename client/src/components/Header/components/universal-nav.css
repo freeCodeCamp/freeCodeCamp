@@ -215,7 +215,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
  * Site navigation first level CTA's
  */
 .exposed-button-nav,
-.lang-button-nav {
+button.lang-button-nav {
   align-items: center;
   background-color: var(--theme-color);
   border: 1px solid var(--gray-00);

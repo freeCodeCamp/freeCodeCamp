@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import type { TFunction } from 'i18next';
 import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
+import { Button } from '@freecodecamp/ui';
+
 import { clientLocale } from '../../../../config/env.json';
 import {
   availableLangs,
@@ -133,7 +135,7 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
   };
   return (
     <>
-      <button
+      <Button
         data-playwright-test-label='header-toggle-lang-button'
         id='toggle-lang-button'
         className='lang-button-nav'
@@ -146,7 +148,7 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
         onClick={handleClick}
       >
         <LanguageGlobe />
-      </button>
+      </Button>
       <ul
         data-playwright-test-label='header-lang-list'
         id='nav-lang-list'
@@ -155,7 +157,7 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
       >
         {locales.map((lang, index) => (
           <li key={'lang-' + lang}>
-            <button
+            <Button
               data-playwright-test-label='header-lang-list-option'
               className='nav-link nav-lang-list-option'
               data-value={lang}
@@ -167,7 +169,7 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
               })}
             >
               {LangNames[lang]}
-            </button>
+            </Button>
           </li>
         ))}
       </ul>
