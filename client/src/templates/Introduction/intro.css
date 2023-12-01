@@ -449,18 +449,6 @@ ToDo: find out why, and remove the need for it */
   padding-inline-end: 0.25em;
 }
 
-.block-grid .progress {
-  height: 15px;
-  background-color: var(--secondary-background);
-  margin: 0 10px;
-  width: 80%;
-  border-radius: 0;
-}
-
-.block-grid .progress-bar {
-  background-color: var(--blue-mid);
-}
-
 .tags-wrapper {
   display: flex;
   width: 100%;

@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import Spinner from 'react-spinkit';
 import { createSelector } from 'reselect';
 import type { TFunction } from 'i18next';
-import { Button } from '@freecodecamp/react-bootstrap';
 
 import {
   defaultDonation,
@@ -222,9 +221,13 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
           usd: formattedAmountLabel(donationAmount)
         })}
 
-        <Button bsStyle='primary' className='btn-link' onClick={editAmount}>
+        <button
+          type='button'
+          className='edit-amount-button'
+          onClick={editAmount}
+        >
           {t('donate.edit-amount')}
-        </Button>
+        </button>
       </>
     );
 

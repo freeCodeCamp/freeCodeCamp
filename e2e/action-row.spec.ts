@@ -24,7 +24,8 @@ function getTabsRowLocator(page: Page): Locator {
 }
 
 test('Action row buttons are visible', async ({ isMobile, page }) => {
-  const previewFrame = page.getByTitle('challenge preview');
+  const previewPaneButton = page.getByTestId('preview-pane-button');
+  const previewPortalButton = page.getByTestId('preview-portal-button');
   const actionRow = getActionRowLocator(page);
   const tabsRow = getTabsRowLocator(page);
 
@@ -37,7 +38,9 @@ test('Action row buttons are visible', async ({ isMobile, page }) => {
       const btn = tabsRow.getByRole('button', { name: challengeButtons[i] });
       await expect(btn).toBeVisible();
     }
-    await expect(previewFrame).toBeVisible();
+
+    await expect(previewPaneButton).toBeVisible();
+    await expect(previewPortalButton).toBeVisible();
   }
 });
 
@@ -84,8 +87,11 @@ test('Clicking Console button shows console panel', async ({
   }
 });
 
-test('Clicking Preview button hides preview', async ({ isMobile, page }) => {
-  const previewButton = page.getByTestId('preview-button');
+test('Clicking Preview Pane button hides preview', async ({
+  isMobile,
+  page
+}) => {
+  const previewButton = page.getByTestId('preview-pane-button');
   const previewFrame = page.getByTitle('challenge preview');
   const actionRow = getActionRowLocator(page);
 
@@ -95,4 +101,22 @@ test('Clicking Preview button hides preview', async ({ isMobile, page }) => {
     await previewButton.click();
     await expect(previewFrame).toBeHidden();
   }
+});
+
+test('Clicking Preview Portal button opens the preview in a new tab', async ({
+  page
+}) => {
+  const previewPortalButton = page.getByTestId('preview-portal-button');
+  const browserContext = page.context();
+
+  const [newPage] = await Promise.all([
+    browserContext.waitForEvent('page'),
+    previewPortalButton.click()
+  ]);
+
+  await newPage.waitForLoadState();
+
+  await expect(newPage).toHaveURL('about:blank');
+
+  await newPage.close();
 });
