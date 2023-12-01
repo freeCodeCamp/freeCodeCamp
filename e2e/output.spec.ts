@@ -16,20 +16,20 @@ const outputTexts = {
   passed: `// running tests
 // tests completed`
 };
-
-const insertTextInCodeEditor = async (
-  page: Page,
-  isMobile: boolean,
-  text: string
-) => {
-  if (isMobile) {
-    await page
+interface InsertTextParameters {
+  page: Page;
+  isMobile: boolean;
+  text: string;
+}
+const insertTextInCodeEditor = async (paras: InsertTextParameters) => {
+  if (paras.isMobile) {
+    await paras.page
       .getByRole('tab', { name: translations.learn['editor-tabs'].code })
       .click();
   }
-  await page.getByLabel('Editor content').fill(text);
-  if (isMobile) {
-    await page
+  await paras.page.getByLabel('Editor content').fill(paras.text);
+  if (paras.isMobile) {
+    await paras.page
       .getByRole('tab', { name: translations.learn['editor-tabs'].console })
       .click();
   }
@@ -67,7 +67,7 @@ test.describe('Challenge Output Component Tests', () => {
     page,
     isMobile
   }) => {
-    await insertTextInCodeEditor(page, isMobile, 'var');
+    await insertTextInCodeEditor({ page, isMobile, text: 'var' });
     await expect(
       page.getByRole('region', {
         name: translations.learn['editor-tabs'].console
@@ -81,13 +81,14 @@ test.describe('Challenge Output Component Tests', () => {
   }) => {
     const referenceErrorRegex =
       /ReferenceError: (myName is not defined|Can't find variable: myName)/;
-    await insertTextInCodeEditor(page, isMobile, 'myName');
+    await insertTextInCodeEditor({ page, isMobile, text: 'myName' });
     await expect(
       page.getByRole('region', {
         name: translations.learn['editor-tabs'].console
       })
     ).toHaveText(referenceErrorRegex);
   });
+
   test('should contain final output after test fail', async ({
     page,
     isMobile
@@ -99,13 +100,14 @@ test.describe('Challenge Output Component Tests', () => {
       })
     ).toHaveText(outputTexts.empty);
   });
+
   test('should contain final output after test pass', async ({
     page,
     isMobile
   }) => {
     const closeButton = page.getByRole('button', { name: 'Close' });
 
-    await insertTextInCodeEditor(page, isMobile, 'var myName;');
+    await insertTextInCodeEditor({ page, isMobile, text: 'var myName;' });
     await runChallengeTest(page, isMobile);
     await closeButton.click();
     await expect(
