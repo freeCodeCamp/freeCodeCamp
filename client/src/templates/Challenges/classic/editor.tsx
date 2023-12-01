@@ -282,7 +282,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
-    renderIndentGuides: false,
+    renderIndentGuides: props.challengeType === challengeTypes.python,
     minimap: {
       enabled: false
     },
@@ -1263,8 +1263,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     theme === Themes.Night
       ? 'vs-dark-custom'
       : theme === Themes.Default
-      ? 'vs-custom'
-      : editorSystemTheme;
+        ? 'vs-custom'
+        : editorSystemTheme;
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>
