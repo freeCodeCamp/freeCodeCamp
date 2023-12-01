@@ -14,24 +14,24 @@ Dark Palette
 code[class*='language-'],
 pre[class*='language-'] {
   color: var(--secondary-color);
-  font-family: var(--font-family-dark);
-  font-size: var(--font-size-dark);
-  text-align: var(--text-align-dark);
-  white-space: var(--white-space-dark);
-  word-spacing: var(--word-spacing-dark);
-  word-break: var(--work-break-dark);
-  word-wrap: var(--word-wrap-dark);
-  line-height: var(--font-line-height-dark);
+  font-family: var(--font-family-monaco);
+  font-size: var(--font-size);
+  text-align: var(--text-align);
+  white-space: var(--white-space);
+  word-spacing: var(--word-spacing);
+  word-break: var(--work-break);
+  word-wrap: var(--word-wrap);
+  line-height: var(--font-line-height);
 
-  -moz-tab-size: var(--tab-size-dark);
-  -o-tab-size: var(--tab-size-dark);
-  tab-size: var(--tab-size-dark);
+  -moz-tab-size: var(--tab-size);
+  -o-tab-size: var(--tab-size);
+  tab-size: var(--tab-size);
 
-  -webkit-hyphens: var(--hyphens-dark);
-  -moz-hyphens: var(--hyphens-dark);
-  -ms-hyphens: var(--hyphens-dark);
-  hyphens: var(--hyphens-dark);
-  text-shadow: var(--text-shadow-dark);
+  -webkit-hyphens: var(--hyphens);
+  -moz-hyphens: var(--hyphens);
+  -ms-hyphens: var(--hyphens);
+  hyphens: var(--hyphens);
+  text-shadow: var(--text-shadow);
 }
 
 pre[class*='language-'] code[class*='language-'] {
@@ -40,16 +40,16 @@ pre[class*='language-'] code[class*='language-'] {
 
 /* Code blocks */
 pre[class*='language-'] {
-  padding: var(--padding-dark);
-  margin: var(--margin-dark);
-  overflow: auto;
+  padding: var(--padding);
+  margin: var(--margin);
+  overflow: var(--overflow);
 }
 
 /* Without this, the above selector takes precedence and messes up the answer
  padding in night mode */
 .video-quiz-option > pre {
-  padding: var(--padding-video-quiz-dark);
-  margin: var(--margin-video-quiz-dark);
+  padding: var(--padding-video-quiz);
+  margin: var(--margin-video-quiz);
 }
 
 :not(pre) > code[class*='language-'],
@@ -66,9 +66,9 @@ code[class*='language-'] ::selection {
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
-  padding: var(--inline-padding-dark);
-  border-radius: var(--inline-border-radius-dark);
-  white-space: var(--inline-white-space-dark);
+  padding: var(--inline-padding);
+  border-radius: var(--inline-border-radius);
+  white-space: var(--inline-white-space);
 }
 
 .token.comment,
@@ -76,35 +76,35 @@ code[class*='language-'] ::selection {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: var(--green-mid);
+  color: var(--token-cdata-color);
 }
 
 .token.punctuation {
-  color: var(--token-punctuation);
+  color: var(--token-punctuation-color);
 }
 
 .token.tag,
 .token.attr-name,
 .token.namespace,
 .token.deleted {
-  color: var(--pink-mid);
+  color: var(--token-deleted-color);
 }
 
 .token.function-name {
-  color: var(--gray-83);
+  color: var(--token-function-name-color);
 }
 
 .token.boolean,
 .token.number,
 .token.function {
-  color: var(--sky-mid);
+  color: var(--token-function-color);
 }
 
 .token.property,
 .token.class-name,
 .token.constant,
 .token.symbol {
-  color: var(--tan-mid);
+  color: var(--token-symbol-color);
 }
 
 .token.selector,
@@ -112,7 +112,7 @@ code[class*='language-'] ::selection {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-  color: var(--sky-mid);
+  color: var(--token-selector-color);
 }
 
 .token.string,
@@ -120,37 +120,37 @@ code[class*='language-'] ::selection {
 .token.attr-value,
 .token.regex,
 .token.variable {
-  color: var(--teal-light);
+  color: var(--token-variable-color);
 }
 
 /* CSS code block strings have low contrast in night mode. This attempts to increase contrast above 4.5:1 */
 .language-css .token.string,
 .style .token.string {
-  color: var(--orange-light);
-  background: var(--dark-gray);
+  color: var(--language-color);
+  background: var(--language-background);
 }
 
 .token.operator,
 .token.entity,
 .token.url {
-  color: var(--sky-light);
-  background: var(--token-background-dark);
+  color: var(--token-operator-color);
+  background: var(--token-background);
 }
 
 .token.important,
 .token.bold {
-  font-weight: var(--token-font-weight-dark);
+  font-weight: var(--token-font-weight);
 }
 .token.italic {
-  font-style: var(--token-font-style-dark);
+  font-style: var(--token-font-style);
 }
 
 .token.entity {
-  cursor: var(--token-cursor-dark);
+  cursor: var(--token-cursor);
 }
 
 .token.inserted {
-  color: var(--grass-mid);
+  color: var(--token-inserted-color);
 }
 
 /*
@@ -158,7 +158,7 @@ Light Palette
 */
 
 code .token.operator {
-  background: var(--background-light);
+  background: var(--token-background);
 }
 
 .default pre[class*='language-']::selection,
@@ -169,40 +169,40 @@ code .token.operator {
 }
 
 * {
-  text-shadow: var(--text-shadow-light) !important;
+  text-shadow: var(--text-shadow) !important;
 }
 
 /* remove horizontal scrollbars for text-only code */
 code[class='language-markup'] {
-  white-space: var(--white-space-light) !important;
+  white-space: var(--white-space) !important;
 }
 
 /* a11y color adjustments */
-.token.comment,
+/* .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: var(--blue-grey-light);
-}
+  color: var(--token-cdata-color);
+} */
 
-.token.punctuation {
-  color: var(--token-punctuation);
-}
+/* .token.punctuation {
+  color: var(--token-punctuation-color);
+} */
 
 .token.property,
 .token.tag,
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: var(--bright-red-mid);
+  color: var(--token-deleted-color);
 }
 
 .token.number {
-  color: var(--bright-purple-mid);
+  color: var(--token-number-color);
 }
 
 .token.boolean {
-  color: var(--bright-blue-mid);
+  color: var(--token-boolean-color);
 }
 
 .token.selector,
@@ -211,7 +211,7 @@ code[class='language-markup'] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: var(--grass-light);
+  color: var(--token-selector-color);
 }
 
 .token.operator,
@@ -236,7 +236,7 @@ code[class='language-markup'] {
 .token.regex,
 .token.important,
 .token.variable {
-  color: var(--tan-dark);
+  color: var(--tan);
 }
 
 .line-numbers-rows > span::before {

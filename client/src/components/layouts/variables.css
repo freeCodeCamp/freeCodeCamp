@@ -12,36 +12,37 @@
   --gray-85: #1b1b32;
   --gray-90: #0a0a23;
   --purple-light: #dbb8ff;
-  --purple-dark: #5a01a7;
+  --purple: #5a01a7;
   --yellow-light: #ffc300;
-  --yellow-dark: #4d3800;
+  --yellow: #4d3800;
   --blue-light: rgb(153, 201, 255);
   --blue-light-translucent: rgba(153, 201, 255, 0.3);
-  --blue-dark: rgb(0, 46, 173);
+  --blue: rgb(0, 46, 173);
   --blue-dark-translucent: rgba(0, 46, 173, 0.3);
   --green-light: #acd157;
   --blue-mid: #198eee;
   --purple-mid: #9400d3;
-  --green-dark: #00471b;
+  --green: #00471b;
   --red-light: #ffadad;
-  --red-dark: #850000;
+  --red: #850000;
   --love-light: #f8577c;
-  --love-dark: #f82153;
+  --love: #f82153;
   --green-mid: #608b4e;
   --lemon-light: #ffff00;
   --pink-mid: #e2777a;
   --sky-mid: #569cd6;
   --sky-light: #67cdcc;
+  --sky-dark: #2574a9;
   --tan-mid: #f8c555;
   --teal-light: #7ec699;
   --dark-gray: hsl(0 0% 100% / 0.12);
   --grass-mid: #008000;
   --orange-light: #ec9126;
   --blue-grey-mid: #62707f;
-  --blue-grey-dark: #38425c;
+  --blue-grey: #38425c;
 
   --editor-background-light: #fffffe;
-  --editor-background-dark: #2a2b40;
+  --editor-background: #2a2b40;
   --focus-outline-color: var(--blue-mid);
   --font-family-sans-serif: 'Lato', sans-serif;
   --font-family-monospace: 'Hack-ZeroSlash', monospace;
@@ -71,33 +72,47 @@
   --love-color: var(--love-light);
   --editor-background: var(--editor-background-dark);
 
-  --font-family-dark: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  --font-size-dark: 1em;
+  --font-family-monaco: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
+    monospace;
+  --font-size: 1em;
 
-  --text-align-dark: left;
-  --white-space-dark: pre;
-  --word-spacing-dark: normal;
-  --work-break-dark: normal;
-  --word-wrap-dark: normal;
-  --font-line-height-dark: 1.5;
-  --tab-size-dark: 4;
-  --hyphens-dark: none;
-  --text-shadow-dark: none;
+  --text-align: left;
+  --white-space: pre;
+  --word-spacing: normal;
+  --work-break: normal;
+  --word-wrap: normal;
+  --font-line-height: 1.5;
+  --tab-size: 4;
+  --hyphens: none;
+  --text-shadow: none;
 
-  --padding-dark: 1em;
-  --margin-dark: 0.5em 0;
+  --padding: 1em;
+  --margin: 0.5em 0;
+  --overflow: auto;
 
-  --padding-video-quiz-dark: 0;
-  --margin-video-quiz-dark: 0;
+  --padding-video-quiz: 0;
+  --margin-video-quiz: 0;
 
-  --inline-padding-dark: 0.1em;
-  --inline-border-radius-dark: 0.3em;
-  --inline-white-space-dark: normal;
+  --inline-padding: 0.1em;
+  --inline-border-radius: 0.3em;
+  --inline-white-space: normal;
 
-  --token-background-dark: none;
-  --token-font-weight-dark: bold;
-  --token-font-style-dark: italic;
-  --token-cursor-dark: help;
+  --token-background: none;
+  --token-font-weight: bold;
+  --token-font-style: italic;
+  --token-cursor: help;
+  --token-punctuation-color: var(--lemon-light);
+  --token-cdata-color: var(--green-mid);
+  --token-deleted-color: var(--pink-mid);
+  --token-function-name-color: var(--gray-83);
+  --token-function-color: var(--sky-mid);
+  --token-symbol-color: var(--tan-mid);
+  --token-selector-color: var(--sky-mid);
+  --token-variable-color: var(--teal-light);
+  --token-operator-color: var(--sky-light);
+  --token-inserted-color: var(--grass-mid);
+  --language-color: var(--orange-light);
+  --language-background: var(--dark-gray);
 }
 
 .light-palette {
@@ -119,7 +134,14 @@
   --love-color: var(--love-dark);
   --editor-background: var(--editor-background-light);
 
-  --background-light: none;
-  --text-shadow-light: none;
-  --white-space-light: normal;
+  --token-background: none;
+  --text-shadow: none;
+  --white-space: normal;
+  --token-punctuation-color: var(--blue-grey-dark);
+  --token-deleted-color: var(--bright-red-mid);
+  --token-cdata-color: var(--blue-grey-light);
+  --token-number-color: var(--bright-purple-mid);
+  --token-boolean-color: var(--bright-blue-mid);
+  --token-selector-color: var(--grass-light);
+  --token-atrule-color: var(--sky-dark);
 }
