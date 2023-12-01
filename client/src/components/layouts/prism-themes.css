@@ -1,0 +1,249 @@
+@import 'variables.css';
+
+/*
+Dark Palette
+*/
+
+/**
+ * Adapted from:
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+.dark-palette code[class*='language-'],
+.dark-palette pre[class*='language-'] {
+  color: var(--secondary-color);
+  font-family: var(--font-family-dark);
+  font-size: var(--font-size-dark);
+  text-align: var(--text-align-dark);
+  white-space: var(--white-space-dark);
+  word-spacing: var(--word-spacing-dark);
+  word-break: var(--work-break-dark);
+  word-wrap: var(--word-wrap-dark);
+  line-height: var(--font-line-height-dark);
+
+  -moz-tab-size: var(--tab-size-dark);
+  -o-tab-size: var(--tab-size-dark);
+  tab-size: var(--tab-size-dark);
+
+  -webkit-hyphens: var(--hyphens-dark);
+  -moz-hyphens: var(--hyphens-dark);
+  -ms-hyphens: var(--hyphens-dark);
+  hyphens: var(--hyphens-dark);
+  text-shadow: var(--text-shadow-dark);
+}
+
+.dark-palette pre[class*='language-'] code[class*='language-'] {
+  color: var(--quaternary-color);
+}
+
+/* Code blocks */
+.dark-palette pre[class*='language-'] {
+  padding: var(--padding-dark);
+  margin: var(--margin-dark);
+  overflow: auto;
+}
+
+/* Without this, the above selector takes precedence and messes up the answer
+ padding in night mode */
+.dark-palette .video-quiz-option > pre {
+  padding: var(--padding-video-quiz-dark);
+  margin: var(--margin-video-quiz-dark);
+}
+
+.dark-palette :not(pre) > code[class*='language-'],
+.dark-palette pre[class*='language-'] {
+  background: var(--primary-background);
+}
+
+.dark-palette pre[class*='language-']::selection,
+.dark-palette pre[class*='language-'] ::selection,
+.dark-palette code[class*='language-']::selection,
+.dark-palette code[class*='language-'] ::selection {
+  background: var(--selection-color);
+}
+
+/* Inline code */
+.dark-palette :not(pre) > code[class*='language-'] {
+  padding: var(--inline-padding-dark);
+  border-radius: var(--inline-border-radius-dark);
+  white-space: var(--inline-white-space-dark);
+}
+
+.dark-palette .token.comment,
+.dark-palette .token.block-comment,
+.dark-palette .token.prolog,
+.dark-palette .token.doctype,
+.dark-palette .token.cdata {
+  color: var(--green-mid);
+}
+
+.dark-palette .token.punctuation {
+  color: var(--lemon-light);
+}
+
+.dark-palette .token.tag,
+.dark-palette .token.attr-name,
+.dark-palette .token.namespace,
+.dark-palette .token.deleted {
+  color: var(--pink-mid);
+}
+
+.dark-palette .token.function-name {
+  color: var(--gray-83);
+}
+
+.dark-palette .token.boolean,
+.dark-palette .token.number,
+.dark-palette .token.function {
+  color: var(--sky-mid);
+}
+
+.dark-palette .token.property,
+.dark-palette .token.class-name,
+.dark-palette .token.constant,
+.dark-palette .token.symbol {
+  color: var(--tan-mid);
+}
+
+.dark-palette .token.selector,
+.dark-palette .token.important,
+.dark-palette .token.atrule,
+.dark-palette .token.keyword,
+.dark-palette .token.builtin {
+  color: var(--sky-mid);
+}
+
+.dark-palette .token.string,
+.dark-palette .token.char,
+.dark-palette .token.attr-value,
+.dark-palette .token.regex,
+.dark-palette .token.variable {
+  color: var(--teal-light);
+}
+
+/* CSS code block strings have low contrast in night mode. This attempts to increase contrast above 4.5:1 */
+.dark-palette .language-css .token.string,
+.dark-palette .style .token.string {
+  color: var(--orange-light);
+  background: var(--dark-gray);
+}
+
+.dark-palette .token.operator,
+.dark-palette .token.entity,
+.dark-palette .token.url {
+  color: var(--sky-light);
+  background: var(--token-background-dark);
+}
+
+.dark-palette .token.important,
+.dark-palette .token.bold {
+  font-weight: var(--token-font-weight-dark);
+}
+.dark-palette .token.italic {
+  font-style: var(--token-font-style-dark);
+}
+
+.dark-palette .token.entity {
+  cursor: var(--token-cursor-dark);
+}
+
+.dark-palette .token.inserted {
+  color: var(--grass-mid);
+}
+
+/*
+Light Palette
+*/
+
+code .token.operator {
+  background: var(--background-light);
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: var(--primary-background);
+}
+
+.default pre[class*='language-']::selection,
+.default pre[class*='language-'] ::selection,
+.default code[class*='language-']::selection,
+.default code[class*='language-'] ::selection {
+  background: var(--selection-color);
+}
+
+* {
+  text-shadow: var(--text-shadow-light) !important;
+}
+
+/* remove horizontal scrollbars for text-only code */
+code[class='language-markup'] {
+  white-space: var(--white-space-light) !important;
+}
+
+/* a11y color adjustments */
+:not(.dark-palette) .token.comment,
+:not(.dark-palette) .token.prolog,
+:not(.dark-palette) .token.doctype,
+:not(.dark-palette) .token.cdata {
+  color: var(--blue-grey-light);
+}
+
+:not(.dark-palette) .token.punctuation {
+  color: var(--blue-grey-dark);
+}
+
+:not(.dark-palette) .token.property,
+:not(.dark-palette) .token.tag,
+:not(.dark-palette) .token.constant,
+:not(.dark-palette) .token.symbol,
+:not(.dark-palette) .token.deleted {
+  color: var(--bright-red-mid);
+}
+
+:not(.dark-palette) .token.number {
+  color: var(--bright-purple-mid);
+}
+
+:not(.dark-palette) .token.boolean {
+  color: var(--bright-blue-mid);
+}
+
+:not(.dark-palette) .token.selector,
+:not(.dark-palette) .token.attr-name,
+:not(.dark-palette) .token.string,
+:not(.dark-palette) .token.char,
+:not(.dark-palette) .token.builtin,
+:not(.dark-palette) .token.inserted {
+  color: var(--grass-light);
+}
+
+:not(.dark-palette) .token.operator,
+:not(.dark-palette) .token.entity,
+:not(.dark-palette) .token.url,
+:not(.dark-palette) .language-css .token.string,
+:not(.dark-palette) .style .token.string {
+  color: var(--blue-grey-mid);
+}
+
+:not(.dark-palette) .token.atrule,
+:not(.dark-palette) .token.attr-value,
+:not(.dark-palette) .token.keyword {
+  color: var(--sky-dark);
+}
+
+:not(.dark-palette) .token.function,
+:not(.dark-palette) .token.class-name {
+  color: var(--maroon-mid);
+}
+
+:not(.dark-palette) .token.regex,
+:not(.dark-palette) .token.important,
+:not(.dark-palette) .token.variable {
+  color: var(--tan-dark);
+}
+
+:not(.dark-palette) .line-numbers-rows > span::before {
+  color: var(--blue-grey-light);
+}
