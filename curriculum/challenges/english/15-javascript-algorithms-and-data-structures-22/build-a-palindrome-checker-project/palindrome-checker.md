@@ -34,21 +34,21 @@ You should have an `input` element with an `id` of `text-input`.
 
 ```js
 const el = document.getElementById('text-input');
-assert(!!el && el.nodeName.toLowerCase() === 'input');
+assert.strictEqual(el?.nodeName?.toLowerCase(), 'input');
 ```
 
 You should have a `button` element with an `id` of `check-btn`.
 
 ```js
 const el = document.getElementById('check-btn');
-assert(!!el && el.nodeName.toLowerCase() === 'button');
+assert.strictEqual(el?.nodeName?.toLowerCase(), 'button');
 ```
 
 You should have a `div` element with an `id` of `result`.
 
 ```js
 const el = document.getElementById('result');
-assert(!!el && el.nodeName.toLowerCase() === 'div');
+assert.strictEqual(el?.nodeName?.toLowerCase(), 'div');
 ```
 
 When you click on the `#check-btn` element without entering a value into the `#text-input` element, an alert should appear with the text `Please input a value`.
@@ -61,7 +61,7 @@ window.alert = (message) => alertMessage = message; // Override alert and store 
 
 inputEl.value = '';
 checkBtn.click();
-assert(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase() === 'please input a value');
+assert.strictEqual(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please input a value');
 ```
 
 When the `#text-input` element contains special characters or digits and the `#check-btn` element is clicked, an alert should appear with the text `Input should not include numbers and special characters`.
@@ -74,7 +74,7 @@ window.alert = (message) => alertMessage = message; // Override alert and store 
 
 inputEl.value = 'racecar123!';
 checkBtn.click();
-assert(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase() === 'input should not include numbers and special characters');
+assert.strictEqual(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'input should not include numbers and special characters');
 ```
 
 When the `#text-input` element only contains the letter `A` and the `#check-btn` element is clicked, the `#result` element should contain the text `A is a palindrome`.
@@ -86,7 +86,7 @@ const resultEl = document.getElementById('result');
 
 inputEl.value = 'A';
 checkBtn.click();
-assert(resultEl.innerText.trim().match(/^a is a palindrome/i));
+assert.match(resultEl.innerText.trim(), /^a is a palindrome/i);
 ```
 
 When the `#text-input` element contains the word `eye` and the `#check-btn` element is clicked, the `#result` element should contain the text `eye is a palindrome`.
@@ -98,7 +98,7 @@ const resultEl = document.getElementById('result');
 
 inputEl.value = 'eye';
 checkBtn.click();
-assert(resultEl.innerText.trim().match(/^eye is a palindrome/i));
+assert.match(resultEl.innerText.trim(), /^eye is a palindrome/i);
 ```
 
 When the `#text-input` element contains the words `race car` and the `#check-btn` element is clicked, the `#result` element should contain the text `race car is a palindrome`.
@@ -110,7 +110,7 @@ const resultEl = document.getElementById('result');
 
 inputEl.value = 'race car';
 checkBtn.click();
-assert(resultEl.innerText.trim().match(/^race car is a palindrome/i));
+assert.match(resultEl.innerText.trim(), /^race car is a palindrome/i);
 ```
 
 When the `#text-input` element contains the text `not a palindrome` and the `#check-btn` element is clicked, the `#result` element should contain the text `not a palindrome is not a palindrome`.
@@ -122,7 +122,7 @@ const resultEl = document.getElementById('result');
 
 inputEl.value = 'not a palindrome';
 checkBtn.click();
-assert(resultEl.innerText.trim().match(/^not a palindrome is not a palindrome/i));
+assert.match(resultEl.innerText.trim(), /^not a palindrome is not a palindrome/i);
 ```
 
 When the `#text-input` element contains the text `No one made killer apparel like Dame Noon` and the `#check-btn` element is clicked, the `#result` element should contain the text `No one made killer apparel like Dame Noon is a palindrome`.
@@ -134,7 +134,7 @@ const resultEl = document.getElementById('result');
 
 inputEl.value = 'No one made killer apparel like Dame Noon';
 checkBtn.click();
-assert(resultEl.innerText.trim().match(/^no one made killer apparel like dame noon is a palindrome/i));
+assert.match(resultEl.innerText.trim(), /^no one made killer apparel like dame noon is a palindrome/i);
 ```
 
 When the `#text-input` element contains the text `saippuakivikauppias` and the `#check-btn` element is clicked, the `#result` element should contain the text `saippuakivikauppias is a palindrome`.
@@ -146,7 +146,7 @@ const resultEl = document.getElementById('result');
 
 inputEl.value = 'saippuakivikauppias';
 checkBtn.click();
-assert(resultEl.innerText.trim().match(/^saippuakivikauppias is a palindrome/i));
+assert.match(resultEl.innerText.trim(), /^saippuakivikauppias is a palindrome/i);
 ```
 
 # --seed--
