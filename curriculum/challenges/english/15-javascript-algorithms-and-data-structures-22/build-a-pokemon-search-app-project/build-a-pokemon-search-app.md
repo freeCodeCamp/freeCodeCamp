@@ -43,91 +43,92 @@ You should have an `input` element with an `id` of `search-input` and is **requi
 
 ```js
 const el = document.getElementById('search-input');
-assert(!!el && el.nodeName.toLowerCase() === 'input' && el.required);
+assert.strictEqual(el?.nodeName?.toLowerCase(), 'input');
+assert.isTrue(el?.required);
 ```
 
 You should have a `button` element with an `id` of `search-button`.
 
 ```js
 const el = document.getElementById('search-button');
-assert(!!el && el.nodeName.toLowerCase() === 'button');
+assert.strictEqual(el?.nodeName?.toLowerCase(), 'button');
 ```
 
 You should have an element with an `id` of `pokemon-name`.
 
 ```js
 const el = document.getElementById('pokemon-name');
-assert(!!el);
+assert.exists(el);
 ```
 
 You should have an element with an `id` of `pokemon-id`.
 
 ```js
 const el = document.getElementById('pokemon-id');
-assert(!!el);
+assert.exists(el);
 ```
 
 You should have an element with an `id` of `weight`.
 
 ```js
 const el = document.getElementById('weight');
-assert(!!el);
+assert.exists(el);
 ```
 
 You should have an element with an `id` of `height`.
 
 ```js
 const el = document.getElementById('height');
-assert(!!el);
+assert.exists(el);
 ```
 
 You should have an element with an `id` of `types`.
 
 ```js
 const el = document.getElementById('types');
-assert(!!el);
+assert.exists(el);
 ```
 
 You should have an element with an `id` of `hp`.
 
 ```js
 const el = document.getElementById('hp');
-assert(!!el);
+assert.exists(el);
 ```
 
 You should have an element with an `id` of `attack`.
 
 ```js
 const el = document.getElementById('attack');
-assert(!!el);
+assert.exists(el);
 ```
 
 You should have an element with an `id` of `defense`.
 
 ```js
 const el = document.getElementById('defense');
-assert(!!el);
+assert.exists(el);
 ```
 
 You should have an element with an `id` of `special-attack`.
 
 ```js
 const el = document.getElementById('special-attack');
-assert(!!el);
+assert.exists(el);
 ```
 
 You should have an element with an `id` of `special-defense`.
 
 ```js
 const el = document.getElementById('special-defense');
-assert(!!el);
+assert.exists(el);
 ```
 
 You should have an element with an `id` of `speed`.
 
 ```js
 const el = document.getElementById('speed');
-assert(!!el);
+assert.exists(el);
 ```
 
 When the `#search-input` element contains the value `Red` and the `#search-button` element is clicked, an alert should appear with the text `Pokémon not found`.
@@ -147,8 +148,7 @@ async () => {
     if (!res.ok) {
       await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow the alert to trigger
 
-      const cleanAlertMessage = alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase();
-      assert(cleanAlertMessage === 'pokémon not found' || cleanAlertMessage === 'pokemon not found');
+      assert.include(['pokémon not found', 'pokemon not found'], alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase());
     }
   } catch (err) {
     throw new Error(err);
@@ -182,18 +182,16 @@ async () => {
       const specialDefense = document.getElementById('special-defense');
       const speed = document.getElementById('speed');
 
-      assert(
-        pokemonName.innerText.trim().toLowerCase() === 'pikachu' &&
-        pokemonID.innerText.trim().replace('#', '') === '25' &&
-        (weight.innerText.trim().toLowerCase() === 'weight: 60' || weight.innerText.trim() === '60') &&
-        (height.innerText.trim().toLowerCase() === 'height: 4' || height.innerText.trim() === '4') &&
-        hp.innerText.trim() === '35' &&
-        attack.innerText.trim() === '55' &&
-        defense.innerText.trim() === '40' &&
-        specialAttack.innerText.trim() === '50' &&
-        specialDefense.innerText.trim() === '50' &&
-        speed.innerText.trim() === '90'
-      );
+      assert.strictEqual(pokemonName.innerText.trim().toLowerCase(), 'pikachu');
+      assert.include(['#25', '25'], pokemonID.innerText.trim());
+      assert.include(['weight: 60', '60'], weight.innerText.trim().toLowerCase());
+      assert.include(['height: 4', '4'], height.innerText.trim().toLowerCase());
+      assert.strictEqual(hp.innerText.trim(), '35');
+      assert.strictEqual(attack.innerText.trim(), '55');
+      assert.strictEqual(defense.innerText.trim(), '40');
+      assert.strictEqual(specialAttack.innerText.trim(), '50');
+      assert.strictEqual(specialDefense.innerText.trim(), '50');
+      assert.strictEqual(speed.innerText.trim(), '90');
     }
   } catch (err) {
     throw new Error(err);
@@ -217,7 +215,7 @@ async () => {
       await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
 
       const sprite = document.getElementById('sprite');
-      assert(sprite.src.endsWith('sprites/pokemon/25.png'));
+      assert.isTrue(sprite.src.endsWith('sprites/pokemon/25.png'));
     }
   } catch (err) {
     throw new Error(err);
@@ -232,7 +230,9 @@ async () => {
   try {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
+    const typesEl = document.getElementById('types');
     searchInput.value = 'Pikachu';
+    typesEl.innerHTML = ''; // Clear types element before test
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
@@ -240,8 +240,8 @@ async () => {
     if (res.ok) {
       await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
 
-      const typesEl = document.getElementById('types');
-      assert(typesEl.children.length === 1 && typesEl.children[0].innerText.trim().toLowerCase() === 'electric');
+      assert.lengthOf(typesEl.children, 1);
+      assert.strictEqual(typesEl?.children[0]?.innerText.trim().toLowerCase(), 'electric');
     }
   } catch (err) {
     throw new Error(err);
@@ -275,18 +275,16 @@ async () => {
       const specialDefense = document.getElementById('special-defense');
       const speed = document.getElementById('speed');
 
-      assert(
-        pokemonName.innerText.trim().toLowerCase() === 'gengar' &&
-        pokemonID.innerText.trim().replace('#', '') === '94' &&
-        (weight.innerText.trim().toLowerCase() === 'weight: 405' || weight.innerText.trim() === '405') &&
-        (height.innerText.trim().toLowerCase() === 'height: 15' || height.innerText.trim() === '15') &&
-        hp.innerText.trim() === '60' &&
-        attack.innerText.trim() === '65' &&
-        defense.innerText.trim() === '60' &&
-        specialAttack.innerText.trim() === '130' &&
-        specialDefense.innerText.trim() === '75' &&
-        speed.innerText.trim() === '110'
-      );
+      assert.strictEqual(pokemonName.innerText.trim().toLowerCase(), 'gengar');
+      assert.include(['#94', '94'], pokemonID.innerText.trim());
+      assert.include(['weight: 405', '405'], weight.innerText.trim().toLowerCase());
+      assert.include(['height: 15', '15'], height.innerText.trim().toLowerCase());
+      assert.strictEqual(hp.innerText.trim(), '60');
+      assert.strictEqual(attack.innerText.trim(), '65');
+      assert.strictEqual(defense.innerText.trim(), '60');
+      assert.strictEqual(specialAttack.innerText.trim(), '130');
+      assert.strictEqual(specialDefense.innerText.trim(), '75');
+      assert.strictEqual(speed.innerText.trim(), '110');
     }
   } catch (err) {
     throw new Error(err);
@@ -310,7 +308,7 @@ async () => {
       await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
 
       const sprite = document.getElementById('sprite');
-      assert(sprite.src.endsWith('sprites/pokemon/94.png'));
+      assert.isTrue(sprite.src.endsWith('sprites/pokemon/94.png'));
     }
   } catch (err) {
     throw new Error(err);
@@ -325,22 +323,19 @@ async () => {
   try {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
+    const typesEl = document.getElementById('types');
     searchInput.value = '94';
+    typesEl.innerHTML = ''; // Clear types element before test
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
       await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
-
-      const typesEl = document.getElementById('types');
       const targetTypes = ['ghost', 'poison'];
 
-      assert(
-        typesEl.children.length === 2 &&
-        targetTypes.includes(typesEl.children[0].innerText.trim().toLowerCase()) &&
-        targetTypes.includes(typesEl.children[1].innerText.trim().toLowerCase())
-      );
+      assert.lengthOf(typesEl.children, 2);
+      assert.sameMembers(['ghost', 'poison'], [...typesEl.children].map(el => el.innerText.trim().toLowerCase()));
     }
   } catch (err) {
     throw new Error(err);
