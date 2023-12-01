@@ -246,7 +246,7 @@ Em seguida, vamos criar o banco de dados. Nesta etapa, executamos o comando abai
 pnpm run seed
 ```
 
-Por padrão, você será conectado como um novo usuário sem nenhuma certificação concluída. Execute os seguintes comandos se precisar desenvolver com certificados concluídos:
+Por padrão, você será conectado como um novo usuário sem nenhuma certificação concluída. Execute o seguinte comando se precisar desenvolver com certificados concluídos ou escrever testes do Playwright:
 
 ```bash
 pnpm run seed:certified-user

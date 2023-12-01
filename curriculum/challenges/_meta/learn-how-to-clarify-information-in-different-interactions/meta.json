@@ -1,0 +1,18 @@
+{
+  "name": "Learn How to Clarify Information in Different Interactions",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-clarify-information-in-different-interactions",
+  "order": 11,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "655c114a439cc488b79fe60f",
+      "title": "Dialogue: Placeholder"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Learn How to Describe Your Current Project",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-describe-your-current-project",
+  "order": 5,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "655c0fad9e78217df1fdee80",
+      "title": "Dialogue: Placeholder"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

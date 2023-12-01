@@ -171,7 +171,7 @@ describe('The campers landing page', () => {
 
 ### 1. Переконайтеся, що MongoDB і клієнтські програми запущені
 
-- [Запустіть MongoDB і заповнiть базу даних](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
+- [Запустіть MongoDB та додайте базу даних](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database). Щоб тести Playwright працювали, переконайтесь, що використали команду `pnpm run seed:certified-user`.
 
 - [Запустіть клієнтський застосунок freeCodeCamp і сервер API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
@@ -318,7 +318,7 @@ Playwright, як правило, є інструментом з дуже мал�
 - Заповніть базу даних
 
   ```bash
-  pnpm run seed
+  pnpm run seed:certified-user
   ```
 
 - Розробіть сервер та клієнта
