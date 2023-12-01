@@ -12,21 +12,21 @@
   --gray-85: #1b1b32;
   --gray-90: #0a0a23;
   --purple-light: #dbb8ff;
-  --purple: #5a01a7;
+  --purple-dark: #5a01a7;
   --yellow-light: #ffc300;
-  --yellow: #4d3800;
+  --yellow-dark: #4d3800;
   --blue-light: rgb(153, 201, 255);
   --blue-light-translucent: rgba(153, 201, 255, 0.3);
-  --blue: rgb(0, 46, 173);
+  --blue-dark: rgb(0, 46, 173);
   --blue-dark-translucent: rgba(0, 46, 173, 0.3);
   --green-light: #acd157;
   --blue-mid: #198eee;
   --purple-mid: #9400d3;
-  --green: #00471b;
+  --green-dark: #00471b;
   --red-light: #ffadad;
-  --red: #850000;
+  --red-dark: #850000;
   --love-light: #f8577c;
-  --love: #f82153;
+  --love-dark: #f82153;
   --green-mid: #608b4e;
   --lemon-light: #ffff00;
   --pink-mid: #e2777a;
@@ -40,7 +40,6 @@
   --orange-light: #ec9126;
   --blue-grey-mid: #62707f;
   --blue-grey: #38425c;
-
   --editor-background-light: #fffffe;
   --editor-background: #2a2b40;
   --focus-outline-color: var(--blue-mid);
@@ -72,10 +71,10 @@
   --love-color: var(--love-light);
   --editor-background: var(--editor-background-dark);
 
+  /* Text */
   --font-family-monaco: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
     monospace;
   --font-size: 1em;
-
   --text-align: left;
   --white-space: pre;
   --word-spacing: normal;
@@ -86,17 +85,17 @@
   --hyphens: none;
   --text-shadow: none;
 
+  /* Spacing */
   --padding: 1em;
   --margin: 0.5em 0;
   --overflow: auto;
-
   --padding-video-quiz: 0;
   --margin-video-quiz: 0;
-
   --inline-padding: 0.1em;
   --inline-border-radius: 0.3em;
   --inline-white-space: normal;
 
+  /* Token */
   --token-background: none;
   --token-font-weight: bold;
   --token-font-style: italic;
@@ -124,6 +123,7 @@
   --token-keyword-color: var(--sky-mid);
   --token-regex-color: var(--teal-light);
 
+  /* Language */
   --language-color: var(--orange-light);
   --language-background: var(--dark-gray);
 }
@@ -147,9 +147,12 @@
   --love-color: var(--love-dark);
   --editor-background: var(--editor-background-light);
 
-  --token-background: none;
+  /* Text */
   --text-shadow: none;
   --white-space: normal;
+
+  /* Token */
+  --token-background: none;
   --token-punctuation-color: var(--blue-grey-dark);
   --token-deleted-color: var(--bright-red-mid);
   --token-cdata-color: var(--blue-grey-light);
