@@ -7,20 +7,20 @@ dashedName: step-3
 
 # --description--
 
-You need to create a function named `rollDice` that will be used to roll the dice and update the dice display on the result screen.
+Use the `function` keyword to declare a function named `rollDice`. This will be used to roll the dice and update the dice display on the result screen.
 
 # --hints--
 
-You should create a function named `rollDice`
+You should use the `function` keyword to declare `rollDice`.
 
 ```js
-assert.match(code, /function\s*rollDice\(\)/);
+assert.match(code, /function\s*rollDice\s*\(\s*\)/);
 ```
 
 `rollDice` should be an empty function.
 
 ```js
-assert.match(code, /function\s*rollDice\s*\(\)\s*{\s*}/);
+assert.match(code, /function\s*rollDice\s*\(\s*\)\s*{\s*}/);
 ```
 
 # --seed--
