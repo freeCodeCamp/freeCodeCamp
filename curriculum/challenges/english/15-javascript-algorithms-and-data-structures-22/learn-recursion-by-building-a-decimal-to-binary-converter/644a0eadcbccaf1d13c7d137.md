@@ -32,10 +32,22 @@ In your `decimalToBinary` function, convert the number `10` into binary and `ret
 
 # --hints--
 
-Test 1
+Your `decimalToBinary` function should return a string.
 
 ```js
+assert.isString(decimalToBinary());
+```
 
+Your `decimalToBinary` function should return a string with a length of `4`.
+
+```js
+assert.strictEqual(decimalToBinary().length, 4);
+```
+
+Your `decimalToBinary` function should return `1010` as a string.
+
+```js
+assert.strictEqual(decimalToBinary(), '1010');
 ```
 
 # --seed--

@@ -18,10 +18,7 @@ Note that `alert()` is a method on the `window` object in the browser, so you ca
 You should call the `alert()` method within the body of your `if` statement within `checkUserInput`.
 
 ```js
-assert(
-  String(checkUserInput).match(/if\s*\(\s*.+\s*\)\s*\{\s*alert\(/) ||
-  String(checkUserInput).match(/if\s*\(\s*.+\s*\)\s*\{\s*window\.alert\(/)
-);
+assert.match(String(checkUserInput), /if\s*\(\s*.+\s*\)\s*\{\s*(window\s*.)?\s*alert\(/);
 ```
 
 When there is a falsy value in the `#number-input` element and the `checkUserInput()` function is called, the `alert()` method should display the text `Please provide a decimal number`.
@@ -34,7 +31,7 @@ window.alert = (message) => alertMessage = message; // Override alert and store 
 numberInput.value = '';
 checkUserInput();
 
-assert(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase() === 'please provide a decimal number');
+assert.strictEqual(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please provide a decimal number');
 ```
 
 # --seed--
