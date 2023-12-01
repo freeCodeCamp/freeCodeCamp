@@ -11,7 +11,7 @@
   "challengeOrder": [
     {
       "id": "651dd3e06ffb500e3f2ce478",
-      "title": "Dialogue: Introducing"
+      "title": "Dialogue 1: Maria Introduces Herself to Tom"
     },
     {
       "id": "651dd5296ffb500e3f2ce479",
@@ -136,6 +136,130 @@
     {
       "id": "656a18189b21f51037e518b4",
       "title": "Task 32"
+    },
+    {
+      "id": "656a2a7b05241026c429e3f0",
+      "title": "Dialogue 2: Tom Meets the Coworker Next to Him"
+    },
+    {
+      "id": "656a2b1c7216c026fcd156c7",
+      "title": "Task 33"
+    },
+    {
+      "id": "656a2bfbfc3336274c874bed",
+      "title": "Task 34"
+    },
+    {
+      "id": "656a3f5be79ce02dcc157d6b",
+      "title": "Task 35"
+    },
+    {
+      "id": "656a3fd085a6e92dfbaee96a",
+      "title": "Task 36"
+    },
+    {
+      "id": "656a401d1b00af2e25b0fd8b",
+      "title": "Task 37"
+    },
+    {
+      "id": "656a417f7f9daf2e9aae6831",
+      "title": "Task 38"
+    },
+    {
+      "id": "656a421a905e792eca05d447",
+      "title": "Task 39"
+    },
+    {
+      "id": "656a4297fcc0d72ef9b60c21",
+      "title": "Task 40"
+    },
+    {
+      "id": "656a4e97fa176a2fed5011fc",
+      "title": "Task 41"
+    },
+    {
+      "id": "656a4ef5de14f8301be5764b",
+      "title": "Task 42"
+    },
+    {
+      "id": "656a4f714165773059ce7ad4",
+      "title": "Task 43"
+    },
+    {
+      "id": "656a4fcaa739b7308ad795bf",
+      "title": "Task 44"
+    },
+    {
+      "id": "656a503aa1f2c630b3951067",
+      "title": "Task 45"
+    },
+    {
+      "id": "656a509eeac7e030e2a16bab",
+      "title": "Task 46"
+    },
+    {
+      "id": "656a510695ccb03109117af0",
+      "title": "Task 47"
+    },
+    {
+      "id": "656a51895811ed31345b2eaf",
+      "title": "Task 48"
+    },
+    {
+      "id": "656a51effc10b2316bad8479",
+      "title": "Task 49"
+    },
+    {
+      "id": "656a52680e234b3191131cc5",
+      "title": "Task 50"
+    },
+    {
+      "id": "656a52da3392f631b9f3e022",
+      "title": "Task 51"
+    },
+    {
+      "id": "656a533c5a7e5231e15b93b4",
+      "title": "Task 52"
+    },
+    {
+      "id": "656a538cc4109d3209f5f536",
+      "title": "Task 53"
+    },
+    {
+      "id": "656a54278a4df6323549e8f9",
+      "title": "Task 54"
+    },
+    {
+      "id": "656a549c4d9b91326cfe1863",
+      "title": "Task 55"
+    },
+    {
+      "id": "656a554956201b329a0d182a",
+      "title": "Task 56"
+    },
+    {
+      "id": "656a55ea17414032d482d278",
+      "title": "Task 57"
+    },
+    {
+      "id": "656a56f89acf253314e9f6d6",
+      "title": "Task 58"
+    },
+    {
+      "id": "656a575febfa2c333c495c2f",
+      "title": "Task 59"
+    },
+    {
+      "id": "656a57d2c0603e33638c7770",
+      "title": "Task 60"
+    },
+    {
+      "id": "656a584f57a1a9338e3cb347",
+      "title": "Task 61"
+    },
+    {
+      "id": "656a58b31bc9f233debc2bc9",
+      "title": "Task 62"
     }
   ],
   "helpCategory": "HTML-CSS"
