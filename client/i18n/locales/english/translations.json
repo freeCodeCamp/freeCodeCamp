@@ -381,7 +381,7 @@
     "donation-record-not-found": "Your donation record has not been found.",
     "sign-in-card-update": "Sign in to update your card",
     "card-has-been-updated": "Your card has been updated successfully.",
-    "contact-support-mistake": "If you think there has been a mistake, please contact support at donors@freecodecamp.org",
+    "contact-support-mistake": "If you think there has been a mistake, please contact us at donors@freecodecamp.org",
     "cert-map-estimates": {
       "certs": "{{title}} Certification"
     },
