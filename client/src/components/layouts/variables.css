@@ -111,6 +111,19 @@
   --token-variable-color: var(--teal-light);
   --token-operator-color: var(--sky-light);
   --token-inserted-color: var(--grass-mid);
+  --token-attrname-color: var(--pink-mid);
+  --token-boolean-color: var(--sky-mid);
+  --token-number-color: var(--sky-mid);
+  --token-property-color: var(--tan-mid);
+  --token-classname-color: var(--tan-mid);
+  --token-constant-color: var(--tan-mid);
+  --token-string-color: var(--teal-light);
+  --token-important-color: var(--tan);
+  --token-atrule-color: var(--sky-mid);
+  --token-attrvalue-color: var(--teal-light);
+  --token-keyword-color: var(--sky-mid);
+  --token-regex-color: var(--teal-light);
+
   --language-color: var(--orange-light);
   --language-background: var(--dark-gray);
 }
@@ -143,5 +156,20 @@
   --token-number-color: var(--bright-purple-mid);
   --token-boolean-color: var(--bright-blue-mid);
   --token-selector-color: var(--grass-light);
+  --token-attrname-color: var(--grass-light);
   --token-atrule-color: var(--sky-dark);
+  --token-function-color: var(--maroon-mid);
+  --token-property-color: var(--bright-red-mid);
+  --token-classname-color: var(--maroon-mid);
+  --token-constant-color: var(--bright-red-mid);
+  --token-symbol-color: var(--bright-red-mid);
+  --token-string-color: var(--grass-light);
+  --token-inserted-color: var(--grass-light);
+  --language-color: var(--blue-grey-mid);
+  --token-operator-color: var(--blue-grey-mid);
+  --token-important-color: var(--grass-light);
+  --token-attrvalue-color: var(--sky-dark);
+  --token-keyword-color: var(--sky-dark);
+  --token-regex-color: var(--tan);
+  --token-variable-color: var(--tan);
 }

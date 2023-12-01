@@ -1,9 +1,5 @@
 @import 'variables.css';
 
-/*
-Dark Palette
-*/
-
 /**
  * Adapted from:
  * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
@@ -84,40 +80,82 @@ code[class*='language-'] ::selection {
 }
 
 .token.tag,
-.token.attr-name,
-.token.namespace,
-.token.deleted {
+.token.deleted,
+.token.namespace {
   color: var(--token-deleted-color);
+}
+
+.token.attr-name {
+  color: var(--token-attrname-color);
 }
 
 .token.function-name {
   color: var(--token-function-name-color);
 }
 
-.token.boolean,
-.token.number,
+.token.boolean {
+  color: var(--token-boolean-color);
+}
+
+.token.number {
+  color: var(--token-number-color);
+}
+
 .token.function {
   color: var(--token-function-color);
 }
 
-.token.property,
-.token.class-name,
-.token.constant,
+.token.property {
+  color: var(--token-property-color);
+}
+
+.token.class-name {
+  color: var(--token-classname-color);
+}
+
+.token.constant {
+  color: var(--token-constant-color);
+}
+
 .token.symbol {
   color: var(--token-symbol-color);
 }
 
-.token.selector,
-.token.important,
-.token.atrule,
-.token.keyword,
-.token.builtin {
+.token.selector {
   color: var(--token-selector-color);
 }
 
 .token.string,
+.token.char {
+  color: var(--token-string-color);
+}
+
+.token.builtin {
+  color: var(--token-selector-color);
+}
+
+.token.important {
+  color: var(--token-important-color);
+}
+
+.token.atrule {
+  color: var(--token-atrule-color);
+}
+
+.token.attr-value {
+  color: var(--token-attrvalue-color);
+}
+
+.token.keyword {
+  color: var(--token-keyword-color);
+}
+
+.token.regex {
+  color: var(--token-regex-color);
+}
+
+.token.string,
 .token.char,
-.token.attr-value,
 .token.regex,
 .token.variable {
   color: var(--token-variable-color);
@@ -153,10 +191,6 @@ code[class*='language-'] ::selection {
   color: var(--token-inserted-color);
 }
 
-/*
-Light Palette
-*/
-
 code .token.operator {
   background: var(--token-background);
 }
@@ -175,68 +209,6 @@ code .token.operator {
 /* remove horizontal scrollbars for text-only code */
 code[class='language-markup'] {
   white-space: var(--white-space) !important;
-}
-
-/* a11y color adjustments */
-/* .token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: var(--token-cdata-color);
-} */
-
-/* .token.punctuation {
-  color: var(--token-punctuation-color);
-} */
-
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  color: var(--token-deleted-color);
-}
-
-.token.number {
-  color: var(--token-number-color);
-}
-
-.token.boolean {
-  color: var(--token-boolean-color);
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  color: var(--token-selector-color);
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  color: var(--blue-grey-mid);
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-  color: var(--sky-dark);
-}
-
-.token.function,
-.token.class-name {
-  color: var(--maroon-mid);
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-  color: var(--tan);
 }
 
 .line-numbers-rows > span::before {
