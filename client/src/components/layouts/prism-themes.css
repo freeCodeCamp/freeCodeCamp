@@ -11,8 +11,8 @@ Dark Palette
  * @author Rose Pritchard
  */
 
-.dark-palette code[class*='language-'],
-.dark-palette pre[class*='language-'] {
+code[class*='language-'],
+pre[class*='language-'] {
   color: var(--secondary-color);
   font-family: var(--font-family-dark);
   font-size: var(--font-size-dark);
@@ -34,12 +34,12 @@ Dark Palette
   text-shadow: var(--text-shadow-dark);
 }
 
-.dark-palette pre[class*='language-'] code[class*='language-'] {
+pre[class*='language-'] code[class*='language-'] {
   color: var(--quaternary-color);
 }
 
 /* Code blocks */
-.dark-palette pre[class*='language-'] {
+pre[class*='language-'] {
   padding: var(--padding-dark);
   margin: var(--margin-dark);
   overflow: auto;
@@ -47,109 +47,109 @@ Dark Palette
 
 /* Without this, the above selector takes precedence and messes up the answer
  padding in night mode */
-.dark-palette .video-quiz-option > pre {
+.video-quiz-option > pre {
   padding: var(--padding-video-quiz-dark);
   margin: var(--margin-video-quiz-dark);
 }
 
-.dark-palette :not(pre) > code[class*='language-'],
-.dark-palette pre[class*='language-'] {
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
   background: var(--primary-background);
 }
 
-.dark-palette pre[class*='language-']::selection,
-.dark-palette pre[class*='language-'] ::selection,
-.dark-palette code[class*='language-']::selection,
-.dark-palette code[class*='language-'] ::selection {
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
   background: var(--selection-color);
 }
 
 /* Inline code */
-.dark-palette :not(pre) > code[class*='language-'] {
+:not(pre) > code[class*='language-'] {
   padding: var(--inline-padding-dark);
   border-radius: var(--inline-border-radius-dark);
   white-space: var(--inline-white-space-dark);
 }
 
-.dark-palette .token.comment,
-.dark-palette .token.block-comment,
-.dark-palette .token.prolog,
-.dark-palette .token.doctype,
-.dark-palette .token.cdata {
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
   color: var(--green-mid);
 }
 
-.dark-palette .token.punctuation {
+.token.punctuation {
   color: var(--lemon-light);
 }
 
-.dark-palette .token.tag,
-.dark-palette .token.attr-name,
-.dark-palette .token.namespace,
-.dark-palette .token.deleted {
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
   color: var(--pink-mid);
 }
 
-.dark-palette .token.function-name {
+.token.function-name {
   color: var(--gray-83);
 }
 
-.dark-palette .token.boolean,
-.dark-palette .token.number,
-.dark-palette .token.function {
+.token.boolean,
+.token.number,
+.token.function {
   color: var(--sky-mid);
 }
 
-.dark-palette .token.property,
-.dark-palette .token.class-name,
-.dark-palette .token.constant,
-.dark-palette .token.symbol {
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
   color: var(--tan-mid);
 }
 
-.dark-palette .token.selector,
-.dark-palette .token.important,
-.dark-palette .token.atrule,
-.dark-palette .token.keyword,
-.dark-palette .token.builtin {
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
   color: var(--sky-mid);
 }
 
-.dark-palette .token.string,
-.dark-palette .token.char,
-.dark-palette .token.attr-value,
-.dark-palette .token.regex,
-.dark-palette .token.variable {
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
   color: var(--teal-light);
 }
 
 /* CSS code block strings have low contrast in night mode. This attempts to increase contrast above 4.5:1 */
-.dark-palette .language-css .token.string,
-.dark-palette .style .token.string {
+.language-css .token.string,
+.style .token.string {
   color: var(--orange-light);
   background: var(--dark-gray);
 }
 
-.dark-palette .token.operator,
-.dark-palette .token.entity,
-.dark-palette .token.url {
+.token.operator,
+.token.entity,
+.token.url {
   color: var(--sky-light);
   background: var(--token-background-dark);
 }
 
-.dark-palette .token.important,
-.dark-palette .token.bold {
+.token.important,
+.token.bold {
   font-weight: var(--token-font-weight-dark);
 }
-.dark-palette .token.italic {
+.token.italic {
   font-style: var(--token-font-style-dark);
 }
 
-.dark-palette .token.entity {
+.token.entity {
   cursor: var(--token-cursor-dark);
 }
 
-.dark-palette .token.inserted {
+.token.inserted {
   color: var(--grass-mid);
 }
 
@@ -183,67 +183,67 @@ code[class='language-markup'] {
 }
 
 /* a11y color adjustments */
-:not(.dark-palette) .token.comment,
-:not(.dark-palette) .token.prolog,
-:not(.dark-palette) .token.doctype,
-:not(.dark-palette) .token.cdata {
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
   color: var(--blue-grey-light);
 }
 
-:not(.dark-palette) .token.punctuation {
+.token.punctuation {
   color: var(--blue-grey-dark);
 }
 
-:not(.dark-palette) .token.property,
-:not(.dark-palette) .token.tag,
-:not(.dark-palette) .token.constant,
-:not(.dark-palette) .token.symbol,
-:not(.dark-palette) .token.deleted {
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
   color: var(--bright-red-mid);
 }
 
-:not(.dark-palette) .token.number {
+.token.number {
   color: var(--bright-purple-mid);
 }
 
-:not(.dark-palette) .token.boolean {
+.token.boolean {
   color: var(--bright-blue-mid);
 }
 
-:not(.dark-palette) .token.selector,
-:not(.dark-palette) .token.attr-name,
-:not(.dark-palette) .token.string,
-:not(.dark-palette) .token.char,
-:not(.dark-palette) .token.builtin,
-:not(.dark-palette) .token.inserted {
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
   color: var(--grass-light);
 }
 
-:not(.dark-palette) .token.operator,
-:not(.dark-palette) .token.entity,
-:not(.dark-palette) .token.url,
-:not(.dark-palette) .language-css .token.string,
-:not(.dark-palette) .style .token.string {
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
   color: var(--blue-grey-mid);
 }
 
-:not(.dark-palette) .token.atrule,
-:not(.dark-palette) .token.attr-value,
-:not(.dark-palette) .token.keyword {
+.token.atrule,
+.token.attr-value,
+.token.keyword {
   color: var(--sky-dark);
 }
 
-:not(.dark-palette) .token.function,
-:not(.dark-palette) .token.class-name {
+.token.function,
+.token.class-name {
   color: var(--maroon-mid);
 }
 
-:not(.dark-palette) .token.regex,
-:not(.dark-palette) .token.important,
-:not(.dark-palette) .token.variable {
+.token.regex,
+.token.important,
+.token.variable {
   color: var(--tan-dark);
 }
 
-:not(.dark-palette) .line-numbers-rows > span::before {
+.line-numbers-rows > span::before {
   color: var(--blue-grey-light);
 }
