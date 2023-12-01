@@ -304,7 +304,6 @@ li.disabled > a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-
   & > * {
     flex: 0 0 max-content;
   }
