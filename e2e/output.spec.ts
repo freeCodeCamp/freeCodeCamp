@@ -16,20 +16,26 @@ const outputTexts = {
   passed: `// running tests
 // tests completed`
 };
+
 interface InsertTextParameters {
   page: Page;
   isMobile: boolean;
   text: string;
 }
-const insertTextInCodeEditor = async (paras: InsertTextParameters) => {
-  if (paras.isMobile) {
-    await paras.page
+
+const insertTextInCodeEditor = async ({
+  page,
+  isMobile,
+  text
+}: InsertTextParameters) => {
+  if (isMobile) {
+    await page
       .getByRole('tab', { name: translations.learn['editor-tabs'].code })
       .click();
   }
-  await paras.page.getByLabel('Editor content').fill(paras.text);
-  if (paras.isMobile) {
-    await paras.page
+  await page.getByLabel('Editor content').fill(text);
+  if (isMobile) {
+    await page
       .getByRole('tab', { name: translations.learn['editor-tabs'].console })
       .click();
   }
