@@ -196,6 +196,15 @@ figcaption.caption {
   min-height: 80px;
 }
 
+/* Special case for C# icon since it uses a separate path for the text */
+.map-ui
+  a[href*='foundational-c-sharp-with-microsoft']:focus-visible
+  svg
+  path
+  + path {
+  fill: var(--secondary-color);
+}
+
 @media (min-width: 500px) {
   .landing-top p {
     font-size: 1.25rem;
