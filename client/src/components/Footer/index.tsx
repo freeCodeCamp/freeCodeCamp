@@ -1,6 +1,8 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import Link from '../helpers/link';
+import appleMobileAppLogo from '../../assets/images/footer-ads/Apple_Store-Badge-Logo.svg';
+import androidMobileAppLogo from '../../assets/images/footer-ads/Google_Play-Badge-Logo.svg';
 import './footer.css';
 
 function Footer(): JSX.Element {
@@ -182,6 +184,19 @@ function Footer(): JSX.Element {
               </Link>
             </li>
           </ul>
+          <div className='mobile-apps'>
+            <h2 id='mobile-apps' className='col-header'>
+              {t('Mobile Apps')}
+            </h2>
+            <div className='mobile-apps-container'>
+              <a href='https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200'>
+                <img src={appleMobileAppLogo} alt='apple store badge' />
+              </a>
+              <a href='https://play.google.com/store/apps/details?id=org.freecodecamp'>
+                <img src={androidMobileAppLogo} alt='google play badge' />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <div className='footer-bottom'>
