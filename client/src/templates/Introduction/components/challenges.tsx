@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -55,21 +55,29 @@ function Challenges({
 }: Challenges): JSX.Element {
   const { t } = useTranslation();
 
+  const [tags, setTags] = useState(getUniqueTags(challengesWithCompleted));
+  const [dropDownOpen, setDropDownOpen] = useState(false);
+  const [steps, setSteps] = useState(challengesWithCompleted);
+
   const isGridMap = isNewRespCert(superBlock) || isNewJsCert(superBlock);
 
-  const firstIncompleteChallenge = challengesWithCompleted.find(
+  const firstIncompleteChallenge = steps.find(
     challenge => !challenge.isCompleted
   );
 
-  const isChallengeStarted = !!challengesWithCompleted.find(
-    challenge => challenge.isCompleted
-  );
+  const isChallengeStarted = !!steps.find(challenge => challenge.isCompleted);
 
-  const [tags, updateTags] = useState(getUniqueTags(challengesWithCompleted));
-  const [dropDownOpen, setDropDownOpen] = useState(false);
+  useEffect(() => {
+    const selectedTags = tags.filter(tag => tag.active);
+    const filteredSteps = challengesWithCompleted.filter(challenge => {
+      const challengeTags = challenge.tags;
+      return selectedTags.every(tag => challengeTags.includes(tag.name));
+    });
+    setSteps(filteredSteps);
+  }, [challengesWithCompleted, tags]);
 
   function setTagStatus(id: number, status: boolean) {
-    updateTags(tags => {
+    setTags(tags => {
       const updateTag = tags.at(id);
       if (!updateTag) return tags;
       updateTag.active = status;
@@ -121,7 +129,7 @@ function Challenges({
         }
       >
         <ul className={`map-challenges-ul map-challenges-grid `}>
-          {challengesWithCompleted.map((challenge, i) => (
+          {steps.map(challenge => (
             <li
               className={`map-challenge-title map-challenge-title-grid ${
                 isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
@@ -137,7 +145,7 @@ function Challenges({
                   }`}
                 >
                   <span className='sr-only'>{t('aria.step')}</span>
-                  <span>{i + 1}</span>
+                  <span>{challenge.title}</span>
                   <span className='sr-only'>
                     {challenge.isCompleted
                       ? t('icons.passed')
@@ -159,7 +167,7 @@ function Challenges({
     </>
   ) : (
     <ul className={`map-challenges-ul`}>
-      {challengesWithCompleted.map(challenge => (
+      {steps.map(challenge => (
         <li
           className={`map-challenge-title ${
             isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
