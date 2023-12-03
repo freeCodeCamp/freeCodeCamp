@@ -103,6 +103,7 @@ export type ChallengeWithCompletedNode = {
   isCompleted: boolean;
   order: number;
   superBlock: SuperBlocks;
+  tags: string[];
   title: string;
 };
 
@@ -152,6 +153,7 @@ export type ChallengeNode = {
     sourceInstanceName: string;
     superOrder: number;
     superBlock: SuperBlocks;
+    tags: string[];
     tail: string[];
     template: string;
     tests: Test[];

@@ -87,6 +87,7 @@ const schema = Joi.object()
       is: [challengeTypes.exam],
       then: Joi.array().items(prerequisitesJoi)
     }),
+    tags: Joi.array().items(Joi.string().trim()),
     // video challenges only:
     videoId: Joi.when('challengeType', {
       is: [challengeTypes.video, challengeTypes.dialogue],
@@ -163,5 +164,5 @@ const schema = Joi.object()
   .xor('helpCategory', 'isPrivate');
 
 exports.challengeSchemaValidator = () => {
-  return challenge => schema.validate(challenge);
+  return challenge => schema.validate(challenge, { convert: false });
 };

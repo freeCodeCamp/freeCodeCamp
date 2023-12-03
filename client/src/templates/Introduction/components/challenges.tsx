@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React from 'react';
+import React, { useState } from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -15,11 +15,26 @@ import { isNewJsCert, isNewRespCert } from '../../../utils/is-a-cert';
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ executeGA }, dispatch);
 
+const getUniqueTags = (challenges: ChallengeWithCompletedNode[]) => {
+  const tagNames = challenges.map(challenge => challenge.tags).flat(1);
+  const uniqueTagNames = [...new Set(tagNames)];
+  const uniqueTags = uniqueTagNames.map(
+    (name, idx) => ({ name, id: idx, active: false }) as Tag
+  );
+  return uniqueTags;
+};
+
 interface Challenges {
   challengesWithCompleted: ChallengeWithCompletedNode[];
   isProjectBlock: boolean;
   superBlock: SuperBlocks;
   blockTitle?: string | null;
+}
+
+interface Tag {
+  name: string;
+  active: boolean;
+  id: number;
 }
 
 const CheckMark = ({ isCompleted }: { isCompleted: boolean }) =>
@@ -43,8 +58,24 @@ function Challenges({
     challenge => challenge.isCompleted
   );
 
+  const [tags, updateTags] = useState(getUniqueTags(challengesWithCompleted));
+
+  function setTagStatus(id: number, status: boolean) {
+    updateTags(tags => {
+      const updateTag = tags.at(id);
+      if (!updateTag) return tags;
+      updateTag.active = status;
+      return [...tags.slice(0, id), updateTag, ...tags.slice(id + 1)];
+    });
+  }
+
   return isGridMap ? (
     <>
+      {/* TODO: REMOVE */}
+      <>
+        <>{tags}</>
+        <button onClick={() => setTagStatus(0, true)}></button>
+      </>
       {firstIncompleteChallenge && (
         <div className='challenge-jump-link'>
           <Link

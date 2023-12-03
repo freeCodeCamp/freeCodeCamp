@@ -123,6 +123,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   superOrder
                   template
                   usesMultifileEditor
+                  tags
                 }
               }
             }
@@ -300,6 +301,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       notes: String
       url: String
       assignments: [String]
+      tags: [String]
       prerequisites: [PrerequisiteChallenge]
       msTrophyId: String
       fillInTheBlank: FillInTheBlank

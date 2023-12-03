@@ -285,6 +285,7 @@ export const query = graphql`
             id
             block
             challengeType
+            tags
             title
             order
             superBlock
