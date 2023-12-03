@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 test.describe('Tool Panel', () => {
@@ -8,7 +8,8 @@ test.describe('Tool Panel', () => {
     );
   });
   test('should display "//running tests" in console after clicking "Run the Tests (Ctrl+Enter)" button', async ({
-    page
+    page,
+    isMobile
   }) => {
     await page
       .getByRole('button', {
@@ -16,18 +17,32 @@ test.describe('Tool Panel', () => {
       })
       .click();
 
+    if (isMobile) {
+      await page
+        .getByRole('tab', {
+          name: 'Console'
+        })
+        .click();
+    }
+
     await expect(page.getByTestId('output-text')).toContainText(
       translations.learn['running-tests']
     );
   });
 
   test('should display reset modal after clicking "Reset this lesson" button', async ({
-    page
+    page,
+    isMobile
   }) => {
-    await page
-      .getByRole('button', { name: translations.buttons['reset-lesson'] })
-      .click();
-
+    if (isMobile) {
+      await page
+        .getByRole('button', { name: translations.buttons['reset'] })
+        .click();
+    } else {
+      await page
+        .getByRole('button', { name: translations.buttons['reset-lesson'] })
+        .click();
+    }
     await expect(
       page.getByRole('heading', { name: translations.learn.reset })
     ).toBeVisible();
