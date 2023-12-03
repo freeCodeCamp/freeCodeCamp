@@ -3,6 +3,7 @@ id: 5efae0543cbd2bbdab94e333
 title: Step 30
 challengeType: 0
 dashedName: step-30
+tags: Image, Attributes
 ---
 
 # --description--
