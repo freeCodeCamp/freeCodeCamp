@@ -493,3 +493,27 @@ ToDo: find out why, and remove the need for it */
 .grid-project-block:hover:has(.tags-wrapper a:hover) {
   background: var(--primary-background);
 }
+
+.topics-list {
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+
+.topics-name {
+  padding-right: 10px;
+}
+
+.topic-selections {
+  display: block;
+  margin-top: 5px;
+}
+
+.topics-button {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.topics-button-unselected {
+  opacity: 0.4;
+}

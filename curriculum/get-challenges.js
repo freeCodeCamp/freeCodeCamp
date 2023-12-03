@@ -324,6 +324,7 @@ ${getFullPath('english', filePath)}
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
     challenge.disableLoopProtectTests = !!meta.disableLoopProtectTests;
     challenge.disableLoopProtectPreview = !!meta.disableLoopProtectPreview;
+
     if (challenge.tags) {
       challenge.tags = challenge.tags.split(',');
     }

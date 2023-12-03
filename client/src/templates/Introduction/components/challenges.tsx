@@ -5,6 +5,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faXmark,
+  faCaretDown,
+  faCheck
+} from '@fortawesome/free-solid-svg-icons';
+
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { executeGA } from '../../../redux/actions';
@@ -59,6 +66,7 @@ function Challenges({
   );
 
   const [tags, updateTags] = useState(getUniqueTags(challengesWithCompleted));
+  const [dropDownOpen, setDropDownOpen] = useState(false);
 
   function setTagStatus(id: number, status: boolean) {
     updateTags(tags => {
@@ -71,11 +79,29 @@ function Challenges({
 
   return isGridMap ? (
     <>
-      {/* TODO: REMOVE */}
-      <>
-        <>{tags.map(tag => tag.name)}</>
-        <button onClick={() => setTagStatus(0, true)}></button>
-      </>
+      <div className='topics-list'>
+        <button onClick={() => setDropDownOpen(!dropDownOpen)}>
+          <span className='topics-name'>Topics</span>
+          <FontAwesomeIcon icon={faCaretDown} />
+        </button>
+
+        {dropDownOpen ? (
+          <div className='topic-selections'>
+            {tags.map(tag => (
+              <div key={tag.id} className='topics-button'>
+                <button
+                  className={tag.active ? '' : 'topics-button-unselected'}
+                  onClick={() => setTagStatus(tag.id, !tag.active)}
+                >
+                  <span className='topics-name'>{tag.name}</span>
+                  <FontAwesomeIcon icon={tag.active ? faCheck : faXmark} />
+                </button>
+              </div>
+            ))}
+          </div>
+        ) : null}
+      </div>
+
       {firstIncompleteChallenge && (
         <div className='challenge-jump-link'>
           <Link
