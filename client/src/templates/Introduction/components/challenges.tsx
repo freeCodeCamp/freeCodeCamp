@@ -73,7 +73,7 @@ function Challenges({
     <>
       {/* TODO: REMOVE */}
       <>
-        <>{tags}</>
+        <>{tags.map(tag => tag.name)}</>
         <button onClick={() => setTagStatus(0, true)}></button>
       </>
       {firstIncompleteChallenge && (
