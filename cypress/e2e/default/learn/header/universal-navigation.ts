@@ -17,7 +17,8 @@ const navigationLinks: { [key: string]: string } = {
   news: 'https://freecodecamp.org/news/',
   radio: 'https://coderadio.freecodecamp.org',
   'avatar-link': '/developmentuser',
-  settings: '/settings'
+  settings: '/settings',
+  podcast: 'https://freecodecamp.libsyn.com/'
 };
 
 describe('Default Navigation Menu', () => {
@@ -33,6 +34,7 @@ describe('Default Navigation Menu', () => {
     testLink('Forum');
     testLink('News');
     testLink('Radio');
+    testLink('Podcast');
   });
 
   it('should close the menu and focus on the Menu button when the Esc key is pressed while the navigation menu is expanded and an item in the menu is focused', () => {
