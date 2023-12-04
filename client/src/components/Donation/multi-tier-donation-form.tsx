@@ -106,12 +106,14 @@ function DonationFormRow({
   handleProcessing,
   isMinimalForm,
   setShowDonateForm,
-  donationAmount
+  donationAmount,
+  paymentContext
 }: {
   handleProcessing?: () => void;
   isMinimalForm?: boolean;
   setShowDonateForm: React.Dispatch<React.SetStateAction<boolean>>;
   donationAmount: DonationAmount;
+  paymentContext: PaymentContext;
 }) {
   return (
     <Row>
@@ -119,7 +121,7 @@ function DonationFormRow({
         <DonateForm
           handleProcessing={handleProcessing}
           isMinimalForm={isMinimalForm}
-          paymentContext={PaymentContext.Modal}
+          paymentContext={paymentContext}
           editAmount={() => setShowDonateForm(false)}
           selectedDonationAmount={donationAmount}
         />
@@ -132,7 +134,8 @@ function DonationFormRow({
 const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
   handleProcessing,
   setShowHeaderAndFooter,
-  isMinimalForm
+  isMinimalForm,
+  paymentContext
 }) => {
   const [donationAmount, setDonationAmount] = useState(defaultTierAmount);
 
@@ -157,6 +160,7 @@ const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
           handleProcessing={handleProcessing}
           setShowDonateForm={setShowDonateForm}
           isMinimalForm={isMinimalForm}
+          paymentContext={paymentContext}
         />
       </div>
     </>
