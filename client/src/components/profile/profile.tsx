@@ -108,13 +108,20 @@ function UserProfile({
         website={website}
         yearsTopContributor={yearsTopContributor}
       />
-      {showPoints && (
+      <Spacer size='large' />
+
+      {showPoints && !showHeatMap && (
         <p className='text-center points'>
           {t('profile.total-points', { count: points })}
         </p>
       )}
-      {showHeatMap ? <HeatMap calendar={calendar} /> : null}
+
+      {showHeatMap ? (
+        <HeatMap calendar={calendar} showPoints={showPoints} points={points} />
+      ) : null}
+
       {showCerts ? <Certifications username={username} /> : null}
+
       {showPortfolio ? (
         <PortfolioProjects portfolioProjects={portfolio} />
       ) : null}

@@ -7,7 +7,6 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Col, Row } from '@freecodecamp/ui';
 
 import './social-icons.css';
 
@@ -19,6 +18,7 @@ interface SocialIconsProps {
   twitter: string;
   username: string;
   website: string;
+  className?: string;
 }
 
 function LinkedInIcon(linkedIn: string, username: string): JSX.Element {
@@ -77,7 +77,10 @@ function TwitterIcon(handle: string, username: string): JSX.Element {
   );
 }
 
-function SocialIcons(props: SocialIconsProps): JSX.Element | null {
+function SocialIcons({
+  className,
+  ...props
+}: SocialIconsProps): JSX.Element | null {
   const { githubProfile, linkedin, twitter, username, website } = props;
   const show = linkedin || githubProfile || website || twitter;
   if (!show) {
@@ -85,17 +88,18 @@ function SocialIcons(props: SocialIconsProps): JSX.Element | null {
   }
 
   return (
-    <Row>
-      <Col className='text-center social-media-icons' sm={6} smOffset={3}>
-        {linkedin ? LinkedInIcon(linkedin, username) : null}
-        {githubProfile ? GitHubIcon(githubProfile, username) : null}
-        {website ? WebsiteIcon(website, username) : null}
-        {twitter ? TwitterIcon(twitter, username) : null}
-      </Col>
-    </Row>
+    <ul className={`social-media-icons ${className}`}>
+      {linkedin && <li>{LinkedInIcon(linkedin, username)}</li>}
+      {githubProfile && <li>{GitHubIcon(githubProfile, username)}</li>}
+      {website && <li>{WebsiteIcon(website, username)}</li>}
+      {twitter && <li>{TwitterIcon(twitter, username)}</li>}
+    </ul>
   );
 }
 
 SocialIcons.displayName = 'SocialIcons';
+SocialIcons.defaultProps = {
+  className: ''
+};
 
 export default SocialIcons;

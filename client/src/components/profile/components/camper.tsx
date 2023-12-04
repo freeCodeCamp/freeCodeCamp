@@ -1,13 +1,14 @@
 import {
   faAward,
   faCalendar,
-  faHeart
+  faHeart,
+  faMapMarkerAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
-import { Col, Row } from '@freecodecamp/ui';
+import { differenceInYears, endOfYear } from 'date-fns';
 
 import envData from '../../../../config/env.json';
 import { getLangCode } from '../../../../../shared/config/i18n';
@@ -36,21 +37,9 @@ export type CamperProps = Pick<
   | 'picture'
   | 'name'
   | 'joinDate'
->;
-
-function joinArray(array: string[], t: TFunction): string {
-  return array.reduce((string, item, index, array) => {
-    if (string.length > 0) {
-      if (index === array.length - 1) {
-        return `${string} ${t('misc.and')} ${item}`;
-      } else {
-        return `${string}, ${item}`;
-      }
-    } else {
-      return item;
-    }
-  });
-}
+> & {
+  className?: string;
+};
 
 function parseDate(joinDate: string, t: TFunction): string {
   const convertedJoinDate = new Date(joinDate);
@@ -59,6 +48,70 @@ function parseDate(joinDate: string, t: TFunction): string {
     month: 'long'
   });
   return t('profile.joined', { date: date });
+}
+
+/**
+ * if user is a current or past top contributor, we get the color of the
+ * award based on how recent and how many years the user contributed.
+ * at a minimum, a user will receive a bronze colored award
+ */
+function getAwardInfo(yearsTopContributor: string[]): {
+  title: string;
+  awardColor: string;
+} {
+  let info = {
+    title: '',
+    awardColor: ''
+  };
+
+  const lastAwardYear =
+    yearsTopContributor.length > 0 ? yearsTopContributor[0] : null;
+
+  if (lastAwardYear) {
+    info = {
+      title: 'Bronze Award for being a Top Contributor in the past',
+      awardColor: '#cd7f32' // bronze
+    };
+    let lastYear = endOfYear(new Date(lastAwardYear));
+    const yearsElapsedSinceLastAward = differenceInYears(
+      endOfYear(new Date()),
+      lastYear
+    );
+
+    // only award silver and up to people who consistently contributes recently in the past years
+    if (yearsElapsedSinceLastAward <= 1) {
+      let consecutiveYearsCount = 1;
+
+      for (const yearString of yearsTopContributor) {
+        const year = endOfYear(new Date(yearString));
+        const difference = differenceInYears(lastYear, year);
+
+        if (difference === 1) {
+          lastYear = year;
+          consecutiveYearsCount++;
+        }
+      }
+
+      switch (true) {
+        case consecutiveYearsCount > 2:
+          info.awardColor = 'var(--yellow-gold)';
+          info.title =
+            'Gold Award for being a Top Contributor for the past 3 years consecutively';
+          break;
+        case consecutiveYearsCount > 1:
+          info.awardColor = 'silver';
+          info.title =
+            'Silver Award for being a Top Contributor for the past 2 years consecutively';
+          break;
+        default:
+          info.title = `Bronze Award for being a Top Contributor ${
+            yearsElapsedSinceLastAward === 0 ? 'this' : 'last'
+          } year`;
+      }
+    }
+  }
+
+  return info;
 }
 
 function Camper({
@@ -73,61 +126,97 @@ function Camper({
   joinDate,
   linkedin,
   twitter,
-  website
+  website,
+  className
 }: CamperProps): JSX.Element {
   const { t } = useTranslation();
+  const isTopContributor = yearsTopContributor.length > 0;
+  const awardInfo = getAwardInfo(yearsTopContributor);
 
   return (
-    <div>
-      <Row>
-        <Col className='avatar-camper' xs={12}>
+    <div className={`camper-grid ${className}`}>
+      <div className='avatar-camper'>
+        <div className='top-contrib-stack'>
           <AvatarRenderer
             isDonating={isDonating}
-            isTopContributor={yearsTopContributor.length > 0}
+            isTopContributor={isTopContributor}
             picture={picture}
             userName={username}
           />
-        </Col>
-      </Row>
-      <SocialIcons
-        githubProfile={githubProfile}
-        linkedin={linkedin}
-        twitter={twitter}
-        username={username}
-        website={website}
-      />
-      <br />
-      <h2 className='text-center username'>@{username}</h2>
-      {name && <p className='text-center name'>{name}</p>}
-      {location && <p className='text-center location'>{location}</p>}
-      {isDonating && (
-        <p className='text-center supporter'>
-          <FontAwesomeIcon icon={faHeart} /> {t('profile.supporter')}
-        </p>
-      )}
-      {about && <p className='bio text-center'>{about}</p>}
-      {joinDate && (
-        <p className='bio text-center'>
-          <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate, t)}
-        </p>
-      )}
-      {yearsTopContributor.filter(Boolean).length > 0 && (
-        <div>
-          <br />
-          <p className='text-center yearsTopContributor'>
-            <FontAwesomeIcon icon={faAward} />{' '}
+          {isTopContributor && (
+            <FontAwesomeIcon
+              icon={faAward}
+              className='top-contrib-award'
+              style={{ color: awardInfo.awardColor }}
+              title={awardInfo.title}
+            />
+          )}
+        </div>
+        {isTopContributor && (
+          <div className='text-center'>
             <Link to={t('links:top-contributors')}>
               {t('profile.contributor')}
-            </Link>
+            </Link>{' '}
+            <span>{yearsTopContributor[0]}</span>
+          </div>
+        )}
+        <SocialIcons
+          className='avatar-socials'
+          githubProfile={githubProfile}
+          linkedin={linkedin}
+          twitter={twitter}
+          username={username}
+          website={website}
+        />
+      </div>
+      <div className='user-details'>
+        <h2>@{username}</h2>
+        {name && <p>{name}</p>}
+        {location && (
+          <p>
+            <FontAwesomeIcon
+              icon={faMapMarkerAlt}
+              className='user-details-icon'
+            />
+            {location}
           </p>
-          <p className='text-center'>{joinArray(yearsTopContributor, t)}</p>
-        </div>
-      )}
-      <br />
+        )}
+        {(joinDate || isDonating) && (
+          <p className='profile-meta'>
+            {joinDate && (
+              <span>
+                <FontAwesomeIcon
+                  icon={faCalendar}
+                  className='user-details-icon'
+                />
+                {parseDate(joinDate, t)}
+              </span>
+            )}
+            {true && (
+              <span>
+                <FontAwesomeIcon icon={faHeart} className='user-details-icon' />
+                {t('profile.supporter')}
+              </span>
+            )}
+          </p>
+        )}
+        <SocialIcons
+          className='profile-socials'
+          githubProfile={githubProfile}
+          linkedin={linkedin}
+          twitter={twitter}
+          username={username}
+          website={website}
+        />
+      </div>
+      {about && <p className='bio'>{about}</p>}
     </div>
   );
 }
 
 Camper.displayName = 'Camper';
+Camper.defaultProps = {
+  className: ''
+};
 
 export default Camper;

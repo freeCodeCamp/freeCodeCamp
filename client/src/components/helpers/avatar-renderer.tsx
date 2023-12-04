@@ -6,6 +6,7 @@ import DefaultAvatar from '../../assets/icons/default-avatar';
 import borderColorPicker from './border-color-picker';
 
 interface AvatarRendererProps {
+  userName?: string;
   isDonating?: boolean;
   isTopContributor?: boolean;
   picture: string;

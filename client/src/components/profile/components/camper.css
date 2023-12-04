@@ -1,25 +1,112 @@
-.username,
-.name,
-.bio,
-.location {
-  overflow-wrap: break-word;
-}
+.camper-grid {
+  display: grid;
+  grid-template-areas: 'avatar-camper' 'user-details' 'bio';
+  gap: 1rem;
 
-.avatar-camper {
-  display: flex;
-  justify-content: center;
-}
+  .user-details,
+  .bio {
+    text-align: center;
+  }
 
-.avatar-camper .avatar {
-  height: 180px;
-  width: 180px;
-  object-fit: cover;
-}
+  .profile-meta {
+    justify-content: center;
+  }
 
-.avatar-camper div {
-  height: 200px;
-}
+  .avatar-socials {
+    display: none;
+  }
 
-.avatar-camper .avatar-container {
-  border-width: 10px;
+  .avatar-container {
+    border-width: 10px;
+  }
+
+  .avatar-camper {
+    grid-area: avatar-camper;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 auto;
+  }
+
+  .avatar {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .top-contrib-stack {
+    position: relative;
+    max-height: 320px;
+    max-width: 320px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .top-contrib-award {
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    bottom: -40px;
+    right: -20px;
+    filter: drop-shadow(0 0 2px rgb(0 0 0 / 0.3));
+  }
+
+  .user-details-icon {
+    margin-right: 0.5rem;
+    color: var(--gray-45);
+  }
+
+  .profile-meta {
+    grid-area: user-details;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .bio {
+    grid-area: bio;
+    white-space: pre-wrap;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-areas:
+      'avatar-camper user-details'
+      'bio bio';
+
+    .user-details,
+    .bio {
+      text-align: left;
+    }
+
+    .profile-meta {
+      justify-content: flex-start;
+    }
+
+    .social-media-icons {
+      justify-content: flex-start;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-areas:
+      'avatar-camper user-details'
+      'avatar-camper bio';
+    row-gap: 0;
+    column-gap: 2rem;
+
+    .social-media-icons {
+      justify-content: center;
+    }
+
+    .avatar-camper {
+      margin: 0 0 0 auto;
+    }
+
+    .avatar-socials {
+      display: flex;
+    }
+
+    .profile-socials {
+      display: none;
+    }
+  }
 }

@@ -29,6 +29,8 @@ const localeCode = getLangCode(clientLocale);
 
 interface HeatMapProps {
   calendar: User['calendar'];
+  showPoints?: boolean;
+  points?: number;
 }
 
 interface PageData {
@@ -46,6 +48,7 @@ interface HeatMapInnerProps {
   currentStreak: number;
   longestStreak: number;
   pages: PageData[];
+  showPoints?: boolean;
   points?: number;
   t: TFunction;
 }
@@ -125,6 +128,11 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
             &gt;
           </button>
         </Row>
+        {this.props.showPoints && (
+          <p className='text-center points'>
+            {t('profile.total-points', { count: this.props.points })}
+          </p>
+        )}
         <Spacer size='medium' />
 
         <CalendarHeatMap
@@ -279,6 +287,8 @@ const HeatMap = (props: HeatMapProps): JSX.Element => {
       longestStreak={longestStreak}
       pages={pages}
       t={t}
+      showPoints={props.showPoints}
+      points={props.points}
     />
   );
 };
