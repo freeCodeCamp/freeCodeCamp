@@ -131,7 +131,10 @@ function Camper({
 }: CamperProps): JSX.Element {
   const { t } = useTranslation();
   const isTopContributor = yearsTopContributor.length > 0;
-  const awardInfo = getAwardInfo(yearsTopContributor);
+  const yearsContributedDesc = [...yearsTopContributor].sort((a, b) =>
+    b.localeCompare(a)
+  );
+  const awardInfo = getAwardInfo(yearsContributedDesc);
 
   return (
     <div className={`camper-grid ${className}`}>
@@ -157,7 +160,7 @@ function Camper({
             <Link to={t('links:top-contributors')}>
               {t('profile.contributor')}
             </Link>{' '}
-            <span>{yearsTopContributor[0]}</span>
+            <span>{yearsContributedDesc[0]}</span>
           </div>
         )}
         <SocialIcons

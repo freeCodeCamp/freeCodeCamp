@@ -13,11 +13,11 @@ describe('Top contributor in user profile', () => {
     cy.visit('/developmentuser', { failOnStatusCode: false });
     // The following line is only required if you want to test it in development
     // cy.contains('Preview custom 404 page').click();
+
     cy.contains('Top Contributor')
       .parent()
       .within(() => {
         cy.contains('Top Contributor').should('be.visible');
-        cy.get('svg').should('be.visible');
       });
 
     // it should have a link to the news article
@@ -26,8 +26,10 @@ describe('Top contributor in user profile', () => {
       'href',
       'https://www.freecodecamp.org/news/freecodecamp-top-contributors/'
     );
+    cy.contains('svg.top-contrib-award').should('be.visible');
 
-    // the years obtained should be visible
-    cy.contains('2017, 2018 and 2019').should('be.visible');
+    // most recent year obtained should be visible
+    // from ['2017', '2018', '2019']
+    cy.contains('2019').should('be.visible');
   });
 });

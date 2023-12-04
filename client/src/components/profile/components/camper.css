@@ -9,7 +9,10 @@
   }
 
   .profile-meta {
+    grid-area: user-details;
+    display: flex;
     justify-content: center;
+    gap: 1rem;
   }
 
   .avatar-socials {
@@ -54,12 +57,6 @@
   .user-details-icon {
     margin-right: 0.5rem;
     color: var(--gray-45);
-  }
-
-  .profile-meta {
-    grid-area: user-details;
-    display: flex;
-    gap: 1rem;
   }
 
   .bio {
