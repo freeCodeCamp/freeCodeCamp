@@ -11,8 +11,6 @@ export const XtermTerminal = () => {
   const termRef = useRef(null);
 
   useEffect(() => {
-    const pythonWorker = getPythonWorker();
-    pythonWorker.postMessage({ code: 'print("Hello World")' });
     // Setting convertEol so that \n is converted to \r\n. Otherwise the terminal
     // will interpret \n as line feed and just move the cursor to the next line.
     // convertEol makes every \n a \r\n.
@@ -22,8 +20,17 @@ export const XtermTerminal = () => {
     if (termRef.current) term.open(termRef.current);
     fitAddon.fit();
 
+    const pythonWorker = getPythonWorker();
+    pythonWorker.onmessage = event => {
+      const { type, text } = event.data as { type: string; text: string };
+      if (type === 'print') {
+        term.writeln(`>>> ${text}`);
+      }
+    };
+
     return () => {
       term.dispose();
+      // TODO: figure out if we need/want to terminate the worker
     };
   }, []);
 

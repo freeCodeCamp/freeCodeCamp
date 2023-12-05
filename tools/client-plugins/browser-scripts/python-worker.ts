@@ -6,16 +6,35 @@ import pkg from 'pyodide/package.json';
 let pyodide: PyodideInterface;
 
 async function setupPyodide() {
+  if (pyodide) return pyodide;
+
+  pyodide = await loadPyodide({
+    // TODO: host this ourselves
+    indexURL: `https://cdn.jsdelivr.net/pyodide/v${pkg.version}/full/`
+  });
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  const str = pyodide.globals.get('str') as (x: unknown) => string;
+
+  function print(...args: unknown[]) {
+    const text = args.map(x => str(x)).join(' ');
+    postMessage({ type: 'print', text });
+  }
+
   // I tried setting jsglobals here, to provide 'input' and 'print' to python,
   // without having to modify the global window object. However, it didn't work
   // because pyodide needs access to that object. Instead, I used
   // registerJsModule when setting up runPython.
-  if (!pyodide) {
-    pyodide = await loadPyodide({
-      // TODO: host this ourselves
-      indexURL: `https://cdn.jsdelivr.net/pyodide/v${pkg.version}/full/`
-    });
-  }
+
+  // Make print available to python
+  pyodide.registerJsModule('jscustom', {
+    print
+  });
+  pyodide.runPython(`
+  import jscustom
+  from jscustom import print
+`);
+
   return pyodide;
 }
 
