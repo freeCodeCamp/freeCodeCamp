@@ -20,6 +20,7 @@ import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
 import CompletionModal from '../components/completion-modal';
+import ChallengeTitle from '../components/challenge-title';
 import HelpModal from '../components/help-modal';
 import PrismFormatted from '../components/prism-formatted';
 import {
@@ -32,6 +33,7 @@ import { isChallengeCompletedSelector } from '../redux/selectors';
 // Styles
 import '../odin/show.css';
 import '../video.css';
+import ChallengeHeading from '../components/challenge-heading';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -182,11 +184,13 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
             block,
             videoId,
             fields: { blockName },
+            translationPending,
             assignments
           }
         }
       },
       openHelpModal,
+      isChallengeCompleted,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
@@ -210,6 +214,13 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
           />
           <Container>
             <Row>
+              <Spacer size='medium' />
+              <ChallengeTitle
+                isCompleted={isChallengeCompleted}
+                translationPending={translationPending}
+              >
+                {title}
+              </ChallengeTitle>
               {videoId && (
                 <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
                   <Spacer size='medium' />
@@ -230,11 +241,10 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
               )}
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
-                <h2>{title}</h2>
                 <PrismFormatted className={'line-numbers'} text={description} />
                 <Spacer size='medium' />
                 <ObserveKeys>
-                  <h2>{t('learn.assignments')}</h2>
+                  <ChallengeHeading heading={'learn.assignments'} />
                   <div className='video-quiz-options'>
                     {assignments.map((assignment, index) => (
                       <label className='video-quiz-option-label' key={index}>

@@ -18,6 +18,7 @@ import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
+import ChallengeHeading from '../components/challenge-heading';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import PrismFormatted from '../components/prism-formatted';
@@ -315,7 +316,7 @@ class ShowFillInTheBlank extends Component<
                 <Spacer size='medium' />
                 <PrismFormatted text={instructions} />
                 <Spacer size='medium' />
-                <h2>{t('learn.fill-in-the-blank')}</h2>
+                <ChallengeHeading heading={'learn.fill-in-the-blank'} />
                 <Spacer size='small' />
                 <ObserveKeys>
                   <div>

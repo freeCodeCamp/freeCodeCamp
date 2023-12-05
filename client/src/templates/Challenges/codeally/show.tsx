@@ -18,7 +18,6 @@ import ChallengeTitle from '../components/challenge-title';
 import PrismFormatted from '../components/prism-formatted';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import CompletionModal from '../components/completion-modal';
-import GreenPass from '../../../assets/icons/green-pass';
 import HelpModal from '../components/help-modal';
 import Hotkeys from '../components/hotkeys';
 import { hideCodeAlly, tryToShowCodeAlly } from '../../../redux/actions';
@@ -49,6 +48,7 @@ import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import './codeally.css';
+import ChallengeHeading from '../components/challenge-heading';
 
 // Redux
 const mapStateToProps = createSelector(
@@ -292,16 +292,10 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       </div>
                       <hr />
                       <Spacer size='medium' />
-                      <b>{t('learn.step-1')}</b>
-                      {(isPartiallyCompleted || isCompleted) && (
-                        <GreenPass
-                          style={{
-                            height: '15px',
-                            width: '15px',
-                            marginInlineEnd: '7px'
-                          }}
-                        />
-                      )}
+                      <ChallengeHeading
+                        heading={'learn.step-1'}
+                        isCompleted={!isPartiallyCompleted || isCompleted}
+                      />
                       <Spacer size='medium' />
                       <div className='ca-description'>
                         {t('learn.runs-in-vm')}
@@ -330,16 +324,10 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                     <>
                       <hr />
                       <Spacer size='medium' />
-                      <b>{t('learn.step-2')}</b>
-                      {isCompleted && (
-                        <GreenPass
-                          style={{
-                            height: '15px',
-                            width: '15px',
-                            marginInlineStart: '7px'
-                          }}
-                        />
-                      )}
+                      <ChallengeHeading
+                        heading={'learn.step-2'}
+                        isCompleted={!isCompleted}
+                      />
                       <Spacer size='medium' />
                       <div className='ca-description'>
                         {t('learn.submit-public-url')}

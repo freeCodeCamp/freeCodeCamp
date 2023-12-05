@@ -20,6 +20,8 @@ import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
 import CompletionModal from '../components/completion-modal';
+import ChallengeTitle from '../components/challenge-title';
+import ChallengeHeading from '../components/challenge-heading';
 import HelpModal from '../components/help-modal';
 import PrismFormatted from '../components/prism-formatted';
 import {
@@ -216,11 +218,13 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             bilibiliIds,
             fields: { blockName },
             question: { text, answers, solution },
+            translationPending,
             assignments,
             audioPath
           }
         }
       },
+      isChallengeCompleted,
       openCompletionModal,
       openHelpModal,
       pageContext: {
@@ -253,6 +257,13 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
           />
           <Container>
             <Row>
+              <Spacer size='medium' />
+              <ChallengeTitle
+                isCompleted={isChallengeCompleted}
+                translationPending={translationPending}
+              >
+                {title}
+              </ChallengeTitle>
               {videoId && (
                 <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
                   <Spacer size='medium' />
@@ -275,7 +286,6 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
               )}
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
-                <h2>{title}</h2>
                 <PrismFormatted className={'line-numbers'} text={description} />
                 {audioPath && (
                   <>
@@ -295,7 +305,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 <ObserveKeys>
                   {assignments.length > 0 && (
                     <>
-                      <h2>{t('learn.assignments')}</h2>
+                      <ChallengeHeading heading={'learn.assignments'} />
                       <div className='video-quiz-options'>
                         {assignments.map((assignment, index) => (
                           <label
@@ -325,7 +335,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     </>
                   )}
 
-                  <h2>{t('learn.question')}</h2>
+                  <ChallengeHeading heading={'learn.question'} />
                   <PrismFormatted className={'line-numbers'} text={text} />
                   <div className='video-quiz-options'>
                     {answers.map(({ answer }, index) => (
