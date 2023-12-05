@@ -56,6 +56,7 @@ import {
 } from '../redux/selectors';
 import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
+import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
 import MobileLayout from './mobile-layout';
@@ -148,9 +149,14 @@ const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
 
 const StepPreview = ({
   disableIframe,
-  previewMounted
-}: Pick<PreviewProps, 'disableIframe' | 'previewMounted'>) => {
-  return (
+  previewMounted,
+  challengeType
+}: Pick<PreviewProps, 'disableIframe' | 'previewMounted'> & {
+  challengeType: number;
+}) => {
+  return challengeType === challengeTypes.python ? (
+    <XtermTerminal />
+  ) : (
     <Preview
       className='full-height'
       disableIframe={disableIframe}
@@ -440,6 +446,7 @@ function ShowClassic({
             notes={<Notes notes={notes} />}
             preview={
               <StepPreview
+                challengeType={challengeType}
                 disableIframe={resizing}
                 previewMounted={previewMounted}
               />
@@ -472,6 +479,7 @@ function ShowClassic({
             notes={<Notes notes={notes} />}
             preview={
               <StepPreview
+                challengeType={challengeType}
                 disableIframe={resizing}
                 previewMounted={previewMounted}
               />
