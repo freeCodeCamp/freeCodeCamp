@@ -11,10 +11,10 @@ After the loop completes for all rows, return the final `board_string`. This str
 
 # --hints--
 
-Test 1
+Return the `board_string` variable.
 
 ```js
-
+assert.match(code, /return\s+board_string/);
 ```
 
 # --seed--
@@ -42,7 +42,7 @@ class Board:
             row = f'║ {" ".join(row_list)} ║\n'
             row_empty = row.replace('0', ' ')
             board_string += row_empty
-            
+
             if index < 8:
                 if index % 3 == 2:
                     board_string += f'╠═══{"╪═══"*2}{"╬═══"}{"╪═══"*2}{"╬═══"}{"╪═══"*2}╣\n'
