@@ -1,9 +1,9 @@
 {
-  "name": "Learn Intermediate Fetch Promises and Async Await by Building an fCC Forum Leaderboard",
+  "name": "Learn Asynchronous Programming by Building an fCC Forum Leaderboard",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
-  "dashedName": "learn-intermediate-fetch-promises-and-async-await-by-building-an-fcc-forum-leaderboard",
+  "dashedName": "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard",
   "helpCategory": "JavaScript",
   "order": 111,
   "time": "5 hours",

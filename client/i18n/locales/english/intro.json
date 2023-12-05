@@ -423,8 +423,8 @@
           "This project will cover concepts such as the <code>getDate()</code>, <code>getMonth()</code>, and <code>getFullYear()</code> methods."
         ]
       },
-      "learn-intermediate-fetch-promises-and-async-await-by-building-an-fcc-forum-leaderboard": {
-        "title": "Learn Intermediate Fetch, Promises, and Async/Await by Building an fCC Forum Leaderboard",
+      "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard": {
+        "title": "Learn Asynchronous Programming by Building an fCC Forum Leaderboard",
         "intro": [
           "Working with asynchronous programming is a core fundamental of JavaScript.  In this project, you will gain proficiency in asynchronous concepts by building a freeCodeCamp forum leaderboard.",
           "This project will cover the Fetch API, promises, Async/Await, and the try..catch statement."
