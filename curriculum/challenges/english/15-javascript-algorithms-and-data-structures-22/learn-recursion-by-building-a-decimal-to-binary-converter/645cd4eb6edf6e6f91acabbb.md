@@ -11,10 +11,20 @@ Now that `b()` has executed, pop it off the call stack. Then, update your mock c
 
 # --hints--
 
-Test 1
+`callStack` should have one element that is a string.
 
 ```js
+assert.lengthOf(callStack, 1);
+assert.isString(callStack[0]);
+```
 
+The string in `callStack` should be the string `a(): returns "freeCodeCamp " + "is awesome!"`.
+
+```js
+assert.match(
+  callStack[0],
+  /a\(\s*\):\s*returns\s*('|"|`)freeCodeCamp\s*\1\s*\+\s*('|"|`)is\s+awesome!\2/
+);
 ```
 
 # --seed--
