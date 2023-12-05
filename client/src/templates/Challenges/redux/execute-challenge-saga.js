@@ -33,7 +33,7 @@ import {
   updatePreview,
   updateProjectPreview
 } from '../utils/build';
-import { runPythonInFrame, mainPreviewId } from '../utils/frame';
+import { getPythonWorker } from '../utils/python-worker-handler';
 import { executeGA } from '../../../redux/actions';
 import { fireConfetti } from '../../../utils/fire-confetti';
 import { actionTypes } from './action-types';
@@ -306,19 +306,20 @@ function* updatePreviewSaga() {
 }
 
 function* updatePython(challengeData) {
-  const document = yield getContext('document');
   // TODO: refactor the build pipeline so that we have discrete, composable
   // functions to handle transforming code, embedding it and building the
   // final html. Then we can just use the transformation function here.
   const buildData = yield buildChallengeData(challengeData);
   const code = buildData.transformedPython;
+  const worker = getPythonWorker();
+  worker.postMessage({ code });
   // TODO: proxy errors to the console
-  try {
-    yield call(runPythonInFrame, document, code, mainPreviewId);
-  } catch (err) {
-    console.log('Error evaluating python code', code);
-    console.log('Message:', err.message);
-  }
+  // try {
+  //   yield call(runPythonInFrame, document, code, mainPreviewId);
+  // } catch (err) {
+  //   console.log('Error evaluating python code', code);
+  //   console.log('Message:', err.message);
+  // }
 }
 
 function* previewProjectSolutionSaga({ payload }) {
