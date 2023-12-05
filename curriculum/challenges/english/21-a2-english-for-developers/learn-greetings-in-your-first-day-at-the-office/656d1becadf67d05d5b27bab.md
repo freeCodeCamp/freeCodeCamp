@@ -11,7 +11,8 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 Just like when you learned about the pronoun `he`, pronouns like `she` are used to refer to female individuals. They help avoid repetition in conversation. Look at this part of the dialogue:
 
 Sophie: `Oh, c'mon, Brian!`
-Brian: `But it is true. She's the person to go to if you need help, Tom!`
+
+Brian: `But it is true. She's the person to go to if you need help!`
 
 Here, `She` is used by Brian to refer to Sophie. Instead of repeating Sophie's name, Brian uses the pronoun `she` to make the conversation smoother and avoid redundancy.
 
