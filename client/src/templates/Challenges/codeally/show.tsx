@@ -294,7 +294,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       <Spacer size='medium' />
                       <ChallengeHeading
                         heading={'learn.step-1'}
-                        isCompleted={!isPartiallyCompleted || isCompleted}
+                        isCompleted={isPartiallyCompleted || isCompleted}
                       />
                       <Spacer size='medium' />
                       <div className='ca-description'>
@@ -326,7 +326,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       <Spacer size='medium' />
                       <ChallengeHeading
                         heading={'learn.step-2'}
-                        isCompleted={!isCompleted}
+                        isCompleted={isCompleted}
                       />
                       <Spacer size='medium' />
                       <div className='ca-description'>
