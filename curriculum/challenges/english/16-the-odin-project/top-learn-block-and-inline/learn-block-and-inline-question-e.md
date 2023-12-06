@@ -1,31 +1,35 @@
 ---
-id: 6542214750bc5c6ed8abf74a
+id: 6570447fe7b02272663824e3
 title: Learn Block and Inline Question E
 challengeType: 15
 dashedName: learn-block-and-inline-question-e
 ---
 # --description--
 
-You can't talk about `block` and `inline` elements without discussing `div`s and `span`s. All the other HTML elements you have encountered so far give meaning to their content. For example, paragraph elements tell the browser to display the text it contains as a paragraph. Strong elements tell the browser which texts within are important and so on. Yet, divs and spans give no particular meaning to their content. They are just generic boxes that can contain anything.
+Inline-block elements behave like inline elements, but with block-style padding and margin. `display: inline-block` is a useful tool to know about, but in practice, you'll probably end up reaching for flexbox more often if you're trying to line up a bunch of boxes. Flexbox will be covered in-depth in the next lesson.
 
 # --question--    
 
 ## --text--
 
-What is the primary difference between `span` and `div` elements from other elements?
+What is the difference between an inline element and an inline-block element?
 
 ## --answers--
 
-Unlike specific HTML elements that carry inherent meanings, span and div elements are versatile and are primarily used for styling and layout purposes.
+Inline elements are displayed without line breaks, while inline-block elements are displayed with line breaks.
 
 ---
 
-`span` and `div` elements do not impart any specific semantic meaning to the content they contain, unlike other HTML elements such as paragraphs or headings.
+Inline elements do not allow setting width and height, while inline-block elements allow setting width and height.
 
 ---
 
-`span` and `div` elements are generic containers that allow developers to apply CSS styles and structure content without any particular semantic significance.
+Inline elements are always positioned horizontally, while inline-block elements are positioned vertically.
+
+---
+
+Inline elements can contain block-level elements, while inline-block elements cannot contain other elements.
 
 ## --video-solution--
 
-3
+2

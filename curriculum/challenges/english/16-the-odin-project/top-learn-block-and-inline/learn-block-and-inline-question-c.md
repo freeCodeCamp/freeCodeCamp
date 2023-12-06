@@ -1,32 +1,35 @@
 ---
-id: 6542213650bc5c6ed8abf748
+id: 6570447ee7b02272663824e1
 title: Learn Block and Inline Question C
 challengeType: 15
 dashedName: learn-block-and-inline-question-c
 ---
 # --description--
 
-Now it's time to test your knowledge of block and inline elements. Answer the question below.
+Padding is used to create space around an element's content, inside of any defined borders. With inline elements, padding adds space to the left, right, top, and bottom of the content. However, it's important to note that while padding does affect the space around the content, it does not affect the layout of other elements around the inline element. This means that horizontal padding (left and right) is respected, but vertical padding (top and bottom) does not cause other elements to move away.
 
-# --question-- 
+# --question--    
 
 ## --text--
 
-What type of element is the `<h1>` element?
+How does padding affect inline elements?
 
 ## --answers--
 
-The `<h1>` element is an inline element.
+Padding has no effect on inline elements.
 
 ---
 
-The `<h1>` element is a block element.
+Padding increases the width and height of inline elements.
 
 ---
 
-The `<h1>` element is an inline-block element.
+Padding only affects the horizontal spacing of inline elements.
 
+---
+
+Padding only affects the vertical spacing of inline elements.
 
 ## --video-solution--
 
-2
+3
