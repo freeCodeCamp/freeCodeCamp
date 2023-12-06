@@ -27,6 +27,43 @@ const frequentlyAskedQuestions = [
   translations.donate['anything-else']
 ];
 
+const frequentlyAskedAnswers = [
+  translations.donate['forward-receipt'],
+  [
+    translations.donate['very-transparent'],
+    'You can download our IRS Determination Letter here.',
+    'You can download our most recent 990 (annual tax report) here.'
+  ],
+  [translations.donate['fcc-budget'], translations.donate['help-millions']],
+  [
+    "If you'd prefer to make one-time donations, you can support freeCodeCamp's mission whenever you have cash to spare. You can use this link to donate whatever amount feels right through PayPal.",
+    translations.donate['wire-transfer']
+  ],
+  translations.donate['yes-cryptocurrency'],
+  [
+    translations.donate['yes-check'],
+    'Free Code Camp, Inc.',
+    '3905 Hedgcoxe Rd',
+    'PO Box 250352',
+    'Plano, TX 75025'
+  ],
+  [
+    translations.donate['employers-vary'],
+    translations.donate['some-volunteer'],
+    translations.donate['help-matching-gift']
+  ],
+  translations.donate['endowment'],
+  [
+    translations.donate['we-honored'],
+    translations.donate['legacy-gift-message'],
+    translations.donate['thank-wikimedia'],
+    translations.donate['legacy-gift-questions']
+  ],
+  translations.donate['welcome-stock'],
+  translations.donate['forward-receipt'],
+  translations.donate['other-support']
+];
+
 const donationStringReplacements = {
   usdPlaceHolder: '{{usd}}',
   hoursPlaceHolder: '{{hours}}'
@@ -168,8 +205,21 @@ test.describe('Donate Page', () => {
   });
 
   test('should display the faq list with buttons', async () => {
-    for (const question of frequentlyAskedQuestions) {
-      await page.getByRole('button', { name: question }).isVisible();
+    for (let i = 0; i < frequentlyAskedQuestions.length; i++) {
+      const frequentlyAskedQuestion = page.getByRole('button', {
+        name: frequentlyAskedQuestions[i]
+      });
+      await frequentlyAskedQuestion.isVisible();
+      await frequentlyAskedQuestion.click();
+      const frequentlyAskedAnswer = frequentlyAskedAnswers[i];
+      if (Array.isArray(frequentlyAskedAnswer)) {
+        for (const answer of frequentlyAskedAnswer) {
+          await page.getByText(answer).isVisible();
+        }
+      } else {
+        await page.getByText(frequentlyAskedAnswer).isVisible();
+      }
+      await frequentlyAskedQuestion.click();
     }
   });
 });
