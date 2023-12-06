@@ -6,22 +6,34 @@ const outputTexts = {
   /**
   * Your test output will go here
   */`,
-  error: `SyntaxError: unknown: Unexpected token (1:3)
+  syntaxError: `SyntaxError: unknown: Unexpected token (1:3)
 
   > 1 | var
       |    ^`,
-  final: `// running tests
+  empty: `// running tests
   You should declare myName with the var keyword, ending with a semicolon
-  // tests completed`
+  // tests completed`,
+  passed: `// running tests
+// tests completed`
 };
 
-const insertTextInCodeEditor = async (page: Page, isMobile: boolean) => {
+interface InsertTextParameters {
+  page: Page;
+  isMobile: boolean;
+  text: string;
+}
+
+const insertTextInCodeEditor = async ({
+  page,
+  isMobile,
+  text
+}: InsertTextParameters) => {
   if (isMobile) {
     await page
       .getByRole('tab', { name: translations.learn['editor-tabs'].code })
       .click();
   }
-  await page.getByLabel('Editor content').fill('var');
+  await page.getByLabel('Editor content').fill(text);
   if (isMobile) {
     await page
       .getByRole('tab', { name: translations.learn['editor-tabs'].console })
@@ -57,19 +69,33 @@ test.describe('Challenge Output Component Tests', () => {
     await expect(outputConsole).toHaveText(outputTexts.default);
   });
 
-  test('should contain error output when var is entered in editor', async ({
+  test('should contain syntax error output when var is entered in editor', async ({
     page,
     isMobile
   }) => {
-    await insertTextInCodeEditor(page, isMobile);
+    await insertTextInCodeEditor({ page, isMobile, text: 'var' });
     await expect(
       page.getByRole('region', {
         name: translations.learn['editor-tabs'].console
       })
-    ).toHaveText(outputTexts.error);
+    ).toHaveText(outputTexts.syntaxError);
   });
 
-  test('should contain final output after test run', async ({
+  test('should contain reference error output when var is entered in editor', async ({
+    page,
+    isMobile
+  }) => {
+    const referenceErrorRegex =
+      /ReferenceError: (myName is not defined|Can't find variable: myName)/;
+    await insertTextInCodeEditor({ page, isMobile, text: 'myName' });
+    await expect(
+      page.getByRole('region', {
+        name: translations.learn['editor-tabs'].console
+      })
+    ).toHaveText(referenceErrorRegex);
+  });
+
+  test('should contain final output after test fail', async ({
     page,
     isMobile
   }) => {
@@ -78,6 +104,22 @@ test.describe('Challenge Output Component Tests', () => {
       page.getByRole('region', {
         name: translations.learn['editor-tabs'].console
       })
-    ).toHaveText(outputTexts.final);
+    ).toHaveText(outputTexts.empty);
+  });
+
+  test('should contain final output after test pass', async ({
+    page,
+    isMobile
+  }) => {
+    const closeButton = page.getByRole('button', { name: 'Close' });
+
+    await insertTextInCodeEditor({ page, isMobile, text: 'var myName;' });
+    await runChallengeTest(page, isMobile);
+    await closeButton.click();
+    await expect(
+      page.getByRole('region', {
+        name: translations.learn['editor-tabs'].console
+      })
+    ).toHaveText(outputTexts.passed);
   });
 });
