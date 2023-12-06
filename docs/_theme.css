@@ -162,7 +162,7 @@ section.cover .cover-main {
   align-items: center;
   flex-direction: column;
   margin: 0;
-  padding: 32px 16px 0;
+  padding: 32px 8px 0;
 }
 
 section.cover h1 {
