@@ -52,10 +52,14 @@
 }
 
 .trending-guides-articles {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11em, 1fr));
   grid-column-gap: 3rem;
   grid-row-gap: 0.5rem;
+  white-space: pre;
 }
 
 @media (max-width: 1400px) {
@@ -68,10 +72,6 @@
   .trending-guides-articles {
     grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
   }
-}
-
-.trending-guides-articles {
-  white-space: pre;
 }
 
 .footer-row {

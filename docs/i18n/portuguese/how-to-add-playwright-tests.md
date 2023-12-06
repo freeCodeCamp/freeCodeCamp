@@ -171,7 +171,7 @@ describe('The campers landing page', () => {
 
 ### 1. Veja se as aplicações de client e do MongoDB estão em execução
 
-- [Inicie o MongoDB e crie o banco de dados](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
+- [Inicie o MongoDB e crie o banco de dados](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database). Para que os testes do Playwright funcionem, certifique-se de usar o comando `pnpm run seed:certified-user`.
 
 - [Inicie também a aplicação de client do freeCodeCamp e o servidor da API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
@@ -318,7 +318,7 @@ Se, ao iniciar o ambiente do Gitpod, o ambiente não foi desenvolvido automatica
 - Crie o banco de dados
 
   ```bash
-  pnpm run seed
+  pnpm run seed:certified-user
   ```
 
 - Desenvolva o servidor e o client

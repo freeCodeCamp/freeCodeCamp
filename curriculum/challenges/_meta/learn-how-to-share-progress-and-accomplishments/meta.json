@@ -1,0 +1,18 @@
+{
+  "name": "Learn How to Share Progress and Accomplishments",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-share-progress-and-accomplishments",
+  "order": 22,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "655cd38e0ee8668d87f50f82",
+      "title": "Dialogue: Placeholder"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

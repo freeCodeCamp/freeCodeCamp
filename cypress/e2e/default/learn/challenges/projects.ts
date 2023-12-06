@@ -147,7 +147,7 @@ describe('project submission', () => {
             // TODO: if we write a test to check that the solution is visible
             // before reloading, we should include that here.
             cy.contains('Solution for');
-            cy.contains('Close').click();
+            cy.get(`[data-cy="solution-viewer-close-btn"]`).click();
           });
 
           // Claim and view solutions on certification page
