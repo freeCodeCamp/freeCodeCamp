@@ -4,13 +4,38 @@ import { IDisposable, Terminal } from 'xterm';
 import { FitAddon } from 'xterm-addon-fit';
 
 import { getPythonWorker } from '../utils/python-worker-handler';
+import swData from '../../../../config/browser-scripts/python-input-sw.json';
 
 import 'xterm/css/xterm.css';
+
+const { filename } = swData;
+
+const registerServiceWorker = async () => {
+  if ('serviceWorker' in navigator) {
+    try {
+      const registration = await navigator.serviceWorker.register(
+        `/js/${filename}.js`
+      );
+      // TODO: Remove debug code
+      if (registration.installing) {
+        console.log('Service worker installing');
+      } else if (registration.waiting) {
+        console.log('Service worker installed');
+      } else if (registration.active) {
+        console.log('Service worker active');
+      }
+    } catch (error) {
+      console.error(`Registration failed`);
+      console.error(error);
+    }
+  }
+};
 
 export const XtermTerminal = () => {
   const termRef = useRef(null);
 
   useEffect(() => {
+    void registerServiceWorker();
     // TODO: copy over resetTerminal from python-runner
     const disposables: IDisposable[] = [];
     // Setting convertEol so that \n is converted to \r\n. Otherwise the terminal
