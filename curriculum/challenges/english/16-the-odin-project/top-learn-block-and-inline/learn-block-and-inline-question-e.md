@@ -12,23 +12,23 @@ Inline-block elements behave like inline elements, but with block-style padding 
 
 ## --text--
 
-What is the difference between an inline element and an inline-block element?
+What is the difference between an `inline` element and an `inline-block` element?
 
 ## --answers--
 
-Inline elements are displayed without line breaks, while inline-block elements are displayed with line breaks.
+`inline` elements are displayed without line breaks, while `inline-block` elements are displayed with line breaks.
 
 ---
 
-Inline elements do not allow setting width and height, while inline-block elements allow setting width and height.
+`inline` elements do not allow setting width and height, while `inline-block` elements allow setting width and height.
 
 ---
 
-Inline elements are always positioned horizontally, while inline-block elements are positioned vertically.
+`inline` elements are always positioned horizontally, while `inline-block` elements are positioned vertically.
 
 ---
 
-Inline elements can contain block-level elements, while inline-block elements cannot contain other elements.
+`inline` elements can contain block-level elements, while `inline-block` elements cannot contain other elements.
 
 ## --video-solution--
 

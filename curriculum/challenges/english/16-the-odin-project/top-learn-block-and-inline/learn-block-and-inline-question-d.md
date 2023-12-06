@@ -12,23 +12,23 @@ Now that you have a basic understanding on how adding width and height to `inlin
 
 ## --text--
 
-How does `margin-top` affect inline elements?
+How does `margin-top` affect `inline` elements?
 
 ## --answers--
 
-`margin-top` has no impact on the layout of inline elements
+`margin-top` has no impact on the layout of `inline` elements
 
 ---
 
-`margin-top` increases the height of inline elements.
+`margin-top` increases the height of `inline` elements.
 
 ---
 
-`margin-top` adds space above the inline element.
+`margin-top` adds space above the `inline` element.
 
 ---
 
-`margin-top` only affects the horizontal spacing of inline elements.
+`margin-top` only affects the horizontal spacing of `inline` elements.
 
 ## --video-solution--
 

@@ -12,23 +12,23 @@ Padding is used to create space around an element's content, inside of any defin
 
 ## --text--
 
-How does padding affect inline elements?
+How does `padding` affect `inline` elements?
 
 ## --answers--
 
-Padding has no effect on inline elements.
+Padding has no effect on `inline` elements.
 
 ---
 
-Padding increases the width and height of inline elements.
+Padding increases the width and height of `inline` elements.
 
 ---
 
-Padding only affects the horizontal spacing of inline elements.
+Padding only affects the horizontal spacing of `inline` elements.
 
 ---
 
-Padding only affects the vertical spacing of inline elements.
+Padding only affects the vertical spacing of `inline` elements.
 
 ## --video-solution--
 

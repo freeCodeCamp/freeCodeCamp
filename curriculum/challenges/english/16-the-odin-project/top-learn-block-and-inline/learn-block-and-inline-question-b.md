@@ -12,27 +12,27 @@ Inline elements, however, do not start on a new line. They appear in line with w
 
 ## --assignment--
 
-Search the web for a list of block elements and a list of inline elements. 
+Search the web for a list of `block` elements and a list of `inline` elements. 
 
 ## --text--
 
-What is the difference between a block element and an inline element?
+What is the difference between a `block` element and an `inline` element?
 
 ## --answers--
 
-Block elements are displayed without line breaks, while inline elements are displayed with line breaks.
+`block` elements are displayed without line breaks, while `inline` elements are displayed with line breaks.
 
 ---
 
-Block elements take up the full width available, while inline elements only take up the space necessary for their content.
+`block` elements take up the full width available, while `inline` elements only take up the space necessary for their content.
 
 ---
 
-Block elements are always positioned horizontally, while inline elements are positioned vertically.
+`block` elements are always positioned horizontally, while `inline` elements are positioned vertically.
 
 ---
 
-Block elements are used for small sections of text, while inline elements are used for larger chunks of content.
+`block` elements are used for small sections of text, while `inline` elements are used for larger chunks of content.
 
 
 ## --video-solution--

@@ -6,15 +6,15 @@ dashedName: learn-block-and-inline-question-H
 ---
 # --description--
 
-Now that you have some basic understanding of block and inline elements, pull up your
-list of block and inline elements from a couple questions ago and see if you can
-identify which of the following elements are block elements and which are inline elements.
+Now that you have some basic understanding of `block` and inline elements, pull up your
+list of `block` and `inline` elements from a couple questions ago and see if you can
+identify which of the following elements are `block` elements and which are `inline` elements.
 
 # --question--    
 
 ## --text--
 
-Which of the following is NOT a block level element?
+Which of the following is NOT a `block` level element?
 
 ## --answers--
 

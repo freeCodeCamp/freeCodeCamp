@@ -16,7 +16,7 @@ What happens when you add `padding-top: 10px;` to a span element?
 
 ## --answers--
 
-The `span` element's content will shift downward by 10 pixels.
+The span element's content will shift downward by 10 pixels.
 
 ---
 
