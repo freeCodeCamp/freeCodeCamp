@@ -374,8 +374,8 @@
           "In this statistics calculator project, you'll gain experience in handling user input, DOM manipulation, and method chaining by performing statistical calculations like mean, median, mode, variance, and standard deviation."
         ]
       },
-      "learn-data-structures-by-building-a-shopping-cart": {
-        "title": "Aprenda estructuras de datos construyendo un carrito de compras",
+      "learn-basic-oop-by-building-a-shopping-cart": {
+        "title": "Learn Basic OOP by Building a Shopping Cart",
         "intro": [
           "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, objects and classes organize code to describe things and what they can do.",
           "In this shopping cart project, you'll learn learn how to define and utilize classes, create class instances, and implement methods for data manipulation. This project will cover concepts including the ternary operator, spread operator, the <code>this</code> keyword and more."
@@ -1167,6 +1167,106 @@
       "learn-conversation-starters-in-the-break-room": {
         "title": "Learn Conversation Starters in the Break Room",
         "intro": ["Learn conversation starters."]
+      },
+      "learn-how-to-talk-about-a-typical-workday-and-tasks": {
+        "title": "Learn How to Talk About a Typical Workday and Tasks",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-your-morning-or-evening-routine": {
+        "title": "Learn How to Discuss Your Morning or Evening Routine",
+        "intro": ["", ""]
+      },
+      "learn-how-to-describe-your-current-project": {
+        "title": "Learn How to Describe Your Current Project",
+        "intro": ["", ""]
+      },
+      "learn-how-to-ask-and-share-about-educational-and-professional-background": {
+        "title": "Learn How to Ask and Share About Educational and Professional Background",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-hobbies-and-interests": {
+        "title": "Learn How to Talk About Hobbies and Interests",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-roles-and-responsibilies": {
+        "title": "Learn How to Discuss Roles and Responsibilities",
+        "intro": ["", ""]
+      },
+      "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
+        "title": "Learn How to Have a Conversation About Preferences and Motivations",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-popular-trends-in-technology": {
+        "title": "Learn How to Discuss Popular Trends in Technology",
+        "intro": ["", ""]
+      },
+      "learn-how-to-clarify-information-in-different-interactions": {
+        "title": "Learn How to Clarify Information in Different Interactions",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
+        "title": "Learn How to Use Basic Programming Vocabulary in Conversations",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-code-related-concepts-and-terms": {
+        "title": "Learn How to Use Code-related Concepts and Terms",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-tech-trends-and-updates": {
+        "title": "Learn How to Discuss Tech Trends and Updates",
+        "intro": ["", ""]
+      },
+      "learn-how-to-help-a-coworker-troubleshoot-on-github": {
+        "title": "Learn How to Help a Coworker Troubleshoot on GitHub",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
+        "title": "Learn How to Share Your Progress in Weekly Stand-up Meetings",
+        "intro": ["", ""]
+      },
+      "learn-how-to-ask-for-clarification-on-code-understanding": {
+        "title": "Learn How to Ask for Clarification on Code Understanding",
+        "intro": ["", ""]
+      },
+      "learn-how-to-document-code-for-a-project": {
+        "title": "Learn How to Document Code for a Project",
+        "intro": ["", ""]
+      },
+      "learn-how-to-read-and-understand-code-documentation": {
+        "title": "Learn How to Read and Understand Code Documentation",
+        "intro": ["", ""]
+      },
+      "learn-how-to-analyze-code-documentation": {
+        "title": "Learn How to Analyze Code Documentation",
+        "intro": ["", ""]
+      },
+      "learn-how-to-follow-basic-email-convention": {
+        "title": "Learn How to Follow Basic Email Convention",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-progress-and-accomplishments": {
+        "title": "Learn How to Share Progress and Accomplishments",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
+        "title": "Learn How to Talk About Updates and Plans for Tasks and Projects",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-agreement-or-disagreement": {
+        "title": "Learn How to Express Agreement or Disagreement",
+        "intro": ["", ""]
+      },
+      "learn-how-to-offer-technical-support-and-guidance": {
+        "title": "Learn How to Offer Technical Support and Guidance",
+        "intro": ["", ""]
+      },
+      "learn-how-to-request-and-receive-guidance": {
+        "title": "Learn How to Request and Receive Guidance",
+        "intro": ["", ""]
+      },
+      "learn-how-to-provide-explanations-when-helping-others": {
+        "title": "Learn How to Provide Explanations When Helping Others",
+        "intro": ["", ""]
       }
     }
   },
