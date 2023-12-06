@@ -19,8 +19,12 @@ test.describe('Link MS user component (unlinked signedOut user)', () => {
     const linkSignInText = page.getByTestId('link-signin-text');
     await expect(linkSignInText).toBeVisible();
 
-    const signinButtons = page.getByTestId('header-sign-in-button');
+    const signinButtons = page.getByRole('link', { name: 'Sign in' });
     await expect(signinButtons).toHaveCount(2);
+    await expect(signinButtons.first()).toHaveAttribute(
+      'href',
+      'http://localhost:3000/signin'
+    );
   });
 });
 
@@ -83,7 +87,9 @@ test.describe('Link MS user component (unlinked signedIn user)', () => {
     await expect(linkAccountButton).toBeVisible();
   });
 
-  test('Check transcript link input field', async ({ page }) => {
+  test('should display an error if the user enters an invalid transcript link', async ({
+    page
+  }) => {
     const transcriptLinkInput = page.getByLabel(
       translations.learn.ms['transcript-label']
     );
