@@ -1,9 +1,9 @@
 {
-  "name": "Learn Data Structures By Building A Shopping Cart",
+  "name": "Learn Basic OOP by Building a Shopping Cart",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
-  "dashedName": "learn-data-structures-by-building-a-shopping-cart",
+  "dashedName": "learn-basic-oop-by-building-a-shopping-cart",
   "helpCategory": "JavaScript",
   "order": 13,
   "time": "5 hours",
