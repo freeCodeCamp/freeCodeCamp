@@ -7,16 +7,34 @@ dashedName: step-56
 
 # --description--
 
-Use the arrow function to define a function called `setPlayButtonAccessibleText`. 
+Use `const` and arrow syntax to define a function called `setPlayButtonAccessibleText`. 
 
-This function will set the `aria-label` to the current song, or to the first song in the playlist. And if the playlist is empty, it sets the `aria-label` to `"Play"`.
+This function will set the `aria-label` attribute to the current song, or to the first song in the playlist. And if the playlist is empty, it sets the `aria-label` to `"Play"`.
 
 # --hints--
 
-Test 1
+You should use `const` to create an empty function named `setPlayButtonAccessibleText`.
 
 ```js
+assert.match(code, /const\s+setPlayButtonAccessibleText\s*=\s*/)
+```
 
+`setPlayButtonAccessibleText` should be a function.
+
+```js
+assert.isFunction(setPlayButtonAccessibleText)
+```
+
+Your `setPlayButtonAccessibleText` function should use an arrow syntax.
+
+```js
+assert.match(code, /const\s+setPlayButtonAccessibleText\s*=\s*\(\)\s*=>\s*/)
+```
+
+Your `setPlayButtonAccessibleText` function  should be empty.
+
+```js
+assert.match(code, /const\s+setPlayButtonAccessibleText\s*=\s*\(\)\s*=>\s*\{\n?\s*?\};?/)
 ```
 
 # --seed--
@@ -642,7 +660,7 @@ const playNextSong = () => {
   }
 };
 
-const playPreviousSong = () =>{
+const playPreviousSong = () => {
    if (userData?.currentSong === null) return;
    else {
     const currentSongIndex = getCurrentSongIndex();
@@ -698,7 +716,7 @@ const renderSongs = (array) => {
 };
 
 --fcc-editable-region--
-  
+
 --fcc-editable-region--
 
 const getCurrentSongIndex = () => userData?.songs.indexOf(userData.currentSong);
