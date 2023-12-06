@@ -246,7 +246,7 @@ Next, let's seed the database. In this step, we run the below command that fills
 pnpm run seed
 ```
 
-By default, you will be signed in as a new user without any completed certifications. Run the following commands if you need to develop with completed certifications:
+By default, you will be signed in as a new user without any completed certifications. Run the following command if you need to develop with completed certifications or write Playwright tests:
 
 ```bash
 pnpm run seed:certified-user
