@@ -217,9 +217,11 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
 
     const confirmationWithEditAmount = (
       <>
-        {t('donate.confirm-multitier', {
-          usd: formattedAmountLabel(donationAmount)
-        })}
+        <b>
+          {t('donate.confirm-multitier', {
+            usd: formattedAmountLabel(donationAmount)
+          })}
+        </b>
 
         <button
           type='button'
@@ -238,7 +240,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     };
     return (
       <>
-        <b className={confirmationClass()}>{confirmationWithEditAmount}</b>
+        <div className={confirmationClass()}>{confirmationWithEditAmount}</div>
         <Spacer size={editAmount ? 'small' : 'medium'} />
         <fieldset
           data-playwright-test-label='donation-form'
