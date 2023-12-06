@@ -374,8 +374,8 @@
           "Neste projeto de calculadora de estatísticas, você ganhará experiência com o tratamento da entrada de usuário, com a manipulação do DOM e com o encadeamento de métodos, realizando cálculos estatísticos como média, moda, variância e desvio-padrão."
         ]
       },
-      "learn-data-structures-by-building-a-shopping-cart": {
-        "title": "Aprenda estruturas de dados criando um carrinho de compras",
+      "learn-basic-oop-by-building-a-shopping-cart": {
+        "title": "Aprenda POO básica criando um carrinho de compras",
         "intro": [
           "A POO, ou Programação Orientada a Objetos, é uma das abordagens principais do processo de desenvolvimento de software. Na POO, os objetos e as classes são usados para organizar o código, descrever coisas e o que elas podem fazer.",
           "Neste projeto de carrinho de compras, você aprenderá a definir e utilizar classes, a criar instâncias de classe e a implementar métodos para a manipulação de dados. Este projeto tratará de conceitos como a inclusão de operadores ternários, operador spread, a palavra-chave <code>this</code> e mais."
@@ -1167,6 +1167,106 @@
       "learn-conversation-starters-in-the-break-room": {
         "title": "Aprenda a começar uma conversa na sala de descanso",
         "intro": ["Aprender a iniciar uma conversa."]
+      },
+      "learn-how-to-talk-about-a-typical-workday-and-tasks": {
+        "title": "Aprenda a falar sobre um dia típico e tarefas",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-your-morning-or-evening-routine": {
+        "title": "Aprenda a discutir sobre sua rotina diária ou noturna",
+        "intro": ["", ""]
+      },
+      "learn-how-to-describe-your-current-project": {
+        "title": "Aprenda a descrever seu projeto atual",
+        "intro": ["", ""]
+      },
+      "learn-how-to-ask-and-share-about-educational-and-professional-background": {
+        "title": "Aprenda a pedir informações sobre histórico educacional e profissional e como compartilhá-las",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-hobbies-and-interests": {
+        "title": "Aprenda a falar sobre passatempos e interesses",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-roles-and-responsibilies": {
+        "title": "Aprenda a discutir funções e responsabilidades",
+        "intro": ["", ""]
+      },
+      "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
+        "title": "Aprenda a ter uma conversa sobre preferências e motivações",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-popular-trends-in-technology": {
+        "title": "Aprenda a discutir tendências populares em tecnologia",
+        "intro": ["", ""]
+      },
+      "learn-how-to-clarify-information-in-different-interactions": {
+        "title": "Aprenda a esclarecer as informações em diferentes interações",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
+        "title": "Aprenda a usar o vocabulário básico de programação em conversas",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-code-related-concepts-and-terms": {
+        "title": "Aprenda a usar conceitos e termos relacionados à programação",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-tech-trends-and-updates": {
+        "title": "Aprenda a debater tendências em tecnologia e atualizações",
+        "intro": ["", ""]
+      },
+      "learn-how-to-help-a-coworker-troubleshoot-on-github": {
+        "title": "Aprenda a ajudar um colega de trabalho a resolver problemas no GitHub",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
+        "title": "Aprenda a compartilhar seu progresso em reuniões semanais de equipe",
+        "intro": ["", ""]
+      },
+      "learn-how-to-ask-for-clarification-on-code-understanding": {
+        "title": "Aprenda a pedir esclarecimento na compreensão do código",
+        "intro": ["", ""]
+      },
+      "learn-how-to-document-code-for-a-project": {
+        "title": "Aprenda a documentar o código para um projeto",
+        "intro": ["", ""]
+      },
+      "learn-how-to-read-and-understand-code-documentation": {
+        "title": "Aprenda a ler e entender a documentação do código",
+        "intro": ["", ""]
+      },
+      "learn-how-to-analyze-code-documentation": {
+        "title": "Aprenda a analisar a documentação de código",
+        "intro": ["", ""]
+      },
+      "learn-how-to-follow-basic-email-convention": {
+        "title": "Aprenda a seguir convenções básicas de e-mail",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-progress-and-accomplishments": {
+        "title": "Aprenda a compartilhar progresso e realizações",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
+        "title": "Aprenda a falar sobre atualizações e planos para tarefas e projetos",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-agreement-or-disagreement": {
+        "title": "Aprenda a expressar concordância e desacordo",
+        "intro": ["", ""]
+      },
+      "learn-how-to-offer-technical-support-and-guidance": {
+        "title": "Aprenda a oferecer suporte técnico e orientação",
+        "intro": ["", ""]
+      },
+      "learn-how-to-request-and-receive-guidance": {
+        "title": "Aprenda a solicitar e receber orientação",
+        "intro": ["", ""]
+      },
+      "learn-how-to-provide-explanations-when-helping-others": {
+        "title": "Aprenda a fornecer explicações quando estiver ajudando outros",
+        "intro": ["", ""]
       }
     }
   },
