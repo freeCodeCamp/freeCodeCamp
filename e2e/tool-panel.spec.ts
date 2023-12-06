@@ -49,5 +49,22 @@ test.describe('Tool Panel', () => {
     helpLinks.push(await page.getByTestId('ask-for-help').textContent());
 
     expect(helpLinks).toEqual(expectedHelpLinks);
+
+    const hintLink = page.getByRole('menuitem', { name: 'Get a Hint' });
+    await expect(hintLink).toHaveAttribute(
+      'href',
+      'https://forum.freecodecamp.org/t/18201'
+    );
+    await expect(hintLink).toHaveAttribute('target', '_blank');
+
+    await page.getByRole('menuitem', { name: 'Ask for Help' }).click();
+    await expect(
+      page.getByRole('heading', {
+        name: translations.buttons['ask-for-help'],
+        exact: true
+      })
+    ).toBeVisible();
+
+    // "Watch a Video" is done by "video-modal.spec.ts"
   });
 });
