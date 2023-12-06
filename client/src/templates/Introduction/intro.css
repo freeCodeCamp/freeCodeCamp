@@ -467,7 +467,7 @@ ToDo: find out why, and remove the need for it */
 }
 
 .annual-donation-alert hr {
-  border-top-color: var(--blue70);
+  border-top-color: var(--blue10);
 }
 
 /* story starts here */
