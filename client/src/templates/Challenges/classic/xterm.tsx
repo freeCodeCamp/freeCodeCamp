@@ -4,17 +4,14 @@ import { IDisposable, Terminal } from 'xterm';
 import { FitAddon } from 'xterm-addon-fit';
 
 import { getPythonWorker } from '../utils/python-worker-handler';
-import swData from '../../../../config/browser-scripts/python-input-sw.json';
 
 import 'xterm/css/xterm.css';
-
-const { filename } = swData;
 
 const registerServiceWorker = async () => {
   if ('serviceWorker' in navigator) {
     try {
       const registration = await navigator.serviceWorker.register(
-        `/js/${filename}.js`
+        '/python-input-sw.js'
       );
       // TODO: Remove debug code
       if (registration.installing) {
@@ -88,6 +85,9 @@ export const XtermTerminal = () => {
 
     const pythonWorker = getPythonWorker();
     pythonWorker.onmessage = event => {
+      console.log('pythonWorker.onmessage', event);
+      void fetch('/python/intercept-input/');
+
       const { type, text } = event.data as { type: string; text: string };
       if (type === 'print') {
         writeLine(text);
