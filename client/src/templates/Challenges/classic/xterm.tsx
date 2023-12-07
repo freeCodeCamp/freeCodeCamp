@@ -85,7 +85,6 @@ export const XtermTerminal = () => {
     const pythonWorker = getPythonWorker();
     pythonWorker.onmessage = event => {
       console.log('pythonWorker.onmessage', event);
-      void fetch('/python/intercept-input/');
 
       const { type, text } = event.data as { type: string; text: string };
       if (type === 'print') {

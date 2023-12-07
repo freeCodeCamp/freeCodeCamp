@@ -19,7 +19,7 @@ import {
   compileHeadTail
 } from '../../../../../shared/utils/polyvinyl';
 import createWorker from '../utils/worker-executor';
-import { makeCancellable, makeInputAwaitable } from './transform-python';
+import { makeCancellable } from './transform-python';
 
 const { filename: sassCompile } = sassData;
 
@@ -307,8 +307,7 @@ const htmlTransformer = cond([
 ]);
 
 const transformPython = async function (file) {
-  const awaitableCode = makeInputAwaitable(file.contents);
-  const cancellableCode = makeCancellable(awaitableCode);
+  const cancellableCode = makeCancellable(file.contents);
   return transformContents(() => cancellableCode, file);
 };
 
