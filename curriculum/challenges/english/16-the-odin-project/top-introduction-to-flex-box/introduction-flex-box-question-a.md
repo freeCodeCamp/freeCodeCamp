@@ -6,7 +6,7 @@ dashedName: introduction-flex-box-question-a
 ---
 # --description--
 
-### Before we get started
+## Before we get started
 
 Flexbox layouts can get a little complicated. In a previous lesson, you learned how to inspect and debug things using your browser’s developer tools. Those tools will be crucial for you in the following lessons. If something isn’t behaving the way you expect, inspecting it in the developer tools should be your first step every time.
 
@@ -14,7 +14,7 @@ Flexbox isn’t necessarily any more difficult than the other concepts that we�
 
 You will almost definitely need to come back and reference these lessons (or a couple of the resources we share with you) when you get to the assignments at the end of the section, but if you take your time and experiment with all the code examples we provide, you’ll know better where to look when that time comes.
 
-### Let’s flex!
+## Let’s flex
 
 Flexbox is a way to arrange items into rows or columns. These items will flex (i.e. grow or shrink) based on some simple rules that you can define. To get started, let’s look at a simple demonstration.
 
@@ -35,6 +35,7 @@ If you add another div to the HTML, inside of `.flex-container`, it will show up
 # --question--
 
 ## --text--
+
 What happens when the two flex related CSS declarations in the CodePen are uncommented?
 
 ## --answers--
