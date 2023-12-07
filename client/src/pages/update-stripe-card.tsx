@@ -3,7 +3,6 @@ import { useLocation } from '@reach/router';
 
 import React, { type FormEvent, useEffect } from 'react';
 import Helmet from 'react-helmet';
-import type { TFunction } from 'i18next';
 import { withTranslation, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -23,7 +22,6 @@ import CardUpdateAlertHandler from '../components/Donation/card-update-alert-han
 
 interface UpdateStripeCardProps {
   isNewEmail: boolean;
-  t: TFunction;
   resetDonationFormState: () => void;
   isSignedIn: boolean;
   isDonating: boolean;
@@ -101,7 +99,6 @@ function ConditionalContent({
 }
 
 function UpdateStripeCard({
-  t,
   isSignedIn,
   isDonating,
   updateCardState,
@@ -112,6 +109,7 @@ function UpdateStripeCard({
     updateCard();
     if (event) event.preventDefault();
   }
+  const { t } = useTranslation();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const isUpdateSuccessful = searchParams.get('session_id') !== null;

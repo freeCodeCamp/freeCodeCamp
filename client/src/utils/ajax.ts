@@ -48,14 +48,14 @@ async function combineDataWithResponse<T>(response: Response) {
 
 export function post<T = void>(
   path: string,
-  body?: unknown
+  body: unknown
 ): Promise<ResponseWithData<T>> {
   return request('POST', path, body);
 }
 
 function put<T = void>(
   path: string,
-  body: unknown
+  body?: unknown
 ): Promise<ResponseWithData<T>> {
   return request('PUT', path, body);
 }
@@ -239,7 +239,7 @@ export function addDonation(body: Donation): Promise<ResponseWithData<void>> {
 }
 
 export function updateStripeCard() {
-  return post('/donate/update-stripe-card');
+  return put('/donate/update-stripe-card');
 }
 
 export function postChargeStripe(

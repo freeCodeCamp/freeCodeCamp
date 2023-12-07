@@ -2,7 +2,6 @@
 import axios from 'axios';
 import debug from 'debug';
 import isEmail from 'validator/lib/isEmail';
-import { ObjectId } from 'mongodb';
 import { donationSubscriptionConfig } from '../../../../shared/config/donation-settings';
 import keys from '../../../config/secrets';
 
@@ -322,36 +321,35 @@ export async function handleStripeCardUpdateSession(req, app, stripe) {
   } = req;
 
   const { Donation } = app.models;
-  log('Updating stripe card for user: ', ObjectId(id));
+  log('Updating stripe card for user: ', id);
 
-  /* eslint-disable camelcase */
-  try {
-    // multiple donations support should be added
-    const donation = await Donation.findOne({
-      where: { userId: ObjectId(id) }
-    });
+  // multiple donations support should be added
+  const donation = await Donation.findOne({
+    where: { userId: id, provider: 'stripe' }
+  });
 
-    if (!donation) throw Error();
+  if (!donation) throw Error('Stripe donation record not found');
 
-    const { customerId, subscriptionId } = donation;
+  const { customerId, subscriptionId } = donation;
 
-    // updating customer payment method is handled by webhook handler
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      mode: 'setup',
-      customer: customerId,
-      setup_intent_data: {
-        metadata: {
-          customer_id: customerId,
-          subscription_id: subscriptionId
-        }
-      },
-      success_url: `${process.env.HOME_LOCATION}/update-stripe-card?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.HOME_LOCATION}/update-stripe-card`
-    });
-    // /* eslint-enable camelcase */
-    return { session_id: session.id };
-  } catch (err) {
-    throw Error(err);
-  }
+  log(subscriptionId);
+
+  // Create a Stripe checkout session
+  // updating customer payment method is handled by webhook handler
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ['card'],
+    mode: 'setup',
+    customer: customerId,
+    setup_intent_data: {
+      metadata: {
+        customer_id: customerId,
+        subscription_id: subscriptionId
+      }
+    },
+    success_url: `${process.env.HOME_LOCATION}/update-stripe-card?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${process.env.HOME_LOCATION}/update-stripe-card`
+  });
+
+  log(session);
+  return { sessionId: session.id };
 }

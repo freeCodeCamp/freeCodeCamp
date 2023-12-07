@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Login from '../../Header/components/login';
 
-const BigCallToAction = ({ text }: { text: string }): JSX.Element => {
+const BigCallToAction = ({ text }: { text?: string }): JSX.Element => {
   const { t } = useTranslation();
 
   return (

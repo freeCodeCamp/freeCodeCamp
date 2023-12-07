@@ -182,7 +182,7 @@ export default function donateBoot(app, done) {
       });
   }
 
-  async function handleStripeCardUpdate(req, res) {
+  async function handleStripeCardUpdate(req, res, next) {
     try {
       const sessionIdObj = await handleStripeCardUpdateSession(
         req,
@@ -191,11 +191,7 @@ export default function donateBoot(app, done) {
       );
       return res.status(200).json(sessionIdObj);
     } catch (err) {
-      log(err.message);
-      return res.status(500).send({
-        type: 'danger',
-        message: 'Something went wrong.'
-      });
+      return next(err);
     }
   }
 
@@ -238,7 +234,7 @@ export default function donateBoot(app, done) {
   } else {
     api.post('/charge-stripe', createStripeDonation);
     api.post('/charge-stripe-card', handleStripeCardDonation);
-    api.post('/update-stripe-card', handleStripeCardUpdate);
+    api.put('/update-stripe-card', handleStripeCardUpdate);
     api.post('/add-donation', addDonation);
     hooks.post('/update-paypal', updatePaypal);
     donateRouter.use('/donate', api);

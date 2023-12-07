@@ -35,7 +35,6 @@ const defaultFetchState = {
 const updateCardDefaultState = {
   redirecting: false,
   success: false,
-  complete: false,
   error: null
 };
 

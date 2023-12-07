@@ -168,16 +168,13 @@ export function* updateCardSaga() {
   yield put(updateCardRedirecting());
   try {
     const {
-      data: { session_id }
+      data: { sessionId }
     } = yield call(updateStripeCard);
 
-    if (!session_id) throw new Error('No session_id');
+    if (!sessionId) throw new Error('No sessionId');
     const stripe = yield call(loadStripe, stripePublicKey);
-    stripe.redirectToCheckout({
-      sessionId: session_id
-    });
+    stripe.redirectToCheckout({ sessionId });
   } catch (error) {
-    console.log('error');
     yield put(updateCardError(updateCardErrorMessage));
   }
 }
