@@ -568,3 +568,9 @@ ToDo: find out why, and remove the need for it */
 .topics-button-unselected {
   opacity: 0.4;
 }
+
+.challenge-empty {
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  margin-bottom: 47.5px;
+}

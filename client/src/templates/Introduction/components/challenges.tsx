@@ -66,11 +66,11 @@ function Challenges({
 
   const isGridMap = isNewRespCert(superBlock) || isNewJsCert(superBlock);
 
-  const firstIncompleteChallenge = challenges.find(
+  const firstIncompleteChallenge = challengesWithCompleted.find(
     challenge => !challenge.isCompleted
   );
 
-  const isChallengeStarted = !!challenges.find(
+  const isChallengeStarted = !!challengesWithCompleted.find(
     challenge => challenge.isCompleted
   );
 
@@ -92,33 +92,12 @@ function Challenges({
     });
   }
 
+  function resetTagStatuses() {
+    tags.map(tag => setTagStatus(tag.id, false));
+  }
+
   return isGridMap ? (
     <>
-      {tags.length !== 0 ? (
-        <div className='topics-list'>
-          <button onClick={() => setDropDownOpen(!dropDownOpen)}>
-            <span className='topics-name'>Topics</span>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </button>
-
-          {dropDownOpen ? (
-            <div className='topic-selections'>
-              {tags.map(tag => (
-                <div key={tag.id} className='topics-button'>
-                  <button
-                    className={tag.active ? '' : 'topics-button-unselected'}
-                    onClick={() => setTagStatus(tag.id, !tag.active)}
-                  >
-                    <span className='topics-name'>{tag.name}</span>
-                    <FontAwesomeIcon icon={tag.active ? faCheck : faXmark} />
-                  </button>
-                </div>
-              ))}
-            </div>
-          ) : null}
-        </div>
-      ) : null}
-
       {firstIncompleteChallenge && (
         <div className='challenge-jump-link'>
           <Link
@@ -132,6 +111,47 @@ function Challenges({
           </Link>
         </div>
       )}
+
+      {tags.length !== 0 ? (
+        <div className='topics-list'>
+          <span>
+            <button onClick={() => setDropDownOpen(!dropDownOpen)}>
+              <span className='topics-name'>Topics</span>
+              <FontAwesomeIcon icon={faCaretDown} />
+            </button>
+            &nbsp;
+            <button
+              className={
+                tags.filter(tag => tag.active).length > 0
+                  ? ''
+                  : 'topics-button-unselected'
+              }
+              onClick={() => resetTagStatuses()}
+            >
+              Clear filters
+            </button>
+            {dropDownOpen ? (
+              <div className='topic-selections'>
+                {tags.map(tag => (
+                  <div key={tag.id} className='topics-button'>
+                    <button
+                      className={tag.active ? '' : 'topics-button-unselected'}
+                      onClick={() => setTagStatus(tag.id, !tag.active)}
+                    >
+                      <span className='topics-name'>{tag.name}</span>
+                      <FontAwesomeIcon
+                        icon={tag.active ? faCheck : faXmark}
+                        size='xs'
+                      />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            ) : null}
+          </span>
+        </div>
+      ) : null}
+
       <nav
         aria-label={
           blockTitle ? t('aria.steps-for', { blockTitle }) : t('aria.steps')
@@ -172,6 +192,10 @@ function Challenges({
             </li>
           ))}
         </ul>
+
+        {challenges.length == 0 && (
+          <div className='challenge-empty'>No challenges found</div>
+        )}
       </nav>
     </>
   ) : (
