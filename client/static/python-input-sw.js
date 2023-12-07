@@ -6,13 +6,18 @@ addEventListener('activate', function() {
   clients.claim();
 })
 
+let resolver;
+
+onmessage = function(event) {
+  resolver(event.data);
+}
+
 addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   if (url.pathname === '/python/intercept-input/') {
-    event.respondWith(
-      new Response(JSON.stringify({ thanks: 'for the all fish' }), {
-        headers: { 'Content-Type': 'application/json' }
-      })
-    );
+    const response = new Promise((resolve) => {
+      resolver = (data) => resolve(new Response(data));
+    });
+    event.respondWith(response);
   }
 });

@@ -21,6 +21,17 @@ async function setupPyodide() {
     postMessage({ type: 'print', text });
   }
 
+  function input(text: string) {
+    // TODO: send unique ids to the main thread and the service worker, so we
+    // can have multiple concurrent input requests.
+    postMessage({ type: 'input', text });
+    const request = new XMLHttpRequest();
+    request.open('POST', '/python/intercept-input/', false);
+    request.send(null);
+
+    return request.responseText;
+  }
+
   // I tried setting jsglobals here, to provide 'input' and 'print' to python,
   // without having to modify the global window object. However, it didn't work
   // because pyodide needs access to that object. Instead, I used
@@ -28,11 +39,13 @@ async function setupPyodide() {
 
   // Make print available to python
   pyodide.registerJsModule('jscustom', {
-    print
+    print,
+    input
   });
   pyodide.runPython(`
   import jscustom
   from jscustom import print
+  from jscustom import input
 `);
 
   return pyodide;

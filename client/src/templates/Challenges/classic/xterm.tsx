@@ -60,8 +60,7 @@ export const XtermTerminal = () => {
 
       const done = () => {
         disposable?.dispose();
-        // TODO: send user input to service worker.
-        console.log('userinput', userinput);
+        navigator.serviceWorker.controller?.postMessage(userinput);
       };
 
       const keyListener = (key: string) => {
