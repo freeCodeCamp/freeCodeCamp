@@ -7,14 +7,20 @@ dashedName: step-81
 
 # --description--
 
-Using an `if` statement to check if `nextSongExists` is `true`. If it is, call the `playNextSong()` function, this will play the next song in the playlist.
+Use an `if` statement to check if `nextSongExists` exists, then call the `playNextSong()` function in the `if` block. This will automatically play the next song when the current song ends.
 
 # --hints--
 
-Test 1
+You should create an `if` statment with the condition `nextSongExists`.
 
 ```js
+assert.match(code, /if\s*\(nextSongExists\)\s*\{\s*/)
+```
 
+You should call the `playNextSong` function inside your `if` statement.
+
+```js
+assert.match(code, /if\s*\(nextSongExists\)\s*\{\s*playNextSong\(\);?\s*\}/)
 ```
 
 # --seed--
@@ -641,7 +647,7 @@ const playNextSong = () => {
   }
 };
 
-const playPreviousSong = () =>{
+const playPreviousSong = () => {
    if (userData?.currentSong === null) return;
    else {
     const currentSongIndex = getCurrentSongIndex();
@@ -779,7 +785,7 @@ audio.addEventListener("ended", () => {
   const currentSongIndex = getCurrentSongIndex();
   const nextSongExists = userData?.songs[currentSongIndex + 1] !== undefined;
 --fcc-editable-region--
-  
+
 --fcc-editable-region--
 });
 

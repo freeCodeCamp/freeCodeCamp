@@ -13,10 +13,32 @@ Congratulations! Your music player is now complete.
 
 # --hints--
 
-Test 1
+You should call the `pauseSong` function.
 
 ```js
+const splitter = code.split('audio.addEventListener("ended", () => {')
+assert.match(splitter[1], /pauseSong\(\);?/)
+```
 
+You should call the `setPlayerDisplay` function.
+
+```js
+const splitter = code.split('audio.addEventListener("ended", () => {')
+assert.match(splitter[1], /setPlayerDisplay\(\);?/)
+```
+
+You should call the `highlightCurrentSong` function.
+
+```js
+const splitter = code.split('audio.addEventListener("ended", () => {')
+assert.match(splitter[1], /highlightCurrentSong\(\);?/)
+```
+
+You should call the `setPlayButtonAccessibleText` function.
+
+```js
+const splitter = code.split('audio.addEventListener("ended", () => {')
+assert.match(splitter[1], /setPlayButtonAccessibleText\(\);?/)
 ```
 
 # --seed--
@@ -782,18 +804,18 @@ audio.addEventListener("ended", () => {
   const nextSongExists = userData?.songs[currentSongIndex + 1] !== undefined;
 
     if (nextSongExists) {
-    playNextSong();
-     } else {
-    userData = {
-      songs: userData?.songs,
-      currentSong: null,
-      songCurrentTime: 0,
-    };
+      playNextSong();
+    } else {
+      userData = {
+        songs: userData?.songs,
+        currentSong: null,
+        songCurrentTime: 0,
+      };
 
 --fcc-editable-region--
-  
+
 --fcc-editable-region--
-     }
+   }
 });
 
 renderSongs(userData?.songs);
@@ -1561,19 +1583,19 @@ audio.addEventListener("ended", () => {
   const nextSongExists = userData?.songs[currentSongIndex + 1] !== undefined;
 
     if (nextSongExists) {
-    playNextSong();
-     } else {
-    userData = {
-      songs: userData?.songs,
-      currentSong: null,
-      songCurrentTime: 0,
-    };
+      playNextSong();
+    } else {
+      userData = {
+        songs: userData?.songs,
+        currentSong: null,
+        songCurrentTime: 0,
+      };
 
-    pauseSong(); 
-    setPlayerDisplay(); 
-    highlightCurrentSong(); 
-    setPlayButtonAccessibleText();
-     }
+      pauseSong(); 
+      setPlayerDisplay(); 
+      highlightCurrentSong(); 
+      setPlayButtonAccessibleText();
+    }
 });
 
 renderSongs(userData?.songs);
