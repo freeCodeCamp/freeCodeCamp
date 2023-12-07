@@ -94,28 +94,30 @@ function Challenges({
 
   return isGridMap ? (
     <>
-      <div className='topics-list'>
-        <button onClick={() => setDropDownOpen(!dropDownOpen)}>
-          <span className='topics-name'>Topics</span>
-          <FontAwesomeIcon icon={faCaretDown} />
-        </button>
+      {tags.length !== 0 ? (
+        <div className='topics-list'>
+          <button onClick={() => setDropDownOpen(!dropDownOpen)}>
+            <span className='topics-name'>Topics</span>
+            <FontAwesomeIcon icon={faCaretDown} />
+          </button>
 
-        {dropDownOpen ? (
-          <div className='topic-selections'>
-            {tags.map(tag => (
-              <div key={tag.id} className='topics-button'>
-                <button
-                  className={tag.active ? '' : 'topics-button-unselected'}
-                  onClick={() => setTagStatus(tag.id, !tag.active)}
-                >
-                  <span className='topics-name'>{tag.name}</span>
-                  <FontAwesomeIcon icon={tag.active ? faCheck : faXmark} />
-                </button>
-              </div>
-            ))}
-          </div>
-        ) : null}
-      </div>
+          {dropDownOpen ? (
+            <div className='topic-selections'>
+              {tags.map(tag => (
+                <div key={tag.id} className='topics-button'>
+                  <button
+                    className={tag.active ? '' : 'topics-button-unselected'}
+                    onClick={() => setTagStatus(tag.id, !tag.active)}
+                  >
+                    <span className='topics-name'>{tag.name}</span>
+                    <FontAwesomeIcon icon={tag.active ? faCheck : faXmark} />
+                  </button>
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </div>
+      ) : null}
 
       {firstIncompleteChallenge && (
         <div className='challenge-jump-link'>

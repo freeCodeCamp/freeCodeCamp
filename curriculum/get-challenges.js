@@ -327,6 +327,8 @@ ${getFullPath('english', filePath)}
 
     if (challenge.tags) {
       challenge.tags = challenge.tags.split(',');
+    } else {
+      challenge.tags = [];
     }
   }
 
