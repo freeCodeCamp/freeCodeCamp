@@ -1,8 +1,8 @@
 ---
 id: 6571c34868e4b3b17d3957fb
-title: Introduction to Flexbox Question G
+title: Introduction to Flexbox Question J
 challengeType: 15
-dashedName: introduction-flexbox-question-g
+dashedName: introduction-flexbox-question-j
 ---
 # --description--
 
@@ -18,19 +18,19 @@ Which properties are considered container elements?
 
 ## --answers--
 
-`flex-grow`, `flex-shrink`, `flex-basis`
+`flex-grow`, `flex-shrink` and `flex-basis`
 
 ---
 
-`align-items`, `justify-content`, `flex-direction`
+`align-items`, `justify-content` and `flex-direction`
 
 ---
 
-`justify-content`, `align-content`, `align-self`
+`justify-content`, `align-content` and `align-self`
 
 ---
 
-`align-content`, `order`, `flex-direction`
+`align-content`, `order` and `flex-direction`
 
 ## --video-solution--
 
