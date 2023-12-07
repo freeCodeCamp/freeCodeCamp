@@ -1,18 +1,18 @@
-addEventListener('install', function() {
-  skipWaiting();
+self.addEventListener('install', function() {
+  self.skipWaiting();
 });
 
-addEventListener('activate', function() {
-  clients.claim();
+self.addEventListener('activate', function() {
+  self.clients.claim();
 })
 
 let resolver;
 
-onmessage = function(event) {
+self.onmessage = function(event) {
   resolver(event.data);
 }
 
-addEventListener('fetch', (event) => {
+self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   if (url.pathname === '/python/intercept-input/') {
     const response = new Promise((resolve) => {
