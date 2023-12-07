@@ -16,19 +16,19 @@ Which of the following statements accurately describes the uses of `div` and `sp
 
 ## --answers--
 
-The span element's content will shift upward by 15 pixels.
+The `span` element's content will shift upward by 15 pixels.
 
 ---
 
-The span element's width will increase by 15 pixels.
+The `span` element's width will increase by 15 pixels.
 
 ---
 
-The span element will gain additional space below its content.
+The `span` element will gain additional space below its content.
 
 ---
 
-Padding has no effect on the layout of an inline-block span element.
+Padding has no effect on the layout of an `inline-block` `span` element.
 
 ## --video-solution--
 
