@@ -4,7 +4,7 @@ import GreenPass from '../../../assets/icons/green-pass';
 
 import './challenge-heading.css';
 
-interface ChallengeTitleProps {
+interface ChallengeHeadingProps {
   heading: string;
   isI18nKey?: boolean;
   isCompleted?: boolean;
@@ -14,7 +14,7 @@ function ChallengeHeading({
   heading,
   isI18nKey = true,
   isCompleted = false
-}: ChallengeTitleProps): JSX.Element {
+}: ChallengeHeadingProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
