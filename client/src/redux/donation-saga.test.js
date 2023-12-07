@@ -135,7 +135,7 @@ describe('donation-saga', () => {
 
   it('handles successful card update', () => {
     updateStripeCard.mockResolvedValue({
-      data: { session_id: 'expected data' }
+      data: { sessionId: 'expected data' }
     });
 
     return expectSaga(updateCardSaga)

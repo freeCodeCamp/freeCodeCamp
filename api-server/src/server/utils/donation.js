@@ -349,7 +349,5 @@ export async function handleStripeCardUpdateSession(req, app, stripe) {
     success_url: `${process.env.HOME_LOCATION}/update-stripe-card?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${process.env.HOME_LOCATION}/update-stripe-card`
   });
-
-  log(session);
   return { sessionId: session.id };
 }

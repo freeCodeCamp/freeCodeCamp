@@ -184,10 +184,10 @@ describe('donation', () => {
     it('creates a session successfully', async () => {
       const result = await handleStripeCardUpdateSession(req, app, stripe);
       expect(app.models.Donation.findOne).toHaveBeenCalledWith({
-        where: { userId: mockUserId }
+        where: { userId: mockUserId, provider: 'stripe' }
       });
       expect(stripe.checkout.sessions.create).toHaveBeenCalled();
-      expect(result).toEqual({ session_id: 'session_123' });
+      expect(result).toEqual({ sessionId: 'session_123' });
     });
 
     it('throws an error when donation not found', async () => {
@@ -197,7 +197,7 @@ describe('donation', () => {
 
       await expect(
         handleStripeCardUpdateSession(req, app, stripe)
-      ).rejects.toThrow('Error');
+      ).rejects.toThrow('Stripe donation record not found');
     });
 
     it('handles stripe session creation failure', async () => {
@@ -207,7 +207,7 @@ describe('donation', () => {
 
       await expect(
         handleStripeCardUpdateSession(req, app, stripe)
-      ).rejects.toThrow('Error');
+      ).rejects.toThrow('Stripe error');
     });
   });
 });
