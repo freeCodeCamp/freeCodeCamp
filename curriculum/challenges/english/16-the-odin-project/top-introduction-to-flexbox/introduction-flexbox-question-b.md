@@ -1,8 +1,8 @@
 ---
-id: 64a5529c02815a7d323aab88
+id: 6571b2fecc1de61d7b4dd380
 title: Introduction to Flexbox Question B
 challengeType: 15
-dashedName: introduction-flex-box-question-b
+dashedName: introduction-flexbox-question-b
 ---
 # --description--
 

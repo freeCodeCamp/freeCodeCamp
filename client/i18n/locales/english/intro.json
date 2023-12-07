@@ -1037,6 +1037,10 @@
       "top-the-box-model": {
         "title": "Learn the Box Model",
         "intro": ["A description is to be determined"]
+      },
+      "top-introduction-to-flexbox": {
+        "title": "Introduction to Flexbox",
+        "intro": ["A description is to be determined"]
       }
     }
   },
