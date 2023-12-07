@@ -31,6 +31,11 @@ const getUniqueTags = (challenges: ChallengeWithCompletedNode[]) => {
   return uniqueTags;
 };
 
+const challengeTitleToStepNumber = (challengeTitle: string) => {
+  const [_, stepNum] = challengeTitle.split(' ');
+  return Number(stepNum);
+};
+
 interface Challenges {
   challengesWithCompleted: ChallengeWithCompletedNode[];
   isProjectBlock: boolean;
@@ -145,7 +150,7 @@ function Challenges({
                   }`}
                 >
                   <span className='sr-only'>{t('aria.step')}</span>
-                  <span>{challenge.title}</span>
+                  <span>{challengeTitleToStepNumber(challenge.title)}</span>
                   <span className='sr-only'>
                     {challenge.isCompleted
                       ? t('icons.passed')
