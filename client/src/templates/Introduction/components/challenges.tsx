@@ -62,23 +62,25 @@ function Challenges({
 
   const [tags, setTags] = useState(getUniqueTags(challengesWithCompleted));
   const [dropDownOpen, setDropDownOpen] = useState(false);
-  const [steps, setSteps] = useState(challengesWithCompleted);
+  const [challenges, setChallenges] = useState(challengesWithCompleted);
 
   const isGridMap = isNewRespCert(superBlock) || isNewJsCert(superBlock);
 
-  const firstIncompleteChallenge = steps.find(
+  const firstIncompleteChallenge = challenges.find(
     challenge => !challenge.isCompleted
   );
 
-  const isChallengeStarted = !!steps.find(challenge => challenge.isCompleted);
+  const isChallengeStarted = !!challenges.find(
+    challenge => challenge.isCompleted
+  );
 
   useEffect(() => {
     const selectedTags = tags.filter(tag => tag.active);
-    const filteredSteps = challengesWithCompleted.filter(challenge => {
+    const filteredChallenges = challengesWithCompleted.filter(challenge => {
       const challengeTags = challenge.tags;
       return selectedTags.every(tag => challengeTags.includes(tag.name));
     });
-    setSteps(filteredSteps);
+    setChallenges(filteredChallenges);
   }, [challengesWithCompleted, tags]);
 
   function setTagStatus(id: number, status: boolean) {
@@ -134,7 +136,7 @@ function Challenges({
         }
       >
         <ul className={`map-challenges-ul map-challenges-grid `}>
-          {steps.map(challenge => (
+          {challenges.map(challenge => (
             <li
               className={`map-challenge-title map-challenge-title-grid ${
                 isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
@@ -172,7 +174,7 @@ function Challenges({
     </>
   ) : (
     <ul className={`map-challenges-ul`}>
-      {steps.map(challenge => (
+      {challengesWithCompleted.map(challenge => (
         <li
           className={`map-challenge-title ${
             isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
