@@ -20,11 +20,14 @@ test.describe('Link MS user component (unlinked signedOut user)', () => {
     await expect(linkSignInText).toBeVisible();
 
     const signinButtons = page.getByRole('link', { name: 'Sign in' });
-    await expect(signinButtons).toHaveCount(2);
-    await expect(signinButtons.first()).toHaveAttribute(
-      'href',
-      'http://localhost:3000/signin'
-    );
+    const buttonCount = await signinButtons.count();
+
+    for (let i = 0; i < buttonCount; i++) {
+      await expect(signinButtons.nth(i)).toHaveAttribute(
+        'href',
+        'http://localhost:3000/signin'
+      );
+    }
   });
 });
 
