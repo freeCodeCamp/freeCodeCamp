@@ -46,4 +46,14 @@ test.describe('The update-email page', () => {
     await expect(signOutButton).toContainText(translations.buttons['sign-out']);
     await expect(signOutButton).toHaveAttribute('href', '/signout');
   });
+
+  test('input box should function correctly', async () => {
+    const emailInput = page.getByTestId('update-email-input');
+    const submitButton = page.getByTestId('update-email-submit-button');
+    await expect(submitButton).toBeDisabled();
+    await emailInput.fill('123');
+    await expect(submitButton).toBeDisabled();
+    await emailInput.fill('123@gmail.com');
+    await expect(submitButton).toBeEnabled();
+  });
 });
