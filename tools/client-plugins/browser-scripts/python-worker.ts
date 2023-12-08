@@ -26,7 +26,7 @@ async function setupPyodide() {
     indexURL: `https://cdn.jsdelivr.net/pyodide/v${pkg.version}/full/`
   });
 
-  // We freeze this to prevent learners from getting the tester into a
+  // We freeze this to prevent learners from getting the worker into a
   // weird state. NOTE: this has to come after pyodide is loaded, because
   // pyodide modifies self while loading.
   Object.freeze(self);
@@ -77,5 +77,3 @@ ctx.onmessage = async (e: PythonRunEvent) => {
   // use pyodide.runPythonAsync if we want top-level await
   pyodide.runPython(code);
 };
-
-ctx.postMessage({ type: 'contentLoaded' });
