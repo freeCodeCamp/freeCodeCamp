@@ -2,14 +2,22 @@ import pythonWorkerData from '../../../../config/browser-scripts/python-worker.j
 
 const pythonWorkerSrc = `/js/${pythonWorkerData.filename}.js`;
 
-let pythonWorker: Worker | null = null;
+let worker: Worker | null = null;
+let testWorker: Worker | null = null;
 let listener: ((event: MessageEvent) => void) | null = null;
 
 export function getPythonWorker(): Worker {
-  if (!pythonWorker) {
-    pythonWorker = new Worker(pythonWorkerSrc);
+  if (!worker) {
+    worker = new Worker(pythonWorkerSrc);
   }
-  return pythonWorker;
+  return worker;
+}
+
+export function getPythonTestWorker(): Worker {
+  if (!testWorker) {
+    testWorker = new Worker(pythonWorkerSrc);
+  }
+  return testWorker;
 }
 
 type PythonWorkerEvent = {
@@ -42,7 +50,7 @@ export function registerTerminal(handlers: {
  * Terminates the existing python worker and creates a new one.
  */
 export function resetPythonWorker(): void {
-  pythonWorker?.terminate();
-  pythonWorker = new Worker(pythonWorkerSrc);
-  if (listener) pythonWorker.addEventListener('message', listener);
+  worker?.terminate();
+  worker = new Worker(pythonWorkerSrc);
+  if (listener) worker.addEventListener('message', listener);
 }
