@@ -565,7 +565,7 @@ ToDo: find out why, and remove the need for it */
   margin-bottom: 5px;
 }
 
-.topics-button-unselected {
+.unselected {
   opacity: 0.4;
 }
 

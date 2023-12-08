@@ -66,11 +66,11 @@ function Challenges({
 
   const isGridMap = isNewRespCert(superBlock) || isNewJsCert(superBlock);
 
-  const firstIncompleteChallenge = challengesWithCompleted.find(
+  const firstIncompleteChallenge = challenges.find(
     challenge => !challenge.isCompleted
   );
 
-  const isChallengeStarted = !!challengesWithCompleted.find(
+  const isChallengeStarted = !!challenges.find(
     challenge => challenge.isCompleted
   );
 
@@ -98,8 +98,8 @@ function Challenges({
 
   return isGridMap ? (
     <>
-      {firstIncompleteChallenge && (
-        <div className='challenge-jump-link'>
+      <div className='challenge-jump-link'>
+        {firstIncompleteChallenge ? (
           <Link
             className='btn btn-primary'
             to={firstIncompleteChallenge.fields.slug}
@@ -109,8 +109,14 @@ function Challenges({
               : t('buttons.resume-project')}{' '}
             {blockTitle && <span className='sr-only'>{blockTitle}</span>}
           </Link>
-        </div>
-      )}
+        ) : (
+          <button className='btn btn-primary unselected'>
+            {!isChallengeStarted
+              ? t('buttons.start-project')
+              : t('buttons.resume-project')}{' '}
+          </button>
+        )}
+      </div>
 
       {tags.length !== 0 ? (
         <div className='topics-list'>
@@ -122,9 +128,7 @@ function Challenges({
             &nbsp;
             <button
               className={
-                tags.filter(tag => tag.active).length > 0
-                  ? ''
-                  : 'topics-button-unselected'
+                tags.filter(tag => tag.active).length > 0 ? '' : 'unselected'
               }
               onClick={() => resetTagStatuses()}
             >
@@ -135,7 +139,7 @@ function Challenges({
                 {tags.map(tag => (
                   <div key={tag.id} className='topics-button'>
                     <button
-                      className={tag.active ? '' : 'topics-button-unselected'}
+                      className={tag.active ? '' : 'unselected'}
                       onClick={() => setTagStatus(tag.id, !tag.active)}
                     >
                       <span className='topics-name'>{tag.name}</span>
@@ -229,6 +233,7 @@ function Challenges({
   );
 }
 
+console.log('askldfhaksljdhf');
 Challenges.displayName = 'Challenges';
 
 export default connect(null, mapDispatchToProps)(withTranslation()(Challenges));
