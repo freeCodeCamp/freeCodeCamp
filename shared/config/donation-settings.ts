@@ -51,10 +51,10 @@ export const paypalConfigTypes = {
   live: {
     month: {
       500: { planId: 'P-6B636789V3105190KMTJFH7A' },
-      1000: { planId: 'P-61K21421WY874920PL6E36YI' },
-      2000: { planId: 'P-31999436LF709112VL6E374A' },
+      1000: { planId: 'P-53P76823N8780520DMVTWF3I' },
+      2000: { planId: 'P-8HY47434FB9663500MVTWFOA' },
       3000: { planId: 'P-1KY930839N8045117L6E4BKY' },
-      4000: { planId: 'P-0JW4843250567551AL6E4CAI' },
+      4000: { planId: 'P-0MH28916302828423MVTWEBI' },
       5000: { planId: 'P-0WR49877YD949401BL6E4CTA' }
     }
   },

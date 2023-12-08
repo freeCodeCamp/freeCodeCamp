@@ -8,7 +8,7 @@ dashedName: dialogue-introducing
 
 # --description--
 
-What the video above to understand the context of the upcoming lessons.
+Watch the video above to understand the context of the upcoming lessons.
 
 # --assignment--
 

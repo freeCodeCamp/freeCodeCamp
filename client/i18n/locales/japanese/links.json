@@ -21,7 +21,8 @@
   "nav": {
     "contribute": "https://contribute.freecodecamp.org/#/i18n/japanese/index",
     "forum": "https://forum.freecodecamp.org/c/japanese/552",
-    "news": "https://www.freecodecamp.org/japanese/news/"
+    "news": "https://www.freecodecamp.org/japanese/news/",
+    "podcast": "https://freecodecamp.libsyn.com/"
   },
   "help": {
     "HTML-CSS": "Japanese/HTML-CSS",
