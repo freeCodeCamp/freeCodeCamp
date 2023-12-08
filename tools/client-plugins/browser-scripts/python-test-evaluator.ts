@@ -2,6 +2,8 @@
 // and 'import' defaults to .mjs
 import { loadPyodide, type PyodideInterface } from 'pyodide/pyodide.js';
 import pkg from 'pyodide/package.json';
+import * as helpers from '@freecodecamp/curriculum-helpers';
+import chai from 'chai';
 
 const ctx: Worker & typeof globalThis = self as unknown as Worker &
   typeof globalThis;
@@ -24,6 +26,11 @@ interface PythonRunEvent extends MessageEvent {
     };
   };
 }
+
+type EvaluatedTeststring = {
+  input: string[];
+  test: () => Promise<unknown>;
+};
 
 async function setupPyodide() {
   if (pyodide) return pyodide;
@@ -80,12 +87,94 @@ void setupPyodide();
 
 ctx.onmessage = async (e: PythonRunEvent) => {
   console.log('python worker received message', e.data);
-  const code = (e.data.code.contents || '').slice();
-
   const pyodide = await setupPyodide();
-  const result = (await pyodide.runPythonAsync(code)) as unknown;
-  // ctx.postMessage(result);
-  console.log('result', result);
+  // TODO: Use removeComments when we have it
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+  const code = (e.data.code.contents || '').slice();
+  const editableContents = (e.data.code.editableContents || '').slice();
+  const testString = e.data.testString;
+
+  const assert = chai.assert;
+  const __helpers = helpers;
+  /* eslint-enable @typescript-eslint/no-unused-vars */
+  // uncomment the following line to inspect
+  // the frame-runner as it runs tests
+  // make sure the dev tools console is open
+  // debugger;
+  try {
+    // eval test string to get the dummy input and actual test
+    const evaluatedTestString = await new Promise<unknown>(
+      (resolve, reject) => {
+        try {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          const test: { input: string[]; test: () => Promise<unknown> } =
+            eval(testString);
+          resolve(test);
+        } catch (err) {
+          reject(err);
+        }
+      }
+    );
+
+    // If the test string does not evaluate to an object, then we assume that
+    // it's a standard JS test and any assertions have already passed.
+    if (typeof evaluatedTestString !== 'object') {
+      ctx.postMessage({ pass: true });
+      return;
+    }
+
+    if (!evaluatedTestString || !('test' in evaluatedTestString)) {
+      throw new Error(
+        'Test string did not evaluate to an object with the test property'
+      );
+    }
+
+    const { input, test } = evaluatedTestString as EvaluatedTeststring;
+
+    // TODO: throw helpful error if we run out of input values, since it's likely
+    // that the user added too many input statements.
+    const inputIterator = input ? input.values() : null;
+
+    // Make input available to python (print is not used yet)
+    pyodide.registerJsModule('jscustom', {
+      input: () => {
+        return Promise.resolve(inputIterator ? inputIterator.next().value : '');
+      }
+      // print: () => {}
+    });
+    pyodide.runPython(`
+  import jscustom
+  from jscustom import input
+  `);
+
+    // We have to declare these variables in the scope of 'eval' (i.e. the
+    // promise that is stored in evaluatedTestString), so that they exist when
+    // the `testString` is evaluated. Otherwise, they will be undefined when
+    // `test` is called and the tests will not be able to use __pyodide or
+    // __userGlobals.
+    const __pyodide = pyodide;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    const __userGlobals = __pyodide.globals;
+    await pyodide.runPythonAsync(code);
+    await test();
+
+    ctx.postMessage({ pass: true });
+  } catch (err) {
+    if (!(err instanceof chai.AssertionError)) {
+      console.error(err);
+    }
+    // to provide useful debugging information when debugging the tests, we
+    // have to extract the message, stack and, if they exist, expected and
+    // actual before returning
+    ctx.postMessage({
+      err: {
+        message: (err as Error).message,
+        stack: (err as Error).stack,
+        expected: (err as { expected?: string }).expected,
+        actual: (err as { actual?: string }).actual
+      }
+    });
+  }
 };
 
 ctx.postMessage({ type: 'contentLoaded' });
