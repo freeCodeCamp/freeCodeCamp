@@ -282,7 +282,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
-    renderIndentGuides: false,
+    renderIndentGuides: props.challengeType === challengeTypes.python,
     minimap: {
       enabled: false
     },
