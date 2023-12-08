@@ -312,17 +312,14 @@ function* updatePython(challengeData) {
   // functions to handle transforming code, embedding it and building the
   // final html. Then we can just use the transformation function here.
   const buildData = yield buildChallengeData(challengeData);
-  const code = buildData.transformedPython;
   resetPythonWorker();
   const worker = getPythonWorker();
+  const code = {
+    contents: buildData.sources.index,
+    editableContents: buildData.sources.editableContents
+  };
   worker.postMessage({ code });
   // TODO: proxy errors to the console
-  // try {
-  //   yield call(runPythonInFrame, document, code, mainPreviewId);
-  // } catch (err) {
-  //   console.log('Error evaluating python code', code);
-  //   console.log('Message:', err.message);
-  // }
 }
 
 function* previewProjectSolutionSaga({ payload }) {

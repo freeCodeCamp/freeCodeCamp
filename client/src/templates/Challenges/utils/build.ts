@@ -3,13 +3,11 @@ import frameRunnerData from '../../../../../client/config/browser-scripts/frame-
 import jsTestEvaluatorData from '../../../../../client/config/browser-scripts/test-evaluator.json';
 import pyTestEvaluatorData from '../../../../../client/config/browser-scripts/python-worker.json';
 
-import pythonRunnerData from '../../../../../client/config/browser-scripts/python-runner.json';
-
 import {
   ChallengeFile as PropTypesChallengeFile,
   ChallengeMeta
 } from '../../../redux/prop-types';
-import { concatHtml, createPythonTerminal } from '../rechallenge/builders';
+import { concatHtml } from '../rechallenge/builders';
 import {
   getTransformers,
   embedFilesInHtml,
@@ -54,8 +52,6 @@ const { filename: jsTestEvaluator } = jsTestEvaluatorData;
 const { filename: pyTestEvaluator } = pyTestEvaluatorData;
 
 const frameRunnerSrc = `/js/${frameRunnerData.filename}.js`;
-
-const pythonRunnerSrc = `/js/${pythonRunnerData.filename}.js`;
 
 type ApplyFunctionProps = (file: ChallengeFile) => Promise<ChallengeFile>;
 
@@ -231,7 +227,7 @@ async function getDOMTestRunner(
 
 type BuildResult = {
   challengeType: number;
-  build: string;
+  build?: string;
   sources: Source | undefined;
 };
 
@@ -310,10 +306,6 @@ function buildBackendChallenge({ url }: BuildChallengeData) {
   };
 }
 
-function getTransformedPython(challengeFiles: ChallengeFiles) {
-  return challengeFiles[0].contents;
-}
-
 export function buildPythonChallenge({
   challengeFiles
 }: BuildChallengeData): Promise<BuildResult> | undefined {
@@ -327,12 +319,7 @@ export function buildPythonChallenge({
         // Unlike the DOM challenges, there's no need to embed the files in HTML
         .then(challengeFiles => ({
           challengeType: challengeTypes.python,
-          // Both the terminal and pyodide are loaded into the browser, so we
-          // still need to build the HTML.
-          // TODO: remove whatever is now redundant. Probably build.
-          build: createPythonTerminal(pythonRunnerSrc),
-          sources: buildSourceMap(challengeFiles),
-          transformedPython: getTransformedPython(challengeFiles)
+          sources: buildSourceMap(challengeFiles)
         }))
     );
   }
