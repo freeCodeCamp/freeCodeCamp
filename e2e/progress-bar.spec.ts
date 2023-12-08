@@ -1,4 +1,5 @@
-import { test, expect, type Page } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 
 let page: Page;
 
@@ -10,9 +11,11 @@ test.beforeAll(async ({ browser }) => {
 });
 
 test.describe('Progress bar component', () => {
-  test('Should appear with the correct content after the user has submitted their code', async () => {
+  test('Should appear with the correct content after the user has submitted their code', async ({
+    isMobile
+  }) => {
     const monacoEditor = page.getByLabel('Editor content');
-    await monacoEditor.click();
+    await monacoEditor.focus();
     await page.keyboard.press('Control+A');
     //Meta + A works in webkit
     await page.keyboard.press('Meta+A');
@@ -21,9 +24,16 @@ test.describe('Progress bar component', () => {
     await page.keyboard.insertText(
       '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2></body></html>'
     );
-    await page
-      .getByRole('button', { name: 'Check Your Code (Ctrl + Enter)' })
-      .click();
+
+    if (isMobile) {
+      await page
+        .getByRole('button', { name: translations.buttons['check-code-2'] })
+        .click();
+    } else {
+      await page
+        .getByRole('button', { name: translations.buttons['check-code'] })
+        .click();
+    }
 
     const progressBarContainer = page.getByTestId('progress-bar-container');
     await expect(progressBarContainer).toContainText(
