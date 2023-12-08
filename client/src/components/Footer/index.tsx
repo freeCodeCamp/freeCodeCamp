@@ -1,8 +1,8 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import Link from '../helpers/link';
-import appleMobileAppLogo from '../../assets/images/footer-ads/Apple_Store-Badge-Logo.svg';
-import androidMobileAppLogo from '../../assets/images/footer-ads/Google_Play-Badge-Logo.svg';
+import appleMobileAppLogo from '../../assets/images/footer-ads/apple-store-badge.svg';
+import androidMobileAppLogo from '../../assets/images/footer-ads/google-play-badge.svg';
 import './footer.css';
 
 function Footer(): JSX.Element {
@@ -184,16 +184,16 @@ function Footer(): JSX.Element {
               </Link>
             </li>
           </ul>
-          <div className='mobile-apps'>
-            <h2 id='mobile-apps' className='col-header'>
-              {t('Mobile Apps')}
+          <div className='mobile-app'>
+            <h2 id='mobile-app' className='col-header'>
+              {t('footer.mobile-app')}
             </h2>
-            <div className='mobile-apps-container'>
+            <div className='mobile-app-container'>
               <a href='https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200'>
-                <img src={appleMobileAppLogo} alt='apple store badge' />
+                <img src={appleMobileAppLogo} alt='Apple Store' />
               </a>
               <a href='https://play.google.com/store/apps/details?id=org.freecodecamp'>
-                <img src={androidMobileAppLogo} alt='google play badge' />
+                <img src={androidMobileAppLogo} alt='Google Play' />
               </a>
             </div>
           </div>
