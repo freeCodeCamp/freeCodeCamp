@@ -1,6 +1,8 @@
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import frameRunnerData from '../../../../../client/config/browser-scripts/frame-runner.json';
-import testEvaluatorData from '../../../../../client/config/browser-scripts/test-evaluator.json';
+import jsTestEvaluatorData from '../../../../../client/config/browser-scripts/test-evaluator.json';
+import pyTestEvaluatorData from '../../../../../client/config/browser-scripts/python-worker.json';
+
 import pythonRunnerData from '../../../../../client/config/browser-scripts/python-runner.json';
 
 import {
@@ -48,7 +50,8 @@ interface BuildOptions {
   usesTestRunner?: boolean;
 }
 
-const { filename: testEvaluator } = testEvaluatorData;
+const { filename: jsTestEvaluator } = jsTestEvaluatorData;
+const { filename: pyTestEvaluator } = pyTestEvaluatorData;
 
 const frameRunnerSrc = `/js/${frameRunnerData.filename}.js`;
 
@@ -143,6 +146,7 @@ const testRunners = {
   [challengeTypes.html]: getDOMTestRunner,
   [challengeTypes.backend]: getDOMTestRunner,
   [challengeTypes.pythonProject]: getDOMTestRunner,
+  [challengeTypes.python]: getPyTestRunner,
   [challengeTypes.multifileCertProject]: getDOMTestRunner
 };
 // TODO: Figure out and (hopefully) simplify the return type.
@@ -164,11 +168,35 @@ function getJSTestRunner(
   { build, sources }: BuildChallengeData,
   { proxyLogger, removeComments }: TestRunnerConfig
 ) {
+  return getWorkerTestRunner(
+    { build, sources },
+    { proxyLogger, removeComments },
+    jsTestEvaluator
+  );
+}
+
+function getPyTestRunner(
+  { build, sources }: BuildChallengeData,
+  { proxyLogger, removeComments }: TestRunnerConfig
+) {
+  return getWorkerTestRunner(
+    { build, sources },
+    { proxyLogger, removeComments },
+    pyTestEvaluator
+  );
+}
+
+function getWorkerTestRunner(
+  { build, sources }: Pick<BuildChallengeData, 'build' | 'sources'>,
+  { proxyLogger, removeComments }: TestRunnerConfig,
+  testEvaluator: string
+) {
   const code = {
     contents: sources.index,
     editableContents: sources.editableContents
   };
 
+  // TODO: allow terminateWorker to be passed in as an option.
   const testWorker = createWorker(testEvaluator, { terminateWorker: true });
 
   type CreateWorker = ReturnType<typeof createWorker>;
@@ -298,11 +326,10 @@ export function buildPythonChallenge({
         .then(checkFilesErrors)
         // Unlike the DOM challenges, there's no need to embed the files in HTML
         .then(challengeFiles => ({
-          // TODO: Stop overwriting challengeType with 'html'. Figure out why it's
-          // necessary at the moment.
-          challengeType: challengeTypes.html,
+          challengeType: challengeTypes.python,
           // Both the terminal and pyodide are loaded into the browser, so we
           // still need to build the HTML.
+          // TODO: remove whatever is now redundant. Probably build.
           build: createPythonTerminal(pythonRunnerSrc),
           sources: buildSourceMap(challengeFiles),
           transformedPython: getTransformedPython(challengeFiles)
@@ -323,7 +350,8 @@ export function updatePreview(
 
   if (
     buildData.challengeType === challengeTypes.html ||
-    buildData.challengeType === challengeTypes.multifileCertProject
+    buildData.challengeType === challengeTypes.multifileCertProject ||
+    buildData.challengeType === challengeTypes.python
   ) {
     return new Promise<void>(resolve =>
       createMainPreviewFramer(

@@ -1,3 +1,5 @@
+// TODO: use worker-executor instead of this file?
+
 import pythonWorkerData from '../../../../config/browser-scripts/python-worker.json';
 
 const pythonWorkerSrc = `/js/${pythonWorkerData.filename}.js`;
@@ -22,7 +24,7 @@ export function getPythonTestWorker(): Worker {
 
 type PythonWorkerEvent = {
   data: {
-    type: 'print' | 'input';
+    type: 'print' | 'input' | 'contentLoaded';
     text: string;
   };
 };
@@ -41,6 +43,8 @@ export function registerTerminal(handlers: {
   if (listener) pythonWorker.removeEventListener('message', listener);
   listener = (event: PythonWorkerEvent) => {
     const { type, text } = event.data;
+    // Ignore contentLoaded messages for now.
+    if (type === 'contentLoaded') return;
     handlers[type](text);
   };
   pythonWorker.addEventListener('message', listener);

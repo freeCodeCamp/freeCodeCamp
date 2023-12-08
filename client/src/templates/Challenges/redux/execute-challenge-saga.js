@@ -270,10 +270,9 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
         yield call(updatePreview, buildData, finalDocument, proxyLogger);
 
         // Python challenges need to be created in two steps:
-        // 1) build the frame
-        // 2) evaluate the code in the frame. This is necessary to avoid
-        //    recreating the frame (which is slow since loadPyodide takes a long
-        //    time)on every change.
+        // 1) build the preview (xterm)
+        // 2) evaluate the code in the worker. We run the code in a worker so
+        // that it can block without blocking the main thread.
         if (challengeData.challengeType === challengeTypes.python) {
           yield updatePython(challengeData);
         }
