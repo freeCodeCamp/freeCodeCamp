@@ -427,7 +427,7 @@
         "title": "Learn Asynchronous Programming by Building an fCC Forum Leaderboard",
         "intro": [
           "Working with asynchronous programming is a core fundamental of JavaScript.  In this project, you will gain proficiency in asynchronous concepts by building a freeCodeCamp forum leaderboard.",
-          "This project will cover the Fetch API, promises, Async/Await, and the try..catch statement."
+          "This project will cover the Fetch API, promises, Async/Await, and the try...catch statement."
         ]
       }
     }
