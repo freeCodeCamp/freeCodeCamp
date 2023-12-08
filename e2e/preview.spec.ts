@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 test.beforeEach(async ({ page }) => {
@@ -29,7 +29,7 @@ test.describe('Challenge Preview Component', () => {
     page,
     isMobile
   }) => {
-    await page.getByLabel('Editor content').click();
+    await page.getByLabel('Editor content').focus();
     await page.keyboard.insertText('<h1>FreeCodeCamp</h1>');
     if (isMobile) {
       await page
