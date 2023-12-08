@@ -480,35 +480,6 @@ hr {
   color: var(--secondary-background);
 }
 
-:is(.challenge-instructions, .description-container) table {
-  display: inline-block;
-  overflow: auto;
-}
-
-:is(.challenge-instructions, .description-container) table thead {
-  display: table-header-group;
-  vertical-align: middle;
-  border-color: inherit;
-}
-
-:is(.challenge-instructions, .description-container) table th {
-  font-weight: 700;
-}
-
-:is(.challenge-instructions, .description-container) table th,
-:is(.challenge-instructions, .description-container) table td {
-  padding: 6px 13px;
-  border: 1px solid var(--secondary-color);
-  text-align: center;
-}
-
-:is(.challenge-instructions, .description-container)
-  table
-  tbody
-  tr:nth-of-type(odd) {
-  background-color: var(--tertiary-background);
-}
-
 .challenge-output span {
   font-size: 1rem;
 }
