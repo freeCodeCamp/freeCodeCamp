@@ -33,7 +33,10 @@ import {
   updatePreview,
   updateProjectPreview
 } from '../utils/build';
-import { getPythonWorker } from '../utils/python-worker-handler';
+import {
+  getPythonWorker,
+  resetPythonWorker
+} from '../utils/python-worker-handler';
 import { executeGA } from '../../../redux/actions';
 import { fireConfetti } from '../../../utils/fire-confetti';
 import { actionTypes } from './action-types';
@@ -311,6 +314,7 @@ function* updatePython(challengeData) {
   // final html. Then we can just use the transformation function here.
   const buildData = yield buildChallengeData(challengeData);
   const code = buildData.transformedPython;
+  resetPythonWorker();
   const worker = getPythonWorker();
   worker.postMessage({ code });
   // TODO: proxy errors to the console

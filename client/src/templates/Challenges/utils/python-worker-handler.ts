@@ -37,3 +37,12 @@ export function registerTerminal(handlers: {
   };
   pythonWorker.addEventListener('message', listener);
 }
+
+/**
+ * Terminates the existing python worker and creates a new one.
+ */
+export function resetPythonWorker(): void {
+  pythonWorker?.terminate();
+  pythonWorker = new Worker(pythonWorkerSrc);
+  if (listener) pythonWorker.addEventListener('message', listener);
+}
