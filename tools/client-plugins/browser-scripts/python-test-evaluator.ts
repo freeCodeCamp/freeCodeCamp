@@ -155,7 +155,7 @@ ctx.onmessage = async (e: PythonRunEvent) => {
     const __pyodide = pyodide;
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     const __userGlobals = __pyodide.globals;
-    await pyodide.runPythonAsync(code);
+    pyodide.runPython(code);
     await test();
 
     ctx.postMessage({ pass: true });

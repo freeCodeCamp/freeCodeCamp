@@ -72,12 +72,10 @@ async function setupPyodide() {
 void setupPyodide();
 
 ctx.onmessage = async (e: PythonRunEvent) => {
-  console.log('python worker received message', e.data);
   const code = (e.data.code.contents || '').slice();
   const pyodide = await setupPyodide();
-  const result = (await pyodide.runPythonAsync(code)) as unknown;
-  // ctx.postMessage(result);
-  console.log('result', result);
+  // use pyodide.runPythonAsync if we want top-level await
+  pyodide.runPython(code);
 };
 
 ctx.postMessage({ type: 'contentLoaded' });
