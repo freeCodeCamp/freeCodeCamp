@@ -189,7 +189,8 @@ function getWorkerTestRunner(
 ) {
   const code = {
     contents: sources.index,
-    editableContents: sources.editableContents
+    editableContents: sources.editableContents,
+    original: sources.original
   };
 
   // TODO: allow terminateWorker to be passed in as an option.

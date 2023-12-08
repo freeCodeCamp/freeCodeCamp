@@ -316,7 +316,8 @@ function* updatePython(challengeData) {
   const worker = getPythonWorker();
   const code = {
     contents: buildData.sources.index,
-    editableContents: buildData.sources.editableContents
+    editableContents: buildData.sources.editableContents,
+    original: buildData.sources.original
   };
   worker.postMessage({ code });
   // TODO: proxy errors to the console
