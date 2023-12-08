@@ -51,6 +51,8 @@ async function setupPyodide() {
   return pyodide;
 }
 
+void setupPyodide();
+
 self.onmessage = async (e: { data: { code: string } }) => {
   console.log('python worker received message', e.data);
   const pyodide = await setupPyodide();
