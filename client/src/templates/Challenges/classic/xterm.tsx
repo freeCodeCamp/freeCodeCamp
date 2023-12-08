@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import type { IDisposable, Terminal } from 'xterm';
 
-import { getPythonWorker } from '../utils/python-worker-handler';
+import { registerTerminal } from '../utils/python-worker-handler';
 
 import 'xterm/css/xterm.css';
 
@@ -48,13 +48,14 @@ export const XtermTerminal = () => {
       if (termRef.current) term.open(termRef.current);
       fitAddon.fit();
 
-      const writeLine = (text: string) => term?.writeln(`>>> ${text}`);
+      const print = (text: string) => term?.writeln(`>>> ${text}`);
 
       // TODO: prevent user from moving cursor outside the current input line and
       // handle insertion and deletion properly. While backspace and delete don't
       // seem to work, we can use "\x1b[0K" to clear from the cursor to the end.
       // Also, we should not add special characters to the userinput string.
-      const input = () => {
+      const input = (text: string) => {
+        print(text);
         let userinput = '';
         // Eslint is correct that this only gets assigned once, but we can't use
         // const because the declaration (before keyListener is defined) and
@@ -85,19 +86,7 @@ export const XtermTerminal = () => {
         disposable = term?.onData(keyListener); // Listen for key events and store the disposable
         if (disposable) disposables.push(disposable);
       };
-
-      const pythonWorker = getPythonWorker();
-      pythonWorker.onmessage = event => {
-        console.log('pythonWorker.onmessage', event);
-
-        const { type, text } = event.data as { type: string; text: string };
-        if (type === 'print') {
-          writeLine(text);
-        } else if (type === 'input') {
-          writeLine(text);
-          input();
-        }
-      };
+      registerTerminal({ print, input });
     }
 
     void createTerminal();
