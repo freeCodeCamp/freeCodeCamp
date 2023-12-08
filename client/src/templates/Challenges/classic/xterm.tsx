@@ -35,7 +35,6 @@ export const XtermTerminal = () => {
     let term: Terminal | null;
 
     async function createTerminal() {
-      // TODO: copy over resetTerminal from python-runner
       const disposables: IDisposable[] = [];
       const { Terminal } = await import('xterm');
       const { FitAddon } = await import('xterm-addon-fit');
@@ -86,7 +85,12 @@ export const XtermTerminal = () => {
         disposable = term?.onData(keyListener); // Listen for key events and store the disposable
         if (disposable) disposables.push(disposable);
       };
-      registerTerminal({ print, input });
+      const reset = () => {
+        term?.reset();
+        disposables.forEach(disposable => disposable.dispose());
+        disposables.length = 0;
+      };
+      registerTerminal({ print, input }, reset);
     }
 
     void createTerminal();
