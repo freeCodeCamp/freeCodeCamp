@@ -38,7 +38,7 @@ You should call the `setPlayButtonAccessibleText` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /setPlayButtonAccessibleText\(\);?/)
+assert.match(splitter[1], /highlightCurrentSong\(\);?\s*setPlayButtonAccessibleText\(\);?/)
 ```
 
 # --seed--
@@ -749,7 +749,7 @@ const renderSongs = (array) => {
     .map((song)=> {
       return `
       <li id="song-${song.id}" class="playlist-song">
-      <button class="playlist-song-info">
+      <button class="playlist-song-info" onclick="playSong(${song.id})">
           <span class="playlist-song-title">${song.title}</span>
           <span class="playlist-song-artist">${song.artist}</span>
           <span class="playlist-song-duration">${song.duration}</span>
