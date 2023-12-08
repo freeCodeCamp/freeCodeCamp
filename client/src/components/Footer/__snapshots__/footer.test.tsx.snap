@@ -316,16 +316,16 @@ exports[`<Footer /> matches snapshot 1`] = `
           </a>
         </li>
       </ul>
-      <div className="mobile-apps">
-          <h2 id='mobile-apps' className='col-header'>
-            {t('Mobile Apps')}
+      <div className="mobile-app">
+          <h2 id='mobile-app' className="col-header">
+            {t('footer.mobile-app')}
           </h2>
-          <div className="mobile-apps-container">
-            <a href="https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200">
-              <img src={} alt="apple store badge" />
+          <div className="mobile-app-container">
+            <a href='https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200'>
+              <img src={} alt='Apple Store' />
             </a>
-            <a href="https://play.google.com/store/apps/details?id=org.freecodecamp">
-              <img src={} alt="google play badge" />
+            <a href='https://play.google.com/store/apps/details?id=org.freecodecamp'>
+              <img src={} alt='Google Play' />
             </a>
           </div>
         </div>
