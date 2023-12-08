@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
+const apiLocation = process.env.API_LOCATION || 'http://localhost:3000';
+
 test.beforeEach(async ({ page }) => {
   await page.goto(
     '/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/trophy-write-your-first-code-using-c-sharp'
@@ -8,6 +10,8 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Link MS user component (unlinked signedOut user)', () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
+
   test('Component has proper main heading and relevant sections', async ({
     page
   }) => {
@@ -19,14 +23,11 @@ test.describe('Link MS user component (unlinked signedOut user)', () => {
     const linkSignInText = page.getByTestId('link-signin-text');
     await expect(linkSignInText).toBeVisible();
 
-    const signinButtons = page.getByRole('link', { name: 'Sign in' });
-    const buttonCount = await signinButtons.count();
+    const signinLinks = await page.getByRole('link', { name: 'Sign in' }).all();
+    expect(signinLinks).toHaveLength(2);
 
-    for (let i = 0; i < buttonCount; i++) {
-      await expect(signinButtons.nth(i)).toHaveAttribute(
-        'href',
-        'http://localhost:3000/signin'
-      );
+    for (const signinLink of signinLinks) {
+      await expect(signinLink).toHaveAttribute('href', `${apiLocation}/signin`);
     }
   });
 });
