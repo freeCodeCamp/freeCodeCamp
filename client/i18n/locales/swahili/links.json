@@ -21,7 +21,8 @@
   "nav": {
     "contribute": "https://contribute.freecodecamp.org/#/",
     "forum": "https://forum.freecodecamp.org/",
-    "news": "https://freecodecamp.org/news/"
+    "news": "https://freecodecamp.org/news/",
+    "podcast": "https://freecodecamp.libsyn.com/"
   },
   "help": {
     "HTML-CSS": "HTML-CSS",

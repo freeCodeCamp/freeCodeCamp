@@ -95,7 +95,7 @@
 @media (min-width: 1200px) {
   /*
   This style allows multi columns in the same row.
-  It will become a functionality once the Grid system is updated. 
+  It will become a functionality once the Grid system is updated.
   */
   .donate-page-wrapper > div > div {
     float: left;
@@ -298,14 +298,18 @@ li.disabled > a {
 }
 
 .edit-amount-confirmation {
-  width: 350px !important;
   margin: 0 auto;
-  display: flex !important;
+  max-width: 350px;
+  display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+  & > * {
+    flex: 0 0 max-content;
+  }
 }
 
-/* 
+/*
  * We currently cannot reuse the Button component from `ui-components`
  * and are using the native `<button>` with custom CSS.
  * This implementation is temporary until we can find a solution for this button use case.
@@ -528,7 +532,7 @@ a.patreon-button:hover {
   display: none;
 }
 
-/* 
+/*
  * We currently cannot reuse the Button component from `ui-components`
  * and are using the native `<button>` with custom CSS.
  * This implementation is temporary until we can find a solution for this button use case.
@@ -646,7 +650,7 @@ a.patreon-button:hover {
   margin-bottom: 2px;
 }
 
-/* 
+/*
  * We currently cannot reuse the Button component from `ui-components`
  * and are using the native `<button>` with custom CSS.
  * This implementation is temporary until we can find a solution for this button use case.
