@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faXmark,
   faCaretDown,
+  faCaretUp,
   faCheck
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -129,7 +130,7 @@ function Challenges({
           <span>
             <button onClick={() => setDropDownOpen(!dropDownOpen)}>
               <span className='topics-name'>Topics</span>
-              <FontAwesomeIcon icon={faCaretDown} />
+              <FontAwesomeIcon icon={dropDownOpen ? faCaretUp : faCaretDown} />
             </button>
             &nbsp;
             <button
