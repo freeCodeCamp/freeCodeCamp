@@ -1,6 +1,6 @@
-import { defineConfig, devices } from '@playwright/test';
-import { config as dotenvConfig } from 'dotenv';
 import path from 'path';
+import { config as dotenvConfig } from 'dotenv';
+import { defineConfig, devices } from '@playwright/test';
 
 /**
  * Read environment variables from file.
