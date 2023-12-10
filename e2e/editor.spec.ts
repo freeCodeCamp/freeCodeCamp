@@ -9,7 +9,7 @@ test.beforeEach(async ({ page }) => {
 test.describe('Editor Component', () => {
   test('Should be clicked and able to insert text', async ({ page }) => {
     const monacoEditor = page.getByLabel('Editor content');
-    await monacoEditor.focus();
+    await monacoEditor.click({ force: true });
     await page.keyboard.insertText('<h2>FreeCodeCamp</h2>');
     const text = page.getByText('<h2>FreeCodeCamp</h2>');
     await expect(text).toBeVisible();
