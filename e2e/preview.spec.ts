@@ -29,7 +29,7 @@ test.describe('Challenge Preview Component', () => {
     page,
     isMobile
   }) => {
-    await page.getByLabel('Editor content').focus();
+    await page.getByLabel('Editor content').click({ force: true });
     await page.keyboard.insertText('<h1>FreeCodeCamp</h1>');
     if (isMobile) {
       await page
