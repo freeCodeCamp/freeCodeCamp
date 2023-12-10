@@ -1,6 +1,6 @@
-import { test, expect, type Page } from '@playwright/test';
-import translations from '../client/i18n/locales/english/translations.json';
+import { expect, test, type Page } from '@playwright/test';
 import intro from '../client/i18n/locales/english/intro.json';
+import translations from '../client/i18n/locales/english/translations.json';
 
 const landingPageElements = {
   heading: 'landing-header',
@@ -79,14 +79,21 @@ test('The landing-top & testimonial sections should contain call-to-action, and 
   }
 });
 
-test("The landing-top should contain a descriptive text explaining the camper's image", async () => {
+test("The landing-top should contain a descriptive text explaining the camper's image", async ({
+  isMobile
+}) => {
   const campersImage = page.getByAltText(translations.landing['hero-img-alt']);
   const captionText = page.getByText(
     translations.landing['hero-img-description']
   );
 
-  await expect(campersImage).toBeVisible();
-  await expect(captionText).toBeVisible();
+  if (isMobile) {
+    await expect(campersImage).toBeHidden();
+    await expect(captionText).toBeHidden();
+  } else {
+    await expect(campersImage).toBeVisible();
+    await expect(captionText).toBeVisible();
+  }
 });
 
 test('The campers landing page figure is visible on desktop and hidden on mobile view', async ({

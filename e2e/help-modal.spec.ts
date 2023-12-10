@@ -88,4 +88,49 @@ test.describe('Help Modal component', () => {
       })
     ).not.toBeVisible();
   });
+
+  test('Close button closes the modal', async ({ page }) => {
+    await page
+      .getByRole('button', { name: translations.buttons['ask-for-help'] })
+      .click();
+
+    await page
+      .getByRole('button', { name: translations.buttons.close })
+      .click();
+
+    await expect(
+      page.getByRole('heading', {
+        name: translations.buttons['ask-for-help'],
+        exact: true
+      })
+    ).not.toBeVisible();
+  });
+
+  test('Read-Search-Ask link', async ({ page }) => {
+    await page
+      .getByRole('button', { name: translations.buttons['ask-for-help'] })
+      .click();
+    const link = page.getByRole('link', { name: 'Read-Search-Ask' });
+    await expect(link).toHaveAttribute(
+      'href',
+      'https://forum.freecodecamp.org/t/19514'
+    );
+    await expect(link).toHaveAttribute('target', '_blank');
+    await expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+  });
+
+  test('Already been answered link', async ({ page }) => {
+    await page
+      .getByRole('button', { name: translations.buttons['ask-for-help'] })
+      .click();
+    const link = page.getByRole('link', {
+      name: 'already been answered on the forum'
+    });
+    await expect(link).toHaveAttribute(
+      'href',
+      'https://forum.freecodecamp.org/search?q=Write%20Your%20First%20C%23%20Code'
+    );
+    await expect(link).toHaveAttribute('target', '_blank');
+    await expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+  });
 });
