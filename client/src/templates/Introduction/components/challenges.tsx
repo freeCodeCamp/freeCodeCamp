@@ -76,9 +76,15 @@ function Challenges({
 
   useEffect(() => {
     const selectedTags = tags.filter(tag => tag.active);
+
+    if (selectedTags.length === 0) {
+      setChallenges(challengesWithCompleted);
+      return;
+    }
+
     const filteredChallenges = challengesWithCompleted.filter(challenge => {
       const challengeTags = challenge.tags;
-      return selectedTags.every(tag => challengeTags.includes(tag.name));
+      return selectedTags.some(tag => challengeTags.includes(tag.name));
     });
     setChallenges(filteredChallenges);
   }, [challengesWithCompleted, tags]);
