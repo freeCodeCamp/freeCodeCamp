@@ -15,7 +15,7 @@ test.describe('Progress bar component', () => {
     isMobile
   }) => {
     const monacoEditor = page.getByLabel('Editor content');
-    await monacoEditor.focus();
+    await monacoEditor.click({ force: true });
     await page.keyboard.press('Control+A');
     //Meta + A works in webkit
     await page.keyboard.press('Meta+A');
