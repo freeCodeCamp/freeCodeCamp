@@ -233,7 +233,6 @@ function Challenges({
   );
 }
 
-console.log('askldfhaksljdhf');
 Challenges.displayName = 'Challenges';
 
 export default connect(null, mapDispatchToProps)(withTranslation()(Challenges));
