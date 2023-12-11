@@ -1,6 +1,7 @@
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Button } from '@freecodecamp/ui';
 
 import { Spacer } from '../helpers';
 
@@ -33,24 +34,15 @@ function ResetModal(props: ResetModalProps): JSX.Element {
         <p>{t('settings.danger.reset-p1')}</p>
         <p>{t('settings.danger.reset-p2')}</p>
         <hr />
-        <Button
-          block={true}
-          bsSize='lg'
-          bsStyle='primary'
-          className='btn-invert'
-          onClick={props.onHide}
-          type='button'
-        >
+        <Button block={true} size='large' onClick={props.onHide}>
           {t('settings.danger.nevermind-2')}
         </Button>
         <Spacer size='small' />
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='danger'
-          className='btn-danger'
+          size='large'
+          variant='danger'
           onClick={props.reset}
-          type='button'
         >
           {t('settings.danger.reset-confirm')}
         </Button>

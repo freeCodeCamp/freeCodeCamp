@@ -1,10 +1,9 @@
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { Button } from '@freecodecamp/ui';
 
 import { Spacer } from '../helpers';
-
-import './danger-zone.css';
 
 type DeleteModalProps = {
   delete: () => void;
@@ -42,24 +41,15 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
           </Trans>
         </p>
         <hr />
-        <Button
-          block={true}
-          bsSize='lg'
-          bsStyle='primary'
-          className='btn-invert'
-          onClick={props.onHide}
-          type='button'
-        >
+        <Button block={true} size='large' onClick={props.onHide}>
           {t('settings.danger.nevermind')}
         </Button>
         <Spacer size='small' />
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='danger'
-          className='btn-danger'
+          size='large'
+          variant='danger'
           onClick={props.delete}
-          type='button'
         >
           {t('settings.danger.certain')}
         </Button>

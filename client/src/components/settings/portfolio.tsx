@@ -1,4 +1,3 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import { findIndex, find, isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
 import React, { Component } from 'react';
@@ -8,7 +7,8 @@ import {
   FormControl,
   ControlLabel,
   HelpBlock,
-  FormGroupProps
+  FormGroupProps,
+  Button
 } from '@freecodecamp/ui';
 import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
@@ -328,8 +328,8 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             ) : null}
           </FormGroup>
           <BlockSaveButton
-            aria-disabled={isButtonDisabled}
-            bgSize='lg'
+            disabled={isButtonDisabled}
+            bgSize='large'
             {...(isButtonDisabled && { tabIndex: -1 })}
           >
             {t('buttons.save-portfolio')}
@@ -337,10 +337,9 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           <Spacer size='small' />
           <Button
             block={true}
-            bsSize='lg'
-            bsStyle='danger'
+            size='large'
+            variant='danger'
             onClick={() => this.handleRemoveItem(id)}
-            type='button'
           >
             {t('buttons.remove-portfolio')}
           </Button>
@@ -368,11 +367,10 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           <Button
             data-cy='add-portfolio'
             block={true}
-            bsSize='lg'
-            bsStyle='primary'
+            size='large'
+            variant='primary'
             disabled={unsavedItemId !== null}
             onClick={this.handleAdd}
-            type='button'
           >
             {t('buttons.add-portfolio')}
           </Button>
