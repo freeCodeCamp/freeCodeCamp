@@ -729,17 +729,11 @@ playButton.addEventListener("click", () => {
   }
 });
 
-pauseButton.addEventListener("click", () => {
-  pauseSong();
-});
+pauseButton.addEventListener("click",  pauseSong);
 
-nextButton.addEventListener("click", () => {
-  playNextSong();
-});
+nextButton.addEventListener("click", playNextSong);
 
-previousButton.addEventListener("click", () => {
-  playPreviousSong();
-});
+previousButton.addEventListener("click", playPreviousSong);
 
 renderSongs(userData?.songs);
 ```

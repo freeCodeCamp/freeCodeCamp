@@ -785,17 +785,11 @@ playButton.addEventListener("click", () => {
   }
 });
 
-pauseButton.addEventListener("click", () => {
-  pauseSong();
-});
+pauseButton.addEventListener("click",  pauseSong);
 
-nextButton.addEventListener("click", () => {
-  playNextSong();
-});
+nextButton.addEventListener("click", playNextSong);
 
-previousButton.addEventListener("click", () => {
-  playPreviousSong();
-});
+previousButton.addEventListener("click", playPreviousSong);
 
 shuffleButton.addEventListener("click", shuffle);
 
@@ -1564,17 +1558,11 @@ playButton.addEventListener("click", () => {
   }
 });
 
-pauseButton.addEventListener("click", () => {
-  pauseSong();
-});
+pauseButton.addEventListener("click",  pauseSong);
 
-nextButton.addEventListener("click", () => {
-  playNextSong();
-});
+nextButton.addEventListener("click", playNextSong);
 
-previousButton.addEventListener("click", () => {
-  playPreviousSong();
-});
+previousButton.addEventListener("click", playPreviousSong);
 
 shuffleButton.addEventListener("click", shuffle);
 
