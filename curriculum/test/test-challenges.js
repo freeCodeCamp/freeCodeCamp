@@ -33,8 +33,10 @@ const {
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
 const { challengeTypes } = require('../../shared/config/challenge-types');
 // the config files are created during the build, but not before linting
-const testEvaluator =
+const javaScriptTestEvaluator =
   require('../../client/config/browser-scripts/test-evaluator.json').filename;
+const pythonTestEvaluator =
+  require('../../client/config/browser-scripts/python-test-evaluator.json').filename;
 
 const { getLines } = require('../../shared/utils/get-lines');
 
@@ -546,13 +548,16 @@ async function createTestRunner(
     editableContents: sources.editableContents
   };
 
-  const runsInBrowser =
-    buildChallenge === buildDOMChallenge ||
-    buildChallenge === buildPythonChallenge;
+  const runsInBrowser = buildChallenge === buildDOMChallenge;
+  const runsInPythonWorker = buildChallenge === buildPythonChallenge;
+
+  const testEvaluator = runsInPythonWorker
+    ? pythonTestEvaluator
+    : javaScriptTestEvaluator;
 
   const evaluator = await (runsInBrowser
     ? getContextEvaluator(build, sources, code, loadEnzyme, transformedPython)
-    : getWorkerEvaluator(build, sources, code, removeComments));
+    : getWorkerEvaluator(build, sources, code, removeComments, testEvaluator));
 
   return async ({ text, testString }) => {
     try {
@@ -624,7 +629,13 @@ async function getContextEvaluator(
   };
 }
 
-async function getWorkerEvaluator(build, sources, code, removeComments) {
+async function getWorkerEvaluator(
+  build,
+  sources,
+  code,
+  removeComments,
+  testEvaluator
+) {
   const testWorker = createWorker(testEvaluator, { terminateWorker: true });
   return {
     evaluate: async (testString, timeout) =>
