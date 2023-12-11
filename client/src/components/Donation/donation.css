@@ -88,19 +88,6 @@
   margin-bottom: 8px;
 }
 
-.donate-page-wrapper .paypal-buttons-container {
-  margin-bottom: 0;
-}
-
-@media (min-width: 1200px) {
-  /*
-  This style allows multi columns in the same row.
-  It will become a functionality once the Grid system is updated.
-  */
-  .donate-page-wrapper > div > div {
-    float: left;
-  }
-}
 .donate-input-element {
   padding-top: 8px;
 }
@@ -241,12 +228,6 @@ li.disabled {
 li.disabled > a {
   border: 3px solid var(--gray-15) !important;
   color: var(--gray-15) !important;
-}
-
-.donate-page-wrapper h2,
-.donate-page-wrapper h3,
-[name='payment-method'] {
-  font-family: var(--font-family-sans-serif);
 }
 
 @media (max-width: 400px) {
@@ -403,10 +384,6 @@ li.disabled > a {
     margin-top: 0;
     height: 39px;
   }
-  .donate-page-wrapper .form-payment-methods {
-    height: 22px;
-    width: 220px;
-  }
   .donation-icon-container {
     margin: 40px;
   }
@@ -414,13 +391,6 @@ li.disabled > a {
   .donation-modal .modal-title {
     font-weight: 700;
     font-size: 1.5rem;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .donate-page-wrapper .form-payment-methods {
-    height: 25px;
-    width: 250px;
   }
 }
 
@@ -584,11 +554,6 @@ a.patreon-button:hover {
   font-weight: bold;
 }
 
-.donate-page-wrapper [role='alert'] a:hover {
-  color: #327290;
-  background-color: #acdef3;
-}
-
 .separator {
   display: flex;
   align-items: center;
@@ -669,4 +634,74 @@ a.patreon-button:hover {
   color: var(--blue05);
   background-color: var(--blue70);
   border-color: var(--blue70);
+}
+
+/* donation page */
+
+.donate-page-container h1,
+.donate-page-container h2,
+.donate-page-container h3 {
+  font-family: var(--font-family-sans-serif);
+}
+
+.donate-page-container h1 {
+  font-size: 2.5rem;
+}
+
+.donate-page-container .donation-section > div {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.donate-page-container .donation-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 60vh;
+}
+
+.donate-page-container .paypal-buttons-container {
+  margin-bottom: 0;
+}
+
+.dark-palette .gradient-container {
+  background: linear-gradient(
+      -10deg,
+      rgb(7 40 94) 35%,
+      rgba(237, 202, 216, 0) 75%,
+      rgb(127 30 52) 100%
+    ),
+    radial-gradient(circle, rgb(112 0 48) 0%, rgb(0 63 136) 100%);
+}
+
+.light-palette .gradient-container {
+  background: linear-gradient(
+      -10deg,
+      rgb(223 243 255) 35%,
+      rgba(237, 202, 216, 0) 75%,
+      rgb(255 215 224) 100%
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 202, 225, 1) 0%,
+      rgba(218, 234, 252, 1) 100%
+    );
+}
+
+@media screen and (min-width: 991px) {
+  .donate-page-container .form-payment-methods {
+    height: 22px;
+    width: 220px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .donate-page-container .form-payment-methods {
+    height: 25px;
+    width: 250px;
+  }
+  .donate-page-container .donation-section {
+    flex-direction: row;
+  }
 }
