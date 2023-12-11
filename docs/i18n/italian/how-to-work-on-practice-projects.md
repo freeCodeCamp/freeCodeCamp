@@ -38,7 +38,7 @@ Cliccando questo pulsante aggiungerai un nuovo step alla fine del progetto. Ques
 
 #### Creare step vuoti
 
-Inserisci nell'input il numero di step che vuoi aggiungere. Poi, cliccando sul pulsante verrà creato il numero di step desiderati alla fine del progetto.
+Inserisci nell'input il numero di step che vuoi aggiungere. Then, clicking the button will create many empty steps at the end of the project.
 
 #### Inserire uno step
 
@@ -124,7 +124,7 @@ pnpm run delete-step X # dove X è il numero dello step da eliminare.
 
 ### update-step-titles
 
-Uno script una tantum che aggiorna automaticamente il frontmatter nei file di markdown di un progetto in modo che siano coerenti con il progetto meta.json. Fa in modo che il titolo di ogni step (e dashedName) corrisponda al challengeOrder in meta.
+Uno script una tantum che aggiorna automaticamente il frontmatter nei file di markdown di un progetto in modo che siano coerenti con il progetto meta.json. It ensures that each step's title (and dashedName) matches the meta's `challengeOrder`.
 
 #### How to Run the Script
 
@@ -134,3 +134,19 @@ Uno script una tantum che aggiorna automaticamente il frontmatter nei file di ma
 ```bash
 pnpm run update-step-titles
 ```
+
+### repair-meta
+
+One-off script to parse the step names from the project and update the meta.json order to reflect those steps. Useful if you've accidentally lost the changes to the meta.json file when adding/removing steps.
+
+#### How to Run the Script
+
+1. Change to the directory of the project.
+2. Run the following command:
+
+```bash
+pnpm run repair-meta
+```
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).

@@ -8,32 +8,36 @@
 - **Внесок до коду**
   - [Налаштування freeCodeCamp](how-to-setup-freecodecamp-locally.md)
   - [Передові практики написання коду](codebase-best-practices.md)
-  - [Відкриття запиту на злиття](how-to-open-a-pull-request.md)
   - [Робота над кодовою базою](how-to-contribute-to-the-codebase.md)
   - [Робота над завданнями з кодом](how-to-work-on-coding-challenges.md)
+  - [Допомога з навчальної програми](curriculum-help.md)
   - [Робота над компонентною бібліотекою](how-to-work-on-the-component-library.md)
   - [Робота над практичними проєктами](how-to-work-on-practice-projects.md)
   - [Робота над мобільним застосунком](how-to-setup-freecodecamp-mobile-app-locally.md)
-  - [Робота над туторіалами з CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
+  - [Робота над матеріалами з CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
   - [Робота над локалізованим вебзастосунком](how-to-work-on-localized-client-webapp.md)
-  - [Робота над тестами Cypress](how-to-add-cypress-tests.md)
+  - [Робота над тестами Playwright](how-to-add-playwright-tests.md)
   - [Робота над відеозавданнями](how-to-help-with-video-challenges.md)
   - [Робота над документацією](how-to-work-on-the-docs-theme.md)
+  - [Відкриття запиту на злиття](how-to-open-a-pull-request.md)
 - **Додаткові інструкції**
   - [Структура файлів навчальної програми](curriculum-file-structure.md)
   - [Налагодження вихідних е-листів локально](how-to-catch-outgoing-emails-locally.md)
-  - [Встановлення freeCodeCamp на Windows (WSL)](how-to-setup-wsl.md)
+  - [Робота над тестами Cypress](how-to-add-cypress-tests.md)
+  - [Налаштування freeCodeCamp на Windows (WSL)](how-to-setup-wsl.md)
+  - [Використання Docker на Windows Home](how-to-use-docker-on-windows-home.md)
   - [Робочий процес токенів користувача](user-token-workflow.md)
-  - [Розв'язання проблем розробки](troubleshooting-development-issues.md)
+  - [Розв’язання проблем розробки](troubleshooting-development-issues.md)
   - [Керівництво з аналітики](authors-analytics-manual.md)
 
 ---
 
-- **Посібники** (для персоналу & модераторів)
+- **Довідники** (для персоналу та модераторів)
   - [Довідник модератора](moderator-handbook.md)
+  - [Шаблони відповідей](reply-templates.md)
   - [Довідник мовного керівника](language-lead-handbook.md)
   - [Довідник DevOps](devops.md)
-  - [Розширення курсів VSCode](courses-vscode-extension.md)
+  - [Розширення VSCode Courses](courses-vscode-extension.md)
   - [Додавання нової мови](how-to-enable-new-languages.md)
 
 ---

@@ -28,7 +28,13 @@ const maximus = Math.max(...arr);
 
 `maximus` teria o valor de `89`.
 
-`...arr` retorna um array descompactado. Em outras palavras, ele *espalha (spreads)* o array. No entanto, o operador spread apenas funciona no local, como em um argumento para uma função ou em um array literal. O código a seguir não funcionará:
+`...arr` retorna um array descompactado. Em outras palavras, ele espalha (spreads) o array. No entanto, o operador spread apenas funciona no local, como em um argumento para uma função ou em um array literal. Por exemplo:
+
+```js
+const spreaded = [...arr];
+```
+
+No entanto, o código a seguir não funcionará:
 
 ```js
 const spreaded = ...arr;

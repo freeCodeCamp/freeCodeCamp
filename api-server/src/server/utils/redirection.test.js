@@ -67,7 +67,7 @@ describe('redirection', () => {
       expect(keys.length).toBe(3);
       expect(keys).toEqual(expect.arrayContaining(expectedKeys));
     });
-    it('should default to homeLocation', () => {
+    it('should default to process.env.HOME_LOCATION', () => {
       expect.assertions(1);
       expect(normalizeParams({}, defaultOrigin)).toEqual(defaultObject);
     });
@@ -92,9 +92,9 @@ describe('redirection', () => {
       );
     });
     // we *could*, in principle, grab the path and send them to
-    // homeLocation/path, but if the origin is wrong something unexpected is
+    // process.env.HOME_LOCATION/path, but if the origin is wrong something unexpected is
     // going on. In that case it's probably best to just send them to
-    // homeLocation/learn.
+    // process.env.HOME_LOCATION/learn.
     it('should return default parameters if the origin is unknown', () => {
       expect.assertions(1);
       const exampleOrigin = {

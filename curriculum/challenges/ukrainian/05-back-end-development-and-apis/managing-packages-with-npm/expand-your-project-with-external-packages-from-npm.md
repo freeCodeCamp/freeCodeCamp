@@ -1,6 +1,6 @@
 ---
 id: 587d7fb4367417b2b2512c00
-title: Розширте свій проєкт зовнішніми пакетами із npm
+title: Розширте проєкт зовнішніми пакетами від npm
 challengeType: 2
 forumTopicId: 301527
 dashedName: expand-your-project-with-external-packages-from-npm
@@ -8,7 +8,7 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --description--
 
-Однією з найважливіших причин для використання менеджера пакетів є потужне управління залежностями. Npm автоматично встановлює всі необхідні елементи під час встановлення проєкту на новому комп'ютері і позбавляє вас необхідності встановлювати все вручну. Але як npm може точно знати, чого потребує ваш проєкт? Знайдіть розділ `dependencies` у своєму файлі package.json.
+Однією з найважливіших причин для використання менеджера пакетів є потужне управління залежностями. Npm автоматично встановлює всі необхідні елементи під час встановлення проєкту на новому комп’ютері і позбавляє вас необхідності встановлювати все вручну. Але як npm може точно знати, чого потребує ваш проєкт? Знайдіть розділ `dependencies` у своєму файлі package.json.
 
 У цьому розділі зберігаються пакети, необхідні для вашого проєкту, в наступному форматі:
 
@@ -28,7 +28,7 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --hints--
 
-`"dependencies"` повинні містити `"@freecodecamp/example"`.
+`"dependencies"` має містити `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -47,7 +47,7 @@ dashedName: expand-your-project-with-external-packages-from-npm
   );
 ```
 
-Версією `"@freecodecamp/example"` повинна бути `"1.1.0"`.
+Версією `"@freecodecamp/example"` має бути `"1.1.0"`.
 
 ```js
 (getUserInput) =>

@@ -20,7 +20,7 @@ A losing configuration is one where the second player can force a win, no matter
 
 Define $S(N)$ as the sum of ($x_i + y_i$) for all losing configurations ($x_i$, $y_i$), $0 &lt; x_i &lt; y_i ≤ N$. We can verify that $S(10) = 211$ and $S({10}^4) = 230\\,312\\,207\\,313$.
 
-Find $S({10}^{16})\bmod 7^{10}$.
+Знайдіть $S({10}^{16})\bmod 7^{10}$.
 
 # --hints--
 

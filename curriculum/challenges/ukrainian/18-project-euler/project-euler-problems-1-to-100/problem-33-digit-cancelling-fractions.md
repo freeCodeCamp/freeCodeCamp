@@ -1,6 +1,6 @@
 ---
 id: 5900f38d1000cf542c50fea0
-title: 'Problem 33: Digit cancelling fractions'
+title: 'Завдання 33: числове скорочення дробів'
 challengeType: 1
 forumTopicId: 301987
 dashedName: problem-33-digit-cancelling-fractions
@@ -8,13 +8,13 @@ dashedName: problem-33-digit-cancelling-fractions
 
 # --description--
 
-The fraction <sup>49</sup>/<sub>98</sub> is a curious fraction, as an inexperienced mathematician in attempting to simplify it may incorrectly believe that <sup>49</sup>/<sub>98</sub> = <sup>4</sup>/<sub>8</sub>, which is correct, is obtained by cancelling the 9s.
+Дріб <sup>49</sup>/<sub>98</sub> є цікавим, оскільки недосвідчений математик, намагаючись скоротити його, може подумати, що відповідь <sup>49</sup>/<sub>98</sub> = <sup>4</sup>/<sub>8</sub> отримали через закреслення 9.
 
-We shall consider fractions like, <sup>30</sup>/<sub>50</sub> = <sup>3</sup>/<sub>5</sub>, to be trivial examples.
+Розглянемо дроби типу <sup>30</sup>/<sub>50</sub> = <sup>3</sup>/<sub>5</sub> як тривіальні приклади.
 
-There are exactly four non-trivial examples of this type of fraction, less than one in value, and containing two digits in the numerator and denominator.
+Існує 4 нетривіальні приклади дробів подібного типу, значення яких менше одиниці і які містять двозначні числа як у чисельнику, так і в знаменнику.
 
-If the product of these four fractions is given in its lowest common terms, find the value of the denominator.
+Якщо вам надано добуток цих чотирьох дробів у вигляді нескоротного дробу, знайдіть значення знаменника.
 
 # --hints--
 

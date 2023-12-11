@@ -12,7 +12,7 @@ Wenn du den Callback nicht als letztes Argument an `Model.find()` (oder an die a
 
 # --instructions--
 
-Modify the `queryChain` function to find people who like the food specified by the variable named `foodToSearch`. Sortiere sie nach `name`, beschränke die Ergebnisse auf zwei Dokumente und blende ihr Alter aus. Chain `.find()`, `.sort()`, `.limit()`, `.select()`, and then `.exec()`. Übergebe den `done(err, data)`-Callback an `exec()`.
+Ändere die `queryChain`-Funktion so, dass sie Personen findet, die das Essen mögen, das in der Variablen namens `foodToSearch` angegeben ist. Sortiere sie nach `name`, beschränke die Ergebnisse auf zwei Dokumente und blende ihr Alter aus. Verkette `.find()`, `.sort()`, `.limit()`, `.select()`, und dann `.exec()`. Übergebe den `done(err, data)`-Callback an `exec()`.
 
 # --hints--
 

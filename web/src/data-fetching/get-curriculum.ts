@@ -31,7 +31,7 @@ export interface Block {
     template: string;
     required: string[];
     superBlock: string;
-    challengeOrder: [id: string, title: string][];
+    challengeOrder: { id: string; title: string }[];
   };
   challenges: Challenge[];
 }
@@ -108,7 +108,7 @@ export function getSuperBlockToBlockMap(
 export function getBlockNameToChallengeOrderMap(
   { rwdBlocks }: Curriculum,
   blockNames: string[]
-): { [index: string]: [id: string, title: string] } {
+): { [index: string]: { id: string; title: string } } {
   return blockNames.reduce(
     (prev, blockName) => ({
       ...prev,

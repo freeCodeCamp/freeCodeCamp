@@ -1,6 +1,6 @@
 ---
 id: a7f4d8f2483413a6ce226cac
-title: Build A Roman Numeral Converter
+title: Erstelle einen Konverter für römische Zahlen
 challengeType: 5
 forumTopicId: 16044
 dashedName: build-a-roman-numeral-converter
@@ -26,7 +26,7 @@ Konvertiere die übergebene Zahl in eine römische Zahl.
 | IV               | 4                 |
 | I                | 1                 |
 
-All roman numerals answers should be provided in upper-case.
+Römische Ziffern sollten in Großbuchstaben übergeben werden.
 
 # --hints--
 

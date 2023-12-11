@@ -9,7 +9,7 @@ dashedName: build-a-student-database-part-2
 
 # --description--
 
-In this 140-lesson course, you will complete your student database while diving deeper into SQL commands.
+In diesem Kurs mit 140 Lektionen wirst du deine Studenten-Datenbank vervollständigen und gleichzeitig tiefer in SQL-Befehle eintauchen.
 
 # --instructions--
 

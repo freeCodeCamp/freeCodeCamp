@@ -23,25 +23,25 @@ padding: 10px 20px 10px 20px;
 
 # --hints--
 
-Клас `blue-box` має задати `40px` для `padding` найбільших елементів.
+Клас `blue-box` повинен надати елементам `padding` зі значенням `40px` зверху.
 
 ```js
 assert($('.blue-box').css('padding-top') === '40px');
 ```
 
-Клас `blue-box` повинен задати `20px` для `padding` правої частини елементів.
+Клас `blue-box` повинен надати елементам `padding` зі значенням `20px` справа.
 
 ```js
 assert($('.blue-box').css('padding-right') === '20px');
 ```
 
-Клас `blue-box` повинен задати `20px` для `padding` нижньої сторони елементів.
+Клас `blue-box` повинен надати елементам `padding` зі значенням `20px` знизу.
 
 ```js
 assert($('.blue-box').css('padding-bottom') === '20px');
 ```
 
-Клас `blue-box` повинен задати `40px` для `padding` лівої сторони елементів.
+Клас `blue-box` повинен надати елементам `padding` зі значенням `40px` зліва.
 
 ```js
 assert($('.blue-box').css('padding-left') === '40px');

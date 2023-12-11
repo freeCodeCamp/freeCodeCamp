@@ -4,9 +4,9 @@ const util = require('util');
 const yaml = require('js-yaml');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
-const { showUpcomingChanges } = require('../config/env.json');
+
 const { curriculum: curriculumLangs } =
-  require('../config/i18n').availableLangs;
+  require('../shared/config/i18n').availableLangs;
 const { parseMD } = require('../tools/challenge-parser/parser');
 /* eslint-disable max-len */
 const {
@@ -14,9 +14,8 @@ const {
 } = require('../tools/challenge-parser/translation-parser');
 /* eslint-enable max-len*/
 
-const { isAuditedCert } = require('../utils/is-audited');
-const { createPoly } = require('../utils/polyvinyl');
-const { dasherize } = require('../utils/slugs');
+const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
+const { createPoly } = require('../shared/utils/polyvinyl');
 const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
 
 const access = util.promisify(fs.access);
@@ -44,17 +43,13 @@ function createCommentMap(dictionariesDir) {
   );
 
   // get the english dicts
-  const COMMENTS_TO_TRANSLATE = require(path.resolve(
-    dictionariesDir,
-    'english',
-    'comments.json'
-  ));
+  const COMMENTS_TO_TRANSLATE = require(
+    path.resolve(dictionariesDir, 'english', 'comments.json')
+  );
 
-  const COMMENTS_TO_NOT_TRANSLATE = require(path.resolve(
-    dictionariesDir,
-    'english',
-    'comments-to-not-translate'
-  ));
+  const COMMENTS_TO_NOT_TRANSLATE = require(
+    path.resolve(dictionariesDir, 'english', 'comments-to-not-translate')
+  );
 
   // map from english comment text to translations
   const translatedCommentMap = Object.entries(COMMENTS_TO_TRANSLATE).reduce(
@@ -184,7 +179,7 @@ async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
       throw Error(`meta file at ${metaPath} is missing 'helpCategory'`);
     }
 
-    if (!isUpcomingChange || showUpcomingChanges) {
+    if (!isUpcomingChange || process.env.SHOW_UPCOMING_CHANGES === 'true') {
       // add the block to the superBlock
       const blockInfo = { meta: blockMeta, challenges: [] };
       curriculum[superBlock].blocks[blockName] = blockInfo;
@@ -259,7 +254,7 @@ function generateChallengeCreator(basePath, lang) {
     return path.resolve(__dirname, basePath, pathLang, filePath);
   }
 
-  async function validate(filePath, superBlock) {
+  async function validate(filePath) {
     const invalidLang = !curriculumLangs.includes(lang);
     if (invalidLang)
       throw Error(`${lang} is not a accepted language.
@@ -273,27 +268,20 @@ ${filePath}
 It should be in
 ${getFullPath('english', filePath)}
 `);
-
-    const missingAuditedChallenge =
-      isAuditedCert(lang, superBlock) &&
-      !fs.existsSync(getFullPath(lang, filePath));
-    if (missingAuditedChallenge)
-      throw Error(`Missing ${lang} audited challenge for
-${filePath}
-
-Explanation:
-
-Challenges that have been already audited cannot fall back to their English versions. If you are seeing this, please update, and approve these Challenges on Crowdin first, followed by downloading them to the main branch using the GitHub workflows.
-    `);
   }
 
   function addMetaToChallenge(challenge, meta) {
     const challengeOrder = findIndex(
       meta.challengeOrder,
-      ([id]) => id === challenge.id
+      ({ id }) => id === challenge.id
     );
 
-    challenge.block = meta.name ? dasherize(meta.name) : null;
+    if (!meta.dashedName)
+      throw Error(
+        `The 'meta.json' file for the block with challenge '${challenge.title}' has no 'dashedName' property`
+      );
+
+    challenge.block = meta.dashedName;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
     challenge.order = meta.order;
     // const superOrder = getSuperOrder(meta.superBlock);
@@ -328,8 +316,17 @@ Challenges that have been already audited cannot fall back to their English vers
     challenge.time = meta.time;
     challenge.helpCategory = challenge.helpCategory || meta.helpCategory;
     challenge.translationPending =
-      lang !== 'english' && !isAuditedCert(lang, meta.superBlock);
+      lang !== 'english' &&
+      !isAuditedSuperBlock(lang, meta.superBlock, {
+        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
+        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
+      });
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
+    challenge.disableLoopProtectTests = !!meta.disableLoopProtectTests;
+    challenge.disableLoopProtectPreview = !!meta.disableLoopProtectPreview;
+  }
+
+  function fixChallengeProperties(challenge) {
     if (challenge.challengeFiles) {
       // The client expects the challengeFiles to be an array of polyvinyls
       challenge.challengeFiles = challengeFilesToPolys(
@@ -341,22 +338,27 @@ Challenges that have been already audited cannot fall back to their English vers
       // can sort them correctly.
       challenge.solutions = challenge.solutions.map(challengeFilesToPolys);
     }
+    // if removeComments is not explicitly set, default to true
+    if (typeof challenge.removeComments === 'undefined') {
+      challenge.removeComments = true;
+    }
   }
 
   async function createChallenge(filePath, maybeMeta) {
     const meta = maybeMeta
       ? maybeMeta
-      : require(path.resolve(
-          META_DIR,
-          `${getBlockNameFromPath(filePath)}/meta.json`
-        ));
+      : require(
+          path.resolve(META_DIR, `${getBlockNameFromPath(filePath)}/meta.json`)
+        );
 
     await validate(filePath, meta.superBlock);
 
     // We always try to translate comments (even English ones) to confirm that translations exist.
     const translateComments =
-      isAuditedCert(lang, meta.superBlock) &&
-      fs.existsSync(getFullPath(lang, filePath));
+      isAuditedSuperBlock(lang, meta.superBlock, {
+        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
+        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+      }) && fs.existsSync(getFullPath(lang, filePath));
 
     const challenge = await (translateComments
       ? parseTranslation(
@@ -367,6 +369,7 @@ Challenges that have been already audited cannot fall back to their English vers
       : parseMD(getFullPath('english', filePath)));
 
     addMetaToChallenge(challenge, meta);
+    fixChallengeProperties(challenge);
 
     return challenge;
   }

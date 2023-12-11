@@ -7,7 +7,7 @@ import { PartialMeta } from '../interfaces/partial-meta';
 import { CHALLENGE_DIR, META_DIR } from '../configs/paths';
 
 const getFileOrder = (id: string, meta: PartialMeta) => {
-  return meta.challengeOrder.findIndex(([f]) => f === id);
+  return meta.challengeOrder.findIndex(({ id: f }) => f === id);
 };
 
 type Step = {

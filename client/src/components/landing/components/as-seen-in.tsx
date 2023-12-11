@@ -1,20 +1,25 @@
-import { Col, Row } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Container } from '@freecodecamp/ui';
 import { AsSeenInText } from '../../../assets/images/components';
 
 const AsSeenIn = (): JSX.Element => {
   const { t } = useTranslation();
 
   return (
-    <Row className='as-seen-in'>
-      <Col sm={8} smOffset={2} xs={12}>
-        <div className='text-center'>
-          <p className='big-heading'>{t('landing.as-seen-in')}</p>
-          <AsSeenInText fill='light' />
-        </div>
-      </Col>
-    </Row>
+    <Container
+      fluid={true}
+      className='as-seen-in text-center'
+      data-playwright-test-label='landing-as-seen-in-container'
+    >
+      <h2
+        className='big-heading'
+        data-playwright-test-label='landing-as-seen-in-text'
+      >
+        {t('landing.as-seen-in')}
+      </h2>
+      <AsSeenInText fill='light' />
+    </Container>
   );
 };
 

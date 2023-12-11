@@ -1,6 +1,6 @@
 ---
 id: 5900f3cc1000cf542c50fede
-title: 'Problem 95: Amicable chains'
+title: 'Завдання 95: ланцюжки дружніх чисел'
 challengeType: 1
 forumTopicId: 302212
 dashedName: problem-95-amicable-chains
@@ -8,17 +8,17 @@ dashedName: problem-95-amicable-chains
 
 # --description--
 
-The proper divisors of a number are all the divisors excluding the number itself. For example, the proper divisors of 28 are 1, 2, 4, 7, and 14. As the sum of these divisors is equal to 28, we call it a perfect number.
+Власними дільниками числа є всі його дільники, окрім самого числа. Наприклад, власними дільниками числа 28 є 1, 2, 4, 7 і 14. Оскільки сума цих дільників дорівнює 28, ми називаємо його ідеальним числом.
 
-Interestingly the sum of the proper divisors of 220 is 284 and the sum of the proper divisors of 284 is 220, forming a chain of two numbers. For this reason, 220 and 284 are called an amicable pair.
+Цікаво, що сума власних дільників числа 220 дорівнює 284, а сума власних дільників числа 284 дорівнює 220, утворюючи ланцюжок з двох чисел. Тому числа 220 і 284 називаються парою дружніх чисел.
 
-Perhaps less well known are longer chains. For example, starting with 12496, we form a chain of five numbers:
+Менш відомими є ланцюжки більшої довжини. Наприклад, починаючи з числа 12496, формується ланцюжок з п’яти чисел:
 
 $$ 12496 → 14288 → 15472 → 14536 → 14264 \\,(→ 12496 → \cdots) $$
 
-Since this chain returns to its starting point, it is called an amicable chain.
+Оскільки ланцюжок закінчується тим самим числом, з якого починався, його називають ланцюжком дружніх чисел.
 
-Find the smallest member of the longest amicable chain with no element exceeding `limit`.
+Знайдіть найменший член найдовшого ланцюжка дружніх чисел, елементи якого не перевищують `limit`.
 
 # --hints--
 

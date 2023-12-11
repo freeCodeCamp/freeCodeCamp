@@ -8,7 +8,7 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**Мета:** Створити застосунок, функціонально схожий до <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>
+**Мета:** створити застосунок, функціонально схожий до <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>
 
 **Історія користувача:**
 
@@ -29,9 +29,9 @@ dashedName: build-a-survey-form
 1. В елементі форми представлено `textarea` для додаткових коментарів
 1. В елементі форми представлено кнопку з `id` зі значенням `submit` для відправки всіх введень
 
-Виконайте історію користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
+Виконайте історію користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого програмування!
 
-**Примітка:** Переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив'язки з аркушем стилів та застосували CSS
+**Примітка:** переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив’язки з аркушем стилів та застосували CSS
 
 # --hints--
 

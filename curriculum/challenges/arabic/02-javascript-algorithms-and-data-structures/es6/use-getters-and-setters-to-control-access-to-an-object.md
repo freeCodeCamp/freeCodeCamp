@@ -46,7 +46,7 @@ console.log(novel.writer);
 
 استخدم كلمة `class` لإنشاء فئة `Thermostat`. يقبل `constructor` درجة حرارة فهرنهايت (Fahrenheit).
 
-في الفئة، أنشئ `getter` للحصول على درجة الحرارة بالدرجة المئوية و `setter` لضبط درجة الحرارة بالدرجة المئوية.
+In the class, create a `getter` to obtain the temperature in Celsius and a `setter` that accepts a temperature in Celsius.
 
 تذكر أن `C = 5/9 * (F - 32)` و `F = C * 9.0 / 5 + 32`، حيث `F` هي قيمة درجة الحرارة بالفهرنهايت، و `C` هي قيمة درجة الحرارة نفسها بالدرجة المئوية.
 
@@ -61,80 +61,53 @@ console.log(novel.writer);
 يجب أن يكون `Thermostat` بنوع `class` مع طريقة `constructor` محددة.
 
 ```js
-assert(
-  typeof Thermostat === 'function' &&
-    typeof Thermostat.constructor === 'function'
-);
+assert.isFunction(Thermostat);
+assert.isFunction(Thermostat?.constructor);
 ```
 
-يجب استخدام كلمة `class`.
+The `class` keyword should be used.
 
 ```js
-assert(code.match(/class/g));
+assert.match(code, /class/);
 ```
 
 `Thermostat` يجب أن يتم انشاء مثيل له.
 
 ```js
-assert(
-  (() => {
-    const t = new Thermostat(122);
-    return typeof t === 'object';
-  })()
-);
+const _t = new Thermostat(122);
+assert.isObject(_t);
 ```
 
 عند إنشاء مثيل بقيمة فهرنهايت، يجب أن يضبط `Thermostat` درجة الحرارة الصحيحة `temperature`.
 
 ```js
-assert(
-  (() => {
-    const t = new Thermostat(122);
-    return t.temperature === 50;
-  })()
-);
+const _t = new Thermostat(122);
+assert.strictEqual(_t?.temperature, 50);
 ```
 
 يجب تعريف `getter`.
 
 ```js
-assert(
-  (() => {
-    const desc = Object.getOwnPropertyDescriptor(
-      Thermostat.prototype,
-      'temperature'
-    );
-    return !!desc && typeof desc.get === 'function';
-  })()
-);
+const _desc = Object.getOwnPropertyDescriptor(Thermostat.prototype, 'temperature');
+assert.isFunction(_desc?.get);
 ```
 
 يجب تعريف `setter`.
 
 ```js
-assert(
-  (() => {
-    const desc = Object.getOwnPropertyDescriptor(
-      Thermostat.prototype,
-      'temperature'
-    );
-    return !!desc && typeof desc.set === 'function';
-  })()
-);
+const _desc = Object.getOwnPropertyDescriptor(Thermostat.prototype, 'temperature');
+assert.isFunction(_desc?.set);
 ```
 
 استدعاء `setter` مع قيمة مئوية يجب أن تحدد `temperature`.
 
 ```js
-assert(
-  (() => {
-    const t = new Thermostat(32);
-    t.temperature = 26;
-    const u = new Thermostat(32);
-    u.temperature = 50;
-    return t.temperature === 26 && u.temperature === 50;
-  })()
-);
+const _t = new Thermostat(32);
+_t.temperature = 26;
+const _u = new Thermostat(32);
+_u.temperature = 50;
+assert.approximately(_t.temperature, 26, 0.1);
+assert.approximately(_u.temperature, 50, 0.1);
 ```
 
 # --seed--

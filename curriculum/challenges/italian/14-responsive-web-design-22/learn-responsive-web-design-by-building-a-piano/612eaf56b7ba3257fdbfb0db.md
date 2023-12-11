@@ -19,7 +19,7 @@ Dovresti aggiungere un nuovo elemento `img`.
 assert(document.querySelectorAll('img')?.length === 1);
 ```
 
-L'elemento `img` dovrebbe trovarsi prima del primo elemento `.key`.
+L'elemento `img` dovrebbe trovarsi prima del primo elemento `.keys`.
 
 ```js
 const img = document.querySelector('img');

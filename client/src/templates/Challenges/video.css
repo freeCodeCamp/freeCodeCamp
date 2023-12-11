@@ -72,11 +72,6 @@
   border-bottom: 4px solid var(--tertiary-background);
 }
 
-.video-quiz-input-hidden {
-  position: absolute;
-  left: -9999px;
-}
-
 .video-quiz-input-visible {
   margin-inline-end: 15px;
   position: relative;
@@ -89,6 +84,11 @@
   border-radius: 50%;
   background-color: var(--secondary-background);
   border: 2px solid var(--primary-color);
+}
+
+input:focus-visible + .video-quiz-input-visible {
+  outline: 3px solid var(--focus-outline-color);
+  outline-offset: 2px;
 }
 
 .video-quiz-selected-input {
@@ -113,4 +113,8 @@
   margin: 0;
   /* remove default prism background */
   background: none;
+}
+
+.multiple-choice-feedback p {
+  margin-bottom: 0;
 }

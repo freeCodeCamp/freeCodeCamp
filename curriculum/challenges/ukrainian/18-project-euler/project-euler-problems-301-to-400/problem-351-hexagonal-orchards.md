@@ -18,7 +18,7 @@ Let $H(n)$ be the number of points hidden from the center in a hexagonal orchard
 
 $H(5) = 30$. $H(10) = 138$. $H(1\\,000)$ = $1\\,177\\,848$.
 
-Find $H(100\\,000\\,000)$.
+Знайдіть $H(100\\,000\\,000)$.
 
 # --hints--
 

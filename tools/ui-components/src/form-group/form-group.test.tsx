@@ -14,7 +14,7 @@ describe('<FormGroup>', () => {
     );
 
     const element = screen.getByTestId('test-id');
-    expect(element.childElementCount).toBe(sameNumberOfChildren);
+    expect(element.childNodes.length).toBe(sameNumberOfChildren);
 
     const formGroupChildren = screen.getAllByTitle('Child');
     expect(formGroupChildren.length).toBe(sameNumberOfChildren);
@@ -26,10 +26,10 @@ describe('<FormGroup>', () => {
   it('provided controlId to label and control', () => {
     render(
       <FormGroup controlId='my-control' data-testid='test-id'>
-        <FormControl role='switch' />
+        <FormControl aria-label='test' />
       </FormGroup>
     );
-    const input = screen.getByRole('switch');
+    const input = screen.getByLabelText('test');
     expect(input.id).toBe('my-control');
   });
 });

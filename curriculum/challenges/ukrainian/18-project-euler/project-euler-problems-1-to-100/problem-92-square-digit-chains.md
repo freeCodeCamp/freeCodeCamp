@@ -1,6 +1,6 @@
 ---
 id: 5900f3c81000cf542c50fedb
-title: 'Problem 92: Square digit chains'
+title: 'Завдання 92: послідовності квадратів цифр'
 challengeType: 1
 forumTopicId: 302209
 dashedName: problem-92-square-digit-chains
@@ -8,16 +8,16 @@ dashedName: problem-92-square-digit-chains
 
 # --description--
 
-A number chain is created by continuously adding the square of the digits in a number to form a new number until it has been seen before.
+Послідовність чисел створюється шляхом додавання квадратів цифр попереднього числа до тих пір, поки не вийде число, яке вже зустрічалося раніше.
 
-For example,
+Наприклад,
 
 $$\begin{align}   & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\
   & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
 
-Therefore any chain that arrives at 1 or 89 will become stuck in an endless loop. What is most amazing is that EVERY starting number will eventually arrive at 1 or 89.
+Таким чином, будь-яка послідовність, що призводить до отримання 1 або 89, замкнеться в нескінченний цикл. Найдивовижніше, що БУДЬ-ЯКЕ початкове число рано чи пізно дасть 1 або 89.
 
-How many starting numbers below `limit` will arrive at 89?
+Скільки початкових чисел менше `limit` призведуть до отримання 89?
 
 # --hints--
 

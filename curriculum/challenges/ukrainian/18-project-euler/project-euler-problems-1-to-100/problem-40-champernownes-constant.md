@@ -1,6 +1,6 @@
 ---
 id: 5900f3941000cf542c50fea7
-title: 'Problem 40: Champernowne''s constant'
+title: 'Завдання 40: константа Чамперноуна'
 challengeType: 1
 forumTopicId: 302066
 dashedName: problem-40-champernownes-constant
@@ -8,13 +8,13 @@ dashedName: problem-40-champernownes-constant
 
 # --description--
 
-An irrational decimal fraction is created by concatenating the positive integers:
+Вам надано ірраціональний десятковий дріб, створений за допомогою об’єднання натуральних чисел:
 
 0.12345678910**1**112131415161718192021...
 
-It can be seen that the 12<sup>th</sup> digit of the fractional part is 1.
+Помітно, що дванадцятою цифрою дробової частини є 1.
 
-If *d<sub>n</sub>* represents the *n*<sup>th</sup> digit of the fractional part, find the value of the following expression.
+Також дано, що *d<sub>n</sub>* являє собою *n*-ну цифру дробової частини. Знайдіть значення наступного виразу.
 
 d<sub>1</sub> × d<sub>10</sub> × d<sub>100</sub> × d<sub>1000</sub> × d<sub>10000</sub> × d<sub>100000</sub> × d<sub>1000000</sub>
 

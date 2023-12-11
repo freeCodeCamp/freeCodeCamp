@@ -1,6 +1,6 @@
 ---
 id: 587d7db2367417b2b2512b8b
-title: Пояснення негайно викликаного виразу функції (IIFE)
+title: Вираз негайно викликаної функції (IIFE)
 challengeType: 1
 forumTopicId: 301328
 dashedName: understand-the-immediately-invoked-function-expression-iife
@@ -8,7 +8,7 @@ dashedName: understand-the-immediately-invoked-function-expression-iife
 
 # --description--
 
-Найрозповсюдженіший шаблон в JavaScript — це виконання функції одразу після її оголошення:
+Часто у JavaScript виконують функцію одразу після її оголошення:
 
 ```js
 (function () {
@@ -16,13 +16,13 @@ dashedName: understand-the-immediately-invoked-function-expression-iife
 })();
 ```
 
-Цей анонімний вираз функції негайно відображає або виконує `Chirp, chirp!`.
+Це анонімний вираз функції, яка одразу виконується та виводить `Chirp, chirp!`.
 
-Зверніть увагу, що функція безіменна й не зберігається у змінній. Дві дужки () наприкінці виразу сприяють негайному виконанню або виклику. Цей шаблон також відомий як <dfn>immediately invoked function expression</dfn> або <dfn>IIFE</dfn>.
+Зверніть увагу, що функція не має назви та не зберігається у змінній. Дві дужки () наприкінці виразу сприяють негайному виконанню або виклику. Це відомо як <dfn>вираз негайно викликаної функції</dfn> або <dfn>IIFE</dfn>.
 
 # --instructions--
 
-Перепишіть функцію `makeNest` й приберіть назву, щоб замість цього одразу одержати анонімний негайно викликаний вираз функції (IIFE).
+Перепишіть функцію `makeNest` та видаліть виклик, щоб це був анонімний вираз негайно викликаної функції (IIFE).
 
 # --hints--
 

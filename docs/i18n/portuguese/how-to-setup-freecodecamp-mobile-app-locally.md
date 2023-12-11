@@ -2,22 +2,22 @@ Siga este guia para configurar a aplicação para dispositivos móveis do freeCo
 
 Alguns dos fluxos de trabalho de contribuição — como a correção de erros na base de código — necessitam que você execute a aplicação do freeCodeCamp localmente.
 
-### Como preparar sua máquina local
+## Como preparar sua máquina local
 
 Comece instalando o software pré-requisito para seu sistema operacional.
 
-#### Pré-requisitos
+### Pré-requisitos
 
 | Pré-requisito                   | Versão | Observações                                  |
 | ------------------------------- | ------ | -------------------------------------------- |
 | [Flutter](https://flutter.dev/) | `3.x`  | -                                            |
-| Dart (vem junto com o Flutter)  | `2.x`  | Utilizamos a versão integrada com o Flutter. |
+| Dart (vem junto com o Flutter)  | `3.x`  | Utilizamos a versão integrada com o Flutter. |
 
 > [!ATTENTION] Se você tem uma versão diferente, instale a versão recomendada. Só podemos dar suporte a problemas de instalação para versões recomendadas.
 
 Se o Flutter já estiver instalado em sua máquina, execute os seguintes comandos para validar as versões:
 
-```console
+```bash
 flutter --version
 dart --version
 ```
@@ -26,7 +26,7 @@ dart --version
 
 Depois de ter os pré-requisitos instalados, você precisa preparar seu ambiente de desenvolvimento. Isto é comum para muitos fluxos de trabalho de desenvolvimento, e você só precisará fazer isso uma vez.
 
-##### Siga estas etapas para deixar seu ambiente de desenvolvimento pronto:
+#### Siga estas etapas para deixar seu ambiente de desenvolvimento pronto:
 
 1. Instale o [Git](https://git-scm.com/) ou seu cliente Git favorito, se você ainda não fez isso. Atualize para a versão mais recente. A versão que veio com seu SO pode estar desatualizada.
 
@@ -40,7 +40,7 @@ Depois de ter os pré-requisitos instalados, você precisa preparar seu ambiente
 
    Nós recomendamos muito usar o [Visual Studio Code](https://code.visualstudio.com/) ou o Android Studio. Também recomendamos instalar as [extensões](https://docs.flutter.dev/get-started/editor?tab=vscode) oficiais.
 
-## Faça o fork do repositório no GitHub
+## Como fazer o fork do repositório no GitHub
 
 [Forking](https://help.github.com/articles/about-forks/) é uma etapa onde você obtém sua própria cópia do repositório (vulgo _repo_) no GitHub.
 
@@ -58,7 +58,7 @@ Isso é essencial, pois permite que você trabalhe em sua própria cópia da apl
 
 3. Depois que o repositório recebeu um fork, você será redirecionado para a cópia do repositório em `https://github.com/YOUR_USER_NAME/mobile` (`YOUR_USER_NAME` será substituído pelo seu nome de usuário do GitHub).
 
-## Clonar o seu fork no GitHub
+## Como clonar o seu fork no GitHub
 
 [Clonar](https://help.github.com/articles/cloning-a-repository/) é onde ** você faz o download de uma cópia** de um repositório de um local `remoto` que pertence a você ou a outra pessoa. No seu caso, este local remoto é o seu `fork` do repositório freeCodeCamp que deve estar disponível em `https://github.com/YOUR_USER_NAME/mobile`. (`YOUR_USER_NAME` será substituído pelo seu nome de usuário do GitHub.)
 
@@ -70,7 +70,7 @@ Execute esses comandos em sua máquina local:
 
 2. Clone seu fork do freeCodeCamp, substituindo `YOUR_USER_NAME` pelo seu nome de usuário do GitHub
 
-   ```console
+   ```bash
    git clone --depth=1 https://github.com/YOUR_USER_NAME/mobile.git
    ```
 
@@ -78,7 +78,7 @@ Isto vai baixar todo o repositório da aplicação do freeCodeCamp para disposit
 
 Nota: `--depth=1` cria um clone raso do seu fork, com apenas o histórico mais recente.
 
-## Configurar sincronização a partir do pai
+## Como configurar a sincronização a partir do repositório pai
 
 Agora que você baixou uma cópia do seu fork, será necessário configurar um remote `upstream` para o repositório pai.
 
@@ -88,32 +88,32 @@ Agora que você baixou uma cópia do seu fork, será necessário configurar um r
 
 1. Mude o diretório para o novo diretório `mobile`:
 
-   ```console
+   ```bash
    cd mobile
    ```
 
 2. Adicione uma referência remota ao repositório principal mobile do freeCodeCamp:
 
-   ```console
+   ```bash
    git remote add upstream https://github.com/freeCodeCamp/mobile.git
    ```
 
 3. Certifique-se de que a configuração esteja correta:
 
-   ```console
+   ```bash
    git remote -v
    ```
 
    O resultado deve ser algo parecido com o mostrado abaixo (substituindo `YOUR_USER_NAME` com seu nome de usuário do GitHub):
 
-   ```console
+   ```bash
    origin    https://github.com/YOUR_USER_NAME/mobile.git (fetch)
    origin    https://github.com/YOUR_USER_NAME/mobile.git (push)
    upstream    https://github.com/freeCodeCamp/mobile.git (fetch)
    upstream    https://github.com/freeCodeCamp/mobile.git (push)
    ```
 
-## Executar a aplicação do freeCodeCamp para dispositivos móveis localmente
+## Como executar a aplicação do freeCodeCamp para dispositivos móveis localmente
 
 Agora que você tem uma cópia local da aplicação do freeCodeCamp para dispositivos móveis, você pode seguir estas instruções para executá-la localmente.
 
@@ -129,26 +129,22 @@ E como sempre, fique à vontade em perguntar na [categoria 'Contributors' (colab
 
 As chaves de API padrão e variáveis de ambiente são armazenadas no arquivo `sample.env`. Esse arquivo precisa ser copiado para um novo arquivo chamado `.env` que é acessado dinamicamente durante a etapa de instalação. Lembre-se de mudar o diretório para `mobile-app` antes de executar os comandos a seguir.
 
-```console
+```bash
 # Crie uma cópia da "sample.env" e a nomeie como ".env".
 # Preencha-o com as chaves e segredos de API necessários:
 ```
 
-<!-- tabs:start -->
-
 #### **macOS/Linux**
 
-```console
+```bash
 cp sample.env .env
 ```
 
 #### **Windows**
 
-```console
+```bash
 copy sample.env .env
 ```
-
-<!-- tabs:end -->
 
 As chaves no arquivo `.env` _ não _ precisam ser alteradas para executar o aplicativo localmente. Você pode deixar os valores padrão copiados de `sample.env` como estão.
 
@@ -156,7 +152,7 @@ As chaves no arquivo `.env` _ não _ precisam ser alteradas para executar o apli
 
 Esta etapa vai instalar as dependências necessárias para a execução do aplicativo:
 
-```console
+```bash
 flutter pub get
 ```
 
@@ -166,13 +162,13 @@ Inicie o emulador de sua escolha (Android ou iOS) e aguarde a conclusão do proc
 
 Agora, você pode iniciar o aplicativo executando o seguinte comando:
 
-```console
+```bash
 flutter run
 ```
 
 > [!TIP] Se estiver usando o VSCode ou o Android Studio, poderá iniciar a aplicação facilmente sem ter de executar os comandos no terminal. Mais informações [aqui](https://docs.flutter.dev/get-started/test-drive).
 
-## Fazer alterações localmente
+## Como fazer alterações localmente
 
 Agora você pode fazer alterações nos arquivos e fazer commit das suas alterações no clone local do seu fork.
 
@@ -180,13 +176,13 @@ Siga estes passos:
 
 1. Certifique-se que está no branch `main`:
 
-   ```console
+   ```bash
    git status
    ```
 
    Você deve ver um resultado como este:
 
-   ```console
+   ```bash
    Na branch main
    Sua branch está atualizada com 'origin/main'.
 
@@ -195,7 +191,7 @@ Siga estes passos:
 
    Se você não está no main ou seu diretório de trabalho não está limpo, resolva quaisquer arquivos/commits e saia do `main`:
 
-   ```console
+   ```bash
    git checkout main
    ```
 
@@ -209,25 +205,25 @@ Siga estes passos:
 
    Atualize sua cópia local do repositório upstream da aplicação do freeCodeCamp para dispositivos móveis:
 
-   ```console
+   ```bash
    git fetch upstream
    ```
 
    Faça um hard reset na sua branch main com a main da aplicação do freeCodeCamp para dispositivos móveis:
 
-   ```console
+   ```bash
    git reset --hard upstream/main
    ```
 
    Faça um push da sua branch main para a origin para obter um histórico claro em seu fork do GitHub:
 
-   ```console
+   ```bash
    git push origin main --force
    ```
 
    Você pode validar se sua main atual combina com upstream/main fazendo um diff:
 
-   ```console
+   ```bash
    git diff upstream/main
    ```
 
@@ -239,7 +235,7 @@ Siga estes passos:
 
    Veja se você está na `main` como explicado antes e crie uma branch a partir dela:
 
-   ```console
+   ```bash
    git checkout -b fix/update-guide-for-xyz
    ```
 
@@ -263,13 +259,13 @@ Siga estes passos:
 
 7. Verifique e confirme os arquivos que você está atualizando:
 
-   ```console
+   ```bash
    git status
    ```
 
    Isso deve mostrar uma lista dos arquivos `unstaged` que você editou.
 
-   ```console
+   ```bash
    Na branch feat/documentation
    Sua branch está atualizada com 'upstream/feat/documentation'.
 
@@ -286,25 +282,25 @@ Siga estes passos:
 
    Nesta etapa, você só deve marcar arquivos que você editou ou adicionou. Você pode executar um reset e resolver arquivos que você não pretendeu mudar se necessário.
 
-   ```console
+   ```bash
    git add caminho/para/meu/arquivo/alterado.ext
    ```
 
    Ou você pode adicionar todos os arquivos `unstaged` para a área de preparação:
 
-   ```console
+   ```bash
    git add .
    ```
 
    Apenas os arquivos que foram movidos para a área de staging serão adicionados quando você fizer um commit.
 
-   ```console
+   ```bash
    git status
    ```
 
    Resultado:
 
-   ```console
+   ```bash
    Na branch feat/documentation
    Sua branch está atualizada com 'upstream/feat/documentation'.
 
@@ -317,7 +313,7 @@ Siga estes passos:
 
    Agora, você pode fazer o commit das alterações com uma pequena mensagem assim:
 
-   ```console
+   ```bash
    git commit -m "fix: my short commit message"
    ```
 
@@ -349,7 +345,7 @@ Siga estes passos:
 
 9. Se você se deu conta que precisa editar um arquivo ou atualizar a mensagem de commit você pode fazer isso assim:
 
-   ```console
+   ```bash
    git commit --amend
    ```
 
@@ -357,8 +353,106 @@ Siga estes passos:
 
 10. Em seguida, você pode fazer push das suas alterações no seu fork:
 
-    ```console
+    ```bash
     git push origin branch/nome-aqui
+    ```
+
+## Executando testes do currículo para dispositivos móveis
+
+> [!NOTE] Você somente precisa seguir esta seção se estiver modificando o executador de testes de desafio na aplicação para dispositivos móveis. Caso contrário, vá para a próxima seção sobre [como abrir um pull request](#proposing-a-pull-request-pr).
+
+1. Faça a clonagem do [repositório do freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) localmente e fora da cópia local do repositório para dispositivos móveis do freeCodeCamp. A estrutura de pastas deve ficar assim:
+
+    ```bash
+    ├── freeCodeCamp
+    ├── mobile
+    ```
+
+2. Mude o diretório para o novo diretório do freeCodeCamp:
+
+    ```bash
+    cd freeCodeCamp
+    ```
+
+3. Faça uma cópia do arquivo `.env`:
+
+    #### **macOS/Linux**
+
+    ```bash
+    cp sample.env .env
+    ```
+
+    #### **Windows**
+
+    ```bash
+    copy sample.env .env
+    ```
+
+4. Instale as dependências para o repositório do freeCodeCamp:
+
+    ```bash
+    pnpm install && pnpm run create:shared
+    ```
+
+5. Gere o arquivo JSON dos dados de desafio:
+
+    ```bash
+    pnpm run build:curriculum
+    ```
+
+6. Copie o arquivo JSON gerado para a aplicação para dispositivos móveis:
+
+    #### **macOS/Linux**
+
+    ```bash
+    cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
+    ```
+
+    #### **Windows**
+    ```bash
+    copy .\shared\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+    ```
+
+7. Mude o diretório para o diretório da aplicação para dispositivos móveis:
+
+    ```bash
+    cd ../mobile/mobile-app
+    ```
+
+8. Instale as dependências para a aplicação para dispositivos móveis:
+
+    ```bash
+    flutter pub get
+    ```
+
+9. Atualize o arquivo de testes para que use o arquivo JSON de dados do desafio:
+
+    ```bash
+    sed -i '' 's/..\/..\/shared\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
+    ```
+
+10. Gere os arquivos do desafio:
+
+    ```bash
+    flutter test test/widget_test.dart
+    ```
+
+11. Inicie um servidor local para servir os arquivos de desafio com a ajuda do pacote `serve`:
+
+    ```bash
+    npx serve
+    ```
+
+12. Em um terminal diferente, volte ao repositório do freeCodeCamp:
+
+    ```bash
+    cd ../../freeCodeCamp
+    ```
+
+13. Execute os testes do Cypress:
+
+    ```bash
+    pnpm cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome
     ```
 
 ## Propondo um Pull Request (PR)
@@ -388,7 +482,7 @@ Se você está em um sistema operacional diferente e/ou ainda está com problema
 
 Se você enfrenta problemas com a interface do usuário ou erros de build, uma limpeza pode ser útil:
 
-```console
+```bash
 flutter clean
 ```
 
@@ -398,7 +492,7 @@ Se você receber erros durante a instalação das dependências, certifique-se d
 
 Seja paciente, pois a primeira configuração pode demorar um pouco, dependendo da largura de banda da sua rede.
 
-## Obter ajuda
+## Obtendo ajuda
 
 Se você está com dificuldades e precisa de ajuda, fique à vontade em perguntar na categoria ['Contributors' (colaboradores) em nosso fórum](https://forum.freecodecamp.org/c/contributors) ou [na sala de bate-papo dos colaboradores](https://discord.gg/PRyKn3Vbay).
 

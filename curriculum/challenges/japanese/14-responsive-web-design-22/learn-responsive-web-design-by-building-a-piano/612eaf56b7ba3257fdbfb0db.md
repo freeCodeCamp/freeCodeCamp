@@ -19,7 +19,7 @@ dashedName: step-21
 assert(document.querySelectorAll('img')?.length === 1);
 ```
 
-`img` 要素は最初の `.key` 要素の前に来る必要があります。
+Your `img` element should come before your first `.keys` element.
 
 ```js
 const img = document.querySelector('img');

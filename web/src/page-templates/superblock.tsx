@@ -20,7 +20,7 @@ export default function SuperBlock({
         <ul key={blockName}>
           {blockName}
           <ul>
-            {blockNameToChallengeOrderMap[blockName].map(([id, title]) => (
+            {blockNameToChallengeOrderMap[blockName].map(({ id, title }) => (
               <li key={id}>
                 <Link
                   href={`/learn/responsive-web-design/${blockName}/${idToDashedNameMap[id]}/${id}`}

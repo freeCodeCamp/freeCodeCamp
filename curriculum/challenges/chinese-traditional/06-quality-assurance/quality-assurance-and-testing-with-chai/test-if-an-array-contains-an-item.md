@@ -12,7 +12,7 @@ dashedName: test-if-an-array-contains-an-item
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，`Arrays` 套件裏標有 `#12` 的測試下，將每個 `assert` 改成 `assert.include` 或 `assert.notInclude` 方法，通過測試（結果應該返回 `true`）。 不要修改傳給斷言的參數。
+Within `tests/1_unit-tests.js` under the test labeled `#12` in the `Arrays` suite, change each `assert` to either `assert.include` or `assert.notInclude` to make the test pass (should evaluate to `true`). 不要修改傳給斷言的參數。
 
 # --hints--
 

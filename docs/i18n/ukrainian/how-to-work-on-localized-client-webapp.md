@@ -16,7 +16,7 @@
 
 Більшість файлів для перекладу платформи розташовані у папці [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n). Для кожної мови є каталог, що містить файли JSON з перекладами.
 
-```console
+```bash
   config
   └── i18n.ts
   ...
@@ -75,7 +75,7 @@
 
 ## Тестування клієнтського застосунку світовою мовою
 
-Ви можете протестувати клієнтський застосунок будь-якою мовою [ зі списку `availableLangs`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
+Ви можете протестувати клієнтський застосунок будь-якою мовою [зі списку `availableLangs`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts).
 
 ```js
 export const availableLangs = {
@@ -97,7 +97,7 @@ export const availableLangs = {
 
 Якщо ви тестуєте нову мову, створіть папку під назвою мови поряд з іншими мовами та скопіюйте файли JSON з іншої мови до нової папки.
 
-Додайте нову мову до запису `Languages` та масиву `client` зверху файлу [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
+Додайте нову мову до запису `Languages` та масиву `client` зверху файлу [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts).
 
 Потім дотримуйтесь інструкцій з коментарів того ж файлу, щоб при потребі додати/оновити решту змінних.
 
@@ -265,6 +265,10 @@ const email = 'team@freecodecamp.org';
 Також було б добре тримати усі ключі в одному порядку для усіх файлів. Спробуйте розставити всю пунктуацію, інтервали, лапки тощо у файлах JSON, а не у файлах компонента чи сервера.
 
 > [!NOTE] Підкреслення (`_`) є зарезервованим знаком для ключів у файлах клієнтської частини. Див. [документацію](https://www.i18next.com/translation-function/plurals) про те, як вони використовуються.
+
+## Запропонуйте запит на злиття (PR)
+
+Як тільки ви затвердили свої зміни, див. [як відкрити запит на злиття](how-to-open-a-pull-request.md).
 
 ## Корисна документація
 

@@ -203,19 +203,19 @@ You can identify the exact version deployed by visiting the build and deployment
 
 There are some known limitations and tradeoffs when using the beta version of the platform.
 
-- #### All data / personal progress on these beta platforms will NOT be saved or carried over to production
+- **All data / personal progress on these beta platforms will NOT be saved or carried over to production**
 
   **Users on the beta version will have a separate account from the production.** The beta version uses a physically separate database from production. This gives us the ability to prevent any accidental loss of data or modifications. The dev-team may purge the database on this beta version as needed.
 
-- #### There are no guarantees on the uptime and reliability of the beta platforms
+- **The beta platforms do not provide any assurances regarding uptime and reliability**
 
   Deployment is expected to be frequent and in rapid iterations, sometimes multiple times a day. As a result, there will be unexpected downtime at times or broken functionality on the beta version.
 
-- #### Do not send regular users to this site as a measure of confirming a fix
+- **To ensure the effectiveness of the fix, it is advised not to direct regular users to this site for verification purposes.**
 
   The beta site is and always has been to augment local development and testing, nothing else. It's not a promise of what’s coming, but a glimpse of what is being worked upon.
 
-- #### Sign in page may look different than production
+- **Sign in page may look different than production**
 
   We use a test tenant for freeCodeCamp.dev on Auth0, and hence do not have the ability to set a custom domain. This makes it so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality and is as close to production as we can get.
 
@@ -303,19 +303,19 @@ You should keep the VMs up to date by performing updates and upgrades. This will
 
 Update package information
 
-```console
+```bash
 sudo apt update
 ```
 
 Upgrade installed packages
 
-```console
+```bash
 sudo apt upgrade -y
 ```
 
 Cleanup unused packages
 
-```console
+```bash
 sudo apt autoremove -y
 ```
 
@@ -331,7 +331,7 @@ Provisioning VMs with the Code
 
 1. Install NGINX and configure from repository.
 
-   ```console
+   ```bash
    sudo su
 
    cd /var/www/html
@@ -352,7 +352,7 @@ Provisioning VMs with the Code
 
    Move over existing certificates:
 
-   ```console
+   ```bash
    # Local
    scp -r username@source-server-public-ip:/etc/nginx/ssl ./
    scp -pr ./ssl username@target-server-public-ip:/tmp/
@@ -364,7 +364,7 @@ Provisioning VMs with the Code
 
    Update Upstream Configurations:
 
-   ```console
+   ```bash
    vi configs/upstreams.conf
    ```
 
@@ -382,7 +382,7 @@ Provisioning VMs with the Code
 
 1. Check status for NGINX service using the below command:
 
-   ```console
+   ```bash
    sudo systemctl status nginx
    ```
 
@@ -396,13 +396,13 @@ Config changes to our NGINX instances are maintained on GitHub, these should be 
 
 1. SSH into the instance and enter sudo
 
-```console
+```bash
 sudo su
 ```
 
 2. Get the latest config code.
 
-```console
+```bash
 cd /etc/nginx
 git fetch --all --prune
 git reset --hard origin/main
@@ -410,7 +410,7 @@ git reset --hard origin/main
 
 3. Test and reload the config [with Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
 
-```console
+```bash
 nginx -t
 nginx -s reload
 ```
@@ -419,7 +419,7 @@ nginx -s reload
 
 1. Install build tools for node binaries (`node-gyp`) etc.
 
-```console
+```bash
 sudo apt install build-essential
 ```
 
@@ -431,53 +431,59 @@ Provisioning VMs with the Code
 
 2. Install pnpm globally.
 
-```console
+```bash
 npm install -g pnpm
 ```
 
-3. Clone freeCodeCamp, set up env, and keys.
+3. Install pm2 globally.
 
-```console
+```bash
+npm install -g pm2
+```
+
+4. Clone freeCodeCamp, set up env, and keys.
+
+```bash
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
 cd freeCodeCamp
 git checkout prod-current # or any other branch to be deployed
 ```
 
-4. Create the `.env` from the secure credentials storage.
+5. Create the `.env` from the secure credentials storage.
 
-5. Install dependencies
+6. Install dependencies
 
-```console
+```bash
 pnpm install
 ```
 
-6. Setup pm2 `logrotate` and startup on boot
+7. Setup pm2 `logrotate` and startup on boot
 
-```console
-pnpm pm2 install pm2-logrotate
-pnpm pm2 startup
+```bash
+pm2 install pm2-logrotate
+pm2 startup
 ```
 
-7. Build the server
+8. Build the server
 
-```console
+```bash
 pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
-8.  Start Instances
+9.  Start Instances
 
-```console
+```bash
 pnpm start:server
 ```
 
 ### Logging and Monitoring
 
-```console
-pnpm pm2 logs
+```bash
+pm2 logs
 ```
 
-```console
-pnpm pm2 monit
+```bash
+pm2 monit
 ```
 
 ### Updating Instances (Maintenance)
@@ -490,32 +496,32 @@ Code changes need to be deployed to the API instances from time to time. It can 
 
 1. Stop all instances
 
-```console
-pnpm pm2 stop all
+```bash
+pm2 stop all
 ```
 
 2. Install dependencies
 
-```console
+```bash
 pnpm install
 ```
 
 3. Build the server
 
-```console
+```bash
 pnpm prebuild && pnpm build:curriculum && pnpm build:server
 ```
 
 4. Start Instances
 
-```console
-pnpm start:server && pnpm pm2 logs
+```bash
+pnpm start:server && pm2 logs
 ```
 
 #### 2. Rolling updates - Used for logical changes to code.
 
-```console
-pnpm reload:server && pnpm pm2 logs
+```bash
+pnpm reload:server && pm2 logs
 ```
 
 > [!NOTE] We are handling rolling updates to code and logic via pipelines. You should not need to run these commands. These are here for documentation.
@@ -526,15 +532,15 @@ pnpm reload:server && pnpm pm2 logs
 
 2. Update pm2 to use the new version
 
-```console
-pnpm pm2 update
+```bash
+pm2 update
 ```
 
 ## Work on Client Instances
 
 1. Install build tools for node binaries (`node-gyp`) etc.
 
-```console
+```bash
 sudo apt install build-essential
 ```
 
@@ -546,7 +552,7 @@ Provisioning VMs with the Code
 
 2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
 
-   ```console
+   ```bash
    npm i -g npm@8
    npm i -g pm2@4
    npm install -g serve@13
@@ -556,7 +562,7 @@ Provisioning VMs with the Code
 
 3. Clone client config, setup env and keys.
 
-   ```console
+   ```bash
    git clone https://github.com/freeCodeCamp/client-config.git client
    cd client
    ```
@@ -565,7 +571,7 @@ Provisioning VMs with the Code
 
    > Todo: This setup needs to move to S3 or Azure Blob storage 
    > 
-   > ```console
+   > ```bash
    >    echo "serve -c ../serve.json -p 50505 www" > client-start-primary.sh
    >    chmod +x client-start-primary.sh
    >    pm2 delete client-primary
@@ -578,11 +584,11 @@ Provisioning VMs with the Code
 
 ### Logging and Monitoring
 
-```console
+```bash
 pm2 logs
 ```
 
-```console
+```bash
 pm2 monit
 ```
 
@@ -596,7 +602,7 @@ Code changes need to be deployed to the API instances from time to time. It can 
 
 1. Stop all instances
 
-   ```console
+   ```bash
    pm2 stop all
    ```
 
@@ -604,13 +610,13 @@ Code changes need to be deployed to the API instances from time to time. It can 
 
 3. Start Instances
 
-   ```console
+   ```bash
    pm2 start all --update-env && pm2 logs
    ```
 
 #### 2. Rolling updates - Used for logical changes to code.
 
-```console
+```bash
 pm2 reload all --update-env && pm2 logs
 ```
 
@@ -630,7 +636,7 @@ Provisioning VMs with the Code
 
 1. Install NGINX and configure from repository.
 
-   ```console
+   ```bash
    sudo su
 
    cd /var/www/html
@@ -651,7 +657,7 @@ Provisioning VMs with the Code
 
    Move over existing certificates:
 
-   ```console
+   ```bash
    # Local
    scp -r username@source-server-public-ip:/etc/nginx/ssl ./
    scp -pr ./ssl username@target-server-public-ip:/tmp/
@@ -663,7 +669,7 @@ Provisioning VMs with the Code
 
    Update Upstream Configurations:
 
-   ```console
+   ```bash
    vi configs/upstreams.conf
    ```
 
@@ -681,7 +687,7 @@ Provisioning VMs with the Code
 
 1. Install Docker and configure from the repository
 
-   ```console
+   ```bash
    git clone https://github.com/freeCodeCamp/chat-config.git chat
    cd chat
    ```
@@ -690,7 +696,7 @@ Provisioning VMs with the Code
 
 3. Run rocket-chat server
 
-   ```console
+   ```bash
    docker-compose config
    docker-compose up -d
    ```
@@ -699,13 +705,13 @@ Provisioning VMs with the Code
 
 1. Check status for NGINX service using the below command:
 
-   ```console
+   ```bash
    sudo systemctl status nginx
    ```
 
 2. Check status for running docker instances with:
 
-   ```console
+   ```bash
    docker ps
    ```
 
@@ -717,13 +723,13 @@ Config changes to our NGINX instances are maintained on GitHub, these should be 
 
 1. SSH into the instance and enter sudo
 
-   ```console
+   ```bash
    sudo su
    ```
 
 2. Get the latest config code.
 
-   ```console
+   ```bash
    cd /etc/nginx
    git fetch --all --prune
    git reset --hard origin/main
@@ -731,7 +737,7 @@ Config changes to our NGINX instances are maintained on GitHub, these should be 
 
 3. Test and reload the config [with Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
 
-   ```console
+   ```bash
    nginx -t
    nginx -s reload
    ```
@@ -740,44 +746,44 @@ Config changes to our NGINX instances are maintained on GitHub, these should be 
 
 1. SSH into the instance and navigate to the chat config path
 
-   ```console
+   ```bash
    cd ~/chat
    ```
 
 2. Get the latest config code.
 
-   ```console
+   ```bash
    git fetch --all --prune
    git reset --hard origin/main
    ```
 
 3. Pull down the latest docker image for Rocket.Chat
 
-   ```console
+   ```bash
    docker-compose pull
    ```
 
 4. Update the running instances
 
-   ```console
+   ```bash
    docker-compose up -d
    ```
 
 5. Validate the instances are up
 
-   ```console
+   ```bash
    docker ps
    ```
 
 6. Cleanup extraneous resources
 
-   ```console
+   ```bash
    docker system prune --volumes
    ```
 
    Output:
 
-   ```console
+   ```bash
    WARNING! This will remove:
      - all stopped containers
      - all networks not used by at least one container
@@ -796,7 +802,7 @@ Config changes to our NGINX instances are maintained on GitHub, these should be 
 
 ssh into the VM (hosted on Digital Ocean).
 
-```console
+```bash
 cd tools
 git pull origin master
 pnpm install
@@ -808,7 +814,7 @@ pm2 restart contribute-app
 
 List currently installed node & npm versions
 
-```console
+```bash
 nvm -v
 node -v
 npm -v
@@ -818,25 +824,25 @@ nvm ls
 
 Install the latest Node.js LTS, and reinstall any global packages
 
-```console
+```bash
 nvm install --lts --reinstall-packages-from=default
 ```
 
 Verify installed packages
 
-```console
+```bash
 npm ls -g --depth=0
 ```
 
 Alias the `default` Node.js version to the current LTS (pinned to the latest major version)
 
-```console
+```bash
 nvm alias default 16
 ```
 
 (Optional) Uninstall old versions
 
-```console
+```bash
 nvm uninstall <version>
 ```
 
@@ -846,31 +852,31 @@ nvm uninstall <version>
 
 Get the uninstall instructions/commands with the `unstartup` command and use the output to remove the systemctl services
 
-```console
+```bash
 pm2 unstartup
 ```
 
 Get the install instructions/commands with the `startup` command and use the output to add the systemctl services
 
-```console
+```bash
 pm2 startup
 ```
 
 Quick commands for PM2 to list, resurrect saved processes, etc.
 
-```console
+```bash
 pm2 ls
 ```
 
-```console
+```bash
 pm2 resurrect
 ```
 
-```console
+```bash
 pm2 save
 ```
 
-```console
+```bash
 pm2 logs
 ```
 
@@ -892,32 +898,32 @@ Currently updating agents requires them to be removed and reconfigured. This is 
 
 1. Navigate and check status of the service
 
-   ```console
+   ```bash
    cd ~/azagent
    sudo ./svc.sh status
    ```
 
 2. Stop the service
 
-   ```console
+   ```bash
    sudo ./svc.sh stop
    ```
 
 3. Uninstall the service
 
-   ```console
+   ```bash
    sudo ./svc.sh uninstall
    ```
 
 4. Remove the agent from the pipeline pool
 
-   ```console
+   ```bash
    ./config.sh remove
    ```
 
 5. Remove the config files
 
-   ```console
+   ```bash
    cd ~
    rm -rf ~/azagent
    ```
@@ -932,7 +938,7 @@ We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to sen
 
 2. Set up the script to fetch the email list.
 
-   ```console
+   ```bash
    cd /home/freecodecamp/scripts/emails
    cp sample.env .env
    ```
@@ -941,7 +947,7 @@ We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to sen
 
 3. Run the script.
 
-   ```console
+   ```bash
    node get-emails.js emails.csv
    ```
 

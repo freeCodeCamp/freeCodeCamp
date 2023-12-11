@@ -34,25 +34,21 @@ console.log(obj);
 Ви не повинні замінювати ключове слово `const`.
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const/g));
+assert(code.match(/const/g));
 ```
 
 `MATH_CONSTANTS` повинна бути константною змінною (використовуйте `const`).
 
 ```js
-(getUserInput) =>
-  assert(getUserInput('index').match(/const\s+MATH_CONSTANTS/g));
+assert(code.match(/const\s+MATH_CONSTANTS/g));
 ```
 
 Ви не повинні змінювати початкове оголошення `MATH_CONSTANTS`.
 
 ```js
-(getUserInput) =>
-  assert(
-    getUserInput('index').match(
-      /const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g
-    )
-  );
+assert(code.match(
+   /const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g
+));
 ```
 
 `PI` має дорівнювати `3.14`.

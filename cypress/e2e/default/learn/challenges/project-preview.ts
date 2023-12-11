@@ -40,8 +40,8 @@ const practiceProjects = [
     url: '/learn/2022/responsive-web-design/learn-html-forms-by-building-a-registration-form/'
   },
   {
-    title: 'Picasso Painting',
-    url: '/learn/2022/responsive-web-design/learn-intermediate-css-by-building-a-picasso-painting/'
+    title: 'fCC Cat Painting',
+    url: '/learn/2022/responsive-web-design/learn-intermediate-css-by-building-a-cat-painting/'
   },
   {
     title: 'Balance Sheet',

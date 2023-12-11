@@ -1,6 +1,6 @@
 ---
 id: 5900f3c51000cf542c50fed7
-title: 'Problem 89: Roman numerals'
+title: 'Завдання 89: римські цифри'
 challengeType: 1
 forumTopicId: 302204
 dashedName: problem-89-roman-numerals
@@ -8,20 +8,20 @@ dashedName: problem-89-roman-numerals
 
 # --description--
 
-For a number written in Roman numerals to be considered valid there are basic rules which must be followed. Even though the rules allow some numbers to be expressed in more than one way there is always a *best* way of writing a particular number.
+Аби число, написане римськими цифрами, вважалося дійсним, необхідно дотримуватися основних правил. Попри те, що правила дозволяють виражати деякі числа кількома способами, завжди існує *найкращий* спосіб написання певного числа.
 
-- Numerals must be arranged in descending order of size.
-- M, C, and X cannot be equaled or exceeded by smaller denominations.
-- D, L, and V can each only appear once.
+- Цифри повинні бути розташовані в порядку спадання.
+- М, С і Х не можуть бути виражені або перевищені меншими номіналами.
+- D, L і V можуть з’являтися тільки один раз.
 
-In addition to the three rules given above, if subtractive combinations are used then the following four rules must be followed.
+Окрім трьох вищенаведених правил, якщо використовуються від’ємні числа, необхідно дотримуватися наступних чотирьох правил.
 
-- Only one I, X, and C can be used as the leading numeral in part of a subtractive pair.
-- I can only be placed before V and X.
-- X can only be placed before L and C.
-- C can only be placed before D and M.
+- Тільки I, X та C можуть бути використані як початкова цифра у частині від’ємної пари.
+- I можна розмістити лише перед V та X.
+- X можна розмістити лише перед L та C.
+- C можна розмістити лише перед D та M.
 
-For example, it would appear that there are at least six ways of writing the number sixteen:
+Наприклад, з’ясувалося, що існує принаймні шість способів написання числа шістнадцять:
 
 <div style="margin-left: 4em; font-family: 'courier new', monospace;">
   IIIIIIIIIIIIIIII<br>
@@ -32,13 +32,13 @@ For example, it would appear that there are at least six ways of writing the num
   XVI<br><br>
 </div>
 
-However, according to the rules only XIIIIII and XVI are valid, and the last example is considered to be the most efficient, as it uses the least number of numerals.
+Проте, згідно із правилами лише XIIIIII та XVI є дійсними, а останній приклад вважається найбільш ефективним, оскільки він використовує найменшу кількість цифр.
 
-The array, `roman`, will contain numbers written with valid, but not necessarily minimal, Roman numerals.
+Масив `roman` міститиме числа, написані дійсними римськими цифрами, але не обов’язково у мінімальному вигляді.
 
-Find the number of characters saved by writing each of these in their minimal form.
+Знайдіть кількість збережених символів, записавши кожен із них у мінімальній формі.
 
-**Note:** You can assume that all the Roman numerals in the array contain no more than four consecutive identical units.
+**Примітка:** можна припустити, що всі римські цифри в масиві містять не більше чотирьох послідовних однакових одиниць.
 
 # --hints--
 

@@ -15,7 +15,7 @@ A(m - 1, 1)           & \text{if $m > 0$ e $n = 0$} \\\\ A(m - 1, A(m, n - 1)) &
 
 Per esempio $A(1, 0) = 2$, $A(2, 2) = 7$ e $A(3, 4) = 125$.
 
-Find $\displaystyle\sum_{n = 0}^6 A(n, n)$ and give your answer mod ${14}^8$.
+Trova $\displaystyle\sum_{n = 0}^6 A(n, n)$ e dai la tua risposta mod ${14}^8$.
 
 # --hints--
 

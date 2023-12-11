@@ -12,7 +12,7 @@ Let $R(M, N)$ be the number of lattice points ($x$, $y$) which satisfy $M \lt x 
 
 We can verify that $R(0, 100) = 3\\,019$ and $R(100, 10\\,000) = 29\\,750\\,422$.
 
-Find $R(2 \times {10}^6, {10}^9)$.
+Знайдіть $R(2 \times {10}^6, {10}^9)$.
 
 **Note:** $\lfloor x\rfloor$ represents the floor function.
 

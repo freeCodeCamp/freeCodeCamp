@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { SuperBlocks } from '../../../../../config/certification-settings';
-import { generateIconComponent } from '../../../assets/icons';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
+import { SuperBlockIcon } from '../../../assets/icons/superblock-icon';
 import { Spacer } from '../../../components/helpers';
 
 interface SuperBlockIntroProps {
@@ -15,8 +15,15 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
   const superBlockIntroObj: {
     title: string;
     intro: string[];
-    note: string[];
-  } = t(`intro:${superBlock}`);
+    note: string;
+  } = t<
+    string,
+    string & {
+      title: string;
+      intro: string[];
+      note: string;
+    }
+  >(`intro:${superBlock}`);
   const {
     title: i18nSuperBlock,
     intro: superBlockIntroText,
@@ -25,9 +32,11 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
 
   return (
     <>
-      <h1 className='text-center big-heading'>{i18nSuperBlock}</h1>
+      <h1 id='content-start' className='text-center big-heading'>
+        {i18nSuperBlock}
+      </h1>
       <Spacer size='medium' />
-      {generateIconComponent(superBlock, 'cert-header-icon')}
+      <SuperBlockIcon className='cert-header-icon' superBlock={superBlock} />
       <Spacer size='medium' />
       {superBlockIntroText.map((str, i) => (
         <p key={i}>{str}</p>

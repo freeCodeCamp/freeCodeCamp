@@ -17,7 +17,7 @@ function Loader({
   const { t } = useTranslation();
 
   const [showSpinner, setShowSpinner] = useState(!loaderDelay);
-  const [showMessage, setShowMessage] = useState(!messageDelay);
+  const [showMessage, setShowMessage] = useState(false);
   useEffect(() => {
     if (loaderDelay) {
       const timerId = setTimeout(() => setShowSpinner(true), loaderDelay);

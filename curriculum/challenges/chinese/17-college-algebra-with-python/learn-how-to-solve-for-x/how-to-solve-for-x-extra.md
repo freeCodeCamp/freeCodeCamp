@@ -12,15 +12,15 @@ dashedName: how-to-solve-for-x-extra
 
 这是<a href="https://colab.research.google.com/drive/1Jv6WxW93J_1GZao8DkNb4X0D93oVibbs" target="_blank" rel="noopener noreferrer nofollow">和视频配套的 Colab 笔记本</a>。用它来为你正在创建的代数 Colab 笔记本添加更多内容。
 
-# --question--
-
-## --任务--
+# --任务--
 
 将视频中更多求解 x 的方法的代码添加到你的代数 Colab 笔记本中。
 
 ---
 
 打开以下 Colab 笔记本，运行单元格，然后<a href="https://colab.research.google.com/drive/1XjmHoERFKcvol7FPidQE-wgdvR82HV45" target="_blank" rel="noopener noreferrer nofollow">练习解决一步和两步的代数问题</a>。作为奖励，看看生成练习题的代码。
+
+# --question--
 
 ## --text--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f3ab1000cf542c50febe
-title: 'Problem 63: Powerful digit counts'
+title: 'Завдання 63: степені, що дорівнюють кількості цифр'
 challengeType: 1
 forumTopicId: 302175
 dashedName: problem-63-powerful-digit-counts
@@ -8,9 +8,9 @@ dashedName: problem-63-powerful-digit-counts
 
 # --description--
 
-The 5-digit number, 16807 = 7<sup>5</sup>, is also a fifth power. Similarly, the 9-digit number, 134217728 = 8<sup>9</sup>, is a ninth power.
+П’ятизначне число 16807 = 7<sup>5</sup> також є п’ятим степенем. Так само дев’ятизначне число 134217728 = 8<sup>9</sup> є дев’ятим степенем.
 
-Complete the function so that it returns how many positive integers are of length `n` and an `n`th power.
+Завершіть функцію так, щоб вона повернула кількість додатних `n`-значних цілих чисел, які також є `n`-ним степенем.
 
 # --hints--
 

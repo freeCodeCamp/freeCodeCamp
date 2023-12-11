@@ -1,6 +1,6 @@
 ---
 id: 5900f4bd1000cf542c50ffcf
-title: 'Problem 336: Maximix Arrangements'
+title: 'Завдання 336: послідовність максімікс (maximix arrangements)'
 challengeType: 1
 forumTopicId: 301994
 dashedName: problem-336-maximix-arrangements

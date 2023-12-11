@@ -39,7 +39,7 @@ const person = {
 従来の関数式は使用しないでください。
 
 ```js
-(getUserInput) => assert(!code.match(/function/));
+assert(!code.match(/function/));
 ```
 
 `setGear` は宣言的な関数にする必要があります。
@@ -79,6 +79,7 @@ console.log(bicycle.gear);
 ```js
 const bicycle = {
   gear: 2,
+  // setGear: function(newGear) {
   setGear(newGear) {
     this.gear = newGear;
   }

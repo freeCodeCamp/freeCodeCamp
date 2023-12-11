@@ -1,6 +1,6 @@
 ---
 id: 63eeb8e86becbf1e75c2cb0d
-title: Step 21
+title: Крок 21
 challengeType: 0
 dashedName: step-21
 ---
@@ -18,7 +18,7 @@ const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /totalCountPerProduct\s*=/);
 ```
 
-You should use `const` to declare `totalCountPerProduct`.
+Ви повинні використати `const`, щоб оголосити `totalCountPerProduct`.
 
 ```js
 const afterAdd = code.split("addItem")[1];

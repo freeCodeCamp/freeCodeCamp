@@ -14,7 +14,7 @@ As a reminder, this project is being built upon the following starter project on
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Equality` スイート内の `#7` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.deepEqual` または `assert.notDeepEqual` に変更してください。 アサートに渡された引数を変更しないでください。
+Within `tests/1_unit-tests.js` under the test labeled `#7` in the `Equality` suite, change each `assert` to either `assert.deepEqual` or `assert.notDeepEqual` to make the test pass (should evaluate to `true`). アサートに渡された引数を変更しないでください。
 
 # --hints--
 

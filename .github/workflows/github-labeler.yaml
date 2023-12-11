@@ -12,9 +12,9 @@ jobs:
       contents: read
       # for actions/labeler to add labels to PRs
       pull-requests: write
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/labeler@ba790c862c380240c6d5e7427be5ace9a05c754b # v4
+      - uses: actions/labeler@ac9175f8a1f3625fd0d4fb234536d26811351594 # v4
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           sync-labels: true

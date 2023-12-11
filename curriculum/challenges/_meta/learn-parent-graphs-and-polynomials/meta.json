@@ -9,13 +9,13 @@
   "required": [],
   "superBlock": "college-algebra-with-python",
   "challengeOrder": [
-    [
-      "6363d2529078df117ce4c402",
-      "Parent Graphs"
-    ],
-    [
-      "6363d25c9078df117ce4c403",
-      "Parent Graphs and Polynomials: Extra"
-    ]
+    {
+      "id": "6363d2529078df117ce4c402",
+      "title": "Parent Graphs"
+    },
+    {
+      "id": "6363d25c9078df117ce4c403",
+      "title": "Parent Graphs and Polynomials: Extra"
+    }
   ]
 }

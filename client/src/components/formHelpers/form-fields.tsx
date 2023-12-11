@@ -1,15 +1,13 @@
 import {
-  Alert,
-  ControlLabel,
   FormControl,
   FormGroup,
+  ControlLabel,
+  Alert,
   HelpBlock
-} from '@freecodecamp/react-bootstrap';
-import { kebabCase } from 'lodash-es';
+} from '@freecodecamp/ui';
 import normalizeUrl from 'normalize-url';
 import React from 'react';
 import { Field } from 'react-final-form';
-import { useTranslation } from 'react-i18next';
 import {
   editorValidator,
   localhostValidator,
@@ -33,9 +31,7 @@ type FormFieldsProps = {
   options: FormOptions;
 };
 
-function FormFields(props: FormFieldsProps): JSX.Element {
-  const { t } = useTranslation();
-  const { formFields, options = {} }: FormFieldsProps = props;
+function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
   const {
     ignored = [],
     placeholders = {},
@@ -77,10 +73,7 @@ function FormFields(props: FormFieldsProps): JSX.Element {
       validationWarning) as string;
     return message ? (
       <HelpBlock>
-        <Alert
-          bsStyle={error || validationError ? 'danger' : 'info'}
-          closeLabel={t('buttons.close')}
-        >
+        <Alert variant={error || validationError ? 'danger' : 'info'}>
           {message}
         </Alert>
       </HelpBlock>
@@ -92,28 +85,29 @@ function FormFields(props: FormFieldsProps): JSX.Element {
         .filter(formField => !ignored.includes(formField.name))
         .map(({ name, label }) => (
           // TODO: verify if the value is always a string
-          <Field key={`${kebabCase(name)}-field`} name={name}>
+          <Field key={`${name}-field`} name={name}>
             {({ input: { value, onChange }, meta: { pristine, error } }) => {
-              const key = kebabCase(name);
-              const type = name in types ? types[name] : 'text';
               const placeholder =
                 name in placeholders ? placeholders[name] : '';
               const isURL = types[name] === 'url';
               return (
-                <FormGroup key={key}>
-                  {type === 'hidden' ? null : (
-                    <ControlLabel htmlFor={key}>{label}</ControlLabel>
-                  )}
+                <FormGroup key={name}>
+                  <ControlLabel
+                    htmlFor={name}
+                    data-playwright-test-label={`${name}-control-label`}
+                  >
+                    {label}
+                  </ControlLabel>
                   <FormControl
-                    componentClass={type === 'textarea' ? type : 'input'}
-                    id={key}
+                    id={name}
                     name={name}
                     onChange={onChange}
                     placeholder={placeholder}
                     required={required.includes(name)}
                     rows={4}
-                    type={type}
+                    type='url'
                     value={value as string}
+                    data-playwright-test-label={`${name}-form-control`}
                   />
                   {nullOrWarning(
                     value as string,

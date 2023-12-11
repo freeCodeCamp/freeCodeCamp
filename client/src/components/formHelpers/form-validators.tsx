@@ -17,29 +17,29 @@ function isPathRoot(urlString: string): boolean {
   }
 }
 
-export const editorValidator = (value: string): React.ReactElement | null =>
+type Validator = (value: string) => React.ReactElement | null;
+
+export const editorValidator: Validator = value =>
   editorRegex.test(value) ? <Trans>validation.editor-url</Trans> : null;
 
-export const fCCValidator = (value: string): React.ReactElement | null =>
+export const fCCValidator: Validator = value =>
   fCCRegex.test(value) ? <Trans>validation.own-work-url</Trans> : null;
 
-export const localhostValidator = (value: string): React.ReactElement | null =>
+export const localhostValidator: Validator = value =>
   localhostRegex.test(value) ? (
     <Trans>validation.publicly-visible-url</Trans>
   ) : null;
 
-export const httpValidator = (value: string): React.ReactElement | null =>
+export const httpValidator: Validator = value =>
   httpRegex.test(value) ? <Trans>validation.http-url</Trans> : null;
 
-export const pathValidator = (value: string): React.ReactElement | null =>
+export const pathValidator: Validator = value =>
   isPathRoot(value) ? <Trans>validation.path-url</Trans> : null;
 
-type Validator = (value: string) => React.ReactElement | null;
-export function composeValidators(...validators: (Validator | null)[]) {
+export function composeValidators(...validators: Validator[]) {
   return (value: string): ReturnType<Validator> | null =>
     validators.reduce(
-      (error: ReturnType<Validator>, validator) =>
-        error ?? (validator ? validator(value) : null),
+      (error: ReturnType<Validator>, validator) => error ?? validator(value),
       null
     );
 }

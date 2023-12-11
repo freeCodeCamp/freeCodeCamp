@@ -1,31 +1,31 @@
 ---
 id: 6406adbca6b41d3d7cef85ab
-title: Step 5
+title: Schritt 5
 challengeType: 0
 dashedName: step-5
 ---
 
 # --description--
 
-Back in your `sortInputArray` function, you need to get the values from your `select` elements. Since they all have the class `values-dropdown`, you can query them all at once.
+Zurück in deiner `sortInputArray`-Funktion musst du die Werte aus deinen `select`-Elementen abrufen. Da sie alle die Klasse `values-dropdown` verwenden, kannst du sie alle gleichzeitig abfragen.
 
-Use `document.getElementsByClassName()` to get all the elements with the class `values-dropdown`. Assign that to an `inputValues` variable.
+Verwende `document.getElementsByClassName()`, um alle Elemente mit der Klasse `values-dropdown` abzurufen. Weise diese einer `inputValues`-Variable zu.
 
 # --hints--
 
-You should use `document.getElementsByClassName()` to get all the elements with the class `values-dropdown`.
+Du solltest `document.getElementsByClassName()` verwenden, um alle Elemente mit der Klasse `values-dropdown` abzurufen.
 
 ```js
 assert.match(sortInputArray.toString(), /document\.getElementsByClassName\(\s*('|"|`)values-dropdown\1\s*\)/);
 ```
 
-You should assign the result of `document.getElementsByClassName()` to a variable named `inputValues`.
+Du solltest das Ergebnis von `document.getElementsByClassName()` einer Variablen mit dem Namen `inputValues` zuweisen.
 
 ```js
 assert.match(sortInputArray.toString(), /inputValues\s*=\s*document\.getElementsByClassName\(\s*('|"|`)values-dropdown\1\s*\)/);
 ```
 
-You should use `const` to declare `inputValues`.
+Du solltest `const` verwenden, um `inputValues` zu deklarieren.
 
 ```js
 assert.match(code, /const\s+inputValues\s*=\s*document\.getElementsByClassName\(\s*('|"|`)values-dropdown\1\s*\)/);

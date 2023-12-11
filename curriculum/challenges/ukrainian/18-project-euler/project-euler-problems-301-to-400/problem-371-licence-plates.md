@@ -16,7 +16,7 @@ Whenever the numbers of two licence plates seen on his trip add to 1000 that's a
 
 E.g. `MIC-012` and `HAN-988` is a win and `RYU-500` and `SET-500` too (as long as he sees them in the same trip).
 
-Find the expected number of plates he needs to see for a win. Give your answer rounded to 8 decimal places behind the decimal point.
+Find the expected number of plates he needs to see for a win. Дайте відповідь, заокруглену до восьми знаків після коми.
 
 **Note:** We assume that each licence plate seen is equally likely to have any three digit number on it.
 

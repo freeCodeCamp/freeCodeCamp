@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd8acde08812
-title: Центрування тексту за допомогою Bootstrap
+title: Відцентруйте текст за допомогою Bootstrap
 challengeType: 0
 forumTopicId: 16771
 dashedName: center-text-with-bootstrap
@@ -8,9 +8,9 @@ dashedName: center-text-with-bootstrap
 
 # --description--
 
-Тепер, використовуючи Bootstrap, можемо відцентрувати елемент заголовку для кращого візуального вигляду. Необхідно лише додати клас `text-center` до елементу `h2`.
+Тепер, за допомогою Bootstrap, ми можемо відцентрувати заголовок, щоб він мав кращий вигляд. Необхідно лише додати клас `text-center` до елементу `h2`.
 
-Пам'ятайте, що до одного елементу можна додати декілька класів, відокремивши кожен із них пробілом, наприклад:
+Пам’ятайте, що до одного елемента можна додати декілька класів, розділивши їх пробілами. Наприклад:
 
 ```html
 <h2 class="red-text text-center">your text</h2>
@@ -18,13 +18,13 @@ dashedName: center-text-with-bootstrap
 
 # --hints--
 
-Елемент `h2` повинен бути відцентрований шляхом застосування класу `text-center`
+Елемент `h2` має бути відцентрованим за допомогою класу `text-center`
 
 ```js
 assert($('h2').hasClass('text-center'));
 ```
 
-Елемент `h2` все ще повинен мати клас `red-text`
+Елемент `h2` досі повинен мати клас `red-text`
 
 ```js
 assert($('h2').hasClass('red-text'));

@@ -39,7 +39,7 @@ Aktualisiere den Code, um eine `GET`-Anfrage an die freeCodeCamp Katzen-Foto-API
 # --hints--
 
 
-Your code should use the fetched data to replace the inner HTML
+Dein Code sollte die abgerufenen Daten verwenden, um das innere HTML zu ersetzen
 
 ```js
 const catData = "dummy data";
@@ -62,13 +62,13 @@ async () => {
 ```
 
 
-Your code should make a `GET` request with `fetch`.
+Dein Code sollte eine `GET`-Anfrage mit `fetch` stellen.
 
 ```js
 assert(code.match(/fetch\s*\(\s*('|")\/json\/cats\.json\1\s*\)/g));
 ```
 
-Your code should use `then` to convert the response to JSON.
+Dein Code sollte `then` verwenden, um die Antwort in JSON zu konvertieren.
 
 ```js
 assert(
@@ -78,13 +78,13 @@ assert(
 );
 ```
 
-Your code should use `then` to handle the data converted to JSON by the other `then`.
+Dein Code sollte `then` verwenden, um die Daten zu verarbeiten, die von dem anderen `then` in JSON umgewandelt wurden.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
 ```
 
-Your code should get the element with id `message` and change its inner HTML to the string of JSON data.
+Dein Code sollte das Element mit der ID `message` erhalten und sein inneres HTML in den String der JSON-Daten ändern.
 
 ```js
 assert(

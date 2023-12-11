@@ -23,9 +23,7 @@
   padding: 25px 15px 10px;
 }
 
-.big-block-title:hover,
-.big-block-title:focus,
-.big-block-title:active {
+.block-header .big-block-title:is(:hover, :focus, :active) {
   background-color: var(--primary-background);
 }
 
@@ -250,7 +248,7 @@ button.map-title {
 }
 
 .map-challenges-grid .map-challenge-title a:focus {
-  outline-offset: -2px;
+  outline-offset: 1px;
 }
 
 .map-challenges-grid {
@@ -258,7 +256,7 @@ button.map-title {
   grid-template-columns: repeat(auto-fill, 3.4rem);
   grid-gap: 3px;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 0 auto 18px;
   width: calc(100% - 50px);
 }
 .map-challenge-title-grid {
@@ -268,8 +266,9 @@ button.map-title {
   flex: 1 1 100px;
 }
 .map-challenge-title-grid a.map-grid-item {
-  margin: 5px 0;
+  margin: 6px 0;
   justify-content: center;
+  border: 1px dashed var(--background-quaternary);
 }
 
 .block-description {
@@ -280,14 +279,14 @@ button.map-title {
   margin-bottom: 0;
 }
 
-.challenge-completed {
+a.map-grid-item.challenge-completed {
   background: var(--highlight-background);
   position: relative;
+  border: 1px solid var(--primary-color);
 }
 
 .challenge-completed span {
-  font-weight: 700;
-  font-size: 1.3rem;
+  font-weight: 900;
   margin-top: -0.05rem;
 }
 
@@ -342,12 +341,19 @@ button.map-title {
   margin-top: 1.45rem;
 }
 
-.intro-toc .list-group-item {
-  margin: 5px auto;
+.intro-toc {
+  margin-bottom: 20px;
+  padding-left: 0;
+  list-style-type: none;
 }
 
-.intro-toc .list-group-item:hover {
-  background-color: var(--secondary-background);
+.intro-toc li {
+  margin: 5px auto;
+  padding: 10px 15px;
+}
+
+.intro-toc li:hover {
+  background-color: var(--tertiary-background);
 }
 
 .intro-toc a:hover {
@@ -437,20 +443,61 @@ ToDo: find out why, and remove the need for it */
   margin-bottom: 14px;
 }
 
-.block-grid .progress-wrapper span {
-  color: var(--quaternary-color);
-}
-
-.block-grid .progress {
-  height: 15px;
-  background-color: var(--secondary-background);
-  margin: 0 10px;
+.block-grid .progress-wrapper > div {
+  position: relative;
   width: 80%;
-  border-radius: 0;
+  padding-inline-end: 0.25em;
 }
 
-.block-grid .progress-bar {
+.annual-donation-alert .progress-wrapper {
+  display: inline-block;
+  width: 100%;
+  margin: 1.2rem 0;
+  flex-direction: row;
+  border: 1px solid var(--blue70);
+}
+
+.annual-donation-alert h3 {
+  color: var(--blue70);
+}
+
+.annual-donation-alert .progress-bar-wrap,
+.progress-bar-background {
+  background-color: transparent;
+}
+
+.annual-donation-alert hr {
+  border-top-color: var(--blue10);
+}
+
+/* story starts here */
+
+.annual-donation-alert .progress-bar-percent {
+  border-right: 1px solid var(--blue70);
   background-color: var(--blue-mid);
+  box-shadow: none;
+  animation: progress-bar-stripes 3s linear infinite;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(225, 225, 225, 0.3) 0%,
+    rgba(225, 225, 225, 0.3) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(225, 225, 225, 0.3) 51%,
+    rgba(225, 225, 225, 0.3) 75%,
+    transparent 75%,
+    transparent 100%
+  );
+  background-size: 100px 100px;
+}
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100px 0;
+  }
 }
 
 .tags-wrapper {

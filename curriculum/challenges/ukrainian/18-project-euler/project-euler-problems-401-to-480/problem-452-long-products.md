@@ -1,6 +1,6 @@
 ---
 id: 5900f5311000cf542c510043
-title: 'Problem 452: Long Products'
+title: 'Завдання 452: довгі добутки'
 challengeType: 1
 forumTopicId: 302125
 dashedName: problem-452-long-products
@@ -8,13 +8,13 @@ dashedName: problem-452-long-products
 
 # --description--
 
-Define $F(m, n)$ as the number of $n$-tuples of positive integers for which the product of the elements doesn't exceed $m$.
+Визначте $F(m, n)$ як кількість кортежів натуральних чисел довжиною $n$, добуток всіх елементів яких не перевищує $m$.
 
 $F(10, 10) = 571$.
 
 $F({10}^6, {10}^6)\bmod 1\\,234\\,567\\,891 = 252\\,903\\,833$.
 
-Find $F({10}^9, {10}^9)\bmod 1\\,234\\,567\\,891$.
+Знайдіть $F({10}^9, {10}^9)\bmod 1\\,234\\,567\\,891$.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f3aa1000cf542c50febd
-title: 'Problem 62: Cubic permutations'
+title: 'Завдання 62: кубічні перестановки'
 challengeType: 1
 forumTopicId: 302174
 dashedName: problem-62-cubic-permutations
@@ -8,9 +8,9 @@ dashedName: problem-62-cubic-permutations
 
 # --description--
 
-The cube, 41063625 ($345^3$), can be permuted to produce two other cubes: 56623104 ($384^3$) and 66430125 ($405^3$). In fact, 41063625 is the smallest cube which has exactly three permutations of its digits which are also cube.
+У кубі 41063625 ($345^3$) можна виконати перестановки, щоб утворити два інших куби: 56623104 ($384^3$) та 66430125 ($405^3$). Насправді 41063625 є найменшим кубом, для якого три перестановки його цифр також є кубами.
 
-Find the smallest cube for which exactly `n` permutations of its digits are cube.
+Знайдіть найменший куб, для якого `n` перестановок його цифр є кубами.
 
 # --hints--
 

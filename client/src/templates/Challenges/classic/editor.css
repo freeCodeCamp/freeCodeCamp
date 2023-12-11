@@ -30,6 +30,7 @@ textarea.inputarea {
   font-size: 16px;
   margin: 0;
   padding: 10px;
+  height: var(--breadcrumbs-height);
 }
 
 .editor-upper-jaw,
@@ -120,20 +121,6 @@ textarea.inputarea {
   margin: 0.45rem 0 0;
 }
 
-.test-feedback h2 {
-  font-size: 1rem;
-  line-height: 1.5;
-  /* using float instead of inline display so screen readers recognize h2 as a block element */
-  float: left;
-  margin: 0.5em 0 0;
-  /* prevent line breaks in Chinese/Japanese/Korean */
-  word-break: keep-all;
-}
-
-.test-feedback h2:after {
-  content: ':';
-}
-
 .test-feedback svg {
   height: 1.5rem;
   width: auto;
@@ -174,17 +161,19 @@ textarea.inputarea {
   }
 }
 
-.lower-jaw-icon-bar {
-  display: flex;
-  gap: 10px;
-  flex-direction: row;
-}
-.lower-jaw-icon-bar > button {
-  line-height: 0;
+.utility-bar {
+  display: grid;
+  /* 8rem is a safe default for all currently supported languages. Will need to be increased if a new language has longer words for Reset/Help. */
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  gap: 0.75rem;
 }
 
-.lower-jaw-icon-bar > button:last-child {
-  margin-inline-end: 0;
+.utility-bar > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 6px 0;
 }
 
 .progress-bar-container {

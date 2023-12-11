@@ -1,7 +1,7 @@
 ---
 id: 5900f4351000cf542c50ff47
 title: >-
-  Problem 200: Find the 200th prime-proof sqube containing the contiguous sub-string "200"
+  Завдання 200: знайти 200-й простостійкий ск’юб, який містить підрядок «200»
 challengeType: 1
 forumTopicId: 301840
 dashedName: >-
@@ -10,15 +10,15 @@ dashedName: >-
 
 # --description--
 
-We shall define a sqube to be a number of the form, ${p^2}{q^3}$, where $p$ and $q$ are distinct primes.
+Визначимо ск’юб як число у вигляді ${p^2}{q^3}$, де $p$ та $q$ є різними простими числами.
 
-For example, $200 = {5^2}{2^3}$ or $120072949 = {{23}^2}{{61}^3}$.
+Наприклад, $200 = {5^2}{2^3}$ або $120072949 = {{23}^2}{{61}^3}$.
 
-The first five squbes are 72, 108, 200, 392, and 500.
+Першими п’ятьма ск’юбами є 72, 108, 200, 392 та 500.
 
-Interestingly, 200 is also the first number for which you cannot change any single digit to make a prime; we shall call such numbers, prime-proof. The next prime-proof sqube which contains the contiguous sub-string `200` is 1992008.
+Цікаво, що 200 також є першим числом, у якому ви не можете змінити жодну цифру, що утворити просте число. Такі числа називають простостійкими. Наступним простостійким ск’юбом, який містить підрядок `200`, є 1992008.
 
-Find the 200th prime-proof sqube containing the contiguous sub-string `200`.
+Знайдіть 200-й простостійкий ск’юб, який містить підрядок `200`.
 
 # --hints--
 

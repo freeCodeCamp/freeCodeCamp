@@ -40,17 +40,18 @@ import BreadCrumb from '../../templates/Challenges/components/bread-crumb';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 import SignoutModal from '../signout-modal';
+import StagingWarningModal from '../staging-warning-modal';
 import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
 import { Loader } from '../helpers';
+import envData from '../../../config/env.json';
 
 // preload common fonts
 import './fonts.css';
 import './global.css';
 import './variables.css';
 import './rtl-layout.css';
-import { Themes } from '../settings/theme';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -132,7 +133,7 @@ function DefaultLayout({
   isChallenge = false,
   block,
   superBlock,
-  theme = Themes.Default,
+  theme,
   showCodeAlly,
   user,
   fetchUser,
@@ -170,11 +171,13 @@ function DefaultLayout({
   } else {
     return (
       <div className='page-wrapper'>
+        {envData.deploymentEnv === 'staging' &&
+          envData.environment === 'production' && <StagingWarningModal />}
         <Helmet
           bodyAttributes={{
             class: useSystemTheme
               ? getSystemTheme()
-              : `${theme === 'night' ? 'dark' : 'light'}-palette`
+              : `${String(theme) === 'night' ? 'dark' : 'light'}-palette`
           }}
           meta={[
             {
@@ -253,9 +256,7 @@ function DefaultLayout({
               />
             </div>
           )}
-          <div id='content-start' tabIndex={-1}>
-            {fetchState.complete && children}
-          </div>
+          {fetchState.complete && children}
         </div>
         {showFooter && <Footer />}
       </div>

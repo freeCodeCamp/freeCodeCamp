@@ -4,28 +4,27 @@ exports[`<EmailSignUp /> Authenticated user "accepted terms and condition" it sh
 
 exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and condition" it should render correctly 1`] = `
 <div
-  className="container"
+  className="mx-auto px-[15px] my-0 md:w-[750px] min-[992px]:w-[970px] min-[1200px]:w-[1170px] "
 >
+  
   <div
-    className="row"
+    className="mx-[-15px] "
   >
     <div
-      className="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12"
+      className=" min-h-[1px] px-[15px] w-full md:w-5/6 min-[992px]:w-2/3   md:ml-[8.3%] min-[992px]:ml-[16.6%]   "
     >
       <div
         className="spacer"
         style={
           {
-            "padding": "15px 0",
+            "padding": "5px 0",
           }
         }
       />
       <div
         className="intro-description"
+        data-playwright-test-label="learn-read-this-section"
       >
-        <strong>
-          learn.read-this.heading
-        </strong>
         <div
           className="spacer"
           style={
@@ -34,28 +33,60 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
             }
           }
         />
-        <p>
+        <p
+          className="text-center"
+          data-playwright-test-label="learn-read-this-heading"
+        >
+          <strong>
+            learn.read-this.heading
+          </strong>
+        </p>
+        <div
+          className="spacer"
+          style={
+            {
+              "padding": "15px 0",
+            }
+          }
+        />
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p1
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p2
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p3
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p4
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p5
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p6
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p7
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p8
         </p>
         <p>
@@ -66,7 +97,9 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
             target="_blank"
           />
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p10
         </p>
         <p>
@@ -77,28 +110,30 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
             target="_blank"
           />
         </p>
-        <p>
+        <p
+          data-playwright-test-label="learn-read-this-p"
+        >
           learn.read-this.p12
         </p>
+        <strong>
+          misc.quincy
+        </strong>
       </div>
       <hr />
     </div>
   </div>
   <div
-    className="email-sign-up row"
+    className="mx-[-15px] email-sign-up"
     data-cy="email-sign-up"
   >
     <div
-      className="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12"
+      className=" min-h-[1px] px-[15px] w-full md:w-5/6 min-[992px]:w-2/3   md:ml-[8.3%] min-[992px]:ml-[16.6%]   "
     >
-      <strong>
-        misc.quincy
-      </strong>
       <div
         className="spacer"
         style={
           {
-            "padding": "15px 0",
+            "padding": "5px 0",
           }
         }
       />
@@ -109,13 +144,13 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
         className="spacer"
         style={
           {
-            "padding": "15px 0",
+            "padding": "5px 0",
           }
         }
       />
     </div>
     <div
-      className="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12"
+      className=" min-h-[1px] px-[15px] w-full md:w-5/6 min-[992px]:w-2/3   md:ml-[8.3%] min-[992px]:ml-[16.6%]   "
     >
       <div
         className="spacer"
@@ -143,7 +178,7 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
       />
     </div>
     <div
-      className="col-xs-12"
+      className=" min-h-[1px] px-[15px] w-full         "
     >
       <div
         className="spacer"

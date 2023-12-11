@@ -1,6 +1,6 @@
 ---
 id: 5900f5351000cf542c510047
-title: 'Problem 456: Triangles containing the origin II'
+title: 'Завдання 456: трикутники, що містять початок координат II'
 challengeType: 1
 forumTopicId: 302130
 dashedName: problem-456-triangles-containing-the-origin-ii
@@ -8,21 +8,21 @@ dashedName: problem-456-triangles-containing-the-origin-ii
 
 # --description--
 
-Define:
+Визначимо:
 
 $$\begin{align}   & x_n = ({1248}^n\bmod 32323) - 16161 \\\\
   & y_n = ({8421}^n\bmod 30103) - 15051 \\\\ & P_n = \\{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\\} \end{align}$$
 
-For example, $$P_8 = \\{(-14913, -6630), (-10161, 5625), (5226, 11896), (8340, -10778), (15852, -5203), (-15165, 11295), (-1427, -14495), (12407, 1060)\\}$$
+Наприклад, $$P_8 = \\{(-14913, -6630), (-10161, 5625), (5226, 11896), (8340, -10778), (15852, -5203), (-15165, 11295), (-1427, -14495), (12407, 1060)\\}$$
 
-Let $C(n)$ be the number of triangles whose vertices are in $P_n$ which contain the origin in the interior.
+Нехай $C(n)$ буде кількістю трикутників, вершини яких знаходяться в $P_n$, що містять початкові координати.
 
-Examples:
+Приклади:
 
 $$\begin{align}   & C(8) = 20 \\\\
   & C(600) = 8\\,950\\,634 \\\\ & C(40\\,000) = 2\\,666\\,610\\,948\\,988 \end{align}$$
 
-Find $C(2\\,000\\,000)$.
+Знайдіть $C(2\\,000\\,000)$.
 
 # --hints--
 

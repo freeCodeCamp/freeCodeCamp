@@ -8,9 +8,9 @@ dashedName: seek-and-destroy
 
 # --description--
 
-Dir wird ein Ausgangsarray (das erste Argument in der `destroyer`-Funktion) zur Verfügung gestellt, gefolgt von einem oder mehreren Argumenten. Entferne alle Elemente aus dem Ausgangsarray, die den gleichen Wert wie diese Argumente haben.
+You will be provided with an initial array as the first argument to the `destroyer` function, followed by one or more arguments. Entferne alle Elemente aus dem Ausgangsarray, die den gleichen Wert wie diese Argumente haben.
 
-**Hinweis:** Du musst das `arguments`-Objekt verwenden.
+The function must accept an indeterminate number of arguments, also known as a variadic function. You can access the additional arguments by adding a rest parameter to the function definition or using the `arguments` object.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f3fe1000cf542c50ff11
-title: 'Problem 146: Investigating a Prime Pattern'
+title: 'Завдання 146: вивчення моделі простих чисел'
 challengeType: 1
 forumTopicId: 301775
 dashedName: problem-146-investigating-a-prime-pattern
@@ -8,9 +8,9 @@ dashedName: problem-146-investigating-a-prime-pattern
 
 # --description--
 
-The smallest positive integer $n$ for which the numbers $n^2 + 1$, $n^2 + 3$, $n^2 + 7$, $n^2 + 9$, $n^2 + 13$, and $n^2 + 27$ are consecutive primes is 10. The sum of all such integers $n$ below one-million is 1242490.
+Найменше натуральне число $n$, за якого $n^2 + 1$, $n^2 + 3$, $n^2 + 7$, $n^2 + 9$, $n^2 + 13$ та $n^2 + 27$ є послідовними простими числами, становить 10. Сума усіх таких цілих чисел $n$ менших за один мільйон становить 1242490.
 
-What is the sum of all such integers $n$ below 150 million?
+Якою буде сума усіх таких цілих чисел $n$ менших за 150 мільйонів?
 
 # --hints--
 

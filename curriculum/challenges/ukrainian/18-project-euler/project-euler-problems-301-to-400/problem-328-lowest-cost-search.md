@@ -26,7 +26,7 @@ Let $C(n)$ be the worst-case cost achieved by an optimal strategy for $n$, as de
 
 Similarly, $C(100) = 400$ and $\displaystyle\sum_{n = 1}^{100} C(n) = 17575$.
 
-Find $\displaystyle\sum_{n = 1}^{200\\,000} C(n)$.
+Знайдіть $\displaystyle\sum_{n = 1}^{200\\,000} C(n)$.
 
 # --hints--
 

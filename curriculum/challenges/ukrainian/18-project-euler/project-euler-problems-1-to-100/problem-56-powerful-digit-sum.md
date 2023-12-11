@@ -1,6 +1,6 @@
 ---
 id: 5900f3a41000cf542c50feb7
-title: 'Problem 56: Powerful digit sum'
+title: 'Завдання 56: максимальна сума цифр'
 challengeType: 1
 forumTopicId: 302167
 dashedName: problem-56-powerful-digit-sum
@@ -8,9 +8,9 @@ dashedName: problem-56-powerful-digit-sum
 
 # --description--
 
-A googol ($10^{100}$) is a massive number: one followed by one-hundred zeros; $100^{100}$ is almost unimaginably large: one followed by two-hundred zeros. Despite their size, the sum of the digits in each number is only 1.
+Гугол ($10^{100}$) — це гігантське число: сто нулів після одиниці; 100^{100}$ є неймовірно великим числом: двісті нулів після одиниці. Незважаючи на їхній розмір, сума цих цифр у кожному числі дорівнює лише 1.
 
-Considering natural numbers of the form, $a^b$, where `a`, `b` &lt; `n`, what is the maximum digital sum?
+Беручи до уваги натуральні числа виду $a^b$, де `a`, `b` &lt; `n`, якою буде максимальна сума чисел?
 
 # --hints--
 

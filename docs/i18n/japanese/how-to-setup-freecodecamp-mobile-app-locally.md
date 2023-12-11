@@ -2,22 +2,22 @@ Follow this guide for setting up the freeCodeCamp mobile app locally on your sys
 
 Some of the contribution workflows – like fixing bugs in the codebase – need you to run the freeCodeCamp app locally.
 
-### How to Prepare your Local Machine
+## How to Prepare your Local Machine
 
 Start by installing the prerequisite software for your operating system.
 
-#### Prerequisites
+### Prerequisites
 
 | Prerequisite                      | Version | Notes                                    |
 | --------------------------------- | ------- | ---------------------------------------- |
 | [Flutter](https://flutter.dev/)   | `3.x`   | -                                        |
-| Dart (comes bundled with Flutter) | `2.x`   | We use the version bundled with Flutter. |
+| Dart (comes bundled with Flutter) | `3.x`   | We use the version bundled with Flutter. |
 
 > [!ATTENTION] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions.
 
 If Flutter is already installed on your machine, run the following commands to validate the versions:
 
-```console
+```bash
 flutter --version
 dart --version
 ```
@@ -26,7 +26,7 @@ dart --version
 
 Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
-##### Follow these steps to get your development environment ready:
+#### Follow these steps to get your development environment ready:
 
 1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
 
@@ -44,7 +44,7 @@ Once you have the prerequisites installed, you need to prepare your development 
 
 [Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of the repository (a.k.a _repo_) on GitHub.
 
-This is essential, as it allows you to work on your own copy of freeCodeCamp mobile app on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
+This is essential, as it allows you to work on your own copy of the freeCodeCamp mobile app on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
 
 > [!TIP] The main repository at `https://github.com/freeCodeCamp/mobile` is often referred to as the `upstream` repository.
 > 
@@ -70,7 +70,7 @@ Run these commands on your local machine:
 
 2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
 
-   ```console
+   ```bash
    git clone --depth=1 https://github.com/YOUR_USER_NAME/mobile.git
    ```
 
@@ -88,25 +88,25 @@ You need a reference from your local clone to the `upstream` repository in addit
 
 1. Change directory to the new `mobile` directory:
 
-   ```console
+   ```bash
    cd mobile
    ```
 
 2. Add a remote reference to the main freeCodeCamp mobile repository:
 
-   ```console
+   ```bash
    git remote add upstream https://github.com/freeCodeCamp/mobile.git
    ```
 
 3. Ensure the configuration looks correct:
 
-   ```console
+   ```bash
    git remote -v
    ```
 
    The output should look something like below (replacing `YOUR_USER_NAME` with your GitHub username):
 
-   ```console
+   ```bash
    origin    https://github.com/YOUR_USER_NAME/mobile.git (fetch)
    origin    https://github.com/YOUR_USER_NAME/mobile.git (push)
    upstream    https://github.com/freeCodeCamp/mobile.git (fetch)
@@ -129,26 +129,22 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` which is accessed dynamically during the installation step. Remember to change the directory to `mobile-app` before running the following commands.
 
-```console
+```bash
 # Create a copy of the "sample.env" and name it ".env".
 # Populate it with the necessary API keys and secrets:
 ```
 
-<!-- tabs:start -->
-
 #### **macOS/Linux**
 
-```console
+```bash
 cp sample.env .env
 ```
 
 #### **Windows**
 
-```console
+```bash
 copy sample.env .env
 ```
-
-<!-- tabs:end -->
 
 The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
 
@@ -156,7 +152,7 @@ The keys in the `.env` file are _not_ required to be changed to run the app loca
 
 This step will install the dependencies required for the application to run:
 
-```console
+```bash
 flutter pub get
 ```
 
@@ -166,7 +162,7 @@ Start the emulator of your choice(Android or iOS) and wait for the bootup proces
 
 You can now start the app by running the following command:
 
-```console
+```bash
 flutter run
 ```
 
@@ -180,13 +176,13 @@ Follow these steps:
 
 1. Validate that you are on the `main` branch:
 
-   ```console
+   ```bash
    git status
    ```
 
    You should get an output like this:
 
-   ```console
+   ```bash
    On branch main
    Your branch is up-to-date with 'origin/main'.
 
@@ -195,7 +191,7 @@ Follow these steps:
 
    If you are not on main or your working directory is not clean, resolve any outstanding files/commits and checkout `main`:
 
-   ```console
+   ```bash
    git checkout main
    ```
 
@@ -209,25 +205,25 @@ Follow these steps:
 
    Update your local copy of the freeCodeCamp mobile upstream repository:
 
-   ```console
+   ```bash
    git fetch upstream
    ```
 
    Hard reset your main branch with the freeCodeCamp mobile main:
 
-   ```console
+   ```bash
    git reset --hard upstream/main
    ```
 
    Push your main branch to your origin to have a clean history on your fork on GitHub:
 
-   ```console
+   ```bash
    git push origin main --force
    ```
 
    You can validate that your current main matches the upstream/main by performing a diff:
 
-   ```console
+   ```bash
    git diff upstream/main
    ```
 
@@ -239,7 +235,7 @@ Follow these steps:
 
    Check that you are on `main` as explained previously, and branch off from there:
 
-   ```console
+   ```bash
    git checkout -b fix/update-guide-for-xyz
    ```
 
@@ -263,13 +259,13 @@ Follow these steps:
 
 7. Check and confirm the files you are updating:
 
-   ```console
+   ```bash
    git status
    ```
 
    This should show a list of `unstaged` files that you have edited.
 
-   ```console
+   ```bash
    On branch feat/documentation
    Your branch is up to date with 'upstream/feat/documentation'.
 
@@ -286,25 +282,25 @@ Follow these steps:
 
    In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
 
-   ```console
+   ```bash
    git add path/to/my/changed/file.ext
    ```
 
    Or you can add all the `unstaged` files to the staging area:
 
-   ```console
+   ```bash
    git add .
    ```
 
    Only the files that were moved to the staging area will be added when you make a commit.
 
-   ```console
+   ```bash
    git status
    ```
 
    Output:
 
-   ```console
+   ```bash
    On branch feat/documentation
    Your branch is up to date with 'upstream/feat/documentation'.
 
@@ -317,7 +313,7 @@ Follow these steps:
 
    Now, you can commit your changes with a short message like so:
 
-   ```console
+   ```bash
    git commit -m "fix: my short commit message"
    ```
 
@@ -349,7 +345,7 @@ Follow these steps:
 
 9. If you realize that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
 
-   ```console
+   ```bash
    git commit --amend
    ```
 
@@ -357,8 +353,106 @@ Follow these steps:
 
 10. Next, you can push your changes to your fork:
 
-    ```console
+    ```bash
     git push origin branch/name-here
+    ```
+
+## Running mobile curriculum tests
+
+> [!NOTE] You only need to follow this section if you're modifying the challenge test runner in the mobile app. Otherwise, you can go to the next section on [how to open a pull request](#proposing-a-pull-request-pr).
+
+1. Clone a copy of the [freeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) locally outside of your local copy of the freeCodeCamp mobile repo. Your folder structure should look like this:
+
+    ```bash
+    ├── freeCodeCamp
+    ├── mobile
+    ```
+
+2. Change the directory to the freeCodeCamp repo:
+
+    ```bash
+    cd freeCodeCamp
+    ```
+
+3. Make a copy of the `.env` file:
+
+    #### **macOS/Linux**
+
+    ```bash
+    cp sample.env .env
+    ```
+
+    #### **Windows**
+
+    ```bash
+    copy sample.env .env
+    ```
+
+4. Install the dependencies for the freeCodeCamp repo:
+
+    ```bash
+    pnpm install && pnpm run create:shared
+    ```
+
+5. Generate the challenge data JSON file:
+
+    ```bash
+    pnpm run build:curriculum
+    ```
+
+6. Copy the generated JSON file to the mobile app:
+
+    #### **macOS/Linux**
+
+    ```bash
+    cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
+    ```
+
+    #### **Windows**
+    ```bash
+    copy .\shared\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+    ```
+
+7. Change directory to the mobile app:
+
+    ```bash
+    cd ../mobile/mobile-app
+    ```
+
+8. Install the dependencies for the mobile app:
+
+    ```bash
+    flutter pub get
+    ```
+
+9. Update the test file to use the challenge data JSON file:
+
+    ```bash
+    sed -i '' 's/..\/..\/shared\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
+    ```
+
+10. Generate the challenge files:
+
+    ```bash
+    flutter test test/widget_test.dart
+    ```
+
+11. Start a local server to serve the challenge files with the help of `serve` package:
+
+    ```bash
+    npx serve
+    ```
+
+12. In a different terminal go back to the freeCodeCamp repo:
+
+    ```bash
+    cd ../../freeCodeCamp
+    ```
+
+13. Run the cypress tests:
+
+    ```bash
+    pnpm cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome
     ```
 
 ## Proposing a Pull Request (PR)
@@ -386,15 +480,15 @@ If you are on a different OS and/or are still running into issues, see [getting 
 
 ### Issues with the UI, build errors, etc.
 
-If you face issues with the UI, or builds errors a cleanup can be useful:
+If you face issues with the UI, or build errors a cleanup can be useful:
 
-```console
+```bash
 flutter clean
 ```
 
 ### Issues Installing Dependencies
 
-If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
+If you get errors while installing the dependencies, please make sure that you are not in a restricted network or that your firewall settings do not prevent you from accessing resources.
 
 Be patient as the first-time setup can take a while depending on your network bandwidth.
 

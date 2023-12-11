@@ -10,15 +10,15 @@ dashedName: problem-381-prime-k-factorial
 
 For a prime $p$ let $S(p) = (\sum (p - k)!)\bmod (p)$ for $1 ≤ k ≤ 5$.
 
-For example, if $p = 7$,
+Наприклад, якщо $p = 7$,
 
 $$(7 - 1)! + (7 - 2)! + (7 - 3)! + (7 - 4)! + (7 - 5)! = 6! + 5! + 4! + 3! + 2! = 720 + 120 + 24 + 6 + 2 = 872$$
 
 As $872\bmod (7) = 4$, $S(7) = 4$.
 
-It can be verified that $\sum S(p) = 480$ for $5 ≤ p &lt; 100$.
+Можна довести, що $\sum S(p) = 480$ за умови $5 ≤ p &lt; 100$.
 
-Find $\sum S(p)$ for $5 ≤ p &lt; {10}^8$.
+Знайдіть $\sum S(p)$ за умови $5 ≤ p &lt; {10}^8$.
 
 # --hints--
 

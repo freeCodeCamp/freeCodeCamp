@@ -1,6 +1,6 @@
 ---
 id: 5900f3bc1000cf542c50fecf
-title: 'Problem 80: Square root digital expansion'
+title: 'Завдання 80: цифрове представлення квадратного кореня'
 challengeType: 1
 forumTopicId: 302194
 dashedName: problem-80-square-root-digital-expansion
@@ -8,11 +8,11 @@ dashedName: problem-80-square-root-digital-expansion
 
 # --description--
 
-It is well known that if the square root of a natural number is not an integer, then it is irrational. The decimal expansion of such square roots is infinite without any repeating pattern at all.
+Як відомо, якщо квадратний корінь з натурального числа не є цілим числом, то воно ірраціональне. Розкладання таких квадратних коренів на десяткові дроби нескінченне і не має ніякої повторюваної послідовності.
 
-The square root of two is `1.41421356237309504880...`, and the digital sum of the first one hundred decimal digits is `475`.
+Квадратний корінь з двох дорівнює `1.41421356237309504880...`, а сума його перших ста цифр у десятковому вигляді дорівнює `475`.
 
-For the first `n` natural numbers, find the total of the digital sums of the first one hundred decimal digits for all the irrational square roots.
+Знайдіть загальну суму перших ста цифр всіх ірраціональних квадратних коренів серед перших `n` натуральних чисел.
 
 # --hints--
 

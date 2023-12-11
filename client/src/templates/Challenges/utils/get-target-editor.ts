@@ -1,5 +1,5 @@
 import { isEmpty } from 'lodash-es';
-import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
+import { sortChallengeFiles } from '../../../../utils/sort-challengefiles';
 import { ChallengeFiles, FileKey } from '../../../redux/prop-types';
 
 export function getTargetEditor(

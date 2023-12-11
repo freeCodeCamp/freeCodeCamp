@@ -6,14 +6,18 @@
     "node": true,
     "jest": true
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
   "root": true,
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:import/recommended",
-    "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
     "prettier"
   ],
@@ -29,9 +33,14 @@
   "settings": {
     "react": {
       "version": "16.4.2"
+    },
+    "import/resolver": {
+      "typescript": true,
+      "node": true
     }
   },
   "rules": {
+    "import/no-unresolved": [2, { "commonjs": true }],
     "import/named": "error",
     "import/no-named-as-default": "off",
     "import/no-named-as-default-member": "off",
@@ -59,75 +68,25 @@
           "./client/tsconfig.json",
           "./tsconfig.json",
           "./api/tsconfig.json",
-          "./config/tsconfig.json",
+          "./shared/tsconfig.json",
           "./tools/ui-components/tsconfig.json",
-          "./utils/tsconfig.json",
+          "./tools/client-plugins/browser-scripts/tsconfig.json",
           "./web/tsconfig.json",
           "./curriculum-server/tsconfig.json",
-          "./cypress/tsconfig.json"
+          "./cypress/tsconfig.json",
+          "./e2e/tsconfig.json"
         ]
       },
       "extends": [
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:import/typescript"
       ],
       "plugins": ["@typescript-eslint"],
       "rules": {
+        "import/no-unresolved": "off",
         "import/named": 0,
-        "@typescript-eslint/naming-convention": [
-          "error",
-          {
-            "selector": "default",
-            "format": ["camelCase"],
-            "leadingUnderscore": "allow",
-            "trailingUnderscore": "allow"
-          },
-          {
-            "selector": [
-              "classProperty",
-              "objectLiteralProperty",
-              "typeProperty",
-              "classMethod",
-              "objectLiteralMethod",
-              "typeMethod",
-              "accessor",
-              "enumMember"
-            ],
-            "format": null,
-            "modifiers": ["requiresQuotes"]
-          },
-          {
-            "selector": "variable",
-            "format": ["camelCase", "UPPER_CASE", "PascalCase"],
-            "leadingUnderscore": "allowSingleOrDouble",
-            "trailingUnderscore": "allow"
-          },
-          {
-            "selector": "typeLike",
-            "format": ["PascalCase"],
-            "custom": {
-              "regex": "^I[A-Z]|[a-zA-Z]Type$",
-              "match": false
-            }
-          },
-          {
-            "selector": "typeProperty",
-            "format": ["camelCase", "PascalCase"]
-          },
-          {
-            "selector": "objectLiteralProperty",
-            "format": ["camelCase", "PascalCase"],
-            "leadingUnderscore": "allowSingleOrDouble"
-          },
-          {
-            "selector": "function",
-            "format": ["camelCase", "PascalCase"]
-          },
-          {
-            "selector": "enumMember",
-            "format": ["PascalCase"]
-          }
-        ]
+        "@typescript-eslint/naming-convention": "off"
       }
     },
     {
@@ -149,6 +108,14 @@
       }
     },
     {
+      "files": ["e2e/*.ts"],
+      "rules": {
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off"
+      }
+    },
+    {
       "files": ["web/**/*.tsx"],
       "extends": ["plugin:react/jsx-runtime"]
     },
@@ -156,6 +123,29 @@
       "files": ["**/api-server/**/*", "**/404.*"],
       "rules": {
         "filenames-simple/naming-convention": "off"
+      }
+    },
+    {
+      "files": ["**/api/src/**/*.ts"],
+      "plugins": ["jsdoc"],
+      "extends": ["plugin:jsdoc/recommended-typescript-error"],
+      "rules": {
+        "jsdoc/require-jsdoc": [
+          "error",
+          {
+            "require": {
+              "ArrowFunctionExpression": true,
+              "ClassDeclaration": true,
+              "ClassExpression": true,
+              "FunctionDeclaration": true,
+              "FunctionExpression": true,
+              "MethodDefinition": true
+            },
+            "publicOnly": true
+          }
+        ],
+        "jsdoc/require-description-complete-sentence": "warn",
+        "jsdoc/tag-lines": "off"
       }
     }
   ]

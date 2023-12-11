@@ -28,7 +28,7 @@ Füge ein Klick-Event-Handler innerhalb der `DOMContentLoaded`-Funktion für das
 
 # --hints--
 
-Your code should use the `document.getElementById` method to select the element whose id is `getMessage`.
+Dein Code sollte die `document.getElementById`-Methode verwenden, um das Element auszuwählen, dessen ID `getMessage` entspricht.
 
 ```js
 assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));

@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Design responsivo para a web legado",
+    "title": "Desafios do design responsivo para a web legado",
     "intro": [
       "Nessa certificação de Design responsivo para a web, você aprenderá as linguagens que os desenvolvedores usam para construir sites: HTML (Linguagem de Marcação de Hipertexto) para o conteúdo e CSS (Folha de Estilo em Cascata) para o design.",
       "Primeiro, você vai construir um aplicativo de fotos de gato para aprender o básico de HTML e CSS. Mais tarde, você aprenderá técnicas modernas como variáveis CSS construindo um pinguim, e melhores práticas de acessibilidade criando um formulário web.",
@@ -55,13 +55,6 @@
         "intro": [
           "O CSS Grid é um padrão mais recente, que torna fácil construir layouts responsivos complexos. Ele funciona transformando um elemento HTML em uma grade e permite que você coloque elementos filhos em qualquer lugar dentro dele.",
           "Nesse curso, você aprenderá os fundamentos do CSS Grid construindo diferentes layouts complexos, incluindo um blog."
-        ]
-      },
-      "responsive-web-design-projects": {
-        "title": "Projetos do design responsivo para a web",
-        "intro": [
-          "Hora de colocar suas novas habilidades aprendidas para funcionar. Ao trabalhar nestes projetos, você terá a oportunidade de aplicar todas as competências, princípios e conceitos que você aprendeu até agora: HTML, CSS, Visual Design, Acessibilidade e muito mais.",
-          "Conclua os cinco projetos de programação web abaixo para ganhar a sua Certificação de Design responsivo para a web."
         ]
       }
     }
@@ -213,6 +206,13 @@
           "Selecionar as cores corretas para sua página da web pode melhorar muito o apelo estético para os seus leitores.",
           "Neste curso, você criará um conjunto de marcadores coloridos. Você aprenderá maneiras diferentes de definir valores de cores e como combinar cores uma com a outra."
         ]
+      },
+      "learn-intermediate-css-by-building-a-cat-painting": {
+        "title": "Aprenda CSS intermediário criando a pintura de um gato",
+        "intro": [
+          "Dominar o posicionamento em CSS é essencial para criar layouts visualmente atraentes e responsivos para a web",
+          "Neste curso, você criará a pintura de um gato. Você aprenderá a trabalhar com o posicionamento absoluto, com a propriedade z-index e com a propriedade transform."
+        ]
       }
     }
   },
@@ -301,8 +301,11 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "Algoritmos e estruturas de dados em JavaScript (Beta)",
-    "intro": ["placeholder", "placeholder"],
-    "note": "",
+    "intro": [
+      "Enquanto o HTML e o CSS controlam o conteúdo e o estilo de uma página, o JavaScript é usado para torná-lo interativo. Na certificação de Algoritmos e Estruturas de Dados em JavaScript, você aprenderá os fundamentos do JavaScript, incluindo variáveis, arrays, objetos, laços, funções, o DOM e mais.",
+      "Além do básico, você aprenderá sobre Programação Orientada a Objetos (OOP), Programação Funcional (FP), pensamento algorítmico, como trabalhar com armazenamento local e como buscar dados de uma API."
+    ],
+    "note": "Observação: algumas extensões de navegador, como bloqueadores de anúncios e bloqueadores de scripts, podem interferir nos testes. Se você tiver problemas, recomendamos desabilitar extensões que modifiquem ou bloqueiem o conteúdo das páginas durante o curso.",
     "blocks": {
       "build-a-caesars-cipher-project": {
         "title": "Projeto de criação da Cifra de César",
@@ -310,55 +313,115 @@
       },
       "build-a-cash-register-project": {
         "title": "Projeto de criação de Caixa registradora",
-        "intro": ["", ""]
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma aplicação para a web de caixa registradora."
+        ]
       },
       "build-a-palindrome-checker-project": {
         "title": "Projeto de criação de Verificador de palíndromo",
-        "intro": ["", ""]
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma aplicação que verifica se uma palavra é um palíndromo."
+        ]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Projeto de criação de Conversor de números romanos",
-        "intro": ["", ""]
+        "intro": [
+          "Este é um dos projetos necessários para solicitar sua certificação.",
+          "Para este projeto, você criará uma aplicação que converte números inteiros em números romanos."
+        ]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Projeto de criação de Validador de números de telefone",
-        "intro": ["", ""]
+        "intro": [
+          "Este é um dos projetos necessários para solicitar sua certificação.",
+          "Para este projeto, você criará uma aplicação que verifica se um número é um número de telefone válido nos Estados Unidos."
+        ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Aprenda JavaScript básico criando um jogo de RPG",
-        "intro": ["", ""]
+        "intro": [
+          "O JavaScript é uma linguagem de script que você pode usar para tornar as páginas da web interativas. É uma das principais tecnologias da web, juntamente com o HTML e o CSS e tem o suporte de todos os navegadores modernos.",
+          "Neste projeto prático, você aprenderá conceitos básicos de programação em JavaScript criando um jogo de RPG. Você aprenderá a trabalhar com arrays, strings, objetos, funções, laços, instruções if/else e muito mais."
+        ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Aprenda validação de formulários construindo um contador de calorias",
-        "intro": ["", ""]
+        "intro": [
+          "Ao criar aplicações para a web, haverá momentos em que você precisará trabalhar com a entrada do usuário e com validação de formulário. Neste projeto de contador de calorias, você aprenderá a lidar com entradas do usuário, a realizar cálculos com base nessa entrada e a atualizar dinamicamente a interface para exibir os resultados.",
+          "Neste projeto prático, você aprenderá expressões regulares básicas, template literals, o método <code>addEventListener()</code> e muito mais."
+        ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Aprenda programação funcional criando uma planilha",
-        "intro": ["", ""]
+        "intro": [
+          "Programação funcional é uma abordagem popular em desenvolvimento de software. Na programação funcional, o código é organizado em funções menores e básicas, que podem ser combinadas para criar programas complexos.",
+          "Neste projeto de aplicação de planilhas, você aprenderá a analisar e avaliar expressões matemáticas, a implementar funções de planilha manipular referências de células e a criar interfaces para a web interativas, com atualizações de conteúdo dinâmicas baseadas na entrada do usuário. O projeto abrangerá conceitos como os métodos <code>map()</code>, <code>find()</code>, <code>parseInt()</code>, <code>includes()</code> e mais."
+        ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
         "title": "Aprenda métodos modernos de JavaScript criando cards de equipes de futebol",
-        "intro": ["", ""]
+        "intro": [
+          "Um aspecto comum da criação de aplicações para a web é trabalhar com conjuntos de dados e com o resultado dessas informações na tela. Neste projeto de cards de equipes de futebol, você aprenderá a trabalhar com manipulação do DOM, desestruturação de objetos, manipulação de eventos e filtragem de dados.",
+          "Este projeto abrangerá conceitos como a instrução switch, parâmetros padrão, <code>Object.freeze()</code>, o método <code>map()</code> e mais."
+        ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "Aprenda métodos de arrays avançados criando uma calculadora de estatística",
-        "intro": ["", ""]
+        "intro": [
+          "Sentir-se confortável para trabalhar com métodos de manipulação de array, como <code>map()</code>, <code>reduce()</code> e <code>filter()</code>, é uma parte fundamental de JavaScript.",
+          "Neste projeto de calculadora de estatísticas, você ganhará experiência com o tratamento da entrada de usuário, com a manipulação do DOM e com o encadeamento de métodos, realizando cálculos estatísticos como média, moda, variância e desvio-padrão."
+        ]
       },
-      "learn-data-structures-by-building-a-shopping-cart": {
-        "title": "Aprenda estruturas de dados criando um carrinho de compras",
-        "intro": ["", ""]
+      "learn-basic-oop-by-building-a-shopping-cart": {
+        "title": "Aprenda POO básica criando um carrinho de compras",
+        "intro": [
+          "A POO, ou Programação Orientada a Objetos, é uma das abordagens principais do processo de desenvolvimento de software. Na POO, os objetos e as classes são usados para organizar o código, descrever coisas e o que elas podem fazer.",
+          "Neste projeto de carrinho de compras, você aprenderá a definir e utilizar classes, a criar instâncias de classe e a implementar métodos para a manipulação de dados. Este projeto tratará de conceitos como a inclusão de operadores ternários, operador spread, a palavra-chave <code>this</code> e mais."
+        ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
         "title": "Aprenda Fetch e Promises criando uma página de autores do fCC",
-        "intro": ["", ""]
+        "intro": [
+          "Um aspecto comum do desenvolvimento para a web é aprender a buscar dados de uma API externa e trabalhar com JavaScript assíncrono. Este projeto de página de autores do freeCodeCamp mostrará a você como trabalhar com o método fetch e como atualizar dinamicamente o DOM para exibir os dados obtidos.",
+          "Este projeto também ensinará a paginar seus dados para que você possa carregar os resultados em lotes. "
+        ]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
         "title": "Aprenda expressões regulares criando um filtro de spam",
-        "intro": ["", ""]
+        "intro": [
+          "Expressões regulares, muitas vezes abreviadas como \"regex\" ou \"regexp\", são padrões que ajudam programadores a encontrar correspondências, pesquisar e substituir texto. Expressões regulares são muito poderosas, mas podem ser difíceis de ler porque usam caracteres especiais para fazer correspondências mais complexas e flexíveis.",
+          "Neste projeto de filtro de spam, você aprenderá a usar caracteres especiais, grupos de captura, buscas positivas e negativas e outras técnicas para encontrar correspondências com o texto desejado."
+        ]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
         "title": "Aprenda o raciocínio básico de Algoritmos criando uma ordenação numérica",
-        "intro": ["", ""]
+        "intro": [
+          "Na ciência da computação, existem algoritmos de classificação fundamentais que todos os desenvolvedores devem aprender. Neste projeto de criação de um ordenador de números, você aprenderá a implementar e visualizar diferentes algoritmos de classificação, como Bubble Sort, Selection Sort e Insertion Sort usando JavaScript.",
+          "Este projeto ajudará você a entender os conceitos fundamentais por trás desses algoritmos e como eles podem ser aplicados para ordenar dados numéricos em uma aplicação para a web."
+        ]
+      },
+      "learn-intermediate-oop-by-building-a-platformer-game": {
+        "title": "Aprenda OOP intermediário construindo um jogo de plataforma",
+        "intro": [
+          "Criar jogos permite que você entenda os princípios básicos de programação ao mesmo tempo em que cria uma experiência dinâmica e interativa de jogos.",
+          "Neste projeto de jogo de plataforma, você continuará aprendendo sobre classes, objetos, herança e encapsulamento. Você também aprenderá a criar e a organizar elementos de jogo de maneira eficiente e a obter informações sobre a resolução de problemas e a reutilização de código."
+        ]
+      },
+      "learn-localstorage-by-building-a-todo-app": {
+        "title": "Aprenda sobre armazenamento local criando uma aplicação de lista de tarefas",
+        "intro": [
+          "O armazenamento local é uma funcionalidade do navegador da web que permite que aplicações da web armazenem pares de chave-valor de maneira persistente dentro do navegador de um usuário, permitindo que os dados sejam salvos e recuperados nas sessões das páginas.",
+          "Nesta aplicação de lista de tarefas, você aprenderá a lidar com entradas de formulário, a gerenciar o armazenamento local, a executar operações do CRUD (criar, ler, atualizar e apagar) em tarefas, a implementar \"ouvintes\" de eventos e a ativar/desativar elementos da UI."
+        ]
+      },
+      "learn-the-date-object-by-building-a-date-formatter": {
+        "title": "Aprenda sobre o objeto Date criando um formatador de datas",
+        "intro": [
+          "Trabalhar com datas em JavaScript pode ser ao mesmo tempo poderoso e desafiador. Neste projeto, ao navegar através de vários métodos, formatos e fusos horários, você aprenderá a trabalhar com o objeto Date do JavaScript, incluindo os seus métodos e propriedades, e aprenderá a formatar datas de maneira eficaz.",
+          "Este projeto cobrirá conceitos como os métodos: <code>getDate()</code>, <code>getMonth()</code> e <code>getFullYear()</code>."
+        ]
       }
     }
   },
@@ -933,7 +996,7 @@
         "intro": [
           "Aumente o nível de suas habilidades criativas de resolução de problemas com essas tarefas de programação gratuitas da biblioteca clássica do Rosetta Code.",
           "Esses desafios podem ser difíceis, mas levarão sua lógica de algoritmos a novos patamares.",
-          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Créditos: Rosetta Code</a>"
         ]
       }
     }
@@ -950,6 +1013,14 @@
         "title": "Aprenda o básico de HTML",
         "intro": ["Uma descrição deve ser determinada"]
       },
+      "top-working-with-text": {
+        "title": "Trabalhando com textos",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-links-and-images": {
+        "title": "Links e imagens",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
       "top-build-a-recipe-project": {
         "title": "Aprenda o básico de HTML criando uma página de receitas",
         "intro": ["Uma descrição deve ser determinada"]
@@ -960,6 +1031,14 @@
       },
       "top-learn-css-foundations-projects": {
         "title": "Projetos para aprender o básico de CSS",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-learn-css-specificity": {
+        "title": "Aprenda especificidade no CSS",
+        "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-the-box-model": {
+        "title": "Aprenda sobre o modelo de caixas",
         "intro": ["Uma descrição deve ser determinada"]
       }
     }
@@ -1000,6 +1079,204 @@
         "intro": [
           "Neste conjunto final de desafios, você precisará utilizar tudo o que aprendeu até este ponto e usar conceitos avançados como divisores unitários, a rotina de Kaprekar e muito mais para resolver estes problemas complexos."
         ]
+      }
+    }
+  },
+  "foundational-c-sharp-with-microsoft": {
+    "title": "(Novo) Fundamentos de C# com a Microsoft",
+    "intro": [
+      "Este curso oferece uma introdução abrangente à programação em C#, cobrindo seus conceitos principais, sintaxe e aplicação prática em desenvolvimento de software.",
+      "Através de exercícios e projetos práticos, você aprenderá os fundamentos de C#, incluindo variáveis, tipos de dados, estruturas de controle e princípios de programação orientada a objetos.",
+      "Ao final deste curso, você terá obtido as habilidades práticas e conhecimentos necessários para programar em C# com confiança para criar aplicações."
+    ],
+    "note": "Cada seção abaixo tem um troféu associado a ela. Você deve obtê-lo na plataforma Microsoft Learn. Depois de ganhar cada troféu, você precisa verificá-lo no freeCodeCamp. Só então você poderá se qualificar para o exame de certificação.",
+    "blocks": {
+      "write-your-first-code-using-c-sharp": {
+        "title": "Escreva seu primeiro código em C#",
+        "intro": [
+          "Comece sua jornada aprendendo a escrever seu primeiro código em C#. Desenvolva bem seus conhecimentos básicos enquanto explora os fundamentos e a sintaxe da linguagem, preparando o terreno para suas aventuras em programação."
+        ]
+      },
+      "create-and-run-simple-c-sharp-console-applications": {
+        "title": "Crie e execute aplicações simples de console em C#",
+        "intro": [
+          "Domine a arte de criar e executar aplicações simples de console em C#. Mergulhe no mundo da programação baseada em consoles, onde você ganhará a experiência prática de executar seu código e vê-lo em ação."
+        ]
+      },
+      "add-logic-to-c-sharp-console-applications": {
+        "title": "Adicione lógica a aplicações de console em C#",
+        "intro": [
+          "Libere o poder da lógica nas aplicações de console em C#. Aprenda a adicionar lógica e recursos de tomada de decisão ao código, permitindo que suas aplicações façam escolhas dinâmicas e respondam inteligentemente a diferentes cenários."
+        ]
+      },
+      "work-with-variable-data-in-c-sharp-console-applications": {
+        "title": "Trabalhe com dados variáveis em aplicações de console do C#",
+        "intro": [
+          "Descubra a versatilidade de dados variáveis nas aplicações de console em C#. Aproveite a capacidade de armazenar e manipular diferentes tipos de dados, como números e texto, aprofundando em conceitos essenciais de variáveis e manipulação de dados."
+        ]
+      },
+      "create-methods-in-c-sharp-console-applications": {
+        "title": "Crie métodos em aplicações de console em C#",
+        "intro": [
+          "Torne mais avançadas suas aplicações de console em C# dominando a arte de criar métodos. Aprenda a organizar e modularizar seu código, tornando-o mais controlável, reutilizável e eficiente."
+        ]
+      },
+      "debug-c-sharp-console-applications": {
+        "title": "Depure aplicações de console em C#",
+        "intro": [
+          "Aprimore suas habilidades de solução de problemas ao mergulhar no mundo da depuração de aplicações de console em C#. Obtenha a capacidade de identificar e corrigir problemas no código, garantindo que as aplicações sejam executadas sem problemas e apresentem os resultados desejados."
+        ]
+      },
+      "foundational-c-sharp-with-microsoft-certification-exam": {
+        "title": "Exame de fundamentos de C# com certificação da Microsoft",
+        "intro": [
+          "Use o que aprendeu para passar no exame e ganhar suas Certificação da Microsoft em Fundamentos de C#"
+        ]
+      }
+    }
+  },
+  "upcoming-python": {
+    "title": "Próximo Python",
+    "intro": ["placeholder"],
+    "blocks": {
+      "learn-python-by-building-a-blackjack-game": {
+        "title": "Aprenda Python criando um jogo de Blackjack",
+        "intro": ["Aprenda Python.", ""]
+      },
+      "upcoming-python-project": {
+        "title": "Próximo projeto de Python",
+        "intro": ["placeholder"]
+      }
+    }
+  },
+  "a2-english-for-developers": {
+    "title": "A2 Inglês para Desenvolvedores (Beta)",
+    "intro": [
+      "Este curso, projetado para desenvolvedores, ensina a língua inglesa.",
+      "Mais texto aqui."
+    ],
+    "blocks": {
+      "learn-greetings-in-your-first-day-at-the-office": {
+        "title": "Aprenda saudações em seu primeiro dia no escritório",
+        "intro": ["Aprenda saudações."]
+      },
+      "learn-introductions-in-an-online-team-meeting": {
+        "title": "Aprenda apresentações em uma reunião on-line com a equipe",
+        "intro": ["Aprenda apresentações."]
+      },
+      "learn-conversation-starters-in-the-break-room": {
+        "title": "Aprenda a começar uma conversa na sala de descanso",
+        "intro": ["Aprender a iniciar uma conversa."]
+      },
+      "learn-how-to-talk-about-a-typical-workday-and-tasks": {
+        "title": "Aprenda a falar sobre um dia típico e tarefas",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-your-morning-or-evening-routine": {
+        "title": "Aprenda a discutir sobre sua rotina diária ou noturna",
+        "intro": ["", ""]
+      },
+      "learn-how-to-describe-your-current-project": {
+        "title": "Aprenda a descrever seu projeto atual",
+        "intro": ["", ""]
+      },
+      "learn-how-to-ask-and-share-about-educational-and-professional-background": {
+        "title": "Aprenda a pedir informações sobre histórico educacional e profissional e como compartilhá-las",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-hobbies-and-interests": {
+        "title": "Aprenda a falar sobre passatempos e interesses",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-roles-and-responsibilies": {
+        "title": "Aprenda a discutir funções e responsabilidades",
+        "intro": ["", ""]
+      },
+      "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
+        "title": "Aprenda a ter uma conversa sobre preferências e motivações",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-popular-trends-in-technology": {
+        "title": "Aprenda a discutir tendências populares em tecnologia",
+        "intro": ["", ""]
+      },
+      "learn-how-to-clarify-information-in-different-interactions": {
+        "title": "Aprenda a esclarecer as informações em diferentes interações",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
+        "title": "Aprenda a usar o vocabulário básico de programação em conversas",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-code-related-concepts-and-terms": {
+        "title": "Aprenda a usar conceitos e termos relacionados à programação",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-tech-trends-and-updates": {
+        "title": "Aprenda a debater tendências em tecnologia e atualizações",
+        "intro": ["", ""]
+      },
+      "learn-how-to-help-a-coworker-troubleshoot-on-github": {
+        "title": "Aprenda a ajudar um colega de trabalho a resolver problemas no GitHub",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
+        "title": "Aprenda a compartilhar seu progresso em reuniões semanais de equipe",
+        "intro": ["", ""]
+      },
+      "learn-how-to-ask-for-clarification-on-code-understanding": {
+        "title": "Aprenda a pedir esclarecimento na compreensão do código",
+        "intro": ["", ""]
+      },
+      "learn-how-to-document-code-for-a-project": {
+        "title": "Aprenda a documentar o código para um projeto",
+        "intro": ["", ""]
+      },
+      "learn-how-to-read-and-understand-code-documentation": {
+        "title": "Aprenda a ler e entender a documentação do código",
+        "intro": ["", ""]
+      },
+      "learn-how-to-analyze-code-documentation": {
+        "title": "Aprenda a analisar a documentação de código",
+        "intro": ["", ""]
+      },
+      "learn-how-to-follow-basic-email-convention": {
+        "title": "Aprenda a seguir convenções básicas de e-mail",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-progress-and-accomplishments": {
+        "title": "Aprenda a compartilhar progresso e realizações",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
+        "title": "Aprenda a falar sobre atualizações e planos para tarefas e projetos",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-agreement-or-disagreement": {
+        "title": "Aprenda a expressar concordância e desacordo",
+        "intro": ["", ""]
+      },
+      "learn-how-to-offer-technical-support-and-guidance": {
+        "title": "Aprenda a oferecer suporte técnico e orientação",
+        "intro": ["", ""]
+      },
+      "learn-how-to-request-and-receive-guidance": {
+        "title": "Aprenda a solicitar e receber orientação",
+        "intro": ["", ""]
+      },
+      "learn-how-to-provide-explanations-when-helping-others": {
+        "title": "Aprenda a fornecer explicações quando estiver ajudando outros",
+        "intro": ["", ""]
+      }
+    }
+  },
+  "example-certification": {
+    "title": "Certificação de exemplo",
+    "intro": ["placeholder"],
+    "blocks": {
+      "example-certification-exam": {
+        "title": "Exame da certificação de exemplo",
+        "intro": ["placeholder"]
       }
     }
   },

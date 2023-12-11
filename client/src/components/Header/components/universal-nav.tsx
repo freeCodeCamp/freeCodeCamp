@@ -1,14 +1,10 @@
 import Loadable from '@loadable/component';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Media from 'react-responsive';
-import { useFeature } from '@growthbook/growthbook-react';
+import { useMediaQuery } from 'react-responsive';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
-import {
-  SEARCH_EXPOSED_WIDTH,
-  DONATE_NAV_EXPOSED_WIDTH
-} from '../../../../../config/misc';
+import { SEARCH_EXPOSED_WIDTH } from '../../../../config/misc';
 import MenuButton from './menu-button';
 import NavLinks, { type NavLinksProps } from './nav-links';
 import NavLogo from './nav-logo';
@@ -28,7 +24,7 @@ type UniversalNavProps = Omit<
   fetchState: { pending: boolean };
   searchBarRef?: React.RefObject<HTMLDivElement>;
 };
-export const UniversalNav = ({
+const UniversalNav = ({
   displayMenu,
   showMenu,
   hideMenu,
@@ -39,8 +35,9 @@ export const UniversalNav = ({
 }: UniversalNavProps): JSX.Element => {
   const { pending } = fetchState;
   const { t } = useTranslation();
-
-  const exposeDonateButton = useFeature('expose_donate_button').on;
+  const isSearchExposedWidth = useMediaQuery({
+    query: `(min-width: ${SEARCH_EXPOSED_WIDTH}px)`
+  });
 
   const search =
     typeof window !== `undefined` && isLanding(window.location.pathname) ? (
@@ -52,19 +49,19 @@ export const UniversalNav = ({
   return (
     <nav
       aria-label={t('aria.primary-nav')}
-      className={`universal-nav${displayMenu ? ' expand-nav' : ''}`}
+      className='universal-nav'
       id='universal-nav'
+      data-playwright-test-label='header-universal-nav'
     >
-      <Media minWidth={SEARCH_EXPOSED_WIDTH + 1}>
-        <div
-          className={`universal-nav-left${
-            displayMenu ? ' display-search' : ''
-          }`}
-        >
-          {search}
-        </div>
-      </Media>
-      <Link id='universal-nav-logo' to='/learn'>
+      {isSearchExposedWidth && (
+        <div className='universal-nav-left'>{search}</div>
+      )}
+      <Link
+        className='universal-nav-logo'
+        id='universal-nav-logo'
+        to='/learn'
+        data-playwright-test-label='header-universal-nav-logo'
+      >
         <NavLogo />
       </Link>
       <div className='universal-nav-right main-nav'>
@@ -74,18 +71,6 @@ export const UniversalNav = ({
           </div>
         ) : (
           <>
-            {!user?.isDonating && exposeDonateButton && (
-              <Media minWidth={DONATE_NAV_EXPOSED_WIDTH + 1}>
-                <Link
-                  sameTab={false}
-                  to='/donate'
-                  data-test-label='nav-donate-button'
-                  className='exposed-button-nav'
-                >
-                  {t('buttons.donate')}
-                </Link>
-              </Media>
-            )}
             <LanguageList />
             <MenuButton
               displayMenu={displayMenu}
@@ -94,7 +79,7 @@ export const UniversalNav = ({
               showMenu={showMenu}
               user={user}
             />
-            <Media maxWidth={SEARCH_EXPOSED_WIDTH}>{search}</Media>
+            {!isSearchExposedWidth && search}
             <NavLinks
               displayMenu={displayMenu}
               hideMenu={hideMenu}
@@ -102,9 +87,7 @@ export const UniversalNav = ({
               showMenu={showMenu}
               user={user}
             />
-            <div className='navatar'>
-              <AuthOrProfile user={user} />
-            </div>
+            <AuthOrProfile user={user} />
           </>
         )}
       </div>

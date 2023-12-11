@@ -1,6 +1,6 @@
 ---
 id: 5900f40d1000cf542c50ff20
-title: 'Problem 161: Triominoes'
+title: 'Завдання 161: тріоміни'
 challengeType: 1
 forumTopicId: 301795
 dashedName: problem-161-triominoes
@@ -8,21 +8,21 @@ dashedName: problem-161-triominoes
 
 # --description--
 
-A triomino is a shape consisting of three squares joined via the edges.
+Тріоміно — це фігура, яка складається з трьох квадратів, з’єднаних сторонами.
 
-There are two basic forms:
+Є дві основні форми:
 
-<img class="img-responsive center-block" alt="two basic triominoes forms" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-1.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="дві основні форми тріомінів" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-1.gif" style="background-color: white; padding: 10px;" />
 
-If all possible orientations are taken into account there are six:
+Існує шість можливих варіантів фігур:
 
-<img class="img-responsive center-block" alt="triominoes forms including orientation" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-2.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="форми тріомінів включно із орієнтацією" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-2.gif" style="background-color: white; padding: 10px;" />
 
-Any n by m grid for which nxm is divisible by 3 can be tiled with triominoes. If we consider tilings that can be obtained by reflection or rotation from another tiling as different there are 41 ways a 2 by 9 grid can be tiled with triominoes:
+Будь-яке поле n на m, якщо nxm ділиться на 3, можна покрити тріомінами. Якщо розглядати варіанти покриття, отримані шляхом симетрії чи обертання іншого покриття, то існує 41 спосіб викласти тріоміни на полі 2х9:
 
-<img class="img-responsive center-block" alt="animation showing 41 ways of filling 2x9 grid with triominoes" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-3.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="анімація, що показує 41 спосіб заповнення таблиці 2 на 9 тріомінами" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-3.gif" style="background-color: white; padding: 10px;" />
 
-In how many ways can a 9 by 12 grid be tiled in this way by triominoes?
+Скількома способами можна викласти тріоміни на полі 9х12?
 
 # --hints--
 

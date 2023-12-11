@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908850
-title: Застосування стилю за замовчуванням кнопки Bootstrap
+title: Застосуйте стиль кнопки Bootstrap за замовчуванням
 challengeType: 0
 forumTopicId: 16657
 dashedName: apply-the-default-bootstrap-button-style
@@ -8,19 +8,19 @@ dashedName: apply-the-default-bootstrap-button-style
 
 # --description--
 
-Bootstrap має ще один клас кнопок, що називається `btn-default`.
+Bootstrap має ще один клас кнопок під назвою `btn-default`.
 
-Застосуйте обидва класи `btn` та `btn-default` до кожного з елементів `button`.
+Застосуйте класи `btn` та `btn-default` до кожного елемента `button`.
 
 # --hints--
 
-Необхідно застосувати клас `btn` до кожного з елементів `button`.
+Застосуйте клас `btn` до кожного елемента `button`.
 
 ```js
 assert($('.btn').length > 5);
 ```
 
-Необхідно застосувати клас `btn-default` до кожного з елементів `button`.
+Застосуйте клас `btn-default` до кожного елемента `button`.
 
 ```js
 assert($('.btn-default').length > 5);

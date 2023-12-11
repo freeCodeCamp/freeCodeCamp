@@ -2,8 +2,8 @@
 import axios from 'axios';
 import debug from 'debug';
 import isEmail from 'validator/lib/isEmail';
-import { donationSubscriptionConfig } from '../../../../config/donation-settings';
-import keys from '../../../../config/secrets';
+import { donationSubscriptionConfig } from '../../../../shared/config/donation-settings';
+import keys from '../../../config/secrets';
 
 const log = debug('fcc:boot:donate');
 
@@ -217,10 +217,23 @@ export async function createStripeCardDonation(req, res, stripe) {
    * if user is already donating and the donation isn't one time only,
    * throw error
    */
+
   if (user.isDonating && duration !== 'one-time') {
     throw {
       message: `User already has active recurring donation(s).`,
       type: 'AlreadyDonatingError'
+    };
+  }
+
+  /*
+   * card donations is blocked for new users
+   */
+
+  const threeChallengesCompleted = user.completedChallenges.length >= 3;
+  if (!threeChallengesCompleted) {
+    throw {
+      message: `Donate using another method`,
+      type: 'MethodRestrictionError'
     };
   }
 

@@ -27,7 +27,6 @@ Antes de trabalhar no currículo, você precisará configurar algumas ferramenta
 
   [![Abra no Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Edite os arquivos na interface do GitHub clicando no ícone do lápis no arquivo correspondente. Embora seja a maneira mais rápida, **não é recomendado**, porque você não pode testar suas alterações no GitHub. Se nossos mantedores concluirem que as mudanças que você fez precisam ser testadas localmente, você precisará seguir os métods acima.
 
 ### Trabalhe em projetos práticos
 
@@ -136,17 +135,29 @@ Soluções são usadas para os testes CI a fim de garantir que mudanças nas dic
 // terceira solução etc. - Suas soluções devem estar em HTML.
 ```
 
+# --assignments--
+
+Isto mostrará uma caixa de seleção que os campers precisam verificar antes de completar um desafio
+
+---
+
+Isto mostrará outra caixa de seleção que os campers precisam verificar antes de completar um desafio
+
 # --question--
 
 Esses espaços são utilizados geralmente para questões de múltipla escolha dos desafios de Python.
 
 ## --text--
 
-O texto da questão vêm aqui.
+O texto da questão vem aqui.
 
 ## --answers--
 
 Resposta 1
+
+### --feedback--
+
+Isto será exibido como feedback quando os campers adivinharem essa resposta
 
 ---
 
@@ -159,6 +170,36 @@ Mais respostas
 ## --video-solution--
 
 O número da resposta correta fica aqui.
+
+# --fillInTheBlank--
+
+Estes são os desafios do currículos de inglês.
+
+## --sentence--
+
+Frase a ser mostrada com espaços em branco que os campers têm de preencher. Exemplo:
+
+`Hello, You _ the new graphic designer, _?`
+
+Os dois sublinhados aparecerão como lacunas para preencher. A frase deve ser cercada por backticks (sinais de crase).
+
+## --blanks--
+
+A solução para a primeira lacuna na frase acima. Exemplo:
+
+`are`
+
+### --feedback--
+
+Feedback mostrado quando campers inserem a solução errada para esta lacuna.
+
+---
+
+Solução para a segunda lacuna. Exemplo:
+
+`right`
+
+Se não houver feedback aqui, será exibida uma mensagem genérica de "resposta errada".
 ````
 
 > [!NOTE]
@@ -220,9 +261,11 @@ As frases devem ser claras e resumidas com o mínimo de termos técnicos. Se usa
 
 Mantenha os parágrafos curtos (em torno de 1-4 frases). É mais provável que as pessoas leiam vários parágrafos curtos do que um parágrafo enorme.
 
+Use inglês americano. Por exemplo, use `labeled` em vez de `labelled`.
+
 O desafio de texto deve usar a segunda pessoa ("você") para ajudar a dar um tom coloquial. Dessa forma, o texto e as instruções parecem falar diretamente ao usuário freeCodeCamp que está resolvendo o desafio. Tente evitar usar a primeira pessoa ("eu", "nós", "vamos").
 
-Não use links externos. Eles interrompem o fluxo. Os usuários do freeCodeCamp nunca devem precisar pesquisar nada no Google durante esses desafios. Se há recursos que você acha que os usuários irão se beneficiar, adicione-os no artigo relacionado ao guia do desafio.
+Não use links externos. Eles interrompem o fluxo. Os usuários do freeCodeCamp nunca devem precisar pesquisar nada no Google durante esses desafios. Se há recursos que você acha que os usuários aproveitarão, adicione-os no artigo relacionado ao guia do desafio.
 
 Você pode adicionar diagramas se necessário.
 
@@ -297,7 +340,7 @@ Desafios devem ter um número mínimo de testes necessários para verificar que 
 
 Nossa meta é comunicar o ponto que o desafio está tentando ensinar e testar se eles entenderam esse ponto.
 
-Os testes do desafio podem usar bibliotecas Node.js e Chai.js. Se necessário, o código gerado pro usuário pode ser acessado na variável `code` também. Além disso, os objetos `__helpers` expõem várias funções que simplificam o processo de escrita dos testes. As funções disponíveis estão definidas em _client/src/utils/curriculum-helpers.ts_.
+Os testes do desafio podem usar bibliotecas Node.js e Chai.js. Se necessário, o código gerado pro usuário pode ser acessado na variável `code` também. Além disso, os objetos `__helpers` expõem várias funções que simplificam o processo de escrita dos testes. As funções disponíveis estão definidas no repositório [curriculum-helpers](https://github.com/freeCodeCamp/curriculum-helpers/blob/main/lib/index.ts).
 
 ## Formatação do código seed
 
@@ -463,7 +506,13 @@ Antes de [criar um pull request](how-to-open-a-pull-request.md) para suas modifi
 pnpm run test:curriculum
 ```
 
-2. Você também pode testar um bloco ou superbloco de desafios com esses comandos
+2. Para testar um único desafio, você pode usar o id do desafio com o seguinte comando
+
+```
+FCC_CHALLENGE_ID=646cf6cbca98e258da65c979 pnpm run test:curriculum
+```
+
+3. Você também pode testar um bloco ou superbloco de desafios com esses comandos
 
 ```
 FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
@@ -473,7 +522,7 @@ FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
-Você também é capaz de testar um desafio individualmente seguindo as seguintes etapas:
+Você também pode testar desafios por título utilizando as seguintes etapas:
 
 1.  Mude para o diretório `curriculum`:
 
@@ -484,18 +533,104 @@ Você também é capaz de testar um desafio individualmente seguindo as seguinte
 2. Execute o comando a seguir para cada arquivo de desafio no qual você fez alteraçõess (substituindo `challenge-title-goes-here` com o título completo do desafio):
 
    ```
-   pnpm run test -- -g challenge-title-goes-here ```
+   pnpm run test -- -g titulo-do-desafio-aqui
+   ```
 
-Quando você verificar que cada desafio modificado passou nos testes, [crie um pull request](how-to-open-a-pull-request.md).
+> [!TIP]
+> Você pode definir a váriavel de ambiente `LOCALE` no arquivo `.env` para o idioma do(s) desafio(s) que você precisa testar.
+>
+> Os valores aceitos de momento são `english` e `chinese`, com `english` sendo o valor padrão.
 
-> [!TIP] Você pode definir a variável de ambiente `LOCALE` no `.env` no idioma do(s) desafio(s) que precisa testar.
-> 
-> Os valores atualmente aceitos são `english` e `chinese`, com `english` sendo o padrão.
+## Propondo um Pull Request (PR)
 
-### Links úteis
+Depois de fazer o commit de suas alterações, confira aqui [como abrir um Pull Request](how-to-open-a-pull-request.md).
+
+## Links úteis
 
 Criação e edição de desafios:
 
 1. [Tipos de desafio](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - o que significam os valores do tipo de desafio numérico (enum).
 
-2. [Contribuindo para o FreeCodeCamp - Escrevendo testes de desafio ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - um vídeo com [Ethan Arrowood](https://twitter.com/ArrowoodTech) contribuindo para a versão antiga do currículo.
+2. [Contribuindo para o FreeCodeCamp - Escrevendo testes para desafios de ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - um vídeo que acompanha [Ethan Arrowood](https://twitter.com/ArrowoodTech) durante sua contribuição para a versão antiga do currículo.
+
+## Scripts auxiliares
+
+> [!NOTE]
+> Se estiver trabalhando com os desafios baseados em passos, consulte a seção [Trabalho com projetos práticos](how-to-work-on-practice-projects.md).
+
+Existem alguns scripts auxiliares que podem ser usados para gerenciar os desafios em um bloco. Observe que todos esses comandos devem ser executados no diretório do bloco. Por exemplo:
+
+```bash
+cd curriculum/challenges/english/02-javascript-algorithms-and-data-structures/basic-algorithm-scripting
+```
+
+### Adicionar um novo desafio
+
+Para adicionar um novo desafio no final de um bloco, chame o script:
+
+```bash
+pnpm run create-next-challenge
+```
+
+Ele solicitará a informação do desafio e criará o arquivo de desafio, atualizando o arquivo `meta.json` com as novas informações de desafio.
+
+### Excluir um desafio
+
+Para excluir um desafio, chame o script:
+
+```bash
+pnpm run delete-challenge
+```
+
+Ele solicitará que você selecione qual desafio deve ser excluído. Em seguida, excluirá o arquivo e atualizará o arquivo `meta.json` para remover o desafio da ordem.
+
+### Inserir um desafio
+
+Para inserir um desafio antes de um desafio existente, chame o script:
+
+```bash
+pnpm run insert-challenge
+```
+
+Ele solicitará a informação do desafio e, em seguida, o desafio será inserido antes do desafio informado. Por exemplo, se suas escolhas forem:
+
+```bash
+a
+b
+c
+```
+
+Se você escolher `b`, a nova ordem será:
+
+```bash
+a
+novo desafio
+b
+c
+```
+
+### Atualizar a ordem dos desafios
+
+Se você precisar reordenar manualmente os desafios, chame o script:
+
+```bash
+pnpm run update-challenge-order
+```
+
+Ele vai orientá-lo através de um processo interativo para selecionar a ordem dos desafios.
+
+## Solução de problemas
+
+### Loop infinito detectado
+
+Se você ver o seguinte erro no console ao pré-visualizar um desafio:
+
+```text
+Potential infinite loop detected on line <number>...
+```
+
+Isso significa que o plug-in de proteção de loops encontrou um loop de longa duração ou uma função recursiva. Se o desafio precisar fazer isso (por exemplo, contém um loop de eventos que deve ser executado indefinidamente), então você pode impedir que o plug-in seja usado na visualização. Para fazer isso, adicione `disableLoopProtectPreview: true` ao arquivo `meta.json` do bloco.
+
+Se os testes demandam muitos cálculos, você poderá ver esse erro quando eles forem executados. Se isso acontecer, adicione `disableLoopProtectPreview: true` ao arquivo `meta.json` do bloco.
+
+Normalmente, não é necessário ter os dois definidos como true, Defina-os, apenas, conforme necessário.

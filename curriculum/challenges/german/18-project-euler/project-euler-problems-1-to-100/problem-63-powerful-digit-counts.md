@@ -14,13 +14,13 @@ Complete the function so that it returns how many positive integers are of lengt
 
 # --hints--
 
-`powerfulDigitCounts(1)` should return a number.
+`powerfulDigitCounts(1)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof powerfulDigitCounts(1) === 'number');
 ```
 
-`powerfulDigitCounts(1)` should return `9`.
+`powerfulDigitCounts(1)` sollte `9` zurückgeben.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(1), 9);
@@ -32,13 +32,13 @@ assert.strictEqual(powerfulDigitCounts(1), 9);
 assert.strictEqual(powerfulDigitCounts(2), 6);
 ```
 
-`powerfulDigitCounts(3)` should return `5`.
+`powerfulDigitCounts(3)` sollte `5` zurückgeben.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(3), 5);
 ```
 
-`powerfulDigitCounts(4)` should return `4`.
+`powerfulDigitCounts(4)` sollte `4` zurückgeben.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(4), 4);
@@ -50,7 +50,7 @@ assert.strictEqual(powerfulDigitCounts(4), 4);
 assert.strictEqual(powerfulDigitCounts(5), 3);
 ```
 
-`powerfulDigitCounts(6)` should return `3`.
+`powerfulDigitCounts(6)` sollte `3` zurückgeben.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(6), 3);
@@ -62,19 +62,19 @@ assert.strictEqual(powerfulDigitCounts(6), 3);
 assert.strictEqual(powerfulDigitCounts(7), 2);
 ```
 
-`powerfulDigitCounts(8)` should return `2`.
+`powerfulDigitCounts(8)` sollte `2` zurückgeben.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(8), 2);
 ```
 
-`powerfulDigitCounts(10)` should return `2`.
+`powerfulDigitCounts(10)` sollte `2` zurückgeben.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(10), 2);
 ```
 
-`powerfulDigitCounts(21)` should return `1`.
+`powerfulDigitCounts(21)` sollte `1` zurückgeben.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(21), 1);

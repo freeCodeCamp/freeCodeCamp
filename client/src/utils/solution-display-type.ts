@@ -1,21 +1,23 @@
 import type { CompletedChallenge } from '../redux/prop-types';
-import { challengeTypes } from '../../utils/challenge-types';
+import { challengeTypes } from '../../../shared/config/challenge-types';
 import { maybeUrlRE } from '.';
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 type DisplayType =
   | 'none'
   | 'showMultifileProjectSolution'
   | 'showUserCode'
   | 'showProjectAndGithubLinks'
-  | 'showProjectLink';
+  | 'showProjectLink'
+  | 'showExamResults';
 
 export const getSolutionDisplayType = ({
   solution,
   githubLink,
   challengeFiles,
-  challengeType
+  challengeType,
+  examResults
 }: CompletedChallenge): DisplayType => {
+  if (examResults) return 'showExamResults';
   if (challengeFiles?.length)
     return challengeType === challengeTypes.multifileCertProject
       ? 'showMultifileProjectSolution'

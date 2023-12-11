@@ -45,7 +45,7 @@ const getProps = (
   challengeData: getChallengeData(curriculum, pathSegments)
 });
 // DRY this with [blockOrId]'s version
-const fourOhFour = () => ({ notFound: true, revalidate: 10 } as const);
+const fourOhFour = () => ({ notFound: true, revalidate: 10 }) as const;
 
 // DRY this with [blockOrId]'s version
 const pathExists = (
@@ -82,7 +82,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   // work upfront as possible. At least until that upfront work takes too long.
   const rwdPaths = rwdBlocknames
     .map(name =>
-      rwdBlocks[name].meta.challengeOrder.map(([id]) =>
+      rwdBlocks[name].meta.challengeOrder.map(({ id }) =>
         toParams(
           'responsive-web-design',
           name,

@@ -35,7 +35,7 @@ $$\begin{align}   & F(0) = F(1) = 1 \text{ and} \\\\
 
 Define $GF(t) = g(F(t), F(t - 1))$.
 
-Find $\sum GF(t)$ for$ 2 ≤ t ≤ 45$.
+Знайдіть $\sum GF(t)$ за умови $2 ≤ t ≤ 45$.
 
 # --hints--
 

@@ -29,6 +29,7 @@
     "sign-up-email-list": "Iscriviti alle email settimanali di Quincy",
     "sign-out": "Esci",
     "curriculum": "Curriculum",
+    "contribute": "Contribuisci",
     "forum": "Forum",
     "radio": "Radio",
     "profile": "Profilo",
@@ -43,6 +44,7 @@
     "settings": "Impostazioni",
     "take-me": "Portami alle Sfide",
     "check-answer": "Verifica la tua risposta",
+    "submit": "Submit",
     "get-hint": "Ottieni un suggerimento",
     "ask-for-help": "Chiedi aiuto",
     "create-post": "Crea un post di aiuto sul forum",
@@ -72,9 +74,21 @@
     "go-to-settings": "Vai alle impostazioni per richiedere la tua certificazione",
     "click-start-course": "Inizia il corso",
     "click-start-project": "Inizia il progetto",
+    "click-start-exam": "Inizia l'esame",
     "change-language": "Cambia lingua",
     "resume-project": "Riprendi progetto",
-    "start-project": "Avvia il progetto"
+    "start-project": "Avvia il progetto",
+    "tweet": "Twitta",
+    "previous-question": "Domanda precedente",
+    "next-question": "Domanda successiva",
+    "exit-exam": "Abbandona l'esame",
+    "exit": "Esci",
+    "finish-exam": "Termina l'esame",
+    "finish": "Termina",
+    "submit-exam-results": "Invia i risultati",
+    "verify-trophy": "Verifica Trofeo",
+    "link-account": "Collega Account",
+    "unlink-account": "Scollega Account"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -82,6 +96,7 @@
     "big-heading-3": "Ottieni certificazioni.",
     "h2-heading": "Dal 2014, più di 40.000 studenti di freeCodeCamp.org hanno ottenuto posti di lavoro presso aziende tecnologiche, tra cui:",
     "hero-img-description": "Studenti di un gruppo di studio locale di freeCodeCamp in Corea del Sud.",
+    "hero-img-alt": "Un gruppo di persone, tra cui un uomo bianco, una donna di colore e una donna asiatica, riuniti intorno a un computer portatile.",
     "as-seen-in": "Hanno parlato di noi:",
     "testimonials": {
       "heading": "Ecco cosa dicono i nostri allievi su freeCodeCamp:",
@@ -102,6 +117,10 @@
       }
     },
     "certification-heading": "Ottieni certificazioni verificate gratuite in:",
+    "core-certs-heading": "Ottieni certificazioni verificate e gratuite con il curriculum base di freeCodeCamp:",
+    "professional-certs-heading": "Ottieni certificazioni professionali gratuite:",
+    "interview-prep-heading": "Preparati per la ricerca di colloqui di lavoro da sviluppatore:",
+    "upcoming-heading": "Upcoming curriculum:",
     "faq": "Domande frequenti:",
     "faqs": [
       {
@@ -196,6 +215,7 @@
       "project-name": "Nome Progetto",
       "solution": "Soluzione",
       "solution-for": "Soluzione di {{projectTitle}}",
+      "results-for": "Risultati per {{projectTitle}}",
       "my-profile": "Il mio profilo",
       "my-name": "Il mio nome",
       "my-location": "La mia posizione",
@@ -285,7 +305,7 @@
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp è un'organizzazione di beneficenza 501(c)(3) esentasse supportata da donazioni (Numero di identificazione per le tasse federali negli Stati Uniti d'America: 82-0779546)",
-    "mission-statement": "La nostra missione: aiutare le persone a imparare a programmare gratuitamente. Lo facciamo creando migliaia di video, articoli e lezioni di programmazione interattive - tutti liberamente disponibili al pubblico. Abbiamo anche migliaia di gruppi di studio freeCodeCamp in tutto il mondo.",
+    "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.",
     "donation-initiatives": "Le donazioni a freeCodeCamp vanno alle nostre iniziative educative e aiutano a pagare i server, i servizi e il personale.",
     "donate-text": "Puoi fare una <1>donazione deducibile dalle tasse qui</1>.",
     "trending-guides": "Guide Di Tendenza",
@@ -336,6 +356,7 @@
     "question": "Domande",
     "solution-link": "Link alla soluzione",
     "github-link": "Link GitHub",
+    "ms-link": "Microsoft Link",
     "submit-and-go": "Invia e vai alla prossima sfida",
     "congratulations": "Congratulazioni, hai superato i test. Invia in tuo codice per continuare.",
     "i-completed": "Ho completato questa sfida",
@@ -345,6 +366,7 @@
     "console-output": "// output della console",
     "sign-in-save": "Accedi per salvare i tuoi progressi",
     "download-solution": "Scarica la mia soluzione",
+    "download-results": "Scarica i miei risultati",
     "percent-complete": "{{percent}}% completato",
     "project-complete": "Completati {{completedChallengesInBlock}} di {{totalChallengesInBlock}} progetti di certificazione",
     "tried-rsa": "Se hai già provato il metodo <0>Leggi-Cerca-Chiedi</0>, allora puoi chiedere aiuto sul forum freeCodeCamp.",
@@ -384,7 +406,6 @@
     "runs-in-vm": "Il progetto esegue in una macchina virtuale, completa le user story descritte lì dentro e fai passare tutti i test per finire lo step 1.",
     "completed": "Completato",
     "not-started": "Non iniziato",
-    "hint": "Suggerimento",
     "test": "Test",
     "sorry-try-again": "Il tuo codice non è corretto. Riprova.",
     "sorry-keep-trying": "Il tuo codice non è corretto. Continua a provare.",
@@ -395,7 +416,47 @@
     "season-greetings-fcc": "Saluti dalla comunità freeCodeCamp 🎉",
     "if-getting-value": "Se stai trovando utile freeCodeCamp, è un ottimo momento per donare e sostenere la missione del nostro ente di beneficenza.",
     "building-a-university": "Stiamo creando un corso di laurea gratuito in Scienze Informatiche",
-    "if-help-university": "Abbiamo già fatto tanti progressi. Sostieni il nostro ente benefico con la lunga strada che ci attende."
+    "if-help-university": "Abbiamo già fatto tanti progressi. Sostieni il nostro ente benefico con la lunga strada che ci attende.",
+    "preview-external-window": "Preview currently showing in external window.",
+    "fill-in-the-blank": "Fill in the blank",
+    "exam": {
+      "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
+      "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
+      "time": "Time: {{ t }}",
+      "questions": "Question {{ n }} of {{ t }}",
+      "passed": "Passed",
+      "not-passed": "Not Passed",
+      "number-of-questions": "Number of questions: {{ n }}",
+      "correct-answers": "Correct answers: {{ n }}",
+      "percent-correct": "Percent correct: {{ n }}%",
+      "passed-message": "Congratulations! You passed the exam and can claim your certification.",
+      "not-passed-message": "Sorry, but you did not answer enough questions correctly to pass the exam.",
+      "results-header": "{{ title }} Results",
+      "question-results": "You correctly answered {{ n }} out of {{ q }} questions",
+      "percent-results": "{{ p }}% correct",
+      "finish-header": "Finish Exam",
+      "finish": "Are you sure you want to finish the exam? You will not be able to change any answers. Your results will be final.",
+      "finish-yes": "Yes, I am finished",
+      "finish-no": "No, I would like to continue the exam",
+      "exit-header": "Exit Exam",
+      "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
+      "exit-yes": "Yes, I want to leave the exam",
+      "exit-no": "No, I would like to continue the exam"
+    },
+    "ms": {
+      "link-header": "Link your Microsoft account",
+      "link-signin": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account. Sign in to link your Microsoft username.",
+      "linked": "The Microsoft account with username \"{{ msUsername }}\" is currently linked to your freeCodeCamp account. If this is not your Microsoft username, remove the link.",
+      "unlinked": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account by following these instructions:",
+      "link-li-1": "Using a browser where you are logged into your Microsoft account, go to <0>https://learn.microsoft.com/users/me/transcript</0>",
+      "link-li-2": "Find and click the \"Share link\" button.",
+      "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
+      "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
+      "link-li-5": "Paste the URL into the input below, it should look similar to this: <0>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</0>",
+      "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
+      "transcript-label": "Your Microsoft Transcript Link",
+      "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
+    }
   },
   "donate": {
     "title": "Supporta il nostro ente",
@@ -411,29 +472,29 @@
     "no-halo": "Se non vedi un alone d'oro intorno alla foto del tuo profilo, contatta donors@freecodecamp.org.",
     "gift-frequency": "Seleziona la frequenza del dono:",
     "gift-amount": "Seleziona l'importo del dono:",
-    "confirm": "Conferma la tua donazione",
-    "confirm-2": "Conferma la tua donazione una tantum di ${{usd}}",
-    "confirm-3": "Conferma la tua donazione di ${{usd}} al mese",
-    "confirm-4": "Conferma la tua donazione di ${{usd}} all’anno",
+    "confirm": "Confirm your donation:",
+    "confirm-one-time": "Confirm your one-time donation of ${{usd}}:",
+    "confirm-monthly": "Confirm your donation of ${{usd}} / month:",
+    "confirm-yearly": "Confirm your donation of ${{usd}} / year:",
+    "confirm-multitier": "Donating ${{usd}} / month:",
+    "edit-amount": "edit amount",
     "wallet-label": "Donazione di ${{usd}} a freeCodeCamp",
     "wallet-label-1": "Donazione di ${{usd}} / mese a freeCodeCamp",
     "your-donation": "La tua donazione di ${{usd}} fornirà {{hours}} ore di apprendimento alle persone di tutto il mondo.",
     "your-donation-2": "La tua donazione ${{usd}} fornirà {{hours}} ore di apprendimento alle persone di tutto il mondo ogni mese.",
     "your-donation-3": "La tua donazione di ${{usd}} fornirà {{hours}} ore di apprendimento a persone di tutto il mondo ogni anno.",
     "become-supporter": "Diventa sostenitore",
-    "duration": "Diventa un sostenitore una tantum del nostro ente di beneficenza.",
-    "duration-2": "Diventa un sostenitore mensile del nostro ente di beneficenza.",
-    "duration-4": "Diventa un sostenitore del nostro ente di beneficenza",
-    "progress-modal-cta-1": "Donate now to help our charity build a free accredited Computer Science degree for all.",
-    "progress-modal-cta-2": "Donate now to sponsor 53 hours of server time for our charity's website.",
-    "progress-modal-cta-3": "Donate now to help our charity translate lessons into 32 languages for learners worldwide.",
-    "progress-modal-cta-4": "Donate now to support development of our charity's new Python curriculum.",
-    "progress-modal-cta-5": "Donate now to help our charity design lessons on new programming tools.",
-    "progress-modal-cta-6": "Donate now to support our charity's open source projects.",
-    "progress-modal-cta-7": "Donate now to help our charity hire even more amazing teachers.",
-    "progress-modal-cta-8": "Donate now to help us develop new courses on emerging tools and programming concepts.",
-    "progress-modal-cta-9": "Donate now to support our math for developers curriculum.",
-    "progress-modal-cta-10": "Donate now to help us develop free professional programming certifications for all.",
+    "progress-modal-cta-1": "Dona ora per aiutare la nostra charity a creare un corso di laurea in Informatica gratuito e accreditato per tutti.",
+    "progress-modal-cta-2": "Dona ora per sponsorizzare 53 ore di tempo server per il sito web della nostra charity.",
+    "progress-modal-cta-3": "Dona ora per aiutare la nostra charity a tradurre le lezioni in 32 lingue per gli studenti di tutto il mondo.",
+    "progress-modal-cta-4": "Dona ora per sostenere lo sviluppo del nuovo curriculum Python della nostra charity.",
+    "progress-modal-cta-5": "Dona ora per aiutare la nostra charity a progettare lezioni sui nuovi strumenti di programmazione.",
+    "progress-modal-cta-6": "Dona ora per sostenere i progetti open source della nostra charity.",
+    "progress-modal-cta-7": "Dona ora per aiutare la nostra charity ad assumere altri fantastici insegnanti.",
+    "progress-modal-cta-8": "Dona ora per aiutarci a sviluppare nuovi corsi su strumenti e concetti di programmazione emergenti.",
+    "progress-modal-cta-9": "Dona ora per supportare il nostro curriculum di matematica per sviluppatori.",
+    "progress-modal-cta-10": "Dona ora per aiutarci a sviluppare certificazioni di programmazione professionale gratuite per tutti.",
+    "help-us-develop": "Help us develop free professional programming certifications for all.",
     "nicely-done": "Ben fatto. Hai appena completato {{block}}.",
     "credit-card": "Carta di credito",
     "credit-card-2": "O dona con una carta di credito:",
@@ -465,7 +526,7 @@
     "download-irs": "Puoi <0>scaricare la nostra Lettera di Determinazione IRS qui</0>.",
     "download-990": "È possibile <0>scaricare il nostro più recente 990 (rapporto fiscale annuale) qui</0>.",
     "how-efficient": "Quanto è efficiente freeCodeCamp?",
-    "fcc-budget": "Il budget di freeCodeCamp è molto ristretto rispetto alla maggior parte delle organizzazioni di beneficenza comparabili. Non ci siamo rivolti a fundraiser professionisti. Invece, Quincy fa tutto da sé.",
+    "fcc-budget": "freeCodeCamp's budget is much smaller than most comparable charities. We haven't brought in professional fundraisers. Instead, Quincy does everything himself.",
     "help-millions": "Però, con un budget di poche centinaia di migliaia di dollari per anno, siamo stati in grado di aiutare milioni di persone.",
     "how-one-time": "Come posso fare una singola donazione non ricorrente?",
     "one-time": "Se preferisci fare una singola donazione, puoi supportare la missione di freeCodeCamp quando hai qualche soldo in più. Puoi usare <0>questo link per donare qualsiasi ammontare ti senti di dare tramite PayPal</0>.",
@@ -492,7 +553,9 @@
     "how-update": "Ho impostato una donazione mensile, ma ho bisogno di aggiornarla o metterla in pausa. Come posso fare?",
     "take-care-of-this": "Inoltra una delle tue ricevute a donors@freecodecamp.org e dicci cosa vorresti fare. Ce ne occuperemo e ti risponderemo con una conferma.",
     "anything-else": "C'è altro da sapere su donare a freeCodeCamp.org?",
-    "other-support": "Se ci sono altri modi in cui vorresti supportare il nostro ente benefico e la sua missione che non sono elencati in questa pagina, o se hai qualsiasi domanda, per favore scrivi a Quincy a quincy@freecodecamp.org."
+    "other-support": "Se ci sono altri modi in cui vorresti supportare il nostro ente benefico e la sua missione che non sono elencati in questa pagina, o se hai qualsiasi domanda, per favore scrivi a Quincy a quincy@freecodecamp.org.",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "Devi essere loggato per segnalare un utente",
@@ -523,8 +586,10 @@
     "unsubscribed": "Hai annullato correttamente l'iscrizione",
     "keep-coding": "Qualsiasi cosa tu abbia intenzione di fare, continua a programmare!",
     "email-signup": "Registrazione con email",
+    "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
+    "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson, l'insegnante che ha fondato freeCodeCamp.org",
-    "email-blast": "A proposito, ogni venerdì invio una e-mail con 5 link sulla programmazione e l'informatica. Li mando a circa 4 milioni di persone: vorresti che lo inviassi anche a te?",
+    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "Aggiorna il tuo indirizzo email",
     "update-email-2": "Aggiorna il tuo indirizzo email qui:",
     "email": "Email",
@@ -536,7 +601,8 @@
     "iframe-alert": "Solitamente questo link ti porterebbe su un altro sito web! Funziona. Questo è un link per {{externalLink}}",
     "iframe-form-submit-alert": "Normalmente questo modulo sarebbe stato inviato! Funziona. Sarà inviato a: {{externalLink}}",
     "document-notfound": "documento non trovato",
-    "slow-load-msg": "Sembra che sia necessario più tempo del solito, per favore prova ad aggiornare la pagina."
+    "slow-load-msg": "Sembra che sia necessario più tempo del solito, per favore prova ad aggiornare la pagina.",
+    "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?"
   },
   "icons": {
     "gold-cup": "Coppa d'Oro",
@@ -654,7 +720,40 @@
     "code-save-less": "Rallenta! Il tuo codice non è stato salvato. Prova di nuovo tra qualche secondo.",
     "challenge-save-too-big": "Ci dispiace, non possiamo salvare il tuo codice. Il tuo codice è {{user-size}} byte. Il massimo è di {{max-size}} byte. Per cortesia rendi il tuo codice più piccolo o richiedi assistenza a https://forum.freecodecamp.org",
     "challenge-submit-too-big": "Ci dispiace, non puoi consegnare il tuo codice. Il tuo codice è {{user-size}} byte. Il massimo è di {{max-size}} byte. Per cortesia rendi il tuo codice più piccolo o richiedi assistenza a https://forum.freecodecamp.org",
-    "invalid-update-flag": "Stai cercando di accedere a risorse proibite. Per favore richiedi assistenza su https://forum.freecodecamp.org se questa è una richiesta valida."
+    "invalid-update-flag": "Stai cercando di accedere a risorse proibite. Per favore richiedi assistenza su https://forum.freecodecamp.org se questa è una richiesta valida.",
+    "generate-exam-error": "An error occurred trying to generate your exam.",
+    "ms": {
+      "transcript": {
+        "link-err-1": "Please include a Microsoft transcript URL in the request.",
+        "link-err-2": "Something went wrong trying to get your transcript from Microsoft.",
+        "link-err-3": "A username was not found in your Microsoft transcript.",
+        "link-err-4": "That Microsoft username is being used by another freeCodeCamp account.",
+        "link-err-5": "Something went wrong trying to save your Microsoft account.",
+        "link-err-6": "Something went wrong trying to link your Microsoft username to your freeCodeCamp account.",
+        "linked": "Your Microsoft username has been linked to your freeCodeCamp account.",
+        "unlinked": "The link to your Microsoft username has been removed.",
+        "unlink-err": "Something went wrong trying to remove the link to your Microsoft username."
+      },
+      "profile": {
+        "err": "We could not find a Microsoft user ID for Microsoft user \"{{msUsername}}\""
+      },
+      "trophy": {
+        "err-1": "We could not find a Microsoft username associated with your freeCodeCamp account.",
+        "err-2": "You are trying to submit a challenge that does not appear to be a trophy challenge.",
+        "err-3": "We could not get your Microsoft profile from your Microsoft ID.",
+        "err-4": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
+        "err-5": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-6": "It looks like your Microsoft account might be private. Set it to public and try again.",
+        "verified": "Your trophy from Microsoft's learning platform was verified."
+      }
+    },
+    "survey": {
+      "err-1": "The survey submitted is not in the correct format.",
+      "err-2": "It looks like you have already completed this survey.",
+      "err-3": "Something went wrong trying to save your survey.",
+      "success": "Thank you. Your survey was submitted."
+    },
+    "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
     "max-characters": "C'è un limite massimo di 288 caratteri, hai {{charsLeft}} rimanenti",
@@ -672,13 +771,16 @@
     "http-url": "Non è possibile utilizzare un URL non sicuro (http).",
     "own-work-url": "Ricordati di inviare il tuo lavoro.",
     "publicly-visible-url": "Ricorda di inviare un URL dell'app visibile pubblicamente.",
+    "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "Probabilmente vuoi inviare il percorso root, ovvero https://example.com, non https://example.com/percorso"
   },
   "certification": {
     "executive": "Direttore esecutivo, freeCodeCamp.org",
-    "verify": "Verifica questa certificazione presso {{certURL}}",
+    "ms-president": "President, Microsoft Developer Division",
+    "verify": "Verify this certification at:",
     "issued": "Emesso",
-    "fulltext": "<0>Si certifica che</0> <1>{{user}}</1> <2>ha completato con successo presso freeCodeCamp.org la certificazione di sviluppatore</2> <3>{{title}}</3> <4>che rappresenta circa {{time}} ore di lavoro nel corso.</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
+    "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "Come parte di questa vecchia certificazione Full Stack, {{user}} ha completato le seguenti certificazioni:",
       "heading": "Come parte di questa certificazione, {{user}} ha costruito i seguenti progetti e ha superato tutte le suite di test automatizzate per superare:",
@@ -788,6 +890,10 @@
       "machine-learning-with-python-v7": "Certificazione Machine Learning con Python",
       "College Algebra with Python": "Algebra Universitaria con Python",
       "college-algebra-with-python-v8": "Certificazione di Algebra Universitaria con Python",
+      "Foundational C# with Microsoft": "Foundational C# with Microsoft",
+      "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
+      "A2 English for Developers": "A2 English for Developers",
+      "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "Front End Legacy",
       "legacy-front-end": "Certificazione Front End",
       "Legacy Back End": "Back End Legacy",
@@ -812,14 +918,13 @@
     "set-claim": "Richiedi e visualizza la tua certificazione"
   },
   "forum-help": {
-    "browser-info": "**Informazioni del tuo browser:**",
+    "browser-info": "Your browser information:",
     "user-agent": "Lo user agent è: <code>{{userAgent}}</code>",
-    "challenge": "**Sfida:**",
-    "challenge-link": "**Link alla sfida:**",
-    "whats-happening": "**Dicci cosa sta succedendo**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "Descrivi qui il tuo problema in dettaglio.",
-    "camper-project": "**Link al tuo progetto**",
-    "camper-code": "**Il tuo codice fino ad ora**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "ATTENZIONE",
     "too-long-one": "Il codice seed della sfida e/o la tua soluzione hanno superato la lunghezza massiama che possiamo importare dalla sfida.",
     "too-long-two": "Dovrai fare un passo in più in modo che il codice che hai scritto abbia un formato semplice da leggere.",
@@ -858,5 +963,38 @@
     "p2": "Questa azione ti farà solo uscire dal tuo account su questo dispositivo e dalla sessione del browser. Per favore, conferma se vuoi procedere.",
     "certain": "Sì, esci dal mio account",
     "nevermind": "Non importa, non voglio uscire"
+  },
+  "staging-warning": {
+    "heading": "Warning: This is an early access test deployment",
+    "p1": "We welcome you to try this platform in a test-only mode and get early access to upcoming features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
+    "certain": "Accept and Dismiss"
+  },
+  "survey": {
+    "foundational-c-sharp": {
+      "title": "Foundational C# with Microsoft Survey",
+      "q1": {
+        "q": "Please describe your role:",
+        "o1": "Student developer",
+        "o2": "Beginner developer (less than 2 years experience)",
+        "o3": "Intermediate developer (between 2 and 5 years experience)",
+        "o4": "Experienced developer (more than 5 years experience)"
+      },
+      "q2": {
+        "q": "Prior to this course, how experienced were you with .NET and C#?",
+        "o1": "Novice (no prior experience)",
+        "o2": "Beginner",
+        "o3": "Intermediate",
+        "o4": "Advanced",
+        "o5": "Expert"
+      }
+    },
+    "misc": {
+      "take": "Take the survey",
+      "submit": "Submit the survey",
+      "exit": "Exit the survey",
+      "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
   }
 }

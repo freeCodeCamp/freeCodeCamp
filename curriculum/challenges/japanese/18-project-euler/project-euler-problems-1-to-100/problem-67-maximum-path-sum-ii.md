@@ -25,13 +25,13 @@ Find the maximum total from top to bottom in `numTriangle`, a 2D array defined i
 
 # --hints--
 
-`maximumPathSumII(testTriangle)` should return a number.
+`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` should return a number.
 
 ```js
 assert(typeof maximumPathSumII(_testTriangle) === 'number');
 ```
 
-`maximumPathSumII(testTriangle)` should return 23.
+`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` should return 23.
 
 ```js
 assert.strictEqual(maximumPathSumII(_testTriangle), 23);
@@ -62,13 +62,6 @@ function maximumPathSumII(triangle) {
 
   return true;
 }
-
-const testTriangle = [[3, 0, 0, 0],
-                      [7, 4, 0, 0],
-                      [2, 4, 6, 0],
-                      [8, 5, 9, 3]];
-
-maximumPathSumII(testTriangle);
 ```
 
 # --solutions--

@@ -6,17 +6,14 @@ import {
   paypalConfigurator,
   paypalConfigTypes,
   defaultDonation,
-  PaymentProvider
-} from '../../../../config/donation-settings';
-import envData from '../../../../config/env.json';
+  PaymentProvider,
+  type DonationDuration,
+  type DonationAmount
+} from '../../../../shared/config/donation-settings';
+import envData from '../../../config/env.json';
 import { userSelector, signInLoadingSelector } from '../../redux/selectors';
 import { Themes } from '../settings/theme';
-import {
-  DonationApprovalData,
-  PostPayment,
-  DonationDuration,
-  DonationAmount
-} from './types';
+import { DonationApprovalData, PostPayment } from './types';
 import PayPalButtonScriptLoader from './paypal-button-script-loader';
 
 type PaypalButtonProps = {
@@ -101,7 +98,6 @@ class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
 
     return (
       <div className={'paypal-buttons-container'}>
-        {/* eslint-disable @typescript-eslint/naming-convention */}
         <PayPalButtonScriptLoader
           clientId={paypalClientId}
           createOrder={(
@@ -173,7 +169,6 @@ class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
             color: buttonColor
           }}
         />
-        {/* eslint-enable @typescript-eslint/naming-convention */}
       </div>
     );
   }

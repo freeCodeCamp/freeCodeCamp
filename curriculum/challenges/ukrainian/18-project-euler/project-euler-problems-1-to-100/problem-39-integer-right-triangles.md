@@ -1,6 +1,6 @@
 ---
 id: 5900f3931000cf542c50fea6
-title: 'Problem 39: Integer right triangles'
+title: 'Завдання 39: цілочисельні прямокутні трикутники'
 challengeType: 1
 forumTopicId: 302054
 dashedName: problem-39-integer-right-triangles
@@ -8,11 +8,11 @@ dashedName: problem-39-integer-right-triangles
 
 # --description--
 
-If `p` is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
+Якщо `p` — це периметр прямокутного трикутника з цілочисельними довжинами сторін {a,b,c}, то для p = 120 є три розв’язки.
 
 {20,48,52}, {24,45,51}, {30,40,50}
 
-For which value of `p` ≤ `n`, is the number of solutions maximized?
+При якому значенні `p`≤`n` кількість розв’язків буде максимальною?
 
 # --hints--
 

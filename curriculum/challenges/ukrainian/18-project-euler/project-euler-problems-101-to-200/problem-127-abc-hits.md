@@ -1,6 +1,6 @@
 ---
 id: 5900f3ec1000cf542c50fefe
-title: 'Problem 127: abc-hits'
+title: 'Завдання 127: abc-збіги'
 challengeType: 1
 forumTopicId: 301754
 dashedName: problem-127-abc-hits
@@ -8,25 +8,25 @@ dashedName: problem-127-abc-hits
 
 # --description--
 
-The radical of $n$, $rad(n)$, is the product of distinct prime factors of $n$. For example, $504 = 2^3 × 3^2 × 7$, so $rad(504) = 2 × 3 × 7 = 42$.
+Радикалом числа $n$ — $rad(n)$ — називають добуток простих множників $n$. Наприклад, $504 = 2^3 × 3^2 × 7$, тому $rad(504) = 2 × 3 × 7 = 42$.
 
-We shall define the triplet of positive integers (a, b, c) to be an abc-hit if:
+Три натуральні числа (a, b, c) будуть abc-збігом, якщо:
 
-1. $GCD(a, b) = GCD(a, c) = GCD(b, c) = 1$
+1. $НСД(a, b) = НСД(a, c) = НСД(b, c) = 1$
 2. $a &lt; b$
 3. $a + b = c$
 4. $rad(abc) &lt; c$
 
-For example, (5, 27, 32) is an abc-hit, because:
+Наприклад, (5, 27, 32) є abc-збігом, оскільки:
 
-1. $GCD(5, 27) = GCD(5, 32) = GCD(27, 32) = 1$
+1. $НСД(5, 27) = НСД(5, 32) = НСД(27, 32) = 1$
 2. $5 &lt; 27$
 3. $5 + 27 = 32$
 4. $rad(4320) = 30 &lt; 32$
 
-It turns out that abc-hits are quite rare and there are only thirty-one abc-hits for $c &lt; 1000$, with $\sum{c} = 12523$.
+Виявляється, abc-збіги досить рідкісні та існує лише 31 abc-збіг за умови $c &lt; 1000$, де $\sum{c} = 12523$.
 
-Find $\sum{c}$ for $c &lt; 120000$.
+Знайдіть $\sum{c}$ за умови $c &lt; 120000$.
 
 # --hints--
 

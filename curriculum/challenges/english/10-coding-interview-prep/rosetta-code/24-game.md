@@ -82,7 +82,7 @@ const OPERATORS_ = {
   "/": (a, b) => a / b,
 }
 
-const PRECIDENCE_ = {
+const PRECEDENCE_ = {
   "+": 1,
   "-": 1,
   "*": 2,
@@ -114,7 +114,7 @@ function evaluate_(expression) {
       case "*":
       case "/":
         while (stack.length &&
-               PRECIDENCE_[c] <= PRECIDENCE_[stack[stack.length-1]]) {
+               PRECEDENCE_[c] <= PRECEDENCE_[stack[stack.length-1]]) {
           postfix += stack.pop();
         }
         stack.push(c);

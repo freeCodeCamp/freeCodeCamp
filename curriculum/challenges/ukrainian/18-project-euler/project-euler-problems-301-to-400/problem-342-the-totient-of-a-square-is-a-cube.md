@@ -8,7 +8,7 @@ dashedName: problem-342-the-totient-of-a-square-is-a-cube
 
 # --description--
 
-Consider the number 50.
+Розглянемо число 50.
 
 ${50}^2 = 2500 = 2^2 × 5^4$, so $φ(2500) = 2 × 4 × 5^3 = 8 × 5^3 = 2^3 × 5^3$. $φ$ denotes Euler's totient function.
 

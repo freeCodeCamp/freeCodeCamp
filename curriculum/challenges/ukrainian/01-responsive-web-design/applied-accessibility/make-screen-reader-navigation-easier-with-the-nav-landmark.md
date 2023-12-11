@@ -37,7 +37,7 @@ assert($('nav').children('ul').length == 1);
 assert($('div').length == 0);
 ```
 
-Елемент `nav` має містити кінцевий теґ.
+Елемент `nav` повинен мати кінцевий тег.
 
 ```js
 assert(

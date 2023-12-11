@@ -1,7 +1,7 @@
 ---
 id: 5900f4151000cf542c50ff28
 title: >-
-  Problem 169: Exploring the number of different ways a number can be expressed as a sum of powers of 2
+  Завдання 169: вивчення кількості різних способів запису числа як суми степенів двійки
 challengeType: 1
 forumTopicId: 301803
 dashedName: >-
@@ -10,15 +10,15 @@ dashedName: >-
 
 # --description--
 
-Define $f(0)=1$ and $f(n)$ to be the number of different ways $n$ can be expressed as a sum of integer powers of 2 using each power no more than twice.
+Визначимо $f(0)=1$ та $f(n)$ як кількість різних способів представити $n$ у вигляді суми степенів числа 2, використовуючи кожен ступінь не більше двох разів.
 
-For example, $f(10)=5$ since there are five different ways to express 10:
+Наприклад, $f(10)=5$, оскільки існує п’ять різних способів представити 10:
 
 $$\begin{align}   & 1 + 1 + 8 \\\\
   & 1 + 1 + 4 + 4 \\\\   & 1 + 1 + 2 + 2 + 4 \\\\
   & 2 + 4 + 4 \\\\ & 2 + 8 \end{align}$$
 
-What is $f({10}^{25})$?
+Чому дорівнює $f({10}^{25})$?
 
 # --hints--
 

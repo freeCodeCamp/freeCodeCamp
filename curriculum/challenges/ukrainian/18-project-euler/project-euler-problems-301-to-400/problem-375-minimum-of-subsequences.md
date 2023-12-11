@@ -17,7 +17,7 @@ Let $A(i, j)$ be the minimum of the numbers $S_i, S_{i + 1}, \ldots, S_j$ for $i
 
 We can verify that $M(10) = 432\\,256\\,955$ and $M(10\\,000) = 3\\,264\\,567\\,774\\,119$.
 
-Find $M(2\\,000\\,000\\,000)$.
+Знайдіть $M(2\\,000\\,000\\,000)$.
 
 # --hints--
 

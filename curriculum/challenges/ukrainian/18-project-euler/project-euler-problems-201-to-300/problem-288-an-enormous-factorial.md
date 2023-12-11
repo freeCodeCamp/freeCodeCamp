@@ -17,9 +17,9 @@ Let $Nfac(p,q)$ be the factorial of $N(p,q)$.
 
 Let $NF(p,q)$ be the number of factors $p$ in $Nfac(p,q)$.
 
-You are given that $NF(3,10000) \bmod 3^{20} = 624\\,955\\,285$.
+Вам дано, що $NF(3,10000) \bmod 3^{20} = 624\\,955\\,285$.
 
-Find $NF(61,{10}^7)\bmod {61}^{10}$.
+Знайдіть $NF(61,{10}^7)\bmod {61}^{10}$.
 
 # --hints--
 

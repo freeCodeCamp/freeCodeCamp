@@ -16,7 +16,7 @@ If you are on a different OS or are still facing issues, see [getting help](#get
 
 When you build the client, Gatsby will cache the Fonts, language strings, and UI. If one of them isn't cached, run the following:
 
-```console
+```bash
 pnpm run clean
 pnpm install
 pnpm run seed
@@ -31,7 +31,7 @@ Use the shortcut
 pnpm run clean-and-develop
 ```
 
-If you continue to face issues with the build, cleaning up the workspace is recommend.
+If you continue to face issues with the build, cleaning up the workspace is recommended.
 
 Use `git clean` in interactive mode:
 
@@ -49,29 +49,15 @@ git clean -ifdX
 
 ## Issues with API, login, Challenge Submissions, etc.
 
-If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
+If you can't sign in, and instead you see a banner with an error message saying that the error will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
-<!-- tabs:start -->
-
-#### **macOS/Linux/WSL on Windows - From Terminal:**
-
-```console
+#### **From Terminal:**
+```bash
 netstat -a | grep "3000"
 
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-#### **On Windows - From Elevated PowerShell:**
-
-```powershell
-netstat -ab | Select-String "3000"
-
-TCP    0.0.0.0:3000           DESKTOP      LISTENING
-```
-
-<!-- tabs:end -->
-
----
 
 ## Issues Signing Out while Navigating
 
@@ -93,6 +79,10 @@ The first time setup can take a while depending on your network bandwidth. Be pa
 
 > [!NOTE]
 > If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
+
+## Working With Other Languages
+
+To see how the client renders in another language go to [testing the client app in a world language.](how-to-work-on-localized-client-webapp.md#Testing-the-Client-App-in-a-World-Language)
 
 ## Getting Help
 

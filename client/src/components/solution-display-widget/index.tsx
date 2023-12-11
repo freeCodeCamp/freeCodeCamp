@@ -1,17 +1,20 @@
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Dropdown, MenuItem } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
+import { Dropdown, MenuItem } from '@freecodecamp/ui';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
 import './solution-display-widget.css';
+import '@freecodecamp/ui/dist/base.css';
 interface Props {
   completedChallenge: CompletedChallenge;
   dataCy?: string;
   projectTitle: string;
   showUserCode: () => void;
   showProjectPreview?: () => void;
+  showExamResults?: () => void;
   displayContext: 'timeline' | 'settings' | 'certification';
 }
 
@@ -21,6 +24,7 @@ export function SolutionDisplayWidget({
   projectTitle,
   showUserCode,
   showProjectPreview,
+  showExamResults,
   displayContext
 }: Props): JSX.Element | null {
   const { id, solution, githubLink } = completedChallenge;
@@ -41,7 +45,7 @@ export function SolutionDisplayWidget({
   );
   const ShowProjectAndGithubLinkForCertification = (
     <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
-      <Dropdown.Toggle block={true} bsStyle='primary' className='btn-invert'>
+      <Dropdown.Toggle className='btn-invert'>
         {viewText}{' '}
         <span className='sr-only'>
           {t('settings.labels.solution-for', { projectTitle })}
@@ -49,7 +53,7 @@ export function SolutionDisplayWidget({
       </Dropdown.Toggle>
       <Dropdown.Menu>
         <MenuItem
-          bsStyle='primary'
+          variant='primary'
           href={solution ?? ''}
           rel='noopener noreferrer'
           target='_blank'
@@ -59,7 +63,7 @@ export function SolutionDisplayWidget({
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </MenuItem>
         <MenuItem
-          bsStyle='primary'
+          variant='primary'
           href={githubLink}
           rel='noopener noreferrer'
           target='_blank'
@@ -93,7 +97,7 @@ export function SolutionDisplayWidget({
   const ShowUserCode = (
     <Button
       block={true}
-      bsStyle='primary'
+      variant='primary'
       className='btn-invert'
       data-cy={dataCy}
       onClick={showUserCode}
@@ -106,18 +110,29 @@ export function SolutionDisplayWidget({
   );
   const ShowMultifileProjectSolution = (
     <div className='solutions-dropdown'>
-      <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
-        <Dropdown.Toggle block={true} bsStyle='primary' className='btn-invert'>
+      <Dropdown
+        id={`dropdown-for-${id}-${randomIdSuffix}`}
+        data-playwright-test-label='multifile-dropdown'
+      >
+        <Dropdown.Toggle className='btn-invert'>
           {viewText}{' '}
           <span className='sr-only'>
             {t('settings.labels.solution-for', { projectTitle })}
           </span>
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <MenuItem bsStyle='primary' onClick={showUserCode}>
+          <MenuItem
+            data-playwright-test-label='multifile-dropdown-code'
+            variant='primary'
+            onClick={showUserCode}
+          >
             {viewCode}
           </MenuItem>
-          <MenuItem bsStyle='primary' onClick={showProjectPreview}>
+          <MenuItem
+            data-playwright-test-label='multifile-dropdown-project'
+            variant='primary'
+            onClick={showProjectPreview}
+          >
             {viewProject}
           </MenuItem>
         </Dropdown.Menu>
@@ -128,7 +143,7 @@ export function SolutionDisplayWidget({
   const ShowProjectAndGithubLinks = (
     <div className='solutions-dropdown'>
       <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
-        <Dropdown.Toggle block={true} bsStyle='primary' className='btn-invert'>
+        <Dropdown.Toggle className='btn-invert'>
           {viewText}{' '}
           <span className='sr-only'>
             {t('settings.labels.solution-for', { projectTitle })}
@@ -136,7 +151,7 @@ export function SolutionDisplayWidget({
         </Dropdown.Toggle>
         <Dropdown.Menu>
           <MenuItem
-            bsStyle='primary'
+            variant='primary'
             href={solution}
             rel='noopener noreferrer'
             target='_blank'
@@ -146,7 +161,7 @@ export function SolutionDisplayWidget({
             <FontAwesomeIcon icon={faExternalLinkAlt} />
           </MenuItem>
           <MenuItem
-            bsStyle='primary'
+            variant='primary'
             href={githubLink}
             rel='noopener noreferrer'
             target='_blank'
@@ -176,6 +191,20 @@ export function SolutionDisplayWidget({
       <FontAwesomeIcon icon={faExternalLinkAlt} />
     </Button>
   );
+  const ShowExamResults = (
+    <Button
+      block={true}
+      bsStyle='primary'
+      className='btn-invert'
+      data-cy={dataCy}
+      onClick={showExamResults}
+    >
+      {viewText}{' '}
+      <span className='sr-only'>
+        {t('settings.labels.results-for', { projectTitle })}
+      </span>
+    </Button>
+  );
   const MissingSolutionComponent =
     displayContext === 'settings' ? (
       <>{t('certification.project.no-solution')}</>
@@ -188,6 +217,7 @@ export function SolutionDisplayWidget({
           showMultifileProjectSolution: ShowMultifileProjectSolution,
           showProjectAndGithubLinks: ShowProjectAndGithubLinkForCertification,
           showProjectLink: ShowProjectLinkForCertification,
+          showExamResults: ShowExamResults,
           none: MissingSolutionComponentForCertification
         }
       : {
@@ -195,6 +225,7 @@ export function SolutionDisplayWidget({
           showMultifileProjectSolution: ShowMultifileProjectSolution,
           showProjectAndGithubLinks: ShowProjectAndGithubLinks,
           showProjectLink: ShowProjectLink,
+          showExamResults: ShowExamResults,
           none: MissingSolutionComponent
         };
 

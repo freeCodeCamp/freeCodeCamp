@@ -12,7 +12,7 @@ dashedName: simple-and-compound-interest
 
 这是<a href="https://colab.research.google.com/drive/1IVBaeX84arJXS73raRROaxbz4qMyFVb6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">和这个视频配套的 Colab 笔记本</a>。
 
-这里有一个额外的 <a href="https://colab.research.google.com/drive/1-HWYmzKn6HmEUWMBv7G525CpoQpm8TnN?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab 笔记本，它向你展示了将许多这些利息和付款公式图放入 Python 函数的一种方法</a>。同时你将看到一个使用一些公式输出结果的例子，注意一个趋势，并学习其他公式来分析模式。
+Here is an additional <a href="https://colab.research.google.com/drive/1-HWYmzKn6HmEUWMBv7G525CpoQpm8TnN?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook that shows you one way to put many of these interest and payment formulas into Python functions.</a> Also you will see an example of using some formulas to output results, notice a trend, and follow up with other formulas to analyze patterns.
 
 # --question--
 

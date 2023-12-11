@@ -10,14 +10,13 @@ const editorElements = {
 
 describe('multifileCertProjects', function () {
   before(() => {
-    cy.exec('pnpm run seed');
-    cy.login();
+    cy.task('seed');
   });
 
   beforeEach(() => {
-    cy.preserveSession();
+    cy.login();
     cy.visit(
-      'learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page'
+      'learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
     );
   });
 
@@ -39,18 +38,14 @@ describe('multifileCertProjects', function () {
   it('should save using ctrl+s hotkey and persist through navigation', function () {
     // since rapid clicks will cause the save requests to be ignored, we have to
     // purge the db:
-    cy.exec('pnpm run seed');
-    // and the redux store:
-    cy.reload();
+    cy.task('seed');
     cy.get(editorElements.container).find(editorElements.editor).click();
     cy.focused().clear().click().type(`${save2text}{ctrl+s}`);
     cy.get(editorElements.editor).contains(save2text);
     cy.contains('Your code was saved to the database.');
     cy.get(editorElements.closeFlash).click();
     // load saved code when navigating site (no hard refresh)'
-    cy.contains('Responsive Web Design Projects').click();
-    cy.contains('In this Responsive Web Design Certification');
-    cy.contains('Build a Tribute Page').click();
+    cy.contains('Tribute Page').click();
     cy.get(editorElements.container)
       .find(editorElements.editor)
       .contains(save2text);

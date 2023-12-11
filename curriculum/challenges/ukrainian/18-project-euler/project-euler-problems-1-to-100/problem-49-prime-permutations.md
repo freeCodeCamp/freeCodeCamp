@@ -1,6 +1,6 @@
 ---
 id: 5900f39d1000cf542c50feb0
-title: 'Problem 49: Prime permutations'
+title: 'Завдання 49: перестановки простих чисел'
 challengeType: 1
 forumTopicId: 302159
 dashedName: problem-49-prime-permutations
@@ -8,11 +8,11 @@ dashedName: problem-49-prime-permutations
 
 # --description--
 
-The arithmetic sequence, 1487, 4817, 8147, in which each of the terms increases by 3330, is unusual in two ways: (i) each of the three terms are prime, and, (ii) each of the 4-digit numbers are permutations of one another.
+Арифметична прогресія 1487, 4817 і 8147, в якій кожен член збільшується на 3330, є незвичною з двох причин: по-перше, кожен з трьох членів є простим числом, а по-друге, усі чотиризначні числа є перестановками одне одного.
 
-There are no arithmetic sequences made up of three 1-, 2-, or 3-digit primes, exhibiting this property, but there is one other 4-digit increasing sequence.
+Не існує таких арифметичних прогресій, які б складалися з трьох одно-, дво- чи тризначних простих чисел, та які б виявляли таку властивість, однак існує ще одна чотиризначна зростаюча прогресія.
 
-What 12-digit number do you form by concatenating the three terms in this sequence?
+Яке дванадцятизначне число утвориться, якщо об’єднати три члени цієї прогресії?
 
 # --hints--
 

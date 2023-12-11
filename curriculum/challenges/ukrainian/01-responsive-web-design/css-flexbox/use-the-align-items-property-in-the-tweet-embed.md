@@ -23,7 +23,7 @@ dashedName: use-the-align-items-property-in-the-tweet-embed
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
 ```
 
-Елемент `.follow-btn` повинен мати налаштовану властивість `align-items` до значення `center`.
+Елемент `.follow-btn` повинен мати властивість `align-items` зі значенням `center`.
 
 ```js
 assert($('.follow-btn').css('align-items') == 'center');

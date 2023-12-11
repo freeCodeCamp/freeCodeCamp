@@ -1,6 +1,6 @@
 ---
 id: 5900f3f71000cf542c50ff0a
-title: 'Problem 139: Pythagorean tiles'
+title: 'Завдання 139: мозаїка Піфагора'
 challengeType: 1
 forumTopicId: 301767
 dashedName: problem-139-pythagorean-tiles
@@ -8,15 +8,15 @@ dashedName: problem-139-pythagorean-tiles
 
 # --description--
 
-Let (a, b, c) represent the three sides of a right angle triangle with integral length sides. It is possible to place four such triangles together to form a square with length c.
+Нехай числами (a, b, c) представлені три сторони прямокутного трикутника з цілими сторонами. Можливо об’єднати чотири такі трикутники, щоб отримати квадрат з довжиною сторони c.
 
-For example, (3, 4, 5) triangles can be placed together to form a 5 by 5 square with a 1 by 1 hole in the middle and it can be seen that the 5 by 5 square can be tiled with twenty-five 1 by 1 squares.
+Наприклад, трикутники (3, 4, 5) можна об’єднати, утворивши квадрат 5х5 і прорізом 1х1 всередині. Як бачимо, квадрат можна покрити двадцятьма п’ятьма квадратними плитками 1х1.
 
-<img class="img-responsive center-block" alt="two 5 x 5 squares: one with four 3x4x5 triangles placed to create 1x1 hole in the middle; second with twenty-five 1x1 squares" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="два квадрати 5x5: один складається з чотирьох трикутників 3x4x5, розташованих так, що посередині утворюється проріз 1x1; другий — з двадцяти п’яти квадратів 1x1" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px;" />
 
-However, if (5, 12, 13) triangles were used, the hole would measure 7 by 7. These 7 by 7 squares could not be used to tile the 13 by 13 square.
+Однак, якщо використати трикутники (5, 12, 13), проріз становитиме 7х7. Квадрат 13х13 неможливо заповнити квадратами 7х7.
 
-Given that the perimeter of the right triangle is less than one-hundred million, how many Pythagorean triangles would allow such a tiling to occur?
+Відомо, що периметр трикутника праворуч менший за сто мільйонів. Для скількох Піфагорових трикутників можливе таке покриття плиткою?
 
 # --hints--
 

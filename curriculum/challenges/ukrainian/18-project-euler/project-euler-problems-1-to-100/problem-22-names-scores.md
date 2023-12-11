@@ -1,6 +1,6 @@
 ---
 id: 5a51eabcad78bf416f316e2a
-title: 'Problem 22: Names scores'
+title: 'Завдання 22: очки імен'
 challengeType: 1
 forumTopicId: 301862
 dashedName: problem-22-names-scores
@@ -8,11 +8,11 @@ dashedName: problem-22-names-scores
 
 # --description--
 
-Using `names`, an array defined in the background containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.
+Розпочніть із сортування масиву в алфавітному порядку, використовуючи масив `names` із понад п’ятьма тисячами імен. Потім вирахуйте алфавітне значення для кожного імені та помножте це значення на його алфавітну позицію у списку, щоб отримати очки.
 
-For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain a score of 938 × 53 = 49714.
+Наприклад, якщо відсортувати список в алфавітному порядку, значенням імені «COLIN» буде 3 + 15 + 12 + 9 + 14 = 53, що робить його 938-им ім’ям в списку. Тому COLIN отримає 938 × 53 = 49714 очок.
 
-What is the total of all the name scores in the array?
+Яка сума всіх очок у масиві?
 
 # --hints--
 

@@ -12,7 +12,7 @@ In a sliding game a counter may slide horizontally or vertically into an empty s
 
 <img class="img-responsive center-block" alt="completing game in five moves on grid 2x2" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliding-game-1.gif" style="background-color: white; padding: 10px;" />
 
-Let $S(m, n)$ represent the minimum number of moves to complete the game on an $m$ by $n$ grid. For example, it can be verified that $S(5, 4) = 25$.
+Let $S(m, n)$ represent the minimum number of moves to complete the game on an $m$ by $n$ grid. Наприклад, можна довести, що $S(5, 4) = 25$.
 
 <img class="img-responsive center-block" alt="initial grid state and final grid state for game on grid 5x4" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliding-game-2.gif" style="background-color: white; padding: 10px;" />
 

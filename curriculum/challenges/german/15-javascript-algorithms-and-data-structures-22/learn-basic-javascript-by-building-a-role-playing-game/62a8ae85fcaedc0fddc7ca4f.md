@@ -1,23 +1,23 @@
 ---
 id: 62a8ae85fcaedc0fddc7ca4f
-title: Step 58
+title: Schritt 58
 challengeType: 0
 dashedName: step-58
 ---
 
 # --description--
 
-Add a second object to your `locations` array (remember to separate them with a comma). Following the pattern you used in the first object, create the same properties but use the values from the `goStore` function. Set the `name` property to `store`.
+Füge ein zweites Objekt zu deinem `locations`-Array hinzu (denke daran, es mit einem Komma zu trennen). Erstelle nach dem gleichen Muster wie beim ersten Objekt dieselben Eigenschaften, verwende aber die Werte aus der `goStore` Funktion. Setze die `name`-Eigenschaft auf `store`.
 
 # --hints--
 
-Your `locations` array should have two values.
+Dein `locations`-Array sollte zwei Werte haben.
 
 ```js
 assert.lengthOf(locations, 2);
 ```
 
-Both `locations` values should be objects.
+Beide `locations`-Werte sollten Objekte sein.
 
 
 ```js
@@ -25,13 +25,13 @@ assert.isObject(locations[0]);
 assert.isObject(locations[1]);
 ```
 
-Your second `locations` object should have a `name` property with the value of `store`.
+Dein zweites `locations`-Objekt sollte eine `name`-Eigenschaft mit dem Wert `store` haben.
 
 ```js
 assert.equal(locations[1].name, "store");
 ```
 
-Your second `locations` object should have a `button text` property which is an array.
+Dein zweites `locations`-Objekt sollte eine `button text`-Eigenschaft haben, die ein Array ist.
 
 ```js
 assert.isArray(locations[1]["button text"]);
@@ -45,13 +45,13 @@ assert.equal(locations[1]["button text"][1], "Buy weapon (30 gold)");
 assert.equal(locations[1]["button text"][2], "Go to town square");
 ```
 
-Your second `locations` object should have a `button functions` property which is an array.
+Dein zweites `locations`-Objekt sollte eine `button functions`-Eigenschaft haben, die ein Array ist.
 
 ```js
 assert.isArray(locations[1]["button functions"]);
 ```
 
-Your `button functions` property should have the function values `buyHealth`, `buyWeapon`, and `goTown`.
+Deine `button functions`-Eigenschaft sollte die Funktionswerte `buyHealth`, `buyWeapon` und `goTown` haben.
 
 ```js
 assert.equal(locations[1]["button functions"][0], buyHealth);
@@ -65,13 +65,13 @@ Your second `locations` object should have a `text` property which is a string.
 assert.isString(locations[1].text);
 ```
 
-Your second `locations` object should have a `text` property with the value of `You enter the store.`.
+Dein zweites `locations`-Objekt sollte eine `text`-Eigenschaft mit dem Wert `You enter the store.` haben.
 
 ```js
 assert.equal(locations[1].text, "You enter the store.");
 ```
 
-You should not modify the first `locations` object.
+Du solltest das erste `locations`-Objekt nicht ändern.
 
 ```js
 assert.deepEqual(locations[0], {

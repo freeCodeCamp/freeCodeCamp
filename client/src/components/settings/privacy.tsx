@@ -1,4 +1,4 @@
-import { Button, Form } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -56,7 +56,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
       <SectionHeader>{t('settings.headings.privacy')}</SectionHeader>
       <FullWidthRow>
         <p>{t('settings.privacy')}</p>
-        <Form inline={true} onSubmit={submitNewProfileSettings}>
+        <form onSubmit={submitNewProfileSettings}>
           <div role='group' aria-label={t('settings.headings.privacy')}>
             <ToggleRadioSetting
               action={t('settings.labels.my-profile')}
@@ -155,7 +155,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
             {t('buttons.save')}{' '}
             <span className='sr-only'>{t('settings.headings.privacy')}</span>
           </Button>
-        </Form>
+        </form>
       </FullWidthRow>
       <FullWidthRow>
         <Spacer size='medium' />

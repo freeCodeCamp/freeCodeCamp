@@ -1,6 +1,6 @@
 ---
 id: 5900f3cc1000cf542c50fedf
-title: 'Problem 96: Su Doku'
+title: 'Завдання 96: судоку'
 challengeType: 1
 forumTopicId: 302213
 dashedName: problem-96-su-doku
@@ -8,7 +8,7 @@ dashedName: problem-96-su-doku
 
 # --description--
 
-Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle concept. Its origin is unclear, but credit must be attributed to Leonhard Euler who invented a similar, and much more difficult, puzzle idea called Latin Squares. The objective of Su Doku puzzles, however, is to replace the blanks (or zeros) in a 9 by 9 grid in such that each row, column, and 3 by 3 box contains each of the digits 1 to 9. Below is an example of a typical starting puzzle grid and its solution grid.
+Судоку (з японської * розміщення чисел*) — це назва популярної головоломки. Її походження невідоме, проте варто згадати Леонарда Ейлера, який створив схожий, але набагато складніший пазл під назвою «Латинський квадрат». Мета судоку — заповнити пусті клітинки (або нулі) на полі 9х9 таким чином, щоб кожен ряд, стовпець і квадрат 3х3 містив усі цифри від 1 до 9. Нижче наведено приклад початкового поля судоку і поля з уже вирішеною головоломкою.
 
 <div style="margin: auto; background-color: white; padding: 10px; width: 80%; text-align: center;">
   <table border="0" cellpadding="0" cellspacing="0" align="center">
@@ -100,11 +100,11 @@ Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle 
   </table>
 </div>
 
-A well constructed Su Doku puzzle has a unique solution and can be solved by logic, although it may be necessary to employ "guess and test" methods in order to eliminate options (there is much contested opinion over this). The complexity of the search determines the difficulty of the puzzle; the example above is considered easy because it can be solved by straight forward direct deduction.
+Вдало створене судоку вирішується логічно в унікальний спосіб. Хоча, щоб зменшити кількість варіантів вирішення, може знадобитися метод «спробуй та перевір» (проте це дуже спірне питання). Заплутаність залежить від складності самої головоломки. Наведений вище приклад вважається легким, оскільки його можна вирішити простою дедукцією.
 
-The `puzzlesArr` array contains different Su Doku puzzle strings ranging in difficulty, but all with unique solutions.
+Масив `puzzlesArr` складається з різних рядків, що відрізняються за складністю, проте кожен зі своїм унікальним способом вирішення.
 
-By solving all puzzles in `puzzlesArr`, find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.
+Розв’язавши `puzzlesArr`, знайдіть суму тризначних цифр у лівому верхньому кутку кожного поля. Наприклад, 483 є тризначною цифрою у верхньому лівому кутку поля (з вирішенням), що наведено вище.
 
 # --hints--
 

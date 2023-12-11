@@ -38,15 +38,15 @@ dashedName: sha-1-password-cracker
 
 Ось кілька хешованих паролів для перевірки функції:
 
-- `b305921a3723cd5d70a375cd21a61e60aabb84ec` повинен повернути «sammy123»
-- `c7ab388a5ebefbf4d550652f1eb4d833e5316e3e` повинен повернути «abacab»
-- `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8` повинен повернути «password»
+- `b305921a3723cd5d70a375cd21a61e60aabb84ec` має повернути «sammy123»
+- `c7ab388a5ebefbf4d550652f1eb4d833e5316e3e` має повернути «abacab»
+- `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8` має повернути «password»
 
 Ось кілька хешованих паролів для тестування функції, якщо `use_salts` встановлено на `True`:
 
-- `53d8b3dc9d39f0184144674e310185e41a87ffd5` повинен повернути «superman»
-- `da5a4e8cf89539e66097acd2f8af128acae2f8ae` повинен повернути «q1w2e3r4t5»
-- `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` повинен повернути «bubbles1»
+- `53d8b3dc9d39f0184144674e310185e41a87ffd5` має повернути «superman»
+- `da5a4e8cf89539e66097acd2f8af128acae2f8ae` має повернути «q1w2e3r4t5»
+- `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` має повернути «bubbles1»
 
 Для вас було імпортовано бібліотеку `hashlib`. Подумайте над її використанням у своєму коді. <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">Дізнайтеся більше про «hashlib» тут</a>.
 

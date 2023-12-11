@@ -8,7 +8,7 @@ dashedName: moving-forward-from-here
 
 # --description--
 
-恭喜！ 你完成了 React 和 Redux 的所有課程！ 結束之前，還要再提一點。 通常，我們不會在這樣的編輯器中編寫 React 應用代碼。 如果你在自己的計算機上使用 npm 和文件系統，這個挑戰可讓你一瞥 React 應用的語法之貌。 除了使用 `import` 語句（這些語句引入了各挑戰中提供的所有依賴關係），其代碼看起來類似。 “管理包（含 npm）”這一節更詳細地介紹了 npm。
+恭喜！ 你完成了 React 和 Redux 的所有課程！ 結束之前，還要再提一點。 通常，我們不會在這樣的編輯器中編寫 React 應用代碼。 This challenge gives you a glimpse of what the syntax looks like if you're working with a file system on your own machine. 除了使用 `import` 語句（這些語句引入了各挑戰中提供的所有依賴關係），其代碼看起來類似。
 
 最後，寫 React 和 Redux 的代碼通常需要一些配置， 且很快會變得複雜起來。 如果你有興趣在自己的機器上進行實驗，<a href="https: www.freecodecamp.org/news/install-react-with-create-react-app/" target="_blank" rel="noopener noreferrer nofollow">Create React App</a> 已配置好並準備就緒。
 

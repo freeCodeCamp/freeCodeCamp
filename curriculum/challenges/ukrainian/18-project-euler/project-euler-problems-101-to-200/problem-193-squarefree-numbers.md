@@ -1,6 +1,6 @@
 ---
 id: 5900f42f1000cf542c50ff41
-title: 'Problem 193: Squarefree Numbers'
+title: 'Завдання 193: безквадратні числа'
 challengeType: 1
 forumTopicId: 301831
 dashedName: problem-193-squarefree-numbers
@@ -8,9 +8,9 @@ dashedName: problem-193-squarefree-numbers
 
 # --description--
 
-A positive integer $n$ is called squarefree, if no square of a prime divides $n$, thus 1, 2, 3, 5, 6, 7, 10, 11 are squarefree, but not 4, 8, 9, 12.
+Натуральне число $n$ називають безквадратним, якщо воно не ділиться на жоден квадрат простого числа $n$. Тобто безквадратними є 1, 2, 3, 5, 6, 7, 10, 11, але не 4, 8, 9, 12.
 
-How many squarefree numbers are there below $2^{50}$?
+Скільки існує безквадратних чисел менших за $2^{50}$?
 
 # --hints--
 

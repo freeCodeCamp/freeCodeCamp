@@ -28,13 +28,19 @@ assert(incAction().type === INCREMENT);
 assert(decAction().type === DECREMENT);
 ```
 
-يجب أن يفتح متجر Redux مع `state` بقيمة 0.
+Running `store.getState()` should return a number
+
+```js
+assert(typeof store.getState() === 'number');
+```
+
+The Redux store should initialize with a `state` of 0.
 
 ```js
 assert(_store.getState() === 0);
 ```
 
-إرسال `incAction` على متجر Redux يجب أن يزيد من `state` بمقدار 1.
+Dispatching `incAction` on the Redux store should increment the `state` by 1.
 
 ```js
 assert(
@@ -47,7 +53,7 @@ assert(
 );
 ```
 
-إرسال `decAction` على متجر Redux يجب أن يقلل من `state` بمقدار 1.
+Dispatching `decAction` on the Redux store should decrement the `state` by 1.
 
 ```js
 assert(
@@ -60,7 +66,7 @@ assert(
 );
 ```
 
-يجب أن تكون `counterReducer` وظيفة function
+`counterReducer` should be a function
 
 ```js
 assert(typeof counterReducer === 'function');

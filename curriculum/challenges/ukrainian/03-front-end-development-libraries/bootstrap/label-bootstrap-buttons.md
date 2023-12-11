@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908856
-title: Позначення кнопок Bootstrap
+title: Позначте кнопки Bootstrap
 challengeType: 0
 forumTopicId: 18222
 dashedName: label-bootstrap-buttons
@@ -8,43 +8,43 @@ dashedName: label-bootstrap-buttons
 
 # --description--
 
-Як і елементи well, так слід позначати і кнопки.
+Кнопки потрібно позначати так само, як і стіни.
 
-Надайте кожному із елементів `button` текст, який відповідає його селектору id.
+Надайте кожному елементу `button` текст, який відповідає його селектору id.
 
 # --hints--
 
-Елемент `button` з id `target1` повинен містити текст `#target1`.
+Елемент `button` з id зі значенням `target1` повинен мати текст `#target1`.
 
 ```js
 assert(new RegExp('#target1', 'gi').test($('#target1').text()));
 ```
 
-Елемент `button` з id `target2` повинен містити текст `#target2`.
+Елемент `button` з id зі значенням `target2` повинен мати текст `#target2`.
 
 ```js
 assert(new RegExp('#target2', 'gi').test($('#target2').text()));
 ```
 
-Елемент `button` з id `target3` повинен містити текст `#target3`.
+Елемент `button` з id зі значенням `target3` повинен мати текст `#target3`.
 
 ```js
 assert(new RegExp('#target3', 'gi').test($('#target3').text()));
 ```
 
-Елемент `button` з id `target4` повинен містити текст `#target4`.
+Елемент `button` з id зі значенням `target4` повинен мати текст `#target4`.
 
 ```js
 assert(new RegExp('#target4', 'gi').test($('#target4').text()));
 ```
 
-Елемент `button` з id `target5` повинен містити текст `#target5`.
+Елемент `button` з id зі значенням `target5` повинен мати текст `#target5`.
 
 ```js
 assert(new RegExp('#target5', 'gi').test($('#target5').text()));
 ```
 
-Елемент `button` з id `target6` повинен містити текст `#target6`.
+Елемент `button` з id зі значенням `target6` повинен мати текст `#target6`.
 
 ```js
 assert(new RegExp('#target6', 'gi').test($('#target6').text()));

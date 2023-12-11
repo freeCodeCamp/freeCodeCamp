@@ -9,7 +9,7 @@ dashedName: build-a-kitty-ipsum-translator
 
 # --description--
 
-In this 140-lesson course, you will learn some more complex commands, and the details of how commands work.
+In diesem Kurs mit 140 Lektionen lernst du einige komplexere Befehle kennen und erfährst, wie die Befehle im Detail funktionieren.
 
 # --instructions--
 

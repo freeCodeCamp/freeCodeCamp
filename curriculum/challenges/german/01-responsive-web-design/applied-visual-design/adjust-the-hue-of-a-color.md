@@ -19,7 +19,7 @@ Farben haben verschiedene Eigenschaften wie Farbton, Sättigung und Helligkeit. 
 
 Hier sind einige Beispiele für die Verwendung von `hsl()` mit vollständig gesättigten Farben bei mittlerer Helligkeit:
 
-<table class='table table-striped'><thead><tr><th>Farbe</th><th>HSL</th></tr></thead><tbody><tr><td>rot</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>gelb</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>grün</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>cyan</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>blau</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>magenta</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>
+<table><thead><tr><th>Farbe</th><th>HSL</th></tr></thead><tbody><tr><td>rot</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>gelb</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>grün</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>cyan</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>blau</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>magenta</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>
 
 # --instructions--
 

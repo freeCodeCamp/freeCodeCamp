@@ -38,7 +38,9 @@ export function standardizeRequestBody({
       return {
         contents,
         ext,
-        history,
+        history, // TODO(Post-MVP): stop sending history, if possible. The client
+        // already gets it from the curriculum, so it should not be necessary to
+        // save it in the db.
         key: fileKey,
         name
       };

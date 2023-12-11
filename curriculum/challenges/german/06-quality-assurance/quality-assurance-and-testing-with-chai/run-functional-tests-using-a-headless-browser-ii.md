@@ -19,16 +19,16 @@ Within `tests/2_functional-tests.js`, in the `'Submit the surname "Vespucci" in 
 
 And within the `pressButton` callback:
 
-1.  Assert that status is OK `200`
-2.  Assert that the text inside the element `span#name` is `'Amerigo'`
-3.  Assert that the text inside the element `span#surname` is `'Vespucci'`
-4.  Assert that the element(s) `span#dates` exist and their count is `1`
+1.  Bestätigen, dass der Status `200` OK ist
+2.  Prüfe, ob der Text innerhalb des Elements `span#name` `'Amerigo'` ist
+3.  Prüfe, ob der Text innerhalb des Elements `span#surname` `'Vespucci'` ist
+4.  Überprüfe, ob das/die Element(e) `span#dates` existieren und deren Zahl `1` ist
 
-Do not forget to remove the `assert.fail()` call.
+Vergiss nicht, den `assert.fail()`-Aufruf zu entfernen.
 
 # --hints--
 
-All tests should pass.
+Alle Tests sollten bestanden werden.
 
 ```js
 (getUserInput) =>
@@ -56,7 +56,7 @@ You should assert that the headless browser request succeeded.
   );
 ```
 
-You should assert that the text inside the element `span#name` is `'Amerigo'`.
+Prüfe, ob der Text innerhalb des Elements `span#name` `'Amerigo'` ist.
 
 ```js
 (getUserInput) =>
@@ -72,7 +72,7 @@ You should assert that the text inside the element `span#name` is `'Amerigo'`.
   );
 ```
 
-You should assert that the text inside the element `span#surname` is `'Vespucci'`.
+Prüfe, ob der Text innerhalb des Elements `span#surname` `'Vespucci'` ist.
 
 ```js
 (getUserInput) =>

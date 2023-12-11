@@ -1,15 +1,12 @@
 const path = require('path');
 const {
-  CurriculumMaps,
-  superBlockOrder,
-  SuperBlockStates,
-  TranslationStates,
-  orderedSuperBlockStates
-} = require('../config/superblock-order');
+  createFlatSuperBlockMap,
+  SuperBlocks
+} = require('../shared/config/superblocks');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const { availableLangs } = require('../config/i18n');
+const { availableLangs } = require('../shared/config/i18n');
 const curriculumLangs = availableLangs.curriculum;
 
 // checks that the CURRICULUM_LOCALE exists and is an available language
@@ -26,72 +23,30 @@ exports.testedLang = function testedLang() {
   }
 };
 
-/*
- * creates an object with all the superblocks in
- * 'superBlockOrder[lang][learn]' as keys and gives them
- * a number (superOrder), starting with 0, as the value
- */
-function createSuperOrder({
-  language = 'english',
-  showNewCurriculum = 'false',
-  showUpcomingChanges = 'false'
-}) {
-  if (!Object.prototype.hasOwnProperty.call(superBlockOrder, language)) {
-    throw Error(`${language} not found in superblock-order.ts`);
+function createSuperOrder(superBlocks) {
+  if (!Array.isArray(superBlocks)) {
+    throw Error(`superBlocks must be an Array`);
   }
-
-  if (
-    !Object.prototype.hasOwnProperty.call(superBlockOrder[language], [
-      CurriculumMaps.Learn
-    ])
-  ) {
-    throw Error(
-      `${language} does not have a 'learn' key in superblock-order.ts`
-    );
-  }
-
-  const audited =
-    superBlockOrder[language][CurriculumMaps.Learn][TranslationStates.Audited];
-  const notAudited =
-    superBlockOrder[language][CurriculumMaps.Learn][
-      TranslationStates.NotAudited
-    ];
+  superBlocks.forEach(superBlock => {
+    if (!Object.values(SuperBlocks).includes(superBlock)) {
+      throw Error(`Invalid superBlock: ${superBlock}`);
+    }
+  });
 
   const superOrder = {};
-  let i = 0;
 
-  function addToSuperOrder(superBlocks) {
-    superBlocks.forEach(key => {
-      superOrder[key] = i;
-      i++;
-    });
-  }
-
-  function canAddToSuperOrder(superBlockState) {
-    if (superBlockState === SuperBlockStates.New)
-      return showNewCurriculum === 'true';
-    if (superBlockState === SuperBlockStates.Upcoming)
-      return showUpcomingChanges === 'true';
-    return true;
-  }
-
-  function addSuperBlockStates(translationState) {
-    orderedSuperBlockStates.forEach(state => {
-      if (canAddToSuperOrder(state)) addToSuperOrder(translationState[state]);
-    });
-  }
-
-  addSuperBlockStates(audited);
-  addSuperBlockStates(notAudited);
+  superBlocks.forEach((superBlock, i) => {
+    superOrder[superBlock] = i;
+  });
 
   return superOrder;
 }
 
-const superOrder = createSuperOrder({
-  language: process.env.CURRICULUM_LOCALE,
-  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-  showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+const flatSuperBlockMap = createFlatSuperBlockMap({
+  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
+  showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
 });
+const superOrder = createSuperOrder(flatSuperBlockMap);
 
 // gets the superOrder of a superBlock from the object created above
 function getSuperOrder(superblock) {
@@ -124,6 +79,10 @@ const directoryToSuperblock = {
   '16-the-odin-project': 'the-odin-project',
   '17-college-algebra-with-python': 'college-algebra-with-python',
   '18-project-euler': 'project-euler',
+  '19-foundational-c-sharp-with-microsoft':
+    'foundational-c-sharp-with-microsoft',
+  '20-upcoming-python': 'upcoming-python',
+  '21-a2-english-for-developers': 'a2-english-for-developers',
   '99-example-certification': 'example-certification'
 };
 

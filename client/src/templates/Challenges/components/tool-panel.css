@@ -11,17 +11,16 @@
 .tool-panel-group-mobile {
   display: flex;
   flex-direction: row-reverse;
+  height: 37px;
   width: 100%;
   background-color: var(--tertiary-background);
   position: absolute;
   bottom: 0;
 }
 
-.tool-panel-group-mobile > .btn-block,
-.tool-panel-group-mobile > .dropdown > .btn-block {
+.tool-panel-group-mobile > .btn-block {
   margin: 0 2px 0 0;
   padding: 5px 0;
-  height: 37px;
 }
 
 .tool-panel-group .btn-group {
@@ -37,22 +36,13 @@
 }
 
 .tool-panel-group-mobile .btn {
-  margin-bottom: 0 !important;
+  margin: 0 !important;
 }
 
-.tool-panel-group .dropdown-menu {
-  top: auto;
-  bottom: 100%;
-  width: calc(100% + 2px);
-  text-align: center;
-  min-width: 240px;
-  left: -1px;
+.tool-panel-group-mobile #get-help-dropdown {
+  height: 37px;
 }
 
-.tool-panel-group .dropdown-menu a {
-  padding: 0.5rem;
-}
-
-#get-help-dropdown > .caret {
-  transform: rotate(180deg);
+.tool-panel-group-mobile *:focus-visible {
+  outline-offset: -3px;
 }

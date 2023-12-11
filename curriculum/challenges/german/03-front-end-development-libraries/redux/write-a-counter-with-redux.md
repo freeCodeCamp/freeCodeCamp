@@ -28,7 +28,13 @@ Der Action Creator `decAction` sollte ein Action-Objekt mit `type` gleich dem We
 assert(decAction().type === DECREMENT);
 ```
 
-Der Redux-Store sollte mit einem `state` von 0 initialisiert werden.
+Die Ausführung von `store.getState()` sollte eine Zahl zurückgeben.
+
+```js
+assert(typeof store.getState() === 'number');
+```
+
+Der Redux-Store sollte mit einem `state` von 0 initialisieren.
 
 ```js
 assert(_store.getState() === 0);

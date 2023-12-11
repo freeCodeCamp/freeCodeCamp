@@ -21,11 +21,11 @@ $$\begin{align}   S_0 & = 290\\,797 \\\\
 
 cioè (527, 144), (−488, 732), (−454, −947), …
 
-Qual è l'area massima per un foro convesso sul set contenente i primi 500 punti nella sequenza pseudo-casuale? Specify your answer including one digit after the decimal point.
+Qual è l'area massima per un foro convesso sul set contenente i primi 500 punti nella sequenza pseudo-casuale? Specifica la tua risposta includendo una cifra dopo il punto decimale.
 
 # --hints--
 
-`convexHoles()` should return `104924`.
+`convexHoles()` dovrebbe restituire `104924`.
 
 ```js
 assert.strictEqual(convexHoles(), 104924);

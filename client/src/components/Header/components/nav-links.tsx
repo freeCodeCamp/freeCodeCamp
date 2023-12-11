@@ -6,12 +6,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Fragment } from 'react';
-import Media from 'react-responsive';
 import { useTranslation, withTranslation } from 'react-i18next';
-import { useFeature } from '@growthbook/growthbook-react';
 import { connect } from 'react-redux';
-import { radioLocation } from '../../../../../config/env.json';
-import { DONATE_NAV_EXPOSED_WIDTH } from '../../../../../config/misc';
+import { radioLocation } from '../../../../config/env.json';
 import { openSignoutModal } from '../../../redux/actions';
 import { updateMyTheme } from '../../../redux/settings/actions';
 import { Link } from '../../helpers';
@@ -67,24 +64,13 @@ const DonateButton = ({
   handleMenuKeyDown
 }: DonateButtonProps) => {
   const { t } = useTranslation();
-  const exposeUniversalDonateButton = useFeature('expose_donate_button').on;
   if (isUserDonating) return <ThankYouMessage message={t('donate.thanks')} />;
-  else if (exposeUniversalDonateButton)
-    return (
-      <Media maxWidth={DONATE_NAV_EXPOSED_WIDTH}>
-        <DonateItem
-          handleMenuKeyDown={handleMenuKeyDown}
-          donateText={t('buttons.donate')}
-        />
-      </Media>
-    );
-  else
-    return (
-      <DonateItem
-        handleMenuKeyDown={handleMenuKeyDown}
-        donateText={t('buttons.donate')}
-      />
-    );
+  return (
+    <DonateItem
+      handleMenuKeyDown={handleMenuKeyDown}
+      donateText={t('buttons.donate')}
+    />
+  );
 };
 
 const toggleTheme = (
@@ -167,6 +153,7 @@ function NavLinks({
   return (
     <ul
       aria-labelledby='toggle-button-nav'
+      data-playwright-test-label='header-menu'
       className={`nav-list${displayMenu ? ' display-menu' : ''}`}
     >
       <DonateButton
@@ -211,6 +198,8 @@ function NavLinks({
           to={t('links:nav.forum')}
         >
           <span>{t('buttons.forum')}</span>
+          <span className='sr-only'>, {t('aria.opens-new-window')}</span>
+
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
       </li>
@@ -223,6 +212,7 @@ function NavLinks({
           to={t('links:nav.news')}
         >
           <span>{t('buttons.news')}</span>
+          <span className='sr-only'>, {t('aria.opens-new-window')}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
       </li>
@@ -235,6 +225,33 @@ function NavLinks({
           to={radioLocation}
         >
           <span>{t('buttons.radio')}</span>
+          <span className='sr-only'>, {t('aria.opens-new-window')}</span>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </Link>
+      </li>
+      <li key='contribute'>
+        <Link
+          className='nav-link nav-link-flex'
+          external={true}
+          onKeyDown={handleMenuKeyDown}
+          sameTab={false}
+          to={t('links:nav.contribute')}
+        >
+          <span>{t('buttons.contribute')}</span>
+          <span className='sr-only'>, {t('aria.opens-new-window')}</span>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </Link>
+      </li>
+      <li key='podcast'>
+        <Link
+          className='nav-link nav-link-flex'
+          external={true}
+          onKeyDown={handleMenuKeyDown}
+          sameTab={false}
+          to={t('links:nav.podcast')}
+        >
+          <span>{t('buttons.podcast')}</span>
+          <span className='sr-only'>, {t('aria.opens-new-window')}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
       </li>

@@ -1,6 +1,6 @@
 ---
 id: 5900f3d51000cf542c50fee6
-title: 'Problem 104: Pandigital Fibonacci ends'
+title: 'Завдання 104: панцифрові кінці чисел Фібоначчі'
 challengeType: 1
 forumTopicId: 301728
 dashedName: problem-104-pandigital-fibonacci-ends
@@ -8,13 +8,13 @@ dashedName: problem-104-pandigital-fibonacci-ends
 
 # --description--
 
-The Fibonacci sequence is defined by the recurrence relation:
+Послідовність Фібоначчі визначається рекурентним співвідношенням:
 
-$F_n = F_{n − 1} + F_{n − 2}$, where $F_1 = 1$ and $F_2 = 1$
+$F_n = F_{n − 1} + F_{n − 2}$, де $F_1 = 1$ та $F_2 = 1$
 
-It turns out that $F_{541}$, which contains 113 digits, is the first Fibonacci number for which the last nine digits are 1 - 9 pandigital (contain all the digits 1 to 9, but not necessarily in order). And $F_{2749}$, which contains 575 digits, is the first Fibonacci number for which the first nine digits are 1 - 9 pandigital.
+Виявляється, що число $F_{541}$, яке складається зі 113 цифр, є першим числом Фібоначчі, останні дев’ять цифр якого утворюють панцифрове число від 1 до 9 (містить всі цифри від 1 до 9, необов’язково за зростанням). А число $F_{2749}$, яке складається з 575 цифр, є першим числом Фібоначчі, перші дев’ять цифр якого утворюють панцифрове число від 1 до 9.
 
-Given that $F_k$ is the first Fibonacci number for which the first nine digits AND the last nine digits are 1 - 9 pandigital, find `k`.
+Дано, що число $F_k$ є першим числом Фібоначчі, у якого як перші, ТАК і останні дев’ять цифр утворюють панцифрові числа від 1 до 9. Знайдіть `k`.
 
 # --hints--
 

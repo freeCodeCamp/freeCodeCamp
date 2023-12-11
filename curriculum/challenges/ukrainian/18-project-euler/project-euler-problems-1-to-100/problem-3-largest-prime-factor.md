@@ -1,6 +1,6 @@
 ---
 id: 5900f36f1000cf542c50fe82
-title: 'Завдання 3: найбільший простий множник'
+title: 'Завдання 3: найбільший простий дільник'
 challengeType: 1
 forumTopicId: 301952
 dashedName: problem-3-largest-prime-factor
@@ -8,9 +8,9 @@ dashedName: problem-3-largest-prime-factor
 
 # --description--
 
-Простими множниками числа 13195 є 5, 7, 13 та 29.
+Простими дільниками числа 13195 є 5, 7, 13 та 29.
 
-Який найбільший простий множник заданого числа (`number`)?
+Який найбільший простий дільник заданого числа (`number`)?
 
 # --hints--
 

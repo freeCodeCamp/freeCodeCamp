@@ -1,6 +1,6 @@
 ---
 id: 5900f3a81000cf542c50febb
-title: 'Problem 60: Prime pair sets'
+title: 'Завдання 60: об’єднання пари в просте число'
 challengeType: 1
 forumTopicId: 302172
 dashedName: problem-60-prime-pair-sets
@@ -8,9 +8,9 @@ dashedName: problem-60-prime-pair-sets
 
 # --description--
 
-The primes 3, 7, 109, and 673, are quite remarkable. By taking any two primes and concatenating them in any order the result will always be prime. For example, taking 7 and 109, both 7109 and 1097 are prime. The sum of these four primes, 792, represents the lowest sum for a set of four primes with this property.
+Прості числа 3, 7, 109 і 673 досить виняткові. Якщо взяти будь-які два простих числа та об’єднати їх у будь-якому порядку, у результаті завжди вийде просте число. Наприклад, якщо взяти 7 і 109, то обидва числа, 7109 та 1097, будуть простими. Сума цих чотирьох простих чисел, 792, є найменшою сумою множини з чотирьох простих чисел із цією властивістю.
 
-Find the lowest sum for a set of five primes for which any two primes concatenate to produce another prime.
+Знайдіть найменшу суму множини з п’яти простих чисел, для яких об’єднання будь-яких двох простих чисел дасть нове просте число.
 
 # --hints--
 

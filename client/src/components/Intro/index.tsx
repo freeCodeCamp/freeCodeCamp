@@ -44,7 +44,7 @@ const Intro = ({
     return (
       <>
         <Spacer size='medium' />
-        <h1 className='text-center'>
+        <h1 id='content-start' className='text-center'>
           {name
             ? `${t('learn.welcome-1', { name: name })}`
             : `${t('learn.welcome-2')}`}
@@ -53,9 +53,9 @@ const Intro = ({
         <div className='text-center quote-partial'>
           <blockquote className='blockquote'>
             <span>
-              <q>{quote}</q>
+              <q data-playwright-test-label='random-quote'>{quote}</q>
               <footer className='quote-author blockquote-footer'>
-                <cite>{author}</cite>
+                <cite data-playwright-test-label='random-author'>{author}</cite>
               </footer>
             </span>
           </blockquote>
@@ -82,7 +82,13 @@ const Intro = ({
     return (
       <>
         <Spacer size='medium' />
-        <h1>{t('learn.heading')}</h1>
+        <h1
+          id='content-start'
+          className='text-center'
+          data-playwright-test-label='learn-heading'
+        >
+          {t('learn.heading')}
+        </h1>
         <Spacer size='medium' />
         <IntroDescription />
         <Spacer size='medium' />

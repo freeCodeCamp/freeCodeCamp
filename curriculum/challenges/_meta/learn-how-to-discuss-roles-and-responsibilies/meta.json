@@ -1,0 +1,18 @@
+{
+  "name": "Learn How to Discuss Roles and Responsibilities",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-discuss-roles-and-responsibilies",
+  "order": 8,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "655c10318d878d812211966d",
+      "title": "Dialogue: Placeholder"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

@@ -34,25 +34,21 @@ console.log(obj);
 不要替換 `const` 關鍵字。
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const/g));
+assert(code.match(/const/g));
 ```
 
 `MATH_CONSTANTS` 應該爲一個常量（使用 `const`）。
 
 ```js
-(getUserInput) =>
-  assert(getUserInput('index').match(/const\s+MATH_CONSTANTS/g));
+assert(code.match(/const\s+MATH_CONSTANTS/g));
 ```
 
 不要改變 `MATH_CONSTANTS` 的原始聲明。
 
 ```js
-(getUserInput) =>
-  assert(
-    getUserInput('index').match(
-      /const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g
-    )
-  );
+assert(code.match(
+   /const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g
+));
 ```
 
 `PI` 應等於 `3.14`。

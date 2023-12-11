@@ -20,7 +20,7 @@ Sin embargo, en el mundo de alto rendimiento y diferentes tipos de elementos, a 
 
 <dfn>Los arreglos escritos</dfn> son la respuesta a este problema. Ahora puedes decir cuánta memoria quieres dar a una matriz. Debajo hay una visión general básica de los diferentes tipos de matrices disponibles y el tamaño en bytes para cada elemento de esa matriz.
 
-<table class='table table-striped'><tbody><tr><th>Tipo</th><th>Cada tamaño de elemento en bytes</th></tr><tr><td><code>Int8Array</code></td><td>1</td></tr><tr><td><code>Uint8Array</code></td><td>1</td></tr><tr><td><code>Uint8ClampedArray</code></td><td>1</td></tr><tr><td><code>Int16Array</code></td><td>2</td></tr><tr><td><code>Uint16Array</code></td><td>2</td></tr><tr><td><code>Int32Array</code></td><td>4</td></tr><tr><td><code>Uint32Array</code></td><td>4</td></tr><tr><td><code>Float32Array</code></td><td>4</td></tr><tr><td><code>Float64Array</code></td><td>8</td></tr></tbody></table>
+<table><tbody><tr><th>Tipo</th><th>Cada tamaño de elemento en bytes</th></tr><tr><td><code>Int8Array</code></td><td>1</td></tr><tr><td><code>Uint8Array</code></td><td>1</td></tr><tr><td><code>Uint8ClampedArray</code></td><td>1</td></tr><tr><td><code>Int16Array</code></td><td>2</td></tr><tr><td><code>Uint16Array</code></td><td>2</td></tr><tr><td><code>Int32Array</code></td><td>4</td></tr><tr><td><code>Uint32Array</code></td><td>4</td></tr><tr><td><code>Float32Array</code></td><td>4</td></tr><tr><td><code>Float64Array</code></td><td>8</td></tr></tbody></table>
 
 Hay dos formas de crear este tipo de matriz. Una forma es crearla directamente. A continuación se muestra cómo crear una longitud de 3 `Int16Array`.
 

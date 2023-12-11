@@ -7,32 +7,32 @@ dashedName: step-23
 
 # --description--
 
-In your `forEach` callback, you need to update the `totalCountPerProduct` object. Using the `id` of the current `dessert` as your property, update the value of the property to be the current value plus one. Do not use the addition assignment operator for this.
+Na função de callback de `forEach`, você precisa atualizar o objeto `totalCountPerProduct`. Usando o `id` da `dessert` (sobremesa) atual como sua propriedade, atualize o valor da propriedade para que seja o valor atual mais um. Não use o operador de atribuição de adição para isso.
 
 # --hints--
 
-You should use dot notation to access the `id` property of `dessert`.
+Você deve usar a notação de ponto para acessar a propriedade `id` de `dessert`.
 
 ```js
 const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /dessert\.id/);
 ```
 
-You should use bracket notation to access the property of `totalCountPerProduct` that corresponds to `dessert.id`.
+Você deve usar a notação de colchete para acessar a propriedade de `totalCountPerProduct` que corresponde a `dessert.id`.
 
 ```js
 const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]/);
 ```
 
-You should use the assignment operator to update the value of the property of `totalCountPerProduct` that corresponds to `dessert.id`.
+Você deve usar o operador de atribuição para atualizar o valor da propriedade de `totalCountPerProduct` que corresponde a `dessert.id`.
 
 ```js
 const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=/);
 ```
 
-You should update the value of `totalCountPerProduct` to be the current value plus one.
+Você deve atualizar o valor de `totalCountPerProduct` para que seja o valor atual mais um.
 
 ```js
 const cart = new ShoppingCart();

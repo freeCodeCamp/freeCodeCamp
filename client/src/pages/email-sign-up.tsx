@@ -1,16 +1,17 @@
-import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
-import type { TFunction } from 'i18next';
-import { withTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Container, Col, Row } from '@freecodecamp/ui';
+
 import IntroDescription from '../components/Intro/components/intro-description';
 import createRedirect from '../components/create-redirect';
-import { Spacer, Loader } from '../components/helpers';
-import { apiLocation } from '../../../config/env.json';
+import { Spacer, Loader, Link } from '../components/helpers';
+import { apiLocation } from '../../config/env.json';
 
 import { acceptTerms } from '../redux/actions';
 import {
@@ -24,8 +25,8 @@ interface AcceptPrivacyTermsProps {
   acceptTerms: (accept: boolean | null) => void;
   acceptedPrivacyTerms: boolean;
   isSignedIn: boolean;
-  t: TFunction;
   showLoading: boolean;
+  completedChallengeCount?: number;
 }
 
 const mapStateToProps = createSelector(
@@ -33,65 +34,42 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   signInLoadingSelector,
   (
-    { acceptedPrivacyTerms }: { acceptedPrivacyTerms: boolean },
+    {
+      acceptedPrivacyTerms,
+      completedChallengeCount
+    }: { acceptedPrivacyTerms: boolean; completedChallengeCount: number },
     isSignedIn: boolean,
     showLoading: boolean
   ) => ({
     acceptedPrivacyTerms,
     isSignedIn,
-    showLoading
+    showLoading,
+    completedChallengeCount
   })
 );
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ acceptTerms }, dispatch);
 const RedirectToLearn = createRedirect('/learn');
 
-function AcceptPrivacyTerms({
-  acceptTerms,
-  acceptedPrivacyTerms,
+function EmailListOptIn({
   isSignedIn,
-  t,
-  showLoading
-}: AcceptPrivacyTermsProps) {
-  const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);
-  const acceptTermsRef = useRef(acceptTerms);
-
-  useEffect(() => {
-    acceptedPrivacyRef.current = acceptedPrivacyTerms;
-    acceptTermsRef.current = acceptTerms;
-  });
-
-  useEffect(() => {
-    return () => {
-      // if a user navigates away from here we should set acceptedPrivacyTerms
-      // to true (so they do not get pulled back) without changing their email
-      // preferences (hence the null payload)
-      // This makes sure that the user has to opt in to Quincy's emails and that
-      // they are only asked twice
-      if (!acceptedPrivacyRef.current) {
-        acceptTermsRef.current(null);
-      }
-    };
-  }, []);
-
-  function onClick(isWeeklyEmailAccepted: boolean) {
-    acceptTerms(isWeeklyEmailAccepted);
-  }
-
-  function renderEmailListOptin(isSignedIn: boolean, showLoading: boolean) {
-    if (showLoading) {
-      return <Loader fullScreen={true} />;
-    }
-    if (isSignedIn) {
-      return (
-        <Row>
+  acceptTerms
+}: {
+  isSignedIn: boolean;
+  acceptTerms: (accepted: boolean) => void;
+}) {
+  const { t } = useTranslation();
+  if (isSignedIn) {
+    return (
+      <Container>
+        <Row className='email-list-opt'>
           <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
             <Button
               block={true}
               bsSize='lg'
               bsStyle='primary'
               className='big-cta-btn'
-              onClick={() => onClick(true)}
+              onClick={() => acceptTerms(true)}
             >
               {t('buttons.yes-please')}
             </Button>
@@ -103,32 +81,50 @@ function AcceptPrivacyTerms({
               bsSize='lg'
               bsStyle='primary'
               className='big-cta-btn'
-              onClick={() => onClick(false)}
+              onClick={() => acceptTerms(false)}
             >
               {t('buttons.no-thanks')}
             </Button>
             <Spacer size='small' />
           </Col>
         </Row>
-      );
-    } else {
-      return (
-        <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-          <Spacer size='small' />
-          <Button
-            block={true}
-            bsSize='lg'
-            bsStyle='primary'
-            className='big-cta-btn'
-            href={`${apiLocation}/signin`}
-          >
-            {t('buttons.sign-up-email-list')}
-          </Button>
-          <Spacer size='small' />
-        </Col>
-      );
-    }
+      </Container>
+    );
+  } else {
+    return (
+      <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+        <Spacer size='small' />
+        <Button
+          block={true}
+          bsSize='lg'
+          bsStyle='primary'
+          className='big-cta-btn'
+          href={`${apiLocation}/signin`}
+        >
+          {t('buttons.sign-up-email-list')}
+        </Button>
+        <Spacer size='small' />
+      </Col>
+    );
   }
+}
+
+function AcceptPrivacyTerms({
+  acceptTerms,
+  acceptedPrivacyTerms,
+  isSignedIn,
+  showLoading,
+  completedChallengeCount = 0
+}: AcceptPrivacyTermsProps) {
+  const { t } = useTranslation();
+  const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);
+  const acceptTermsRef = useRef(acceptTerms);
+
+  useEffect(() => {
+    acceptedPrivacyRef.current = acceptedPrivacyTerms;
+    acceptTermsRef.current = acceptTerms;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return acceptedPrivacyTerms ? (
     <RedirectToLearn />
@@ -137,32 +133,48 @@ function AcceptPrivacyTerms({
       <Helmet>
         <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
       </Helmet>
-      <Grid>
+      <Container>
+        {isSignedIn && completedChallengeCount < 1 ? (
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size='large' />
+              <h1 className='text-center'>{t('misc.brand-new-account')}</h1>
+              <Spacer size='small' />
+              <p>
+                <Trans i18nKey='misc.duplicate-account-warning'>
+                  <Link className='inline' to='/settings#danger-zone' />
+                </Trans>
+              </p>
+            </Col>
+          </Row>
+        ) : (
+          ''
+        )}
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <Spacer size='medium' />
+            <Spacer size='small' />
             <IntroDescription />
             <hr />
           </Col>
         </Row>
         <Row className='email-sign-up' data-cy='email-sign-up'>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <strong>{t('misc.quincy')}</strong>
-            <Spacer size='medium' />
+            <Spacer size='small' />
             <p>{t('misc.email-blast')}</p>
-            <Spacer size='medium' />
+            <Spacer size='small' />
           </Col>
-          {renderEmailListOptin(isSignedIn, showLoading)}
+          {showLoading ? (
+            <Loader fullScreen={true} />
+          ) : (
+            <EmailListOptIn isSignedIn={isSignedIn} acceptTerms={acceptTerms} />
+          )}
           <Col xs={12}>
             <Spacer size='medium' />
           </Col>
         </Row>
-      </Grid>
+      </Container>
     </>
   );
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(AcceptPrivacyTerms));
+export default connect(mapStateToProps, mapDispatchToProps)(AcceptPrivacyTerms);

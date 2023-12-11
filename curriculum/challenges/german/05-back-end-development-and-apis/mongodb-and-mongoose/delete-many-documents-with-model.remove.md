@@ -12,7 +12,7 @@ dashedName: delete-many-documents-with-model-remove
 
 # --instructions--
 
-Ändere die `removeManyPeople`-Funktion so, dass sie mithilfe von `Model.remove()` alle Personen löscht, deren Namen in der Variable `nameToRemove` enthalten sind. Pass it to a query document with the `name` field set, and a callback.
+Ändere die `removeManyPeople`-Funktion so, dass sie mithilfe von `Model.remove()` alle Personen löscht, deren Namen in der Variable `nameToRemove` enthalten sind. Übergib es an ein Query-Dokument, in dem das Feld `name` gesetzt ist, und ein Callback.
 
 **Hinweis:** Das `Model.remove()` gibt nicht das gelöschte Dokument zurück, sondern ein JSON-Objekt, das das Ergebnis des Vorgangs und die Anzahl der betroffenen Elemente enthält. Vergiss nicht, ihn an den `done()`-Callback zu übergeben, da wir ihn in Tests verwenden.
 

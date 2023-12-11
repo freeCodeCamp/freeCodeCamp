@@ -27,7 +27,7 @@ Example game:
 | 9    | 4             |     1,2,4,8,10 | 1             | 2,4,6,8,10     | 3             |
 | 10   | 1             |     1,2,4,8,10 | 2             | 1,4,6,8,10     | 3             |
 
-Denoting Larry's score by $L$ and Robin's score by $R$, what is the expected value of $|L - R|$ after 50 turns? Give your answer rounded to eight decimal places using the format x.xxxxxxxx .
+Denoting Larry's score by $L$ and Robin's score by $R$, what is the expected value of $|L - R|$ after 50 turns? Дайте відповідь, заокруглену до восьми знаків після коми у форматі x.xxxxxxxx.
 
 # --hints--
 

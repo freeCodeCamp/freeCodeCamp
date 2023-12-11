@@ -21,7 +21,7 @@ At each step in time, the following transitions occur:
 - Any live cell with more than three live neighbours dies, as if by overpopulation.
 - Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
-以下のユーザーストーリーを満たし、すべてのテストが成功するようにしてください。 Use whichever libraries or APIs you need. Give it your own personal style.
+以下のユーザーストーリーを満たし、すべてのテストが成功するようにしてください。 Use whichever libraries or APIs you need. あなた独自のアレンジを加えましょう。
 
 **User Story:** When I first arrive at the game, it will randomly generate a board and start playing.
 

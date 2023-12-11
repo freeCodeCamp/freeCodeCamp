@@ -15,16 +15,16 @@ O site consistirá em uma página index principal com links para algumas receita
 1. A página de receita deve incluir um elemento `html` com os elementos `head` e `body` como filhos.
 1. Você deve ter um elemento `title` dentro do elemento `head` com o texto `The Odin Recipes`.
 1. Você deve ver um elemento `h1` com o texto `Creamy Chocolate Fudge`.
-1. Você deve ver uma imagem com o url `*placeholder-fcc-cdn*` com um texto `alt` adequado.
+1. Você deve ver uma imagem relacionada com um atributo `alt`.
 1. Deve haver um elemento `h2` com o texto `Description` sob a imagem.
 1. Você deve ver alguns parágrafos sob `Description` que descrevam a receita.
-1. Deve haver um elemento `h2` com o texto `Ingredients`
+1. Deve haver um elemento `h2` com o texto `Ingredients`.
 1. Sob o título `Ingredients`, deve haver uma lista não ordenada com os ingredientes necessários para a receita.
 1. Sob a lista de ingredientes, adicione outro título chamado `Steps`.
 1. Você deve ver uma lista ordenada com alguns passos necessários para completar a receita.
-1. Abaixo dos passos, deve haver um elemento `h2` com o texto `More Recipes`
+1. Abaixo dos passos, deve haver um elemento `h2` com o texto `More Recipes`.
 1. Você deve ver alguns links para outras receitas dentro de uma lista não ordenada com alguns itens na lista com elementos de âncora dentro deles.
-1. O elemento de âncora (a) deve ter o atributo `href` com o valor `#`
+1. O elemento de âncora (a) deve ter o atributo `href` com o valor definido como `#`.
 
 # --hints--
 
@@ -56,12 +56,12 @@ Você deve ter um elemento `h1` dentro do elemento `body` com o texto `Creamy Ch
 assert(document.querySelectorAll('BODY > H1')[0].innerText == 'Creamy Chocolate Fudge');
 ```
 
-Você deve ter uma imagem com o url `*placeholder-fcc-cdn*` com um atributo `alt` que tenha um texto adequado.
+Você deve ter uma imagem e um atributo `alt`.
 
 ```js
 const img = document.querySelectorAll('IMG')[0];
 
-assert(img && img.alt !='' && img.src === 'https://i.imgur.com/p0J5baJ.jpg')
+assert(img && img.alt !='' && img.src != '')
 ```
 
 Deve haver um elemento `h2` com o texto `Description`.

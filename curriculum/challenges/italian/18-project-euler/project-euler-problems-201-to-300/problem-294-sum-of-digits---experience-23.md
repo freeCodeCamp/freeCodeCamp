@@ -17,7 +17,7 @@ Per un numero intero positivo $n$, si definisce $S(n)$ come il numero di numeri 
 
 Ti è dato che $S(9) = 263\\,626$ e $S(42) = 6\\,377\\,168\\,878\\,570\\,056$.
 
-Find $S({11}^{12})$ and give your answer $\bmod {10}^9$.
+Trova $S({11}^{12})$ e dai la tua risposta $\bmod {10}^9$.
 
 # --hints--
 

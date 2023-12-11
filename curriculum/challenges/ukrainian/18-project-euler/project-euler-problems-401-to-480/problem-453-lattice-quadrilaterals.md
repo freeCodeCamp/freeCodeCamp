@@ -1,6 +1,6 @@
 ---
 id: 5900f5311000cf542c510044
-title: 'Problem 453: Lattice Quadrilaterals'
+title: 'Завдання 453: чотирикутники на сітці'
 challengeType: 1
 forumTopicId: 302126
 dashedName: problem-453-lattice-quadrilaterals
@@ -8,17 +8,17 @@ dashedName: problem-453-lattice-quadrilaterals
 
 # --description--
 
-A simple quadrilateral is a polygon that has four distinct vertices, has no straight angles and does not self-intersect.
+Простий чотирикутник — це багатокутник, що має чотири окремих вершини, не має прямих кутів і не перетинається сам з собою.
 
-Let $Q(m, n)$ be the number of simple quadrilaterals whose vertices are lattice points with coordinates ($x$, $y$) satisfying $0 ≤ x ≤ m$ and $0 ≤ y ≤ n$.
+Нехай $Q(m, n)$ буде кількістю простих чотирикутників, чиї вершини є точками сітки з координатами ($x$, $y$), задовільняючи умову $0 ≤ x ≤ m$ та $0 ≤ y ≤ n$.
 
-For example, $Q(2, 2) = 94$ as can be seen below:
+Наприклад, $Q(2, 2) = 94$, як можна побачити нижче:
 
-<img class="img-responsive center-block" alt="94 quadrilaterals whose vertices are lattice points with coordinates (x, y) satiffying 0 &le; x &le; m and 0 &le; y &le; n" src="https://cdn.freecodecamp.org/curriculum/project-euler/lattice-quadrilaterals.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="94 чотирикутники, вершинами яких є точки сітки з координатами (x, y), задовільняючи умову 0 &le; x &le; m та 0 &le; y &le; n" src="https://cdn.freecodecamp.org/curriculum/project-euler/lattice-quadrilaterals.png" style="background-color: white; padding: 10px;" />
 
-It can also be verified that $Q(3, 7) = 39\\,590$, $Q(12, 3) = 309\\,000$ and $Q(123, 45) = 70\\,542\\,215\\,894\\,646$.
+Можна довести, що $Q(3, 7) = 39\\,590$, $Q(12, 3) = 309\\,000$ та $Q(123, 45) = 70\\,542\\,215\\,894\\,646$.
 
-Find $Q(12\\,345, 6\\,789)\bmod 135\\,707\\,531$.
+Знайдіть $Q(12\\,345, 6\\,789)\bmod 135\\,707\\,531$.
 
 # --hints--
 

@@ -17,8 +17,8 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 If you use Replit, follow these steps to set up the project:
 
 -   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Daraufhin wird ein `.replit`-Fenster angezeigt.
+-   Wähle `Use run command` aus und klicke auf die `Done`-Schaltfläche.
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
@@ -76,7 +76,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can `POST` `/api/solve` with form data containing `puzzle` which will be a string containing a combination of numbers (1-9) and periods `.` to represent empty spaces. The returned object will contain a `solution` property with the solved puzzle.
+You can `POST` `/api/solve` with form data containing `puzzle` which will be a string containing a combination of numbers (1-9) and periods `.` to represent empty spaces. Das zurückgegebene Objekt enthält eine `solution`-Eigenschaft mit dem gelösten Rätsel.
 
 ```js
 async (getUserInput) => {

@@ -23,7 +23,7 @@ dashedName: prioritize-one-style-over-another
 
 # --hints--
 
-Ваш елемент `h1` повинен мати клас `pink-text`.
+Елемент `h1` повинен мати клас `pink-text`.
 
 ```js
 assert($('h1').hasClass('pink-text'));

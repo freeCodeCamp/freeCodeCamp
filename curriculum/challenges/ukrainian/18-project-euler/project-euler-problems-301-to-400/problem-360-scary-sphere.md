@@ -18,7 +18,7 @@ Let $S(r)$ be the sum of the Manhattan distances of all elements of $I(r)$ to th
 
 E.g. $S(45)=34518$.
 
-Find $S({10}^{10})$.
+Знайдіть $S({10}^{10})$.
 
 # --hints--
 

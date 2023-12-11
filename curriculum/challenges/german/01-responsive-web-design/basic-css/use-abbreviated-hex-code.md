@@ -19,7 +19,7 @@ Dadurch reduziert sich die Gesamtzahl der möglichen Farben auf etwa 4.000. Die 
 
 Versuche, mithilfe der gekürzten Hex-Codes die richtigen Elemente einzufärben.
 
-<table class='table table-striped'><tbody><tr><th>Farbe</th><th>gekürzter Hex-Code</th></tr><tr><td>Cyan</td><td><code>#0FF</code></td></tr><tr><td>Grün</td><td><code>#0F0</code></td></tr><tr><td>Rot</td><td><code>#F00</code></td></tr><tr><td>Fuchsia</td><td><code>#F0F</code></td></tr></tbody></table>
+<table><tbody><tr><th>Farbe</th><th>gekürzter Hex-Code</th></tr><tr><td>Cyan</td><td><code>#0FF</code></td></tr><tr><td>Grün</td><td><code>#0F0</code></td></tr><tr><td>Rot</td><td><code>#F00</code></td></tr><tr><td>Fuchsia</td><td><code>#F0F</code></td></tr></tbody></table>
 
 # --hints--
 

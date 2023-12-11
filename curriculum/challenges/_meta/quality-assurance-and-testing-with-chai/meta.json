@@ -9,105 +9,105 @@
   "required": [],
   "superBlock": "quality-assurance",
   "challengeOrder": [
-    [
-      "587d824a367417b2b2512c46",
-      "Learn How JavaScript Assertions Work"
-    ],
-    [
-      "587d824b367417b2b2512c47",
-      "Test if a Variable or Function is Defined"
-    ],
-    [
-      "587d824b367417b2b2512c48",
-      "Use Assert.isOK and Assert.isNotOK"
-    ],
-    [
-      "587d824b367417b2b2512c49",
-      "Test for Truthiness"
-    ],
-    [
-      "587d824b367417b2b2512c4a",
-      "Use the Double Equals to Assert Equality"
-    ],
-    [
-      "587d824b367417b2b2512c4b",
-      "Use the Triple Equals to Assert Strict Equality"
-    ],
-    [
-      "587d824c367417b2b2512c4c",
-      "Assert Deep Equality with .deepEqual and .notDeepEqual"
-    ],
-    [
-      "587d824c367417b2b2512c4d",
-      "Compare the Properties of Two Elements"
-    ],
-    [
-      "587d824c367417b2b2512c4e",
-      "Test if One Value is Below or At Least as Large as Another"
-    ],
-    [
-      "587d824c367417b2b2512c4f",
-      "Test if a Value Falls within a Specific Range"
-    ],
-    [
-      "587d824d367417b2b2512c50",
-      "Test if a Value is an Array"
-    ],
-    [
-      "587d824d367417b2b2512c51",
-      "Test if an Array Contains an Item"
-    ],
-    [
-      "587d824d367417b2b2512c52",
-      "Test if a Value is a String"
-    ],
-    [
-      "587d824d367417b2b2512c53",
-      "Test if a String Contains a Substring"
-    ],
-    [
-      "587d824d367417b2b2512c54",
-      "Use Regular Expressions to Test a String"
-    ],
-    [
-      "587d824e367417b2b2512c55",
-      "Test if an Object has a Property"
-    ],
-    [
-      "587d824e367417b2b2512c56",
-      "Test if a Value is of a Specific Data Structure Type"
-    ],
-    [
-      "587d824e367417b2b2512c57",
-      "Test if an Object is an Instance of a Constructor"
-    ],
-    [
-      "587d824e367417b2b2512c58",
-      "Run Functional Tests on API Endpoints using Chai-HTTP"
-    ],
-    [
-      "587d824f367417b2b2512c59",
-      "Run Functional Tests on API Endpoints using Chai-HTTP II"
-    ],
-    [
-      "587d824f367417b2b2512c5a",
-      "Run Functional Tests on an API Response using Chai-HTTP III - PUT method"
-    ],
-    [
-      "587d824f367417b2b2512c5b",
-      "Run Functional Tests on an API Response using Chai-HTTP IV - PUT method"
-    ],
-    [
-      "587d824f367417b2b2512c5c",
-      "Simulate Actions Using a Headless Browser"
-    ],
-    [
-      "587d8250367417b2b2512c5d",
-      "Run Functional Tests Using a Headless Browser"
-    ],
-    [
-      "5f8884f4c46685731aabfc41",
-      "Run Functional Tests Using a Headless Browser II"
-    ]
+    {
+      "id": "587d824a367417b2b2512c46",
+      "title": "Learn How JavaScript Assertions Work"
+    },
+    {
+      "id": "587d824b367417b2b2512c47",
+      "title": "Test if a Variable or Function is Defined"
+    },
+    {
+      "id": "587d824b367417b2b2512c48",
+      "title": "Use Assert.isOK and Assert.isNotOK"
+    },
+    {
+      "id": "587d824b367417b2b2512c49",
+      "title": "Test for Truthiness"
+    },
+    {
+      "id": "587d824b367417b2b2512c4a",
+      "title": "Use the Double Equals to Assert Equality"
+    },
+    {
+      "id": "587d824b367417b2b2512c4b",
+      "title": "Use the Triple Equals to Assert Strict Equality"
+    },
+    {
+      "id": "587d824c367417b2b2512c4c",
+      "title": "Assert Deep Equality with .deepEqual and .notDeepEqual"
+    },
+    {
+      "id": "587d824c367417b2b2512c4d",
+      "title": "Compare the Properties of Two Elements"
+    },
+    {
+      "id": "587d824c367417b2b2512c4e",
+      "title": "Test if One Value is Below or At Least as Large as Another"
+    },
+    {
+      "id": "587d824c367417b2b2512c4f",
+      "title": "Test if a Value Falls within a Specific Range"
+    },
+    {
+      "id": "587d824d367417b2b2512c50",
+      "title": "Test if a Value is an Array"
+    },
+    {
+      "id": "587d824d367417b2b2512c51",
+      "title": "Test if an Array Contains an Item"
+    },
+    {
+      "id": "587d824d367417b2b2512c52",
+      "title": "Test if a Value is a String"
+    },
+    {
+      "id": "587d824d367417b2b2512c53",
+      "title": "Test if a String Contains a Substring"
+    },
+    {
+      "id": "587d824d367417b2b2512c54",
+      "title": "Use Regular Expressions to Test a String"
+    },
+    {
+      "id": "587d824e367417b2b2512c55",
+      "title": "Test if an Object has a Property"
+    },
+    {
+      "id": "587d824e367417b2b2512c56",
+      "title": "Test if a Value is of a Specific Data Structure Type"
+    },
+    {
+      "id": "587d824e367417b2b2512c57",
+      "title": "Test if an Object is an Instance of a Constructor"
+    },
+    {
+      "id": "587d824e367417b2b2512c58",
+      "title": "Run Functional Tests on API Endpoints using Chai-HTTP"
+    },
+    {
+      "id": "587d824f367417b2b2512c59",
+      "title": "Run Functional Tests on API Endpoints using Chai-HTTP II"
+    },
+    {
+      "id": "587d824f367417b2b2512c5a",
+      "title": "Run Functional Tests on an API Response using Chai-HTTP III - PUT method"
+    },
+    {
+      "id": "587d824f367417b2b2512c5b",
+      "title": "Run Functional Tests on an API Response using Chai-HTTP IV - PUT method"
+    },
+    {
+      "id": "587d824f367417b2b2512c5c",
+      "title": "Simulate Actions Using a Headless Browser"
+    },
+    {
+      "id": "587d8250367417b2b2512c5d",
+      "title": "Run Functional Tests Using a Headless Browser"
+    },
+    {
+      "id": "5f8884f4c46685731aabfc41",
+      "title": "Run Functional Tests Using a Headless Browser II"
+    }
   ]
 }

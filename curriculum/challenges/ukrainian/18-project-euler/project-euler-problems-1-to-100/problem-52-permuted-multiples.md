@@ -1,6 +1,6 @@
 ---
 id: 5900f3a01000cf542c50feb3
-title: 'Problem 52: Permuted multiples'
+title: 'Завдання 52: кратні числа з переставленими цифрами'
 challengeType: 1
 forumTopicId: 302163
 dashedName: problem-52-permuted-multiples
@@ -8,9 +8,9 @@ dashedName: problem-52-permuted-multiples
 
 # --description--
 
-It can be seen that the number, 125874, and its double, 251748, contain exactly the same digits, but in a different order.
+Можна побачити, що число 125874 та його подвоєння, 251748, містять однакові цифри, але в іншому порядку.
 
-Find the smallest positive integer, such that multiplied by integers $\\{2, 3, \ldots, n\\}$, contain the same digits.
+Знайдіть таке найменше додатне ціле число, щоб після множення на цілі числа $\\{2, 3, \ldots, n\\}$ воно містило ті самі цифри.
 
 # --hints--
 

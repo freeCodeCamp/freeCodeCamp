@@ -1,6 +1,6 @@
 ---
 id: 5900f5351000cf542c510047
-title: 'Problem 456: Triangles containing the origin II'
+title: 'Problema 456: triangoli contenenti l''origine II'
 challengeType: 1
 forumTopicId: 302130
 dashedName: problem-456-triangles-containing-the-origin-ii
@@ -8,25 +8,25 @@ dashedName: problem-456-triangles-containing-the-origin-ii
 
 # --description--
 
-Define:
+Definisci:
 
 $$\begin{align}   & x_n = ({1248}^n\bmod 32323) - 16161 \\\\
   & y_n = ({8421}^n\bmod 30103) - 15051 \\\\ & P_n = \\{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\\} \end{align}$$
 
-For example, $$P_8 = \\{(-14913, -6630), (-10161, 5625), (5226, 11896), (8340, -10778), (15852, -5203), (-15165, 11295), (-1427, -14495), (12407, 1060)\\}$$
+Per esempio, $$P_8 = \\{(-14913, -6630), (-10161, 5625), (5226, 11896), (8340, -10778), (15852, -5203), (-15165, 11295), (-1427, -14495), (12407, 1060)\\}$$
 
-Let $C(n)$ be the number of triangles whose vertices are in $P_n$ which contain the origin in the interior.
+Sia $C(n)$ il numero di triangoli i cui vertici sono in $P_n$ che contiene l'origine all'interno.
 
-Examples:
+Esempi:
 
 $$\begin{align}   & C(8) = 20 \\\\
   & C(600) = 8\\,950\\,634 \\\\ & C(40\\,000) = 2\\,666\\,610\\,948\\,988 \end{align}$$
 
-Find $C(2\\,000\\,000)$.
+Trova $C(2\\,000\\,000)$.
 
 # --hints--
 
-`trianglesContainingOriginTwo()` should return `333333208685971500`.
+`trianglesContainingOriginTwo()` dovrebbe restituire `333333208685971500`.
 
 ```js
 assert.strictEqual(trianglesContainingOriginTwo(), 333333208685971500);

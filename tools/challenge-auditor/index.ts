@@ -7,10 +7,12 @@ import { config } from 'dotenv';
 const envPath = resolve(__dirname, '../../.env');
 config({ path: envPath });
 
-import { availableLangs } from '../../config/i18n';
+import { availableLangs } from '../../shared/config/i18n';
 import { getChallengesForLang } from '../../curriculum/get-challenges';
-import { SuperBlocks } from '../../config/certification-settings';
-import { getAuditedSuperBlocks } from '../../config/superblock-order';
+import {
+  SuperBlocks,
+  getAuditedSuperBlocks
+} from '../../shared/config/superblocks';
 
 // TODO: re-organise the types to a common 'types' folder that can be shared
 // between the workspaces so we don't have to declare ChallengeNode here and in
@@ -46,6 +48,10 @@ const superBlockFolderMap = {
   'the-odin-project': '16-the-odin-project',
   'college-algebra-with-python': '17-college-algebra-with-python',
   'project-euler': '18-project-euler',
+  'foundational-c-sharp-with-microsoft':
+    '19-foundational-c-sharp-with-microsoft',
+  'upcoming-python': '20-upcoming-python',
+  'a2-english-for-developers': '21-a2-english-for-developers',
   'example-certification': '99-example-certification'
 };
 
@@ -103,14 +109,14 @@ void (async () => {
     }
   }
   const langsToCheck = availableLangs.curriculum.filter(
-    lang => lang !== 'english'
+    lang => String(lang) !== 'english'
   );
   for (const lang of langsToCheck) {
     console.log(`\n=== ${lang} ===`);
     const certs = getAuditedSuperBlocks({
       language: lang,
-      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
+      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
     });
     const langCurriculumDirectory = join(
       process.cwd(),

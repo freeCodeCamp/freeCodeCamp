@@ -9,9 +9,9 @@
   "required": [],
   "superBlock": "college-algebra-with-python",
   "challengeOrder": [
-    [
-      "6363d2429078df117ce4c400",
-      "Quadratics"
-    ]
+    {
+      "id": "6363d2429078df117ce4c400",
+      "title": "Quadratics"
+    }
   ]
 }

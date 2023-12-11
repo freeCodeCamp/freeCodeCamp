@@ -1,6 +1,6 @@
 ---
 id: 5900f42b1000cf542c50ff3e
-title: 'Problem 191: Prize Strings'
+title: 'Завдання 191: призові рядки'
 challengeType: 1
 forumTopicId: 301829
 dashedName: problem-191-prize-strings
@@ -8,11 +8,11 @@ dashedName: problem-191-prize-strings
 
 # --description--
 
-A particular school offers cash rewards to children with good attendance and punctuality. If they are absent for three consecutive days or late on more than one occasion then they forfeit their prize.
+Певна школа пропонує грошові винагороди дітям, що не запізнюються та не пропускають уроків. Якщо дитина відсутня три дні поспіль або запізнюється більше одного разу — вона втрачає приз.
 
-During an n-day period a trinary string is formed for each child consisting of L's (late), O's (on time), and A's (absent).
+Протягом n-денного періоду для кожної дитини формується тризначний рядок, що складається з L (late — запізнення), O (on time — вчасно) і A (absent — відсутність).
 
-Although there are eighty-one trinary strings for a 4-day period that can be formed, exactly forty-three strings would lead to a prize:
+Хоча за 4 дні можна створити вісімдесят один тризначний рядок, рівно сорок три приведуть до призу:
 
 ```markup
 OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA
@@ -22,7 +22,7 @@ AALO AALA ALOO ALOA ALAO ALAA LOOO LOOA LOAO LOAA
 LAOO LAOA LAAO
 ```
 
-How many "prize" strings exist over a 30-day period?
+Скільки «призових рядків» існує для 30-денного періоду?
 
 # --hints--
 

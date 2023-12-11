@@ -19,9 +19,9 @@ For a given integer $n$, define $P(n)$ as the number of distinct pythagorean pol
 
 Pythagorean polygons should be considered distinct as long as none is a translation of another.
 
-You are given that $P(4) = 1$, $P(30) = 3655$ and $P(60) = 891045$.
+Дано, що $P(4) = 1$, $P(30) = 3655$ та $P(60) = 891045$.
 
-Find $P(120)$.
+Знайдіть $P(120)$.
 
 # --hints--
 

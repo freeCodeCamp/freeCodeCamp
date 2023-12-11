@@ -1,6 +1,6 @@
 ---
 id: 5900f3b01000cf542c50fec3
-title: 'Problem 68: Magic 5-gon ring'
+title: 'Завдання 68: магічне п’ятикутне кільце'
 challengeType: 1
 forumTopicId: 302180
 dashedName: problem-68-magic-5-gon-ring
@@ -8,17 +8,17 @@ dashedName: problem-68-magic-5-gon-ring
 
 # --description--
 
-Consider the following "magic" 3-gon ring, filled with the numbers 1 to 6, and each line adding to nine.
+Розглянемо наступне «магічне» трикутне кільце, заповнене цифрами від 1 до 6, а сума цифр на кожній лінії дорівнює 9.
 
-<img class="img-responsive center-block" alt="a completed example of a 3-gon ring" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="завершений приклад трикутного кільця" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px;" />
 
-Working **clockwise**, and starting from the group of three with the numerically lowest external node (4,3,2 in this example), each solution can be described uniquely. For example, the above solution can be described by the set: 4,3,2; 6,2,1; 5,1,3.
+Працюючи **за годинниковою стрілкою** і почавши з групи з найменшим зовнішнім вузлом (4,3,2 у цьому прикладі), кожен розв’язок можна записати одним способом. Наприклад, вищенаведений розв’язок можна описати множиною: 4,3,2; 6,2,1; 5,1,3.
 
-It is possible to complete the ring with four different totals: 9, 10, 11, and 12. There are eight solutions in total.
+Кільце можна завершити чотирма різними сумами: 9, 10, 11, та 12. Всього є вісім розв’язків.
 
 <div style='text-align: center;'>
 
-| <div style='width: 100px;'>Total</div> | <div style='width: 250px;'>Solution Set</div> |
+| <div style='width: 100px;'>Сума</div> | <div style='width: 250px;'>Множина розв’язків</div> |
 | -------------------------------------- | --------------------------------------------- |
 | 9                                      | 4,2,3; 5,3,1; 6,1,2                           |
 | 9                                      | 4,3,2; 6,2,1; 5,1,3                           |
@@ -31,11 +31,11 @@ It is possible to complete the ring with four different totals: 9, 10, 11, and 1
 
 </div>
 
-By concatenating each group it is possible to form 9-digit strings; the maximum string for a 3-gon ring is 432621513.
+Об’єднавши кожну групу, можна утворити дев’ятизначні рядки. Максимальним значенням такого рядка для трикутного кільця є 432621513.
 
-Using the numbers 1 to 10, and depending on arrangements, it is possible to form 16- and 17-digit strings. What is the maximum **16-digit** string for a "magic" 5-gon ring?
+Використовуючи числа від 1 до 10, залежно від розташування, можна утворити 16- та 17-значні рядки. Яким є максимальне значення **16-значного** рядка для «магічного» п’ятикутного кільця?
 
-<img class="img-responsive center-block" alt="a blank diagram of a 5-gon ring" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="пуста діаграма п’ятикутного кільця" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px;" />
 
 # --hints--
 

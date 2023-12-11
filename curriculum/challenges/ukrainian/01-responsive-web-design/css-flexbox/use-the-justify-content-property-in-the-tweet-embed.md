@@ -23,7 +23,7 @@ dashedName: use-the-justify-content-property-in-the-tweet-embed
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
 ```
 
-Елемент `.profile-name` повинен мати властивість `justify-content`, щоб налаштувати будь-яке з цих значень: `center`, `flex-start`, `flex-end`, `space-between`, `space-around`, чи `space-evenly`.
+Елемент `.profile-name` повинен мати властивість `justify-content` з будь-яким значенням: `center`, `flex-start`, `flex-end`, `space-between`, `space-around` або `space-evenly`.
 
 ```js
 assert(

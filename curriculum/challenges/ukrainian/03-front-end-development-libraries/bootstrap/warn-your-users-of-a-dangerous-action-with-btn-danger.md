@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348ce8acef08814
-title: Попередьте користувачів вашого сайту про небезпечну дію за допомогою btn-danger
+title: Попередьте користувачів про небезпеку за допомогою btn-danger
 challengeType: 0
 forumTopicId: 18375
 dashedName: warn-your-users-of-a-dangerous-action-with-btn-danger
@@ -8,11 +8,11 @@ dashedName: warn-your-users-of-a-dangerous-action-with-btn-danger
 
 # --description--
 
-Bootstrap має набір заздалегідь встановлених кольорів для кнопок. Клас `btn-danger` – колір кнопки, який ви можна застосувати для того, щоб оповістити користувачів, що ця кнопка виконує руйнівну дію, наприклад, видаляє фото котика.
+Bootstrap має набір заздалегідь встановлених кольорів для кнопок. Клас `btn-danger` — це колір кнопки, який ви використовуватимете, щоб попередити користувачів, що кнопка виконує руйнівну дію (наприклад, видаляє фото кота).
 
 Створіть кнопку з текстом `Delete` і надайте їй клас `btn-danger`.
 
-Зверніть увагу, цим кнопкам все ще необхідні класи `btn` та `btn-block`.
+Зверніть увагу, що цим кнопкам досі необхідні класи `btn` та `btn-block`.
 
 # --hints--
 
@@ -22,7 +22,7 @@ Bootstrap має набір заздалегідь встановлених ко
 assert(new RegExp('Delete', 'gi').test($('button').text()));
 ```
 
-Усі кнопки Bootstrap повинні мати класи `btn` і `btn-block`.
+Усі кнопки Bootstrap повинні мати класи `btn` та `btn-block`.
 
 ```js
 assert($('button.btn-block.btn').length > 2);
@@ -34,7 +34,7 @@ assert($('button.btn-block.btn').length > 2);
 assert($('button').hasClass('btn-danger'));
 ```
 
-Усі елементи `button` повинні містити кінцеві теґи.
+Усі елементи `button` повинні мати кінцеві теги.
 
 ```js
 assert(

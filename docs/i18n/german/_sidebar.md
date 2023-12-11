@@ -8,22 +8,25 @@
 - **Mitwirkung am Code**
   - [Set up freeCodeCamp](how-to-setup-freecodecamp-locally.md)
   - [Follow best-practices](codebase-best-practices.md)
-  - [Open a pull request](how-to-open-a-pull-request.md)
   - [Work on Codebase](how-to-contribute-to-the-codebase.md)
   - [Work on Coding Challenges](how-to-work-on-coding-challenges.md)
+  - [Use the Curriculum Helpers](curriculum-help.md)
   - [Work on Component Library](how-to-work-on-the-component-library.md)
   - [Work on Practice Projects](how-to-work-on-practice-projects.md)
   - [Work on Mobile app](how-to-setup-freecodecamp-mobile-app-locally.md)
   - [Work on tutorials with CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
   - [Work on Localized Web App](how-to-work-on-localized-client-webapp.md)
-  - [Work on Cypress tests](how-to-add-cypress-tests.md)
+  - [Work on Playwright Tests](how-to-add-playwright-tests.md)
   - [Work on Video Challenges](how-to-help-with-video-challenges.md)
   - [Work on Documentation](how-to-work-on-the-docs-theme.md)
+  - [Open a pull request](how-to-open-a-pull-request.md)
 - **Zusätzliche Leitfäden**
   - [Curriculum-Dateistruktur verstehen](curriculum-file-structure.md)
   - [Ausgehende E-Mails lokal debuggen](how-to-catch-outgoing-emails-locally.md)
-  - [freeCodeCamp unter Windows einrichten (WSL)](how-to-setup-wsl.md)
-  - [Benutzer-Token Workflow](user-token-workflow.md)
+  - [Work on Cypress Tests](how-to-add-cypress-tests.md)
+  - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
+  - [Use Docker on Windows Home](how-to-use-docker-on-windows-home.md)
+  - [User Token Workflow](user-token-workflow.md)
   - [Troubleshooting Development Issues](troubleshooting-development-issues.md)
   - [Authors Analytics Manual](authors-analytics-manual.md)
 
@@ -31,10 +34,11 @@
 
 - **Handbücher** (für Mitarbeiter & Moderatoren)
   - [Moderatorenhandbuch](moderator-handbook.md)
-  - [Language Lead Handbuch](language-lead-handbook.md)
-  - [DevOps-Handbuch](devops.md)
-  - [Kurse VSCode Erweiterung](courses-vscode-extension.md)
-  - [Eine neue Sprache aktivieren](how-to-enable-new-languages.md)
+  - [Reply Templates](reply-templates.md)
+  - [Language Lead Handbook](language-lead-handbook.md)
+  - [DevOps Handbook](devops.md)
+  - [Courses VSCode Extension](courses-vscode-extension.md)
+  - [Enable New Language](how-to-enable-new-languages.md)
 
 ---
 

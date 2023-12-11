@@ -15,7 +15,7 @@ For a positive integer $n$, define $S(n)$ as the number of positive integers $k 
 - $k$ is divisible by 23 and,
 - $d(k) = 23$.
 
-You are given that $S(9) = 263\\,626$ and $S(42) = 6\\,377\\,168\\,878\\,570\\,056$.
+Дано, що $S(9) = 263\\,626$ та $S(42) = 6\\,377\\,168\\,878\\,570\\,056$.
 
 Find $S({11}^{12})$ and give your answer $\bmod {10}^9$.
 

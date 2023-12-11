@@ -20,7 +20,7 @@ document.getElementsByClassName('message')[0].textContent="Here is the message";
 
 # --instructions--
 
-Add code inside the `onclick` event handler to change the text inside the `message` element to say `Here is the message`.
+Füge einen Code innerhalb des `onclick`-Event-Handlers hinzu, um den Text innerhalb des `message`-Elements in `Here is the message` zu ändern.
 
 # --hints--
 

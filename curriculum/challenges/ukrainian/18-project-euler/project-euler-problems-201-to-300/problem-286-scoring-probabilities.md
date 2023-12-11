@@ -12,7 +12,7 @@ Barbara is a mathematician and a basketball player. She has found that the proba
 
 During each practice run, she takes shots from distances $x = 1, x = 2, \ldots, x = 50$ and, according to her records, she has precisely a 2 % chance to score a total of exactly 20 points.
 
-Find $q$ and give your answer rounded to 10 decimal places.
+Знайдіть $q$ та дайте відповідь, заокруглену до десяти знаків після коми.
 
 # --hints--
 

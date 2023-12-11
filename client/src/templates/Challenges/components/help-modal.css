@@ -7,6 +7,12 @@
   padding-bottom: 10px;
 }
 
+.help-modal-heading {
+  line-height: 1.5;
+  font-weight: 400;
+  word-spacing: -0.4ch;
+}
+
 @media screen and (max-width: 767px) {
   .help-modal .btn-lg {
     font-size: 16px;

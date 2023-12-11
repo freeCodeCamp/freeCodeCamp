@@ -21,7 +21,7 @@ $$\dfrac{1}{111}, \dfrac{1}{222}, \dfrac{1}{333}, \dfrac{1}{444}, \dfrac{1}{555}
 
 This series converges as well.
 
-Find the value the series converges to. Give your answer rounded to 10 digits behind the decimal point.
+Find the value the series converges to. Дайте відповідь, заокруглену до десяти знаків після коми.
 
 # --hints--
 

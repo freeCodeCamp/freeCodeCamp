@@ -8,9 +8,9 @@ dashedName: seek-and-destroy
 
 # --description--
 
-最初の配列 (`destroyer` 関数の最初の引数) が与えられ、続いて 1 つ以上の引数が与えられます。 これらの引数と同じ値を持つすべての要素を最初の配列から削除してください。
+You will be provided with an initial array as the first argument to the `destroyer` function, followed by one or more arguments. これらの引数と同じ値を持つすべての要素を最初の配列から削除してください。
 
-**注:** `arguments` オブジェクトを使用する必要があります。
+The function must accept an indeterminate number of arguments, also known as a variadic function. You can access the additional arguments by adding a rest parameter to the function definition or using the `arguments` object.
 
 # --hints--
 

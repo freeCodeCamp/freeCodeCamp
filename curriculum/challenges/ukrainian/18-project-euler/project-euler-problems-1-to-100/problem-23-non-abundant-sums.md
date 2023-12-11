@@ -1,6 +1,6 @@
 ---
 id: 5900f3831000cf542c50fe96
-title: 'Problem 23: Non-abundant sums'
+title: 'Завдання 23: ненадлишкові суми'
 challengeType: 1
 forumTopicId: 301873
 dashedName: problem-23-non-abundant-sums
@@ -8,13 +8,13 @@ dashedName: problem-23-non-abundant-sums
 
 # --description--
 
-A perfect number is a number for which the sum of its proper divisors is exactly equal to the number. For example, the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.
+Досконале число — це число, у якому сума його власних дільників дорівнює цьому числу. Наприклад, сума власних дільників числа 28 становитиме 1 + 2 + 4 + 7 + 14 = 28, тобто 28 є досконалим числом.
 
-A number `n` is called deficient if the sum of its proper divisors is less than `n` and it is called abundant if this sum exceeds `n`.
+Число `n` називають недостатнім, якщо сума його власних дільників є меншою, ніж `n`, і надлишковим, якщо ця сума перевищує `n`.
 
-As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest number that can be written as the sum of two abundant numbers is 24. By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers. However, this upper limit cannot be reduced any further by analysis even though it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.
+Оскільки 12 є найменшим надлишковим числом (1 + 2 + 3 + 4 + 6 = 16), то найменшим числом, що може бути представлене як сума двох надлишкових чисел, є 24. Використовуючи математичний аналіз, можна показати, що всі цілі числа, більші за 28123, можуть бути представлені як сума двох надлишкових чисел. Ця межа не може бути зменшена подальшим аналізом, навіть незважаючи на те, що найбільше число, яке не може бути записане як сума двох надлишкових чисел, менше за цю межу.
 
-Find the sum of all positive integers &lt;= `n` which cannot be written as the sum of two abundant numbers.
+Знайдіть суму усіх натуральних чисел &lt;= `n`, які не можуть бути записані як сума двох надлишкових чисел.
 
 # --hints--
 

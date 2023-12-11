@@ -28,7 +28,7 @@ return (
 
 في محرر التعليمات البرمجية، هناك مكون وظيفي بسيط يسمى `ChildComponent` ومكون فئة يسمى `ParentComponent`. تكوين الاثنين معاً بواسطة تقديم `ChildComponent` ضمن `ParentComponent`. تيقن من إغلاق علامة `ChildComponent` مع خط المائل إلى الأمام.
 
-**ملاحظة:** إن `ChildComponent` يعرف مع وظيفة سهم ES6 لأن هذه ممارسة شائعة جدا عند استخدام React. ومع ذلك، أعرف أن هذا مجرد وظيفة. إذا لم تكن على دراية بصيغة وظيفة السهم، يرجى الرجوع إلى قسم JavaScript.
+**Note:** `ChildComponent` is defined with an ES6 arrow function because this is a very common practice when using React.
 
 # --hints--
 

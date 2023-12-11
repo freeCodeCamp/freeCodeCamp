@@ -1,6 +1,6 @@
 ---
 id: 5900f3fd1000cf542c50ff10
-title: 'Problem 145: How many reversible numbers are there below one-billion?'
+title: 'Завдання 145: скільки існує оборотних чисел в межах одного мільярду?'
 challengeType: 1
 forumTopicId: 301774
 dashedName: problem-145-how-many-reversible-numbers-are-there-below-one-billion
@@ -8,11 +8,11 @@ dashedName: problem-145-how-many-reversible-numbers-are-there-below-one-billion
 
 # --description--
 
-Some positive integers $n$ have the property that the sum [ $n + reverse(n)$ ] consists entirely of odd (decimal) digits. For instance, $36 + 63 = 99$ and $409 + 904 = 1313$. We will call such numbers reversible; so 36, 63, 409, and 904 are reversible. Leading zeroes are not allowed in either $n$ or $reverse(n)$.
+Деякі натуральні числа $n$ мають властивість, що сума [ $n + reverse(n)$ ] повністю складається з непарних (десяткових) цифр. Наприклад, $36 + 63 = 99$ та $409 + 904 = 1313$. Називатимемо такі числа оборотними; таким чином 36, 63, 409 і 904 є оборотними. $n$ та $reverse(n)$ не можуть починатись з нуля.
 
-There are 120 reversible numbers below one-thousand.
+Існує 120 оборотних чисел менших за тисячу.
 
-How many reversible numbers are there below one-billion (${10}^9$)?
+Скільки існує оборотних чисел, що менші за один мільярд (${10}^9$)?
 
 # --hints--
 

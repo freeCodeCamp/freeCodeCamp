@@ -4,7 +4,7 @@ const { createFilePath } = require('gatsby-source-filesystem');
 const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
-const env = require('../config/env.json');
+const env = require('./config/env.json');
 
 const {
   createChallengePages,
@@ -74,15 +74,32 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
             edges {
               node {
                 challenge {
+                  audioPath
                   block
                   certification
                   challengeType
+                  dashedName
+                  disableLoopProtectTests
+                  disableLoopProtectPreview
                   fields {
                     slug
+                    blockHashSlug
+                  }
+                  fillInTheBlank {
+                    sentence
+                    blanks {
+                      answer
+                      feedback
+                    }
                   }
                   hasEditableBoundaries
                   id
+                  msTrophyId
                   order
+                  prerequisites {
+                    id
+                    title
+                  }
                   required {
                     link
                     src
@@ -278,10 +295,14 @@ exports.createSchemaCustomization = ({ actions }) => {
       challenge: Challenge
     }
     type Challenge {
+      audioPath: String
       challengeFiles: [FileContents]
       notes: String
       url: String
       assignments: [String]
+      prerequisites: [PrerequisiteChallenge]
+      msTrophyId: String
+      fillInTheBlank: FillInTheBlank
     }
     type FileContents {
       fileKey: String
@@ -291,6 +312,18 @@ exports.createSchemaCustomization = ({ actions }) => {
       head: String
       tail: String
       editableRegionBoundaries: [Int]
+    }
+    type PrerequisiteChallenge {
+      id: String
+      title: String
+    }
+    type FillInTheBlank {
+      sentence: String
+      blanks: [Blank]
+    }
+    type Blank {
+      answer: String
+      feedback: String
     }
   `;
   createTypes(typeDefs);

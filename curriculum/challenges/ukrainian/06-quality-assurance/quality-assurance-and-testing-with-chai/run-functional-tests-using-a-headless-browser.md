@@ -8,7 +8,7 @@ dashedName: run-functional-tests-using-a-headless-browser
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Нагадуємо, що цей проєкт створюється на основі стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 На сторінці знаходиться форма для вхідних даних. Вона надсилає дані до кінцевої точки `PUT /travellers` як запит AJAX.
 
@@ -30,9 +30,9 @@ test('Submit the surname "Polo" in the HTML form', function (done) {
 });
 ```
 
-Спершу метод `fill` об'єкта `browser` заповнює поле форми `surname` зі значенням `'Polo'`. `fill` повертає promise, тому `then` від'єднується.
+Спершу метод `fill` об’єкта `browser` заповнює поле форми `surname` зі значенням `'Polo'`. `fill` повертає проміс, тому `then` від’єднується.
 
-У межах зворотного виклику `then` метод `pressButton` об'єкта `browser` використовується для виклику слухача події форми `submit`. Метод `pressButton` є асинхронним.
+У межах зворотного виклику `then` метод `pressButton` об’єкта `browser` використовується для виклику слухача події форми `submit`. Метод `pressButton` є асинхронним.
 
 Як тільки від запиту AJAX буде отримана відповідь, виникає декілька тверджень:
 

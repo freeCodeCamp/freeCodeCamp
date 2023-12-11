@@ -2,22 +2,22 @@
 
 Деякі з робочих процесів (наприклад, виправлення помилок у кодовій базі) вимагають локального запуску freeCodeCamp.
 
-### Як підготувати локальну машину
+## Як підготувати локальну машину
 
 Для початку встановіть передумовне програмне забезпечення для своєї операційної системи.
 
-#### Передумови
+### Передумови
 
 | Передумова                      | Версія | Примітки                                      |
 | ------------------------------- | ------ | --------------------------------------------- |
 | [Flutter](https://flutter.dev/) | `3.x`  | -                                             |
-| Dart (разом із Flutter)         | `2.x`  | Ми використовуємо версію, з’єднану з Flutter. |
+| Dart (разом із Flutter)         | `3.x`  | Ми використовуємо версію, з’єднану з Flutter. |
 
 > [!ATTENTION] Якщо у вас інша версія, встановіть рекомендовану версію. Ми можемо розв’язати проблеми зі встановленням лише для рекомендованих версій.
 
 Якщо на вашій машині вже встановлено Flutter, запустіть наступні команди для перевірки версій:
 
-```console
+```bash
 flutter --version
 dart --version
 ```
@@ -26,7 +26,7 @@ dart --version
 
 Як тільки ви встановили передумови, потрібно підготувати середовище розробки. Це характерно для багатьох робочих процесів розробки, і це потрібно зробити лише один раз.
 
-##### Виконайте наступні дії, щоб підготувати середовище розробки:
+#### Виконайте наступні дії, щоб підготувати середовище розробки:
 
 1. Встановіть [Git](https://git-scm.com/) або інший клієнт Git, якщо ви досі цього не зробили. Оновіть його до останньої версії; версія, яка пов’язана з вашою ОС, може бути застарілою.
 
@@ -70,7 +70,7 @@ dart --version
 
 2. Клонуйте своє розгалуження freeCodeCamp, замінивши `YOUR_USER_NAME` на ім’я користувача GitHub
 
-   ```console
+   ```bash
    git clone --depth=1 https://github.com/YOUR_USER_NAME/mobile.git
    ```
 
@@ -88,25 +88,25 @@ dart --version
 
 1. Змініть каталог на новий каталог `mobile`:
 
-   ```console
+   ```bash
    cd mobile
    ```
 
 2. Додайте віддалене посилання на головний репозиторій мобільного застосунку freeCodeCamp:
 
-   ```console
+   ```bash
    git remote add upstream https://github.com/freeCodeCamp/mobile.git
    ```
 
 3. Переконайтеся, що конфігурація правильна:
 
-   ```console
+   ```bash
    git remote -v
    ```
 
    Вивід повинен бути схожим на нижчеподаний приклад (замініть `YOUR_USER_NAME` на своє ім’я користувача GitHub):
 
-   ```console
+   ```bash
    origin    https://github.com/YOUR_USER_NAME/mobile.git (fetch)
    origin    https://github.com/YOUR_USER_NAME/mobile.git (push)
    upstream    https://github.com/freeCodeCamp/mobile.git (fetch)
@@ -129,26 +129,22 @@ dart --version
 
 Ключі API та змінні середовища за замовчуванням зберігаються у файлі `sample.env`. Цей файл потрібно скопіювати в новий файл під назвою `.env`, доступ до якого відкривається динамічно на кроці встановлення. Не забудьте змінити каталог на `mobile-app` перед виконанням наступних команд.
 
-```console
+```bash
 # Створіть копію «sample.env» та назвіть її «.env».
 # Заповніть її необхідними ключами та секретами API:
 ```
 
-<!-- tabs:start -->
-
 #### **macOS/Linux**
 
-```console
+```bash
 cp sample.env .env
 ```
 
 #### **Windows**
 
-```console
+```bash
 copy sample.env .env
 ```
-
-<!-- tabs:end -->
 
 Для локального запуску застосунку _необов’язково_ змінювати ключі у файлі `.env`. Ви можете залишити значення за замовчуванням, скопійовані з `sample.env`.
 
@@ -156,7 +152,7 @@ copy sample.env .env
 
 У цьому кроці буде встановлено залежності, необхідні для запуску застосунку:
 
-```console
+```bash
 flutter pub get
 ```
 
@@ -166,7 +162,7 @@ flutter pub get
 
 Тепер ви можете запустити застосунок, виконавши наступну команду:
 
-```console
+```bash
 flutter run
 ```
 
@@ -180,13 +176,13 @@ flutter run
 
 1. Переконайтесь, що знаходитесь на гілці `main`:
 
-   ```console
+   ```bash
    git status
    ```
 
    Ви повинні отримати такий вивід:
 
-   ```console
+   ```bash
    On branch main
    Your branch is up-to-date with 'origin/main'.
 
@@ -195,7 +191,7 @@ flutter run
 
    Якщо ви не перебуваєте на головній гілці (main) або ваш робочий каталог не чистий, розв’яжіть будь-які невиконані файли/затвердження та перевірте `main`:
 
-   ```console
+   ```bash
    git checkout main
    ```
 
@@ -209,25 +205,25 @@ flutter run
 
    Оновіть свою локальну копію віддаленого репозиторію мобільного застосунку freeCodeCamp:
 
-   ```console
+   ```bash
    git fetch upstream
    ```
 
    Скиньте свою головну гілку з головною гілкою мобільного застосунку freeCodeCamp:
 
-   ```console
+   ```bash
    git reset --hard upstream/main
    ```
 
    Перемістіть свою головну гілку до джерела, щоб мати чисту історію розгалуження на GitHub:
 
-   ```console
+   ```bash
    git push origin main --force
    ```
 
    Ви можете переконатись, що ваша поточна головна гілка відповідає upstream/main, виконавши diff:
 
-   ```console
+   ```bash
    git diff upstream/main
    ```
 
@@ -239,7 +235,7 @@ flutter run
 
    Переконайтесь, що знаходитесь на `main` та починайте розгалуження звідси:
 
-   ```console
+   ```bash
    git checkout -b fix/update-guide-for-xyz
    ```
 
@@ -263,13 +259,13 @@ flutter run
 
 7. Перевірте та підтвердьте файли, які оновлюєте:
 
-   ```console
+   ```bash
    git status
    ```
 
    Має з’явитись список файлів `unstaged`, які ви відредагували.
 
-   ```console
+   ```bash
    On branch feat/documentation
    Your branch is up to date with 'upstream/feat/documentation'.
 
@@ -286,25 +282,25 @@ flutter run
 
    У цьому кроці потрібно позначити лише ті файли, які редагували чи додавали самостійно. Якщо необхідно, ви можете виконати скидання та виправити файли, які не збираєтеся змінювати.
 
-   ```console
+   ```bash
    git add path/to/my/changed/file.ext
    ```
 
    Або ви можете додати всі файли `unstaged` до області тимчасового зберігання:
 
-   ```console
+   ```bash
    git add .
    ```
 
    Лише ті файли, які було переміщено до області тимчасового зберігання, будуть додані під час затвердження.
 
-   ```console
+   ```bash
    git status
    ```
 
    Вивід:
 
-   ```console
+   ```bash
    On branch feat/documentation
    Your branch is up to date with 'upstream/feat/documentation'.
 
@@ -317,7 +313,7 @@ flutter run
 
    Тепер ви можете затвердити свої зміни, використовуючи коротке повідомлення:
 
-   ```console
+   ```bash
    git commit -m "fix: my short commit message"
    ```
 
@@ -349,7 +345,7 @@ flutter run
 
 9. Якщо вам потрібно відредагувати файл або оновити повідомлення після створення затвердження, це можна зробити після редагування файлів за допомогою:
 
-   ```console
+   ```bash
    git commit --amend
    ```
 
@@ -357,8 +353,106 @@ flutter run
 
 10. Тепер надішліть свої зміни до розгалуження:
 
-    ```console
+    ```bash
     git push origin branch/name-here
+    ```
+
+## Запуск тестів навчальної програми мобільного застосунку
+
+> [!NOTE] Дотримуйтесь цього розділу, якщо змінюєте тестер завдань у мобільному застосунку. В іншому випадку перейдіть до наступного розділу [як відкрити запит на злиття](#proposing-a-pull-request-pr).
+
+1. Клонуйте копію [репозиторію freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) локально зі своєї локальної копії репозиторію мобільного застосунку freeCodeCamp. Структура файлів має виглядати так:
+
+    ```bash
+    ├── freeCodeCamp
+    ├── mobile
+    ```
+
+2. Змініть каталог на репозиторій freeCodeCamp:
+
+    ```bash
+    cd freeCodeCamp
+    ```
+
+3. Зробіть копію файлу `.env`:
+
+    #### **macOS/Linux**
+
+    ```bash
+    cp sample.env .env
+    ```
+
+    #### **Windows**
+
+    ```bash
+    copy sample.env .env
+    ```
+
+4. Встановіть залежності для репозиторію freeCodeCamp:
+
+    ```bash
+    pnpm install && pnpm run create:shared
+    ```
+
+5. Створіть файл JSON з даними завдань:
+
+    ```bash
+    pnpm run build:curriculum
+    ```
+
+6. Скопіюйте створений файл JSON до мобільного застосунку:
+
+    #### **macOS/Linux**
+
+    ```bash
+    cp ./shared/config/curriculum.json ../mobile/mobile-app/curriculum.json
+    ```
+
+    #### **Windows**
+    ```bash
+    copy .\shared\config\curriculum.json ..\mobile\mobile-app\curriculum.json
+    ```
+
+7. Змініть каталог на мобільний застосунок:
+
+    ```bash
+    cd ../mobile/mobile-app
+    ```
+
+8. Встановіть залежності для мобільного застосунку:
+
+    ```bash
+    flutter pub get
+    ```
+
+9. Оновіть файл тестів, щоб використовувати файл JSON з даними завдань:
+
+    ```bash
+    sed -i '' 's/..\/..\/shared\/config\/curriculum.json/.\/curriculum.json/g' test/widget_test.dart
+    ```
+
+10. Створіть файли завдань:
+
+    ```bash
+    flutter test test/widget_test.dart
+    ```
+
+11. Запустіть локальний сервер для обслуговування файлів завдань за допомогою пакету `serve`:
+
+    ```bash
+    npx serve
+    ```
+
+12. В іншому терміналі поверніться до репозиторію freeCodeCamp:
+
+    ```bash
+    cd ../../freeCodeCamp
+    ```
+
+13. Запустіть тести cypress:
+
+    ```bash
+    pnpm cypress run --config retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/generated-tests/,specPattern=cypress/e2e/mobile-learn/test-challenges.js -s cypress/e2e/mobile-learn/test-challenges.js -b chrome
     ```
 
 ## Запропонуйте запит на злиття (PR)
@@ -388,7 +482,7 @@ A quick reference to the commands that you will need when working locally.
 
 Якщо у вас виникли проблеми з інтерфейсом чи збіркою, може допомогти очищення:
 
-```console
+```bash
 flutter clean
 ```
 

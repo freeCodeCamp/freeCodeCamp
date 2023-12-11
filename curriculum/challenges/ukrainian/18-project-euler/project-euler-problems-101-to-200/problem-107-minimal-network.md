@@ -1,6 +1,6 @@
 ---
 id: 5900f3d91000cf542c50feea
-title: 'Problem 107: Minimal network'
+title: 'Завдання 107: мінімальна мережа'
 challengeType: 1
 forumTopicId: 301731
 dashedName: problem-107-minimal-network
@@ -8,28 +8,28 @@ dashedName: problem-107-minimal-network
 
 # --description--
 
-The following undirected network consists of seven vertices and twelve edges with a total weight of 243.
+Дана неспрямована мережа складається із семи вершин та дванадцяти ребер, що мають загальну вагу 243.
 
-<img class="img-responsive center-block" alt="Network with seven vertices and twelve edges" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Мережа з сімома вершинами та дванадцятьма ребрами" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
 
-The same network can be represented by the matrix below.
+Цю саму мережу можна представити у вигляді матриці.
 
-|   | A  | B  | C  | D  | E  | F  | G  |
+|   | А  | В  | С  | D  | E  | F  | G  |
 | - | -- | -- | -- | -- | -- | -- | -- |
 | A | -  | 16 | 12 | 21 | -  | -  | -  |
-| B | 16 | -  | -  | 17 | 20 | -  | -  |
-| C | 12 | -  | -  | 28 | -  | 31 | -  |
+| В | 16 | -  | -  | 17 | 20 | -  | -  |
+| С | 12 | -  | -  | 28 | -  | 31 | -  |
 | D | 21 | 17 | 28 | -  | 18 | 19 | 23 |
 | E | -  | 20 | -  | 18 | -  | -  | 11 |
 | F | -  | -  | 31 | 19 | -  | -  | 27 |
 | G | -  | -  | -  | 23 | 11 | 27 | -  |
 
 
-However, it is possible to optimise the network by removing some edges and still ensure that all points on the network remain connected. The network which achieves the maximum saving is shown below. It has a weight of 93, representing a saving of 243 − 93 = 150 from the original network.
+Однак можна оптимізувати мережу, видаливши деякі ребра так, щоб точки мережі залишились з’єднаними. Нижче показана максимально оптимізована мережа. Її вага дорівнює 93, а оптимізація менша на 243 − 93 = 150 у порівнянні з вихідною мережею.
 
-<img class="img-responsive center-block" alt="Network with seven vertices and left six edges: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Мережа з сімома вершинами та шістьма ребрами, що залишились: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
 
-Using `network`, an 2D array representing network in matrix form, find the maximum saving which can be achieved by removing redundant edges whilst ensuring that the network remains connected. Vertices not having connection will be represented with `-1`.
+Використовуючи 2D масив `network`, який представляє мережу у формі матриці, знайдіть максимальний рівень оптимізації, якого можна досягти, усунувши зайві ребра, щоб при цьому мережа залишалась з’єднаною. Вершини без з’єднання представлені у вигляді `-1`.
 
 # --hints--
 

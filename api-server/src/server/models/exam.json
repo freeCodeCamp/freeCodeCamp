@@ -1,0 +1,70 @@
+{
+  "name": "Exam",
+  "description": "Exam questions for exam style challenges",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "strict": true
+  },
+  "properties": {
+    "numberOfQuestionsInExam": {
+      "type": "number",
+      "required": true
+    },
+    "passingPercent": {
+      "type": "number",
+      "required": true
+    },
+    "prerequisites": {
+      "type": [
+        {
+          "id": "string",
+          "title": "string"
+        }
+      ]
+    },
+    "questions": {
+      "type": [
+        {
+          "id": "string",
+          "question": "string",
+          "wrongAnswers": {
+            "type": [
+              {
+                "id": "string",
+                "answer": "string"
+              }
+            ],
+            "required": true
+          },
+          "correctAnswers": {
+            "type": [
+              {
+                "id": "string",
+                "answer": "string"
+              }
+            ],
+            "required": true
+          }
+        }
+      ],
+      "required": true,
+      "itemType": "Question"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

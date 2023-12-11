@@ -23,7 +23,7 @@ describe('add-video-question plugin', () => {
   });
 
   it('should generate a question object from a video challenge AST', () => {
-    expect.assertions(8);
+    expect.assertions(10);
     plugin(mockVideoAST, file);
     const testObject = file.data.question;
     expect(Object.keys(testObject).length).toBe(3);
@@ -33,7 +33,9 @@ describe('add-video-question plugin', () => {
     expect(typeof testObject.solution).toBe('number');
     expect(testObject).toHaveProperty('answers');
     expect(Array.isArray(testObject.answers)).toBe(true);
-    expect(typeof testObject.answers[0]).toBe('string');
+    expect(typeof testObject.answers[0]).toBe('object');
+    expect(testObject.answers[0]).toHaveProperty('answer');
+    expect(testObject.answers[0]).toHaveProperty('feedback');
   });
 
   it('should convert question and answer markdown into html', () => {
@@ -46,12 +48,19 @@ describe('add-video-question plugin', () => {
         '</code></pre>'
     );
     expect(testObject.solution).toBe(3);
-    expect(testObject.answers[0]).toBe('<p>Some inline <code>code</code></p>');
-    expect(testObject.answers[1]).toBe(`<p>Some <em>italics</em></p>
-<p>A second answer paragraph.</p>`);
-    expect(testObject.answers[2]).toBe(
-      '<p><code> code in </code> code tags</p>'
-    );
+    expect(testObject.answers[0]).toStrictEqual({
+      answer: '<p>Some inline <code>code</code></p>',
+      feedback: '<p>That is not correct.</p>'
+    });
+    expect(testObject.answers[1]).toStrictEqual({
+      answer: `<p>Some <em>italics</em></p>
+<p>A second answer paragraph.</p>`,
+      feedback: null
+    });
+    expect(testObject.answers[2]).toStrictEqual({
+      answer: '<p><code> code in </code> code tags</p>',
+      feedback: null
+    });
   });
 
   // TODO: consider testing for more specific messages.  Ideally we them to say

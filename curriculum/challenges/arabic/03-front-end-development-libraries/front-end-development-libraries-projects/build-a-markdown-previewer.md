@@ -7,30 +7,31 @@ dashedName: build-a-markdown-previewer
 ---
 
 # --description--
+**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-**متطلبات:** أنشئ تطبيق يشبه وظيفيا إلي <a href="https://markdown-previewer.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://markdown-previewer.freecodecamp.rocks/</a>.
+**Objective:** Build an app that is functionally similar to this: <a href="https://markdown-previewer.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://markdown-previewer.freecodecamp.rocks/</a>.
 
-أكمل قصص المستخدم بالأسفل وأجتاز جميع الاختبارات للنجاح. استخدم أي libraries أو APIs تحتاج إليها. أعطيها أسلوبك الشخصي الخاص.
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-يمكنك استخدام أي مزيج من HTML و JavaScript و CSS و Bootstrap و SASS و React و Redux و jQuery لإكمال هذا المشروع. يجب عليك استخدام frontend framework (مثل React على سبيل المثال) لأن هذا القسم يدور حول تعلم frontend framework. لا ينصح باستخدام التكنولوجيات الإضافية غير المدرجة أعلاه و استخدامها على مسؤوليتك الخاصة. ونحن ننظر في دعم frontend frameworks أخرى، مثل Angular و Vue، ولكنها غير مدعومة حاليا. سنقبل ونحاول إصلاح جميع تقارير المشكلات التي تستخدم حُزْمَة التكنولوجيات المقترحة لهذا المشروع. برمجة سعيدة!
+You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-**قصة المستخدم #1:** يمكنني أن أرى عنصر `textarea` مع مطابقة `id="editor"`.
+**User Story #1:** I can see a `textarea` element with a corresponding `id="editor"`.
 
-**قصة المستخدم #2:** يمكنني رؤية عنصر مع `id="preview"`.
+**User Story #2:** I can see an element with a corresponding `id="preview"`.
 
-**قصة المستخدم #3:** عندما أدخل النص في `#editor` عنصر, يتم تحديث عنصر `#preview` عندما أكتب لعرض محتوى النصوص.
+**User Story #3:** When I enter text into the `#editor` element, the `#preview` element is updated as I type to display the content of the textarea.
 
-**قصة المستخدم #4:** عندما أدخل علامة GitHub في `#editor`، يتم تقديم النص كعنصر HTML في `#preview` كما أكتبه (تلميح: لا تحتج إلى تحليل Markdown بنفسك - يمكنك استيراد المكتبة المعلَّمة لهذا الغرض: <https://cdnjs.com/libraries/marked>).
+**User Story #4:** When I enter GitHub flavored markdown into the `#editor` element, the text is rendered as HTML in the `#preview` element as I type (HINT: You don't need to parse Markdown yourself - you can import the Marked library for this: <https://cdnjs.com/libraries/marked>).
 
-**قصة المستخدم #5:** عندما تقوم معاينة العلامات بالتحميل أول مرة، النص الافتراضي في `#editor` الحقل يجب أن يحتوي على علامة صحيحة تمثل في الأقل واحدا من كل عنصر من العناصر التالية: عنصر العنوان (H1 size)، عنصر عنوان فرعي (H2 size)، ورابط (link)، ورمز داخلي (inline code)، وكتلة رموز (code block)، وعنصر قائمة (list item)، وكتلة (blockquote)، صورة (image) ونص بحروف داكنة (bolded text).
+**User Story #5:** When my markdown previewer first loads, the default text in the `#editor` field should contain valid markdown that represents at least one of each of the following elements: a heading element (H1 size), a sub heading element (H2 size), a link, inline code, a code block, a list item, a blockquote, an image, and bolded text.
 
-**قصة المستخدم #6:** عندما تقوم معاينة العلامات (markdown previewer) بالتحميل أول مرة، يجب تقديم العلامات (markdown) الافتراضية في الحقل `#editor` تتكون من HTML في عنصر `#preview`.
+**User Story #6:** When my markdown previewer first loads, the default markdown in the `#editor` field should be rendered as HTML in the `#preview` element.
 
-**أختبار اختياري (أنت لست بحاجة إلى اجتياز هذا الاختبار):** عينة العرض الخاص بي تفسر إرجاع النقل وتجعلها كعناصر `br` (راحة سطر).
+**Optional Bonus (you do not need to make this test pass):** My markdown previewer interprets carriage returns and renders them as `br` (line break) elements.
 
-يمكنك بناء مشروعك عن طريق <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">استخدام هذا نموذج CodePen</a> والنقر على `Save` لإنشاء طبقيك الخاص بك. أو يمكنك استخدام رابط CDN هذا لتشغيل الاختبارات في أي بيئة تفضلها: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-بمجرد أن تنتهي، أرسل عنوان URL لمشروع العمل الخاص بك مع اجتياز جميع الاختبارات.
+Once you're done, submit the URL to your working project with all its tests passing.
 
 # --solutions--
 

@@ -23,7 +23,7 @@ dashedName: apply-the-flex-direction-property-to-create-a-column-in-the-tweet-em
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
 ```
 
-Елемент `.profile-name` повинен мати властивість `flex-direction`, встановлену як `column`.
+Елемент `.profile-name` повинен мати властивість `flex-direction` зі значенням `column`.
 
 ```js
 assert($('.profile-name').css('flex-direction') == 'column');

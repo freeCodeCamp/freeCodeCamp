@@ -1,6 +1,6 @@
 ---
 id: 5900f3931000cf542c50fea5
-title: 'Problem 38: Pandigital multiples'
+title: 'Завдання 38: панцифрові кратні числа'
 challengeType: 1
 forumTopicId: 302042
 dashedName: problem-38-pandigital-multiples
@@ -8,17 +8,17 @@ dashedName: problem-38-pandigital-multiples
 
 # --description--
 
-Take the number 192 and multiply it by each of 1, 2, and 3:
+Візьміть число 192 та помножте його на 1, 2 і 3:
 
 $$\begin{align}   192 × 1 = 192\\\\
   192 × 2 = 384\\\\   192 × 3 = 576\\\\
 \end{align}$$
 
-By concatenating each product we get the 1 to 9 pandigital, 192384576. We will call 192384576 the concatenated product of 192 and (1, 2, 3).
+Об’єднавши кожний добуток, ми отримаємо панцифрове число від 1 до 9: 192384576. Назвемо 192384576 об’єднаним добутком 192 та (1, 2, 3).
 
-The same can be achieved by starting with 9 and multiplying by 1, 2, 3, 4, and 5, giving the pandigital, 918273645, which is the concatenated product of 9 and (1, 2, 3, 4, 5).
+Те ж саме можна отримати, якщо почати з числа 9 та перемножити його на 1, 2, 3, 4 і 5, утворивши панцифрове число 918273645, яке є об’єднаним добутком 9 та (1, 2, 3, 4, 5).
 
-What is the largest 1 to `k` pandigital `k`-digit number that can be formed as the concatenated product of an integer with (1, 2, ..., `n`) where `n` > 1?
+Яке найбільше `k`-значне панцифрове число від 1 до `k` можна сформувати як об’єднаний добуток цілого числа з (1, 2, ..., `n`), де `n` > 1?
 
 # --hints--
 

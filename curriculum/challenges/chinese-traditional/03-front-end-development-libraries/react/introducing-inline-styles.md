@@ -30,7 +30,7 @@ JSX 元素使用 `style` 屬性，但是鑑於 JSX 的編譯方式，不能將�
 
 在代碼編輯器中給 `div` 添加一個 `style` 屬性，將文本顏色設置爲紅色，字體大小設置爲 `72px`。
 
-請注意，可以選擇將字體大小設置爲數字，省略單位 `px`，或者將其寫爲 `72px`。
+Note that you can optionally set the font size to be a number, omitting the units `px`, or write it as `"72px"`.
 # --hints--
 
 組件應該渲染一個 `div` 元素。

@@ -9,85 +9,85 @@
   "required": [],
   "superBlock": "coding-interview-prep",
   "challengeOrder": [
-    [
-      "bd7158d8c442eddfaeb5bd10",
-      "Show the Local Weather"
-    ],
-    [
-      "bd7158d8c442eddfaeb5bd19",
-      "Build a Wikipedia Viewer"
-    ],
-    [
-      "bd7158d8c442eddfaeb5bd1f",
-      "Use the Twitch JSON API"
-    ],
-    [
-      "bd7158d8c443edefaeb5bdee",
-      "Build an Image Search Abstraction Layer"
-    ],
-    [
-      "bd7158d8c442eedfaeb5bd1c",
-      "Build a Tic Tac Toe Game"
-    ],
-    [
-      "bd7158d8c442eddfaeb5bd1c",
-      "Build a Simon Game"
-    ],
-    [
-      "bd7156d8c242eddfaeb5bd13",
-      "Build a freeCodeCamp Forum Homepage"
-    ],
-    [
-      "bd7155d8c242eddfaeb5bd13",
-      "Build a Recipe Box"
-    ],
-    [
-      "bd7154d8c242eddfaeb5bd13",
-      "Build the Game of Life"
-    ],
-    [
-      "bd7153d8c242eddfaeb5bd13",
-      "Build a Roguelike Dungeon Crawler Game"
-    ],
-    [
-      "bd7150d8c442eddfafb5bd1c",
-      "P2P Video Chat Application"
-    ],
-    [
-      "bd7198d8c242eddfaeb5bd13",
-      "Show National Contiguity with a Force Directed Graph"
-    ],
-    [
-      "bd7108d8c242eddfaeb5bd13",
-      "Map Data Across the Globe"
-    ],
-    [
-      "bd7158d8c443eddfaeb5bd0f",
-      "Manage a Book Trading Club"
-    ],
-    [
-      "bd7158d8c443eddfaeb5bdee",
-      "Build a Pinterest Clone"
-    ],
-    [
-      "bd7158d8c443eddfaeb5bdff",
-      "Build a Nightlife Coordination App"
-    ],
-    [
-      "bd7158d8c443eddfaeb5bd0e",
-      "Chart the Stock Market"
-    ],
-    [
-      "bd7158d8c443eddfaeb5bdef",
-      "Build a Voting App"
-    ],
-    [
-      "5a4b7fcdb66f799f199e11db",
-      "Build a Pong Game"
-    ],
-    [
-      "5a5d02bd919fcf9ca8cf46cb",
-      "Build a Light-Bright App"
-    ]
+    {
+      "id": "bd7158d8c442eddfaeb5bd10",
+      "title": "Show the Local Weather"
+    },
+    {
+      "id": "bd7158d8c442eddfaeb5bd19",
+      "title": "Build a Wikipedia Viewer"
+    },
+    {
+      "id": "bd7158d8c442eddfaeb5bd1f",
+      "title": "Use the Twitch JSON API"
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bdee",
+      "title": "Build an Image Search Abstraction Layer"
+    },
+    {
+      "id": "bd7158d8c442eedfaeb5bd1c",
+      "title": "Build a Tic Tac Toe Game"
+    },
+    {
+      "id": "bd7158d8c442eddfaeb5bd1c",
+      "title": "Build a Simon Game"
+    },
+    {
+      "id": "bd7156d8c242eddfaeb5bd13",
+      "title": "Build a freeCodeCamp Forum Homepage"
+    },
+    {
+      "id": "bd7155d8c242eddfaeb5bd13",
+      "title": "Build a Recipe Box"
+    },
+    {
+      "id": "bd7154d8c242eddfaeb5bd13",
+      "title": "Build the Game of Life"
+    },
+    {
+      "id": "bd7153d8c242eddfaeb5bd13",
+      "title": "Build a Roguelike Dungeon Crawler Game"
+    },
+    {
+      "id": "bd7150d8c442eddfafb5bd1c",
+      "title": "P2P Video Chat Application"
+    },
+    {
+      "id": "bd7198d8c242eddfaeb5bd13",
+      "title": "Show National Contiguity with a Force Directed Graph"
+    },
+    {
+      "id": "bd7108d8c242eddfaeb5bd13",
+      "title": "Map Data Across the Globe"
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bd0f",
+      "title": "Manage a Book Trading Club"
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bdee",
+      "title": "Build a Pinterest Clone"
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bdff",
+      "title": "Build a Nightlife Coordination App"
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bd0e",
+      "title": "Chart the Stock Market"
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bdef",
+      "title": "Build a Voting App"
+    },
+    {
+      "id": "5a4b7fcdb66f799f199e11db",
+      "title": "Build a Pong Game"
+    },
+    {
+      "id": "5a5d02bd919fcf9ca8cf46cb",
+      "title": "Build a Light-Bright App"
+    }
   ]
 }

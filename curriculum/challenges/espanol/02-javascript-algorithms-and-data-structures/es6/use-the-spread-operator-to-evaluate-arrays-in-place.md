@@ -28,7 +28,13 @@ const maximus = Math.max(...arr);
 
 `maximus` tendría un valor de `89`.
 
-`...arr` devuelve un arreglo desempacado. En otras palabras, *propaga* el arreglo. Sin embargo, el operador de propagación sólo funciona en el lugar, como en un argumento de función o en un arreglo literal. El siguiente código no funcionará:
+`...arr` devuelve un arreglo desempacado. In other words, it spreads the array. Sin embargo, el operador de propagación sólo funciona en el lugar, como en un argumento de función o en un arreglo literal. For example:
+
+```js
+const spreaded = [...arr];
+```
+
+However, the following code will not work:
 
 ```js
 const spreaded = ...arr;
@@ -36,23 +42,23 @@ const spreaded = ...arr;
 
 # --instructions--
 
-Copia todo el contenido de `arr1` en otro arreglo `arr2` usando el operador de propagación.
+Copy all contents of `arr1` into another array `arr2` using the spread operator.
 
 # --hints--
 
-`arr2` debe ser una copia correcta de `arr1`.
+`arr2` should be correct copy of `arr1`.
 
 ```js
 assert(arr2.every((v, i) => v === arr1[i]) && arr2.length);
 ```
 
-El operador de propagación `...` debe utilizarse para duplicar `arr1`.
+`...` spread operator should be used to duplicate `arr1`.
 
 ```js
 assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
 ```
 
-`arr2` debe permanecer sin cambios cuando `arr1` cambie.
+`arr2` should remain unchanged when `arr1` is changed.
 
 ```js
 assert((arr1, arr2) => {

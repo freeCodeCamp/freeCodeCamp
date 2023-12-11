@@ -16,7 +16,7 @@ Se sei su un sistema operativo diverso o continui ad avere dei problemi, visita 
 
 When you build the client, Gatsby will cache the Fonts, language strings, and UI. Se uno di loro non è memorizzato nella cache, esegui quanto segue:
 
-```console
+```bash
 pnpm run clean
 pnpm install
 pnpm run seed
@@ -31,7 +31,7 @@ Usa la scorciatoia
 pnpm run clean-and-develop
 ```
 
-Se continui a incontrare problemi con il build, è consigliato ripulire lo spazio di lavoro.
+If you continue to face issues with the build, cleaning up the workspace is recommended.
 
 Usa `git clean` in modalità interattiva:
 
@@ -50,29 +50,15 @@ git clean -ifdX
 
 ## Issues with API, login, Challenge Submissions, etc.
 
-Se non riesci ad accedere e invece vedi un banner con un messaggio di errore che verrà segnalato a freeCodeCamp, ti preghiamo di controllare che la porta locale `3000` non sia utilizzata da un programma diverso.
+If you can't sign in, and instead you see a banner with an error message saying that the error will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
-<!-- tabs:start -->
-
-#### **macOS/Linux/WSL su Windows - dal terminale:**
-
-```console
+#### **From Terminal:**
+```bash
 netstat -a | grep "3000"
 
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-#### **Su Windows - PowerShell con privilegi elevati:**
-
-```powershell
-netstat -ab | Select-String "3000"
-
-TCP    0.0.0.0:3000           DESKTOP      LISTENING
-```
-
-<!-- tabs:end -->
-
----
 
 ## Issues Signing Out while Navigating
 
@@ -93,6 +79,10 @@ Se incontri degli errori durante l'installazione delle dipendenze, assicurati di
 La prima configurazione può richiedere un po' di tempo a seconda della larghezza di banda della rete. Be patient, and if you are still stuck we recommend using Gitpod instead of an offline setup.
 
 > [!NOTE] Se stai usando un dispositivo Apple con Chip M1 per eseguire l'applicazione in locale, suggeriamo di usare Node v14.7 o superiore. Altrimenti potresti avere problemi con dipendenze come Sharp.
+
+## Working With Other Languages
+
+To see how the client renders in another language go to [testing the client app in a world language.](how-to-work-on-localized-client-webapp.md#Testing-the-Client-App-in-a-World-Language)
 
 ## Getting Help
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f3d61000cf542c50fee8
-title: 'Problem 105: Special subset sums: testing'
+title: 'Завдання 105: суми особливих підмножин (тестування)'
 challengeType: 1
 forumTopicId: 301729
 dashedName: problem-105-special-subset-sums-testing
@@ -8,16 +8,16 @@ dashedName: problem-105-special-subset-sums-testing
 
 # --description--
 
-Let $S(A)$ represent the sum of elements in set A of size n. We shall call it a special sum set if for any two non-empty disjoint subsets, B and C, the following properties are true:
+Нехай $S(A)$ є сумою елементів множини A розміру n. Назвемо це особливою множиною сум, якщо для будь-яких двох непорожніх й неперетинних множин В і С виконуються умови:
 
-1. $S(B) ≠ S(C)$; that is, sums of subsets cannot be equal.
-2. If B contains more elements than C then $S(B) > S(C)$.
+1. $S(B) ≠ S(C)$; тобто суми підмножин не можуть бути рівними.
+2. Якщо B містить більше елементів ніж C, тоді $S(B) > S(C)$.
 
-For example, {81, 88, 75, 42, 87, 84, 86, 65} is not a special sum set because 65 + 87 + 88 = 75 + 81 + 84, whereas {157, 150, 164, 119, 79, 159, 161, 139, 158} satisfies both rules for all possible subset pair combinations and $S(A) = 1286$.
+Наприклад, {81, 88, 75, 42, 87, 84, 86, 65} не є особливою множиною сум, оскільки 65 + 87 + 88 = 75 + 81 + 84, а {157, 150, 164, 119, 79, 159, 161, 139, 158} задовільняє обидва правила для всіх можливих комбінацій підмножин та $S(A) = 1286$.
 
-Using `sets`, an array with one-hundred sets, containing seven to twelve elements (the two examples given above are the first two sets), identify all the special sum sets, $A_1, A_2, \ldots, A_k$, and find the value of $(A_1) + S(A_2) + \cdots + S(A_k)$.
+Вам надано масив `sets` з сотнею множин, які містять від семи до дванадцяти елементів (два приклади зверху є першими двома множинами). Знайдіть всі особливі множини сум $A_1, A_2, \ldots, A_k$ та знайдіть значення $(A_1) + S(A_2) + \cdots + S(A_k)$.
 
-**Note:** This problem is related to Problem 103 and Problem 106.
+**Примітка:** це завдання пов’язане із завданнями №103 та №106.
 
 # --hints--
 

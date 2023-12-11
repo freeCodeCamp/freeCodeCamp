@@ -8,7 +8,6 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { dasherize } from '../../../../../utils/slugs';
 import Login from '../../../components/Header/components/login';
 import { executeGA } from '../../../redux/actions';
 import {
@@ -22,9 +21,10 @@ import {
   isCompletionModalOpenSelector,
   successMessageSelector,
   challengeFilesSelector,
-  challengeMetaSelector
+  challengeMetaSelector,
+  isSubmittingSelector
 } from '../redux/selectors';
-import ProgressBar from '../../../components/ProgressBar';
+import Progress from '../../../components/Progress';
 import GreenPass from '../../../assets/icons/green-pass';
 
 import './completion-modal.css';
@@ -37,23 +37,26 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   allChallengesInfoSelector,
   successMessageSelector,
-
+  isSubmittingSelector,
   (
     challengeFiles: ChallengeFiles,
-    { title }: { title: string; id: string },
+    { dashedName, id }: { dashedName: string; id: string },
     completedChallengesIds: string[],
     isOpen: boolean,
     isSignedIn: boolean,
     allChallengesInfo: AllChallengesInfo,
-    message: string
+    message: string,
+    isSubmitting: boolean
   ) => ({
     challengeFiles,
-    title,
+    id,
+    dashedName,
     completedChallengesIds,
     isOpen,
     isSignedIn,
     allChallengesInfo,
-    message
+    message,
+    isSubmitting
   })
 );
 
@@ -144,18 +147,24 @@ class CompletionModal extends Component<
   }
 
   render(): JSX.Element {
-    const { close, isOpen, isSignedIn, message, t, title, submitChallenge } =
-      this.props;
+    const {
+      close,
+      isOpen,
+      isSignedIn,
+      isSubmitting,
+      message,
+      t,
+      dashedName,
+      submitChallenge
+    } = this.props;
 
     if (isOpen) {
       executeGA({ event: 'pageview', pagePath: '/completion-modal' });
     }
-    // normally dashedName should be graphQL queried and then passed around,
-    // but it's only used to make a nice filename for downloading, so dasherize
-    // is fine here.
-    const dashedName = dasherize(title);
+
     return (
       <Modal
+        data-cy='completion-modal'
         animation={false}
         bsSize='lg'
         dialogClassName='challenge-success-modal'
@@ -176,10 +185,11 @@ class CompletionModal extends Component<
             <GreenPass
               className='completion-success-icon'
               data-testid='fcc-completion-success-icon'
+              data-playwright-test-label='completion-success-icon'
             />
           </div>
           <div className='completion-block-details'>
-            <ProgressBar />
+            <Progress />
           </div>
         </Modal.Body>
         <Modal.Footer>
@@ -190,6 +200,8 @@ class CompletionModal extends Component<
             block={true}
             bsSize='large'
             bsStyle='primary'
+            disabled={isSubmitting}
+            data-cy='submit-challenge'
             onClick={() => submitChallenge()}
           >
             {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}

@@ -8,7 +8,7 @@ dashedName: testing-objects-for-properties
 
 # --description--
 
-To check if a property on a given object exists or not, you can use the `.hasOwnProperty()` method. `someObject.hasOwnProperty(someProperty)` returns `true` or `false` depending on if the property is found on the object or not.
+要检查某个对象是否具有一个属性，你可以使用 `.hasOwnProperty()` 方法。 根据对象是否具有该属性，`someObject.hasOwnProperty(someProperty)` 返回 `true` 或 `false`。
 
 **示例**
 
@@ -21,11 +21,11 @@ checkForProperty({ top: 'hat', bottom: 'pants' }, 'top'); // true
 checkForProperty({ top: 'hat', bottom: 'pants' }, 'middle'); // false
 ```
 
-The first `checkForProperty` function call returns `true`, while the second returns `false`.
+第一个 `checkForProperty` 函数返回 `true`，第二个返回 `false`。
 
 # --instructions--
 
-Modify the function `checkObj` to test if the object passed to the function parameter `obj` contains the specific property passed to the function parameter `checkProp`. If the property passed to `checkProp` is found on `obj`, return that property's value. If not, return `Not Found`.
+修改函数 `checkObj` 以检查传给函数参数的对象 `obj` 是否包含传给函数参数的属性 `checkProp`。 如果在 `obj` 中找到传给 `checkProp` 的属性，则返回该属性的值。 如果没有，则返回 `Not Found`。
 
 # --hints--
 

@@ -8,13 +8,13 @@ dashedName: perform-new-updates-on-a-document-using-model-findoneandupdate
 
 # --description--
 
-Neuere Versionen von Mongoose verfügen über Methoden zur Vereinfachung der Aktualisierung von Dokumenten. Einige fortgeschrittene Funktionen (z. B. Pre/Post-Hooks, Validierung) verhalten sich bei diesem Ansatz anders, so dass die klassische Methode in vielen Situationen immer noch nützlich ist. `findByIdAndUpdate()` can be used when searching by id.
+Neuere Versionen von Mongoose verfügen über Methoden zur Vereinfachung der Aktualisierung von Dokumenten. Einige fortgeschrittene Funktionen (z. B. Pre/Post-Hooks, Validierung) verhalten sich bei diesem Ansatz anders, so dass die klassische Methode in vielen Situationen immer noch nützlich ist. `findByIdAndUpdate()` kann bei der Suche über die ID verwendet werden.
 
 # --instructions--
 
 Ändere die `findAndUpdate`-Funktion, um eine Person durch `Name` zu finden und setze das Alter der Person auf `20`. Verwende den Funktionsparameter `personName` als Suchbegriff.
 
-**Note:** You should return the updated document. Dazu musst du das Options-Dokument `{ new: true }` als das 3. Argument an `findOneAndUpdate()` übergeben. Standardmäßig geben diese Methoden das unveränderte Objekt zurück.
+**Hinweis:** Du solltest das aktualisierte Dokument zurückgeben. Dazu musst du das Options-Dokument `{ new: true }` als das 3. Argument an `findOneAndUpdate()` übergeben. Standardmäßig geben diese Methoden das unveränderte Objekt zurück.
 
 # --hints--
 

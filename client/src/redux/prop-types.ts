@@ -1,7 +1,7 @@
 import { HandlerProps } from 'react-reflex';
-import { SuperBlocks } from '../../../config/certification-settings';
+import { SuperBlocks } from '../../../shared/config/superblocks';
 import { Themes } from '../components/settings/theme';
-import { fullCertMap } from '../resources/cert-and-project-map';
+import { type CertTitle } from '../../config/cert-and-project-map';
 
 export type Steps = {
   isHonest?: boolean;
@@ -26,7 +26,7 @@ export type MarkdownRemark = {
     superBlock: SuperBlocks;
     // TODO: make enum like superBlock
     certification: string;
-    title: (typeof fullCertMap)[number]['title'];
+    title: CertTitle;
   };
   headings: [
     {
@@ -47,12 +47,28 @@ export type MarkdownRemark = {
   };
 };
 
-type Question = {
+export type MultipleChoiceAnswer = {
+  answer: string;
+  feedback: string | null;
+};
+
+export type Question = {
   text: string;
-  answers: string[];
+  answers: MultipleChoiceAnswer[];
   solution: number;
 };
-type Fields = { slug: string; blockName: string; tests: Test[] };
+
+export type FillInTheBlank = {
+  sentence: string;
+  blanks: MultipleChoiceAnswer[];
+};
+
+export type Fields = {
+  slug: string;
+  blockHashSlug: string;
+  blockName: string;
+  tests: Test[];
+};
 type Required = {
   link: string;
   raw: boolean;
@@ -71,6 +87,11 @@ export interface VideoLocaleIds {
   portuguese?: string;
 }
 
+export interface PrerequisiteChallenge {
+  id: string;
+  title: string;
+}
+
 export type ChallengeWithCompletedNode = {
   block: string;
   challengeType: number;
@@ -87,6 +108,7 @@ export type ChallengeWithCompletedNode = {
 
 export type ChallengeNode = {
   challenge: {
+    audioPath: string;
     block: string;
     certification: string;
     challengeOrder: number;
@@ -95,6 +117,7 @@ export type ChallengeNode = {
     description: string;
     challengeFiles: ChallengeFiles;
     fields: Fields;
+    fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
     guideUrl: string;
     head: string[];
@@ -113,7 +136,9 @@ export type ChallengeNode = {
       owner: string;
       type: string;
     };
+    msTrophyId: string;
     notes: string;
+    prerequisites: PrerequisiteChallenge[];
     removeComments: boolean;
     isLocked: boolean;
     isPrivate: boolean;
@@ -193,6 +218,7 @@ export type User = {
   about: string;
   acceptedPrivacyTerms: boolean;
   completedChallenges: CompletedChallenge[];
+  completedSurveys: SurveyResults[];
   currentChallengeId: string;
   email: string;
   emailVerified: boolean;
@@ -218,8 +244,7 @@ export type User = {
   twitter: string;
   username: string;
   website: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  yearsTopContributor: any[];
+  yearsTopContributor: string[];
 } & ClaimedCertifications;
 
 export type ProfileUI = {
@@ -242,6 +267,7 @@ export type ClaimedCertifications = {
   isDataVisCert: boolean;
   isEmailVerified: boolean;
   isCollegeAlgebraPyCertV8: boolean;
+  isFoundationalCSharpCertV8: boolean;
   isFrontEndCert: boolean;
   isFrontEndLibsCert: boolean;
   isFullStackCert: boolean;
@@ -282,6 +308,7 @@ export type CompletedChallenge = {
   challengeFiles:
     | Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>[]
     | null;
+  examResults?: GeneratedExamResults;
 };
 
 export type Ext = 'js' | 'html' | 'css' | 'jsx';
@@ -299,6 +326,8 @@ export type ChallengeMeta = {
   title?: string;
   challengeType?: number;
   helpCategory: string;
+  disableLoopProtectTests: boolean;
+  disableLoopProtectPreview: boolean;
 };
 
 export type PortfolioProjectData = {
@@ -309,7 +338,7 @@ export type PortfolioProjectData = {
   description: string;
 };
 
-type FileKeyChallenge = {
+export type FileKeyChallenge = {
   contents: string;
   ext: Ext;
   head: string;
@@ -325,7 +354,7 @@ export type ChallengeFile = {
   name: string;
   editableRegionBoundaries?: number[];
   usesMultifileEditor?: boolean;
-  error: null | string | unknown;
+  error: null | string;
   head: string;
   tail: string;
   seed: string;
@@ -341,4 +370,65 @@ export interface UserFetchState {
   complete: boolean;
   errored: boolean;
   error: string | null;
+}
+
+// Exam Related Types:
+interface GeneratedExamAnswer {
+  id: string;
+  answer: string;
+}
+
+// Generated Exam (from API)
+export interface GeneratedExamQuestion {
+  id: string;
+  question: string;
+  answers: GeneratedExamAnswer[];
+}
+
+export interface GenerateExamResponse {
+  error?: string;
+  generatedExam?: GeneratedExamQuestion[];
+}
+
+export interface GenerateExamResponseWithData {
+  response: Response;
+  data: GenerateExamResponse;
+}
+
+// User Exam (null until they answer the question)
+interface UserExamAnswer {
+  id: string | null;
+  answer: string | null;
+}
+
+export interface UserExamQuestion {
+  id: string;
+  question: string;
+  answer: UserExamAnswer;
+}
+
+export interface UserExam {
+  examTimeInSeconds: number;
+  userExamQuestions: UserExamQuestion[];
+}
+
+// Exam Results (from API)
+export interface GeneratedExamResults {
+  numberOfCorrectAnswers: number;
+  numberOfQuestionsInExam: number;
+  percentCorrect: number;
+  passingPercent: number;
+  passed: boolean;
+  examTimeInSeconds: number;
+}
+
+// Survey related types
+export interface SurveyResponse {
+  question: string;
+  response: string;
+}
+
+export interface SurveyResults {
+  title: string;
+  responses: SurveyResponse[];
 }

@@ -91,7 +91,7 @@ Alguns exemplos de bons títulos de PRs seriam:
 
    - Isso é muito importante quando se está fazendo mudanças que não são apenas edições no conteúdo do texto como a documentação ou descrição de um desafio. Exemplos de mudanças que precisam ser testadas localmente incluem JavaScript, CSS ou HTML que podem mudar a funcionalidade ou aparência de uma página.
 
-   - Se seu PR afeta o comportamento de uma página ele deve estar acompanhado pelo correspondente [teste de integração Cypress](how-to-add-cypress-tests.md).
+   - Se seu PR afeta o comportamento de uma página, ele deve estar acompanhado pelo correspondente [teste de integração Cypress](how-to-add-cypress-tests.md).
 
 ## Comentários nos pull requests
 
@@ -107,7 +107,7 @@ E como sempre, fique à vontade em perguntar na [categoria 'Contributors' (colab
 
 Conflitos podem surgir porque muitos colaboradores trabalham no repositório, e as alterações podem afetar o seu PR, que está aguardando uma revisão e mesclagem.
 
-Na maioria das vezes, você pode não precisar de um rebase, porque nós comprimimos todos os commits. No entanto, se for solicitada uma rebase, é isso que você deve fazer.
+Como fazemos o squash de todos os commits, você pode não precisar fazer o rebase.  Porém, se um rebase for solicitado, verifique nossos guias [Para os consertos de bugs e recursos comuns](#for-usual-bug-fixes-and-features) ou [Para o currículo futuro e recursos](#for-upcoming-curriculum-and-features) para saber como fazer esse processo para seu PR correspondente.
 
 ### Para funcionalidades e correções de erros comuns
 
@@ -115,14 +115,14 @@ Quando se está trabalhando em erros normais e funcionalidades no seu branch `ma
 
 1. Faça um rebase na sua cópia local:
 
-   ```console
+   ```bash
    git checkout <pr-branch>
    git pull --rebase upstream main
    ```
 
 2. Resolva quaisquer conflitos e adicione / edite commits
 
-   ```console
+   ```bash
    # isso
    git add .
    git commit -m "chore: resolve conflitos"
@@ -134,17 +134,17 @@ Quando se está trabalhando em erros normais e funcionalidades no seu branch `ma
 
 3. Faça um push das suas alterações para o PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch>
    ```
 
 ### Para o próximo currículo e próximas funcionalidades
 
-Quando você estiver trabalhando em funcionalidades para nossos próximos branches `next-*` de currículo, você tem que fazer um cherry pick:
+Quando você estiver trabalhando em funcionalidades para nossos próximos branches `next-*` de currículo, você tem que fazer um `cherry-pick`:
 
 1. Certifique-se de que seu upstream esteja sincronizado com seu local:
 
-   ```console
+   ```bash
    git checkout main
    git fetch --all --prune
    git checkout next-python-projects
@@ -155,7 +155,7 @@ Quando você estiver trabalhando em funcionalidades para nossos próximos branch
 
    a. Exclua seu branch local depois de ter feito um backup (se você ainda o tem localmente):
 
-   ```console
+   ```bash
    git checkout <pr-branch-nome>
 
    # exemplo:
@@ -169,9 +169,9 @@ Quando você estiver trabalhando em funcionalidades para nossos próximos branch
    git branch -D <pr-branch-nome>
    ```
 
-   b. Ou apenas faça um backup do seu branch de pr (se você não o tem localmente):
+   b. Ou apenas faça um backup do seu branch de PR (se você não o tem localmente):
 
-   ```console
+   ```bash
    git checkout -b <backup-branch-nome> origin/<pr-branch-nome>
 
    # exemplo:
@@ -180,14 +180,14 @@ Quando você estiver trabalhando em funcionalidades para nossos próximos branch
 
 3. Comece do zero:
 
-   ```console
+   ```bash
    git checkout -b <pr-branch-nome> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
 4. Resolva os conflitos, faça a limpeza, instale as dependências e execute os testes
 
-   ```console
+   ```bash
    pnpm run clean
 
    pnpm install
@@ -201,6 +201,6 @@ Quando você estiver trabalhando em funcionalidades para nossos próximos branch
 
 5. Se tudo estiver correto, faça um push ao PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch-nome>
    ```

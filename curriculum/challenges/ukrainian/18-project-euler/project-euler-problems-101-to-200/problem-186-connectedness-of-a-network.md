@@ -1,6 +1,6 @@
 ---
 id: 5900f4281000cf542c50ff39
-title: 'Problem 186: Connectedness of a network'
+title: 'Завдання 186: підключення до мережі'
 challengeType: 1
 forumTopicId: 301822
 dashedName: problem-186-connectedness-of-a-network
@@ -8,26 +8,26 @@ dashedName: problem-186-connectedness-of-a-network
 
 # --description--
 
-Here are the records from a busy telephone system with one million users:
+Ось записи із зайнятої телефонної мережі з мільйоном користувачів:
 
-| RecNr | Caller | Called |
-| ----- | ------ | ------ |
-| 1     | 200007 | 100053 |
-| 2     | 600183 | 500439 |
-| 3     | 600863 | 701497 |
-| ...   | ...    | ...    |
+| №   | Хто телефонує | Кому телефонують |
+| --- | ------------- | ---------------- |
+| 1   | 200007        | 100053           |
+| 2   | 600183        | 500439           |
+| 3   | 600863        | 701497           |
+| ... | ...           | ...              |
 
-The telephone number of the caller and the called number in record $n$ are $Caller(n) = S_{2n - 1}$ and $Called(n) = S_{2n}$ where ${S}_{1,2,3,\ldots}$ come from the "Lagged Fibonacci Generator":
+Мобільним номером абонента та набраним номером у записі №$n$ є $Caller(n) = S_{2n - 1}$ та $Called(n) = S_{2n}$, де ${S}_{1,2,3,\ldots}$ утворюються за допомогою генератора Фібоначчі:
 
-For $1 ≤ k ≤ 55$, $S_k = [100003 - 200003k + 300007{k}^3]\\;(\text{modulo}\\;1000000)$
+За умови $1 ≤ k ≤ 55$, $S_k = [100003 - 200003k + 300007{k}^3]\\;(\text{modulo}\\;1000000)$
 
-For $56 ≤ k$, $S_k = [S_{k - 24} + S_{k - 55}]\\;(\text{modulo}\\;1000000)$
+За умови $56 ≤ k$, $S_k = [S_{k - 24} + S_{k - 55}]\\;(\text{modulo}\\;1000000)$
 
-If $Caller(n) = Called(n)$ then the user is assumed to have misdialled and the call fails; otherwise the call is successful.
+Якщо $Caller(n) = Called(n)$, то вважається, що користувач помилився номером і стався збій виклику. В іншому випадку виклик успішний.
 
-From the start of the records, we say that any pair of users $X$ and $Y$ are friends if $X$ calls $Y$ or vice-versa. Similarly, $X$ is a friend of a friend of $Z$ if $X$ is a friend of $Y$ and $Y$ is a friend of $Z$; and so on for longer chains.
+Починаючи з першого запису ми кажемо, що будь-яка пара користувачів $X$ та $Y$ є друзями, якщо $X$ телефонує $Y$ або навпаки. Аналогічно, $X$ є другом друга $Z$, якщо $X$ є другом $Y$ та $Y$ є другом $Z$; і так далі в довших ланцюжках.
 
-The Prime Minister's phone number is 524287. After how many successful calls, not counting misdials, will 99% of the users (including the PM) be a friend, or a friend of a friend etc., of the Prime Minister?
+Мобільний номер прем’єр-міністра: 524287. Після скількох успішних викликів, не враховуючи збої викликів, 99% користувачів (включно з прем’єр-міністром) стануть друзями прем’єр-міністра, друзями його друзів і т. д.?
 
 # --hints--
 

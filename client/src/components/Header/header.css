@@ -1,9 +1,10 @@
-header {
-  top: 0;
+.site-header {
   position: fixed;
+  top: 0;
   width: 100%;
-  z-index: 200;
+  z-index: var(--z-index-site-header);
 }
+
 .skip-to-content-button {
   position: absolute;
   top: var(--header-height);
@@ -13,6 +14,7 @@ header {
   padding-inline: 1.5em;
   left: -1000px;
 }
+
 .skip-to-content-button:focus {
-  left: 0px;
+  left: 0;
 }

@@ -16,7 +16,7 @@ The fibonacci sequence $f(n)$ is defined by: $f(0) = 0$, $f(1) = 1$ and $f(n) = 
 
 The sequence $b(n)$ is defined as $f(a(n))$.
 
-Find $\sum b(n)$ for $1≤n≤100\\,000$. Give your answer $\bmod 1\\,234\\,567\\,891\\,011$.
+Знайдіть $\sum b(n)$ за умови $1≤n≤100\\,000$. Give your answer $\bmod 1\\,234\\,567\\,891\\,011$.
 
 # --hints--
 

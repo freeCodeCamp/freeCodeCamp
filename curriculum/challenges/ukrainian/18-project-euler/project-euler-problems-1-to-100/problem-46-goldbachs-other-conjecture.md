@@ -1,6 +1,6 @@
 ---
 id: 5900f39a1000cf542c50fead
-title: 'Problem 46: Goldbach''s other conjecture'
+title: 'Завдання 46: інша гіпотеза Гольдбаха'
 challengeType: 1
 forumTopicId: 302134
 dashedName: problem-46-goldbachs-other-conjecture
@@ -8,7 +8,7 @@ dashedName: problem-46-goldbachs-other-conjecture
 
 # --description--
 
-It was proposed by Christian Goldbach that every odd composite number can be written as the sum of a prime and twice a square.
+Християн Гольдбах припустив, що кожне непарне складене число можна записати як суму простого числа й подвоєного квадрата.
 
 <div style='margin-left: 2em;'>
   9 = 7 + 2×1<sup>2</sup><br>
@@ -19,9 +19,9 @@ It was proposed by Christian Goldbach that every odd composite number can be wri
   33 = 31 + 2×1<sup>2</sup>
 </div>
 
-It turns out that the conjecture was false.
+Однак гіпотеза виявилася помилковою.
 
-What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
+Яке найменше непарне складене число неможливо записати як суму простого числа й подвоєного квадрата?
 
 # --hints--
 

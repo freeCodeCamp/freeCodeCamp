@@ -19,7 +19,7 @@ dashedName: use-abbreviated-hex-code
 
 Спробуйте використовувати скорочені шіснадцяткові коди, що зафарбувати потрібні елементи.
 
-<table class='table table-striped'><tbody><tr><th>Колір</th><th>Короткий hex-код</th></tr><tr><td>Блакитний</td><td><code>#0FF</code></td></tr><tr><td>Зелений</td><td><code>#0F0</code></td></tr><tr><td>Червоний</td><td><code>#F00</code></td></tr><tr><td>Фуксія</td><td><code>#F0F</code></td></tr></tbody></table>
+<table><tbody><tr><th>Колір</th><th>Короткий hex-код</th></tr><tr><td>Блакитний</td><td><code>#0FF</code></td></tr><tr><td>Зелений</td><td><code>#0F0</code></td></tr><tr><td>Червоний</td><td><code>#F00</code></td></tr><tr><td>Фуксія</td><td><code>#F0F</code></td></tr></tbody></table>
 
 # --hints--
 

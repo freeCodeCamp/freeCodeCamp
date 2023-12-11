@@ -7,133 +7,133 @@
   "time": "15 hours",
   "superBlock": "machine-learning-with-python",
   "challengeOrder": [
-    [
-      "5e8f2f13c4cdbe86b5c72d87",
-      "Introduction: Machine Learning Fundamentals"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d88",
-      "Introduction to TensorFlow"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d89",
-      "Core Learning Algorithms"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d8a",
-      "Core Learning Algorithms: Working with Data"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d8b",
-      "Core Learning Algorithms: Training and Testing Data"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d8c",
-      "Core Learning Algorithms: The Training Process"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d8d",
-      "Core Learning Algorithms: Classification"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d8e",
-      "Core Learning Algorithms: Building the Model"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d8f",
-      "Core Learning Algorithms: Clustering"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d90",
-      "Core Learning Algorithms: Hidden Markov Models"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d91",
-      "Core Learning Algorithms: Using Probabilities to make Predictions"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d92",
-      "Neural Networks with TensorFlow"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d93",
-      "Neural Networks: Activation Functions"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d94",
-      "Neural Networks: Optimizers"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d95",
-      "Neural Networks: Creating a Model"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d96",
-      "Convolutional Neural Networks"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d97",
-      "Convolutional Neural Networks: The Convolutional Layer"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d98",
-      "Creating a Convolutional Neural Network"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d99",
-      "Convolutional Neural Networks: Evaluating the Model"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d9a",
-      "Convolutional Neural Networks: Picking a Pretrained Model"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d9b",
-      "Natural Language Processing With RNNs"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d9c",
-      "Natural Language Processing With RNNs: Part 2"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d9d",
-      "Natural Language Processing With RNNs: Recurring Neural Networks"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d9e",
-      "Natural Language Processing With RNNs: Sentiment Analysis"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72d9f",
-      "Natural Language Processing With RNNs: Making Predictions"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72da0",
-      "Natural Language Processing With RNNs: Create a Play Generator"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72da1",
-      "Natural Language Processing With RNNs: Building the Model"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72da2",
-      "Natural Language Processing With RNNs: Training the Model"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72da3",
-      "Reinforcement Learning With Q-Learning"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72da4",
-      "Reinforcement Learning With Q-Learning: Part 2"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72da5",
-      "Reinforcement Learning With Q-Learning: Example"
-    ],
-    [
-      "5e8f2f13c4cdbe86b5c72da6",
-      "Conclusion"
-    ]
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d87",
+      "title": "Introduction: Machine Learning Fundamentals"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d88",
+      "title": "Introduction to TensorFlow"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d89",
+      "title": "Core Learning Algorithms"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d8a",
+      "title": "Core Learning Algorithms: Working with Data"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d8b",
+      "title": "Core Learning Algorithms: Training and Testing Data"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d8c",
+      "title": "Core Learning Algorithms: The Training Process"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d8d",
+      "title": "Core Learning Algorithms: Classification"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d8e",
+      "title": "Core Learning Algorithms: Building the Model"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d8f",
+      "title": "Core Learning Algorithms: Clustering"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d90",
+      "title": "Core Learning Algorithms: Hidden Markov Models"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d91",
+      "title": "Core Learning Algorithms: Using Probabilities to make Predictions"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d92",
+      "title": "Neural Networks with TensorFlow"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d93",
+      "title": "Neural Networks: Activation Functions"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d94",
+      "title": "Neural Networks: Optimizers"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d95",
+      "title": "Neural Networks: Creating a Model"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d96",
+      "title": "Convolutional Neural Networks"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d97",
+      "title": "Convolutional Neural Networks: The Convolutional Layer"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d98",
+      "title": "Creating a Convolutional Neural Network"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d99",
+      "title": "Convolutional Neural Networks: Evaluating the Model"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d9a",
+      "title": "Convolutional Neural Networks: Picking a Pretrained Model"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d9b",
+      "title": "Natural Language Processing With RNNs"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d9c",
+      "title": "Natural Language Processing With RNNs: Part 2"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d9d",
+      "title": "Natural Language Processing With RNNs: Recurring Neural Networks"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d9e",
+      "title": "Natural Language Processing With RNNs: Sentiment Analysis"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72d9f",
+      "title": "Natural Language Processing With RNNs: Making Predictions"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72da0",
+      "title": "Natural Language Processing With RNNs: Create a Play Generator"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72da1",
+      "title": "Natural Language Processing With RNNs: Building the Model"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72da2",
+      "title": "Natural Language Processing With RNNs: Training the Model"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72da3",
+      "title": "Reinforcement Learning With Q-Learning"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72da4",
+      "title": "Reinforcement Learning With Q-Learning: Part 2"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72da5",
+      "title": "Reinforcement Learning With Q-Learning: Example"
+    },
+    {
+      "id": "5e8f2f13c4cdbe86b5c72da6",
+      "title": "Conclusion"
+    }
   ]
 }

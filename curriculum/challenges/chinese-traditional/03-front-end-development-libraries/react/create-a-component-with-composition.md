@@ -28,7 +28,7 @@ return (
 
 在代碼編輯器中，有一個名爲 `ChildComponent` 的簡單函數組件和一個名爲 `ParentComponent` 的 React 組件。 通過在 `ParentComponent` 中渲染 `ChildComponent` 來將兩者組合在一起。 確保使用正斜槓關閉 `ChildComponent` 標籤。
 
-**注意：** `ChildComponent` 是使用 ES6 的箭頭函數定義的，這是使用 React 時非常常見的做法。 但是，要知道這只是一個函數。 如果你不熟悉箭頭函數語法，請參閱 JavaScript 部分。
+**Note:** `ChildComponent` is defined with an ES6 arrow function because this is a very common practice when using React.
 
 # --hints--
 

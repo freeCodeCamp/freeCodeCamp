@@ -28,7 +28,7 @@ return (
 
 在代码编辑器中，有一个名为 `ChildComponent` 的简单函数组件和一个名为 `ParentComponent` 的 React 组件。 通过在 `ParentComponent` 中渲染 `ChildComponent` 来将两者组合在一起。 确保使用正斜杠关闭 `ChildComponent` 标签。
 
-**注意：** `ChildComponent` 是使用 ES6 的箭头函数定义的，这是使用 React 时非常常见的做法。 但是，要知道这只是一个函数。 如果你不熟悉箭头函数语法，请参阅 JavaScript 部分。
+**Note:** `ChildComponent` is defined with an ES6 arrow function because this is a very common practice when using React.
 
 # --hints--
 

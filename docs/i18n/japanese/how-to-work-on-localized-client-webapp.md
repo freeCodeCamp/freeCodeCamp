@@ -8,15 +8,15 @@ Once you have set up the project locally you should be able to follow this docum
 
 これは、ローカライゼーションを含むものを対象にし、例えば別の言語でボタンラベルを検証する必要がある機能に関して作業している場合に役立ちます。
 
-> [!TIP] freeCodeCamp のカリキュラムやコントリビューションドキュメントを翻訳するために、このドキュメントに従う必要はありません。 代わりに、[このガイド](how-to-translate-files.md) をお読みください。
+> [!TIP] You do not need to follow this document to translate freeCodeCamp's curriculum or contributing documentation. 代わりに、[このガイド](how-to-translate-files.md) をお読みください。
 
 i18n フレームワークとツールがどのように機能するかを理解しましょう。
 
 ## ファイル構成
 
-Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. 各言語には、翻訳付きの JSON ファイルを含むディレクトリがあります。
+Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. Each language has a directory that contains JSON files with the translations.
 
-```console
+```bash
   config
   └── i18n.ts
   ...
@@ -55,7 +55,7 @@ Most of the files for translating the platform are located in the [`client/i18n`
   └── validate-keys.ts
 ```
 
-Some of these files are translated on our translation platform (Crowdin) and some are translated or created via PR's on GitHub.
+Some of these files are translated on our translation platform (Crowdin) and some are translated or created via PRs on GitHub.
 
 **翻訳プラットフォーム上で翻訳されたファイル:**
 
@@ -75,7 +75,7 @@ Some of these files are translated on our translation platform (Crowdin) and som
 
 ## Testing the Client App in a World Language
 
-You can test the client app in any language available in the [list of `availableLangs` here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
+You can test the client app in any language available in the [list of `availableLangs` here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts).
 
 ```js
 export const availableLangs = {
@@ -97,7 +97,7 @@ export const availableLangs = {
 
 新しい言語をテストするには、言語名をタイトルとしたフォルダを他の言語の隣に作成し、JSON ファイルを別の言語から新しいフォルダにコピーします。
 
-Add the new language to the `Languages` enum and the `client` array at the top of the [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file.
+Add the new language to the `Languages` enum and the `client` array at the top of the [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts) file.
 
 次に、同じファイルのコメント指示に従って、必要に応じて残りの変数を追加 / 更新します。
 
@@ -266,7 +266,11 @@ const email = 'team@freecodecamp.org';
 
 > [!NOTE] The underscore (`_`) is a reserved character for keys in the client-side files. 使用方法については、 [ドキュメント](https://www.i18next.com/translation-function/plurals) を参照してください。
 
-## 参考ドキュメント
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+
+## Helpful Documentation
 
 - [react-i18next docs](https://react.i18next.com/latest/usetranslation-hook)
 - [i18next docs](https://www.i18next.com/translation-function/essentials)

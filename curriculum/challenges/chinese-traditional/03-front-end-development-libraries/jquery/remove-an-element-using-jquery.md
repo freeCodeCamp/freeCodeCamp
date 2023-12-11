@@ -10,7 +10,7 @@ dashedName: remove-an-element-using-jquery
 
 現在學習用 jQuery 從頁面移除 HTML 標籤。
 
-jQuery has a function called `.remove()` that will remove an HTML element entirely.
+jQuery 有一個名爲 `.remove()` 的函數，它將完全刪除一個 HTML 元素。
 
 用 `.remove()` 方法從頁面移除 `#target4` 元素。
 

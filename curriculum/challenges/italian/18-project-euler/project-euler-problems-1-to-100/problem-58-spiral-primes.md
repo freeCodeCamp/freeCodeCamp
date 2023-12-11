@@ -22,7 +22,7 @@ Partendo da 1 e proseguendo a spirale antioraria come di seguito, si forma una s
 
 È interessante notare che i quadrati dispari si trovano lungo la diagonale in basso a destra, ma ciò che è più interessante è che 8 dei 13 numeri che si trovano lungo entrambe le diagonali sono primi, cioè un rapporto di 8/13 ≈ 62%.
 
-Se un nuovo strato completo è avvolto intorno alla spirale sopra, verrà formata una spirale quadrata con lunghezza laterale di 9. If this process is continued, what is the side length of the square spiral for which the percent of primes along both diagonals first falls below `percent`?
+Se un nuovo strato completo è avvolto intorno alla spirale sopra, verrà formata una spirale quadrata con lunghezza laterale di 9. Se si prosegue con questo processo, qual è la lunghezza laterale della spirale quadrata per la quale la percentuale di primi lungo entrambe le diagonali cade prima al di sotto di `percent`?
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f38c1000cf542c50fe9f
-title: 'Problem 32: Pandigital products'
+title: 'Завдання 32: панцифрові добутки'
 challengeType: 1
 forumTopicId: 301976
 dashedName: problem-32-pandigital-products
@@ -8,13 +8,13 @@ dashedName: problem-32-pandigital-products
 
 # --description--
 
-We shall say that an `n`-digit number is pandigital if it makes use of all the digits 1 to `n` exactly once; for example, the 5-digit number, 15234, is 1 through 5 pandigital.
+`n`-цифрове число називають панцифровим, якщо воно містить всі цифри від 1 до `n` лише один раз. Наприклад, п’ятизначне число 15234 є панцифровим, оскільки містить цифри від 1 до 5.
 
-The product 7254 is unusual, as the identity, 39 × 186 = 7254, containing multiplicand, multiplier, and product is 1 through 9 pandigital.
+Добуток 7254 є незвичайним, бо рівність 39 × 186 = 7254, яка складається з двох множників та добутку, є панцифровою, оскільки містить цифри від 1 до 9.
 
-Find the sum of all products whose multiplicand/multiplier/product identity can be written as a 1 through `n` pandigital.
+Знайдіть суму всіх добутків, рівність яких можна записати у вигляді панцифрової від 1 до `n`.
 
-**Hint:** Some products can be obtained in more than one way so be sure to only include it once in your sum.
+**Підказка:** деякі добутки можна отримати декількома способами, тому переконайтесь, що ви використали його лише один раз.
 
 # --hints--
 

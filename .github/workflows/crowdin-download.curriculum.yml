@@ -2,8 +2,8 @@ name: i18n - Download Curriculum
 on:
   workflow_dispatch:
   schedule:
-    # runs every weekday at 12:30 PM UTC
-    - cron: '30 12 * * 1-5'
+    # runs Monday and Wednesday at 12:15 PM UTC
+    - cron: '15 12 * * 1,3'
 
 env:
   GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
@@ -14,15 +14,15 @@ env:
 jobs:
   i18n-download-curriculum-translations:
     name: Curriculum
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
       fail-fast: true
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
         with:
           token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 
@@ -274,6 +274,36 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
+          ##### Download Swahili #####
+      - name: Crowdin Download Swahili Translations
+        uses: crowdin/github-action@master
+        # options: https://github.com/crowdin/github-action/blob/master/action.yml
+        with:
+          # uploads
+          upload_sources: false
+          upload_translations: false
+          auto_approve_imported: false
+          import_eq_suggestions: false
+
+          # downloads
+          download_translations: true
+          download_language: sw
+          skip_untranslated_strings: false
+          skip_untranslated_files: false
+          export_only_approved: true
+
+          push_translations: false
+
+          # pull-request
+          create_pull_request: false
+
+          # global options
+          config: './crowdin-config.yml'
+          base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
+
+          # Uncomment below to debug
+          # dryrun_action: true
+
       # Validate the Download #
       # All languages should go ABOVE this. #
       - name: Setup pnpm
@@ -282,7 +312,7 @@ jobs:
           version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
+        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
@@ -297,13 +327,9 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-          pnpm run create:config
+          pnpm run create:shared
           pnpm run build:curriculum
           pnpm run build:server
-
-      - name: Lint and Format Files
-        run: |
-          pnpm run format:curriculum
 
       # We do not need to run tests because they are run after the PR is created.
 

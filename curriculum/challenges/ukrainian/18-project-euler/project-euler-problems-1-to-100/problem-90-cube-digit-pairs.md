@@ -1,6 +1,6 @@
 ---
 id: 5900f3c61000cf542c50fed9
-title: 'Problem 90: Cube digit pairs'
+title: 'Завдання 90: пари цифр на кубиках'
 challengeType: 1
 forumTopicId: 302207
 dashedName: problem-90-cube-digit-pairs
@@ -8,28 +8,28 @@ dashedName: problem-90-cube-digit-pairs
 
 # --description--
 
-Each of the six faces on a cube has a different digit (0 to 9) written on it; the same is done to a second cube. By placing the two cubes side-by-side in different positions we can form a variety of 2-digit numbers.
+На кожній із шести граней куба написана інша цифра (від 0 до 9); те саме зроблено і з другим кубом. Розмістивши два кубики поруч у різних положеннях, ми можемо сформувати різноманітні двозначні числа.
 
-For example, the square number 64 could be formed:
+Наприклад, можна сформувати квадратне число 64:
 
-<img class="img-responsive center-block" alt="two cubes, one with the number 6 and the other with number 4" src="https://cdn-media-1.freecodecamp.org/project-euler/cube-digit-pairs.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="два куби: один з числом 6, інший з числом 4" src="https://cdn-media-1.freecodecamp.org/project-euler/cube-digit-pairs.png" style="background-color: white; padding: 10px;" />
 
-In fact, by carefully choosing the digits on both cubes it is possible to display all of the square numbers below one-hundred: 01, 04, 09, 16, 25, 36, 49, 64, and 81.
+Взагалі, ретельно вибираючи цифри на обох кубах, можна зобразити всі квадратні числа, які менші ніж сто: 01, 04, 09, 16, 25, 36, 49, 64 та 81.
 
-For example, one way this can be achieved is by placing {0, 5, 6, 7, 8, 9} on one cube and {1, 2, 3, 4, 8, 9} on the other cube.
+Наприклад, можна вибрати {0, 5, 6, 7, 8, 9} на одному кубі та {1, 2, 3, 4, 8, 9} на іншому кубі.
 
-However, for this problem we shall allow the 6 or 9 to be turned upside-down so that an arrangement like {0, 5, 6, 7, 8, 9} and {1, 2, 3, 4, 6, 7} allows for all nine square numbers to be displayed; otherwise it would be impossible to obtain 09.
+У цьому завданні потрібно допустити, щоб 6 або 9 були перевернутими, щоб варіанти типу {0, 5, 6, 7, 8, 9} і {1, 2, 3, 4, 6, 7} дозволяли відображати всі дев’ять квадратних чисел. В іншому випадку було б неможливо отримати 09.
 
-In determining a distinct arrangement we are interested in the digits on each cube, not the order.
+Встановлюючи чітке розташування, нас цікавлять цифри на кожному кубі, а не їхній порядок.
 
 <div style="margin-left: 4em;">
-  {1, 2, 3, 4, 5, 6} is equivalent to {3, 6, 4, 1, 2, 5}<br>
-  {1, 2, 3, 4, 5, 6} is distinct from {1, 2, 3, 4, 5, 9}
+  {1, 2, 3, 4, 5, 6} еквівалентне {3, 6, 4, 1, 2, 5}<br>
+  {1, 2, 3, 4, 5, 6} відрізняється від {1, 2, 3, 4, 5, 9}
 </div>
 
-But because we are allowing 6 and 9 to be reversed, the two distinct sets in the last example both represent the extended set {1, 2, 3, 4, 5, 6, 9} for the purpose of forming 2-digit numbers.
+Але оскільки ми допускаємо, щоб 6 та 9 були перевернутими, то дві різні множини в попередньому прикладі зображають розширену множину {1, 2, 3, 4, 5, 6, 9} для формування двозначних чисел.
 
-How many distinct arrangements of the two cubes allow for all of the square numbers to be displayed?
+Скільки різних варіантів розташування цифр на двох кубах дозволяють показати всі квадратні числа?
 
 # --hints--
 

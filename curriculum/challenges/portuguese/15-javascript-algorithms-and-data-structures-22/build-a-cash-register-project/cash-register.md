@@ -20,7 +20,7 @@ Retorne `{status: "CLOSED", change: [...]}` com dinheiro no caixa como o valor p
 
 Caso contrário, retorne `{status: "OPEN", change: [...]}`, com o troco devido em moedas e notas, ordenado do maior para o menor, como o valor da chave `change`.
 
-<table class='table table-striped'><tbody><tr><th>Unidade de moeda</th><th>Quantidade</th></tr><tr><td>Penny</td><td>$0,01 (PENNY)</td></tr><tr><td>Nickel</td><td>$0,05 (NICKEL)</td></tr><tr><td>Dime</td><td>$0,1 (DIME)</td></tr><tr><td>Quarter</td><td>$0,25 (QUARTER)</td></tr><tr><td>Dólar</td><td>$1 (ONE)</td></tr><tr><td>Cinco dólares</td><td>$5 (FIVE)</td></tr><tr><td>Dez dólares</td><td>$10 (TEN)</td></tr><tr><td>Vinte dólares</td><td>$20 (TWENTY)</td></tr><tr><td>Cem dólares</td><td>$100 (ONE HUNDRED)</td></tr></tbody></table>
+<table><tbody><tr><th>Unidade de moeda</th><th>Quantidade</th></tr><tr><td>Penny</td><td>$0,01 (PENNY)</td></tr><tr><td>Nickel</td><td>$0,05 (NICKEL)</td></tr><tr><td>Dime</td><td>$0,1 (DIME)</td></tr><tr><td>Quarter</td><td>$0,25 (QUARTER)</td></tr><tr><td>Dólar</td><td>$1 (ONE)</td></tr><tr><td>Cinco dólares</td><td>$5 (FIVE)</td></tr><tr><td>Dez dólares</td><td>$10 (TEN)</td></tr><tr><td>Vinte dólares</td><td>$20 (TWENTY)</td></tr><tr><td>Cem dólares</td><td>$100 (ONE HUNDRED)</td></tr></tbody></table>
 
 Veja abaixo um exemplo de um array de dinheiro no caixa (cid):
 

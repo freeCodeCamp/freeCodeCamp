@@ -8,9 +8,9 @@ dashedName: seek-and-destroy
 
 # --description--
 
-你將獲得一個初始數組（`destroyer` 函數中的第一個參數），後跟一個或多個參數。 從初始數組中移除所有與後續參數相等的元素。
+You will be provided with an initial array as the first argument to the `destroyer` function, followed by one or more arguments. 從初始數組中移除所有與後續參數相等的元素。
 
-**注意：** 你可以使用 `arguments` 對象。
+The function must accept an indeterminate number of arguments, also known as a variadic function. You can access the additional arguments by adding a rest parameter to the function definition or using the `arguments` object.
 
 # --hints--
 

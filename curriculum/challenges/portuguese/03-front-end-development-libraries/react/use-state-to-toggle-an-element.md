@@ -65,7 +65,7 @@ assert.strictEqual(
 );
 ```
 
-Clicar no elemento do botão deve alternar a propriedade `visibility` no state entre `true` e `false`.
+Clicar no elemento do botão deve alternar a propriedade `visibility` no state entre `true` e `false` e renderizar condicionalmente o elemento `h1`.
 
 ```js
 (() => {
@@ -76,11 +76,11 @@ Clicar no elemento do botão deve alternar a propriedade `visibility` no state e
   };
   const second = () => {
     mockedComponent.find('button').simulate('click');
-    return mockedComponent.state('visibility');
+    return mockedComponent.state('visibility') && mockedComponent.find('h1').exists();
   };
   const third = () => {
     mockedComponent.find('button').simulate('click');
-    return mockedComponent.state('visibility');
+    return mockedComponent.state('visibility') && mockedComponent.find('h1').exists();
   };
   const firstValue = first();
   const secondValue = second();

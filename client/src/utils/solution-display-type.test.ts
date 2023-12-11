@@ -6,7 +6,7 @@ import {
   onlyGithubLink,
   onlySolution,
   withChallenges
-} from './__fixtures/completed-challenges';
+} from './__fixtures__/completed-challenges';
 import { getSolutionDisplayType } from './solution-display-type';
 
 describe('getSolutionDisplayType', () => {

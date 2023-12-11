@@ -1,6 +1,6 @@
 # Налаштування freeCodeCamp на Windows Subsystem for Linux (WSL)
 
-> [!NOTE] Перш ніж виконувати ці інструкції, переконайтеся, що ваша система відповідає вимогам
+> [!NOTE] Перш ніж виконувати ці інструкції, переконайтеся, що ваша система відповідає вимогам.
 > 
 > **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 чи вище) — доступно для всіх дистрибутивів, включно з Windows 10 Home.
 > 
@@ -10,7 +10,7 @@
 
 ## Активуйте WSL
 
-Дотримуйтесь інструкцій з [офіційної документації](https://docs.microsoft.com/en-us/windows/wsl/install-win10), щоб встановити WSL1 та оновити його до WSL2.
+Дотримуйтесь інструкцій з [офіційної документації](https://docs.microsoft.com/en-us/windows/wsl/install-win10), щоб встановити WSL2.
 
 ## Встановіть Ubuntu
 
@@ -20,9 +20,11 @@
    > 
    > Ви можете використовувати інші дистрибутиви, основою яких не є Debian, але у них наявні певні недоліки та вони виходять за рамки цього посібника.
 
+   Станом на листопад 2023 року, Ubuntu та Debian є єдиними дистрибутивами Linux, [офіційно підтримуваними Playwright](https://playwright.dev/docs/intro#system-requirements) — наскрізною тестовою бібліотекою, яку використовує freeCodeCamp.
+
 2. Оновіть залежності ОС
 
-   ```console
+   ```bash
    sudo apt update
    sudo apt upgrade -y
 
@@ -48,9 +50,9 @@ git version 2.25.1
 
 По суті, ви змінюватимете та зберігатимете свій код на Ubuntu-18.04 із VS Code, встановленим на Windows.
 
-Якщо ви використовуєте [IntelliJ Idea](https://www.jetbrains.com/idea/), можливо, вам знадобиться оновити інтерпретатор Node та керування пакунками Npm до версії, налаштованої у вашому дистрибутиві WSL.
+Якщо ви використовуєте [IntelliJ Idea](https://www.jetbrains.com/idea/), можливо, вам знадобиться оновити інтерпретатор Node та керування пакунками npm до версії, налаштованої у вашому дистрибутиві WSL.
 
-Ви можете перевірити ці налаштування в розділі Settings > Languages & Frameworks > Node.js and NPM.
+Ви можете перевірити ці налаштування в розділі Settings > Languages & Frameworks > Node.js and npm.
 
 ## Встановлення Docker Desktop
 
@@ -70,23 +72,23 @@ git version 2.25.1
 
 Як тільки ви налаштували Docker Desktop для роботи з WSL2, дотримуйтесь цих кроків, щоб запустити службу MongoDB:
 
-1. Запустіть новий термінал Ubuntu-18.04
+1. Запустіть новий термінал Ubuntu
 
-2. Витягніть `MongoDB 4.0.x` із dockerhub
+2. Витягніть MongoDB із Docker Hub. Будь ласка, зверніться до таблиці з [передумовами](how-to-setup-freecodecamp-locally.md#Prerequisites) поточної версії MongoDB, яку використовує freeCodeCamp. Наприклад, якщо номером версії є `5.0.x`, замініть `<x.y>` на `5.0` у двох наступних фрагментах коду.
 
-   ```console
-   docker pull mongo:4.0
+   ```bash
+   docker pull mongo:<x.y>
    ```
 
 3. Запустіть службу MongoDB на порті `27017` та налаштуйте її на автоматичний запуск після перезавантаження системи
 
-   ```console
+   ```bash
    docker run -it \
      -v mongodata:/data/db \
      -p 27017:27017 \
      --name mongodb \
      --restart unless-stopped \
-     -d mongo:4.0
+     -d mongo:<x.y>
    ```
 
 4. Тепер ви можете отримати доступ до служби з Windows чи Ubuntu на `mongodb://localhost:27017`.
@@ -95,25 +97,17 @@ git version 2.25.1
 
 Ми рекомендуємо встановити випуск LTS для Node.js за допомогою Node Version Manager ([nvm](https://github.com/nvm-sh/nvm#installing-and-updating)).
 
-Як тільки його буде встановлено, використайте ці команди, щоб встановити та використовувати версію Node.js за потреби:
+Як тільки його буде встановлено, використайте цю команду, щоб встановити та використовувати найновішу версію LTS Node.js:
 
-```console
+```bash
 nvm install --lts
-
-# АБО
-# nvm install <version>
-
-nvm install 14
-
-# Використання
-# nvm use <version>
-
-nvm use 12
 ```
+
+Для інструкцій з встановлення та використання іншої версії Node.js, будь ласка, зверніться до [документації nvm](https://github.com/nvm-sh/nvm#usage).
 
 Node.js надходить разом з `npm`, який можна використати для встановлення `pnpm`:
 
-```console
+```bash
 npm install -g pnpm
 ```
 
@@ -124,6 +118,103 @@ npm install -g pnpm
 > [!WARNING]
 > 
 > Зауважте, що наразі налаштування тестів Cypress (та пов’язаних потреб GUI) знаходяться в стадії розробки. Ви повинні вміти працювати над більшою частиною кодової бази.
+
+## Оптимізуйте Windows та WSL
+
+   > [!NOTE]
+   > 
+   > Наступні поради були зібрані з різних джерел і не пройшли високоякісне тестування. Ваш результат може відрізнятися.
+
+### Налаштування розкладу процесора для фонових служб
+
+Це може знизити випадки збоїв контейнерів Docker через брак ресурсів.
+
+Відкрийте панель керування системними налаштуваннями, натиснувши <kbd>Win + R</kbd> та ввівши `sysdm.cpl`
+
+<details>
+    <summary>
+      Введіть <code>sysdm.cpl</code> у вікні діалогу (знімок екрану)
+    </summary>
+
+    <br>
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/run-sysdm.png" alt="Введіть `sysdm.cpl` у вікні діалогу" />
+</details>
+<br>
+
+Перейдіть до Advanced -> Performance -> Settings…
+
+<details>
+    <summary>
+      Кнопка Performance Settings розташована під вкладкою Advanced в System Properties (знімок екрану)
+    </summary>
+
+    <br>
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/advanced-performance-settings.png" alt="Кнопка Performance Settings розташована під вкладкою Advanced в System Properties" />
+</details>
+<br>
+
+Під Advanced -> Processor scheduling, виберіть Background services. Не закривайте вікно. Перейдіть до наступної поради.
+
+<details>
+    <summary>
+      Радіокнопка Background services розташована під вкладкою Advanced в Performance Options (знімок екрана)
+    </summary>
+
+    <br>
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/background-services.png" alt="Радіокнопка Background services розташована під вкладкою Advanced в Performance Options" />
+</details>
+
+### Збільшення розміру файлу сторінки Windows для системного диска
+
+Під Advanced -> Virtual memory, натисніть Change…
+
+<details>
+    <summary>
+      Кнопка Change virtual memory розташована під вкладкою Advanced в Performance Options (знімок екрану)
+    </summary>
+
+    <br>
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/advanced-virtual-memory.png" alt="Кнопка Change virtual memory розташована під вкладкою Advanced в Performance Options" />
+</details>
+<br>
+
+Виберіть Custom size. Встановіть початковий розмір на 1.5x та максимальний розмір на 3x від фізичної пам’яті. Потім натисніть Set.
+
+<details>
+    <summary>
+      Налаштування кнопки розміру у вікні Virtual Memory (знімок екрану)
+    </summary>
+
+    <br>
+    <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/wsl/set-custom-size.png" alt="Налаштування кнопки розміру у вікні Virtual Memory" />
+</details>
+
+### Збільшення обсягу пам’яті, виділеної для WSL
+
+Створіть файл [`.wslconfig`](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig) у своєму каталозі [`%UserProfile%`](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#wslconfig) (зазвичай `C:\Users\<UserName>\.wslconfig`). Будь ласка, уважно прочитайте [документацію WSL](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig) та замініть `x` на потрібні значення:
+
+```ini
+# Налаштування застосовуються до всіх дистрибутивів Linux, які працюють на WSL 2
+[wsl2]
+
+# Кількість пам’яті, що призначається для віртуальної машини WSL 2. Значення за замовчуванням може бути недостатньо
+memory=xGB
+
+# На скільки збільшити swap-простір в WSL 2 VM; за замовчуванням це 25% від доступної оперативної пам’яті
+swap=xGB
+```
+
+### Збільшення максимального розміру старого простору Node.js
+
+Це виправляє помилку [«JavaScript heap out of memory»](https://stackoverflow.com/a/54456814) з ESLint. Додайте наступне до `~/.bashrc` або `~/.zshrc`:
+
+```sh
+export NODE_OPTIONS="--max-old-space-size=4096"
+```
+
+### Уникайте `pnpm run test`
+
+Натомість використайте скрипт, [який відповідає вашому PR](https://forum.freecodecamp.org/t/wsl-performance-issues-while-working-on-the-codebase/644215/2#:~:text=usually%2C%20you%20just%20want%20to%20test%20something%20specific%20to%20either%20the%20curriculum%20or%20the%20client%20or%20the%20api%20-%20almost%20never%20all%203.): `pnpm run test:api`, `pnpm run test:curriculum` або `pnpm run test-client`.
 
 ## Корисні посилання
 

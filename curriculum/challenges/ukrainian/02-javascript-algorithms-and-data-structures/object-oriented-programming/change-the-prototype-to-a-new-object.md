@@ -1,6 +1,6 @@
 ---
 id: 587d7daf367417b2b2512b7f
-title: Зміна прототипа новим об'єктом
+title: Зміна прототипа на новий об’єкт
 challengeType: 1
 forumTopicId: 301316
 dashedName: change-the-prototype-to-a-new-object
@@ -8,13 +8,13 @@ dashedName: change-the-prototype-to-a-new-object
 
 # --description--
 
-До цього часу ви окремо додавали властивості до `prototype`:
+До цього часу ви додавали властивості до `prototype` окремо:
 
 ```js
 Bird.prototype.numLegs = 2;
 ```
 
-Використання більше ніж декількох властивостей виснажує.
+Використання декількох властивостей виснажує.
 
 ```js
 Bird.prototype.eat = function() {
@@ -26,7 +26,7 @@ Bird.prototype.describe = function() {
 }
 ```
 
-Більш ефективним способом буде встановлення `prototype` до нового об’єкта, який вже містить ці властивості. Так, властивості додаються одразу:
+Ефективніше налаштувати `prototype` на новий об’єкт, який вже містить ці властивості. Таким чином всі властивості додаються одразу:
 
 ```js
 Bird.prototype = {
@@ -42,17 +42,17 @@ Bird.prototype = {
 
 # --instructions--
 
-Додайте властивість `numLegs` і два методи `eat()` і `describe()` до `prototype` з `Dog`, встановивши `prototype` до нового об'єкта.
+Додайте властивість `numLegs` і два методи (`eat()` й `describe()`) до прототипу `Dog`, встановивши `prototype` на новий об’єкт.
 
 # --hints--
 
-`Dog.prototype` має бути встановлений на новий об'єкт.
+Налаштуйте `Dog.prototype` на новий об’єкт.
 
 ```js
 assert(/Dog\.prototype\s*?=\s*?{/.test(code));
 ```
 
-`Dog.prototype` повинен містити властивість `numLegs`.
+`Dog.prototype` повинен мати властивість `numLegs`.
 
 ```js
 assert(Dog.prototype.numLegs !== undefined);

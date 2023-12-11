@@ -9,8 +9,9 @@
   "required": [],
   "superBlock": "example-certification",
   "challengeOrder": [
-    [
-      "645147516c245de4d11eb7ba",
-      "Certification Exam"
-    ]
-  ]}
+    {
+      "id": "645147516c245de4d11eb7ba",
+      "title": "Certification Exam"
+    }
+  ]
+}

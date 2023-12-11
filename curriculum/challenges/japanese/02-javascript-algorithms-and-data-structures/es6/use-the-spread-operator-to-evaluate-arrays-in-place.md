@@ -28,7 +28,13 @@ const maximus = Math.max(...arr);
 
 `maximus` の値は `89` になります。
 
-`...arr` は、分割された配列を返します。 つまり、スプレッド演算子によって配列が*展開*されます。 ただし、スプレッド演算子が有効なのは「インプレース」のみです。つまり、関数の引数や配列リテラルなどの中でのみ動作します。 次のコードは有効ではありません。
+`...arr` は、分割された配列を返します。 In other words, it spreads the array. ただし、スプレッド演算子が有効なのは「インプレース」のみです。つまり、関数の引数や配列リテラルなどの中でのみ動作します。 For example:
+
+```js
+const spreaded = [...arr];
+```
+
+However, the following code will not work:
 
 ```js
 const spreaded = ...arr;
@@ -36,23 +42,23 @@ const spreaded = ...arr;
 
 # --instructions--
 
-スプレッド演算子を使用して、 `arr1` のすべての内容を別の配列 `arr2` にコピーしてください。
+Copy all contents of `arr1` into another array `arr2` using the spread operator.
 
 # --hints--
 
-`arr2` は `arr1` の正確なコピーである必要があります。
+`arr2` should be correct copy of `arr1`.
 
 ```js
 assert(arr2.every((v, i) => v === arr1[i]) && arr2.length);
 ```
 
-`...` スプレッド演算子を使用して `arr1` を複製する必要があります。
+`...` spread operator should be used to duplicate `arr1`.
 
 ```js
 assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
 ```
 
-`arr1` が変更されても `arr2` は変わりません。
+`arr2` should remain unchanged when `arr1` is changed.
 
 ```js
 assert((arr1, arr2) => {

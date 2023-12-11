@@ -7,20 +7,20 @@ dashedName: step-41
 
 # --description--
 
-Now it's time to add other details to the markers, starting with the first one.
+Es ist nun an der Zeit weitere Details zu den Markierungen hinzuzufügen, beginnend mit der ersten.
 
-In the first marker `div` element, change the class `one` to `red`.
+Ändere in dem ersten `div`-Markierungselement die Klasse `one` auf `red`.
 
 # --hints--
 
-Your first marker `div` should not have the class `one`.
+Deine erste Markierung `div` sollte keine Klasse `one` haben.
 
 ```js
 const containerFirstChild = [...document.querySelector('.container')?.children][0];
 assert(!containerFirstChild?.classList?.contains('one'));
 ```
 
-Your first marker `div` should have the classes `marker` and `red`.
+Deine erste Markierung `div` sollte die Klassen `marker` und `red` haben.
 
 ```js
 const containerFirstChild = [...document.querySelector('.container')?.children][0];

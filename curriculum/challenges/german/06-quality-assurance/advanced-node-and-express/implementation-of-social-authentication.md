@@ -16,7 +16,7 @@ The basic path this kind of authentication will follow in your app is:
 4.  The user is then returned to your app at a specific callback url with their profile if they are approved.
 5.  They are now authenticated, and your app should check if it is a returning profile, or save it in your database if it is not.
 
-Strategies with OAuth require you to have at least a *Client ID* and a *Client Secret* which is a way for the service to verify who the authentication request is coming from and if it is valid. These are obtained from the site you are trying to implement authentication with, such as GitHub, and are unique to your app--**THEY ARE NOT TO BE SHARED** and should never be uploaded to a public repository or written directly in your code. Eine gängige Praxis ist es, sie in die `.env`-Datei zu packen und sie wie folgt zu referenzieren: `process.env.GITHUB_CLIENT_ID`. For this challenge you are going to use the GitHub strategy.
+Strategies with OAuth require you to have at least a *Client ID* and a *Client Secret* which is a way for the service to verify who the authentication request is coming from and if it is valid. These are obtained from the site you are trying to implement authentication with, such as GitHub, and are unique to your app--**THEY ARE NOT TO BE SHARED** and should never be uploaded to a public repository or written directly in your code. Eine gängige Praxis ist es, sie in die `.env`-Datei zu packen und sie wie folgt zu referenzieren: `process.env.GITHUB_CLIENT_ID`. Für diese Herausforderung wirst du die GitHub-Strategie verwenden.
 
 Follow <a href="https://www.freecodecamp.org/news/how-to-set-up-a-github-oauth-application/" target="_blank" rel="noopener noreferrer nofollow">these instructions</a> to obtain your *Client ID and Secret* from GitHub. Set the homepage URL to your Replit homepage (**not the project code's URL**), and set the callback URL to the same homepage URL with `/auth/github/callback` appended to the end. Save the client ID and your client secret in your project's `.env` file as `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`.
 
@@ -31,7 +31,7 @@ app.route('/login')
   });
 ```
 
-Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. If you're running into errors, you can <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-3" target="_blank" rel="noopener noreferrer nofollow">check out the project up to this point</a>.
+Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. Wenn du auf Fehler stößt, kannst du <a href="https://forum.freecodecamp.org/t/advanced-node-and-express/567135#implementation-of-social-authentication-3" target="_blank" rel="noopener noreferrer nofollow">das Projekt bis zu diesem Punkt überprüfen</a>.
 
 # --hints--
 

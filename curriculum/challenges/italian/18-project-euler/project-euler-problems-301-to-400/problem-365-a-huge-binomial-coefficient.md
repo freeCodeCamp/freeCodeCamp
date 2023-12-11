@@ -10,7 +10,7 @@ dashedName: problem-365-a-huge-binomial-coefficient
 
 Il coefficiente binomiale $\displaystyle\binom{{10}^{18}}{{10}^9}$ è un numero con più di 9 miliardi ($9 × {10}^9$) di cifre.
 
-Let $M(n, k, m)$ denote the binomial coefficient $\displaystyle\binom{n}{k}$ modulo $m$.
+Sia $M(n, k, m)$ il coefficiente binomiale $\displaystyle\binom{n}{k}$ modulo $m$.
 
 Calcola $\sum M({10}^{18}, {10}^9, p \times q \times r)$ per $1000 &lt; p &lt; q &lt; r &lt; 5000$ e $p$, $q$, $r$ numeri primi.
 

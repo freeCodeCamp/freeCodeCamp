@@ -38,7 +38,7 @@ dashedName: introduction-to-html5-elements
 assert($('p').length > 1);
 ```
 
-Кожен з `p` елементів повинен мати кінцевий тег.
+Кожен елемент `p` повинен мати кінцевий тег.
 
 ```js
 assert(

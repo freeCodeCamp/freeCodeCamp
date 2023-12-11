@@ -39,7 +39,7 @@ const person = {
 Не використовуйте традиційні вирази функцій.
 
 ```js
-(getUserInput) => assert(!code.match(/function/));
+assert(!code.match(/function/));
 ```
 
 `setGear` повинна бути декларативною функцією.
@@ -79,6 +79,7 @@ console.log(bicycle.gear);
 ```js
 const bicycle = {
   gear: 2,
+  // setGear: function(newGear) {
   setGear(newGear) {
     this.gear = newGear;
   }

@@ -10,7 +10,7 @@ dashedName: problem-43-sub-string-divisibility
 
 Il numero 1406357289 è un numero pandigitale da 0 a 9 perché è costituito da ciascuna delle cifre da 0 a 9 in un certo ordine, ma ha anche una proprietà di divisibilità in sotto-stringhe piuttosto interessante.
 
-Let $d_1$ be the $1^{st}$ digit, $d_2$ be the $2^{nd}$ digit, and so on. In questo modo, notiamo quanto segue:
+Sia $d_1$ la $1^{a}$ cifra, $d_2$ la $2^{a}$ cifra, e così via. In questo modo, notiamo quanto segue:
 
 - ${d_2}{d_3}{d_4} = 406$ è divisibile per 2
 - ${d_3}{d_4}{d_5} = 063$ è divisibile per 3
@@ -73,7 +73,7 @@ substringDivisibility(5);
 
 ```js
 function substringDivisibility(n) {
-  function isSubDivisable(digits) {
+  function isSubDivisible(digits) {
     const factors = [2, 3, 5, 7, 11, 13, 17];
 
     for (let i = 1; i < digits.length - 2; i++) {
@@ -108,17 +108,17 @@ function substringDivisibility(n) {
   }
 
   const allowedDigits = [...new Array(n + 1).keys()];
-  const divisablePandigitals = [];
+  const divisiblePandigitals = [];
   heapsPermutations(
     allowedDigits.length,
     allowedDigits,
-    isSubDivisable,
-    divisablePandigitals
+    isSubDivisible,
+    divisiblePandigitals
   );
 
   let sum = 0;
-  for (let i = 0; i < divisablePandigitals.length; i++) {
-    sum += divisablePandigitals[i];
+  for (let i = 0; i < divisiblePandigitals.length; i++) {
+    sum += divisiblePandigitals[i];
   }
 
   return sum;

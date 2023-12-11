@@ -39,7 +39,7 @@ const person = {
 不应使用传统的函数定义方法。
 
 ```js
-(getUserInput) => assert(!code.match(/function/));
+assert(!code.match(/function/));
 ```
 
 `setGear` 应是一个声明函数。
@@ -79,6 +79,7 @@ console.log(bicycle.gear);
 ```js
 const bicycle = {
   gear: 2,
+  // setGear: function(newGear) {
   setGear(newGear) {
     this.gear = newGear;
   }

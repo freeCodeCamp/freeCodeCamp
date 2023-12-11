@@ -17,8 +17,12 @@ import { FileKey } from '../../../redux/prop-types';
 import { Themes } from '../../../components/settings/theme';
 import Editor, { type EditorProps } from './editor';
 
-type VisibleEditors = {
-  [key: string]: boolean;
+export type VisibleEditors = {
+  indexhtml?: boolean;
+  indexjsx?: boolean;
+  stylescss?: boolean;
+  scriptjs?: boolean;
+  mainpy?: boolean;
 };
 type MultifileEditorProps = Pick<
   EditorProps,
@@ -36,13 +40,9 @@ type MultifileEditorProps = Pick<
   // We use dimensions to trigger a re-render of the editor
   | 'dimensions'
 > & {
-  visibleEditors: {
-    indexhtml?: boolean;
-    indexjsx?: boolean;
-    stylescss?: boolean;
-    scriptjs?: boolean;
-  };
+  visibleEditors: VisibleEditors;
 };
+
 const mapStateToProps = createSelector(
   visibleEditorsSelector,
   canFocusEditorSelector,
@@ -54,7 +54,7 @@ const mapStateToProps = createSelector(
     canFocus: boolean,
     output: string[],
     open,
-    { theme = Themes.Default }: { theme: Themes }
+    { theme }: { theme: Themes }
   ) => ({
     visibleEditors,
     canFocus: open ? false : canFocus,
@@ -74,7 +74,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
     isUsingKeyboardInTablist,
     resizeProps,
     title,
-    visibleEditors: { stylescss, indexhtml, scriptjs, indexjsx },
+    visibleEditors: { stylescss, indexhtml, scriptjs, indexjsx, mainpy },
     usesMultifileEditor,
     showProjectPreview
   } = props;
@@ -88,7 +88,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
   const targetEditor = getTargetEditor(challengeFiles);
 
   // Only one editor should be focused and that should happen once, after it has
-  // been mounted. This ref allows the editors to co-ordinate, without having to
+  // been mounted. This ref allows the editors to coordinate, without having to
   // resort to redux.
   const canFocusOnMountRef = useRef(true);
 
@@ -98,6 +98,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
   if (indexhtml) editorKeys.push('indexhtml');
   if (stylescss) editorKeys.push('stylescss');
   if (scriptjs) editorKeys.push('scriptjs');
+  if (mainpy) editorKeys.push('mainpy');
 
   const editorAndSplitterKeys = editorKeys.reduce((acc: string[] | [], key) => {
     if (acc.length === 0) {
@@ -126,6 +127,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
               return (
                 <ReflexElement
                   data-cy={`editor-container-${key}`}
+                  data-playwright-test-label={`editor-container-${key}`}
                   {...reflexProps}
                   {...resizeProps}
                   key={key}

@@ -33,7 +33,7 @@
   border-left: none;
   border-bottom: none;
 }
-.donation-elements.failed-submition {
+.donation-elements.failed-submission {
   border: solid 3px #eb1c26;
 }
 
@@ -83,13 +83,6 @@
   font-weight: normal;
 }
 
-.donation-form .btn-cta,
-.btn-cta.paypal-button {
-  white-space: normal;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
 .paypal-buttons-container {
   min-height: auto;
   margin-bottom: 8px;
@@ -99,6 +92,15 @@
   margin-bottom: 0;
 }
 
+@media (min-width: 1200px) {
+  /*
+  This style allows multi columns in the same row.
+  It will become a functionality once the Grid system is updated.
+  */
+  .donate-page-wrapper > div > div {
+    float: left;
+  }
+}
 .donate-input-element {
   padding-top: 8px;
 }
@@ -110,7 +112,8 @@
 .donation-form .form-control:focus {
   border-color: #66afe9;
   outline-color: transparent;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+  box-shadow:
+    inset 0 1px 1px rgba(0, 0, 0, 0.075),
     0 0 8px rgba(102, 175, 233, 0.6);
 }
 
@@ -254,29 +257,25 @@ li.disabled > a {
 }
 
 .donation-icon {
-  width: 150px;
-  height: auto;
-  transform: scale(1.5);
-  opacity: 0;
-  animation: donation-icon-animation 1s linear 100ms forwards;
+  height: 150px;
+  width: auto;
 }
 
-@keyframes donation-icon-animation {
-  33% {
-    transform: scale(1.2);
-  }
-  66% {
-    transform: scale(1.25);
+.no-delay-fade-in {
+  opacity: 0;
+  pointer-events: none;
+  animation: opacity-animation 1s linear 100ms forwards;
+}
+
+@keyframes opacity-animation {
+  0% {
+    pointer-events: none;
+    opacity: 0;
   }
   100% {
+    pointer-events: auto;
     opacity: 1;
-    transform: scale(1);
   }
-}
-
-.donation-modal .btn-link:focus {
-  outline-width: 1px;
-  outline-style: solid;
 }
 
 .donation-modal .modal-title {
@@ -285,15 +284,78 @@ li.disabled > a {
   font-size: 1.2rem;
 }
 
-.donation-modal p,
 .donation-modal b {
-  text-align: center;
-  font-size: 1rem;
   width: 100%;
   display: inline-block;
 }
+
+.donation-modal p {
+  font-size: 0.9rem;
+}
 .donation-label-modal {
   font-weight: normal;
+  text-align: center;
+}
+
+.edit-amount-confirmation {
+  margin: 0 auto;
+  max-width: 350px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  & > * {
+    flex: 0 0 max-content;
+  }
+}
+
+/*
+ * We currently cannot reuse the Button component from `ui-components`
+ * and are using the native `<button>` with custom CSS.
+ * This implementation is temporary until we can find a solution for this button use case.
+ * Ref: https://github.com/freeCodeCamp/freeCodeCamp/issues/52349
+ */
+.close-button {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  padding: 0 10px;
+  font-weight: normal;
+  background-color: transparent;
+  border: 0;
+  text-decoration-line: underline;
+  /* This is required in order to improve text readability in Arabic */
+  text-underline-position: under;
+}
+.close-button:hover {
+  text-decoration-line: none;
+  background-color: var(--quaternary-background);
+  color: var(--quaternary-color);
+}
+
+.donation-modal h2 {
+  font-family: var(--font-family-sans-serif);
+  font-size: 1.5rem;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+}
+
+.donation-tier-selection [role='tablist'] button {
+  background-color: transparent;
+}
+.donation-tier-selection
+  [role='tablist']
+  button:hover:not([data-state='active']) {
+  background-color: var(--quaternary-background);
+  color: var(--quaternary-color);
+}
+
+.donation-tier-selection [role='tablist'] button[data-state='active'] {
+  background-color: var(--quaternary-color);
 }
 
 .donation-icon-container {
@@ -347,10 +409,6 @@ li.disabled > a {
   }
   .donation-icon-container {
     margin: 40px;
-  }
-
-  .donation-modal p {
-    font-size: 1.1rem;
   }
 
   .donation-modal .modal-title {
@@ -419,13 +477,26 @@ button.confirm-donation-btn {
   display: inline-flex;
   align-items: center;
 }
+button.confirm-donation-btn:focus,
 button.confirm-donation-btn:active,
-button.confirm-donation-btn:active:focus,
+button.confirm-donation-btn:active:focus {
+  background-color: var(--quaternary-background);
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
 button.confirm-donation-btn:hover {
   color: black;
   background-color: #f2ba38;
   border-color: #f2ba38;
 }
+button.confirm-donation-btn:disabled {
+  cursor: not-allowed;
+  background-color: var(--quaternary-background);
+  border-color: var(--quaternary-color);
+  color: var(--quaternary-color);
+  opacity: 0.65;
+}
+
 a.patreon-button {
   border-radius: 5px;
   background-color: #ff424d;
@@ -461,6 +532,28 @@ a.patreon-button:hover {
   display: none;
 }
 
+/*
+ * We currently cannot reuse the Button component from `ui-components`
+ * and are using the native `<button>` with custom CSS.
+ * This implementation is temporary until we can find a solution for this button use case.
+ * Ref: https://github.com/freeCodeCamp/freeCodeCamp/issues/52349
+ */
+.edit-amount-button {
+  font-weight: normal;
+  background-color: transparent;
+  border: 0;
+  text-decoration-line: underline;
+  /* This is required in order to improve text readability in Arabic */
+  text-underline-position: under;
+  padding: 0;
+}
+
+.edit-amount-button:hover {
+  text-decoration-line: none;
+  background-color: var(--quaternary-background);
+  color: var(--quaternary-color);
+}
+
 .donate-btn-group {
   display: flex;
   flex-direction: column;
@@ -491,7 +584,7 @@ a.patreon-button:hover {
   font-weight: bold;
 }
 
-.donate-page-wrapper .alert.alert-info a:hover {
+.donate-page-wrapper [role='alert'] a:hover {
   color: #327290;
   background-color: #acdef3;
 }
@@ -555,4 +648,25 @@ a.patreon-button:hover {
 
 .confirm-donation-btn svg.svg-inline--fa.fa-lock {
   margin-bottom: 2px;
+}
+
+/*
+ * We currently cannot reuse the Button component from `ui-components`
+ * and are using the native `<button>` with custom CSS.
+ * This implementation is temporary until we can find a solution for this button use case.
+ * Ref: https://github.com/freeCodeCamp/freeCodeCamp/issues/52349
+ */
+.try-again-button {
+  background-color: var(--blue05);
+  color: var(--blue70);
+  border-radius: 0;
+  border: 3px solid var(--blue70);
+  padding: 6px 12px;
+}
+.try-again-button:focus,
+.try-again-button:hover,
+.try-again-button:active {
+  color: var(--blue05);
+  background-color: var(--blue70);
+  border-color: var(--blue70);
 }

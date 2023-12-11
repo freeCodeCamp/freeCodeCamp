@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import { FormControl, FormControlProps, FormControlVariationProps } from '.';
+import { FormControl, FormControlProps } from '.';
 
 const story = {
   title: 'Example/FormControl',
@@ -42,7 +42,7 @@ Default.args = {
   // default props go here
 };
 
-const StaticTemplate: Story<FormControlVariationProps> = args => {
+const StaticTemplate: Story<React.ComponentProps<'p'>> = args => {
   return <FormControl.Static {...args} />;
 };
 
@@ -51,7 +51,7 @@ Static.args = {
   children: 'foo@bar.com'
 };
 
-const FeedBackTemplate: Story<FormControlVariationProps> = args => {
+const FeedBackTemplate: Story<React.ComponentProps<'span'>> = args => {
   return <FormControl.Feedback {...args} />;
 };
 

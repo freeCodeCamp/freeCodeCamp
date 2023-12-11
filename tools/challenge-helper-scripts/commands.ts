@@ -19,13 +19,13 @@ function deleteStep(stepNum: number): void {
   if (stepNum > challengeOrder.length)
     throw `Step # ${stepNum} not deleted. Largest step number is ${challengeOrder.length}.`;
 
-  const stepId = challengeOrder[stepNum - 1][0];
+  const stepId = challengeOrder[stepNum - 1].id;
 
   fs.unlinkSync(`${getProjectPath()}${stepId}.md`);
   deleteStepFromMeta({ stepNum });
   updateStepTitles();
 
-  console.log(`Sucessfully deleted step #${stepNum}`);
+  console.log(`Successfully deleted step #${stepNum}`);
 }
 
 function insertStep(stepNum: number): void {
@@ -42,7 +42,7 @@ function insertStep(stepNum: number): void {
   const challengeSeeds =
     stepNum > 1
       ? getChallengeSeeds(
-          `${getProjectPath()}${challengeOrder[stepNum - 2][0]}.md`
+          `${getProjectPath()}${challengeOrder[stepNum - 2].id}.md`
         )
       : {};
 
@@ -53,7 +53,7 @@ function insertStep(stepNum: number): void {
 
   insertStepIntoMeta({ stepNum, stepId });
   updateStepTitles();
-  console.log(`Sucessfully inserted new step #${stepNum}`);
+  console.log(`Successfully inserted new step #${stepNum}`);
 }
 
 function createEmptySteps(num: number): void {
@@ -67,7 +67,7 @@ function createEmptySteps(num: number): void {
     const stepId = createStepFile({ stepNum });
     insertStepIntoMeta({ stepNum, stepId });
   }
-  console.log(`Sucessfully added ${num} steps`);
+  console.log(`Successfully added ${num} steps`);
 }
 
 export { deleteStep, insertStep, createEmptySteps };

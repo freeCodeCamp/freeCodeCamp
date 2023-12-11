@@ -2,6 +2,7 @@ import { find } from 'lodash';
 
 import {
   buildUserUpdate,
+  buildExamUserUpdate,
   buildChallengeUrl,
   createChallengeUrlResolver,
   createRedirectToCurrentChallenge,
@@ -15,10 +16,15 @@ import {
   mockAllChallenges,
   mockChallenge,
   mockUser,
+  mockUser2,
   mockGetFirstChallenge,
   mockCompletedChallenge,
   mockCompletedChallengeNoFiles,
-  mockCompletedChallenges
+  mockCompletedChallenges,
+  mockFailingExamChallenge,
+  mockPassingExamChallenge,
+  mockBetterPassingExamChallenge,
+  mockWorsePassingExamChallenge
 } from './fixtures';
 
 export const mockReq = opts => {
@@ -142,6 +148,71 @@ describe('boot/challenge', () => {
       );
 
       expect(completedChallenges).toEqual(mockCompletedChallengeNoFiles);
+    });
+  });
+
+  describe('buildExamUserUpdate', () => {
+    it('should $push exam results to completedExams[]', () => {
+      const {
+        updateData: {
+          $push: { completedExams }
+        }
+      } = buildExamUserUpdate(mockUser, mockFailingExamChallenge);
+      expect(completedExams).toEqual(mockFailingExamChallenge);
+    });
+
+    it('should not add failing exams to completedChallenges[]', () => {
+      const { alreadyCompleted, addPoint, updateData } = buildExamUserUpdate(
+        mockUser,
+        mockFailingExamChallenge
+      );
+
+      expect(updateData).not.toHaveProperty('$push.completedChallenges');
+      expect(updateData).not.toHaveProperty('$set.completedChallenges');
+      expect(addPoint).toBe(false);
+      expect(alreadyCompleted).toBe(false);
+    });
+
+    it('should $push newly passed exams to completedChallenge[]', () => {
+      const {
+        alreadyCompleted,
+        addPoint,
+        updateData: {
+          $push: { completedChallenges }
+        }
+      } = buildExamUserUpdate(mockUser, mockPassingExamChallenge);
+
+      expect(completedChallenges).toEqual(mockPassingExamChallenge);
+      expect(addPoint).toBe(true);
+      expect(alreadyCompleted).toBe(false);
+    });
+
+    it('should not update passed exams with worse results in completedChallenge[]', () => {
+      const { alreadyCompleted, addPoint, updateData } = buildExamUserUpdate(
+        mockUser2,
+        mockWorsePassingExamChallenge
+      );
+
+      expect(updateData).not.toHaveProperty('$push.completedChallenges');
+      expect(updateData).not.toHaveProperty('$set.completedChallenges');
+      expect(addPoint).toBe(false);
+      expect(alreadyCompleted).toBe(true);
+    });
+
+    it('should update passed exams with better results in completedChallenge[]', () => {
+      const {
+        alreadyCompleted,
+        addPoint,
+        completedDate,
+        updateData: { $set }
+      } = buildExamUserUpdate(mockUser2, mockBetterPassingExamChallenge);
+
+      expect($set['completedChallenges.4'].examResults).toEqual(
+        mockBetterPassingExamChallenge.examResults
+      );
+      expect(addPoint).toBe(false);
+      expect(alreadyCompleted).toBe(true);
+      expect(completedDate).toBe(1538052380328);
     });
   });
 

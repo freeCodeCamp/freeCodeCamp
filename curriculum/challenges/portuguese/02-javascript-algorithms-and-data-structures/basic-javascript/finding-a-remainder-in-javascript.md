@@ -32,7 +32,7 @@ Na matemática, um número pode ser verificado como par ou ímpar por meio do re
 
 # --instructions--
 
-Define o `resto` igual ao restante de `11` dividido por `3` usando o operador de <dfn>restante</dfn> (`%`).
+Define `remainder` como o resto da divisão de `11` por `3` usando o operador de <dfn>resto</dfn> (`%`).
 
 # --hints--
 

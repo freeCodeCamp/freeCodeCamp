@@ -1,6 +1,7 @@
-import { Button, Panel } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { Panel } from '@freecodecamp/ui';
 
 import { FullWidthRow } from '../helpers';
 import SectionHeader from './section-header';

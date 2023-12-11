@@ -1,6 +1,6 @@
 ---
 id: 5900f3f51000cf542c50ff07
-title: 'Problem 136: Singleton difference'
+title: 'Завдання 136: унікальна різниця'
 challengeType: 1
 forumTopicId: 301764
 dashedName: problem-136-singleton-difference
@@ -8,13 +8,13 @@ dashedName: problem-136-singleton-difference
 
 # --description--
 
-The positive integers, $x$, $y$, and $z$, are consecutive terms of an arithmetic progression. Given that $n$ is a positive integer, the equation, $x^2 − y^2 − z^2 = n$, has exactly one solution when $n = 20$:
+Натуральні числа $x$, $y$ та $z$ є послідовними членами арифметичної прогресії. Рівняння $x^2 − y^2 − z^2 = n$ має лише один розв’язок, якщо $n = 20$:
 
 $$13^2 − 10^2 − 7^2 = 20$$
 
-In fact, there are twenty-five values of $n$ below one hundred for which the equation has a unique solution.
+Існує двадцять п’ять значень $n$ менших ста, за яких рівняння має один розв’язок.
 
-How many values of $n$ less than fifty million have exactly one solution?
+Скільки значень $n$ менших п’ятдесяти мільйонів мають один розв’язок?
 
 # --hints--
 

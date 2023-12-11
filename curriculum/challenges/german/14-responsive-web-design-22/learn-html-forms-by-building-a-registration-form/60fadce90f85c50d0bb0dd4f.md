@@ -1,17 +1,17 @@
 ---
 id: 60fadce90f85c50d0bb0dd4f
-title: Schritt 46
+title: Schritt 47
 challengeType: 0
-dashedName: step-46
+dashedName: step-47
 ---
 
 # --description--
 
-To give the `fieldset` elements a bit of separation, select them and give them a `border-bottom` of `3px solid #3b3b4f`.
+Um den `fieldset`-Elementen ein wenig Abstand zu geben, wähle sie aus und gib ihnen einen `border-bottom` von `3px solid #3b3b4f`.
 
 # --hints--
 
-You should give the `fieldset` elements a `border-bottom` of `3px solid #3b3b4f`.
+Du solltest den `fieldset`-Elementen einen `border-bottom` von `3px solid #3b3b4f` geben.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom, '3px solid rgb(59, 59, 79)');
@@ -40,11 +40,9 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom,
         <label for="new-password">Create a New Password: <input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
       </fieldset>
       <fieldset>
-        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" /> Personal Account</label>
-        <label for="business-account"><input id="business-account" type="radio" name="account-type" /> Business Account</label>
-        <label for="terms-and-conditions">
-          <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
-        </label>
+        <legend>Account type (required)</legend>
+        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" checked /> Personal</label>
+        <label for="business-account"><input id="business-account" type="radio" name="account-type" /> Business</label>
       </fieldset>
       <fieldset>
         <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file" name="file" /></label>
@@ -62,6 +60,9 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom,
           <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
         </label>
       </fieldset>
+      <label for="terms-and-conditions">
+        <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
+      </label>
       <input type="submit" value="Submit" />
     </form>
   </body>

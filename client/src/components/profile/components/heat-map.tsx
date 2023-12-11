@@ -1,4 +1,3 @@
-import { Row } from '@freecodecamp/react-bootstrap';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import CalendarHeatMap from '@freecodecamp/react-calendar-heatmap';
@@ -10,14 +9,15 @@ import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import ReactTooltip from 'react-tooltip';
+import { Row } from '@freecodecamp/ui';
 
 import '@freecodecamp/react-calendar-heatmap/dist/styles.css';
 import './heatmap.css';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../config/i18n';
+import envData from '../../../../config/env.json';
+import { getLangCode } from '../../../../../shared/config/i18n';
 import { User } from '../../../redux/prop-types';
 import FullWidthRow from '../../helpers/full-width-row';
 import Spacer from '../../helpers/spacer';

@@ -12,7 +12,7 @@ $k$ defects are randomly distributed amongst $n$ integrated-circuit chips produc
 
 Let $p(k,n)$ represent the probability that there is a chip with at least 3 defects. For instance $p(3,7) ≈ 0.0204081633$.
 
-Find $p(20\\,000, 1\\,000\\,000)$ and give your answer rounded to 10 decimal places in the form 0.abcdefghij
+Знайдіть $p(20\\,000, 1\\,000\\,000)$ та дайте відповідь, заокруглену до десяти знаків після коми у форматі 0.abcdefghij
 
 # --hints--
 

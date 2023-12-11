@@ -1,6 +1,6 @@
 ---
 id: 5900f4131000cf542c50ff25
-title: 'Problem 166: Criss Cross'
+title: 'Завдання 166: хрест-навхрест'
 challengeType: 1
 forumTopicId: 301800
 dashedName: problem-166-criss-cross
@@ -8,17 +8,17 @@ dashedName: problem-166-criss-cross
 
 # --description--
 
-A 4x4 grid is filled with digits $d$, $0 ≤ d ≤ 9$.
+Таблиця 4x4 заповнена цифрами $d$, $0 ≤ d ≤ 9$.
 
-It can be seen that in the grid
+Видно, що в таблиці
 
 $$\begin{array}{}   6 & 3 & 3 & 0 \\\\
   5 & 0 & 4 & 3 \\\\   0 & 7 & 1 & 4 \\\\
   1 & 2 & 4 & 5 \end{array}$$
 
-the sum of each row and each column has the value 12. Moreover the sum of each diagonal is also 12.
+сума кожного рядка та кожного стовпця має значення 12. Крім того, сума кожної діагоналі також дорівнює 12.
 
-In how many ways can you fill a 4x4 grid with the digits $d$, $0 ≤ d ≤ 9$ so that each row, each column, and both diagonals have the same sum?
+Скількома способами можна заповнити таблицю 4x4 цифрами $d$, $0 ≤ d ≤ 9$, щоб кожен рядок, кожен стовпець та обидві діагоналі мали однакову суму?
 
 # --hints--
 

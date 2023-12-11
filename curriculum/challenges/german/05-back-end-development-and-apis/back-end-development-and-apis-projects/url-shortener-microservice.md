@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443edefaeb5bd0e
-title: URL Shortener Microservice
+title: URL-Verkürzungs-Microservice
 challengeType: 4
 forumTopicId: 301509
 dashedName: url-shortener-microservice
@@ -20,7 +20,7 @@ Wenn du Replit verwendest, folge diesen Schritten, um das Projekt einzurichten:
 -   Daraufhin wird ein `.replit`-Fenster angezeigt.
 -   Wähle `Use run command` aus und klicke auf die `Done`-Schaltfläche.
 
-Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Gib anschließend die URL in das Solution Link-Feld ein. Füge optional einen Link zum Quellcode deines Projekts in das GitHub Link-Feld ein.
 
 # --instructions--
 
@@ -40,7 +40,7 @@ Du solltest dein eigenes Projekt bereitstellen, nicht die Beispiel-URL.
 };
 ```
 
-You can POST a URL to `/api/shorturl` and get a JSON response with `original_url` and `short_url` properties. Hier siehst du ein Beispiel: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
+Du kannst eine URL an `/api/shorturl` POSTEN und eine JSON-Antwort mit `original_url`- und `short_url`-Eigenschaften erhalten. Hier siehst du ein Beispiel: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
 
 ```js
 async (getUserInput) => {

@@ -1,6 +1,6 @@
 ---
 id: 5900f3e01000cf542c50fef2
-title: 'Problem 114: Counting block combinations I'
+title: 'Завдання 114: підрахунок комбінацій блоків І'
 challengeType: 1
 forumTopicId: 301740
 dashedName: problem-114-counting-block-combinations-i
@@ -8,13 +8,13 @@ dashedName: problem-114-counting-block-combinations-i
 
 # --description--
 
-A row measuring seven units in length has red blocks with a minimum length of three units placed on it, such that any two red blocks (which are allowed to be different lengths) are separated by at least one black square. There are exactly seventeen ways of doing this.
+Рядок завдовжки сім одиниць містить червоні блоки, мінімальна довжина яких становить три одиниці, тому будь-які два червоні блоки (які можуть бути будь-якої довжини) розділені принаймні одним чорним квадратом. Для цього існує 17 способів.
 
-<img class="img-responsive center-block" alt="Possible ways of placing block with a minimum length of three units, on a row with length of seven units" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-block-combinations-i.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Можливі способи розміщення квадратів з мінімальною довжиною у три одиниці у рядку довжиною сім одиниць" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-block-combinations-i.png" style="background-color: white; padding: 10px;" />
 
-How many ways can a row measuring fifty units in length be filled?
+Скількома способами можна заповнити ряд довжиною 50 одиниць?
 
-**Note:** Although the example above does not lend itself to the possibility, in general it is permitted to mix block sizes. For example, on a row measuring eight units in length you could use red (3), black (1), and red (4).
+**Примітка:** хоча цього не вказано у прикладі, можна використовувати блоки різних розмірів. Наприклад, у рядку довжиною вісім одиниць можна використати червоний (3), чорний (1) та червоний (4).
 
 # --hints--
 

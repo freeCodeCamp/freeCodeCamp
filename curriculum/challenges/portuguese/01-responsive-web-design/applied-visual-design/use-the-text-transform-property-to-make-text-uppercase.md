@@ -13,7 +13,7 @@ A propriedade `text-transform` no CSS é usada para alterar a aparência do text
 
 A tabela a seguir mostra como os diferentes valores de `text-transform` alteram o texto no exemplo "Me transforme".
 
-<table class='table table-striped'><thead><tr><th>Valor</th><th>Resultado</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"me transforme"</td></tr><tr><td><code>uppercase</code></td><td>"ME TRANSFORME"</td></tr><tr><td><code>capitalize</code></td><td>"Me Transforme"</td></tr><tr><td><code>initial</code></td><td>Use o valor padrão</td></tr><tr><td><code>inherit</code></td><td>Use o valor <code>text-transform</code> do elemento pai</td></tr><tr><td><code>none</code></td><td><strong>Padrão:</strong> usa o texto original do HTML</td></tr></tbody></table>
+<table><thead><tr><th>Valor</th><th>Resultado</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"me transforme"</td></tr><tr><td><code>uppercase</code></td><td>"ME TRANSFORME"</td></tr><tr><td><code>capitalize</code></td><td>"Me Transforme"</td></tr><tr><td><code>initial</code></td><td>Use o valor padrão</td></tr><tr><td><code>inherit</code></td><td>Use o valor <code>text-transform</code> do elemento pai</td></tr><tr><td><code>none</code></td><td><strong>Padrão:</strong> usa o texto original do HTML</td></tr></tbody></table>
 
 # --instructions--
 

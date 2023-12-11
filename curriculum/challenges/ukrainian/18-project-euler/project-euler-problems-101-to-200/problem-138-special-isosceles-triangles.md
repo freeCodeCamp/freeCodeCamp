@@ -1,6 +1,6 @@
 ---
 id: 5900f3f61000cf542c50ff09
-title: 'Problem 138: Special isosceles triangles'
+title: 'Завдання 138: особливі рівнобедрені трикутники'
 challengeType: 1
 forumTopicId: 301766
 dashedName: problem-138-special-isosceles-triangles
@@ -8,15 +8,15 @@ dashedName: problem-138-special-isosceles-triangles
 
 # --description--
 
-Consider the isosceles triangle with base length, $b = 16$, and legs, $L = 17$.
+Розглянемо рівнобедрений трикутник з довжиною основи $b = 16$ та катетами $L = 17$.
 
-<img class="img-responsive center-block" alt="isosceles triangle with edges named as L - two edges with the same length and base of the triangle as b; and height of the triangle - h from the base of the triangle to the angle between L edges" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="рівнобедрений трикутник з ребрами: два ребра з однаковою довжиною L і основою трикутника b, та висотою трикутника h від основи трикутника до кута між ребрами L" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px;" />
 
-By using the Pythagorean theorem, it can be seen that the height of the triangle, $h = \sqrt{{17}^2 − 8^2} = 15$, which is one less than the base length.
+За теоремою Піфагора бачимо, що висота трикутника $h = \sqrt{{17}^2 − 8^2} = 15$, що менше на один від довжини основи.
 
-With $b = 272$ and $L = 305$, we get $h = 273$, which is one more than the base length, and this is the second smallest isosceles triangle with the property that $h = b ± 1$.
+За умови $b = 272$ та $L = 305$ ми отримаємо $h = 273$, що більше на один від довжини основи та є другим найменшим трикутником з властивістю $h = b ± 1$.
 
-Find $\sum{L}$ for the twelve smallest isosceles triangles for which $h = b ± 1$ and $b$, $L$ are positive integers.
+Знайдіть $\sum{L}$ дванадцяти найменших рівнобедрених трикутників, для яких $h = b ± 1$, де $b$ та $L$ є натуральними числами.
 
 # --hints--
 

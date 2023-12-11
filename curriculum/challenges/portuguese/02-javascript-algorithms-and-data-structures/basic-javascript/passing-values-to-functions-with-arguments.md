@@ -23,7 +23,7 @@ Então podemos chamar o `testFun` dessa forma: `testFun("Hello", "World");`. Pas
 
 # --instructions--
 
-<ol><li>Crie uma função chamada <code>functionWithArgs</code> que aceita dois argumentos e exibe seus valores no console de desenvolvimento.</li><li>Chame a função com dois números como argumentos.</li></ol>
+<ol><li>Crie uma função chamada <code>functionWithArgs</code> que aceita dois argumentos e exibe a soma de seus valores no console de desenvolvimento.</li><li>Chame a função com dois números como argumentos.</li></ol>
 
 # --hints--
 

@@ -1,25 +1,25 @@
 ---
 id: 60ffe7d8aae62c05bcc9e7eb
-title: Schritt 57
+title: Schritt 58
 challengeType: 0
-dashedName: step-57
+dashedName: step-58
 ---
 
 # --description--
 
-With a `display` of `block` the submit button sits flush against the left edge of its parent.
+Mit einem `display`, der auf `block` gesetzt ist, liegt der Bestätigungsbutton direkt an der linken Kante des Elternelements.
 
-Use the same technique used to center the `form` to center the submit button.
+Verwende das gleiche Verfahren, dass beim Zentrieren der `form` verwendet wurde, um den Bestätigungsbutton zu zentrieren.
 
 # --hints--
 
-You should give the submit button a `margin` of `0 auto`.
+Du solltest dem Bestätigungsbutton eine `margin` von `0 auto` zuweisen.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.margin, '0px auto');
 ```
 
-You should not give the submit button a `min-width` or `max-width`.
+Du solltest dem Bestätigungsbutton keine `min-width` oder `max-width` zuweisen.
 
 ```js
 assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.minWidth);
@@ -49,11 +49,9 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?
         <label for="new-password">Create a New Password: <input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
       </fieldset>
       <fieldset>
-        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" /> Personal Account</label>
-        <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> Business Account</label>
-        <label for="terms-and-conditions">
-          <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" class="inline" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
-        </label>
+        <legend>Account type (required)</legend>
+        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" checked /> Personal</label>
+        <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> Business</label>
       </fieldset>
       <fieldset>
         <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file" name="file" /></label>
@@ -71,6 +69,9 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?
           <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
         </label>
       </fieldset>
+      <label for="terms-and-conditions">
+        <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
+      </label>
       <input type="submit" value="Submit" />
     </form>
   </body>

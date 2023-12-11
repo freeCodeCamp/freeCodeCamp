@@ -18,7 +18,7 @@ Font Awesome ist eine komfortable Bibliothek für Icons. Diese Icons können Web
 
 Benutze Font Awesome um ein `info-circle`-Icon zu deinem Informationsbutton hinzuzufügen und ein `trash`-Icon zu deinem Lösch-Button.
 
-**Hinweis:** Das `span` Element ist eine akzeptable Alternative zum `i`-Element für die untenstehenden Anweisungen.
+**Hinweis:** Du kannst entweder `i` oder `span`-Elemente verwenden, um diese Aufgabe zu lösen.
 
 # --hints--
 

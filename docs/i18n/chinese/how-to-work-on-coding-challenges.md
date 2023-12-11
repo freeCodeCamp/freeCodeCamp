@@ -4,7 +4,7 @@ Our goal is to develop a fun and clear interactive learning experience.
 
 Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
 
-We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
+We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain wide exposure to programming concepts.
 
 Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
@@ -27,7 +27,6 @@ Before you work on the curriculum, you would need to set up some tooling to help
 
   [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead.
 
 ### How to work on practice projects
 
@@ -136,6 +135,14 @@ Solutions are used for the CI tests to ensure that changes to the hints will sti
 // third solution etc. - Your solutions should be in HTML.
 ```
 
+# --assignments--
+
+This will show a checkbox that campers have to check before completing a challenge
+
+---
+
+This will show another checkbox that campers have to check before completing a challenge
+
 # --question--
 
 These fields are currently used for the multiple-choice Python challenges.
@@ -148,6 +155,10 @@ The question text goes here.
 
 Answer 1
 
+### --feedback--
+
+This will be shown as feedback when campers guess this answer
+
 ---
 
 Answer 2
@@ -159,6 +170,36 @@ More answers
 ## --video-solution--
 
 The number for the correct answer goes here.
+
+# --fillInTheBlank--
+
+These are for the English curriculum challenges.
+
+## --sentence--
+
+Sentence to be shown with with blanks that campers have to fill in. Example:
+
+`Hello, You _ the new graphic designer, _?`
+
+The two underscores will show up as blanks. The sentence must be surrounded in backticks.
+
+## --blanks--
+
+The solution for the first blank in the sentence above. Example:
+
+`are`
+
+### --feedback--
+
+Feedback shown when campers input the wrong solution for this blank.
+
+---
+
+Solution for the second blank. Example:
+
+`right`
+
+If no feedback is here, a generic "wrong answer" message will be shown.
 ````
 
 > [!NOTE]
@@ -219,6 +260,8 @@ Here are some example challenge names:
 Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
 Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
+
+Use american english, e.g., use `labeled` instead of `labelled`.
 
 Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
@@ -294,7 +337,7 @@ Challenges should have the minimum number of tests necessary to verify that a ca
 
 Our goal is to communicate the single point that the challenge is trying to teach, and test that they have understood that point.
 
-Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable. In addition, the `__helpers` object exposes several functions that simplify the process of writing tests. The available functions are defined in _client/src/utils/curriculum-helpers.ts_.
+Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable. In addition, the `__helpers` object exposes several functions that simplify the process of writing tests. The available functions are defined in the [curriculum-helpers](https://github.com/freeCodeCamp/curriculum-helpers/blob/main/lib/index.ts) repo.
 
 ## Formatting Seed Code
 
@@ -460,7 +503,13 @@ Before you [create a pull request](how-to-open-a-pull-request.md) for your chang
 pnpm run test:curriculum
 ```
 
-2. You can also test a block or a superblock of challenges with these commands
+2. To test single challenge, you can use it challenge id with following command
+
+```
+FCC_CHALLENGE_ID=646cf6cbca98e258da65c979 pnpm run test:curriculum
+```
+
+3. You can also test a block or a superblock of challenges with these commands
 
 ```
 FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
@@ -470,7 +519,7 @@ FCC_BLOCK='Basic HTML and HTML5' pnpm run test:curriculum
 FCC_SUPERBLOCK='responsive-web-design' pnpm run test:curriculum
 ```
 
-You are also able to test one challenge individually by performing the following steps:
+You are also able to test challenges by title by performing the following steps:
 
 1. Switch to the `curriculum` directory:
 
@@ -481,18 +530,104 @@ You are also able to test one challenge individually by performing the following
 2. Run the following for each challenge file for which you have changed (replacing `challenge-title-goes-here` with the full title of the challenge):
 
    ```
-   pnpm run test -- -g challenge-title-goes-here ```
+   pnpm run test -- -g challenge-title-goes-here
+   ```
 
-Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](how-to-open-a-pull-request.md).
-
-> [!TIP] You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
-> 
+> [!TIP]
+> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
+>
 > The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
-### Useful Links
+## Proposing a Pull Request (PR)
+
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+
+## Useful Links
 
 Creating and Editing Challenges:
 
 1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
 
 2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
+
+## Helper Scripts
+
+> [!NOTE]
+> If you are working with the step-based challenges, refer to the [Work on Practice Projects](how-to-work-on-practice-projects.md) section.
+
+There are a few helper scripts that can be used to manage the challenges in a block. Note that these commands should all be run in the block directory. For example:
+
+```bash
+cd curriculum/challenges/english/02-javascript-algorithms-and-data-structures/basic-algorithm-scripting
+```
+
+### Add New Challenge
+
+To add a new challenge at the end of a block, call the script:
+
+```bash
+pnpm run create-next-challenge
+```
+
+This will prompt you for the challenge information and create the challenge file, updating the `meta.json` file with the new challenge information.
+
+### Delete a Challenge
+
+To delete a challenge, call the script:
+
+```bash
+pnpm run delete-challenge
+```
+
+This will prompt you to select which challenge should be deleted, then delete the file and update the `meta.json` file to remove the challenge from the order.
+
+### Insert a Challenge
+
+To insert a challenge before an existing challenge, call the script:
+
+```bash
+pnpm run insert-challenge
+```
+
+This will prompt you for the challenge information, then for the challenge to insert before. For example, if your choices are:
+
+```bash
+a
+b
+c
+```
+
+If you choose `b`, your new order will be:
+
+```bash
+a
+new challenge
+b
+c
+```
+
+### Update Challenge Order
+
+If you need to manually re-order the challenges, call the script:
+
+```bash
+pnpm run update-challenge-order
+```
+
+This will take you through an interactive process to select the order of the challenges.
+
+## Troubleshooting
+
+### Infinite Loop Detected
+
+If you see the following error in the console while previewing a challenge:
+
+```text
+Potential infinite loop detected on line <number>...
+```
+
+This means that the loop-protect plugin has found a long-running loop or recursive function. If your challenge needs to do that (e.g. it contains an event loop that is supposed to run indefinitely), then you can prevent the plugin from being used in the preview. To do so, add `disableLoopProtectPreview: true` to the block's `meta.json` file.
+
+If your tests are computationally intensive, then you may see this error when they run. If this happens then you can add `disableLoopProtectTests: true` to the block's `meta.json` file.
+
+It's not typically necessary to have both set to true, so only set them as needed.

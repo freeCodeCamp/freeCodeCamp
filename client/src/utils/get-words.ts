@@ -14,7 +14,7 @@ interface Motivation {
 declare const preval: (s: TemplateStringsArray) => Motivation;
 
 const words = preval`
-  const config = require('../../../config/env.json');
+  const config = require('../../config/env.json');
   const { clientLocale } = config;
   const target = '../../i18n/locales/' + clientLocale + '/motivation.json';
   const words = require(target);

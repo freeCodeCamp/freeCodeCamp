@@ -1,6 +1,6 @@
 ---
 id: 5900f3951000cf542c50fea8
-title: 'Problem 41: Pandigital prime'
+title: 'Завдання 41: панцифрові прості числа'
 challengeType: 1
 forumTopicId: 302078
 dashedName: problem-41-pandigital-prime
@@ -8,9 +8,9 @@ dashedName: problem-41-pandigital-prime
 
 # --description--
 
-We shall say that an `n`-digit number is pandigital if it makes use of all the digits 1 to `n` exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
+`n`-значне число є панцифровим, якщо воно використовує всі цифри від 1 до `n` лише один раз. Наприклад, 2143 є чотиризначним панцифровим числом, яке також є простим.
 
-What is the largest `n`-length digit pandigital prime that exists?
+Яким є найбільше `n`-значне панцифрове просте число?
 
 # --hints--
 

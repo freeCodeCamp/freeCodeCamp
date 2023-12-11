@@ -1,6 +1,6 @@
 ---
 id: 587d824d367417b2b2512c51
-title: Test if an Array Contains an Item
+title: Teste, ob ein Array ein Element enthält
 challengeType: 2
 forumTopicId: 301603
 dashedName: test-if-an-array-contains-an-item
@@ -12,7 +12,7 @@ As a reminder, this project is being built upon the following starter project on
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#12` in the `Arrays` suite, change each `assert` to either `assert.include` or `assert.notInclude` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Within `tests/1_unit-tests.js` under the test labeled `#12` in the `Arrays` suite, change each `assert` to either `assert.include` or `assert.notInclude` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
 # --hints--
 

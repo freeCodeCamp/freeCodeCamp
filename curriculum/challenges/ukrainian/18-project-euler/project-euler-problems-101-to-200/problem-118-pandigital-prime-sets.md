@@ -1,6 +1,6 @@
 ---
 id: 5900f3e21000cf542c50fef5
-title: 'Problem 118: Pandigital prime sets'
+title: 'Завдання 118: панцифрові множини простих чисел'
 challengeType: 1
 forumTopicId: 301744
 dashedName: problem-118-pandigital-prime-sets
@@ -8,9 +8,9 @@ dashedName: problem-118-pandigital-prime-sets
 
 # --description--
 
-Using all of the digits 1 through 9 and concatenating them freely to form decimal integers, different sets can be formed. Interestingly with the set $\\{2, 5, 47, 89, 631\\}$, all of the elements belonging to it are prime.
+Використовуючи всі цифри від 1 до 9 і об’єднуючи їх у вільному порядку для отримання десяткових цілих чисел, можна сформувати різні множини. Цікаво, що у множині $\\{2, 5, 47, 89, 631\\}$ всі елементи є простими числами.
 
-How many distinct sets containing each of the digits one through nine exactly once contain only prime elements?
+Скільки можна отримати множин, які містять лише прості елементи та кожна цифра використовується лише один раз?
 
 # --hints--
 

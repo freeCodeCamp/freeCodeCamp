@@ -7,25 +7,25 @@
   "time": "150 hours",
   "superBlock": "machine-learning-with-python",
   "challengeOrder": [
-    [
-      "5e46f8d6ac417301a38fb92d",
-      "Rock Paper Scissors"
-    ],
-    [
-      "5e46f8dcac417301a38fb92e",
-      "Cat and Dog Image Classifier"
-    ],
-    [
-      "5e46f8e3ac417301a38fb92f",
-      "Book Recommendation Engine using KNN"
-    ],
-    [
-      "5e46f8edac417301a38fb930",
-      "Linear Regression Health Costs Calculator"
-    ],
-    [
-      "5e46f8edac417301a38fb931",
-      "Neural Network SMS Text Classifier"
-    ]
+    {
+      "id": "5e46f8d6ac417301a38fb92d",
+      "title": "Rock Paper Scissors"
+    },
+    {
+      "id": "5e46f8dcac417301a38fb92e",
+      "title": "Cat and Dog Image Classifier"
+    },
+    {
+      "id": "5e46f8e3ac417301a38fb92f",
+      "title": "Book Recommendation Engine using KNN"
+    },
+    {
+      "id": "5e46f8edac417301a38fb930",
+      "title": "Linear Regression Health Costs Calculator"
+    },
+    {
+      "id": "5e46f8edac417301a38fb931",
+      "title": "Neural Network SMS Text Classifier"
+    }
   ]
 }

@@ -28,6 +28,12 @@ Il creatore di azione `decAction` dovrebbe restituire un oggetto azione con `typ
 assert(decAction().type === DECREMENT);
 ```
 
+Eseguire `store.getState()` dovrebbe restituire un numero
+
+```js
+assert(typeof store.getState() === 'number');
+```
+
 Lo store Redux dovrebbe essere inizializzato con uno `state` di 0.
 
 ```js

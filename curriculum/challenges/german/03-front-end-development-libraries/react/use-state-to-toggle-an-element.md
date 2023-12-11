@@ -65,7 +65,7 @@ assert.strictEqual(
 );
 ```
 
-Wenn du auf das Button-Element klickst, sollte die `visibility`-Eigenschaft im Zustand zwischen `true` und `false` wechseln.
+Clicking the button element should toggle the `visibility` property in state between `true` and `false` and conditionally render the `h1` element.
 
 ```js
 (() => {
@@ -76,11 +76,11 @@ Wenn du auf das Button-Element klickst, sollte die `visibility`-Eigenschaft im Z
   };
   const second = () => {
     mockedComponent.find('button').simulate('click');
-    return mockedComponent.state('visibility');
+    return mockedComponent.state('visibility') && mockedComponent.find('h1').exists();
   };
   const third = () => {
     mockedComponent.find('button').simulate('click');
-    return mockedComponent.state('visibility');
+    return mockedComponent.state('visibility') && mockedComponent.find('h1').exists();
   };
   const firstValue = first();
   const secondValue = second();

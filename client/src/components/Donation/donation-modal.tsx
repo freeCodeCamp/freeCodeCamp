@@ -1,21 +1,16 @@
-import { Modal, Button, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
+import { Col, Row } from '@freecodecamp/ui';
 import { WindowLocation } from '@reach/router';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { useFeature } from '@growthbook/growthbook-react';
 import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
-import {
-  modalDefaultDonation,
-  PaymentContext
-} from '../../../../config/donation-settings';
-import Cup from '../../assets/icons/cup';
-import Heart from '../../assets/icons/heart';
+import { useFeature } from '@growthbook/growthbook-react';
+
 import BearProgressModal from '../../assets/images/components/bear-progress-modal';
 import BearBlockCompletion from '../../assets/images/components/bear-block-completion-modal';
-
 import { closeDonationModal, executeGA } from '../../redux/actions';
 import {
   isDonationModalOpenSelector,
@@ -24,7 +19,8 @@ import {
 import { isLocationSuperBlock } from '../../utils/path-parsers';
 import { playTone } from '../../utils/tone';
 import { Spacer } from '../helpers';
-import DonateForm from './donate-form';
+import { PaymentContext } from '../../../../shared/config/donation-settings'; //
+import MultiTierDonationForm from './multi-tier-donation-form';
 
 type RecentlyClaimedBlock = null | { block: string; superBlock: string };
 
@@ -55,43 +51,63 @@ type DonateModalProps = {
   show: boolean;
 };
 
-const GetCommonDonationText = ({ ctaNumber }: { ctaNumber: number }) => {
-  const { t } = useTranslation();
-  const rotateProgressModalCta = useFeature('progress-modal-cta-rotation').on;
-  if (rotateProgressModalCta)
-    return <b>{t(`donate.progress-modal-cta-${ctaNumber}`)}</b>;
-
-  const donationDuration = modalDefaultDonation.donationDuration;
-  switch (donationDuration) {
-    case 'one-time':
-      return <b>{t('donate.duration')}</b>;
-    case 'month':
-      return <b>{t('donate.duration-2')}</b>;
-    default:
-      return <b>{t('donate.duration-4')}</b>;
-  }
-};
-
-const RenderIlustration = ({
+const Illustration = ({
   recentlyClaimedBlock
 }: {
   recentlyClaimedBlock: RecentlyClaimedBlock;
 }) => {
-  const showModalBears = useFeature('show-modal-bears').on;
-  if (showModalBears) {
-    if (recentlyClaimedBlock !== null) return <BearBlockCompletion />;
-    else return <BearProgressModal />;
-  } else if (recentlyClaimedBlock !== null) {
-    return <Cup className='donation-icon' />;
-  } else {
-    return <Heart className='donation-icon' />;
-  }
+  return recentlyClaimedBlock ? (
+    <BearBlockCompletion className='donation-icon' />
+  ) : (
+    <BearProgressModal className='donation-icon' />
+  );
 };
 
-function getctaNumberBetween1To10() {
-  const min = 1;
-  const max = 10;
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function ModalHeader({
+  recentlyClaimedBlock
+}: {
+  recentlyClaimedBlock: RecentlyClaimedBlock;
+}) {
+  const { t } = useTranslation();
+  return (
+    <Row className='text-center block-modal-text'>
+      <Col sm={10} smOffset={1} xs={12}>
+        {recentlyClaimedBlock !== null && (
+          <b>
+            {t('donate.nicely-done', {
+              block: t(
+                `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
+              )
+            })}
+          </b>
+        )}
+        <h2>{t('donate.help-us-develop')}</h2>
+      </Col>
+    </Row>
+  );
+}
+
+function CloseButtonRow({
+  donationAttempted,
+  closeDonationModal
+}: {
+  donationAttempted: boolean;
+  closeDonationModal: () => void;
+}) {
+  const { t } = useTranslation();
+  return (
+    <Row>
+      <Col sm={4} smOffset={4} xs={8} xsOffset={2}>
+        <button
+          className='close-button'
+          type='button'
+          onClick={closeDonationModal}
+        >
+          {donationAttempted ? t('buttons.close') : t('buttons.ask-later')}
+        </button>
+      </Col>
+    </Row>
+  );
 }
 
 function DonateModal({
@@ -101,12 +117,14 @@ function DonateModal({
   location,
   recentlyClaimedBlock
 }: DonateModalProps): JSX.Element {
-  const [closeLabel, setCloseLabel] = React.useState(false);
-  const [ctaNumber, setCtaNumber] = React.useState(0);
-  const { t } = useTranslation();
+  const [donationAttempted, setDonationAttempted] = useState(false);
+  const [showHeaderAndFooter, setShowHeaderAndFooter] = useState(true);
+
   const handleProcessing = () => {
-    setCloseLabel(true);
+    setDonationAttempted(true);
   };
+
+  useFeature('aa-test-in-component');
 
   useEffect(() => {
     if (show) {
@@ -121,40 +139,12 @@ function DonateModal({
     }
   }, [show, recentlyClaimedBlock, executeGA]);
 
-  useEffect(() => {
-    if (show) setCtaNumber(getctaNumberBetween1To10());
-  }, [show]);
-
   const handleModalHide = () => {
     // If modal is open on a SuperBlock page
     if (isLocationSuperBlock(location)) {
       goToAnchor('claim-cert-block');
     }
   };
-
-  const donationText = (
-    <div className=' text-center block-modal-text'>
-      <div className='donation-icon-container'>
-        <RenderIlustration recentlyClaimedBlock={recentlyClaimedBlock} />
-      </div>
-      <Row>
-        {!closeLabel && (
-          <Col sm={10} smOffset={1} xs={12}>
-            {recentlyClaimedBlock !== null && (
-              <b>
-                {t('donate.nicely-done', {
-                  block: t(
-                    `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
-                  )
-                })}
-              </b>
-            )}
-            <GetCommonDonationText ctaNumber={ctaNumber} />
-          </Col>
-        )}
-      </Row>
-    </div>
-  );
 
   return (
     <Modal
@@ -163,33 +153,26 @@ function DonateModal({
       onExited={handleModalHide}
       show={show}
     >
-      <Modal.Body>
-        {donationText}
-        <Spacer size='medium' />
-        <Row>
-          <Col xs={12}>
-            <DonateForm
-              handleProcessing={handleProcessing}
-              isMinimalForm={true}
-              paymentContext={PaymentContext.Modal}
-            />
-          </Col>
-        </Row>
-        <Spacer size='medium' />
-        <Row>
-          <Col sm={4} smOffset={4} xs={8} xsOffset={2}>
-            <Button
-              block={true}
-              bsSize='sm'
-              bsStyle='primary'
-              className='btn-link'
-              onClick={closeDonationModal}
-              tabIndex='0'
-            >
-              {closeLabel ? t('buttons.close') : t('buttons.ask-later')}
-            </Button>
-          </Col>
-        </Row>
+      <Modal.Body className='no-delay-fade-in'>
+        <div className='donation-icon-container'>
+          <Illustration recentlyClaimedBlock={recentlyClaimedBlock} />
+        </div>
+        {showHeaderAndFooter && !donationAttempted && (
+          <ModalHeader recentlyClaimedBlock={recentlyClaimedBlock} />
+        )}
+        <Spacer size='small' />
+        <MultiTierDonationForm
+          setShowHeaderAndFooter={setShowHeaderAndFooter}
+          handleProcessing={handleProcessing}
+          paymentContext={PaymentContext.Modal}
+          isMinimalForm={true}
+        />
+        {(showHeaderAndFooter || donationAttempted) && (
+          <CloseButtonRow
+            closeDonationModal={closeDonationModal}
+            donationAttempted={donationAttempted}
+          />
+        )}
       </Modal.Body>
     </Modal>
   );

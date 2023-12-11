@@ -27,15 +27,15 @@ dashedName: jupyter-notebooks-importing-and-exporting-data
 
 ## --answers--
 
-Excel файли.
+Файли Excel.
 
 ---
 
-CSV файли.
+Файли CSV.
 
 ---
 
-XML файли.
+Файли XML.
 
 ---
 

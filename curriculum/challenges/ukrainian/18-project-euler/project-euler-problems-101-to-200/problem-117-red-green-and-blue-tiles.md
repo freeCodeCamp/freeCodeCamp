@@ -1,6 +1,6 @@
 ---
 id: 5900f3e21000cf542c50fef4
-title: 'Problem 117: Red, green, and blue tiles'
+title: 'Завдання 117: червоні, зелені та сині комірки'
 challengeType: 1
 forumTopicId: 301743
 dashedName: problem-117-red-green-and-blue-tiles
@@ -8,13 +8,13 @@ dashedName: problem-117-red-green-and-blue-tiles
 
 # --description--
 
-Using a combination of black square tiles and oblong tiles chosen from: red tiles measuring two units, green tiles measuring three units, and blue tiles measuring four units, it is possible to tile a row measuring five units in length in exactly fifteen different ways.
+Використовуючи комбінацію чорних квадратних комірок і довгастих комірок, вибраних з: червоних комірок розміром дві одиниці, зелених комірок розміром три одиниці та синіх комірок розміром чотири одиниці, можна створити ряд довжиною п’ять одиниць рівно п’ятнадцятьма різними способами.
 
-<img class="img-responsive center-block" alt="Possible ways of placing red, green and blue oblongs on a row with length of five units" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Можливі способи розміщення червоних, зелених і синіх довгастих комірок ряду довжиною в п’ять одиниць" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
 
-How many ways can a row measuring fifty units in length be tiled?
+Скількома способами можна викласти ряд довжиною п’ятдесят одиниць?
 
-**Note**: This is related to Problem 116.
+**Примітка:** це завдання пов’язане із завданням №116.
 
 # --hints--
 

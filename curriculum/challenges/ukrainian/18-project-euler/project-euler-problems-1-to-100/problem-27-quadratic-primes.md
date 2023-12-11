@@ -1,6 +1,6 @@
 ---
 id: 5900f3871000cf542c50fe9a
-title: 'Problem 27: Quadratic primes'
+title: 'Завдання 27: квадратичні прості числа'
 challengeType: 1
 forumTopicId: 301919
 dashedName: problem-27-quadratic-primes
@@ -8,23 +8,23 @@ dashedName: problem-27-quadratic-primes
 
 # --description--
 
-Euler discovered the remarkable quadratic formula:
+Ейлер вивів визначну квадратичну формулу:
 
 <div style='margin-left: 4em;'>$n^2 + n + 41$</div>
 
-It turns out that the formula will produce 40 primes for the consecutive integer values $0 \\le n \\le 39$. However, when $n = 40, 40^2 + 40 + 41 = 40(40 + 1) + 41$ is divisible by 41, and certainly when $n = 41, 41^2 + 41 + 41$ is clearly divisible by 41.
+Виявилося, що згідно з цією формулою можна отримати 40 простих чисел, послідовно підставляючи значення $0 \\le n \\le 39$. Однак, якщо $n = 40, 40^2 + 40 + 41 = 40(40 + 1) + 41$ ділиться на 41 без остачі та, очевидно, якщо $n = 41, 41^2 + 41 + 41$ ділиться на 41 без остачі.
 
-The incredible formula $n^2 - 79n + 1601$ was discovered, which produces 80 primes for the consecutive values $0 \\le n \\le 79$. The product of the coefficients, −79 and 1601, is −126479.
+Згодом було знайдено чудову формулу $n^2 - 79n + 1601$, за допомогою якої можна знайти 80 простих чисел для послідовних значень $0 \\le n \\le 79$. Добуток коефіцієнтів −79 та 1601 дорівнює −126479.
 
-Considering quadratics of the form:
+Розглянемо квадратичну форму:
 
 <div style='margin-left: 4em;'>
-  $n^2 + an + b$, where $|a| < range$ and $|b| \le range$<br>
-  where $|n|$ is the modulus/absolute value of $n$<br>
-  e.g. $|11| = 11$ and $|-4| = 4$<br>
+  $n^2 + an + b$, де $|a| < range$ та $|b| \le range$<br>
+  де $|n|$ є модулем/абсолютним значенням $n$<br>
+  Наприклад, $|11| = 11$ та $|-4| = 4$<br>
 </div>
 
-Find the product of the coefficients, $a$ and $b$, for the quadratic expression that produces the maximum number of primes for consecutive values of $n$, starting with $n = 0$.
+Знайдіть добуток коефіцієнтів $a$ та $b$ для квадратичного виразу, який згенерує максимальну кількість простих чисел для послідовних значень $n$, починаючи з $n = 0$.
 
 # --hints--
 

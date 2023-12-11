@@ -1,8 +1,8 @@
-import { Col, Row } from '@freecodecamp/react-bootstrap';
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Col, Row } from '@freecodecamp/ui';
 
 import { certificatesByNameSelector } from '../../../redux/selectors';
 import type { CurrentCert } from '../../../redux/prop-types';
@@ -49,7 +49,7 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
   return (
     <>
       <Row>
-        <Col className='certifications' sm={10} smPush={1}>
+        <Col className='certifications' sm={10} smOffset={1}>
           <Link
             className='btn btn-lg btn-primary btn-block'
             to={`/certification/${username}/${cert.certSlug}`}

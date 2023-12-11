@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed508826
-title: Копіюйте елемент за допомогою jQuery
+title: Клонуйте елемент за допомогою jQuery
 challengeType: 6
 forumTopicId: 16780
 dashedName: clone-an-element-using-jquery
@@ -8,19 +8,19 @@ dashedName: clone-an-element-using-jquery
 
 # --description--
 
-Окрім переміщування елементів, їх можна копіювати з одного місця в інше.
+Ви можете не тільки переміщати елементи, але й копіювати їх з одного місця в інше.
 
-У jQuery є функція `clone()`, яка копіює елемент.
+У jQuery є функція `clone()`, яка створює копію елемента.
 
-Наприклад, якщо ми хочемо скопіювати `target2` з `left-well` до нашого `right-well`, потрібно використовувати:
+Наприклад, якщо потрібно скопіювати `target2` з `left-well` до `right-well`, то використовуємо:
 
 ```js
 $("#target2").clone().appendTo("#right-well");
 ```
 
-Ви помітили, що для цього потрібно з'єднати дві функції jQuery? Ця функція називається <dfn>function chaining</dfn> - зручний спосіб працювати з jQuery.
+Ви помітили, що для цього потрібно з’єднати дві функції jQuery? Це називається <dfn>ланцюжком функцій</dfn>, що полегшує роботу з jQuery.
 
-Копіюйте елемент `target5` і додайте його до `left-well`.
+Клонуйте елемент `target5` та додайте його до `left-well`.
 
 # --hints--
 
@@ -36,7 +36,7 @@ assert($('#right-well').children('#target5').length > 0);
 assert($('#left-well').children('#target5').length > 0);
 ```
 
-Використовуйте лише jQuery для переміщення цих елементів.
+Для переміщення цих елементів використовуйте лише jQuery.
 
 ```js
 assert(!code.match(/class.*animated/g));

@@ -36,24 +36,21 @@ console.log(s);
 لا ينبغي أن تستبدل كلمة `const`.
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const/g));
+assert(code.match(/const/g));
 ```
 
 `s` يجب أن يكون متغير ثابت (باستخدام `const`).
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const\s+s/g));
+assert(code.match(/const\s+s/g));
 ```
 
 لا يجب عليك تغيير إعلان القائمة (array) الأصلي.
 
 ```js
-(getUserInput) =>
-  assert(
-    getUserInput('index').match(
-      /const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g
-    )
-  );
+assert(code.match(
+/const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g
+));
 ```
 
 `s` يجب أن يساوي `[2, 5, 7]`.

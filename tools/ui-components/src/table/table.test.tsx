@@ -4,15 +4,6 @@ import { render, screen } from '@testing-library/react';
 import { Table } from '.';
 
 describe('<Table />', () => {
-  it('should contain class table by default', () => {
-    render(<Table data-testid='test' />);
-
-    const table = screen.getByTestId('test');
-
-    expect(table).toHaveClass('table');
-    expect(table).toBeInTheDocument();
-  });
-
   it('should apply striped bg color to every odd <tr> element', () => {
     render(<Table data-testid='test' striped />);
 

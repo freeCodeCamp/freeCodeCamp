@@ -1,10 +1,10 @@
 # Manual para Autores de Google Analytics
 
-Si usted es un autor con acceso a la propiedad noticias de Google Analytics, use esta guía para ver la sección para encontrar tus artículos de compromiso, y buscar artículos por idioma de publicación.
+If you are an author with access to the publication's Google Analytics Property (News), you can use this guide to view your article engagement and search for articles by publication language.
 
 ## Búsqueda por Idioma
 
-Para buscar noticias de engagement por un idioma específico:
+To search for engagement reports in a specific language:
 
 ![Imagen - Muestra pasos para buscar por idioma en Google Analytics](https://contribute.freecodecamp.org/images/google-analytics/search-by-language.png)
 

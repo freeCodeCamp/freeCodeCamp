@@ -40,12 +40,34 @@ Seu aplicativo deve servir arquivos de ativos do diretório `/public` no caminho
   );
 ```
 
+A aplicação não deve servir arquivos de outras pastas além do diretório `/public`
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/server.js').then(
+    (data) => {
+       assert.equal(
+        data?.status + '',
+        404 + '',
+        'Your app must serve files only from "public" directory'
+      );
+    },
+    (xhr) => {
+      assert.equal(
+        xhr?.status + '',
+        404 + '',
+        'Your app must serve files only from "public" directory'
+      );
+    }
+  );
+```
+
 # --solutions--
 
 ```js
 /**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
+  Desafios de back-end não precisam de soluções, 
+  pois precisariam ser testados com relação a um projeto funcional completo. 
+  Confira nossas diretrizes de contribuição para saber mais.
 */
 ```

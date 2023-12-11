@@ -8,7 +8,7 @@ dashedName: sorted-union
 
 # --description--
 
-Escreva uma função que recebe dois ou mais arrays e retorne um novo array de calores únicos na ordem do array original fornecido.
+Escreva uma função que recebe dois ou mais arrays e retorne um novo array de valores únicos na ordem do array original fornecido.
 
 Em outras palavras, todos os valores presentes de todos os arrays devem ser incluídos na sua ordem original, mas sem valores duplicados no array final.
 

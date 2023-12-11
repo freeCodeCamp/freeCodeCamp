@@ -1,6 +1,6 @@
 ---
 id: 5900f3e91000cf542c50fefc
-title: 'Problem 125: Palindromic sums'
+title: 'Завдання 125: паліндромні суми'
 challengeType: 1
 forumTopicId: 301752
 dashedName: problem-125-palindromic-sums
@@ -8,11 +8,11 @@ dashedName: problem-125-palindromic-sums
 
 # --description--
 
-The palindromic number 595 is interesting because it can be written as the sum of consecutive squares: $6^2 + 7^2 + 8^2 + 9^2 + 10^2 + 11^2 + 12^2$.
+Паліндромне число 595 цікаве тим, що його можна записати як суму послідовних квадратів: $6^2 + 7^2 + 8^2 + 9^2 + 10^2 + 11^2 + 12^2$.
 
-There are exactly eleven palindromes below one-thousand that can be written as consecutive square sums, and the sum of these palindromes is 4164. Note that $1 = 0^2 + 1^2$ has not been included as this problem is concerned with the squares of positive integers.
+Існує рівно одинадцять паліндромів менших за одну тисячу, які можна записати у вигляді суми послідовних квадратів, а сума цих паліндромів дорівнює 4164. Зауважте, що $1 = 0^2 + 1^2$ не враховано, оскільки це завдання стосується квадратів лише натуральних чисел.
 
-Find the sum of all the numbers less than the  `limit`  that are both palindromic and can be written as the sum of consecutive squares.
+Знайдіть суму всіх чисел менших за `limit`, які є паліндромами і можуть бути записані як сума послідовних квадратів.
 
 # --hints--
 `palindromicSums(100000000)` має повернути `2906969179`.

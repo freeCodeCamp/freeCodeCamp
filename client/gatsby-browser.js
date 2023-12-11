@@ -17,7 +17,7 @@ export const wrapRootElement = ({ element }) => {
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
         <GrowthBookProvider>
-          <AppMountNotifier render={() => element} />
+          <AppMountNotifier>{element}</AppMountNotifier>
         </GrowthBookProvider>
       </I18nextProvider>
     </Provider>
@@ -33,6 +33,8 @@ export const wrapPageElement = layoutSelector;
 export const disableCorePrefetching = () => true;
 
 export const onClientEntry = () => {
-  // the token must be erased since it is only valid for the old _csrf secret
+  // Letting the users' browsers expire the cookie seems to have caused issues
+  // for some users. Until we have time to investigate further, we should remove
+  // the cookie on every page load.
   cookies.erase('csrf_token');
 };

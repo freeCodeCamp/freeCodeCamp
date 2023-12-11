@@ -1,6 +1,6 @@
 ---
 id: 587d7daf367417b2b2512b7d
-title: Ітерація усіх властивостей
+title: Ітерація через усі властивості
 challengeType: 1
 forumTopicId: 301320
 dashedName: iterate-over-all-properties
@@ -8,7 +8,7 @@ dashedName: iterate-over-all-properties
 
 # --description--
 
-Тепер ви вже бачили два типи властивостей: <dfn>own properties</dfn> and `prototype` properties. Власні властивості визначаються безпосередньо в самому екземплярі об'єкта. А властивості прототипу визначені в `prototype`.
+Ви бачили два типи властивостей: <dfn>власні властивості</dfn> та <dfn>властивості прототипу</dfn>. Власні властивості визначаються в самому екземплярі об’єкта. А властивості прототипу визначені в `prototype`.
 
 ```js
 function Bird(name) {
@@ -20,7 +20,7 @@ Bird.prototype.numLegs = 2; // prototype property
 let duck = new Bird("Donald");
 ```
 
-Ось як ви додаєте власні властивості `duck` до масиву `ownProps` і властивостей `prototype` до масиву `prototypeProps`:
+Ось так ви додаєте власні властивості `duck` до масиву `ownProps` і властивості `prototype` до масиву `prototypeProps`:
 
 ```js
 let ownProps = [];
@@ -38,11 +38,11 @@ console.log(ownProps);
 console.log(prototypeProps);
 ```
 
-`console.log(ownProps)` відобразить `["name"]` в консолі, і `console.log(prototypeProps)` відображатиме `["numLegs"]`.
+`console.log(ownProps)` виведе `["name"]` на консолі, а `console.log(prototypeProps)` виведе `["numLegs"]`.
 
 # --instructions--
 
-Додайте всі власні властивості `beagle` до масиву `ownProps`. Додайте всі властивості `prototype` `Dog` до масиву `prototypeProps`.
+Додайте всі власні властивості `beagle` до масиву `ownProps`. Додайте всі властивості прототипу `Dog` до масиву `prototypeProps`.
 
 # --hints--
 
@@ -58,7 +58,7 @@ assert.deepEqual(ownProps, ['name']);
 assert.deepEqual(prototypeProps, ['numLegs']);
 ```
 
-Ви повинні вирішити цей виклик без використання побудови в методі `Object.keys()`.
+Виконайте це завдання, не використовуючи вбудований метод `Object.keys()`.
 
 ```js
 assert(!/\Object.keys/.test(code));

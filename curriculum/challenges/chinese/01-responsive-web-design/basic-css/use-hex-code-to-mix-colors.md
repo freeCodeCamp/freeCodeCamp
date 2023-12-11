@@ -23,7 +23,7 @@ dashedName: use-hex-code-to-mix-colors
 
 把 `style` 标签里面的颜色值用正确的十六进制编码替换。
 
-<table class='table table-striped'><tbody><tr><th>颜色</th><th>十六进制编码</th></tr><tr><td>道奇蓝</td><td><code>#1E90FF</code></td></tr><tr><td>绿色</td><td><code>#00FF00</code></td></tr><tr><td>橙色</td><td><code>#FFA500</code></td></tr><tr><td>红色</td><td><code>#FF0000</code></td></tr></tbody></table>
+<table><tbody><tr><th>颜色</th><th>十六进制编码</th></tr><tr><td>道奇蓝</td><td><code>#1E90FF</code></td></tr><tr><td>绿色</td><td><code>#00FF00</code></td></tr><tr><td>橙色</td><td><code>#FFA500</code></td></tr><tr><td>红色</td><td><code>#FF0000</code></td></tr></tbody></table>
 
 # --hints--
 

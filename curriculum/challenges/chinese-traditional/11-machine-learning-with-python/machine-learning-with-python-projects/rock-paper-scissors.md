@@ -58,7 +58,7 @@ play(player, quincy, 1000, verbose=True)
 
 ## 提交
 
-複製項目的 URL 並在下面提交。
+Copy your project's URL and submit it to freeCodeCamp.
 
 # --hints--
 

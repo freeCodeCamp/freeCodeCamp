@@ -1,6 +1,6 @@
 ---
 id: 5900f39e1000cf542c50feb1
-title: 'Problem 50: Consecutive prime sum'
+title: 'Завдання 50: сума послідовних простих чисел'
 challengeType: 1
 forumTopicId: 302161
 dashedName: problem-50-consecutive-prime-sum
@@ -8,15 +8,15 @@ dashedName: problem-50-consecutive-prime-sum
 
 # --description--
 
-The prime 41, can be written as the sum of six consecutive primes:
+Просте число 41 можна записати як суму шести послідовних простих чисел:
 
 <div style='text-align: center;'>41 = 2 + 3 + 5 + 7 + 11 + 13</div>
 
-This is the longest sum of consecutive primes that adds to a prime below one-hundred.
+Це найдовша сума послідовних простих чисел, в результаті якої виходить просте число, менше за сто.
 
-The longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953.
+Найдовша сума послідовних простих чисел, в результаті якої виходить просте число, менше за тисячу, містить 21 доданок і дорівнює 953.
 
-Which prime, below one-million, can be written as the sum of the most consecutive primes?
+Яке просте число, менше за мільйон, можна записати як суму найбільшої кількості послідовних простих чисел?
 
 # --hints--
 
@@ -67,8 +67,8 @@ class PrimeSeive {
         const prime = 2 * i + 3;
         primes.push(prime);
         // Mark all multiples of this number as false (not prime)
-        const primeSqaredIndex = 2 * i ** 2 + 6 * i + 3;
-        for (let j = primeSqaredIndex; j < upper; j += prime) {
+        const primeSquaredIndex = 2 * i ** 2 + 6 * i + 3;
+        for (let j = primeSquaredIndex; j < upper; j += prime) {
           seive[j] = false;
         }
       }
@@ -101,10 +101,10 @@ class PrimeSeive {
 };
 
 function consecutivePrimeSum(limit) {
-  // Initalize seive
+  // Initialize seive
   const primeSeive = new PrimeSeive(limit);
 
-  // Initalize for longest sum < 100
+  // Initialize for longest sum < 100
   let bestPrime = 41;
   let bestI = 0;
   let bestJ = 5;

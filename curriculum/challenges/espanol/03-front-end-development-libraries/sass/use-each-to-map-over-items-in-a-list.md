@@ -44,7 +44,7 @@ Ten en cuenta que la variable `$key` es necesaria para hacer referencia a las cl
 
 # --instructions--
 
-Escribe una directiva `@each` que recorra una lista: `blue, black, red` y asigna cada variable a una clase `.color-bg`, donde la parte `color` cambia para cada elemento. Cada clase debe establecer el `background-color` al respectivo color.
+Write an `@each` directive that goes through a list: `blue, black, red` and assigns each variable to a `.color-bg` class, where the `color` part changes for each item to the respective color. Each class should set the `background-color` to the respective color as well.
 
 # --hints--
 

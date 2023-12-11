@@ -7,28 +7,29 @@ dashedName: build-a-drum-machine
 ---
 
 # --description--
+**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-**目標：** 構建一個應用，功能和 <a href="https://drum-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://drum-machine.freecodecamp.rocks/</a> 類似。
+**Objective:** Build an app that is functionally similar to this: <a href="https://drum-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://drum-machine.freecodecamp.rocks/</a>.
 
-完成以下需求，並且通過所有測試。 可以使用你需要的任何庫或 API。 賦予它你自己的個人風格。
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-可以使用 HTML、JavaScript、CSS、Bootstrap、SASS、React、Redux、jQuery 來完成這個挑戰。 但鑑於這個章節的學習內容與前端框架相關，推薦使用一款前端框架（比如 React）來完成這個挑戰。 不推薦使用前面沒有提到的技術，否則風險自擔。 我們有計劃新增其他前端框架課程，例如 Angular 和 Vue，不過目前還沒有這些內容。 我們會接受並嘗試修復你在使用推薦技術棧創建項目時報告的問題。 編碼愉快！
+You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-**需求 1：** 應該可以看到一個具有 `id="drum-machine"` 屬性的外層容器，該容器包含了其它所有元素。
+**User Story #1:** I should be able to see an outer container with a corresponding `id="drum-machine"` that contains all other elements.
 
-**需求 2：** 在具有 `#drum-machine` 屬性的元素內，應該能看到一個具有 `id="display"` 屬性的元素。
+**User Story #2:** Within `#drum-machine` I can see an element with a corresponding `id="display"`.
 
-**需求 3：** 在具有 `#drum-machine` 屬性的元素內，應該能看到 9 個可以點擊的鼓墊元素，且每個鼓墊元素都應該有一個值爲 `drum-pad` 的 class 屬性， 一個用於描述觸發鼓墊音頻片段的特殊 id，以及以下鍵值之一的文本內容：`Q`、`W`、`E`、`A`、`S`、`D`、`Z`、`X`、`C`。 這些鼓墊必須按照以上順序排列。
+**User Story #3:** Within `#drum-machine` I can see 9 clickable drum pad elements, each with a class name of `drum-pad`, a unique id that describes the audio clip the drum pad will be set up to trigger, and an inner text that corresponds to one of the following keys on the keyboard: `Q`, `W`, `E`, `A`, `S`, `D`, `Z`, `X`, `C`. The drum pads MUST be in this order.
 
-**需求 4：** 在每一個具有 `.drum-pad` 屬性的元素內，應該有一個具有指向音頻片段地址的 `src` 屬性的 HTML5 `audio` 元素，一個值爲 `clip` 的 class 屬性，以及一個 id 屬性，它的值應該是其父元素 `.drum-pad` 的文本內容（例如 `id="Q"`、`id="W"`、`id="E"` 等等）。
+**User Story #4:** Within each `.drum-pad`, there should be an HTML5 `audio` element which has a `src` attribute pointing to an audio clip, a class name of `clip`, and an id corresponding to the inner text of its parent `.drum-pad` (e.g. `id="Q"`, `id="W"`, `id="E"` etc.).
 
-**需求 5：** 當點擊一個具有 `.drum-pad` 屬性的元素時，應該觸發它的子元素 `audio` 包含的音頻片段。
+**User Story #5:** When I click on a `.drum-pad` element, the audio clip contained in its child `audio` element should be triggered.
 
-**需求 6：** 當按下每一個 `.drum-pad` 元素的關聯鍵時，應該觸發其子元素 `audio` 包含的音頻片段（例如：按下 `Q` 鍵應該觸發包含字符串 `Q` 的鼓墊，按下 `W` 鍵應該觸發包含字符串 `W` 的鼓墊等等）。
+**User Story #6:** When I press the trigger key associated with each `.drum-pad`, the audio clip contained in its child `audio` element should be triggered (e.g. pressing the `Q` key should trigger the drum pad which contains the string `Q`, pressing the `W` key should trigger the drum pad which contains the string `W`, etc.).
 
-**需求 7：** 當觸發一個具有 `.drum-pad` 屬性的元素時，`#display` 元素內應該展示這個觸發元素關聯音頻片段的描述字符串（每一個字符串都應該是獨一無二的）。
+**User Story #7:** When a `.drum-pad` is triggered, a string describing the associated audio clip is displayed as the inner text of the `#display` element (each string must be unique).
 
-以下是一些可用於鼓機的音頻樣本：
+Here are some audio samples you can use for your drum machine:
 
 - [Heater 1](https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3)
 - [Heater 2](https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3)
@@ -40,9 +41,9 @@ dashedName: build-a-drum-machine
 - [Kick](https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3)
 - [Closed-HH](https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3)
 
-你可以<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">使用 CodePen 模版</a>創建你的新項目，點擊 `Save` 即可創建你的新項目。 或者你可以在任何你喜歡的環境中使用以下 CDN 鏈接來運行測試：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
+You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-當你完成了本項目，並且項目通過所有測試，請提交項目的 URL。
+Once you're done, submit the URL to your working project with all its tests passing.
 
 # --solutions--
 

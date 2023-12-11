@@ -18,9 +18,9 @@ $$ 1 \le p \le q \le N \\; \text{and} \\; \left(\sum_{i = p}^q a_i\right)\bmod M
 
 It can be seen that $f(10, 10) = 4$ with the pairs (3,3), (5,5), (7,9) and (9,10).
 
-You are also given that $f({10}^4, {10}^3) = 97\\,158$.
+Також дано, що $f({10}^4, {10}^3) = 97\\,158$.
 
-Find $f({10}^{12}, {10}^6)$.
+Знайдіть $f({10}^{12}, {10}^6)$.
 
 # --hints--
 

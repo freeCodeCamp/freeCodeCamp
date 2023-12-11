@@ -1,6 +1,6 @@
 ---
 id: 5900f3cf1000cf542c50fee1
-title: 'Problem 98: Anagramic squares'
+title: 'Завдання 98: анаграмні квадрати'
 challengeType: 1
 forumTopicId: 302215
 dashedName: problem-98-anagramic-squares
@@ -8,13 +8,13 @@ dashedName: problem-98-anagramic-squares
 
 # --description--
 
-By replacing each of the letters in the word CARE with 1, 2, 9, and 6 respectively, we form a square number: $1296 = 36^2$. What is remarkable is that, by using the same digital substitutions, the anagram, RACE, also forms a square number: $9216 = 96^2$. We shall call CARE (and RACE) a square anagram word pair and specify further that leading zeroes are not permitted, neither may a different letter have the same digital value as another letter.
+Змінюючи кожну з літер у слові CARE на 1, 2, 9 і 6 відповідно, ми створюємо квадратне число: 1296 = 36^2$. Цікаво, що використовуючи ті ж цифрові підставлення, анаграма RACE також утворює квадратне число: $9216 = 96^2$. Ми будемо називати CARE та RACE парою квадратних анаграм. Важливо, що нулі на початку не дозволені, а також різні літери не можуть мати однакові цифрові значення.
 
-Using the `words` array, find all the square anagram word pairs (a palindromic word is NOT considered to be an anagram of itself).
+Використовуючи масив `words`, знайдіть всі пари квадратних анаграм (слово-паліндром НЕ вважається анаграмою самого себе).
 
-What is the largest square number formed by any member of such a pair?
+Яким є найбільше квадратне число, утворене з будь-якого слова такої пари?
 
-**Note:** All anagrams formed must be contained in the given `words` array.
+**Примітка:** всі утворені анаграми повинні зберігатись у наданому масиві `words`.
 
 # --hints--
 

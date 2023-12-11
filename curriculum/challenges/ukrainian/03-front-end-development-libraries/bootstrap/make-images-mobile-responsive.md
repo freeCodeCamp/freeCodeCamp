@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08812
-title: Зробіть мобільні зображення адаптивними
+title: Зробіть зображення адаптивними для мобільних пристроїв
 challengeType: 0
 forumTopicId: 18232
 dashedName: make-images-mobile-responsive
@@ -8,39 +8,39 @@ dashedName: make-images-mobile-responsive
 
 # --description--
 
-Спочатку додайте нове зображення під вже існуючим. Тепер встановіть атрибут `src` так, щоб він вказував на url `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
+Спочатку додайте нове зображення під наявним. Встановіть його атрибут `src` на `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
 
-Було б чудово, якби це зображення було б відповідним до ширини екрану телефона.
+Було б чудово, якби зображення відповідало ширині екрану телефона.
 
-На щастя, у Bootstrap, все, що нам потрібно зробити, це додати `img-responsive` клас до вашого зображення. Зробіть так, і зображення повинно ідеально відповідати ширині вашої сторінки.
+На щастя, все, що нам потрібно зробити завдяки Bootstrap, — додати клас `img-responsive` до зображення. Зробіть так, і зображення відповідатиме ширині вашої сторінки.
 
 # --hints--
 
-У вас усього два зображення.
+Ви повинні мати два зображення.
 
 ```js
 assert($('img').length === 2);
 ```
 
-Ваше нове зображення має бути нижче попереднього і має свій клас `img-responsive`.
+Нове зображення має знаходитись під старим зображенням та мати клас `img-responsive`.
 
 ```js
 assert($('img:eq(1)').hasClass('img-responsive'));
 ```
 
-Нове зображення не має мати клас `smaller-image`.
+Нове зображення не повинне мати клас `smaller-image`.
 
 ```js
 assert(!$('img:eq(1)').hasClass('smaller-image'));
 ```
 
-У вашому новому зображенні має бути `src` з `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
+Нове зображення повинне мати `src` зі значенням `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
 
 ```js
 assert($('img:eq(1)').attr('src') === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg');
 ```
 
-Ваш елемент `img` повинен містити кінцевий теґ.
+Новий елемент `img` повинен мати кінцеву кутову дужку.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 import path from 'path';
 import { readFile } from 'fs/promises';
-import { availableLangs } from '../../config/i18n';
+import { availableLangs } from '../../shared/config/i18n';
 import introSchema from './locales/english/intro.json';
 import linksSchema from './locales/english/links.json';
 import metaTagsSchema from './locales/english/meta-tags.json';
@@ -235,7 +235,9 @@ const readJsonFile = async (language: string, fileName: string) => {
   return fileJson;
 };
 
-const translatedLangs = availableLangs.client.filter(x => x !== 'english');
+const translatedLangs = availableLangs.client.filter(
+  x => String(x) !== 'english'
+);
 
 translationSchemaValidation(translatedLangs);
 motivationSchemaValidation(translatedLangs);

@@ -14,7 +14,7 @@ Let $S(n)$ be the sum of the radii of the circumscribed circles of all such tria
 
 $S(100) = 4\\,950$ and $S(1\\,200) = 1\\,653\\,605$.
 
-Find $S({10}^7)$.
+Знайдіть $S({10}^7)$.
 
 # --hints--
 

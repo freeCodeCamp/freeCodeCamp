@@ -1,6 +1,6 @@
 ---
 id: 5900f38d1000cf542c50fea0
-title: 'Problem 33: Digit cancelling fractions'
+title: 'Problemi 33: semplificando le cifre'
 challengeType: 1
 forumTopicId: 301987
 dashedName: problem-33-digit-cancelling-fractions

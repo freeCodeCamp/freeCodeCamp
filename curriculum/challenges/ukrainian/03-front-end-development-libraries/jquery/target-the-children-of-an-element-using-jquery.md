@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed208826
-title: Націлення на дочірні елементи за допомогою jQuery
+title: Націльте дочірні елементи за допомогою jQuiery
 challengeType: 6
 forumTopicId: 18320
 dashedName: target-the-children-of-an-element-using-jquery
@@ -8,11 +8,11 @@ dashedName: target-the-children-of-an-element-using-jquery
 
 # --description--
 
-Коли елементи HTML розташовані таким чином, коли один рівень знаходиться нижче іншого, їх називають <dfn>дочірніми</dfn> елементами. Наприклад, у цьому завданні текстові елементи кнопки `#target1`, `#target2` і `#target3` - дочірні до елементу `<div class="well" id="left-well">`.
+Якщо елементи HTML розташовані таким чином, що один рівень знаходиться нижче іншого, їх називають <dfn>дочірніми</dfn> елементами. Наприклад, у цьому завданні кнопки з текстом `#target1`, `#target2` та `#target3` є дочірніми елементами елемента `<div class="well" id="left-well">`.
 
-jQuery має функцію під назвою `children()`, що надає доступ до дочірніх чи будь-яких інших обраних елементів.
+jQuery має функцію `children()`, яка надає доступ до дочірніх елементів будь-якого обраного елемента.
 
-Ось приклад того, як можна використовувати функцію `children()` для того, щоб змінити колір дочірніх елементів елементу `left-well` на `blue`:
+Ось приклад, як використати функцію `children()`, щоб надати дочірнім елементам елемента `left-well` колір `blue`:
 
 ```js
 $("#left-well").children().css("color", "blue")
@@ -20,11 +20,11 @@ $("#left-well").children().css("color", "blue")
 
 # --instructions--
 
-Змініть колір усіх дочірніх елементів елементу`right-well` на оранжевий.
+Надайте всім дочірнім елементам елемента `right-well` оранжевий колір.
 
 # --hints--
 
-Усі дочірні елементи `#right-well` повинні мати текст помаранчевого кольору.
+Усі дочірні елементи `#right-well` повинні мати оранжевий текст.
 
 ```js
 assert($('#right-well').children().css('color') === 'rgb(255, 165, 0)');
@@ -36,7 +36,7 @@ assert($('#right-well').children().css('color') === 'rgb(255, 165, 0)');
 assert(code.match(/\.children\(\)\.css/g));
 ```
 
-Користуйтесь лише jQuery, щоб додати ці класи до елементу.
+Для додавання цих класів використовуйте лише jQuery.
 
 ```js
 assert(code.match(/<div class="well" id="right-well">/g));

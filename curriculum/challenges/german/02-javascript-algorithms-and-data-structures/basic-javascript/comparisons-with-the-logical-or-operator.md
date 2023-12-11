@@ -25,7 +25,7 @@ if (num < 5) {
 return "Yes";
 ```
 
-This code will return `Yes` if `num` is between `5` and `10` (`5` and `10` included). The same logic can be written with the <dfn>logical or</dfn> operator.
+Dieser Code wird `Yes` zurückgeben, wenn `num` zwischen `5` und `10` liegt (einschließlich `5` und `10`). Die gleiche Logik kann mit dem Operator <dfn>logical and</dfn> geschrieben werden.
 
 ```js
 if (num > 10 || num < 5) {

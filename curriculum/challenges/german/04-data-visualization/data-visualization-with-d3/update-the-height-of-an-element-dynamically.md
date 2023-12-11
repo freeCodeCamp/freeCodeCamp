@@ -14,7 +14,7 @@ In den vorherigen Aufgaben ging es um das Darstellen von Array-Daten und um das 
 
 2) Gebe jedem `div` eine dynamische Höhe. Dies erreichst du mithilfe einer Callback-Funktion, die in der `style()`-Methode die Höhe auf den Datenwert setzt.
 
-Recall the format to set a style using a callback function:
+Erinnere dich an das Format zum Festlegen eines Stils mithilfe einer Callback-Funktion:
 
 ```js
 selection.style("cssProperty", (d) => d)

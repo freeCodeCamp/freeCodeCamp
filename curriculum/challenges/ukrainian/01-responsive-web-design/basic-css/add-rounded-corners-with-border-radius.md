@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08814
-title: Додавання заокруглених кутів за допомогою властивості border-radius
+title: Додайте заокруглені кути за допомогою border-radius
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cbZm2hg'
 forumTopicId: 16649
@@ -9,13 +9,13 @@ dashedName: add-rounded-corners-with-border-radius
 
 # --description--
 
-Зараз фото кішки має гострі кути. Ми можемо округлити ці кути за допомогою властивості CSS під назвою `border-radius`.
+Зараз фотографія кота має гострі кути. Ці кути можна заокруглити за допомогою властивості `border-radius`.
 
 # --instructions--
 
-Ви можете вказати `border-radius` в пікселях. Задайте фотографії кішки `border-radius` на `10px`.
+Ви можете вказати `border-radius` в пікселях. Надайте фотографії кота властивість `border-radius` зі значенням `10px`.
 
-**Примітка:** це завдання допускає декілька можливих розв'язань. Наприклад, ви можете додати `border-radius` до класу `.thick-green-border`, або класу `.smaller-image`.
+**Примітка:** для цього завдання існує декілька розв’язків. Наприклад, ви можете додати `border-radius` до класу `.thick-green-border` або `.smaller-image`.
 
 # --hints--
 
@@ -25,7 +25,7 @@ dashedName: add-rounded-corners-with-border-radius
 assert($('img').hasClass('thick-green-border'));
 ```
 
-Зображення повинне мати рамку з радіусом `10px`.
+Значенням радіусу кордону зображення має бути `10px`.
 
 ```js
 assert(

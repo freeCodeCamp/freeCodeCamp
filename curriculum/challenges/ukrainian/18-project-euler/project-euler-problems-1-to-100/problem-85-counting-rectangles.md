@@ -1,6 +1,6 @@
 ---
 id: 5900f3c11000cf542c50fed4
-title: 'Problem 85: Counting rectangles'
+title: 'Завдання 85: підрахунок прямокутників'
 challengeType: 1
 forumTopicId: 302199
 dashedName: problem-85-counting-rectangles
@@ -8,11 +8,11 @@ dashedName: problem-85-counting-rectangles
 
 # --description--
 
-By counting carefully it can be seen that a rectangular grid measuring 3 by 2 contains eighteen rectangles:
+Якщо уважно порахувати, можна побачити, що прямокутна сітка 3х2 містить вісімнадцять прямокутників:
 
-<img class="img-responsive center-block" alt="a diagram of the different rectangles found within a 3 by 2 rectangular grid" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="діаграма різних прямокутників, знайдених у прямокутній сітці 3х2" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px;" />
 
-Although there may not exists a rectangular grid that contains exactly `n` rectangles, find the area of the grid with the nearest solution.
+Хоча не існує такої прямокутної сітки, яка містить `n` прямокутників, знайдіть площу сітки з приблизним розв’язком.
 
 # --hints--
 

@@ -29,7 +29,7 @@ assert(
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-يجب عليك إضافة علامة فتح واحد فقط لـ (`a`). الرجاء إزالة أي زيادات.
+You are missing a closing (`a`) tag after the image.
 
 ```js
 assert(document.querySelectorAll('a').length === 2);
