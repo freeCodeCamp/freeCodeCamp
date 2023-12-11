@@ -60,6 +60,8 @@ async function setupPyodide() {
     print,
     input
   });
+  // TODO: use a fresh global object for each runPython call if we stop terminating
+  // the worker when the user input changes. (See python-test-evaluator.ts)
   pyodide.runPython(`
   import jscustom
   from jscustom import print

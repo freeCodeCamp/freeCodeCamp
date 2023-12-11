@@ -1,6 +1,10 @@
 // We have to specify pyodide.js because we need to import that file (not .mjs)
 // and 'import' defaults to .mjs
-import { loadPyodide, type PyodideInterface } from 'pyodide/pyodide.js';
+import {
+  loadPyodide,
+  type PyodideInterface,
+  type PyProxy
+} from 'pyodide/pyodide.js';
 import pkg from 'pyodide/package.json';
 import * as helpers from '@freecodecamp/curriculum-helpers';
 import chai from 'chai';
@@ -114,10 +118,17 @@ ctx.onmessage = async (e: PythonRunEvent) => {
       input: testInput
       // print: () => {}
     });
-    pyodide.runPython(`
+    // Create fresh globals for each test
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    const __userGlobals = pyodide.globals.get('dict')() as PyProxy;
+
+    pyodide.runPython(
+      `
   import jscustom
   from jscustom import input
-  `);
+  `,
+      { globals: __userGlobals }
+    );
 
     // We have to declare these variables in the scope of 'eval' (i.e. the
     // promise that is stored in evaluatedTestString), so that they exist when
@@ -126,8 +137,7 @@ ctx.onmessage = async (e: PythonRunEvent) => {
     // __userGlobals.
     const __pyodide = pyodide;
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    const __userGlobals = __pyodide.globals;
-    pyodide.runPython(code);
+    pyodide.runPython(code, { globals: __userGlobals });
     await test();
 
     ctx.postMessage({ pass: true });
