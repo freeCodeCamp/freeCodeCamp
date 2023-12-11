@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { MutableRefObject, useEffect, useRef } from 'react';
 import type { IDisposable, Terminal } from 'xterm';
+import type { FitAddon } from 'xterm-addon-fit';
 
 import { registerTerminal } from '../utils/python-worker-handler';
 
@@ -26,8 +27,12 @@ const registerServiceWorker = async () => {
   }
 };
 
-export const XtermTerminal = () => {
-  const termRef = useRef(null);
+export const XtermTerminal = ({
+  xtermFitRef
+}: {
+  xtermFitRef: MutableRefObject<FitAddon | null>;
+}) => {
+  const termContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     void registerServiceWorker();
@@ -43,8 +48,9 @@ export const XtermTerminal = () => {
       // convertEol makes every \n a \r\n.
       term = new Terminal({ convertEol: true });
       const fitAddon = new FitAddon();
+      xtermFitRef.current = fitAddon;
       term.loadAddon(fitAddon);
-      if (termRef.current) term.open(termRef.current);
+      if (termContainerRef.current) term.open(termContainerRef.current);
       fitAddon.fit();
 
       const print = (text: string) => term?.writeln(`>>> ${text}`);
@@ -99,7 +105,7 @@ export const XtermTerminal = () => {
       term?.dispose();
       // TODO: figure out if we need/want to terminate the worker
     };
-  }, []);
+  }, [xtermFitRef]);
 
-  return <div ref={termRef} />;
+  return <div ref={termContainerRef} />;
 };

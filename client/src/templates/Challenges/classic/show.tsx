@@ -9,6 +9,8 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import store from 'store';
 import { editor } from 'monaco-editor';
+import type { FitAddon } from 'xterm-addon-fit';
+
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
@@ -150,12 +152,14 @@ const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
 const StepPreview = ({
   disableIframe,
   previewMounted,
-  challengeType
+  challengeType,
+  xtermFitRef
 }: Pick<PreviewProps, 'disableIframe' | 'previewMounted'> & {
   challengeType: number;
+  xtermFitRef: React.MutableRefObject<FitAddon | null>;
 }) => {
   return challengeType === challengeTypes.python ? (
-    <XtermTerminal />
+    <XtermTerminal xtermFitRef={xtermFitRef} />
   ) : (
     <Preview
       className='full-height'
@@ -220,6 +224,7 @@ function ShowClassic({
   const containerRef = useRef<HTMLElement>(null);
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const instructionsPanelRef = useRef<HTMLDivElement>(null);
+  const xtermFitRef = useRef<FitAddon | null>(null);
   const isMobile = useMediaQuery({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
   });
@@ -253,6 +258,8 @@ function ShowClassic({
 
     return isValidLayout ? reflexLayout : BASE_LAYOUT;
   };
+
+  const onPreviewResize = () => xtermFitRef.current?.fit();
 
   // layout: Holds the information of the panes sizes for desktop view
   const [layout, setLayout] = useState(getLayoutState());
@@ -444,11 +451,13 @@ function ShowClassic({
               showToolPanel: false
             })}
             notes={<Notes notes={notes} />}
+            onPreviewResize={onPreviewResize}
             preview={
               <StepPreview
                 challengeType={challengeType}
                 disableIframe={resizing}
                 previewMounted={previewMounted}
+                xtermFitRef={xtermFitRef}
               />
             }
             windowTitle={windowTitle}
@@ -477,11 +486,13 @@ function ShowClassic({
             isFirstStep={isFirstStep}
             layoutState={layout}
             notes={<Notes notes={notes} />}
+            onPreviewResize={onPreviewResize}
             preview={
               <StepPreview
                 challengeType={challengeType}
                 disableIframe={resizing}
                 previewMounted={previewMounted}
+                xtermFitRef={xtermFitRef}
               />
             }
             resizeProps={resizeProps}
