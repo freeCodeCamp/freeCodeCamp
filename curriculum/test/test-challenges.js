@@ -555,9 +555,17 @@ async function createTestRunner(
     ? pythonTestEvaluator
     : javaScriptTestEvaluator;
 
+  // The python worker clears the globals between tests, so it should be fine
+  // to use the same evaluator for all tests. TODO: check if this is true for
+  // sys, since sys.modules is not being reset.
+  const workerConfig = {
+    testEvaluator,
+    options: { terminateWorker: !runsInPythonWorker }
+  };
+
   const evaluator = await (runsInBrowser
     ? getContextEvaluator(build, sources, code, loadEnzyme, transformedPython)
-    : getWorkerEvaluator(build, sources, code, removeComments, testEvaluator));
+    : getWorkerEvaluator(build, sources, code, removeComments, workerConfig));
 
   return async ({ text, testString }) => {
     try {
@@ -634,9 +642,10 @@ async function getWorkerEvaluator(
   sources,
   code,
   removeComments,
-  testEvaluator
+  workerConfig
 ) {
-  const testWorker = createWorker(testEvaluator, { terminateWorker: true });
+  const { testEvaluator, options } = workerConfig;
+  const testWorker = createWorker(testEvaluator, options);
   return {
     evaluate: async (testString, timeout) =>
       await testWorker.execute(

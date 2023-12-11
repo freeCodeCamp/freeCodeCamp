@@ -48,6 +48,11 @@ interface BuildOptions {
   usesTestRunner?: boolean;
 }
 
+interface WorkerConfig {
+  terminateWorker: boolean;
+  testEvaluator: string;
+}
+
 const { filename: jsTestEvaluator } = jsTestEvaluatorData;
 const { filename: pyTestEvaluator } = pyTestEvaluatorData;
 
@@ -167,7 +172,7 @@ function getJSTestRunner(
   return getWorkerTestRunner(
     { build, sources },
     { proxyLogger, removeComments },
-    jsTestEvaluator
+    { testEvaluator: jsTestEvaluator, terminateWorker: true }
   );
 }
 
@@ -178,14 +183,14 @@ function getPyTestRunner(
   return getWorkerTestRunner(
     { build, sources },
     { proxyLogger, removeComments },
-    pyTestEvaluator
+    { testEvaluator: pyTestEvaluator, terminateWorker: false }
   );
 }
 
 function getWorkerTestRunner(
   { build, sources }: Pick<BuildChallengeData, 'build' | 'sources'>,
   { proxyLogger, removeComments }: TestRunnerConfig,
-  testEvaluator: string
+  { testEvaluator, terminateWorker }: WorkerConfig
 ) {
   const code = {
     contents: sources.index,
@@ -194,7 +199,7 @@ function getWorkerTestRunner(
   };
 
   // TODO: allow terminateWorker to be passed in as an option.
-  const testWorker = createWorker(testEvaluator, { terminateWorker: true });
+  const testWorker = createWorker(testEvaluator, { terminateWorker });
 
   type CreateWorker = ReturnType<typeof createWorker>;
 
