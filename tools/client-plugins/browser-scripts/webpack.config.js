@@ -73,7 +73,11 @@ module.exports = (env = {}) => {
     },
     plugins: [
       new CopyWebpackPlugin({
-        patterns: ['./node_modules/sass.js/dist/sass.sync.js']
+        patterns: [
+          './node_modules/sass.js/dist/sass.sync.js',
+          // TODO: copy this into the css folder, not the js folder
+          './node_modules/xterm/css/xterm.css'
+        ]
       }),
       new webpack.ProvidePlugin({
         process: 'process/browser'
