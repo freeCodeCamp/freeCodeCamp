@@ -264,10 +264,10 @@ input[type="radio"]:disabled + label {
 ```js
 let displayArray = [];
 
-let round = 1
-let rolls = 0
-let score = 0
-let totalScore = 0
+let round = 1;
+let rolls = 0;
+let score = 0;
+let totalScore = 0;
 
 --fcc-editable-region--
 
