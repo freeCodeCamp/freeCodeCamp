@@ -404,7 +404,10 @@
       },
       "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
         "title": "Learn Intermediate Algorithmic Thinking by Building a Dice Game",
-        "intro": ["", ""]
+        "intro": [
+          "Algorithmic thinking is as essential part of building out complex applications. This dice game project not only guides you through the intricacies of creating an engaging user interface but also delves into different algorithmic challenges.",
+          "In this dice game project, you will dive into hands-on DOM manipulation using JavaScript to create a dynamic and interactive game interface. Through building features like dice rolling, score tracking, and rule presentation, you'll gain practical experience in event handling, element targeting, and game logic implementation, enhancing your proficiency in front-end web development."
+        ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
         "title": "Learn Intermediate OOP by Building a Platformer Game",
