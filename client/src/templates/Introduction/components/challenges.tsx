@@ -128,7 +128,10 @@ function Challenges({
       {tags.length !== 0 ? (
         <div className='topics-list'>
           <span>
-            <button onClick={() => setDropDownOpen(!dropDownOpen)}>
+            <button
+              onClick={() => setDropDownOpen(!dropDownOpen)}
+              aria-expanded={dropDownOpen ? 'true' : 'false'}
+            >
               <span className='topics-name'>{t('buttons.topics')}</span>
               <FontAwesomeIcon icon={dropDownOpen ? faCaretUp : faCaretDown} />
             </button>
@@ -137,9 +140,7 @@ function Challenges({
               className={
                 tags.filter(tag => tag.active).length > 0 ? '' : 'unselected'
               }
-              aria-pressed={
-                tags.filter(tag => tag.active).length > 0 ? 'true' : 'false'
-              }
+              aria-pressed={tags.some(tag => tag.active) ? 'true' : 'false'}
               onClick={() => resetTagStatuses()}
             >
               {t('buttons.clear-filter')}
@@ -151,6 +152,7 @@ function Challenges({
                     <button
                       className={tag.active ? '' : 'unselected'}
                       onClick={() => setTagStatus(tag.id, !tag.active)}
+                      aria-pressed={tag.active ? 'true' : 'false'}
                     >
                       <span className='topics-name'>{tag.name}</span>
                       <FontAwesomeIcon
