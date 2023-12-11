@@ -98,15 +98,20 @@ ctx.onmessage = async (e: PythonRunEvent) => {
 
     const { input, test } = evaluatedTestString as EvaluatedTeststring;
 
-    // TODO: throw helpful error if we run out of input values, since it's likely
-    // that the user added too many input statements.
-    const inputIterator = input ? input.values() : null;
+    const inputIterator = (input ?? []).values();
+    const testInput = () => {
+      const next = inputIterator.next();
+      if (next.done) {
+        // TODO: handle this error in the UI
+        throw new Error('Too many input calls');
+      } else {
+        return next.value;
+      }
+    };
 
     // Make input available to python (print is not used yet)
     pyodide.registerJsModule('jscustom', {
-      input: () => {
-        return Promise.resolve(inputIterator ? inputIterator.next().value : '');
-      }
+      input: testInput
       // print: () => {}
     });
     pyodide.runPython(`
