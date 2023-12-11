@@ -173,33 +173,33 @@ console.log('freeCodeCamp is awesome!');
 
 # --fillInTheBlank--
 
-These are for the English curriculum challenges.
+Це стосується завдань для навчальної програми з вивчення англійської мови.
 
 ## --sentence--
 
-Sentence to be shown with with blanks that campers have to fill in. Example:
+Тут написане речення з пропусками, які повинен заповнити користувач. Наприклад:
 
 `Hello, You _ the new graphic designer, _?`
 
-The two underscores will show up as blanks. The sentence must be surrounded in backticks.
+Два знаки підкреслення відтворюватимуться як пропуски. Речення має знаходитись у зворотних лапках.
 
 ## --blanks--
 
-The solution for the first blank in the sentence above. Example:
+Розв’язок для першого пропуску в реченні вище. Наприклад:
 
 `are`
 
 ### --feedback--
 
-Feedback shown when campers input the wrong solution for this blank.
+Зворотний зв’язок з’являється, якщо користувач ввів неправильну відповідь.
 
 ---
 
-Solution for the second blank. Example:
+Розв’язок для другого пропуску. Наприклад:
 
 `right`
 
-If no feedback is here, a generic "wrong answer" message will be shown.
+Якщо зворотного зв’язку немає, з’явиться повідомлення «wrong answer».
 ````
 
 > [!NOTE]
