@@ -206,10 +206,6 @@ function Challenges({
             </li>
           ))}
         </ul>
-
-        {challenges.length == 0 && (
-          <div className='challenge-empty'>No challenges found</div>
-        )}
       </nav>
     </>
   ) : (

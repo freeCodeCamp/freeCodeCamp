@@ -164,5 +164,5 @@ const schema = Joi.object()
   .xor('helpCategory', 'isPrivate');
 
 exports.challengeSchemaValidator = () => {
-  return challenge => schema.validate(challenge, { convert: false });
+  return challenge => schema.validate(challenge);
 };
