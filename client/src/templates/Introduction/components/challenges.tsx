@@ -129,7 +129,7 @@ function Challenges({
         <div className='topics-list'>
           <span>
             <button onClick={() => setDropDownOpen(!dropDownOpen)}>
-              <span className='topics-name'>Topics</span>
+              <span className='topics-name'>{t('buttons.topics')}</span>
               <FontAwesomeIcon icon={dropDownOpen ? faCaretUp : faCaretDown} />
             </button>
             &nbsp;
@@ -137,9 +137,12 @@ function Challenges({
               className={
                 tags.filter(tag => tag.active).length > 0 ? '' : 'unselected'
               }
+              aria-pressed={
+                tags.filter(tag => tag.active).length > 0 ? 'true' : 'false'
+              }
               onClick={() => resetTagStatuses()}
             >
-              Clear filters
+              {t('buttons.clear-filter')}
             </button>
             {dropDownOpen ? (
               <div className='topic-selections'>
