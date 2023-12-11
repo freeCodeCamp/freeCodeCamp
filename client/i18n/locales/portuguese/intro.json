@@ -422,6 +422,13 @@
           "Trabalhar com datas em JavaScript pode ser ao mesmo tempo poderoso e desafiador. Neste projeto, ao navegar através de vários métodos, formatos e fusos horários, você aprenderá a trabalhar com o objeto Date do JavaScript, incluindo os seus métodos e propriedades, e aprenderá a formatar datas de maneira eficaz.",
           "Este projeto cobrirá conceitos como os métodos: <code>getDate()</code>, <code>getMonth()</code> e <code>getFullYear()</code>."
         ]
+      },
+      "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard": {
+        "title": "Aprenda programação assíncrona criando uma tabela de lideres do fórum do fCC",
+        "intro": [
+          "Trabalhar com programação assíncrona é um fundamental em JavaScript. Neste projeto, você ganhará proficiência em conceitos de programação assíncrona criando uma tabela de liderança do fórum do freeCodeCamp.",
+          "Este projeto cobrirá a Fetch API, promises, async/await e a instrução try... catch."
+        ]
       }
     }
   },
