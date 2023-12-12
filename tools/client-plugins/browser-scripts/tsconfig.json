@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es2022",
     "module": "CommonJS",
-    "lib": ["WebWorker"],
+    "lib": ["WebWorker", "DOM"],
     "allowJs": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
