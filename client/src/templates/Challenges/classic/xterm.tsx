@@ -4,8 +4,6 @@ import type { FitAddon } from 'xterm-addon-fit';
 
 import { registerTerminal } from '../utils/python-worker-handler';
 
-import 'xterm/css/xterm.css';
-
 const registerServiceWorker = async () => {
   if ('serviceWorker' in navigator) {
     try {
@@ -107,5 +105,9 @@ export const XtermTerminal = ({
     };
   }, [xtermFitRef]);
 
-  return <div ref={termContainerRef} />;
+  return (
+    <div ref={termContainerRef}>
+      <link rel='stylesheet' href='/js/xterm.css' />
+    </div>
+  );
 };

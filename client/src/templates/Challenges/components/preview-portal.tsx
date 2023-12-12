@@ -79,7 +79,6 @@ class PreviewPortal extends Component<PreviewPortalProps> {
   containerEl;
   titleEl;
   styleEl;
-  linkEl;
 
   constructor(props: PreviewPortalProps) {
     super(props);
@@ -90,7 +89,6 @@ class PreviewPortal extends Component<PreviewPortalProps> {
     this.containerEl = document.createElement('div');
     this.titleEl = document.createElement('title');
     this.styleEl = document.createElement('style');
-    this.linkEl = document.createElement('link');
   }
 
   componentDidMount() {
@@ -120,12 +118,8 @@ class PreviewPortal extends Component<PreviewPortalProps> {
       }
     `;
 
-    this.linkEl.setAttribute('rel', 'stylesheet');
-    this.linkEl.setAttribute('href', '/js/xterm.css');
-
     this.externalWindow?.document.head.appendChild(this.titleEl);
     this.externalWindow?.document.head.appendChild(this.styleEl);
-    this.externalWindow?.document.head.appendChild(this.linkEl);
     this.externalWindow?.document.body.setAttribute(
       'style',
       `
