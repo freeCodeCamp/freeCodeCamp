@@ -12,7 +12,9 @@ describe('Add Portfolio Item', () => {
 
     cy.get('[data-cy="validation-message"]').contains('A title is required');
     cy.get('[data-cy="portfolio-title"]').type('This is a portfolio item');
-    cy.get('button').filter(':disabled').should('have.length.gt', 0);
+    cy.get('button')
+      .contains('Save this portfolio item')
+      .should('not.have.attr', 'aria-disabled');
 
     cy.get('[data-cy="portfolio-url"]').type('This is a portfolio item');
     cy.get('[data-cy="validation-message"]').contains(
