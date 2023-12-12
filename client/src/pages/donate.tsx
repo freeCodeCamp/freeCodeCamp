@@ -10,18 +10,23 @@ import { createSelector } from 'reselect';
 
 import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
 import {
-  DonationText,
-  DonationOptionsAlertText,
+  CtaText,
+  ThankYouMessage,
   DonationFaqText,
   SupportBenefitsText,
-  CurrentInitiativeText,
+  CurrentInitiativesText,
   CommunityAchievementsText,
   GetSupporterBenefitsText
 } from '../components/Donation/donation-text-components';
 import { Spacer, Loader } from '../components/helpers';
 import { executeGA } from '../redux/actions';
-import { signInLoadingSelector, userSelector } from '../redux/selectors';
+import {
+  signInLoadingSelector,
+  userSelector,
+  donationFormStateSelector
+} from '../redux/selectors';
 import { PaymentContext } from '../../../shared/config/donation-settings';
+import { DonateFormState } from '../redux/types';
 
 export interface ExecuteGaArg {
   event: string;
@@ -34,14 +39,21 @@ interface DonatePageProps {
   isDonating?: boolean;
   showLoading: boolean;
   t: TFunction;
+  donationFormState: DonateFormState;
 }
 
 const mapStateToProps = createSelector(
   userSelector,
   signInLoadingSelector,
-  ({ isDonating }: { isDonating: boolean }, showLoading: boolean) => ({
+  donationFormStateSelector,
+  (
+    { isDonating }: { isDonating: boolean },
+    showLoading: boolean,
+    donationFormState: DonateFormState
+  ) => ({
     isDonating,
-    showLoading
+    showLoading,
+    donationFormState
   })
 );
 
@@ -53,7 +65,8 @@ function DonatePage({
   executeGA = () => {},
   isDonating = false,
   showLoading,
-  t
+  t,
+  donationFormState
 }: DonatePageProps) {
   useEffect(() => {
     executeGA({
@@ -72,7 +85,11 @@ function DonatePage({
         <Container className='donate-page-container'>
           <Row className={'donation-section'}>
             <Col lg={6} lgOffset={0} md={8} mdOffset={1} sm={12}>
-              {isDonating ? <DonationOptionsAlertText /> : <DonationText />}
+              {isDonating ? (
+                <ThankYouMessage askForDonation={!donationFormState.success} />
+              ) : (
+                <CtaText />
+              )}
             </Col>
             <Col lg={6} lgOffset={0} md={12}>
               <MultiTierDonationForm
@@ -92,7 +109,7 @@ function DonatePage({
         <Row>
           <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
             <Spacer size='large' />
-            <CurrentInitiativeText />
+            <CurrentInitiativesText />
           </Col>
         </Row>
         <Row>
@@ -119,8 +136,6 @@ function DonatePage({
       <Container className='donate-page-container'>
         <Row>
           <Col lg={10} lgOffset={0} md={8} mdOffset={2} sm={10}>
-            <h2 data-playwright-test-label='faq-head'>{t('donate.faq')}:</h2>
-            <Spacer size='small' />
             <DonationFaqText />
           </Col>
         </Row>

@@ -15,7 +15,7 @@ const POBOX = (
   </>
 );
 
-export const DonationText = (): JSX.Element => {
+export const CtaText = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <>
@@ -32,29 +32,30 @@ export const DonationText = (): JSX.Element => {
   );
 };
 
-export const DonationOptionsAlertText = (): JSX.Element => {
+export const ThankYouMessage = ({
+  askForDonation
+}: {
+  askForDonation: boolean;
+}): JSX.Element => {
   const { t } = useTranslation();
   return (
     <>
       <h1 data-playwright-test-label='main-head'>{t('donate.thank-you')}</h1>
-      <Spacer size='medium' />
-      <p>
-        Your contribution has been crucial in creating resources that empower
-        millions to learn new skills and support their families.
-      </p>
-      <p data-cy='donate.bigger-donation'>
-        <Trans>donate.bigger-donation</Trans>{' '}
-        <Trans i18nKey='donate.other-ways'>
-          <a data-cy='donate-link' href={t('links:donate.other-ways-url')}>
-            placeholder
-          </a>
-        </Trans>
-      </p>
-
-      <p>
-        If you want to make another monthly donation, please proceed with
-        selecting your monthly donation amount.
-      </p>
+      {askForDonation && (
+        <>
+          <Spacer size='medium' />
+          <p>{t('donate.crucial-contribution')}</p>
+          <p data-cy='donate.bigger-donation'>
+            <Trans>donate.bigger-donation</Trans>
+            <Trans i18nKey='donate.other-ways'>
+              <a data-cy='donate-link' href={t('links:donate.other-ways-url')}>
+                placeholder
+              </a>
+            </Trans>
+          </p>
+          <p>{t('donate.if-another-monthly')}</p>
+        </>
+      )}
     </>
   );
 };
@@ -183,75 +184,87 @@ export const DonationFaqText = (): JSX.Element => {
   ];
 
   return (
-    <>{faqItems.map((item, iterator) => FaqItem(item.Q, item.A, iterator))}</>
+    <>
+      <h2 data-playwright-test-label='faq-head'>{t('donate.faq')}:</h2>
+      <Spacer size='small' />
+      {faqItems.map((item, iterator) => FaqItem(item.Q, item.A, iterator))}
+    </>
   );
 };
 
-export const SupportBenefitsText = (): JSX.Element => (
-  <>
-    <h2>Benefits from becoming a Supporter:</h2>
-    <ul>
-      <li>No more donation popups</li>
-      <li>You'll get a Supporter badge</li>
-      <li>Your profile image will get a golden halo around it</li>
-      <li>You'll gain access to special Supporter Discord channels</li>
-      <li>And more benefits to come in 2024</li>
-    </ul>
-  </>
-);
+export const SupportBenefitsText = (): JSX.Element => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <h2>{t('donate.support-benefits-title')}</h2>
+      <ul>
+        <li>{t('donate.support-benefits-1')}</li>
+        <li>{t('donate.support-benefits-2')}</li>
+        <li>{t('donate.support-benefits-3')}</li>
+        <li>{t('donate.support-benefits-4')}</li>
+        <li>{t('donate.support-benefits-5')}</li>
+      </ul>
+    </>
+  );
+};
 
-export const CurrentInitiativeText = (): JSX.Element => (
-  <>
-    <h2>Current ongoing initiatives:</h2>
-    <ul>
-      <li>Creating new Javascript and Python curriculula</li>
-      <li>Creating English and math curriculula</li>
-      <li>Translating our curriculum and tutorials to 32 languages</li>
-      <li>Creating a free accredited computer science degree</li>
-    </ul>
-  </>
-);
+export const CurrentInitiativesText = (): JSX.Element => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <h2>{t('donate.current-initiatives-title')}</h2>
+      <ul>
+        <li>{t('donate.current-initiatives-1')}</li>
+        <li>{t('donate.current-initiatives-2')}</li>
+        <li>{t('donate.current-initiatives-3')}</li>
+        <li>{t('donate.current-initiatives-4')}</li>
+      </ul>
+    </>
+  );
+};
 
-export const CommunityAchievementsText = (): JSX.Element => (
-  <>
-    {' '}
-    <h2>Our Community Achievements This Year:</h2>
-    <ul>
-      <li>
-        Published <b>114</b> full-length courses on YouTube
-      </li>
-      <li>
-        Published <b>1,045</b> text-based coding tutorials and <b>20</b> free
-        books through freeCodeCamp Press
-      </li>
-      <li>
-        Merged <b>2,753</b> code contributions into our open source repositories
-        on GitHub
-      </li>
-      <li>
-        Translated <b>2,106,203</b> words to make our curriculum and tutorials
-        more accessible to speakers of many world languages
-      </li>
-    </ul>
-  </>
-);
+export const CommunityAchievementsText = (): JSX.Element => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <h2>{t('donate.community-achivements-title')}</h2>
+      <ul>
+        <li>
+          <Trans i18nKey='donate.community-achivements-1'>
+            <b>placeholder</b>
+          </Trans>
+        </li>
+        <li>
+          <Trans i18nKey='donate.community-achivements-2'>
+            <b>placeholder</b>
+          </Trans>
+        </li>
+        <li>
+          <Trans i18nKey='donate.community-achivements-3'>
+            <b>placeholder</b>
+          </Trans>
+        </li>
+        <li>
+          <Trans i18nKey='donate.community-achivements-4'>
+            <b>placeholder</b>
+          </Trans>
+        </li>
+      </ul>
+    </>
+  );
+};
 
 export const GetSupporterBenefitsText = ({
   isDonating
 }: {
   isDonating: boolean;
-}): JSX.Element => (
-  <>
-    <Spacer size='large' />
-    <p>
-      As you can see, we're getting things done. So you can rest assured that
-      we'll put your donations to good use.
-    </p>
-    {!isDonating ? (
-      <p>
-        Get the benefits and the knowledge that you’re helping our charity
-        change education for the better. Become a Supporter today.
-      </p>
-    ) : null}
-  </>
-);
+}): JSX.Element => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <Spacer size='large' />
+      <p>{t('donate.as-you-see')}</p>
+      {!isDonating ? <p>{t('donate.get-benefits')}</p> : null}
+    </>
+  );
+};
