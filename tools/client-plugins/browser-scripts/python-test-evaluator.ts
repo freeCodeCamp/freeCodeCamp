@@ -1,10 +1,7 @@
 // We have to specify pyodide.js because we need to import that file (not .mjs)
 // and 'import' defaults to .mjs
-import {
-  loadPyodide,
-  type PyodideInterface,
-  type PyProxy
-} from 'pyodide/pyodide.js';
+import { loadPyodide, type PyodideInterface } from 'pyodide/pyodide.js';
+import type { PyProxy } from 'pyodide/ffi';
 import pkg from 'pyodide/package.json';
 import * as helpers from '@freecodecamp/curriculum-helpers';
 import chai from 'chai';
