@@ -1,8 +1,8 @@
 ---
 id: 64dceadec3c9cf2ca7b56de6
-title: Step 23
+title: Step 25
 challengeType: 20
-dashedName: step-23
+dashedName: step-25
 ---
 
 # --description--
@@ -40,8 +40,9 @@ def move(n, source, target, auxiliary):
     # display starting configuration
     print(rods)
     for i in range(number_of_moves):
+        remainder = (i + 1) % 3
 --fcc-editable-region--
-        if (i + 1) % 3 == 1:
+        if remainder == 1:
             print(f'Move {i + 1} allowed between {source} and {target}')
             forward = False
             if not rods[target]:
@@ -49,9 +50,9 @@ def move(n, source, target, auxiliary):
             elif rods[source] and rods[target] and rods[source][-1] < rods[target][-1]:
                 forward = True
 --fcc-editable-region--
-        elif (i + 1) % 3 == 2:
+        elif remainder == 2:
             print(f'Move {i + 1} allowed between {source} and {auxiliary}')
-        elif (i + 1) % 3 == 0:
+        elif remainder == 0:
             print(f'Move {i + 1} allowed between {auxiliary} and {target}')
 
 # initiate call from source A to target C with auxiliary B

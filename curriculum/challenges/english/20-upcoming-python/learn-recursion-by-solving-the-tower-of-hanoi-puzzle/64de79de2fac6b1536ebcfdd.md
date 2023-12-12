@@ -1,8 +1,8 @@
 ---
 id: 64de79de2fac6b1536ebcfdd
-title: Step 35
+title: Step 37
 challengeType: 20
-dashedName: step-35
+dashedName: step-37
 ---
 
 # --description--
@@ -52,13 +52,14 @@ def move(n, source, target, auxiliary):
     # display starting configuration
     print(rods, '\n')
     for i in range(number_of_moves):
-        if (i + 1) % 3 == 1:
+        remainder = (i + 1) % 3
+        if remainder == 1:
             print(f'Move {i + 1} allowed between {source} and {target}')
             make_allowed_move(source, target)
-        elif (i + 1) % 3 == 2:
+        elif remainder == 2:
             print(f'Move {i + 1} allowed between {source} and {auxiliary}')
             make_allowed_move(source, auxiliary)
-        elif (i + 1) % 3 == 0:
+        elif remainder == 0:
             print(f'Move {i + 1} allowed between {auxiliary} and {target}')
             make_allowed_move(auxiliary, target)
 
