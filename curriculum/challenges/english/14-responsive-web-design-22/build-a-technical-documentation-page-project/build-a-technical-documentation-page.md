@@ -10,6 +10,8 @@ dashedName: build-a-technical-documentation-page
 
 **Objective:** Build an app that is functionally similar to <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>
 
+**Demo - Do not copy this project.**
+
 **User Stories:**
 
 1. You can see a `main` element with a corresponding `id="main-doc"`, which contains the page's main content (technical documentation)

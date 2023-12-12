@@ -10,6 +10,8 @@ dashedName: build-a-personal-portfolio-webpage
 
 **Objective:** Build an app that is functionally similar to <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://personal-portfolio.freecodecamp.rocks</a>
 
+**Demo - Do not copy this project.**
+
 **User Stories:**
 
 1. Your portfolio should have a welcome section with an `id` of `welcome-section`

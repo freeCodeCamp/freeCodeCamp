@@ -10,6 +10,8 @@ dashedName: build-a-survey-form
 
 **Objective:** Build an app that is functionally similar to <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>
 
+**Demo - Do not copy this project.**
+
 **User Stories:**
 
 1. You should have a page title in an `h1` element with an `id` of `title`
