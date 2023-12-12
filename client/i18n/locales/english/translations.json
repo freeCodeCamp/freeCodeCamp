@@ -89,7 +89,8 @@
     "submit-exam-results": "Submit my results",
     "verify-trophy": "Verify Trophy",
     "link-account": "Link Account",
-    "unlink-account": "Unlink Account"
+    "unlink-account": "Unlink Account",
+    "update-card": "Update your card"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -378,6 +379,10 @@
     "reset-warn-2": "This cannot be undone",
     "scrimba-tip": "Tip: If the mini-browser is covering the code, click and drag to move it. Also, feel free to stop and edit the code in the video at any time.",
     "chal-preview": "Challenge Preview",
+    "donation-record-not-found": "Your donation record has not been found.",
+    "sign-in-card-update": "Sign in to update your card",
+    "card-has-been-updated": "Your card has been updated successfully.",
+    "contact-support-mistake": "If you think there has been a mistake, please contact us at donors@freecodecamp.org",
     "cert-map-estimates": {
       "certs": "{{title}} Certification"
     },
@@ -465,10 +470,13 @@
     "redirecting": "Redirecting...",
     "thanks": "Thanks for donating",
     "thank-you": "Thank you for being a supporter.",
+    "success-card-update": "Your card has been updated successfully.",
     "additional": "You can make an additional one-time donation of any amount using this link: <0>{{url}}</0>",
     "help-more": "Help us do more",
     "error": "Something went wrong with your donation.",
+    "error-card-update": "Something went wrong with updating your card.",
     "error-2": "Something is not right. Please contact donors@freecodecamp.org",
+    "error-3": "Please try again or contact donors@freecodecamp.org",
     "free-tech": "Your donations will support free technology education for people all over the world.",
     "no-halo": "If you don't see a gold halo around your profile picture, contact donors@freecodecamp.org.",
     "gift-frequency": "Select gift frequency:",
@@ -596,6 +604,7 @@
     "update-email-2": "Update your email address here:",
     "email": "Email",
     "and": "and",
+    "update-your-card": "Update your card",
     "change-theme": "Sign in to change theme.",
     "translation-pending": "Help us translate",
     "certification-project": "Certification Project",
