@@ -40,7 +40,12 @@ const ProjectModal = ({
         <SolutionViewer challengeFiles={challengeFiles} solution={solution} />
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={handleSolutionModalHide}>{t('buttons.close')}</Button>
+        <Button
+          data-cy='solution-viewer-close-btn'
+          onClick={handleSolutionModalHide}
+        >
+          {t('buttons.close')}
+        </Button>
       </Modal.Footer>
     </Modal>
   );
