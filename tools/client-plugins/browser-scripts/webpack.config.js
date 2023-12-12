@@ -17,7 +17,6 @@ module.exports = (env = {}) => {
       'frame-runner': './frame-runner.ts',
       'sass-compile': './sass-compile.ts',
       'test-evaluator': './test-evaluator.ts',
-      'python-runner': './python-runner.ts',
       'python-worker': './python-worker.ts',
       'python-test-evaluator': './python-test-evaluator.ts'
     },
@@ -63,11 +62,6 @@ module.exports = (env = {}) => {
               ]
             }
           }
-        },
-        // xterm doesn't bundle its css, so we need to load it ourselves
-        {
-          test: /\.css$/,
-          use: ['style-loader', 'css-loader']
         }
       ]
     },
