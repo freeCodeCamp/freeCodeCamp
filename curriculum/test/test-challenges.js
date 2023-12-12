@@ -545,7 +545,8 @@ async function createTestRunner(
 
   const code = {
     contents: sources.index,
-    editableContents: sources.editableContents
+    editableContents: sources.editableContents,
+    original: sources.original
   };
 
   const runsInBrowser = buildChallenge === buildDOMChallenge;
