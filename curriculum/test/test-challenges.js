@@ -533,15 +533,14 @@ async function createTestRunner(
     solutionFiles
   );
 
-  const { build, sources, loadEnzyme, transformedPython } =
-    await buildChallenge(
-      {
-        challengeFiles,
-        required,
-        template
-      },
-      { usesTestRunner: true }
-    );
+  const { build, sources, loadEnzyme } = await buildChallenge(
+    {
+      challengeFiles,
+      required,
+      template
+    },
+    { usesTestRunner: true }
+  );
 
   const code = {
     contents: sources.index,
@@ -565,7 +564,7 @@ async function createTestRunner(
   };
 
   const evaluator = await (runsInBrowser
-    ? getContextEvaluator(build, sources, code, loadEnzyme, transformedPython)
+    ? getContextEvaluator(build, sources, code, loadEnzyme)
     : getWorkerEvaluator(build, sources, code, removeComments, workerConfig));
 
   return async ({ text, testString }) => {
@@ -610,20 +609,8 @@ function replaceChallengeFilesContentsWithSolutions(
   });
 }
 
-async function getContextEvaluator(
-  build,
-  sources,
-  code,
-  loadEnzyme,
-  transformedPython
-) {
-  await initializeTestRunner(
-    build,
-    sources,
-    code,
-    loadEnzyme,
-    transformedPython
-  );
+async function getContextEvaluator(build, sources, code, loadEnzyme) {
+  await initializeTestRunner(build, sources, code, loadEnzyme);
 
   return {
     evaluate: async (testString, timeout) =>
@@ -656,30 +643,22 @@ async function getWorkerEvaluator(
   };
 }
 
-async function initializeTestRunner(
-  build,
-  sources,
-  code,
-  loadEnzyme,
-  transformedPython
-) {
+async function initializeTestRunner(build, sources, code, loadEnzyme) {
   await page.reload();
   await page.setContent(build);
   await page.evaluate(
-    async (code, sources, loadEnzyme, transformedPython) => {
+    async (code, sources, loadEnzyme) => {
       const getUserInput = fileName => sources[fileName];
       // TODO: use frame's functions directly, so it behaves more like the
-      // client. Also, keep an eye on performance - loading pyodide is slow.
+      // client.
       await document.__initTestFrame({
         code: sources,
         getUserInput,
-        loadEnzyme,
-        transformedPython
+        loadEnzyme
       });
     },
     code,
     sources,
-    loadEnzyme,
-    transformedPython
+    loadEnzyme
   );
 }
