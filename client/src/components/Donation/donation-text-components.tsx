@@ -191,7 +191,7 @@ export const DonationFaqText = (): JSX.Element => {
 
   return (
     <>
-      <h2 data-playwright-test-label='faq-head'>{t('donate.faq')}:</h2>
+      <h2 data-playwright-test-label='faq-head'>{t('donate.faq')}</h2>
       <Spacer size='small' />
       {faqItems.map((item, iterator) => FaqItem(item.Q, item.A, iterator))}
     </>
