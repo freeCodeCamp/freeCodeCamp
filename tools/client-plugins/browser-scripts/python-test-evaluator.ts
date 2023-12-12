@@ -118,13 +118,18 @@ ctx.onmessage = async (e: PythonRunEvent) => {
     // Create fresh globals for each test
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     const __userGlobals = pyodide.globals.get('dict')() as PyProxy;
+    const runPython = (pyCode: string) =>
+      pyodide.runPython(pyCode, { globals: __userGlobals }) as unknown;
+    // TODO: remove __pyodide once all the test use runPython.
+    const __pyodide = {
+      runPython
+    };
 
-    pyodide.runPython(
+    runPython(
       `
   import jscustom
   from jscustom import input
-  `,
-      { globals: __userGlobals }
+  `
     );
 
     // We have to declare these variables in the scope of 'eval' (i.e. the
@@ -132,9 +137,12 @@ ctx.onmessage = async (e: PythonRunEvent) => {
     // the `testString` is evaluated. Otherwise, they will be undefined when
     // `test` is called and the tests will not be able to use __pyodide or
     // __userGlobals.
-    const __pyodide = pyodide;
+
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    pyodide.runPython(code, { globals: __userGlobals });
+    runPython(code);
+    // TODO: remove the next line, creating __locals, once all the tests access
+    // variables directly.
+    runPython('__locals = globals()');
     await test();
 
     ctx.postMessage({ pass: true });
