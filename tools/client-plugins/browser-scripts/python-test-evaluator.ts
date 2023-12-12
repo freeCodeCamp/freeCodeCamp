@@ -118,6 +118,10 @@ ctx.onmessage = async (e: PythonRunEvent) => {
     // Create fresh globals for each test
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     const __userGlobals = pyodide.globals.get('dict')() as PyProxy;
+    // Some tests rely on __name__ being set to __main__ and we new dicts do not
+    // have this set by default.
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    __userGlobals.set('__name__', '__main__');
 
     // The runPython helper is a shortcut for running python code with our
     // custom globals.
