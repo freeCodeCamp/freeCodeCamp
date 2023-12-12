@@ -800,16 +800,13 @@ audio.addEventListener("ended", () => {
     if (nextSongExists) {
       playNextSong();
     } else {
-      userData = {
-        songs: userData?.songs,
-        currentSong: null,
-        songCurrentTime: 0,
-      };
-
+      userData.currentSong = null;
+      userData.songCurrentTime = 0;  
 --fcc-editable-region--
 
+
 --fcc-editable-region--
-   }
+    }
 });
 
 renderSongs(userData?.songs);
@@ -1573,11 +1570,8 @@ audio.addEventListener("ended", () => {
     if (nextSongExists) {
       playNextSong();
     } else {
-      userData = {
-        songs: userData?.songs,
-        currentSong: null,
-        songCurrentTime: 0,
-      };
+      userData.currentSong = null;
+      userData.songCurrentTime = 0;
 
       pauseSong(); 
       setPlayerDisplay(); 
