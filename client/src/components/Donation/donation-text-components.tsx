@@ -40,20 +40,26 @@ export const ThankYouMessage = ({
   const { t } = useTranslation();
   return (
     <>
-      <h1 data-playwright-test-label='main-head'>{t('donate.thank-you')}</h1>
+      <h1 data-playwright-test-label='main-head' data-cy='donate.thank-you'>
+        {t('donate.thank-you')}
+      </h1>
       {askForDonation && (
         <>
           <Spacer size='medium' />
-          <p>{t('donate.crucial-contribution')}</p>
+          <p data-cy='donate.crucial-contribution'>
+            {t('donate.crucial-contribution')}
+          </p>
           <p data-cy='donate.bigger-donation'>
-            <Trans>donate.bigger-donation</Trans>
+            {t('donate.bigger-donation')}{' '}
             <Trans i18nKey='donate.other-ways'>
               <a data-cy='donate-link' href={t('links:donate.other-ways-url')}>
                 placeholder
               </a>
             </Trans>
           </p>
-          <p>{t('donate.if-another-monthly')}</p>
+          <p data-cy='donate.make-another-monthly'>
+            {t('donate.if-another-monthly')}
+          </p>
         </>
       )}
     </>
