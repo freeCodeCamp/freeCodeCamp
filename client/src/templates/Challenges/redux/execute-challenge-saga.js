@@ -267,14 +267,13 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
         const portalDocument = yield select(portalDocumentSelector);
         const finalDocument = portalDocument || document;
 
-        yield call(updatePreview, buildData, finalDocument, proxyLogger);
-
-        // Python challenges need to be created in two steps:
-        // 1) build the preview (xterm)
-        // 2) evaluate the code in the worker. We run the code in a worker so
-        // that it can block without blocking the main thread.
+        // Python challenges do not use the preview frame, they use a web worker
+        // to run the code. The UI is handled by the xterm component, so there
+        // is no need to update the preview frame.
         if (challengeData.challengeType === challengeTypes.python) {
           yield updatePython(challengeData);
+        } else {
+          yield call(updatePreview, buildData, finalDocument, proxyLogger);
         }
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = getTestRunner(buildData, {

@@ -343,8 +343,7 @@ export function updatePreview(
 
   if (
     buildData.challengeType === challengeTypes.html ||
-    buildData.challengeType === challengeTypes.multifileCertProject ||
-    buildData.challengeType === challengeTypes.python
+    buildData.challengeType === challengeTypes.multifileCertProject
   ) {
     return new Promise<void>(resolve =>
       createMainPreviewFramer(
