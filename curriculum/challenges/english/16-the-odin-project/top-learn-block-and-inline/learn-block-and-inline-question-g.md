@@ -16,19 +16,19 @@ Which of the following is NOT an `inline` element?
 
 ## --answers--
 
-form element
+`form` element
 
 ---
 
-anchor element
+`anchor` element
 
 ---
 
-img element
+image element
 
 ---
 
-span element
+`span` element
 
 ## --video-solution--
 

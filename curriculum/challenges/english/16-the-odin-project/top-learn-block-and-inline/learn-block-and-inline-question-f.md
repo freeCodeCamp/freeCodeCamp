@@ -28,7 +28,7 @@ Normal flow is a CSS rule that defines the order of media queries for responsive
 
 ---
 
-Normal flow in CSS layouts refers to the default positioning of elements on a webpage
+Normal flow in CSS layouts refers to the default positioning of elements on a webpage.
 
 ## --video-solution--
 
