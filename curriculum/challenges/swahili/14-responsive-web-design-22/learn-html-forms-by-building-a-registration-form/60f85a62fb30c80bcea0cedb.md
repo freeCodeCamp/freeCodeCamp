@@ -7,7 +7,7 @@ dashedName: step-25
 
 # --description--
 
-Watumiaji wataruhusiwa kuchagua kati ya `Personal Account` au `Business Account`.
+Users will be allowed to choose either a `Personal` or `Business`.
 
 Ili kufanya hivyo, ndani ya kila moja ya vipengele viwili vya kwanza vya `label`, ongeza kipengele kimoja cha `input` chenye`type="radio"`.
 
@@ -56,7 +56,6 @@ assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"
       </fieldset>
 --fcc-editable-region--
       <fieldset>
-        <label></label>
         <label></label>
         <label></label>
       </fieldset>

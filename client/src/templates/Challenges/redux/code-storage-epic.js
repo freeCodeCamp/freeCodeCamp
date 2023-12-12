@@ -3,7 +3,7 @@ import { of } from 'rxjs';
 import { filter, ignoreElements, map, switchMap, tap } from 'rxjs/operators';
 import store from 'store';
 
-import { isPoly, setContent } from '../../../../../utils/polyvinyl';
+import { isPoly, setContent } from '../../../../../shared/utils/polyvinyl';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { savedChallengesSelector } from '../../../redux/selectors';
@@ -132,7 +132,7 @@ function loadCodeEpic(action$, state$) {
       const { title: legacyKey } = challenge;
       const codeFound = getCode(id);
 
-      // first check if the store (which is syncronized with the db) has saved
+      // first check if the store (which is synchronized with the db) has saved
       // code
       const savedChallenges = savedChallengesSelector(state);
       const savedChallenge = savedChallenges?.find(saved => {

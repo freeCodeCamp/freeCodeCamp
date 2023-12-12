@@ -1,4 +1,4 @@
-import currData from '../../../config/curriculum.json';
+import currData from '../../../shared/config/curriculum.json';
 import { orderedSuperBlockInfo } from '../../../tools/scripts/build/build-external-curricula-data';
 
 const nonEditorSB = [

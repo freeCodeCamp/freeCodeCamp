@@ -23,10 +23,6 @@ const defaultTestProps: StrictSolutionFormProps = {
 test('should render', () => {
   render(<StrictSolutionForm {...defaultTestProps} />);
 
-  const nameInput = screen.getByLabelText(/name Label/);
-  expect(nameInput).not.toBeRequired();
-  expect(nameInput).toHaveAttribute('type', 'text');
-
   const websiteInput = screen.getByLabelText(/WebSite label/);
   expect(websiteInput).toBeRequired();
   expect(websiteInput).toHaveAttribute('type', 'url');

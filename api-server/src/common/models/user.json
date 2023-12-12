@@ -110,6 +110,10 @@
       "type": "boolean",
       "default": false
     },
+    "isClassroomAccount": {
+      "type": "boolean",
+      "default": false
+    },
     "currentChallengeId": {
       "type": "string",
       "description": "The challenge last visited by the user",
@@ -343,10 +347,6 @@
       "type": "string",
       "default": "default"
     },
-    "sound": {
-      "type": "boolean",
-      "default": false
-    },
     "keyboardShortcuts": {
       "type": "boolean",
       "default": false
@@ -422,6 +422,16 @@
     "userTokens": {
       "type": "hasMany",
       "model": "UserToken",
+      "foreignKey": "userId"
+    },
+    "msUsernames": {
+      "type": "hasMany",
+      "model": "MsUsername",
+      "foreignKey": "userId"
+    },
+    "surveys": {
+      "type": "hasMany",
+      "model": "Survey",
       "foreignKey": "userId"
     }
   },

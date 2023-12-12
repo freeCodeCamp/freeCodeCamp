@@ -1,4 +1,4 @@
-import envData from '../../../config/env.json';
+import envData from '../../config/env.json';
 
 const { clientLocale } = envData as {
   clientLocale: keyof typeof algoliaIndices;

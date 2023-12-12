@@ -20,7 +20,7 @@ dashedName: use-conditional-logic-with-if-statements
 **مثال**
 
 ```js
-function test (myCondition) {
+function test(myCondition) {
   if (myCondition) {
     return "It was true";
   }

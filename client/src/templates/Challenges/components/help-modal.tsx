@@ -6,7 +6,7 @@ import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
-import envData from '../../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import { executeGA } from '../../../redux/actions';
 import { createQuestion, closeModal } from '../redux/actions';
 import { isHelpModalOpenSelector } from '../redux/selectors';
@@ -64,7 +64,7 @@ function HelpModal({
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className='help-modal-body text-center'>
-        <h3>
+        <h3 className='help-modal-heading'>
           <Trans i18nKey='learn.tried-rsa'>
             <a
               href={RSA}

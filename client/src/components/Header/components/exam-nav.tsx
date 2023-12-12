@@ -9,13 +9,17 @@ const ExamNav = (): JSX.Element => {
   const { t } = useTranslation();
 
   return (
-    <nav aria-label={t('aria.primary-nav')} className='exam-nav' id='exam-nav'>
-      <div className='logo freecodecamp-logo'>
-        <FreeCodeCampLogo aria-hidden='true' />
-      </div>
-      <div className='logo partner-logo'>
-        <MicrosoftLogo aria-hidden='true' />
-      </div>
+    <nav
+      aria-label={t('aria.primary-nav')}
+      className='exam-nav'
+      id='exam-nav'
+      data-playwright-test-label='header-exam-nav'
+    >
+      <FreeCodeCampLogo aria-hidden='true' />
+      <MicrosoftLogo
+        aria-hidden='true'
+        data-playwright-test-label='header-exam-nav-microsoft-logo'
+      />
     </nav>
   );
 };

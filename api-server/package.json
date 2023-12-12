@@ -20,7 +20,10 @@
   "main": "none",
   "scripts": {
     "babel-dev-server": "babel-node --inspect=0.0.0.0 ./src/server/index.js",
+    "prebuild": "pnpm common-setup",
     "build": "babel src --out-dir lib --ignore '/**/*.test.js' --copy-files --no-copy-ignored",
+    "common-setup": "pnpm -w run create:shared",
+    "predevelop": "pnpm common-setup",
     "develop": "node src/development-start.js",
     "start": "cross-env DEBUG=fcc* node lib/production-start.js"
   },
@@ -47,6 +50,8 @@
     "express-validator": "6.14.1",
     "helmet": "3.23.3",
     "helmet-csp": "2.10.0",
+    "joi": "17.9.2",
+    "joi-objectid": "3.0.1",
     "jsonwebtoken": "8.5.1",
     "lodash": "4.17.21",
     "loopback": "3.28.0",
@@ -82,8 +87,6 @@
     "@babel/plugin-proposal-optional-chaining": "7.17.12",
     "@babel/preset-env": "7.18.0",
     "@babel/register": "7.17.7",
-    "joi": "17.9.2",
-    "joi-objectid": "3.0.1",
     "loopback-component-explorer": "6.4.0",
     "nodemon": "2.0.16",
     "smee-client": "1.2.3"

@@ -1,22 +1,32 @@
 ---
 id: 647e224b8acb466c97ccbeef
-title: 'Create C# Methods with Parameters'
+title: 'Створіть методи C# з параметрами'
 challengeType: 19
 dashedName: create-c-sharp-methods-with-parameters
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на платформі Microsoft Learn. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-parameters/" target="_blank">https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-parameters/</a> and complete all the tasks for the "Create C# Methods with Parameters" module. This is required to earn the "Create Methods in C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/</a> та виконайте всі завдання модуля «Створіть методи C# з параметрами». Це **обов’язково**, щоб отримати трофей зі «Створення методів в консольних застосунках C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
+
+# --assignment--
+
+Виконайте метод <a href="https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/" target="_blank" rel="noreferrer">«Створіть методи C# з параметрами»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-Given the method signature, `void Print(string name, string number = "", bool member = false)`, which of the following options correctly uses named and optional arguments?
+Вам надано сигнатуру методу:
+
+```clike
+void Print(string name, string number = "", bool member = false)
+```
+
+Що з перелічного правильно використовує іменовані та додаткові аргументи?
 
 ## --answers--
 

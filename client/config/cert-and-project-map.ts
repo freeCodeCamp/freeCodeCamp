@@ -3,8 +3,8 @@ import {
   legacyCertifications,
   upcomingCertifications,
   currentCertifications
-} from '../../config/certification-settings';
-import config from '../../config/env.json';
+} from '../../shared/config/certification-settings';
+import config from '../config/env.json';
 
 const { showUpcomingChanges } = config;
 
@@ -36,6 +36,7 @@ const foundationalCSharpBase =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam';
 const upcomingPythonBase = '/learn/upcoming-python';
 const exampleCertBase = '/learn/example-certification';
+const a2EnglishBase = '/learn/a2-english-for-developers';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
 const legacyFrontEndTakeHomeBase = takeHomeBase;
@@ -747,7 +748,6 @@ const allStandardCerts = [
       }
     ]
   },
-  // Upcoming Certifications
   {
     id: '647e3159823e0ef219c7359b',
     title: 'Foundational C# with Microsoft',
@@ -761,6 +761,7 @@ const allStandardCerts = [
       }
     ]
   },
+  // Upcoming Certifications
   {
     id: '64514fda6c245de4d11eb7bb',
     title: 'Example Certification',
@@ -784,6 +785,19 @@ const allStandardCerts = [
         title: 'Upcoming Python Project',
         link: `${upcomingPythonBase}/upcoming-python-project`,
         certSlug: Certification.UpcomingPython
+      }
+    ]
+  },
+  {
+    id: '651dd7e01d697d0aab7833b7',
+    title: 'A2 English for Developers',
+    certSlug: Certification.A2English,
+    projects: [
+      {
+        id: '651dd3e06ffb500e3f2ce478',
+        title: 'Challenge 1',
+        link: `${a2EnglishBase}/learn-greetings-in-your-first-day-at-the-office/challenge-1`,
+        certSlug: Certification.A2English
       }
     ]
   }

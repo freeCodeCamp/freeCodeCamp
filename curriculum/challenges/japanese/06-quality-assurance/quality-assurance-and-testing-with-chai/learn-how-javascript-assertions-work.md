@@ -24,7 +24,7 @@ Replit を使用する場合は、下記の手順でプロジェクトをセッ�
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中で、`Basic Assertions` スイート内の `#1` と書かれているテストについて、それぞれの `assert` を `assert.isNull` または `assert.isNotNull` に変更し、テストを成功させてください (`true` と評価されるようにしてください)。 アサートに渡された引数は変更しないでください。
+Within `tests/1_unit-tests.js` under the test labeled `#1` in the `Basic Assertions` suite, change each `assert` to either `assert.isNull` or `assert.isNotNull` to make the test pass (should evaluate to `true`). アサートに渡された引数は変更しないでください。
 
 # --hints--
 

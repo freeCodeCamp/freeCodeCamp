@@ -6,7 +6,7 @@ const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
 
 const { curriculum: curriculumLangs } =
-  require('../config/i18n').availableLangs;
+  require('../shared/config/i18n').availableLangs;
 const { parseMD } = require('../tools/challenge-parser/parser');
 /* eslint-disable max-len */
 const {
@@ -14,8 +14,8 @@ const {
 } = require('../tools/challenge-parser/translation-parser');
 /* eslint-enable max-len*/
 
-const { isAuditedSuperBlock } = require('../utils/is-audited');
-const { createPoly } = require('../utils/polyvinyl');
+const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
+const { createPoly } = require('../shared/utils/polyvinyl');
 const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
 
 const access = util.promisify(fs.access);
@@ -43,17 +43,13 @@ function createCommentMap(dictionariesDir) {
   );
 
   // get the english dicts
-  const COMMENTS_TO_TRANSLATE = require(path.resolve(
-    dictionariesDir,
-    'english',
-    'comments.json'
-  ));
+  const COMMENTS_TO_TRANSLATE = require(
+    path.resolve(dictionariesDir, 'english', 'comments.json')
+  );
 
-  const COMMENTS_TO_NOT_TRANSLATE = require(path.resolve(
-    dictionariesDir,
-    'english',
-    'comments-to-not-translate'
-  ));
+  const COMMENTS_TO_NOT_TRANSLATE = require(
+    path.resolve(dictionariesDir, 'english', 'comments-to-not-translate')
+  );
 
   // map from english comment text to translations
   const translatedCommentMap = Object.entries(COMMENTS_TO_TRANSLATE).reduce(
@@ -326,6 +322,8 @@ ${getFullPath('english', filePath)}
         showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
       });
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
+    challenge.disableLoopProtectTests = !!meta.disableLoopProtectTests;
+    challenge.disableLoopProtectPreview = !!meta.disableLoopProtectPreview;
   }
 
   function fixChallengeProperties(challenge) {
@@ -349,10 +347,9 @@ ${getFullPath('english', filePath)}
   async function createChallenge(filePath, maybeMeta) {
     const meta = maybeMeta
       ? maybeMeta
-      : require(path.resolve(
-          META_DIR,
-          `${getBlockNameFromPath(filePath)}/meta.json`
-        ));
+      : require(
+          path.resolve(META_DIR, `${getBlockNameFromPath(filePath)}/meta.json`)
+        );
 
     await validate(filePath, meta.superBlock);
 

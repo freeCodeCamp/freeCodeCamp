@@ -31,10 +31,10 @@ Para $1 ≤ k ≤ 200$, encontre $\sum{m(k)}$.
 
 # --hints--
 
-`efficientExponentation()` deve retornar `1582`.
+`efficientExponentiation()` deve retornar `1582`.
 
 ```js
-assert.strictEqual(efficientExponentation(), 1582);
+assert.strictEqual(efficientExponentiation(), 1582);
 ```
 
 # --seed--
@@ -42,12 +42,12 @@ assert.strictEqual(efficientExponentation(), 1582);
 ## --seed-contents--
 
 ```js
-function efficientExponentation() {
+function efficientExponentiation() {
 
   return true;
 }
 
-efficientExponentation();
+efficientExponentiation();
 ```
 
 # --solutions--

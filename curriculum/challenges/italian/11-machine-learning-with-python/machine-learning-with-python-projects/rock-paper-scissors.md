@@ -58,7 +58,7 @@ I test unitari per questo progetto sono in `test_module.py`. Abbiamo importato i
 
 ## Invio
 
-Copia l'URL del tuo progetto e consegnalo nell'input qua sotto.
+Copy your project's URL and submit it to freeCodeCamp.
 
 # --hints--
 

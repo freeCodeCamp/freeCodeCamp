@@ -8,11 +8,11 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Нагадуємо, що цей проєкт створюється на основі стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Під час тесту запиту `PUT` ви часто будете надсилати й дані. Дані, які поміщені у вашому запиті `PUT`, називаються тілом запиту.
 
-Щоб відправити запит `PUT` та об'єкт JSON до `'/travellers'`, ви можете використати методи `put` та `send` плагіну `chai-http`:
+Щоб відправити запит `PUT` та об’єкт JSON до `'/travellers'`, ви можете використати методи `put` та `send` плагіну `chai-http`:
 
 ```js
 chai
@@ -41,7 +41,7 @@ chai
 
 У межах `tests/2_functional-tests.js` змініть `'Send {surname: "Colombo"}'` тесту (`// #3`) і використайте методи `put` та `send`, щоб перевірити кінцеву точку `'/travellers'`.
 
-Надішліть наступний об'єкт JSON зі своїм запитом PUT:
+Надішліть наступний об’єкт JSON зі своїм запитом PUT:
 
 ```json
 {
@@ -51,10 +51,10 @@ chai
 
 Перевірте наступне у межах зворотнього виклику `request.end`:
 
-1.  `status` повинен бути `200`
-2.  `type` повинен бути `application/json`
-3.  `body.name` повинен бути `Cristoforo`
-4.  `body.surname` повинен бути `Colombo`
+1.  `status` має бути `200`
+2.  `type` має бути `application/json`
+3.  `body.name` має бути `Cristoforo`
+4.  `body.surname` має бути `Colombo`
 
 Дотримуйтесь порядку тверджень вище, оскільки ми залежимо від нього. Не забудьте видалити `assert.fail()` після завершення.
 

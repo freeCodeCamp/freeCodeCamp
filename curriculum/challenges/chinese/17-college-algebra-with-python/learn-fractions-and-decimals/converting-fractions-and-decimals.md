@@ -12,11 +12,11 @@ dashedName: converting-fractions-and-decimals
 
 这是<a href="https://colab.research.google.com/drive/1dgeEEODP7cwm_96_JqbjxxJhVpZcFfGe?usp=sharing#scrollTo=NkMTAVF0BlqE" target="_blank" rel="noopener noreferrer nofollow">视频中使用的 Colab 笔记本</a>，使用此代码作为模型，自己写代码来转换分数和小数。
 
-# --question--
-
-## --任务--
+# --任务--
 
 在你的代数 Colab 笔记本上添加转换分数和小数的代码。
+
+# --question--
 
 ## --text--
 

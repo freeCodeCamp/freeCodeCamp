@@ -31,12 +31,12 @@ const {
 const {
   default: createWorker
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
-const { challengeTypes } = require('../../config/challenge-types');
+const { challengeTypes } = require('../../shared/config/challenge-types');
 // the config files are created during the build, but not before linting
 const testEvaluator =
-  require('../../config/client/test-evaluator.json').filename;
+  require('../../client/config/browser-scripts/test-evaluator.json').filename;
 
-const { getLines } = require('../../utils/get-lines');
+const { getLines } = require('../../shared/utils/get-lines');
 
 const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
@@ -107,8 +107,16 @@ setup()
   .catch(err => handleRejection(err));
 
 async function setup() {
-  if (process.env.FCC_SUPERBLOCK && process.env.FCC_BLOCK) {
-    throw new Error(`Please do not use both a block and superblock as input.`);
+  if (
+    [
+      process.env.FCC_BLOCK,
+      process.env.FCC_CHALLENGE_ID,
+      process.env.FCC_SUPERBLOCK
+    ].filter(Boolean).length > 1
+  ) {
+    throw new Error(
+      `Please use at most single input from: block, challenge id, superblock.`
+    );
   }
 
   // liveServer starts synchronously
@@ -179,6 +187,27 @@ async function setup() {
     }
   }
 
+  if (process.env.FCC_CHALLENGE_ID) {
+    console.log(`\nChallenge Id being tested: ${process.env.FCC_CHALLENGE_ID}`);
+    const challengeIndex = challenges.findIndex(
+      challenge => challenge.id === process.env.FCC_CHALLENGE_ID
+    );
+    if (challengeIndex === -1) {
+      throw new Error(
+        `No challenge found with id "${process.env.FCC_CHALLENGE_ID}"`
+      );
+    }
+    const { solutions = [] } = challenges[challengeIndex];
+    if (isEmpty(solutions)) {
+      // Project based curriculum usually has solution for current challenge in
+      // next challenge's seed.
+      challenges = challenges.slice(challengeIndex, challengeIndex + 2);
+    } else {
+      // Only one challenge is tested, but tests assume challenges is an array.
+      challenges = [challenges[challengeIndex]];
+    }
+  }
+
   const meta = {};
   for (const challenge of challenges) {
     const dashedBlockName = challenge.block;
@@ -238,7 +267,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
 
-  if (!process.env.FCC_BLOCK) {
+  if (!process.env.FCC_BLOCK && !process.env.FCC_CHALLENGE_ID) {
     describe('Assert meta order', function () {
       /** This array can be used to skip a superblock - we'll use this
        * when we are working on the new project-based curriculum for
@@ -287,6 +316,12 @@ function populateTestsForLang({ lang, challenges, meta }) {
   describe(`Check challenges (${lang})`, function () {
     this.timeout(5000);
     challenges.forEach((challenge, id) => {
+      // When testing single challenge, in project based curriculum,
+      // challenge to test (current challenge) might not have solution.
+      // Instead seed from next challenge is tested against tests from
+      // current challenge. Next challenge is skipped from testing.
+      if (process.env.FCC_CHALLENGE_ID && id > 0) return;
+
       const dashedBlockName = challenge.block;
       // TODO: once certifications are not included in the list of challenges,
       // stop returning early here.
@@ -314,9 +349,18 @@ function populateTestsForLang({ lang, challenges, meta }) {
               throw new AssertionError(result.error);
             }
             const { id, title, block, dashedName } = challenge;
+            assert.exists(
+              dashedName,
+              `Missing dashedName for challenge ${id} in ${block}.`
+            );
             const pathAndTitle = `${block}/${dashedName}`;
-            mongoIds.check(id, title);
-            challengeTitles.check(title, pathAndTitle);
+            const idVerificationMessage = mongoIds.check(id, title);
+            assert.isNull(idVerificationMessage, idVerificationMessage);
+            const dupeTitleCheck = challengeTitles.check(dashedName, block);
+            assert.isTrue(
+              dupeTitleCheck,
+              `All challenges within a block must have a unique dashed name. ${dashedName} (at ${pathAndTitle}) is already assigned`
+            );
           });
 
           const { challengeType } = challenge;

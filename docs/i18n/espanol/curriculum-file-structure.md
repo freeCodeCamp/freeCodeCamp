@@ -51,7 +51,7 @@ Al renombrar una certificación, es probable que desees renombrar el súper bloq
 1. Como alternativa, actualiza el `certSlug` para el súper bloque en el mismo archivo.  **Ten en cuenta** que renombrar un `certSlug` cambiará el URL para las certificaciones y solo debe hacerse con consideración.
 1. Actualiza el `title` en `client/src/resources/cert-and-project-map.ts` por el nuevo valor. **Ten en cuenta que** cambiar el `title` aquí **romperá** la página del súper bloque asociada a la certificación. Depende del título del súper Bloque para que coincida con el título de la certificación. Es probable que desees renombrar el súper bloque al mismo tiempo.
 1. Si renombraste `certSlug` en el paso 7, cámbialo aquí para el "cert" y todos los valores de `projects` anidados.
-1. En `config/certification-settings.js`, actualiza el valor de `certTypeTitleMap` al nuevo nombre.
+1. In `shared/config/certification-settings.js`, update the value of `certTypeTitleMap` to the new name.
 1. Si renombraste el `certSlug` en el paso 7, actualiza la clave de `certSlugTypeMap` en el mismo archivo.
 1. Actualiza el nombre del certificado en el arreglo `legacyCerts` dentro del `client/src/client-only-routes/show-project-links.tsx` si es necesario.
 1. Actualiza el archivo principal `README.md` al nuevo nombre.
@@ -69,10 +69,10 @@ Además, es probable que desees renombrar el certificado y el bloque  `{superBlo
 1. Actualiza el archivo `index.md` en la carpeta superior, cambiado los valores de `title` y `superBlock` al nuevo nombre.
 1. Para cada carpeta de bloque dentro de la superior, actualiza el `index.md` para que utilice el valor de `superBlock` correcto.
 1. En el archivo `cliente/src/recursos/cert-and-project-map.ts`, actualiza la ruta para certificado en la parte superior del archivo y el valor `title` para ese súper bloque. **Ten en cuenta** que cambiar el `title` aquí **interrumpirá** la capacidad de ver la certificación real para este súper bloque. Depende del título del súper Bloque para que coincida con el título de la certificación. Es probable que desees renombrar la certificación al mismo tiempo.
-1. Actualiza la clave `superBlockCertTypeMap` en `config/certification-settings.js` al nuevo nombre del súper Bloque.
+1. Update the `superBlockCertTypeMap` key in `shared/config/certification-settings.js` to the new superBlock name.
 1. Actualiza el valor de la ruta en `client/src/assets/icons/index.tsx`.
 1. Para cada idioma en `client/i18n/locales`, actualiza el archivo `intro.json` para que utilice el nuevo `dashedName` (nombre con guiones) del súper Bloque. En el archivo en inglés, actualiza también el `title`.
-1. Verifique el archivo `config/i18n/all-langs.js` para ver si el súper Bloque está habilitado en las compilaciones de i18n. Actualiza todos los valores donde sea usado.
+1. Check the `shared/config/i18n/all-langs.js` file to see if the superBlock is enabled in i18n builds. Actualiza todos los valores donde sea usado.
 1. Actualiza el archivo principal `README.md` al nuevo nombre.
 
 ### Renombrando un bloque

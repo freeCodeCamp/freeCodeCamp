@@ -11,11 +11,11 @@ HTML and CSS are two languages that work together to create everything that you 
 
 Many helpful resources out there keep referring to HTML and CSS as programming languages, but if you want to get technical, labeling them as such is not quite accurate. This is because they are only concerned with presenting information. They are not used to program logic. JavaScript, which you will learn in the next section, is a programming language because it’s used to make webpages do things. Yet, there is quite a lot you can do with just HTML and CSS, and you will definitely need them both. Throughout our curriculum, the following lessons focus on giving you the tools you need to succeed once you reach JavaScript content.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Read <a href="https://brytdesigns.com/html-css-javascript-whats-the-difference#What_is_HTML" target="_blank">the HTML vs CSS vs JavaScript article</a>. It is a quick overview of the relationships between HTML, CSS, and JavaScript.
+
+# --question--
     
 ## --text--
 
@@ -37,5 +37,3 @@ HTML and CSS are used to add style to a webpage, and JavaScript is used to creat
 ## --video-solution--
 
 2
-
-

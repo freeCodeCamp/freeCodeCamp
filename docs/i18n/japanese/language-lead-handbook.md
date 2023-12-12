@@ -67,7 +67,7 @@ You will want to [build the translated client locally](how-to-enable-new-languag
 
 1. Update your `.env` file to use your language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
 
-2. Run `pnpm run create:config`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
+2. Run `pnpm run create:shared`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
 
 3. Start the server by running `pnpm run develop:server` in one terminal window.
 
@@ -339,7 +339,7 @@ In Crowdin, individuate the `User management` on the left-hand side menu.
 
 This will open the user management tools, you will be able to see the list of all the users.
 
-Search for the user that will become a proofreader. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
+Search for the user who will become a proofreader. Use the three dots menu on the user row to open a menu and select "Add to team". The proofreader teams have a standard name of `Proof Readers (<language>)`, you can search the team using the language name. Once you have selected the team, use the "ADD" button at the bottom of the page to finalize the thing.
 
 The user is now a proofreader.
 

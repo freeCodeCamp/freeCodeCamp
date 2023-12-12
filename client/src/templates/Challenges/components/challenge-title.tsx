@@ -29,10 +29,10 @@ function ChallengeTitle({
         </>
       )}
       <div className='challenge-title'>
-        <div className='title-text'>
-          <h1>{children}</h1>
-          {isCompleted && <GreenPass />}
-        </div>
+        <h1 id='content-start' data-playwright-test-label='challenge-title'>
+          {children}
+        </h1>
+        {isCompleted && <GreenPass />}
       </div>
     </div>
   );

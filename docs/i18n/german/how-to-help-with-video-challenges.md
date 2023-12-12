@@ -119,7 +119,7 @@ Füge den Fragetext unter dem angezeigten Teil hinzu bzw. aktualisiere ihn:
 ## --text--
 ```
 
-Füge Antworten (`Answer 1`, `Answer 2`, und so weiter) unter `## --answers--` hinzu bzw. aktualisiere sie. Achte darauf, dass du die Nummer unter `## --video-solution--` mit der richtigen Antwortnummer aktualisierst. Du kannst weitere mögliche Antworten hinzufügen, indem du das gleiche Format verwendest. Die Fragen und Antworten können in Anführungszeichen gesetzt werden.
+Füge Antworten (`Answer 1`, `Answer 2`, und so weiter) unter `## --answers--` hinzu bzw. aktualisiere sie. Achte darauf, dass du die Nummer unter `## --video-solution--` mit der richtigen Antwortnummer aktualisierst. Du kannst weitere mögliche Antworten hinzufügen, indem du das gleiche Format verwendest. The questions and answers can be surrounded with quotation marks.
 
 ### Fragebeispiele
 

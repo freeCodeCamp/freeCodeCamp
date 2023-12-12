@@ -4,6 +4,8 @@ client/public
 .git
 .gitignore
 .dockerignore
-*Dockerfile*
-*docker-compose*
+docker/web/Dockerfile
+docker/api/Dockerfile
+**/*docker-compose*
 **/node_modules
+.eslintcache

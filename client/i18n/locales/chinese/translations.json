@@ -30,20 +30,22 @@
     "sign-out": "退出",
     "curriculum": "课程",
     "contribute": "Contribute",
+    "podcast": "Podcast",
     "forum": "论坛",
     "radio": "电台",
     "profile": "个人资料",
     "news": "专栏",
     "donate": "捐款",
-    "update-settings": "更新我的账号设置",
+    "update-settings": "更新我的账户设置",
     "sign-me-out": "退出登录 freeCodeCamp",
-    "flag-user": "标记该用户的账号为滥用",
+    "flag-user": "标记该用户的账户为滥用",
     "current-challenge": "访问目前的挑战",
     "try-again": "重试",
     "menu": "菜单",
     "settings": "设置",
     "take-me": "访问课程",
     "check-answer": "查看你的答案",
+    "submit": "Submit",
     "get-hint": "获得提示",
     "ask-for-help": "请求帮助",
     "create-post": "在论坛发帖请求帮助",
@@ -84,7 +86,10 @@
     "exit": "Exit",
     "finish-exam": "Finish the exam",
     "finish": "Finish",
-    "submit-exam-results": "Submit my results"
+    "submit-exam-results": "Submit my results",
+    "verify-trophy": "Verify Trophy",
+    "link-account": "关联账户",
+    "unlink-account": "取消关联账户"
   },
   "landing": {
     "big-heading-1": "免费学习编程",
@@ -92,6 +97,7 @@
     "big-heading-3": "获得认证",
     "h2-heading": "自 2014 年以来，已有超过 40,000 名 freeCodeCamp.org 学员入职科技公司，例如：",
     "hero-img-description": "韩国的 freeCodeCamp 学员在当地一个学习小组的交流活动上",
+    "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
     "as-seen-in": "媒体报道：",
     "testimonials": {
       "heading": "freeCodeCamp 校友感言：",
@@ -112,6 +118,10 @@
       }
     },
     "certification-heading": "获得以下免费认证：",
+    "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
+    "professional-certs-heading": "Earn free professional certifications:",
+    "interview-prep-heading": "Prepare for the developer interview job search:",
+    "upcoming-heading": "Upcoming curriculum:",
     "faq": "常见问题：",
     "faqs": [
       {
@@ -174,11 +184,11 @@
   "settings": {
     "share-projects": "分享你在 freeCodeCamp 之外做的项目，写的文章或者在 GitHub 上被接受的 pull requests。",
     "privacy": "你可以在本节的设置中管理哪些内容可以展示在 freeCodeCamp 公开作品集，点击“保存”以存储你的修改。",
-    "data": "请点击下面的 \"下载你的数据\" 按钮，查看我们在你的账号上保存的数据",
+    "data": "请点击下面的“下载你的数据”按钮，查看我们在你的账户上保存的数据",
     "disabled": "如果设置为仅自己可见，其他人将无法访问你的认证。",
     "private-name": "如果你将名字设置为私密，你的认证将不会显示你的名字。",
     "claim-legacy": "当你获得下列 freeCodeCamp 认证之后，你可以申请 {{cert}}:",
-    "for": "{{username}} 账号设置",
+    "for": "{{username}} 账户设置",
     "sound-mode": "为整个网站添加令人愉快的吉他原声音乐。在编辑器输入、完成挑战、申请认证等时刻，你将获得音乐反馈。",
     "sound-volume": "营火音效音量",
     "scrollbar-width": "编辑器滚动条宽度",
@@ -225,7 +235,7 @@
       "certs": "认证",
       "legacy-certs": "旧版认证",
       "honesty": "学术诚信条例",
-      "internet": "你在各平台的账号",
+      "internet": "你在各平台的账户",
       "portfolio": "作品集设置",
       "privacy": "隐私设置",
       "personal-info": "个人信息"
@@ -234,13 +244,13 @@
       "heading": "危险区域",
       "be-careful": "请注意，本节中的修改是永久性的。",
       "reset": "重置我的所有进度",
-      "delete": "删除我的账号",
-      "delete-title": "删除我的账号",
-      "delete-p1": "这将删除你的所有数据，包括所有进度和账号信息。",
+      "delete": "删除我的账户",
+      "delete-title": "删除我的账户",
+      "delete-p1": "这将删除你的所有数据，包括所有进度和账户信息。",
       "delete-p2": "即使你之后改变主意，我们也无法为你恢复任何信息。",
       "delete-p3": "如果有哪些方面我们可以做得更好，请发送邮件至 <0>{{email}}</0>，我们将尽力改善。",
-      "nevermind": "我不想删除我的账号",
-      "certain": "我完全确定要删除与此账号相关的所有信息",
+      "nevermind": "我不想删除我的账户",
+      "certain": "我完全确定要删除与此账户相关的所有信息",
       "reset-heading": "重置我的进度",
       "reset-p1": "这将删除你的所有进度、分数、已完成的挑战、我们对你的项目的记录，以及你获得的所有认证等所有内容。",
       "reset-p2": "即使你之后改变主意，我们也无法为你恢复任何信息。",
@@ -248,7 +258,7 @@
       "reset-confirm": "重置所有内容，我想重新开始。"
     },
     "email": {
-      "missing": "你的账号未绑定邮箱。",
+      "missing": "你的账户未绑定邮箱。",
       "heading": "邮件设置",
       "not-verified": "你的邮箱已验证。",
       "check": "请查看你的邮件，或<0>在此处请求新的验证邮件</0>。",
@@ -296,7 +306,7 @@
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp 是捐助者支持的 501(c)(3) 条款下具有免税资格的慈善组织（税号：82-0779546）。",
-    "mission-statement": "我们的使命：帮助人们免费学习编程。我们通过创建成千上万的视频、文章和交互式编程课程——所有内容向公众免费开放——来实现这一目标。学员在世界各地自发成立数千个 freeCodeCamp 学习小组。",
+    "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.",
     "donation-initiatives": "所有给 freeCodeCamp 的捐款都将用于我们的教育项目，购买服务器和其他服务，以及聘用员工。",
     "donate-text": "你可以<1>在此处进行免税捐赠</1>。",
     "trending-guides": "精选文章",
@@ -409,6 +419,7 @@
     "building-a-university": "我们正在创建一个免费计算机科学大学学位课程",
     "if-help-university": "我们已取得了重大进展。请支持我们的慈善组织完成这项长期事业。",
     "preview-external-window": "Preview currently showing in external window.",
+    "fill-in-the-blank": "Fill in the blank",
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
@@ -432,6 +443,20 @@
       "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
       "exit-yes": "Yes, I want to leave the exam",
       "exit-no": "No, I would like to continue the exam"
+    },
+    "ms": {
+      "link-header": "链接你的微软账户",
+      "link-signin": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account. Sign in to link your Microsoft username.",
+      "linked": "用户名为 “{{ msUsername }}” 的微软账户已和你的 freeCodeCamp 账户链接。如果这不是你的微软用户名，请删除链接。",
+      "unlinked": "要完成这个挑战，你必须首先按照以下说明将你的微软用户名链接到你的 freeCodeCamp 账户：",
+      "link-li-1": "使用已登录微软账号的浏览器，访问 <0>https://learn.microsoft.com/users/me/transcript</0>",
+      "link-li-2": "Find and click the \"Share link\" button.",
+      "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
+      "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
+      "link-li-5": "Paste the URL into the input below, it should look similar to this: <0>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</0>",
+      "link-li-6": "单击“链接账户”链接你的微软用户名。",
+      "transcript-label": "Your Microsoft Transcript Link",
+      "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
     }
   },
   "donate": {
@@ -452,6 +477,8 @@
     "confirm-one-time": "Confirm your one-time donation of ${{usd}}:",
     "confirm-monthly": "Confirm your donation of ${{usd}} / month:",
     "confirm-yearly": "Confirm your donation of ${{usd}} / year:",
+    "confirm-multitier": "Donating ${{usd}} / month:",
+    "edit-amount": "edit amount",
     "wallet-label": "向 freeCodeCamp 捐款 ${{usd}}",
     "wallet-label-1": "向 freeCodeCamp 每月捐款 ${{usd}}",
     "your-donation": "你的 ${{usd}} 捐款将帮助世界各地的人们学习 {{hours}} 小时。",
@@ -468,6 +495,8 @@
     "progress-modal-cta-8": "现在捐赠以帮助我们为不断涌现的工具和编程概念开发新课程。",
     "progress-modal-cta-9": "现在捐赠以支持我们的面向开发者的数学课程。",
     "progress-modal-cta-10": "现在捐赠以帮助我们为所有人开发免费的专业编程认证。",
+    "help-us-reach-goal": "Donate now to help our charity reach our goal of 10,000 monthly supporters by 2024.",
+    "help-us-develop": "Help us develop free professional programming certifications for all.",
     "nicely-done": "很棒，你已完成 {{block}}。",
     "credit-card": "信用卡",
     "credit-card-2": "或者使用信用卡捐款：",
@@ -499,7 +528,7 @@
     "download-irs": "你可以<0>在此处下载我们的国税局认定函</0>。",
     "download-990": "你可以<0>在此处下载我们最新的 990 (年度税务报告)</0>。",
     "how-efficient": "freeCodeCamp 的效率如何？",
-    "fcc-budget": "freeCodeCamp 的预算比大多数慈善组织少得多。我们还没有引入专业募捐者，而是 Quincy 自己处理一切相关事务。",
+    "fcc-budget": "freeCodeCamp's budget is much smaller than most comparable charities. We haven't brought in professional fundraisers. Instead, Quincy does everything himself.",
     "help-millions": "然而，在每年仅有 10 万美元的预算中，我们能够帮助数百万人。",
     "how-one-time": "我如何进行一次性捐款？",
     "one-time": "如果你喜欢一次性捐款，你可以在有闲钱时支持 freeCodeCamp 的事业。你可以使用<0>此链接，通过 PayPal 捐你认为合适的金额</0>。",
@@ -526,11 +555,13 @@
     "how-update": "我设置了每月捐款，但我需要更新或暂停每月的重复。我如何做？",
     "take-care-of-this": "只需转发你的每月捐款记录中的一个记录给 donors@freecodecamp.org， 并告诉我们你要做什么。我们会为你处理这个问题，并向你发送确认。",
     "anything-else": "还有什么关于为 freeCodeCamp.org 捐赠可以了解的吗？",
-    "other-support": "如果你想要通过此处未列出的其他方式支持我们的慈善组织和它的使命，或者如果你有任何问题，请给 Quincy 发送电子邮件到 quincy@freecodecamp.org。"
+    "other-support": "如果你想要通过此处未列出的其他方式支持我们的慈善组织和它的使命，或者如果你有任何问题，请给 Quincy 发送电子邮件到 quincy@freecodecamp.org。",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "你需要先登录才能举报用户",
-    "details": "请尽可能详细地描述你所举报的账号或行为。",
+    "details": "请尽可能详细地描述你所举报的账户或行为。",
     "portfolio": "举报一个用户的作品集",
     "portfolio-2": "你想举报 {{username}} 的作品集滥用行为吗？",
     "notify-1": "我们将通知社区管理团队，并将此举报的副本发送到你的邮箱：<strong>{{email}}</strong>",
@@ -626,11 +657,11 @@
     "really-weird": "出现了一些奇怪的情况。如果再出现这种情况，请考虑在 https://github.com/freeCodeCamp/freeCodeCamp/issues/new 提交 issue。",
     "not-right": "有些不对劲。已生成报告，通知 freeCodeCamp.org 团队。",
     "went-wrong": "出了点问题，请检查并重试。",
-    "account-deleted": "你的账号已被成功删除",
+    "account-deleted": "你的账户已被成功删除",
     "progress-reset": "你的进度已被重置",
     "not-authorized": "你无权继续访问",
     "could-not-find": "我们未找到你搜索的信息。请检查并重试。",
-    "wrong-updating": "更新你的账号出了点问题。请检查并重试。",
+    "wrong-updating": "更新你的账户出了点问题。请检查并重试。",
     "updated-about-me": "我们已更新你的个人信息",
     "updated-socials": "我们已更新你的社交链接",
     "updated-sound": "我们已更新你的声音设置",
@@ -644,17 +675,17 @@
     "theme-invalid": "主题无效",
     "theme-set": "主题已设置",
     "theme-updated": "你的主题已更新！",
-    "username-used": "用户名已和此账号关联",
-    "username-taken": "用户名已和别的账号关联",
+    "username-used": "用户名已和此账户关联",
+    "username-taken": "用户名已和别的账户关联",
     "username-updated": "我们已更新你的用户名为 {{username}}",
     "privacy-updated": "我们已更新你的隐私设置",
-    "could-not-logout": "你的账号未退出，请稍后重试。",
+    "could-not-logout": "你的账户未退出，请稍后重试。",
     "email-encoded-wrong": "链接中的邮箱格式不正确",
     "oops-not-right": "有点不对劲。请刷新链接再登录/注册",
     "expired-link": "你点击的链接似乎已过期，请刷新链接再登录",
-    "signin-success": "成功了！你已经登录账号。",
-    "social-auth-gone": "鉴于隐私原因，我们已取消社交账号授权。我们建议你下次使用你的邮箱地址登录：{{email}} 。",
-    "name-needed": "我们需要将你的名字放在认证上。在你的账号设置中添加名字，点击保存按钮，然后我们会给你发布认证。",
+    "signin-success": "成功了！你已经登录账户。",
+    "social-auth-gone": "鉴于隐私原因，我们已取消社交账户授权。我们建议你下次使用你的邮箱地址登录：{{email}} 。",
+    "name-needed": "我们需要将你的名字放在认证上。在你的账户设置中添加名字，点击保存按钮，然后我们会给你发布认证。",
     "incomplete-steps": "你似乎未完成必要的步骤。请完成必做项目以申请 {{name}} 认证。",
     "already-claimed": "你似乎已申请 {{name}} 认证",
     "cert-claim-success": "@{{username}}，你已成功申请 {{name}} 认证！代表 freeCodeCamp.org 团队恭喜你！",
@@ -662,7 +693,7 @@
     "error-claiming": "申请 {{certName}} 认证出错",
     "refresh-needed": "你只能点击一次付款请求按钮。如需重来请刷新页面。",
     "username-not-found": "我们未找到用户名为 \"{{username}}\" 的用户",
-    "add-name": "这个用户需要在账号中添加名字，以便其他人查看该用户的认证。",
+    "add-name": "这个用户需要在账户中添加名字，以便其他人查看该用户的认证。",
     "not-eligible": "这个用户目前不符合 freeCodeCamp.org 认证的条件。",
     "profile-private": "{{username}} 已选择将他们的个人资料设为私密。他们需要公开他们的个人资料，以便其他人能够查看他们的认证。",
     "certs-private": "{{username}} 已将其作品集设置为仅自己可见。用户需要将认证设置为公开，其他人才能查看该用户的认证。",
@@ -670,9 +701,9 @@
     "user-not-certified": "用户 {{username}} 似乎未获得 {{cert}} 认证",
     "invalid-challenge": "这似乎不是一个有效的提交",
     "no-links-provided": "你未提供有效链接，我们无法检查你的作品。",
-    "no-social": "未发现社交账号",
-    "invalid-social": "无效的社交账号",
-    "no-account": "未链接 {{website}} 账号",
+    "no-social": "未发现社交账户",
+    "invalid-social": "无效的社交账户",
+    "no-account": "未链接 {{website}} 账户",
     "unlink-success": "你已成功取消 {{website}} 链接",
     "provide-username": "检查你是否提供用户名和报告",
     "report-sent": "已通过 {{email}} 向团队发送副本报告",
@@ -685,7 +716,6 @@
     "complete-project-first": "你必须先完成项目。",
     "local-code-save-error": "糟糕，你的代码没有保存，你的浏览器的本地存储空间可能已满。",
     "local-code-saved": "保存！你的代码已保存到你的浏览器本地存储中。",
-    "ms-trophy-missing": "It looks like the trophy link you provided is not valid. Please check the link and try again.",
     "timeline-private": "{{username}} 已选择将他们的个人资料设为私密。他们需要公开自己的个人资料，以便其他人能够查看他们的认证。",
     "code-saved": "你的代码已保存到数据库。当你返回时它将在这里。",
     "code-save-error": "尝试保存你的代码时发生错误。",
@@ -693,7 +723,39 @@
     "challenge-save-too-big": "抱歉，你无法保存代码。你的代码是 {{user-size}} 字节。我们最多允许 {{max-size}} 个字节。请减少你的代码并重试，或在 https://forum.freecodecamp.org 上请求帮助。",
     "challenge-submit-too-big": "抱歉，你无法提交代码。你的代码是 {{user-size}} 字节。我们最多允许 {{max-size}} 个字节。请减少你的代码并重试，或在 https://forum.freecodecamp.org 上请求帮助。",
     "invalid-update-flag": "你正在尝试访问禁止的资源。如果这是一个有效的请求，请在 https://forum.freecodecamp.org 上请求帮助。",
-    "generate-exam-error": "An error occurred trying to generate your exam."
+    "generate-exam-error": "An error occurred trying to generate your exam.",
+    "ms": {
+      "transcript": {
+        "link-err-1": "Please include a Microsoft transcript URL in the request.",
+        "link-err-2": "Something went wrong trying to get your transcript from Microsoft.",
+        "link-err-3": "A username was not found in your Microsoft transcript.",
+        "link-err-4": "That Microsoft username is being used by another freeCodeCamp account.",
+        "link-err-5": "Something went wrong trying to save your Microsoft account.",
+        "link-err-6": "Something went wrong trying to link your Microsoft username to your freeCodeCamp account.",
+        "linked": "Your Microsoft username has been linked to your freeCodeCamp account.",
+        "unlinked": "The link to your Microsoft username has been removed.",
+        "unlink-err": "Something went wrong trying to remove the link to your Microsoft username."
+      },
+      "profile": {
+        "err": "We could not find a Microsoft user ID for Microsoft user \"{{msUsername}}\""
+      },
+      "trophy": {
+        "err-1": "We could not find a Microsoft username associated with your freeCodeCamp account.",
+        "err-2": "You are trying to submit a challenge that does not appear to be a trophy challenge.",
+        "err-3": "We could not get your Microsoft profile from your Microsoft ID.",
+        "err-4": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
+        "err-5": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-6": "It looks like your Microsoft account might be private. Set it to public and try again.",
+        "verified": "Your trophy from Microsoft's learning platform was verified."
+      }
+    },
+    "survey": {
+      "err-1": "The survey submitted is not in the correct format.",
+      "err-2": "It looks like you have already completed this survey.",
+      "err-3": "Something went wrong trying to save your survey.",
+      "success": "Thank you. Your survey was submitted."
+    },
+    "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
     "max-characters": "字符数最多为 288 个，你还可以输入 {{charsLeft}} 个字符",
@@ -719,7 +781,8 @@
     "ms-president": "President, Microsoft Developer Division",
     "verify": "Verify this certification at:",
     "issued": "发布日期",
-    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
+    "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "作为旧版全栈认证的一部分，{{user}} 完成了以下认证：",
       "heading": "作为此认证的一部分，{{user}} 构建了以下项目，并通过所有自动测试：",
@@ -831,6 +894,8 @@
       "college-algebra-with-python-v8": "Python 和大学代数认证",
       "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
+      "A2 English for Developers": "A2 English for Developers",
+      "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "旧版前端",
       "legacy-front-end": "前端认证",
       "Legacy Back End": "旧版后端",
@@ -855,14 +920,13 @@
     "set-claim": "领取并查看你的认证"
   },
   "forum-help": {
-    "browser-info": "**你的浏览器信息：**",
+    "browser-info": "Your browser information:",
     "user-agent": "用户代理是： <code>{{userAgent}}</code>",
-    "challenge": "**挑战：**",
-    "challenge-link": "**挑战的链接：**",
-    "whats-happening": "**告诉我们发生了什么：**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "在此详细描述你的问题。",
-    "camper-project": "**你的项目链接**",
-    "camper-code": "**你目前的代码**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "警告",
     "too-long-one": "挑战的种子代码和/或你的解决方案超过了我们从挑战传送的最大长度。",
     "too-long-two": "你需要在此采取额外步骤，以确保你写的代码可以轻松地被阅读。",
@@ -898,8 +962,41 @@
   "signout": {
     "heading": "注销你的账户",
     "p1": "警告：如果你继续，你的当前进度将不再被保存。",
-    "p2": "此操作只会将你在此设备和浏览器会话上的账号注销。请确认你是否要继续。",
+    "p2": "此操作只会将你在此设备和浏览器会话上的账户注销。请确认你是否要继续。",
     "certain": "是的，请注销我的账户",
     "nevermind": "算了，我不想注销账户"
+  },
+  "staging-warning": {
+    "heading": "Warning: This is an early access test deployment",
+    "p1": "We welcome you to try this platform in a test-only mode and get early access to upcoming features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
+    "certain": "Accept and Dismiss"
+  },
+  "survey": {
+    "foundational-c-sharp": {
+      "title": "Foundational C# with Microsoft Survey",
+      "q1": {
+        "q": "Please describe your role:",
+        "o1": "Student developer",
+        "o2": "Beginner developer (less than 2 years experience)",
+        "o3": "Intermediate developer (between 2 and 5 years experience)",
+        "o4": "Experienced developer (more than 5 years experience)"
+      },
+      "q2": {
+        "q": "Prior to this course, how experienced were you with .NET and C#?",
+        "o1": "Novice (no prior experience)",
+        "o2": "Beginner",
+        "o3": "Intermediate",
+        "o4": "Advanced",
+        "o5": "Expert"
+      }
+    },
+    "misc": {
+      "take": "Take the survey",
+      "submit": "Submit the survey",
+      "exit": "Exit the survey",
+      "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
   }
 }

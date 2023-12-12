@@ -14,7 +14,7 @@ import {
   takeLatest
 } from 'redux-saga/effects';
 
-import { challengeTypes } from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
@@ -30,14 +30,16 @@ import {
   challengeHasPreview,
   getTestRunner,
   isJavaScriptChallenge,
-  isLoopProtected,
   updatePreview,
   updateProjectPreview
 } from '../utils/build';
 import { runPythonInFrame, mainPreviewId } from '../utils/frame';
+import { executeGA } from '../../../redux/actions';
+import { fireConfetti } from '../../../utils/fire-confetti';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
+  executeChallengeComplete,
   initConsole,
   initLogs,
   logsToConsole,
@@ -51,7 +53,9 @@ import {
   challengeMetaSelector,
   challengeTestsSelector,
   isBuildEnabledSelector,
-  portalDocumentSelector
+  isExecutingSelector,
+  portalDocumentSelector,
+  isBlockNewlyCompletedSelector
 } from './selectors';
 
 // How long before bailing out of a preview.
@@ -85,7 +89,7 @@ function* executeCancellableChallengeSaga(payload) {
   yield cancel(task);
 }
 
-function* executeChallengeSaga({ payload }) {
+export function* executeChallengeSaga({ payload }) {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
@@ -107,10 +111,10 @@ function* executeChallengeSaga({ payload }) {
 
     const challengeData = yield select(challengeDataSelector);
     const challengeMeta = yield select(challengeMetaSelector);
-    const protect = isLoopProtected(challengeMeta);
     const buildData = yield buildChallengeData(challengeData, {
       preview: false,
-      protect,
+      disableLoopProtectTests: challengeMeta.disableLoopProtectTests,
+      disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview,
       usesTestRunner: true
     });
     const document = yield getContext('document');
@@ -124,11 +128,26 @@ function* executeChallengeSaga({ payload }) {
     yield put(updateTests(testResults));
 
     const challengeComplete = testResults.every(test => test.pass && !test.err);
+    const isBlockCompleted = yield select(isBlockNewlyCompletedSelector);
     if (challengeComplete) {
       playTone('tests-completed');
+      if (isBlockCompleted) {
+        fireConfetti();
+      }
     } else {
       playTone('tests-failed');
+      if (challengeMeta.certification === 'responsive-web-design') {
+        yield put(
+          executeGA({
+            event: 'challenge_failed',
+            challenge_id: challengeMeta.id,
+            challenge_path: window?.location?.pathname,
+            challenge_files: challengeData.challengeFiles
+          })
+        );
+      }
     }
+
     if (challengeComplete && payload?.showCompletionModal) {
       yield put(openModal('completion'));
     }
@@ -137,6 +156,7 @@ function* executeChallengeSaga({ payload }) {
   } catch (e) {
     yield put(updateConsole(e));
   } finally {
+    yield put(executeChallengeComplete());
     consoleProxy.close();
   }
 }
@@ -220,7 +240,10 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
   const proxyLogger = args => logProxy.put(args);
 
   try {
-    if (flushLogs) {
+    const isExecuting = yield select(isExecutingSelector);
+    // executeChallengeSaga flushes the logs, so there's no need to if that's
+    // just happened.
+    if (flushLogs && !isExecuting) {
       yield put(initLogs());
       yield put(initConsole(''));
     }
@@ -230,10 +253,10 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
 
     if (canBuildChallenge(challengeData)) {
       const challengeMeta = yield select(challengeMetaSelector);
-      const protect = isLoopProtected(challengeMeta);
       const buildData = yield buildChallengeData(challengeData, {
         preview: true,
-        protect
+        disableLoopProtectTests: challengeMeta.disableLoopProtectTests,
+        disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview
       });
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {

@@ -7,9 +7,12 @@ import { config } from 'dotenv';
 const envPath = resolve(__dirname, '../../.env');
 config({ path: envPath });
 
-import { availableLangs } from '../../config/i18n';
+import { availableLangs } from '../../shared/config/i18n';
 import { getChallengesForLang } from '../../curriculum/get-challenges';
-import { SuperBlocks, getAuditedSuperBlocks } from '../../config/superblocks';
+import {
+  SuperBlocks,
+  getAuditedSuperBlocks
+} from '../../shared/config/superblocks';
 
 // TODO: re-organise the types to a common 'types' folder that can be shared
 // between the workspaces so we don't have to declare ChallengeNode here and in
@@ -48,6 +51,7 @@ const superBlockFolderMap = {
   'foundational-c-sharp-with-microsoft':
     '19-foundational-c-sharp-with-microsoft',
   'upcoming-python': '20-upcoming-python',
+  'a2-english-for-developers': '21-a2-english-for-developers',
   'example-certification': '99-example-certification'
 };
 
@@ -105,7 +109,7 @@ void (async () => {
     }
   }
   const langsToCheck = availableLangs.curriculum.filter(
-    lang => lang !== 'english'
+    lang => String(lang) !== 'english'
   );
   for (const lang of langsToCheck) {
     console.log(`\n=== ${lang} ===`);

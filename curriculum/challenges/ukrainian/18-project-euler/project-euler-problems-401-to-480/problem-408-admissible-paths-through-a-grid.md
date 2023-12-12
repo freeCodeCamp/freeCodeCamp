@@ -1,6 +1,6 @@
 ---
 id: 5900f5091000cf542c51001b
-title: 'Problem 408: Admissible paths through a grid'
+title: 'Завдання 408: прийнятні шляхи через сітку'
 challengeType: 1
 forumTopicId: 302076
 dashedName: problem-408-admissible-paths-through-a-grid
@@ -8,13 +8,13 @@ dashedName: problem-408-admissible-paths-through-a-grid
 
 # --description--
 
-Let's call a lattice point ($x$, $y$) inadmissible if $x$, $y$ and $x + y$ are all positive perfect squares.
+Назвемо точку сітки ($x$, $y$) неприйнятною, якщо $x$, $y$ та $x + y$ є додатними повними квадратами.
 
-For example, (9, 16) is inadmissible, while (0, 4), (3, 1) and (9, 4) are not.
+Наприклад, (9, 16) є неприйнятною, а (0, 4), (3, 1) та (9, 4) — прийнятні.
 
-Consider a path from point ($x_1$, $y_1$) to point ($x_2$, $y_2$) using only unit steps north or east. Let's call such a path admissible if none of its intermediate points are inadmissible.
+Розглянемо шлях від точки ($x_1$, $y_1$) до точки ($x_2$, $y_2$), використовуючи лише одиничні кроки на північ чи схід. Назвемо такий шлях прийнятним, якщо жодна з його проміжних точок не є неприйнятною.
 
-Let $P(n)$ be the number of admissible paths from (0, 0) to ($n$, $n$). Можна довести, що $P(5) = 252$, $P(16) = 596\\,994\\,440$ та $P(1\\,000)\bmod 1\\,000\\,000\\,007 = 341\\,920\\,854$.
+Нехай $P(n)$ буде кількістю прийнятних шляхів від (0, 0) до ($n$, $n$). Можна довести, що $P(5) = 252$, $P(16) = 596\\,994\\,440$ та $P(1\\,000)\bmod 1\\,000\\,000\\,007 = 341\\,920\\,854$.
 
 Знайдіть $P(10\\,000\\,000)\bmod 1\\,000\\,000\\,007$.
 

@@ -7,7 +7,7 @@ dashedName: step-5
 
 # --description--
 
-A shopping cart does not serve much purpose without products. Declare a `products` variable and set it to an empty array. Using an array will allow you to store multiple products.
+Ein Einkaufswagen erfüllt ohne Produkte kaum einen Zweck. Deklariere die `products`-Variable und setze sie auf ein leeres Array. Die Verwendung eines Arrays ermöglicht es dir, mehrere Produkte zu speichern.
 
 # --hints--
 

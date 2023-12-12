@@ -8,15 +8,15 @@ Once you have set up the project locally you should be able to follow this docum
 
 Das kann hilfreich sein, wenn du an einem Feature arbeitest, das speziell auf die Lokalisierung abzielt und du zum Beispiel die Beschriftung eines Buttons in einer anderen Sprache validieren musst.
 
-> [!TIP] Du musst dieses Dokument nicht befolgen, um den Studienplan von freeCodeCamp zu übersetzen oder etwas zur Dokumentation beizusteuern. Lies stattdessen [diesen Leitfaden hier](how-to-translate-files.md).
+> [!TIP] You do not need to follow this document to translate freeCodeCamp's curriculum or contributing documentation. Lies stattdessen [diesen Leitfaden hier](how-to-translate-files.md).
 
 Wir wollen verstehen, wie die i18n-Frameworks und -Werkzeuge funktionieren.
 
 ## Dateistruktur
 
-Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. Für jede Sprache gibt es ein Verzeichnis, das JSON-Dateien mit den Übersetzungen enthält.
+Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. Each language has a directory that contains JSON files with the translations.
 
-```console
+```bash
   config
   └── i18n.ts
   ...
@@ -55,7 +55,7 @@ Most of the files for translating the platform are located in the [`client/i18n`
   └── validate-keys.ts
 ```
 
-Some of these files are translated on our translation platform (Crowdin) and some are translated or created via PR's on GitHub.
+Some of these files are translated on our translation platform (Crowdin) and some are translated or created via PRs on GitHub.
 
 **Dateien, die auf unserer Übersetzungsplattform übersetzt wurden:**
 
@@ -75,7 +75,7 @@ Some of these files are translated on our translation platform (Crowdin) and som
 
 ## Testing the Client App in a World Language
 
-You can test the client app in any language available in the [list of `availableLangs` here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts).
+You can test the client app in any language available in the [list of `availableLangs` here](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts).
 
 ```js
 export const availableLangs = {
@@ -97,7 +97,7 @@ export const availableLangs = {
 
 Wenn du eine neue Sprache testest, erstelle einen Ordner mit dem Namen der Sprache als Titel neben den anderen Sprachen und kopiere die JSON-Dateien aus einer anderen Sprache in deinen neuen Ordner.
 
-Add the new language to the `Languages` enum and the `client` array at the top of the [`config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n.ts) file.
+Add the new language to the `Languages` enum and the `client` array at the top of the [`shared/config/i18n.ts`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/shared/config/i18n.ts) file.
 
 Befolge dann die Anweisungen in den Kommentaren in derselben Datei, um die restlichen Variablen nach Bedarf hinzuzufügen/zu aktualisieren.
 

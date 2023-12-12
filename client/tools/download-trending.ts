@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 
 import fetch from 'node-fetch';
@@ -14,24 +14,58 @@ const createCdnUrl = (lang: string) =>
 
 const download = async (clientLocale: string) => {
   const url = createCdnUrl(clientLocale);
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error(
-      `
-      ----------------------------------------------------
-      Error: The CDN is missing the trending YAML file.
-      ----------------------------------------------------
-      Unable to fetch the ${clientLocale} footer: ${res.statusText}
-      `
-    );
-  }
 
-  const data = await res.text();
-  const trendingJSON = JSON.stringify(yaml.load(data));
   const trendingLocation = path.resolve(
     __dirname,
     `../i18n/locales/${clientLocale}/trending.json`
   );
+
+  const loadLocalTrendingJSON = () => {
+    const localTrendingJSON = readFileSync(trendingLocation, 'utf8');
+
+    if (!localTrendingJSON) {
+      throw new Error(
+        `
+        ----------------------------------------------------
+        Error: ${trendingLocation} is missing.
+        ----------------------------------------------------
+        `
+      );
+    }
+
+    return localTrendingJSON;
+  };
+
+  const loadTrendingJSON = async () => {
+    try {
+      const res = await fetch(url);
+
+      if (!res.ok) {
+        throw new Error(
+          `
+          ----------------------------------------------------
+          Error: The CDN is missing the trending YAML file.
+          ----------------------------------------------------
+          Unable to fetch the ${clientLocale} footer: ${res.statusText}
+          `
+        );
+      }
+
+      const data = await res.text();
+      const trendingJSON = JSON.stringify(yaml.load(data));
+
+      return trendingJSON;
+    } catch (error) {
+      if (process.env.FREECODECAMP_NODE_ENV === 'production') {
+        throw new Error((error as Error).message);
+      }
+
+      return loadLocalTrendingJSON();
+    }
+  };
+
+  const trendingJSON = await loadTrendingJSON();
+
   writeFileSync(trendingLocation, trendingJSON);
 
   const trendingObject = JSON.parse(trendingJSON) as Record<string, string>;

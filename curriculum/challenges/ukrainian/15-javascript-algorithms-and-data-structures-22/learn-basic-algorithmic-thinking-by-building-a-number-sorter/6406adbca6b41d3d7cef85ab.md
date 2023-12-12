@@ -19,7 +19,7 @@ You should use `document.getElementsByClassName()` to get all the elements with 
 assert.match(sortInputArray.toString(), /document\.getElementsByClassName\(\s*('|"|`)values-dropdown\1\s*\)/);
 ```
 
-You should assign the result of `document.getElementsByClassName()` to a variable named `inputValues`.
+Призначте результат `document.getElementsByClassName()` до змінної під назвою `inputValues`.
 
 ```js
 assert.match(sortInputArray.toString(), /inputValues\s*=\s*document\.getElementsByClassName\(\s*('|"|`)values-dropdown\1\s*\)/);

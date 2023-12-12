@@ -11,7 +11,7 @@ You haven't written the code to generate the HTML yet, but if a product has alre
 
 Use `.getElementById()` to get the matching element - you'll be setting the `id` value to `product-count-for-id${product.id}`, so use a template literal to query that value.
 
-Assign your query to a `currentProductCountSpan` variable.
+Weise deine Query einer `currentProductCountSpan`-Variablen zu.
 
 # --hints--
 

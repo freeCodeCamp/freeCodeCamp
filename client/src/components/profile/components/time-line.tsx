@@ -1,4 +1,4 @@
-import { Button, Modal, Table } from '@freecodecamp/react-bootstrap';
+import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import Loadable from '@loadable/component';
 import { graphql, useStaticQuery } from 'gatsby';
 import { reverse, sortBy } from 'lodash-es';
@@ -6,11 +6,12 @@ import React, { useMemo, useState } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import { Table } from '@freecodecamp/ui';
 
-import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../config/i18n';
+import envData from '../../../../config/env.json';
+import { getLangCode } from '../../../../../shared/config/i18n';
 import { getCertIds, getPathFromID } from '../../../../utils';
-import { regeneratePathAndHistory } from '../../../../../utils/polyvinyl';
+import { regeneratePathAndHistory } from '../../../../../shared/utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification';
 import { CompletedChallenge } from '../../../redux/prop-types';
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';

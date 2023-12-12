@@ -45,16 +45,33 @@ ourStorage.desk.drawer;
 assert(gloveBoxContents === 'maps');
 ```
 
-Щоб отримати доступ до `myStorage`, використайте точкову та дужкову нотацію.
+Код має використати точкову нотацію (там де можливо), щоб отримати доступ до `myStorage`.
 
 ```js
-assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
+assert.match(code, /myStorage\.car\.inside/);
 ```
 
 `gloveBoxContents` досі має бути оголошено з `const`.
 
 ```js
-assert.match(code, /const\s+gloveBoxContents\s*=/)
+assert.match(code, /const\s+gloveBoxContents\s*=/);
+```
+
+Не змінюйте об’єкт `myStorage`.
+
+```js
+const expectedMyStorage = {
+  "car":{
+    "inside":{
+      "glove box":"maps",
+      "passenger seat":"crumbs"
+    },
+    "outside":{
+      "trunk":"jack"
+    }
+  }
+};
+assert.deepStrictEqual(myStorage, expectedMyStorage);
 ```
 
 # --seed--

@@ -14,12 +14,11 @@ Quando um elemento é selecionado, a guia Estilos mostrará todos os estilos atu
 
 ![Estilo sobrescrito](https://cdn.statically.io/gh/TheOdinProject/curriculum/f8fd38fc62578d8e8368f5303126215a492847f0/foundations/html_css/inspecting-html-and-css/imgs/03.png)
 
-
-# --question--
-
-## --assignment--
+# --assignment--
 
 Divirta-se um pouco com as ferramentas de desenvolvimento do Chrome e veja se consegue responder à seguinte pergunta.
+
+# --question--
 
 ## --text--
 

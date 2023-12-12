@@ -13,31 +13,31 @@ Mit Sass kannst du CSS-Regeln verschachteln, was eine nützliche Methode ist, um
 Normalerweise wird jedes Element auf eine andere Zeile ausgerichtet, um es zu stylen, etwa so:
 
 ```scss
-nav {
-  background-color: red;
+article {
+  height: 200px;
 }
 
-nav ul {
-  list-style: none;
+article p {
+  color: white;
 }
 
-nav ul li {
-  display: inline-block;
+article ul {
+  color: blue;
 }
 ```
 
 Bei einem großen Projekt wird die CSS-Datei viele Zeilen und Regeln haben. Hier kann die Verschachtelung helfen, deinen Code zu organisieren, indem du untergeordnete Stilregeln innerhalb der jeweiligen übergeordneten Elemente platzierst:
 
 ```scss
-nav {
-  background-color: red;
+article {
+  height: 200px;
+
+  p {
+    color: white;
+  }
 
   ul {
-    list-style: none;
-
-    li {
-      display: inline-block;
-    }
+    color: blue;
   }
 }
 

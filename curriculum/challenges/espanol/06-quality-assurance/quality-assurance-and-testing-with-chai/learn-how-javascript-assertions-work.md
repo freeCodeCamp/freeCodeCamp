@@ -24,7 +24,7 @@ Una vez completado lo anterior, asegúrate de que una demo funcional del proyect
 
 # --instructions--
 
-En `tests/1_unit-tests.js`, bajo el test etiquetado como `#1` en la suite `Basic Assertions`, cambia cada `assert` a `assert.isNull` o `assert.isNotNull` para que los tests se pasen (deben ser evaluados a `true`). No cambies los argumentos pasados a las aserciones.
+Within `tests/1_unit-tests.js` under the test labeled `#1` in the `Basic Assertions` suite, change each `assert` to either `assert.isNull` or `assert.isNotNull` to make the test pass (should evaluate to `true`). No cambies los argumentos pasados a las aserciones.
 
 # --hints--
 

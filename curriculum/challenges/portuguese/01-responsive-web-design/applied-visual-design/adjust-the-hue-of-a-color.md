@@ -19,7 +19,7 @@ As cores têm várias características, incluindo tonalidade, saturação e lumi
 
 Aqui estão alguns exemplos de uso do `hsl()` com cores totalmente saturadas e luminosidade normal:
 
-<table class='table table-striped'><thead><tr><th>Cor</th><th>HSL</th></tr></thead><tbody><tr><td>vermelho</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>amarelo</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>verde</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>ciano</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>azul</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>magenta</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>
+<table><thead><tr><th>Cor</th><th>HSL</th></tr></thead><tbody><tr><td>vermelho</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>amarelo</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>verde</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>ciano</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>azul</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>magenta</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>
 
 # --instructions--
 

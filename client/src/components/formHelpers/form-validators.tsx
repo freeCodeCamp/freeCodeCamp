@@ -1,6 +1,5 @@
 import React from 'react';
 import { Trans } from 'react-i18next';
-import { isMicrosoftLearnLink } from '../../../../utils/validate';
 
 // Matches editor links for: Replit, Glitch, CodeSandbox, GitHub
 const editorRegex =
@@ -19,9 +18,6 @@ function isPathRoot(urlString: string): boolean {
 }
 
 type Validator = (value: string) => React.ReactElement | null;
-
-export const microsoftValidator: Validator = value =>
-  !isMicrosoftLearnLink(value) ? <Trans>validation.ms-learn-link</Trans> : null;
 
 export const editorValidator: Validator = value =>
   editorRegex.test(value) ? <Trans>validation.editor-url</Trans> : null;

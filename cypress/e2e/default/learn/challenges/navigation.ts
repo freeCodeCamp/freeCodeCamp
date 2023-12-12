@@ -45,11 +45,10 @@ display: none;
 describe('submitting a challenge', () => {
   before(() => {
     cy.task('seed');
-    cy.login();
   });
 
   beforeEach(() => {
-    cy.preserveSession();
+    cy.login();
   });
 
   it('in the middle of a block should take you to the next challenge', () => {

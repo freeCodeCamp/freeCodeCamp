@@ -103,10 +103,10 @@ AsALink.args = {
 };
 
 export const AsADownloadLink = Template.bind({});
-AsALink.args = {
-  children: "I'm a link that looks like a button",
+AsADownloadLink.args = {
+  children: "I'm a download link",
   href: 'https://www.freecodecamp.org',
-  download: 'download.txt'
+  download: 'my_file.txt'
 };
 
 export default story;

@@ -1,22 +1,26 @@
 ---
 id: 647e23438acb466c97ccbefe
-title: 'Modify the Content of Strings Using Built-In String Data Type Methods in C#'
+title: 'Змініть вміст рядків, використовуючи вбудовані методи даних рядків в C#'
 challengeType: 19
 dashedName: modify-the-content-of-string-using-built-in-string-data-type-methods-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на платформі Microsoft Learn. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-modify-content/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-modify-content/</a> and complete all the tasks for the "Modify the Content of Strings Using Built-In String Data Type Methods in C#" module. This is required to earn the "Work with Variable Data in C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/csharp-modify-content/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-modify-content/</a> та виконайте всі завдання модуля «Змініть вміст рядків, використовуючи вбудовані методи даних рядків в C#». Це **обов’язково**, щоб отримати трофей зі «Робота з даними змінних в консольних застосунках C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
+
+# --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-modify-content/" target="_blank" rel="noreferrer">«Змініть вміст рядків, використовуючи вбудовані методи даних рядків в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-Which method finds the next index of either the `-` char, the `=` char, or the `_` char?
+Який метод знаходить наступний індекс символа `-`, `=` або `_`?
 
 ## --answers--
 

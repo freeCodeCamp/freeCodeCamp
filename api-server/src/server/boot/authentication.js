@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import passport from 'passport';
 import fetch from 'node-fetch';
 import { isEmail } from 'validator';
-import { jwtSecret } from '../../../../config/secrets';
+import { jwtSecret } from '../../../config/secrets';
 import { decodeEmail } from '../../common/utils';
 import {
   createPassportCallbackAuthenticator,
@@ -135,7 +135,7 @@ function createGetPasswordlessAuth(app) {
             );
           }
           // find user then validate and destroy email validation token
-          // finally retun user instance
+          // finally return user instance
           return User.findOne$({ where: { id: authToken.userId } }).flatMap(
             user => {
               if (!user) {

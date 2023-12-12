@@ -8,7 +8,7 @@ import React from 'react';
 
 import { Button } from './button';
 
-describe('Button', () => {
+describe('<Button />', () => {
   it("should have the role 'button' and render the correct text", () => {
     render(<Button>Hello world</Button>);
 

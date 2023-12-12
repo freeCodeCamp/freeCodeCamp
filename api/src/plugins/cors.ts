@@ -1,9 +1,7 @@
 import { FastifyPluginCallback } from 'fastify';
-
 import fp from 'fastify-plugin';
-import { HOME_LOCATION } from '../utils/env';
 
-// import { FREECODECAMP_NODE_ENV } from '../utils/env';
+import { HOME_LOCATION } from '../utils/env';
 
 const allowedOrigins = [
   'https://www.freecodecamp.dev',
@@ -15,6 +13,10 @@ const allowedOrigins = [
 ];
 
 const cors: FastifyPluginCallback = (fastify, _options, done) => {
+  fastify.options('*', (_req, reply) => {
+    void reply.send();
+  });
+
   fastify.addHook('onRequest', async (req, reply) => {
     const origin = req.headers.origin;
     if (origin && allowedOrigins.includes(origin)) {
@@ -30,9 +32,14 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
     void reply
       .header(
         'Access-Control-Allow-Headers',
-        'Origin, X-Requested-With, Content-Type, Accept'
+        'Origin, X-Requested-With, Content-Type, Accept, Csrf-Token'
       )
-      .header('Access-Control-Allow-Credentials', true);
+      .header('Access-Control-Allow-Credentials', true)
+      // These 4 are the only methods we use
+      .header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE')
+      // Vary: Origin to prevent cache poisoning
+      // TODO: do we need Vary: Accept-Encoding?
+      .header('Vary', 'Origin, Accept-Encoding');
   });
 
   done();

@@ -35,7 +35,7 @@ Let $f(n)$ be the number of subsets of $U_n$ which generate at least one polygon
 
 Наприклад, $f(5) = 7$, $f(10) = 501$ та $f(25) = 18\\,635\\,853$.
 
-Find the last 9 digits of $f({10}^{18})$.
+Знайдіть останні 9 цифр в $f({10}^{18})$.
 
 # --hints--
 

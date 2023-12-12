@@ -20,7 +20,7 @@ Quando la condizione valuta un `true`, il programma esegue la dichiarazione all'
 **Esempio**
 
 ```js
-function test (myCondition) {
+function test(myCondition) {
   if (myCondition) {
     return "It was true";
   }

@@ -10,7 +10,7 @@ dashedName: entropy
 
 Calcola l'entropia H di Shannon di una data stringa.
 
-Data la variabile casuale discreta $X$ che è una stringa di $N$ "simboli" (caratteri totali) composta da $n$ caratteri diversi (n=2 per il binario), l'entropia di Shannon di X in bit/simbolo è:
+Given the discrete random variable $X$ that is a string of $N$ "symbols" (total characters) consisting of $n$ different characters (n=2 for binary), the Shannon entropy of X in bits/symbol is:
 
 $H_2(X) = -\\sum\_{i=1}^n \\frac{count_i}{N} \\log_2 \\left(\\frac{count_i}{N}\\right)$
 

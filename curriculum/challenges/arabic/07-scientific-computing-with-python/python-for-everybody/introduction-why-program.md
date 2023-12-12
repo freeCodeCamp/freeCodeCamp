@@ -32,9 +32,17 @@ Who should learn to program?
 
 College students.
 
+### --feedback--
+
+College students should learn to program, but there's a better answer.
+
 ---
 
 People who want to become software developers.
+
+### --feedback--
+
+People who want to become software developers should learn to program, but there's a better answer.
 
 ---
 

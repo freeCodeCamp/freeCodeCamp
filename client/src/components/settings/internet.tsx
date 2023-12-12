@@ -1,15 +1,16 @@
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  HelpBlock,
-  FormControl,
-  FormGroup,
-  ControlLabel
-} from '@freecodecamp/react-bootstrap';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
+import {
+  FormControl,
+  FormGroup,
+  ControlLabel,
+  HelpBlock,
+  type FormGroupProps
+} from '@freecodecamp/ui';
 
 import { maybeUrlRE } from '../../utils';
 
@@ -33,6 +34,15 @@ type InternetState = {
   formValues: Socials;
   originalValues: Socials;
 };
+
+interface URLValidation {
+  state: FormGroupProps['validationState'];
+  message: string;
+}
+
+function Info({ message }: { message: string }) {
+  return message ? <HelpBlock>{message}</HelpBlock> : null;
+}
 
 class InternetSettings extends Component<InternetProps, InternetState> {
   static displayName: string;
@@ -74,7 +84,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     return null;
   }
 
-  getValidationStateFor(maybeURl = '') {
+  getValidationStateFor(maybeURl = ''): URLValidation {
     const { t } = this.props;
     if (!maybeURl || !maybeUrlRE.test(maybeURl)) {
       return {
@@ -148,14 +158,19 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     return null;
   };
 
-  renderHelpBlock = (validationMessage: string) =>
-    validationMessage ? <HelpBlock>{validationMessage}</HelpBlock> : null;
-
-  renderCheck = (url: string, validation: string | null) =>
+  renderCheck = (
+    url: string,
+    validation: FormGroupProps['validationState'],
+    dataPlaywrightTestLabel: string
+  ) =>
     url && validation === 'success' ? (
       <FormControl.Feedback>
         <span>
-          <FontAwesomeIcon icon={faCheck} size='1x' />
+          <FontAwesomeIcon
+            data-playwright-test-label={dataPlaywrightTestLabel}
+            icon={faCheck}
+            size='1x'
+          />
         </span>
       </FormControl.Feedback>
     ) : null;
@@ -180,26 +195,36 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     const { state: websiteValidation, message: websiteValidationMessage } =
       this.getValidationStateFor(website);
     const isDisabled = this.isFormPristine() || !this.isFormValid();
-    const ariaLabel = t('settings.headings.internet');
     return (
       <>
-        <SectionHeader>{t('settings.headings.internet')}</SectionHeader>
+        <SectionHeader dataPlaywrightTestLabel='your-internet-presence-header'>
+          {t('settings.headings.internet')}
+        </SectionHeader>
         <FullWidthRow>
-          <form id='internet-presence' onSubmit={this.handleSubmit}>
-            <div role='group' aria-label={ariaLabel}>
+          <form
+            id='internet-presence'
+            onSubmit={this.handleSubmit}
+            data-playwright-test-label='internet-presence'
+          >
+            <div role='group' aria-label={t('settings.headings.internet')}>
               <FormGroup
                 controlId='internet-github'
                 validationState={githubProfileValidation}
               >
                 <ControlLabel>GitHub</ControlLabel>
                 <FormControl
+                  data-playwright-test-label='internet-github-input'
                   onChange={this.createHandleChange('githubProfile')}
                   placeholder='https://github.com/user-name'
                   type='url'
                   value={githubProfile}
                 />
-                {this.renderCheck(githubProfile, githubProfileValidation)}
-                {this.renderHelpBlock(githubProfileValidationMessage)}
+                {this.renderCheck(
+                  githubProfile,
+                  githubProfileValidation,
+                  'internet-github-check'
+                )}
+                <Info message={githubProfileValidationMessage} />
               </FormGroup>
               <FormGroup
                 controlId='internet-linkedin'
@@ -207,13 +232,18 @@ class InternetSettings extends Component<InternetProps, InternetState> {
               >
                 <ControlLabel>LinkedIn</ControlLabel>
                 <FormControl
+                  data-playwright-test-label='internet-linkedin-input'
                   onChange={this.createHandleChange('linkedin')}
                   placeholder='https://www.linkedin.com/in/user-name'
                   type='url'
                   value={linkedin}
                 />
-                {this.renderCheck(linkedin, linkedinValidation)}
-                {this.renderHelpBlock(linkedinValidationMessage)}
+                {this.renderCheck(
+                  linkedin,
+                  linkedinValidation,
+                  'internet-linkedin-check'
+                )}
+                <Info message={linkedinValidationMessage} />
               </FormGroup>
               <FormGroup
                 controlId='internet-picture'
@@ -221,13 +251,18 @@ class InternetSettings extends Component<InternetProps, InternetState> {
               >
                 <ControlLabel>Twitter</ControlLabel>
                 <FormControl
+                  data-playwright-test-label='internet-twitter-input'
                   onChange={this.createHandleChange('twitter')}
                   placeholder='https://twitter.com/user-name'
                   type='url'
                   value={twitter}
                 />
-                {this.renderCheck(twitter, twitterValidation)}
-                {this.renderHelpBlock(twitterValidationMessage)}
+                {this.renderCheck(
+                  twitter,
+                  twitterValidation,
+                  'internet-twitter-check'
+                )}
+                <Info message={twitterValidationMessage} />
               </FormGroup>
               <FormGroup
                 controlId='internet-website'
@@ -235,16 +270,22 @@ class InternetSettings extends Component<InternetProps, InternetState> {
               >
                 <ControlLabel>{t('settings.labels.personal')}</ControlLabel>
                 <FormControl
+                  data-playwright-test-label='internet-website-input'
                   onChange={this.createHandleChange('website')}
                   placeholder='https://example.com'
                   type='url'
                   value={website}
                 />
-                {this.renderCheck(website, websiteValidation)}
-                {this.renderHelpBlock(websiteValidationMessage)}
+                {this.renderCheck(
+                  website,
+                  websiteValidation,
+                  'internet-website-check'
+                )}
+                <Info message={websiteValidationMessage} />
               </FormGroup>
             </div>
             <BlockSaveButton
+              data-playwright-test-label='internet-save-button'
               aria-disabled={isDisabled}
               bgSize='lg'
               {...(isDisabled && { tabIndex: -1 })}

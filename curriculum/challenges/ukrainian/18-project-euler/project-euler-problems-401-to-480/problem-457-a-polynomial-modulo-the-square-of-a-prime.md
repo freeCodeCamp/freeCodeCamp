@@ -1,6 +1,6 @@
 ---
 id: 5900f5361000cf542c510048
-title: 'Problem 457: A polynomial modulo the square of a prime'
+title: 'Завдання 457: многочлен за модулем квадрата простого числа'
 challengeType: 1
 forumTopicId: 302131
 dashedName: problem-457-a-polynomial-modulo-the-square-of-a-prime
@@ -8,13 +8,13 @@ dashedName: problem-457-a-polynomial-modulo-the-square-of-a-prime
 
 # --description--
 
-Let $f(n) = n^2 - 3n - 1$.
+Нехай $f(n) = n^2 - 3n - 1$.
 
-Let $p$ be a prime.
+Нехай $p$ буде простим числом.
 
-Let $R(p)$ be the smallest positive integer $n$ such that $f(n)\bmod p^2 = 0$ if such an integer $n$ exists, otherwise $R(p) = 0$.
+Нехай $R(p)$ буде найменшим додатним числом $n$, за якого $f(n)\bmod p^2 = 0$, якщо таке число $n$ існує; в іншому випадку $R(p) = 0$.
 
-Let $SR(L)$ be $\sum R(p)$ for all primes not exceeding $L$.
+Нехай $SR(L)$ буде $\sum R(p)$ для всіх простих чисел, що не перевищують $L$.
 
 Знайдіть $SR({10}^7)$.
 

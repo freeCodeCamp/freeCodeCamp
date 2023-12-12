@@ -4,14 +4,14 @@ import {
   faHeart
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Col, Row } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
-import type { User } from '../../../redux/prop-types';
+import { Col, Row } from '@freecodecamp/ui';
 
-import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../config/i18n';
+import envData from '../../../../config/env.json';
+import { getLangCode } from '../../../../../shared/config/i18n';
+import type { User } from '../../../redux/prop-types';
 import { AvatarRenderer } from '../../helpers';
 import Link from '../../helpers/link';
 import SocialIcons from './social-icons';
@@ -36,7 +36,6 @@ export type CamperProps = Pick<
   | 'picture'
   | 'name'
   | 'joinDate'
-  | 'twitter'
 >;
 
 function joinArray(array: string[], t: TFunction): string {

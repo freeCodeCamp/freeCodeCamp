@@ -19,7 +19,7 @@ dashedName: use-abbreviated-hex-code
 
 接下來，使用縮寫的十六進制編碼給元素設置正確的顏色。
 
-<table class='table table-striped'><tbody><tr><th>顏色</th><th>十六進制編碼縮寫形式</th></tr><tr><td>藍綠色</td><td><code>#0FF</code></td></tr><tr><td>綠色</td><td><code>#0F0</code></td></tr><tr><td>紅色</td><td><code>#F00</code></td></tr><tr><td>紫紅色</td><td><code>#F0F</code></td></tr></tbody></table>
+<table><tbody><tr><th>顏色</th><th>十六進制編碼縮寫形式</th></tr><tr><td>藍綠色</td><td><code>#0FF</code></td></tr><tr><td>綠色</td><td><code>#0F0</code></td></tr><tr><td>紅色</td><td><code>#F00</code></td></tr><tr><td>紫紅色</td><td><code>#F0F</code></td></tr></tbody></table>
 
 # --hints--
 

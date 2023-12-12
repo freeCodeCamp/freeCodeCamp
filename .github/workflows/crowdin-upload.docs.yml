@@ -14,11 +14,11 @@ env:
 jobs:
   i18n-upload-docs-files:
     name: Docs
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
 
       - name: Generate Crowdin Config
         uses: freecodecamp/crowdin-action@main

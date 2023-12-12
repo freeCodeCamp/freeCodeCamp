@@ -1,8 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 function BearProgressModal(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
+  const { t } = useTranslation();
   return (
     <>
       <svg
@@ -11,8 +13,11 @@ function BearProgressModal(
         width='187'
         height='178'
         fill='none'
+        role='img'
+        aria-labelledby='bear-progress-label'
         {...props}
       >
+        <title id='bear-progress-label'>{t('donate.bear-progress-alt')}</title>
         <path
           d='M187 95c0 32.268-8.375 58.697-34 75.376h-22.5c-10 3.124-10.5 4.124-32 5.124-20.5-1-26.5-1-36-5.124h-27C9.875 153.697 0 124.268 0 92 0 40.638 40.257 0 93 0s94 43.638 94 95z'
           fill='#fff'

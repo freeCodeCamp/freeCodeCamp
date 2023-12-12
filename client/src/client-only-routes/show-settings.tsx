@@ -1,11 +1,13 @@
-import { Grid } from '@freecodecamp/react-bootstrap';
 import React, { useRef } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import envData from '../../../config/env.json';
+import { Container } from '@freecodecamp/ui';
+
+import store from 'store';
+import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
 import Certification from '../components/settings/certification';
@@ -37,7 +39,6 @@ import {
   updateMyKeyboardShortcuts,
   verifyCert
 } from '../redux/settings/actions';
-
 const { apiLocation } = envData;
 
 // TODO: update types for actions
@@ -54,7 +55,7 @@ type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
   updatePortfolio: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   user: User;
-  verifyCert: () => void;
+  verifyCert: typeof verifyCert;
   path?: string;
   userToken: string | null;
 };
@@ -125,7 +126,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       about,
       picture,
       theme,
-      sound,
       keyboardShortcuts,
       location,
       name,
@@ -154,17 +154,18 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     navigate(`${apiLocation}/signin`);
     return <Loader fullScreen={true} />;
   }
-
+  const sound = (store.get('fcc-sound') as boolean) ?? false;
   return (
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
-      <Grid>
+      <Container>
         <main>
           <Spacer size='large' />
           <h1
             id='content-start'
             className='text-center'
             style={{ overflowWrap: 'break-word' }}
+            data-playwright-test-label='settings-heading'
           >
             {t('settings.for', { username: username })}
           </h1>
@@ -213,6 +214,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
             isDataVisCert={isDataVisCert}
             isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
+            isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
             isFrontEndCert={isFrontEndCert}
             isFrontEndLibsCert={isFrontEndLibsCert}
             isFullStackCert={isFullStackCert}
@@ -225,9 +227,9 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
             isRespWebDesignCert={isRespWebDesignCert}
             isSciCompPyCertV7={isSciCompPyCertV7}
-            isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
             username={username}
             verifyCert={verifyCert}
+            isEmailVerified={isEmailVerified}
           />
           {userToken && (
             <>
@@ -238,7 +240,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <Spacer size='medium' />
           <DangerZone />
         </main>
-      </Grid>
+      </Container>
     </>
   );
 }

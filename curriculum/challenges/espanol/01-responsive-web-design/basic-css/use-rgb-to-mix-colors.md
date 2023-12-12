@@ -15,7 +15,7 @@ Al igual que con el código hexadecimal, puedes mezclar colores combinando valor
 
 Reemplaza los hex codes en nuestro elemento `style` con los valores RGB correctos.
 
-<table class='table table-striped'><tbody><tr><th>Color</th><th>RGB</th></tr><tr><td>Blue (azul)</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>Red (rojo)</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>Orchid (color orquídea)</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>Sienna (siena)</td><td><code>rgb(160, 82, 45)</code></td></tr></tbody></table>
+<table><tbody><tr><th>Color</th><th>RGB</th></tr><tr><td>Blue (azul)</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>Red (rojo)</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>Orchid (color orquídea)</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>Sienna (siena)</td><td><code>rgb(160, 82, 45)</code></td></tr></tbody></table>
 
 # --hints--
 

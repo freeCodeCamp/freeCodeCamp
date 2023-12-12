@@ -1,6 +1,6 @@
 ---
 id: 587d824e367417b2b2512c57
-title: Перевірте, чи об'єкт є екземпляром конструктора
+title: Перевірте, чи об’єкт є екземпляром конструктора
 challengeType: 2
 forumTopicId: 301605
 dashedName: test-if-an-object-is-an-instance-of-a-constructor
@@ -8,9 +8,9 @@ dashedName: test-if-an-object-is-an-instance-of-a-constructor
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Нагадуємо, що цей проєкт створюється на основі стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-`#instanceOf` підтверджує, що об'єкт є екземпляром конструктора.
+`#instanceOf` підтверджує, що об’єкт є екземпляром конструктора.
 
 # --instructions--
 

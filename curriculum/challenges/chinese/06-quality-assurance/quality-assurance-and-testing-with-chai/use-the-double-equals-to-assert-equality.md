@@ -14,7 +14,7 @@ dashedName: use-the-double-equals-to-assert-equality
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，在 `Equality` 套件里标有 `#5` 的测试里，将每个 `assert` 改为 `assert.equal` 或 `assert.notEqual`，通过测试（应该返回 `true`）。 不要修改传给断言的参数。
+Within `tests/1_unit-tests.js` under the test labeled `#5` in the `Equality` suite, change each `assert` to either `assert.equal` or `assert.notEqual` to make the test pass (should evaluate to `true`). 不要修改传给断言的参数。
 
 # --hints--
 

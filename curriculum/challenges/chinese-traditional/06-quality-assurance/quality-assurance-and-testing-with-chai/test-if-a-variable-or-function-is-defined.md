@@ -12,7 +12,7 @@ dashedName: test-if-a-variable-or-function-is-defined
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，`Basic Assertions` 套件中標註爲 `#2` 的測試下，修改每個 `assert` 爲 `assert.isDefined()` 或 `assert.isUndefined()`，通過測試（結果應爲 `true`）。 不要修改傳給斷言的參數。
+Within `tests/1_unit-tests.js` under the test labeled `#2` in the `Basic Assertions` suite, change each `assert` to either `assert.isDefined()` or `assert.isUndefined()` to make the test pass (should evaluate to `true`). 不要修改傳給斷言的參數。
 
 # --hints--
 

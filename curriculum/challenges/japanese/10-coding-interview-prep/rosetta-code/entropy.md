@@ -10,7 +10,7 @@ dashedName: entropy
 
 与えられた入力文字列のシャノンエントロピーHを計算します。
 
-$n$ の異なる文字 (2進数でn=2) からなる$N$「シンボル」文字列 (合計文字) である離散確率変数 $X$ の場合、Xのシャノンエントロピーをビット／シンボルで表すと以下のようになります。
+Given the discrete random variable $X$ that is a string of $N$ "symbols" (total characters) consisting of $n$ different characters (n=2 for binary), the Shannon entropy of X in bits/symbol is:
 
 $H_2(X) = -\\sum\_{i=1}^n \\frac{count_i}{N} \\log_2 \\left(\\frac{count_i}{N}\\right)$
 

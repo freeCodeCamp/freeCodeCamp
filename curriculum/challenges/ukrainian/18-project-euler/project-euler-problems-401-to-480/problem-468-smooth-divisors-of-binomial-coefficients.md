@@ -1,6 +1,6 @@
 ---
 id: 5900f5411000cf542c510054
-title: 'Problem 468: Smooth divisors of binomial coefficients'
+title: 'Завдання 468: гладкі дільники біноміальних коефіцієнтів'
 challengeType: 1
 forumTopicId: 302143
 dashedName: problem-468-smooth-divisors-of-binomial-coefficients
@@ -8,16 +8,16 @@ dashedName: problem-468-smooth-divisors-of-binomial-coefficients
 
 # --description--
 
-An integer is called B-smooth if none of its prime factors is greater than $B$.
+Ціле число називають B-гладким, якщо жоден з його простих дільників не перевищує $B$.
 
-Let $SB(n)$ be the largest B-smooth divisor of $n$.
+Нехай $SB(n)$ буде найбільшим B-гладким дільником $n$.
 
 Приклади:
 
 $$\begin{align}   & S_1(10) = 1 \\\\
   & S_4(2\\,100) = 12 \\\\ & S_{17}(2\\,496\\,144) = 5\\,712 \end{align}$$
 
-Define $F(n) = \displaystyle\sum_{B = 1}^n \sum_{r = 0}^n S_B(\displaystyle\binom{n}{r})$. Here, $\displaystyle\binom{n}{r}$ denotes the binomial coefficient.
+Визначимо $F(n) = \displaystyle\sum_{B = 1}^n \sum_{r = 0}^n S_B(\displaystyle\binom{n}{r})$. Тут $\displaystyle\binom{n}{r}$ позначає біноміальний коефіцієнт.
 
 Приклади:
 

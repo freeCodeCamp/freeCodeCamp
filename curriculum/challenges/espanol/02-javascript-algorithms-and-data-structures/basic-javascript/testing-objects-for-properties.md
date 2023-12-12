@@ -8,7 +8,7 @@ dashedName: testing-objects-for-properties
 
 # --description--
 
-To check if a property on a given object exists or not, you can use the `.hasOwnProperty()` method. `someObject.hasOwnProperty(someProperty)` returns `true` or `false` depending on if the property is found on the object or not.
+Para verificar si una propiedad de un objeto dado existe o no, puedes utilizar el método `.hasOwnProperty()`. `someObject.hasOwnProperty(someProperty)` devuelve `true` o `false`, dependiendo si la propiedad es encontrada en el objeto o no.
 
 **Por ejemplo**
 
@@ -21,11 +21,11 @@ checkForProperty({ top: 'hat', bottom: 'pants' }, 'top'); // true
 checkForProperty({ top: 'hat', bottom: 'pants' }, 'middle'); // false
 ```
 
-The first `checkForProperty` function call returns `true`, while the second returns `false`.
+La primera llamada a la función `checkForProperty` devuelve `true`, mientras que la segunda llamada a la función devuelve `false`.
 
 # --instructions--
 
-Modify the function `checkObj` to test if the object passed to the function parameter `obj` contains the specific property passed to the function parameter `checkProp`. If the property passed to `checkProp` is found on `obj`, return that property's value. If not, return `Not Found`.
+Modifica la función `checkObj` para probar si el objeto enviado al parámetro de función `obj` contiene la propiedad específica enviada al parámetro de función `checkProp`. Si la propiedad enviada a `checkProp` es encontrada en `obj`, devuelve el valor de esa propiedad. De lo contrario, devuelve `Not Found`.
 
 # --hints--
 

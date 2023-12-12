@@ -1,5 +1,5 @@
 import { WindowLocation } from '@reach/router';
-import { i18nConstants } from '../../../config/constants';
+import { i18nConstants } from '../../../shared/config/constants';
 
 const splitPath = (pathname: string): string[] =>
   pathname.split('/').filter(x => x);

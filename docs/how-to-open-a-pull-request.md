@@ -32,12 +32,12 @@ Whenever you open a Pull Request(PR), you can use the below to determine the typ
 
 **Type:**
 
-| Type  | When to select                                                                   |
-| :---- | :------------------------------------------------------------------------------- |
+| Type  | When to select                                                                  |
+|:------|:--------------------------------------------------------------------------------|
 | fix   | Changed or updated/improved functionality, tests, the wording of a lesson, etc. |
-| feat  | Only if you are adding new functionality, tests, etc.                            |
-| chore | Changes that are not related to code, tests, or verbiage of a lesson.            |
-| docs  | Changes to `/docs` directory or the contributing guidelines, etc.                |
+| feat  | Only if you are adding new functionality, tests, etc.                           |
+| chore | Changes that are not related to code, tests, or verbiage of a lesson.           |
+| docs  | Changes to `/docs` directory or the contributing guidelines, etc.               |
 
 **Scope:**
 
@@ -93,7 +93,7 @@ Some examples of good PR titles would be:
 
    - This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
 
-   - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
+   - If your PR affects the behaviour of a page, it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
 
 ## Feedback on Pull Requests
 
@@ -110,7 +110,7 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
-More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
+Since we squash all commits, you may not need to do a rebase.  However, if a rebase is requested, check our [For Usual Bug Fixes and Features](#for-usual-bug-fixes-and-features) or [For Upcoming Curriculum and Features](#for-upcoming-curriculum-and-features) guides to learn how to do this process for your corresponding PR.
 
 ### For Usual Bug Fixes and Features
 
@@ -118,14 +118,14 @@ When you are working on regular bugs and features on our development branch `mai
 
 1. Rebase your local copy:
 
-   ```console
+   ```bash
    git checkout <pr-branch>
    git pull --rebase upstream main
    ```
 
 2. Resolve any conflicts and add / edit commits
 
-   ```console
+   ```bash
    # Either
    git add .
    git commit -m "chore: resolve conflicts"
@@ -137,28 +137,28 @@ When you are working on regular bugs and features on our development branch `mai
 
 3. Push back your changes to the PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch>
    ```
 
 ### For Upcoming Curriculum and Features
 
-When you are working on features for our upcoming curriculum `next-*` branches, you have to do a cherry pick:
+When you are working on features for our upcoming curriculum `next-*` branches, you have to do a `cherry-pick`:
 
 1. Make sure your upstream comes in sync with your local:
 
-   ```console
+   ```bash
    git checkout main
    git fetch --all --prune
    git checkout next-python-projects
    git reset --hard upstream/next-python-projects
    ```
 
-2. Take backup
+2. Take a backup
 
    a. Either delete your local branch after taking a backup (if you still have it locally):
 
-   ```console
+   ```bash
    git checkout <pr-branch-name>
 
    # example:
@@ -172,9 +172,9 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    git branch -D <pr-branch-name>
    ```
 
-   b. Or just a backup of your pr branch (if you do not have it locally):
+   b. Or just a backup of your PR branch (if you do not have it locally):
 
-   ```console
+   ```bash
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
    # example:
@@ -183,14 +183,14 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
 3. Start off with a clean slate:
 
-   ```console
+   ```bash
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-4. Resolve any conflicts, cleanup, install dependencies and run tests
+4. Resolve any conflicts, cleanup, and install dependencies and run tests
 
-   ```console
+   ```bash
    pnpm run clean
 
    pnpm install
@@ -202,8 +202,8 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
    ```
 
-5. If everything looks good push back to the PR
+5. If everything looks good, push back to the PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch-name>
    ```

@@ -1,4 +1,4 @@
-import { Table, Button } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
 import { find } from 'lodash-es';
 import React, { MouseEvent, useState } from 'react';
@@ -7,8 +7,9 @@ import type { TFunction } from 'i18next';
 import { createSelector } from 'reselect';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import { connect } from 'react-redux';
+import { Table } from '@freecodecamp/ui';
 
-import { regeneratePathAndHistory } from '../../../../utils/polyvinyl';
+import { regeneratePathAndHistory } from '../../../../shared/utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../SolutionViewer/exam-results-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
@@ -26,8 +27,8 @@ import { SolutionDisplayWidget } from '../solution-display-widget';
 import {
   Certification,
   certSlugTypeMap
-} from '../../../../config/certification-settings';
-import env from '../../../../config/env.json';
+} from '../../../../shared/config/certification-settings';
+import env from '../../../config/env.json';
 
 import {
   ClaimedCertifications,
@@ -122,15 +123,16 @@ const isCertMapSelector = createSelector(
     'Machine Learning with Python': isMachineLearningPyCertV7,
     'Relational Database': isRelationalDatabaseCertV8,
     'College Algebra with Python': isCollegeAlgebraPyCertV8,
+    'Foundational C# with Microsoft': isFoundationalCSharpCertV8,
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert,
     'Legacy Information Security and Quality Assurance': isInfosecQaCert,
-    'Foundational C# with Microsoft': isFoundationalCSharpCertV8,
     // TODO: remove Example Certification? Also, include Upcoming Python
     // Certification.
     'Example Certification': false,
-    'Upcoming Python Certification': false
+    'Upcoming Python Certification': false,
+    'A2 English for Developers': false
   })
 );
 
@@ -349,16 +351,17 @@ function CertificationSettings(props: CertificationSettingsProps) {
             </tr>
           </thead>
           <tbody>
-            {renderProjectsFor({
-              certName,
-              isCert: getUserIsCertMap()[certName]
-            })}
+            <ProjectsFor
+              certName={certName}
+              isCert={getUserIsCertMap()[certName]}
+            />
           </tbody>
         </Table>
       </FullWidthRow>
     );
   };
-  function renderProjectsFor({
+
+  function ProjectsFor({
     certName,
     isCert
   }: {
@@ -377,20 +380,20 @@ function CertificationSettings(props: CertificationSettingsProps) {
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
-    return certsToProjects[certName]
-      .map(({ link, title, id }) => (
-        <tr className='project-row' key={id}>
-          <td className='project-title col-sm-8 col-xs-8'>
-            <Link to={link}>
-              {t(`certification.project.title.${title}`, title)}
-            </Link>
-          </td>
-          <td className='project-solution col-sm-4 col-xs-4'>
-            {getProjectSolution(id, title)}
-          </td>
-        </tr>
-      ))
-      .concat([
+    return (
+      <>
+        {certsToProjects[certName].map(({ link, title, id }) => (
+          <tr className='project-row' key={id}>
+            <td className='project-title col-sm-8 col-xs-8'>
+              <Link to={link}>
+                {t(`certification.project.title.${title}`, title)}
+              </Link>
+            </td>
+            <td className='project-solution col-sm-4 col-xs-4'>
+              {getProjectSolution(id, title)}
+            </td>
+          </tr>
+        ))}
         <tr key={`cert-${certSlug}-button`}>
           <td colSpan={2}>
             <Button
@@ -406,7 +409,8 @@ function CertificationSettings(props: CertificationSettingsProps) {
             </Button>
           </td>
         </tr>
-      ]);
+      </>
+    );
   }
 
   const { t } = props;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { SuperBlocks } from '../../../../../config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { createStore } from '../../../redux/create-store';
 import {
   ChallengeFiles,
@@ -12,10 +12,10 @@ import {
   FileKeyChallenge,
   BilibiliIds
 } from '../../../redux/prop-types';
-import { isAuditedSuperBlock } from '../../../../../utils/is-audited';
+import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
 import Block from './block';
 
-jest.mock('../../../../../utils/is-audited', () => ({
+jest.mock('../../../../../shared/utils/is-audited', () => ({
   isAuditedSuperBlock: jest.fn().mockReturnValueOnce(true)
 }));
 

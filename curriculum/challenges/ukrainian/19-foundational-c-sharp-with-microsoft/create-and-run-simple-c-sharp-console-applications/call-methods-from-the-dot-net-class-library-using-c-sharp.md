@@ -1,34 +1,38 @@
 ---
 id: 647e21c48acb466c97ccbee7
-title: 'Call Methods From the .NET Class Library Using C#'
+title: 'Викличте методи з бібліотеки класів .NET, використовуючи C#'
 challengeType: 19
 dashedName: call-methods-from-the-dot-net-class-library-using-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на платформі Microsoft Learn. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-call-methods/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-call-methods/</a> and complete all the tasks for the "Call Methods From the .NET Class Library Using C#" module. This is required to earn the "Create and Run Simple C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/csharp-call-methods/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-call-methods/</a> та виконайте всі завдання модуля «Викличте методи з бібліотеки класів .NET, використовуючи C#». Це **обов’язково**, щоб отримати трофей зі «Створення та запуск простих консольних застосунків C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
+
+# --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-call-methods/" target="_blank" rel="noreferrer">«Викличте методи з бібліотеки класів .NET, використовуючи C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-What is an object?
+Що таке об’єкт?
 
 ## --answers--
 
-A memory address.
+Адреса пам’яті.
 
 ---
 
-A stateless class.
+Клас без стану.
 
 ---
 
-An instance of a class.
+Екземпляр класу.
 
 ## --video-solution--
 

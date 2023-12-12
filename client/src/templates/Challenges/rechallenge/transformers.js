@@ -11,13 +11,13 @@ import {
   stubTrue
 } from 'lodash-es';
 
-import sassData from '../../../../../config/client/sass-compile.json';
+import sassData from '../../../../../client/config/browser-scripts/sass-compile.json';
 import {
   transformContents,
   transformHeadTailAndContents,
   setExt,
   compileHeadTail
-} from '../../../../../utils/polyvinyl';
+} from '../../../../../shared/utils/polyvinyl';
 import createWorker from '../utils/worker-executor';
 import { makeCancellable, makeInputAwaitable } from './transform-python';
 
@@ -25,7 +25,8 @@ const { filename: sassCompile } = sassData;
 
 const protectTimeout = 100;
 const testProtectTimeout = 1500;
-const loopsPerTimeoutCheck = 2000;
+const loopsPerTimeoutCheck = 100;
+const testLoopsPerTimeoutCheck = 2000;
 
 function loopProtectCB(line) {
   console.log(
@@ -54,11 +55,11 @@ async function loadBabel() {
   /* eslint-enable no-inline-comments */
   Babel.registerPlugin(
     'loopProtection',
-    protect(protectTimeout, loopProtectCB)
+    protect(protectTimeout, loopProtectCB, loopsPerTimeoutCheck)
   );
   Babel.registerPlugin(
     'testLoopProtection',
-    protect(testProtectTimeout, testLoopProtectCB, loopsPerTimeoutCheck)
+    protect(testProtectTimeout, testLoopProtectCB, testLoopsPerTimeoutCheck)
   );
 }
 
@@ -159,12 +160,18 @@ const babelTransformer = loopProtectOptions => {
 
 function getBabelOptions(
   presets,
-  { preview, protect } = { preview: false, protect: true }
+  { preview, disableLoopProtectTests, disableLoopProtectPreview } = {
+    preview: false,
+    disableLoopProtectTests: false,
+    disableLoopProtectPreview: false
+  }
 ) {
-  // we always protect the preview, since it evaluates as the user types and
-  // they may briefly have infinite looping code accidentally
-  if (preview) return { ...presets, plugins: ['loopProtection'] };
-  if (protect) return { ...presets, plugins: ['testLoopProtection'] };
+  // we protect the preview unless specifically disabled, since it evaluates as
+  // the user types and they may briefly have infinite looping code accidentally
+  if (preview && !disableLoopProtectPreview)
+    return { ...presets, plugins: ['loopProtection'] };
+  if (!disableLoopProtectTests)
+    return { ...presets, plugins: ['testLoopProtection'] };
   return presets;
 }
 

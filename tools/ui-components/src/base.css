@@ -8,6 +8,11 @@
   a {
     @apply underline;
   }
+  /* Override Tailwind's default `-webkit-tap-highlight-color` rule. */
+  /* https://github.com/tailwindlabs/tailwindcss/discussions/2984 */
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 @tailwind components;

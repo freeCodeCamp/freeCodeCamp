@@ -8,9 +8,9 @@ dashedName: hash-and-compare-passwords-asynchronously
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Нагадуємо, що цей проєкт створюється на основі стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-Оскільки хешування розраховане на інтенсивне обчислення, його рекомендовано виконувати асинхронно на своєму сервері, щоб уникнути блокування вхідного з'єднання. Все, що потрібно зробити для асинхронного хешування пароля – це викликати
+Оскільки хешування розраховане на інтенсивне обчислення, його рекомендовано виконувати асинхронно на своєму сервері, щоб уникнути блокування вхідного з’єднання. Все, що потрібно зробити для асинхронного хешування пароля — це викликати
 
 ```js
 bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
@@ -22,7 +22,7 @@ bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
 
 Додайте цю функцію хешування на свій сервер (ми вже визначили змінні для вас) та запишіть її в консоль, щоб побачити! Як правило, на цьому етапі ви б зберегли хешування у своїй базі даних.
 
-Тепер, коли вам необхідно з'ясувати чи нові вхідні дані відповідають хешу, просто використайте функцію порівняння.
+Тепер, коли вам необхідно з’ясувати чи нові вхідні дані відповідають хешу, просто використайте функцію порівняння.
 
 ```js
 bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
@@ -30,7 +30,7 @@ bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
 });
 ```
 
-Додайте це до своєї наявної хеш-функції (оскільки вам потрібно дочекатися завершення хешу перед викликом функції порівняння) після того, як ви записали повний хеш та ввели «res» на консоль в межах порівняння. На консолі з'являться хеш, а потім «true»! Якщо ви зміните «myPlaintextPassword» у функції порівняння на «someOtherPlaintextPassword», то з'явиться «false».
+Додайте це до своєї наявної хеш-функції (оскільки вам потрібно дочекатися завершення хешу перед викликом функції порівняння) після того, як ви записали повний хеш та ввели «res» на консоль в межах порівняння. На консолі з’являться хеш, а потім «true»! Якщо ви зміните «myPlaintextPassword» у функції порівняння на «someOtherPlaintextPassword», то з’явиться «false».
 
 ```js
 bcrypt.hash('passw0rd!', 13, (err, hash) => {

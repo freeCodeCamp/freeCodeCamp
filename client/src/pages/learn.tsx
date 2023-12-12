@@ -1,4 +1,3 @@
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
@@ -6,12 +5,13 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { bindActionCreators, Dispatch } from 'redux';
+import { Container, Col, Row } from '@freecodecamp/ui';
 
 import Intro from '../components/Intro';
 import Map from '../components/Map';
 import { Spacer } from '../components/helpers';
 import LearnLayout from '../components/layouts/learn';
-import { defaultDonation } from '../../../config/donation-settings';
+import { defaultDonation } from '../../../shared/config/donation-settings';
 import {
   isSignedInSelector,
   userSelector,
@@ -92,7 +92,7 @@ function LearnPage({
   return (
     <LearnLayout>
       <Helmet title={t('metaTags:title')} />
-      <Grid>
+      <Container>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Intro
@@ -109,7 +109,7 @@ function LearnPage({
             <Spacer size='large' />
           </Col>
         </Row>
-      </Grid>
+      </Container>
     </LearnLayout>
   );
 }

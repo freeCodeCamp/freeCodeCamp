@@ -46,7 +46,7 @@ console.log(novel.writer);
 
 使用 `class` 關鍵字創建一個 `Thermostat` class。 `constructor` 接收一個華氏溫度。
 
-在 class 中，創建一個 `getter` 來獲取攝氏溫度和一個 `setter` 來設置溫度值。
+In the class, create a `getter` to obtain the temperature in Celsius and a `setter` that accepts a temperature in Celsius.
 
 記得在 `C = 5/9 * (F - 32)` 和 `F = C * 9.0 / 5 + 32` 中，`F` 是華氏溫度值，`C` 是攝氏溫度值。
 

@@ -1,5 +1,5 @@
 import { HandlerProps } from 'react-reflex';
-import { SuperBlocks } from '../../../config/superblocks';
+import { SuperBlocks } from '../../../shared/config/superblocks';
 import { Themes } from '../components/settings/theme';
 import { type CertTitle } from '../../config/cert-and-project-map';
 
@@ -47,11 +47,22 @@ export type MarkdownRemark = {
   };
 };
 
+export type MultipleChoiceAnswer = {
+  answer: string;
+  feedback: string | null;
+};
+
 export type Question = {
   text: string;
-  answers: string[];
+  answers: MultipleChoiceAnswer[];
   solution: number;
 };
+
+export type FillInTheBlank = {
+  sentence: string;
+  blanks: MultipleChoiceAnswer[];
+};
+
 export type Fields = {
   slug: string;
   blockHashSlug: string;
@@ -97,6 +108,7 @@ export type ChallengeWithCompletedNode = {
 
 export type ChallengeNode = {
   challenge: {
+    audioPath: string;
     block: string;
     certification: string;
     challengeOrder: number;
@@ -105,6 +117,7 @@ export type ChallengeNode = {
     description: string;
     challengeFiles: ChallengeFiles;
     fields: Fields;
+    fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
     guideUrl: string;
     head: string[];
@@ -123,6 +136,7 @@ export type ChallengeNode = {
       owner: string;
       type: string;
     };
+    msTrophyId: string;
     notes: string;
     prerequisites: PrerequisiteChallenge[];
     removeComments: boolean;
@@ -204,6 +218,7 @@ export type User = {
   about: string;
   acceptedPrivacyTerms: boolean;
   completedChallenges: CompletedChallenge[];
+  completedSurveys: SurveyResults[];
   currentChallengeId: string;
   email: string;
   emailVerified: boolean;
@@ -252,6 +267,7 @@ export type ClaimedCertifications = {
   isDataVisCert: boolean;
   isEmailVerified: boolean;
   isCollegeAlgebraPyCertV8: boolean;
+  isFoundationalCSharpCertV8: boolean;
   isFrontEndCert: boolean;
   isFrontEndLibsCert: boolean;
   isFullStackCert: boolean;
@@ -264,7 +280,6 @@ export type ClaimedCertifications = {
   isSciCompPyCertV7: boolean;
   isDataAnalysisPyCertV7: boolean;
   isMachineLearningPyCertV7: boolean;
-  isFoundationalCSharpCertV8: boolean;
 };
 
 type SavedChallenges = SavedChallenge[];
@@ -311,6 +326,8 @@ export type ChallengeMeta = {
   title?: string;
   challengeType?: number;
   helpCategory: string;
+  disableLoopProtectTests: boolean;
+  disableLoopProtectPreview: boolean;
 };
 
 export type PortfolioProjectData = {
@@ -337,7 +354,7 @@ export type ChallengeFile = {
   name: string;
   editableRegionBoundaries?: number[];
   usesMultifileEditor?: boolean;
-  error: null | string | unknown;
+  error: null | string;
   head: string;
   tail: string;
   seed: string;
@@ -403,4 +420,15 @@ export interface GeneratedExamResults {
   passingPercent: number;
   passed: boolean;
   examTimeInSeconds: number;
+}
+
+// Survey related types
+export interface SurveyResponse {
+  question: string;
+  response: string;
+}
+
+export interface SurveyResults {
+  title: string;
+  responses: SurveyResponse[];
 }

@@ -26,7 +26,7 @@ Acá tenemos un ejemplo:
 
 # --instructions--
 
-Es hora de salir del Camper Cat y conocer a nuestro compañero Zersiax (@zersiax), un campeón en accesibilidad y un usuario de lector de pantalla. To hear a clip of his screen reader in action, add an `audio` element after the `p` element. Incluye el atributo `controls`. Then place a `source` element inside the `audio` tags with the `src` attribute set to `https://s3.amazonaws.com/freecodecamp/screen-reader.mp3` and `type` attribute set to `"audio/mpeg"`.
+Es hora de salir del Camper Cat y conocer a nuestro compañero Zersiax (@zersiax), un campeón en accesibilidad y un usuario de lector de pantalla. Para escuchar el fragmento de audio de su lector de pantalla en acción, agregue un elemento `audio` después del elemento `p`. Incluye el atributo `controls`. Luego coloque un elemento `source` dentro de las etiquetas `audio` con el atributo `src` establecido en `https://s3.amazonaws.com/freecodecamp /screen-reader.mp3` y el atributo `type` establecido en `"audio/mpeg"`.
 
 **Note:** El clip del audio puede sonar rápido y quizás sea difícil de entender pero esta velocidad es normal para los lectores de pantalla.
 

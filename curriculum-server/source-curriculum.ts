@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 
-import curriculum from '../config/curriculum.json';
+import curriculum from '../shared/config/curriculum.json';
 
 interface Curriculum {
   [key: string]: unknown;

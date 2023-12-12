@@ -18,7 +18,7 @@ Sia l'indice di $S_n$ la coppia (sinistra, sotto) indicante il numero di quadrat
 
 <img class="img-responsive center-block" alt="diagramma con quadrati sotto un'iperbole" src="https://cdn.freecodecamp.org/curriculum/project-euler/squares-under-a-hyperbola.gif" style="background-color: white; padding: 10px;" />
 
-Il diagramma mostra alcuni di questi quadrati etichettati per numero.
+The diagram shows some such squares labeled by number.
 
 $S_2$ ha un quadrato alla sua sinistra e nessuno sotto, quindi l'indice di $S_2$ è (1, 0).
 

@@ -40,13 +40,13 @@ export const actionTypes = createTypes(
     'challengeMounted',
     'sendRenderTime',
     'checkChallenge',
-    'executeChallenge',
     'resetChallenge',
     'stopResetting',
     'resetAttempts',
     'setEditorFocusability',
     'toggleVisibleEditor',
-    ...createAsyncTypes('submitChallenge')
+    ...createAsyncTypes('submitChallenge'),
+    ...createAsyncTypes('executeChallenge')
   ],
   ns
 );

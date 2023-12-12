@@ -1,9 +1,50 @@
-import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import {
+  TypeBoxTypeProvider,
+  type FastifyPluginCallbackTypebox
+} from '@fastify/type-provider-typebox';
+import type {
+  ContextConfigDefault,
+  FastifyError,
+  FastifyReply,
+  FastifyRequest,
+  RawReplyDefaultExpression,
+  RawRequestDefaultExpression,
+  RawServerDefault,
+  RouteGenericInterface
+} from 'fastify';
+import { ResolveFastifyReplyType } from 'fastify/types/type-provider';
+import { getMinutes, isBefore, sub } from 'date-fns';
 import { isProfane } from 'no-profanity';
-import { isValidUsername } from '../../../utils/validate';
-// we have to use this file as JavaScript because it is used by the old api.
-import { blocklistedUsernames } from '../../../config/constants.js';
+
+import { blocklistedUsernames } from '../../../shared/config/constants';
+import { isValidUsername } from '../../../shared/utils/validate';
 import { schemas } from '../schemas';
+
+// TODO: move getWaitMessage and getWaitPeriod to own module and add tests
+function getWaitMessage(lastEmailSentAt: Date | null) {
+  const minutesLeft = getWaitPeriod(lastEmailSentAt);
+  if (minutesLeft <= 0) {
+    return null;
+  }
+
+  const timeToWait = minutesLeft
+    ? `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}`
+    : 'a few seconds';
+
+  return `Please wait ${timeToWait} to resend an authentication link.`;
+}
+
+function getWaitPeriod(lastEmailSentAt: Date | null) {
+  if (!lastEmailSentAt) return 0;
+
+  const now = new Date();
+  const fiveMinutesAgo = sub(now, { minutes: 5 });
+  const isWaitPeriodOver = isBefore(lastEmailSentAt, fiveMinutesAgo);
+
+  return isWaitPeriodOver
+    ? 0
+    : 5 - (getMinutes(now) - getMinutes(lastEmailSentAt));
+}
 
 /**
  * Validate an image url.
@@ -35,14 +76,49 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
 ) => {
   // The order matters here, since we want to reject invalid cross site requests
   // before checking if the user is authenticated.
+  // @ts-expect-error - @fastify/csrf-protection needs to update their types
   // eslint-disable-next-line @typescript-eslint/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
   fastify.addHook('onRequest', fastify.authenticateSession);
 
+  type CommonResponseSchema = {
+    response: { 400: (typeof schemas.updateMyProfileUI.response)[400] };
+  };
+
+  // TODO: figure out if there's a nicer way to generate this type
+  type UpdateReplyType = FastifyReply<
+    RawServerDefault,
+    RawRequestDefaultExpression<RawServerDefault>,
+    RawReplyDefaultExpression<RawServerDefault>,
+    RouteGenericInterface,
+    ContextConfigDefault,
+    CommonResponseSchema,
+    TypeBoxTypeProvider,
+    ResolveFastifyReplyType<
+      TypeBoxTypeProvider,
+      CommonResponseSchema,
+      RouteGenericInterface
+    >
+  >;
+
+  function updateErrorHandler(
+    error: FastifyError,
+    request: FastifyRequest,
+    reply: UpdateReplyType
+  ) {
+    if (error.validation) {
+      void reply.code(400);
+      void reply.send({ message: 'flash.wrong-updating', type: 'danger' });
+    } else {
+      fastify.errorHandler(error, request, reply);
+    }
+  }
+
   fastify.put(
     '/update-my-profileui',
     {
-      schema: schemas.updateMyProfileUI
+      schema: schemas.updateMyProfileUI,
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -78,9 +154,111 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   );
 
   fastify.put(
+    '/update-my-email',
+    {
+      schema: schemas.updateMyEmail,
+      // We need to customize the responses to validation failures:
+      attachValidation: true
+    },
+    async (req, reply) => {
+      if (req.validationError) {
+        void reply.code(400);
+        return { message: 'Email format is invalid', type: 'danger' } as const;
+      }
+
+      const user = await fastify.prisma.user.findUniqueOrThrow({
+        where: { id: req.session.user.id },
+        select: {
+          email: true,
+          emailVerifyTTL: true,
+          newEmail: true,
+          emailVerified: true,
+          emailAuthLinkTTL: true
+        }
+      });
+      const newEmail = req.body.email.toLowerCase();
+      const currentEmailFormatted = user.email.toLowerCase();
+      const isVerifiedEmail = user.emailVerified;
+      const isOwnEmail = newEmail === currentEmailFormatted;
+      if (isOwnEmail && isVerifiedEmail) {
+        void reply.code(400);
+        return {
+          type: 'info',
+          message: `${newEmail} is already associated with this account.
+You can update a new email address instead.`
+        } as const;
+      }
+
+      const isResendUpdateToSameEmail =
+        newEmail === user.newEmail?.toLowerCase();
+      const isLinkSentWithinLimitTTL = getWaitMessage(user.emailVerifyTTL);
+
+      if (isResendUpdateToSameEmail && isLinkSentWithinLimitTTL) {
+        void reply.code(429);
+        return {
+          type: 'info',
+          message: `We have already sent an email confirmation request to ${newEmail}.
+${isLinkSentWithinLimitTTL}`
+        } as const;
+      }
+
+      const isEmailAlreadyTaken =
+        (await fastify.prisma.user.count({ where: { email: newEmail } })) > 0;
+
+      if (isEmailAlreadyTaken && !isOwnEmail) {
+        void reply.code(400);
+        return {
+          type: 'info',
+          message: `${newEmail} is already associated with another account.`
+        } as const;
+      }
+
+      // ToDo(MVP): email the new email and wait user to confirm it, before we update the user schema.
+      try {
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            newEmail,
+            emailVerified: false,
+            emailVerifyTTL: new Date()
+          }
+        });
+
+        // TODO: combine emailVerifyTTL and emailAuthLinkTTL? I'm not sure why
+        // we need emailVeriftyTTL given that the main thing we want is to
+        // restrict the rate of attempts and the emailAuthLinkTTL already does
+        // that.
+        const tooManyRequestsMessage = getWaitMessage(user.emailAuthLinkTTL);
+
+        if (tooManyRequestsMessage) {
+          void reply.code(429);
+          return {
+            type: 'info',
+            message: tooManyRequestsMessage
+          } as const;
+        }
+
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            emailAuthLinkTTL: new Date()
+          }
+        });
+
+        return { message: 'flash.email-valid', type: 'success' } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
+  fastify.put(
     '/update-my-theme',
     {
-      schema: schemas.updateMyTheme
+      schema: schemas.updateMyTheme,
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -106,7 +284,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-socials',
     {
-      schema: schemas.updateMySocials
+      schema: schemas.updateMySocials,
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -253,7 +432,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-keyboard-shortcuts',
     {
-      schema: schemas.updateMyKeyboardShortcuts
+      schema: schemas.updateMyKeyboardShortcuts,
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -279,7 +459,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-quincy-email',
     {
-      schema: schemas.updateMyQuincyEmail
+      schema: schemas.updateMyQuincyEmail,
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -305,7 +486,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-my-honesty',
     {
-      schema: schemas.updateMyHonesty
+      schema: schemas.updateMyHonesty,
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -331,7 +513,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   fastify.put(
     '/update-privacy-terms',
     {
-      schema: schemas.updateMyPrivacyTerms
+      schema: schemas.updateMyPrivacyTerms,
+      errorHandler: updateErrorHandler
     },
     async (req, reply) => {
       try {
@@ -345,6 +528,44 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
 
         return {
           message: 'flash.privacy-updated',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
+  fastify.put(
+    '/update-my-portfolio',
+    {
+      schema: schemas.updateMyPortfolio,
+      errorHandler: updateErrorHandler
+    },
+    async (req, reply) => {
+      try {
+        // TODO(Post-MVP): make all properties required in the schema and use
+        // req.body.portfolio directly.
+        const portfolio = req.body.portfolio.map(
+          ({ id, title, url, description, image }) => ({
+            id: id ? id : '',
+            title: title ? title : '',
+            url: url ? url : '',
+            description: description ? description : '',
+            image: image ? image : ''
+          })
+        );
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            portfolio
+          }
+        });
+
+        return {
+          message: 'flash.portfolio-item-updated',
           type: 'success'
         } as const;
       } catch (err) {

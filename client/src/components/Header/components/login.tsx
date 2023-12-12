@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import envData from '../../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import { isSignedInSelector } from '../../../redux/selectors';
 
 const { apiLocation, homeLocation } = envData;
@@ -36,6 +36,7 @@ const Login = ({
       bsStyle='default'
       className={(block ? 'btn-cta-big btn-block' : '') + ' signup-btn btn-cta'}
       data-test-label={dataTestLabel}
+      data-playwright-test-label='header-sign-in-button'
       href={href}
     >
       <span className='login-btn-icon'>

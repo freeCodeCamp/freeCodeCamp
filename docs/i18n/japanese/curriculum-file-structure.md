@@ -51,7 +51,7 @@ curriculum/
 1. 必要に応じて、同じファイル内のスーパーブロックの `certSlug` を更新します。**注:** `certSlug` 名を変更すると、認定講座の URL が変更されるため、慎重に変更します。
 1. `client/src/resources/cert-and-project-map.ts` 内の `title` を新しい値に更新してください。**注:** ここで `title` を変更すると、関連する認定講座のスーパーブロックのページ が **壊れます**。 そのページは、スーパーブロックのタイトルに依存しており、認定講座タイトルと一致します。 スーパーブロック名も同時に変更したい場合があるからです。
 1. 手順 7 で、`certSlug` 名を変更した場合は、認定講座とネストされた `projects` の値を変更します。
-1. `config/certification-settings.js` で、`certTypeTitleMap` の値を新しい名前に更新します。
+1. In `shared/config/certification-settings.js`, update the value of `certTypeTitleMap` to the new name.
 1. 手順 7 で `certSlug` を変更した場合、同じファイル内の `certSlugTypeMap` のキーを更新します。
 1. 必要に応じて、`client/src/client-only-routes/show-project-links.tsx` の `legacyCerts` 配列内の認定講座名を更新します。
 1. メイン `README.md` ファイル名を新しい名前に更新します。
@@ -69,10 +69,10 @@ Also, you will likely want to rename the certificate and the `{superBlock}-proje
 1. 上記フォルダの `index.md` ファイルを更新し、`title` と `superBlock` の値を新しい名前に変更します。
 1. 上記の各ブロックフォルダで、`index.md` を更新して、正しい `superBlock` の値を使用します。
 1. `client/src/resources/cert-and-project-map.ts` ファイルで、ファイルの先頭にある認定講座パスと、スーパーブロックの `title` 値を更新します。**注:** ここで `title` を変更すると、スーパーブロックの実際の認定講座を表示する機能が **壊れます**。 表示機能は、スーパーブロックのタイトルに依存しており、認定講座タイトルと一致します。 認定講座名も同時に変更したいものです。
-1. `config/certification-settings.js` の `superBlockCertTypeMap` キーを新しいスーパーブロック名に更新します。
+1. Update the `superBlockCertTypeMap` key in `shared/config/certification-settings.js` to the new superBlock name.
 1. `client/src/assets/icons/index.tsx` のパス値を更新します。
 1. `client/i18n/locales` の言語ごとに、`intro.json` ファイルを更新して新しいスーパーブロック `dashedName` を使用します。英語のファイルの `title` も更新します。
-1. i18n ビルドでスーパーブロックが使用可能かどうかを確認するには、`config/i18n/all-langs.js` ファイルを確認します。 使用しているすべての値を更新します。
+1. Check the `shared/config/i18n/all-langs.js` file to see if the superBlock is enabled in i18n builds. 使用しているすべての値を更新します。
 1. メイン `README.md` ファイルを新しい名前に更新します。
 
 ### ブロック名を変更する

@@ -2,11 +2,11 @@ const path = require('path');
 const {
   createFlatSuperBlockMap,
   SuperBlocks
-} = require('../config/superblocks');
+} = require('../shared/config/superblocks');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const { availableLangs } = require('../config/i18n');
+const { availableLangs } = require('../shared/config/i18n');
 const curriculumLangs = availableLangs.curriculum;
 
 // checks that the CURRICULUM_LOCALE exists and is an available language
@@ -82,6 +82,7 @@ const directoryToSuperblock = {
   '19-foundational-c-sharp-with-microsoft':
     'foundational-c-sharp-with-microsoft',
   '20-upcoming-python': 'upcoming-python',
+  '21-a2-english-for-developers': 'a2-english-for-developers',
   '99-example-certification': 'example-certification'
 };
 

@@ -1,4 +1,4 @@
-import { challengeTypes } from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import {
   completedChallengesSelector,
   allChallengesInfoSelector,
@@ -31,6 +31,7 @@ export const isResetModalOpenSelector = state => state[ns].modal.reset;
 export const isExitExamModalOpenSelector = state => state[ns].modal.exitExam;
 export const isFinishExamModalOpenSelector = state =>
   state[ns].modal.finishExam;
+export const isSurveyModalOpenSelector = state => state[ns].modal.survey;
 export const isExamResultsModalOpenSelector = state =>
   state[ns].modal.examResults;
 export const isProjectPreviewModalOpenSelector = state =>
@@ -40,6 +41,7 @@ export const isSubmittingSelector = state => state[ns].isSubmitting;
 export const isResettingSelector = state => state[ns].isResetting;
 
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
+export const isExecutingSelector = state => state[ns].isExecuting;
 export const successMessageSelector = state => state[ns].successMessage;
 
 export const projectFormValuesSelector = state =>

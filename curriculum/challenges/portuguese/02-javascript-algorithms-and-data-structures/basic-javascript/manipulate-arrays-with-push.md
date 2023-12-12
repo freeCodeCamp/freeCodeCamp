@@ -9,21 +9,21 @@ dashedName: manipulate-arrays-with-push
 
 # --description--
 
-Uma forma fácil de adicionar dados no final de um array é através da função `push()`.
+Um modo fácil de adicionar dados no final de um array é através do método `push()`.
 
-`.push()` recebe um ou mais <dfn>parâmetros</dfn> e "empurra" eles no final do array.
+O método `push()` recebe um ou mais <dfn>argumentos</dfn> e os insere no final do array, na ordem em que eles aparecerem. Ele retorna o novo comprimento do array.
 
 Exemplos:
 
 ```js
 const arr1 = [1, 2, 3];
-arr1.push(4);
+arr1.push(4, 5);
 
 const arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
 ```
 
-`arr1` agora tem o valor de `[1, 2, 3, 4]` e `arr2` tem o valor de `["Stimpson", "J", "cat", ["happy", "joy"]]`.
+`arr1` agora tem o valor de `[1, 2, 3, 4, 5]` e `arr2` tem o valor de `["Stimpson", "J", "cat", ["happy", "joy"]]`.
 
 # --instructions--
 

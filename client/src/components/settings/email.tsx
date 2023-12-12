@@ -1,11 +1,12 @@
+import { Button } from '@freecodecamp/react-bootstrap';
 import {
   HelpBlock,
   Alert,
   FormGroup,
-  ControlLabel,
+  FormGroupProps,
   FormControl,
-  Button
-} from '@freecodecamp/react-bootstrap';
+  ControlLabel
+} from '@freecodecamp/ui';
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
 import type { TFunction } from 'i18next';
@@ -44,6 +45,11 @@ interface EmailForm {
   isPristine: boolean;
 }
 
+interface EmailValidation {
+  state: FormGroupProps['validationState'];
+  message: string;
+}
+
 function EmailSettings({
   email,
   isEmailVerified,
@@ -78,7 +84,7 @@ function EmailSettings({
     };
   }
 
-  function getValidationForNewEmail() {
+  function getValidationForNewEmail(): EmailValidation {
     const { newEmail, currentEmail } = emailForm;
     if (!maybeEmailRE.test(newEmail)) {
       return {
@@ -102,7 +108,7 @@ function EmailSettings({
     }
   }
 
-  function getValidationForConfirmEmail() {
+  function getValidationForConfirmEmail(): EmailValidation {
     const { confirmNewEmail, newEmail } = emailForm;
     if (!maybeEmailRE.test(newEmail)) {
       return {
@@ -137,7 +143,6 @@ function EmailSettings({
     newEmailValidation !== 'success' ||
     confirmEmailValidation !== 'success' ||
     isPristine;
-  const ariaLabel = t('settings.email.heading');
   if (!currentEmail) {
     return (
       <div>
@@ -156,19 +161,24 @@ function EmailSettings({
   }
   return (
     <div className='email-settings'>
-      <SectionHeader>{t('settings.email.heading')}</SectionHeader>
+      <SectionHeader dataPlaywrightTestLabel='email-settings-header'>
+        {t('settings.email.heading')}
+      </SectionHeader>
       {isEmailVerified ? null : (
         <FullWidthRow>
           <HelpBlock>
             <Alert
-              bsStyle='info'
+              variant='info'
               className='text-center'
-              closeLabel={t('buttons.close')}
+              data-playwright-test-label='email-verification-alert'
             >
               {t('settings.email.not-verified')}
               <br />
               <Trans i18nKey='settings.email.check'>
-                <Link to='/update-email' />
+                <Link
+                  data-playwright-test-label='email-verification-link'
+                  to='/update-email'
+                />
               </Trans>
             </Alert>
           </HelpBlock>
@@ -177,27 +187,34 @@ function EmailSettings({
       <FullWidthRow>
         <form
           id='form-update-email'
+          data-cy='form-update-email'
           {...(!isDisabled
             ? { onSubmit: handleSubmit }
             : { onSubmit: e => e.preventDefault() })}
         >
           <FormGroup controlId='current-email'>
             <ControlLabel>{t('settings.email.current')}</ControlLabel>
-            <FormControl.Static>{currentEmail}</FormControl.Static>
+            <FormControl.Static data-playwright-test-label='current-email'>
+              {currentEmail}
+            </FormControl.Static>
           </FormGroup>
-          <div role='group' aria-label={ariaLabel}>
+          <div role='group' aria-label={t('settings.email.heading')}>
             <FormGroup
               controlId='new-email'
               validationState={newEmailValidation}
             >
               <ControlLabel>{t('settings.email.new')}</ControlLabel>
               <FormControl
+                data-cy='email-input'
+                data-playwright-test-label='new-email-input'
                 onChange={createHandleEmailFormChange('newEmail')}
                 type='email'
                 value={newEmail}
               />
               {newEmailValidationMessage ? (
-                <HelpBlock>{newEmailValidationMessage}</HelpBlock>
+                <HelpBlock data-cy='validation-message'>
+                  {newEmailValidationMessage}
+                </HelpBlock>
               ) : null}
             </FormGroup>
             <FormGroup
@@ -206,16 +223,21 @@ function EmailSettings({
             >
               <ControlLabel>{t('settings.email.confirm')}</ControlLabel>
               <FormControl
+                data-cy='confirm-email'
+                data-playwright-test-label='confirm-email-input'
                 onChange={createHandleEmailFormChange('confirmNewEmail')}
                 type='email'
                 value={confirmNewEmail}
               />
               {confirmEmailValidationMessage ? (
-                <HelpBlock>{confirmEmailValidationMessage}</HelpBlock>
+                <HelpBlock data-cy='validation-message'>
+                  {confirmEmailValidationMessage}
+                </HelpBlock>
               ) : null}
             </FormGroup>
           </div>
           <BlockSaveButton
+            data-playwright-test-label='save-email-button'
             aria-disabled={isDisabled}
             bgSize='lg'
             {...(isDisabled && { tabIndex: -1 })}
@@ -232,7 +254,9 @@ function EmailSettings({
           flag={sendQuincyEmail}
           flagName='sendQuincyEmail'
           offLabel={t('buttons.no-thanks')}
+          dataPlaywrightTestOffLabel='no-thanks-button'
           onLabel={t('buttons.yes-please')}
+          dataPlaywrightTestOnLabel='yes-please-button'
           toggleFlag={() => updateQuincyEmail(!sendQuincyEmail)}
         />
       </FullWidthRow>

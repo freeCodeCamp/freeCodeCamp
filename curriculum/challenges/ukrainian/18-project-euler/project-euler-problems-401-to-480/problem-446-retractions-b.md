@@ -1,6 +1,6 @@
 ---
 id: 5900f52c1000cf542c51003d
-title: 'Problem 446: Retractions B'
+title: 'Завдання 446: ретракції В'
 challengeType: 1
 forumTopicId: 302118
 dashedName: problem-446-retractions-b
@@ -8,19 +8,19 @@ dashedName: problem-446-retractions-b
 
 # --description--
 
-For every integer $n > 1$, the family of functions $f_{n, a, b}$ is defined by:
+Сімейство функцій $f_{n, a, b}$ для кожного цілого числа $n > 1$ задано як:
 
-$f_{n, a, b}(x) ≡ ax + b\bmod n$ for $a, b, x$ integer and $0 \lt a \lt n$, $0 \le b \lt n$, $0 \le x \lt n$.
+$f_{n, a, b}(x) ≡ ax + b\bmod n$ для цілих $a, b, x$ та $0 \lt a \lt n$, $0 \le b \lt n$, $0 \le x \lt n$.
 
-We will call $f_{n, a, b}$ a retraction if $f_{n, a, b}(f_{n, a, b}(x)) \equiv f_{n, a, b}(x)\bmod n$ for every $0 \le x \lt n$.
+Назвемо $f_{n, a, b}$ ретракцією, якщо $f_{n, a, b}(f_{n, a, b}(x)) \equiv f_{n, a, b}(x)\bmod n$ для кожного $0 \le x \lt n$.
 
-Let $R(n)$ be the number of retractions for $n$.
+Нехай $R(n)$ буде кількістю ретракцій для $n$.
 
 $F(N) = \displaystyle\sum_{n = 1}^N R(n^4 + 4)$.
 
 $F(1024) = 77\\,532\\,377\\,300\\,600$.
 
-Знайдіть $F({10}^7)$. Give your answer modulo $1\\,000\\,000\\,007$.
+Знайдіть $F({10}^7)$. Дайте відповідь за модулем $1\\,000\\,000\\,007$.
 
 # --hints--
 

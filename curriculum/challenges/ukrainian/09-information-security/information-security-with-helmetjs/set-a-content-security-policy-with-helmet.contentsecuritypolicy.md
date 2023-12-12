@@ -8,7 +8,7 @@ dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Нагадуємо, що цей проєкт створюється на основі стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Це завдання фокусується на новому перспективному захисті, за допомогою якого можна значно скоротити ризик та вплив багатьох атак в сучасних браузерах. Встановлюючи та налаштовуючи політику безпеки вмісту, ви можете запобігти проникненню всього небажаного на вашу сторінку. Це захистить ваш застосунок від вразливостей XSS, небажаного відстеження, шкідливих фреймів та багато іншого. CSP працює шляхом визначення дозволеного списку джерел контенту, яким довіряють. Ви можете налаштувати їх для кожного типу ресурсів, які можуть знадобитися на вебсторінці (алгоритми, таблиці стилів, шрифти, фрейми, медіа тощо...). Існує декілька доступних директив, тому власники вебсайтів можуть мати повний контроль. Для більш детальної інформації, див. HTML 5 Rocks, KeyCDN. На жаль, CSP не підтримується старішими браузерами.
 
@@ -16,7 +16,7 @@ dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
 
 # --instructions--
 
-У цій вправі використайте `helmet.contentSecurityPolicy()`. Налаштуйте його, додавши об’єкт `directives`. В об'єкті встановіть значення `defaultSrc` на `["'self'"]` (список дозволених джерел повинен бути в масиві), щоб довіряти лише адресі свого вебсайту за замовчуванням. Також встановіть директиву `scriptSrc`, щоб тільки ви могли завантажувати скрипти зі свого вебсайту (`'self'`) та домену `'trusted-cdn.com'`.
+У цій вправі використайте `helmet.contentSecurityPolicy()`. Налаштуйте його, додавши об’єкт `directives`. В об’єкті встановіть значення `defaultSrc` на `["'self'"]` (список дозволених джерел повинен бути в масиві), щоб довіряти лише адресі свого вебсайту за замовчуванням. Також встановіть директиву `scriptSrc`, щоб тільки ви могли завантажувати скрипти зі свого вебсайту (`'self'`) та домену `'trusted-cdn.com'`.
 
 Підказка: в ключовому слові `'self'` одинарні лапки є частиною ключового слова, тому його потрібно взяти в подвійні лапки, щоб воно працювало.
 

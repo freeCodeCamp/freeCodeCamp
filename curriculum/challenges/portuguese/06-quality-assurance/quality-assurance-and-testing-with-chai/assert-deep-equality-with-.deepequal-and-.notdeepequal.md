@@ -14,7 +14,7 @@ Lembrando que este projeto está sendo construído a partir do projeto inicial n
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste classificado como `#7` e na suíte `Equality`, modifique cada `assert` para `assert.deepEqual` ou para `assert.notDeepEqual`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste de número `#7`, no grupo de testes `Equality`, modifique cada `assert` para `assert.deepEqual` ou para `assert.notDeepEqual`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

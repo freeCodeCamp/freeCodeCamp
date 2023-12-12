@@ -23,7 +23,7 @@ dashedName: reading-data-introduction
 
 ## --text--
 
-Маючи файл `certificates.csv` з наступним вмістом:
+Вам надано файл `certificates.csv` з таким вмістом:
 
 <pre>
 Name$Certificates$Time (in months)
@@ -33,7 +33,7 @@ Ahmad$5$9
 Beau$6$12
 </pre>
 
-Заповніть пропуски із відсутніми аргументами нижче:
+Заповніть пропуски відсутніх аргументів нижче:
 
 ```py
 import csv

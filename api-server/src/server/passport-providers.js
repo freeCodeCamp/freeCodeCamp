@@ -1,4 +1,4 @@
-import { auth0 } from '../../../config/secrets';
+import { auth0 } from '../../config/secrets';
 
 const { clientID, clientSecret, domain } = auth0;
 

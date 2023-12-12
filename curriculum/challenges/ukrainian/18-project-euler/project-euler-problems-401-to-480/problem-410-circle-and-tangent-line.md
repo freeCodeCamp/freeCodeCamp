@@ -1,6 +1,6 @@
 ---
 id: 5900f5071000cf542c510018
-title: 'Problem 410: Circle and tangent line'
+title: 'Завдання 410: коло та дотична лінія'
 challengeType: 1
 forumTopicId: 302079
 dashedName: problem-410-circle-and-tangent-line
@@ -8,13 +8,13 @@ dashedName: problem-410-circle-and-tangent-line
 
 # --description--
 
-Let $C$ be the circle with radius $r$, $x^2 + y^2 = r^2$. We choose two points $P(a, b)$ and $Q(-a, c)$ so that the line passing through $P$ and $Q$ is tangent to $C$.
+Нехай $C$ буде колом з радіусом $r$, $x^2 + y^2 = r^2$. Вибираємо дві точки $P(a, b)$ та $Q(-a, c)$, за яких лінія, яка проходить через $P$ та $Q$, буде дотичною до $C$.
 
-For example, the quadruplet $(r, a, b, c) = (2, 6, 2, -7)$ satisfies this property.
+Наприклад, квадруплет $(r, a, b, c) = (2, 6, 2, -7)$ задовільняє цю властивість.
 
-Let $F(R, X)$ be the number of the integer quadruplets $(r, a, b, c)$ with this property, and with $0 &lt; r ≤ R$ and $0 &lt; a ≤ X$.
+Нехай $F(R, X)$ буде кількістю цілочисельних квадруплетів $(r, a, b, c)$ з цією властивістю за умови $0 &lt; r ≤ R$ й $0 &lt; a ≤ X$.
 
-We can verify that $F(1, 5) = 10$, $F(2, 10) = 52$ and $F(10, 100) = 3384$.
+Можна довести, що $F(1, 5) = 10$, $F(2, 10) = 52$ та $F(10, 100) = 3384$.
 
 Знайдіть $F({10}^8, {10}^9) + F({10}^9, {10}^8)$.
 

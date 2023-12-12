@@ -37,7 +37,7 @@ import { editorNotes } from '../../../utils/tone/editor-notes';
 import {
   challengeTypes,
   isFinalProject
-} from '../../../../../config/challenge-types';
+} from '../../../../../shared/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,
@@ -61,7 +61,10 @@ import {
   isChallengeCompletedSelector
 } from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
-import { enhancePrismAccessibility } from '../utils/index';
+import {
+  enhancePrismAccessibility,
+  setScrollbarArrowStyles
+} from '../utils/index';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import LowerJaw from './lower-jaw';
 
@@ -74,7 +77,7 @@ export interface EditorProps {
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
   challengeType: number;
-  containerRef: MutableRefObject<HTMLElement | undefined>;
+  containerRef?: React.RefObject<HTMLElement>;
   description: string;
   dimensions?: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
@@ -247,7 +250,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   // editorDidMount are called, we cannot use useState.  Reason being that will
   // only take effect during the next render, which is too late. We could use
   // plain objects here, but useRef is shared between instances, so avoids
-  // unecessary object creation.
+  // unnecessary object creation.
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
   const dataRef = useRef<EditorProperties>({ ...initialData });
@@ -282,7 +285,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
-    renderIndentGuides: false,
+    renderIndentGuides: props.challengeType === challengeTypes.python,
     minimap: {
       enabled: false
     },
@@ -291,9 +294,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     scrollbar: {
       horizontal: 'hidden',
       vertical: 'visible',
-      verticalHasArrows: false,
+      verticalHasArrows: true,
       useShadows: false,
-      verticalScrollbarSize: getScrollbarWidth()
+      verticalScrollbarSize: getScrollbarWidth(),
+      // this helps the scroll bar fit properly between the arrows,
+      // but doesn't do anything for the arrows themselves
+      arrowSize: getScrollbarWidth()
     },
     parameterHints: {
       enabled: false
@@ -567,6 +573,24 @@ const Editor = (props: EditorProps): JSX.Element => {
       ],
       run: toggleAriaRoledescription
     });
+    editor.addAction({
+      id: 'select-all-and-copy',
+      label: 'Select All and Copy',
+      contextMenuGroupId: '9_cutcopypaste',
+      contextMenuOrder: 3,
+      run: () => {
+        const fullSelection = editor.getModel()?.getFullModelRange();
+        if (fullSelection) {
+          editor.setSelection(fullSelection);
+          const data = editor.getModel()?.getValueInRange(fullSelection);
+          if (data) {
+            navigator.clipboard
+              .writeText(data)
+              .catch(err => console.error(err));
+          }
+        }
+      }
+    });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
 
     // aria-roledescription is on (true) by default, check if it needs
@@ -584,6 +608,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       scrollGutterNode
     );
     editor.addContentWidget(scrollGutterWidget);
+
+    // update scrollbar arrows
+    setScrollbarArrowStyles(getScrollbarWidth());
   };
 
   const toggleAriaRoledescription = () => {
@@ -747,6 +774,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const jawHeading = isChallengeCompleted
       ? document.createElement('div')
       : document.createElement('h1');
+    jawHeading.setAttribute('id', 'content-start');
     if (isChallengeCompleted) {
       jawHeading.classList.add('challenge-description-header');
       const challengeTitle = document.createElement('h1');
@@ -824,7 +852,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function focusOnHotkeys() {
-    const currContainerRef = props.containerRef.current;
+    const currContainerRef = props.containerRef?.current;
     if (currContainerRef) {
       currContainerRef.focus();
     }
@@ -1244,8 +1272,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     theme === Themes.Night
       ? 'vs-dark-custom'
       : theme === Themes.Default
-      ? 'vs-custom'
-      : editorSystemTheme;
+        ? 'vs-custom'
+        : editorSystemTheme;
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>

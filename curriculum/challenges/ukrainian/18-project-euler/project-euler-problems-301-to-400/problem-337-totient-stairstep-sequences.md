@@ -17,7 +17,7 @@ $φ$ denotes Euler's totient function.
 
 Let $S(N)$ be the number of such sequences with $a_n ≤ N$.
 
-For example, $S(10) = 4$: {6}, {6, 8}, {6, 8, 9} and {6, 10}.
+Наприклад, $S(10) = 4$: {6}, {6, 8}, {6, 8, 9} та {6, 10}.
 
 We can verify that $S(100) = 482\\,073\\,668$ and $S(10\\,000)\bmod {10}^8 = 73\\,808\\,307$.
 

@@ -91,7 +91,7 @@ Einige Beispiele für gute PR-Titel wären:
 
    - Das ist sehr wichtig, wenn du Änderungen vornimmst, die nicht nur Textinhalte wie die Dokumentation oder eine Aufgabenbeschreibung betreffen. Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
 
-   - Wenn dein PR das Verhalten einer Seite beeinflusst, sollte er von entsprechenden [Cypress Integrationstests](how-to-add-cypress-tests.md) begleitet werden.
+   - If your PR affects the behaviour of a page, it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
 
 ## Feedback on Pull Requests
 
@@ -107,7 +107,7 @@ Und wie immer kannst du deine Fragen in der [Kategorie "Contributors" in unserem
 
 Es kann zu Konflikten kommen, weil viele Mitwirkende an dem Repository arbeiten und Änderungen deinen PR zerstören können, der noch auf eine Überprüfung und Zusammenführung wartet.
 
-In den meisten Fällen brauchst du keinen Rebase, da wir alle Commits vernichten. Wenn jedoch ein Rebase verlangt wird, solltest du wie folgt vorgehen.
+Since we squash all commits, you may not need to do a rebase.  However, if a rebase is requested, check our [For Usual Bug Fixes and Features](#for-usual-bug-fixes-and-features) or [For Upcoming Curriculum and Features](#for-upcoming-curriculum-and-features) guides to learn how to do this process for your corresponding PR.
 
 ### For Usual Bug Fixes and Features
 
@@ -115,14 +115,14 @@ Wenn du an regulären Bugs und Features auf unserem Entwicklungszweig `main` arb
 
 1. Rebase deiner lokalen Kopie:
 
-   ```console
+   ```bash
    git checkout <pr-branch>
    git pull --rebase upstream main
    ```
 
 2. Löse alle Konflikte und füge Commits hinzu / bzw. bearbeite sie
 
-   ```console
+   ```bash
    # Entweder
    git add .
    git commit -m "chore: resolve conflicts"
@@ -134,28 +134,28 @@ Wenn du an regulären Bugs und Features auf unserem Entwicklungszweig `main` arb
 
 3. Schiebe deine Änderungen in den PR zurück
 
-   ```console
+   ```bash
    git push --force origin <pr-branch>
    ```
 
 ### For Upcoming Curriculum and Features
 
-Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du Rosinenpickerei betreiben:
+When you are working on features for our upcoming curriculum `next-*` branches, you have to do a `cherry-pick`:
 
 1. Achte darauf, dass dein Upstream mit deinem Local übereinstimmt:
 
-   ```console
+   ```bash
    git checkout main
    git fetch --all --prune
    git checkout next-python-projects
    git reset --hard upstream/next-python-projects
    ```
 
-2. Backup erstellen
+2. Take a backup
 
    a. Entweder löschst du deinen lokalen Branch, nachdem du ein Backup gemacht hast (wenn du ihn noch lokal hast):
 
-   ```console
+   ```bash
    git checkout <pr-branch-name>
 
    # Beispiel:
@@ -169,9 +169,9 @@ Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du
    git branch -D <pr-branch-name>
    ```
 
-   b. Oder einfach ein Backup deines PR-Branch (wenn du ihn nicht lokal hast):
+   b. Or just a backup of your PR branch (if you do not have it locally):
 
-   ```console
+   ```bash
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
    # Beispiel:
@@ -180,14 +180,14 @@ Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du
 
 3. Beginne mit einer weißen Weste:
 
-   ```console
+   ```bash
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-4. Behebe alle Konflikte, bereinige, installiere Abhängigkeiten und führe Tests durch
+4. Resolve any conflicts, cleanup, and install dependencies and run tests
 
-   ```console
+   ```bash
    pnpm run clean
 
    pnpm install
@@ -199,8 +199,8 @@ Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du
 
    ```
 
-5. Wenn alles gut aussieht, schickst du es zurück an den PR
+5. If everything looks good, push back to the PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch-name>
    ```

@@ -47,3 +47,14 @@ interface DefaultDonationFormState {
   success: boolean;
   error: null | string;
 }
+
+export interface DonateFormState {
+  processing: boolean;
+  redirecting: boolean;
+  success: boolean;
+  error: string;
+  loading: {
+    stripe: boolean;
+    paypal: boolean;
+  };
+}

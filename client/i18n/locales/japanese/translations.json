@@ -29,7 +29,8 @@
     "sign-up-email-list": "Quincy のウィークリーメールを受け取る",
     "sign-out": "サインアウト",
     "curriculum": "カリキュラム",
-    "contribute": "Contribute",
+    "contribute": "コントリビューション",
+    "podcast": "Podcast",
     "forum": "フォーラム",
     "radio": "ラジオ",
     "profile": "プロフィール",
@@ -44,6 +45,7 @@
     "settings": "設定",
     "take-me": "チャレンジに移動",
     "check-answer": "解答をチェック",
+    "submit": "Submit",
     "get-hint": "ヒントを見る",
     "ask-for-help": "質問する",
     "create-post": "フォーラムにヘルプ投稿を作成",
@@ -73,18 +75,21 @@
     "go-to-settings": "設定へ移動して認定証を取得",
     "click-start-course": "コースを開始",
     "click-start-project": "プロジェクトを開始",
-    "click-start-exam": "Start the exam",
+    "click-start-exam": "試験開始",
     "change-language": "言語変更",
     "resume-project": "プロジェクト再開",
     "start-project": "プロジェクト開始",
-    "tweet": "Tweet",
-    "previous-question": "Previous question",
-    "next-question": "Next question",
-    "exit-exam": "Exit the exam",
-    "exit": "Exit",
-    "finish-exam": "Finish the exam",
-    "finish": "Finish",
-    "submit-exam-results": "Submit my results"
+    "tweet": "ツイート",
+    "previous-question": "前の質問",
+    "next-question": "次の質問",
+    "exit-exam": "試験中止",
+    "exit": "中止",
+    "finish-exam": "試験完了",
+    "finish": "完了",
+    "submit-exam-results": "結果を送信",
+    "verify-trophy": "トロフィーを確認",
+    "link-account": "アカウントをリンク",
+    "unlink-account": "アカウントのリンク解除"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -92,6 +97,7 @@
     "big-heading-3": "認定証を取得する。",
     "h2-heading": "2014 年以来、4 万人を超える freeCodeCamp.org 卒業生が、以下をはじめとする IT 企業で仕事を得ています。",
     "hero-img-description": "韓国のローカル勉強会での freeCodeCamp 受講者",
+    "hero-img-alt": "さまざまな人種、性別の人々がノートパソコンの周りに集まっている様子",
     "as-seen-in": "下記で取り上げられました",
     "testimonials": {
       "heading": "freeCodeCamp に対する卒業生の声",
@@ -112,6 +118,10 @@
       }
     },
     "certification-heading": "以下の検証済み認定証を無料で取得できます。",
+    "core-certs-heading": "freeCodeCamp コアカリキュラムの検証済み認定証を無料で取得:",
+    "professional-certs-heading": "プロフェッショナル認定証を無料で取得:",
+    "interview-prep-heading": "就職活動・技術面接に備える:",
+    "upcoming-heading": "公開予定カリキュラム:",
     "faq": "よくある質問:",
     "faqs": [
       {
@@ -296,7 +306,7 @@
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp は皆様のご寄付により支えられている非課税の 501(c)(3) 慈善団体です。(United States Federal Tax Identification Number: 82-0779546)",
-    "mission-statement": "私たちのミッション: 人々が無料でコーディングを学べるよう支援することです。その実現のため、何千もの動画、記事、インタラクティブなコーディングレッスンを作成し、すべて無料で公開しています。さらに、数千の freeCodeCamp スタディグループが世界中に存在します。",
+    "mission-statement": "私たちのミッション: 人々が無料でコーディングを学べるよう支援することです。その実現のため、何千もの動画、記事、インタラクティブなコーディングレッスンを作成し、すべて無料で公開しています。",
     "donation-initiatives": "freeCodeCamp へのご寄付は教育活動のために用いられ、サーバー、サービス、スタッフなどの費用に充てられます。",
     "donate-text": "<1>こちらからご寄付をお願いいたします</1>。(場合により税控除可能)",
     "trending-guides": "人気の記事",
@@ -409,6 +419,7 @@
     "building-a-university": "freeCodeCamp では無料のコンピューターサイエンス学位プログラムの設立に取り組んでいます。",
     "if-help-university": "すでに順調に進んでいますが、この先更に長い道のりが待っています。ぜひ私たちのチャリティー活動をご支援ください。",
     "preview-external-window": "Preview currently showing in external window.",
+    "fill-in-the-blank": "Fill in the blank",
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
@@ -432,6 +443,20 @@
       "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
       "exit-yes": "Yes, I want to leave the exam",
       "exit-no": "No, I would like to continue the exam"
+    },
+    "ms": {
+      "link-header": "Link your Microsoft account",
+      "link-signin": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account. Sign in to link your Microsoft username.",
+      "linked": "The Microsoft account with username \"{{ msUsername }}\" is currently linked to your freeCodeCamp account. If this is not your Microsoft username, remove the link.",
+      "unlinked": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account by following these instructions:",
+      "link-li-1": "Using a browser where you are logged into your Microsoft account, go to <0>https://learn.microsoft.com/users/me/transcript</0>",
+      "link-li-2": "Find and click the \"Share link\" button.",
+      "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
+      "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
+      "link-li-5": "Paste the URL into the input below, it should look similar to this: <0>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</0>",
+      "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
+      "transcript-label": "Your Microsoft Transcript Link",
+      "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
     }
   },
   "donate": {
@@ -448,10 +473,12 @@
     "no-halo": "プロフィール画像の周りに金色の枠が表示されない場合は、donors@freecodecamp.org までご連絡ください。",
     "gift-frequency": "ギフトの頻度を選択する:",
     "gift-amount": "ギフトの金額を選択する:",
-    "confirm": "Confirm your donation:",
-    "confirm-one-time": "Confirm your one-time donation of ${{usd}}:",
-    "confirm-monthly": "Confirm your donation of ${{usd}} / month:",
-    "confirm-yearly": "Confirm your donation of ${{usd}} / year:",
+    "confirm": "寄付の申込み:",
+    "confirm-one-time": "{{usd}} ドルの一回の寄付の申込み:",
+    "confirm-monthly": "毎月 {{usd}} ドルの寄付の申込み:",
+    "confirm-yearly": "毎年 {{usd}} ドルの寄付の申込み:",
+    "confirm-multitier": "Donating ${{usd}} / month:",
+    "edit-amount": "edit amount",
     "wallet-label": "freeCodeCamp への ${{usd}} の寄付",
     "wallet-label-1": "freeCodeCamp への ${{usd}} / 月の寄付",
     "your-donation": "あなたの {{usd}} ドルのご寄付が、世界中の人々に {{hours}} 時間の学びを提供します。",
@@ -468,6 +495,8 @@
     "progress-modal-cta-8": "寄付を通して、新しいツールやコンセプトに対応する新講座の開発をご支援ください。",
     "progress-modal-cta-9": "寄付を通して、開発者のための数学講座の作成をご支援ください。",
     "progress-modal-cta-10": "寄付を通して、無料で誰もが利用できる、専門的なプログラミング認定証の開発をご支援ください。",
+    "help-us-reach-goal": "Donate now to help our charity reach our goal of 10,000 monthly supporters by 2024.",
+    "help-us-develop": "Help us develop free professional programming certifications for all.",
     "nicely-done": "おめでとうございます。「{{block}}」を完了しました。",
     "credit-card": "クレジットカード",
     "credit-card-2": "またはクレジットカードで寄付する:",
@@ -499,7 +528,7 @@
     "download-irs": "<0>こちらで私たちの IRS Determination Letter をダウンロード</0>できます。",
     "download-990": "<0>こちらで私たちの最新の 990 (税金の年次報告書) をダウンロード</0>できます。",
     "how-efficient": "freeCodeCamp はどのくらい効率的なのでしょうか？",
-    "fcc-budget": "freeCodeCamp の予算は、同規模の他の慈善団体に比べ非常に少ない状況です。私たちはプロの資金調達者の力を借りることなく、Quincy 自身がその役目を担っています。",
+    "fcc-budget": "freeCodeCamp's budget is much smaller than most comparable charities. We haven't brought in professional fundraisers. Instead, Quincy does everything himself.",
     "help-millions": "しかしながら、私たちは年間わずか数十万ドルの予算で、数百万の人々を支援することができています。",
     "how-one-time": "一回ごとの寄付を行うにはどうしたらいいですか？",
     "one-time": "一回ごとの寄付をご希望の場合、いつでも経済的なゆとりがある時に、freeCodeCamp のミッションをご支援いただくことができます。<0>こちらのリンクから、PayPal を通して任意の金額を寄付することができます。</0>",
@@ -526,7 +555,9 @@
     "how-update": "毎月の寄付を設定しましたが、月次の処理を変更または停止したいです。どうしたらいいですか？",
     "take-care-of-this": "毎月の寄付の領収書を donors@freecodecamp.org まで転送し、ご希望の変更内容をお伝えください。こちらで処理を行い、確認のご連絡を差し上げます。",
     "anything-else": "freeCodeCamp.org への寄付についてもっと知ることはできますか？",
-    "other-support": "こちらに挙げた以外の方法で当団体を支援したいとお考えの場合、またはその他のお問い合わせつきましては、Quincy 宛てに quincy@freecodecamp.org までメールでご連絡ください。"
+    "other-support": "こちらに挙げた以外の方法で当団体を支援したいとお考えの場合、またはその他のお問い合わせつきましては、Quincy 宛てに quincy@freecodecamp.org までメールでご連絡ください。",
+    "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
+    "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy."
   },
   "report": {
     "sign-in": "ユーザーを報告するためにはサインインする必要があります",
@@ -557,10 +588,10 @@
     "unsubscribed": "購読解除が完了しました",
     "keep-coding": "どこへ行っても、コーディングを続けてください！",
     "email-signup": "E メールでサインアップ",
-    "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
-    "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
+    "brand-new-account": "freeCodeCamp アカウントを新規登録しました。",
+    "duplicate-account-warning": "新規登録ではなく既存のアカウントにサインインする場合には、<0>こちらをクリックしてこのアカウントを削除し</0>、他のメールアドレスをお試しください。",
     "quincy": "- freeCodeCamp.org を設立した教師、Quincy Larson",
-    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
+    "email-blast": "毎週金曜日に Quincy から、プログラミングやコンピュータサイエンスに関する 5 件のリンクをメールで配信しています。現在約 6 百万人を対象に配信しています。あなたにもお送りしましょうか？",
     "update-email-1": "メールアドレスを更新",
     "update-email-2": "メールアドレスの更新はこちら:",
     "email": "Eメール",
@@ -685,7 +716,6 @@
     "complete-project-first": "まずプロジェクトを完成させる必要があります。",
     "local-code-save-error": "コードが保存されませんでした。ブラウザのローカルストレージに空きがない可能性があります。",
     "local-code-saved": "保存しました！コードはブラウザのローカルストレージに保存されました。",
-    "ms-trophy-missing": "It looks like the trophy link you provided is not valid. Please check the link and try again.",
     "timeline-private": "{{username}} さんはタイムラインを非公開に設定しています。他のユーザーが認定証を閲覧できるようにするにはタイムラインを公開する必要があります。",
     "code-saved": "コードをデータベースに保存しました。このページを離れても、戻ってきた際に保存したコードが再表示されます。",
     "code-save-error": "コードの保存中にエラーが発生しました。",
@@ -693,7 +723,39 @@
     "challenge-save-too-big": "コードを保存できませんでした。あなたのコードは {{user-size}} バイトですが、保存可能なコードは最大 {{max-size}} バイトです。コードを削減してもう一度お試しいただくか、https://forum.freecodecamp.org にてサポートを依頼してください。",
     "challenge-submit-too-big": "コードを提出できませんでした。あなたのコードは {{user-size}} バイトですが、提出可能なコードは最大 {{max-size}} バイトです。コードを削減してもう一度お試しいただくか、https://forum.freecodecamp.org にてサポートを依頼してください。",
     "invalid-update-flag": "禁止されたリソースにアクセスしようとしています。正当なリクエストの場合、https://forum.freecodecamp.org でサポートを依頼してください。",
-    "generate-exam-error": "An error occurred trying to generate your exam."
+    "generate-exam-error": "An error occurred trying to generate your exam.",
+    "ms": {
+      "transcript": {
+        "link-err-1": "Please include a Microsoft transcript URL in the request.",
+        "link-err-2": "Something went wrong trying to get your transcript from Microsoft.",
+        "link-err-3": "A username was not found in your Microsoft transcript.",
+        "link-err-4": "That Microsoft username is being used by another freeCodeCamp account.",
+        "link-err-5": "Something went wrong trying to save your Microsoft account.",
+        "link-err-6": "Something went wrong trying to link your Microsoft username to your freeCodeCamp account.",
+        "linked": "Your Microsoft username has been linked to your freeCodeCamp account.",
+        "unlinked": "The link to your Microsoft username has been removed.",
+        "unlink-err": "Something went wrong trying to remove the link to your Microsoft username."
+      },
+      "profile": {
+        "err": "We could not find a Microsoft user ID for Microsoft user \"{{msUsername}}\""
+      },
+      "trophy": {
+        "err-1": "We could not find a Microsoft username associated with your freeCodeCamp account.",
+        "err-2": "You are trying to submit a challenge that does not appear to be a trophy challenge.",
+        "err-3": "We could not get your Microsoft profile from your Microsoft ID.",
+        "err-4": "It appears that the Microsoft user \"{{msUsername}}\" has not earned this trophy.",
+        "err-5": "Something went wrong trying to verify your trophy. Please check and try again.",
+        "err-6": "It looks like your Microsoft account might be private. Set it to public and try again.",
+        "verified": "Your trophy from Microsoft's learning platform was verified."
+      }
+    },
+    "survey": {
+      "err-1": "The survey submitted is not in the correct format.",
+      "err-2": "It looks like you have already completed this survey.",
+      "err-3": "Something went wrong trying to save your survey.",
+      "success": "Thank you. Your survey was submitted."
+    },
+    "classroom-mode-updated": "We have updated your classroom mode settings"
   },
   "validation": {
     "max-characters": "上限は 288 文字です。残り {{charsLeft}} 文字です。",
@@ -719,7 +781,8 @@
     "ms-president": "President, Microsoft Developer Division",
     "verify": "Verify this certification at:",
     "issued": "発行日",
-    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
+    "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "レガシーフルスタック認定講座の一環として、{{user}} は以下の認定講座を修了しました:",
       "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを完成させ、すべての自動テストスイートに合格しました。",
@@ -831,6 +894,8 @@
       "college-algebra-with-python-v8": "Python を用いた代数学認定証",
       "Foundational C# with Microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
+      "A2 English for Developers": "A2 English for Developers",
+      "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "(レガシー) フロントエンド",
       "legacy-front-end": "フロントエンド認定証",
       "Legacy Back End": "(レガシー) バックエンド",
@@ -855,14 +920,13 @@
     "set-claim": "認定証を取得して表示"
   },
   "forum-help": {
-    "browser-info": "**ブラウザ情報:**",
+    "browser-info": "Your browser information:",
     "user-agent": "ユーザーエージェント: <code>{{userAgent}}</code>",
-    "challenge": "**チャレンジ:**",
-    "challenge-link": "**チャレンジへのリンク:**",
-    "whats-happening": "**状況を説明しましょう:**",
+    "challenge": "Challenge Information:",
+    "whats-happening": "Tell us what's happening:",
     "describe": "質問内容をここに詳しく記入してください。",
-    "camper-project": "**プロジェクトのリンク**",
-    "camper-code": "**現状のコード**",
+    "camper-project": "Your project link(s)",
+    "camper-code": "Your code so far",
     "warning": "注意",
     "too-long-one": "チャレンジの元コードとあなたの解答の両方、またはいずれかが、自動でコピーできる最大長を超えています。",
     "too-long-two": "記述したコードを読みやすいフォーマットで表示するために、追加の手順が必要です。",
@@ -901,5 +965,38 @@
     "p2": "この操作では、このデバイスおよびブラウザーセッションのみを対象にサインアウトされます。サインアウトしてよろしいですか？",
     "certain": "はい、サインアウトします",
     "nevermind": "いいえ、サインアウトしません"
+  },
+  "staging-warning": {
+    "heading": "Warning: This is an early access test deployment",
+    "p1": "We welcome you to try this platform in a test-only mode and get early access to upcoming features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
+    "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
+    "certain": "Accept and Dismiss"
+  },
+  "survey": {
+    "foundational-c-sharp": {
+      "title": "Foundational C# with Microsoft Survey",
+      "q1": {
+        "q": "Please describe your role:",
+        "o1": "Student developer",
+        "o2": "Beginner developer (less than 2 years experience)",
+        "o3": "Intermediate developer (between 2 and 5 years experience)",
+        "o4": "Experienced developer (more than 5 years experience)"
+      },
+      "q2": {
+        "q": "Prior to this course, how experienced were you with .NET and C#?",
+        "o1": "Novice (no prior experience)",
+        "o2": "Beginner",
+        "o3": "Intermediate",
+        "o4": "Advanced",
+        "o5": "Expert"
+      }
+    },
+    "misc": {
+      "take": "Take the survey",
+      "submit": "Submit the survey",
+      "exit": "Exit the survey",
+      "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
   }
 }

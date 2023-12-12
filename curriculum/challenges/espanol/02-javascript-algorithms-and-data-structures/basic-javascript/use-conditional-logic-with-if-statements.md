@@ -20,7 +20,7 @@ Cuando la condición se evalúa como `true`, el programa ejecuta el comando dent
 **Ejemplo**
 
 ```js
-function test (myCondition) {
+function test(myCondition) {
   if (myCondition) {
     return "It was true";
   }

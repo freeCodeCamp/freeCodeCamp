@@ -67,7 +67,7 @@ article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano
 
 1. Оновіть файл `.env` так, щоб він використовував вашу мову для `CLIENT_LOCALE` та `CURRICULUM_LOCALE`.
 
-2. Запустіть `pnpm run create:config`. Це автоматично згенерує файл `trending.json` для вашої мови у каталозі `/client/i18n/locales/`.
+2. Запустіть `pnpm run create:shared`. Це автоматично згенерує файл `trending.json` для вашої мови у каталозі `/client/i18n/locales/`.
 
 3. Запустіть сервер, виконавши `pnpm run develop:server` у вікні терміналу.
 

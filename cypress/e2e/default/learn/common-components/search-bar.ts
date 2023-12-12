@@ -13,19 +13,13 @@ const clear = () => {
 };
 
 describe('Search bar optimized', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit('/');
   });
 
-  beforeEach(() => {
-    clear();
-  });
-
-  it('Should render properly', () => {
+  it('Should render without hits', () => {
     cy.get('[data-cy=ais-SearchBox]').should('be.visible');
-  });
 
-  it('Should not display hits', () => {
     search('freeCodeCamp');
     cy.get('[data-cy=ais-Hits-list]').should('not.exist');
   });
@@ -45,19 +39,12 @@ describe('Search bar optimized', () => {
 });
 
 describe('Search bar', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit('/learn');
   });
 
-  beforeEach(() => {
-    clear();
-  });
-
-  it('Should render properly', () => {
+  it('Should render with hits', () => {
     cy.get('.ais-SearchBox').should('be.visible');
-  });
-
-  it('Should accept input and display hits', () => {
     search('freeCodeCamp');
 
     cy.get('[data-cy=ais-Hits-list]')
@@ -107,7 +94,7 @@ describe('Search bar', () => {
     cy.get('.ais-SearchBox-form').submit();
 
     cy.location().should(loc => {
-      expect(loc.pathname).to.eq('/learn/');
+      expect(loc.pathname).to.match(/^\/learn/);
     });
   });
 });

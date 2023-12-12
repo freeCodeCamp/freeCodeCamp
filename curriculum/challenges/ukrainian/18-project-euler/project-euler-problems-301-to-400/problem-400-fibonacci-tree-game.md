@@ -22,9 +22,9 @@ Here are the winning moves of the first player on the first turn for $T(k)$ from
 
 Let $f(k)$ be the number of winning moves of the first player (i.e. the moves for which the second player has no winning strategy) on the first turn of the game when this game is played on $T(k)$.
 
-For example, $f(5) = 1$ and $f(10) = 17$.
+Наприклад, $f(5) = 1$ та $f(10) = 17$.
 
-Знайдіть $f(10000)$. Give the last 18 digits of your answer.
+Знайдіть $f(10000)$. У відповіді запишіть 18 останніх цифр.
 
 # --hints--
 

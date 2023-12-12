@@ -1,7 +1,7 @@
 // Package Utilities
-import { Alert, Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
-import React, { Component, RefObject } from 'react';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { Trans, withTranslation } from 'react-i18next';
@@ -9,13 +9,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Container, Col, Row, Alert } from '@freecodecamp/ui';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import PrismFormatted from '../components/prism-formatted';
-import { challengeTypes } from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import CompletionModal from '../components/completion-modal';
 import GreenPass from '../../../assets/icons/green-pass';
 import HelpModal from '../components/help-modal';
@@ -44,7 +45,7 @@ import {
 import ProjectToolPanel from '../projects/tool-panel';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
-import { SuperBlocks } from '../../../../../config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import './codeally.css';
@@ -112,7 +113,7 @@ interface ShowCodeAllyProps {
 
 class ShowCodeAlly extends Component<ShowCodeAllyProps> {
   static displayName: string;
-  private _container: RefObject<HTMLElement> | undefined;
+  private container: React.RefObject<HTMLElement> = React.createRef();
 
   componentDidMount(): void {
     const {
@@ -132,8 +133,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-
-    this._container?.current?.focus();
+    this.container.current?.focus();
   }
 
   componentWillUnmount() {
@@ -236,7 +236,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       challenge => challenge.id === challengeId
     );
     const titleContext = t('learn.github-link');
-
     return showCodeAlly ? (
       <LearnLayout>
         <Helmet title={windowTitle} />
@@ -251,13 +250,13 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       </LearnLayout>
     ) : (
       <Hotkeys
-        innerRef={this._container}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
         <LearnLayout>
           <Helmet title={windowTitle} />
-          <Grid>
+          <Container>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
@@ -312,7 +311,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       <Spacer size='medium' />
                     </>
                   )}
-                <Alert id='codeally-cookie-warning' bsStyle='info'>
+                <Alert id='codeally-cookie-warning' variant='info'>
                   <p>{t(`intro:misc-text.enable-cookies`)}</p>
                 </Alert>
                 <Button
@@ -363,7 +362,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
-          </Grid>
+          </Container>
         </LearnLayout>
       </Hotkeys>
     );

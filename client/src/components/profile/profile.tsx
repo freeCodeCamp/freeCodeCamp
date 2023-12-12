@@ -1,9 +1,9 @@
-import { Grid, Row } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 
+import { Container, Row } from '@freecodecamp/ui';
 import { FullWidthRow, Link, Spacer } from '../helpers';
 import { User } from './../../redux/prop-types';
 import Timeline from './components/time-line';
@@ -141,7 +141,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
         <title>{t('buttons.profile')} | freeCodeCamp.org</title>
       </Helmet>
       <Spacer size='medium' />
-      <Grid>
+      <Container>
         <Spacer size='medium' />
         {isLocked && (
           <Message username={username} isSessionUser={isSessionUser} t={t} />
@@ -155,7 +155,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
           </Row>
         )}
         <Spacer size='medium' />
-      </Grid>
+      </Container>
     </>
   );
 }

@@ -22,6 +22,8 @@ Se você usa o Replit, siga estas etapas para configurar o projeto:
 
 Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para a solução no campo Solution Link. Como opção, envie também um link para o código-fonte do projeto no campo GitHub Link.
 
+**Observação:** os testes deste projeto não funcionam ao usar `glitch.com`.
+
 # --instructions--
 
 - Complete a lógica de conversão necessária em `/controllers/convertHandler.js`

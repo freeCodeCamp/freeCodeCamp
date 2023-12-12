@@ -18,7 +18,7 @@ import {
   isAdvancingToChallengeSelector,
   chapterSlugSelector
 } from '../redux/selectors';
-import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
+import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
 interface PreviewPortalProps {
   children: ReactElement | null;

@@ -1,29 +1,29 @@
 ---
 id: 646cecc9eb5c4f4f73dafd07
-title: Step 24
+title: Schritt 24
 challengeType: 0
 dashedName: step-24
 ---
 
 # --description--
 
-Move the left ear into position by setting a position of `absolute`, a `top` of `-26px`, and a `left` of `-31px`.
+Bringe das linke Ohr in Position, indem du eine Position auf `absolute`, einen `top` auf `-26px` und einen `left` auf `-31px` setzt.
 
 # --hints--
 
-Your `.cat-left-ear` selector should have a `position` property set to `absolute`. Don't forget to add a semi-colon.
+Dein `.cat-left-ear`-Selektor sollte eine `position`-Eigenschaft auf `absolute` gesetzt haben. Vergiss nicht, ein Semikolon hinzuzufügen.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')
 ```
 
-Your `.cat-left-ear` selector should have a `top` property set to `-26px`
+Dein `.cat-left-ear`-Selektor sollte eine `top`-Eigenschaft auf `-26px` gesetzt haben.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.top === '-26px')
 ```
 
-Your `.cat-left-ear` selector should have a `left` property set to `-31px`
+Dein `.cat-left-ear`-Selektor sollte eine `left`-Eigenschaft auf `-31px` gesetzt haben.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.left === '-31px')

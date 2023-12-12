@@ -29,6 +29,11 @@
       "groupName": "Automerged Always - CodeSee",
       "matchPackagePrefixes": ["@codesee/"],
       "automerge": true
+    },
+    {
+      "groupName": "Babel",
+      "matchPackageNames": ["@babel/"],
+      "automerge": false
     }
   ],
   "ignorePaths": ["api-server"]

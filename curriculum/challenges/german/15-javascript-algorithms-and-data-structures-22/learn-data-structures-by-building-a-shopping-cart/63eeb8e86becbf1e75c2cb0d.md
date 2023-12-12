@@ -7,7 +7,7 @@ dashedName: step-21
 
 # --description--
 
-You now need a total count of each product that the user has in the cart. Declare a `totalCountPerProduct` variable, and assign it an empty object.
+Du brauchst jetzt die Gesamtzahl aller Produkte, die der Nutzer im Einkaufswagen hat. Deklariere eine `totalCountPerProduct`-Variable und weise ihr ein leeres Objekt zu.
 
 # --hints--
 

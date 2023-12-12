@@ -1,5 +1,5 @@
 import { AllChallengesInfo } from '../redux/prop-types';
-import { isFinalProject } from '../../../config/challenge-types';
+import { isFinalProject } from '../../../shared/config/challenge-types';
 
 export function getCompletedPercentage(
   completedChallengesIds: string[] = [],

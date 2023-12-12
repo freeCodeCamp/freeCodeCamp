@@ -1,12 +1,14 @@
 import i18next from 'i18next';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import {
+  SuperBlockStages,
   SuperBlocks,
-  createFlatSuperBlockMap,
-  getFirstNotAuditedSuperBlock
-} from '../../../../config/superblocks';
-import { generateIconComponent } from '../../assets/icons';
+  getFirstNotAuditedSuperBlock,
+  superBlockOrder
+} from '../../../../shared/config/superblocks';
+import { SuperBlockIcon } from '../../assets/icons/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { Link, Spacer } from '../helpers';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
@@ -14,7 +16,7 @@ import {
   curriculumLocale,
   showUpcomingChanges,
   showNewCurriculum
-} from '../../../../config/env.json';
+} from '../../../config/env.json';
 
 import './map.css';
 
@@ -29,15 +31,17 @@ const linkSpacingStyle = {
   gap: '15px'
 };
 
-const flatSuperBlockMap = createFlatSuperBlockMap({
-  showNewCurriculum,
-  showUpcomingChanges
-});
 const firstNotAuditedSuperBlock = getFirstNotAuditedSuperBlock({
   language: curriculumLocale,
   showNewCurriculum,
   showUpcomingChanges
 });
+
+const coreCurriculum = [
+  ...superBlockOrder[SuperBlockStages.FrontEnd],
+  ...superBlockOrder[SuperBlockStages.Backend],
+  ...superBlockOrder[SuperBlockStages.Python]
+];
 
 function MapLi({
   superBlock,
@@ -67,10 +71,13 @@ function MapLi({
         </>
       )}
 
-      <li data-test-label='curriculum-map-button'>
+      <li
+        data-test-label='curriculum-map-button'
+        data-playwright-test-label='curriculum-map-button'
+      >
         <Link className='btn link-btn btn-lg' to={`/learn/${superBlock}/`}>
           <div style={linkSpacingStyle}>
-            {generateIconComponent(superBlock, 'map-icon')}
+            <SuperBlockIcon className='map-icon' superBlock={superBlock} />
             {getSuperBlockTitleForMap(superBlock)}
           </div>
           {landing && <LinkButton />}
@@ -81,13 +88,49 @@ function MapLi({
 }
 
 function Map({ forLanding = false }: MapProps): React.ReactElement {
+  const { t } = useTranslation();
+
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
+      <h2 className={forLanding ? 'big-heading' : ''}>
+        {t('landing.core-certs-heading')}
+      </h2>
       <ul>
-        {flatSuperBlockMap.map((superBlock, i) => (
+        {coreCurriculum.map((superBlock, i) => (
           <MapLi key={i} superBlock={superBlock} landing={forLanding} />
         ))}
       </ul>
+      <Spacer size='medium' />
+      <h2 className={forLanding ? 'big-heading' : ''}>
+        {t('landing.professional-certs-heading')}
+      </h2>
+      <ul>
+        {superBlockOrder[SuperBlockStages.Professional].map((superBlock, i) => (
+          <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+        ))}
+      </ul>
+      <Spacer size='medium' />
+      <h2 className={forLanding ? 'big-heading' : ''}>
+        {t('landing.interview-prep-heading')}
+      </h2>
+      <ul>
+        {superBlockOrder[SuperBlockStages.Extra].map((superBlock, i) => (
+          <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+        ))}
+      </ul>
+      {showUpcomingChanges && (
+        <>
+          <Spacer size='medium' />
+          <h2 className={forLanding ? 'big-heading' : ''}>
+            {t('landing.upcoming-heading')}
+          </h2>
+          <ul>
+            {superBlockOrder[SuperBlockStages.Upcoming].map((superBlock, i) => (
+              <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+            ))}
+          </ul>
+        </>
+      )}
     </div>
   );
 }

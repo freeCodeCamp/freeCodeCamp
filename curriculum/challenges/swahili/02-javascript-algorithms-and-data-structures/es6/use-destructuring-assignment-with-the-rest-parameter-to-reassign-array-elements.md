@@ -33,33 +33,27 @@ Use a destructuring assignment with the rest syntax to emulate the behavior of `
 `removeFirstTwo([1, 2, 3, 4, 5])` should be `[3, 4, 5]`
 
 ```js
-const testArr_ = [1, 2, 3, 4, 5];
-const testArrWORemoved_ = removeFirstTwo(testArr_);
-assert(testArrWORemoved_.every((e, i) => e === i + 3) && testArrWORemoved_.length === 3);
+assert.deepEqual(removeFirstTwo([1, 2, 3, 4, 5]), [3, 4, 5]);
 ```
 
 `removeFirstTwo()` should not modify `list`
 
 ```js
-const testArr_ = [1, 2, 3, 4, 5];
-const testArrWORemoved_ = removeFirstTwo(testArr_);
-assert(testArr_.every((e, i) => e === i + 1) && testArr_.length === 5);
+const _testArr = [1, 2, 3, 4, 5];
+removeFirstTwo(_testArr);
+assert.deepEqual(_testArr, [1, 2, 3, 4, 5])
 ```
 
 `Array.slice()` should not be used.
 
 ```js
-assert(!code.match(/slice/g));
+assert(!code.match(/\.\s*slice\s*\(/));
 ```
 
-Destructuring on `list` should be used.
+You should use the rest syntax.
 
 ```js
-assert(
-  __helpers
-    .removeWhiteSpace(code)
-    .match(/\[(([_$a-z]\w*)?,){1,}\.\.\.shorterList\]=list/i)
-);
+assert.match(code, /\.\.\./);
 ```
 
 # --seed--
@@ -68,10 +62,7 @@ assert(
 
 ```js
 function removeFirstTwo(list) {
-  // Only change code below this line
-  const shorterList = list; // Change this line
-  // Only change code above this line
-  return shorterList;
+  return list;
 }
 
 const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

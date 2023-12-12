@@ -67,7 +67,7 @@ Dovrai [fare il build in locale del client tradotto](how-to-enable-new-languages
 
 1. Update your `.env` file to use your language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
 
-2. Run `pnpm run create:config`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
+2. Run `pnpm run create:shared`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
 
 3. Start the server by running `pnpm run develop:server` in one terminal window.
 
@@ -339,7 +339,7 @@ In Crowdin, individuate the `User management` on the left-hand side menu.
 
 Aprirà gli strumenti di gestione degli utenti e sarai in grado di vedere la lista di tutti gli utenti.
 
-Search for the user that will become a proofreader. Utilizzare il menu a tre punti nella riga dell'utente per aprire un menu e selezionare "Add to team". I team di revisori hanno il nome standard di `Proof Readers (<language>)`, puoi cercare il team usando il nome della lingua. Una volta selezionato il team, utilizza il pulsante "ADD" in fondo alla pagina per finalizzare il processo.
+Search for the user who will become a proofreader. Utilizzare il menu a tre punti nella riga dell'utente per aprire un menu e selezionare "Add to team". I team di revisori hanno il nome standard di `Proof Readers (<language>)`, puoi cercare il team usando il nome della lingua. Una volta selezionato il team, utilizza il pulsante "ADD" in fondo alla pagina per finalizzare il processo.
 
 L'utente ora è un revisore.
 

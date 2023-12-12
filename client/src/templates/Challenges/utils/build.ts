@@ -1,7 +1,7 @@
-import { challengeTypes } from '../../../../../config/challenge-types';
-import frameRunnerData from '../../../../../config/client/frame-runner.json';
-import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
-import pythonRunnerData from '../../../../../config/client/python-runner.json';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import frameRunnerData from '../../../../../client/config/browser-scripts/frame-runner.json';
+import testEvaluatorData from '../../../../../client/config/browser-scripts/test-evaluator.json';
+import pythonRunnerData from '../../../../../client/config/browser-scripts/python-runner.json';
 
 import {
   ChallengeFile as PropTypesChallengeFile,
@@ -43,8 +43,9 @@ interface BuildChallengeData extends Context {
 
 interface BuildOptions {
   preview: boolean;
-  protect: boolean;
-  usesTestRunner: boolean;
+  disableLoopProtectTests: boolean;
+  disableLoopProtectPreview: boolean;
+  usesTestRunner?: boolean;
 }
 
 const { filename: testEvaluator } = testEvaluatorData;
@@ -211,14 +212,15 @@ type BuildResult = {
 // out of it.
 export function buildDOMChallenge(
   { challengeFiles, required = [], template = '' }: BuildChallengeData,
-  { usesTestRunner } = { usesTestRunner: false }
+  options?: BuildOptions
 ): Promise<BuildResult> | undefined {
   const loadEnzyme = challengeFiles?.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
 
-  const pipeLine = composeFunctions(...getTransformers());
+  const pipeLine = composeFunctions(...getTransformers(options));
   const finalFiles = challengeFiles?.map(pipeLine);
+  const usesTestRunner = options?.usesTestRunner ?? false;
 
   if (finalFiles) {
     return Promise.all(finalFiles)
@@ -384,8 +386,4 @@ export function isJavaScriptChallenge({
     challengeType === challengeTypes.js ||
     challengeType === challengeTypes.jsProject
   );
-}
-
-export function isLoopProtected(challengeMeta: ChallengeMeta): boolean {
-  return challengeMeta.superBlock !== 'coding-interview-prep';
 }

@@ -6,7 +6,7 @@ const redirectURL = 'string';
 
 describe('Share Template Testing', () => {
   render(<ShareTemplate redirectURL={redirectURL} />);
-  test('Testing share templete Click Redirect Event', () => {
+  test('Testing share template Click Redirect Event', () => {
     const link = screen.getByRole('link', {
       name: 'buttons.tweet aria.opens-new-window'
     });

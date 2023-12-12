@@ -22,6 +22,8 @@ Wenn du Replit verwendest, folge diesen Schritten, um das Projekt einzurichten:
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
+**Note:** This project's tests do not work when using `glitch.com`.
+
 # --instructions--
 
 - Complete the necessary conversion logic in `/controllers/convertHandler.js`
@@ -30,7 +32,7 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 - To run the tests uncomment `NODE_ENV=test` in your `.env` file
 - To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
-Schreibe die folgenden Tests in `tests/1_unit-tests.js`:
+Write the following tests in `tests/1_unit-tests.js`:
 
 - `convertHandler` sollte eine ganzzahlige Eingabe korrekt lesen.
 - `convertHandler` sollte die Eingabe einer Dezimalzahl korrekt lesen.
@@ -49,7 +51,7 @@ Schreibe die folgenden Tests in `tests/1_unit-tests.js`:
 - `convertHandler` should correctly convert `lbs` to `kg`.
 - `convertHandler` should correctly convert `kg` to `lbs`.
 
-Schreibe die folgenden Tests in `tests/2_functional-tests.js`:
+Write the following tests in `tests/2_functional-tests.js`:
 
 - Convert a valid input such as `10L`: `GET` request to `/api/convert`.
 - Convert an invalid input such as `32g`: `GET` request to `/api/convert`.

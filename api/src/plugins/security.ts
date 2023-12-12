@@ -1,5 +1,4 @@
 import { FastifyPluginCallback } from 'fastify';
-
 import fp from 'fastify-plugin';
 
 import { FREECODECAMP_NODE_ENV } from '../utils/env';

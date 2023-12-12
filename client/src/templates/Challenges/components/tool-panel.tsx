@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { challengeTypes } from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 
 import './tool-panel.css';
 import { openModal, executeChallenge } from '../redux/actions';
@@ -104,23 +104,36 @@ function ToolPanel({
         </Button>
       )}
       <Dropdown dropup>
-        <Dropdown.Toggle dropup id={'get-help-dropdown'}>
+        <Dropdown.Toggle
+          id={'get-help-dropdown'}
+          data-playwright-test-label='get-help-dropdown'
+        >
           {isMobile ? t('buttons.help') : t('buttons.get-help')}
         </Dropdown.Toggle>
-        <Dropdown.Menu dropup>
+        <Dropdown.Menu>
           {guideUrl ? (
-            <MenuItem href={guideUrl} target='_blank'>
+            <MenuItem
+              href={guideUrl}
+              target='_blank'
+              data-playwright-test-label='get-hint'
+            >
               {t('buttons.get-hint')}{' '}
               <FontAwesomeIcon icon={faExternalLinkAlt} />
               <span className='sr-only'>, {t('aria.opens-new-window')}</span>
             </MenuItem>
           ) : null}
           {videoUrl ? (
-            <MenuItem onClick={openVideoModal}>
+            <MenuItem
+              onClick={openVideoModal}
+              data-playwright-test-label='watch-a-video'
+            >
               {t('buttons.watch-video')}
             </MenuItem>
           ) : null}
-          <MenuItem onClick={openHelpModal}>
+          <MenuItem
+            onClick={openHelpModal}
+            data-playwright-test-label='ask-for-help'
+          >
             {t('buttons.ask-for-help')}
           </MenuItem>
         </Dropdown.Menu>

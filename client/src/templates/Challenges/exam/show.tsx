@@ -1,6 +1,7 @@
 // Package Utilities
-import { Alert, Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql, navigate } from 'gatsby';
+
 import React, { Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
@@ -9,6 +10,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Container, Col, Alert, Row } from '@freecodecamp/ui';
 import { micromark } from 'micromark';
 
 // Local Utilities
@@ -22,6 +24,7 @@ import Hotkeys from '../components/hotkeys';
 import { clearExamResults, startExam, stopExam } from '../../../redux/actions';
 import {
   completedChallengesSelector,
+  completedSurveysSelector,
   isSignedInSelector,
   examInProgressSelector,
   examResultsSelector
@@ -45,30 +48,38 @@ import {
   UserExamQuestion,
   UserExam,
   GeneratedExamResults,
-  GeneratedExamQuestion
+  GeneratedExamQuestion,
+  PrerequisiteChallenge,
+  SurveyResults
 } from '../../../redux/prop-types';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { formatSecondsToTime } from '../../../utils/format-seconds';
 import ExitExamModal from './components/exit-exam-modal';
 import FinishExamModal from './components/finish-exam-modal';
 import ExamResults from './components/exam-results';
+import MissingPrerequisites from './components/missing-prerequisites';
+import FoundationCSharpSurveyAlert from './components/foundational-c-sharp-survey-alert';
+
 import './exam.css';
 
 // Redux
 const mapStateToProps = createSelector(
   completedChallengesSelector,
+  completedSurveysSelector,
   isChallengeCompletedSelector,
   isSignedInSelector,
   examInProgressSelector,
   examResultsSelector,
   (
     completedChallenges: CompletedChallenge[],
+    completedSurveys: SurveyResults[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean,
     examInProgress: boolean,
     examResults: GeneratedExamResults | null
   ) => ({
     completedChallenges,
+    completedSurveys,
     isChallengeCompleted,
     isSignedIn,
     examInProgress,
@@ -100,6 +111,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ShowExamProps {
   challengeMounted: (arg0: string) => void;
   completedChallenges: CompletedChallenge[];
+  completedSurveys: SurveyResults[];
   clearExamResults: () => void;
   createFlashMessage: typeof createFlashMessage;
   data: { challengeNode: ChallengeNode };
@@ -136,7 +148,7 @@ function convertMd(md: string): string {
 
 class ShowExam extends Component<ShowExamProps, ShowExamState> {
   static displayName: string;
-  private _container: RefObject<HTMLElement> | undefined;
+  private container: RefObject<HTMLElement> | undefined = React.createRef();
   timerInterval!: NodeJS.Timeout;
 
   constructor(props: ShowExamProps) {
@@ -177,7 +189,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     });
     challengeMounted(challengeMeta.id);
 
-    this._container?.current?.focus();
+    this.container?.current?.focus();
   }
 
   componentWillUnmount() {
@@ -332,6 +344,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       examInProgress,
       examResults,
       completedChallenges,
+      completedSurveys,
       isChallengeCompleted,
       openExitExamModal,
       openFinishExamModal,
@@ -348,31 +361,29 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       userExamQuestions
     } = this.state;
 
-    type Prerequisite = {
-      id: string;
-      title: string;
-    };
-
-    let missingPrequisites: Prerequisite[] = [];
+    let missingPrerequisites: PrerequisiteChallenge[] = [];
     if (prerequisites) {
-      missingPrequisites = prerequisites?.filter(
+      missingPrerequisites = prerequisites?.filter(
         prerequisite =>
           !completedChallenges.find(({ id }) => prerequisite.id === id)
       );
     }
 
-    const qualifiedForExam = missingPrequisites.length === 0;
+    const surveyCompleted = completedSurveys.some(
+      s => s.title === 'Foundational C# with Microsoft Survey'
+    );
+    const prerequisitesComplete = missingPrerequisites.length === 0;
+    const qualifiedForExam = prerequisitesComplete && surveyCompleted;
 
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )}: ${title}`;
     const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
-    const ariaLabel = t('aria.answer');
 
     // TODO: If already taken exam, show different messages
 
     return examInProgress ? (
-      <Grid>
+      <Container>
         <Row>
           <Spacer size='medium' />
           <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={12}>
@@ -386,9 +397,14 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
             ) : (
               <div className='exam-wrapper'>
                 <div className='exam-header'>
-                  <div>{title}</div>
+                  <div data-playwright-test-label='exam-show-title'>
+                    {title}
+                  </div>
                   <span>|</span>
-                  <div>
+                  <div
+                    data-cy='exam-time'
+                    data-playwright-test-label='exam-show-question-time'
+                  >
                     {t('learn.exam.time', {
                       t: formatSecondsToTime(examTimeInSeconds)
                     })}
@@ -417,12 +433,11 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                       ({ answer, id }) => (
                         <label className='exam-answer-label' key={id}>
                           <input
-                            aria-label={ariaLabel}
                             checked={
                               userExamQuestions[currentQuestionIndex].answer
                                 .id === id
                             }
-                            className='exam-answer-input-hidden'
+                            className='sr-only'
                             name={id}
                             onChange={() =>
                               this.selectAnswer(
@@ -454,7 +469,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     className='exam-button'
                     disabled={currentQuestionIndex <= 0}
                     bsStyle='primary'
-                    data-cy='previous-exam-question'
+                    data-cy='previous-exam-question-btn'
                     onClick={this.goToPreviousQuestion}
                   >
                     {t('buttons.previous-question')}
@@ -469,7 +484,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                       }
                       className='exam-button'
                       bsStyle='primary'
-                      data-cy='finish-exam'
+                      data-cy='finish-exam-btn'
                       onClick={openFinishExamModal}
                     >
                       {t('buttons.finish-exam')}
@@ -482,7 +497,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                       }
                       className='exam-button'
                       bsStyle='primary'
-                      data-cy='next-exam-question'
+                      data-cy='next-exam-question-btn'
                       onClick={this.goToNextQuestion}
                     >
                       {t('buttons.next-question')}
@@ -497,7 +512,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     block={true}
                     className='exam-button'
                     bsStyle='primary'
-                    data-cy='exit-exam'
+                    data-cy='exit-exam-btn'
                     onClick={openExitExamModal}
                   >
                     {t('buttons.exit-exam')}
@@ -509,16 +524,16 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
           <ExitExamModal exitExam={this.exitExam} />
           <FinishExamModal finishExam={this.finishExam} />
         </Row>
-      </Grid>
+      </Container>
     ) : (
       <Hotkeys
-        innerRef={this._container}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
         <LearnLayout>
           <Helmet title={windowTitle} />
-          <Grid>
+          <Container>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeTitle
@@ -530,19 +545,19 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                 <Spacer size='medium' />
 
                 {qualifiedForExam ? (
-                  <Alert id='qualified-for-exam' bsStyle='info'>
+                  <Alert data-cy='qualified-for-exam-alert' variant='info'>
                     <p>{t('learn.exam.qualified')}</p>
                   </Alert>
                 ) : (
-                  <Alert id='not-qualified-for-exam' bsStyle='danger'>
-                    <p>{t('learn.exam.not-qualified')}</p>
-                    <Spacer size='small' />
-                    <ul>
-                      {missingPrequisites.map(({ title, id }) => (
-                        <li key={id}>{title}</li>
-                      ))}
-                    </ul>
-                  </Alert>
+                  <>
+                    {!prerequisitesComplete ? (
+                      <MissingPrerequisites
+                        missingPrerequisites={missingPrerequisites}
+                      />
+                    ) : (
+                      <FoundationCSharpSurveyAlert />
+                    )}
+                  </>
                 )}
 
                 <PrismFormatted text={description} />
@@ -552,7 +567,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                 <Button
                   block={true}
                   bsStyle='primary'
-                  data-cy='start-exam'
+                  data-cy='start-exam-btn'
                   disabled={!qualifiedForExam}
                   onClick={this.runExam}
                 >
@@ -562,7 +577,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
-          </Grid>
+          </Container>
         </LearnLayout>
       </Hotkeys>
     );

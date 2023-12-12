@@ -9916,6 +9916,228 @@ module.exports = {
       id: '606243f50267e718b1e755f4',
       challengeType: 7,
       files: []
+    },
+    {
+      id: '647f85d407d29547b3bee1bb',
+      solution:
+        'https://learn.microsoft.com/api/gamestatus/achievements/learn.wwl.get-started-c-sharp-part-1.trophy?username=moT01&locale=en-us',
+      completedDate: 1695064765244
+    },
+    {
+      id: '647e239e8acb466c97ccbf05',
+      completedDate: 1695064829390
+    },
+    {
+      id: '647e238f8acb466c97ccbf04',
+      completedDate: 1695064849296
+    },
+    {
+      id: '647e23828acb466c97ccbf03',
+      completedDate: 1695064852639
+    },
+    {
+      id: '647e23788acb466c97ccbf02',
+      completedDate: 1695064856424
+    },
+    {
+      id: '647e235a8acb466c97ccbf00',
+      completedDate: 1695064861958
+    },
+    {
+      id: '647e236d8acb466c97ccbf01',
+      completedDate: 1695064864950
+    },
+    {
+      id: '647e21f88acb466c97ccbeeb',
+      completedDate: 1695064876515
+    },
+    {
+      id: '647e21c48acb466c97ccbee7',
+      completedDate: 1695064880298
+    },
+    {
+      id: '647e21ba8acb466c97ccbee6',
+      completedDate: 1695064883688
+    },
+    {
+      id: '647e22058acb466c97ccbeec',
+      completedDate: 1695064886045
+    },
+    {
+      id: '647e21df8acb466c97ccbee9',
+      completedDate: 1695064888237
+    },
+    {
+      id: '647e21eb8acb466c97ccbeea',
+      completedDate: 1695064890737
+    },
+    {
+      id: '647e21d08acb466c97ccbee8',
+      completedDate: 1695064894620
+    },
+    {
+      id: '647f87dc07d29547b3bee1bf',
+      solution:
+        'https://learn.microsoft.com/api/gamestatus/achievements/learn.wwl.get-started-c-sharp-part-2.trophy?username=moT01&locale=en-us',
+      completedDate: 1695064900926
+    },
+    {
+      id: '647e21708acb466c97ccbee3',
+      completedDate: 1695064919032
+    },
+    {
+      id: '647e21658acb466c97ccbee2',
+      completedDate: 1695064922948
+    },
+    {
+      id: '647e214b8acb466c97ccbee0',
+      completedDate: 1695064926971
+    },
+    {
+      id: '647e218f8acb466c97ccbee5',
+      completedDate: 1695064931632
+    },
+    {
+      id: '647e1f4e8acb466c97ccbedf',
+      completedDate: 1695064937887
+    },
+    {
+      id: '647e217e8acb466c97ccbee4',
+      completedDate: 1695064943252
+    },
+    {
+      id: '647e21598acb466c97ccbee1',
+      completedDate: 1695064947396
+    },
+    {
+      id: '647f882207d29547b3bee1c0',
+      solution:
+        'https://learn.microsoft.com/api/gamestatus/achievements/learn.wwl.get-started-c-sharp-part-3.trophy?username=moT01&locale=en-us',
+      completedDate: 1695064949460
+    },
+    {
+      id: '647e23188acb466c97ccbefa',
+      completedDate: 1695064958629
+    },
+    {
+      id: '647e23248acb466c97ccbefb',
+      completedDate: 1695064963473
+    },
+    {
+      id: '647e23508acb466c97ccbeff',
+      completedDate: 1695064967029
+    },
+    {
+      id: '647e232c8acb466c97ccbefc',
+      completedDate: 1695064971575
+    },
+    {
+      id: '647e23438acb466c97ccbefe',
+      completedDate: 1695064977375
+    },
+    {
+      id: '647e23368acb466c97ccbefd',
+      completedDate: 1695064981893
+    },
+    {
+      id: '647e230c8acb466c97ccbef9',
+      completedDate: 1695064984337
+    },
+    {
+      id: '647f867a07d29547b3bee1bc',
+      solution:
+        'https://learn.microsoft.com/api/gamestatus/achievements/learn.wwl.get-started-c-sharp-part-4.trophy?username=moT01&locale=en-us',
+      completedDate: 1695064986634
+    },
+    {
+      id: '647e226a8acb466c97ccbef1',
+      completedDate: 1695065005456
+    },
+    {
+      id: '647e224b8acb466c97ccbeef',
+      completedDate: 1695065010582
+    },
+    {
+      id: '647e223c8acb466c97ccbeee',
+      completedDate: 1695065016929
+    },
+    {
+      id: '647e225e8acb466c97ccbef0',
+      completedDate: 1695065019309
+    },
+    {
+      id: '647e22338acb466c97ccbeed',
+      completedDate: 1695065024538
+    },
+    {
+      id: '647f877f07d29547b3bee1be',
+      solution:
+        'https://learn.microsoft.com/api/gamestatus/achievements/learn.wwl.get-started-c-sharp-part-5.trophy?username=moT01&locale=en-us',
+      completedDate: 1695065026465
+    },
+    {
+      id: '647e22c08acb466c97ccbef7',
+      completedDate: 1695065036502
+    },
+    {
+      id: '647e22b38acb466c97ccbef6',
+      completedDate: 1695065038793
+    },
+    {
+      id: '647e22a08acb466c97ccbef5',
+      completedDate: 1695065045073
+    },
+    {
+      id: '647e228a8acb466c97ccbef3',
+      completedDate: 1695065047728
+    },
+    {
+      id: '647e22958acb466c97ccbef4',
+      completedDate: 1695065052249
+    },
+    {
+      id: '647e22778acb466c97ccbef2',
+      completedDate: 1695065057986
+    },
+    {
+      id: '647f86ff07d29547b3bee1bd',
+      solution:
+        'https://learn.microsoft.com/api/gamestatus/achievements/learn.wwl.get-started-c-sharp-part-6.trophy?username=moT01&locale=en-us',
+      completedDate: 1695065060157
+    },
+    {
+      id: '647e22d18acb466c97ccbef8',
+      challengeType: 17,
+      completedDate: 1695065170436,
+      examResults: {
+        numberOfCorrectAnswers: 70,
+        numberOfQuestionsInExam: 80,
+        percentCorrect: 87.5,
+        passingPercent: 70,
+        passed: true,
+        examTimeInSeconds: 2195
+      }
+    },
+    {
+      completedDate: 1695065177436,
+      id: '647f7da207d29547b3bee1ba',
+      challengeType: 7,
+      files: []
+    }
+  ],
+  completedExams: [
+    {
+      id: '647e22d18acb466c97ccbef8',
+      challengeType: 17,
+      completedDate: 1695065170436,
+      examResults: {
+        numberOfCorrectAnswers: 70,
+        numberOfQuestionsInExam: 80,
+        percentCorrect: 87.5,
+        passingPercent: 70,
+        passed: true,
+        examTimeInSeconds: 2195
+      }
     }
   ],
   portfolio: [],

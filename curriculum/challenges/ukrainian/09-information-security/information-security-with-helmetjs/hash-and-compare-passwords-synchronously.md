@@ -8,7 +8,7 @@ dashedName: hash-and-compare-passwords-synchronously
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Нагадуємо, що цей проєкт створюється на основі стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Синхронне хешування також легко виконати, однак це може спричинити затримку, якщо використовувати його на серверній стороні з високою вартістю або з хешуванням, яке проводиться дуже часто. Хешування цим методом є таким же простим, як і виклик
 
@@ -16,7 +16,7 @@ dashedName: hash-and-compare-passwords-synchronously
 var hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
 ```
 
-Додайте цей метод хешування до свого коду і потім виведіть результат на консоль. Знову ж таки, змінні, що використовуються, вже визначені на сервері, тому вам не потрібно їх змінювати. Ви можете помітити, що навіть якщо ви хешуєте той самий пароль, що і в асинхронному методі, результат на консолі відрізняється: це пов'язано з тим, що сіль генерується випадковим чином, як бачимо з перших 22 символів у третьому рядку хешу. Щоб порівняти вхідний пароль з новим синхронним хешом, використайте метод compareSync:
+Додайте цей метод хешування до свого коду і потім виведіть результат на консоль. Знову ж таки, змінні, що використовуються, вже визначені на сервері, тому вам не потрібно їх змінювати. Ви можете помітити, що навіть якщо ви хешуєте той самий пароль, що і в асинхронному методі, результат на консолі відрізняється: це пов’язано з тим, що сіль генерується випадковим чином, як бачимо з перших 22 символів у третьому рядку хешу. Щоб порівняти вхідний пароль з новим синхронним хешом, використайте метод compareSync:
 
 ```js
 var result = bcrypt.compareSync(myPlaintextPassword, hash);

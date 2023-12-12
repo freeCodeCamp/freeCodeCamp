@@ -23,7 +23,7 @@ dashedName: use-hex-code-to-mix-colors
 
 Замініть слово колір в нашому `style` елементом на їх правильні шістнадцяткові коди.
 
-<table class='table table-striped'><tbody><tr><th>Колір</th><th>Шістнадцятковий код кольору</th></tr><tr><td>Синьо-волошковий</td><td><code>#1E90FF</code></td></tr><tr><td>Зелений</td><td><code>#00FF00</code></td></tr><tr><td>Оранжевий</td><td><code>#FFA500</code></td></tr><tr><td>Червоний</td><td><code>#FF0000</code></td></tr></tbody></table>
+<table><tbody><tr><th>Колір</th><th>Шістнадцятковий код кольору</th></tr><tr><td>Синьо-волошковий</td><td><code>#1E90FF</code></td></tr><tr><td>Зелений</td><td><code>#00FF00</code></td></tr><tr><td>Оранжевий</td><td><code>#FFA500</code></td></tr><tr><td>Червоний</td><td><code>#FF0000</code></td></tr></tbody></table>
 
 # --hints--
 

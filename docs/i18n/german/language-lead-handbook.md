@@ -67,7 +67,7 @@ Du solltest [den übersetzten Client lokal einrichten](how-to-enable-new-languag
 
 1. Update your `.env` file to use your language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
 
-2. Run `pnpm run create:config`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
+2. Run `pnpm run create:shared`. This will automatically generate the `trending.json` file for your language under the `/client/i18n/locales/` directory.
 
 3. Start the server by running `pnpm run develop:server` in one terminal window.
 
@@ -339,7 +339,7 @@ In Crowdin, individuate the `User management` on the left-hand side menu.
 
 Dadurch wird die Benutzerverwaltung geöffnet, in der du die Liste aller Benutzer sehen kannst.
 
-Search for the user that will become a proofreader. Verwende das Menü mit den drei Punkten in der Benutzerzeile, um ein Menü zu öffnen und wähle "Add to team". Die Korrekturleserteams haben den Standardnamen `Proof Readers(<Sprache>)`, du kannst das Team über den Namen der Sprache suchen. Wenn du das Team ausgewählt hast, benutze den Button "ADD" unten auf der Seite, um den Vorgang abzuschließen.
+Search for the user who will become a proofreader. Verwende das Menü mit den drei Punkten in der Benutzerzeile, um ein Menü zu öffnen und wähle "Add to team". Die Korrekturleserteams haben den Standardnamen `Proof Readers(<Sprache>)`, du kannst das Team über den Namen der Sprache suchen. Wenn du das Team ausgewählt hast, benutze den Button "ADD" unten auf der Seite, um den Vorgang abzuschließen.
 
 Der Benutzer ist jetzt ein Korrekturleser.
 

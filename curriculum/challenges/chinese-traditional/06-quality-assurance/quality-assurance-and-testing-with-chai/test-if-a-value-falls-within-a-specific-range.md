@@ -18,7 +18,7 @@ dashedName: test-if-a-value-falls-within-a-specific-range
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，在 `Comparisons` 套件裏標有 `#10` 的測試中，將每個 `assert` 改成 `assert.approximately`，讓測試通過（結果應該返回 `true`）。
+Within `tests/1_unit-tests.js` under the test labeled `#10` in the `Comparisons` suite, change each `assert` to `assert.approximately` to make the test pass (should evaluate to `true`).
 
 選擇最小範圍（第三個參數）來通過所有測試。 它應該小於 1。
 
