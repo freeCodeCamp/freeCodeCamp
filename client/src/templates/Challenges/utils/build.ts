@@ -198,7 +198,6 @@ function getWorkerTestRunner(
     original: sources.original
   };
 
-  // TODO: allow terminateWorker to be passed in as an option.
   const testWorker = createWorker(testEvaluator, { terminateWorker });
 
   type CreateWorker = ReturnType<typeof createWorker>;
