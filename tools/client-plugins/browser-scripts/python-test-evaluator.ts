@@ -118,6 +118,9 @@ ctx.onmessage = async (e: PythonRunEvent) => {
     // Create fresh globals for each test
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     const __userGlobals = pyodide.globals.get('dict')() as PyProxy;
+
+    // The runPython helper is a shortcut for running python code with our
+    // custom globals.
     const runPython = (pyCode: string) =>
       pyodide.runPython(pyCode, { globals: __userGlobals }) as unknown;
     // TODO: remove __pyodide once all the test use runPython.
@@ -132,13 +135,8 @@ ctx.onmessage = async (e: PythonRunEvent) => {
   `
     );
 
-    // We have to declare these variables in the scope of 'eval' (i.e. the
-    // promise that is stored in evaluatedTestString), so that they exist when
-    // the `testString` is evaluated. Otherwise, they will be undefined when
-    // `test` is called and the tests will not be able to use __pyodide or
-    // __userGlobals.
-
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    // Evaluates the learner's code so that any variables they define are
+    // available to the test.
     runPython(code);
     // TODO: remove the next line, creating __locals, once all the tests access
     // variables directly.
