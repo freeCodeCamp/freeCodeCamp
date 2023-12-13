@@ -17,13 +17,15 @@ const challengeId = new ObjectID().toString();
 /***** Only change code below this line *****/
 
 /*
- * Fill in the variables below with the challenge info. Put the markdown you
- * want to create in the `template` variable, leaving the frontmatter with the
- * variables - be sure to escape all backticks in the markdown.
+ * Fill in the variables below with the challenge info. Run the script and paste
+ * the body of the challenge into the md file created by the script. Dialogs are
+ * a bit different: you will need to replace the audioPath with the videoId.
  */
-const title = 'Temp Title';
-const dashedName = 'temp-title';
-const challengeType = '22';
+
+const num = 1;
+const title = 'Task ' + num;
+const dashedName = 'task-' + num;
+const challengeType = 22;
 const template = `---
 id: ${challengeId}
 title: ${title}
@@ -32,19 +34,6 @@ dashedName: ${dashedName}
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
-# --description--
-
-The word \`I'm\` is a contraction of \`I am\`. Contractions are a way to shorten common combinations of words, especially with verbs.
-
-# --fillInTheBlank--
-
-## --sentence--
-
-\`Hi, that's right! _ Tom McKenzie.\`
-
-## --blanks--
-
-\`I'm\`
 `;
 
 /***** Only change code above this line *****/
