@@ -12,7 +12,7 @@ describe('Donate page', () => {
     );
     cy.get('[data-cy="donate.crucial-contribution"]').should(
       'have.text',
-      'Your contribution will be crucial in creating resources that empower millions to learn new skills and support their families.'
+      'Your contribution will be crucial in creating resources that empower millions of people to learn new skills and support their families.'
     );
     cy.get('[data-cy="donate.bigger-donation"]').should(
       'have.text',
