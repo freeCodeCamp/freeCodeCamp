@@ -5,9 +5,7 @@ challengeType: 15
 dashedName: introduction-flexbox-question-e
 ---
 # --description--
-
-Now that you have a basic understanding of how flexbox works, how do flex items behave when their parent flex container is resized? Try and answer the question below.
-
+<!-- empty description -->
 # --question--
 
 ## --text--
