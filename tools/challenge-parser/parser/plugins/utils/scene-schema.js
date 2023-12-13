@@ -1,7 +1,9 @@
 const Joi = require('Joi');
-
-// TODO: validate that the values are in the assets
-// e.g. allowed backgrounds, character names, etc.
+const {
+  availableCharacters,
+  availableBackgrounds,
+  availableAudios
+} = require('./scene-assets');
 
 const PositionJoi = Joi.object().keys({
   x: Joi.number().required(),
@@ -10,20 +12,26 @@ const PositionJoi = Joi.object().keys({
 });
 
 const SetupCharacterJoi = Joi.object().keys({
-  character: Joi.string().required(),
+  character: Joi.string()
+    .valid(...availableCharacters)
+    .required(),
   position: PositionJoi.required(),
   opacity: Joi.number()
 });
 
 const SetupAudioJoi = Joi.object().keys({
-  filename: Joi.string().required(),
+  filename: Joi.string()
+    .valid(...availableAudios)
+    .required(),
   startTime: Joi.number().required(),
   startTimestamp: Joi.number(),
   finishTimestamp: Joi.number()
 });
 
 const SetupJoi = Joi.object().keys({
-  background: Joi.string().required(),
+  background: Joi.string()
+    .valid(...availableBackgrounds)
+    .required(),
   characters: Joi.array().items(SetupCharacterJoi).min(1).required(),
   audio: SetupAudioJoi.required(),
   alwaysShowDialogue: Joi.boolean()
@@ -35,11 +43,13 @@ const DialogueJoi = Joi.object().keys({
 });
 
 const CommandJoi = Joi.object().keys({
-  background: Joi.string(),
-  character: Joi.string(),
+  background: Joi.string().valid(...availableBackgrounds),
+  character: Joi.string()
+    .valid(...availableCharacters)
+    .required(),
   position: PositionJoi,
   opacity: Joi.number(),
-  startTime: Joi.number(),
+  startTime: Joi.number().required(),
   finishTime: Joi.number(),
   dialogue: DialogueJoi
 });
