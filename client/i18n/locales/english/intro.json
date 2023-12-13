@@ -429,6 +429,13 @@
           "Working with asynchronous programming is a core fundamental of JavaScript.  In this project, you will gain proficiency in asynchronous concepts by building a freeCodeCamp forum leaderboard.",
           "This project will cover the Fetch API, promises, Async/Await, and the try...catch statement."
         ]
+      },
+      "learn-basic-string-and-array-methods-by-building-a-music-player": {
+        "title": "Learn Basic String and Array Methods by Building a Music Player",
+        "intro": [
+          "Mastering essential string and array methods like the <code>find()</code>, <code>forEach()</code>, <code>map()</code>, and <code>join()</code> methods is crucial for developing dynamic web applications.",
+          "In this project you will build out a basic MP3 player using HTML, CSS, and JavaScript. The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, previous, and shuffle functionalities, as well as dynamically updating the user interface based on the current song."
+        ]
       }
     }
   },
@@ -528,7 +535,10 @@
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
       },
-      "d3-dashboard": { "title": "D3 Dashboard", "intro": ["", ""] }
+      "d3-dashboard": {
+        "title": "D3 Dashboard",
+        "intro": ["", ""]
+      }
     }
   },
   "relational-database": {
