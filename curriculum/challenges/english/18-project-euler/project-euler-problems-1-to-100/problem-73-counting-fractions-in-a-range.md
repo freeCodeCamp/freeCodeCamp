@@ -63,7 +63,7 @@ function countingFractionsInARange(limit) {
 countingFractionsInARange(8);
 ```
 
-# --solutions--
+# --solution -1 --
 
 ```js
 function countingFractionsInARange(limit) {
@@ -79,5 +79,28 @@ function countingFractionsInARange(limit) {
     }
   }
   return result;
+}
+```
+# --solution -2 --
+```js
+function countingFractionsInARange(limit) {
+  // Helper function
+  function gcd(a, b) {
+    return b === 0 ? a : gcd(b, a % b);
+  }
+
+  let count = 0;
+
+  for (let d = 2; d <= limit; d++) {
+    let startNumerator = Math.floor(d / 3) + 1; 
+    let endNumerator = Math.ceil(d / 2) - 1;
+    for (let n = startNumerator; n <= endNumerator; n++) {
+      if (gcd(n, d) === 1) {
+        count++;
+      }
+    }
+  }
+
+  return count;
 }
 ```
