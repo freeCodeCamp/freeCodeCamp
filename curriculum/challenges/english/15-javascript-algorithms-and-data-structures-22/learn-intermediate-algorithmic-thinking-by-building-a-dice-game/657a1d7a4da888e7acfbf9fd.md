@@ -1,32 +1,40 @@
 ---
-id: 64ba13caeec660029fc379e8
-title: Step 70
+id: 657a1d7a4da888e7acfbf9fd
+title: Step 12
 challengeType: 0
-dashedName: step-70
+dashedName: step-12
 ---
 
 # --description--
 
-Using the `reduce` array method, add all the elements of the `diceValuesArr` array and assign the value to the `sumOfAllDices` variable.
+When the user rolls the dice, you will need to generate 5 random numbers representing each of the dice values. 
+
+To start, create a `for` loop that will loop a total of 5 times.
 
 # --hints--
 
-You should create a variable named `sumOfAllDices`
+You should have a `for` loop.
 
 ```js
-assert.match(code, /(var|let|const)\s*sumOfAllDices/);
+assert.match(code, /for\s*\(/)
 ```
 
-You should use the `reduce` array method on the `diceValuesArr` array.
+Your `for` loop should initialize `i` to `0`.
 
 ```js
-assert.match(code, /diceValuesArr\s*\.\s*reduce/);
+assert.match(code, /for\s*\(\s*let\s+i\s*=\s*0\s*;/);
 ```
 
-You should make sure to use `a,b` as the parameters of the callback function of the `reduce` method to add all the elements of the `diceValuesArr` array.
+Your `for` loop should have a condition that checks if `i` is less than `5`.
 
 ```js
-assert.match(code, /diceValuesArr\s*\.\s*reduce\s*\(\s*\(\s*a\s*,\s*b\s*\)\s*=>\s*a\s*\+\s*b\s*/);
+assert.match(code, /for\s*\(\s*let\s*i\s*=\s*0\s*;\s*i\s*<\s*5\s*;/);
+```
+
+Your `for` loop should increment `i` by `1` each time it runs.
+
+```js
+assert.match(code, /for\s*\(\s*let\s*i\s*=\s*0\s*;\s*i\s*<\s*5\s*;\s*i\s*\+\+\s*\)/);
 ```
 
 # --seed--
@@ -268,193 +276,29 @@ input[type="radio"]:disabled + label {
 ```
 
 ```js
+const listOfAllDice = document.querySelectorAll(".die");
 const scoreInputs = document.querySelectorAll("#score-options input");
 const scoreSpans = document.querySelectorAll("#score-options span");
-const listOfAllDice = document.querySelectorAll(".die");
-const rollDiceBtn = document.getElementById("roll-dice-btn");
-const rulesBtn = document.getElementById("rules-btn");
-const rulesContainer = document.querySelector(".rules-container");
 const currentRoundText = document.getElementById("current-round");
 const currentRoundRollsText = document.getElementById("current-round-rolls");
-const keepScoreBtn = document.getElementById("keep-score-btn");
 const totalScoreText = document.getElementById("total-score");
 const scoreHistory = document.getElementById("score-history");
-
-let isModalShowing = false;
+const rollDiceBtn = document.getElementById("roll-dice-btn");
+const keepScoreBtn = document.getElementById("keep-score-btn");
+const rulesContainer = document.querySelector(".rules-container");
+const rulesBtn = document.getElementById("rules-btn");
 
 let diceValuesArr = [];
-
-let round = 1;
-let rolls = 0;
+let isModalShowing = false;
 let score = 0;
 let totalScore = 0;
+let round = 1; 
+let rolls = 0; 
 
-function rollDice() {
+--fcc-editable-region--
+const rollDice = () => {
   diceValuesArr = [];
 
-  for (let i = 0; i < 5; i++) {
-    let randomDice = Math.floor(Math.random() * 6) + 1;
-    diceValuesArr.push(randomDice);
-
-    listOfAllDice.forEach((dice, index) => {
-      dice.textContent = diceValuesArr[index];
-    });
-  }
-}
-
-function updateStats() {
-  currentRoundRollsText.innerHTML = rolls;
-  currentRoundText.innerHTML = round;
-}
-
-function resetGame() {
-  diceValuesArr = [0, 0, 0, 0, 0];
-  score = 0;
-  totalScore = 0;
-  round = 1;
-  rolls = 0;
-
-  listOfAllDice.forEach((dice, index) => {
-    dice.textContent = diceValuesArr[index];
-  });
-
-  totalScoreText.innerHTML = totalScore;
-  scoreHistory.innerHTML = "";
-
-  currentRoundRollsText.innerHTML = rolls;
-  currentRoundText.innerHTML = round;
-
-  resetRadioOption();
-}
-
-const updateScore = (selectedValue, achieved) => {
-  totalScore += parseInt(selectedValue);
-  totalScoreText.innerHTML = totalScore;
-
-  scoreHistory.innerHTML += `<li>${achieved} : ${selectedValue}</li>`;
 };
-
-const resetRadioOption = () => {
-  scoreInputs.forEach(function (input) {
-    input.disabled = true;
-    input.checked = false;
-  });
-
-  scoreSpans.forEach((span) => {
-    span.textContent = "";
-  });
-};
-
-const updateRadioOption = (optionNode, score) => {
-  scoreInputs[optionNode].disabled = false;
-  scoreInputs[optionNode].value = score;
-  scoreSpans[optionNode].textContent = `, score = ${score}`;
-};
-
-function straightDetector(arr) {
-  const sortNumbers = arr.sort((a, b) => a - b);
-  const uniqueNumbers = [...new Set(sortNumbers)];
-  const stringifyArray = uniqueNumbers.join("");
-
-  const smallStraightLogic = ["1234", "2345", "3456"];
-  const largeStraightLogic = ["12345", "23456"];
-
-  if (smallStraightLogic.includes(stringifyArray)) {
-    updateRadioOption(3, 30);
-  }
-
-  if (largeStraightLogic.includes(stringifyArray)) {
-    updateRadioOption(4, 40);
-  }
-
-  updateRadioOption(5, 0);
-}
-
-function getHighestDuplicates(arr) {
-  let counts = {};
-  let highestCount = 0;
-
-  for (let num of arr) {
-    if (counts[num]) {
-      counts[num]++;
-    } else {
-      counts[num] = 1;
-    }
-  }
-
-  for (let numb of arr) {
-    let count = counts[numb];
-
-    if (count >= 3 && count > highestCount) {
-      highestCount = count;
-    }
-
-    if (count >= 4 && count > highestCount) {
-      highestCount = count;
-    }
-  }
-  --fcc-editable-region--
-
-  --fcc-editable-region--
-}
-
-const findRollResult = (arr) => {
-  straightDetector(arr);
-};
-
-rollDiceBtn.addEventListener("click", () => {
-  if (rolls === 3) {
-    alert(
-      "You have made three rolls this round. Please select a score.",
-    );
-  } else {
-    rolls++;
-    rollDice();
-    updateStats();
-    findRollResult(diceValuesArr);
-  }
-});
-
-rulesBtn.addEventListener("click", () => {
-  isModalShowing = !isModalShowing;
-
-  if (isModalShowing) {
-    rulesBtn.textContent = "Hide Rules";
-    rulesContainer.style.display = "block";
-  } else {
-    rulesBtn.textContent = "Show Rules";
-    rulesContainer.style.display = "none";
-  }
-});
-
-keepScoreBtn.addEventListener("click", function () {
-  let selectedValue;
-  let achieved;
-
-  for (const radioButton of scoreInputs) {
-    if (radioButton.checked) {
-      selectedValue = radioButton.value;
-      achieved = radioButton.id;
-      break;
-    }
-  }
-
-  if (selectedValue) {
-    rolls = 0;
-    round++;
-    updateStats();
-    resetRadioOption();
-    updateScore(selectedValue, achieved);
-
-    if (round > 6) {
-      setTimeout(() => {
-        alert(`Game Over! Your total score is ${totalScore}`);
-        resetGame();
-      }, 500);
-    }
-  } else {
-    alert("Please select an option or roll the dice");
-  }
-});
-
+--fcc-editable-region--
 ```

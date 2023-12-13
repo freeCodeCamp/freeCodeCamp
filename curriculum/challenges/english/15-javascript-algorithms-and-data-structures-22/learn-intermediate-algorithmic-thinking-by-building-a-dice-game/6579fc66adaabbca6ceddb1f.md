@@ -1,26 +1,36 @@
 ---
-id: 649f0a3aaaeb0102082f4ca4
-title: Step 14
+id: 6579fc66adaabbca6ceddb1f
+title: Step 1
 challengeType: 0
-dashedName: step-14
+dashedName: step-1
 ---
 
 # --description--
 
-On the HTML, you have been given a div with a id of `roll-dice-btn`. You will target that element and store it in a `rollDiceBtn` variable declared with `const`.
+In this project, you will learn algorithmic thinking by building a dice game. There are a total of 6 rounds and for each round, the player can roll the dice up to 3 times and collect a score. 
+
+The HTML and CSS have been provided for you. Feel free to explore them.
+
+When you are ready, use the `querySelectorAll` method to target all elements with the `class` of `die`, and assign that to a constant called `listOfAllDice`.
 
 # --hints--
 
-You should use `let` to declare the variable `rollDiceBtn`.
+You should have a `const` variable called `listOfAllDice`.
 
 ```js
-assert.match(code, /(?:var|let|const)\s*rollDiceBtn\s*/);
+assert.match(code, /const\s*listOfAllDice\s*/);
 ```
 
-You should use `.getElementById()` method to target the element with the id of `roll-dice-btn`
+You should assign the `document.querySelectorAll()` method to the `listOfAllDice` variable.
 
 ```js
-assert.match(code, /(?:var|let|const)\s+rollDiceBtn\s*=\s*document\.getElementById\s*\(\s*['"]\s*roll-dice-btn\s*['"]\s*\)/)
+assert.match(code, /const\s+listOfAllDice\s*=\s*document\.querySelectorAll\s*\(.*\);?/);
+```
+
+You should target all elements with the `class` of `die` inside the `querySelectorAll` method.
+
+```js
+assert.match(code, /const\s*listOfAllDice\s*=\s*document\.querySelectorAll\s*\(\s*['"]\.die['"]\s*\)/);
 ```
 
 # --seed--
@@ -262,29 +272,8 @@ input[type="radio"]:disabled + label {
 ```
 
 ```js
-const diceButtons = document.querySelectorAll(".die");
---fcc-editable-region--
 
 --fcc-editable-region--
 
-let displayArray = [];
-
-let round = 1;
-let rolls = 0;
-let score = 0;
-let totalScore = 0;
-
-function rollDice() {
-  displayArray = [];
-
-  for (let i = 0; i < 5; i++) {
-    let randomDice = Math.floor(Math.random() * 6) + 1;
-    displayArray.push(randomDice);
-
-    diceButtons.forEach((dice, index) => {
-      dice.textContent = displayArray[index];
-    });
-  }
-}
-
+--fcc-editable-region--
 ```
