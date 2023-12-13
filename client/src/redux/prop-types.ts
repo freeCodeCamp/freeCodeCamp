@@ -244,6 +244,7 @@ export type User = {
   twitter: string;
   username: string;
   website: string;
+  webhook: string;
   yearsTopContributor: string[];
 } & ClaimedCertifications;
 

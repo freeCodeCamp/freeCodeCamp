@@ -25,6 +25,7 @@ import {
   putUpdateMyQuincyEmail,
   putUpdateMySocials,
   putUpdateMyTheme,
+  putUpdateMyWebhook,
   putUpdateMyUsername,
   putVerifyCert
 } from '../../utils/ajax';
@@ -50,6 +51,8 @@ import {
   updateMySoundError,
   updateMyThemeComplete,
   updateMyThemeError,
+  updateMyWebhookComplete,
+  updateMyWebhookError,
   validateUsernameComplete,
   validateUsernameError,
   verifyCertComplete,
@@ -69,6 +72,7 @@ function* submitNewAboutSaga({ payload }) {
 function* submitNewUsernameSaga({ payload: username }) {
   try {
     const { data } = yield call(putUpdateMyUsername, username);
+    console.log('******* data ****', data);
     yield put(submitNewUsernameComplete({ ...data, username }));
     yield put(createFlashMessage(data));
   } catch (e) {
@@ -160,6 +164,17 @@ function* updateMyPortfolioSaga({ payload: update }) {
   }
 }
 
+function* updateMyWebhookSaga({ payload: update }) {
+  try {
+    const { data } = yield call(putUpdateMyWebhook, update);
+    console.log(data);
+    yield put(updateMyWebhookComplete({ ...data, payload: update }));
+    yield put(createFlashMessage({ ...data }));
+  } catch (e) {
+    yield put(updateMyWebhookError);
+  }
+}
+
 function* validateUsernameSaga({ payload }) {
   try {
     const {
@@ -229,6 +244,7 @@ export function createSettingsSagas(types) {
     takeEvery(types.updateMyKeyboardShortcuts, updateMyKeyboardShortcutsSaga),
     takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
     takeEvery(types.updateMyPortfolio, updateMyPortfolioSaga),
+    takeLatest(types.updateMyWebhook, updateMyWebhookSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),
     takeLatest(types.submitNewUsername, submitNewUsernameSaga),
     debounce(2000, types.validateUsername, validateUsernameSaga),

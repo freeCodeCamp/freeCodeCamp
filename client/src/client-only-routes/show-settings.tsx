@@ -17,6 +17,7 @@ import Email from '../components/settings/email';
 import Honesty from '../components/settings/honesty';
 import Internet, { Socials } from '../components/settings/internet';
 import Portfolio from '../components/settings/portfolio';
+import Webhook from '../components/settings/webhook';
 import Privacy from '../components/settings/privacy';
 import { type ThemeProps, Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
@@ -133,7 +134,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       linkedin,
       twitter,
       website,
-      portfolio
+      portfolio,
+      webhook
     },
     navigate,
     showLoading,
@@ -202,6 +204,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           />
           <Spacer size='medium' />
           <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
+          <Spacer size='medium' />
+          <Webhook webhook={webhook} />
           <Spacer size='medium' />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           <Spacer size='medium' />

@@ -32,6 +32,12 @@ export const updateMyEmail = createAction(types.updateMyEmail);
 export const updateMyEmailComplete = createAction(types.updateMyEmailComplete);
 export const updateMyEmailError = createAction(types.updateMyEmailError);
 
+export const updateMyWebhook = createAction(types.updateMyWebhook);
+export const updateMyWebhookComplete = createAction(
+  types.updateMyWebhookComplete
+);
+export const updateMyWebhookError = createAction(types.updateMyWebhookError);
+
 export const updateMySocials = createAction(types.updateMySocials);
 export const updateMySocialsComplete = createAction(
   types.updateMySocialsComplete,

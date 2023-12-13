@@ -270,6 +270,7 @@ function createReadSessionUser(app) {
 
   return async function getSessionUser(req, res, next) {
     const queryUser = req.user;
+    console.log(queryUser?.toJSON());
 
     let encodedUserToken;
     try {
@@ -344,6 +345,7 @@ function createReadSessionUser(app) {
         ),
         savedChallenges: savedChallenges.map(fixSavedChallengeItem)
       };
+
       const response = {
         user: {
           [user.username]: {

@@ -230,6 +230,11 @@
       "description": "Camper is foundational C# certified",
       "default": false
     },
+    "webhook": {
+      "type": "string",
+      "description": "The webhook url for the user",
+      "default": ""
+    },
     "completedChallenges": {
       "type": [
         {

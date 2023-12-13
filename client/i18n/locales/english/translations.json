@@ -267,6 +267,11 @@
       "confirm": "Confirm New Email",
       "weekly": "Send me Quincy's weekly email"
     },
+    "webhook": {
+      "heading": "Webhook Settings",
+      "new": "New Webhook",
+      "current": "Current Webhook"
+    },
     "honesty": {
       "p1": "Before you can claim a verified certification, you must accept our Academic Honesty Pledge, which reads:",
       "p2": "\"I understand that plagiarism means copying someone else’s work and presenting the work as if it were my own, without clearly attributing the original author.\"",

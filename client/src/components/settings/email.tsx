@@ -139,10 +139,12 @@ function EmailSettings({
     state: confirmEmailValidation,
     message: confirmEmailValidationMessage
   } = getValidationForConfirmEmail();
+
   const isDisabled =
     newEmailValidation !== 'success' ||
     confirmEmailValidation !== 'success' ||
     isPristine;
+
   if (!currentEmail) {
     return (
       <div>
@@ -159,6 +161,7 @@ function EmailSettings({
       </div>
     );
   }
+
   return (
     <div className='email-settings'>
       <SectionHeader dataPlaywrightTestLabel='email-settings-header'>

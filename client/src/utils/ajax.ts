@@ -353,6 +353,12 @@ export function putUpdateMyPortfolio(
   return put('/update-my-portfolio', update);
 }
 
+export function putUpdateMyWebhook(
+  webhook: Record<string, string>
+): Promise<ResponseWithData<void>> {
+  return put('/update-my-webhook', { webhook });
+}
+
 export function putUserAcceptsTerms(
   quincyEmails: boolean
 ): Promise<ResponseWithData<void>> {
