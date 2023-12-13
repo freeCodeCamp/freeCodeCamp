@@ -368,7 +368,6 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             data-cy='add-portfolio'
             block={true}
             size='large'
-            variant='primary'
             disabled={unsavedItemId !== null}
             onClick={this.handleAdd}
           >
