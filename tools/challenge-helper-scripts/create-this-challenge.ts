@@ -18,8 +18,13 @@ const challengeId = new ObjectID().toString();
 
 /*
  * Fill in the variables below with the challenge info. Run the script and paste
- * the body of the challenge into the md file created by the script. Dialogs are
- * a bit different: you will need to replace the audioPath with the videoId.
+ * the body of the challenge into the md file created by the script.
+ *
+ * NOTE: if the body of the challenge is not correctly formatted, see below for
+ * examples of the correct format.
+ *
+ * Finally dialogs have different frontmatter. After running the script, replace
+ * the audioPath with the videoId. Again, there is an example below.
  */
 
 const num = 1;
@@ -35,6 +40,106 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 `;
+
+// template for fill in the blank lessons
+/*
+
+<!--
+AUDIO REFERENCE:
+Sarah: "I see. Let's open an _, then. What happened when you _ the changes?"
+-->
+
+# --description--
+
+The word `I'm` is a contraction of `I am`. Contractions are a way to shorten common combinations of words, especially with verbs.
+
+# --fillInTheBlank--
+
+## --sentence--
+
+`Hi, that's right! _ Tom McKenzie.`
+
+## --blanks--
+
+`I'm`
+
+### --feedback--
+
+Some `hints` for the learner.
+
+*/
+
+// template for multiple choice lessons
+
+/*
+<!--
+AUDIO REFERENCE:
+Sarah: "I see. Let's open an issue, then."
+-->
+
+# --description--
+
+Sarah's response to Bob includes a specific phrase that shows she understands the problem he's facing. Recognizing such phrases is important in understanding communication cues in conversations.
+
+# --question--
+
+## --text--
+
+Which part of Sarah's sentence shows that she understands the problem?
+
+## --answers–
+
+I see
+
+---
+
+Let's open an issue
+
+### --feedback--
+
+While this part suggests a solution, this is not the part that directly indicates understanding.
+
+---
+
+`then`
+
+### --feedback--
+
+The word `then` is part of suggesting a solution, but it doesn't directly show understanding.
+
+---
+
+`an issue`
+
+### --feedback--
+
+The term `an issue` relates to the solution, not to the expression of understanding the problem.
+
+## --video-solution--
+
+1
+
+*/
+
+// template for dialogs
+/*
+---
+id: 651dd3e06ffb500e3f2ce478
+title: "Dialogue 1: Maria Introduces Herself to Tom"
+challengeType: 21
+videoId: nLDychdBwUg
+dashedName: dialogue-1-maria-introduces-herself-to-tom
+---
+
+# --description--
+
+Watch the video above to understand the context of the upcoming lessons.
+
+# --assignment--
+
+Watch the video
+
+*/
 
 /***** Only change code above this line *****/
 
