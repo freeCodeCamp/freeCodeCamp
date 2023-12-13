@@ -13,12 +13,12 @@ import { createSelector } from 'reselect';
 import { Container, Col, Row } from '@freecodecamp/ui';
 
 // Local Utilities
-import Loader from '../../../components/helpers/loader';
+//import Loader from '../../../components/helpers/loader';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
-import VideoPlayer from '../components/video-player';
+//import VideoPlayer from '../components/video-player';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import PrismFormatted from '../components/prism-formatted';
@@ -28,7 +28,8 @@ import {
   openModal
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
-
+// import Dialogue from './components/dialogue';
+import Scene from '../components/scene/scene';
 // Styles
 import '../odin/show.css';
 import '../video.css';
@@ -180,9 +181,9 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
             description,
             superBlock,
             block,
-            videoId,
             fields: { blockName },
-            assignments
+            assignments,
+            scene
           }
         }
       },
@@ -192,6 +193,8 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
       },
       t
     } = this.props;
+
+    console.log(this.props);
 
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
@@ -210,29 +213,16 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
           />
           <Container>
             <Row>
-              {videoId && (
-                <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
-                  <Spacer size='medium' />
-                  <div className='video-wrapper'>
-                    {!this.state.videoIsLoaded ? (
-                      <div className='video-placeholder-loader'>
-                        <Loader />
-                      </div>
-                    ) : null}
-                    <VideoPlayer
-                      onVideoLoad={this.onVideoLoad}
-                      title={title}
-                      videoId={videoId}
-                      videoIsLoaded={this.state.videoIsLoaded}
-                    />
-                  </div>
-                </Col>
-              )}
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
                 <h2>{title}</h2>
                 <PrismFormatted className={'line-numbers'} text={description} />
                 <Spacer size='medium' />
+              </Col>
+
+              <Scene scene={scene} />
+
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ObserveKeys>
                   <h2>{t('learn.assignments')}</h2>
                   <div className='video-quiz-options'>
@@ -328,6 +318,43 @@ export const query = graphql`
         }
         translationPending
         assignments
+        scene {
+          setup {
+            background
+            characters {
+              character
+              position {
+                x
+                y
+                z
+              }
+              opacity
+            }
+            audio {
+              filename
+              startTime
+              startTimestamp
+              finishTimestamp
+            }
+            alwaysShowDialogue
+          }
+          commands {
+            background
+            character
+            position {
+              x
+              y
+              z
+            }
+            opacity
+            startTime
+            finishTime
+            dialogue {
+              text
+              align
+            }
+          }
+        }
       }
     }
   }

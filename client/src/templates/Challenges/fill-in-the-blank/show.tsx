@@ -32,6 +32,7 @@ import { isChallengeCompletedSelector } from '../redux/selectors';
 // Styles
 import '../video.css';
 import './show.css';
+import Scene from '../components/scene/scene';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -254,7 +255,7 @@ class ShowFillInTheBlank extends Component<
             translationPending,
             fields: { blockName },
             fillInTheBlank: { sentence, blanks },
-            audioPath
+            scene
           }
         }
       },
@@ -298,20 +299,11 @@ class ShowFillInTheBlank extends Component<
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <PrismFormatted text={description} />
-                {audioPath && (
-                  <>
-                    <Spacer size='small' />
-                    <Spacer size='small' />
-                    {/* TODO: Add tracks for audio elements */}
-                    {/* eslint-disable-next-line jsx-a11y/media-has-caption*/}
-                    <audio className='audio' controls>
-                      <source
-                        src={`https://cdn.freecodecamp.org/${audioPath}`}
-                        type='audio/mp3'
-                      ></source>
-                    </audio>
-                  </>
-                )}
+              </Col>
+
+              {scene && <Scene scene={scene} />}
+
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
                 <PrismFormatted text={instructions} />
                 <Spacer size='medium' />
@@ -428,8 +420,44 @@ export const query = graphql`
             feedback
           }
         }
+        scene {
+          setup {
+            background
+            characters {
+              character
+              position {
+                x
+                y
+                z
+              }
+              opacity
+            }
+            audio {
+              filename
+              startTime
+              startTimestamp
+              finishTimestamp
+            }
+            alwaysShowDialogue
+          }
+          commands {
+            background
+            character
+            position {
+              x
+              y
+              z
+            }
+            opacity
+            startTime
+            finishTime
+            dialogue {
+              text
+              align
+            }
+          }
+        }
         translationPending
-        audioPath
       }
     }
   }

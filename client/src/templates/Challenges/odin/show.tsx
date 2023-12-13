@@ -21,6 +21,7 @@ import Hotkeys from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
+import Scene from '../components/scene/scene';
 import PrismFormatted from '../components/prism-formatted';
 import {
   challengeMounted,
@@ -217,7 +218,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             fields: { blockName },
             question: { text, answers, solution },
             assignments,
-            audioPath
+            scene
           }
         }
       },
@@ -277,21 +278,12 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 <Spacer size='medium' />
                 <h2>{title}</h2>
                 <PrismFormatted className={'line-numbers'} text={description} />
-                {audioPath && (
-                  <>
-                    <Spacer size='small' />
-                    <Spacer size='small' />
-                    {/* TODO: Add tracks for audio elements */}
-                    {/* eslint-disable-next-line jsx-a11y/media-has-caption*/}
-                    <audio className='audio' controls>
-                      <source
-                        src={`https://cdn.freecodecamp.org/${audioPath}`}
-                        type='audio/mp3'
-                      />
-                    </audio>
-                  </>
-                )}
                 <Spacer size='medium' />
+              </Col>
+
+              {scene && <Scene scene={scene} />}
+
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ObserveKeys>
                   {assignments.length > 0 && (
                     <>
@@ -456,9 +448,45 @@ export const query = graphql`
           }
           solution
         }
+        scene {
+          setup {
+            background
+            characters {
+              character
+              position {
+                x
+                y
+                z
+              }
+              opacity
+            }
+            audio {
+              filename
+              startTime
+              startTimestamp
+              finishTimestamp
+            }
+            alwaysShowDialogue
+          }
+          commands {
+            background
+            character
+            position {
+              x
+              y
+              z
+            }
+            opacity
+            startTime
+            finishTime
+            dialogue {
+              text
+              align
+            }
+          }
+        }
         translationPending
         assignments
-        audioPath
       }
     }
   }
