@@ -47,6 +47,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = 
       block={true}
       disabled={false}
       onClick={[Function]}
+      variant="primary"
     >
       buttons.agree-honesty
     </Button>
@@ -101,6 +102,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted
       block={true}
       disabled={true}
       onClick={[Function]}
+      variant="primary"
     >
       buttons.accepted-honesty
     </Button>

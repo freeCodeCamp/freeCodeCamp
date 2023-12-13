@@ -38,6 +38,7 @@ const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
         </Panel>
         <Button
           block={true}
+          variant='primary'
           disabled={isHonest}
           onClick={() => !isHonest && updateIsHonest({ isHonest: true })}
         >

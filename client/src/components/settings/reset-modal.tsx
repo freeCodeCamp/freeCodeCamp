@@ -34,7 +34,13 @@ function ResetModal(props: ResetModalProps): JSX.Element {
         <p>{t('settings.danger.reset-p1')}</p>
         <p>{t('settings.danger.reset-p2')}</p>
         <hr />
-        <Button block={true} size='large' onClick={props.onHide}>
+        <Button
+          block={true}
+          size='large'
+          variant='primary'
+          onClick={props.onHide}
+          type='button'
+        >
           {t('settings.danger.nevermind-2')}
         </Button>
         <Spacer size='small' />
@@ -43,6 +49,7 @@ function ResetModal(props: ResetModalProps): JSX.Element {
           size='large'
           variant='danger'
           onClick={props.reset}
+          type='button'
         >
           {t('settings.danger.reset-confirm')}
         </Button>

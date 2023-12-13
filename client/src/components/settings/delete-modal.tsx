@@ -41,7 +41,13 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
           </Trans>
         </p>
         <hr />
-        <Button block={true} size='large' onClick={props.onHide}>
+        <Button
+          block={true}
+          size='large'
+          variant='primary'
+          onClick={props.onHide}
+          type='button'
+        >
           {t('settings.danger.nevermind')}
         </Button>
         <Spacer size='small' />
@@ -50,6 +56,7 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
           size='large'
           variant='danger'
           onClick={props.delete}
+          type='button'
         >
           {t('settings.danger.certain')}
         </Button>

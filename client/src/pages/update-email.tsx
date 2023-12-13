@@ -102,6 +102,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
                 <Button
                   block={true}
                   size='large'
+                  variant='primary'
                   disabled={getEmailValidationState() !== 'success'}
                   type='submit'
                   data-playwright-test-label='update-email-submit-button'

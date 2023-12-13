@@ -150,7 +150,12 @@ function EmailSettings({
           <p className='large-p text-center'>{t('settings.email.missing')}</p>
         </FullWidthRow>
         <FullWidthRow>
-          <Button block={true} size='large' href='/update-email'>
+          <Button
+            block={true}
+            size='large'
+            variant='primary'
+            href='/update-email'
+          >
             {t('buttons.edit')}
           </Button>
         </FullWidthRow>

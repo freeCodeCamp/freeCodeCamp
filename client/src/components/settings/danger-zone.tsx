@@ -52,6 +52,7 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
             size='large'
             variant='danger'
             onClick={toggleResetModal}
+            type='button'
           >
             {t('settings.danger.reset')}
           </Button>
@@ -61,6 +62,7 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
             size='large'
             variant='danger'
             onClick={toggleDeleteModal}
+            type='button'
           >
             {t('settings.danger.delete')}
           </Button>

@@ -340,6 +340,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             size='large'
             variant='danger'
             onClick={() => this.handleRemoveItem(id)}
+            type='button'
           >
             {t('buttons.remove-portfolio')}
           </Button>
@@ -368,8 +369,10 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             data-cy='add-portfolio'
             block={true}
             size='large'
+            variant='primary'
             disabled={unsavedItemId !== null}
             onClick={this.handleAdd}
+            type='button'
           >
             {t('buttons.add-portfolio')}
           </Button>

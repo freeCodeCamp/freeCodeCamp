@@ -41,6 +41,7 @@ class UserToken extends Component<UserTokenProps> {
                 variant='info'
                 data-cy='delete-user-token'
                 onClick={this.deleteToken}
+                type='button'
               >
                 {t('user-token.delete')}
               </Button>

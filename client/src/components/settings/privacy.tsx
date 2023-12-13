@@ -146,6 +146,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
           <Button
             type='submit'
             size='large'
+            variant='primary'
             data-cy='save-privacy-settings'
             block={true}
             disabled={!madeChanges}
@@ -162,6 +163,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
         <Button
           block={true}
           size='large'
+          variant='primary'
           download={`${user.username}.json`}
           href={`data:text/json;charset=utf-8,${encodeURIComponent(
             JSON.stringify(user)

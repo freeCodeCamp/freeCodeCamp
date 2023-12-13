@@ -218,6 +218,7 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
         {fullStackClaimable ? (
           <Button
             size='small'
+            variant='primary'
             block={true}
             href={certLocation}
             id={'button-' + certSlug}
@@ -230,6 +231,7 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
         ) : (
           <Button
             size='small'
+            variant='primary'
             block={true}
             disabled={true}
             id={'button-' + certSlug}
@@ -388,6 +390,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
           <td colSpan={2}>
             <Button
               block={true}
+              variant='primary'
               href={certLocation}
               data-cy={`btn-for-${certSlug}`}
               // This floating promise is acceptable
