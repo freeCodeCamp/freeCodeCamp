@@ -27,6 +27,10 @@ body {
   height: 100%;
 }
 
+.page-wrapper-80 {
+  min-height: 80vh;
+}
+
 .codeally-frame {
   display: block;
   height: calc(100vh - var(--header-height));
