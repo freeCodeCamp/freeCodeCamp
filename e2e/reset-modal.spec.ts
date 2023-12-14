@@ -9,22 +9,29 @@ test.beforeEach(({ browserName }) => {
   );
 });
 
-test('Check the rendering of the reset modal', async ({ page }) => {
+test('should render the modal content correctly', async ({ page }) => {
   await page.goto(
     '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
   );
 
-  await page.getByTestId('lowerJaw-reset-button').click();
-  await expect(page.getByTestId('reset-modal')).toBeVisible();
+  await page.getByRole('button', { name: translations.buttons.reset }).click();
+
+  // There are two elements with the `dialog` role in the DOM.
+  // This appears to be semantically incorrect and should be resolved
+  // once we have migrated the component to use Dialog from the `ui-components` library.
+  const dialogs = await page.getByRole('dialog').all();
+  expect(dialogs).toHaveLength(2);
+
   await expect(
     page.getByRole('button', {
       name: translations.buttons.close
     })
   ).toBeVisible();
-  const modalTitle = page.getByRole('heading', {
-    name: 'Reset this lesson?'
-  });
-  await expect(modalTitle).toBeVisible();
+  await expect(
+    page.getByRole('heading', {
+      name: translations.learn.reset
+    })
+  ).toBeVisible();
 
   await expect(page.getByText(translations.learn['reset-warn'])).toBeVisible();
   await expect(
