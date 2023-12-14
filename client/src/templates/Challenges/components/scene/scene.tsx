@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'; //, ReactElement } from 'react';
+import React, { useEffect, useState, useRef } from 'react'; //, ReactElement } from 'react';
 import { Col } from '@freecodecamp/ui';
 import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
@@ -17,19 +17,24 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
       ? `#t=${audio.startTimestamp},${audio.finishTimestamp}`
       : '';
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const audioElement = new Audio(
-    `${sounds}/${audio.filename}${audioTimestamp}`
+  const audioRef = useRef<HTMLAudioElement>(
+    new Audio(`${sounds}/${audio.filename}${audioTimestamp}`)
   );
 
   // on mount
   useEffect(() => {
-    audioElement.addEventListener('canplaythrough', audioLoaded);
+    const { current } = audioRef;
+    current.addEventListener('canplaythrough', audioLoaded);
 
+    // on unmount
     return () => {
-      audioElement.removeEventListener('canplaythrough', audioLoaded);
+      const { current } = audioRef;
+
+      current.pause();
+      current.currentTime = 0;
+      current.removeEventListener('canplaythrough', audioLoaded);
     };
-  }, [audioElement]);
+  }, [audioRef]);
 
   const audioLoaded = () => {
     setSceneIsReady(true);
@@ -60,7 +65,7 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
     commands.forEach((command, commandIndex) => {
       // Start audio timeout
       setTimeout(function () {
-        void audioElement.play();
+        void audioRef.current.play();
       }, audio.startTime * 1000);
 
       // Start command timeout
@@ -125,6 +130,9 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
   };
 
   const finishScene = () => {
+    audioRef.current.pause();
+    audioRef.current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
+    audioRef.current.currentTime = audio.startTimestamp || 0;
     setIsPlaying(false);
     setShowDialogue(false);
     setDialogue(initDialogue);

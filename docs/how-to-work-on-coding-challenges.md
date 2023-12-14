@@ -284,15 +284,15 @@ If no feedback is here, a generic "wrong answer" message will be shown.
       "character": "Tom",
       // Tom will fade to 0 opacity
       "opacity": 0,
-      // I like to move characters off screen or fade them 1 second after the last talking command
-      "startTime": 10.4
+      // I like to move characters off screen or fade them 0.5 second after the last talking command
+      "startTime": 9.9
     },
     {
       "character": "Maria",
       // Maria will slide back off the screen to the left
       "position": { "x": -25, "y": 0, "z": 1 },
       // The animation will stop playing 0.5 seconds after the 'finishTime' of the last command - or 0.5 seconds after 'startTime' if 'finishTime' isn't there.
-      "startTime": 10.9
+      "startTime": 10.4
     }
   ]
 }

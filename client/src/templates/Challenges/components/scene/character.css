@@ -7,6 +7,10 @@
   transition: all 0.5s ease;
 }
 
+.character-wrap-hidden {
+  visibility: hidden;
+}
+
 .character-feature {
   position: absolute;
   max-width: 100%;
