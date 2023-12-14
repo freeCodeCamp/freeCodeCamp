@@ -20,7 +20,7 @@ In English, the `noun's noun` structure is used to show possession or belonging.
 
 ## --text--
 
-What does "master's degree" in the context of the dialogue refer to?
+What does `master's degree` in the context of the dialogue refer to?
 
 ## --answers--
 
