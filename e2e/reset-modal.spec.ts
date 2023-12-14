@@ -129,16 +129,24 @@ test('User can reset classic challenge', async ({ page }) => {
   await expect(page.getByText(translations.learn['test-output'])).toBeVisible();
 });
 
-test('User can close the reset modal', async ({ page }) => {
+test('should close when the user clicks the close button', async ({ page }) => {
   await page.goto(
     '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
   );
 
-  await page.getByTestId('lowerJaw-reset-button').click();
+  await page.getByRole('button', { name: translations.buttons.reset }).click();
+
+  // There are two elements with the `dialog` role in the DOM.
+  // This appears to be semantically incorrect and should be resolved
+  // once we have migrated the component to use Dialog from the `ui-components` library.
+  const dialogs = await page.getByRole('dialog').all();
+  expect(dialogs).toHaveLength(2);
+
   await page
     .getByRole('button', {
       name: translations.buttons.close
     })
     .click();
-  await expect(page.getByTestId('reset-modal')).not.toBeVisible();
+
+  await expect(page.getByRole('dialog')).toBeHidden();
 });
