@@ -12,9 +12,9 @@ Here you'll build a cash register app that will return change to the customer ba
 
 There are a few variables you'll need to use in your code:
 
-- `price`: the price of the item as a floating point number
-- `cash`: is amount of cash provided by the customer for the item, which is provided via an `input` element on the page
-- `cid`: cash-in-drawer, a 2D array listing available currency in the cash drawer
+- `price`: the price of the item as a floating-point number.
+- `cash`: the amount of cash provided by the customer for the item, which is provided via an `input` element on the page.
+- `cid`: cash-in-drawer, a 2D array listing available currency in the cash drawer.
 
 If you'd like to test your application with different values for `price` and `cid`, make sure to declare them with the `let` keyword so they can be reassigned by our tests.
 
