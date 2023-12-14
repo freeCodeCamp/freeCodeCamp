@@ -85,7 +85,6 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
             }
             return character;
           });
-          console.log(newCharacters);
           return newCharacters;
         });
       }, command.startTime * 1000);
