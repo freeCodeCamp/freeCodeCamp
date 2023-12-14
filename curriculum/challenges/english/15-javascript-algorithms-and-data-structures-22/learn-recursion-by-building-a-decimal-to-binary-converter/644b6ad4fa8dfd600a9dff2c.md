@@ -22,7 +22,7 @@ Inside your `while` loop, create a variable named `quotient` and assign it the v
 You should create a variable named `quotient` inside your `while` loop.
 
 ```js
-assert.match(String(code), /while\s*\(\s*input\s*>\s*0\s*\)\s*\{\s*(var|let|const)\s+quotient\s*=/);
+assert.match(code, /while\s*\(\s*input\s*>\s*0\s*\)\s*\{\s*(var|let|const)\s+quotient\s*=/);
 ```
 
 You should assign `quotient` the value of `input` divided by `2`.
