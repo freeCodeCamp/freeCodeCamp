@@ -13,12 +13,10 @@ import { createSelector } from 'reselect';
 import { Container, Col, Row } from '@freecodecamp/ui';
 
 // Local Utilities
-//import Loader from '../../../components/helpers/loader';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
-//import VideoPlayer from '../components/video-player';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import PrismFormatted from '../components/prism-formatted';
@@ -28,8 +26,8 @@ import {
   openModal
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
-// import Dialogue from './components/dialogue';
 import Scene from '../components/scene/scene';
+
 // Styles
 import '../odin/show.css';
 import '../video.css';
