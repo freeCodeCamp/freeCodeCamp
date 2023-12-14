@@ -94,7 +94,7 @@ test.describe('Footer Trending Guides section', () => {
 });
 
 test.describe('Footer mobile app section', () => {
-  test('should render the download link correctly', async ({ page }) => {
+  test('should render the download links correctly', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
         level: 2,
