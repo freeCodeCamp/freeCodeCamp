@@ -120,7 +120,7 @@ test('Clicking the menu button should open the menu', async ({ page }) => {
   await expect(menu).toBeVisible();
 });
 
-test('The menu should contain links to: donate, curriculum, forum, news, radio, and contribute', async ({
+test('The menu should contain links to: donate, curriculum, forum, news, radio, contribute, and podcast', async ({
   page
 }) => {
   const menuButton = page.getByTestId(headerComponentElements.menuButton);
@@ -153,6 +153,10 @@ test('The menu should contain links to: donate, curriculum, forum, news, radio, 
     {
       name: translations.buttons.contribute,
       href: links.nav.contribute
+    },
+    {
+      name: translations.buttons.podcast,
+      href: links.nav.podcast
     }
   ];
 

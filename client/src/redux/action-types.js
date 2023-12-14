@@ -39,6 +39,8 @@ export const actionTypes = createTypes(
     'updateUserToken',
     'postChargeProcessing',
     'updateAllChallengesInfo',
+    'updateCardRedirecting',
+    ...createAsyncTypes('updateCard'),
     ...createAsyncTypes('fetchUser'),
     ...createAsyncTypes('postCharge'),
     ...createAsyncTypes('fetchProfileForUser'),

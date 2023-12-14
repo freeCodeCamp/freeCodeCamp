@@ -1,0 +1,18 @@
+{
+  "name": "Learn How to Use Basic Programming Vocabulary in Conversations",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-use-basic-programming-vocabulary-in-conversations",
+  "order": 12,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "655c11781720d0897fc05353",
+      "title": "Dialogue: Placeholder"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

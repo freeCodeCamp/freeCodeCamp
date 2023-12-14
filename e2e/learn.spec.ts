@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
+import words from '../client/i18n/locales/english/motivation.json';
 
 let page: Page;
 
@@ -62,4 +63,24 @@ test('the page renders all curriculum certifications', async () => {
     const btn = curriculumBtns.nth(i);
     await expect(btn).toContainText(superBlocks[i]);
   }
+});
+
+test.describe('Learn (authenticated user)', () => {
+  test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
+  test('the page shows a random quote for an authenticated user', async () => {
+    const shownQuote = await page.getByTestId('random-quote').textContent();
+
+    const shownAuthorText = await page
+      .getByTestId('random-author')
+      .textContent();
+
+    const shownAuthor = shownAuthorText?.replace('- ', '');
+
+    const allMotivationalQuotes = words.motivationalQuotes.map(mq => mq.quote);
+    const allAuthors = words.motivationalQuotes.map(mq => mq.author);
+
+    expect(allMotivationalQuotes).toContain(shownQuote);
+    expect(allAuthors).toContain(shownAuthor);
+  });
 });

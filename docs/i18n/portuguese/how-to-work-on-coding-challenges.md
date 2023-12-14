@@ -170,6 +170,36 @@ Mais respostas
 ## --video-solution--
 
 O número da resposta correta fica aqui.
+
+# --fillInTheBlank--
+
+Estes são os desafios do currículos de inglês.
+
+## --sentence--
+
+Frase a ser mostrada com espaços em branco que os campers têm de preencher. Exemplo:
+
+`Hello, You _ the new graphic designer, _?`
+
+Os dois sublinhados aparecerão como lacunas para preencher. A frase deve ser cercada por backticks (sinais de crase).
+
+## --blanks--
+
+A solução para a primeira lacuna na frase acima. Exemplo:
+
+`are`
+
+### --feedback--
+
+Feedback mostrado quando campers inserem a solução errada para esta lacuna.
+
+---
+
+Solução para a segunda lacuna. Exemplo:
+
+`right`
+
+Se não houver feedback aqui, será exibida uma mensagem genérica de "resposta errada".
 ````
 
 > [!NOTE]
