@@ -13,6 +13,61 @@ exports[`challenge parser it should not parse directives we do not use 1`] = `
 a container directive
 :::</p>
 </section>",
+  "scene": undefined,
+  "solutions": [],
+  "tests": [],
+}
+`;
+
+exports[`challenge parser it should parse md with a scene 1`] = `
+{
+  "assignments": [],
+  "description": "<section id="description">
+<p>This challenge has a scene.</p>
+</section>",
+  "scene": {
+    "commands": [
+      {
+        "character": "Maria",
+        "opacity": 1,
+        "startTime": 0,
+      },
+      {
+        "character": "Maria",
+        "dialogue": {
+          "align": "center",
+          "text": "I'm Maria, the team lead.",
+        },
+        "finishTime": 2.4,
+        "startTime": 0.7,
+      },
+      {
+        "character": "Maria",
+        "opacity": 0,
+        "startTime": 3.4,
+      },
+    ],
+    "setup": {
+      "audio": {
+        "filename": "1.1-1.mp3",
+        "finishTimestamp": 4,
+        "startTime": 1,
+        "startTimestamp": 2.6,
+      },
+      "background": "company2-center.png",
+      "characters": [
+        {
+          "character": "Maria",
+          "opacity": 0,
+          "position": {
+            "x": 50,
+            "y": 0,
+            "z": 1.5,
+          },
+        },
+      ],
+    },
+  },
   "solutions": [],
   "tests": [],
 }
@@ -52,6 +107,7 @@ exports[`challenge parser it should parse video questions 1`] = `
 <pre><code class="language-js">  var x = 'y';
 </code></pre>",
   },
+  "scene": undefined,
   "solutions": [],
   "tests": [],
 }
@@ -108,6 +164,7 @@ for (let index = 0; index < array.length; index++) {
 <pre><code class="language-html">code example 0
 </code></pre>
 </section>",
+  "scene": undefined,
   "solutions": [],
   "tests": [
     {
@@ -173,6 +230,7 @@ exports[`challenge parser should not mix other YAML with the frontmatter 1`] = `
 <pre><code class="language-html">code example 0
 </code></pre>
 </section>",
+  "scene": undefined,
   "solutions": [],
   "tests": [
     {
@@ -275,6 +333,7 @@ a {
 <p>To test that adjacent tags are handled correctly:</p>
 <p>a bit of <code>code</code> <tag>with more after a space</tag> and another pair of <strong>elements</strong> <em>with a space</em></p>
 </section>",
+  "scene": undefined,
   "solutions": [
     [
       {
@@ -424,6 +483,7 @@ exports[`challenge parser should parse a simple md file 1`] = `
 <pre><code class="language-html">code example 0
 </code></pre>
 </section>",
+  "scene": undefined,
   "solutions": [
     [
       {
@@ -524,6 +584,7 @@ exports[`challenge parser should parse frontmatter 1`] = `
   "forumTopicId": 18276,
   "id": "bd7123c8c441eddfaeb5bdef",
   "isHidden": false,
+  "scene": undefined,
   "solutions": [],
   "tests": [
     {
@@ -601,6 +662,7 @@ exports[`challenge parser should parse gfm strikethrough and frontmatter 1`] = `
 <pre><code class="language-html">code example 0
 </code></pre>
 </section>",
+  "scene": undefined,
   "solutions": [
     [
       {
