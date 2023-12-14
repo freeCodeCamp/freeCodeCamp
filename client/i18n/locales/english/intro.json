@@ -1137,7 +1137,7 @@
     "intro": ["placeholder"],
     "blocks": {
       "learn-python-by-building-a-blackjack-game": {
-        "title": "Learn Python by Building a Blackjack Game ZZZZ",
+        "title": "Learn Python by Building a Blackjack Game",
         "intro": ["Learn Python.", ""]
       },
       "upcoming-python-project": {
