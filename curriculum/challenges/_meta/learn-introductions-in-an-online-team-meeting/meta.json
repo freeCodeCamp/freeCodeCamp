@@ -1,18 +1,106 @@
 {
-    "name": "Learn Introductions in an Online Team Meeting",
-    "isUpcomingChange": true,
-    "dashedName": "learn-introductions-in-an-online-team-meeting",
-    "order": 1,
-    "time": "5 hours",
-    "template": "",
-    "required": [],
-    "superBlock": "a2-english-for-developers",
-    "isBeta": true,
-    "challengeOrder": [
-      {
-        "id": "651dd5a46ffb500e3f2ce47b",
-        "title": "Dialogue: Placeholder"
-      }
-    ],
-    "helpCategory": "HTML-CSS"
-  }
+  "name": "Learn Introductions in an Online Team Meeting",
+  "isUpcomingChange": true,
+  "dashedName": "learn-introductions-in-an-online-team-meeting",
+  "order": 1,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "651dd5a46ffb500e3f2ce47b",
+      "title": "Dialogue: Placeholder"
+    },
+    {
+      "id": "657b2296130e541911943345",
+      "title": "Task 1"
+    },
+    {
+      "id": "657b236691c67b197cd382f4",
+      "title": "Task 2"
+    },
+    {
+      "id": "657b400653813a1caa228aca",
+      "title": "Task 3"
+    },
+    {
+      "id": "657b438144bd421e49e202e2",
+      "title": "Task 4"
+    },
+    {
+      "id": "657b44fd1219f01f3afa8fb1",
+      "title": "Task 5"
+    },
+    {
+      "id": "657b5bd17d068521ee895631",
+      "title": "Task 6"
+    },
+    {
+      "id": "657b5c45e603ca227abf904a",
+      "title": "Task 7"
+    },
+    {
+      "id": "657b5cec02f00e23028cdbd5",
+      "title": "Task 8"
+    },
+    {
+      "id": "657b5de322bdee236e353230",
+      "title": "Task 9"
+    },
+    {
+      "id": "657b5f2319bc2223f2fc408a",
+      "title": "Task 10"
+    },
+    {
+      "id": "657b602d5bf54224a94cbfa6",
+      "title": "Task 11"
+    },
+    {
+      "id": "657b615cdee8f12537d6f90c",
+      "title": "Task 12"
+    },
+    {
+      "id": "657b631cc34605266f81b9bb",
+      "title": "Task 13"
+    },
+    {
+      "id": "657b64017820f626f6a092c2",
+      "title": "Task 14"
+    },
+    {
+      "id": "657b6531fad8572767c5b4dc",
+      "title": "Task 15"
+    },
+    {
+      "id": "657b661cc0427227c7e7aec0",
+      "title": "Task 16"
+    },
+    {
+      "id": "657b66c57499db2828adac5e",
+      "title": "Task 17"
+    },
+    {
+      "id": "657b674c711e5428985017ca",
+      "title": "Task 18"
+    },
+    {
+      "id": "657b67daf0b2d128ece96345",
+      "title": "Task 19"
+    },
+    {
+      "id": "657b68caf6debb2975503948",
+      "title": "Task 20"
+    },
+    {
+      "id": "657b6940d1ad7829b4d9a918",
+      "title": "Task 21"
+    },
+    {
+      "id": "657b6a7dd8fb2f2a52da24f5",
+      "title": "Task 22"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}
