@@ -344,7 +344,7 @@
         "title": "Learn Basic JavaScript by Building a Role Playing Game",
         "intro": [
           "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
-          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Role Playing Game. You'll learn how to work with arrays, strings, objects, functions, loops, if/else statements, and more."
+          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Role Playing Game. You'll learn how to work with arrays, strings, objects, functions, loops, <code>if/else</code> statements, and more."
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
@@ -417,7 +417,7 @@
         "title": "Learn localStorage by Building a Todo App",
         "intro": [
           "Local storage is a web browser feature that lets web applications store key-value pairs persistently within a user's browser. This allows web apps to save data during one session, then retrieve it in a later page session.",
-          "In this TODO application, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implementing event listeners, and toggle UI elements."
+          "In this TODO application, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implement event listeners, and toggle UI elements."
         ]
       },
       "learn-the-date-object-by-building-a-date-formatter": {
