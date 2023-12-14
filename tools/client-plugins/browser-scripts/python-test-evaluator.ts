@@ -54,7 +54,6 @@ async function setupPyodide() {
 void setupPyodide();
 
 ctx.onmessage = async (e: PythonRunEvent) => {
-  console.log('python worker received message', e.data);
   const pyodide = await setupPyodide();
   // TODO: Use removeComments when we have it
   /* eslint-disable @typescript-eslint/no-unused-vars */
