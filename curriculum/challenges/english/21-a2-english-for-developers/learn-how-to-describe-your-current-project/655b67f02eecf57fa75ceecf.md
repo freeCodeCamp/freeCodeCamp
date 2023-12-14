@@ -35,7 +35,7 @@ It's often used in instructions or advice to keep oneself in a certain situation
 
 ### --feedback--
 
-This word indicates that Sophie is actively providing assistance or support to her team. It is in the gerund form `ing`
+This word indicates that Sophie is actively providing assistance or support to her team. It is in the gerund form `-ing`
 
 ---
 
