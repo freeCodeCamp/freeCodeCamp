@@ -1137,7 +1137,7 @@
     "intro": ["placeholder"],
     "blocks": {
       "learn-python-by-building-a-blackjack-game": {
-        "title": "Learn Python by Building a Blackjack Game",
+        "title": "Learn Python by Building a Blackjack Game ZZZZ",
         "intro": ["Learn Python.", ""]
       },
       "upcoming-python-project": {
@@ -1145,8 +1145,11 @@
         "intro": ["placeholder"]
       },
       "learn-tree-traversal-by-building-a-binary-search-tree": {
-        "title": "Learn tree traversal",
-        "intro": ["", ""]
+        "title": "Learn Tree Traversal by Building a Binary Search Tree",
+        "intro": [
+          "A Binary Search Tree (BST) is an important data structure concept, where data is sorted in a hierarchical structure.",
+          "In this project, you will learn how to costruct a BST, perform an inorder traversal, and also cover key operations like insertion, search, and deletion."
+        ]
       }
     }
   },
