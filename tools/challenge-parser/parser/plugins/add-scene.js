@@ -1,5 +1,4 @@
 const getAllBetween = require('./utils/between-headings');
-const validateSceneSchema = require('./utils/scene-schema');
 
 function plugin() {
   return transformer;
@@ -18,14 +17,6 @@ function plugin() {
 
       // throws if we can't parse it.
       const sceneJson = JSON.parse(sceneNodes[0].value);
-      const validScene = validateSceneSchema(sceneJson);
-
-      if (validScene.error) {
-        throw Error(
-          `Invalid scene schema for '${file}': ${validScene.error.message}`
-        );
-      }
-
       file.data.scene = sceneJson;
     }
   }
