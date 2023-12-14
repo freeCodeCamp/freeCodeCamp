@@ -18,7 +18,7 @@ There are a few variables you'll need to use in your code:
 
 If you'd like to test your application with different values for `price` and `cid`, make sure to declare them with the `let` keyword so they can be reassigned by our tests.
 
-Your application should show different messages depending on price of the item, the amount of cash provided by the customer, and the amount of cash in the drawer:
+Your application should show different messages depending on the price of the item, the amount of cash provided by the customer, and the amount of cash in the drawer:
 
 - `Status: INSUFFICIENT_FUNDS`: if `cash-in-drawer` is less than the change due, or if you cannot return the exact change.
 - `Status: CLOSED`: if `cash-in-drawer` is equal to the change due.
