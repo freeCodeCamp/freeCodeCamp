@@ -67,7 +67,7 @@ export const characterAssets = {
   },
   Jake: {
     base: `${jake}/base.png`,
-    brows: `${jake}/brows-normal.png`,
+    brows: `${jake}/brows.png`,
     eyesClosed: `${jake}/eyes-closed.png`,
     eyesOpen: `${jake}/eyes-open.png`,
     glasses: null,
