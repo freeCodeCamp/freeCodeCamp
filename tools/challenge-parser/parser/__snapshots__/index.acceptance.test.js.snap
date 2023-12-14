@@ -13,7 +13,6 @@ exports[`challenge parser it should not parse directives we do not use 1`] = `
 a container directive
 :::</p>
 </section>",
-  "scene": undefined,
   "solutions": [],
   "tests": [],
 }
@@ -107,7 +106,6 @@ exports[`challenge parser it should parse video questions 1`] = `
 <pre><code class="language-js">  var x = 'y';
 </code></pre>",
   },
-  "scene": undefined,
   "solutions": [],
   "tests": [],
 }
@@ -164,7 +162,6 @@ for (let index = 0; index < array.length; index++) {
 <pre><code class="language-html">code example 0
 </code></pre>
 </section>",
-  "scene": undefined,
   "solutions": [],
   "tests": [
     {
@@ -230,7 +227,6 @@ exports[`challenge parser should not mix other YAML with the frontmatter 1`] = `
 <pre><code class="language-html">code example 0
 </code></pre>
 </section>",
-  "scene": undefined,
   "solutions": [],
   "tests": [
     {
@@ -333,7 +329,6 @@ a {
 <p>To test that adjacent tags are handled correctly:</p>
 <p>a bit of <code>code</code> <tag>with more after a space</tag> and another pair of <strong>elements</strong> <em>with a space</em></p>
 </section>",
-  "scene": undefined,
   "solutions": [
     [
       {
@@ -483,7 +478,6 @@ exports[`challenge parser should parse a simple md file 1`] = `
 <pre><code class="language-html">code example 0
 </code></pre>
 </section>",
-  "scene": undefined,
   "solutions": [
     [
       {
@@ -584,7 +578,6 @@ exports[`challenge parser should parse frontmatter 1`] = `
   "forumTopicId": 18276,
   "id": "bd7123c8c441eddfaeb5bdef",
   "isHidden": false,
-  "scene": undefined,
   "solutions": [],
   "tests": [
     {
@@ -662,7 +655,6 @@ exports[`challenge parser should parse gfm strikethrough and frontmatter 1`] = `
 <pre><code class="language-html">code example 0
 </code></pre>
 </section>",
-  "scene": undefined,
   "solutions": [
     [
       {

@@ -6,7 +6,6 @@ function plugin() {
 
   function transformer(tree, file) {
     const sceneNodes = getAllBetween(tree, '--scene--');
-    let sceneJson;
 
     if (sceneNodes.length > 0) {
       if (sceneNodes.length !== 1) {
@@ -18,7 +17,7 @@ function plugin() {
       }
 
       // throws if we can't parse it.
-      sceneJson = JSON.parse(sceneNodes[0].value);
+      const sceneJson = JSON.parse(sceneNodes[0].value);
       const validScene = validateSceneSchema(sceneJson);
 
       if (validScene.error) {
@@ -26,11 +25,9 @@ function plugin() {
           `Invalid scene schema for '${file}': ${validScene.error.message}`
         );
       }
-    }
 
-    file.data.scene = sceneNodes[0]
-      ? JSON.parse(sceneNodes[0].value)
-      : undefined;
+      file.data.scene = sceneJson;
+    }
   }
 }
 
