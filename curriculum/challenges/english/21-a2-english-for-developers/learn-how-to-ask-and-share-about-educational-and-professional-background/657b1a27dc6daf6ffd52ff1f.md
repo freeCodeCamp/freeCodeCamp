@@ -9,12 +9,12 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 <!--
 AUDIO REFERENCE:
 Anna: Excellent! Can you share details about your educational background? Were you trained in a specific field?
-Candidate2: I have a master’s degree in computer science.
+Candidate2: I have a master's degree in computer science.
 -->
 
 # --description--
 
-In English, the `noun’s noun` structure is used to show possession or belonging. If the first noun is singular, as in `Sarah's laptop`, it indicates that the laptop belongs to Sarah. However, if the first noun is plural, the structure changes to `nouns'`, as in `teachers' office`, indicating an office for teachers.
+In English, the `noun's noun` structure is used to show possession or belonging. If the first noun is singular, as in `Sarah's laptop`, it indicates that the laptop belongs to Sarah. However, if the first noun is plural, the structure changes to `nouns'`, as in `teachers' office`, indicating an office for teachers.
 
 # --question--
 
