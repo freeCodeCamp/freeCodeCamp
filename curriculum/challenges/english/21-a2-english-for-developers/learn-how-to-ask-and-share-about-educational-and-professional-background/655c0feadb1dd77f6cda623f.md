@@ -1,9 +1,9 @@
 ---
 id: 655c0feadb1dd77f6cda623f
-title: "Dialogue: Placeholder"
+title: "Dialogue 1: A job interview"
 challengeType: 21
 videoId: nLDychdBwUg
-dashedName: dialogue-placeholder
+dashedName: dialogue-1-a-job-interview
 ---
 
 # --description--
