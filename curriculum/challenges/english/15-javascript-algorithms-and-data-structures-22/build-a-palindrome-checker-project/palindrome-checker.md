@@ -10,6 +10,8 @@ dashedName: build-a-palindrome-checker
 
 A <dfn>palindrome</dfn> is a word or phrase that can be read the same way forwards and backwards, ignoring punctuation, case, and spacing.
 
+**Note:** You'll need to remove **all non-alphanumeric characters** (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.
+
 **Objective:** Build an app that is functionally similar to <a href="https://palindrome-checker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://palindrome-checker.freecodecamp.rocks</a>
 
 **User Stories:**
@@ -18,13 +20,19 @@ A <dfn>palindrome</dfn> is a word or phrase that can be read the same way forwar
 1. You should have a `button` element with an `id` of `check-btn`
 1. You should have a `div` element with an `id` of `result`
 1. When you click on the `#check-btn` element without entering a value into the `#text-input` element, an alert should appear with the text `Please input a value`
-1. When the `#text-input` element contains special characters or digits and the `#check-btn` element is clicked, an alert should appear with the text `Input should not include numbers and special characters`
 1. When the `#text-input` element only contains the letter `A` and the `#check-btn` element is clicked, the `#result` element should contain the text `A is a palindrome`
-1. When the `#text-input` element contains the word `eye` and the `#check-btn` element is clicked, the `#result` element should contain the text `eye is a palindrome`
-1. When the `#text-input` element contains the words `race car` and the `#check-btn` element is clicked, the `#result` element should contain the text `race car is a palindrome`
+1. When the `#text-input` element contains the text `eye` and the `#check-btn` element is clicked, the `#result` element should contain the text `eye is a palindrome`
+1. When the `#text-input` element contains the text `_eye` and the `#check-btn` element is clicked, the `#result` element should contain the text `eye is a palindrome`
+1. When the `#text-input` element contains the text `race car` and the `#check-btn` element is clicked, the `#result` element should contain the text `race car is a palindrome`
 1. When the `#text-input` element contains the text `not a palindrome` and the `#check-btn` element is clicked, the `#result` element should contain the text `not a palindrome is not a palindrome`
-1. When the `#text-input` element contains the text `No one made killer apparel like Dame Noon` and the `#check-btn` element is clicked, the `#result` element should contain the text `No one made killer apparel like Dame Noon is a palindrome`
-1. When the `#text-input` element contains the text `saippuakivikauppias` and the `#check-btn` element is clicked, the `#result` element should contain the text `saippuakivikauppias is a palindrome`
+1. When the `#test-input` element contains the text `A man, a plan, a canal. Panama` and the `#check-btn` element is clicked, the `#result` element should contain the text `A man, a plan, a canal. Panama is a palindrome`
+1. When the `#text-input` element contains the text `never odd or even` and the `#check-btn` element is clicked, the `#result` element should contain the text `never odd or even is a palindrome`
+1. When the `#text-input` element contains the text `nope` and the `#check-btn` element is clicked, the `#result` element should contain the text `nope is not a palindrome`
+1. When the `#text-input` element contains the text `almostomla` and the `#check-btn` element is clicked, the `#result` element should contain the text `almostomla is not a palindrome`
+1. When the `#text-input` element contains the text `My age is 0, 0 si ega ym.` and the `#check-btn` element is clicked, the `#result` element should contain the text `My age is 0, 0 si ega ym. is a palindrome`
+1. When the `#text-input` element contains the text `1 eye for of 1 eye.` and the `#check-btn` element is clicked, the `#result` element should contain the text `1 eye for of 1 eye. is not a palindrome`
+1. When the `#text-input` element contains the text `0_0 (: /-\ :) 0-0` and the `#check-btn` element is clicked, the `#result` element should contain the text `0_0 (: /-\ :) 0-0 is a palindrome`
+1. When the `#text-input` element contains the text `five|\_/|four` and the `#check-btn` element is clicked, the `#result` element should contain the text `five|\_/|four is not a palindrome`
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
@@ -64,19 +72,6 @@ checkBtn.click();
 assert.strictEqual(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please input a value');
 ```
 
-When the `#text-input` element contains special characters or digits and the `#check-btn` element is clicked, an alert should appear with the text `Input should not include numbers and special characters`.
-
-```js
-const inputEl = document.getElementById('text-input');
-const checkBtn = document.getElementById('check-btn');
-let alertMessage;
-window.alert = (message) => alertMessage = message; // Override alert and store message
-
-inputEl.value = 'racecar123!';
-checkBtn.click();
-assert.strictEqual(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'input should not include numbers and special characters');
-```
-
 When the `#text-input` element only contains the letter `A` and the `#check-btn` element is clicked, the `#result` element should contain the text `A is a palindrome`.
 
 ```js
@@ -89,7 +84,7 @@ checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'a is a palindrome');
 ```
 
-When the `#text-input` element contains the word `eye` and the `#check-btn` element is clicked, the `#result` element should contain the text `eye is a palindrome`.
+When the `#text-input` element contains the text `eye` and the `#check-btn` element is clicked, the `#result` element should contain the text `eye is a palindrome`.
 
 ```js
 const inputEl = document.getElementById('text-input');
@@ -101,7 +96,19 @@ checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'eye is a palindrome');
 ```
 
-When the `#text-input` element contains the words `race car` and the `#check-btn` element is clicked, the `#result` element should contain the text `race car is a palindrome`.
+When the `#text-input` element contains the text `_eye` and the `#check-btn` element is clicked, the `#result` element should contain the text `eye is a palindrome`.
+
+```js
+const inputEl = document.getElementById('text-input');
+const checkBtn = document.getElementById('check-btn');
+const resultEl = document.getElementById('result');
+
+inputEl.value = '_eye';
+checkBtn.click();
+assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), '_eye is a palindrome');
+```
+
+When the `#text-input` element contains the text `race car` and the `#check-btn` element is clicked, the `#result` element should contain the text `race car is a palindrome`.
 
 ```js
 const inputEl = document.getElementById('text-input');
@@ -125,28 +132,100 @@ checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'not a palindrome is not a palindrome');
 ```
 
-When the `#text-input` element contains the text `No one made killer apparel like Dame Noon` and the `#check-btn` element is clicked, the `#result` element should contain the text `No one made killer apparel like Dame Noon is a palindrome`.
+When the `#test-input` element contains the text `A man, a plan, a canal. Panama` and the `#check-btn` element is clicked, the `#result` element should contain the text `A man, a plan, a canal. Panama is a palindrome`.
 
 ```js
 const inputEl = document.getElementById('text-input');
 const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
-inputEl.value = 'No one made killer apparel like Dame Noon';
+inputEl.value = 'A man, a plan, a canal. Panama';
 checkBtn.click();
-assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'no one made killer apparel like dame noon is a palindrome');
+assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'a man, a plan, a canal. panama is a palindrome');
 ```
 
-When the `#text-input` element contains the text `saippuakivikauppias` and the `#check-btn` element is clicked, the `#result` element should contain the text `saippuakivikauppias is a palindrome`.
+When the `#text-input` element contains the text `never odd or even` and the `#check-btn` element is clicked, the `#result` element should contain the text `never odd or even is a palindrome`.
 
 ```js
 const inputEl = document.getElementById('text-input');
 const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
-inputEl.value = 'saippuakivikauppias';
+inputEl.value = 'never odd or even';
 checkBtn.click();
-assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'saippuakivikauppias is a palindrome');
+assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'never odd or even is a palindrome');
+```
+
+When the `#text-input` element contains the text `nope` and the `#check-btn` element is clicked, the `#result` element should contain the text `nope is not a palindrome`.
+
+```js
+const inputEl = document.getElementById('text-input');
+const checkBtn = document.getElementById('check-btn');
+const resultEl = document.getElementById('result');
+
+inputEl.value = 'nope';
+checkBtn.click();
+assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'nope is not a palindrome');
+```
+
+When the `#text-input` element contains the text `almostomla` and the `#check-btn` element is clicked, the `#result` element should contain the text `almostomla is not a palindrome`.
+
+```js
+const inputEl = document.getElementById('text-input');
+const checkBtn = document.getElementById('check-btn');
+const resultEl = document.getElementById('result');
+
+inputEl.value = 'almostomla';
+checkBtn.click();
+assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'almostomla is not a palindrome');
+```
+
+When the `#text-input` element contains the text `My age is 0, 0 si ega ym.` and the `#check-btn` element is clicked, the `#result` element should contain the text `My age is 0, 0 si ega ym. is a palindrome`.
+
+```js
+const inputEl = document.getElementById('text-input');
+const checkBtn = document.getElementById('check-btn');
+const resultEl = document.getElementById('result');
+
+inputEl.value = 'My age is 0, 0 si ega ym.';
+checkBtn.click();
+assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'my age is 0, 0 si ega ym. is a palindrome');
+```
+
+When the `#text-input` element contains the text `1 eye for of 1 eye.` and the `#check-btn` element is clicked, the `#result` element should contain the text `1 eye for of 1 eye. is not a palindrome`.
+
+```js
+const inputEl = document.getElementById('text-input');
+const checkBtn = document.getElementById('check-btn');
+const resultEl = document.getElementById('result');
+
+inputEl.value = '1 eye for of 1 eye.';
+checkBtn.click();
+assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), '1 eye for of 1 eye. is not a palindrome');
+```
+
+When the `#text-input` element contains the text `0_0 (: /-\ :) 0-0` and the `#check-btn` element is clicked, the `#result` element should contain the text `0_0 (: /-\ :) 0-0 is a palindrome`.
+
+```js
+const inputEl = document.getElementById('text-input');
+const checkBtn = document.getElementById('check-btn');
+const resultEl = document.getElementById('result');
+
+inputEl.value = '0_0 (: /-\ :) 0-0';
+checkBtn.click();
+assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), '0_0 (: /-\ :) 0-0 is a palindrome');
+```
+
+When the `#text-input` element contains the text `five|\_/|four` and the `#check-btn` element is clicked, the `#result` element should contain the text `five|\_/|four is not a palindrome`.
+
+```js
+const inputEl = document.getElementById('text-input');
+const checkBtn = document.getElementById('check-btn');
+const resultEl = document.getElementById('result');
+
+inputEl.value = 'five|\_/|four';
+checkBtn.click();
+assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'five|\_/|four is not a palindrome');
 ```
 
 # --seed--
@@ -195,14 +274,15 @@ assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCas
           >Enter in text to check for a palindrome:
         </label>
         <input class="palindrome-input" id="text-input" value="" type="text" />
-        <button class="check-btn" id="check-btn">Check</button>
+        <button class="palindrome-btn" id="check-btn">Check</button>
         <div class="results-div hidden" id="result"></div>
       </div>
       <div class="palindrome-definition-div">
         <p class="palindrome-definition">
           <span role="img" aria-label="light-bulb">&#128161;</span>
-          A <b>palindrome</b> is a word or phrase that can be read the same way
-          forwards and backwards.
+          A <dfn>palindrome</dfn> is a word or sentence that's spelled the same
+          way both forward and backward, ignoring punctuation, case, and
+          spacing.
         </p>
       </div>
     </main>
@@ -265,7 +345,7 @@ label {
   margin-bottom: 20px;
 }
 
-.check-btn {
+.palindrome-btn {
   width: 90px;
   border: none;
   padding: 10px;
@@ -336,28 +416,23 @@ const resultDiv = document.getElementById("result");
 
 const checkForPalindrome = (input) => {
   const originalInput = input; // Store for later output
-  const hasSpecialCharactersOrDigits = /[\W\d_]/.test(input.replace(/\s/g, "")); // Remove whitespace before checking for special characters and digits
 
   if (input === "") {
     alert("Please input a value");
     return;
   }
 
-  if (hasSpecialCharactersOrDigits) {
-    alert("Input should not include numbers and special characters");
-    return;
-  }
-  // Remove the previous result.
+  // Remove the previous result
   resultDiv.replaceChildren();
 
-  const lowerCaseStr = input.replace(/[^A-Z0-9]/gi, "").toLowerCase();
-  let resultMsg = `${originalInput} ${
+  const lowerCaseStr = input.replace(/[^A-Za-z0-9]/gi, "").toLowerCase();
+  let resultMsg = `<strong>${originalInput}</strong> ${
     lowerCaseStr === [...lowerCaseStr].reverse().join("") ? "is" : "is not"
   } a palindrome.`;
 
   const pTag = document.createElement("p");
   pTag.className = "user-input";
-  pTag.appendChild(document.createTextNode(resultMsg));
+  pTag.innerHTML = resultMsg;
   resultDiv.appendChild(pTag);
 
   // Show the result.
