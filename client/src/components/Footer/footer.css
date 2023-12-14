@@ -111,20 +111,15 @@ p.footer-donation a:hover {
   margin: 0 0 3rem;
 }
 
-.mobile-app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
-}
-
 .mobile-app-container {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  max-width: 25rem;
+  gap: 16px;
 }
 
 .mobile-app-container img {
@@ -148,7 +143,6 @@ p.footer-donation a:hover {
   .footer-col {
     font-size: 15;
   }
-
   .mobile-app-container {
     flex-direction: row;
   }

@@ -317,8 +317,14 @@ exports[`<Footer /> matches snapshot 1`] = `
         </li>
       </ul>
       <div
-        className="mobile-app"
-      >
+        className="spacer"
+        style={
+          {
+            "padding": "15px 0",
+          }
+        }
+      />
+      <div>
         <h2
           className="col-header"
           id="mobile-app"
@@ -326,24 +332,37 @@ exports[`<Footer /> matches snapshot 1`] = `
           footer.mobile-app
         </h2>
         <div
-          className="mobile-app-container"
+          className=" min-h-[1px] px-[15px]  md:w-2/3    md:ml-[16.6%]    "
         >
-          <a
-            href="https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200"
+          <ul
+            aria-labelledby="mobile-app"
+            className="mobile-app-container"
           >
-            <img
-              alt="Apple Store"
-              src={{}}
-            />
-          </a>
-          <a
-            href="https://play.google.com/store/apps/details?id=org.freecodecamp"
-          >
-            <img
-              alt="Google Play"
-              src={{}}
-            />
-          </a>
+            <li>
+              <a
+                href="https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  alt="Apple Store"
+                  src={{}}
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://play.google.com/store/apps/details?id=org.freecodecamp"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  alt="Google Play"
+                  src={{}}
+                />
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
