@@ -11,10 +11,10 @@ Next, below the nested `elif` statement, add another `if` statement to execute w
 
 # --hints--
 
-You should add an `if` statement to execute when `forward` is `True`.
+You should add an `if` statement to execute when `forward` is `True` after the `elif` block.
 
 ```js
-({ test: () => assert.match(code, /if\s+forward(\s*==\s*True)?\s*:/) })
+({ test: () => assert.match(e.code.original["main.py"], /^\s{12}if\s+forward(\s*==\s*True)?\s*:/m) })
 ```
 
 You should print the provide string inside your new `if` statement.
@@ -36,7 +36,7 @@ rods = {
     'C': []
 }
 
-def move(n, source, target, auxiliary):
+def move(n, source, auxiliary, target):
     # display starting configuration
     print(rods)
     for i in range(number_of_moves):
@@ -47,7 +47,7 @@ def move(n, source, target, auxiliary):
             forward = False
             if not rods[target]:
                 forward = True
-            elif rods[source] and rods[target] and rods[source][-1] < rods[target][-1]:
+            elif rods[source] and rods[source][-1] < rods[target][-1]:
                 forward = True
 --fcc-editable-region--
         elif remainder == 2:
@@ -56,5 +56,5 @@ def move(n, source, target, auxiliary):
             print(f'Move {i + 1} allowed between {auxiliary} and {target}')
 
 # initiate call from source A to target C with auxiliary B
-move(NUMBER_OF_DISKS, 'A', 'C', 'B')
+move(NUMBER_OF_DISKS, 'A', 'B', 'C')
 ```

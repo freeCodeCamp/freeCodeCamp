@@ -36,7 +36,7 @@ def make_allowed_move(rod1, rod2):
     forward = False
     if not rods[rod2]:
         forward = True
-    elif rods[rod1] and rods[rod2] and rods[rod1][-1] < rods[rod2][-1]:
+    elif rods[rod1] and rods[rod1][-1] < rods[rod2][-1]:
         forward = True              
     if forward:
         print(f'Moving disk {rods[rod1][-1]} from {rod1} to {rod2}')
@@ -48,7 +48,7 @@ def make_allowed_move(rod1, rod2):
     # display our progress
     print(rods, '\n')
 
-def move(n, source, target, auxiliary):
+def move(n, source, auxiliary, target):
     # display starting configuration
     print(rods, '\n')
     for i in range(number_of_moves):
@@ -64,5 +64,5 @@ def move(n, source, target, auxiliary):
             make_allowed_move(auxiliary, target)
 
 # initiate call from source A to target C with auxiliary B
-move(NUMBER_OF_DISKS, 'A', 'C', 'B')
+move(NUMBER_OF_DISKS, 'A', 'B', 'C')
 ```
