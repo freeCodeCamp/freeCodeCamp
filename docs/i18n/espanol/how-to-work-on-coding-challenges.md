@@ -176,6 +176,36 @@ More answers
 ## --video-solution--
 
 The number for the correct answer goes here.
+
+# --fillInTheBlank--
+
+These are for the English curriculum challenges.
+
+## --sentence--
+
+Sentence to be shown with with blanks that campers have to fill in. Example:
+
+`Hello, You _ the new graphic designer, _?`
+
+The two underscores will show up as blanks. The sentence must be surrounded in backticks.
+
+## --blanks--
+
+The solution for the first blank in the sentence above. Example:
+
+`are`
+
+### --feedback--
+
+Feedback shown when campers input the wrong solution for this blank.
+
+---
+
+Solution for the second blank. Example:
+
+`right`
+
+If no feedback is here, a generic "wrong answer" message will be shown.
 ````
 
 > [!NOTE]

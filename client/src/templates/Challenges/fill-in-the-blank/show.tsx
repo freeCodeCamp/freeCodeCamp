@@ -317,7 +317,9 @@ class ShowFillInTheBlank extends Component<
                 <Spacer size='medium' />
                 <h2>{t('learn.fill-in-the-blank')}</h2>
                 <Spacer size='small' />
-                <ObserveKeys>
+                {/* what we want to observe is ctrl/cmd + enter, but ObserveKeys is buggy and throws an error
+                if it encounters a key combination, so we have to pass in the individual keys to observe */}
+                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
                   <div>
                     <p>
                       {splitSentence.map((s, i) => {

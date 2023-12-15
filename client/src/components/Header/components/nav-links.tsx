@@ -242,6 +242,19 @@ function NavLinks({
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
       </li>
+      <li key='podcast'>
+        <Link
+          className='nav-link nav-link-flex'
+          external={true}
+          onKeyDown={handleMenuKeyDown}
+          sameTab={false}
+          to={t('links:nav.podcast')}
+        >
+          <span>{t('buttons.podcast')}</span>
+          <span className='sr-only'>, {t('aria.opens-new-window')}</span>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </Link>
+      </li>
       <li className='nav-line' key='theme'>
         <button
           {...(!currentUserName && { 'aria-describedby': 'theme-sign-in' })}
