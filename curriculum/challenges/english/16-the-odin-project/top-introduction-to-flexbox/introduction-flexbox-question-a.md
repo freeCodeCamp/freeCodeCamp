@@ -26,9 +26,9 @@ We’ll get into exactly what’s going on here soon enough. But for now, let’
 
 > Comments prevent the browser from interpreting lines as code, and are wrapped between specific tags. CSS uses `/*` as an opening comment tag and `*/` as a closing comment tag, while HTML and JavaScript have their own syntax. Commented out lines of code can be ‘re-enabled’ simply by removing the comment tags surrounding the code.
 
-All 3 divs should now be arranged horizontally. If you resize the results frame with the “1x”, “.5x” and “.25x” buttons you’ll also see that the divs will ‘flex’. They will fill the available area and will each have equal width.
+All 3 divs should now be arranged horizontally. If you resize the results frame with the `1x`, `.5x` and `.25x` buttons you’ll also see that the `div` elements will "flex". They will fill the available area and will each have equal width.
 
-If you add another div to the HTML, inside of `.flex-container`, it will show up alongside the others, and everything will flex to fit within the available area.
+If you add another `div` to the HTML, inside of `.flex-container`, it will show up alongside the others, and everything will flex to fit within the available area.
 
 > If it’s hard to see what’s going on in the small embedded CodePen, feel free to click the “Edit on CodePen” or “Fork on CodePen” button. This will bring the example into a full-sized environment. Some of the later examples might especially benefit from doing this.
 
@@ -40,19 +40,19 @@ What happens when the two flex related CSS declarations in the CodePen are uncom
 
 ## --answers--
 
-The divs become hidden from view, losing their visibility within the container.
+The `div` elements become hidden from view, losing their visibility within the container.
 
 ---
 
-All 3 divs are arranged horizontally, and they flex to fill the available area with equal width.
+All 3 `div` elements are arranged horizontally, and they flex to fill the available area with equal width.
 
 ---
 
-Each div enlarges and covers the entire container, overlapping each other.
+Each `div` element enlarges and covers the entire container, overlapping each other.
 
 ---
 
-The divs align vertically in a single column, ignoring the flex-related CSS declarations.
+The `div` elements align vertically in a single column, ignoring the flex-related CSS declarations.
 
 ## --video-solution--
 
