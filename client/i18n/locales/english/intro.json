@@ -1067,6 +1067,10 @@
         "title": "Learn the Box Model",
         "intro": ["A description is to be determined"]
       },
+      "top-introduction-to-flexbox": {
+        "title": "Introduction to Flexbox",
+        "intro": ["A description is to be determined"]
+      },
       "top-learn-block-and-inline": {
         "title": "Learn the difference between Block and Inline",
         "intro": ["A description is to be determined"]
