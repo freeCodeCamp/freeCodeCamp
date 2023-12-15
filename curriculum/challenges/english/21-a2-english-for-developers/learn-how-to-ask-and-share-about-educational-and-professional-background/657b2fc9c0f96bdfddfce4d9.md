@@ -19,7 +19,7 @@ In this exercise, you will explore the phrase `pique one's interest`. This phras
 
 ## --sentence--
 
-`Anna: I _ a course in organizational _, and it _ my interest in the workplace and employee dynamics.`
+`I _ a course in organizational _, and it _ my interest in the workplace and employee dynamics.`
 
 ## --blanks--
 
