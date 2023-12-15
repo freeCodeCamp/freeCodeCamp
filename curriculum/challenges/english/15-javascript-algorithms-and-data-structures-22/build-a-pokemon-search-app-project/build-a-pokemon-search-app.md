@@ -377,61 +377,68 @@ async () => {
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Pokémon Search App</h1>
-    <div class="container">
-      <form role="search" id="search-form">
-        <label for="search-input">Search for Pokémon Name or ID:</label>
-        <input type="text" name="pokemon" id="search-input" required />
-        <button id="search-button">Search</button>
-      </form>
-      <div class="output">
-        <div class="top-container">
-          <div class="name-and-id">
-            <span id="pokemon-name"></span>
-            <span id="pokemon-id"></span>
+    <main>
+      <img
+        class="freecodecamp-logo"
+        src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+        alt="freeCodeCamp Logo"
+      />
+      <h1>Pokémon Search App</h1>
+      <div class="container">
+        <form role="search" id="search-form">
+          <label for="search-input">Search for Pokémon Name or ID:</label>
+          <input type="text" name="pokemon" id="search-input" required />
+          <button id="search-button">Search</button>
+        </form>
+        <div class="output">
+          <div class="top-container">
+            <div class="name-and-id">
+              <span id="pokemon-name"></span>
+              <span id="pokemon-id"></span>
+            </div>
+            <div class="size">
+              <span id="weight"></span>
+              <span id="height"></span>
+            </div>
+            <div id="sprite-container" class="sprite-container"></div>
+            <div id="types"></div>
           </div>
-          <div class="size">
-            <span id="weight"></span>
-            <span id="height"></span>
+          <div class="bottom-container">
+            <table>
+              <tr>
+                <th>Base</th>
+                <th>Stats</th>
+              </tr>
+              <tr>
+                <td>HP:</td>
+                <td id="hp"></td>
+              </tr>
+              <tr>
+                <td>Attack:</td>
+                <td id="attack"></td>
+              </tr>
+              <tr>
+                <td>Defense:</td>
+                <td id="defense"></td>
+              </tr>
+              <tr>
+                <td>Sp. Attack:</td>
+                <td id="special-attack"></td>
+              </tr>
+              <tr>
+                <td>Sp. Defense:</td>
+                <td id="special-defense"></td>
+              </tr>
+              <tr>
+                <td>Speed:</td>
+                <td id="speed" class="speed"></td>
+              </tr>
+            </table>
           </div>
-          <div id="sprite-container" class="sprite-container"></div>
-          <div id="types"></div>
-        </div>
-        <div class="bottom-container">
-          <table>
-            <tr>
-              <th>Base</th>
-              <th>Stats</th>
-            </tr>
-            <tr>
-              <td>HP:</td>
-              <td id="hp"></td>
-            </tr>
-            <tr>
-              <td>Attack:</td>
-              <td id="attack"></td>
-            </tr>
-            <tr>
-              <td>Defense:</td>
-              <td id="defense"></td>
-            </tr>
-            <tr>
-              <td>Sp. Attack:</td>
-              <td id="special-attack"></td>
-            </tr>
-            <tr>
-              <td>Sp. Defense:</td>
-              <td id="special-defense"></td>
-            </tr>
-            <tr>
-              <td>Speed:</td>
-              <td id="speed" class="speed"></td>
-            </tr>
-          </table>
         </div>
       </div>
-    </div>
-    <script src="./script.js"></script>
+      <script src="./script.js"></script>
+    </main>
   </body>
 </html>
 ```
@@ -460,28 +467,36 @@ img {
 /* Project styling */
 
 body {
+  height: 100vh;
   font-family: sans-serif;
-  background-color: #0a0a23;
+  background-color: #1b1b32;
   color: #0a0a23;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.freecodecamp-logo {
+  height: 30px;
+  margin: 25px 0;
 }
 
 h1 {
-  color: #fff;
-  margin-top: 20px;
+  color: #f5f6f7;
   font-size: 1.7em;
   text-align: center;
 }
 
 .container {
   width: 325px;
-  margin: 30px 0;
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #fff;
+  margin: 25px 0;
+  background-color: #f5f6f7;
+  border: 1px solid #f5f6f7;
   border-radius: 15px;
   box-shadow: 10px 10px 0px 0px rgba(223, 220, 220, 0.75);
 }
@@ -515,7 +530,8 @@ label {
   width: 80px;
   border-radius: 20px;
   text-align: center;
-  background-color: #a230d7;
+  background-color: #7f21ab;
+  color: #f5f6f7;
   outline: none;
   border: none;
 }
@@ -587,17 +603,17 @@ table {
   border-spacing: 0;
   width: 100%;
   font-size: 1 rem;
-  color: #fff;
-  background-color: #a230d7;
+  color: #f5f6f7;
+  background-color: #7f21ab;
 }
 
 th:nth-child(even),
 td:nth-child(even) {
-  border-left: 5px solid #fff;
+  border-left: 5px solid #f5f6f7;
 }
 
 tr {
-  border-bottom: 5px solid #fff;
+  border-bottom: 5px solid #f5f6f7;
 }
 
 td,

@@ -204,7 +204,7 @@ assert.strictEqual(outputEl.innerText.trim(), 'MMMCMXCIX');
     <main>
       <img
         class="freecodecamp-logo"
-        src="https://cdn.freecodecamp.org/platform/universal/fcc_secondary.svg"
+        src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
         alt="freeCodeCamp Logo"
       />
       <h1>Roman Numeral Converter</h1>
@@ -246,14 +246,10 @@ assert.strictEqual(outputEl.innerText.trim(), 'MMMCMXCIX');
 body {
   min-height: 100vh;
   padding: 50px 20px;
-  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
   font-size: 18px;
-  background-color: #dfdfe2;
-  color: var(--gray-85);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  background-color: var(--gray-85);
+  color: var(--gray-05);
 }
 
 main {
@@ -272,17 +268,18 @@ h1 {
   text-align: center;
   margin: 20px auto;
   max-width: 350px;
-  font-family: "Castoro Titling", cursive;
+  font-family: 'Castoro Titling', cursive;
 }
 
 form {
-  color: white;
+  color: var(--gray-05);
   margin: auto 25px;
   padding: 15px auto;
-  border: 3px solid var(--gray-90);
+  border: 3px solid var(--gray-05);
   text-align: center;
   width: 90%;
-  background-color: var(--gray-85);
+  max-width: 500px;
+  background-color: var(--gray-75);
 }
 
 fieldset {
@@ -309,8 +306,7 @@ input {
   line-height: 1.4;
   color: white;
   background-color: var(--gray-90);
-  border-color: var(--gray-85);
-  border-radius: 0;
+  border: 1px solid var(--gray-05);
   outline: none;
   outline-style: none;
 }
@@ -329,13 +325,13 @@ button {
 
 .output {
   color: white;
-  background-color: var(--gray-85);
-  border: 3px solid var(--gray-90);
+  background-color: var(--gray-75);
+  border: 3px solid var(--gray-05);
   font-size: 2.5rem;
   width: 90%;
+  max-width: 500px;
   min-height: 55px;
   margin-top: 25px;
-  border-radius: 0;
   padding: 15px;
   overflow-wrap: break-word;
   text-align: center;
@@ -350,13 +346,6 @@ button {
 
 .hidden {
   display: none;
-}
-
-@media (min-width: 700px) {
-  form,
-  .output {
-    max-width: 450px;
-  }
 }
 ```
 
