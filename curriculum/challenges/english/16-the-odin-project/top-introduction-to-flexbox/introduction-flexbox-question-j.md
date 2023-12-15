@@ -12,7 +12,7 @@ Search through [our handbook](https://www.freecodecamp.org/news/the-css-flexbox-
 
 ## --text--
 
-Which properties are considered container elements?
+Which properties should only be used for flex container elements?
 
 ## --answers--
 
