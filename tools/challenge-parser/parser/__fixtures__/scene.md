@@ -1,40 +1,6 @@
----
-id: 6543aa3df5f028dba112f275
-title: Task 4
-challengeType: 22
-dashedName: task-4
----
-
-<!--
-AUDIO REFERENCE:
-Maria: Hello! You are the new graphic designer, right? I'm Maria, the team lead.
--->
-
 # --description--
 
-A `team lead` is a person who leads or manages a team. In the dialogue, Maria introduces herself as the team lead, meaning she has a leadership role.
-
-# --fillInTheBlank--
-
-## --sentence--
-
-`I'm Maria, the _ _.`
-
-## --blanks--
-
-`team`
-
-### --feedback--
-
-Focus on the term Maria used to describe herself.
-
----
-
-`lead`
-
-### --feedback--
-
-Focus on the term Maria used to describe herself.
+This challenge has a scene.
 
 # --scene--
 
@@ -64,8 +30,8 @@ Focus on the term Maria used to describe herself.
     },
     {
       "character": "Maria",
-      "startTime": 0.5,
-      "finishTime": 2.2,
+      "startTime": 0.7,
+      "finishTime": 2.4,
       "dialogue": {
         "text": "I'm Maria, the team lead.",
         "align": "center"
@@ -74,7 +40,7 @@ Focus on the term Maria used to describe herself.
     {
       "character": "Maria",
       "opacity": 0,
-      "startTime": 2.7
+      "startTime": 3.4
     }
   ]
 }
