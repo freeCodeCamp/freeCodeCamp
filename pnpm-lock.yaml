@@ -1292,8 +1292,8 @@ importers:
         specifier: 7.23.3
         version: 7.23.3(@babel/core@7.23.3)
       '@freecodecamp/curriculum-helpers':
-        specifier: 1.2.0
-        version: 1.2.0
+        specifier: 1.3.0
+        version: 1.3.0
       '@types/chai':
         specifier: 4.3.10
         version: 4.3.10
@@ -7024,8 +7024,8 @@ packages:
       react: 16.14.0
     dev: false
 
-  /@freecodecamp/curriculum-helpers@1.2.0:
-    resolution: {integrity: sha512-yPNO2ttsrDzmJ8dvtJM8Ycmh7WZTinnSnVNdSBZ/HtohkbzZS/B1ybZf8GsJc7GNQObhgxCex7TCRq07eNnYxA==}
+  /@freecodecamp/curriculum-helpers@1.3.0:
+    resolution: {integrity: sha512-NAMaeE1rOfr58n/MQWzgsoNi2z72/pnFwvJl+wBFJ6MUiCh+zcueksLllVgSpwSrnsEPYXen8K+T8oqfHWe0RQ==}
     engines: {npm: '>= 4.0.0'}
     dependencies:
       browserify: 17.0.0
