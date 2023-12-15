@@ -1,18 +1,194 @@
 {
-    "name": "Learn Conversation Starters in the Break Room",
-    "isUpcomingChange": true,
-    "dashedName": "learn-conversation-starters-in-the-break-room",
-    "order": 2,
-    "time": "5 hours",
-    "template": "",
-    "required": [],
-    "superBlock": "a2-english-for-developers",
-    "isBeta": true,
-    "challengeOrder": [
-      {
-        "id": "651dd5ae6ffb500e3f2ce47c",
-        "title": "Dialogue: Placeholder"
-      }
-    ],
-    "helpCategory": "HTML-CSS"
-  }
+  "name": "Learn Conversation Starters in the Break Room",
+  "isUpcomingChange": true,
+  "dashedName": "learn-conversation-starters-in-the-break-room",
+  "order": 2,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "a2-english-for-developers",
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "651dd5ae6ffb500e3f2ce47c",
+      "title": "Dialogue 1: Small Talk"
+    },
+    {
+      "id": "657b05367b59300bcb5f18ef",
+      "title": "Task 1"
+    },
+    {
+      "id": "657b068e28a3bd135ced0042",
+      "title": "Task 2"
+    },
+    {
+      "id": "657b08655966781abf6396ff",
+      "title": "Task 3"
+    },
+    {
+      "id": "657b0b0c01616c2382ee7dc1",
+      "title": "Task 4"
+    },
+    {
+      "id": "657b0cbc53235932265cbd9d",
+      "title": "Task 5"
+    },
+    {
+      "id": "657b130a905a6045ebe03214",
+      "title": "Task 6"
+    },
+    {
+      "id": "657b16a8bda80c524e49edd1",
+      "title": "Task 7"
+    },
+    {
+      "id": "657b1803cae7df58348e4e01",
+      "title": "Task 8"
+    },
+    {
+      "id": "657b190c4e736f5c4005b132",
+      "title": "Task 9"
+    },
+    {
+      "id": "657b1ae0c2fb4c64071ade7a",
+      "title": "Task 10"
+    },
+    {
+      "id": "657b207e8603d076272706b1",
+      "title": "Task 11"
+    },
+    {
+      "id": "657b23ad0df43588a6eadfa4",
+      "title": "Task 12"
+    },
+    {
+      "id": "657b24875b782f8c6c85472f",
+      "title": "Task 13"
+    },
+    {
+      "id": "657b24e5edd7708e93549565",
+      "title": "Task 14"
+    },
+    {
+      "id": "657b292a911788a7faf67415",
+      "title": "Task 15"
+    },
+    {
+      "id": "657b2d1876594db821b5da16",
+      "title": "Task 16"
+    },
+    {
+      "id": "657b2e9f139789bdd50116b5",
+      "title": "Task 17"
+    },
+    {
+      "id": "657b30777fcf90c40b9d7ca8",
+      "title": "Task 18"
+    },
+    {
+      "id": "657b3136477b8ac802088c97",
+      "title": "Dialogue 2: New Hobbies"
+    },
+    {
+      "id": "657b316b61644cc96b677e61",
+      "title": "Task 19"
+    },
+    {
+      "id": "657b5d1a53973f78997c02f6",
+      "title": "Task 20"
+    },
+    {
+      "id": "657b5d614d85dd79d21670de",
+      "title": "Task 21"
+    },
+    {
+      "id": "657b5dcd5d70d67c43f62d52",
+      "title": "Task 22"
+    },
+    {
+      "id": "657b5ee9cec5d47ffbf67d4f",
+      "title": "Task 23"
+    },
+    {
+      "id": "657b69203fa4839d4ed37d00",
+      "title": "Task 24"
+    },
+    {
+      "id": "657b69e10d6606a0185d4d4f",
+      "title": "Task 25"
+    },
+    {
+      "id": "657b6ea501ca10ae78922b0d",
+      "title": "Task 26"
+    },
+    {
+      "id": "657b6f641e5c3ab1afc6efc1",
+      "title": "Task 27"
+    },
+    {
+      "id": "657b703d0cd20eb51c2fd239",
+      "title": "Task 28"
+    },
+    {
+      "id": "657b70cc934e0ab83cab4dbe",
+      "title": "Task 29"
+    },
+    {
+      "id": "657b718282cd56bb91a795de",
+      "title": "Task 30"
+    },
+    {
+      "id": "657b72cbdef32ec0b1a24afb",
+      "title": "Task 31"
+    },
+    {
+      "id": "657b73ad321867c36c1c621d",
+      "title": "Task 32"
+    },
+    {
+      "id": "657b7acdc06454fbb0152538",
+      "title": "Task 33"
+    },
+    {
+      "id": "657b7bad0b215cff2128139a",
+      "title": "Task 34"
+    },
+    {
+      "id": "657b7d1aec6d4803cf02e84f",
+      "title": "Task 35"
+    },
+    {
+      "id": "657b7d76e9447705f7e5ceb8",
+      "title": "Task 36"
+    },
+    {
+      "id": "657b7e633c982f095101e6fe",
+      "title": "Task 37"
+    },
+    {
+      "id": "657b8278a00d27196af26c6c",
+      "title": "Task 38"
+    },
+    {
+      "id": "657b8487605c881dc8ebde9e",
+      "title": "Task 39"
+    },
+    {
+      "id": "657b8597aaa5162475812ff8",
+      "title": "Task 40"
+    },
+    {
+      "id": "657b92b25858f24caf6894aa",
+      "title": "Task 41"
+    },
+    {
+      "id": "657b971e15225e53da93afd3",
+      "title": "Task 42"
+    },
+    {
+      "id": "657b97be2621d55d1b8dc9a1",
+      "title": "Dialogue 3: Tom Asks About the Team Lead"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}
