@@ -308,9 +308,12 @@
     ],
     "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
     "blocks": {
-      "build-a-caesars-cipher-project": {
-        "title": "Build a Caesars Cipher Project",
-        "intro": ["", ""]
+      "build-a-pokemon-search-app-project": {
+        "title": "Build a Pokémon Search App Project",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a Pokémon search app."
+        ]
       },
       "build-a-cash-register-project": {
         "title": "Build a Cash Register Project",
