@@ -3,7 +3,6 @@ id: 656d1becadf67d05d5b27bab
 title: Task 147
 challengeType: 19
 dashedName: task-147
-audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 # --description--

@@ -3,7 +3,6 @@ id: 656ab31ebccec247fde7cee4
 title: Task 63
 challengeType: 22
 dashedName: task-63
-audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
