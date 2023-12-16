@@ -20,7 +20,7 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-`Well, she's very _______ and she likes everything in _____.`
+`Well, she's very _ and she likes everything in _.`
 
 ## --blanks--
 

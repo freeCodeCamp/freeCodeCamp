@@ -28,11 +28,15 @@ In the audio above there are two sentences that ask about interest. Which are th
 
 ### --feedback--
 
+The first sentence is correct, but the second one does not ask about interest. It's a statement.
+
 ---
 
 `What is the team’s favorite?` and `Many of us enjoy the monthly game night. `
 
 ### --feedback--
+
+The first sentence is asking for a favorite thing, not interest in an activity. The second sentence is a statement, not a question.
 
 ---
 
@@ -40,10 +44,12 @@ In the audio above there are two sentences that ask about interest. Which are th
 
 ### --feedback--
 
+The phrase `Are you going to board games?` is not grammatically correct. The second sentence is a question, but it's not about interest.
+
 ---
 
 `What is the team’s favorite?` and `Are you into playing board games?`
 
 ## --video-solution--
 
-1
+4

@@ -23,7 +23,7 @@ Listen to the audio to complete the sentence below.
 
 `Tom: Tell me about our team meetings, Sophie. Do they happen every week?`
 
-`Sophie: Yes, they ___. We have meetings on Monday mornings.`
+`Sophie: Yes, they _. We have meetings on Monday mornings.`
 
 ## --blanks--
 
