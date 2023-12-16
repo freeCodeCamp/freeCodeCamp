@@ -58,7 +58,12 @@ export const XtermTerminal = ({
 
         const done = () => {
           disposable?.dispose();
-          navigator.serviceWorker.controller?.postMessage(userinput);
+          navigator.serviceWorker.controller?.postMessage(
+            JSON.stringify({
+              type: 'msg',
+              value: userinput
+            })
+          );
         };
 
         const keyListener = (key: string) => {

@@ -47,7 +47,13 @@ async function setupPyodide() {
     request.open('POST', '/python/intercept-input/', false);
     request.send(null);
 
-    return request.responseText;
+    // We want to raise a KeyboardInterrupt if the user cancels. To do that,
+    // this function returns a JS object with the 'type' property set to
+    // 'cancel'. Then the python code can actually raise the exception.
+    return JSON.parse(request.responseText) as {
+      type: 'msg' | 'cancel';
+      value?: string;
+    };
   }
 
   // I tried setting jsglobals here, to provide 'input' and 'print' to python,
@@ -63,9 +69,17 @@ async function setupPyodide() {
   // TODO: use a fresh global object for each runPython call if we stop terminating
   // the worker when the user input changes. (See python-test-evaluator.ts)
   pyodide.runPython(`
-  import jscustom
-  from jscustom import print
-  from jscustom import input
+import jscustom
+from jscustom import print
+from jscustom import input
+def __wrap(func):
+  def fn(*args):
+    data = func(*args)
+    if data.type == 'cancel':
+      raise KeyboardInterrupt
+    return data.value
+  return fn
+input = __wrap(input)
 `);
 
   return pyodide;
