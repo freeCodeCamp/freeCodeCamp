@@ -10,7 +10,7 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 # --description--
 
-Adjectives can also describe how a person likes things to be done. In the dialogue, Sophie says Maria "likes everything in order," which means she prefers things to be organized and arranged well.
+Adjectives can also describe how a person likes things to be done. In the dialogue, Sophie says Maria `likes everything in order`, which means she prefers things to be organized and arranged well.
 
 # --instructions--
 

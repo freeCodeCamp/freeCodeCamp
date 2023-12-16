@@ -10,8 +10,9 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 # --description--
 
-The word `pics` is a short form of `pictures.` When you `take pics,` you are using your camera or cell phone to capture images.-
-The phrase `"lots of"` means a large quantity or a large number of something. 
+The word `pics` is a short form of `pictures.` When you `take pics,` you are using your camera or cell phone to capture images.
+
+The phrase `lots of` means a large quantity or a large number of something. 
 
 # --instructions--
 
@@ -21,7 +22,7 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-Hey, Tom! I saw you taking lots of _ with your cell phone outside the building. Are you into photography?
+`Hey, Tom! I saw you taking lots of _ with your cell phone outside the building. Are you into photography?`
 
 ## --blanks--
 

@@ -37,7 +37,7 @@ The dialogue suggests Tom expresses a desire to hear Sophie play.
 
 ### --feedback--
 
-`Don't` is not correct with "he"; it should be `doesn't.`
+`Don't` is not correct with `he`; it should be `doesn't.`
 
 ---
 

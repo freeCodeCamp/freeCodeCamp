@@ -6,11 +6,11 @@ dashedName: task-64
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
-<!-- (audio) Sophie: "She works from her office most of the time, but she's also in meetings a lot." -->
+<!-- (audio) Sophie: `She works from her office most of the time, but she's also in meetings a lot.` -->
 
 # --description--
 
-The phrase "most of the time" means usually or very often.
+The phrase `most of the time` means usually or very often.
 
 # --instructions--
 

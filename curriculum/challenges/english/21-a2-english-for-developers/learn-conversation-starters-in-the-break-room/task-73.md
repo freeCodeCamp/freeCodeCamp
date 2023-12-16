@@ -6,11 +6,11 @@ dashedName: task-73
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
-<!-- (audio) Sophie: "Maria thinks challenges are positive. She encourages us to find solutions together" -->
+<!-- (audio) Sophie: `Maria thinks challenges are positive. She encourages us to find solutions together` -->
 
 # --description--
 
-The verb "to think" is used to express an opinion or belief about something. It is what you do with your mind when you consider or have an opinion on something.
+The verb `to think` is used to express an opinion or belief about something. It is what you do with your mind when you consider or have an opinion on something.
 
 # --instructions--
 

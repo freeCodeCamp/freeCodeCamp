@@ -12,7 +12,7 @@ Tom: Yes, but I'm only practicing. I love it. -->
 
 # --description--
 
-In a conversation, when you agree with someone but want to add more information, you can use "Yes, but" to continue your point.
+In a conversation, when you agree with someone but want to add more information, you can use `Yes, but` to continue your point.
 
 # --instructions--
 

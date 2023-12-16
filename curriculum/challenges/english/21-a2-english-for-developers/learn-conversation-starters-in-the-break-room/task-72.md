@@ -7,13 +7,13 @@ dashedName: task-72
 
 # --description--
 
-To "handle" something in English means to manage or deal with a situation. When it comes to "pressure," handling pressure means dealing with stress or difficult situations in a calm and effective way.
+To `handle` something in English means to manage or deal with a situation. When it comes to `pressure,` handling pressure means dealing with stress or difficult situations in a calm and effective way.
 
 # --question--
 
 ## --text--
 
-What does it mean to "handle pressure" in a project?
+What does it mean to `handle pressure` in a project?
 
 ## --answers--
 

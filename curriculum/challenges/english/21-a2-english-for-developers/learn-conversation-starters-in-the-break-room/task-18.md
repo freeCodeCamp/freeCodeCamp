@@ -7,13 +7,13 @@ dashedName: task-18
 
 # --description--
 
-When someone says "That sounds like a plan," they mean they agree with the suggestion and think it's a good idea. It's like saying "Yes, let's do that."
+When someone says `That sounds like a plan,` they mean they agree with the suggestion and think it's a good idea. It's like saying `Yes, let's do that.`
 
 # --question--
 
 ## --text--
 
-What does "That sounds like a plan" mean?
+What does `That sounds like a plan` mean?
 
 ## --answers--
 

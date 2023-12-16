@@ -11,10 +11,9 @@ Tom: I like landscapes and street photography, mostly. -->
 
 # --description--
 
-When elaborating questions about a third person singular (he, she or it) you might need to uwe the auxiliary verb “does” 
+When elaborating questions about a third person singular (he, she or it) you might need to use the auxiliary verb `does` .
 
-For example: If Alice is curious about Sophie's hobbies and wants to ask Tom, she can say, `Does Sophie like hiking?` The word `does` is used here because the subject is `Sophie,` a third person singular. “Does" is used to form questions in the present simple tense for he, she, or it.
-
+For example: If Alice is curious about Sophie's hobbies and wants to ask Tom, she can say, `Does Sophie like hiking?` The word `does` is used here because the subject is `Sophie,` a third person singular. `Does` is used to form questions in the present simple tense for he, she, or it.
 
 # --question--
 

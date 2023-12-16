@@ -7,11 +7,11 @@ dashedName: task-59
 
 # --description--
 
-"Assign" means to give tasks to other people.
+`Assign` means to give tasks to other people.
 
-"Make sure" is a phrase used to express that you want to confirm something is done the right way.
+`Make sure` is a phrase used to express that you want to confirm something is done the right way.
 
-"Run well" is used when something is functioning well or is successful.
+`Run well` is used when something is functioning well or is successful.
 
 # --instructions--
 

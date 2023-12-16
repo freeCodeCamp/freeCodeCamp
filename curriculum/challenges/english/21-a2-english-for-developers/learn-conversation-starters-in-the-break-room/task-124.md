@@ -8,9 +8,9 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 # --description--
 
-"Bookstores" are shops that sell books, and "theaters" are places where you can watch live performances or movies.
+`Bookstores` are shops that sell books, and `theaters` are places where you can watch live performances or movies.
 
-When Tom asks about places for reading and watching performances, he uses the plural forms "bookstores" and "theaters" just by adding an "s" at the end of the word. This is how you make most nouns plural in English.
+When Tom asks about places for reading and watching performances, he uses the plural forms `bookstores` and `theaters` just by adding an `s` at the end of the word. This is how you make most nouns plural in English.
 
 # --fillInTheBlank--
 

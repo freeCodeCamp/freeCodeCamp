@@ -13,7 +13,7 @@ When you want to ask about someone's job or role, you use `what` with `do` to fo
 
 For example, you ask `What do you do?` to mean `What is your job?` 
 
-When talking about another person like Maria, you say `What does she do?` because `she` is a third person singular (she, he, it), and with these subjects, `do` changes to "does".
+When talking about another person like Maria, you say `What does she do?` because `she` is a third person singular (she, he, it), and with these subjects, `do` changes to `does`.
 
 # --instructions--
 

@@ -12,13 +12,13 @@ Tom: Yes, but I'm only practicing. I love it. -->
 
 # --description--
 
-In a conversation, when you agree with someone but want to add more information, you can use "Yes, but" to continue your point.
+In a conversation, when you agree with someone but want to add more information, you can use `Yes, but` to continue your point.
 
 # --question--
 
 ## --text--
 
-What does Tom mean when he says "Yes, but I'm only practicing"?
+What does Tom mean when he says `Yes, but I'm only practicing`?
 
 ## --answers--
 
@@ -26,7 +26,7 @@ He is a professional photographer.
 
 ### --feedback--
 
-"Practicing" usually means you're still learning, not that you're a professional.
+`Practicing` usually means you're still learning, not that you're a professional.
 
 ---
 

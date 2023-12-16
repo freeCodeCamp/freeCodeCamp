@@ -17,7 +17,7 @@ For example:
 Statement: She works as a Full Stack dev.
 
 Question: Does she work as a Full Stack dev?
-`work` stays as `work` and does not change to `works,` even when asking about a third person singular subject like `he,` "she," or `it.`
+`work` stays as `work` and does not change to `works,` even when asking about a third person singular subject like `he,` `she,` or `it.`
 
 
 # --question--

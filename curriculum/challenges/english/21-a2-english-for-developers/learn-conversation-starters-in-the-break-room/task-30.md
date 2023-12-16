@@ -16,9 +16,9 @@ For example: If you talk about Tom and photography you can say: `Tom takes photo
 
 For negative sentences, you can use `doesn't` followed by the base form of the verb. 
 
-You do not add `-s` or `-es.` because “does” is already conjugated (do+es) 
+You do not add `-s` or `-es.` because `does` is already conjugated (`do+es`).
 
-For example,if Tom doesn't do video recording as a hobby, you can say, "He doesn't record videos.".
+For example,if Tom doesn't do video recording as a hobby, you can say, `He doesn't record videos.`.
 
 Understanding this difference is crucial for talking about habits and actions accurately. Now, let's apply this understanding to what Sophie does in her free time.
 

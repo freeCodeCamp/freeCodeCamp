@@ -13,9 +13,9 @@ Sophie: I do. She is supportive and she helps us a lot. -->
 
 In this dialogue, Sophie says `yes` to Tom's question about liking to work with Maria, their team lead.
 
-Tom asks, `Do you enjoy working with her?` to say `yes` to a question that starts with "do", you can say `Yes, I do`. To say `no`, you can say `No, I don’t`.
+Tom asks, `Do you enjoy working with her?` to say `yes` to a question that starts with `do`, you can say `Yes, I do`. To say `no`, you can say `No, I don’t`.
 
- `I do` is a simple way to say `yes` in English.
+`I do` is a simple way to say `yes` in English.
 
 # --question--
 
