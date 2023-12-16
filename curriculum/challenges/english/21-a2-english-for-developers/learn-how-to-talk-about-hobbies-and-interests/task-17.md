@@ -1,0 +1,48 @@
+---
+id: 657d9d6b3838fa9030d5b9d8
+title: Task 17
+challengeType: 19
+dashedName: task-17
+---
+
+# --description--
+
+The expression `enjoy the most` is used to indicate one's preferred or favorite aspect of an activity.
+
+# --question--
+
+## --text--
+
+What does the phrase `enjoy the most` convey in this context?
+
+## --answers--
+
+a) Forced participation
+
+### --feedback--
+
+Forced participation suggests a lack of choice or willingness, which is not the focus in this context.
+
+---
+
+b) Casual interest
+
+### --feedback--
+
+Casual interest implies a mild or passing interest, which is not the case with Bob's photography passion.
+
+---
+
+c) Preferred aspect
+
+---
+
+d) Routine obligation
+
+### --feedback--
+
+Routine obligation suggests a sense of duty, which is not the case with Bob's photography passion.
+
+## --video-solution--
+
+3

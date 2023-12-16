@@ -10,8 +10,116 @@
   "isBeta": true,
   "challengeOrder": [
     {
-      "id": "655c1008a9659e8059217d76",
-      "title": "Dialogue: Placeholder"
+      "id": "657d4ea39262ba758c15bc1a",
+      "title": "Dialogue 1: An Interest in Photography"
+    },
+    {
+      "id": "657d50434d1a007661712182",
+      "title": "Task 1"
+    },
+    {
+      "id": "657d572d0a7e49837a3e63dc",
+      "title": "Task 2"
+    },
+    {
+      "id": "657d5a9cbf7f0e84f2ca16d7",
+      "title": "Task 3"
+    },
+    {
+      "id": "657d5b2d1fe085857b5083f2",
+      "title": "Task 4"
+    },
+    {
+      "id": "657d5c9008b25e85e95ce60b",
+      "title": "Task 5"
+    },
+    {
+      "id": "657d5dc51cf88187cbf7d27c",
+      "title": "Task 6"
+    },
+    {
+      "id": "657d5e32e50d15885265eb30",
+      "title": "Task 7"
+    },
+    {
+      "id": "657d5eafe5e79d88d2b6328e",
+      "title": "Task 8"
+    },
+    {
+      "id": "657d6008a37af78962d30873",
+      "title": "Task 9"
+    },
+    {
+      "id": "657d777c3a22758abc00a183",
+      "title": "Task 10"
+    },
+    {
+      "id": "657d7892712a078b33d7e8a7",
+      "title": "Task 11"
+    },
+    {
+      "id": "657d791a78ae2a8bb7416ad7",
+      "title": "Task 12"
+    },
+    {
+      "id": "657d7a4ad41e438c5be0a138",
+      "title": "Task 13"
+    },
+    {
+      "id": "657d7b217b77cf8cf1969713",
+      "title": "Task 14"
+    },
+    {
+      "id": "657d9af10739f78d5401ad1d",
+      "title": "Task 15"
+    },
+    {
+      "id": "657d9b88332ce98fc894db2c",
+      "title": "Task 16"
+    },
+    {
+      "id": "657d9d6b3838fa9030d5b9d8",
+      "title": "Task 17"
+    },
+    {
+      "id": "657d9dbe3f6a1b90f79d81f2",
+      "title": "Task 18"
+    },
+    {
+      "id": "657d9e7fd1b3fa915c3c1401",
+      "title": "Task 19"
+    },
+    {
+      "id": "657d9eed9f6a5a91c7c5f210",
+      "title": "Task 20"
+    },
+    {
+      "id": "657d9f77e8d77292246e5679",
+      "title": "Task 21"
+    },
+    {
+      "id": "657da01f0bb64c927f6d84c3",
+      "title": "Task 22"
+    },
+    {
+      "id": "657da0838dfc7992f94c7df9",
+      "title": "Task 23"
+    },
+    {
+      "id": "657da0ec9f3a5a936a6cd54d",
+      "title": "Task 24"
+    },
+    {
+      "id": "657da1d38bf3e693eb579be9",
+      "title": "Task 25"
+    },
+    {
+      "id": "657da2e3cf29239535791805",
+      "title": "Dialogue 2: The Bike Rider"
+    },
+    {
+      "id": "657da34294cbf695b2bfe889",
+      "title": "Task 26"
     }
   ],
   "helpCategory": "HTML-CSS"
