@@ -1,5 +1,4 @@
-import { Button } from '@freecodecamp/react-bootstrap';
-import { Dropdown, MenuItem } from '@freecodecamp/ui';
+import { Dropdown, MenuItem, Button } from '@freecodecamp/ui';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
@@ -77,7 +76,7 @@ function ToolPanel({
       <Button
         aria-label='Run the tests use shortcut Ctrl+enter'
         block={true}
-        bsStyle='primary'
+        variant='primary'
         onClick={handleRunTests}
       >
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
@@ -85,21 +84,15 @@ function ToolPanel({
       {isSignedIn && challengeType === challengeTypes.multifileCertProject && (
         <Button
           block={true}
-          bsStyle='primary'
+          variant='primary'
           data-cy='save-code-to-database-btn'
-          className='btn-invert'
           onClick={saveChallenge}
         >
           {isMobile ? t('buttons.save') : t('buttons.save-code')}
         </Button>
       )}
       {challengeType !== challengeTypes.multifileCertProject && (
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          onClick={openResetModal}
-        >
+        <Button block={true} variant='primary' onClick={openResetModal}>
           {isMobile ? t('buttons.reset') : t('buttons.reset-lesson')}
         </Button>
       )}
