@@ -32,6 +32,7 @@ import { isChallengeCompletedSelector } from '../redux/selectors';
 // Styles
 import '../video.css';
 import './show.css';
+import Scene from '../components/scene/scene';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -254,7 +255,8 @@ class ShowFillInTheBlank extends Component<
             translationPending,
             fields: { blockName },
             fillInTheBlank: { sentence, blanks },
-            audioPath
+            audioPath,
+            scene
           }
         }
       },
@@ -312,12 +314,19 @@ class ShowFillInTheBlank extends Component<
                     </audio>
                   </>
                 )}
+              </Col>
+
+              {scene && <Scene scene={scene} />}
+
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
                 <PrismFormatted text={instructions} />
                 <Spacer size='medium' />
                 <h2>{t('learn.fill-in-the-blank')}</h2>
                 <Spacer size='small' />
-                <ObserveKeys>
+                {/* what we want to observe is ctrl/cmd + enter, but ObserveKeys is buggy and throws an error
+                if it encounters a key combination, so we have to pass in the individual keys to observe */}
+                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
                   <div>
                     <p>
                       {splitSentence.map((s, i) => {
@@ -426,6 +435,43 @@ export const query = graphql`
           blanks {
             answer
             feedback
+          }
+        }
+        scene {
+          setup {
+            background
+            characters {
+              character
+              position {
+                x
+                y
+                z
+              }
+              opacity
+            }
+            audio {
+              filename
+              startTime
+              startTimestamp
+              finishTimestamp
+            }
+            alwaysShowDialogue
+          }
+          commands {
+            background
+            character
+            position {
+              x
+              y
+              z
+            }
+            opacity
+            startTime
+            finishTime
+            dialogue {
+              text
+              align
+            }
           }
         }
         translationPending

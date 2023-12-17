@@ -192,3 +192,53 @@ textarea.inputarea {
 .hint-status {
   margin-bottom: 18px;
 }
+
+/* overwriting default arrow styles for accessibility */
+:root {
+  --monaco-scrollbar-arrow-box-size: 0;
+  --monaco-scrollbar-arrow-icon-top-bottom: 0;
+  --monaco-scrollbar-arrow-icon-left: 0;
+  --monaco-scrollbar-arrow-icon-size: 11px;
+  --monaco-scrollbar-arrow-icon-font-size: 11px;
+}
+
+/* z-index is needed for arrox box and icons because the scrollbar may
+   overlap the arrow buttons when zoomed in */
+
+/* arrow box - by default the width is the same as the scrollbar,
+   so we only need to ajdust the height */
+.vs .monaco-scrollable-element .scrollbar .arrow-background {
+  height: var(--monaco-scrollbar-arrow-box-size) !important;
+  background-color: #666;
+  z-index: 998;
+}
+
+/* arrow icons - includes both up and down */
+.vs .monaco-scrollable-element .scrollbar .scra {
+  top: var(--monaco-scrollbar-arrow-icon-top-bottom) !important;
+  left: var(--monaco-scrollbar-arrow-icon-left) !important;
+  width: var(--monaco-scrollbar-arrow-icon-size) !important;
+  height: var(--monaco-scrollbar-arrow-icon-size) !important;
+  font-size: var(--monaco-scrollbar-arrow-icon-font-size) !important;
+  color: white;
+  z-index: 999;
+}
+
+/* down arrow icon only */
+.vs .monaco-scrollable-element .scrollbar .codicon-scrollbar-button-down {
+  top: unset !important;
+  bottom: var(--monaco-scrollbar-arrow-icon-top-bottom) !important;
+}
+
+/* we can live with with no color change for hover state if browser doesn't
+   support :has (the mouse cursor will still change to pointer) */
+@supports (selector(html:has(body))) {
+  .vs .monaco-scrollable-element .scrollbar .arrow-background:hover,
+  .vs
+    .monaco-scrollable-element
+    .scrollbar
+    .arrow-background:has(+ .codicon:hover) {
+    cursor: pointer;
+    background-color: #222 !important;
+  }
+}

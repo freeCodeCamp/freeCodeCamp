@@ -36,7 +36,8 @@ const MediumClasses = {
   4: 'min-[992px]:w-1/3',
   6: 'min-[992px]:w-1/2',
   8: 'min-[992px]:w-2/3',
-  10: 'min-[992px]:w-5/6'
+  10: 'min-[992px]:w-5/6',
+  12: 'min-[992px]:w-full'
 };
 
 const MediumOffsetClasses = {

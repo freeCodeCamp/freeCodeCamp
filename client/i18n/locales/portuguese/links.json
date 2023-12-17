@@ -21,7 +21,8 @@
   "nav": {
     "contribute": "https://contribute.freecodecamp.org/#/i18n/portuguese/index",
     "forum": "https://forum.freecodecamp.org/c/portugues/",
-    "news": "https://freecodecamp.org/portuguese/news/"
+    "news": "https://freecodecamp.org/portuguese/news/",
+    "podcast": "https://freecodecamp.libsyn.com/"
   },
   "help": {
     "HTML-CSS": "Portugues/HTML-CSS",
