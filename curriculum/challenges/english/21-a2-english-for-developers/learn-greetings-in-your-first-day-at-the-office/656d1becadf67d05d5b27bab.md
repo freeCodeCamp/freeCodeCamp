@@ -56,3 +56,71 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
 ## --video-solution--
 
 4
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "cafe.png",
+    "characters": [
+      {
+        "character": "Sophie",
+        "position": { "x": 50, "y": 0, "z": 1.4 },
+        "opacity": 0
+      },
+      {
+        "character": "Brian",
+        "position": { "x": 75, "y": 15, "z": 1.2 },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "1.1-4.mp3",
+      "startTime": 1,
+      "startTimestamp": 22.84,
+      "finishTimestamp": 28.16
+    }
+  },
+  "commands": [
+    {
+      "character": "Sophie",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Brian",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Sophie",
+      "startTime": 1,
+      "finishTime": 1.44,
+      "dialogue": {
+        "text": "Oh, come on, Brian.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Brian",
+      "startTime": 2,
+      "finishTime": 7.25,
+      "dialogue": {
+        "text": "But it's true. She's the person to go to if you need help.",
+        "align": "right"
+      }
+    },
+    {
+      "character": "Sophie",
+      "opacity": 0,
+      "startTime": 7.75
+    },
+    {
+      "character": "Brian",
+      "opacity": 0,
+      "startTime": 7.75
+    }
+  ]
+}
+```
