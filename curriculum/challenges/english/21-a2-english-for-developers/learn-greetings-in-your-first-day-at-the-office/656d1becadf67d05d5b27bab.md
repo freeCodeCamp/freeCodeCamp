@@ -9,7 +9,7 @@ dashedName: task-147
 
 Just like when you learned about the pronoun `he`, pronouns like `she` are used to refer to female individuals. They help avoid repetition in conversation. Look at this part of the dialogue:
 
-Sophie: `Oh, c'mon, Brian!`
+Sophie: `Oh, come on, Brian!`
 
 Brian: `But it is true. She's the person to go to if you need help!`
 
@@ -66,7 +66,7 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
     "characters": [
       {
         "character": "Sophie",
-        "position": { "x": 50, "y": 0, "z": 1.4 },
+        "position": { "x": 25, "y": 0, "z": 1.3 },
         "opacity": 0
       },
       {
@@ -78,7 +78,7 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
     "audio": {
       "filename": "1.1-4.mp3",
       "startTime": 1,
-      "startTimestamp": 22.84,
+      "startTimestamp": 22.6,
       "finishTimestamp": 28.16
     }
   },
@@ -96,16 +96,16 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
     {
       "character": "Sophie",
       "startTime": 1,
-      "finishTime": 1.44,
+      "finishTime": 2.4,
       "dialogue": {
         "text": "Oh, come on, Brian.",
-        "align": "center"
+        "align": "left"
       }
     },
     {
       "character": "Brian",
-      "startTime": 2,
-      "finishTime": 7.25,
+      "startTime": 3.3,
+      "finishTime": 6.35,
       "dialogue": {
         "text": "But it's true. She's the person to go to if you need help.",
         "align": "right"
@@ -114,12 +114,12 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
     {
       "character": "Sophie",
       "opacity": 0,
-      "startTime": 7.75
+      "startTime": 6.85
     },
     {
       "character": "Brian",
       "opacity": 0,
-      "startTime": 7.75
+      "startTime": 6.85
     }
   ]
 }
