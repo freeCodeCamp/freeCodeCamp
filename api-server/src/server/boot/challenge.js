@@ -405,11 +405,6 @@ export async function modernChallengeCompleted(req, res, next) {
       return next(err);
     }
 
-    user.hasWebHook = true;
-    user.webHookUrl = user.webHookUrl || 'http://localhost:9000/freecodecamp';
-    console.log('***********WEBHOOK***********');
-    console.log(user.webHookUrl);
-
     if (user.hasWebHook) {
       // emit webhook here
       fetch(user.webHookUrl, {
