@@ -17,7 +17,7 @@ Complete the sentence below.
 
 ## --sentence--
 
-`In the morning, I ___ check the security cameras.`
+`In the morning, I _ check the security cameras.`
 
 ## --blanks--
 

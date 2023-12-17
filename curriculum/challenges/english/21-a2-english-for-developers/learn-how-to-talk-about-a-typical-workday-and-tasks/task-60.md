@@ -14,7 +14,7 @@ Listen to the audio and complete the sentence below.
 
 ## --sentence--
 
-`I see. ___ else on your checklist?`
+`I see. _ else on your checklist?`
 
 ## --blanks--
 

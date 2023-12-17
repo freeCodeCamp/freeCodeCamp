@@ -16,7 +16,7 @@ Listen to the audio and complete the sentence below.
 
 ## --sentence--
 
-`Is it really ___?`
+`Is it really _?`
 
 ## --blanks--
 

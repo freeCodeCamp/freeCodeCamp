@@ -18,7 +18,7 @@ For example, `What else do you like to do?` asks for more hobbies or activities 
 
 ## --sentence--
 
-`What a responsibility. What ___ do you do?`
+`What a responsibility. What _ do you do?`
 
 ## --blanks--
 

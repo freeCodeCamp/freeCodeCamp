@@ -24,11 +24,11 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-`James: Hey, Linda. Today, I want to talk to you about ___ and the obligations we have in our daily tasks.`
+`James: Hey, Linda. Today, I want to talk to you about_ and the obligations we have in our daily tasks.`
 
-`Linda: Hey, James. So what is the ___ of “compliance”. Can you tell me?`
+`Linda: Hey, James. So what is the _ of “compliance”. Can you tell me?`
 
-`James: Of course. Compliance is when we put specific ___, ___, and ___ that are important to our ___ to practice. It helps promote ___ at the workplace.`
+`James: Of course. Compliance is when we put specific _, _, and _ that are important to our _ to practice. It helps promote _ at the workplace.`
 
 ## --blanks--
 

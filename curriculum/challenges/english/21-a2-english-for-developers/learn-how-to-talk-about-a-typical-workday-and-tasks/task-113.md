@@ -22,7 +22,7 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-`___ I find the work challenging. Let me tell you how my week ___ goes.`
+`_ I find the work challenging. Let me tell you how my week _ goes.`
 
 ## --blanks--
 

@@ -51,5 +51,3 @@ Brian looks at his emails to see if there are any important ones.
 ### --feedback--
 
 Brian responds to the emails that need immediate attention.
-
----

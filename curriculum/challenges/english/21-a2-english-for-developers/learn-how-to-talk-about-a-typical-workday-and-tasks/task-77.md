@@ -18,7 +18,7 @@ You can ask this in different ways, like `What does [word] mean?`, `what is the 
 
 ## --sentence--
 
-`Hey, James. So what is the ___ of "compliance". Can you tell me?`
+`Hey, James. So what is the _ of "compliance". Can you tell me?`
 
 ## --blanks--
 

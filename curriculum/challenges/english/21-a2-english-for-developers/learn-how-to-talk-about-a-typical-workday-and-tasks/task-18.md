@@ -21,7 +21,7 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 ## --sentence--
 
-`I take short breaks to _____, have some _____, or _____ with colleagues.`
+`I take short breaks to _, have some _, or _ with colleagues.`
 
 ## --blanks--
 

@@ -14,7 +14,7 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-`These are a lot of ___, Jake.`
+`These are a lot of _, Jake.`
 
 ## --blanks--
 

@@ -14,7 +14,7 @@ Pay attention to how the acronym of `Quality Assurance`is pronounced in the dial
 
 ## --sentence--
 
-`Hey, Sarah! How's work as a ____ tester? Is it really challenging?`
+`Hey, Sarah! How's work as a _ tester? Is it really challenging?`
 
 ## --blanks--
 
