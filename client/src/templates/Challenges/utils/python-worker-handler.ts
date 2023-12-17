@@ -5,7 +5,6 @@ const pythonWorkerSrc = `/js/${pythonWorkerData.filename}.js`;
 let worker: Worker | null = null;
 let testWorker: Worker | null = null;
 let listener: ((event: MessageEvent) => void) | null = null;
-let resetTerminal: (() => void) | null = null;
 
 export function getPythonWorker(): Worker {
   if (!worker) {
@@ -23,8 +22,8 @@ export function getPythonTestWorker(): Worker {
 
 type PythonWorkerEvent = {
   data: {
-    type: 'print' | 'input' | 'contentLoaded';
-    text: string;
+    type: 'print' | 'input' | 'contentLoaded' | 'reset';
+    text?: string;
   };
 };
 
@@ -35,13 +34,11 @@ type PythonWorkerEvent = {
  * @param handlers.input - A function that handles input messages from the python worker
  * @param reset - A function that resets the terminal
  */
-export function registerTerminal(
-  handlers: {
-    print: (text: string) => void;
-    input: (text: string) => void;
-  },
-  reset: () => void
-): void {
+export function registerTerminal(handlers: {
+  print: (text?: string) => void;
+  input: (text?: string) => void;
+  reset: () => void;
+}): void {
   const pythonWorker = getPythonWorker();
   if (listener) pythonWorker.removeEventListener('message', listener);
   listener = (event: PythonWorkerEvent) => {
@@ -51,15 +48,19 @@ export function registerTerminal(
     handlers[type](text);
   };
   pythonWorker.addEventListener('message', listener);
-  resetTerminal = reset;
 }
 
 /**
  * Terminates the existing python worker and creates a new one.
  */
 export function resetPythonWorker(): void {
-  if (resetTerminal) resetTerminal();
-  worker?.terminate();
-  worker = new Worker(pythonWorkerSrc);
-  if (listener) worker.addEventListener('message', listener);
+  navigator.serviceWorker.controller?.postMessage(
+    JSON.stringify({
+      type: 'cancel'
+    })
+  );
+  // if (resetTerminal) resetTerminal();
+  // worker?.terminate();
+  // worker = new Worker(pythonWorkerSrc);
+  // if (listener) worker.addEventListener('message', listener);
 }

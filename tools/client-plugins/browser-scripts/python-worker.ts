@@ -2,6 +2,7 @@
 // and 'import' defaults to .mjs
 import { loadPyodide, type PyodideInterface } from 'pyodide/pyodide.js';
 import pkg from 'pyodide/package.json';
+import { type PythonError } from 'pyodide/ffi';
 
 const ctx: Worker & typeof globalThis = self as unknown as Worker &
   typeof globalThis;
@@ -91,5 +92,13 @@ ctx.onmessage = async (e: PythonRunEvent) => {
   const code = (e.data.code.contents || '').slice();
   const pyodide = await setupPyodide();
   // use pyodide.runPythonAsync if we want top-level await
-  pyodide.runPython(code);
+  try {
+    pyodide.runPython(code);
+  } catch (e) {
+    const err = e as PythonError;
+    console.error(e);
+    if (err.type === 'KeyboardInterrupt') {
+      postMessage({ type: 'reset' });
+    }
+  }
 };
