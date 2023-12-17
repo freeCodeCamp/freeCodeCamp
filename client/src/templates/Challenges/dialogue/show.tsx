@@ -216,7 +216,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
                 <Spacer size='medium' />
               </Col>
 
-              <Scene scene={scene} />
+              {scene && <Scene scene={scene} />}
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ObserveKeys>
