@@ -11,7 +11,7 @@
   "challengeOrder": [
     {
       "id": "651dd5a46ffb500e3f2ce47b",
-      "title": "Dialogue: Placeholder"
+      "title": "Dialogue 1: A Mobile Developer Joins the Team"
     },
     {
       "id": "657b2296130e541911943345",
@@ -292,6 +292,74 @@
     {
       "id": "657daf702ed04a29ee42de69",
       "title": "Task 68"
+    },
+    {
+      "id": "657df21cc45b1f66112fb8fc",
+      "title": "Task 69"
+    },
+    {
+      "id": "657df2b22d7649667734d71e",
+      "title": "Task 70"
+    },
+    {
+      "id": "657df30a140de766c3896294",
+      "title": "Task 71"
+    },
+    {
+      "id": "657df39e98ace1673de4c399",
+      "title": "Task 72"
+    },
+    {
+      "id": "657df429a575a6679e72d48f",
+      "title": "Task 73"
+    },
+    {
+      "id": "657df4ff04eed86814093f0f",
+      "title": "Dialogue 4: A Training Session"
+    },
+    {
+      "id": "657df5d14291b56887825276",
+      "title": "Task 74"
+    },
+    {
+      "id": "657df6018a70e468f5dc016a",
+      "title": "Task 75"
+    },
+    {
+      "id": "657e3c159dc94c6e33ba6115",
+      "title": "Task 76"
+    },
+    {
+      "id": "657e3ca1c4d9636e9012e1a9",
+      "title": "Task 77"
+    },
+    {
+      "id": "657e3dc46c5a816f0b12fb76",
+      "title": "Task 78"
+    },
+    {
+      "id": "657e3ec58a1c706fb201d719",
+      "title": "Task 79"
+    },
+    {
+      "id": "657e408c387898706d4c1b46",
+      "title": "Task 80"
+    },
+    {
+      "id": "657e4173056b4771208c184d",
+      "title": "Task 81"
+    },
+    {
+      "id": "657e421f8d8e9871a83cda7f",
+      "title": "Task 82"
+    },
+    {
+      "id": "657e428ed1d56c720561e571",
+      "title": "Task 83"
+    },
+    {
+      "id": "657e42d9cf8693725896cc49",
+      "title": "Task 84"
     }
   ],
   "helpCategory": "HTML-CSS"
