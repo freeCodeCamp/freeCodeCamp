@@ -7,7 +7,7 @@ dashedName: step-7
 
 # --description--
 
-Add an `else` statement on the same level as the existing `if` statement inside the `for` loop.  Add characters that are already in lowercase to the list of converted characters inside the body of the `else` statement.
+Add an `else` clause on the same level as the existing `if` statement inside the `for` loop.  Add characters that are already in lowercase to the list of converted characters inside the body of the `else` clause.
 
 # --hints--
 
