@@ -11,6 +11,7 @@ let pyodide: PyodideInterface;
 
 interface PythonRunEvent extends MessageEvent {
   data: {
+    type: 'run';
     code: {
       contents: string;
       editableContents: string;
@@ -18,6 +19,19 @@ interface PythonRunEvent extends MessageEvent {
     };
   };
 }
+
+interface ListenRequestEvent extends MessageEvent {
+  data: {
+    type: 'listen';
+  };
+}
+
+// Since messages are buffered, it needs to be possible to discard 'run'
+// messages. Otherwise messages could build up while the worker is busy (for
+// example, while loading pyodide) and the work would try to process them in
+// sequence. Instead, it will ignore messages until it receives a 'listen'
+// message and will inform the client every time it starts ignoring messages.
+let ignoreRunMessages = true;
 
 async function setupPyodide() {
   if (pyodide) return pyodide;
@@ -83,14 +97,30 @@ def __wrap(func):
 input = __wrap(input)
 `);
 
-  return pyodide;
+  ignoreRunMessages = true;
+  postMessage({ type: 'stopped' });
 }
 
 void setupPyodide();
 
-ctx.onmessage = async (e: PythonRunEvent) => {
-  const code = (e.data.code.contents || '').slice();
-  const pyodide = await setupPyodide();
+ctx.onmessage = (e: PythonRunEvent | ListenRequestEvent) => {
+  const { data } = e;
+  if (data.type === 'listen') {
+    handleListenRequest();
+  } else {
+    handleRunRequest(data);
+  }
+};
+
+function handleListenRequest() {
+  ignoreRunMessages = false;
+}
+
+function handleRunRequest(data: PythonRunEvent['data']) {
+  if (ignoreRunMessages) return;
+  const code = (data.code.contents || '').slice();
+  postMessage({ type: 'reset' });
+
   // use pyodide.runPythonAsync if we want top-level await
   try {
     pyodide.runPython(code);
@@ -98,7 +128,8 @@ ctx.onmessage = async (e: PythonRunEvent) => {
     const err = e as PythonError;
     console.error(e);
     if (err.type === 'KeyboardInterrupt') {
-      postMessage({ type: 'reset' });
+      ignoreRunMessages = true;
+      postMessage({ type: 'stopped' });
     }
   }
-};
+}
