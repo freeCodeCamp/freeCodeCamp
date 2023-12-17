@@ -1,0 +1,54 @@
+---
+id: 657e76d866ebcec0e44d0748
+title: Task 29
+challengeType: 19
+dashedName: task-29
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+---
+
+<!--
+AUDIO REFERENCE: 
+Jake: That's fantastic. I want to get into cycling, too. I haven't been on a bike since I was a kid. I probably even forgot how to do it.
+-->
+
+# --description--
+
+In the Present Perfect Continuous Tense, negative sentences are formed by adding `not` after the auxiliary verb `have`. This structure is used to express the absence of an action or situation. In this dialogue, Jake mentions the lack of his experience in cycling since childhood.
+
+# --question--
+
+## --text--
+
+Select the correct sentence that represents a negative statement in the Present Perfect Continuous Tense.
+
+## --answers--
+
+`I have been on a bike since I was a kid.`
+
+### --feedback--
+
+The sentence is positive, not negative.
+
+---
+
+`I haven't been on a bike since I was a kid.`
+
+---
+
+`I have been on a bike when I was a kid.`
+
+### --feedback--
+
+The sentence structure is not correct for expressing the absence of an action or situation.
+
+---
+
+`I haven't been on a bike for I was a kid.`
+
+### --feedback--
+
+The sentence structure is not correct for expressing the absence of an action or situation.
+
+## --video-solution--
+
+2
