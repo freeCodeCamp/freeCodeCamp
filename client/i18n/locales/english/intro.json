@@ -557,10 +557,7 @@
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
       },
-      "d3-dashboard": {
-        "title": "D3 Dashboard",
-        "intro": ["", ""]
-      }
+      "d3-dashboard": { "title": "D3 Dashboard", "intro": ["", ""] }
     }
   },
   "relational-database": {
@@ -1226,6 +1223,10 @@
       "upcoming-python-project": {
         "title": "Upcoming Python Project",
         "intro": ["placeholder"]
+      },
+      "learn-list-comprehension-by-building-a-case-converter-program": {
+        "title": "Learn Python List Comprehension By Building a Case Converter Program",
+        "intro": ["", ""]
       }
     }
   },

@@ -1,0 +1,33 @@
+{
+  "name": "Learn Python List Comprehension By Building a Case Converter Program",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-list-comprehension-by-building-a-case-converter-program",
+  "order": 42,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "upcoming-python",
+  "superOrder": 20,
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "657e928716b77b2277980276",
+      "title": "Step 1"
+    },
+    {
+      "id": "657ed53c19461d4b95c4757a",
+      "title": "Step 2"
+    },
+    {
+      "id": "657ee28cefc4945568287673",
+      "title": "Step 3"
+    },
+    {
+      "id": "657ef2a86d4e545cec9a85fb",
+      "title": "Step 4"
+    }
+  ],
+  "helpCategory": "Python"
+}
