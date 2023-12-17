@@ -7,15 +7,15 @@ dashedName: task-98
 
 # --description--
 
-A "security breach" is when someone gets unauthorized access to a system or data. This can be a big problem in workplaces, especially when it involves private information. 
+A `security breach` is when someone gets unauthorized access to a system or data. This can be a big problem in workplaces, especially when it involves private information. 
 
-For example: "A security breach occurred when an outsider accessed confidential files."
+For example: `A security breach occurred when an outsider accessed confidential files.`
 
 # --question--
 
 ## --text--
 
-What is a 'security breach'?
+What is a `security breach`?
 
 ## --answers--
 

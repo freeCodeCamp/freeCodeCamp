@@ -10,7 +10,7 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 Understanding specific vocabulary related to a profession, like web development, is crucial.
 
-Terms like `coding,` "test the websites," and `debug issues` are common in this field.
+Terms like `coding`, `test the websites`, and `debug issues` are common in this field.
 
 `Coding` refers to writing computer code, `testing websites` means checking if a website works correctly, and `debugging` is about finding and fixing errors in the code.
 

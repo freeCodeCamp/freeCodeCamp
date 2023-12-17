@@ -10,9 +10,9 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-
 
 # --description--
 
-Understanding job obligations involves knowing what tasks are required in a specific role. Words like "must" often indicate these essential duties. 
+Understanding job obligations involves knowing what tasks are required in a specific role. Words like `must` often indicate these essential duties. 
 
-For example, "In my job, I must ensure customer safety" shows a key responsibility.
+For example, `In my job, I must ensure customer safety` shows a key responsibility.
 
 # --question--
 

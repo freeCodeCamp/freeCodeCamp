@@ -7,13 +7,13 @@ dashedName: task-92
 
 # --description--
 
-To "promote ethics" means to encourage good and honest behavior in a workplace. Ethics are important moral rules that help people decide what is right. For example: "Companies promote ethics to ensure fairness and honesty among employees."
+To `promote ethics` means to encourage good and honest behavior in a workplace. Ethics are important moral rules that help people decide what is right. For example: `Companies promote ethics to ensure fairness and honesty among employees.`
 
 # --question--
 
 ## --text--
 
-What does it mean 'to promote ethics' at work?
+What does it mean `to promote ethics` at work?
 
 ## --answers--
 

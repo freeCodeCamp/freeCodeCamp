@@ -10,11 +10,11 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 # --description--
 
-"Entrances" are the places where you can enter a building or an area, while "exits" are where you can leave. 
+`Entrances` are the places where you can enter a building or an area, while `exits` are where you can leave. 
 
 These terms are important in security to control and monitor the movement of people. 
 
-For instance, "The security guard monitors the main entrance to the office."
+For instance, `The security guard monitors the main entrance to the office.`
 
 
 # --question--

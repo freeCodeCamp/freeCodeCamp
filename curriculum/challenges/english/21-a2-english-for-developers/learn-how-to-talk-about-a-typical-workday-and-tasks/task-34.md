@@ -15,7 +15,7 @@ Anna: You have a one-hour lunch break around noon every day. Bring your lunch or
 
 Understanding daily work activities and the frequency of these activities is key in professional settings. 
 
-For example, "I usually attend a team meeting in the morning," means that attending the meeting is a regular part of the morning routine.
+For example, `I usually attend a team meeting in the morning,` means that attending the meeting is a regular part of the morning routine.
 
 # --instructions--
 

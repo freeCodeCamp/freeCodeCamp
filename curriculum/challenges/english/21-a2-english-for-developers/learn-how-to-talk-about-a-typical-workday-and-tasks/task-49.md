@@ -17,7 +17,7 @@ Jake: No, not that much. In the morning, I must check the security cameras and b
 For example, `I check the list twice to be sure I have everything.` 
 
 `To work properly` means to function correctly or as expected. 
-Example: "It's important that all machines work properly for safety."
+Example: `It's important that all machines work properly for safety.`
 
 # --instructions--
 

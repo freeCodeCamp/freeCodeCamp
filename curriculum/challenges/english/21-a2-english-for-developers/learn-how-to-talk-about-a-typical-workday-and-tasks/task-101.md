@@ -12,7 +12,7 @@ James: Absolutely. If you see any security breaches or incidents, you have to re
 
 # --description--
 
-In conversations, especially about rules or procedures at work, "every" and "any" are used to talk about different situations. "Every" is about all items in a group, while "any" often refers to one or more items in questions or negative sentences.
+In conversations, especially about rules or procedures at work, `every` and `any` are used to talk about different situations. `Every` is about all items in a group, while `any` often refers to one or more items in questions or negative sentences.
 
 # --instructions--
 

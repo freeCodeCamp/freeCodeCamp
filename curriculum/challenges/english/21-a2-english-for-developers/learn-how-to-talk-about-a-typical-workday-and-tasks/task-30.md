@@ -14,11 +14,11 @@ Anna: After that, you probably attend the daily team meeting at 9:30 AM. During 
 
 Understanding the sequence of activities is important. 
 
-"After that" is often used to indicate what comes next in a series of actions or events. 
+`After that` is often used to indicate what comes next in a series of actions or events. 
 
-For example, if you say, "I check my emails, and after that, I attend a meeting," it means that attending the meeting is the next activity you do following the checking of emails. 
+For example, if you say, `I check my emails, and after that, I attend a meeting,` it means that attending the meeting is the next activity you do following the checking of emails. 
 
-"We have a team briefing first thing in the morning, and after that, we start our individual tasks." `First` and `after` help to understand the order of events.
+`We have a team briefing first thing in the morning, and after that, we start our individual tasks.` `First` and `after` help to understand the order of events.
 
 # --instructions--
 

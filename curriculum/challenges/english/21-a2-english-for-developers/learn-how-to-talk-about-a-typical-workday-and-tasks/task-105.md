@@ -7,15 +7,15 @@ dashedName: task-105
 
 # --description--
 
-"Regularly" means doing something often or at set intervals, like every week or month. "Every year" means once a year or annually.
+`Regularly` means doing something often or at set intervals, like every week or month. `Every year` means once a year or annually.
 
-In jobs, some tasks or training might happen regularly or every year. For example, "We clean the equipment regularly" or "The team has a retreat every year."
+In jobs, some tasks or training might happen regularly or every year. For example, `We clean the equipment regularly` or `The team has a retreat every year.`
 
 # --question--
 
 ## --text--
 
-What do 'regularly' and 'every year' mean?
+What do `regularly` and `every year` mean?
 
 ## --answers--
 

@@ -9,8 +9,7 @@ dashedName: task-73
 
 A `policy` (or `policies` in plural) is a principle or rule to guide decisions and achieve rational outcomes. Policies are often adopted by an organization to guide employees. 
 
-For instance, "The company’s privacy policy protects client information."
-
+For instance, `The company’s privacy policy protects client information.`
 
 # --question--
 

@@ -7,16 +7,16 @@ dashedName: task-78
 
 # --description--
 
-"Compliance" means following rules and doing what is required in a job. It is about making sure we do things the right way. 
+`Compliance` means following rules and doing what is required in a job. It is about making sure we do things the right way. 
 
-For example, "In our job, compliance with safety rules keeps everyone safe."
+For example, `In our job, compliance with safety rules keeps everyone safe.`
 
 
 # --question--
 
 ## --text--
 
-What does 'compliance' mean?
+What does `compliance` mean?
 
 ## --answers--
 
@@ -24,7 +24,7 @@ Ignoring work rules.
 
 ### --feedback--
 
-Compliance is about following rules, not ignoring them.
+`Compliance` is about following rules, not ignoring them.
 
 ---
 
@@ -36,7 +36,7 @@ Choosing when to come to work.
 
 ### --feedback--
 
-Compliance involves sticking to set times, not choosing.
+`Compliance` involves sticking to set times, not choosing.
 
 ---
 
