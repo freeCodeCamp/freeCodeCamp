@@ -54,6 +54,6 @@ def generate_password(length, nums, special_chars, uppercase, lowercase):
 
 pattern = '[^a-z]t'
 quote = 'Not all those who wander are lost.'
-#print(re.findall(pattern, quote))
+# print(re.findall(pattern, quote))
 
 ```
