@@ -19,7 +19,7 @@ The expression `for nearly a decade now` is used to convey a period of nearly te
 
 ## --sentence--
 
-`_ nearly a _ now. It started as a hobby, but it has become a significant part of my life.`
+`For nearly _ _ now. It started as a hobby, but it has become a significant part of my life.`
 
 ## --blanks--
 

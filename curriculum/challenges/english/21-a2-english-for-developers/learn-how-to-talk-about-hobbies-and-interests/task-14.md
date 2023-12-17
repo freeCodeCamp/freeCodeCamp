@@ -18,7 +18,7 @@ What does `as a hobby` convey in this context?
 
 ## --answers--
 
-a) Professional commitment
+Professional commitment
 
 ### --feedback--
 
@@ -26,11 +26,11 @@ Professional commitment implies a job or career involvement, which is not the fo
 
 ---
 
-b) Recreational pursuit
+Recreational pursuit
 
 ---
 
-c) Obligatory task
+Obligatory task
 
 ### --feedback--
 
@@ -38,7 +38,7 @@ Obligatory task suggests a sense of obligation, which is not the case with a hob
 
 ---
 
-d) Mandatory duty
+Mandatory duty
 
 ### --feedback--
 

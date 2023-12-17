@@ -17,7 +17,7 @@ Choose the correct interpretation of `for nearly a decade now' in this context.
 
 ## --answers--
 
-a) Bob recently started his photography journey.
+Bob recently started his photography journey.
 
 ### --feedback--
 
@@ -25,11 +25,11 @@ Indicates a recent initiation into photography, which is not the case.
 
 ---
 
-b) Bob has been into photography for a long time.
+Bob has been into photography for a long time.
 
 ---
 
-c) Bob has been a professional photographer for ten years.
+Bob has been a professional photographer for ten years.
 
 ### --feedback--
 
@@ -37,7 +37,7 @@ Suggests a specific professional duration, but the phrase does not necessarily i
 
 ---
 
-d) Bob is new to the world of photography.
+Bob is new to the world of photography.
 
 ### --feedback--
 

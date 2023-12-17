@@ -29,7 +29,7 @@ Why does Maria ask about the camera?
 
 ## --answers--
 
-a) To inquire about Bob's health.
+To inquire about Bob's health.
 
 ### --feedback--
 
@@ -37,7 +37,7 @@ Health is not the topic of the conversation.
 
 ---
 
-b) To discuss Bob's appearance.
+To discuss Bob's appearance.
 
 ### --feedback--
 
@@ -45,11 +45,11 @@ Appearance is not the focus of Maria's question.
 
 ---
 
-c) To ask about Bob's possession.
+To ask about Bob's possession.
 
 ---
 
-d) To talk about Bob's relationships.
+To talk about Bob's relationships.
 
 ### --feedback--
 

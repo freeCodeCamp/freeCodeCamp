@@ -17,7 +17,7 @@ Which of the following sentences uses the more informal form?
 
 ## --answers--
 
-a) `She has got a new laptop.`
+`She has got a new laptop.`
 
 ### --feedback--
 
@@ -25,11 +25,11 @@ The sentence uses a more formal structure.
 
 ---
 
-b) `He got a promotion last week.`
+`He got a promotion last week.`
 
 ---
 
-c) `They have got a beautiful garden.`
+`They have got a beautiful garden.`
 
 ### --feedback--
 
@@ -37,7 +37,7 @@ The sentence uses a more formal structure.
 
 ---
 
-d) `Have you got any plans for the weekend?`
+`Have you got any plans for the weekend?`
 
 ### --feedback--
 

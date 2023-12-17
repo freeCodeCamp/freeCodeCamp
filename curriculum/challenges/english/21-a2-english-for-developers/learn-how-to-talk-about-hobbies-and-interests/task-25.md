@@ -23,7 +23,7 @@ Select the sentence that correctly uses the Present Perfect Continuous Tense.
 
 ## --answers--
 
-a) `How long are you into photography?`
+`How long are you into photography?`
 
 ### --feedback--
 
@@ -31,7 +31,7 @@ The sentence uses the incorrect verb form.
 
 ---
 
-b) `How long were you into photography?`
+`How long were you into photography?`
 
 ### --feedback--
 
@@ -39,11 +39,11 @@ The sentence uses the incorrect verb form.
 
 ---
 
-c) `How long have you been into photography?`
+`How long have you been into photography?`
 
 ---
 
-d) `How long you have into photography?`
+`How long you have into photography?`
 
 ### --feedback--
 

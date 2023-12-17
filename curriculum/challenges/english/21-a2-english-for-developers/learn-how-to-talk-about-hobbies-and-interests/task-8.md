@@ -23,7 +23,7 @@ How do you use the Present Perfect Tense in Bob's statement?
 
 ## --answers--
 
-a) To express a one-time event.
+To express a one-time event.
 
 ### --feedback--
 
@@ -31,7 +31,7 @@ The tense is used for ongoing actions, not one-time events.
 
 ---
 
-b) To indicate a past action with no present relevance.
+To indicate a past action with no present relevance.
 
 ### --feedback--
 
@@ -39,11 +39,11 @@ The tense suggests ongoing relevance in the present.
 
 ---
 
-c) To talk about an action or state from the past to the present.
+To talk about an action or state from the past to the present.
 
 ---
 
-d) To describe a future plan.
+To describe a future plan.
 
 ### --feedback--
 

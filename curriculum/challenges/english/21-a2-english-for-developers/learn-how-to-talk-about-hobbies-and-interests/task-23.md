@@ -17,7 +17,7 @@ When do you use the Present Perfect Continuous Tense?
 
 ## --answers--
 
-a) To talk about completed actions.
+To talk about completed actions.
 
 ### --feedback--
 
@@ -25,7 +25,7 @@ The tense focuses on ongoing actions, not completed ones.
 
 ---
 
-b) To express future plans.
+To express future plans.
 
 ### --feedback--
 
@@ -33,11 +33,11 @@ The tense is more about the present and past, not the future.
 
 ---
 
-c) To describe ongoing actions or states.
+To describe ongoing actions or states.
 
 ---
 
-d) To indicate habitual actions.
+To indicate habitual actions.
 
 ### --feedback--
 

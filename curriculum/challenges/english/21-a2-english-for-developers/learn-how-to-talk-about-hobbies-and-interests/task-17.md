@@ -17,7 +17,7 @@ What does the phrase `enjoy the most` convey in this context?
 
 ## --answers--
 
-a) Forced participation
+Forced participation
 
 ### --feedback--
 
@@ -25,7 +25,7 @@ Forced participation suggests a lack of choice or willingness, which is not the 
 
 ---
 
-b) Casual interest
+Casual interest
 
 ### --feedback--
 
@@ -33,11 +33,11 @@ Casual interest implies a mild or passing interest, which is not the case with B
 
 ---
 
-c) Preferred aspect
+Preferred aspect
 
 ---
 
-d) Routine obligation
+Routine obligation
 
 ### --feedback--
 

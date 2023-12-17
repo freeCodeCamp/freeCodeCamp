@@ -7,19 +7,17 @@ dashedName: task-12
 
 # --description--
 
-The phrase `for nearly a decade now` is used with the preposition `for`.
+The phrase `for nearly a decade now` is used with the preposition `for`. Fill in the blank with the appropriate preposition.
 
 # --question--
 
 ## --text--
 
-`Fill in the blank with the appropriate preposition.`
-
 `_ nearly a decade now. It started as a hobby, but it has become a significant part of my life.`
 
 ## --answers--
 
-a) `In`
+`In`
 
 ### --feedback--
 
@@ -27,7 +25,7 @@ Not the correct preposition for expressing duration.
 
 ---
 
-b) `Since`
+`Since`
 
 ### --feedback--
 
@@ -35,7 +33,7 @@ Indicates a specific starting point, which is different from expressing duration
 
 ---
 
-c) `With`
+`With`
 
 ### --feedback--
 
@@ -43,7 +41,7 @@ Implies collaboration rather than duration.
 
 ---
 
-d) `For`
+`For`
 
 ## --video-solution--
 

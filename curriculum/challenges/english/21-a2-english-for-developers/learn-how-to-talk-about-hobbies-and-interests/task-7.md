@@ -17,7 +17,7 @@ Which sentence uses the correct Present Perfect Tense structure?
 
 ## --answers--
 
-a) `I hear there are massive communities of people into coding.`
+`I hear there are massive communities of people into coding.`
 
 ### --feedback--
 
@@ -25,7 +25,7 @@ The verb form is incorrect for the present perfect tense.
 
 ---
 
-b) `I has heard there are massive communities of people into coding.`
+`I has heard there are massive communities of people into coding.`
 
 ### --feedback--
 
@@ -33,11 +33,11 @@ The subject-verb agreement is incorrect. It should be `have` not `has` for the s
 
 ---
 
-c) `I've heard there are massive communities of people into coding.`
+`I've heard there are massive communities of people into coding.`
 
 ---
 
-d) `I hearing there are massive communities of people into coding.`
+`I hearing there are massive communities of people into coding.`
 
 ### --feedback--
 

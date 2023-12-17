@@ -23,7 +23,7 @@ What kind of photography does Bob enjoy the most?
 
 ## --answers--
 
-a) Street photography
+Street photography
 
 ### --feedback--
 
@@ -31,7 +31,7 @@ Street photography is not mentioned as Bob's preferred type of photography.
 
 ---
 
-b) Portrait photography
+Portrait photography
 
 ### --feedback--
 
@@ -39,11 +39,11 @@ Portrait photography is not mentioned as Bob's preferred type of photography.
 
 ---
 
-c) Landscapes and nature photography
+Landscapes and nature photography
 
 ---
 
-d) Wildlife photography
+Wildlife photography
 
 ### --feedback--
 

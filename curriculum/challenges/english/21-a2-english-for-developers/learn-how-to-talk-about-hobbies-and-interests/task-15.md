@@ -7,19 +7,17 @@ dashedName: task-15
 
 # --description--
 
-The phrase `As a hobby` is used with the preposition `as`.
+The phrase `As a hobby` is used with the preposition `as`. Choose the correct preposition to complete the sentence.
 
 # --question--
 
 ## --text--
 
-Choose the correct preposition to complete the sentence.
-
 `Bob enjoys sketching and painting _ his hobby.`
 
 ## --answers--
 
-a) on
+`on`
 
 ### --feedback--
 
@@ -27,7 +25,7 @@ a) on
 
 ---
 
-b) for
+`for`
 
 ### --feedback--
 
@@ -35,11 +33,11 @@ b) for
 
 ---
 
-c) as
+`as`
 
 ---
 
-d) with
+`with`
 
 ### --feedback--
 

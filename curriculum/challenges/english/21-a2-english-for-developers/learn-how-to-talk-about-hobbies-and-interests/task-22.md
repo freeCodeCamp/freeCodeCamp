@@ -13,11 +13,11 @@ dashedName: task-22
 
 ## --text--
 
-What does 'seriously' convey in this context?
+What does `seriously` convey in this context?
 
 ## --answers--
 
-a) Casual interest
+Casual interest
 
 ### --feedback--
 
@@ -25,11 +25,11 @@ Casual interest suggests a less serious or committed approach, which is not the 
 
 ---
 
-b) Intense commitment
+Intense commitment
 
 ---
 
-c) Lighthearted approach
+Lighthearted approach
 
 ### --feedback--
 
@@ -37,7 +37,7 @@ Lighthearted approach suggests a more relaxed attitude, which is not the case wi
 
 ---
 
-d) Temporary fascination
+Temporary fascination
 
 ### --feedback--
 

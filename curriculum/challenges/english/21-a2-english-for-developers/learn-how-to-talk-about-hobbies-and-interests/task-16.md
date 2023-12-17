@@ -14,7 +14,7 @@ The phrase `enjoy the most` is used to express a preference or favorite aspect o
 
 ## --sentence--
 
-`Maria: What kind of photography do you _ _ _?`
+`What kind of photography do you _ _ _?`
 
 ## --blanks--
 
