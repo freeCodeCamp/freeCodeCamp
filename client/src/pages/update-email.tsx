@@ -1,7 +1,12 @@
 import { Button } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
 import { isString } from 'lodash-es';
-import React, { useState, type FormEvent, type ChangeEvent } from 'react';
+import React, {
+  useState,
+  type FormEvent,
+  type ChangeEvent,
+  useRef
+} from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
@@ -19,30 +24,48 @@ import {
   Row
 } from '@freecodecamp/ui';
 
-import { Spacer } from '../components/helpers';
+import { Loader, Spacer } from '../components/helpers';
 import './update-email.css';
-import { userSelector } from '../redux/selectors';
+import { userSelector, isSignedInSelector } from '../redux/selectors';
 import { updateMyEmail } from '../redux/settings/actions';
 import { maybeEmailRE } from '../utils';
 
 interface UpdateEmailProps {
   isNewEmail: boolean;
+  isSignedIn: boolean;
   t: TFunction;
   updateMyEmail: (e: string) => void;
+  navigate: (location: string) => void;
 }
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ email, emailVerified }: { email: string; emailVerified: boolean }) => ({
-    isNewEmail: !email || emailVerified
+  isSignedInSelector,
+  (
+    { email, emailVerified }: { email: string; emailVerified: boolean },
+    isSignedIn
+  ) => ({
+    isNewEmail: !email || emailVerified,
+    isSignedIn
   })
 );
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ updateMyEmail }, dispatch);
 
-function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
+function UpdateEmail({
+  isNewEmail,
+  isSignedIn,
+  t,
+  updateMyEmail,
+  navigate
+}: UpdateEmailProps) {
   const [emailValue, setEmailValue] = useState('');
+  const isSignedInRef = useRef(isSignedIn);
+  if (!isSignedInRef.current) {
+    navigate(`/signin`);
+    return <Loader fullScreen={true} />;
+  }
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
