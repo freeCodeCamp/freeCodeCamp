@@ -85,7 +85,11 @@ export const XtermTerminal = ({
         if (disposable) disposables.push(disposable);
       };
       const reset = () => {
-        term?.reset();
+        // Ironically, term.reset(), while synchronous, is not a reliable way to
+        // reset the terminal. It does not clear the input buffer, so old print
+        // statements can still appear. The \x1bc (ESC c) escape sequence triggers
+        // a full terminal reset, which is what we want.
+        term?.write('\x1bc');
         disposables.forEach(disposable => disposable.dispose());
         disposables.length = 0;
       };
