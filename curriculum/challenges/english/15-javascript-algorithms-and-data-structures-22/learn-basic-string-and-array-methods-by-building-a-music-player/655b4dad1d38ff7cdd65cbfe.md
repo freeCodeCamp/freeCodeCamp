@@ -852,7 +852,7 @@ setPlayButtonAccessibleText();
         <div class="player-content">
           <div id="player-album-art">
             <img
-              src="https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/digital-drift.jpg"
+              src="https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/quincy-larson-album-art.jpg"
               alt="song cover art"
             />
           </div>
