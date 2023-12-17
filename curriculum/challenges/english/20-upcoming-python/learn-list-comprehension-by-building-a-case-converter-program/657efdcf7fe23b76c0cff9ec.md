@@ -25,11 +25,9 @@ Test 1
 def convert_to_snake_case(pascal_or_camel_cased_string):
     snake_cased_char_list = []
     for char in pascal_or_camel_cased_string:
+--fcc-editable-region--
         if char.isupper():
             converted_character = '_' + char.lower()
             snake_cased_char_list.append(converted_character)
---fcc-editable-region--
-
-
 --fcc-editable-region--
 ```
