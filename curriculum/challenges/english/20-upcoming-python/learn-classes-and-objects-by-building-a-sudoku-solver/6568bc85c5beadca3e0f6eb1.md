@@ -7,14 +7,14 @@ dashedName: step-27
 
 # --description--
 
-After the loop completes for all rows, return the final `board_string`. This string contains the complete visual representation of the sudoku board in ASCII art style, including borders and separators.
+After the outer loop completes for all rows, return the final `board_string`. This string contains the complete visual representation of the sudoku board in ASCII art style, including borders and separators.
 
 # --hints--
 
-Return the `board_string` variable.
+You should return the `board_string` variable at the end of the outer `for` loop.
 
 ```js
-assert.match(code, /return\s+board_string/);
+({ test: () => assert.match(e.code.original["main.py"], /^\s{8}return\s+board_string/m) })
 ```
 
 # --seed--
@@ -31,6 +31,7 @@ class Board:
         middle_lines = f'╟───{"┼───"*2}{"╫───"}{"┼───"*2}{"╫───"}{"┼───"*2}╢\n'
         lower_lines = f'╚═══{"╧═══"*2}{"╩═══"}{"╧═══"*2}{"╩═══"}{"╧═══"*2}╝\n'
         board_string = upper_lines
+--fcc-editable-region--
         for index, line in enumerate(self.board):
             row_list = []
             for square_no, part in enumerate([line[:3], line[3:6], line[6:]], start=1):
@@ -50,7 +51,5 @@ class Board:
                     board_string += middle_lines
             else:
                 board_string += lower_lines
---fcc-editable-region--
-
 --fcc-editable-region--
 ```
