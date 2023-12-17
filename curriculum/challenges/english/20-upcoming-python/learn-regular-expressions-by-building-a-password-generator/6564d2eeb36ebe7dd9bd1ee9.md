@@ -7,7 +7,7 @@ dashedName: step-40
 
 # --description--
 
-Add a third tuple to the `constraints` list. Use `uppercase` as the first item and a regex pattern that matches a single uppercase letter as the second item.
+Add a third tuple to the `constraints` list. Use the `uppercase` parameter as the first item and a regex pattern that matches a single uppercase letter as the second item.
 
 # --hints--
 
