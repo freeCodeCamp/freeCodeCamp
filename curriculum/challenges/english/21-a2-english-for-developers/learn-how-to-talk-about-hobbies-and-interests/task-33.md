@@ -27,11 +27,15 @@ A specific date and time
 
 ### --feedback--
 
-A specific date is not in line with the nature of the expression.
+It is not in line with the nature of the expression.
 
 ---
 
 A recurring event
+
+### --feedback--
+
+The expression doesn't convey this meaning.
 
 ---
 
@@ -39,15 +43,11 @@ An immediate plan
 
 ### --feedback--
 
-An immediate plan suggests an urgency that is not implied by `one of these days`.
+This option suggests an urgency that is not implied by the expression.
 
 ---
 
 An indefinite future time
-
-### --feedback--
-
-A weekly routine is too specific; `one of these days` suggests a more flexible time frame.
 
 ## --video-solution--
 

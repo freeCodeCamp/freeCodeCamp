@@ -19,7 +19,7 @@ In the Present Perfect Continuous Tense, time periods are often indicated using 
 
 ## --sentence--
 
-`I've been a cyclist ________ more than 15 years.`
+`I've been a cyclist _ more than 15 years.`
 
 ## --blanks--
 
@@ -27,4 +27,4 @@ In the Present Perfect Continuous Tense, time periods are often indicated using 
 
 ### --feedback--
 
-The correct preposition to express the duration of an action or situation in this context is "for."
+This preposition expresses the duration of an action or situation in this context.

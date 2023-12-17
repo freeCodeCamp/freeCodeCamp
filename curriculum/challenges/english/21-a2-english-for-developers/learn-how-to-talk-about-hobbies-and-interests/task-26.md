@@ -27,7 +27,7 @@ Linda recently started liking biking.
 
 ### --feedback--
 
-The phrase `since my childhood` suggests a longer duration than a recent start.
+The phrase suggests a longer duration than a recent start.
 
 ---
 
@@ -35,7 +35,7 @@ Linda developed a passion for biking in adulthood.
 
 ### --feedback--
 
-The phrase `since my childhood` implies the liking started in childhood, not adulthood.
+The phrase implies the liking started in childhood, not adulthood.
 
 ---
 
@@ -47,7 +47,7 @@ Linda no longer likes biking.
 
 ### --feedback--
 
-The phrase `since my childhood` doesn't indicate a cessation of Linda's passion for biking.
+The phrase doesn't indicate a cessation of Linda's passion for biking.
 
 ## --video-solution--
 
