@@ -1,0 +1,129 @@
+{
+  "name": "Learn Lambda Functions by Building a Expense Tracker",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-lambda-functions-by-building-a-expense-tracker",
+  "order": 42,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "upcoming-python",
+  "superOrder": 20,
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "657df49b46e49a4f73aff391",
+      "title": "Step 1"
+    },
+    {
+      "id": "657e37c417b3b97538e30bf2",
+      "title": "Step 2"
+    },
+    {
+      "id": "657e4e9014f900059633832b",
+      "title": "Step 3"
+    },
+    {
+      "id": "657e6231622cd919e2d7094b",
+      "title": "Step 4"
+    },
+    {
+      "id": "657e78c3451d69249549ad52",
+      "title": "Step 5"
+    },
+    {
+      "id": "657e7d9701d40d2792aac88d",
+      "title": "Step 6"
+    },
+    {
+      "id": "657e8090acd31028fc8b8751",
+      "title": "Step 7"
+    },
+    {
+      "id": "657e8565afb64e2b8efb97c3",
+      "title": "Step 8"
+    },
+    {
+      "id": "657e895c6ab1b62db4b3438e",
+      "title": "Step 9"
+    },
+    {
+      "id": "657e967c93048c3c7c0ce143",
+      "title": "Step 10"
+    },
+    {
+      "id": "657e984243d8f13de95792a6",
+      "title": "Step 11"
+    },
+    {
+      "id": "657ea3f2e2e649443416d863",
+      "title": "Step 12"
+    },
+    {
+      "id": "657ea808f82a1946e08f22b8",
+      "title": "Step 13"
+    },
+    {
+      "id": "657eab36af77b0482d2a8cd6",
+      "title": "Step 14"
+    },
+    {
+      "id": "657eae63a49c7f4a3c82896e",
+      "title": "Step 15"
+    },
+    {
+      "id": "657eb8e0d19d7d50509c1723",
+      "title": "Step 16"
+    },
+    {
+      "id": "657ebb82de7b425221a30305",
+      "title": "Step 17"
+    },
+    {
+      "id": "657ebe128041f1539d04693f",
+      "title": "Step 18"
+    },
+    {
+      "id": "657ec30272cf4255edaccf32",
+      "title": "Step 19"
+    },
+    {
+      "id": "657ec4994640ba56e67fc2bc",
+      "title": "Step 20"
+    },
+    {
+      "id": "657ec8adfb8a535969ed5e8b",
+      "title": "Step 21"
+    },
+    {
+      "id": "657eca6e8965365ab6e57a79",
+      "title": "Step 22"
+    },
+    {
+      "id": "657ed529df3db66063eb3043",
+      "title": "Step 23"
+    },
+    {
+      "id": "657ed635f40df661219dddbe",
+      "title": "Step 24"
+    },
+    {
+      "id": "657ee2baaadeaa670bc238ac",
+      "title": "Step 25"
+    },
+    {
+      "id": "657eea43f3853d6be988b939",
+      "title": "Step 26"
+    },
+    {
+      "id": "657eebd507b1bc6d492131e8",
+      "title": "Step 27"
+    },
+    {
+      "id": "657ef609d771fa7dc0a15b17",
+      "title": "Step 28"
+    }
+  ],
+  "helpCategory": "Python"
+}
