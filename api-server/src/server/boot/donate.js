@@ -8,7 +8,8 @@ import {
   verifyWebHook,
   updateUser,
   verifyWebHookType,
-  createStripeCardDonation
+  createStripeCardDonation,
+  handleStripeCardUpdateSession
 } from '../utils/donation';
 import { validStripeForm } from '../utils/stripeHelpers';
 
@@ -181,6 +182,19 @@ export default function donateBoot(app, done) {
       });
   }
 
+  async function handleStripeCardUpdate(req, res, next) {
+    try {
+      const sessionIdObj = await handleStripeCardUpdateSession(
+        req,
+        app,
+        stripe
+      );
+      return res.status(200).json(sessionIdObj);
+    } catch (err) {
+      return next(err);
+    }
+  }
+
   function updatePaypal(req, res) {
     const { headers, body } = req;
     return Promise.resolve(req)
@@ -220,6 +234,7 @@ export default function donateBoot(app, done) {
   } else {
     api.post('/charge-stripe', createStripeDonation);
     api.post('/charge-stripe-card', handleStripeCardDonation);
+    api.put('/update-stripe-card', handleStripeCardUpdate);
     api.post('/add-donation', addDonation);
     hooks.post('/update-paypal', updatePaypal);
     donateRouter.use('/donate', api);

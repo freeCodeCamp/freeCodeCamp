@@ -314,3 +314,40 @@ export async function createStripeCardDonation(req, res, stripe) {
   await createAsyncUserDonation(user, donation);
   return res.status(200).json({ isDonating: true });
 }
+
+export async function handleStripeCardUpdateSession(req, app, stripe) {
+  const {
+    user: { id }
+  } = req;
+
+  const { Donation } = app.models;
+  log('Updating stripe card for user: ', id);
+
+  // multiple donations support should be added
+  const donation = await Donation.findOne({
+    where: { userId: id, provider: 'stripe' }
+  });
+
+  if (!donation) throw Error('Stripe donation record not found');
+
+  const { customerId, subscriptionId } = donation;
+
+  log(subscriptionId);
+
+  // Create a Stripe checkout session
+  // updating customer payment method is handled by webhook handler
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ['card'],
+    mode: 'setup',
+    customer: customerId,
+    setup_intent_data: {
+      metadata: {
+        customer_id: customerId,
+        subscription_id: subscriptionId
+      }
+    },
+    success_url: `${process.env.HOME_LOCATION}/update-stripe-card?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${process.env.HOME_LOCATION}/update-stripe-card`
+  });
+  return { sessionId: session.id };
+}

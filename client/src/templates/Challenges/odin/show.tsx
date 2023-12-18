@@ -21,6 +21,7 @@ import Hotkeys from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
+import Scene from '../components/scene/scene';
 import PrismFormatted from '../components/prism-formatted';
 import ChallengeTitle from '../components/challenge-title';
 import {
@@ -219,7 +220,8 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             question: { text, answers, solution },
             assignments,
             audioPath,
-            translationPending
+            translationPending,
+            scene
           }
         }
       },
@@ -300,6 +302,11 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   </>
                 )}
                 <Spacer size='medium' />
+              </Col>
+
+              {scene && <Scene scene={scene} />}
+
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ObserveKeys>
                   {assignments.length > 0 && (
                     <>
@@ -461,6 +468,43 @@ export const query = graphql`
             feedback
           }
           solution
+        }
+        scene {
+          setup {
+            background
+            characters {
+              character
+              position {
+                x
+                y
+                z
+              }
+              opacity
+            }
+            audio {
+              filename
+              startTime
+              startTimestamp
+              finishTimestamp
+            }
+            alwaysShowDialogue
+          }
+          commands {
+            background
+            character
+            position {
+              x
+              y
+              z
+            }
+            opacity
+            startTime
+            finishTime
+            dialogue {
+              text
+              align
+            }
+          }
         }
         translationPending
         assignments
