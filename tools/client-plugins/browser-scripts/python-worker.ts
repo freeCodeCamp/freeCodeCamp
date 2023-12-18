@@ -158,7 +158,11 @@ function handleRunRequest(data: PythonRunEvent['data']) {
     const err = e as PythonError;
     console.error(e);
     if (err.type === 'KeyboardInterrupt') {
+      // If the client sends a lot of run messages, it's easy for them to build
+      // up while the worker is busy. As such, we both ignore any queued run
+      // messages...
       ignoreRunMessages = true;
+      // ...and tell the client that we're ignoring them.
       postMessage({ type: 'stopped', text: getResetId() });
     }
   }
