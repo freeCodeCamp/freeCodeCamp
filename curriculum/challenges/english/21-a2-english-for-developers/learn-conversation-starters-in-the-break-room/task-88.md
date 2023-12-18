@@ -7,9 +7,7 @@ dashedName: task-88
 
 # --description--
 
-The phrase `too long` is used when something takes more time than is necessary or desired.
-
-For example, `The meeting lasted four hours. Four hours is too long for a meeting!`
+The phrase `too long` is used when something takes more time than is necessary or desired. For example, `The meeting lasted four hours. Four hours is too long for a meeting!`
 
 It's different from `so long`, which is often used to express that something takes a significant amount of time, but it doesn't necessarily mean it's more than what is wanted.
 

@@ -20,7 +20,7 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-`Sophie: Electric, for sure! _ _ your hobbies, though, do you have any favorite photography themes?`
+`Electric, for sure! _ _ your hobbies, though, do you have any favorite photography themes?`
 
 ## --blanks--
 

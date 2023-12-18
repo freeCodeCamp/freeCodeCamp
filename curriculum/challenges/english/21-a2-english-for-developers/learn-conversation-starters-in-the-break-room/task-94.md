@@ -17,7 +17,7 @@ Choose the standard preposition to complete the sentence about inclusion in a gr
 
 ## --text--
 
-`Do they involve everyone ___ the team?`
+`Do they involve everyone _ the team?`
 
 ## --answers--
 

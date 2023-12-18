@@ -12,9 +12,9 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 Maria mentions that she doesn't know of any theater in the area. When you want to express that something does not exist or is not present somewhere, you use `there isn't` for singular nouns or `there aren't` for plural nouns.
 
-There isn’t is an abbreviation of `there is not`.
+`There isn’t` is an abbreviation of `there is not`.
 
-There aren’t is an abbreviation of `there are not`.
+`There aren’t` is an abbreviation of `there are not`.
 
 # --instructions--
 

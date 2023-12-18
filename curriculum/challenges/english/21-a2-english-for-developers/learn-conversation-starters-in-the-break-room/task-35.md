@@ -21,7 +21,7 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-`Sophie: I enjoy _ n' Roll, but any nice tune makes my day.`
+`I enjoy _ n' Roll, but any nice tune makes my day.`
 
 ## --blanks--
 

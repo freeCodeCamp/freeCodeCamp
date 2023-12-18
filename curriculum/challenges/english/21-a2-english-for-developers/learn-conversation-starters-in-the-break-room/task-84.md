@@ -23,8 +23,6 @@ Listen to the audio to complete the sentence below.
 
 `Tom: Hmm… Do we _ all our ongoing projects in these meetings?`
 
-`Sophie: We do. It's a chance to update everyone on project progress.`
-
 ## --blanks--
 
 `discuss`

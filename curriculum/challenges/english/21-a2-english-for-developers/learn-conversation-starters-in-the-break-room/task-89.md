@@ -7,9 +7,7 @@ dashedName: task-89
 
 # --description--
 
-The word `reasonable` means something is fair, makes sense, or is acceptable in a certain situation.
-
-For example, `The price of the ticket is reasonable` means the price is not too high and feels fair.
+The word `reasonable` means something is fair, makes sense, or is acceptable in a certain situation. For example, `The price of the ticket is reasonable` means the price is not too high and feels fair.
 
 # --question--
 

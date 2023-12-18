@@ -12,9 +12,7 @@ Sophie: Electric, for sure! Back to your hobbies, though, do you have any favori
 
 # --description--
 
-Sometimes you want to talk about what you or someone else enjoys. 
-
-For example, if your friend enjoys reading, you can say, `My friend likes reading.`
+Sometimes you want to talk about what you or someone else enjoys. For example, if your friend enjoys reading, you can say, `My friend likes reading.`
 
 # --question--
 

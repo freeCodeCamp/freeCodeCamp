@@ -17,9 +17,7 @@ Complete the sentence below.
 
 ## --sentence--
 
-`Tom: Thanks for your help, Maria.`
-
-`Maria: _ welcome, Tom.`
+`_ welcome, Tom.`
 
 ## --blanks--
 

@@ -8,8 +8,8 @@ dashedName: task-29
 # --description--
 
 So far, you've exercised how to ask questions with `do` and make negative sentences with `don't.`
-Let's review them.
-Remember:
+Let's review them. Remember:
+
 Affirmative: `I do work on weekends.` (means the person works on weekends)
 Negative: `I don't work on weekends.` (means the person does not work on weekends)
 

@@ -7,18 +7,13 @@ dashedName: task-44
 
 # --description--
 
-When you want to know about someone's character or personality, you can ask, `What is (he/she) like?`.
-
-This question is about the qualities of a person, not about their physical appearance.
-
-Example:
+When you want to know about someone's character or personality, you can ask, `What is (he/she) like?`. This question is about the qualities of a person, not about their physical appearance. Example:
 
 Imagine you meet a new student in your programming class and you want to know more about her. 
 
 You can ask a classmate, `What is she like?` 
 
 You are not asking if the new student likes computers or games; you are asking about her personality. Maybe she's friendly, smart, or really good at coding.
-
 
 # --question--
 

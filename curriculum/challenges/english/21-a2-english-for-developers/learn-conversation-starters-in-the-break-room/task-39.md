@@ -18,7 +18,7 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-`Sophie: That's cool! I like it, but I _ think of photography as a hobby. I play the guitar in my free time.`
+`That's cool! I like it, but I _ think of photography as a hobby. I play the guitar in my free time.`
 
 ## --blanks--
 

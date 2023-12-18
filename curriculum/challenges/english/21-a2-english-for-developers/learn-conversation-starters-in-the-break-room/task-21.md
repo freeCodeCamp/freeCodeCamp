@@ -22,7 +22,7 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-`Tom: _, _ I'm only practicing. I love it.`
+`_, _ I'm only practicing. I love it.`
 
 ## --blanks--
 

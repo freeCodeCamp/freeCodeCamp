@@ -10,12 +10,10 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 # --description--
 
-`It depends on` is used to say that the answer to a question can change based on different things.
+`It depends on` is used to say that the answer to a question can change based on different things. For example:
 
-For example:
-
-- How long it takes to make a website depends on how big or small the job is.
-- Choosing the coding language depends on the computer or system we use.
+How long it takes to make a website depends on how big or small the job is.
+Choosing the coding language depends on the computer or system we use.
 
 Notice that after `depends` there’s always the preposition `on`. 
 

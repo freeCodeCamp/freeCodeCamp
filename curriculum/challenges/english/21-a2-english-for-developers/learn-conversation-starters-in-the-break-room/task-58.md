@@ -14,9 +14,7 @@ As you already studied, For most verbs conjugation can be simple. You just  add 
 For example:
 
 `You talk` -> `He talks`
-
 `They do` -> `It does`
-
 
 # --question--
 

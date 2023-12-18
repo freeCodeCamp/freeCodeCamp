@@ -22,7 +22,7 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-`Tom: Hey, Sophie! Tell me about our team lead, Maria. _?`
+`Hey, Sophie! Tell me about our team lead, Maria. _?`
 
 ## --blanks--
 

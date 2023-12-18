@@ -18,7 +18,7 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-`Tom: It’s _! I want to hear you play some day.`
+`It’s _! I want to hear you play some day.`
 
 ## --blanks--
 

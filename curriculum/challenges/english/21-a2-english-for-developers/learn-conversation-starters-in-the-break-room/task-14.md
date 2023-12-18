@@ -13,11 +13,7 @@ Tom: Yes, I've played both before. Great choices. Is the team into playing games
 
 # --description--
 
-The present perfect is a tense used to indicate a link between the present and the past. 
-
-The time of the action is before now but not specified, and the person using it is usually more interested in the result than in the action itself.
-
-For example:
+The present perfect is a tense used to indicate a link between the present and the past. The time of the action is before now but not specified, and the person using it is usually more interested in the result than in the action itself. For example:
 
 `I played this game yesterday.`  - This is in the simple past tense. It states that the action of playing the game happened at a specific time in the past, which is yesterday. 
 

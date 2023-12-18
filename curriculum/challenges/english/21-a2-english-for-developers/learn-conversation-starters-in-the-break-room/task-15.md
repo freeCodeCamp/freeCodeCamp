@@ -20,7 +20,7 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-`Tom: Yes, I've played both before. Great choices. Is the team into playing _ as well, like "Gartic"?`
+`Yes, I've played both before. Great choices. Is the team into playing _ as well, like "Gartic"?`
 
 ## --blanks--
 

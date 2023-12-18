@@ -12,16 +12,9 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 In this part of the dialogue, Sarah suggests playing `Gartic` on the next game night. She uses the phrases `Maybe` and `we can` to express the possibility of this happening.
 
-`Maybe` is used to suggest a possibility, and `we can` is used to suggest ability or suggest an idea in a polite way.
-Sarah: “Maybe we can play some `Gartic` on the next game night?”
+`Maybe` is a word used when you are suggesting a possibility, but you are not sure if this possibility will happen or not. It shows that you are not making a definite plan, but you are open to the idea. For example: if someone asks you if you want to go to the movies, you can say `Maybe` if you are not sure if you want to go or if you are available.
 
-`Maybe` is a word used when you are suggesting a possibility, but you are not sure if this possibility will happen or not. It shows that you are not making a definite plan, but you are open to the idea. 
-
-For example: if someone asks you if you want to go to the movies, you can say `Maybe` if you are not sure if you want to go or if you are available.
-
-`We can` is used to suggest an idea or propose something in a polite way. It shows that the people in the conversation have the ability or the option to do something. 
-
-For example, if you want to suggest playing a game, you can say `We can play a game` to offer the idea.
+`We can` is used to suggest an idea or propose something in a polite way. It shows that the people in the conversation have the ability or the option to do something. For example, if you want to suggest playing a game, you can say `We can play a game` to offer the idea.
 
 The difference between `maybe` and `we can` is that `maybe` suggests a possibility without making a definite plan, while `we can` suggests an idea or proposal in a polite way.
 

@@ -10,20 +10,15 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 # --description--
 
-So far you have learned how to create questions with the verb to be. In sentences with the verb `to be` (am, is, are) you just have to change the order of the noun and the verb to create a question.
+So far you have learned how to create questions with the verb to be. In sentences with the verb `to be` (am, is, are) you just have to change the order of the noun and the verb to create a question. Like this:
 
-Like this:
+`You are a developer` -> `Are you a developer?`
 
-You are a developer -> Are you a developer?  
+Changing the order of the noun and the verb doesn’t work in every situation. Most sentences need you to add an auxiliary verb to create questions. One of the most common auxiliary verbs is `Do`.
 
-Changing the order of the noun and the verb doesn’t work in every situation. Most sentences need you to add an auxiliary verb to create questions. One of the most common auxiliary verbs is `Do`. 
-
-You can use the verb `do` as an auxiliary to most verbs. In the present tense it assumes the form of `do` (I, you, we, they) and `does`(he, she, it).
-
-It is like a marker you will add to the beginning of your sentence and lets everyone know that sentence is a question. For example:
+You can use the verb `do` as an auxiliary to most verbs. In the present tense it assumes the form of `do` (I, you, we, they) and `does`(he, she, it). It is like a marker you will add to the beginning of your sentence and lets everyone know that sentence is a question. For example:
 
 Statement: `You debug on Fridays.`
-
 Question: `Do you debug on Fridays?`
 
 # --instructions--

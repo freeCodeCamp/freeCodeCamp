@@ -20,7 +20,7 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-`Sophie: Hey, Tom! I saw you taking lots of pics with your cell phone _ the building. Are you into photography?`
+`Hey, Tom! I saw you taking lots of pics with your cell phone _ the building. Are you into photography?`
 
 ## --blanks--
 

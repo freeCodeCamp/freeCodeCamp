@@ -10,9 +10,7 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 # --description--
 
-Maria informs Tom about public transportation options, specifically mentioning a transportation that stops nearby. 
-
-This is important for getting around the city, especially to places that are not within walking distance.
+Maria informs Tom about public transportation options, specifically mentioning a transportation that stops nearby. This is important for getting around the city, especially to places that are not within walking distance.
 
 `Two blocks away` means that you need to walk past two street corners to get to a place. It's a short walk in a city.
 

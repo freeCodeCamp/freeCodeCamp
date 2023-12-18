@@ -10,15 +10,13 @@ audioPath: Add the path to the audio file here. Or, delete this if you don't hav
 
 Now that you know how to use `do` to form questions about hobbies, let's use `do` to ask about daily routines. This is useful for finding out about someone's everyday activities, which is a common topic of small talk.
 
-Note: When you use `do` as an auxiliary verb in a question, the main verb must stay in its base form. 
+Note: When you use `do` as an auxiliary verb in a question, the main verb must stay in its base form. For example:
 
-For example:
+Statement: `She works as a Full Stack dev.`
 
-Statement: She works as a Full Stack dev.
+Question: `Does she work as a Full Stack dev?`
 
-Question: Does she work as a Full Stack dev?
-`work` stays as `work` and does not change to `works,` even when asking about a third person singular subject like `he,` `she,` or `it.`
-
+`work` stays as `work` and does not change to `works`, even when asking about a third person singular subject like `he,` `she,` or `it.`
 
 # --question--
 

@@ -22,13 +22,11 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-`Tom: Tell me about our team meetings, Sophie. Do they happen _?`
-
-`Sophie: Yes, they do. We have meetings on Monday mornings.`
+`Tell me about our team meetings, Sophie. Do they happen _ week?`
 
 ## --blanks--
 
-`every week`
+`every`
 
 ### --feedback--
 
