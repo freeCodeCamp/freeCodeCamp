@@ -7,7 +7,7 @@ dashedName: step-37
 
 # --description--
 
-The iterative solution of Tower of Hanoi might appears complete, but change the number of disks into `4` and look at the output.
+The iterative solution of Tower of Hanoi might seem complete, but change the number of disks to `4` and look at the output.
 
 # --hints--
 
