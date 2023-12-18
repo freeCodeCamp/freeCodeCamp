@@ -102,8 +102,7 @@ export function interruptCodeExecution(): void {
   // TODO: Since loading pyodide is slow, there's a risk that this will
   // terminate the worker before it's finished loading. As such we should check
   // if the worker has loaded before attempting to reset it (or send run
-  // messages). Once we're doing that it may no longer be necessary to discard
-  // run messages in the worker.
+  // messages).
 
   // TODO: sort out the terminology.
   getPythonWorker().postMessage({ type: 'busy-check', value: resetId });
