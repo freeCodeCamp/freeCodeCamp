@@ -7,7 +7,7 @@ dashedName: step-25
 
 # --description--
 
-Next, below the nested `elif` statement, add another `if` statement to execute when `forward` is `True`. Inside this conditional, print the following f-string: `f'Moving disk {rods[source][-1]} from {source} to {target}'`.
+Next, below the nested `elif` statement, add another `if` statement that should be executed when `forward` is `True`. Inside this conditional, print the following f-string: `f'Moving disk {rods[source][-1]} from {source} to {target}'`.
 
 # --hints--
 
@@ -29,7 +29,7 @@ You should print the provide string inside your new `if` statement.
 
 ```py
 NUMBER_OF_DISKS = 3
-number_of_moves = 2 ** NUMBER_OF_DISKS - 1
+number_of_moves = 2**NUMBER_OF_DISKS - 1
 rods = {
     'A': list(range(NUMBER_OF_DISKS, 0, -1)),
     'B': [],

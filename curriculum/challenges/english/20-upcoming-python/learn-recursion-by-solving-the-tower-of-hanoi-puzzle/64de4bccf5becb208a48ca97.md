@@ -10,14 +10,14 @@ dashedName: step-13
 In the Tower of Hanoi puzzle, you can identify the three rods according to their purpose:
 
 - The first rod is the source, where all the disks are stacked on top of each other at the beginning of the game.
-- The second rod is an auxiliary rod, it helps in moving the disks to the target rod.
+- The second rod is an auxiliary rod, and it helps in moving the disks to the target rod.
 - The third rod is the target, where all the disks should be placed in order at the end of the game.
 
-Currently, the `move` function does not take any parameters. Change the function declaration to take 4 parameters: `n`, `source`, `auxiliary`, and `target`. Then, pass `NUMBER_OF_DISKS` and the strings `'A'`, `'B'`, and `'C'` as arguments to your function call. The order matters.
+Currently, the `move()` function does not take any parameters. Change the function declaration to take 4 parameters: `n`, `source`, `auxiliary`, and `target`. Then, pass `NUMBER_OF_DISKS` and the strings `'A'`, `'B'`, and `'C'` as arguments to your function call. The order matters.
 
 # --hints--
 
-Your `move` function should have `n`, `source`, `auxiliary`, and `target` as the parameters. The order matters.
+Your `move()` function should have `n`, `source`, `auxiliary`, and `target` as the parameters. The order matters.
 
 ```js
 ({ test: () => assert(__pyodide.runPython(`
@@ -40,7 +40,7 @@ You should pass `NUMBER_OF_DISKS` and the strings `'A'`, `'B'`, and `'C'` to `mo
 
 ```py
 NUMBER_OF_DISKS = 3
-number_of_moves = 2 ** NUMBER_OF_DISKS - 1
+number_of_moves = 2**NUMBER_OF_DISKS - 1
 rods = {
     'A': list(range(NUMBER_OF_DISKS, 0, -1)),
     'B': [],

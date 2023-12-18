@@ -25,7 +25,7 @@ You should set `NUMBER_OF_DISKS` to 4.
 --fcc-editable-region--
 NUMBER_OF_DISKS = 3
 --fcc-editable-region--
-number_of_moves = 2 ** NUMBER_OF_DISKS - 1
+number_of_moves = 2**NUMBER_OF_DISKS - 1
 rods = {
     'A': list(range(NUMBER_OF_DISKS, 0, -1)),
     'B': [],
@@ -37,7 +37,8 @@ def make_allowed_move(rod1, rod2):
     if not rods[rod2]:
         forward = True
     elif rods[rod1] and rods[rod1][-1] < rods[rod2][-1]:
-        forward = True              
+        forward = True      
+                
     if forward:
         print(f'Moving disk {rods[rod1][-1]} from {rod1} to {rod2}')
         rods[rod2].append(rods[rod1].pop())
