@@ -26,9 +26,9 @@ interface ListenRequestEvent extends MessageEvent {
   };
 }
 
-interface BusyCheckEvent extends MessageEvent {
+interface CancelEvent extends MessageEvent {
   data: {
-    type: 'busy-check';
+    type: 'cancel';
     value: number;
   };
 }
@@ -140,21 +140,20 @@ function initRunPython() {
   return { runPython, getResetId };
 }
 
-ctx.onmessage = (e: PythonRunEvent | ListenRequestEvent | BusyCheckEvent) => {
+ctx.onmessage = (e: PythonRunEvent | ListenRequestEvent | CancelEvent) => {
   const { data } = e;
   if (data.type === 'listen') {
     handleListenRequest();
-  } else if (data.type === 'busy-check') {
-    handleBusyCheckRequest(data);
+  } else if (data.type === 'cancel') {
+    handleCancelRequest(data);
   } else {
     handleRunRequest(data);
   }
 };
 
-// This just reflects the message back to the client, demonstrating that the
-// worker isn't busy.
-function handleBusyCheckRequest({ value }: { value: number }) {
-  postMessage({ type: 'busy-check', text: value });
+// This lets the client know that there is nothing to cancel.
+function handleCancelRequest({ value }: { value: number }) {
+  postMessage({ type: 'is-alive', text: value });
 }
 
 function handleListenRequest() {

@@ -37,7 +37,7 @@ type PythonWorkerEvent = {
       | 'contentLoaded'
       | 'reset'
       | 'stopped'
-      | 'busy-check';
+      | 'is-alive';
     text?: string;
   };
 };
@@ -64,7 +64,7 @@ export function registerTerminal(handlers: {
     // TODO: this is a bit messy with the 'handlers' as well as the implicit
     // handlers reacting to stopped and contentLoaded messages.
     if (type === 'contentLoaded') return; // Ignore contentLoaded messages for now.
-    if (type === 'busy-check') {
+    if (type === 'is-alive') {
       clearTimeout(Number(text));
       return;
     }
@@ -105,7 +105,7 @@ export function interruptCodeExecution(): void {
   // messages).
 
   // TODO: sort out the terminology.
-  getPythonWorker().postMessage({ type: 'busy-check', value: resetId });
+  getPythonWorker().postMessage({ type: 'cancel', value: resetId });
 }
 
 export function runPythonCode(code: {
