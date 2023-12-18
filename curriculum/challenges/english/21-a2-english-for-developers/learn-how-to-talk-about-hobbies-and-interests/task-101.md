@@ -1,0 +1,48 @@
+---
+id: 658011ef9ec114ff80ce5e42
+title: Task 101
+challengeType: 19
+dashedName: task-101
+---
+
+# --description--
+
+The phrase `That sounds great!` is used to convey enthusiasm or excitement towards an offered opportunity or plan.
+
+# --question--
+
+## --text--
+
+Choose the synonym that best matches the meaning of `That sounds great!` in this context.
+
+## --answers--
+
+`That seems acceptable.`
+
+### --feedback--
+
+It doesn't capture the enthusiastic tone conveyed by the phrase.
+
+---
+
+`That's wonderful!`
+
+---
+
+`That's tolerable.`
+
+### --feedback--
+
+It suggests a neutral or lukewarm response, which is less enthusiastic than the phrase in the context.
+
+---
+
+`That might be okay.`
+
+### --feedback--
+
+It doesn't reflect the level of excitement conveyed in the phrase.
+
+## --video-solution--
+
+2
