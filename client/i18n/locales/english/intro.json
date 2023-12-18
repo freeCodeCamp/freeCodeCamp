@@ -1188,7 +1188,7 @@
         "title": "Learn Tree Traversal by Building a Binary Search Tree",
         "intro": [
           "A Binary Search Tree (BST) is an important data structure concept, where data is sorted in a hierarchical structure.",
-          "In this project, you will learn how to costruct a BST, perform an inorder traversal, and also cover key operations like insertion, search, and deletion."
+          "In this project, you will learn how to construct a BST, perform an inorder traversal, and also cover key operations like insertion, search, and deletion."
         ]
       }
     }
