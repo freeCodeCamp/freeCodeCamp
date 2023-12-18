@@ -57,7 +57,6 @@ export function registerTerminal(handlers: {
   const pythonWorker = getPythonWorker();
   if (listener) pythonWorker.removeEventListener('message', listener);
   listener = (event: PythonWorkerEvent) => {
-    console.log('python worker message', event.data);
     // TODO: refactor text -> value or msg.
     const { type, text } = event.data;
 

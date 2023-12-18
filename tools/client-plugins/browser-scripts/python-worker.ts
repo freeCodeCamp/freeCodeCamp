@@ -95,7 +95,6 @@ function initRunPython() {
     print,
     input
   });
-  console.log('registered jscustom');
   // Create fresh globals each time user code is run.
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const globals = pyodide.globals.get('dict')() as PyProxy;
