@@ -1,5 +1,7 @@
 const mockFillInTheBlankAST = require('../__fixtures__/ast-fill-in-the-blank.json');
 const mockFillInTheBlankYouAreAST = require('../__fixtures__/ast-fill-in-the-blank-one-blank.json');
+const mockFillInTheBlankTwoSentencesAST = require('../__fixtures__/ast-fill-in-the-blank-two-sentences.json');
+const mockFillInTheBlankBadSentence = require('../__fixtures__/ast-fill-in-the-blank-bad-sentence.json');
 const addFillInTheBlankQuestion = require('./add-fill-in-the-blank');
 
 describe('fill-in-the-blanks plugin', () => {
@@ -64,6 +66,33 @@ describe('fill-in-the-blanks plugin', () => {
       answer: 'Nice',
       feedback: null
     });
+  });
+
+  it('should extract the sentence from the surrounding inline code block', () => {
+    plugin(mockFillInTheBlankAST, file);
+    const testObject = file.data.fillInTheBlank;
+
+    expect(testObject.sentence).toBe(
+      '<p>Hello, You _ the new graphic designer, _? _ to meet you!</p>'
+    );
+  });
+
+  it('should extract sentences from multiple inline code blocks', () => {
+    plugin(mockFillInTheBlankTwoSentencesAST, file);
+    const testObject = file.data.fillInTheBlank;
+
+    expect(testObject.sentence).toBe(
+      `<p>A sentence _ paragraph 1</p>
+<p>Sentence in _ 2</p>`
+    );
+  });
+
+  it('should throw if a sentence is not inside an inline code block', () => {
+    expect(() => {
+      plugin(mockFillInTheBlankBadSentence, file);
+    }).toThrow(
+      'Fill in the blank sentence must be inside an inline code block'
+    );
   });
 
   it('should handle one blank', () => {

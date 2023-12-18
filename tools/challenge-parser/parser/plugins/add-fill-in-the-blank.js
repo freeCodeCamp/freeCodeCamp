@@ -24,7 +24,17 @@ function plugin() {
 }
 
 function getfillInTheBlank(sentenceNodes, blanksNodes) {
-  const sentence = mdastToHtml(sentenceNodes);
+  const sentenceWithoutCodeBlocks = sentenceNodes.map(node => {
+    node.children.forEach(child => {
+      if (child.type !== 'inlineCode')
+        throw Error(
+          'Fill in the blank sentence must be inside an inline code block'
+        );
+    });
+    const children = node.children.map(child => ({ ...child, type: 'text' }));
+    return { ...node, children };
+  });
+  const sentence = mdastToHtml(sentenceWithoutCodeBlocks);
   const blanks = getBlanks(blanksNodes);
 
   if (!sentence) throw Error('sentence is missing from fill in the blank');
