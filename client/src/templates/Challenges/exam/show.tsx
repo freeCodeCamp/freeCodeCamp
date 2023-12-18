@@ -568,6 +568,8 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                   variant='primary'
                   data-cy='start-exam-btn'
                   disabled={!qualifiedForExam}
+                  // `this.runExam` being an async callback is acceptable
+                  //eslint-disable-next-line @typescript-eslint/no-misused-promises
                   onClick={this.runExam}
                 >
                   {t('buttons.click-start-exam')}
