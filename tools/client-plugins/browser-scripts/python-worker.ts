@@ -26,6 +26,13 @@ interface ListenRequestEvent extends MessageEvent {
   };
 }
 
+interface BusyCheckEvent extends MessageEvent {
+  data: {
+    type: 'busy-check';
+    value: number;
+  };
+}
+
 // Since messages are buffered, it needs to be possible to discard 'run'
 // messages. Otherwise messages could build up while the worker is busy (for
 // example, while loading pyodide) and the work would try to process them in
@@ -91,10 +98,22 @@ def __wrap(func):
   def fn(*args):
     data = func(*args)
     if data.type == 'cancel':
-      raise KeyboardInterrupt
+      raise KeyboardInterrupt(data.value)
     return data.value
   return fn
 input = __wrap(input)
+`);
+
+  // Exposing sys.last_value can create memory leaks, so this just returns a
+  // string instead of the actual exception. args[0] is what was passed to the
+  // exception constructor. In our case, that's the id we want.
+  // TODO: I'm using 'join' to make sure we're not leaking a reference to the
+  // exception. This might be excessive, but I don't know enough about pyodide
+  // to be sure.
+  pyodide.runPython(`
+import sys
+def __get_reset_id():
+    return "".join(str(sys.last_value.args[0]))
 `);
 
   ignoreRunMessages = true;
@@ -103,14 +122,22 @@ input = __wrap(input)
 
 void setupPyodide();
 
-ctx.onmessage = (e: PythonRunEvent | ListenRequestEvent) => {
+ctx.onmessage = (e: PythonRunEvent | ListenRequestEvent | BusyCheckEvent) => {
   const { data } = e;
   if (data.type === 'listen') {
     handleListenRequest();
+  } else if (data.type === 'busy-check') {
+    handleBusyCheckRequest(data);
   } else {
     handleRunRequest(data);
   }
 };
+
+// This just reflects the message back to the client, demonstrating that the
+// worker isn't busy.
+function handleBusyCheckRequest({ value }: { value: number }) {
+  postMessage({ type: 'busy-check', text: value });
+}
 
 function handleListenRequest() {
   ignoreRunMessages = false;
@@ -119,8 +146,11 @@ function handleListenRequest() {
 function handleRunRequest(data: PythonRunEvent['data']) {
   if (ignoreRunMessages) return;
   const code = (data.code.contents || '').slice();
+  // TODO: use reset-terminal for clarity?
   postMessage({ type: 'reset' });
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  const getResetId = pyodide.globals.get('__get_reset_id') as () => string;
   // use pyodide.runPythonAsync if we want top-level await
   try {
     pyodide.runPython(code);
@@ -129,7 +159,7 @@ function handleRunRequest(data: PythonRunEvent['data']) {
     console.error(e);
     if (err.type === 'KeyboardInterrupt') {
       ignoreRunMessages = true;
-      postMessage({ type: 'stopped' });
+      postMessage({ type: 'stopped', text: getResetId() });
     }
   }
 }

@@ -34,7 +34,7 @@ import {
   updateProjectPreview
 } from '../utils/build';
 import {
-  resetPythonWorker,
+  interruptCodeExecution,
   runPythonCode
 } from '../utils/python-worker-handler';
 import { executeGA } from '../../../redux/actions';
@@ -311,7 +311,7 @@ function* updatePython(challengeData) {
   // functions to handle transforming code, embedding it and building the
   // final html. Then we can just use the transformation function here.
   const buildData = yield buildChallengeData(challengeData);
-  resetPythonWorker();
+  interruptCodeExecution();
   const code = {
     contents: buildData.sources.index,
     editableContents: buildData.sources.editableContents,
