@@ -24,14 +24,14 @@ const Faq = (): JSX.Element => {
           data-playwright-test-label='landing-page-faq'
           key={i}
         >
-          <p className='faq-question'>{faq.question}</p>
+          <h3 className='faq-question'>{faq.question}</h3>
           {faq.answer.map((answer, i) => (
             <p key={i}>{answer}</p>
           ))}
           <Spacer size='small' />
         </div>
       ))}
-      <h3>{t('learn.read-this.p12')}</h3>
+      <h2 className='landing-page-happy'>{t('learn.read-this.p12')}</h2>
       <Spacer size='medium' />
       <BigCallToAction />
       <Spacer size='large' />

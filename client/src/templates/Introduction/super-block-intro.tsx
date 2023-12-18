@@ -206,32 +206,29 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               <Spacer size='medium' />
               <div className='block-ui'>
                 {defaultCurriculumNames.map(blockDashedName => (
-                  <Fragment key={blockDashedName}>
-                    <Block
-                      blockDashedName={blockDashedName}
-                      challenges={nodesForSuperBlock.filter(
-                        node => node.challenge.block === blockDashedName
-                      )}
-                      superBlock={superBlock}
-                    />
-                  </Fragment>
+                  <Block
+                    key={blockDashedName}
+                    blockDashedName={blockDashedName}
+                    challenges={nodesForSuperBlock.filter(
+                      node => node.challenge.block === blockDashedName
+                    )}
+                    superBlock={superBlock}
+                  />
                 ))}
                 {!superblockWithoutCert.includes(superBlock) && (
-                  <div>
-                    <CertChallenge
-                      certification={certification}
-                      superBlock={superBlock}
-                      title={title}
-                      user={user}
-                    />
-                  </div>
+                  <CertChallenge
+                    certification={certification}
+                    superBlock={superBlock}
+                    title={title}
+                    user={user}
+                  />
                 )}
               </div>
               {!isSignedIn && !signInLoading && (
-                <div>
+                <>
                   <Spacer size='large' />
                   <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
-                </div>
+                </>
               )}
               <Spacer size='large' />
               <h3

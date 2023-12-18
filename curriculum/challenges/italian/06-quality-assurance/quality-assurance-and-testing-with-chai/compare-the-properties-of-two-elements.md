@@ -12,7 +12,7 @@ Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza
 
 # --instructions--
 
-All'interno di `tests/1_unit-tests.js`, sotto il test etichettato con `#8`, nella suite `Comparisons`, cambia ogni `assert` in `assert.isAbove` o `assert.isAtMost` per far superare il test (dovrebbe risultare `true`). Non alterare gli argomenti passati alle asserzioni.
+Within `tests/1_unit-tests.js` under the test labeled `#8` in the `Comparisons` suite, change each `assert` to either `assert.isAbove` or `assert.isAtMost` to make the test pass (should evaluate to `true`). Non alterare gli argomenti passati alle asserzioni.
 
 # --hints--
 

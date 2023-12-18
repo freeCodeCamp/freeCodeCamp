@@ -9,31 +9,22 @@ exports[`<Footer /> matches snapshot 1`] = `
   >
     <div
       className="footer-desc-col"
-      data-playwright-test-label="footer-desc-col"
     >
-      <p
-        data-playwright-test-label="footer-tax-exempt-status"
-      >
+      <p>
         footer.tax-exempt-status
       </p>
-      <p
-        data-playwright-test-label="footer-mission-statement"
-      >
+      <p>
         footer.mission-statement
       </p>
-      <p
-        data-playwright-test-label="footer-donation-initiatives-text"
-      >
+      <p>
         footer.donation-initiatives
       </p>
       <p
         className="footer-donation"
-        data-playwright-test-label="footer-donation-text"
       >
         You can
         <a
           className="inline"
-          data-playwright-test-label="footer-donation-page-link"
           href="/donate"
         >
           make a tax-deductible donation here
@@ -46,15 +37,15 @@ exports[`<Footer /> matches snapshot 1`] = `
     >
       <h2
         className="col-header"
-        data-playwright-test-label="trending-guides-col-header"
+        id="trending-guides"
       >
         footer.trending-guides
       </h2>
-      <div
+      <ul
+        aria-labelledby="trending-guides"
         className="trending-guides-articles"
-        data-playwright-test-label="trending-guides-articles"
       >
-        <span>
+        <li>
           <a
             href="trending:article0link"
             rel="noopener noreferrer"
@@ -62,8 +53,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article0title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article1link"
             rel="noopener noreferrer"
@@ -71,8 +62,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article1title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article2link"
             rel="noopener noreferrer"
@@ -80,8 +71,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article2title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article3link"
             rel="noopener noreferrer"
@@ -89,8 +80,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article3title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article4link"
             rel="noopener noreferrer"
@@ -98,8 +89,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article4title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article5link"
             rel="noopener noreferrer"
@@ -107,8 +98,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article5title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article6link"
             rel="noopener noreferrer"
@@ -116,8 +107,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article6title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article7link"
             rel="noopener noreferrer"
@@ -125,8 +116,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article7title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article8link"
             rel="noopener noreferrer"
@@ -134,8 +125,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article8title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article9link"
             rel="noopener noreferrer"
@@ -143,8 +134,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article9title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article10link"
             rel="noopener noreferrer"
@@ -152,8 +143,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article10title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article11link"
             rel="noopener noreferrer"
@@ -161,8 +152,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article11title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article12link"
             rel="noopener noreferrer"
@@ -170,8 +161,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article12title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article13link"
             rel="noopener noreferrer"
@@ -179,8 +170,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article13title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article14link"
             rel="noopener noreferrer"
@@ -188,8 +179,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article14title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article15link"
             rel="noopener noreferrer"
@@ -197,8 +188,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article15title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article16link"
             rel="noopener noreferrer"
@@ -206,8 +197,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article16title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article17link"
             rel="noopener noreferrer"
@@ -215,8 +206,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article17title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article18link"
             rel="noopener noreferrer"
@@ -224,8 +215,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article18title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article19link"
             rel="noopener noreferrer"
@@ -233,8 +224,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article19title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article20link"
             rel="noopener noreferrer"
@@ -242,8 +233,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article20title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article21link"
             rel="noopener noreferrer"
@@ -251,8 +242,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article21title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article22link"
             rel="noopener noreferrer"
@@ -260,8 +251,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article22title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article23link"
             rel="noopener noreferrer"
@@ -269,8 +260,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article23title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article24link"
             rel="noopener noreferrer"
@@ -278,8 +269,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article24title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article25link"
             rel="noopener noreferrer"
@@ -287,8 +278,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article25title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article26link"
             rel="noopener noreferrer"
@@ -296,8 +287,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article26title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article27link"
             rel="noopener noreferrer"
@@ -305,8 +296,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article27title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article28link"
             rel="noopener noreferrer"
@@ -314,8 +305,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article28title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article29link"
             rel="noopener noreferrer"
@@ -323,8 +314,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article29title
           </a>
-        </span>
-      </div>
+        </li>
+      </ul>
     </div>
   </div>
   <div
@@ -332,16 +323,13 @@ exports[`<Footer /> matches snapshot 1`] = `
   >
     <h2
       className="col-header"
-      data-playwright-test-label="footer-bottom-col-header"
     >
       footer.our-nonprofit
     </h2>
     <div
       className="our-nonprofit"
-      data-playwright-test-label="our-nonprofit"
     >
       <a
-        data-playwright-test-label="footer-about-url"
         href="links:footer.about-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -349,7 +337,6 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.about
       </a>
       <a
-        data-playwright-test-label="footer-alumni-url"
         href="https://www.linkedin.com/school/free-code-camp/people/"
         rel="noopener noreferrer"
         target="_blank"
@@ -357,7 +344,6 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.alumni
       </a>
       <a
-        data-playwright-test-label="footer-open-source-url"
         href="https://github.com/freeCodeCamp/"
         rel="noopener noreferrer"
         target="_blank"
@@ -365,7 +351,6 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.open-source
       </a>
       <a
-        data-playwright-test-label="footer-shop-url"
         href="links:footer.shop-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -373,7 +358,6 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.shop
       </a>
       <a
-        data-playwright-test-label="footer-support-url"
         href="links:footer.support-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -381,7 +365,6 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.support
       </a>
       <a
-        data-playwright-test-label="footer-sponsors-url"
         href="links:footer.sponsors-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -389,7 +372,6 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.sponsors
       </a>
       <a
-        data-playwright-test-label="footer-honesty-url"
         href="links:footer.honesty-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -397,7 +379,6 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.honesty
       </a>
       <a
-        data-playwright-test-label="footer-coc-url"
         href="links:footer.coc-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -405,7 +386,6 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.coc
       </a>
       <a
-        data-playwright-test-label="footer-privacy-url"
         href="links:footer.privacy-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -413,7 +393,6 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.privacy
       </a>
       <a
-        data-playwright-test-label="footer-tos-url"
         href="links:footer.tos-url"
         rel="noopener noreferrer"
         target="_blank"
@@ -421,7 +400,6 @@ exports[`<Footer /> matches snapshot 1`] = `
         footer.links.tos
       </a>
       <a
-        data-playwright-test-label="footer-copyright-url"
         href="links:footer.copyright-url"
         rel="noopener noreferrer"
         target="_blank"

@@ -68,6 +68,13 @@ export const postChargeProcessing = createAction(
 export const postChargeComplete = createAction(actionTypes.postChargeComplete);
 export const postChargeError = createAction(actionTypes.postChargeError);
 
+export const updateCard = createAction(actionTypes.updateCard);
+export const updateCardError = createAction(actionTypes.updateCardError);
+export const updateCardComplete = createAction(actionTypes.updateCardComplete);
+export const updateCardRedirecting = createAction(
+  actionTypes.updateCardRedirecting
+);
+
 export const fetchProfileForUser = createAction(
   actionTypes.fetchProfileForUser
 );
@@ -105,6 +112,11 @@ export const clearExamResults = createAction(actionTypes.clearExamResults);
 export const linkMsUsername = createAction(actionTypes.linkMsUsername);
 export const unlinkMsUsername = createAction(actionTypes.unlinkMsUsername);
 export const setMsUsername = createAction(actionTypes.setMsUsername);
+
+export const submitSurvey = createAction(actionTypes.submitSurvey);
+export const submitSurveyComplete = createAction(
+  actionTypes.submitSurveyComplete
+);
 
 export const setIsProcessing = createAction(actionTypes.setIsProcessing);
 

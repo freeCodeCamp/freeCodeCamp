@@ -12,7 +12,7 @@ dashedName: compare-the-properties-of-two-elements
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，在标有 `#8` 的 `Comparisons` 套件里，将每个 `assert` 改成 `assert.isAbove` 或 `assert.isAtMost` 方法，让测试通过（结果应该返回 `true`）。 不要修改传给断言的参数。
+Within `tests/1_unit-tests.js` under the test labeled `#8` in the `Comparisons` suite, change each `assert` to either `assert.isAbove` or `assert.isAtMost` to make the test pass (should evaluate to `true`). 不要修改传给断言的参数。
 
 # --hints--
 

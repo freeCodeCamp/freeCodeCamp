@@ -12,11 +12,11 @@ Questo video ti mostrerà la connessione tra le funzioni e i grafici. Nota come 
 
 Ecco il <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV" target="_blank" rel="noopener noreferrer nofollow">notebook Colab per questo video.</a>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Aggiungi al tuo notebook Colab del codice per le funzioni e i grafici.
+
+# --question--
 
 ## --text--
 

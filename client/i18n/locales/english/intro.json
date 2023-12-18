@@ -209,7 +209,10 @@
       },
       "learn-intermediate-css-by-building-a-cat-painting": {
         "title": "Learn Intermediate CSS by Building a Cat Painting",
-        "intro": ["", ""]
+        "intro": [
+          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts",
+          "In this course, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+        ]
       }
     }
   },
@@ -298,68 +301,156 @@
   },
   "2022/javascript-algorithms-and-data-structures": {
     "title": "JavaScript Algorithms and Data Structures (Beta)",
-    "intro": ["placeholder", "placeholder"],
-    "note": "",
+    "intro": [
+      "Developers use HTML and CSS to control the content and styling of a page. And they use JavaScript to make that page interactive.",
+      "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",
+      "You'll also learn about Object Oriented Programming (OOP), Functional Programming, algorithmic thinking, how to work with local storage, and how to fetch data using an API."
+    ],
+    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
     "blocks": {
-      "build-a-caesars-cipher-project": {
-        "title": "Build a Caesars Cipher Project",
-        "intro": ["", ""]
+      "build-a-pokemon-search-app-project": {
+        "title": "Build a Pokémon Search App Project",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a Pokémon search app."
+        ]
       },
       "build-a-cash-register-project": {
         "title": "Build a Cash Register Project",
-        "intro": ["", ""]
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you'll build a cash register web app."
+        ]
       },
       "build-a-palindrome-checker-project": {
         "title": "Build a Palindrome Checker Project",
-        "intro": ["", ""]
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you'll build an application that checks whether a given word is a palindrome."
+        ]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Build a Roman Numeral Converter Project",
-        "intro": ["", ""]
+        "intro": [
+          "This is one of the required projects to claim your certification.",
+          "For this project, you'll build an application that converts integers to Roman numerals."
+        ]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Build a Telephone Number Validator Project",
-        "intro": ["", ""]
+        "intro": [
+          "This is one of the required projects to claim your certification.",
+          "For this project, you'll build an application that checks if a number is a valid United States phone number."
+        ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Learn Basic JavaScript by Building a Role Playing Game",
-        "intro": ["", ""]
+        "intro": [
+          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
+          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Role Playing Game. You'll learn how to work with arrays, strings, objects, functions, loops, <code>if/else</code> statements, and more."
+        ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Learn Form Validation by Building a Calorie Counter",
-        "intro": ["", ""]
+        "intro": [
+          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter project, you'll learn how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
+          "In this practice project, you'll learn basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
+        ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Learn Functional Programming by Building a Spreadsheet",
-        "intro": ["", ""]
+        "intro": [
+          "Functional Programming is a popular approach to software development. In Functional Programming, developers organize code into smaller functions, then combine those functions to build complex programs.",
+          "In this spreadsheet application project, you'll learn about parsing and evaluating mathematical expressions, implementing spreadsheet functions, handling cell references, and creating interactive web interfaces. You'll learn how to dynamically update the page based on user input.",
+          "This project will cover concepts like the <code>map()</code> method, <code>find()</code> method, <code>parseInt()</code>, the <code>includes()</code> method."
+        ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
         "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
-        "intro": ["", ""]
+        "intro": [
+          "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
+          "This project will cover concepts like switch statements, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method, and more."
+        ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
-        "intro": ["", ""]
+        "intro": [
+          "As you expand your JavaScript skills, you'll want to get comfortable with array manipulation methods, such as <code>map()</code>, <code>reduce()</code>, and <code>filter()</code>.",
+          "In this statistics calculator project, you'll gain experience with handling user input, DOM manipulation, and method chaining. You'll get practice by performing statistical calculations like mean, median, mode, variance, and standard deviation."
+        ]
       },
-      "learn-data-structures-by-building-a-shopping-cart": {
-        "title": "Learn Data Structures By Building A Shopping Cart",
-        "intro": ["", ""]
+      "learn-basic-oop-by-building-a-shopping-cart": {
+        "title": "Learn Basic OOP by Building a Shopping Cart",
+        "intro": [
+          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, developers use objects and classes to structure their code.",
+          "In this shopping cart project, you'll learn how to define classes and use them. You'll create class instances and implement methods for data manipulation.",
+          "This project will cover concepts like the ternary operator, the spread operator, the <code>this</code> keyword, and more."
+        ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
         "title": "Learn Fetch and Promises By Building an fCC Authors Page",
-        "intro": ["", ""]
+        "intro": [
+          "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
+          "This freeCodeCamp authors page project will show you how to use the fetch method, then dynamically update the DOM to display the fetched data.",
+          "This project will also teach you how to paginate your data so you can load results in batches."
+        ]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
         "title": "Learn Regular Expressions by Building a Spam Filter",
-        "intro": ["", ""]
+        "intro": [
+          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
+          "In this spam filter project, you'll learn about capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
+        ]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
         "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
-        "intro": ["", ""]
+        "intro": [
+          "In computer science, there are fundamental sorting algorithms that all developers should learn. In this number sorter project, you'll learn how to implement and visualize different sorting algorithms like bubble sort, selection sort, and insertion sort – all with JavaScript.",
+          "This project will help you understand the fundamental concepts behind these algorithms, and how you can apply them to sort numerical data in web applications."
+        ]
+      },
+      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
+        "title": "Learn Intermediate Algorithmic Thinking by Building a Dice Game",
+        "intro": [
+          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
+          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
+          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
+        ]
+      },
+      "learn-intermediate-oop-by-building-a-platformer-game": {
+        "title": "Learn Intermediate OOP by Building a Platformer Game",
+        "intro": [
+          "Coding a game is a great way to grasp fundamental programming principles, while also creating an interactive gaming experience.",
+          "In this platformer game project, you'll continue to learn about classes, objects, inheritance, and encapsulation. You'll also learn how to design and organize game elements efficiently and gain insights into problem-solving and code reusability."
+        ]
       },
       "learn-localstorage-by-building-a-todo-app": {
         "title": "Learn localStorage by Building a Todo App",
-        "intro": ["", ""]
+        "intro": [
+          "Local storage is a web browser feature that lets web applications store key-value pairs persistently within a user's browser. This allows web apps to save data during one session, then retrieve it in a later page session.",
+          "In this TODO application, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implement event listeners, and toggle UI elements."
+        ]
+      },
+      "learn-the-date-object-by-building-a-date-formatter": {
+        "title": "Learn the Date Object by Building a Date Formatter",
+        "intro": [
+          "Working with dates in JavaScript can be challenging. You have to navigate various methods, formats, and time zones. In this project, you'll learn how to work with the JavaScript Date object, including its methods and properties. You'll also learn how to correctly format dates.",
+          "This project will cover concepts such as the <code>getDate()</code>, <code>getMonth()</code>, and <code>getFullYear()</code> methods."
+        ]
+      },
+      "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard": {
+        "title": "Learn Asynchronous Programming by Building an fCC Forum Leaderboard",
+        "intro": [
+          "JavaScript is an asynchronous programming language. And this project will help you gain proficiency in asynchronous concepts. You'll code your own freeCodeCamp forum leaderboard.",
+          "This project will cover the Fetch API, promises, Async/Await, and the try..catch statement."
+        ]
+      },
+      "learn-basic-string-and-array-methods-by-building-a-music-player": {
+        "title": "Learn Basic String and Array Methods by Building a Music Player",
+        "intro": [
+          "Now let's learn some essential string and array methods like the <code>find()</code>, <code>forEach()</code>, <code>map()</code>, and <code>join()</code>. These methods are crucial for developing dynamic web applications.",
+          "In this project, you'll code a basic MP3 player using HTML, CSS, and JavaScript. The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, previous, and shuffle functionalities. You'll even learn how to dynamically update your user interface based on the current song."
+        ]
       }
     }
   },
@@ -459,7 +550,10 @@
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
       },
-      "d3-dashboard": { "title": "D3 Dashboard", "intro": ["", ""] }
+      "d3-dashboard": {
+        "title": "D3 Dashboard",
+        "intro": ["", ""]
+      }
     }
   },
   "relational-database": {
@@ -975,6 +1069,14 @@
       "top-the-box-model": {
         "title": "Learn the Box Model",
         "intro": ["A description is to be determined"]
+      },
+      "top-introduction-to-flexbox": {
+        "title": "Introduction to Flexbox",
+        "intro": ["A description is to be determined"]
+      },
+      "top-learn-block-and-inline": {
+        "title": "Learn the difference between Block and Inline",
+        "intro": ["A description is to be determined"]
       }
     }
   },
@@ -1081,6 +1183,127 @@
       "upcoming-python-project": {
         "title": "Upcoming Python Project",
         "intro": ["placeholder"]
+      }
+    }
+  },
+  "a2-english-for-developers": {
+    "title": "A2 English for Developers (Beta)",
+    "intro": [
+      "This course teaches the English language, designed for developers.",
+      "More text here."
+    ],
+    "blocks": {
+      "learn-greetings-in-your-first-day-at-the-office": {
+        "title": "Learn Greetings in your First Day at the Office",
+        "intro": ["Learn greetings."]
+      },
+      "learn-introductions-in-an-online-team-meeting": {
+        "title": "Learn Introductions in an Online Team Meeting",
+        "intro": ["Learn introductions."]
+      },
+      "learn-conversation-starters-in-the-break-room": {
+        "title": "Learn Conversation Starters in the Break Room",
+        "intro": ["Learn conversation starters."]
+      },
+      "learn-how-to-talk-about-a-typical-workday-and-tasks": {
+        "title": "Learn How to Talk About a Typical Workday and Tasks",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-your-morning-or-evening-routine": {
+        "title": "Learn How to Discuss Your Morning or Evening Routine",
+        "intro": ["", ""]
+      },
+      "learn-how-to-describe-your-current-project": {
+        "title": "Learn How to Describe Your Current Project",
+        "intro": ["", ""]
+      },
+      "learn-how-to-ask-and-share-about-educational-and-professional-background": {
+        "title": "Learn How to Ask and Share About Educational and Professional Background",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-hobbies-and-interests": {
+        "title": "Learn How to Talk About Hobbies and Interests",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-roles-and-responsibilies": {
+        "title": "Learn How to Discuss Roles and Responsibilities",
+        "intro": ["", ""]
+      },
+      "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
+        "title": "Learn How to Have a Conversation About Preferences and Motivations",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-popular-trends-in-technology": {
+        "title": "Learn How to Discuss Popular Trends in Technology",
+        "intro": ["", ""]
+      },
+      "learn-how-to-clarify-information-in-different-interactions": {
+        "title": "Learn How to Clarify Information in Different Interactions",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
+        "title": "Learn How to Use Basic Programming Vocabulary in Conversations",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-code-related-concepts-and-terms": {
+        "title": "Learn How to Use Code-related Concepts and Terms",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-tech-trends-and-updates": {
+        "title": "Learn How to Discuss Tech Trends and Updates",
+        "intro": ["", ""]
+      },
+      "learn-how-to-help-a-coworker-troubleshoot-on-github": {
+        "title": "Learn How to Help a Coworker Troubleshoot on GitHub",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
+        "title": "Learn How to Share Your Progress in Weekly Stand-up Meetings",
+        "intro": ["", ""]
+      },
+      "learn-how-to-ask-for-clarification-on-code-understanding": {
+        "title": "Learn How to Ask for Clarification on Code Understanding",
+        "intro": ["", ""]
+      },
+      "learn-how-to-document-code-for-a-project": {
+        "title": "Learn How to Document Code for a Project",
+        "intro": ["", ""]
+      },
+      "learn-how-to-read-and-understand-code-documentation": {
+        "title": "Learn How to Read and Understand Code Documentation",
+        "intro": ["", ""]
+      },
+      "learn-how-to-analyze-code-documentation": {
+        "title": "Learn How to Analyze Code Documentation",
+        "intro": ["", ""]
+      },
+      "learn-how-to-follow-basic-email-convention": {
+        "title": "Learn How to Follow Basic Email Convention",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-progress-and-accomplishments": {
+        "title": "Learn How to Share Progress and Accomplishments",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
+        "title": "Learn How to Talk About Updates and Plans for Tasks and Projects",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-agreement-or-disagreement": {
+        "title": "Learn How to Express Agreement or Disagreement",
+        "intro": ["", ""]
+      },
+      "learn-how-to-offer-technical-support-and-guidance": {
+        "title": "Learn How to Offer Technical Support and Guidance",
+        "intro": ["", ""]
+      },
+      "learn-how-to-request-and-receive-guidance": {
+        "title": "Learn How to Request and Receive Guidance",
+        "intro": ["", ""]
+      },
+      "learn-how-to-provide-explanations-when-helping-others": {
+        "title": "Learn How to Provide Explanations When Helping Others",
+        "intro": ["", ""]
       }
     }
   },

@@ -1,0 +1,18 @@
+{
+    "name": "Learn Introductions in an Online Team Meeting",
+    "isUpcomingChange": true,
+    "dashedName": "learn-introductions-in-an-online-team-meeting",
+    "order": 1,
+    "time": "5 hours",
+    "template": "",
+    "required": [],
+    "superBlock": "a2-english-for-developers",
+    "isBeta": true,
+    "challengeOrder": [
+      {
+        "id": "651dd5a46ffb500e3f2ce47b",
+        "title": "Dialogue: Placeholder"
+      }
+    ],
+    "helpCategory": "HTML-CSS"
+  }

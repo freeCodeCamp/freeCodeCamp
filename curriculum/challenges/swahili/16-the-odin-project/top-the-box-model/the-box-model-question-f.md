@@ -16,12 +16,11 @@ Every single thing on a webpage is a rectangular box. These boxes can have other
 }
 ```
 
-
-# --question--
-
-## --assignment--
+# --assignment--
 
 Add a border to every element on the page and see how the boxes are laid out.
+
+# --question--
 
 ## --text--
 

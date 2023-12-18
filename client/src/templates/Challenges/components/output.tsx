@@ -21,6 +21,7 @@ function Output({ defaultOutput, output }: OutputProps): JSX.Element {
     <pre
       className='output-text'
       data-cy='output-text'
+      data-playwright-test-label='output-text'
       dangerouslySetInnerHTML={{ __html: message }}
       role='region'
       aria-label={i18next.t('learn.editor-tabs.console')}

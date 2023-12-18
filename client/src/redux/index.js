@@ -23,11 +23,18 @@ import { createShowCertSaga } from './show-cert-saga';
 import updateCompleteEpic from './update-complete-epic';
 import { createUserTokenSaga } from './user-token-saga';
 import { createMsUsernameSaga } from './ms-username-saga';
+import { createSurveySaga } from './survey-saga';
 
 const defaultFetchState = {
   pending: true,
   complete: false,
   errored: false,
+  error: null
+};
+
+const updateCardDefaultState = {
+  redirecting: false,
+  success: false,
   error: null
 };
 
@@ -75,6 +82,9 @@ const initialState = {
   renderStartTime: null,
   donationFormState: {
     ...defaultDonationFormState
+  },
+  updateCardState: {
+    ...updateCardDefaultState
   }
 };
 
@@ -91,7 +101,8 @@ export const sagas = [
   ...createReportUserSaga(actionTypes),
   ...createUserTokenSaga(actionTypes),
   ...createSaveChallengeSaga(actionTypes),
-  ...createMsUsernameSaga(actionTypes)
+  ...createMsUsernameSaga(actionTypes),
+  ...createSurveySaga(actionTypes)
 ];
 
 function spreadThePayloadOnUser(state, payload) {
@@ -142,6 +153,18 @@ export const reducer = handleActions(
         renderStartTime: payload
       };
     },
+    [actionTypes.updateCardError]: (state, { payload }) => ({
+      ...state,
+      updateCardState: { ...updateCardDefaultState, error: payload }
+    }),
+    [actionTypes.updateCardRedirecting]: state => ({
+      ...state,
+      updateCardState: { ...updateCardDefaultState, redirecting: true }
+    }),
+    [actionTypes.updateCardComplete]: state => ({
+      ...state,
+      updateCardState: { ...updateCardDefaultState, success: true }
+    }),
     [actionTypes.updateDonationFormState]: (state, { payload }) => ({
       ...state,
       donationFormState: { ...state.donationFormState, ...payload }
@@ -428,6 +451,23 @@ export const reducer = handleActions(
           [appUsername]: {
             ...state.user[appUsername],
             examResults: null
+          }
+        }
+      };
+    },
+    [actionTypes.submitSurveyComplete]: (
+      state,
+      { payload: { surveyResults } }
+    ) => {
+      const { appUsername } = state;
+      const { completedSurveys = [] } = state.user[appUsername];
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            completedSurveys: [...completedSurveys, surveyResults]
           }
         }
       };

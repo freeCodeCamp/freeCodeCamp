@@ -115,14 +115,14 @@ Wenn du an regulären Bugs und Features auf unserem Entwicklungszweig `main` arb
 
 1. Rebase deiner lokalen Kopie:
 
-   ```console
+   ```bash
    git checkout <pr-branch>
    git pull --rebase upstream main
    ```
 
 2. Löse alle Konflikte und füge Commits hinzu / bzw. bearbeite sie
 
-   ```console
+   ```bash
    # Entweder
    git add .
    git commit -m "chore: resolve conflicts"
@@ -134,28 +134,28 @@ Wenn du an regulären Bugs und Features auf unserem Entwicklungszweig `main` arb
 
 3. Schiebe deine Änderungen in den PR zurück
 
-   ```console
+   ```bash
    git push --force origin <pr-branch>
    ```
 
 ### For Upcoming Curriculum and Features
 
-Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du Rosinenpickerei betreiben:
+When you are working on features for our upcoming curriculum `next-*` branches, you have to do a `cherry-pick`:
 
 1. Achte darauf, dass dein Upstream mit deinem Local übereinstimmt:
 
-   ```console
+   ```bash
    git checkout main
    git fetch --all --prune
    git checkout next-python-projects
    git reset --hard upstream/next-python-projects
    ```
 
-2. Backup erstellen
+2. Take a backup
 
    a. Entweder löschst du deinen lokalen Branch, nachdem du ein Backup gemacht hast (wenn du ihn noch lokal hast):
 
-   ```console
+   ```bash
    git checkout <pr-branch-name>
 
    # Beispiel:
@@ -169,9 +169,9 @@ Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du
    git branch -D <pr-branch-name>
    ```
 
-   b. Oder einfach ein Backup deines PR-Branch (wenn du ihn nicht lokal hast):
+   b. Or just a backup of your PR branch (if you do not have it locally):
 
-   ```console
+   ```bash
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
    # Beispiel:
@@ -180,14 +180,14 @@ Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du
 
 3. Beginne mit einer weißen Weste:
 
-   ```console
+   ```bash
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
 4. Resolve any conflicts, cleanup, and install dependencies and run tests
 
-   ```console
+   ```bash
    pnpm run clean
 
    pnpm install
@@ -201,6 +201,6 @@ Wenn du an Funktionen für unseren kommenden `next-*`-Branch arbeitest, musst du
 
 5. If everything looks good, push back to the PR
 
-   ```console
+   ```bash
    git push --force origin <pr-branch-name>
    ```

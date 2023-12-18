@@ -28,7 +28,7 @@ Wenn React auf ein benutzerdefiniertes HTML-Tag stößt, das auf eine andere Kom
 
 Im Code-Editor gibt es eine einfache funktionale Komponente namens `ChildComponent` und eine Klassenkomponente namens `ParentComponent`. Setze die beiden zusammen, indem du die Kinderkomponente (`ChildComponent`) innerhalb der Elternkomponente (`ParentComponent`) renderst. Achte darauf, dass du den `ChildComponent`-Tag mit einem Schrägstrich schließt.
 
-**Note:** `ChildComponent` is defined with an ES6 arrow function because this is a very common practice when using React.
+**Hinweis:** `ChildComponent` wird mit einer ES6-Pfeilfunktion (arrow function) definiert, weil dies eine sehr gängige Praxis bei der Verwendung von React ist.
 
 # --hints--
 

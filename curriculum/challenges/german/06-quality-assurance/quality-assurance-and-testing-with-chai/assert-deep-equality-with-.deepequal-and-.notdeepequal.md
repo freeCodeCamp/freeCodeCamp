@@ -14,7 +14,7 @@ Zur Erinnerung: Dieses Projekt ist auf dem folgenden Starterprojekt aufgebaut wo
 
 # --instructions--
 
-Ändere innerhalb `tests/1_unit-tests.js` mit dem gekennzeichneten Test`#7` in der `Equality` Suite, jeden `assert`, zu `assert.deepEqual` oder `assert.notDeepEqual`, um den Test zu bestehen (sollte `true` ausgeben). Die an die Asserts übergebenen Argumente dürfen nicht verändert werden.
+Within `tests/1_unit-tests.js` under the test labeled `#7` in the `Equality` suite, change each `assert` to either `assert.deepEqual` or `assert.notDeepEqual` to make the test pass (should evaluate to `true`). Die an die Asserts übergebenen Argumente dürfen nicht verändert werden.
 
 # --hints--
 

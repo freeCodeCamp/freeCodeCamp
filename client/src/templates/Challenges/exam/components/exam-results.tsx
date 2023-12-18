@@ -58,29 +58,37 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
   // TODO: Add share button
   return (
     <div className='exam-results-wrapper'>
-      <div className='exam-results-header'>
+      <div
+        className='exam-results-header'
+        data-playwright-test-label='exam-results-header'
+      >
         {t('learn.exam.results-header', { title })}
       </div>
       <hr />
       <Spacer size='medium' />
 
-      <div className='exam-results-message'>{examResultsMessage}</div>
+      <div
+        className='exam-results-message'
+        data-playwright-test-label='exam-results-message'
+      >
+        {examResultsMessage}
+      </div>
       <Spacer size='medium' />
       <div className='exam-results'>
-        <div>
+        <div data-playwright-test-label='exam-results-question-results'>
           {t('learn.exam.question-results', {
             n: numberOfCorrectAnswers,
             q: numberOfQuestionsInExam
           })}
         </div>
         <div>|</div>
-        <div>
+        <div data-playwright-test-label='exam-results-percent-results'>
           {t('learn.exam.percent-results', {
             p: percentCorrect
           })}
         </div>
         <div>|</div>
-        <div>
+        <div data-playwright-test-label='exam-time'>
           {t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
         </div>
       </div>
@@ -91,6 +99,7 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
           block={true}
           bsStyle='primary'
           className='btn-invert'
+          data-playwright-test-label='download-exam-results'
           download={`${dashedName}.txt`}
           href={downloadURL}
         >
@@ -100,6 +109,7 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
           block={true}
           bsStyle='primary'
           data-cy='exit-exam'
+          data-playwright-test-label='exit-exam'
           onClick={exitExam}
         >
           {t('buttons.exit')}

@@ -11,9 +11,7 @@ The final element needed to complete the HTML boilerplate is the `<body>` elemen
 
 To complete the boilerplate, add a `body` element to the `index.html` file. The `body` element also goes within the `html` element and is always below the `head` element, like so:
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Watch and follow along to Kevin Powell’s brilliant Building your first web page video above.
 
@@ -24,7 +22,9 @@ Build some muscle memory by deleting the contents of the `index.html` file and t
 ---
 
 Run your boilerplate through this [HTML validator](https://www.freeformatter.com/html-validator.html). Validators ensure your markup is correct and are an excellent learning tool, as they provide feedback on syntax errors you may be making often and aren’t aware of, such as missing closing tags and extra spaces in your HTML.
-    
+
+# --question--
+
 ## --text--
 
 What is the purpose of the `body` element?

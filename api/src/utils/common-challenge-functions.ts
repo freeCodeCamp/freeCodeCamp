@@ -16,6 +16,10 @@ export const multifileCertProjectIds = getChallenges()
   .filter(c => c.challengeType === challengeTypes.multifileCertProject)
   .map(c => c.id);
 
+export const msTrophyChallenges = getChallenges()
+  .filter(challenge => challenge.challengeType === challengeTypes.msTrophy)
+  .map(({ id, msTrophyId }) => ({ id, msTrophyId }));
+
 type SavedChallengeFile = {
   key: string;
   ext: string; // NOTE: This is Ext type in client

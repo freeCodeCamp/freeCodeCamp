@@ -9,15 +9,15 @@ Once you have set up the project locally you should be able to follow this docum
 This could be helpful when you are working on a feature that specifically targets something that involves localization, and requires you to validate for instance a button's label in a different language.
 
 > [!TIP]
-> You do not need to follow this document for translating freeCodeCamp's curriculum or contributing documentation. Read [this guide here](how-to-translate-files.md) instead.
+> You do not need to follow this document to translate freeCodeCamp's curriculum or contributing documentation. Read [this guide here](how-to-translate-files.md) instead.
 
 Let's understand how the i18n frameworks and tooling work.
 
 ## File Structure
 
-Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. Each language has a directory within that containing JSON files with the translations.
+Most of the files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. Each language has a directory that contains JSON files with the translations.
 
-```console
+```bash
   config
   └── i18n.ts
   ...
@@ -56,7 +56,7 @@ Most of the files for translating the platform are located in the [`client/i18n`
   └── validate-keys.ts
 ```
 
-Some of these files are translated on our translation platform (Crowdin) and some are translated or created via PR's on GitHub.
+Some of these files are translated on our translation platform (Crowdin) and some are translated or created via PRs on GitHub.
 
 **Files translated on our translation platform:**
 
@@ -255,6 +255,8 @@ In the above example, the key and a variable are set in the attributes of the `T
 
 To change text on the client side of things, go to the relevant `.json` file, find the key that is being used in the React component, and change the value to the new text you want. You should search the codebase for that key to make sure it isn't being used elsewhere. Or, if it is, that the changes make sense in all places.
 
+Run `pnpm run clean-and-develop` to apply the change.
+
 ## Adding Text
 
 If the text you want to add to the client exists in the relevant `.json` file, use the existing key. Otherwise, create a new key.
@@ -264,10 +266,12 @@ The English file is the "source of truth" for all of the `.json` files sharing t
 > [!NOTE]
 > Use English text for all languages if the file is translated through Crowdin. The tests will fail if you don't.
 
-It would be nice to keep the keys in the same order across all the files as well. Also, try to put all punctuation, spacing, quotes, etc in the JSON files and not in the components or server files.
+It would be nice to keep the keys in the same order across all the files as well. Also, try to put all punctuation, spacing, quotes, etc. in the JSON files and not in the components or server files.
 
 > [!NOTE]
 > The underscore (`_`) is a reserved character for keys in the client-side files. See [the documentation](https://www.i18next.com/translation-function/plurals) for how they are used.
+
+Run `pnpm run clean-and-develop` to apply the change.
 
 ## Proposing a Pull Request (PR)
 

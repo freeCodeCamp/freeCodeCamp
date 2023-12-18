@@ -125,7 +125,7 @@ Answer 2
 ## --text--
 ```
 
-`## --answers--` の下に回答を追加 / 更新してください (`Answer 1`、`Answer 2` など)。 `## -video-solution--` の下にある番号を正解の番号に更新してください。 同じ形式で、他の回答も追加できます。 質問と回答は引用符で囲むことができます。
+`## --answers--` の下に回答を追加 / 更新してください (`Answer 1`、`Answer 2` など)。 `## -video-solution--` の下にある番号を正解の番号に更新してください。 同じ形式で、他の回答も追加できます。 The questions and answers can be surrounded with quotation marks.
 
 ### 質問の例
 

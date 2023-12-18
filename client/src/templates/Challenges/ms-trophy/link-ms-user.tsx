@@ -151,10 +151,11 @@ function LinkMsUser({
           <Spacer size='medium' />
           <form onSubmit={handleLinkUsername}>
             <FormGroup validationState={isValid ? 'success' : 'error'}>
-              <ControlLabel>
+              <ControlLabel htmlFor='transcript-link'>
                 <strong>{t('learn.ms.transcript-label')}</strong>
               </ControlLabel>
               <FormControl
+                id='transcript-link'
                 type='url'
                 onChange={handleInputChange}
                 placeholder='https://learn.microsoft.com/en-us/users/username/transcript/transcriptId'

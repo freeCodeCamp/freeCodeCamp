@@ -161,7 +161,7 @@ The `api/` tests are split into two parts:
 
 Unit tests isolate a single function or component. The tests do not need mocking, but will require fixtures.
 
-The unit tests are located in a new file adjacent the file exporting that being tested:
+The unit tests are located in a new file adjacent to the file exporting that is being tested:
 
 ```text
 api/

@@ -124,7 +124,7 @@ pnpm run delete-step X #, onde X é o número do passo a ser excluído.
 
 ### update-step-titles
 
-Um script único que atualiza automaticamente a frontmatter nos arquivos markdown de um projeto para que eles sejam consistentes com o meta.json do projeto. Garante que o título de cada passo (e seu dashedName) correspondam ao challengeOrder do arquivo meta.
+Um script único que atualiza automaticamente a frontmatter nos arquivos markdown de um projeto para que eles sejam consistentes com o meta.json do projeto. Garante que o título de cada passo (e seu dashedName) corresponda ao `challengeOrder` do arquivo meta.
 
 #### Como executar o script
 

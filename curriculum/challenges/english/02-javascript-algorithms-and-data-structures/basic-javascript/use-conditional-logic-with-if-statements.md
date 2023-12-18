@@ -20,7 +20,7 @@ When the condition evaluates to `true`, the program executes the statement insid
 **Example**
 
 ```js
-function test (myCondition) {
+function test(myCondition) {
   if (myCondition) {
     return "It was true";
   }

@@ -1,6 +1,6 @@
 ---
 id: 5900f4551000cf542c50ff67
-title: 'Problem 232: The Race'
+title: 'Завдання 232: перегони'
 challengeType: 1
 forumTopicId: 301876
 dashedName: problem-232-the-race
@@ -8,17 +8,17 @@ dashedName: problem-232-the-race
 
 # --description--
 
-Two players share an unbiased coin and take it in turns to play "The Race".
+Двоє гравців мають симетричну монетку і по черзі використовують її під час свого ходу в грі «Перегони».
 
-On Player 1's turn, he tosses the coin once: if it comes up Heads, he scores one point; if it comes up Tails, he scores nothing.
+Гравець 1 кидає монетку один раз. Якщо випадає орел, то гравець отримує бал, а якщо решка — нічого.
 
-On Player 2's turn, she chooses a positive integer $T$ and tosses the coin $T$ times: if it comes up all Heads, she scores $2^{T - 1}$ points; otherwise, she scores nothing.
+Гравець 2 обирає додатне число $T$ і кидає монету $T$ рази. Якщо кожен раз випадає орел, гравець отримує $2^{T - 1}$ балів, а якщо решка — нічого.
 
-Player 1 goes first. The winner is the first to 100 or more points.
+Гравець 1 ходить першим. Переможе той, хто першим набере 100 або більше балів.
 
-On each turn Player 2 selects the number, $T$, of coin tosses that maximises the probability of her winning.
+Кожного разу гравець 2 обирає число спроб підкинути монету $T$, що збільшують ймовірність виграшу.
 
-What is the probability that Player 2 wins?
+Яка ймовірність того, що виграє гравець 2?
 
 Дайте відповідь, заокруглену до восьми знаків після коми у форматі 0.abcdefgh.
 

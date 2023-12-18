@@ -52,6 +52,7 @@ function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
   }
   return (
     <Modal
+      data-playwright-test-label='reset-modal'
       animation={false}
       dialogClassName='reset-modal'
       keyboard={true}

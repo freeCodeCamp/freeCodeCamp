@@ -14,7 +14,7 @@ As a reminder, this project is being built upon the following starter project on
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#15` in the `Strings` suite, change each `assert` to either `assert.match` or `assert.notMatch` to make the test pass (should evaluate to `true`). Die an die Asserts übergebenen Argumente dürfen nicht verändert werden.
+Within `tests/1_unit-tests.js` under the test labeled `#15` in the `Strings` suite, change each `assert` to either `assert.match` or `assert.notMatch` to make the test pass (should evaluate to `true`). Die an die Asserts übergebenen Argumente dürfen nicht verändert werden.
 
 # --hints--
 

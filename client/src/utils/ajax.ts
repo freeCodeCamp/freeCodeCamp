@@ -8,6 +8,7 @@ import type {
   GenerateExamResponseWithData,
   SavedChallenge,
   SavedChallengeFile,
+  SurveyResults,
   User
 } from '../redux/prop-types';
 
@@ -54,7 +55,7 @@ export function post<T = void>(
 
 function put<T = void>(
   path: string,
-  body: unknown
+  body?: unknown
 ): Promise<ResponseWithData<T>> {
   return request('PUT', path, body);
 }
@@ -237,6 +238,10 @@ export function addDonation(body: Donation): Promise<ResponseWithData<void>> {
   return post('/donate/add-donation', body);
 }
 
+export function updateStripeCard() {
+  return put('/donate/update-stripe-card');
+}
+
 export function postChargeStripe(
   body: Donation
 ): Promise<ResponseWithData<void>> {
@@ -282,6 +287,12 @@ export function postSaveChallenge(body: {
   files: ChallengeFiles;
 }): Promise<ResponseWithData<void>> {
   return post('/save-challenge', body);
+}
+
+export function postSubmitSurvey(body: {
+  surveyResults: SurveyResults;
+}): Promise<ResponseWithData<void>> {
+  return post('/user/submit-survey', body);
 }
 
 /** PUT **/

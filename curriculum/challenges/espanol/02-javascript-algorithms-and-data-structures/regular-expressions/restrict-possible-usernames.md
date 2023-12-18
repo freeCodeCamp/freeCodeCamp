@@ -12,7 +12,7 @@ Los nombres de usuario se utilizan en todas partes en Internet. Son los que dan 
 
 Se necesita comprobar todos los nombres de usuario en una base de datos. Estas son algunas reglas simples que los usuarios deben seguir al crear su nombre de usuario.
 
-1) Usernames can only use alphanumeric characters.
+1) Los nombres de usuario sólo pueden utilizar caracteres alfanuméricos.
 
 2) Los únicos números del nombre de usuario tienen que estar al final. Puede tener un cero o más al final. El nombre de usuario no puede iniciar con un número.
 

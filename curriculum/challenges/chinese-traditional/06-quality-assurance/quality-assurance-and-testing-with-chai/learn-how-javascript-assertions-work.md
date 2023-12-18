@@ -24,7 +24,7 @@ dashedName: learn-how-javascript-assertions-work
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 文件下 `Basic Assertions` suite 內註釋爲 `#1` 的地方，將每一個 `assert` 更改爲 `assert.isNull` 或 `assert.isNotNull`，以使測試通過（應該返回 `true`）。 不要修改傳入斷言的參數。
+Within `tests/1_unit-tests.js` under the test labeled `#1` in the `Basic Assertions` suite, change each `assert` to either `assert.isNull` or `assert.isNotNull` to make the test pass (should evaluate to `true`). 不要修改傳入斷言的參數。
 
 # --hints--
 

@@ -82,7 +82,11 @@ class Header extends React.Component<Props, { displayMenu: boolean }> {
     const { examInProgress, fetchState, user, skipButtonText } = this.props;
     return (
       <header className='site-header'>
-        <a href='#content-start' className='skip-to-content-button'>
+        <a
+          href='#content-start'
+          className='skip-to-content-button'
+          data-playwright-test-label='header-skip-content'
+        >
           {skipButtonText}
         </a>
         {examInProgress ? (

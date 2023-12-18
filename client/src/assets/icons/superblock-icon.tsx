@@ -16,6 +16,7 @@ import VikingHelmet from './viking-helmet';
 import Graduation from './graduation';
 import CollegeAlgebra from './college-algebra';
 import CSharpLogo from './c-sharp-logo';
+import A2EnglishIcon from './a2-english';
 
 const iconMap = {
   [SuperBlocks.RespWebDesignNew]: ResponsiveDesign,
@@ -37,7 +38,8 @@ const iconMap = {
   [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra,
   [SuperBlocks.FoundationalCSharp]: CSharpLogo,
   [SuperBlocks.ExampleCertification]: ResponsiveDesign,
-  [SuperBlocks.UpcomingPython]: PythonIcon
+  [SuperBlocks.UpcomingPython]: PythonIcon,
+  [SuperBlocks.A2English]: A2EnglishIcon
 };
 
 type SuperBlockIconProps = {
@@ -45,9 +47,9 @@ type SuperBlockIconProps = {
 } & React.SVGProps<SVGSVGElement>;
 
 export function SuperBlockIcon(props: SuperBlockIconProps): JSX.Element {
-  const { superBlock, className } = props;
+  const { superBlock, className, ...iconProps } = props;
   // fallback in case super block doesn't exist and for tests
   const Icon = iconMap[superBlock] ? iconMap[superBlock] : ResponsiveDesign;
 
-  return <Icon className={className} {...props} />;
+  return <Icon className={className} {...iconProps} />;
 }

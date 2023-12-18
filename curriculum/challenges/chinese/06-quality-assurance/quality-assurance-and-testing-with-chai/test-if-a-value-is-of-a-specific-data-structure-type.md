@@ -14,7 +14,7 @@ dashedName: test-if-a-value-is-of-a-specific-data-structure-type
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，`Objects` 套件里标有 `#17` 的测试下，将每个 `assert` 改成 `assert.typeOf` 或 `assert.notTypeOf` 方法，通过测试（结果应该返回 `true`）。 不要修改传给断言的参数。
+Within `tests/1_unit-tests.js` under the test labeled `#17` in the `Objects` suite, change each `assert` to either `assert.typeOf` or `assert.notTypeOf` to make the test pass (should evaluate to `true`). 不要修改传给断言的参数。
 
 # --hints--
 

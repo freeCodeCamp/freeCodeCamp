@@ -1,13 +1,13 @@
 ---
 id: 62aa20e9cf1be9358f5aceae
-title: Step 150
+title: Step 151
 challengeType: 0
-dashedName: step-150
+dashedName: step-151
 ---
 
 # --description--
 
-Add an `else` statement to the first `if` statement inside you `attack()` function. In the `else` statement, use the `+=` operator to add the text ` You miss.` to the end of `text.innerText`.
+Add an `else` statement to the first `if` statement inside your `attack()` function. In the `else` statement, use the `+=` operator to add the text ` You miss.` to the end of `text.innerText`.
 
 # --hints--
 
@@ -17,7 +17,7 @@ You should add an `else` block after your `if (isMonsterHit())` block.
 assert.match(attack.toString(), /if\s*\(isMonsterHit\(\)\s*\)\s*\{\s*monsterHealth\s*-=\s*weapons\[currentWeapon\]\.power\s*\+\s*Math\.floor\(Math\.random\(\)\s*\*\s*xp\)\s*\+\s*1;\s*\}\s*else/)
 ```
 
-You should add the text ` You miss.` to the end of `text.innerText`. Remember to use compound assignment.
+You should add the text ` You miss.` to the end of `text.innerText`. Remember to use compound assignment and make sure there is a space before the word `You`.
 
 ```js
 assert.match(attack.toString(), /if\s*\(isMonsterHit\(\)\s*\)\s*\{\s*monsterHealth\s*-=\s*weapons\[currentWeapon\]\.power\s*\+\s*Math\.floor\(Math\.random\(\)\s*\*\s*xp\)\s*\+\s*1;\s*\}\s*else\s*\{\s*text\.innerText\s*\+=\s*('|")\sYou miss\.\1/)
@@ -62,40 +62,49 @@ assert.match(attack.toString(), /if\s*\(isMonsterHit\(\)\s*\)\s*\{\s*monsterHeal
 
 ```css
 body {
-    background-color: darkblue;
+  background-color: #0a0a23;
 }
 
 #text {
-    background-color: black;
-    color: white;
-    padding: 10px;
+  background-color: #0a0a23;
+  color: #ffffff;
+  padding: 10px;
 }
 
 #game {
-    max-width: 500px;
-    max-height: 400px;
-    background-color: lightgray;
-    color: white;
-    margin: 0 auto;
-    padding: 10px;
+  max-width: 500px;
+  max-height: 400px;
+  background-color: #ffffff;
+  color: #ffffff;
+  margin: 30px auto 0px;
+  padding: 10px;
 }
 
-#controls, #stats {
-    border: 1px solid black;
-    padding: 5px;
-    color: black;
+#controls,
+#stats {
+  border: 1px solid #0a0a23;
+  padding: 5px;
+  color: #0a0a23;
 }
 
 #monsterStats {
-    display: none;
-    border: 1px solid black;
-    padding: 5px;
-    color: white;
-    background-color: red;
+  display: none;
+  border: 1px solid #0a0a23;
+  padding: 5px;
+  color: #ffffff;
+  background-color: #c70d0d;
 }
 
 .stat {
-    padding-right: 10px;
+  padding-right: 10px;
+}
+
+button {
+  cursor: pointer;
+  color: #0a0a23;
+  background-color: #feac32;
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border: 3px solid #feac32;
 }
 ```
 
