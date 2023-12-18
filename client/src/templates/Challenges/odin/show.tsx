@@ -287,10 +287,9 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   {title}
                 </ChallengeTitle>
                 <PrismFormatted className={'line-numbers'} text={description} />
+                <Spacer size='medium' />
                 {audioPath && (
                   <>
-                    <Spacer size='small' />
-                    <Spacer size='small' />
                     {/* TODO: Add tracks for audio elements */}
                     {/* eslint-disable-next-line jsx-a11y/media-has-caption*/}
                     <audio className='audio' controls>
@@ -299,12 +298,16 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                         type='audio/mp3'
                       />
                     </audio>
+                    <Spacer size='medium' />
                   </>
                 )}
-                <Spacer size='medium' />
               </Col>
 
-              {scene && <Scene scene={scene} />}
+              {scene && (
+                <>
+                  <Scene scene={scene} /> <Spacer size='medium' />
+                </>
+              )}
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ObserveKeys>

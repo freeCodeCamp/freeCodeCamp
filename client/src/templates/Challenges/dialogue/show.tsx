@@ -18,6 +18,7 @@ import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import CompletionModal from '../components/completion-modal';
+import ChallengeTitle from '../components/challenge-title';
 import HelpModal from '../components/help-modal';
 import PrismFormatted from '../components/prism-formatted';
 import {
@@ -181,6 +182,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
             block,
             fields: { blockName },
             assignments,
+            translationPending,
             scene
           }
         }
@@ -189,6 +191,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
+      isChallengeCompleted,
       t
     } = this.props;
 
@@ -211,7 +214,13 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
-                <h2>{title}</h2>
+
+                <ChallengeTitle
+                  isCompleted={isChallengeCompleted}
+                  translationPending={translationPending}
+                >
+                  {title}
+                </ChallengeTitle>
                 <PrismFormatted className={'line-numbers'} text={description} />
                 <Spacer size='medium' />
               </Col>
@@ -219,6 +228,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
               {scene && <Scene scene={scene} />}
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                <Spacer size='medium' />
                 <ObserveKeys>
                   <h2>{t('learn.assignments')}</h2>
                   <div className='video-quiz-options'>
