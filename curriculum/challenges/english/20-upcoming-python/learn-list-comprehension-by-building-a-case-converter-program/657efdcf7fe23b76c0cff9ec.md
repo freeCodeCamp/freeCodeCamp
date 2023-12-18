@@ -11,10 +11,18 @@ Add an `else` clause on the same level as the existing `if` statement, inside th
 
 # --hints--
 
-Test 1
+You should add an `else` clause inside the `for` loop. Don't forget the colon at the end.
 
 ```js
+({
+    test: () => {
+        const transformedCode = e.code.original["main.py"].replace(/\r/g, "");
+        const convert_to_snake_case = __helpers.python.getDef("\n" + transformedCode, "convert_to_snake_case");
+        const { function_body } = convert_to_snake_case;
 
+        assert.match(function_body, / +else:/);
+    }
+})
 ```
 
 # --seed--
