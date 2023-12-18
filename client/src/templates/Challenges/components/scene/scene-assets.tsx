@@ -1,6 +1,6 @@
 // TODO: get domain from env
 const domain =
-  'https://cdn.freecodecamp.org/curriculum/english/animation-assets/';
+  'https://cdn.freecodecamp.org/curriculum/english/animation-assets';
 
 export const sounds = `${domain}/sounds`;
 export const images = `${domain}/images`;
