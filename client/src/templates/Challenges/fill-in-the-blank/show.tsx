@@ -27,13 +27,13 @@ import {
   openModal,
   updateSolutionFormValues
 } from '../redux/actions';
+import Scene from '../components/scene/scene';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { parseBlanks } from './parse-blanks';
 
 // Styles
 import '../video.css';
 import './show.css';
-import Scene from '../components/scene/scene';
 
 // Redux Setup
 const mapStateToProps = createSelector(
