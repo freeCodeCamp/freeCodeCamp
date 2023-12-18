@@ -113,7 +113,10 @@ input = __wrap(input)
   pyodide.runPython(`
 import sys
 def __get_reset_id():
+  if sys.last_value and sys.last_value.args:
     return "".join(str(sys.last_value.args[0]))
+  else:
+    return ""
 `);
 
   ignoreRunMessages = true;
@@ -157,7 +160,11 @@ function handleRunRequest(data: PythonRunEvent['data']) {
   } catch (e) {
     const err = e as PythonError;
     console.error(e);
-    if (err.type === 'KeyboardInterrupt') {
+    const resetId = getResetId();
+    // TODO: if a user raises a KeyboardInterrupt with a custom message this
+    // will be treated as a reset, the client will resend their code and this
+    // will loop. Can we fix that? Perhaps by using a custom exception?
+    if (err.type === 'KeyboardInterrupt' && resetId) {
       // If the client sends a lot of run messages, it's easy for them to build
       // up while the worker is busy. As such, we both ignore any queued run
       // messages...
