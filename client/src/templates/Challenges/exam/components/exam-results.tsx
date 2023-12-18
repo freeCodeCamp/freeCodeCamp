@@ -1,6 +1,7 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Button } from '@freecodecamp/ui';
+
 import Spacer from '../../../../components/helpers/spacer';
 import { formatSecondsToTime } from '../../../../utils/format-seconds';
 import { GeneratedExamResults } from '../../../../redux/prop-types';
@@ -97,8 +98,7 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
       <div className='exam-results-buttons'>
         <Button
           block={true}
-          bsStyle='primary'
-          className='btn-invert'
+          variant='primary'
           data-playwright-test-label='download-exam-results'
           download={`${dashedName}.txt`}
           href={downloadURL}
@@ -107,7 +107,7 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
         </Button>
         <Button
           block={true}
-          bsStyle='primary'
+          variant='primary'
           data-cy='exit-exam'
           data-playwright-test-label='exit-exam'
           onClick={exitExam}
