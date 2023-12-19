@@ -16,9 +16,9 @@ When Tom asks about places for reading and watching performances, he uses the pl
 
 ## --sentence--
 
-Tom: How about _ or theaters?
+`Tom: How about _ or theaters?`
 
-Maria: Hmm….. there isn't any _ around here that I know of. The bookstores I remember are all downtown.
+`Maria: Hmm….. there isn't any _ around here that I know of. The bookstores I remember are all downtown.`
 
 ## --blanks--
 
