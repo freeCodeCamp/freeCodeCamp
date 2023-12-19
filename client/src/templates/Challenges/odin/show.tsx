@@ -407,7 +407,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 >
                   {t('buttons.check-answer')}
                 </Button>
-                <Spacer size='small' />
+                <Spacer size='xxSmall' />
                 <Button
                   block={true}
                   size='large'

@@ -101,7 +101,7 @@ function HelpModal({
         >
           {t('buttons.create-post')}
         </Button>
-        <Spacer size='small' />
+        <Spacer size='xxSmall' />
         <Button
           block={true}
           size='large'

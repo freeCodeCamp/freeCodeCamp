@@ -68,7 +68,7 @@ function ExitExamModal({
         >
           {t('learn.exam.exit-yes')}
         </Button>
-        <Spacer size='small' />
+        <Spacer size='xxSmall' />
         <Button
           data-cy='exit-exam-modal-deny'
           block={true}

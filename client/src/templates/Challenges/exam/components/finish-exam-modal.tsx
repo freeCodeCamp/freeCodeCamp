@@ -69,7 +69,7 @@ function FinishExamModal({
         >
           {t('learn.exam.finish-yes')}
         </Button>
-        <Spacer size='small' />
+        <Spacer size='xxSmall' />
         <Button
           data-cy='finish-exam-modal-deny'
           block={true}

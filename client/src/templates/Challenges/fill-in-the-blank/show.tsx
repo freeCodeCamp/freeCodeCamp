@@ -388,7 +388,7 @@ class ShowFillInTheBlank extends Component<
                 >
                   {t('buttons.check-answer')}
                 </Button>
-                <Spacer size='small' />
+                <Spacer size='xxSmall' />
                 <Button block={true} variant='primary' onClick={openHelpModal}>
                   {t('buttons.ask-for-help')}
                 </Button>

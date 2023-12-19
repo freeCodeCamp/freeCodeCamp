@@ -105,7 +105,7 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
         >
           {t('learn.download-results')}
         </Button>
-        <Spacer size='small' />
+        <Spacer size='xxSmall' />
         <Button
           block={true}
           variant='primary'

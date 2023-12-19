@@ -195,10 +195,10 @@ class CompletionModal extends Component<
           </div>
         </Modal.Body>
         <Modal.Footer>
-          {!isSignedIn ? null : (
+          {isSignedIn ? null : (
             <>
               <Login block={true}>{t('learn.sign-in-save')}</Login>
-              <Spacer size='small' />
+              <Spacer size='xxSmall' />
             </>
           )}
           <Button
@@ -212,7 +212,7 @@ class CompletionModal extends Component<
             {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
             <span className='hidden-xs'> (Ctrl + Enter)</span>
           </Button>
-          <Spacer size='small' />
+          <Spacer size='xxSmall' />
           {this.state.downloadURL ? (
             <Button
               block={true}

@@ -558,7 +558,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     )}
                   </>
                 )}
-
                 <PrismFormatted text={description} />
                 <Spacer size='medium' />
                 <PrismFormatted text={instructions} />

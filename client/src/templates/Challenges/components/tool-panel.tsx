@@ -74,17 +74,12 @@ function ToolPanel({
         isMobile ? 'tool-panel-group-mobile' : ''
       }`}
     >
-      <Button
-        aria-label='Run the tests use shortcut Ctrl+enter'
-        block={true}
-        variant='primary'
-        onClick={handleRunTests}
-      >
+      <Button block={true} variant='primary' onClick={handleRunTests}>
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
       </Button>
       {isSignedIn && challengeType === challengeTypes.multifileCertProject && (
         <>
-          <Spacer size='small' />
+          <Spacer size='xxSmall' />
           <Button
             block={true}
             variant='primary'
@@ -97,13 +92,13 @@ function ToolPanel({
       )}
       {challengeType !== challengeTypes.multifileCertProject && (
         <>
-          <Spacer size='small' />
+          <Spacer size='xxSmall' />
           <Button block={true} variant='primary' onClick={openResetModal}>
             {isMobile ? t('buttons.reset') : t('buttons.reset-lesson')}
           </Button>
         </>
       )}
-      <Spacer size='small' />
+      <Spacer size='xxSmall' />
       <Dropdown dropup>
         <Dropdown.Toggle
           id={'get-help-dropdown'}

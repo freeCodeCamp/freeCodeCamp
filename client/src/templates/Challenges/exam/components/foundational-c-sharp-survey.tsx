@@ -178,7 +178,7 @@ function FoundationalCSharpSurvey({
         >
           {t('survey.misc.submit')}
         </Button>
-        <Spacer size='small' />
+        <Spacer size='xxSmall' />
         <Button
           block={true}
           size='medium'
