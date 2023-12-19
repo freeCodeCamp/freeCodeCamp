@@ -1191,6 +1191,13 @@
         "title": "Upcoming Python Project",
         "intro": ["placeholder"]
       },
+      "learn-classes-and-objects-by-building-a-sudoku-solver": {
+        "title": "Learn Classes and Objects by Building a Sudoku Solver",
+        "intro": [
+          "Classes and objects are an important programming concept and they enable developers to achieve code modularity, abstraction, readability, and promote reusability.",
+          "In this Sudoku solver project, you'll learn how to use classes and objects to build a sudoku grid and to solve a sudoku puzzle."
+        ]
+      },
       "learn-recursion-by-solving-the-tower-of-hanoi-puzzle": {
         "title": "Learn Recursion by Solving the Tower of Hanoi Puzzle",
         "intro": [
