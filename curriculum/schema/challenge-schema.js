@@ -114,7 +114,8 @@ const schema = Joi.object()
       'C-Sharp',
       'English',
       'Odin',
-      'Euler'
+      'Euler',
+      'Rosetta'
     ),
     videoUrl: Joi.string().allow(''),
     fillInTheBlank: Joi.object().keys({

@@ -17,7 +17,8 @@ const blockSchema = Joi.object({}).keys({
       'C-Sharp',
       'English',
       'Odin',
-      'Euler'
+      'Euler',
+      'Rosetta'
     ),
     order: Joi.number(),
     time: Joi.string().allow(''),
