@@ -1197,6 +1197,14 @@
           "Recursion allows you to write concise and elegant code to solve complex computational problems.",
           "In this project, you'll start with an iterative approach to solve the tower of Hanoi mathematical puzzle and then you'll learn how to implement a recursive solution."
         ]
+      },
+      "learn-string-manipulation-by-building-a-cipher": {
+        "title": "Learn String Manipulation by Building a Cipher",
+        "intro": [
+          "Python is a powerful and popular programming language widely used for data science, data visualization, web and game development, machine learning and much more.",
+          "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loop, conditional statements, and and how to work with them to build your first program."
+
+        ]
       }
     }
   },
