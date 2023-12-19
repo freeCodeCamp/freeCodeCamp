@@ -82,7 +82,7 @@ describe('firstNotAuditedSuperBlock', () => {
       showNewCurriculum: false,
       showUpcomingChanges: false
     });
-    expect(result).toEqual(SuperBlocks.FoundationalCSharp);
+    expect(result).toEqual(SuperBlocks.JsAlgoDataStructNew);
   });
 });
 
