@@ -1,9 +1,9 @@
 ---
-id: 651dd5ae6ffb500e3f2ce47c
-title: "Dialogue: Placeholder"
-challengeType: 21
+id: 657b3136477b8ac802088c97
 videoId: nLDychdBwUg
-dashedName: dialogue-placeholder
+title: "Dialogue 2: New Hobbies"
+challengeType: 21
+dashedName: dialogue-2-new-hobbies
 ---
 
 # --description--
