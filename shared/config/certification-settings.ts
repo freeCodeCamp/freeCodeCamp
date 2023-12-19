@@ -28,6 +28,7 @@ export enum Certification {
   // Upcoming certifications
   UpcomingPython = 'upcoming-python-v8',
   A2English = 'a2-english-for-developers-v8',
+  JsAlgoDataStructNew = 'javascript-algorithms-and-data-structures-v8',
   // Legacy certifications
   LegacyFrontEnd = 'legacy-front-end',
   LegacyBackEnd = 'legacy-back-end',
@@ -73,7 +74,8 @@ export const legacyFullStackCertification = [
 // showUpcomingChanges is true.
 export const upcomingCertifications = [
   Certification.UpcomingPython,
-  Certification.A2English
+  Certification.A2English,
+  Certification.JsAlgoDataStructNew
 ] as const;
 
 export const certTypes = {
@@ -95,7 +97,8 @@ export const certTypes = {
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
   foundationalCSharpV8: 'isFoundationalCSharpCertV8',
-  upcomingPythonV8: 'isUpcomingPythonCertV8'
+  upcomingPythonV8: 'isUpcomingPythonCertV8',
+  jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8'
 } as const;
 
 export const certIds = {
@@ -117,7 +120,8 @@ export const certIds = {
   relationalDatabaseV8Id: '606243f50267e718b1e755f4',
   collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800',
   foundationalCSharpV8Id: '647f7da207d29547b3bee1ba',
-  upcomingPythonV8Id: '64afc4e8f3b37856e035b85f'
+  upcomingPythonV8Id: '64afc4e8f3b37856e035b85f',
+  jsAlgoDataStructV8Id: '658180220947283cdc0689ce'
 };
 
 export const completionHours = {
@@ -139,7 +143,8 @@ export const completionHours = {
   [certTypes.relationalDatabaseV8]: 300,
   [certTypes.collegeAlgebraPyV8]: 300,
   [certTypes.foundationalCSharpV8]: 300,
-  [certTypes.upcomingPythonV8]: 300
+  [certTypes.upcomingPythonV8]: 300,
+  [certTypes.jsAlgoDataStructV8]: 300
 };
 
 export const certSlugTypeMap = {
@@ -166,7 +171,8 @@ export const certSlugTypeMap = {
   [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
 
   // upcoming
-  [Certification.UpcomingPython]: certTypes.upcomingPythonV8
+  [Certification.UpcomingPython]: certTypes.upcomingPythonV8,
+  [Certification.JsAlgoDataStructNew]: certTypes.jsAlgoDataStructV8
 };
 
 export const superBlockCertTypeMap = {
@@ -195,7 +201,7 @@ export const superBlockCertTypeMap = {
   // post-modern
   // TODO: use enum
   [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
-  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStruct,
+  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStructV8,
 
   // upcoming
   [SuperBlocks.UpcomingPython]: certTypes.upcomingPythonV8
@@ -220,7 +226,8 @@ export const certTypeIdMap = {
   [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id,
   [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id,
   [certTypes.foundationalCSharpV8]: certIds.foundationalCSharpV8Id,
-  [certTypes.upcomingPythonV8]: certIds.upcomingPythonV8Id
+  [certTypes.upcomingPythonV8]: certIds.upcomingPythonV8Id,
+  [certTypes.jsAlgoDataStructV8]: certIds.jsAlgoDataStructV8Id
 };
 
 export const certTypeTitleMap = {
@@ -242,7 +249,9 @@ export const certTypeTitleMap = {
   [certTypes.relationalDatabaseV8]: 'Relational Database',
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
-  [certTypes.upcomingPythonV8]: 'Upcoming Python'
+  [certTypes.upcomingPythonV8]: 'Upcoming Python',
+  [certTypes.jsAlgoDataStructV8]:
+    'JavaScript Algorithms and Data Structures (Beta)'
 };
 
 export const oldDataVizId = '561add10cb82ac38a17513b3';
