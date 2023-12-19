@@ -48,17 +48,22 @@ export function Character({
     }
 
     if (isTalking) {
-      talkInterval = setInterval(() => {
-        const openDuration = getRandomInt(100, 200);
-        const closeDuration = getRandomInt(300, 400);
+      const talk = () => {
+        const openTimeout = getRandomInt(0, 100);
+        const closeTimeout = getRandomInt(150, 300);
 
         setTimeout(() => {
           setMouthIsOpen(true);
-        }, openDuration);
+        }, openTimeout);
 
         setTimeout(() => {
           setMouthIsOpen(false);
-        }, closeDuration);
+        }, closeTimeout);
+      };
+
+      talk();
+      talkInterval = setInterval(() => {
+        talk();
       }, 300);
     }
 

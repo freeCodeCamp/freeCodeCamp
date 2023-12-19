@@ -1,33 +1,70 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
-const checkAnswerButton = translations.buttons['check-answer'];
-const askForHelpButton = translations.buttons['ask-for-help'];
+// Tests for challenges rendered by `client/src/templates/Challenges/odin/show.tsx`
+test.describe('Odin challenges', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto(
+      '/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/write-your-first-c-sharp-code'
+    );
+  });
 
-test.beforeEach(async ({ page }) => {
-  await page.goto(
-    '/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/write-your-first-c-sharp-code'
-  );
-});
+  test.describe('When the user is signed out', () => {
+    test.use({ storageState: { cookies: [], origins: [] } });
 
-test.afterEach(async ({ page }) => {
-  await page.close();
-});
+    test('should render the content correctly', async ({ page }) => {
+      await expect(page).toHaveTitle(
+        'Write Your First Code Using C# - Write Your First C# Code | Learn | freeCodeCamp.org'
+      );
 
-test('the page should render with correct title', async ({ page }) => {
-  await expect(page).toHaveTitle(
-    'Write Your First Code Using C# - Write Your First C# Code | Learn | freeCodeCamp.org'
-  );
-});
+      await expect(
+        page.getByRole('heading', {
+          level: 1,
+          name: 'Write Your First C# Code'
+        })
+      ).toBeVisible();
 
-test('correct check answer button', async ({ page }) => {
-  const checkAnswer = page.getByTestId('check-answer-button');
-  await expect(checkAnswer).toBeVisible();
-  await expect(checkAnswer).toContainText(checkAnswerButton);
-});
+      // Checkmark doesn't show up if the user has completed the challenge but is signed out
+      await expect(
+        page.getByRole('img', { name: translations.icons.passed })
+      ).toBeHidden();
 
-test('correct ask for help button', async ({ page }) => {
-  const askHelp = page.getByTestId('ask-for-help-button');
-  await expect(askHelp).toBeVisible();
-  await expect(askHelp).toContainText(askForHelpButton);
+      await expect(
+        page.getByRole('button', { name: translations.buttons['check-answer'] })
+      ).toBeVisible();
+
+      await expect(
+        page.getByRole('button', { name: translations.buttons['ask-for-help'] })
+      ).toBeVisible();
+    });
+  });
+
+  test.describe('When the user is signed in', () => {
+    test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
+    test('should render the content correctly', async ({ page }) => {
+      await expect(page).toHaveTitle(
+        'Write Your First Code Using C# - Write Your First C# Code | Learn | freeCodeCamp.org'
+      );
+
+      await expect(
+        page.getByRole('heading', {
+          level: 1,
+          name: 'Write Your First C# Code'
+        })
+      ).toBeVisible();
+
+      await expect(
+        page.getByRole('img', { name: translations.icons.passed })
+      ).toBeVisible();
+
+      await expect(
+        page.getByRole('button', { name: translations.buttons['check-answer'] })
+      ).toBeVisible();
+
+      await expect(
+        page.getByRole('button', { name: translations.buttons['ask-for-help'] })
+      ).toBeVisible();
+    });
+  });
 });
