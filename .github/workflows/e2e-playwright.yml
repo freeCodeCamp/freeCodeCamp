@@ -1,10 +1,6 @@
 name: CI - E2E - Playwright
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ['CI - Node.js']
-    types:
-      - completed
   # TODO: refactor with a workflow_call
   pull_request:
     paths-ignore:
