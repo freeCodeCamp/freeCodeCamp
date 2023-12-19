@@ -1190,6 +1190,13 @@
       "upcoming-python-project": {
         "title": "Upcoming Python Project",
         "intro": ["placeholder"]
+      },
+      "learn-string-manipulation-by-building-a-cipher": {
+        "title": "Learn String Manipulation by Building a Cipher",
+        "intro": [
+          "Python is a powerful and popular programming language widely used for data science, data visualization, web and game development, machine learning and much more.",
+          "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loop, conditional statements, and and how to work with them to build your first program."
+        ]
       }
     }
   },
