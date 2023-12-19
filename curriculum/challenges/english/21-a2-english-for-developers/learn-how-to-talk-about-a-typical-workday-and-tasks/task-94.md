@@ -7,19 +7,17 @@ dashedName: task-94
 
 # --description--
 
-A `security incident` is an event that may be harmful to the safety or security of a company or organization. 
-
-For example, `A security incident like a stolen password needs to be reported immediately.`
-
+A `security incident` is an event that may be harmful to the safety or security of a company or organization. For example, `A security incident like a stolen password needs to be reported immediately.`
 
 Note on `Harm` and `Harmful`:
 
-`Harm` means damage or injury to someone or something. It refers to causing a negative effect or putting someone or something at risk. 
+`Harm` means damage or injury to someone or something. It refers to causing a negative effect or putting someone or something at risk. For example:
 
-For example, `Touching hot surfaces can cause harm,` means that touching hot surfaces can lead to injury or damage.
+`Touching hot surfaces can cause harm,` means that touching hot surfaces can lead to injury or damage.
 
-`Harmful` is an adjective used to describe something that can cause harm. It means dangerous or risky in a way that could lead to damage or injury. 
-For example, `Smoking is harmful to health,` indicates that smoking can cause health problems or damage.
+`Harmful` is an adjective used to describe something that can cause harm. It means dangerous or risky in a way that could lead to damage or injury. For example:
+
+`Smoking is harmful to health,` indicates that smoking can cause health problems or damage.
 
 These terms are often used to discuss safety and risks, especially in contexts like health, security, and the environment.
 
@@ -27,7 +25,7 @@ These terms are often used to discuss safety and risks, especially in contexts l
 
 ## --text--
 
-What is a 'security incident'?
+What is a `security incident`?
 
 ## --answers--
 

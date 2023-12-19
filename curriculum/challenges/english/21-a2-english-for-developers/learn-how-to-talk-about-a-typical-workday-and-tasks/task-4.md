@@ -34,7 +34,7 @@ He never starts before `8:30 AM`.
 
 ### --feedback--
 
-`Never` is used for things that do not happen, but Brian does mention a specific time he starts work.
+He doesn't say he never starts before `8:30`.
 
 ---
 

@@ -8,7 +8,7 @@ audioPath: Add the path to the audio file here. Or, delete this if you don't hav
 
 # --description--
 
-Understanding AM/PM notation is crucial for time-telling in English.
+Understanding `AM/PM` notation is crucial for time-telling in English.
 
 # --question--
 

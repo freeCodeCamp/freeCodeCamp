@@ -30,7 +30,7 @@ Listen to the audio to complete the sentence below.
 
 ### --feedback--
 
-Means not always but on certain occasions.
+Means not always but on certain occasions. This word should be capitalized.
 
 ---
 

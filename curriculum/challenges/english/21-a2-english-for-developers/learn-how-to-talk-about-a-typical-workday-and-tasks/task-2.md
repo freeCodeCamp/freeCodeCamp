@@ -7,19 +7,13 @@ dashedName: task-2
 
 # --description--
 
-Prepositions of time are essential in English to talk about when something happens. 
+Prepositions of time are essential in English to talk about when something happens.
 
-The preposition `at` is used to specify exact times of the day. 
-For example, you say 'at 8:30 AM' to indicate a specific hour. Other examples include 'at 12:00 PM' for noon, 'at 6:00 AM' for early morning, and 'at 10:15 PM' for late at night.
+The preposition `in` is used for months, years, centuries, and long periods. For example, `We will update the software in July`, `I started learning coding in 2022`. `I like to workin in the morning`.
 
+The preposition `on` is used for days and dates. For example: `Our team meets on Mondays`, `The coding class is on April 10th`, `I finished the task on the last day`.
 
-`At` is used for specific times of the day (e.g., 'at 8:30 AM'), `in` is used for months, years, centuries, and long periods (e.g., `in April`, `in 2022`, `in the morning`), and `on` is used for days and dates (e.g., `on Monday`, 'on July 4th').
-
-| Preposition                                         | Examples                                                                                                                    |
-| --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| In (for months, years, centuries, and long periods) | `We will update the software in July.` `I started learning coding in 2022.` `In my first year, I worked on small websites.` |
-| On (for days and dates)                             | `Our team meets on Mondays.` `The coding class is on April 10th.` `I finished the task on the last day.`                    |
-| At (for specific times of the day)                  | `Our meeting is at 9 AM.` `I begin coding at 10 AM.` `We have lunch at 12 PM.`                                              |
+The preposition `at` is used to specify exact times of the day. For example, `Our meeting is at 9 AM`, `I begin coding at 10 AM`, `We have lunch at 12 PM`.
 
 # --question--
 

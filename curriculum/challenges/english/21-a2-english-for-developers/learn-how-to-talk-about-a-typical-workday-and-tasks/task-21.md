@@ -12,9 +12,7 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 The verb `to bring` means to take something or someone with you to the place where you are going. 
 
-For example, `I bring my phone to work every day.`
-
-It's often used when talking about taking items from one place to another.
+For example, `I bring my phone to work every day.` It's often used when talking about taking items from one place to another.
 
 # --instructions--
 

@@ -49,7 +49,7 @@ A term for midday or 12 PM.
 
 ### --feedback--
 
-A verb meaning to take something with you.
+A verb meaning to take something with you. This word should be capitalized.
 
 ---
 
