@@ -33,7 +33,7 @@ She always finds urgent updates from her team
 
 ### --feedback--
 
-`if` doesn't suggest certainty of finding urgent updates.
+`If` doesn't suggest certainty of finding urgent updates.
 
 ---
 
