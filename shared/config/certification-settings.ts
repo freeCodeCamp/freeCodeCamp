@@ -13,7 +13,7 @@ import { SuperBlocks } from '../../shared/config/superblocks';
  */
 export enum Certification {
   RespWebDesign = 'responsive-web-design',
-  JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
+  JsAlgoDataStructNew = 'javascript-algorithms-and-data-structures-v8',
   FrontEndDevLibs = 'front-end-development-libraries',
   DataVis = 'data-visualization',
   RelationalDb = 'relational-database-v8',
@@ -25,12 +25,12 @@ export enum Certification {
   MachineLearningPy = 'machine-learning-with-python-v7',
   CollegeAlgebraPy = 'college-algebra-with-python-v8',
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
-  JsAlgoDataStructNew = 'javascript-algorithms-and-data-structures-v8',
   // Upcoming certifications
   UpcomingPython = 'upcoming-python-v8',
   A2English = 'a2-english-for-developers-v8',
   // Legacy certifications
   LegacyFrontEnd = 'legacy-front-end',
+  JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
   LegacyBackEnd = 'legacy-back-end',
   LegacyDataVis = 'legacy-data-visualization',
   LegacyInfoSecQa = 'information-security-and-quality-assurance',
@@ -41,7 +41,7 @@ export enum Certification {
 // live and not legacy.
 export const currentCertifications = [
   Certification.RespWebDesign,
-  Certification.JsAlgoDataStruct,
+  Certification.JsAlgoDataStructNew,
   Certification.FrontEndDevLibs,
   Certification.DataVis,
   Certification.RelationalDb,
@@ -52,14 +52,14 @@ export const currentCertifications = [
   Certification.InfoSec,
   Certification.MachineLearningPy,
   Certification.CollegeAlgebraPy,
-  Certification.FoundationalCSharp,
-  Certification.JsAlgoDataStructNew
+  Certification.FoundationalCSharp
 ] as const;
 
 // "Legacy" certifications are another class of standard certifications. They're
 // still live and claimable, but some parts of the UI handle them differently.
 export const legacyCertifications = [
   Certification.LegacyFrontEnd,
+  Certification.JsAlgoDataStruct,
   Certification.LegacyBackEnd,
   Certification.LegacyDataVis,
   Certification.LegacyInfoSecQa
@@ -150,6 +150,7 @@ export const completionHours = {
 export const certSlugTypeMap = {
   // legacy
   [Certification.LegacyFrontEnd]: certTypes.frontEnd,
+  [Certification.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
   [Certification.LegacyBackEnd]: certTypes.backEnd,
   [Certification.LegacyDataVis]: certTypes.dataVis,
   [Certification.LegacyInfoSecQa]: certTypes.infosecQa,
@@ -157,7 +158,7 @@ export const certSlugTypeMap = {
 
   // modern
   [Certification.RespWebDesign]: certTypes.respWebDesign,
-  [Certification.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
+  [Certification.JsAlgoDataStructNew]: certTypes.jsAlgoDataStructV8,
   [Certification.FrontEndDevLibs]: certTypes.frontEndDevLibs,
   [Certification.DataVis]: certTypes.dataVis2018,
   [Certification.BackEndDevApis]: certTypes.apisMicroservices,
@@ -171,13 +172,13 @@ export const certSlugTypeMap = {
   [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
 
   // upcoming
-  [Certification.UpcomingPython]: certTypes.upcomingPythonV8,
-  [Certification.JsAlgoDataStructNew]: certTypes.jsAlgoDataStructV8
+  [Certification.UpcomingPython]: certTypes.upcomingPythonV8
 };
 
 export const superBlockCertTypeMap = {
   // legacy
   'legacy-front-end': certTypes.frontEnd,
+  [SuperBlocks.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
   'legacy-back-end': certTypes.backEnd,
   'legacy-data-visualization': certTypes.dataVis,
   'information-security-and-quality-assurance': certTypes.infosecQa,
@@ -185,7 +186,7 @@ export const superBlockCertTypeMap = {
 
   // modern
   [SuperBlocks.RespWebDesign]: certTypes.respWebDesign,
-  [SuperBlocks.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
+  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStructV8,
   [SuperBlocks.FrontEndDevLibs]: certTypes.frontEndDevLibs,
   [SuperBlocks.DataVis]: certTypes.dataVis2018,
   [SuperBlocks.BackEndDevApis]: certTypes.apisMicroservices,
@@ -201,7 +202,6 @@ export const superBlockCertTypeMap = {
   // post-modern
   // TODO: use enum
   [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
-  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStructV8,
 
   // upcoming
   [SuperBlocks.UpcomingPython]: certTypes.upcomingPythonV8
