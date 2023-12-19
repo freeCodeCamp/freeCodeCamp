@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import Caret from '../../assets/icons/caret';
+import { Spacer } from '../helpers';
 
 const POBOX = (
   <>
@@ -14,10 +15,12 @@ const POBOX = (
   </>
 );
 
-export const DonationText = (): JSX.Element => {
+export const CtaText = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <>
+      <h1 data-playwright-test-label='main-head'>{t('donate.help-more')}</h1>
+      <Spacer size='medium' />
       <p data-playwright-test-label='donate-text-1'>{t('donate.efficiency')}</p>
       <p data-playwright-test-label='donate-text-2'>
         {t('donate.why-donate-1')}
@@ -29,17 +32,37 @@ export const DonationText = (): JSX.Element => {
   );
 };
 
-export const DonationOptionsAlertText = (): JSX.Element => {
+export const ThankYouMessage = ({
+  askForDonation
+}: {
+  askForDonation: boolean;
+}): JSX.Element => {
   const { t } = useTranslation();
   return (
-    <p data-cy='donate.bigger-donation'>
-      <Trans>donate.bigger-donation</Trans>{' '}
-      <Trans i18nKey='donate.other-ways'>
-        <a data-cy='donate-link' href={t('links:donate.other-ways-url')}>
-          placeholder
-        </a>
-      </Trans>
-    </p>
+    <>
+      <h1 data-playwright-test-label='main-head' data-cy='donate.thank-you'>
+        {t('donate.thank-you')}
+      </h1>
+      {askForDonation && (
+        <>
+          <Spacer size='medium' />
+          <p data-cy='donate.crucial-contribution'>
+            {t('donate.crucial-contribution')}
+          </p>
+          <p data-cy='donate.bigger-donation'>
+            {t('donate.bigger-donation')}{' '}
+            <Trans i18nKey='donate.other-ways'>
+              <a data-cy='donate-link' href={t('links:donate.other-ways-url')}>
+                placeholder
+              </a>
+            </Trans>
+          </p>
+          <p data-cy='donate.make-another-monthly'>
+            {t('donate.if-another-monthly')}
+          </p>
+        </>
+      )}
+    </>
   );
 };
 
@@ -167,6 +190,87 @@ export const DonationFaqText = (): JSX.Element => {
   ];
 
   return (
-    <>{faqItems.map((item, iterator) => FaqItem(item.Q, item.A, iterator))}</>
+    <>
+      <h2 data-playwright-test-label='faq-head'>{t('donate.faq')}</h2>
+      <Spacer size='small' />
+      {faqItems.map((item, iterator) => FaqItem(item.Q, item.A, iterator))}
+    </>
+  );
+};
+
+export const SupportBenefitsText = (): JSX.Element => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <h2>{t('donate.support-benefits-title')}</h2>
+      <ul>
+        <li>{t('donate.support-benefits-1')}</li>
+        <li>{t('donate.support-benefits-2')}</li>
+        <li>{t('donate.support-benefits-3')}</li>
+        <li>{t('donate.support-benefits-4')}</li>
+        <li>{t('donate.support-benefits-5')}</li>
+      </ul>
+    </>
+  );
+};
+
+export const CurrentInitiativesText = (): JSX.Element => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <h2>{t('donate.current-initiatives-title')}</h2>
+      <ul>
+        <li>{t('donate.current-initiatives-1')}</li>
+        <li>{t('donate.current-initiatives-2')}</li>
+        <li>{t('donate.current-initiatives-3')}</li>
+        <li>{t('donate.current-initiatives-4')}</li>
+      </ul>
+    </>
+  );
+};
+
+export const CommunityAchievementsText = (): JSX.Element => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <h2>{t('donate.community-achivements-title')}</h2>
+      <ul>
+        <li>
+          <Trans i18nKey='donate.community-achivements-1'>
+            <b>placeholder</b>
+          </Trans>
+        </li>
+        <li>
+          <Trans i18nKey='donate.community-achivements-2'>
+            <b>placeholder</b>
+          </Trans>
+        </li>
+        <li>
+          <Trans i18nKey='donate.community-achivements-3'>
+            <b>placeholder</b>
+          </Trans>
+        </li>
+        <li>
+          <Trans i18nKey='donate.community-achivements-4'>
+            <b>placeholder</b>
+          </Trans>
+        </li>
+      </ul>
+    </>
+  );
+};
+
+export const GetSupporterBenefitsText = ({
+  isDonating
+}: {
+  isDonating: boolean;
+}): JSX.Element => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <Spacer size='large' />
+      <p>{t('donate.as-you-see')}</p>
+      {!isDonating ? <p>{t('donate.get-benefits')}</p> : null}
+    </>
   );
 };

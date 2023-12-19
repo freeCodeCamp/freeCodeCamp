@@ -21,7 +21,9 @@ import Hotkeys from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
+import Scene from '../components/scene/scene';
 import PrismFormatted from '../components/prism-formatted';
+import ChallengeTitle from '../components/challenge-title';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -217,7 +219,9 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             fields: { blockName },
             question: { text, answers, solution },
             assignments,
-            audioPath
+            audioPath,
+            translationPending,
+            scene
           }
         }
       },
@@ -226,7 +230,8 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
-      t
+      t,
+      isChallengeCompleted
     } = this.props;
 
     const blockNameTitle = `${t(
@@ -275,7 +280,12 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
               )}
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
-                <h2>{title}</h2>
+                <ChallengeTitle
+                  isCompleted={isChallengeCompleted}
+                  translationPending={translationPending}
+                >
+                  {title}
+                </ChallengeTitle>
                 <PrismFormatted className={'line-numbers'} text={description} />
                 {audioPath && (
                   <>
@@ -292,6 +302,11 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   </>
                 )}
                 <Spacer size='medium' />
+              </Col>
+
+              {scene && <Scene scene={scene} />}
+
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ObserveKeys>
                   {assignments.length > 0 && (
                     <>
@@ -383,7 +398,6 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   block={true}
                   bsSize='large'
                   bsStyle='primary'
-                  data-playwright-test-label='check-answer-button'
                   onClick={() =>
                     this.handleSubmit(
                       solution,
@@ -399,7 +413,6 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   bsSize='large'
                   bsStyle='primary'
                   className='btn-invert'
-                  data-playwright-test-label='ask-for-help-button'
                   onClick={openHelpModal}
                 >
                   {t('buttons.ask-for-help')}
@@ -455,6 +468,43 @@ export const query = graphql`
             feedback
           }
           solution
+        }
+        scene {
+          setup {
+            background
+            characters {
+              character
+              position {
+                x
+                y
+                z
+              }
+              opacity
+            }
+            audio {
+              filename
+              startTime
+              startTimestamp
+              finishTimestamp
+            }
+            alwaysShowDialogue
+          }
+          commands {
+            background
+            character
+            position {
+              x
+              y
+              z
+            }
+            opacity
+            startTime
+            finishTime
+            dialogue {
+              text
+              align
+            }
+          }
         }
         translationPending
         assignments
