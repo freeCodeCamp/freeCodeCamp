@@ -106,6 +106,10 @@ function createCertTypeIds(allChallenges) {
   return {
     // legacy
     [certTypes.frontEnd]: getCertById(legacyFrontEndChallengeId, allChallenges),
+    [certTypes.jsAlgoDataStruct]: getCertById(
+      jsAlgoDataStructId,
+      allChallenges
+    ),
     [certTypes.backEnd]: getCertById(legacyBackEndChallengeId, allChallenges),
     [certTypes.dataVis]: getCertById(legacyDataVisId, allChallenges),
     [certTypes.infosecQa]: getCertById(legacyInfosecQaId, allChallenges),
@@ -113,12 +117,12 @@ function createCertTypeIds(allChallenges) {
 
     // modern
     [certTypes.respWebDesign]: getCertById(respWebDesignId, allChallenges),
-    [certTypes.frontEndDevLibs]: getCertById(frontEndDevLibsId, allChallenges),
-    [certTypes.dataVis2018]: getCertById(dataVis2018Id, allChallenges),
-    [certTypes.jsAlgoDataStruct]: getCertById(
-      jsAlgoDataStructId,
+    [certTypes.jsAlgoDataStructV8]: getCertById(
+      jsAlgoDataStructV8Id,
       allChallenges
     ),
+    [certTypes.frontEndDevLibs]: getCertById(frontEndDevLibsId, allChallenges),
+    [certTypes.dataVis2018]: getCertById(dataVis2018Id, allChallenges),
     [certTypes.apisMicroservices]: getCertById(
       apisMicroservicesId,
       allChallenges
@@ -144,10 +148,6 @@ function createCertTypeIds(allChallenges) {
     ),
     [certTypes.foundationalCSharpV8]: getCertById(
       foundationalCSharpV8Id,
-      allChallenges
-    ),
-    [certTypes.jsAlgoDataStructV8]: getCertById(
-      jsAlgoDataStructV8Id,
       allChallenges
     )
   };
@@ -176,8 +176,8 @@ function sendCertifiedEmail(
     name,
     username,
     isRespWebDesignCert,
+    isJsAlgoDataStructCertV8,
     isFrontEndLibsCert,
-    isJsAlgoDataStructCert,
     isDataVisCert,
     isApisMicroservicesCert,
     isQaCertV7,
@@ -187,16 +187,15 @@ function sendCertifiedEmail(
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
     isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8,
-    isJsAlgoDataStructCertV8
+    isFoundationalCSharpCertV8
   },
   send$
 ) {
   if (
     !isEmail(email) ||
     !isRespWebDesignCert ||
+    !isJsAlgoDataStructCertV8 ||
     !isFrontEndLibsCert ||
-    !isJsAlgoDataStructCert ||
     !isDataVisCert ||
     !isApisMicroservicesCert ||
     !isQaCertV7 ||
@@ -206,8 +205,7 @@ function sendCertifiedEmail(
     !isMachineLearningPyCertV7 ||
     !isRelationalDatabaseCertV8 ||
     !isCollegeAlgebraPyCertV8 ||
-    !isFoundationalCSharpCertV8 ||
-    !isJsAlgoDataStructCertV8
+    !isFoundationalCSharpCertV8
   ) {
     return Observable.just(false);
   }
@@ -231,6 +229,7 @@ function getUserIsCertMap(user) {
   const {
     isRespWebDesignCert = false,
     isJsAlgoDataStructCert = false,
+    isJsAlgoDataStructCertV8 = false,
     isFrontEndLibsCert = false,
     is2018DataVisCert = false,
     isApisMicroservicesCert = false,
@@ -246,13 +245,13 @@ function getUserIsCertMap(user) {
     isMachineLearningPyCertV7 = false,
     isRelationalDatabaseCertV8 = false,
     isCollegeAlgebraPyCertV8 = false,
-    isFoundationalCSharpCertV8 = false,
-    isJsAlgoDataStructCertV8 = false
+    isFoundationalCSharpCertV8 = false
   } = user;
 
   return {
     isRespWebDesignCert,
     isJsAlgoDataStructCert,
+    isJsAlgoDataStructCertV8,
     isFrontEndLibsCert,
     is2018DataVisCert,
     isApisMicroservicesCert,
@@ -268,8 +267,7 @@ function getUserIsCertMap(user) {
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
     isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8,
-    isJsAlgoDataStructCertV8
+    isFoundationalCSharpCertV8
   };
 }
 
@@ -404,6 +402,7 @@ function createShowCert(app) {
       isRespWebDesignCert: true,
       isFrontEndLibsCert: true,
       isJsAlgoDataStructCert: true,
+      isJsAlgoDataStructCertV8: true,
       isDataVisCert: true,
       is2018DataVisCert: true,
       isApisMicroservicesCert: true,
@@ -416,7 +415,6 @@ function createShowCert(app) {
       isRelationalDatabaseCertV8: true,
       isCollegeAlgebraPyCertV8: true,
       isFoundationalCSharpCertV8: true,
-      isJsAlgoDataStructCertV8: true,
       isHonest: true,
       username: true,
       name: true,
