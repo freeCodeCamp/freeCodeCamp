@@ -1,6 +1,6 @@
 {
   "name": "Build a Telephone Number Validator Project",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "build-a-telephone-number-validator-project",
   "usesMultifileEditor": true,
   "helpCategory": "JavaScript",

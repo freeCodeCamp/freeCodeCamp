@@ -1,6 +1,6 @@
 {
   "name": "Build a Cash Register Project",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "build-a-cash-register-project",
   "usesMultifileEditor": true,
   "helpCategory": "JavaScript",

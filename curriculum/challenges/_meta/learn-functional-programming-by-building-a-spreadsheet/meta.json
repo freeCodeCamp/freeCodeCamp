@@ -1,6 +1,6 @@
 {
   "name": "Learn Functional Programming by Building a Spreadsheet",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-functional-programming-by-building-a-spreadsheet",
