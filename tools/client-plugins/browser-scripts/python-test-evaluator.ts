@@ -109,6 +109,18 @@ ctx.onmessage = async (e: PythonRunEvent) => {
       }
     };
 
+    // Clear out the old import otherwise it will use the old input/print
+    // functions
+    pyodide.runPython(`
+import sys
+try:
+  del sys.modules['jscustom']
+  del jscustom
+except (KeyError, NameError):
+  pass
+
+`);
+
     // Make input available to python (print is not used yet)
     pyodide.registerJsModule('jscustom', {
       input: testInput
