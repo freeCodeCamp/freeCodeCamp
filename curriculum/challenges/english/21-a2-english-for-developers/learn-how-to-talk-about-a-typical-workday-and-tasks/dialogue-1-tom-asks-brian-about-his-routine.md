@@ -1,9 +1,9 @@
 ---
 id: 655c0f0e52bfc67bdeae16b4
-title: "Dialogue: Placeholder"
+title: "Dialogue 1: Tom Asks Brian About His Routine"
 challengeType: 21
 videoId: nLDychdBwUg
-dashedName: dialogue-placeholder
+dashedName: dialogue-1-tom-asks-brian-about-his-routine
 ---
 
 # --description--
