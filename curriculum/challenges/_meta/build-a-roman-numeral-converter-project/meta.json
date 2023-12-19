@@ -2,7 +2,7 @@
   "name": "Build a Roman Numeral Converter Project",
   "isUpcomingChange": true,
   "dashedName": "build-a-roman-numeral-converter-project",
-  "usesMultifileEditor": false,
+  "usesMultifileEditor": true,
   "helpCategory": "JavaScript",
   "order": 8,
   "time": "30 hours",

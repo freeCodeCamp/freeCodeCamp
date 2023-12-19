@@ -2,7 +2,7 @@
   "name": "Build a Telephone Number Validator Project",
   "isUpcomingChange": true,
   "dashedName": "build-a-telephone-number-validator-project",
-  "usesMultifileEditor": false,
+  "usesMultifileEditor": true,
   "helpCategory": "JavaScript",
   "order": 13,
   "time": "30 hours",

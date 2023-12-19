@@ -2,7 +2,7 @@
   "name": "Build a Cash Register Project",
   "isUpcomingChange": true,
   "dashedName": "build-a-cash-register-project",
-  "usesMultifileEditor": false,
+  "usesMultifileEditor": true,
   "helpCategory": "JavaScript",
   "order": 17,
   "time": "30 hours",

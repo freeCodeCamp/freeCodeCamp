@@ -2,7 +2,7 @@
   "name": "Build a Palindrome Checker Project",
   "isUpcomingChange": true,
   "dashedName": "build-a-palindrome-checker-project",
-  "usesMultifileEditor": false,
+  "usesMultifileEditor": true,
   "helpCategory": "JavaScript",
   "order": 4,
   "time": "30 hours",
