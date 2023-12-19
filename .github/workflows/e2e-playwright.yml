@@ -2,7 +2,7 @@ name: CI - E2E - Playwright
 on:
   workflow_dispatch:
   # TODO: refactor with a workflow_call
-  pull_request:
+  push:
     paths-ignore:
       - 'docs/**'
     branches:
