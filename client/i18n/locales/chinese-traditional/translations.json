@@ -306,7 +306,7 @@
     "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁"
   },
   "footer": {
-    "tax-exempt-status": "freeCodeCamp 是捐助者支持的 501(c)(3) 條款下具有免稅資格的慈善組織（稅號：82-0779546）。",
+    "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
     "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.",
     "donation-initiatives": "所有給 freeCodeCamp 的捐款都將用於我們的教育項目，購買服務器和其他服務，以及聘用員工。",
     "donate-text": "你可以<1>在此處進行免稅捐贈</1>。",
