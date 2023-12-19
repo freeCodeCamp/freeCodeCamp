@@ -18,12 +18,9 @@ expenses_from_category = filter_expenses_by_category(expenses, category)
 - The first line prints the category heading, using an f-string to insert the user-chosen category into the message.
 - The second line calls a function to filter the expenses list, returning only those in the specified category. The result is stored in `expenses_from_category`.
 
-
 Using the `print_expenses` function, write the code to output the filtered expenses. Pass the `expenses_from_category` as an argument, ensuring it's converted into a list. Your task is to correctly implement this as one line in your code.
 
 # --hints--
-
-
 
 Ensure the filtered expenses are printed using the `print_expenses` function.
 
@@ -38,7 +35,7 @@ Ensure the filtered expenses are printed using the `print_expenses` function.
 
 ```
 
-Make sure the parameter `expenses_from_category` is converted to a list
+Make sure the `expenses_from_category` parameter is converted to a list.
 
 ```js
 ({
