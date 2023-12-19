@@ -93,11 +93,11 @@ describe('getSuperOrder', () => {
       process.env.SHOW_NEW_CURRICULUM !== 'true' &&
       process.env.SHOW_UPCOMING_CHANGES !== 'true'
     ) {
-      expect.assertions(16);
+      expect.assertions(17);
     } else if (process.env.SHOW_NEW_CURRICULUM !== 'true') {
-      expect.assertions(16);
+      expect.assertions(17);
     } else if (process.env.SHOW_UPCOMING_CHANGES !== 'true') {
-      expect.assertions(16);
+      expect.assertions(17);
     } else {
       expect.assertions(19);
     }
