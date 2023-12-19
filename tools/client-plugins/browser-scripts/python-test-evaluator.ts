@@ -63,6 +63,11 @@ ctx.onmessage = async (e: PythonRunEvent) => {
 
   const assert = chai.assert;
   const __helpers = helpers;
+
+  // Create fresh globals for each test
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  const __userGlobals = pyodide.globals.get('dict')() as PyProxy;
+
   /* eslint-enable @typescript-eslint/no-unused-vars */
   // uncomment the following line to inspect
   // the frame-runner as it runs tests
@@ -126,9 +131,7 @@ except (KeyError, NameError):
       input: testInput
       // print: () => {}
     });
-    // Create fresh globals for each test
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    const __userGlobals = pyodide.globals.get('dict')() as PyProxy;
+
     // Some tests rely on __name__ being set to __main__ and we new dicts do not
     // have this set by default.
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -174,5 +177,7 @@ except (KeyError, NameError):
         actual: (err as { actual?: string }).actual
       }
     });
+  } finally {
+    __userGlobals.destroy();
   }
 };
