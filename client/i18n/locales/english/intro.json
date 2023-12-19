@@ -1190,39 +1190,79 @@
       "upcoming-python-project": {
         "title": "Upcoming Python Project",
         "intro": ["placeholder"]
+      },
+      "learn-tree-traversal-by-building-a-binary-search-tree": {
+        "title": "Learn Tree Traversal by Building a Binary Search Tree",
+        "intro": [
+          "A Binary Search Tree (BST) is an important data structure concept, where data is sorted in a hierarchical structure.",
+          "In this project, you will learn how to construct a BST, perform an inorder traversal, and also cover key operations like insertion, search, and deletion."
+        ]
+      },
+      "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm": {
+        "title": "Learn How to Work with Numbers and Strings by Implementing the Luhn Algorithm",
+        "intro": ["", ""]
+      },
+      "learn-classes-and-objects-by-building-a-sudoku-solver": {
+        "title": "Learn Classes and Objects by Building a Sudoku Solver",
+        "intro": [
+          "Classes and objects are an important programming concept and they enable developers to achieve code modularity, abstraction, readability, and promote reusability.",
+          "In this Sudoku solver project, you'll learn how to use classes and objects to build a sudoku grid and to solve a sudoku puzzle."
+        ]
+      },
+      "learn-recursion-by-solving-the-tower-of-hanoi-puzzle": {
+        "title": "Learn Recursion by Solving the Tower of Hanoi Puzzle",
+        "intro": [
+          "Recursion allows you to write concise and elegant code to solve complex computational problems.",
+          "In this project, you'll start with an iterative approach to solve the tower of Hanoi mathematical puzzle and then you'll learn how to implement a recursive solution."
+        ]
+      },
+      "learn-string-manipulation-by-building-a-cipher": {
+        "title": "Learn String Manipulation by Building a Cipher",
+        "intro": [
+          "Python is a powerful and popular programming language widely used for data science, data visualization, web and game development, machine learning and much more.",
+          "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loop, conditional statements, and and how to work with them to build your first program."
+        ]
       }
     }
   },
   "a2-english-for-developers": {
     "title": "A2 English for Developers (Beta)",
     "intro": [
-      "This course teaches the English language, designed for developers.",
-      "More text here."
+      "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
+      "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
+      "In the second half, you'll practice vocabulary specific to software development. You'll learn how to describe code, discuss tech trends, and participate in stand-up meetings.",
+      "This entire A2-level curriculum includes 105 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
     ],
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "Learn Greetings in your First Day at the Office",
-        "intro": ["Learn greetings."]
+        "intro": [
+          "In this first course, you'll learn common expressions for situations you may encounter on your first day at work. You'll learn about introductions, getting to know people, asking for lunch recommendations, and getting an access card from security."
+        ]
       },
       "learn-introductions-in-an-online-team-meeting": {
         "title": "Learn Introductions in an Online Team Meeting",
-        "intro": ["Learn introductions."]
+        "intro": [
+          "In this course, you'll learn how to give a personal introduction. You'll also learn how to state your profession, and share your goals in group meetings."
+        ]
       },
       "learn-conversation-starters-in-the-break-room": {
         "title": "Learn Conversation Starters in the Break Room",
-        "intro": ["Learn conversation starters."]
+        "intro": [
+          "In this course, you'll learn how to start a conversation in casual settings. You'll also learn how to talk about your hobbies and personality traits. You'll even learn how to ask about places around the town."
+        ]
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Learn How to Talk About a Typical Workday and Tasks",
-        "intro": ["", ""]
+        "intro": ["Learn about a typical workday."]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "Learn How to Discuss Your Morning or Evening Routine",
-        "intro": ["", ""]
+        "intro": ["Learn about routines."]
       },
       "learn-how-to-describe-your-current-project": {
         "title": "Learn How to Describe Your Current Project",
-        "intro": ["", ""]
+        "intro": ["Learn about projects."]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Learn How to Ask and Share About Educational and Professional Background",
