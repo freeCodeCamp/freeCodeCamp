@@ -254,6 +254,8 @@ Im obigen Beispiel werden der Schlüssel und eine Variable in den Attributen der
 
 Um den Text auf der Client-Seite zu ändern, gehst du in die entsprechende `.json`-Datei, suchst den Schlüssel, der in der React-Komponente verwendet wird, und änderst den Wert in den gewünschten neuen Text. Du solltest die Codebasis nach diesem Schlüssel durchsuchen, um sicherzustellen, dass er nicht an anderer Stelle verwendet wird. Oder, falls ja, dass die Änderungen an allen Stellen sinnvoll sind.
 
+Run `pnpm run clean-and-develop` to apply the change.
+
 ## Hinzufügen von Text
 
 Wenn der Text, den du dem Client hinzufügen möchtest, bereits in der entsprechenden `.json`-Datei vorhanden ist, verwende den vorhandenen Schlüssel. Andernfalls erstellst du einen neuen Schlüssel.
@@ -262,9 +264,11 @@ Die englische Datei ist die "Quelle der Wahrheit" für alle `.json`-Dateien, die
 
 > [!NOTE] Verwende englischen Text für alle Sprachen, wenn die Datei über Crowdin übersetzt wird. Andernfalls werden die Tests fehlschlagen.
 
-Es wäre auch schön, wenn die Schlüssel in allen Dateien die gleiche Reihenfolge hätten. Versuche außerdem, alle Satzzeichen, Abstände, Anführungszeichen usw. in den JSON-Dateien und nicht in den Komponenten oder Serverdateien zu platzieren.
+Es wäre auch schön, wenn die Schlüssel in allen Dateien die gleiche Reihenfolge hätten. Also, try to put all punctuation, spacing, quotes, etc. in the JSON files and not in the components or server files.
 
 > [!NOTE] The underscore (`_`) is a reserved character for keys in the client-side files. In der [Dokumentation](https://www.i18next.com/translation-function/plurals) erfährst du, wie sie verwendet werden.
+
+Run `pnpm run clean-and-develop` to apply the change.
 
 ## Proposing a Pull Request (PR)
 

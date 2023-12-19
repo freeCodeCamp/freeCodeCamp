@@ -27,7 +27,6 @@
 
   [![Відкрити у Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-
 ### Як працювати над практичними проєктами
 
 Практичні проєкти мають деякі додаткові інструменти, які допомагають створити нові проєкти та кроки. Щоб дізнатися більше, див. [документацію](how-to-work-on-practice-projects.md).
@@ -200,6 +199,104 @@ console.log('freeCodeCamp is awesome!');
 `right`
 
 Якщо зворотного зв’язку немає, з’явиться повідомлення «wrong answer».
+
+# --scene--
+
+```json
+// # --scene-- can only consist of a single json object
+{
+  // Setup the scene. Properties not marked optional are required.
+  "setup": {
+    // Background file to start the scene. A list of scene asset filenames can be found here: https://github.com/freeCodeCamp/cdn/pull/233/files
+    "background": "company2-center.png",
+    // Array of all characters that will appear in the scene
+    "characters": [
+      {
+        // Name of character. See list of available characters in scene-assets.tsx
+        "character": "Maria",
+        // Where to start the character. Maria will start off screen to the left
+        "position": { "x": -25, "y": 0, "z": 1 }
+      },
+      {
+        "character": "Tom",
+        // Tom will start 70% from the left of the screen and 1.5 times regular size
+        "position": { "x": 70, "y": 0, "z": 1.5 },
+        // Optional, defaults to 1. Tom will start invisible
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      // Audio filename
+      "filename": "1.1-1.mp3",
+      // Seconds after the scene starts before the audio starts playing
+      "startTime": 1.3,
+      // Optional. Timestamp of the audio file where it starts playing from.
+      "startTimestamp": 0,
+      // Optional. Timestamp of the audio file where is stops playing. If these two aren't used, the whole audio file will play.
+      "finishTimestamp": 8.4
+    },
+    // Optional, defaults to false. Use this for the long dialogues. It stops the accessibility icon from showing which gives campers the option to show or hide the dialogue text
+    "alwaysShowDialogue": true 
+  },
+  // Array of commands that make up the scene
+  "commands": [
+    {
+      // Character that will have an action for this command
+      "character": "Maria",
+      // Optional, defaults to previous value. Maria will move to 25% from the left of the screen. The movement takes 0.5 seconds
+      "position": { "x": 25, "y": 0, "z": 1 },
+      // When the command will start. Zero seconds after the camper presses play
+      "startTime": 0
+    },
+    {
+      "character": "Tom",
+      // Optional, defaults to previous value. Tom will fade into view. The transition take 0.5 seconds. Movement and Opacity transitions take 0.5 seconds
+      "opacity": 1, 
+      // Tom will fade into view 0.5 seconds into the scene (immediately after Maria finishes moving on screen)
+      "startTime": 0.5
+    },
+    {
+      "character": "Maria",
+      // When the command starts: Maria will start saying this line 1.3 seconds into the scene. Note that this is the same time as the audio.startTime above. It doesn't have to match that (maybe there's a pause at the begninning of the audio or something)
+      "startTime": 1.3,
+      // The character will stop moving their mouth at the finishTime
+      "finishTime": 4.95,
+      "dialogue": {
+        // Text that will appear if the dialogue is visible
+        "text": "Hello! You're the new graphic designer, right? I'm Maria, the team lead.",
+        // Where the dialogue text will be aligned. Can be 'left', 'center', or 'right'
+        "align": "left"
+      }
+    },
+    {
+      // background will change to this at 5.4 seconds into the scene
+      "background": "company2-breakroom.png",
+      "character": "Tom",
+      "startTime": 5.4,
+      "finishTime": 9.4,
+      "dialogue": {
+        "text": "Hi, that's right!  I'm Tom McKenzie. It's a pleasure to meet you.",
+        // Tom's text will be aligned to the right since he is on the right side of the screen
+        "align": "right"
+      }
+    },
+    {
+      "character": "Tom",
+      // Tom will fade to 0 opacity
+      "opacity": 0,
+      // I like to move characters off screen or fade them 0.5 second after the last talking command
+      "startTime": 9.9
+    },
+    {
+      "character": "Maria",
+      // Maria will slide back off the screen to the left
+      "position": { "x": -25, "y": 0, "z": 1 },
+      // The animation will stop playing 0.5 seconds after the 'finishTime' of the last command - or 0.5 seconds after 'startTime' if 'finishTime' isn't there.
+      "startTime": 10.4
+    }
+  ]
+}
+```
 ````
 
 > [!NOTE]
