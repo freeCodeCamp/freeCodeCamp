@@ -124,7 +124,7 @@ const CertChallenge = ({
         : createFlashMessage(honestyInfoMessage);
     };
   return (
-    <div className='block'>
+    <div>
       {isSignedIn && (
         <Button
           block={true}

@@ -27,6 +27,7 @@ import {
 } from '../redux/selectors';
 import Progress from '../../../components/Progress';
 import GreenPass from '../../../assets/icons/green-pass';
+import { Spacer } from '../../../components/helpers';
 
 import './completion-modal.css';
 
@@ -194,8 +195,11 @@ class CompletionModal extends Component<
           </div>
         </Modal.Body>
         <Modal.Footer>
-          {isSignedIn ? null : (
-            <Login block={true}>{t('learn.sign-in-save')}</Login>
+          {!isSignedIn ? null : (
+            <>
+              <Login block={true}>{t('learn.sign-in-save')}</Login>
+              <Spacer size='small' />
+            </>
           )}
           <Button
             block={true}
@@ -208,6 +212,7 @@ class CompletionModal extends Component<
             {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
             <span className='hidden-xs'> (Ctrl + Enter)</span>
           </Button>
+          <Spacer size='small' />
           {this.state.downloadURL ? (
             <Button
               block={true}

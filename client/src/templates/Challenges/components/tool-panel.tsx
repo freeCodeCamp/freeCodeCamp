@@ -14,6 +14,7 @@ import { challengeMetaSelector } from '../redux/selectors';
 
 import { saveChallenge } from '../../../redux/actions';
 import { isSignedInSelector } from '../../../redux/selectors';
+import { Spacer } from '../../../components/helpers';
 
 const mapStateToProps = createSelector(
   challengeMetaSelector,
@@ -82,20 +83,27 @@ function ToolPanel({
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
       </Button>
       {isSignedIn && challengeType === challengeTypes.multifileCertProject && (
-        <Button
-          block={true}
-          variant='primary'
-          data-cy='save-code-to-database-btn'
-          onClick={saveChallenge}
-        >
-          {isMobile ? t('buttons.save') : t('buttons.save-code')}
-        </Button>
+        <>
+          <Spacer size='small' />
+          <Button
+            block={true}
+            variant='primary'
+            data-cy='save-code-to-database-btn'
+            onClick={saveChallenge}
+          >
+            {isMobile ? t('buttons.save') : t('buttons.save-code')}
+          </Button>
+        </>
       )}
       {challengeType !== challengeTypes.multifileCertProject && (
-        <Button block={true} variant='primary' onClick={openResetModal}>
-          {isMobile ? t('buttons.reset') : t('buttons.reset-lesson')}
-        </Button>
+        <>
+          <Spacer size='small' />
+          <Button block={true} variant='primary' onClick={openResetModal}>
+            {isMobile ? t('buttons.reset') : t('buttons.reset-lesson')}
+          </Button>
+        </>
       )}
+      <Spacer size='small' />
       <Dropdown dropup>
         <Dropdown.Toggle
           id={'get-help-dropdown'}

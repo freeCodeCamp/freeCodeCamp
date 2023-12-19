@@ -11,6 +11,7 @@ import envData from '../../../../config/env.json';
 import { executeGA } from '../../../redux/actions';
 import { createQuestion, closeModal } from '../redux/actions';
 import { isHelpModalOpenSelector } from '../redux/selectors';
+import { Spacer } from '../../../components/helpers';
 
 import './help-modal.css';
 
@@ -100,6 +101,7 @@ function HelpModal({
         >
           {t('buttons.create-post')}
         </Button>
+        <Spacer size='small' />
         <Button
           block={true}
           size='large'

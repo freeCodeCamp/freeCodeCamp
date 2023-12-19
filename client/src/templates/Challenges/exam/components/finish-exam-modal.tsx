@@ -10,6 +10,7 @@ import { Button } from '@freecodecamp/ui';
 // Local Utilities
 import { closeModal } from '../../redux/actions';
 import { isFinishExamModalOpenSelector } from '../../redux/selectors';
+import { Spacer } from '../../../../components/helpers';
 
 // Types
 interface FinishExamModalProps {
@@ -68,6 +69,7 @@ function FinishExamModal({
         >
           {t('learn.exam.finish-yes')}
         </Button>
+        <Spacer size='small' />
         <Button
           data-cy='finish-exam-modal-deny'
           block={true}

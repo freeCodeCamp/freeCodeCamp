@@ -6,6 +6,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { Button } from '@freecodecamp/ui';
 
 import { openModal } from '../redux/actions';
+import { Spacer } from '../../../components/helpers';
 
 const mapStateToProps = () => ({});
 
@@ -31,9 +32,17 @@ function ToolPanel({
   return (
     <>
       {guideUrl && (
-        <Button block={true} variant='primary' href={guideUrl} target='_blank'>
-          {t('buttons.get-hint')}
-        </Button>
+        <>
+          <Button
+            block={true}
+            variant='primary'
+            href={guideUrl}
+            target='_blank'
+          >
+            {t('buttons.get-hint')}
+          </Button>
+          <Spacer size='small' />
+        </>
       )}
       <Button block={true} variant='primary' onClick={openHelpModal}>
         {t('buttons.ask-for-help')}

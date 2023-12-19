@@ -10,6 +10,7 @@ import { Button } from '@freecodecamp/ui';
 // Local Utilities
 import { closeModal } from '../../redux/actions';
 import { isExitExamModalOpenSelector } from '../../redux/selectors';
+import { Spacer } from '../../../../components/helpers';
 
 // Types
 interface ExitExamModalProps {
@@ -67,6 +68,7 @@ function ExitExamModal({
         >
           {t('learn.exam.exit-yes')}
         </Button>
+        <Spacer size='small' />
         <Button
           data-cy='exit-exam-modal-deny'
           block={true}

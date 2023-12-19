@@ -210,6 +210,7 @@ class MsTrophy extends Component<MsTrophyProps> {
                 >
                   {t('buttons.verify-trophy')}
                 </Button>
+                <Spacer size='small' />
                 <Button
                   block={true}
                   variant='primary'
