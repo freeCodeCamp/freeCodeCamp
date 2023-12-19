@@ -41,13 +41,13 @@ export const XtermTerminal = ({
       if (termContainerRef.current) term.open(termContainerRef.current);
       fitAddon.fit();
 
-      const print = (text: string) => term?.writeln(`>>> ${text}`);
+      const print = (text?: string) => term?.writeln(`>>> ${text ?? ''}`);
 
       // TODO: prevent user from moving cursor outside the current input line and
       // handle insertion and deletion properly. While backspace and delete don't
       // seem to work, we can use "\x1b[0K" to clear from the cursor to the end.
       // Also, we should not add special characters to the userinput string.
-      const input = (text: string) => {
+      const input = (text?: string) => {
         print(text);
         let userinput = '';
         // Eslint is correct that this only gets assigned once, but we can't use
@@ -58,7 +58,12 @@ export const XtermTerminal = ({
 
         const done = () => {
           disposable?.dispose();
-          navigator.serviceWorker.controller?.postMessage(userinput);
+          navigator.serviceWorker.controller?.postMessage(
+            JSON.stringify({
+              type: 'msg',
+              value: userinput
+            })
+          );
         };
 
         const keyListener = (key: string) => {
@@ -80,11 +85,15 @@ export const XtermTerminal = ({
         if (disposable) disposables.push(disposable);
       };
       const reset = () => {
-        term?.reset();
+        // Ironically, term.reset(), while synchronous, is not a reliable way to
+        // reset the terminal. It does not clear the input buffer, so old print
+        // statements can still appear. The \x1bc (ESC c) escape sequence triggers
+        // a full terminal reset, which is what we want.
+        term?.write('\x1bc');
         disposables.forEach(disposable => disposable.dispose());
         disposables.length = 0;
       };
-      registerTerminal({ print, input }, reset);
+      registerTerminal({ print, input, reset });
     }
 
     void createTerminal();
