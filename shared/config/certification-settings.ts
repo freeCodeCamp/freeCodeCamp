@@ -25,10 +25,10 @@ export enum Certification {
   MachineLearningPy = 'machine-learning-with-python-v7',
   CollegeAlgebraPy = 'college-algebra-with-python-v8',
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
+  JsAlgoDataStructNew = 'javascript-algorithms-and-data-structures-v8',
   // Upcoming certifications
   UpcomingPython = 'upcoming-python-v8',
   A2English = 'a2-english-for-developers-v8',
-  JsAlgoDataStructNew = 'javascript-algorithms-and-data-structures-v8',
   // Legacy certifications
   LegacyFrontEnd = 'legacy-front-end',
   LegacyBackEnd = 'legacy-back-end',
@@ -52,7 +52,8 @@ export const currentCertifications = [
   Certification.InfoSec,
   Certification.MachineLearningPy,
   Certification.CollegeAlgebraPy,
-  Certification.FoundationalCSharp
+  Certification.FoundationalCSharp,
+  Certification.JsAlgoDataStructNew
 ] as const;
 
 // "Legacy" certifications are another class of standard certifications. They're
@@ -74,8 +75,7 @@ export const legacyFullStackCertification = [
 // showUpcomingChanges is true.
 export const upcomingCertifications = [
   Certification.UpcomingPython,
-  Certification.A2English,
-  Certification.JsAlgoDataStructNew
+  Certification.A2English
 ] as const;
 
 export const certTypes = {
