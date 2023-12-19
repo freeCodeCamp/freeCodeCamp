@@ -9,7 +9,7 @@ self.addEventListener('activate', function() {
 let resolver;
 
 self.onmessage = function(event) {
-  resolver(event.data);
+  if (resolver) resolver(event.data);
 }
 
 self.addEventListener('fetch', (event) => {
