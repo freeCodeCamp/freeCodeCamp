@@ -302,132 +302,154 @@
   "2022/javascript-algorithms-and-data-structures": {
     "title": "Algoritmos e estruturas de dados em JavaScript (Beta)",
     "intro": [
-      "Enquanto o HTML e o CSS controlam o conteúdo e o estilo de uma página, o JavaScript é usado para torná-lo interativo. Na certificação de Algoritmos e Estruturas de Dados em JavaScript, você aprenderá os fundamentos do JavaScript, incluindo variáveis, arrays, objetos, laços, funções, o DOM e mais.",
-      "Além do básico, você aprenderá sobre Programação Orientada a Objetos (OOP), Programação Funcional (FP), pensamento algorítmico, como trabalhar com armazenamento local e como buscar dados de uma API."
+      "Developers use HTML and CSS to control the content and styling of a page. And they use JavaScript to make that page interactive.",
+      "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",
+      "You'll also learn about Object Oriented Programming (OOP), Functional Programming, algorithmic thinking, how to work with local storage, and how to fetch data using an API."
     ],
     "note": "Observação: algumas extensões de navegador, como bloqueadores de anúncios e bloqueadores de scripts, podem interferir nos testes. Se você tiver problemas, recomendamos desabilitar extensões que modifiquem ou bloqueiem o conteúdo das páginas durante o curso.",
     "blocks": {
-      "build-a-caesars-cipher-project": {
-        "title": "Projeto de criação da Cifra de César",
-        "intro": ["", ""]
+      "build-a-pokemon-search-app-project": {
+        "title": "Build a Pokémon Search App Project",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a Pokémon search app."
+        ]
       },
       "build-a-cash-register-project": {
         "title": "Projeto de criação de Caixa registradora",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
-          "Para este projeto, você criará uma aplicação para a web de caixa registradora."
+          "For this project, you'll build a cash register web app."
         ]
       },
       "build-a-palindrome-checker-project": {
         "title": "Projeto de criação de Verificador de palíndromo",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
-          "Para este projeto, você criará uma aplicação que verifica se uma palavra é um palíndromo."
+          "For this project, you'll build an application that checks whether a given word is a palindrome."
         ]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Projeto de criação de Conversor de números romanos",
         "intro": [
           "Este é um dos projetos necessários para solicitar sua certificação.",
-          "Para este projeto, você criará uma aplicação que converte números inteiros em números romanos."
+          "For this project, you'll build an application that converts integers to Roman numerals."
         ]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Projeto de criação de Validador de números de telefone",
         "intro": [
           "Este é um dos projetos necessários para solicitar sua certificação.",
-          "Para este projeto, você criará uma aplicação que verifica se um número é um número de telefone válido nos Estados Unidos."
+          "For this project, you'll build an application that checks if a number is a valid United States phone number."
         ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Aprenda JavaScript básico criando um jogo de RPG",
         "intro": [
-          "O JavaScript é uma linguagem de script que você pode usar para tornar as páginas da web interativas. É uma das principais tecnologias da web, juntamente com o HTML e o CSS e tem o suporte de todos os navegadores modernos.",
-          "Neste projeto prático, você aprenderá conceitos básicos de programação em JavaScript criando um jogo de RPG. Você aprenderá a trabalhar com arrays, strings, objetos, funções, laços, instruções if/else e muito mais."
+          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
+          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Role Playing Game. You'll learn how to work with arrays, strings, objects, functions, loops, <code>if/else</code> statements, and more."
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Aprenda validação de formulários construindo um contador de calorias",
         "intro": [
-          "Ao criar aplicações para a web, haverá momentos em que você precisará trabalhar com a entrada do usuário e com validação de formulário. Neste projeto de contador de calorias, você aprenderá a lidar com entradas do usuário, a realizar cálculos com base nessa entrada e a atualizar dinamicamente a interface para exibir os resultados.",
-          "Neste projeto prático, você aprenderá expressões regulares básicas, template literals, o método <code>addEventListener()</code> e muito mais."
+          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter project, you'll learn how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
+          "In this practice project, you'll learn basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
         ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Aprenda programação funcional criando uma planilha",
         "intro": [
-          "Programação funcional é uma abordagem popular em desenvolvimento de software. Na programação funcional, o código é organizado em funções menores e básicas, que podem ser combinadas para criar programas complexos.",
-          "Neste projeto de aplicação de planilhas, você aprenderá a analisar e avaliar expressões matemáticas, a implementar funções de planilha manipular referências de células e a criar interfaces para a web interativas, com atualizações de conteúdo dinâmicas baseadas na entrada do usuário. O projeto abrangerá conceitos como os métodos <code>map()</code>, <code>find()</code>, <code>parseInt()</code>, <code>includes()</code> e mais."
+          "Functional Programming is a popular approach to software development. In Functional Programming, developers organize code into smaller functions, then combine those functions to build complex programs.",
+          "In this spreadsheet application project, you'll learn about parsing and evaluating mathematical expressions, implementing spreadsheet functions, handling cell references, and creating interactive web interfaces. You'll learn how to dynamically update the page based on user input.",
+          "This project will cover concepts like the <code>map()</code> method, <code>find()</code> method, <code>parseInt()</code>, the <code>includes()</code> method."
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
         "title": "Aprenda métodos modernos de JavaScript criando cards de equipes de futebol",
         "intro": [
-          "Um aspecto comum da criação de aplicações para a web é trabalhar com conjuntos de dados e com o resultado dessas informações na tela. Neste projeto de cards de equipes de futebol, você aprenderá a trabalhar com manipulação do DOM, desestruturação de objetos, manipulação de eventos e filtragem de dados.",
-          "Este projeto abrangerá conceitos como a instrução switch, parâmetros padrão, <code>Object.freeze()</code>, o método <code>map()</code> e mais."
+          "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
+          "This project will cover concepts like switch statements, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method, and more."
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "Aprenda métodos de arrays avançados criando uma calculadora de estatística",
         "intro": [
-          "Sentir-se confortável para trabalhar com métodos de manipulação de array, como <code>map()</code>, <code>reduce()</code> e <code>filter()</code>, é uma parte fundamental de JavaScript.",
-          "Neste projeto de calculadora de estatísticas, você ganhará experiência com o tratamento da entrada de usuário, com a manipulação do DOM e com o encadeamento de métodos, realizando cálculos estatísticos como média, moda, variância e desvio-padrão."
+          "As you expand your JavaScript skills, you'll want to get comfortable with array manipulation methods, such as <code>map()</code>, <code>reduce()</code>, and <code>filter()</code>.",
+          "In this statistics calculator project, you'll gain experience with handling user input, DOM manipulation, and method chaining. You'll get practice by performing statistical calculations like mean, median, mode, variance, and standard deviation."
         ]
       },
       "learn-basic-oop-by-building-a-shopping-cart": {
         "title": "Aprenda POO básica criando um carrinho de compras",
         "intro": [
-          "A POO, ou Programação Orientada a Objetos, é uma das abordagens principais do processo de desenvolvimento de software. Na POO, os objetos e as classes são usados para organizar o código, descrever coisas e o que elas podem fazer.",
-          "Neste projeto de carrinho de compras, você aprenderá a definir e utilizar classes, a criar instâncias de classe e a implementar métodos para a manipulação de dados. Este projeto tratará de conceitos como a inclusão de operadores ternários, operador spread, a palavra-chave <code>this</code> e mais."
+          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, developers use objects and classes to structure their code.",
+          "In this shopping cart project, you'll learn how to define classes and use them. You'll create class instances and implement methods for data manipulation.",
+          "This project will cover concepts like the ternary operator, the spread operator, the <code>this</code> keyword, and more."
         ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
         "title": "Aprenda Fetch e Promises criando uma página de autores do fCC",
         "intro": [
-          "Um aspecto comum do desenvolvimento para a web é aprender a buscar dados de uma API externa e trabalhar com JavaScript assíncrono. Este projeto de página de autores do freeCodeCamp mostrará a você como trabalhar com o método fetch e como atualizar dinamicamente o DOM para exibir os dados obtidos.",
-          "Este projeto também ensinará a paginar seus dados para que você possa carregar os resultados em lotes. "
+          "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
+          "This freeCodeCamp authors page project will show you how to use the fetch method, then dynamically update the DOM to display the fetched data.",
+          "This project will also teach you how to paginate your data so you can load results in batches."
         ]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
         "title": "Aprenda expressões regulares criando um filtro de spam",
         "intro": [
-          "Expressões regulares, muitas vezes abreviadas como \"regex\" ou \"regexp\", são padrões que ajudam programadores a encontrar correspondências, pesquisar e substituir texto. Expressões regulares são muito poderosas, mas podem ser difíceis de ler porque usam caracteres especiais para fazer correspondências mais complexas e flexíveis.",
-          "Neste projeto de filtro de spam, você aprenderá a usar caracteres especiais, grupos de captura, buscas positivas e negativas e outras técnicas para encontrar correspondências com o texto desejado."
+          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
+          "In this spam filter project, you'll learn about capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
         ]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
         "title": "Aprenda o raciocínio básico de Algoritmos criando uma ordenação numérica",
         "intro": [
-          "Na ciência da computação, existem algoritmos de classificação fundamentais que todos os desenvolvedores devem aprender. Neste projeto de criação de um ordenador de números, você aprenderá a implementar e visualizar diferentes algoritmos de classificação, como Bubble Sort, Selection Sort e Insertion Sort usando JavaScript.",
-          "Este projeto ajudará você a entender os conceitos fundamentais por trás desses algoritmos e como eles podem ser aplicados para ordenar dados numéricos em uma aplicação para a web."
+          "In computer science, there are fundamental sorting algorithms that all developers should learn. In this number sorter project, you'll learn how to implement and visualize different sorting algorithms like bubble sort, selection sort, and insertion sort – all with JavaScript.",
+          "This project will help you understand the fundamental concepts behind these algorithms, and how you can apply them to sort numerical data in web applications."
+        ]
+      },
+      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
+        "title": "Learn Intermediate Algorithmic Thinking by Building a Dice Game",
+        "intro": [
+          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
+          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
+          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
         "title": "Aprenda OOP intermediário construindo um jogo de plataforma",
         "intro": [
-          "Criar jogos permite que você entenda os princípios básicos de programação ao mesmo tempo em que cria uma experiência dinâmica e interativa de jogos.",
-          "Neste projeto de jogo de plataforma, você continuará aprendendo sobre classes, objetos, herança e encapsulamento. Você também aprenderá a criar e a organizar elementos de jogo de maneira eficiente e a obter informações sobre a resolução de problemas e a reutilização de código."
+          "Coding a game is a great way to grasp fundamental programming principles, while also creating an interactive gaming experience.",
+          "In this platformer game project, you'll continue to learn about classes, objects, inheritance, and encapsulation. You'll also learn how to design and organize game elements efficiently and gain insights into problem-solving and code reusability."
         ]
       },
       "learn-localstorage-by-building-a-todo-app": {
         "title": "Aprenda sobre armazenamento local criando uma aplicação de lista de tarefas",
         "intro": [
-          "O armazenamento local é uma funcionalidade do navegador da web que permite que aplicações da web armazenem pares de chave-valor de maneira persistente dentro do navegador de um usuário, permitindo que os dados sejam salvos e recuperados nas sessões das páginas.",
-          "Nesta aplicação de lista de tarefas, você aprenderá a lidar com entradas de formulário, a gerenciar o armazenamento local, a executar operações do CRUD (criar, ler, atualizar e apagar) em tarefas, a implementar \"ouvintes\" de eventos e a ativar/desativar elementos da UI."
+          "Local storage is a web browser feature that lets web applications store key-value pairs persistently within a user's browser. This allows web apps to save data during one session, then retrieve it in a later page session.",
+          "In this TODO application, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implement event listeners, and toggle UI elements."
         ]
       },
       "learn-the-date-object-by-building-a-date-formatter": {
         "title": "Aprenda sobre o objeto Date criando um formatador de datas",
         "intro": [
-          "Trabalhar com datas em JavaScript pode ser ao mesmo tempo poderoso e desafiador. Neste projeto, ao navegar através de vários métodos, formatos e fusos horários, você aprenderá a trabalhar com o objeto Date do JavaScript, incluindo os seus métodos e propriedades, e aprenderá a formatar datas de maneira eficaz.",
+          "Working with dates in JavaScript can be challenging. You have to navigate various methods, formats, and time zones. In this project, you'll learn how to work with the JavaScript Date object, including its methods and properties. You'll also learn how to correctly format dates.",
           "Este projeto cobrirá conceitos como os métodos: <code>getDate()</code>, <code>getMonth()</code> e <code>getFullYear()</code>."
         ]
       },
       "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard": {
         "title": "Aprenda programação assíncrona criando uma tabela de lideres do fórum do fCC",
         "intro": [
-          "Trabalhar com programação assíncrona é um fundamental em JavaScript. Neste projeto, você ganhará proficiência em conceitos de programação assíncrona criando uma tabela de liderança do fórum do freeCodeCamp.",
-          "Este projeto cobrirá a Fetch API, promises, async/await e a instrução try... catch."
+          "JavaScript is an asynchronous programming language. And this project will help you gain proficiency in asynchronous concepts. You'll code your own freeCodeCamp forum leaderboard.",
+          "This project will cover the Fetch API, promises, Async/Await, and the try..catch statement."
+        ]
+      },
+      "learn-basic-string-and-array-methods-by-building-a-music-player": {
+        "title": "Learn Basic String and Array Methods by Building a Music Player",
+        "intro": [
+          "Now let's learn some essential string and array methods like the <code>find()</code>, <code>forEach()</code>, <code>map()</code>, and <code>join()</code>. These methods are crucial for developing dynamic web applications.",
+          "In this project, you'll code a basic MP3 player using HTML, CSS, and JavaScript. The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, previous, and shuffle functionalities. You'll even learn how to dynamically update your user interface based on the current song."
         ]
       }
     }
@@ -1047,6 +1069,14 @@
       "top-the-box-model": {
         "title": "Aprenda sobre o modelo de caixas",
         "intro": ["Uma descrição deve ser determinada"]
+      },
+      "top-introduction-to-flexbox": {
+        "title": "Introduction to Flexbox",
+        "intro": ["A description is to be determined"]
+      },
+      "top-learn-block-and-inline": {
+        "title": "Learn the difference between Block and Inline",
+        "intro": ["A description is to be determined"]
       }
     }
   },

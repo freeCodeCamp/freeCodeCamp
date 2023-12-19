@@ -27,12 +27,13 @@ import {
   openModal,
   updateSolutionFormValues
 } from '../redux/actions';
+import Scene from '../components/scene/scene';
 import { isChallengeCompletedSelector } from '../redux/selectors';
+import { parseBlanks } from './parse-blanks';
 
 // Styles
 import '../video.css';
 import './show.css';
-import Scene from '../components/scene/scene';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -273,8 +274,8 @@ class ShowFillInTheBlank extends Component<
     )} - ${title}`;
 
     const { allBlanksFilled, feedback, showFeedback, showWrong } = this.state;
+    const paragraphs = parseBlanks(sentence);
 
-    const splitSentence = sentence.replace(/^<p>|<\/p>$/g, '').split('_');
     const blankAnswers = blanks.map(b => b.answer);
 
     return (
@@ -328,37 +329,37 @@ class ShowFillInTheBlank extends Component<
                 if it encounters a key combination, so we have to pass in the individual keys to observe */}
                 <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
                   <div>
-                    <p>
-                      {splitSentence.map((s, i) => {
-                        return (
-                          <Fragment key={i}>
-                            <PrismFormatted
-                              text={this.addCodeTags(s, i, blankAnswers.length)}
-                              className={`code-tag ${this.addPrismClass(
-                                i,
-                                blankAnswers.length
-                              )}`}
-                              useSpan
-                              noAria
-                            />
-                            {blankAnswers[i] && (
-                              <input
-                                type='text'
-                                maxLength={blankAnswers[i].length + 3}
-                                className={`fill-in-the-blank-input ${this.addInputClass(
-                                  i
-                                )}`}
-                                onChange={this.handleInputChange}
-                                data-index={i}
-                                style={{
-                                  width: `${blankAnswers[i].length * 11 + 11}px`
-                                }}
-                              />
-                            )}
-                          </Fragment>
-                        );
-                      })}
-                    </p>
+                    {paragraphs.map((p, i) => {
+                      return (
+                        // both keys, i and j, are stable between renders, since
+                        // the paragraphs are static.
+                        <p key={i}>
+                          {p.map((node, j) => {
+                            if (node.type === 'text') return node.value;
+                            if (node.type === 'blank')
+                              return (
+                                <input
+                                  key={j}
+                                  type='text'
+                                  maxLength={
+                                    blankAnswers[node.value].length + 3
+                                  }
+                                  className={`fill-in-the-blank-input ${this.addInputClass(
+                                    node.value
+                                  )}`}
+                                  onChange={this.handleInputChange}
+                                  data-index={node.value}
+                                  style={{
+                                    width: `${
+                                      blankAnswers[node.value].length * 11 + 11
+                                    }px`
+                                  }}
+                                />
+                              );
+                          })}
+                        </p>
+                      );
+                    })}
                   </div>
                 </ObserveKeys>
                 <Spacer size='medium' />
