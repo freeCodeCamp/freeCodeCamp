@@ -32,7 +32,7 @@ describe('C# Exam Challenge', () => {
         'be.visible'
       );
       cy.get(el.surveyAlert).should('not.exist');
-      cy.get(el.startExamBtn).should('be.disabled');
+      cy.get(el.startExamBtn).should('have.attr', 'aria-disabled');
     });
   });
 
@@ -81,8 +81,8 @@ describe('C# Exam Challenge', () => {
       );
       cy.get(el.examTime).should('be.visible');
       cy.contains('Question 1 of 5').should('be.visible');
-      cy.get(el.prevQuestionBtn).should('be.disabled');
-      cy.get(el.nextQuestionBtn).should('be.disabled');
+      cy.get(el.prevQuestionBtn).should('have.attr', 'aria-disabled');
+      cy.get(el.nextQuestionBtn).should('have.attr', 'aria-disabled');
       cy.get(el.finishExamBtn).should('not.exist');
       cy.get(el.exitExamBtn).should('be.visible');
 
@@ -90,7 +90,7 @@ describe('C# Exam Challenge', () => {
       cy.get(el.examInput).eq(0).click();
       cy.get(el.nextQuestionBtn).click();
       cy.get(el.prevQuestionBtn).should('be.enabled');
-      cy.get(el.nextQuestionBtn).should('be.disabled');
+      cy.get(el.nextQuestionBtn).should('have.attr', 'aria-disabled');
       cy.contains('Question 2 of 5').should('be.visible');
 
       // answer the rest of the questions

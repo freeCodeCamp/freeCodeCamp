@@ -28,7 +28,7 @@
     "create:trending": "ts-node ./tools/download-trending.ts",
     "predevelop": "pnpm run common-setup && pnpm run build:scripts --env development",
     "build:components-library": "pnpm run -F=@freecodecamp/ui build",
-    "develop": "cross-env NODE_OPTIONS=\"--max-old-space-size=5000\" gatsby develop --inspect=9230",
+    "develop": "cross-env NODE_OPTIONS=\"--max-old-space-size=5000\" gatsby develop --inspect=9230  --host 0.0.0.0",
     "lint": "ts-node ./i18n/schema-validation.ts",
     "serve": "gatsby serve -p 8000",
     "serve-ci": "serve -l 8000 -c serve.json public",

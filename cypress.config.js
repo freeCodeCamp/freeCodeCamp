@@ -53,7 +53,8 @@ module.exports = defineConfig({
         deleteSurveys
       });
 
-      config.env.API_LOCATION = 'http://localhost:3000';
+      // config.env.API_LOCATION = 'http://localhost:3000';
+      config.env.API_LOCATION = '0.0.0.0:3000';
       return config;
     }
   }
