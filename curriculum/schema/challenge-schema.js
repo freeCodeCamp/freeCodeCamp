@@ -111,7 +111,8 @@ const schema = Joi.object()
       'HTML-CSS',
       'Python',
       'Backend Development',
-      'C-Sharp'
+      'C-Sharp',
+      'English'
     ),
     videoUrl: Joi.string().allow(''),
     fillInTheBlank: Joi.object().keys({
