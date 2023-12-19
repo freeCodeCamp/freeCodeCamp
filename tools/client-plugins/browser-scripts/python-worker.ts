@@ -135,8 +135,8 @@ function initRunPython() {
       return ""
   `);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  const getResetId = globals.get('__get_reset_id') as () => string;
-  return { runPython, getResetId };
+  const getResetId = globals.get('__get_reset_id') as PyProxy & (() => string);
+  return { runPython, getResetId, globals };
 }
 
 ctx.onmessage = (e: PythonRunEvent | ListenRequestEvent | CancelEvent) => {
@@ -165,7 +165,7 @@ function handleRunRequest(data: PythonRunEvent['data']) {
   // TODO: use reset-terminal for clarity?
   postMessage({ type: 'reset' });
 
-  const { runPython, getResetId } = initRunPython();
+  const { runPython, getResetId, globals } = initRunPython();
   // use pyodide.runPythonAsync if we want top-level await
   try {
     runPython(code);
@@ -184,5 +184,8 @@ function handleRunRequest(data: PythonRunEvent['data']) {
       // ...and tell the client that we're ignoring them.
       postMessage({ type: 'stopped', text: getResetId() });
     }
+  } finally {
+    getResetId.destroy();
+    globals.destroy();
   }
 }
