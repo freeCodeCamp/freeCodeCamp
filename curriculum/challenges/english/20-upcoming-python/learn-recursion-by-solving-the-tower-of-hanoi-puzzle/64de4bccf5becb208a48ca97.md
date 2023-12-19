@@ -30,7 +30,7 @@ Your `move()` function should have `n`, `source`, `auxiliary`, and `target` as t
 You should pass `NUMBER_OF_DISKS` and the strings `'A'`, `'B'`, and `'C'` to `move()`. The order matters.
 
 ```js
-({test: () => assert.match(e.code.original["main.py"], /^move\(\s*NUMBER_OF_DISKS\s*,\s*('|")A\1\s*,\s*('|")B\2\s*,\s*('|")C\3\s*\)/m)
+({test: () => assert.match(code, /^move\(\s*NUMBER_OF_DISKS\s*,\s*('|")A\1\s*,\s*('|")B\2\s*,\s*('|")C\3\s*\)/m)
 })
 ```
 

@@ -14,7 +14,7 @@ Next, below the nested `elif` statement, add another `if` statement that should 
 You should add an `if` statement to execute when `forward` is `True` after the `elif` block.
 
 ```js
-({ test: () => assert.match(e.code.original["main.py"], /^\s{12}if\s+forward(\s*==\s*True)?\s*:/m) })
+({ test: () => assert.match(code, /^\s{12}if\s+forward(\s*==\s*True)?\s*:/m) })
 ```
 
 You should print the provide string inside your new `if` statement.
