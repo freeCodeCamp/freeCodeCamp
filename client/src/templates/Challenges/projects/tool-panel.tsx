@@ -30,7 +30,7 @@ function ToolPanel({
   t
 }: ToolPanelProps): JSX.Element {
   return (
-    <>
+    <div>
       {guideUrl && (
         <>
           <Button
@@ -41,13 +41,13 @@ function ToolPanel({
           >
             {t('buttons.get-hint')}
           </Button>
-          <Spacer size='small' />
+          <Spacer size='xxSmall' />
         </>
       )}
       <Button block={true} variant='primary' onClick={openHelpModal}>
         {t('buttons.ask-for-help')}
       </Button>
-    </>
+    </div>
   );
 }
 
