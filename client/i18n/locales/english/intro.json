@@ -1226,7 +1226,10 @@
       },
       "learn-data-structures-by-building-the-merge-sort-algorithm": {
         "title": "Learn Data Structures by Building the Merge Sort Algorithm",
-        "intro": ["", ""]
+        "intro": [
+          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this project, you'll learn how to interact with data structures by sorting a list of random numbers using the merge sort algorithm."
+        ]
       }
     }
   },
