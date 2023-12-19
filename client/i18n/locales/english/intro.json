@@ -1226,7 +1226,12 @@
       },
       "learn-list-comprehension-by-building-a-case-converter-program": {
         "title": "Learn Python List Comprehension By Building a Case Converter Program",
-        "intro": ["", ""]
+        "intro": [
+          "A list comprehension in Python is a way to construct a new list from an iterable types such as lists, tuples, and strings without using a for loop or the `.append()` list method",
+          "In this project, you will write a program that takes a string formatted in camel or pascal case and converts that to snake case. The project has two phases.",
+          "During the first phase, you will use a for loop to implement the program.",
+          "Then in the second phase you will learn about applying list comprehension instead of a loop to achieve the same results."
+        ]
       }
     }
   },
