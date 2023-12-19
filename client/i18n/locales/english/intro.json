@@ -1197,6 +1197,31 @@
           "A Binary Search Tree (BST) is an important data structure concept, where data is sorted in a hierarchical structure.",
           "In this project, you will learn how to construct a BST, perform an inorder traversal, and also cover key operations like insertion, search, and deletion."
         ]
+      },
+      "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm": {
+        "title": "Learn How to Work with Numbers and Strings by Implementing the Luhn Algorithm",
+        "intro": ["", ""]
+      },
+      "learn-classes-and-objects-by-building-a-sudoku-solver": {
+        "title": "Learn Classes and Objects by Building a Sudoku Solver",
+        "intro": [
+          "Classes and objects are an important programming concept and they enable developers to achieve code modularity, abstraction, readability, and promote reusability.",
+          "In this Sudoku solver project, you'll learn how to use classes and objects to build a sudoku grid and to solve a sudoku puzzle."
+        ]
+      },
+      "learn-recursion-by-solving-the-tower-of-hanoi-puzzle": {
+        "title": "Learn Recursion by Solving the Tower of Hanoi Puzzle",
+        "intro": [
+          "Recursion allows you to write concise and elegant code to solve complex computational problems.",
+          "In this project, you'll start with an iterative approach to solve the tower of Hanoi mathematical puzzle and then you'll learn how to implement a recursive solution."
+        ]
+      },
+      "learn-string-manipulation-by-building-a-cipher": {
+        "title": "Learn String Manipulation by Building a Cipher",
+        "intro": [
+          "Python is a powerful and popular programming language widely used for data science, data visualization, web and game development, machine learning and much more.",
+          "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loop, conditional statements, and and how to work with them to build your first program."
+        ]
       }
     }
   },
@@ -1204,7 +1229,7 @@
     "title": "A2 English for Developers (Beta)",
     "intro": [
       "This course teaches the English language, designed for developers.",
-      "More text here."
+      "In this beta version of the curriculum you can try out the first 3 of the 18 courses we are developing."
     ],
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
@@ -1221,15 +1246,15 @@
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Learn How to Talk About a Typical Workday and Tasks",
-        "intro": ["", ""]
+        "intro": ["Learn about a typical workday."]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "Learn How to Discuss Your Morning or Evening Routine",
-        "intro": ["", ""]
+        "intro": ["Learn about routines."]
       },
       "learn-how-to-describe-your-current-project": {
         "title": "Learn How to Describe Your Current Project",
-        "intro": ["", ""]
+        "intro": ["Learn about projects."]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Learn How to Ask and Share About Educational and Professional Background",
