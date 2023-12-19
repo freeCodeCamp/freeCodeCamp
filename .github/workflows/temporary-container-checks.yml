@@ -3,18 +3,6 @@
 name: CI - E2E - Containers
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ['CI - Node.js']
-    types:
-      - completed
-  # TODO: refactor with a workflow_call
-  pull_request:
-    paths-ignore:
-      - 'docs/**'
-    branches:
-      - 'main'
-      - 'next-**'
-      - 'e2e-**'
 
 jobs:
   build-client:

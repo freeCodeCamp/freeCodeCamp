@@ -306,7 +306,7 @@
     "page-number": "{{pageNumber}} من {{totalPages}}"
   },
   "footer": {
-    "tax-exempt-status": "تكون مؤسسة freeCodeCamp خيرية معفاة ضريبياً 501(c)(3) يدعمها المتبرعين (الرقم التعريفي الضريبي الاتحادي للولايات المتحدة: 82-0779546)",
+    "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
     "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public.",
     "donation-initiatives": "التبرعات لـ freeCodeCamp تذهب لمبادراتنا التعليمية، وتساعد في دفع تكاليف الخوادم، والخدمات، والموظفين.",
     "donate-text": "يمكنك <1>تقديم تبرع قابل للخصم الضريبي هنا </1>.",

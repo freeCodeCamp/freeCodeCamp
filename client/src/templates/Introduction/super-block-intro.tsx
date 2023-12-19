@@ -184,7 +184,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     SuperBlocks.RespWebDesign,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.ProjectEuler
+    SuperBlocks.ProjectEuler,
+    SuperBlocks.A2English
   ];
 
   return (
