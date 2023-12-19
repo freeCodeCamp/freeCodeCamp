@@ -161,7 +161,7 @@ button.map-title {
   background-color: var(--tertiary-background);
 }
 
-.block-ui .block {
+.block-ui div.block {
   background: var(--primary-background);
 }
 
