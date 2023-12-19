@@ -13,7 +13,7 @@ In software testing, `bugs` refer to errors or problems in the software that nee
 
 ## --text--
 
-What are 'bugs' in software?
+What are `bugs` in software?
 
 ## --answers--
 
@@ -21,7 +21,7 @@ Features that users like.
 
 ### --feedback--
 
-Bugs are not features, but issues.
+`Bugs` are not features, but issues.
 
 ---
 
@@ -29,7 +29,7 @@ The software's security measures.
 
 ### --feedback--
 
-Bugs relate to errors, not security measures directly.
+`Bugs` relate to errors, not security measures directly.
 
 ---
 
@@ -37,7 +37,7 @@ Parts of the software that are new.
 
 ### --feedback--
 
-Bugs are not new parts, but problems.
+`Bugs` are not new parts, but problems.
 
 ---
 

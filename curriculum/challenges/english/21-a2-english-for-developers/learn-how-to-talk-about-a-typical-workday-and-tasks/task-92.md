@@ -17,10 +17,6 @@ What does it mean `to promote ethics` at work?
 
 ## --answers--
 
-To make more money.
-
-### --feedback--
-
 To encourage good, honest behavior.
 
 ---

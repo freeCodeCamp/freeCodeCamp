@@ -16,7 +16,7 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-`Compliance is when we put specific rules, policies, and regulations that are important to our _ to practice.`
+`Compliance is when we put specific rules, policies, and regulations in place that are important to our _ to practice.`
 
 ## --blanks--
 

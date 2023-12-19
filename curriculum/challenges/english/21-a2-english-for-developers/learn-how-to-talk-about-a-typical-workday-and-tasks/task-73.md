@@ -15,7 +15,7 @@ For instance, `The company’s privacy policy protects client information.`
 
 ## --text--
 
-Task 73 question?
+What does `policy` mean in a workplace?
 
 ## --answers--
 

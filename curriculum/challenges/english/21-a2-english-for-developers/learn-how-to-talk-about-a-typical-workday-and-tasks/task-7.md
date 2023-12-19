@@ -26,7 +26,7 @@ Listen to the audio to complete the sentence below.
 
 ## --sentence--
 
-`_, I review my to-do list for the day and prioritize my tasks.I like to work on the most important ones first.`
+`_, I review my to-do list for the day and prioritize my tasks. I like to work on the most important ones first.`
 
 ## --blanks--
 

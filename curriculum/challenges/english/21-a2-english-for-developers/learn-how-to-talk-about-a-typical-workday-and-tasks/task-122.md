@@ -53,4 +53,4 @@ Testing software is a part of her daily tasks.
 
 ## --video-solution--
 
-3
+2
