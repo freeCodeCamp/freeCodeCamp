@@ -24,6 +24,7 @@ import HelpModal from '../components/help-modal';
 import Scene from '../components/scene/scene';
 import PrismFormatted from '../components/prism-formatted';
 import ChallengeTitle from '../components/challenge-title';
+import ChallengeHeading from '../components/challenge-heading';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -313,7 +314,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 <ObserveKeys>
                   {assignments.length > 0 && (
                     <>
-                      <h2>{t('learn.assignments')}</h2>
+                      <ChallengeHeading heading={t('learn.assignments')} />
                       <div className='video-quiz-options'>
                         {assignments.map((assignment, index) => (
                           <label
@@ -343,7 +344,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     </>
                   )}
 
-                  <h2>{t('learn.question')}</h2>
+                  <ChallengeHeading heading={t('learn.question')} />
                   <PrismFormatted className={'line-numbers'} text={text} />
                   <div className='video-quiz-options'>
                     {answers.map(({ answer }, index) => (

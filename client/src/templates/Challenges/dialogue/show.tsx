@@ -19,6 +19,7 @@ import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import CompletionModal from '../components/completion-modal';
 import ChallengeTitle from '../components/challenge-title';
+import ChallengeHeading from '../components/challenge-heading';
 import HelpModal from '../components/help-modal';
 import PrismFormatted from '../components/prism-formatted';
 import {
@@ -230,7 +231,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
                 <ObserveKeys>
-                  <h2>{t('learn.assignments')}</h2>
+                  <ChallengeHeading heading={t('learn.assignments')} />
                   <div className='video-quiz-options'>
                     {assignments.map((assignment, index) => (
                       <label className='video-quiz-option-label' key={index}>
