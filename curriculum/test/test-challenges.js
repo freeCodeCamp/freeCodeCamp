@@ -33,8 +33,10 @@ const {
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
 const { challengeTypes } = require('../../shared/config/challenge-types');
 // the config files are created during the build, but not before linting
-const testEvaluator =
+const javaScriptTestEvaluator =
   require('../../client/config/browser-scripts/test-evaluator.json').filename;
+const pythonTestEvaluator =
+  require('../../client/config/browser-scripts/python-test-evaluator.json').filename;
 
 const { getLines } = require('../../shared/utils/get-lines');
 
@@ -531,28 +533,39 @@ async function createTestRunner(
     solutionFiles
   );
 
-  const { build, sources, loadEnzyme, transformedPython } =
-    await buildChallenge(
-      {
-        challengeFiles,
-        required,
-        template
-      },
-      { usesTestRunner: true }
-    );
+  const { build, sources, loadEnzyme } = await buildChallenge(
+    {
+      challengeFiles,
+      required,
+      template
+    },
+    { usesTestRunner: true }
+  );
 
   const code = {
     contents: sources.index,
-    editableContents: sources.editableContents
+    editableContents: sources.editableContents,
+    original: sources.original
   };
 
-  const runsInBrowser =
-    buildChallenge === buildDOMChallenge ||
-    buildChallenge === buildPythonChallenge;
+  const runsInBrowser = buildChallenge === buildDOMChallenge;
+  const runsInPythonWorker = buildChallenge === buildPythonChallenge;
+
+  const testEvaluator = runsInPythonWorker
+    ? pythonTestEvaluator
+    : javaScriptTestEvaluator;
+
+  // The python worker clears the globals between tests, so it should be fine
+  // to use the same evaluator for all tests. TODO: check if this is true for
+  // sys, since sys.modules is not being reset.
+  const workerConfig = {
+    testEvaluator,
+    options: { terminateWorker: !runsInPythonWorker }
+  };
 
   const evaluator = await (runsInBrowser
-    ? getContextEvaluator(build, sources, code, loadEnzyme, transformedPython)
-    : getWorkerEvaluator(build, sources, code, removeComments));
+    ? getContextEvaluator(build, sources, code, loadEnzyme)
+    : getWorkerEvaluator(build, sources, code, removeComments, workerConfig));
 
   return async ({ text, testString }) => {
     try {
@@ -596,20 +609,8 @@ function replaceChallengeFilesContentsWithSolutions(
   });
 }
 
-async function getContextEvaluator(
-  build,
-  sources,
-  code,
-  loadEnzyme,
-  transformedPython
-) {
-  await initializeTestRunner(
-    build,
-    sources,
-    code,
-    loadEnzyme,
-    transformedPython
-  );
+async function getContextEvaluator(build, sources, code, loadEnzyme) {
+  await initializeTestRunner(build, sources, code, loadEnzyme);
 
   return {
     evaluate: async (testString, timeout) =>
@@ -624,8 +625,15 @@ async function getContextEvaluator(
   };
 }
 
-async function getWorkerEvaluator(build, sources, code, removeComments) {
-  const testWorker = createWorker(testEvaluator, { terminateWorker: true });
+async function getWorkerEvaluator(
+  build,
+  sources,
+  code,
+  removeComments,
+  workerConfig
+) {
+  const { testEvaluator, options } = workerConfig;
+  const testWorker = createWorker(testEvaluator, options);
   return {
     evaluate: async (testString, timeout) =>
       await testWorker.execute(
@@ -635,30 +643,22 @@ async function getWorkerEvaluator(build, sources, code, removeComments) {
   };
 }
 
-async function initializeTestRunner(
-  build,
-  sources,
-  code,
-  loadEnzyme,
-  transformedPython
-) {
+async function initializeTestRunner(build, sources, code, loadEnzyme) {
   await page.reload();
   await page.setContent(build);
   await page.evaluate(
-    async (code, sources, loadEnzyme, transformedPython) => {
+    async (code, sources, loadEnzyme) => {
       const getUserInput = fileName => sources[fileName];
       // TODO: use frame's functions directly, so it behaves more like the
-      // client. Also, keep an eye on performance - loading pyodide is slow.
+      // client.
       await document.__initTestFrame({
         code: sources,
         getUserInput,
-        loadEnzyme,
-        transformedPython
+        loadEnzyme
       });
     },
     code,
     sources,
-    loadEnzyme,
-    transformedPython
+    loadEnzyme
   );
 }

@@ -9,7 +9,7 @@ dashedName: step-84
 
 With everything set in place, call the `pauseSong()`, `setPlayerDisplay()`, `highlightCurrentSong()`, and `setPlayButtonAccessibleText()` functions to correctly update the player.
 
-Congratulations! Your music player is now complete. You still have the shorter songs for testing, but if you'd like to listen to the original songs, you can copy them from an earlier step and paste them into the `allSongs` array.
+Congratulations on completing your music player! Now that we've finished testing and using the shorter songs, we've replaced them with the original tracks specially selected by Quincy for you to enjoy.
 
 # --hints--
 
@@ -82,7 +82,7 @@ assert.match(splitter[1], /highlightCurrentSong\(\);?\s*setPlayButtonAccessibleT
         <div class="player-content">
           <div id="player-album-art">
             <img
-              src="https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/digital-drift.jpg"
+              src="https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/quincy-larson-album-art.jpg"
               alt="song cover art"
             />
           </div>
@@ -551,38 +551,73 @@ const shuffleButton = document.getElementById("shuffle");
 const allSongs = [
   {
     id: 0,
-    title: "Hello World",
-    artist: "RafaelDavisH",
-    duration: "0:23",
-    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/hello-world.mp3",
+    title: "Scratching The Surface",
+    artist: "Quincy Larson",
+    duration: "4:25",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/scratching-the-surface.mp3",
   },
   {
     id: 1,
-    title: "In the Zone",
-    artist: "RafaelDavisH",
-    duration: "0:11",
-    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/in-the-zone.mp3",
+    title: "Can't Stay Down",
+    artist: "Quincy Larson",
+    duration: "4:15",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/cant-stay-down.mp3",
   },
   {
     id: 2,
-    title: "Camper Cat",
-    artist: "RafaelDavisH",
-    duration: "0:21",
-    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/camper-cat.mp3",
+    title: "Still Learning",
+    artist: "Quincy Larson",
+    duration: "3:51",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/still-learning.mp3",
   },
   {
     id: 3,
-    title: "Electronic",
-    artist: "RafaelDavisH",
-    duration: "0:15",
-    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/electronic.mp3",
+    title: "Cruising for a Musing",
+    artist: "Quincy Larson",
+    duration: "3:34",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/cruising-for-a-musing.mp3",
   },
   {
     id: 4,
-    title: "Sailing Away",
-    artist: "RafaelDavisH",
-    duration: "0:22",
-    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/sailing-away.mp3",
+    title: "Never Not Favored",
+    artist: "Quincy Larson",
+    duration: "3:35",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/never-not-favored.mp3",
+  },
+  {
+    id: 5,
+    title: "From the Ground Up",
+    artist: "Quincy Larson",
+    duration: "3:12",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/from-the-ground-up.mp3",
+  },
+  {
+    id: 6,
+    title: "Walking on Air",
+    artist: "Quincy Larson",
+    duration: "3:25",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/walking-on-air.mp3",
+  },
+  {
+    id: 7,
+    title: "Can't Stop Me. Can't Even Slow Me Down.",
+    artist: "Quincy Larson",
+    duration: "3:52",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/cant-stop-me-cant-even-slow-me-down.mp3",
+  },
+  {
+    id: 8,
+    title: "The Surest Way Out is Through",
+    artist: "Quincy Larson",
+    duration: "3:10",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/the-surest-way-out-is-through.mp3",
+  },
+  {
+    id: 9,
+    title: "Chasing That Feeling",
+    artist: "Quincy Larson",
+    duration: "2:43",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/chasing-that-feeling.mp3",
   },
 ];
 
@@ -817,7 +852,7 @@ setPlayButtonAccessibleText();
         <div class="player-content">
           <div id="player-album-art">
             <img
-              src="https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/digital-drift.jpg"
+              src="https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/quincy-larson-album-art.jpg"
               alt="song cover art"
             />
           </div>
@@ -1286,38 +1321,73 @@ const shuffleButton = document.getElementById("shuffle");
 const allSongs = [
   {
     id: 0,
-    title: "Hello World",
-    artist: "RafaelDavisH",
-    duration: "0:23",
-    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/hello-world.mp3",
+    title: "Scratching The Surface",
+    artist: "Quincy Larson",
+    duration: "4:25",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/scratching-the-surface.mp3",
   },
   {
     id: 1,
-    title: "In the Zone",
-    artist: "RafaelDavisH",
-    duration: "0:11",
-    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/in-the-zone.mp3",
+    title: "Can't Stay Down",
+    artist: "Quincy Larson",
+    duration: "4:15",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/cant-stay-down.mp3",
   },
   {
     id: 2,
-    title: "Camper Cat",
-    artist: "RafaelDavisH",
-    duration: "0:21",
-    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/camper-cat.mp3",
+    title: "Still Learning",
+    artist: "Quincy Larson",
+    duration: "3:51",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/still-learning.mp3",
   },
   {
     id: 3,
-    title: "Electronic",
-    artist: "RafaelDavisH",
-    duration: "0:15",
-    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/electronic.mp3",
+    title: "Cruising for a Musing",
+    artist: "Quincy Larson",
+    duration: "3:34",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/cruising-for-a-musing.mp3",
   },
   {
     id: 4,
-    title: "Sailing Away",
-    artist: "RafaelDavisH",
-    duration: "0:22",
-    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/sailing-away.mp3",
+    title: "Never Not Favored",
+    artist: "Quincy Larson",
+    duration: "3:35",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/never-not-favored.mp3",
+  },
+  {
+    id: 5,
+    title: "From the Ground Up",
+    artist: "Quincy Larson",
+    duration: "3:12",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/from-the-ground-up.mp3",
+  },
+  {
+    id: 6,
+    title: "Walking on Air",
+    artist: "Quincy Larson",
+    duration: "3:25",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/walking-on-air.mp3",
+  },
+  {
+    id: 7,
+    title: "Can't Stop Me. Can't Even Slow Me Down.",
+    artist: "Quincy Larson",
+    duration: "3:52",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/cant-stop-me-cant-even-slow-me-down.mp3",
+  },
+  {
+    id: 8,
+    title: "The Surest Way Out is Through",
+    artist: "Quincy Larson",
+    duration: "3:10",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/the-surest-way-out-is-through.mp3",
+  },
+  {
+    id: 9,
+    title: "Chasing That Feeling",
+    artist: "Quincy Larson",
+    duration: "2:43",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/chasing-that-feeling.mp3",
   },
 ];
 
