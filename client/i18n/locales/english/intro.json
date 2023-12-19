@@ -1179,7 +1179,10 @@
       },
       "learn-recursion-by-solving-the-tower-of-hanoi-puzzle": {
         "title": "Learn Recursion by Solving the Tower of Hanoi Puzzle",
-        "intro": ["", ""]
+        "intro": [
+          "Recursion allows you to write concise and elegant code to solve complex computational problems.",
+          "In this project, you'll start with an iterative approach to solve the tower of Hanoi mathematical puzzle and then you'll learn how to implement a recursive solution."
+        ]
       }
     }
   },
