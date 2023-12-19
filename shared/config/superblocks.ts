@@ -39,6 +39,7 @@ export enum SuperBlockStages {
   Professional,
   Extra,
   Legacy,
+  VisibleLegacy,
   New,
   Upcoming
 }
@@ -52,7 +53,7 @@ export type SuperBlockOrder = {
 export const superBlockOrder: SuperBlockOrder = {
   [SuperBlockStages.FrontEnd]: [
     SuperBlocks.RespWebDesignNew,
-    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.FrontEndDevLibs,
     SuperBlocks.DataVis
   ],
@@ -73,10 +74,10 @@ export const superBlockOrder: SuperBlockOrder = {
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler
   ],
+  [SuperBlockStages.VisibleLegacy]: [SuperBlocks.JsAlgoDataStruct],
   [SuperBlockStages.Legacy]: [SuperBlocks.RespWebDesign],
   [SuperBlockStages.New]: [],
   [SuperBlockStages.Upcoming]: [
-    SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
     SuperBlocks.ExampleCertification,
     SuperBlocks.UpcomingPython,
