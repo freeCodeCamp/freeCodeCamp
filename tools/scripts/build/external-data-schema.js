@@ -15,7 +15,8 @@ const blockSchema = Joi.object({}).keys({
       'Python',
       'Backend Development',
       'C-Sharp',
-      'English'
+      'English',
+      'Odin'
     ),
     order: Joi.number(),
     time: Joi.string().allow(''),
