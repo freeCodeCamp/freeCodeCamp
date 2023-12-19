@@ -36,6 +36,7 @@ export enum SuperBlockStages {
   FrontEnd,
   Backend,
   Python,
+  English,
   Professional,
   Extra,
   Legacy,
@@ -68,6 +69,7 @@ export const superBlockOrder: SuperBlockOrder = {
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CollegeAlgebraPy
   ],
+  [SuperBlockStages.English]: [SuperBlocks.A2English],
   [SuperBlockStages.Professional]: [SuperBlocks.FoundationalCSharp],
   [SuperBlockStages.Extra]: [
     SuperBlocks.CodingInterviewPrep,
@@ -79,8 +81,7 @@ export const superBlockOrder: SuperBlockOrder = {
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
     SuperBlocks.ExampleCertification,
-    SuperBlocks.UpcomingPython,
-    SuperBlocks.A2English
+    SuperBlocks.UpcomingPython
   ]
 };
 
