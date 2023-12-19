@@ -18,6 +18,7 @@ import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
+import ChallengeHeading from '../components/challenge-heading';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import PrismFormatted from '../components/prism-formatted';
@@ -301,10 +302,9 @@ class ShowFillInTheBlank extends Component<
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <PrismFormatted text={description} />
+                <Spacer size='medium' />
                 {audioPath && (
                   <>
-                    <Spacer size='small' />
-                    <Spacer size='small' />
                     {/* TODO: Add tracks for audio elements */}
                     {/* eslint-disable-next-line jsx-a11y/media-has-caption*/}
                     <audio className='audio' controls>
@@ -313,22 +313,31 @@ class ShowFillInTheBlank extends Component<
                         type='audio/mp3'
                       ></source>
                     </audio>
+                    <Spacer size='medium' />
                   </>
                 )}
               </Col>
 
-              {scene && <Scene scene={scene} />}
+              {scene && (
+                <>
+                  <Scene scene={scene} />
+                  <Spacer size='medium' />
+                </>
+              )}
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer size='medium' />
-                <PrismFormatted text={instructions} />
-                <Spacer size='medium' />
-                <h2>{t('learn.fill-in-the-blank')}</h2>
+                <ChallengeHeading heading={t('learn.fill-in-the-blank')} />
                 <Spacer size='small' />
+                {instructions && (
+                  <>
+                    <PrismFormatted text={instructions} />
+                    <Spacer size='small' />
+                  </>
+                )}
                 {/* what we want to observe is ctrl/cmd + enter, but ObserveKeys is buggy and throws an error
                 if it encounters a key combination, so we have to pass in the individual keys to observe */}
                 <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
-                  <div>
+                  <div className='fill-in-the-blank-wrap'>
                     {paragraphs.map((p, i) => {
                       return (
                         // both keys, i and j, are stable between renders, since
