@@ -14,7 +14,12 @@ After the outer loop completes for all rows, return the final `board_string`. Th
 You should return the `board_string` variable at the end of the outer `for` loop.
 
 ```js
-({ test: () => assert.match(e.code.original["main.py"], /^\s{8}return\s+board_string/m) })
+const tCode = e.code.original["main.py"].replace(/\r/g, '');
+const str = __helpers.python.getDef(tCode, "__str__");
+const {function_body} = str;
+const indent = function_body.match(/ +/)[0];
+const returnStatement = `${indent}return board_string`;
+assert.match(e.code.original["main.py"], new RegExp(returnStatement));
 ```
 
 # --seed--
@@ -51,5 +56,6 @@ class Board:
                     board_string += middle_lines
             else:
                 board_string += lower_lines
+        
 --fcc-editable-region--
 ```

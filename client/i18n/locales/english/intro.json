@@ -1154,7 +1154,7 @@
       "learn-classes-and-objects-by-building-a-sudoku-solver": {
         "title": "Learn Classes and Objects by Building a Sudoku Solver",
         "intro": [
-          "Classes and objects are an important programming concept and they enable developers achieve code modularity, abstraction, enhance code readability and promote reusability.",
+          "Classes and objects are an important programming concept and they enable developers to achieve code modularity, abstraction, readability, and promote reusability.",
           "In this Sudoku solver project, you'll learn how to use classes and objects to build a sudoku grid and to solve a sudoku puzzle."
         ]
       }
