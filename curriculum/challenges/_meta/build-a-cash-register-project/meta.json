@@ -4,14 +4,14 @@
   "dashedName": "build-a-cash-register-project",
   "usesMultifileEditor": false,
   "helpCategory": "JavaScript",
-  "order": 14,
+  "order": 17,
   "time": "30 hours",
   "template": "",
   "required": [],
   "superBlock": "2022/javascript-algorithms-and-data-structures",
   "challengeOrder": [
     {
-      "id": "aa2e6f85cab2ab736c9a9b24",
+      "id": "657bdcc3a322aae1eac38392",
       "title": "Build a Cash Register"
     }
   ]

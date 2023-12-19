@@ -20,7 +20,7 @@
       ]
     },
     {
-      "source": "{misc/*.js,sw.js}",
+      "source": "{misc/*.js,sw.js,python-input-sw.js}",
       "headers": [
         {
           "key": "Cache-Control",
