@@ -1,36 +1,40 @@
 ---
-id: 6579fc66adaabbca6ceddb1f
-title: Step 1
+id: 657c9dbff0fee6196fa8dcff
+title: Step 16
 challengeType: 0
-dashedName: step-1
+dashedName: step-16
 ---
 
 # --description--
 
-In this project, you will learn algorithmic thinking by building a dice game. There are a total of 6 rounds and for each round, the player can roll the dice up to 3 times and collect a score. 
+When the user rolls the dice, you will need to generate 5 random numbers representing each die value. 
 
-The HTML and CSS have been provided for you. Feel free to explore them.
-
-When you are ready, use the `querySelectorAll()` method to target all elements with the `class` of `die`, and assign that to a constant called `listOfAllDice`.
+To start, create a `for` loop that will loop a total of 5 times.
 
 # --hints--
 
-You should have a `const` variable called `listOfAllDice`.
+You should have a `for` loop.
 
 ```js
-assert.match(code, /const\s*listOfAllDice\s*/);
+assert.match(code, /for\s*\(/)
 ```
 
-You should assign the `document.querySelectorAll()` method to the `listOfAllDice` variable.
+Your `for` loop should initialize `i` to `0`.
 
 ```js
-assert.match(code, /const\s+listOfAllDice\s*=\s*document\.querySelectorAll\s*\(.*\);?/);
+assert.match(code, /for\s*\(\s*let\s+i\s*=\s*0\s*;/);
 ```
 
-You should target all elements with the `class` of `die` inside the `querySelectorAll` method.
+Your `for` loop should have a condition that checks if `i` is less than `5`.
 
 ```js
-assert.match(code, /const\s*listOfAllDice\s*=\s*document\.querySelectorAll\s*\(\s*['"]\.die['"]\s*\)/);
+assert.match(code, /for\s*\(\s*let\s*i\s*=\s*0\s*;\s*i\s*<\s*5\s*;/);
+```
+
+Your `for` loop should increment `i` by `1` each time it runs.
+
+```js
+assert.match(code, /for\s*\(\s*let\s*i\s*=\s*0\s*;\s*i\s*<\s*5\s*;\s*i\s*\+\+\s*\)/);
 ```
 
 # --seed--
@@ -272,8 +276,42 @@ input[type="radio"]:disabled + label {
 ```
 
 ```js
+const listOfAllDice = document.querySelectorAll(".die");
+const scoreInputs = document.querySelectorAll("#score-options input");
+const scoreSpans = document.querySelectorAll("#score-options span");
+const currentRoundText = document.getElementById("current-round");
+const currentRoundRollsText = document.getElementById("current-round-rolls");
+const totalScoreText = document.getElementById("total-score");
+const scoreHistory = document.getElementById("score-history");
+const rollDiceBtn = document.getElementById("roll-dice-btn");
+const keepScoreBtn = document.getElementById("keep-score-btn");
+const rulesContainer = document.querySelector(".rules-container");
+const rulesBtn = document.getElementById("rules-btn");
 
---fcc-editable-region--
+let diceValuesArr = [];
+let isModalShowing = false;
+let score = 0;
+let totalScore = 0;
+let round = 1; 
+let rolls = 0; 
 
---fcc-editable-region--
+const rollDice = () => {
+  diceValuesArr = [];
+
+  --fcc-editable-region--
+
+  --fcc-editable-region--
+};
+
+rulesBtn.addEventListener("click", () => {
+  isModalShowing = !isModalShowing;
+
+  if (isModalShowing) {
+    rulesBtn.textContent = "Hide Rules";
+    rulesContainer.style.display = "block";
+  } else {
+    rulesBtn.textContent = "Show Rules";
+    rulesContainer.style.display = "none";
+  }
+});
 ```
