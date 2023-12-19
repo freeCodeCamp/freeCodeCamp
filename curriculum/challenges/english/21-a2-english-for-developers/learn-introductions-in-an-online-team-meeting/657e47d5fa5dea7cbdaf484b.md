@@ -1,9 +1,9 @@
 ---
-id: 651dd5a46ffb500e3f2ce47b
-title: "Dialogue: Placeholder"
-challengeType: 21
+id: 657e47d5fa5dea7cbdaf484b
 videoId: nLDychdBwUg
-dashedName: dialogue-placeholder
+title: "Dialogue 5: Meeting a Client"
+challengeType: 21
+dashedName: dialogue-meeting-a-client
 ---
 
 # --description--
