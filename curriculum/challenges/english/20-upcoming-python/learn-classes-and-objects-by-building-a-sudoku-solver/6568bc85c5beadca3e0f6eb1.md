@@ -14,12 +14,12 @@ After the outer loop completes for all rows, return the final `board_string`. Th
 You should return the `board_string` variable at the end of the outer `for` loop.
 
 ```js
-const tCode = e.code.original["main.py"].replace(/\r/g, '');
+const tCode = code.replace(/\r/g, '');
 const str = __helpers.python.getDef(tCode, "__str__");
 const {function_body} = str;
 const indent = function_body.match(/ +/)[0];
 const returnStatement = `${indent}return board_string`;
-assert.match(e.code.original["main.py"], new RegExp(returnStatement));
+assert.match(code, new RegExp(returnStatement));
 ```
 
 # --seed--
