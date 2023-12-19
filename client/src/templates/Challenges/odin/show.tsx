@@ -22,6 +22,7 @@ import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import Scene from '../components/scene/scene';
 import PrismFormatted from '../components/prism-formatted';
+import ChallengeTitle from '../components/challenge-title';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -218,6 +219,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             question: { text, answers, solution },
             assignments,
             audioPath,
+            translationPending,
             scene
           }
         }
@@ -227,7 +229,8 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
-      t
+      t,
+      isChallengeCompleted
     } = this.props;
 
     const blockNameTitle = `${t(
@@ -276,7 +279,12 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
               )}
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
-                <h2>{title}</h2>
+                <ChallengeTitle
+                  isCompleted={isChallengeCompleted}
+                  translationPending={translationPending}
+                >
+                  {title}
+                </ChallengeTitle>
                 <PrismFormatted className={'line-numbers'} text={description} />
                 {audioPath && (
                   <>
@@ -389,7 +397,6 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   block={true}
                   size='large'
                   variant='primary'
-                  data-playwright-test-label='check-answer-button'
                   onClick={() =>
                     this.handleSubmit(
                       solution,
@@ -405,7 +412,6 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   block={true}
                   size='large'
                   variant='primary'
-                  data-playwright-test-label='ask-for-help-button'
                   onClick={openHelpModal}
                 >
                   {t('buttons.ask-for-help')}
