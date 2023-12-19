@@ -1,13 +1,13 @@
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import frameRunnerData from '../../../../../client/config/browser-scripts/frame-runner.json';
-import testEvaluatorData from '../../../../../client/config/browser-scripts/test-evaluator.json';
-import pythonRunnerData from '../../../../../client/config/browser-scripts/python-runner.json';
+import jsTestEvaluatorData from '../../../../../client/config/browser-scripts/test-evaluator.json';
+import pyTestEvaluatorData from '../../../../../client/config/browser-scripts/python-test-evaluator.json';
 
 import {
   ChallengeFile as PropTypesChallengeFile,
   ChallengeMeta
 } from '../../../redux/prop-types';
-import { concatHtml, createPythonTerminal } from '../rechallenge/builders';
+import { concatHtml } from '../rechallenge/builders';
 import {
   getTransformers,
   embedFilesInHtml,
@@ -48,11 +48,15 @@ interface BuildOptions {
   usesTestRunner?: boolean;
 }
 
-const { filename: testEvaluator } = testEvaluatorData;
+interface WorkerConfig {
+  terminateWorker: boolean;
+  testEvaluator: string;
+}
+
+const { filename: jsTestEvaluator } = jsTestEvaluatorData;
+const { filename: pyTestEvaluator } = pyTestEvaluatorData;
 
 const frameRunnerSrc = `/js/${frameRunnerData.filename}.js`;
-
-const pythonRunnerSrc = `/js/${pythonRunnerData.filename}.js`;
 
 type ApplyFunctionProps = (file: ChallengeFile) => Promise<ChallengeFile>;
 
@@ -143,6 +147,7 @@ const testRunners = {
   [challengeTypes.html]: getDOMTestRunner,
   [challengeTypes.backend]: getDOMTestRunner,
   [challengeTypes.pythonProject]: getDOMTestRunner,
+  [challengeTypes.python]: getPyTestRunner,
   [challengeTypes.multifileCertProject]: getDOMTestRunner
 };
 // TODO: Figure out and (hopefully) simplify the return type.
@@ -164,12 +169,36 @@ function getJSTestRunner(
   { build, sources }: BuildChallengeData,
   { proxyLogger, removeComments }: TestRunnerConfig
 ) {
+  return getWorkerTestRunner(
+    { build, sources },
+    { proxyLogger, removeComments },
+    { testEvaluator: jsTestEvaluator, terminateWorker: true }
+  );
+}
+
+function getPyTestRunner(
+  { build, sources }: BuildChallengeData,
+  { proxyLogger, removeComments }: TestRunnerConfig
+) {
+  return getWorkerTestRunner(
+    { build, sources },
+    { proxyLogger, removeComments },
+    { testEvaluator: pyTestEvaluator, terminateWorker: false }
+  );
+}
+
+function getWorkerTestRunner(
+  { build, sources }: Pick<BuildChallengeData, 'build' | 'sources'>,
+  { proxyLogger, removeComments }: TestRunnerConfig,
+  { testEvaluator, terminateWorker }: WorkerConfig
+) {
   const code = {
     contents: sources.index,
-    editableContents: sources.editableContents
+    editableContents: sources.editableContents,
+    original: sources.original
   };
 
-  const testWorker = createWorker(testEvaluator, { terminateWorker: true });
+  const testWorker = createWorker(testEvaluator, { terminateWorker });
 
   type CreateWorker = ReturnType<typeof createWorker>;
 
@@ -203,7 +232,7 @@ async function getDOMTestRunner(
 
 type BuildResult = {
   challengeType: number;
-  build: string;
+  build?: string;
   sources: Source | undefined;
 };
 
@@ -282,10 +311,6 @@ function buildBackendChallenge({ url }: BuildChallengeData) {
   };
 }
 
-function getTransformedPython(challengeFiles: ChallengeFiles) {
-  return challengeFiles[0].contents;
-}
-
 export function buildPythonChallenge({
   challengeFiles
 }: BuildChallengeData): Promise<BuildResult> | undefined {
@@ -298,14 +323,8 @@ export function buildPythonChallenge({
         .then(checkFilesErrors)
         // Unlike the DOM challenges, there's no need to embed the files in HTML
         .then(challengeFiles => ({
-          // TODO: Stop overwriting challengeType with 'html'. Figure out why it's
-          // necessary at the moment.
-          challengeType: challengeTypes.html,
-          // Both the terminal and pyodide are loaded into the browser, so we
-          // still need to build the HTML.
-          build: createPythonTerminal(pythonRunnerSrc),
-          sources: buildSourceMap(challengeFiles),
-          transformedPython: getTransformedPython(challengeFiles)
+          challengeType: challengeTypes.python,
+          sources: buildSourceMap(challengeFiles)
         }))
     );
   }
