@@ -1218,7 +1218,7 @@
     "title": "A2 English for Developers (Beta)",
     "intro": [
       "This course teaches the English language, designed for developers.",
-      "More text here."
+      "In this beta version of the curriculum you can try out the first 3 of the 18 courses we are developing."
     ],
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
@@ -1235,15 +1235,15 @@
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Learn How to Talk About a Typical Workday and Tasks",
-        "intro": ["", ""]
+        "intro": ["Learn about a typical workday."]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "Learn How to Discuss Your Morning or Evening Routine",
-        "intro": ["", ""]
+        "intro": ["Learn about routines."]
       },
       "learn-how-to-describe-your-current-project": {
         "title": "Learn How to Describe Your Current Project",
-        "intro": ["", ""]
+        "intro": ["Learn about projects."]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Learn How to Ask and Share About Educational and Professional Background",

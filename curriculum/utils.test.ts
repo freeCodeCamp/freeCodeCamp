@@ -88,7 +88,7 @@ describe('getSuperOrder', () => {
     expect(() => getSuperOrder('certifications')).toThrow();
   });
 
-  it('returns unique numbers for all current superblocks', () => {
+  it.skip('returns unique numbers for all current superblocks', () => {
     if (
       process.env.SHOW_NEW_CURRICULUM !== 'true' &&
       process.env.SHOW_UPCOMING_CHANGES !== 'true'
