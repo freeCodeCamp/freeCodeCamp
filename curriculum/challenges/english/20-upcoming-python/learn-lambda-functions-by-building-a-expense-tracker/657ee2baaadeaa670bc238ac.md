@@ -10,6 +10,7 @@ dashedName: step-25
 After getting the category, we filter the expenses and print the filtered list. The `filter_expenses_by_category` function returns an iterator, so we convert it to a list before printing.
 
 These two lines are already added to the code:
+
 ```py
 print(f"\nExpenses for {category}:")
 expenses_from_category = filter_expenses_by_category(expenses, category)
@@ -47,6 +48,7 @@ Make sure the `expenses_from_category` parameter is converted to a list.
 })
 
 ```
+
 # --seed--
 
 ## --seed-contents--

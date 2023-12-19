@@ -1180,7 +1180,10 @@
       },
       "learn-lambda-functions-by-building-a-expense-tracker": {
         "title": "Learn Lambda Functions by Building a Expense Tracker",
-        "intro": ["", ""]
+        "intro": [
+          "Lambda functions, also known as anonymous functions, are a fundamental feature in Python, allowing for the creation of small, one-time-use functions without the need for formal definition.", 
+          "In this project, you will learn how to build an expense tracker program with lambda functions and other python concepts."
+        ]
       }
     }
   },
