@@ -24,6 +24,7 @@ import HelpModal from '../components/help-modal';
 import Scene from '../components/scene/scene';
 import PrismFormatted from '../components/prism-formatted';
 import ChallengeTitle from '../components/challenge-title';
+import ChallengeHeading from '../components/challenge-heading';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -287,10 +288,9 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   {title}
                 </ChallengeTitle>
                 <PrismFormatted className={'line-numbers'} text={description} />
+                <Spacer size='medium' />
                 {audioPath && (
                   <>
-                    <Spacer size='small' />
-                    <Spacer size='small' />
                     {/* TODO: Add tracks for audio elements */}
                     {/* eslint-disable-next-line jsx-a11y/media-has-caption*/}
                     <audio className='audio' controls>
@@ -299,18 +299,22 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                         type='audio/mp3'
                       />
                     </audio>
+                    <Spacer size='medium' />
                   </>
                 )}
-                <Spacer size='medium' />
               </Col>
 
-              {scene && <Scene scene={scene} />}
+              {scene && (
+                <>
+                  <Scene scene={scene} /> <Spacer size='medium' />
+                </>
+              )}
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ObserveKeys>
                   {assignments.length > 0 && (
                     <>
-                      <h2>{t('learn.assignments')}</h2>
+                      <ChallengeHeading heading={t('learn.assignments')} />
                       <div className='video-quiz-options'>
                         {assignments.map((assignment, index) => (
                           <label
@@ -340,7 +344,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     </>
                   )}
 
-                  <h2>{t('learn.question')}</h2>
+                  <ChallengeHeading heading={t('learn.question')} />
                   <PrismFormatted className={'line-numbers'} text={text} />
                   <div className='video-quiz-options'>
                     {answers.map(({ answer }, index) => (

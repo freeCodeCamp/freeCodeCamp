@@ -103,6 +103,8 @@ spinner.text = 'Populate tests.';
 
 let browser;
 let page;
+// This worker can be reused since it clears its environment between tests.
+let pythonWorker;
 
 setup()
   .then(runTests)
@@ -142,6 +144,10 @@ async function setup() {
     ]
   });
   global.Worker = createPseudoWorker(await newPageContext(browser));
+
+  pythonWorker = createWorker(pythonTestEvaluator, {
+    terminateWorker: false
+  });
   page = await newPageContext(browser);
   await page.setViewport({ width: 300, height: 150 });
 
@@ -551,21 +557,15 @@ async function createTestRunner(
   const runsInBrowser = buildChallenge === buildDOMChallenge;
   const runsInPythonWorker = buildChallenge === buildPythonChallenge;
 
-  const testEvaluator = runsInPythonWorker
-    ? pythonTestEvaluator
-    : javaScriptTestEvaluator;
-
-  // The python worker clears the globals between tests, so it should be fine
-  // to use the same evaluator for all tests. TODO: check if this is true for
-  // sys, since sys.modules is not being reset.
-  const workerConfig = {
-    testEvaluator,
-    options: { terminateWorker: !runsInPythonWorker }
-  };
-
   const evaluator = await (runsInBrowser
     ? getContextEvaluator(build, sources, code, loadEnzyme)
-    : getWorkerEvaluator(build, sources, code, removeComments, workerConfig));
+    : getWorkerEvaluator(
+        build,
+        sources,
+        code,
+        removeComments,
+        runsInPythonWorker
+      ));
 
   return async ({ text, testString }) => {
     try {
@@ -630,10 +630,14 @@ async function getWorkerEvaluator(
   sources,
   code,
   removeComments,
-  workerConfig
+  runsInPythonWorker
 ) {
-  const { testEvaluator, options } = workerConfig;
-  const testWorker = createWorker(testEvaluator, options);
+  // The python worker clears the globals between tests, so it should be fine
+  // to use the same evaluator for all tests. TODO: check if this is true for
+  // sys, since sys.modules is not being reset.
+  const testWorker = runsInPythonWorker
+    ? pythonWorker
+    : createWorker(javaScriptTestEvaluator, { terminateWorker: true });
   return {
     evaluate: async (testString, timeout) =>
       await testWorker.execute(
