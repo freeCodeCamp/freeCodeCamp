@@ -6,14 +6,12 @@
   padding: 0;
   text-align: center;
   background-color: var(--secondary-background);
-  /*color: var(--tertiary-color);*/
   border-radius: 0;
   font-family: var(--font-family-monospace);
   overflow-wrap: anywhere;
   line-height: 1.5rem;
   z-index: 1;
   position: relative;
-  /*border: 1px solid var(--gray-45);*/
   border-left: none;
   border-right: none;
   border-top: none;
