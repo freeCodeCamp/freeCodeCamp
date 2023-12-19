@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Learn the Date Object by Building a Date Formatter
 block: learn-the-date-object-by-building-a-date-formatter
-superBlock: 2022/javascript-algorithms-and-data-structures
+superBlock: javascript-algorithms-and-data-structures-v8
 isBeta: true
 ---
 

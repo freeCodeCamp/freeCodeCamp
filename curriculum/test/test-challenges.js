@@ -277,7 +277,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
        * tricky and needs cleaning up before deploying).
        */
       const superBlocksUnderDevelopment = [
-        '2022/javascript-algorithms-and-data-structures'
+        'javascript-algorithms-and-data-structures-v8'
       ];
       const superBlocks = new Set([
         ...Object.values(meta)

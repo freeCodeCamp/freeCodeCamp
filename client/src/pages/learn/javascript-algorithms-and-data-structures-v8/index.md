@@ -1,6 +1,6 @@
 ---
 title: JavaScript Algorithms and Data Structures
-superBlock: 2022/javascript-algorithms-and-data-structures
+superBlock: javascript-algorithms-and-data-structures-v8
 certification: javascript-algorithms-and-data-structures
 ---
 

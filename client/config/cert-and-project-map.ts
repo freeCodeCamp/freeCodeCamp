@@ -14,7 +14,7 @@ const responsiveWeb22Base = '/learn/2022/responsive-web-design';
 const jsAlgoBase =
   '/learn/javascript-algorithms-and-data-structures/' +
   'javascript-algorithms-and-data-structures-projects';
-const jsAlgo22Base = '/learn/2022/javascript-algorithms-and-data-structures';
+const jsAlgo22Base = '/learn/javascript-algorithms-and-data-structures-v8';
 const feLibsBase =
   '/learn/front-end-development-libraries/front-end-development-libraries-projects';
 const dataVisBase = '/learn/data-visualization/data-visualization-projects';

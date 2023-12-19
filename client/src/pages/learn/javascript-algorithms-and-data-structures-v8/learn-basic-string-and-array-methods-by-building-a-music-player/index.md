@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Learn Basic String and Array Methods by Building a Music Player
 block: learn-basic-string-and-array-methods-by-building-a-music-player
-superBlock: 2022/javascript-algorithms-and-data-structures
+superBlock: javascript-algorithms-and-data-structures-v8
 isBeta: true
 ---
 

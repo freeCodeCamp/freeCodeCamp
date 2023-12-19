@@ -43,7 +43,7 @@ const superBlockFolderMap = {
   'coding-interview-prep': '11-coding-interview-prep',
   'relational-database': '13-relational-database',
   '2022/responsive-web-design': '14-responsive-web-design-22',
-  '2022/javascript-algorithms-and-data-structures':
+  'javascript-algorithms-and-data-structures-v8':
     '15-javascript-algorithms-and-data-structures-22',
   'the-odin-project': '16-the-odin-project',
   'college-algebra-with-python': '17-college-algebra-with-python',
