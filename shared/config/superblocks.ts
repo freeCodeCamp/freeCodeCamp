@@ -72,6 +72,7 @@ export const superBlockOrder: SuperBlockOrder = {
   [SuperBlockStages.English]: [SuperBlocks.A2English],
   [SuperBlockStages.Professional]: [SuperBlocks.FoundationalCSharp],
   [SuperBlockStages.Extra]: [
+    SuperBlocks.TheOdinProject,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler
   ],
@@ -79,7 +80,6 @@ export const superBlockOrder: SuperBlockOrder = {
   [SuperBlockStages.New]: [],
   [SuperBlockStages.Upcoming]: [
     SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.TheOdinProject,
     SuperBlocks.ExampleCertification,
     SuperBlocks.UpcomingPython
   ]
