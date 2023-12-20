@@ -400,7 +400,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 <Spacer size='medium' />
                 <Button
                   block={true}
-                  bsSize='large'
+                  bsSize='medium'
                   bsStyle='primary'
                   onClick={() =>
                     this.handleSubmit(
@@ -414,7 +414,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 </Button>
                 <Button
                   block={true}
-                  bsSize='large'
+                  bsSize='medium'
                   bsStyle='primary'
                   className='btn-invert'
                   onClick={openHelpModal}
