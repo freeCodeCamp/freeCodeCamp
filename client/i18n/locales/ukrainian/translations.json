@@ -90,7 +90,8 @@
     "verify-trophy": "Підтвердити трофей",
     "link-account": "Прив’язати обліковий запис",
     "unlink-account": "Від’єднати обліковий запис",
-    "update-card": "Оновити картку"
+    "update-card": "Оновити картку",
+    "donate-now": "Donate Now"
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати безоплатно.",
@@ -120,8 +121,10 @@
     },
     "certification-heading": "Отримайте безоплатні підтверджені сертифікації в:",
     "core-certs-heading": "Отримайте безоплатні підтверджені сертифікації з основної навчальної програми freeCodeCamp:",
+    "learn-english-heading": "Learn English for Developers:",
     "professional-certs-heading": "Отримайте безоплатні професійні сертифікації:",
     "interview-prep-heading": "Підготуйтесь до посади розробника:",
+    "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
     "upcoming-heading": "Майбутня навчальна програма:",
     "faq": "Часті питання:",
     "faqs": [
@@ -311,6 +314,7 @@
     "donation-initiatives": "Внески до freeCodeCamp йдуть на наші освітні програми та допомагають оплачувати сервери, послуги та персонал.",
     "donate-text": "Ви можете <1>зробити неоподаткований донат тут</1>.",
     "trending-guides": "Популярні статті",
+    "mobile-app": "Mobile App",
     "our-nonprofit": "Наша організація",
     "links": {
       "about": "Про нас",
@@ -504,6 +508,7 @@
     "progress-modal-cta-9": "Задонатьте зараз, щоб підтримати нашу навчальну програму з математики для розробників.",
     "progress-modal-cta-10": "Задонатьте зараз, щоб допомогти нам розробити безоплатні сертифікації з програмування.",
     "help-us-reach-goal": "Задонатьте зараз, щоб допомогти нашій організації досягнути мети в 10 000 донорів до 2024 року.",
+    "beta-certification": "This certification is currently in beta. Please consider donating to support the completion of its development.",
     "help-us-develop": "Допоможіть нам розробити безоплатні сертифікації з програмування.",
     "nicely-done": "Чудово. Ви щойно завершили {{block}}.",
     "credit-card": "Кредитна картка",
