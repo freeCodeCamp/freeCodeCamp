@@ -17,7 +17,8 @@ const superBlocksWithLinks = [
   ...superBlockOrder[SuperBlockStages.Python],
   ...superBlockOrder[SuperBlockStages.English],
   ...superBlockOrder[SuperBlockStages.Professional],
-  ...superBlockOrder[SuperBlockStages.Extra]
+  ...superBlockOrder[SuperBlockStages.Extra],
+  ...superBlockOrder[SuperBlockStages.Legacy]
 ];
 
 test.describe('Map Component', () => {
@@ -32,7 +33,7 @@ test.describe('Map Component', () => {
       page.getByText(translations.landing['interview-prep-heading'])
     ).toBeVisible();
     const curriculumBtns = page.getByTestId('curriculum-map-button');
-    await expect(curriculumBtns).toHaveCount(18);
+    await expect(curriculumBtns).toHaveCount(superBlocksWithLinks.length);
     for (let i = 0; i < superBlocksWithLinks.length; i++) {
       const superblockLink = page.getByRole('link', {
         // This is a hacky bypass because `Responsive Web Design` hits both links.
