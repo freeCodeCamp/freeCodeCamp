@@ -807,19 +807,22 @@
         "title": "Learn Classes and Objects by Building a Sudoku Solver",
         "intro": [
           "Classes and objects are an important programming concept and they enable developers to achieve code modularity, abstraction, readability, and promote reusability.",
-          "In this Sudoku solver project, you'll learn how to use classes and objects to build a sudoku grid and to solve a sudoku puzzle."
+          "In this Sudoku Solver project, you'll learn how to use classes and objects to build a Sudoku grid and to solve a Sudoku puzzle."
         ]
       },
       "learn-tree-traversal-by-building-a-binary-search-tree": {
         "title": "Learn Tree Traversal by Building a Binary Search Tree",
         "intro": [
           "A Binary Search Tree (BST) is an important data structure concept, where data is sorted in a hierarchical structure.",
-          "In this project, you will learn how to construct a BST, perform an inorder traversal, and also cover key operations like insertion, search, and deletion."
+          "In this project, you will learn how to construct a BST, perform an in-order traversal, and also cover key operations like insertion, search, and deletion."
         ]
       },
       "learn-lambda-functions-by-building-an-expense-tracker": {
         "title": "Learn Lambda Functions by Building an Expense Tracker",
-        "intro": ["", ""]
+        "intro": [
+          "Lambda functions, also known as anonymous functions, offer a concise way to write small, throwaway functions in your code.",
+          "In this project, you'll explore the power of lambda functions by creating an expense tracker, demonstrating how they can be employed for efficient and streamlined operations."
+        ]
       },
       "scientific-computing-with-python-projects": {
         "title": "Scientific Computing with Python Projects",
