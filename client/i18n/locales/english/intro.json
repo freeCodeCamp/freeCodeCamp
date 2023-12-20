@@ -557,10 +557,7 @@
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
       },
-      "d3-dashboard": {
-        "title": "D3 Dashboard",
-        "intro": ["", ""]
-      }
+      "d3-dashboard": { "title": "D3 Dashboard", "intro": ["", ""] }
     }
   },
   "relational-database": {
@@ -1215,6 +1212,10 @@
           "Python is a powerful and popular programming language widely used for data science, data visualization, web and game development, machine learning and much more.",
           "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loop, conditional statements, and and how to work with them to build your first program."
         ]
+      },
+      "learn-lambda-functions-by-building-an-expense-tracker": {
+        "title": "Learn Lambda Functions by Building an Expense Tracker",
+        "intro": ["", ""]
       }
     }
   },
