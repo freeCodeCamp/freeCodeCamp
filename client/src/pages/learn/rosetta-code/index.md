@@ -1,10 +1,10 @@
 ---
-title: Introduction to the Rosetta Code Problems
-block: rosetta-code
-superBlock: coding-interview-prep
+title: Rosetta Code
+superBlock: rosetta-code
+certification: rosetta-code
 ---
 
-## Introduction to the Rosetta Code Problems
+## Rosetta Code
 
 [The Rosetta Code](https://rosettacode.org) is a list of programming challenges which will help you build your programming skills.
 

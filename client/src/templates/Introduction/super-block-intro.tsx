@@ -185,6 +185,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.TheOdinProject,
     SuperBlocks.ProjectEuler,
+    SuperBlocks.RosettaCode,
     SuperBlocks.A2English
   ];
 

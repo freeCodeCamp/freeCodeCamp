@@ -1,13 +1,13 @@
 {
-  "name": "Rosetta Code",
+  "name": "Rosetta Code Challenges",
   "isUpcomingChange": false,
-  "dashedName": "rosetta-code",
+  "dashedName": "rosetta-code-challenges",
   "helpCategory": "Rosetta",
   "order": 3,
   "time": "",
   "template": "",
   "required": [],
-  "superBlock": "coding-interview-prep",
+  "superBlock": "rosetta-code",
   "disableLoopProtectTests": true,
   "challengeOrder": [
     {
