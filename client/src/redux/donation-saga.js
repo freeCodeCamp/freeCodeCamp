@@ -40,7 +40,6 @@ import {
 } from './selectors';
 
 const defaultDonationErrorMessage = i18next.t('donate.error-2');
-const updateCardErrorMessage = i18next.t('donate.error-3');
 
 const { stripePublicKey } = envData;
 
@@ -168,14 +167,18 @@ export function* updateCardSaga() {
   yield put(updateCardRedirecting());
   try {
     const {
-      data: { sessionId }
+      response: { ok },
+      data: { sessionId, message }
     } = yield call(updateStripeCard);
+    if (!ok) {
+      throw new Error(message);
+    }
 
     if (!sessionId) throw new Error('No sessionId');
     const stripe = yield call(loadStripe, stripePublicKey);
     stripe.redirectToCheckout({ sessionId });
   } catch (error) {
-    yield put(updateCardError(updateCardErrorMessage));
+    yield put(updateCardError(i18next.t([error.message, 'donate.error-2'])));
   }
 }
 
