@@ -755,79 +755,78 @@
       "learn-string-manipulation-by-building-a-cipher": {
         "title": "Learn String Manipulation by Building a Cipher",
         "intro": [
-          "Python is a powerful and popular programming language widely used for data science, data visualization, web and game development, machine learning and much more.",
-          "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loop, conditional statements, and and how to work with them to build your first program."
+          "Python is a powerful and popular programming language widely used for data science, data visualization, web development, game development, machine learning and more.",
+          "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loops, and conditional statements. You'll use these to code your first programs."
         ]
       },
       "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm": {
         "title": "Learn How to Work with Numbers and Strings by Implementing the Luhn Algorithm",
         "intro": [
-          "The Luhn Algorithm is widely used for error-checking in various applications, including credit card numbers.",
-          "Through this project, you'll gain valuable experience in working with numerical computations and string manipulation while implementing the Luhn Algorithm."
+          "The Luhn Algorithm is widely used for error-checking in various applications, such as verifying credit card numbers.",
+          "By building this project, you'll gain experience working with numerical computations and string manipulation."
         ]
       },
       "learn-list-comprehension-by-building-a-case-converter-program": {
         "title": "Learn Python List Comprehension By Building a Case Converter Program",
         "intro": [
-          "A list comprehension in Python is a way to construct a new list from an iterable types such as lists, tuples, and strings without using a for loop or the `.append()` list method",
-          "In this project, you will write a program that takes a string formatted in camel or pascal case and converts that to snake case. The project has two phases.",
-          "During the first phase, you will use a for loop to implement the program.",
-          "Then in the second phase you will learn about applying list comprehension instead of a loop to achieve the same results."
+          "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the `.append()` list method.",
+          "In this project, you'll write a program that takes a string formatted in Camel Case or Pascal Case, then converts it into Snake Case.",
+          "The project has two phases: first you'll use a for loop to implement the program. Then you'll learn how to use List Comprehension instead of a loop to achieve the same results."
         ]
       },
       "learn-regular-expressions-by-building-a-password-generator": {
         "title": "Learn Regular Expressions by Building a Password Generator",
         "intro": [
-          "In Python, a module is a file containing a set of statements and definitions that you can use in your code.",
-          "In this project, you'll learn how to import and use modules from the Python standard library and how to use regular expressions while building your own password generator program."
+          "A Python module is a file that contains a set of statements and definitions that you can use in your code.",
+          "In this project, you'll learn how to import modules from the Python standard library. You'll also learn how to use Regular Expressions by building your own password generator program."
         ]
       },
-      "learn-algorithm-design-by-building-the-shortest-path-algorithm": {
-        "title": "Learn Algorithm Design by Building the Shortest Path Algorithm",
+      "learn-algorithm-design-by-building-a-shortest-path-algorithm": {
+        "title": "Learn Algorithm Design by Building a Shortest Path Algorithm",
         "intro": [
-          "Algorithms are step-by-step procedures used to perform calculations and solve computational problems.",
-          "In this project, you'll learn how to use functions, loops, conditional statements, dictionary comprehensions and more to design and implement the shortest path algorithm."
+          "Algorithms are step-by-step procedures that developers use to perform calculations and solve computational problems.",
+          "In this project, you'll learn how to use functions, loops, conditional statements, and dictionary comprehensions to implement a Shortest Path algorithm."
         ]
       },
       "learn-recursion-by-solving-the-tower-of-hanoi-puzzle": {
         "title": "Learn Recursion by Solving the Tower of Hanoi Puzzle",
         "intro": [
-          "Recursion allows you to write concise and elegant code to solve complex computational problems.",
-          "In this project, you'll start with an iterative approach to solve the tower of Hanoi mathematical puzzle and then you'll learn how to implement a recursive solution."
+          "Recursion is a programming approach that allows you to solve complicated computational problems with just a little code.",
+          "In this project, you'll start with a loop-based approach to solving the tower of Hanoi mathematical puzzle. Then you'll learn how to implement a recursive solution."
         ]
       },
       "learn-data-structures-by-building-the-merge-sort-algorithm": {
         "title": "Learn Data Structures by Building the Merge Sort Algorithm",
         "intro": [
-          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
-          "In this project, you'll learn how to interact with data structures by sorting a list of random numbers using the merge sort algorithm."
+          "The Merge Sort Algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this project, you'll learn how to interact with data structures by sorting a list of random numbers using the Merge Sort Algorithm."
         ]
       },
       "learn-classes-and-objects-by-building-a-sudoku-solver": {
         "title": "Learn Classes and Objects by Building a Sudoku Solver",
         "intro": [
-          "Classes and objects are an important programming concept and they enable developers to achieve code modularity, abstraction, readability, and promote reusability.",
+          "Classes and objects are important programming concepts. These Object-Oriented Programming tools help developers to achieve code modularity, abstraction, and readability. And they promote reusability.",
           "In this Sudoku Solver project, you'll learn how to use classes and objects to build a Sudoku grid and to solve a Sudoku puzzle."
         ]
       },
       "learn-tree-traversal-by-building-a-binary-search-tree": {
         "title": "Learn Tree Traversal by Building a Binary Search Tree",
         "intro": [
-          "A Binary Search Tree (BST) is an important data structure concept, where data is sorted in a hierarchical structure.",
-          "In this project, you will learn how to construct a BST, perform an in-order traversal, and also cover key operations like insertion, search, and deletion."
+          "A Binary Search Tree (BST) is an common data structure where data is sorted hierarchically.",
+          "In this project, you'll learn how to construct your own BST and perform an in-order traversal. You'll also learn key operations like insertion, search, and deletion."
         ]
       },
       "learn-lambda-functions-by-building-an-expense-tracker": {
         "title": "Learn Lambda Functions by Building an Expense Tracker",
         "intro": [
-          "Lambda functions, also known as anonymous functions, offer a concise way to write small, throwaway functions in your code.",
-          "In this project, you'll explore the power of lambda functions by creating an expense tracker, demonstrating how they can be employed for efficient and streamlined operations."
+          "Lambda functions give you a concise way to write small, throwaway functions in your code.",
+          "In this project, you'll explore the power of Lambda Functions by creating an expense tracker. Your resulting app will demonstrate how you can use Lambda Functions for efficient, streamlined operations."
         ]
       },
       "scientific-computing-with-python-projects": {
         "title": "Scientific Computing with Python Projects",
         "intro": [
-          "Time to put your Python skills to the test. By completing these projects, you will demonstrate that you have a good foundational knowledge of Python and qualify for the Scientific Computing with Python Certification."
+          "It's time to put your Python skills to the test. By completing these projects, you'll demonstrate that you have a strong foundational knowledge of Python. And you'll qualify for freeCodeCamp's Scientific Computing with Python Certification."
         ]
       }
     }
@@ -1110,10 +1109,9 @@
   "the-odin-project": {
     "title": "The Odin Project (Beta)",
     "intro": [
-      "The Odin Project is one of those \"What I wish I had when I was learning\" resources. ",
-      "Not everyone has access to a computer science education or the funds to attend an intensive coding school and neither of those is right for everyone anyway.",
-      "This project is designed to fill in the gap for people who are trying to hack it on their own but still want a high quality education.",
-      "<a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>Attribute: The Odin Project</a>"
+      "The Odin Project was created in 2013 by a lone developer, Erik Trautman. Over the years, an open source community has sprung up to maintain and expand the project.",
+      "freeCodeCamp has expanded upon the open source curriculum to make it run interactively in the browser, with tests to evaluate your code and ensure you've understood key concepts.",
+      "If you want the original experience of configuring all of The Odin Project to run on your local computer, you can check out the original Odin Project on <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project website</a>. A huge thanks to The Odin Project community for continuing to maintain this valuable learning resource for developers all around the world."
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1143,7 +1141,7 @@
       "top-learn-css-foundations": {
         "title": "Learn CSS Foundations",
         "intro": [
-          "Dive into the world of  Cascading Style Sheets (CSS) and learn how to style your HTML elements. Explore styling properties, selectors, and layouts to bring your web pages to life."
+          "Dive into the world of Cascading Style Sheets (CSS) and learn how to style your HTML elements. Explore styling properties, selectors, and layouts to bring your web pages to life."
         ]
       },
       "top-learn-css-foundations-projects": {
