@@ -11,7 +11,7 @@ In this project, you will learn algorithmic thinking by building a dice game. Th
 
 The HTML and CSS have been provided for you. Feel free to explore them.
 
-When you are ready, use the `querySelectorAll` method to target all elements with the `class` of `die`, and assign that to a constant called `listOfAllDice`.
+When you are ready, use the `querySelectorAll()` method to target all elements with the `class` of `die`, and assign that to a constant called `listOfAllDice`.
 
 # --hints--
 

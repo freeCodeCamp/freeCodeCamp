@@ -129,7 +129,8 @@ export const certificatesByNameSelector = username => state => {
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
     isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8
+    isFoundationalCSharpCertV8,
+    isJsAlgoDataStructCertV8
   } = userByNameSelector(username)(state);
   return {
     hasModernCert:
@@ -146,7 +147,8 @@ export const certificatesByNameSelector = username => state => {
       isMachineLearningPyCertV7 ||
       isRelationalDatabaseCertV8 ||
       isCollegeAlgebraPyCertV8 ||
-      isFoundationalCSharpCertV8,
+      isFoundationalCSharpCertV8 ||
+      isJsAlgoDataStructCertV8,
     hasLegacyCert:
       isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
     isFullStackCert,
@@ -215,6 +217,11 @@ export const certificatesByNameSelector = username => state => {
         show: isFoundationalCSharpCertV8,
         title: 'Foundational C# with Microsoft Certification',
         certSlug: Certification.FoundationalCSharp
+      },
+      {
+        show: isJsAlgoDataStructCertV8,
+        title: 'JavaScript Algorithms and Data Structures (Beta) Certification',
+        certSlug: Certification.JsAlgoDataStructNew
       }
     ],
     legacyCerts: [

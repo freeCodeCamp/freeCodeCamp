@@ -254,6 +254,8 @@ const email = 'team@freecodecamp.org';
 
 クライアント側でテキストを変更するには、関連する `.json ` ファイルで、React コンポーネントで使用されているキーを見つけて、値を新しいテキストに変更します。 そのキーが他の場所で使用されていないことを確認するために、コードベースを検索する必要があります。 他の場所で使用されていた場合、そのすべての場所で変更が実行されます。
 
+Run `pnpm run clean-and-develop` to apply the change.
+
 ## テキストの追加
 
 クライアントに追加するテキストが、関連する `.json` ファイルに存在する場合は、既存のキーを使用します。 それ以外の場合は、新しいキーを作成します。
@@ -262,9 +264,11 @@ const email = 'team@freecodecamp.org';
 
 > [!NOTE] ファイルが Crowdin で翻訳されている場合は、すべての言語に英語のテキストを使用してください。 そうしないと、テストは失敗します。
 
-すべてのファイルで、キーを同じ順序に保つことをお勧めします。 また、コンポーネントやサーバーファイルではなくJSON ファイルに、すべての句読点、スペース、引用符などを 入れるようにしてください。
+すべてのファイルで、キーを同じ順序に保つことをお勧めします。 Also, try to put all punctuation, spacing, quotes, etc. in the JSON files and not in the components or server files.
 
 > [!NOTE] The underscore (`_`) is a reserved character for keys in the client-side files. 使用方法については、 [ドキュメント](https://www.i18next.com/translation-function/plurals) を参照してください。
+
+Run `pnpm run clean-and-develop` to apply the change.
 
 ## Proposing a Pull Request (PR)
 

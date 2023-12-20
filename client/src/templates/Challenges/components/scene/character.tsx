@@ -48,17 +48,22 @@ export function Character({
     }
 
     if (isTalking) {
-      talkInterval = setInterval(() => {
-        const openDuration = getRandomInt(100, 200);
-        const closeDuration = getRandomInt(300, 400);
+      const talk = () => {
+        const openTimeout = getRandomInt(0, 100);
+        const closeTimeout = getRandomInt(150, 300);
 
         setTimeout(() => {
           setMouthIsOpen(true);
-        }, openDuration);
+        }, openTimeout);
 
         setTimeout(() => {
           setMouthIsOpen(false);
-        }, closeDuration);
+        }, closeTimeout);
+      };
+
+      talk();
+      talkInterval = setInterval(() => {
+        talk();
       }, 300);
     }
 
@@ -96,32 +101,32 @@ export function Character({
         style={characterFeatureStyles}
         className='character-feature'
         src={base}
-        alt='Character Body'
+        alt=''
       />
       <img
         style={characterFeatureStyles}
         className='character-feature'
         src={brows}
-        alt='Character Brows'
+        alt=''
       />
       <img
         style={characterFeatureStyles}
         className='character-feature'
         src={eyesAreOpen ? eyesOpen : eyesClosed}
-        alt='Character Eyes'
+        alt=''
       />
       <img
         style={characterFeatureStyles}
         className='character-feature'
         src={mouthIsOpen ? mouthOpen : mouthClosed}
-        alt='Character Mouth'
+        alt=''
       />
       {glasses && (
         <img
           style={characterFeatureStyles}
           className='character-feature'
           src={glasses}
-          alt='Character Glasses'
+          alt=''
         />
       )}
     </div>
