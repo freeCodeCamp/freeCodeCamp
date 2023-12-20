@@ -47,7 +47,8 @@ export const orderedSuperBlockInfo = [
   { dashedName: SuperBlocks.InfoSec, public: false },
   { dashedName: SuperBlocks.CodingInterviewPrep, public: false },
   { dashedName: SuperBlocks.ProjectEuler, public: false },
-  { dashedName: SuperBlocks.RelationalDb, public: false }
+  { dashedName: SuperBlocks.RelationalDb, public: false },
+  { dashedName: SuperBlocks.RosettaCode, public: false }
 ];
 
 const dashedNames = orderedSuperBlockInfo.map(({ dashedName }) => dashedName);
