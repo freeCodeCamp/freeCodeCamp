@@ -1,15 +1,14 @@
 {
   "name": "Learn Recursion by Solving the Tower of Hanoi Puzzle",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-recursion-by-solving-the-tower-of-hanoi-puzzle",
-  "order": 3,
+  "order": 6,
   "time": "5 hours",
   "template": "",
   "required": [],
-  "superBlock": "upcoming-python",
-  "superOrder": 20,
+  "superBlock": "scientific-computing-with-python",
   "isBeta": true,
   "challengeOrder": [
     {
