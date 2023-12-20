@@ -1110,43 +1110,63 @@
     "blocks": {
       "top-learn-html-foundations": {
         "title": "Learn HTML Foundations",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Get a solid grasp of HTML essentials with this course. From structuring web pages to understanding semantic tags, you'll build a strong foundation for creating well-organized and accessible content on the web."
+        ]
       },
       "top-working-with-text": {
         "title": "Working with Text",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Explore the intricacies of working with text in web development. Learn about text formatting, manipulation, and presentation to enhance your skills in creating web content."
+        ]
       },
       "top-links-and-images": {
         "title": "Links and Images",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Learn how to incorporate links and images into your web projects. This course covers the fundamentals of creating links and embedding images to make your websites more interactive and visually appealing."
+        ]
       },
       "top-build-a-recipe-project": {
         "title": "Learn HTML Foundations by Building a Recipe Page",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Put your HTML skills into practice by building a recipe page. This hands-on project allows you to apply your knowledge and create a functional web page while reinforcing key concepts of HTML development."
+        ]
       },
       "top-learn-css-foundations": {
         "title": "Learn CSS Foundations",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Dive into the world of  Cascading Style Sheets (CSS) and learn how to style your HTML elements. Explore styling properties, selectors, and layouts to bring your web pages to life."
+        ]
       },
       "top-learn-css-foundations-projects": {
         "title": "Learn CSS Foundations Projects",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Take your CSS skills to the next level by working on practical projects. This course provides hands-on experience in applying CSS to create responsive designs for real-world scenarios."
+        ]
       },
       "top-learn-css-specificity": {
         "title": "Learn CSS Specificity",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Learn CSS specificity and gain a better understanding of how styles are applied to HTML elements. This course explores the nuances of CSS rules and helps you write efficient and targeted styles for your web pages."
+        ]
       },
       "top-the-box-model": {
         "title": "Learn the Box Model",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Learn the CSS box model with this course. Understand how elements are rendered on the web, and learn to manipulate spacing, borders, and padding to achieve your desired layout and design."
+        ]
       },
       "top-introduction-to-flexbox": {
         "title": "Introduction to Flexbox",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Discover the power of Flexbox, a layout model that simplifies the design of flexible and responsive web layouts. Learn how to create dynamic and adaptive page structures with ease."
+        ]
       },
       "top-learn-block-and-inline": {
         "title": "Learn the difference between Block and Inline",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
+        ]
       }
     }
   },
