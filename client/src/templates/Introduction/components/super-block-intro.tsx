@@ -20,7 +20,8 @@ export const ConditionalDonationAlert = ({
     superBlock === SuperBlocks.JsAlgoDataStructNew ||
     superBlock === SuperBlocks.A2English ||
     superBlock === SuperBlocks.TheOdinProject ||
-    superBlock === SuperBlocks.UpcomingPython
+    superBlock === SuperBlocks.UpcomingPython ||
+    superBlock === SuperBlocks.SciCompPy
   )
     return (
       <Alert variant='info' className='annual-donation-alert'>

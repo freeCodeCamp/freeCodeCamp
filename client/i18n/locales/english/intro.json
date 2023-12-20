@@ -748,18 +748,46 @@
     }
   },
   "scientific-computing-with-python": {
-    "title": "Scientific Computing with Python",
+    "title": "Scientific Computing with Python (Beta)",
     "intro": [
       "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning.",
       "In the Scientific Computing with Python Certification, you'll learn Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
     ],
     "note": "",
     "blocks": {
-      "python-for-everybody": {
-        "title": "Python for Everybody",
+      "learn-string-manipulation-by-building-a-cipher": {
+        "title": "Learn String Manipulation by Building a Cipher",
         "intro": [
-          "Python for everybody is a free video course series that teaches the basics of using Python 3.",
-          "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
+          "Python is a powerful and popular programming language widely used for data science, data visualization, web and game development, machine learning and much more.",
+          "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loop, conditional statements, and and how to work with them to build your first program."
+        ]
+      },
+      "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm": {
+        "title": "Learn How to Work with Numbers and Strings by Implementing the Luhn Algorithm",
+        "intro": [
+          "The Luhn Algorithm is widely used for error-checking in various applications, including credit card numbers.",
+          "Through this project, you'll gain valuable experience in working with numerical computations and string manipulation while implementing the Luhn Algorithm."
+        ]
+      },
+      "learn-recursion-by-solving-the-tower-of-hanoi-puzzle": {
+        "title": "Learn Recursion by Solving the Tower of Hanoi Puzzle",
+        "intro": [
+          "Recursion allows you to write concise and elegant code to solve complex computational problems.",
+          "In this project, you'll start with an iterative approach to solve the tower of Hanoi mathematical puzzle and then you'll learn how to implement a recursive solution."
+        ]
+      },
+      "learn-classes-and-objects-by-building-a-sudoku-solver": {
+        "title": "Learn Classes and Objects by Building a Sudoku Solver",
+        "intro": [
+          "Classes and objects are an important programming concept and they enable developers to achieve code modularity, abstraction, readability, and promote reusability.",
+          "In this Sudoku solver project, you'll learn how to use classes and objects to build a sudoku grid and to solve a sudoku puzzle."
+        ]
+      },
+      "learn-tree-traversal-by-building-a-binary-search-tree": {
+        "title": "Learn Tree Traversal by Building a Binary Search Tree",
+        "intro": [
+          "A Binary Search Tree (BST) is an important data structure concept, where data is sorted in a hierarchical structure.",
+          "In this project, you will learn how to construct a BST, perform an inorder traversal, and also cover key operations like insertion, search, and deletion."
         ]
       },
       "scientific-computing-with-python-projects": {
@@ -998,6 +1026,22 @@
       }
     }
   },
+  "python-for-everybody": {
+    "title": "Legacy Python for Everybody",
+    "intro": [
+      "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning."
+    ],
+    "note": "",
+    "blocks": {
+      "python-for-everybody": {
+        "title": "Python for Everybody",
+        "intro": [
+          "Python for everybody is a free video course series that teaches the basics of using Python 3.",
+          "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
+        ]
+      }
+    }
+  },
   "coding-interview-prep": {
     "title": "Coding Interview Prep",
     "intro": [
@@ -1182,38 +1226,6 @@
       "upcoming-python-project": {
         "title": "Upcoming Python Project",
         "intro": ["placeholder"]
-      },
-      "learn-tree-traversal-by-building-a-binary-search-tree": {
-        "title": "Learn Tree Traversal by Building a Binary Search Tree",
-        "intro": [
-          "A Binary Search Tree (BST) is an important data structure concept, where data is sorted in a hierarchical structure.",
-          "In this project, you will learn how to construct a BST, perform an inorder traversal, and also cover key operations like insertion, search, and deletion."
-        ]
-      },
-      "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm": {
-        "title": "Learn How to Work with Numbers and Strings by Implementing the Luhn Algorithm",
-        "intro": ["", ""]
-      },
-      "learn-classes-and-objects-by-building-a-sudoku-solver": {
-        "title": "Learn Classes and Objects by Building a Sudoku Solver",
-        "intro": [
-          "Classes and objects are an important programming concept and they enable developers to achieve code modularity, abstraction, readability, and promote reusability.",
-          "In this Sudoku solver project, you'll learn how to use classes and objects to build a sudoku grid and to solve a sudoku puzzle."
-        ]
-      },
-      "learn-recursion-by-solving-the-tower-of-hanoi-puzzle": {
-        "title": "Learn Recursion by Solving the Tower of Hanoi Puzzle",
-        "intro": [
-          "Recursion allows you to write concise and elegant code to solve complex computational problems.",
-          "In this project, you'll start with an iterative approach to solve the tower of Hanoi mathematical puzzle and then you'll learn how to implement a recursive solution."
-        ]
-      },
-      "learn-string-manipulation-by-building-a-cipher": {
-        "title": "Learn String Manipulation by Building a Cipher",
-        "intro": [
-          "Python is a powerful and popular programming language widely used for data science, data visualization, web and game development, machine learning and much more.",
-          "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loop, conditional statements, and and how to work with them to build your first program."
-        ]
       }
     }
   },
