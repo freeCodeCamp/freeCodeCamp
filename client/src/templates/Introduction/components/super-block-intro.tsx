@@ -20,7 +20,8 @@ export const ConditionalDonationAlert = ({
     superBlock === SuperBlocks.JsAlgoDataStructNew ||
     superBlock === SuperBlocks.A2English ||
     superBlock === SuperBlocks.TheOdinProject ||
-    superBlock === SuperBlocks.UpcomingPython
+    superBlock === SuperBlocks.UpcomingPython ||
+    superBlock === SuperBlocks.SciCompPy
   )
     return (
       <Alert variant='info' className='annual-donation-alert'>
@@ -73,7 +74,7 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
       <SuperBlockIcon className='cert-header-icon' superBlock={superBlock} />
       <Spacer size='medium' />
       {superBlockIntroText.map((str, i) => (
-        <p key={i}>{str}</p>
+        <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
       ))}
       {superBlockNoteText && (
         <div className='alert alert-info' style={{ marginTop: '2rem' }}>
