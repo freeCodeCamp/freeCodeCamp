@@ -328,7 +328,7 @@ export async function handleStripeCardUpdateSession(req, app, stripe) {
     where: { userId: id, provider: 'stripe' }
   });
 
-  if (!donation) throw Error('Stripe donation record not found');
+  if (!donation) throw Error('donate.error-3');
 
   const { customerId, subscriptionId } = donation;
 
