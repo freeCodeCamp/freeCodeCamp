@@ -85,7 +85,10 @@ export const superBlockOrder: SuperBlockOrder = {
     SuperBlocks.PythonForEverybody
   ],
   [SuperBlockStages.New]: [],
-  [SuperBlockStages.Upcoming]: []
+  [SuperBlockStages.Upcoming]: [
+    SuperBlocks.ExampleCertification,
+    SuperBlocks.UpcomingPython
+  ]
 };
 
 Object.freeze(superBlockOrder);
