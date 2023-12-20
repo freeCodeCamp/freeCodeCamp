@@ -111,6 +111,7 @@ export interface SceneCommand {
 
 export type Characters =
   | 'Alice'
+  | 'Amy'
   | 'Anna'
   | 'Bob'
   | 'Brian'
@@ -120,6 +121,7 @@ export type Characters =
   | 'Linda'
   | 'Lisa'
   | 'Maria'
+  | 'Mark'
   | 'Sarah'
   | 'Sophie'
   | 'Tom';
