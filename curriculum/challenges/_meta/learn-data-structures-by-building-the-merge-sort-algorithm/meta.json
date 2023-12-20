@@ -1,6 +1,6 @@
 {
   "name": "Learn Data Structures by Building the Merge Sort Algorithm",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-data-structures-by-building-the-merge-sort-algorithm",
@@ -8,8 +8,7 @@
   "time": "5 hours",
   "template": "",
   "required": [],
-  "superBlock": "upcoming-python",
-  "superOrder": 20,
+  "superBlock": "scientific-computing-with-python",
   "isBeta": true,
   "challengeOrder": [
     {
