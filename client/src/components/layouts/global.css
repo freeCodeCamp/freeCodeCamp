@@ -228,7 +228,7 @@ input[type='submit'],
   white-space: pre-line;
 }
 
-button:not[aria-disabled]:hover,
+button:hover,
 input[type='submit']:hover,
 .btn:hover,
 .btn-default.active:hover,
@@ -265,6 +265,7 @@ input[type='submit']:hover,
   color: var(--secondary-background);
 }
 
+button[aria-disabled="true"]:hover, /* this is temporary and is to override bootstrap stylesheet */
 .btn.disabled,
 .btn[disabled],
 fieldset[disabled] .btn,
