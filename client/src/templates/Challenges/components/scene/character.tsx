@@ -101,32 +101,32 @@ export function Character({
         style={characterFeatureStyles}
         className='character-feature'
         src={base}
-        alt='Character Body'
+        alt=''
       />
       <img
         style={characterFeatureStyles}
         className='character-feature'
         src={brows}
-        alt='Character Brows'
+        alt=''
       />
       <img
         style={characterFeatureStyles}
         className='character-feature'
         src={eyesAreOpen ? eyesOpen : eyesClosed}
-        alt='Character Eyes'
+        alt=''
       />
       <img
         style={characterFeatureStyles}
         className='character-feature'
         src={mouthIsOpen ? mouthOpen : mouthClosed}
-        alt='Character Mouth'
+        alt=''
       />
       {glasses && (
         <img
           style={characterFeatureStyles}
           className='character-feature'
           src={glasses}
-          alt='Character Glasses'
+          alt=''
         />
       )}
     </div>
