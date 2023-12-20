@@ -1,15 +1,14 @@
 {
   "name": "Learn Python List Comprehension By Building a Case Converter Program",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-list-comprehension-by-building-a-case-converter-program",
-  "order": 2,
+  "order": 3,
   "time": "5 hours",
   "template": "",
   "required": [],
-  "superBlock": "upcoming-python",
-  "superOrder": 20,
+  "superBlock": "scientific-computing-with-python",
   "isBeta": true,
   "challengeOrder": [
     {
