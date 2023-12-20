@@ -1,15 +1,14 @@
 {
   "name": "Learn Lambda Functions by Building an Expense Tracker",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-lambda-functions-by-building-an-expense-tracker",
-  "order": 6,
+  "order": 2,
   "time": "5 hours",
   "template": "",
   "required": [],
-  "superBlock": "upcoming-python",
-  "superOrder": 20,
+  "superBlock": "scientific-computing-with-python",
   "isBeta": true,
   "challengeOrder": [
     {
