@@ -30,7 +30,7 @@ const syncChallenges = async () => {
     for (const lang of filtered) {
       const targetPath = path.replace('english', lang);
       // we swallow the error here to detect if the file doesn't exist
-      const status = await stat(path).catch(() => null);
+      const status = await stat(targetPath).catch(() => null);
       if (!status) {
         console.log(`Syncing ${path.split('/english/')[1]}`);
         await asyncExec(`cp ${path} ${targetPath}`);
