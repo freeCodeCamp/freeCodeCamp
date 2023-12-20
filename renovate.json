@@ -36,6 +36,5 @@
       "automerge": false
     }
   ],
-  "ignorePaths": ["api-server"],
-  "schedule": ["every weekend"]
+  "ignorePaths": ["api-server"]
 }
