@@ -52,6 +52,8 @@ const superBlockFolderMap = {
     '19-foundational-c-sharp-with-microsoft',
   'upcoming-python': '20-upcoming-python',
   'a2-english-for-developers': '21-a2-english-for-developers',
+  'rosetta-code': '22-rosetta-code',
+  'python-for-everybody': '23-python-for-everybody',
   'example-certification': '99-example-certification'
 };
 

@@ -129,7 +129,7 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
       </ul>
       <Spacer size='medium' />
       <h2 className={forLanding ? 'big-heading' : ''}>
-        {t('landing.legacy-certs-heading')}
+        {t('landing.legacy-curriculum-heading')}
       </h2>
       <ul>
         {superBlockOrder[SuperBlockStages.Legacy].map((superBlock, i) => (

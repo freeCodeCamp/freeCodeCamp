@@ -1,15 +1,14 @@
 {
   "name": "Learn Tree Traversal by Building a Binary Search Tree",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-tree-traversal-by-building-a-binary-search-tree",
-  "order": 2,
+  "order": 9,
   "time": "5 hours",
   "template": "",
   "required": [],
-  "superBlock": "upcoming-python",
-  "superOrder": 20,
+  "superBlock": "scientific-computing-with-python",
   "isBeta": true,
   "challengeOrder": [
     {
