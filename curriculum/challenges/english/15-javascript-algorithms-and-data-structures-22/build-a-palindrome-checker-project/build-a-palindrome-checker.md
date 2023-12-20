@@ -1,6 +1,6 @@
 ---
 id: 657bdc55a322aae1eac3838f
-title: Build A Palindrome Checker
+title: Build a Palindrome Checker
 challengeType: 14
 forumTopicId: 16004
 dashedName: build-a-palindrome-checker

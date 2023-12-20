@@ -1,6 +1,6 @@
 ---
 id: 657bdcc3a322aae1eac38392
-title: Build A Cash Register
+title: Build a Cash Register
 challengeType: 14
 forumTopicId: 16012
 dashedName: build-a-cash-register

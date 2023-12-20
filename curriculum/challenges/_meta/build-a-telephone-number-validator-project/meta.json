@@ -1,14 +1,14 @@
 {
   "name": "Build a Telephone Number Validator Project",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "build-a-telephone-number-validator-project",
-  "usesMultifileEditor": false,
+  "usesMultifileEditor": true,
   "helpCategory": "JavaScript",
   "order": 13,
   "time": "30 hours",
   "template": "",
   "required": [],
-  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {
       "id": "657bdcb9a322aae1eac38391",
