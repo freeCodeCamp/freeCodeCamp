@@ -755,13 +755,6 @@
     ],
     "note": "",
     "blocks": {
-      "python-for-everybody": {
-        "title": "Python for Everybody",
-        "intro": [
-          "Python for everybody is a free video course series that teaches the basics of using Python 3.",
-          "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
-        ]
-      },
       "scientific-computing-with-python-projects": {
         "title": "Scientific Computing with Python Projects",
         "intro": [
@@ -994,6 +987,22 @@
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a data graph explorer."
+        ]
+      }
+    }
+  },
+  "python-for-everybody": {
+    "title": "Legacy Python for Everybody",
+    "intro": [
+      "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning."
+    ],
+    "note": "",
+    "blocks": {
+      "python-for-everybody": {
+        "title": "Python for Everybody",
+        "intro": [
+          "Python for everybody is a free video course series that teaches the basics of using Python 3.",
+          "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
         ]
       }
     }
