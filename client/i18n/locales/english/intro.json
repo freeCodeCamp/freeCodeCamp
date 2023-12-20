@@ -1228,21 +1228,29 @@
   "a2-english-for-developers": {
     "title": "A2 English for Developers (Beta)",
     "intro": [
-      "This course teaches the English language, designed for developers.",
-      "In this beta version of the curriculum you can try out the first 3 of the 18 courses we are developing."
+      "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
+      "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
+      "In the second half, you'll practice vocabulary specific to software development. You'll learn how to describe code, discuss tech trends, and participate in stand-up meetings.",
+      "This entire A2-level curriculum includes 105 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
     ],
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "Learn Greetings in your First Day at the Office",
-        "intro": ["Learn greetings."]
+        "intro": [
+          "In this first course, you'll learn common expressions for situations you may encounter on your first day at work. You'll learn about introductions, getting to know people, asking for lunch recommendations, and getting an access card from security."
+        ]
       },
       "learn-introductions-in-an-online-team-meeting": {
         "title": "Learn Introductions in an Online Team Meeting",
-        "intro": ["Learn introductions."]
+        "intro": [
+          "In this course, you'll learn how to give a personal introduction. You'll also learn how to state your profession, and share your goals in group meetings."
+        ]
       },
       "learn-conversation-starters-in-the-break-room": {
         "title": "Learn Conversation Starters in the Break Room",
-        "intro": ["Learn conversation starters."]
+        "intro": [
+          "In this course, you'll learn how to start a conversation in casual settings. You'll also learn how to talk about your hobbies and personality traits. You'll even learn how to ask about places around the town."
+        ]
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Learn How to Talk About a Typical Workday and Tasks",

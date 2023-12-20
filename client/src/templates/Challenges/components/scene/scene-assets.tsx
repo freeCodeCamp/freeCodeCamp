@@ -20,16 +20,27 @@ const maria = `${characters}/maria`;
 const sarah = `${characters}/sarah`;
 const sophie = `${characters}/sophie`;
 const tom = `${characters}/tom`;
+const mark = `${characters}/npc`;
+const amy = `${characters}/npc`;
 
 export const characterAssets = {
   Alice: {
     base: `${alice}/base.png`,
-    brows: `${alice}/brows-normal.png`,
+    brows: `${alice}/brows-neutral.png`,
     eyesClosed: `${alice}/eyes-closed.png`,
     eyesOpen: `${alice}/eyes-open.png`,
     glasses: null,
     mouthClosed: `${alice}/mouth-smile.png`,
     mouthOpen: `${alice}/mouth-laugh.png`
+  },
+  Amy: {
+    base: `${amy}/girl.png`,
+    brows: `${amy}/girl.png`,
+    eyesClosed: `${amy}/girl.png`,
+    eyesOpen: `${amy}/girl.png`,
+    glasses: null,
+    mouthClosed: `${amy}/girl.png`,
+    mouthOpen: `${amy}/girl.png`
   },
   Anna: {
     base: `${anna}/base.png`,
@@ -42,7 +53,7 @@ export const characterAssets = {
   },
   Bob: {
     base: `${bob}/base.png`,
-    brows: `${bob}/brows-normal.png`,
+    brows: `${bob}/brows-neutral.png`,
     eyesClosed: `${bob}/eyes-closed.png`,
     eyesOpen: `${bob}/eyes-open.png`,
     glasses: null,
@@ -60,7 +71,7 @@ export const characterAssets = {
   },
   David: {
     base: `${david}/base.png`,
-    brows: `${david}/brows-normal.png`,
+    brows: `${david}/brows-neutral.png`,
     eyesClosed: `${david}/eyes-closed.png`,
     eyesOpen: `${david}/eyes-open.png`,
     glasses: null,
@@ -78,7 +89,7 @@ export const characterAssets = {
   },
   James: {
     base: `${james}/base.png`,
-    brows: `${james}/brows-normal.png`,
+    brows: `${james}/brows-neutral.png`,
     eyesClosed: `${james}/eyes-closed.png`,
     eyesOpen: `${james}/eyes-open.png`,
     glasses: `${james}/glasses.png`,
@@ -87,7 +98,7 @@ export const characterAssets = {
   },
   Linda: {
     base: `${linda}/base.png`,
-    brows: `${linda}/brows-normal.png`,
+    brows: `${linda}/brows-neutral.png`,
     eyesClosed: `${linda}/eyes-closed.png`,
     eyesOpen: `${linda}/eyes-open.png`,
     glasses: null,
@@ -96,7 +107,7 @@ export const characterAssets = {
   },
   Lisa: {
     base: `${lisa}/base.png`,
-    brows: `${lisa}/brows-normal.png`,
+    brows: `${lisa}/brows-neutral.png`,
     eyesClosed: `${lisa}/eyes-closed.png`,
     eyesOpen: `${lisa}/eyes-open.png`,
     glasses: null,
@@ -111,6 +122,15 @@ export const characterAssets = {
     glasses: `${maria}/glasses.png`,
     mouthClosed: `${maria}/mouth-smile.png`,
     mouthOpen: `${maria}/mouth-laugh.png`
+  },
+  Mark: {
+    base: `${mark}/boy.png`,
+    brows: `${mark}/boy.png`,
+    eyesClosed: `${mark}/boy.png`,
+    eyesOpen: `${mark}/boy.png`,
+    glasses: null,
+    mouthClosed: `${mark}/boy.png`,
+    mouthOpen: `${mark}/boy.png`
   },
   Sarah: {
     base: `${sarah}/base.png`,
