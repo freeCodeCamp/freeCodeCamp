@@ -7,7 +7,7 @@ dashedName: step-25
 
 # --description--
 
-After getting the category, we filter the expenses and print the filtered list. The `filter_expenses_by_category` function returns an iterator, so we convert it to a list before printing.
+After getting the category, we filter the expenses and print the filtered list. The `filter_expenses_by_category` function will be used for this.
 
 These two lines are already added to the code:
 
@@ -19,7 +19,7 @@ expenses_from_category = filter_expenses_by_category(expenses, category)
 - The first line prints the category heading, using an f-string to insert the user-chosen category into the message.
 - The second line calls a function to filter the expenses list, returning only those in the specified category. The result is stored in `expenses_from_category`.
 
-Using the `print_expenses` function, write the code to output the filtered expenses. Pass the `expenses_from_category` as an argument, ensuring it's converted into a list. Your task is to correctly implement this as one line in your code.
+Using the `print_expenses` function, write the code to output the filtered expenses. Pass the `expenses_from_category` as an argument. Your task is to correctly implement this as one line in your code.
 
 # --hints--
 
@@ -27,24 +27,7 @@ Ensure the filtered expenses are printed using the `print_expenses` function.
 
 ```js
 ({
-  test: () => {
-    const main_func = __helpers.python.getDef(e.code.original["main.py"], "main");
-    const { function_body } = main_func;
-    assert(function_body.match(/print_expenses\(/ms) && !function_body.match(/print_expensesss\(/ms),);
-  }
-})
-
-```
-
-Make sure the `expenses_from_category` parameter is converted to a list.
-
-```js
-({
-  test: () => {
-    const main_func = __helpers.python.getDef(e.code.original["main.py"], "main");
-    const { function_body } = main_func;
-    assert(function_body.match(/list\(expenses_from_category\)/ms),);
-  }
+    test: () => assert.match(code, /expenses_from_category\s*=\s*filter_expenses_by_category\([^)]*\)\s*.*print_expenses\s*\(\s*expenses_from_category\s*\)/s,)
 })
 
 ```
@@ -54,7 +37,6 @@ Make sure the `expenses_from_category` parameter is converted to a list.
 ## --seed-contents--
 
 ```py
---fcc-editable-region--
 def add_expense(expenses, amount, category):
     expenses.append({"amount": amount, "category": category})
 
@@ -92,6 +74,7 @@ def main():
         elif choice == '3':
             print("\nTotal Expenses: ", total_expenses(expenses))
 
+--fcc-editable-region--
         elif choice == '4':
             category = input("Enter category to filter: ")
             print(f"\nExpenses for {category}:")
