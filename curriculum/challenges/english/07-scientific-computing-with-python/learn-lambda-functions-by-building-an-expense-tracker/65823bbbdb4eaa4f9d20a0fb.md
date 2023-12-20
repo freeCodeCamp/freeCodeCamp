@@ -41,5 +41,5 @@ def total_expenses(expenses):
     pass
 --fcc-editable-region--
 
-expense = []
+expenses = []
 ```
