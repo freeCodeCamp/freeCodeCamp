@@ -22,7 +22,8 @@ export enum SuperBlocks {
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
   ExampleCertification = 'example-certification',
   UpcomingPython = 'upcoming-python',
-  A2English = 'a2-english-for-developers'
+  A2English = 'a2-english-for-developers',
+  RosettaCode = 'rosetta-code'
 }
 
 /*
@@ -73,7 +74,8 @@ export const superBlockOrder: SuperBlockOrder = {
   [SuperBlockStages.Professional]: [SuperBlocks.FoundationalCSharp],
   [SuperBlockStages.Extra]: [
     SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.ProjectEuler
+    SuperBlocks.ProjectEuler,
+    SuperBlocks.RosettaCode
   ],
   [SuperBlockStages.Legacy]: [SuperBlocks.RespWebDesign],
   [SuperBlockStages.New]: [],

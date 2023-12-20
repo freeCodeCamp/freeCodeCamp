@@ -1026,14 +1026,6 @@
           "Programming interviews have always been stressful. Job applicants are sometimes given a take home project to be completed outside of the interview. These types of interviews usually require a lot of work, but they're a great way for employers to see how you might perform on the job.",
           "Build the bonus coding projects below for extra practice. Take your time, make them great, and put them on your resume or portfolio to show potential employers."
         ]
-      },
-      "rosetta-code": {
-        "title": "Rosetta Code",
-        "intro": [
-          "Level up your creative problem solving skills with these free programming tasks from the classic Rosetta Code library.",
-          "These challenges can prove to be difficult, but they will push your algorithm logic to new heights.",
-          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
-        ]
       }
     }
   },
@@ -1351,6 +1343,20 @@
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "Learn How to Provide Explanations When Helping Others",
         "intro": ["", ""]
+      }
+    }
+  },
+  "rosetta-code": {
+    "title": "Rosetta Code",
+    "intro": [
+      "Level up your creative problem solving skills with these free programming tasks from the classic Rosetta Code library.",
+      "These challenges can prove to be difficult, but they will push your algorithm logic to new heights.",
+      "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
+    ],
+    "blocks": {
+      "rosetta-code-challenges": {
+        "title": "Rosetta Code Challenges",
+        "intro": ["These are the challenges for Rosetta Code."]
       }
     }
   },
