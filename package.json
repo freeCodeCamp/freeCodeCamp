@@ -57,6 +57,7 @@
     "format": "run-s format:eslint format:prettier",
     "format:eslint": "eslint . --fix",
     "format:prettier": "prettier --write .",
+    "i18n-sync": "ts-node ./tools/scripts/sync-i18n.ts",
     "knip": "npx -y knip@1 --include files",
     "knip:all": "npx -y knip@1",
     "prelint": "pnpm run -F=client predevelop",
