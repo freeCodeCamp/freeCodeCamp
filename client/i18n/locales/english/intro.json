@@ -1226,13 +1226,6 @@
       "upcoming-python-project": {
         "title": "Upcoming Python Project",
         "intro": ["placeholder"]
-      },
-      "learn-algorithm-design-by-building-the-shortest-path-algorithm": {
-        "title": "Learn Algorithm Design by Building the Shortest Path Algorithm",
-        "intro": [
-          "Algorithms are step-by-step procedures used to perform calculations and solve computational problems.",
-          "In this project, you'll learn how to use functions, loops, conditional statements, dictionary comprehensions and more to design and implement the shortest path algorithm."
-        ]
       }
     }
   },

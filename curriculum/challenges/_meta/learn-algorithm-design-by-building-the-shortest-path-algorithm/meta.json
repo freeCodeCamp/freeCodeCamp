@@ -1,15 +1,14 @@
 {
   "name": "Learn Algorithm Design by Building the Shortest Path Algorithm",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-algorithm-design-by-building-the-shortest-path-algorithm",
-  "order": 2,
+  "order": 5,
   "time": "5 hours",
   "template": "",
   "required": [],
-  "superBlock": "upcoming-python",
-  "superOrder": 20,
+  "superBlock": "scientific-computing-with-python",
   "isBeta": true,
   "challengeOrder": [
     {
