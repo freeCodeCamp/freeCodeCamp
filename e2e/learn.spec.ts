@@ -64,7 +64,7 @@ test('the page should have all static data correctly placed', async () => {
 
 test('the page renders all curriculum certifications', async () => {
   const curriculumBtns = page.getByTestId('curriculum-map-button');
-  await expect(curriculumBtns).toHaveCount(15);
+  await expect(curriculumBtns).toHaveCount(superBlocks.length);
   for (let i = 0; i < superBlocks.length; i++) {
     const btn = curriculumBtns.nth(i);
     await expect(btn).toContainText(superBlocks[i]);
@@ -75,6 +75,7 @@ test.describe('Learn (authenticated user)', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
   test('the page shows a random quote for an authenticated user', async () => {
+    await page.goto('/learn');
     const shownQuote = await page.getByTestId('random-quote').textContent();
 
     const shownAuthorText = await page
