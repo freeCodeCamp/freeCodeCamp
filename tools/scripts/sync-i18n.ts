@@ -1,6 +1,6 @@
 import { exec } from 'child_process';
 import { readdir, stat } from 'fs/promises';
-import { join } from 'path';
+import { join, sep } from 'path';
 import { promisify } from 'util';
 
 const asyncExec = promisify(exec);
@@ -32,8 +32,13 @@ const syncChallenges = async () => {
       // we swallow the error here to detect if the file doesn't exist
       const status = await stat(targetPath).catch(() => null);
       if (!status) {
+        console.table({ path, targetPath });
+        const targetDir = targetPath.split(sep);
+        targetDir.pop();
         console.log(`Syncing ${path.split('/english/')[1]}`);
-        await asyncExec(`mkdir -p ${targetPath} && cp ${path} ${targetPath}`);
+        await asyncExec(
+          `mkdir -p ${targetDir.join(sep)} && cp ${path} ${targetPath}`
+        );
       }
     }
   }
