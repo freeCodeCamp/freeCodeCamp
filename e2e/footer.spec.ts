@@ -93,6 +93,54 @@ test.describe('Footer Trending Guides section', () => {
   });
 });
 
+test.describe('Footer mobile app section', () => {
+  test('should render the download links correctly', async ({ page }) => {
+    await expect(
+      page.getByRole('heading', {
+        level: 2,
+        name: translations.footer['mobile-app']
+      })
+    ).toBeVisible();
+
+    const downloadLinks = await page
+      .getByRole('list', { name: translations.footer['mobile-app'] })
+      .getByRole('listitem')
+      .all();
+
+    expect(downloadLinks).toHaveLength(2);
+
+    const appleStoreLink = downloadLinks[0];
+
+    await expect(
+      appleStoreLink.getByRole('img', { name: 'Apple Store' })
+    ).toBeVisible();
+    await expect(
+      appleStoreLink.getByRole('link', { name: 'Apple Store' })
+    ).toBeVisible();
+    await expect(
+      appleStoreLink.getByRole('link', { name: 'Apple Store' })
+    ).toHaveAttribute(
+      'href',
+      'https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200'
+    );
+
+    const googlePlayLink = downloadLinks[1];
+
+    await expect(
+      googlePlayLink.getByRole('img', { name: 'Google Play' })
+    ).toBeVisible();
+    await expect(
+      googlePlayLink.getByRole('link', { name: 'Google Play' })
+    ).toBeVisible();
+    await expect(
+      googlePlayLink.getByRole('link', { name: 'Google Play' })
+    ).toHaveAttribute(
+      'href',
+      'https://play.google.com/store/apps/details?id=org.freecodecamp'
+    );
+  });
+});
+
 test.describe('Footer bottom section', () => {
   test('should display the content correctly', async ({ page, isMobile }) => {
     if (isMobile) {
