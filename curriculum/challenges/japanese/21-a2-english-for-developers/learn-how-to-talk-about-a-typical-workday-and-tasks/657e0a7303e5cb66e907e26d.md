@@ -1,0 +1,48 @@
+---
+id: 657e0a7303e5cb66e907e26d
+title: Task 10
+challengeType: 19
+dashedName: task-10
+---
+
+# --description--
+
+The verb `handle` means to manage or deal with something, especially effectively and competently. In a work context, it often refers to how someone manages tasks or projects. For example, `She handles client requests very efficiently`.
+
+# --question--
+
+## --text--
+
+What does `handle` mean in a work context?
+
+## --answers--
+
+To manage or deal with.
+
+---
+
+To ignore.
+
+### --feedback--
+
+`Handle` implies taking action, not ignoring.
+
+---
+
+To postpone.
+
+### --feedback--
+
+`Handle` means dealing with something, not postponing it.
+
+---
+
+To complete.
+
+### --feedback--
+
+While `handle` can lead to completion, it primarily focuses on the process of managing or dealing.
+
+## --video-solution--
+
+1
