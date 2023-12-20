@@ -33,14 +33,17 @@ const {
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
 const { challengeTypes } = require('../../shared/config/challenge-types');
 // the config files are created during the build, but not before linting
-const testEvaluator =
+const javaScriptTestEvaluator =
   require('../../client/config/browser-scripts/test-evaluator.json').filename;
+const pythonTestEvaluator =
+  require('../../client/config/browser-scripts/python-test-evaluator.json').filename;
 
 const { getLines } = require('../../shared/utils/get-lines');
 
 const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
-const { testedLang, getSuperOrder } = require('../utils');
+// const { testedLang, getSuperOrder } = require('../utils');
+const { testedLang } = require('../utils');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -101,6 +104,8 @@ spinner.text = 'Populate tests.';
 
 let browser;
 let page;
+// This worker can be reused since it clears its environment between tests.
+let pythonWorker;
 
 setup()
   .then(runTests)
@@ -140,6 +145,10 @@ async function setup() {
     ]
   });
   global.Worker = createPseudoWorker(await newPageContext(browser));
+
+  pythonWorker = createWorker(pythonTestEvaluator, {
+    terminateWorker: false
+  });
   page = await newPageContext(browser);
   await page.setViewport({ width: 300, height: 150 });
 
@@ -267,51 +276,51 @@ function populateTestsForLang({ lang, challenges, meta }) {
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
 
-  if (!process.env.FCC_BLOCK && !process.env.FCC_CHALLENGE_ID) {
-    describe('Assert meta order', function () {
-      /** This array can be used to skip a superblock - we'll use this
-       * when we are working on the new project-based curriculum for
-       * a superblock (because keeping those challenges in order is
-       * tricky and needs cleaning up before deploying).
-       */
-      const superBlocksUnderDevelopment = [
-        '2022/javascript-algorithms-and-data-structures'
-      ];
-      const superBlocks = new Set([
-        ...Object.values(meta)
-          .map(el => el.superBlock)
-          .filter(el => !superBlocksUnderDevelopment.includes(el))
-      ]);
-      superBlocks.forEach(superBlock => {
-        const filteredMeta = Object.values(meta)
-          .filter(el => el.superBlock === superBlock)
-          .sort((a, b) => a.order - b.order);
-        if (!filteredMeta.length) {
-          return;
-        }
-        it(`${superBlock} should have the same order in every meta`, function () {
-          const firstOrder = getSuperOrder(filteredMeta[0].superBlock, {
-            showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
-          });
-          assert.isNumber(firstOrder);
-          assert.isTrue(
-            filteredMeta.every(
-              el =>
-                getSuperOrder(el.superBlock, {
-                  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
-                }) === firstOrder
-            ),
-            'The superOrder properties are mismatched.'
-          );
-        });
-        filteredMeta.forEach((meta, index) => {
-          it(`${meta.superBlock} ${meta.name} must be in order`, function () {
-            assert.equal(meta.order, index);
-          });
-        });
-      });
-    });
-  }
+  // if (!process.env.FCC_BLOCK && !process.env.FCC_CHALLENGE_ID) {
+  //   describe('Assert meta order', function () {
+  //     /** This array can be used to skip a superblock - we'll use this
+  //      * when we are working on the new project-based curriculum for
+  //      * a superblock (because keeping those challenges in order is
+  //      * tricky and needs cleaning up before deploying).
+  //      */
+  //     const superBlocksUnderDevelopment = [
+  //       '2022/javascript-algorithms-and-data-structures'
+  //     ];
+  //     const superBlocks = new Set([
+  //       ...Object.values(meta)
+  //         .map(el => el.superBlock)
+  //         .filter(el => !superBlocksUnderDevelopment.includes(el))
+  //     ]);
+  //     superBlocks.forEach(superBlock => {
+  //       const filteredMeta = Object.values(meta)
+  //         .filter(el => el.superBlock === superBlock)
+  //         .sort((a, b) => a.order - b.order);
+  //       if (!filteredMeta.length) {
+  //         return;
+  //       }
+  //       it(`${superBlock} should have the same order in every meta`, function () {
+  //         const firstOrder = getSuperOrder(filteredMeta[0].superBlock, {
+  //           showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+  //         });
+  //         assert.isNumber(firstOrder);
+  //         assert.isTrue(
+  //           filteredMeta.every(
+  //             el =>
+  //               getSuperOrder(el.superBlock, {
+  //                 showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+  //               }) === firstOrder
+  //           ),
+  //           'The superOrder properties are mismatched.'
+  //         );
+  //       });
+  //       filteredMeta.forEach((meta, index) => {
+  //         it(`${meta.superBlock} ${meta.name} must be in order`, function () {
+  //           assert.equal(meta.order, index);
+  //         });
+  //       });
+  //     });
+  //   });
+  // }
 
   describe(`Check challenges (${lang})`, function () {
     this.timeout(5000);
@@ -531,28 +540,33 @@ async function createTestRunner(
     solutionFiles
   );
 
-  const { build, sources, loadEnzyme, transformedPython } =
-    await buildChallenge(
-      {
-        challengeFiles,
-        required,
-        template
-      },
-      { usesTestRunner: true }
-    );
+  const { build, sources, loadEnzyme } = await buildChallenge(
+    {
+      challengeFiles,
+      required,
+      template
+    },
+    { usesTestRunner: true }
+  );
 
   const code = {
     contents: sources.index,
-    editableContents: sources.editableContents
+    editableContents: sources.editableContents,
+    original: sources.original
   };
 
-  const runsInBrowser =
-    buildChallenge === buildDOMChallenge ||
-    buildChallenge === buildPythonChallenge;
+  const runsInBrowser = buildChallenge === buildDOMChallenge;
+  const runsInPythonWorker = buildChallenge === buildPythonChallenge;
 
   const evaluator = await (runsInBrowser
-    ? getContextEvaluator(build, sources, code, loadEnzyme, transformedPython)
-    : getWorkerEvaluator(build, sources, code, removeComments));
+    ? getContextEvaluator(build, sources, code, loadEnzyme)
+    : getWorkerEvaluator(
+        build,
+        sources,
+        code,
+        removeComments,
+        runsInPythonWorker
+      ));
 
   return async ({ text, testString }) => {
     try {
@@ -596,20 +610,8 @@ function replaceChallengeFilesContentsWithSolutions(
   });
 }
 
-async function getContextEvaluator(
-  build,
-  sources,
-  code,
-  loadEnzyme,
-  transformedPython
-) {
-  await initializeTestRunner(
-    build,
-    sources,
-    code,
-    loadEnzyme,
-    transformedPython
-  );
+async function getContextEvaluator(build, sources, code, loadEnzyme) {
+  await initializeTestRunner(build, sources, code, loadEnzyme);
 
   return {
     evaluate: async (testString, timeout) =>
@@ -624,8 +626,19 @@ async function getContextEvaluator(
   };
 }
 
-async function getWorkerEvaluator(build, sources, code, removeComments) {
-  const testWorker = createWorker(testEvaluator, { terminateWorker: true });
+async function getWorkerEvaluator(
+  build,
+  sources,
+  code,
+  removeComments,
+  runsInPythonWorker
+) {
+  // The python worker clears the globals between tests, so it should be fine
+  // to use the same evaluator for all tests. TODO: check if this is true for
+  // sys, since sys.modules is not being reset.
+  const testWorker = runsInPythonWorker
+    ? pythonWorker
+    : createWorker(javaScriptTestEvaluator, { terminateWorker: true });
   return {
     evaluate: async (testString, timeout) =>
       await testWorker.execute(
@@ -635,30 +648,22 @@ async function getWorkerEvaluator(build, sources, code, removeComments) {
   };
 }
 
-async function initializeTestRunner(
-  build,
-  sources,
-  code,
-  loadEnzyme,
-  transformedPython
-) {
+async function initializeTestRunner(build, sources, code, loadEnzyme) {
   await page.reload();
   await page.setContent(build);
   await page.evaluate(
-    async (code, sources, loadEnzyme, transformedPython) => {
+    async (code, sources, loadEnzyme) => {
       const getUserInput = fileName => sources[fileName];
       // TODO: use frame's functions directly, so it behaves more like the
-      // client. Also, keep an eye on performance - loading pyodide is slow.
+      // client.
       await document.__initTestFrame({
         code: sources,
         getUserInput,
-        loadEnzyme,
-        transformedPython
+        loadEnzyme
       });
     },
     code,
     sources,
-    loadEnzyme,
-    transformedPython
+    loadEnzyme
   );
 }

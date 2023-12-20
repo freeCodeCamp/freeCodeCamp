@@ -29,6 +29,10 @@
     "JavaScript": "JavaScript",
     "Python": "Python",
     "Backend Development": "Backend Development",
-    "C-Sharp": "C-Sharp"
+    "C-Sharp": "C-Sharp",
+    "English": "English",
+    "Odin": "The Odin Project",
+    "Euler": "Project Euler",
+    "Rosetta": "Rosetta Code"
   }
 }

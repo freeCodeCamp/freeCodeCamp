@@ -304,7 +304,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     parameterHints: {
       enabled: false
     },
-    tabSize: 2,
+    tabSize: props.challengeType !== challengeTypes.python ? 2 : 4,
     dragAndDrop: true,
     lightbulb: {
       enabled: false

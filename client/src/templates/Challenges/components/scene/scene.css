@@ -1,6 +1,7 @@
 .scene-wrapper {
   overflow: hidden;
   position: relative;
+  color: var(--gray-00);
 }
 
 .scene-start-screen {
