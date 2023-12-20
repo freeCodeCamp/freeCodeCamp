@@ -132,11 +132,9 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
         {t('landing.legacy-certs-heading')}
       </h2>
       <ul>
-        {superBlockOrder[SuperBlockStages.VisibleLegacy].map(
-          (superBlock, i) => (
-            <MapLi key={i} superBlock={superBlock} landing={forLanding} />
-          )
-        )}
+        {superBlockOrder[SuperBlockStages.Legacy].map((superBlock, i) => (
+          <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+        ))}
       </ul>
       {showUpcomingChanges && (
         <>
