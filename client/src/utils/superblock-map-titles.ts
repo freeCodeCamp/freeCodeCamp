@@ -13,7 +13,8 @@ const superBlocksWithoutLastWord = [
   SuperBlocks.RespWebDesign,
   SuperBlocks.CodingInterviewPrep,
   SuperBlocks.TheOdinProject,
-  SuperBlocks.ProjectEuler
+  SuperBlocks.ProjectEuler,
+  SuperBlocks.PythonForEverybody
 ];
 
 export function getSuperBlockTitleForMap(superBlock: SuperBlocks): string {

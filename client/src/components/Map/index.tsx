@@ -127,6 +127,15 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
           <MapLi key={i} superBlock={superBlock} landing={forLanding} />
         ))}
       </ul>
+      <Spacer size='medium' />
+      <h2 className={forLanding ? 'big-heading' : ''}>
+        {t('landing.legacy-curriculum-heading')}
+      </h2>
+      <ul>
+        {superBlockOrder[SuperBlockStages.Legacy].map((superBlock, i) => (
+          <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+        ))}
+      </ul>
       {showUpcomingChanges && (
         <>
           <Spacer size='medium' />

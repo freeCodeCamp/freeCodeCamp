@@ -1,15 +1,14 @@
 {
   "name": "Learn Classes and Objects by Building a Sudoku Solver",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-classes-and-objects-by-building-a-sudoku-solver",
-  "order": 4,
+  "order": 8,
   "time": "5 hours",
   "template": "",
   "required": [],
-  "superBlock": "upcoming-python",
-  "superOrder": 20,
+  "superBlock": "scientific-computing-with-python",
   "isBeta": true,
   "challengeOrder": [
     {
