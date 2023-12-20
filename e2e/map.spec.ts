@@ -35,7 +35,11 @@ test.describe('Map Component', () => {
     await expect(curriculumBtns).toHaveCount(18);
     for (let i = 0; i < superBlocksWithLinks.length; i++) {
       const superblockLink = page.getByRole('link', {
-        name: intro[superBlocksWithLinks[i]].title
+        // This is a hacky bypass because `Responsive Web Design` hits both links.
+        name:
+          i === 0
+            ? 'Responsive Web Design Certification'
+            : intro[superBlocksWithLinks[i]].title
       });
       expect(await superblockLink.getAttribute('href')).toBe(
         `/learn/${superBlocksWithLinks[i]}/`
