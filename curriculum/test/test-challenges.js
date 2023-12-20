@@ -466,6 +466,22 @@ function populateTestsForLang({ lang, challenges, meta }) {
 
             if (nextChallenge) {
               const solutionFiles = cloneDeep(nextChallenge.challengeFiles);
+              if (!solutionFiles) {
+                throw Error(
+                  `No solution found. 
+Check the next challenge (${nextChallenge.title}): it should have a seed which solves the current challenge.
+For example:
+
+# --seed--
+
+## --seed-contents--
+
+\`\`\`js
+seed goes here
+\`\`\`
+                  `
+                );
+              }
               const solutionFilesWithEditableContents = solutionFiles.map(
                 file => ({
                   ...file,
