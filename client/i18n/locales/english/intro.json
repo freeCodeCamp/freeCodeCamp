@@ -1226,13 +1226,6 @@
       "upcoming-python-project": {
         "title": "Upcoming Python Project",
         "intro": ["placeholder"]
-      },
-      "learn-regular-expressions-by-building-a-password-generator": {
-        "title": "Learn Regular Expressions by Building a Password Generator",
-        "intro": [
-          "In Python, a module is a file containing a set of statements and definitions that you can use in your code.",
-          "In this project, you'll learn how to import and use modules from the Python standard library and how to use regular expressions while building your own password generator program."
-        ]
       }
     }
   },
