@@ -316,6 +316,55 @@ exports[`<Footer /> matches snapshot 1`] = `
           </a>
         </li>
       </ul>
+      <div
+        className="spacer"
+        style={
+          {
+            "padding": "15px 0",
+          }
+        }
+      />
+      <div>
+        <h2
+          className="col-header"
+          id="mobile-app"
+        >
+          footer.mobile-app
+        </h2>
+        <div
+          className=" min-h-[1px] px-[15px]  md:w-2/3    md:ml-[16.6%]    "
+        >
+          <ul
+            aria-labelledby="mobile-app"
+            className="mobile-app-container"
+          >
+            <li>
+              <a
+                href="https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  alt="Apple Store"
+                  src={{}}
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://play.google.com/store/apps/details?id=org.freecodecamp"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  alt="Google Play"
+                  src={{}}
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
   <div

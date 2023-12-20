@@ -111,6 +111,7 @@ export interface SceneCommand {
 
 export type Characters =
   | 'Alice'
+  | 'Amy'
   | 'Anna'
   | 'Bob'
   | 'Brian'
@@ -120,6 +121,7 @@ export type Characters =
   | 'Linda'
   | 'Lisa'
   | 'Maria'
+  | 'Mark'
   | 'Sarah'
   | 'Sophie'
   | 'Tom';
@@ -344,6 +346,7 @@ export type ClaimedCertifications = {
   isSciCompPyCertV7: boolean;
   isDataAnalysisPyCertV7: boolean;
   isMachineLearningPyCertV7: boolean;
+  isJsAlgoDataStructCertV8: boolean;
 };
 
 type SavedChallenges = SavedChallenge[];

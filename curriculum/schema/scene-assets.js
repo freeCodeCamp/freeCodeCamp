@@ -1,5 +1,6 @@
 const availableCharacters = [
   'Alice',
+  'Amy',
   'Anna',
   'Bob',
   'Brian',
@@ -9,6 +10,7 @@ const availableCharacters = [
   'Linda',
   'Lisa',
   'Maria',
+  'Mark',
   'Sarah',
   'Sophie',
   'Tom'

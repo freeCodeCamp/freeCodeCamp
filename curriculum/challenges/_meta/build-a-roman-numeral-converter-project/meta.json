@@ -1,14 +1,14 @@
 {
   "name": "Build a Roman Numeral Converter Project",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "build-a-roman-numeral-converter-project",
-  "usesMultifileEditor": false,
+  "usesMultifileEditor": true,
   "helpCategory": "JavaScript",
   "order": 8,
   "time": "30 hours",
   "template": "",
   "required": [],
-  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {
       "id": "657bdc8ba322aae1eac38390",
