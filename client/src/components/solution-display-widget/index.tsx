@@ -1,9 +1,9 @@
+import React from 'react';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button } from '@freecodecamp/react-bootstrap';
-import { Dropdown, MenuItem } from '@freecodecamp/ui';
-import React from 'react';
+import { Dropdown, MenuItem, Button } from '@freecodecamp/ui';
 import { useTranslation } from 'react-i18next';
+
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
 import './solution-display-widget.css';
@@ -54,7 +54,10 @@ export function SolutionDisplayWidget({
       <Dropdown.Menu>
         <MenuItem
           variant='primary'
-          href={solution ?? ''}
+          // This expression is only to resolve TypeScript error.
+          // There won't be a case where the link has an invalid `href`
+          // as this component is only rendered if `solution` is truthy.
+          href={solution ?? undefined}
           rel='noopener noreferrer'
           target='_blank'
         >
@@ -78,8 +81,10 @@ export function SolutionDisplayWidget({
   const ShowProjectLinkForCertification = (
     <Button
       block={true}
-      className='btn-invert'
-      href={solution ?? ''}
+      // This expression is only to resolve TypeScript error.
+      // There won't be a case where the link has an invalid `href`
+      // as this component is only rendered if `solution` is truthy.
+      href={solution ?? undefined}
       rel='noopener noreferrer'
       target='_blank'
     >
@@ -98,7 +103,6 @@ export function SolutionDisplayWidget({
     <Button
       block={true}
       variant='primary'
-      className='btn-invert'
       data-cy={dataCy}
       onClick={showUserCode}
     >
@@ -152,7 +156,10 @@ export function SolutionDisplayWidget({
         <Dropdown.Menu>
           <MenuItem
             variant='primary'
-            href={solution}
+            // This expression is only to resolve TypeScript error.
+            // There won't be a case where the link has an invalid `href`
+            // as this component is only rendered if `solution` is truthy.
+            href={solution ?? undefined}
             rel='noopener noreferrer'
             target='_blank'
           >
@@ -177,9 +184,11 @@ export function SolutionDisplayWidget({
   const ShowProjectLink = (
     <Button
       block={true}
-      bsStyle='primary'
-      className='btn-invert'
-      href={solution}
+      variant='primary'
+      // This expression is only to resolve TypeScript error.
+      // There won't be a case where the link has an invalid `href`
+      // as this component is only rendered if `solution` is truthy.
+      href={solution ?? undefined}
       rel='noopener noreferrer'
       target='_blank'
     >
@@ -194,8 +203,7 @@ export function SolutionDisplayWidget({
   const ShowExamResults = (
     <Button
       block={true}
-      bsStyle='primary'
-      className='btn-invert'
+      variant='primary'
       data-cy={dataCy}
       onClick={showExamResults}
     >

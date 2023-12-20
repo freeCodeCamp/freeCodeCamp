@@ -1,6 +1,6 @@
 {
   "name": "learn-intermediate-oop-by-building-a-platformer-game",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-intermediate-oop-by-building-a-platformer-game",
@@ -9,7 +9,7 @@
   "time": "5 hours",
   "template": "",
   "required": [],
-  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "superBlock": "javascript-algorithms-and-data-structures-v8",
   "disableLoopProtectTests": true,
   "disableLoopProtectPreview": true,
   "superOrder": 4,

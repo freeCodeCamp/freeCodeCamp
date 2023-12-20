@@ -484,32 +484,6 @@ hr {
   color: var(--secondary-background);
 }
 
-.challenge-instructions table {
-  display: inline-block;
-  overflow: auto;
-}
-
-.challenge-instructions table thead {
-  display: table-header-group;
-  vertical-align: middle;
-  border-color: inherit;
-}
-
-.challenge-instructions table th {
-  font-weight: 700;
-}
-
-.challenge-instructions table th,
-.challenge-instructions table td {
-  padding: 6px 13px;
-  border: 1px solid var(--secondary-color);
-  text-align: center;
-}
-
-.challenge-instructions table tbody tr:nth-of-type(odd) {
-  background-color: var(--tertiary-background);
-}
-
 .challenge-output span {
   font-size: 1rem;
 }

@@ -346,6 +346,7 @@ export type ClaimedCertifications = {
   isSciCompPyCertV7: boolean;
   isDataAnalysisPyCertV7: boolean;
   isMachineLearningPyCertV7: boolean;
+  isJsAlgoDataStructCertV8: boolean;
 };
 
 type SavedChallenges = SavedChallenge[];
