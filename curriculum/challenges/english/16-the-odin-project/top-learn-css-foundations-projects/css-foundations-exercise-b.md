@@ -173,7 +173,7 @@ assert(style?.fontWeight === 'bold');
 }
 
 #two {
-  color: #0000ff;
+  color: blue;
   font-size: 36px;
 }
 
