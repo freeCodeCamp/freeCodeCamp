@@ -55,7 +55,7 @@ export function post<T = void>(
 
 function put<T = void>(
   path: string,
-  body: unknown
+  body?: unknown
 ): Promise<ResponseWithData<T>> {
   return request('PUT', path, body);
 }
@@ -236,6 +236,10 @@ interface Donation {
 // just need the body to exist, but doesn't seem to use the properties.
 export function addDonation(body: Donation): Promise<ResponseWithData<void>> {
   return post('/donate/add-donation', body);
+}
+
+export function updateStripeCard() {
+  return put('/donate/update-stripe-card');
 }
 
 export function postChargeStripe(

@@ -161,10 +161,8 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
         }
       />
       <a
-        className="big-cta-btn btn btn-lg btn-primary btn-block"
+        className=" relative inline-block mt-[0.5px] border-solid border-3 active:before:w-full active:before:h-full active:before:absolute active:before:inset-0 active:before:border-3 active:before:border-transparent active:before:bg-gray-900 active:before:opacity-20 aria-disabled:cursor-not-allowed aria-disabled:opacity-50 focus:outline-none focus-visible:ring focus-visible:ring-focus-outline-color text-center cursor-pointer no-underline block w-full border-foreground-secondary bg-background-quaternary text-foreground-secondary hover:bg-foreground-primary hover:text-background-primary hover:border-foreground-secondary dark:hover:bg-background-primary dark:hover:text-foreground-primary px-4 py-2.5 text-lg"
         href="http://localhost:3000/signin"
-        onClick={[Function]}
-        onKeyDown={[Function]}
       >
         buttons.sign-up-email-list
       </a>
