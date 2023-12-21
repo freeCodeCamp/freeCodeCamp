@@ -354,29 +354,23 @@ class Block extends Component<BlockProps> {
       </ScrollableAnchor>
     );
 
+    const shouldBeGrid = [
+      isNewResponsiveWebDesign,
+      isNewJsAlgos,
+      isCollegeAlgebraPy,
+      isNewPython
+    ].some(truthy => truthy);
+
     const blockrenderer = () => {
       if (isProjectBlock && !isOdinProject)
-        return isNewResponsiveWebDesign ||
-          isNewJsAlgos ||
-          isCollegeAlgebraPy ||
-          isNewPython
-          ? GridProjectBlock
-          : ProjectBlock;
-      return isNewResponsiveWebDesign ||
-        isNewJsAlgos ||
-        isCollegeAlgebraPy ||
-        isNewPython
-        ? GridBlock
-        : Block;
+        return shouldBeGrid ? GridProjectBlock : ProjectBlock;
+      return shouldBeGrid ? GridBlock : Block;
     };
 
     return (
       <>
         {blockrenderer()}
-        {(isNewResponsiveWebDesign || isNewJsAlgos || isCollegeAlgebraPy) &&
-        !isProjectBlock ? null : (
-          <Spacer size='medium' />
-        )}
+        {shouldBeGrid && !isProjectBlock ? null : <Spacer size='medium' />}
       </>
     );
   }
