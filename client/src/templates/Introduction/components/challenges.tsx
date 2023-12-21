@@ -12,7 +12,7 @@ import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
 import {
   isNewJsCert,
-  isNewPythonCert,
+  isSciCompPyCert,
   isNewRespCert
 } from '../../../utils/is-a-cert';
 
@@ -40,8 +40,8 @@ function Challenges({
   const isGridMap = [
     isNewRespCert(superBlock),
     isNewJsCert(superBlock),
-    isNewPythonCert(superBlock)
-  ].some(truthy => truthy);
+    isSciCompPyCert(superBlock) && !isProjectBlock
+  ].some(Boolean);
 
   const firstIncompleteChallenge = challengesWithCompleted.find(
     challenge => !challenge.isCompleted

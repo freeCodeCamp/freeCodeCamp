@@ -22,7 +22,7 @@ import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import {
   isCollegeAlgebraPyCert,
   isNewJsCert,
-  isNewPythonCert,
+  isSciCompPyCert,
   isNewRespCert
 } from '../../../utils/is-a-cert';
 import {
@@ -108,7 +108,7 @@ class Block extends Component<BlockProps> {
     const isNewResponsiveWebDesign = isNewRespCert(superBlock);
     const isNewJsAlgos = isNewJsCert(superBlock);
     const isOdinProject = blockDashedName == 'the-odin-project';
-    const isNewPython = isNewPythonCert(superBlock);
+    const isSciCompPy = isSciCompPyCert(superBlock);
     const isCollegeAlgebraPy = isCollegeAlgebraPyCert(superBlock);
 
     let completedCount = 0;
@@ -354,12 +354,12 @@ class Block extends Component<BlockProps> {
       </ScrollableAnchor>
     );
 
-    const shouldBeGrid = [
-      isNewResponsiveWebDesign,
-      isNewJsAlgos,
-      isCollegeAlgebraPy,
-      isNewPython
-    ].some(truthy => truthy);
+  const shouldBeGrid = [
+    isNewRespCert(superBlock),
+    isNewJsCert(superBlock),
+    isCollegeAlgebraPy,
+    isSciCompPyCert(superBlock) && !isProjectBlock
+  ].some(Boolean);
 
     const blockrenderer = () => {
       if (isProjectBlock && !isOdinProject)

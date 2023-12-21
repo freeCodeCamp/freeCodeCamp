@@ -20,6 +20,6 @@ export function isCollegeAlgebraPyCert(superBlock: string): boolean {
   return superBlock === String(SuperBlocks.CollegeAlgebraPy);
 }
 
-export function isNewPythonCert(superBlock: string): boolean {
+export function isSciCompPyCert(superBlock: string): boolean {
   return superBlock === String(SuperBlocks.SciCompPy);
 }
