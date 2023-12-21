@@ -187,7 +187,18 @@
           "Aside from the freeCodeCamp core curriculum, We have thousands of free, full-length books, courses, and programming tutorials. We almost certainly teach whatever programming tools you want to learn. Just use the search bar."
         ]
       }
-    ]
+    ],
+    "stages": {
+      "front-end-heading": "Stage 1 : Front End Development",
+      "back-end-heading": "Stage 2 : Back End Development",
+      "python-heading": "Stage 3 : Python and AI",
+      "english-heading": "Stage 4 : English Mastery",
+      "professional-heading": "Stage 5: Professional Certifications",
+      "extra-heading": "Stage 6 : Extra",
+      "legacy-heading": "Bonus Stage: Legacy",
+      "new-heading": "Bonus Stage: New",
+      "upcoming-heading": "Bonus Stage: Upcoming"
+    }
   },
   "settings": {
     "share-projects": "Share your non-freeCodeCamp projects, articles or accepted pull requests.",
