@@ -46,6 +46,18 @@ export enum SuperBlockStages {
   Upcoming
 }
 
+export enum SuperBlockStageTransKeys {
+  'landing.stages.front-end-heading',
+  'landing.stages.back-end-heading',
+  'landing.stages.python-heading',
+  'landing.stages.english-heading',
+  'landing.stages.professional-heading',
+  'landing.stages.extra-heading',
+  'landing.stages.legacy-heading',
+  'landing.stages.new-heading',
+  'landing.stages.upcoming-heading'
+}
+
 export type SuperBlockOrder = {
   [key in SuperBlockStages]: SuperBlocks[];
 };
