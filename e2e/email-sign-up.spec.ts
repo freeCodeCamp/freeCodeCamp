@@ -35,6 +35,28 @@ test.describe('Email sign-up page when user is not signed in', () => {
     await page.goto('/email-sign-up');
   });
 
+  test('should display the content correctly', async ({ page }) => {
+    for (const content of contents) {
+      await expect(page.getByText(content)).toBeVisible();
+    }
+
+    const youtubeLink = page.getByRole('link', {
+      name: "freeCodeCamp's YouTube channel"
+    });
+    await expect(youtubeLink).toHaveAttribute(
+      'href',
+      'https://youtube.com/freecodecamp'
+    );
+
+    const forumLink = page.getByRole('link', {
+      name: 'the freeCodeCamp forum'
+    });
+    await expect(forumLink).toHaveAttribute(
+      'href',
+      'https://forum.freecodecamp.org'
+    );
+  });
+
   test("should not enable Quincy's weekly newsletter when the user clicks the sign up button", async ({
     page,
     browserName
@@ -76,28 +98,6 @@ test.describe('Email sign-up page when user is not signed in', () => {
     await expect(
       page.getByRole('button', { name: translations.buttons['no-thanks'] })
     ).toHaveAttribute('aria-pressed', 'true');
-  });
-
-  test('should display the content correctly', async ({ page }) => {
-    for (const content of contents) {
-      await expect(page.getByText(content)).toBeVisible();
-    }
-
-    const youtubeLink = page.getByRole('link', {
-      name: "freeCodeCamp's YouTube channel"
-    });
-    await expect(youtubeLink).toHaveAttribute(
-      'href',
-      'https://youtube.com/freecodecamp'
-    );
-
-    const forumLink = page.getByRole('link', {
-      name: 'the freeCodeCamp forum'
-    });
-    await expect(forumLink).toHaveAttribute(
-      'href',
-      'https://forum.freecodecamp.org'
-    );
   });
 });
 
