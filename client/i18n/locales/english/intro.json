@@ -747,9 +747,8 @@
   "scientific-computing-with-python": {
     "title": "Scientific Computing with Python (Beta)",
     "intro": [
-      "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning.",
-      "In the Scientific Computing with Python Certification, you'll learn Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
-    ],
+      "The Scientific Computing with Python (Beta) curriculum will equip you with the skills to analyze and manipulate data using Python, a powerful and versatile programming language. You'll learn how to handle large datasets, perform complex calculations, and visualize your findings using a variety of tools.", 
+      "This comprehensive course will guide you through the fundamentals of scientific computing, including data structures, algorithms, and essential libraries like NumPy, pandas, and Matplotlib."
     "note": "",
     "blocks": {
       "learn-string-manipulation-by-building-a-cipher": {
