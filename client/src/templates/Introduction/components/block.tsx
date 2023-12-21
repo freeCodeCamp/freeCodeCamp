@@ -105,13 +105,9 @@ class Block extends Component<BlockProps> {
       t
     } = this.props;
 
-    const isNewResponsiveWebDesign = isNewRespCert(superBlock);
-    const isNewJsAlgos = isNewJsCert(superBlock);
     const isOdinProject = blockDashedName == 'the-odin-project';
-    const isSciCompPy = isSciCompPyCert(superBlock);
-    const isCollegeAlgebraPy = isCollegeAlgebraPyCert(superBlock);
-
     let completedCount = 0;
+
     const challengesWithCompleted = challenges.map(({ challenge }) => {
       const { id } = challenge;
       const isCompleted = completedChallengeIds.some(
@@ -354,12 +350,12 @@ class Block extends Component<BlockProps> {
       </ScrollableAnchor>
     );
 
-  const shouldBeGrid = [
-    isNewRespCert(superBlock),
-    isNewJsCert(superBlock),
-    isCollegeAlgebraPy,
-    isSciCompPyCert(superBlock) && !isProjectBlock
-  ].some(Boolean);
+    const shouldBeGrid = [
+      isNewRespCert(superBlock),
+      isNewJsCert(superBlock),
+      isCollegeAlgebraPyCert(superBlock),
+      isSciCompPyCert(superBlock) && !isProjectBlock
+    ].some(Boolean);
 
     const blockrenderer = () => {
       if (isProjectBlock && !isOdinProject)
