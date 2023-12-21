@@ -300,13 +300,13 @@
     }
   },
   "javascript-algorithms-and-data-structures-v8": {
-    "title": "Algoritmos e estruturas de dados em JavaScript (Beta)",
+    "title": "JavaScript Algorithms and Data Structures (Beta)",
     "intro": [
       "Developers use HTML and CSS to control the content and styling of a page. And they use JavaScript to make that page interactive.",
       "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",
       "You'll also learn about Object Oriented Programming (OOP), Functional Programming, algorithmic thinking, how to work with local storage, and how to fetch data using an API."
     ],
-    "note": "Observação: algumas extensões de navegador, como bloqueadores de anúncios e bloqueadores de scripts, podem interferir nos testes. Se você tiver problemas, recomendamos desabilitar extensões que modifiquem ou bloqueiem o conteúdo das páginas durante o curso.",
+    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
     "blocks": {
       "build-a-pokemon-search-app-project": {
         "title": "Build a Pokémon Search App Project",
@@ -316,49 +316,49 @@
         ]
       },
       "build-a-cash-register-project": {
-        "title": "Projeto de criação de Caixa registradora",
+        "title": "Build a Cash Register Project",
         "intro": [
-          "Este é um dos projetos necessários para obter sua certificação.",
+          "This is one of the required projects to earn your certification.",
           "For this project, you'll build a cash register web app."
         ]
       },
       "build-a-palindrome-checker-project": {
-        "title": "Projeto de criação de Verificador de palíndromo",
+        "title": "Build a Palindrome Checker Project",
         "intro": [
-          "Este é um dos projetos necessários para obter sua certificação.",
+          "This is one of the required projects to earn your certification.",
           "For this project, you'll build an application that checks whether a given word is a palindrome."
         ]
       },
       "build-a-roman-numeral-converter-project": {
-        "title": "Projeto de criação de Conversor de números romanos",
+        "title": "Build a Roman Numeral Converter Project",
         "intro": [
-          "Este é um dos projetos necessários para solicitar sua certificação.",
+          "This is one of the required projects to claim your certification.",
           "For this project, you'll build an application that converts integers to Roman numerals."
         ]
       },
       "build-a-telephone-number-validator-project": {
-        "title": "Projeto de criação de Validador de números de telefone",
+        "title": "Build a Telephone Number Validator Project",
         "intro": [
-          "Este é um dos projetos necessários para solicitar sua certificação.",
+          "This is one of the required projects to claim your certification.",
           "For this project, you'll build an application that checks if a number is a valid United States phone number."
         ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "Aprenda JavaScript básico criando um jogo de RPG",
+        "title": "Learn Basic JavaScript by Building a Role Playing Game",
         "intro": [
           "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
           "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Role Playing Game. You'll learn how to work with arrays, strings, objects, functions, loops, <code>if/else</code> statements, and more."
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
-        "title": "Aprenda validação de formulários construindo um contador de calorias",
+        "title": "Learn Form Validation by Building a Calorie Counter",
         "intro": [
           "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter project, you'll learn how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
           "In this practice project, you'll learn basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
         ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
-        "title": "Aprenda programação funcional criando uma planilha",
+        "title": "Learn Functional Programming by Building a Spreadsheet",
         "intro": [
           "Functional Programming is a popular approach to software development. In Functional Programming, developers organize code into smaller functions, then combine those functions to build complex programs.",
           "In this spreadsheet application project, you'll learn about parsing and evaluating mathematical expressions, implementing spreadsheet functions, handling cell references, and creating interactive web interfaces. You'll learn how to dynamically update the page based on user input.",
@@ -366,21 +366,21 @@
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
-        "title": "Aprenda métodos modernos de JavaScript criando cards de equipes de futebol",
+        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
         "intro": [
           "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
           "This project will cover concepts like switch statements, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method, and more."
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
-        "title": "Aprenda métodos de arrays avançados criando uma calculadora de estatística",
+        "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
         "intro": [
           "As you expand your JavaScript skills, you'll want to get comfortable with array manipulation methods, such as <code>map()</code>, <code>reduce()</code>, and <code>filter()</code>.",
           "In this statistics calculator project, you'll gain experience with handling user input, DOM manipulation, and method chaining. You'll get practice by performing statistical calculations like mean, median, mode, variance, and standard deviation."
         ]
       },
       "learn-basic-oop-by-building-a-shopping-cart": {
-        "title": "Aprenda POO básica criando um carrinho de compras",
+        "title": "Learn Basic OOP by Building a Shopping Cart",
         "intro": [
           "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, developers use objects and classes to structure their code.",
           "In this shopping cart project, you'll learn how to define classes and use them. You'll create class instances and implement methods for data manipulation.",
@@ -388,7 +388,7 @@
         ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "Aprenda Fetch e Promises criando uma página de autores do fCC",
+        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
         "intro": [
           "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
           "This freeCodeCamp authors page project will show you how to use the fetch method, then dynamically update the DOM to display the fetched data.",
@@ -396,14 +396,14 @@
         ]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
-        "title": "Aprenda expressões regulares criando um filtro de spam",
+        "title": "Learn Regular Expressions by Building a Spam Filter",
         "intro": [
           "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
           "In this spam filter project, you'll learn about capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
         ]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
-        "title": "Aprenda o raciocínio básico de Algoritmos criando uma ordenação numérica",
+        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
         "intro": [
           "In computer science, there are fundamental sorting algorithms that all developers should learn. In this number sorter project, you'll learn how to implement and visualize different sorting algorithms like bubble sort, selection sort, and insertion sort – all with JavaScript.",
           "This project will help you understand the fundamental concepts behind these algorithms, and how you can apply them to sort numerical data in web applications."
@@ -418,28 +418,28 @@
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
-        "title": "Aprenda OOP intermediário construindo um jogo de plataforma",
+        "title": "Learn Intermediate OOP by Building a Platformer Game",
         "intro": [
           "Coding a game is a great way to grasp fundamental programming principles, while also creating an interactive gaming experience.",
           "In this platformer game project, you'll continue to learn about classes, objects, inheritance, and encapsulation. You'll also learn how to design and organize game elements efficiently and gain insights into problem-solving and code reusability."
         ]
       },
       "learn-localstorage-by-building-a-todo-app": {
-        "title": "Aprenda sobre armazenamento local criando uma aplicação de lista de tarefas",
+        "title": "Learn localStorage by Building a Todo App",
         "intro": [
           "Local storage is a web browser feature that lets web applications store key-value pairs persistently within a user's browser. This allows web apps to save data during one session, then retrieve it in a later page session.",
           "In this TODO application, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implement event listeners, and toggle UI elements."
         ]
       },
       "learn-the-date-object-by-building-a-date-formatter": {
-        "title": "Aprenda sobre o objeto Date criando um formatador de datas",
+        "title": "Learn the Date Object by Building a Date Formatter",
         "intro": [
           "Working with dates in JavaScript can be challenging. You have to navigate various methods, formats, and time zones. In this project, you'll learn how to work with the JavaScript Date object, including its methods and properties. You'll also learn how to correctly format dates.",
-          "Este projeto cobrirá conceitos como os métodos: <code>getDate()</code>, <code>getMonth()</code> e <code>getFullYear()</code>."
+          "This project will cover concepts such as the <code>getDate()</code>, <code>getMonth()</code>, and <code>getFullYear()</code> methods."
         ]
       },
       "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard": {
-        "title": "Aprenda programação assíncrona criando uma tabela de lideres do fórum do fCC",
+        "title": "Learn Asynchronous Programming by Building an fCC Forum Leaderboard",
         "intro": [
           "JavaScript is an asynchronous programming language. And this project will help you gain proficiency in asynchronous concepts. You'll code your own freeCodeCamp forum leaderboard.",
           "This project will cover the Fetch API, promises, Async/Await, and the try..catch statement."
@@ -450,6 +450,13 @@
         "intro": [
           "Now let's learn some essential string and array methods like the <code>find()</code>, <code>forEach()</code>, <code>map()</code>, and <code>join()</code>. These methods are crucial for developing dynamic web applications.",
           "In this project, you'll code a basic MP3 player using HTML, CSS, and JavaScript. The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, previous, and shuffle functionalities. You'll even learn how to dynamically update your user interface based on the current song."
+        ]
+      },
+      "learn-recursion-by-building-a-decimal-to-binary-converter": {
+        "title": "Learn Recursion by Building a Decimal to Binary Converter",
+        "intro": [
+          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
+          "In this project, you’ll build a decimal-to-binary converter using JavaScript. You’ll learn the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
         ]
       }
     }
@@ -741,19 +748,81 @@
     }
   },
   "scientific-computing-with-python": {
-    "title": "Computação científica com Python",
+    "title": "Scientific Computing with Python (Beta)",
     "intro": [
       "Python é uma das linguagens de programação mais populares e flexíveis atualmente. Você pode usá-la para tudo, desde programação básica até aprendizagem de máquina.",
       "Na certificação em computação científica com Python, você aprenderá o básico sobre Python, como variáveis, \"loops\", condicionais e funções. Depois, você vai evoluir rapidamente para estruturas de dados complexas, redes, bancos de dados relacionais e visualização de dados."
     ],
     "note": "",
     "blocks": {
-      "python-for-everybody": {
-        "title": "Python para todos",
+      "learn-string-manipulation-by-building-a-cipher": {
+        "title": "Learn String Manipulation by Building a Cipher",
         "intro": [
-          "Python para todos é uma série gratuita vídeos de cursos que ensina o básico para usar o Python 3.",
-          "Os cursos foram criados pelo Dr. Charles Severance (também conhecido como Dr. Chuck). Ele é Professor Clínico na Escola de Informação da Universidade de Michigan, onde leciona vários cursos orientados à tecnologia, incluindo programação, projeto de banco de dados e desenvolvimento web."
+          "Python is a powerful and popular programming language widely used for data science, data visualization, web and game development, machine learning and much more.",
+          "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loop, conditional statements, and and how to work with them to build your first program."
         ]
+      },
+      "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm": {
+        "title": "Learn How to Work with Numbers and Strings by Implementing the Luhn Algorithm",
+        "intro": [
+          "The Luhn Algorithm is widely used for error-checking in various applications, including credit card numbers.",
+          "Through this project, you'll gain valuable experience in working with numerical computations and string manipulation while implementing the Luhn Algorithm."
+        ]
+      },
+      "learn-list-comprehension-by-building-a-case-converter-program": {
+        "title": "Learn Python List Comprehension By Building a Case Converter Program",
+        "intro": [
+          "A list comprehension in Python is a way to construct a new list from an iterable types such as lists, tuples, and strings without using a for loop or the `.append()` list method",
+          "In this project, you will write a program that takes a string formatted in camel or pascal case and converts that to snake case. The project has two phases.",
+          "During the first phase, you will use a for loop to implement the program.",
+          "Then in the second phase you will learn about applying list comprehension instead of a loop to achieve the same results."
+        ]
+      },
+      "learn-regular-expressions-by-building-a-password-generator": {
+        "title": "Learn Regular Expressions by Building a Password Generator",
+        "intro": [
+          "In Python, a module is a file containing a set of statements and definitions that you can use in your code.",
+          "In this project, you'll learn how to import and use modules from the Python standard library and how to use regular expressions while building your own password generator program."
+        ]
+      },
+      "learn-algorithm-design-by-building-the-shortest-path-algorithm": {
+        "title": "Learn Algorithm Design by Building the Shortest Path Algorithm",
+        "intro": [
+          "Algorithms are step-by-step procedures used to perform calculations and solve computational problems.",
+          "In this project, you'll learn how to use functions, loops, conditional statements, dictionary comprehensions and more to design and implement the shortest path algorithm."
+        ]
+      },
+      "learn-recursion-by-solving-the-tower-of-hanoi-puzzle": {
+        "title": "Learn Recursion by Solving the Tower of Hanoi Puzzle",
+        "intro": [
+          "Recursion allows you to write concise and elegant code to solve complex computational problems.",
+          "In this project, you'll start with an iterative approach to solve the tower of Hanoi mathematical puzzle and then you'll learn how to implement a recursive solution."
+        ]
+      },
+      "learn-data-structures-by-building-the-merge-sort-algorithm": {
+        "title": "Learn Data Structures by Building the Merge Sort Algorithm",
+        "intro": [
+          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this project, you'll learn how to interact with data structures by sorting a list of random numbers using the merge sort algorithm."
+        ]
+      },
+      "learn-classes-and-objects-by-building-a-sudoku-solver": {
+        "title": "Learn Classes and Objects by Building a Sudoku Solver",
+        "intro": [
+          "Classes and objects are an important programming concept and they enable developers to achieve code modularity, abstraction, readability, and promote reusability.",
+          "In this Sudoku solver project, you'll learn how to use classes and objects to build a sudoku grid and to solve a sudoku puzzle."
+        ]
+      },
+      "learn-tree-traversal-by-building-a-binary-search-tree": {
+        "title": "Learn Tree Traversal by Building a Binary Search Tree",
+        "intro": [
+          "A Binary Search Tree (BST) is an important data structure concept, where data is sorted in a hierarchical structure.",
+          "In this project, you will learn how to construct a BST, perform an inorder traversal, and also cover key operations like insertion, search, and deletion."
+        ]
+      },
+      "learn-lambda-functions-by-building-an-expense-tracker": {
+        "title": "Learn Lambda Functions by Building an Expense Tracker",
+        "intro": ["", ""]
       },
       "scientific-computing-with-python-projects": {
         "title": "Computação científica com projetos em Python",
@@ -991,6 +1060,22 @@
       }
     }
   },
+  "python-for-everybody": {
+    "title": "Legacy Python for Everybody",
+    "intro": [
+      "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning."
+    ],
+    "note": "",
+    "blocks": {
+      "python-for-everybody": {
+        "title": "Python for Everybody",
+        "intro": [
+          "Python for everybody is a free video course series that teaches the basics of using Python 3.",
+          "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
+        ]
+      }
+    }
+  },
   "coding-interview-prep": {
     "title": "Preparação para entrevistas de programação",
     "intro": [
@@ -1019,19 +1104,11 @@
           "Entrevistas de programação sempre foram estressantes. Os candidatos a empregos às vezes recebem um projeto para levar para casa, a ser concluído fora da entrevista. Esses tipos de entrevistas geralmente exigem muito trabalho, mas são uma ótima maneira para os empregadores verem como você se sairia no trabalho.",
           "Realize os projetos de codificação adicionais abaixo para uma prática extra. Não tenha pressa, melhore-os e coloque no seu currículo ou portfólio para mostrar a possíveis empregadores."
         ]
-      },
-      "rosetta-code": {
-        "title": "Rosetta Code",
-        "intro": [
-          "Aumente o nível de suas habilidades criativas de resolução de problemas com essas tarefas de programação gratuitas da biblioteca clássica do Rosetta Code.",
-          "Esses desafios podem ser difíceis, mas levarão sua lógica de algoritmos a novos patamares.",
-          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Créditos: Rosetta Code</a>"
-        ]
       }
     }
   },
   "the-odin-project": {
-    "title": "The Odin Project",
+    "title": "The Odin Project (Beta)",
     "intro": [
       "The Odin Project é um daqueles recursos do tipo \"O que eu gostaria de ter visto quando estava aprendendo\". ",
       "Nem todas as pessoas têm acesso à educação em ciência da computação ou aos fundos necessários para frequentar uma escola de programação intensiva. De qualquer modo, não necessariamente, essas duas sejam a solução final para todos que queiram aprender.",
@@ -1040,43 +1117,63 @@
     "blocks": {
       "top-learn-html-foundations": {
         "title": "Aprenda o básico de HTML",
-        "intro": ["Uma descrição deve ser determinada"]
+        "intro": [
+          "Get a solid grasp of HTML essentials with this course. From structuring web pages to understanding semantic tags, you'll build a strong foundation for creating well-organized and accessible content on the web."
+        ]
       },
       "top-working-with-text": {
         "title": "Trabalhando com textos",
-        "intro": ["Uma descrição deve ser determinada"]
+        "intro": [
+          "Explore the intricacies of working with text in web development. Learn about text formatting, manipulation, and presentation to enhance your skills in creating web content."
+        ]
       },
       "top-links-and-images": {
         "title": "Links e imagens",
-        "intro": ["Uma descrição deve ser determinada"]
+        "intro": [
+          "Learn how to incorporate links and images into your web projects. This course covers the fundamentals of creating links and embedding images to make your websites more interactive and visually appealing."
+        ]
       },
       "top-build-a-recipe-project": {
         "title": "Aprenda o básico de HTML criando uma página de receitas",
-        "intro": ["Uma descrição deve ser determinada"]
+        "intro": [
+          "Put your HTML skills into practice by building a recipe page. This hands-on project allows you to apply your knowledge and create a functional web page while reinforcing key concepts of HTML development."
+        ]
       },
       "top-learn-css-foundations": {
         "title": "Aprenda o básico de CSS",
-        "intro": ["Uma descrição deve ser determinada"]
+        "intro": [
+          "Dive into the world of  Cascading Style Sheets (CSS) and learn how to style your HTML elements. Explore styling properties, selectors, and layouts to bring your web pages to life."
+        ]
       },
       "top-learn-css-foundations-projects": {
         "title": "Projetos para aprender o básico de CSS",
-        "intro": ["Uma descrição deve ser determinada"]
+        "intro": [
+          "Take your CSS skills to the next level by working on practical projects. This course provides hands-on experience in applying CSS to create responsive designs for real-world scenarios."
+        ]
       },
       "top-learn-css-specificity": {
         "title": "Aprenda especificidade no CSS",
-        "intro": ["Uma descrição deve ser determinada"]
+        "intro": [
+          "Learn CSS specificity and gain a better understanding of how styles are applied to HTML elements. This course explores the nuances of CSS rules and helps you write efficient and targeted styles for your web pages."
+        ]
       },
       "top-the-box-model": {
         "title": "Aprenda sobre o modelo de caixas",
-        "intro": ["Uma descrição deve ser determinada"]
+        "intro": [
+          "Learn the CSS box model with this course. Understand how elements are rendered on the web, and learn to manipulate spacing, borders, and padding to achieve your desired layout and design."
+        ]
       },
       "top-introduction-to-flexbox": {
         "title": "Introduction to Flexbox",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Discover the power of Flexbox, a layout model that simplifies the design of flexible and responsive web layouts. Learn how to create dynamic and adaptive page structures with ease."
+        ]
       },
       "top-learn-block-and-inline": {
         "title": "Learn the difference between Block and Inline",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
+        ]
       }
     }
   },
@@ -1189,33 +1286,41 @@
   "a2-english-for-developers": {
     "title": "A2 Inglês para Desenvolvedores (Beta)",
     "intro": [
-      "Este curso, projetado para desenvolvedores, ensina a língua inglesa.",
-      "Mais texto aqui."
+      "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
+      "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
+      "In the second half, you'll practice vocabulary specific to software development. You'll learn how to describe code, discuss tech trends, and participate in stand-up meetings.",
+      "This entire A2-level curriculum includes 105 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
     ],
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "Aprenda saudações em seu primeiro dia no escritório",
-        "intro": ["Aprenda saudações."]
+        "intro": [
+          "In this first course, you'll learn common expressions for situations you may encounter on your first day at work. You'll learn about introductions, getting to know people, asking for lunch recommendations, and getting an access card from security."
+        ]
       },
       "learn-introductions-in-an-online-team-meeting": {
         "title": "Aprenda apresentações em uma reunião on-line com a equipe",
-        "intro": ["Aprenda apresentações."]
+        "intro": [
+          "In this course, you'll learn how to give a personal introduction. You'll also learn how to state your profession, and share your goals in group meetings."
+        ]
       },
       "learn-conversation-starters-in-the-break-room": {
         "title": "Aprenda a começar uma conversa na sala de descanso",
-        "intro": ["Aprender a iniciar uma conversa."]
+        "intro": [
+          "In this course, you'll learn how to start a conversation in casual settings. You'll also learn how to talk about your hobbies and personality traits. You'll even learn how to ask about places around the town."
+        ]
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Aprenda a falar sobre um dia típico e tarefas",
-        "intro": ["", ""]
+        "intro": ["Learn about a typical workday."]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "Aprenda a discutir sobre sua rotina diária ou noturna",
-        "intro": ["", ""]
+        "intro": ["Learn about routines."]
       },
       "learn-how-to-describe-your-current-project": {
         "title": "Aprenda a descrever seu projeto atual",
-        "intro": ["", ""]
+        "intro": ["Learn about projects."]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Aprenda a pedir informações sobre histórico educacional e profissional e como compartilhá-las",
@@ -1304,6 +1409,20 @@
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "Aprenda a fornecer explicações quando estiver ajudando outros",
         "intro": ["", ""]
+      }
+    }
+  },
+  "rosetta-code": {
+    "title": "Rosetta Code",
+    "intro": [
+      "Level up your creative problem solving skills with these free programming tasks from the classic Rosetta Code library.",
+      "These challenges can prove to be difficult, but they will push your algorithm logic to new heights.",
+      "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
+    ],
+    "blocks": {
+      "rosetta-code-challenges": {
+        "title": "Rosetta Code Challenges",
+        "intro": ["These are the challenges for Rosetta Code."]
       }
     }
   },
