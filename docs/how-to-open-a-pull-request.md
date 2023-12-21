@@ -93,6 +93,7 @@ Some examples of good PR titles would be:
 5. Indicate if you have tested on a local copy of the site or not.
 
    - This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
+
    - If your PR affects the behavior of a page, it should be accompanied by corresponding [Playwright integration tests](how-to-add-playwright-tests.md).
 
 ## Feedback on Pull Requests
