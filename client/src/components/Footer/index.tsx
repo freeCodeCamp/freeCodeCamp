@@ -1,6 +1,10 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import Link from '../helpers/link';
+import { Col } from '@freecodecamp/ui';
+
+import appleStoreBadge from '../../assets/images/footer-ads/apple-store-badge.svg';
+import googlePlayBadge from '../../assets/images/footer-ads/google-play-badge.svg';
+import { Spacer, Link } from '../helpers';
 import './footer.css';
 
 function Footer(): JSX.Element {
@@ -182,6 +186,28 @@ function Footer(): JSX.Element {
               </Link>
             </li>
           </ul>
+
+          <Spacer size='medium' />
+
+          <div>
+            <h2 id='mobile-app' className='col-header'>
+              {t('footer.mobile-app')}
+            </h2>
+            <Col sm={8} smOffset={2}>
+              <ul aria-labelledby='mobile-app' className='mobile-app-container'>
+                <li>
+                  <Link to='https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200'>
+                    <img src={appleStoreBadge} alt='Apple Store' />
+                  </Link>
+                </li>
+                <li>
+                  <Link to='https://play.google.com/store/apps/details?id=org.freecodecamp'>
+                    <img src={googlePlayBadge} alt='Google Play' />
+                  </Link>
+                </li>
+              </ul>
+            </Col>
+          </div>
         </div>
       </div>
       <div className='footer-bottom'>

@@ -67,7 +67,8 @@ const isCertSelector = ({
   isMachineLearningPyCertV7,
   isRelationalDatabaseCertV8,
   isCollegeAlgebraPyCertV8,
-  isFoundationalCSharpCertV8
+  isFoundationalCSharpCertV8,
+  isJsAlgoDataStructCertV8
 }: ClaimedCertifications) => ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -86,7 +87,8 @@ const isCertSelector = ({
   isMachineLearningPyCertV7,
   isRelationalDatabaseCertV8,
   isCollegeAlgebraPyCertV8,
-  isFoundationalCSharpCertV8
+  isFoundationalCSharpCertV8,
+  isJsAlgoDataStructCertV8
 });
 
 const isCertMapSelector = createSelector(
@@ -108,7 +110,8 @@ const isCertMapSelector = createSelector(
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
     isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8
+    isFoundationalCSharpCertV8,
+    isJsAlgoDataStructCertV8
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
@@ -131,7 +134,8 @@ const isCertMapSelector = createSelector(
     // Certification.
     'Example Certification': false,
     'Upcoming Python Certification': false,
-    'A2 English for Developers': false
+    'A2 English for Developers': false,
+    'JavaScript Algorithms and Data Structures (Beta)': isJsAlgoDataStructCertV8
   })
 );
 

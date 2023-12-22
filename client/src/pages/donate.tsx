@@ -1,4 +1,4 @@
-import { Alert, Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row } from '@freecodecamp/ui';
 import type { TFunction } from 'i18next';
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
@@ -10,15 +10,23 @@ import { createSelector } from 'reselect';
 
 import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
 import {
-  DonationText,
-  DonationOptionsAlertText,
-  DonationFaqText
+  CtaText,
+  ThankYouMessage,
+  DonationFaqText,
+  SupportBenefitsText,
+  CurrentInitiativesText,
+  CommunityAchievementsText,
+  GetSupporterBenefitsText
 } from '../components/Donation/donation-text-components';
 import { Spacer, Loader } from '../components/helpers';
-import CampersImage from '../components/landing/components/campers-image';
 import { executeGA } from '../redux/actions';
-import { signInLoadingSelector, userSelector } from '../redux/selectors';
+import {
+  signInLoadingSelector,
+  userSelector,
+  donationFormStateSelector
+} from '../redux/selectors';
 import { PaymentContext } from '../../../shared/config/donation-settings';
+import { DonateFormState } from '../redux/types';
 
 export interface ExecuteGaArg {
   event: string;
@@ -31,14 +39,21 @@ interface DonatePageProps {
   isDonating?: boolean;
   showLoading: boolean;
   t: TFunction;
+  donationFormState: DonateFormState;
 }
 
 const mapStateToProps = createSelector(
   userSelector,
   signInLoadingSelector,
-  ({ isDonating }: { isDonating: boolean }, showLoading: boolean) => ({
+  donationFormStateSelector,
+  (
+    { isDonating }: { isDonating: boolean },
+    showLoading: boolean,
+    donationFormState: DonateFormState
+  ) => ({
     isDonating,
-    showLoading
+    showLoading,
+    donationFormState
   })
 );
 
@@ -50,7 +65,8 @@ function DonatePage({
   executeGA = () => {},
   isDonating = false,
   showLoading,
-  t
+  t,
+  donationFormState
 }: DonatePageProps) {
   useEffect(() => {
     executeGA({
@@ -65,48 +81,65 @@ function DonatePage({
   ) : (
     <>
       <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
-      <Container className='donate-page-wrapper'>
-        <Spacer size='medium' />
+      <Container fluid={true} className='gradient-container'>
+        <Container className='donate-page-container'>
+          <Row className={'donation-section'}>
+            <Col lg={6} lgOffset={0} md={8} mdOffset={1} sm={12}>
+              {isDonating ? (
+                <ThankYouMessage askForDonation={!donationFormState.success} />
+              ) : (
+                <CtaText />
+              )}
+            </Col>
+            <Col lg={6} lgOffset={0} md={12}>
+              <MultiTierDonationForm
+                paymentContext={PaymentContext.DonatePage}
+              />
+            </Col>
+          </Row>
+        </Container>
+      </Container>
+      <Container className='donate-page-container'>
         <Row>
-          <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
-            {isDonating ? (
-              <h2
-                data-playwright-test-label='main-head'
-                className='text-center'
-              >
-                {t('donate.thank-you')}
-              </h2>
-            ) : (
-              <h2
-                data-playwright-test-label='main-head'
-                className='text-center'
-              >
-                {t('donate.help-more')}
-              </h2>
-            )}
-            <Spacer size='medium' />
-            {isDonating ? (
-              <Alert variant='info' data-cy='donate-alert'>
-                <p data-cy='donate.thank-you'>{t('donate.thank-you')}</p>
-                <br />
-                <DonationOptionsAlertText />
-              </Alert>
-            ) : null}
-            <DonationText />
-            <MultiTierDonationForm paymentContext={PaymentContext.DonatePage} />
-            <Spacer size='exLarge' />
-            <hr />
-            <h2 data-playwright-test-label='faq-head' className={'text-center'}>
-              {t('donate.faq')}
-            </h2>
-            <Spacer size='medium' />
-            <DonationFaqText />
-          </Col>
-          <Col lg={6}>
-            <CampersImage pageName='donate' />
+          <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
+            <Spacer size='large' />
+            <SupportBenefitsText />
           </Col>
         </Row>
-        <Spacer size='medium' />
+        <Row>
+          <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
+            <Spacer size='large' />
+            <CurrentInitiativesText />
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
+            <Spacer size='large' />
+            <CommunityAchievementsText />
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
+            <GetSupporterBenefitsText isDonating={Boolean(isDonating)} />
+          </Col>
+        </Row>
+      </Container>
+      <Container fluid={true}>
+        <Row>
+          <Col sm={12}>
+            <Spacer size='large' />
+            <hr />
+            <Spacer size='large' />
+          </Col>
+        </Row>
+      </Container>
+      <Container className='donate-page-container'>
+        <Row>
+          <Col lg={10} lgOffset={0} md={8} mdOffset={2} sm={10}>
+            <DonationFaqText />
+          </Col>
+        </Row>
+        <Spacer size='large' />
       </Container>
     </>
   );

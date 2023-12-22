@@ -14,7 +14,7 @@ Si estás en un sistema operativo diferente o todavía estas encontrandote con p
 
 ## Issues with Missing UI, Fonts, Language Strings, or Build Errors
 
-When you build the client, Gatsby will cache the Fonts, language strings, and UI. Si uno de ellos no fue almacenado en caché, ejecute lo siguiente:
+When you build the client, Gatsby will cache the fonts, language strings, and UI. Si uno de ellos no fue almacenado en caché, ejecute lo siguiente:
 
 ```bash
 pnpm run clean

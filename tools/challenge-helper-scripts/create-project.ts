@@ -14,7 +14,11 @@ const helpCategories = [
   'HTML-CSS',
   'JavaScript',
   'Backend Development',
-  'Python'
+  'Python',
+  'English',
+  'Odin',
+  'Euler',
+  'Rosetta'
 ] as const;
 
 type BlockInfo = {
