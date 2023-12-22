@@ -23,9 +23,5 @@ describe('Donate page', () => {
       'href',
       'https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp'
     );
-    cy.get('[data-cy="donate.make-another-monthly"]').should(
-      'have.text',
-      'If you want to make another monthly donation, please proceed with selecting your monthly donation amount.'
-    );
   });
 });

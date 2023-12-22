@@ -91,10 +91,12 @@ function DonatePage({
                 <CtaText />
               )}
             </Col>
-            <Col lg={6} lgOffset={0} md={12}>
-              <MultiTierDonationForm
-                paymentContext={PaymentContext.DonatePage}
-              />
+            <Col lg={6} lgOffset={0} md={8} mdOffset={1} sm={12}>
+              {!isDonating || donationFormState.success ? (
+                <MultiTierDonationForm
+                  paymentContext={PaymentContext.DonatePage}
+                />
+              ) : null}
             </Col>
           </Row>
         </Container>
