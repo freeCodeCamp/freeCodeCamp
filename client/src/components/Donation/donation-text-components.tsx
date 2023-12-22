@@ -64,15 +64,8 @@ export const OtherWaysToSupport = (): JSX.Element => {
     <>
       <p data-cy='donate.if-support-further'>
         <Trans i18nKey='donate.if-support-further'>
-          <a
-            data-cy='donate-link'
-            href={t('links:donate.one-time-external-url')}
-          >
-            placeholder
-          </a>
-          <a data-cy='donate-link' href={t('links:donate.mail-check-url')}>
-            placeholder
-          </a>
+          <a href={t('links:donate.one-time-external-url')}>placeholder</a>
+          <a href={t('links:donate.mail-check-url')}>placeholder</a>
           <a data-cy='donate-link' href={t('links:donate.other-ways-url')}>
             placeholder
           </a>
