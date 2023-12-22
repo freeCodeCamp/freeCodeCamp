@@ -8,7 +8,7 @@ describe('Donate page', () => {
     cy.visit('/donate');
     cy.get('[data-cy="donate.thank-you"]').should(
       'have.text',
-      'Thank you for being a supporter.'
+      'Thank You for Being a Supporter'
     );
     cy.get('[data-cy="donate.crucial-contribution"]').should(
       'have.text',

@@ -60,7 +60,7 @@ function DonateCompletion({
                   sameTab={false}
                   to='/supporters'
                 >
-                  {t('buttons.supporters')}
+                  {t('buttons.go-to-supporters')}
                 </Link>
               </>
             )}

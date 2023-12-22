@@ -63,7 +63,9 @@ function ConditionalContent({
     return (
       <Col md={12}>
         <Spacer size='large' />
-        <h1 className='text-center'>{t('learn.donation-record-not-found')}</h1>
+        <h1 id='content-start' className='text-center'>
+          {t('learn.donation-record-not-found')}
+        </h1>
         <Spacer size='medium' />
         <p className='text-center'>{t('learn.contact-support-mistake')}</p>
         <Spacer size='large' />
@@ -89,7 +91,9 @@ function ConditionalContent({
     return (
       <Col md={12}>
         <Spacer size='large' />
-        <h1 className='text-center'>{t('learn.sign-in-see-benefits')}</h1>
+        <h1 id='content-start' className='text-center'>
+          {t('learn.sign-in-see-benefits')}
+        </h1>
         <Spacer size='large' />
         <BigCallToAction text={t('buttons.sign-in')} />
         <Spacer size='large' />
@@ -107,20 +111,27 @@ function SupportersPage({ isSignedIn, isDonating }: SupportersPageProps) {
       </Helmet>
       <Container
         fluid={true}
-        className={`${
-          isDonating && 'supporters-background'
-        } gradient-container`}
+        className={`${isDonating && 'supporters-background'} `}
       >
-        <Container className='donate-page-container'>
-          <Row className={'donation-section'}>
-            <ConditionalContent
-              isSignedIn={isSignedIn}
-              isDonating={isDonating}
-            />
-          </Row>
+        <Container className='donate-supporter-page-section'>
+          <main>
+            <Row className={'donation-section'}>
+              <ConditionalContent
+                isSignedIn={isSignedIn}
+                isDonating={isDonating}
+              />
+            </Row>
+          </main>
         </Container>
       </Container>
-      <Container className='donate-page-container'>
+      <Container fluid={true}>
+        <Row>
+          <Col sm={12}>
+            <hr />
+          </Col>
+        </Row>
+      </Container>
+      <Container className='donate-supporter-page-section'>
         <Spacer size='large' />
         <Row>
           <Col lg={10} lgOffset={0} md={8} mdOffset={2} sm={10}>
