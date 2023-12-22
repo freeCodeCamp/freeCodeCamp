@@ -6,7 +6,7 @@ dashedName: introduction-flexbox-question-h
 ---
 # --description--
 
-Search through [our handbook](https://www.freecodecamp.org/news/the-css-flexbox-handbook) and find the answer to the question below.
+Search through <a href="https://www.freecodecamp.org/news/the-css-flexbox-handbook" target="_blank">our handbook</a> and find the answer to the question below.
 
 # --question--
 
