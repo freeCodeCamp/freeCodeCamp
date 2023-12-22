@@ -9,7 +9,7 @@ dashedName: task-29
 
 # --description--
 
-When you hear about different types of guitars, two common kinds might come up: electric and acoustic. Electric guitars usually need something called an amplifier to be loud enough to hear, while acoustic guitars can be heard without any extra equipment.
+When you hear about different types of guitars, two common kinds might come up: `electric` and `acoustic`. `Electric guitars` usually need something called an amplifier to be loud enough to hear, while `acoustic guitars` can be heard without any extra equipment.
 
 # --question--
 
