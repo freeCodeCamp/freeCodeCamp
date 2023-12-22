@@ -9,7 +9,6 @@ import {
   SuperBlocks,
   getFirstNotAuditedSuperBlock,
   createSuperBlockMap,
-  superBlockOrder,
   SuperBlockStageTransKeys
 } from '../../../../shared/config/superblocks';
 import { SuperBlockIcon } from '../../assets/icons/superblock-icon';
@@ -50,8 +49,8 @@ const linkSpacingStyle = {
 };
 
 const superBlockMap = createSuperBlockMap({
-  showNewCurriculum: showNewCurriculum.toString(),
-  showUpcomingChanges: showUpcomingChanges.toString()
+  showNewCurriculum: showNewCurriculum,
+  showUpcomingChanges: showUpcomingChanges
 });
 
 const firstNotAuditedSuperBlock = getFirstNotAuditedSuperBlock({
@@ -68,12 +67,6 @@ const mapStateToProps = createSelector(
     currentCerts
   })
 );
-
-const coreCurriculum = [
-  ...superBlockOrder[SuperBlockStages.FrontEnd],
-  ...superBlockOrder[SuperBlockStages.Backend],
-  ...superBlockOrder[SuperBlockStages.Python]
-];
 
 function MapLi({
   superBlock,
