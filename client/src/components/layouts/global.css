@@ -523,9 +523,9 @@ blockquote .small {
 
 .alert .btn,
 [role='alert'] .btn {
-  background-color: #d9edf7;
-  color: #31708f;
-  border-color: #31708f;
+  background-color: transparent;
+  color: inherit;
+  border-color: inherit;
 }
 .alert .btn:hover,
 .alert .btn:focus,

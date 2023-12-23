@@ -82,24 +82,30 @@ function DonatePage({
     <>
       <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
       <Container fluid={true} className='gradient-container'>
-        <Container className='donate-page-container'>
-          <Row className={'donation-section'}>
-            <Col lg={6} lgOffset={0} md={8} mdOffset={1} sm={12}>
-              {isDonating ? (
-                <ThankYouMessage askForDonation={!donationFormState.success} />
-              ) : (
-                <CtaText />
-              )}
-            </Col>
-            <Col lg={6} lgOffset={0} md={12}>
-              <MultiTierDonationForm
-                paymentContext={PaymentContext.DonatePage}
-              />
-            </Col>
-          </Row>
+        <Container className='donate-supporter-page-section'>
+          <main>
+            <Row className={'donation-section'}>
+              <Col lg={6} lgOffset={0} md={8} mdOffset={1} sm={12}>
+                {isDonating ? (
+                  <ThankYouMessage
+                    askForDonation={!donationFormState.success}
+                  />
+                ) : (
+                  <CtaText />
+                )}
+              </Col>
+              <Col lg={6} lgOffset={0} md={8} mdOffset={1} sm={12}>
+                {!isDonating || donationFormState.success ? (
+                  <MultiTierDonationForm
+                    paymentContext={PaymentContext.DonatePage}
+                  />
+                ) : null}
+              </Col>
+            </Row>
+          </main>
         </Container>
       </Container>
-      <Container className='donate-page-container'>
+      <Container className='donate-supporter-page-section'>
         <Row>
           <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
             <Spacer size='large' />
@@ -133,7 +139,7 @@ function DonatePage({
           </Col>
         </Row>
       </Container>
-      <Container className='donate-page-container'>
+      <Container className='donate-supporter-page-section'>
         <Row>
           <Col lg={10} lgOffset={0} md={8} mdOffset={2} sm={10}>
             <DonationFaqText />

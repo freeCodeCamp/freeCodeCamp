@@ -8,24 +8,20 @@ describe('Donate page', () => {
     cy.visit('/donate');
     cy.get('[data-cy="donate.thank-you"]').should(
       'have.text',
-      'Thank you for being a supporter.'
+      'Thank You for Being a Supporter'
     );
     cy.get('[data-cy="donate.crucial-contribution"]').should(
       'have.text',
       'Your contribution will be crucial in creating resources that empower millions of people to learn new skills and support their families.'
     );
-    cy.get('[data-cy="donate.bigger-donation"]').should(
+    cy.get('[data-cy="donate.if-support-further"]').should(
       'have.text',
-      "Want to make a bigger one-time donation, mail us a check, or give in other ways? Here are many other ways you can support our charity's mission."
+      'If you want to support our charity further, please consider making a one-time donation, sending us a check, or learning about other ways you could support our charity.'
     );
     cy.get('[data-cy="donate-link"]').should(
       'contain.attr',
       'href',
       'https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp'
-    );
-    cy.get('[data-cy="donate.make-another-monthly"]').should(
-      'have.text',
-      'If you want to make another monthly donation, please proceed with selecting your monthly donation amount.'
     );
   });
 });
