@@ -90,7 +90,8 @@
     "verify-trophy": "Verifica Trofeo",
     "link-account": "Collega Account",
     "unlink-account": "Scollega Account",
-    "update-card": "Update your card"
+    "update-card": "Update your card",
+    "donate-now": "Donate Now"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -120,8 +121,10 @@
     },
     "certification-heading": "Ottieni certificazioni verificate gratuite in:",
     "core-certs-heading": "Ottieni certificazioni verificate e gratuite con il curriculum base di freeCodeCamp:",
+    "learn-english-heading": "Learn English for Developers:",
     "professional-certs-heading": "Ottieni certificazioni professionali gratuite:",
     "interview-prep-heading": "Preparati per la ricerca di colloqui di lavoro da sviluppatore:",
+    "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "faq": "Domande frequenti:",
     "faqs": [
@@ -311,6 +314,7 @@
     "donation-initiatives": "Le donazioni a freeCodeCamp vanno alle nostre iniziative educative e aiutano a pagare i server, i servizi e il personale.",
     "donate-text": "Puoi fare una <1>donazione deducibile dalle tasse qui</1>.",
     "trending-guides": "Guide Di Tendenza",
+    "mobile-app": "Mobile App",
     "our-nonprofit": "La nostra Charity",
     "links": {
       "about": "Informazioni",
@@ -504,6 +508,7 @@
     "progress-modal-cta-9": "Dona ora per supportare il nostro curriculum di matematica per sviluppatori.",
     "progress-modal-cta-10": "Dona ora per aiutarci a sviluppare certificazioni di programmazione professionale gratuite per tutti.",
     "help-us-reach-goal": "Donate now to help our charity reach our goal of 10,000 monthly supporters by 2024.",
+    "beta-certification": "This certification is currently in beta. Please consider donating to support the completion of its development.",
     "help-us-develop": "Help us develop free professional programming certifications for all.",
     "nicely-done": "Ben fatto. Hai appena completato {{block}}.",
     "credit-card": "Carta di credito",

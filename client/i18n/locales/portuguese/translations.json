@@ -90,7 +90,8 @@
     "verify-trophy": "Verificar troféu",
     "link-account": "Vincular conta",
     "unlink-account": "Desvincular conta",
-    "update-card": "Update your card"
+    "update-card": "Update your card",
+    "donate-now": "Donate Now"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -120,8 +121,10 @@
     },
     "certification-heading": "Ganhe certificações verificadas gratuitas em:",
     "core-certs-heading": "Obtenha certificações verificadas gratuitamente com o currículo principal do freeCodeCamp:",
+    "learn-english-heading": "Learn English for Developers:",
     "professional-certs-heading": "Obtenha certificações profissionais gratuitas:",
     "interview-prep-heading": "Prepare-se para desenvolvedor em sua procura por emprego:",
+    "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
     "upcoming-heading": "Próximo currículo:",
     "faq": "Perguntas frequentes:",
     "faqs": [
@@ -311,6 +314,7 @@
     "donation-initiatives": "Doações para o freeCodeCamp vão para as nossas iniciativas educacionais e ajudam a pagar por servidores, serviços e equipe.",
     "donate-text": "Você pode <1>fazer uma doação dedutível de imposto aqui</1>.",
     "trending-guides": "Guias em alta",
+    "mobile-app": "Mobile App",
     "our-nonprofit": "Nossa instituição",
     "links": {
       "about": "Sobre",
@@ -504,6 +508,7 @@
     "progress-modal-cta-9": "Doe agora para apoiar o nosso currículo de matemática para desenvolvedores.",
     "progress-modal-cta-10": "Doe agora para nos ajudar a desenvolver certificações de programação profissional gratuitas para todos.",
     "help-us-reach-goal": "Doe agora para ajudar nossa instituição beneficente a atingir nosso objetivo de chegar a 10.000 apoiadores mensais até 2024.",
+    "beta-certification": "This certification is currently in beta. Please consider donating to support the completion of its development.",
     "help-us-develop": "Ajude-nos a desenvolver certificações de programação profissional gratuitas para todos.",
     "nicely-done": "Bom trabalho. Você acabou de completar {{block}}.",
     "credit-card": "Cartão de crédito",

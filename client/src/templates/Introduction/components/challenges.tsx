@@ -10,7 +10,11 @@ import GreenPass from '../../../assets/icons/green-pass';
 import { executeGA } from '../../../redux/actions';
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
-import { isNewJsCert, isNewRespCert } from '../../../utils/is-a-cert';
+import {
+  isNewJsCert,
+  isSciCompPyCert,
+  isNewRespCert
+} from '../../../utils/is-a-cert';
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ executeGA }, dispatch);
@@ -33,7 +37,11 @@ function Challenges({
 }: Challenges): JSX.Element {
   const { t } = useTranslation();
 
-  const isGridMap = isNewRespCert(superBlock) || isNewJsCert(superBlock);
+  const isGridMap = [
+    isNewRespCert(superBlock),
+    isNewJsCert(superBlock),
+    isSciCompPyCert(superBlock) && !isProjectBlock
+  ].some(Boolean);
 
   const firstIncompleteChallenge = challengesWithCompleted.find(
     challenge => !challenge.isCompleted
