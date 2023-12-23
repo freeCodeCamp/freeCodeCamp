@@ -100,6 +100,9 @@ void (async () => {
       join(englishCurriculumDirectory, englishSuperblock)
     );
     for (const englishBlock of englishBlocks) {
+      if (englishBlock.endsWith('.txt')) {
+        continue;
+      }
       const englishChallenges = await readdir(
         join(englishCurriculumDirectory, englishSuperblock, englishBlock)
       );
