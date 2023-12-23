@@ -167,7 +167,7 @@ assert(document.getElementsByTagName('button')?.[0]?.hasAttribute('style'));
 <html>
 <head>
   <title>My Styling Example</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <style>
     p {
       background-color: green;
