@@ -43,9 +43,9 @@ interface MapProps {
 
 const linkSpacingStyle = {
   display: 'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'space-around',
   alignItems: 'center',
-  gap: '15px'
+  gap: '1.5rem'
 };
 
 const superBlockMap = createSuperBlockMap({
