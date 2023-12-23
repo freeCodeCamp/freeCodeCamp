@@ -3,7 +3,7 @@ describe('Picture input field', () => {
     cy.login();
     cy.visit('/settings');
     // Setting aliases here
-    cy.get('input#about-picture').as('pictureInput');
+    cy.get('#about-picture-input').as('pictureInput');
   });
 
   it('Should be possible to type', () => {
