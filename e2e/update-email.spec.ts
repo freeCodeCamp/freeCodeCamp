@@ -5,15 +5,18 @@ let page: Page;
 
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();
-  await page.goto('/');
-  await page.getByRole('link', { name: 'Sign in' }).click();
-  await page
-    .context()
-    .storageState({ path: 'playwright/.auth/certified-user.json' });
-  await page.goto('/update-email');
 });
 
 test.describe('The update-email page', () => {
+  test.beforeAll(async () => {
+    await page.goto('/');
+    await page.getByRole('link', { name: 'Sign in' }).click();
+    await page
+      .context()
+      .storageState({ path: 'playwright/.auth/certified-user.json' });
+    await page.goto('/update-email');
+  });
+
   test('The page renders with correct title', async () => {
     await expect(page).toHaveTitle(
       'Update your email address | freeCodeCamp.org'
@@ -44,27 +47,18 @@ test.describe('The update-email page', () => {
     );
   });
 
-  test('Redirects to signin page when user is not logged in', async () => {
-    await page.goto('/');
-    await page.getByRole('button', { name: translations.buttons.menu }).click();
-    await page
-      .getByRole('button', { name: translations.buttons['sign-out'] })
-      .click();
-
-    await page
-      .getByRole('button', { name: translations.signout.certain })
-      .click();
-
-    await expect(page).toHaveURL(/.*\/learn\/?$/);
-    await page.goto('/update-email');
-    await expect(page).toHaveURL(/.*\/signin\/?$/);
-  });
-
   test('The page has sign out button', async () => {
     const signOutButton = page.getByTestId('update-email-sign-out-button');
 
     await expect(signOutButton).toBeVisible();
     await expect(signOutButton).toContainText(translations.buttons['sign-out']);
     await expect(signOutButton).toHaveAttribute('href', '/signout');
+  });
+});
+
+test.describe('The update-email page when signed out', () => {
+  test('Redirects to signin page when user is not logged in', async () => {
+    await page.goto('/update-email');
+    await expect(page).toHaveURL(/.*\/signin\/?$/);
   });
 });
