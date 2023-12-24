@@ -216,7 +216,6 @@ main {
 }
 
 h1 {
-  text-align: center;
   margin: 30px auto;
 }
 
@@ -226,7 +225,6 @@ h2 {
 
 form {
   width: 100%;
-  padding: 15px auto;
   text-align: center;
   padding: 15px;
 }
@@ -259,7 +257,7 @@ select {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-  min-height: 38px;
+  height: 38px;
   width: 50px;
   text-align: center;
 }
