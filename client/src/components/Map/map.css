@@ -16,7 +16,7 @@
   display: flex;
 }
 
-.map-ui ol li .progress-icon {
+.map-ui ol .progress-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +26,7 @@
   position: relative;
 }
 
-.map-ui ol li .progress-icon .cert-icon-outline {
+.map-ui ol .progress-icon .cert-icon-outline {
   width: 40px;
   height: 40px;
   display: flex;
@@ -36,7 +36,7 @@
   border-radius: 50%;
 }
 
-.map-ui ol li .progress-icon .cert-icon-outline > svg {
+.map-ui ol .progress-icon .cert-icon-outline > svg {
   display: inline-block;
   height: 30px;
   width: auto;
@@ -53,24 +53,6 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
-}
-
-.map-ui ol li .progress-icon .arrow {
-  position: absolute;
-  top: 54px;
-  font-size: 38px;
-}
-
-.map-ui ol li .progress-icon .solid-arrow {
-  color: var(--secondary-color);
-}
-
-.map-ui ol li .progress-icon .grey-arrow {
-  color: var(--quaternary-background);
-}
-
-.map-ui ol li .map-icon {
-  align-self: flex-end;
 }
 
 @media (max-width: 640px) {
