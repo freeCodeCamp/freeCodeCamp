@@ -71,7 +71,7 @@ This is how the The Odin Project logo example you used earlier looks with an alt
 
 # --assignment--
 
-Read about the  <a href="https://www.internetingishard.com/html-and-css/links-and-images/#image-formats" target="_blank">four main image formats</a> that can be used on the web.
+Read about the <a href="https://www.freecodecamp.org/news/image-file-types-picture-format-extensions-jpeg-gif-png-svg-tiff/" target="_blank">four main image formats</a> that can be used on the web.
 
 # --question--
 
@@ -81,7 +81,7 @@ What are the four main image formats that you can use for images on the web?
 
 ## --answers--
 
-TIFF, GIF, PNG, and SVG.
+MOV, GIF, PNG, and SVG.
 
 ---
 

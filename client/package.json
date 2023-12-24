@@ -136,7 +136,9 @@
     "typescript": "5.2.2",
     "util": "0.12.5",
     "uuid": "8.3.2",
-    "validator": "13.11.0"
+    "validator": "13.11.0",
+    "xterm": "^5.2.1",
+    "xterm-addon-fit": "^0.8.0"
   },
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "7.8.3",

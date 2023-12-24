@@ -1,8 +1,4 @@
-import {
-  faAward,
-  faCalendar,
-  faHeart
-} from '@fortawesome/free-solid-svg-icons';
+import { faAward, faCalendar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import type { TFunction } from 'i18next';
@@ -14,6 +10,7 @@ import { getLangCode } from '../../../../../shared/config/i18n';
 import type { User } from '../../../redux/prop-types';
 import { AvatarRenderer } from '../../helpers';
 import Link from '../../helpers/link';
+import SupporterBadge from '../../../assets/icons/supporter-badge';
 import SocialIcons from './social-icons';
 
 import './camper.css';
@@ -85,7 +82,6 @@ function Camper({
             isDonating={isDonating}
             isTopContributor={yearsTopContributor.length > 0}
             picture={picture}
-            userName={username}
           />
         </Col>
       </Row>
@@ -102,7 +98,8 @@ function Camper({
       {location && <p className='text-center location'>{location}</p>}
       {isDonating && (
         <p className='text-center supporter'>
-          <FontAwesomeIcon icon={faHeart} /> {t('profile.supporter')}
+          <SupporterBadge />
+          {t('profile.supporter')}
         </p>
       )}
       {about && <p className='bio text-center'>{about}</p>}
