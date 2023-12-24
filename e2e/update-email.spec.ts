@@ -24,8 +24,8 @@ test.describe('The update-email page', () => {
 
   test('The page has update email form', async () => {
     const form = page.getByTestId('update-email-form');
-    const emailInput = page.getByTestId('update-email-input');
-    const submitButton = page.getByTestId('update-email-submit-button');
+    const emailInput = page.getByLabel('email-input');
+    const submitButton = page.getByRole('button', { name: 'Update my Email' });
 
     await expect(form).toBeVisible();
     await expect(emailInput).toHaveAttribute('type', 'email');
@@ -40,16 +40,16 @@ test.describe('The update-email page', () => {
   });
 
   test('The page has sign out button', async () => {
-    const signOutButton = page.getByTestId('update-email-sign-out-button');
+    const signOutButton = page.getByRole('link', { name: 'Sign out' });
 
     await expect(signOutButton).toBeVisible();
     await expect(signOutButton).toContainText(translations.buttons['sign-out']);
     await expect(signOutButton).toHaveAttribute('href', '/signout');
   });
 
-  test('input box should function correctly', async () => {
-    const emailInput = page.getByTestId('update-email-input');
-    const submitButton = page.getByTestId('update-email-submit-button');
+  test('should enable the submit button if the email input is not empty', async () => {
+    const emailInput = page.getByLabel('email-input');
+    const submitButton = page.getByRole('button', { name: 'Update my Email' });
     await expect(submitButton).toBeDisabled();
     await emailInput.fill('123');
     await expect(submitButton).toBeDisabled();
