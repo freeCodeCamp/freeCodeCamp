@@ -239,7 +239,6 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
             block={true}
             disabled={true}
             id={'button-' + certSlug}
-            target='_blank'
           >
             {t('buttons.claim-cert')}
           </Button>
