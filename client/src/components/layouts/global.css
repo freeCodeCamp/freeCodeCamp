@@ -269,7 +269,8 @@ input[type='submit']:hover,
   color: var(--secondary-background);
 }
 
-button[aria-disabled="true"]:hover, /* this is temporary and is to override bootstrap stylesheet */
+button[aria-disabled='true'],
+button[aria-disabled='true']:hover,
 .btn.disabled,
 .btn[disabled],
 fieldset[disabled] .btn,
