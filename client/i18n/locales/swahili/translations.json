@@ -90,7 +90,8 @@
     "verify-trophy": "Verify Trophy",
     "link-account": "Link Account",
     "unlink-account": "Unlink Account",
-    "update-card": "Update your card"
+    "update-card": "Update your card",
+    "donate-now": "Donate Now"
   },
   "landing": {
     "big-heading-1": "Jifunze kuandika code - bila malipo.",
@@ -120,8 +121,10 @@
     },
     "certification-heading": "Pata vyeti vilivyoidhinishwa bila malipo katika:",
     "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
+    "learn-english-heading": "Learn English for Developers:",
     "professional-certs-heading": "Earn free professional certifications:",
     "interview-prep-heading": "Prepare for the developer interview job search:",
+    "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "faq": "Maswali yanayoulizwa mara kwa mara:",
     "faqs": [
@@ -311,6 +314,7 @@
     "donation-initiatives": "Michango kwa freeCodeCamp huenda kwenye mipango yetu ya elimu na kusaidia kulipia seva, huduma na wafanyakazi.",
     "donate-text": "Unaweza <1>kutoa mchango unaokatwa kodi hapa</1>.",
     "trending-guides": "Miongozo inayovuma",
+    "mobile-app": "Mobile App",
     "our-nonprofit": "Hisani Yetu",
     "links": {
       "about": "Kutuhusu",
@@ -504,6 +508,7 @@
     "progress-modal-cta-9": "Changia sasa ili kusaidia mtaala wetu wa hesabu kwa wasanidi programu.",
     "progress-modal-cta-10": "Changia sasa ili utusaidie kutengeneza uidhinishaji wa programu za kitaalamu bila malipo kwa wote.",
     "help-us-reach-goal": "Donate now to help our charity reach our goal of 10,000 monthly supporters by 2024.",
+    "beta-certification": "This certification is currently in beta. Please consider donating to support the completion of its development.",
     "help-us-develop": "Help us develop free professional programming certifications for all.",
     "nicely-done": "Imefanywa vizuri. Umekamilisha {{block}}.",
     "credit-card": "Kadi ya Mkopo",

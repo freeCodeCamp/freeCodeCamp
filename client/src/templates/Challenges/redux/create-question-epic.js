@@ -4,6 +4,7 @@ import { mapTo, tap } from 'rxjs/operators';
 
 import envData from '../../../../config/env.json';
 import { transformEditorLink } from '../utils';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import { actionTypes } from './action-types';
 import { closeModal } from './actions';
 import {
@@ -73,10 +74,21 @@ function createQuestionEpic(action$, state$, { window }) {
         title: challengeTitle,
         superBlock,
         block,
-        helpCategory
+        helpCategory,
+        challengeType
       } = challengeMetaSelector(state);
 
       challengeFiles = insertEditableRegions(challengeFiles);
+
+      const nonCodeChallenges = [
+        challengeTypes.fillInTheBlank,
+        challengeTypes.exam,
+        challengeTypes.multipleChoice,
+        challengeTypes.video,
+        challengeTypes.dialogue,
+        challengeTypes.msTrophy,
+        challengeTypes.quiz
+      ];
 
       const {
         navigator: { userAgent },
@@ -96,18 +108,20 @@ function createQuestionEpic(action$, state$, { window }) {
       const blockTitle = i18next.t(`intro:${superBlock}.blocks.${block}.title`);
       const endingText = `### ${browserInfoHeading}\n\n${userAgentHeading}\n\n### ${challengeHeading}\n${blockTitle} - ${challengeTitle}\n${challengeUrl}`;
 
-      const camperCodeHeading = i18next.t('forum-help.camper-code');
+      const camperCodeHeading = nonCodeChallenges.includes(challengeType)
+        ? ''
+        : '### ' + i18next.t('forum-help.camper-code') + '\n\n';
 
       const whatsHappeningHeading = i18next.t('forum-help.whats-happening');
       const describe = i18next.t('forum-help.describe');
       const projectOrCodeHeading = projectFormValues.length
-        ? `${i18next.t('forum-help.camper-project')}\n`
+        ? `###${i18next.t('forum-help.camper-project')}\n\n`
         : camperCodeHeading;
       const markdownCodeOrLinks =
         projectFormValues
           ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n\n`)
           ?.join('') || filesToMarkdown(challengeFiles);
-      const textMessage = `### ${whatsHappeningHeading}\n${describe}\n\n### ${projectOrCodeHeading}\n\n${markdownCodeOrLinks}${endingText}`;
+      const textMessage = `### ${whatsHappeningHeading}\n${describe}\n\n${projectOrCodeHeading}${markdownCodeOrLinks}${endingText}`;
 
       const warning = i18next.t('forum-help.warning');
       const tooLongOne = i18next.t('forum-help.too-long-one');

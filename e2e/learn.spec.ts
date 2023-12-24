@@ -4,23 +4,29 @@ import words from '../client/i18n/locales/english/motivation.json';
 
 let page: Page;
 
-// const superBlocks = [
-//   'Responsive Web Design',
-//   'JavaScript Algorithms and Data Structures',
-//   'Front End Development Libraries',
-//   'Data Visualization',
-//   'Relational Database',
-//   'Back End Development and APIs',
-//   'Quality Assurance',
-//   'Scientific Computing with Python',
-//   'Data Analysis with Python',
-//   'Information Security',
-//   'Machine Learning with Python',
-//   'College Algebra with Python',
-//   'Foundational C# with Microsoft',
-//   'Coding Interview Prep',
-//   'Project Euler'
-// ];
+const superBlocks = [
+  'Responsive Web Design',
+  'JavaScript Algorithms and Data Structures (Beta)',
+  'Front End Development Libraries',
+  'Data Visualization',
+  'Relational Database',
+  'Back End Development and APIs',
+  'Quality Assurance',
+  'Scientific Computing with Python (Beta)',
+  'Data Analysis with Python',
+  'Information Security',
+  'Machine Learning with Python',
+  'College Algebra with Python',
+  'A2 English for Developers (Beta)',
+  'Foundational C# with Microsoft',
+  'The Odin Project (Beta)',
+  'Coding Interview Prep',
+  'Project Euler',
+  'Rosetta Code',
+  'Legacy Responsive Web Design Challenges',
+  'JavaScript Algorithms and Data Structures',
+  'Legacy Python for Everybody'
+];
 
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();
@@ -56,20 +62,20 @@ test('the page should have all static data correctly placed', async () => {
   }
 });
 
-// Enable this again after we release the 4 new superblocks
-// test('the page renders all curriculum certifications', async () => {
-//   const curriculumBtns = page.getByTestId('curriculum-map-button');
-//   await expect(curriculumBtns).toHaveCount(15);
-//   for (let i = 0; i < superBlocks.length; i++) {
-//     const btn = curriculumBtns.nth(i);
-//     await expect(btn).toContainText(superBlocks[i]);
-//   }
-// });
+test('the page renders all curriculum certifications', async () => {
+  const curriculumBtns = page.getByTestId('curriculum-map-button');
+  await expect(curriculumBtns).toHaveCount(superBlocks.length);
+  for (let i = 0; i < superBlocks.length; i++) {
+    const btn = curriculumBtns.nth(i);
+    await expect(btn).toContainText(superBlocks[i]);
+  }
+});
 
 test.describe('Learn (authenticated user)', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
   test('the page shows a random quote for an authenticated user', async () => {
+    await page.goto('/learn');
     const shownQuote = await page.getByTestId('random-quote').textContent();
 
     const shownAuthorText = await page
