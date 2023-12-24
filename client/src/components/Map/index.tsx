@@ -3,9 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
+import i18next from 'i18next';
 import {
   SuperBlockStages,
   SuperBlocks,
+  getFirstNotAuditedSuperBlock,
   createSuperBlockMap,
   SuperBlockStageTransKeys
 } from '../../../../shared/config/superblocks';
@@ -14,6 +16,7 @@ import LinkButton from '../../assets/icons/link-button';
 import { Link, Spacer } from '../helpers';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import {
+  curriculumLocale,
   showUpcomingChanges,
   showNewCurriculum
 } from '../../../config/env.json';
@@ -47,6 +50,12 @@ const linkSpacingStyle = {
   alignItems: 'center',
   gap: '1.5rem'
 };
+
+const firstNotAuditedSuperBlock = getFirstNotAuditedSuperBlock({
+  language: curriculumLocale,
+  showNewCurriculum,
+  showUpcomingChanges
+});
 
 const superBlockMap = createSuperBlockMap({
   showNewCurriculum: showNewCurriculum,
@@ -85,6 +94,24 @@ function MapLi({
         justifyContent: 'space-between'
       }}
     >
+      {firstNotAuditedSuperBlock === superBlock && (
+        <>
+          <hr />
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ marginBottom: 0 }}>
+              {i18next.t('learn.help-translate')}{' '}
+            </p>
+            <Link
+              external={true}
+              sameTab={false}
+              to={i18next.t('links:help-translate-link-url')}
+            >
+              {i18next.t('learn.help-translate-link')}
+            </Link>
+            <Spacer size='medium' />
+          </div>
+        </>
+      )}
       {trackProgress && (
         <div className='progress-icon'>
           {completed ? (
