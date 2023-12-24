@@ -96,7 +96,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
                     placeholder='camperbot@example.com'
                     required={true}
                     type='email'
-                    data-playwright-test-label='update-email-input'
+                    aria-label='email-input'
                   />
                 </FormGroup>
                 <Button
@@ -105,7 +105,6 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
                   bsStyle='primary'
                   disabled={getEmailValidationState() !== 'success'}
                   type='submit'
-                  data-playwright-test-label='update-email-submit-button'
                 >
                   {isNewEmail
                     ? t('buttons.update-email')
@@ -113,12 +112,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
                 </Button>
               </form>
               <p className='text-center'>
-                <Link
-                  to='/signout'
-                  data-playwright-test-label='update-email-sign-out-button'
-                >
-                  {t('buttons.sign-out')}
-                </Link>
+                <Link to='/signout'>{t('buttons.sign-out')}</Link>
               </p>
             </Row>
           </Col>
