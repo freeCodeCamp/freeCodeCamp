@@ -8,11 +8,12 @@ export const RibbonIcon = ({ value }: RibbonProps): JSX.Element => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width='100%'
-      height='100%'
+      width='50%'
+      height='50%'
       viewBox='0 0 45 50'
       fill='none'
       aria-hidden='true'
+      style={{ marginLeft: '4rem' }}
     >
       <path
         d='M25 35.3418L35.4851 28L44.5957 41.0113L36.2658 39.7151L34.1106 48.353L25 35.3418Z'
@@ -51,11 +52,12 @@ export const IncompleteIcon = ({ value }: RibbonProps): JSX.Element => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width='100%'
-      height='100%'
+      width='50%'
+      height='50%'
       viewBox='0 0 45 50'
       fill='none'
       aria-hidden='true'
+      style={{ marginLeft: '4rem' }}
     >
       <circle cx='21.9999' cy='21' r='20' fill='grey' />
       <circle
