@@ -1,4 +1,3 @@
-import i18next from 'i18next';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -7,7 +6,6 @@ import { createSelector } from 'reselect';
 import {
   SuperBlockStages,
   SuperBlocks,
-  getFirstNotAuditedSuperBlock,
   createSuperBlockMap,
   SuperBlockStageTransKeys
 } from '../../../../shared/config/superblocks';
@@ -16,7 +14,6 @@ import LinkButton from '../../assets/icons/link-button';
 import { Link, Spacer } from '../helpers';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import {
-  curriculumLocale,
   showUpcomingChanges,
   showNewCurriculum
 } from '../../../config/env.json';
@@ -29,7 +26,10 @@ import {
 } from '../../redux/selectors';
 
 import { CurrentCert } from '../../redux/prop-types';
-import RibbonIcon from '../../assets/icons/completion-ribbon';
+import {
+  RibbonIcon,
+  IncompleteIcon
+} from '../../assets/icons/completion-ribbon';
 import {
   certSlugTypeMap,
   superBlockCertTypeMap
@@ -53,12 +53,6 @@ const superBlockMap = createSuperBlockMap({
   showUpcomingChanges: showUpcomingChanges
 });
 
-const firstNotAuditedSuperBlock = getFirstNotAuditedSuperBlock({
-  language: curriculumLocale,
-  showNewCurriculum,
-  showUpcomingChanges
-});
-
 const mapStateToProps = createSelector(
   isSignedInSelector,
   currentCertsSelector,
@@ -71,7 +65,6 @@ const mapStateToProps = createSelector(
 function MapLi({
   superBlock,
   landing = false,
-  last = false,
   trackProgress,
   completed,
   index
@@ -84,48 +77,31 @@ function MapLi({
   index: number;
 }) {
   return (
-    <>
-      {firstNotAuditedSuperBlock === superBlock && (
-        <>
-          <hr />
-          <div style={{ textAlign: 'center' }}>
-            <p style={{ marginBottom: 0 }}>
-              {i18next.t('learn.help-translate')}{' '}
-            </p>
-            <Link
-              external={true}
-              sameTab={false}
-              to={i18next.t('links:help-translate-link-url')}
-            >
-              {i18next.t('learn.help-translate-link')}
-            </Link>
-            <Spacer size='medium' />
-          </div>
-        </>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}
+    >
+      {trackProgress && (
+        <div className='progress-icon'>
+          {completed ? (
+            <RibbonIcon value={index} />
+          ) : (
+            <IncompleteIcon value={index} />
+          )}
+        </div>
       )}
-      <li
-        data-test-label='curriculum-map-button'
-        data-playwright-test-label='curriculum-map-button'
-      >
-        {trackProgress && (
-          <div className='progress-icon'>
-            {completed ? (
-              <RibbonIcon value={index} />
-            ) : (
-              <span className='progress-number'>{index}</span>
-            )}
-            {!last && <span className='arrow solid-arrow'>&#x21e3;</span>}
-          </div>
-        )}
-        <Link className='btn link-btn btn-lg' to={`/learn/${superBlock}/`}>
-          <div style={linkSpacingStyle}>
-            <SuperBlockIcon className='map-icon' superBlock={superBlock} />
-            {getSuperBlockTitleForMap(superBlock)}
-          </div>
-          {landing && <LinkButton />}
-        </Link>
-      </li>
-    </>
+      <Link className='btn link-btn btn-lg' to={`/learn/${superBlock}/`}>
+        <div style={linkSpacingStyle}>
+          <SuperBlockIcon className='map-icon' superBlock={superBlock} />
+          {getSuperBlockTitleForMap(superBlock)}
+        </div>
+        {landing && <LinkButton />}
+      </Link>
+    </div>
   );
 }
 
@@ -147,41 +123,34 @@ function MapStage({
   return (
     <ol>
       {vals.length ? (
-        vals.map(
-          (
-            superBlock: SuperBlocks,
-            i: number,
-            superBlockMap: SuperBlocks[] | string[]
-          ) => (
-            <MapLi
-              key={i}
-              index={Number(startingIndex + i + 1)}
-              last={i + 1 === superBlockMap.length}
-              trackProgress={
-                ![SuperBlockStages.Upcoming, SuperBlockStages.Extra].includes(
-                  stage
-                )
-              }
-              completed={
-                isSignedIn
-                  ? Boolean(
-                      currentCerts?.find(
-                        (cert: { certSlug: string }) =>
-                          (certSlugTypeMap as { [key: string]: string })[
-                            cert.certSlug
-                          ] ===
-                          (superBlockCertTypeMap as { [key: string]: string })[
-                            superBlock
-                          ]
-                      )
+        vals.map((superBlock: SuperBlocks, i: number) => (
+          <MapLi
+            key={i}
+            index={Number(startingIndex + i + 1)}
+            trackProgress={
+              ![SuperBlockStages.Upcoming, SuperBlockStages.Extra].includes(
+                stage
+              )
+            }
+            completed={
+              isSignedIn
+                ? Boolean(
+                    currentCerts?.find(
+                      (cert: { certSlug: string }) =>
+                        (certSlugTypeMap as { [key: string]: string })[
+                          cert.certSlug
+                        ] ===
+                        (superBlockCertTypeMap as { [key: string]: string })[
+                          superBlock
+                        ]
                     )
-                  : false
-              }
-              superBlock={superBlock}
-              landing={forLanding}
-            />
-          )
-        )
+                  )
+                : false
+            }
+            superBlock={superBlock}
+            landing={forLanding}
+          />
+        ))
       ) : (
         <></>
       )}
