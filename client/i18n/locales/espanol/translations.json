@@ -90,7 +90,8 @@
     "verify-trophy": "Verify Trophy",
     "link-account": "Link Account",
     "unlink-account": "Unlink Account",
-    "update-card": "Update your card"
+    "update-card": "Update your card",
+    "donate-now": "Donate Now"
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
@@ -120,8 +121,10 @@
     },
     "certification-heading": "Obtén certificaciones verificadas gratuitas en:",
     "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
+    "learn-english-heading": "Learn English for Developers:",
     "professional-certs-heading": "Earn free professional certifications:",
     "interview-prep-heading": "Prepare for the developer interview job search:",
+    "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "faq": "Preguntas frecuentes:",
     "faqs": [
@@ -311,6 +314,7 @@
     "donation-initiatives": "Las donaciones a freeCodeCamp se destinan a nuestras iniciativas educativas y ayudan a pagar los servidores, los servicios y el personal.",
     "donate-text": "Puedes <1>hacer una donación deducible de impuestos aquí</1>.",
     "trending-guides": "Guías de tendencias",
+    "mobile-app": "Mobile App",
     "our-nonprofit": "Nuestra Caridad",
     "links": {
       "about": "Acerca de",
@@ -504,6 +508,7 @@
     "progress-modal-cta-9": "Donar ahora para apoyar nuestro plan de estudios de matemáticas para los desarrolladores.",
     "progress-modal-cta-10": "Dona ahora para ayudarnos a desarrollar certificaciones profesionales gratuitas para todos.",
     "help-us-reach-goal": "Donate now to help our charity reach our goal of 10,000 monthly supporters by 2024.",
+    "beta-certification": "This certification is currently in beta. Please consider donating to support the completion of its development.",
     "help-us-develop": "Help us develop free professional programming certifications for all.",
     "nicely-done": "Bien hecho. Acabas de completar {{block}}.",
     "credit-card": "Tarjeta de crédito",

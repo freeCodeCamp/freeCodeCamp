@@ -59,20 +59,20 @@ function ExitExamModal({
       </Modal.Body>
       <Modal.Footer className='reset-modal-footer'>
         <Button
-          data-cy='exit-exam-modal-confirm'
-          block={true}
-          bsStyle='danger'
-          onClick={exitExam}
-        >
-          {t('learn.exam.exit-yes')}
-        </Button>
-        <Button
           data-cy='exit-exam-modal-deny'
           block={true}
           bsStyle='primary'
           onClick={closeExitExamModal}
         >
           {t('learn.exam.exit-no')}
+        </Button>
+        <Button
+          data-cy='exit-exam-modal-confirm'
+          block={true}
+          bsStyle='danger'
+          onClick={exitExam}
+        >
+          {t('learn.exam.exit-yes')}
         </Button>
       </Modal.Footer>
     </Modal>

@@ -33,9 +33,11 @@ export const CtaText = (): JSX.Element => {
 };
 
 export const ThankYouMessage = ({
-  askForDonation
+  askForDonation,
+  thankContributon
 }: {
   askForDonation: boolean;
+  thankContributon?: boolean;
 }): JSX.Element => {
   const { t } = useTranslation();
   return (
@@ -43,25 +45,32 @@ export const ThankYouMessage = ({
       <h1 data-playwright-test-label='main-head' data-cy='donate.thank-you'>
         {t('donate.thank-you')}
       </h1>
-      {askForDonation && (
+      {(askForDonation || thankContributon) && (
         <>
           <Spacer size='medium' />
           <p data-cy='donate.crucial-contribution'>
             {t('donate.crucial-contribution')}
           </p>
-          <p data-cy='donate.bigger-donation'>
-            {t('donate.bigger-donation')}{' '}
-            <Trans i18nKey='donate.other-ways'>
-              <a data-cy='donate-link' href={t('links:donate.other-ways-url')}>
-                placeholder
-              </a>
-            </Trans>
-          </p>
-          <p data-cy='donate.make-another-monthly'>
-            {t('donate.if-another-monthly')}
-          </p>
         </>
       )}
+      {askForDonation && <OtherWaysToSupport />}
+    </>
+  );
+};
+
+export const OtherWaysToSupport = (): JSX.Element => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <p data-cy='donate.if-support-further'>
+        <Trans i18nKey='donate.if-support-further'>
+          <a href={t('links:donate.one-time-external-url')}>placeholder</a>
+          <a href={t('links:donate.mail-check-url')}>placeholder</a>
+          <a data-cy='donate-link' href={t('links:donate.other-ways-url')}>
+            placeholder
+          </a>
+        </Trans>
+      </p>
     </>
   );
 };
@@ -198,27 +207,50 @@ export const DonationFaqText = (): JSX.Element => {
   );
 };
 
-export const SupportBenefitsText = (): JSX.Element => {
+export const SupportBenefitsText = ({
+  isSupportersPage
+}: {
+  isSupportersPage?: boolean;
+}): JSX.Element => {
   const { t } = useTranslation();
   return (
     <>
-      <h2>{t('donate.support-benefits-title')}</h2>
-      <ul>
-        <li>{t('donate.support-benefits-1')}</li>
-        <li>{t('donate.support-benefits-2')}</li>
-        <li>{t('donate.support-benefits-3')}</li>
-        <li>{t('donate.support-benefits-4')}</li>
-        <li>{t('donate.support-benefits-5')}</li>
-      </ul>
+      <h2>
+        {isSupportersPage
+          ? t('donate.exclusive-features')
+          : t('donate.support-benefits-title')}
+      </h2>
+      <BenefitsList />
     </>
   );
 };
 
-export const CurrentInitiativesText = (): JSX.Element => {
+const BenefitsList = (): JSX.Element => {
+  const { t } = useTranslation();
+  return (
+    <ul>
+      <li>{t('donate.support-benefits-1')}</li>
+      <li>{t('donate.support-benefits-2')}</li>
+      <li>{t('donate.support-benefits-3')}</li>
+      <li>{t('donate.support-benefits-4')}</li>
+      <li>{t('donate.support-benefits-5')}</li>
+    </ul>
+  );
+};
+
+export const CurrentInitiativesText = ({
+  isSupportersPage
+}: {
+  isSupportersPage?: boolean;
+}): JSX.Element => {
   const { t } = useTranslation();
   return (
     <>
-      <h2>{t('donate.current-initiatives-title')}</h2>
+      <h2>
+        {isSupportersPage
+          ? t('donate.your-donation-helps-followings')
+          : t('donate.current-initiatives-title')}
+      </h2>
       <ul>
         <li>{t('donate.current-initiatives-1')}</li>
         <li>{t('donate.current-initiatives-2')}</li>
