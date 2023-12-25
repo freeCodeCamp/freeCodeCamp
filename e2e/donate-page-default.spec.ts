@@ -12,58 +12,6 @@ const pageElements = {
   campersImage: 'landing-page-figure'
 };
 
-const frequentlyAskedQuestions = [
-  translations.donate['get-help'],
-  translations.donate['how-transparent'],
-  translations.donate['how-efficient'],
-  translations.donate['how-one-time'],
-  translations.donate['does-crypto'],
-  translations.donate['can-check'],
-  translations.donate['how-matching-gift'],
-  translations.donate['how-endowment'],
-  translations.donate['how-legacy'],
-  translations.donate['how-stock'],
-  translations.donate['how-update'],
-  translations.donate['anything-else']
-];
-
-const frequentlyAskedAnswers = [
-  translations.donate['forward-receipt'],
-  [
-    translations.donate['very-transparent'],
-    'You can download our IRS Determination Letter here.',
-    'You can download our most recent 990 (annual tax report) here.'
-  ],
-  [translations.donate['fcc-budget'], translations.donate['help-millions']],
-  [
-    "If you'd prefer to make one-time donations, you can support freeCodeCamp's mission whenever you have cash to spare. You can use this link to donate whatever amount feels right through PayPal.",
-    translations.donate['wire-transfer']
-  ],
-  translations.donate['yes-cryptocurrency'],
-  [
-    translations.donate['yes-check'],
-    'Free Code Camp, Inc.',
-    '3905 Hedgcoxe Rd',
-    'PO Box 250352',
-    'Plano, TX 75025'
-  ],
-  [
-    translations.donate['employers-vary'],
-    translations.donate['some-volunteer'],
-    translations.donate['help-matching-gift']
-  ],
-  translations.donate['endowment'],
-  [
-    translations.donate['we-honored'],
-    translations.donate['legacy-gift-message'],
-    translations.donate['thank-wikimedia'],
-    translations.donate['legacy-gift-questions']
-  ],
-  translations.donate['welcome-stock'],
-  translations.donate['forward-receipt'],
-  translations.donate['other-support']
-];
-
 const donationStringReplacements = {
   usdPlaceHolder: '{{usd}}',
   hoursPlaceHolder: '{{hours}}'
@@ -205,21 +153,161 @@ test.describe('Donate Page', () => {
   });
 
   test('should display the faq list with buttons', async () => {
-    for (let i = 0; i < frequentlyAskedQuestions.length; i++) {
-      const frequentlyAskedQuestion = page.getByRole('button', {
-        name: frequentlyAskedQuestions[i]
-      });
-      await frequentlyAskedQuestion.isVisible();
-      await frequentlyAskedQuestion.click();
-      const frequentlyAskedAnswer = frequentlyAskedAnswers[i];
-      if (Array.isArray(frequentlyAskedAnswer)) {
-        for (const answer of frequentlyAskedAnswer) {
-          await page.getByText(answer).isVisible();
-        }
-      } else {
-        await page.getByText(frequentlyAskedAnswer).isVisible();
-      }
-      await frequentlyAskedQuestion.click();
-    }
+    const faq1 = page.getByRole('button', {
+      name: translations.donate['get-help']
+    });
+    await expect(faq1).toBeVisible();
+    await faq1.click();
+    await expect(
+      page.getByText(translations.donate['forward-receipt'])
+    ).toBeVisible();
+    await faq1.click();
+
+    const faq2 = page.getByRole('button', {
+      name: translations.donate['how-transparent']
+    });
+    await expect(faq2).toBeVisible();
+    await faq2.click();
+    await expect(
+      page.getByText(translations.donate['very-transparent'])
+    ).toBeVisible();
+    await expect(
+      page.getByText('You can download our IRS Determination Letter here.')
+    ).toBeVisible();
+    await expect(
+      page.getByText(
+        'You can download our most recent 990 (annual tax report) here.'
+      )
+    ).toBeVisible();
+    await faq2.click();
+
+    const faq3 = page.getByRole('button', {
+      name: translations.donate['how-efficient']
+    });
+    await expect(faq3).toBeVisible();
+    await faq3.click();
+    await expect(
+      page.getByText(
+        "freeCodeCamp's budget is much smaller than most comparable charity. We haven't brought in professional fundraisers. Instead, Quincy does everything himself."
+      )
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['help-millions'])
+    ).toBeVisible();
+    await faq3.click();
+
+    const faq4 = page.getByRole('button', {
+      name: translations.donate['how-one-time']
+    });
+    await expect(faq4).toBeVisible();
+    await faq4.click();
+    await expect(
+      page.getByText(
+        "If you'd prefer to make one-time donations, you can support freeCodeCamp's mission whenever you have cash to spare. You can use this link to donate whatever amount feels right through PayPal."
+      )
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['wire-transfer'])
+    ).toBeVisible();
+    await faq4.click();
+
+    const faq5 = page.getByRole('button', {
+      name: translations.donate['does-crypto']
+    });
+    await expect(faq5).toBeVisible();
+    await faq5.click();
+    await expect(
+      page.getByText(translations.donate['yes-cryptocurrency'])
+    ).toBeVisible();
+    await faq5.click();
+
+    const faq6 = page.getByRole('button', {
+      name: translations.donate['can-check']
+    });
+    await expect(faq6).toBeVisible();
+    await faq6.click();
+    await expect(
+      page.getByText(translations.donate['yes-check'])
+    ).toBeVisible();
+    await expect(page.getByText('Free Code Camp, Inc.')).toBeVisible();
+    await expect(page.getByText('3905 Hedgcoxe Rd')).toBeVisible();
+    await expect(page.getByText('PO Box 250352')).toBeVisible();
+    await expect(page.getByText('Plano, TX 75025')).toBeVisible();
+    await faq6.click();
+
+    const faq7 = page.getByRole('button', {
+      name: translations.donate['how-matching-gift']
+    });
+    await expect(faq7).toBeVisible();
+    await faq7.click();
+    await expect(
+      page.getByText(translations.donate['employers-vary'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['some-volunteer'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['help-matching-gift'])
+    ).toBeVisible();
+    await faq7.click();
+
+    const faq8 = page.getByRole('button', {
+      name: translations.donate['how-endowment']
+    });
+    await expect(faq8).toBeVisible();
+    await faq8.click();
+    await expect(
+      page.getByText(translations.donate['endowment'])
+    ).toBeVisible();
+    await faq8.click();
+
+    const faq9 = page.getByRole('button', {
+      name: translations.donate['how-legacy']
+    });
+    await expect(faq9).toBeVisible();
+    await faq9.click();
+    await expect(
+      page.getByText(translations.donate['we-honored'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['legacy-gift-message'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['thank-wikimedia'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['legacy-gift-questions'])
+    ).toBeVisible();
+    await faq9.click();
+
+    const faq10 = page.getByRole('button', {
+      name: translations.donate['how-stock']
+    });
+    await expect(faq10).toBeVisible();
+    await faq10.click();
+    await expect(
+      page.getByText(translations.donate['welcome-stock'])
+    ).toBeVisible();
+    await faq10.click();
+
+    const faq11 = page.getByRole('button', {
+      name: translations.donate['how-update']
+    });
+    await expect(faq11).toBeVisible();
+    await faq11.click();
+    await expect(
+      page.getByText(translations.donate['forward-receipt'])
+    ).toBeVisible();
+    await faq11.click();
+
+    const faq12 = page.getByRole('button', {
+      name: translations.donate['anything-else']
+    });
+    await expect(faq12).toBeVisible();
+    await faq12.click();
+    await expect(
+      page.getByText(translations.donate['other-support'])
+    ).toBeVisible();
+    await faq12.click();
   });
 });
