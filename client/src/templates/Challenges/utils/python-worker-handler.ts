@@ -1,3 +1,4 @@
+// TODO: This might be cleaner as a class.
 import pythonWorkerData from '../../../../config/browser-scripts/python-worker.json';
 
 const pythonWorkerSrc = `/js/${pythonWorkerData.filename}.js`;
@@ -5,9 +6,16 @@ const pythonWorkerSrc = `/js/${pythonWorkerData.filename}.js`;
 let worker: Worker | null = null;
 let testWorker: Worker | null = null;
 let listener: ((event: MessageEvent) => void) | null = null;
-let resetTerminal: (() => void) | null = null;
+type Code = {
+  contents: string;
+  editableContents: string;
+  original: string;
+};
+// We need to keep track of the last code message so we can re-run it if the
+// worker is reset.
+let lastCodeMessage: Code | null = null;
 
-export function getPythonWorker(): Worker {
+function getPythonWorker(): Worker {
   if (!worker) {
     worker = new Worker(pythonWorkerSrc);
   }
@@ -23,8 +31,14 @@ export function getPythonTestWorker(): Worker {
 
 type PythonWorkerEvent = {
   data: {
-    type: 'print' | 'input' | 'contentLoaded';
-    text: string;
+    type:
+      | 'print'
+      | 'input'
+      | 'contentLoaded'
+      | 'reset'
+      | 'stopped'
+      | 'is-alive';
+    text?: string;
   };
 };
 
@@ -35,31 +49,75 @@ type PythonWorkerEvent = {
  * @param handlers.input - A function that handles input messages from the python worker
  * @param reset - A function that resets the terminal
  */
-export function registerTerminal(
-  handlers: {
-    print: (text: string) => void;
-    input: (text: string) => void;
-  },
-  reset: () => void
-): void {
+export function registerTerminal(handlers: {
+  print: (text?: string) => void;
+  input: (text?: string) => void;
+  reset: () => void;
+}): void {
   const pythonWorker = getPythonWorker();
   if (listener) pythonWorker.removeEventListener('message', listener);
   listener = (event: PythonWorkerEvent) => {
+    // TODO: refactor text -> value or msg.
     const { type, text } = event.data;
-    // Ignore contentLoaded messages for now.
-    if (type === 'contentLoaded') return;
-    handlers[type](text);
+
+    // TODO: this is a bit messy with the 'handlers' as well as the implicit
+    // handlers reacting to stopped and contentLoaded messages.
+    if (type === 'contentLoaded') return; // Ignore contentLoaded messages for now.
+    if (type === 'is-alive') {
+      clearTimeout(Number(text));
+      return;
+    }
+    // 'stopped' means the worker is ignoring 'run' messages.
+    if (type === 'stopped') {
+      clearTimeout(Number(text));
+      sendListenMessage();
+      // Generally, we get here if the learner changes their code while the
+      // worker is busy. In that case, we want to re-run the code on receipt of
+      // the 'stopped' message.
+      if (lastCodeMessage) runPythonCode(lastCodeMessage);
+    } else {
+      handlers[type](text);
+    }
   };
   pythonWorker.addEventListener('message', listener);
-  resetTerminal = reset;
 }
 
 /**
- * Terminates the existing python worker and creates a new one.
+ * Tries to cancel the currently running code and, if it cannot, terminate the worker.
  */
-export function resetPythonWorker(): void {
-  if (resetTerminal) resetTerminal();
-  worker?.terminate();
-  worker = new Worker(pythonWorkerSrc);
-  if (listener) worker.addEventListener('message', listener);
+export function interruptCodeExecution(): void {
+  const resetId = setTimeout(() => {
+    getPythonWorker().terminate();
+    worker = new Worker(pythonWorkerSrc);
+    if (listener) getPythonWorker().addEventListener('message', listener);
+  }, 1000) as unknown as number; // This is running the browser, so setTimeout returns a number, but TS doesn't know that.
+  navigator.serviceWorker.controller?.postMessage(
+    JSON.stringify({
+      type: 'cancel',
+      value: '' + resetId // Converting to string for convenience. (TODO: check if necesary)
+    })
+  );
+
+  // TODO: Since loading pyodide is slow, there's a risk that this will
+  // terminate the worker before it's finished loading. As such we should check
+  // if the worker has loaded before attempting to reset it (or send run
+  // messages).
+
+  // TODO: sort out the terminology.
+  getPythonWorker().postMessage({ type: 'cancel', value: resetId });
+}
+
+export function runPythonCode(code: {
+  contents: string;
+  editableContents: string;
+  original: string;
+}): void {
+  lastCodeMessage = code;
+  getPythonWorker().postMessage({ type: 'run', code });
+}
+
+// If the python worker reports that it has stopped, we need to send a listen
+// message to get it to listen to run messages again.
+function sendListenMessage(): void {
+  getPythonWorker().postMessage({ type: 'listen' });
 }
