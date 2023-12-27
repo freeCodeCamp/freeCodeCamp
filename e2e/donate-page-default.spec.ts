@@ -187,9 +187,7 @@ test.describe('Donate Page', () => {
     await expect(faq3).toBeVisible();
     await faq3.click();
     await expect(
-      page.getByText(
-        "freeCodeCamp's budget is much smaller than most comparable charity. We haven't brought in professional fundraisers. Instead, Quincy does everything himself."
-      )
+      page.getByText(translations.donate['fcc-budget'])
     ).toBeVisible();
     await expect(
       page.getByText(translations.donate['help-millions'])
