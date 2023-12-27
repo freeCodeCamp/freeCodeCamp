@@ -1,13 +1,13 @@
-// types for a generated exam
-export interface GeneratedAnswer {
+export interface Answer {
   id: string;
   answer: string;
 }
 
+// types for a generated exam
 export interface GeneratedQuestion {
   id: string;
   question: string;
-  answers: GeneratedAnswer[];
+  answers: Answer[];
 }
 
 export type GeneratedExam = GeneratedQuestion[];
@@ -16,19 +16,10 @@ export type GeneratedExam = GeneratedQuestion[];
 export interface UserQuestion {
   id: string;
   question: string;
-  answer: GeneratedAnswer;
+  answer: Answer;
 }
 
 export interface UserExam {
   userExamQuestions: UserQuestion[];
-  examTimeInSeconds: number;
-}
-
-export interface ExamResults {
-  numberOfCorrectAnswers: number;
-  numberOfQuestionsInExam: number;
-  percentCorrect: number;
-  passingPercent: number;
-  passed: boolean;
   examTimeInSeconds: number;
 }

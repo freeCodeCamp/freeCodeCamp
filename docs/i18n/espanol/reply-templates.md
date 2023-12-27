@@ -107,7 +107,7 @@ If you have any questions, feel free to ask questions on the ["Contributors" cat
 > When PR is invalid.
 
 ```markdown
-Hey @username
+Hey there,
 
 Thank you for opening this pull request.
 
@@ -157,7 +157,7 @@ Thank you for your enthusiasm in contributing to our project. We eagerly await m
 **Happy Contributing!** 🌟
 ```
 
-## Issue Not Triaged
+## PR Opened While Issue Is Not Triaged
 
 > When a PR is opened for an issue that hasn't been triaged and marked as ready for contribution.
 
@@ -233,4 +233,16 @@ We typically do not assign issues. Instead, we accept the first pull request tha
 Issues labeled with `help wanted` or `first timers only` are open for contributions.
 
 Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/). We prioritize contributors following the instructions in our guide. Join us in [our chat room](https://discord.gg/PRyKn3Vbay) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing - our community will be happy to assist you.
+```
+
+## Requests for Assignment While Issue Is Not Triaged
+
+> When a contributor requests for assignment but the issue hasn't been triaged or marked as ready for contribution.
+
+```md
+Hi there,
+
+Thanks for your interest in contributing.
+
+This issue has not been triaged yet, and a solution has not been agreed upon. Once the issue is open for contribution, you are welcome to create a pull request to reflect the issue consensus. Please also note that we typically do not assign issues. Instead, we accept the first pull request that comprehensively solves the issue.
 ```

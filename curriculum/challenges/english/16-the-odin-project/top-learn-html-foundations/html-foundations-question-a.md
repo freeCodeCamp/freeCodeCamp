@@ -27,7 +27,7 @@ Using the correct elements for content is called semantic HTML. You will explore
 
 # --assignment--
 
-Watch Kevin Powell’s [Introduction to HTML video](https://www.youtube.com/watch?v=LGQuIIv2RVA&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-)
+Watch Kevin Powell’s <a href="https://www.youtube.com/watch?v=LGQuIIv2RVA&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-" target="_blank">Introduction to HTML video</a>
 
 # --question--
 
