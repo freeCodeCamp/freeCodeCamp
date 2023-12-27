@@ -4,6 +4,24 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 const apiLocation = process.env.API_LOCATION || 'http://localhost:3000';
 
+const contents = [
+  translations.learn['read-this'].heading,
+  translations.learn['read-this'].p1,
+  translations.learn['read-this'].p2,
+  translations.learn['read-this'].p3,
+  translations.learn['read-this'].p4,
+  translations.learn['read-this'].p5,
+  translations.learn['read-this'].p6,
+  translations.learn['read-this'].p7,
+  translations.learn['read-this'].p8,
+  "And if you want to learn more math and computer science theory, we also have thousands of hours of video courses on freeCodeCamp's YouTube channel.",
+  translations.learn['read-this'].p10,
+  'You can do this on LinkedIn and GitHub, and also on the freeCodeCamp forum.',
+  translations.learn['read-this'].p12,
+  translations.misc.quincy,
+  translations.misc['email-blast']
+];
+
 test.describe('Email sign-up page when user is not signed in', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
 
@@ -15,6 +33,28 @@ test.describe('Email sign-up page when user is not signed in', () => {
     });
 
     await page.goto('/email-sign-up');
+  });
+
+  test('should display the content correctly', async ({ page }) => {
+    for (const content of contents) {
+      await expect(page.getByText(content)).toBeVisible();
+    }
+
+    const youtubeLink = page.getByRole('link', {
+      name: "freeCodeCamp's YouTube channel"
+    });
+    await expect(youtubeLink).toHaveAttribute(
+      'href',
+      'https://youtube.com/freecodecamp'
+    );
+
+    const forumLink = page.getByRole('link', {
+      name: 'the freeCodeCamp forum'
+    });
+    await expect(forumLink).toHaveAttribute(
+      'href',
+      'https://forum.freecodecamp.org'
+    );
   });
 
   test("should not enable Quincy's weekly newsletter when the user clicks the sign up button", async ({
@@ -88,6 +128,28 @@ test.describe('Email sign-up page when user is signed in', () => {
     });
 
     await page.goto('/email-sign-up');
+  });
+
+  test('should display the content correctly', async ({ page }) => {
+    for (const content of contents) {
+      await expect(page.getByText(content)).toBeVisible();
+    }
+
+    const youtubeLink = page.getByRole('link', {
+      name: "freeCodeCamp's YouTube channel"
+    });
+    await expect(youtubeLink).toHaveAttribute(
+      'href',
+      'https://youtube.com/freecodecamp'
+    );
+
+    const forumLink = page.getByRole('link', {
+      name: 'the freeCodeCamp forum'
+    });
+    await expect(forumLink).toHaveAttribute(
+      'href',
+      'https://forum.freecodecamp.org'
+    );
   });
 
   test("should disable Quincy's weekly newsletter if the user clicks No", async ({
