@@ -6,6 +6,19 @@
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 [![Discord](https://img.shields.io/discord/692816967895220344?logo=discord&label=Discord&color=5865F2)](https://discord.gg/PRyKn3Vbay)
 
+<div align="center">
+
+**Share freeCodeCamp Repository**
+
+[![][share-x-shield]][share-x-link]
+[![][share-telegram-shield]][share-telegram-link]
+[![][share-whatsapp-shield]][share-whatsapp-link]
+[![][share-reddit-shield]][share-reddit-link]
+[![][share-mastodon-shield]][share-mastodon-link]
+[![][share-linkedin-shield]][share-linkedin-link]
+
+</div>
+
 ## freeCodeCamp.org's open-source codebase and curriculum
 
 [freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) charity](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 40,000 people get their first developer job.
@@ -246,3 +259,27 @@ The content of this repository is bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
 - The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories thereon are copyright © 2023 freeCodeCamp.org
+
+<!--
+    Share Buttons:
+    - LinkedIn
+    - Mastodon
+    - Reddit
+    - Telegram
+    - WhatsApp
+    - X
+
+    Each button includes a link and a shield for sharing the associated content.
+-->
+[share-linkedin-link]: https://linkedin.com/feed
+[share-linkedin-shield]: https://img.shields.io/badge/-share%20on%20linkedin-black?labelColor=black&logo=linkedin&logoColor=white&style=flat-square
+[share-mastodon-link]: https://mastodon.social/share?text=Check%20this%20GitHub%20repository%20out%20%F0%9F%A4%AF%20freeCodeCamp%20-%20freeCodeCamp.org's%20open-source%20codebase%20and%20curriculum.%20Learn%20to%20code%20for%20free.%20https%3A%2F%2Fgithub.com%2FfreeCodeCamp%2FfreeCodeCamp%20#freeCodeCamp%20#opensource%20#coding
+[share-mastodon-shield]: https://img.shields.io/badge/-share%20on%20mastodon-black?labelColor=black&logo=mastodon&logoColor=white&style=flat-square
+[share-reddit-link]: https://www.reddit.com/submit?title=Check%20this%20GitHub%20repository%20out%20%F0%9F%A4%AF%20freeCodeCamp%20-%20freeCodeCamp.org's%20open-source%20codebase%20and%20curriculum.%20Learn%20to%20code%20for%20free.%20%23freeCodeCamp%20%23opensource%20%23coding&url=https%3A%2F%2Fgithub.com%2FfreeCodeCamp%2FfreeCodeCamp
+[share-reddit-shield]: https://img.shields.io/badge/-share%20on%20reddit-black?labelColor=black&logo=reddit&logoColor=white&style=flat-square
+[share-telegram-link]: https://t.me/share/url"?text=Check%20this%20GitHub%20repository%20out%20%F0%9F%A4%AF%20freeCodeCamp%20-%20freeCodeCamp.org's%20open-source%20codebase%20and%20curriculum.%20Learn%20to%20code%20for%20free.%20%23freeCodeCamp%20%23opensource%20%23coding&url=https%3A%2F%2Fgithub.com%2FfreeCodeCamp%2FfreeCodeCamp
+[share-telegram-shield]: https://img.shields.io/badge/-share%20on%20telegram-black?labelColor=black&logo=telegram&logoColor=white&style=flat-square
+[share-whatsapp-link]: https://api.whatsapp.com/send?text=Check%20this%20GitHub%20repository%20out%20%F0%9F%A4%AF%20freeCodeCamp%20-%20freeCodeCamp.org's%20open-source%20codebase%20and%20curriculum.%20Learn%20to%20code%20for%20free.%20https%3A%2F%2Fgithub.com%2FfreeCodeCamp%2FfreeCodeCamp%20%23freeCodeCamp%20%23opensource%20%23coding
+[share-whatsapp-shield]: https://img.shields.io/badge/-share%20on%20whatsapp-black?labelColor=black&logo=whatsapp&logoColor=white&style=flat-square
+[share-x-link]: https://x.com/intent/tweet?hashtags=freeCodeCamp%2Copensource%2Ccoding&text=Check%20this%20GitHub%20repository%20out%20%F0%9F%A4%AF%20freeCodeCamp%20-%20freeCodeCamp.org's%20open-source%20codebase%20and%20curriculum.%20Learn%20to%20code%20for%20free.%20&url=https%3A%2F%2Fgithub.com%2FfreeCodeCamp%2FfreeCodeCamp
+[share-x-shield]: https://img.shields.io/badge/-share%20on%20x-black?labelColor=black&logo=x&logoColor=white&style=flat-square
