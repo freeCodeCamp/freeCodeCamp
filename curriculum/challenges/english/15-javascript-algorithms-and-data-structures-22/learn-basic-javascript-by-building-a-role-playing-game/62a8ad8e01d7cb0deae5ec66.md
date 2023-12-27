@@ -150,7 +150,7 @@ const healthText = document.querySelector("#healthText");
 const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
-const monsterHealthText =document.querySelector("#monsterHealth");
+const monsterHealthText = document.querySelector("#monsterHealth");
 --fcc-editable-region--
 const locations = [
     {

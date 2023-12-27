@@ -363,6 +363,7 @@ class ShowFillInTheBlank extends Component<
                                       blankAnswers[node.value].length * 11 + 11
                                     }px`
                                   }}
+                                  aria-label={t('learn.blank')}
                                 />
                               );
                           })}
