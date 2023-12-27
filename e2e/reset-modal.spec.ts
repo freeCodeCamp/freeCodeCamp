@@ -50,7 +50,7 @@ test('User can reset challenge', async ({ page }) => {
   ).not.toBeVisible();
 });
 
-test('User can reset classic challenge', async ({ page }) => {
+test('User can reset classic challenge', async ({ page, isMobile }) => {
   await page.goto(
     '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code'
   );
@@ -61,7 +61,9 @@ test('User can reset classic challenge', async ({ page }) => {
 
   await page.getByLabel(editorPaneLabel).fill(challengeSolution);
 
-  const submitButton = page.getByLabel('Run the tests use shortcut Ctrl+enter');
+  const submitButton = page.getByRole('button', {
+    name: isMobile ? translations.buttons.run : translations.buttons['run-test']
+  });
   await submitButton.click();
 
   await expect(
