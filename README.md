@@ -6,6 +6,19 @@
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 [![Discord](https://img.shields.io/discord/692816967895220344?logo=discord&label=Discord&color=5865F2)](https://discord.gg/PRyKn3Vbay)
 
+<div align="center">
+
+**Share freeCodeCamp Repository**
+
+[![Share on X](https://img.shields.io/badge/-share%20on%20x-black?style=flat&logo=x&logoColor=white)](https://x.com/intent/tweet?hashtags=freeCodeCamp%2Copensource%2Ccoding&text=Check%20this%20GitHub%20repository%20out%20%F0%9F%A4%AF%20freeCodeCamp%20-%20freeCodeCamp.org's%20open-source%20codebase%20and%20curriculum.%20Learn%20to%20code%20for%20free.%20&url=https%3A%2F%2Fgithub.com%2FfreeCodeCamp%2FfreeCodeCamp)
+[![Share on Reddit](https://img.shields.io/badge/-share%20on%20reddit-ff4500?style=flat&logo=reddit&logoColor=white)](https://www.reddit.com/submit?title=Check%20this%20GitHub%20repository%20out%20%F0%9F%A4%AF%20freeCodeCamp%20-%20freeCodeCamp.org's%20open-source%20codebase%20and%20curriculum.%20Learn%20to%20code%20for%20free.%20%23freeCodeCamp%20%23opensource%20%23coding&url=https%3A%2F%2Fgithub.com%2FfreeCodeCamp%2FfreeCodeCamp)
+[![Share on Telegram](https://img.shields.io/badge/-share%20on%20telegram-0088cc?style=flat&logo=telegram&logoColor=white)](https://t.me/share/url"?text=Check%20this%20GitHub%20repository%20out%20%F0%9F%A4%AF%20freeCodeCamp%20-%20freeCodeCamp.org's%20open-source%20codebase%20and%20curriculum.%20Learn%20to%20code%20for%20free.%20%23freeCodeCamp%20%23opensource%20%23coding&url=https%3A%2F%2Fgithub.com%2FfreeCodeCamp%2FfreeCodeCamp)
+[![Share on WhatsApp](https://img.shields.io/badge/-share%20on%20whatsapp-128c7e?style=flat&logo=whatsapp&logoColor=white)](https://api.whatsapp.com/send?text=Check%20this%20GitHub%20repository%20out%20%F0%9F%A4%AF%20freeCodeCamp%20-%20freeCodeCamp.org's%20open-source%20codebase%20and%20curriculum.%20Learn%20to%20code%20for%20free.%20https%3A%2F%2Fgithub.com%2FfreeCodeCamp%2FfreeCodeCamp%20%23freeCodeCamp%20%23opensource%20%23coding)
+[![Share on Mastodon](https://img.shields.io/badge/-share%20on%20mastodon-5c4ee8?style=flat&logo=mastodon&logoColor=white)](https://mastodon.social/share?text=Check%20this%20GitHub%20repository%20out%20%F0%9F%A4%AF%20freeCodeCamp%20-%20freeCodeCamp.org's%20open-source%20codebase%20and%20curriculum.%20Learn%20to%20code%20for%20free.%20https%3A%2F%2Fgithub.com%2FfreeCodeCamp%2FfreeCodeCamp%20#freeCodeCamp%20#opensource%20#coding)
+[![Share on LinkedIn](https://img.shields.io/badge/-share%20on%20linkedin-0077b5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/feed)
+
+</div>
+
 ## freeCodeCamp.org's open-source codebase and curriculum
 
 [freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) charity](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 40,000 people get their first developer job.
