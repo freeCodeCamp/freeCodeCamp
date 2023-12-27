@@ -37,6 +37,8 @@ In this project, you'll build an app that will search for Pokémon by name or ID
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
+**Note:** When running the tests there will be a slight delay. Please wait a few seconds to allow the tests to finish. Do not refresh the page before they are done.
+
 # --hints--
 
 You should have an `input` element with an `id` of `search-input` and is **required**.
@@ -146,7 +148,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/red'); // Fetch from proxy to simulate network delay
 
     if (!res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow the alert to trigger
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow the alert to trigger
 
       assert.include(['pokémon not found', 'pokemon not found'], alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase());
     }
@@ -169,7 +171,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow UI to update
 
       const pokemonName = document.getElementById('pokemon-name');
       const pokemonID = document.getElementById('pokemon-id');
@@ -212,7 +214,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow UI to update
 
       const sprite = document.getElementById('sprite');
       assert.isTrue(sprite.src.endsWith('sprites/pokemon/25.png'));
@@ -238,7 +240,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow UI to update
 
       assert.lengthOf(typesEl.children, 1);
       assert.strictEqual(typesEl?.children[0]?.innerText.trim().toLowerCase(), 'electric');
@@ -262,7 +264,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow UI to update
 
       const pokemonName = document.getElementById('pokemon-name');
       const pokemonID = document.getElementById('pokemon-id');
@@ -305,7 +307,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow UI to update
 
       const sprite = document.getElementById('sprite');
       assert.isTrue(sprite.src.endsWith('sprites/pokemon/94.png'));
@@ -331,7 +333,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow UI to update
       const targetTypes = ['ghost', 'poison'];
 
       assert.lengthOf(typesEl.children, 2);
