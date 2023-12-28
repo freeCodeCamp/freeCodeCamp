@@ -255,6 +255,8 @@ In the above example, the key and a variable are set in the attributes of the `T
 
 To change text on the client side of things, go to the relevant `.json` file, find the key that is being used in the React component, and change the value to the new text you want. You should search the codebase for that key to make sure it isn't being used elsewhere. Or, if it is, that the changes make sense in all places.
 
+Run `pnpm run clean-and-develop` to apply the change.
+
 ## Adding Text
 
 If the text you want to add to the client exists in the relevant `.json` file, use the existing key. Otherwise, create a new key.
@@ -264,10 +266,12 @@ The English file is the "source of truth" for all of the `.json` files sharing t
 > [!NOTE]
 > Use English text for all languages if the file is translated through Crowdin. The tests will fail if you don't.
 
-It would be nice to keep the keys in the same order across all the files as well. Also, try to put all punctuation, spacing, quotes, etc in the JSON files and not in the components or server files.
+It would be nice to keep the keys in the same order across all the files as well. Also, try to put all punctuation, spacing, quotes, etc. in the JSON files and not in the components or server files.
 
 > [!NOTE]
 > The underscore (`_`) is a reserved character for keys in the client-side files. See [the documentation](https://www.i18next.com/translation-function/plurals) for how they are used.
+
+Run `pnpm run clean-and-develop` to apply the change.
 
 ## Proposing a Pull Request (PR)
 

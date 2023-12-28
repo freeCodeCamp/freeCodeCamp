@@ -21,6 +21,7 @@
     "build": "ts-node --project ../tsconfig.json ../tools/scripts/build/build-curriculum",
     "create-empty-steps": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/create-empty-steps",
     "create-next-challenge": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/create-next-challenge",
+    "create-this-challenge": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/create-this-challenge",
     "create-next-step": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/create-next-step",
     "insert-challenge": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/insert-challenge",
     "insert-step": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/insert-step",
