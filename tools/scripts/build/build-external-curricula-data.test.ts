@@ -85,7 +85,7 @@ describe('external curriculum data build', () => {
     );
 
     const isUpcoming = [
-      '2022/javascript-algorithms-and-data-structures',
+      'javascript-algorithms-and-data-structures-v8',
       'college-algebra-with-python',
       'foundational-c-sharp-with-microsoft',
       'the-odin-project',

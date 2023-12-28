@@ -45,6 +45,7 @@ interface DesktopLayoutProps {
     testsPane: Pane;
   };
   notes: ReactElement;
+  onPreviewResize: () => void;
   preview: ReactElement;
   resizeProps: ResizeProps;
   testOutput: ReactElement;
@@ -149,6 +150,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     isFirstStep,
     layoutState,
     notes,
+    onPreviewResize,
     preview,
     hasEditableBoundaries,
     windowTitle
@@ -285,7 +287,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         )}
       </ReflexContainer>
       {displayPreviewPortal && (
-        <PreviewPortal windowTitle={windowTitle}>{preview}</PreviewPortal>
+        <PreviewPortal onResize={onPreviewResize} windowTitle={windowTitle}>
+          {preview}
+        </PreviewPortal>
       )}
     </div>
   );

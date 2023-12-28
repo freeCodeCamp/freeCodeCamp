@@ -2,10 +2,21 @@ import { expectSaga } from 'redux-saga-test-plan';
 import {
   postChargeStripe,
   postChargeStripeCard,
-  addDonation
+  addDonation,
+  updateStripeCard
 } from '../utils/ajax';
-import { postChargeSaga, setDonationCookie } from './donation-saga.js';
-import { postChargeComplete, postChargeProcessing, executeGA } from './actions';
+import {
+  postChargeSaga,
+  setDonationCookie,
+  updateCardSaga
+} from './donation-saga.js';
+import {
+  postChargeComplete,
+  postChargeProcessing,
+  executeGA,
+  updateCardRedirecting,
+  updateCardError
+} from './actions';
 
 jest.mock('../utils/ajax');
 jest.mock('../analytics');
@@ -119,6 +130,30 @@ describe('donation-saga', () => {
       .not.call.fn(postChargeStripeCard)
       .not.call.fn(postChargeStripe)
       .put(executeGA(patreonAnalyticsDataMock))
+      .run();
+  });
+
+  it('handles successful card update', () => {
+    updateStripeCard.mockResolvedValue({
+      data: { sessionId: 'expected data' }
+    });
+
+    return expectSaga(updateCardSaga)
+      .put(updateCardRedirecting())
+      .call(updateStripeCard)
+      .not.put(updateCardError())
+      .run();
+  });
+
+  it('handles errors correctly for card update', () => {
+    updateStripeCard.mockResolvedValue({
+      data: 'unexpected data'
+    });
+
+    return expectSaga(updateCardSaga)
+      .put(updateCardRedirecting())
+      .call(updateStripeCard)
+      .put(updateCardError())
       .run();
   });
 });

@@ -7,19 +7,20 @@ Wir erwarten von unseren Mitwirkenden, dass sie den für dieses Projekt spezifis
 Einige Beispiele hierfür sind:
 
 1. Bearbeite Dateien nicht direkt über GitHub - Das kannst du zwar, aber es ist keine gute Idee.
-2. Achte darauf, dass du die PR-Checkliste befolgst und nicht nur Dinge abhakst, sonst nehmen wir dich nicht ernst.
-3. Verwende die korrekte Art der Verknüpfung von Themen in der Beschreibung des PR, indem du die `XXXXXX` aktualisierst. Füge nicht einfach überall und nach Lust und Laune Heftnummern ein.
-4. Erwähne jemanden nicht zu oft mit "@mention" oder bitte ihn nicht zu oft um Bewertungen.
+2. Make sure the PR title follows [our convention](#prepare-a-good-pr-title).
+3. Achte darauf, dass du die PR-Checkliste befolgst und nicht nur Dinge abhakst, sonst nehmen wir dich nicht ernst.
+4. Verwende die korrekte Art der Verknüpfung von Themen in der Beschreibung des PR, indem du die `XXXXXX` aktualisierst. Füge nicht einfach überall und nach Lust und Laune Heftnummern ein.
+5. Erwähne jemanden nicht zu oft mit "@mention" oder bitte ihn nicht zu oft um Bewertungen.
 
    Wir verstehen, dass du gerne einen Beitrag leisten möchtest. So gerne sich ein Betreuer auch bei dir melden würde, er hat alle Hände voll zu tun, um Hunderte von Anfragen wie deine zu bearbeiten. Habe Geduld, früher oder später wird sich jemand bei dir melden.
 
-5. Arbeite nicht direkt an deinem `Hauptzweig` - erstelle einen neuen Zweig für die Änderungen, an denen du arbeitest.
+6. Arbeite nicht direkt an deinem `Hauptzweig` - erstelle einen neuen Zweig für die Änderungen, an denen du arbeitest.
 
 > [!NOTE] Deine Öffentlichkeitsarbeit sollte sich nur auf Änderungen des englischen Lehrplans beziehen. Lese stattdessen [diesen Leitfaden](index.md#translations), um zu Übersetzungen beizutragen.
 
 ## Prepare a Good PR Title
 
-Wir empfehlen, [konventionelle Titel und Nachrichten](https://www.conventionalcommits.org/) für Commits und Pull Requests zu verwenden. Die Konvention hat das folgende Format:
+We use [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull requests. Die Konvention hat das folgende Format:
 
 > `<type>([optional scope(s)]): <description>`
 > 
@@ -27,7 +28,7 @@ Wir empfehlen, [konventionelle Titel und Nachrichten](https://www.conventionalco
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-Wenn du einen Pull Request (PR) öffnest, kannst du den Typ, den Geltungsbereich (optional) und die Beschreibung festlegen.
+Whenever you open a Pull Request (PR), you can use the below to determine the type, scope (optional), and description.
 
 **Typ:**
 
@@ -81,7 +82,7 @@ Einige Beispiele für gute PR-Titel wären:
 
    - Du erhältst eine Vorlage für einen Pull-Request. Dies ist eine Checkliste, die du befolgen solltest, bevor du den Pull-Request öffnest.
 
-   - Fülle die Details so aus, wie du es für richtig hältst. Diese Informationen werden geprüft und die Prüfer entscheiden, ob dein Pull-Request angenommen wird oder nicht.
+   - Fülle die Details so aus, wie du es für richtig hältst. Ensure that you give the reviewers enough context to review the changes. If the PR makes changes to the UI, be sure to include screenshots of the changes as well. All of this information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
 
    - Wenn der PR ein bestehendes GitHub Problem beheben soll, dann am Ende von der Beschreibungstext deines PR verwenden Sie das Schlüsselwort _Schließt_ mit der Ticketnummer zu [automatisch schließen, wenn der PR akzeptiert und zusammengeführt wird](https://help.github.com/en/articles/closing-issues-using-keywords).
 
@@ -91,7 +92,7 @@ Einige Beispiele für gute PR-Titel wären:
 
    - Das ist sehr wichtig, wenn du Änderungen vornimmst, die nicht nur Textinhalte wie die Dokumentation oder eine Aufgabenbeschreibung betreffen. Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
 
-   - If your PR affects the behaviour of a page, it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
+   - If your PR affects the behavior of a page, it should be accompanied by corresponding [Playwright integration tests](how-to-add-playwright-tests.md).
 
 ## Feedback on Pull Requests
 

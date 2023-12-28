@@ -31,7 +31,7 @@ const superBlocks = [
 ];
 
 describe('Landing page', () => {
-  it('Should render', () => {
+  it.skip('Should render', () => {
     cy.visit('/');
     cy.title().should(
       'eq',

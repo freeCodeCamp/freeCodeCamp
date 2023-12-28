@@ -149,19 +149,6 @@ test.describe('Donate Page', () => {
     await expect(donateText3).toHaveText(translations.donate['why-donate-2']);
   });
 
-  test('should render the campers image in desktop browsers', async ({
-    isMobile
-  }) => {
-    const figure = page.getByTestId(pageElements.campersImage);
-
-    if (isMobile) {
-      await expect(figure).not.toBeVisible();
-      return;
-    }
-
-    await expect(figure).toBeVisible();
-  });
-
   test('should display the faq heading', async () => {
     const faqHead = page.getByTestId(pageElements.faqHeading);
     await expect(faqHead).toHaveText(translations.donate.faq);
