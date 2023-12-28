@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Legacy Responsive Web Design Challenges",
+    "title": "(レガシー) レスポンシブウェブデザイン チャレンジ課題",
     "intro": [
       "このレスポンシブウェブデザイン認定講座では、開発者がウェブページを実装するために使う言語について学びます。ページの内容には HTML (Hypertext Markup Language)、デザインには CSS (Cascading Style Sheets) を使用します。",
       "初めに、HTML と CSS の基礎を学ぶために、猫の写真アプリを作ります。その後、ペンギンの絵を作りながら CSS 変数等のモダンなテクニックを学びます。そしてウェブフォームを作りながらアクセシビリティのベストプラクティスを学びます。",
@@ -208,7 +208,7 @@
         ]
       },
       "learn-intermediate-css-by-building-a-cat-painting": {
-        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "title": "CSS 中級の学習: 猫の絵を作成する",
         "intro": [
           "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts",
           "In this course, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
@@ -217,9 +217,9 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript のアルゴリズムとデータ構造",
+    "title": "JavaScript アルゴリズムとデータ構造",
     "intro": [
-      "HTML と CSS はページの内容とスタイルを制御しますが、JavaScript はそれを対話式にすることを手掛けます。JavaScript のアルゴリズムとデータ構造認定講座では、変数、配列、オブジェクト、ループ、そして関数を含む JavaScript の基礎を学習します。",
+      "HTML と CSS はページの内容とスタイルを制御しますが、JavaScript はそれを対話式にすることを手掛けます。JavaScript アルゴリズムとデータ構造認定講座では、変数、配列、オブジェクト、ループ、そして関数を含む JavaScript の基礎を学習します。",
       "いったん基礎を習得すれば、その知識を応用して文字列を扱うためのアルゴリズムを作成したり、数の階乗を計算したり、さらに国際宇宙ステーションの軌道を計算することもできます。",
       "途中で、オブジェクト指向プログラミング (OOP) と関数型プログラミング (FP) の 2 つの重要なプログラミングの様式または典型について学習します。"
     ],
@@ -300,7 +300,7 @@
     }
   },
   "javascript-algorithms-and-data-structures-v8": {
-    "title": "JavaScript Algorithms and Data Structures (Beta)",
+    "title": "JavaScript アルゴリズムとデータ構造 (ベータ版)",
     "intro": [
       "Developers use HTML and CSS to control the content and styling of a page. And they use JavaScript to make that page interactive.",
       "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",
@@ -309,56 +309,56 @@
     "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
     "blocks": {
       "build-a-pokemon-search-app-project": {
-        "title": "Build a Pokémon Search App Project",
+        "title": "ポケモン検索アプリ作成プロジェクト",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a Pokémon search app."
         ]
       },
       "build-a-cash-register-project": {
-        "title": "Build a Cash Register Project",
+        "title": "キャッシュレジスター作成プロジェクト",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you'll build a cash register web app."
         ]
       },
       "build-a-palindrome-checker-project": {
-        "title": "Build a Palindrome Checker Project",
+        "title": "回文チェッカー作成プロジェクト",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you'll build an application that checks whether a given word is a palindrome."
         ]
       },
       "build-a-roman-numeral-converter-project": {
-        "title": "Build a Roman Numeral Converter Project",
+        "title": "ローマ数字コンバーター作成プロジェクト",
         "intro": [
           "This is one of the required projects to claim your certification.",
           "For this project, you'll build an application that converts integers to Roman numerals."
         ]
       },
       "build-a-telephone-number-validator-project": {
-        "title": "Build a Telephone Number Validator Project",
+        "title": "電話番号バリデーター作成プロジェクト",
         "intro": [
           "This is one of the required projects to claim your certification.",
           "For this project, you'll build an application that checks if a number is a valid United States phone number."
         ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+        "title": "基礎的な JavaScript の学習: ロールプレイングゲームを作成する",
         "intro": [
           "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
           "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Role Playing Game. You'll learn how to work with arrays, strings, objects, functions, loops, <code>if/else</code> statements, and more."
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
-        "title": "Learn Form Validation by Building a Calorie Counter",
+        "title": "フォームの検証の学習: カロリー計算機を作成する",
         "intro": [
           "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter project, you'll learn how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
           "In this practice project, you'll learn basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
         ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
-        "title": "Learn Functional Programming by Building a Spreadsheet",
+        "title": "関数型プログラミングの学習: スプレッドシートを作成する",
         "intro": [
           "Functional Programming is a popular approach to software development. In Functional Programming, developers organize code into smaller functions, then combine those functions to build complex programs.",
           "In this spreadsheet application project, you'll learn about parsing and evaluating mathematical expressions, implementing spreadsheet functions, handling cell references, and creating interactive web interfaces. You'll learn how to dynamically update the page based on user input.",
@@ -366,21 +366,21 @@
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
-        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
+        "title": "現代的な JavaScript メソッドの学習: サッカーチームカードを作成する",
         "intro": [
           "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
           "This project will cover concepts like switch statements, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method, and more."
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
-        "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
+        "title": "高度な配列メソッドの学習: 統計計算機を作成する",
         "intro": [
           "As you expand your JavaScript skills, you'll want to get comfortable with array manipulation methods, such as <code>map()</code>, <code>reduce()</code>, and <code>filter()</code>.",
           "In this statistics calculator project, you'll gain experience with handling user input, DOM manipulation, and method chaining. You'll get practice by performing statistical calculations like mean, median, mode, variance, and standard deviation."
         ]
       },
       "learn-basic-oop-by-building-a-shopping-cart": {
-        "title": "Learn Basic OOP by Building a Shopping Cart",
+        "title": "基礎的なオブジェクト指向プログラミングの学習: ショッピングカートを作成する",
         "intro": [
           "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, developers use objects and classes to structure their code.",
           "In this shopping cart project, you'll learn how to define classes and use them. You'll create class instances and implement methods for data manipulation.",
@@ -388,7 +388,7 @@
         ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "title": "フェッチとプロミスの学習: freeCodeCamp 著者ページを作成する",
         "intro": [
           "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
           "This freeCodeCamp authors page project will show you how to use the fetch method, then dynamically update the DOM to display the fetched data.",
@@ -396,21 +396,21 @@
         ]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
-        "title": "Learn Regular Expressions by Building a Spam Filter",
+        "title": "正規表現の学習: スパムフィルターを作成する",
         "intro": [
           "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
           "In this spam filter project, you'll learn about capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
         ]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
-        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+        "title": "基礎的なアルゴリズム的思考の学習: 数値ソートを作成する",
         "intro": [
           "In computer science, there are fundamental sorting algorithms that all developers should learn. In this number sorter project, you'll learn how to implement and visualize different sorting algorithms like bubble sort, selection sort, and insertion sort – all with JavaScript.",
           "This project will help you understand the fundamental concepts behind these algorithms, and how you can apply them to sort numerical data in web applications."
         ]
       },
       "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Learn Intermediate Algorithmic Thinking by Building a Dice Game",
+        "title": "中級アルゴリズム的思考の学習: ダイスゲームを作成する",
         "intro": [
           "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
           "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
@@ -418,42 +418,42 @@
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
-        "title": "Learn Intermediate OOP by Building a Platformer Game",
+        "title": "中級オブジェクト指向プログラミングの学習: プラットフォームゲームを作成する",
         "intro": [
           "Coding a game is a great way to grasp fundamental programming principles, while also creating an interactive gaming experience.",
           "In this platformer game project, you'll continue to learn about classes, objects, inheritance, and encapsulation. You'll also learn how to design and organize game elements efficiently and gain insights into problem-solving and code reusability."
         ]
       },
       "learn-localstorage-by-building-a-todo-app": {
-        "title": "Learn localStorage by Building a Todo App",
+        "title": "localStorage の学習: Todo リストを作成する",
         "intro": [
           "Local storage is a web browser feature that lets web applications store key-value pairs persistently within a user's browser. This allows web apps to save data during one session, then retrieve it in a later page session.",
           "In this TODO application, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implement event listeners, and toggle UI elements."
         ]
       },
       "learn-the-date-object-by-building-a-date-formatter": {
-        "title": "Learn the Date Object by Building a Date Formatter",
+        "title": "Date オブジェクトの学習: 日付フォーマッターを作成する",
         "intro": [
           "Working with dates in JavaScript can be challenging. You have to navigate various methods, formats, and time zones. In this project, you'll learn how to work with the JavaScript Date object, including its methods and properties. You'll also learn how to correctly format dates.",
           "This project will cover concepts such as the <code>getDate()</code>, <code>getMonth()</code>, and <code>getFullYear()</code> methods."
         ]
       },
       "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard": {
-        "title": "Learn Asynchronous Programming by Building an fCC Forum Leaderboard",
+        "title": "非同期プログラミングの学習: freeCodeCamp フォーラムのリーダーボードを作成する",
         "intro": [
           "JavaScript is an asynchronous programming language. And this project will help you gain proficiency in asynchronous concepts. You'll code your own freeCodeCamp forum leaderboard.",
           "This project will cover the Fetch API, promises, Async/Await, and the try..catch statement."
         ]
       },
       "learn-basic-string-and-array-methods-by-building-a-music-player": {
-        "title": "Learn Basic String and Array Methods by Building a Music Player",
+        "title": "基礎的な文字列・配列メソッドの学習: 音楽プレイヤーを作成する",
         "intro": [
           "Now let's learn some essential string and array methods like the <code>find()</code>, <code>forEach()</code>, <code>map()</code>, and <code>join()</code>. These methods are crucial for developing dynamic web applications.",
           "In this project, you'll code a basic MP3 player using HTML, CSS, and JavaScript. The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, previous, and shuffle functionalities. You'll even learn how to dynamically update your user interface based on the current song."
         ]
       },
       "learn-recursion-by-building-a-decimal-to-binary-converter": {
-        "title": "Learn Recursion by Building a Decimal to Binary Converter",
+        "title": "再帰処理の学習: 十進数・二進数変換ツールを作成する",
         "intro": [
           "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
           "In this project, you’ll build a decimal-to-binary converter using JavaScript. You’ll learn the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
@@ -748,86 +748,88 @@
     }
   },
   "scientific-computing-with-python": {
-    "title": "Scientific Computing with Python (Beta)",
+    "title": "Python を用いた科学計算 (ベータ版)",
     "intro": [
       "Python は現在最も一般的で適応性のあるプログラミング言語です。基本的なスクリプトから機械学習まで幅広く使用することができます。",
-      "Python を用いた科学技術計算認定講座では、変数、ループ、条件式、そして関数のような、Python の基本を学習します。それから、複雑なデータ構造、ネットワーキング、リレーショナルデータベース、そしてデータ可視化まで素早く強化します。"
+      "Python を用いた科学計算認定講座では、変数、ループ、条件式、そして関数のような、Python の基本を学習します。それから、複雑なデータ構造、ネットワーキング、リレーショナルデータベース、そしてデータ可視化まで素早く強化します。"
     ],
     "note": "",
     "blocks": {
       "learn-string-manipulation-by-building-a-cipher": {
-        "title": "Learn String Manipulation by Building a Cipher",
+        "title": "文字列操作の学習: 暗号プログラムを作成する",
         "intro": [
-          "Python is a powerful and popular programming language widely used for data science, data visualization, web and game development, machine learning and much more.",
-          "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loop, conditional statements, and and how to work with them to build your first program."
+          "Python is a powerful and popular programming language widely used for data science, data visualization, web development, game development, machine learning and more.",
+          "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loops, and conditional statements. You'll use these to code your first programs."
         ]
       },
       "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm": {
-        "title": "Learn How to Work with Numbers and Strings by Implementing the Luhn Algorithm",
+        "title": "数値と文字列を扱う学習: Luhn アルゴリズムを実装する",
         "intro": [
-          "The Luhn Algorithm is widely used for error-checking in various applications, including credit card numbers.",
-          "Through this project, you'll gain valuable experience in working with numerical computations and string manipulation while implementing the Luhn Algorithm."
+          "The Luhn Algorithm is widely used for error-checking in various applications, such as verifying credit card numbers.",
+          "By building this project, you'll gain experience working with numerical computations and string manipulation."
         ]
       },
       "learn-list-comprehension-by-building-a-case-converter-program": {
-        "title": "Learn Python List Comprehension By Building a Case Converter Program",
+        "title": "リスト内包表記の学習: ケース変換プログラムを作成する",
         "intro": [
-          "A list comprehension in Python is a way to construct a new list from an iterable types such as lists, tuples, and strings without using a for loop or the `.append()` list method",
-          "In this project, you will write a program that takes a string formatted in camel or pascal case and converts that to snake case. The project has two phases.",
-          "During the first phase, you will use a for loop to implement the program.",
-          "Then in the second phase you will learn about applying list comprehension instead of a loop to achieve the same results."
+          "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the `.append()` list method.",
+          "In this project, you'll write a program that takes a string formatted in Camel Case or Pascal Case, then converts it into Snake Case.",
+          "The project has two phases: first you'll use a for loop to implement the program. Then you'll learn how to use List Comprehension instead of a loop to achieve the same results."
         ]
       },
       "learn-regular-expressions-by-building-a-password-generator": {
-        "title": "Learn Regular Expressions by Building a Password Generator",
+        "title": "正規表現の学習: パスワードジェネレーターを作成する",
         "intro": [
-          "In Python, a module is a file containing a set of statements and definitions that you can use in your code.",
-          "In this project, you'll learn how to import and use modules from the Python standard library and how to use regular expressions while building your own password generator program."
+          "A Python module is a file that contains a set of statements and definitions that you can use in your code.",
+          "In this project, you'll learn how to import modules from the Python standard library. You'll also learn how to use Regular Expressions by building your own password generator program."
         ]
       },
-      "learn-algorithm-design-by-building-the-shortest-path-algorithm": {
-        "title": "Learn Algorithm Design by Building the Shortest Path Algorithm",
+      "learn-algorithm-design-by-building-a-shortest-path-algorithm": {
+        "title": "アルゴリズムデザインの学習: 最短経路アルゴリズムを作成する",
         "intro": [
-          "Algorithms are step-by-step procedures used to perform calculations and solve computational problems.",
-          "In this project, you'll learn how to use functions, loops, conditional statements, dictionary comprehensions and more to design and implement the shortest path algorithm."
+          "Algorithms are step-by-step procedures that developers use to perform calculations and solve computational problems.",
+          "In this project, you'll learn how to use functions, loops, conditional statements, and dictionary comprehensions to implement a Shortest Path algorithm."
         ]
       },
       "learn-recursion-by-solving-the-tower-of-hanoi-puzzle": {
-        "title": "Learn Recursion by Solving the Tower of Hanoi Puzzle",
+        "title": "再帰処理の学習: ハノイの塔パズルを解く",
         "intro": [
-          "Recursion allows you to write concise and elegant code to solve complex computational problems.",
-          "In this project, you'll start with an iterative approach to solve the tower of Hanoi mathematical puzzle and then you'll learn how to implement a recursive solution."
+          "Recursion is a programming approach that allows you to solve complicated computational problems with just a little code.",
+          "In this project, you'll start with a loop-based approach to solving the tower of Hanoi mathematical puzzle. Then you'll learn how to implement a recursive solution."
         ]
       },
       "learn-data-structures-by-building-the-merge-sort-algorithm": {
-        "title": "Learn Data Structures by Building the Merge Sort Algorithm",
+        "title": "データ構造の学習: マージソートアルゴリズムを作成する",
         "intro": [
-          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
-          "In this project, you'll learn how to interact with data structures by sorting a list of random numbers using the merge sort algorithm."
+          "The Merge Sort Algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this project, you'll learn how to interact with data structures by sorting a list of random numbers using the Merge Sort Algorithm."
         ]
       },
       "learn-classes-and-objects-by-building-a-sudoku-solver": {
-        "title": "Learn Classes and Objects by Building a Sudoku Solver",
+        "title": "クラスとオブジェクトの学習: 数独ソルバーを作成する",
         "intro": [
-          "Classes and objects are an important programming concept and they enable developers to achieve code modularity, abstraction, readability, and promote reusability.",
-          "In this Sudoku solver project, you'll learn how to use classes and objects to build a sudoku grid and to solve a sudoku puzzle."
+          "Classes and objects are important programming concepts. These Object-Oriented Programming tools help developers to achieve code modularity, abstraction, and readability. And they promote reusability.",
+          "In this Sudoku Solver project, you'll learn how to use classes and objects to build a Sudoku grid and to solve a Sudoku puzzle."
         ]
       },
       "learn-tree-traversal-by-building-a-binary-search-tree": {
-        "title": "Learn Tree Traversal by Building a Binary Search Tree",
+        "title": "木構造の走査の学習: 二分探索木を作成する",
         "intro": [
-          "A Binary Search Tree (BST) is an important data structure concept, where data is sorted in a hierarchical structure.",
-          "In this project, you will learn how to construct a BST, perform an inorder traversal, and also cover key operations like insertion, search, and deletion."
+          "A Binary Search Tree (BST) is an common data structure where data is sorted hierarchically.",
+          "In this project, you'll learn how to construct your own BST and perform an in-order traversal. You'll also learn key operations like insertion, search, and deletion."
         ]
       },
       "learn-lambda-functions-by-building-an-expense-tracker": {
-        "title": "Learn Lambda Functions by Building an Expense Tracker",
-        "intro": ["", ""]
+        "title": "ラムダ関数の学習: 経費記録ツールを作成する",
+        "intro": [
+          "Lambda functions give you a concise way to write small, throwaway functions in your code.",
+          "In this project, you'll explore the power of Lambda Functions by creating an expense tracker. Your resulting app will demonstrate how you can use Lambda Functions for efficient, streamlined operations."
+        ]
       },
       "scientific-computing-with-python-projects": {
-        "title": "Python を用いた科学技術計算プロジェクト",
+        "title": "Python を用いた科学計算プロジェクト",
         "intro": [
-          "Python の技能をテストする時です。これらのプロジェクトを完成させることによって、Python の優れた基礎知識をもっていることと、Python を用いた科学技術計算認定証を得る資格があることを証明します。"
+          "It's time to put your Python skills to the test. By completing these projects, you'll demonstrate that you have a strong foundational knowledge of Python. And you'll qualify for freeCodeCamp's Scientific Computing with Python Certification."
         ]
       }
     }
@@ -1061,7 +1063,7 @@
     }
   },
   "python-for-everybody": {
-    "title": "Legacy Python for Everybody",
+    "title": "(レガシー) みんなの Python",
     "intro": [
       "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning."
     ],
@@ -1082,7 +1084,7 @@
       "次回の就職面接に備えて無料のコーディング演習をお探しでしたら、こちらにご用意しています。",
       "このセクションはアルゴリズム、データ構造、および数学の知識をテストする何百ものコーディングチャレンジを含んでいます。技能を向上させ、またはポートフォリオに加えるために活用できる多くの宿題プロジェクトもあります。"
     ],
-    "note": "プロジェクト・オイラーのプロジェクトは独立したコースに移動しました。カリキュラムに戻ってコース一覧を確認してください。",
+    "note": "The Project Euler Project and Rosetta Code have been moved to their own courses. Go back to the curriculum to see the list of courses we offer.",
     "blocks": {
       "algorithms": {
         "title": "アルゴリズム",
@@ -1110,9 +1112,11 @@
   "the-odin-project": {
     "title": "The Odin Project (Beta)",
     "intro": [
-      "The Odin Project is one of those \"What I wish I had when I was learning\" resources. ",
-      "Not everyone has access to a computer science education or the funds to attend an intensive coding school and neither of those is right for everyone anyway.",
-      "This project is designed to fill in the gap for people who are trying to hack it on their own but still want a high quality education."
+      "The Odin Project was created in 2013 by a lone developer, Erik Trautman. Over the years, an open source community has sprung up to maintain and expand the project.",
+      "freeCodeCamp has expanded upon the open source curriculum to make it run interactively in the browser, with tests to evaluate your code and ensure you've understood key concepts.",
+      "If you want the original experience of configuring all of The Odin Project to run on your local computer, you can check out the original Odin Project on <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project website</a>. A huge thanks to The Odin Project community for continuing to maintain this valuable learning resource for developers all around the world.",
+      "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
+      "<a href='https://github.com/TheOdinProject/curriculum?tab=License-1-ov-file#readme' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>"
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1142,7 +1146,7 @@
       "top-learn-css-foundations": {
         "title": "Learn CSS Foundations",
         "intro": [
-          "Dive into the world of  Cascading Style Sheets (CSS) and learn how to style your HTML elements. Explore styling properties, selectors, and layouts to bring your web pages to life."
+          "Dive into the world of Cascading Style Sheets (CSS) and learn how to style your HTML elements. Explore styling properties, selectors, and layouts to bring your web pages to life."
         ]
       },
       "top-learn-css-foundations-projects": {

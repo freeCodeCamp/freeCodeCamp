@@ -64,6 +64,7 @@ const testUserData: Prisma.userCreateInput = {
     }
   ],
   partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
+  completedExams: [],
   githubProfile: 'github.com/foobar',
   website: 'https://www.freecodecamp.org',
   donationEmails: ['an@add.ress'],
@@ -175,6 +176,7 @@ const publicUserData = {
       files: []
     }
   ],
+  completedExams: testUserData.completedExams,
   githubProfile: testUserData.githubProfile,
   isApisMicroservicesCert: testUserData.isApisMicroservicesCert,
   isBackEndCert: testUserData.isBackEndCert,
@@ -241,6 +243,7 @@ const baseProgressData = {
   isRelationalDatabaseCertV8: false,
   isCollegeAlgebraPyCertV8: false,
   completedChallenges: [],
+  completedExams: [],
   savedChallenges: [],
   partiallyCompletedChallenges: [],
   needsModeration: false
@@ -589,8 +592,7 @@ describe('userRoutes', () => {
           // the following properties are defaults provided if the field is
           // missing in the user document.
           completedChallenges: [],
-          // TODO: add completedExams when /generate-exam is implemented
-          // completedExams: [],
+          completedExams: [],
           partiallyCompletedChallenges: [],
           portfolio: [],
           savedChallenges: [],
