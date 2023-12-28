@@ -19,6 +19,7 @@ export const actionTypes = createTypes(
     ...createAsyncTypes('submitProfileUI'),
     ...createAsyncTypes('verifyCert'),
     ...createAsyncTypes('resetProgress'),
+    ...createAsyncTypes('removeMyWebhook'),
     ...createAsyncTypes('deleteAccount')
   ],
   ns

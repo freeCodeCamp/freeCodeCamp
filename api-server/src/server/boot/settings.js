@@ -52,6 +52,7 @@ export default function settingsController(app) {
   api.put('/update-my-honesty', ifNoUser401, updateMyHonesty);
   api.put('/update-my-quincy-email', ifNoUser401, updateMyQuincyEmail);
   api.put('/update-my-webhook', ifNoUser401, updateMyWebhook);
+  api.delete('/delete-my-webhook', ifNoUser401, removeMyWebhook);
   api.put('/update-my-classroom-mode', ifNoUser401, updateMyClassroomMode);
 
   app.use(api);
@@ -71,7 +72,6 @@ const createStandardHandler = (req, res, next, alertMessage) => err => {
 };
 
 const createUpdateUserProperties = (buildUpdate, validate, successMessage) => {
-  console.log('*** create user props ****', buildUpdate);
   return (req, res, next) => {
     const { user, body } = req;
     const update = buildUpdate(body);
@@ -339,11 +339,20 @@ function updateMyQuincyEmail(...args) {
 function updateMyWebhook(...args) {
   const buildUpdate = body => _.pick(body, 'webhook');
   const validate = ({ webhook }) => isURL(webhook, { require_protocol: true });
+  console.log('*** update my webhook ***', validate);
   createUpdateUserProperties(
     buildUpdate,
     validate,
     'flash.webhook-updated'
   )(...args);
+}
+
+function removeMyWebhook(req, res, next) {
+  const { user } = req;
+  user.updateAttributes(
+    { webhook: '' },
+    createStandardHandler(req, res, next, 'flash.webhook-removed')
+  );
 }
 
 export function updateMyClassroomMode(...args) {
