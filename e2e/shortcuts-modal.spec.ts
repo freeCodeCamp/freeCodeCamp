@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 
@@ -9,10 +9,10 @@ const editorPaneLabel =
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-test.beforeEach(async ({ page, browserName }) => {
+test.beforeEach(async ({ page, browserName, isMobile }) => {
   test.skip(
-    browserName === 'webkit',
-    'Failing on webkit for no apparent reason. Can not reproduce locally.'
+    browserName === 'webkit' || isMobile,
+    'Failing on webkit for no apparent reason. Can not reproduce locally. Also, skipping on mobile as it does not have a physical keyboard'
   );
 
   // Enable keyboard shortcuts
@@ -31,8 +31,14 @@ test.beforeEach(async ({ page, browserName }) => {
 });
 
 test('User can see list of shortcuts  by pressing SHIFT + ?', async ({
-  page
+  page,
+  isMobile
 }) => {
+  test.skip(
+    isMobile,
+    'Skipping on mobile as it does not have a physical keyboard.'
+  );
+
   await expect(
     page.getByRole('heading', { name: translations.shortcuts.title })
   ).toBeVisible();
@@ -58,7 +64,12 @@ test('User can see list of shortcuts  by pressing SHIFT + ?', async ({
   ).toBeVisible();
 });
 
-test('User can close the modal by pressing ESC', async ({ page }) => {
+test('User can close the modal by pressing ESC', async ({ page, isMobile }) => {
+  test.skip(
+    isMobile,
+    'Skipping on mobile as it does not have a physical keyboard.'
+  );
+
   await expect(
     page.getByRole('heading', { name: translations.shortcuts.title })
   ).toBeVisible();
@@ -69,7 +80,12 @@ test('User can close the modal by pressing ESC', async ({ page }) => {
   ).not.toBeVisible();
 });
 
-test('User can disable keyboard shortcuts', async ({ page }) => {
+test('User can disable keyboard shortcuts', async ({ page, isMobile }) => {
+  test.skip(
+    isMobile,
+    'Skipping on mobile as it does not have a physical keyboard.'
+  );
+
   await expect(
     page.getByRole('heading', { name: translations.shortcuts.title })
   ).toBeVisible();

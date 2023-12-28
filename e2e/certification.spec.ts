@@ -112,6 +112,28 @@ test.describe('Certification page - Non Microsoft', () => {
       'href',
       '/learn/2022/responsive-web-design/build-a-personal-portfolio-webpage-project/build-a-personal-portfolio-webpage'
     );
+
+    await expect(
+      page.getByText(
+        'If you suspect that any of these projects violate the academic honesty policy, please report this to our team.'
+      )
+    ).toBeVisible();
+
+    const policyLink = projectLinks.getByRole('link', {
+      name: 'academic honesty policy'
+    });
+    await expect(policyLink).toHaveAttribute(
+      'href',
+      'https://www.freecodecamp.org/news/academic-honesty-policy/'
+    );
+
+    const reportLink = projectLinks.getByRole('link', {
+      name: 'report this to our team'
+    });
+    await expect(reportLink).toHaveAttribute(
+      'href',
+      '/user/certifieduser/report-user'
+    );
   });
 });
 
@@ -189,6 +211,28 @@ test.describe('Certification page - Microsoft', () => {
     await expect(surveyFormLink).toHaveAttribute(
       'href',
       '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam'
+    );
+
+    await expect(
+      page.getByText(
+        'If you suspect that any of these projects violate the academic honesty policy, please report this to our team.'
+      )
+    ).toBeVisible();
+
+    const policyLink = projectLinks.getByRole('link', {
+      name: 'academic honesty policy'
+    });
+    await expect(policyLink).toHaveAttribute(
+      'href',
+      'https://www.freecodecamp.org/news/academic-honesty-policy/'
+    );
+
+    const reportLink = projectLinks.getByRole('link', {
+      name: 'report this to our team'
+    });
+    await expect(reportLink).toHaveAttribute(
+      'href',
+      '/user/certifieduser/report-user'
     );
   });
 });

@@ -7,19 +7,20 @@ Esperamos que nuestros colaboradores conozcan el proceso específico de este pro
 Algunos ejemplos de ello son:
 
 1. No edite archivos directamente a través de GitHub – mientras pueda, no es una buena idea.
-2. Asegúrate de seguir la lista de PR y no solo marcar las cosas; de lo contrario, no te tomaremos en serio.
-3. Utilice la forma correcta de vincular problemas en la descripción del PR actualizando el `XXXXX`. No solo añada números de emisión en cualquier lugar y donde le plazca.
-4. No usar "@mention" o solicitar comentarios demasiadas veces.
+2. Make sure the PR title follows [our convention](#prepare-a-good-pr-title).
+3. Asegúrate de seguir la lista de PR y no solo marcar las cosas; de lo contrario, no te tomaremos en serio.
+4. Utilice la forma correcta de vincular problemas en la descripción del PR actualizando el `XXXXX`. No solo añada números de emisión en cualquier lugar y donde le plazca.
+5. No usar "@mention" o solicitar comentarios demasiadas veces.
 
    Entendemos que está emocionado por contribuir. As much as a maintainer will love to get back to you, they are busy people looking after hundreds of requests just like yours. Be patient, someone will get to you sooner or later.
 
-5. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
+6. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
 
 > [!NOTE] Your PR should be targeting changes to the English curriculum only. Read [this guide](index.md#translations) instead for contributing to translations.
 
 ## Prepare a Good PR Title
 
-We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
+We use [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull requests. The convention has the following format:
 
 > `<tipo>([ámbito opcional]): <descripción>`
 > 
@@ -27,7 +28,7 @@ We recommend using [conventional title and messages](https://www.conventionalcom
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-Whenever you open a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
+Whenever you open a Pull Request (PR), you can use the below to determine the type, scope (optional), and description.
 
 **Type:**
 
@@ -81,7 +82,7 @@ Some examples of good PR titles would be:
 
    - Se le presentará una plantilla de pull request. Esta es una lista de verificación que debería haber seguido antes de abrir la solicitud de pull request.
 
-   - Rellene los detalles como considere oportuno. Esta información será revisada y los revisores decidirán si su pull request es o no aceptada.
+   - Rellene los detalles como considere oportuno. Ensure that you give the reviewers enough context to review the changes. If the PR makes changes to the UI, be sure to include screenshots of the changes as well. All of this information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
 
    - Si el PR está pensado para abordar un problema existente de GitHub entonces, al final de el cuerpo de la descripción de su PR, use la palabra clave _Cierra_ con el número de incidencia para [cerrar automáticamente ese problema si se acepta y fusionan las relaciones públicas](https://help.github.com/en/articles/closing-issues-using-keywords).
 
@@ -91,7 +92,7 @@ Some examples of good PR titles would be:
 
    - Esto es muy importante cuando se hagan cambios que no sean solo ediciones del contenido de texto como documentación o una descripción de un desafío. Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
 
-   - If your PR affects the behaviour of a page, it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
+   - If your PR affects the behavior of a page, it should be accompanied by corresponding [Playwright integration tests](how-to-add-playwright-tests.md).
 
 ## Feedback on Pull Requests
 

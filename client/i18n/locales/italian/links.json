@@ -21,12 +21,14 @@
   "nav": {
     "contribute": "https://contribute.freecodecamp.org/#/i18n/italian/index",
     "forum": "https://forum.freecodecamp.org/c/italiano/",
-    "news": "https://freecodecamp.org/italian/news/"
+    "news": "https://freecodecamp.org/italian/news/",
+    "podcast": "https://freecodecamp.libsyn.com/"
   },
   "help": {
     "HTML-CSS": "Italiano/HTML-CSS",
     "JavaScript": "Italiano/JavaScript",
     "Python": "Italiano/Python",
-    "Backend Development": "italiano/aiuto-programmazione"
+    "Backend Development": "italiano/aiuto-programmazione",
+    "English": "English"
   }
 }

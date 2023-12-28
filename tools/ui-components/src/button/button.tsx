@@ -59,6 +59,10 @@ const computeClassNames = ({
           : [
               'hover:bg-foreground-danger',
               'hover:text-background-danger',
+              // This hover rule is redundant for the component library,
+              // but is needed to override the border color set in client's `global.css`.
+              // We can remove it once we have completely removed the CSS overrides in client.
+              'hover:border-foreground-danger',
               'dark:hover:bg-background-danger',
               'dark:hover:text-foreground-danger'
             ])
@@ -74,6 +78,10 @@ const computeClassNames = ({
           : [
               'hover:bg-foreground-info',
               'hover:text-background-info',
+              // This hover rule is redundant for the component library,
+              // but is needed to override the border color set in client's `global.css`.
+              // We can remove it once we have completely removed the CSS overrides in client.
+              'hover:border-foreground-info',
               'dark:hover:bg-background-info',
               'dark:hover:text-foreground-info'
             ])
@@ -90,6 +98,10 @@ const computeClassNames = ({
           : [
               'hover:bg-foreground-primary',
               'hover:text-background-primary',
+              // This hover rule is redundant for the component library,
+              // but is needed to override the border color set in client's `global.css`.
+              // We can remove it once we have completely removed the CSS overrides in client.
+              'hover:border-foreground-secondary',
               'dark:hover:bg-background-primary',
               'dark:hover:text-foreground-primary'
             ])
