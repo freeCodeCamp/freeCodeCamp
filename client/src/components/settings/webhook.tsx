@@ -3,7 +3,8 @@ import {
   FormGroup,
   FormControl,
   FormGroupProps,
-  ControlLabel
+  ControlLabel,
+  Button
 } from '@freecodecamp/ui';
 
 import React, { useState } from 'react';
@@ -13,7 +14,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 
-import { updateMyWebhook } from '../../redux/settings/actions';
+import { updateMyWebhook, removeMyWebhook } from '../../redux/settings/actions';
 
 import BlockSaveButton from '../helpers/form/block-save-button';
 import FullWidthRow from '../helpers/full-width-row';
@@ -23,12 +24,12 @@ type WebhookProps = {
   webhook: string;
   t: TFunction;
   updateMyWebhook: (webhook: string) => void;
+  removeMyWebhook: (webhook: string) => void;
 };
 
 interface WebhookForm {
   currentWebhook: string;
   newWebhook: string;
-  confirmNewWebhook: string;
   isPristine: boolean;
 }
 
@@ -39,28 +40,33 @@ interface WebhookValidation {
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ updateMyWebhook }, dispatch);
+  bindActionCreators({ updateMyWebhook, removeMyWebhook }, dispatch);
 
 function WebhookSettings({
   webhook,
   updateMyWebhook,
+  removeMyWebhook,
   t
 }: WebhookProps): JSX.Element {
   const [webhookForm, setWebhookForm] = useState<WebhookForm>({
     currentWebhook: webhook,
     newWebhook: '',
-    confirmNewWebhook: '',
     isPristine: true
   });
 
   function handleSubmit(e: React.FormEvent): void {
     e.preventDefault();
-    console.log('handleSubmit');
     updateMyWebhook(webhookForm.newWebhook);
   }
 
+  function handleRemoveWebhook(e: React.FormEvent): void {
+    e.preventDefault();
+    removeMyWebhook(webhookForm.currentWebhook);
+  }
+
   function getValidationForNewWebhook(): WebhookValidation {
-    // const { newWebhook, currentWebhook } = webhookForm;
+    const { newWebhook } = webhookForm;
+    console.log(newWebhook);
     // if (!maybeEmailRE.test(newEmail)) {
     //   return {
     //     state: null,
@@ -86,7 +92,7 @@ function WebhookSettings({
   }
 
   function createHandleWebhookFormChange(
-    key: 'newWebhook' | 'confirmNewWebhook'
+    key: 'newWebhook'
   ): (e: React.ChangeEvent<HTMLInputElement>) => void {
     return e => {
       e.preventDefault();
@@ -120,13 +126,23 @@ function WebhookSettings({
             ? { onSubmit: handleSubmit }
             : { onSubmit: e => e.preventDefault() })}
         >
-          <FormGroup controlId='current-webhook'>
-            {/* TODO: i18n */}
-            <ControlLabel>Current Webhook</ControlLabel>
-            <FormControl.Static data-playwright-test-label='current-email'>
-              {currentWebhook}
-            </FormControl.Static>
-          </FormGroup>
+          {currentWebhook && (
+            <FormGroup controlId='current-webhook'>
+              <ControlLabel>{t('settings.webhook.current')}</ControlLabel>
+              <div style={{ display: 'flex' }}>
+                <FormControl.Static data-playwright-test-label='current-email'>
+                  {currentWebhook}
+                </FormControl.Static>
+                <Button
+                  variant='danger'
+                  onClick={handleRemoveWebhook}
+                  style={{ marginLeft: 'auto' }}
+                >
+                  Remove
+                </Button>
+              </div>
+            </FormGroup>
+          )}
 
           <div role='group' aria-label={t('settings.webhook.heading')}>
             <FormGroup

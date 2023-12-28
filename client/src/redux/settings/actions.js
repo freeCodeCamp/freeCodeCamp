@@ -38,6 +38,12 @@ export const updateMyWebhookComplete = createAction(
 );
 export const updateMyWebhookError = createAction(types.updateMyWebhookError);
 
+export const removeMyWebhook = createAction(types.removeMyWebhook);
+export const removeMyWebhookComplete = createAction(
+  types.removeMyWebhookComplete
+);
+export const removeMyWebhookError = createAction(types.removeMyWebhookError);
+
 export const updateMySocials = createAction(types.updateMySocials);
 export const updateMySocialsComplete = createAction(
   types.updateMySocialsComplete,
