@@ -269,6 +269,7 @@ input[type='submit']:hover,
   color: var(--secondary-background);
 }
 
+button[aria-disabled='true'],
 button[aria-disabled='true']:hover,
 .btn.disabled,
 .btn[disabled],
