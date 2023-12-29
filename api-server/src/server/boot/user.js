@@ -270,7 +270,6 @@ function createReadSessionUser(app) {
 
   return async function getSessionUser(req, res, next) {
     const queryUser = req.user;
-    console.log(queryUser?.toJSON());
 
     let encodedUserToken;
     try {

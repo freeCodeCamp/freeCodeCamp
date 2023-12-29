@@ -169,7 +169,6 @@ function* updateMyPortfolioSaga({ payload: update }) {
 function* updateMyWebhookSaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMyWebhook, update);
-    console.log(data);
     yield put(updateMyWebhookComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
   } catch (e) {

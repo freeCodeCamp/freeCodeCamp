@@ -1,10 +1,11 @@
+import { Button } from '@freecodecamp/react-bootstrap';
+
 import {
   HelpBlock,
   FormGroup,
   FormControl,
   FormGroupProps,
-  ControlLabel,
-  Button
+  ControlLabel
 } from '@freecodecamp/ui';
 
 import React, { useState } from 'react';
@@ -13,6 +14,7 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
+import isURL from 'validator/lib/isURL';
 
 import { updateMyWebhook, removeMyWebhook } from '../../redux/settings/actions';
 
@@ -66,27 +68,20 @@ function WebhookSettings({
 
   function getValidationForNewWebhook(): WebhookValidation {
     const { newWebhook } = webhookForm;
-    console.log(newWebhook);
-    // if (!maybeEmailRE.test(newEmail)) {
-    //   return {
-    //     state: null,
-    //     message: ''
-    //   };
-    // }
-    // if (newEmail === currentEmail) {
-    //   return {
-    //     state: 'error',
-    //     message: t('validation.same-email')
-    //   };
-    // }
-    // if (isEmail(newEmail)) {
-    //   return { state: 'success', message: '' };
-    // } else {
-    //   return {
-    //     state: 'error',
-    //     message: t('validation.invalid-email')
-    //   };
-    // }
+
+    if (!newWebhook) {
+      return {
+        state: null,
+        message: ''
+      };
+    }
+
+    if (!isURL(newWebhook)) {
+      return {
+        state: 'error',
+        message: 'Invalid URL'
+      };
+    }
 
     return { state: 'success', message: '' };
   }
@@ -109,9 +104,9 @@ function WebhookSettings({
   const { state: newWebhookValidation, message: newWebhookValidationMessage } =
     getValidationForNewWebhook();
 
-  const { newWebhook, isPristine, currentWebhook } = webhookForm;
+  const { newWebhook, currentWebhook } = webhookForm;
 
-  const isDisabled = newWebhookValidation !== 'success' || isPristine;
+  const isDisabled = newWebhookValidation !== 'success';
 
   return (
     <div className='webhook-settings'>
@@ -147,7 +142,7 @@ function WebhookSettings({
           <div role='group' aria-label={t('settings.webhook.heading')}>
             <FormGroup
               controlId='current-email'
-              // validationState={newWebhookValidation}
+              validationState={newWebhookValidation}
             >
               <ControlLabel>{t('settings.webhook.new')}</ControlLabel>
               <FormControl
@@ -164,7 +159,7 @@ function WebhookSettings({
           </div>
 
           <BlockSaveButton
-            data-playwright-test-label='save-email-button'
+            data-playwright-test-label='save-webhook-button'
             aria-disabled={isDisabled}
             bgSize='lg'
             {...(isDisabled && { tabIndex: -1 })}

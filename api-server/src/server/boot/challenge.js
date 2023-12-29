@@ -405,9 +405,9 @@ export async function modernChallengeCompleted(req, res, next) {
       return next(err);
     }
 
-    if (user.hasWebHook) {
+    if (user.webhook) {
       // emit webhook here
-      fetch(user.webHookUrl, {
+      fetch(user.webhook, {
         method: 'POST',
         body: JSON.stringify({
           username: user.username,
