@@ -7,23 +7,21 @@ dashedName: html-foundations-question-a
 ---
 # --description--
 
-Almost all elements on an HTML page are just pieces of content wrapped in opening and closing HTML tags.
+The majority of components on an HTML page consist of content enclosed within opening and closing HTML tags.
 
-Opening tags tell the browser this is the start of an HTML element. They are comprised of a keyword enclosed in angle brackets `<>`. For example, an opening paragraph tag looks like this: `<p>`.
+The opening tags signal the browser that the commencement of an HTML element is imminent. These tags consist of a keyword enclosed within angle brackets `<>`. To illustrate, an opening tag for a paragraph appears as `<p>`.
 
-Closing tags tell the browser where an element ends. They are almost the same as opening tags; the only difference is that they have a forward slash before the keyword. For example, a closing paragraph tag looks like this: `</p>`.
+Conversely, closing tags indicate to the browser the termination point of an element. They closely resemble opening tags, with the sole distinction being the inclusion of a forward slash before the keyword. For instance, a closing tag for a paragraph is denoted as `</p>`.
 
 A full paragraph element looks like this:
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/90b1a362af0bb8635af9593cd8911c9aefb68569/foundations/html_css/html-foundations/imgs/00.png" alt="element diagram">
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/90b1a362af0bb8635af9593cd8911c9aefb68569/foundations/html_css/html-foundations/imgs/00.png" alt="element diagram" />
 
-You can think of elements as containers for content. The opening and closing tags tell the browser what content the element contains. The browser can then use that information to determine how it should interpret and format the content.
+Elements in HTML can be visualized as containers that encapsulate content. The opening and closing tags play a crucial role in informing the browser about the nature of the content within the element, enabling the browser to appropriately interpret and format the content.
 
-There are some HTML elements that do not have a closing tag. These elements often look like this: `<br />` or `<img/>`, but some can also be used without the closing forward slash such as `<br>` or `<img>`. These are known as self-closing tags or empty elements because they don’t wrap any content. You will encounter a few of these in later lessons, but for the most part, elements will have both opening and closing tags.
+Notably, some HTML elements do not necessitate a closing tag. Examples of these include `<br />` or `<img/>`, although some may be used without the closing forward slash, like `<br>` or `<img>`. Such elements are termed self-closing tags or empty elements since they don't envelop any content. While you'll encounter a few of these in subsequent lessons, the majority of elements will feature both opening and closing tags.
 
-HTML has a vast list of predefined tags that you can use to create all kinds of different elements. It is important to use the correct tags for content. Using the correct tags can have a big impact on two aspects of your sites: how they are ranked in search engines; and how accessible they are to users who rely on assistive technologies, like screen readers, to use the internet.
-
-Using the correct elements for content is called semantic HTML. You will explore this in much more depth later on in the curriculum.
+HTML provides an extensive array of predefined tags, facilitating the creation of diverse elements. Using the correct tags is crucial for content, as it significantly influences two key aspects of your websites: their ranking in search engines and their accessibility to users relying on assistive technologies, such as screen readers. Employing the appropriate elements for content is referred to as semantic HTML, a concept that will be explored more comprehensively later in the curriculum.
 
 # --assignment--
 
