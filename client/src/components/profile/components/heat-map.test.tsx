@@ -40,6 +40,11 @@ describe('<HeatMap/>', () => {
   });
   */
 
+  it('displays the correct title', () => {
+    render(<HeatMap {...props} />);
+    expect(screen.getByText('Aug 2019 - Feb 2020')).toBeInTheDocument();
+  });
+
   it('calculates the correct longest streak', () => {
     render(<HeatMap {...props} />);
     expect(screen.getByTestId('longest-streak')).toHaveTextContent(
