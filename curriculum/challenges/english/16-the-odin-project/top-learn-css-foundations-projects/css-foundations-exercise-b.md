@@ -50,6 +50,8 @@ const everyPhasBackgroundColor = p?.every((paragraph) => {
   
   return style?.backgroundColor === 'rgb(255, 255, 0)';
 })
+
+assert.equal(everyPhasBackgroundColor, true);
 ```
 
 Your second element should have `blue` text and a `font-size` of `36px`.
