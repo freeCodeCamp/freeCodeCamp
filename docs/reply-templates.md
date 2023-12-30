@@ -144,11 +144,13 @@ If you're unfamiliar with certain aspects, our [contributing guidelines](https:/
 
 1. **Editing on GitHub:** While it's possible to edit files directly on GitHub, it's typically better not to. This helps avoid inadvertent mistakes like typos that can disrupt tests.
 
-2. **Linking Issues:** Please ensure you link issues using the designated method. Simply update the `XXXXXX` in the PR description to include the issue number. This keeps our records organized and clear.
+2. **Pull Request Title:** Please ensure the PR title follows [our convention](https://contribute.freecodecamp.org/#/how-to-open-a-pull-request?id=prepare-a-good-pr-title).
 
-3. **Engaging with the Team:** We know you're eager, but kindly keep mentions and review requests limited. Our maintainers are always on the lookout and will attend to PRs in the order they come in.
+3. **Linking Issues:** Please ensure you link issues using the designated method. Simply update the `XXXXXX` in the PR description to include the issue number. This keeps our records organized and clear.
 
-4. **Branch Management:** It's a good practice not to work directly off your `main` branch. Creating separate branches for different changes allows you to smoothly update your PR even as the main repository progresses.
+4. **Engaging with the Team:** We know you're eager, but kindly keep mentions and review requests limited. Our maintainers are always on the lookout and will attend to PRs in the order they come in.
+
+5. **Branch Management:** It's a good practice not to work directly off your `main` branch. Creating separate branches for different changes allows you to smoothly update your PR even as the main repository progresses.
 
 </details>
 
