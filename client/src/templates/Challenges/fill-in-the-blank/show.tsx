@@ -180,8 +180,8 @@ class ShowFillInTheBlank extends Component<
 
     const blankAnswers = blanks.map(b => b.answer);
 
-    const newAnswersCorrect = userAnswers.map((userAnswer, i) =>
-      userAnswer && userAnswer.trim() === blankAnswers[i]
+    const newAnswersCorrect = userAnswers.map(
+      (userAnswer, i) => !!userAnswer && userAnswer.trim() === blankAnswers[i]
     );
 
     const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
