@@ -111,6 +111,23 @@ p.footer-donation a:hover {
   margin: 0 0 3rem;
 }
 
+.mobile-app-container {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-app-container img {
+  width: 9.5rem;
+  height: 3rem;
+  object-fit: cover;
+}
+
 .footer-bottom .our-nonprofit {
   display: flex;
   flex-direction: row;
@@ -125,6 +142,9 @@ p.footer-donation a:hover {
 @media (min-width: 500px) {
   .footer-col {
     font-size: 15;
+  }
+  .mobile-app-container {
+    flex-direction: row;
   }
 }
 

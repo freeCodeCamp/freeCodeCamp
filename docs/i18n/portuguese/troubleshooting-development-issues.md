@@ -14,7 +14,7 @@ Se você está em um sistema operacional diferente ou se ainda está encontrando
 
 ## Problemas de ausência da interface do usuário, fontes, strings de idioma ou erro de build
 
-Quando você fizer a build no client, o Gatsby armazenará em cache as fontes, as strings de idioma e a interface do usuário. Se um deles não estiver em cache, execute o seguinte:
+When you build the client, Gatsby will cache the fonts, language strings, and UI. Se um deles não estiver em cache, execute o seguinte:
 
 ```bash
 pnpm run clean
