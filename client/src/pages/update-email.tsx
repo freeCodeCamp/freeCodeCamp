@@ -87,16 +87,17 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
               >
                 <FormGroup
                   className='update-email-field'
-                  controlId='emailInput'
                   validationState={getEmailValidationState()}
                 >
-                  <ControlLabel>{t('misc.email')}</ControlLabel>
+                  <ControlLabel htmlFor='emailInput'>
+                    {t('misc.email')}
+                  </ControlLabel>
                   <FormControl
+                    id='emailInput'
                     onChange={onChange}
                     placeholder='camperbot@example.com'
                     required={true}
                     type='email'
-                    aria-label='email-input'
                   />
                 </FormGroup>
                 <Button
