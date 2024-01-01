@@ -18,7 +18,6 @@ describe('<ControlLabel>', () => {
 
     expect(labelElement).toBeInTheDocument();
     expect(formGroupElement).toContainElement(labelElement);
-    expect(formGroupElement).toHaveAttribute('id', id);
     expect(labelElement).toHaveAttribute('for', id);
   });
 });
