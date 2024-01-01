@@ -181,7 +181,7 @@ class ShowFillInTheBlank extends Component<
     const blankAnswers = blanks.map(b => b.answer);
 
     const newAnswersCorrect = userAnswers.map(
-      (userAnswer, i) => userAnswer === blankAnswers[i]
+      (userAnswer, i) => !!userAnswer && userAnswer.trim() === blankAnswers[i]
     );
 
     const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
@@ -363,6 +363,7 @@ class ShowFillInTheBlank extends Component<
                                       blankAnswers[node.value].length * 11 + 11
                                     }px`
                                   }}
+                                  aria-label={t('learn.blank')}
                                 />
                               );
                           })}

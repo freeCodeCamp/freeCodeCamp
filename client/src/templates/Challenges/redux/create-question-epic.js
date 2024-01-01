@@ -130,7 +130,7 @@ function createQuestionEpic(action$, state$, { window }) {
       const addCodeOne = i18next.t('forum-help.add-code-one');
       const addCodeTwo = i18next.t('forum-help.add-code-two');
       const addCodeThree = i18next.t('forum-help.add-code-three');
-      const altTextMessage = `### ${whatsHappeningHeading}\n\n### ${camperCodeHeading}\n\n${warning}\n\n${tooLongOne}\n\n${tooLongTwo}\n\n${tooLongThree}\n\n\`\`\`text\n${addCodeOne}\n${addCodeTwo}\n${addCodeThree}\n\`\`\`\n\n${endingText}`;
+      const altTextMessage = `### ${whatsHappeningHeading}\n\n${camperCodeHeading}\n\n${warning}\n\n${tooLongOne}\n\n${tooLongTwo}\n\n${tooLongThree}\n\n\`\`\`text\n${addCodeOne}\n${addCodeTwo}\n${addCodeThree}\n\`\`\`\n\n${endingText}`;
 
       const titleText = window.encodeURIComponent(
         `${i18next.t(

@@ -300,163 +300,163 @@
     }
   },
   "javascript-algorithms-and-data-structures-v8": {
-    "title": "JavaScript Algorithms and Data Structures (Beta)",
+    "title": "Алгоритми JavaScript та структури даних (бета-версія)",
     "intro": [
-      "Developers use HTML and CSS to control the content and styling of a page. And they use JavaScript to make that page interactive.",
-      "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",
-      "You'll also learn about Object Oriented Programming (OOP), Functional Programming, algorithmic thinking, how to work with local storage, and how to fetch data using an API."
+      "Розробники використовують HTML та CSS, щоб контролювати вміст та стилізувати сторінку, а JavaScript — щоб зробити цю сторінку інтерактивною.",
+      "У сертифікації «Алгоритми JavaScript та структури даних» ви вивчите основи JavaScript, включно зі змінними, масивами, об’єктами, циклами, функціями, об’єктною моделлю документа та багато іншого.",
+      "Ви також вивчите об’єктноорієнтоване програмування, функціональне програмування, алгоритмічне мислення, способи роботи з локальним сховищем і отримання даних з API."
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
+    "note": "Примітка: деякі розширення браузера (наприклад, блокувальники реклами та скриптів) можуть втручатися в тести. Якщо ви зіткнулися з подібною проблемою, ми рекомендуємо вимкнути розширення, які змінюють або блокують вміст сторінок під час виконання курсу.",
     "blocks": {
       "build-a-pokemon-search-app-project": {
-        "title": "Build a Pokémon Search App Project",
+        "title": "Проєкт «Створіть застосунок Pokémon Search»",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a Pokémon search app."
+          "Цей проєкт потрібно виконати, щоб отримати сертифікацію.",
+          "У цьому проєкті ви створите застосунок з пошуку покемонів."
         ]
       },
       "build-a-cash-register-project": {
-        "title": "Build a Cash Register Project",
+        "title": "Проєкт «Створіть касовий апарат»",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you'll build a cash register web app."
+          "Цей проєкт потрібно виконати, щоб отримати сертифікацію.",
+          "У цьому проєкті ви створите вебзастосунок касового апарату."
         ]
       },
       "build-a-palindrome-checker-project": {
-        "title": "Build a Palindrome Checker Project",
+        "title": "Проєкт «Створіть перевірку паліндрома»",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you'll build an application that checks whether a given word is a palindrome."
+          "Цей проєкт потрібно виконати, щоб отримати сертифікацію.",
+          "У цьому проєкті ви створите застосунок, який перевіряє, чи дане слово є паліндромом."
         ]
       },
       "build-a-roman-numeral-converter-project": {
-        "title": "Build a Roman Numeral Converter Project",
+        "title": "Проєкт «Створіть конвертер римських чисел»",
         "intro": [
-          "This is one of the required projects to claim your certification.",
-          "For this project, you'll build an application that converts integers to Roman numerals."
+          "Цей проєкт потрібно виконати, щоб отримати сертифікацію.",
+          "У цьому проєкті ви створите застосунок, який конвертує цілі числа в римські."
         ]
       },
       "build-a-telephone-number-validator-project": {
-        "title": "Build a Telephone Number Validator Project",
+        "title": "Проєкт «Створіть валідатор мобільного номера»",
         "intro": [
-          "This is one of the required projects to claim your certification.",
-          "For this project, you'll build an application that checks if a number is a valid United States phone number."
+          "Цей проєкт потрібно виконати, щоб отримати сертифікацію.",
+          "У цьому проєкті ви створите застосунок, який перевіряє, чи мобільний номер є дійсним номером США."
         ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+        "title": "Вивчіть основи JavaScript, створивши рольову гру",
         "intro": [
-          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
-          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Role Playing Game. You'll learn how to work with arrays, strings, objects, functions, loops, <code>if/else</code> statements, and more."
+          "JavaScript — це потужна скриптова мова, яку використовують, щоб зробити вебсайти інтерактивними. Це одна з основних технологій в мережі (разом з HTML та CSS), яка підтримується всіма сучасними браузерами.",
+          "У цьому практичному проєкті ви вивчите основні поняття програмування на JavaScript, створивши власну рольову гру. Ви навчитеся працювати з масивами, рядками, об’єктами, функціями, циклами, інструкціями <code>if/else</code> тощо."
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
-        "title": "Learn Form Validation by Building a Calorie Counter",
+        "title": "Вивчіть валідацію форм, створивши лічильник калорій",
         "intro": [
-          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter project, you'll learn how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
-          "In this practice project, you'll learn basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
+          "Іноді при створенні вебзастосунків потрібно працювати з введенням користувача. У цьому проєкті з підрахунку калорій ви навчитеся обробляти введення користувача, виконувати обчислення на основі цього введення та динамічно оновлювати інтерфейс для відтворення результатів.",
+          "У цьому практичному проєкті ви вивчите основні регулярні вирази, шаблонні літерали, метод <code>addEventListener()</code> та багато іншого."
         ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
-        "title": "Learn Functional Programming by Building a Spreadsheet",
+        "title": "Вивчіть функційне програмування, створивши електронну таблицю",
         "intro": [
-          "Functional Programming is a popular approach to software development. In Functional Programming, developers organize code into smaller functions, then combine those functions to build complex programs.",
-          "In this spreadsheet application project, you'll learn about parsing and evaluating mathematical expressions, implementing spreadsheet functions, handling cell references, and creating interactive web interfaces. You'll learn how to dynamically update the page based on user input.",
-          "This project will cover concepts like the <code>map()</code> method, <code>find()</code> method, <code>parseInt()</code>, the <code>includes()</code> method."
+          "Функційне програмування — це популярний підхід до розробки програмного забезпечення. У функційному програмуванні код впорядкований у менші функції, які можна об’єднати для створення складних програм.",
+          "У цьому проєкті зі створення застосунку з таблицями ви дізнаєтесь про парсинг та обчислення математичних виразів, реалізацію функцій таблиць, обробку посилань на комірки та створення інтерактивних вебінтерфейсів. Ви дізнаєтесь, як динамічно оновити сторінку на основі введення користувача.",
+          "Цей проєкт охопить методи <code>map()</code>, <code>find()</code>, <code>parseInt()</code> та <code>includes()</code>."
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
-        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
+        "title": "Вивчіть сучасні методи JavaScript, створивши карточки футбольних команд",
         "intro": [
-          "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
-          "This project will cover concepts like switch statements, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method, and more."
+          "Один із загальних аспектів створення вебзастосунків — обробка наборів даних та виведення інформації на екран. У проєкті з картками спортивних команд ви дізнаєтесь, як працювати з маніпулюванням DOM, деструктуризацією об’єктів, обробкою подій та фільтрацією даних.",
+          "Цей проєкт охопить такі поняття, як інструкція switch, параметри за замовчуванням, <code>Object.freeze()</code>, метод <code>map()</code> тощо."
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
-        "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
+        "title": "Вивчіть передові методи масиву, створивши статистичний калькулятор",
         "intro": [
-          "As you expand your JavaScript skills, you'll want to get comfortable with array manipulation methods, such as <code>map()</code>, <code>reduce()</code>, and <code>filter()</code>.",
-          "In this statistics calculator project, you'll gain experience with handling user input, DOM manipulation, and method chaining. You'll get practice by performing statistical calculations like mean, median, mode, variance, and standard deviation."
+          "Ви розвиваєте навички володіння JavaScript, а отже потрібно розібратись з методами маніпулювання масивами, серед яких <code>map()</code>, <code>reduce()</code> та <code>filter()</code>.",
+          "У цьому проєкті зі створення статистичного калькулятора ви здобудете досвід роботи з введення користувача, маніпулювання DOM та ланцюжкових методів, виконуючи статистичні обчислення середнього значення, медіани, моди, дисперсії та стандартного відхилення."
         ]
       },
       "learn-basic-oop-by-building-a-shopping-cart": {
-        "title": "Learn Basic OOP by Building a Shopping Cart",
+        "title": "Вивчіть основи ООП, створивши список покупок",
         "intro": [
-          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, developers use objects and classes to structure their code.",
-          "In this shopping cart project, you'll learn how to define classes and use them. You'll create class instances and implement methods for data manipulation.",
-          "This project will cover concepts like the ternary operator, the spread operator, the <code>this</code> keyword, and more."
+          "ООП, або об’єктноорієнтоване програмування — це один з основних підходів до процесу розробки програмного забезпечення. Розробники використовують об’єкти та класи, щоб впорядкувати код в ООП.",
+          "У цьому проєкті зі списком покупок ви дізнаєтесь, як визначити класи та використати їх. Ви створите екземпляри класу та впровадите методи для маніпуляцій даними.",
+          "Цей проєкт охопить такі поняття, як тернарний оператор, оператор розширення, ключове слово <code>this</code> та інше."
         ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "title": "Вивчіть фетч та проміси, створивши сторінку автора fCC",
         "intro": [
-          "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
-          "This freeCodeCamp authors page project will show you how to use the fetch method, then dynamically update the DOM to display the fetched data.",
-          "This project will also teach you how to paginate your data so you can load results in batches."
+          "Один із загальних аспектів веброзробки, якого потрібно навчитись — отримувати дані від зовнішнього API, а потім працювати з асинхронним JavaScript.",
+          "Цей проєкт зі сторінкою авторів freeCodeCamp покаже, як використовувати метод fetch, а потім оновити DOM, щоб відтворити отримані дані.",
+          "Цей проєкт також навчить, як робити навігацію даних, щоб ви могли завантажувати результати партіями."
         ]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
-        "title": "Learn Regular Expressions by Building a Spam Filter",
+        "title": "Вивчіть регулярні вирази, створивши спам-фільтр",
         "intro": [
-          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
-          "In this spam filter project, you'll learn about capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
+          "Регулярні вирази (відомі як «regex» або «regexp») — шаблони, які допомагають програмістам поєднувати, шукати та замінювати текст. Регулярні вирази надзвичайно потужні, але їх важко зрозуміти, оскільки у них використовуються спеціальні символи.",
+          "У цьому проєкті з фільтрування спаму ви дізнаєтеся про групи захоплення, позитивний та негативний огляди, а також інші техніки, щоб текст відповідав бажаному."
         ]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
-        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+        "title": "Вивчіть базове алгоритмічне мислення, створивши сортувальник чисел",
         "intro": [
-          "In computer science, there are fundamental sorting algorithms that all developers should learn. In this number sorter project, you'll learn how to implement and visualize different sorting algorithms like bubble sort, selection sort, and insertion sort – all with JavaScript.",
-          "This project will help you understand the fundamental concepts behind these algorithms, and how you can apply them to sort numerical data in web applications."
+          "У галузі комп’ютерних наук існують основні алгоритми сортування, які всі розробники повинні вивчити. У цьому проєкті з сортування чисел ви навчитеся реалізовувати та візуалізувати різні алгоритми сортування, серед яких сортування бульбашкою, сортування вибором та сортування вставками з використанням JavaScript.",
+          "Цей проєкт допоможе зрозуміти основні поняття за цими алгоритмами та як їх можна застосувати для сортування числових даних у вебзастосунках."
         ]
       },
       "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Learn Intermediate Algorithmic Thinking by Building a Dice Game",
+        "title": "Вивчіть проміжне алгоритмічне мислення, створивши гру з кубиками",
         "intro": [
-          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
-          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
-          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
+          "Алгоритмічне мислення передбачає здатність розбивати складні завдання на чітко визначені кроки.",
+          "У проєкті зі створення гри з кубиками ви дізнаєтесь, як керувати станом гри, реалізувати логіку гри для кидання кубиків, зберігати бали та застосовувати правила для різних комбінацій.",
+          "Цей проєкт охоплює обробку подій, маніпулювання масивами, умовну логіку та динамічне оновлення інтерфейсу користувача на основі стану гри."
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
-        "title": "Learn Intermediate OOP by Building a Platformer Game",
+        "title": "Вивчіть проміжне ООП, створивши платформну гру",
         "intro": [
-          "Coding a game is a great way to grasp fundamental programming principles, while also creating an interactive gaming experience.",
-          "In this platformer game project, you'll continue to learn about classes, objects, inheritance, and encapsulation. You'll also learn how to design and organize game elements efficiently and gain insights into problem-solving and code reusability."
+          "Створення ігор — чудовий спосіб засвоїти основні принципи програмування, ще й під час здобуття інтерактивного ігрового досвіду.",
+          "У проєкті зі створення платформної гри ви продовжите вивчати класи, об’єкти, успадкування та інкапсуляцію. Ви також навчитеся ефективно проєктувати та організовувати елементи гри, отримаєте уявлення про розв’язання проблем та можливість повторного використання коду."
         ]
       },
       "learn-localstorage-by-building-a-todo-app": {
-        "title": "Learn localStorage by Building a Todo App",
+        "title": "Вивчіть localStorage, створивши застосунок зі списком справ",
         "intro": [
-          "Local storage is a web browser feature that lets web applications store key-value pairs persistently within a user's browser. This allows web apps to save data during one session, then retrieve it in a later page session.",
-          "In this TODO application, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implement event listeners, and toggle UI elements."
+          "Локальне сховище — це функція вебпереглядача, яка дозволяє вебзастосункам зберігати пари ключ-значення в браузері користувача. Воно також дозволяє зберігати дані протягом одного сеансу та використовувати їх в наступному.",
+          "У цьому застосунку для списку справ ви навчитеся обробляти введення форми, управляти локальним сховищем, виконувати операції CRUD (створення, читання, оновлення, видалення) на завданнях, реалізовувати слухачів подій та перемикати елементи інтерфейсу користувача."
         ]
       },
       "learn-the-date-object-by-building-a-date-formatter": {
-        "title": "Learn the Date Object by Building a Date Formatter",
+        "title": "Вивчіть об’єкт Date, створивши форматувальник дат",
         "intro": [
-          "Working with dates in JavaScript can be challenging. You have to navigate various methods, formats, and time zones. In this project, you'll learn how to work with the JavaScript Date object, including its methods and properties. You'll also learn how to correctly format dates.",
-          "This project will cover concepts such as the <code>getDate()</code>, <code>getMonth()</code>, and <code>getFullYear()</code> methods."
+          "При роботі з датами в JavaScript ви можете зіткнутися з викликами, оскільки доведеться орієнтуватися у різних методах, форматах і часових поясах. У цьому проєкті ви дізнаєтесь, як працювати з об’єктом Date в JavaScript, включно з його методами та властивостями, а також навчитеся форматувати дати.",
+          "Цей проєкт охоплює такі поняття, як методи <code>getDate()</code>, <code>getMonth()</code> та <code>getFullYear()</code>."
         ]
       },
       "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard": {
-        "title": "Learn Asynchronous Programming by Building an fCC Forum Leaderboard",
+        "title": "Вивчіть асинхронне програмування, створивши таблицю лідерів форуму fCC",
         "intro": [
-          "JavaScript is an asynchronous programming language. And this project will help you gain proficiency in asynchronous concepts. You'll code your own freeCodeCamp forum leaderboard.",
-          "This project will cover the Fetch API, promises, Async/Await, and the try..catch statement."
+          "JavaScript — це асинхронна мова програмування. Цей проєкт допоможе розібратись з асинхронними поняттями. Ви створите власну таблицю лідерів форуму freeCodeCamp.",
+          "Цей проєкт охопить Fetch API, проміси, Async/Await та інструкцію try..catch."
         ]
       },
       "learn-basic-string-and-array-methods-by-building-a-music-player": {
-        "title": "Learn Basic String and Array Methods by Building a Music Player",
+        "title": "Вивчіть базові методи рядка та масиву, створивши музичний програвач",
         "intro": [
-          "Now let's learn some essential string and array methods like the <code>find()</code>, <code>forEach()</code>, <code>map()</code>, and <code>join()</code>. These methods are crucial for developing dynamic web applications.",
-          "In this project, you'll code a basic MP3 player using HTML, CSS, and JavaScript. The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, previous, and shuffle functionalities. You'll even learn how to dynamically update your user interface based on the current song."
+          "Тепер вивчимо основні методи рядка та масиву, серед яких <code>find()</code>, <code>forEach()</code>, <code>map()</code> та <code>join()</code>. Ці методи відіграють важливу роль для розробки динамічних вебзастосунків.",
+          "У цьому проєкті ви створите MP3-плеєр за допомогою HTML, CSS та JavaScript. Цей проєкт охоплює ключові поняття, серед яких обробка відтворення аудіо, управління плейлистом, реалізація функцій програвання, паузи, наступної пісні та перемішування. Ви навіть дізнаєтесь, як динамічно оновити інтерфейс користувача на основі поточної пісні."
         ]
       },
       "learn-recursion-by-building-a-decimal-to-binary-converter": {
-        "title": "Learn Recursion by Building a Decimal to Binary Converter",
+        "title": "Вивчіть рекурсію, створивши конвертер десяткових чисел в бінарні",
         "intro": [
-          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
-          "In this project, you’ll build a decimal-to-binary converter using JavaScript. You’ll learn the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
+          "Рекурсія — це таке поняття в програмуванні, коли функція викликає сама себе. Це може перетворити складне завдання на декілька менших простіших завдань, допоки вони не стануть зрозумілими.",
+          "У цьому проєкті ви побудуєте конвертер десяткових чисел в бінарні за допомогою JavaScript. Ви вивчите основні поняття рекурсії, дослідите стек викликів та побудуєте візуальне представлення процесу рекурсії через анімацію."
         ]
       }
     }
@@ -748,86 +748,88 @@
     }
   },
   "scientific-computing-with-python": {
-    "title": "Scientific Computing with Python (Beta)",
+    "title": "Наукові обчислення з Python (бета-версія)",
     "intro": [
-      "Python — одна з найпопулярніших, гнучких мов програмування на сьогодні. Ви можете використовувати її для всього: від базових скриптів до машинного навчання.",
+      "Python — одна з найпопулярніших гнучких мов програмування на сьогодні. Ви можете використовувати її для всього: від базових скриптів до машинного навчання.",
       "У сертифікації «Наукові обчислення з Python» ви дізнаєтесь основи Python, серед яких змінні, цикли, умовні переходи та функції. Тоді ви швидко перейдете до складних структур даних, роботи з мережами, реляційних баз даних та візуалізації даних."
     ],
     "note": "",
     "blocks": {
       "learn-string-manipulation-by-building-a-cipher": {
-        "title": "Learn String Manipulation by Building a Cipher",
+        "title": "Вивчіть маніпуляцію рядками, створивши шифр",
         "intro": [
-          "Python is a powerful and popular programming language widely used for data science, data visualization, web and game development, machine learning and much more.",
-          "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loop, conditional statements, and and how to work with them to build your first program."
+          "Python — це потужна та популярна мова програмування, яку широко використовують для науки про дані, візуалізації даних, веброзробки, розробки ігор, машинного навчання та багатьох інших галузей.",
+          "У цьому проєкті ви ознайомитеся з основними поняттями програмування на Python, серед яких змінні, функції, цикли та умовні інструкції. Ви використаєте їх для написання своїх перших програм."
         ]
       },
       "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm": {
-        "title": "Learn How to Work with Numbers and Strings by Implementing the Luhn Algorithm",
+        "title": "Навчіться працювати з числами та рядками, імплементувавши алгоритм Луна",
         "intro": [
-          "The Luhn Algorithm is widely used for error-checking in various applications, including credit card numbers.",
-          "Through this project, you'll gain valuable experience in working with numerical computations and string manipulation while implementing the Luhn Algorithm."
+          "Алгоритм Луна широко використовується для перевірки помилок у різних програмах (наприклад, щоб перевірити номер кредитної картки).",
+          "Створивши цей проєкт, ви отримаєте досвід роботи з чисельними обчисленнями та маніпулюванням рядками."
         ]
       },
       "learn-list-comprehension-by-building-a-case-converter-program": {
-        "title": "Learn Python List Comprehension By Building a Case Converter Program",
+        "title": "Вивчіть спискові вирази Python, створивши програму для зміни регістру",
         "intro": [
-          "A list comprehension in Python is a way to construct a new list from an iterable types such as lists, tuples, and strings without using a for loop or the `.append()` list method",
-          "In this project, you will write a program that takes a string formatted in camel or pascal case and converts that to snake case. The project has two phases.",
-          "During the first phase, you will use a for loop to implement the program.",
-          "Then in the second phase you will learn about applying list comprehension instead of a loop to achieve the same results."
+          "Спискові вирази — це спосіб створення нового списку Python з ітерабельних типів (списків, кортежів і рядків) без використання циклу for або методу списку .append().",
+          "У цьому проєкті ви напишете програму, яка приймає рядок у верхньому або нижньому верблюдячому регістрі, а потім перетворює його у зміїний регістр.",
+          "Проєкт складається з двох етапів: спочатку ви використаєте цикл for, щоб імплементувати програму. Потім ви дізнаєтесь, як використовувати спискові вирази замість циклу, щоб отримати ті ж результати."
         ]
       },
       "learn-regular-expressions-by-building-a-password-generator": {
-        "title": "Learn Regular Expressions by Building a Password Generator",
+        "title": "Вивчіть регулярні вирази, створивши генератор паролів",
         "intro": [
-          "In Python, a module is a file containing a set of statements and definitions that you can use in your code.",
-          "In this project, you'll learn how to import and use modules from the Python standard library and how to use regular expressions while building your own password generator program."
+          "Модуль Python — це файл, який містить набір інструкцій та визначень, які можна використати у коді.",
+          "У цьому проєкті ви навчитеся імпортувати модулі зі стандартної бібліотеки Python. Також ви дізнаєтесь, як використовувати регулярні вирази, створивши власну програму для генерації паролів."
         ]
       },
-      "learn-algorithm-design-by-building-the-shortest-path-algorithm": {
-        "title": "Learn Algorithm Design by Building the Shortest Path Algorithm",
+      "learn-algorithm-design-by-building-a-shortest-path-algorithm": {
+        "title": "Вивчіть алгоритмічний дизайн, створивши алгоритм найкоротшого шляху",
         "intro": [
-          "Algorithms are step-by-step procedures used to perform calculations and solve computational problems.",
-          "In this project, you'll learn how to use functions, loops, conditional statements, dictionary comprehensions and more to design and implement the shortest path algorithm."
+          "Алгоритми — це покрокові процедури, які розробники використовують для виконання розрахунків та розв’язання обчислювальних задач.",
+          "У цьому проєкті ви дізнаєтеся, як використовувати функції, цикли, умовні інструкції та словникові вирази, щоб імплементувати алгоритм найкоротшого шляху."
         ]
       },
       "learn-recursion-by-solving-the-tower-of-hanoi-puzzle": {
-        "title": "Learn Recursion by Solving the Tower of Hanoi Puzzle",
+        "title": "Вивчіть рекурсію, розгадавши головоломку Ханойської вежі",
         "intro": [
-          "Recursion allows you to write concise and elegant code to solve complex computational problems.",
-          "In this project, you'll start with an iterative approach to solve the tower of Hanoi mathematical puzzle and then you'll learn how to implement a recursive solution."
+          "Рекурсія — це підхід до програмування, який дозволяє розв’язати обчислювальні задачі за допомогою невеликої кількості коду.",
+          "У цьому проєкті ви почнете з підходу на основі циклів, щоб розв’язати математичну головоломку Ханойської вежі. Потім ви дізнаєтеся, як імплементувати рекурсивний розв’язок."
         ]
       },
       "learn-data-structures-by-building-the-merge-sort-algorithm": {
-        "title": "Learn Data Structures by Building the Merge Sort Algorithm",
+        "title": "Вивчіть структури даних, створивши алгоритм сортування злиттям",
         "intro": [
-          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
-          "In this project, you'll learn how to interact with data structures by sorting a list of random numbers using the merge sort algorithm."
+          "Алгоритм сортування злиттям — це алгоритм сортування, заснований на принципі «розділяй і володарюй».",
+          "У цьому проєкті ви навчитеся взаємодіяти зі структурами даних, сортуючи список випадкових чисел за допомогою алгоритму сортування злиттям."
         ]
       },
       "learn-classes-and-objects-by-building-a-sudoku-solver": {
-        "title": "Learn Classes and Objects by Building a Sudoku Solver",
+        "title": "Вивчіть класи та об’єкти, створивши розв’язувач судоку",
         "intro": [
-          "Classes and objects are an important programming concept and they enable developers to achieve code modularity, abstraction, readability, and promote reusability.",
-          "In this Sudoku solver project, you'll learn how to use classes and objects to build a sudoku grid and to solve a sudoku puzzle."
+          "Класи та об’єкти є важливими поняттями програмування. Ці інструменти об’єктноорієнтованого програмування допомагають розробникам з модульністю коду, абстракцією та читабельністю, а також сприяють повторному використанню.",
+          "У цьому проєкті з розв’язувачем судоку ви дізнаєтесь, як використовувати класи та об’єкти, щоб створити сітку судоку та вирішити цю головоломку."
         ]
       },
       "learn-tree-traversal-by-building-a-binary-search-tree": {
-        "title": "Learn Tree Traversal by Building a Binary Search Tree",
+        "title": "Вивчіть обхід дерева, створивши двійкове дерево пошуку",
         "intro": [
-          "A Binary Search Tree (BST) is an important data structure concept, where data is sorted in a hierarchical structure.",
-          "In this project, you will learn how to construct a BST, perform an inorder traversal, and also cover key operations like insertion, search, and deletion."
+          "Двійкове дерево пошуку (BST) — це поширена структура даних, де дані впорядковані ієрархічно.",
+          "У цьому проєкті ви дізнаєтесь, як сконструювати власне двійкове дерево пошуку (BST) і виконати серединний обхід. Також ви ознайомитеся з ключовими операціями (наприклад, вставка, пошук та видалення)."
         ]
       },
       "learn-lambda-functions-by-building-an-expense-tracker": {
-        "title": "Learn Lambda Functions by Building an Expense Tracker",
-        "intro": ["", ""]
+        "title": "Вивчіть лямбда-функції, створивши відстежувач витрат",
+        "intro": [
+          "Завдяки лямбда-функціям можна написати невеликі одноразові функції у своєму коді.",
+          "У цьому проєкті ви дослідите потужність лямбда-функцій, створивши відстежувач витрат. Кінцевий застосунок продемонструє, як можна використовувати лямбда-функції для ефективних і оптимізованих операцій."
+        ]
       },
       "scientific-computing-with-python-projects": {
         "title": "Проєкти «Наукові обчислення з Python»",
         "intro": [
-          "Час перевірити свої навички роботи з Python. Завершивши ці проєкти, ви продемонструєте, що володієте хорошими фундаментальними знаннями Python і маєте право на сертифікацію «Наукові обчислення з Python»."
+          "Час перевірити ваші навички роботи з Python. Завершивши ці проєкти, ви продемонструєте, що володієте хорошими фундаментальними знаннями Python і маєте право на сертифікацію «Наукові обчислення з Python»."
         ]
       }
     }
@@ -1061,17 +1063,17 @@
     }
   },
   "python-for-everybody": {
-    "title": "Legacy Python for Everybody",
+    "title": "Застарілий Python для всіх",
     "intro": [
-      "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning."
+      "Python — одна з найпопулярніших гнучких мов програмування на сьогодні. Ви можете використовувати її для всього: від базових скриптів до машинного навчання."
     ],
     "note": "",
     "blocks": {
       "python-for-everybody": {
-        "title": "Python for Everybody",
+        "title": "Python для всіх",
         "intro": [
-          "Python for everybody is a free video course series that teaches the basics of using Python 3.",
-          "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
+          "Python для всіх — це безоплатна серія відеокурсів, яка вчить основам використання Python 3.",
+          "Курси були створені Чарльзом Северансом (також відомим як Dr. Chuck). Він є професором школи інформації університету Мічигану, де викладає різні технологічні курси, включно з програмуванням, дизайном баз даних та веброзробкою."
         ]
       }
     }
@@ -1082,7 +1084,7 @@
       "Шукаєте безоплатні вправи з програмування, щоб підготуватися до наступної співбесіди? Ми про це подбали.",
       "Цей розділ містить сотні завдань з програмування, які перевіряють ваші знання алгоритмів, структур даних і математики. Тут також є декілька проєктів, які ви можете використати для зміцнення своїх навичок або просто додати до свого портфоліо."
     ],
-    "note": "Проєкт Ейлера переміщено в окремий курс. Поверніться до навчальної програми, щоб побачити перелік всіх курсів.",
+    "note": "The Project Euler Project and Rosetta Code have been moved to their own courses. Go back to the curriculum to see the list of courses we offer.",
     "blocks": {
       "algorithms": {
         "title": "Алгоритми",
@@ -1108,71 +1110,73 @@
     }
   },
   "the-odin-project": {
-    "title": "The Odin Project (Beta)",
+    "title": "Проєкт «Odin» (бета-версія)",
     "intro": [
-      "Проєкт «Odin» є одним з тих ресурсів, про які хотіли б дізнатися ще коли навчались. ",
-      "Не кожен має доступ до технологічної освіти або коштів, необхідних для відвідування інтенсивної школи. Однак це не остаточне рішення для тих, хто хоче вчитися.",
-      "Цей проєкт розроблений, щоб заповнити прогалину для людей, які намагаються вчитись самостійно, але все ж таки хочуть високоякісну освіту."
+      "Проєкт «Odin» був створений розробником Еріком Траутманом у 2013 році. Протягом років з’явилася відкрита спільнота, яка доглядає за проєктом та розширює його.",
+      "freeCodeCamp розширив відкриту навчальну програму, щоб зробити її інтерактивною у браузері. Проєкт міститиме тести, щоб оцінити ваш код та переконатись, що ви зрозуміли основні поняття.",
+      "Якщо ви хочете отримати оригінальний досвід налаштування проєкту на локальному комп’ютері, див. першоджерело проєкту на <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project</a>. Велика подяка спільноті проєкту «Odin» за підтримку цього цінного навчального ресурсу для розробників з усього світу.",
+      "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
+      "<a href='https://github.com/TheOdinProject/curriculum?tab=License-1-ov-file#readme' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>"
     ],
     "blocks": {
       "top-learn-html-foundations": {
         "title": "Вивчіть основи HTML",
         "intro": [
-          "Get a solid grasp of HTML essentials with this course. From structuring web pages to understanding semantic tags, you'll build a strong foundation for creating well-organized and accessible content on the web."
+          "Вивчіть основи HTML за допомогою цього курсу. Від структурування вебсторінок до розуміння семантичних тегів, ви побудуєте міцну основу для створення організованого та доступного контенту в мережі."
         ]
       },
       "top-working-with-text": {
         "title": "Робота з текстом",
         "intro": [
-          "Explore the intricacies of working with text in web development. Learn about text formatting, manipulation, and presentation to enhance your skills in creating web content."
+          "Дізнайтесь про складнощі роботи з текстом у веброзробці. Вивчіть форматування, маніпулювання та презентацію тексту, щоб покращити свої навички у створенні вебконтенту."
         ]
       },
       "top-links-and-images": {
         "title": "Посилання та зображення",
         "intro": [
-          "Learn how to incorporate links and images into your web projects. This course covers the fundamentals of creating links and embedding images to make your websites more interactive and visually appealing."
+          "Дізнайтеся, як використовувати посилання та зображення у вебпроєктах. Цей курс охоплює основи створення посилань та вбудовування зображень, щоб зробити вебсайт більш інтерактивним та візуально привабливим."
         ]
       },
       "top-build-a-recipe-project": {
         "title": "Вивчіть основи HTML, побудувавши сторінку з рецептами",
         "intro": [
-          "Put your HTML skills into practice by building a recipe page. This hands-on project allows you to apply your knowledge and create a functional web page while reinforcing key concepts of HTML development."
+          "Використайте свої навички HTML, створивши сторінку з рецептами. Цей практичний проєкт дозволяє застосувати отримані знання та створити функціональну вебсторінку, закріпивши ключові поняття розробки HTML."
         ]
       },
       "top-learn-css-foundations": {
         "title": "Вивчіть основи CSS",
         "intro": [
-          "Dive into the world of  Cascading Style Sheets (CSS) and learn how to style your HTML elements. Explore styling properties, selectors, and layouts to bring your web pages to life."
+          "Зануртеся у світ каскадних таблиць стилів (CSS) та дізнайтесь, як стилізувати елементи HTML. Вивчіть властивості стилізації, селектори та макети, щоб оживити вебсторінки."
         ]
       },
       "top-learn-css-foundations-projects": {
         "title": "Проєкти «Вивчіть основи CSS»",
         "intro": [
-          "Take your CSS skills to the next level by working on practical projects. This course provides hands-on experience in applying CSS to create responsive designs for real-world scenarios."
+          "Розвиньте свої навички CSS, працюючи над практичними проєктами. Цей курс надає практичний досвід застосування CSS для створення адаптивних дизайнів для реальних сценаріїв."
         ]
       },
       "top-learn-css-specificity": {
         "title": "Вивчіть специфічність CSS",
         "intro": [
-          "Learn CSS specificity and gain a better understanding of how styles are applied to HTML elements. This course explores the nuances of CSS rules and helps you write efficient and targeted styles for your web pages."
+          "Дослідіть специфічність CSS та отримайте краще розуміння того, як застосовувати стилі до елементів HTML. Цей курс навчає правил CSS, що допоможе написати ефективні та націлені стилі для вебсторінок."
         ]
       },
       "top-the-box-model": {
         "title": "Вивчіть блокову модель",
         "intro": [
-          "Learn the CSS box model with this course. Understand how elements are rendered on the web, and learn to manipulate spacing, borders, and padding to achieve your desired layout and design."
+          "Вивчіть блокову модель CSS завдяки цьому курсу. Дізнайтесь, як відтворюються елементи, та навчіться маніпулювати простором, кордонами та відступами, щоб досягти бажаного макету та дизайну."
         ]
       },
       "top-introduction-to-flexbox": {
         "title": "Вступ до Flexbox",
         "intro": [
-          "Discover the power of Flexbox, a layout model that simplifies the design of flexible and responsive web layouts. Learn how to create dynamic and adaptive page structures with ease."
+          "Відкрийте для себе потужність Flexbox — моделі макету, яка спрощує проєктування гнучких та адаптивних вебмакетів. Навчіться створювати динамічні та адаптивні структури сторінок з легкістю."
         ]
       },
       "top-learn-block-and-inline": {
         "title": "Вивчіть блокові та рядкові елементи",
         "intro": [
-          "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
+          "Дослідіть відмінності між блоковими та рядковими елементами в HTML та CSS. Цей курс надасть уявлення про те, як такі відтворення впливають на макет та поведінку, що дозволить вам приймати обґрунтовані рішення у дизайні."
         ]
       }
     }
@@ -1286,41 +1290,41 @@
   "a2-english-for-developers": {
     "title": "Англійська мова рівня A2 для розробників (бета-версія)",
     "intro": [
-      "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
-      "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
-      "In the second half, you'll practice vocabulary specific to software development. You'll learn how to describe code, discuss tech trends, and participate in stand-up meetings.",
-      "This entire A2-level curriculum includes 105 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
+      "У цьому курсі з вивчення англійської мови для розробників ви опануєте основи англійської комунікації. Курс створено відповідно до загальноєвропейських рекомендацій з мовної освіти рівня A2 (CEFR). Ми зосередилися на словниковому запасі, що є особливо корисним для розробників.",
+      "Перша частина допоможе освоїти граматику та використання англійської мови. Ви виконаєте багато практичних вправ, дізнавшись основи (наприклад, представлення себе, проведення коротких розмов і обговорення роботи).",
+      "У другій частині ви практикуватимете словниковий запас, специфічний для розробки програмного забезпечення. Ви навчитеся описувати код, обговорювати технологічні тенденції та брати участь у зустрічах.",
+      "Весь курс рівня A2 складається з 105 різних діалогів. Кожен з них створений для того, щоб розширити ваш словниковий запас та підвищити впевненість під час спілкування в професійному середовищі."
     ],
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "Дізнайтесь про привітання в офісі першого робочого дня",
         "intro": [
-          "In this first course, you'll learn common expressions for situations you may encounter on your first day at work. You'll learn about introductions, getting to know people, asking for lunch recommendations, and getting an access card from security."
+          "У цьому курсі ви навчитеся поширених висловів для ситуацій, з якими можете зіткнутись у перший робочий день. Ви дізнаєтесь про представлення, знайомство з іншими людьми, спілкування під час перерви та отримання картки доступу."
         ]
       },
       "learn-introductions-in-an-online-team-meeting": {
         "title": "Дізнайтесь про знайомство на онлайн-зустрічі",
         "intro": [
-          "In this course, you'll learn how to give a personal introduction. You'll also learn how to state your profession, and share your goals in group meetings."
+          "У цьому курсі ви навчитеся представляти себе, а також вказувати свою професію та ділитися цілями на групових зустрічах."
         ]
       },
       "learn-conversation-starters-in-the-break-room": {
         "title": "Дізнайтесь про початок розмови в кімнаті відпочинку",
         "intro": [
-          "In this course, you'll learn how to start a conversation in casual settings. You'll also learn how to talk about your hobbies and personality traits. You'll even learn how to ask about places around the town."
+          "У цьому курсі ви навчитеся розпочинати розмову в неформальних обставинах. Ви також дізнаєтеся, як говорити про свої хобі та особисті риси, і навіть навчитеся запитувати про місця у місті."
         ]
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Дізнайтесь, як говорити про типовий робочий день та завдання",
-        "intro": ["Learn about a typical workday."]
+        "intro": ["Дізнайтеся про типовий робочий день."]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "Дізнайтесь, як обговорювати ранкову або вечірню рутину",
-        "intro": ["Learn about routines."]
+        "intro": ["Дізнайтеся про рутину."]
       },
       "learn-how-to-describe-your-current-project": {
         "title": "Дізнайтесь, як описувати поточний проєкт",
-        "intro": ["Learn about projects."]
+        "intro": ["Дізнайтеся про проєкти."]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Дізнайтесь, як запитувати та розповідати про навчання і досвід роботи",
@@ -1415,14 +1419,14 @@
   "rosetta-code": {
     "title": "Rosetta Code",
     "intro": [
-      "Level up your creative problem solving skills with these free programming tasks from the classic Rosetta Code library.",
-      "These challenges can prove to be difficult, but they will push your algorithm logic to new heights.",
-      "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
+      "Розвиньте свої навички творчого підходу до розв’язання проблем за допомогою завдань з базової бібліотеки Rosetta Code.",
+      "Ці завдання можуть виявитися важкими, але вони підштовхнуть ваше логічне мислення до нових висот.",
+      "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Атрибут: Rosetta Code</a>"
     ],
     "blocks": {
       "rosetta-code-challenges": {
-        "title": "Rosetta Code Challenges",
-        "intro": ["These are the challenges for Rosetta Code."]
+        "title": "Завдання з «Rosetta Code»",
+        "intro": ["Перелік завдань з «Rosetta Code»."]
       }
     }
   },

@@ -1,4 +1,4 @@
-import { user } from '@prisma/client';
+import { ExamResults, user } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash';
 import { challengeTypes } from '../../../shared/config/challenge-types';
@@ -63,6 +63,7 @@ export type CompletedChallenge = {
   completedDate: number;
   isManuallyApproved?: boolean | null;
   files?: CompletedChallengeFile[];
+  examResults?: ExamResults | null;
 };
 
 /**

@@ -197,12 +197,20 @@ function Footer(): JSX.Element {
               <ul aria-labelledby='mobile-app' className='mobile-app-container'>
                 <li>
                   <Link to='https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200'>
-                    <img src={appleStoreBadge} alt='Apple Store' />
+                    <img
+                      src={appleStoreBadge}
+                      lang='en'
+                      alt='Download on the App Store'
+                    />
                   </Link>
                 </li>
                 <li>
                   <Link to='https://play.google.com/store/apps/details?id=org.freecodecamp'>
-                    <img src={googlePlayBadge} alt='Google Play' />
+                    <img
+                      src={googlePlayBadge}
+                      lang='en'
+                      alt='Get it on Google Play'
+                    />
                   </Link>
                 </li>
               </ul>

@@ -95,6 +95,7 @@ describe('normalize', () => {
           solution: null,
           githubLink: null,
           isManuallyApproved: null,
+          examResults: null,
           files: [
             {
               contents: 'test',
