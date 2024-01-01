@@ -46,9 +46,11 @@ const p = Array.from(document.querySelectorAll('P'));
 
 const everyPhasBackgroundColor = p?.every((paragraph) => {
 
-  const style = getComputedStyle(paragraph);
+  const paragraphClass = paragraph?.getAttribute('class')?.split(' ')?.find(className => className === 'odd');;
   
-  return style?.backgroundColor === 'rgb(255, 255, 0)';
+  const style = new __helpers.CSSHelp(document).getStyle(`.${paragraphClass}`);
+
+  return style?.backgroundColor === 'yellow';
 })
 
 assert.equal(everyPhasBackgroundColor, true);
@@ -57,11 +59,11 @@ assert.equal(everyPhasBackgroundColor, true);
 Your second element should have `blue` text and a `font-size` of `36px`.
 
 ```js
-const secondElementId = document.querySelectorAll('div')?.[0];
+const secondElementId = document.querySelectorAll('div')?.[0]?.id;
 
-const style = getComputedStyle(secondElementId);
+const style = new __helpers.CSSHelp(document).getStyle(`#${secondElementId}`);
 
-assert.equal(style?.color, 'rgb(0, 0, 255)')
+assert.equal(style?.color, 'blue')
 assert.equal(style?.fontSize, '36px');
 ```
 
@@ -97,12 +99,11 @@ assert(style?.fontSize === '24px');
 The fourth element should have a `red` `background-color`.
 
 ```js
-const fourthElement = document.querySelectorAll('div')?.[1];
+const fourthElement = document.querySelectorAll('div')?.[1]?.id;
 
-// const style = new __helpers.CSSHelp(document).getStyle(`#${fourthElement}`);
-const style = getComputedStyle(fourthElement);
+const style = new __helpers.CSSHelp(document).getStyle(`#${fourthElement}`);
 
-assert(style?.backgroundColor === 'rgb(255, 0, 0)');
+assert(style?.backgroundColor === 'red');
 ```
 
 The fourth element should have a `font-weight` of `bold`.
