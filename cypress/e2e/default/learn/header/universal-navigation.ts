@@ -104,7 +104,7 @@ describe('Donor Navigation Menu', () => {
       'have.class',
       'gold-border'
     );
-    cy.get(navigationItems['navigation-list']).contains('Thanks for donating');
+    cy.get(navigationItems['navigation-list']).contains('Supporters');
   });
 });
 

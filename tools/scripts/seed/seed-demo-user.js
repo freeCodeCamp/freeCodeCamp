@@ -120,6 +120,7 @@ const demoUser = {
   isRelationalDatabaseCertV8: false,
   isCollegeAlgebraPyCertV8: false,
   isFoundationalCSharpCertV8: false,
+  isJsAlgoDataStructCertV8: false,
   completedChallenges: args.includes('--seed-trophy-challenges')
     ? trophyChallenges
     : [],
@@ -186,6 +187,7 @@ const blankUser = {
   isMachineLearningPyCertV7: false,
   isRelationalDatabaseCertV8: false,
   isCollegeAlgebraPyCertV8: false,
+  isFoundationalCSharpCertV8: false,
   completedChallenges: [],
   portfolio: [],
   yearsTopContributor: [],

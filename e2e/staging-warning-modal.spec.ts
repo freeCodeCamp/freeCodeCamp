@@ -28,6 +28,15 @@ test.describe('Staging Warning Modal E2E Test Suite', () => {
           name: translations['staging-warning'].certain
         })
       ).toBeVisible();
+
+      const link = page.getByRole('link', { name: 'following this link' });
+      await expect(link).toHaveAttribute(
+        'href',
+        'https://contribute.freecodecamp.org/#/devops?id=known-limitations'
+      );
+      await expect(link).toHaveAttribute('target', '_blank');
+      await expect(link).toHaveAttribute('rel', 'noopener noreferrer nofollow');
+
       await expect(
         page.getByRole('button', { name: translations.buttons.close })
       ).toBeVisible();

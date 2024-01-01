@@ -254,6 +254,8 @@ Nell'esempio sopra, la chiave e una variabile sono impostate negli attributi del
 
 Per cambiare il testo sul lato client, vai al relativo file `.json`, trova la chiave che viene usata nel componente React e cambiane il valore con il nuovo testo che vuoi. Dovresti cercare quella chiave nel codice, per assicurarti che non venga usata da qualche altra parte. O, se lo è, che il cambiamento abbia senso ovunque.
 
+Run `pnpm run clean-and-develop` to apply the change.
+
 ## Aggiungere testo
 
 Se il testo che vuoi aggiungere al client esiste nel relativo file `.json`, usa la chiave esistente. Altrimenti, crea un'altra chiave.
@@ -262,9 +264,11 @@ Il file in inglese è la "fonte della verità" per tutti i file `.json` che cond
 
 > [!NOTE] Usa del testo in inglese per tutte le lingue se il file è tradotto tramite Crowdin. Se non lo fai, i test falliranno.
 
-Sarebbe utile anche tenere tutte le chiavi nello stesso ordine in tutti i file. Inoltre, prova a mettere tutta la punteggiatura, spaziatura, virgolette, etc nei file JSON e non nei componenti o nei file del server.
+Sarebbe utile anche tenere tutte le chiavi nello stesso ordine in tutti i file. Also, try to put all punctuation, spacing, quotes, etc. in the JSON files and not in the components or server files.
 
 > [!NOTE] The underscore (`_`) is a reserved character for keys in the client-side files. Vedi [la documentazione](https://www.i18next.com/translation-function/plurals) per il suo utilizzo.
+
+Run `pnpm run clean-and-develop` to apply the change.
 
 ## Proposing a Pull Request (PR)
 

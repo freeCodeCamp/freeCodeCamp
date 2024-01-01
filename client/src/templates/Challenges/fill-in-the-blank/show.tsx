@@ -18,6 +18,7 @@ import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
+import ChallengeHeading from '../components/challenge-heading';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import PrismFormatted from '../components/prism-formatted';
@@ -27,7 +28,9 @@ import {
   openModal,
   updateSolutionFormValues
 } from '../redux/actions';
+import Scene from '../components/scene/scene';
 import { isChallengeCompletedSelector } from '../redux/selectors';
+import { parseBlanks } from './parse-blanks';
 
 // Styles
 import '../video.css';
@@ -178,7 +181,7 @@ class ShowFillInTheBlank extends Component<
     const blankAnswers = blanks.map(b => b.answer);
 
     const newAnswersCorrect = userAnswers.map(
-      (userAnswer, i) => userAnswer === blankAnswers[i]
+      (userAnswer, i) => !!userAnswer && userAnswer.trim() === blankAnswers[i]
     );
 
     const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
@@ -254,7 +257,8 @@ class ShowFillInTheBlank extends Component<
             translationPending,
             fields: { blockName },
             fillInTheBlank: { sentence, blanks },
-            audioPath
+            audioPath,
+            scene
           }
         }
       },
@@ -271,8 +275,8 @@ class ShowFillInTheBlank extends Component<
     )} - ${title}`;
 
     const { allBlanksFilled, feedback, showFeedback, showWrong } = this.state;
+    const paragraphs = parseBlanks(sentence);
 
-    const splitSentence = sentence.replace(/^<p>|<\/p>$/g, '').split('_');
     const blankAnswers = blanks.map(b => b.answer);
 
     return (
@@ -298,10 +302,9 @@ class ShowFillInTheBlank extends Component<
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <PrismFormatted text={description} />
+                <Spacer size='medium' />
                 {audioPath && (
                   <>
-                    <Spacer size='small' />
-                    <Spacer size='small' />
                     {/* TODO: Add tracks for audio elements */}
                     {/* eslint-disable-next-line jsx-a11y/media-has-caption*/}
                     <audio className='audio' controls>
@@ -310,46 +313,63 @@ class ShowFillInTheBlank extends Component<
                         type='audio/mp3'
                       ></source>
                     </audio>
+                    <Spacer size='medium' />
                   </>
                 )}
-                <Spacer size='medium' />
-                <PrismFormatted text={instructions} />
-                <Spacer size='medium' />
-                <h2>{t('learn.fill-in-the-blank')}</h2>
+              </Col>
+
+              {scene && (
+                <>
+                  <Scene scene={scene} />
+                  <Spacer size='medium' />
+                </>
+              )}
+
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                <ChallengeHeading heading={t('learn.fill-in-the-blank')} />
                 <Spacer size='small' />
-                <ObserveKeys>
-                  <div>
-                    <p>
-                      {splitSentence.map((s, i) => {
-                        return (
-                          <Fragment key={i}>
-                            <PrismFormatted
-                              text={this.addCodeTags(s, i, blankAnswers.length)}
-                              className={`code-tag ${this.addPrismClass(
-                                i,
-                                blankAnswers.length
-                              )}`}
-                              useSpan
-                              noAria
-                            />
-                            {blankAnswers[i] && (
-                              <input
-                                type='text'
-                                maxLength={blankAnswers[i].length + 3}
-                                className={`fill-in-the-blank-input ${this.addInputClass(
-                                  i
-                                )}`}
-                                onChange={this.handleInputChange}
-                                data-index={i}
-                                style={{
-                                  width: `${blankAnswers[i].length * 11 + 11}px`
-                                }}
-                              />
-                            )}
-                          </Fragment>
-                        );
-                      })}
-                    </p>
+                {instructions && (
+                  <>
+                    <PrismFormatted text={instructions} />
+                    <Spacer size='small' />
+                  </>
+                )}
+                {/* what we want to observe is ctrl/cmd + enter, but ObserveKeys is buggy and throws an error
+                if it encounters a key combination, so we have to pass in the individual keys to observe */}
+                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                  <div className='fill-in-the-blank-wrap'>
+                    {paragraphs.map((p, i) => {
+                      return (
+                        // both keys, i and j, are stable between renders, since
+                        // the paragraphs are static.
+                        <p key={i}>
+                          {p.map((node, j) => {
+                            if (node.type === 'text') return node.value;
+                            if (node.type === 'blank')
+                              return (
+                                <input
+                                  key={j}
+                                  type='text'
+                                  maxLength={
+                                    blankAnswers[node.value].length + 3
+                                  }
+                                  className={`fill-in-the-blank-input ${this.addInputClass(
+                                    node.value
+                                  )}`}
+                                  onChange={this.handleInputChange}
+                                  data-index={node.value}
+                                  style={{
+                                    width: `${
+                                      blankAnswers[node.value].length * 11 + 11
+                                    }px`
+                                  }}
+                                  aria-label={t('learn.blank')}
+                                />
+                              );
+                          })}
+                        </p>
+                      );
+                    })}
                   </div>
                 </ObserveKeys>
                 <Spacer size='medium' />
@@ -426,6 +446,43 @@ export const query = graphql`
           blanks {
             answer
             feedback
+          }
+        }
+        scene {
+          setup {
+            background
+            characters {
+              character
+              position {
+                x
+                y
+                z
+              }
+              opacity
+            }
+            audio {
+              filename
+              startTime
+              startTimestamp
+              finishTimestamp
+            }
+            alwaysShowDialogue
+          }
+          commands {
+            background
+            character
+            position {
+              x
+              y
+              z
+            }
+            opacity
+            startTime
+            finishTime
+            dialogue {
+              text
+              align
+            }
           }
         }
         translationPending
