@@ -44,16 +44,13 @@ Your odd elements should have a `background-color` of `yellow`.
 ```js
 const p = Array.from(document.querySelectorAll('P'));
 
-const everyPhasBackgroundColor = p?.every((paragraph) => {
-
-  const paragraphClass = paragraph?.getAttribute('class')?.split(' ')?.find(className => className === 'odd');;
+const everyPHasBackgroundColor = p?.every((paragraph) => {
+  const style = getComputedStyle(paragraph);
   
-  const style = new __helpers.CSSHelp(document).getStyle(`.${paragraphClass}`);
-
-  return style?.backgroundColor === 'yellow';
+  return style?.backgroundColor === 'rgb(255, 255, 0)';
 })
 
-assert.equal(everyPhasBackgroundColor, true);
+assert.equal(everyPHasBackgroundColor, true);
 ```
 
 Your second element should have `blue` text and a `font-size` of `36px`.
@@ -63,7 +60,7 @@ const secondElementId = document.querySelectorAll('div')?.[0]?.id;
 
 const style = new __helpers.CSSHelp(document).getStyle(`#${secondElementId}`);
 
-assert.equal(style?.color, 'blue')
+assert.equal(style?.color, 'blue');
 assert.equal(style?.fontSize, '36px');
 ```
 
