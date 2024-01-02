@@ -168,7 +168,7 @@ assert(style?.fontWeight === 'bold');
 
 ```css
 .odd {
-  background-color: rgb(255, 167, 167);
+  background-color: yellow;
   font-family: Verdana, "DejaVu Sans", sans-serif;
 }
 
@@ -177,7 +177,7 @@ assert(style?.fontWeight === 'bold');
 }
 
 #two {
-  color: #0000ff;
+  color: blue;
   font-size: 36px;
 }
 
