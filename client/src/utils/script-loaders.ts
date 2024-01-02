@@ -33,7 +33,7 @@ export function mathJaxScriptLoader(): void {
       tex2jax: {
         inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
         processEscapes: true,
-        processClass: 'rosetta-code|project-euler|intermediate-algorithm-scripting'
+        processClass: 'rosetta-code|project-euler|intermediate-algorithm-scripting|description-container'
       }
     });
     MathJax.Hub.Queue([
@@ -41,7 +41,8 @@ export function mathJaxScriptLoader(): void {
       MathJax.Hub,
       document.querySelector('intermediate-algorithm-scripting'),
       document.querySelector('.rosetta-code'),
-      document.querySelector('.project-euler')
+      document.querySelector('.project-euler'),
+      document.querySelector('.description-container')
     ]);`
   );
 }
