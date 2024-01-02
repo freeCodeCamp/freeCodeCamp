@@ -340,5 +340,5 @@ pnpm run playwright:install-build-tools
 To run all Playwright tests, run the following command:
 
 ```bash
-npx playwright test
+cd e2e; npx playwright test
 ```
