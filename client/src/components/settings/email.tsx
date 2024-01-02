@@ -208,7 +208,6 @@ function EmailSettings({
               </ControlLabel>
               <FormControl
                 data-cy='email-input'
-                data-playwright-test-label='new-email-input'
                 onChange={createHandleEmailFormChange('newEmail')}
                 type='email'
                 value={newEmail}
@@ -229,7 +228,6 @@ function EmailSettings({
               </ControlLabel>
               <FormControl
                 data-cy='confirm-email'
-                data-playwright-test-label='confirm-email-input'
                 onChange={createHandleEmailFormChange('confirmNewEmail')}
                 type='email'
                 value={confirmNewEmail}

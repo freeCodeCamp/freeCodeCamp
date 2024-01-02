@@ -1,12 +1,11 @@
 import { test, expect } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 
 const settingsPageElement = {
   emailSettingsSectionHeader: 'email-settings-header',
   emailVerificationAlert: 'email-verification-alert',
   emailVerificationLink: 'email-verification-link',
   currentEmailText: 'current-email',
-  newEmailInput: 'new-email-input',
-  confirmEmailInput: 'confirm-email-input',
   saveButton: 'save-email-button',
   emailSubscriptionYesPleaseButton: 'yes-please-button',
   emailSubscriptionNoThanksButton: 'no-thanks-button',
@@ -43,10 +42,10 @@ test.describe('Email Settings', () => {
     const newEmailAddress = 'foo-update@bar.com';
 
     await page
-      .getByTestId(settingsPageElement.newEmailInput)
+      .getByLabel(translations.settings.email.new, { exact: true })
       .fill(newEmailAddress);
     await page
-      .getByTestId(settingsPageElement.confirmEmailInput)
+      .getByLabel(translations.settings.email.confirm, { exact: true })
       .fill(newEmailAddress);
     await page.getByTestId(settingsPageElement.saveButton).click();
     await expect(
