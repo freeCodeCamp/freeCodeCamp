@@ -24,13 +24,19 @@ test.describe('Email Settings', () => {
   }) => {
     await expect(
       page.getByTestId(settingsPageElement.emailSettingsSectionHeader)
-    ).toHaveText('Email Settings');
+    ).toHaveText(translations.settings.email.heading);
   });
 
   test('should display current email address', async ({ page }) => {
     await expect(
       page.getByTestId(settingsPageElement.currentEmailText)
     ).toHaveText('foo@bar.com');
+  });
+
+  test('should disable save button by default', async ({ page }) => {
+    await expect(
+      page.getByTestId(settingsPageElement.saveButton)
+    ).toBeDisabled();
   });
 
   test('should display email verification alert after email update', async ({
@@ -64,6 +70,52 @@ test.describe('Email Settings', () => {
       'href',
       '/update-email'
     );
+  });
+
+  test('should display email subscription description', async ({ page }) => {
+    await expect(
+      page
+        .getByRole('group', { name: translations.settings.email.weekly })
+        .locator('legend')
+    ).toBeVisible();
+  });
+
+  test('should have yes please button not pressed by default', async ({
+    page
+  }) => {
+    await expect(
+      page.getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
+    ).toHaveAttribute('aria-pressed', 'false');
+  });
+
+  test('should have no thanks button not pressed by default', async ({
+    page
+  }) => {
+    await expect(
+      page.getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
+    ).toHaveAttribute('aria-pressed', 'false');
+  });
+
+  test('should toggle email subscription correctly', async ({ page }) => {
+    await page
+      .getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
+      .click();
+    await expect(
+      page.getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
+    ).toHaveAttribute('aria-pressed', 'true');
+    await expect(
+      page.getByTestId(settingsPageElement.emailSubscriptionNoThanksButton)
+    ).toHaveAttribute('aria-pressed', 'false');
+
+    await page
+      .getByTestId(settingsPageElement.emailSubscriptionNoThanksButton)
+      .click();
+    await expect(
+      page.getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
+    ).toHaveAttribute('aria-pressed', 'false');
+    await expect(
+      page.getByTestId(settingsPageElement.emailSubscriptionNoThanksButton)
+    ).toHaveAttribute('aria-pressed', 'true');
   });
 
   test('should display flash message when email subscription is toggled', async ({
