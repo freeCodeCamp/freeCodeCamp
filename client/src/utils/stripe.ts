@@ -4,4 +4,4 @@ import envData from '../../config/env.json';
 
 const { stripePublicKey } = envData;
 
-export const stripe = loadStripe(stripePublicKey);
+export const stripe = stripePublicKey ? loadStripe(stripePublicKey) : null;
