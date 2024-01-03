@@ -1,14 +1,12 @@
 import { test, expect } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 
 const settingsPageElement = {
   yourInternetPresenceSectionHeader: 'your-internet-presence-header',
   githubInput: 'internet-github-input',
   githubCheckmark: 'internet-github-check',
-  linkedinInput: 'internet-linkedin-input',
   linkedinCheckmark: 'internet-linkedin-check',
-  twitterInput: 'internet-twitter-input',
   twitterCheckmark: 'internet-twitter-check',
-  personalWebsiteInput: 'internet-website-input',
   personalWebsiteCheckmark: 'internet-website-check',
   saveButton: 'internet-save-button',
   flashMessageAlert: 'flash-message'
@@ -31,25 +29,25 @@ test.describe('Your Internet Presence', () => {
     {
       name: 'github',
       url: 'https://github.com/certified-user',
-      inputTestId: settingsPageElement.githubInput,
+      label: 'GitHub',
       checkTestId: settingsPageElement.githubCheckmark
     },
     {
       name: 'linkedin',
       url: 'https://www.linkedin.com/in/certified-user',
-      inputTestId: settingsPageElement.linkedinInput,
+      label: 'LinkedIn',
       checkTestId: settingsPageElement.linkedinCheckmark
     },
     {
       name: 'twitter',
       url: 'https://twitter.com/certified-user',
-      inputTestId: settingsPageElement.twitterInput,
+      label: 'Twitter',
       checkTestId: settingsPageElement.twitterCheckmark
     },
     {
       name: 'website',
       url: 'https://certified-user.com',
-      inputTestId: settingsPageElement.personalWebsiteInput,
+      label: translations.settings.labels.personal,
       checkTestId: settingsPageElement.personalWebsiteCheckmark
     }
   ];
@@ -58,7 +56,7 @@ test.describe('Your Internet Presence', () => {
     test(`should update ${social.name} URL`, async ({ browserName, page }) => {
       test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
 
-      await page.getByTestId(social.inputTestId).fill(social.url);
+      await page.getByLabel(social.label).fill(social.url);
       await expect(page.getByTestId(social.checkTestId)).toBeVisible();
 
       await page.getByTestId(settingsPageElement.saveButton).click();
@@ -67,7 +65,7 @@ test.describe('Your Internet Presence', () => {
       ).toContainText('We have updated your social links');
 
       // clear value before next test
-      await page.getByTestId(social.inputTestId).clear();
+      await page.getByLabel(social.label).clear();
       await Promise.all([
         page.waitForResponse(
           response =>
