@@ -342,7 +342,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       />
                     </>
                   )}
-                <Spacer size='small' />
+                <Spacer size='xxSmall' />
                 <ProjectToolPanel />
                 <br />
                 <Spacer size='medium' />
