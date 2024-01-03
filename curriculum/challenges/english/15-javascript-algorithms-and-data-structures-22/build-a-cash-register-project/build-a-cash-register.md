@@ -178,7 +178,7 @@ price = 19.5;
 cashInput.value = 20;
 cid = [['PENNY', 0.5], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]];
 
-const expected = ['Status: OPEN', 'QUARTER: $0', 'DIME: $0', 'NICKEL: $0', 'PENNY: $0.5'];
+const expected = ['Status: CLOSED', 'QUARTER: $0', 'DIME: $0', 'NICKEL: $0', 'PENNY: $0.5'];
 purchaseBtn.click();
 assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
 ```
