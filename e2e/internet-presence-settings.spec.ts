@@ -25,6 +25,12 @@ test.describe('Your Internet Presence', () => {
     ).toHaveText('Your Internet Presence');
   });
 
+  test('should disable save button by default', async ({ page }) => {
+    await expect(
+      page.getByTestId(settingsPageElement.saveButton)
+    ).toBeDisabled();
+  });
+
   const socials = [
     {
       name: 'github',
@@ -53,6 +59,12 @@ test.describe('Your Internet Presence', () => {
   ];
 
   socials.forEach(social => {
+    test(`should hide ${social.name} checkmark by default`, async ({
+      page
+    }) => {
+      await expect(page.getByTestId(social.checkTestId)).toBeHidden();
+    });
+
     test(`should update ${social.name} URL`, async ({ browserName, page }) => {
       test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
 
@@ -74,6 +86,7 @@ test.describe('Your Internet Presence', () => {
         ),
         page.getByTestId(settingsPageElement.saveButton).click()
       ]);
+      await expect(page.getByTestId(social.checkTestId)).toBeHidden();
     });
   });
 });
