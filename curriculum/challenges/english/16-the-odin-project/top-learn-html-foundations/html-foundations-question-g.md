@@ -12,6 +12,16 @@ HTML and CSS are two languages that work together to create everything that you 
 # --assignment--
 
 Read <a href="https://brytdesigns.com/html-css-javascript-whats-the-difference#What_is_HTML" target="_blank">the HTML vs CSS vs JavaScript article</a>. It is a quick overview of the relationships between HTML, CSS, and JavaScript.
+=======
+Watch and follow along to Kevin Powell’s brilliant Building your first web page video above.
+
+---
+
+Build some muscle memory by deleting the contents of the `index.html` file and trying to write out all the boilerplate again from memory. Don’t worry if you have to peek at the lesson content the first few times if you get stuck. Just keep going until you can do it a couple of times from memory.
+
+---
+
+Run your boilerplate through this <a href="https://www.freeformatter.com/html-validator.html" target="_blank">HTML validator</a>. Validators ensure your markup is correct and are an excellent learning tool, as they provide feedback on syntax errors you may be making often and aren’t aware of, such as missing closing tags and extra spaces in your HTML.
 
 # --question--
     

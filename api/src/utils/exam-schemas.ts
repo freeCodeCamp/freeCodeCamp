@@ -1,6 +1,6 @@
-import { Answer, Exam, Question } from '@prisma/client';
+import { Answer, Exam, Question, ExamResults } from '@prisma/client';
 import Joi from 'joi';
-import { ExamResults, GeneratedExam, UserExam } from './exam-types';
+import { GeneratedExam, UserExam } from './exam-types';
 
 const nanoIdRE = new RegExp('[a-z0-9]{10}');
 const objectIdRE = new RegExp('^[0-9a-fA-F]{24}$');
