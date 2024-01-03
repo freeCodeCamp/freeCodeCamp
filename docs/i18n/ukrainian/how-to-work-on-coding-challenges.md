@@ -203,95 +203,95 @@ console.log('freeCodeCamp is awesome!');
 # --scene--
 
 ```json
-// # --scene-- can only consist of a single json object
+// # --scene-- може складатись лише з одного об’єкту json
 {
-  // Setup the scene. Properties not marked optional are required.
+  // Налаштуйте дію. Властивості, не позначені як додаткові, є обов’язковими.
   "setup": {
-    // Background file to start the scene. A list of scene asset filenames can be found here: https://github.com/freeCodeCamp/cdn/pull/233/files
+    // Файл фону, щоб запустити дію. Список всіх файлів можна знайти тут: https://github.com/freeCodeCamp/cdn/pull/233/files
     "background": "company2-center.png",
-    // Array of all characters that will appear in the scene
+    // Масив всіх персонажів, які з’являться на місці дії
     "characters": [
       {
-        // Name of character. See list of available characters in scene-assets.tsx
+        // Ім’я персонажа. Список доступних персонажів знаходиться в scene-assets.tsx
         "character": "Maria",
-        // Where to start the character. Maria will start off screen to the left
+        // Де з’являється персонаж. Марія з’явиться на екрані ліворуч
         "position": { "x": -25, "y": 0, "z": 1 }
       },
       {
         "character": "Tom",
-        // Tom will start 70% from the left of the screen and 1.5 times regular size
+        // Том з’явиться на 70% ліворуч та буде в 1,5 рази більший за звичайний розмір.
         "position": { "x": 70, "y": 0, "z": 1.5 },
-        // Optional, defaults to 1. Tom will start invisible
+        // Необов’язково, за замовчуванням 1. Спочатку Том буде невидимим
         "opacity": 0
       }
     ],
     "audio": {
       // Audio filename
       "filename": "1.1-1.mp3",
-      // Seconds after the scene starts before the audio starts playing
+      // Секунди після початку дії до початку програвання аудіо
       "startTime": 1.3,
-      // Optional. Timestamp of the audio file where it starts playing from.
+      // Необов’язково. Часова мітка аудіофайлу, з якого він починає відтворюватися.
       "startTimestamp": 0,
-      // Optional. Timestamp of the audio file where is stops playing. If these two aren't used, the whole audio file will play.
+      // Необов’язково. Часова мітка аудіофайлу, з якого він перестає відтворюватися. Якщо ці мітки не використати, аудіофайл відтвориться повністю.
       "finishTimestamp": 8.4
     },
-    // Optional, defaults to false. Use this for the long dialogues. It stops the accessibility icon from showing which gives campers the option to show or hide the dialogue text
+    // Необов’язково, за замовчуванням false. Використовуйте для довгих діалогів. Це призводить до того, що іконка доступності не відображається, що дає користувачам змогу показувати або приховувати текст діалогу
     "alwaysShowDialogue": true 
   },
-  // Array of commands that make up the scene
+  // Масив команд, з яких складається дія
   "commands": [
     {
-      // Character that will have an action for this command
+      // Персонаж, який виконує цю команду
       "character": "Maria",
-      // Optional, defaults to previous value. Maria will move to 25% from the left of the screen. The movement takes 0.5 seconds
+      // Необов’язково, за замовчуванням попереднє значення. Марія переміститься на 25% ліворуч від екрана. Переміщення триває 0,5 секунди
       "position": { "x": 25, "y": 0, "z": 1 },
-      // When the command will start. Zero seconds after the camper presses play
+      // Коли розпочнеться команда. Нуль секунд після того, як користувач натисне програвання
       "startTime": 0
     },
     {
       "character": "Tom",
-      // Optional, defaults to previous value. Tom will fade into view. The transition take 0.5 seconds. Movement and Opacity transitions take 0.5 seconds
+      // Необов’язково, за замовчуванням попереднє значення. Том з’явиться, розчиняючись. Перехід триває 0,5 секунди. Переміщення та непрозорість займають 0,5 секунди
       "opacity": 1, 
-      // Tom will fade into view 0.5 seconds into the scene (immediately after Maria finishes moving on screen)
+      // Том з’явиться на екрані через 0,5 секунди (одразу після того, як Марія завершить переміщення)
       "startTime": 0.5
     },
     {
       "character": "Maria",
-      // When the command starts: Maria will start saying this line 1.3 seconds into the scene. Note that this is the same time as the audio.startTime above. It doesn't have to match that (maybe there's a pause at the begninning of the audio or something)
+      // Коли розпочнеться команда, Марія почне вимовляти цей рядок через 1,3 секунди після початку. Зверніть увагу, що час той самий, що й для audio.startTime вище. Вони необов’язково збігатимуться (можливо, на початку аудіо є пауза чи щось інше)
       "startTime": 1.3,
-      // The character will stop moving their mouth at the finishTime
+      // Персонаж перестане рухати ротом на finishTime
       "finishTime": 4.95,
       "dialogue": {
-        // Text that will appear if the dialogue is visible
+        // Текст, який з’явиться, якщо діалог видимий
         "text": "Hello! You're the new graphic designer, right? I'm Maria, the team lead.",
-        // Where the dialogue text will be aligned. Can be 'left', 'center', or 'right'
+        // Вирівнювання тексту діалогу. Може бути 'left', 'center' або 'right'
         "align": "left"
       }
     },
     {
-      // background will change to this at 5.4 seconds into the scene
+      // фон зміниться на інший через 5,4 секунд від початку дії
       "background": "company2-breakroom.png",
       "character": "Tom",
       "startTime": 5.4,
       "finishTime": 9.4,
       "dialogue": {
         "text": "Hi, that's right!  I'm Tom McKenzie. It's a pleasure to meet you.",
-        // Tom's text will be aligned to the right since he is on the right side of the screen
+        // Текст Тома буде вирівняний за правим краєм, оскільки він розташований праворуч
         "align": "right"
       }
     },
     {
       "character": "Tom",
-      // Tom will fade to 0 opacity
+      // Том розчиниться
       "opacity": 0,
-      // I like to move characters off screen or fade them 0.5 second after the last talking command
+      // За бажанням можна переміщувати персонажів за межі екрану або розчинити їх через 0,5 секунди після останнього говоріння
       "startTime": 9.9
     },
     {
       "character": "Maria",
-      // Maria will slide back off the screen to the left
+      // Марія переміститься ліворуч
       "position": { "x": -25, "y": 0, "z": 1 },
-      // The animation will stop playing 0.5 seconds after the 'finishTime' of the last command - or 0.5 seconds after 'startTime' if 'finishTime' isn't there.
+      // Анімація припинить відтворення через 0,5 секунди після 'finishTime' останньої команди, або через 0,5 секунди після 'startTime', якщо 'finishTime' немає.
       "startTime": 10.4
     }
   ]
