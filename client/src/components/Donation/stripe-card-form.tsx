@@ -170,15 +170,17 @@ const StripeCardForm = ({
 };
 
 const CardFormWrapper = (props: FormPropTypes): JSX.Element | null => {
-  if (!stripePublicKey) {
-    return null;
-  } else {
-    return (
-      <Elements stripe={loadStripe(stripePublicKey)}>
-        <StripeCardForm {...props} />
-      </Elements>
-    );
-  }
+  const [stripePromise, _setStripePromise] = useState(() =>
+    stripePublicKey ? loadStripe(stripePublicKey) : null
+  );
+
+  if (!stripePromise) return null;
+
+  return (
+    <Elements stripe={stripePromise}>
+      <StripeCardForm {...props} />
+    </Elements>
+  );
 };
 
 export default CardFormWrapper;
