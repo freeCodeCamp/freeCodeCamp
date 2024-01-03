@@ -105,7 +105,6 @@ class Block extends Component<BlockProps> {
       t
     } = this.props;
 
-    const isOdinProject = blockDashedName == 'the-odin-project';
     let completedCount = 0;
 
     const challengesWithCompleted = challenges.map(({ challenge }) => {
@@ -358,8 +357,7 @@ class Block extends Component<BlockProps> {
     ].some(Boolean);
 
     const blockrenderer = () => {
-      if (isProjectBlock && !isOdinProject)
-        return shouldBeGrid ? GridProjectBlock : ProjectBlock;
+      if (isProjectBlock) return shouldBeGrid ? GridProjectBlock : ProjectBlock;
       return shouldBeGrid ? GridBlock : Block;
     };
 
