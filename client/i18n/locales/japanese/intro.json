@@ -938,126 +938,126 @@
     "note": "",
     "blocks": {
       "learn-ratios-and-proportions": {
-        "title": "Learn Ratios and Proportions",
+        "title": "比率と比例式を学ぶ",
         "intro": [
-          "Your journey begins here as you learn how to set up a Colab Notebook that can run Python code. Then, use the notebook to follow along with the videos to learn ratios and proportions using Python."
+          "まずは Python のコードを実行するための Colab ノートブックの設定方法を学ぶところから始めましょう。次に、動画に沿ってそのノートブックを使いながら、比率と比例式について Python を使って学びます。"
         ]
       },
       "learn-how-to-solve-for-x": {
-        "title": "Learn How to Solve for X",
+        "title": "X について解く方法を学ぶ",
         "intro": [
-          "This unit will focus on how to solve for an unknown number (often referred to as \"x\") using written Algebra and Python code."
+          "この単元では、代数と Python のコードを使って未知の数 (しばしば \"x\" と呼ばれます) について解く方法を学びます。"
         ]
       },
       "learn-fractions-and-decimals": {
-        "title": "Learn Fractions and Decimals",
+        "title": "分数と小数を学ぶ",
         "intro": [
-          "This unit will focus on converting decimals to fractions and percents."
+          "この単元では、小数から分数とパーセントへの変換について学習します。"
         ]
       },
       "learn-functions-and-graphing": {
-        "title": "Learn Functions and Graphing",
-        "intro": ["This unit will teach you about math functions."]
+        "title": "関数とグラフを学ぶ",
+        "intro": ["この単元では、数学の関数について学習します。"]
       },
       "learn-linear-functions": {
-        "title": "Learn Linear Functions",
+        "title": "線形関数を学ぶ",
         "intro": [
-          "This unit will show you how to develop linear equations from two points."
+          "この動画では、2 つの点から線形方程式を導出する方法を学習します。"
         ]
       },
       "learn-common-factors-and-square-roots": {
-        "title": "Learn Common Factors and Square Roots",
+        "title": "共通因数と平方根を学ぶ",
         "intro": [
-          "In this unit, you will learn how to find common factors and divide them out. This will be useful when simplifying fractions and factoring square roots."
+          "この単元では、共通因数を見つけて除算を行う方法を学習します。これは約分や平方根の中身の因数分解をする際に役立ちます。"
         ]
       },
       "build-a-multi-function-calculator-project": {
-        "title": "Multi-Function Calculator",
+        "title": "多機能計算機",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a multi-function calculator."
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、多機能計算機を作成します。"
         ]
       },
       "learn-how-to-graph-systems-of-equations": {
-        "title": "Learn How to Graph Systems of Equations",
+        "title": "連立方程式のグラフのかき方を学ぶ",
         "intro": [
-          "This unit will focus on graphing two equations on the same coordinate plane, so that you can see where the lines intersect."
+          "この単元では、同じ座標平面上に 2 つの方程式のグラフをかき、線が交差する場所を見つける方法を学習します。"
         ]
       },
       "learn-how-to-solve-systems-of-equations": {
-        "title": "Learn How to Solve Systems of Equations",
+        "title": "連立方程式の解き方を学ぶ",
         "intro": [
-          "In this unit, you will learn how to solve a system of two equations (with two variables) without graphing. You will see how you can factor an equation and solve for a certain variable in Python. By the end of this unit, you will be able to solve and graph the system with one block of code."
+          "この単元では、2 つの式からなる連立方程式 (変数が 2 つ) を、グラフをかかずに解く方法を学習します。Python で方程式の因数分解を行ったり、特定の変数について解いたりする方法を見ていきます。この単元の終わりには、コードを書いて連立方程式を解いたりグラフ表示したりできるようになるでしょう。"
         ]
       },
       "learn-applications-of-linear-systems": {
-        "title": "Learn Applications of Linear Systems",
+        "title": "連立一次方程式の応用を学ぶ",
         "intro": [
-          "In this unit, you will see how you can use the algebra you learned so far to solve real world problems."
+          "この単元では、ここまで学習してきた代数学を使って現実世界の問題を解決する方法を見ていきます。"
         ]
       },
       "learn-quadratic-equations": {
-        "title": "Learn Quadratic Equations",
+        "title": "二次方程式を学ぶ",
         "intro": [
-          "This unit will go beyond linear equations, to work with exponents and graph parabolas. You will learn how to find key points in parabolas and how to solve quadratic equations."
+          "この単元では線形方程式の範囲を超えて、指数を扱ったり、放物線のグラフをかいたりします。放物線の重要な点の見つけ方や、二次方程式の解き方を学習します。"
         ]
       },
       "build-a-graphing-calculator-project": {
-        "title": "Graphing Calculator",
+        "title": "グラフ電卓",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a graphing calculator."
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、グラフ電卓を作成します。"
         ]
       },
       "learn-parent-graphs-and-polynomials": {
-        "title": "Learn Parent Graphs and Polynomials",
+        "title": "親関数と多項式を学ぶ",
         "intro": [
-          "This unit will show you many different types of \"parent\" graphs, the basic patterns that make up more complicated graphs. Polynomials are mathematical expressions with \"multiple things\" - the more complicated equations that are built with basic patterns. You will see what these graphs look like, how to modify them, and how to do this all with Python code."
+          "この単元では、より複雑なグラフの元となる基本のパターンである「親」グラフのさまざまな種類を説明します。多項式は「複数のもの」からなる数式で、基本のパターンが組み合わさって複雑な方程式を構成しています。これらのグラフがどのような見た目をしているか、それを変化させる方法、Python のコードを使って同じことをする方法を学びます。"
         ]
       },
       "build-three-math-games-project": {
-        "title": "Three Math Games",
+        "title": "3 つの数学ゲーム",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build three math games."
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、3 つの数学ゲームを作成します。"
         ]
       },
       "learn-business-applications-of-college-algebra": {
-        "title": "Learn Business Applications of College Algebra",
+        "title": "代数学のビジネスへの応用を学ぶ",
         "intro": [
-          "This unit will show you how to apply your solving and graphing skills to find cost, revenue, and profit. You will write code to develop a demand function from two points. You will see how price affects the profit graph and how all of these equations relate to each other."
+          "この単元では、方程式を解いたりグラフをかいたりするスキルを、費用、収益、利益の計算に適用する方法を説明します。2 点から需要関数を導くコードを書いたり、価格が利益のグラフにどう影響するか、これらの方程式が互いにどう関係しているかを学びます。"
         ]
       },
       "learn-simple-and-compound-interest": {
-        "title": "Learn Simple and Compound Interest",
+        "title": "単利と複利を学ぶ",
         "intro": [
-          "This unit will show you how to calculate interest, loan payments, and the estimated value of investments. You will see the math formula and turn that into code. Because these formulas tend to get complicated, you will appreciate having the code where you can just modify a few values."
+          "この単元では、利子、ローンの支払い、投資の推定価値を計算する方法を説明します。数式を見て、それをコードに書き換えます。これらの計算式は複雑になりがちなので、ほんのいくつかの値を変更するだけで使えるコードのありがたみが感じられることでしょう。"
         ]
       },
       "learn-exponents-and-logarithms": {
-        "title": "Learn Exponents and Logarithms",
+        "title": "指数と対数を学ぶ",
         "intro": [
-          "This unit will show you how exponents and logarithms are inverse functions, and how you can use these functions in various applications."
+          "この単元では、指数関数と対数関数が逆関数であること、これらの関数をどのように応用できるかを学習します。"
         ]
       },
       "build-a-financial-calculator-project": {
-        "title": "Financial Calculator",
+        "title": "財務計算機",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a financial calculator."
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、財務計算機を作成します。"
         ]
       },
       "college-algebra-with-python-conclusion": {
-        "title": "College Algebra with Python: Conclusion",
+        "title": "Python を用いた代数学: まとめ",
         "intro": [
-          "This will be the last unit in this course. Let's look at how you can connect your Math and Python knowledge with external data."
+          "これはこのコース最後の単元となります。あなたの数学と Python の知識を、外部データと結びつける方法を学びましょう。"
         ]
       },
       "build-a-data-graph-explorer-project": {
-        "title": "Data Graph Explorer",
+        "title": "データグラフエクスプローラー",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a data graph explorer."
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、データグラフエクスプローラーを作成します。"
         ]
       }
     }
@@ -1070,7 +1070,7 @@
     "note": "",
     "blocks": {
       "python-for-everybody": {
-        "title": "Python for Everybody",
+        "title": "みんなの Python",
         "intro": [
           "Python for everybody is a free video course series that teaches the basics of using Python 3.",
           "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
@@ -1110,7 +1110,7 @@
     }
   },
   "the-odin-project": {
-    "title": "The Odin Project (Beta)",
+    "title": "The Odin Project (ベータ版)",
     "intro": [
       "The Odin Project was created in 2013 by a lone developer, Erik Trautman. Over the years, an open source community has sprung up to maintain and expand the project.",
       "freeCodeCamp has expanded upon the open source curriculum to make it run interactively in the browser, with tests to evaluate your code and ensure you've understood key concepts.",
