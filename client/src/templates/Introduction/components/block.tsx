@@ -105,7 +105,6 @@ class Block extends Component<BlockProps> {
       t
     } = this.props;
 
-    const isOdinProject = blockDashedName == 'the-odin-project';
     let completedCount = 0;
 
     const challengesWithCompleted = challenges.map(({ challenge }) => {
@@ -122,12 +121,20 @@ class Block extends Component<BlockProps> {
     const isProjectBlock = challenges.some(({ challenge }) => {
       const isTakeHomeProject = blockDashedName === 'take-home-projects';
 
-      return (
-        (isFinalProject(challenge.challengeType) ||
-          isCodeAllyPractice(challenge.challengeType)) &&
-        !isTakeHomeProject
-      );
+      const projectCondition = [
+        isFinalProject(challenge.challengeType),
+        isCodeAllyPractice(challenge.challengeType)
+      ].some(Boolean);
+
+      return projectCondition && !isTakeHomeProject;
     });
+
+    const isGridBlock = [
+      isNewRespCert(superBlock),
+      isNewJsCert(superBlock),
+      isCollegeAlgebraPyCert(superBlock),
+      isSciCompPyCert(superBlock) && !isProjectBlock
+    ].some(Boolean);
 
     const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock, {
       showNewCurriculum,
@@ -209,7 +216,6 @@ class Block extends Component<BlockProps> {
               <Challenges
                 challengesWithCompleted={challengesWithCompleted}
                 isProjectBlock={isProjectBlock}
-                superBlock={superBlock}
               />
             )}
           </div>
@@ -238,7 +244,6 @@ class Block extends Component<BlockProps> {
             <Challenges
               challengesWithCompleted={challengesWithCompleted}
               isProjectBlock={isProjectBlock}
-              superBlock={superBlock}
             />
           </div>
         </ScrollableAnchor>
@@ -300,7 +305,7 @@ class Block extends Component<BlockProps> {
               <Challenges
                 challengesWithCompleted={challengesWithCompleted}
                 isProjectBlock={isProjectBlock}
-                superBlock={superBlock}
+                isGridMap={true}
                 blockTitle={blockTitle}
               />
             )}
@@ -350,23 +355,15 @@ class Block extends Component<BlockProps> {
       </ScrollableAnchor>
     );
 
-    const shouldBeGrid = [
-      isNewRespCert(superBlock),
-      isNewJsCert(superBlock),
-      isCollegeAlgebraPyCert(superBlock),
-      isSciCompPyCert(superBlock) && !isProjectBlock
-    ].some(Boolean);
-
     const blockrenderer = () => {
-      if (isProjectBlock && !isOdinProject)
-        return shouldBeGrid ? GridProjectBlock : ProjectBlock;
-      return shouldBeGrid ? GridBlock : Block;
+      if (isProjectBlock) return isGridBlock ? GridProjectBlock : ProjectBlock;
+      return isGridBlock ? GridBlock : Block;
     };
 
     return (
       <>
         {blockrenderer()}
-        {shouldBeGrid && !isProjectBlock ? null : <Spacer size='medium' />}
+        {isGridBlock && !isProjectBlock ? null : <Spacer size='medium' />}
       </>
     );
   }
