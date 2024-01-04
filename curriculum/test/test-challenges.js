@@ -374,7 +374,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
 
           const { challengeType } = challenge;
 
-          if (hasNoTests) return;
+          if (hasNoTests(challengeType)) return;
 
           let { tests = [] } = challenge;
           tests = tests.filter(test => !!test.testString);
