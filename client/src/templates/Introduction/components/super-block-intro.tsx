@@ -7,13 +7,13 @@ import { Spacer, Link } from '../../../components/helpers';
 
 interface SuperBlockIntroProps {
   superBlock: SuperBlocks;
+  onCertificationDonationAlertClick: () => void;
 }
 
 export const ConditionalDonationAlert = ({
-  superBlock
-}: {
-  superBlock: SuperBlocks;
-}): JSX.Element => {
+  superBlock,
+  onCertificationDonationAlertClick
+}: SuperBlockIntroProps): JSX.Element => {
   const { t } = useTranslation();
 
   if (
@@ -32,7 +32,7 @@ export const ConditionalDonationAlert = ({
             key='donate'
             sameTab={false}
             to='/donate'
-            // onClick={onDonationAlertClick}
+            onClick={onCertificationDonationAlertClick}
           >
             {t('buttons.donate-now')}
           </Link>
@@ -44,7 +44,7 @@ export const ConditionalDonationAlert = ({
 
 function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
   const { t } = useTranslation();
-  const { superBlock } = props;
+  const { superBlock, onCertificationDonationAlertClick } = props;
 
   const superBlockIntroObj: {
     title: string;
@@ -80,7 +80,10 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
           {superBlockNoteText}
         </div>
       )}
-      <ConditionalDonationAlert superBlock={superBlock} />
+      <ConditionalDonationAlert
+        superBlock={superBlock}
+        onCertificationDonationAlertClick={onCertificationDonationAlertClick}
+      />
     </>
   );
 }
