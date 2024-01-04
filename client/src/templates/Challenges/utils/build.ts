@@ -23,7 +23,7 @@ import {
   Context,
   Source
 } from './frame';
-import createWorker from './worker-executor';
+import { WorkerExecutor } from './worker-executor';
 
 interface ChallengeFile extends PropTypesChallengeFile {
   source: string;
@@ -198,20 +198,20 @@ function getWorkerTestRunner(
     original: sources.original
   };
 
-  const testWorker = createWorker(testEvaluator, { terminateWorker });
+  const testWorkerExecutor = new WorkerExecutor(testEvaluator, {
+    terminateWorker
+  });
 
-  type CreateWorker = ReturnType<typeof createWorker>;
-
-  interface TestWorker extends CreateWorker {
+  interface TestWorkerExecutor extends WorkerExecutor {
     on: (event: string, listener: (...args: string[]) => void) => void;
     done: () => void;
   }
 
   return (testString: string, testTimeout: number, firstTest = true) => {
-    const result = testWorker.execute(
+    const result = testWorkerExecutor.execute(
       { build, testString, code, sources, firstTest, removeComments },
       testTimeout
-    ) as TestWorker;
+    ) as TestWorkerExecutor;
 
     result.on('LOG', proxyLogger);
     return result.done;
