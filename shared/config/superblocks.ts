@@ -137,6 +137,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.Italian]: [
     SuperBlocks.FoundationalCSharp,
     SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.ProjectEuler,
     SuperBlocks.TheOdinProject,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
@@ -144,6 +145,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   ],
   [Languages.Portuguese]: [
     SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.ProjectEuler,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.PythonForEverybody
