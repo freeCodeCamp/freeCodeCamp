@@ -376,6 +376,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
             challengeType !== challengeTypes.js &&
             challengeType !== challengeTypes.jsProject &&
             challengeType !== challengeTypes.modern &&
+            challengeType !== challengeTypes.multifileCertProject &&
             challengeType !== challengeTypes.backend &&
             challengeType !== challengeTypes.python
           ) {
