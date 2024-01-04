@@ -822,8 +822,8 @@
     "ms-president": "President, Microsoft Developer Division",
     "verify": "この認定証は下記で確認できます:",
     "issued": "発行日",
-    "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
-    "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltext": "<0>{{time}}</0> <1>{{user}}</1> <2>が</2> <3>{{title}}</3> <4>開発者認定講座を修了したことを証明します。</4> <5>(約{{completionTime}}時間相当)</5>",
+    "fulltextNoHours": "<0>{{time}}</0> <1>{{user}}</1> <2>が</2> <3>{{title}}</3> <4>開発者認定講座を修了したことを証明します。</4>",
     "project": {
       "heading-legacy-full-stack": "レガシーフルスタック認定講座の一環として、{{user}} は以下の認定講座を修了しました:",
       "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを完成させ、すべての自動テストスイートに合格しました。",
