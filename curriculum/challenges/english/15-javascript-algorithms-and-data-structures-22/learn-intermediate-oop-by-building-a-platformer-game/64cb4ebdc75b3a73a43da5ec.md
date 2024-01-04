@@ -42,7 +42,7 @@ assert.match(code, /\s*setTimeout\s*\(\s*\(\s*\)\s*=>[^,]*,\s*2000\s*\)/s);
 Your callback function should set the `checkpointScreen` `display` property to `none`.
 
 ```js
-assert.match(code, /\s*if\s*\(isCheckpointCollisionDetectionActive\)\s*{\s*setTimeout\s*\(\s*(\(\s*\)\s*=>|\(\s*\)\s*=>\s*)\{\s*checkpointScreen\.style\.display\s*=\s*["']none["']\s*;\s*\}\s*,\s*2000\s*\)\s*;?\s*}/s);
+assert.match(code, /\s*if\s*\(isCheckpointCollisionDetectionActive\)\s*{\s*setTimeout\s*\(\s*function\s*\(\)\s*{\s*checkpointScreen\.style\.display\s*=\s*["']none["']\s*;\s*},\s*2000\s*\)\s*;?\s*}/s);
 ```
 
 # --seed--
