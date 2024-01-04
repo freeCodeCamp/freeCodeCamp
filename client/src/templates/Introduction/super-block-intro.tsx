@@ -194,8 +194,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   ];
 
   const onCertificationDonationAlertClick = () => {
-    console.log('oncert');
-    console.log(executeGA);
     props.executeGA({
       event: 'donation_related',
       action: `Certification Donation Alert Click`,
