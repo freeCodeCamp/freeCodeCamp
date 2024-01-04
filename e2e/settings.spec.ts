@@ -59,7 +59,7 @@ const portfolio = {
 };
 
 const personalInformation = {
-  name: 'Development User',
+  name: 'Full Stack User',
   location: '',
   picture: '',
   about: ''
