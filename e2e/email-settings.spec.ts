@@ -88,12 +88,12 @@ test.describe('Email Settings', () => {
     ).toHaveAttribute('aria-pressed', 'false');
   });
 
-  test('should have no thanks button pressed by default', async ({
+  test('should have no thanks button not pressed by default', async ({
     page
   }) => {
     await expect(
-      page.getByTestId(settingsPageElement.emailSubscriptionNoThanksButton)
-    ).toHaveAttribute('aria-pressed', 'true');
+      page.getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
+    ).toHaveAttribute('aria-pressed', 'false');
   });
 
   test('should toggle email subscription correctly', async ({ page }) => {
