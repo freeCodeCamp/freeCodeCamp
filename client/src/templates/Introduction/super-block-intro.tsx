@@ -218,6 +218,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 onCertificationDonationAlertClick={
                   onCertificationDonationAlertClick
                 }
+                isDonating={user.isDonating}
               />
               <Spacer size='large' />
               <h2 className='text-center big-subheading'>
