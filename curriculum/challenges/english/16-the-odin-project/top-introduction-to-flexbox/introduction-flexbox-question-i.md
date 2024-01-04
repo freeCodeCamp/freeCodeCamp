@@ -20,23 +20,23 @@ Another detail to notice: when we changed the `flex-direction` to `column`, `fle
 
 ## --text--
 
-Which property is used to align flex items in a column instead of a row?
+Why does using `flex: 1` shorthand with `flex-direction: column` lead to collapsed divs in the example described?
 
 ## --answers--
 
-`flex-wrap`
+The `flex` shorthand defaults `flex-basis` to 0, disregarding the defined height of the divs.
 
 ---
 
-`align-items`
+The `flex` shorthand overrides the specified `flex-direction`, causing collapsing.
 
 ---
 
-`flex-basis`
+`flex: 1` only works in a row-based layout, not in a column-based one.
 
 ---
 
-`flex-direction`
+The `flex-basis` property becomes fixed to the width, ignoring the height in column layout.
 
 
 ## --video-solution--
