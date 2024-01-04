@@ -1,12 +1,15 @@
 import { test, expect } from '@playwright/test';
 
+import translations from '../client/i18n/locales/english/translations.json';
+
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-test.beforeEach(({ isMobile }) => {
-  test.skip(isMobile === false, 'This testing file is for mobile layout only.');
-});
-
 test.describe('Classic challenge - 5 tabs mobile layout component', () => {
+  test.skip(
+    ({ isMobile }) => isMobile === false,
+    'Skip testing on desktop as this component is only used for mobile'
+  );
+
   test('The page has mobile layout with "Instruction", "Code", "Console", "Preview", "Portal Preview" tabs', async ({
     page
   }) => {
@@ -14,32 +17,45 @@ test.describe('Classic challenge - 5 tabs mobile layout component', () => {
       'learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form'
     );
 
-    const tabs = page.getByTestId('tabs');
+    const tabs = page.getByRole('tablist');
     await expect(tabs).toBeVisible();
 
-    const instructions = page.getByRole('tab', { name: 'Instructions' });
+    const instructions = page.getByRole('tab', {
+      name: translations.learn['editor-tabs'].instructions
+    });
     await expect(instructions).toBeVisible();
-    const code = page.getByRole('tab', { name: 'Code' });
+    const code = page.getByRole('tab', {
+      name: translations.learn['editor-tabs'].code
+    });
     await expect(code).toBeVisible();
-    const console = page.getByRole('tab', { name: 'Console' });
+    const console = page.getByRole('tab', {
+      name: translations.learn['editor-tabs'].console
+    });
     await expect(console).toBeVisible();
-    const preview = page.getByRole('tab', { name: 'Preview' });
+    const preview = page.getByRole('tab', {
+      name: translations.learn['editor-tabs'].preview
+    });
     await expect(preview).toBeVisible();
     const portalButton = page.getByRole('button', {
-      name: 'Move the preview to a new window and focus it'
+      name: translations.aria['move-preview-to-new-window']
     });
     await expect(portalButton).toBeVisible();
 
-    const help = page.getByRole('button', { name: 'Help' });
+    const help = page.getByRole('button', { name: translations.buttons.help });
     await expect(help).toBeVisible();
-    const reset = page.getByRole('button', { name: 'Save' });
-    await expect(reset).toBeVisible();
-    const run = page.getByRole('button', { name: 'Run' });
+    const save = page.getByRole('button', { name: translations.buttons.save });
+    await expect(save).toBeVisible();
+    const run = page.getByRole('button', { name: translations.buttons.run });
     await expect(run).toBeVisible();
   });
 });
 
 test.describe('Classic challenge - 3 tabs mobile layout component', () => {
+  test.skip(
+    ({ isMobile }) => isMobile === false,
+    'Skip testing on desktop as this component is only used for mobile'
+  );
+
   test('The page has mobile layout with "Instruction", "Code", "Console" tabs', async ({
     page
   }) => {
@@ -47,21 +63,29 @@ test.describe('Classic challenge - 3 tabs mobile layout component', () => {
       'learn/javascript-algorithms-and-data-structures/basic-javascript/use-recursion-to-create-a-range-of-numbers'
     );
 
-    const tabs = page.getByTestId('tabs');
+    const tabs = page.getByRole('tablist');
     await expect(tabs).toBeVisible();
 
-    const instructions = page.getByRole('tab', { name: 'Instructions' });
+    const instructions = page.getByRole('tab', {
+      name: translations.learn['editor-tabs'].instructions
+    });
     await expect(instructions).toBeVisible();
-    const code = page.getByRole('tab', { name: 'Code' });
+    const code = page.getByRole('tab', {
+      name: translations.learn['editor-tabs'].code
+    });
     await expect(code).toBeVisible();
-    const console = page.getByRole('tab', { name: 'Console' });
+    const console = page.getByRole('tab', {
+      name: translations.learn['editor-tabs'].console
+    });
     await expect(console).toBeVisible();
 
-    const help = page.getByRole('button', { name: 'Help' });
+    const help = page.getByRole('button', { name: translations.buttons.help });
     await expect(help).toBeVisible();
-    const reset = page.getByRole('button', { name: 'Reset' });
+    const reset = page.getByRole('button', {
+      name: translations.buttons.reset
+    });
     await expect(reset).toBeVisible();
-    const run = page.getByRole('button', { name: 'Run' });
+    const run = page.getByRole('button', { name: translations.buttons.run });
     await expect(run).toBeVisible();
   });
 });

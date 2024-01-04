@@ -217,7 +217,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       <>
         <Tabs
           id='mobile-layout'
-          data-playwright-test-label='tabs'
           onKeyDown={this.handleKeyDown}
           onMouseDown={this.handleClick}
           onTouchStart={this.handleClick}
