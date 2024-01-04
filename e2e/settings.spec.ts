@@ -6,7 +6,8 @@ const settingsTestIds = {
   settingsHeading: 'settings-heading',
   internetPresence: 'internet-presence',
   portfolioItems: 'portfolio-items',
-  camperIdentity: 'camper-identity'
+  camperIdentity: 'camper-identity',
+  flashMessageAlert: 'flash-message'
 };
 
 const settingsObject = {
@@ -49,6 +50,13 @@ const legacyCertifications = [
     'Legacy Information Security and Quality Assurance'
   ]
 ];
+
+const portfolio = {
+  title: 'foo bar',
+  url: 'https://foo.bar',
+  image: 'https://foo.bar/image.png',
+  description: 'foo bar'
+};
 
 test.describe('Settings', () => {
   test.beforeEach(async ({ page }) => {
@@ -254,6 +262,7 @@ test.describe('Settings', () => {
     );
     await expect(addPortfolioButton).toBeVisible();
     await addPortfolioButton.click();
+    await expect(addPortfolioButton).toBeDisabled(); // Add button should be disabled after clicking
     await expect(
       page.getByTestId(settingsTestIds.portfolioItems)
     ).toBeVisible();
@@ -261,10 +270,30 @@ test.describe('Settings', () => {
       name: translations.buttons['save-portfolio']
     });
     await expect(saveButton).toBeVisible();
+    await expect(saveButton).toBeDisabled();
     const removeButton = page.getByRole('button', {
       name: translations.buttons['remove-portfolio']
     });
     await expect(removeButton).toBeVisible();
+    await page
+      .getByLabel(translations.settings.labels.title)
+      .fill(portfolio.title);
+    await page.getByLabel(translations.settings.labels.url).fill(portfolio.url);
+    await page
+      .getByLabel(translations.settings.labels.image)
+      .fill(portfolio.image);
+    await page
+      .getByLabel(translations.settings.labels.description)
+      .fill(portfolio.description);
+    await saveButton.click();
+    await expect(
+      page.getByTestId(settingsTestIds.flashMessageAlert)
+    ).toContainText(translations.flash['portfolio-item-updated']);
+    await removeButton.click();
+    await expect(addPortfolioButton).toBeEnabled();
+    await expect(page.getByTestId(settingsTestIds.portfolioItems)).toBeHidden();
+    await expect(saveButton).toBeHidden();
+    await expect(removeButton).toBeHidden();
   });
 
   test('Should validate Personal Portfolio Settings', async ({
