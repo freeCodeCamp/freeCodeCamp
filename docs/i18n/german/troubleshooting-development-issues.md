@@ -14,7 +14,7 @@ If you are on a different OS or are still facing issues, see [getting help](#get
 
 ## Issues with Missing UI, Fonts, Language Strings, or Build Errors
 
-When you build the client, Gatsby will cache the Fonts, language strings, and UI. If one of them isn't cached, run the following:
+When you build the client, Gatsby will cache the fonts, language strings, and UI. If one of them isn't cached, run the following:
 
 ```bash
 pnpm run clean

@@ -22,6 +22,7 @@ import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import {
   isCollegeAlgebraPyCert,
   isNewJsCert,
+  isSciCompPyCert,
   isNewRespCert
 } from '../../../utils/is-a-cert';
 import {
@@ -104,12 +105,9 @@ class Block extends Component<BlockProps> {
       t
     } = this.props;
 
-    const isNewResponsiveWebDesign = isNewRespCert(superBlock);
-    const isNewJsAlgos = isNewJsCert(superBlock);
     const isOdinProject = blockDashedName == 'the-odin-project';
-    const isCollegeAlgebraPy = isCollegeAlgebraPyCert(superBlock);
-
     let completedCount = 0;
+
     const challengesWithCompleted = challenges.map(({ challenge }) => {
       const { id } = challenge;
       const isCompleted = completedChallengeIds.some(
@@ -352,23 +350,23 @@ class Block extends Component<BlockProps> {
       </ScrollableAnchor>
     );
 
+    const shouldBeGrid = [
+      isNewRespCert(superBlock),
+      isNewJsCert(superBlock),
+      isCollegeAlgebraPyCert(superBlock),
+      isSciCompPyCert(superBlock) && !isProjectBlock
+    ].some(Boolean);
+
     const blockrenderer = () => {
       if (isProjectBlock && !isOdinProject)
-        return isNewResponsiveWebDesign || isNewJsAlgos || isCollegeAlgebraPy
-          ? GridProjectBlock
-          : ProjectBlock;
-      return isNewResponsiveWebDesign || isNewJsAlgos || isCollegeAlgebraPy
-        ? GridBlock
-        : Block;
+        return shouldBeGrid ? GridProjectBlock : ProjectBlock;
+      return shouldBeGrid ? GridBlock : Block;
     };
 
     return (
       <>
         {blockrenderer()}
-        {(isNewResponsiveWebDesign || isNewJsAlgos || isCollegeAlgebraPy) &&
-        !isProjectBlock ? null : (
-          <Spacer size='medium' />
-        )}
+        {shouldBeGrid && !isProjectBlock ? null : <Spacer size='medium' />}
       </>
     );
   }

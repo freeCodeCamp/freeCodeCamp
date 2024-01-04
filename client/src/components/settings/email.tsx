@@ -203,13 +203,16 @@ function EmailSettings({
               controlId='new-email'
               validationState={newEmailValidation}
             >
-              <ControlLabel>{t('settings.email.new')}</ControlLabel>
+              <ControlLabel htmlFor='new-email-input'>
+                {t('settings.email.new')}
+              </ControlLabel>
               <FormControl
                 data-cy='email-input'
                 data-playwright-test-label='new-email-input'
                 onChange={createHandleEmailFormChange('newEmail')}
                 type='email'
                 value={newEmail}
+                id='new-email-input'
               />
               {newEmailValidationMessage ? (
                 <HelpBlock data-cy='validation-message'>
@@ -221,13 +224,16 @@ function EmailSettings({
               controlId='confirm-email'
               validationState={confirmEmailValidation}
             >
-              <ControlLabel>{t('settings.email.confirm')}</ControlLabel>
+              <ControlLabel htmlFor='confirm-email-input'>
+                {t('settings.email.confirm')}
+              </ControlLabel>
               <FormControl
                 data-cy='confirm-email'
                 data-playwright-test-label='confirm-email-input'
                 onChange={createHandleEmailFormChange('confirmNewEmail')}
                 type='email'
                 value={confirmNewEmail}
+                id='confirm-email-input'
               />
               {confirmEmailValidationMessage ? (
                 <HelpBlock data-cy='validation-message'>

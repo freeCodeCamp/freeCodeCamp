@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import { Trans, useTranslation } from 'react-i18next';
+import { Button } from '@freecodecamp/ui';
 
 import store from 'store';
 import { Spacer } from '../helpers';
@@ -51,11 +52,9 @@ function StagingWarningModal(): JSX.Element {
         <hr />
         <Button
           block={true}
-          bsStyle='danger'
+          variant='danger'
           data-testid='accepts-warning'
-          className='btn-invert'
           onClick={handleClick}
-          type='button'
         >
           {t('staging-warning.certain')}
         </Button>

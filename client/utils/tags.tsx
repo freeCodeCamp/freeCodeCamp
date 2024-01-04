@@ -65,7 +65,7 @@ export function getPostBodyComponents(pathname: string): JSX.Element[] {
   );
 
   if (
-    pathname.includes('/learn/coding-interview-prep/rosetta-code') ||
+    pathname.includes('/learn/rosetta-code') ||
     pathname.includes('/learn/project-euler/')
   ) {
     scripts.push(mathJaxScriptElement);

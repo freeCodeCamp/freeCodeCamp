@@ -24,7 +24,6 @@ export interface Context {
   build: string;
   sources: Source;
   loadEnzyme?: () => void;
-  transformedPython?: string;
 }
 
 export interface TestRunnerConfig {
@@ -268,15 +267,14 @@ const updateWindowI18next = () => (frameContext: Context) => {
 const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
   waitForFrame(frameContext)
     .then(async () => {
-      const { sources, loadEnzyme, transformedPython } = frameContext;
+      const { sources, loadEnzyme } = frameContext;
       // provide the file name and get the original source
       const getUserInput = (fileName: string) =>
         toString(sources[fileName as keyof typeof sources]);
       await frameContext.document?.__initTestFrame({
         code: sources,
         getUserInput,
-        loadEnzyme,
-        transformedPython
+        loadEnzyme
       });
 
       if (frameReady) frameReady();

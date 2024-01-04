@@ -136,7 +136,9 @@
     "typescript": "5.2.2",
     "util": "0.12.5",
     "uuid": "8.3.2",
-    "validator": "13.11.0"
+    "validator": "13.11.0",
+    "xterm": "^5.2.1",
+    "xterm-addon-fit": "^0.8.0"
   },
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
@@ -149,7 +151,7 @@
     "@types/chai": "^4.3.4",
     "@types/enzyme": "^3.10.12",
     "@types/enzyme-adapter-react-16": "1.0.9",
-    "@types/jest": "29.5.8",
+    "@types/jest": "29.5.11",
     "@types/jquery": "^3.5.16",
     "@types/js-yaml": "4.0.5",
     "@types/loadable__component": "5.13.7",

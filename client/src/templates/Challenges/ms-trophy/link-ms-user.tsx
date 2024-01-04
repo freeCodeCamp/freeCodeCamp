@@ -25,6 +25,7 @@ import {
   isProcessingSelector
 } from '../../../redux/selectors';
 import Login from '../../../components/Header/components/login';
+import ChallengeHeading from '../components/challenge-heading';
 
 import './link-ms-user.css';
 
@@ -86,7 +87,7 @@ function LinkMsUser({
 
   return !isSignedIn ? (
     <>
-      <h2 className='link-ms-user-title'>{t('learn.ms.link-header')}</h2>
+      <ChallengeHeading heading={t('learn.ms.link-header')} />
       <Spacer size='small' />
 
       <p data-playwright-test-label='link-signin-text'>
@@ -111,7 +112,7 @@ function LinkMsUser({
         </>
       ) : (
         <div>
-          <h2 className='link-ms-user-title'>{t('learn.ms.link-header')}</h2>
+          <ChallengeHeading heading={'learn.ms.link-header'} />
           <Spacer size='small' />
 
           <p data-playwright-test-label='unlinked-text'>

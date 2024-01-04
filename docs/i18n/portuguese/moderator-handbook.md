@@ -201,7 +201,7 @@ Se um usuário criar uma thread pedindo feedback de uma solução, mova o tópic
 
 ### Usuários menores de idade
 
-Nossos [termos de serviço](https://freecodecamp.org/terms) requerem que os usuários do freeCodeCamp tenham, pelo menos, 13 anos de idade. Se um usuário revelar que ele tem menos de 13 anos de idade, envie-lhe a mensagem abaixo e suspenda a conta. Em seguida, **envie um email para `support[at]freecodecamp.org` para excluir as contas do usuário de freeCodeCamp/learn e do fórum (fornecendo um link para a conta ilícita do fórum).**
+Nossos [termos de serviço](https://freecodecamp.org/terms) requerem que os usuários do freeCodeCamp tenham, pelo menos, 13 anos de idade. If a user reveals that they are under the age of 13, send them the message below, suspend their account, then email the link of their forum account to `support[at]freecodecamp.org` for their freeCodeCamp /learn and forum accounts removal.
 
 ```markdown
 ASSUNTO: Usuários com menos de 13 anos não têm permissão para usar o fórum de acordo com os nossos Termos de Serviço.
@@ -243,7 +243,7 @@ Mas se é um delito flagrante, isso não pode razoavelmente ser atribuído a uma
 
    Para delitos menores, um aviso pode ser emitido com o comando `/warn`. Para mais erros flagrantes, você pode remover o membro do servidor temporariamente com o comando `/kick` ou permanentemente com o comando `/ban`. Em alguns casos, um membro pode precisar de algum tempo para resfriar e coletar seus pensamentos - o comando `/mute` permite que você evite que ele se envolva com a nossa comunidade por um determinado período de tempo. Um membro silenciado pode ver a conversa, mas não pode postar mensagens ou adicionar reações.
 
-   Todos os comandos de moderação levarão um parâmetro `reason`, que deve ser uma breve explicação do motivo da ação ter sido tomada. As ações de moderação feitas com o bot serão registradas em `#mod-log`, o que nos permite a todos ficar na mesma página. Como tal, devemos evitar o uso das ferramentas de moderação embutidas no Discord, pois elas não serão registradas.
+   Todos os comandos de moderação levarão um parâmetro `reason`, que deve ser uma breve explicação do motivo da ação ter sido tomada. Moderation actions done with the bot will be logged in `#mod-actions`, which allows us all to stay on the same page. Como tal, devemos evitar o uso das ferramentas de moderação embutidas no Discord, pois elas não serão registradas.
 
    > [!WARNING] A razão fornecida para um comando de moderação também será incluída na notificação de DM ao camper. Por favor, lembre-se de ser profissional aqui.
 
@@ -257,7 +257,7 @@ Mas se é um delito flagrante, isso não pode razoavelmente ser atribuído a uma
 
 4. **Apagando mensagens**
 
-   Nosso bot de moderação está configurado para registrar automaticamente mensagens excluídas no canal `#mod-log`. Se uma mensagem não estiver de acordo com o nosso Código de Conduta, ou não é apropriado para a nossa comunidade, geralmente você pode excluí-la.
+   Our moderation bot is configured to log deleted messages automatically in the `#mod-actions` channel. Se uma mensagem não estiver de acordo com o nosso Código de Conduta, ou não é apropriado para a nossa comunidade, geralmente você pode excluí-la.
 
    Note que se a mensagem contiver conteúdo que viole os termos de serviço do Discord, você deverá denunciá-la em https://dis.gd/report **antes de** excluí-la.
 

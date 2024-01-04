@@ -102,6 +102,15 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
       </ul>
       <Spacer size='medium' />
       <h2 className={forLanding ? 'big-heading' : ''}>
+        {t('landing.learn-english-heading')}
+      </h2>
+      <ul>
+        {superBlockOrder[SuperBlockStages.English].map((superBlock, i) => (
+          <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+        ))}
+      </ul>
+      <Spacer size='medium' />
+      <h2 className={forLanding ? 'big-heading' : ''}>
         {t('landing.professional-certs-heading')}
       </h2>
       <ul>
@@ -115,6 +124,15 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
       </h2>
       <ul>
         {superBlockOrder[SuperBlockStages.Extra].map((superBlock, i) => (
+          <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+        ))}
+      </ul>
+      <Spacer size='medium' />
+      <h2 className={forLanding ? 'big-heading' : ''}>
+        {t('landing.legacy-curriculum-heading')}
+      </h2>
+      <ul>
+        {superBlockOrder[SuperBlockStages.Legacy].map((superBlock, i) => (
           <MapLi key={i} superBlock={superBlock} landing={forLanding} />
         ))}
       </ul>

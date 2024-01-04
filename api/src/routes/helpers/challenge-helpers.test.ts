@@ -25,7 +25,8 @@ const completedChallenges: CompletedChallenge[] = [
     files: [],
     githubLink: null,
     solution: null,
-    isManuallyApproved: false
+    isManuallyApproved: false,
+    examResults: null
   }
 ];
 
