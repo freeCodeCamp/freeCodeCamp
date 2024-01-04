@@ -48,15 +48,18 @@ interface BuildOptions {
   usesTestRunner?: boolean;
 }
 
-interface WorkerConfig {
-  terminateWorker: boolean;
-  testEvaluator: string;
-}
-
 const { filename: jsTestEvaluator } = jsTestEvaluatorData;
 const { filename: pyTestEvaluator } = pyTestEvaluatorData;
 
 const frameRunnerSrc = `/js/${frameRunnerData.filename}.js`;
+
+const pythonWorkerExecutor = new WorkerExecutor(pyTestEvaluator, {
+  terminateWorker: false,
+  maxWorkers: 1
+});
+const jsWorkerExecutor = new WorkerExecutor(jsTestEvaluator, {
+  terminateWorker: true
+});
 
 type ApplyFunctionProps = (file: ChallengeFile) => Promise<ChallengeFile>;
 
@@ -172,7 +175,7 @@ function getJSTestRunner(
   return getWorkerTestRunner(
     { build, sources },
     { proxyLogger, removeComments },
-    { testEvaluator: jsTestEvaluator, terminateWorker: true }
+    jsWorkerExecutor
   );
 }
 
@@ -183,14 +186,14 @@ function getPyTestRunner(
   return getWorkerTestRunner(
     { build, sources },
     { proxyLogger, removeComments },
-    { testEvaluator: pyTestEvaluator, terminateWorker: false }
+    pythonWorkerExecutor
   );
 }
 
 function getWorkerTestRunner(
   { build, sources }: Pick<BuildChallengeData, 'build' | 'sources'>,
   { proxyLogger, removeComments }: TestRunnerConfig,
-  { testEvaluator, terminateWorker }: WorkerConfig
+  workerExecutor: WorkerExecutor
 ) {
   const code = {
     contents: sources.index,
@@ -198,17 +201,13 @@ function getWorkerTestRunner(
     original: sources.original
   };
 
-  const testWorkerExecutor = new WorkerExecutor(testEvaluator, {
-    terminateWorker
-  });
-
   interface TestWorkerExecutor extends WorkerExecutor {
     on: (event: string, listener: (...args: string[]) => void) => void;
     done: () => void;
   }
 
   return (testString: string, testTimeout: number, firstTest = true) => {
-    const result = testWorkerExecutor.execute(
+    const result = workerExecutor.execute(
       { build, testString, code, sources, firstTest, removeComments },
       testTimeout
     ) as TestWorkerExecutor;
