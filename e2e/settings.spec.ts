@@ -58,6 +58,13 @@ const portfolio = {
   description: 'foo bar'
 };
 
+const personalInformation = {
+  name: 'Development User',
+  location: '',
+  picture: '',
+  about: ''
+};
+
 test.describe('Settings', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/settings');
@@ -296,7 +303,7 @@ test.describe('Settings', () => {
     await expect(removeButton).toBeHidden();
   });
 
-  test('Should validate Personal Portfolio Settings', async ({
+  test('Should validate Personal Information Settings', async ({
     page,
     browserName
   }) => {
@@ -313,7 +320,19 @@ test.describe('Settings', () => {
       name: translations.settings.headings['personal-info']
     });
     await expect(saveButton).toBeVisible();
-    await saveButton.press('Enter');
+    await expect(saveButton).toBeDisabled();
+    await expect(
+      page.getByLabel(translations.settings.labels.name, { exact: true })
+    ).toHaveValue(personalInformation.name);
+    await expect(
+      page.getByLabel(translations.settings.labels.location, { exact: true })
+    ).toHaveValue(personalInformation.location);
+    await expect(
+      page.getByLabel(translations.settings.labels.picture, { exact: true })
+    ).toHaveValue(personalInformation.picture);
+    await expect(
+      page.getByLabel(translations.settings.labels.about, { exact: true })
+    ).toHaveValue(personalInformation.about);
     await expect(
       page
         .getByRole('group', {
@@ -336,15 +355,6 @@ test.describe('Settings', () => {
     await expect(
       page.getByText(translations.settings['scrollbar-width'])
     ).toBeVisible();
-    const addPortfolioButton = page.getByText(
-      translations.buttons['add-portfolio']
-    );
-    await expect(addPortfolioButton).toBeVisible();
-    await addPortfolioButton.click();
-    const removeButton = page.getByRole('button', {
-      name: translations.buttons['remove-portfolio']
-    });
-    await expect(removeButton).toBeVisible();
   });
 
   test('Should validate Academy Honesty Settings', async ({
