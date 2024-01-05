@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'; //, ReactElement } f
 import { Col } from '@freecodecamp/ui';
 import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
-import ClosedCaptionsIcon from '../../../../assets/icons/accessibility';
+import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
 import { sounds, images, backgrounds } from './scene-assets';
 import Character from './character';
 

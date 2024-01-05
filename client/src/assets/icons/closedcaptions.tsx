@@ -17,6 +17,6 @@ function ClosedCaptionsIcon(
   );
 }
 
-ClosedCaptionsIcon.displayName = 'AccessibilityIcon';
+ClosedCaptionsIcon.displayName = 'ClosedCaptionsIcon';
 
 export default ClosedCaptionsIcon;
