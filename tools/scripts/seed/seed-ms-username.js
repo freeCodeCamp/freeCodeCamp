@@ -3,7 +3,7 @@ const debug = require('debug');
 const { MongoClient, ObjectId } = require('mongodb');
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 
-const log = debug('fcc:tools:seedMsAccount');
+const log = debug('fcc:tools:seedMsUsername');
 const { MONGOHQ_URL } = process.env;
 
 const args = process.argv.slice(2);
@@ -20,7 +20,7 @@ args.forEach(arg => {
 
 function handleError(err, client) {
   if (err) {
-    console.error('Oh noes!! Error seeding MS account.');
+    console.error('Oh noes!! Error seeding MS username.');
     console.error(err);
     try {
       client.close();
@@ -55,7 +55,7 @@ const run = async () => {
       _id: { $eq: msAccountId }
     });
 
-    log('MS account deleted');
+    log('MS username deleted');
     return;
   }
 
@@ -66,7 +66,7 @@ const run = async () => {
     { upsert: true }
   );
 
-  log('MS account seeded');
+  log('MS username seeded');
 };
 
 run()

@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Link MS user component (signed-out user)', () => {
-  test('Component has proper main heading and relevant sections', async ({
+  test('should display the page content with a signin CTA', async ({
     page
   }) => {
     await expect(
@@ -28,6 +28,12 @@ test.describe('Link MS user component (signed-out user)', () => {
     await expect(
       page.getByText(translations.learn.ms['link-signin'])
     ).toBeVisible();
+
+    // There are 2 sign in button on the page: one in the navbar, and one in the page content
+    const signInButtons = await page
+      .getByRole('link', { name: translations.buttons['sign-in'] })
+      .all();
+    expect(signInButtons).toHaveLength(2);
   });
 });
 
@@ -65,7 +71,11 @@ test.describe('Link MS user component (signed-in user)', () => {
     await expect(unlinkButton).toBeVisible();
     await unlinkButton.click();
 
-    await expect(page.getByText(translations.learn.ms.unlinked)).toBeVisible();
+    await expect(
+      page
+        .getByRole('alert')
+        .filter({ hasText: translations.flash.ms.transcript.unlinked })
+    ).toBeVisible();
 
     await expect(
       page.getByRole('heading', {
@@ -73,27 +83,38 @@ test.describe('Link MS user component (signed-in user)', () => {
         level: 2
       })
     ).toBeVisible();
+    await expect(page.getByText(translations.learn.ms.unlinked)).toBeVisible();
     await expect(
-      page.getByText(
-        'Using a browser where you are logged into your Microsoft account, go to https://learn.microsoft.com/users/me/transcript'
-      )
+      page.getByRole('listitem').filter({
+        hasText:
+          'Using a browser where you are logged into your Microsoft account, go to https://learn.microsoft.com/users/me/transcript'
+      })
     ).toBeVisible();
     await expect(
-      page.getByText(translations.learn.ms['link-li-2'])
+      page
+        .getByRole('listitem')
+        .filter({ hasText: translations.learn.ms['link-li-2'] })
     ).toBeVisible();
     await expect(
-      page.getByText(translations.learn.ms['link-li-3'])
+      page
+        .getByRole('listitem')
+        .filter({ hasText: translations.learn.ms['link-li-3'] })
     ).toBeVisible();
     await expect(
-      page.getByText(translations.learn.ms['link-li-4'])
+      page
+        .getByRole('listitem')
+        .filter({ hasText: translations.learn.ms['link-li-4'] })
     ).toBeVisible();
     await expect(
-      page.getByText(
-        'Paste the URL into the input below, it should look similar to this: https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID'
-      )
+      page.getByRole('listitem').filter({
+        hasText:
+          'Paste the URL into the input below, it should look similar to this: https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID'
+      })
     ).toBeVisible();
     await expect(
-      page.getByText(translations.learn.ms['link-li-6'])
+      page
+        .getByRole('listitem')
+        .filter({ hasText: translations.learn.ms['link-li-6'] })
     ).toBeVisible();
 
     const transcriptLinkInput = page.getByLabel(

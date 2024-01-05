@@ -113,11 +113,9 @@ function LinkMsUser({
           <ChallengeHeading heading={'learn.ms.link-header'} />
           <Spacer size='small' />
 
-          <p data-playwright-test-label='unlinked-text'>
-            {t('learn.ms.unlinked')}
-          </p>
+          <p>{t('learn.ms.unlinked')}</p>
           <ol className='link-ms-user-ol'>
-            <li data-playwright-test-label='link-li-1-text'>
+            <li>
               <Trans i18nKey='learn.ms.link-li-1'>
                 <a
                   href='https://learn.microsoft.com/users/me/transcript'
@@ -128,23 +126,15 @@ function LinkMsUser({
                 </a>
               </Trans>
             </li>
-            <li data-playwright-test-label='link-li-2-text'>
-              {t('learn.ms.link-li-2')}
-            </li>
-            <li data-playwright-test-label='link-li-3-text'>
-              {t('learn.ms.link-li-3')}
-            </li>
-            <li data-playwright-test-label='link-li-4-text'>
-              {t('learn.ms.link-li-4')}
-            </li>
-            <li data-playwright-test-label='link-li-5-text'>
+            <li>{t('learn.ms.link-li-2')}</li>
+            <li>{t('learn.ms.link-li-3')}</li>
+            <li>{t('learn.ms.link-li-4')}</li>
+            <li>
               <Trans i18nKey='learn.ms.link-li-5'>
                 <pre className='language-html'>placeholder</pre>
               </Trans>
             </li>
-            <li data-playwright-test-label='link-li-6-text'>
-              {t('learn.ms.link-li-6')}
-            </li>
+            <li>{t('learn.ms.link-li-6')}</li>
           </ol>
 
           <Spacer size='medium' />
