@@ -94,7 +94,11 @@ test.describe('Email Settings', () => {
     ).toHaveAttribute('aria-pressed', 'true');
   });
 
-  test('should toggle email subscription correctly', async ({ page }) => {
+  test('should toggle email subscription correctly', async ({
+    page,
+    browserName
+  }) => {
+    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
     await page
       .getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
       .click();
