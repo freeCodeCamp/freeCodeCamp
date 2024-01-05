@@ -3,21 +3,22 @@ import { join } from 'path';
 
 import { getFileName } from './get-file-name';
 
+const block = 'project-get-file-name';
 const metaPath = join(
   process.cwd(),
   'curriculum',
   'challenges',
   '_meta',
-  'project'
+  block
 );
 const superBlockPath = join(
   process.cwd(),
   'curriculum',
   'challenges',
   'english',
-  'superblock'
+  'superblock-get-file-name'
 );
-const projectPath = join(superBlockPath, 'project');
+const projectPath = join(superBlockPath, block);
 
 const cleanFiles = () => {
   try {

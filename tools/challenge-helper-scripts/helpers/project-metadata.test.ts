@@ -6,21 +6,22 @@ import {
   validateMetaData
 } from './project-metadata';
 
+const block = 'project-project-metadata';
 const metaPath = join(
   process.cwd(),
   'curriculum',
   'challenges',
   '_meta',
-  'project'
+  block
 );
 const superBlockPath = join(
   process.cwd(),
   'curriculum',
   'challenges',
   'english',
-  'superblock'
+  'superblock-project-metadata'
 );
-const projectPath = join(superBlockPath, 'project');
+const projectPath = join(superBlockPath, block);
 
 const cleanFiles = () => {
   try {

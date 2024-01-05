@@ -6,21 +6,22 @@ import {
   getChallengeOrderFromMeta
 } from './get-challenge-order';
 
+const block = 'project-get-challenge-order';
 const metaPath = join(
   process.cwd(),
   'curriculum',
   'challenges',
   '_meta',
-  'project'
+  block
 );
 const superBlockPath = join(
   process.cwd(),
   'curriculum',
   'challenges',
   'english',
-  'superblock'
+  'superblock-get-challenge-order'
 );
-const projectPath = join(superBlockPath, 'project');
+const projectPath = join(superBlockPath, block);
 
 const cleanFiles = () => {
   try {
