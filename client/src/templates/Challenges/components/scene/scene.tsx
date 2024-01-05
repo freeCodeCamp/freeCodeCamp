@@ -197,7 +197,8 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
                 {!alwaysShowDialogue && (
                   <button
                     className='scene-start-btn scene-a11y-btn'
-                    aria-label='Accessibility On/Off'
+                    aria-label='closed captions'
+                    aria-pressed={accessibilityOn}
                     onClick={() => setAccessibilityOn(!accessibilityOn)}
                   >
                     <ClosedCaptionsIcon
