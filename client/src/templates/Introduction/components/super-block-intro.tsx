@@ -7,21 +7,25 @@ import { Spacer, Link } from '../../../components/helpers';
 
 interface SuperBlockIntroProps {
   superBlock: SuperBlocks;
+  onCertificationDonationAlertClick: () => void;
+  isDonating: boolean;
 }
 
 export const ConditionalDonationAlert = ({
-  superBlock
-}: {
-  superBlock: SuperBlocks;
-}): JSX.Element => {
+  superBlock,
+  onCertificationDonationAlertClick,
+  isDonating
+}: SuperBlockIntroProps): JSX.Element => {
   const { t } = useTranslation();
 
-  if (
-    superBlock === SuperBlocks.JsAlgoDataStructNew ||
-    superBlock === SuperBlocks.A2English ||
-    superBlock === SuperBlocks.UpcomingPython ||
-    superBlock === SuperBlocks.SciCompPy
-  )
+  const betaCertifications = [
+    SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.A2English,
+    SuperBlocks.UpcomingPython,
+    SuperBlocks.SciCompPy
+  ];
+
+  if (!isDonating && betaCertifications.includes(superBlock))
     return (
       <Alert variant='info' className='annual-donation-alert'>
         <p>{t('donate.beta-certification')}</p>
@@ -32,7 +36,7 @@ export const ConditionalDonationAlert = ({
             key='donate'
             sameTab={false}
             to='/donate'
-            // onClick={onDonationAlertClick}
+            onClick={onCertificationDonationAlertClick}
           >
             {t('buttons.donate-now')}
           </Link>
@@ -44,7 +48,7 @@ export const ConditionalDonationAlert = ({
 
 function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
   const { t } = useTranslation();
-  const { superBlock } = props;
+  const { superBlock, onCertificationDonationAlertClick, isDonating } = props;
 
   const superBlockIntroObj: {
     title: string;
@@ -80,7 +84,11 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
           {superBlockNoteText}
         </div>
       )}
-      <ConditionalDonationAlert superBlock={superBlock} />
+      <ConditionalDonationAlert
+        superBlock={superBlock}
+        onCertificationDonationAlertClick={onCertificationDonationAlertClick}
+        isDonating={isDonating}
+      />
     </>
   );
 }
