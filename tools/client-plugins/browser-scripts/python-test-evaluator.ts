@@ -128,7 +128,7 @@ def __inputGen(xs):
 
   return input
 
-input = __inputGen(${JSON.stringify(input)})
+input = __inputGen(${JSON.stringify(input ?? [])})
 `);
 
     // Evaluates the learner's code so that any variables they define are
