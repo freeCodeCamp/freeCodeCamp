@@ -14,7 +14,7 @@ describe('Add Portfolio Item', () => {
     cy.get('[data-cy="portfolio-title"]').type('This is a portfolio item');
     cy.get('button')
       .contains('Save this portfolio item')
-      .should('not.have.attr', 'aria-disabled');
+      .should('not.be.disabled');
 
     cy.get('[data-cy="portfolio-url"]').type('This is a portfolio item');
     cy.get('[data-cy="validation-message"]').contains(
@@ -45,7 +45,10 @@ describe('Add Portfolio Item', () => {
     cy.get('[data-cy="validation-message"]').contains(
       'There is a maximum limit of 288 characters, you have 0 left'
     );
-    cy.get('button').filter(':disabled').should('have.length.gt', 0);
+
+    cy.get('button')
+      .contains('Save this portfolio item')
+      .should('not.be.disabled');
 
     cy.get('[data-cy="portfolio-description"]').type('{backspace}');
     cy.get('button[type=submit]').contains('Save this portfolio item').click();
