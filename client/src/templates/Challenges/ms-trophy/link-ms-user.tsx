@@ -90,9 +90,7 @@ function LinkMsUser({
       <ChallengeHeading heading={t('learn.ms.link-header')} />
       <Spacer size='small' />
 
-      <p data-playwright-test-label='link-signin-text'>
-        {t('learn.ms.link-signin')}
-      </p>
+      <p>{t('learn.ms.link-signin')}</p>
       <Login />
     </>
   ) : (
