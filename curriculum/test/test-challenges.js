@@ -33,7 +33,7 @@ const {
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
 const {
   challengeTypes,
-  hasNoTests
+  hasNoSolution
 } = require('../../shared/config/challenge-types');
 // the config files are created during the build, but not before linting
 const javaScriptTestEvaluator =
@@ -374,7 +374,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
 
           const { challengeType } = challenge;
 
-          if (hasNoTests(challengeType)) return;
+          if (hasNoSolution(challengeType)) return;
 
           let { tests = [] } = challenge;
           tests = tests.filter(test => !!test.testString);
@@ -603,12 +603,11 @@ function replaceChallengeFilesContentsWithSolutions(
   solutionFiles
 ) {
   return challengeFiles.map(file => {
-    const matchingSolutionFile = solutionFiles.find(
-      ({ ext, name }) => ext === file.ext && file.name === name
-    );
-    if (!matchingSolutionFile) {
-      throw Error(`No matching solution file found`);
-    }
+    const matchingSolutionFile =
+      solutionFiles.find(
+        ({ ext, name }) => ext === file.ext && file.name === name
+        // return seed file if solution file not found
+      ) || file;
     return {
       ...file,
       contents: matchingSolutionFile.contents,
