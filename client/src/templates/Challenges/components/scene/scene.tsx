@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'; //, ReactElement } f
 import { Col } from '@freecodecamp/ui';
 import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
-import AccessibilityIcon from '../../../../assets/icons/accessibility';
+import ClosedCaptionsIcon from '../../../../assets/icons/accessibility';
 import { sounds, images, backgrounds } from './scene-assets';
 import Character from './character';
 
@@ -200,7 +200,7 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
                     aria-label='Accessibility On/Off'
                     onClick={() => setAccessibilityOn(!accessibilityOn)}
                   >
-                    <AccessibilityIcon
+                    <ClosedCaptionsIcon
                       fill={
                         accessibilityOn ? 'var(--gray-00)' : 'var(--gray-15)'
                       }
