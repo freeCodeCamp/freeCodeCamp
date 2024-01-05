@@ -42,7 +42,7 @@ assert.match(code, /\s*setTimeout\s*\(\s*\(\s*\)\s*=>[^,]*,\s*2000\s*\)/s);
 Your callback function should set the `checkpointScreen` `display` property to `none`.
 
 ```js
-assert.match(code, /\s*if\s*\(isCheckpointCollisionDetectionActive\)\s*{\s*setTimeout\s*\(\s*\(\s*\)\s*=>\s*\(\s*checkpointScreen\.style\.display\s*=\s*["']none["']\s*\)\s*,\s*2000\s*\)\s*;?\s*}/s);
+assert.match(code, /\s*if\s*\(isCheckpointCollisionDetectionActive\)\s*{\s*setTimeout\s*\(\s*\(\s*\)\s*=>\s*(\(\s*checkpointScreen\.style\.display\s*=\s*("|')none\2\s*\)|\{\s*checkpointScreen\.style\.display\s*=\s*("|')none\3\s*;?\s*\}|\s*checkpointScreen\.style\.display\s*=\s*("|')none\4\s*)\s*,\s*2000\s*\)\s*;?\s*}/s);
 ```
 
 # --seed--
@@ -211,7 +211,7 @@ class Player {
     ctx.fillStyle = "#99c9ff";
     ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
-  
+
   update() {
     this.draw();
     this.position.x += this.velocity.x;
@@ -329,7 +329,7 @@ const animate = () => {
       checkpoints.forEach((checkpoint) => {
         checkpoint.position.x -= 5;
       });
-    
+
     } else if (keys.leftKey.pressed && isCheckpointCollisionDetectionActive) {
       platforms.forEach((platform) => {
         platform.position.x += 5;

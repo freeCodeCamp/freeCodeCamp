@@ -1,10 +1,11 @@
 // Package Utilities
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Button } from '@freecodecamp/ui';
 
 // Local Utilities
 import { executeGA } from '../../../redux/actions';
@@ -74,8 +75,8 @@ function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
         <Button
           data-cy='reset-modal-confirm'
           block={true}
-          bsSize='large'
-          bsStyle='danger'
+          size='large'
+          variant='danger'
           onClick={withActions(reset, close)}
         >
           {t('buttons.reset-lesson')}
