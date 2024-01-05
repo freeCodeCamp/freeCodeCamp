@@ -12,9 +12,9 @@ Let’s look at an example.
 
 You should be able to predict what happens if you put `flex: 1` on the `.item` by now. Give it a shot before we move on!
 
-Adding `flex: 1` to .item makes each of the items grow to fill the available space, but what if we wanted them to stay the same width, but distribute themselves differently inside the container? We can do this!
+Adding `flex: 1` to `.item` makes each of the items grow to fill the available space, but what if we wanted them to stay the same width, but distribute themselves differently inside the container? We can do this!
 
-Remove `flex: 1` from `.item` and add j`ustify-content: space-between` to `.container`. Doing so should give you something like this:
+Remove `flex: 1` from `.item` and add `justify-content: space-between` to `.container`. Doing so should give you something like this:
 
 <img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/495704c6eb6bf33bc927534f231533a82b27b2ac/html_css/v2/foundations/flexbox/imgs/07.png" alt="an image displaying three blue squares which are spread out over the entire width of it's container">
 
