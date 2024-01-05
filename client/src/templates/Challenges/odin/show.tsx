@@ -1,5 +1,4 @@
 // Package Utilities
-import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -10,7 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Button } from '@freecodecamp/ui';
 
 // Local Utilities
 import Loader from '../../../components/helpers/loader';
@@ -400,8 +399,8 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 <Spacer size='medium' />
                 <Button
                   block={true}
-                  bsSize='medium'
-                  bsStyle='primary'
+                  size='medium'
+                  variant='primary'
                   onClick={() =>
                     this.handleSubmit(
                       solution,
@@ -412,11 +411,11 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 >
                   {t('buttons.check-answer')}
                 </Button>
+                <Spacer size='xxSmall' />
                 <Button
                   block={true}
-                  bsSize='medium'
-                  bsStyle='primary'
-                  className='btn-invert'
+                  size='medium'
+                  variant='primary'
                   onClick={openHelpModal}
                 >
                   {t('buttons.ask-for-help')}
