@@ -21,7 +21,7 @@ Build some muscle memory by deleting the contents of the `index.html` file and t
 
 ---
 
-Run your boilerplate through this [HTML validator](https://www.freeformatter.com/html-validator.html). Validators ensure your markup is correct and are an excellent learning tool, as they provide feedback on syntax errors you may be making often and aren’t aware of, such as missing closing tags and extra spaces in your HTML.
+Run your boilerplate through this <a href="https://www.freeformatter.com/html-validator.html" target="_blank">HTML validator</a>. Validators ensure your markup is correct and are an excellent learning tool, as they provide feedback on syntax errors you may be making often and aren’t aware of, such as missing closing tags and extra spaces in your HTML.
 
 # --question--
 

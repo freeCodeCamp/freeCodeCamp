@@ -9,9 +9,6 @@ import {
   takeLeading
 } from 'redux-saga/effects';
 
-import { loadStripe } from '@stripe/stripe-js';
-import envData from '../../config/env.json';
-
 import {
   addDonation,
   postChargeStripe,
@@ -19,6 +16,7 @@ import {
   updateStripeCard
 } from '../utils/ajax';
 import { stringifyDonationEvents } from '../utils/analytics-strings';
+import { stripe } from '../utils/stripe';
 import { PaymentProvider } from '../../../shared/config/donation-settings';
 import { actionTypes as appTypes } from './action-types';
 import {
@@ -41,8 +39,6 @@ import {
 
 const defaultDonationErrorMessage = i18next.t('donate.error-2');
 const updateCardErrorMessage = i18next.t('donate.error-3');
-
-const { stripePublicKey } = envData;
 
 function* showDonateModalSaga() {
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
@@ -172,8 +168,7 @@ export function* updateCardSaga() {
     } = yield call(updateStripeCard);
 
     if (!sessionId) throw new Error('No sessionId');
-    const stripe = yield call(loadStripe, stripePublicKey);
-    stripe.redirectToCheckout({ sessionId });
+    (yield stripe).redirectToCheckout({ sessionId });
   } catch (error) {
     yield put(updateCardError(updateCardErrorMessage));
   }

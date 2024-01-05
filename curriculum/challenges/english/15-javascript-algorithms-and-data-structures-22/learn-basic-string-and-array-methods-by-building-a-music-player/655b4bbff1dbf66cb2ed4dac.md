@@ -11,7 +11,7 @@ Use an `if` statement to check if `nextSongExists` exists, then call the `playNe
 
 # --hints--
 
-You should create an `if` statment with the condition `nextSongExists`.
+You should create an `if` statement with the condition `nextSongExists`.
 
 ```js
 assert.match(code, /if\s*\(nextSongExists\)\s*\{\s*/)
