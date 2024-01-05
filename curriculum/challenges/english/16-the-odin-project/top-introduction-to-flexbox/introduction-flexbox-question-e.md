@@ -6,7 +6,7 @@ dashedName: introduction-flexbox-question-e
 ---
 # --description--
 
-The flex declaration is actually a shorthand for 3 properties that you can set on a flex item. These properties affect how flex items size themselves within their container. You’ve seen some shorthand properties before, but we haven’t officially defined them yet.
+The flex declaration is actually a shorthand for 3 properties that you can set on a flex item. These properties affect how flex items size themselves within their container. You’ve seen some shorthand properties before, but you haven’t officially defined them yet.
 
 > Shorthand properties are CSS properties that let you set the values of multiple other CSS properties simultaneously. Using a shorthand property, you can write more concise (and often more readable) stylesheets, saving time and energy.
 
@@ -16,7 +16,7 @@ In this case, `flex` is actually a shorthand for `flex-grow`, `flex-shrink` and 
 
 In the above screenshot, `flex: 1` equates to: `flex-grow: 1`, `flex-shrink: 1`, `flex-basis: 0`.
 
-Very often you see the flex shorthand defined with only one value. In that case, that value is applied to `flex-grow`. So when we put `flex: 1` on our divs, we were actually specifying a shorthand of `flex: 1 1 0`.
+Very often you see the flex shorthand defined with only one value. In that case, that value is applied to `flex-grow`. So when you put `flex: 1` on our divs, you were actually specifying a shorthand of `flex: 1 1 0`.
 
 # --question--
 
