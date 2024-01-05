@@ -49,7 +49,16 @@ test.describe('Link MS user component (signed-in user)', () => {
     ).toBeVisible();
   });
 
-  test('should allow the user to unlink their MS account', async ({ page }) => {
+  test('should allow the user to unlink their MS account and display a form for re-link', async ({
+    page
+  }) => {
+    // Intercept the endpoint to prevent `msUsername` from being deleted
+    // as the deletion will cause subsequent tests to fail
+    await page.route('*/**/user/ms-username', async route => {
+      const json = { msUsername: null };
+      await route.fulfill({ json });
+    });
+
     const unlinkButton = page.getByRole('button', {
       name: translations.buttons['unlink-account']
     });
