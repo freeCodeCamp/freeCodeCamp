@@ -1,8 +1,8 @@
 ---
 id: 655b4bbff1dbf66cb2ed4dac
-title: Step 82
+title: Step 87
 challengeType: 0
-dashedName: step-82
+dashedName: step-87
 ---
 
 # --description--
@@ -746,6 +746,18 @@ audio.addEventListener("ended", () => {
 --fcc-editable-region--
 
 --fcc-editable-region--
+});
+
+userData?.songs.sort((a,b) => {
+  if (a.title < b.title) {
+    return -1;
+  }
+  
+  if (a.title > b.title) {
+    return 1;
+  }
+
+  return 0;
 });
 
 renderSongs(userData?.songs);

@@ -1,8 +1,8 @@
 ---
 id: 6555d8faed60b9d3e4a6cefb
-title: Step 57
+title: Step 62
 challengeType: 0
-dashedName: step-57
+dashedName: step-62
 ---
 
 # --description--
@@ -734,6 +734,18 @@ pauseButton.addEventListener("click",  pauseSong);
 nextButton.addEventListener("click", playNextSong);
 
 previousButton.addEventListener("click", playPreviousSong);
+
+userData?.songs.sort((a,b) => {
+  if (a.title < b.title) {
+    return -1;
+  }
+  
+  if (a.title > b.title) {
+    return 1;
+  }
+
+  return 0;
+});
 
 renderSongs(userData?.songs);
 ```
