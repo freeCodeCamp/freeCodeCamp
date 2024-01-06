@@ -1,15 +1,17 @@
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
+import { Button } from '@freecodecamp/ui';
 
 import envData from '../../../../config/env.json';
 import { executeGA } from '../../../redux/actions';
 import { createQuestion, closeModal } from '../redux/actions';
 import { isHelpModalOpenSelector } from '../redux/selectors';
+import { Spacer } from '../../../components/helpers';
 
 import './help-modal.css';
 
@@ -93,16 +95,17 @@ function HelpModal({
         </div>
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='primary'
+          size='large'
+          variant='primary'
           onClick={createQuestion}
         >
           {t('buttons.create-post')}
         </Button>
+        <Spacer size='xxSmall' />
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='primary'
+          size='large'
+          variant='primary'
           onClick={closeHelpModal}
         >
           {t('buttons.cancel')}
