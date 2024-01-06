@@ -352,7 +352,6 @@ taskForm.addEventListener("submit", (e) => {
         </div>
       `)
     }
-      
   );
 
   reset()
