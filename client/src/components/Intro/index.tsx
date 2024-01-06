@@ -16,7 +16,7 @@ interface IntroProps {
   pending?: boolean;
   slug?: string;
   username?: string;
-  onDonationAlertClick: () => void;
+  onLearnDonationAlertClick: () => void;
   isDonating: boolean;
 }
 
@@ -27,7 +27,7 @@ const Intro = ({
   complete,
   completedChallengeCount,
   slug,
-  onDonationAlertClick,
+  onLearnDonationAlertClick,
   isDonating
 }: IntroProps): JSX.Element => {
   const { t } = useTranslation();
@@ -61,7 +61,7 @@ const Intro = ({
           </blockquote>
         </div>
         <LearnAlert
-          onDonationAlertClick={onDonationAlertClick}
+          onLearnDonationAlertClick={onLearnDonationAlertClick}
           isDonating={isDonating}
         />
         {completedChallengeCount && slug && completedChallengeCount < 15 ? (

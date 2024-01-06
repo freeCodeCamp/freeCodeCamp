@@ -1,5 +1,4 @@
-import { Button } from '@freecodecamp/react-bootstrap';
-import { Dropdown, MenuItem } from '@freecodecamp/ui';
+import { Dropdown, MenuItem, Button } from '@freecodecamp/ui';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
@@ -15,6 +14,7 @@ import { challengeMetaSelector } from '../redux/selectors';
 
 import { saveChallenge } from '../../../redux/actions';
 import { isSignedInSelector } from '../../../redux/selectors';
+import { Spacer } from '../../../components/helpers';
 
 const mapStateToProps = createSelector(
   challengeMetaSelector,
@@ -74,35 +74,31 @@ function ToolPanel({
         isMobile ? 'tool-panel-group-mobile' : ''
       }`}
     >
-      <Button
-        aria-label='Run the tests use shortcut Ctrl+enter'
-        block={true}
-        bsStyle='primary'
-        onClick={handleRunTests}
-      >
+      <Button block={true} variant='primary' onClick={handleRunTests}>
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
       </Button>
       {isSignedIn && challengeType === challengeTypes.multifileCertProject && (
-        <Button
-          block={true}
-          bsStyle='primary'
-          data-cy='save-code-to-database-btn'
-          className='btn-invert'
-          onClick={saveChallenge}
-        >
-          {isMobile ? t('buttons.save') : t('buttons.save-code')}
-        </Button>
+        <>
+          <Spacer size='xxSmall' />
+          <Button
+            block={true}
+            variant='primary'
+            data-cy='save-code-to-database-btn'
+            onClick={saveChallenge}
+          >
+            {isMobile ? t('buttons.save') : t('buttons.save-code')}
+          </Button>
+        </>
       )}
       {challengeType !== challengeTypes.multifileCertProject && (
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          onClick={openResetModal}
-        >
-          {isMobile ? t('buttons.reset') : t('buttons.reset-lesson')}
-        </Button>
+        <>
+          <Spacer size='xxSmall' />
+          <Button block={true} variant='primary' onClick={openResetModal}>
+            {isMobile ? t('buttons.reset') : t('buttons.reset-lesson')}
+          </Button>
+        </>
       )}
+      <Spacer size='xxSmall' />
       <Dropdown dropup>
         <Dropdown.Toggle
           id={'get-help-dropdown'}

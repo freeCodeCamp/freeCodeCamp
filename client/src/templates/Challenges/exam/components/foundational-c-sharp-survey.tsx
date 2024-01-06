@@ -1,10 +1,12 @@
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Button } from '@freecodecamp/ui';
+
 import { SurveyResults, SurveyResponse } from '../../../../redux/prop-types';
 import { Spacer } from '../../../../components/helpers';
 import { setIsProcessing, submitSurvey } from '../../../../redux/actions';
@@ -168,18 +170,19 @@ function FoundationalCSharpSurvey({
       <Modal.Footer className='reset-modal-footer'>
         <Button
           block={true}
-          bsSize='medium'
-          bsStyle='primary'
+          size='medium'
+          variant='primary'
           data-cy='submit-csharp-survey-btn'
           disabled={cantSubmitSurvey || isProcessing}
           onClick={createSurveyResults}
         >
           {t('survey.misc.submit')}
         </Button>
+        <Spacer size='xxSmall' />
         <Button
           block={true}
-          bsSize='medium'
-          bsStyle='primary'
+          size='medium'
+          variant='primary'
           disabled={isProcessing}
           onClick={closeSurveyModal}
         >
