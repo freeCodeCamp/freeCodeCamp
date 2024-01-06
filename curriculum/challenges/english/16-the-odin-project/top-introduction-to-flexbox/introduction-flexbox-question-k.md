@@ -24,7 +24,7 @@ Before moving on to the next lesson, see if you can figure out how `align-items`
 
 ## --text--
 
-When changing the `flex-direction` property to `column` in a flex container, how does` align-items` behave in relation to the flex items?
+When changing the `flex-direction` property to `column` in a flex container, how does `align-items` behave in relation to the flex items?
 
 ## --answers--
 

@@ -6,7 +6,7 @@ dashedName: introduction-flexbox-question-j
 ---
 # --description--
 
-Let’s look at an example.
+Let's look at an example.
 
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="400" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/MWoyBzR?height=400&amp;default-tab=html%2Cresult&amp;slug-hash=MWoyBzR&amp;editable=true&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_MWoyBzR"></iframe>
 
@@ -18,7 +18,7 @@ Remove `flex: 1` from `.item` and add `justify-content: space-between` to `.cont
 
 <img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/495704c6eb6bf33bc927534f231533a82b27b2ac/html_css/v2/foundations/flexbox/imgs/07.png" alt="an image displaying three blue squares which are spread out over the entire width of it's container">
 
-`justify-content` aligns items across the **main axis**. There are a few values that you can use here. You’ll learn the rest of them in the reading assignments, but for now try changing it to center, which should center the boxes along the main axis.
+`justify-content` aligns items across the **main axis**. There are a few values that you can use here. You'll learn the rest of them in the reading assignments, but for now try changing it to center, which should center the boxes along the main axis.
 
 # --question--
 
