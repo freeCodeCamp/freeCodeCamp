@@ -270,9 +270,8 @@ test.describe('Settings', () => {
     await expect(addPortfolioButton).toBeVisible();
     await addPortfolioButton.click();
     await expect(addPortfolioButton).toBeDisabled(); // Add button should be disabled after clicking
-    await expect(
-      page.getByTestId(settingsTestIds.portfolioItems)
-    ).toBeVisible();
+    const portfolioItems = page.getByTestId(settingsTestIds.portfolioItems);
+    await expect(portfolioItems).toBeVisible();
     const saveButton = page.getByRole('button', {
       name: translations.buttons['save-portfolio']
     });
@@ -298,7 +297,7 @@ test.describe('Settings', () => {
     ).toContainText(translations.flash['portfolio-item-updated']);
     await removeButton.click();
     await expect(addPortfolioButton).toBeEnabled();
-    await expect(page.getByTestId(settingsTestIds.portfolioItems)).toBeHidden();
+    await expect(portfolioItems).toBeHidden();
     await expect(saveButton).toBeHidden();
     await expect(removeButton).toBeHidden();
   });

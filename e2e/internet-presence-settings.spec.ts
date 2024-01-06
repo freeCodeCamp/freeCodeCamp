@@ -68,25 +68,28 @@ test.describe('Your Internet Presence', () => {
     test(`should update ${social.name} URL`, async ({ browserName, page }) => {
       test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
 
-      await page.getByLabel(social.label).fill(social.url);
-      await expect(page.getByTestId(social.checkTestId)).toBeVisible();
+      const socialInput = page.getByLabel(social.label);
+      await socialInput.fill(social.url);
+      const socialCheckmark = page.getByTestId(social.checkTestId);
+      await expect(socialCheckmark).toBeVisible();
 
-      await page.getByTestId(settingsPageElement.saveButton).click();
+      const saveButton = page.getByTestId(settingsPageElement.saveButton);
+      await saveButton.click();
       await expect(
         page.getByTestId(settingsPageElement.flashMessageAlert)
       ).toContainText('We have updated your social links');
 
       // clear value before next test
-      await page.getByLabel(social.label).clear();
+      await socialInput.clear();
       await Promise.all([
         page.waitForResponse(
           response =>
             response.url().includes('update-my-socials') &&
             response.status() === 200
         ),
-        page.getByTestId(settingsPageElement.saveButton).click()
+        saveButton.click()
       ]);
-      await expect(page.getByTestId(social.checkTestId)).toBeHidden();
+      await expect(socialCheckmark).toBeHidden();
     });
   });
 });
