@@ -1,5 +1,4 @@
 // Package Utilities
-import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -9,7 +8,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Alert } from '@freecodecamp/ui';
+import { Container, Col, Row, Alert, Button } from '@freecodecamp/ui';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
@@ -311,7 +310,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                 <Button
                   aria-describedby='codeally-cookie-warning'
                   block={true}
-                  bsStyle='primary'
+                  variant='primary'
                   data-cy='start-codeally'
                   onClick={tryToShowCodeAlly}
                 >
@@ -343,6 +342,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       />
                     </>
                   )}
+                <Spacer size='xxSmall' />
                 <ProjectToolPanel />
                 <br />
                 <Spacer size='medium' />
