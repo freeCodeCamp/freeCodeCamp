@@ -99,25 +99,21 @@ test.describe('Email Settings', () => {
     browserName
   }) => {
     test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
-    await page
-      .getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
-      .click();
-    await expect(
-      page.getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
-    ).toHaveAttribute('aria-pressed', 'true');
-    await expect(
-      page.getByTestId(settingsPageElement.emailSubscriptionNoThanksButton)
-    ).toHaveAttribute('aria-pressed', 'false');
 
-    await page
-      .getByTestId(settingsPageElement.emailSubscriptionNoThanksButton)
-      .click();
-    await expect(
-      page.getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
-    ).toHaveAttribute('aria-pressed', 'false');
-    await expect(
-      page.getByTestId(settingsPageElement.emailSubscriptionNoThanksButton)
-    ).toHaveAttribute('aria-pressed', 'true');
+    const yesPleaseButton = page.getByTestId(
+      settingsPageElement.emailSubscriptionYesPleaseButton
+    );
+    const noThanksButton = page.getByTestId(
+      settingsPageElement.emailSubscriptionNoThanksButton
+    );
+
+    await yesPleaseButton.click();
+    await expect(yesPleaseButton).toHaveAttribute('aria-pressed', 'true');
+    await expect(noThanksButton).toHaveAttribute('aria-pressed', 'false');
+
+    await noThanksButton.click();
+    await expect(yesPleaseButton).toHaveAttribute('aria-pressed', 'false');
+    await expect(noThanksButton).toHaveAttribute('aria-pressed', 'true');
   });
 
   test('should display flash message when email subscription is toggled', async ({
