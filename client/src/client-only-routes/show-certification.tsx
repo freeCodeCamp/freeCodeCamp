@@ -25,7 +25,7 @@ import {
   usernameSelector
 } from '../redux/selectors';
 import { UserFetchState, User } from '../redux/prop-types';
-import { liveCerts } from '../../config/cert-and-project-map';
+import { legacyCertTitles, liveCerts } from '../../config/cert-and-project-map';
 import {
   certificateMissingErrorMessage,
   reallyWeirdErrorMessage,
@@ -325,6 +325,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
   const isMicrosoftCert =
     certTitle === certTypeTitleMap[certTypes.foundationalCSharpV8];
+  const oldJsTitleIndex = 1;
 
   return (
     <Container className='certificate-outer-wrapper'>
@@ -489,7 +490,15 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         <Spacer size='large' />
         {signedInUserName === username ? shareCertBtns : ''}
         <Spacer size='large' />
-        <ShowProjectLinks certName={certTitle} name={displayName} user={user} />
+        <ShowProjectLinks
+          certName={
+            certTitle === 'JavaScript Algorithms and Data Structures'
+              ? legacyCertTitles[oldJsTitleIndex]
+              : certTitle
+          }
+          name={displayName}
+          user={user}
+        />
         <Spacer size='large' />
       </div>
     </Container>
