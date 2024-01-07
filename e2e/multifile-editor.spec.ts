@@ -9,9 +9,9 @@ test.beforeEach(async ({ page }) => {
 test.describe('MultifileEditor Component', () => {
   test('Multiple editors should be selected and able to insert text into', async ({
     page,
+    isMobile,
     browserName
   }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
     // Spawn second editor to test MultifileEditor component
     const stylesEditor = page.getByRole('button', {
       name: 'styles.css Editor'
@@ -19,15 +19,20 @@ test.describe('MultifileEditor Component', () => {
     await stylesEditor.click();
 
     // Ensure two editors exist
-    await page.waitForTimeout(500);
+    const secondEditor = page.getByLabel('Editor content').locator('nth=1');
+    await secondEditor.waitFor({ state: 'visible' });
+
     const editors = await page.getByLabel('Editor content').all();
-    expect(editors.length).toBe(2);
 
     // Test text insertion works in both editors
     const test_string = 'TestString';
     let index = 0;
     for (const editor of editors) {
-      await editor.click();
+      if (isMobile && browserName === 'webkit') {
+        await editor.focus();
+      } else {
+        await editor.click();
+      }
       await page.keyboard.insertText(test_string + index.toString());
       const text = page.getByText(test_string + index.toString());
       await expect(text).toBeVisible();
