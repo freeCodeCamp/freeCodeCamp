@@ -1,0 +1,20 @@
+.map-ui {
+  height: 100%;
+}
+
+.map-ui ul {
+  list-style: none;
+  color: var(--secondary-color);
+  padding: 0;
+}
+
+@media (max-width: 640px) {
+  .map-ui .block ul {
+    padding-inline-start: 6px;
+    font-size: 0.9rem;
+  }
+
+  .map-ui > ul {
+    padding-inline-start: 0;
+  }
+}

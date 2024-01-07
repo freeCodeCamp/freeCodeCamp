@@ -1,0 +1,24 @@
+.reset-modal p {
+  color: var(--danger-color);
+}
+
+.reset-modal-header {
+  color: var(--danger-color);
+  background-color: var(--danger-background);
+}
+
+.reset-modal-header h4 {
+  color: var(--danger-color);
+}
+
+.reset-modal-header .close {
+  color: var(--danger-color);
+  font-size: 28px;
+  text-shadow: none;
+}
+
+@media screen and (max-width: 767px) {
+  .reset-modal .btn-lg {
+    font-size: 16px;
+  }
+}

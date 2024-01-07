@@ -1,0 +1,42 @@
+.streak-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 18px;
+  color: var(--primary-color);
+}
+
+.heatmap-nav {
+  text-align: center;
+}
+
+.heatmap-nav-btn {
+  margin: 0 20px;
+}
+
+.react-calendar-heatmap-month-label {
+  fill: var(--gray-45) !important;
+}
+
+.react-calendar-heatmap .color-empty {
+  fill: var(--tertiary-background);
+}
+.react-calendar-heatmap .color-scale-1 {
+  fill: var(--gray-45);
+}
+.react-calendar-heatmap .color-scale-2 {
+  fill: var(--quaternary-color);
+}
+.react-calendar-heatmap .color-scale-a-lot {
+  fill: var(--primary-color);
+}
+
+.react-tooltip {
+  color: var(--primary-color) !important;
+  background-color: var(--primary-background) !important;
+  border: 1px solid var(--primary-color) !important;
+}
+
+.__react_component_tooltip:after {
+  border-top-color: var(--primary-color) !important;
+}

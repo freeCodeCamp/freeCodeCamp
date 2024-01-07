@@ -1,0 +1,5 @@
+```css
+div {
+  background: red
+}
+```

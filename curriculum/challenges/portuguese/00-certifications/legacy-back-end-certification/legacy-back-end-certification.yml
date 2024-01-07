@@ -1,0 +1,37 @@
+---
+id: 660add10cb82ac38a17513be
+title: Certificação de back-end legada
+certification: legacy-back-end
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c443edefaeb5bdef
+    title: Microsserviço de timestamp
+  - 
+    id: bd7158d8c443edefaeb5bdff
+    title: Microsserviço conversor de requisição de cabeçalho
+  - 
+    id: bd7158d8c443edefaeb5bd0e
+    title: Microsserviço redutor de URL
+  - 
+    id: bd7158d8c443edefaeb5bdee
+    title: Camada de abstração de pesquisa de imagens
+  - 
+    id: bd7158d8c443edefaeb5bd0f
+    title: Microsserviço de metadados de arquivos
+  - 
+    id: bd7158d8c443eddfaeb5bdef
+    title: Criar um aplicativo de votação
+  - 
+    id: bd7158d8c443eddfaeb5bdff
+    title: Criar um aplicativo de coordenação da vida noturna
+  - 
+    id: bd7158d8c443eddfaeb5bd0e
+    title: Fazer um gráfico do mercado de ações
+  - 
+    id: bd7158d8c443eddfaeb5bd0f
+    title: Gerenciar um clube de negociações de livros
+  - 
+    id: bd7158d8c443eddfaeb5bdee
+    title: Criar um clone do Pinterest

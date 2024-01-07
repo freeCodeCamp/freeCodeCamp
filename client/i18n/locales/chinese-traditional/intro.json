@@ -1,0 +1,1456 @@
+{
+  "responsive-web-design": {
+    "title": "Legacy Responsive Web Design Challenges",
+    "intro": [
+      "在響應式網頁設計認證中，你將學習開發者用來編寫網頁的語言：HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
+      "首先，你將通過創建一個展示貓咪圖片的應用，學習 HTML 和 CSS 的基本知識。 然後，通過創建企鵝學習像 CSS 變量這樣的現代技術，以及通過創建網頁表單學習無障礙的最佳實踐。",
+      "最後，你將學習使用 flexbox（彈性盒子）創建一個 Twitter 卡片，以及使用 CSS 網格創建複雜的博客佈局，以學習製作適應不同屏幕大小的網頁。"
+    ],
+    "note": "注意：某些瀏覽器擴展，例如廣告攔截器和深色模式擴展可能干擾測試。如果你遇到問題，我們建議你在參加學習時禁用修改頁面內容或佈局的擴展。",
+    "blocks": {
+      "basic-html-and-html5": {
+        "title": "基礎 HTML 和 HTML5",
+        "intro": [
+          "HTML 是一種標記語言，使用特殊的語法或標記來向瀏覽器描述網頁的結構。HTML 元素由開始和結束標籤構成，標籤之間是文本內容。 不同的標籤可以讓文本內容以標題、段落、列表等形式展現。",
+          "在這個課程中，你將通過編寫一個展示貓咪圖片的應用，學習最常見的 HTML 元素——它們可以用來構成任何網頁。"
+        ]
+      },
+      "basic-css": {
+        "title": "基礎 CSS",
+        "intro": [
+          "CSS（級聯樣式表）告訴瀏覽器如何顯示你在 HTML 中寫入的文本和其他內容。你可以使用 CSS 控制 HTML 元素的顏色、字體、大小、間距等許多\b屬性。",
+          "現在你已經寫好了貓圖應用的基本結構，接下來我們用 CSS 給它加一些樣式。"
+        ]
+      },
+      "applied-visual-design": {
+        "title": "應用視覺設計",
+        "intro": [
+          "視覺設計結合了排版、色彩理論、圖形、動畫、頁面佈局等，以表達獨特的信息。",
+          "在這個課程中，你將學習如何將這些不同的視覺設計元素應用到網頁上。"
+        ]
+      },
+      "applied-accessibility": {
+        "title": "應用無障礙",
+        "intro": [
+          "在網頁開發中，可訪問性是指網頁內容和用戶界面可以被用戶理解、瀏覽並與之交互。這裏的用戶包括有視覺障礙、聽覺障礙或認知障礙的用戶。",
+          "在這個課程中，你將學習提升網站可訪問性的最佳實踐。"
+        ]
+      },
+      "responsive-web-design-principles": {
+        "title": "響應式網頁設計原則",
+        "intro": [
+          "人們可能通過形狀和大小不同的設備來訪問網頁。通過響應式網頁設計，你可以設計出能靈活適應不同屏幕大小、方向和分辨率的網頁。",
+          "在這個課程中，你將學習如何使用 CSS 讓你的網頁在不同設備上看起來都不錯。"
+        ]
+      },
+      "css-flexbox": {
+        "title": "CSS 彈性盒子",
+        "intro": [
+          "Flexbox（彈性盒子）是最新版本的 CSS（即 CSS3）中引入的一種強大且兼容性好的佈局方法。使用 flexbox，我們可以很容易地處理好頁面上的元素佈局，並創建可以自動縮小和放大的動態用戶界面。",
+          "在這個課程中，你將通過創建一個 Twitter 卡片學習 flexbox 和動態佈局的基礎知識。"
+        ]
+      },
+      "css-grid": {
+        "title": "CSS 網格",
+        "intro": [
+          "CSS 網格是一個較新的標準，用於構建複雜的響應佈局。它通過把 HTML 元素轉換爲具有行和列的網格容器，以便將子元素放置在所需要的位置。",
+          "在這個課程中，你將通過創建不同的複雜佈局（包括博客）學習 CSS 網格的基礎知識。"
+        ]
+      }
+    }
+  },
+  "2022/responsive-web-design": {
+    "title": "響應式網頁設計",
+    "intro": [
+      "在響應式網頁設計的認證課程中，你將學習用於構建網頁的語言： HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
+      "首先，你將通過創建一個展示貓咪圖片的應用學習 HTML 和 CSS 的基本知識。 然後，通過創建一隻企鵝來學習像 CSS 變量這樣的現代技術，並通過創建網頁表單學習無障礙的最佳實踐。",
+      "最後，你將通過編寫 Twitter 卡片，學習如何使用 Flexbox 實現適應不同屏幕大小的網頁 ，以及如何用 CSS Grid 實現一個複雜的博客佈局。"
+    ],
+    "note": "注意：某些瀏覽器擴展程序（例如廣告攔截器和深色模式）可能干擾測試。如果遇到問題，我們建議你在學習課程時禁用那些修改網頁內容或佈局的擴展程序。",
+    "blocks": {
+      "build-a-tribute-page-project": {
+        "title": "致敬頁",
+        "intro": [
+          "這是你獲得認證的必做項目。",
+          "在這個項目中，你將爲你所選擇的主題編寫一個致敬頁（無論是虛構的還是真實的）。"
+        ]
+      },
+      "build-a-personal-portfolio-webpage-project": {
+        "title": "個人作品集展示頁",
+        "intro": [
+          "這是你獲得認證的必做項目。",
+          "在這個項目中，你將製作自己的個人作品集展示頁。"
+        ]
+      },
+      "build-a-product-landing-page-project": {
+        "title": "產品登錄頁",
+        "intro": [
+          "這是你獲得認證的必做項目。",
+          "在這個項目中，你將編寫一個產品登錄頁來推銷你選擇的產品。"
+        ]
+      },
+      "build-a-survey-form-project": {
+        "title": "調查表單",
+        "intro": [
+          "這是你獲得認證的必做項目。",
+          "在這個項目中，你將編寫一個用於收集用戶數據的調查表單。"
+        ]
+      },
+      "build-a-technical-documentation-page-project": {
+        "title": "技術文檔頁",
+        "intro": [
+          "這是你獲得認證的必做項目。",
+          "在這個項目中，你將編寫一個技術文檔頁，作爲一個主題的指導或參考。"
+        ]
+      },
+      "learn-html-by-building-a-cat-photo-app": {
+        "title": "通過創建貓咪相冊應用學習 HTML",
+        "intro": [
+          "HTML 標籤賦予了網頁結構。你可以使用 HTML 標籤添加照片、按鈕和其它元素到你的網頁。",
+          "在這門課程中，你將通過創建一個貓咪相冊應用，學習最常見的 HTML 標籤。"
+        ]
+      },
+      "learn-basic-css-by-building-a-cafe-menu": {
+        "title": "通過創建咖啡店菜單學習基礎 CSS",
+        "intro": [
+          "CSS 負責告訴瀏覽器如何展示你的網頁。你可以使用 CSS 設置 HTML 元素的顏色、字體、大小等屬性。",
+          "在這門課程中，你將通過爲一個咖啡店網站設計菜單頁來學習 CSS。"
+        ]
+      },
+      "learn-the-css-box-model-by-building-a-rothko-painting": {
+        "title": "通過創作羅斯科繪畫學習 CSS 盒子模型",
+        "intro": [
+          "每個 HTML 元素都是一個盒子，它擁有着自己的間距和邊框。這叫作“盒子模型”。",
+          "在這門課程中，你將使用 CSS 和盒子模型，創作屬於你自己的羅斯科風格的矩形藝術作品。"
+        ]
+      },
+      "learn-css-variables-by-building-a-city-skyline": {
+        "title": "通過創建城市輪廓學習 CSS 變量",
+        "intro": [
+          "CSS 變量負責幫助組織你的樣式和重複使用它們。",
+          "在這門課程中，你將創建一座城市的輪廓。你將學習如何配置 CSS 變量，以便你可以隨時重複使用它們。"
+        ]
+      },
+      "learn-html-forms-by-building-a-registration-form": {
+        "title": "通過創建註冊表單學習 HTML 表單",
+        "intro": [
+          "你可以使用 HTML 表單收集訪問網頁的用戶的信息。",
+          "在這門課程中，你將通過創建一個註冊頁學習 HTML 表單。你將學習如何控制人們在表單中可以輸入的數據類型，以及使用一些新的 CSS 工具裝飾你的頁面。"
+        ]
+      },
+      "learn-accessibility-by-building-a-quiz": {
+        "title": "通過創建小測驗學習無障礙",
+        "intro": [
+          "無障礙環境正在使你的網頁便於所有人使用——甚至是殘疾人。",
+          "在這個課程中，你將建立一個測驗網頁。你將學習諸如鍵盤快捷鍵、ARIA 屬性和設計最佳實踐等無障礙工具。"
+        ]
+      },
+      "learn-intermediate-css-by-building-a-picasso-painting": {
+        "title": "通過創作畢加索繪畫學習中級 CSS",
+        "intro": [
+          "在本課程中，你將通過代碼創建一幅自己的畢加索繪畫網頁來掌握中級 CSS 技術。課程涉及 SVG 圖標、CSS 定位和對已學 CSS 知識的回顧。"
+        ]
+      },
+      "learn-responsive-web-design-by-building-a-piano": {
+        "title": "通過創建鋼琴學習響應式網頁設計",
+        "intro": [
+          "響應式設計使得你的網頁適應不同屏幕尺寸的顯示。",
+          "在本課程中，你將圍繞一架鋼琴編寫代碼學習 CSS 響應式設計。你將同時學會媒體條件和僞選擇器的知識。"
+        ]
+      },
+      "learn-css-flexbox-by-building-a-photo-gallery": {
+        "title": "通過創建照片集學習 CSS 彈性盒子",
+        "intro": [
+          "通過彈性盒子你可以設計適應不同屏幕大小的網頁。",
+          "在本課程中，你將使用彈性盒子創建一個響應式的照片集網頁。"
+        ]
+      },
+      "learn-css-grid-by-building-a-magazine": {
+        "title": "通過創建雜誌學習 CSS 網格佈局",
+        "intro": [
+          "在網頁設計時，CSS 網格佈局使你能夠控制網頁的行、列。",
+          "在這門課程中，你將編寫一篇雜誌文章。你將學習如何使用 CSS Grid，其中包括了像網格行和網格列這樣的概念。"
+        ]
+      },
+      "learn-typography-by-building-a-nutrition-label": {
+        "title": "通過創建營養標籤學習排版",
+        "intro": [
+          "排版是將文本樣式設置爲易於閱讀並適合其目的的藝術。",
+          "在本課程中，你將使用排版來創建營養標籤網頁。你將學習如何使用 CSS 設置文本樣式、調整行高和定位文本。"
+        ]
+      },
+      "learn-css-transforms-by-building-a-penguin": {
+        "title": "通過創建企鵝學習 CSS 變換",
+        "intro": [
+          "你可以轉換 HTML 元素以創建吸引讀者眼球的吸引人的設計。你可以使用變換來旋轉元素、縮放它們等等。",
+          "在本課程中，你將創建一隻企鵝。你將使用 CSS 變換來定位企鵝的各個部分並調整其大小、創建背景併爲你的作品設置動畫。"
+        ]
+      },
+      "learn-css-animation-by-building-a-ferris-wheel": {
+        "title": "通過創建摩天輪學習 CSS 動畫",
+        "intro": [
+          "你可以使用 CSS 動畫將注意力吸引到網頁的特定部分並使其更具吸引力。",
+          "在本課程中，你將創建一個摩天輪。你將學習如何使用 CSS 爲元素設置動畫、轉換它們並調整它們的速度。"
+        ]
+      },
+      "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
+        "title": "通過創建資產負債表學習有關 CSS 僞選擇器的更多信息",
+        "intro": [
+          "你可以使用 CSS 僞選擇器來更改特定的 HTML 元素。",
+          "在本課程中，你將使用僞選擇器創建資產負債表。你將學習如何在將鼠標懸停在元素上時更改其樣式，並觸發網頁上的其他事件。"
+        ]
+      },
+      "learn-css-colors-by-building-a-set-of-colored-markers": {
+        "title": "通過創建一組彩色筆學習 CSS 顏色",
+        "intro": [
+          "爲你的網頁選擇正確的顏色可以大大提高對讀者的審美吸引力。",
+          "在本課程中，你將創建一組彩色筆。你將學習設置顏色值的不同方法以及如何將顏色相互配對。"
+        ]
+      },
+      "learn-intermediate-css-by-building-a-cat-painting": {
+        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "intro": [
+          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts",
+          "In this course, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+        ]
+      }
+    }
+  },
+  "javascript-algorithms-and-data-structures": {
+    "title": "JavaScript 算法和數據結構",
+    "intro": [
+      "HTML 和 CSS 控制頁面的內容和樣式，JavaScript 則用於頁面交互。在 JavaScript 算法和數據結構認證中，你將學習 JavaScript 的基礎知識，包括變量、 數組、 對象、 循環和函數。",
+      "打好基礎之後，你將會通過創建算法來操作字符串、進行階乘運算甚至計算國際空間站的軌道來應用這些知識。",
+      "在這個過程中，你將會學習兩種重要的編程方式或模式：面向對象的編程（OOP）和函數式編程（FP）。"
+    ],
+    "note": "注意：某些瀏覽器擴展，例如廣告攔截器和腳本攔截器，可能干擾測試。如果你遇到問題，我們建議你在學習時禁用修改或阻止頁面內容的擴展。",
+    "blocks": {
+      "basic-javascript": {
+        "title": "基礎 JavaScript",
+        "intro": [
+          "JavaScript 是一種用於網頁交互的腳本語言。它和 HTML 和 CSS 一樣，是網站的核心技術之一。所有現代瀏覽器都支持 JavaScript。",
+          "在這個課程中，你將學習JavaScript 中的基本編程概念。你將從數字和字符串等基本數據結構開始，然後學習使用數組、對象、函數、循環、if/else 語句等等。"
+        ]
+      },
+      "es6": {
+        "title": "ES6",
+        "intro": [
+          "ECMAScript（ES）是 JavaScript 的標準。因爲所有主流瀏覽器都遵循此規範，所以 ECMAScript 和 JavaScript 是可以互換的。",
+          "截至目前你所學到的 JavaScript 大多是在 2009 年定稿的 ES5（ECMAScript5）。你仍然可以使用 ES5 編寫程序。JavaScript 在不斷迭代，每年都會發布新功能。",
+          "2015 年發佈的 ES6 爲該語言添加了許多強大的新功能。在本課程中，你將學習這些新特性，包括箭頭函數、解構、類、promise 和模塊。"
+        ]
+      },
+      "regular-expressions": {
+        "title": "正則表達式",
+        "intro": [
+          "正則表達式，常常縮寫爲 “regex” 或 “regexp”，是幫助程序員匹配、搜索和替換文本的模式。正則表達式非常強大，但可能難以閱讀，因爲它們使用特殊字符來做更復雜更靈活的匹配。",
+          "在這個課程中，你將學習如何使用特殊字符、捕獲組、正向或負向先行斷言以及其他技巧來匹配你想要的文本。"
+        ]
+      },
+      "debugging": {
+        "title": "調試",
+        "intro": [
+          "調試是檢查代碼、發現並修復問題的過程。",
+          "代碼中的問題通常有三種形式：1）語法錯誤導致程序停止運行， 2）代碼無法執行或具有意外行爲導致運行時錯誤，3）代碼有語義（邏輯）錯誤，沒有實現原來的意圖。",
+          "在這個課程中，你將學習如何使用 JavaScript 控制檯來調試程序，防止出現常見問題。"
+        ]
+      },
+      "basic-data-structures": {
+        "title": "基礎數據結構",
+        "intro": [
+          "我們可以通過多種方式存儲和訪問數據。你已經知道數組和對象了，它們都是常見的 JavaScript 數據結構。",
+          "在基礎數據結構課程中，你會更深入地瞭解數組和對象之間的差異，以及在不同情況下應該使用哪個。你還將學習到一些好用的 JS 方法，例如 <code>splice()</code>，以及使用 <code>Object.keys()</code> 來訪問和操作數據。"
+        ]
+      },
+      "basic-algorithm-scripting": {
+        "title": "基礎算法",
+        "intro": [
+          "算法是描述如何處理某個問題的一系列步驟。",
+          "要寫一個有效的算法，你需要先將一個特定的問題分解爲小的部分，並仔細思考如何用代碼解決每個部分。",
+          "在這個課程中，你將通過編寫算法來實現諸如轉換溫度、處理複雜的二維數組等，來學習算法思維的基礎知識。"
+        ]
+      },
+      "object-oriented-programming": {
+        "title": "面向對象編程",
+        "intro": [
+          "OOP，即面向對象編程，是軟件開發過程的主要方法之一。在 OOP 中，我們用對象和類來組織代碼，以描述事物的特點以及它們可以做什麼。",
+          "在這個課程中，你將會學習 JavaScript 中面向對象編程的基本原則，例如 <code>this</code> 關鍵詞、原型鏈、構造器和繼承。"
+        ]
+      },
+      "functional-programming": {
+        "title": "函數式編程",
+        "intro": [
+          "函數式編程是另一種軟件開發方法。在函數式編程中，代碼被組織成較小的基本的函數，可以結合起來構建複雜的程序。",
+          "在這個課程中，你將學習函數式編程的核心概念，包括純函數、如何避免突變、如何使用 <code>.map()</code> 和 <code>.filter()</code> 等方法編寫更整潔的代碼。"
+        ]
+      },
+      "intermediate-algorithm-scripting": {
+        "title": "中級算法",
+        "intro": [
+          "現在你瞭解了算法的基礎知識、面向對象編程以及函數式編程。接下來我們將進入中級算法挑戰來測試你的技能。"
+        ]
+      },
+      "javascript-algorithms-and-data-structures-projects": {
+        "title": "JavaScript 算法和數據結構項目",
+        "intro": [
+          "是時候用上你新學到的 JavaScript 技能了！接下來的項目和前面的算法挑戰很相近，但是難度會更高。",
+          "完成這 5 個 JavaScript 項目，以獲得 JavaScript 算法和數據結構認證。"
+        ]
+      }
+    }
+  },
+  "javascript-algorithms-and-data-structures-v8": {
+    "title": "JavaScript Algorithms and Data Structures (Beta)",
+    "intro": [
+      "Developers use HTML and CSS to control the content and styling of a page. And they use JavaScript to make that page interactive.",
+      "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",
+      "You'll also learn about Object Oriented Programming (OOP), Functional Programming, algorithmic thinking, how to work with local storage, and how to fetch data using an API."
+    ],
+    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
+    "blocks": {
+      "build-a-pokemon-search-app-project": {
+        "title": "Build a Pokémon Search App Project",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a Pokémon search app."
+        ]
+      },
+      "build-a-cash-register-project": {
+        "title": "Build a Cash Register Project",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you'll build a cash register web app."
+        ]
+      },
+      "build-a-palindrome-checker-project": {
+        "title": "Build a Palindrome Checker Project",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you'll build an application that checks whether a given word is a palindrome."
+        ]
+      },
+      "build-a-roman-numeral-converter-project": {
+        "title": "Build a Roman Numeral Converter Project",
+        "intro": [
+          "This is one of the required projects to claim your certification.",
+          "For this project, you'll build an application that converts integers to Roman numerals."
+        ]
+      },
+      "build-a-telephone-number-validator-project": {
+        "title": "Build a Telephone Number Validator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification.",
+          "For this project, you'll build an application that checks if a number is a valid United States phone number."
+        ]
+      },
+      "learn-basic-javascript-by-building-a-role-playing-game": {
+        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+        "intro": [
+          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
+          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Role Playing Game. You'll learn how to work with arrays, strings, objects, functions, loops, <code>if/else</code> statements, and more."
+        ]
+      },
+      "learn-form-validation-by-building-a-calorie-counter": {
+        "title": "Learn Form Validation by Building a Calorie Counter",
+        "intro": [
+          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter project, you'll learn how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
+          "In this practice project, you'll learn basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
+        ]
+      },
+      "learn-functional-programming-by-building-a-spreadsheet": {
+        "title": "Learn Functional Programming by Building a Spreadsheet",
+        "intro": [
+          "Functional Programming is a popular approach to software development. In Functional Programming, developers organize code into smaller functions, then combine those functions to build complex programs.",
+          "In this spreadsheet application project, you'll learn about parsing and evaluating mathematical expressions, implementing spreadsheet functions, handling cell references, and creating interactive web interfaces. You'll learn how to dynamically update the page based on user input.",
+          "This project will cover concepts like the <code>map()</code> method, <code>find()</code> method, <code>parseInt()</code>, the <code>includes()</code> method."
+        ]
+      },
+      "learn-modern-javascript-methods-by-building-football-team-cards": {
+        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
+        "intro": [
+          "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
+          "This project will cover concepts like switch statements, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method, and more."
+        ]
+      },
+      "learn-advanced-array-methods-by-building-a-statistics-calculator": {
+        "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
+        "intro": [
+          "As you expand your JavaScript skills, you'll want to get comfortable with array manipulation methods, such as <code>map()</code>, <code>reduce()</code>, and <code>filter()</code>.",
+          "In this statistics calculator project, you'll gain experience with handling user input, DOM manipulation, and method chaining. You'll get practice by performing statistical calculations like mean, median, mode, variance, and standard deviation."
+        ]
+      },
+      "learn-basic-oop-by-building-a-shopping-cart": {
+        "title": "Learn Basic OOP by Building a Shopping Cart",
+        "intro": [
+          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, developers use objects and classes to structure their code.",
+          "In this shopping cart project, you'll learn how to define classes and use them. You'll create class instances and implement methods for data manipulation.",
+          "This project will cover concepts like the ternary operator, the spread operator, the <code>this</code> keyword, and more."
+        ]
+      },
+      "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
+        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "intro": [
+          "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
+          "This freeCodeCamp authors page project will show you how to use the fetch method, then dynamically update the DOM to display the fetched data.",
+          "This project will also teach you how to paginate your data so you can load results in batches."
+        ]
+      },
+      "learn-regular-expressions-by-building-a-spam-filter": {
+        "title": "Learn Regular Expressions by Building a Spam Filter",
+        "intro": [
+          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
+          "In this spam filter project, you'll learn about capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
+        ]
+      },
+      "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
+        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+        "intro": [
+          "In computer science, there are fundamental sorting algorithms that all developers should learn. In this number sorter project, you'll learn how to implement and visualize different sorting algorithms like bubble sort, selection sort, and insertion sort – all with JavaScript.",
+          "This project will help you understand the fundamental concepts behind these algorithms, and how you can apply them to sort numerical data in web applications."
+        ]
+      },
+      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
+        "title": "Learn Intermediate Algorithmic Thinking by Building a Dice Game",
+        "intro": [
+          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
+          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
+          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
+        ]
+      },
+      "learn-intermediate-oop-by-building-a-platformer-game": {
+        "title": "Learn Intermediate OOP by Building a Platformer Game",
+        "intro": [
+          "Coding a game is a great way to grasp fundamental programming principles, while also creating an interactive gaming experience.",
+          "In this platformer game project, you'll continue to learn about classes, objects, inheritance, and encapsulation. You'll also learn how to design and organize game elements efficiently and gain insights into problem-solving and code reusability."
+        ]
+      },
+      "learn-localstorage-by-building-a-todo-app": {
+        "title": "Learn localStorage by Building a Todo App",
+        "intro": [
+          "Local storage is a web browser feature that lets web applications store key-value pairs persistently within a user's browser. This allows web apps to save data during one session, then retrieve it in a later page session.",
+          "In this TODO application, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implement event listeners, and toggle UI elements."
+        ]
+      },
+      "learn-the-date-object-by-building-a-date-formatter": {
+        "title": "Learn the Date Object by Building a Date Formatter",
+        "intro": [
+          "Working with dates in JavaScript can be challenging. You have to navigate various methods, formats, and time zones. In this project, you'll learn how to work with the JavaScript Date object, including its methods and properties. You'll also learn how to correctly format dates.",
+          "This project will cover concepts such as the <code>getDate()</code>, <code>getMonth()</code>, and <code>getFullYear()</code> methods."
+        ]
+      },
+      "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard": {
+        "title": "Learn Asynchronous Programming by Building an fCC Forum Leaderboard",
+        "intro": [
+          "JavaScript is an asynchronous programming language. And this project will help you gain proficiency in asynchronous concepts. You'll code your own freeCodeCamp forum leaderboard.",
+          "This project will cover the Fetch API, promises, Async/Await, and the try..catch statement."
+        ]
+      },
+      "learn-basic-string-and-array-methods-by-building-a-music-player": {
+        "title": "Learn Basic String and Array Methods by Building a Music Player",
+        "intro": [
+          "Now let's learn some essential string and array methods like the <code>find()</code>, <code>forEach()</code>, <code>map()</code>, and <code>join()</code>. These methods are crucial for developing dynamic web applications.",
+          "In this project, you'll code a basic MP3 player using HTML, CSS, and JavaScript. The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, previous, and shuffle functionalities. You'll even learn how to dynamically update your user interface based on the current song."
+        ]
+      },
+      "learn-recursion-by-building-a-decimal-to-binary-converter": {
+        "title": "Learn Recursion by Building a Decimal to Binary Converter",
+        "intro": [
+          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
+          "In this project, you’ll build a decimal-to-binary converter using JavaScript. You’ll learn the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
+        ]
+      }
+    }
+  },
+  "front-end-development-libraries": {
+    "title": "前端開發庫",
+    "intro": [
+      "你已經熟悉了 HTML、CSS 和 JavaScript。現在學習行業中一些流行的前端庫來提升你的技能吧。",
+      "在前端開發庫認證中，你將學習如何使用 Bootstrap 快速設置網站樣式，以及如何在 CSS 樣式中添加邏輯，並使用 Sass 對其進行擴展。",
+      "稍後，你將建立一個購物車和其他應用程序，學習如何使用 React 和 Redux 創建強大的單頁應用程序（SPAs）。"
+    ],
+    "note": "",
+    "blocks": {
+      "bootstrap": {
+        "title": "Bootstrap",
+        "intro": [
+          "Bootstrap 一個是用於設計響應性網頁和應用程序的前端框架。它對網頁開發採用移動優先的方法，具有預定義的 CSS 樣式和 class，以及一些 JavaScript 功能。",
+          "在這個課程中，你將學習如何使用 Bootstrap 來構建響應式網頁，並使用它的 class 來設置按鈕、圖像、表格、導航和其他常見元素的樣式。"
+        ]
+      },
+      "jquery": {
+        "title": "jQuery",
+        "intro": [
+          "jQuery 是開發者們最常用的 JavaScript 庫之一。",
+          "在 jQuery 於 2006 年發佈時，各種常用瀏覽器處理 JavaScript 的方式都略有不同。jQuery 簡化了編寫客戶端 JavaScript 的過程，並確保代碼在所有瀏覽器中以同樣的方式運行。",
+          "在這個課程中，你將學習如何使用 jQuery 選擇、移除、克隆和修改頁面上的不同元素。"
+        ]
+      },
+      "sass": {
+        "title": "Sass",
+        "intro": [
+          "Sass，英文全稱爲 “Syntactically Awesome StyleSheets”，是對 CSS 的擴展。它添加了一些基礎 CSS 中不具有的新特性。Sass 簡化了 CSS，這讓維護項目中的樣式表變得更容易。",
+          "在這個 Sass 課程中，你將學習如何將數據存儲在變量中、嵌套 CSS、創建可重用的樣式、爲樣式添加邏輯和循環等等。"
+        ]
+      },
+      "react": {
+        "title": "React",
+        "intro": [
+          "React 是一個流行的 JavaScript 庫，用於爲網頁或應用程序構建可重用的組件驅動的用戶界面。",
+          "React 將 HTML 與 JavaScript 結合在了一起，以此創建出一個新的標記語言 JSX。React 還使得管理整個應用程序的數據流變得更容易。",
+          "在這個課程中，你將學習如何創建不同的 React 組件，以 state props 管理數據，以及使用不同的生命週期方法（例如 <code>componentDidMount</code>）和更多內容。"
+        ]
+      },
+      "redux": {
+        "title": "Redux",
+        "intro": [
+          "隨着應用程序規模和範圍的擴大，管理共享數據變得更加困難。Redux 被定義爲 “JavaScript 應用的可預測狀態容器”，它有助於確保你的應用能夠可預測地運行，並且更容易測試。",
+          "雖然你可以將 Redux 和各種庫一起使用，但我們在這裏介紹 Redux，然後在下一組課程中將它與 React 結合起來。",
+          "在這個課程中，你將學習 Redux stores、actions、reducers 和中間件的基礎知識，來管理應用程序的數據。"
+        ]
+      },
+      "react-and-redux": {
+        "title": "React 和 Redux",
+        "intro": [
+          "React 和 Redux 經常一起被提及，這是有充分理由的。創建 Redux 的開發人員是一個 React 開發者，他希望簡化不同組件間的數據共享。",
+          "你已經知道了如何使用 Redux 管理共享數據流，是時候將這些知識與 React 結合起來了。在 React 和 Redux 課程中，你將構建一個 React 組件，並學習如何使用 Redux 在組件級別本地管理狀態，以及在整個應用程序中管理狀態。"
+        ]
+      },
+      "front-end-development-libraries-projects": {
+        "title": "前端開發庫項目",
+        "intro": [
+          "現在是時候應用你的前端開發庫技能進行測試。用 Bootstrap、jQuery、Sass、React、和 Redux 構建 5 個項目，測試你到現在所學到的知識。",
+          "完成全部 5 個項目，然後你會獲得前端開發庫認證。"
+        ]
+      }
+    }
+  },
+  "data-visualization": {
+    "title": "數據可視化",
+    "intro": [
+      "數據無處不在。但是，如果沒有上下文，數據就沒有多大意義。",
+      "在數據可視化認證中，你會用 D3.js 庫來創建表格、圖表和地圖，以展示不同的數據。",
+      "您還將瞭解 JSON（JavaScript 對象表示法），以及如何使用 API（應用程序編程接口）在線處理數據。"
+    ],
+    "note": "",
+    "blocks": {
+      "data-visualization-with-d3": {
+        "title": "用 D3 實現數據可視化",
+        "intro": [
+          "D3 或 D3.js 表示數據驅動文檔。它是一個用於在瀏覽器中創建動態和交互式數據視覺化的 JavaScript 庫。",
+          "它基於 web 標準，即 HTML、CSS 和 SVG（可縮放矢量圖形）技術。",
+          "D3 支持多種不同類型的輸入數據格式。 然後，你可以使用它強大的內置方法將這些數據轉換成不同的圖表、和地圖。",
+          "在用 D3 實現數據可視化課程中，你將學習如何使用數據來創建不同的圖表、懸停元素及其他內容，用以創建動態和有吸引力的數據可視化。"
+        ]
+      },
+      "json-apis-and-ajax": {
+        "title": "JSON APIs 和 AJAX",
+        "intro": [
+          "類似於 UI 如何幫助人們使用程序，API（應用程序接口）幫助程序與其他程序互動。API 是計算機用來相互溝通的工具，部分用於發送和接收數據。",
+          "程序員在使用 API 的時候，通常會使用 AJAX（同步 JavaScript 和 XML）。AJAX 指的是一組技術，這些技術向服務器提出異步請求以傳輸數據，然後將任何返回的數據加載到頁面。而且在瀏覽器和服務器之間傳輸的數據常常是一種 JSON（JavaScript 對象）格式。",
+          "此課程將教你如何在瀏覽器中使用 API 和不同的 AJAX 技術的基礎知識。"
+        ]
+      },
+      "data-visualization-projects": {
+        "title": "數據可視化項目",
+        "intro": [
+          "現在你學習瞭如何使用 D3 、 APIs 和 AJAX 技術，構建這 5 個數據可視化項目來測試你的技術吧。",
+          "在這些項目中，你需要獲取數據並解析數據集，然後使用 D3 創建不同的數據可視化。完成之後，你可以獲得數據可視化認證。"
+        ]
+      },
+      "d3-dashboard": {
+        "title": "D3 面板",
+        "intro": ["", ""]
+      }
+    }
+  },
+  "relational-database": {
+    "title": "關係數據庫",
+    "intro": [
+      "對於這些課程，你將使用真正的開發人員工具和軟件，包括 VS Code、PostgreSQL 和 Linux/Unix 命令行來完成交互式教程和構建項目。",
+      "這些課程從基本的 Bash 命令開始。使用終端，你將學習從導航和操作文件系統、在 Bash 中編寫腳本到高級用法的所有內容。",
+      "接下來，你將學習如何使用 PostgreSQL（數據庫管理系統）和 SQL（這些數據庫的語言）創建和使用關係數據庫。",
+      "最後，你將學習 Git，版本控制系統，每個開發人員的必備工具。"
+    ],
+    "blocks": {
+      "build-a-celestial-bodies-database-project": {
+        "title": "天體數據庫",
+        "intro": [
+          "這是你獲得認證的必做項目。",
+          "對於這個項目，你將使用 PostgreSQL 構建一個天體數據庫。"
+        ]
+      },
+      "build-a-number-guessing-game-project": {
+        "title": "猜數字遊戲",
+        "intro": [
+          "這是你獲得認證的必做項目。",
+          "對於這個項目，你將使用 Bash 腳本、PostgreSQL 和 Git 創建一個在終端中運行並保存用戶信息的猜數遊戲。"
+        ]
+      },
+      "build-a-periodic-table-database-project": {
+        "title": "元素週期表數據庫",
+        "intro": [
+          "這是你獲得認證的必做項目。",
+          "對於此項目，你將創建 Bash 腳本以從元素週期表數據庫中獲取有關化學元素的信息。"
+        ]
+      },
+      "build-a-salon-appointment-scheduler-project": {
+        "title": "沙龍預約安排程序",
+        "intro": [
+          "這是你獲得認證的必做項目。",
+          "對於這個項目，你將創建一個交互式 Bash 程序，該程序使用 PostgreSQL 來跟蹤你沙龍的客戶和約會。"
+        ]
+      },
+      "build-a-world-cup-database-project": {
+        "title": "世界盃數據庫",
+        "intro": [
+          "這是你獲得認證的必做項目。",
+          "對於這個項目，你將創建一個 Bash 腳本，將世界盃賽中的信息存儲到 PostgreSQL 中，然後通過查詢數據庫來獲取有用的統計數據。"
+        ]
+      },
+      "learn-advanced-bash-by-building-a-kitty-ipsum-translator": {
+        "title": "通過創建 Kitty Ipsum 翻譯器學習高級 Bash",
+        "intro": [
+          "Bash 命令比你想象的更多。",
+          "在第 140 課中，你會學習一些更復雜的命令以及命令如何工作的細節。"
+        ]
+      },
+      "learn-bash-and-sql-by-building-a-bike-rental-shop": {
+        "title": "通過創建自行車出租店學習 Bash 和 SQL",
+        "intro": [
+          "在這套 210 小節的課程中，你將建立一個交互式 Bash 程序，使用 PostgreSQL 存儲自行車租賃商店的租賃信息。"
+        ]
+      },
+      "learn-bash-by-building-a-boilerplate": {
+        "title": "通過創建模版學習 Bash",
+        "intro": [
+          "終端允許你將文本命令發送到你的計算機，可以操作文件系統、運行程序、自動化任務以及更多。",
+          "在這套 170 小節的課程中，你將通過只使用命令行創建網站模板來學習終端命令。"
+        ]
+      },
+      "learn-bash-scripting-by-building-five-programs": {
+        "title": "通過創建五個程序學習 Bash 腳本",
+        "intro": [
+          "Bash 腳本將終端命令和邏輯合併到程序的可以執行任務或自動化任務等中。",
+          "在第 220 課程中，你將通過創建五個小程序來學習更多終端命令以及如何在 Bash 腳本中使用它們。"
+        ]
+      },
+      "learn-git-by-building-an-sql-reference-object": {
+        "title": "通過創建 SQL 引用對象學習 Git",
+        "intro": [
+          "Git 是一個版本控制系統，用於跟蹤你對代碼片段所作的所有更改。",
+          "在第 240 課中，你將通過創建一個包含常用的 SQL 命令的對象來學習 Git 如何跟蹤你的代碼。"
+        ]
+      },
+      "learn-nano-by-building-a-castle": {
+        "title": "通過創建城堡學習 Nano",
+        "intro": [
+          "Nano 是一個允許你在終端編輯文件的程序。",
+          "在第 40 課中，你將學習如何在構建城堡時編輯終端中的文件。"
+        ]
+      },
+      "learn-relational-databases-by-building-a-mario-database": {
+        "title": "通過創建 Mario 數據庫學習關係型數據庫",
+        "intro": [
+          "一個關係數據庫將數據保存到通過關係連接起來的表格中。",
+          "在第 165 課中，你將通過創建一個充滿視頻遊戲字符的 PostgreSQL 數據庫來學習關係數據庫的基礎知識。"
+        ]
+      },
+      "learn-sql-by-building-a-student-database-part-1": {
+        "title": "通過創建學生數據庫學習 SQL：第 1 部分",
+        "intro": [
+          "SQL 又稱結構化查詢語言是與關聯數據庫通信的語言。",
+          "在第 140 課中，你將創建一個 Bash 腳本，使用 SQL 將你的計算機科學學生信息存儲到 PostgreSQL 中。"
+        ]
+      },
+      "learn-sql-by-building-a-student-database-part-2": {
+        "title": "通過創建學生數據庫學習 SQL：第 2 部分",
+        "intro": [
+          "SQL 加入命令用於將關係數據庫中多個表格中的信息合併在一起",
+          "在第 140 課課程中，你將會在更深入的 SQL 命令中完成學生數據庫。"
+        ]
+      }
+    }
+  },
+  "back-end-development-and-apis": {
+    "title": "後端開發和 APIs",
+    "intro": [
+      "在這之前，你只是在前端使用 JavaScript 來給頁面添加交互、解決算法挑戰，或構建一個 SPA（單頁應用程序）。但 JavaScript 也可以用於後端或者服務器來構建整個 web 應用程序。",
+      "今天，構建應用軟件的廣受歡迎的方法之一是微服務，這些微服務是一種小型模塊化的應用，能夠共同形成一個更大的整體。",
+      "在後端開發和 APIs 認證中，你將學習如何使用 Node.js 和 npm 編寫後端應用程序。你還將使用 Express 框架構建 Web 應用程序，並使用 MongoDB 和 Mongoose 庫構建一個 People Finder 微服務。"
+    ],
+    "note": "",
+    "blocks": {
+      "managing-packages-with-npm": {
+        "title": "使用 NPM 管理軟件包",
+        "intro": [
+          "npm（Node 包管理工具）是一個命令行工具，用於安裝、創建和分享爲 Node.js 編寫的 JavaScript 代碼包。在 npm 上有許多開放源碼軟件包，所以在項目啓動之前，需要一些時間來探索，這樣你就不會最後重新創建輪子來處理像日期或從 API 獲取數據這樣的事項。",
+          "在這個課程中，你將學習使用 npm 的基本知識，包括如何使用 <code>package.json</code> 和如何管理已安裝的依賴項。"
+        ]
+      },
+      "basic-node-and-express": {
+        "title": "基礎 Node 和 Express",
+        "intro": [
+          "Node.js 是一個 JavaScript 運行時，它允許開發人員在 JavaScript 中寫入後端（服務器側）程序。Node.js 有幾個內置的模塊——小型、獨立的程序——來幫助實現這一點，一些核心模塊包括像服務器一樣運作的 HTTP 和文件系統，一個讀取和修改文件的模塊。",
+          "在上一組課程中，你學到了怎麼從 npm下載和管理軟件包。這些軟件包是較小模塊的集合，可以幫助你構建更大更復雜的程序。",
+          "Express 是一個輕量級的 Web 應用程序框架，是 npm 上最流行的包之一。 Express 可以更輕鬆地爲你的應用程序創建服務器和處理路由，例如在人們訪問特定端點（如 <pre>/blog</pre>）時將人們引導到正確頁面。",
+          "在這個課程中，你將學習 Node 和 Express 的基礎知識，包括如何創建服務器、處理不同的文件，以及處理不同的瀏覽器請求。"
+        ]
+      },
+      "mongodb-and-mongoose": {
+        "title": "MongoDB 和 Mongoose",
+        "intro": [
+          "MongoDB 是一個存儲 JSON 文件（或記錄）的數據庫程序，你可以在自己的程序中使用這些 JSON 文件。與 SQL——另一種類型的數據庫——所不同的是，MongoDB 是一個非關係型數據庫，也被稱爲 “NoSQL”。這意味着 MongoDB 將所有相關數據都存儲在一個記錄中，而不是像 SQL 數據庫中那樣把數據存儲在許多預設表中。",
+          "Mongoose 是一個廣泛使用的 npm 包，通常和 Mongo 一起安裝。通過 Mongoose，你可以使用 JavaScript 對象而不是 JSON ，這樣就更容易與 Mongo 配合使用。此外，它允許你創建文件架構，即 schema，所以你不會意外地保存錯誤的數據類型並出現 bug。",
+          "在 MongoDB 和 Mongoose 課程中，你將學習處理數據的基本知識，包括如何建立模型，保存、刪除並在數據庫中查找文檔。"
+        ]
+      },
+      "back-end-development-and-apis-projects": {
+        "title": "後端開發和 APIs 項目",
+        "intro": [
+          "你之前用過 API，但是現在你知道 npm、Node、Express、MongoDB 和 Mongoose，是時候創建應用了。用你到現在所學的所有知識來創建 5 個不同的微服務，這些微服務是使用範圍有限的小應用。",
+          "在創建這些項目後，你會有 5 個很酷的微服務 API，你可以向朋友、家人和潛在的僱主展示。同時，你也會獲得後端開發和 APIs 認證。"
+        ]
+      }
+    }
+  },
+  "quality-assurance": {
+    "title": "質量保證",
+    "intro": [
+      "隨着你的程序或網頁應用程序變得更加複雜，你將想要測試它們，以確保新的更改不會破壞它們的原有功能。",
+      "在質量保證認證中，你將學習如何使用 Chai 編寫測試，以確保你的應用程序按預期的方式工作。",
+      "然後你將創建一個聊天應用程序來學習高級 Node 和 Express 概念。你還將使用 Pug 作爲模板引擎，用於身份驗證的 Passport 和 用於服務器和客戶端之間實時通信的 Socket.io。"
+    ],
+    "note": "",
+    "blocks": {
+      "quality-assurance-and-testing-with-chai": {
+        "title": "使用 Chai 進行質量保證和測試",
+        "intro": [
+          "Chai 是一個JavaScript測試庫，幫助你確保程序能夠在你更改代碼後按照你的期望運行。",
+          "使用 Chai，你可以寫測試描述你的程序的要求，並查看你的程序是否符合這些要求。",
+          "在這個課程中，你會了解測試 JavaScript 應用程序的斷言、測試 API 和其他測試 JavaScript 應用的基礎知識。"
+        ]
+      },
+      "advanced-node-and-express": {
+        "title": "高級 Node 和 Express",
+        "intro": [
+          "現在是時候來使用高級 Node.js 和 Express.js 創建一個具有登錄系統的聊天應用了。",
+          "爲了創建一個安全的登錄系統，你需要學習驗證，這是一個驗證個人身份或者過程的的操作。",
+          "在這個課程中，你將學習如何使用 Passport 管理身份驗證，如何使用 Pug 創建可重用的模板以快速構建前端，以及如何使用 web sockets 在客戶端和服務器之間進行實時通信。"
+        ]
+      },
+      "quality-assurance-projects": {
+        "title": "質量保證項目",
+        "intro": [
+          "現在你對前端和後端都非常精通，是時候應用你所學到的所有技能和概念了。你將構建 5 個不同的 web 應用程序，併爲每個應用程序編寫測試，以確保它們正常工作並可以處理不同的情況。",
+          "完成這 5 個質量保證項目後，你將獲得一個新的認證，你可以在自己的作品集中展示這 5 個項目和認證。"
+        ]
+      }
+    }
+  },
+  "scientific-computing-with-python": {
+    "title": "Scientific Computing with Python (Beta)",
+    "intro": [
+      "Python 是目前最火、最靈活的編程語言之一。你可以用它來做很多事，包括從基礎算法到機器學習。",
+      "在這個認證中，你會學習 Python 基礎知識，例如變量、循環、條件和函數。然後你會馬上很快學習到複雜數據結構、網絡，關係數據庫和數據可視化。"
+    ],
+    "note": "",
+    "blocks": {
+      "learn-string-manipulation-by-building-a-cipher": {
+        "title": "Learn String Manipulation by Building a Cipher",
+        "intro": [
+          "Python is a powerful and popular programming language widely used for data science, data visualization, web development, game development, machine learning and more.",
+          "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loops, and conditional statements. You'll use these to code your first programs."
+        ]
+      },
+      "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm": {
+        "title": "Learn How to Work with Numbers and Strings by Implementing the Luhn Algorithm",
+        "intro": [
+          "The Luhn Algorithm is widely used for error-checking in various applications, such as verifying credit card numbers.",
+          "By building this project, you'll gain experience working with numerical computations and string manipulation."
+        ]
+      },
+      "learn-list-comprehension-by-building-a-case-converter-program": {
+        "title": "Learn Python List Comprehension By Building a Case Converter Program",
+        "intro": [
+          "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the `.append()` list method.",
+          "In this project, you'll write a program that takes a string formatted in Camel Case or Pascal Case, then converts it into Snake Case.",
+          "The project has two phases: first you'll use a for loop to implement the program. Then you'll learn how to use List Comprehension instead of a loop to achieve the same results."
+        ]
+      },
+      "learn-regular-expressions-by-building-a-password-generator": {
+        "title": "Learn Regular Expressions by Building a Password Generator",
+        "intro": [
+          "A Python module is a file that contains a set of statements and definitions that you can use in your code.",
+          "In this project, you'll learn how to import modules from the Python standard library. You'll also learn how to use Regular Expressions by building your own password generator program."
+        ]
+      },
+      "learn-algorithm-design-by-building-a-shortest-path-algorithm": {
+        "title": "Learn Algorithm Design by Building a Shortest Path Algorithm",
+        "intro": [
+          "Algorithms are step-by-step procedures that developers use to perform calculations and solve computational problems.",
+          "In this project, you'll learn how to use functions, loops, conditional statements, and dictionary comprehensions to implement a Shortest Path algorithm."
+        ]
+      },
+      "learn-recursion-by-solving-the-tower-of-hanoi-puzzle": {
+        "title": "Learn Recursion by Solving the Tower of Hanoi Puzzle",
+        "intro": [
+          "Recursion is a programming approach that allows you to solve complicated computational problems with just a little code.",
+          "In this project, you'll start with a loop-based approach to solving the tower of Hanoi mathematical puzzle. Then you'll learn how to implement a recursive solution."
+        ]
+      },
+      "learn-data-structures-by-building-the-merge-sort-algorithm": {
+        "title": "Learn Data Structures by Building the Merge Sort Algorithm",
+        "intro": [
+          "The Merge Sort Algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this project, you'll learn how to interact with data structures by sorting a list of random numbers using the Merge Sort Algorithm."
+        ]
+      },
+      "learn-classes-and-objects-by-building-a-sudoku-solver": {
+        "title": "Learn Classes and Objects by Building a Sudoku Solver",
+        "intro": [
+          "Classes and objects are important programming concepts. These Object-Oriented Programming tools help developers to achieve code modularity, abstraction, and readability. And they promote reusability.",
+          "In this Sudoku Solver project, you'll learn how to use classes and objects to build a Sudoku grid and to solve a Sudoku puzzle."
+        ]
+      },
+      "learn-tree-traversal-by-building-a-binary-search-tree": {
+        "title": "Learn Tree Traversal by Building a Binary Search Tree",
+        "intro": [
+          "A Binary Search Tree (BST) is an common data structure where data is sorted hierarchically.",
+          "In this project, you'll learn how to construct your own BST and perform an in-order traversal. You'll also learn key operations like insertion, search, and deletion."
+        ]
+      },
+      "learn-lambda-functions-by-building-an-expense-tracker": {
+        "title": "Learn Lambda Functions by Building an Expense Tracker",
+        "intro": [
+          "Lambda functions give you a concise way to write small, throwaway functions in your code.",
+          "In this project, you'll explore the power of Lambda Functions by creating an expense tracker. Your resulting app will demonstrate how you can use Lambda Functions for efficient, streamlined operations."
+        ]
+      },
+      "scientific-computing-with-python-projects": {
+        "title": "Python 與科學計算項目",
+        "intro": [
+          "It's time to put your Python skills to the test. By completing these projects, you'll demonstrate that you have a strong foundational knowledge of Python. And you'll qualify for freeCodeCamp's Scientific Computing with Python Certification."
+        ]
+      }
+    }
+  },
+  "data-analysis-with-python": {
+    "title": "Python 和數據分析",
+    "intro": [
+      "數據分析已經存在很長時間了。但是直到幾年前，開發人員還是使用昂貴的閉源工具（如 Tableau）來做數據分析。如今，Python、SQL 和其他開放的庫永遠改變了數據分析領域。",
+      "在這個認證中，你會學習使用 Python 做數據分析的基礎知識。然後，你會學習怎麼從 CSV、SQL 等數據源讀取數據，並且怎麼使用 Numpy、Pandas、Matplotlib 和 Seaborn 等庫來處理和可視化數據。"
+    ],
+    "note": "",
+    "blocks": {
+      "data-analysis-with-python-course": {
+        "title": "Python 和數據分析",
+        "intro": [
+          "在 Santiago Basulto 創建的這些綜合視頻課程中，你會學習整個數據分析的過程。你會從 CSV、SQL、Excel 讀取數據，用 Numpy和 Pandas 來處理這些數據，以及使用 Matplotlib 和 Seaborn 來可視化數據。",
+          "此外，你還可以通過完整的 Jupyter Notebook 課程和 Python 資料來刷新自己的編程技能。"
+        ]
+      },
+      "numpy": {
+        "title": "Numpy",
+        "intro": [
+          "通過下方 Keith Galli 創建的視頻課程學習 NumPy 庫基礎知識。",
+          "在這個課程中，你將學習如何使用 NumPy 以及它與 Python 內置列表的區別。你還將學習如何使用 NumPy 編程，以及索引、調整形狀、應用統計信息等等知識。"
+        ]
+      },
+      "data-analysis-with-python-projects": {
+        "title": "Python 與數據分析",
+        "intro": [
+          "使用 Python 分析數據的方法很多。通過完成這些項目，你可以證明自己掌握了使用 Python 進行數據分析的基礎知識。",
+          "完成所有項目，即可獲得 Python 與數據分析認證。"
+        ]
+      }
+    }
+  },
+  "information-security": {
+    "title": "信息安全",
+    "intro": [
+      "通過我們在線上的一切行爲，我們的電子郵件地址、密碼、電話號碼等等大量敏感信息處於風險之中。",
+      "通過信息安全認證，你將使用 HelmetJS 構建安全的 Web 應用程序，以學習信息安全的基礎知識。",
+      "你還將使用 Python 構建一個 TCP 客戶端以及一個 Nmap 和端口掃描程序，從而學習滲透測試的基礎知識。滲透測試是良好信息安全的重要組成部分。"
+    ],
+    "note": "",
+    "blocks": {
+      "information-security-with-helmetjs": {
+        "title": "HelmetJS 與信息安全",
+        "intro": [
+          "這個課程的重點是 HelmetJS。HelmetJS 是一種用於基於 Express 的應用程序的中間件，可以自動設置 HTTP 標頭。這樣，它可以防止敏感信息被無意間在服務器和客戶端之間傳遞。",
+          "以下課程將幫助你瞭解如何保護你的網站免遭惡意攻擊。"
+        ]
+      },
+      "python-for-penetration-testing": {
+        "title": "Python 與滲透測試",
+        "intro": [
+          "這些視頻課程教你使用 Python 進行滲透測試。滲透測試（penetration testing）也叫作 “pen test”，它是對系統的模擬攻擊，以檢查漏洞。",
+          "在這個課程中，你將學習套接字、創建 TCP 服務器和客戶端、構建 Nmap 掃描儀以及滲透測試人員日常使用的其他工具和技術。"
+        ]
+      },
+      "information-security-projects": {
+        "title": "信息安全項目",
+        "intro": [
+          "現在是時候運用你的信息安全技能了。通過這些項目，你可以運用所學的信息安全技能、原理和概念。",
+          "完成後，您將擁有大量的信息安全項目，並獲得認證，你可以向朋友、家人和僱主炫耀的證書。"
+        ]
+      }
+    }
+  },
+  "machine-learning-with-python": {
+    "title": "Python 和機器學習",
+    "intro": [
+      "機器學習有許多實際應用程序，你可以在項目中或工作中使用它們。",
+      "在這個認證中，你將使用 TensorFlow 框架構建多個神經網絡，同時，你將探索更先進的技術，例如自然語言處理和強化學習。",
+      "你還將學習神經網絡，並瞭解深度、遞歸和卷積神經網絡背後的原理。"
+    ],
+    "note": "",
+    "blocks": {
+      "tensorflow": {
+        "title": "Tensorflow",
+        "intro": [
+          "TensorFlow 是一個開源框架，使機器學習和神經網絡更易於使用。",
+          "以下視頻課程是由 Tim Ruscica 創建的，也叫作 “Tech With Tim”。這個課程將幫助你瞭解 TensorFlow 及它的一些強大功能。"
+        ]
+      },
+      "how-neural-networks-work": {
+        "title": "神經網絡如何工作",
+        "intro": [
+          "神經網絡是如今我們所謂的人工智能的核心。但是從歷史上看，它們一直很難理解，特別是對於機器學習領域的初學者來說。",
+          "即使你剛開始學習神經網絡，Brandon Rohrer 的這些視頻課程也可以幫助你熟悉它的概念和它背後的數學知識。"
+        ]
+      },
+      "machine-learning-with-python-projects": {
+        "title": "Python 與機器學習項目",
+        "intro": [
+          "機器學習有許多實際應用。通過完成這些免費且具有挑戰性的編程項目，你可以證明自己掌握了機器學習基礎知識，並獲得認證。"
+        ]
+      }
+    }
+  },
+  "college-algebra-with-python": {
+    "title": "Python 和大學數學",
+    "intro": [
+      "本課程設計爲一個學期的大學課程。它包含教學視頻、用於交互式跟進的 Google Colaboratory 筆記本、任務和具有挑戰性的項目。",
+      "當你按順序學習本課程的每個部分時，你將全面瞭解代數以及如何編寫 Python 代碼來解決代數問題。",
+      "在整個課程中，你還將創建自己的代數 Colab 筆記本，你將能夠用作自定義計算器。 這門課程（以及你在這裏寫的代碼）將爲你理解深度數學和數據科學打下基礎。"
+    ],
+    "note": "",
+    "blocks": {
+      "learn-ratios-and-proportions": {
+        "title": "學習比率和比例",
+        "intro": [
+          "你的旅程從學習如何創建一個可以運行 Python 代碼的 Colab 筆記本開始，然後你使用筆記本和視頻學習通過 Python 解決比率和比例問題。"
+        ]
+      },
+      "learn-how-to-solve-for-x": {
+        "title": "學習如何求解 X",
+        "intro": [
+          "這個單元將着重運用書面代數和 Python 代碼求解一個未知數（通常被稱爲 “x”）。"
+        ]
+      },
+      "learn-fractions-and-decimals": {
+        "title": "學習分數和小數",
+        "intro": ["這個學習單元將側重於將小數轉換爲分數和百分比。"]
+      },
+      "learn-functions-and-graphing": {
+        "title": "學習函數和圖像",
+        "intro": ["這個單元將會教你數學函數。"]
+      },
+      "learn-linear-functions": {
+        "title": "學習線性函數",
+        "intro": ["這個單元將向你展示如何從兩個點來構建線性方程。"]
+      },
+      "learn-common-factors-and-square-roots": {
+        "title": "學習公因數和平方根",
+        "intro": [
+          "在這個單元中，你將學習如何找到公因數和分解公因數。這將有助於簡化分數和簡化平方根式。"
+        ]
+      },
+      "build-a-multi-function-calculator-project": {
+        "title": "多功能計算器",
+        "intro": [
+          "這是你獲得認證必做的項目之一。",
+          "在這個項目中，你將創建一個多功能計算器。"
+        ]
+      },
+      "learn-how-to-graph-systems-of-equations": {
+        "title": "學習如何繪製方程組對應的圖像",
+        "intro": [
+          "這個單位將側重於繪製同一座標平面上的兩個方程式的圖像，以便你可以看到線條相交的地方。"
+        ]
+      },
+      "learn-how-to-solve-systems-of-equations": {
+        "title": "學習如何解方程組",
+        "intro": [
+          "在這個單元中，你將學習如何求解一個由兩個方程式（兩個變量）組成的方程組，而無需圖像。 你將會看到如何用 Python 分解因式和求解某個變量。 學完這個單元，你將能用一個代碼塊來求解方程組並繪製圖像。"
+        ]
+      },
+      "learn-applications-of-linear-systems": {
+        "title": "學習線性方程組的應用",
+        "intro": [
+          "在這個單元中，你將看到如何使用你目前學到的代數來解決真實世界中的問題。"
+        ]
+      },
+      "learn-quadratic-equations": {
+        "title": "學習二次方程",
+        "intro": [
+          "這個單元將在線性方程的基礎上，結合指數和拋物線圖像。 你將學習如何在拋物線中找到關鍵點，以及如何解二次方程。"
+        ]
+      },
+      "build-a-graphing-calculator-project": {
+        "title": "圖形計算器",
+        "intro": [
+          "這是你獲得認證必做的項目之一。",
+          "在這個項目中，你將創建一個圖形計算器。"
+        ]
+      },
+      "learn-parent-graphs-and-polynomials": {
+        "title": "學習父圖像和多項式",
+        "intro": [
+          "這個單元將顯示許多不同類型的“父”圖像，即構成更復雜圖像的基本模式。多項式是帶有“多件事”的數學表達式，是由基本模式構建的更復雜的方程式。你會看到這些圖像是什麼樣的、如何修改它們，以及如何使用 Python 代碼來做這一切。"
+        ]
+      },
+      "build-three-math-games-project": {
+        "title": "三個數學遊戲",
+        "intro": [
+          "這是你獲得認證必做的項目之一。",
+          "在這個項目中，你將創建三個數學遊戲。"
+        ]
+      },
+      "learn-business-applications-of-college-algebra": {
+        "title": "學習大學代數的商業應用",
+        "intro": [
+          "這個單元將向你展示如何應用你的解答和繪圖技能來求解成本、收入和利潤。你將從兩個點寫代碼來開發一個需求函數。你將看到價格如何影響利潤圖，以及所有這些方程如何相互關聯。"
+        ]
+      },
+      "learn-simple-and-compound-interest": {
+        "title": "學習單利和複利",
+        "intro": [
+          "這個單位將向你展示如何計算利息、貸款支付和投資的估值。你將看到數學公式，並將其變成代碼。由於這些公式往往很複雜，因此你只需要修改一部分值的代碼。"
+        ]
+      },
+      "learn-exponents-and-logarithms": {
+        "title": "學習指數和對數",
+        "intro": [
+          "這個單元將向你展示指數和對數是反函數，以及你如何在各種應用程序中使用這些函數。"
+        ]
+      },
+      "build-a-financial-calculator-project": {
+        "title": "金融計算器",
+        "intro": [
+          "這是你獲得認證必做的項目之一。",
+          "對於這個項目，你將創建一個財務計算器。"
+        ]
+      },
+      "college-algebra-with-python-conclusion": {
+        "title": "Python 和大學代數：總結",
+        "intro": [
+          "這將是本課程的最後一個單元。讓我們看看如何能夠將你的數學和 Python 知識與外部數據連接起來。"
+        ]
+      },
+      "build-a-data-graph-explorer-project": {
+        "title": "數據圖表瀏覽器",
+        "intro": [
+          "這是你獲得認證必做的項目之一。",
+          "對於這個項目，你將創建一個數據圖表瀏覽器。"
+        ]
+      }
+    }
+  },
+  "python-for-everybody": {
+    "title": "Legacy Python for Everybody",
+    "intro": [
+      "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning."
+    ],
+    "note": "",
+    "blocks": {
+      "python-for-everybody": {
+        "title": "Python for Everybody",
+        "intro": [
+          "Python for everybody is a free video course series that teaches the basics of using Python 3.",
+          "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
+        ]
+      }
+    }
+  },
+  "coding-interview-prep": {
+    "title": "面試攻略",
+    "intro": [
+      "如果你正在尋找免費的編程訓練來幫你爲下一個工作面試做準備，我們已經幫你準備好了。",
+      "這一部分包含了大量編程挑戰，可以測試你的算法、數據結構和數學知識。這裏還有一些你可以在家慢慢做的項目，用於提升你的技術，或者豐富你的作品集。"
+    ],
+    "note": "The Project Euler Project and Rosetta Code have been moved to their own courses. Go back to the curriculum to see the list of courses we offer.",
+    "blocks": {
+      "algorithms": {
+        "title": "算法",
+        "intro": [
+          "這些免費的編程練習將教你一些現實生活中可能會遇到的常見算法。它們是提高你的邏輯和編程技能的絕佳機會。",
+          "這些算法經常在工作面試中被用來測試候選人的技能。我們將爲你提供簡潔明瞭的解釋，說明不同算法是如何運行的，以便你爲每道算法題目編寫解決方案。"
+        ]
+      },
+      "data-structures": {
+        "title": "數據結構",
+        "intro": [
+          "這些免費的編程課程旨在幫助你處理可能你還不太熟悉的大型的、複雜的數據結構。",
+          "通過下面的課程，你將學習不同類型的數據結構，並通過算法來增強你對它們的理解。"
+        ]
+      },
+      "take-home-projects": {
+        "title": "私人項目",
+        "intro": [
+          "人們在編程面試的時候通常都是很緊張的。有時求職者會拿到一個帶回家的項目，在面試之外完成它。這種類型的面試通常需要求職者做大量工作，但對於僱主來說，這是查看你在工作中表現如何的好方法。",
+          "通過下方的額外的編程項目，進行更多練習。慢慢來，做得好一點，然後將它們放在你的簡歷或作品集中，以向潛在的僱主展示。"
+        ]
+      }
+    }
+  },
+  "the-odin-project": {
+    "title": "The Odin Project (Beta)",
+    "intro": [
+      "The Odin Project was created in 2013 by a lone developer, Erik Trautman. Over the years, an open source community has sprung up to maintain and expand the project.",
+      "freeCodeCamp has expanded upon the open source curriculum to make it run interactively in the browser, with tests to evaluate your code and ensure you've understood key concepts.",
+      "If you want the original experience of configuring all of The Odin Project to run on your local computer, you can check out the original Odin Project on <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project website</a>. A huge thanks to The Odin Project community for continuing to maintain this valuable learning resource for developers all around the world.",
+      "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
+      "<a href='https://github.com/TheOdinProject/curriculum?tab=License-1-ov-file#readme' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>"
+    ],
+    "blocks": {
+      "top-learn-html-foundations": {
+        "title": "學習 HTML 基礎",
+        "intro": [
+          "Get a solid grasp of HTML essentials with this course. From structuring web pages to understanding semantic tags, you'll build a strong foundation for creating well-organized and accessible content on the web."
+        ]
+      },
+      "top-working-with-text": {
+        "title": "Working with Text",
+        "intro": [
+          "Explore the intricacies of working with text in web development. Learn about text formatting, manipulation, and presentation to enhance your skills in creating web content."
+        ]
+      },
+      "top-links-and-images": {
+        "title": "Links and Images",
+        "intro": [
+          "Learn how to incorporate links and images into your web projects. This course covers the fundamentals of creating links and embedding images to make your websites more interactive and visually appealing."
+        ]
+      },
+      "top-build-a-recipe-project": {
+        "title": "通過創建食譜頁面學習 HTML 基礎",
+        "intro": [
+          "Put your HTML skills into practice by building a recipe page. This hands-on project allows you to apply your knowledge and create a functional web page while reinforcing key concepts of HTML development."
+        ]
+      },
+      "top-learn-css-foundations": {
+        "title": "學習 CSS 基礎",
+        "intro": [
+          "Dive into the world of Cascading Style Sheets (CSS) and learn how to style your HTML elements. Explore styling properties, selectors, and layouts to bring your web pages to life."
+        ]
+      },
+      "top-learn-css-foundations-projects": {
+        "title": "學習 CSS 基礎項目",
+        "intro": [
+          "Take your CSS skills to the next level by working on practical projects. This course provides hands-on experience in applying CSS to create responsive designs for real-world scenarios."
+        ]
+      },
+      "top-learn-css-specificity": {
+        "title": "Learn CSS Specificity",
+        "intro": [
+          "Learn CSS specificity and gain a better understanding of how styles are applied to HTML elements. This course explores the nuances of CSS rules and helps you write efficient and targeted styles for your web pages."
+        ]
+      },
+      "top-the-box-model": {
+        "title": "Learn the Box Model",
+        "intro": [
+          "Learn the CSS box model with this course. Understand how elements are rendered on the web, and learn to manipulate spacing, borders, and padding to achieve your desired layout and design."
+        ]
+      },
+      "top-introduction-to-flexbox": {
+        "title": "Introduction to Flexbox",
+        "intro": [
+          "Discover the power of Flexbox, a layout model that simplifies the design of flexible and responsive web layouts. Learn how to create dynamic and adaptive page structures with ease."
+        ]
+      },
+      "top-learn-block-and-inline": {
+        "title": "Learn the difference between Block and Inline",
+        "intro": [
+          "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
+        ]
+      }
+    }
+  },
+  "project-euler": {
+    "title": "歐拉計劃",
+    "intro": [
+      "完成下方來自歐拉計劃的編程挑戰，這將強化你的算法和數學知識。",
+      "這些問題的難度各不相同，對於許多人來說，這是一個歸納性學習的過程。也就是說，通過解決一個問題，你將接觸到一個新概念，然後你可以解決自己以前無法解決的問題。你能完成全部挑戰嗎？"
+    ],
+    "blocks": {
+      "project-euler-problems-1-to-100": {
+        "title": "歐拉計劃問題 1 - 100",
+        "intro": [
+          "在這第一組挑戰中，你將使用斐波那契數列、素數定理和離散數學這樣的數學概念編寫算法來解決這些問題。"
+        ]
+      },
+      "project-euler-problems-101-to-200": {
+        "title": "歐拉計劃問題 101 - 200",
+        "intro": [
+          "在這一系列的挑戰中，你將在課程第一部分的基礎上，結合更高級的概念，如矢量計算方法、楊輝三角（帕斯卡三角）和 RSA 算法來有效地解決這些問題。"
+        ]
+      },
+      "project-euler-problems-201-to-300": {
+        "title": "歐拉計劃問題 201 - 300",
+        "intro": [
+          "在這組挑戰中，你將繼續利用你之前學到的技能，並使用二項式定理、漢明和考拉茲序列等概念來進一步提升你的數學和解決問題的技能。"
+        ]
+      },
+      "project-euler-problems-301-to-400": {
+        "title": "歐拉計劃問題 301 - 400",
+        "intro": [
+          "在這裏，你將繼續發揮你的數學和算法技能，使用組合博弈論、位運算和 Golomb 的自描述序列等概念來開發這些問題的有效解決方案。"
+        ]
+      },
+      "project-euler-problems-401-to-480": {
+        "title": "歐拉計劃問題 401 - 480",
+        "intro": [
+          "在這最後一組挑戰中，你將需要使用你目前所學到的一切，並使用像元因數、卡普雷卡爾算法等等高級概念來解決這些複雜問題。"
+        ]
+      }
+    }
+  },
+  "foundational-c-sharp-with-microsoft": {
+    "title": "(New) Foundational C# with Microsoft",
+    "intro": [
+      "This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development.",
+      "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
+      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building applications."
+    ],
+    "note": "Each section below has a trophy associated with it that you must earn on the Microsoft Learn platform. After earning each trophy, you need to verify them on freeCodeCamp. Once you have done those, you can qualify for the certification exam.",
+    "blocks": {
+      "write-your-first-code-using-c-sharp": {
+        "title": "Write Your First Code Using C#",
+        "intro": [
+          "Begin your journey by learning to write your first code using C#. Develop a strong foundation as you explore the fundamentals and syntax of the language, setting the stage for your programming adventures."
+        ]
+      },
+      "create-and-run-simple-c-sharp-console-applications": {
+        "title": "Create and Run Simple C# Console Applications",
+        "intro": [
+          "Master the art of creating and running simple C# console applications. Dive into the world of console-based programming, where you will gain hands-on experience executing your code and seeing it in action."
+        ]
+      },
+      "add-logic-to-c-sharp-console-applications": {
+        "title": "Add Logic to C# Console Applications",
+        "intro": [
+          "Unlock the power of logic in C# console applications. Learn how to add logic and decision-making capabilities to your code, enabling your applications to make dynamic choices and respond intelligently to different scenarios."
+        ]
+      },
+      "work-with-variable-data-in-c-sharp-console-applications": {
+        "title": "Work with Variable Data in C# Console Applications",
+        "intro": [
+          "Discover the versatility of variable data in C# console applications. Harness the ability to store and manipulate different types of data, such as numbers and text, as you delve into the essential concepts of variables and data handling."
+        ]
+      },
+      "create-methods-in-c-sharp-console-applications": {
+        "title": "Create Methods in C# Console Applications",
+        "intro": [
+          "Take your C# console applications to the next level by mastering the art of creating methods. Learn how to organize and modularize your code, making it more manageable, reusable, and efficient."
+        ]
+      },
+      "debug-c-sharp-console-applications": {
+        "title": "Debug C# Console Applications",
+        "intro": [
+          "Sharpen your troubleshooting skills as you dive into the world of debugging C# console applications. Gain the ability to identify and fix issues in your code, ensuring your applications run smoothly and deliver the desired results."
+        ]
+      },
+      "foundational-c-sharp-with-microsoft-certification-exam": {
+        "title": "Foundational C# with Microsoft Certification Exam",
+        "intro": [
+          "Use what you've learned to pass the exam to earn your Foundational C# with Microsoft Certification"
+        ]
+      }
+    }
+  },
+  "upcoming-python": {
+    "title": "Upcoming Python",
+    "intro": ["placeholder"],
+    "blocks": {
+      "learn-python-by-building-a-blackjack-game": {
+        "title": "Learn Python by Building a Blackjack Game",
+        "intro": ["Learn Python.", ""]
+      },
+      "upcoming-python-project": {
+        "title": "Upcoming Python Project",
+        "intro": ["placeholder"]
+      }
+    }
+  },
+  "a2-english-for-developers": {
+    "title": "A2 English for Developers (Beta)",
+    "intro": [
+      "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
+      "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
+      "In the second half, you'll practice vocabulary specific to software development. You'll learn how to describe code, discuss tech trends, and participate in stand-up meetings.",
+      "This entire A2-level curriculum includes 105 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
+    ],
+    "blocks": {
+      "learn-greetings-in-your-first-day-at-the-office": {
+        "title": "Learn Greetings in your First Day at the Office",
+        "intro": [
+          "In this first course, you'll learn common expressions for situations you may encounter on your first day at work. You'll learn about introductions, getting to know people, asking for lunch recommendations, and getting an access card from security."
+        ]
+      },
+      "learn-introductions-in-an-online-team-meeting": {
+        "title": "Learn Introductions in an Online Team Meeting",
+        "intro": [
+          "In this course, you'll learn how to give a personal introduction. You'll also learn how to state your profession, and share your goals in group meetings."
+        ]
+      },
+      "learn-conversation-starters-in-the-break-room": {
+        "title": "Learn Conversation Starters in the Break Room",
+        "intro": [
+          "In this course, you'll learn how to start a conversation in casual settings. You'll also learn how to talk about your hobbies and personality traits. You'll even learn how to ask about places around the town."
+        ]
+      },
+      "learn-how-to-talk-about-a-typical-workday-and-tasks": {
+        "title": "Learn How to Talk About a Typical Workday and Tasks",
+        "intro": ["Learn about a typical workday."]
+      },
+      "learn-how-to-discuss-your-morning-or-evening-routine": {
+        "title": "Learn How to Discuss Your Morning or Evening Routine",
+        "intro": ["Learn about routines."]
+      },
+      "learn-how-to-describe-your-current-project": {
+        "title": "Learn How to Describe Your Current Project",
+        "intro": ["Learn about projects."]
+      },
+      "learn-how-to-ask-and-share-about-educational-and-professional-background": {
+        "title": "Learn How to Ask and Share About Educational and Professional Background",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-hobbies-and-interests": {
+        "title": "Learn How to Talk About Hobbies and Interests",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-roles-and-responsibilies": {
+        "title": "Learn How to Discuss Roles and Responsibilities",
+        "intro": ["", ""]
+      },
+      "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
+        "title": "Learn How to Have a Conversation About Preferences and Motivations",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-popular-trends-in-technology": {
+        "title": "Learn How to Discuss Popular Trends in Technology",
+        "intro": ["", ""]
+      },
+      "learn-how-to-clarify-information-in-different-interactions": {
+        "title": "Learn How to Clarify Information in Different Interactions",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
+        "title": "Learn How to Use Basic Programming Vocabulary in Conversations",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-code-related-concepts-and-terms": {
+        "title": "Learn How to Use Code-related Concepts and Terms",
+        "intro": ["", ""]
+      },
+      "learn-how-to-discuss-tech-trends-and-updates": {
+        "title": "Learn How to Discuss Tech Trends and Updates",
+        "intro": ["", ""]
+      },
+      "learn-how-to-help-a-coworker-troubleshoot-on-github": {
+        "title": "Learn How to Help a Coworker Troubleshoot on GitHub",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
+        "title": "Learn How to Share Your Progress in Weekly Stand-up Meetings",
+        "intro": ["", ""]
+      },
+      "learn-how-to-ask-for-clarification-on-code-understanding": {
+        "title": "Learn How to Ask for Clarification on Code Understanding",
+        "intro": ["", ""]
+      },
+      "learn-how-to-document-code-for-a-project": {
+        "title": "Learn How to Document Code for a Project",
+        "intro": ["", ""]
+      },
+      "learn-how-to-read-and-understand-code-documentation": {
+        "title": "Learn How to Read and Understand Code Documentation",
+        "intro": ["", ""]
+      },
+      "learn-how-to-analyze-code-documentation": {
+        "title": "Learn How to Analyze Code Documentation",
+        "intro": ["", ""]
+      },
+      "learn-how-to-follow-basic-email-convention": {
+        "title": "Learn How to Follow Basic Email Convention",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-progress-and-accomplishments": {
+        "title": "Learn How to Share Progress and Accomplishments",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
+        "title": "Learn How to Talk About Updates and Plans for Tasks and Projects",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-agreement-or-disagreement": {
+        "title": "Learn How to Express Agreement or Disagreement",
+        "intro": ["", ""]
+      },
+      "learn-how-to-offer-technical-support-and-guidance": {
+        "title": "Learn How to Offer Technical Support and Guidance",
+        "intro": ["", ""]
+      },
+      "learn-how-to-request-and-receive-guidance": {
+        "title": "Learn How to Request and Receive Guidance",
+        "intro": ["", ""]
+      },
+      "learn-how-to-provide-explanations-when-helping-others": {
+        "title": "Learn How to Provide Explanations When Helping Others",
+        "intro": ["", ""]
+      }
+    }
+  },
+  "rosetta-code": {
+    "title": "Rosetta Code",
+    "intro": [
+      "Level up your creative problem solving skills with these free programming tasks from the classic Rosetta Code library.",
+      "These challenges can prove to be difficult, but they will push your algorithm logic to new heights.",
+      "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
+    ],
+    "blocks": {
+      "rosetta-code-challenges": {
+        "title": "Rosetta Code Challenges",
+        "intro": ["These are the challenges for Rosetta Code."]
+      }
+    }
+  },
+  "example-certification": {
+    "title": "示例認證",
+    "intro": ["佔位符"],
+    "blocks": {
+      "example-certification-exam": {
+        "title": "示例認證測驗",
+        "intro": ["佔位符"]
+      }
+    }
+  },
+  "misc-text": {
+    "certification": "{{cert}} 認證",
+    "browse-other": "瀏覽我們的其他免費認證\n（我們建議你按順序學習）",
+    "courses": "課程",
+    "steps": "步驟",
+    "expand": "展開課程",
+    "collapse": "收起課程",
+    "legacy-header": "舊版課程",
+    "legacy-desc": "這些課程不再是認證路徑的一部分，但仍可供你進一步學習。",
+    "legacy-go-back": "進入當前版本的課程。",
+    "course-maintenance": "這些課程正在維護中。如果它們不可用，你可以學習如何在本地運行這些課程 <0>https://www.freecodecamp.org/chinese/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>。",
+    "progress-wont-save": "當你在本地運行它們時，你的進度不會被保存到你的 freeCodeCamp 賬戶。",
+    "go-back-to-learn": "回到正式版課程",
+    "read-database-cert-article": "請在繼續之前閱讀這個論壇帖子。",
+    "enable-cookies": "你必須在開始之前啓用第三方 cookies。",
+    "english-only": "本部分的課程只提供英文。我們目前只能翻譯標題和介紹，而不能翻譯課程本身。"
+  }
+}

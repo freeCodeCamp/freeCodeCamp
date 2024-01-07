@@ -1,0 +1,22 @@
+---
+id: 561add10cb82ac38a17513bc
+title: شهادة Responsive Web Design
+certification: responsive-web-design
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c442eddfaeb5bd18
+    title: أنشئ مشروع صفحة الثناء
+  - 
+    id: 587d78af367417b2b2512b03
+    title: بناء نموذج استطلاع رأي
+  - 
+    id: 587d78af367417b2b2512b04
+    title: بناء الصفحة الرئيسة لمنتج
+  - 
+    id: 587d78b0367417b2b2512b05
+    title: أنشئ صفحة التوثيق التقنية
+  - 
+    id: bd7158d8c242eddfaeb5bd13
+    title: أنشئ معرضا لأعمالك الخاصة

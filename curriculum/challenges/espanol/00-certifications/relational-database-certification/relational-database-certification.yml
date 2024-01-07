@@ -1,0 +1,22 @@
+---
+id: 606243f50267e718b1e755f4
+title: Certificación en Base de Datos Relacionales
+certification: relational-database
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 5f1a4ef5d5d6b5ab580fc6ae
+    title: Base de datos de cuerpos celestes
+  - 
+    id: 5f9771307d4d22b9d2b75a94
+    title: Base de datos de la copa del mundo
+  - 
+    id: 5f87ac112ae598023a42df1a
+    title: Planificador de turnos de salón
+  - 
+    id: 602d9ff222201c65d2a019f2
+    title: Base de datos de la tabla periódica
+  - 
+    id: 602da04c22201c65d2a019f4
+    title: Juego de adivinanza de números

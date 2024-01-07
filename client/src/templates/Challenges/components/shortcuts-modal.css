@@ -1,0 +1,29 @@
+.shortcuts-modal-body table {
+  width: 100%;
+  margin-bottom: 2rem !important;
+}
+
+.shortcuts-modal-body table caption {
+  text-align: center;
+}
+
+.shortcuts-modal-body table th {
+  font-weight: bold;
+  text-align: center;
+}
+
+.shortcuts-modal-body table tbody tr {
+  line-height: 2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.shortcuts-modal-body table tbody tr td:nth-child(2) {
+  text-align: right;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+  .help-modal .btn-lg {
+    font-size: 16px;
+  }
+}

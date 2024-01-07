@@ -1,0 +1,59 @@
+{
+  "initial:before": {
+    "./middlewares/sentry-request-handler": {}
+  },
+  "initial": {
+    "compression": {},
+    "cors": {
+      "params": {
+        "origin": true,
+        "credentials": true,
+        "maxAge": 86400
+      }
+    }
+  },
+  "session": {
+    "./middlewares/sessions.js": {}
+  },
+  "auth:before": {
+    "express-flash": {},
+    "./middlewares/express-extensions": {},
+    "./middlewares/cookie-parser": {},
+    "./middlewares/request-authorization": {}
+  },
+  "parse": {
+    "body-parser#json": {},
+    "body-parser#urlencoded": {
+      "params": {
+        "extended": true
+      }
+    },
+    "method-override": {}
+  },
+  "routes:before": {
+    "helmet#xssFilter": {},
+    "helmet#noSniff": {},
+    "helmet#frameguard": {},
+    "./middlewares/csurf": {},
+    "./middlewares/csurf-set-cookie": {},
+    "./middlewares/constant-headers": {},
+    "./middlewares/csp": {},
+    "./middlewares/flash-cheaters": {},
+    "./middlewares/passport-login": {},
+    "./middlewares/rate-limit": {
+      "paths": ["/mobile-login"]
+    }
+  },
+  "files": {},
+  "final:after": {
+    "./middlewares/sentry-error-handler": {},
+    "./middlewares/csurf-error-handler": {},
+    "./middlewares/error-handlers": {},
+    "strong-error-handler": {
+      "params": {
+        "debug": false,
+        "log": true
+      }
+    }
+  }
+}

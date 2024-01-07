@@ -1,0 +1,185 @@
+{
+  "type": "root",
+  "children": [
+    {
+      "type": "heading",
+      "depth": 1,
+      "children": [
+        {
+          "type": "text",
+          "value": "--description--",
+          "position": {
+            "start": { "line": 1, "column": 3, "offset": 2 },
+            "end": { "line": 1, "column": 18, "offset": 17 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 1, "column": 1, "offset": 0 },
+        "end": { "line": 1, "column": 18, "offset": 17 }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "textDirective",
+          "name": "root",
+          "attributes": {},
+          "children": [],
+          "position": {
+            "start": { "line": 3, "column": 1, "offset": 19 },
+            "end": { "line": 3, "column": 6, "offset": 24 }
+          }
+        },
+        {
+          "type": "text",
+          "value": " appears, ",
+          "position": {
+            "start": { "line": 3, "column": 6, "offset": 24 },
+            "end": { "line": 3, "column": 16, "offset": 34 }
+          }
+        },
+        {
+          "type": "textDirective",
+          "name": "import",
+          "attributes": {},
+          "children": [],
+          "position": {
+            "start": { "line": 3, "column": 16, "offset": 34 },
+            "end": { "line": 3, "column": 23, "offset": 41 }
+          }
+        },
+        {
+          "type": "text",
+          "value": " appears",
+          "position": {
+            "start": { "line": 3, "column": 23, "offset": 41 },
+            "end": { "line": 3, "column": 31, "offset": 49 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 3, "column": 1, "offset": 19 },
+        "end": { "line": 3, "column": 31, "offset": 49 }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "the next paragraph should appear",
+          "position": {
+            "start": { "line": 5, "column": 1, "offset": 51 },
+            "end": { "line": 5, "column": 33, "offset": 83 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 5, "column": 1, "offset": 51 },
+        "end": { "line": 5, "column": 33, "offset": 83 }
+      }
+    },
+    {
+      "type": "leafDirective",
+      "name": "import",
+      "attributes": {},
+      "children": [],
+      "position": {
+        "start": { "line": 7, "column": 1, "offset": 85 },
+        "end": { "line": 7, "column": 9, "offset": 93 }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "even though it's an import directive, but if we use the full syntax ",
+          "position": {
+            "start": { "line": 9, "column": 1, "offset": 95 },
+            "end": { "line": 9, "column": 58, "offset": 152 }
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "::directive-name{attr=\"name\" attr2=\"a/path\"}",
+          "position": {
+            "start": { "line": 9, "column": 58, "offset": 152 },
+            "end": { "line": 9, "column": 100, "offset": 194 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 9, "column": 1, "offset": 95 },
+        "end": { "line": 9, "column": 100, "offset": 194 }
+      }
+    },
+    {
+      "type": "leafDirective",
+      "name": "import",
+      "attributes": { "component": "name", "from": "script.md" },
+      "children": [],
+      "position": {
+        "start": { "line": 11, "column": 1, "offset": 196 },
+        "end": { "line": 11, "column": 44, "offset": 239 }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "it goes.",
+          "position": {
+            "start": { "line": 13, "column": 1, "offset": 241 },
+            "end": { "line": 13, "column": 9, "offset": 249 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 13, "column": 1, "offset": 241 },
+        "end": { "line": 13, "column": 9, "offset": 249 }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "::: name [inline-content] {key=val}\na container directive\n:::",
+          "position": {
+            "start": { "line": 15, "column": 1, "offset": 251 },
+            "end": { "line": 17, "column": 4, "offset": 312 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 15, "column": 1, "offset": 251 },
+        "end": { "line": 17, "column": 4, "offset": 312 }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": ":::",
+          "position": {
+            "start": { "line": 19, "column": 1, "offset": 314 },
+            "end": { "line": 19, "column": 4, "offset": 317 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 19, "column": 1, "offset": 314 },
+        "end": { "line": 19, "column": 4, "offset": 317 }
+      }
+    }
+  ],
+  "position": {
+    "start": { "line": 1, "column": 1, "offset": 0 },
+    "end": { "line": 20, "column": 1, "offset": 318 }
+  }
+}

@@ -1,0 +1,22 @@
+---
+id: 561add10cb82ac38a17523bc
+title: Certificazione di sviluppo Back End e API
+certification: back-end-development-and-apis
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c443edefaeb5bdef
+    title: Microservizio Timestamp
+  - 
+    id: bd7158d8c443edefaeb5bdff
+    title: Microservizio Parser di header della richiesta
+  - 
+    id: bd7158d8c443edefaeb5bd0e
+    title: Microservizio Abbreviazione URL
+  - 
+    id: 5a8b073d06fa14fcfde687aa
+    title: Monitor degli esercizi
+  - 
+    id: bd7158d8c443edefaeb5bd0f
+    title: Microservizio Metadati di un file

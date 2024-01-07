@@ -1,0 +1,22 @@
+---
+id: 561add10cb82ac38a17513bc
+title: Сертифікація «Адаптивний вебдизайн»
+certification: responsive-web-design
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c442eddfaeb5bd18
+    title: Створіть пам'ятну сторінку
+  - 
+    id: 587d78af367417b2b2512b03
+    title: Створіть форму для опитування
+  - 
+    id: 587d78af367417b2b2512b04
+    title: Створіть посадкову сторінку продукту
+  - 
+    id: 587d78b0367417b2b2512b05
+    title: Створіть сторінку технічної документації
+  - 
+    id: bd7158d8c242eddfaeb5bd13
+    title: Створіть вебсторінку персонального портфоліо
