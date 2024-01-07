@@ -20,7 +20,7 @@ test.describe('MultifileEditor Component', () => {
 
     // Ensure two editors exist
     const secondEditor = page.getByLabel('Editor content').locator('nth=1');
-    await secondEditor.waitFor({ state: 'visible' });
+    await expect(secondEditor).toBeVisible();
 
     const editors = await page.getByLabel('Editor content').all();
 
