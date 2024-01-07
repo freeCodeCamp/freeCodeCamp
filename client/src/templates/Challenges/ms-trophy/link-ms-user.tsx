@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Button } from '@freecodecamp/react-bootstrap';
 import { ConnectedProps, connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -9,7 +8,8 @@ import {
   ControlLabel,
   FormControl,
   FormGroup,
-  HelpBlock
+  HelpBlock,
+  Button
 } from '@freecodecamp/ui';
 
 import { Spacer } from '../../../components/helpers';
@@ -102,8 +102,7 @@ function LinkMsUser({
           <p>{t('learn.ms.linked', { msUsername })}</p>
           <Button
             block={true}
-            bsStyle='primary'
-            className='btn-invert'
+            variant='primary'
             disabled={isProcessing}
             onClick={unlinkMsUsername}
           >
@@ -165,8 +164,7 @@ function LinkMsUser({
             <Button
               disabled={isDisabled}
               block={true}
-              bsStyle='primary'
-              className='btn-invert'
+              variant='primary'
               onClick={handleLinkUsername}
             >
               {t('buttons.link-account')}
