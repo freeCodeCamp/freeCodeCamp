@@ -8,8 +8,10 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('MultifileEditor Component', () => {
   test('Multiple editors should be selected and able to insert text into', async ({
-    page
+    page,
+    browserName
   }) => {
+    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
     // Spawn second editor to test MultifileEditor component
     const stylesEditor = page.getByRole('button', {
       name: 'styles.css Editor'
@@ -17,6 +19,7 @@ test.describe('MultifileEditor Component', () => {
     await stylesEditor.click();
 
     // Ensure two editors exist
+    await page.waitForTimeout(500);
     const editors = await page.getByLabel('Editor content').all();
     expect(editors.length).toBe(2);
 
