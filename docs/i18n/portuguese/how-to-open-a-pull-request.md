@@ -7,19 +7,20 @@ Esperamos que nossos colaboradores estejam cientes do processo específico deste
 Alguns exemplos disso são:
 
 1. Não edite arquivos diretamente no GitHub – enquanto você puder, não é uma boa ideia.
-2. Certifique-se de seguir a lista de verificação de PR e não apenas desmarcar as coisas; caso contrário, não levaremos você a sério.
-3. Utilize a maneira correta de ligar issues na descrição do PR, atualizando o `XXXXXX`. Não adicione apenas números de issues em todo e qualquer lugar e que quiser.
-4. Não faça menções com @ nem solicite as revisões de outra pessoa diversas vezes.
+2. Make sure the PR title follows [our convention](#prepare-a-good-pr-title).
+3. Certifique-se de seguir a lista de verificação de PR e não apenas desmarcar as coisas; caso contrário, não levaremos você a sério.
+4. Utilize a maneira correta de ligar issues na descrição do PR, atualizando o `XXXXXX`. Não adicione apenas números de issues em todo e qualquer lugar e que quiser.
+5. Não faça menções com @ nem solicite as revisões de outra pessoa diversas vezes.
 
    Entendemos que você está animado para contribuir. Por mais que os mantenedores adorem a ideia de responder você, lembre-se de que eles são pessoas ocupadas que cuidam de centenas de solicitações como as suas. Seja paciente, alguém responderá você mais cedo ou mais tarde.
 
-5. Não trabalhe diretamente na branch `main` - crie uma outra branch para as alterações em que está trabalhando.
+6. Não trabalhe diretamente na branch `main` - crie uma outra branch para as alterações em que está trabalhando.
 
 > [!NOTE] Seu PR deve se destinar apenas a alterações no currículo em inglês. Veja [este guia](index.md#translations) para contribuir com traduções.
 
 ## Prepare um bom título para o PR
 
-Recomendamos usar [título e mensagens convencionais](https://www.conventionalcommits.org/) para commits e pull request. A convenção tem o seguinte formato:
+We use [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull requests. A convenção tem o seguinte formato:
 
 > `<type>([escopo(s) opcional(is)]): <description>`
 > 
@@ -27,7 +28,7 @@ Recomendamos usar [título e mensagens convencionais](https://www.conventionalco
 > 
 > `fix(learn): testes para o desafio de ciclo do...while`
 
-Sempre que abrir um Pull Request (PR), você pode usar a referência abaixo para determinar o tipo, escopo (opcional) e a descrição.
+Whenever you open a Pull Request (PR), you can use the below to determine the type, scope (optional), and description.
 
 **Tipo:**
 
@@ -81,7 +82,7 @@ Alguns exemplos de bons títulos de PRs seriam:
 
    - Será apresentado um modelo de pull request. É uma checklist que você deve seguir antes de abrir o pull request.
 
-   - Preencha os detalhes como quiser. Essas informações serão revisadas e os revisores decidirão se seu pull request será aceito ou não.
+   - Preencha os detalhes como quiser. Ensure that you give the reviewers enough context to review the changes. If the PR makes changes to the UI, be sure to include screenshots of the changes as well. All of this information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
 
    - Se o PR tem como objetivo resolver uma issue GitHub existente, então, no final do corpo da descrição de seu PR, use a palavra-chave _Closes_ com o número da issue para [automaticamente fechá-la, se o PR for aceito e dado merge](https://help.github.com/en/articles/closing-issues-using-keywords).
 
@@ -91,7 +92,7 @@ Alguns exemplos de bons títulos de PRs seriam:
 
    - Isso é muito importante quando se está fazendo mudanças que não são apenas edições no conteúdo do texto como a documentação ou descrição de um desafio. Exemplos de mudanças que precisam ser testadas localmente incluem JavaScript, CSS ou HTML que podem mudar a funcionalidade ou aparência de uma página.
 
-   - Se seu PR afeta o comportamento de uma página, ele deve estar acompanhado pelo correspondente [teste de integração Cypress](how-to-add-cypress-tests.md).
+   - If your PR affects the behavior of a page, it should be accompanied by corresponding [Playwright integration tests](how-to-add-playwright-tests.md).
 
 ## Comentários nos pull requests
 

@@ -7,19 +7,20 @@ We expect our contributors to be aware of the process specific to this project. 
 Some examples of this are:
 
 1. Do not edit files directly through GitHub – while you can, it's not a good idea.
-2. Make sure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously.
-3. Use the correct way to link issues in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
-4. Do not "@mention" or request someone for reviews too many times.
+2. Make sure the PR title follows [our convention](#prepare-a-good-pr-title).
+3. Make sure you follow the PR checklist and not just tick things off; otherwise, we won't take you seriously.
+4. Use the correct way to link issues in the description of the PR by updating the `XXXXXX`. Do not just add issue numbers everywhere and anywhere you feel like.
+5. Do not "@mention" or request someone for reviews too many times.
 
    We understand you are excited about contributing. As much as a maintainer will love to get back to you, they are busy people looking after hundreds of requests just like yours. Be patient, someone will get to you sooner or later.
 
-5. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
+6. Do not work directly off your `main` branch - create a new branch for the changes you are working on.
 
 > [!NOTE] Your PR should be targeting changes to the English curriculum only. Read [this guide](index.md#translations) instead for contributing to translations.
 
 ## Prepare a Good PR Title
 
-We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
+We use [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull requests. The convention has the following format:
 
 > `<type>([optional scope(s)]): <description>`
 > 
@@ -27,7 +28,7 @@ We recommend using [conventional title and messages](https://www.conventionalcom
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-Whenever you open a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
+Whenever you open a Pull Request (PR), you can use the below to determine the type, scope (optional), and description.
 
 **Type:**
 
@@ -81,7 +82,7 @@ Some examples of good PR titles would be:
 
    - プルリクエストテンプレートが表示されます。 これはプルリクエストを開く前に行うべきチェックリストです。
 
-   - 必要に応じて詳細を記入します。 この情報はレビューされ、レビュアーがプルリクエストを受け入れるかどうかを決定します。
+   - 必要に応じて詳細を記入します。 Ensure that you give the reviewers enough context to review the changes. If the PR makes changes to the UI, be sure to include screenshots of the changes as well. All of this information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
 
    - PR が既存の GitHub Issue に対処するものである場合、PR 説明本文の最後に、キーワード _Closes_ と Issue 番号を使用して、[ PR が承認されマージされたら、その Issue が自動的にクローズされるようにします](https://help.github.com/en/articles/closing-issues-using-keywords)。
 
@@ -91,7 +92,7 @@ Some examples of good PR titles would be:
 
    - これは、ドキュメントやチャレンジの説明のようなテキストコンテンツを編集するだけでなく、変更を加える場合に、非常に重要です。 Examples of changes that need local testing include JavaScript, CSS, or HTML, which could change the functionality or layout of a page.
 
-   - If your PR affects the behaviour of a page, it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
+   - If your PR affects the behavior of a page, it should be accompanied by corresponding [Playwright integration tests](how-to-add-playwright-tests.md).
 
 ## Feedback on Pull Requests
 

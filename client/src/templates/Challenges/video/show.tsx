@@ -1,5 +1,4 @@
 // Package Utilities
-import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -10,7 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Button } from '@freecodecamp/ui';
 
 // Local Utilities
 import Loader from '../../../components/helpers/loader';
@@ -319,19 +318,15 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 <Spacer size='medium' />
                 <Button
                   block={true}
-                  bsStyle='primary'
+                  variant='primary'
                   onClick={() =>
                     this.handleSubmit(solution, openCompletionModal)
                   }
                 >
                   {t('buttons.check-answer')}
                 </Button>
-                <Button
-                  block={true}
-                  bsStyle='primary'
-                  className='btn-invert'
-                  onClick={openHelpModal}
-                >
+                <Spacer size='xxSmall' />
+                <Button block={true} variant='primary' onClick={openHelpModal}>
                   {t('buttons.ask-for-help')}
                 </Button>
                 <Spacer size='large' />
