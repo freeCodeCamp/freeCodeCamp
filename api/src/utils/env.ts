@@ -88,7 +88,7 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
 export const HOME_LOCATION = process.env.HOME_LOCATION;
 export const MONGOHQ_URL =
   process.env.MONGOHQ_URL ??
-  'mongodb+srv://demoaakash9:aakashr1213@cluster0.1mqkydq.mongodb.net/?retryWrites=true&w=majority';
+  'mongodb://localhost:27017/freecodecamp?directConnection=true';
 export const FREECODECAMP_NODE_ENV = process.env.FREECODECAMP_NODE_ENV;
 export const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
 export const AUTH0_AUDIENCE = process.env.AUTH0_AUDIENCE;
