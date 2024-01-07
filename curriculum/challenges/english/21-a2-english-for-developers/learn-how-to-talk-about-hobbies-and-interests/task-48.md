@@ -19,6 +19,7 @@ The expression `you bet` is used to affirmatively confirm or agree with somethin
 ## --sentence--
 
 `James: Hey, I noticed you have a huge collection of action figures on that shelf behind you. Are you a collector?`
+
 `Sarah: _ _! I love action figures.`
 
 ## --blanks--
