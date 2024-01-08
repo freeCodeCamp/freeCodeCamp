@@ -17,14 +17,14 @@ test.describe('MultifileEditor Component', () => {
     await stylesEditor.click();
 
     // Ensure two editors exist
-    const editors = await page.getByLabel('Editor content').all();
-    expect(editors.length).toBe(2);
+    const editors = page.getByLabel('Editor content');
+    await expect(editors).toHaveCount(2);
 
     // Test text insertion works in both editors
     const test_string = 'TestString';
     let index = 0;
-    for (const editor of editors) {
-      await editor.click();
+    for (const editor of await editors.all()) {
+      await editor.click({ force: true });
       await page.keyboard.insertText(test_string + index.toString());
       const text = page.getByText(test_string + index.toString());
       await expect(text).toBeVisible();
