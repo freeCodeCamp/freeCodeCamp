@@ -102,7 +102,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "7.23.3",
     "@babel/plugin-proposal-function-bind": "7.23.3",
-    "@babel/preset-env": "7.23.3",
+    "@babel/preset-env": "7.23.7",
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
     "@testing-library/cypress": "9.0.0",
