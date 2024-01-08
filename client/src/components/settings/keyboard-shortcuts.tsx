@@ -19,6 +19,7 @@ export default function KeyboardShortcutsSettings({
     <>
       <ToggleButtonSetting
         action={t('settings.labels.keyboard-shortcuts')}
+        explain='Within a challenge, press ESC followed by SHIFT + ? to show a list of available shortcuts.'
         flag={keyboardShortcuts}
         flagName='keyboard-shortcuts'
         offLabel={t('buttons.off')}
