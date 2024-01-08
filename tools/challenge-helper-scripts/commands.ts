@@ -73,7 +73,7 @@ function createEmptySteps(num: number): void {
 
 const repairMeta = async () => {
   const sortByStepNum = (a: string, b: string) =>
-    parseInt(a.split('-')[1]) - parseInt(b.split('-')[1]);
+    parseInt(a.split(' ')[1]) - parseInt(b.split(' ')[1]);
 
   const challengeOrder = await getChallengeOrderFromFileTree();
   if (!challengeOrder.every(({ title }) => /Step \d+/.test(title))) {
