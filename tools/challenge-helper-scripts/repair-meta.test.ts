@@ -3,28 +3,21 @@ import fs from 'fs';
 
 import { repairMeta } from './commands';
 
-const metaPath = join(
+const basePath = join(
   process.cwd(),
-  'curriculum',
-  'challenges',
-  '_meta',
-  'project-repair-meta'
+  '__fixtures__' + process.env.JEST_WORKER_ID
 );
+const commonPath = join(basePath, 'curriculum', 'challenges');
 
-const superBlockPath = join(
-  process.cwd(),
-  'curriculum',
-  'challenges',
-  'english',
-  'superblock-repair-meta'
-);
+const metaPath = join(commonPath, '_meta', 'project-repair-meta');
+const superBlockPath = join(commonPath, 'english', 'superblock-repair-meta');
 const projectPath = join(superBlockPath, 'project-repair-meta');
 
 describe('Challenge utils helper scripts', () => {
   beforeEach(() => {
     process.env.CALLING_DIR = projectPath;
-    fs.mkdirSync(metaPath);
-    fs.mkdirSync(superBlockPath);
+    fs.mkdirSync(metaPath, { recursive: true });
+    fs.mkdirSync(superBlockPath, { recursive: true });
     fs.mkdirSync(projectPath);
   });
 
@@ -71,14 +64,10 @@ title: Step ${30 - i}
   afterEach(() => {
     delete process.env.CALLING_DIR;
     try {
-      fs.rmSync(superBlockPath, { recursive: true });
+      fs.rmSync(basePath, { recursive: true });
     } catch (err) {
-      console.log('Could not remove superblock mock folder. ');
-    }
-    try {
-      fs.rmSync(metaPath, { recursive: true });
-    } catch (err) {
-      console.log('Could not remove meta mock folder.');
+      console.log(err);
+      console.log('Could not remove fixtures folder.');
     }
   });
 });
