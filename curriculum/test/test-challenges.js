@@ -603,11 +603,13 @@ function replaceChallengeFilesContentsWithSolutions(
   solutionFiles
 ) {
   return challengeFiles.map(file => {
-    const matchingSolutionFile =
-      solutionFiles.find(
-        ({ ext, name }) => ext === file.ext && file.name === name
-        // return seed file if solution file not found
-      ) || file;
+    const matchingSolutionFile = solutionFiles.find(
+      ({ ext, name }) => ext === file.ext && file.name === name
+      // return seed file if solution file not found
+    ); // || { contents: file.contents, editableContents: file.editableContents };
+    if (!matchingSolutionFile) {
+      throw Error(`No matching solution file found`);
+    }
     return {
       ...file,
       contents: matchingSolutionFile.contents,
