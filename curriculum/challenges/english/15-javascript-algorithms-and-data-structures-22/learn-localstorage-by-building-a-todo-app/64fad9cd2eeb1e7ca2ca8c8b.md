@@ -20,7 +20,7 @@ assert.match(code, /const\s*updateTaskContainer\s*=\s*\(\)\s*=>\s*\{/)
 You should move `taskData.forEach()` and its content into the `updateTaskContainer()` function.
 
 ```js
-assert.match(code, /const\s+updateTaskContainer\s*=\s*\(\)\s*=>\s*\{\s*taskData\.forEach\(\s*\(\{\s*id,\s*title,\s*date,\s*description\s*\}\)\s*=>\s*\(tasksContainer\.innerHTML\s*\+=\s*`\s*<div\s+class=('|")task\1\s*id=\1\$\{id\}\1>\s*<p><strong>Title:<\/strong>\s*\$\{title\}<\/p>\s*<p><strong>Date:<\/strong>\s*\$\{date\}<\/p>\s*<p><strong>Description:<\/strong>\s*\$\{description\}<\/p>\s*<button\s+type=\1button\1\s*class=\1btn\1>Edit<\/button>\s*<button\s+type=\1button\1\s*class=\1btn\1>Delete<\/button>\s*<\/div>\s*`\)\s*\);?\s*\};?/)
+assert.match(code, /const\s+updateTaskContainer\s*=\s*\(\)\s*=>\s*\{\s*taskData\.forEach\(\s*\(\{\s*id,\s*title,\s*date,\s*description\s*\}\)\s*=>\s*{\s*\(tasksContainer\.innerHTML\s*\+=\s*`\s*<div\s+class=('|")task\1\s*id=\1\$\{id\}\1>\s*<p><strong>Title:<\/strong>\s*\$\{title\}<\/p>\s*<p><strong>Date:<\/strong>\s*\$\{date\}<\/p>\s*<p><strong>Description:<\/strong>\s*\$\{description\}<\/p>\s*<button\s+type=\1button\1\s*class=\1btn\1>Edit<\/button>\s*<button\s+type=\1button\1\s*class=\1btn\1>Delete<\/button>\s*<\/div>\s*`\)\s*}\s*\);?\s*\};?/)
 ```
 
 # --seed--
@@ -341,16 +341,17 @@ taskForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   taskData.forEach(
-    ({ id, title, date, description }) =>
-      (tasksContainer.innerHTML += `
-      <div class="task" id="${id}">
-        <p><strong>Title:</strong> ${title}</p>
-        <p><strong>Date:</strong> ${date}</p>
-        <p><strong>Description:</strong> ${description}</p>
-        <button type="button" class="btn">Edit</button>
-        <button type="button" class="btn">Delete</button>
-      </div>
-    `)
+    ({ id, title, date, description }) => {
+        (tasksContainer.innerHTML += `
+        <div class="task" id="${id}">
+          <p><strong>Title:</strong> ${title}</p>
+          <p><strong>Date:</strong> ${date}</p>
+          <p><strong>Description:</strong> ${description}</p>
+          <button type="button" class="btn">Edit</button>
+          <button type="button" class="btn">Delete</button>
+        </div>
+      `)
+    }
   );
 
   reset()
