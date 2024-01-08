@@ -6,6 +6,7 @@ function Graduation(
   return (
     <>
       <svg
+        aria-hidden='true'
         xmlns='http://www.w3.org/2000/svg'
         height='60'
         width='60'
