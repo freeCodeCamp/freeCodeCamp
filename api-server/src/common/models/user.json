@@ -230,6 +230,11 @@
       "description": "Camper is foundational C# certified",
       "default": false
     },
+    "isJsAlgoDataStructCertV8": {
+      "type": "boolean",
+      "description": "Camper is javascript algorithms and data structures certified (2023)",
+      "default": false
+    },
     "completedChallenges": {
       "type": [
         {

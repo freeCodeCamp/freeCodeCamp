@@ -27,6 +27,10 @@ body {
   height: 100%;
 }
 
+.page-wrapper-80 {
+  min-height: 80vh;
+}
+
 .codeally-frame {
   display: block;
   height: calc(100vh - var(--header-height));
@@ -265,6 +269,8 @@ input[type='submit']:hover,
   color: var(--secondary-background);
 }
 
+button[aria-disabled='true'],
+button[aria-disabled='true']:hover,
 .btn.disabled,
 .btn[disabled],
 fieldset[disabled] .btn,
@@ -480,32 +486,6 @@ hr {
   color: var(--secondary-background);
 }
 
-.challenge-instructions table {
-  display: inline-block;
-  overflow: auto;
-}
-
-.challenge-instructions table thead {
-  display: table-header-group;
-  vertical-align: middle;
-  border-color: inherit;
-}
-
-.challenge-instructions table th {
-  font-weight: 700;
-}
-
-.challenge-instructions table th,
-.challenge-instructions table td {
-  padding: 6px 13px;
-  border: 1px solid var(--secondary-color);
-  text-align: center;
-}
-
-.challenge-instructions table tbody tr:nth-of-type(odd) {
-  background-color: var(--tertiary-background);
-}
-
 .challenge-output span {
   font-size: 1rem;
 }
@@ -545,9 +525,9 @@ blockquote .small {
 
 .alert .btn,
 [role='alert'] .btn {
-  background-color: #d9edf7;
-  color: #31708f;
-  border-color: #31708f;
+  background-color: transparent;
+  color: inherit;
+  border-color: inherit;
 }
 .alert .btn:hover,
 .alert .btn:focus,

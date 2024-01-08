@@ -12,9 +12,11 @@ import {
 import {
   addDonation,
   postChargeStripe,
-  postChargeStripeCard
+  postChargeStripeCard,
+  updateStripeCard
 } from '../utils/ajax';
 import { stringifyDonationEvents } from '../utils/analytics-strings';
+import { stripe } from '../utils/stripe';
 import { PaymentProvider } from '../../../shared/config/donation-settings';
 import { actionTypes as appTypes } from './action-types';
 import {
@@ -24,7 +26,9 @@ import {
   postChargeError,
   preventBlockDonationRequests,
   setCompletionCountWhenShownProgressModal,
-  executeGA
+  executeGA,
+  updateCardError,
+  updateCardRedirecting
 } from './actions';
 import {
   isDonatingSelector,
@@ -34,6 +38,7 @@ import {
 } from './selectors';
 
 const defaultDonationErrorMessage = i18next.t('donate.error-2');
+const updateCardErrorMessage = i18next.t('donate.error-3');
 
 function* showDonateModalSaga() {
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
@@ -155,10 +160,25 @@ export function* setDonationCookie() {
   }
 }
 
+export function* updateCardSaga() {
+  yield put(updateCardRedirecting());
+  try {
+    const {
+      data: { sessionId }
+    } = yield call(updateStripeCard);
+
+    if (!sessionId) throw new Error('No sessionId');
+    (yield stripe).redirectToCheckout({ sessionId });
+  } catch (error) {
+    yield put(updateCardError(updateCardErrorMessage));
+  }
+}
+
 export function createDonationSaga(types) {
   return [
     takeEvery(types.tryToShowDonationModal, showDonateModalSaga),
     takeLeading(types.postCharge, postChargeSaga),
-    takeEvery(types.fetchUserComplete, setDonationCookie)
+    takeEvery(types.fetchUserComplete, setDonationCookie),
+    takeLeading(types.updateCard, updateCardSaga)
   ];
 }

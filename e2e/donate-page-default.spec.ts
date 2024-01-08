@@ -12,21 +12,6 @@ const pageElements = {
   campersImage: 'landing-page-figure'
 };
 
-const frequentlyAskedQuestions = [
-  translations.donate['get-help'],
-  translations.donate['how-transparent'],
-  translations.donate['how-efficient'],
-  translations.donate['how-one-time'],
-  translations.donate['does-crypto'],
-  translations.donate['can-check'],
-  translations.donate['how-matching-gift'],
-  translations.donate['how-endowment'],
-  translations.donate['how-legacy'],
-  translations.donate['how-stock'],
-  translations.donate['how-update'],
-  translations.donate['anything-else']
-];
-
 const donationStringReplacements = {
   usdPlaceHolder: '{{usd}}',
   hoursPlaceHolder: '{{hours}}'
@@ -149,27 +134,165 @@ test.describe('Donate Page', () => {
     await expect(donateText3).toHaveText(translations.donate['why-donate-2']);
   });
 
-  test('should render the campers image in desktop browsers', async ({
-    isMobile
-  }) => {
-    const figure = page.getByTestId(pageElements.campersImage);
-
-    if (isMobile) {
-      await expect(figure).not.toBeVisible();
-      return;
-    }
-
-    await expect(figure).toBeVisible();
-  });
-
   test('should display the faq heading', async () => {
     const faqHead = page.getByTestId(pageElements.faqHeading);
     await expect(faqHead).toHaveText(translations.donate.faq);
   });
 
   test('should display the faq list with buttons', async () => {
-    for (const question of frequentlyAskedQuestions) {
-      await page.getByRole('button', { name: question }).isVisible();
-    }
+    const faq1 = page.getByRole('button', {
+      name: translations.donate['get-help']
+    });
+    await expect(faq1).toBeVisible();
+    await faq1.click();
+    await expect(
+      page.getByText(translations.donate['forward-receipt'])
+    ).toBeVisible();
+    await faq1.click();
+
+    const faq2 = page.getByRole('button', {
+      name: translations.donate['how-transparent']
+    });
+    await expect(faq2).toBeVisible();
+    await faq2.click();
+    await expect(
+      page.getByText(translations.donate['very-transparent'])
+    ).toBeVisible();
+    await expect(
+      page.getByText('You can download our IRS Determination Letter here.')
+    ).toBeVisible();
+    await expect(
+      page.getByText(
+        'You can download our most recent 990 (annual tax report) here.'
+      )
+    ).toBeVisible();
+    await faq2.click();
+
+    const faq3 = page.getByRole('button', {
+      name: translations.donate['how-efficient']
+    });
+    await expect(faq3).toBeVisible();
+    await faq3.click();
+    await expect(
+      page.getByText(translations.donate['fcc-budget'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['help-millions'])
+    ).toBeVisible();
+    await faq3.click();
+
+    const faq4 = page.getByRole('button', {
+      name: translations.donate['how-one-time']
+    });
+    await expect(faq4).toBeVisible();
+    await faq4.click();
+    await expect(
+      page.getByText(
+        "If you'd prefer to make one-time donations, you can support freeCodeCamp's mission whenever you have cash to spare. You can use this link to donate whatever amount feels right through PayPal."
+      )
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['wire-transfer'])
+    ).toBeVisible();
+    await faq4.click();
+
+    const faq5 = page.getByRole('button', {
+      name: translations.donate['does-crypto']
+    });
+    await expect(faq5).toBeVisible();
+    await faq5.click();
+    await expect(
+      page.getByText(translations.donate['yes-cryptocurrency'])
+    ).toBeVisible();
+    await faq5.click();
+
+    const faq6 = page.getByRole('button', {
+      name: translations.donate['can-check']
+    });
+    await expect(faq6).toBeVisible();
+    await faq6.click();
+    await expect(
+      page.getByText(translations.donate['yes-check'])
+    ).toBeVisible();
+    await expect(page.getByText('Free Code Camp, Inc.')).toBeVisible();
+    await expect(page.getByText('3905 Hedgcoxe Rd')).toBeVisible();
+    await expect(page.getByText('PO Box 250352')).toBeVisible();
+    await expect(page.getByText('Plano, TX 75025')).toBeVisible();
+    await faq6.click();
+
+    const faq7 = page.getByRole('button', {
+      name: translations.donate['how-matching-gift']
+    });
+    await expect(faq7).toBeVisible();
+    await faq7.click();
+    await expect(
+      page.getByText(translations.donate['employers-vary'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['some-volunteer'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['help-matching-gift'])
+    ).toBeVisible();
+    await faq7.click();
+
+    const faq8 = page.getByRole('button', {
+      name: translations.donate['how-endowment']
+    });
+    await expect(faq8).toBeVisible();
+    await faq8.click();
+    await expect(
+      page.getByText(translations.donate['endowment'])
+    ).toBeVisible();
+    await faq8.click();
+
+    const faq9 = page.getByRole('button', {
+      name: translations.donate['how-legacy']
+    });
+    await expect(faq9).toBeVisible();
+    await faq9.click();
+    await expect(
+      page.getByText(translations.donate['we-honored'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['legacy-gift-message'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['thank-wikimedia'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['legacy-gift-questions'])
+    ).toBeVisible();
+    await faq9.click();
+
+    const faq10 = page.getByRole('button', {
+      name: translations.donate['how-stock']
+    });
+    await expect(faq10).toBeVisible();
+    await faq10.click();
+    await expect(
+      page.getByText(translations.donate['welcome-stock'])
+    ).toBeVisible();
+    await faq10.click();
+
+    const faq11 = page.getByRole('button', {
+      name: translations.donate['how-update']
+    });
+    await expect(faq11).toBeVisible();
+    await faq11.click();
+    await expect(
+      page.getByText(translations.donate['forward-receipt'])
+    ).toBeVisible();
+    await faq11.click();
+
+    const faq12 = page.getByRole('button', {
+      name: translations.donate['anything-else']
+    });
+    await expect(faq12).toBeVisible();
+    await faq12.click();
+    await expect(
+      page.getByText(translations.donate['other-support'])
+    ).toBeVisible();
+    await faq12.click();
   });
 });

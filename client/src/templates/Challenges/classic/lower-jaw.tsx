@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/react-bootstrap';
 
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
@@ -21,8 +20,6 @@ import {
   challengeMetaSelector,
   completedPercentageSelector
 } from '../redux/selectors';
-
-const lowerJawButtonStyle = 'btn-block btn';
 
 interface LowerJawPanelProps extends ShareProps {
   resetButtonText: string;
@@ -297,18 +294,17 @@ const LowerJaw = ({
   return (
     <div className='action-row-container'>
       {showSignInButton && (
-        <Button
+        <a
           data-cy='sign-in-button'
-          block={true}
           href={`${apiLocation}/signin`}
-          className='btn-cta'
+          className='btn-cta btn btn-block'
         >
           {t('learn.sign-in-save')}
-        </Button>
+        </a>
       )}
       <button
         data-playwright-test-label='lowerJaw-submit-button'
-        className={lowerJawButtonStyle}
+        className='btn-block btn'
         data-cy='submit-lowerJaw-button'
         onClick={tryToSubmitChallenge}
         {...(!challengeIsCompleted && { 'aria-hidden': true })}
@@ -318,7 +314,7 @@ const LowerJaw = ({
       </button>
       <button
         data-playwright-test-label='lowerJaw-check-button'
-        className={lowerJawButtonStyle}
+        className='btn-block btn'
         data-cy='check-lowerJaw-button'
         onClick={tryToExecuteChallenge}
         {...(challengeIsCompleted &&

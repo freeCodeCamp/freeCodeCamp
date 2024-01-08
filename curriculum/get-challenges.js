@@ -298,10 +298,6 @@ ${getFullPath('english', filePath)}
       {
         certification: 'responsive-web-design',
         dupe: '2022/responsive-web-design'
-      },
-      {
-        certification: 'javascript-algorithms-and-data-structures',
-        dupe: '2022/javascript-algorithms-and-data-structures'
       }
     ];
     const hasDupe = dupeCertifications.find(

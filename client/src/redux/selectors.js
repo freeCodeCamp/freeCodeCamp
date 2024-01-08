@@ -28,6 +28,7 @@ export const recentlyClaimedBlockSelector = state =>
   state[MainApp].recentlyClaimedBlock;
 export const donationFormStateSelector = state =>
   state[MainApp].donationFormState;
+export const updateCardStateSelector = state => state[MainApp].updateCardState;
 export const signInLoadingSelector = state =>
   userFetchStateSelector(state).pending;
 export const showCertSelector = state => state[MainApp].showCert;
@@ -128,7 +129,8 @@ export const certificatesByNameSelector = username => state => {
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
     isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8
+    isFoundationalCSharpCertV8,
+    isJsAlgoDataStructCertV8
   } = userByNameSelector(username)(state);
   return {
     hasModernCert:
@@ -145,7 +147,8 @@ export const certificatesByNameSelector = username => state => {
       isMachineLearningPyCertV7 ||
       isRelationalDatabaseCertV8 ||
       isCollegeAlgebraPyCertV8 ||
-      isFoundationalCSharpCertV8,
+      isFoundationalCSharpCertV8 ||
+      isJsAlgoDataStructCertV8,
     hasLegacyCert:
       isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
     isFullStackCert,
@@ -154,6 +157,11 @@ export const certificatesByNameSelector = username => state => {
         show: isRespWebDesignCert,
         title: 'Responsive Web Design Certification',
         certSlug: Certification.RespWebDesign
+      },
+      {
+        show: isJsAlgoDataStructCertV8,
+        title: 'JavaScript Algorithms and Data Structures (Beta) Certification',
+        certSlug: Certification.JsAlgoDataStructNew
       },
       {
         show: isJsAlgoDataStructCert,
@@ -171,19 +179,19 @@ export const certificatesByNameSelector = username => state => {
         certSlug: Certification.DataVis
       },
       {
+        show: isRelationalDatabaseCertV8,
+        title: 'Relational Database Certification',
+        certSlug: Certification.RelationalDb
+      },
+      {
         show: isApisMicroservicesCert,
         title: 'Back End Development and APIs Certification',
         certSlug: Certification.BackEndDevApis
       },
       {
         show: isQaCertV7,
-        title: ' Quality Assurance Certification',
+        title: 'Quality Assurance Certification',
         certSlug: Certification.QualityAssurance
-      },
-      {
-        show: isInfosecCertV7,
-        title: 'Information Security Certification',
-        certSlug: Certification.InfoSec
       },
       {
         show: isSciCompPyCertV7,
@@ -196,14 +204,14 @@ export const certificatesByNameSelector = username => state => {
         certSlug: Certification.DataAnalysisPy
       },
       {
+        show: isInfosecCertV7,
+        title: 'Information Security Certification',
+        certSlug: Certification.InfoSec
+      },
+      {
         show: isMachineLearningPyCertV7,
         title: 'Machine Learning with Python Certification',
         certSlug: Certification.MachineLearningPy
-      },
-      {
-        show: isRelationalDatabaseCertV8,
-        title: 'Relational Database Certification',
-        certSlug: Certification.RelationalDb
       },
       {
         show: isCollegeAlgebraPyCertV8,

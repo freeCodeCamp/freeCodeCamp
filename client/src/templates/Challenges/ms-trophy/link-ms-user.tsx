@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Button } from '@freecodecamp/react-bootstrap';
 import { ConnectedProps, connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -9,7 +8,8 @@ import {
   ControlLabel,
   FormControl,
   FormGroup,
-  HelpBlock
+  HelpBlock,
+  Button
 } from '@freecodecamp/ui';
 
 import { Spacer } from '../../../components/helpers';
@@ -25,6 +25,7 @@ import {
   isProcessingSelector
 } from '../../../redux/selectors';
 import Login from '../../../components/Header/components/login';
+import ChallengeHeading from '../components/challenge-heading';
 
 import './link-ms-user.css';
 
@@ -86,7 +87,7 @@ function LinkMsUser({
 
   return !isSignedIn ? (
     <>
-      <h2 className='link-ms-user-title'>{t('learn.ms.link-header')}</h2>
+      <ChallengeHeading heading={t('learn.ms.link-header')} />
       <Spacer size='small' />
 
       <p data-playwright-test-label='link-signin-text'>
@@ -101,8 +102,7 @@ function LinkMsUser({
           <p>{t('learn.ms.linked', { msUsername })}</p>
           <Button
             block={true}
-            bsStyle='primary'
-            className='btn-invert'
+            variant='primary'
             disabled={isProcessing}
             onClick={unlinkMsUsername}
           >
@@ -111,7 +111,7 @@ function LinkMsUser({
         </>
       ) : (
         <div>
-          <h2 className='link-ms-user-title'>{t('learn.ms.link-header')}</h2>
+          <ChallengeHeading heading={'learn.ms.link-header'} />
           <Spacer size='small' />
 
           <p data-playwright-test-label='unlinked-text'>
@@ -164,8 +164,7 @@ function LinkMsUser({
             <Button
               disabled={isDisabled}
               block={true}
-              bsStyle='primary'
-              className='btn-invert'
+              variant='primary'
               onClick={handleLinkUsername}
             >
               {t('buttons.link-account')}

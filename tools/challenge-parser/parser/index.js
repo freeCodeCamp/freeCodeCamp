@@ -14,6 +14,7 @@ const addAssignment = require('./plugins/add-assignment');
 const replaceImports = require('./plugins/replace-imports');
 const restoreDirectives = require('./plugins/restore-directives');
 const tableAndStrikeThrough = require('./plugins/table-and-strikethrough');
+const addScene = require('./plugins/add-scene');
 
 // by convention, anything that adds to file.data has the name add<name>.
 const processor = unified()
@@ -48,6 +49,7 @@ const processor = unified()
   .use(addFillInTheBlank)
   .use(addVideoQuestion)
   .use(addAssignment)
+  .use(addScene)
   .use(addTests)
   .use(addText, ['description', 'instructions', 'notes']);
 
