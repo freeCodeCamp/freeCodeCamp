@@ -1,7 +1,7 @@
-import { Alert, Button } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Spinner from 'react-spinkit';
+import { Alert } from '@freecodecamp/ui';
 
 type CardUpdateAlertHandlerProps = {
   error: string | null;
@@ -19,21 +19,15 @@ function CardUpdateAlertHandler({
   const { t } = useTranslation();
   const style = redirecting ? 'info' : success ? 'success' : 'danger';
 
-  const heading = redirecting
+  const message = redirecting
     ? `${t('donate.redirecting')}`
     : success
       ? `${t('donate.success-card-update')}`
       : `${t('donate.error-card-update')}`;
 
   return (
-    <Alert
-      bsStyle={style}
-      className='donation-completion'
-      closeLabel={t('buttons.close')}
-    >
-      <h4>
-        <b>{heading}</b>
-      </h4>
+    <Alert variant={style} className='donation-completion'>
+      <p>{message}</p>
       <div className='donation-completion-body'>
         {redirecting && (
           <Spinner
@@ -48,9 +42,9 @@ function CardUpdateAlertHandler({
       <div className='donation-completion-buttons'>
         {error && (
           <div>
-            <Button bsStyle='primary' onClick={reset}>
+            <button type='button' className='try-again-button' onClick={reset}>
               {t('buttons.try-again')}
-            </Button>
+            </button>
           </div>
         )}
       </div>
