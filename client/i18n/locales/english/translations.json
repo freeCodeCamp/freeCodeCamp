@@ -373,7 +373,7 @@
     "running-tests": "// running tests",
     "tests-completed": "// tests completed",
     "console-output": "// console output",
-    "syntax-error": "Your code raised a error before we could run any tests. Please fix it and try again.",
+    "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "sign-in-save": "Sign in to save your progress",
     "download-solution": "Download my solution",
     "download-results": "Download my results",
