@@ -488,7 +488,7 @@ const checkCashRegister = () => {
   }
 
   if (totalCID === changeDue) {
-    result.status = "CLOSED"
+    result.status = "CLOSED";
   }
 
   for (let i = 0; i <= reversedCid.length; i++) {
