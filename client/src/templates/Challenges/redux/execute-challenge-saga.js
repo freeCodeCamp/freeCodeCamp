@@ -209,7 +209,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         throw err;
       }
     } catch (err) {
-      const { actual, expected } = err;
+      const { actual, expected, syntaxError } = err;
 
       newTest.message = text
         .replace('--fcc-expected--', expected)
@@ -217,6 +217,9 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
+      } else if (syntaxError) {
+        newTest.err = 'syntax error';
+        newTest.message = `<p>${i18next.t('learn.syntax-error')}</p>`;
       } else {
         const { message, stack } = err;
         newTest.err = message + '\n' + stack;
