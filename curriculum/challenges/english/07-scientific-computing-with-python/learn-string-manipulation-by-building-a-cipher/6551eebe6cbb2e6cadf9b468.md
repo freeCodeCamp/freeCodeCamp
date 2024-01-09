@@ -19,35 +19,23 @@ Delete your `number` variable and its value. Then, declare another variable call
 
 # --hints--
 
-You should delete the `number` variable and its value.
+You should not have `number = 5` in your code.
 
 ```js
 const commentless_code = __helpers.python.removeComments(code);
 assert.isFalse(/number\s*=\s*5/.test(commentless_code))
 ```
 
-You should declare a variable called `text`.
+You should declare a variable called `text`. Pay attention to place the variable name at the beginning of the line.
 
 ```js
-assert.match(code, /text\s*=/)
+assert.match(code, /^text\s*=/m)
 ```
 
 You should assign the string `Hello World` to your `text` variable. Remember to use either single or double quotes to enclose the string and pay attention to the letter case.
 
 ```js
-assert.match(code, /text\s*=\s*("|')Hello World\1\s*(#.*)?$/m)
-```
-
-Your new variable name should start at the beginning of the line. Do not add white spaces before it.
-
-```js
-assert.match(code, /^text\s*=\s*("|')Hello World\1\s*(#.*)?$/m)
-```
-
-Your code contains invalid syntax and/or invalid indentation.
-
-```js
-({test: () => assert(true) })
+({test: () => assert.match(code, /^text\s*=\s*("|')Hello World\1\s*(#.*)?$/m) })
 ```
 
 # --seed--
