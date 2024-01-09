@@ -81,7 +81,7 @@ function LearnPage({
 }: LearnPageProps) {
   const { t } = useTranslation();
 
-  const onDonationAlertClick = () => {
+  const onLearnDonationAlertClick = () => {
     executeGA({
       event: 'donation_related',
       action: `Learn Donation Alert Click`,
@@ -102,7 +102,7 @@ function LearnPage({
               name={name}
               pending={pending}
               slug={slug}
-              onDonationAlertClick={onDonationAlertClick}
+              onLearnDonationAlertClick={onLearnDonationAlertClick}
               isDonating={isDonating}
             />
             <Map />

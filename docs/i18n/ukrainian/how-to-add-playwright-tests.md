@@ -340,5 +340,6 @@ pnpm run playwright:install-build-tools
 Щоб запустити всі тести Playwright, виконайте цю команду:
 
 ```bash
+cd e2e
 npx playwright test
 ```

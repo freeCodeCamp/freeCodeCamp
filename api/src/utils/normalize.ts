@@ -1,6 +1,6 @@
 /* This module's job is to parse the database output and prepare it for
 serialization */
-import { ProfileUI, CompletedChallenge } from '@prisma/client';
+import { ProfileUI, CompletedChallenge, ExamResults } from '@prisma/client';
 import _ from 'lodash';
 
 type NullToUndefined<T> = T extends null ? undefined : T;
@@ -81,6 +81,7 @@ type NormalizedChallenge = {
   id: string;
   isManuallyApproved?: boolean;
   solution?: string;
+  examResults?: ExamResults;
 };
 
 /**

@@ -7,7 +7,7 @@ dashedName: step-27
 
 # --description--
 
-`arr` contains a series of objects that each contain a `name`, `position`, `number`, `isCaptain` and `nickname` property. In order to access each of those properties inside the callback function, you will need to use object destructuring to unpack them into variables.
+`arr` contains a series of objects that each contains a `name`, `position`, `number`, `isCaptain` and `nickname` property. In order to access each of those properties inside the callback function, you will need to use object destructuring to unpack them into variables.
 
 Here is an example:
 

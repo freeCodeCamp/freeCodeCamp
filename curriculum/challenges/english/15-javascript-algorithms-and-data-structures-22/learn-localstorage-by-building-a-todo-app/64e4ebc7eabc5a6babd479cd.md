@@ -22,25 +22,25 @@ assert.match(code, /discardBtn\.addEventListener\(/)
 Your event listener should listen for a `click` event.
 
 ```js
-assert.match(code, /discardBtn\.addEventListener\(('|"|`)click\1/)
+assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1/)
 ```
 
 You should use arrow syntax to set your event listener to an empty pair of curly braces.
 
 ```js
-assert.match(code, /discardBtn\.addEventListener\(('|"|`)click\1,\s*\(\)\s*=>\s*\{/)
+assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\)\s*=>\s*\{/)
 ```
 
 Your event listener should use the `close()` method on `confirmCloseDialog`.
 
 ```js
-assert.match(code, /discardBtn\.addEventListener\(('|"|`)click\1,\s*\(\)\s*=>\s*\{\s*confirmCloseDialog\.close\(\);?/)
+assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\)\s*=>\s*\{\s*confirmCloseDialog\.close\(\);?/)
 ```
 
 Your event listener should use `classList` to toggle the class `hidden` on `taskForm`.
 
 ```js
-assert.match(code, /discardBtn\.addEventListener\(('|"|`)click\1,\s*\(\)\s*=>\s*\{\s*confirmCloseDialog\.close\(\);?\s*taskForm\.classList\.toggle\(\1hidden\1\);?\s*\}\);?/)
+assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\)\s*=>\s*\{\s*confirmCloseDialog\.close\(\);?\s*taskForm\.classList\.toggle\(\s*('|"|`)hidden\2\s*\);?\s*\}\);?/)
 ```
 
 # --seed--
