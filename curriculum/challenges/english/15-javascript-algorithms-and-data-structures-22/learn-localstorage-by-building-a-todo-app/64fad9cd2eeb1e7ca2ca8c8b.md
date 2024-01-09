@@ -14,7 +14,7 @@ Use arrow syntax to create an `updateTaskContainer` function. Then move the `tas
 You should use `const` and arrow syntax to create a `updateTaskContainer` function.
 
 ```js
-assert.match(code, /const\s*updateTaskContainer\s*=\s*\(\)\s*=>\s*\{/)
+assert.match(code, /const\s+updateTaskContainer\s*=\s*\(\)\s*=>\s*\{/)
 ```
 
 You should move `taskData.forEach()` and its content into the `updateTaskContainer()` function.
