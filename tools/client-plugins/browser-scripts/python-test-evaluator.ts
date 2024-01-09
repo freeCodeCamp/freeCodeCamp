@@ -133,7 +133,20 @@ input = __inputGen(${JSON.stringify(input ?? [])})
 
     // Evaluates the learner's code so that any variables they define are
     // available to the test.
-    runPython(code);
+    try {
+      runPython(code);
+    } catch (err) {
+      // We don't, yet, want user code to raise exceptions. When they do, we
+      // count this as a failing test.
+      ctx.postMessage({
+        err: {
+          message: (err as Error).message,
+          stack: (err as Error).stack,
+          syntaxError: true
+        }
+      });
+      return;
+    }
     // TODO: remove the next line, creating __locals, once all the tests access
     // variables directly.
     runPython('__locals = globals()');
