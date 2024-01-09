@@ -22,19 +22,32 @@ Delete your `number` variable and its value. Then, declare another variable call
 You should delete the `number` variable and its value.
 
 ```js
-({ test: () => assert.isFalse(/number\s*=\s*5/.test(code)) })
+const commentless_code = __helpers.python.removeComments(code);
+assert.isFalse(/number\s*=\s*5/.test(commentless_code))
 ```
 
 You should declare a variable called `text`.
 
 ```js
-({ test: () => assert(__userGlobals.has("text")) })
+assert.match(code, /text\s*=/)
 ```
 
-You should assign the string `Hello World` to your `text` variable.
+You should assign the string `Hello World` to your `text` variable. Remember to use either single or double quotes to enclose the string and pay attention to the letter case.
 
 ```js
-({ test: () => assert.equal(__userGlobals.get("text"), "Hello World") })
+assert.match(code, /text\s*=\s*("|')Hello World\1\s*(#.*)?$/m)
+```
+
+Your new variable name should start at the beginning of the line. Do not add white spaces before it.
+
+```js
+assert.match(code, /^text\s*=\s*("|')Hello World\1\s*(#.*)?$/m)
+```
+
+Your code contains invalid syntax and/or invalid indentation.
+
+```js
+({test: () => assert(true) })
 ```
 
 # --seed--
