@@ -231,7 +231,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
 }
 
 // updates preview frame and the fcc console.
-function* previewChallengeSaga(action) {
+export function* previewChallengeSaga(action) {
   const flushLogs = action?.type !== actionTypes.previewMounted;
   yield delay(700);
 
