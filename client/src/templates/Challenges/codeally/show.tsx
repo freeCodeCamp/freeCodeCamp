@@ -243,7 +243,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
           data-cy='codeally-frame'
           name={`codeAlly${Date.now()}`}
           sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
-          src={`https://codeally.io/embed/?repoUrl=${url}&${goBackTo}&${envVariables}&${tempToken}&${date}`}
+          src={`http://localhost:8080`}
           title='Editor'
         />
       </LearnLayout>

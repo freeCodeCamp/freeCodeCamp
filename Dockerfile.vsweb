@@ -1,0 +1,25 @@
+FROM ubuntu:22.04
+
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y --no-install-recommends \
+  # support env timezones
+  tzdata \
+  # vscode requirements
+  gnome-keyring wget curl python3 ca-certificates \
+  git build-essential \
+  # clean up
+  && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+
+RUN curl -fsSL https://code-server.dev/install.sh | sh
+
+# Example adding tooling: Install Rust
+# RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+COPY freecodecamp-courses-2.0.0.vsix $HOME
+# code-server --host 0.0.0.0 --auth none
+CMD ["code-server", "--host", "0.0.0.0", "--auth", "none"]
+CMD ["code-server", "--install-extension", "freecodecamp-courses-2.0.0.vsix"]
+
+# TODO: Needed?
+USER root
+
+# $ docker build -t vsweb -f Dockerfile.vsweb .
+# $ docker run -p 8080:8080 vsweb
