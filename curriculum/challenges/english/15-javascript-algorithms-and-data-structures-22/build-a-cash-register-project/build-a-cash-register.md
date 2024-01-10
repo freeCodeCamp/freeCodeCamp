@@ -49,7 +49,7 @@ Your application should show different messages depending on the price of the it
 1. When `price` is `3.26`, the value in the `#cash` element is `100`, `cid` is `[["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `Status: OPEN TWENTY: $60 TEN: $20 FIVE: $15 ONE: $1 QUARTER: $0.5 DIME: $0.2 PENNY: $0.04`
 1. When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `Status: INSUFFICIENT_FUNDS`
 1. When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `Status: INSUFFICIENT_FUNDS`
-1. When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `Status: CLOSED QUARTER: $0 DIME: $0 NICKEL: $0 PENNY: $0.5`
+1. When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `Status: CLOSED PENNY: $0.5`
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
@@ -167,7 +167,7 @@ purchaseBtn.click();
 assert.strictEqual(changeDueDiv.innerText.trim().toLowerCase(), 'status: insufficient_funds');
 ```
 
-When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `Status: CLOSED QUARTER: $0 DIME: $0 NICKEL: $0 PENNY: $0.5`.
+When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `Status: CLOSED PENNY: $0.5`.
 
 ```js
 const cashInput = document.getElementById('cash');
@@ -178,7 +178,7 @@ price = 19.5;
 cashInput.value = 20;
 cid = [['PENNY', 0.5], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]];
 
-const expected = ['Status: OPEN', 'QUARTER: $0', 'DIME: $0', 'NICKEL: $0', 'PENNY: $0.5'];
+const expected = ['Status: CLOSED', 'PENNY: $0.5'];
 purchaseBtn.click();
 assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
 ```
@@ -488,7 +488,7 @@ const checkCashRegister = () => {
   }
 
   if (totalCID === changeDue) {
-    formatResults("CLOSED", cid);
+    result.status = "CLOSED";
   }
 
   for (let i = 0; i <= reversedCid.length; i++) {
@@ -500,7 +500,9 @@ const checkCashRegister = () => {
         changeDue = parseFloat((changeDue -= denominations[i]).toFixed(2));
         count++;
       }
-      result.change.push([reversedCid[i][0], count * denominations[i]]);
+      if (count > 0) {
+        result.change.push([reversedCid[i][0], count * denominations[i]]);
+      }
     }
   }
   if (changeDue > 0) {
