@@ -22,7 +22,7 @@ Very often, you see the flex shorthand defined with only one value. In that case
 
 ## --text--
 
-Which of the following is **not** a feature of flexbox?
+Which properties are set by the `flex` shorthand?
 
 ## --answers--
 
