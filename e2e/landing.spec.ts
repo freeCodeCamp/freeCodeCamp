@@ -1,6 +1,7 @@
 import { expect, test, type Page } from '@playwright/test';
-// import intro from '../client/i18n/locales/english/intro.json';
+import intro from '../client/i18n/locales/english/intro.json';
 import translations from '../client/i18n/locales/english/translations.json';
+import { SuperBlocks } from '../shared/config/superblocks';
 
 const landingPageElements = {
   heading: 'landing-header',
@@ -12,23 +13,29 @@ const landingPageElements = {
   faq: 'landing-page-faq'
 } as const;
 
-// const superBlocks = [
-//   translations.certification.title['Responsive Web Design'],
-//   translations.certification.title['JavaScript Algorithms and Data Structures'],
-//   translations.certification.title['Front End Development Libraries'],
-//   translations.certification.title['Data Visualization'],
-//   translations.certification.title['Relational Database'],
-//   translations.certification.title['Back End Development and APIs'],
-//   translations.certification.title['Quality Assurance'],
-//   translations.certification.title['Scientific Computing with Python'],
-//   translations.certification.title['Data Analysis with Python'],
-//   translations.certification.title['Information Security'],
-//   translations.certification.title['Machine Learning with Python'],
-//   translations.certification.title['College Algebra with Python'],
-//   translations.certification.title['Foundational C# with Microsoft'],
-//   intro['coding-interview-prep'].title,
-//   intro['project-euler'].title
-// ];
+const superBlocks = [
+  intro[SuperBlocks.RespWebDesignNew].title,
+  intro[SuperBlocks.JsAlgoDataStructNew].title,
+  intro[SuperBlocks.FrontEndDevLibs].title,
+  intro[SuperBlocks.DataVis].title,
+  intro[SuperBlocks.RelationalDb].title,
+  intro[SuperBlocks.BackEndDevApis].title,
+  intro[SuperBlocks.QualityAssurance].title,
+  intro[SuperBlocks.SciCompPy].title,
+  intro[SuperBlocks.DataAnalysisPy].title,
+  intro[SuperBlocks.InfoSec].title,
+  intro[SuperBlocks.MachineLearningPy].title,
+  intro[SuperBlocks.CollegeAlgebraPy].title,
+  intro[SuperBlocks.A2English].title,
+  intro[SuperBlocks.FoundationalCSharp].title,
+  intro[SuperBlocks.TheOdinProject].title,
+  intro[SuperBlocks.CodingInterviewPrep].title,
+  intro[SuperBlocks.ProjectEuler].title,
+  intro[SuperBlocks.RosettaCode].title,
+  intro[SuperBlocks.RespWebDesign].title,
+  intro[SuperBlocks.JsAlgoDataStruct].title,
+  intro[SuperBlocks.PythonForEverybody].title
+];
 
 let page: Page;
 
@@ -143,15 +150,14 @@ test('Testimonial endorser people have images, occupation, location and testimon
   }
 });
 
-// Enable these after we release the 4 new superblocks
-// test('Has links to all superblocks', async () => {
-//   const curriculumBtns = page.getByTestId(landingPageElements.curriculumBtns);
-//   await expect(curriculumBtns).toHaveCount(15);
-//   for (let index = 0; index < superBlocks.length; index++) {
-//     const btn = curriculumBtns.nth(index);
-//     await expect(btn).toContainText(superBlocks[index]);
-//   }
-// });
+test('Has links to all superblocks', async () => {
+  const curriculumBtns = page.getByTestId(landingPageElements.curriculumBtns);
+  await expect(curriculumBtns).toHaveCount(21);
+  for (let index = 0; index < superBlocks.length; index++) {
+    const btn = curriculumBtns.nth(index);
+    await expect(btn).toContainText(superBlocks[index]);
+  }
+});
 
 test('Has FAQ section', async () => {
   const faqs = page.getByTestId(landingPageElements.faq);
