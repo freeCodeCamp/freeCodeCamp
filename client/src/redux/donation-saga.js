@@ -72,7 +72,11 @@ export function* postChargeSaga({
     }
 
     if (paymentProvider === PaymentProvider.Stripe) {
-      yield call(postChargeStripe, payload);
+      const response = yield call(postChargeStripe, payload);
+      const error = response?.data?.error;
+      if (error) {
+        throw error;
+      }
     } else if (paymentProvider === PaymentProvider.StripeCard) {
       const optimizedPayload = { paymentMethodId, amount, duration };
       const response = yield call(postChargeStripeCard, optimizedPayload);

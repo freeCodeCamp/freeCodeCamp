@@ -29,9 +29,12 @@ const {
   buildPythonChallenge
 } = require('../../client/src/templates/Challenges/utils/build');
 const {
-  default: createWorker
+  WorkerExecutor
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
-const { challengeTypes } = require('../../shared/config/challenge-types');
+const {
+  challengeTypes,
+  hasNoSolution
+} = require('../../shared/config/challenge-types');
 // the config files are created during the build, but not before linting
 const javaScriptTestEvaluator =
   require('../../client/config/browser-scripts/test-evaluator.json').filename;
@@ -145,7 +148,7 @@ async function setup() {
   });
   global.Worker = createPseudoWorker(await newPageContext(browser));
 
-  pythonWorker = createWorker(pythonTestEvaluator, {
+  pythonWorker = new WorkerExecutor(pythonTestEvaluator, {
     terminateWorker: false
   });
   page = await newPageContext(browser);
@@ -370,17 +373,8 @@ function populateTestsForLang({ lang, challenges, meta }) {
           });
 
           const { challengeType } = challenge;
-          // TODO: shouldn't this be a function in challenge-types.js?
-          if (
-            challengeType !== challengeTypes.html &&
-            challengeType !== challengeTypes.js &&
-            challengeType !== challengeTypes.jsProject &&
-            challengeType !== challengeTypes.modern &&
-            challengeType !== challengeTypes.backend &&
-            challengeType !== challengeTypes.python
-          ) {
-            return;
-          }
+
+          if (hasNoSolution(challengeType)) return;
 
           let { tests = [] } = challenge;
           tests = tests.filter(test => !!test.testString);
@@ -466,7 +460,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
               const solutionFiles = cloneDeep(nextChallenge.challengeFiles);
               if (!solutionFiles) {
                 throw Error(
-                  `No solution found. 
+                  `No solution found.
 Check the next challenge (${nextChallenge.title}): it should have a seed which solves the current challenge.
 For example:
 
@@ -651,7 +645,7 @@ async function getWorkerEvaluator(
   // sys, since sys.modules is not being reset.
   const testWorker = runsInPythonWorker
     ? pythonWorker
-    : createWorker(javaScriptTestEvaluator, { terminateWorker: true });
+    : new WorkerExecutor(javaScriptTestEvaluator, { terminateWorker: true });
   return {
     evaluate: async (testString, timeout) =>
       await testWorker.execute(
