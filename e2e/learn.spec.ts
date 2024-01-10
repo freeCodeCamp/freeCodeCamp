@@ -19,7 +19,7 @@ const superBlocks = [
   'College Algebra with Python',
   'A2 English for Developers (Beta)',
   'Foundational C# with Microsoft',
-  'The Odin Project (Beta)',
+  'The Odin Project - freeCodeCamp Remix (Beta)',
   'Coding Interview Prep',
   'Project Euler',
   'Rosetta Code',

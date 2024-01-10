@@ -42,9 +42,18 @@ function filesToMarkdown(challengeFiles = []) {
 export function insertEditableRegions(challengeFiles = []) {
   if (challengeFiles?.some(file => file.editableRegionBoundaries?.length > 0)) {
     const editableRegionStrings = fileExtension => {
-      const startComment = fileExtension === 'html' ? '<!--' : '/*';
-      const endComment = fileExtension === 'html' ? '-->' : '*/';
-      return `\n${startComment} User Editable Region ${endComment}\n`;
+      switch (fileExtension) {
+        case 'html':
+          return '\n<!-- User Editable Region -->\n';
+        case 'css':
+          return '\n/* User Editable Region */\n';
+        case 'py':
+          return '\n# User Editable Region\n';
+        case 'js':
+          return '\n// User Editable Region\n';
+        default:
+          return '\nUser Editable Region\n';
+      }
     };
 
     const filesWithEditableRegions = challengeFiles.map(file => {

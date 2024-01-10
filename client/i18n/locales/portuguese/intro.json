@@ -1110,7 +1110,7 @@
     }
   },
   "the-odin-project": {
-    "title": "The Odin Project (Beta)",
+    "title": "The Odin Project - freeCodeCamp Remix (Beta)",
     "intro": [
       "The Odin Project was created in 2013 by a lone developer, Erik Trautman. Over the years, an open source community has sprung up to maintain and expand the project.",
       "freeCodeCamp has expanded upon the open source curriculum to make it run interactively in the browser, with tests to evaluate your code and ensure you've understood key concepts.",
