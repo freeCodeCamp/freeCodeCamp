@@ -8,8 +8,8 @@ const settingsPageElement = {
   currentEmailText: 'current-email',
   saveButton: 'save-email-button',
   saveButtonName: 'Save Email Settings',
-  emailSubscriptionYesPleaseButton: 'yes-please-button',
-  emailSubscriptionNoThanksButton: 'no-thanks-button',
+  yesPleaseButtonName: 'Yes please',
+  noThanksButtonName: 'No thanks',
   flashMessageAlert: 'flash-message'
 } as const;
 
@@ -35,6 +35,14 @@ test.describe('Email Settings', () => {
         .getByRole('group', { name: translations.settings.email.weekly })
         .locator('legend')
     ).toBeVisible();
+    await expect(
+      page.getByRole('button', {
+        name: settingsPageElement.yesPleaseButtonName
+      })
+    ).toHaveAttribute('aria-pressed', 'false');
+    await expect(
+      page.getByRole('button', { name: settingsPageElement.noThanksButtonName })
+    ).toHaveAttribute('aria-pressed', 'true');
   });
 
   test('should display email verification alert after email update', async ({
@@ -70,32 +78,18 @@ test.describe('Email Settings', () => {
     );
   });
 
-  test('should have yes please button not pressed by default', async ({
-    page
-  }) => {
-    await expect(
-      page.getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
-    ).toHaveAttribute('aria-pressed', 'false');
-  });
-
-  test('should have no thanks button pressed by default', async ({ page }) => {
-    await expect(
-      page.getByTestId(settingsPageElement.emailSubscriptionNoThanksButton)
-    ).toHaveAttribute('aria-pressed', 'true');
-  });
-
   test('should toggle email subscription correctly', async ({
     page,
     browserName
   }) => {
     test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
 
-    const yesPleaseButton = page.getByTestId(
-      settingsPageElement.emailSubscriptionYesPleaseButton
-    );
-    const noThanksButton = page.getByTestId(
-      settingsPageElement.emailSubscriptionNoThanksButton
-    );
+    const yesPleaseButton = page.getByRole('button', {
+      name: settingsPageElement.yesPleaseButtonName
+    });
+    const noThanksButton = page.getByRole('button', {
+      name: settingsPageElement.noThanksButtonName
+    });
 
     await yesPleaseButton.click();
     await expect(yesPleaseButton).toHaveAttribute('aria-pressed', 'true');
@@ -112,9 +106,7 @@ test.describe('Email Settings', () => {
   }) => {
     test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
 
-    await page
-      .getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
-      .click();
+    await page.getByTestId(settingsPageElement.yesPleaseButtonName).click();
 
     await expect(
       page.getByTestId(settingsPageElement.flashMessageAlert)
@@ -127,9 +119,7 @@ test.describe('Email Settings', () => {
           response.url().includes('update-my-quincy-email') &&
           response.status() === 200
       ),
-      page
-        .getByTestId(settingsPageElement.emailSubscriptionNoThanksButton)
-        .click()
+      page.getByTestId(settingsPageElement.noThanksButtonName).click()
     ]);
   });
 });
