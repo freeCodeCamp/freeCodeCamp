@@ -232,15 +232,17 @@ async () => {
   try {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
-    const typesEl = document.getElementById('types');
     searchInput.value = 'Pikachu';
-    typesEl.innerHTML = ''; // Clear types element before test
     searchButton.click();
 
-    const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
+    const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu');
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      const typesEl = document.createElement('div');
+      typesEl.id = 'types';
+      document.body.appendChild(typesEl);
 
       assert.lengthOf(typesEl.children, 1);
       assert.strictEqual(typesEl?.children[0]?.innerText.trim().toLowerCase(), 'electric');
