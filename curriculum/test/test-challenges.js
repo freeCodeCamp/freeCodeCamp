@@ -31,7 +31,10 @@ const {
 const {
   default: createWorker
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
-const { challengeTypes } = require('../../shared/config/challenge-types');
+const {
+  challengeTypes,
+  hasNoSolution
+} = require('../../shared/config/challenge-types');
 // the config files are created during the build, but not before linting
 const javaScriptTestEvaluator =
   require('../../client/config/browser-scripts/test-evaluator.json').filename;
@@ -370,17 +373,8 @@ function populateTestsForLang({ lang, challenges, meta }) {
           });
 
           const { challengeType } = challenge;
-          // TODO: shouldn't this be a function in challenge-types.js?
-          if (
-            challengeType !== challengeTypes.html &&
-            challengeType !== challengeTypes.js &&
-            challengeType !== challengeTypes.jsProject &&
-            challengeType !== challengeTypes.modern &&
-            challengeType !== challengeTypes.backend &&
-            challengeType !== challengeTypes.python
-          ) {
-            return;
-          }
+
+          if (hasNoSolution(challengeType)) return;
 
           let { tests = [] } = challenge;
           tests = tests.filter(test => !!test.testString);

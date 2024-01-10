@@ -1,6 +1,7 @@
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Button } from '@freecodecamp/ui';
 
 import type { CompletedChallenge } from '../../../redux/prop-types';
 import {
@@ -87,8 +88,8 @@ function ProjectPreviewModal({
       <Modal.Footer>
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='primary'
+          size='large'
+          variant='primary'
           data-playwright-test-label='project-preview-modal-closeButton'
           onClick={() => {
             closeModal('projectPreview');
