@@ -324,13 +324,13 @@ test.describe('Settings', () => {
       page.getByLabel(translations.settings.labels.name, { exact: true })
     ).toHaveValue(personalInformation.name);
     await expect(
-      page.getByLabel(translations.settings.labels.location, { exact: true })
+      page.getByLabel(translations.settings.labels.location)
     ).toHaveValue(personalInformation.location);
     await expect(
-      page.getByLabel(translations.settings.labels.picture, { exact: true })
+      page.getByLabel(translations.settings.labels.picture)
     ).toHaveValue(personalInformation.picture);
     await expect(
-      page.getByLabel(translations.settings.labels.about, { exact: true })
+      page.getByLabel(translations.settings.labels.about)
     ).toHaveValue(personalInformation.about);
     await expect(
       page
