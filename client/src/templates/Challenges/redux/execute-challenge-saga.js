@@ -70,7 +70,10 @@ function* executeCancellableChallengeSaga(payload) {
   const { challengeFiles } = yield select(challengeDataSelector);
 
   // if multifileCertProject, see if body/code size is submittable
-  if (challengeType === challengeTypes.multifileCertProject) {
+  if (
+    challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.multifilePythonCertProject
+  ) {
     const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 
@@ -273,7 +276,11 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
         // Python challenges do not use the preview frame, they use a web worker
         // to run the code. The UI is handled by the xterm component, so there
         // is no need to update the preview frame.
-        if (challengeData.challengeType === challengeTypes.python) {
+        if (
+          challengeData.challengeType === challengeTypes.python ||
+          challengeData.challengeType ===
+            challengeTypes.multifilePythonCertProject
+        ) {
           yield updatePython(challengeData);
         } else {
           yield call(updatePreview, buildData, finalDocument, proxyLogger);
@@ -301,7 +308,10 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
 
 function* updatePreviewSaga() {
   const challengeData = yield select(challengeDataSelector);
-  if (challengeData.challengeType === challengeTypes.python) {
+  if (
+    challengeData.challengeType === challengeTypes.python ||
+    challengeData.challengeType === challengeTypes.multifilePythonCertProject
+  ) {
     yield updatePython(challengeData);
   } else {
     // all other challenges have to recreate the preview
