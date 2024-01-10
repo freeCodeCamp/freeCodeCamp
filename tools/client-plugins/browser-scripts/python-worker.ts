@@ -48,6 +48,8 @@ async function setupPyodide() {
     indexURL: `https://cdn.jsdelivr.net/pyodide/v${pkg.version}/full/`
   });
 
+  await pyodide.loadPackage('pytest');
+
   // We freeze this to prevent learners from getting the worker into a
   // weird state. NOTE: this has to come after pyodide is loaded, because
   // pyodide modifies self while loading.
@@ -135,9 +137,9 @@ function initRunPython() {
       return ""
   `);
 
-  runPython(`
-  await micropip.install("pytest")
-  `);
+  // runPython(`
+  // await micropip.install("pytest")
+  // `);
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const getResetId = globals.get('__get_reset_id') as PyProxy & (() => string);
