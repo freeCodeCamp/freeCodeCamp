@@ -1,8 +1,8 @@
 ---
 id: 62aa27c40ca6f04ab8be5fac
-title: Step 166
+title: Step 167
 challengeType: 0
-dashedName: step-166
+dashedName: step-167
 ---
 
 # --description--
@@ -309,11 +309,7 @@ function attack() {
   if (health <= 0) {
     lose();
   } else if (monsterHealth <= 0) {
-    if (fighting === 2) {
-      winGame();
-    } else {
-      defeatMonster();
-    }
+    fighting === 2 ? winGame() : defeatMonster();
   }
   if (Math.random() <= .1 && inventory.length !== 1) {
     text.innerText += " Your " + inventory.pop() + " breaks.";
