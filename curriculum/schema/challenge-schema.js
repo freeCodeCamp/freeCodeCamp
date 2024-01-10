@@ -5,7 +5,8 @@ const { challengeTypes } = require('../../shared/config/challenge-types');
 const {
   availableCharacters,
   availableBackgrounds,
-  availableAudios
+  availableAudios,
+  availableAlignments
 } = require('./scene-assets');
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
@@ -32,9 +33,9 @@ const prerequisitesJoi = Joi.object().keys({
 });
 
 const positionJoi = Joi.object().keys({
-  x: Joi.number().required(),
-  y: Joi.number().required(),
-  z: Joi.number().required()
+  x: Joi.number().required().strict(),
+  y: Joi.number().required().strict(),
+  z: Joi.number().required().strict()
 });
 
 const setupCharacterJoi = Joi.object().keys({
@@ -42,16 +43,16 @@ const setupCharacterJoi = Joi.object().keys({
     .valid(...availableCharacters)
     .required(),
   position: positionJoi.required(),
-  opacity: Joi.number()
+  opacity: Joi.number().strict()
 });
 
 const setupAudioJoi = Joi.object().keys({
   filename: Joi.string()
     .valid(...availableAudios)
     .required(),
-  startTime: Joi.number().required(),
-  startTimestamp: Joi.number(),
-  finishTimestamp: Joi.number()
+  startTime: Joi.number().required().strict(),
+  startTimestamp: Joi.number().strict(),
+  finishTimestamp: Joi.number().strict()
 });
 
 const setupJoi = Joi.object().keys({
@@ -65,7 +66,7 @@ const setupJoi = Joi.object().keys({
 
 const DialogueJoi = Joi.object().keys({
   text: Joi.string().required(),
-  align: Joi.string()
+  align: Joi.string().valid(...availableAlignments)
 });
 
 const commandJoi = Joi.object().keys({
@@ -74,9 +75,9 @@ const commandJoi = Joi.object().keys({
     .valid(...availableCharacters)
     .required(),
   position: positionJoi,
-  opacity: Joi.number(),
-  startTime: Joi.number().required(),
-  finishTime: Joi.number(),
+  opacity: Joi.number().strict(),
+  startTime: Joi.number().required().strict(),
+  finishTime: Joi.number().strict(),
   dialogue: DialogueJoi
 });
 
