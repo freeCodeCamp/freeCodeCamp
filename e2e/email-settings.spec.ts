@@ -30,6 +30,11 @@ test.describe('Email Settings', () => {
     await expect(
       page.getByRole('button', { name: settingsPageElement.saveButtonName })
     ).toBeDisabled();
+    await expect(
+      page
+        .getByRole('group', { name: translations.settings.email.weekly })
+        .locator('legend')
+    ).toBeVisible();
   });
 
   test('should display email verification alert after email update', async ({
@@ -44,7 +49,7 @@ test.describe('Email Settings', () => {
       .getByLabel(translations.settings.email.new, { exact: true })
       .fill(newEmailAddress);
     await page
-      .getByLabel(translations.settings.email.confirm, { exact: true })
+      .getByLabel(translations.settings.email.confirm)
       .fill(newEmailAddress);
     await page.getByTestId(settingsPageElement.saveButton).click();
     await expect(
@@ -63,14 +68,6 @@ test.describe('Email Settings', () => {
       'href',
       '/update-email'
     );
-  });
-
-  test('should display email subscription description', async ({ page }) => {
-    await expect(
-      page
-        .getByRole('group', { name: translations.settings.email.weekly })
-        .locator('legend')
-    ).toBeVisible();
   });
 
   test('should have yes please button not pressed by default', async ({
