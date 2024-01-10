@@ -241,7 +241,6 @@ function EmailSettings({
             </FormGroup>
           </div>
           <BlockSaveButton
-            data-playwright-test-label='save-email-button'
             aria-disabled={isDisabled}
             bgSize='lg'
             {...(isDisabled && { tabIndex: -1 })}
@@ -258,9 +257,7 @@ function EmailSettings({
           flag={sendQuincyEmail}
           flagName='sendQuincyEmail'
           offLabel={t('buttons.no-thanks')}
-          dataPlaywrightTestOffLabel='no-thanks-button'
           onLabel={t('buttons.yes-please')}
-          dataPlaywrightTestOnLabel='yes-please-button'
           toggleFlag={() => updateQuincyEmail(!sendQuincyEmail)}
         />
       </FullWidthRow>

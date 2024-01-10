@@ -37,11 +37,13 @@ test.describe('Email Settings', () => {
     ).toBeVisible();
     await expect(
       page.getByRole('button', {
-        name: settingsPageElement.yesPleaseButtonName
+        name: translations.buttons['yes-please']
       })
     ).toHaveAttribute('aria-pressed', 'false');
     await expect(
-      page.getByRole('button', { name: settingsPageElement.noThanksButtonName })
+      page.getByRole('button', {
+        name: translations.buttons['no-thanks']
+      })
     ).toHaveAttribute('aria-pressed', 'true');
   });
 
@@ -85,10 +87,10 @@ test.describe('Email Settings', () => {
     test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
 
     const yesPleaseButton = page.getByRole('button', {
-      name: settingsPageElement.yesPleaseButtonName
+      name: translations.buttons['yes-please']
     });
     const noThanksButton = page.getByRole('button', {
-      name: settingsPageElement.noThanksButtonName
+      name: translations.buttons['no-thanks']
     });
 
     await yesPleaseButton.click();
