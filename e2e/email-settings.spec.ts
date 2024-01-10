@@ -6,10 +6,7 @@ const settingsPageElement = {
   emailVerificationAlert: 'email-verification-alert',
   emailVerificationLink: 'email-verification-link',
   currentEmailText: 'current-email',
-  saveButton: 'save-email-button',
   saveButtonName: 'Save Email Settings',
-  yesPleaseButtonName: 'Yes please',
-  noThanksButtonName: 'No thanks',
   flashMessageAlert: 'flash-message'
 } as const;
 
@@ -61,7 +58,9 @@ test.describe('Email Settings', () => {
     await page
       .getByLabel(translations.settings.email.confirm)
       .fill(newEmailAddress);
-    await page.getByTestId(settingsPageElement.saveButton).click();
+    await page
+      .getByRole('button', { name: settingsPageElement.saveButtonName })
+      .click();
     await expect(
       page.getByTestId(settingsPageElement.flashMessageAlert)
     ).toBeVisible();
@@ -108,7 +107,11 @@ test.describe('Email Settings', () => {
   }) => {
     test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
 
-    await page.getByTestId(settingsPageElement.yesPleaseButtonName).click();
+    await page
+      .getByRole('button', {
+        name: translations.buttons['yes-please']
+      })
+      .click();
 
     await expect(
       page.getByTestId(settingsPageElement.flashMessageAlert)
@@ -121,7 +124,11 @@ test.describe('Email Settings', () => {
           response.url().includes('update-my-quincy-email') &&
           response.status() === 200
       ),
-      page.getByTestId(settingsPageElement.noThanksButtonName).click()
+      page
+        .getByRole('button', {
+          name: translations.buttons['no-thanks']
+        })
+        .click()
     ]);
   });
 });
