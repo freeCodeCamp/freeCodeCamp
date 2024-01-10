@@ -103,35 +103,6 @@ ctx.onmessage = async (e: PythonRunEvent) => {
 
     const { input, test } = evaluatedTestString as EvaluatedTeststring;
 
-    const inputIterator = (input ?? []).values();
-    const testInput = () => {
-      const next = inputIterator.next();
-      if (next.done) {
-        // TODO: handle this error in the UI
-        throw new Error('Too many input calls');
-      } else {
-        return next.value;
-      }
-    };
-
-    // Clear out the old import otherwise it will use the old input/print
-    // functions
-    pyodide.runPython(`
-import sys
-try:
-  del sys.modules['jscustom']
-  del jscustom
-except (KeyError, NameError):
-  pass
-
-`);
-
-    // Make input available to python (print is not used yet)
-    pyodide.registerJsModule('jscustom', {
-      input: testInput
-      // print: () => {}
-    });
-
     // Some tests rely on __name__ being set to __main__ and we new dicts do not
     // have this set by default.
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -146,16 +117,36 @@ except (KeyError, NameError):
       runPython
     };
 
-    runPython(
-      `
-  import jscustom
-  from jscustom import input
-  `
-    );
+    runPython(`
+def __inputGen(xs):
+  def gen():
+    for x in xs:
+      yield x
+  iter = gen()
+  def input(arg=None):
+    return next(iter)
+
+  return input
+
+input = __inputGen(${JSON.stringify(input ?? [])})
+`);
 
     // Evaluates the learner's code so that any variables they define are
     // available to the test.
-    runPython(code);
+    try {
+      runPython(code);
+    } catch (err) {
+      // We don't, yet, want user code to raise exceptions. When they do, we
+      // count this as a failing test.
+      ctx.postMessage({
+        err: {
+          message: (err as Error).message,
+          stack: (err as Error).stack,
+          syntaxError: true
+        }
+      });
+      return;
+    }
     // TODO: remove the next line, creating __locals, once all the tests access
     // variables directly.
     runPython('__locals = globals()');

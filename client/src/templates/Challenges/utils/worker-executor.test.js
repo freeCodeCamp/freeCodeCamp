@@ -2,7 +2,7 @@
  * @jest-environment node
  */
 
-import createWorker from './worker-executor';
+import { WorkerExecutor } from './worker-executor';
 
 function mockWorker({ init, postMessage, terminate } = {}) {
   global.Worker = jest.fn(function () {
@@ -31,7 +31,7 @@ afterEach(() => {
 it('Worker executor should successfully execute one task', async () => {
   const terminateHandler = jest.fn();
   mockWorker({ terminate: terminateHandler });
-  const testWorker = createWorker('test');
+  const testWorker = new WorkerExecutor('test');
   expect(testWorker).not.toBeUndefined();
 
   const task = testWorker.execute('test');
@@ -57,7 +57,7 @@ it('Worker executor should successfully execute one task', async () => {
 it('Worker executor should successfully execute two tasks in parallel', async () => {
   const terminateHandler = jest.fn();
   mockWorker({ terminate: terminateHandler });
-  const testWorker = createWorker('test');
+  const testWorker = new WorkerExecutor('test');
 
   const task1 = testWorker.execute('test1');
   const handler1 = jest.fn();
@@ -90,7 +90,7 @@ it('Worker executor should successfully execute two tasks in parallel', async ()
 
 it('Worker executor should successfully execute 3 tasks in parallel and use two workers', async () => {
   mockWorker();
-  const testWorker = createWorker('test');
+  const testWorker = new WorkerExecutor('test');
 
   const task1 = testWorker.execute('test1');
   const task2 = testWorker.execute('test2');
@@ -105,7 +105,7 @@ it('Worker executor should successfully execute 3 tasks in parallel and use two 
 it('Worker executor should successfully execute 3 tasks, use 3 workers and terminate each worker', async () => {
   const terminateHandler = jest.fn();
   mockWorker({ terminate: terminateHandler });
-  const testWorker = createWorker('test', { terminateWorker: true });
+  const testWorker = new WorkerExecutor('test', { terminateWorker: true });
 
   const task1 = testWorker.execute('test1');
   const task2 = testWorker.execute('test2');
@@ -120,7 +120,7 @@ it('Worker executor should successfully execute 3 tasks, use 3 workers and termi
 
 it('Worker executor should successfully execute 3 tasks in parallel and use 3 workers', async () => {
   mockWorker();
-  const testWorker = createWorker('test', { maxWorkers: 3 });
+  const testWorker = new WorkerExecutor('test', { maxWorkers: 3 });
 
   const task1 = testWorker.execute('test1');
   const task2 = testWorker.execute('test2');
@@ -134,7 +134,7 @@ it('Worker executor should successfully execute 3 tasks in parallel and use 3 wo
 
 it('Worker executor should successfully execute 3 tasks and use 1 worker', async () => {
   mockWorker();
-  const testWorker = createWorker('test', { maxWorkers: 1 });
+  const testWorker = new WorkerExecutor('test', { maxWorkers: 1 });
 
   const task1 = testWorker.execute('test1');
   const task2 = testWorker.execute('test2');
@@ -153,7 +153,7 @@ it('Worker executor should reject task', async () => {
       throw error;
     }
   });
-  const testWorker = createWorker('test');
+  const testWorker = new WorkerExecutor('test');
 
   const task = testWorker.execute('test');
   const errorHandler = jest.fn();
@@ -181,7 +181,7 @@ it('Worker executor should emit LOG events', async () => {
       });
     }
   });
-  const testWorker = createWorker('test');
+  const testWorker = new WorkerExecutor('test');
 
   const task = testWorker.execute('test');
   const handler = jest.fn();
@@ -209,7 +209,7 @@ it('Worker executor should reject task on timeout', async () => {
     postMessage: () => {},
     terminate: terminateHandler
   });
-  const testWorker = createWorker('test');
+  const testWorker = new WorkerExecutor('test');
 
   const task = testWorker.execute('test', 0);
   const errorHandler = jest.fn();
@@ -224,7 +224,9 @@ it('Worker executor should reject task on timeout', async () => {
 
 it('Worker executor should get worker from specified location', async () => {
   mockWorker();
-  const testWorker = createWorker('test', { location: '/other/location/' });
+  const testWorker = new WorkerExecutor('test', {
+    location: '/other/location/'
+  });
 
   const task = testWorker.execute('test');
   await expect(task.done).resolves.toBe('test processed');
@@ -235,7 +237,7 @@ it('Worker executor should get worker from specified location', async () => {
 
 it('Task should only emit handler once', () => {
   mockWorker();
-  const testWorker = createWorker('test');
+  const testWorker = new WorkerExecutor('test');
   const task = testWorker.execute('test');
   const handler = jest.fn();
   task.once('testOnce', handler);

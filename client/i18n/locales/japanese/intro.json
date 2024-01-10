@@ -1110,7 +1110,7 @@
     }
   },
   "the-odin-project": {
-    "title": "The Odin Project (ベータ版)",
+    "title": "The Odin Project - freeCodeCamp Remix (Beta)",
     "intro": [
       "The Odin Project was created in 2013 by a lone developer, Erik Trautman. Over the years, an open source community has sprung up to maintain and expand the project.",
       "freeCodeCamp has expanded upon the open source curriculum to make it run interactively in the browser, with tests to evaluate your code and ensure you've understood key concepts.",
@@ -1221,54 +1221,54 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "(New) Foundational C# with Microsoft",
+    "title": "(新) Microsoft 連携・基礎 C#",
     "intro": [
-      "This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development.",
-      "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
-      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building applications."
+      "このコースは、C# プログラミングについての総合的な入門講座です。中心となる概念、構文、ソフトウェア開発における実践的な応用例などをカバーします。",
+      "以下のハンズオン演習とプロジェクトを通して、変数、データ型、制御構造、オブジェクト指向プログラミングの原則など、C# の基礎を学習します。",
+      "このコースを完了する頃には、C# を使いこなしてアプリケーションを作成できる実践的なスキルと知識が身についていることでしょう。"
     ],
-    "note": "Each section below has a trophy associated with it that you must earn on the Microsoft Learn platform. After earning each trophy, you need to verify them on freeCodeCamp. Once you have done those, you can qualify for the certification exam.",
+    "note": "以下の各セクションでは、それぞれ関連するトロフィーを Microsoft Learn プラットフォームで獲得する必要があります。それぞれのトロフィーを獲得後、freeCodeCamp のサイトで確認を実行してください。すべてのトロフィーの確認が完了すると、認定試験の受験資格が得られます。",
     "blocks": {
       "write-your-first-code-using-c-sharp": {
-        "title": "Write Your First Code Using C#",
+        "title": "初めての C# コードを書く",
         "intro": [
-          "Begin your journey by learning to write your first code using C#. Develop a strong foundation as you explore the fundamentals and syntax of the language, setting the stage for your programming adventures."
+          "C# を使った初めてのコードを書くところから始めましょう。言語の基本と構文を学び、プログラミングの世界の冒険に備えてしっかりと基礎を固めます。"
         ]
       },
       "create-and-run-simple-c-sharp-console-applications": {
-        "title": "Create and Run Simple C# Console Applications",
+        "title": "シンプルな C# コンソールアプリケーションを作成、実行する",
         "intro": [
-          "Master the art of creating and running simple C# console applications. Dive into the world of console-based programming, where you will gain hands-on experience executing your code and seeing it in action."
+          "C# でシンプルなコンソールアプリケーションを作成、実行する技術を習得しましょう。コンソールベースのプログラミングの世界に飛び込み、自分で書いたコードを実行して動作を確認する体験をハンズオンで学習します。"
         ]
       },
       "add-logic-to-c-sharp-console-applications": {
-        "title": "Add Logic to C# Console Applications",
+        "title": "C# コンソールアプリケーションにロジックを追加する",
         "intro": [
-          "Unlock the power of logic in C# console applications. Learn how to add logic and decision-making capabilities to your code, enabling your applications to make dynamic choices and respond intelligently to different scenarios."
+          "C# コンソールアプリケーションでロジックの力を活用しましょう。あなたのアプリケーションが動的な選択を行ってさまざまなシナリオに賢く対応できるように、コードに論理と判断の機能を追加する方法を学習します。"
         ]
       },
       "work-with-variable-data-in-c-sharp-console-applications": {
-        "title": "Work with Variable Data in C# Console Applications",
+        "title": "C# コンソールアプリケーションで変数データを扱う",
         "intro": [
-          "Discover the versatility of variable data in C# console applications. Harness the ability to store and manipulate different types of data, such as numbers and text, as you delve into the essential concepts of variables and data handling."
+          "C# コンソールアプリケーションで、変数データの汎用性に触れましょう。変数とデータ処理の本質的な概念を掘り下げながら、数値やテキストなど、さまざまな種類のデータを保存、操作する機能を活用します。"
         ]
       },
       "create-methods-in-c-sharp-console-applications": {
-        "title": "Create Methods in C# Console Applications",
+        "title": "C# コンソールアプリケーションでメソッドを作成する",
         "intro": [
-          "Take your C# console applications to the next level by mastering the art of creating methods. Learn how to organize and modularize your code, making it more manageable, reusable, and efficient."
+          "メソッドを作成する技術を習得して、あなたの C# コンソールアプリケーションを次のレベルへと引き上げましょう。コードを管理しやすく、再利用しやすく、そして効率的にするために、整理したりモジュール化したりする方法を学習します。"
         ]
       },
       "debug-c-sharp-console-applications": {
-        "title": "Debug C# Console Applications",
+        "title": "C# コンソールアプリケーションをデバッグする",
         "intro": [
-          "Sharpen your troubleshooting skills as you dive into the world of debugging C# console applications. Gain the ability to identify and fix issues in your code, ensuring your applications run smoothly and deliver the desired results."
+          "C# コンソールアプリケーションをデバッグしながら、トラブルシューティングのスキルを磨きましょう。コード内の問題を特定して修正し、アプリケーションがスムーズに実行されて期待通りの結果が得られるようにする力を身に付けます。"
         ]
       },
       "foundational-c-sharp-with-microsoft-certification-exam": {
-        "title": "Foundational C# with Microsoft Certification Exam",
+        "title": "Microsoft 連携・基礎 C# 認定試験",
         "intro": [
-          "Use what you've learned to pass the exam to earn your Foundational C# with Microsoft Certification"
+          "ここまで学んだことを活かして認定試験に合格し、Microsoft 連携・基礎 C# 認定証を獲得しましょう。"
         ]
       }
     }
