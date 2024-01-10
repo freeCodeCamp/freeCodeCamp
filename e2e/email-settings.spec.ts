@@ -7,6 +7,7 @@ const settingsPageElement = {
   emailVerificationLink: 'email-verification-link',
   currentEmailText: 'current-email',
   saveButton: 'save-email-button',
+  saveButtonName: 'Save Email Settings',
   emailSubscriptionYesPleaseButton: 'yes-please-button',
   emailSubscriptionNoThanksButton: 'no-thanks-button',
   flashMessageAlert: 'flash-message'
@@ -19,23 +20,15 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Email Settings', () => {
-  test('should display email settings section header on settings page', async ({
-    page
-  }) => {
+  test('should display the content correctly', async ({ page }) => {
     await expect(
       page.getByTestId(settingsPageElement.emailSettingsSectionHeader)
     ).toHaveText(translations.settings.email.heading);
-  });
-
-  test('should display current email address', async ({ page }) => {
     await expect(
       page.getByTestId(settingsPageElement.currentEmailText)
     ).toHaveText('foo@bar.com');
-  });
-
-  test('should disable save button by default', async ({ page }) => {
     await expect(
-      page.getByTestId(settingsPageElement.saveButton)
+      page.getByRole('button', { name: settingsPageElement.saveButtonName })
     ).toBeDisabled();
   });
 
