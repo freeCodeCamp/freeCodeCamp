@@ -1,6 +1,6 @@
 {
   "extends": ["github>freecodecamp/renovate-config"],
-  "schedule": ["after 5pm on Monday"],
+  "rebaseWhen": "conflicted"
   "packageRules": [
     {
       "groupName": "Disabled",
