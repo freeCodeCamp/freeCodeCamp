@@ -372,6 +372,7 @@
     "running-tests": "// テストを実行中です",
     "tests-completed": "// テストが完了しました",
     "console-output": "// コンソール出力",
+    "syntax-error": "コードにエラーがあるためテストを実行できない状態です。コードを修正して再度お試しください。",
     "sign-in-save": "サインインして進行状況を保存",
     "download-solution": "回答をダウンロード",
     "download-results": "結果をダウンロード",

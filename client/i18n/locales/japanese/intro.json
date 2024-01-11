@@ -210,8 +210,8 @@
       "learn-intermediate-css-by-building-a-cat-painting": {
         "title": "CSS 中級の学習: 猫の絵を作成する",
         "intro": [
-          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts",
-          "In this course, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+          "見た目に美しく、レスポンシブなウェブレイアウトを作成するには CSS の配置をマスターすることが不可欠です。",
+          "このコースでは猫の絵を作成しながら、絶対位置指定、z-index プロパティ、transform プロパティの使い方を学習します。"
         ]
       }
     }
