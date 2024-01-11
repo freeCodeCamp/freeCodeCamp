@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import { noop } from 'lodash-es';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Button } from '@freecodecamp/ui';
 
 import Login from '../../../components/Header/components/login';
 import { executeGA } from '../../../redux/actions';
@@ -26,6 +27,7 @@ import {
 } from '../redux/selectors';
 import Progress from '../../../components/Progress';
 import GreenPass from '../../../assets/icons/green-pass';
+import { Spacer } from '../../../components/helpers';
 
 import './completion-modal.css';
 
@@ -194,12 +196,15 @@ class CompletionModal extends Component<
         </Modal.Body>
         <Modal.Footer>
           {isSignedIn ? null : (
-            <Login block={true}>{t('learn.sign-in-save')}</Login>
+            <>
+              <Login block={true}>{t('learn.sign-in-save')}</Login>
+              <Spacer size='xxSmall' />
+            </>
           )}
           <Button
             block={true}
-            bsSize='large'
-            bsStyle='primary'
+            size='large'
+            variant='primary'
             disabled={isSubmitting}
             data-cy='submit-challenge'
             onClick={() => submitChallenge()}
@@ -207,12 +212,12 @@ class CompletionModal extends Component<
             {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
             <span className='hidden-xs'> (Ctrl + Enter)</span>
           </Button>
+          <Spacer size='xxSmall' />
           {this.state.downloadURL ? (
             <Button
               block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-invert'
+              size='large'
+              variant='primary'
               download={`${dashedName}.txt`}
               href={this.state.downloadURL}
             >

@@ -20,6 +20,11 @@ import {
 
 jest.mock('../utils/ajax');
 jest.mock('../analytics');
+jest.mock('../utils/stripe', () => ({
+  stripe: Promise.resolve({
+    redirectToCheckout: jest.fn()
+  })
+}));
 
 const postChargeDataMock = {
   payload: {

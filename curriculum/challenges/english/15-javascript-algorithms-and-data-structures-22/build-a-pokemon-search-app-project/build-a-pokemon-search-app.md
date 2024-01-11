@@ -521,6 +521,11 @@ label {
   align-self: center;
 }
 
+#search-input:focus-visible,
+#search-button:focus-visible {
+  outline: 3px solid #198eee;
+}
+
 #search-input {
   height: 40px;
   padding-left: 10px;
@@ -534,7 +539,6 @@ label {
   text-align: center;
   background-color: #7f21ab;
   color: #f5f6f7;
-  outline: none;
   border: none;
 }
 

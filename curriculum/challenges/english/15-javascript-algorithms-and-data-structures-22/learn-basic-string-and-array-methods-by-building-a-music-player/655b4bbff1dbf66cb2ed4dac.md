@@ -1,8 +1,8 @@
 ---
 id: 655b4bbff1dbf66cb2ed4dac
-title: Step 82
+title: Step 83
 challengeType: 0
-dashedName: step-82
+dashedName: step-83
 ---
 
 # --description--
@@ -11,7 +11,7 @@ Use an `if` statement to check if `nextSongExists` exists, then call the `playNe
 
 # --hints--
 
-You should create an `if` statment with the condition `nextSongExists`.
+You should create an `if` statement with the condition `nextSongExists`.
 
 ```js
 assert.match(code, /if\s*\(nextSongExists\)\s*\{\s*/)
