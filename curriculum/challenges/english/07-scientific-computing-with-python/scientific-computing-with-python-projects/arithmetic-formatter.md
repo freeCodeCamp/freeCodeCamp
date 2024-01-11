@@ -80,14 +80,16 @@ The unit tests for this project are in `test_module.py`. We are running the test
 ```js
 ({
   test: () => {
-    const testCode = `
+    pyodide.FS.writeFile('/home/pyodide/arithmetic_arranger.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py', 
+    `
+from arithmetic_arranger import arithmetic_arranger
 import pytest
-from pytest import main
 test_cases = [
-    pytest.param(
-        [['3801 - 2', '123 + 49']],
-        '  3801      123\n'
-        '-    2    +  49\n'
+  pytest.param(
+    [['3801 - 2', '123 + 49']],
+        '  3801      123\\n'
+        '-    2    +  49\\n'
         '------    -----',
         'Expected different output when calling "arithmetic_arranger()" with ["3801 - 2", "123 + 49"]',
         id='test_two_problems_arrangement1'
@@ -98,8 +100,10 @@ test_cases = [
 def test_template(arguments, expected_output, fail_message):
     actual = arithmetic_arranger(*arguments)
     assert actual == expected_output, fail_message
-
-main(['-vv'])
+`);
+    const testCode = `
+from pytest import main
+main(['-vv', '/home/pyodide/test_module.py'])
 `;
     const out = __pyodide.runPython(testCode);
     console.log(out);
