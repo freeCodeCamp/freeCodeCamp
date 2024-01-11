@@ -372,6 +372,7 @@
     "running-tests": "// kufanya majaribio",
     "tests-completed": "// majaribio yamekamilika",
     "console-output": "// pato la console",
+    "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "sign-in-save": "Ingia katika akaunti ili kuhifadhi maendeleo yako",
     "download-solution": "Pakua suluhisho langu",
     "download-results": "Pakua matokeo yangu",
