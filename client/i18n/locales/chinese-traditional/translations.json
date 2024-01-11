@@ -372,6 +372,7 @@
     "running-tests": "// 運行測試",
     "tests-completed": "// 測試完成",
     "console-output": "// 打印輸出",
+    "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "sign-in-save": "登錄以保存你的學習進度",
     "download-solution": "下載我的解決方案",
     "download-results": "Download my results",
