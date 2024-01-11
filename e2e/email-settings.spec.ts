@@ -6,7 +6,8 @@ const settingsPageElement = {
   emailVerificationAlert: 'email-verification-alert',
   emailVerificationLink: 'email-verification-link',
   currentEmailText: 'current-email',
-  saveButtonName: 'Save Email Settings',
+  saveButtonName:
+    translations.buttons.save + ' ' + translations.settings.email.heading,
   flashMessageAlert: 'flash-message'
 } as const;
 
