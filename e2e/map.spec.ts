@@ -44,6 +44,7 @@ test.describe('Map Component', () => {
     ).toBeVisible();
     const curriculumBtns = page.getByTestId('curriculum-map-button');
     await expect(curriculumBtns).toHaveCount(superBlocksWithLinks.length);
+
     for (let i = 0; i < superBlocksWithLinks.length; i++) {
       const superblockLink = page.getByRole('link', {
         // This is a hacky bypass because `Responsive Web Design` hits both links.
@@ -51,13 +52,15 @@ test.describe('Map Component', () => {
           superBlockTitleOverride[intro[superBlocksWithLinks[i]].title] ??
           intro[superBlocksWithLinks[i]].title
       });
-      expect(await superblockLink.getAttribute('href')).toBe(
+
+      await expect(superblockLink).toBeVisible();
+      await expect(superblockLink).toHaveAttribute(
+        'href',
         `/learn/${
           superBlockSlugOverride[superBlocksWithLinks[i]] ??
           superBlocksWithLinks[i]
         }/`
       );
-      await superblockLink.click();
     }
   });
 });
