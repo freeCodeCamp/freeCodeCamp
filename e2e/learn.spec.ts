@@ -74,7 +74,11 @@ test('the page renders all curriculum certifications', async () => {
 test.describe('Learn (authenticated user)', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-  test('the page shows a random quote for an authenticated user', async () => {
+  test('the page shows a random quote for an authenticated user', async ({
+    browser
+  }) => {
+    await page.close();
+    page = await browser.newPage();
     await page.goto('/learn');
     const shownQuote = await page.getByTestId('random-quote').textContent();
 
