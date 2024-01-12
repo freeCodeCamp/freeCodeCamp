@@ -16,7 +16,7 @@ Students in primary school often arrange arithmetic problems vertically to make 
 -----
 ```
 
-Create a function that receives a list of strings that are arithmetic problems and returns the problems arranged vertically and side-by-side. The function should optionally take a second argument. When the second argument is set to `True`, the answers should be displayed.
+Finish the `arithmetic_arranger` function that receives a list of strings which are arithmetic problems, and returns the problems arranged vertically and side-by-side. The function should optionally take a second argument. When the second argument is set to `True`, the answers should be displayed.
 
 ## Example
 
@@ -53,7 +53,6 @@ Output:
 
 The function will return the correct conversion if the supplied problems are properly formatted, otherwise, it will **return** a **string** that describes an error that is meaningful to the user.
 
-
 - Situations that will return an error:
   - If there are **too many problems** supplied to the function. The limit is **five**, anything more will return:
     `Error: Too many problems.`
@@ -68,10 +67,6 @@ The function will return the correct conversion if the supplied problems are pro
   - Numbers should be right-aligned.
   - There should be four spaces between each problem.
   - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
-
-## Testing
-
-The unit tests for this project are in `test_module.py`. We are running the tests from `test_module.py` in `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button. Alternatively you may run the tests by inputting `pytest` in the console.
 
 # --hints--
 
@@ -106,7 +101,317 @@ from pytest import main
 main(['-vv', '/home/pyodide/test_module.py'])
 `;
     const out = __pyodide.runPython(testCode);
-    console.log(out);
+    assert.equal(out, 0);
+  }
+})
+```
+
+`arithmetic_arranger(["1 + 2", "1 - 9380"])` should return `  1         1\n+ 2    - 9380\n---    ------`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/arithmetic_arranger.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py', 
+    `
+from arithmetic_arranger import arithmetic_arranger
+import pytest
+test_cases = [
+    pytest.param(
+        [['1 + 2', '1 - 9380']],
+        '  1         1\\n'
+        '+ 2    - 9380\\n'
+        '---    ------',
+        'Expected different output when calling "arithmetic_arranger()" with ["1 + 2", "1 - 9380"]',
+        id='test_two_problems_arrangement2')
+]
+
+@pytest.mark.parametrize('arguments,expected_output,fail_message', test_cases)
+def test_template(arguments, expected_output, fail_message):
+    actual = arithmetic_arranger(*arguments)
+    assert actual == expected_output, fail_message
+`);
+    const testCode = `
+from pytest import main
+main(['-vv', '/home/pyodide/test_module.py'])
+`;
+    const out = __pyodide.runPython(testCode);
+    assert.equal(out, 0);
+  }
+})
+```
+
+`arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"])` should return `    3      3801      45      123\n+ 855    -    2    + 43    +  49\n-----    ------    ----    -----`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/arithmetic_arranger.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py', 
+    `
+from arithmetic_arranger import arithmetic_arranger
+import pytest
+test_cases = [
+    pytest.param(
+        [['3 + 855', '3801 - 2', '45 + 43', '123 + 49']],
+        '    3      3801      45      123\\n'
+        '+ 855    -    2    + 43    +  49\\n'
+        '-----    ------    ----    -----',
+        'Expected different output when calling "arithmetic_arranger()" with ["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]',
+        id='test_four_problems_arrangement')
+]
+
+@pytest.mark.parametrize('arguments,expected_output,fail_message', test_cases)
+def test_template(arguments, expected_output, fail_message):
+    actual = arithmetic_arranger(*arguments)
+    assert actual == expected_output, fail_message
+`);
+    const testCode = `
+from pytest import main
+main(['-vv', '/home/pyodide/test_module.py'])
+`;
+    const out = __pyodide.runPython(testCode);
+    assert.equal(out, 0);
+  }
+})
+```
+
+`arithmetic_arranger(["11 + 4", "3801 - 2999", "1 + 2", "123 + 49", "1 - 9380"])` should return `  11      3801      1      123         1\n+  4    - 2999    + 2    +  49    - 9380\n----    ------    ---    -----    ------`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/arithmetic_arranger.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py', 
+    `
+from arithmetic_arranger import arithmetic_arranger
+import pytest
+test_cases = [
+    pytest.param(
+        [['11 + 4', '3801 - 2999', '1 + 2', '123 + 49', '1 - 9380']],
+        '  11      3801      1      123         1\\n'
+        '+  4    - 2999    + 2    +  49    - 9380\\n'
+        '----    ------    ---    -----    ------',
+        'Expected different output when calling "arithmetic_arranger()" with ["11 + 4", "3801 - 2999", "1 + 2", "123 + 49", "1 - 9380"]',
+        id='test_five_problems_arrangement')
+]
+
+@pytest.mark.parametrize('arguments,expected_output,fail_message', test_cases)
+def test_template(arguments, expected_output, fail_message):
+    actual = arithmetic_arranger(*arguments)
+    assert actual == expected_output, fail_message
+`);
+    const testCode = `
+from pytest import main
+main(['-vv', '/home/pyodide/test_module.py'])
+`;
+    const out = __pyodide.runPython(testCode);
+    assert.equal(out, 0);
+  }
+})
+```
+
+`arithmetic_arranger(["44 + 815", "909 - 2", "45 + 43", "123 + 49", "888 + 40", "653 + 87"])` should return `Error: Too many problems.`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/arithmetic_arranger.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py', 
+    `
+from arithmetic_arranger import arithmetic_arranger
+import pytest
+test_cases = [
+    pytest.param(
+        [['44 + 815', '909 - 2', '45 + 43', '123 + 49',
+          '888 + 40', '653 + 87']],
+        'Error: Too many problems.',
+        'Expected calling "arithmetic_arranger()" with more than five problems to return "Error: Too many problems."',
+        id='test_too_many_problems')
+]
+
+@pytest.mark.parametrize('arguments,expected_output,fail_message', test_cases)
+def test_template(arguments, expected_output, fail_message):
+    actual = arithmetic_arranger(*arguments)
+    assert actual == expected_output, fail_message
+`);
+    const testCode = `
+from pytest import main
+main(['-vv', '/home/pyodide/test_module.py'])
+`;
+    const out = __pyodide.runPython(testCode);
+    assert.equal(out, 0);
+  }
+})
+```
+
+`arithmetic_arranger(["3 / 855", "3801 - 2", "45 + 43", "123 + 49"])` should return `Error: Operator must be '+' or '-'.`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/arithmetic_arranger.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py', 
+    `
+from arithmetic_arranger import arithmetic_arranger
+import pytest
+test_cases = [
+    pytest.param(
+        [['3 / 855', '3801 - 2', '45 + 43', '123 + 49']],
+        "Error: Operator must be '+' or '-'.",
+        '''Expected calling "arithmetic_arranger()" with a problem that uses the "/" operator to return "Error: Operator must be '+' or '-'."''',
+        id='test_incorrect_operator')
+]
+
+@pytest.mark.parametrize('arguments,expected_output,fail_message', test_cases)
+def test_template(arguments, expected_output, fail_message):
+    actual = arithmetic_arranger(*arguments)
+    assert actual == expected_output, fail_message
+`);
+    const testCode = `
+from pytest import main
+main(['-vv', '/home/pyodide/test_module.py'])
+`;
+    const out = __pyodide.runPython(testCode);
+    assert.equal(out, 0);
+  }
+})
+```
+
+`arithmetic_arranger(["24 + 85215", "3801 - 2", "45 + 43", "123 + 49"])` should return `Error: Numbers cannot be more than four digits.`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/arithmetic_arranger.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py', 
+    `
+from arithmetic_arranger import arithmetic_arranger
+import pytest
+test_cases = [
+    pytest.param(
+        [['24 + 85215', '3801 - 2', '45 + 43', '123 + 49']],
+        'Error: Numbers cannot be more than four digits.',
+        'Expected calling "arithmetic_arranger()" with a problem that has a number over 4 digits long to return "Error: Numbers cannot be more than four digits."',
+        id='test_too_many_digits')
+]
+
+@pytest.mark.parametrize('arguments,expected_output,fail_message', test_cases)
+def test_template(arguments, expected_output, fail_message):
+    actual = arithmetic_arranger(*arguments)
+    assert actual == expected_output, fail_message
+`);
+    const testCode = `
+from pytest import main
+main(['-vv', '/home/pyodide/test_module.py'])
+`;
+    const out = __pyodide.runPython(testCode);
+    assert.equal(out, 0);
+  }
+})
+```
+
+`arithmetic_arranger(["98 + 3g5", "3801 - 2", "45 + 43", "123 + 49"])` should return `Error: Numbers must only contain digits.`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/arithmetic_arranger.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py', 
+    `
+from arithmetic_arranger import arithmetic_arranger
+import pytest
+test_cases = [
+    pytest.param(
+        [['98 + 3g5', '3801 - 2', '45 + 43', '123 + 49']],
+        'Error: Numbers must only contain digits.',
+        'Expected calling "arithmetic_arranger()" with a problem that contains a letter character in the number to return "Error: Numbers must only contain digits."',
+        id='test_only_digits')
+]
+
+@pytest.mark.parametrize('arguments,expected_output,fail_message', test_cases)
+def test_template(arguments, expected_output, fail_message):
+    actual = arithmetic_arranger(*arguments)
+    assert actual == expected_output, fail_message
+`);
+    const testCode = `
+from pytest import main
+main(['-vv', '/home/pyodide/test_module.py'])
+`;
+    const out = __pyodide.runPython(testCode);
+    assert.equal(out, 0);
+  }
+})
+```
+
+`arithmetic_arranger(["3 + 855", "988 + 40"], True)` should return `    3      988\n+ 855    +  40\n-----    -----\n  858     1028`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/arithmetic_arranger.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py', 
+    `
+from arithmetic_arranger import arithmetic_arranger
+import pytest
+test_cases = [
+    pytest.param(
+        [['3 + 855', '988 + 40'], True],
+        '    3      988\\n'
+        '+ 855    +  40\\n'
+        '-----    -----\\n'
+        '  858     1028',
+        'Expected solutions to be correctly displayed in output when calling "arithmetic_arranger()" with ["3 + 855", "988 + 40"] and a second argument of \`True\`.',
+        id='test_two_problems_with_solutions')
+]
+
+@pytest.mark.parametrize('arguments,expected_output,fail_message', test_cases)
+def test_template(arguments, expected_output, fail_message):
+    actual = arithmetic_arranger(*arguments)
+    assert actual == expected_output, fail_message
+`);
+    const testCode = `
+from pytest import main
+main(['-vv', '/home/pyodide/test_module.py'])
+`;
+    const out = __pyodide.runPython(testCode);
+    assert.equal(out, 0);
+  }
+})
+```
+
+`arithmetic_arranger(["32 - 698", "1 - 3801", "45 + 43", "123 + 49", "988 + 40"], True)` should return `   32         1      45      123      988\n- 698    - 3801    + 43    +  49    +  40\n-----    ------    ----    -----    -----\n -666     -3800      88      172     1028`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/arithmetic_arranger.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py', 
+    `
+from arithmetic_arranger import arithmetic_arranger
+import pytest
+test_cases = [
+    pytest.param(
+        [['32 - 698', '1 - 3801', '45 + 43', '123 + 49', '988 + 40'], True],
+        '   32         1      45      123      988\\n'
+        '- 698    - 3801    + 43    +  49    +  40\\n'
+        '-----    ------    ----    -----    -----\\n'
+        ' -666     -3800      88      172     1028',
+        'Expected solutions to be correctly displayed in output when calling "arithmetic_arranger()" with five arithmetic problems and a second argument of \`True\`.'
+    )
+]
+
+@pytest.mark.parametrize('arguments,expected_output,fail_message', test_cases)
+def test_template(arguments, expected_output, fail_message):
+    actual = arithmetic_arranger(*arguments)
+    assert actual == expected_output, fail_message
+`);
+    const testCode = `
+from pytest import main
+main(['-vv', '/home/pyodide/test_module.py'])
+`;
+    const out = __pyodide.runPython(testCode);
+    assert.equal(out, 0);
   }
 })
 ```
@@ -116,88 +421,11 @@ main(['-vv', '/home/pyodide/test_module.py'])
 ## --seed-contents--
 
 ```py
-import pytest
-from pytest import main
+def arithmetic_arranger(problems, show_answers=False):
 
+    return problems
 
-print("\n", arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]))
-
-
-test_cases = [
-    pytest.param(
-        [['3801 - 2', '123 + 49']],
-        '  3801      123\n'
-        '-    2    +  49\n'
-        '------    -----',
-        'Expected different output when calling "arithmetic_arranger()" with ["3801 - 2", "123 + 49"]',
-        id='test_two_problems_arrangement1'),
-    pytest.param(
-        [['1 + 2', '1 - 9380']],
-        '  1         1\n'
-        '+ 2    - 9380\n'
-        '---    ------',
-        'Expected different output when calling "arithmetic_arranger()" with ["1 + 2", "1 - 9380"]',
-        id='test_two_problems_arrangement2'),
-    pytest.param(
-        [['3 + 855', '3801 - 2', '45 + 43', '123 + 49']],
-        '    3      3801      45      123\n'
-        '+ 855    -    2    + 43    +  49\n'
-        '-----    ------    ----    -----',
-        'Expected different output when calling "arithmetic_arranger()" with ["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]',
-        id='test_four_problems_arrangement'),
-    pytest.param(
-        [['11 + 4', '3801 - 2999', '1 + 2', '123 + 49', '1 - 9380']],
-        '  11      3801      1      123         1\n'
-        '+  4    - 2999    + 2    +  49    - 9380\n'
-        '----    ------    ---    -----    ------',
-        'Expected different output when calling "arithmetic_arranger()" with ["11 + 4", "3801 - 2999", "1 + 2", "123 + 49", "1 - 9380"]',
-        id='test_five_problems_arrangement'),
-    pytest.param(
-        [['44 + 815', '909 - 2', '45 + 43', '123 + 49',
-          '888 + 40', '653 + 87']],
-        'Error: Too many problems.',
-        'Expected calling "arithmetic_arranger()" with more than five problems to return "Error: Too many problems."',
-        id='test_too_many_problems'),
-    pytest.param(
-        [['3 / 855', '3801 - 2', '45 + 43', '123 + 49']],
-        "Error: Operator must be '+' or '-'.",
-        '''Expected calling "arithmetic_arranger()" with a problem that uses the "/" operator to return "Error: Operator must be '+' or '-'."''',
-        id='test_incorrect_operator'),
-    pytest.param(
-        [['24 + 85215', '3801 - 2', '45 + 43', '123 + 49']],
-        'Error: Numbers cannot be more than four digits.',
-        'Expected calling "arithmetic_arranger()" with a problem that has a number over 4 digits long to return "Error: Numbers cannot be more than four digits."',
-        id='test_too_many_digits'),
-    pytest.param(
-        [['98 + 3g5', '3801 - 2', '45 + 43', '123 + 49']],
-        'Error: Numbers must only contain digits.',
-        'Expected calling "arithmetic_arranger()" with a problem that contains a letter character in the number to return "Error: Numbers must only contain digits."',
-        id='test_only_digits'),
-    pytest.param(
-        [['3 + 855', '988 + 40'], True],
-        '    3      988\n'
-        '+ 855    +  40\n'
-        '-----    -----\n'
-        '  858     1028',
-        'Expected solutions to be correctly displayed in output when calling "arithmetic_arranger()" with ["3 + 855", "988 + 40"] and a second argument of `True`.',
-        id='test_two_problems_with_solutions'),
-    pytest.param(
-        [['32 - 698', '1 - 3801', '45 + 43', '123 + 49', '988 + 40'], True],
-        '   32         1      45      123      988\n'
-        '- 698    - 3801    + 43    +  49    +  40\n'
-        '-----    ------    ----    -----    -----\n'
-        ' -666     -3800      88      172     1028',
-        'Expected solutions to be correctly displayed in output when calling "arithmetic_arranger()" with five arithmetic problems and a second argument of `True`.',
-        id='test_five_problems_with_solutions'),
-]
-
-
-@pytest.mark.parametrize('arguments,expected_output,fail_message', test_cases)
-def test_template(arguments, expected_output, fail_message):
-    actual = arithmetic_arranger(*arguments)
-    assert actual == expected_output, fail_message
-
-main(['-vv'])
+print(f'\n{arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])}')
 ```
 
 # --solutions--
