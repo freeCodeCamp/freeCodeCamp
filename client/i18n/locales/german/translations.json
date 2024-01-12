@@ -372,6 +372,7 @@
     "running-tests": "// Tests werden durchgeführt",
     "tests-completed": "// Tests abgeschlossen",
     "console-output": "// Konsolen-Ausgabe",
+    "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "sign-in-save": "Melde dich an, um deinen Fortschritt zu speichern",
     "download-solution": "Meine Lösung herunterladen",
     "download-results": "Download my results",

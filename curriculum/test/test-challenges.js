@@ -29,7 +29,7 @@ const {
   buildPythonChallenge
 } = require('../../client/src/templates/Challenges/utils/build');
 const {
-  default: createWorker
+  WorkerExecutor
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
 const {
   challengeTypes,
@@ -148,7 +148,7 @@ async function setup() {
   });
   global.Worker = createPseudoWorker(await newPageContext(browser));
 
-  pythonWorker = createWorker(pythonTestEvaluator, {
+  pythonWorker = new WorkerExecutor(pythonTestEvaluator, {
     terminateWorker: false
   });
   page = await newPageContext(browser);
@@ -460,7 +460,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
               const solutionFiles = cloneDeep(nextChallenge.challengeFiles);
               if (!solutionFiles) {
                 throw Error(
-                  `No solution found. 
+                  `No solution found.
 Check the next challenge (${nextChallenge.title}): it should have a seed which solves the current challenge.
 For example:
 
@@ -645,7 +645,7 @@ async function getWorkerEvaluator(
   // sys, since sys.modules is not being reset.
   const testWorker = runsInPythonWorker
     ? pythonWorker
-    : createWorker(javaScriptTestEvaluator, { terminateWorker: true });
+    : new WorkerExecutor(javaScriptTestEvaluator, { terminateWorker: true });
   return {
     evaluate: async (testString, timeout) =>
       await testWorker.execute(
