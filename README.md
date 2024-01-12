@@ -240,7 +240,7 @@ The general platform status for all our applications is available at [`status.fr
 
 ### License
 
-Copyright © 2023 freeCodeCamp.org
+Copyright © 2024 freeCodeCamp.org
 
 The content of this repository is bound by the following licenses:
 
