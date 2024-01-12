@@ -123,7 +123,8 @@ const buildFunctions = {
   [challengeTypes.pythonProject]: buildBackendChallenge,
   [challengeTypes.multifileCertProject]: buildDOMChallenge,
   [challengeTypes.colab]: buildBackendChallenge,
-  [challengeTypes.python]: buildPythonChallenge
+  [challengeTypes.python]: buildPythonChallenge,
+  [challengeTypes.multifilePythonCertProject]: buildPythonChallenge
 };
 
 export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
@@ -151,7 +152,8 @@ const testRunners = {
   [challengeTypes.backend]: getDOMTestRunner,
   [challengeTypes.pythonProject]: getDOMTestRunner,
   [challengeTypes.python]: getPyTestRunner,
-  [challengeTypes.multifileCertProject]: getDOMTestRunner
+  [challengeTypes.multifileCertProject]: getDOMTestRunner,
+  [challengeTypes.multifilePythonCertProject]: getPyTestRunner
 };
 // TODO: Figure out and (hopefully) simplify the return type.
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -322,7 +324,10 @@ export function buildPythonChallenge({
         .then(checkFilesErrors)
         // Unlike the DOM challenges, there's no need to embed the files in HTML
         .then(challengeFiles => ({
-          challengeType: challengeTypes.python,
+          challengeType:
+            challengeFiles[0].editableRegionBoundaries?.length === 0
+              ? challengeTypes.multifilePythonCertProject
+              : challengeTypes.python,
           sources: buildSourceMap(challengeFiles)
         }))
     );
@@ -393,6 +398,7 @@ export function challengeHasPreview({ challengeType }: ChallengeMeta): boolean {
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
     challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
     challengeType === challengeTypes.python
   );
 }

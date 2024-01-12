@@ -41,6 +41,8 @@ async function setupPyodide() {
     indexURL: `https://cdn.jsdelivr.net/pyodide/v${pkg.version}/full/`
   });
 
+  await pyodide.loadPackage('pytest');
+
   // We freeze this to prevent learners from getting the worker into a
   // weird state. NOTE: this has to come after pyodide is loaded, because
   // pyodide modifies self while loading.
