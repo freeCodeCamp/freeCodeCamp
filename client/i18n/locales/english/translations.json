@@ -128,7 +128,6 @@
     "interview-prep-heading": "Prepare for the developer interview job search:",
     "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
-    "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
     "faq": "Frequently asked questions:",
     "faqs": [
       {
@@ -373,6 +372,7 @@
     "running-tests": "// running tests",
     "tests-completed": "// tests completed",
     "console-output": "// console output",
+    "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "sign-in-save": "Sign in to save your progress",
     "download-solution": "Download my solution",
     "download-results": "Download my results",

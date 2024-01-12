@@ -20,7 +20,6 @@ import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import {
-  isCollegeAlgebraPyCert,
   isNewJsCert,
   isSciCompPyCert,
   isNewRespCert
@@ -132,7 +131,6 @@ class Block extends Component<BlockProps> {
     const isGridBlock = [
       isNewRespCert(superBlock),
       isNewJsCert(superBlock),
-      isCollegeAlgebraPyCert(superBlock),
       isSciCompPyCert(superBlock) && !isProjectBlock
     ].some(Boolean);
 

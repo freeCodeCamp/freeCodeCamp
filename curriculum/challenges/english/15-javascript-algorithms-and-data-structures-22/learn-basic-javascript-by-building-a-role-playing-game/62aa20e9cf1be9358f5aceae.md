@@ -1,8 +1,8 @@
 ---
 id: 62aa20e9cf1be9358f5aceae
-title: Step 151
+title: Step 150
 challengeType: 0
-dashedName: step-151
+dashedName: step-150
 ---
 
 # --description--
@@ -302,7 +302,11 @@ function attack() {
   if (health <= 0) {
     lose();
   } else if (monsterHealth <= 0) {
-    fighting === 2 ? winGame() : defeatMonster();
+    if (fighting === 2) {
+      winGame();
+    } else {
+      defeatMonster();
+    }
   }
 }
 --fcc-editable-region--

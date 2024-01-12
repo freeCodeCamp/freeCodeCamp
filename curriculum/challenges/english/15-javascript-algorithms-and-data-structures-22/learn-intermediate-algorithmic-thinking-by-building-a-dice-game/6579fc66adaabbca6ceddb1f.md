@@ -30,7 +30,7 @@ assert.match(code, /const\s+listOfAllDice\s*=\s*document\.querySelectorAll\s*\(.
 You should target all elements with the `class` of `die` inside the `querySelectorAll` method.
 
 ```js
-assert.match(code, /const\s*listOfAllDice\s*=\s*document\.querySelectorAll\s*\(\s*['"]\.die['"]\s*\)/);
+assert.match(code, /const\s*listOfAllDice\s*=\s*document\.querySelectorAll\s*\(\s*('|")\.die\1\s*\)/);
 ```
 
 # --seed--

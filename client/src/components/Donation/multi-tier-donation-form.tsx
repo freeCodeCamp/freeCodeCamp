@@ -7,8 +7,10 @@ import {
   Col,
   Row
 } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '../helpers';
+
 import {
   PaymentContext,
   subscriptionAmounts,
@@ -39,6 +41,7 @@ function SelectionTabs({
   const switchTab = (value: string): void => {
     setDonationAmount(Number(value) as DonationAmount);
   };
+  useFeature('aa-test-in-component');
 
   return (
     <Row
