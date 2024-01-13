@@ -42,6 +42,19 @@ const insertTextInCodeEditor = async ({
 };
 
 const runChallengeTest = async (page: Page, isMobile: boolean) => {
+  if (isMobile) {
+    await page.getByRole('tab', { name: 'Code' }).click();
+    await page.getByText('Run').click();
+    await page.getByRole('tab', { name: 'Console' }).click();
+  } else {
+    await page.getByText('Run the Tests (Ctrl + Enter)').click();
+  }
+};
+
+const runChallengeTestAndCloseResultModal = async (
+  page: Page,
+  isMobile: boolean
+) => {
   const closeButton = page.getByRole('button', { name: 'Close' });
   if (isMobile) {
     await page.getByRole('tab', { name: 'Code' }).click();
@@ -115,7 +128,7 @@ test.describe('Challenge Output Component Tests', () => {
     isMobile
   }) => {
     await insertTextInCodeEditor({ page, isMobile, text: 'var myName;' });
-    await runChallengeTest(page, isMobile);
+    await runChallengeTestAndCloseResultModal(page, isMobile);
     await expect(
       page.getByRole('region', {
         name: translations.learn['editor-tabs'].console
