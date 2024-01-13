@@ -28,7 +28,10 @@ assert.match(clearForm.toString(), /output\.innerText\s*=\s*('|"|`)\1/);
 You should modify `output` after modifying `budgetNumberInput`.
 
 ```js
-assert.isAbove(clearForm.toString().indexOf('output'), clearForm.toString().indexOf('budgetNumberInput'));
+assert.isAbove(
+  clearForm.toString().indexOf('output'),
+  clearForm.toString().indexOf('budgetNumberInput')
+);
 ```
 
 # --seed--
@@ -36,7 +39,7 @@ assert.isAbove(clearForm.toString().indexOf('output'), clearForm.toString().inde
 ## --seed-contents--
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -91,9 +94,7 @@ assert.isAbove(clearForm.toString().indexOf('output'), clearForm.toString().inde
             </span>
           </div>
           <div>
-            <button type="submit">
-              Calculate Remaining Calories
-            </button>
+            <button type="submit">Calculate Remaining Calories</button>
             <button type="button" id="clear">Clear</button>
           </div>
         </form>
@@ -118,7 +119,7 @@ assert.isAbove(clearForm.toString().indexOf('output'), clearForm.toString().inde
 }
 
 body {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
   font-size: 18px;
   background-color: var(--fcc-blue);
   color: var(--light-grey);
@@ -194,11 +195,11 @@ select {
 }
 
 .surplus {
-  color: var(--light-green);
+  color: var(--light-pink);
 }
 
 .deficit {
-  color: var(--light-pink);
+  color: var(--light-green);
 }
 ```
 
@@ -222,8 +223,11 @@ function isInvalidInput(str) {
 }
 
 function addEntry() {
-  const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
-  const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
+  const targetInputContainer = document.querySelector(
+    `#${entryDropdown.value} .input-container`
+  );
+  const entryNumber =
+    targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
   const HTMLString = `
   <label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
   <input type="text" id="${entryDropdown.value}-${entryNumber}-name" placeholder="Name" />
@@ -241,11 +245,21 @@ function calculateCalories(e) {
   e.preventDefault();
   isError = false;
 
-  const breakfastNumberInputs = document.querySelectorAll('#breakfast input[type=number]');
-  const lunchNumberInputs = document.querySelectorAll('#lunch input[type=number]');
-  const dinnerNumberInputs = document.querySelectorAll('#dinner input[type=number]');
-  const snacksNumberInputs = document.querySelectorAll('#snacks input[type=number]');
-  const exerciseNumberInputs = document.querySelectorAll('#exercise input[type=number]');
+  const breakfastNumberInputs = document.querySelectorAll(
+    '#breakfast input[type=number]'
+  );
+  const lunchNumberInputs = document.querySelectorAll(
+    '#lunch input[type=number]'
+  );
+  const dinnerNumberInputs = document.querySelectorAll(
+    '#dinner input[type=number]'
+  );
+  const snacksNumberInputs = document.querySelectorAll(
+    '#snacks input[type=number]'
+  );
+  const exerciseNumberInputs = document.querySelectorAll(
+    '#exercise input[type=number]'
+  );
 
   const breakfastCalories = getCaloriesFromInputs(breakfastNumberInputs);
   const lunchCalories = getCaloriesFromInputs(lunchNumberInputs);
@@ -258,11 +272,16 @@ function calculateCalories(e) {
     return;
   }
 
-  const consumedCalories = breakfastCalories + lunchCalories + dinnerCalories + snacksCalories;
-  const remainingCalories = budgetCalories - consumedCalories + exerciseCalories;
-  const surplusOrDeficit = remainingCalories >= 0 ? 'Surplus' : 'Deficit';
+  const consumedCalories =
+    breakfastCalories + lunchCalories + dinnerCalories + snacksCalories;
+  const remainingCalories =
+    budgetCalories - consumedCalories + exerciseCalories;
+  const surplusOrDeficit = remainingCalories < 0 ? 'Surplus' : 'Deficit';
+  
   output.innerHTML = `
-  <span class="${surplusOrDeficit.toLowerCase()}">${Math.abs(remainingCalories)} Calorie ${surplusOrDeficit}</span>
+  <span class="${surplusOrDeficit.toLowerCase()}">${Math.abs(
+    remainingCalories
+  )} Calorie ${surplusOrDeficit}</span>
   <hr>
   <p>${budgetCalories} Calories Budgeted</p>
   <p>${consumedCalories} Calories Consumed</p>
@@ -289,19 +308,20 @@ function getCaloriesFromInputs(list) {
   return calories;
 }
 
---fcc-editable-region--
+--fcc - editable - region--;
 function clearForm() {
-  const inputContainers = Array.from(document.querySelectorAll('.input-container'));
+  const inputContainers = Array.from(
+    document.querySelectorAll('.input-container')
+  );
 
   for (let i = 0; i < inputContainers.length; i++) {
     inputContainers[i].innerHTML = '';
   }
 
   budgetNumberInput.value = '';
-
 }
---fcc-editable-region--
+--fcc - editable - region--;
 
-addEntryButton.addEventListener("click", addEntry);
-calorieCounter.addEventListener("submit", calculateCalories);
+addEntryButton.addEventListener('click', addEntry);
+calorieCounter.addEventListener('submit', calculateCalories);
 ```
