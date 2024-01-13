@@ -4,7 +4,7 @@ This details the maintenance guidelines for the [freeCodeCamp/courses-vscode-ext
 
 ## Publishing the Extension
 
-A GitHub Action automatically publishes the extension to the Visual Studio Marketplace, on the release of a new GitHub Release.
+A GitHub Action automagically publishes the extension to the Visual Studio Marketplace, on the release of a new GitHub Release.
 
 1. Package a new version of the extension:
 
