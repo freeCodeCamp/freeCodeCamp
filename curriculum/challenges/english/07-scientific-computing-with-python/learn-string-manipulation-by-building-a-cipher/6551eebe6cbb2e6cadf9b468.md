@@ -35,7 +35,13 @@ assert.match(code, /^text\s*=/m)
 You should assign the string `Hello World` to your `text` variable. Remember to use either single or double quotes to enclose the string and pay attention to the letter case.
 
 ```js
-({test: () => assert.match(code, /^text\s*=\s*("|')Hello World\1\s*(#.*)?$/m) })
+assert.match(code, /^text\s*=\s*("|')Hello World\1\s*(#.*)?$/m)
+```
+
+Your code contains invalid syntax and/or invalid indentation.
+
+```js
+({test: () => assert(true) })
 ```
 
 # --seed--
