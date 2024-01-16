@@ -61,7 +61,7 @@ Segui questi passaggi:
    git diff upstream/main
    ```
 
-   L'output risultante dovrebbe essere vuoto. Questo processo è importante, perché farai un rebase del tuo branch utilizzando l'ultima versione di `upstream/main` quanto più spesso possibile per evitare conflitti successivamente.
+   L'output risultante dovrebbe essere vuoto. This process is important, because you will be rebasing your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
 
 3. Crea un nuovo branch:
 
