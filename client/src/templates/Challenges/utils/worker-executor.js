@@ -1,4 +1,4 @@
-class WorkerExecutor {
+export class WorkerExecutor {
   constructor(
     workerName,
     { location = '/js/', maxWorkers = 2, terminateWorker = false } = {}
@@ -147,7 +147,3 @@ const eventify = self => {
 
   return self;
 };
-
-export default function createWorkerExecutor(workerName, options) {
-  return new WorkerExecutor(workerName, options);
-}

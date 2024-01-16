@@ -79,6 +79,31 @@ export const hasNoTests = (challengeType: number): boolean =>
   challengeType === dialogue ||
   challengeType === fillInTheBlank;
 
+export const hasNoSolution = (challengeType: number): boolean => {
+  const noSolutions = [
+    backend,
+    zipline,
+    frontEndProject,
+    backEndProject,
+    step,
+    quiz,
+    invalid,
+    pythonProject,
+    video,
+    codeAllyPractice,
+    codeAllyCert,
+    theOdinProject,
+    colab,
+    exam,
+    msTrophy,
+    multipleChoice,
+    dialogue,
+    fillInTheBlank
+  ];
+
+  return noSolutions.includes(challengeType);
+};
+
 // determine the component view for each challenge
 export const viewTypes = {
   [html]: 'classic',
