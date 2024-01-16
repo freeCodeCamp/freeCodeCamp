@@ -1,18 +1,12 @@
 ---
 id: 5e444136903586ffb414c94d
 title: Time Calculator
-challengeType: 10
+challengeType: 23
 forumTopicId: 462360
 dashedName: time-calculator
 ---
 
 # --description--
-
-You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-time-calculator" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>. 
-
--   Start by importing the project on Replit. 
--   Next, you will see a `.replit` window. 
--   Select `Use run command` and click the `Done` button. 
 
 # --instructions--
 
@@ -52,24 +46,86 @@ add_time("6:30 PM", "205:12")
 
 Do not import any Python libraries. Assume that the start times are valid times. The minutes in the duration time will be a whole number less than 60, but the hour can be any whole number.
 
-## Development
-
-Write your code in `time_calculator.py`. For development, you can use `main.py` to test your `time_calculator()` function. Click the "run" button and `main.py` will run.
-
-## Testing
-
-The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
-
-## Submitting
-
-Copy your project's URL and submit it to freeCodeCamp.
-
 # --hints--
 
-It should correctly add times and pass all tests.
+Calling `add_time()` with `3:30 PM, 2:12` should return `5:42 PM`.
 
 ```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/time_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py', 
+    `
+from time_calculator import add_time
+import unittest
 
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def test_same_period(self):
+        actual = add_time("3:30 PM", "2:12")
+        expected = "5:42 PM"
+        self.assertEqual(actual, expected, 'Expected calling "add_time()" with "3:30 PM", "2:12" to return "5:42 PM"')
+
+if __name__ == "__main__":
+    unittest.main()
+
+`);
+    const testCode = `
+from pytest import main
+main(['-vv', '/home/pyodide/test_module.py'])
+`;
+    const out = __pyodide.runPython(testCode);
+    assert.equal(out, 0);
+  }
+})
+```
+
+
+
+Calling "add_time()" with "11:55 AM", "3:12" should return "3:07 PM"'
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/time_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py', 
+    `
+from time_calculator import add_time
+import unittest
+
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def test_different_period(self):
+        actual = add_time("11:55 AM", "3:12")
+        expected = "3:07 PM"
+        self.assertEqual(actual, expected, 'Expected calling "add_time()" with "11:55 AM", "3:12" to return "3:07 PM"')
+
+if __name__ == "__main__":
+    unittest.main()
+
+`);
+    const testCode = `
+from pytest import main
+main(['-vv', '/home/pyodide/test_module.py'])
+`;
+    const out = __pyodide.runPython(testCode);
+    assert.equal(out, 0);
+  }
+})
+```
+
+# --seed--
+
+## --seed-contents--
+
+```py
+def add_time(start, duration):
+
+
+
+
+
+    return new_time
 ```
 
 # --solutions--
