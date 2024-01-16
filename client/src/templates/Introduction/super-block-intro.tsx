@@ -16,7 +16,7 @@ import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';
-import { tryToShowDonationModal } from '../../redux/actions';
+import { tryToShowDonationModal, executeGA } from '../../redux/actions';
 import {
   isSignedInSelector,
   userSelector,
@@ -25,6 +25,7 @@ import {
   signInLoadingSelector
 } from '../../redux/selectors';
 import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
+import { defaultDonation } from '../../../../shared/config/donation-settings';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
@@ -56,6 +57,7 @@ type SuperBlockProp = {
   toggleBlock: (arg0: string) => void;
   tryToShowDonationModal: () => void;
   user: User;
+  executeGA: (payload: Record<string, unknown>) => void;
 };
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
@@ -86,6 +88,7 @@ const mapStateToProps = (state: Record<string, unknown>) => {
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
+      executeGA,
       tryToShowDonationModal,
       resetExpansion,
       toggleBlock: b => toggleBlock(b)
@@ -190,6 +193,15 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     SuperBlocks.PythonForEverybody
   ];
 
+  const onCertificationDonationAlertClick = () => {
+    props.executeGA({
+      event: 'donation_related',
+      action: `Certification Donation Alert Click`,
+      duration: defaultDonation.donationDuration,
+      amount: defaultDonation.donationAmount
+    });
+  };
+
   return (
     <>
       <Helmet>
@@ -201,7 +213,13 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <Spacer size='large' />
               <LegacyLinks superBlock={superBlock} />
-              <SuperBlockIntro superBlock={superBlock} />
+              <SuperBlockIntro
+                superBlock={superBlock}
+                onCertificationDonationAlertClick={
+                  onCertificationDonationAlertClick
+                }
+                isDonating={user.isDonating}
+              />
               <Spacer size='large' />
               <h2 className='text-center big-subheading'>
                 {t(`intro:misc-text.courses`)}
