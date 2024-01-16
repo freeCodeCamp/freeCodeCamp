@@ -126,7 +126,7 @@ Now that you have installed the pre-requisites, follow [our local setup guide](h
    >
    > The following tips were collected from across the web and have not gone through vigorous testing. Your mileage may vary.
 
-### Adjust processer scheduling for background services
+### Adjust processor scheduling for background services
 
 This may reduce incidents of Docker containers crashing due to lack of resources.
 
