@@ -13,7 +13,7 @@ Sarah: "Sure, Bob. What’s the problem?"
 
 # --description--
 
-Let's practice!
+Listen to the audio and complete the sentence.
 
 # --fillInTheBlank--
 
