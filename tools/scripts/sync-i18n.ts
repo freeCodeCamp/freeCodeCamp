@@ -16,7 +16,7 @@ const loadDirectory = async (path: string): Promise<string[]> => {
   } else {
     files.push(path);
   }
-  return files;
+  return files.filter(f => !f.includes('DS_Store'));
 };
 
 const syncChallenges = async () => {
