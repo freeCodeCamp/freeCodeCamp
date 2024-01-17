@@ -244,7 +244,7 @@
       "internet": "他サービスのリンク",
       "portfolio": "ポートフォリオ設定",
       "privacy": "プライバシー設定",
-      "personal-info": "個人情報"
+      "personal-info": "ユーザー情報"
     },
     "danger": {
       "heading": "危険な操作",
@@ -704,7 +704,7 @@
     "not-authorized": "このルートへのアクセス権限がありません",
     "could-not-find": "お探しのページが見つかりませんでした。ご確認の上もう一度お試しください。",
     "wrong-updating": "アカウント情報の更新中に問題が発生しました。ご確認の上もう一度お試しください。",
-    "updated-about-me": "個人情報を更新しました",
+    "updated-about-me": "ユーザー情報を更新しました",
     "updated-socials": "他サービスのリンクを更新しました",
     "updated-sound": "サウンド設定を更新しました",
     "updated-themes": "テーマを更新しました",
