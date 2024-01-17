@@ -1,0 +1,30 @@
+---
+id: 65a792163bf705cb7b6eb255
+title: Task 129
+challengeType: 22
+dashedName: task-129
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+---
+
+<!--
+AUDIO REFERENCE:
+Tom: The sustainability of open-source projects is something I'm growing to appreciate more.
+-->
+
+# --description--
+
+`Sustainability` refers to the capacity to endure or maintain something over the long term. In this context, it means ensuring that open-source projects can continue to develop, adapt, and thrive over time, often through community collaboration, efficient management, and the continual contribution of resources and ideas.
+
+# --fillInTheBlank--
+
+## --sentence--
+
+`The _ of open-source projects is something I'm growing to appreciate more.`
+
+## --blanks--
+
+`sustainability`
+
+### --feedback--
+
+It refers to the ongoing development of open-source projects over the long term.

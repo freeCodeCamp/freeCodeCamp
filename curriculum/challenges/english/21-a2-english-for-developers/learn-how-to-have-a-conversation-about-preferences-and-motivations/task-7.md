@@ -1,0 +1,30 @@
+---
+id: 6581178fca60702052899c94
+title: Task 7
+challengeType: 22
+dashedName: task-7
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+---
+
+<!--
+AUDIO REFERENCE:
+Maria: I can understand that, Brian. Racing against the clock can be demotivating.
+-->
+
+# --description--
+
+Adjectives ending in "-ing" are often used to describe things that cause a particular feeling or emotion. They can be used to express feelings of excitement or distress. In the dialogue, Maria uses an adjective ending in "-ing" to describe the feeling that arises from racing against time.
+
+# --fillInTheBlank--
+
+## --sentence--
+
+`I can understand that, Brian. Racing against the clock can be _.`
+
+## --blanks--
+
+`demotivating`
+
+### --feedback--
+
+Maria uses an adjective ending in "-ing" to describe the feeling that arises from racing against time.

@@ -1,0 +1,16 @@
+---
+id: 658111239f39a01c8f095c44
+videoId: nLDychdBwUg
+title: Dialogue 1
+challengeType: 21
+dashedName: dialogue-1
+---
+
+# --description--
+
+Watch the video above to understand the context of the upcoming lessons.
+
+## --assignment--
+
+Watch the video
+
