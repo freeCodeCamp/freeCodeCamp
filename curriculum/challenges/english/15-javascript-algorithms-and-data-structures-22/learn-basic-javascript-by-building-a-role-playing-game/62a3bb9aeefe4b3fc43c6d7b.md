@@ -1,8 +1,8 @@
 ---
 id: 62a3bb9aeefe4b3fc43c6d7b
-title: Step 31
+title: Step 21
 challengeType: 0
-dashedName: step-31
+dashedName: step-21
 ---
 
 # --description--
@@ -49,13 +49,8 @@ assert.deepEqual(button1, document.querySelector("#button1"));
         <button id="button2">Go to cave</button>
         <button id="button3">Fight dragon</button>
       </div>
-      <div id="monsterStats">
-        <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
-        <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
-      </div>
-      <div id="text">
-        Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
-      </div>
+      <div id="monsterStats"></div>
+      <div id="text"></div>
     </div>
     <script src="./script.js"></script>
   </body>
