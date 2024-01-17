@@ -257,12 +257,12 @@ console.log('freeCodeCamp is awesome!');
     },
     {
       "character": "Maria",
-      // Коли розпочнеться команда, Марія почне вимовляти цей рядок через 1,3 секунди після початку. Зверніть увагу, що час той самий, що й для audio.startTime вище. Вони необов’язково збігатимуться (можливо, на початку аудіо є пауза чи щось інше)
+      // Коли розпочнеться команда, Марія почне вимовляти цей рядок через 1,3 секунди після початку. Зверніть увагу, що час той самий, що й для audio.startTime вище. It doesn't have to match that (maybe there's a pause at the beginning of the audio or something)
       "startTime": 1.3,
-      // Персонаж перестане рухати ротом на finishTime
+      // The character will stop moving their mouth at the finishTime
       "finishTime": 4.95,
       "dialogue": {
-        // Текст, який з’явиться, якщо діалог видимий
+        // Text that will appear if the dialogue is visible
         "text": "Hello! You're the new graphic designer, right? I'm Maria, the team lead.",
         // Вирівнювання тексту діалогу. Може бути 'left', 'center' або 'right'
         "align": "left"
