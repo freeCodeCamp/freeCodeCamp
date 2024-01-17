@@ -309,8 +309,8 @@ class ShowFillInTheBlank extends Component<
                     <audio className='audio' controls>
                       <source
                         src={`https://cdn.freecodecamp.org/${audioPath}`}
-                        type='audio/mp3'
-                      ></source>
+                        type='audio/mpeg'
+                      />
                     </audio>
                     <Spacer size='medium' />
                   </>

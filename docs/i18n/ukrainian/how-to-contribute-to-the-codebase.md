@@ -61,7 +61,7 @@
    git diff upstream/main
    ```
 
-   Отриманий вивід має бути порожнім. Важливо якомога частіше перебазовувати свою гілку на останню версію `upstream/main`, щоб уникнути конфліктів пізніше.
+   Отриманий вивід має бути порожнім. This process is important, because you will be rebasing your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
 
 3. Створіть нову гілку:
 

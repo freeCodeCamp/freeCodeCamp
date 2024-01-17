@@ -61,7 +61,7 @@ Siga estes passos:
    git diff upstream/main
    ```
 
-   O resultado deve mostrar vazio. O processo é importante, pois você fará um rebase em sua branch usando `upstream/main` frequentemente para evitar conflitos depois.
+   O resultado deve mostrar vazio. This process is important, because you will be rebasing your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
 
 3. Crie uma branch novinha em folha:
 
