@@ -194,7 +194,7 @@
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "تعلم المزيد عن Selectors Pseudo في CSS عن طريق بناء كشف ميزانية",
+        "title": "Learn More About CSS Pseudo Selectors by Building A Balance Sheet",
         "intro": [
           "يمكنك استخدام CSS pseudo selectors لتغيير عناصر HTML محددة.",
           "في هذه الدورة، ستبني ميزانية عامة باستخدام المنتقات الزائفة pseudo selectors. سوف تتعلم كيفية تغيير تصميم عنصر ما عندما تحوم فوقه بماوسك، وتفعيل أحداث أخرى على صفحتك الويب."
@@ -366,7 +366,7 @@
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
-        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
+        "title": "Learn Modern JavaScript Methods by Building Football Team Cards",
         "intro": [
           "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
           "This project will cover concepts like switch statements, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method, and more."
@@ -388,7 +388,7 @@
         ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "title": "Learn Fetch and Promises by Building an fCC Authors Page",
         "intro": [
           "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
           "This freeCodeCamp authors page project will show you how to use the fetch method, then dynamically update the DOM to display the fetched data.",
@@ -770,7 +770,7 @@
         ]
       },
       "learn-list-comprehension-by-building-a-case-converter-program": {
-        "title": "Learn Python List Comprehension By Building a Case Converter Program",
+        "title": "Learn Python List Comprehension by Building a Case Converter Program",
         "intro": [
           "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the `.append()` list method.",
           "In this project, you'll write a program that takes a string formatted in Camel Case or Pascal Case, then converts it into Snake Case.",
