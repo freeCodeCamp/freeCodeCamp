@@ -123,7 +123,11 @@ class UnitTests(unittest.TestCase):
         expected = "2:45 AM (next day)"
         self.assertEqual(actual, expected, 'Expected time to end with "(next day)" when it is the next day.')
 `);
-
+const testCode = `
+from unittest import main
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
     const out = __pyodide.runPython(testCode);
     assert(out);
   }
@@ -159,6 +163,7 @@ t.result.wasSuccessful()
   }
 })
 ```
+
 
 Expected calling `add_time()` with `"2:59 AM", "24:00"` to return `2:59 AM`.
 
@@ -208,7 +213,12 @@ class UnitTests(unittest.TestCase):
         self.assertEqual(actual, expected, 'Expected calling "add_time()" with "11:59 PM", "24:05" to return "12:04 AM (2 days later)"')
 
 `);
-const out = __pyodide.runPython(testCode);
+const testCode = `
+from unittest import main
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
     assert(out);
   }
 })
@@ -233,7 +243,12 @@ class UnitTests(unittest.TestCase):
         self.assertEqual(actual, expected, 'Expected calling "add_time()" with "8:16 PM", "466:02" to return "6:18 AM (20 days later)"')
 
 `);
-const out = __pyodide.runPython(testCode);
+const testCode = `
+from unittest import main
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
     assert(out);
   }
 })
@@ -259,11 +274,17 @@ class UnitTests(unittest.TestCase):
 
 
 `);
-const out = __pyodide.runPython(testCode);
+const testCode = `
+from unittest import main
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
     assert(out);
   }
 })
 ```
+
 
 Expected calling `add_time()` with `"3:30 PM", "2:12", "Monday"` to return `"5:42 PM, Monday"`.
 
@@ -285,11 +306,17 @@ class UnitTests(unittest.TestCase):
 
 
 `);
-const out = __pyodide.runPython(testCode);
+const testCode = `
+from unittest import main
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
     assert(out);
   }
 })
 ```
+
 
 Expected calling `add_time()` with `"2:59 AM", "24:00", "saturDay"` to return `"2:59 AM, Sunday (next day)"`.
 
@@ -311,11 +338,17 @@ class UnitTests(unittest.TestCase):
 
 
 `);
-const out = __pyodide.runPython(testCode);
+const testCode = `
+from unittest import main
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
     assert(out);
   }
 })
 ```
+
 
 Expected calling `add_time()` with `"11:59 PM", "24:05", "Wednesday"` to return `"12:04 AM, Friday (2 days later)"`.
 
@@ -336,7 +369,12 @@ class UnitTests(unittest.TestCase):
         self.assertEqual(actual, expected, 'Expected calling "add_time()" with "11:59 PM", "24:05", "Wednesday" to return "12:04 AM, Friday (2 days later)"')
 
 `);
-const out = __pyodide.runPython(testCode);
+const testCode = `
+from unittest import main
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
     assert(out);
   }
 })
@@ -361,7 +399,12 @@ class UnitTests(unittest.TestCase):
         self.assertEqual(actual, expected, 'Expected calling "add_time()" with "8:16 PM", "466:02", "tuesday" to return "6:18 AM, Monday (20 days later)"')
 
 `);
-const out = __pyodide.runPython(testCode);
+const testCode = `
+from unittest import main
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
     assert(out);
   }
 })
