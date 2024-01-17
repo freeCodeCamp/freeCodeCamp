@@ -47,31 +47,30 @@ add_time("6:30 PM", "205:12")
 Do not import any Python libraries. Assume that the start times are valid times. The minutes in the duration time will be a whole number less than 60, but the hour can be any whole number.
 
 # --hints--
-
 Calling `add_time()` with `3:30 PM, 2:12` should return `5:42 PM`.
 
 ```js
 ({
   test: () => {
     pyodide.FS.writeFile('/home/pyodide/time_calculator.py', code);
-    pyodide.FS.writeFile('/home/pyodide/test_module.py', 
-    `
-from time_calculator import add_time
+    pyodide.FS.writeFile('/home/pyodide/test_module.py', `
 import unittest
-
+from time_calculator import add_time
 
 class UnitTests(unittest.TestCase):
     maxDiff = None
     def test_same_period(self):
         actual = add_time("3:30 PM", "2:12")
         expected = "5:42 PM"
-        self.assertEqual(actual, expected, 'Expected calling "add_time()" with "3:30 PM", "2:12" to return "5:42 PM"')
-
-if __name__ == "__main__":
-    unittest.main()
-
+        self.assertEqual(actual, expected, 'Expected calling "add_time()" with "3:30 PM", "2:12" to return "5:42 PM"')  
 `);
-    
+    const testCode = `
+from unittest import main
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
   }
 })
 ```
@@ -94,12 +93,15 @@ class UnitTests(unittest.TestCase):
         actual = add_time("11:55 AM", "3:12")
         expected = "3:07 PM"
         self.assertEqual(actual, expected, 'Expected calling "add_time()" with "11:55 AM", "3:12" to return "3:07 PM"')
-
-if __name__ == "__main__":
-    unittest.main()
-
 `);
-}
+const testCode = `
+from unittest import main
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
 })
 ```
 
@@ -120,12 +122,11 @@ class UnitTests(unittest.TestCase):
         actual = add_time("9:15 PM", "5:30")
         expected = "2:45 AM (next day)"
         self.assertEqual(actual, expected, 'Expected time to end with "(next day)" when it is the next day.')
-
-if __name__ == "__main__":
-    unittest.main()
-
 `);
-}
+
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
 })
 ```
 
@@ -147,11 +148,15 @@ class UnitTests(unittest.TestCase):
         expected = "12:05 PM"
         self.assertEqual(actual, expected, 'Expected period to change from AM to PM at 12:00')
 
-if __name__ == "__main__":
-    unittest.main()
-
 `);
-}
+const testCode = `
+from unittest import main
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
 })
 ```
 
@@ -172,12 +177,15 @@ class UnitTests(unittest.TestCase):
         actual = add_time("2:59 AM", "24:00")
         expected = "2:59 AM (next day)"
         self.assertEqual(actual, expected, 'Expected calling "add_time()" with "2:59 AM", "24:00" to return "2:59 AM"')
-
-if __name__ == "__main__":
-    unittest.main()
-
 `);
-}
+const testCode = `
+from unittest import main
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
 })
 ```
 
@@ -199,11 +207,10 @@ class UnitTests(unittest.TestCase):
         expected = "12:04 AM (2 days later)"
         self.assertEqual(actual, expected, 'Expected calling "add_time()" with "11:59 PM", "24:05" to return "12:04 AM (2 days later)"')
 
-if __name__ == "__main__":
-    unittest.main()
-
 `);
-}
+const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
 })
 ```
 
@@ -225,11 +232,10 @@ class UnitTests(unittest.TestCase):
         expected = "6:18 AM (20 days later)"
         self.assertEqual(actual, expected, 'Expected calling "add_time()" with "8:16 PM", "466:02" to return "6:18 AM (20 days later)"')
 
-if __name__ == "__main__":
-    unittest.main()
-
 `);
-}
+const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
 })
 ```
 
@@ -251,11 +257,11 @@ class UnitTests(unittest.TestCase):
         expected = "5:01 AM"
         self.assertEqual(actual, expected, 'Expected adding 0:00 to return initial time.')
 
-if __name__ == "__main__":
-    unittest.main()
 
 `);
-}
+const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
 })
 ```
 
@@ -278,11 +284,10 @@ class UnitTests(unittest.TestCase):
         self.assertEqual(actual, expected, 'Expected calling "add_time()" with "3:30 PM", "2:12", "Monday" to return "5:42 PM, Monday"')
 
 
-if __name__ == "__main__":
-    unittest.main()
-
 `);
-}
+const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
 })
 ```
 
@@ -304,11 +309,11 @@ class UnitTests(unittest.TestCase):
         expected = "2:59 AM, Sunday (next day)"
         self.assertEqual(actual, expected, 'Expected calling "add_time()" with "2:59 AM", "24:00", "saturDay" to return "2:59 AM, Sunday (next day)"')
 
-if __name__ == "__main__":
-    unittest.main()
 
 `);
-}
+const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
 })
 ```
 
@@ -330,11 +335,10 @@ class UnitTests(unittest.TestCase):
         expected = "12:04 AM, Friday (2 days later)"
         self.assertEqual(actual, expected, 'Expected calling "add_time()" with "11:59 PM", "24:05", "Wednesday" to return "12:04 AM, Friday (2 days later)"')
 
-if __name__ == "__main__":
-    unittest.main()
-
 `);
-}
+const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
 })
 ```
 
@@ -356,16 +360,12 @@ class UnitTests(unittest.TestCase):
         expected = "6:18 AM, Monday (20 days later)"
         self.assertEqual(actual, expected, 'Expected calling "add_time()" with "8:16 PM", "466:02", "tuesday" to return "6:18 AM, Monday (20 days later)"')
 
-
-
-if __name__ == "__main__":
-    unittest.main()
-
 `);
-}
+const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
 })
 ```
-
 
 # --seed--
 
