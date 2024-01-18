@@ -13,7 +13,7 @@ type KeyboardShortcutsProps = {
 export default function KeyboardShortcutsSettings({
   keyboardShortcuts,
   toggleKeyboardShortcuts,
-  explanation = true
+  explain
 }: KeyboardShortcutsProps): JSX.Element {
   const { t } = useTranslation();
 
