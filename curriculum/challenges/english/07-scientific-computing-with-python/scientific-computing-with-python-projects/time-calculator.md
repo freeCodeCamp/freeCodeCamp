@@ -55,7 +55,7 @@ Calling `add_time("3:30 PM", "2:12")` should return `5:42 PM`.
     pyodide.FS.writeFile('/home/pyodide/time_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py', `
 import unittest
-from time_calculator import add_time
+import time_calculator
 from importlib import reload
 
 reload(time_calculator)
@@ -91,7 +91,7 @@ Calling `add_time("11:55 AM", "3:12")`  should return `3:07 PM`.
     pyodide.FS.writeFile('/home/pyodide/time_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py', `
 import unittest
-from time_calculator import add_time
+time_calculator
 from importlib import reload
 
 reload(time_calculator)
@@ -100,7 +100,6 @@ reload(time_calculator)
 class UnitTests(unittest.TestCase):
     maxDiff = None
     def test_different_period(self):
-    console.log("hello")
         actual = time_calculator.add_time("11:55 AM", "3:12")
         expected = "3:07 PM"
         self.assertEqual(actual, expected, 'Expected calling "add_time()" with "11:55 AM", "3:12" to return "3:07 PM"')
@@ -128,7 +127,7 @@ Expected time to end with `"(next day)"` when it is the next day.
     pyodide.FS.writeFile('/home/pyodide/time_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py', `
 import unittest
-from time_calculator import add_time
+time_calculator
 from importlib import reload
 
 reload(time_calculator)
@@ -164,7 +163,7 @@ Expected period to change from `AM` to `PM` at `12:00`.
     pyodide.FS.writeFile('/home/pyodide/time_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py', `
 import unittest
-from time_calculator import add_time
+time_calculator
 from importlib import reload
 
 reload(time_calculator)
@@ -201,7 +200,7 @@ Calling `add_time("2:59 AM", "24:00")` should return `2:59 AM`.
     pyodide.FS.writeFile('/home/pyodide/time_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py', `
 import unittest
-from time_calculator import add_time
+time_calculator
 from importlib import reload
 
 reload(time_calculator)
@@ -237,7 +236,7 @@ Calling `add_time("11:59 PM", "24:05")` should return `12:04 AM (2 days later)`.
     pyodide.FS.writeFile('/home/pyodide/time_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py', `
 import unittest
-from time_calculator import add_time
+time_calculator
 from importlib import reload
 
 reload(time_calculator)
@@ -273,7 +272,7 @@ Calling `add_time("8:16 PM", "466:02")` should return `6:18 AM (20 days later)`.
     pyodide.FS.writeFile('/home/pyodide/time_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py', `
 import unittest
-from time_calculator import add_time
+time_calculator
 from importlib import reload
 
 reload(time_calculator)
@@ -309,7 +308,7 @@ Expected adding `0:00` to return the initial time.
     pyodide.FS.writeFile('/home/pyodide/time_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py', `
 import unittest
-from time_calculator import add_time
+time_calculator
 from importlib import reload
 
 reload(time_calculator)
@@ -346,7 +345,7 @@ Calling `add_time("3:30 PM", "2:12", "Monday")`should return `5:42 PM, Monday`.
     pyodide.FS.writeFile('/home/pyodide/time_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py', `
 import unittest
-from time_calculator import add_time
+time_calculator
 from importlib import reload
 
 reload(time_calculator)
@@ -383,7 +382,7 @@ Calling `add_time("2:59 AM", "24:00", "saturDay")` should return `2:59 AM, Sunda
     pyodide.FS.writeFile('/home/pyodide/time_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py', `
 import unittest
-from time_calculator import add_time
+time_calculator
 from importlib import reload
 
 reload(time_calculator)
@@ -419,7 +418,7 @@ Calling `add_time("11:59 PM", "24:05", "Wednesday")` should return `"12:04 AM, F
     pyodide.FS.writeFile('/home/pyodide/time_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py', `
 import unittest
-from time_calculator import add_time
+time_calculator
 from importlib import reload
 
 reload(time_calculator)
@@ -455,7 +454,7 @@ Calling `add_time("8:16 PM", "466:02", "tuesday") `should return `6:18 AM, Monda
     pyodide.FS.writeFile('/home/pyodide/time_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py', `
 import unittest
-from time_calculator import add_time
+time_calculator
 from importlib import reload
 
 reload(time_calculator)
