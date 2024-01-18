@@ -452,7 +452,7 @@ class UnitTests(unittest.TestCase):
         self.food.withdraw(45.67, "milk, cereal, eggs, bacon, bread")
         self.food.transfer(20, self.entertainment)
         actual = str(self.food)
-        expected = f"*************Food*************\ndeposit                 900.00\nmilk, cereal, eggs, bac -45.67\nTransfer to Entertainme -20.00\nTotal: 834.33"
+        expected = "*************Food*************\\ndeposit                 900.00\\nmilk, cereal, eggs, bac -45.67\\nTransfer to Entertainme -20.00\\nTotal: 834.33"
         self.assertEqual(actual, expected, 'Expected different string representation of object.')
 `);
     const testCode = `
@@ -460,15 +460,12 @@ from unittest import main
 from importlib import reload
 import test_module
 
-try:
-  reload(test_module)
-  t = main(module='test_module', exit=False)
-  t.result.wasSuccessful()
-except Exception as error:
-  print(error)
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
 `;
     const out = __pyodide.runPython(testCode);
-    console.log(out);
+    assert(out);
   }
 })
 ```
@@ -500,7 +497,7 @@ class UnitTests(unittest.TestCase):
         self.entertainment.withdraw(33.40)
         self.business.withdraw(10.99)
         actual = budget.create_spend_chart([self.business, self.food, self.entertainment])
-        expected = "Percentage spent by category\n100|          \n 90|          \n 80|          \n 70|    o     \n 60|    o     \n 50|    o     \n 40|    o     \n 30|    o     \n 20|    o  o  \n 10|    o  o  \n  0| o  o  o  \n    ----------\n     B  F  E  \n     u  o  n  \n     s  o  t  \n     i  d  e  \n     n     r  \n     e     t  \n     s     a  \n     s     i  \n           n  \n           m  \n           e  \n           n  \n           t  "
+        expected = "Percentage spent by category\\n100|          \\n 90|          \\n 80|          \\n 70|    o     \\n 60|    o     \\n 50|    o     \\n 40|    o     \\n 30|    o     \\n 20|    o  o  \\n 10|    o  o  \\n  0| o  o  o  \\n    ----------\\n     B  F  E  \\n     u  o  n  \\n     s  o  t  \\n     i  d  e  \\n     n     r  \\n     e     t  \\n     s     a  \\n     s     i  \\n           n  \\n           m  \\n           e  \\n           n  \\n           t  "
         self.assertEqual(actual, expected, 'Expected different chart representation. Check that all spacing is exact.')
 `);
 
@@ -508,15 +505,12 @@ class UnitTests(unittest.TestCase):
 from unittest import main
 from importlib import reload
 import test_module
-try:
-  reload(test_module)
-  t = main(module='test_module', exit=False)
-  t.result.wasSuccessful()
-except Exception as error:
-  print(error)
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
 `;
     const out = __pyodide.runPython(testCode);
-    console.log(out);
+    assert(out);
   }
 })
 ```
