@@ -100,7 +100,7 @@ const allStandardCerts = [
   },
   {
     id: '658180220947283cdc0689ce',
-    title: 'JavaScript Algorithms and Data Structures (Beta)',
+    title: 'JavaScript Algorithms and Data Structures',
     certSlug: Certification.JsAlgoDataStructNew,
     projects: [
       {
