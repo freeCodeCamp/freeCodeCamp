@@ -59,18 +59,25 @@ Here are our twelve core certifications:
 
 #### 2. [JavaScript Algorithms and Data Structures Certification](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
 
-- [Basic JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript)
-- [ES6](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#es6)
-- [Regular Expressions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#regular-expressions)
-- [Debugging](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#debugging)
-- [Basic Data Structures](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-data-structures)
-- [Basic Algorithm Scripting](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-algorithm-scripting)
-- [Object-Oriented Programming](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#object-oriented-programming)
-- [Functional Programming](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#functional-programming)
-- [Intermediate Algorithm Scripting](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#intermediate-algorithm-scripting)
+- [Learn Basic JavaScript by Building a Role Playing Game](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
+- [Learn Form Validation by Building a Calorie Counter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
+- [Learn Basic String and Array Methods by Building a Music Player](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
+- [Learn the Date Object by Building a Date Formatter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
+- [Learn Modern JavaScript Methods By Building Football Team Cards](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
+- [Learn localStorage by Building a Todo App](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
+- [Learn Recursion by Building a Decimal to Binary Converter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
+- [Learn Basic Algorithmic Thinking by Building a Number Sorter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
+- [Learn Advanced Array Methods by Building a Statistics Calculator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
+- [Learn Functional Programming by Building a Spreadsheet](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
+- [Learn Regular Expressions by Building a Spam Filter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
+- [Learn Basic OOP by Building a Shopping Cart](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
+- [Learn Intermediate OOP by Building a Platformer Game](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
+- [Learn Intermediate Algorithmic Thinking by Building a Dice Game](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
+- [Learn Fetch and Promises By Building an fCC Authors Page](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
+- [Learn Asynchronous Programming by Building an fCC Forum Leaderboard](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
   <br />
   <br />
-  **Projects**: [Palindrome Checker](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker),[ Roman Numeral Converter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter), [Caesar's Cipher](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/caesars-cipher), [Telephone Number Validator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator), [Cash Register](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register)
+  **Projects**: [Build a Palindrome Checker](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-palindrome-checker-project/build-a-palindrome-checker),[ Build a Roman Numeral Converter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-roman-numeral-converter-project/build-a-roman-numeral-converter), [Build a Telephone Number Validator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-telephone-number-validator-project/build-a-telephone-number-validator), [Build a Cash Register](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-cash-register-project/build-a-cash-register), [Build a Pokémon Search App](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-pokemon-search-app-project/build-a-pokemon-search-app)
 
 #### 3. [Front End Libraries Certification](https://www.freecodecamp.org/learn/front-end-development-libraries/)
 
