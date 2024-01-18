@@ -101,7 +101,6 @@ function ShortcutsModal({
         <KeyboardShortcutsSettings
           keyboardShortcuts={keyboardShortcuts}
           toggleKeyboardShortcuts={toggleKeyboardShortcuts}
-          explanation={false}
         />
         <Button
           block={true}
