@@ -1,8 +1,8 @@
 ---
 id: 655b4dad1d38ff7cdd65cbfe
-title: Step 85
+title: Step 90
 challengeType: 0
-dashedName: step-85
+dashedName: step-90
 ---
 
 # --description--
@@ -809,6 +809,18 @@ audio.addEventListener("ended", () => {
     }
 });
 
+userData?.songs.sort((a,b) => {
+  if (a.title < b.title) {
+    return -1;
+  }
+
+  if (a.title > b.title) {
+    return 1;
+  }
+
+  return 0;
+});
+
 renderSongs(userData?.songs);
 setPlayButtonAccessibleText();
 ```
@@ -1578,6 +1590,18 @@ audio.addEventListener("ended", () => {
       highlightCurrentSong(); 
       setPlayButtonAccessibleText();
     }
+});
+
+userData?.songs.sort((a,b) => {
+  if (a.title < b.title) {
+    return -1;
+  }
+
+  if (a.title > b.title) {
+    return 1;
+  }
+
+  return 0;
 });
 
 renderSongs(userData?.songs);
