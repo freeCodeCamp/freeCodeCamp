@@ -52,7 +52,7 @@ export const superBlockList = [
     path: '14-responsive-web-design-22'
   },
   {
-    name: 'JavaScript Algorithms and Data Structures (Beta)',
+    name: 'JavaScript Algorithms and Data Structures',
     path: '15-javascript-algorithms-and-data-structures-22'
   },
   {

@@ -251,8 +251,7 @@ export const certTypeTitleMap = {
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
   [certTypes.upcomingPythonV8]: 'Upcoming Python',
-  [certTypes.jsAlgoDataStructV8]:
-    'JavaScript Algorithms and Data Structures (Beta)'
+  [certTypes.jsAlgoDataStructV8]: 'JavaScript Algorithms and Data Structures'
 };
 
 export const oldDataVizId = '561add10cb82ac38a17513b3';
