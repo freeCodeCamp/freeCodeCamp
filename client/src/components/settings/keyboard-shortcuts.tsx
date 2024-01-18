@@ -7,7 +7,7 @@ import ToggleButtonSetting from './toggle-button-setting';
 type KeyboardShortcutsProps = {
   keyboardShortcuts: boolean;
   toggleKeyboardShortcuts: (sound: boolean) => void;
-  explain?: string
+  explain?: string;
 };
 
 export default function KeyboardShortcutsSettings({
