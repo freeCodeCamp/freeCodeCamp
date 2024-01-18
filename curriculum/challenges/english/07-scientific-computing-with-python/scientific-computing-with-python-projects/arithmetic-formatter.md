@@ -430,10 +430,39 @@ print(f'\n{arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])}
 
 # --solutions--
 
-```js
-/**
-  Backend challenges don't need solutions,
-  because they would need to be tested against a full working project.
-  Please check our contributing guidelines to learn more.
-*/
+```py
+def arithmetic_arranger(problems, result=False):
+
+	lin1 = ""
+	lin2 = ""
+	lin3 = ""
+	lin4 = ""
+
+	if len(problems) > 5:
+		return 'Error: Too many problems.'
+	for problem in problems:
+		[num1, sym, num2] = problem.split()
+		sign = ['+', '-']
+		if sym not in sign:
+			return ("Error: Operator must be '+' or '-'.")
+		if len(num1) > 4 or len(num2) > 4:
+			return ("Error: Numbers cannot be more than four digits.")
+		if not num1.isnumeric() or not num2.isnumeric():
+			return ("Error: Numbers must only contain digits.")
+
+		lin1 += "  " + num1 + "    " if len(num1) >= len(
+		    num2) else " " * (len(num2) + 2 - len(num1)) + num1 + "    "
+		lin2 += sym + " " + num2 + "    " if len(num2) >= len(
+		    num1) else sym + " " * (len(num1) - len(num2) + 1) + num2 + "    "
+		nmax = (len(num1) + 2) if len(num1) >= len(num2) else (len(num2) + 2)
+		lin3 += "-" * nmax + "    "
+		op = int(num1) + int(num2) if sym == "+" else int(num1) - int(num2)
+		lin4 += (" " * (nmax - len(str(op)))) + str(op) + "    "
+
+	arranged_problems = lin1.rstrip() + "\n" + lin2.rstrip(
+	) + "\n" + lin3.rstrip()
+	if result:
+		arranged_problems += "\n" + lin4.rstrip()
+
+	return arranged_problems
 ```
