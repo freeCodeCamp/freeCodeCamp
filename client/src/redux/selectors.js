@@ -137,7 +137,6 @@ export const certificatesByNameSelector = username => state => {
       isRespWebDesignCert ||
       is2018DataVisCert ||
       isFrontEndLibsCert ||
-      isJsAlgoDataStructCert ||
       isApisMicroservicesCert ||
       isQaCertV7 ||
       isInfosecCertV7 ||
@@ -150,7 +149,11 @@ export const certificatesByNameSelector = username => state => {
       isFoundationalCSharpCertV8 ||
       isJsAlgoDataStructCertV8,
     hasLegacyCert:
-      isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
+      isFrontEndCert ||
+      isJsAlgoDataStructCert ||
+      isBackEndCert ||
+      isDataVisCert ||
+      isInfosecQaCert,
     isFullStackCert,
     currentCerts: [
       {
@@ -162,11 +165,6 @@ export const certificatesByNameSelector = username => state => {
         show: isJsAlgoDataStructCertV8,
         title: 'JavaScript Algorithms and Data Structures (Beta) Certification',
         certSlug: Certification.JsAlgoDataStructNew
-      },
-      {
-        show: isJsAlgoDataStructCert,
-        title: 'JavaScript Algorithms and Data Structures Certification',
-        certSlug: Certification.JsAlgoDataStruct
       },
       {
         show: isFrontEndLibsCert,
@@ -229,6 +227,11 @@ export const certificatesByNameSelector = username => state => {
         show: isFrontEndCert,
         title: 'Front End Certification',
         certSlug: Certification.LegacyFrontEnd
+      },
+      {
+        show: isJsAlgoDataStructCert,
+        title: 'Legacy JavaScript Algorithms and Data Structures Certification',
+        certSlug: Certification.JsAlgoDataStruct
       },
       {
         show: isBackEndCert,

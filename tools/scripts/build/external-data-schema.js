@@ -32,7 +32,8 @@ const blockSchema = Joi.object({}).keys({
       })
     ),
     disableLoopProtectTests: Joi.boolean(),
-    disableLoopProtectPreview: Joi.boolean()
+    disableLoopProtectPreview: Joi.boolean(),
+    superOrder: Joi.number()
   })
 });
 

@@ -232,7 +232,18 @@ const BenefitsList = (): JSX.Element => {
       <li>{t('donate.support-benefits-1')}</li>
       <li>{t('donate.support-benefits-2')}</li>
       <li>{t('donate.support-benefits-3')}</li>
-      <li>{t('donate.support-benefits-4')}</li>
+      <li>
+        <Trans i18nKey='donate.support-benefits-4'>
+          <a
+            href='https://discord.gg/KVUmVXA'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            placeholder
+          </a>
+          <code>placeholder</code>
+        </Trans>
+      </li>
       <li>{t('donate.support-benefits-5')}</li>
     </ul>
   );

@@ -576,7 +576,7 @@ const allStandardCerts = [
   },
   {
     id: '561abd10cb81ac38a17513bc',
-    title: 'JavaScript Algorithms and Data Structures',
+    title: 'Legacy JavaScript Algorithms and Data Structures',
     certSlug: Certification.JsAlgoDataStruct,
     projects: [
       {
