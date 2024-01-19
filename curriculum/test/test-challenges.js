@@ -613,7 +613,9 @@ function replaceChallengeFilesContentsWithSolutions(
       ({ ext, name }) => ext === file.ext && file.name === name
     );
     if (!matchingSolutionFile) {
-      throw Error(`No matching solution file found`);
+      throw Error(
+        `No matching solution file found for ${file.name}.${file.ext} - this likely means the seed code for the next step is missing the ${file.ext} code block.`
+      );
     }
     return {
       ...file,

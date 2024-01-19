@@ -16,7 +16,7 @@ const loadDirectory = async (path: string): Promise<string[]> => {
   } else {
     files.push(path);
   }
-  return files;
+  return files.filter(f => !f.includes('DS_Store'));
 };
 
 const syncChallenges = async () => {
@@ -32,13 +32,25 @@ const syncChallenges = async () => {
       // we swallow the error here to detect if the file doesn't exist
       const status = await stat(targetPath).catch(() => null);
       if (!status) {
-        console.table({ path, targetPath });
         const targetDir = targetPath.split(sep);
         targetDir.pop();
         console.log(`Syncing ${path.split('/english/')[1]}`);
         await asyncExec(
           `mkdir -p ${targetDir.join(sep)} && cp ${path} ${targetPath}`
         );
+      }
+    }
+  }
+  for (const lang of filtered) {
+    const langPath = join(process.cwd(), 'curriculum', 'challenges', lang);
+    const langFiles = await loadDirectory(langPath);
+    for (const path of langFiles) {
+      const engPath = path.replace(lang, 'english');
+      // we don't want an error, only need to know that the file exists
+      const existsEnglish = await stat(engPath).catch(() => null);
+      if (!existsEnglish) {
+        console.log(`Unlinking ${path.split(`/${lang}/`)[1]}`);
+        await asyncExec(`rm ${path}`);
       }
     }
   }
