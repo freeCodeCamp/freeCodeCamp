@@ -6,7 +6,7 @@ dashedName: the-box-model-question-g
 --- 
 # --description--
 
-![lines](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/foundations/html_css/css-foundations/the-box-model/imgs/odin-lined.png)
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/box-model-lines.png" alt="lines">
 
 OK, so there might be some circles in the above image… but when it comes to layout, they fit together like rectangular boxes and not circles. In the end, laying out a webpage and positioning all its elements is deciding how you are going to nest and stack these boxes.
 
@@ -18,7 +18,7 @@ The only real complication here is that there are many ways to manipulate the si
 
 Be sure to study the diagrams carefully.
 
-![the box model](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/foundations/html_css/css-foundations/the-box-model/imgs/box-model.png)
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/the-box-model.png" alt="the box model">
 
 # --assignment--
 
