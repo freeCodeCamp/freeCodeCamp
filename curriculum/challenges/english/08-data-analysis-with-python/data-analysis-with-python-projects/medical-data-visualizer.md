@@ -68,6 +68,7 @@ Any time a variable is set to `None`, make sure to set it to the correct code.
 Unit tests are written for you under `test_module.py`.
 
 ## Instructions
+By each number in the `medical_data_visualizer.py` file, add the code from the associated instruction number below.
 
 1. Import the data from `medical_examination.csv` and assign it to the `df` variable
 2. Create the `overweight` column in the `df` variable
