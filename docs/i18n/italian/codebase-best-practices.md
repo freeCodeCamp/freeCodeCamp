@@ -12,7 +12,7 @@ La parola chiave `!important` può essere usata per sovrascrivere i valori in al
 
 ### Supporto RTL
 
-Stiamo cercando di supportare il layout da destra a sinistra (right-to-left, RTL) nel codebase per le lingue che sono lette in questa direzione. Per questo è necessario essere consapevoli di come definire lo stile dei componenti. Ecco alcune rapide regole pratiche da seguire:
+Stiamo cercando di supportare il layout da destra a sinistra (right-to-left, RTL) nel codebase per le lingue che sono lette in questa direzione. For this, you need to be mindful of how to style components. Ecco alcune rapide regole pratiche da seguire:
 
 - Non utilizzare le proprietà `float`
   - Invece, utilizza i layout Flexbox e Grid poiché hanno già integrato il supporto RTL e saranno più facili da gestire e revisionare.
@@ -172,7 +172,7 @@ api/
 
 #### Integration Tests
 
-Integration tests test the API as a whole. The tests will require mocking, and should not require fixtures beyond the database seeding data, and a method to authenticate.
+Integration tests test the API as a whole. The tests will require mocking and should not require fixtures beyond the database seeding data and a method for authentication.
 
 Typically, each integration test file will be directly related to a route. The integration tests are located in the `api/tests/` directory:
 

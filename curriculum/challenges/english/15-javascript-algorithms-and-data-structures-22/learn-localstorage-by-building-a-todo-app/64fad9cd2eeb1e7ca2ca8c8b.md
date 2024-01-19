@@ -14,7 +14,7 @@ Use arrow syntax to create an `updateTaskContainer` function. Then move the `tas
 You should use `const` and arrow syntax to create a `updateTaskContainer` function.
 
 ```js
-assert.match(code, /const\s*updateTaskContainer\s*=\s*\(\)\s*=>\s*\{/)
+assert.match(code, /const\s+updateTaskContainer\s*=\s*\(\)\s*=>\s*\{/)
 ```
 
 You should move `taskData.forEach()` and its content into the `updateTaskContainer()` function.
@@ -35,7 +35,7 @@ assert.match(code, /const\s+updateTaskContainer\s*=\s*\(\)\s*=>\s*\{\s*taskData\
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Learn localStorage By Building a Todo App</title>
+  <title>Learn localStorage by Building a Todo App</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
