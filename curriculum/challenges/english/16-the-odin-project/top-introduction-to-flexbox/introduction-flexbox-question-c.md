@@ -10,7 +10,7 @@ Somewhat confusingly, any element can be both a flex container and a flex item. 
 
 <img src="https://cdn.freecodecamp.org/curriculum/odin-project/flex-box/flexbox-03.png" />
 
-Creating and nesting multiple flex containers and items is the primary way we will be building up complex layouts. The following image was achieved using only flexbox to arrange, size, and place the various elements. Flexbox is a very powerful tool.
+Creating and nesting multiple flex containers and items is the primary way you will be building up complex layouts. The following image was achieved using only flexbox to arrange, size, and place the various elements. Flexbox is a very powerful tool.
 
 <img src="https://cdn.freecodecamp.org/curriculum/odin-project/flex-box/flexbox-02.png"/>
 
