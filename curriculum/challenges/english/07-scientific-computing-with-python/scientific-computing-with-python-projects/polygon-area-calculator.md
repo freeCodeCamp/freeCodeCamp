@@ -791,6 +791,19 @@ t.result.wasSuccessful()
 })
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```py
+class Rectangle:
+
+
+
+
+class Square:
+```
+
 # --solutions--
 
 ```py
