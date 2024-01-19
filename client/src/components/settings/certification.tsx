@@ -115,7 +115,7 @@ const isCertMapSelector = createSelector(
     isJsAlgoDataStructCertV8
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
-    'Legacy JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
+    'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
     'Front End Development Libraries': isFrontEndLibsCert,
     'Data Visualization': is2018DataVisCert,
     'Back End Development and APIs': isApisMicroservicesCert,
