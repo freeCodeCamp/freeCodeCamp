@@ -21,5 +21,6 @@ module.exports = {
   roots: ['.', './client', './api-server'],
   transformIgnorePatterns: ['node_modules/.pnpm/(?!(nanoid|uuid)@)'],
   setupFilesAfterEnv: ['./jest.setup.js'],
-  testEnvironment: 'jsdom'
+  testEnvironment: 'jsdom',
+  watchPathIgnorePatterns: ['<rootDir>/__fixtures__.*']
 };

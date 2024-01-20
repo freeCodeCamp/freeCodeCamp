@@ -244,7 +244,7 @@
       "internet": "他サービスのリンク",
       "portfolio": "ポートフォリオ設定",
       "privacy": "プライバシー設定",
-      "personal-info": "個人情報"
+      "personal-info": "ユーザー情報"
     },
     "danger": {
       "heading": "危険な操作",
@@ -372,6 +372,7 @@
     "running-tests": "// テストを実行中です",
     "tests-completed": "// テストが完了しました",
     "console-output": "// コンソール出力",
+    "syntax-error": "コードにエラーがあるためテストを実行できない状態です。コードを修正して再度お試しください。",
     "sign-in-save": "サインインして進行状況を保存",
     "download-solution": "回答をダウンロード",
     "download-results": "結果をダウンロード",
@@ -581,7 +582,7 @@
     "support-benefits-1": "寄付のお願いのポップアップが表示されなくなります。",
     "support-benefits-2": "サポーターバッジを獲得できます。",
     "support-benefits-3": "プロフィール画像に金色の枠が表示されます。",
-    "support-benefits-4": "サポーター向け Discord チャンネルに参加できます。",
+    "support-benefits-4": "You'll gain access to special Supporter Discord channels - <0>join our Discord</0> and use the <1>/supporter</1> command to get access",
     "support-benefits-5": "2024 年も新たな特典を追加予定です。",
     "exclusive-features": "以下のサポーター特典が利用できます:",
     "current-initiatives-title": "freeCodeCamp における現在の取り組み:",
@@ -703,7 +704,7 @@
     "not-authorized": "このルートへのアクセス権限がありません",
     "could-not-find": "お探しのページが見つかりませんでした。ご確認の上もう一度お試しください。",
     "wrong-updating": "アカウント情報の更新中に問題が発生しました。ご確認の上もう一度お試しください。",
-    "updated-about-me": "個人情報を更新しました",
+    "updated-about-me": "ユーザー情報を更新しました",
     "updated-socials": "他サービスのリンクを更新しました",
     "updated-sound": "サウンド設定を更新しました",
     "updated-themes": "テーマを更新しました",
@@ -944,7 +945,7 @@
       "legacy-back-end": "バックエンド認定証",
       "Legacy Data Visualization": "(レガシー) データ可視化",
       "legacy-data-visualization": "データ可視化認定証",
-      "Legacy Information Security and Quality Assurance": "(レガシー) 情報セキュリティと品質保証認定証",
+      "Legacy Information Security and Quality Assurance": "(レガシー) 情報セキュリティと品質保証",
       "information-security-and-quality-assurance": "情報セキュリティと品質保証認定証",
       "Legacy Full Stack Certification": "(レガシー) フルスタック認定証",
       "Legacy Full Stack": "(レガシー) フルスタック",

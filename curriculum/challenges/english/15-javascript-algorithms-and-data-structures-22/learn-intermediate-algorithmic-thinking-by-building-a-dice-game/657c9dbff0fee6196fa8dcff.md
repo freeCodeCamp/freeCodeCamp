@@ -28,13 +28,13 @@ assert.match(code, /for\s*\(\s*let\s+i\s*=\s*0\s*;/);
 Your `for` loop should have a condition that checks if `i` is less than `5`.
 
 ```js
-assert.match(code, /for\s*\(\s*let\s*i\s*=\s*0\s*;\s*i\s*<\s*5\s*;/);
+assert.match(code, /for\s*\(\s*let\s+i\s*=\s*0\s*;\s*i\s*<\s*5\s*;/);
 ```
 
 Your `for` loop should increment `i` by `1` each time it runs.
 
 ```js
-assert.match(code, /for\s*\(\s*let\s*i\s*=\s*0\s*;\s*i\s*<\s*5\s*;\s*i\s*\+\+\s*\)/);
+assert.match(code, /for\s*\(\s*let\s+i\s*=\s*0\s*;\s*i\s*<\s*5\s*;\s*i\s*\+\+\s*\)/);
 ```
 
 # --seed--
