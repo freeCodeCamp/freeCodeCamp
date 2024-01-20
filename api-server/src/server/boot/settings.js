@@ -9,7 +9,11 @@ import {
   deprecatedEndpoint,
   temporarilyDisabledEndpoint
 } from '../utils/disabled-endpoints';
-import { ifNoUser401, createValidatorErrorHandler } from '../utils/middleware';
+import {
+  ifNoUser401,
+  createValidatorErrorHandler,
+  ifValidWebhookURL
+} from '../utils/middleware';
 
 const log = debug('fcc:boot:settings');
 
@@ -51,7 +55,12 @@ export default function settingsController(app) {
   );
   api.put('/update-my-honesty', ifNoUser401, updateMyHonesty);
   api.put('/update-my-quincy-email', ifNoUser401, updateMyQuincyEmail);
-  api.put('/update-my-webhook', ifNoUser401, updateMyWebhook);
+  api.put(
+    '/update-my-webhook',
+    ifNoUser401,
+    ifValidWebhookURL,
+    updateMyWebhook
+  );
   api.delete('/delete-my-webhook', ifNoUser401, removeMyWebhook);
   api.put('/update-my-classroom-mode', ifNoUser401, updateMyClassroomMode);
 
@@ -337,7 +346,7 @@ function updateMyQuincyEmail(...args) {
 }
 
 function updateMyWebhook(...args) {
-  const buildUpdate = body => _.pick(body, 'webhook');
+  const buildUpdate = body => _.pick(body, ['webhook', 'webhookSecret']);
   const validate = ({ webhook }) => isURL(webhook, { require_protocol: true });
   createUpdateUserProperties(
     buildUpdate,
@@ -349,7 +358,7 @@ function updateMyWebhook(...args) {
 function removeMyWebhook(req, res, next) {
   const { user } = req;
   user.updateAttributes(
-    { webhook: '' },
+    { webhook: '', webhookSecret: '' },
     createStandardHandler(req, res, next, 'flash.webhook-removed')
   );
 }

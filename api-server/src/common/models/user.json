@@ -235,6 +235,11 @@
       "description": "The webhook url for the user",
       "default": ""
     },
+    "webhookSecret": {
+      "type": "string",
+      "description": "The webhook secret for the user",
+      "default": ""
+    },
     "completedChallenges": {
       "type": [
         {

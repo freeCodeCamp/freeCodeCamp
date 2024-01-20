@@ -106,3 +106,36 @@ export const createValidatorErrorHandler =
 
     return next();
   };
+
+export async function ifValidWebhookURL(req, res, next) {
+  const standardErrorMessage = {
+    type: 'danger',
+    message: 'flash.wrong-updating'
+  };
+  const {
+    user: { username },
+    body: { webhook, webhookSecret }
+  } = req;
+
+  try {
+    await triggerWebhook(webhook, webhookSecret, username);
+    next();
+  } catch (error) {
+    return res.status(500).json(standardErrorMessage);
+  }
+}
+
+const triggerWebhook = async (url, secret, username) => {
+  const response = await fetch(url, {
+    method: 'POST',
+    body: JSON.stringify({
+      username,
+      secret,
+      eventType: 'webhook_added'
+    }),
+    headers: { 'Content-Type': 'application/json' }
+  });
+  if (!response.ok) {
+    throw new Error(`${response.status} ${response.statusText}`);
+  }
+};

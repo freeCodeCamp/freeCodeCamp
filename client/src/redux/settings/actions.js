@@ -34,13 +34,15 @@ export const updateMyEmailError = createAction(types.updateMyEmailError);
 
 export const updateMyWebhook = createAction(types.updateMyWebhook);
 export const updateMyWebhookComplete = createAction(
-  types.updateMyWebhookComplete
+  types.updateMyWebhookComplete,
+  checkForSuccessPayload
 );
 export const updateMyWebhookError = createAction(types.updateMyWebhookError);
 
 export const removeMyWebhook = createAction(types.removeMyWebhook);
 export const removeMyWebhookComplete = createAction(
-  types.removeMyWebhookComplete
+  types.removeMyWebhookComplete,
+  checkForSuccessPayload
 );
 export const removeMyWebhookError = createAction(types.removeMyWebhookError);
 
@@ -94,8 +96,7 @@ export const updateMyQuincyEmailError = createAction(
 
 export const updateMyPortfolio = createAction(types.updateMyPortfolio);
 export const updateMyPortfolioComplete = createAction(
-  types.updateMyPortfolioComplete,
-  checkForSuccessPayload
+  types.updateMyPortfolioComplete
 );
 export const updateMyPortfolioError = createAction(
   types.updateMyPortfolioError

@@ -483,6 +483,10 @@ export const reducer = handleActions(
         : state,
     [settingsTypes.submitNewAboutComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyWebhookComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.removeMyWebhookComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyEmailComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMySocialsComplete]: (state, { payload }) =>

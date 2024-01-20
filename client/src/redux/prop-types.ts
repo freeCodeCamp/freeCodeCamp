@@ -245,6 +245,7 @@ export type User = {
   username: string;
   website: string;
   webhook: string;
+  webhookSecret: string;
   yearsTopContributor: string[];
 } & ClaimedCertifications;
 

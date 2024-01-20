@@ -135,7 +135,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       twitter,
       website,
       portfolio,
-      webhook
+      webhook,
+      webhookSecret
     },
     navigate,
     showLoading,
@@ -205,7 +206,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <Spacer size='medium' />
           <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
           <Spacer size='medium' />
-          <Webhook webhook={webhook} />
+          <Webhook webhook={webhook} webhookSecret={webhookSecret} />
           <Spacer size='medium' />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           <Spacer size='medium' />

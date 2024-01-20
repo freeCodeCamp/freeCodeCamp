@@ -179,7 +179,12 @@ function* updateMyWebhookSaga({ payload: update }) {
 function* removeMyWebhookSaga({ payload: update }) {
   try {
     const { data } = yield call(deleteRemoveMyWebhook, update);
-    yield put(removeMyWebhookComplete({ ...data, payload: update }));
+    yield put(
+      removeMyWebhookComplete({
+        ...data,
+        payload: { webhook: '', webhookSecret: '' }
+      })
+    );
     yield put(createFlashMessage({ ...data }));
   } catch (e) {
     yield put(removeMyWebhookError);

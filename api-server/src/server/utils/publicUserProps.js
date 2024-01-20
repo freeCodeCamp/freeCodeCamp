@@ -40,6 +40,7 @@ export const publicUserProps = [
   'twitter',
   'username',
   'webhook',
+  'webhookSecret',
   'website',
   'yearsTopContributor'
 ];
@@ -55,7 +56,8 @@ export const userPropsForSession = [
   'keyboardShortcuts',
   'completedChallengeCount',
   'acceptedPrivacyTerms',
-  'webhook'
+  'webhook',
+  'webhookSecret'
 ];
 
 export function normaliseUserFields(user) {

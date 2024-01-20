@@ -269,7 +269,10 @@
     },
     "webhook": {
       "heading": "Webhook Settings",
-      "new": "New Webhook",
+      "sub-heading": "Optionally be notified of events.",
+      "secret": "Secret",
+      "new": "Payload url",
+      "url": "URL",
       "current": "Current Webhook"
     },
     "honesty": {

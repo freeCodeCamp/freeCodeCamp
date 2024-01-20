@@ -8,7 +8,7 @@ import {
   ControlLabel
 } from '@freecodecamp/ui';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -24,14 +24,17 @@ import SectionHeader from './section-header';
 
 type WebhookProps = {
   webhook: string;
+  webhookSecret: string;
   t: TFunction;
-  updateMyWebhook: (webhook: string) => void;
+  updateMyWebhook: (value: { webhook: string; webhookSecret: string }) => void;
   removeMyWebhook: (webhook: string) => void;
 };
 
 interface WebhookForm {
   currentWebhook: string;
+  currentWebhookSecret: string;
   newWebhook: string;
+  newWebhookSecret: string;
   isPristine: boolean;
 }
 
@@ -46,19 +49,25 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 function WebhookSettings({
   webhook,
+  webhookSecret,
   updateMyWebhook,
   removeMyWebhook,
   t
 }: WebhookProps): JSX.Element {
   const [webhookForm, setWebhookForm] = useState<WebhookForm>({
     currentWebhook: webhook,
+    currentWebhookSecret: webhookSecret,
     newWebhook: '',
+    newWebhookSecret: '',
     isPristine: true
   });
 
   function handleSubmit(e: React.FormEvent): void {
     e.preventDefault();
-    updateMyWebhook(webhookForm.newWebhook);
+    updateMyWebhook({
+      webhook: webhookForm.newWebhook,
+      webhookSecret: webhookForm.newWebhookSecret
+    });
   }
 
   function handleRemoveWebhook(e: React.FormEvent): void {
@@ -87,7 +96,7 @@ function WebhookSettings({
   }
 
   function createHandleWebhookFormChange(
-    key: 'newWebhook'
+    key: 'newWebhook' | 'newWebhookSecret'
   ): (e: React.ChangeEvent<HTMLInputElement>) => void {
     return e => {
       e.preventDefault();
@@ -104,9 +113,20 @@ function WebhookSettings({
   const { state: newWebhookValidation, message: newWebhookValidationMessage } =
     getValidationForNewWebhook();
 
-  const { newWebhook, currentWebhook } = webhookForm;
+  const { newWebhook, currentWebhook, currentWebhookSecret, newWebhookSecret } =
+    webhookForm;
 
   const isDisabled = newWebhookValidation !== 'success';
+
+  useEffect(() => {
+    setWebhookForm({
+      newWebhook: '',
+      isPristine: true,
+      newWebhookSecret: '',
+      currentWebhook: webhook,
+      currentWebhookSecret: webhookSecret
+    });
+  }, [webhook, webhookSecret]);
 
   return (
     <div className='webhook-settings'>
@@ -125,9 +145,22 @@ function WebhookSettings({
             <FormGroup controlId='current-webhook'>
               <ControlLabel>{t('settings.webhook.current')}</ControlLabel>
               <div style={{ display: 'flex' }}>
-                <FormControl.Static data-playwright-test-label='current-email'>
-                  {currentWebhook}
-                </FormControl.Static>
+                <div
+                  style={{
+                    width: '60%',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between'
+                  }}
+                >
+                  <FormControl.Static data-playwright-test-label='current-email'>
+                    {t('settings.webhook.url', 'URL')}: {currentWebhook}
+                  </FormControl.Static>
+                  <FormControl.Static data-playwright-test-label='current-email'>
+                    {t('settings.webhook.secret', 'Secret')}:{' '}
+                    {currentWebhookSecret}
+                  </FormControl.Static>
+                </div>
                 <Button
                   variant='danger'
                   onClick={handleRemoveWebhook}
@@ -139,34 +172,57 @@ function WebhookSettings({
             </FormGroup>
           )}
 
-          <div role='group' aria-label={t('settings.webhook.heading')}>
-            <FormGroup
-              controlId='current-email'
-              validationState={newWebhookValidation}
-            >
-              <ControlLabel>{t('settings.webhook.new')}</ControlLabel>
-              <FormControl
-                data-cy='webhook-input'
-                data-playwright-test-label='new-webhook-input'
-                onChange={createHandleWebhookFormChange('newWebhook')}
-                type='text'
-                value={newWebhook}
-              />
-              <HelpBlock data-cy='validation-message'>
-                {newWebhookValidationMessage}
-              </HelpBlock>
-            </FormGroup>
-          </div>
+          {!currentWebhook && (
+            <>
+              <div role='group' aria-label={t('settings.webhook.heading')}>
+                <p>
+                  {t(
+                    'settings.webhook.sub-heading',
+                    'Optionally be notified of events.'
+                  )}
+                </p>
+                <FormGroup
+                  controlId='current-email'
+                  validationState={newWebhookValidation}
+                >
+                  <ControlLabel>
+                    {t('settings.webhook.new', 'Payload url')}
+                  </ControlLabel>
+                  <FormControl
+                    data-cy='webhook-input'
+                    data-playwright-test-label='new-webhook-input'
+                    onChange={createHandleWebhookFormChange('newWebhook')}
+                    type='text'
+                    value={newWebhook}
+                  />
+                  <HelpBlock data-cy='validation-message'>
+                    {newWebhookValidationMessage}
+                  </HelpBlock>
 
-          <BlockSaveButton
-            data-playwright-test-label='save-webhook-button'
-            aria-disabled={isDisabled}
-            bgSize='lg'
-            {...(isDisabled && { tabIndex: -1 })}
-          >
-            {t('buttons.save')}{' '}
-            <span className='sr-only'>{t('settings.webhook.heading')}</span>
-          </BlockSaveButton>
+                  <ControlLabel>
+                    {t('settings.webhook.secret', 'Secret')}
+                  </ControlLabel>
+                  <FormControl
+                    data-cy='webhook-secret'
+                    data-playwright-test-label='new-webhook-secret'
+                    onChange={createHandleWebhookFormChange('newWebhookSecret')}
+                    type='text'
+                    value={newWebhookSecret}
+                  />
+                </FormGroup>
+              </div>
+
+              <BlockSaveButton
+                data-playwright-test-label='save-webhook-button'
+                aria-disabled={isDisabled}
+                bgSize='lg'
+                {...(isDisabled && { tabIndex: -1 })}
+              >
+                {t('buttons.save')}{' '}
+                <span className='sr-only'>{t('settings.webhook.heading')}</span>
+              </BlockSaveButton>
+            </>
+          )}
         </form>
       </FullWidthRow>
     </div>

@@ -354,9 +354,9 @@ export function putUpdateMyPortfolio(
 }
 
 export function putUpdateMyWebhook(
-  webhook: Record<string, string>
+  update: Record<string, string>
 ): Promise<ResponseWithData<void>> {
-  return put('/update-my-webhook', { webhook });
+  return put('/update-my-webhook', update);
 }
 
 export function deleteRemoveMyWebhook(
