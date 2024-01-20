@@ -1,7 +1,12 @@
 import { Button } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
 import { isString } from 'lodash-es';
-import React, { useState, type FormEvent, type ChangeEvent } from 'react';
+import React, {
+  useState,
+  type FormEvent,
+  type ChangeEvent,
+  useRef
+} from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
@@ -19,30 +24,46 @@ import {
   Row
 } from '@freecodecamp/ui';
 
-import { Spacer } from '../components/helpers';
+import { Loader, Spacer } from '../components/helpers';
 import './update-email.css';
-import { userSelector } from '../redux/selectors';
+import { userSelector, isSignedInSelector } from '../redux/selectors';
 import { updateMyEmail } from '../redux/settings/actions';
 import { maybeEmailRE } from '../utils';
+import { hardGoTo as navigate } from '../redux/actions';
+import { apiLocation } from '../../config/env.json';
 
 interface UpdateEmailProps {
   isNewEmail: boolean;
   t: TFunction;
   updateMyEmail: (e: string) => void;
+  isSignedIn: boolean;
+  navigate: (location: string) => void;
 }
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ email, emailVerified }: { email: string; emailVerified: boolean }) => ({
-    isNewEmail: !email || emailVerified
+  isSignedInSelector,
+  (
+    { email, emailVerified }: { email: string; emailVerified: boolean },
+    isSignedIn: UpdateEmailProps['isSignedIn']
+  ) => ({
+    isNewEmail: !email || emailVerified,
+    isSignedIn
   })
 );
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ updateMyEmail }, dispatch);
+  bindActionCreators({ updateMyEmail, navigate }, dispatch);
 
-function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
+function UpdateEmail({
+  isNewEmail,
+  t,
+  updateMyEmail,
+  isSignedIn,
+  navigate
+}: UpdateEmailProps) {
   const [emailValue, setEmailValue] = useState('');
+  const isSignedInRef = useRef(isSignedIn);
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -63,6 +84,11 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
       return isEmail(emailValue) ? 'success' : 'error';
     }
     return null;
+  }
+
+  if (!isSignedInRef.current) {
+    navigate(`${apiLocation}/signin`);
+    return <Loader fullScreen={true} />;
   }
 
   return (

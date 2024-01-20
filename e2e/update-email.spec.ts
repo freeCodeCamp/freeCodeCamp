@@ -3,12 +3,14 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 let page: Page;
 
-test.beforeAll(async ({ browser }) => {
-  page = await browser.newPage();
-  await page.goto('/update-email');
-});
+test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.describe('The update-email page', () => {
+  test.beforeEach(async ({ browser }) => {
+    page = await browser.newPage();
+    await page.goto('/update-email');
+  });
+
   test('The page renders with correct title', async () => {
     await expect(page).toHaveTitle(
       'Update your email address | freeCodeCamp.org'
@@ -60,4 +62,15 @@ test.describe('The update-email page', () => {
     await emailInput.fill('123@gmail.com');
     await expect(submitButton).toBeEnabled();
   });
+});
+
+test('The page redirects when not logged in', async ({ browser }) => {
+  // Sign out user in order to test redirect to signin
+  const context = await browser.newContext({
+    storageState: { cookies: [], origins: [] }
+  });
+  const page = await context.newPage();
+  await page.goto('/update-email');
+  // hits sign in and is automatically logged in, expect us to hit the learn page after
+  await expect(page).toHaveURL(/.*\/learn\/?$/);
 });
