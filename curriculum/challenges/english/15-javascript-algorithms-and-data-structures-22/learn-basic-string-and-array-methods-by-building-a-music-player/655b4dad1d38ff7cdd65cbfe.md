@@ -677,8 +677,8 @@ const playPreviousSong = () =>{
 
 const shuffle = () => {
   userData?.songs.sort(() => Math.random() - 0.5);
-  userData?.currentSong = null;
-  userData?.songCurrentTime = 0;
+  userData.currentSong = null;
+  userData.songCurrentTime = 0;
 
   renderSongs(userData?.songs);
   pauseSong();
@@ -688,8 +688,8 @@ const shuffle = () => {
 
 const deleteSong = (id) => {
   if (userData?.currentSong?.id === id) {
-    userData?.currentSong = null;
-    userData?.songCurrentTime = 0;
+    userData.currentSong = null;
+    userData.songCurrentTime = 0;
 
     pauseSong();
     setPlayerDisplay();
@@ -800,8 +800,8 @@ audio.addEventListener("ended", () => {
     if (nextSongExists) {
       playNextSong();
     } else {
-      userData?.currentSong = null;
-      userData?.songCurrentTime = 0;  
+      userData.currentSong = null;
+      userData.songCurrentTime = 0;  
 --fcc-editable-region--
 
 
@@ -1459,8 +1459,8 @@ const playPreviousSong = () =>{
 
 const shuffle = () => {
   userData?.songs.sort(() => Math.random() - 0.5);
-  userData?.currentSong = null;
-  userData?.songCurrentTime = 0;
+  userData.currentSong = null;
+  userData.songCurrentTime = 0;
 
   renderSongs(userData?.songs);
   pauseSong();
@@ -1470,8 +1470,8 @@ const shuffle = () => {
 
 const deleteSong = (id) => {
   if (userData?.currentSong?.id === id) {
-    userData?.currentSong = null;
-    userData?.songCurrentTime = 0;
+    userData.currentSong = null;
+    userData.songCurrentTime = 0;
 
     pauseSong();
     setPlayerDisplay();
@@ -1582,8 +1582,8 @@ audio.addEventListener("ended", () => {
     if (nextSongExists) {
       playNextSong();
     } else {
-      userData?.currentSong = null;
-      userData?.songCurrentTime = 0;
+      userData.currentSong = null;
+      userData.songCurrentTime = 0;
 
       pauseSong(); 
       setPlayerDisplay(); 
