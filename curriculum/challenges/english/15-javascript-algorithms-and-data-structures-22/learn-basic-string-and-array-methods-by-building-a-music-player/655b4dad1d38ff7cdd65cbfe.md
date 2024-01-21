@@ -636,7 +636,7 @@ const playSong = (id) => {
   if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
     audio.currentTime = 0;
   } else {
-    audio.currentTime = userData.songCurrentTime;
+    audio.currentTime = userData?.songCurrentTime;
   }
   userData.currentSong = song;
   playButton.classList.add("playing");
@@ -648,7 +648,7 @@ const playSong = (id) => {
 };
 
 const pauseSong = () => {
-  userData.songCurrentTime = audio.currentTime;
+  userData?.songCurrentTime = audio.currentTime;
   
   playButton.classList.remove("playing");
   audio.pause();
@@ -678,7 +678,7 @@ const playPreviousSong = () =>{
 const shuffle = () => {
   userData?.songs.sort(() => Math.random() - 0.5);
   userData.currentSong = null;
-  userData.songCurrentTime = 0;
+  userData?.songCurrentTime = 0;
 
   renderSongs(userData?.songs);
   pauseSong();
@@ -689,7 +689,7 @@ const shuffle = () => {
 const deleteSong = (id) => {
   if (userData?.currentSong?.id === id) {
     userData.currentSong = null;
-    userData.songCurrentTime = 0;
+    userData?.songCurrentTime = 0;
 
     pauseSong();
     setPlayerDisplay();
@@ -801,7 +801,7 @@ audio.addEventListener("ended", () => {
       playNextSong();
     } else {
       userData.currentSong = null;
-      userData.songCurrentTime = 0;  
+      userData?.songCurrentTime = 0;  
 --fcc-editable-region--
 
 
@@ -1418,7 +1418,7 @@ const playSong = (id) => {
   if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
     audio.currentTime = 0;
   } else {
-    audio.currentTime = userData.songCurrentTime;
+    audio.currentTime = userData?.songCurrentTime;
   }
   userData.currentSong = song;
   playButton.classList.add("playing");
@@ -1430,7 +1430,7 @@ const playSong = (id) => {
 };
 
 const pauseSong = () => {
-  userData.songCurrentTime = audio.currentTime;
+  userData?.songCurrentTime = audio.currentTime;
   
   playButton.classList.remove("playing");
   audio.pause();
@@ -1460,7 +1460,7 @@ const playPreviousSong = () =>{
 const shuffle = () => {
   userData?.songs.sort(() => Math.random() - 0.5);
   userData.currentSong = null;
-  userData.songCurrentTime = 0;
+  userData?.songCurrentTime = 0;
 
   renderSongs(userData?.songs);
   pauseSong();
@@ -1471,7 +1471,7 @@ const shuffle = () => {
 const deleteSong = (id) => {
   if (userData?.currentSong?.id === id) {
     userData.currentSong = null;
-    userData.songCurrentTime = 0;
+    userData?.songCurrentTime = 0;
 
     pauseSong();
     setPlayerDisplay();
@@ -1583,7 +1583,7 @@ audio.addEventListener("ended", () => {
       playNextSong();
     } else {
       userData.currentSong = null;
-      userData.songCurrentTime = 0;
+      userData?.songCurrentTime = 0;
 
       pauseSong(); 
       setPlayerDisplay(); 
