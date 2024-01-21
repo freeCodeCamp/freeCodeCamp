@@ -585,7 +585,7 @@ const playSong = (id) => {
   } else {
     audio.currentTime = userData?.songCurrentTime;
   }
-  userData?.currentSong = song;
+  userData.currentSong = song;
   playButton.classList.add("playing");
 
   highlightCurrentSong();
