@@ -695,7 +695,7 @@ const deleteSong = (id) => {
     setPlayerDisplay();
   }
 
-  userData?.songs = userData?.songs.filter((song) => song.id !== id);
+  userData.songs = userData?.songs.filter((song) => song.id !== id);
   renderSongs(userData?.songs); 
   highlightCurrentSong(); 
   setPlayButtonAccessibleText(); 
@@ -710,7 +710,7 @@ const deleteSong = (id) => {
     playlistSongs.appendChild(resetButton);
 
     resetButton.addEventListener("click", () => {
-      userData?.songs = [...allSongs];
+      userData.songs = [...allSongs];
 
       renderSongs(userData?.songs); 
       setPlayButtonAccessibleText();
@@ -1477,7 +1477,7 @@ const deleteSong = (id) => {
     setPlayerDisplay();
   }
 
-  userData?.songs = userData?.songs.filter((song) => song.id !== id);
+  userData.songs = userData?.songs.filter((song) => song.id !== id);
   renderSongs(userData?.songs); 
   highlightCurrentSong(); 
   setPlayButtonAccessibleText(); 
@@ -1492,7 +1492,7 @@ const deleteSong = (id) => {
     playlistSongs.appendChild(resetButton);
 
     resetButton.addEventListener("click", () => {
-      userData?.songs = [...allSongs];
+      userData.songs = [...allSongs];
 
       renderSongs(userData?.songs); 
       setPlayButtonAccessibleText();
