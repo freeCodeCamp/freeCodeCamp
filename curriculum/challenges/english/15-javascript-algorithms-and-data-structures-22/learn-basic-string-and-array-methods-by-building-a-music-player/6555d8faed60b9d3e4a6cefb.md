@@ -634,7 +634,7 @@ const playSong = (id) => {
   } else {
     audio.currentTime = userData?.songCurrentTime;
   }
-  userData.currentSong = song;
+  userData?.currentSong = song;
   playButton.classList.add("playing");
 
   highlightCurrentSong();
@@ -719,7 +719,7 @@ const renderSongs = (array) => {
 
 --fcc-editable-region--
 
-const getCurrentSongIndex = () => userData?.songs.indexOf(userData.currentSong);
+const getCurrentSongIndex = () => userData?.songs.indexOf(userData?.currentSong);
 
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {

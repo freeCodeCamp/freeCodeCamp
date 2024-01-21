@@ -638,7 +638,7 @@ const playSong = (id) => {
   } else {
     audio.currentTime = userData?.songCurrentTime;
   }
-  userData.currentSong = song;
+  userData?.currentSong = song;
   playButton.classList.add("playing");
 
   highlightCurrentSong();
@@ -677,7 +677,7 @@ const playPreviousSong = () =>{
 
 const shuffle = () => {
   userData?.songs.sort(() => Math.random() - 0.5);
-  userData.currentSong = null;
+  userData?.currentSong = null;
   userData?.songCurrentTime = 0;
 
   renderSongs(userData?.songs);
@@ -688,7 +688,7 @@ const shuffle = () => {
 
 const deleteSong = (id) => {
   if (userData?.currentSong?.id === id) {
-    userData.currentSong = null;
+    userData?.currentSong = null;
     userData?.songCurrentTime = 0;
 
     pauseSong();
@@ -775,7 +775,7 @@ const setPlayButtonAccessibleText = () => {
   );
 };
 
-const getCurrentSongIndex = () => userData?.songs.indexOf(userData.currentSong);
+const getCurrentSongIndex = () => userData?.songs.indexOf(userData?.currentSong);
 
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {
@@ -800,7 +800,7 @@ audio.addEventListener("ended", () => {
     if (nextSongExists) {
       playNextSong();
     } else {
-      userData.currentSong = null;
+      userData?.currentSong = null;
       userData?.songCurrentTime = 0;  
 --fcc-editable-region--
 
@@ -1420,7 +1420,7 @@ const playSong = (id) => {
   } else {
     audio.currentTime = userData?.songCurrentTime;
   }
-  userData.currentSong = song;
+  userData?.currentSong = song;
   playButton.classList.add("playing");
 
   highlightCurrentSong();
@@ -1459,7 +1459,7 @@ const playPreviousSong = () =>{
 
 const shuffle = () => {
   userData?.songs.sort(() => Math.random() - 0.5);
-  userData.currentSong = null;
+  userData?.currentSong = null;
   userData?.songCurrentTime = 0;
 
   renderSongs(userData?.songs);
@@ -1470,7 +1470,7 @@ const shuffle = () => {
 
 const deleteSong = (id) => {
   if (userData?.currentSong?.id === id) {
-    userData.currentSong = null;
+    userData?.currentSong = null;
     userData?.songCurrentTime = 0;
 
     pauseSong();
@@ -1557,7 +1557,7 @@ const setPlayButtonAccessibleText = () => {
   );
 };
 
-const getCurrentSongIndex = () => userData?.songs.indexOf(userData.currentSong);
+const getCurrentSongIndex = () => userData?.songs.indexOf(userData?.currentSong);
 
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {
@@ -1582,7 +1582,7 @@ audio.addEventListener("ended", () => {
     if (nextSongExists) {
       playNextSong();
     } else {
-      userData.currentSong = null;
+      userData?.currentSong = null;
       userData?.songCurrentTime = 0;
 
       pauseSong(); 
