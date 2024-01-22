@@ -1,8 +1,8 @@
 ---
 id: 62aa27c40ca6f04ab8be5fac
-title: Step 166
+title: Step 165
 challengeType: 0
-dashedName: step-166
+dashedName: step-165
 ---
 
 # --description--
@@ -20,7 +20,7 @@ for (let x = 1; x < 5; x++) {
 You should copy the above loop into your `pick` function.
 
 ```js
-assert.match(pick.toString(), /for\s*\(\s*(let|var)\s*x\s*=\s*1\s*;\s*x\s*<\s*5\s*;\s*x\s*\+\+\s*\)/);
+assert.match(pick.toString(), /for\s*\(\s*(let|var)\s+x\s*=\s*1\s*;\s*x\s*<\s*5\s*;\s*x\s*\+\+\s*\)/);
 ```
 
 # --seed--

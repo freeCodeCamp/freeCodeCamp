@@ -6,4 +6,4 @@ export const handleRequest = (makeRequest: () => Promise<Response>) => () => {
 };
 
 export const API_LOCATION = import.meta.env
-  .VITE_CHALLENGE_EDITOR_API_LOCATION as string;
+  .CHALLENGE_EDITOR_API_LOCATION as string;
