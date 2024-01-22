@@ -136,9 +136,7 @@ def __inputGen(xs):
 input = __inputGen(${JSON.stringify(input ?? [])})
 `);
 
-    runPython(`
-import ast_helpers as _ast_helpers
-`);
+    runPython(`from ast_helpers import Chainable as _Chainable`);
 
     // The tests need the user's code as a string, so we write it to the virtual
     // filesystem.
