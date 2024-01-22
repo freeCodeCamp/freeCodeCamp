@@ -4,21 +4,30 @@ import { render, screen } from '@testing-library/react';
 import { FormGroup } from '../form-group';
 import { ControlLabel } from '.';
 
-const id = 'foo';
 describe('<ControlLabel>', () => {
-  it('inherit id', () => {
+  it('should inherit `controlId` from FormGroup', () => {
     render(
-      <FormGroup role='group' controlId={id}>
-        <ControlLabel>Label in formgroup</ControlLabel>
+      <FormGroup controlId='foo'>
+        <ControlLabel>Label</ControlLabel>
       </FormGroup>
     );
 
-    const labelElement = screen.getByText('Label in formgroup');
-    const formGroupElement = screen.getByRole('group');
+    const labelElement = screen.getByText('Label');
 
     expect(labelElement).toBeInTheDocument();
-    expect(formGroupElement).toContainElement(labelElement);
-    expect(formGroupElement).toHaveAttribute('id', id);
-    expect(labelElement).toHaveAttribute('for', id);
+    expect(labelElement).toHaveAttribute('for', 'foo');
+  });
+
+  it('should use `htmlFor` over `controlId` if both are specified', () => {
+    render(
+      <FormGroup controlId='foo'>
+        <ControlLabel htmlFor='bar'>Label</ControlLabel>
+      </FormGroup>
+    );
+
+    const labelElement = screen.getByText('Label');
+
+    expect(labelElement).toBeInTheDocument();
+    expect(labelElement).toHaveAttribute('for', 'bar');
   });
 });
