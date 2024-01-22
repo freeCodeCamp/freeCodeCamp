@@ -83,3 +83,38 @@ pnpm run cypress:install-build-tools
 - When prompted in the terminal, select your keyboard layout by language/area
 
 Now, [Cypress can be run](how-to-add-cypress-tests.md#_2-run-the-cypress-tests)
+
+## Troubleshooting
+
+### Unable to Connect to Port 8000
+
+If Cypress fails to run with the following error:
+
+```
+CypressError: `cy.visit()` failed trying to load:
+
+http://localhost:3000/signin
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  > Error: connect ECONNREFUSED 127.0.0.1:8000
+
+Common situations why this would fail:
+  - you don't have internet access
+  - you forgot to run / boot your web server
+  - your web server isn't accessible
+  - you have weird network configuration settings on your computer
+
+This error occurred while creating the session. Because the session setup failed, we failed the test.
+```
+
+You can resolve the issue by:
+- Going to the root `package.json` file and adding `--host 0.0.0.0` to the `develop:client` command:
+    ```json
+    "scripts": {
+      "develop:client": "cd ./client && pnpm run develop --host 0.0.0.0"
+    }
+    ```
+- Then, re-running `pnpm run develop`
