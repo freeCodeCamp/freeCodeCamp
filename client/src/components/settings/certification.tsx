@@ -1,4 +1,3 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
 import { find } from 'lodash-es';
 import React, { MouseEvent, useState } from 'react';
@@ -7,7 +6,7 @@ import type { TFunction } from 'i18next';
 import { createSelector } from 'reselect';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import { connect } from 'react-redux';
-import { Table } from '@freecodecamp/ui';
+import { Table, Button } from '@freecodecamp/ui';
 
 import { regeneratePathAndHistory } from '../../../../shared/utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
@@ -180,12 +179,6 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
   const certSlug = Certification.LegacyFullStack;
   const certLocation = `/certification/${username}/${certSlug}`;
 
-  const buttonStyle = {
-    marginBottom: '30px',
-    padding: '6px 12px',
-    fontSize: '18px'
-  };
-
   const createClickHandler =
     (certSlug: keyof typeof certSlugTypeMap) =>
     (e: MouseEvent<HTMLButtonElement>) => {
@@ -225,29 +218,27 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
         </ul>
       </div>
 
-      <div className={'col-xs-12'}>
+      <div>
         {fullStackClaimable ? (
           <Button
-            bsSize='sm'
-            bsStyle='primary'
-            className={'col-xs-12'}
+            size='small'
+            variant='primary'
+            block={true}
             href={certLocation}
             id={'button-' + certSlug}
-            onClick={createClickHandler(certSlug)}
-            style={buttonStyle}
+            // This floating promise is acceptable
+            onClick={void createClickHandler(certSlug)}
             target='_blank'
           >
             {isFullStackCert ? t('buttons.show-cert') : t('buttons.claim-cert')}
           </Button>
         ) : (
           <Button
-            bsSize='sm'
-            bsStyle='primary'
-            className={'col-xs-12'}
+            size='small'
+            variant='primary'
+            block={true}
             disabled={true}
             id={'button-' + certSlug}
-            style={buttonStyle}
-            target='_blank'
           >
             {t('buttons.claim-cert')}
           </Button>
@@ -402,11 +393,11 @@ function CertificationSettings(props: CertificationSettingsProps) {
           <td colSpan={2}>
             <Button
               block={true}
-              bsStyle='primary'
-              className={'col-xs-12'}
+              variant='primary'
               href={certLocation}
               data-cy={`btn-for-${certSlug}`}
-              onClick={clickHandler}
+              // This floating promise is acceptable
+              onClick={void clickHandler}
             >
               {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}{' '}
               <span className='sr-only'>{certName}</span>
