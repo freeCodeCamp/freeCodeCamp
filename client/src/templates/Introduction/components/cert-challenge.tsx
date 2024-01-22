@@ -84,7 +84,12 @@ const CertChallenge = ({
   const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
 
-  const cert = liveCerts.find(x => x.title === title);
+  let cert = {};
+  liveCerts.map(e =>{
+    if(e.title === title){
+      cert += e.title;
+    }
+  })
   if (!cert) throw Error(`Certification ${title} not found`);
   const certSlug = cert.certSlug;
 
