@@ -45,6 +45,12 @@ probability = experiment(hat=hat,
                   num_experiments=2000)
 ```
 
+The output would be something like this:
+
+```bash
+>>> 0.356
+```
+
 Since this is based on random draws, the probability will be slightly different each time the code is run.
 
 _Hint: Consider using the modules that are already imported at the top. Do not initialize random seed within the file._
