@@ -1,5 +1,5 @@
 import { exec } from 'child_process';
-import { readdir, stat } from 'fs/promises';
+import { readFile, readdir, stat, writeFile } from 'fs/promises';
 import { join, sep } from 'path';
 import { promisify } from 'util';
 
@@ -38,6 +38,17 @@ const syncChallenges = async () => {
         await asyncExec(
           `mkdir -p ${targetDir.join(sep)} && cp ${path} ${targetPath}`
         );
+      }
+      const englishContent = await readFile(path, 'utf-8');
+      const langContent = await readFile(targetPath, 'utf-8');
+      const engLines = englishContent.split('\n');
+      const engId = engLines.find(l => l.startsWith('id'));
+      const langLines = langContent.split('\n');
+      const langId = langLines.find(l => l.startsWith('id'));
+      if (engId && langId && engId !== langId) {
+        langLines.splice(langLines.indexOf(langId), 1, engId);
+        console.log(`Updating ID for ${targetPath}`);
+        await writeFile(targetPath, langLines.join('\n'), 'utf-8');
       }
     }
   }
