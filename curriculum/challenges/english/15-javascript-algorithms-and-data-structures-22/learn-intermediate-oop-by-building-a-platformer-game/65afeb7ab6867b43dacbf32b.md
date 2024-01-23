@@ -1,70 +1,34 @@
 ---
-id: 6486212f80701cfb18052eae
-title: Step 16
+id: 65afeb7ab6867b43dacbf32b
+title: Step 10
 challengeType: 0
-dashedName: step-16
+dashedName: step-10
 ---
 
 # --description--
 
-Below your `position` object, use the `this` keyword to set the `velocity` property to an object.
+As you are designing the game, you will need to make sure that the size of the elements in the game are responsive and adapt to different screen sizes.
 
-Inside that new `velocity` object, create a key called `x` with a value of `0` and a new key called `y` with a value of `0`.
+Start by creating an arrow function called `proportionalSize` that takes in a `size` parameter.
 
 # --hints--
 
-You should use the `this` keyword to set the `velocity` property of your class to an object.
+`proportionalSize` should be a function.
 
 ```js
-assert.match(code, /this\.velocity/);
-const player = new Player();
-assert.isObject(player.velocity);
+assert.isFunction(proportionalSize);
 ```
 
-You should add a new key called `x` with a value of 0 inside your `velocity` object.
+Your `proportionalSize` function should use arrow syntax.
 
 ```js
-assert.match(code, /this\.velocity/);
-const player = new Player();
-
-assert(
-  (function (obj) {
-    if (
-      obj.hasOwnProperty('x') &&
-      obj.x !== undefined &&
-      typeof obj.x === 'number' &&
-      obj.x === 0
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  })(player.velocity)
-);
+assert.match(code, /const\s+proportionalSize\s*=\s*\(\s*.*\s*\)\s*=>/);
 ```
 
-
-You should add a key called `y` with a value of 0 inside your `velocity` object.
-
+Your `proportionalSize` function should have a `size` parameter.
 
 ```js
-assert.match(code, /this\.velocity/);
-const player = new Player();
-
-assert(
-  (function (obj) {
-    if (
-      obj.hasOwnProperty('y') &&
-      obj.y !== undefined &&
-      typeof obj.y === 'number' &&
-      obj.y === 0
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  })(player.velocity)
-);
+assert.match(code, /const\s+proportionalSize\s*=\s*\(\s*size\s*\)\s*=>/);
 ```
 
 # --seed--
@@ -217,16 +181,6 @@ const gravity = 0.5;
 let isCheckpointCollisionDetectionActive = true;
 
 --fcc-editable-region--
-
-class Player {
-  constructor() {
-    this.position = {
-      x: 10,
-      y: 400,
-    };
-
-  }
-}
 
 --fcc-editable-region--
 
