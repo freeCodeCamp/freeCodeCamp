@@ -9,7 +9,7 @@ const certs = [
   },
   {
     name: 'JavaScript Algorithms and Data Structures',
-    url: '/certification/certifieduser/javascript-algorithms-and-data-structures'
+    url: '/certification/certifieduser/javascript-algorithms-and-data-structures-v8'
   },
   {
     name: 'Front End Development Libraries',
@@ -68,7 +68,11 @@ const legacyCerts = [
     name: 'Information Security and Quality Assurance',
     url: '/certification/certifieduser/information-security-and-quality-assurance'
   },
-  { name: 'Full Stack', url: '/certification/certifieduser/full-stack' }
+  { name: 'Full Stack', url: '/certification/certifieduser/full-stack' },
+  {
+    name: 'JavaScript Algorithms and Data Structures',
+    url: '/certification/certifieduser/javascript-algorithms-and-data-structures'
+  }
 ];
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });

@@ -29,7 +29,9 @@ const settingsObject = {
 
 const certifications = [
   translations.certification.title['Responsive Web Design'],
-  translations.certification.title['JavaScript Algorithms and Data Structures'],
+  translations.certification.title[
+    'JavaScript Algorithms and Data Structures (Beta)'
+  ],
   translations.certification.title['Front End Development Libraries'],
   translations.certification.title['Data Visualization'],
   translations.certification.title['Relational Database'],
@@ -49,7 +51,8 @@ const legacyCertifications = [
   translations.certification.title['Legacy Data Visualization'],
   translations.certification.title[
     'Legacy Information Security and Quality Assurance'
-  ]
+  ],
+  translations.certification.title['JavaScript Algorithms and Data Structures']
 ];
 
 test.describe('Settings', () => {
