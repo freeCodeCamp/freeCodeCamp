@@ -82,3 +82,38 @@ pnpm run cypress:install-build-tools
 - Якщо керований в терміналі, виберіть розкладку клавіатури за мовою/регіоном
 
 Тепер [Cypress можна запустити](how-to-add-cypress-tests.md#_2-run-the-cypress-tests)
+
+## Розв’язання проблем розробки
+
+### Не вдалося під’єднатися до порту 8000
+
+Якщо Cypress видає наступну помилку:
+
+```
+CypressError: `cy.visit()` failed trying to load:
+
+http://localhost:3000/signin
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  > Error: connect ECONNREFUSED 127.0.0.1:8000
+
+Common situations why this would fail:
+  - you don't have internet access
+  - you forgot to run / boot your web server
+  - your web server isn't accessible
+  - you have weird network configuration settings on your computer
+
+This error occurred while creating the session. Because the session setup failed, we failed the test.
+```
+
+Як розв’язати цю проблему:
+- Перейдіть до кореневого файлу `package.json` та додайте `--host 0.0.0.0` до команди `develop:client`:
+    ```json
+    "scripts": {
+      "develop:client": "cd ./client && pnpm run develop --host 0.0.0.0"
+    }
+    ```
+- Потім знову виконайте `pnpm run develop`

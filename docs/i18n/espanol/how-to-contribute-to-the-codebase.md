@@ -61,7 +61,7 @@ Sigue estos pasos:
    git diff upstream/main
    ```
 
-   El resultado debería ser que el directorio de trabajo está limpio. Este proceso es importante porque va a estar constantemente combinando tu rama con `upstream/main` para evitar conflictos a futuro.
+   El resultado debería ser que el directorio de trabajo está limpio. This process is important, because you will be rebasing your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
 
 3. Crea una nueva rama:
 

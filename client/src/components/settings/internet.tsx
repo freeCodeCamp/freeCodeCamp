@@ -298,8 +298,8 @@ class InternetSettings extends Component<InternetProps, InternetState> {
             </div>
             <BlockSaveButton
               data-playwright-test-label='internet-save-button'
-              aria-disabled={isDisabled}
-              bgSize='lg'
+              disabled={isDisabled}
+              bgSize='large'
               {...(isDisabled && { tabIndex: -1 })}
             >
               {t('buttons.save')}{' '}
