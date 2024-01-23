@@ -288,6 +288,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
           <KeyboardShortcutsSettings
             keyboardShortcuts={keyboardShortcuts}
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
+            explain={t('settings.shortcuts-explained')}
           />
           <ScrollbarWidthSettings />
         </FullWidthRow>
