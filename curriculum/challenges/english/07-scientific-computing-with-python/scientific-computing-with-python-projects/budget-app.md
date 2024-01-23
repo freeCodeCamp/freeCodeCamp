@@ -22,7 +22,19 @@ When the budget object is printed it should display:
 - A list of the items in the ledger. Each line should show the description and amount. The first 23 characters of the description should be displayed, then the amount. The amount should be right aligned, contain two decimal places, and display a maximum of 7 characters.
 - A line displaying the category total.
 
-Here is an example of the output:
+Here is an example usage:
+
+```py
+food = Category("Food")
+food.deposit(1000, "deposit")
+food.withdraw(10.15, "groceries")
+food.withdraw(15.89, "restaurant and more food for dessert")
+clothing = Category("Clothing")
+food.transfer(50, clothing)
+print(food)
+```
+
+And here is an example of the output:
 
 ```bash
 *************Food*************
