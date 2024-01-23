@@ -22,13 +22,13 @@ assert.isFunction(proportionalSize);
 Your `proportionalSize` function should use arrow syntax.
 
 ```js
-assert.match(code, /const\s+proportionalSize\s*=\s*\(\s*.*\s*\)\s*=>/);
+assert.match(code, /const\s+proportionalSize\s*=\s*\(?\s*.*\s*\)?\s*=>/);
 ```
 
 Your `proportionalSize` function should have a `size` parameter.
 
 ```js
-assert.match(code, /const\s+proportionalSize\s*=\s*\(\s*size\s*\)\s*=>/);
+assert.match(code, /const\s+proportionalSize\s*=\s*\(?\s*size\s*\)?\s*=>/);
 ```
 
 # --seed--
