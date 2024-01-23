@@ -120,7 +120,7 @@ const createHeader = (id = mainPreviewId) => `
     document.addEventListener('submit', function(e) {
       const action = e.target.getAttribute('action');
       e.preventDefault();
-      if (action || action.match(/https?:\\/\\//)) {
+      if (action && action.match(/https?:\\/\\//)) {
         window.parent.window.alert(
           i18nContent.t('misc.iframe-form-submit-alert', { externalLink: action  })
         )

@@ -1,37 +1,63 @@
 ---
-id: 6374f208de18c50e48ba767b
-title: Основи HTML. Запитання E
+id: 637f4e2f72c65bc8e73dfe22
+title: HTML Foundations Question E
 challengeType: 15
 dashedName: html-foundations-question-e
 ---
 
 # --description--
 
-HTML та CSS — це дві мови, які працюють разом, щоб створити все, що ви бачите в інтернеті. HTML — це необроблені дані, на яких побудована вебсторінка. Весь текст, посилання, картки, списки та кнопки створюються в HTML. CSS надає стилю цим звичайним елементам. HTML розміщує інформацію на вебсторінці, а CSS робить її красивою, надаючи кольору та змінюючи шрифт.
+The `<head>` element is where you put important meta-information about your webpages, and stuff required for your webpages to render correctly in the browser. Inside the `<head>`, you should not use any element that displays content on the webpage.
 
-Багато ресурсів продовжують називати HTML та CSS мовами програмування, але, якщо розібратися з технічної точки зору, це не зовсім правильно. Причина в тому, що їх використовують лише для представлення інформації. Вони не використовуються для створення логіки програми. JavaScript, який ви вивчите в наступному розділі, є мовою програмування, оскільки його використовують для того, щоб вебсторінки виконували певні дії. Однак багато чого можна зробити, використовуючи лише HTML та CSS, тому вони обов’язково знадобляться. Наступні уроки нашої навчальної програми зосереджені на інструментах, які необхідно осягнути перед тим, як перейти до JavaScript.
+## The Charset Meta Element
+You should always have the `meta` tag for the `charset` encoding of the webpage in the `head` element: `<meta charset="utf-8">`.
 
-# --assignment--
+Setting the encoding is very important because it ensures that the webpage will display special symbols and characters from different languages correctly in the browser.
 
-Прочитайте публікацію <a href="https://brytdesigns.com/html-css-javascript-whats-the-difference#What_is_HTML" target="_blank">HTML vs CSS vs JavaScript</a> (англійською мовою). Це короткий огляд відносин між HTML, CSS та JavaScript.
+## Title Element
+Another element you should always include in the head of an HTML document is the `title` element:
+
+```html
+<title>My First Webpage</title>
+```
+
+The `title` element is used to give webpages a human-readable title which is displayed in your webpage’s browser tab.
+
+If you didn’t include a `title` element, the webpage’s title would default to its file name. In your case that would be `index.html`, which isn’t very meaningful for users; this would make it very difficult to find your webpage if the user has many browser tabs open.
+
+There are many more elements that can go within the `head` of an HTML document. However, for now it’s only crucial to know about the two elements you have covered here. You will introduce more elements that go into the `head` throughout the rest of the curriculum.
+
+Back in `index.html` file, let’s add a `head` element with a `charset` `meta` element and a `title` within it. The head element goes within the HTML element and should always be the first element under the opening `<html>` tag:
+
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>My First Webpage</title>
+  </head>
+</html>
+```
 
 # --question--
-
+    
 ## --text--
 
-Яке з тверджень є правильним?
+What is the purpose of the `head` element?
 
 ## --answers--
 
-CSS використовують для створення базової структури вебсторінки, а HTML для додавання стилів.
+The `head` element is used to display all elements that are displayed on the webpage.
 
 ---
 
-HTML використовують для створення базової структури вебсторінки, а CSS для додавання стилів.
+The `head` element is used to display important information about your webpage and is used to render web pages correctly with `meta` elements.
 
 ---
 
-HTML та CSS використовують для додавання стилів, а JavaScript для створення базової структури вебсторінки.
+The `head` element is used to display the header content on top of the webpage.
 
 
 ## --video-solution--
