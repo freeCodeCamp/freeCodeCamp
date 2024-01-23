@@ -21,7 +21,8 @@
     "src/**/*",
     "utils/**/*",
     "tools/**/*",
-    "config/**/*"
+    "config/**/*",
+    "../shared/config/curriculum.ts"
   ], // since ts-node compiles ts on the fly and then uses node, it needs to
   // compile the scripts to commonjs (or node will complain about the requires)
   "ts-node": {

@@ -20,14 +20,9 @@ import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import {
-  isNewJsCert,
-  isSciCompPyCert,
-  isNewRespCert
-} from '../../../utils/is-a-cert';
-import {
-  isCodeAllyPractice,
-  isFinalProject
-} from '../../../../../shared/config/challenge-types';
+  isGridBased,
+  isProjectBased
+} from '../../../../../shared/config/curriculum';
 import Challenges from './challenges';
 import '../intro.css';
 
@@ -118,21 +113,10 @@ class Block extends Component<BlockProps> {
     });
 
     const isProjectBlock = challenges.some(({ challenge }) => {
-      const isTakeHomeProject = blockDashedName === 'take-home-projects';
-
-      const projectCondition = [
-        isFinalProject(challenge.challengeType),
-        isCodeAllyPractice(challenge.challengeType)
-      ].some(Boolean);
-
-      return projectCondition && !isTakeHomeProject;
+      return isProjectBased.includes(challenge.challengeType);
     });
 
-    const isGridBlock = [
-      isNewRespCert(superBlock),
-      isNewJsCert(superBlock),
-      isSciCompPyCert(superBlock) && !isProjectBlock
-    ].some(Boolean);
+    const isGridBlock = isGridBased.includes(superBlock);
 
     const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock, {
       showNewCurriculum,
