@@ -1,26 +1,28 @@
 ---
-id: 64c734293def73808e609778
-title: Step 61
+id: 65b006efc74c675c2bdfccba
+title: Step 33
 challengeType: 0
-dashedName: step-61
+dashedName: step-33
 ---
 
 # --description--
 
-Add another `addEventListener` to the global `window` object and pass in the `keyup` event and use destructuring to pass in the `key` property from the event. 
+For the last condition, you will need to check if the player's `x` position has exceeded the right edge of the canvas. If it has, you will need to set the player's `x` position to the maximum value so the player does not accidentally go off screen to the right.
+
+Inside your `update` method, create an `if` statement that checks if `this.position.x >= canvas.width - 2 * this.width`. 
 
 # --hints--
 
-You should have an `addEventListener` that listens for the `keyup` event.
+You should have an `if` statement inside your `update` method.
 
 ```js
-assert.match(code, /window\.addEventListener\s*\(\s*('|")keyup\1\s*,\s*.*\s*\)/);
+assert.match(code, /if\s*\(\s*.*\s*\)\s*{/g);
 ```
 
-You should use the destructuring assignment to get the `key` property from the `event` object.
+Your `if` statement should check if `this.position.x >= canvas.width - 2 * this.width`.
 
 ```js
-assert.match(code, /window\.addEventListener\s*\(\s*('|")keyup\1\s*,\s*\(\s*{\s*key\s*}\s*\)\s*=>\s*{\s*}\s*\)/);
+assert.match(code, /if\s*\(\s*this\.position\.x\s*>=\s*canvas\.width\s*-\s*2\s*\*\s*this\.width\s*\)\s*{/gi);
 ```
 
 # --seed--
@@ -212,80 +214,10 @@ class Player {
     if (this.position.x < this.width) {
       this.position.x = this.width;
     }
+
+    --fcc-editable-region--
+
+    --fcc-editable-region--
   }
 }
-
-const player = new Player();
-
-
-const animate = () => {
-  requestAnimationFrame(animate);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  player.update();
-
-  if (keys.rightKey.pressed && player.position.x < 400) {
-    player.velocity.x = 5;
-  } else if (keys.leftKey.pressed && player.position.x > 100) {
-    player.velocity.x = -5;
-  } else {
-    player.velocity.x = 0;
-  }
-}
-
-
-const keys = {
-  rightKey: {
-    pressed: false
-  },
-  leftKey: {
-    pressed: false
-  }
-};
-
-const movePlayer = (key, xVelocity, isPressed) => {
-  if (!isCheckpointCollisionDetectionActive) {
-    player.velocity.x = 0;
-    player.velocity.y = 0;
-    return;
-  }
-
-  switch (key) {
-    case "ArrowLeft":
-      keys.leftKey.pressed = isPressed;
-      if (xVelocity === 0) {
-        player.velocity.x = xVelocity;
-      }
-      player.velocity.x -= xVelocity;
-      break;
-    case "ArrowUp":
-    case " ":
-    case "Spacebar":
-      player.velocity.y -= 8;
-      break;
-    case "ArrowRight":
-      keys.rightKey.pressed = isPressed;
-      if (xVelocity === 0) {
-        player.velocity.x = xVelocity;
-      }
-      player.velocity.x += xVelocity;
-  }
-}
-
-
-const startGame = () => {
-  canvas.style.display = "block";
-  startScreen.style.display = "none";
-  player.draw();
-}
-
-startBtn.addEventListener("click", startGame);
-
-window.addEventListener("keydown", ({ key }) => {
-  movePlayer(key, 8, true);
-});
-
---fcc-editable-region--
-
---fcc-editable-region--
-
 ```
