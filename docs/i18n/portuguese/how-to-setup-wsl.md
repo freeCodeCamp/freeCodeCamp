@@ -125,7 +125,7 @@ Agora que você instalou os pré-requisitos, siga [nosso guia de instalação lo
    > 
    > As dicas a seguir foram coletadas de toda a web e não passaram por diversos testes. A quilometragem pode variar.
 
-### Ajuste o agendamento do processador para serviços de segundo plano
+### Adjust processor scheduling for background services
 
 Isso pode reduzir os incidentes dos contêineres do Docker causando um crash devido à falta de recursos.
 

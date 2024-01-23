@@ -221,8 +221,8 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
           this.renderAlerts(validating, error, isValidUsername)}
         <FullWidthRow>
           <BlockSaveButton
-            aria-disabled={isDisabled}
-            bgSize='lg'
+            disabled={isDisabled}
+            bgSize='large'
             {...(isDisabled && { tabIndex: -1 })}
           >
             {t('buttons.save')}{' '}
