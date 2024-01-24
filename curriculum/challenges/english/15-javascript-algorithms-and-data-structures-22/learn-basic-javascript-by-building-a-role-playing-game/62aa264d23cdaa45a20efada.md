@@ -1,8 +1,8 @@
 ---
 id: 62aa264d23cdaa45a20efada
-title: Step 162
+title: Step 161
 challengeType: 0
-dashedName: step-162
+dashedName: step-161
 ---
 
 # --description--
@@ -30,7 +30,7 @@ assert.match(pick.toString(), /while\s*\(/);
 Your `while` loop should run while `numbers.length < 10`.
 
 ```js
-assert.match(pick.toString(), /while\s*\(\s*numbers.length\s*<\s*10\s*\)/);
+assert.match(pick.toString(), /while\s*\(\s*numbers\.length\s*<\s*10\s*\)/);
 ```
 
 # --seed--

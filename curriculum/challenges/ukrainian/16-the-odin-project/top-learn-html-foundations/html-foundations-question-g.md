@@ -1,48 +1,33 @@
 ---
-id: 637f4e3672c65bc8e73dfe23
-videoId: V8UAEoOvqFg
-title: Основи HTML. Запитання G
+id: 6376327e2724a688c04636e3
+title: HTML Foundations Question G
 challengeType: 15
 dashedName: html-foundations-question-g
 ---
 
 # --description--
 
-Останній елемент, необхідний для шаблонного коду HTML — елемент `<body>`. У ньому розміщується весь вміст, який побачать користувачі: текст, зображення, посилання, списки тощо.
-
-Щоб закінчити шаблонний код, додайте елемент `body` до файлу `index.html`. Елемент `body` завжди розташований в елементі `html` та завжди знизу елемента `head`:
-
-# --assignment--
-
-Перегляньте чудове відео Кевіна Павелла про побудову першої вебсторінки.
-
----
-
-Потренуйте пам’ять, видаливши весь вміст файлу `index.html` та спробуйте написати шаблонний код ще раз. Не хвилюйтесь, якщо перші рази вам потрібно переглянути матеріал. Продовжуйте, поки не зможете написати код з пам’яті.
-
----
-
-Запустіть свій шаблонний код через [валідатор HTML](https://www.freeformatter.com/html-validator.html). Валідатори гарантують, що розмітка є правильною. Це чудові інструменти для навчання, оскільки вони надають відгуки про синтаксичні помилки, які ви можете час від часу допускати, навіть не здогадуючись про них (наприклад, відсутність кінцевих тегів або додавання додаткових пробілів).
+HTML and CSS are two languages that work together to create everything that you see when you look at something on the internet. HTML is the raw data that a webpage is built out of. All the text, links, cards, lists, and buttons are created in HTML. CSS is what adds style to those plain elements. HTML puts information on a webpage, and CSS positions that information, gives it color, changes the font, and makes it look great!
 
 # --question--
-
+    
 ## --text--
 
-Яка суть елемента `body`?
+What are the primary responsibilities of HTML and CSS in creating a webpage?
 
 ## --answers--
 
-Тут розміщена вся важлива інформація про вебсторінку (наприклад, теги `title` та `meta`).
+HTML structures the content, while CSS styles the elements.
 
 ---
 
-Тут вказується браузеру, як правильно відтворити вебсторінку.
+HTML creates the visual design, while CSS organizes the content.
 
 ---
 
-Тут розміщений весь вміст, який буде показано (наприклад, зображення, текст та посилання).
+CSS manages the functionality, while HTML controls the layout.
 
 
 ## --video-solution--
 
-3
+1
