@@ -113,14 +113,11 @@ class Block extends Component<BlockProps> {
     });
 
     const isProjectBlock = challenges.some(({ challenge }) => {
-      return (
-        isProjectBased(challenge.challengeType) &&
-        blockDashedName !== 'take-home-projects'
-      );
+      return isProjectBased(challenge.challengeType, blockDashedName);
     });
 
     const isGridBlock = challenges.some(({ challenge }) => {
-      return isGridBased(superBlock) && challenge.challengeType !== 10;
+      return isGridBased(superBlock, challenge.challengeType);
     });
 
     const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock, {
