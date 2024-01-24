@@ -22,13 +22,7 @@ const superBlocksWithLinks = [
 ];
 
 const superBlockTitleOverride: Record<string, string> = {
-  'Responsive Web Design': 'Legacy Responsive Web Design Challenges',
-  'JavaScript Algorithms and Data Structures':
-    'JavaScript Algorithms and Data Structures Certification'
-};
-
-const superBlockSlugOverride: Record<string, string> = {
-  '2022/responsive-web-design': 'responsive-web-design'
+  'Responsive Web Design': 'Responsive Web Design Certification'
 };
 
 test.describe('Map Component', () => {
@@ -56,10 +50,7 @@ test.describe('Map Component', () => {
       await expect(superblockLink).toBeVisible();
       await expect(superblockLink).toHaveAttribute(
         'href',
-        `/learn/${
-          superBlockSlugOverride[superBlocksWithLinks[i]] ??
-          superBlocksWithLinks[i]
-        }/`
+        `/learn/${superBlocksWithLinks[i]}/`
       );
     }
   });

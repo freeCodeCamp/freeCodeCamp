@@ -8,7 +8,7 @@ const certs = [
     url: '/certification/certifieduser/responsive-web-design'
   },
   {
-    name: 'JavaScript Algorithms and Data Structures',
+    name: 'JavaScript Algorithms and Data Structures (Beta)',
     url: '/certification/certifieduser/javascript-algorithms-and-data-structures-v8'
   },
   {
