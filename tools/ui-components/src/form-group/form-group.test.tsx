@@ -2,8 +2,11 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import { FormControl } from '../form-control/.';
+import { ControlLabel } from '../control-label';
 import { FormGroup } from '.';
+
 const sameNumberOfChildren = 2;
+
 describe('<FormGroup>', () => {
   it('renders children', () => {
     render(
@@ -23,13 +26,20 @@ describe('<FormGroup>', () => {
     });
   });
 
-  it('provided controlId to label and control', () => {
+  it('should pass `controlId` to the label and input elements', () => {
     render(
-      <FormGroup controlId='my-control' data-testid='test-id'>
-        <FormControl aria-label='test' />
+      <FormGroup controlId='foo'>
+        <ControlLabel>Foo</ControlLabel>
+        <FormControl />
       </FormGroup>
     );
-    const input = screen.getByLabelText('test');
-    expect(input.id).toBe('my-control');
+
+    const label = screen.getByText('Foo');
+    const input = screen.getByLabelText('Foo');
+
+    expect(label).toBeInTheDocument();
+    expect(label).toHaveAttribute('for', 'foo');
+    expect(input).toBeInTheDocument();
+    expect(input).toHaveAttribute('id', 'foo');
   });
 });

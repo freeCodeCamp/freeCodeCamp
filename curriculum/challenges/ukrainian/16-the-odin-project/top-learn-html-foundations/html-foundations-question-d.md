@@ -1,17 +1,17 @@
 ---
 id: 637f4e2872c65bc8e73dfe21
-title: Основи HTML. Запитання D
+title: HTML Foundations Question D
 challengeType: 15
 dashedName: html-foundations-question-d
 ---
 
 # --description--
 
-Після оголошення doctype потрібно надати елемент `<html>`. Він відомий як кореневий елемент документа, тобто кожен інший елемент у документі буде його нащадком.
+After you declare the doctype, you need to provide an `<html>` element. This is what’s known as the root element of the document, meaning that every other element in the document will be a descendant of it.
 
-Це буде важливішим пізніше, коли ви дізнаєтесь про маніпулювання HTML з JavaScript. Наразі просто знайте, що елемент `html` повинен бути у кожному документі HTML.
+This becomes more important later on when you learn about manipulating HTML with JavaScript. For now, just know that the `html` element should be included on every HTML document.
 
-Назад до файлу `index.html`: додайте елемент `<html>`, ввівши початковий та кінцевий теги:
+Back in the `index.html` file, let’s add the `<html>` element by typing out its opening and closing tags, like so:
 
 ```html
 <!DOCTYPE html>
@@ -19,26 +19,26 @@ dashedName: html-foundations-question-d
 </html>
 ```
 
-## Що таке атрибут lang?
-`lang` вказує мову текстового вмісту в елементі. В першу чергу цей атрибут використовується, щоб покращити доступність вебсторінки. Він дозволяє допоміжним технологіям (наприклад, читачам екрана) адаптуватись відповідно до мови та відтворити правильну вимову.
+## What is the lang attribute?
+`lang` specifies the language of the text content in that element. This attribute is primarily used for improving accessibility of the webpage. It allows assistive technologies, for example screen readers, to adapt according to the language and invoke correct pronunciation.
 
 # --question--
-
+    
 ## --text--
 
-Що таке елемент `html`?
+What is the `html` element?
 
 ## --answers--
 
-Це кореневий елемент документа, який повідомляє браузеру, яку версію HTML потрібно використовувати.
+It is the root element in the document and tells the browser which version of HTML it should use.
 
 ---
 
-Це кореневий елемент документа, а всі інші елементи повинні бути його нащадками.
+It is the root element in the document and all other elements should descend from it.
 
 ---
 
-Це кореневий елемент документа, а всі інші елементи повинні йти після нього.
+It is the root element in the document and all other elements should come after it.
 
 
 ## --video-solution--
