@@ -511,7 +511,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       run: () => {
         if (
           props.usesMultifileEditor &&
-          isFinalProject.includes(props.challengeType)
+          !isFinalProject.includes(props.challengeType)
         ) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
