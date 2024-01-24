@@ -30,6 +30,7 @@ import { generateRandomExam, createExamResults } from '../utils/exam';
 import {
   canSubmitCodeRoadCertProject,
   createProject,
+  getMSAchievementID,
   updateProject,
   verifyTrophyWithMicrosoft
 } from './helpers/challenge-helpers';
@@ -583,12 +584,13 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const completedDate = alreadyCompleted
           ? oldChallenge.completedDate
           : Date.now();
+        const msAchievementId = getMSAchievementID(challenge.id);
 
         if (!alreadyCompleted) {
           const newChallenge = {
             id: challengeId,
             completedDate,
-            solution: msTrophyStatus.msGameStatusApiUrl
+            solution: `https://learn.microsoft.com/users/${msUsername}/achievements/${msAchievementId}`
           };
           await fastify.prisma.user.update({
             where: { id: req.session.user.id },

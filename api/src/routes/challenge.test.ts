@@ -31,6 +31,7 @@ import {
   userExam4
 } from '../../__mocks__/exam';
 import { Answer } from '../utils/exam-types';
+import { getMSAchievementID } from './helpers/challenge-helpers';
 
 jest.mock('./helpers/challenge-helpers', () => {
   const originalModule = jest.requireActual<
@@ -1029,10 +1030,13 @@ describe('challengeRoutes', () => {
         const msUserId = 'abc123';
         // Add Logic to C# Console Applications's id:
         const trophyChallengeId = '647f882207d29547b3bee1c0';
+        const msAchievementId = getMSAchievementID(trophyChallengeId);
         // Create and Run Simple C# Console Applications's id:
         const trophyChallengeId2 = '647f87dc07d29547b3bee1bf';
+        const msAchievementId2 = getMSAchievementID(trophyChallengeId2);
+
         const nonTrophyChallengeId = 'bd7123c8c441eddfaeb5bdef';
-        const solutionUrl = `https://learn.microsoft.com/api/gamestatus/${msUserId}`;
+        const msGameStatusApiUrl = `https://learn.microsoft.com/api/gamestatus/${msUserId}`;
 
         const idIsMissingOrInvalid = {
           type: 'error',
@@ -1149,7 +1153,7 @@ describe('challengeRoutes', () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
                 type: 'success',
-                msGameStatusApiUrl: solutionUrl
+                msGameStatusApiUrl: msGameStatusApiUrl
               })
             );
             const msUsername = 'ANRandom';
@@ -1181,7 +1185,7 @@ describe('challengeRoutes', () => {
               completedChallenges: [
                 {
                   id: trophyChallengeId,
-                  solution: solutionUrl,
+                  solution: `https://learn.microsoft.com/users/${msUsername}/achievements/${msAchievementId}`,
                   completedDate: expect.any(Number)
                 }
               ]
@@ -1192,7 +1196,7 @@ describe('challengeRoutes', () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
                 type: 'success',
-                msGameStatusApiUrl: solutionUrl
+                msGameStatusApiUrl: msGameStatusApiUrl
               })
             );
             const msUsername = 'ANRandom';
@@ -1205,7 +1209,7 @@ describe('challengeRoutes', () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
                 type: 'success',
-                msGameStatusApiUrl: solutionUrl
+                msGameStatusApiUrl: msGameStatusApiUrl
               })
             );
             const resTwo = await superPost(
@@ -1217,7 +1221,7 @@ describe('challengeRoutes', () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
                 type: 'success',
-                msGameStatusApiUrl: solutionUrl
+                msGameStatusApiUrl: msGameStatusApiUrl
               })
             );
             const resUpdate = await superPost(
@@ -1234,12 +1238,12 @@ describe('challengeRoutes', () => {
               expect.arrayContaining([
                 expect.objectContaining({
                   id: trophyChallengeId,
-                  solution: solutionUrl,
+                  solution: `https://learn.microsoft.com/users/${msUsername}/achievements/${msAchievementId}`,
                   completedDate: resOne.body.completedDate
                 }),
                 expect.objectContaining({
                   id: trophyChallengeId2,
-                  solution: solutionUrl,
+                  solution: `https://learn.microsoft.com/users/${msUsername}/achievements/${msAchievementId2}`,
                   completedDate: resTwo.body.completedDate
                 })
               ])

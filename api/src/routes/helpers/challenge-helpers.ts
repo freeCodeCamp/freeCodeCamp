@@ -136,3 +136,22 @@ export async function verifyTrophyWithMicrosoft({
     } as const;
   }
 }
+
+/**
+ * Gets the Microsoft trophy ID for a Microsoft challenge ID.
+ *
+ * @param challengeId The ID of the MS Challenge you'd like to get the trophy ID for.
+ * @returns The trophy ID corresponding to the Microsoft challenge ID.
+ */
+export const getMSAchievementID = (challengeId: string) => {
+  const msAchievementId: Record<string, string> = {
+    '647f85d407d29547b3bee1bb': 'yzhut2fr', // get-started-c-sharp-part-1.trophy
+    '647f87dc07d29547b3bee1bf': 'uw5snbr3', // get-started-c-sharp-part-2.trophy
+    '647f882207d29547b3bee1c0': 'pdz7z364', // get-started-c-sharp-part-3.trophy
+    '647f867a07d29547b3bee1bc': 'zqffgbx2', // get-started-c-sharp-part-4.trophy
+    '647f877f07d29547b3bee1be': 'eb77357p', // get-started-c-sharp-part-5.trophy
+    '647f86ff07d29547b3bee1bd': 'hfg6yak8' // get-started-c-sharp-part-6.trophy
+  };
+
+  return msAchievementId[challengeId];
+};
