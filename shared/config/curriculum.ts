@@ -24,3 +24,7 @@ export const isProjectBased = [
 // Show a list layout on a block that has multiple projects
 
 export const isMultipleProjectBased = [challengeTypes.pythonProject];
+
+// This unifies the above two arrays into one for non layout specific inquires
+
+export const isFinalProject = [...isProjectBased, ...isMultipleProjectBased];
