@@ -21,7 +21,6 @@ import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import {
   isGridBased,
-  isMultipleProjectBased,
   isProjectBased
 } from '../../../../../shared/config/curriculum-layout';
 import Challenges from './challenges';
@@ -114,14 +113,14 @@ class Block extends Component<BlockProps> {
     });
 
     const isProjectBlock = challenges.some(({ challenge }) => {
-      return isProjectBased.includes(challenge.challengeType);
+      return (
+        isProjectBased(challenge.challengeType) &&
+        blockDashedName !== 'take-home-projects'
+      );
     });
 
     const isGridBlock = challenges.some(({ challenge }) => {
-      return (
-        isGridBased.includes(superBlock) &&
-        !isMultipleProjectBased.includes(challenge.challengeType)
-      );
+      return isGridBased(superBlock) && challenge.challengeType !== 10;
     });
 
     const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock, {

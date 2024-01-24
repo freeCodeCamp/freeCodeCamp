@@ -63,7 +63,7 @@ import {
   setScrollbarArrowStyles
 } from '../utils/index';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
-import { isFinalProject } from '../../../../../shared/config/curriculum-layout';
+import { isProjectBased } from '../../../../../shared/config/curriculum-layout';
 import LowerJaw from './lower-jaw';
 
 import './editor.css';
@@ -509,10 +509,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
       ],
       run: () => {
-        if (
-          props.usesMultifileEditor &&
-          !isFinalProject.includes(props.challengeType)
-        ) {
+        if (props.usesMultifileEditor && !isProjectBased(props.challengeType)) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
           } else {

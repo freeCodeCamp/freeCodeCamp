@@ -23,7 +23,7 @@ import {
   challengeTestsSelector
 } from '../redux/selectors';
 import './hotkeys.css';
-import { isFinalProject } from '../../../../../shared/config/curriculum-layout';
+import { isProjectBased } from '../../../../../shared/config/curriculum-layout';
 import type { EditorProps } from '../classic/editor';
 
 const mapStateToProps = createSelector(
@@ -121,7 +121,7 @@ function Hotkeys({
       if (
         usesMultifileEditor &&
         typeof challengeType == 'number' &&
-        !isFinalProject.includes(challengeType)
+        !isProjectBased(challengeType)
       ) {
         if (testsArePassing) {
           submitChallenge();

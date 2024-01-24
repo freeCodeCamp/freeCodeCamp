@@ -3,15 +3,18 @@ import { SuperBlocks } from './superblocks';
 
 // Show a grid layout on the superblock level
 
-export const isGridBased = [
+const gridBasedSuperBlocks = [
   SuperBlocks.RespWebDesignNew,
   SuperBlocks.JsAlgoDataStructNew,
   SuperBlocks.SciCompPy
 ];
 
+export const isGridBased = (superBlock: SuperBlocks) =>
+  gridBasedSuperBlocks.includes(superBlock);
+
 // Show a single project in a certification layout
 
-export const isProjectBased = [
+const projectBasedChallengeTypes = [
   challengeTypes.frontEndProject,
   challengeTypes.backEndProject,
   challengeTypes.jsProject,
@@ -21,10 +24,5 @@ export const isProjectBased = [
   challengeTypes.codeAllyPractice
 ];
 
-// Show a list layout on a block that has multiple projects
-
-export const isMultipleProjectBased = [challengeTypes.pythonProject];
-
-// This unifies the above two arrays into one for non layout specific inquires
-
-export const isFinalProject = [...isProjectBased, ...isMultipleProjectBased];
+export const isProjectBased = (challengeType: number) =>
+  projectBasedChallengeTypes.includes(challengeType);
