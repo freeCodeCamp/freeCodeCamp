@@ -1,6 +1,6 @@
 ---
 id: 597f1e7fbc206f0e9ba95dc4
-title: Factors of an integer
+title: Fatores de um inteiro
 challengeType: 1
 forumTopicId: 302265
 dashedName: factors-of-an-integer
@@ -10,29 +10,29 @@ dashedName: factors-of-an-integer
 
 Write a function that returns the factors of a positive integer as an array.
 
-These factors are the positive integers by which the number being factored can be divided to yield a positive integer result.
+Estes fatores são os inteiros positivos através dos quais o número que está sendo fatorado pode ser dividido para produzir um resultado inteiro e positivo.
 
 # --hints--
 
-`factors` should be a function.
+`factors` deve ser uma função.
 
 ```js
 assert(typeof factors === 'function');
 ```
 
-`factors(45)` should return `[1,3,5,9,15,45]`.
+`factors(45)` deve retornar `[1,3,5,9,15,45]`.
 
 ```js
 assert.deepEqual(factors(45), ans[0]);
 ```
 
-`factors(53)` should return `[1,53]`.
+`factors(53)` deve retornar `[1,53]`.
 
 ```js
 assert.deepEqual(factors(53), ans[1]);
 ```
 
-`factors(64)` should return `[1,2,4,8,16,32,64]`.
+`factors(64)` deve retornar `[1,2,4,8,16,32,64]`.
 
 ```js
 assert.deepEqual(factors(64), ans[2]);

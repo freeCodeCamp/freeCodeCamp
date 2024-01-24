@@ -22,7 +22,7 @@ dashedName: links-and-images-question-e
 
 - Створіть новий каталог під назвою `images` в межах проєкту `odin-links-and-images`.
 
-- Потім завантажте [це зображення](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) та перемістіть його до щойно створеного каталогу `images`.
+- Потім завантажте <a href="https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640" target="_blank">це зображення</a> та перемістіть його у щойно створений каталог `images`.
 
 - Перейменуйте зображення на `dog.jpg`.
 

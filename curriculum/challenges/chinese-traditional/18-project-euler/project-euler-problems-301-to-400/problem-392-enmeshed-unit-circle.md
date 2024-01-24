@@ -1,6 +1,6 @@
 ---
 id: 5900f4f41000cf542c510007
-title: 'Problem 392: Enmeshed unit circle'
+title: '問題392：陷入困境的單位圓'
 challengeType: 1
 forumTopicId: 302057
 dashedName: problem-392-enmeshed-unit-circle
@@ -10,7 +10,7 @@ dashedName: problem-392-enmeshed-unit-circle
 
 A rectilinear grid is an orthogonal grid where the spacing between the gridlines does not have to be equidistant.
 
-An example of such grid is logarithmic graph paper.
+這種網格的一個例子是對數圖紙。
 
 Consider rectilinear grids in the Cartesian coordinate system with the following properties:
 

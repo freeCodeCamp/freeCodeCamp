@@ -42,7 +42,7 @@ Back in `index.html` file, let’s add a `head` element with a `charset` `meta` 
 ```
 
 # --question--
-    
+
 ## --text--
 
 What is the purpose of the `head` element?

@@ -1,6 +1,6 @@
 ---
 id: 6482b4fef5fd6bcdfddad730
-title: Step 10
+title: 步骤 10
 challengeType: 0
 dashedName: step-10
 ---

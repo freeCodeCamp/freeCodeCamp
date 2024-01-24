@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08f
-title: 'Relational Databases: Join Operation'
+title: 'リレーショナルデータベース: 結合操作'
 challengeType: 11
 videoId: jvDw3D9GKac
 bilibiliIds:
@@ -18,15 +18,15 @@ When using a JOIN clause in an SQL statement, what does ON do?
 
 ## --answers--
 
-It indicates what tables to perform the JOIN on.
+JOIN を実行するテーブルを示す。
 
 ---
 
-It specifies the fields to use for the JOIN.
+JOIN に使用するフィールドを指定する。
 
 ---
 
-It indicates how the two tables are to be joined.
+2 つのテーブルをどのように結合するかを示す。
 
 ## --video-solution--
 

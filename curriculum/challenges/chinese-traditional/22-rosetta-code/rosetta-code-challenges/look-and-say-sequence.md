@@ -1,6 +1,6 @@
 ---
 id: 5e6dd14797f5ce267c2f19d0
-title: Look-and-say sequence
+title: 外觀序列
 challengeType: 1
 forumTopicId: 385277
 dashedName: look-and-say-sequence
@@ -10,62 +10,62 @@ dashedName: look-and-say-sequence
 
 The Look and say sequence is a recursively defined sequence of numbers.
 
-Sequence Definition
+序列定義
 
 <ul><li>Take a decimal number</li>
-<li><span>Look</span> at the number, visually grouping consecutive runs of the same digit.</li>
-<li><span>Say</span> the number, from left to right, group by group; as how many of that digit there are - followed by the digit grouped.</li></ul><span> This becomes the next number of the sequence.</span>
+<li><span>看</span>這些數字，然後直觀地將同一數字的連續運行分組。</li>
+<li><span>說</span>這些數字，從左到右，一組一組；作爲該數字有多少 - 後跟分組的數字。</li></ul><span> 這將成爲序列的下一個數字。</span>
 
-An example:
+一個例子：
 
 <ul><li>Starting with the number 1, you have <span>one</span> 1 which produces 11</li>
-<li>Starting with 11, you have <span>two</span> 1's. I.E.: 21</li>
-<li>Starting with 21, you have <span>one</span> 2, then <span>one</span> 1. I.E.: (12)(11) which becomes 1211</li>
-<li>Starting with 1211, you have <span>one</span> 1, <span>one</span> 2, then <span>two</span> 1's. I.E.: (11)(12)(21) which becomes 111221</li></ul>
+<li>從 11 開始，你有 <span>兩個</span> 1。 即：21</li>
+<li>從 21 開始，你有 <span>一個</span> 2，然後是 <span>一個</span> 1。 即：(12)(11) 也就是 1211</li>
+<li>從 1211 開始，你有 <span>一個</span> 1、<span>一個</span> 2，然後是 <span>兩個</span> 1。 即：(11)(12)(21) 也就是 111221</li></ul>
 
 # --instructions--
 
-Write a function that accepts a string as a parameter, processes it, and returns the resultant string.
+編寫一個函數，該函數接受一個字符串作爲參數，對其進行處理，並返回結果字符串。
 
 # --hints--
 
-`lookAndSay` should be a function.
+`lookAndSay` 應該是一個函數。
 
 ```js
 assert(typeof lookAndSay == 'function');
 ```
 
-`lookAndSay("1")` should return a string.
+`lookAndSay("1")` 應該返回一個字符串。
 
 ```js
 assert(typeof lookAndSay('1') == 'string');
 ```
 
-`lookAndSay("1")` should return `"11"`.
+`lookAndSay("1")` 應該返回 `"11"`。
 
 ```js
 assert.equal(lookAndSay('1'), '11');
 ```
 
-`lookAndSay("11")` should return `"21"`.
+`lookAndSay("11")` 應該返回 `"21"`。
 
 ```js
 assert.equal(lookAndSay('11'), '21');
 ```
 
-`lookAndSay("21")` should return `"1211"`.
+`lookAndSay("21")` 應該返回 `"1211"`。
 
 ```js
 assert.equal(lookAndSay('21'), '1211');
 ```
 
-`lookAndSay("1211")` should return `"111221"`.
+`lookAndSay("1211")` 應該返回 `"111221"`。
 
 ```js
 assert.equal(lookAndSay('1211'), '111221');
 ```
 
-`lookAndSay("3542")` should return `"13151412"`.
+`lookAndSay("3542")` 應該返回 `"13151412"`。
 
 ```js
 assert.equal(lookAndSay('3542'), '13151412');

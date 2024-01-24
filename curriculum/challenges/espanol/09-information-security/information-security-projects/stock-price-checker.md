@@ -21,8 +21,8 @@ Trabajar en este proyecto implicará escribir tu código utilizando uno de los s
 Si usas Replit, sigue estos pasos para configurar el proyecto:
 
 -   Empieza importando el proyecto en Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Después, verá `.replit` en una ventana.
+-   Seleccione `Use run command` y click en el botón `Done`.
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
@@ -45,7 +45,7 @@ Write the following tests in `tests/2_functional-tests.js`:
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Puedes proporcionar tu propio proyecto, no la URL de ejemplo.
 
 ```js
 (getUserInput) => {

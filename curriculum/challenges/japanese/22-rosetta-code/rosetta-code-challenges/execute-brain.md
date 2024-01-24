@@ -1,6 +1,6 @@
 ---
 id: 59e0a8df964e4540d5abe599
-title: Execute Brain****
+title: Brain****の実行
 challengeType: 1
 forumTopicId: 302261
 dashedName: execute-brain
@@ -10,52 +10,52 @@ dashedName: execute-brain
 
 Write a function to implement a Brain\*\*\*\* interpreter. The function will take a string as a parameter and should return a string as the output. More details are given below:
 
-RCBF is a set of <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> compilers and interpreters written for Rosetta Code in a variety of languages.
+RCBFは ロゼッタコード用に様々な言語で書かれた<a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> コンパイラおよびインタプリタのセットです。
 
-Below are links to each of the versions of RCBF.
+以下は、RCBFの各バージョンへのリンクです。
 
-An implementation need only properly implement the following instructions:
+実装には以下の手順を適切に実行する必要があります。
 
-| Command           | Description                                                                        |
-| ----------------- | ---------------------------------------------------------------------------------- |
-| <code>></code>    | Move the pointer to the right                                                      |
-| <code>&lt;</code> | Move the pointer to the left                                                       |
-| <code>+</code>    | Increment the memory cell under the pointer                                        |
-| <code>-</code>    | Decrement the memory cell under the pointer                                        |
-| <code>.</code>    | Output the character signified by the cell at the pointer                          |
-| <code>,</code>    | Input a character and store it in the cell at the pointer                          |
-| <code>\[</code>   | Jump past the matching <code>]</code> if the cell under the pointer is 0           |
-| <code>]</code>    | Jump back to the matching <code>\[</code> if the cell under the pointer is nonzero |
+| Command                   | 説明                                                          |
+| ------------------------- | ----------------------------------------------------------- |
+| <code>></code> | Move the pointer to the right                               |
+| <code>&lt;</code> | ポインタを左に移動します                                                |
+| <code>+</code> | ポインタの下にあるメモリーセルを増やします                                       |
+| <code>-</code> | ポインタの下にあるメモリーセルを減らします                                       |
+| <code>.</code> | ポインターのセルで示された文字を出力します                                       |
+| <code>,</code> | 文字を入力し、ポインタのセルに格納します                                        |
+| <code>\[</code> | ポインタの下のセルが 0 の場合、一致する <code>]</code> をジャンプします      |
+| <code>]</code> | ポインタの下のセルがゼロでない場合、一致する <code>\[</code> にジャンプして戻ります |
 
-Any cell size is allowed, EOF (*E*nd-*O*-*F*ile) support is optional, as is whether you have bounded or unbounded memory.
+セルのサイズに制限はありません。メモリに制限があるかどうかに関わらず、EOF (*E*nd-*O*-*F*ile) のサポートは任意です。
 
 # --hints--
 
-`brain(bye)` should return a string
+`brain(bye)` は文字列を返します。
 
 ```js
 assert(typeof brain(bye) === 'string');
 ```
 
-`brain("++++++[>++++++++++<-]>+++++.")` should return "A"
+`brain("++++++[>++++++++++++++.")` should return "A"
 
 ```js
-assert.equal(brain('++++++[>++++++++++<-]>+++++.'), 'A');
+assert.equal(brain('++++++[>++++++++++++++.'), 'A');
 ```
 
-`brain(bye)` should return `Goodbye, World!\r\n`
+`brain(bye)` は `Goodbye, World!\r\n` を返します。
 
 ```js
 assert.equal(brain(bye), 'Goodbye, World!\r\n');
 ```
 
-`brain(hello)` should return `Hello World!\n`
+`brain(hello)` は `Hello World!\n` を返します。
 
 ```js
 assert.equal(brain(hello), 'Hello World!\n');
 ```
 
-`brain(fib)` should return `1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89`
+`brain(fib)` は `1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89` を返します。
 
 ```js
 assert.equal(brain(fib), '1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89');
@@ -70,35 +70,19 @@ let fib=`+
 
 ++
 
-+++
-
-++++
++++++++
 
 +>+>>
 
->>++++
+>>++++++++++++++++++++++++
 
-+++++++
-
-++++++++
-
-+++++++++
-
-++++++++++
-
-++++++>++++
++++++++++++++++++++
 
 ++++++++++++
 
 +++++++++++++
 
-+++<<<<<<[>[>>
-
->>>>+>+<<<<<<<-
-
-]>>>>>>>[<<<<<<<
-
-+>>>>>>>-]<[>++++
++++++++
 
 ++++++[-<-[>>+>+<<
 
@@ -116,11 +100,9 @@ let fib=`+
 
 +++++++++++++++++++++++++
 
-+++++++++.[-]]++++++++++<[
++++++++++++++++++++<[
 
-->-<]>+++++++++++++++++++++
-
-+++++++++++++++++++++++++++.
+->-<]>++++++++++++++++++++++++++++++++++++++++++++++++.
 
 [-]<<<<<<<<<<<<[>>>+>+<<<<-]>
 
@@ -129,8 +111,7 @@ let fib=`+
 <<[>>+>+<<<-]>>>[<<<+>>>-]<<[<+
 
 >-]>[<+>-]<<<-]`;
-let hello='++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.'
-let bye='++++++++++[>+>+++>++++>+++++++>++++++++>+++++++++>++++++++++>+++++++++++>++++++++++++<<<<<<<<<-]>>>>+.>>>>+..<.<++++++++.>>>+.<<+.<<<<++++.<++.>>>+++++++.>>>.+++.<+++++++.--------.<<<<<+.<+++.---.';
+let hello='++++++++[>++++++>++++++++++++.>>.<-.<.+++++++++++++[>+>+++++++>+++++++>++++++++>+++++++++++++++++++>+++++++++++++++++++++++++++++++.<++.>>>+++++++.>>>.++++++++++++.---.';
 ```
 
 ## --seed-contents--

@@ -8,7 +8,7 @@ dashedName: get-data-from-post-requests
 
 # --description--
 
-Mount a POST handler at the path `/name`. It’s the same path as before. We have prepared a form in the html frontpage. It will submit the same data of exercise 10 (Query string). If the body-parser is configured correctly, you should find the parameters in the object `req.body`. Have a look at the usual library example:
+قم بتوصيل المعالج POST على المسار `/name`. It’s the same path as before. We have prepared a form in the html frontpage. It will submit the same data of exercise 10 (Query string). إذا تم تكوين body-parser بشكل صحيح، يجب أن تجد المعلمات (Parameters) في الكائن `req.body`. ألق نظرة على مثال المكتبة المعتاد:
 
 <blockquote>route: POST '/library'<br>urlencoded_body: userId=546&#x26;bookId=6754 <br>req.body: {userId: '546', bookId: '6754'}</blockquote>
 
@@ -46,7 +46,7 @@ Test 1 : Your API endpoint should respond with the correct name
   );
 ```
 
-Test 2 : Your API endpoint should respond with the correct name
+الاختبار 2: نقطة نهاية API الخاصة بك يجب أن ترسل استجابة بالاسم الصحيح
 
 ```js
 (getUserInput) =>

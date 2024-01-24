@@ -1,6 +1,6 @@
 ---
 id: 5900f4421000cf542c50ff55
-title: 'Problem 214: Totient Chains'
+title: '問題 214: トーティエント鎖'
 challengeType: 1
 forumTopicId: 301856
 dashedName: problem-214-totient-chains
@@ -8,9 +8,9 @@ dashedName: problem-214-totient-chains
 
 # --description--
 
-Let $φ$ be Euler's totient function, i.e. for a natural number $n$, $φ(n)$ is the number of $k$, $1 ≤ k ≤ n$, for which $gcd(k,n) = 1$.
+$φ$ をオイラーのトーティエント関数とします。つまり、自然数 $n$ について、$φ(n)$ は $gcd(k,n) = 1$ となる $k$ (ここで $1 ≤ k ≤ n$) の 数です。
 
-By iterating $φ$, each positive integer generates a decreasing chain of numbers ending in 1. E.g. if we start with 5 the sequence 5,4,2,1 is generated. Here is a listing of all chains with length 4:
+$φ$ を繰り返すと、それぞれの正の整数が作る鎖の中で値が徐々に小さくなり、最終的に 1 になります。 次に例を示します。 5 から始めると 5, 4, 2, 1 の数列になります。 長さが 4 である鎖をすべて下に示します。
 
 $$\begin{align}    5,4,2,1 & \\\\
    7,6,2,1 & \\\\    8,4,2,1 & \\\\
@@ -18,13 +18,13 @@ $$\begin{align}    5,4,2,1 & \\\\
   12,4,2,1 & \\\\   14,6,2,1 & \\\\
   18,6,2,1 & \end{align}$$
 
-Only two of these chains start with a prime, their sum is 12.
+これらの鎖のうち 2 つのみが素数から始まり、その和は 12 です。
 
-What is the sum of all primes less than $40\\,000\\,000$ which generate a chain of length 25?
+長さ 25 の鎖を作る $40\\,000\\,000$ 未満の素数の総和を求めなさい。
 
 # --hints--
 
-`totientChains()` should return `1677366278943`.
+`totientChains()` は `1677366278943` を返す必要があります。
 
 ```js
 assert.strictEqual(totientChains(), 1677366278943);

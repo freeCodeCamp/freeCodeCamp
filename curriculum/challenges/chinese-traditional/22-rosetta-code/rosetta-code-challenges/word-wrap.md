@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad4
-title: Word wrap
+title: 自動換行
 challengeType: 1
 forumTopicId: 302344
 dashedName: word-wrap
@@ -23,37 +23,37 @@ than a simple minimum length algorithm.
 
 # --hints--
 
-wrap should be a function.
+任務：
 
 ```js
 assert.equal(typeof wrap, 'function');
 ```
 
-wrap should return a string.
+例如，包裝爲80個字符的文本應如下所示：
 
 ```js
 assert.equal(typeof wrap('abc', 10), 'string');
 ```
 
-wrap(80) should return 4 lines.
+wrap（42）必須返回7行。
 
 ```js
 assert(wrapped80.split('\n').length === 4);
 ```
 
-Your `wrap` function should return our expected text.
+`wrap`是一個功能。
 
 ```js
 assert.equal(wrapped80.split('\n')[0], firstRow80);
 ```
 
-wrap(42) should return 7 lines.
+wrap(42) 應該返回 7 行。
 
 ```js
 assert(wrapped42.split('\n').length === 7);
 ```
 
-Your `wrap` function should return our expected text.
+你的 `wrap` 函數應該返回我們預期的文本。
 
 ```js
 assert.equal(wrapped42.split('\n')[0], firstRow42);

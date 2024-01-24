@@ -21,11 +21,11 @@ In this exercise, you will explore the phrase `pique one's interest`. This phras
 
 `I _ a course in organizational _, and it _ my interest in the workplace and employee dynamics.`
 
-## --blanks--
+## -blanks--
 
 `took`
 
-### --feedback--
+### --Feedback--
 
 This word refers to the action of participating in or completing a course.
 
@@ -33,7 +33,7 @@ This word refers to the action of participating in or completing a course.
 
 `psychology`
 
-### --feedback--
+### --Feedback--
 
 This word describes the study of the mind and behavior, particularly in a workplace setting in this context.
 

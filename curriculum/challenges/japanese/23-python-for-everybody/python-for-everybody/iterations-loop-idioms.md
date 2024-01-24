@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f05e
-title: 'Iterations: Loop Idioms'
+title: '繰り返し: ループの用法'
 challengeType: 11
 videoId: AelGAcoMXbI
 bilibiliIds:

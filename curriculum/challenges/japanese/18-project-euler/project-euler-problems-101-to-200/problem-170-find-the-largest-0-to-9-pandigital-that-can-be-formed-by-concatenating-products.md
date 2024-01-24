@@ -1,7 +1,7 @@
 ---
 id: 5900f4161000cf542c50ff29
 title: >-
-  Problem 170: Find the largest 0 to 9 pandigital that can be formed by concatenating products
+  問題 170: 積を連結して作られる 0 ～ 9 のパンデジタル数の最大値を求める
 challengeType: 1
 forumTopicId: 301805
 dashedName: >-
@@ -10,20 +10,20 @@ dashedName: >-
 
 # --description--
 
-Take the number 6 and multiply it by each of 1273 and 9854:
+6 に 1273 と 9854 をそれぞれ掛けると、次のようになります。
 
 $$\begin{align}   & 6 × 1273 = 7638 \\\\
   & 6 × 9854 = 59124 \\\\ \end{align}$$
 
-By concatenating these products we get the 1 to 9 pandigital 763859124. We will call 763859124 the "concatenated product of 6 and (1273, 9854)". Notice too, that the concatenation of the input numbers, 612739854, is also 1 to 9 pandigital.
+これらの積を連結すると、1 から 9 のパンデジタル数 763859124 になります。 ここでは、763859124 を「6 と (1273, 9854) の連結積」と呼ぶことにします。 注目すべき点として、元の 3 つの数を連結した数 612739854 もまた 1 から 9 のパンデジタル数になっています。
 
-The same can be done for 0 to 9 pandigital numbers.
+0 から 9 のパンデジタル数についても同じことを行えます。
 
-What is the largest 0 to 9 pandigital 10-digit concatenated product of an integer with two or more other integers, such that the concatenation of the input numbers is also a 0 to 9 pandigital 10-digit number?
+ある整数と 2 つ以上の他の整数との連結積で作られる、0 から 9 の 10 桁のパンデジタル数の最大値を求めなさい。ただし、元の 3 つの数を連結した数も、0 から 9 の 10 桁のパンデジタル数でなければなりません。
 
 # --hints--
 
-`largestPandigital()` should return `9857164023`.
+`largestPandigital()` は `9857164023` を返す必要があります。
 
 ```js
 assert.strictEqual(largestPandigital(), 9857164023);

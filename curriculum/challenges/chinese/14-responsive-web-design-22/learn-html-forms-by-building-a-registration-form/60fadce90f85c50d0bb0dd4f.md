@@ -1,6 +1,6 @@
 ---
 id: 60fadce90f85c50d0bb0dd4f
-title: Step 47
+title: 步骤 47
 challengeType: 0
 dashedName: step-47
 ---

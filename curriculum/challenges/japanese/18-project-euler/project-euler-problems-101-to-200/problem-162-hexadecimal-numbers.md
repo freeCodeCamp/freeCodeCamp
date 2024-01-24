@@ -1,6 +1,6 @@
 ---
 id: 5900f40e1000cf542c50ff21
-title: 'Problem 162: Hexadecimal numbers'
+title: '問題 162: 16 進数'
 challengeType: 1
 forumTopicId: 301796
 dashedName: problem-162-hexadecimal-numbers
@@ -8,31 +8,31 @@ dashedName: problem-162-hexadecimal-numbers
 
 # --description--
 
-In the hexadecimal number system numbers are represented using 16 different digits:
+16 進法では、次の 16 種類の英数字を使って数を表します。
 
 $$0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F$$
 
-The hexadecimal number AF when written in the decimal number system equals $10 \times 16 + 15 = 175$.
+16 進数の AF を 10 進法で表すと、$10 \times 16 + 15 = 175$ となります。
 
-In the 3-digit hexadecimal numbers 10A, 1A0, A10, and A01 the digits 0,1 and A are all present.
+3 桁の 16 進数 10A, 1A0, A10, A01 には 0, 1, A のすべてが含まれています。
 
-Like numbers written in base ten we write hexadecimal numbers without leading zeroes.
+10 進数で表す場合と同様、16 進数では先行ゼロを付けずに表します。
 
-How many hexadecimal numbers containing at most sixteen hexadecimal digits exist with all of the digits 0,1, and A present at least once?
+16 進数の英数字をたかだか 16 個含む 16 進数のうち、0, 1, A のすべてが 1 回以上出現するものはいくつありますか。
 
-Give your answer with hexadecimal number as a string.
+回答は、16 進数の文字列にすること。
 
-**Note:** (A,B,C,D,E and F in upper case, without any leading or trailing code that marks the number as hexadecimal and without leading zeroes , e.g. 1A3F and not: 1a3f and not 0x1a3f and not $1A3F and not #1A3F and not 0000001A3F)
+**注:** (A, B, C, D, E, F は大文字です。16 進数であることを表すコードを先頭や末尾に付けず、先行ゼロも付けません。例: 1A3F を 1a3f, 0x1a3f, $1A3F, #1A3F, 0000001A3F とは書きません)
 
 # --hints--
 
-`hexadecimalNumbers()` should return a string.
+`hexadecimalNumbers()` は文字列を返す必要があります。
 
 ```js
 assert(typeof hexadecimalNumbers() === 'string');
 ```
 
-`hexadecimalNumbers()` should return the string `3D58725572C62302`.
+`hexadecimalNumbers()` は文字列 `3D58725572C62302` を返す必要があります。
 
 ```js
 assert.strictEqual(hexadecimalNumbers(), '3D58725572C62302');
