@@ -63,7 +63,7 @@ import {
   setScrollbarArrowStyles
 } from '../utils/index';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
-import { isFinalProject } from '../../../../../shared/config/curriculum';
+import { isFinalProject } from '../../../../../shared/config/curriculum-layout';
 import LowerJaw from './lower-jaw';
 
 import './editor.css';

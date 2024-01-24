@@ -23,7 +23,7 @@ import {
   challengeTestsSelector
 } from '../redux/selectors';
 import './hotkeys.css';
-import { isFinalProject } from '../../../../../shared/config/curriculum';
+import { isFinalProject } from '../../../../../shared/config/curriculum-layout';
 import type { EditorProps } from '../classic/editor';
 
 const mapStateToProps = createSelector(

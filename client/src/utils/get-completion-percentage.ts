@@ -1,4 +1,4 @@
-import { isFinalProject } from '../../../shared/config/curriculum';
+import { isFinalProject } from '../../../shared/config/curriculum-layout';
 import { AllChallengesInfo } from '../redux/prop-types';
 
 export function getCompletedPercentage(

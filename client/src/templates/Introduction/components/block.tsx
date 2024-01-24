@@ -23,7 +23,7 @@ import {
   isGridBased,
   isMultipleProjectBased,
   isProjectBased
-} from '../../../../../shared/config/curriculum';
+} from '../../../../../shared/config/curriculum-layout';
 import Challenges from './challenges';
 import '../intro.css';
 
