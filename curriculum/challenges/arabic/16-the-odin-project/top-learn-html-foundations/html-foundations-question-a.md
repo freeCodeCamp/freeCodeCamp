@@ -5,17 +5,18 @@ title: HTML Foundations Question A
 challengeType: 15
 dashedName: html-foundations-question-a
 ---
+
 # --description--
 
-Almost all elements on an HTML page are just pieces of content wrapped in opening and closing HTML tags.
+جميع العناصر تقريبا على صفحة HTML هي فقط أجزاء من المحتوى المغلفة في علامات فتح وإنتهاء HTML.
 
-Opening tags tell the browser this is the start of an HTML element. They are comprised of a keyword enclosed in angle brackets `<>`. For example, an opening paragraph tag looks like this: `<p>`.
+علمات الفتح تخبر المتصفح أن هذا هو بداية عنصر HTML. يتكون هؤلاء من كلمة مفتاحية مدرجة في أقواس الزوايا `<>`. على سبيل المثال، علامة فَقرة افتتاحية (opening paragraph tag) تبدو كهذا: `<p>`.
 
-Closing tags tell the browser where an element ends. They are almost the same as opening tags; the only difference is that they have a forward slash before the keyword. For example, a closing paragraph tag looks like this: `</p>`.
+علامات الانتهاء تخبر المتصفح أين ينتهي العنصر. وهي تقريبا مماثلة للعلامات الافتتاحية؛ والفرق الوحيد هو أن لديها خط مائل إلى اليمين (forward slash) قبل اسم العلامة. على سبيل المثال، علامة فَقرة نهائية (closing paragraph tag) تبدو كهذا: `</p>`.
 
-A full paragraph element looks like this:
+يبدو عنصر paragraph كامل كما يلي:
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/90b1a362af0bb8635af9593cd8911c9aefb68569/foundations/html_css/html-foundations/imgs/00.png" alt="element diagram">
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/90b1a362af0bb8635af9593cd8911c9aefb68569/foundations/html_css/html-foundations/imgs/00.png" alt="مخطط العنصر" />
 
 # --assignment--
 

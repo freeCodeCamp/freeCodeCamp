@@ -10,32 +10,32 @@ dashedName: subleq
 
 Subleq is an example of a One-Instruction Set Computer (OISC).
 
-It is named after its only instruction, which is **SU**btract and **B**ranch if **L**ess than or **EQ**ual to zero.
+Subleq ist nach dem einzigen dazugehörigen Anleitungsschritt benannt worden, der „**SU**btract and **B**ranch if **L**ess than or **EQ**ual to zero“ bzw. „Subtraktion und Verzweigung, wenn kleiner oder gleich Null“ lautet.
 
-Your task is to create an interpreter which emulates such a machine.
+Deine Aufgabe ist es, einen Interpreter zu erstellen, der eine solche Maschine emuliert.
 
-The machine's memory consists of an array of signed integers. Any reasonable word size is fine, but the memory must be able to hold negative as well as positive numbers.
+Der Speicher der Maschine besteht aus einem Bereich von vorzeichenbehafteten ganzen Zahlen. Jede vernünftige Wortgröße ist in Ordnung, aber der Speicher muss in der Lage sein, sowohl negative als auch positive Zahlen zu speichern.
 
-Execution begins with the instruction pointer aimed at the first word, which is address 0. It proceeds as follows:
+Die Ausführung beginnt mit dem Befehlszeiger, der auf das erste Wort, also die Adresse 0, gerichtet ist. Sie geht wie folgt vor:
 
 <ol>
   <li>Let A, B, and C be the value stored in the three consecutive words in memory starting at the instruction pointer.</li>
-  <li>Advance the instruction pointer 3 words to point at the address after the one containing C.</li>
-  <li>If A is -1, then a character is read from standard input and its code point stored in the address given by B. C is unused.</li>
-  <li>If B is -1, then the number contained in the address given by A is interpreted as a code point and the corresponding character output. C is again unused.</li>
-  <li>Otherwise, both A and B are treated as the addresses of memory locations. The number contained in the address given by A is subtracted from the number at the address given by B (and the result stored back in address B). If the result is zero or negative, the value C becomes the new instruction pointer.</li>
-  <li>If the instruction pointer becomes negative, execution halts.</li>
+  <li>Verschiebe den Befehlszeiger um 3 Wörter, so dass er auf die Adresse nach der Adresse, die C enthält, zeigt.</li>
+  <li>Ist A gleich -1, wird ein Zeichen von der Standardeingabe gelesen und sein Codepunkt an der durch B angegebenen Adresse gespeichert. C ist unbenutzt.</li>
+  <li>Ist B gleich -1, so wird die in der durch A angegebenen Adresse enthaltene Zahl als Codepunkt interpretiert und das entsprechende Zeichen ausgegeben. C ist wieder unbenutzt.</li>
+  <li>Andernfalls werden sowohl A als auch B als Adressen von Speicherplätzen behandelt. Die in der Adresse A enthaltene Zahl wird von der Zahl an der Adresse B subtrahiert (und das Ergebnis wieder in Adresse B gespeichert). Ist das Ergebnis Null oder negativ, wird der Wert C zum neuen Befehlszeiger.</li>
+  <li>Wenn der Befehlszeiger negativ wird, wird die Ausführung angehalten.</li>
 </ol>
 
-Other negative addresses besides -1 may be treated as equivalent to -1, or generate an error, as you see fit.
+Andere negative Adressen außer -1 können als gleichwertig zu -1 behandelt werden oder einen Fehler erzeugen, je nachdem, was du für richtig hältst.
 
-Your solution should accept a program to execute on the machine, separately from the input fed to the program itself.
+Deine Lösung sollte ein Programm akzeptieren, das auf der Maschine ausgeführt wird, und zwar unabhängig von der Eingabe, die dem Programm selbst zugeführt wird.
 
-This program should be in raw subleq "machine code" - whitespace-separated decimal numbers, with no symbolic names or other assembly-level extensions, to be loaded into memory starting at address 0. Show the output of your solution when fed this "Hello, world!" program. (Note that the example assumes ASCII or a superset of it, such as any of the Latin-N character sets or Unicode. You may translate it into another character set if your implementation is on a non-ASCiI-compatible environment.)
+Dieses Programm sollte in rohem Subleq-"Maschinencode" vorliegen - durch Leerzeichen getrennte Dezimalzahlen, ohne symbolische Namen oder andere Erweiterungen auf Assembler-Ebene, die ab Adresse 0 in den Speicher geladen werden sollen. Zeige die Ausgabe deiner Lösung, wenn du dieses "Hello, world!"-Programm eingibst. (Beachte, dass das Beispiel von ASCII oder einer Obermenge davon ausgeht, wie einem der Latin-N-Zeichensätze oder Unicode. Du kannst ihn in einen anderen Zeichensatz übersetzen, wenn deine Implementierung in einer nicht-ASCiI-kompatiblen Umgebung erfolgt).
 
 <pre>15 17 -1 17 -1 -1 16 1 -1 16 3 -1 15 15 0 0 -1 72 101 108 108 111 44 32 119 111 114 108 100 33 10 0</pre>
 
-Which corresponds to something like this in a hypothetical assembler language:
+Das entspricht in einer hypothetischen Assemblersprache in etwa dem Folgenden:
 
 <pre>start:
     zero, message, -1
@@ -50,17 +50,17 @@ message: "Hello, world!\n\0"
 
 # --instructions--
 
-Write a function that takes an array of integers as a parameter. This represents the memory elements. The function should interpret the sequence and return the output string. For this task, assume that there is no standard input.
+Schreibe eine Funktion, die einen Bereich von Ganzzahlen als Parameter annimmt. Dies stellt die Speicherelemente dar. Die Funktion sollte die Sequenz interpretieren und die Ausgabezeichenfolge zurückgeben. Gehe bei dieser Aufgabe davon aus, dass es keine Standardeingabe gibt.
 
 # --hints--
 
-`Subleq` should be a function.
+`Subleq` sollte eine Funktion sein.
 
 ```js
 assert(typeof Subleq == 'function');
 ```
 
-`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` should return a string.
+`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` sollte einen String zurückgeben.
 
 ```js
 assert(
@@ -100,7 +100,7 @@ assert(
 );
 ```
 
-`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` should return `"Hello, world!"`.
+`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` sollte `"Hello, world!"` zurückgeben.
 
 ```js
 assert.equal(

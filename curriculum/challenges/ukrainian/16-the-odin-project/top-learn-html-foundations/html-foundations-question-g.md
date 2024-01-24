@@ -1,16 +1,16 @@
 ---
 id: 6376327e2724a688c04636e3
-title: HTML Foundations Question G
+title: Основи HTML. Запитання G
 challengeType: 15
 dashedName: html-foundations-question-g
 ---
 
 # --description--
 
-HTML and CSS are two languages that work together to create everything that you see when you look at something on the internet. HTML is the raw data that a webpage is built out of. All the text, links, cards, lists, and buttons are created in HTML. CSS is what adds style to those plain elements. HTML puts information on a webpage, and CSS positions that information, gives it color, changes the font, and makes it look great!
+HTML та CSS — це дві мови, які працюють разом, щоб створити все, що ви бачите в інтернеті. HTML — це необроблені дані, на яких побудована вебсторінка. Весь текст, посилання, картки, списки та кнопки створюються в HTML. CSS надає стилю цим звичайним елементам. HTML розміщує інформацію на вебсторінці, а CSS робить її красивою, надаючи кольору та змінюючи шрифт.
 
 # --question--
-    
+
 ## --text--
 
 What are the primary responsibilities of HTML and CSS in creating a webpage?

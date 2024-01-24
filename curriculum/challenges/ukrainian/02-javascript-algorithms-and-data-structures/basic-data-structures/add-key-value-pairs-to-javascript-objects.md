@@ -81,7 +81,7 @@ assert(foods.grapes === 35);
 assert(foods.strawberries === 27);
 ```
 
-The definition of the `foods` object should not be changed.
+Не змінюйте визначення об’єкта `foods`.
 
 ```js
 assert(
@@ -102,9 +102,9 @@ const foods = {
   plums: 28
 };
 
-// Only change code below this line
+// Змініть код лише під цим рядком
 
-// Only change code above this line
+// Змініть код лише над цим рядком
 
 console.log(foods);
 ```

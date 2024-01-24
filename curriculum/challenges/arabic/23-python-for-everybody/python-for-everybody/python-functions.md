@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f060b6c005b0e76f05a
-title: Python Functions
+title: دوال البايثون(Python Functions)
 challengeType: 11
 videoId: 3JGF-n3tDPU
 bilibiliIds:
@@ -18,23 +18,23 @@ What is the purpose of the "def" keyword in Python?
 
 ## --answers--
 
-It is slang that means "The following code is really cool."
+إنها لغة عامية تعني "الكود التالي رائع حقًا."
 
 ---
 
-It indicates the start of a function.
+وهو يشير إلى بداية دالة.
 
 ---
 
-It indicates that the following indented section of code is to be stored for later.
+وهو يشير إلى أن القسم التالي من الكود سيتم تخزينه لاحقاً.
 
 ---
 
-It indicates the start of a function, and the following indented section of code is to be stored for later.
+يشير إلى بداية دالة ، وسيتم تخزين التعليمات البرمجية في القسم التالي ذي المسافة البادئة في وقت لاحق.
 
 ---
 
-None of the above.
+لا شيء مما بالأعلى.
 
 ## --video-solution--
 

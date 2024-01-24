@@ -10,7 +10,7 @@ dashedName: show-national-contiguity-with-a-force-directed-graph
 
 **Objective:** Build an app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/XWEONRz>.
 
-Fulfill the below user stories and get all of the tests to pass. Utiliza las librerías o APIs que necesites. Dale su propio estilo personal.
+Completa las historias de los usuarios que están aquí abajo y haz que pasen todas las pruebas. Utiliza las librerías o APIs que necesites. Dale su propio estilo personal.
 
 **User Story:** I can see a Force-directed Graph that shows which countries share borders.
 
@@ -22,7 +22,7 @@ Fulfill the below user stories and get all of the tests to pass. Utiliza las lib
 
 Cuando hayas terminado, incluye un enlace a tu proyecto en CodePen y haz clic en el botón "He completado este desafío".
 
-You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
+Puedes obtener opiniones de tu proyecto compartiéndolo en la <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

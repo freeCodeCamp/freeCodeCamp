@@ -1,21 +1,22 @@
 ---
 id: 637f4e1672c65bc8e73dfe1f
-title: HTML Foundations Question B
+title: Основи HTML. Запитання B
 challengeType: 15
 dashedName: html-foundations-question-b
 ---
+
 # --description--
 
-You can think of elements as containers for content. The opening and closing tags tell the browser what content the element contains. The browser can then use that information to determine how it should interpret and format the content.
+Елементи можна вважати контейнерами вмісту. Початкові та кінцеві теги повідомляють браузеру вміст, який містить елемент. Браузер використовує цю інформацію, щоб знати, як інтерпретувати та форматувати вміст.
 
-There are some HTML elements that do not have a closing tag. These elements often look like this: `<br />` or `<img/>`, but some can also be used without the closing forward slash such as `<br>` or `<img>`. These are known as self-closing tags or empty elements because they don’t wrap any content. You will encounter a few of these in later lessons, but for the most part, elements will have both opening and closing tags.
+Деякі елементи HTML не мають кінцевих тегів. Ці елементи часто виглядають так: `<br />` або `<img/>`, але деякі також можна використовувати без кінцевої скісної риски, наприклад `<br>` або `<img>`. Вони відомі як самозакриваючі теги або порожні елементи, оскільки вони не обгортають жоден вміст. З деякими ви зустрінетесь у наступних завданнях, але здебільшого ви використовуватимете і початковий, і кінцевий теги.
 
-HTML has a vast list of predefined tags that you can use to create all kinds of different elements. It is important to use the correct tags for content. Using the correct tags can have a big impact on two aspects of your sites: how they are ranked in search engines; and how accessible they are to users who rely on assistive technologies, like screen readers, to use the internet.
+HTML має великий список стандартних тегів, які можна використовувати для створення будь-яких елементів. Важливо використовувати правильні теги для вмісту. Правильні теги впливають на два аспекти: рейтинг сайтів у пошукових системах і їхня доступність для користувачів, які покладаються на допоміжні технології, щоб користуватися інтернетом (наприклад, читачі екрана).
 
-Using the correct elements for content is called semantic HTML. You will explore this in much more depth later on in the curriculum.
+Використання правильних елементів для вмісту називається семантичною версткою, або семантичним HTML. Про це ви дізнаєтесь пізніше.
 
 # --question--
-    
+
 ## --text--
 
 Why are self-closing tags like `<br/>` or `<img>` essential in HTML?

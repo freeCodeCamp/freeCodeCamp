@@ -1,6 +1,6 @@
 ---
 id: 5900f3ac1000cf542c50febf
-title: 'Problem 64: Odd period square roots'
+title: '問題64：奇數期平方根'
 challengeType: 1
 forumTopicId: 302176
 dashedName: problem-64-odd-period-square-roots

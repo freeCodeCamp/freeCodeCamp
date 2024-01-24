@@ -1,6 +1,6 @@
 ---
 id: 5900f4fe1000cf542c510010
-title: 'Problem 400: Fibonacci tree game'
+title: 'Завдання 400: гра з деревом Фібоначчі'
 challengeType: 1
 forumTopicId: 302067
 dashedName: problem-400-fibonacci-tree-game
@@ -8,19 +8,19 @@ dashedName: problem-400-fibonacci-tree-game
 
 # --description--
 
-A Fibonacci tree is a binary tree recursively defined as:
+Дерево Фібоначчі — це бінарне дерево, рекурсивно визначене як:
 
-- $T(0)$ is the empty tree.
-- $T(1)$ is the binary tree with only one node.
-- $T(k)$ consists of a root node that has $T(k - 1)$ and $T(k - 2)$ as children.
+- $T(0)$ є порожнім деревом.
+- $T(1)$ є бінарним деревом з лише одним вузлом.
+- $T(k)$ складається з кореневого вузла, який має дочірні дерева $T(k - 1)$ та $T(k - 2)$.
 
-On such a tree two players play a take-away game. On each turn a player selects a node and removes that node along with the subtree rooted at that node. The player who is forced to take the root node of the entire tree loses.
+На такому дереві грають двоє гравців. Під час кожного ходу гравець вибирає вузол і забирає його разом із меншим деревом, що прив’язане до цього вузла. Гравець, який повинен взяти кореневий вузол цілого дерева, програє.
 
-Here are the winning moves of the first player on the first turn for $T(k)$ from $k = 1$ to $k = 6$.
+Ось виграшні ходи першого гравця на першому ході за умови $T(k)$ від $k = 1$ до $k = 6$.
 
-<img class="img-responsive center-block" alt="winning moves of first player, on the first turn for k = 1 to k = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="виграшні ходи першого гравця на першому ході за умови від k = 1 до k = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px;" />
 
-Let $f(k)$ be the number of winning moves of the first player (i.e. the moves for which the second player has no winning strategy) on the first turn of the game when this game is played on $T(k)$.
+Нехай $f(k)$ буде кількістю виграшних ходів першого гравця (тобто ходів, для яких другий гравець не має виграшної стратегії) на першому ході гри на дереві $T(k)$.
 
 Наприклад, $f(5) = 1$ та $f(10) = 17$.
 

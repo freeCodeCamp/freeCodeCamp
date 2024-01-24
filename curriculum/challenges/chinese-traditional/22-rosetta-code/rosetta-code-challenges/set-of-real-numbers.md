@@ -1,6 +1,6 @@
 ---
 id: 5eb3e4b20aa93c437f9e9717
-title: Set of real numbers
+title: 實數集
 challengeType: 1
 forumTopicId: 385322
 dashedName: set-of-real-numbers
@@ -17,52 +17,52 @@ All real numbers form the uncountable set ℝ. Among its subsets, relatively sim
   <li>(<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> < <i>x</i> and <i>x</i> ≤ <i>b</i> }</li>
 </ul>
 
-Note that if *a* = *b*, of the four only \[*a*, *a*] would be non-empty.
+請注意，如果 *a* = *b*，則四個中只有 \[*a*, *a*] 將是非空的。
 
-**Task**
+**任務**
 
 <ul>
   <li>Devise a way to represent any set of real numbers, for the definition of "any" in the implementation notes below.</li>
-  <li>Provide methods for these common set operations (<i>x</i> is a real number; <i>A</i> and <i>B</i> are sets):</li>
+  <li>提供這些常見集合操作的方法（<i>x</i> 是實數；<i>A</i> 和 <i>B</i> 是集合）：</li>
   <ul>
     <li>
       <i>x</i> ∈ <i>A</i>: determine if <i>x</i> is an element of <i>A</i><br>
       example: 1 is in [1, 2), while 2, 3, ... are not.
     </li>
     <li>
-      <i>A</i> ∪ <i>B</i>: union of <i>A</i> and <i>B</i>, i.e. {<i>x</i> | <i>x</i> ∈ <i>A</i> or <i>x</i> ∈ <i>B</i>}<br>
-      example: [0, 2) ∪ (1, 3) = [0, 3); [0, 1) ∪ (2, 3] = well, [0, 1) ∪ (2, 3]
+      <i>A</i> ∪ <i>B</i>：<i>A</i> 和 <i>B</i> 的並集，即 {<i>x</i> | <i>x</i> ∈ <i>A</i> 或 <i>x</i> ∈ <i>B</i>}<br>
+      例如：[0, 2) ∪ (1, 3) = [0, 3); [0, 1) ∪ (2, 3] = [0, 1) ∪ (2, 3]
     </li>
     <li>
-      <i>A</i> ∩ <i>B</i>: intersection of <i>A</i> and <i>B</i>, i.e. {<i>x</i> | <i>x</i> ∈ <i>A</i> and <i>x</i> ∈ <i>B</i>}<br>
-      example: [0, 2) ∩ (1, 3) = (1, 2); [0, 1) ∩ (2, 3] = empty set
+      <i>A</i> ∩ <i>B</i>：<i>A</i> 和 <i>B</i> 的交集，即 {<i>x</i> | <i>x</i> ∈ <i>A</i> 且 <i>x</i> ∈ <i>B</i>}<br>
+      例如：[0, 2)∩(1,3) = (1,2); [0, 1) ∩ (2, 3] = 空集
     </li>
     <li>
-      <i>A</i> - <i>B</i>: difference between <i>A</i> and <i>B</i>, also written as <i>A</i> \ <i>B</i>, i.e. {<i>x</i> | <i>x</i> ∈ <i>A</i> and <i>x</i> ∉ <i>B</i>}<br>
-      example: [0, 2) − (1, 3) = [0, 1]
+      <i>A</i> - <i>B</i>：<i>A</i> 和 <i>B</i> 的區別，也寫成 <i>A</i> \ <i>B</i>，即 {<i>x</i> | <i>x</i> ∈ <i>A</i> 且 <i>x</i> ∉ <i>B</i>}<br>
+      例如：[0, 2) − (1, 3) = [0, 1]
     </li>
   </ul>
 </ul>
 
 # --instructions--
 
-Write a function that takes 2 objects, a string and an array as parameters. The objects represents the set and have attributes: `low`, `high` and `rangeType`.
+編寫一個函數，它接受 2 個對象，一個字符串和一個數組作爲參數。 對象代表集合並具有屬性：`low`、`high` 和 `rangeType`。
 
-The `rangeType` can have values 0, 1, 2 and 3 for `CLOSED`, `BOTH_OPEN`, `LEFT_OPEN` and `RIGHT_OPEN`, respectively. The function should implement a set using this information.
+`rangeType` 的值可以爲 0、1、2 和 3，分別表示 `CLOSED`、`BOTH_OPEN`、`LEFT_OPEN` 和 `RIGHT_OPEN`。 該函數應使用此信息實現一個集合。
 
-The string represents the operation to be performed on the sets. It can be: `"union"`, `"intersect"` and `"subtract"` (difference).
+該字符串表示要對集合執行的操作。 它可以是：`"union"`、`"intersect"` 和 `"subtract"`（差異）。
 
-After performing the operation, the function should check if the values in the array are present in the resultant set and store a corresponding boolean value to an array. The function should return this array.
+執行操作後，函數應檢查數組中的值是否存在於結果集中，並將相應的布爾值存儲到數組中。 該函數應該返回這個數組。
 
 # --hints--
 
-`realSet` should be a function.
+`realSet` 應該是一個函數。
 
 ```js
 assert(typeof realSet == 'function');
 ```
 
-`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` should return a array.
+`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` 應該返回一個數組。
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` should return `[true, false, false]`.
+`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` 應該返回 `[true, false, false]`。
 
 ```js
 assert.deepEqual(
@@ -91,7 +91,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":2, "rangeType":3}, {"low":1, "high":2, "rangeType":2}, "intersect", [0, 1, 2])` should return `[false, false, false]`.
+`realSet({"low":0, "high":2, "rangeType":3}, {"low":1, "high":2, "rangeType":2}, "intersect", [0, 1, 2])` 應該返回 `[false, false, false]`。
 
 ```js
 assert.deepEqual(
@@ -105,7 +105,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":1}, "subtract", [0, 1, 2])` should return `[true, true, true]`.
+`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":1}, "subtract", [0, 1, 2])` 應該返回 `[true, true, true]`。
 
 ```js
 assert.deepEqual(
@@ -119,7 +119,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":0}, "subtract", [0, 1, 2])` should return `[false, false, true]`.
+`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":0}, "subtract", [0, 1, 2])` 應該返回 `[false, false, true]`。
 
 ```js
 assert.deepEqual(
@@ -133,7 +133,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":33, "rangeType":1}, {"low":30, "high":31, "rangeType":0}, "intersect", [30, 31, 32])` should return `[true, true, false]`.
+`realSet({"low":0, "high":33, "rangeType":1}, {"low":30, "high":31, "rangeType":0}, "intersect", [30, 31, 32])` 應該返回 `[true, true, false]`。
 
 ```js
 assert.deepEqual(

@@ -10,7 +10,7 @@ dashedName: build-a-tic-tac-toe-game
 
 **Objective:** Build an app that is functionally similar to this: <a href="https://codepen.io/freeCodeCamp/full/KzXQgy/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/KzXQgy/</a>.
 
-Fulfill the below user stories and get all of the tests to pass. Utiliza las librerías o APIs que necesites. Dale su propio estilo personal.
+Completa las historias de los usuarios que están aquí abajo y haz que pasen todas las pruebas. Utiliza las librerías o APIs que necesites. Dale su propio estilo personal.
 
 **User Story:** I can play a game of Tic Tac Toe with the computer.
 

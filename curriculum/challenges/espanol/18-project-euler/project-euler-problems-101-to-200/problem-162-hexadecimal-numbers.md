@@ -1,6 +1,6 @@
 ---
 id: 5900f40e1000cf542c50ff21
-title: 'Problem 162: Hexadecimal numbers'
+title: 'Problema 162: Números hexadecimales'
 challengeType: 1
 forumTopicId: 301796
 dashedName: problem-162-hexadecimal-numbers
@@ -12,27 +12,27 @@ In the hexadecimal number system numbers are represented using 16 different digi
 
 $$0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F$$
 
-The hexadecimal number AF when written in the decimal number system equals $10 \times 16 + 15 = 175$.
+El número hexadecimal AF cuando se escribe en el sistema de números decimales iguales a $10 \times 16 + 15 = 175$.
 
-In the 3-digit hexadecimal numbers 10A, 1A0, A10, and A01 the digits 0,1 and A are all present.
+En los números hexadecimales de 3-dígitos 10A, 1A0, A10, y A01 los dígitos 0,1 y A están todos presentes.
 
-Like numbers written in base ten we write hexadecimal numbers without leading zeroes.
+Al igual que números escritos en base diez escribimos números hexadecimales sin declarar ceros iniciales.
 
-How many hexadecimal numbers containing at most sixteen hexadecimal digits exist with all of the digits 0,1, and A present at least once?
+¿Cuántos números hexadecimales contienen a lo mucho dieciseis dígitos hexadecimales con todos los dígitos 0,1, y A presentes al menos una vez?
 
-Give your answer with hexadecimal number as a string.
+De su respuesta con un número hexadecimal como una cadena.
 
-**Note:** (A,B,C,D,E and F in upper case, without any leading or trailing code that marks the number as hexadecimal and without leading zeroes , e.g. 1A3F and not: 1a3f and not 0x1a3f and not $1A3F and not #1A3F and not 0000001A3F)
+**Note:** (A,B,C,D,E y F en mayúsculas, sin un código de guía o cola que marque el número como hexadecimal y sin guías principales, p.ej.1A3F y no: 1a3f y no 0x1a3f y no $1A3F y no #1A3F y no 0000001A3F)
 
 # --hints--
 
-`hexadecimalNumbers()` should return a string.
+`hexadecimalNumbers()` debería devolver una cadena.
 
 ```js
 assert(typeof hexadecimalNumbers() === 'string');
 ```
 
-`hexadecimalNumbers()` should return the string `3D58725572C62302`.
+`hexadecimalNumbers()` debería devolver la cadena `3D58725572C62302`.
 
 ```js
 assert.strictEqual(hexadecimalNumbers(), '3D58725572C62302');

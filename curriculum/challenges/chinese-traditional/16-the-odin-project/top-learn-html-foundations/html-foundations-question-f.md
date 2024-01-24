@@ -5,13 +5,14 @@ title: HTML Foundations Question F
 challengeType: 15
 dashedName: html-foundations-question-f
 ---
+
 # --description--
 
 The final element needed to complete the HTML boilerplate is the `<body>` element. This is where all the content that will be displayed to users will go - the text, images, lists, links, and so on.
 
 To complete the boilerplate, add a `body` element to the `index.html` file. The `body` element also goes within the `html` element and is always below the `head` element, like so:
 
-# --assignment--
+# --作業--
 
 Watch and follow along to Kevin Powell’s brilliant Building your first web page video above.
 

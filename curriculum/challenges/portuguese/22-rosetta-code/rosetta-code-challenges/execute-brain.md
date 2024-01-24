@@ -1,6 +1,6 @@
 ---
 id: 59e0a8df964e4540d5abe599
-title: Execute Brain****
+title: Executar Brain****
 challengeType: 1
 forumTopicId: 302261
 dashedName: execute-brain
@@ -10,52 +10,52 @@ dashedName: execute-brain
 
 Write a function to implement a Brain\*\*\*\* interpreter. The function will take a string as a parameter and should return a string as the output. More details are given below:
 
-RCBF is a set of <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> compilers and interpreters written for Rosetta Code in a variety of languages.
+RCBF é um conjunto de interpretadores e compiladores <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> escritos pelo Rosetta Code em diversas linguagens.
 
-Below are links to each of the versions of RCBF.
+Abaixo, encontramos os links para cada uma das versões do RCBF.
 
-An implementation need only properly implement the following instructions:
+Uma implementação só precisa implementar corretamente as seguintes instruções:
 
-| Command           | Description                                                                        |
-| ----------------- | ---------------------------------------------------------------------------------- |
-| <code>></code>    | Move the pointer to the right                                                      |
-| <code>&lt;</code> | Move the pointer to the left                                                       |
-| <code>+</code>    | Increment the memory cell under the pointer                                        |
-| <code>-</code>    | Decrement the memory cell under the pointer                                        |
-| <code>.</code>    | Output the character signified by the cell at the pointer                          |
-| <code>,</code>    | Input a character and store it in the cell at the pointer                          |
-| <code>\[</code>   | Jump past the matching <code>]</code> if the cell under the pointer is 0           |
-| <code>]</code>    | Jump back to the matching <code>\[</code> if the cell under the pointer is nonzero |
+| Command                   | Descrição                                                                                      |
+| ------------------------- | ---------------------------------------------------------------------------------------------- |
+| <code>></code> | Move the pointer to the right                                                                  |
+| <code>&lt;</code> | Mova o ponteiro para a esquerda                                                                |
+| <code>+</code> | Incremente a célula de memória sob o ponteiro                                                  |
+| <code>-</code> | Decremente a célula de memória sob o ponteiro                                                  |
+| <code>.</code> | Produza o caractere representado pela célula no ponteiro                                       |
+| <code>,</code> | Insira um caractere e armazene-o na célula do ponteiro                                         |
+| <code>\[</code> | Salte para além da correspondência de <code>]</code> se a célula sob o ponteiro for 0 |
+| <code>]</code> | Volte à célula correspondente <code>\[</code> se a célula sob o ponteiro não for zero |
 
-Any cell size is allowed, EOF (*E*nd-*O*-*F*ile) support is optional, as is whether you have bounded or unbounded memory.
+Qualquer tamanho de célula é permitido, suporte a EOF (*E*nd-*O*f-*F*ile) é opcional, bem como ter memória limitada ou não limitada.
 
 # --hints--
 
-`brain(bye)` should return a string
+`brain(bye)` deve retornar uma string
 
 ```js
 assert(typeof brain(bye) === 'string');
 ```
 
-`brain("++++++[>++++++++++<-]>+++++.")` should return "A"
+`brain("++++++[>++++++++++++++.")` should return "A"
 
 ```js
-assert.equal(brain('++++++[>++++++++++<-]>+++++.'), 'A');
+assert.equal(brain('++++++[>++++++++++++++.'), 'A');
 ```
 
-`brain(bye)` should return `Goodbye, World!\r\n`
+`brain(bye)` deve retornar `Goodbye, World!\r\n`
 
 ```js
 assert.equal(brain(bye), 'Goodbye, World!\r\n');
 ```
 
-`brain(hello)` should return `Hello World!\n`
+`brain(hello)` deve retornar `Hello World!\n`
 
 ```js
 assert.equal(brain(hello), 'Hello World!\n');
 ```
 
-`brain(fib)` should return `1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89`
+`brain(fib)` deve retornar `1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89`
 
 ```js
 assert.equal(brain(fib), '1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89');
@@ -70,35 +70,19 @@ let fib=`+
 
 ++
 
-+++
-
-++++
++++++++
 
 +>+>>
 
->>++++
+>>++++++++++++++++++++++++
 
-+++++++
-
-++++++++
-
-+++++++++
-
-++++++++++
-
-++++++>++++
++++++++++++++++++++
 
 ++++++++++++
 
 +++++++++++++
 
-+++<<<<<<[>[>>
-
->>>>+>+<<<<<<<-
-
-]>>>>>>>[<<<<<<<
-
-+>>>>>>>-]<[>++++
++++++++
 
 ++++++[-<-[>>+>+<<
 
@@ -116,11 +100,9 @@ let fib=`+
 
 +++++++++++++++++++++++++
 
-+++++++++.[-]]++++++++++<[
++++++++++++++++++++<[
 
-->-<]>+++++++++++++++++++++
-
-+++++++++++++++++++++++++++.
+->-<]>++++++++++++++++++++++++++++++++++++++++++++++++.
 
 [-]<<<<<<<<<<<<[>>>+>+<<<<-]>
 
@@ -129,8 +111,7 @@ let fib=`+
 <<[>>+>+<<<-]>>>[<<<+>>>-]<<[<+
 
 >-]>[<+>-]<<<-]`;
-let hello='++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.'
-let bye='++++++++++[>+>+++>++++>+++++++>++++++++>+++++++++>++++++++++>+++++++++++>++++++++++++<<<<<<<<<-]>>>>+.>>>>+..<.<++++++++.>>>+.<<+.<<<<++++.<++.>>>+++++++.>>>.+++.<+++++++.--------.<<<<<+.<+++.---.';
+let hello='++++++++[>++++++>++++++++++++.>>.<-.<.+++++++++++++[>+>+++++++>+++++++>++++++++>+++++++++++++++++++>+++++++++++++++++++++++++++++++.<++.>>>+++++++.>>>.++++++++++++.---.';
 ```
 
 ## --seed-contents--

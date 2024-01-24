@@ -12,9 +12,9 @@ dashedName: write-your-first-c-sharp-code
 1. 跳转到 <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-write-first/</a>，然后完成“编写第一个 C# 代码”模块的所有任务。 这是在 Microsoft Learn 上获得“使用 C# 编写第一个代码”的奖杯以及参加认证考试所**必需**的。
 1. 完成后，返回并正确回答下面的问题。
 
-# --assignment--
+# --作业--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank" rel="noreferrer">Write Your First C# Code</a> module on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank" rel="noreferrer">“编写你的第一段 C# 代码”</a> 模块。 然后，回答下面的问题。
 
 # --question--
 

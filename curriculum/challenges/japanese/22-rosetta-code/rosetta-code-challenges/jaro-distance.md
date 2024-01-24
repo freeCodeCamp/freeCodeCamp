@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ec2
-title: Jaro distance
+title: ジャロ距離
 challengeType: 1
 forumTopicId: 302292
 dashedName: jaro-distance
@@ -10,26 +10,26 @@ dashedName: jaro-distance
 
 The Jaro distance is a measure of similarity between two strings. The higher the Jaro distance for two strings is, the more similar the strings are. The score is normalized such that `0` equates to no similarity and `1` is an exact match.
 
-**Definition**
+**定義**
 
-The Jaro distance \\( d_j \\) of two given strings \\(s_1\\) and \\(s_2\\) is
+2つの指定された文字列 \\(s_1\\) と \\(s_2\\) のジャロ距離 \\( d_j \\) は以下となります。
 
 \\begin{align}d_j = \\begin{cases}0& & \\text{if }m=0 \\\\\\\\{\\frac {1}{3}}\\left({\\frac {m}{|s\_{1}|}}+{\\frac {m}{|s\_{2}|}}+{\\frac {m-t}{m}}\\right)& & \\text{otherwise}\\end{cases}\\end{align}
 
-Where:
+ここでは、
 
 <ul>
   <li>\(m\) is the number of <i>matching characters</i>;</li>
   <li> \(t\) is half the number of <i>transpositions</i>.</li>
 </ul>
 
-Two characters from \\(s_1\\) and \\(s_2\\) respectively, are considered *matching* only if they are the same and not farther than \\(\\left\\lfloor\\frac{\\max(|s_1|,|s_2|)}{2}\\right\\rfloor-1\\).
+\\(s_1\\) および \\(s_2\\) の2つの文字はそれぞれ、同じか、\\(\\left\\lfloor\\frac{\\max(|s_1|,|s_2|)}{2}\\right\\rfloor-1\\) よりも離れていない場合にのみ*一致している*とみなされます。
 
-Each character of \\(s_1\\) is compared with all its matching characters in \\(s_2\\) . The number of matching (but different sequence order) characters divided by 2 defines the number of *transpositions*.
+\\(s_1\\) の各文字は、\\(s_2\\) の一致しているすべての文字と対照されます。 一致する文字の数 (ただし、文字列における順序は異なる) を 2 で割ることで、 *転置*の数が定義されます。
 
-**Example**
+**例**
 
-Given the strings \\(s_1\\) *DWAYNE* and \\(s_2\\) *DUANE* we find:
+文字列 \\(s_1\\) *DWAYNE* と \\(s_2\\) *DUANE*の場合、以下となります。
 
 <ul>
   <li>\(m = 4\)</li>
@@ -38,51 +38,51 @@ Given the strings \\(s_1\\) *DWAYNE* and \\(s_2\\) *DUANE* we find:
   <li>\(t = 0\)</li>
 </ul>
 
-We find a Jaro score of: \\(d_j = \\frac{1}{3}\\left(\\frac{4}{6} + \\frac{4}{5} + \\frac{4-0}{4}\\right) = 0.822\\).
+ジャロスコアは次のように求められます: \\(d_j = \\frac{1}{3}\\left(\\frac{4}{6} + \\frac{4}{5} + \\frac{4-0}{4}\\right) = 0. 22\\)
 
 # --instructions--
 
-Write a function a that takes two strings as parameters and returns the associated Jaro distance.
+2つの文字列をパラメータとして取り、関連するジャロ距離を返す関数を記述してください。
 
 # --hints--
 
-`jaro` should be a function.
+`jaro` は関数とします。
 
 ```js
 assert(typeof jaro == 'function');
 ```
 
-`jaro("MARTHA", "MARHTA")` should return a number.
+`jaro("MARTHA", "MARHTA")` は数値を返す必要があります。
 
 ```js
 assert(typeof jaro('MARTHA', 'MARHTA') == 'number');
 ```
 
-`jaro("MARTHA", "MARHTA")` should return `0.9444444444444445`.
+`jaro("MARTHA", "MARHTA")` は `0.9444444444444445` を返す必要があります。
 
 ```js
 assert.equal(jaro('MARTHA', 'MARHTA'), 0.9444444444444445);
 ```
 
-`jaro("DIXON", "DICKSONX")` should return `0.7666666666666666`.
+`jaro("DIXON", "DICKSONX")` は `0.7666666666666666` を返す必要があります。
 
 ```js
 assert.equal(jaro('DIXON', 'DICKSONX'), 0.7666666666666666);
 ```
 
-`jaro("JELLYFISH", "SMELLYFISH")` should return `0.8962962962962964`.
+`jaro("JELLYFISH", "SMELLYFISH")` は `0.8962962962962964` を返す必要があります。
 
 ```js
 assert.equal(jaro('JELLYFISH', 'SMELLYFISH'), 0.8962962962962964);
 ```
 
-`jaro("HELLOS", "CHELLO")` should return `0.888888888888889`.
+`jaro("HELLOS", "CHELLO")` は `0.888888888888889` を返す必要があります。
 
 ```js
 assert.equal(jaro('HELLOS', 'CHELLO'), 0.888888888888889);
 ```
 
-`jaro("ABCD", "BCDA")` should return `0.8333333333333334`.
+`jaro("ABCD", "BCDA")` は `0.8333333333333334` を返す必要があります。
 
 ```js
 assert.equal(jaro('ABCD', 'BCDA'), 0.8333333333333334);

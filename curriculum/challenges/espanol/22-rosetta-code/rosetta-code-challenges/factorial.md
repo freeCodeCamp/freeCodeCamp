@@ -10,12 +10,12 @@ dashedName: factorial
 
 Write a function to return the factorial of a number.
 
-Factorial of a number is given by:
+El Factorial de un número es dado por:
 
 <pre><big>n! = n * (n-1) * (n-2) * ..... * 1</big>
 </pre>
 
-For example:
+Por ejemplo:
 
 <ul>
   <li><code>3! = 3 * 2 * 1 = 6</code></li>
@@ -26,31 +26,31 @@ For example:
 
 # --hints--
 
-`factorial` should be a function.
+`factorial` debe ser una función.
 
 ```js
 assert(typeof factorial === 'function');
 ```
 
-`factorial(2)` should return a number.
+`factorial(2)` debe devolver un número.
 
 ```js
 assert(typeof factorial(2) === 'number');
 ```
 
-`factorial(3)` should return 6.
+`factorial(3)` debe devolver 6.
 
 ```js
 assert.equal(factorial(3), 6);
 ```
 
-`factorial(5)` should return 120.
+`factorial(5)` debe devolver 120.
 
 ```js
 assert.equal(factorial(5), 120);
 ```
 
-`factorial(10)` should return 3,628,800.
+`factorial(10)` debe devolver 3,628,800.
 
 ```js
 assert.equal(factorial(10), 3628800);

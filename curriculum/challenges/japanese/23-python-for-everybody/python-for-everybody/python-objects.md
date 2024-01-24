@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f160b6c005b0e76f085
-title: Python Objects
+title: Python のオブジェクト
 challengeType: 11
 videoId: uJxGeTYy0us
 bilibiliIds:
@@ -18,19 +18,19 @@ Which is NOT true about objects in Python?
 
 ## --answers--
 
-Objects get created and used.
+オブジェクトは作成され、使用される。
 
 ---
 
-Objects are bits of code and data.
+オブジェクトはコードやデータの集まりである。
 
 ---
 
-Objects hide detail.
+オブジェクトは詳細を隠す。
 
 ---
 
-Objects are one of the five standard data types.
+オブジェクトは 5 つの標準的なデータ型のうちの 1 つである。
 
 ## --video-solution--
 
