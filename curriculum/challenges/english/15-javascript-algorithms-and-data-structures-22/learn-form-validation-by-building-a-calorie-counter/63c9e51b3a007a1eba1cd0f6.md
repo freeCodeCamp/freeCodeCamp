@@ -148,7 +148,6 @@ legend {
 }
 
 button {
-  outline: none;
   cursor: pointer;
   text-decoration: none;
   background-color: var(--light-yellow);
