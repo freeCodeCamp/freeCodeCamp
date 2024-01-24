@@ -6,7 +6,7 @@ dashedName: the-box-model-question-g
 --- 
 # --description--
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/box-model-lines.png" alt="lines">
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/box-model-lines.png" alt="an image showing the odin project website surrounded by red borders indicating that the site is build out of multiple components" style="width: 95%; height: 95%;">
 
 OK, so there might be some circles in the above image… but when it comes to layout, they fit together like rectangular boxes and not circles. In the end, laying out a webpage and positioning all its elements is deciding how you are going to nest and stack these boxes.
 
@@ -18,7 +18,7 @@ The only real complication here is that there are many ways to manipulate the si
 
 Be sure to study the diagrams carefully.
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/the-box-model.png" alt="the box model">
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/the-box-model.png" alt="Image depicting a visual representation of the CSS box model. A pink rectangle labeled 'padding' surrounds text that explains the model. A purple border encircles the padding, and outside of it is an area labeled 'margin' indicated by blue arrows. Text inside the box describes the padding as the space between text and the box edge, the border as a purple line, and the margin as the space between the box edge and the window edge.">
 
 # --assignment--
 
