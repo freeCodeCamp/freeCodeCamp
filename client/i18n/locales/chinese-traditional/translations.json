@@ -198,6 +198,7 @@
     "sound-mode": "爲整個網站添加令人愉快的吉他原聲音樂。在編輯器輸入、完成挑戰、申請認證等時刻，你將獲得音樂反饋。",
     "sound-volume": "營火音效音量",
     "scrollbar-width": "編輯器滾動條寬度",
+    "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
       "contains invalid characters": "用戶名 \"{{username}}\" 含有無效字符",
       "is too short": "用戶名 \"{{username}}\" 太短",
