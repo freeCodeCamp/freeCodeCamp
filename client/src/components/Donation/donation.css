@@ -736,3 +736,7 @@ a.patreon-button:hover {
   height: 6em;
   width: auto;
 }
+
+#supporter-bear {
+  height: 250px;
+}
