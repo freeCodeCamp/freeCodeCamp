@@ -1,6 +1,6 @@
 ---
 id: 596e414344c3b2872167f0fe
-title: Comma quibbling
+title: Comma quibbling (створення рядків значень розділених комою)
 challengeType: 1
 forumTopicId: 302234
 dashedName: comma-quibbling
@@ -12,59 +12,59 @@ dashedName: comma-quibbling
 
 # --instructions--
 
-Write a function to generate a string output which is the concatenation of input words from a list/sequence where:
+Напишіть функцію для генерації вихідного рядка, який є об'єднанням вхідних слів з списку/послідовності, де:
 
 <ol>
-  <li>An input of no words produces the output string of just the two brace characters (<code>"{}"</code>)</li>
-  <li>An input of just one word, e.g. <code>["ABC"]</code>, produces the output string of the word inside the two braces, e.g. <code>"{ABC}"</code></li>
-  <li>An input of two words, e.g. <code>["ABC", "DEF"]</code>, produces the output string of the two words inside the two braces with the words separated by the string <code>" and "</code>, e.g. <code>"{ABC and DEF}"</code></li>
-  <li>An input of three or more words, e.g. <code>["ABC", "DEF", "G", "H"]</code>, produces the output string of all but the last word separated by <code>", "</code> with the last word separated by <code>" and "</code> and all within braces; e.g. <code>"{ABC, DEF, G and H}"</code></li>
+  <li>Ввід без слів повертає вихідний рядок лише з двох дужок (<code>"{}"</code>)</li>
+  <li>Ввід лише одного слова (наприклад, <code>["ABC"]</code>) повертає вихідний рядок зі словом в дужках (наприклад, <code>"{ABC}"</code>)</li>
+  <li>Ввід двох слів (наприклад, <code>["ABC", "DEF"]</code>) повертає вихідний рядок з двома словами в дужках, де слова розділені рядком <code>" and "</code> (наприклад, <code>"{ABC and DEF}"</code>)</li>
+  <li>Ввід трьох і більше слів (наприклад, <code>["ABC", "DEF", "G", "H"]</code>) повертає вихідний рядок зі всіма словами в дужках, де слова розділені <code>", "</code>, а останнє слово розділене <code>" and "</code> (наприклад, <code>"{ABC, DEF, G and H}"</code>)</li>
 </ol>
 
-Test your function with the following series of inputs showing your output here on this page:
+Перевірте вашу функцію з наступною серією вхідних даних, показуючи ваш вихідний результат тут на сторінці:
 
 <ul>
-  <li>[] # (No input words).</li>
+  <li>[] # (без вхідних слів).</li>
   <li>["ABC"]</li>
   <li>["ABC", "DEF"]</li>
   <li>["ABC", "DEF", "G", "H"]</li>
 </ul>
 
-**Note:** Assume words are non-empty strings of uppercase characters for this task.
+**Зверніть увагу:** Припустіть, що слова не є порожніми рядками у верхньому регістрі для цього завдання.
 
 # --hints--
 
-`quibble` should be a function.
+`quibble` має бути функцією.
 
 ```js
 assert(typeof quibble === 'function');
 ```
 
-`quibble(["ABC"])` should return a string.
+Функція `quibble(["ABC"])` має повернути рядок.
 
 ```js
 assert(typeof quibble(['ABC']) === 'string');
 ```
 
-`quibble([])` should return "{}".
+Функція `quibble([])` має повернути "{}".
 
 ```js
 assert.equal(quibble(testCases[0]), results[0]);
 ```
 
-`quibble(["ABC"])` should return `"{ABC}"`.
+Функція `quibble(["ABC"])` має повернути `"{ABC}"`.
 
 ```js
 assert.equal(quibble(testCases[1]), results[1]);
 ```
 
-`quibble(["ABC", "DEF"])` should return `"{ABC and DEF}"`.
+Функція `quibble(["ABC", "DEF"])` має повернути `"{ABC and DEF}"`.
 
 ```js
 assert.equal(quibble(testCases[2]), results[2]);
 ```
 
-`quibble(["ABC", "DEF", "G", "H"])` should return `"{ABC, DEF, G and H}"`.
+Функція `quibble(["ABC", "DEF", "G", "H"])` має повернути `"{ABC, DEF, G and H}"`.
 
 ```js
 assert.equal(quibble(testCases[3]), results[3]);

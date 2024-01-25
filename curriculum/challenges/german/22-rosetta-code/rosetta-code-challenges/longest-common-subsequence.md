@@ -1,6 +1,6 @@
 ---
 id: 5e6dd1278e6ca105cde40ea9
-title: Longest common subsequence
+title: Längste gemeinsame Teilsequenz
 challengeType: 1
 forumTopicId: 385271
 dashedName: longest-common-subsequence
@@ -14,57 +14,57 @@ The **longest common subsequence** (or **LCS**) of groups A and B is the longest
 
 <u>12</u>245<u>3</u>332<u>4</u>
 
-For a string example, consider the sequences `thisisatest` and `testing123testing`. An LCS would be `tsitest`:
+Für ein Beispiel der Zeichenfolge, beachte die Sequenzen `thisisatest` und `testing123testing`. Ein LCS wäre der `tsitest`:
 
 <u>t</u>hi<u>si</u>sa<u>test</u>
 
 <u>t</u>e<u>s</u>t<u>i</u>ng123<u>test</u>ing.
 
-Your code only needs to deal with strings.
+Dein Code muss sich nur mit Zeichenketten befassen.
 
 # --instructions--
 
-Write a case-sensitive function that returns the LCS of two strings. You don't need to show multiple LCS's.
+Schreibe eine Funktion, die zwischen Groß- und Kleinschreibung unterscheidet und die LCS von zwei Zeichenketten zurückgibt. Du musst nicht mehrere LCS's angeben.
 
 # --hints--
 
-`lcs` should be a function.
+`lcs` sollte eine Funktion sein.
 
 ```js
 assert(typeof lcs == 'function');
 ```
 
-`lcs("thisisatest", "testing123testing")` should return a string.
+`lcs("thisisatest", "testing123testing")` sollte einen String zurückgeben.
 
 ```js
 assert(typeof lcs('thisisatest', 'testing123testing') == 'string');
 ```
 
-`lcs("thisisatest", "testing123testing")` should return `"tsitest"`.
+`lcs("thisisatest", "testing123testing")` sollte `"tsitest"` zurückgeben.
 
 ```js
 assert.equal(lcs('thisisatest', 'testing123testing'), 'tsitest');
 ```
 
-`lcs("ABCDGH", "AEDFHR")` should return `"ADH"`.
+`lcs("ABCDGH", "AEDFHR")` sollte `"ADH"` zurückgeben.
 
 ```js
 assert.equal(lcs('ABCDGH', 'AEDFHR'), 'ADH');
 ```
 
-`lcs("AGGTAB", "GXTXAYB")` should return `"GTAB"`.
+`lcs("AGGTAB", "GXTXAYB")` sollte `"GTAB"` zurückgeben.
 
 ```js
 assert.equal(lcs('AGGTAB', 'GXTXAYB'), 'GTAB');
 ```
 
-`lcs("BDACDB", "BDCB")` should return `"BDCB"`.
+`lcs("BDACDB", "BDCB")` sollte `"BDCB"` zurückgeben.
 
 ```js
 assert.equal(lcs('BDACDB', 'BDCB'), 'BDCB');
 ```
 
-`lcs("ABAZDC", "BACBAD")` should return `"ABAD"`.
+`lcs("ABAZDC", "BACBAD")` sollte `"ABAD"` zurückgeben.
 
 ```js
 assert.equal(lcs('ABAZDC', 'BACBAD'), 'ABAD');

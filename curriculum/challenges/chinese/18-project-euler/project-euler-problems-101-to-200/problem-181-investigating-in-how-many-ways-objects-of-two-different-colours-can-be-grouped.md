@@ -1,7 +1,7 @@
 ---
 id: 5900f4231000cf542c50ff34
 title: >-
-  Problem 181: Investigating in how many ways objects of two different colours can be grouped
+  问题181：调查两种不同颜色的对象可以分组的方式
 challengeType: 1
 forumTopicId: 301817
 dashedName: >-

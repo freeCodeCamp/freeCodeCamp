@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'; //, ReactElement } f
 import { Col } from '@freecodecamp/ui';
 import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
-import AccessibilityIcon from '../../../../assets/icons/accessibility';
+import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
 import { sounds, images, backgrounds } from './scene-assets';
 import Character from './character';
 
@@ -197,10 +197,11 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
                 {!alwaysShowDialogue && (
                   <button
                     className='scene-start-btn scene-a11y-btn'
-                    aria-label='Accessibility On/Off'
+                    aria-label='closed captions'
+                    aria-pressed={accessibilityOn}
                     onClick={() => setAccessibilityOn(!accessibilityOn)}
                   >
-                    <AccessibilityIcon
+                    <ClosedCaptionsIcon
                       fill={
                         accessibilityOn ? 'var(--gray-00)' : 'var(--gray-15)'
                       }

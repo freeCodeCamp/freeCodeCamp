@@ -1,8 +1,8 @@
 ---
 id: 655b4bbff1dbf66cb2ed4dac
-title: Step 82
+title: Step 88
 challengeType: 0
-dashedName: step-82
+dashedName: step-88
 ---
 
 # --description--
@@ -11,7 +11,7 @@ Use an `if` statement to check if `nextSongExists` exists, then call the `playNe
 
 # --hints--
 
-You should create an `if` statment with the condition `nextSongExists`.
+You should create an `if` statement with the condition `nextSongExists`.
 
 ```js
 assert.match(code, /if\s*\(nextSongExists\)\s*\{\s*/)
@@ -534,35 +534,35 @@ const allSongs = [
   {
     id: 0,
     title: "Hello World",
-    artist: "RafaelDavisH",
+    artist: "Rafael",
     duration: "0:23",
     src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/hello-world.mp3",
   },
   {
     id: 1,
     title: "In the Zone",
-    artist: "RafaelDavisH",
+    artist: "Rafael",
     duration: "0:11",
     src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/in-the-zone.mp3",
   },
   {
     id: 2,
     title: "Camper Cat",
-    artist: "RafaelDavisH",
+    artist: "Rafael",
     duration: "0:21",
     src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/camper-cat.mp3",
   },
   {
     id: 3,
     title: "Electronic",
-    artist: "RafaelDavisH",
+    artist: "Rafael",
     duration: "0:15",
     src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/electronic.mp3",
   },
   {
     id: 4,
     title: "Sailing Away",
-    artist: "RafaelDavisH",
+    artist: "Rafael",
     duration: "0:22",
     src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/sailing-away.mp3",
   },
@@ -596,7 +596,7 @@ const playSong = (id) => {
 
 const pauseSong = () => {
   userData.songCurrentTime = audio.currentTime;
-  
+
   playButton.classList.remove("playing");
   audio.pause();
 };
@@ -746,6 +746,18 @@ audio.addEventListener("ended", () => {
 --fcc-editable-region--
 
 --fcc-editable-region--
+});
+
+userData?.songs.sort((a,b) => {
+  if (a.title < b.title) {
+    return -1;
+  }
+
+  if (a.title > b.title) {
+    return 1;
+  }
+
+  return 0;
 });
 
 renderSongs(userData?.songs);

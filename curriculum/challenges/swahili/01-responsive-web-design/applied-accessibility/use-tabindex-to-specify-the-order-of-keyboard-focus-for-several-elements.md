@@ -15,7 +15,7 @@ Setting a `tabindex="1"` will bring keyboard focus to that element first. Then i
 
 It's important to note that when the tab order is set this way, it overrides the default order (which uses the HTML source). This may confuse users who are expecting to start navigation from the top of the page. This technique may be necessary in some circumstances, but in terms of accessibility, take care before applying it.
 
-Here's an example:
+Hapa kuna mfano:
 
 ```html
 <div tabindex="1">I get keyboard focus, and I get it first!</div>

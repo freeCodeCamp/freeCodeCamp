@@ -1,6 +1,6 @@
 ---
 id: 5900f4e51000cf542c50fff8
-title: 'Problem 377: Sum of digits, experience 13'
+title: 'Problem 377: Summe der Ziffern, Erfahrung 13'
 challengeType: 1
 forumTopicId: 302039
 dashedName: problem-377-sum-of-digits-experience-13
@@ -14,7 +14,7 @@ There are 16 positive integers that do not have a zero in their digits and that 
 
 Their sum is 17891.
 
-Let $f(n)$ be the sum of all positive integers that do not have a zero in their digits and have a digital sum equal to $n$.
+Lasse $f(n)$ die Summe aller positiven ganzen Zahlen, die keine Null in ihren Ziffern haben und deren digitale Summe gleich $n$ ist, sein.
 
 Find $\displaystyle\sum_{i=1}^{17} f(13^i)$. Give the last 9 digits as your answer.
 

@@ -342,6 +342,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   max-height: var(--header-element-size);
   min-width: var(--header-element-size);
   padding: 0 4px;
+  text-decoration: none;
 }
 
 @media (min-width: 601px) {

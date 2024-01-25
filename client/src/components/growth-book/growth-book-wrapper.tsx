@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from 'react';
+import React, { ReactNode, useEffect, useMemo } from 'react';
 import {
   FeatureDefinition,
   GrowthBook,
@@ -6,6 +6,7 @@ import {
 } from '@growthbook/growthbook-react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { bindActionCreators, Dispatch } from 'redux';
 import {
   isSignedInSelector,
   userSelector,
@@ -13,6 +14,7 @@ import {
 } from '../../redux/selectors';
 import envData from '../../../config/env.json';
 import { User, UserFetchState } from '../../redux/prop-types';
+import { executeGA } from '../../redux/actions';
 import { getUUID } from '../../utils/growthbook-cookie';
 import GrowthBookReduxConnector from './growth-book-redux-connector';
 
@@ -26,17 +28,6 @@ declare global {
     dataLayer: [Record<string, number | string>];
   }
 }
-
-const growthbook = new GrowthBook({
-  trackingCallback: (experiment, result) => {
-    window?.dataLayer.push({
-      event: 'experiment_viewed',
-      event_category: 'experiment',
-      experiment_id: experiment.key,
-      variation_id: result.variationId
-    });
-  }
-});
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -52,6 +43,7 @@ const mapStateToProps = createSelector(
 type StateProps = ReturnType<typeof mapStateToProps>;
 interface GrowthBookWrapper extends StateProps {
   children: ReactNode;
+  executeGA: (payload: Record<string, unknown>) => void;
 }
 
 interface UserAttributes {
@@ -63,12 +55,32 @@ interface UserAttributes {
   signedIn?: true;
 }
 
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators({ executeGA }, dispatch);
+
 const GrowthBookWrapper = ({
   children,
   isSignedIn,
   user,
-  userFetchState
+  userFetchState,
+  executeGA
 }: GrowthBookWrapper) => {
+  const growthbook = useMemo(
+    () =>
+      new GrowthBook({
+        trackingCallback: (experiment, result) => {
+          executeGA({
+            event: 'experiment_viewed',
+            event_category: 'experiment',
+            experiment_id: experiment.key,
+            variation_id: result.variationId
+          });
+        }
+      }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
+
   useEffect(() => {
     async function setGrowthBookFeatures() {
       if (!growthbookUri) return;
@@ -86,7 +98,7 @@ const GrowthBookWrapper = ({
     }
 
     void setGrowthBookFeatures();
-  }, []);
+  }, [growthbook]);
 
   useEffect(() => {
     if (userFetchState.complete) {
@@ -106,7 +118,7 @@ const GrowthBookWrapper = ({
       }
       growthbook.setAttributes(userAttributes);
     }
-  }, [isSignedIn, user, userFetchState]);
+  }, [isSignedIn, user, userFetchState, growthbook]);
 
   return (
     <GrowthBookProvider growthbook={growthbook}>
@@ -115,4 +127,4 @@ const GrowthBookWrapper = ({
   );
 };
 
-export default connect(mapStateToProps)(GrowthBookWrapper);
+export default connect(mapStateToProps, mapDispatchToProps)(GrowthBookWrapper);

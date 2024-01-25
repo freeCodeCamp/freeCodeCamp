@@ -1,6 +1,6 @@
 ---
 id: 596e414344c3b2872167f0fe
-title: Comma quibbling
+title: Wortklauberei mit Kommas
 challengeType: 1
 forumTopicId: 302234
 dashedName: comma-quibbling
@@ -12,16 +12,16 @@ dashedName: comma-quibbling
 
 # --instructions--
 
-Write a function to generate a string output which is the concatenation of input words from a list/sequence where:
+Schreibe eine Funktion, um eine Zeichenkettenausgabe zu erzeugen, die die Verkettung von Eingabewörtern aus einer Liste/Sequenz ist:
 
 <ol>
   <li>An input of no words produces the output string of just the two brace characters (<code>"{}"</code>)</li>
-  <li>An input of just one word, e.g. <code>["ABC"]</code>, produces the output string of the word inside the two braces, e.g. <code>"{ABC}"</code></li>
-  <li>An input of two words, e.g. <code>["ABC", "DEF"]</code>, produces the output string of the two words inside the two braces with the words separated by the string <code>" and "</code>, e.g. <code>"{ABC and DEF}"</code></li>
-  <li>An input of three or more words, e.g. <code>["ABC", "DEF", "G", "H"]</code>, produces the output string of all but the last word separated by <code>", "</code> with the last word separated by <code>" and "</code> and all within braces; e.g. <code>"{ABC, DEF, G and H}"</code></li>
+  <li>Eine Eingabe von nur einem Wort, z.B. <code>["ABC"]</code>, erzeugt die Ausgabezeichenfolge des Wortes innerhalb der zwei Klammern z.B. <code>"{ABC}"</code></li>
+  <li>Eine Eingabe von zwei Wörtern, z.B. <code>["ABC", "DEF"]</code>, erzeugt den Ausgabe-String der beiden Wörter innerhalb der beiden Klammern, wobei die Wörter durch den String <code>" and "</code> getrennt sind, z.B. <code>"{ABC and DEF}"</code></li>
+  <li>Eine Eingabe von drei oder mehr Wörtern, z. B. <code>["ABC", "DEF", "G", "H"]</code>, ergibt die Ausgabe aller Wörter bis auf das letzte Wort, das durch <code>", "</code> getrennt ist, wobei das letzte Wort durch <code>" and "</code> getrennt ist und alle Wörter in geschweiften Klammern stehen; z.B. <code>"{ABC, DEF, G and H}"</code></li>
 </ol>
 
-Test your function with the following series of inputs showing your output here on this page:
+Teste deine Funktion mit der folgenden Reihe von Eingaben, die deine Ausgabe hier auf dieser Seite zeigen:
 
 <ul>
   <li>[] # (No input words).</li>
@@ -30,41 +30,41 @@ Test your function with the following series of inputs showing your output here 
   <li>["ABC", "DEF", "G", "H"]</li>
 </ul>
 
-**Note:** Assume words are non-empty strings of uppercase characters for this task.
+**Hinweis:** Bei dieser Aufgabe wird davon ausgegangen, dass Wörter nicht leere Zeichenketten mit Großbuchstaben sind.
 
 # --hints--
 
-`quibble` should be a function.
+`quibble` sollte eine Funktion sein.
 
 ```js
 assert(typeof quibble === 'function');
 ```
 
-`quibble(["ABC"])` should return a string.
+`quibble(["ABC"])` sollte einen String zurückgeben.
 
 ```js
 assert(typeof quibble(['ABC']) === 'string');
 ```
 
-`quibble([])` should return "{}".
+`quibble([])` sollte "{}" zurückgeben.
 
 ```js
 assert.equal(quibble(testCases[0]), results[0]);
 ```
 
-`quibble(["ABC"])` should return `"{ABC}"`.
+`quibble(["ABC"])` sollte `"{ABC}"` zurückgeben.
 
 ```js
 assert.equal(quibble(testCases[1]), results[1]);
 ```
 
-`quibble(["ABC", "DEF"])` should return `"{ABC and DEF}"`.
+`quibble(["ABC", "DEF"])` sollte `"{ABC and DEF}"` zurückgeben.
 
 ```js
 assert.equal(quibble(testCases[2]), results[2]);
 ```
 
-`quibble(["ABC", "DEF", "G", "H"])` should return `"{ABC, DEF, G and H}"`.
+`quibble(["ABC", "DEF", "G", "H"])` sollte `"{ABC, DEF, G and H}"` zurückgeben.
 
 ```js
 assert.equal(quibble(testCases[3]), results[3]);

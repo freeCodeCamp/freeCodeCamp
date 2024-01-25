@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ec2
-title: Jaro distance
+title: Jaro距離
 challengeType: 1
 forumTopicId: 302292
 dashedName: jaro-distance
@@ -10,26 +10,26 @@ dashedName: jaro-distance
 
 The Jaro distance is a measure of similarity between two strings. The higher the Jaro distance for two strings is, the more similar the strings are. The score is normalized such that `0` equates to no similarity and `1` is an exact match.
 
-**Definition**
+**定義**
 
-The Jaro distance \\( d_j \\) of two given strings \\(s_1\\) and \\(s_2\\) is
+給定兩個字符串 \\(s_1\\) 和 \\(s_2\\) ，它們的Jaro距離是：
 
 \\begin{align}d_j = \\begin{cases}0& & \\text{if }m=0 \\\\\\\\{\\frac {1}{3}}\\left({\\frac {m}{|s\_{1}|}}+{\\frac {m}{|s\_{2}|}}+{\\frac {m-t}{m}}\\right)& & \\text{otherwise}\\end{cases}\\end{align}
 
-Where:
+其中：
 
 <ul>
   <li>\(m\) is the number of <i>matching characters</i>;</li>
   <li> \(t\) is half the number of <i>transpositions</i>.</li>
 </ul>
 
-Two characters from \\(s_1\\) and \\(s_2\\) respectively, are considered *matching* only if they are the same and not farther than \\(\\left\\lfloor\\frac{\\max(|s_1|,|s_2|)}{2}\\right\\rfloor-1\\).
+如果兩個分別來自 \\(s_1\\) 和 \\(s_2\\) 中的字符是相同的，並且它們之間的距離不超過 \\(\\left\\lfloor\\frac{\\max(|s_1|,|s_2|)}{2}\\right\\rfloor-1\\) ，那麼它們就被認爲是 *匹配的*。
 
-Each character of \\(s_1\\) is compared with all its matching characters in \\(s_2\\) . The number of matching (but different sequence order) characters divided by 2 defines the number of *transpositions*.
+每一個 \\(s_1\\) 中的字符都被和它在 \\(s_2\\) 中對應的字符相比較。 *換位字符* 的數量就是 *匹配（但在字符串中順序不同）字符* 的數量除以 2。
 
-**Example**
+**示例**
 
-Given the strings \\(s_1\\) *DWAYNE* and \\(s_2\\) *DUANE* we find:
+對於給定的字符串 \\(s_1\\) "*DWAYNE*" 和 \\(s_2\\) "*DUANE*" 可以發現：
 
 <ul>
   <li>\(m = 4\)</li>
@@ -38,51 +38,51 @@ Given the strings \\(s_1\\) *DWAYNE* and \\(s_2\\) *DUANE* we find:
   <li>\(t = 0\)</li>
 </ul>
 
-We find a Jaro score of: \\(d_j = \\frac{1}{3}\\left(\\frac{4}{6} + \\frac{4}{5} + \\frac{4-0}{4}\\right) = 0.822\\).
+計算得出兩字符串之間的 Jaro 距離爲 \\(d_j = \\frac{1}{3}\\left(\\frac{4}{6} + \\frac{4}{5} + \\frac{4-0}{4}\\right) = 0.822\\) 。
 
 # --instructions--
 
-Write a function a that takes two strings as parameters and returns the associated Jaro distance.
+編寫一個函數a，它接受兩個字符串作爲參數並返回相關的Jaro距離。
 
 # --hints--
 
-`jaro` should be a function.
+`jaro` 應該是一個函數。
 
 ```js
 assert(typeof jaro == 'function');
 ```
 
-`jaro("MARTHA", "MARHTA")` should return a number.
+`jaro("MARTHA", "MARHTA")` 應該返回一個數值。
 
 ```js
 assert(typeof jaro('MARTHA', 'MARHTA') == 'number');
 ```
 
-`jaro("MARTHA", "MARHTA")` should return `0.9444444444444445`.
+`jaro("MARTHA", "MARHTA")` 應該返回 `0.9444444444444445` 。
 
 ```js
 assert.equal(jaro('MARTHA', 'MARHTA'), 0.9444444444444445);
 ```
 
-`jaro("DIXON", "DICKSONX")` should return `0.7666666666666666`.
+`jaro("DIXON", "DICKSONX")` 應該返回 `0.7666666666666666` 。
 
 ```js
 assert.equal(jaro('DIXON', 'DICKSONX'), 0.7666666666666666);
 ```
 
-`jaro("JELLYFISH", "SMELLYFISH")` should return `0.8962962962962964`.
+`jaro("JELLYFISH", "SMELLYFISH")` 應該返回 `0.8962962962962964` 。
 
 ```js
 assert.equal(jaro('JELLYFISH', 'SMELLYFISH'), 0.8962962962962964);
 ```
 
-`jaro("HELLOS", "CHELLO")` should return `0.888888888888889`.
+`jaro("HELLOS", "CHELLO")` 應該返回 `0.888888888888889` 。
 
 ```js
 assert.equal(jaro('HELLOS', 'CHELLO'), 0.888888888888889);
 ```
 
-`jaro("ABCD", "BCDA")` should return `0.8333333333333334`.
+`jaro("ABCD", "BCDA")` 應該返回 `0.8333333333333334` 。
 
 ```js
 assert.equal(jaro('ABCD', 'BCDA'), 0.8333333333333334);

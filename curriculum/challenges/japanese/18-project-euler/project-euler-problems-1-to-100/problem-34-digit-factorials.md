@@ -1,6 +1,6 @@
 ---
 id: 5900f38e1000cf542c50fea1
-title: 'Problem 34: Digit factorials'
+title: '問題 34: 各位の階乗'
 challengeType: 1
 forumTopicId: 301998
 dashedName: problem-34-digit-factorials
@@ -8,21 +8,21 @@ dashedName: problem-34-digit-factorials
 
 # --description--
 
-145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
+145 は興味深い数です。なぜかというと、次のようになるからです: 1! + 4! + 5! = 1 + 24 + 120 = 145.
 
-Find the numbers and the sum of the numbers which are equal to the sum of the factorial of their digits.
+各位の階乗の和がその数自体と等しくなるような数、およびそれらの和を求めなさい。
 
-**Note:** as 1! = 1 and 2! = 2 are not sums they are not included.
+**注:** 1! = 1 と 2! = 2 の場合は和ではないため、答えに含まれません。
 
 # --hints--
 
-`digitFactorial()` should return an object.
+`digitFactorial()` はオブジェクトを返す必要があります。
 
 ```js
 assert.typeOf(digitFactorial(), 'object');
 ```
 
-`digitFactorial()` should return { sum: 40730, numbers: [145, 40585] }.
+`digitFactorial()` は { sum: 40730, numbers: [145, 40585] } を返す必要があります。
 
 ```js
 assert.deepEqual(digitFactorial(), { sum: 40730, numbers: [145, 40585] });

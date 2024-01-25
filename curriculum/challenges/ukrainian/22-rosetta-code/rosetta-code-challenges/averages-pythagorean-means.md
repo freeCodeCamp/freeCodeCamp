@@ -1,6 +1,6 @@
 ---
 id: 594d966a1467eb84194f0086
-title: Averages/Pythagorean means
+title: Піфагорові середні
 challengeType: 1
 forumTopicId: 302227
 dashedName: averagespythagorean-means
@@ -10,22 +10,22 @@ dashedName: averagespythagorean-means
 
 Compute all three of the <a href="https://en.wikipedia.org/wiki/Pythagorean_means" target="_blank" rel="noopener noreferrer nofollow">Pythagorean means</a> of the set of integers $1$ through $10$ (inclusive).
 
-Show that $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$ for this set of positive integers.
+Покажіть, що $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$ для цього набору цілих чисел.
 
 <ul>
-  <li>The most common of the three means, the <a class='rosetta__link--rosetta' href='https://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean' target='_blank'>arithmetic mean</a>, is the sum of the list divided by its length:<br>
+  <li>Найчастішим з трьох середніх є <a class='rosetta__link--rosetta' href='https://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean' target='_blank'>середнє арифметичне</a> — сума множини, поділена на її довжину:<br>
   <big>$ A(x_1, \ldots, x_n) = \frac{x_1 + \cdots + x_n}{n}$</big></li>
-  <li>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Geometric mean' title='wp: Geometric mean' target='_blank'>geometric mean</a> is the $n$th root of the product of the list:<br>
+  <li><a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Geometric mean' title='wp: Geometric mean' target='_blank'>Середнє геометричне</a> є $n$-им коренем добутку множини:<br>
   <big>$ G(x_1, \ldots, x_n) = \sqrt[n]{x_1 \cdots x_n} $</big></li>
-  <li>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Harmonic mean' title='wp: Harmonic mean' target='_blank'>harmonic mean</a> is $n$ divided by the sum of the reciprocal of each item in the list:<br>
+  <li><a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Harmonic mean' title='wp: Harmonic mean' target='_blank'>Середнє гармонійне</a> — це $n$, поділене на суму кожного оберненого члена множини:<br>
   <big>$ H(x_1, \ldots, x_n) = \frac{n}{\frac{1}{x_1} + \cdots + \frac{1}{x_n}} $</big></li>
 </ul>
 
 # --instructions--
 
-When writing your function, assume the input is an ordered array of all-inclusive numbers.
+При написанні функції, врахуйте, що вхідні дані — впорядкований масив всіх включених чисел.
 
-For the answer, please output an object in the following format:
+Для відповіді, будь ласка, виведіть об'єкт у наступному форматі:
 
 ```js
 {
@@ -40,13 +40,13 @@ For the answer, please output an object in the following format:
 
 # --hints--
 
-`pythagoreanMeans` should be a function.
+`pythagoreanMeans` має бути функцією.
 
 ```js
 assert(typeof pythagoreanMeans === 'function');
 ```
 
-`pythagoreanMeans([1, 2, ..., 10])` should equal the same output above.
+`pythagoreanMeans([1, 2, ..., 10])` має дорівнювати тому ж результату, що й вище.
 
 ```js
 assert.deepEqual(pythagoreanMeans(range1), answer1);

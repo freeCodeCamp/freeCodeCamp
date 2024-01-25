@@ -1,6 +1,6 @@
 ---
 id: 5900f5371000cf542c51004a
-title: 'Problem 459: Flipping game'
+title: '問題 459：翻轉游戲'
 challengeType: 1
 forumTopicId: 302133
 dashedName: problem-459-flipping-game
@@ -12,7 +12,7 @@ The flipping game is a two player game played on a $N$ by $N$ square board.
 
 Each square contains a disk with one side white and one side black.
 
-The game starts with all disks showing their white side.
+遊戲開始時所有磁盤都顯示白色。
 
 A turn consists of flipping all disks in a rectangle with the following properties:
 

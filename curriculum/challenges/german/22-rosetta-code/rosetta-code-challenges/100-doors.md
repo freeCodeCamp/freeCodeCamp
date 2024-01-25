@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339acb
-title: 100 doors
+title: 100 Türen
 challengeType: 1
 forumTopicId: 302217
 dashedName: 100-doors
@@ -12,23 +12,23 @@ There are 100 doors in a row that are all initially closed. You make 100 passes 
 
 # --instructions--
 
-Implement a function to determine the state of the doors after the last pass. Return the final result in an array, with only the door number included in the array if it is open.
+Implementiere eine Funktion, die den Zustand jeder Tür nach dem letzten Durchlauf ermittelt. Gebe das Endergebnis in einem Array zurück, der die Türnummer nur enthält, wenn diese geöffnet ist.
 
 # --hints--
 
-`getFinalOpenedDoors` should be a function.
+`getFinalOpenedDoors` sollte eine Funktion sein.
 
 ```js
 assert(typeof getFinalOpenedDoors === 'function');
 ```
 
-`getFinalOpenedDoors` should return an array.
+`getFinalOpenedDoors` sollte einen Array zurückgeben.
 
 ```js
 assert(Array.isArray(getFinalOpenedDoors(100)));
 ```
 
-`getFinalOpenedDoors` should produce the correct result.
+`getFinalOpenedDoors` sollte das richtige Ergebnis liefern.
 
 ```js
 assert.deepEqual(getFinalOpenedDoors(100), solution);

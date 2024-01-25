@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad1
-title: Happy numbers
+title: 快乐的数字
 challengeType: 1
 forumTopicId: 302280
 dashedName: happy-numbers
@@ -10,87 +10,87 @@ dashedName: happy-numbers
 
 A happy number is defined by the following process:
 
-Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals `1` (where it will stay), or it loops endlessly in a cycle which does not include `1`. Those numbers for which this process ends in `1` are happy numbers, while those that do not end in `1` are unhappy numbers.
+从任何正整数开始，用其数字的平方和替换该数字，并重复该过程直到该数字等于 `1`（它将停留的位置），否则它会无限循环不包括 `1`。 此过程以 `1` 结尾的数字是快乐数字，而不以 `1` 结尾的数字是不快乐数字。
 
 # --instructions--
 
-Implement a function that returns true if the number is happy, or false if not.
+实现一个函数，如果数字快乐则返回 true，否则返回 false。
 
 # --hints--
 
-`happy` should be a function.
+`happy` 应该是一个函数。
 
 ```js
 assert(typeof happy === 'function');
 ```
 
-`happy(1)` should return a boolean.
+`happy(1)` 应该返回一个布尔值。
 
 ```js
 assert(typeof happy(1) === 'boolean');
 ```
 
-`happy(1)` should return `true`.
+`happy(1)` 应该返回 `true`。
 
 ```js
 assert(happy(1));
 ```
 
-`happy(2)` should return `false`.
+`happy(2)` 应该返回 `false`。
 
 ```js
 assert(!happy(2));
 ```
 
-`happy(7)` should return `true`.
+`happy(7)` 应该返回 `true`。
 
 ```js
 assert(happy(7));
 ```
 
-`happy(10)` should return `true`.
+`happy(10)` 应该返回 `true`。
 
 ```js
 assert(happy(10));
 ```
 
-`happy(13)` should return `true`.
+`happy(13)` 应该返回 `true`。
 
 ```js
 assert(happy(13));
 ```
 
-`happy(19)` should return `true`.
+`happy(19)` 应该返回 `true`。
 
 ```js
 assert(happy(19));
 ```
 
-`happy(23)` should return `true`.
+`happy(23)` 应该返回 `true`。
 
 ```js
 assert(happy(23));
 ```
 
-`happy(28)` should return `true`.
+`happy(28)` 应该返回 `true`。
 
 ```js
 assert(happy(28));
 ```
 
-`happy(31)` should return `true`.
+`happy(31)` 应该返回 `true`。
 
 ```js
 assert(happy(31));
 ```
 
-`happy(32)` should return `true`.
+`happy(32)` 应该返回 `true`。
 
 ```js
 assert(happy(32));
 ```
 
-`happy(33)` should return `false`.
+`happy(33)` 应该返回 `false`。
 
 ```js
 assert(!happy(33));

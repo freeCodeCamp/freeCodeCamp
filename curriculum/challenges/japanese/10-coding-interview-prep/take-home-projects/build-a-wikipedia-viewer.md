@@ -8,21 +8,21 @@ dashedName: build-a-wikipedia-viewer
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to this: <a href="https://codepen.io/freeCodeCamp/full/wGqEga/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/wGqEga/</a>.
+**目標:** こちらと似た機能を持つアプリを構築してください: <a href="https://codepen.io/freeCodeCamp/full/wGqEga/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/wGqEga/</a>
 
-The MediaWiki software powers Wikipedia, and it helps you collect and organize knowledge and make it available to people.
+MediaWiki のソフトウェアにより運営されているウィキペディアは、知識を収集して整理し、人々に利用できるようにするのに役立っています。
 
-Using the MediaWiki API, replicate the search function and random article function, similar to the example app above. You can use Wikipedia as your data source.
+MediaWiki API を使用して、上記のサンプルアプリと似たような検索関数とランダム記事関数を作成してください。 ウィキペディアをデータソースとして利用することができます。
 
-以下のユーザーストーリーを満たし、すべてのテストが成功するようにしてください。 Use whichever libraries or APIs you need. あなた独自のアレンジを加えましょう。
+以下のユーザーストーリーを満たし、すべてのテストが成功するようにしてください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなた独自のアレンジを加えましょう。
 
-**User Story:** I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.
+**ユーザーストーリー:** Wikipedia の項目を検索ボックスで検索し、その検索結果の Wikipedia の項目を参照することができます。
 
-**User Story:** I can click a button to see a random Wikipedia entry.
+**ユーザーストーリー:** ボタンをクリックすることで、ランダムに Wikipedia の項目を表示できます。
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+完了したら、CodePen のプロジェクトへのリンクを入れて、「このチャレンジを完了しました」ボタンをクリックしてください。
 
-You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
+<a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp フォーラム</a>でプロジェクトを共有することにより、フィードバックを得ることができます。
 
 # --solutions--
 

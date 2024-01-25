@@ -76,13 +76,13 @@ assert(style?.height === '400px');
   <body>
     <!-- Use the classes BELOW this line -->
     <div>
-      <img class="avatar proportioned" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_1.jpg" alt="Woman with glasses">
-      <img class="avatar distorted" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_2.jpg" alt="Man with surprised expression">
+      <img class="avatar proportioned" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations/css-foundations-01.jpg" alt="Two cute kittens">
+      <img class="avatar distorted" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations/css-foundations-02.jpg" alt="Three cute kittens">
     </div>
     <!-- Use the classes ABOVE this line -->
     <div>
-      <img class="original proportioned" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_1.jpg" alt="Woman with glasses">
-      <img class="original distorted" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_2.jpg">
+      <img class="original proportioned" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations/css-foundations-01.jpg" alt="Two cute kittens">
+      <img class="original distorted" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations/css-foundations-02.jpg" alt="Three cute kittens">
     </div>
   </body>
 </html>
@@ -104,14 +104,13 @@ assert(style?.height === '400px');
   <body>
     <!-- Use the classes BELOW this line -->
     <div>
-      <img class="avatar proportioned" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_1.jpg" alt="Woman with glasses">
-      <img class="avatar distorted" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_2.jpg" alt="Man with surprised expression">
+      <img class="avatar proportioned" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations/css-foundations-01.jpg" alt="Two cute kittens">
+      <img class="avatar distorted" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations/css-foundations-02.jpg" alt="Three cute kittens">
     </div>
     <!-- Use the classes ABOVE this line -->
     <div>
-      <img class="original proportioned" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_1.jpg" alt="Woman with glasses">
-      <img class="original distorted" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations-exercise-D/cat_2.jpg">
-    </div>
+      <img class="avatar proportioned" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations/css-foundations-01.jpg" alt="Two cute kittens">
+      <img class="avatar distorted" src="https://cdn.freecodecamp.org/curriculum/odin-project/css-foundations/css-foundations-02.jpg" alt="Three cute kittens">
   </body>
 </html>
 ```

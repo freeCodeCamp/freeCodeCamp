@@ -8,59 +8,59 @@ dashedName: build-a-roman-numeral-converter
 
 # --description--
 
-Roman numerals are based on seven symbols and can be written using various combinations to represent Arabic numerals. For example:
+Roman numerals are based on seven symbols and can be written using various combinations to represent Arabic numerals. Zum Beispiel:
 
-| Roman numerals | Arabic numerals |
-|----------------|-----------------|
-| M              | 1000            |
-| CM             | 900             |
-| D              | 500             |
-| CD             | 400             |
-| C              | 100             |
-| XC             | 90              |
-| L              | 50              |
-| XL             | 40              |
-| X              | 10              |
-| IX             | 9               |
-| V              | 5               |
-| IV             | 4               |
-| I              | 1               |
+| Roman numerals | Arabische Ziffern |
+| -------------- | ----------------- |
+| M              | 1000              |
+| CM             | 900               |
+| D              | 500               |
+| CD             | 400               |
+| C              | 100               |
+| XC             | 90                |
+| L              | 50                |
+| XL             | 40                |
+| X              | 10                |
+| IX             | 9                 |
+| V              | 5                 |
+| IV             | 4                 |
+| I              | 1                 |
 
-**Objective:** Build an app that is functionally similar to <a href="https://roman-numeral-converter.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://roman-numeral-converter.freecodecamp.rocks</a>
+**Aufgabe:** Erstelle eine Applikation, die eine ähnliche Funktionalität wie <a href="https://roman-numeral-converter.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://roman-numeral-converter.freecodecamp.rocks</a> aufweist
 
 **User Stories:**
 
 1. You should have an `input` element with an `id` of `number`
-1. You should have a `button` element with an `id` of `convert-btn`
-1. You should have a `div` element with an `id` of `output`
+1. Du solltest ein `button`-Element mit einer `id` von `convert-btn` haben
+1. Du solltest ein `div`-Element mit einer `id` von `output` haben
 1. When you click on the `#convert-btn` element without entering a value into the `#number` element, the `#output` element should contain the text `Please enter a valid number`
-1. When the `#number` element contains the number `-1` and the `#convert-btn` element is clicked, the `#output` element should contain the text `Please enter a number greater than or equal to 1`
+1. Wenn das `#number`-Element eine Zahl `-1` enthält und das `#convert-btn`-Element angeklickt wird, sollte das `#output`-Element den Text `Please enter a number greater than or equal to 1` enthalten
 1. When the `#number` element contains the number `4000` or greater and the `#convert-btn` element is clicked, the `#output` element should contain the text `Please enter a number less than or equal to 3999`
-1. When the `#number` element contains the number `9` and the `#convert-btn` element is clicked, the `#output` element should contain the text `IX`
-1. When the `#number` element contains the number `16` and the `#convert-btn` element is clicked, the `#output` element should contain the text `XVI`
-1. When the `#number` element contains the number `649` and the `#convert-btn` element is clicked, the `#output` element should contain the text `DCXLIX`
-1. When the `#number` element contains the number `1023` and the `#convert-btn` element is clicked, the `#output` element should contain the text `MXXIII`
-1. When the `#number` element contains the number `3999` and the `#convert-btn` element is clicked, the `#output` element should contain the text `MMMCMXCIX`
+1. Wenn das `#number`-Element eine Zahl `9` enthält und das `#convert-btn`-Element angeklickt wird, sollte das `#output`-Element den Text `IX` enthalten
+1. Wenn das `#number`-Element eine Zahl `16` enthält und das `#convert-btn`-Element angeklickt wird, sollte das `#output`-Element den Text `XVI` enthalten
+1. Wenn das `#number`-Element eine Zahl `649` enthält und das `#convert-btn`-Element angeklickt wird, sollte das `#output`-Element den Text `DCXLIX` enthalten
+1. Wenn das `#number`-Element eine Zahl `1023` enthält und das `#convert-btn`-Element angeklickt wird, sollte das `#output`-Element den Text `MXXIII` enthalten
+1. Wenn das `#number`-Element eine Zahl `3999` enthält und das `#convert-btn`-Element angeklickt wird, sollte das `#output`-Element den Text `MMMCMXCIX` enthalten
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+Erfülle die folgenden User Stories und bestehe alle Tests, um dieses Projekt abzuschließen. Gib dem Ganzen deinen persönlichen Stil. Viel Spaß beim Programmieren!
 
 # --hints--
 
-You should have an `input` element with an `id` of `number`.
+Du solltest ein `input` Element mit einer `id` von `number` haben.
 
 ```js
 const el = document.getElementById('number');
 assert.strictEqual(el?.nodeName?.toLowerCase(), 'input');
 ```
 
-You should have a `button` element with an `id` of `convert-btn`.
+Du solltest ein `button`-Element mit einer `id` von `convert-btn` haben.
 
 ```js
 const el = document.getElementById('convert-btn');
 assert.strictEqual(el?.nodeName?.toLowerCase(), 'button');
 ```
 
-You should have a `div` element with an `id` of `output`.
+Du solltest ein `div`-Element mit einer `id` von `output` haben.
 
 ```js
 const el = document.getElementById('output');
@@ -79,7 +79,7 @@ convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please enter a valid number');
 ```
 
-When the `#number` element contains the number `-1` and the `#convert-btn` element is clicked, the `#output` element should contain the text `Please enter a number greater than or equal to 1`
+Wenn das `#number`-Element eine Zahl `-1` enthält und das `#convert-btn`-Element angeklickt wird, sollte das `#output`-Element den Text `Please enter a number greater than or equal to 1` enthalten
 
 ```js
 const numberInputEl = document.getElementById('number');
@@ -103,7 +103,7 @@ convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please enter a number less than or equal to 3999');
 ```
 
-When the `#number` element contains the number `9` and the `#convert-btn` element is clicked, the `#output` element should contain the text `IX`.
+Wenn das `#number`-Element eine Zahl `9` enthält und das `#convert-btn`-Element angeklickt wird, sollte das `#output`-Element den Text `IX` enthalten.
 
 ```js
 const numberInputEl = document.getElementById('number');
@@ -115,7 +115,7 @@ convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim(), 'IX');
 ```
 
-When the `#number` element contains the number `16` and the `#convert-btn` element is clicked, the `#output` element should contain the text `XVI`.
+Wenn das `#number`-Element eine Zahl `16` enthält und das `#convert-btn`-Element angeklickt wird, sollte das `#output`-Element den Text `XVI` enthalten.
 
 ```js
 const numberInputEl = document.getElementById('number');
@@ -127,7 +127,7 @@ convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim(), 'XVI');
 ```
 
-When the `#number` element contains the number `649` and the `#convert-btn` element is clicked, the `#output` element should contain the text `DCXLIX`.
+Wenn das `#number`-Element eine Zahl `649` enthält und das `#convert-btn`-Element angeklickt wird, sollte das `#output`-Element den Text `DCXLIX` enthalten.
 
 ```js
 const numberInputEl = document.getElementById('number');
@@ -139,7 +139,7 @@ convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim(), 'DCXLIX');
 ```
 
-When the `#number` element contains the number `1023` and the `#convert-btn` element is clicked, the `#output` element should contain the text `MXXIII`.
+Wenn das `#number`-Element eine Zahl `1023` enthält und das `#convert-btn`-Element angeklickt wird, sollte das `#output`-Element den Text `MXXIII` enthalten.
 
 ```js
 const numberInputEl = document.getElementById('number');
@@ -151,7 +151,7 @@ convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim(), 'MXXIII');
 ```
 
-When the `#number` element contains the number `3999` and the `#convert-btn` element is clicked, the `#output` element should contain the text `MMMCMXCIX`.
+Wenn das `#number`-Element eine Zahl `3999` enthält und das `#convert-btn`-Element angeklickt wird, sollte das `#output`-Element den Text `MMMCMXCIX` enthalten.
 
 ```js
 const numberInputEl = document.getElementById('number');
@@ -230,6 +230,7 @@ assert.strictEqual(outputEl.innerText.trim(), 'MMMCMXCIX');
   --gray-75: #3b3b4f;
   --gray-85: #1b1b32;
   --gray-90: #0a0a23;
+  --blue-50: #198eee;
   --error: #a94442;
   --danger-color: #850000;
   --danger-background: #ffadad;
@@ -296,6 +297,11 @@ label {
   font-weight: bold;
 }
 
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--blue-50);
+}
+
 input {
   display: block;
   font-size: 2.5rem;
@@ -307,12 +313,9 @@ input {
   color: white;
   background-color: var(--gray-90);
   border: 1px solid var(--gray-05);
-  outline: none;
-  outline-style: none;
 }
 
 button {
-  outline: none;
   cursor: pointer;
   margin-top: 15px;
   text-decoration: none;

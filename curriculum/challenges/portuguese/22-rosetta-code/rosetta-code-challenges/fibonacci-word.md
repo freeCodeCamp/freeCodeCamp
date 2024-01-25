@@ -1,6 +1,6 @@
 ---
 id: 5992e222d397f00d21122931
-title: Fibonacci word
+title: Palavra de Fibonacci
 challengeType: 1
 forumTopicId: 302269
 dashedName: fibonacci-word
@@ -16,33 +16,33 @@ Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<su
 Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<sub>n-2</sub>
 </pre>
 
-Entropy calculation is required in this challenge, <a href="https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy" target="_blank" rel="noopener noreferrer nofollow">as shown in this Rosetta Code challenge</a>
+É necessário o cálculo de entropia neste desafio, <a href="https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy" target="_blank" rel="noopener noreferrer nofollow">como mostrado neste desafio do Rosetta Code</a>
 
 # --instructions--
 
-Write a function to return the first `n` Fibonacci Words. The number of `n` is provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` is computed for the string `Word` and rounded to 8 decimal digits of accuracy. Note that the indices of this sequence start at `1`.
+Escreva uma função que retorne as `n` primeiras palavras de Fibonacci. O número `n` será fornecido como um parâmetro para a função. A função deve retornar um array de objetos. Os objetos devem estar na forma: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }` (tamanho, entropia e palavra). `Entropy` é calculada para a string `Word` e arredondada para 8 casas decimais de precisão. Observe que os índices dessa sequência começam em `1`.
 
 # --hints--
 
-`fibWord` should be a function.
+`fibWord` deve ser uma função.
 
 ```js
 assert(typeof fibWord === 'function');
 ```
 
-`fibWord(5)` should return an array.
+`fibWord(5)` deve retornar um array.
 
 ```js
 assert(Array.isArray(fibWord(5)));
 ```
 
-`fibWord(5)` should return `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }]`.
+`fibWord(5)` deve retornar `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }]`.
 
 ```js
 assert.deepEqual(fibWord(5), words5);
 ```
 
-`fibWord(7)` should return `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }, { N:6, Length:8, Entropy:0.954434, Word:'01001010' }, { N:7, Length:13, Entropy:0.9612366, Word:'0100101001001' }]`.
+`fibWord(7)` deve retornar `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }, { N:6, Length:8, Entropy:0.954434, Word:'01001010' }, { N:7, Length:13, Entropy:0.9612366, Word:'0100101001001' }]`.
 
 ```js
 assert.deepEqual(fibWord(7), words7);
