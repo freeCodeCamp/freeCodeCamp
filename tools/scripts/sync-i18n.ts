@@ -48,12 +48,22 @@ const syncChallenges = async () => {
         const langLines = langContent.split('\n');
         const langId = langLines.find(l => l.startsWith('id'));
         const langSlug = langLines.find(l => l.startsWith('dashedName'));
-        if (engId && langId && engId !== langId) {
+        if (!langSlug) {
+          throw new Error(
+            `Missing dashedName for ${targetPath}. Please add it so that it matches the English version.`
+          );
+        }
+        if (!langId) {
+          throw new Error(
+            `Missing id for ${targetPath}. Please add it so that it matches the English version.`
+          );
+        }
+        if (engId && engId !== langId) {
           langLines.splice(langLines.indexOf(langId), 1, engId);
           console.log(`Updating ID for ${targetPath}`);
           await writeFile(targetPath, langLines.join('\n'), 'utf-8');
         }
-        if (engSlug && langSlug && engSlug !== langSlug) {
+        if (engSlug && engSlug !== langSlug) {
           langLines.splice(langLines.indexOf(langSlug), 1, engSlug);
           console.log(`Updating dashed name for ${targetPath}`);
           await writeFile(targetPath, langLines.join('\n'), 'utf-8');
