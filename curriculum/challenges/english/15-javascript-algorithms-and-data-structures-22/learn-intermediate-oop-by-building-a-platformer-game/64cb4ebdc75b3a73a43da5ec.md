@@ -1,8 +1,8 @@
 ---
 id: 64cb4ebdc75b3a73a43da5ec
-title: Step 107
+title: Step 108
 challengeType: 0
-dashedName: step-107
+dashedName: step-108
 ---
 
 # --description--
@@ -264,6 +264,7 @@ class CheckPoint {
     };
     this.width = proportionalSize(40);
     this.height = proportionalSize(70);
+    this.claimed = false;
   };
 
   draw() {
