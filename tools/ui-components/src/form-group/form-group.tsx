@@ -29,7 +29,6 @@ export const FormGroup = ({
       <Component
         className={classes}
         as={as}
-        id={controlId}
         {...props}
         validationstate={validationState}
       />

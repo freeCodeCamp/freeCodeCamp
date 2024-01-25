@@ -859,7 +859,8 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   const onChange = (editorValue: string) => {
-    const { updateFile, fileKey } = props;
+    const { updateFile, fileKey, isResetting } = props;
+    if (isResetting) return;
     // TODO: now that we have getCurrentEditableRegion, should the overlays
     // follow that directly? We could subscribe to changes to that and redraw if
     // those imply that the positions have changed (i.e. if the content height

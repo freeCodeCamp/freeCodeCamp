@@ -1,7 +1,7 @@
 ---
 id: 5900f4111000cf542c50ff23
 title: >-
-  Problem 164: Numbers for which no three consecutive digits have a sum greater than a given value
+  問題 164: 3 つの連続桁の和がいずれも所与の値以下であるような数
 challengeType: 1
 forumTopicId: 301798
 dashedName: >-
@@ -10,11 +10,11 @@ dashedName: >-
 
 # --description--
 
-How many 20 digit numbers $n$ (without any leading zero) exist such that no three consecutive digits of $n$ have a sum greater than 9?
+$n$ の 3 つの連続桁の和がいずれも 9 以下であるような、20 桁の数 $n$ (先行ゼロなし) はいくつありますか。
 
 # --hints--
 
-`consecutiveDigitsSum()` should return `378158756814587`.
+`consecutiveDigitsSum()` は `378158756814587` を返す必要があります。
 
 ```js
 assert.strictEqual(consecutiveDigitsSum(), 378158756814587);

@@ -16,15 +16,15 @@ Surprisingly there are only three numbers that can be written as the sum of four
   9474 = 9<sup>4</sup> + 4<sup>4</sup> + 7<sup>4</sup> + 4<sup>4</sup><br>
 </div>
 
-As 1 = 1<sup>4</sup> is not a sum it is not included.
+1634 = 1 <sup>4</sup> + 6 <sup>4</sup> + 3 <sup>4</sup> + 4 <sup>4</sup>
 
-The sum of these numbers is 1634 + 8208 + 9474 = 19316.
+8208 = 8 <sup>4</sup> + 2 <sup>4</sup> + 0 <sup>4</sup> + 8 <sup>4</sup>
 
-Find the sum of all the numbers that can be written as the sum of `n` powers of their digits.
+9474 = 9 <sup>4</sup> + 4 <sup>4</sup> + 7 <sup>4</sup> + 4 <sup>4</sup>
 
 # --hints--
 
-`digitnPowers(2)` should return a number.
+由於1 = 1 <sup>4</sup>不是總和，因此不包括在內。
 
 ```js
 assert(typeof digitnPowers(2) === 'number');

@@ -1,6 +1,6 @@
 ---
 id: 59f4eafba0343628bb682785
-title: Discordian date
+title: Diskordianisches Datum
 challengeType: 1
 forumTopicId: 302250
 dashedName: discordian-date
@@ -9,33 +9,33 @@ dashedName: discordian-date
 # --description--
 The Gregorian calendar is a solar calendar with 12 months of 28-31 days each. A week consists of seven days, and there are 52 weeks and 1 day per year. The year consists of 365 days with a leap day added to February every leap year. A leap year occurs every four years, except for the first three centurial years of every 400 years.
 
-The <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" rel="noopener noreferrer nofollow">Discordian calendar</a> is aligned with the Gregorian calendar, and begins on January 1. The week consists of five days, and there are 73 weeks per year. The year also consists of 365 days, with an extra day inserted between Chaos 59 and Chaos 60 every leap year.
+Der <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" rel="noopener noreferrer nofollow">Diskordianische Kalender</a> orientiert sich am Gregorianischen Kalender und beginnt am 1. Januar. Die Woche besteht aus fünf Tagen, und es gibt 73 Wochen pro Jahr. Das Jahr besteht ebenfalls aus 365 Tagen, wobei in jedem Schaltjahr zwischen Chaos 59 und Chaos 60 ein zusätzlicher Tag eingefügt wird.
 
-The months, weekdays, Apostle events, and Holidays in the Discordian calendar are given by:
+Die Monate, Wochentage, Apostelereignisse und Feiertage im diskordianischen Kalender werden angegeben durch:
 
-Seasons: `'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath'`.
-  
-Weekdays: `'Sweetmorn', 'Boomtime', 'Pungenday', 'Prickle-Prickle', 'Setting Orange'`.
+Saisonen: `'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath'`.
 
-Apostle: `'Mungday', 'Mojoday', 'Syaday', 'Zaraday', 'Maladay'`.
+Wochentage: `'Sweetmorn', 'Boomtime', 'Pungenday', 'Prickle-Prickle', 'Setting Orange'`.
 
-Holidays: `'Chaoflux', 'Discoflux', 'Confuflux', 'Bureflux', 'Afflux'`.
+Apostel: `'Mungday', 'Mojoday', 'Syaday', 'Zaraday', 'Maladay'`.
+
+Feiertage: `'Chaoflux', 'Discoflux', 'Confuflux', 'Bureflux', 'Afflux'`.
 
 # --instructions--
 
-Convert a given date from the Gregorian calendar to the Discordian calendar.
+Konvertiert ein gegebenes Datum vom Gregorianischen Kalender in den Diskordianischen Kalender.
 
-Note that the day Chaos 1, 3188 YOLD in the Discordian calendar is the day January 1, 2022 in the Gregorian calendar.
+Beachte, dass der Tag Chaos 1, 3188 YOLD im Diskordianischen Kalender der Tag des 1. Januar 2022 im Gregorianischen Kalender entspricht.
 
 # --hints--
 
-`discordianDate` should be a function.
+`discordianDate` sollte eine Funktion sein.
 
 ```js
 assert(typeof discordianDate === 'function');
 ```
 
-`discordianDate(new Date(2010, 6, 22))` should return `"Pungenday, the 57th day of Confusion in the YOLD 3176"`.
+`discordianDate(new Date(2010, 6, 22))` sollte `"Pungenday, the 57th day of Confusion in the YOLD 3176"` zurückgeben.
 
 ```js
 assert(
@@ -44,7 +44,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 1, 28))` should return `"Prickle-Prickle, the 59th day of Chaos in the YOLD 3178"`.
+`discordianDate(new Date(2012, 1, 28))` sollte `"Prickle-Prickle, the 59th day of Chaos in the YOLD 3178"` zurückgeben.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 2, 1))` should return `"Setting Orange, the 60th day of Chaos in the YOLD 3178"`.
+`discordianDate(new Date(2012, 2, 1))` sollte `"Setting Orange, the 60th day of Chaos in the YOLD 3178"` zurückgeben.
 
 ```js
 assert(
@@ -89,7 +89,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2015, 9, 19))` should return `"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"`.
+`discordianDate(new Date(2015, 9, 19))` sollte `"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"` zurückgeben.
 
 ```js
 assert(

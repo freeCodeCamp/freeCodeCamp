@@ -1,6 +1,6 @@
 ---
 id: 5900f37d1000cf542c50fe90
-title: 'Problem 17: Number letter counts'
+title: '問題 17: 数を表す単語の文字数'
 challengeType: 1
 forumTopicId: 301804
 dashedName: problem-17-number-letter-counts
@@ -8,33 +8,33 @@ dashedName: problem-17-number-letter-counts
 
 # --description--
 
-If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+1 から 5 までの数を単語で表すと、one, two, three, four, five であり、使われている文字数の合計は 3 + 5 + 4 + 4 = 19 です。
 
-If all the numbers from 1 to given `limit` inclusive were written out in words, how many letters would be used?
+数字 1 から始め、与えられた `limit` までの数をすべて単語で書いた場合、何文字が使用されますか。
 
-**Note:** Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+**注:** スペースやハイフンは数えません。 例えば、342 (three hundred and forty-two) には 23 文字、115 (one hundred and fifteen) には20 文字が使われています。 数を単語に書き出す際の "and" の使用は、英国での使用法に従ったものです。
 
 # --hints--
 
-`numberLetterCounts(5)` should return a number.
+`numberLetterCounts(5)` は数値を返す必要があります。
 
 ```js
 assert(typeof numberLetterCounts(5) === 'number');
 ```
 
-`numberLetterCounts(5)` should return 19.
+`numberLetterCounts(5)` は 19 を返す必要があります。
 
 ```js
 assert.strictEqual(numberLetterCounts(5), 19);
 ```
 
-`numberLetterCounts(150)` should return 1903.
+`numberLetterCounts(150)` は 1903 を返す必要があります。
 
 ```js
 assert.strictEqual(numberLetterCounts(150), 1903);
 ```
 
-`numberLetterCounts(1000)` should return 21124.
+`numberLetterCounts(1000)` は 21124 を返す必要があります。
 
 ```js
 assert.strictEqual(numberLetterCounts(1000), 21124);

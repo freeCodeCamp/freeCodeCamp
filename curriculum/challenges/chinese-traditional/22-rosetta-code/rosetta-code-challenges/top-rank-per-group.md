@@ -1,6 +1,6 @@
 ---
 id: 595011cba5a81735713873bd
-title: Top rank per group
+title: 每組最高排名
 challengeType: 1
 forumTopicId: 302339
 dashedName: top-rank-per-group
@@ -10,7 +10,7 @@ dashedName: top-rank-per-group
 
 Find the top `n` ranked data in each group, where `n` is provided as a parameter. Name of the rank and the group are also provided as parameter.
 
-Given the following data:
+鑑於以下數據：
 
 ```js
 testData1 = [
@@ -30,13 +30,13 @@ testData1 = [
 ];
 ```
 
-One could rank top 10 employees in each department by calling:
+可以通過以下方式對每個部門的前 10 名員工進行排名：
 
 ```js
 topRankPerGroup(10, testData1, 'dept', 'salary')
 ```
 
-Given the following data:
+鑑於以下數據：
 
 ```js
 testData2 = [
@@ -48,15 +48,15 @@ testData2 = [
 ];
 ```
 
-One could rank the top-rated movie in each genre by calling:
+可以通過調用以下方式對每種類型中收視率最高的電影進行排名：
 
 ```js
 topRankPerGroup(1, testData2, 'genre', 'rating')
 ```
 
-The function should return an array with an array for each group containing the top `n` objects.
+該函數應返回一個數組，其中包含頂部 `n` 對象的每個組的數組。
 
-For example, given data:
+例如，給定數據：
 
 ```js
 [
@@ -69,7 +69,7 @@ For example, given data:
 ];
 ```
 
-Top two ranking employees in each department by salary would be:
+每個部門按薪水排名前兩名的員工是：
 
 ```js
 [ [ { name: 'Kim Arlich', id: 'E10001', salary: 57000, dept: 'D050' },
@@ -80,37 +80,37 @@ Top two ranking employees in each department by salary would be:
 
 # --hints--
 
-`topRankPerGroup` should be a function.
+`topRankPerGroup` 應該是一個函數。
 
 ```js
 assert(typeof topRankPerGroup === 'function');
 ```
 
-`topRankPerGroup` should return undefined on negative n values.
+`topRankPerGroup` 應該在負 n 值上返回 undefined。
 
 ```js
 assert(typeof topRankPerGroup(-1, []) === 'undefined');
 ```
 
-For `topRankPerGroup(10, testData1, 'dept', 'salary')`, the first result in the first group should be `{ name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050'}`.
+對於 `topRankPerGroup(10, testData1, 'dept', 'salary')`，第一組的第一個結果應該是 `{ name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050'}`。
 
 ```js
 assert.deepEqual(res1[0][0], { name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050'});
 ```
 
-For `topRankPerGroup(10, testData1, 'dept', 'salary')`, the last result in the last group should be `{ name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' }`.
+對於 `topRankPerGroup(10, testData1, 'dept', 'salary')`，最後一組的最後結果應該是 `{ name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' }`。
 
 ```js
 assert.deepEqual(res1[3][3], { name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' });
 ```
 
-`topRankPerGroup(1, ...)` should return only top ranking result per group.
+`topRankPerGroup(1, ...)` 應該只返回每個組的最高排名結果。
 
 ```js
 assert.equal(res2[2].length, 1);
 ```
 
-`topRankPerGroup(2, ...)` should return two ranking results per group.
+`topRankPerGroup(2, ...)` 應該每組返回兩個排名結果。
 
 ```js
 assert.equal(res3[2][1].name, 'Maze Runner');

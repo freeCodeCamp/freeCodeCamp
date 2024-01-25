@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f050b6c005b0e76f058
-title: Conditional Execution
+title: Ejecución de condicionales
 challengeType: 11
 videoId: gz_IfIsZQtc
 bilibiliIds:

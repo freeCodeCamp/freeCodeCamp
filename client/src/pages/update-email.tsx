@@ -1,4 +1,3 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
 import { isString } from 'lodash-es';
 import React, {
@@ -21,7 +20,8 @@ import {
   FormControl,
   ControlLabel,
   Col,
-  Row
+  Row,
+  Button
 } from '@freecodecamp/ui';
 
 import { Loader, Spacer } from '../components/helpers';
@@ -128,8 +128,8 @@ function UpdateEmail({
                 </FormGroup>
                 <Button
                   block={true}
-                  bsSize='lg'
-                  bsStyle='primary'
+                  size='large'
+                  variant='primary'
                   disabled={getEmailValidationState() !== 'success'}
                   type='submit'
                 >

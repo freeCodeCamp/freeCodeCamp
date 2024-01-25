@@ -7,32 +7,32 @@ dashedName: step-23
 
 # --description--
 
-In your `forEach` callback, you need to update the `totalCountPerProduct` object. Using the `id` of the current `dessert` as your property, update the value of the property to be the current value plus one. Do not use the addition assignment operator for this.
+У зворотному виклику `forEach` вам потрібно оновити об’єкт `totalCountPerProduct`. Використовуючи `id` поточного `dessert` як свою властивість, оновіть значення властивості до поточного значення плюс один. Не використайте для цього оператор присвоєння додавання.
 
 # --hints--
 
-You should use dot notation to access the `id` property of `dessert`.
+Ви повинні використати крапкову нотацію, щоб отримати доступ до властивості `id` об’єкта `dessert`.
 
 ```js
 const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /dessert\.id/);
 ```
 
-You should use bracket notation to access the property of `totalCountPerProduct` that corresponds to `dessert.id`.
+Ви повинні використовувати дужкову нотацію, щоб отримати доступ до властивості `totalCountPerProduct`, яка відповідає `dessert.id`.
 
 ```js
 const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]/);
 ```
 
-You should use the assignment operator to update the value of the property of `totalCountPerProduct` that corresponds to `dessert.id`.
+Ви повинні використовувати оператор присвоєння, щоб оновити значення властивості `totalCountPerProduct`, яка відповідає `dessert.id`.
 
 ```js
 const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=/);
 ```
 
-You should update the value of `totalCountPerProduct` to be the current value plus one.
+Ви повинні оновити значення `totalCountPerProduct` до поточного значення плюс один.
 
 ```js
 const cart = new ShoppingCart();
@@ -315,7 +315,7 @@ class ShoppingCart {
 
     const totalCountPerProduct = {};
     this.items.forEach((dessert) => {
-      
+
     })
   }
 --fcc-editable-region--

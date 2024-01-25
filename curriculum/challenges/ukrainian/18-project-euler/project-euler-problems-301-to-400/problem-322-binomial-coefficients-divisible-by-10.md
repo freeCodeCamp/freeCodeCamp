@@ -1,6 +1,6 @@
 ---
 id: 5900f4af1000cf542c50ffc1
-title: 'Problem 322: Binomial coefficients divisible by 10'
+title: 'Завдання 322: біноміальні коефіцієнти, які діляться на 10'
 challengeType: 1
 forumTopicId: 301979
 dashedName: problem-322-binomial-coefficients-divisible-by-10
@@ -8,7 +8,7 @@ dashedName: problem-322-binomial-coefficients-divisible-by-10
 
 # --description--
 
-Let $T(m, n)$ be the number of the binomial coefficients ${}^iC_n$ that are divisible by 10 for $n ≤ i &lt; m$ ($i$, $m$ and $n$ are positive integers).
+Нехай $T(m, n)$ буде кількістю біноміальних коефіцієнтів ${}^iC_n$, які діляться на 10 без остачі за умови $n ≤ i &lt; m$ ($i$, $m$ та $n$ є натуральними числами).
 
 Дано, що $T({10}^9, {10}^7 - 10) = 989\\,697\\,000$.
 

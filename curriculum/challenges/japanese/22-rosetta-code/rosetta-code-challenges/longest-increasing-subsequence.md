@@ -1,6 +1,6 @@
 ---
 id: 5e6dd139859c290b6ab80292
-title: Longest increasing subsequence
+title: 最長増加部分列
 challengeType: 1
 forumTopicId: 385272
 dashedName: longest-increasing-subsequence
@@ -10,7 +10,7 @@ dashedName: longest-increasing-subsequence
 
 The longest increasing subsequence problem is to find a subsequence of a given sequence in which the subsequence's elements are in sorted order, lowest to highest, and in which the subsequence is as long as possible. An example:
 
-For the following array:
+次の配列の場合:
 
 ```js
 const array = [3, 10, 2, 1, 20];

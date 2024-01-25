@@ -1,6 +1,6 @@
 ---
 id: 6363d2959078df117ce4c408
-title: "More Resources in Colab"
+title: "Colab のその他のリソース"
 challengeType: 15
 videoId: HNFrRHqpck4
 dashedName: more-resources-in-colab
@@ -8,29 +8,29 @@ dashedName: more-resources-in-colab
 
 # --description--
 
-One more thing... This brief video will show you some of the resources available to you in Google Colab notebooks.
+もう一つ、 この短い動画では、Google Colab ノートブックで利用できるリソースをいくつか紹介します。
 
 # --question--
 
 ## --text--
 
-Which code snippets are available in the Google Colaboratory?
+Google Colaboratory で利用できるコードスニペットはどれですか？
 
 ## --answers--
 
-Camera capture
+カメラのキャプチャ
 
 ---
 
-Adding form fields
+フォームフィールドの追加
 
 ---
 
-Importing data from Google Sheets
+Google スプレッドシートからのデータのインポート
 
 ---
 
-All of the above
+上記のすべて
 
 ## --video-solution--
 

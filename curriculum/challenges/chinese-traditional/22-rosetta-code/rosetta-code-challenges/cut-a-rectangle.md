@@ -92,47 +92,47 @@ A given rectangle is made from *m* × *n* squares. If *m* and *n* are not both o
 
 # --instructions--
 
-Write a function that calculates the number of different ways to cut an *m* × *n* rectangle.
+編寫一個函數來計算切割 *m* × *n* 矩形的不同方法的數量。
 
 # --hints--
 
-`cutRectangle` should be a function.
+`cutRectangle` 應該是一個函數。
 
 ```js
 assert(typeof cutRectangle == 'function');
 ```
 
-`cutRectangle(2, 2)` should return a number.
+`cutRectangle(2, 2)` 應該返回一個數字。
 
 ```js
 assert(typeof cutRectangle(2, 2) == 'number');
 ```
 
-`cutRectangle(2, 2)` should return `2`.
+`cutRectangle(2, 2)` 應該返回 `2`。
 
 ```js
 assert.equal(cutRectangle(2, 2), 2);
 ```
 
-`cutRectangle(4, 3)` should return `9`.
+`cutRectangle(4, 3)` 應該返回 `9`。
 
 ```js
 assert.equal(cutRectangle(4, 3), 9);
 ```
 
-`cutRectangle(4, 4)` should return `22`.
+`cutRectangle(4, 4)` 應該返回 `22`。
 
 ```js
 assert.equal(cutRectangle(4, 4), 22);
 ```
 
-`cutRectangle(8, 3)` should return `53`.
+`cutRectangle(8, 3)` 應該返回 `53`。
 
 ```js
 assert.equal(cutRectangle(8, 3), 53);
 ```
 
-`cutRectangle(7, 4)` should return `151`.
+`cutRectangle(7, 4)` 應該返回 `151`。
 
 ```js
 assert.equal(cutRectangle(7, 4), 151);

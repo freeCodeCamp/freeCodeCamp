@@ -1,6 +1,6 @@
 ---
 id: 5900f4db1000cf542c50ffee
-title: 'Problem 367: Bozo sort'
+title: 'Problem 367: Bozo-Sortierung'
 challengeType: 1
 forumTopicId: 302028
 dashedName: problem-367-bozo-sort
@@ -10,23 +10,23 @@ dashedName: problem-367-bozo-sort
 
 Bozo sort, not to be confused with the slightly less efficient bogo sort, consists out of checking if the input sequence is sorted and if not swapping randomly two elements. This is repeated until eventually the sequence is sorted.
 
-If we consider all permutations of the first 4 natural numbers as input the expectation value of the number of swaps, averaged over all $4!$ input sequences is $24.75$.
+Wenn wir alle Permutationen der ersten 4 natürlichen Zahlen als Eingabe betrachten, beträgt der Erwartungswert der Anzahl der Vertauschungen, gemittelt über alle $4!$-Eingabefolgen, $24.75$.
 
-The already sorted sequence takes 0 steps.
+Die bereits sortierte Folge benötigt 0 Schritte.
 
-In this problem we consider the following variant on bozo sort.
+In diesem Problem betrachten wir die folgende Variante der Bozo-Sortierung.
 
-If the sequence is not in order we pick three elements at random and shuffle these three elements randomly.
+Wenn die Reihenfolge nicht stimmt, wählen wir drei Elemente nach dem Zufallsprinzip aus und mischen diese drei Elemente nach dem Zufallsprinzip.
 
-All $3! = 6$ permutations of those three elements are equally likely.
+All $3! = 6$ Permutationen dieser drei Elemente sind gleich wahrscheinlich.
 
-The already sorted sequence will take 0 steps.
+Die bereits sortierte Sequenz wird 0 Schritte benötigen.
 
-If we consider all permutations of the first 4 natural numbers as input the expectation value of the number of shuffles, averaged over all $4!$ input sequences is $27.5$.
+Wenn wir alle Permutationen der ersten 4 natürlichen Zahlen als Eingabe betrachten, beträgt der Erwartungswert der Anzahl der Mischungen, durchschnittlich über alle $4!$-Eingabesequenzen, $27.5$.
 
-Consider as input sequences the permutations of the first 11 natural numbers.
+Betrachte als Eingangssequenzen die Permutationen der ersten 11 natürlichen Zahlen.
 
-Averaged over all $11!$ input sequences, what is the expected number of shuffles this sorting algorithm will perform? Give your answer rounded to the nearest integer.
+Wie hoch ist die erwartete Anzahl der Umlagerungen, die dieser Sortieralgorithmus im Durchschnitt über alle $11!$-Eingabesequenzen durchführt? Gib deine Antwort auf die nächste ganze Zahl gerundet an.
 
 # --hints--
 
