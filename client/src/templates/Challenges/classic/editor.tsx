@@ -63,9 +63,8 @@ import {
   setScrollbarArrowStyles
 } from '../utils/index';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
-import { isProjectBased } from '../../../../../shared/config/curriculum-layout';
+import { isProjectBased } from '../../../utils/curriculum-layout';
 import LowerJaw from './lower-jaw';
-
 import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));

@@ -1,5 +1,5 @@
-import { challengeTypes } from './challenge-types';
-import { SuperBlocks } from './superblocks';
+import { challengeTypes } from '../../../shared/config/challenge-types';
+import { SuperBlocks } from '../../../shared/config/superblocks';
 
 // Show a grid layout on the superblock level
 

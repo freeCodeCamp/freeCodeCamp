@@ -19,10 +19,7 @@ import { completedChallengesSelector } from '../../../redux/selectors';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import {
-  isGridBased,
-  isProjectBased
-} from '../../../../../shared/config/curriculum-layout';
+import { isGridBased, isProjectBased } from '../../../utils/curriculum-layout';
 import Challenges from './challenges';
 import '../intro.css';
 

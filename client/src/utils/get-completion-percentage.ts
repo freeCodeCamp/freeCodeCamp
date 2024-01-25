@@ -1,5 +1,5 @@
-import { isProjectBased } from '../../../shared/config/curriculum-layout';
 import { AllChallengesInfo } from '../redux/prop-types';
+import { isProjectBased } from './curriculum-layout';
 
 export function getCompletedPercentage(
   completedChallengesIds: string[] = [],
