@@ -45,4 +45,3 @@ This word connects two words to indicate continuous repetition.
 
 This word completes the phrase, emphasizing the repetitive action.
 
----
