@@ -11,48 +11,48 @@ dashedName: fizzbuzz
 Write a program that generates an array of integers from 1 to 100 (inclusive). But:
 
 <ul>
-    <li>for multiples of 3, add <code>"Fizz"</code> to the array instead of the number</li>
-    <li>for multiples of 5, add <code>"Buzz"</code> to the array instead of the number</li>
-    <li>for multiples of 3 and 5, add <code>"FizzBuzz"</code> to the array instead of the number</li>
+    <li>для кратних числа 3 додайте <code>"Fizz"</code> до масиву замість числа</li>
+    <li>для кратних числа 5 додайте <code>"Buzz"</code> до масиву замість числа</li>
+    <li>для кратних чисел 3 і 5 додайте <code>"FizzBuzz"</code> до масиву замість числа</li>
 </ul>
 
 # --instructions--
 
-Your program should return an array containing the results based on the rules above.
+Ваша програма має повернути масив, що містить результати на основі вищезазначених правил.
 
 # --hints--
 
-`fizzBuzz` should be a function.
+`fizzBuzz` має бути функцією.
 
 ```js
 assert(typeof fizzBuzz == 'function');
 ```
 
-`fizzBuzz()` should return an Array.
+`fizzBuzz()` має повернути масив.
 
 ```js
 assert(Array.isArray(fizzBuzz()) == true);
 ```
 
-Numbers divisible by only 3 should return `"Fizz"`.
+Числа, які діляться лише на 3, мають повернути `"Fizz"`.
 
 ```js
 assert.equal(fizzBuzz()[2], 'Fizz');
 ```
 
-Numbers divisible by only 5 should return `"Buzz"`.
+Числа, які діляться лише на 5, мають повернути `"Buzz"`.
 
 ```js
 assert.equal(fizzBuzz()[99], 'Buzz');
 ```
 
-Numbers divisible by both 3 and 5 should return `"FizzBuzz"`.
+Числа, які діляться на 3 і 5, мають повернути `"FizzBuzz"`.
 
 ```js
 assert.equal(fizzBuzz()[89], 'FizzBuzz');
 ```
 
-Numbers not divisible by either 3 or 5 should return the number itself.
+Числа, які не діляться ні на 3, ні на 5, мають повернути саме число.
 
 ```js
 assert.equal(fizzBuzz()[12], 13);

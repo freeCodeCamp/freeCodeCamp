@@ -198,6 +198,7 @@
     "sound-mode": "Hii inaongeza sauti ya kupendeza ya gitaa la akustika kwenye tovuti. Utapata maoni ya muziki unapoandika kwenye kihariri, unapokamilisha changamoto, unapopata cheti na zaidi.",
     "sound-volume": "Sauti ya Campfire:",
     "scrollbar-width": "Upana wa Upau wa kusogeza wa Kihariri",
+    "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
       "contains invalid characters": "Jina la mtumiaji \"{{username}}\" lina vibambo batili",
       "is too short": "Jina la mtumiaji \"{{username}}\" ni fupi mno",
@@ -912,8 +913,8 @@
     "title": {
       "Responsive Web Design": "Muundo Wa Wavuti Sikivu",
       "responsive-web-design": "Uthibitishaji wa Muundo wa Wavuti Sikivu",
-      "JavaScript Algorithms and Data Structures": "Algorithms za JavaScript na Data Structures",
-      "javascript-algorithms-and-data-structures": "Uthibitishaji wa Algorithms za JavaScript na Data Structures",
+      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
       "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures Certification",
       "Front End Development Libraries": "Front End Development Libraries",
       "front-end-development-libraries": "Udhibitishaji wa Front End Development Libraries",

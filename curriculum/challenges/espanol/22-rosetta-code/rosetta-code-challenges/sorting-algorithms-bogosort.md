@@ -18,7 +18,7 @@ Its average run-time is O(n!) because the chance that any given shuffle of a set
 
 Its best case is O(n) since a single pass through the elements may suffice to order them.
 
-Pseudocode:
+Pseudocódigo:
 
 <pre><b>while not</b> InOrder(list) <b>do</b>
   Shuffle(list)

@@ -1,6 +1,6 @@
 ---
 id: 59880443fb36441083c6c20e
-title: Euler method
+title: Метод Ейлера
 challengeType: 1
 forumTopicId: 302258
 dashedName: euler-method
@@ -10,61 +10,61 @@ dashedName: euler-method
 
 Euler's method numerically approximates solutions of first-order ordinary differential equations (ODEs) with a given initial value. It is an explicit method for solving initial value problems (IVPs), as described in <a href="https://www.freecodecamp.org/news/eulers-method-explained-with-examples/" title="Euler's Method Explained with Examples" target="_blank" rel="noopener noreferrer nofollow">this article</a>.
 
-The ODE has to be provided in the following form:
+ODE повинен бути наданий за такою формою:
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dy(t)}{dt} = f(t,y(t))$</big></li>
 </ul>
 
-with an initial value
+з початковим значенням
 
 <ul style='list-style: none;'>
   <li><big>$y(t_0) = y_0$</big></li>
 </ul>
 
-To get a numeric solution, we replace the derivative on the LHS with a finite difference approximation:
+Щоб отримати числове рішення, ми заміняємо похідну на LHS з скінченним наближенням до різниці:
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dy(t)}{dt}  \approx \frac{y(t+h)-y(t)}{h}$</big></li>
 </ul>
 
-then solve for $y(t+h)$:
+тоді вирішіть для $y(t+h)$:
 
 <ul style='list-style: none;'>
   <li><big>$y(t+h) \approx y(t) + h \, \frac{dy(t)}{dt}$</big></li>
 </ul>
 
-which is the same as
+що є тим самим, як і
 
 <ul style='list-style: none;'>
   <li><big>$y(t+h) \approx y(t) + h \, f(t,y(t))$</big></li>
 </ul>
 
-The iterative solution rule is then:
+Тоді, правило повторного рішення:
 
 <ul style='list-style: none;'>
   <li><big>$y_{n+1} = y_n + h \, f(t_n, y_n)$</big></li>
 </ul>
 
-where $h$ is the step size, the most relevant parameter for accuracy of the solution. A smaller step size increases accuracy but also the computation cost, so it has always has to be hand-picked according to the problem at hand.
+де $h$ - розмір кроку, найбільш відповідний параметр для точності рішення. Менший розмір кроку збільшує точність, але й обчислювальні витрати, тому вони завжди повинні бути підібрані вручну відповідно до завдань.
 
-**Example: Newton's Cooling Law**
+**Приклад: Закон Ньютона**
 
-Newton's cooling law describes how an object of initial temperature $T(t_0) = T_0$ cools down in an environment of temperature $T_R$:
+Закон Ньютона описує як об’єкт початкової температури $T(t_0) = T_0$ охолоджується в умовах температури $T_R$:
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dT(t)}{dt} = -k \, \Delta T$</big></li>
 </ul>
 
-or
+або
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dT(t)}{dt} = -k \, (T(t) - T_R)$</big></li>
 </ul>
 
-It says that the cooling rate $\\frac{dT(t)}{dt}$ of the object is proportional to the current temperature difference $\\Delta T = (T(t) - T_R)$ to the surrounding environment.
+Він каже, що швидкість охолодження $\\frac{dT(t)}{dt}$ $ об'єктів пропорційна поточній різниці температури $\\Delta T = (T(t) - T_R)$ в навколишнє середовище.
 
-The analytical solution, which we will compare to the numerical approximation, is
+Аналітичне рішення, яке ми будемо порівняти з числовим наближенням, є
 
 <ul style='list-style: none;'>
   <li><big>$T(t) = T_R + (T_0 - T_R) \; e^{-k t}$</big></li>
@@ -72,54 +72,54 @@ The analytical solution, which we will compare to the numerical approximation, i
 
 # --instructions--
 
-Implement a routine of Euler's method and then use it to solve the given example of Newton's cooling law for three different step sizes of:
+Реалізуйте розпорядок методу Ейлера та використовуйте його для рішення заданого прикладу закону Ньютона про три різні розміри кроку:
 
 <ul>
   <li><code>2 s</code></li>
-  <li><code>5 s</code> and</li>
+  <li><code>5 s</code> і</li>
   <li><code>10 s</code></li>
 </ul>
 
-and compare with the analytical solution.
+та порівняти з аналітичним рішенням.
 
-**Initial values:**
+**Початкові значення:**
 
 <ul>
   <li>initial temperature <big>$T_0$</big> shall be <code>100 °C</code></li>
-  <li>room temperature <big>$T_R$</big> shall be <code>20 °C</code></li>
-  <li>cooling constant <big>$k$</big> shall be <code>0.07</code></li>
-  <li>time interval to calculate shall be from <code>0 s</code> to <code>100 s</code></li>
-</ul>  
+  <li>температура кімнати <big>$T_R$</big> має бути <code>20 °C</code></li>
+  <li>охолодження константи <big>$k$</big> має буде <code>0.07</code></li>
+  <li>інтервал обчислення повинен бути від <code>0 s</code> до <code>100 s</code></li>
+</ul>
 
-First parameter to the function is initial time, second parameter is initial temperature, third parameter is elapsed time and fourth parameter is step size.
+Перший параметр функції - це початковий час, другий параметр - початкова температура, третій - минулий час і четвертий параметр - крок розміру.
 
 # --hints--
 
-`eulersMethod` should be a function.
+`eulersMethod` має бути функцією.
 
 ```js
 assert(typeof eulersMethod === 'function');
 ```
 
-`eulersMethod(0, 100, 100, 2)` should return a number.
+`eulersMethod(0, 100, 100, 2)` має повернути число.
 
 ```js
 assert(typeof eulersMethod(0, 100, 100, 2) === 'number');
 ```
 
-`eulersMethod(0, 100, 100, 2)` should return 20.0424631833732.
+`eulersMethod(0, 100, 100, 2)` має повернути 20.0424631833732.
 
 ```js
 assert.equal(eulersMethod(0, 100, 100, 2), 20.0424631833732);
 ```
 
-`eulersMethod(0, 100, 100, 5)` should return 20.01449963666907.
+`eulersMethod(0, 100, 100, 5)` має повернути 20.01449963666907.
 
 ```js
 assert.equal(eulersMethod(0, 100, 100, 5), 20.01449963666907);
 ```
 
-`eulersMethod(0, 100, 100, 10)` should return 20.000472392.
+`eulersMethod(0, 100, 100, 10)` має повернути 20.000472392.
 
 ```js
 assert.equal(eulersMethod(0, 100, 100, 10), 20.000472392);

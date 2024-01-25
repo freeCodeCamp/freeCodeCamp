@@ -1,6 +1,6 @@
 ---
 id: 59667989bf71cf555dd5d2ff
-title: S-Expressions
+title: S-表達式
 challengeType: 1
 forumTopicId: 302303
 dashedName: s-expressions
@@ -12,43 +12,43 @@ dashedName: s-expressions
 
 # --instructions--
 
-Write a simple reader/parser for S-Expressions that handles quoted and unquoted strings, integers and floats.
+爲 S-表達式編寫一個簡單的讀取器/解析器，處理帶引號和不帶引號的字符串，整數以及浮點數。
 
-The function should read a single but nested S-Expression from a string and return it as a (nested) array.
+該函數應讀取一個字符串中的單個嵌套 S-表達式，並將其作爲（嵌套的）數組返回。
 
-Newlines and other whitespace may be ignored unless contained within a quoted string.
+除非包含在引號字符串中，否則可以忽略換行符和其他空格。
 
-"`()`" inside quoted strings are not interpreted, but treated as part of the string.
+引用字符串中的“`()`”不會被解釋，而是被視爲字符串的一部分。
 
-Handling escaped quotes inside a string is optional; thus "`(foo"bar)`" may be treated as a string "`foo"bar`", or as an error.
+處理字符串中的轉義引號是可選的；因此 "`(foo"bar)`" 可以被視爲字符串 "`foo"bar`"，或者作爲一個錯誤。
 
-For this, the reader need not recognize `\` for escaping, but should, in addition, recognize numbers if the language has appropriate data types.
+爲此，解析器無需識別 `\` 以進行轉義，但如果語言具有適當的數據類型，則還應識別數字。
 
-Note that with the exception of `()"` (`\` if escaping is supported) and whitespace, there are no special characters. Anything else is allowed without quotes.
+請注意，除了`()"`（`\`，如果支持轉義）和空格，沒有特殊字符。 其他任何內容都是允許的，不帶引號。
 
-The reader should be able to read the following input
+讀者應該能夠閱讀以下輸入
 
 <pre>((data "quoted data" 123 4.5)
 (data (!@# (4.5) "(more" "data)")))
 </pre>
 
-and turn it into a native data structure.
+並將其轉換爲原生的數據結構。
 
 # --hints--
 
-`parseSexpr` should be a function.
+`parseSexpr` 是一個函數。
 
 ```js
 assert(typeof parseSexpr === 'function');
 ```
 
-`parseSexpr('(data1 data2 data3)')` should return `['data1', 'data2', 'data3']`
+`parseSexpr('(data1 data2 data3)')` 應該返回 `['data1', 'data2', 'data3']`
 
 ```js
 assert.deepEqual(parseSexpr(simpleSExpr), simpleSolution);
 ```
 
-`parseSexpr('((data "quoted data" 123 4.5) (data (!@# (4.5) "(more" "data)")))')` should return `[['data', '"quoted data"', 123, 4.5], ['data', ['!@#', [4.5], '"(more"', '"data)"']]]`.
+`parseSexpr('((data "quoted data" 123 4.5) (data (!@# (4.5) "(more" "data)")))')` 應當返回 `[['data', '"quoted data"', 123, 4.5], ['data', ['!@#', [4.5], '"(more"', '"data)"']]]`。
 
 ```js
 assert.deepEqual(parseSexpr(basicSExpr), basicSolution);

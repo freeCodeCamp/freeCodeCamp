@@ -1,6 +1,6 @@
 ---
 id: 5900f4ed1000cf542c50ffff
-title: 'Problem 383: Divisibility comparison between factorials'
+title: '問題383：階乘之間的可比性比較'
 challengeType: 1
 forumTopicId: 302047
 dashedName: problem-383-divisibility-comparison-between-factorials

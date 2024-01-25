@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f170b6c005b0e76f088
-title: 'Objects: Inheritance'
+title: 'Oggetti: ereditarietà'
 challengeType: 11
 videoId: FBL3alYrxRM
 bilibiliIds:
@@ -18,19 +18,19 @@ What is inheritance in object-oriented programming?
 
 ## --answers--
 
-A new class created when a parent class is extended.
+Una nuova classe creata quando una classe genitore viene estesa.
 
 ---
 
-A constructed instance of a class.
+Un'istanza costruita di una classe.
 
 ---
 
-The ability to create a new class by extending an existing class.
+La capacità di creare una nuova classe estendendo una classe esistente.
 
 ---
 
-A method that is called at the moment when a class is being used to construct an object.
+Un metodo che viene chiamato nel momento in cui una classe viene utilizzata per costruire un oggetto.
 
 ## --video-solution--
 

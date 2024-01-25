@@ -17,11 +17,11 @@ Focus on the specific actions and timing of Maria's activities on Tuesdays.
 
 # --fillInTheBlank--
 
-## --sentence--
+## --frase--
 
 `On Tuesdays, I learn Japanese. I _ online lessons at 7 _`
 
-## --blanks--
+## --espaços em branco--
 
 `take`
 

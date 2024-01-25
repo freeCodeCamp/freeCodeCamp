@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e77
-title: Gaussian elimination
+title: ガウスの消去法
 challengeType: 1
 forumTopicId: 302272
 dashedName: gaussian-elimination
@@ -10,19 +10,19 @@ dashedName: gaussian-elimination
 
 Write a function to solve \\(Ax = b\\) using Gaussian elimination then backwards substitution.
 
-\\(A\\) being an \\(n \\times n\\) matrix. Also, \\(x\\) and \\(b\\) are \\(n\\) by 1 vectors.
+\\(A\\) は \\(n \\times n\\) 行列とします。 また、\\(x\\) と \\(b\\) は \\(n\\) に 1ベクトルを掛けます。
 
-To improve accuracy, please use partial pivoting and scaling.
+精度を向上させるために、部分ピボット選択とスケーリングを使用してください。
 
 # --hints--
 
-`gaussianElimination` should be a function.
+`gaussianElimination` は関数とします。
 
 ```js
 assert(typeof gaussianElimination == 'function');
 ```
 
-`gaussianElimination([[1,1],[1,-1]], [5,1])` should return an array.
+`gaussianElimination([[1,1],[1,-1]], [5,1])`は、配列を返す必要があります。
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-`gaussianElimination([[1,1],[1,-1]], [5,1])` should return `[ 3, 2 ]`.
+`gaussianElimination([[1,1],[1,-1]], [5,1])` は、`[ 3, 2 ]`を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -53,7 +53,7 @@ assert.deepEqual(
 );
 ```
 
-`gaussianElimination([[2,3],[2,1]] , [8,4])` should return `[ 1, 2 ]`.
+`gaussianElimination([[2,3],[2,1]] , [8,4])` は、`[ 1, 2 ]`を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -68,7 +68,7 @@ assert.deepEqual(
 );
 ```
 
-`gaussianElimination([[1,3],[5,-2]], [14,19])` should return `[ 5, 3 ]`.
+`gaussianElimination([[1,3],[5,-2]], [14,19])` は `[ 5, 3 ]`を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -83,7 +83,7 @@ assert.deepEqual(
 );
 ```
 
-`gaussianElimination([[1,1],[5,-1]] , [10,14])` should return `[ 4, 6 ]`.
+`gaussianElimination([[1,1],[5,-1]] , [10,14])` は`[ 4, 6 ]`を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -98,7 +98,7 @@ assert.deepEqual(
 );
 ```
 
-`gaussianElimination([[1,2,3],[4,5,6],[7,8,8]] , [6,15,23])` should return `[ 1, 1, 1 ]`.
+`gaussianElimination([[1,2,3],[4,5,6],[7,8,8]] , [6,15,23])` は、`[ 1, 1, 1 ]`を返す必要があります。
 
 ```js
 assert.deepEqual(

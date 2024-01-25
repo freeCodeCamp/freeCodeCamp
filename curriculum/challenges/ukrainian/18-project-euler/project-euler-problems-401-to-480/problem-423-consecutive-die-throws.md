@@ -17,7 +17,7 @@ dashedName: problem-423-consecutive-die-throws
 $$\begin{align}   & (\underline{1}, \underline{1}, 5, 6, 6, 6, 3) \\\\
   & (1, 1, 5, \underline{6}, \underline{6}, 6, 3) \\\\ & (1, 1, 5, 6, \underline{6}, \underline{6}, 3) \end{align}$$
 
-Таким чином, $c = 3$ для (1, 1, 5, 6, 6, 6, 3).
+Отже, $c = 3$ для (1, 1, 5, 6, 6, 6, 3).
 
 Визначимо $C(n)$ як кількість результатів кидків шестигранного кубика $n$ разів, щоб $c$ не перевищувало $π(n)$.<sup>1</sup>
 

@@ -1,6 +1,6 @@
 ---
 id: 5992e222d397f00d21122931
-title: Fibonacci word
+title: Слово Фібоначчі
 challengeType: 1
 forumTopicId: 302269
 dashedName: fibonacci-word
@@ -10,39 +10,39 @@ dashedName: fibonacci-word
 
 The Fibonacci Word Sequence may be created in a manner analogous to the Fibonacci Sequence, but it focuses on iterating concatenation.
 
-<pre>Define  F_Word<sub>1</sub>  as  <strong>1</strong>
-Define  F_Word<sub>2</sub>  as  <strong>0</strong>
-Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<sub>1</sub>   i.e.:  <strong>01</strong>
-Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<sub>n-2</sub>
+<pre>Визначте F_Word<sub>1</sub> як <strong>1</strong>
+Визначте F_Word<sub>2</sub> як <strong>0</strong>
+Утворіть F_Word<sub>3</sub> як F_Word<sub>2</sub>, об’єднане з F_Word<sub>1</sub>, тобто: <strong>01</strong>
+Утворіть F_Word<sub>n</sub> як F_Word<sub>n-1</sub>, об’єднане з F_word<sub>n-2</sub>
 </pre>
 
-Entropy calculation is required in this challenge, <a href="https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy" target="_blank" rel="noopener noreferrer nofollow">as shown in this Rosetta Code challenge</a>
+Для цього завдання потрібне обчислення ентропії <a href="https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy" target="_blank" rel="noopener noreferrer nofollow" ="crwd-mark">як показано в цьому завданні Розетта Код</a>
 
 # --instructions--
 
-Write a function to return the first `n` Fibonacci Words. The number of `n` is provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` is computed for the string `Word` and rounded to 8 decimal digits of accuracy. Note that the indices of this sequence start at `1`.
+Напишіть функцію, що повертає перші `n` слів Фібоначчі. Число `n` надається як параметр функції. Функція має повернути масив об’єктів. Об’єкти мають мати такий вигляд: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` обчислюється для рядка `Word` та округлюється до 8 десяткових цифр точності. Зауважте, що індекси цієї послідовності починаються з `1`.
 
 # --hints--
 
-`fibWord` should be a function.
+`fibWord` має бути функцією.
 
 ```js
 assert(typeof fibWord === 'function');
 ```
 
-`fibWord(5)` should return an array.
+`fibWord(5)` має повернути масив.
 
 ```js
 assert(Array.isArray(fibWord(5)));
 ```
 
-`fibWord(5)` should return `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }]`.
+`fibWord(5)` має повернути `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }]`.
 
 ```js
 assert.deepEqual(fibWord(5), words5);
 ```
 
-`fibWord(7)` should return `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }, { N:6, Length:8, Entropy:0.954434, Word:'01001010' }, { N:7, Length:13, Entropy:0.9612366, Word:'0100101001001' }]`.
+`fibWord(7)` має повернути `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }, { N:6, Length:8, Entropy:0.954434, Word:'01001010' }, { N:7, Length:13, Entropy:0.9612366, Word:'0100101001001' }]`.
 
 ```js
 assert.deepEqual(fibWord(7), words7);

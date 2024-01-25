@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ec5
-title: Josephus problem
+title: 約瑟夫斯問題
 challengeType: 1
 forumTopicId: 302294
 dashedName: josephus-problem
@@ -10,7 +10,7 @@ dashedName: josephus-problem
 
 Josephus problem is a math puzzle with a grim description: $n$ prisoners are standing on a circle, sequentially numbered from $0$ to $n-1$.
 
-An executioner walks along the circle, starting from prisoner $0$, removing every $k$-th prisoner and killing him.
+`josephus`應該是一個功能。
 
 As the process goes on, the circle becomes smaller and smaller, until only one prisoner remains, who is then freed.
 

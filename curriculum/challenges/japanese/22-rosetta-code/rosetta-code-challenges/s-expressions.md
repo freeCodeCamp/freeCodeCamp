@@ -1,6 +1,6 @@
 ---
 id: 59667989bf71cf555dd5d2ff
-title: S-Expressions
+title: S式
 challengeType: 1
 forumTopicId: 302303
 dashedName: s-expressions
@@ -12,43 +12,43 @@ dashedName: s-expressions
 
 # --instructions--
 
-Write a simple reader/parser for S-Expressions that handles quoted and unquoted strings, integers and floats.
+引用符付きおよび引用符無しの文字列、整数、浮動小数点数を扱う S 式の単純なリーダー/パーサーを記述してください。
 
-The function should read a single but nested S-Expression from a string and return it as a (nested) array.
+この関数は、文字列から単一であるが入れ子になったS式を読み込み、(ネストされた) 配列として返さなければなりません。
 
-Newlines and other whitespace may be ignored unless contained within a quoted string.
+引用符付き文字列に含まれない限り、改行やその他の空白は無視することができます。
 
-"`()`" inside quoted strings are not interpreted, but treated as part of the string.
+引用符付き文字列内の "`()`" は解釈されず、文字列の一部として扱われます。
 
-Handling escaped quotes inside a string is optional; thus "`(foo"bar)`" may be treated as a string "`foo"bar`", or as an error.
+文字列内でエスケープ処理された引用符を扱うことは任意です。 従って、"`(foo"bar)`" は文字列 "`foo"bar`" として扱われるか、エラーとして扱われる可能性があります。
 
-For this, the reader need not recognize `\` for escaping, but should, in addition, recognize numbers if the language has appropriate data types.
+このため、リーダーはエスケープ処理のために `\` を認識する必要はありませんが、言語に適切なデータ型がある場合には、数値の認識も必要です。
 
-Note that with the exception of `()"` (`\` if escaping is supported) and whitespace, there are no special characters. Anything else is allowed without quotes.
+`()"` (エスケープがサポートされている場合は `\`) と空白を除き、特殊文字は存在しないことに注意してください。 他のものはすべて引用符なしで許可されます。
 
-The reader should be able to read the following input
+リーダーは次の入力を読める必要があります
 
 <pre>((data "quoted data" 123 4.5)
 (data (!@# (4.5) "(more" "data)")))
 </pre>
 
-and turn it into a native data structure.
+そして、それをネイティブのデータ構造に変換できる必要があります。
 
 # --hints--
 
-`parseSexpr` should be a function.
+`parseSexpr` は関数とします。
 
 ```js
 assert(typeof parseSexpr === 'function');
 ```
 
-`parseSexpr('(data1 data2 data3)')` should return `['data1', 'data2', 'data3']`
+`parseSexpr('(data1 data2 data3)')` は `['data1', 'data2', 'data3']` を返す必要があります。
 
 ```js
 assert.deepEqual(parseSexpr(simpleSExpr), simpleSolution);
 ```
 
-`parseSexpr('((data "quoted data" 123 4.5) (data (!@# (4.5) "(more" "data)")))')` should return `[['data', '"quoted data"', 123, 4.5], ['data', ['!@#', [4.5], '"(more"', '"data)"']]]`.
+`parseSexpr('((data "quoted data" 123 4.5) (data (!@# (4.5) "(more" "data)")))')` は `[['data', '"quoted data"', 123, 4.5], ['data', ['!@#', [4.5], '"(more"', '"data)"']]]` を返す必要があります。
 
 ```js
 assert.deepEqual(parseSexpr(basicSExpr), basicSolution);

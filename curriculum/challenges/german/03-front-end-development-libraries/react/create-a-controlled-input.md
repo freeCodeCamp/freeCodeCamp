@@ -16,7 +16,7 @@ Der Code-Editor hat das Skelett einer Komponente namens `ControlledInput`, um ei
 
 Als erstes erstellst du eine Methode namens `handleChange()`, die einen Parameter namens `event` besitzt. Wenn die Methode aufgerufen wird, erhält sie ein `event`-Objekt, das einen String mit Text aus dem `input`-Element enthält. Auf diesen String kannst du mit `event.target.value` innerhalb der Methode zugreifen. Aktualisiere die `input`-Eigenschaft des `state` der Komponente mit diesem neuen String.
 
-In der `render`-Methode erstellst du das `input`-Element über dem `h4`-Tag. Füge ein `value`-Attribut hinzu, das gleich der `input`-Eigenschaft des `state` der Komponente ist. Dann füge einen `onChange()` Event-Handler hinzu, der auf die `handleChange()`-Methode gesetzt wird.
+In der `render`-Methode erstellst du das `input`-Element über dem `h4`-Tag. Füge ein `value`-Attribut hinzu, das gleich der `input`-Eigenschaft des `state` der Komponente ist. Then add an `onChange` property set to the `handleChange()` event handler method.
 
 Wenn du in das Eingabefeld tippst, wird dieser Text von der `handleChange()`-Methode verarbeitet, als `input`-Eigenschaft im lokalen `state` gesetzt und als Wert im `input`-Feld auf der Seite dargestellt. Der `state` der Komponente ist die einzige Quelle der Wahrheit über die Eingabedaten.
 
