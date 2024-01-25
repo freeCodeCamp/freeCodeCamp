@@ -27,4 +27,4 @@ Listen to the audio and complete the sentence.
 
 ### --feedback--
 
-`What`and `is` are in abbreviated form. Remember to Capitalize `What`.
+`What`and `is` are in abbreviated form. Remember to capitalize `What`.
