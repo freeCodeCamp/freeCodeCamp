@@ -140,7 +140,7 @@ export async function verifyTrophyWithMicrosoft({
 /**
  * Gets the Microsoft trophy ID for a Microsoft challenge ID.
  *
- * @param challengeId The ID of the MS Challenge you'd like to get the trophy ID for.
+ * @param challengeId The ID of the Microsoft challenge you'd like to get the trophy ID for.
  * @returns The trophy ID corresponding to the Microsoft challenge ID.
  */
 export const getMSAchievementID = (challengeId: string) => {
