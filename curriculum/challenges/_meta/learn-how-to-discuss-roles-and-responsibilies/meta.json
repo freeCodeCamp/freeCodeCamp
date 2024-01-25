@@ -10,8 +10,88 @@
   "isBeta": true,
   "challengeOrder": [
     {
-      "id": "655c10318d878d812211966d",
-      "title": "Dialogue: Placeholder"
+      "id": "65b0dd4e70e9dcf7c402eb8e",
+      "title": "Dialogue 1: Describing other people and what they do"
+    },
+    {
+      "id": "65b0dde5120c33f904f47a62",
+      "title": "Task 1"
+    },
+    {
+      "id": "65b22b3556d52217d9595372",
+      "title": "Task 2"
+    },
+    {
+      "id": "65b22c705b53e41be902b63b",
+      "title": "Task 3"
+    },
+    {
+      "id": "65b22d1aeb5ecf1d590d30bf",
+      "title": "Task 4"
+    },
+    {
+      "id": "65b22e5388370c209a6b0b73",
+      "title": "Task 5"
+    },
+    {
+      "id": "65b22f68d1e84923d3cf1e82",
+      "title": "Task 6"
+    },
+    {
+      "id": "65b2301790bb3c256a5787a3",
+      "title": "Task 7"
+    },
+    {
+      "id": "65b2315a2cce3926f4719551",
+      "title": "Task 8"
+    },
+    {
+      "id": "65b25734252dad35f947f189",
+      "title": "Task 9"
+    },
+    {
+      "id": "65b258729e44fc38227665a0",
+      "title": "Task 10"
+    },
+    {
+      "id": "65b25a0c0e8c603c6576fe81",
+      "title": "Task 11"
+    },
+    {
+      "id": "65b25ab9be0c0d3ec4752839",
+      "title": "Task 12"
+    },
+    {
+      "id": "65b25b541262654062a21e74",
+      "title": "Task 13"
+    },
+    {
+      "id": "65b25bcc98b00d41d06d2a2b",
+      "title": "Task 14"
+    },
+    {
+      "id": "65b25c9be41791441e86e045",
+      "title": "Task 15"
+    },
+    {
+      "id": "65b25eacb57dd5493ebaf184",
+      "title": "Task 16"
+    },
+    {
+      "id": "65b25f2c3284994aa6632194",
+      "title": "Task 17"
+    },
+    {
+      "id": "65b26099dcd86f4e06d0fc21",
+      "title": "Task 18"
+    },
+    {
+      "id": "65b261dae662a3512ed47826",
+      "title": "Task 19"
+    },
+    {
+      "id": "65b26273712c8e529869cb5b",
+      "title": "Dialogue 2: Talking about Anna"
     }
   ],
   "helpCategory": "English"
