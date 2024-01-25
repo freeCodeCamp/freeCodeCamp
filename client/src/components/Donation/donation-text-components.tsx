@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import Caret from '../../assets/icons/caret';
 import { Spacer } from '../helpers';
+import GreenPass from '../../assets/icons/green-pass';
 
 const POBOX = (
   <>
@@ -225,7 +226,7 @@ export const SupportBenefitsText = ({
   );
 };
 
-const BenefitsList = (): JSX.Element => {
+export const BenefitsList = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <ul>
@@ -315,5 +316,25 @@ export const GetSupporterBenefitsText = ({
       <p>{t('donate.as-you-see')}</p>
       {!isDonating ? <p>{t('donate.get-benefits')}</p> : null}
     </>
+  );
+};
+
+export const ModalBenefitList = () => {
+  const { t } = useTranslation();
+  return (
+    <ul>
+      <li>
+        <GreenPass />
+        {t('donate.modal-benefits-1')}
+      </li>
+      <li>
+        <GreenPass />
+        {t('donate.modal-benefits-2')}
+      </li>
+      <li>
+        <GreenPass />
+        {t('donate.modal-benefits-3')}
+      </li>
+    </ul>
   );
 };

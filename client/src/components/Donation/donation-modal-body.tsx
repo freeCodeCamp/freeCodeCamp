@@ -11,6 +11,7 @@ import { PaymentContext } from '../../../../shared/config/donation-settings'; //
 import donationAnimation from '../../assets/images/donation-bear-animation.svg';
 import supporterBear from '../../assets/images/supporter-bear.svg';
 import MultiTierDonationForm from './multi-tier-donation-form';
+import { ModalBenefitList } from './donation-text-components';
 
 type RecentlyClaimedBlock = null | { block: string; superBlock: string };
 
@@ -45,27 +46,49 @@ const Illustration = ({
 };
 
 function ModalHeader({
-  recentlyClaimedBlock
+  recentlyClaimedBlock,
+  showHeaderAndFooter,
+  donationAttempted,
+  showForm,
+  showDonationAnimation
 }: {
   recentlyClaimedBlock: RecentlyClaimedBlock;
+  showHeaderAndFooter: boolean;
+  donationAttempted: boolean;
+  showForm: boolean;
+  showDonationAnimation: boolean;
 }) {
   const { t } = useTranslation();
-  return (
-    <Row className='text-center block-modal-text'>
-      <Col sm={10} smOffset={1} xs={12}>
-        {recentlyClaimedBlock !== null && (
-          <b>
-            {t('donate.nicely-done', {
-              block: t(
-                `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
-              )
-            })}
-          </b>
-        )}
-        <h2>{t('donate.help-us-develop')}</h2>
-      </Col>
-    </Row>
-  );
+  if (showHeaderAndFooter && !donationAttempted) {
+    if (!showForm && showDonationAnimation) {
+      return (
+        <Row className='text-center block-modal-text'>
+          <Col sm={10} smOffset={1} xs={12}>
+            <h2>{t('donate.modal-benefits-title')}</h2>
+          </Col>
+        </Row>
+      );
+    }
+    if (!showDonationAnimation)
+      return (
+        <Row className='text-center block-modal-text'>
+          <Col sm={10} smOffset={1} xs={12}>
+            {recentlyClaimedBlock !== null && (
+              <b>
+                {t('donate.nicely-done', {
+                  block: t(
+                    `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
+                  )
+                })}
+              </b>
+            )}
+            <h2>{t('donate.help-us-develop')}</h2>
+          </Col>
+        </Row>
+      );
+  }
+
+  return null;
 }
 
 function CloseButtonRow({
@@ -91,6 +114,26 @@ function CloseButtonRow({
   );
 }
 
+const Benefits = ({ setShowForm }: { setShowForm: (arg: boolean) => void }) => {
+  const { t } = useTranslation();
+  return (
+    <Row className={'donate-btn-group'}>
+      <Col xs={12}>
+        <ModalBenefitList />
+        <Spacer size='small' />
+        <button
+          className='text-center confirm-donation-btn donate-btn-group'
+          type='submit'
+          onClick={() => setShowForm(true)}
+        >
+          {t('donate.become-supporter')}
+        </button>
+        <Spacer size='medium' />
+      </Col>
+    </Row>
+  );
+};
+
 function DonationModalBody({
   closeDonationModal,
   recentlyClaimedBlock
@@ -107,7 +150,7 @@ function DonationModalBody({
   };
 
   const [isVisible, setIsVisible] = useState(true);
-  // const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -136,16 +179,24 @@ function DonationModalBody({
               recentlyClaimedBlock={recentlyClaimedBlock}
             />
           </div>
-          {showHeaderAndFooter && !donationAttempted && (
-            <ModalHeader recentlyClaimedBlock={recentlyClaimedBlock} />
-          )}
-          <Spacer size='small' />
-          <MultiTierDonationForm
-            setShowHeaderAndFooter={setShowHeaderAndFooter}
-            handleProcessing={handleProcessing}
-            paymentContext={PaymentContext.Modal}
-            isMinimalForm={true}
+          <ModalHeader
+            recentlyClaimedBlock={recentlyClaimedBlock}
+            showHeaderAndFooter={showHeaderAndFooter}
+            donationAttempted={donationAttempted}
+            showForm={showForm}
+            showDonationAnimation={showDonationAnimation}
           />
+          <Spacer size='small' />
+          {showForm ? (
+            <MultiTierDonationForm
+              setShowHeaderAndFooter={setShowHeaderAndFooter}
+              handleProcessing={handleProcessing}
+              paymentContext={PaymentContext.Modal}
+              isMinimalForm={true}
+            />
+          ) : (
+            <Benefits setShowForm={setShowForm} />
+          )}
           {(showHeaderAndFooter || donationAttempted) && (
             <CloseButtonRow
               closeDonationModal={closeDonationModal}

@@ -273,6 +273,19 @@ li.disabled > a {
 .donation-modal p {
   font-size: 0.9rem;
 }
+
+.donation-modal ul {
+  padding: 0;
+}
+
+.donation-modal li {
+  list-style-type: none;
+  margin-bottom: 4px;
+}
+.donation-modal li svg {
+  margin: 0 5px;
+}
+
 .donation-label-modal {
   font-weight: normal;
   text-align: center;
