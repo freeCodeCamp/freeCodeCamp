@@ -11,7 +11,7 @@ Your next step is to allow users to add entries to the calorie counter. Declare 
 
 # --hints--
 
-Ви повинні оголосити змінну `addEntry`.
+Оголосіть змінну `addEntry`.
 
 ```js
 assert.isDefined(addEntry);
@@ -89,7 +89,7 @@ assert.match(addEntry?.toString(), /\(\s*\)/);
             </span>
           </div>
           <div>
-            <button type="submit" id="calculate-calories">
+            <button type="submit">
               Calculate Remaining Calories
             </button>
             <button type="button" id="clear">Clear</button>
@@ -192,11 +192,11 @@ select {
 }
 
 .surplus {
-  color: var(--light-green);
+  color: var(--light-pink);
 }
 
 .deficit {
-  color: var(--light-pink);
+  color: var(--light-green);
 }
 ```
 

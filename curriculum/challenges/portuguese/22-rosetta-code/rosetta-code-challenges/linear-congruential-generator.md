@@ -1,6 +1,6 @@
 ---
 id: 5e4ce2f5ac708cc68c1df261
-title: Linear congruential generator
+title: Gerador congruente linear
 challengeType: 1
 forumTopicId: 385266
 dashedName: linear-congruential-generator
@@ -12,61 +12,61 @@ A linear congruential generator (LCG) is an <em>algorithm</em> that yields a seq
 
 $$r_{n + 1} = (a \times r_n + c) \bmod m$$
 
-Where:
+Onde:
 
 <ul>
 <li>$ r_0 $ is a seed.</li>
-<li>$r_1$, $r_2$, $r_3$, ..., are the random numbers.</li>
-<li>$a$, $c$, $m$ are constants.</li>
+<li>$r_1$, $r_2$, $r_3$, ..., são os números aleatórios.</li>
+<li>$a$, $c$, $m$ são constantes.</li>
 </ul>
 
-If one chooses the values of $a$, $c$ and $m$ with care, then the generator produces a uniform distribution of integers from $0$ to $m - 1$.
+Se a escolha de $a$, $c$ e $m$ for feita com cuidado, o gerador produzirá uma distribuição uniforme de números inteiros de $0$ a $m - 1$.
 
-<abbr title="linear congruential generator">LCG</abbr> numbers have poor quality. $r_n$ and $r\_{n + 1}$ are not independent, as true random numbers would be. Anyone who knows $r_n$ can predict $r\_{n + 1}$, therefore <abbr title="linear congruential generator">LCG</abbr> is not cryptographically secure. The <abbr title="linear congruential generator">LCG</abbr> is still good enough for simple tasks like Miller-Rabin primality test, or FreeCell deals. Among the benefits of the <abbr title="linear congruential generator">LCG</abbr>, one can easily reproduce a sequence of numbers, from the same $r_0$. One can also reproduce such sequence with a different programming language, because the formula is so simple.
+Os números da <abbr title="linear congruential generator">LCG</abbr> são de baixa qualidade. $r_n$ e $r\_{n + 1}$ não são independentes como os números verdadeiramente aleatórios seriam. Alguém que conheça $r_n$ pode prever $r\_{n + 1}$, portanto <abbr title="linear congruential generator">LCG</abbr> não é criptograficamente segura. O <abbr title="linear congruential generator">LCG</abbr> ainda é bom o suficiente para tarefas simples como teste de Miller-Rabin de primalidade ou mãos do FreeCell. Entre os benefícios do <abbr title="linear congruential generator">LCG</abbr>, pode-se facilmente reproduzir uma sequência de números, a partir do mesmo $r_0$. Também é possível reproduzir essa sequência com uma linguagem de programação diferente, porque a fórmula é muito simples.
 
 # --instructions--
 
-Write a function that takes $r_0,a,c,m,n$ as parameters and returns $r_n$.
+Escreva uma função que receba $r_0,a,c,m,n$ como parâmetros e retorne $r_n$.
 
 # --hints--
 
-`linearCongGenerator` should be a function.
+`linearCongGenerator` deve ser uma função.
 
 ```js
 assert(typeof linearCongGenerator == 'function');
 ```
 
-`linearCongGenerator(324, 1145, 177, 2148, 3)` should return a number.
+`linearCongGenerator(324, 1145, 177, 2148, 3)` deve retornar um número.
 
 ```js
 assert(typeof linearCongGenerator(324, 1145, 177, 2148, 3) == 'number');
 ```
 
-`linearCongGenerator(324, 1145, 177, 2148, 3)` should return `855`.
+`linearCongGenerator(324, 1145, 177, 2148, 3)` deve retornar `855`.
 
 ```js
 assert.equal(linearCongGenerator(324, 1145, 177, 2148, 3), 855);
 ```
 
-`linearCongGenerator(234, 11245, 145, 83648, 4)` should return `1110`.
+`linearCongGenerator(234, 11245, 145, 83648, 4)` deve retornar `1110`.
 
 ```js
 assert.equal(linearCongGenerator(234, 11245, 145, 83648, 4), 1110);
 ```
 
-`linearCongGenerator(85, 11, 1234, 214748, 5)` should return `62217`.
+`linearCongGenerator(85, 11, 1234, 214748, 5)` deve retornar `62217`.
 
 ```js
 assert.equal(linearCongGenerator(85, 11, 1234, 214748, 5), 62217);
 ```
 
-`linearCongGenerator(0, 1103515245, 12345, 2147483648, 1)` should return `12345`.
+`linearCongGenerator(0, 1103515245, 12345, 2147483648, 1)` deve retornar `12345`.
 
 ```js
 assert.equal(linearCongGenerator(0, 1103515245, 12345, 2147483648, 1), 12345);
 ```
 
-`linearCongGenerator(0, 1103515245, 12345, 2147483648, 2)` should return `1406932606`.
+`linearCongGenerator(0, 1103515245, 12345, 2147483648, 2)` deve retornar `1406932606`.
 
 ```js
 assert.equal(

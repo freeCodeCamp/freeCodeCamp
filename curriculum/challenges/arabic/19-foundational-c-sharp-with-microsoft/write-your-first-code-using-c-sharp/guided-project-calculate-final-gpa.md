@@ -38,4 +38,4 @@ What is the value of `(int) gradePointAverage`?
 
 ## --video-solution--
 
-3
+الثالث

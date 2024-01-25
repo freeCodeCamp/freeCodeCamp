@@ -10,21 +10,21 @@ dashedName: gray-code
 
 Gray code is a form of binary encoding where transitions between consecutive numbers differ by only one bit.
 
-This is a useful encoding for reducing hardware data hazards with values that change rapidly and/or connect to slower hardware as inputs.
+這是一種有用的編碼，用於減少硬件數據危險，因爲值會快速變化和/或連接到較慢的硬件作爲輸入。
 
 It is also useful for generating inputs for Karnaugh maps in order from left to right or top to bottom.
 
 # --instructions--
 
-Create a function to encode a number to and decode a number from Gray code. The function should will have 2 parameters.
+創建一個函數來將數字編碼爲格雷碼並從格雷碼解碼數字。 該函數應該有 2 個參數。
 
-The first would be a boolean. The function should encode for true and decode for false. The second parameter would be the number to be encoded/decoded.
+第一個是布爾值。 該函數應編碼爲 true，解碼爲 false。 第二個參數是要編碼/解碼的數字。
 
-Display the normal binary representations, Gray code representations, and decoded Gray code values for all 5-bit binary numbers (0-31 inclusive, leading 0's not necessary).
+顯示所有 5 位二進制數（包括 0-31，不需要前導 0）的正常二進制表示、格雷碼錶示和解碼格雷碼值。
 
-There are many possible Gray codes. The following encodes what is called "binary reflected Gray code."
+There are many possible Gray codes. 下面對所謂的“二進制反射格雷碼”進行編碼。
 
-Encoding (MSB is bit 0, b is binary, g is Gray code):
+編碼（MSB 爲位 0，b 爲二進制，g 爲格雷碼）：
 
 <pre>if b[i-1] = 1
   g[i] = not b[i]
@@ -32,12 +32,12 @@ else
   g[i] = b[i]
 </pre>
 
-Or:
+或者：
 
-<pre>g = b xor (b logically right shifted 1 time)
+<pre>g = b xor（b 邏輯右移 1 次）
 </pre>
 
-Decoding (MSB is bit 0, b is binary, g is Gray code):
+解碼（MSB 爲位 0，b 爲二進制，g 爲格雷碼）：
 
 <pre>b[0] = g[0]<br>
 for other bits:
@@ -46,49 +46,49 @@ b[i] = g[i] xor b[i-1]
 
 # --hints--
 
-`gray` should be a function.
+`gray` 應該是一個函數。
 
 ```js
 assert(typeof gray == 'function');
 ```
 
-`gray(true,177)` should return a number.
+`gray(true,177)` 應該返回一個數字。
 
 ```js
 assert(typeof gray(true, 177) == 'number');
 ```
 
-`gray(true,177)` should return `233`.
+`gray(true,177)` 應該返回 `233`。
 
 ```js
 assert.equal(gray(true, 177), 233);
 ```
 
-`gray(true,425)` should return `381`.
+`gray(true,425)` 應該返回 `381`。
 
 ```js
 assert.equal(gray(true, 425), 381);
 ```
 
-`gray(true,870)` should return `725`.
+`gray(true,870)` 應該返回 `725`。
 
 ```js
 assert.equal(gray(true, 870), 725);
 ```
 
-`gray(false,233)` should return `177`.
+`gray(false,233)` 應該返回 `177`。
 
 ```js
 assert.equal(gray(false, 233), 177);
 ```
 
-`gray(false,381)` should return `425`.
+`gray(false,381)` 應該返回 `425`。
 
 ```js
 assert.equal(gray(false, 381), 425);
 ```
 
-`gray(false,725)` should return `870`.
+`gray(false,725)` 應該返回 `870`。
 
 ```js
 assert.equal(gray(false, 725), 870);

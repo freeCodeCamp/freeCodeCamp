@@ -1,6 +1,6 @@
 ---
 id: 59e09e6d412c5939baa02d16
-title: Execute a Markov algorithm
+title: Führe einen Markov-Algorithmus aus
 challengeType: 1
 forumTopicId: 302260
 dashedName: execute-a-markov-algorithm
@@ -10,11 +10,11 @@ dashedName: execute-a-markov-algorithm
 
 Markov Concepts are used in machine learning, because of its simple approach in data manipulation. With a set number of `rules` you can manipulate given `data` to create a desired `output`.
 
-We have added in the background:
+Im Hintergrund haben wir hinzugefügt:
 
-The `rules` in the form of nested array, and the `data` in the form of array, too. And the desired `outputs`.
+The `rules` in the form of nested array, and the `data` in the form of array, too. Und die gewünschten `outputs`.
 
-The `rules`:
+Die `rules`:
 
 ```js
 let rules=[
@@ -48,7 +48,7 @@ let rules=[
 ];
 ```
 
-The `data`:
+Die `data`:
 
 ```js
 let data=[
@@ -60,7 +60,7 @@ let data=[
         ];
 ```
 
-The `outputs`:
+Die `outputs`:
 
 ```js
 let outputs=[
@@ -72,29 +72,29 @@ let outputs=[
     ]
 ```
 
-Using Markov Algorithm, change the `data` into the desired `outputs` using the `rules` provided for you.
+Ändere die `data` mit Markovs Algorithmus in die gewünschten `outputs` unter Verwendung der für dich bereitgestellten `rules`.
 
 # --hints--
 
-`markov` should be a function.
+`markov` solle eine Funktion sein.
 
 ```js
 assert(typeof markov === 'function');
 ```
 
-`markov(["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` should return the string `I bought a bag of apples from my brother.`.
+`markov(["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` sollte den String `I bought a bag of apples from my brother.` zurückgeben.
 
 ```js
 assert.deepEqual(markov(rules[0], datas[0]), outputs[0]);
 ```
 
-`markov(["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` should return the string `I bought a bag of apples from T shop.`.
+`markov(["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` sollte den String `I bought a bag of apples from T shop.` zurückgeben.
 
 ```js
 assert.deepEqual(markov(rules[1], datas[1]), outputs[1]);
 ```
 
-`markov(["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As W my Bgage from T S.")` should return the string `I bought a bag of apples with my money from T shop.`.
+`markov(["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As W my Bgage from T S.")` sollte den String `I bought a bag of apples with my money from T shop.` zurückgeben.
 
 ```js
 assert.deepEqual(markov(rules[2], datas[2]), outputs[2]);
@@ -106,7 +106,7 @@ assert.deepEqual(markov(rules[2], datas[2]), outputs[2]);
 assert.deepEqual(markov(rules[3], datas[3]), outputs[3]);
 ```
 
-`markov(["A0 -> 1B","0A1 -> C01","1A1 -> C11","0B0 -> A01","1B0 -> A11","B1 -> 1B","0C0 -> B01","1C0 -> B11","0C1 -> H01","1C1 -> H11"],"")` should return the string `00011H1111000`.
+`markov(["A0 -> 1B","0A1 -> C01","1A1 -> C11","0B0 -> A01","1B0 -> A11","B1 -> 1B","0C0 -> B01","1C0 -> B11","0C1 -> H01","1C1 -> H11"],"")` sollte den String `00011H1111000` zurückgeben.
 
 ```js
 assert.deepEqual(markov(rules[4], datas[4]), outputs[4]);

@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339acc
-title: ABC Problem
+title: ABC 问题
 challengeType: 1
 forumTopicId: 302220
 dashedName: abc-problem
@@ -34,42 +34,42 @@ You are given a collection of ABC blocks (e.g., childhood alphabet blocks). Ther
 
 # --instructions--
 
-Implement a function that takes a string (word) and determines whether the word can be spelled with the given collection of blocks.
+实现一个函数，该函数接受一个字符串（单词），并确定该单词是否可以用给定的块集合拼写。
 
-Some rules to keep in mind:
+要记住的一些规则：
 
 <ul>
   <li>Once a letter on a block is used, that block cannot be used again.</li>
-  <li>The function should be case-insensitive.</li>
+  <li>该函数应该不区分大小写。</li>
 </ul>
 
 # --hints--
 
-`canMakeWord` should be a function.
+`canMakeWord` 应该是一个函数。
 
 ```js
 assert(typeof canMakeWord === 'function');
 ```
 
-`canMakeWord` should return a boolean.
+`canMakeWord` 应该返回一个布尔值。
 
 ```js
 assert(typeof canMakeWord('hi') === 'boolean');
 ```
 
-`canMakeWord("bark")` should return true.
+`canMakeWord("bark")` 应该返回 true。
 
 ```js
 assert(canMakeWord(words[0]));
 ```
 
-`canMakeWord("BooK")` should return false.
+`canMakeWord("BooK")` 应该返回 false。
 
 ```js
 assert(!canMakeWord(words[1]));
 ```
 
-`canMakeWord("TReAT")` should return true.
+`canMakeWord("TReAT")` 应该返回 true。
 
 ```js
 assert(canMakeWord(words[2]));
@@ -81,13 +81,13 @@ assert(canMakeWord(words[2]));
 assert(!canMakeWord(words[3]));
 ```
 
-`canMakeWord("squAD")` should return true.
+`canMakeWord("squAD")` 应该返回 true。
 
 ```js
 assert(canMakeWord(words[4]));
 ```
 
-`canMakeWord("conFUSE")` should return true.
+`canMakeWord("conFUSE")` 应该返回 true。
 
 ```js
 assert(canMakeWord(words[5]));

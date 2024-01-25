@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8024
-title: State name puzzle
+title: Staatliches Namensrätsel
 challengeType: 1
 forumTopicId: 302323
 dashedName: state-name-puzzle
@@ -15,17 +15,17 @@ dashedName: state-name-puzzle
 
 Write a function to solve the challenge for a given array of actual U.S. state names, and for fictional state names.
 
-The function should return an array. Each element should be an object in this form: `{"from":[],"to":[]}`. The `from` array should contain the original names and the `to` array should contain the resultant names.
+Die Funktion sollte ein Array zurückgeben. Jedes Element sollte ein Objekt in dieser Form sein: `{"from":[],"to":[]}`. Die `from`-Anordnung sollte die ursprünglichen Namen enthalten und die `to`-Anordnung sollte die resultierenden Namen enthalten.
 
 # --hints--
 
-`solve` should be a function.
+`solve` sollte eine Funktion sein.
 
 ```js
 assert(typeof solve == 'function');
 ```
 
-`solve(["New Mexico", "New York", "North Carolina ", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota"])` should return an array.
+`solve(["New Mexico", "New York", "North Carolina ", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota"])` sollte ein Array zurückgeben.
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-`solve(["New Mexico", "New York", "North Carolina ", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota"])` should return `[{ from: ["North Carolina ", "South Dakota"], to: ["North Dakota", "South Carolina"] }]`.
+`solve(["New Mexico", "New York", "North Carolina ", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota"])` sollte `[{ from: ["North Carolina ", "South Dakota"], to: ["North Dakota", "South Carolina"] }]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -73,7 +73,7 @@ assert.deepEqual(
 );
 ```
 
-`solve(["New York", "New Kory", "Wen Kory", "York New", "Kory New", "New Kory"])` should return `[{ from: ["New Kory", "New York"], to: ["Wen Kory", "York New"] }, { from: ["New Kory", "New York"], to: ["Kory New", "Wen Kory"] }, { from: ["New Kory", "New York"], to: ["Kory New", "York New"] }, { from: ["New York", "Wen Kory"], to: ["New Kory", "York New"] }, { from: ["New York", "Wen Kory"], to: ["Kory New", "New Kory"] }, { from: ["New York", "Wen Kory"], to: ["Kory New", "York New"] }, { from: ["New York", "York New"], to: ["New Kory", "Wen Kory"] }, { from: ["New York", "York New"], to: ["Kory New", "New Kory"] }, { from: ["New York", "York New"], to: ["Kory New", "Wen Kory"] }, { from: ["Kory New", "New York"], to: ["New Kory", "Wen Kory"] }, { from: ["Kory New", "New York"], to: ["New Kory", "York New"] }, { from: ["Kory New", "New York"], to: ["Wen Kory", "York New"] }, { from: ["New Kory", "Wen Kory"], to: ["Kory New", "York New"] }, { from: ["New Kory", "York New"], to: ["Kory New", "Wen Kory"] }, { from: ["Kory New", "New Kory"], to: ["Wen Kory", "York New"] }]`.
+`solve(["New York", "New Kory", "Wen Kory", "York New", "Kory New", "New Kory"])` sollte `[{ from: ["New Kory", "New York"], to: ["Wen Kory", "York New"] }, { from: ["New Kory", "New York"], to: ["Kory New", "Wen Kory"] }, { from: ["New Kory", "New York"], to: ["Kory New", "York New"] }, { from: ["New York", "Wen Kory"], to: ["New Kory", "York New"] }, { from: ["New York", "Wen Kory"], to: ["Kory New", "New Kory"] }, { from: ["New York", "Wen Kory"], to: ["Kory New", "York New"] }, { from: ["New York", "York New"], to: ["New Kory", "Wen Kory"] }, { from: ["New York", "York New"], to: ["Kory New", "New Kory"] }, { from: ["New York", "York New"], to: ["Kory New", "Wen Kory"] }, { from: ["Kory New", "New York"], to: ["New Kory", "Wen Kory"] }, { from: ["Kory New", "New York"], to: ["New Kory", "York New"] }, { from: ["Kory New", "New York"], to: ["Wen Kory", "York New"] }, { from: ["New Kory", "Wen Kory"], to: ["Kory New", "York New"] }, { from: ["New Kory", "York New"], to: ["Kory New", "Wen Kory"] }, { from: ["Kory New", "New Kory"], to: ["Wen Kory", "York New"] }]` zurückgeben.
 
 ```js
 assert.deepEqual(

@@ -1,6 +1,6 @@
 ---
 id: 5992e222d397f00d21122931
-title: Fibonacci word
+title: フィボナッチ列
 challengeType: 1
 forumTopicId: 302269
 dashedName: fibonacci-word
@@ -16,33 +16,33 @@ Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<su
 Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<sub>n-2</sub>
 </pre>
 
-Entropy calculation is required in this challenge, <a href="https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy" target="_blank" rel="noopener noreferrer nofollow">as shown in this Rosetta Code challenge</a>
+このチャレンジでは、<a href="https://www.freecodecamp.org/japanese/learn/coding-interview-prep/rosetta-code/entropy" target="_blank" rel="noopener noreferrer nofollow">こちらのロゼッタコードのチャレンジで説明されている</a>エントロピーの計算が必要です。
 
 # --instructions--
 
-Write a function to return the first `n` Fibonacci Words. The number of `n` is provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` is computed for the string `Word` and rounded to 8 decimal digits of accuracy. Note that the indices of this sequence start at `1`.
+最初の `n` 個のフィボナッチ列を返す関数を記述してください。 数値 `n` は関数のパラメータとして与えられます。 この関数はオブジェクトの配列を返す必要があります。 オブジェクトは `{ N: 1, Length: 1, Entropy: 0, Word: '1' }` という形式にする必要があります。 文字列 `Word` に対する `Entropy` を計算し、小数を 8 桁に四捨五入します。 列のインデックスは `1` から始まることに注意してください。
 
 # --hints--
 
-`fibWord` should be a function.
+`fibWord` という関数です。
 
 ```js
 assert(typeof fibWord === 'function');
 ```
 
-`fibWord(5)` should return an array.
+`fibWord(5)` は配列を返します。
 
 ```js
 assert(Array.isArray(fibWord(5)));
 ```
 
-`fibWord(5)` should return `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }]`.
+`fibWord(5)` は `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }]` を返します。
 
 ```js
 assert.deepEqual(fibWord(5), words5);
 ```
 
-`fibWord(7)` should return `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }, { N:6, Length:8, Entropy:0.954434, Word:'01001010' }, { N:7, Length:13, Entropy:0.9612366, Word:'0100101001001' }]`.
+`fibWord(7)` は `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }, { N:6, Length:8, Entropy:0.954434, Word:'01001010' }, { N:7, Length:13, Entropy:0.9612366, Word:'0100101001001' }]` を返します。
 
 ```js
 assert.deepEqual(fibWord(7), words7);

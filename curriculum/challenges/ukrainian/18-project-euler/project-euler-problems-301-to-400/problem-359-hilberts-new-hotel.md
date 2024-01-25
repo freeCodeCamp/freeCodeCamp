@@ -1,6 +1,6 @@
 ---
 id: 5900f4d31000cf542c50ffe6
-title: 'Problem 359: Hilbert''s New Hotel'
+title: 'Завдання 359: новий готель Гільберта'
 challengeType: 1
 forumTopicId: 302019
 dashedName: problem-359-hilberts-new-hotel
@@ -8,24 +8,24 @@ dashedName: problem-359-hilberts-new-hotel
 
 # --description--
 
-An infinite number of people (numbered 1, 2, 3, etc.) are lined up to get a room at Hilbert's newest infinite hotel. The hotel contains an infinite number of floors (numbered 1, 2, 3, etc.), and each floor contains an infinite number of rooms (numbered 1, 2, 3, etc.).
+Нескінченна кількість людей (під номерами 1, 2, 3 і т.д.) стали в чергу, щоб отримати кімнату в новому нескінченному готелі Гільберта. У готелі нескінченна кількість поверхів (під номерами 1, 2, 3 і т.д.) і на кожному поверсі нескінченна кількість номерів (під номерами 1, 2, 3 і т.д.).
 
-Initially the hotel is empty. Hilbert declares a rule on how the $n^{\text{th}}$ person is assigned a room: person $n$ gets the first vacant room in the lowest numbered floor satisfying either of the following:
+Спочатку готель порожній. Гільберт оголосив правило, за яким $n^{\text{-на}}$ особа отримує кімнату: особа $n$ отримує першу порожню кімнату на найнижчому поверсі, що задовільняє одне з наступного:
 
-- the floor is empty
-- the floor is not empty, and if the latest person taking a room in that floor is person $m$, then $m + n$ is a perfect square
+- поверх порожній
+- поверх не порожній, і якщо остання людина, яка отримала на цьому поверсі кімнату, є особою $m$, то $m + n$ є повним квадратом
 
-Person 1 gets room 1 in floor 1 since floor 1 is empty.
+Особа 1 отримує кімнату 1 на поверсі 1, оскільки цей поверх порожній.
 
-Person 2 does not get room 2 in floor 1 since 1 + 2 = 3 is not a perfect square.
+Особа 2 не отримує кімнату 2 на поверсі 1, оскільки 1 + 2 = 3 не утворює повний квадрат.
 
-Person 2 instead gets room 1 in floor 2 since floor 2 is empty.
+Натомість особа 2 отримує кімнату 1 на поверсі 2, оскільки цей поверх порожній.
 
-Person 3 gets room 2 in floor 1 since 1 + 3 = 4 is a perfect square.
+Особа 3 отримує кімнату 2 на поверсі 1, оскільки 1 + 3 = 4 утворює повний квадрат.
 
-Eventually, every person in the line gets a room in the hotel.
+Згодом кожна людина з черги отримує кімнату в готелі.
 
-Define $P(f, r)$ to be $n$ if person $n$ occupies room $r$ in floor $f$, and 0 if no person occupies the room. Ось декілька прикладів:
+Визначимо $P(f, r)$ як $n$, якщо особа $n$ займає кімнату $r$ на поверсі $f$, та 0, якщо ніхто не займає кімнату. Ось декілька прикладів:
 
 $$\begin{align}   & P(1, 1) = 1 \\\\
   & P(1, 2) = 3 \\\\   & P(2, 1) = 2 \\\\

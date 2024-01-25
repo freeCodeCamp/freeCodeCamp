@@ -1,5 +1,5 @@
 import { exec } from 'child_process';
-import { readdir, stat } from 'fs/promises';
+import { readFile, readdir, stat, writeFile } from 'fs/promises';
 import { join, sep } from 'path';
 import { promisify } from 'util';
 
@@ -27,19 +27,32 @@ const syncChallenges = async () => {
   // these will be paths
   const english = await loadDirectory(join(basePath, 'english'));
   for (const path of english) {
-    for (const lang of filtered) {
-      const targetPath = path.replace('english', lang);
-      // we swallow the error here to detect if the file doesn't exist
-      const status = await stat(targetPath).catch(() => null);
-      if (!status) {
-        const targetDir = targetPath.split(sep);
-        targetDir.pop();
-        console.log(`Syncing ${path.split('/english/')[1]}`);
-        await asyncExec(
-          `mkdir -p ${targetDir.join(sep)} && cp ${path} ${targetPath}`
-        );
-      }
-    }
+    await Promise.all(
+      filtered.map(async lang => {
+        const targetPath = path.replace('english', lang);
+        // we swallow the error here to detect if the file doesn't exist
+        const status = await stat(targetPath).catch(() => null);
+        if (!status) {
+          const targetDir = targetPath.split(sep);
+          targetDir.pop();
+          console.log(`Syncing ${path.split('/english/')[1]}`);
+          await asyncExec(
+            `mkdir -p ${targetDir.join(sep)} && cp ${path} ${targetPath}`
+          );
+        }
+        const englishContent = await readFile(path, 'utf-8');
+        const langContent = await readFile(targetPath, 'utf-8');
+        const engLines = englishContent.split('\n');
+        const engId = engLines.find(l => l.startsWith('id'));
+        const langLines = langContent.split('\n');
+        const langId = langLines.find(l => l.startsWith('id'));
+        if (engId && langId && engId !== langId) {
+          langLines.splice(langLines.indexOf(langId), 1, engId);
+          console.log(`Updating ID for ${targetPath}`);
+          await writeFile(targetPath, langLines.join('\n'), 'utf-8');
+        }
+      })
+    );
   }
   for (const lang of filtered) {
     const langPath = join(process.cwd(), 'curriculum', 'challenges', lang);

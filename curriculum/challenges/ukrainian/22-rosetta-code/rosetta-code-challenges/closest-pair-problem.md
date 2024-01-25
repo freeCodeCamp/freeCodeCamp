@@ -1,6 +1,6 @@
 ---
 id: 5951a53863c8a34f02bf1bdc
-title: Closest-pair problem
+title: Задача про найближчу пару
 challengeType: 1
 forumTopicId: 302232
 dashedName: closest-pair-problem
@@ -10,7 +10,7 @@ dashedName: closest-pair-problem
 
 Provide a function to find the closest two points among a set of given points in two dimensions.
 
-The straightforward solution is a $O(n^2)$ algorithm (which we can call *brute-force algorithm*); the pseudo-code (using indexes) could be simply:
+Найпростіше рішення це $O(n^2)$ алгоритм (який ми можемо назвати *brute-force algorithm*); цей псевдо-код (з використанням індексів) може бути простим:
 
 <pre><strong>bruteForceClosestPair</strong> of P(1), P(2), ... P(N)
 <strong>if</strong> N &#x3C; 2 <strong>then</strong>
@@ -30,7 +30,7 @@ The straightforward solution is a $O(n^2)$ algorithm (which we can call *brute-f
 <strong>endif</strong>
 </pre>
 
-A better algorithm is based on the recursive divide and conquer approach, which is $O(n\log n)$ a pseudo-code could be:
+Кращий алгоритм базується на рекурсивному розподілі та підхопленні, який є псевдо-кодом $O(n\log n)$:
 
 <pre><strong>closestPair</strong> of (xP, yP)
   where xP is P(1) .. P(N) sorted by x coordinate, and
@@ -65,9 +65,9 @@ A better algorithm is based on the recursive divide and conquer approach, which 
 <strong>endif</strong>
 </pre>
 
-For the input, expect the argument to be an array of `Point` objects with `x` and `y` members set to numbers. Return an object containing the key:value pairs for `distance` and `pair` (the pair of two closest points).
+Для вхідних даних, слід очікувати, що аргумент буде масивом з `Point` об'єктами, і `x` та `y` заданими числами. Поверніть об'єкт, що містить ключові пари значень для `distance` та `pair` (пара двох найближчих точок).
 
-For example `getClosestPair` with input array `points`:
+Наприклад, `getClosestPair` з вхідним масивом `points`:
 
 ```js
 const points = [
@@ -77,7 +77,7 @@ const points = [
 ];
 ```
 
-Would return:
+Має повернути:
 
 ```js
 {
@@ -95,24 +95,24 @@ Would return:
 }
 ```
 
-**Note:** Sort the `pair` array by their `x` values in incrementing order.
+**Note:** Сортуйте `pair` масиви за їхніми `x` значеннями у зростаючому порядку.
 
 
 # --hints--
 
-`getClosestPair` should be a function.
+`getClosestPair` має бути функцією.
 
 ```js
 assert(typeof getClosestPair === 'function');
 ```
 
-`getClosestPair(points1).distance` should be `0.0894096443343775`.
+`getClosestPair(points1).distance` має бути `0.0894096443343775`.
 
 ```js
 assert.equal(getClosestPair(points1).distance, answer1.distance);
 ```
 
-`getClosestPair(points1).pair` should be `[ { x: 7.46489, y: 4.6268 }, { x: 7.46911, y: 4.71611 } ]`.
+`getClosestPair(points1).pair` має бути `[ { x: 7.46489, y: 4.6268 }, { x: 7.46911, y: 4.71611 } ]`.
 
 ```js
 assert.deepEqual(
@@ -121,13 +121,13 @@ assert.deepEqual(
 );
 ```
 
-`getClosestPair(points2).distance` should be `65.06919393998976`.
+`getClosestPair(points2).distance` має бути `65.06919393998976`.
 
 ```js
 assert.equal(getClosestPair(points2).distance, answer2.distance);
 ```
 
-`getClosestPair(points2).pair` should be `[ { x: 37134, y: 1963 }, { x: 37181, y: 2008 } ]`.
+`getClosestPair(points2).pair` має бути `[ { x: 37134, y: 1963 }, { x: 37181, y: 2008 } ]`.
 
 ```js
 assert.deepEqual(
@@ -136,13 +136,13 @@ assert.deepEqual(
 );
 ```
 
-`getClosestPair(points3).distance` should be `6754.625082119658`.
+`getClosestPair(points3).distance` має бути `6754.625082119658`.
 
 ```js
 assert.equal(getClosestPair(points3).distance, answer3.distance);
 ```
 
-`getClosestPair(points3).pair` should be `[ { x: 46817, y: 64975 }, { x: 48953, y: 58567 } ]`.
+`getClosestPair(points3).pair` має бути `[ { x: 46817, y: 64975 }, { x: 48953, y: 58567 } ]`.
 
 ```js
 assert.deepEqual(

@@ -1,6 +1,6 @@
 ---
 id: 64dceadec3c9cf2ca7b56de6
-title: Step 25
+title: Крок 25
 challengeType: 20
 dashedName: step-25
 ---

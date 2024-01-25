@@ -1,6 +1,6 @@
 ---
 id: 5900f3bf1000cf542c50fed2
-title: 'Problem 83: Path sum: four ways'
+title: '问题 83：路径和：四种方式'
 challengeType: 1
 forumTopicId: 302197
 dashedName: problem-83-path-sum-four-ways
@@ -10,29 +10,29 @@ dashedName: problem-83-path-sum-four-ways
 
 **Note:** This problem is a significantly more challenging version of Problem 81.
 
-In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom right, by moving left, right, up, and down, is indicated in bold red and is equal to `2297`.
+在下面的 5 x 5 矩阵中，通过向左、向右、向上和向下移动，从左上角到右下角的最小路径和以红色粗体表示，等于 `2297`。
 
   $$\begin{pmatrix}   \color{red}{131} & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\
   \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & \color{red}{150}\\\\   630 & 803 & 746 & \color{red}{422} & \color{red}{111}\\\\
   537 & 699 & 497 & \color{red}{121} & 956\\\\ 805 & 732 & 524 & \color{red}{37} & \color{red}{331} \end{pmatrix}$$
 
-Find the minimal path sum from the top left to the bottom right by moving left, right, up, and down in `matrix`, a 2D array representing a matrix. The maximum matrix size used in tests will be 80 by 80.
+通过在表示矩阵的二维数组 `matrix` 中向左、向右、向上和向下移动，找到从左上角到右下角的最小路径和。 测试中使用的最大矩阵大小为 80 x 80。
 
 # --hints--
 
-`pathSumFourWays(testMatrix1)` should return a number.
+`pathSumFourWays(testMatrix1)` 应该返回一个数字。
 
 ```js
 assert(typeof pathSumFourWays(_testMatrix1) === 'number');
 ```
 
-`pathSumFourWays(testMatrix1)` should return `2297`.
+`pathSumFourWays(testMatrix1)` 应该返回 `2297`。
 
 ```js
 assert.strictEqual(pathSumFourWays(_testMatrix1), 2297);
 ```
 
-`pathSumFourWays(testMatrix2)` should return `425185`.
+`pathSumFourWays(testMatrix2)` 应该返回 `425185`。
 
 ```js
 assert.strictEqual(pathSumFourWays(_testMatrix2), 425185);

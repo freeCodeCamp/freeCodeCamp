@@ -13,13 +13,11 @@ Sarah: Anyway, before leaving for work, I like to check my emails and messages t
 
 # --description--
 
-The word `if` is often used in conditional statements to talk about a possible situation and its consequences. For example:
+The word `if` is often used in conditional statements to talk about a possible situation and its consequences. Zum Beispiel:
 
-`If it rains, I will bring an umbrella.` 
-(The action of bringing an umbrella depends on the possibility of rain.)
+`If it rains, I will bring an umbrella.` (The action of bringing an umbrella depends on the possibility of rain.)
 
-`If you need help, just ask.` 
-(The offer to help is conditional on the other person needing it.)
+`If you need help, just ask.` (The offer to help is conditional on the other person needing it.)
 
 # --question--
 
@@ -31,7 +29,7 @@ What does Sarah imply by using `if` in her statement about checking emails and m
 
 She always finds urgent updates from her team
 
-### --feedback--
+### --Feedback--
 
 `If` doesn't suggest certainty of finding urgent updates.
 
@@ -43,7 +41,7 @@ Sometimes there are urgent updates, sometimes not
 
 She never checks her emails and messages
 
-### --feedback--
+### --Feedback--
 
 Sarah actually states that she does check her emails and messages.
 

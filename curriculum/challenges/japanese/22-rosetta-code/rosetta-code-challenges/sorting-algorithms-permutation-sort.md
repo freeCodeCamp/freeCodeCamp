@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc800c
-title: Sorting algorithms/Permutation sort
+title: ソートアルゴリズム / 順列ソート
 challengeType: 1
 forumTopicId: 302316
 dashedName: sorting-algorithmspermutation-sort
@@ -10,7 +10,7 @@ dashedName: sorting-algorithmspermutation-sort
 
 Write a function to implement a permutation sort, which proceeds by generating the possible permutations of the input array until discovering the sorted one. The function should return the sorted array.
 
-Pseudocode:
+擬似コード:
 
 <pre><b>while not</b> InOrder(list) <b>do</b>
   nextPermutation(list)
@@ -19,37 +19,37 @@ Pseudocode:
 
 # --hints--
 
-`permutationSort` should be a function.
+`permutationSort` は関数とします。
 
 ```js
 assert(typeof permutationSort == 'function');
 ```
 
-`permutationSort([25, 32, 12, 7, 20])` should return an array.
+`permutationSort([25, 32, 12, 7, 20])` は配列を返す必要があります。
 
 ```js
 assert(Array.isArray(permutationSort([25, 32, 12, 7, 20])));
 ```
 
-`permutationSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`permutationSort([25, 32, 12, 7, 20])` は `[7, 12, 20, 25, 32]` を返す必要があります。
 
 ```js
 assert.deepEqual(permutationSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`permutationSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`permutationSort([38, 45, 35, 8, 13])` は `[8, 13, 35, 38, 45]` を返す必要があります。
 
 ```js
 assert.deepEqual(permutationSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`permutationSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`permutationSort([43, 36, 20, 34, 24])` は `[20, 24, 34, 36, 43]` を返す必要があります。
 
 ```js
 assert.deepEqual(permutationSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`permutationSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`permutationSort([12, 33, 26, 18, 1, 16, 38])` は `[1, 12, 16, 18, 26, 33, 38]` を返す必要があります。
 
 ```js
 assert.deepEqual(permutationSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -63,7 +63,7 @@ assert.deepEqual(permutationSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`permutationSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`permutationSort([3, 39, 48, 16, 1, 4, 29])` は `[1, 3, 4, 16, 29, 39, 48]` を返す必要があります。
 
 ```js
 assert.deepEqual(permutationSort([3, 39, 48, 16, 1, 4, 29]), [

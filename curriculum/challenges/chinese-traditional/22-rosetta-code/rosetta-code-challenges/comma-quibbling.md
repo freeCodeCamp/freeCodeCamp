@@ -1,6 +1,6 @@
 ---
 id: 596e414344c3b2872167f0fe
-title: Comma quibbling
+title: 逗號翻轉
 challengeType: 1
 forumTopicId: 302234
 dashedName: comma-quibbling
@@ -12,16 +12,16 @@ dashedName: comma-quibbling
 
 # --instructions--
 
-Write a function to generate a string output which is the concatenation of input words from a list/sequence where:
+編寫一個函數來生成一個字符串輸出，它是來自列表/序列的輸入單詞的串聯，其中：
 
 <ol>
   <li>An input of no words produces the output string of just the two brace characters (<code>"{}"</code>)</li>
-  <li>An input of just one word, e.g. <code>["ABC"]</code>, produces the output string of the word inside the two braces, e.g. <code>"{ABC}"</code></li>
-  <li>An input of two words, e.g. <code>["ABC", "DEF"]</code>, produces the output string of the two words inside the two braces with the words separated by the string <code>" and "</code>, e.g. <code>"{ABC and DEF}"</code></li>
-  <li>An input of three or more words, e.g. <code>["ABC", "DEF", "G", "H"]</code>, produces the output string of all but the last word separated by <code>", "</code> with the last word separated by <code>" and "</code> and all within braces; e.g. <code>"{ABC, DEF, G and H}"</code></li>
+  <li>僅輸入一個單詞，例如<code>["ABC"]</code>，生成兩個大括號內單詞的輸出字符串，例如<code>"{ABC}"</code></li>
+  <li>輸入兩個單詞，例如 <code>["ABC", "DEF"]</code>，生成兩個大括號內的兩個單詞的輸出字符串，單詞由字符串 <code>" and "</code> 分隔，例如 <code>"{ABC and DEF}"</code></li>
+  <li>輸入三個或更多單詞，例如 <code>["ABC", "DEF", "G", "H"]</code>，生成除最後一個單詞以外的所有單詞的輸出字符串，由 <code>", "</code> 分隔，最後一個單詞由 <code>" and "</code> 分隔的單詞以及全部在大括號內；例如<code>"{ABC, DEF, G and H}"</code></li>
 </ol>
 
-Test your function with the following series of inputs showing your output here on this page:
+使用以下一系列輸入測試您的函數，在此頁面上顯示您的輸出：
 
 <ul>
   <li>[] # (No input words).</li>
@@ -30,23 +30,23 @@ Test your function with the following series of inputs showing your output here 
   <li>["ABC", "DEF", "G", "H"]</li>
 </ul>
 
-**Note:** Assume words are non-empty strings of uppercase characters for this task.
+**注意：** 對於此任務，假設單詞是大寫字符的非空字符串。
 
 # --hints--
 
-`quibble` should be a function.
+`quibble` 應該是一個函數。
 
 ```js
 assert(typeof quibble === 'function');
 ```
 
-`quibble(["ABC"])` should return a string.
+`quibble(["ABC"])` 應該返回一個字符串。
 
 ```js
 assert(typeof quibble(['ABC']) === 'string');
 ```
 
-`quibble([])` should return "{}".
+`quibble([])` 應該返回 “{}”。
 
 ```js
 assert.equal(quibble(testCases[0]), results[0]);

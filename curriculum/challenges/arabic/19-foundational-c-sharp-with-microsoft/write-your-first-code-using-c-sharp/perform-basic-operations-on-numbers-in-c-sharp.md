@@ -40,4 +40,4 @@ int result = 3 + 1 * 5 / 2;
 
 ## --video-solution--
 
-2
+٢

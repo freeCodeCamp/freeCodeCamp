@@ -1,6 +1,6 @@
 ---
 id: 5900f47c1000cf542c50ff8e
-title: 'Problem 270: Cutting Squares'
+title: '问题 270：切割方块'
 challengeType: 1
 forumTopicId: 301920
 dashedName: problem-270-cutting-squares

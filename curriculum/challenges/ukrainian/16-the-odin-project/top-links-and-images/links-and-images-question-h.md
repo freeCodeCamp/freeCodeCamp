@@ -21,7 +21,7 @@ dashedName: links-and-images-question-h
 
 - Створіть новий каталог під назвою `images` в межах проєкту `odin-links-and-images`.
 
-- Потім завантажте [це зображення](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) та перемістіть його до щойно створеного каталогу зображень.
+- Потім завантажте <a href="https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640" target="_blank">це зображення</a> та перемістіть його у щойно створений каталог зображень.
 
 - Перейменуйте зображення на `dog.jpg`.
 
@@ -72,7 +72,7 @@ dashedName: links-and-images-question-h
 
 # --assignment--
 
-Прочитайте про  <a href="https://www.internetingishard.com/html-and-css/links-and-images/#image-formats" target="_blank">чотири головні формати зображення</a>, які можна використовувати на вебсайтах.
+Прочитайте про <a href="https://www.freecodecamp.org/news/image-file-types-picture-format-extensions-jpeg-gif-png-svg-tiff/" target="_blank">чотири основні формати зображень</a>, які можна використовувати у вебмережі.
 
 # --question--
 
@@ -82,7 +82,7 @@ dashedName: links-and-images-question-h
 
 ## --answers--
 
-TIFF, GIF, PNG та SVG.
+MOV, GIF, PNG та SVG.
 
 ---
 

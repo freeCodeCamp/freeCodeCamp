@@ -1,6 +1,6 @@
 ---
 id: 5900f4ca1000cf542c50ffdc
-title: 'Problem 349: Langton''s ant'
+title: '问题349：兰顿的蚂蚁'
 challengeType: 1
 forumTopicId: 302008
 dashedName: problem-349-langtons-ant
@@ -10,7 +10,7 @@ dashedName: problem-349-langtons-ant
 
 An ant moves on a regular grid of squares that are coloured either black or white.
 
-The ant is always oriented in one of the cardinal directions (left, right, up or down) and moves from square to adjacent square according to the following rules:
+从一个完全是白色的网格开始，在蚂蚁1018次移动后，有多少个方块是黑色的？
 
 - if it is on a black square, it flips the color of the square to white, rotates 90° counterclockwise and moves forward one square.
 - if it is on a white square, it flips the color of the square to black, rotates 90° clockwise and moves forward one square.

@@ -1,6 +1,6 @@
 ---
 id: 5900f4a81000cf542c50ffbb
-title: 'Problem 316: Numbers in decimal expansions'
+title: 'Завдання 316: числа в десяткових розширеннях'
 challengeType: 1
 forumTopicId: 301972
 dashedName: problem-316-numbers-in-decimal-expansions
@@ -8,27 +8,27 @@ dashedName: problem-316-numbers-in-decimal-expansions
 
 # --description--
 
-Let $p = p_1 p_2 p_3 \ldots$ be an infinite sequence of random digits, selected from {0,1,2,3,4,5,6,7,8,9} with equal probability.
+Нехай $p = p_1 p_2 p_3 \ldots$ буде нескінченною послідовністю випадкових цифр, вибраних з {0,1,2,3,4,5,6,7,8,9} з однаковою вірогідністю.
 
-It can be seen that $p$ corresponds to the real number $0.p_1 p_2 p_3 \ldots$.
+Можна побачити, що $p$ відповідає дійсному числу $0.p_1 p_2 p_3 \ldots$.
 
-It can also be seen that choosing a random real number from the interval [0,1) is equivalent to choosing an infinite sequence of random digits selected from {0,1,2,3,4,5,6,7,8,9} with equal probability.
+Також можна побачити, що вибір випадкового дійсного числа з інтервалу [0,1) є еквівалентним вибору нескінченної послідовності випадкових чисел, вибраних з {0,1,2,3,4,5,6,7,8,9} з однаковою вірогідністю.
 
-For any positive integer $n$ with $d$ decimal digits, let $k$ be the smallest index such that $p_k, p_{k + 1}, \ldots p_{k + d - 1}$ are the decimal digits of $n$, in the same order.
+Для будь-якого натурального числа $n$ з $d$ десяткових цифр, нехай $k$ буде найменшим індексом, за якого $p_k, p_{k + 1}, \ldots p_{k + d - 1}$ є найменшими цифрами числа $n$ в такому ж порядку.
 
-Also, let $g(n)$ be the expected value of $k$; it can be proven that $g(n)$ is always finite and, interestingly, always an integer number.
+Також, нехай $g(n)$ буде очікуваним значенням $k$. Можна довести, що $g(n)$ завжди скінченне та, що цікаво, завжди ціле число.
 
-For example, if $n = 535$, then
+Наприклад, якщо $n = 535$, то
 
-for $p = 31415926\mathbf{535}897\ldots$, we get $k = 9$
+за умови $p = 31415926\mathbf{535}897\ldots$, отримаємо $k = 9$
 
-for $p = 35528714365004956000049084876408468\mathbf{535}4\ldots$, we get $k = 36$
+за умови $p = 35528714365004956000049084876408468\mathbf{535}4\ldots$, отримаємо $k = 36$
 
-etc and we find that $g(535) = 1008$.
+і так далі, поки не дізнаємось, що $g(535) = 1008$.
 
-Given that $\displaystyle\sum_{n = 2}^{999} g\left(\left\lfloor\frac{{10}^6}{n}\right\rfloor\right) = 27280188$, find $\displaystyle\sum_{n = 2}^{999\\,999} g\left(\left\lfloor\frac{{10}^{16}}{n}\right\rfloor\right)$.
+Дано, що $\displaystyle\sum_{n = 2}^{999} g\left(\left\lfloor\frac{{10}^6}{n}\right\rfloor\right) = 27280188$. Знайдіть $\displaystyle\sum_{n = 2}^{999\\,999} g\left(\left\lfloor\frac{{10}^{16}}{n}\right\rfloor\right)$.
 
-**Note:** $\lfloor x\rfloor$ represents the floor function.
+**Примітка:** $\lfloor x\rfloor$ позначає функцію підлоги.
 
 # --hints--
 

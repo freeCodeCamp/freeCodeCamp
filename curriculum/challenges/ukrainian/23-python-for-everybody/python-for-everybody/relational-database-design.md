@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08c
-title: Relational Database Design
+title: Проєктування реляційних баз даних
 challengeType: 11
 videoId: AqdfbrpkbHk
 bilibiliIds:

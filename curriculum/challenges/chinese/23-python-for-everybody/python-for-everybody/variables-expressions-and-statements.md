@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f050b6c005b0e76f056
-title: 'Variables, Expressions, and Statements'
+title: '变量、表达式和语句'
 challengeType: 11
 videoId: nELR-uyyrok
 bilibiliIds:

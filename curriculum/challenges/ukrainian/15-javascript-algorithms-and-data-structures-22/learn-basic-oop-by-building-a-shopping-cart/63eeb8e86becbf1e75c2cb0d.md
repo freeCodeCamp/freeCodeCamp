@@ -1,31 +1,31 @@
 ---
 id: 63eeb8e86becbf1e75c2cb0d
-title: Step 21
+title: Крок 21
 challengeType: 0
 dashedName: step-21
 ---
 
 # --description--
 
-You now need a total count of each product that the user has in the cart. Declare a `totalCountPerProduct` variable, and assign it an empty object.
+Тепер вам потрібна загальна кількість кожного продукту, яких користувач має у кошику. Оголосіть змінну `totalCountPerProduct` та присвойте їй порожній об’єкт.
 
 # --hints--
 
-You should declare a `totalCountPerProduct` variable in your `addItem` function.
+Оголосіть змінну `totalCountPerProduct` у функції `addItem`.
 
 ```js
 const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /totalCountPerProduct\s*=/);
 ```
 
-You should use `const` to declare `totalCountPerProduct`.
+Ви повинні використати `const`, щоб оголосити `totalCountPerProduct`.
 
 ```js
 const afterAdd = code.split("addItem")[1];
 assert.match(afterAdd, /const\s+totalCountPerProduct\s*=/);
 ```
 
-You should assign an empty object to `totalCountPerProduct`.
+Ви повинні присвоїти порожній об’єкт до `totalCountPerProduct`.
 
 ```js
 const afterAdd = code.split("addItem")[1];

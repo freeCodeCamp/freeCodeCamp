@@ -1,6 +1,6 @@
 ---
 id: 5900f3721000cf542c50fe85
-title: 'Problem 6: Sum square difference'
+title: '問題 6: 和と 2 乗の差'
 challengeType: 1
 forumTopicId: 302171
 dashedName: problem-6-sum-square-difference
@@ -8,39 +8,39 @@ dashedName: problem-6-sum-square-difference
 
 # --description--
 
-The sum of the squares of the first ten natural numbers is,
+最も小さい 10 個の自然数について、それぞれの 2 乗の和は次のとおりです。
 
 <div style='text-align: center;'>1<sup>2</sup> + 2<sup>2</sup> + ... + 10<sup>2</sup> = 385</div>
 
-The square of the sum of the first ten natural numbers is,
+最も小さい 10 個の自然数について、それらの和の 2 乗は次のとおりです。
 
 <div style='text-align: center;'>(1 + 2 + ... + 10)<sup>2</sup> = 55<sup>2</sup> = 3025</div>
 
-Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
+したがって最も小さい 10 個の自然数について、2 乗の和と、和の 2 乗との差は 3025 - 385 = 2640 です。
 
-Find the difference between the sum of the squares of the first `n` natural numbers and the square of the sum.
+最も小さいものから `n` 個の自然数について、2 乗の和と、和の 2 乗との差を求めなさい。
 
 # --hints--
 
-`sumSquareDifference(10)` should return a number.
+`sumSquareDifference(10)` は数値を返す必要があります。
 
 ```js
 assert(typeof sumSquareDifference(10) === 'number');
 ```
 
-`sumSquareDifference(10)` should return 2640.
+`sumSquareDifference(10)` は 2640 を返す必要があります。
 
 ```js
 assert.strictEqual(sumSquareDifference(10), 2640);
 ```
 
-`sumSquareDifference(20)` should return 41230.
+`sumSquareDifference(20)` は 41230 を返す必要があります
 
 ```js
 assert.strictEqual(sumSquareDifference(20), 41230);
 ```
 
-`sumSquareDifference(100)` should return 25164150.
+`sumSquareDifference(100)` は 25164150 を返す必要があります。
 
 ```js
 assert.strictEqual(sumSquareDifference(100), 25164150);

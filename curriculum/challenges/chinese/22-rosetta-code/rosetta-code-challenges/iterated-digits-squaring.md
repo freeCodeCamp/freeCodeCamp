@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ec1
-title: Iterated digits squaring
+title: 迭代的数字平方
 challengeType: 1
 forumTopicId: 302291
 dashedName: iterated-digits-squaring
@@ -16,53 +16,53 @@ If you add the square of the digits of a Natural number (an integer bigger than 
 
 # --instructions--
 
-Write a function that takes a number as a parameter and returns 1 or 89 after performing the mentioned process.
+编写一个函数，该函数将数字作为参数，并在执行上述过程后返回1或89。
 
 # --hints--
 
-`iteratedSquare` should be a function.
+`iteratedSquare`应该是一个函数。
 
 ```js
 assert(typeof iteratedSquare == 'function');
 ```
 
-`iteratedSquare(4)` should return a number.
+`iteratedSquare(4)`应该返回一个数字。
 
 ```js
 assert(typeof iteratedSquare(4) == 'number');
 ```
 
-`iteratedSquare(4)` should return `89`.
+`iteratedSquare(4)`应该返回`89` 。
 
 ```js
 assert.equal(iteratedSquare(4), 89);
 ```
 
-`iteratedSquare(7)` should return `1`.
+`iteratedSquare(7)`应该返回`1` 。
 
 ```js
 assert.equal(iteratedSquare(7), 1);
 ```
 
-`iteratedSquare(15)` should return `89`.
+`iteratedSquare(15)`应该返回`89` 。
 
 ```js
 assert.equal(iteratedSquare(15), 89);
 ```
 
-`iteratedSquare(20)` should return `89`.
+`iteratedSquare(20)`应该返回`89` 。
 
 ```js
 assert.equal(iteratedSquare(20), 89);
 ```
 
-`iteratedSquare(70)` should return `1`.
+`iteratedSquare(70)`应该返回`1` 。
 
 ```js
 assert.equal(iteratedSquare(70), 1);
 ```
 
-`iteratedSquare(100)` should return `1`.
+`iteratedSquare(100)`应该返回`1` 。
 
 ```js
 assert.equal(iteratedSquare(100), 1);
