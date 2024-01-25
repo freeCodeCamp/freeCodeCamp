@@ -307,7 +307,7 @@ const checkpointPositions = [
 ];
 
 const checkpoints = checkpointPositions.map(
-  checkpoint => new CheckPoint(checkpoint.x, checkpoint.y)
+  (checkpoint) => new CheckPoint(checkpoint.x, checkpoint.y, checkpoint.z)
 );
 
 const animate = () => {
