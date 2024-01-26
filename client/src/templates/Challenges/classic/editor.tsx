@@ -65,8 +65,8 @@ import {
   enhancePrismAccessibility,
   setScrollbarArrowStyles
 } from '../utils/index';
+import { initializeMathJax } from '../../../utils/math-jax';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
-import { mathJaxScriptLoader } from '../../../utils/script-loaders';
 import LowerJaw from './lower-jaw';
 
 import './editor.css';
@@ -399,6 +399,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       addContentChangeListener();
       resetAttempts();
       showEditableRegion(editor);
+      initializeMathJax();
     }
 
     const storedAccessibilityMode = () => {
@@ -772,7 +773,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.descriptionNode) return dataRef.current.descriptionNode;
     const { description, title, isChallengeCompleted } = props;
-    mathJaxScriptLoader();
     const jawHeading = isChallengeCompleted
       ? document.createElement('div')
       : document.createElement('h1');
