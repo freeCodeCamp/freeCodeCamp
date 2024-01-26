@@ -44,11 +44,28 @@ const syncChallenges = async () => {
         const langContent = await readFile(targetPath, 'utf-8');
         const engLines = englishContent.split('\n');
         const engId = engLines.find(l => l.startsWith('id'));
+        const engSlug = engLines.find(l => l.startsWith('dashedName'));
         const langLines = langContent.split('\n');
         const langId = langLines.find(l => l.startsWith('id'));
-        if (engId && langId && engId !== langId) {
+        const langSlug = langLines.find(l => l.startsWith('dashedName'));
+        if (!langSlug) {
+          throw new Error(
+            `Missing dashedName for ${targetPath}. Please add it so that it matches the English version.`
+          );
+        }
+        if (!langId) {
+          throw new Error(
+            `Missing id for ${targetPath}. Please add it so that it matches the English version.`
+          );
+        }
+        if (engId && engId !== langId) {
           langLines.splice(langLines.indexOf(langId), 1, engId);
           console.log(`Updating ID for ${targetPath}`);
+          await writeFile(targetPath, langLines.join('\n'), 'utf-8');
+        }
+        if (engSlug && engSlug !== langSlug) {
+          langLines.splice(langLines.indexOf(langSlug), 1, engSlug);
+          console.log(`Updating dashed name for ${targetPath}`);
           await writeFile(targetPath, langLines.join('\n'), 'utf-8');
         }
       })
