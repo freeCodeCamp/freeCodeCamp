@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08e
-title: 'Relational Databases: Relationship Building'
+title: 'リレーショナルデータベース: リレーションシップの構築'
 challengeType: 11
 videoId: CSbqczsHVnc
 bilibiliIds:
@@ -18,15 +18,15 @@ What does the INSERT command do in SQL?
 
 ## --answers--
 
-It defines a new row by listing the fields we want to include followed by the values we want placed in the new row.
+新しい行を定義する。そのために、挿入したいフィールドを列挙し、その後に、新しい行に配置したい値を記述する。
 
 ---
 
-It defines a new column by listing the rows we want to include followed by the values we want placed in the new column.
+新しい列を定義する。そのために、挿入したい行を列挙し、その後に、新しい列に配置したい値を記述する。
 
 ---
 
-It defines a new table by listing the rows and fields we want to include followed by the values that we want placed in the table.
+新しいテーブルを定義する。そのために、挿入したい行とフィールドを列挙し、その後に、テーブルに配置したい値を記述する。
 
 ## --video-solution--
 

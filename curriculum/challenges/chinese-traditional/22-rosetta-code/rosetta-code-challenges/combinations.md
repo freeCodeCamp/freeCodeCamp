@@ -1,6 +1,6 @@
 ---
 id: 5958469238c0d8d2632f46db
-title: Combinations
+title: 組合
 challengeType: 1
 forumTopicId: 302233
 dashedName: combinations
@@ -10,9 +10,9 @@ dashedName: combinations
 
 Given non-negative integers `m` and `n`, generate all size `m` combinations of the integers from `0` (zero) to `n-1` in sorted order (each combination is sorted and the entire table is sorted).
 
-**Example:**
+**例如：**
 
-`3` comb `5` is:
+例：
 
 <pre>0 1 2
 0 1 3
@@ -28,19 +28,19 @@ Given non-negative integers `m` and `n`, generate all size `m` combinations of t
 
 # --hints--
 
-`combinations` should be a function.
+3梳子5是：
 
 ```js
 assert(typeof combinations === 'function');
 ```
 
-`combinations(3, 5)` should return `[[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 2, 3], [0, 2, 4], [0, 3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]`.
+`combinations(3, 5)`應返回`[[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 2, 3], [0, 2, 4], [0, 3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]` 。
 
 ```js
 assert.deepEqual(combinations(testInput1[0], testInput1[1]), testOutput1);
 ```
 
-`combinations(4, 6)` should return `[[0,1,2,3], [0,1,2,4], [0,1,2,5], [0,1,3,4], [0,1,3,5], [0,1,4,5], [0,2,3,4], [0,2,3,5], [0,2,4,5], [0,3,4,5], [1,2,3,4], [1,2,3,5], [1,2,4,5], [1,3,4,5], [2,3,4,5]]`
+`combinations`是一種功能。
 
 ```js
 assert.deepEqual(combinations(testInput2[0], testInput2[1]), testOutput2);

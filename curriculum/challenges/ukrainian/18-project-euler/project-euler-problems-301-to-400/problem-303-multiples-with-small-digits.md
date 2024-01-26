@@ -1,6 +1,6 @@
 ---
 id: 5900f49b1000cf542c50ffae
-title: 'Problem 303: Multiples with small digits'
+title: 'Завдання 303: кратні числа з малими цифрами'
 challengeType: 1
 forumTopicId: 301957
 dashedName: problem-303-multiples-with-small-digits
@@ -8,11 +8,11 @@ dashedName: problem-303-multiples-with-small-digits
 
 # --description--
 
-For a positive integer $n$, define $f(n)$ as the least positive multiple of $n$ that, written in base 10, uses only digits $≤ 2$.
+Визначимо $f(n)$, де $n$ є натуральним числом, як найменше додатне кратне числа $n$, для десяткового запису якого використовують цифри $≤ 2$.
 
-Thus $f(2) = 2$, $f(3) = 12$, $f(7) = 21$, $f(42) = 210$, $f(89) = 1\\,121\\,222$.
+Отже, $f(2) = 2$, $f(3) = 12$, $f(7) = 21$, $f(42) = 210$, $f(89) = 1\\,121\\,222$.
 
-Also, $\displaystyle\sum_{n = 1}^{100} \frac{f(n)}{n} = 11\\,363\\,107$.
+Також, $\displaystyle\sum_{n = 1}^{100} \frac{f(n)}{n} = 11\\,363\\,107$.
 
 Знайдіть $\displaystyle\sum_{n = 1}^{10\\,000} \frac{f(n)}{n}$.
 

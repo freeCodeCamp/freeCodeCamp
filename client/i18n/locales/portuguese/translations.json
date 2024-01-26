@@ -198,6 +198,7 @@
     "sound-mode": "Adiciona o som agradável de uma guitarra acústica em todo o site. Você receberá feedback musical ao digitar no editor, completar desafios, solicitar certificações e muito mais.",
     "sound-volume": "Volume do modo fogueira:",
     "scrollbar-width": "Largura da barra de rolagem do editor",
+    "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
       "contains invalid characters": "O nome de usuário \"{{username}}\" contém caracteres inválidos",
       "is too short": "O nome de usuário \"{{username}}\" é muito curto",
@@ -912,8 +913,8 @@
     "title": {
       "Responsive Web Design": "Design responsivo para a web",
       "responsive-web-design": "Certificação de design responsivo para a web",
-      "JavaScript Algorithms and Data Structures": "Algoritmos e estruturas de dados em JavaScript",
-      "javascript-algorithms-and-data-structures": "Certificação de algoritmos e estruturas de dados em JavaScript",
+      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
       "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures Certification",
       "Front End Development Libraries": "Bibliotecas de desenvolvimento em front-end",
       "front-end-development-libraries": "Certificação de desenvolvimento com bibliotecas de front-end",

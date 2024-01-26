@@ -198,6 +198,7 @@
     "sound-mode": "هذا يضيف صوت قيتارة ممتع في جميع أنحاء الموقع. سوف تحصل على تنبيهات موسيقية عند الكتابة على المحرر وإكمال التحديات وعند المطالبة بالشهادات وغير ذلك.",
     "sound-volume": "مستوي صوت Campfire:",
     "scrollbar-width": "Editor Scrollbar Width",
+    "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
       "contains invalid characters": "اسم المستخدم\"{{username}}\" يحتوي على أحرف غير صالحة",
       "is too short": "اسم المستخدم \"{{username}}\" قصير جداً",
@@ -912,8 +913,8 @@
     "title": {
       "Responsive Web Design": "تصميم مواقع الويب المتجاوبة",
       "responsive-web-design": "شهادة تصميم مواقع الويب المتجاوبة",
-      "JavaScript Algorithms and Data Structures": "الخوارزميات وهياكل البيانات في JavaScript",
-      "javascript-algorithms-and-data-structures": "شهادة الخوارزميات وهياكل البيانات في JavaScript",
+      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
       "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures Certification",
       "Front End Development Libraries": "مكتبات تطوير واجهة المستخدم",
       "front-end-development-libraries": "شهادة مكتبات تطوير واجهة المستخدم",

@@ -1,6 +1,6 @@
 ---
 id: 5900f46d1000cf542c50ff7f
-title: 'Problem 255: Rounded Square Roots'
+title: 'Завдання 255: округлені квадратні корені'
 challengeType: 1
 forumTopicId: 301903
 dashedName: problem-255-rounded-square-roots
@@ -8,36 +8,36 @@ dashedName: problem-255-rounded-square-roots
 
 # --description--
 
-We define the rounded-square-root of a positive integer $n$ as the square root of $n$ rounded to the nearest integer.
+Визначимо округлений квадратний корінь натурального числа $n$ як квадратний корінь числа $n$, округлений до найближчого цілого числа.
 
-The following procedure (essentially Heron's method adapted to integer arithmetic) finds the rounded-square-root of $n$:
+За допомогою наступної дії (по суті це метод Герона, адаптований до цілочислової арифметики) знаходимо округлений квадратний корінь числа $n$:
 
-Let $d$ be the number of digits of the number $n$.
+Нехай $d$ буде кількістю цифр числа $n$.
 
-If $d$ is odd, set $x_0 = 2 × {10}^{\frac{d - 1}{2}}$.
+Якщо $d$ є непарним числом, то $x_0 = 2 × {10}^{\frac{d - 1}{2}}$.
 
-If $d$ is even, set $x_0 = 7 × {10}^{\frac{d - 2}{2}}$.
+Якщо $d$ є парним числом, то $x_0 = 7 × {10}^{\frac{d - 2}{2}}$.
 
-Repeat:
+Повторюємо
 
 $$x_{k + 1} = \left\lfloor\frac{x_k + \left\lceil\frac{n}{x_k}\right\rceil}{2}\right\rfloor$$
 
-until $x_{k + 1} = x_k$.
+доки $x_{k + 1} = x_k$.
 
-As an example, let us find the rounded-square-root of $n = 4321$.
+Як приклад знайдемо округлений квадратний корінь за умови $n = 4321$.
 
-$n$ has 4 digits, so $x_0 = 7 × {10}^{\frac{4-2}{2}} = 70$.
+$n$ складається з 4 цифр, тож $x_0 = 7 × {10}^{\frac{4-2}{2}} = 70$.
 
 $$x_1 = \left\lfloor\frac{70 + \left\lceil\frac{4321}{70}\right\rceil}{2}\right\rfloor = 66 \\\\
 x_2 = \left\lfloor\frac{66 + \left\lceil\frac{4321}{66}\right\rceil}{2}\right\rfloor = 66$$
 
-Since $x_2 = x_1$, we stop here. So, after just two iterations, we have found that the rounded-square-root of 4321 is 66 (the actual square root is 65.7343137…).
+Оскільки $x_2 = x_1$, тут зупиняємося. Таким чином, після всього двох ітерацій, ми виявили, що округлений квадратний корінь числа 4321 дорівнює 66 (точне значення квадратного кореня становить 65.7343137…).
 
-The number of iterations required when using this method is surprisingly low. For example, we can find the rounded-square-root of a 5-digit integer ($10\\,000 ≤ n ≤ 99\\,999$) with an average of 3.2102888889 iterations (the average value was rounded to 10 decimal places).
+Кількість ітерацій, необхідних для використання цього методу, на диво низька. Наприклад, ми можемо знайти округлений квадратний корінь п’ятизначного цілого числа ($10\\,000 ≤ n ≤ 99\\,999$) в середньому за 3.2102888889 ітерацій (середнє значення округлено до 10 знаків після коми).
 
-Using the procedure described above, what is the average number of iterations required to find the rounded-square-root of a 14-digit number (${10}^{13} ≤ n &lt; {10}^{14}$)? Дайте відповідь, заокруглену до десяти знаків після коми.
+Використовуючи описаний вище метод, якою є середня кількість ітерацій, необхідних для знаходження округленого квадратного кореня 14-значного числа (${10}^{13} ≤ n &lt; {10}^{14}$)? Дайте відповідь, заокруглену до десяти знаків після коми.
 
-**Note:** The symbols $⌊x⌋$ and $⌈x⌉$ represent the floor function and ceiling function respectively.
+**Примітка:** символи $⌊x⌋$ та $⌈x⌉$ позначають функцію підлоги та стелі відповідно.
 
 # --hints--
 

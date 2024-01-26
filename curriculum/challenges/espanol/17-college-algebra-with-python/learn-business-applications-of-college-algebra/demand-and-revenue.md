@@ -16,7 +16,7 @@ Here is the <a href="https://colab.research.google.com/drive/1foxkSd90q1tHCSqyY6
 
 \- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021) by Jean-Paul Oliver</a>
 
-# --assignment--
+# --tarea--
 
 Complete the problems on pages 155 and 163 from "Business Math, a Step-by-Step Handbook (2021)".
 

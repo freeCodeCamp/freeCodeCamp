@@ -1,12 +1,11 @@
 ---
 id: 657cbef9aa43ceba8af6feb4
-title: Task 51
+title: Task 49
 challengeType: 22
-dashedName: task-51
-audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+dashedName: task-49
 ---
 
-<!-- (audio) Sophie: "Well, she's very proactive and she likes everything in order. I think she has a passion for technology and enjoys leading our team." -->
+<!-- (audio) Sophie: "I think she has a passion for technology and enjoys leading our team." -->
 
 # --description--
 
@@ -16,14 +15,58 @@ For example, you can say, `I enjoy playing video games` if playing video games i
 
 # --fillInTheBlank--
 
-## --sentence--
+## Frases
 
-`I think she has a passion for technology and _ leading our team.`
+`I think she has a passion for technology and she _ leading our team.`
 
-## --blanks--
+## Palabra correcta
 
 `enjoys`
 
-### --feedback--
+### devolución
 
 What word would you use to say that Maria finds happiness in guiding the team? It's the same word used when you have fun or like doing an activity.
+
+# --escena---
+
+```json
+{
+  "setup": {
+    "background": "company2-center.png",
+    "characters": [
+      {
+        "character": "Sophie",
+        "position": {"x":50,"y":0,"z":1.4},
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "1.3-3.mp3",
+      "startTime": 1,
+      "startTimestamp": 8.50,
+      "finishTimestamp": 11.88
+    }
+  },
+  "commands": [
+    {
+      "character": "Sophie",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Sophie",
+      "startTime": 1,
+      "finishTime": 4.38,
+      "dialogue": {
+        "text": "I think she has a passion for technology and she enjoys leading our team.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Sophie",
+      "opacity": 0,
+      "startTime": 4.88
+    }
+  ]
+}
+```

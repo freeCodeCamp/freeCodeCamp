@@ -154,7 +154,7 @@
     "@types/jest": "29.5.11",
     "@types/jquery": "^3.5.16",
     "@types/js-yaml": "4.0.5",
-    "@types/loadable__component": "5.13.7",
+    "@types/loadable__component": "5.13.8",
     "@types/lodash-es": "^4.17.6",
     "@types/node-fetch": "2",
     "@types/prismjs": "^1.26.0",

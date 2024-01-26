@@ -1,6 +1,6 @@
 ---
 id: 59f4eafba0343628bb682785
-title: Discordian date
+title: ディスコルディア暦の日付
 challengeType: 1
 forumTopicId: 302250
 dashedName: discordian-date
@@ -13,29 +13,29 @@ The <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" re
 
 The months, weekdays, Apostle events, and Holidays in the Discordian calendar are given by:
 
-Seasons: `'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath'`.
-  
+季節: `'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath'`
+
 Weekdays: `'Sweetmorn', 'Boomtime', 'Pungenday', 'Prickle-Prickle', 'Setting Orange'`.
 
-Apostle: `'Mungday', 'Mojoday', 'Syaday', 'Zaraday', 'Maladay'`.
+使徒: `'Mungday', 'Mojoday', 'Syaday', 'Zaraday', 'Maladay'`
 
-Holidays: `'Chaoflux', 'Discoflux', 'Confuflux', 'Bureflux', 'Afflux'`.
+祝日: `'Chaoflux', 'Discoflux', 'Confuflux', 'Bureflux', 'Afflux'`
 
 # --instructions--
 
-Convert a given date from the Gregorian calendar to the Discordian calendar.
+グレゴリオ暦の日付をディスコルディア暦に変換してください。
 
 Note that the day Chaos 1, 3188 YOLD in the Discordian calendar is the day January 1, 2022 in the Gregorian calendar.
 
 # --hints--
 
-`discordianDate` should be a function.
+`discordianDate` という関数です。
 
 ```js
 assert(typeof discordianDate === 'function');
 ```
 
-`discordianDate(new Date(2010, 6, 22))` should return `"Pungenday, the 57th day of Confusion in the YOLD 3176"`.
+`discordianDate(new Date(2010, 6, 22))` は `"Pungenday, the 57th day of Confusion in the YOLD 3176"` を返します。
 
 ```js
 assert(
@@ -44,7 +44,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 1, 28))` should return `"Prickle-Prickle, the 59th day of Chaos in the YOLD 3178"`.
+`discordianDate(new Date(2012, 1, 28))` は `"Prickle-Prickle, the 59th day of Chaos in the YOLD 3178"` を返します。
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 2, 1))` should return `"Setting Orange, the 60th day of Chaos in the YOLD 3178"`.
+`discordianDate(new Date(2012, 2, 1))` は `"Setting Orange, the 60th day of Chaos in the YOLD 3178"` を返します。
 
 ```js
 assert(
@@ -89,7 +89,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2015, 9, 19))` should return `"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"`.
+`discordianDate(new Date(2015, 9, 19))` は `"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"` を返します。
 
 ```js
 assert(

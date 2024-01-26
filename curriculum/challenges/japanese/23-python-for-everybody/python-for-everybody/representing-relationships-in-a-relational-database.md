@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08d
-title: Representing Relationships in a Relational Database
+title: リレーショナルデータベースのリレーションシップを表現する
 challengeType: 11
 videoId: '-orenCNdC2Q'
 bilibiliIds:
@@ -18,19 +18,19 @@ What is a foreign key?
 
 ## --answers--
 
-A key that is not supposed to be there.
+そこにあるはずのないキー。
 
 ---
 
-A key that uses non-latin characters.
+非ラテン文字を使用するキー。
 
 ---
 
-A number that points to the primary key of an associated row in a different table.
+別のテーブルにある関連する行の主キーを指す数値。
 
 ---
 
-A key that the "real world" might use to look up a row.
+"Real world" で行をルックアップ検索するために使用する可能性のあるキー。
 
 ## --video-solution--
 

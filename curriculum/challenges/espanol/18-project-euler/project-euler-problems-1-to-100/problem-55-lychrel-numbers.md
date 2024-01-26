@@ -10,7 +10,7 @@ dashedName: problem-55-lychrel-numbers
 
 If we take 47, reverse and add, 47 + 74 = 121, which is palindromic.
 
-Not all numbers produce palindromes so quickly. For example,
+Not all numbers produce palindromes so quickly. Por ejemplo,
 
 <div style="margin-left: 4em;">
   349 + 943 = 1292,<br>

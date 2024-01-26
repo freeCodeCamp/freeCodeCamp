@@ -20,31 +20,31 @@ Starting with 1 and spiralling anticlockwise in the following way, a square spir
   <strong><span style='color: red;'>43</span></strong> 44 45 46 47 48 49<br>
 </div>
 
-It is interesting to note that the odd squares lie along the bottom right diagonal, but what is more interesting is that 8 out of the 13 numbers lying along both diagonals are prime; that is, a ratio of 8/13 ≈ 62%.
+Es interesante observar que los cuadrados impares caen a lo largo del fondo de la diagonal derecha, pero lo que es más interesantes es que 8 de los 13 números a lo largo de ambas diagonales son primos; es decir, un radio de 8/13 ≈ 62%.
 
-If one complete new layer is wrapped around the spiral above, a square spiral with side length 9 will be formed. If this process is continued, what is the side length of the square spiral for which the percent of primes along both diagonals first falls below `percent`?
+Si una nueva capa completa es envuelta alrededor de la espiral superior, se formará una espiral con la longitud de lado de 9. Si este proceso es continuado, cuál es la longitud de lado del cuadrado espiral par el cual el porcentaje de primos a lo largo de ambas diagonales caigan primero por debajo de `percent`?
 
 # --hints--
 
-`spiralPrimes(50)` should return a number.
+`spiralPrimes(50)` debería devolver un número.
 
 ```js
 assert(typeof spiralPrimes(50) === 'number');
 ```
 
-`spiralPrimes(50)` should return `11`.
+`spiralPrimes(50)` debería devolver `11`.
 
 ```js
 assert.strictEqual(spiralPrimes(50), 11);
 ```
 
-`spiralPrimes(15)` should return `981`.
+`spiralPrimes(15)` debería devolver `981`.
 
 ```js
 assert.strictEqual(spiralPrimes(15), 981);
 ```
 
-`spiralPrimes(10)` should return `26241`.
+`spiralPrimes(10)` debería devolver`26241`.
 
 ```js
 assert.strictEqual(spiralPrimes(10), 26241);

@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad7
-title: Zhang-Suen thinning algorithm
+title: Zhang-Suen の細線化アルゴリズム
 challengeType: 1
 forumTopicId: 302347
 dashedName: zhang-suen-thinning-algorithm
@@ -25,7 +25,7 @@ const testImage1 = [
 ];
 ```
 
-It produces the thinned output:
+以下のように、細線化された出力を生成します。
 
 ```js
 [ '                               ',
@@ -42,23 +42,18 @@ It produces the thinned output:
 
 ## Algorithm
 
-Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes. The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
+黒のピクセルを 1、白のピクセルを 0 とし、入力画像は 1 と 0 の N×M の長方形配列とします。 このアルゴリズムは、8つの近傍を持つ黒のピクセル P1 全体に処理を行います。 近傍は以下のように並んでいます:
 
-$$\begin{array}{|c|c|c|}
-  \\hline
-  P9 & P2              & P3\\\\ \\hline
-  P8 & \boldsymbol{P1} & P4\\\\ \\hline
-  P7 & P6              & P5\\\\ \\hline
-\end{array}$$
+$$\begin{array}{|c|c|c|} \\hline P9 & P2              & P3\\\\ \\hline P8 & \boldsymbol{P1} & P4\\\\ \\hline P7 & P6              & P5\\\\ \\hline \end{array}$$
 
-Obviously the boundary pixels of the image cannot have the full eight neighbours.
+当然、画像の境界ピクセルは 8 つすべての近傍を持つことはできません。
 
 - Define $A(P1)$ = the number of transitions from white to black, ($0 \to 1$) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).
-- Define $B(P1)$ = the number of black pixel neighbours of P1. ($= \\sum(P2 \ldots P9)$)
+- $B(P1)$ = P1 の近傍の黒のピクセル数として定義します。 ($= \\sum(P2 \ldots P9)$)
 
-**Step 1:**
+**ステップ 1:**
 
-All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.
+すべてのピクセルをテストし、この段階では次のすべての条件を (同時に) 満たすピクセルに注目します。
 
 1. The pixel is black and has eight neighbours
 2. $2 \le B(P1) \le 6$
@@ -66,55 +61,55 @@ All pixels are tested and pixels satisfying all the following conditions (simult
 4. At least one of $P2$, $P4$ and $P6$ is white
 5. At least one of $P4$, $P6$ and $P8$ is white
 
-After iterating over the image and collecting all the pixels satisfying all step 1 conditions, all these condition satisfying pixels are set to white.
+画像への条件の適用を反復し、ステップ 1 の条件を満たすピクセルをすべて収集した後、この条件を満たす全ピクセルを白にします。
 
-**Step 2:**
+**ステップ 2:**
 
-All pixels are again tested and pixels satisfying all the following conditions are just noted at this stage.
+すべてのピクセルを再度テストし、この段階では次のすべての条件を満たすピクセルに注目します。
 
 1. The pixel is black and has eight neighbours
 2. $2 \le B(P1) \le 6$
 3. $A(P1) = 1$
-4. At least one of $P2$, $P4$ and $P8$ is white
-5. At least one of $P2$, $P6$ and $P8$ is white
+4. $P2$、$P4$、$P8$ のうち、少なくとも1つは白です
+5. $P2$、$P6$、$P8$ のうち、少なくとも1つは白です
 
-After iterating over the image and collecting all the pixels satisfying all step 2 conditions, all these condition satisfying pixels are again set to white.
+画像への条件の適用を反復し、ステップ 2 の条件を満たすピクセルをすべて収集した後、この条件を満たす全ピクセルを白にします。
 
-**Iteration:**
+**反復:**
 
-If any pixels were set in this round of either step 1 or step 2 then all steps are repeated until no image pixels are so changed.
+ステップ 1 またはステップ 2 の作業で任意のピクセルを設定し、画像ピクセルに変更点がなくなるまで、すべてのステップを繰り返します。
 
 # --instructions--
 
-Write a routine to perform Zhang-Suen thinning on the provided `image`, an array of strings, where each string represents single line of the image. In the string, `#` represents black pixel, and whitespace represents white pixel. Function should return thinned image, using the same representation.
+与えられた `image`上で Zhang-Suen の細線化アルゴリズムを実行するためのルーチンを記述してください。文字列の配列で、各文字列は画像の単一の行を表します。 文字列内では、`#` が黒のピクセル、空白は白のピクセルを表します。 関数は、同じ表現を使用して、細線化された画像を返さなければなりません。
 
 # --hints--
 
-`thinImage` should be a function.
+`thinImage` は関数とします。
 
 ```js
 assert.equal(typeof thinImage, 'function');
 ```
 
-`thinImage` should return an array.
+`thinImage` は配列を返す必要があります。
 
 ```js
 assert(Array.isArray(thinImage(_testImage1)));
 ```
 
-`thinImage` should return an array of strings.
+`thinImage` は文字列の配列を返す必要があります。
 
 ```js
 assert.equal(typeof thinImage(_testImage1)[0], 'string');
 ```
 
-`thinImage(testImage1)` should return a thinned image as in the example.
+`thinImage(testImage1)` は例で示すような細線化された画像を返す必要があります。
 
 ```js
 assert.deepEqual(thinImage(_testImage1), expected1);
 ```
 
-`thinImage(testImage2)` should return a thinned image.
+`thinImage(testImage2)` は細線化された画像を返す必要があります。
 
 ```js
 assert.deepEqual(thinImage(_testImage2), expected2);

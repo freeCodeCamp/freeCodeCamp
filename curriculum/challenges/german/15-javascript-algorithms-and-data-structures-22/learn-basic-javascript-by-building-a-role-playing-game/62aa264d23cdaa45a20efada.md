@@ -1,8 +1,8 @@
 ---
 id: 62aa264d23cdaa45a20efada
-title: Schritt 162
+title: Schritt 161
 challengeType: 0
-dashedName: step-162
+dashedName: step-161
 ---
 
 # --description--
@@ -30,7 +30,7 @@ assert.match(pick.toString(), /while\s*\(/);
 Your `while` loop should run while `numbers.length < 10`.
 
 ```js
-assert.match(pick.toString(), /while\s*\(\s*numbers.length\s*<\s*10\s*\)/);
+assert.match(pick.toString(), /while\s*\(\s*numbers\.length\s*<\s*10\s*\)/);
 ```
 
 # --seed--
@@ -40,72 +40,81 @@ assert.match(pick.toString(), /while\s*\(\s*numbers.length\s*<\s*10\s*\)/);
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./styles.css">
     <title>RPG - Dragon Repeller</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="game">
-        <div id="stats">
-            <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
-            <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
-            <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
-        </div>
-        <div id="controls">
-            <button id="button1">Go to store</button>
-            <button id="button2">Go to cave</button>
-            <button id="button3">Fight dragon</button>
-        </div>
-        <div id="monsterStats">
-            <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
-            <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
-        </div>
-        <div id="text">
-            Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
-        </div>
+      <div id="stats">
+        <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
+        <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
+        <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
+      </div>
+      <div id="controls">
+        <button id="button1">Go to store</button>
+        <button id="button2">Go to cave</button>
+        <button id="button3">Fight dragon</button>
+      </div>
+      <div id="monsterStats">
+        <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
+        <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
+      </div>
+      <div id="text">
+        Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
+      </div>
     </div>
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
 ```
 
 ```css
 body {
-    background-color: darkblue;
+  background-color: #0a0a23;
 }
 
 #text {
-    background-color: black;
-    color: white;
-    padding: 10px;
+  background-color: #0a0a23;
+  color: #ffffff;
+  padding: 10px;
 }
 
 #game {
-    max-width: 500px;
-    max-height: 400px;
-    background-color: lightgray;
-    color: white;
-    margin: 0 auto;
-    padding: 10px;
+  max-width: 500px;
+  max-height: 400px;
+  background-color: #ffffff;
+  color: #ffffff;
+  margin: 30px auto 0px;
+  padding: 10px;
 }
 
-#controls, #stats {
-    border: 1px solid black;
-    padding: 5px;
-    color: black;
+#controls,
+#stats {
+  border: 1px solid #0a0a23;
+  padding: 5px;
+  color: #0a0a23;
 }
 
 #monsterStats {
-    display: none;
-    border: 1px solid black;
-    padding: 5px;
-    color: white;
-    background-color: red;
+  display: none;
+  border: 1px solid #0a0a23;
+  padding: 5px;
+  color: #ffffff;
+  background-color: #c70d0d;
 }
 
 .stat {
-    padding-right: 10px;
+  padding-right: 10px;
+}
+
+button {
+  cursor: pointer;
+  color: #0a0a23;
+  background-color: #feac32;
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border: 3px solid #feac32;
 }
 ```
 
@@ -127,7 +136,7 @@ const healthText = document.querySelector("#healthText");
 const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
-const monsterHealthText =document.querySelector("#monsterHealth");
+const monsterHealthText = document.querySelector("#monsterHealth");
 const weapons = [
   { name: 'stick', power: 5 },
   { name: 'dagger', power: 30 },
@@ -152,54 +161,54 @@ const monsters = [
   }
 ]
 const locations = [
-    {
-        name: "town square",
-        "button text": ["Go to store", "Go to cave", "Fight dragon"],
-        "button functions": [goStore, goCave, fightDragon],
-        text: "You are in the town square. You see a sign that says \"Store\"."
-    },
-    {
-        name: "store",
-        "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
-        "button functions": [buyHealth, buyWeapon, goTown],
-        text: "You enter the store."
-    },
-    {
-        name: "cave",
-        "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
-        "button functions": [fightSlime, fightBeast, goTown],
-        text: "You enter the cave. You see some monsters."
-    },
-    {
-        name: "fight",
-        "button text": ["Attack", "Dodge", "Run"],
-        "button functions": [attack, dodge, goTown],
-        text: "You are fighting a monster."
-    },
-    {
-        name: "kill monster",
-        "button text": ["Go to town square", "Go to town square", "Go to town square"],
-        "button functions": [goTown, goTown, goTown],
-        text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
-    },
-    {
-        name: "lose",
-        "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
-        "button functions": [restart, restart, restart],
-        text: "You die. ☠️"
-    },
-    { 
-        name: "win", 
-        "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
-        "button functions": [restart, restart, restart], 
-        text: "You defeat the dragon! YOU WIN THE GAME! 🎉" 
-    },
-    {
-        name: "easter egg",
-        "button text": ["2", "8", "Go to town square?"],
-        "button functions": [pickTwo, pickEight, goTown],
-        text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
-    }
+  {
+    name: "town square",
+    "button text": ["Go to store", "Go to cave", "Fight dragon"],
+    "button functions": [goStore, goCave, fightDragon],
+    text: "You are in the town square. You see a sign that says \"Store\"."
+  },
+  {
+    name: "store",
+    "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
+    "button functions": [buyHealth, buyWeapon, goTown],
+    text: "You enter the store."
+  },
+  {
+    name: "cave",
+    "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
+    "button functions": [fightSlime, fightBeast, goTown],
+    text: "You enter the cave. You see some monsters."
+  },
+  {
+    name: "fight",
+    "button text": ["Attack", "Dodge", "Run"],
+    "button functions": [attack, dodge, goTown],
+    text: "You are fighting a monster."
+  },
+  {
+    name: "kill monster",
+    "button text": ["Go to town square", "Go to town square", "Go to town square"],
+    "button functions": [goTown, goTown, goTown],
+    text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
+  },
+  {
+    name: "lose",
+    "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
+    "button functions": [restart, restart, restart],
+    text: "You die. ☠️"
+  },
+  { 
+    name: "win", 
+    "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
+    "button functions": [restart, restart, restart], 
+    text: "You defeat the dragon! YOU WIN THE GAME! 🎉" 
+  },
+  {
+    name: "easter egg",
+    "button text": ["2", "8", "Go to town square?"],
+    "button functions": [pickTwo, pickEight, goTown],
+    text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
+  }
 ];
 
 // initialize buttons
@@ -310,7 +319,11 @@ function attack() {
   if (health <= 0) {
     lose();
   } else if (monsterHealth <= 0) {
-    fighting === 2 ? winGame() : defeatMonster();
+    if (fighting === 2) {
+      winGame();
+    } else {
+      defeatMonster();
+    }
   }
   if (Math.random() <= .1 && inventory.length !== 1) {
     text.innerText += " Your " + inventory.pop() + " breaks.";
@@ -374,7 +387,7 @@ function pickEight() {
 
 --fcc-editable-region--
 function pick(guess) {
-  let numbers = [];
+  const numbers = [];
 
 }
 --fcc-editable-region--

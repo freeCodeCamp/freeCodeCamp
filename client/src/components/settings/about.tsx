@@ -267,8 +267,8 @@ class AboutSettings extends Component<AboutProps, AboutState> {
               </FormGroup>
             </div>
             <BlockSaveButton
-              aria-disabled={this.isFormPristine()}
-              bgSize='lg'
+              disabled={this.isFormPristine()}
+              bgSize='large'
               {...(this.isFormPristine() && { tabIndex: -1 })}
             >
               {t('buttons.save')}{' '}
@@ -288,6 +288,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
           <KeyboardShortcutsSettings
             keyboardShortcuts={keyboardShortcuts}
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
+            explain={t('settings.shortcuts-explained')}
           />
           <ScrollbarWidthSettings />
         </FullWidthRow>

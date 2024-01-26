@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f060
-title: Strings in Python
+title: Strings em Python
 challengeType: 11
 videoId: LYZj207fKpQ
 bilibiliIds:

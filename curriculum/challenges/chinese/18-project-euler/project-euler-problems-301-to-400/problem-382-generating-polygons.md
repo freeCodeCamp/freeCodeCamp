@@ -16,7 +16,7 @@ A set $S$ of positive numbers is said to generate a polygon $P$ if:
 - the length of every side of $P$ is in $S$, and
 - $S$ contains no other value.
 
-For example:
+例如：
 
 The set {3, 4, 5} generates a polygon with sides 3, 4, and 5 (a triangle).
 

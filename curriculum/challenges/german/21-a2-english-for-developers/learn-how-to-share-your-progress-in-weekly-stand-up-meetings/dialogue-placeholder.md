@@ -10,6 +10,6 @@ dashedName: dialogue-placeholder
 
 Watch the video above to understand the context of the upcoming lessons.
 
-# --assignment--
+# --Auftrag--
 
 Watch the video

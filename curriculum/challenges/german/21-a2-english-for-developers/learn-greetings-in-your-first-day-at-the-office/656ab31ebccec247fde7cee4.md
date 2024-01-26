@@ -20,15 +20,15 @@ Tom: Oh, awesome. My computer and drawing tablet are great, too.
 
 `_. My computer and drawing tablet are great, too.`
 
-## --blanks--
+## -blanks--
 
-`awesome`
+`Awesome`
 
 ### --feedback--
 
 Listen for a word that means `very good` or `I really like it.`
 
-# --scene--
+# --blanks--
 
 ```json
 {

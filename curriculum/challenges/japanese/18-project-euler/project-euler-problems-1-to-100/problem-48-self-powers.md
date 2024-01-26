@@ -1,6 +1,6 @@
 ---
 id: 5900f39c1000cf542c50feaf
-title: 'Problem 48: Self powers'
+title: '問題 48: それ自体の累乗'
 challengeType: 1
 forumTopicId: 302157
 dashedName: problem-48-self-powers
@@ -8,37 +8,37 @@ dashedName: problem-48-self-powers
 
 # --description--
 
-The series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 10<sup>10</sup> = 10405071317.
+連続数字について考えます。1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 10<sup>10</sup> = 10405071317 です。
 
-Find the last ten digits of the series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 1000<sup>1000</sup>.
+連続数字 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 1000<sup>1000</sup> の最後の 10 桁を求めなさい。
 
 # --hints--
 
-`selfPowers(10, 3)` should return a number.
+`selfPowers(10, 3)` は数値を返す必要があります。
 
 ```js
 assert(typeof selfPowers(10, 3) === 'number');
 ```
 
-`selfPowers(10, 3)` should return 317.
+`selfPowers(10, 3)` は 317 を返す必要があります。
 
 ```js
 assert.strictEqual(selfPowers(10, 3), 317);
 ```
 
-`selfPowers(150, 6)` should return 29045.
+`selfPowers(150, 6)` は 29045 を返す必要があります。
 
 ```js
 assert.strictEqual(selfPowers(150, 6), 29045);
 ```
 
-`selfPowers(673, 7)` should return 2473989.
+`selfPowers(673, 7)` は 2473989 を返す必要があります。
 
 ```js
 assert.strictEqual(selfPowers(673, 7), 2473989);
 ```
 
-`selfPowers(1000, 10)` should return 9110846700.
+`selfPowers(1000, 10)` は 9110846700 を返す必要があります。
 
 ```js
 assert.strictEqual(selfPowers(1000, 10), 9110846700);
