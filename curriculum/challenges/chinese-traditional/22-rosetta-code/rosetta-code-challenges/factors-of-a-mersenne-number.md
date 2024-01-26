@@ -1,6 +1,6 @@
 ---
 id: 598eea87e5cf4b116c3ff81a
-title: Factors of a Mersenne number
+title: 梅森數的因數
 challengeType: 1
 forumTopicId: 302264
 dashedName: factors-of-a-mersenne-number
@@ -10,23 +10,23 @@ dashedName: factors-of-a-mersenne-number
 
 A Mersenne number is a number in the form of <code>2<sup>P</sup>-1</code>.
 
-If `P` is prime, the Mersenne number may be a Mersenne prime. (If `P` is not prime, the Mersenne number is also not prime.)
+如果 `P` 是素數，則梅森數可能是梅森素數。 （如果 `P` 不是素數，梅森數也不是素數。）
 
 In the search for Mersenne prime numbers it is advantageous to eliminate exponents by finding a small factor before starting a, potentially lengthy, <a href="https://rosettacode.org/wiki/Lucas-Lehmer test" target="_blank" rel="noopener noreferrer nofollow">Lucas-Lehmer test</a>.
 
-There are very efficient algorithms for determining if a number divides <code>2<sup>P</sup>-1</code> (or equivalently, if <code>2<sup>P</sup> mod (the number) = 1</code>).
+有非常有效的算法可以確定一個數是否可​​以整除 <code>2<sup>P</sup>-1</code>（或者等效地，如果 <code >2<sup>P</sup> mod（數字）= 1</code>）。
 
-Some languages already have built-in implementations of this exponent-and-mod operation (called modPow or similar).
+一些語言已經內置了這種指數和模運算的實現（稱爲 modPow 或類似的）。
 
-The following is how to implement this modPow yourself:
+下面是如何自己實現這個modPow：
 
-For example, let's compute <code>2<sup>23</sup> mod 47</code>.
+例如，讓我們計算 <code>2<sup>23</sup> mod 47</code>。
 
-Convert the exponent 23 to binary, you get 10111. Starting with <code><tt>square</tt> = 1</code>, repeatedly square it.
+將指數 23 轉換爲二進制，得到 10111。 從 <code><tt>square</tt> = 1</code> 開始，重複平方。
 
-Remove the top bit of the exponent, and if it's 1 multiply `square` by the base of the exponentiation (2), then compute <code><tt>square</tt> modulo 47</code>.
+去除指數的最高位，如果它是 1 乘以 `square` 乘以冪的底數 (2)，然後計算 <code><tt>square</tt> modulo 47</code>。
 
-Use the result of the modulo from the last step as the initial value of `square` in the next step:
+使用上一步取模的結果作爲下一步 `square` 的初始值：
 
 <pre>Remove   Optional
 square        top bit  multiply by 2  mod 47
@@ -38,51 +38,51 @@ square        top bit  multiply by 2  mod 47
 27*27 = 729   1        729*2 = 1458      1
 </pre>
 
-Since <code>2<sup>23</sup> mod 47 = 1</code>, 47 is a factor of <code>2<sup>P</sup>-1</code>.
+由於 <code>2<sup>23</sup> mod 47 = 1</code>，47 是 <code>2<sup>P</sup>-1</code>。
 
-(To see this, subtract 1 from both sides: <code>2<sup>23</sup>-1 = 0 mod 47</code>.)
+（要看到這一點，從兩邊減去 1：<code>2<sup>23</sup>-1 = 0 mod 47</code>。）
 
-Since we've shown that 47 is a factor, <code>2<sup>23</sup>-1</code> is not prime.
+由於我們已經證明 47 是一個因式，<code>2<sup>23</sup>-1</code> 不是質數。
 
-Further properties of Mersenne numbers allow us to refine the process even more.
+梅森數的其他性質使我們能夠進一步完善該過程。
 
-Any factor `q` of <code>2<sup>P</sup>-1</code> must be of the form `2kP+1`, `k` being a positive integer or zero. Furthermore, `q` must be `1` or `7 mod 8`.
+<code>2<sup>P</sup>-1</code> 的任何因子 `q` 必須是 `2kP+1` 的形式，`k` 爲正整數或零。 此外，`q` 必須是 `1` 或 `7 mod 8`。
 
 Finally any potential factor `q` must be <a href="https://rosettacode.org/wiki/Primality_by_trial_division" target="_blank" rel="noopener noreferrer nofollow">prime</a>.
 
-As in other trial division algorithms, the algorithm stops when `2kP+1 > sqrt(N)`.These primarily tests only work on Mersenne numbers where `P` is prime. For example, <code>M<sub>4</sub>=15</code> yields no factors using these techniques, but factors into 3 and 5, neither of which fit `2kP+1`.
+與其他試除算法一樣，算法在 `2kP+1 > sqrt(N)` 時停止。這些主要測試僅適用於 `P` 爲質數的梅森數。 例如，<code>M<sub>4</sub>=15</code> 使用這些技術不會產生因數，但會產生 3 和 5 的因數，它們都不適合 `2kP+1`。
 
 # --instructions--
 
-Using the above method find a factor of <code>2<sup>p</sup>-1</code>.
+用上面的方法找到 <code>2<sup>p</sup>-1</code> 的因數。
 
 # --hints--
 
-`check_mersenne` should be a function.
+`check_mersenne` 應該是一個函數。
 
 ```js
 assert(typeof check_mersenne === 'function');
 ```
 
-`check_mersenne(3)` should return a string.
+`check_mersenne(3)` 應該返回一個字符串。
 
 ```js
 assert(typeof check_mersenne(3) == 'string');
 ```
 
-`check_mersenne(3)` should return the string `M3 = 2^3-1 is prime`.
+`check_mersenne(3)` 應該返回字符串 `M3 = 2^3-1 is prime`。
 
 ```js
 assert.equal(check_mersenne(3), 'M3 = 2^3-1 is prime');
 ```
 
-`check_mersenne(23)` should return the string `M23 = 2^23-1 is composite with factor 47`.
+`check_mersenne(23)` 應該返回字符串 `M23 = 2^23-1 is composite with factor 47`。
 
 ```js
 assert.equal(check_mersenne(23), 'M23 = 2^23-1 is composite with factor 47');
 ```
 
-`check_mersenne(929)` should return the string `M929 = 2^929-1 is composite with factor 13007`.
+`check_mersenne(929)` 應該返回字符串 `M929 = 2^929-1 is composite with factor 13007`。
 
 ```js
 assert.equal(

@@ -1,6 +1,6 @@
 ---
 id: 5900f4281000cf542c50ff39
-title: 'Problem 186: Connectedness of a network'
+title: '問題186：網絡連接'
 challengeType: 1
 forumTopicId: 301822
 dashedName: problem-186-connectedness-of-a-network
@@ -10,28 +10,28 @@ dashedName: problem-186-connectedness-of-a-network
 
 Here are the records from a busy telephone system with one million users:
 
-| RecNr | Caller | Called |
+| RecNr | 呼叫者    | 已撥打電話  |
 | ----- | ------ | ------ |
 | 1     | 200007 | 100053 |
 | 2     | 600183 | 500439 |
 | 3     | 600863 | 701497 |
 | ...   | ...    | ...    |
 
-The telephone number of the caller and the called number in record $n$ are $Caller(n) = S_{2n - 1}$ and $Called(n) = S_{2n}$ where ${S}_{1,2,3,\ldots}$ come from the "Lagged Fibonacci Generator":
+打電話者的電話號碼和接電話者的電話號碼在記錄裏 $n$ 是 $Caller(n) = S_{2n - 1}$ 和 $Called(n) = S_{2n}$ 當${S}_{1,, 3,\ldots}$ 來自 "Lagged Fibonacci Generator":
 
-For $1 ≤ k ≤ 55$, $S_k = [100003 - 200003k + 300007{k}^3]\\;(\text{modulo}\\;1000000)$
+對於$1 ≤ k ≤ 55$, $S_k = [100003 - 200003k + 300007{k}^3]\\;(\text{modulo}\\;1000000)$
 
-For $56 ≤ k$, $S_k = [S_{k - 24} + S_{k - 55}]\\;(\text{modulo}\\;1000000)$
+對於$56 ≤ k$, $S_k = [S_{k - 24} + S_{k - 55}]\\;(\text{modulo}\\;1000000)$
 
-If $Caller(n) = Called(n)$ then the user is assumed to have misdialled and the call fails; otherwise the call is successful.
+如果$Caller(n) = Called(n)$，則假定用戶誤操作並且呼叫失敗; 否則通話成功。
 
-From the start of the records, we say that any pair of users $X$ and $Y$ are friends if $X$ calls $Y$ or vice-versa. Similarly, $X$ is a friend of a friend of $Z$ if $X$ is a friend of $Y$ and $Y$ is a friend of $Z$; and so on for longer chains.
+從記錄一開始，我們就說任何用戶 $X$ 和 $Y$ 都是朋友如果 $X$ 打電話給 $Y$ 或反之亦然。 類似地， $X$ 是 $Z$ 的朋友，如果 $X$ 是 $Y$ 的朋友， $Y$ 是 $Z$的朋友； 等於更長的鏈。
 
-The Prime Minister's phone number is 524287. After how many successful calls, not counting misdials, will 99% of the users (including the PM) be a friend, or a friend of a friend etc., of the Prime Minister?
+總理的電話號碼爲524287。 After how many successful calls, not counting misdials, will 99% of the users (including the PM) be a friend, or a friend of a friend etc., of the Prime Minister?
 
 # --hints--
 
-`connectednessOfANetwork()` should return `2325629`.
+`connectednessOfANetwork()` 應該返回`2325629`
 
 ```js
 assert.strictEqual(connectednessOfANetwork(), 2325629);

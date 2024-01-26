@@ -1,6 +1,6 @@
 ---
 id: 5966c21cf732a95f1b67dd28
-title: Date manipulation
+title: 日期操縱
 challengeType: 1
 forumTopicId: 302244
 dashedName: date-manipulation
@@ -10,25 +10,25 @@ dashedName: date-manipulation
 
 Given a date string in EST, output the given date as a string with 12 hours added to the time. Time zone should be preserved.
 
-Example input: `"March 6 2009 7:30pm EST"`
+給定EST中的日期字符串，將給定日期輸出爲字符串，並添加12小時。
 
-Example output: `"March 7 2009 7:30am EST"`
+時區應該保留。
 
 # --hints--
 
-`add12Hours` should be a function.
+示例輸入：
 
 ```js
 assert(typeof add12Hours === 'function');
 ```
 
-`add12Hours(dateString)` should return a string.
+`add12Hours(dateString)`應該返回一個字符串。
 
 ```js
 assert(typeof add12Hours('January 17 2017 11:43am EST') === 'string');
 ```
 
-`add12Hours("January 17 2017 11:43am EST")` should return `"January 17 2017 11:43pm EST"`
+輸出示例：
 
 ```js
 assert(
@@ -36,25 +36,25 @@ assert(
 );
 ```
 
-Should handle day change. `add12Hours("March 6 2009 7:30pm EST")` should return `"March 7 2009 7:30am EST"`
+漢德爾應該改變一天。 `add12Hours("" + tests[1] + "")`應返回`"" + answers[1] + ""`
 
 ```js
 assert(add12Hours('March 6 2009 7:30pm EST') === 'March 7 2009 7:30am EST');
 ```
 
-Should handle month change in a leap years. `add12Hours("February 29 2004 9:15pm EST")` should return `"March 1 2004 9:15am EST"`
+漢德爾月份應該在閏年中發生變化。 `add12Hours("" + tests[2] + "")`應返回`"" + answers[2] + ""`
 
 ```js
 assert(add12Hours('February 29 2004 9:15pm EST') === 'March 1 2004 9:15am EST');
 ```
 
-Should handle month change in a common years. `add12Hours("February 28 1999 3:15pm EST")` should return `"March 1 1999 3:15am EST"`
+應該在一個共同的年份改變漢德爾月份。 `add12Hours("" + tests[3] + "")`應該返回`"" + answers[3] + ""`
 
 ```js
 assert(add12Hours('February 28 1999 3:15pm EST') === 'March 1 1999 3:15am EST');
 ```
 
-Should handle year change. `add12Hours("December 31 2020 1:45pm EST")` should return `"January 1 2021 1:45am EST"`
+漢德爾應該改變一年。 `add12Hours("" + tests[4] + "")`應該返回`"" + answers[4] + ""`
 
 ```js
 assert(

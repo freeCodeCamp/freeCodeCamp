@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8024
-title: State name puzzle
+title: 州名謎題
 challengeType: 1
 forumTopicId: 302323
 dashedName: state-name-puzzle
@@ -15,17 +15,17 @@ dashedName: state-name-puzzle
 
 Write a function to solve the challenge for a given array of actual U.S. state names, and for fictional state names.
 
-The function should return an array. Each element should be an object in this form: `{"from":[],"to":[]}`. The `from` array should contain the original names and the `to` array should contain the resultant names.
+這個函數應返回一個數組。 每個元素都應該是以下形式的對象：`{"from":[],"to":[]}`。 從</code> 數組的 `應該包含原始名稱, <code>到` 數組應該包含結果產生的名稱。
 
 # --hints--
 
-`solve` should be a function.
+`solve` 應該是一個函數。
 
 ```js
 assert(typeof solve == 'function');
 ```
 
-`solve(["New Mexico", "New York", "North Carolina ", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota"])` should return an array.
+`solve(["New Mexico", "New York", "North Carolina ", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota"])` 應該返回一個數組。
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-`solve(["New Mexico", "New York", "North Carolina ", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota"])` should return `[{ from: ["North Carolina ", "South Dakota"], to: ["North Dakota", "South Carolina"] }]`.
+`solve(["New Mexico", "New York", "North Carolina ", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota"])` 應該返回 `[{ from: ["North Carolina ", "South Dakota"], to: ["North Dakota", "South Carolina"] }]`。
 
 ```js
 assert.deepEqual(
@@ -73,7 +73,7 @@ assert.deepEqual(
 );
 ```
 
-`solve(["New York", "New Kory", "Wen Kory", "York New", "Kory New", "New Kory"])` should return `[{ from: ["New Kory", "New York"], to: ["Wen Kory", "York New"] }, { from: ["New Kory", "New York"], to: ["Kory New", "Wen Kory"] }, { from: ["New Kory", "New York"], to: ["Kory New", "York New"] }, { from: ["New York", "Wen Kory"], to: ["New Kory", "York New"] }, { from: ["New York", "Wen Kory"], to: ["Kory New", "New Kory"] }, { from: ["New York", "Wen Kory"], to: ["Kory New", "York New"] }, { from: ["New York", "York New"], to: ["New Kory", "Wen Kory"] }, { from: ["New York", "York New"], to: ["Kory New", "New Kory"] }, { from: ["New York", "York New"], to: ["Kory New", "Wen Kory"] }, { from: ["Kory New", "New York"], to: ["New Kory", "Wen Kory"] }, { from: ["Kory New", "New York"], to: ["New Kory", "York New"] }, { from: ["Kory New", "New York"], to: ["Wen Kory", "York New"] }, { from: ["New Kory", "Wen Kory"], to: ["Kory New", "York New"] }, { from: ["New Kory", "York New"], to: ["Kory New", "Wen Kory"] }, { from: ["Kory New", "New Kory"], to: ["Wen Kory", "York New"] }]`.
+`solve(["New York", "New Kory", "Wen Kory", "York New", "Kory New", "New Kory"])` 應該返回 `[{ from: ["New Kory", "New York"], to: ["Wen Kory", "York New"] }, { from: ["New Kory", "New York"], to: ["Kory New", "Wen Kory"] }, { from: ["New Kory", "New York"], to: ["Kory New", "York New"] }, { from: ["New York", "Wen Kory"], to: ["New Kory", "York New"] }, { from: ["New York", "Wen Kory"], to: ["Kory New", "New Kory"] }, { from: ["New York", "Wen Kory"], to: ["Kory New", "York New"] }, { from: ["New York", "York New"], to: ["New Kory", "Wen Kory"] }, { from: ["New York", "York New"], to: ["Kory New", "New Kory"] }, { from: ["New York", "York New"], to: ["Kory New", "Wen Kory"] }, { from: ["Kory New", "New York"], to: ["New Kory", "Wen Kory"] }, { from: ["Kory New", "New York"], to: ["New Kory", "York New"] }, { from: ["Kory New", "New York"], to: ["Wen Kory", "York New"] }, { from: ["New Kory", "Wen Kory"], to: ["Kory New", "York New"] }, { from: ["New Kory", "York New"], to: ["Kory New", "Wen Kory"] }, { from: ["Kory New", "New Kory"], to: ["Wen Kory", "York New"] }]`。
 
 ```js
 assert.deepEqual(

@@ -21,11 +21,11 @@ Focus on the specific actions and timing of Maria's activities on Tuesdays.
 
 `On Tuesdays, I learn Japanese. I _ online lessons at 7 _`
 
-## --blanks--
+## -blanks--
 
 `take`
 
-### --feedback--
+### --Feedback--
 
 Used here to describe the action of participating in online lessons.
 
@@ -33,7 +33,7 @@ Used here to describe the action of participating in online lessons.
 
 `PM`
 
-### --feedback--
+### --Feedback--
 
 Specifies that the lessons occur in the evening, not in the morning `AM`. Use capital letters.
 

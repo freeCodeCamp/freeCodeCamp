@@ -1,6 +1,6 @@
 ---
 id: 59667989bf71cf555dd5d2ff
-title: S-Expressions
+title: S-Ausdrücke
 challengeType: 1
 forumTopicId: 302303
 dashedName: s-expressions
@@ -12,43 +12,43 @@ dashedName: s-expressions
 
 # --instructions--
 
-Write a simple reader/parser for S-Expressions that handles quoted and unquoted strings, integers and floats.
+Schreibe einen einfachen Reader/Parser für S-Expressions, der mit quotierten und unquotierten Strings, Integers und Floats umgehen kann.
 
-The function should read a single but nested S-Expression from a string and return it as a (nested) array.
+Die Funktion soll einen einzelnen, aber verschachtelten S-Ausdruck aus einer Zeichenkette lesen und als (verschachtelte) Anordnung zurückgeben.
 
-Newlines and other whitespace may be ignored unless contained within a quoted string.
+Zeilenumbrüche und andere Leerzeichen können ignoriert werden, es sei denn, sie befinden sich innerhalb einer Zeichenkette in Anführungszeichen.
 
-"`()`" inside quoted strings are not interpreted, but treated as part of the string.
+"`()`" innerhalb von Zeichenketten in Anführungszeichen werden nicht interpretiert, sondern als Teil der Zeichenkette behandelt.
 
-Handling escaped quotes inside a string is optional; thus "`(foo"bar)`" may be treated as a string "`foo"bar`", or as an error.
+Die Verarbeitung von Anführungszeichen in Verbindung mit einer Escape-Sequenz innerhalb eines Strings ist optional; demnach kann "`(foo"bar)`" als String "`foo"bar`" behandelt werden oder als Fehler.
 
-For this, the reader need not recognize `\` for escaping, but should, in addition, recognize numbers if the language has appropriate data types.
+Dazu muss der Leser nicht `\` für das Escaping erkennen, sondern sollte darüber hinaus Zahlen erkennen, wenn die Sprache über entsprechende Datentypen verfügt.
 
-Note that with the exception of `()"` (`\` if escaping is supported) and whitespace, there are no special characters. Anything else is allowed without quotes.
+Beachte, dass es mit Ausnahme von `()"` (`\`, wenn Escaping unterstützt wird) und der Leerzeichen keine Sonderzeichen gibt. Alles andere ist ohne Anführungszeichen erlaubt.
 
-The reader should be able to read the following input
+Der Leser sollte in der Lage sein die folgende Eingabe zu lesen
 
 <pre>((data "quoted data" 123 4.5)
 (data (!@# (4.5) "(more" "data)")))
 </pre>
 
-and turn it into a native data structure.
+und sie in eine native Datenstruktur umzuwandeln.
 
 # --hints--
 
-`parseSexpr` should be a function.
+`parseSexpr` sollte eine Funktion sein.
 
 ```js
 assert(typeof parseSexpr === 'function');
 ```
 
-`parseSexpr('(data1 data2 data3)')` should return `['data1', 'data2', 'data3']`
+`parseSexpr('(data1 data2 data3)')` sollte `['data1', 'data2', 'data3']` zurückgeben
 
 ```js
 assert.deepEqual(parseSexpr(simpleSExpr), simpleSolution);
 ```
 
-`parseSexpr('((data "quoted data" 123 4.5) (data (!@# (4.5) "(more" "data)")))')` should return `[['data', '"quoted data"', 123, 4.5], ['data', ['!@#', [4.5], '"(more"', '"data)"']]]`.
+`parseSexpr('((data "quoted data" 123 4.5) (data (!@# (4.5) "(more" "data)")))')` sollte `[['data', '"quoted data"', 123, 4.5], ['data', ['!@#', [4.5], '"(more"', '"data)"']]]` zurückgeben.
 
 ```js
 assert.deepEqual(parseSexpr(basicSExpr), basicSolution);

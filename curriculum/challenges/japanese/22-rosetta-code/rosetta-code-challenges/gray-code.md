@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e80
-title: Gray code
+title: グレイコード
 challengeType: 1
 forumTopicId: 302276
 dashedName: gray-code
@@ -10,21 +10,21 @@ dashedName: gray-code
 
 Gray code is a form of binary encoding where transitions between consecutive numbers differ by only one bit.
 
-This is a useful encoding for reducing hardware data hazards with values that change rapidly and/or connect to slower hardware as inputs.
+これは、急速に変化する値を持つ場合や入力時に動作の遅いハードウェアに接続する場合に、ハードウェアのデータハザードを減少させるのに役立つエンコーディングです。
 
-It is also useful for generating inputs for Karnaugh maps in order from left to right or top to bottom.
+カルノー図の入力を左から右への順に、または上から下の順に生成する場合にも便利です。
 
 # --instructions--
 
-Create a function to encode a number to and decode a number from Gray code. The function should will have 2 parameters.
+数値をグレイコードにエンコードし、グレイコードから数値にデコードする関数を作成してください。 この関数は 2 つのパラメーターを取得する必要があります。
 
-The first would be a boolean. The function should encode for true and decode for false. The second parameter would be the number to be encoded/decoded.
+1つ目はブール値です。 この関数は true の場合にエンコードし、false の場合にデコードします。 2 つ目のパラメータはエンコード/デコードされる数値です。
 
-Display the normal binary representations, Gray code representations, and decoded Gray code values for all 5-bit binary numbers (0-31 inclusive, leading 0's not necessary).
+すべての 5 ビット 2 進数 (0-31 を含む、最初の 0 は省略可) の通常のバイナリ表現、グレイコード表現、およびグレイコードからデコードされた値を表示します。
 
-There are many possible Gray codes. The following encodes what is called "binary reflected Gray code."
+グレイコードには様々な方法があります。 以下は、「交番二進グレイコード」と呼ばれるエンコードです。
 
-Encoding (MSB is bit 0, b is binary, g is Gray code):
+エンコーディング (最上位ビットはビット 0、b はバイナリ、g はグレイコード):
 
 <pre>if b[i-1] = 1
   g[i] = not b[i]
@@ -32,12 +32,12 @@ else
   g[i] = b[i]
 </pre>
 
-Or:
+または:
 
-<pre>g = b xor (b logically right shifted 1 time)
+<pre>g = b xor (b を論理的に 1 回右シフト)
 </pre>
 
-Decoding (MSB is bit 0, b is binary, g is Gray code):
+デコーディング (最上位ビットはビット 0、b はバイナリ、g はグレイコード):
 
 <pre>b[0] = g[0]<br>
 for other bits:
@@ -46,49 +46,49 @@ b[i] = g[i] xor b[i-1]
 
 # --hints--
 
-`gray` should be a function.
+`gray` は関数とします。
 
 ```js
 assert(typeof gray == 'function');
 ```
 
-`gray(true,177)` should return a number.
+`gray(true,177)` は数値を返す必要があります。
 
 ```js
 assert(typeof gray(true, 177) == 'number');
 ```
 
-`gray(true,177)` should return `233`.
+`gray(true,177)` は`233`を返す必要があります。
 
 ```js
 assert.equal(gray(true, 177), 233);
 ```
 
-`gray(true,425)` should return `381`.
+`gray(true,425)` は`381`を返す必要があります。
 
 ```js
 assert.equal(gray(true, 425), 381);
 ```
 
-`gray(true,870)` should return `725`.
+`gray(true,870)` は`725`を返す必要があります。
 
 ```js
 assert.equal(gray(true, 870), 725);
 ```
 
-`gray(false,233)` should return `177`.
+`gray(false,233)` は`177`を返す必要があります。
 
 ```js
 assert.equal(gray(false, 233), 177);
 ```
 
-`gray(false,381)` should return `425`.
+`gray(false,381)` は`425`を返す必要があります。
 
 ```js
 assert.equal(gray(false, 381), 425);
 ```
 
-`gray(false,725)` should return `870`.
+`gray(false,725)`は`870`を返す必要があります。
 
 ```js
 assert.equal(gray(false, 725), 870);

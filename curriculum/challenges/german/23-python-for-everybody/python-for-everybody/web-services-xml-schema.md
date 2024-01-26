@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0e0b6c005b0e76f07c
-title: 'Web Services: XML Schema'
+title: 'Webdienste: XML-Schema'
 challengeType: 11
 videoId: yWU9kTxW-nc
 bilibiliIds:
@@ -18,15 +18,15 @@ What is XSD?
 
 ## --answers--
 
-The W3C Schema specification for XML.
+Die W3C-Schema Spezifikation für XML.
 
 ---
 
-The standard JSON schema from MOZ.
+Das Standard-JSON-Schema von MOZ.
 
 ---
 
-Extensible Situational Driver
+Erweiterbarer Situationsbezogener Treiber
 
 ## --video-solution--
 

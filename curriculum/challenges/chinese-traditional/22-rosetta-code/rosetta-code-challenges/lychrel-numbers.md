@@ -1,6 +1,6 @@
 ---
 id: 5ea2815a8640bcc6cb7dab3c
-title: Lychrel numbers
+title: 萊克瑞爾數
 challengeType: 1
 forumTopicId: 385287
 dashedName: lychrel-numbers
@@ -10,20 +10,20 @@ dashedName: lychrel-numbers
 
 <ol>
   <li>Take an integer <code>n₀</code>, greater than zero.</li>
-  <li>Form the next number <code>n</code> of the series by reversing <code>n₀</code> and adding it to <code>n₀</code></li>
-  <li>Stop when <code>n</code> becomes palindromic - i.e. the digits of <code>n</code> in reverse order == <code>n</code>.</li>
+  <li>通過反轉 <code>n₀</code> 並將其添加到 <code>n₀</code> 中，形成系列的下一個數字 <code>n</code></li>
+  <li>當 <code>n</code> 變成迴文時停止 - 即 <code>n</code> 的數字倒序 == <code>n</code>。</li>
 </ol>
 
 The above recurrence relation when applied to most starting numbers `n` = 1, 2, ... terminates in a palindrome quite quickly.
 
-For example if `n₀` = 12 we get:
+例如，如果 `n₀` = 12 我們得到：
 
 ```bash
 12
 12 + 21 = 33,  a palindrome!
 ```
 
-And if `n₀` = 55 we get:
+如果 `n₀` = 55 我們得到：
 
 ```bash
 55
@@ -31,17 +31,17 @@ And if `n₀` = 55 we get:
 110 + 011 = 121,  a palindrome!
 ```
 
-Notice that the check for a palindrome happens *after* an addition.
+請注意，迴文檢查發生在添加 *之後*。
 
-Some starting numbers seem to go on forever; the recurrence relation for 196 has been calculated for millions of repetitions forming numbers with millions of digits, without forming a palindrome. These numbers that do not end in a palindrome are called **Lychrel numbers**.
+一些起始數字似乎永遠持續下去； 196 的遞推關係已經計算了數百萬次重複，形成數百萬位的數字，而不形成迴文。 這些不以迴文結尾的數字稱爲 **萊克瑞爾數字**。
 
-For the purposes of this task a Lychrel number is any starting number that does not form a palindrome within 500 (or more) iterations.
+出於此任務的目的，Lychrel 數是在 500（或更多）次迭代內不形成迴文的任何起始數。
 
-**Seed and related Lychrel numbers:**
+**種子和相關的 Lychrel 數：**
 
-Any integer produced in the sequence of a Lychrel number is also a Lychrel number.
+在利克瑞爾數的序列中產生的任何整數也是利克瑞爾數。
 
-In general, any sequence from one Lychrel number *might* converge to join the sequence from a prior Lychrel number candidate; for example the sequences for the numbers 196 and then 689 begin:
+一般來說，來自一個 Lychrel 數的任何序列 *可能* 收斂以加入來自先前 Lychrel 數候選的序列；例如數字 196 和 689 的序列開始：
 
 ```bash
     196
@@ -58,59 +58,59 @@ In general, any sequence from one Lychrel number *might* converge to join the se
     ...
 ```
 
-So we see that the sequence starting with 689 converges to, and continues with the same numbers as that for 196.
+所以我們看到從 689 開始的序列收斂到，並以與 196 相同的數字繼續。
 
-Because of this we can further split the Lychrel numbers into true **Seed** Lychrel number candidates, and **Related** numbers that produce no palindromes but have integers in their sequence seen as part of the sequence generated from a lower Lychrel number.
+因此，我們可以將 Lychrel 數進一步拆分爲真正的 **Seed** 候選 Lychrel 數；以及沒有產生迴文，但在它們的序列中有整數被視爲從較低的 Lychrel 數生成的序列的一部分的 ** Related ** 數。
 
 # --instructions--
 
-Write a function that takes a number as a parameter. Return true if the number is a Lynchrel number. Otherwise, return false. Remember that the iteration limit is 500.
+編寫一個以數字爲參數的函數。 如果數字是 Lynchrel 數字，則返回 true。 否則，返回 false。 請記住，迭代限制爲 500。
 
 # --hints--
 
-`isLychrel` should be a function.
+`isLychrel` 應該是一個函數。
 
 ```js
 assert(typeof isLychrel === 'function');
 ```
 
-`isLychrel(12)` should return a boolean.
+`isLychrel(12)` 應該返回一個布爾值。
 
 ```js
 assert(typeof isLychrel(12) === 'boolean');
 ```
 
-`isLychrel(12)` should return `false`.
+`isLychrel(12)` 應該返回 `false`。
 
 ```js
 assert.equal(isLychrel(12), false);
 ```
 
-`isLychrel(55)` should return `false`.
+`isLychrel(55)` 應該返回 `false`。
 
 ```js
 assert.equal(isLychrel(55), false);
 ```
 
-`isLychrel(196)` should return `true`.
+`isLychrel(196)` 應該返回 `true`。
 
 ```js
 assert.equal(isLychrel(196), true);
 ```
 
-`isLychrel(879)` should return `true`.
+`isLychrel(879)` 應該返回 `true`。
 
 ```js
 assert.equal(isLychrel(879), true);
 ```
 
-`isLychrel(44987)` should return `false`.
+`isLychrel(44987)` 應該返回 `false`。
 
 ```js
 assert.equal(isLychrel(44987), false);
 ```
 
-`isLychrel(7059)` should return `true`.
+`isLychrel(7059)` 應該返回 `true`。
 
 ```js
 assert.equal(isLychrel(7059), true);

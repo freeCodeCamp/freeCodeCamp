@@ -1,6 +1,6 @@
 ---
 id: 59713bd26bdeb8a594fb9413
-title: Count the coins
+title: 硬貨を数える
 challengeType: 1
 forumTopicId: 302238
 dashedName: count-the-coins
@@ -17,30 +17,30 @@ There are four types of common coins in US currency:
   <li>pennies (1 cent)</li>
 </ul>
 
-<p>There are six ways to make change for 15 cents:</p>
+<p>15セントを両替するには6つの組み合わせがあります。</p>
 
 <ul>
   <li>A dime and a nickel</li>
-  <li>A dime and 5 pennies</li>
-  <li>3 nickels</li>
-  <li>2 nickels and 5 pennies</li>
-  <li>A nickel and 10 pennies</li>
-  <li>15 pennies</li>
+  <li>10セント硬貨1枚と1セント硬貨5枚</li>
+  <li>5セント硬貨3枚</li>
+  <li>5セント硬貨2枚と1セント硬貨5枚</li>
+  <li>5セント硬貨1枚と1セント硬貨10枚</li>
+  <li>1セント硬貨15枚</li>
 </ul>
 
 # --instructions--
 
-Implement a function to determine how many ways there are to make change for a given input, `cents`, that represents an amount of US pennies using these common coins.
+米国の1セント硬貨である `cents` での入力値を、共通硬貨を使用して両替する場合、いくつの組み合わせがあるかを求める関数を作成します。
 
 # --hints--
 
-`countCoins` should be a function.
+`countCoins` という関数です。
 
 ```js
 assert(typeof countCoins === 'function');
 ```
 
-`countCoins(15)` should return `6`.
+`countCoins(15)` は `6` を返します。
 
 ```js
 assert.equal(countCoins(15), 6);
@@ -52,7 +52,7 @@ assert.equal(countCoins(15), 6);
 assert.equal(countCoins(85), 163);
 ```
 
-`countCoins(100)` should return `242`.
+`countCoins(100)` は `242` を返します。
 
 ```js
 assert.equal(countCoins(100), 242);

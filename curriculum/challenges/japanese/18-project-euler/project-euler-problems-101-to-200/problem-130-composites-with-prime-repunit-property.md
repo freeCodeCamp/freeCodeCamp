@@ -1,6 +1,6 @@
 ---
 id: 5900f3ee1000cf542c50ff00
-title: 'Problem 130: Composites with prime repunit property'
+title: '問題 130: 素数レピュニットの性質を持つ合成数'
 challengeType: 1
 forumTopicId: 301758
 dashedName: problem-130-composites-with-prime-repunit-property
@@ -8,19 +8,19 @@ dashedName: problem-130-composites-with-prime-repunit-property
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define $R(k)$ to be a repunit of length $k$; for example, $R(6) = 111111$.
+1 のみで構成される数はレピュニット数と呼ばれます。 ここでは、長さ $k$ のレピュニット数を $R(k)$ と定義します。例えば、$R(6) = 111111$ です。
 
-Given that $n$ is a positive integer and $GCD(n, 10) = 1$, it can be shown that there always exists a value, $k$, for which $R(k)$ is divisible by $n$, and let $A(n)$ be the least such value of $k$; for example, $A(7) = 6$ and $A(41) = 5$.
+$n$ を正の整数とし、$GCD(n, 10) = 1$ が与えられる場合、$R(k)$ が $n$ で割り切れるような値 $k$ が必ず存在することを証明できます。また、そのような $k$ の最小値を $A(n)$ とします。例えば、$A(7) = 6$, $A(41) = 5$ です。
 
-You are given that for all primes, $p > 5$, that $p − 1$ is divisible by $A(p)$. For example, when $p = 41, A(41) = 5$, and 40 is divisible by 5.
+すべての素数 $p > 5$ について、$p − 1$ は $A(p)$ で割り切れるとします。 例えば、$p = 41 のとき、A(41) = 5$ であり、40 は 5 で割り切れます。
 
-However, there are rare composite values for which this is also true; the first five examples being 91, 259, 451, 481, and 703.
+しかし、これが当てはまる合成数もまれに存在し、最初の 5 例は 91, 259, 451, 481, 703 です。
 
-Find the sum of the first twenty-five composite values of $n$ for which $GCD(n, 10) = 1$ and $n − 1$ is divisible by $A(n)$.
+$GCD(n, 10) = 1$ であり、$n − 1$ が $A(n)$ で割り切れるような合成数 $n$ について、その最初の 25 個の総和を求めなさい。
 
 # --hints--
 
-`compositeRepunit()` should return `149253`.
+`compositeRepunit()` は `149253` を返す必要があります。
 
 ```js
 assert.strictEqual(compositeRepunit(), 149253);

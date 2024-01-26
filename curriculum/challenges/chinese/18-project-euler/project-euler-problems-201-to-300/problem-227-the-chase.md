@@ -1,6 +1,6 @@
 ---
 id: 5900f44f1000cf542c50ff61
-title: 'Problem 227: The Chase'
+title: '问题227：大通'
 challengeType: 1
 forumTopicId: 301870
 dashedName: problem-227-the-chase
@@ -10,7 +10,7 @@ dashedName: problem-227-the-chase
 
 "The Chase" is a game played with two dice and an even number of players.
 
-The players sit around a table; the game begins with two opposite players having one die each. On each turn, the two players with a die roll it.
+球员坐在桌子旁;游戏开始于两个相对的玩家，每个玩家有一个骰子。 在每个回合中，两个玩家都会掷骰子。
 
 If the player rolls a 1, he passes the die to his neighbour on the left.
 

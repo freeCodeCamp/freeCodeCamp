@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0c0b6c005b0e76f073
-title: 'Networking: Write a Web Browser'
+title: '联网：编写一个 Web 浏览器'
 challengeType: 11
 videoId: zjyT9DaAjx4
 bilibiliIds:
@@ -34,19 +34,19 @@ mysock.close()
 
 ## --answers--
 
-A simple web server.
+一个简单的 web 服务器
 
 ---
 
-A simple email client.
+一个简单的 email 客户端
 
 ---
 
-A simple todo list.
+一个简单的待办事项列表
 
 ---
 
-A simple web browser.
+一个简单的 web 浏览器
 
 ## --video-solution--
 

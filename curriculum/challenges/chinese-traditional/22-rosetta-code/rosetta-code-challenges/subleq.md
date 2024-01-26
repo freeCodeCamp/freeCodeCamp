@@ -10,32 +10,32 @@ dashedName: subleq
 
 Subleq is an example of a One-Instruction Set Computer (OISC).
 
-It is named after its only instruction, which is **SU**btract and **B**ranch if **L**ess than or **EQ**ual to zero.
+它以其唯一的指令命名，即減法（**SU**）和分支（**B**）如果小於（**L**）或等於（**EQ**）0。
 
-Your task is to create an interpreter which emulates such a machine.
+你的任務是創建一個模擬這種機器的解釋器。
 
-The machine's memory consists of an array of signed integers. Any reasonable word size is fine, but the memory must be able to hold negative as well as positive numbers.
+機器的內存由一個有符號整數數組組成。 任何合理的字長都可以，但內存必須能夠容納負數和正數。
 
-Execution begins with the instruction pointer aimed at the first word, which is address 0. It proceeds as follows:
+執行從指向第一個字（地址 0）的指令指針開始。 它的運作方式如下：
 
 <ol>
   <li>Let A, B, and C be the value stored in the three consecutive words in memory starting at the instruction pointer.</li>
-  <li>Advance the instruction pointer 3 words to point at the address after the one containing C.</li>
-  <li>If A is -1, then a character is read from standard input and its code point stored in the address given by B. C is unused.</li>
-  <li>If B is -1, then the number contained in the address given by A is interpreted as a code point and the corresponding character output. C is again unused.</li>
-  <li>Otherwise, both A and B are treated as the addresses of memory locations. The number contained in the address given by A is subtracted from the number at the address given by B (and the result stored back in address B). If the result is zero or negative, the value C becomes the new instruction pointer.</li>
-  <li>If the instruction pointer becomes negative, execution halts.</li>
+  <li>將指令指針前進 3 個字，指向包含 C 後的地址。</li>
+  <li>如果 A 爲 -1，則從標準輸入中讀取一個字符，其代碼點存儲在 B 給定的地址中。C 未使用。</li>
+  <li>如果 B 爲 -1，則 A 給出的地址中包含的數字被解釋爲代碼點和相應的字符輸出。 C 再次未使用。</li>
+  <li>否則，A 和 B 都被視爲內存位置的地址。 包含在 A 給出的地址中的數字從 B 給出的地址處的數字中減去（並將結果存儲回地址 B 中）。 如果結果爲零或負數，則值 C 成爲新的指令指針。</li>
+  <li>如果指令指針變爲負數，則執行停止。</li>
 </ol>
 
-Other negative addresses besides -1 may be treated as equivalent to -1, or generate an error, as you see fit.
+除了 -1 之外的其他負地址可能被視爲等效於 -1，或者產生錯誤，由你判斷。
 
-Your solution should accept a program to execute on the machine, separately from the input fed to the program itself.
+你的解決方案應該接受要在機器上執行的程序，與輸入到程序本身的輸入分開。
 
-This program should be in raw subleq "machine code" - whitespace-separated decimal numbers, with no symbolic names or other assembly-level extensions, to be loaded into memory starting at address 0. Show the output of your solution when fed this "Hello, world!" program. (Note that the example assumes ASCII or a superset of it, such as any of the Latin-N character sets or Unicode. You may translate it into another character set if your implementation is on a non-ASCiI-compatible environment.)
+這個程序應該是原始 subleq “機器代碼”——空格分隔的十進制數，沒有符號名稱或其他程序集級擴展，加載到從地址 0 開始的內存中。 當向這個 "Hello, world!" 程序輸入時，顯示你的解決方案的輸出。 （請注意，該示例假定 ASCII 或其超集，例如任何拉丁 N 字符集或 Unicode。 如果你的實現是在非 ASCII 兼容的環境中，你可以將其轉換爲另一個字符集。）
 
 <pre>15 17 -1 17 -1 -1 16 1 -1 16 3 -1 15 15 0 0 -1 72 101 108 108 111 44 32 119 111 114 108 100 33 10 0</pre>
 
-Which corresponds to something like this in a hypothetical assembler language:
+這對應於假設的彙編語言中的類似內容：
 
 <pre>start:
     zero, message, -1
@@ -50,17 +50,17 @@ message: "Hello, world!\n\0"
 
 # --instructions--
 
-Write a function that takes an array of integers as a parameter. This represents the memory elements. The function should interpret the sequence and return the output string. For this task, assume that there is no standard input.
+編寫一個將整數數組作爲參數的函數。 這代表內存元素。 該函數應該解釋序列並返回輸出字符串。 對於此任務，假設沒有標準輸入。
 
 # --hints--
 
-`Subleq` should be a function.
+`Subleq` 應該是一個函數。
 
 ```js
 assert(typeof Subleq == 'function');
 ```
 
-`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` should return a string.
+`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` 應該返回一個字符串。
 
 ```js
 assert(
@@ -100,7 +100,7 @@ assert(
 );
 ```
 
-`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` should return `"Hello, world!"`.
+`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` 應該返回 `"Hello, world!"`。
 
 ```js
 assert.equal(

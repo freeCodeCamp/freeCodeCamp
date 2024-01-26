@@ -1,6 +1,6 @@
 ---
 id: 5900f41e1000cf542c50ff31
-title: 'Problem 178: Step Numbers'
+title: '問題 178: ステップ数'
 challengeType: 1
 forumTopicId: 301813
 dashedName: problem-178-step-numbers
@@ -8,19 +8,19 @@ dashedName: problem-178-step-numbers
 
 # --description--
 
-Consider the number 45656.
+45656 という数について考えます。
 
-It can be seen that each pair of consecutive digits of 45656 has a difference of one.
+45656 の中で連続する 2 桁の差がそれぞれ 1 であることが分かります。
 
-A number for which every pair of consecutive digits has a difference of one is called a step number.
+連続する 2 桁の差がすべて 1 である数はステップ数と呼ばれます。
 
-A pandigital number contains every decimal digit from 0 to 9 at least once.
+パンデジタル数とは、数字 0 から 9 がそれぞれ少なくとも 1 回現れる数です。
 
-How many pandigital step numbers less than ${10}^{40}$ are there?
+${10}^{40}$ 未満で、パンデジタルなステップ数はいくつありますか。
 
 # --hints--
 
-`stepNumbers()` should return `126461847755`.
+`stepNumbers()` は `126461847755` を返す必要があります。
 
 ```js
 assert.strictEqual(stepNumbers(), 126461847755);

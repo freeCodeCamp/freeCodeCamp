@@ -1,6 +1,6 @@
 ---
 id: 5900f3781000cf542c50fe8a
-title: 'Problem 11: Largest product in a grid'
+title: '問題 11: 格子内の最大の積'
 challengeType: 1
 forumTopicId: 301734
 dashedName: problem-11-largest-product-in-a-grid
@@ -8,7 +8,7 @@ dashedName: problem-11-largest-product-in-a-grid
 
 # --description--
 
-In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
+下の 20 × 20 の格子では、対角線上に沿って 4 つの数字が赤で示されています。
 
 <div style='text-align: center;'>
   08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08<br>
@@ -33,25 +33,25 @@ In the 20×20 grid below, four numbers along a diagonal line have been marked in
   01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48<br>
 </div>
 
-The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
+これらの数字の積は 26 × 63 × 78 × 14 = 1788696 です。
 
-What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in a given `arr` grid?
+与えられた `arr` 格子の中で、同じ方向 (上下左右または斜め) に連続する 4 つの数字の積のうち最大のものを求めなさい。
 
 # --hints--
 
-`largestGridProduct(testGrid)` should return a number.
+`largestGridProduct(testGrid)` は数値を返す必要があります。
 
 ```js
 assert(typeof largestGridProduct(testGrid) === 'number');
 ```
 
-`largestGridProduct(testGrid)` should return 14169081.
+`largestGridProduct(testGrid)` は 14169081 を返す必要があります。
 
 ```js
 assert.strictEqual(largestGridProduct(testGrid), 14169081);
 ```
 
-`largestGridProduct(grid)` should return 70600674.
+`largestGridProduct(grid)` は 70600674 を返す必要があります。
 
 ```js
 assert.strictEqual(largestGridProduct(grid), 70600674);

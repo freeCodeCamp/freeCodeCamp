@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0a0b6c005b0e76f06c
-title: The Tuples Collection
+title: 元組集合
 challengeType: 11
 videoId: 3Lxpladfh2k
 bilibiliIds:

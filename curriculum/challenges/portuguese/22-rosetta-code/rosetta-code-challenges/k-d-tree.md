@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ecb
-title: K-d tree
+title: Árvore k-d
 challengeType: 1
 forumTopicId: 302295
 dashedName: k-d-tree
@@ -12,17 +12,17 @@ A k-d tree (short for *k*-dimensional tree) is a space-partitioning data structu
 
 # --instructions--
 
-Write a function to perform a nearest neighbour search using k-d tree. The function takes two parameters: an array of k-dimensional points, and a single k-dimensional point whose nearest neighbour should be returned by the function. A k-dimensional point will be given as an array of k elements.
+Escreva uma função para realizar a busca de um vizinho mais próximo usando uma árvore k-d. A função recebe dois parâmetros: um array de pontos k-dimensionais e um único ponto k-dimensional, cujo vizinho mais próximo deve ser retornado pela função. Será dado um ponto k-dimensional como um conjunto de k elementos.
 
 # --hints--
 
-`kdNN` should be a function.
+`kdNN` deve ser uma função.
 
 ```js
 assert(typeof kdNN == 'function');
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` should return an array.
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` deve retornar um array.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` should return `[ 8, 1 ]`.
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` deve retornar `[ 8, 1 ]`.
 
 ```js
 assert.deepEqual(
@@ -61,7 +61,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [7, 1])` should return `[ 8, 1 ]`.
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [7, 1])` deve retornar `[ 8, 1 ]`.
 
 ```js
 assert.deepEqual(
@@ -80,7 +80,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [3, 2])` should return `[ 2, 3 ]`.
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [3, 2])` deve retornar `[ 2, 3 ]`.
 
 ```js
 assert.deepEqual(
@@ -99,7 +99,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [1, 2, 3])` should return `[ 1, 2, 5 ]`.
+`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [1, 2, 3])` deve retornar `[ 1, 2, 5 ]`.
 
 ```js
 assert.deepEqual(
@@ -118,7 +118,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [4, 5, 6])` should return `[ 4, 6, 7 ]`.
+`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [4, 5, 6])` deve retornar `[ 4, 6, 7 ]`.
 
 ```js
 assert.deepEqual(
@@ -137,7 +137,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [8, 8, 8])` should return `[ 7, 8, 9 ]`.
+`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [8, 8, 8])` deve retornar `[ 7, 8, 9 ]`.
 
 ```js
 assert.deepEqual(

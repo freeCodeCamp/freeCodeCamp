@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7eb1
-title: Identity matrix
+title: Одинична матриця
 challengeType: 1
 forumTopicId: 302290
 dashedName: identity-matrix
@@ -16,41 +16,41 @@ An *identity matrix* is a square matrix of size \\( n \\times n \\), where the d
 
 # --instructions--
 
-Write a function that takes a number `n` as a parameter and returns the identity matrix of order \\( n \\times n \\).
+Напишіть функцію, яка приймає число `n` як параметр і повертає одиничну матрицю порядку \\( n \\times n \\).
 
 # --hints--
 
-`idMatrix` should be a function.
+`idMatrix` має бути функцією.
 
 ```js
 assert(typeof idMatrix == 'function');
 ```
 
-`idMatrix(1)` should return an array.
+`idMatrix(1)` має повернути масив.
 
 ```js
 assert(Array.isArray(idMatrix(1)));
 ```
 
-`idMatrix(1)` should return `[ [ 1 ] ]`.
+`idMatrix(1)` має повернути `[ [ 1 ] ]`.
 
 ```js
 assert.deepEqual(idMatrix(1), results[0]);
 ```
 
-`idMatrix(2)` should return `[ [ 1, 0 ], [ 0, 1 ] ]`.
+`idMatrix(2)` має повернути `[ [ 1, 0 ], [ 0, 1 ] ]`.
 
 ```js
 assert.deepEqual(idMatrix(2), results[1]);
 ```
 
-`idMatrix(3)` should return `[ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ]`.
+`idMatrix(3)` має повернути `[ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ]`.
 
 ```js
 assert.deepEqual(idMatrix(3), results[2]);
 ```
 
-`idMatrix(4)` should return `[ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ]`.
+`idMatrix(4)` має повернути `[ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ]`.
 
 ```js
 assert.deepEqual(idMatrix(4), results[3]);

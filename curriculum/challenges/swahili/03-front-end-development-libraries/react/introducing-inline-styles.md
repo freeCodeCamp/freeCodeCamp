@@ -18,7 +18,7 @@ You apply inline styles to JSX elements similar to how you do it in HTML, but wi
 <div style="color: yellow; font-size: 16px">Mellow Yellow</div>
 ```
 
-JSX elements use the `style` attribute, but because of the way JSX is transpiled, you can't set the value to a `string`. Instead, you set it equal to a JavaScript `object`. Here's an example:
+JSX elements use the `style` attribute, but because of the way JSX is transpiled, you can't set the value to a `string`. Instead, you set it equal to a JavaScript `object`. Hapa kuna mfano:
 
 ```jsx
 <div style={{color: "yellow", fontSize: 16}}>Mellow Yellow</div>

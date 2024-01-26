@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ec1
-title: Iterated digits squaring
+title: Elevar ao quadrado os dígitos iterados
 challengeType: 1
 forumTopicId: 302291
 dashedName: iterated-digits-squaring
@@ -16,53 +16,53 @@ If you add the square of the digits of a Natural number (an integer bigger than 
 
 # --instructions--
 
-Write a function that takes a number as a parameter and returns 1 or 89 after performing the mentioned process.
+Escreva uma função que receba um número na forma de um parâmetro e retorne 1 ou 89 depois de executar o processo mencionado.
 
 # --hints--
 
-`iteratedSquare` should be a function.
+`iteratedSquare` deve ser uma função.
 
 ```js
 assert(typeof iteratedSquare == 'function');
 ```
 
-`iteratedSquare(4)` should return a number.
+`iteratedSquare(4)` deve retornar um número.
 
 ```js
 assert(typeof iteratedSquare(4) == 'number');
 ```
 
-`iteratedSquare(4)` should return `89`.
+`iteratedSquare(4)` deve retornar `89`.
 
 ```js
 assert.equal(iteratedSquare(4), 89);
 ```
 
-`iteratedSquare(7)` should return `1`.
+`iteratedSquare(7)` deve retornar `1`.
 
 ```js
 assert.equal(iteratedSquare(7), 1);
 ```
 
-`iteratedSquare(15)` should return `89`.
+`iteratedSquare(15)` deve retornar `89`.
 
 ```js
 assert.equal(iteratedSquare(15), 89);
 ```
 
-`iteratedSquare(20)` should return `89`.
+`iteratedSquare(20)` deve retornar `89`.
 
 ```js
 assert.equal(iteratedSquare(20), 89);
 ```
 
-`iteratedSquare(70)` should return `1`.
+`iteratedSquare(70)` deve retornar `1`.
 
 ```js
 assert.equal(iteratedSquare(70), 1);
 ```
 
-`iteratedSquare(100)` should return `1`.
+`iteratedSquare(100)` deve retornar `1`.
 
 ```js
 assert.equal(iteratedSquare(100), 1);

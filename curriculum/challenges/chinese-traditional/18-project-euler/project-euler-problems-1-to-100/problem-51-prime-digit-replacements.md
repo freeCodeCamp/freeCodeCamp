@@ -1,6 +1,6 @@
 ---
 id: 5900f39f1000cf542c50feb2
-title: 'Problem 51: Prime digit replacements'
+title: '問題51：主要數字替換'
 challengeType: 1
 forumTopicId: 302162
 dashedName: problem-51-prime-digit-replacements
@@ -10,7 +10,7 @@ dashedName: problem-51-prime-digit-replacements
 
 By replacing the 1st digit of the 2-digit number \*3, it turns out that six of the nine possible values: 13, 23, 43, 53, 73, and 83, are all prime.
 
-By replacing the 3rd and 4th digits of 56\*\*3 with the same digit, this 5-digit number is the first example having seven primes among the ten generated numbers, yielding the family: 56003, 56113, 56333, 56443, 56663, 56773, and 56993. Consequently 56003, being the first member of this family, is the smallest prime with this property.
+通過用相同的數字替換56 \*\* 3的第3和第4位數字，這個5位數字是在10個生成的數字中具有7個素數的第一個例子，產生該族：56003,56113,56333,56443,56663,56773因此56003，作爲這個家族的第一個成員，是擁有這個屬性的最小的素數。 Consequently 56003, being the first member of this family, is the smallest prime with this property.
 
 Find the smallest prime which, by replacing part of the number (not necessarily adjacent digits) with the same digit, is part of an `n` prime value family.
 
