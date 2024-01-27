@@ -274,8 +274,8 @@ function calculateCalories(e) {
 function getCaloriesFromInputs(list) {
   let calories = 0;
 
-  for (let i = 0; i < list.length; i++) {
-    const currVal = cleanInputString(list[i].value);
+  for (const item of list) {
+    const currVal = cleanInputString(item.value);
     const invalidInputMatch = isInvalidInput(currVal);
 
     if (invalidInputMatch) {
@@ -292,7 +292,7 @@ function getCaloriesFromInputs(list) {
 function clearForm() {
   const inputContainers = Array.from(document.querySelectorAll('.input-container'));
 
-  for (let i = 0; i < inputContainers.length; i++) {
+  for (const container of inputContainers) {
     inputContainers[i].innerHTML = '';
   }
 
