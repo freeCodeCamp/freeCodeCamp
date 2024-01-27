@@ -1,6 +1,6 @@
 ---
 id: 5900f4f21000cf542c510005
-title: 'Problem 390: Triangles with non rational sides and integral area'
+title: 'Problem 390: Dreiecke mit nicht ganzzahligen Seiten und ganzzahliger Fläche'
 challengeType: 1
 forumTopicId: 302055
 dashedName: problem-390-triangles-with-non-rational-sides-and-integral-area
@@ -10,7 +10,7 @@ dashedName: problem-390-triangles-with-non-rational-sides-and-integral-area
 
 Consider the triangle with sides $\sqrt{5}$, $\sqrt{65}$ and $\sqrt{68}$. It can be shown that this triangle has area 9.
 
-$S(n)$ is the sum of the areas of all triangles with sides $\sqrt{1 + b^2}$, $\sqrt{1 + c^2}$ and $\sqrt{b^2 + c^2}$ (for positive integers $b$ and $c$) that have an integral area not exceeding $n$.
+$S(n)$ ist die Summe der Flächen aller Dreiecke mit den Seiten $\sqrt{1 + b^2}$, $\sqrt{1 + c^2}$ und $\sqrt{b^2 + c^2}$ (für positive ganze Zahlen $b$ und $c$), deren Flächeninhalt $n$ nicht überschreitet.
 
 The example triangle has $b = 2$ and $c = 8$.
 

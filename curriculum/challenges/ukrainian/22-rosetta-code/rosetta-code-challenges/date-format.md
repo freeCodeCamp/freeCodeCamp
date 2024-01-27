@@ -1,6 +1,6 @@
 ---
 id: 59669d08d75b60482359409f
-title: Date format
+title: Формат дати
 challengeType: 1
 forumTopicId: 302243
 dashedName: date-format
@@ -10,13 +10,13 @@ dashedName: date-format
 
 Return an array with two date strings of the current date with the following specifications:
 
-- The first string's date order should be the year number, month number, and day number separated by dashes (`-`).
-- The first string's year should be four digits in length.
-- The first string's month and day should not contain any leading zeros.
-- The second string's weekday and month names should not be abbreviated.
-- The second string's day should not contain any leading zeros.
+- Дата в першому рядку повинна мати такий порядок: рік, місяць, день (розділені рискою `-`).
+- Рік в першому рядку має складатись з чотирьох цифр.
+- Місяць та день в першому рядку не можуть починатися з нуля.
+- Не скорочуйте назви дня та місяця в другому рядку.
+- День в другому рядку не може починатися з нуля.
 
-Example outputs:
+Приклад кінцевого результату:
 
 ```js
 ['2007-11-23', 'Friday, November 23, 2007']
@@ -25,25 +25,25 @@ Example outputs:
 
 # --hints--
 
-`getDateFormats` should be a function.
+`getDateFormats` має бути функцією.
 
 ```js
 assert(typeof getDateFormats === 'function');
 ```
 
-`getDateFormats` should return an object.
+`getDateFormats` має повернути об'єкт.
 
 ```js
 assert(typeof getDateFormats() === 'object');
 ```
 
-`getDateFormats` should return an array with 2 elements.
+`getDateFormats` повинен повернути масив з 2 елементами.
 
 ```js
 assert(getDateFormats().length === 2);
 ```
 
-`getDateFormats` should return the correct date in the right format
+`getDateFormats` має повернути правильну дату в правильному форматі
 
 ```js
 assert.deepEqual(getDateFormats(), dates, equalsMessage);

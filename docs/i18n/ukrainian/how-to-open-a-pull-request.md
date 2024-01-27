@@ -7,7 +7,7 @@
 Деякі приклади:
 
 1. Не редагуйте файли напряму через GitHub, це не дуже хороша ідея.
-2. Make sure the PR title follows [our convention](#prepare-a-good-pr-title).
+2. Переконайтесь, що заголовок для PR відповідає [нашій конвенції](#prepare-a-good-pr-title).
 3. Переконайтесь, що дотримуєтесь контрольного списку PR, а не просто ставите галочки. В такому випадку ми не сприйматимемо вас серйозно.
 4. Використовуйте правильний спосіб пов’язати завдання в описі PR, оновивши `XXXXXX`. Не додавайте номери завдань будь-де.
 5. Не «@згадуйте» чи запитуйте відгук кілька разів.
@@ -20,7 +20,7 @@
 
 ## Підготуйте хороший заголовок для PR
 
-We use [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull requests. Конвенція вимагає наступного формату:
+Ми використовуємо [загальноприйнятні заголовки та повідомлення](https://www.conventionalcommits.org/) для затверджень і запитів на злиття. Конвенція вимагає наступного формату:
 
 > `<тип>([область (необов’язково)]): <опис>`
 > 
@@ -28,7 +28,7 @@ We use [conventional title and messages](https://www.conventionalcommits.org/) f
 > 
 > `fix(learn): тести для завдання з циклу do...while`
 
-Whenever you open a Pull Request (PR), you can use the below to determine the type, scope (optional), and description.
+Щоразу, коли ви відкриваєте запит на злиття (PR), використовуйте нижчеподану інформацію, щоб визначити тип, область та опис.
 
 **Тип:**
 
@@ -82,7 +82,7 @@ Whenever you open a Pull Request (PR), you can use the below to determine the ty
 
    - Вам буде надано шаблон PR. Це список, якого потрібно дотримуватись перед відкриттям PR.
 
-   - Заповніть деталі, які ви вважаєте за потрібне. Ensure that you give the reviewers enough context to review the changes. If the PR makes changes to the UI, be sure to include screenshots of the changes as well. All of this information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
+   - Заповніть деталі, які ви вважаєте за потрібне. Переконайтеся, що надали рецензентам достатньо контексту для перегляду змін. Якщо PR вносить зміни до інтерфейсу, обов’язково використайте знімки екрана зі змінами. Ця інформація буде розглянута, а рецензенти вирішать, чи ваш PR буде прийнятий.
 
    - Якщо PR призначений для вирішення наявного завдання на GitHub, то використайте ключове слово _Closes_ та номер завдання в кінці опису, щоб [автоматично закрити цю проблему, якщо PR прийнятий та об’єднаний](https://help.github.com/en/articles/closing-issues-using-keywords).
 
@@ -92,7 +92,7 @@ Whenever you open a Pull Request (PR), you can use the below to determine the ty
 
    - Це надзвичайно важливо при внесенні змін, які не стосуються зміни тексту (наприклад, документації чи опису завдань). До змін, яким потрібне локальне тестування, входять JavaScript, CSS або HTML (тобто ті, які можуть змінити функціональність чи макет сторінки).
 
-   - If your PR affects the behavior of a page, it should be accompanied by corresponding [Playwright integration tests](how-to-add-playwright-tests.md).
+   - Якщо ваш PR впливає на поведінку сторінки, він повинен супроводжуватися відповідними [інтеграційними тестами Playwright](how-to-add-playwright-tests.md).
 
 ## Зворотний зв’язок по PR
 
@@ -121,7 +121,7 @@ Whenever you open a Pull Request (PR), you can use the below to determine the ty
    git pull --rebase upstream main
    ```
 
-2. Вирішіть будь-які конфлікти та додайте/редагуйте коміти
+2. Вирішіть будь-які конфлікти та додайте/редагуйте затвердження
 
    ```bash
    # Або

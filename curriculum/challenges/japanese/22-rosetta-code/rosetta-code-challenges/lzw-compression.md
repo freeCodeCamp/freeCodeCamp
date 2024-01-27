@@ -1,6 +1,6 @@
 ---
 id: 5ea2815e364d9a2222ea55f8
-title: LZW compression
+title: LZW 圧縮
 challengeType: 1
 forumTopicId: 385288
 dashedName: lzw-compression

@@ -12,7 +12,7 @@ dashedName: show-the-local-weather
 
 **Regla #1:** No mires el código del proyecto de ejemplo. Encuentra tu propia solución.
 
-**Rule #2:** Fulfill the below user stories and get all of the tests to pass. Utilice las librerías o APIs que necesites. Dale tu propio estilo personal.
+**Regla #2:** Completa las siguientes historias de usuario y consigue que todas las pruebas sean aprobadas. Utilice las librerías o APIs que necesites. Dale tu propio estilo personal.
 
 **User Story:** I can see the weather in my current location.
 
@@ -24,7 +24,7 @@ dashedName: show-the-local-weather
 
 Cuando hayas terminado, incluye un enlace a tu proyecto en CodePen y haz clic en el botón "He completado este desafío".
 
-You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
+Puedes recibir retroalimentación de tu proyecto compartiendolo en el <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">foro de freeCodeCamp</a>.
 
 # --solutions--
 

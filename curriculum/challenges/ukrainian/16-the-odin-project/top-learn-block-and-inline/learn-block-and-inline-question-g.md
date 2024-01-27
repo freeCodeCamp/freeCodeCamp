@@ -4,11 +4,12 @@ title: Learn Block and Inline Question G
 challengeType: 15
 dashedName: learn-block-and-inline-question-g
 ---
+
 # --description--
 
 Now that you have some basic understanding of `block` and inline `elements`, pull up your list of `block` and `inline` elements from a couple questions ago and see if you can identify which of the following elements are `block` elements and which are `inline` elements.
 
-# --question--    
+# --question--
 
 ## --text--
 
@@ -24,7 +25,7 @@ anchor element
 
 ---
 
-image element
+Елемент image
 
 ---
 

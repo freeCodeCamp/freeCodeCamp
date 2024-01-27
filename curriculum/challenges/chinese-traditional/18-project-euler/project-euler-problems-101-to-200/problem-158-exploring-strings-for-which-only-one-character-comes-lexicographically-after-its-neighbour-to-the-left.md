@@ -1,7 +1,7 @@
 ---
 id: 5900f40a1000cf542c50ff1d
 title: >-
-  Problem 158: Exploring strings for which only one character comes lexicographically after its neighbour to the left
+  問題158：探究字符串滿足只有一個字符會按照字母表順序出現在其左側相鄰字符之後的問題
 challengeType: 1
 forumTopicId: 301789
 dashedName: >-
@@ -12,23 +12,23 @@ dashedName: >-
 
 Taking three different letters from the 26 letters of the alphabet, character strings of length three can be formed.
 
-Examples are 'abc', 'hat' and 'zyx'.
+例如“abc”，“hat” 以及“zyx”。
 
-When we study these three examples we see that for 'abc' two characters come lexicographically after its neighbour to the left.
+當我們研究這三個例子時，我們會看到“abc”中有2個字符在左邊相鄰字符之後按照字母表順序出現。
 
-For 'hat' there is exactly one character that comes lexicographically after its neighbour to the left. For 'zyx' there are zero characters that come lexicographically after its neighbour to the left.
+而對於“hat”，只有一個字符在其左側相鄰字母之後按字母表順序出現。 對於“hat”，沒有字符在其左側相鄰字母之後按字母表順序出現。
 
-In all there are 10400 strings of length 3 for which exactly one character comes lexicographically after its neighbour to the left.
+設共有10400個長度爲3的字符串，每個字符串中僅有一個字符在其左側字符之後按字母表順序出現。
 
-We now consider strings of $n ≤ 26$ different characters from the alphabet.
+我們現在考慮由 $n ≤ 26$ 的字母表中的不同字符組成的字符串。
 
-For every $n$, $p(n)$ is the number of strings of length $n$ for which exactly one character comes lexicographically after its neighbour to the left.
+對於每一個 $n$，$p(n)$ 是長度爲 $n$ 的字符串的數量，其中正好有一個字符在左側相鄰字符之後按照字母表順序出現。
 
-What is the maximum value of $p(n)$?
+求 $p(n)$ 的最大值是多少？
 
 # --hints--
 
-`lexicographicNeighbours()` should return `409511334375`.
+`lexicographicNeighbours()` 應該返回 `409511334375`。
 
 ```js
 assert.strictEqual(lexicographicNeighbours(), 409511334375);

@@ -17,7 +17,7 @@ Add the CSS property `align-items` to the header's `.follow-btn` element. Set th
 
 # --hints--
 
-Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+`.follow-btn` yako inapaswa kutolewa kwenye ukurasa. Hakikisha umezima viendelezi vyovyote kama vile vizuizi vya matangazo.
 
 ```js
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');

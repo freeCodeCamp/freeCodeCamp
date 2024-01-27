@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f080b6c005b0e76f063
-title: Files as a Sequence
+title: الملفات كتسلسل (Files as a Sequence)
 challengeType: 11
 videoId: cIA0EokbaHE
 bilibiliIds:
@@ -14,31 +14,31 @@ dashedName: files-as-a-sequence
 
 More resources:
 
-\- <a href="https://www.youtube.com/watch?v=il1j4wkte2E" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+<a href="https://www.youtube.com/watch?v=il1j4wkte2E" target="_blank" rel="noopener noreferrer nofollow">تمرين</a>
 
 # --question--
 
 ## --text--
 
-What does the word 'continue' do in the middle of a loop?
+ماذا تفعل كلمة "continue" في منتصف الحلقة (loop)؟
 
 ## --answers--
 
-Skips to the code directly after the loop.
+تخطي إلى التعليمات البرمجية مباشرة بعد حلقة loop.
 
 ---
 
-Skips to the next line in the code.
+تخطي إلى السطر التالي في التعليمة البرمجية.
 
 ---
 
-Skips to the next iteration of the loop.
+تخطي إلى التكرار التالي من loop.
 
 ---
 
-Skips the next block of code.
+تخطي الكتلة التالية من الكود.
 
 ## --video-solution--
 
-3
+الثالث
 

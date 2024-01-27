@@ -8,19 +8,19 @@ dashedName: install-and-set-up-mongoose
 
 # --description--
 
-Working on these challenges will involve you writing your code using one of the following methods:
+العمل على هذه التحديات سوف ينطوي على كتابة كودك باستخدام إحدى الطرق التالية:
 
 - Clone <a href="https://github.com/freeCodeCamp/boilerplate-mongomongoose/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally.
 - Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete these challenges.
-- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+- استخدم أي منشئ موقع لإكمال المشروع. تحقق انك أضفت جميع الملفات من مستودعنا في GitHub في مشروعك.
 
-If you use Replit, follow these steps to set up the project:
+إذا استخدمت Replit، اتبع هذه الخطوات لإعداد المشروع:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   ابدأ باستيراد (import) المشروع إلى Replit.
+-   بعد ذلك، سترى نافذة `.replit`.
+-   اختار `Use run command` وانقر على زر `Done`.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field.
+عند الانتهاء، تأكد من استضافة ديمو (demo) أو عرض عملي لمشروعك في مكان عام. ثم أرسل عنوان URL للمشروع في خانة Solution Link.
 
 In this challenge, you will set up a MongoDB Atlas database and import the required packages to connect to it.
 

@@ -194,7 +194,7 @@
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "CSS 疑似セレクターの学習: バランスシートを作成する",
+        "title": "Learn More About CSS Pseudo Selectors by Building A Balance Sheet",
         "intro": [
           "CSS の疑似セレクターを用いて、特定の HTML 要素を変化させることができます。",
           "このコースでは、疑似セレクターを用いてバランスシート (貸借対照表) を作成します。ウェブページ上でマウスポインタを要素の上に合わせた時に要素のスタイルを変更する方法や、他のイベントを起こす方法を学習します。"
@@ -210,14 +210,14 @@
       "learn-intermediate-css-by-building-a-cat-painting": {
         "title": "CSS 中級の学習: 猫の絵を作成する",
         "intro": [
-          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts",
-          "In this course, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+          "見た目に美しく、レスポンシブなウェブレイアウトを作成するには CSS の配置をマスターすることが不可欠です。",
+          "このコースでは猫の絵を作成しながら、絶対位置指定、z-index プロパティ、transform プロパティの使い方を学習します。"
         ]
       }
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript アルゴリズムとデータ構造",
+    "title": "JavaScript Algorithms and Data Structures",
     "intro": [
       "HTML と CSS はページの内容とスタイルを制御しますが、JavaScript はそれを対話式にすることを手掛けます。JavaScript アルゴリズムとデータ構造認定講座では、変数、配列、オブジェクト、ループ、そして関数を含む JavaScript の基礎を学習します。",
       "いったん基礎を習得すれば、その知識を応用して文字列を扱うためのアルゴリズムを作成したり、数の階乗を計算したり、さらに国際宇宙ステーションの軌道を計算することもできます。",
@@ -366,7 +366,7 @@
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
-        "title": "現代的な JavaScript メソッドの学習: サッカーチームカードを作成する",
+        "title": "Learn Modern JavaScript Methods by Building Football Team Cards",
         "intro": [
           "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
           "This project will cover concepts like switch statements, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method, and more."
@@ -388,7 +388,7 @@
         ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "フェッチとプロミスの学習: freeCodeCamp 著者ページを作成する",
+        "title": "Learn Fetch and Promises by Building an fCC Authors Page",
         "intro": [
           "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
           "This freeCodeCamp authors page project will show you how to use the fetch method, then dynamically update the DOM to display the fetched data.",
@@ -770,7 +770,7 @@
         ]
       },
       "learn-list-comprehension-by-building-a-case-converter-program": {
-        "title": "リスト内包表記の学習: ケース変換プログラムを作成する",
+        "title": "Learn Python List Comprehension by Building a Case Converter Program",
         "intro": [
           "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the `.append()` list method.",
           "In this project, you'll write a program that takes a string formatted in Camel Case or Pascal Case, then converts it into Snake Case.",
@@ -938,126 +938,126 @@
     "note": "",
     "blocks": {
       "learn-ratios-and-proportions": {
-        "title": "Learn Ratios and Proportions",
+        "title": "比率と比例式を学ぶ",
         "intro": [
-          "Your journey begins here as you learn how to set up a Colab Notebook that can run Python code. Then, use the notebook to follow along with the videos to learn ratios and proportions using Python."
+          "まずは Python のコードを実行するための Colab ノートブックの設定方法を学ぶところから始めましょう。次に、動画に沿ってそのノートブックを使いながら、比率と比例式について Python を使って学びます。"
         ]
       },
       "learn-how-to-solve-for-x": {
-        "title": "Learn How to Solve for X",
+        "title": "X について解く方法を学ぶ",
         "intro": [
-          "This unit will focus on how to solve for an unknown number (often referred to as \"x\") using written Algebra and Python code."
+          "この単元では、代数と Python のコードを使って未知の数 (しばしば \"x\" と呼ばれます) について解く方法を学びます。"
         ]
       },
       "learn-fractions-and-decimals": {
-        "title": "Learn Fractions and Decimals",
+        "title": "分数と小数を学ぶ",
         "intro": [
-          "This unit will focus on converting decimals to fractions and percents."
+          "この単元では、小数から分数とパーセントへの変換について学習します。"
         ]
       },
       "learn-functions-and-graphing": {
-        "title": "Learn Functions and Graphing",
-        "intro": ["This unit will teach you about math functions."]
+        "title": "関数とグラフを学ぶ",
+        "intro": ["この単元では、数学の関数について学習します。"]
       },
       "learn-linear-functions": {
-        "title": "Learn Linear Functions",
+        "title": "線形関数を学ぶ",
         "intro": [
-          "This unit will show you how to develop linear equations from two points."
+          "この動画では、2 つの点から線形方程式を導出する方法を学習します。"
         ]
       },
       "learn-common-factors-and-square-roots": {
-        "title": "Learn Common Factors and Square Roots",
+        "title": "共通因数と平方根を学ぶ",
         "intro": [
-          "In this unit, you will learn how to find common factors and divide them out. This will be useful when simplifying fractions and factoring square roots."
+          "この単元では、共通因数を見つけて除算を行う方法を学習します。これは約分や平方根の中身の因数分解をする際に役立ちます。"
         ]
       },
       "build-a-multi-function-calculator-project": {
-        "title": "Multi-Function Calculator",
+        "title": "多機能計算機",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a multi-function calculator."
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、多機能計算機を作成します。"
         ]
       },
       "learn-how-to-graph-systems-of-equations": {
-        "title": "Learn How to Graph Systems of Equations",
+        "title": "連立方程式のグラフのかき方を学ぶ",
         "intro": [
-          "This unit will focus on graphing two equations on the same coordinate plane, so that you can see where the lines intersect."
+          "この単元では、同じ座標平面上に 2 つの方程式のグラフをかき、線が交差する場所を見つける方法を学習します。"
         ]
       },
       "learn-how-to-solve-systems-of-equations": {
-        "title": "Learn How to Solve Systems of Equations",
+        "title": "連立方程式の解き方を学ぶ",
         "intro": [
-          "In this unit, you will learn how to solve a system of two equations (with two variables) without graphing. You will see how you can factor an equation and solve for a certain variable in Python. By the end of this unit, you will be able to solve and graph the system with one block of code."
+          "この単元では、2 つの式からなる連立方程式 (変数が 2 つ) を、グラフをかかずに解く方法を学習します。Python で方程式の因数分解を行ったり、特定の変数について解いたりする方法を見ていきます。この単元の終わりには、コードを書いて連立方程式を解いたりグラフ表示したりできるようになるでしょう。"
         ]
       },
       "learn-applications-of-linear-systems": {
-        "title": "Learn Applications of Linear Systems",
+        "title": "連立一次方程式の応用を学ぶ",
         "intro": [
-          "In this unit, you will see how you can use the algebra you learned so far to solve real world problems."
+          "この単元では、ここまで学習してきた代数学を使って現実世界の問題を解決する方法を見ていきます。"
         ]
       },
       "learn-quadratic-equations": {
-        "title": "Learn Quadratic Equations",
+        "title": "二次方程式を学ぶ",
         "intro": [
-          "This unit will go beyond linear equations, to work with exponents and graph parabolas. You will learn how to find key points in parabolas and how to solve quadratic equations."
+          "この単元では線形方程式の範囲を超えて、指数を扱ったり、放物線のグラフをかいたりします。放物線の重要な点の見つけ方や、二次方程式の解き方を学習します。"
         ]
       },
       "build-a-graphing-calculator-project": {
-        "title": "Graphing Calculator",
+        "title": "グラフ電卓",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a graphing calculator."
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、グラフ電卓を作成します。"
         ]
       },
       "learn-parent-graphs-and-polynomials": {
-        "title": "Learn Parent Graphs and Polynomials",
+        "title": "親関数と多項式を学ぶ",
         "intro": [
-          "This unit will show you many different types of \"parent\" graphs, the basic patterns that make up more complicated graphs. Polynomials are mathematical expressions with \"multiple things\" - the more complicated equations that are built with basic patterns. You will see what these graphs look like, how to modify them, and how to do this all with Python code."
+          "この単元では、より複雑なグラフの元となる基本のパターンである「親」グラフのさまざまな種類を説明します。多項式は「複数のもの」からなる数式で、基本のパターンが組み合わさって複雑な方程式を構成しています。これらのグラフがどのような見た目をしているか、それを変化させる方法、Python のコードを使って同じことをする方法を学びます。"
         ]
       },
       "build-three-math-games-project": {
-        "title": "Three Math Games",
+        "title": "3 つの数学ゲーム",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build three math games."
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、3 つの数学ゲームを作成します。"
         ]
       },
       "learn-business-applications-of-college-algebra": {
-        "title": "Learn Business Applications of College Algebra",
+        "title": "代数学のビジネスへの応用を学ぶ",
         "intro": [
-          "This unit will show you how to apply your solving and graphing skills to find cost, revenue, and profit. You will write code to develop a demand function from two points. You will see how price affects the profit graph and how all of these equations relate to each other."
+          "この単元では、方程式を解いたりグラフをかいたりするスキルを、費用、収益、利益の計算に適用する方法を説明します。2 点から需要関数を導くコードを書いたり、価格が利益のグラフにどう影響するか、これらの方程式が互いにどう関係しているかを学びます。"
         ]
       },
       "learn-simple-and-compound-interest": {
-        "title": "Learn Simple and Compound Interest",
+        "title": "単利と複利を学ぶ",
         "intro": [
-          "This unit will show you how to calculate interest, loan payments, and the estimated value of investments. You will see the math formula and turn that into code. Because these formulas tend to get complicated, you will appreciate having the code where you can just modify a few values."
+          "この単元では、利子、ローンの支払い、投資の推定価値を計算する方法を説明します。数式を見て、それをコードに書き換えます。これらの計算式は複雑になりがちなので、ほんのいくつかの値を変更するだけで使えるコードのありがたみが感じられることでしょう。"
         ]
       },
       "learn-exponents-and-logarithms": {
-        "title": "Learn Exponents and Logarithms",
+        "title": "指数と対数を学ぶ",
         "intro": [
-          "This unit will show you how exponents and logarithms are inverse functions, and how you can use these functions in various applications."
+          "この単元では、指数関数と対数関数が逆関数であること、これらの関数をどのように応用できるかを学習します。"
         ]
       },
       "build-a-financial-calculator-project": {
-        "title": "Financial Calculator",
+        "title": "財務計算機",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a financial calculator."
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、財務計算機を作成します。"
         ]
       },
       "college-algebra-with-python-conclusion": {
-        "title": "College Algebra with Python: Conclusion",
+        "title": "Python を用いた代数学: まとめ",
         "intro": [
-          "This will be the last unit in this course. Let's look at how you can connect your Math and Python knowledge with external data."
+          "これはこのコース最後の単元となります。あなたの数学と Python の知識を、外部データと結びつける方法を学びましょう。"
         ]
       },
       "build-a-data-graph-explorer-project": {
-        "title": "Data Graph Explorer",
+        "title": "データグラフエクスプローラー",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a data graph explorer."
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、データグラフエクスプローラーを作成します。"
         ]
       }
     }
@@ -1070,7 +1070,7 @@
     "note": "",
     "blocks": {
       "python-for-everybody": {
-        "title": "Python for Everybody",
+        "title": "みんなの Python",
         "intro": [
           "Python for everybody is a free video course series that teaches the basics of using Python 3.",
           "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
@@ -1110,7 +1110,7 @@
     }
   },
   "the-odin-project": {
-    "title": "The Odin Project (Beta)",
+    "title": "The Odin Project - freeCodeCamp Remix (Beta)",
     "intro": [
       "The Odin Project was created in 2013 by a lone developer, Erik Trautman. Over the years, an open source community has sprung up to maintain and expand the project.",
       "freeCodeCamp has expanded upon the open source curriculum to make it run interactively in the browser, with tests to evaluate your code and ensure you've understood key concepts.",
@@ -1221,54 +1221,54 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "(New) Foundational C# with Microsoft",
+    "title": "(新) Microsoft 連携・基礎 C#",
     "intro": [
-      "This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development.",
-      "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
-      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building applications."
+      "このコースは、C# プログラミングについての総合的な入門講座です。中心となる概念、構文、ソフトウェア開発における実践的な応用例などをカバーします。",
+      "以下のハンズオン演習とプロジェクトを通して、変数、データ型、制御構造、オブジェクト指向プログラミングの原則など、C# の基礎を学習します。",
+      "このコースを完了する頃には、C# を使いこなしてアプリケーションを作成できる実践的なスキルと知識が身についていることでしょう。"
     ],
-    "note": "Each section below has a trophy associated with it that you must earn on the Microsoft Learn platform. After earning each trophy, you need to verify them on freeCodeCamp. Once you have done those, you can qualify for the certification exam.",
+    "note": "以下の各セクションでは、それぞれ関連するトロフィーを Microsoft Learn プラットフォームで獲得する必要があります。それぞれのトロフィーを獲得後、freeCodeCamp のサイトで確認を実行してください。すべてのトロフィーの確認が完了すると、認定試験の受験資格が得られます。",
     "blocks": {
       "write-your-first-code-using-c-sharp": {
-        "title": "Write Your First Code Using C#",
+        "title": "初めての C# コードを書く",
         "intro": [
-          "Begin your journey by learning to write your first code using C#. Develop a strong foundation as you explore the fundamentals and syntax of the language, setting the stage for your programming adventures."
+          "C# を使った初めてのコードを書くところから始めましょう。言語の基本と構文を学び、プログラミングの世界の冒険に備えてしっかりと基礎を固めます。"
         ]
       },
       "create-and-run-simple-c-sharp-console-applications": {
-        "title": "Create and Run Simple C# Console Applications",
+        "title": "シンプルな C# コンソールアプリケーションを作成、実行する",
         "intro": [
-          "Master the art of creating and running simple C# console applications. Dive into the world of console-based programming, where you will gain hands-on experience executing your code and seeing it in action."
+          "C# でシンプルなコンソールアプリケーションを作成、実行する技術を習得しましょう。コンソールベースのプログラミングの世界に飛び込み、自分で書いたコードを実行して動作を確認する体験をハンズオンで学習します。"
         ]
       },
       "add-logic-to-c-sharp-console-applications": {
-        "title": "Add Logic to C# Console Applications",
+        "title": "C# コンソールアプリケーションにロジックを追加する",
         "intro": [
-          "Unlock the power of logic in C# console applications. Learn how to add logic and decision-making capabilities to your code, enabling your applications to make dynamic choices and respond intelligently to different scenarios."
+          "C# コンソールアプリケーションでロジックの力を活用しましょう。あなたのアプリケーションが動的な選択を行ってさまざまなシナリオに賢く対応できるように、コードに論理と判断の機能を追加する方法を学習します。"
         ]
       },
       "work-with-variable-data-in-c-sharp-console-applications": {
-        "title": "Work with Variable Data in C# Console Applications",
+        "title": "C# コンソールアプリケーションで変数データを扱う",
         "intro": [
-          "Discover the versatility of variable data in C# console applications. Harness the ability to store and manipulate different types of data, such as numbers and text, as you delve into the essential concepts of variables and data handling."
+          "C# コンソールアプリケーションで、変数データの汎用性に触れましょう。変数とデータ処理の本質的な概念を掘り下げながら、数値やテキストなど、さまざまな種類のデータを保存、操作する機能を活用します。"
         ]
       },
       "create-methods-in-c-sharp-console-applications": {
-        "title": "Create Methods in C# Console Applications",
+        "title": "C# コンソールアプリケーションでメソッドを作成する",
         "intro": [
-          "Take your C# console applications to the next level by mastering the art of creating methods. Learn how to organize and modularize your code, making it more manageable, reusable, and efficient."
+          "メソッドを作成する技術を習得して、あなたの C# コンソールアプリケーションを次のレベルへと引き上げましょう。コードを管理しやすく、再利用しやすく、そして効率的にするために、整理したりモジュール化したりする方法を学習します。"
         ]
       },
       "debug-c-sharp-console-applications": {
-        "title": "Debug C# Console Applications",
+        "title": "C# コンソールアプリケーションをデバッグする",
         "intro": [
-          "Sharpen your troubleshooting skills as you dive into the world of debugging C# console applications. Gain the ability to identify and fix issues in your code, ensuring your applications run smoothly and deliver the desired results."
+          "C# コンソールアプリケーションをデバッグしながら、トラブルシューティングのスキルを磨きましょう。コード内の問題を特定して修正し、アプリケーションがスムーズに実行されて期待通りの結果が得られるようにする力を身に付けます。"
         ]
       },
       "foundational-c-sharp-with-microsoft-certification-exam": {
-        "title": "Foundational C# with Microsoft Certification Exam",
+        "title": "Microsoft 連携・基礎 C# 認定試験",
         "intro": [
-          "Use what you've learned to pass the exam to earn your Foundational C# with Microsoft Certification"
+          "ここまで学んだことを活かして認定試験に合格し、Microsoft 連携・基礎 C# 認定証を獲得しましょう。"
         ]
       }
     }
@@ -1450,8 +1450,8 @@
     "legacy-header": "レガシーコース",
     "legacy-desc": "このコースは認定講座から除外されましたが、追加の学習用に引き続きご利用いただけます。",
     "legacy-go-back": "カリキュラムの最新版へ移動",
-    "course-maintenance": "These courses are undergoing maintenance. If they are not working, you can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
-    "progress-wont-save": "Your progress will not be saved to your freeCodeCamp account when running them locally.",
+    "course-maintenance": "こちらのコースは現在メンテナンス中です。アクセスできない場合、こちらの記事の方法でローカル実行することも可能です:\n <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>",
+    "progress-wont-save": "ただしローカルで実行する場合には、進捗状況は freeCodeCamp アカウントに反映されません。",
     "go-back-to-learn": "カリキュラムの安定版へ戻る。",
     "read-database-cert-article": "続行する前に、こちらのフォーラム投稿をお読みください。",
     "enable-cookies": "サードパーティーの Cookie が有効になっていることを確認してから開始してください。",

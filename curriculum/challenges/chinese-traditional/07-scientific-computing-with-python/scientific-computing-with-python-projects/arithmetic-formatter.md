@@ -84,7 +84,7 @@ arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 
 ## 提交
 
-Copy your project's URL and submit it to freeCodeCamp.
+複製項目的 URL 並將其提交給 freeCodeCamp。
 
 # --hints--
 

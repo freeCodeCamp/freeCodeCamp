@@ -1,6 +1,6 @@
 ---
 id: 5900f3831000cf542c50fe96
-title: 'Problem 23: Non-abundant sums'
+title: '问题23：非丰富的总和'
 challengeType: 1
 forumTopicId: 301873
 dashedName: problem-23-non-abundant-sums
@@ -12,7 +12,7 @@ A perfect number is a number for which the sum of its proper divisors is exactly
 
 A number `n` is called deficient if the sum of its proper divisors is less than `n` and it is called abundant if this sum exceeds `n`.
 
-As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest number that can be written as the sum of two abundant numbers is 24. By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers. However, this upper limit cannot be reduced any further by analysis even though it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.
+As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest number that can be written as the sum of two abundant numbers is 24. By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers. 然而，即使已知不能表示为两个充裕数的总和的最大数小于该限制，也不能通过分析进一步减小该上限。
 
 Find the sum of all positive integers &lt;= `n` which cannot be written as the sum of two abundant numbers.
 

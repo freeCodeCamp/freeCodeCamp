@@ -16,21 +16,21 @@ dashedName: linear-regression-health-costs-calculator
 
 # --instructions--
 
-In this challenge, you will predict healthcare costs using a regression algorithm.
+このチャレンジでは、回帰アルゴリズムを使用して医療費を予測します。
 
-You are given a dataset that contains information about different people including their healthcare costs. Use the data to predict healthcare costs based on new data.
+医療費を含むさまざまな人々に関する情報を含むデータセットが与えられます。 データを使用し、新しいデータに基づいて医療費を予測してください。
 
-The first two cells of this notebook import libraries and the data.
+このノートブックの最初の 2 つのセルでは、ライブラリとデータをインポートします。
 
-Make sure to convert categorical data to numbers. Use 80% of the data as the `train_dataset` and 20% of the data as the `test_dataset`.
+必ず分類データを数値に変換してください。 データの 80% を `train_dataset` として、20% を `test_dataset` としてそれぞれ使用します。
 
-`pop` off the "expenses" column from these datasets to create new datasets called `train_labels` and `test_labels`. Use these labels when training your model.
+これらのデータセットから "expenses" 列 を `pop` で取り出して、`train_labels` と `test_labels` という新しいデータセットを作成します。 これらのラベルをモデルのトレーニング時に使用します。
 
-Create a model and train it with the `train_dataset`. Run the final cell in this notebook to check your model. The final cell will use the unseen `test_dataset` to check how well the model generalizes.
+モデルを作成し、`train_dataset` を使用してトレーニングします。 このノートブックの最後のセルを実行して、モデルを確認します。 最後のセルでは、表示されない `test_dataset` を使用して、モデルがどの程度適切に一般化されるかを確認します。
 
-To pass the challenge, `model.evaluate` must return a Mean Absolute Error of under 3500. This means it predicts health care costs correctly within $3500.
+チャレンジに合格するには、`model.evaluate` が返す絶対誤差が 3500 未満となる必要があります。 つまり、誤差 3500 ドル以内で医療費を正しく予測できる必要があります。
 
-The final cell will also predict expenses using the `test_dataset` and graph the results.
+また最後のセルでは、`test_dataset` を使用して経費を予測し、結果をグラフに表示します。
 
 # --hints--
 

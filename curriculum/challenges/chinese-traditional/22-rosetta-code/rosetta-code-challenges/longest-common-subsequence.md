@@ -1,6 +1,6 @@
 ---
 id: 5e6dd1278e6ca105cde40ea9
-title: Longest common subsequence
+title: 最長公共子序列
 challengeType: 1
 forumTopicId: 385271
 dashedName: longest-common-subsequence

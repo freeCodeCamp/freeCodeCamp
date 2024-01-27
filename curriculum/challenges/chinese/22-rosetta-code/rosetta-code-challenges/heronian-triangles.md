@@ -1,6 +1,6 @@
 ---
 id: 595b98f8b5a2245e243aa831
-title: Heronian triangles
+title: 海伦三角形
 challengeType: 1
 forumTopicId: 302285
 dashedName: heronian-triangles
@@ -12,17 +12,17 @@ Hero's formula for the area of a triangle given the length of its three sides `a
 
 $A = \\sqrt{s(s-a)(s-b)(s-c)},$
 
-where `s` is half the perimeter of the triangle; that is,
+其中 `s` 是三角形周长的一半；即：
 
 $s=\\frac{a+b+c}{2}.$
 
-Heronian triangles are triangles whose sides and area are all integers.
+海伦三角形是边和面积都是整数的三角形。
 
-An example is the triangle with sides `3, 4, 5` whose area is `6` (and whose perimeter is `12`).
+一个例子是边为 `3, 4, 5` 的三角形面积为 `6`（周长为 `12`）。
 
-Note that any triangle whose sides are all an integer multiple of `3, 4, 5`; such as `6, 8, 10,` will also be a Heronian triangle.
+注意任何边都是 `3, 4, 5` 的整数倍的三角形；如 `6, 8, 10,` 也将是一个 Heronian 三角形。
 
-Define a Primitive Heronian triangle as a Heronian triangle where the greatest common divisor
+将原始海伦三角形定义为最大公约数
 
 of all three sides is `1` (unity).
 

@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad8
-title: Zig-zag matrix
+title: Zick-Zack-Matrix
 challengeType: 1
 forumTopicId: 302348
 dashedName: zig-zag-matrix
@@ -10,7 +10,7 @@ dashedName: zig-zag-matrix
 
 A 'zig-zag' array is a square arrangement of the first $N^2$ integers, where the numbers increase sequentially as you zig-zag along the array's anti-diagonals.
 
-For example, for the input `5`, the following result should be produced:
+Für die Eingabe `5` sollte zum Beispiel das folgende Ergebnis erzeugt werden:
 
 <pre>
  0  1  5  6 14
@@ -22,41 +22,41 @@ For example, for the input `5`, the following result should be produced:
 
 # --instructions--
 
-Write a function that takes the size of the zig-zag matrix, and returns the corresponding matrix as two-dimensional array.
+Schreibe eine Funktion, die die Größe der Zick-Zack-Matrix annimmt und die entsprechende Matrix als zweidimensionales Array zurückgibt.
 
 # --hints--
 
-ZigZagMatrix should be a function.
+Zick-Zack-Matrix sollte eine Funktion sein.
 
 ```js
 assert.equal(typeof ZigZagMatrix, 'function');
 ```
 
-ZigZagMatrix should return array.
+Zick-Zack-Matrix sollte Array zurückgeben.
 
 ```js
 assert.equal(typeof ZigZagMatrix(1), 'object');
 ```
 
-ZigZagMatrix should return an array of nested arrays.
+Zick-Zack-Matrix sollte ein Array an eingebetteten Arrays zurückgeben.
 
 ```js
 assert.equal(typeof ZigZagMatrix(1)[0], 'object');
 ```
 
-ZigZagMatrix(1) should return \[[0]].
+Zick-Zack-Matrix(1) sollte \[[0]] zurückgeben.
 
 ```js
 assert.deepEqual(ZigZagMatrix(1), zm1);
 ```
 
-ZigZagMatrix(2) should return \[[0, 1], [2, 3]].
+Zick-Zack-Matrix(2) sollte \[[0, 1], [2, 3]] zurückgeben.
 
 ```js
 assert.deepEqual(ZigZagMatrix(2), zm2);
 ```
 
-ZigZagMatrix(5) should return specified matrix.
+Zick-Zack-Matrix sollte eine vorgegebene Matrix zurückgeben.
 
 ```js
 assert.deepEqual(ZigZagMatrix(5), zm5);

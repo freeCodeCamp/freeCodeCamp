@@ -1,5 +1,4 @@
 // Package Utilities
-import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -10,7 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Button } from '@freecodecamp/ui';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
@@ -273,20 +272,14 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
                 <Spacer size='medium' />
                 <Button
                   block={true}
-                  bsSize='large'
-                  bsStyle='primary'
+                  variant='primary'
                   disabled={!this.state.allAssignmentsCompleted}
                   onClick={() => this.handleSubmit()}
                 >
                   {t('buttons.submit')}
                 </Button>
-                <Button
-                  block={true}
-                  bsSize='large'
-                  bsStyle='primary'
-                  className='btn-invert'
-                  onClick={openHelpModal}
-                >
+                <Spacer size='xxSmall' />
+                <Button block={true} variant='primary' onClick={openHelpModal}>
                   {t('buttons.ask-for-help')}
                 </Button>
                 <Spacer size='large' />
