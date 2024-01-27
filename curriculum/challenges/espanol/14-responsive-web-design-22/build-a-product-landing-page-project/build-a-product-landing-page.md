@@ -8,7 +8,7 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**Objetivo:** Crea una aplicación que sea funcionalmente similar a <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a>
+**Objective:** Build an app that is functionally similar to <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a>. **Do not copy this demo project**.
 
 **Historias de usuario:**
 

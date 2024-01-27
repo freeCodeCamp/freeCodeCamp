@@ -1,6 +1,6 @@
 ---
 id: 64aaf2aff7f1fc7a550f40cb
-title: Step 32
+title: 步驟 32
 challengeType: 0
 dashedName: step-32
 ---

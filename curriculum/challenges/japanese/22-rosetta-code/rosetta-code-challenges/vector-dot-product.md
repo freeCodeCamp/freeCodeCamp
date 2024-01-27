@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad3
-title: Vector dot product
+title: ベクトルのドット積
 challengeType: 1
 forumTopicId: 302343
 dashedName: vector-dot-product
@@ -12,47 +12,47 @@ A vector can have one or more values represented by an ordered collection. Examp
 
 # --instructions--
 
-Write a function that takes two vectors (represented as one-dimensional arrays) as input and computes their dot product. Your function should return `null` on invalid inputs such as vectors of different lengths or passing anything other than two vectors.
+入力として2つのベクトル (1次元配列として表される) を取り、それらのドット積を計算する関数を記述してください。 異なる長さのベクトルや2つのベクトル以外のベクトルを渡すなどの無効な入力に対して、関数は `null` を返さなければなりません。
 
 # --hints--
 
-`dotProduct` should be a function.
+`dotProduct` は関数とします。
 
 ```js
 assert.equal(typeof dotProduct, 'function');
 ```
 
-`dotProduct()` should return `null`.
+`dotProduct()` は `null` を返す必要があります。
 
 ```js
 assert.equal(dotProduct(), null);
 ```
 
-`dotProduct([1], [1])` should return `1`.
+`dotProduct([1], [1])` は `1` を返す必要があります。
 
 ```js
 assert.equal(dotProduct([1], [1]), 1);
 ```
 
-`dotProduct([1], [1, 2])` should return `null`.
+`dotProduct([1], [1, 2])` は `null` を返す必要があります。
 
 ```js
 assert.equal(dotProduct([1], [1, 2]), null);
 ```
 
-`dotProduct([1, 3, -5], [4, -2, -1])` should return `3`.
+`dotProduct([1, 3, -5], [4, -2, -1])` は `3` を返す必要があります。
 
 ```js
 assert.equal(dotProduct([1, 3, -5], [4, -2, -1]), 3);
 ```
 
-`dotProduct([3, 2, 1], [2, 4, 2], [5, 3, 1])` should return `null`.
+`dotProduct([3, 2, 1], [2, 4, 2], [5, 3, 1])` は `null` を返す必要があります。
 
 ```js
 assert.equal(dotProduct([3, 2, 1], [2, 4, 2], [5, 3, 1]), null);
 ```
 
-`dotProduct([ 0, 3, 6, 9, 12 ], [ 0, 4, 8, 12, 16 ])` should return `360`.
+`dotProduct([ 0, 3, 6, 9, 12 ], [ 0, 4, 8, 12, 16 ])` は `360` を返す必要があります。
 
 ```js
 assert.equal(dotProduct([ 0, 3, 6, 9, 12 ], [ 0, 4, 8, 12, 16 ]), 360);

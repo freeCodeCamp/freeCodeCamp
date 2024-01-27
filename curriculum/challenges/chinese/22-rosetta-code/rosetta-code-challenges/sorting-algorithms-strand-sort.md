@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8013
-title: Sorting algorithms/Strand sort
+title: 排序算法/链排序
 challengeType: 1
 forumTopicId: 302319
 dashedName: sorting-algorithmsstrand-sort
@@ -8,55 +8,55 @@ dashedName: sorting-algorithmsstrand-sort
 
 # --description--
 
-The **Strand sort** creates sorted subsets that are merged to create the final result. 
+The **Strand sort** creates sorted subsets that are merged to create the final result.
 
-Consider an `unsortedArray = [3, 1, 4, 2]`. Pick the first item `3` and copy it into a separate array. Search for any bigger item following this item. When you find the a larger item, in this case `4`, copy it to the separate array, `[3, 4]`, and compare the following items to this new value, `4`.
+审议一个 `未排序数组 = [3, 1, 4, 2]`。 选择第一个项目 `3` 并将其复制到一个单独的数组。 搜索此项目后面的任何较大的项目。 当你发现一个更大的项目时，在这种情况下 `4`, 复制它到单独的数组， `[3, 4]`, 并比较以下项目到这个新值， ``。
 
-After you have reached the end of the array, remove the items you copied, `[3, 4]`, and start again with the first item remaining in the `unsortedArray`, in this case `1`.
+到达数组末尾之后，删除所复制的项目，` [3,4] ` ，然后重新开始，使用 ` unsortedArray ` 中剩余的第一个项目，在本例中为 ` 1 ` 。
 
-Following this process results in two sorted arrays, `[3, 4]` and `[1, 2]`. Merge these two arrays to create the `strandSortedArray`.
+按照这个进程结果排列两个排序数组， `[3, 4]` and `[1, 2]`。 合并这两个数组以创建 `字符串排序数组`。
 
 ```js
 const unsortedArray = [3, 1, 4, 2];
 const strandsortedArray = [1, 2, 3, 4];
 ```
 
-Write a function to sort an array using the **Strand sort**. The function should return the sorted array.
+编写一个函数来使用 **Strand sort** 对数组进行排序。 该函数应返回排序后的数组。
 
 
 # --hints--
 
-`strandSort` should be a function.
+`strandSort` 应该是一个函数。
 
 ```js
 assert(typeof strandSort == 'function');
 ```
 
-`strandSort([25, 32, 12, 7, 20])` should return an array.
+`strandSort([25, 32, 12, 7, 20])` 应该返回一个数组。
 
 ```js
 assert(Array.isArray(strandSort([25, 32, 12, 7, 20])));
 ```
 
-`strandSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`strandSort([25, 32, 12, 7, 20])` 应该返回 `[7, 12, 20, 25, 32]`。
 
 ```js
 assert.deepEqual(strandSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`strandSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`strandSort([38, 45, 35, 8, 13])` 应该返回 `[8, 13, 35, 38, 45]`。
 
 ```js
 assert.deepEqual(strandSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`strandSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`strandSort([43, 36, 20, 34, 24])` 应该返回 `[20, 24, 34, 36, 43]`。
 
 ```js
 assert.deepEqual(strandSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`strandSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`strandSort([12, 33, 26, 18, 1, 16, 38])` 应该返回 `[1, 12, 16, 18, 26, 33, 38]`。
 
 ```js
 assert.deepEqual(strandSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -70,7 +70,7 @@ assert.deepEqual(strandSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`strandSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`strandSort([3, 39, 48, 16, 1, 4, 29])` 应该返回 `[1, 3, 4, 16, 29, 39, 48]`。
 
 ```js
 assert.deepEqual(strandSort([3, 39, 48, 16, 1, 4, 29]), [

@@ -1,7 +1,7 @@
 ---
 id: 5900f40a1000cf542c50ff1d
 title: >-
-  Problem 158: Exploring strings for which only one character comes lexicographically after its neighbour to the left
+  問題 158: 辞書順で左隣りの文字より後ろになる文字が 1 つだけ含まれる文字列を探す
 challengeType: 1
 forumTopicId: 301789
 dashedName: >-
@@ -10,25 +10,25 @@ dashedName: >-
 
 # --description--
 
-Taking three different letters from the 26 letters of the alphabet, character strings of length three can be formed.
+26 文字のアルファベットから 3 つの異なる文字を取り、長さ 3 の文字列を作ります。
 
-Examples are 'abc', 'hat' and 'zyx'.
+例えば、'abc'、'hat'、'zyx' です。
 
-When we study these three examples we see that for 'abc' two characters come lexicographically after its neighbour to the left.
+これらの 3 例を調べると、'abc' については、辞書順で見た場合に、2 文字が左隣の文字より後ろの文字であることがわかります。
 
-For 'hat' there is exactly one character that comes lexicographically after its neighbour to the left. For 'zyx' there are zero characters that come lexicographically after its neighbour to the left.
+'hat' については、辞書順で見た場合に、ちょうど 1 文字が左隣の文字より後ろの文字です。 'zyx' については、辞書順で見た場合に、左隣の文字より後ろに位置する文字はありません。
 
-In all there are 10400 strings of length 3 for which exactly one character comes lexicographically after its neighbour to the left.
+辞書順で見た場合に、ちょうど 1 文字が左隣の文字より後ろの文字であるような長さ 3 の文字列は、全部で 10400 個あります。
 
-We now consider strings of $n ≤ 26$ different characters from the alphabet.
+ここで、$n (≤ 26)$ 個の異なるアルファベットからなる文字列について考えます。
 
-For every $n$, $p(n)$ is the number of strings of length $n$ for which exactly one character comes lexicographically after its neighbour to the left.
+すべての $n$ について、$p(n)$ は、辞書順で見た場合にちょうど 1 文字が左隣の文字より後ろの文字である、長さ $n$ の文字列の個数です。
 
-What is the maximum value of $p(n)$?
+$p(n)$ の最大値を求めなさい。
 
 # --hints--
 
-`lexicographicNeighbours()` should return `409511334375`.
+`lexicographicNeighbours()` は `409511334375` を返す必要があります。
 
 ```js
 assert.strictEqual(lexicographicNeighbours(), 409511334375);

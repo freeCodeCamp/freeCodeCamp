@@ -1,6 +1,6 @@
 ---
 id: 5900f50e1000cf542c510020
-title: 'Problem 416: A frog''s trip'
+title: '問題416：青蛙的旅行'
 challengeType: 1
 forumTopicId: 302085
 dashedName: problem-416-a-frogs-trip

@@ -1,6 +1,6 @@
 ---
 id: 5900f45c1000cf542c50ff6e
-title: 'Problem 239: Twenty-two Foolish Primes'
+title: '问题239：二十二个愚蠢的素数'
 challengeType: 1
 forumTopicId: 301884
 dashedName: problem-239-twenty-two-foolish-primes
@@ -10,9 +10,9 @@ dashedName: problem-239-twenty-two-foolish-primes
 
 A set of disks numbered 1 through 100 are placed in a line in random order.
 
-What is the probability that we have a partial derangement such that exactly 22 prime number discs are found away from their natural positions? (Any number of non-prime disks may also be found in or out of their natural positions.)
+我们有一个部分紊乱的概率是多少，这样才能确定22个素数盘远离它们的自然位置？ （任何数量的非主要磁盘也可以在其自然位置内或外找到。）
 
-Give your answer rounded to 12 places behind the decimal point in the form 0.abcdefghijkl.
+将答案四舍五入到小数点后面的12位，格式为0.abcdefghijkl。
 
 # --hints--
 

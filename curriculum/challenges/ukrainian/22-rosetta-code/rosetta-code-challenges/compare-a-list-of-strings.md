@@ -1,6 +1,6 @@
 ---
 id: 596e457071c35c882915b3e4
-title: Compare a list of strings
+title: Порівняйте список рядків
 challengeType: 1
 forumTopicId: 302235
 dashedName: compare-a-list-of-strings
@@ -8,7 +8,7 @@ dashedName: compare-a-list-of-strings
 
 # --description--
 
-A list is an ordered set of values that may contain duplicates. Here is an example:
+A list is an ordered set of values that may contain duplicates. Ось приклад:
 
 ```js
 const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];

@@ -4,15 +4,16 @@ title: Learn Block and Inline Question K
 challengeType: 15
 dashedName: learn-block-and-inline-question-k
 ---
+
 # --description--
 
-Now that you have a basic understanding on how adding width and height to `inline` elements works, what happens when you add a bottom padding of 15 pixels to a `span` element with display set to `inline-block`?
+Now that you have a basic understanding on how adding width and height to `inline` elements works.
 
-# --question--    
+# --question--
 
 ## --text--
 
-Which of the following statements accurately describes the uses of `div` and `span` elements in HTML?
+What happens when you add a bottom padding of 15 pixels to a `span` element with display set to `inline-block`?
 
 ## --answers--
 

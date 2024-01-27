@@ -1,6 +1,6 @@
 ---
 id: 5a51eabcad78bf416f316e2a
-title: 'Problem 22: Names scores'
+title: '問題 22: 名前スコア'
 challengeType: 1
 forumTopicId: 301862
 dashedName: problem-22-names-scores
@@ -8,33 +8,33 @@ dashedName: problem-22-names-scores
 
 # --description--
 
-Using `names`, an array defined in the background containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.
+5000 個超の名前が格納された配列 `names` (あらかじめ用意されています) を、最初にアルファベット順にソートします。 次に、それぞれの名前のアルファベット値を求め、この値に、アルファベット順のリスト内での位置を乗じて名前スコアを求めます。
 
-For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain a score of 938 × 53 = 49714.
+例えば、リストがアルファベット順にソートされている場合、COLIN (アルファベット値: 3 + 15 + 12 + 9 + 14 = 53) は 983 番目に位置します。 したがって、COLIN のスコアは 938 × 53 = 49714 です。
 
-What is the total of all the name scores in the array?
+配列内のすべての名前の合計スコアを求めなさい。
 
 # --hints--
 
-`namesScores(test1)` should return a number.
+`namesScores(test1)` は数値を返す必要があります。
 
 ```js
 assert(typeof namesScores(test1) === 'number');
 ```
 
-`namesScores(test1)` should return 791.
+`namesScores(test1)` は 791 を返す必要があります。
 
 ```js
 assert.strictEqual(namesScores(test1), 791);
 ```
 
-`namesScores(test2)` should return 1468.
+`namesScores(test2)` は 1468 を返す必要があります。
 
 ```js
 assert.strictEqual(namesScores(test2), 1468);
 ```
 
-`namesScores(names)` should return 871198282.
+`namesScores(names)` は 871198282 を返す必要があります。
 
 ```js
 assert.strictEqual(namesScores(names), 871198282);

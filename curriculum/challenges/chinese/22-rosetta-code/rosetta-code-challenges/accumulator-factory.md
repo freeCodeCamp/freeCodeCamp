@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ace
-title: Accumulator factory
+title: 累加器工厂
 challengeType: 1
 forumTopicId: 302222
 dashedName: accumulator-factory
@@ -12,37 +12,37 @@ A problem posed by Paul Graham is that of creating a function that takes a singl
 
 # --instructions--
 
-Create a function that takes a number $n$ and generates accumulator functions that return the sum of every number ever passed to them.
+创建一个函数，它接受一个数字 $n$ 并生成累加器函数，该函数返回传递给它们的每个数字的总和。
 
-**Rules:**
+**规则：**
 
-Do not use global variables.
+请勿使用全局变量。
 
-**Hint:**
+**提示：**
 
-Closures save outer state.
+关闭可保存外部状态。
 
 # --hints--
 
-`accumulator` should be a function.
+`accumulator` 应该是一个函数。
 
 ```js
 assert(typeof accumulator === 'function');
 ```
 
-`accumulator(0)` should return a function.
+`accumulator(0)` 应该返回一个函数。
 
 ```js
 assert(typeof accumulator(0) === 'function');
 ```
 
-`accumulator(0)(2)` should return a number.
+`accumulator(0)(2)` 应该返回一个数字。
 
 ```js
 assert(typeof accumulator(0)(2) === 'number');
 ```
 
-Passing in the values 3, -4, 1.5, and 5 should return 5.5.
+传入值 3、-4、1.5 和 5 应返回 5.5。
 
 ```js
 assert(testFn(5) === 5.5);

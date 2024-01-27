@@ -4,6 +4,7 @@ title: Introduction to Flexbox Question A
 challengeType: 15
 dashedName: introduction-flexbox-question-a
 ---
+
 # --description--
 
 ## Before we get started
@@ -30,7 +31,7 @@ All 3 divs should now be arranged horizontally. If you resize the results frame 
 
 If you add another `div` to the HTML, inside of `.flex-container`, it will show up alongside the others, and everything will flex to fit within the available area.
 
-> If it’s hard to see what’s going on in the small embedded CodePen, feel free to click the “Edit on CodePen” or “Fork on CodePen” button. This will bring the example into a full-sized environment. Some of the later examples might especially benefit from doing this.
+> If it’s hard to see what's going on in the small embedded CodePen, feel free to click the "Edit on CodePen" or "Fork on CodePen" button. This will bring the example into a full-sized environment. Some of the later examples might especially benefit from doing this.
 
 # --question--
 

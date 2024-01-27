@@ -18,7 +18,7 @@ Considere o índice de $S_n$ como o par (esquerda, abaixo) indicando o número d
 
 <img class="img-responsive center-block" alt="diagrama com quadrados sob a hipérbole" src="https://cdn.freecodecamp.org/curriculum/project-euler/squares-under-a-hyperbola.gif" style="background-color: white; padding: 10px;" />
 
-The diagram shows some such squares labeled by number.
+O diagrama mostra alguns desses quadrados rotulados por número.
 
 $S_2$ tem um quadrado à sua esquerda e nenhum abaixo, então o índice de $S_2$ é (1, 0).
 

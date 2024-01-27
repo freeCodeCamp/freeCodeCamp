@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8017
-title: Soundex
+title: Алгоритм Саундекс
 challengeType: 1
 forumTopicId: 302320
 dashedName: soundex
@@ -8,96 +8,96 @@ dashedName: soundex
 
 # --description--
 
-**Soundex Algorithm** deals with the *intentions* of the words. It creates a representation for similar sounding words. 
+**Soundex Algorithm** deals with the *intentions* of the words. It creates a representation for similar sounding words.
 
-It is used for searching <em>names</em> and <em>addresses</em>. This means that the person who filled in the <em>name</em>, can focus on how it sounds instead of correcting the spelling of <em>names</em>.
+Він використовується для пошуку <em>імен</em> та <em>адрес</em>. Це означає, що особа, яка ввела <em>ім’я</em>, може зосередитися на тому, як воно звучить, а не виправляти написання <em>імен</em>.
 
-For example: 
+Наприклад:
 
-If you are hearing the name `Quenci` for the first time, and misspelled it, you will get **Soundex** code `Q520`. 
+Якщо ви вперше почули ім’я `Quenci` та ввели його неправильно, ви отримаєте код **Soundex** `Q520`.
 
-When you spell the name `Quincy` correctly next time, you will still get the same code `Q520`, which means you can link multiple name pronunciations into the same <em>person</em> without the need for adding every spelling. 
+Коли ви наступного разу правильно напишете ім’я `Quincy`, ви все одно отримаєте той самий код `Q520`, що означає, що ви можете зв’язати кілька варіантів вимови імені в одну <em mark="crwd -mark">особу</em> без необхідності додавати всі варіанти написання.
 
-Here is the rules: 
+Ось правила:
 
 <ul>
-  <li>If a vowel (A, E, I, O, U) separates two consonants that have the same soundex code, the consonant to the right of the vowel is coded. Tymczak is coded as T-522 (T, 5 for the M, 2 for the C, Z ignored (see "Side-by-Side" rule above), 2 for the K). Since the vowel "A" separates the Z and K, the K is coded.</li>
-  <li>If "H" or "W" separate two consonants that have the same soundex code, the consonant to the right of the vowel is not coded. Example: Ashcraft is coded A-261 (A, 2 for the S, C ignored, 6 for the R, 1 for the F). It is not coded A-226.</li>
+  <li>Якщо голосний звук (A, E, I, O, U) розділяє два приголосні звуки, які мають однаковий саундекс-код, то кодується приголосний звук праворуч від голосного звуку. Tymczak кодується як T-522 (T, 5 замість M, 2 замість C, Z ігнорується (див. правило «Пліч-о-пліч»), 2 замість K). Оскільки голосний звук «A» розділяє літери Z та К, літера К кодується.</li>
+  <li>Якщо «H» чи «W» розділяють два приголосні звуки з однаковим саундекс-кодом, приголосний звук праворуч від голосного звуку не кодується. Наприклад, Ashcraft кодується як A-261 (A, 2 замість S, C ігнорується, 6 замість R, 1 замість F). Це слово не кодується як A-226.</li>
 </ul>
 
 # --instructions--
 
-Write a function that takes a string as a parameter and returns the encoded string.
+Напишіть функцію, яка приймає рядок як параметр та повертає закодований рядок.
 
 # --hints--
 
-`soundex` should be a function.
+`soundex` має бути функцією.
 
 ```js
 assert(typeof soundex == 'function');
 ```
 
-`soundex("Soundex")` should return a string.
+`soundex("Soundex")` має повернути рядок.
 
 ```js
 assert(typeof soundex('Soundex') == 'string');
 ```
 
-`soundex("Soundex")` should return `"S532"`.
+`soundex("Soundex")` має повернути `"S532"`.
 
 ```js
 assert.equal(soundex('Soundex'), 'S532');
 ```
 
-`soundex("Example")` should return `"E251"`.
+`soundex("Example")` має повернути `"E251"`.
 
 ```js
 assert.equal(soundex('Example'), 'E251');
 ```
 
-`soundex("Sownteks")` should return `"S532"`.
+`soundex("Sownteks")` має повернути `"S532"`.
 
 ```js
 assert.equal(soundex('Sownteks'), 'S532');
 ```
 
-`soundex("Ekzampul")` should return `"E251"`.
+`soundex("Ekzampul")` має повернути `"E251"`.
 
 ```js
 assert.equal(soundex('Ekzampul'), 'E251');
 ```
 
-`soundex("Euler")` should return `"E460"`.
+`soundex("Euler")` має повернути `"E460"`.
 
 ```js
 assert.equal(soundex('Euler'), 'E460');
 ```
 
-`soundex("Gauss")` should return `"G200"`.
+`soundex("Gauss")` має повернути `"G200"`.
 
 ```js
 assert.equal(soundex('Gauss'), 'G200');
 ```
 
-`soundex("Hilbert")` should return `"H416"`.
+`soundex("Hilbert")` має повернути `"H416"`.
 
 ```js
 assert.equal(soundex('Hilbert'), 'H416');
 ```
 
-`soundex("Knuth")` should return `"K530"`.
+`soundex("Knuth")` має повернути `"K530"`.
 
 ```js
 assert.equal(soundex('Knuth'), 'K530');
 ```
 
-`soundex("Lloyd")` should return `"L300"`.
+`soundex("Lloyd")` має повернути `"L300"`.
 
 ```js
 assert.equal(soundex('Lloyd'), 'L300');
 ```
 
-`soundex("Lukasiewicz")` should return `"L222"`.
+`soundex("Lukasiewicz")` має повернути `"L222"`.
 
 ```js
 assert.equal(soundex('Lukasiewicz'), 'L222');

@@ -81,7 +81,7 @@ O objeto `foods` deve ter a chave `strawberries` com o valor de `35`.
 assert(foods.strawberries === 27);
 ```
 
-The definition of the `foods` object should not be changed.
+A definição do objeto `foods` não deve ser alterada.
 
 ```js
 assert(

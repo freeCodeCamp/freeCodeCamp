@@ -5,41 +5,42 @@ title: HTML Foundations Question F
 challengeType: 15
 dashedName: html-foundations-question-f
 ---
+
 # --description--
 
-The final element needed to complete the HTML boilerplate is the `<body>` element. This is where all the content that will be displayed to users will go - the text, images, lists, links, and so on.
+Das letzte Element, das zur Vervollständigung der HTML-Boilerplate benötigt wird, ist das `<body>`-Element. Hier werden alle Inhalte gespeichert, die den Nutzern angezeigt werden sollen - Texte, Bilder, Listen, Links usw.
 
-To complete the boilerplate, add a `body` element to the `index.html` file. The `body` element also goes within the `html` element and is always below the `head` element, like so:
+Um die Boilerplate zu vervollständigen, füge der `index.html`-Datei ein `body`-Element hinzu. Das `body`-Element befindet sich auch innerhalb des `html`-Elements und steht immer unter dem `head`-Element, etwa so:
 
-# --assignment--
+# --Auftrag--
 
-Watch and follow along to Kevin Powell’s brilliant Building your first web page video above.
-
----
-
-Build some muscle memory by deleting the contents of the `index.html` file and trying to write out all the boilerplate again from memory. Don’t worry if you have to peek at the lesson content the first few times if you get stuck. Just keep going until you can do it a couple of times from memory.
+Sieh dir oben Kevin Powells brillantes Video zum Aufbau deiner ersten Website an und folge ihm.
 
 ---
 
-Run your boilerplate through this [HTML validator](https://www.freeformatter.com/html-validator.html). Validators ensure your markup is correct and are an excellent learning tool, as they provide feedback on syntax errors you may be making often and aren’t aware of, such as missing closing tags and extra spaces in your HTML.
+Um sich an etwas zu erinnern, lösche den Inhalt der `index.html`-Datei und versuche, den gesamten Text aus dem Gedächtnis neu zu schreiben. Keine Sorge, wenn du bei den ersten Malen den Inhalt der Lektion nachschlagen musst, wenn du nicht weiterkommst. Mache einfach weiter, bis du es ein paar Mal auswendig kannst.
+
+---
+
+Lass dein Boilerplate durch diesen [HTML validator](https://www.freeformatter.com/html-validator.html) laufen. Validatoren stellen sicher, dass dein Markup korrekt ist, und sind ein hervorragendes Lernwerkzeug, da sie dir Feedback zu Syntaxfehlern geben, die du vielleicht häufig machst und dir dessen nicht bewusst bist, wie zum Beispiel fehlende schließende Tags und zusätzliche Leerzeichen in deinem HTML.
 
 # --question--
 
 ## --text--
 
-What is the purpose of the `body` element?
+Was ist der Zweck des `body`-Elements?
 
 ## --answers--
 
-This is where all important information about the webpage is displayed such as the `title` and `meta` tags.
+Hier werden alle wichtigen Informationen über die Website, wie der `title` und `meta`-Tags, angezeigt.
 
 ---
 
-This is where you tell the browser how to render the webpage correctly.
+Hier wird dem Browser mitgeteilt, wie die Website richtig dargestellt werden soll.
 
 ---
 
-This is where all content will be displayed on the page such images, text, and links.
+Hier werden alle Inhalte auf der Seite wie Bilder, Text und Links angezeigt.
 
 
 ## --video-solution--

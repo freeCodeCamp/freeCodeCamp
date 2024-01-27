@@ -28,9 +28,7 @@ Create two functions named `ffr` and `ffs` that return `R(n)` or `S(n)`, respect
 
 No maximum value for `n` should be assumed.
 
-**References**
-
- <p>Rosetta: <a href='https://rosettacode.org/wiki/Hofstadter_Figure-Figure_sequences' target='_blank'>Hofstadter Figure-Figure sequences</a></p>.
+**References**<p>Rosetta: <a href='https://rosettacode.org/wiki/Hofstadter_Figure-Figure_sequences' target='_blank'>Hofstadter Figure-Figure sequences</a></p>.
 
 
 # --hints--

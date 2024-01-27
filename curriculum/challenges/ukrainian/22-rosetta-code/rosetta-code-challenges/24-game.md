@@ -1,6 +1,6 @@
 ---
 id: 5951e88f64ebf159166a1176
-title: 24 game
+title: Гра 24
 challengeType: 1
 forumTopicId: 302218
 dashedName: 24-game
@@ -10,54 +10,54 @@ dashedName: 24-game
 
 The 24 Game tests a person's mental arithmetic.
 
-The aim of the game is to arrange four numbers in a way that when evaluated, the result is 24
+Мета гри - впорядкувати чотири числа так, щоб при обчислюванні, результат дорівнював 24
 
 # --instructions--
 
-Implement a function that takes a string of four digits as its argument, with each digit from 1 to 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return "no solution exists".
+Реалізуйте функцію, яка бере за аргумент рядок з чотирьох цифр, причому кожна цифра від 1 до 9 (включно) з дозволеними повторами, що повертає арифметичний вираз, що буде дорівнювати 24. Якщо ж такого рішення не існує, то поверніть "рішення не існує".
 
-**Rules:**
+**Правила:**
 <ul>
   <li> Only the following operators/functions are allowed: multiplication, division, addition, subtraction. </li>
-  <li> Division should use floating point or rational arithmetic, etc, to preserve remainders. </li>
-  <li> Forming multiple digit numbers from the supplied digits is disallowed. (So an answer of 12+12 when given 1, 2, 2, and 1 is wrong). </li>
-  <li> The order of the digits when given does not have to be preserved. </li>
+  <li> Для збереження остачі при діленні, слід використовувати арифметику з плаваючою комою, раціональну арифметику тощо. </li>
+  <li> Формування багаторозрядних чисел з даних чисел не допускається. (Отже, відповідь 12 + 12 з даними 1, 2, 2 і 1 неправильна). </li>
+  <li> Порядок цифр, коли він даний, не має зберігатися. </li>
 </ul>
 
-| Example input                 | Example output            |
-| ----------------------------- | ------------------------- |
-| <code>solve24("4878");</code> | <code>(7-8/8)\*4</code>   |
-| <code>solve24("1234");</code> | <code>3\*1\*4\*2</code>   |
+| Приклад вводу             | Приклад виводу            |
+| ------------------------- | ------------------------- |
+| <code>solve24("4878");</code> | <code>(7-8/8)\*4</code> |
+| <code>solve24("1234");</code> | <code>3\*1\*4\*2</code> |
 | <code>solve24("6789");</code> | <code>(6\*8)/(9-7)</code> |
 | <code>solve24("1127");</code> | <code>(1+7)\*(2+1)</code> |
 
 # --hints--
 
-`solve24` should be a function.
+`solve24` має бути функцією.
 
 ```js
 assert(typeof solve24 === 'function');
 ```
 
-`solve24("4878")` should return `(7-8/8)*4`, `4*(7-8/8)`, or a similar valid string
+`solve24("4878")` має повернути `(7-8/8)*4`, `4*(7-8/8)`, або подібний дійсний рядок
 
 ```js
 assert(isValidSolution_(solve24(testCases_[0])));
 ```
 
-`solve24("1234")` should return `1*2*3*4` or a similar valid string
+`solve24("1234")` має повернути `1*2*3*4` або подібний дійсний рядок
 
 ```js
 assert(isValidSolution_(solve24(testCases_[1])));
 ```
 
-`solve24("6789")` should return `(6*8)/(9-7)`, `(8*6)/(9-7)`, or a similar valid string
+`solve24("6789")` має повернути `(6*8)/(9-7)`, `(8*6)/(9-7)`, або подібний дійсний рядок
 
 ```js
 assert(isValidSolution_(solve24(testCases_[2])));
 ```
 
-`solve24("1127")` should return `(1+7)*(1+2)` or a similar valid string
+`solve24("1127")` має повернути `(1+7)*(1+2)` або подібний дійсний рядок
 
 ```js
 assert(isValidSolution_(solve24(testCases_[3])));

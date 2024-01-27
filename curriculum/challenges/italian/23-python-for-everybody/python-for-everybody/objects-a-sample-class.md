@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f160b6c005b0e76f086
-title: 'Objects: A Sample Class'
+title: 'Oggetti: una classe di esempio'
 challengeType: 11
 videoId: FiABKEuaSJ8
 bilibiliIds:

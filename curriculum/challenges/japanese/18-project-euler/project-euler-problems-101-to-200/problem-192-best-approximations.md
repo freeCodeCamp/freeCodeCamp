@@ -1,6 +1,6 @@
 ---
 id: 5900f42c1000cf542c50ff3f
-title: 'Problem 192: Best Approximations'
+title: '問題 192: 最良近似'
 challengeType: 1
 forumTopicId: 301830
 dashedName: problem-192-best-approximations
@@ -8,19 +8,19 @@ dashedName: problem-192-best-approximations
 
 # --description--
 
-Let $x$ be a real number.
+$x$ を実数とします。
 
-A best approximation to $x$ for the denominator bound $d$ is a rational number $\frac{r}{s}$ in reduced form, with $s ≤ d$, such that any rational number which is closer to $x$ than $\frac{r}{s}$ has a denominator larger than $d$:
+分母の上限が $d$ のとき、$x$ に対する最良近似は、$\frac{r}{s}$ より $x$ に近い任意の有理数の分母が $d$ より大きくなるような、既約の有理数 $\frac{r}{s}$ (ここで $s ≤ d$) です。
 
-$$|\frac{p}{q} - x| &lt; |\frac{r}{s} - x| ⇒ q > d$$
+すなわち、$$|\frac{p}{q} - x| &lt; |\frac{r}{s} - x| ⇒ q > d$$ です。
 
-For example, the best approximation to $\sqrt{13}$ for the denominator bound $20$ is $\frac{18}{5}$ and the best approximation to $\sqrt{13}$ for the denominator bound $30$ is $\frac{101}{28}$.
+例えば、分母の上限が $20$ のとき、$\sqrt{13}$ の最良近似は $\frac{18}{5}$ であり、分母の上限が $30$ のとき、$\sqrt{13}$ の最良近似は $\frac{101}{28}$ です。
 
-Find the sum of all denominators of the best approximations to $\sqrt{n}$ for the denominator bound ${10}^{12}$, where $n$ is not a perfect square and $1 &lt; n ≤ 100000$.
+$n$ が完全平方数でなく、かつ $1 &lt; n ≤ 100000$ であるとします。分母の上限が ${10}^{12}$ のとき、$\sqrt{n}$ の最良近似の分母の総和を求めなさい。
 
 # --hints--
 
-`bestApproximations()` should return `57060635927998344`.
+`bestApproximations()` は `57060635927998344` を返す必要があります。
 
 ```js
 assert.strictEqual(bestApproximations(), 57060635927998344);

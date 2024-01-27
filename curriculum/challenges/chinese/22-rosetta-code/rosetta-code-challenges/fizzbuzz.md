@@ -12,47 +12,47 @@ Write a program that generates an array of integers from 1 to 100 (inclusive). B
 
 <ul>
     <li>for multiples of 3, add <code>"Fizz"</code> to the array instead of the number</li>
-    <li>for multiples of 5, add <code>"Buzz"</code> to the array instead of the number</li>
-    <li>for multiples of 3 and 5, add <code>"FizzBuzz"</code> to the array instead of the number</li>
+    <li>对于 5 的倍数，将 <code>"Buzz"</code> 添加到数组而不是数字</li>
+    <li>对于 3 和 5 的倍数，将 <code>"FizzBuzz"</code> 添加到数组而不是数字</li>
 </ul>
 
 # --instructions--
 
-Your program should return an array containing the results based on the rules above.
+您的程序应该返回一个包含基于上述规则的结果的数组。
 
 # --hints--
 
-`fizzBuzz` should be a function.
+`fizzBuzz` 应该是一个函数。
 
 ```js
 assert(typeof fizzBuzz == 'function');
 ```
 
-`fizzBuzz()` should return an Array.
+`fizzBuzz()` 应该返回一个数组。
 
 ```js
 assert(Array.isArray(fizzBuzz()) == true);
 ```
 
-Numbers divisible by only 3 should return `"Fizz"`.
+只能被 3 整除的数字应该返回 `"Fizz"`。
 
 ```js
 assert.equal(fizzBuzz()[2], 'Fizz');
 ```
 
-Numbers divisible by only 5 should return `"Buzz"`.
+只能被 5 整除的数字应该返回 `"Buzz"`。
 
 ```js
 assert.equal(fizzBuzz()[99], 'Buzz');
 ```
 
-Numbers divisible by both 3 and 5 should return `"FizzBuzz"`.
+可被 3 和 5 整除的数字应返回 `"FizzBuzz"`。
 
 ```js
 assert.equal(fizzBuzz()[89], 'FizzBuzz');
 ```
 
-Numbers not divisible by either 3 or 5 should return the number itself.
+不能被 3 或 5 整除的数字应返回数字本身。
 
 ```js
 assert.equal(fizzBuzz()[12], 13);

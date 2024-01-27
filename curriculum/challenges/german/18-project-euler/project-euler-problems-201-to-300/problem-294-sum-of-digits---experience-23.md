@@ -10,7 +10,7 @@ dashedName: problem-294-sum-of-digits---experience-23
 
 For a positive integer $k$, define $d(k)$ as the sum of the digits of $k$ in its usual decimal representation. Thus $d(42) = 4 + 2 = 6$.
 
-For a positive integer $n$, define $S(n)$ as the number of positive integers $k &lt; {10}^n$ with the following properties:
+Für einen positiven Integer $n$ definiere $S(n)$ als die Anzahl der positiven Integer $k &lt; {10}^n$ mit den folgenden Eigenschaften:
 
 - $k$ is divisible by 23 and,
 - $d(k) = 23$.

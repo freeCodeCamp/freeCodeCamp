@@ -1,6 +1,6 @@
 ---
 id: 59694356a6e7011f7f1c5f4e
-title: Deal cards for FreeCell
+title: フリーセルのカードを配る
 challengeType: 1
 forumTopicId: 302246
 dashedName: deal-cards-for-freecell
@@ -10,34 +10,34 @@ dashedName: deal-cards-for-freecell
 
 *FreeCell* is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for DOS, then Windows. This version introduced 32000 numbered deals.
 
-As the game became popular, Jim Horne disclosed the algorithm, and other implementations of FreeCell began to reproduce the Microsoft deals. These deals are numbered from 1 to 32000. Newer versions from Microsoft have 1 million deals, numbered from 1 to 1000000; some implementations allow numbers outside that range.
+ゲームが普及し、ジム・ホーンがアルゴリズムを開示したため、他のフリーセル実装でもMicrosoftと同様のアルゴリズムでカードが配られるようになりました。 カードの配り方には1から32000まで番号が付けられています。 Microsoftの新しいバージョンでは、1から1000000までの番号が付けられた100万のゲーム番号があります。一部の実装では、この範囲外の番号も使用されています。
 
-The algorithm uses this linear congruential generator from Microsoft C:
+このアルゴリズムでは Microsoft C の線形合同法が使用されています。
 
 <ul>
   <li>$state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}$</li>
   <li>$rand_n = state_n \div 2^{16}$</li>
-  <li>$rand_n$ is in range 0 to 32767.</li>
+  <li>$rand_n$ は 0から32767の範囲です。</li>
 </ul>
 
-The algorithm follows:
+アルゴリズムは以下のとおりです。
 
 <ol>
   <li>Seed the RNG with the number of the deal.
-  </li><li>Create an array of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51.</li>
-  <li>Until the array is empty:</li>
-  <li>Choose a random card at index ≡ next random number (mod array length).</li>
+  </li><li>52 枚のカードの配列を作成します。クラブのエース、ダイヤモンドのエース、ハートのエース、スペードのエース、クラブの 2、ダイヤモンドの 2、…と続き、エース、2、3、4、5、6、7、8、9、10、ジャック、クイーン、キングまで続きます。 配列インデックスは0から51で、クラブのエースは0、スペードのキングは51です。</li>
+  <li>配列が空になるまでです。</li>
+  <li>インデックスでランダムなカードを選択します≡ 次の乱数(Mod配列の長さ)。</li>
     <ul>
       <li>Swap this random card with the last card of the array.</li>
-      <li>Remove this random card from the array. (Array length goes down by 1.)</li>
-      <li>Deal this random card.</li>
+      <li>このランダムなカードを配列から削除します (配列の数が1つ減る)。</li>
+      <li>このランダムなカードを配ります。</li>
     </ul>
-  <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
+  <li>52枚すべてのカードを、表を上にして8列に配ります。 最初の8枚のカードが8列に配られ、その上に次の8枚のカードが配られ、と続いていきます。</li>
 </ol>
 
-**Example:**
+**例:**
 
-**Order to deal cards**
+**カードを配る順番**
 
 <pre> 1  2  3  4  5  6  7  8
  9 10 11 12 13 14 15 16
@@ -47,7 +47,7 @@ The algorithm follows:
 41 42 43 44 45 46 47 48
 49 50 51 52</pre>
 
-**Game #1**
+**ゲーム#1**
 
 ```js
 [
@@ -61,7 +61,7 @@ The algorithm follows:
 ]
 ```
 
-**Game #617**
+**ゲーム#617**
 
 ```js
 [
@@ -77,7 +77,7 @@ The algorithm follows:
 
 # --instructions--
 
-Write a function to take a deal number and deal cards in the same order as this algorithm. The function must return a two dimensional array representing the FreeCell board.
+ゲーム番号を受け取り、このアルゴリズムと同じ順序でカードを配る関数を作成します。 この関数はフリーセルボードを表す2次元配列を返します。
 
 # --hints--
 

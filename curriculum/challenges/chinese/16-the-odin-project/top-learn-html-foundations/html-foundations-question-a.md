@@ -5,19 +5,20 @@ title: HTML Foundations Question A
 challengeType: 15
 dashedName: html-foundations-question-a
 ---
+
 # --description--
 
-Almost all elements on an HTML page are just pieces of content wrapped in opening and closing HTML tags.
+HTML 页面上几乎所有的元素都是在开始和结束 HTML 标签中包裹内容。
 
-Opening tags tell the browser this is the start of an HTML element. They are comprised of a keyword enclosed in angle brackets `<>`. For example, an opening paragraph tag looks like this: `<p>`.
+开始标签告诉浏览器这是一个 HTML 元素的开头。 它们的构成是一个关键词放在尖括号 `<>` 中。 例如，开始段落标签看起来就像这样：`<p>`。
 
-Closing tags tell the browser where an element ends. They are almost the same as opening tags; the only difference is that they have a forward slash before the keyword. For example, a closing paragraph tag looks like this: `</p>`.
+结束标签告诉浏览器一个元素在哪里结束。 它们几乎与开始标签相同；唯一的区别是它们在关键词之前有一条正斜杠。 例如，结束段落标签看起来就像这样：`</p>`。
 
-A full paragraph element looks like this:
+一个完整的段落元素看起来像这样：
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/90b1a362af0bb8635af9593cd8911c9aefb68569/foundations/html_css/html-foundations/imgs/00.png" alt="element diagram">
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/90b1a362af0bb8635af9593cd8911c9aefb68569/foundations/html_css/html-foundations/imgs/00.png" alt="元素图表" />
 
-# --assignment--
+# --作业--
 
 Watch Kevin Powell’s <a href="https://www.youtube.com/watch?v=LGQuIIv2RVA&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-" target="_blank">Introduction to HTML video</a>
 

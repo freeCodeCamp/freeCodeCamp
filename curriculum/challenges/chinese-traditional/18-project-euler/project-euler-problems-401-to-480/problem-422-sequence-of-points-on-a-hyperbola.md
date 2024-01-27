@@ -1,6 +1,6 @@
 ---
 id: 5900f5131000cf542c510025
-title: 'Problem 422: Sequence of points on a hyperbola'
+title: '問題422：雙曲線上的點序列'
 challengeType: 1
 forumTopicId: 302092
 dashedName: problem-422-sequence-of-points-on-a-hyperbola

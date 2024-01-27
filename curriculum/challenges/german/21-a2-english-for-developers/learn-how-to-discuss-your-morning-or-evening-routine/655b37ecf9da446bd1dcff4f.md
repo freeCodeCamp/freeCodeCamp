@@ -22,11 +22,11 @@ In this challenge, focus on identifying the adjectives Sophie uses to describe h
 
 `On Sunday, I have a _ morning. I just stay at home and play some video games on my console. In the evening, I make dinner and go to sleep _, because, on Monday, it is back to work again`
 
-## --blanks--
+## -blanks--
 
 `lazy`
 
-### --feedback--
+### --Feedback--
 
 Describes the relaxed nature of Sophie's Sunday morning.
 
@@ -34,6 +34,6 @@ Describes the relaxed nature of Sophie's Sunday morning.
 
 `early`
 
-### --feedback--
+### --Feedback--
 
 Indicates the time Sophie chooses to go to sleep on Sunday evening.

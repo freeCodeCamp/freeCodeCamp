@@ -7,27 +7,27 @@ dashedName: html-foundations-question-e
 
 # --description--
 
-The `<head>` element is where you put important meta-information about your webpages, and stuff required for your webpages to render correctly in the browser. Inside the `<head>`, you should not use any element that displays content on the webpage.
+Das `<head>`-Element enthält wichtige Metainformationen über deine Websites und Dinge, die erforderlich sind, damit deine Websites im Browser korrekt dargestellt werden. Innerhalb von `<head>` solltest du kein Element verwenden, das Inhalte auf der Website anzeigt.
 
 ## The Charset Meta Element
-You should always have the `meta` tag for the `charset` encoding of the webpage in the `head` element: `<meta charset="utf-8">`.
+Du solltest das `meta`-Tag für die `charset` Kodierung der Website immer im `head`-Element haben: `<meta charset="utf-8">`.
 
-Setting the encoding is very important because it ensures that the webpage will display special symbols and characters from different languages correctly in the browser.
+Das Einstellen der Kodierung ist sehr wichtig, da es sicherstellt, dass die Website spezielle Symbole und Zeichen aus verschiedenen Sprachen im Browser korrekt anzeigt.
 
-## Title Element
-Another element you should always include in the head of an HTML document is the `title` element:
+## Titelelement
+Ein weiteres Element, dass du immer im Head eines HTML-Dokuments einfügen solltest, ist das `title`-Element:
 
 ```html
 <title>My First Webpage</title>
 ```
 
-The `title` element is used to give webpages a human-readable title which is displayed in your webpage’s browser tab.
+Das `title`-Element wird verwendet, um Websites einen für Menschen lesbaren Titel zu geben, der im Browser-Tab deiner Website angezeigt wird.
 
-If you didn’t include a `title` element, the webpage’s title would default to its file name. In your case that would be `index.html`, which isn’t very meaningful for users; this would make it very difficult to find your webpage if the user has many browser tabs open.
+Wenn du kein `title`-Element einfügst, wird als Titel der Website der Dateiname verwendet. In deinem Fall wäre das `index.html`, was für Nutzer nicht sehr aussagekräftig ist; dies würde es sehr schwierig machen, deine Website zu finden, wenn der Nutzer viele Browser-Tabs geöffnet hat.
 
-There are many more elements that can go within the `head` of an HTML document. However, for now it’s only crucial to know about the two elements you have covered here. You will introduce more elements that go into the `head` throughout the rest of the curriculum.
+Es gibt viele weitere Elemente, die im `head` eines HTML-Dokuments eingefügt werden können. Im Moment ist es jedoch nur wichtig, die beiden Elemente zu kennen, die du hier behandelt hast. Im weiteren Verlauf des Lehrplans wirst du weitere Elemente einführen, die in den `head` gehören.
 
-Back in `index.html` file, let’s add a `head` element with a `charset` `meta` element and a `title` within it. The head element goes within the HTML element and should always be the first element under the opening `<html>` tag:
+Zurück in der `index.html`-Datei, fügen wir ein `head`-Element mit einem `charset` `meta`-Element und einem `title` hinzu. Das head-Element befindet sich innerhalb des HTML-Elements und sollte immer das erste Element unter dem öffnenden `<html>`-Tag sein:
 
 
 ```html
@@ -42,22 +42,22 @@ Back in `index.html` file, let’s add a `head` element with a `charset` `meta` 
 ```
 
 # --question--
-    
+
 ## --text--
 
-What is the purpose of the `head` element?
+Was ist der Zweck des `head`-Elements?
 
 ## --answers--
 
-The `head` element is used to display all elements that are displayed on the webpage.
+Das `head`-Element wird verwendet, um alle Elemente anzuzeigen, die auf der Website angezeigt werden.
 
 ---
 
-The `head` element is used to display important information about your webpage and is used to render web pages correctly with `meta` elements.
+Das `head`-Element wird verwendet, um wichtige Informationen über deine Website anzuzeigen und, um Websites mit `meta`-Elementen korrekt darzustellen.
 
 ---
 
-The `head` element is used to display the header content on top of the webpage.
+Das `head`-Element wird verwendet, um den Inhalt der Kopfzeile oben auf der Website anzuzeigen.
 
 
 ## --video-solution--
