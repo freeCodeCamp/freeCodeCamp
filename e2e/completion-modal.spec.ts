@@ -42,7 +42,7 @@ test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
       .getByRole('button', { name: translations.buttons['go-to-next'] })
       .click();
     await expect(page).toHaveURL(
-      'http://localhost:8000/learn/data-analysis-with-python/data-analysis-with-python-projects/mean-variance-standard-deviation-calculator'
+      'http://localhost:8000/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer'
     );
   });
 });
