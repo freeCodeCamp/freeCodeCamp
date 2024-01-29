@@ -850,8 +850,8 @@ importers:
         specifier: 2.0.3
         version: 2.0.3
       '@types/react-helmet':
-        specifier: 6.1.9
-        version: 6.1.9
+        specifier: 6.1.11
+        version: 6.1.11
       '@types/react-instantsearch-core':
         specifier: 6.26.8
         version: 6.26.8
@@ -10994,8 +10994,8 @@ packages:
     resolution: {integrity: sha512-fL2zKdDFN5LckSsVBXEhhm9M4tFTM9oHJfGcfZJzktQkzpOTGtDM8oXIP9d9UBDxO4xLNZhS22dlgRVv6wgK9w==}
     dev: true
 
-  /@types/react-helmet@6.1.9:
-    resolution: {integrity: sha512-nuOeTefP4yPTWHvjGksCBKb/4hsgJxSX7aSTjTIDFXJIkZ6Wo2Y4/cmE1FO9OlYBrHjKOer/0zLwY7s4qiQBtw==}
+  /@types/react-helmet@6.1.11:
+    resolution: {integrity: sha512-0QcdGLddTERotCXo3VFlUSWO3ztraw8nZ6e3zJSgG7apwV5xt+pJUS8ewPBqT4NYB1optGLprNQzFleIY84u/g==}
     dependencies:
       '@types/react': 16.14.51
     dev: true
