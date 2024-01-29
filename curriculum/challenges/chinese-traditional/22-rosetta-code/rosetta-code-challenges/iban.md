@@ -14,55 +14,55 @@ The <abbr title="International Bank Account Number">IBAN</abbr> consists of up t
 
 <ul>
   <li>first the two-letter <abbr title="International Organization for Standardization">ISO</abbr> 3166-1 alpha-2 country code</li>
-  <li>then two check digits, and</li>
-  <li>finally a country-specific Basic Bank Account Number (BBAN).</li>
+  <li>然後是兩個校驗位，和</li>
+  <li>最後是特定於國家/地區的基本銀行帳號 (BBAN)。</li>
 </ul>
 
-The check digits enable a sanity check of the bank account number to confirm its integrity even before submitting a transaction.
+校驗位可以對銀行帳號進行健全性檢查，以在提交交易之前確認其完整性。
 
 # --instructions--
 
-Write a function that takes IBAN string as parameter. If it is valid return true. Otherwise, return false.
+編寫一個以 IBAN 字符串爲參數的函數。 如果有效則返回 true。 否則，返回 false。
 
 # --hints--
 
-`isValid` should be a function.
+`isValid` 應該是一個函數。
 
 ```js
 assert(typeof isValid == 'function');
 ```
 
-`isValid("GB82 WEST 1234 5698 7654 32")` should return a boolean.
+`isValid("GB82 WEST 1234 5698 7654 32")` 應該返回一個布爾值。
 
 ```js
 assert(typeof isValid('GB82 WEST 1234 5698 7654 32') == 'boolean');
 ```
 
-`isValid("GB82 WEST 1234 5698 7654 32")` should return `true`.
+`isValid("GB82 WEST 1234 5698 7654 32")` 應該返回 `true`。
 
 ```js
 assert.equal(isValid('GB82 WEST 1234 5698 7654 32'), true);
 ```
 
-`isValid("GB82 WEST 1.34 5698 7654 32")` should return `false`.
+`isValid("GB82 WEST 1.34 5698 7654 32")` 應該返回 `false`。
 
 ```js
 assert.equal(isValid('GB82 WEST 1.34 5698 7654 32'), false);
 ```
 
-`isValid("GB82 WEST 1234 5698 7654 325")` should return `false`.
+`isValid("GB82 WEST 1234 5698 7654 325")` 應該返回 `false`。
 
 ```js
 assert.equal(isValid('GB82 WEST 1234 5698 7654 325'), false);
 ```
 
-`isValid("GB82 TEST 1234 5698 7654 32")` should return `false`.
+`isValid("GB82 TEST 1234 5698 7654 32")` 應該返回 `false`。
 
 ```js
 assert.equal(isValid('GB82 TEST 1234 5698 7654 32'), false);
 ```
 
-`isValid("SA03 8000 0000 6080 1016 7519")` should return `true`.
+`isValid("SA03 8000 0000 6080 1016 7519")` 應該返回 `true`。
 
 ```js
 assert.equal(isValid('SA03 8000 0000 6080 1016 7519'), true);

@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e03
-title: Cumulative standard deviation
+title: Kumulierte Standardabweichung
 challengeType: 1
 forumTopicId: 302240
 dashedName: cumulative-standard-deviation
@@ -12,62 +12,62 @@ Suppose that the entire population of interest is eight students in a particular
 
 $2, 4, 4, 4, 5, 5, 7, 9$
 
-These eight data points have the mean (average) of 5:
+Diese acht Datenpunkte haben den Mittelwert (Durchschnitt) von 5:
 
 $$\mu ={\frac {2+4+4+4+5+5+7+9}{8}}={\frac {40}{8}}=5$$
 
-First, calculate the deviations of each data point from the mean, and square the result of each:
+Berechne zunächst die Abweichungen jedes Datenpunkts vom Mittelwert und quadriere das Ergebnis jedes Punktes:
 
-| Deviations of each data|  Square the result  |
-| ---------------------- | --------------------|
-| $(2-5)^{2}=(-3)^{2}=9$ | $(5-5)^{2}=0^{2}=0$ |
-| $(4-5)^{2}=(-1)^{2}=1$ | $(5-5)^{2}=0^{2}=0$ |
-| $(4-5)^{2}=(-1)^{2}=1$ | $(7-5)^{2}=2^{2}=4$ |
-| $(4-5)^{2}=(-1)^{2}=1$ | $(9-5)^{2}=4^{2}=16$|
+| Deviations of each data | Quadriere das Ergebnis |
+| ----------------------- | ---------------------- |
+| $(2-5)^{2}=(-3)^{2}=9$  | $(5-5)^{2}=0^{2}=0$    |
+| $(4-5)^{2}=(-1)^{2}=1$  | $(5-5)^{2}=0^{2}=0$    |
+| $(4-5)^{2}=(-1)^{2}=1$  | $(7-5)^{2}=2^{2}=4$    |
+| $(4-5)^{2}=(-1)^{2}=1$  | $(9-5)^{2}=4^{2}=16$   |
 
-The variance is the mean of these values:
+Die Varianz ist der Mittelwert dieser Werte:
 
 $$\sigma ^{2}={\frac {9+1+1+1+0+0+4+16}{8}}={\frac {32}{8}}=4$$
 
-and the population standard deviation is equal to the square root of the variance:
+und die Standardabweichung der Bevölkerung ist gleich der Quadratwurzel der Varianz:
 
 $$\sigma ={\sqrt {4}}=2$$
 
-Write a function that takes an array of numbers as parameter and returns the <a href="https://rosettacode.org/wiki/Standard_deviation" target="_blank" rel="noopener noreferrer nofollow">standard deviation</a> of the series.
+Schreibe eine Funktion, die ein Array an Zahlen als Parameter verwendet und die <a href="https://rosettacode.org/wiki/Standard_deviation" target="_blank" rel="noopener noreferrer nofollow">Standardabweichung</a> der Reihe zurückgibt.
 
 # --hints--
 
-`standardDeviation` should be a function.
+`standardDeviation` sollte eine Funktion sein.
 
 ```js
 assert(typeof standardDeviation == 'function');
 ```
 
-`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` should return a number.
+`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof standardDeviation([2, 4, 4, 4, 5, 5, 7, 9]) == 'number');
 ```
 
-`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` should return `2`.
+`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` sollte `2` zurückgeben.
 
 ```js
 assert.equal(standardDeviation([2, 4, 4, 4, 5, 5, 7, 9]), 2);
 ```
 
-`standardDeviation([600, 470, 170, 430, 300])` should return `147.323`.
+`standardDeviation([600, 470, 170, 430, 300])` sollte `147.323` zurückgeben.
 
 ```js
 assert.equal(standardDeviation([600, 470, 170, 430, 300]), 147.323);
 ```
 
-`standardDeviation([75, 83, 96, 100, 121, 125])` should return `18.239`.
+`standardDeviation([75, 83, 96, 100, 121, 125])` sollte `18.239`.
 
 ```js
 assert.equal(standardDeviation([75, 83, 96, 100, 121, 125]), 18.239);
 ```
 
-`standardDeviation([23, 37, 45, 49, 56, 63, 63, 70, 72, 82])` should return `16.87`.
+`standardDeviation([23, 37, 45, 49, 56, 63, 63, 70, 72, 82])` sollte `16.87` zurückgeben.
 
 ```js
 assert.equal(
@@ -76,7 +76,7 @@ assert.equal(
 );
 ```
 
-`standardDeviation([271, 354, 296, 301, 333, 326, 285, 298, 327, 316, 287, 314])` should return `22.631`.
+`standardDeviation([271, 354, 296, 301, 333, 326, 285, 298, 327, 316, 287, 314])` sollte `22.631` zurückgeben.
 
 ```js
 assert.equal(

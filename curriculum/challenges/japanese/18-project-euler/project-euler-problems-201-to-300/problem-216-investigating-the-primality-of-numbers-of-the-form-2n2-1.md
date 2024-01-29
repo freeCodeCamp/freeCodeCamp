@@ -1,6 +1,6 @@
 ---
 id: 5900f4451000cf542c50ff57
-title: 'Problem 216: Investigating the primality of numbers of the form 2n2-1'
+title: '問題 216: 2n^2-1 で表される数の素数性を調べ上げる'
 challengeType: 1
 forumTopicId: 301858
 dashedName: problem-216-investigating-the-primality-of-numbers-of-the-form-2n2-1
@@ -8,19 +8,19 @@ dashedName: problem-216-investigating-the-primality-of-numbers-of-the-form-2n2-1
 
 # --description--
 
-Consider numbers $t(n)$ of the form $t(n) = 2n^2 - 1$ with $n > 1$.
+$n > 1$ を満たす式 $t(n) = 2n^2 - 1$ の $t(n)$ について考えます。
 
-The first such numbers are 7, 17, 31, 49, 71, 97, 127 and 161.
+最初の数は 7, 17, 31, 49, 71, 97, 127, 161 です。
 
-It turns out that only $49 = 7 \times 7$ and $161 = 7 \times 23$ are not prime.
+$49 = 7 \times 7$ と $161 = 7 \times 23$ のみが素数ではないことが分かります。
 
-For $n ≤ 10000$ there are 2202 numbers $t(n)$ that are prime.
+$n ≤ 10000$ のとき、素数である数 $t(n)$ は 2202 個あります。
 
-How many numbers $t(n)$ are prime for $n ≤ 50\\,000\\,000$?
+$n ≤ 50\\,000\\,000$ のとき、素数である数 $t(n)$ はいくつありますか。
 
 # --hints--
 
-`primalityOfNumbers()` should return `5437849`.
+`primalityOfNumbers()` は `5437849` を返す必要があります。
 
 ```js
 assert.strictEqual(primalityOfNumbers(), 5437849);

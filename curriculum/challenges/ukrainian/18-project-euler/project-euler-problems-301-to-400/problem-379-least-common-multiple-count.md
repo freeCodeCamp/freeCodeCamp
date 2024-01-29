@@ -1,6 +1,6 @@
 ---
 id: 5900f4e81000cf542c50fffa
-title: 'Problem 379: Least common multiple count'
+title: 'Завдання 379: кількість найменших спільних кратних'
 challengeType: 1
 forumTopicId: 302041
 dashedName: problem-379-least-common-multiple-count
@@ -8,11 +8,11 @@ dashedName: problem-379-least-common-multiple-count
 
 # --description--
 
-Let $f(n)$ be the number of couples ($x$, $y$) with $x$ and $y$ positive integers, $x ≤ y$ and the least common multiple of $x$ and $y$ equal to $n$.
+Нехай $f(n)$ буде кількістю пар ($x$, $y$), де $x$ та $y$ є натуральними числами, $x ≤ y$, а найменше спільне кратне чисел $x$ та $y$ дорівнює $n$.
 
-Let $g$ be the summatory function of $f$, i.e.: $g(n) = \sum f(i)$ for $1 ≤ i ≤ n$.
+Нехай $g$ буде суматорною функцією $f$, тобто $g(n) = \sum f(i)$ за умови $1 ≤ i ≤ n$.
 
-Вам дано, що $g({10}^6) = 37\\,429\\,395$.
+Дано, що $g({10}^6) = 37\\,429\\,395$.
 
 Знайдіть $g({10}^{12})$.
 

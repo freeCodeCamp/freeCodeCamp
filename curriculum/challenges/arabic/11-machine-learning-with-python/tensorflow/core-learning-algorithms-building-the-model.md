@@ -30,5 +30,5 @@ What kind of estimator/model does TensorFlow recommend using for classification?
 
 ## --video-solution--
 
-2
+الثاني
 

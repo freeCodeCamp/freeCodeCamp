@@ -1,6 +1,6 @@
 ---
 id: 5900f3971000cf542c50feaa
-title: 'Problem 43: Sub-string divisibility'
+title: 'Problema 43: División de subcadena'
 challengeType: 1
 forumTopicId: 302100
 dashedName: problem-43-sub-string-divisibility
@@ -10,47 +10,47 @@ dashedName: problem-43-sub-string-divisibility
 
 The number, 1406357289, is a 0 to 9 pandigital number because it is made up of each of the digits 0 to 9 in some order, but it also has a rather interesting sub-string divisibility property.
 
-Let $d_1$ be the $1^{st}$ digit, $d_2$ be the $2^{nd}$ digit, and so on. In this way, we note the following:
+Sea $d_1$ el dígito $1^{st}$, $d_2$ sea el dígito $2^{nd}$, y así sucesivamente. De esta manera, tomamos nota de lo siguiente:
 
 - ${d_2}{d_3}{d_4} = 406$ is divisible by 2
-- ${d_3}{d_4}{d_5} = 063$ is divisible by 3
-- ${d_4}{d_5}{d_6} = 635$ is divisible by 5
-- ${d_5}{d_6}{d_7} = 357$ is divisible by 7
-- ${d_6}{d_7}{d_8} = 572$ is divisible by 11
-- ${d_7}{d_8}{d_9} = 728$ is divisible by 13
-- ${d_8}{d_9}{d_{10}} = 289$ is divisible by 17
+- ${d_3}{d_4}{d_5} = 063$ es divisible por 3
+- ${d_4}{d_5}{d_6} = 635$ es divisible por 5
+- ${d_5}{d_6}{d_7} = 357$ es divisible por 7
+- ${d_6}{d_7}{d_8} = 572$ es divisible por 11
+- ${d_7}{d_8}{d_9} = 728$ es divisible por 13
+- ${d_8}{d_9}{d_{10}} = 289$ es divisible por 17
 
-Find the sum of all 0 to `n` pandigital numbers with sub-strings fulfilling `n - 2` of these divisibility properties.
+Encuentra la suma de todos los números pandigitales de 0 a `n` con substrings cumpliendo `n - 2` de estas propiedades de divisibilidad.
 
-**Note:** Pandigital numbers starting with `0` are to be considered in the result.
+**Note:** Número Pandigitales iniciando con `0` son considerados en el resultado.
 
 # --hints--
 
-`substringDivisibility(5)` should return a number.
+`substringDivisibility(5)` debería devolver un número.
 
 ```js
 assert(typeof substringDivisibility(5) === 'number');
 ```
 
-`substringDivisibility(5)` should return `12444480`.
+`substringDivisibility(5)` debería devolver `12444480`.
 
 ```js
 assert.strictEqual(substringDivisibility(5), 12444480)
 ```
 
-`substringDivisibility(7)` should return `1099210170`.
+`substringDivisibility(7)` debería devolver `1099210170`.
 
 ```js
 assert.strictEqual(substringDivisibility(7), 1099210170)
 ```
 
-`substringDivisibility(8)` should return `1113342912`.
+`substringDivisibility(8)` debería devolver `1113342912`.
 
 ```js
 assert.strictEqual(substringDivisibility(8), 1113342912)
 ```
 
-`substringDivisibility(9)` should return `16695334890`.
+`substringDivisibility(9)` debería devolver `16695334890`.
 
 ```js
 assert.strictEqual(substringDivisibility(9), 16695334890)

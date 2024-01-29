@@ -1,6 +1,6 @@
 ---
 id: 5e6a54a558d3af90110a60a0
-title: 'Introduction: Why Program?'
+title: 'はじめに: なぜプログラムなのか?'
 challengeType: 11
 videoId: 3muQV-Im3Z0
 bilibiliIds:
@@ -18,19 +18,19 @@ dashedName: introduction-why-program
 
 More resources:
 
-\- <a href="https://youtu.be/F7mtLrYzZP8" target="_blank" rel="noopener noreferrer nofollow">Install Python on Windows</a>
+\- <a href="https://youtu.be/F7mtLrYzZP8" target="_blank" rel="noopener noreferrer nofollow">Windows に Python をインストール</a>
 
-\- <a href="https://youtu.be/wfLnZP-4sZw" target="_blank" rel="noopener noreferrer nofollow">Install Python on MacOS</a>
+\- <a href="https://youtu.be/wfLnZP-4sZw" target="_blank" rel="noopener noreferrer nofollow">MacOS に Python をインストール</a>
 
 # --question--
 
 ## --text--
 
-Who should learn to program?
+誰がプログラミングを学ぶべきですか？
 
 ## --answers--
 
-College students.
+大学生
 
 ### --feedback--
 

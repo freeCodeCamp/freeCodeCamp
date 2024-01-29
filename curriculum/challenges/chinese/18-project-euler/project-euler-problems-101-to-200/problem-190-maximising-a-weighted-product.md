@@ -1,6 +1,6 @@
 ---
 id: 5900f42b1000cf542c50ff3d
-title: 'Problem 190: Maximising a weighted product'
+title: '问题190：最大加权乘积'
 challengeType: 1
 forumTopicId: 301828
 dashedName: problem-190-maximising-a-weighted-product

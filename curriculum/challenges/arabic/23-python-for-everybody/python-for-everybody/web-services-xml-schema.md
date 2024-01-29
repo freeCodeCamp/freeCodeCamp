@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0e0b6c005b0e76f07c
-title: 'Web Services: XML Schema'
+title: 'خدمات الويب: XML Schema'
 challengeType: 11
 videoId: yWU9kTxW-nc
 bilibiliIds:
@@ -18,17 +18,17 @@ What is XSD?
 
 ## --answers--
 
-The W3C Schema specification for XML.
+مواصفات مخطط W3C لـ XML.
 
 ---
 
-The standard JSON schema from MOZ.
+مخطط JSON القياسي من MOZ.
 
 ---
 
-Extensible Situational Driver
+السائق الظرفي الموسع(Extensible Driver)
 
 ## --video-solution--
 
-1
+الأول
 

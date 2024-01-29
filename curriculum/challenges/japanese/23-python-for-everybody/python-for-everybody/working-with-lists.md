@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f090b6c005b0e76f065
-title: Working with Lists
+title: リストの操作
 challengeType: 11
 videoId: lCnHfTHkhbE
 bilibiliIds:

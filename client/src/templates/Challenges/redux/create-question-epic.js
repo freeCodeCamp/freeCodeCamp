@@ -42,9 +42,18 @@ function filesToMarkdown(challengeFiles = []) {
 export function insertEditableRegions(challengeFiles = []) {
   if (challengeFiles?.some(file => file.editableRegionBoundaries?.length > 0)) {
     const editableRegionStrings = fileExtension => {
-      const startComment = fileExtension === 'html' ? '<!--' : '/*';
-      const endComment = fileExtension === 'html' ? '-->' : '*/';
-      return `\n${startComment} User Editable Region ${endComment}\n`;
+      switch (fileExtension) {
+        case 'html':
+          return '\n<!-- User Editable Region -->\n';
+        case 'css':
+          return '\n/* User Editable Region */\n';
+        case 'py':
+          return '\n# User Editable Region\n';
+        case 'js':
+          return '\n// User Editable Region\n';
+        default:
+          return '\nUser Editable Region\n';
+      }
     };
 
     const filesWithEditableRegions = challengeFiles.map(file => {
@@ -130,7 +139,7 @@ function createQuestionEpic(action$, state$, { window }) {
       const addCodeOne = i18next.t('forum-help.add-code-one');
       const addCodeTwo = i18next.t('forum-help.add-code-two');
       const addCodeThree = i18next.t('forum-help.add-code-three');
-      const altTextMessage = `### ${whatsHappeningHeading}\n\n### ${camperCodeHeading}\n\n${warning}\n\n${tooLongOne}\n\n${tooLongTwo}\n\n${tooLongThree}\n\n\`\`\`text\n${addCodeOne}\n${addCodeTwo}\n${addCodeThree}\n\`\`\`\n\n${endingText}`;
+      const altTextMessage = `### ${whatsHappeningHeading}\n\n${camperCodeHeading}\n\n${warning}\n\n${tooLongOne}\n\n${tooLongTwo}\n\n${tooLongThree}\n\n\`\`\`text\n${addCodeOne}\n${addCodeTwo}\n${addCodeThree}\n\`\`\`\n\n${endingText}`;
 
       const titleText = window.encodeURIComponent(
         `${i18next.t(

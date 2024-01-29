@@ -10,7 +10,7 @@ No painel Elementos, é possível ver toda a estrutura do HTML da página. Você
 
 ![Ícone do Inspetor](https://cdn.statically.io/gh/TheOdinProject/curriculum/594984d7c9f9e744577f19ea475b3864e8cc7c91/html_css/v2/foundations/inspecting-html-and-css/imgs/01.png)
 
-Quando um elemento é selecionado, a guia Estilos mostrará todos os estilos atualmente aplicados, assim como quaisquer estilos que estão sendo substituídos (indicado por um texto com um risco no meio). Por exemplo, se você usar o inspetor para clicar no cabeçalho "Your Career in Development Starts Here" [na página principal](https://www.theodinproject.com/), no lado direito, você verá todos os estilos que atualmente estão afetando o elemento, como vemos abaixo:
+Quando um elemento é selecionado, a guia Estilos mostrará todos os estilos atualmente aplicados, assim como quaisquer estilos que estão sendo substituídos (indicado por um texto com um risco no meio). For example, if you use the inspector to click on the “Your Career in Web Development Starts Here” header on <a href="https://www.theodinproject.com/" target="_blank">the The Odin Project homepage</a>, on the right-hand side you’ll see all the styles that are currently affecting the element, as seen below:
 
 ![Estilo sobrescrito](https://cdn.statically.io/gh/TheOdinProject/curriculum/f8fd38fc62578d8e8368f5303126215a492847f0/foundations/html_css/inspecting-html-and-css/imgs/03.png)
 

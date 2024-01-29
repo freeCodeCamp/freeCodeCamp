@@ -10,9 +10,9 @@ dashedName: neural-network-sms-text-classifier
 
 You will be <a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-neural-network-sms-text-classifier/blob/master/fcc_sms_text_classification.ipynb" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+Después de acceder al enlace, crea una copia del cuaderno ya sea en tu propia cuenta o de manera local. Una vez hayas completado el proyecto y superes el test (incluido en el enlace), envía el enlace del proyecto a continuación. Si envias un enlace a Google Colaboratory, asegúrate de que activas el uso compartido para "cualquiera con el enlace."
 
-We are still developing the interactive instructional content for the machine learning curriculum. For now, you can go through the video challenges in this certification. You may also have to seek out additional learning resources, similar to what you would do when working on a real-world project.
+Todavía estamos desarrollando el contenido instructivo interactivo para el plan de estudios de aprendizaje automático. Por ahora, puedes pasar por los desafíos en video de esta certificación. También puede que tengas que buscar recursos de aprendizaje adicionales, similares a lo que harías cuando trabajas en un proyecto del mundo real.
 
 # --instructions--
 

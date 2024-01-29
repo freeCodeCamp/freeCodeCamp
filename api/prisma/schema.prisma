@@ -26,6 +26,7 @@ type CompletedChallenge {
   id                 String
   isManuallyApproved Boolean? // Undefined
   solution           String? // Null | Undefined
+  examResults        ExamResults? // Undefined
 }
 
 type PartiallyCompletedChallenge {
@@ -79,6 +80,7 @@ model user {
   acceptedPrivacyTerms         Boolean
   // badges    Json? // Undefined | { coreTeam [][] } removed, as new API never uses it.
   completedChallenges          CompletedChallenge[]
+  completedExams               CompletedExam[] // Undefined
   currentChallengeId           String?
   donationEmails               String[] // Undefined | String[] (only possible for built in Types like String)
   email                        String
@@ -211,6 +213,22 @@ model Exam {
   prerequisites           Prerequisite[] // undefined | Prerequisite[]
   title                   String
   questions               Question[]
+}
+
+type CompletedExam {
+  id            String
+	challengeType Int
+	completedDate Float // TODO(Post-MVP): Change to DateTime?
+	examResults		ExamResults
+}
+
+type ExamResults {
+	numberOfCorrectAnswers  Int
+	numberOfQuestionsInExam Int
+	percentCorrect          Float
+	passingPercent          Int
+	passed                  Boolean
+	examTimeInSeconds       Int
 }
 
 type Question {

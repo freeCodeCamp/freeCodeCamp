@@ -36,7 +36,7 @@ How many Lychrel numbers are there below `num`?
 assert(typeof countLychrelNumbers(1000) === 'number');
 ```
 
-`countLychrelNumbers(1000)` should return 13.
+`countLychrelNumbers(10000)`應該返回249。
 
 ```js
 assert.strictEqual(countLychrelNumbers(1000), 13);

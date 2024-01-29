@@ -1,6 +1,6 @@
 ---
 id: 5900f5481000cf542c51005b
-title: 'Problem 476: Circle Packing II'
+title: '问题476：圆形包装II'
 challengeType: 1
 forumTopicId: 302153
 dashedName: problem-476-circle-packing-ii

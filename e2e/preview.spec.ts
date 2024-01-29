@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 test.beforeEach(async ({ page }) => {
@@ -27,9 +27,19 @@ test.describe('Challenge Preview Component', () => {
 
   test('should render correct output of changed code', async ({
     page,
+    browserName,
     isMobile
   }) => {
-    await page.getByLabel('Editor content').click();
+    // The editor has an overlay div, which prevents the click event from bubbling up in iOS Safari.
+    // This is a quirk in this browser-OS combination, and the workaround here is to use `.focus()`
+    // in place of `.click()` to focus on the editor.
+    // Ref: https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
+    if (isMobile && browserName === 'webkit') {
+      await page.getByLabel('Editor content').focus();
+    } else {
+      await page.getByLabel('Editor content').click();
+    }
+
     await page.keyboard.insertText('<h1>FreeCodeCamp</h1>');
     if (isMobile) {
       await page
