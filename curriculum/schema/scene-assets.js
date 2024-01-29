@@ -5,6 +5,7 @@ const availableCharacters = [
   'Bob',
   'Brian',
   'David',
+  'Expert',
   'Jake',
   'James',
   'Linda',
