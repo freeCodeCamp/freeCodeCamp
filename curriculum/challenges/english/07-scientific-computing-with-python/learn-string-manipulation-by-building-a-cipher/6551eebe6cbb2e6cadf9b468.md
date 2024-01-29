@@ -32,7 +32,7 @@ You should declare a variable called `text`. Pay attention to place the variable
 assert.match(code, /^text\s*=/m)
 ```
 
-You should assign the string `Hello World` to your `text` variable. Remember to use either single or double quotes to enclose the string and pay attention to the letter case.
+You should assign the string `'Hello World'` to your `text` variable. Remember to use either single or double quotes to enclose the string and pay attention to the letter case.
 
 ```js
 assert.match(code, /^text\s*=\s*("|')Hello World\1\s*(#.*)?$/m)
