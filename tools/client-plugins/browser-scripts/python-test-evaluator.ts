@@ -47,9 +47,13 @@ async function setupPyodide() {
   Object.freeze(self);
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-  pyodide.FS.writeFile('/home/pyodide/ast_helpers.py', helpers.astHelpers, {
-    encoding: 'utf8'
-  });
+  pyodide.FS.writeFile(
+    '/home/pyodide/ast_helpers.py',
+    helpers.python.astHelpers,
+    {
+      encoding: 'utf8'
+    }
+  );
 
   ctx.postMessage({ type: 'contentLoaded' });
 
@@ -136,7 +140,7 @@ def __inputGen(xs):
 input = __inputGen(${JSON.stringify(input ?? [])})
 `);
 
-    runPython(`from ast_helpers import Chainable as _Chainable`);
+    runPython(`from ast_helpers import Node as _Chainable`);
 
     // The tests need the user's code as a string, so we write it to the virtual
     // filesystem.
