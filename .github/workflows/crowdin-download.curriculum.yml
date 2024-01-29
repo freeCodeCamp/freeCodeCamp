@@ -304,7 +304,6 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
-
       ##### Download Korean #####
       - name: Crowdin Download Korean Translations
         uses: crowdin/github-action@master
