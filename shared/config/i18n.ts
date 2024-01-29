@@ -9,7 +9,8 @@ export enum Languages {
   Japanese = 'japanese',
   German = 'german',
   Arabic = 'arabic',
-  Swahili = 'swahili'
+  Swahili = 'swahili',
+  Korean = 'korean'
 }
 
 /*
@@ -32,7 +33,8 @@ export const availableLangs = {
     Languages.Japanese,
     Languages.German,
     Languages.Arabic,
-    Languages.Swahili
+    Languages.Swahili,
+    Languages.Korean
   ],
   curriculum: [
     Languages.English,
@@ -45,7 +47,8 @@ export const availableLangs = {
     Languages.Japanese,
     Languages.German,
     Languages.Arabic,
-    Languages.Swahili
+    Languages.Swahili,
+    Languages.Korean
   ]
 };
 
@@ -68,7 +71,8 @@ export const i18nextCodes = {
   [Languages.Japanese]: 'ja',
   [Languages.German]: 'de',
   [Languages.Arabic]: 'ar',
-  [Languages.Swahili]: 'sw'
+  [Languages.Swahili]: 'sw',
+  [Languages.Korean]: 'ko'
 };
 
 // These are for the language selector dropdown menu in the footer
@@ -83,7 +87,8 @@ export const LangNames: { [key: string]: string } = {
   [Languages.Japanese]: '日本語',
   [Languages.German]: 'Deutsch',
   [Languages.Arabic]: 'العربية',
-  [Languages.Swahili]: 'Swahili'
+  [Languages.Swahili]: 'Swahili',
+  [Languages.Korean]: '한국어'
 };
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
@@ -101,7 +106,8 @@ export const LangCodes = {
   [Languages.Japanese]: 'ja',
   [Languages.German]: 'de',
   [Languages.Arabic]: 'ar',
-  [Languages.Swahili]: 'sw'
+  [Languages.Swahili]: 'sw',
+  [Languages.Korean]: 'ko'
 };
 
 /**
