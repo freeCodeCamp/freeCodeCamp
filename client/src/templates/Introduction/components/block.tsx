@@ -21,6 +21,7 @@ import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isGridBased, isProjectBased } from '../../../utils/curriculum-layout';
 import Challenges from './challenges';
+
 import '../intro.css';
 
 const { curriculumLocale, showUpcomingChanges, showNewCurriculum } = envData;
@@ -336,14 +337,17 @@ class Block extends Component<BlockProps> {
       </ScrollableAnchor>
     );
 
-    const blockrenderer = () => {
-      if (isProjectBlock) return isGridBlock ? GridProjectBlock : ProjectBlock;
-      return isGridBlock ? GridBlock : Block;
+    const RenderedBlock = () => {
+      if (isProjectBlock) {
+        return isGridBlock ? GridProjectBlock : ProjectBlock;
+      } else {
+        return isGridBlock ? GridBlock : Block;
+      }
     };
 
     return (
       <>
-        {blockrenderer()}
+        <RenderedBlock />
         {isGridBlock && !isProjectBlock ? null : <Spacer size='medium' />}
       </>
     );
