@@ -35,6 +35,7 @@
   grid-template-areas: 'submit input reset';
   grid-template-columns: 26px auto 36px;
   margin-bottom: 0;
+  border-radius: 5px;
 }
 
 .ais-SearchBox-input {
@@ -56,6 +57,7 @@
 .ais-SearchBox-submit {
   grid-area: submit;
   padding-inline: 3px;
+  border-radius: 5px;
 }
 
 .ais-SearchBox-reset {
