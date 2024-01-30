@@ -1,6 +1,6 @@
 ---
 id: 5e6a54af58d3af90110a60a1
-title: 'Introduction: Hardware Architecture'
+title: 'Introdução: arquitetura de hardware'
 challengeType: 11
 videoId: H6qtjRTfSog
 bilibiliIds:
@@ -18,15 +18,15 @@ Where are your programs stored when they are running?
 
 ## --answers--
 
-Hard Drive.
+Disco rígido.
 
 ---
 
-Memory.
+Memória.
 
 ---
 
-Central Processing Unit.
+Unidade de Processamento Central.
 
 ## --video-solution--
 

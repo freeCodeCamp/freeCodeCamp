@@ -1,6 +1,6 @@
 ---
 id: 5900f3dd1000cf542c50feef
-title: 'Problem 112: Bouncy numbers'
+title: 'Problema 112: Números que rebotan'
 challengeType: 1
 forumTopicId: 301738
 dashedName: problem-112-bouncy-numbers
@@ -10,19 +10,19 @@ dashedName: problem-112-bouncy-numbers
 
 Working from left-to-right if no digit is exceeded by the digit to its left it is called an increasing number; for example, 134468.
 
-Similarly if no digit is exceeded by the digit to its right it is called a decreasing number; for example, 66420.
+Similarmente si no hay dígito que exceda por el dígito a su derecha, se le llama un número decreciente; por ejemplo, 66420.
 
-We shall call a positive integer that is neither increasing nor decreasing a "bouncy" number; for example, 155349.
+Llamaremos a un entero positivo que no este incrementando ni decrementando un número que "rebote"; por ejemplo, 155349.
 
-Clearly there cannot be any bouncy numbers below one-hundred, but just over half of the numbers below one-thousand (525) are bouncy. In fact, the least number for which the proportion of bouncy numbers first reaches 50% is 538.
+Está claro que no puede haber ningún número que rebota por debajo de un ciento, pero poco más de la mitad de los números por debajo de mil (525) son rebotantes. De hecho, el menor número para el cual la proporción de números que rebotan alcanza primero el 50% es 538.
 
-Surprisingly, bouncy numbers become more and more common and by the time we reach 21780 the proportion of bouncy numbers is equal to 90%.
+Sorprendentemente, los números de rebote se hacen cada vez más y más comunes y para el tiempo que alcanzamos 21780 la proporción de rebotes es igual al 90%.
 
-Find the least number for which the proportion of bouncy numbers is exactly 99%.
+Encuentra el menor número Find the least number for which the proportion of bouncy numbers is exactly 99%.
 
 # --hints--
 
-`bouncyNumbers()` should return `1587000`.
+`bouncyNumbers()` debería devolver `1587000`.
 
 ```js
 assert.strictEqual(bouncyNumbers(), 1587000);

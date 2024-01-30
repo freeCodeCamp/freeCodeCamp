@@ -16,11 +16,11 @@ Listen to the audio to complete the sentence below.
 
 # --fillInTheBlank--
 
-## --sentence--
+## --frase--
 
 `Absolutely. If you see any security breaches or incidents, you _ _ report them _.`
 
-## --blanks--
+## --espaços em branco--
 
 `have`
 

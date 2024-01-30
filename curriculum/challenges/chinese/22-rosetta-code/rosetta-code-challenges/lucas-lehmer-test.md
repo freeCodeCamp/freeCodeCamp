@@ -1,6 +1,6 @@
 ---
 id: 5e6dee7749a0b85a3f1fc7d5
-title: Lucas-Lehmer test
+title: 卢卡斯-莱默检验
 challengeType: 1
 forumTopicId: 385281
 dashedName: lucas-lehmer-test
@@ -12,53 +12,53 @@ Lucas-Lehmer Test: for $p$ an odd prime, the Mersenne number $2^p-1$ is prime if
 
 # --instructions--
 
-Write a function that returns whether the given Mersenne number is prime or not.
+编写一个函数，返回给定的梅森数是否为素数。
 
 # --hints--
 
-`lucasLehmer` should be a function.
+`lucasLehmer` 应该是一个函数。
 
 ```js
 assert(typeof lucasLehmer == 'function');
 ```
 
-`lucasLehmer(11)` should return a boolean.
+`lucasLehmer(11)` 应该返回一个布尔值。
 
 ```js
 assert(typeof lucasLehmer(11) == 'boolean');
 ```
 
-`lucasLehmer(11)` should return `false`.
+`lucasLehmer(11)` 应该返回 `false`。
 
 ```js
 assert.equal(lucasLehmer(11), false);
 ```
 
-`lucasLehmer(15)` should return `false`.
+`lucasLehmer(15)` 应该返回 `false`。
 
 ```js
 assert.equal(lucasLehmer(15), false);
 ```
 
-`lucasLehmer(13)` should return `true`.
+`lucasLehmer(13)` 应该返回 `true`。
 
 ```js
 assert.equal(lucasLehmer(13), true);
 ```
 
-`lucasLehmer(17)` should return `true`.
+`lucasLehmer(17)` 应该返回 `true`。
 
 ```js
 assert.equal(lucasLehmer(17), true);
 ```
 
-`lucasLehmer(19)` should return `true`.
+`lucasLehmer(19)` 应该返回 `true`。
 
 ```js
 assert.equal(lucasLehmer(19), true);
 ```
 
-`lucasLehmer(21)` should return `false`.
+`lucasLehmer(21)` 应该返回 `false`。
 
 ```js
 assert.equal(lucasLehmer(21), false);

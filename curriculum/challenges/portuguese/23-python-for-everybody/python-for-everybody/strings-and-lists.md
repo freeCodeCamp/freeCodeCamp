@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f090b6c005b0e76f066
-title: Strings and Lists
+title: Strings e listas
 challengeType: 11
 videoId: lxcFa7ldCi0
 bilibiliIds:
@@ -14,13 +14,13 @@ dashedName: strings-and-lists
 
 More resources:
 
-\- <a href="https://www.youtube.com/watch?v=-9TfJF2dwHI" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=-9TfJF2dwHI" target="_blank" rel="noopener noreferrer nofollow">Exercício</a>
 
 # --question--
 
 ## --text--
 
-What does n equal in this code?
+O que representa n neste código?
 
 ```python
 words = 'His e-mail is q-lar@freecodecamp.org'

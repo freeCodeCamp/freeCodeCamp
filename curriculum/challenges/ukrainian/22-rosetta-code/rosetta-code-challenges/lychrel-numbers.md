@@ -1,6 +1,6 @@
 ---
 id: 5ea2815a8640bcc6cb7dab3c
-title: Lychrel numbers
+title: Числа Лішрел
 challengeType: 1
 forumTopicId: 385287
 dashedName: lychrel-numbers
@@ -9,21 +9,21 @@ dashedName: lychrel-numbers
 # --description--
 
 <ol>
-  <li>Take an integer <code>n₀</code>, greater than zero.</li>
-  <li>Form the next number <code>n</code> of the series by reversing <code>n₀</code> and adding it to <code>n₀</code></li>
-  <li>Stop when <code>n</code> becomes palindromic - i.e. the digits of <code>n</code> in reverse order == <code>n</code>.</li>
+  <li>Візьміть ціле число <code>n₀</code> більше за нуль.</li>
+  <li>Утворіть наступне число <code>n</code> серій, повернувши <code>n₀</code> і додавши його до <code>n₀</code></li>
+  <li>Зупиніться, коли <code>n</code> стає паліндромним, тобто цифри <code>n</code> у зворотньому порядку == <code>n</code>.</li>
 </ol>
 
 The above recurrence relation when applied to most starting numbers `n` = 1, 2, ... terminates in a palindrome quite quickly.
 
-For example if `n₀` = 12 we get:
+Наприклад, якщо `n₀` = 12, ми отримуємо:
 
 ```bash
 12
 12 + 21 = 33,  a palindrome!
 ```
 
-And if `n₀` = 55 we get:
+І якщо `n₀` = 55, то отримаємо:
 
 ```bash
 55
@@ -31,17 +31,17 @@ And if `n₀` = 55 we get:
 110 + 011 = 121,  a palindrome!
 ```
 
-Notice that the check for a palindrome happens *after* an addition.
+Зверніть увагу, що ця перевірка паліндрому відбувається *після* додавання.
 
-Some starting numbers seem to go on forever; the recurrence relation for 196 has been calculated for millions of repetitions forming numbers with millions of digits, without forming a palindrome. These numbers that do not end in a palindrome are called **Lychrel numbers**.
+Деякі початкові числа можуть повторюватися безкінечну кількість разів, рекурентне співвідношення для 196 нараховує мільйони повторів, що утворює числа в мільйонному степені, так і не утворивши паліндром. Числа, які не можуть стати паліндромами, називають** числа Лішрел**.
 
-For the purposes of this task a Lychrel number is any starting number that does not form a palindrome within 500 (or more) iterations.
+У цьому плані число Лішрел - це будь-яке початкове число, яке не утворює паліндром через 500 (і більше) ітерацій.
 
-**Seed and related Lychrel numbers:**
+**Початкові та пов'язані числа Лішрел:**
 
-Any integer produced in the sequence of a Lychrel number is also a Lychrel number.
+Будь-яке ціле число у послідовності чисел Лішрел є також числом Лішрел.
 
-In general, any sequence from one Lychrel number *might* converge to join the sequence from a prior Lychrel number candidate; for example the sequences for the numbers 196 and then 689 begin:
+Загалом, будь яка послідовність з одного числа Лішрел *повинна *зійтися з послідовністю з попереднього потенційного числа Лішрел; наприклад, послідовності чисел 196, а пізніше 689 починаються з:
 
 ```bash
     196
@@ -58,59 +58,59 @@ In general, any sequence from one Lychrel number *might* converge to join the se
     ...
 ```
 
-So we see that the sequence starting with 689 converges to, and continues with the same numbers as that for 196.
+Отож ми бачимо, що послідовність, яка починається з 689, збігається й продовжується тими ж числами, що й для 196.
 
-Because of this we can further split the Lychrel numbers into true **Seed** Lychrel number candidates, and **Related** numbers that produce no palindromes but have integers in their sequence seen as part of the sequence generated from a lower Lychrel number.
+А отже в подальшому ми можемо розбити числа Лішрел на справжні **Початкові **потенційні числа Лішрел, а також **Відносні** числа, які не утворюють паліндром, проте містять цілі числа в послідовності, які розглядають як частину послідовності, що виникла від меншого числа Лішрел.
 
 # --instructions--
 
-Write a function that takes a number as a parameter. Return true if the number is a Lynchrel number. Otherwise, return false. Remember that the iteration limit is 500.
+Напишіть функцію, яка бере число як параметр. Поверніть значення true, якщо це число є числом Лішрел. В іншому випадку поверніть false. Пам'ятайте, що кількість ітерацій не повинна перевищувати 500.
 
 # --hints--
 
-`isLychrel` should be a function.
+`isLychrel` має бути функцією.
 
 ```js
 assert(typeof isLychrel === 'function');
 ```
 
-`isLychrel(12)` should return a boolean.
+`isLychrel(12)` має повернути логічне значення.
 
 ```js
 assert(typeof isLychrel(12) === 'boolean');
 ```
 
-`isLychrel(12)` should return `false`.
+`isLychrel(12)` має повернути `false`.
 
 ```js
 assert.equal(isLychrel(12), false);
 ```
 
-`isLychrel(55)` should return `false`.
+`isLychrel(55)` має повернути `false`.
 
 ```js
 assert.equal(isLychrel(55), false);
 ```
 
-`isLychrel(196)` should return `true`.
+`isLychrel(196)` має повернути `true`.
 
 ```js
 assert.equal(isLychrel(196), true);
 ```
 
-`isLychrel(879)` should return `true`.
+`isLychrel(879)` має повернути `true`.
 
 ```js
 assert.equal(isLychrel(879), true);
 ```
 
-`isLychrel(44987)` should return `false`.
+`isLychrel(44987)` має повернути `false`.
 
 ```js
 assert.equal(isLychrel(44987), false);
 ```
 
-`isLychrel(7059)` should return `true`.
+`isLychrel(7059)` має повернути `true`.
 
 ```js
 assert.equal(isLychrel(7059), true);

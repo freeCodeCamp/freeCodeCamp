@@ -1,6 +1,6 @@
 ---
 id: 5900f4f61000cf542c510008
-title: 'Problem 393: Migrating ants'
+title: 'Завдання 393: міграція мурах'
 challengeType: 1
 forumTopicId: 302058
 dashedName: problem-393-migrating-ants
@@ -8,13 +8,13 @@ dashedName: problem-393-migrating-ants
 
 # --description--
 
-An $n × n$ grid of squares contains $n^2$ ants, one ant per square.
+Сітка $n × n$ містить $n^2$ мурах, по одній мурасі на квадраті.
 
-All ants decide to move simultaneously to an adjacent square (usually 4 possibilities, except for ants on the edge of the grid or at the corners).
+Всі мурахи вирішили одночасно переміститися на сусідній квадрат (4 варіанти, за винятком мурах на краю сітки або по кутах).
 
-We define $f(n)$ to be the number of ways this can happen without any ants ending on the same square and without any two ants crossing the same edge between two squares.
+Визначимо $f(n)$ як кількість можливих способів, щоб мурахи не опинились на одному квадраті та дві мурахи не перетинали один і той самий край між двома квадратами.
 
-Вам дано, що $f(4) = 88$.
+Дано, що $f(4) = 88$.
 
 Знайдіть $f(10)$.
 

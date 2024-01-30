@@ -24,11 +24,6 @@ const examFilenames = [
 
 const client = new MongoClient(MONGOHQ_URL, { useUnifiedTopology: true });
 
-log('Connected successfully to mongo');
-
-const db = client.db('freecodecamp');
-const exams = db.collection('Exam');
-
 function handleError(err, client) {
   if (err) {
     console.error('Oh noes!! Error seeding exams.');
@@ -45,6 +40,11 @@ function handleError(err, client) {
 }
 
 const seed = async () => {
+  await client.db('admin').command({ ping: 1 });
+  log('Connected successfully to mongo');
+
+  const db = client.db('freecodecamp');
+  const exams = db.collection('Exam');
   for (const filename of examFilenames) {
     try {
       const examPath = join(__dirname, 'exams', filename);

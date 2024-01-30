@@ -1,5 +1,6 @@
 ---
-id: 637f4e2f72c65bc8e73dfe22
+id: 637f4e3672c65bc8e73dfe23
+videoId: V8UAEoOvqFg
 title: HTML Foundations Question F
 challengeType: 15
 dashedName: html-foundations-question-f
@@ -7,59 +8,41 @@ dashedName: html-foundations-question-f
 
 # --description--
 
-The `<head>` element is where you put important meta-information about your webpages, and stuff required for your webpages to render correctly in the browser. Inside the `<head>`, you should not use any element that displays content on the webpage.
+L'ultimo elemento necessario per completare il boilerplate HTML è l'elemento `<body>`. È qui che si troverà tutto il contenuto da mostrare agli utenti - testo immagini, elenchi, link e via dicendo.
 
-## The Charset Meta Element
-You should always have the `meta` tag for the `charset` encoding of the webpage in the `head` element: `<meta charset="utf-8">`.
+Per completare il boilerplate, aggiungi un elemento `body` al file `index.html`. Anche l'elemento `body` va all'interno dell'elemento `html` e si trova sempre al di sotto dell'elemento `head`, così:
 
-Setting the encoding is very important because it ensures that the webpage will display special symbols and characters from different languages correctly in the browser.
+# --assignment--
 
-## Title Element
-Another element you should always include in the head of an HTML document is the `title` element:
+Guarda e segui passo passo il fantastico video di Kevin Powell Building your first web page.
 
-```html
-<title>My First Webpage</title>
-```
+---
 
-The `title` element is used to give webpages a human-readable title which is displayed in your webpage’s browser tab.
+Crea un po' di una memoria muscolare eliminando il contenuto del file `index.html` e cercando di scrivere di nuovo tutto il boilerplate a memoria. Non preoccuparti se devi sbirciare il contenuto della lezione se le prime volte resti bloccato. Continua finché non riesci a farlo un paio di volte a memoria.
 
-If you didn’t include a `title` element, the webpage’s title would default to its file name. In your case that would be `index.html`, which isn’t very meaningful for users; this would make it very difficult to find your webpage if the user has many browser tabs open.
+---
 
-There are many more elements that can go within the `head` of an HTML document. However, for now it’s only crucial to know about the two elements you have covered here. You will introduce more elements that go into the `head` throughout the rest of the curriculum.
-
-Back in `index.html` file, let’s add a `head` element with a `charset` `meta` element and a `title` within it. The head element goes within the HTML element and should always be the first element under the opening `<html>` tag:
-
-
-```html
-<!DOCTYPE html>
-
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>My First Webpage</title>
-  </head>
-</html>
-```
+Controlla il tuo boilerplate con questo [validatore HTML](https://www.freeformatter.com/html-validator.html). I validatori garantiscono che il tuo markup sia corretto e sono uno strumento di apprendimento eccellente, in quanto forniscono un feedback sugli errori di sintassi che potresti commettere senza rendertene conto, come tag di chiusura mancanti e spazi aggiuntivi nel tuo HTML.
 
 # --question--
 
 ## --text--
 
-What is the purpose of the `head` element?
+Che cos'è l'elemento `body`?
 
 ## --answers--
 
-The `head` element is used to display all elements that are displayed on the webpage.
+È dove vengono visualizzate tutte le informazioni importanti di una pagina web come i tag `title` e `meta`.
 
 ---
 
-The `head` element is used to display important information about your webpage and is used to render web pages correctly with `meta` elements.
+È il posto in cui dire al browser come renderizzare correttamente la pagina.
 
 ---
 
-The `head` element is used to display the header content on top of the webpage.
+È dove tutti i contenuti come immagini, testi e link saranno mostrati sulla pagina.
 
 
 ## --video-solution--
 
-2
+3

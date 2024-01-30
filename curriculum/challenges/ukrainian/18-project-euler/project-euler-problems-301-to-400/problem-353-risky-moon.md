@@ -1,6 +1,6 @@
 ---
 id: 5900f4cd1000cf542c50ffe0
-title: 'Problem 353: Risky moon'
+title: 'Завдання 353: ризикований місяць'
 challengeType: 1
 forumTopicId: 302013
 dashedName: problem-353-risky-moon
@@ -8,19 +8,19 @@ dashedName: problem-353-risky-moon
 
 # --description--
 
-A moon could be described by the sphere $C(r)$ with centre (0, 0, 0) and radius $r$.
+Місяць можна описати сферою $C(r)$ з центром в точці (0, 0, 0) та радіусом $r$.
 
-There are stations on the moon at the points on the surface of $C(r)$ with integer coordinates. The station at (0, 0, $r$) is called North Pole station, the station at (0, 0, $-r$) is called South Pole station.
+На місяці є станції на точках поверхні $C(r)$ з цілими координатами. Станція на точці з координатами (0, 0, $r$) називається станцією Північного полюса, станція на точці з координатами (0, 0, $-r$) називається станцією Південного полюса.
 
-All stations are connected with each other via the shortest road on the great arc through the stations. A journey between two stations is risky. If $d$ is the length of the road between two stations, $\{\left(\frac{d}{πr}\right)}^2$ is a measure for the risk of the journey (let us call it the risk of the road). If the journey includes more than two stations, the risk of the journey is the sum of risks of the used roads.
+Усі станції з’єднані між собою найкоротшою дорогою на більшій дорозі, яка проходить через всі станції. Поїздка між двома станціями є ризикованою. Якщо $d$ є відстанню між двома станціями, то $\{\left(\frac{d}{πr}\right)}^2$ є виміром ризику поїздки (назвемо це ризиком дороги). Якщо поїздка включає більше двох станцій, ризик дороги — це сума ризиків використаних доріг.
 
-A direct journey from the North Pole station to the South Pole station has the length $πr$ and risk 1. The journey from the North Pole station to the South Pole station via (0, $r$, 0) has the same length, but a smaller risk:
+Пряма поїздка від станції Північного полюса до станції Південного полюса має відстань $πr$ і ризик 1. Подорож від станції Північного полюса до станції Південного полюса через станцію (0, $r$, 0) має таку ж відстань, але менший ризик:
 
 $${\left(\frac{\frac{1}{2}πr}{πr}\right)}^2+{\left(\frac{\frac{1}{2}πr}{πr}\right)}^2 = 0.5$$
 
-The minimal risk of a journey from the North Pole station to the South Pole station on $C(r)$ is $M(r)$.
+Мінімальний ризик поїздки від станції Північного полюса до станції Південного полюса на $C(r)$ позначають $M(r)$.
 
-You are given that $M(7) = 0.178\\,494\\,399\\,8$ rounded to 10 digits behind the decimal point.
+Дано, що $M(7) = 0.178\\,494\\,399\\,8$ (заокруглено до 10 знаків після коми).
 
 Знайдіть $\displaystyle\sum_{n = 1}^{15} M(2^n - 1)$.
 

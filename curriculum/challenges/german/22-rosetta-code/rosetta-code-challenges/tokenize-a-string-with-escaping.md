@@ -1,6 +1,6 @@
 ---
 id: 594faaab4e2a8626833e9c3d
-title: Tokenize a string with escaping
+title: Tokenisierung einer Zeichenkette mit Escaping
 challengeType: 1
 forumTopicId: 302338
 dashedName: tokenize-a-string-with-escaping
@@ -10,7 +10,7 @@ dashedName: tokenize-a-string-with-escaping
 
 Write a function or program that can split a string at each non-escaped occurrence of a separator character.
 
-It should accept three input parameters:
+Sie sollte drei Eingabeparameter akzeptieren:
 
 <ul>
   <li>The <strong>string</strong></li>
@@ -18,55 +18,55 @@ It should accept three input parameters:
   <li>The <strong>escape character</strong></li>
 </ul>
 
-It should output a list of strings.
+Es sollte eine Liste von Zeichenketten ausgeben.
 
-Rules for splitting:
+Regeln für die Aufteilung:
 
 <ul>
   <li>The fields that were separated by the separators, become the elements of the output list.</li>
-  <li>Empty fields should be preserved, even at the start and end.</li>
+  <li>Leere Felder sollten beibehalten werden, auch am Anfang und am Ende.</li>
 </ul>
 
-Rules for escaping:
+Regeln für die Flucht:
 
 <ul>
   <li>"Escaped" means preceded by an occurrence of the escape character that is not already escaped itself.</li>
-  <li>When the escape character precedes a character that has no special meaning, it still counts as an escape (but does not do anything special).</li>
-  <li>Each occurrences of the escape character that was used to escape something, should not become part of the output.</li>
+  <li>Wenn das Escape-Zeichen vor einem Zeichen steht, das keine besondere Bedeutung hat, gilt es trotzdem als Escape-Zeichen (hat aber keine besondere Wirkung).</li>
+  <li>Jedes Vorkommen des Escape-Zeichens, das verwendet wurde, um etwas zu entkommen, sollte nicht Teil der Ausgabe werden.</li>
 </ul>
 
-Demonstrate that your function satisfies the following test-case:
+Zeige, dass deine Funktion den folgenden Testfall erfüllt:
 
-Given the string
+Angesichts der Zeichenkette
 
 <pre>one^|uno||three^^^^|four^^^|^cuatro|</pre>
 
-and using `|` as a separator and `^` as escape character, your function should output the following array:
+und unter Verwendung von `|` als Trennzeichen und `^` als Escape-Zeichen, sollte deine Funktion die folgende Anordnung ausgeben:
 
 <pre>  ['one|uno', '', 'three^^', 'four^|cuatro', '']
 </pre>
 
 # --hints--
 
-`tokenize` should be a function.
+`tokenize` sollte eine Funktion sein.
 
 ```js
 assert(typeof tokenize === 'function');
 ```
 
-`tokenize` should return an array.
+`tokenize` sollte ein Array zurückgeben.
 
 ```js
 assert(typeof tokenize('a', 'b', 'c') === 'object');
 ```
 
-`tokenize('one^|uno||three^^^^|four^^^|^cuatro|', '|', '^')` should return `['one|uno', '', 'three^^', 'four^|cuatro', '']`
+`tokenize('one^|uno||three^^^^|four^^^|^cuatro|', '|', '^')` sollte `['one|uno', '', 'three^^', 'four^|cuatro', '']` zurückgeben
 
 ```js
 assert.deepEqual(tokenize(testStr1, '|', '^'), res1);
 ```
 
-`tokenize('a@&bcd&ef&&@@hi', '&', '@')` should return `['a&bcd', 'ef', '', '@hi']`
+`tokenize('a@&bcd&ef&&@@hi', '&', '@')` sollte `['a&bcd', 'ef', '', '@hi']` zurückgeben
 
 ```js
 assert.deepEqual(tokenize(testStr2, '&', '@'), res2);

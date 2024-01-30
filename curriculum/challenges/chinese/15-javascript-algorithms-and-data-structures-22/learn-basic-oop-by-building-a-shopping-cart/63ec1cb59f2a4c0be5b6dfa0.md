@@ -1,23 +1,23 @@
 ---
 id: 63ec1cb59f2a4c0be5b6dfa0
-title: Step 5
+title: 步骤 5
 challengeType: 0
 dashedName: step-5
 ---
 
 # --description--
 
-A shopping cart does not serve much purpose without products. Declare a `products` variable and set it to an empty array. Using an array will allow you to store multiple products.
+如果没有产品，购物车就没有多大作用。 声明一个 `products` 变量，并赋值为一个空数组。 使用数组将允许你存储多个产品。
 
 # --hints--
 
-You should declare a `products` variable with `const`.
+你应该使用 `const` 声明 `products` 变量。
 
 ```js
 assert.match(code, /const\s+products/);
 ```
 
-You should set the `products` variable to an empty array.
+你应该将变量 `products` 赋值为一个空数组。
 
 ```js
 assert.match(code, /const\s+products\s*=\s*\[\s*\]/);

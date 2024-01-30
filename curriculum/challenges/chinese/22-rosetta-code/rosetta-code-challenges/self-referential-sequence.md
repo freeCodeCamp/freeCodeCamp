@@ -1,6 +1,6 @@
 ---
 id: 5eb3e4a21f462f409d656c73
-title: Self-referential sequence
+title: 自参照序列
 challengeType: 1
 forumTopicId: 385317
 dashedName: self-referential-sequence
@@ -12,37 +12,37 @@ There are several ways to generate a self-referential sequence. One very common 
 
 <pre>0, 10, 1110, 3110, 132110, 1113122110, 311311222110 ...</pre>
 
-The terms generated grow in length geometrically and never converge.
+生成的项在长度上几何增长并且永不收敛。
 
-Another way to generate a self-referential sequence is to summarize the previous term.
+另一种生成自引用序列的方法是总结前一项。
 
-Count how many of each alike digit there is, then concatenate the sum and digit for each of the sorted enumerated digits. Note that the first five terms are the same as for the previous sequence.
+计算每个相似数字有多少，然后将每个排序的枚举数字的总和和数字连接起来。 请注意，前五个术语与前面的序列相同。
 
 <pre>0, 10, 1110, 3110, 132110, 13123110, 23124110 ...</pre>
 
-Sort the digits largest to smallest. Do not include counts of digits that do not appear in the previous term.
+将数字从大到小排序。 不包括上一项中未出现的数字计数。
 
-Depending on the seed value, series generated this way always either converge to a stable value or to a short cyclical pattern. (For our purposes, converge means that an element matches a previously seen element.) The sequence shown, with a seed value of 0, converges to a stable value of 1433223110 after 11 iterations. The seed value that converges most quickly is 22. It goes stable after the first element. (The next element is 22, which has been seen before.)
+根据种子值，以这种方式生成的序列总是收敛到稳定值或短周期模式。 （就我们的目的而言，收敛意味着一个元素与之前看到的元素匹配。） 所示序列的种子值为 0，经过 11 次迭代后收敛到稳定值 1433223110。 收敛最快的种​​子值为 22。 它在第一个元素之后稳定。 （下一个元素是 22，之前已经看到过。）
 
 # --instructions--
 
-Write a function that takes the seed value as parameter, generates a self referential sequence until it converges, and returns it as an array.
+编写一个函数，将种子值作为参数，生成一个自引用序列直到它收敛，并将其作为数组返回。
 
 # --hints--
 
-`selfReferential` should be a function.
+`selfReferential` 应该是一个函数。
 
 ```js
 assert(typeof selfReferential === 'function');
 ```
 
-`selfReferential(40)` should return a array.
+`selfReferential(40)` 应该返回一个数组。
 
 ```js
 assert(Array.isArray(selfReferential(40)));
 ```
 
-`selfReferential(40)` should return `["40", "1410", "142110", "14123110", "1413124110", "2413125110", "151413224110", "152413225110", "251413324110", "152423224110", "152413423110"]`.
+`selfReferential(40)` 应该返回 `["40", "1410", "142110", "14123110", "1413124110", "2413125110", "151413224110", "152413225110", "251413324110", "152423224110", "152413423110"]`。
 
 ```js
 assert.deepEqual(selfReferential(40), [
@@ -60,7 +60,7 @@ assert.deepEqual(selfReferential(40), [
 ]);
 ```
 
-`selfReferential(132110)` should return `["132110", "13123110", "23124110", "1413223110", "1423224110", "2413323110", "1433223110"]`.
+`selfReferential(132110)` 应该返回 `["132110", "13123110", "23124110", "1413223110", "1423224110", "2413323110", "1433223110"]`。
 
 ```js
 assert.deepEqual(selfReferential(132110), [
@@ -74,7 +74,7 @@ assert.deepEqual(selfReferential(132110), [
 ]);
 ```
 
-`selfReferential(132211)` should return `["132211", "132231", "232221", "134211", "14131231", "14231241", "24132231", "14233221"]`.
+`selfReferential(132211)` 应该返回 `["132211", "132231", "232221", "134211", "14131231", "14231241", "24132231", "14233221"]`。
 
 ```js
 assert.deepEqual(selfReferential(132211), [
@@ -89,7 +89,7 @@ assert.deepEqual(selfReferential(132211), [
 ]);
 ```
 
-`selfReferential(1413223110)` should return `["1413223110", "1423224110", "2413323110", "1433223110"]`.
+`selfReferential(1413223110)` 应该返回 `["1413223110", "1423224110", "2413323110", "1433223110"]`。
 
 ```js
 assert.deepEqual(selfReferential(1413223110), [
@@ -100,7 +100,7 @@ assert.deepEqual(selfReferential(1413223110), [
 ]);
 ```
 
-`selfReferential(251413126110)` should return `["251413126110", "16151413225110", "16251413226110", "26151413325110", "16251423225110", "16251413424110", "16153413225110"]`.
+`selfReferential(251413126110)` 应该返回 `["251413126110", "16151413225110", "16251413226110", "26151413325110", "16251423225110", "16251413424110", "16153413225110"]`。
 
 ```js
 assert.deepEqual(selfReferential(251413126110), [

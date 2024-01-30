@@ -34,4 +34,4 @@ formula()
 
 ## --video-solution--
 
-2
+٢

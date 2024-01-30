@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f080b6c005b0e76f063
-title: Files as a Sequence
+title: File come sequenze
 challengeType: 11
 videoId: cIA0EokbaHE
 bilibiliIds:
@@ -14,29 +14,29 @@ dashedName: files-as-a-sequence
 
 More resources:
 
-\- <a href="https://www.youtube.com/watch?v=il1j4wkte2E" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=il1j4wkte2E" target="_blank" rel="noopener noreferrer nofollow">Esercizio</a>
 
 # --question--
 
 ## --text--
 
-What does the word 'continue' do in the middle of a loop?
+Cosa fa la parola 'continue' all'interno di un ciclo?
 
 ## --answers--
 
-Skips to the code directly after the loop.
+Salta al codice direttamente dopo il ciclo.
 
 ---
 
-Skips to the next line in the code.
+Salta alla riga successiva nel codice.
 
 ---
 
-Skips to the next iteration of the loop.
+Salta alla successiva iterazione del ciclo.
 
 ---
 
-Skips the next block of code.
+Salta il blocco di codice successivo.
 
 ## --video-solution--
 

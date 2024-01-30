@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f690b6c005b0e76f095
-title: Visualizing Data with Python
+title: Visualizzare i dati con Python
 challengeType: 11
 videoId: e3lydkH0prw
 bilibiliIds:
@@ -18,23 +18,23 @@ Most data needs to be \_\_\_\_\_\_ before using it.
 
 ## --answers--
 
-converted to JSON format
+convertita in formato JSON
 
 ---
 
-graphed
+graficata
 
 ---
 
-cleaned
+pulita
 
 ---
 
-memorized
+memorizzata
 
 ---
 
-turned into song
+convertita in un brano
 
 ## --video-solution--
 

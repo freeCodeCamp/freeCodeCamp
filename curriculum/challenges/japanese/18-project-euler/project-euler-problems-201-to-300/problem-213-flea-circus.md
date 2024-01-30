@@ -1,6 +1,6 @@
 ---
 id: 5900f4411000cf542c50ff54
-title: 'Problem 213: Flea Circus'
+title: '問題 213: ノミのサーカス'
 challengeType: 1
 forumTopicId: 301855
 dashedName: problem-213-flea-circus
@@ -8,15 +8,15 @@ dashedName: problem-213-flea-circus
 
 # --description--
 
-A 30×30 grid of squares contains 900 fleas, initially one flea per square.
+正方形のマスを並べた 30 × 30 の格子の中に 900 匹のノミがおり、最初は 1 マスにノミが 1 匹ずついます。
 
-When a bell is rung, each flea jumps to an adjacent square at random (usually 4 possibilities, except for fleas on the edge of the grid or at the corners).
+ベルが鳴ると、それぞれのノミは隣接するマスに不規則に飛びます (格子の端や角にいるノミを除き、通常は 4 方向のいずれかです)。
 
-What is the expected number of unoccupied squares after 50 rings of the bell? Give your answer rounded to six decimal places.
+ベルが 50 回鳴った後に空になっているマスの数の期待値を求めなさい。 回答は、四捨五入して小数第 6 位まで示すこと。
 
 # --hints--
 
-`fleaCircus()` should return `330.721154`.
+`fleaCircus()` は `330.721154` を返す必要があります。
 
 ```js
 assert.strictEqual(fleaCircus(), 330.721154);

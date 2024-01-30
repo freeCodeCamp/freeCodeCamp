@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f160b6c005b0e76f086
-title: 'Objects: A Sample Class'
+title: '对象：一个示例类'
 challengeType: 11
 videoId: FiABKEuaSJ8
 bilibiliIds:

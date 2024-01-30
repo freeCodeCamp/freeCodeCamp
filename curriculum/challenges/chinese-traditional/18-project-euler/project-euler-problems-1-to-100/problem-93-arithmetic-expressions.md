@@ -10,7 +10,7 @@ dashedName: problem-93-arithmetic-expressions
 
 By using each of the digits from the set, {1, 2, 3, 4}, exactly once, and making use of the four arithmetic operations (+, −, \*, /) and brackets/parentheses, it is possible to form different positive integer targets.
 
-For example,
+例如，
 
 <div style='margin-left: 4em;'>
   8 = (4 * (1 + 3)) / 2<br>
@@ -19,7 +19,7 @@ For example,
   36 = 3 * 4 * (2 + 1)
 </div>
 
-Note that concatenations of the digits, like 12 + 34, are not allowed.
+需要注意的是，把數字直接連接起來是不被允許的，例如：12 + 34。
 
 Using the set, {1, 2, 3, 4}, it is possible to obtain thirty-one different target numbers of which 36 is the maximum, and each of the numbers 1 to 28 can be obtained before encountering the first non-expressible number.
 

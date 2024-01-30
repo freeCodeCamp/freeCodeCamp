@@ -1,6 +1,6 @@
 ---
 id: 5eaf48389ee512d4d103684b
-title: Self Describing Numbers
+title: 自描述數字
 challengeType: 1
 forumTopicId: 385289
 dashedName: self-describing-numbers
@@ -10,50 +10,50 @@ dashedName: self-describing-numbers
 
 There are several so-called "self-describing" or "self-descriptive" integers.
 
-An integer is said to be "self-describing" if it has the property that, when digit positions are labeled 0 to N-1, the digit in each position is equal to the number of times that digit appears in the number.
+如果一個整數具有以下特性，即當數字位置標記爲 0 到 N-1 時，每個位置的數字等於該數字在數字中出現的次數，則稱其爲“自描述”整數。
 
-For example, **2020** is a four-digit self describing number:
+例如，**2020** 是一個四位數的自描述數字：
 
 <ul>
     <li> position 0 has value 2 and there are two 0s in the number; </li>
-    <li> position 1 has value 0 and there are no 1s in the number; </li>
-    <li> position 2 has value 2 and there are two 2s; </li>
-    <li> position 3 has value 0 and there are zero 3s; </li>
+    <li> 位置 1 的值爲 0，並且數字中沒有 1； </li>
+    <li> 位置 2 的值爲 2，並且數字中有兩個 2； </li>
+    <li> 位置 3 的值爲 0，並且數字中沒有 s； </li>
 </ul>
 
-Self-describing numbers &lt; 100,000,000 are: 1210, 2020, 21200, 3211000, 42101000.
+小於 100,000,000 的自述數字有：1210、2020、21200、3211000、42101000。
 
 # --instructions--
 
-Write a function that takes a positive integer as a parameter. If it is self-describing return true. Otherwise, return false.
+編寫一個以正整數作爲參數的函數。 如果是自描述數字，則返回 true。 否則，返回 false。
 
 # --hints--
 
-`isSelfDescribing` should be a function.
+`isSelfDescribing` 應該是一個函數。
 
 ```js
 assert(typeof isSelfDescribing == 'function');
 ```
 
-`isSelfDescribing()` should return a boolean.
+`isSelfDescribing()` 應該返回一個布爾值。
 
 ```js
 assert(typeof isSelfDescribing(2020) == 'boolean');
 ```
 
-`isSelfDescribing(2020)` should return `true`.
+`isSelfDescribing(2020)` 應該返回 `true`。
 
 ```js
 assert.equal(isSelfDescribing(2020), true);
 ```
 
-`isSelfDescribing(3021)` should return `false`.
+`isSelfDescribing(3021)` 應該返回 `false`。
 
 ```js
 assert.equal(isSelfDescribing(3021), false);
 ```
 
-`isSelfDescribing(3211000)` should return `true`.
+`isSelfDescribing(3211000)` 應該返回 `true`。
 
 ```js
 assert.equal(isSelfDescribing(3211000), true);
@@ -89,7 +89,7 @@ function isSelfDescribing(n) {
     if (digits.length != count.length) {
         return false;
     }
-    
+
     for (let i=0; i< digits.length; i++){
       if (digits[i] !== count[i]) {
         return false;

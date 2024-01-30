@@ -1,6 +1,6 @@
 ---
 id: 5900f4fc1000cf542c51000e
-title: 'Problem 399: Squarefree Fibonacci Numbers'
+title: 'Завдання 399: безквадратні числа Фібоначчі'
 challengeType: 1
 forumTopicId: 302064
 dashedName: problem-399-squarefree-fibonacci-numbers
@@ -8,23 +8,23 @@ dashedName: problem-399-squarefree-fibonacci-numbers
 
 # --description--
 
-The first 15 fibonacci numbers are:
+Першими 15-тьма числами Фібоначчі є:
 
 $$1,1,2,3,5,8,13,21,34,55,89,144,233,377,610.$$
 
-It can be seen that 8 and 144 are not squarefree: 8 is divisible by 4 and 144 is divisible by 4 and by 9.
+Можна помітити, що 8 та 144 не є безквадратними: 8 ділиться на 4, а 144 ділиться на 4 і 9.
 
-So the first 13 squarefree fibonacci numbers are:
+Тому першими 13-тьма безквадратними числами Фібоначчі є:
 
-$$1,1,2,3,5,13,21,34,55,89,233,377 \text{ and } 610.$$
+$$1,1,2,3,5,13,21,34,55,89,233,377 \text{ та } 610.$$
 
-The $200$th squarefree fibonacci number is: 971183874599339129547649988289594072811608739584170445. The last sixteen digits of this number are: 1608739584170445 and in scientific notation this number can be written as `9.7e53`.
+$200$-им безквадратним числом Фібоначчі є 971183874599339129547649988289594072811608739584170445. Останніми шістнадцятьма цифрами цього числа є 1608739584170445, а в експоненційному записі це число можна записати як `9.7e53`.
 
-Find the $100\\,000\\,000$th squarefree fibonacci number. Give as your answer as a string with its last sixteen digits followed by a comma followed by the number in scientific notation (rounded to one digit after the decimal point). For the $200$th squarefree number the answer would have been: `1608739584170445,9.7e53`
+Знайдіть $100\\,000\\,000$-не безквадратне число Фібоначчі. Надайте відповідь у вигляді рядка з останніх шістнадцяти цифр, після яких йде кома та число в експоненційному записі (округліть до однієї цифри після коми). Для $200$-ого безквадратного числа відповіддю буде `1608739584170445,9.7e53`
 
-**Note:** For this problem, assume that for every prime $p$, the first fibonacci number divisible by $p$ is not divisible by $p^2$ (this is part of Wall's conjecture). This has been verified for primes $≤ 3 \times {10}^{15}$, but has not been proven in general.
+**Примітка:** для цього завдання припускайте, що перше число Фібоначчі, яке ділиться на просте число $p$, не ділиться на $p^2$ (згідно з гіпотезою Волла). Це доведено для простих чисел $≤ 3 \times {10}^{15}$, але не доведено загалом.
 
-If it happens that the conjecture is false, then the accepted answer to this problem isn't guaranteed to be the $100\\,000\\,000$th squarefree fibonacci number, rather it represents only a lower bound for that number.
+Якщо гіпотеза виявиться хибною, то прийнятною відповіддю до цього завдання необов’язково буде $100\\,000\\,000$-не безквадратне число Фібоначчі, а лише межа цього числа.
 
 # --hints--
 

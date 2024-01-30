@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443eddfaeb5bdef
-title: Створіть додаток для голосування
+title: Створіть застосунок для голосування
 challengeType: 4
 forumTopicId: 302359
 dashedName: build-a-voting-app
@@ -8,7 +8,7 @@ dashedName: build-a-voting-app
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://voting-app.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow"> https://voting-app.freecodecamp.rocks </a>. Для виконання проєкту використайте конструктор сайту на власний вибір.
+Створіть повний пакет застосунку JavaScript, який функціонально схожий до цього: <a href="https://voting-app.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow"> https://voting-app.freecodecamp.rocks </a>. Для виконання проєкту використайте конструктор сайту на власний вибір.
 
 Тут наведено конкретні історії користувача, які варто імплементувати в даний проєкт:
 

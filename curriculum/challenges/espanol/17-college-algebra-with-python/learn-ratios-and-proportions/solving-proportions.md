@@ -12,7 +12,7 @@ Now we get to the math content. This video will show you how to set up and solve
 
 Here is the <a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_nQ-X1JuLpUmtRD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a> If you have not done so yet, set up your algebra Colab notebook from the last video. Then, add the code from this video to it.
 
-# --assignment--
+# --tarea--
 
 Add the code from the video to the algebra Colab notebook you created in the first step.
 
