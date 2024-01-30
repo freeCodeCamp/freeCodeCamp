@@ -6,13 +6,11 @@ on:
   # Run on push events, but only for the below branches
   push:
     branches:
-      - 'breaking_python' # Remove after merging breaking_python
       - 'main'
       - 'prod-**'
   # Run on pull requests, but only for the below targets
   pull_request:
     branches:
-      - 'breaking_python' # Remove after merging breaking_python
       - 'main'
       - 'next-**'
   # Run on Merge Queue
