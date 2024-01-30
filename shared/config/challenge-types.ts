@@ -50,28 +50,6 @@ export const challengeTypes = {
   fillInTheBlank
 };
 
-export const isFinalProject = (challengeType: number) => {
-  // TODO: remove the type check once everything is converted to TS
-  if (typeof challengeType !== 'number')
-    throw Error('challengeType must be a number');
-  return (
-    challengeType === frontEndProject ||
-    challengeType === backEndProject ||
-    challengeType === jsProject ||
-    challengeType === pythonProject ||
-    challengeType === codeAllyCert ||
-    challengeType === multifileCertProject ||
-    challengeType === exam
-  );
-};
-
-export const isCodeAllyPractice = (challengeType: number) => {
-  // TODO: remove the type check once everything is converted to TS
-  if (typeof challengeType !== 'number')
-    throw Error('challengeType must be a number');
-  return challengeType === codeAllyPractice;
-};
-
 export const hasNoTests = (challengeType: number): boolean =>
   challengeType === multipleChoice ||
   challengeType === theOdinProject ||
