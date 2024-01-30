@@ -50,17 +50,17 @@ function ModalHeader({
   showHeaderAndFooter,
   donationAttempted,
   showForm,
-  showDonationAnimation
+  donationAnimationFlag
 }: {
   recentlyClaimedBlock: RecentlyClaimedBlock;
   showHeaderAndFooter: boolean;
   donationAttempted: boolean;
   showForm: boolean;
-  showDonationAnimation: boolean;
+  donationAnimationFlag: boolean;
 }) {
   const { t } = useTranslation();
   if (showHeaderAndFooter && !donationAttempted) {
-    if (!showForm && showDonationAnimation) {
+    if (!showForm && donationAnimationFlag) {
       return (
         <Row className='text-center block-modal-text'>
           <Col sm={10} smOffset={1} xs={12}>
@@ -69,7 +69,7 @@ function ModalHeader({
         </Row>
       );
     }
-    if (!showDonationAnimation)
+    if (!donationAnimationFlag)
       return (
         <Row className='text-center block-modal-text'>
           <Col sm={10} smOffset={1} xs={12}>
@@ -140,21 +140,23 @@ function DonationModalBody({
 }: DonationModalBodyProps): JSX.Element {
   const [donationAttempted, setDonationAttempted] = useState(false);
   const [showHeaderAndFooter, setShowHeaderAndFooter] = useState(true);
-  let showDonationAnimation = useFeature('donation-animation').on;
+  const donationAnimationFlag = useFeature('donation-animation').on;
 
-  // for testing
-  showDonationAnimation = true;
+  // uncomment to testing the animation
+  // recentlyClaimedBlock = true;
+  // donationAnimationFlag = false;
 
   const handleProcessing = () => {
     setDonationAttempted(true);
   };
 
-  const [isVisible, setIsVisible] = useState(true);
+  const [isAnimationVisible, setIsAnimationVisible] = useState(true);
   const [showForm, setShowForm] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsVisible(false);
+      setIsAnimationVisible(false);
     }, 20000); // 20000 milliseconds = 20 seconds
 
     // Clear the timer if the component unmounts
@@ -162,20 +164,40 @@ function DonationModalBody({
   }, []);
 
   return (
-    <Modal.Body className='no-delay-fade-in'>
-      {isVisible && (
-        <img
-          alt={'asdfasd'}
-          src={donationAnimation}
-          id={'donaition-animation'}
-          data-playwright-test-label='not-found-image'
-        />
+    <Modal.Body>
+      {donationAnimationFlag && !showForm && (
+        <p style={{ opacity: 0, position: 'absolute' }}>
+          {t('donate.animation-description')}
+        </p>
       )}
-      {!isVisible && (
-        <>
+      {donationAnimationFlag && isAnimationVisible ? (
+        <div className='donation-animatoin-container' aria-disabled='true'>
+          <div className='donation-animation-bullet-points'>
+            <p className='donation-animation-bullet-1'>
+              {t('donate.become-supporter')}
+            </p>
+            <p className='donation-animation-bullet-2'>
+              {t('donate.remove-distractions')}
+            </p>
+            <p className='donation-animation-bullet-3'>
+              {t('donate.reach-goals-faster')}
+            </p>
+            <p className='donation-animation-bullet-4'>
+              {t('donate.help-millions-learn')}
+            </p>
+          </div>
+          <img
+            alt={'asdfasd'}
+            src={donationAnimation}
+            id={'donaition-animation'}
+            data-playwright-test-label='not-found-image'
+          />
+        </div>
+      ) : (
+        <div className='no-delay-fade-in'>
           <div className='donation-icon-container'>
             <Illustration
-              showAnimation={showDonationAnimation}
+              showAnimation={donationAnimationFlag}
               recentlyClaimedBlock={recentlyClaimedBlock}
             />
           </div>
@@ -184,15 +206,16 @@ function DonationModalBody({
             showHeaderAndFooter={showHeaderAndFooter}
             donationAttempted={donationAttempted}
             showForm={showForm}
-            showDonationAnimation={showDonationAnimation}
+            donationAnimationFlag={donationAnimationFlag}
           />
           <Spacer size='small' />
-          {showForm ? (
+          {showForm || !donationAnimationFlag ? (
             <MultiTierDonationForm
               setShowHeaderAndFooter={setShowHeaderAndFooter}
               handleProcessing={handleProcessing}
               paymentContext={PaymentContext.Modal}
               isMinimalForm={true}
+              isAnimationEnabled={donationAnimationFlag}
             />
           ) : (
             <Benefits setShowForm={setShowForm} />
@@ -203,7 +226,7 @@ function DonationModalBody({
               donationAttempted={donationAttempted}
             />
           )}{' '}
-        </>
+        </div>
       )}
     </Modal.Body>
   );

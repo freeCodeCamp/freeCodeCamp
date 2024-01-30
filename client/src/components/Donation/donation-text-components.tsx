@@ -325,15 +325,15 @@ export const ModalBenefitList = () => {
     <ul>
       <li>
         <GreenPass />
-        {t('donate.modal-benefits-1')}
+        {t('donate.help-us-more-certifications')}
       </li>
       <li>
         <GreenPass />
-        {t('donate.modal-benefits-2')}
+        {t('donate.remove-donation-popups')}
       </li>
       <li>
         <GreenPass />
-        {t('donate.modal-benefits-3')}
+        {t('donate.help-millions-learn')}
       </li>
     </ul>
   );
