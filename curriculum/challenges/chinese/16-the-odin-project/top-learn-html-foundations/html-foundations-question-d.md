@@ -7,11 +7,11 @@ dashedName: html-foundations-question-d
 
 # --description--
 
-After you declare the doctype, you need to provide an `<html>` element. This is what’s known as the root element of the document, meaning that every other element in the document will be a descendant of it.
+声明文档类型后，你需要提供一个 `<html>` 元素。 这就是所谓的文档的根元素，文档中的其他每个元素都将是它的后代。
 
-This becomes more important later on when you learn about manipulating HTML with JavaScript. For now, just know that the `html` element should be included on every HTML document.
+以后当你学习用 JavaScript 操作 HTML 时，这就变得更加重要。 现在，只要知道每个 HTML 文档中都应该包含 `html` 元素。
 
-Back in the `index.html` file, let’s add the `<html>` element by typing out its opening and closing tags, like so:
+回到 `index.html` 文件中，让我们通过输入开始和结束标签来添加 `<html>` 元素，就像这样：
 
 ```html
 <!DOCTYPE html>
@@ -19,26 +19,26 @@ Back in the `index.html` file, let’s add the `<html>` element by typing out it
 </html>
 ```
 
-## What is the lang attribute?
-`lang` specifies the language of the text content in that element. This attribute is primarily used for improving accessibility of the webpage. It allows assistive technologies, for example screen readers, to adapt according to the language and invoke correct pronunciation.
+## lang 属性是什么？
+`lang` 在元素中指定了文本内容的语言。 这个属性主要用于提升网页的可访问性。 它允许辅助技术，例如屏幕阅读器，根据语言进行调整并调用正确的发音。
 
 # --question--
 
 ## --text--
 
-What is the `html` element?
+`html` 元素是什么？
 
 ## --answers--
 
-It is the root element in the document and tells the browser which version of HTML it should use.
+它是文档中的根元素，告诉浏览器应该使用哪个版本的 HTML。
 
 ---
 
-It is the root element in the document and all other elements should descend from it.
+它是文档中的根元素，所有其他的元素都是它的子代。
 
 ---
 
-It is the root element in the document and all other elements should come after it.
+它是文档中的根元素，所有其他元素都应该在它之后。
 
 
 ## --video-solution--

@@ -14,11 +14,11 @@ Consider the triangle with sides 6, 8 and 10. It can be seen that the perimeter 
 
 So the $\frac{\text{area}}{\text{perimeter}}$ ratio is equal to 1.
 
-Consider also the triangle with sides 13, 14 and 15. The perimeter equals 42 while the area is equal to 84.
+還要考慮具有邊13、14和15的三角形。 周長等於42，而面積等於84。
 
 So for this triangle the $\frac{\text{area}}{\text{perimeter}}$ ratio is equal to 2.
 
-Find the sum of the perimeters of all integer sided triangles for which the area/perimeter ratios are equal to positive integers not exceeding 1000.
+求出面積/周長比等於不超過1000的正整數的所有整數邊三角形的周長總和。
 
 # --hints--
 

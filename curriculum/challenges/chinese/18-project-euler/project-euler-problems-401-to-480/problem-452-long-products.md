@@ -1,6 +1,6 @@
 ---
 id: 5900f5311000cf542c510043
-title: 'Problem 452: Long Products'
+title: '问题452：长期产品'
 challengeType: 1
 forumTopicId: 302125
 dashedName: problem-452-long-products

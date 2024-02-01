@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ee0
-title: Left factorials
+title: 左階乘
 challengeType: 1
 forumTopicId: 302302
 dashedName: left-factorials
@@ -16,67 +16,67 @@ dashedName: left-factorials
   <li>$n¡$</li>
 </ul>
 
-(It may not be visually obvious, but the last example uses an upside-down exclamation mark.) This task will be using this formula for **left factorial**:
+（它在視覺上可能並不明顯，但最後一個示例使用了倒置的感嘆號。） 此任務將對**左階乘**使用此公式：
 
 $ !n = \\sum\_{k=0}^{n-1} k! $
 
-where $!0 = 0$
+其中 $!0 = 0$
 
 # --instructions--
 
-Write a function to calculate the left factorial of a given number.
+編寫一個函數來計算給定數字的左階乘。
 
 # --hints--
 
-`leftFactorial` should be a function.
+`leftFactorial` 應該是一個函數。
 
 ```js
 assert(typeof leftFactorial == 'function');
 ```
 
-`leftFactorial(0)` should return a number.
+`leftFactorial(0)` 應該返回一個數字。
 
 ```js
 assert(typeof leftFactorial(0) == 'number');
 ```
 
-`leftFactorial(0)` should return `0`.
+`leftFactorial(0)` 應該返回 `0`。
 
 ```js
 assert.equal(leftFactorial(0), 0);
 ```
 
-`leftFactorial(1)` should return `1`.
+`leftFactorial(1)` 應該返回 `1`。
 
 ```js
 assert.equal(leftFactorial(1), 1);
 ```
 
-`leftFactorial(2)` should return `2`.
+`leftFactorial(2)` 應該返回 `2`。
 
 ```js
 assert.equal(leftFactorial(2), 2);
 ```
 
-`leftFactorial(3)` should return `4`.
+`leftFactorial(3)` 應該返回 `4`。
 
 ```js
 assert.equal(leftFactorial(3), 4);
 ```
 
-`leftFactorial(10)` should return `409114`.
+`leftFactorial(10)` 應該返回 `409114`。
 
 ```js
 assert.equal(leftFactorial(10), 409114);
 ```
 
-`leftFactorial(17)` should return `22324392524314`.
+`leftFactorial(17)` 應該返回 `22324392524314`。
 
 ```js
 assert.equal(leftFactorial(17), 22324392524314);
 ```
 
-`leftFactorial(19)` should return `6780385526348314`.
+`leftFactorial(19)` 應該返回 `6780385526348314`。
 
 ```js
 assert.equal(leftFactorial(19), 6780385526348314);

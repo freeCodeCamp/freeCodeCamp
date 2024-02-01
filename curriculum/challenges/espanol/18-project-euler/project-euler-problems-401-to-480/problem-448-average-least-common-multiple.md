@@ -1,6 +1,6 @@
 ---
 id: 5900f52c1000cf542c51003f
-title: 'Problem 448: Average least common multiple'
+title: 'Problema 448: Promedio de mínimo común múltiplo'
 challengeType: 1
 forumTopicId: 302120
 dashedName: problem-448-average-least-common-multiple
@@ -10,19 +10,19 @@ dashedName: problem-448-average-least-common-multiple
 
 The function $lcm(a, b)$ denotes the least common multiple of $a$ and $b$.
 
-Let $A(n)$ be the average of the values of $lcm(n, i)$ for $1 ≤ i ≤ n$.
+$A(n)$ sea el promedio de los valores de $lcm(n, i)$ para $1 ≤ i ≤ n$.
 
-E.g: $A(2) = \frac{2 + 2}{2} = 2$ and $A(10) = \frac{10 + 10 + 30 + 20 + 10 + 30 + 70 + 40 + 90 + 10}{10} = 32$.
+Por ej.: $A(2) = \frac{2 + 2}{2} = 2$ y $A(10) = \frac{10 + 10 + 30 + 20 + 10 + 30 + 70 + 40 + 90 + 10}{10} = 32$.
 
-Let $S(n) = \sum A(k)$ for $1 ≤ k ≤ n$.
+Sea $S(n) = \sum A(k)$ para $1 ≤ k ≤ n$.
 
 $S(100) = 122\\,726$.
 
-Find $S(99\\,999\\,999\\,019)\bmod 999\\,999\\,017$.
+Encontrar $S(99\\,999\\,999\\,019)\bmod 999\\,999\\,017$.
 
 # --hints--
 
-`averageLCM()` should return `106467648`.
+`averageLCM()` deberia devolver `106467648`.
 
 ```js
 assert.strictEqual(averageLCM(), 106467648);

@@ -1,6 +1,6 @@
 ---
 id: 5eaf48389ee512d4d103684b
-title: Self Describing Numbers
+title: Самоописувальні числа
 challengeType: 1
 forumTopicId: 385289
 dashedName: self-describing-numbers
@@ -10,50 +10,50 @@ dashedName: self-describing-numbers
 
 There are several so-called "self-describing" or "self-descriptive" integers.
 
-An integer is said to be "self-describing" if it has the property that, when digit positions are labeled 0 to N-1, the digit in each position is equal to the number of times that digit appears in the number.
+Ціле число називають самоописувальним, якщо воно має такі властивості, коли розряд цифри позначений від 0 до N-1, а цифра в кожній позиції дорівнює тій кількості разів, за яку вона з'являється в числі.
 
-For example, **2020** is a four-digit self describing number:
+До прикладу, **2020** — це самоописувальне чотиризначне число:
 
 <ul>
-    <li> position 0 has value 2 and there are two 0s in the number; </li>
-    <li> position 1 has value 0 and there are no 1s in the number; </li>
-    <li> position 2 has value 2 and there are two 2s; </li>
-    <li> position 3 has value 0 and there are zero 3s; </li>
+    <li> нульова позиція має значення 2 та в числі наявні два 0; </li>
+    <li> перша позиція має значення 0 та в числі немає 1; </li>
+    <li> друга позиція має значення 2 та в числі наявні дві 2; </li>
+    <li> третя позиція має значення 0 та в числі немає 3; </li>
 </ul>
 
-Self-describing numbers &lt; 100,000,000 are: 1210, 2020, 21200, 3211000, 42101000.
+Самоописувальними числами &lt; 100,000,000 є: 1210, 2020, 21200, 3211000, 42101000.
 
 # --instructions--
 
-Write a function that takes a positive integer as a parameter. If it is self-describing return true. Otherwise, return false.
+Напишіть функцію, яка враховує додатне ціле число як параметр. Якщо число самоописувальне, поверніть true. Якщо ні — поверніть false.
 
 # --hints--
 
-`isSelfDescribing` should be a function.
+`isSelfDescribing` має бути функцією.
 
 ```js
 assert(typeof isSelfDescribing == 'function');
 ```
 
-`isSelfDescribing()` should return a boolean.
+`isSelfDescribing()` має повертати логічне значення.
 
 ```js
 assert(typeof isSelfDescribing(2020) == 'boolean');
 ```
 
-`isSelfDescribing(2020)` should return `true`.
+`isSelfDescribing(2020)` має повертати `true`.
 
 ```js
 assert.equal(isSelfDescribing(2020), true);
 ```
 
-`isSelfDescribing(3021)` should return `false`.
+`isSelfDescribing(3021)` має повертати `false`.
 
 ```js
 assert.equal(isSelfDescribing(3021), false);
 ```
 
-`isSelfDescribing(3211000)` should return `true`.
+`isSelfDescribing(3211000)` має повертати `true`.
 
 ```js
 assert.equal(isSelfDescribing(3211000), true);
@@ -89,7 +89,7 @@ function isSelfDescribing(n) {
     if (digits.length != count.length) {
         return false;
     }
-    
+
     for (let i=0; i< digits.length; i++){
       if (digits[i] !== count[i]) {
         return false;

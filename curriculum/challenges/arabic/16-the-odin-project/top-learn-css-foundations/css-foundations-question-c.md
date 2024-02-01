@@ -87,4 +87,4 @@ How would you apply a single rule to two different selectors, `.red-box` and `.y
 
 ## --video-solution--
 
-1
+الأول

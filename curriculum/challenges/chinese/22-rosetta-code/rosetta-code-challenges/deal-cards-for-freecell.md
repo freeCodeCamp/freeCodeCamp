@@ -1,6 +1,6 @@
 ---
 id: 59694356a6e7011f7f1c5f4e
-title: Deal cards for FreeCell
+title: 空当接龙的交易卡
 challengeType: 1
 forumTopicId: 302246
 dashedName: deal-cards-for-freecell
@@ -10,34 +10,34 @@ dashedName: deal-cards-for-freecell
 
 *FreeCell* is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for DOS, then Windows. This version introduced 32000 numbered deals.
 
-As the game became popular, Jim Horne disclosed the algorithm, and other implementations of FreeCell began to reproduce the Microsoft deals. These deals are numbered from 1 to 32000. Newer versions from Microsoft have 1 million deals, numbered from 1 to 1000000; some implementations allow numbers outside that range.
+随着游戏的流行，Jim Horne 公开了算法，FreeCell 的其他实现也开始复制微软的交易。 这些交易编号从 1 到 32000。 微软的较新版本有 100 万笔交易，编号从 1 到 1000000；某些实现允许超出该范围的数字。
 
 The algorithm uses this linear congruential generator from Microsoft C:
 
 <ul>
   <li>$state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}$</li>
   <li>$rand_n = state_n \div 2^{16}$</li>
-  <li>$rand_n$ is in range 0 to 32767.</li>
+  <li>$rand_n$ 的范围是 0 到 32767。</li>
 </ul>
 
-The algorithm follows:
+算法如下：
 
 <ol>
   <li>Seed the RNG with the number of the deal.
-  </li><li>Create an array of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51.</li>
-  <li>Until the array is empty:</li>
-  <li>Choose a random card at index ≡ next random number (mod array length).</li>
+  </li><li>Create an array of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. 数组索引为 0 到 51，梅花 A 为 0，黑桃王为 51。</li>
+  <li>直到数组为空：</li>
+  <li>在索引 ≡ 下一个随机数（mod 数组长度）处选择一张随机卡片。</li>
     <ul>
       <li>Swap this random card with the last card of the array.</li>
-      <li>Remove this random card from the array. (Array length goes down by 1.)</li>
-      <li>Deal this random card.</li>
+      <li>从阵列中移除这张随机卡。 （数组长度减 1。）</li>
+      <li>处理这张随机牌。</li>
     </ul>
-  <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
+  <li>处理所有 52 张牌，面朝上，跨越 8 列。 前 8 张牌分 8 列，接下来的 8 张牌排在前 8 张牌上，以此类推。</li>
 </ol>
 
 **Example:**
 
-**Order to deal cards**
+**发牌顺序**
 
 <pre> 1  2  3  4  5  6  7  8
  9 10 11 12 13 14 15 16
@@ -47,7 +47,7 @@ The algorithm follows:
 41 42 43 44 45 46 47 48
 49 50 51 52</pre>
 
-**Game #1**
+**游戏 #1**
 
 ```js
 [
@@ -61,7 +61,7 @@ The algorithm follows:
 ]
 ```
 
-**Game #617**
+**游戏 #617**
 
 ```js
 [
@@ -77,7 +77,7 @@ The algorithm follows:
 
 # --instructions--
 
-Write a function to take a deal number and deal cards in the same order as this algorithm. The function must return a two dimensional array representing the FreeCell board.
+编写一个函数，以与该算法相同的顺序获取发牌号码和发牌。 该函数必须返回一个代表空当接龙板的二维数组。
 
 # --hints--
 

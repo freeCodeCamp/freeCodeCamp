@@ -1,6 +1,6 @@
 ---
 id: 5ea2815e364d9a2222ea55f8
-title: LZW compression
+title: Compressione LZW
 challengeType: 1
 forumTopicId: 385288
 dashedName: lzw-compression
@@ -12,23 +12,23 @@ The Lempel-Ziv-Welch (LZW) algorithm provides loss-less data compression.
 
 # --instructions--
 
-Write a function that takes two parameters. The first parameter is a boolean where `true` indicates compress and `false` indicates decompress. The second parameter is either a string or an array to be processed. If it is a string to be compressed, return an array of numbers. If it's an array of numbers to be decompressed, return a string.
+Scrivi una funzione che prende due parametri. Il primo parametro è un booleano dove `true` indica compressione e `false` indica decompressione. Il secondo parametro è una stringa o un array da elaborare. Se si tratta di una stringa da comprimere, restituisce un array di numeri. Se si tratta di un array di numeri da decomprimere restituisce una stringa.
 
 # --hints--
 
-`LZW` should be a function.
+`LZW` dovrebbe essere una funzione.
 
 ```js
 assert(typeof LZW === 'function');
 ```
 
-`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` should return a array.
+`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(LZW(true, 'TOBEORNOTTOBEORTOBEORNOT')));
 ```
 
-`LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])` should return a string.
+`LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])` dovrebbe restituire una stringa.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` should return `[84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]`.
+`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` dovrebbe restituire `[84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]`.
 
 ```js
 assert.deepEqual(LZW(true, 'TOBEORNOTTOBEORTOBEORNOT'), [
@@ -76,7 +76,7 @@ assert.deepEqual(LZW(true, 'TOBEORNOTTOBEORTOBEORNOT'), [
 ]);
 ```
 
-`LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])` should return `"TOBEORNOTTOBEORTOBEORNOT"`.
+`LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])` dovrebbe restituire `"TOBEORNOTTOBEORTOBEORNOT"`.
 
 ```js
 assert.equal(
@@ -102,7 +102,7 @@ assert.equal(
 );
 ```
 
-`LZW(true, "0123456789")` should return `[48, 49, 50, 51, 52, 53, 54, 55, 56, 57]`.
+`LZW(true, "0123456789")` dovrebbe restituire `[48, 49, 50, 51, 52, 53, 54, 55, 56, 57]`.
 
 ```js
 assert.deepEqual(LZW(true, '0123456789'), [
@@ -119,7 +119,7 @@ assert.deepEqual(LZW(true, '0123456789'), [
 ]);
 ```
 
-`LZW(false, [48, 49, 50, 51, 52, 53, 54, 55, 56, 57])` should return `"0123456789"`.
+`LZW(false, [48, 49, 50, 51, 52, 53, 54, 55, 56, 57])` dovrebbe restituire `"0123456789"`.
 
 ```js
 assert.equal(
@@ -128,13 +128,13 @@ assert.equal(
 );
 ```
 
-`LZW(true, "BABAABAAA")` should return `[66, 65, 256, 257, 65, 260]`.
+`LZW(true, "BABAABAAA")` dovrebbe restituire `[66, 65, 256, 257, 65, 260]`.
 
 ```js
 assert.deepEqual(LZW(true, 'BABAABAAA'), [66, 65, 256, 257, 65, 260]);
 ```
 
-`LZW(false, [66, 65, 256, 257, 65, 260])` should return `"BABAABAAA"`.
+`LZW(false, [66, 65, 256, 257, 65, 260])` dovrebbe restituire `"BABAABAAA"`.
 
 ```js
 assert.equal(LZW(false, [66, 65, 256, 257, 65, 260]), 'BABAABAAA');

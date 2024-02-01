@@ -1,6 +1,6 @@
 ---
 id: 5900f39e1000cf542c50feb1
-title: 'Problem 50: Consecutive prime sum'
+title: '問題 50: 連続する素数の和'
 challengeType: 1
 forumTopicId: 302161
 dashedName: problem-50-consecutive-prime-sum
@@ -8,31 +8,31 @@ dashedName: problem-50-consecutive-prime-sum
 
 # --description--
 
-The prime 41, can be written as the sum of six consecutive primes:
+素数 41 は、連続する 6 つの素数の和として表せます。
 
 <div style='text-align: center;'>41 = 2 + 3 + 5 + 7 + 11 + 13</div>
 
-This is the longest sum of consecutive primes that adds to a prime below one-hundred.
+これは、100 未満の素数のうち、連続する素数の和として表した場合の最長のものです。
 
-The longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953.
+1000 未満の素数のうち、連続する素数の和として表した場合に最も長くなる素数は 953 で、項は 21 個あります。
 
-Which prime, below one-million, can be written as the sum of the most consecutive primes?
+100 万未満の素数のうち、連続する素数の和として表した場合に最も長くなる素数を求めなさい。
 
 # --hints--
 
-`consecutivePrimeSum(1000)` should return a number.
+`consecutivePrimeSum(1000)` は数値を返す必要があります。
 
 ```js
 assert(typeof consecutivePrimeSum(1000) === 'number');
 ```
 
-`consecutivePrimeSum(1000)` should return 953.
+`consecutivePrimeSum(1000)` は 953 を返す必要があります。
 
 ```js
 assert.strictEqual(consecutivePrimeSum(1000), 953);
 ```
 
-`consecutivePrimeSum(1000000)` should return 997651.
+`consecutivePrimeSum(1000000)` は 997651 を返す必要があります。
 
 ```js
 assert.strictEqual(consecutivePrimeSum(1000000), 997651);

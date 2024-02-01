@@ -1,6 +1,6 @@
 ---
 id: 5e6dd1278e6ca105cde40ea9
-title: Longest common subsequence
+title: 最長共通部分列
 challengeType: 1
 forumTopicId: 385271
 dashedName: longest-common-subsequence
@@ -14,11 +14,11 @@ The **longest common subsequence** (or **LCS**) of groups A and B is the longest
 
 <u>12</u>245<u>3</u>332<u>4</u>
 
-For a string example, consider the sequences `thisisatest` and `testing123testing`. An LCS would be `tsitest`:
+文字列の例として、文字列 `thisisatest` と `testing123testing` の場合を考えてみましょう。 LCS は `tsitest` となります:
 
 <u>t</u>hi<u>si</u>sa<u>test</u>
 
-<u>t</u>e<u>s</u>t<u>i</u>ng123<u>test</u>ing.
+<u>t</u>e<u>s</u>t<u>i</u>ng123<u>test</u>ing
 
 Your code only needs to deal with strings.
 

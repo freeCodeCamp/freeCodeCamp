@@ -8,7 +8,7 @@ dashedName: change-styles-based-on-data
 
 # --description--
 
-D3 は、データを可視化して適切に提示するためのものです。 データに基づいて要素のスタイルを変更したい場合があるでしょう。 For example, you may want to color a data point blue if it has a value less than 20, and red otherwise. You can use a callback function in the `style()` method and include the conditional logic. The callback function uses the `d` parameter to represent the data point:
+D3 は、データを可視化して適切に提示するためのものです。 データに基づいて要素のスタイルを変更したい場合があるでしょう。 例えば、値が 20 未満のデータポイントは青色に、そうでない場合は赤色にすることができます。 `style()` メソッドでコールバック関数を使用し、条件付きロジックを含めることができます。 コールバック関数は、次のように `d` パラメータを使用してデータポイントを表します。
 
 ```js
 selection.style("color", (d) => {
@@ -16,65 +16,65 @@ selection.style("color", (d) => {
 });
 ```
 
-The `style()` method is not limited to setting the `color` - it can be used with other CSS properties as well.
+`style()` メソッドは `color` の設定に限定されるものではありません 。他の CSS プロパティでも使用できます。
 
 # --instructions--
 
-Add the `style()` method to the code in the editor to set the `color` of the `h2` elements conditionally. Write the callback function so if the data value is less than 20, it returns red, otherwise it returns green.
+`style()` メソッドをエディタ内のコードに追加して、`h2` 要素の `color` を条件付きで設定してください。 データ値が 20 未満の場合は赤を返し、そうでない場合は緑を返すようなコールバック関数を記述してください。
 
-**Note:** You can use if-else logic, or the ternary operator.
+**注:** if-else ロジックまたは三項演算子を使用できます。
 
 # --hints--
 
-The first `h2` should have a `color` of red.
+最初の `h2` の `color` を赤にする必要があります。
 
 ```js
 assert($('h2').eq(0).css('color') == 'rgb(255, 0, 0)');
 ```
 
-The second `h2` should have a `color` of green.
+2 番目の `h2` の `color` を緑にする必要があります。
 
 ```js
 assert($('h2').eq(1).css('color') == 'rgb(0, 128, 0)');
 ```
 
-The third `h2` should have a `color` of green.
+3 番目の `h2` の `color` を緑にする必要があります。
 
 ```js
 assert($('h2').eq(2).css('color') == 'rgb(0, 128, 0)');
 ```
 
-The fourth `h2` should have a `color` of red.
+4 番目の `h2` の `color` を赤にする必要があります。
 
 ```js
 assert($('h2').eq(3).css('color') == 'rgb(255, 0, 0)');
 ```
 
-The fifth `h2` should have a `color` of green.
+5 番目の `h2` の `color` を緑にする必要があります。
 
 ```js
 assert($('h2').eq(4).css('color') == 'rgb(0, 128, 0)');
 ```
 
-The sixth `h2` should have a `color` of red.
+6 番目の `h2` の `color` を赤にする必要があります。
 
 ```js
 assert($('h2').eq(5).css('color') == 'rgb(255, 0, 0)');
 ```
 
-The seventh `h2` should have a `color` of green.
+7 番目の `h2` の `color` を緑にする必要があります。
 
 ```js
 assert($('h2').eq(6).css('color') == 'rgb(0, 128, 0)');
 ```
 
-The eighth `h2` should have a `color` of red.
+8 番目の `h2` の `color` を赤にする必要があります。
 
 ```js
 assert($('h2').eq(7).css('color') == 'rgb(255, 0, 0)');
 ```
 
-The ninth `h2` should have a `color` of red.
+9 番目の `h2` の `color` を赤にする必要があります。
 
 ```js
 assert($('h2').eq(8).css('color') == 'rgb(255, 0, 0)');

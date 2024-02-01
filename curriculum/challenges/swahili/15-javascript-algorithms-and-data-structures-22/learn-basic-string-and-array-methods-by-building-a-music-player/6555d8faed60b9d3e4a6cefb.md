@@ -1,13 +1,13 @@
 ---
 id: 6555d8faed60b9d3e4a6cefb
-title: Step 57
+title: Hatua ya 63
 challengeType: 0
-dashedName: step-57
+dashedName: step-63
 ---
 
 # --description--
 
-Use `const` and arrow syntax to define a function called `setPlayButtonAccessibleText`. 
+Use `const` and arrow syntax to define a function called `setPlayButtonAccessibleText`.
 
 This function will set the `aria-label` attribute to the current song, or to the first song in the playlist. And if the playlist is empty, it sets the `aria-label` to `"Play"`.
 
@@ -644,7 +644,7 @@ const playSong = (id) => {
 
 const pauseSong = () => {
   userData.songCurrentTime = audio.currentTime;
-  
+
   playButton.classList.remove("playing");
   audio.pause();
 };
@@ -734,6 +734,18 @@ pauseButton.addEventListener("click",  pauseSong);
 nextButton.addEventListener("click", playNextSong);
 
 previousButton.addEventListener("click", playPreviousSong);
+
+userData?.songs.sort((a,b) => {
+  if (a.title < b.title) {
+    return -1;
+  }
+
+  if (a.title > b.title) {
+    return 1;
+  }
+
+  return 0;
+});
 
 renderSongs(userData?.songs);
 ```

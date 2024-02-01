@@ -1,7 +1,7 @@
 ---
 id: 5900f40a1000cf542c50ff1d
 title: >-
-  Problem 158: Exploring strings for which only one character comes lexicographically after its neighbour to the left
+  Problema 158: Explorando cadenas para las que sólo un carácter viene lexicográficamente después de su vecino a la izquierda
 challengeType: 1
 forumTopicId: 301789
 dashedName: >-

@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ec5
-title: Josephus problem
+title: ヨセフスの問題
 challengeType: 1
 forumTopicId: 302294
 dashedName: josephus-problem
@@ -10,63 +10,63 @@ dashedName: josephus-problem
 
 Josephus problem is a math puzzle with a grim description: $n$ prisoners are standing on a circle, sequentially numbered from $0$ to $n-1$.
 
-An executioner walks along the circle, starting from prisoner $0$, removing every $k$-th prisoner and killing him.
+死刑執行人が円の周囲を歩きながら、囚人 $0$ から始め、$k$ 番目ごとに囚人を処刑していきます。
 
-As the process goes on, the circle becomes smaller and smaller, until only one prisoner remains, who is then freed.
+死刑の執行が進むにつれ円はどんどん小さくなっていき、最後の1人は釈放されます。
 
-For example, if there are $n=5$ prisoners and $k=2$, the order the prisoners are killed in (let's call it the "killing sequence") will be 1, 3, 0, and 4, and the survivor will be #2.
+例えば、 $n=5$ 人の囚人がおり、 $k=2$ の場合、囚人が処刑される順番 (「執行シーケンス」と呼ぶことにしましょう) は 1、3、0、4 となり、釈放されるのは 2 番の囚人になります。
 
-Given any $n, k > 0$, find out which prisoner will be the final survivor.
+任意の $n, k > 0$ が与えられた場合に、どの囚人が最後に生き残るかを求めてみましょう。
 
-In one such incident, there were 41 prisoners and every 3<sup>rd</sup> prisoner was being killed ($k=3$).
+このような例の 1 つに、囚人が41 人で、3<sup>rd</sup> 番目の囚人ごとに処刑された ($k=3$) という出来事があります。
 
-Among them was a clever chap name Josephus who worked out the problem, stood at the surviving position, and lived on to tell the tale.
+そのうちの 1 人がこの問題を解いたヨセフスという賢い人物で、最終的に生き残り、この物語を語り継ぎました。
 
-Which number was he?
+ヨセフスは何番目だったでしょうか。
 
 # --instructions--
 
-Write a function that takes the initial number of prisoners and `k` as parameters and returns the number of the prisoner that survives.
+囚人の最初の数と `k` をパラメータとして取り、生き残った囚人の番号を返す関数を記述してください。
 
 # --hints--
 
-`josephus` should be a function.
+`josephus` は関数とします。
 
 ```js
 assert(typeof josephus == 'function');
 ```
 
-`josephus(30,3)` should return a number.
+`josephus(30,3)` は数値を返す必要があります。
 
 ```js
 assert(typeof josephus(30, 3) == 'number');
 ```
 
-`josephus(30,3)` should return `28`.
+`josephus(30,3)` は `28` を返す必要があります。
 
 ```js
 assert.equal(josephus(30, 3), 28);
 ```
 
-`josephus(30,5)` should return `2`.
+`josephus(30,5)` は `2` を返す必要があります。
 
 ```js
 assert.equal(josephus(30, 5), 2);
 ```
 
-`josephus(20,2)` should return `8`.
+`josephus(20,2)` は `8` を返す必要があります。
 
 ```js
 assert.equal(josephus(20, 2), 8);
 ```
 
-`josephus(17,6)` should return `1`.
+`josephus(17,6)` は `1` を返す必要があります。
 
 ```js
 assert.equal(josephus(17, 6), 1);
 ```
 
-`josephus(29,4)` should return `1`.
+`josephus(29,4)` は `1` を返す必要があります。
 
 ```js
 assert.equal(josephus(29, 4), 1);

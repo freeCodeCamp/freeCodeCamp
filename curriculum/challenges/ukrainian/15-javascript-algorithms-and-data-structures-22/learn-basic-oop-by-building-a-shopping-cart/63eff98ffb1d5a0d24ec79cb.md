@@ -7,43 +7,43 @@ dashedName: step-26
 
 # --description--
 
-You haven't written the code to generate the HTML yet, but if a product has already been added to the user's cart then there will be a matching element which you'll need.
+Ви ще не написали код для генерації HTML, але якщо продукт вже додано до кошика користувача, тоді там буде відповідний елемент, який вам знадобиться.
 
-Use `.getElementById()` to get the matching element - you'll be setting the `id` value to `product-count-for-id${product.id}`, so use a template literal to query that value.
+Використайте `.getElementById()`, щоб отримати відповідний елемент — ви встановите значення `id` на `product-count-for-id${product.id}`, тому використайте шаблонний літерал для запиту цього значення.
 
-Assign your query to a `currentProductCountSpan` variable.
+Присвойте свій запит змінній `currentProductCountSpan`.
 
 # --hints--
 
-You should declare a `currentProductCountSpan` variable.
+Ви повинні оголосити змінну `currentProductCountSpan`.
 
 ```js
 const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /currentProductCountSpan\s*=/);
 ```
 
-You should use `const` to declare `currentProductCountSpan`.
+Ви повинні використати `const`, щоб оголосити `currentProductCountSpan`.
 
 ```js
 const afterAdd = code.split("addItem")[1];
 assert.match(afterAdd, /const\s+currentProductCountSpan\s*=/);
 ```
 
-You should use `document.getElementById()` to get the matching element.
+Ви повинні використати `document.getElementById()`, щоб отримати відповідний елемент.
 
 ```js
 const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /document\.getElementById\(/);
 ```
 
-You should use a template literal to query the `id` value.
+Ви повинні використовувати шаблонний літерал для запиту значення `id`.
 
 ```js
 const afterAdd = code.split("addItem")[1];
 assert.match(afterAdd, /document\.getElementById\(\s*`product-count-for-id\$\{(product\.)?id\}`\s*\)/);
 ```
 
-You should assign the value of `document.getElementById()` to `currentProductCountSpan`.
+Ви повинні присвоїти значення `document.getElementById()` до `currentProductCountSpan`.
 
 ```js
 const cart = new ShoppingCart();

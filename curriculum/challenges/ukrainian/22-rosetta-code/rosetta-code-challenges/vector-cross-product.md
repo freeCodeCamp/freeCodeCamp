@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad2
-title: Vector cross product
+title: Перехресний добуток векторів
 challengeType: 1
 forumTopicId: 302342
 dashedName: vector-cross-product
@@ -12,23 +12,23 @@ A vector is defined as having three dimensions as being represented by an ordere
 
 # --instructions--
 
-Write a function that takes two vectors (arrays) as input and computes their cross product. Your function should return `null` on invalid inputs such as vectors of different lengths.
+Напишіть функцію, яка приймає два вектори (масиви) як вхідні дані та обчислює їхній перехресний добуток. Ваша функція має повертати `null` при недопустимих вхідних даних, таких як вектори різної довжини.
 
 # --hints--
 
-`crossProduct` should be a function.
+`crossProduct` має бути функцією.
 
 ```js
 assert.equal(typeof crossProduct, 'function');
 ```
 
-`crossProduct()` should return null.
+`crossProduct()` має повернути null.
 
 ```js
 assert.equal(crossProduct(), null);
 ```
 
-`crossProduct([1, 2, 3], [4, 5, 6])` should return `[-3, 6, -3]`.
+`crossProduct([1, 2, 3], [4, 5, 6])` має повернути `[-3, 6, -3]`.
 
 ```js
 assert.deepEqual(res12, exp12);

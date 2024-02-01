@@ -1,6 +1,6 @@
 ---
 id: 5900f3a81000cf542c50febb
-title: 'Завдання 60: об’єднання пари в просте число'
+title: 'Завдання 60: множини пар простих чисел'
 challengeType: 1
 forumTopicId: 302172
 dashedName: problem-60-prime-pair-sets
