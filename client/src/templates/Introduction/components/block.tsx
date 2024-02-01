@@ -337,17 +337,14 @@ class Block extends Component<BlockProps> {
       </ScrollableAnchor>
     );
 
-    const RenderedBlock = () => {
-      if (isProjectBlock) {
-        return isGridBlock ? GridProjectBlock : ProjectBlock;
-      } else {
-        return isGridBlock ? GridBlock : Block;
-      }
+    const blockrenderer = () => {
+      if (isProjectBlock) return isGridBlock ? GridProjectBlock : ProjectBlock;
+      return isGridBlock ? GridBlock : Block;
     };
 
     return (
       <>
-        <RenderedBlock />
+        {blockrenderer()}
         {isGridBlock && !isProjectBlock ? null : <Spacer size='medium' />}
       </>
     );
