@@ -243,7 +243,7 @@ const dropUsers = async function () {
 };
 
 const run = async () => {
-  await client.connect();
+  await client.db('admin').command({ ping: 1 });
   log('Connected successfully to mongo');
 
   await dropUserTokens();

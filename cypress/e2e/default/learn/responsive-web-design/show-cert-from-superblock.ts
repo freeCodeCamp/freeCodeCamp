@@ -39,12 +39,7 @@ describe('Front End Development Libraries Superblock', () => {
       cy.url().should('match', /\/settings\/?#certification-settings/);
     });
   });
-
-  // This test suite is skipped because it is not reflecting the UI/UX correctly
-  // and blocks the UI component migration.
-  // TODO: Write tests for the claim cert workflow with Playwright and remove this file.
-  // Tracking issue: https://github.com/freeCodeCamp/freeCodeCamp/issues/52905
-  describe.skip('After submitting all 5 projects', () => {
+  describe('After submitting all 5 projects', () => {
     before(() => {
       cy.task('seed');
       cy.login();
