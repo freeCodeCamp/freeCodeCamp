@@ -1,6 +1,6 @@
 ---
 id: 5900f4e81000cf542c50fffb
-title: 'Problem 380: Amazing Mazes!'
+title: 'Завдання 380: дивовижні лабіринти!'
 challengeType: 1
 forumTopicId: 302044
 dashedName: problem-380-amazing-mazes
@@ -8,17 +8,17 @@ dashedName: problem-380-amazing-mazes
 
 # --description--
 
-An $m×n$ maze is an $m×n$ rectangular grid with walls placed between grid cells such that there is exactly one path from the top-left square to any other square. The following are examples of a 9×12 maze and a 15×20 maze:
+Лабіринт $m×n$ — це прямокутна сітка $m×n$ зі стінками, розміщеними між клітинками сітки таким чином, що існує лише один шлях від верхнього лівого квадрата до будь-якого іншого квадрата. Нижче наведено приклади лабіринту 9×12 та лабіринту 15×20:
 
-<img class="img-responsive center-block" alt="9x12 maze and 15x20 maze" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Лабіринт 9х12 і лабіринт 15х20" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px;" />
 
-Let $C(m, n)$ be the number of distinct $m×n$ mazes. Mazes which can be formed by rotation and reflection from another maze are considered distinct.
+Нехай $C(m, n)$ буде кількістю різних лабіринтів $m×n$. Лабіринти, які можна утворити шляхом обертання та відбиття від іншого лабіринту, вважаються різними.
 
-It can be verified that $C(1, 1) = 1$, $C(2, 2) = 4$, $C(3, 4) = 2415$, and $C(9, 12) = 2.5720\mathrm{e}\\,46$ (in scientific notation rounded to 5 significant digits).
+Можна довести, що $C(1, 1) = 1$, $C(2, 2) = 4$, $C(3, 4) = 2415$ та $C(9, 12) = 2.5720\mathrm{e}\\,46$ (в експоненційному записі заокруглено до п’яти знаків після коми).
 
-Find $C(100, 500)$ and write your answer as a string in scientific notation rounded to 5 significant digits.
+Знайдіть $C(100, 500)$ та надайте відповідь у вигляді рядка в експоненційному записі, заокругливши до п’яти знаків після коми.
 
-When giving your answer, use a lowercase e to separate mantissa and exponent. E.g. if the answer is 1234567891011 then the answer format would be the string `1.2346e12`.
+При цьому використайте e в нижньому регістрі, щоб розділити мантису та показник степеня. Наприклад, якщо відповідь дорівнює 1234567891011, то форматом буде рядок `1.2346e12`.
 
 # --hints--
 

@@ -19,7 +19,7 @@ In the `penguin` class, change the `black` value to `gray`, the `gray` value to 
 
 # --hints--
 
-`penguin` class should declare the `--penguin-skin` variable and assign it to `gray`.
+الـ class الذي اسمه `penguin` يجب أن يحدث له declare إلى مُتغير الـ `--penguin-skin` وتعيين قيمته إلى `gray`.
 
 ```js
 assert(

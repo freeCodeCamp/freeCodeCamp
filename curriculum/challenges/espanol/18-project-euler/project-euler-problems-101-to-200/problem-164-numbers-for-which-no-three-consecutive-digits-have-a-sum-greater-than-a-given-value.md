@@ -1,7 +1,7 @@
 ---
 id: 5900f4111000cf542c50ff23
 title: >-
-  Problem 164: Numbers for which no three consecutive digits have a sum greater than a given value
+  Problema N° 164: Números para los que no hay tres dígitos consecutivos tienen una suma mayor que un valor dado
 challengeType: 1
 forumTopicId: 301798
 dashedName: >-
@@ -14,7 +14,7 @@ How many 20 digit numbers $n$ (without any leading zero) exist such that no thre
 
 # --hints--
 
-`consecutiveDigitsSum()` should return `378158756814587`.
+`consecutiveDigitsSum()` deveria retornar `378158756814587`.
 
 ```js
 assert.strictEqual(consecutiveDigitsSum(), 378158756814587);

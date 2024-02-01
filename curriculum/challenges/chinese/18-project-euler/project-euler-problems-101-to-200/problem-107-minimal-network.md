@@ -1,6 +1,6 @@
 ---
 id: 5900f3d91000cf542c50feea
-title: 'Problem 107: Minimal network'
+title: '问题 107：最小网络'
 challengeType: 1
 forumTopicId: 301731
 dashedName: problem-107-minimal-network
@@ -10,7 +10,7 @@ dashedName: problem-107-minimal-network
 
 The following undirected network consists of seven vertices and twelve edges with a total weight of 243.
 
-<img class="img-responsive center-block" alt="Network with seven vertices and twelve edges" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="具有七个顶点和十二条边的网络" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
 
 The same network can be represented by the matrix below.
 
@@ -25,15 +25,15 @@ The same network can be represented by the matrix below.
 | G | -  | -  | -  | 23 | 11 | 27 | -  |
 
 
-However, it is possible to optimise the network by removing some edges and still ensure that all points on the network remain connected. The network which achieves the maximum saving is shown below. It has a weight of 93, representing a saving of 243 − 93 = 150 from the original network.
+但是，可以通过删除一些边来优化网络，并仍然确保网络上的所有点保持连接。 The network which achieves the maximum saving is shown below. 它的权重为 93，代表从原始网络节省了 243 − 93 = 150。
 
-<img class="img-responsive center-block" alt="Network with seven vertices and left six edges: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="网络有七个顶点和左六条边: AB，BD，CA，DE，DF，EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
 
-Using `network`, an 2D array representing network in matrix form, find the maximum saving which can be achieved by removing redundant edges whilst ensuring that the network remains connected. Vertices not having connection will be represented with `-1`.
+使用 `network`，一个以矩阵形式表示网络的二维数组，找到通过去除冗余边同时确保网络保持连接可以实现的最大节省。 没有连接的顶点将用 `-1` 表示。
 
 # --hints--
 
-`minimalNetwork(testNetwork)` should return `259679`.
+`minimalNetwork(testNetwork)` 应该返回 `259679`。
 
 ```js
 assert.strictEqual(minimalNetwork(_testNetwork), 259679);

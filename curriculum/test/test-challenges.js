@@ -424,7 +424,7 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
               try {
                 testRunner = await createTestRunner(
                   challenge,
-                  [],
+                  challenge.challengeFiles,
                   buildChallenge
                 );
               } catch {

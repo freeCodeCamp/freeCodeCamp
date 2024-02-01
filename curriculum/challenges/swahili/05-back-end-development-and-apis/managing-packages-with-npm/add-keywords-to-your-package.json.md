@@ -8,7 +8,7 @@ dashedName: add-keywords-to-your-package-json
 
 # --description--
 
-The `keywords` field is where you can describe your project using related keywords. Here's an example:
+The `keywords` field is where you can describe your project using related keywords. Hapa kuna mfano:
 
 ```json
 "keywords": [ "descriptive", "related", "words" ],

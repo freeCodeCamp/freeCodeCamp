@@ -1,6 +1,6 @@
 ---
 id: 6363d2429078df117ce4c400
-title: "Quadratics"
+title: "二次方程式"
 challengeType: 15
 videoId: pPLBL3L0OGg
 dashedName: quadratics
@@ -8,15 +8,15 @@ dashedName: quadratics
 
 # --description--
 
-This video show you how to solve quadratic equations, and explain the coefficients ("A," "B," and "C") in the standard form and how to use them to find the roots and vertex.
+この動画では、二次方程式を解く方法を紹介し、標準形の係数 ("A"、"B"、"C") についてと、それらを使用して根と頂点を見つける方法について説明します。
 
-Here is the <a href="https://colab.research.google.com/drive/1jr_k4awSSW1CBs9ma9oS_WnDblDjX3pc?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+この動画と合わせて<a href="https://colab.research.google.com/drive/1jr_k4awSSW1CBs9ma9oS_WnDblDjX3pc?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">こちらの Colab ノートブック</a>も利用してください。
 
 # --question--
 
 ## --text--
 
-In Python code, what is the formula for the x value of the vertex?
+Python のコードで、頂点の x の値を表す式はどれですか？
 
 ## --answers--
 

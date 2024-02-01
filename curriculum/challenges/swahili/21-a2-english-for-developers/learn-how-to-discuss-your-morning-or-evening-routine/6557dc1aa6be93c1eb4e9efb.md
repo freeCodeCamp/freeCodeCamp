@@ -13,13 +13,11 @@ Sarah: Anyway, before leaving for work, I like to check my emails and messages t
 
 # --description--
 
-The word `if` is often used in conditional statements to talk about a possible situation and its consequences. For example:
+The word `if` is often used in conditional statements to talk about a possible situation and its consequences. Kwa mfano:
 
-`If it rains, I will bring an umbrella.` 
-(The action of bringing an umbrella depends on the possibility of rain.)
+`If it rains, I will bring an umbrella.` (The action of bringing an umbrella depends on the possibility of rain.)
 
-`If you need help, just ask.` 
-(The offer to help is conditional on the other person needing it.)
+`If you need help, just ask.` (The offer to help is conditional on the other person needing it.)
 
 # --question--
 

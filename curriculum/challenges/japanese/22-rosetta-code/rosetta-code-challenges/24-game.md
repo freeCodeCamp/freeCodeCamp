@@ -10,42 +10,42 @@ dashedName: 24-game
 
 The 24 Game tests a person's mental arithmetic.
 
-The aim of the game is to arrange four numbers in a way that when evaluated, the result is 24
+ゲームの目的は、算出結果が24になるように4つの数字を配置することです。
 
 # --instructions--
 
-Implement a function that takes a string of four digits as its argument, with each digit from 1 to 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return "no solution exists".
+4桁の文字列を引数とする関数を作成します。 各桁は、1 から 9 までの数字で、繰り返しも可能です。この関数は、算出結果が数値 24 になる算術式を返します。 そのような解が存在しない場合は、「解が存在しません」を返します。
 
-**Rules:**
+**ルール:**
 <ul>
   <li> Only the following operators/functions are allowed: multiplication, division, addition, subtraction. </li>
-  <li> Division should use floating point or rational arithmetic, etc, to preserve remainders. </li>
-  <li> Forming multiple digit numbers from the supplied digits is disallowed. (So an answer of 12+12 when given 1, 2, 2, and 1 is wrong). </li>
-  <li> The order of the digits when given does not have to be preserved. </li>
+  <li> 除算では、余りを保持するために浮動小数点や有理数演算などを使用します。 </li>
+  <li> 与えられた数字から複数の桁数を作成することはできません。 (つまり、1、2、2、1が与えられた場合、12+12という答えは間違っています)。 </li>
+  <li> 与えられた数字の順序は保持する必要がありません。 </li>
 </ul>
 
-| Example input                 | Example output            |
-| ----------------------------- | ------------------------- |
-| <code>solve24("4878");</code> | <code>(7-8/8)\*4</code>   |
-| <code>solve24("1234");</code> | <code>3\*1\*4\*2</code>   |
+| Example input             | 出力例                       |
+| ------------------------- | ------------------------- |
+| <code>solve24("4878");</code> | <code>(7-8/8)\*4</code> |
+| <code>solve24("1234");</code> | <code>3\*1\*4\*2</code> |
 | <code>solve24("6789");</code> | <code>(6\*8)/(9-7)</code> |
 | <code>solve24("1127");</code> | <code>(1+7)\*(2+1)</code> |
 
 # --hints--
 
-`solve24` should be a function.
+`solve24` という関数です。
 
 ```js
 assert(typeof solve24 === 'function');
 ```
 
-`solve24("4878")` should return `(7-8/8)*4`, `4*(7-8/8)`, or a similar valid string
+`solve24("4878")` は、`(7-8/8)*4`、`4*(7-8/8)`、または同様の有効な文字列を返す必要があります。
 
 ```js
 assert(isValidSolution_(solve24(testCases_[0])));
 ```
 
-`solve24("1234")` should return `1*2*3*4` or a similar valid string
+`solve24("1234")` は、`1*2*3*4` または同様の有効な文字列を返す必要があります。
 
 ```js
 assert(isValidSolution_(solve24(testCases_[1])));
@@ -57,7 +57,7 @@ assert(isValidSolution_(solve24(testCases_[1])));
 assert(isValidSolution_(solve24(testCases_[2])));
 ```
 
-`solve24("1127")` should return `(1+7)*(1+2)` or a similar valid string
+`solve24("1127")` は、`(1+7)*(1+2)` または同様の有効な文字列を返す必要があります。
 
 ```js
 assert(isValidSolution_(solve24(testCases_[3])));

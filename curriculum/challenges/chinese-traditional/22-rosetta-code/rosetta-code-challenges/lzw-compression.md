@@ -1,6 +1,6 @@
 ---
 id: 5ea2815e364d9a2222ea55f8
-title: LZW compression
+title: LZW 壓縮
 challengeType: 1
 forumTopicId: 385288
 dashedName: lzw-compression
@@ -12,23 +12,23 @@ The Lempel-Ziv-Welch (LZW) algorithm provides loss-less data compression.
 
 # --instructions--
 
-Write a function that takes two parameters. The first parameter is a boolean where `true` indicates compress and `false` indicates decompress. The second parameter is either a string or an array to be processed. If it is a string to be compressed, return an array of numbers. If it's an array of numbers to be decompressed, return a string.
+編寫一個接受兩個參數的函數。 第一個參數是一個布爾值，其中 `true` 表示壓縮，`false` 表示解壓縮。 第二個參數是要處理的字符串或數組。 如果是要壓縮的字符串，則返回一個數字數組。 如果是要解壓的數字數組，則返回一個字符串。
 
 # --hints--
 
-`LZW` should be a function.
+`LZW` 應該是一個函數。
 
 ```js
 assert(typeof LZW === 'function');
 ```
 
-`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` should return a array.
+`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` 應該返回一個數組。
 
 ```js
 assert(Array.isArray(LZW(true, 'TOBEORNOTTOBEORTOBEORNOT')));
 ```
 
-`LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])` should return a string.
+`LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])` 應該返回一個字符串。
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` should return `[84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]`.
+`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` 應該返回 `[84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]`。
 
 ```js
 assert.deepEqual(LZW(true, 'TOBEORNOTTOBEORTOBEORNOT'), [
@@ -76,7 +76,7 @@ assert.deepEqual(LZW(true, 'TOBEORNOTTOBEORTOBEORNOT'), [
 ]);
 ```
 
-`LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])` should return `"TOBEORNOTTOBEORTOBEORNOT"`.
+`LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])` 應該返回 `"TOBEORNOTTOBEORTOBEORNOT"`。
 
 ```js
 assert.equal(
@@ -102,7 +102,7 @@ assert.equal(
 );
 ```
 
-`LZW(true, "0123456789")` should return `[48, 49, 50, 51, 52, 53, 54, 55, 56, 57]`.
+`LZW(true, "0123456789")` 應該返回 `[48, 49, 50, 51, 52, 53, 54, 55, 56, 57]`。
 
 ```js
 assert.deepEqual(LZW(true, '0123456789'), [
@@ -119,7 +119,7 @@ assert.deepEqual(LZW(true, '0123456789'), [
 ]);
 ```
 
-`LZW(false, [48, 49, 50, 51, 52, 53, 54, 55, 56, 57])` should return `"0123456789"`.
+`LZW(false, [48, 49, 50, 51, 52, 53, 54, 55, 56, 57])` 應該返回 `"0123456789"`。
 
 ```js
 assert.equal(
@@ -128,13 +128,13 @@ assert.equal(
 );
 ```
 
-`LZW(true, "BABAABAAA")` should return `[66, 65, 256, 257, 65, 260]`.
+`LZW(true, "BABAABAAA")` 應該返回 `[66, 65, 256, 257, 65, 260]`。
 
 ```js
 assert.deepEqual(LZW(true, 'BABAABAAA'), [66, 65, 256, 257, 65, 260]);
 ```
 
-`LZW(false, [66, 65, 256, 257, 65, 260])` should return `"BABAABAAA"`.
+`LZW(false, [66, 65, 256, 257, 65, 260])` 應該返回 `"BABAABAAA"`。
 
 ```js
 assert.equal(LZW(false, [66, 65, 256, 257, 65, 260]), 'BABAABAAA');

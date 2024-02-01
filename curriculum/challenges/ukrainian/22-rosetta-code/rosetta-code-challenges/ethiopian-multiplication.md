@@ -1,6 +1,6 @@
 ---
 id: 599d1566a02b571412643b84
-title: Ethiopian multiplication
+title: Ефіопське множення
 challengeType: 1
 forumTopicId: 302257
 dashedName: ethiopian-multiplication
@@ -10,22 +10,22 @@ dashedName: ethiopian-multiplication
 
 Ethiopian multiplication is a method of multiplying integers using only addition, doubling, and halving.
 
-**Method:**
+**Метод:**
 
 <ol>
-  <li>Take two numbers to be multiplied and write them down at the top of two columns</li>
-  <li>In the left-hand column repeatedly halve the last number, discarding any remainders, and write the result below the last in the same column, until you write a value of <code>1</code></li>
-  <li>In the right-hand column repeatedly double the last number and write the result below. stop when you add a result in the same row as where the left hand column shows <code>1</code></li>
-  <li>Examine the table produced and discard any row where the value in the left column is even</li>
-  <li>Sum the values in the right-hand column that remain to produce the result of multiplying the original two numbers together</li>
+  <li>Візьміть два числа, які потрібно перемножити, і напишіть їх зверху двох стовпчиків</li>
+  <li>У стовпчику зліва діліть останнє число навпіл декілька разів, відкидаючи будь-які остачі, і записуйте результат нижче в цьому ж стовпчику, поки не отримаєте <code>1</code></li>
+  <li>У стовпчику справа множте останнє число на два та записуйте результат знизу, поки не отримаєте результат в тому ж рядку, що й <code>1</code> зліва</li>
+  <li>Перегляньте отриману таблицю і відкиньте будь-який рядок справа, де значення зліва є парним</li>
+  <li>Додайте значення справа, щоб отримати добуток двох початкових чисел</li>
 </ol>
 
-**For example:** `17 × 34`
+** Наприклад:** `17 × 34`
 
 <pre>17   34
 </pre>
 
-Halving the first column:
+Ділимо перший стовпчик:
 
 <pre>17   34
 8
@@ -34,7 +34,7 @@ Halving the first column:
 1
 </pre>
 
-Doubling the second column:
+Множимо на два другий стовпчик:
 
 <pre>17   34
 8    68
@@ -43,7 +43,7 @@ Doubling the second column:
 1   544
 </pre>
 
-Strike-out rows whose first cell is even:
+Закреслюємо рядки, в яких перша комірка парна:
 
 <pre>17   34
 8    <strike>68</strike>
@@ -52,7 +52,7 @@ Strike-out rows whose first cell is even:
 1   544
 </pre>
 
-Sum the remaining numbers in the right-hand column:
+Підсумовуємо решту чисел в стовпчику справа:
 
 <!-- markdownlint-disable MD003 -->
 
@@ -67,55 +67,55 @@ Sum the remaining numbers in the right-hand column:
 
 <!-- markdownlint-enable MD003 -->
 
-So `17` multiplied by `34`, by the Ethiopian method is `578`.
+Отже `17` помножене `34`, за ефіопським методом - `578`.
 
 # --instructions--
 
-The task is to define three named functions/methods/procedures/subroutines:
+Завданням полягає в тому, щоб визначити три іменовані функції, методи, процедури, підпрограми:
 
 <ol>
-  <li>one to halve an integer,</li>
-  <li>one to double an integer, and</li>
-  <li>one to state if an integer is even</li>
+  <li>для ділення цілого числа на два</li>
+  <li>для множення цілого числа на два</li>
+  <li>для визначення, чи ціле число є парним</li>
 </ol>
 
-Use these functions to create a function that does Ethiopian multiplication.
+Використовуйте ці функції, щоб створити функцію, яка виконує ефіопське множення.
 
 <!-- markdownlint-disable MD046-->
 
 # --hints--
 
-`eth_mult` should be a function.
+`eth_mult` має бути функцією.
 
 ```js
 assert(typeof eth_mult === 'function');
 ```
 
-`eth_mult(17,34)` should return `578`.
+`eth_mult(17,34)` має повертати `578`.
 
 ```js
 assert.equal(eth_mult(17, 34), 578);
 ```
 
-`eth_mult(23,46)` should return `1058`.
+`eth_mult(23,46)` має повертати `1058`.
 
 ```js
 assert.equal(eth_mult(23, 46), 1058);
 ```
 
-`eth_mult(12,27)` should return `324`.
+`eth_mult(12,27)` має повертати `324`.
 
 ```js
 assert.equal(eth_mult(12, 27), 324);
 ```
 
-`eth_mult(56,98)` should return `5488`.
+`eth_mult(56,98)` має повертати `5488`.
 
 ```js
 assert.equal(eth_mult(56, 98), 5488);
 ```
 
-`eth_mult(63,74)` should return `4662`.
+`eth_mult(63,74)` має повертати `4662`.
 
 ```js
 assert.equal(eth_mult(63, 74), 4662);

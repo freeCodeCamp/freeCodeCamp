@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad0
-title: Align columns
+title: 對齊列
 challengeType: 1
 forumTopicId: 302224
 dashedName: align-columns
@@ -12,7 +12,7 @@ Given an array of many lines, where fields within a line are delineated by a sin
 
 # --instructions--
 
-Use the following text to test your programs:
+使用以下文本測試您的程序：
 
 ```js
 const testText = [
@@ -29,14 +29,14 @@ const testText = [
 ];
 ```
 
-**Note that:**
+**注意：**
 
 - The example input texts lines may, or may not, have trailing dollar characters.
-- All columns should share the same alignment.
-- Consecutive space characters produced adjacent to the end of lines are insignificant for the purposes of the task.
-- Output text will be viewed in a mono-spaced font on a plain text editor or basic terminal. Lines in it should be joined using new line character (`\n`).
-- The minimum space between columns should be computed from the text and not hard-coded.
-- It is not a requirement to add separating characters between or around columns.
+- 所有列應該共享相同的對齊方式。
+- 在行尾附近產生的連續空格字符對於任務而言是無關緊要的。
+- 輸出文本將在純文本編輯器或基本終端上以等寬字體查看。 其中的行應該使用換行符（`\n`）連接起來。
+- 列之間的最小間距應根據文本計算，而不是硬編碼。
+- 不需要在列之間或列周圍添加分隔字符。
 
 For example, one of the lines from the `testText`, after justifying to the right, left and center respectively:
 
@@ -48,25 +48,25 @@ For example, one of the lines from the `testText`, after justifying to the right
 
 # --hints--
 
-`formatText` should be a function.
+`formatText` 應該是一個函數。
 
 ```js
 assert(typeof formatText === 'function');
 ```
 
-`formatText(testText, 'right')` should produce text with columns justified to the right.
+`formatText(testText, 'right')` 應該生成列向右對齊的文本。
 
 ```js
 assert.strictEqual(formatText(_testText, 'right'), rightAligned);
 ```
 
-`formatText(testText, 'left')` should produce text with columns justified to the left.
+`formatText(testText, 'left')` 應該生成列向左對齊的文本。
 
 ```js
 assert.strictEqual(formatText(_testText, 'left'), leftAligned);
 ```
 
-`formatText(testText, 'center')` should produce text with columns justified to the center.
+`formatText(testText, 'center')` 應該生成列對齊到中心的文本。
 
 ```js
 assert.strictEqual(formatText(_testText, 'center'), centerAligned);

@@ -10,7 +10,7 @@ dashedName: sedols
 
 <abbr title="Stock Exchange Daily Official List">SEDOL</abbr> is a list of securities identification numbers issued by the London Stock Exchange.
 
-For each number list of 6-digit <abbr title="Stock Exchange Daily Official List">SEDOL</abbr>s, calculate and append the checksum digit. That is, given the input string on the left, your function should return the corresponding string on the right:
+對於每個由 6 位數字組成的 <abbr title="Stock Exchange Daily Official List">SEDOL</abbr> 編號，計算並追加校驗位。 也就是說，給定左側的輸入字符串，函數應該返回相應的右側字符串：
 
 <pre>
 710889 => 7108899
@@ -26,35 +26,35 @@ B0YBKT => B0YBKT7
 B00030 => B000300
 </pre>
 
-Check that each input is correctly formed, especially with respect to valid characters allowed in a SEDOL string. Your function should return `null` on an invalid input.
+檢查每個輸入是否正確，特別是與 SEDOL 字符串中允許的有效字符有關。 如果輸入無效，函數應返回 `null`。
 
 # --hints--
 
-`sedol` should be a function.
+`sedol` 應該是一個函數。
 
 ```js
 assert(typeof sedol === 'function');
 ```
 
-`sedol('a')` should return null.
+`sedol('a')` 應該返回 null。
 
 ```js
 assert(sedol('a') === null);
 ```
 
-`sedol('710889')` should return '7108899'.
+`sedol('710889')` 應該返回 '7108899'。
 
 ```js
 assert(sedol('710889') === '7108899');
 ```
 
-`sedol('BOATER')` should return null.
+`sedol('BOATER')` 應該返回 null。
 
 ```js
 assert(sedol('BOATER') === null);
 ```
 
-`sedol('228276')` should return '2282765'.
+`sedol('228276')` 應該返回 '2282765'。
 
 ```js
 assert(sedol('228276') === '2282765');
@@ -67,7 +67,7 @@ assert(sedol('228276') === '2282765');
 ```js
 function sedol(input) {
   const checkSum = 0
-  
+
   return checkSum;
 }
 ```

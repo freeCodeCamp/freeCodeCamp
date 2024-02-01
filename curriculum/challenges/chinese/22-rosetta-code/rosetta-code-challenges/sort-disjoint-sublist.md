@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8000
-title: Sort disjoint sublist
+title: 排序不相交的子列表
 challengeType: 1
 forumTopicId: 302307
 dashedName: sort-disjoint-sublist
@@ -10,7 +10,7 @@ dashedName: sort-disjoint-sublist
 
 Given a list of values and a set of integer indices into that value list, the task is to sort the values at the given indices, but preserving the values at indices outside the set of those to be sorted.
 
-Make your function work with the following list of values and set of indices:
+使您的函数使用以下值列表和索引集：
 
 <code>values: [7, <b>6</b>, 5, 4, 3, 2, <b>1</b>, <b>0</b>]</code>
 
@@ -18,25 +18,25 @@ Make your function work with the following list of values and set of indices:
 indices(0-based): {6, 1, 7}
 ```
 
-Where the correct result would be:
+正确的结果是：
 
 <code>[7, <b>0</b>, 5, 4, 3, 2, <b>1</b>, <b>6</b>]</code>.
 
 # --hints--
 
-`sortDisjoint` should be a function.
+`sortDisjoint` 应该是一个函数。
 
 ```js
 assert(typeof sortDisjoint == 'function');
 ```
 
-`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])` should return an array.
+`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])` 应该返回一个数组。
 
 ```js
 assert(Array.isArray(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])));
 ```
 
-`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])` should return `[7, 0, 5, 4, 3, 2, 1, 6]`.
+`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])` 应该返回 `[7, 0, 5, 4, 3, 2, 1, 6]`。
 
 ```js
 assert.deepEqual(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7]), [
@@ -51,7 +51,7 @@ assert.deepEqual(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7]), [
 ]);
 ```
 
-`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [1, 2, 5, 6])` should return `[7, 1, 2, 4, 3, 5, 6, 0]`.
+`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [1, 2, 5, 6])` 应该返回 `[7, 1, 2, 4, 3, 5, 6, 0]`。
 
 ```js
 assert.deepEqual(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [1, 2, 5, 6]), [
@@ -66,7 +66,7 @@ assert.deepEqual(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [1, 2, 5, 6]), [
 ]);
 ```
 
-`sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [6, 1, 7])` should return `[8, 1, 6, 5, 4, 3, 2, 7]`.
+`sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [6, 1, 7])` 应该返回 `[8, 1, 6, 5, 4, 3, 2, 7]`。
 
 ```js
 assert.deepEqual(sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [6, 1, 7]), [
@@ -81,7 +81,7 @@ assert.deepEqual(sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [6, 1, 7]), [
 ]);
 ```
 
-`sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [1, 3, 5, 6])` should return `[8, 2, 6, 3, 4, 5, 7, 1]`.
+`sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [1, 3, 5, 6])` 应该返回 `[8, 2, 6, 3, 4, 5, 7, 1]`。
 
 ```js
 assert.deepEqual(sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [1, 3, 5, 6]), [
@@ -96,7 +96,7 @@ assert.deepEqual(sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [1, 3, 5, 6]), [
 ]);
 ```
 
-`sortDisjoint([6, 1, 7, 1, 3, 5, 6], [6, 1, 5, 4])` should return `[6, 1, 7, 1, 3, 5, 6]`.
+`sortDisjoint([6, 1, 7, 1, 3, 5, 6], [6, 1, 5, 4])` 应该返回 `[6, 1, 7, 1, 3, 5, 6]`。
 
 ```js
 assert.deepEqual(sortDisjoint([6, 1, 7, 1, 3, 5, 6], [6, 1, 5, 4]), [

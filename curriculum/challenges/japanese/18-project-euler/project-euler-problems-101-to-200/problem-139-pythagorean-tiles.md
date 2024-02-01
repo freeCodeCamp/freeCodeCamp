@@ -1,6 +1,6 @@
 ---
 id: 5900f3f71000cf542c50ff0a
-title: 'Problem 139: Pythagorean tiles'
+title: '問題 139: ピタゴラスのタイル'
 challengeType: 1
 forumTopicId: 301767
 dashedName: problem-139-pythagorean-tiles
@@ -8,19 +8,19 @@ dashedName: problem-139-pythagorean-tiles
 
 # --description--
 
-Let (a, b, c) represent the three sides of a right angle triangle with integral length sides. It is possible to place four such triangles together to form a square with length c.
+(a, b, c) は、辺の長さが整数である直角三角形を表します。 そのような三角形を 4 つ配置して、辺の長さが c の正方形を作ることができます。
 
-For example, (3, 4, 5) triangles can be placed together to form a 5 by 5 square with a 1 by 1 hole in the middle and it can be seen that the 5 by 5 square can be tiled with twenty-five 1 by 1 squares.
+例えば、(3, 4, 5) の三角形を並べると 5 × 5 の正方形ができ、中央に 1 × 1 の穴があります。この 5 × 5 の正方形は、1 × 1 の正方形 25 個で埋めることができます。
 
-<img class="img-responsive center-block" alt="two 5 x 5 squares: one with four 3x4x5 triangles placed to create 1x1 hole in the middle; second with twenty-five 1x1 squares" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="2 つの 5 × 5 の正方形: 1 つ目は、3 × 4 × 5 の三角形を 4 つ配置し中央に 1 x 1 の穴ができたもの。2 つ目は、1 x 1 の正方形を 25 個配置したもの" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px;" />
 
-However, if (5, 12, 13) triangles were used, the hole would measure 7 by 7. These 7 by 7 squares could not be used to tile the 13 by 13 square.
+しかし、(5, 12, 13) の三角形を使うと、穴は 7 × 7 の大きさになります。 これらの 7 x 7 の正方形では、13 x 13 の正方形を埋めることが使用できません。
 
-Given that the perimeter of the right triangle is less than one-hundred million, how many Pythagorean triangles would allow such a tiling to occur?
+周長が 1 億未満である直角三角形について、上のように埋めることができるピタゴラスの三角形はいくつありますか。
 
 # --hints--
 
-`pythagoreanTiles()` should return `10057761`.
+`pythagoreanTiles()` は `10057761` を返す必要があります。
 
 ```js
 assert.strictEqual(pythagoreanTiles(), 10057761);

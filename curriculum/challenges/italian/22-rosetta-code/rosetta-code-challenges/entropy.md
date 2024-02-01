@@ -1,6 +1,6 @@
 ---
 id: 599d15309e88c813a40baf58
-title: Entropy
+title: Entropia
 challengeType: 1
 forumTopicId: 302254
 dashedName: entropy
@@ -14,47 +14,47 @@ Given the discrete random variable $X$ that is a string of $N$ "symbols" (total 
 
 $H_2(X) = -\\sum\_{i=1}^n \\frac{count_i}{N} \\log_2 \\left(\\frac{count_i}{N}\\right)$
 
-where $count_i$ is the count of character $n_i$.
+dove $count_i$ è il conteggio dei caratteri $n_i$.
 
 # --hints--
 
-`entropy` should be a function.
+`entropy` dovrebbe essere una funzione.
 
 ```js
 assert(typeof entropy === 'function');
 ```
 
-`entropy("0")` should return `0`
+`entropy("0")` dovrebbe restituire `0`
 
 ```js
 assert.equal(entropy('0'), 0);
 ```
 
-`entropy("01")` should return `1`
+`entropy("01")` dovrebbe restituire `1`
 
 ```js
 assert.equal(entropy('01'), 1);
 ```
 
-`entropy("0123")` should return `2`
+`entropy("0123")` dovrebbe restituire `2`
 
 ```js
 assert.equal(entropy('0123'), 2);
 ```
 
-`entropy("01234567")` should return `3`
+`entropy("01234567")` dovrebbe restituire `3`
 
 ```js
 assert.equal(entropy('01234567'), 3);
 ```
 
-`entropy("0123456789abcdef")` should return `4`
+`entropy("0123456789abcdef")` dovrebbe restituire `4`
 
 ```js
 assert.equal(entropy('0123456789abcdef'), 4);
 ```
 
-`entropy("1223334444")` should return `1.8464393446710154`
+`entropy("1223334444")` dovrebbe restituire `1.8464393446710154`
 
 ```js
 assert.equal(entropy('1223334444'), 1.8464393446710154);

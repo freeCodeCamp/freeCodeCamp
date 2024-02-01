@@ -89,7 +89,7 @@ and compare with the analytical solution.
   <li>room temperature <big>$T_R$</big> shall be <code>20 °C</code></li>
   <li>cooling constant <big>$k$</big> shall be <code>0.07</code></li>
   <li>time interval to calculate shall be from <code>0 s</code> to <code>100 s</code></li>
-</ul>  
+</ul>
 
 First parameter to the function is initial time, second parameter is initial temperature, third parameter is elapsed time and fourth parameter is step size.
 

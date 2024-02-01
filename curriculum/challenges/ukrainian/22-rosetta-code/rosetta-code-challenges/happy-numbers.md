@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad1
-title: Happy numbers
+title: Щасливі числа
 challengeType: 1
 forumTopicId: 302280
 dashedName: happy-numbers
@@ -10,87 +10,87 @@ dashedName: happy-numbers
 
 A happy number is defined by the following process:
 
-Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals `1` (where it will stay), or it loops endlessly in a cycle which does not include `1`. Those numbers for which this process ends in `1` are happy numbers, while those that do not end in `1` are unhappy numbers.
+Починаючи з будь-якого додатного цілого числа, замініть число на суму квадратів цифр і повторіть дію, доки число не буде дорівнювати `1` (де воно залишиться), або воно нескінченно буде повторюватися у циклі, який не включає `1`. Ті числа, для яких цей процес закінчується `1` є щасливими, а ті, для яких процес не закінчуються `1` є нещасливими.
 
 # --instructions--
 
-Implement a function that returns true if the number is happy, or false if not.
+Реалізуйте функцію, що повертає правильне значення, у разі якщо число — щасливе, якщо воно є хибним, не робить цього.
 
 # --hints--
 
-`happy` should be a function.
+`happy` має бути функцією.
 
 ```js
 assert(typeof happy === 'function');
 ```
 
-`happy(1)` should return a boolean.
+`happy(1)` має повернути логічний тип.
 
 ```js
 assert(typeof happy(1) === 'boolean');
 ```
 
-`happy(1)` should return `true`.
+`happy(1)` має повернути `true`.
 
 ```js
 assert(happy(1));
 ```
 
-`happy(2)` should return `false`.
+`happy(2)` має повернути `false`.
 
 ```js
 assert(!happy(2));
 ```
 
-`happy(7)` should return `true`.
+`happy(7)` має повернути `true`.
 
 ```js
 assert(happy(7));
 ```
 
-`happy(10)` should return `true`.
+`happy(10)` має повернути `true`.
 
 ```js
 assert(happy(10));
 ```
 
-`happy(13)` should return `true`.
+`happy(13)` має повернути `true`.
 
 ```js
 assert(happy(13));
 ```
 
-`happy(19)` should return `true`.
+`happy(19)` має повернути `true`.
 
 ```js
 assert(happy(19));
 ```
 
-`happy(23)` should return `true`.
+`happy(23)` має повернути `true`.
 
 ```js
 assert(happy(23));
 ```
 
-`happy(28)` should return `true`.
+`happy(28)` має повернути `true`.
 
 ```js
 assert(happy(28));
 ```
 
-`happy(31)` should return `true`.
+`happy(31)` має повернути `true`.
 
 ```js
 assert(happy(31));
 ```
 
-`happy(32)` should return `true`.
+`happy(32)` має повернути `true`.
 
 ```js
 assert(happy(32));
 ```
 
-`happy(33)` should return `false`.
+`happy(33)` має повернути `false`.
 
 ```js
 assert(!happy(33));

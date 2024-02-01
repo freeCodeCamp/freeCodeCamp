@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7eb1
-title: Identity matrix
+title: 单位矩阵
 challengeType: 1
 forumTopicId: 302290
 dashedName: identity-matrix
@@ -16,41 +16,41 @@ An *identity matrix* is a square matrix of size \\( n \\times n \\), where the d
 
 # --instructions--
 
-Write a function that takes a number `n` as a parameter and returns the identity matrix of order \\( n \\times n \\).
+编写一个函数，以数字 `n` 作为参数并返回 \\( n \\times n \\) 阶单位矩阵。
 
 # --hints--
 
-`idMatrix` should be a function.
+`idMatrix` 应该是一个函数。
 
 ```js
 assert(typeof idMatrix == 'function');
 ```
 
-`idMatrix(1)` should return an array.
+`idMatrix(1)` 应该返回一个数组。
 
 ```js
 assert(Array.isArray(idMatrix(1)));
 ```
 
-`idMatrix(1)` should return `[ [ 1 ] ]`.
+`idMatrix(1)` 应该返回 `[ [ 1 ] ]`。
 
 ```js
 assert.deepEqual(idMatrix(1), results[0]);
 ```
 
-`idMatrix(2)` should return `[ [ 1, 0 ], [ 0, 1 ] ]`.
+`idMatrix(2)` 应该返回 `[ [ 1, 0 ], [ 0, 1 ] ]`。
 
 ```js
 assert.deepEqual(idMatrix(2), results[1]);
 ```
 
-`idMatrix(3)` should return `[ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ]`.
+`idMatrix(3)` 应该返回 `[ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ]`。
 
 ```js
 assert.deepEqual(idMatrix(3), results[2]);
 ```
 
-`idMatrix(4)` should return `[ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ]`.
+`idMatrix(4)` 应该返回 `[ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ]`。
 
 ```js
 assert.deepEqual(idMatrix(4), results[3]);

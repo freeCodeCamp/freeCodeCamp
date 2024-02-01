@@ -10,7 +10,7 @@ dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
 
 Functional programming is all about creating and using non-mutating functions.
 
-The last challenge introduced the `concat` method as a way to merge arrays into a new array without mutating the original arrays. Compare `concat` to the `push` method. `push` adds items to the end of the same array it is called on, which mutates that array. Here's an example:
+The last challenge introduced the `concat` method as a way to merge arrays into a new array without mutating the original arrays. Compare `concat` to the `push` method. `push` adds items to the end of the same array it is called on, which mutates that array. Hapa kuna mfano:
 
 ```js
 const arr = [1, 2, 3];

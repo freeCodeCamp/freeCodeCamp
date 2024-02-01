@@ -1,38 +1,38 @@
 ---
 id: 647e230c8acb466c97ccbef9
-title: 'Challenge Project - Work with Variable Data in C#'
+title: '挑战项目 - 在 C# 中使用变量数据'
 challengeType: 19
 dashedName: challenge-project-work-with-variable-data-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+这个挑战将有一部分在 Microsoft Learn 平台上完成。 请按照如下说明来完成挑战：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/</a> and complete all the tasks for the "Challenge Project - Work with Variable Data in C#" module. This is **required** to earn the "Work with Variable Data in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳转到 <a href="https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/</a>，然后完成“挑战项目 - 在 C# 中使用变量数据”模块的所有任务。 这是在 Microsoft Learn 上获得“在 C# 控制台应用程序中使用变量数据”的奖杯以及参加认证考试所**必需**的。
+1. 完成后，返回并正确回答下面的问题。
 
-# --assignment--
+# --任务--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">Work with Variable Data in C#</a> challenge project on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">在 C# 中使用变量数据</a> 的挑战项目。 然后，回答下面的问题。
 
 # --question--
 
 ## --text--
 
-To sort a string array, why is it important to use the `String.Trim()` method on each array element before sorting?
+要对字符串数组进行排序，为什么在排序前对每个数组元素使用 `String.Trim()` 方法很重要？
 
 ## --answers--
 
-Only string arrays with elements trimmed with `String.Trim()` can sort
+只有元素被 `String.Trim()` 处理后的字符串数组才能排序。
 
 ---
 
-`String.Trim()` removes leading white space that would sort before numbers and letters.
+`String.Trim()` 移除了会排在数字和字母之前的前导空格。
 
 ---
 
-The array sort is noticeably faster using `String.Trim()` on each element.
+对每个元素使用 `String.Trim()` 的数组排序速度显著加快。
 
 ## --video-solution--
 
