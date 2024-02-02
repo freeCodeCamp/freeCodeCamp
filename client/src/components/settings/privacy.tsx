@@ -1,10 +1,10 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Button } from '@freecodecamp/ui';
 
 import { userSelector } from '../../redux/selectors';
 import type { ProfileUI } from '../../redux/prop-types';
@@ -145,11 +145,11 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
           </div>
           <Button
             type='submit'
-            bsSize='lg'
-            bsStyle='primary'
+            size='large'
+            variant='primary'
             data-cy='save-privacy-settings'
             block={true}
-            aria-disabled={!madeChanges}
+            disabled={!madeChanges}
             {...(!madeChanges && { tabIndex: -1 })}
           >
             {t('buttons.save')}{' '}
@@ -162,8 +162,8 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
         <p>{t('settings.data')}</p>
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='primary'
+          size='large'
+          variant='primary'
           download={`${user.username}.json`}
           href={`data:text/json;charset=utf-8,${encodeURIComponent(
             JSON.stringify(user)
