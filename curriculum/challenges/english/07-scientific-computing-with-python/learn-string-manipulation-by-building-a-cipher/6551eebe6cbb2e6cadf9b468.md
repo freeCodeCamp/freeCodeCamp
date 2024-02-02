@@ -15,7 +15,7 @@ string_2 = 'I am also a string'
 string_3 = 'This is not valid"
 ```
 
-Delete your `number` variable and its value. Then, declare another variable called `text` and assign the string `Hello World` to this variable.
+Delete your `number` variable and its value. Then, declare another variable called `text` and assign the string `'Hello World'` to this variable.
 
 # --hints--
 
