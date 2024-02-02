@@ -14,13 +14,13 @@ Use an `if` statement to check if `nextSongExists` exists, then call the `playNe
 You should create an `if` statement with the condition `nextSongExists`.
 
 ```js
-assert.match(code, /if\s*\(nextSongExists\)\s*\{\s*/)
+assert.match(code, /if\s*\(\s*nextSongExists\s*\)\s*\{\s*/)
 ```
 
 You should call the `playNextSong` function inside your `if` statement.
 
 ```js
-assert.match(code, /if\s*\(nextSongExists\)\s*\{\s*playNextSong\(\);?\s*\}/)
+assert.match(code, /if\s*\(\s*nextSongExists\s*\)\s*\{\s*playNextSong\(\s*\);?\s*\}/)
 ```
 
 # --seed--
