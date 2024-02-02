@@ -355,7 +355,9 @@ export function isValidChallengeCompletion(req, res, next) {
     log('challengeType', challengeType, isNumeric(challengeType));
     return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
-  if ('solution' in req.body && !isURL(solution)) {
+  const isUrlValid =
+    challengeType === challengeTypes.backEndProject || isURL(solution);
+  if ('solution' in req.body && !isUrlValid) {
     log('isObjectId', id, ObjectID.isValid(id));
     return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
@@ -427,7 +429,11 @@ async function projectCompleted(req, res, next) {
   ]);
   completedChallenge.completedDate = Date.now();
 
-  if (!completedChallenge.solution) {
+  if (
+    !completedChallenge.solution ||
+    (completedChallenge.challengeType === challengeTypes.backEndProject &&
+      !completedChallenge.githubLink)
+  ) {
     return res.status(403).json({
       type: 'error',
       message:
