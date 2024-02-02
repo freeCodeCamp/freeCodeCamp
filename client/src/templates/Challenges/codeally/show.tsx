@@ -234,7 +234,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     const isCompleted = completedChallenges.some(
       challenge => challenge.id === challengeId
     );
-    const titleContext = t('learn.github-link');
+    const titleContext = t('learn.source-code-link');
     return showCodeAlly ? (
       <LearnLayout>
         <Helmet title={windowTitle} />

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Trans } from 'react-i18next';
 
-// Matches editor links for: Replit, Glitch, CodeSandbox, GitHub
+// Matches editor links for: Replit, Glitch, CodeSandbox, GitHub, Codespaces, and NOT Gitpod
+// Once safari allows negative lookbehinds, this can be used:
+// |(?<!https:\/\/\d+-[\w.-]+)\.gitpod\.io
 const editorRegex =
-  /repl\.?it(\.com)?\/(@|join\/)|glitch\.com\/edit\/#!|codesandbox\.io\/s\/|github\.com/;
+  /repl\.?it(\.com)?\/(@|join\/)|glitch\.com\/edit\/#!|codesandbox\.io\/s\/|github\.com|\.app\.github\.dev/;
 const fCCRegex =
   /codepen\.io\/freecodecamp|freecodecamp\.rocks|github\.com\/freecodecamp|\.freecodecamp\.org/i;
 const localhostRegex = /localhost:/;

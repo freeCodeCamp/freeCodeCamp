@@ -365,6 +365,7 @@
     "question": "Question",
     "solution-link": "Solution Link",
     "github-link": "GitHub Link",
+    "source-code-link": "Source Code Link",
     "ms-link": "Microsoft Link",
     "submit-and-go": "Submit and go to my next challenge",
     "congratulations": "Congratulations, your code passes. Submit your code to continue.",
