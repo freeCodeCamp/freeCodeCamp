@@ -5,19 +5,11 @@ import curriculum from '../shared/config/curriculum.json';
 interface Curriculum {
   [key: string]: unknown;
 }
+const patchedCurriculum: Curriculum = {};
 
-const curriculumList = Object.keys(curriculum as Curriculum).map(key => {
-  if (key.includes('/')) {
-    const newKey = key.split('/').join('-');
-    return { [newKey]: (curriculum as Curriculum)[key] };
-  } else {
-    return { [key]: (curriculum as Curriculum)[key] };
-  }
-});
-
-const patchedCurriculum = curriculumList.reduce((prev, curr) => {
-  return { ...prev, ...curr };
-}, {});
+for (const key in curriculum) {
+  patchedCurriculum[key.replace('/', '-')] = (curriculum as Curriculum)[key];
+}
 
 void fs
   .mkdir('data', { recursive: true })
