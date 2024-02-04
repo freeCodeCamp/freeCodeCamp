@@ -20,7 +20,7 @@ assert.match(defeatMonster.toString(), /update/);
 You should pass `locations[4]` as the argument.
 
 ```js
-assert.match(defeatMonster.toString(), /update\(locations\s*\[\s*4\s*\]\s*\)/);
+assert.match(defeatMonster.toString(), /update\(\s*locations\s*\[\s*4\s*\]\s*\)/);
 ```
 
 # --seed--
