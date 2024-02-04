@@ -28,10 +28,11 @@ const Illustration = ({
   recentlyClaimedBlock: RecentlyClaimedBlock;
   showAnimation?: boolean;
 }) => {
+  const { t } = useTranslation();
   if (showAnimation) {
     return (
       <img
-        alt={'asdfasd'}
+        alt={t('donate.flying-bear')}
         id={'supporter-bear'}
         src={supporterBear}
         data-playwright-test-label='not-found-image'
@@ -144,7 +145,7 @@ function DonationModalBody({
 
   // uncomment to testing the animation
   // recentlyClaimedBlock = true;
-  // donationAnimationFlag = false;
+  // donationAnimationFlag = true;
 
   const handleProcessing = () => {
     setDonationAttempted(true);
@@ -165,69 +166,78 @@ function DonationModalBody({
 
   return (
     <Modal.Body>
-      {donationAnimationFlag && !showForm && (
-        <p style={{ opacity: 0, position: 'absolute' }}>
-          {t('donate.animation-description')}
-        </p>
-      )}
-      {donationAnimationFlag && isAnimationVisible ? (
-        <div className='donation-animatoin-container' aria-disabled='true'>
-          <div className='donation-animation-bullet-points'>
-            <p className='donation-animation-bullet-1'>
-              {t('donate.become-supporter')}
+      <div aria-live={'polite'}>
+        {donationAnimationFlag && isAnimationVisible ? (
+          <>
+            <p style={{ opacity: 0, position: 'absolute' }}>
+              {t('donate.animation-description')}{' '}
             </p>
-            <p className='donation-animation-bullet-2'>
-              {t('donate.remove-distractions')}
-            </p>
-            <p className='donation-animation-bullet-3'>
-              {t('donate.reach-goals-faster')}
-            </p>
-            <p className='donation-animation-bullet-4'>
-              {t('donate.help-millions-learn')}
-            </p>
-          </div>
-          <img
-            alt={'asdfasd'}
-            src={donationAnimation}
-            id={'donaition-animation'}
-            data-playwright-test-label='not-found-image'
-          />
-        </div>
-      ) : (
-        <div className='no-delay-fade-in'>
-          <div className='donation-icon-container'>
-            <Illustration
-              showAnimation={donationAnimationFlag}
+            <div className='donation-animatoin-container' aria-hidden='true'>
+              <div className='donation-animation-bullet-points'>
+                <p className='donation-animation-bullet-1'>
+                  {t('donate.become-supporter')}
+                </p>
+                <p className='donation-animation-bullet-2'>
+                  {t('donate.remove-distractions')}
+                </p>
+                <p className='donation-animation-bullet-3'>
+                  {t('donate.reach-goals-faster')}
+                </p>
+                <p className='donation-animation-bullet-4'>
+                  {t('donate.help-millions-learn')}
+                </p>
+              </div>
+              <img
+                alt={'asdfasd'}
+                src={donationAnimation}
+                id={'donaition-animation'}
+                data-playwright-test-label='not-found-image'
+              />
+            </div>
+            <button
+              style={{ opacity: 0, position: 'absolute' }}
+              className={'sr-only'}
+              onClick={() => setIsAnimationVisible(false)}
+            >
+              {t('buttons.skip-advertisement')}
+            </button>
+          </>
+        ) : (
+          <div className='no-delay-fade-in'>
+            <div className='donation-icon-container'>
+              <Illustration
+                showAnimation={donationAnimationFlag}
+                recentlyClaimedBlock={recentlyClaimedBlock}
+              />
+            </div>
+            <ModalHeader
               recentlyClaimedBlock={recentlyClaimedBlock}
-            />
-          </div>
-          <ModalHeader
-            recentlyClaimedBlock={recentlyClaimedBlock}
-            showHeaderAndFooter={showHeaderAndFooter}
-            donationAttempted={donationAttempted}
-            showForm={showForm}
-            donationAnimationFlag={donationAnimationFlag}
-          />
-          <Spacer size='small' />
-          {showForm || !donationAnimationFlag ? (
-            <MultiTierDonationForm
-              setShowHeaderAndFooter={setShowHeaderAndFooter}
-              handleProcessing={handleProcessing}
-              paymentContext={PaymentContext.Modal}
-              isMinimalForm={true}
-              isAnimationEnabled={donationAnimationFlag}
-            />
-          ) : (
-            <Benefits setShowForm={setShowForm} />
-          )}
-          {(showHeaderAndFooter || donationAttempted) && (
-            <CloseButtonRow
-              closeDonationModal={closeDonationModal}
+              showHeaderAndFooter={showHeaderAndFooter}
               donationAttempted={donationAttempted}
+              showForm={showForm}
+              donationAnimationFlag={donationAnimationFlag}
             />
-          )}{' '}
-        </div>
-      )}
+            <Spacer size='small' />
+            {showForm || !donationAnimationFlag ? (
+              <MultiTierDonationForm
+                setShowHeaderAndFooter={setShowHeaderAndFooter}
+                handleProcessing={handleProcessing}
+                paymentContext={PaymentContext.Modal}
+                isMinimalForm={true}
+                isAnimationEnabled={donationAnimationFlag}
+              />
+            ) : (
+              <Benefits setShowForm={setShowForm} />
+            )}
+            {(showHeaderAndFooter || donationAttempted) && (
+              <CloseButtonRow
+                closeDonationModal={closeDonationModal}
+                donationAttempted={donationAttempted}
+              />
+            )}{' '}
+          </div>
+        )}
+      </div>
     </Modal.Body>
   );
 }
