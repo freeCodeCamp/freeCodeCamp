@@ -423,10 +423,10 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 /**
  * Handle submenu containers collapsed and expanded states
  */
-button[aria-expanded='false'] + div {
+#universal-nav button[aria-expanded='false'] + div {
   display: none;
 }
 
-button[aria-expanded='true'] + div {
+#universal-nav button[aria-expanded='true'] + div {
   display: block;
 }

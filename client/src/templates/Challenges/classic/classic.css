@@ -67,7 +67,7 @@
 }
 
 .monaco-editor-tabs {
-  display: flex !important;
+  display: flex;
   margin-inline-end: auto;
 }
 
