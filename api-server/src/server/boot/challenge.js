@@ -356,7 +356,8 @@ export function isValidChallengeCompletion(req, res, next) {
     return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
   const isUrlValid =
-    challengeType === challengeTypes.backEndProject || isURL(solution);
+    challengeType === challengeTypes.backEndProject ||
+    (solution && isURL(solution));
   if ('solution' in req.body && !isUrlValid) {
     log('isObjectId', id, ObjectID.isValid(id));
     return res.status(403).json(isValidChallengeCompletionErrorMsg);
