@@ -446,7 +446,7 @@ ToDo: find out why, and remove the need for it */
 .block-grid .progress-wrapper > div {
   position: relative;
   width: 80%;
-  padding-inline-end: 0.25em;
+  margin-inline-end: 0.25em;
 }
 
 .annual-donation-alert .progress-wrapper {
@@ -513,7 +513,7 @@ ToDo: find out why, and remove the need for it */
 
 .grid-project-block:hover {
   cursor: pointer;
-  background: var(--tertiary-background);
+  background: var(--tertiary-background) !important;
 }
 
 .grid-project-block a.block-header {

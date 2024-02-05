@@ -1,8 +1,14 @@
 import { test, expect } from '@playwright/test';
 
 const breadcrumbNavs = {
-  leftBreadcrumb: '(New) Foundational C# with Microsoft',
-  rightBreadcrumb: 'Write Your First Code Using C#'
+  left: {
+    text: '(New) Foundational C# with Microsoft',
+    url: '/learn/foundational-c-sharp-with-microsoft'
+  },
+  right: {
+    text: 'Write Your First Code Using C#',
+    url: '/learn/foundational-c-sharp-with-microsoft/#write-your-first-code-using-c-sharp'
+  }
 };
 
 test.beforeEach(async ({ page }) => {
@@ -18,25 +24,19 @@ test.afterEach(async ({ page }) => {
 test.describe('Challenge Breadcrumb Component Tests', () => {
   test('breadcrumb nav links should be visible', async ({ page }) => {
     await expect(
-      page
-        .getByRole('listitem')
-        .filter({ hasText: breadcrumbNavs.leftBreadcrumb })
+      page.getByRole('listitem').filter({ hasText: breadcrumbNavs.left.text })
     ).toBeVisible();
     await expect(
-      page
-        .getByRole('listitem')
-        .filter({ hasText: breadcrumbNavs.rightBreadcrumb })
+      page.getByRole('listitem').filter({ hasText: breadcrumbNavs.right.text })
     ).toBeVisible();
   });
 
   test('left breadcrumb nav link should have correct URL', async ({ page }) => {
     await page
       .getByRole('listitem')
-      .filter({ hasText: breadcrumbNavs.leftBreadcrumb })
+      .filter({ hasText: breadcrumbNavs.left.text })
       .click();
-    await expect(page).toHaveURL(
-      'http://localhost:8000/learn/foundational-c-sharp-with-microsoft'
-    );
+    await expect(page).toHaveURL(breadcrumbNavs.left.url);
   });
 
   test('right breadcrumb nav link should have correct URL', async ({
@@ -44,10 +44,8 @@ test.describe('Challenge Breadcrumb Component Tests', () => {
   }) => {
     await page
       .getByRole('listitem')
-      .filter({ hasText: breadcrumbNavs.rightBreadcrumb })
+      .filter({ hasText: breadcrumbNavs.right.text })
       .click();
-    await expect(page).toHaveURL(
-      'http://localhost:8000/learn/foundational-c-sharp-with-microsoft/#write-your-first-code-using-c-sharp'
-    );
+    await expect(page).toHaveURL(breadcrumbNavs.right.url);
   });
 });
