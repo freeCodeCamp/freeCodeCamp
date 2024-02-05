@@ -22,7 +22,7 @@ Tom: Oh, awesome. My computer and drawing tablet are great, too.
 
 ## --blanks--
 
-`awesome`
+`Awesome`
 
 ### --feedback--
 

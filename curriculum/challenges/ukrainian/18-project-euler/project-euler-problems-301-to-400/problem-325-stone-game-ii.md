@@ -1,6 +1,6 @@
 ---
 id: 5900f4b11000cf542c50ffc4
-title: 'Problem 325: Stone Game II'
+title: 'Завдання 325: гра в камені II'
 challengeType: 1
 forumTopicId: 301982
 dashedName: problem-325-stone-game-ii
@@ -8,17 +8,17 @@ dashedName: problem-325-stone-game-ii
 
 # --description--
 
-A game is played with two piles of stones and two players. On each player's turn, the player may remove a number of stones from the larger pile. The number of stones removes must be a positive multiple of the number of stones in the smaller pile.
+В гру грають двоє гравців, використовуючи дві купи каменів. На кожному ході гравець може забрати один або кілька каменів з купи. Кількість забраних каменів має бути додатною і кратною кількості каменів в меншій купі.
 
-E.g., let the ordered pair (6,14) describe a configuration with 6 stones in the smaller pile and 14 stones in the larger pile, then the first player can remove 6 or 12 stones from the larger pile.
+Наприклад, нехай впорядкована пара (6,14) описує конфігурацію, де в меншій купі 6 каменів, а в більшій — 14, тому перший гравець може забрати 6 або 12 каменів з більшої купи.
 
-The player taking all the stones from a pile wins the game.
+Виграє той, хто забере всі камені з купи.
 
-A winning configuration is one where the first player can force a win. For example, (1,5), (2,6) and (3,12) are winning configurations because the first player can immediately remove all stones in the second pile.
+Виграшна конфігурація — це така конфігурація, в якій перший гравець може зразу виграти. Наприклад, (1,5), (2,6) та (3,12) є виграшними конфігураціями, оскільки перший гравець може одразу ж забрати всі камені з другої купи.
 
-A losing configuration is one where the second player can force a win, no matter what the first player does. For example, (2,3) and (3,4) are losing configurations: any legal move leaves a winning configuration for the second player.
+Програшна конфігурація — це така конфігурація, в якій другий гравець може зразу виграти, незалежно від того, що робить перший гравець. Наприклад, (2,3) та (3,4) є програшними конфігураціями, оскільки в результаті ходів першого гравця утворюється виграшна конфігурація для другого гравця.
 
-Define $S(N)$ as the sum of ($x_i + y_i$) for all losing configurations ($x_i$, $y_i$), $0 &lt; x_i &lt; y_i ≤ N$. We can verify that $S(10) = 211$ and $S({10}^4) = 230\\,312\\,207\\,313$.
+Визначимо $S(N)$ як суму ($x_i + y_i$) для всіх програшних конфігурацій ($x_i$, $y_i$), $0 &lt; x_i &lt; y_i ≤ N$. Можна довести, що $S(10) = 211$ та $S({10}^4) = 230\\,312\\,207\\,313$.
 
 Знайдіть $S({10}^{16})\bmod 7^{10}$.
 

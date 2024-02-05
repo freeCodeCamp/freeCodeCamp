@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8002
-title: Sorting algorithms/Bogosort
+title: 排序算法/Bogosort
 challengeType: 1
 forumTopicId: 302311
 dashedName: sorting-algorithmsbogosort
@@ -10,15 +10,15 @@ dashedName: sorting-algorithmsbogosort
 
 Bogosort a list of numbers.
 
-Bogosort simply shuffles a collection randomly until it is sorted.
+Bogosort 只是隨機打亂一個集合，直到它被排序。
 
-"Bogosort" is a perversely inefficient algorithm only used as an in-joke.
+“Bogosort”是一種非常低效的算法，僅用作笑話。
 
-Its average run-time is O(n!) because the chance that any given shuffle of a set will end up in sorted order is about one in *n* factorial, and the worst case is infinite since there's no guarantee that a random shuffling will ever produce a sorted sequence.
+它的平均運行時間是 O(n!) 因爲一個集合的任何給定 shuffle 以排序順序結束的機會約爲 *n* 階乘中的一個，並且最壞的情況是無限的，因爲不能保證隨機改組會產生排序的序列。
 
-Its best case is O(n) since a single pass through the elements may suffice to order them.
+最好的情況是 O(n)，因爲單次遍歷元素可能足以對它們進行排序。
 
-Pseudocode:
+僞代碼：
 
 <pre><b>while not</b> InOrder(list) <b>do</b>
   Shuffle(list)
@@ -27,37 +27,37 @@ Pseudocode:
 
 # --hints--
 
-`bogosort` should be a function.
+`bogosort` 應該是一個函數。
 
 ```js
 assert(typeof bogosort == 'function');
 ```
 
-`bogosort([25, 32, 12, 7, 20])` should return an array.
+`bogosort([25, 32, 12, 7, 20])` 應該返回一個數組。
 
 ```js
 assert(Array.isArray(bogosort([25, 32, 12, 7, 20])));
 ```
 
-`bogosort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`bogosort([25, 32, 12, 7, 20])` 應該返回 `[7, 12, 20, 25, 32]`。
 
 ```js
 assert.deepEqual(bogosort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`bogosort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`bogosort([38, 45, 35, 8, 13])` 應該返回 `[8, 13, 35, 38, 45]`。
 
 ```js
 assert.deepEqual(bogosort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`bogosort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`bogosort([43, 36, 20, 34, 24])` 應該返回 `[20, 24, 34, 36, 43]`。
 
 ```js
 assert.deepEqual(bogosort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`bogosort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`bogosort([12, 33, 26, 18, 1, 16, 38])` 應該返回`[1, 12, 16, 18, 26, 33, 38]`。
 
 ```js
 assert.deepEqual(bogosort([12, 33, 26, 18, 1, 16, 38]), [
@@ -71,7 +71,7 @@ assert.deepEqual(bogosort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`bogosort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`bogosort([3, 39, 48, 16, 1, 4, 29])` 應該返回`[1, 3, 4, 16, 29, 39, 48]`。
 
 ```js
 assert.deepEqual(bogosort([3, 39, 48, 16, 1, 4, 29]), [

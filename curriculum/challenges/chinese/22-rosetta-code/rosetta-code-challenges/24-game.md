@@ -1,6 +1,6 @@
 ---
 id: 5951e88f64ebf159166a1176
-title: 24 game
+title: 24 点游戏
 challengeType: 1
 forumTopicId: 302218
 dashedName: 24-game
@@ -10,30 +10,30 @@ dashedName: 24-game
 
 The 24 Game tests a person's mental arithmetic.
 
-The aim of the game is to arrange four numbers in a way that when evaluated, the result is 24
+游戏的目标是使四个数字的计算结果是 24。
 
 # --instructions--
 
-Implement a function that takes a string of four digits as its argument, with each digit from 1 to 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return "no solution exists".
+实现一个函数，该函数将一个四位数的字符串作为其参数，每个数字从 1 到 9（含）并允许重复，并返回一个计算结果为数字 24 的算术表达式。 如果不存在这样的解，则返回“没有解决方案”。
 
-**Rules:**
+**规则：**
 <ul>
   <li> Only the following operators/functions are allowed: multiplication, division, addition, subtraction. </li>
-  <li> Division should use floating point or rational arithmetic, etc, to preserve remainders. </li>
-  <li> Forming multiple digit numbers from the supplied digits is disallowed. (So an answer of 12+12 when given 1, 2, 2, and 1 is wrong). </li>
-  <li> The order of the digits when given does not have to be preserved. </li>
+  <li> 除法应使用浮点或有理算术等来保留余数。 </li>
+  <li> 不允许从提供的数字中形成多位数字。 （所以当给出 1、2、2 和 1 时，12 + 12 的答案是错误的）。 </li>
+  <li> 不必依照给定的数字顺序。 </li>
 </ul>
 
-| Example input                 | Example output            |
-| ----------------------------- | ------------------------- |
-| <code>solve24("4878");</code> | <code>(7-8/8)\*4</code>   |
-| <code>solve24("1234");</code> | <code>3\*1\*4\*2</code>   |
+| Example input             | 示例输出                      |
+| ------------------------- | ------------------------- |
+| <code>solve24("4878");</code> | <code>(7-8/8)\*4</code> |
+| <code>solve24("1234");</code> | <code>3\*1\*4\*2</code> |
 | <code>solve24("6789");</code> | <code>(6\*8)/(9-7)</code> |
 | <code>solve24("1127");</code> | <code>(1+7)\*(2+1)</code> |
 
 # --hints--
 
-`solve24` should be a function.
+`solve24` 应该是一个函数。
 
 ```js
 assert(typeof solve24 === 'function');

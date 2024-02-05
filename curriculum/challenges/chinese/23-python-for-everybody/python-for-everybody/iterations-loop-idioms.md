@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f05e
-title: 'Iterations: Loop Idioms'
+title: '迭代：循环成语'
 challengeType: 11
 videoId: AelGAcoMXbI
 bilibiliIds:

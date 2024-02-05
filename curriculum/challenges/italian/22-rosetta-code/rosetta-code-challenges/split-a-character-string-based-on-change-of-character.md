@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc801d
-title: Split a character string based on change of character
+title: Dividi una stringa di caratteri in base al cambiamento di carattere
 challengeType: 1
 forumTopicId: 302322
 dashedName: split-a-character-string-based-on-change-of-character
@@ -14,7 +14,7 @@ Split a (character) string into comma (plus a blank) delimited strings based on 
 "gHHH5YY++///\\"
 </pre>
 
-should be split as:
+dovrebbe essere diviso come:
 
 <pre>
 ["g", "HHH", "5", "YY", "++", "///", "\\" ];
@@ -22,25 +22,25 @@ should be split as:
 
 # --hints--
 
-`split` should be a function.
+`split` dovrebbe essere una funzione.
 
 ```js
 assert(typeof split == 'function');
 ```
 
-`split("hello")` should return an array.
+`split("hello")` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(split('hello')));
 ```
 
-`split("hello")` should return `["h", "e", "ll", "o"]`.
+`split("hello")` dovrebbe restituire `["h", "e", "ll", "o"]`.
 
 ```js
 assert.deepEqual(split('hello'), ['h', 'e', 'll', 'o']);
 ```
 
-`split("commission")` should return `["c", "o", "mm", "i", "ss", "i", "o", "n"]`.
+`split("commission")` dovrebbe restituire `["c", "o", "mm", "i", "ss", "i", "o", "n"]`.
 
 ```js
 assert.deepEqual(split('commission'), [
@@ -55,7 +55,7 @@ assert.deepEqual(split('commission'), [
 ]);
 ```
 
-`split("ssss----====llloooo")` should return `["ssss", "----", "====", "lll", "oooo"]`.
+`split("ssss----====llloooo")` dovrebbe restituire `["ssss", "----", "====", "lll", "oooo"]`.
 
 ```js
 assert.deepEqual(split('ssss----====llloooo'), [
@@ -67,7 +67,7 @@ assert.deepEqual(split('ssss----====llloooo'), [
 ]);
 ```
 
-`split("sssmmmaaammmaaat")` should return `["sss", "mmm", "aaa", "mmm", "aaa", "t"]`.
+`split("sssmmmaaammmaaat")` dovrebbe restituire `["sss", "mmm", "aaa", "mmm", "aaa", "t"]`.
 
 ```js
 assert.deepEqual(split('sssmmmaaammmaaat'), [
@@ -80,7 +80,7 @@ assert.deepEqual(split('sssmmmaaammmaaat'), [
 ]);
 ```
 
-`split("gHHH5YY++///\\")` should return `["g", "HHH", "5", "YY", "++", "///", "\\"]`.
+`split("gHHH5YY++///\\")` dovrebbe restituire `["g", "HHH", "5", "YY", "++", "///", "\\"]`.
 
 ```js
 assert.deepEqual(split('gHHH5YY++///\\'), [

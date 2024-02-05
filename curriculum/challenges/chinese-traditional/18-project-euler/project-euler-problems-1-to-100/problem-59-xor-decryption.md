@@ -1,6 +1,6 @@
 ---
 id: 5900f3a81000cf542c50feba
-title: 'Problem 59: XOR decryption'
+title: '問題59：XOR解密'
 challengeType: 1
 forumTopicId: 302170
 dashedName: problem-59-xor-decryption
@@ -12,15 +12,15 @@ Each character on a computer is assigned a unique code and the preferred standar
 
 A modern encryption method is to take a text file, convert the bytes to ASCII, then XOR each byte with a given value, taken from a secret key. The advantage with the XOR function is that using the same encryption key on the cipher text, restores the plain text; for example, 65 XOR 42 = 107, then 107 XOR 42 = 65.
 
-For unbreakable encryption, the key is the same length as the plain text message, and the key is made up of random bytes. The user would keep the encrypted message and the encryption key in different locations, and without both "halves", it is impossible to decrypt the message.
+For unbreakable encryption, the key is the same length as the plain text message, and the key is made up of random bytes. 用戶將加密的消息和加密密鑰保持在不同的位置，並且沒有兩個“一半”，就不可能解密該消息。
 
-Unfortunately, this method is impractical for most users, so the modified method is to use a password as a key. If the password is shorter than the message, which is likely, the key is repeated cyclically throughout the message. The balance for this method is using a sufficiently long password key for security, but short enough to be memorable.
+不幸的是，這種方法對大多數用戶來說是不切實際的，因此修改後的方法是使用密碼作爲密鑰。 如果密碼短於可能的消息，則密鑰在整個消息中循環重複。 此方法的餘額是使用足夠長的密碼密鑰來保證安全性，但又要足夠短，以便令人難忘。
 
-Your task has been made easy, as the encryption key consists of three lower case characters. Using `cipher`, an array containing the encrypted ASCII codes, and the knowledge that the plain text must contain common English words, decrypt the message and find the sum of the ASCII values in the original text.
+您的任務變得簡單，因爲加密密鑰由三個小寫字符組成。 使用cipher.txt（右鍵單擊並“保存鏈接/目標爲...”），包含加密的ASCII代碼的文件，以及純文本必須包含常用英語單詞的知識，解密消息並找到總和原始文本中的ASCII值。
 
 # --hints--
 
-`XORDecryption(cipher)` should return a number.
+`euler59()`應返回107359。
 
 ```js
 assert(typeof XORDecryption(cipher) === 'number');

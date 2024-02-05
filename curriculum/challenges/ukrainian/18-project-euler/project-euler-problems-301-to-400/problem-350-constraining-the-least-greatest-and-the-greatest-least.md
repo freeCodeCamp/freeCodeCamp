@@ -1,6 +1,6 @@
 ---
 id: 5900f4cb1000cf542c50ffdd
-title: 'Problem 350: Constraining the least greatest and the greatest least'
+title: 'Завдання 350: обмеження найменшого найбільшого та найбільшого найменшого'
 challengeType: 1
 forumTopicId: 302010
 dashedName: problem-350-constraining-the-least-greatest-and-the-greatest-least
@@ -8,13 +8,13 @@ dashedName: problem-350-constraining-the-least-greatest-and-the-greatest-least
 
 # --description--
 
-A list of size $n$ is a sequence of $n$ natural numbers. Examples are (2, 4, 6), (2, 6, 4), (10, 6, 15, 6), and (11).
+Список розміром $n$ є послідовністю з $n$ натуральних чисел. Прикладами можуть бути (2, 4, 6), (2, 6, 4), (10, 6, 15, 6) та (11).
 
-The greatest common divisor, or $gcd$, of a list is the largest natural number that divides all entries of the list. Приклади: $нсд(2, 6, 4) = 2$, $нсд(10, 6, 15, 6) = 1$ та $нсд(11) = 11$.
+Найбільший спільний дільник ($нсд$) списку — це найбільше натуральне число, на яке ділиться кожен елемент списку. Приклади: $нсд(2, 6, 4) = 2$, $нсд(10, 6, 15, 6) = 1$ та $нсд(11) = 11$.
 
-The least common multiple, or $lcm$, of a list is the smallest natural number divisible by each entry of the list. Приклади: $lcm(2, 6, 4) = 12$, $lcm(10, 6, 15, 6) = 30$ та $lcm(11) = 11$.
+Найменше спільне кратне ($нск$) списку — це найменше натуральне число, яке ділиться на кожен елемент списку. Приклади: $нск(2, 6, 4) = 12$, $нск(10, 6, 15, 6) = 30$ та $нск(11) = 11$.
 
-Let $f(G, L, N)$ be the number of lists of size $N$ with $gcd ≥ G$ and $lcm ≤ L$. Наприклад:
+Нехай $f(G, L, N)$ буде кількістю списків розміром $N$ за умови $нсд ≥ G$ та $нск ≤ L$. Наприклад:
 
 $$\begin{align}   & f(10, 100, 1) = 91 \\\\
   & f(10, 100, 2) = 327 \\\\   & f(10, 100, 3) = 1135 \\\\

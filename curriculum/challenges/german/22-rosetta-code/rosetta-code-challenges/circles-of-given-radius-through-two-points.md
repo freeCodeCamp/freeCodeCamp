@@ -1,6 +1,6 @@
 ---
 id: 5951815dd895584b06884620
-title: Circles of given radius through two points
+title: Kreise mit gegebenem Radius durch zwei Punkte
 challengeType: 1
 forumTopicId: 302231
 dashedName: circles-of-given-radius-through-two-points
@@ -10,7 +10,7 @@ dashedName: circles-of-given-radius-through-two-points
 
 Given two points on a plane and a radius, usually two circles of given radius can be drawn through the points.
 
-**Exceptions:**
+**Ausnahmen:**
 
 <ul>
   <li>A radius of zero should be treated as never describing circles (except in the case where the points are coincident).</li>
@@ -21,9 +21,9 @@ Given two points on a plane and a radius, usually two circles of given radius ca
 
 # --instructions--
 
-Implement a function that takes two points and a radius and returns the two circles through those points. For each resulting circle, provide the coordinates for the center of each circle rounded to four decimal digits. Return each coordinate as an array, and coordinates as an array of arrays.
+Implementiere eine Funktion, die zwei Punkte und einen Radius annimmt und die beiden Kreise durch diese Punkte zurückgibt. Geben für jeden sich ergebenden Kreis die Koordinaten für den Mittelpunkt jedes Kreises auf vier Dezimalstellen gerundet an. Gib jede Koordinate als ein Array zurück, und Koordinaten als ein Array von Arrays.
 
-**For edge cases, return the following:**
+**Für Grenzfälle gib Folgendes zurück:**
 
 <ul>
   <li>If points are on the diameter, return one point. If the radius is also zero however, return <code>"Radius Zero"</code>.</li>
@@ -31,7 +31,7 @@ Implement a function that takes two points and a radius and returns the two circ
   <li>If points are farther apart than the diameter, return <code>"No intersection. Points further apart than circle diameter"</code>.</li>
 </ul>
 
-**Sample inputs:**
+**Beispiel-Eingaben:**
 
 <pre>      p1                p2           r
 0.1234, 0.9876    0.8765, 0.2345    2.0
@@ -43,19 +43,19 @@ Implement a function that takes two points and a radius and returns the two circ
 
 # --hints--
 
-`getCircles` should be a function.
+`getCircles` sollte eine Funktion sein.
 
 ```js
 assert(typeof getCircles === 'function');
 ```
 
-`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 2.0)` should return `[[1.8631, 1.9742], [-0.8632, -0.7521]]`.
+`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 2.0)` sollte `[[1.8631, 1.9742], [-0.8632, -0.7521]]` zurückgeben.
 
 ```js
 assert.deepEqual(getCircles(...testCases[0]), answers[0]);
 ```
 
-`getCircles([0.0000, 2.0000], [0.0000, 0.0000], 1.0)` should return `[0, 1]`
+`getCircles([0.0000, 2.0000], [0.0000, 0.0000], 1.0)` sollte `[0, 1]` zurückgeben
 
 ```js
 assert.deepEqual(getCircles(...testCases[1]), answers[1]);
@@ -73,7 +73,7 @@ assert.deepEqual(getCircles(...testCases[2]), answers[2]);
 assert.deepEqual(getCircles(...testCases[3]), answers[3]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 0.0)` should return `Radius Zero`
+`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 0.0)` sollte `Radius Zero` zurückgeben
 
 ```js
 assert.deepEqual(getCircles(...testCases[4]), answers[4]);

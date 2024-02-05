@@ -14,7 +14,7 @@ The greatest common divisor, or $gcd$, of a list is the largest natural number t
 
 The least common multiple, or $lcm$, of a list is the smallest natural number divisible by each entry of the list. Examples: $lcm(2, 6, 4) = 12$, $lcm(10, 6, 15, 6) = 30$ and $lcm(11) = 11$.
 
-Let $f(G, L, N)$ be the number of lists of size $N$ with $gcd ≥ G$ and $lcm ≤ L$. For example:
+Let $f(G, L, N)$ be the number of lists of size $N$ with $gcd ≥ G$ and $lcm ≤ L$. Por ejemplo:
 
 $$\begin{align}   & f(10, 100, 1) = 91 \\\\
   & f(10, 100, 2) = 327 \\\\   & f(10, 100, 3) = 1135 \\\\

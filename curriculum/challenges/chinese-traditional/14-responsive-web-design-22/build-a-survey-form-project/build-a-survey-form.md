@@ -8,7 +8,7 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**目標：** 構建一個功能類似於 <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a> 的應用程序
+**Objective:** Build an app that is functionally similar to <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>. **Do not copy this demo project**.
 
 **需求：**
 

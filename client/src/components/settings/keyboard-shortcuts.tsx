@@ -7,11 +7,13 @@ import ToggleButtonSetting from './toggle-button-setting';
 type KeyboardShortcutsProps = {
   keyboardShortcuts: boolean;
   toggleKeyboardShortcuts: (sound: boolean) => void;
+  explain?: string;
 };
 
 export default function KeyboardShortcutsSettings({
   keyboardShortcuts,
-  toggleKeyboardShortcuts
+  toggleKeyboardShortcuts,
+  explain
 }: KeyboardShortcutsProps): JSX.Element {
   const { t } = useTranslation();
 
@@ -19,6 +21,7 @@ export default function KeyboardShortcutsSettings({
     <>
       <ToggleButtonSetting
         action={t('settings.labels.keyboard-shortcuts')}
+        explain={explain}
         flag={keyboardShortcuts}
         flagName='keyboard-shortcuts'
         offLabel={t('buttons.off')}

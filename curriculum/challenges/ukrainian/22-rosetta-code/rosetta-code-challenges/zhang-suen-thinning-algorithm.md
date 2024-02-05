@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad7
-title: Zhang-Suen thinning algorithm
+title: Алгоритм проріджування Чжан-Суна
 challengeType: 1
 forumTopicId: 302347
 dashedName: zhang-suen-thinning-algorithm
@@ -25,7 +25,7 @@ const testImage1 = [
 ];
 ```
 
-It produces the thinned output:
+Отримуємо проріджений результат:
 
 ```js
 [ '                               ',
@@ -40,81 +40,76 @@ It produces the thinned output:
   '                               ' ];
 ```
 
-## Algorithm
+## Алгоритм
 
-Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes. The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
+Припустимо, що чорні пікселі дорівнюють одиниці, а білі — нулю, а вхідне зображення — прямокутним масивом одиниць і нулів N на M. Алгоритм працює на всіх чорних пікселях P1, які мають вісім сусідніх пікселів. Сусідні пікселі впорядковані наступним чином:
 
-$$\begin{array}{|c|c|c|}
-  \\hline
-  P9 & P2              & P3\\\\ \\hline
-  P8 & \boldsymbol{P1} & P4\\\\ \\hline
-  P7 & P6              & P5\\\\ \\hline
-\end{array}$$
+$$\begin{array}{|c|c|c|} \\hline P9 & P2              & P3\\\\ \\hline P8 & \boldsymbol{P1} & P4\\\\ \\hline P7 & P6              & P5\\\\ \\hline \end{array}$$
 
-Obviously the boundary pixels of the image cannot have the full eight neighbours.
+Звичайно, що граничні пікселі зображення не можуть мати всі вісім сусідніх пікселів.
 
-- Define $A(P1)$ = the number of transitions from white to black, ($0 \to 1$) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).
-- Define $B(P1)$ = the number of black pixel neighbours of P1. ($= \\sum(P2 \ldots P9)$)
+- Визначимо $A(P1)$ як кількість переходів від білого до чорного ($0 \to 1$) в послідовності P2, P3, P4, P5, P6, P7, P8, P9, P2. (Зверніть увагу на P2 вкінці: це циклічна послідовність).
+- Визначимо $B(P1)$ як кількість чорних сусідніх пікселів P1. ($= \\sum(P2 \ldots P9)$)
 
-**Step 1:**
+**Крок 1:**
 
-All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.
+На цьому етапі визначаємо пікселі, що задовольняють всі наведені нижче умови (одночасно).
 
-1. The pixel is black and has eight neighbours
+1. Піксель чорний і має вісім сусідніх пікселів
 2. $2 \le B(P1) \le 6$
 3. $A(P1) = 1$
-4. At least one of $P2$, $P4$ and $P6$ is white
-5. At least one of $P4$, $P6$ and $P8$ is white
+4. Принаймні один з $P2$, $P4$ та $P6$ є білим
+5. Принаймні один з $P4$, $P6$ та $P8$ є білим
 
-After iterating over the image and collecting all the pixels satisfying all step 1 conditions, all these condition satisfying pixels are set to white.
+Після ітерації зображення та збору всіх пікселів, що задовольняють усі умови 1 кроку, усі ці пікселі замінюються на білі.
 
 **Step 2:**
 
-All pixels are again tested and pixels satisfying all the following conditions are just noted at this stage.
+Усі пікселі знову перевіряємо і на цьому етапі визначаємо пікселі, що задовольняють всі наведені нижче умови.
 
-1. The pixel is black and has eight neighbours
+1. Піксель чорний і має вісім сусідніх пікселів
 2. $2 \le B(P1) \le 6$
 3. $A(P1) = 1$
-4. At least one of $P2$, $P4$ and $P8$ is white
-5. At least one of $P2$, $P6$ and $P8$ is white
+4. Принаймні один з $P2$, $P4$ та $P8$ є білим
+5. Принаймні один з $P2$, $P6$ та $P8$ є білим
 
-After iterating over the image and collecting all the pixels satisfying all step 2 conditions, all these condition satisfying pixels are again set to white.
+Після ітерації зображення та збору всіх пікселів, що задовольняють усі умови 2 кроку, усі ці пікселі знову замінюються на білі.
 
-**Iteration:**
+**Ітерація:**
 
-If any pixels were set in this round of either step 1 or step 2 then all steps are repeated until no image pixels are so changed.
+Якщо на етапі кроку 1 або кроку 2 були встановлені будь-які пікселі, усі кроки повторюються, поки усі пікселі зображення перестануть змінюватися таким чином.
 
 # --instructions--
 
-Write a routine to perform Zhang-Suen thinning on the provided `image`, an array of strings, where each string represents single line of the image. In the string, `#` represents black pixel, and whitespace represents white pixel. Function should return thinned image, using the same representation.
+Напишіть процедуру, щоб виконати проріджування Чжан-Суна на наданому `image`, масиві рядків, де кожен рядок представляє один рядок зображення. У рядку `#` позначає чорний піксель, а пробіл — білий піксель. Функція повинна повернути проріджене зображення, використовуючи те саме вираження.
 
 # --hints--
 
-`thinImage` should be a function.
+`thinImage` має бути функцією.
 
 ```js
 assert.equal(typeof thinImage, 'function');
 ```
 
-`thinImage` should return an array.
+`thinImage` повинно бути масивом.
 
 ```js
 assert(Array.isArray(thinImage(_testImage1)));
 ```
 
-`thinImage` should return an array of strings.
+`thinImage` має повернути масив рядків.
 
 ```js
 assert.equal(typeof thinImage(_testImage1)[0], 'string');
 ```
 
-`thinImage(testImage1)` should return a thinned image as in the example.
+`thinImage(testImage1)` має повернути проріджене зображення, як у прикладі.
 
 ```js
 assert.deepEqual(thinImage(_testImage1), expected1);
 ```
 
-`thinImage(testImage2)` should return a thinned image.
+`thinImage(testImage2)` має повернути проріджене зображення.
 
 ```js
 assert.deepEqual(thinImage(_testImage2), expected2);

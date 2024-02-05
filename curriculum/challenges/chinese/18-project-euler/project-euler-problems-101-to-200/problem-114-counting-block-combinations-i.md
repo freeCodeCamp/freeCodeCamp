@@ -1,6 +1,6 @@
 ---
 id: 5900f3e01000cf542c50fef2
-title: 'Problem 114: Counting block combinations I'
+title: '问题 114：计算块组合 I'
 challengeType: 1
 forumTopicId: 301740
 dashedName: problem-114-counting-block-combinations-i
@@ -10,15 +10,15 @@ dashedName: problem-114-counting-block-combinations-i
 
 A row measuring seven units in length has red blocks with a minimum length of three units placed on it, such that any two red blocks (which are allowed to be different lengths) are separated by at least one black square. There are exactly seventeen ways of doing this.
 
-<img class="img-responsive center-block" alt="Possible ways of placing block with a minimum length of three units, on a row with length of seven units" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-block-combinations-i.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="将最小长度为三个单位的块放置在长度为七个单位的行上的可能方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-block-combinations-i.png" style="background-color: white; padding: 10px;" />
 
-How many ways can a row measuring fifty units in length be filled?
+有多少种方法可以填充长度为 50 个单位的行？
 
-**Note:** Although the example above does not lend itself to the possibility, in general it is permitted to mix block sizes. For example, on a row measuring eight units in length you could use red (3), black (1), and red (4).
+**注意：** 虽然上面的例子不适合这种可能性，但通常允许混合块大小。 例如，在长度为 8 个单位的行上，你可以使用红色 (3)、黑色 (1) 和红色 (4)。
 
 # --hints--
 
-`countingBlockOne()` should return `16475640049`.
+`countingBlockOne()` 应该返回 `16475640049`。
 
 ```js
 assert.strictEqual(countingBlockOne(), 16475640049);

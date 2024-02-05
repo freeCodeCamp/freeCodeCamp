@@ -1,6 +1,6 @@
 ---
 id: 5900f3db1000cf542c50feed
-title: 'Problem 110: Diophantine Reciprocals II'
+title: 'Problema 110: Recíprocos Diofánticos II'
 challengeType: 1
 forumTopicId: 301735
 dashedName: problem-110-diophantine-reciprocals-ii
@@ -12,15 +12,15 @@ In the following equation x, y, and n are positive integers.
 
 $$\frac{1}{x} + \frac{1}{y} = \frac{1}{n}$$
 
-It can be verified that when `n` = 1260 there are 113 distinct solutions and this is the least value of `n` for which the total number of distinct solutions exceeds one hundred.
+Se puede verificar que cuando `n` = 1260 hay 113 soluciones distintas y este es el menor valor de `n` por lo cual el número total de soluciones excede una centena.
 
-What is the least value of `n` for which the number of distinct solutions exceeds four million?
+¿Cuál es el menor valor de `n` para el cuál el número de distintas soluciones supere cuatro millones?
 
-**Note:** This problem is a much more difficult version of Problem 108 and as it is well beyond the limitations of a brute force approach it requires a clever implementation.
+**Note:** Este problema es una versión más díficil de la versión del Problema 108 ya que está más allá de las limitaciones de fuerza bruta, esta requiere una implementación inteligente.
 
 # --hints--
 
-`diophantineTwo()` should return `9350130049860600`.
+`diophantineTwo()` debería devolver `9350130049860600`.
 
 ```js
 assert.strictEqual(diophantineTwo(), 9350130049860600);

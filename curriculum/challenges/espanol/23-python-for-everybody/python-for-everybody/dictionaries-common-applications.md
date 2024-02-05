@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f090b6c005b0e76f068
-title: 'Dictionaries: Common Applications'
+title: 'Diccionarios: Aplicaciones comunes'
 challengeType: 11
 videoId: f17xPfIXct0
 bilibiliIds:
@@ -39,7 +39,7 @@ quincy
 
 ---
 
-[will return error]
+[devolverá un error]
 
 ## --video-solution--
 

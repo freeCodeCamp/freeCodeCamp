@@ -1,6 +1,6 @@
 ---
 id: 597b2b2a2702b44414742771
-title: Factorial
+title: Fakultät
 challengeType: 1
 forumTopicId: 302263
 dashedName: factorial
@@ -10,12 +10,12 @@ dashedName: factorial
 
 Write a function to return the factorial of a number.
 
-Factorial of a number is given by:
+Die Fakultät einer Zahl wird wie folgt gegeben:
 
 <pre><big>n! = n * (n-1) * (n-2) * ..... * 1</big>
 </pre>
 
-For example:
+Zum Beispiel:
 
 <ul>
   <li><code>3! = 3 * 2 * 1 = 6</code></li>
@@ -26,31 +26,31 @@ For example:
 
 # --hints--
 
-`factorial` should be a function.
+`factorial` sollte eine Funktion sein.
 
 ```js
 assert(typeof factorial === 'function');
 ```
 
-`factorial(2)` should return a number.
+`factorial(2)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof factorial(2) === 'number');
 ```
 
-`factorial(3)` should return 6.
+`factorial(3)` sollte 6 zurückgeben.
 
 ```js
 assert.equal(factorial(3), 6);
 ```
 
-`factorial(5)` should return 120.
+`factorial(5)` sollte 120 zurückgeben.
 
 ```js
 assert.equal(factorial(5), 120);
 ```
 
-`factorial(10)` should return 3,628,800.
+`factorial(10)` sollte 3,628,800 zurückgeben.
 
 ```js
 assert.equal(factorial(10), 3628800);

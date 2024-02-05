@@ -1,6 +1,6 @@
 ---
 id: 5900f3f51000cf542c50ff08
-title: 'Problem 137: Fibonacci golden nuggets'
+title: '问题 137：斐波那契金块'
 challengeType: 1
 forumTopicId: 301765
 dashedName: problem-137-fibonacci-golden-nuggets
@@ -10,14 +10,14 @@ dashedName: problem-137-fibonacci-golden-nuggets
 
 Consider the infinite polynomial series $A_{F}(x) = xF_1 + x^2F_2 + x^3F_3 + \ldots$, where $F_k$ is the $k$th term in the Fibonacci sequence: $1, 1, 2, 3, 5, 8, \ldots$; that is, $F_k = F_{k − 1} + F_{k − 2}, F_1 = 1$ and $F_2 = 1$.
 
-For this problem we shall be interested in values of $x$ for which $A_{F}(x)$ is a positive integer.
+在这个问题中，我们关注的是那些使得 $A_{F}(x)$ 为正整数的 $x$ 的值。
 
-Surprisingly
+令人惊讶的是：
 
 $$\begin{align} A_F(\frac{1}{2}) & = (\frac{1}{2}) × 1 + {(\frac{1}{2})}^2 × 1 + {(\frac{1}{2})}^3 × 2 + {(\frac{1}{2})}^4 × 3 + {(\frac{1}{2})}^5 × 5 + \cdots \\\\
                  & = \frac{1}{2} + \frac{1}{4} + \frac{2}{8} + \frac{3}{16} + \frac{5}{32} + \cdots \\\\ & = 2 \end{align}$$
 
-The corresponding values of $x$ for the first five natural numbers are shown below.
+前五个对应的自然数 $x$ 如下。
 
 | $x$                         | $A_F(x)$ |
 | --------------------------- | -------- |
@@ -27,13 +27,13 @@ The corresponding values of $x$ for the first five natural numbers are shown bel
 | $\frac{\sqrt{89} − 5}{8}$ | $4$      |
 | $\frac{\sqrt{34} − 3}{5}$ | $5$      |
 
-We shall call $A_F(x)$ a golden nugget if $x$ is rational, because they become increasingly rarer; for example, the 10th golden nugget is 74049690.
+当 $x$ 是有理数时，我们称 $A_F(x)$ 是一个金砖，因为这样的数字逐渐变得稀少；例如，第 10 个金砖是 74049690。
 
-Find the 15th golden nugget.
+请求出第 15 个金砖。
 
 # --hints--
 
-`goldenNugget()` should return `1120149658760`.
+`goldenNugget()` 应该返回 `1120149658760`。
 
 ```js
 assert.strictEqual(goldenNugget(), 1120149658760);

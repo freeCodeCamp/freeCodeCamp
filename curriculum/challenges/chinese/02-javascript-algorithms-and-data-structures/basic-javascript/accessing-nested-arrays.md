@@ -41,7 +41,7 @@ ourPets[1].names[0];
 
 # --instructions--
 
-使用点和方括号，将变量 `secondTree` 的值设置为 `myPlants` 对象中 `trees` 列表的第二个项目。
+Using dot and bracket notation, set the variable `secondTree` to the second element in the `list` array from the second object in the `myPlants` array.
 
 # --hints--
 

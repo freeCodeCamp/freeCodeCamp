@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ee0
-title: Left factorials
+title: 左階乗
 challengeType: 1
 forumTopicId: 302302
 dashedName: left-factorials
@@ -16,7 +16,7 @@ dashedName: left-factorials
   <li>$n¡$</li>
 </ul>
 
-(It may not be visually obvious, but the last example uses an upside-down exclamation mark.) This task will be using this formula for **left factorial**:
+(視覚的に分かりづらいかもしれませんが、最後の例は逆感嘆符が使用されています)。 このタスクは、 以下の**左階乗** の公式を使用します。
 
 $ !n = \\sum\_{k=0}^{n-1} k! $
 
@@ -24,59 +24,59 @@ where $!0 = 0$
 
 # --instructions--
 
-Write a function to calculate the left factorial of a given number.
+与えられた数値の左階乗を計算する関数を記述してください。
 
 # --hints--
 
-`leftFactorial` should be a function.
+`leftFactorial` は関数とします。
 
 ```js
 assert(typeof leftFactorial == 'function');
 ```
 
-`leftFactorial(0)` should return a number.
+`leftFactorial(0)` は数値を返す必要があります。
 
 ```js
 assert(typeof leftFactorial(0) == 'number');
 ```
 
-`leftFactorial(0)` should return `0`.
+`leftFactorial(0)` は `0` を返す必要があります。
 
 ```js
 assert.equal(leftFactorial(0), 0);
 ```
 
-`leftFactorial(1)` should return `1`.
+`leftFactorial(1)` は `1` を返す必要があります。
 
 ```js
 assert.equal(leftFactorial(1), 1);
 ```
 
-`leftFactorial(2)` should return `2`.
+`leftFactorial(2)` は `2` を返す必要があります。
 
 ```js
 assert.equal(leftFactorial(2), 2);
 ```
 
-`leftFactorial(3)` should return `4`.
+`leftFactorial(3)` は `4` を返す必要があります。
 
 ```js
 assert.equal(leftFactorial(3), 4);
 ```
 
-`leftFactorial(10)` should return `409114`.
+`leftFactorial(10)` は `409114` を返す必要があります。
 
 ```js
 assert.equal(leftFactorial(10), 409114);
 ```
 
-`leftFactorial(17)` should return `22324392524314`.
+`leftFactorial(17)` は `22324392524314` を返す必要があります。
 
 ```js
 assert.equal(leftFactorial(17), 22324392524314);
 ```
 
-`leftFactorial(19)` should return `6780385526348314`.
+`leftFactorial(19)` は `6780385526348314` を返す必要があります。
 
 ```js
 assert.equal(leftFactorial(19), 6780385526348314);

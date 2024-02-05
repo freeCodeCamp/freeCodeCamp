@@ -1,6 +1,6 @@
 ---
 id: 5900f4201000cf542c50ff33
-title: 'Problem 180: Rational zeros of a function of three variables'
+title: '問題180：三個變量函數的有理零點'
 challengeType: 1
 forumTopicId: 301816
 dashedName: problem-180-rational-zeros-of-a-function-of-three-variables

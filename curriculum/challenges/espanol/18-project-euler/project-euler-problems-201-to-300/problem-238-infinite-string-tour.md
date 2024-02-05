@@ -17,7 +17,7 @@ Concatenate these numbers $s_0s_1s_2\ldots$ to create a string $w$ of infinite l
 
 For a positive integer $k$, if no substring of $w$ exists with a sum of digits equal to $k$, $p(k)$ is defined to be zero. If at least one substring of $w$ exists with a sum of digits equal to $k$, we define $p(k) = z$, where $z$ is the starting position of the earliest such substring.
 
-For instance:
+Por ejemplo:
 
 The substrings 1, 14, 1402, … with respective sums of digits equal to 1, 5, 7, … start at position 1, hence $p(1) = p(5) = p(7) = \ldots = 1$.
 

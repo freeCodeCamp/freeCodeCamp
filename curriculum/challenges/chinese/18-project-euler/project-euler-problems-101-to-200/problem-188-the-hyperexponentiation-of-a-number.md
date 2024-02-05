@@ -1,6 +1,6 @@
 ---
 id: 5900f4291000cf542c50ff3b
-title: 'Problem 188: The hyperexponentiation of a number'
+title: '问题188：数字的超指数'
 challengeType: 1
 forumTopicId: 301824
 dashedName: problem-188-the-hyperexponentiation-of-a-number
@@ -14,11 +14,11 @@ $a↑↑1 = a$,
 
 $a↑↑(k+1) = a^{(a↑↑k)}$.
 
-Thus we have e.g. $3↑↑2 = 3^3 = 27$, hence $3↑↑3 = 3^{27} = 7625597484987$ and $3↑↑4$ is roughly ${10}^{3.6383346400240996 \times {10}^{12}}$. Find the last 8 digits of $1777↑↑1855$.
+例如 $3↑↑2 = 3^3 = 27$，$3↑↑3 = 3^{27} = 7625597484987$，$3↑↑4$ 大约等于${10}^{3.6383346400240996 \times {10}^{12}}$， 请找出$1777↑↑1855$的最后8位数字。
 
 # --hints--
 
-`hyperexponentation()` should return `95962097`.
+`hyperexponentation()`应该返回 `95962097`.
 
 ```js
 assert.strictEqual(hyperexponentation(), 95962097);

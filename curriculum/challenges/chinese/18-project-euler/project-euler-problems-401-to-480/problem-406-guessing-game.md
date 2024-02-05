@@ -1,6 +1,6 @@
 ---
 id: 5900f5021000cf542c510015
-title: 'Problem 406: Guessing Game'
+title: '问题406：猜猜游戏'
 challengeType: 1
 forumTopicId: 302074
 dashedName: problem-406-guessing-game

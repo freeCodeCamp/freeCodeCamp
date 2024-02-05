@@ -1,6 +1,6 @@
 ---
 id: 63bf5cf03b50bf36cfbe94ea
-title: Step 36
+title: 步驟 36
 challengeType: 0
 dashedName: step-36
 ---
@@ -89,7 +89,7 @@ assert.match(addEntry?.toString(), /\(\s*\)/);
             </span>
           </div>
           <div>
-            <button type="submit" id="calculate-calories">
+            <button type="submit">
               Calculate Remaining Calories
             </button>
             <button type="button" id="clear">Clear</button>
@@ -192,11 +192,11 @@ select {
 }
 
 .surplus {
-  color: var(--light-green);
+  color: var(--light-pink);
 }
 
 .deficit {
-  color: var(--light-pink);
+  color: var(--light-green);
 }
 ```
 

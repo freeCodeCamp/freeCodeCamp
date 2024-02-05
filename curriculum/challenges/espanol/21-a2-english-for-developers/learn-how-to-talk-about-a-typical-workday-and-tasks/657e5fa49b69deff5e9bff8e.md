@@ -16,15 +16,15 @@ Listen to the audio to complete the sentence below.
 
 # --fillInTheBlank--
 
-## --sentence--
+## Frases
 
 `Absolutely. If you see any security breaches or incidents, you _ _ report them _.`
 
-## --blanks--
+## Palabra correcta
 
 `have`
 
-### --feedback--
+### --retroalimentación--
 
 Shows a requirement.
 
@@ -32,7 +32,7 @@ Shows a requirement.
 
 `to`
 
-### --feedback--
+### --retroalimentación--
 
 Used to express obligation.
 
@@ -40,6 +40,6 @@ Used to express obligation.
 
 `immediately`
 
-### --feedback--
+### --retroalimentación--
 
 Means right away, without delay.

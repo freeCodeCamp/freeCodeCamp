@@ -18,11 +18,11 @@ dashedName: problem-161-triominoes
 
 <img class="img-responsive center-block" alt="форми тріомінів включно із орієнтацією" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-2.gif" style="background-color: white; padding: 10px;" />
 
-Будь-яке поле n на m, якщо nxm ділиться на 3, можна покрити тріомінами. Якщо розглядати варіанти покриття, отримані шляхом симетрії чи обертання іншого покриття, то існує 41 спосіб викласти тріоміни на полі 2х9:
+Будь-яке поле n × m, за якого n × m ділиться на 3, можна покрити тріомінами. Якщо розглядати варіанти покриття, отримані шляхом симетрії чи обертання іншого покриття, то існує 41 спосіб викласти тріоміни на полі 2×9:
 
 <img class="img-responsive center-block" alt="анімація, що показує 41 спосіб заповнення таблиці 2 на 9 тріомінами" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-3.gif" style="background-color: white; padding: 10px;" />
 
-Скількома способами можна викласти тріоміни на полі 9х12?
+Скількома способами можна викласти тріоміни на полі 9×12?
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 599d15309e88c813a40baf58
-title: Entropy
+title: エントロピー
 challengeType: 1
 forumTopicId: 302254
 dashedName: entropy
@@ -14,47 +14,47 @@ Given the discrete random variable $X$ that is a string of $N$ "symbols" (total 
 
 $H_2(X) = -\\sum\_{i=1}^n \\frac{count_i}{N} \\log_2 \\left(\\frac{count_i}{N}\\right)$
 
-where $count_i$ is the count of character $n_i$.
+$count_i$ は、文字 $n_i$ の数です。
 
 # --hints--
 
-`entropy` should be a function.
+`entropy` という関数です。
 
 ```js
 assert(typeof entropy === 'function');
 ```
 
-`entropy("0")` should return `0`
+`entropy("0")` は `0` を返します。
 
 ```js
 assert.equal(entropy('0'), 0);
 ```
 
-`entropy("01")` should return `1`
+`entropy("01")` は `1` を返します。
 
 ```js
 assert.equal(entropy('01'), 1);
 ```
 
-`entropy("0123")` should return `2`
+`entropy("0123")` は `2` を返します。
 
 ```js
 assert.equal(entropy('0123'), 2);
 ```
 
-`entropy("01234567")` should return `3`
+`entropy("01234567")` は `3` を返します。
 
 ```js
 assert.equal(entropy('01234567'), 3);
 ```
 
-`entropy("0123456789abcdef")` should return `4`
+`entropy("0123456789abcdef")` は `4` を返します。
 
 ```js
 assert.equal(entropy('0123456789abcdef'), 4);
 ```
 
-`entropy("1223334444")` should return `1.8464393446710154`
+`entropy("1223334444")` は `1.8464393446710154` を返します。
 
 ```js
 assert.equal(entropy('1223334444'), 1.8464393446710154);

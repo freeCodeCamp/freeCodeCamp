@@ -1,6 +1,6 @@
 ---
 id: 5900f4b71000cf542c50ffca
-title: 'Problem 331: Cross flips'
+title: 'Завдання 331: перехресні перевертання'
 challengeType: 1
 forumTopicId: 301989
 dashedName: problem-331-cross-flips
@@ -8,19 +8,19 @@ dashedName: problem-331-cross-flips
 
 # --description--
 
-N×N disks are placed on a square game board. Each disk has a black side and white side.
+На квадратній гральній дошці розміщено N×N фішок. Кожна фішка має чорну і білу сторону.
 
-At each turn, you may choose a disk and flip all the disks in the same row and the same column as this disk: thus $2 × N - 1$ disks are flipped. The game ends when all disks show their white side. The following example shows a game on a 5×5 board.
+На кожному ході ви можете обрати фішку та перевернути всі фішки в тих же рядах, тобто перевернуться $2 × N - 1$ фішок. Гра закінчується, коли всі диски перевернуті білою стороною догори. У прикладі продемонстровано гру на дошці 5×5.
 
-<img class="img-responsive center-block" alt="animation showing game on 5x5 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="анімація гри на дошці 5x5" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;" />
 
-It can be proven that 3 is the minimal number of turns to finish this game.
+Можна довести, що для завершення гри потрібно зробити мінімум 3 ходи.
 
-The bottom left disk on the $N×N$ board has coordinates (0, 0); the bottom right disk has coordinates ($N - 1$,$0$) and the top left disk has coordinates ($0$,$N - 1$).
+Нижня ліва фішка на дошці $N×N$ має координати (0, 0), нижня права фішка має координати ($N - 1$,$0$), а верхня ліва фішка має координати ($0$,$N - 1$).
 
-Let $C_N$ be the following configuration of a board with $N × N$ disks: A disk at ($x$, $y$) satisfying $N - 1 \le \sqrt{x^2 + y^2} \lt N$, shows its black side; otherwise, it shows its white side. $C_5$ is shown above.
+Нехай $C_N$ буде наступною конфігурацією на дошці розміром $N × N$: якщо фішка на ($x$, $y$) задовільняє $N - 1 \le \sqrt{x^2 + y^2} \lt N$, вона перевернута чорною стороною; в іншому випадку — білою. $C_5$ показано вище.
 
-Let $T(N)$ be the minimal number of turns to finish a game starting from configuration $C_N$ or 0 if configuration $C_N$ is unsolvable. We have shown that $T(5) = 3$. Також дано, що $T(10) = 29$ та $T(1\\,000) = 395\\,253$.
+Нехай $T(N)$ буде мінімальною кількістю ходів, необхідних для завершення гри, починаючи з конфігурації $C_N$ або 0, якщо конфігурація $C_N$ нерозв’язна. Ми довели, що $T(5) = 3$. Також дано, що $T(10) = 29$ та $T(1\\,000) = 395\\,253$.
 
 Знайдіть $\displaystyle \sum_{i = 3}^{31} T(2^i - i)$.
 

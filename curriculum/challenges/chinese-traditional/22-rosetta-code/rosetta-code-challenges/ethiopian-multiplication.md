@@ -1,6 +1,6 @@
 ---
 id: 599d1566a02b571412643b84
-title: Ethiopian multiplication
+title: 埃塞俄比亞乘法
 challengeType: 1
 forumTopicId: 302257
 dashedName: ethiopian-multiplication
@@ -10,7 +10,7 @@ dashedName: ethiopian-multiplication
 
 Ethiopian multiplication is a method of multiplying integers using only addition, doubling, and halving.
 
-**Method:**
+**方法：**
 
 <ol>
   <li>Take two numbers to be multiplied and write them down at the top of two columns</li>
@@ -20,12 +20,12 @@ Ethiopian multiplication is a method of multiplying integers using only addition
   <li>Sum the values in the right-hand column that remain to produce the result of multiplying the original two numbers together</li>
 </ol>
 
-**For example:** `17 × 34`
+**例如：** `17 × 34`
 
 <pre>17   34
 </pre>
 
-Halving the first column:
+將第一列減半：
 
 <pre>17   34
 8
@@ -34,7 +34,7 @@ Halving the first column:
 1
 </pre>
 
-Doubling the second column:
+將第二列加倍：
 
 <pre>17   34
 8    68
@@ -43,7 +43,7 @@ Doubling the second column:
 1   544
 </pre>
 
-Strike-out rows whose first cell is even:
+第一個單元格爲偶數的刪除行：
 
 <pre>17   34
 8    <strike>68</strike>
@@ -52,7 +52,7 @@ Strike-out rows whose first cell is even:
 1   544
 </pre>
 
-Sum the remaining numbers in the right-hand column:
+對右側欄中的剩餘數字求和：
 
 <!-- markdownlint-disable MD003 -->
 
@@ -67,55 +67,55 @@ Sum the remaining numbers in the right-hand column:
 
 <!-- markdownlint-enable MD003 -->
 
-So `17` multiplied by `34`, by the Ethiopian method is `578`.
+所以`17`乘以`34`，按照埃塞俄比亞的方法是`578`。
 
 # --instructions--
 
-The task is to define three named functions/methods/procedures/subroutines:
+任務是定義三個命名的函數/方法/過程/子例程：
 
 <ol>
   <li>one to halve an integer,</li>
-  <li>one to double an integer, and</li>
-  <li>one to state if an integer is even</li>
+  <li>一個整數加倍，和</li>
+  <li>一個來檢測一個整數是否是偶數</li>
 </ol>
 
-Use these functions to create a function that does Ethiopian multiplication.
+使用這些函數創建一個執行埃塞俄比亞乘法的函數。
 
 <!-- markdownlint-disable MD046-->
 
 # --hints--
 
-`eth_mult` should be a function.
+`eth_mult` 應該是一個函數。
 
 ```js
 assert(typeof eth_mult === 'function');
 ```
 
-`eth_mult(17,34)` should return `578`.
+`eth_mult(17,34)` 應該返回 `578`。
 
 ```js
 assert.equal(eth_mult(17, 34), 578);
 ```
 
-`eth_mult(23,46)` should return `1058`.
+`eth_mult(23,46)` 應該返回 `1058`。
 
 ```js
 assert.equal(eth_mult(23, 46), 1058);
 ```
 
-`eth_mult(12,27)` should return `324`.
+`eth_mult(12,27)` 應該返回 `324`。
 
 ```js
 assert.equal(eth_mult(12, 27), 324);
 ```
 
-`eth_mult(56,98)` should return `5488`.
+`eth_mult(56,98)` 應該返回 `5488`。
 
 ```js
 assert.equal(eth_mult(56, 98), 5488);
 ```
 
-`eth_mult(63,74)` should return `4662`.
+`eth_mult(63,74)` 應該返回 `4662`。
 
 ```js
 assert.equal(eth_mult(63, 74), 4662);

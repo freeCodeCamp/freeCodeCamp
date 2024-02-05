@@ -1,6 +1,6 @@
 ---
 id: 5900f4671000cf542c50ff7a
-title: 'Problem 251: Cardano Triplets'
+title: '問題 251: カルダノの三つ組数'
 challengeType: 1
 forumTopicId: 301899
 dashedName: problem-251-cardano-triplets
@@ -8,19 +8,19 @@ dashedName: problem-251-cardano-triplets
 
 # --description--
 
-A triplet of positive integers ($a$,$b$,$c$) is called a Cardano Triplet if it satisfies the condition:
+正整数の三つ組数 ($a$,$b$,$c$) は、次の条件を満たす場合にカルダノの三つ組数 (Cardano Triplet) と呼ばれます。
 
 $$\sqrt[3]{a + b \sqrt{c}} + \sqrt[3]{a - b \sqrt{c}} = 1$$
 
-For example, (2,1,5) is a Cardano Triplet.
+例えば、(2,1,5) はカルダノの三つ組数です。
 
-There exist 149 Cardano Triplets for which $a + b + c ≤ 1000$.
+$a + b + c ≤ 1000$ となるカルダノの三つ組数は 149 個あります。
 
-Find how many Cardano Triplets exist such that $a + b + c ≤ 110\\,000\\,000$.
+$a + b + c ≤ 110\\,000\\,000$ となるカルダノの三つ組数はいくつありますか。
 
 # --hints--
 
-`cardanoTriplets()` should return `18946051`.
+`cardanoTriplets()` は `18946051` を返す必要があります。
 
 ```js
 assert.strictEqual(cardanoTriplets(), 18946051);

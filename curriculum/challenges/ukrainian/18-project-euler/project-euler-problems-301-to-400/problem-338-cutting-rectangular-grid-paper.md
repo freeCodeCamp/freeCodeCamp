@@ -1,6 +1,6 @@
 ---
 id: 5900f4be1000cf542c50ffd1
-title: 'Problem 338: Cutting Rectangular Grid Paper'
+title: 'Завдання 338: розрізання листка в клітинку'
 challengeType: 1
 forumTopicId: 301996
 dashedName: problem-338-cutting-rectangular-grid-paper
@@ -8,21 +8,21 @@ dashedName: problem-338-cutting-rectangular-grid-paper
 
 # --description--
 
-A rectangular sheet of grid paper with integer dimensions $w$ × $h$ is given. Its grid spacing is 1.
+Дано прямокутний листок в клітинку розміром $w$ × $h$. Відстань між клітинками дорівнює 1.
 
-When we cut the sheet along the grid lines into two pieces and rearrange those pieces without overlap, we can make new rectangles with different dimensions.
+Якщо розрізати листок на дві частини по клітинках та переставити їх так, щоб вони не перекривали одне одного, можна отримати інший прямокутник з іншими розмірами.
 
-For example, from a sheet with dimensions 9 × 4, we can make rectangles with dimensions 18 × 2, 12 × 3 and 6 × 6 by cutting and rearranging as below:
+Наприклад, розрізавши та переставивши частини листка розміром 9 × 4 так, як показано нижче, можна зробити прямокутник зі сторонами 18 × 2, 12 × 3 та 6 × 6:
 
-<img class="img-responsive center-block" alt="sheet with 9 x 4 dimensions cut in three different ways to make rectangles with 18 x 2, 12 x 3 and 6 x 6 dimensions" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="листок розміром 9 x 4, який розділили на три частини, щоб зробити прямокутники зі сторонами 18 x 2, 12 x 3 та 6 x 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px;" />
 
-Similarly, from a sheet with dimensions 9 × 8, we can make rectangles with dimensions 18 × 4 and 12 × 6.
+Схожим чином з листка 9 × 8 вийдуть прямокутники розмірами 18 × 4 та 12 × 6.
 
-For a pair $w$ and $h$, let $F(w, h)$ be the number of distinct rectangles that can be made from a sheet with dimensions $w$ × $h$. Наприклад, $F(2, 1) = 0$, $F(2, 2) = 1$, $F(9, 4) = 3$ та $F(9, 8) = 2$. Note that rectangles congruent to the initial one are not counted in $F(w, h)$. Note also that rectangles with dimensions $w$ × $h$ and dimensions $h$ × $w$ are not considered distinct.
+Нехай $F(w, h)$ для пари $w$ та $h$ буде кількістю різних прямокутників, які можна отримати з листка розміром $w$ × $h$. Наприклад, $F(2, 1) = 0$, $F(2, 2) = 1$, $F(9, 4) = 3$ та $F(9, 8) = 2$. Зверніть увагу, що прямокутники, конгруентні вихідним, не враховуються в $F(w, h)$. Також зверніть увагу, що прямокутники розміром $w$ × $h$ та розміром $h$ × $w$ не вважаються однаковими.
 
-For an integer $N$, let $G(N)$ be the sum of $F(w, h)$ for all pairs $w$ and $h$ which satisfy $0 &lt; h ≤ w ≤ N$. We can verify that $G(10) = 55$, $G({10}^3) = 971\\,745$ and $G({10}^5) = 9\\,992\\,617\\,687$.
+Нехай $G(N)$, де $N$ є цілим числом, буде сумою $F(w, h)$ для всіх пар $w$ та $h$, які задовільняють умову $0 &lt; h ≤ w ≤ N$. Можна довести, що $G(10) = 55$, $G({10}^3) = 971\\,745$ та $G({10}^5) = 9\\,992\\,617\\,687$.
 
-Знайдіть $G({10}^{12})$. Give your answer modulo ${10}^8$.
+Знайдіть $G({10}^{12})$. Надайте відповідь за модулем ${10}^8$.
 
 # --hints--
 

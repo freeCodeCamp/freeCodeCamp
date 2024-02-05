@@ -1,6 +1,6 @@
 ---
 id: 5e4ce2a1ac708cc68c1df25d
-title: Long multiplication
+title: 長乘法
 challengeType: 1
 forumTopicId: 385269
 dashedName: long-multiplication
@@ -10,29 +10,29 @@ dashedName: long-multiplication
 
 Explicitly implement long multiplication.
 
-This is one possible approach to arbitrary-precision integer algebra.
+這是實現任意精度整數代數的一種可能方法。
 
 # --instructions--
 
-Write a function that takes two strings of large numbers as parameters. Your function should return the product of these two large numbers as a string.
+編寫一個函數，將兩個大數字符串作爲參數。 您的函數應該將這兩個大數的乘積作爲字符串返回。
 
-**Note:** In JavaScript, arithmetic operations are inaccurate with large numbers, so you will have to implement precise multiplication yourself.
+**注意：** 在 JavaScript 中，算術運算對於大數是不準確的，因此你必須自己實現精確的乘法。
 
 # --hints--
 
-`mult` should be a function.
+`mult` 應該是一個函數。
 
 ```js
 assert(typeof mult == 'function');
 ```
 
-`mult("18446744073709551616", "18446744073709551616")` should return a string.
+`mult("18446744073709551616", "18446744073709551616")` 應該返回一個字符串。
 
 ```js
 assert(typeof mult('18446744073709551616', '18446744073709551616') == 'string');
 ```
 
-`mult("18446744073709551616", "18446744073709551616")` should return `"340282366920938463463374607431768211456"`.
+`mult("18446744073709551616", "18446744073709551616")` 應該返回 `"340282366920938463463374607431768211456"`。
 
 ```js
 assert.equal(
@@ -41,7 +41,7 @@ assert.equal(
 );
 ```
 
-`mult("31844674073709551616", "1844674407309551616")` should return `"58743055272886011737990786529368211456"`.
+`mult("31844674073709551616", "1844674407309551616")` 應該返回 `"58743055272886011737990786529368211456"`。
 
 ```js
 assert.equal(
@@ -50,7 +50,7 @@ assert.equal(
 );
 ```
 
-`mult("1846744073709551616", "44844644073709551616")` should return `"82816580680737279241781007431768211456"`.
+`mult("1846744073709551616", "44844644073709551616")` 應該返回 `"82816580680737279241781007431768211456"`。
 
 ```js
 assert.equal(
@@ -59,7 +59,7 @@ assert.equal(
 );
 ```
 
-`mult("1844674407370951616", "1844674407709551616")` should return `"3402823669833978308014392742590611456"`.
+`mult("1844674407370951616", "1844674407709551616")` 應該返回 `"3402823669833978308014392742590611456"`。
 
 ```js
 assert.equal(
@@ -68,7 +68,7 @@ assert.equal(
 );
 ```
 
-`mult("2844674407370951616", "1844674407370955616")` should return `"5247498076580334548376218009219475456"`.
+`mult("2844674407370951616", "1844674407370955616")` 應該返回 `"5247498076580334548376218009219475456"`。
 
 ```js
 assert.equal(

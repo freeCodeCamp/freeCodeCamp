@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad8
-title: Zig-zag matrix
+title: ジグザグ行列
 challengeType: 1
 forumTopicId: 302348
 dashedName: zig-zag-matrix
@@ -10,7 +10,7 @@ dashedName: zig-zag-matrix
 
 A 'zig-zag' array is a square arrangement of the first $N^2$ integers, where the numbers increase sequentially as you zig-zag along the array's anti-diagonals.
 
-For example, for the input `5`, the following result should be produced:
+例えば、入力 `5`の場合、次の結果となります。
 
 <pre>
  0  1  5  6 14
@@ -22,41 +22,41 @@ For example, for the input `5`, the following result should be produced:
 
 # --instructions--
 
-Write a function that takes the size of the zig-zag matrix, and returns the corresponding matrix as two-dimensional array.
+ジグザグ行列のサイズをとる関数を記述し、対応する行列を二次元配列として返します。
 
 # --hints--
 
-ZigZagMatrix should be a function.
+ZigZagMatrix は関数とします。
 
 ```js
 assert.equal(typeof ZigZagMatrix, 'function');
 ```
 
-ZigZagMatrix should return array.
+ZigZagMatrix は配列を返す必要があります。
 
 ```js
 assert.equal(typeof ZigZagMatrix(1), 'object');
 ```
 
-ZigZagMatrix should return an array of nested arrays.
+ZigZagMatrix はネストされた配列の配列を返す必要があります。
 
 ```js
 assert.equal(typeof ZigZagMatrix(1)[0], 'object');
 ```
 
-ZigZagMatrix(1) should return \[[0]].
+ZigZagMatrix(1) は \[[0]] を返す必要があります。
 
 ```js
 assert.deepEqual(ZigZagMatrix(1), zm1);
 ```
 
-ZigZagMatrix(2) should return \[[0, 1], [2, 3]].
+ZigZagMatrix(2) は \[[0, 1], [2, 3]] を返す必要があります。
 
 ```js
 assert.deepEqual(ZigZagMatrix(2), zm2);
 ```
 
-ZigZagMatrix(5) should return specified matrix.
+ZigZagMatrix(5) は (上記で) 指定した行列を返す必要があります。
 
 ```js
 assert.deepEqual(ZigZagMatrix(5), zm5);

@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad0
-title: Align columns
+title: Allineare colonne
 challengeType: 1
 forumTopicId: 302224
 dashedName: align-columns
@@ -12,7 +12,7 @@ Given an array of many lines, where fields within a line are delineated by a sin
 
 # --instructions--
 
-Use the following text to test your programs:
+Usa il seguente testo per testare i tuoi programmi:
 
 ```js
 const testText = [
@@ -29,16 +29,16 @@ const testText = [
 ];
 ```
 
-**Note that:**
+**Nota che:**
 
 - The example input texts lines may, or may not, have trailing dollar characters.
-- All columns should share the same alignment.
-- Consecutive space characters produced adjacent to the end of lines are insignificant for the purposes of the task.
-- Output text will be viewed in a mono-spaced font on a plain text editor or basic terminal. Lines in it should be joined using new line character (`\n`).
-- The minimum space between columns should be computed from the text and not hard-coded.
-- It is not a requirement to add separating characters between or around columns.
+- Tutte le colonne dovrebbero condividere lo stesso allineamento.
+- I caratteri spazio consecutivi prodotti adiacenti alla fine delle linee sono insignificanti ai fini del compito.
+- Il testo di output sarà visualizzato in un carattere mono-spaziato su un editor di testo semplice o un terminale base. Le righe in esso dovrebbero essere unite utilizzando un carattere nuova riga (`\n`).
+- Lo spazio minimo tra le colonne dovrebbe essere calcolato dal testo e non codificato.
+- Non è un requisito aggiungere caratteri di separazione tra colonne o intorno a colonne.
 
-For example, one of the lines from the `testText`, after justifying to the right, left and center respectively:
+Ad esempio, una delle righe del `testText`, dopo aver giustificato rispettivamente a destra, sinistra, e centro:
 
 ```js
 '    column        are separated     by     at    least       one space.\n'
@@ -48,25 +48,25 @@ For example, one of the lines from the `testText`, after justifying to the right
 
 # --hints--
 
-`formatText` should be a function.
+`formatText` dovrebbe essere una funzione.
 
 ```js
 assert(typeof formatText === 'function');
 ```
 
-`formatText(testText, 'right')` should produce text with columns justified to the right.
+`formatText(testText, 'right')` dovrebbe produrre testo con le colonne allineate a destra.
 
 ```js
 assert.strictEqual(formatText(_testText, 'right'), rightAligned);
 ```
 
-`formatText(testText, 'left')` should produce text with columns justified to the left.
+`formatText(testText, 'left')` dovrebbe produrre testo con le colonne allineate a sinistra.
 
 ```js
 assert.strictEqual(formatText(_testText, 'left'), leftAligned);
 ```
 
-`formatText(testText, 'center')` should produce text with columns justified to the center.
+`formatText(testText, 'center')` dovrebbe produrre testo con le colonne allineate al centro.
 
 ```js
 assert.strictEqual(formatText(_testText, 'center'), centerAligned);

@@ -1,6 +1,6 @@
 ---
 id: 5e6a54ba58d3af90110a60a2
-title: 'Introduction: Python as a Language'
+title: '導言：Python 這門編程語言'
 challengeType: 11
 videoId: 0QeGbZNS_bY
 bilibiliIds:

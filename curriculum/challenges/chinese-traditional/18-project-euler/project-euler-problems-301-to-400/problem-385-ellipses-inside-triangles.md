@@ -1,6 +1,6 @@
 ---
 id: 5900f4ee1000cf542c510000
-title: 'Problem 385: Ellipses inside triangles'
+title: '問題385：三角形內的橢圓'
 challengeType: 1
 forumTopicId: 302049
 dashedName: problem-385-ellipses-inside-triangles

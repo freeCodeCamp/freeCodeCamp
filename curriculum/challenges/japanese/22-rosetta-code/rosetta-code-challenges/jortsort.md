@@ -10,53 +10,53 @@ dashedName: jortsort
 
 jortSort is a sorting toolset that makes the user do the work and guarantees efficiency because you don't have to sort ever again. It was originally presented by Jenn "Moneydollars" Schiffer at the prestigious JSConf2014.
 
-jortSort should be a function that takes a single array of comparable objects as its argument. It then sorts the array in ascending order and compares the sorted array to the originally provided array. If the arrays match (i.e. the original array was already sorted), the function returns true. If the arrays do not match (i.e. the original array was not sorted), the function returns false.
+jortSort は、比較可能なオブジェクトの単一の配列を引数として取る関数とします。 その後、配列を昇順にソートし、ソートされた配列を元の配列と比較します。 配列が一致する (つまり、元の配列がすでにソートされていた) 場合、関数は true を返します。 配列が一致しない (つまり、元の配列がソートされていなかった) 場合、関数は false を返します。
 
 # --hints--
 
-`jortsort` should be a function.
+`jortsort` は関数とします。
 
 ```js
 assert(typeof jortsort == 'function');
 ```
 
-`jortsort([1,2,3,4,5])` should return a boolean.
+`jortsort([1,2,3,4,5])` はブール値を返す必要があります。
 
 ```js
 assert(typeof jortsort([1, 2, 3, 4, 5]) == 'boolean');
 ```
 
-`jortsort([1,2,3,4,5])` should return `true`.
+`jortsort([1,2,3,4,5])` は `true` を返す必要があります。
 
 ```js
 assert.equal(jortsort([1, 2, 3, 4, 5]), true);
 ```
 
-`jortsort([1,2,13,4,5])` should return `false`.
+`jortsort([1,2,13,4,5])` は `false` を返す必要があります。
 
 ```js
 assert.equal(jortsort([1, 2, 13, 4, 5]), false);
 ```
 
-`jortsort([12,4,51,2,4])` should return `false`.
+`jortsort([12,4,51,2,4])` は `false` を返す必要があります。
 
 ```js
 assert.equal(jortsort([12, 4, 51, 2, 4]), false);
 ```
 
-`jortsort([1,2])` should return `true`.
+`jortsort([1,2])` は `true` を返す必要があります。
 
 ```js
 assert.equal(jortsort([1, 2]), true);
 ```
 
-`jortsort([5,4,3,2,1])` should return `false`.
+`jortsort([5,4,3,2,1])` は `false` を返す必要があります。
 
 ```js
 assert.equal(jortsort([5, 4, 3, 2, 1]), false);
 ```
 
-`jortsort([1,1,1,1,1])` should return `true`.
+`jortsort([1,1,1,1,1])` は `true` を返す必要があります。
 
 ```js
 assert.equal(jortsort([1, 1, 1, 1, 1]), true);

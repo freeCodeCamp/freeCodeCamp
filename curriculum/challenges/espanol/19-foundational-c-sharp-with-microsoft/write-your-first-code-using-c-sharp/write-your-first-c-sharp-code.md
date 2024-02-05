@@ -12,7 +12,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-write-first/</a> and complete all the tasks in the "Write Your First C# Code" module. This is **required** to earn the "Write Your First Code Using C#" trophy on Microsoft Learn, and qualify for the certification exam.
 1. When you are finished, come back and correctly answer the question below.
 
-# --assignment--
+# --tarea--
 
 Complete the <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank" rel="noreferrer">Write Your First C# Code</a> module on Microsoft Learn. Then, answer the question below.
 

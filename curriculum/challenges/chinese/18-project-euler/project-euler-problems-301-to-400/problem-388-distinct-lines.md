@@ -1,6 +1,6 @@
 ---
 id: 5900f4f11000cf542c510002
-title: 'Problem 388: Distinct Lines'
+title: '问题388：不同的线条'
 challengeType: 1
 forumTopicId: 302052
 dashedName: problem-388-distinct-lines
@@ -14,7 +14,7 @@ From the origin $O(0, 0, 0)$ all lines are drawn to the other lattice points. Le
 
 You are given that $D(1\\,000\\,000) = 831\\,909\\,254\\,469\\,114\\,121$.
 
-Find $D({10}^{10})$. Give as your answer the first nine digits followed by the last nine digits.
+Find $D({10}^{10})$. 将前9位数字后跟最后9位数字作为答案。
 
 # --hints--
 

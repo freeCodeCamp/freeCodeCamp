@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ed4
-title: Knapsack problem/Unbounded
+title: ナップサック問題 / 個数制限なし
 challengeType: 1
 forumTopicId: 323655
 dashedName: knapsack-problemunbounded
@@ -10,19 +10,19 @@ dashedName: knapsack-problemunbounded
 
 A traveler gets diverted and has to make an unscheduled stop in what turns out to be Shangri-La. Opting to leave, he is allowed to take as much as he likes of the items available there, so long as it will fit in his knapsack, and he can carry it.
 
-He knows that he can carry no more than a particular value of maximum weight in total; and that the capacity of his knapsack has a limited volume.
+旅人は、合計で最大重量を超えるものを運ぶことができないことを知っていますし、ナップサックの容量は限られています。
 
-Looking just above the bar codes on the items he finds their weights and volumes. He digs out his recent copy of a financial paper and gets the value of each item.
+アイテムのバーコードのすぐ上を見ると、重量と容量がわかるようになっています。 旅人は持っていた最近の経済紙を探し出して、それぞれのアイテムの価値を把握しました。
 
-He can only take whole units of any item, but there is much more of any item than he could ever carry.
+どのアイテムもひとまとまり全体を取る必要がありますが、それぞれ、これまで運ぶことのできた量をはるかに超える数量があります。
 
 # --instructions--
 
-Write a function that takes an array of objects, maximum weight, and maximum volume as parameters. Each object has 4 attributes: name, value, weight, and volume. The function should return the maximum value of items the traveller can take with him.
+オブジェクトの配列、最大重量、最大容量をパラメータとして取る関数を記述してください。 各オブジェクトには アイテム名、価値、重量、容量の 4 つの属性があります。 この関数は、旅人が持っていくことのできるアイテムの価値の最大値を返さなければなりません。
 
 # --hints--
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.25)` should return `54500`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.25)` は `54500` を返す必要があります。
 
 ```js
 assert.equal(
@@ -39,7 +39,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 55, 0.25)` should return `88400`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 55, 0.25)` は `88400` を返す必要があります。
 
 ```js
 assert.equal(
@@ -56,7 +56,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.15)` should return `42500`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.15)` は`42500` を返す必要があります。
 
 ```js
 assert.equal(
@@ -73,7 +73,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 35, 0.35)` should return `75900`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 35, 0.35)` は`75900` を返す必要があります。
 
 ```js
 assert.equal(
@@ -90,7 +90,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 15, 0.25)` should return `43200`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 15, 0.25)` は `43200` を返す必要があります。
 
 ```js
 assert.equal(

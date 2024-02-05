@@ -20,7 +20,7 @@ dashedName: problem-405-a-rectangular-tiling
 
 <img class="img-responsive center-block" alt="анімація з плитками T(n) для n від 0 до 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-2.gif" style="background-color: white; padding: 10px;" />
 
-Нехай $f(n)$ буде кількістю точок, у яких чотири плитки з $T(n)$ перетинаються. Наприклад, $f(1) = 0$, $f(4) = 82$ та $f({10}^9)\bmod {17}^7 = 126\\,897\\,180$.
+Нехай $f(n)$ буде кількістю точок, у яких перетинаються чотири плитки з $T(n)$. Наприклад, $f(1) = 0$, $f(4) = 82$ та $f({10}^9)\bmod {17}^7 = 126\\,897\\,180$.
 
 Знайдіть $f({10}^k)$ за умови $k = {10}^{18}$. Надайте відповідь за модулем ${17}^7$.
 

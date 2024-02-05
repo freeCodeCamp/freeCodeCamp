@@ -12,7 +12,7 @@ This first video will show you how to graph systems of equations with written ma
 
 Here is the <a href="https://colab.research.google.com/drive/1N1JEZJctODxsntROnmg0VqMSHXYdIlFD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
 
-# --assignment--
+# --tarea--
 
 Add code from the video to the algebra notebook you are building, and test it with different functions.
 

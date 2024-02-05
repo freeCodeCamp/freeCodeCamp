@@ -1,6 +1,6 @@
 ---
 id: 5900f4a51000cf542c50ffb7
-title: 'Problem 312: Cyclic paths on Sierpiński graphs'
+title: 'Завдання 312: циклічні шляхи на графах Серпінського'
 challengeType: 1
 forumTopicId: 301968
 dashedName: problem-312-cyclic-paths-on-sierpiski-graphs
@@ -8,14 +8,14 @@ dashedName: problem-312-cyclic-paths-on-sierpiski-graphs
 
 # --description--
 
-- A Sierpiński graph of order-1 ($S_1$) is an equilateral triangle.
-- $S_{n + 1}$ is obtained from $S_n$ by positioning three copies of $S_n$ so that every pair of copies has one common corner.
+- Граф Серпінського 1-го порядку ($S_1$) є рівностороннім трикутником.
+- $S_{n + 1}$ можна отримати від $S_n$, розташувавши три копії $S_n$ так, щоб кожна пара копій мала один спільний кут.
 
-<img class="img-responsive center-block" alt="Sierpinski graphs of order-1 to order-5" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-1.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="графи Серпінського від 1-го порядку до 5-го порядку" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-1.gif" style="background-color: white; padding: 10px;" />
 
-Let $C(n)$ be the number of cycles that pass exactly once through all the vertices of $S_n$. For example, $C(3) = 8$ because eight such cycles can be drawn on $S_3$, as shown below:
+Нехай $C(n)$ буде кількістю циклів, які проходять через всі вершини $S_n$ лише один раз. Наприклад, $C(3) = 8$, оскільки вісім таких циклів можна намалювати на $S_3$, як показано нижче:
 
-<img class="img-responsive center-block" alt="eight cycles that pass exactly once through all vertices of S_3" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-2.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="вісім циклів, що проходять через усі вершини S_3 лише один раз" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-2.gif" style="background-color: white; padding: 10px;" />
 
 Також можна довести, що:
 

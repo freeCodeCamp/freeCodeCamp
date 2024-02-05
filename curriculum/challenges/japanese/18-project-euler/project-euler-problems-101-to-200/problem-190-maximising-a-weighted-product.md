@@ -1,6 +1,6 @@
 ---
 id: 5900f42b1000cf542c50ff3d
-title: 'Problem 190: Maximising a weighted product'
+title: '問題 190: 加重積を最大化する'
 challengeType: 1
 forumTopicId: 301828
 dashedName: problem-190-maximising-a-weighted-product
@@ -8,15 +8,15 @@ dashedName: problem-190-maximising-a-weighted-product
 
 # --description--
 
-Let $S_m = (x_1, x_2, \ldots, x_m)$ be the $m$-tuple of positive real numbers with $x_1 + x_2 + \cdots + x_m = m$ for which $P_m = x_1 \times {x_2}^2 \times \cdots \times {x_m}^m$ is maximised.
+$x_1 + x_2 + \cdots + x_m = m$ であり、$P_m = x_1 \times {x_2}^2 \times \cdots \times {x_m}^m$ が最大化される $m$ 個組の正の実数を、$S_m = (x_1, x_2, \ldots, x_m)$ と定義します。
 
-For example, it can be verified that $[P_{10}] = 4112$ ([ ] is the integer part function).
+例えば、$[P_{10}] = 4112$ であることを確認できます ([ ] は整数部の関数)。
 
-Find $\sum {[P_m]}$ for $2 ≤ m ≤ 15$.
+$2 ≤ m ≤ 15$ のとき、$\sum {[P_m]}$ を求めなさい。
 
 # --hints--
 
-`maximisingWeightedProduct()` should return `371048281`.
+`maximisingWeightedProduct()` は `371048281` を返す必要があります。
 
 ```js
 assert.strictEqual(maximisingWeightedProduct(), 371048281);

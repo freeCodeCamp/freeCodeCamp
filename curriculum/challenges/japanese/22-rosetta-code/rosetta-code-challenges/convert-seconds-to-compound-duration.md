@@ -12,20 +12,20 @@ Implement a function which:
 
 <ul>
   <li>takes a positive integer representing a duration in seconds as input (e.g., <code>100</code>), and</li>
-  <li>returns a string which shows the same duration decomposed into weeks, days, hours, minutes, and seconds as detailed below (e.g., <code>1 min, 40 sec</code>).</li>
+  <li>以下の詳細のように、週、日、時、分、秒に分解された同じ期間を示す文字列を返します (例えば <code>1 min, 40 sec</code>)。</li>
 </ul>
 
-Demonstrate that it passes the following three test-cases:
+次の3つのテストケースで正しく変換されることを示します。
 
-<div style='font-size:115%; font-weight: bold;'>Test Cases</div>
+<div style='font-size:115%; font-weight: bold;'>テストケース</div>
 
-| Input number | Output number                         |
-| ------------ | ------------------------------------- |
-| 7259         | <code>2 hr, 59 sec</code>             |
-| 86400        | <code>1 d</code>                      |
+| Input number | 出力された数字                   |
+| ------------ | ------------------------- |
+| 7259         | <code>2 hr, 59 sec</code> |
+| 86400        | <code>1 d</code> |
 | 6000000      | <code>9 wk, 6 d, 10 hr, 40 min</code> |
 
-<div style="font-size:115%; font-weight: bold;">Details</div>
+<div style="font-size:115%; font-weight: bold;">詳細</div>
 <ul>
   <li>
     The following five units should be used:
@@ -40,37 +40,37 @@ Demonstrate that it passes the following three test-cases:
 
   </li>
   <li>
-    However, <strong>only</strong> include quantities with non-zero values in the output (e.g., return <code>1 d</code> and not <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
+    ただし、ゼロではない値 <strong>のみ</strong> が出力されます(例えば <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>ではなく、<code>1 d</code>を返します)。
   </li>
   <li>
-    Give larger units precedence over smaller ones as much as possible (e.g., return <code>2 min, 10 sec</code> and not <code>1 min, 70 sec</code> or <code>130 sec</code>).
+    可能な限り小さな単位よりも大きな単位を優先します (例えば <code>1 min, 70 sec</code> または <code>130 sec</code> ではなく、<code>2 min, 10 sec</code> を返します)。
   </li>
   <li>
-    Mimic the formatting shown in the test-cases (quantities sorted from largest unit to smallest and separated by comma+space; value and unit of each quantity separated by space).
+    テストケースに表示される書式設定（数量が最大単位から最小単位の順でソートされ、カンマ+スペースで区切られ、各数量の値と単位がスペースで区切られる）にします。
   </li>
 </ul>
 
 # --hints--
 
-`convertSeconds` should be a function.
+`convertSeconds` という関数です。
 
 ```js
 assert(typeof convertSeconds === 'function');
 ```
 
-`convertSeconds(7259)` should return `2 hr, 59 sec`.
+`convertSeconds(7259)` は `2 hr, 59 sec` を返します。
 
 ```js
 assert.equal(convertSeconds(testCases[0]), results[0]);
 ```
 
-`convertSeconds(86400)` should return `1 d`.
+`convertSeconds(86400)` は `1 d` をを返します。
 
 ```js
 assert.equal(convertSeconds(testCases[1]), results[1]);
 ```
 
-`convertSeconds(6000000)` should return `9 wk, 6 d, 10 hr, 40 min`.
+`convertSeconds(6000000)` は `9 wk, 6 d, 10 hr, 40 min` を返します。
 
 ```js
 assert.equal(convertSeconds(testCases[2]), results[2]);

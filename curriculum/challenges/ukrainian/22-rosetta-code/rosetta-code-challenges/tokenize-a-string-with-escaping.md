@@ -1,6 +1,6 @@
 ---
 id: 594faaab4e2a8626833e9c3d
-title: Tokenize a string with escaping
+title: Розбиття рядка на лексеми методом екранування
 challengeType: 1
 forumTopicId: 302338
 dashedName: tokenize-a-string-with-escaping
@@ -10,63 +10,63 @@ dashedName: tokenize-a-string-with-escaping
 
 Write a function or program that can split a string at each non-escaped occurrence of a separator character.
 
-It should accept three input parameters:
+Вона має містити три вхідні параметри:
 
 <ul>
-  <li>The <strong>string</strong></li>
-  <li>The <strong>separator character</strong></li>
-  <li>The <strong>escape character</strong></li>
+  <li><strong>рядок</strong></li>
+  <li><strong>відокремлювальний символ</strong></li>
+  <li><strong>символ переходу</strong></li>
 </ul>
 
-It should output a list of strings.
+Вона має вивести список рядків.
 
-Rules for splitting:
+Правила для відокремлення:
 
 <ul>
-  <li>The fields that were separated by the separators, become the elements of the output list.</li>
-  <li>Empty fields should be preserved, even at the start and end.</li>
+  <li>Поля, розділені відокремлювальними символами, стають елементами вихідного списку.</li>
+  <li>Порожні поля мають зберегтись, навіть спочатку та вкінці.</li>
 </ul>
 
-Rules for escaping:
+Правила для екранування:
 
 <ul>
   <li>"Escaped" means preceded by an occurrence of the escape character that is not already escaped itself.</li>
-  <li>When the escape character precedes a character that has no special meaning, it still counts as an escape (but does not do anything special).</li>
-  <li>Each occurrences of the escape character that was used to escape something, should not become part of the output.</li>
+  <li>Якщо escape-символ передує символу, що немає спеціального значення, то він все ще вважається екранованим (але не робить нічого особливого).</li>
+  <li>Кожна поява escape-символу, який використовувався для екранування чогось, не повинна стати частиною виводу.</li>
 </ul>
 
-Demonstrate that your function satisfies the following test-case:
+Доведіть, що ваша функція задовольняє наступний тестовий приклад:
 
-Given the string
+Дано рядок
 
 <pre>one^|uno||three^^^^|four^^^|^cuatro|</pre>
 
-and using `|` as a separator and `^` as escape character, your function should output the following array:
+і використовуючи `|`як розділювач і `^` як escape-символ, ваша функція має вивести наступний масив:
 
 <pre>  ['one|uno', '', 'three^^', 'four^|cuatro', '']
 </pre>
 
 # --hints--
 
-`tokenize` should be a function.
+`tokenize` має бути функцією.
 
 ```js
 assert(typeof tokenize === 'function');
 ```
 
-`tokenize` should return an array.
+`tokenize` має повернути масив.
 
 ```js
 assert(typeof tokenize('a', 'b', 'c') === 'object');
 ```
 
-`tokenize('one^|uno||three^^^^|four^^^|^cuatro|', '|', '^')` should return `['one|uno', '', 'three^^', 'four^|cuatro', '']`
+`tokenize('one^|uno||three^^^^|four^^^|^cuatro|', '|', '^')` має повернути `['one|uno', '', 'three^^', 'four^|cuatro', '']`
 
 ```js
 assert.deepEqual(tokenize(testStr1, '|', '^'), res1);
 ```
 
-`tokenize('a@&bcd&ef&&@@hi', '&', '@')` should return `['a&bcd', 'ef', '', '@hi']`
+`tokenize('a@&bcd&ef&&@@hi', '&', '@')` має повернути `['a&bcd', 'ef', '', '@hi']`
 
 ```js
 assert.deepEqual(tokenize(testStr2, '&', '@'), res2);

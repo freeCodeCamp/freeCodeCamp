@@ -8,7 +8,7 @@ dashedName: build-an-image-search-abstraction-layer
 
 # --description--
 
-Build a full stack JavaScript app that allows you to search for images like this: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10</a> and browse recent search queries like this: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/recent/" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/recent/</a>. ご自身で選んだサイトビルダーを使用して、プロジェクトを完了させてください。
+次のような、画像を検索できるフルスタック JavaScript アプリを構築してください: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10</a>。また、こんなふうにして最近の検索クエリを閲覧できるようにしてください: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/recent/" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/recent/</a>。 ご自身で選んだサイトビルダーを使用して、プロジェクトを完了させてください。
 
 このプロジェクトに実装する必要がある、具体的なユーザーストーリーは次のとおりです:
 
@@ -18,7 +18,7 @@ Build a full stack JavaScript app that allows you to search for images like this
 
 **ユーザーストーリー:** ごく最近に提出された検索文字列のリストを取得できます。
 
-完了したら、プロジェクトの動作デモがどこか公の場でホストされていることを確認してください。 Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+完了したら、プロジェクトの動作デモがどこか公の場でホストされていることを確認してください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --solutions--
 

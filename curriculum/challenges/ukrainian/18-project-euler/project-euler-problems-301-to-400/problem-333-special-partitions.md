@@ -1,6 +1,6 @@
 ---
 id: 5900f4b91000cf542c50ffcc
-title: 'Problem 333: Special partitions'
+title: 'Завдання 333: особливе розкладання'
 challengeType: 1
 forumTopicId: 301991
 dashedName: problem-333-special-partitions
@@ -8,22 +8,22 @@ dashedName: problem-333-special-partitions
 
 # --description--
 
-All positive integers can be partitioned in such a way that each and every term of the partition can be expressed as $2^i \times 3^j$, where $i, j ≥ 0$.
+Всі натуральні числа можна розкласти таким чином, що кожен член можна представити у вигляді $2^i \times 3^j$, де $i, j ≥ 0$.
 
-Let's consider only those such partitions where none of the terms can divide any of the other terms. For example, the partition of $17 = 2 + 6 + 9 = (2^1 \times 3^0 + 2^1 \times 3^1 + 2^0 \times 3^2)$ would not be valid since 2 can divide 6. Neither would the partition $17 = 16 + 1 = (2^4 \times 3^0 + 2^0 \times 3^0)$ since 1 can divide 16. The only valid partition of 17 would be $8 + 9 = (2^3 \times 3^0 + 2^0 \times 3^2)$.
+Розглянемо лише ті випадки, де жоден з членів не ділиться на будь-який інший член. Наприклад, розкладання $17 = 2 + 6 + 9 = (2^1 \times 3^0 + 2^1 \times 3^1 + 2^0 \times 3^2)$ не підходить, оскільки 6 ділиться на 2. Розкладання $17 = 16 + 1 = (2^4 \times 3^0 + 2^0 \times 3^0)$ також не підходить, оскільки 16 ділиться на 1. Єдиним дійсним розкладанням 17 буде $8 + 9 = (2^3 \times 3^0 + 2^0 \times 3^2)$.
 
-Many integers have more than one valid partition, the first being 11 having the following two partitions.
+Для багатьох цілих чисел існує декілька варіантів дійсного розкладання, починаючи з 11, для якого можливі два розкладання.
 
 $$\begin{align}   & 11 = 2 + 9 = (2^1 \times 3^0 + 2^0 \times 3^2) \\\\
   & 11 = 8 + 3 = (2^3 \times 3^0 + 2^0 \times 3^1) \end{align}$$
 
-Let's define $P(n)$ as the number of valid partitions of $n$. Наприклад, $P(11) = 2$.
+Визначимо $P(n)$ як кількість дійсних розкладань числа $n$. Наприклад, $P(11) = 2$.
 
-Let's consider only the prime integers $q$ which would have a single valid partition such as $P(17)$.
+Розглянемо лише прості числа $q$, для яких можливе лише одне дійсне розкладання. Наприклад, $P(17)$.
 
-The sum of the primes $q &lt;100$ such that $P(q) = 1$ equals 233.
+Сума простих чисел $q &lt;100$, за яких $P(q) = 1$, дорівнює 233.
 
-Find the sum of the primes $q &lt; 1\\,000\\,000$ such that $P(q) = 1$.
+Знайдіть суму простих чисел $q &lt; 1\\,000\\,000$, за яких $P(q) = 1$.
 
 # --hints--
 

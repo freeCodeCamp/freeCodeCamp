@@ -10,7 +10,7 @@ dashedName: add-document-elements-with-d3
 
 D3 has several methods that let you add and change elements in your document.
 
-The `select()` method selects one element from the document. It takes an argument for the name of the element you want and returns an HTML node for the first element in the document that matches the name. Here's an example:
+The `select()` method selects one element from the document. It takes an argument for the name of the element you want and returns an HTML node for the first element in the document that matches the name. Hapa kuna mfano:
 
 ```js
 const anchor = d3.select("a");

@@ -51,7 +51,7 @@ Write the following tests in `tests/1_unit-tests.js`:
 - `convertHandler` 应该正确地将 `lbs` 转换为 `kg`。
 - `convertHandler` 应该正确地将 `kg` 转换为 `lbs`。
 
-Write the following tests in `tests/2_functional-tests.js`:
+在 `tests/2_functional-tests.js` 中编写以下测试：
 
 - 转换一个有效的输入例如 `10L`：`GET` 请求到 `/api/convert`。
 - 转换一个无效的输入例如 `32g`：`GET` 请求到 `/api/convert`。
@@ -61,7 +61,7 @@ Write the following tests in `tests/2_functional-tests.js`:
 
 # --hints--
 
-You can provide your own project, not the example URL.
+你应该提交你自己的项目，而不是示例 URL
 
 ```js
 getUserInput => {

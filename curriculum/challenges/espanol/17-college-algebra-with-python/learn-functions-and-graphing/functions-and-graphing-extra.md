@@ -12,7 +12,7 @@ This next video will show you the connection between functions and graphing. Not
 
 Here is the <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go with this video.</a>
 
-# --assignment--
+# --tarea--
 
 Add code to your algebra Colab notebook for functions and graphing.
 

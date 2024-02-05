@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08d
-title: Representing Relationships in a Relational Database
+title: Представлення відношень у реляційній базі даних
 challengeType: 11
 videoId: '-orenCNdC2Q'
 bilibiliIds:
@@ -18,19 +18,19 @@ What is a foreign key?
 
 ## --answers--
 
-A key that is not supposed to be there.
+Ключ, який не повинен бути там.
 
 ---
 
-A key that uses non-latin characters.
+Ключ, який використовує нелатинські символи.
 
 ---
 
-A number that points to the primary key of an associated row in a different table.
+Число, яке вказує на первинний ключ від пов’язаного рядка в іншій таблиці.
 
 ---
 
-A key that the "real world" might use to look up a row.
+Ключ, який «реальний світ» може використовувати для пошуку необхідного рядка.
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f5221000cf542c510033
-title: 'Problem 436: Unfair wager'
+title: '问题436：不公平的赌注'
 challengeType: 1
 forumTopicId: 302107
 dashedName: problem-436-unfair-wager
@@ -10,9 +10,9 @@ dashedName: problem-436-unfair-wager
 
 Julie proposes the following wager to her sister Louise.
 
-She suggests they play a game of chance to determine who will wash the dishes.
+她建议他们玩一场机会游戏，以确定谁来洗碗。
 
-For this game, they shall use a generator of independent random numbers uniformly distributed between 0 and 1.
+对于此游戏，他们应使用独立随机数的生成器，该生成器均匀分布在0和1之间。
 
 The game starts with $S = 0$.
 

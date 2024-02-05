@@ -1,6 +1,6 @@
 ---
 id: 5900f4131000cf542c50ff25
-title: 'Problem 166: Criss Cross'
+title: '問題 166: 十字'
 challengeType: 1
 forumTopicId: 301800
 dashedName: problem-166-criss-cross
@@ -8,21 +8,21 @@ dashedName: problem-166-criss-cross
 
 # --description--
 
-A 4x4 grid is filled with digits $d$, $0 ≤ d ≤ 9$.
+4 x 4 の格子が数字 $d$ ($0 ≤ d ≤ 9$) で埋められています。
 
-It can be seen that in the grid
+次のような格子です。
 
 $$\begin{array}{}   6 & 3 & 3 & 0 \\\\
   5 & 0 & 4 & 3 \\\\   0 & 7 & 1 & 4 \\\\
   1 & 2 & 4 & 5 \end{array}$$
 
-the sum of each row and each column has the value 12. Moreover the sum of each diagonal is also 12.
+この格子の各行と各列の和はそれぞれ 12 です。 また、各対角線の和も 12 です。
 
-In how many ways can you fill a 4x4 grid with the digits $d$, $0 ≤ d ≤ 9$ so that each row, each column, and both diagonals have the same sum?
+4 x 4 の格子を、各行、各列、および各対角線の和がそれぞれ等しくなるように $d$ (0 ≤ d ≤ 9) で埋める方法は何通りありますか。
 
 # --hints--
 
-`crissCross()` should return `7130034`.
+`crissCross()` は `7130034` を返す必要があります。
 
 ```js
 assert.strictEqual(crissCross(), 7130034);

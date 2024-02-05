@@ -1,6 +1,6 @@
 ---
 id: 5992e222d397f00d21122931
-title: Fibonacci word
+title: Palabra fibonacci
 challengeType: 1
 forumTopicId: 302269
 dashedName: fibonacci-word

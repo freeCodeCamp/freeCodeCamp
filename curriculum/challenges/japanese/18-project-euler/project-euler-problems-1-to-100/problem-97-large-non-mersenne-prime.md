@@ -1,6 +1,6 @@
 ---
 id: 5900f3ce1000cf542c50fee0
-title: 'Problem 97: Large non-Mersenne prime'
+title: '問題 97: 巨大な非メルセンヌ素数'
 challengeType: 1
 forumTopicId: 302214
 dashedName: problem-97-large-non-mersenne-prime
@@ -8,39 +8,39 @@ dashedName: problem-97-large-non-mersenne-prime
 
 # --description--
 
-The first known prime found to exceed one million digits was discovered in 1999, and is a Mersenne prime of the form $2^{6972593} − 1$; it contains exactly 2,098,960 digits. Subsequently other Mersenne primes, of the form $2^p − 1$, have been found which contain more digits.
+100 万桁を超える初めての既知の素数は 1999 年に発見されました。それは $2^{6972593} - 1$ で表されるメルセンヌ素数で、ちょうど 2,098,960 桁の数です。 以降、さらに桁が多い メルセンヌ素数 ($2^p − 1$ の形式) が他にも発見されました。
 
-However, in 2004 there was found a massive non-Mersenne prime which contains 2,357,207 digits: $28433 × 2^{7830457} + 1$.
+しかし 2004年、2,357,207 桁の巨大な非メルセンヌ素数 $28433 × 2^{7830457} + 1$ が発見されました。
 
-Find the last ten digits of that non-Mersenne prime in the form $multiplier × 2^{power} + 1$.
+$multiplier × 2^{power} + 1$ で表されるその非メルセンヌ素数の下位 10 桁を求めなさい。
 
 # --hints--
 
-`largeNonMersennePrime(19, 6833086)` should return a string.
+`largeNonMersennePrime(19, 6833086)` は文字列を返す必要があります。
 
 ```js
 assert(typeof largeNonMersennePrime(19, 6833086) === 'string');
 ```
 
-`largeNonMersennePrime(19, 6833086)` should return the string `3637590017`.
+`largeNonMersennePrime(19, 6833086)` は文字列 `3637590017` を返す必要があります。
 
 ```js
 assert.strictEqual(largeNonMersennePrime(19, 6833086), '3637590017');
 ```
 
-`largeNonMersennePrime(27, 7046834)` should return the string `0130771969`.
+`largeNonMersennePrime(27, 7046834)` は文字列 `0130771969` を返す必要があります。
 
 ```js
 assert.strictEqual(largeNonMersennePrime(27, 7046834), '0130771969');
 ```
 
-`largeNonMersennePrime(6679881, 6679881)` should return the string `4455386113`.
+`largeNonMersennePrime(6679881, 6679881)` は文字列 `4455386113` を返す必要があります。
 
 ```js
 assert.strictEqual(largeNonMersennePrime(6679881, 6679881), '4455386113');
 ```
 
-`largeNonMersennePrime(28433, 7830457)` should return the string `8739992577`.
+`largeNonMersennePrime(28433, 7830457)` は文字列 `8739992577` を返す必要があります。
 
 ```js
 assert.strictEqual(largeNonMersennePrime(28433, 7830457), '8739992577');

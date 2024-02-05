@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8005
-title: Sorting algorithms/Comb sort
+title: 排序算法/Comb 排序
 challengeType: 1
 forumTopicId: 302313
 dashedName: sorting-algorithmscomb-sort
@@ -10,22 +10,22 @@ dashedName: sorting-algorithmscomb-sort
 
 Implement a *comb sort*.
 
-The **Comb Sort** is a variant of the Bubble Sort.
+**Comb Sort** 是冒泡排序的变体。
 
-Like the Shell sort, the Comb Sort increases the gap used in comparisons and exchanges.
+与 Shell sort 一样，Comb Sort 增加了用于比较和交换的间隔。
 
-Dividing the gap by $(1-e^{-\\varphi})^{-1} \\approx 1.247330950103979$ works best, but 1.3 may be more practical.
+将差距除以 $(1-e^{-\\varphi})^{-1} \\approx 1.247330950103979$ 效果最好，但 1.3 可能更实用。
 
-Some implementations use the insertion sort once the gap is less than a certain amount.
+一旦间隙小于一定数量，一些实现就使用插入排序。
 
-Variants:
+变种：
 
 <ul>
   <li>Combsort11 makes sure the gap ends in (11, 8, 6, 4, 3, 2, 1), which is significantly faster than the other two possible endings.</li>
-  <li>Combsort with different endings changes to a more efficient sort when the data is almost sorted (when the gap is small). Comb sort with a low gap isn't much better than the Bubble Sort.</li>
+  <li>当数据几乎排序完成（间隔很小）时，具有不同结尾的 comb 排序会变为更有效的排序方式。 间隔较低的 sort 排序并不比冒泡排序好多少。</li>
 </ul>
 
-Pseudocode:
+伪代码：
 
 <pre><b>function</b> combsort(<b>array</b> input)
   gap := input<b>.size</b> <i>//initialize gap size</i>
@@ -53,41 +53,41 @@ Pseudocode:
 
 # --instructions--
 
-Write a function that sorts a given array using Comb sort.
+使用 Comb 排序函数对给定的数组进行排序。
 
 # --hints--
 
-`combSort` should be a function.
+`combSort` 应该是一个函数。
 
 ```js
 assert(typeof combSort == 'function');
 ```
 
-`combSort([25, 32, 12, 7, 20])` should return an array.
+`combSort([25, 32, 12, 7, 20])` 应该返回一个数组。
 
 ```js
 assert(Array.isArray(combSort([25, 32, 12, 7, 20])));
 ```
 
-`combSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`combSort([25, 32, 12, 7, 20])` 应该返回 `[7, 12, 20, 25, 32]`。
 
 ```js
 assert.deepEqual(combSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`combSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`combSort([38, 45, 35, 8, 13])` 应该返回 `[8, 13, 35, 38, 45]`。
 
 ```js
 assert.deepEqual(combSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`combSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`combSort([43, 36, 20, 34, 24])` 应该返回 `[20, 24, 34, 36, 43]`。
 
 ```js
 assert.deepEqual(combSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`combSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`combSort([12, 33, 26, 18, 1, 16, 38])` 应该返回 `[1, 12, 16, 18, 26, 33, 38]`。
 
 ```js
 assert.deepEqual(combSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -101,7 +101,7 @@ assert.deepEqual(combSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`combSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`combSort([3, 39, 48, 16, 1, 4, 29])` 应该返回 `[1, 3, 4, 16, 29, 39, 48]`。
 
 ```js
 assert.deepEqual(combSort([3, 39, 48, 16, 1, 4, 29]), [

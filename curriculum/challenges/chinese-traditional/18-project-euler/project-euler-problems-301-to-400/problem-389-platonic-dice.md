@@ -1,6 +1,6 @@
 ---
 id: 5900f4f21000cf542c510004
-title: 'Problem 389: Platonic Dice'
+title: '問題389：柏拉圖式骰子'
 challengeType: 1
 forumTopicId: 302053
 dashedName: problem-389-platonic-dice

@@ -1,6 +1,6 @@
 ---
 id: 5900f4f21000cf542c510005
-title: 'Problem 390: Triangles with non rational sides and integral area'
+title: 'Завдання 390: трикутники з ірраціональними сторонами та цілою площею'
 challengeType: 1
 forumTopicId: 302055
 dashedName: problem-390-triangles-with-non-rational-sides-and-integral-area
@@ -8,11 +8,11 @@ dashedName: problem-390-triangles-with-non-rational-sides-and-integral-area
 
 # --description--
 
-Consider the triangle with sides $\sqrt{5}$, $\sqrt{65}$ and $\sqrt{68}$. It can be shown that this triangle has area 9.
+Розглянемо трикутник зі сторонами $\sqrt{5}$, $\sqrt{65}$ та $\sqrt{68}$. Можна довести, що площа цього трикутника дорівнює 9.
 
-$S(n)$ is the sum of the areas of all triangles with sides $\sqrt{1 + b^2}$, $\sqrt{1 + c^2}$ and $\sqrt{b^2 + c^2}$ (for positive integers $b$ and $c$) that have an integral area not exceeding $n$.
+$S(n)$ є сумою площ усіх трикутників зі сторонами $\sqrt{1 + b^2}$, $\sqrt{1 + c^2}$ та $\sqrt{b^2 + c^2}$ ($b$ та $c$ є натуральними числами), які мають цілу площу, що не перевищує $n$.
 
-The example triangle has $b = 2$ and $c = 8$.
+Для трикутника з прикладу $b = 2$ та $c = 8$.
 
 $S({10}^6) = 18\\,018\\,206$.
 

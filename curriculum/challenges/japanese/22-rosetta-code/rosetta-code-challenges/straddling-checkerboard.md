@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8029
-title: Straddling checkerboard
+title: ストラドリングチェッカーボード
 challengeType: 1
 forumTopicId: 302325
 dashedName: straddling-checkerboard
@@ -10,11 +10,11 @@ dashedName: straddling-checkerboard
 
 Implement functions to encrypt and decrypt a message using the **straddling checkerboard** method.
 
-Each function will take two arguments, a `message` string and an `alphabet` array. The `alphabet` array will contain 3 strings representing the 3 rows of the straddling checkerboard.
+各関数は、`message` 文字列と `alphabet` 配列の 2 つの引数を取ります。 `alphabet` 配列には、ストラドリングチェッカーボードの 3 行を表す 3 つの文字列を格納します。
 
-The output of the `straddle()` function should be a series of decimal digits. Numbers should be encrypted by inserting the escape character before each digit, then including the digit <em>unencrypted</em>.
+`straddle()` 関数の出力は、10 進数の並びでなければなりません。 数字を暗号化するため、各桁の前にエスケープ文字を挿入し、次に<em>暗号化されていない</em>桁を組み込む必要があります。
 
-This should be reversed for decryption with the `unstraddle()` function.
+復号では、`unstraddle()` 関数を使用してこれと逆のことを実行する必要があります。
 
 # --hints--
 

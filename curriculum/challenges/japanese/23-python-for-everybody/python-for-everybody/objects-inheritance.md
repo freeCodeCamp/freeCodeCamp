@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f170b6c005b0e76f088
-title: 'Objects: Inheritance'
+title: 'オブジェクト: 継承'
 challengeType: 11
 videoId: FBL3alYrxRM
 bilibiliIds:
@@ -18,19 +18,19 @@ What is inheritance in object-oriented programming?
 
 ## --answers--
 
-A new class created when a parent class is extended.
+親クラスが拡張されたときに作成される新しいクラス。
 
 ---
 
-A constructed instance of a class.
+クラスの構築されたインスタンス。
 
 ---
 
-The ability to create a new class by extending an existing class.
+既存のクラスを拡張して新しいクラスを作成する機能。
 
 ---
 
-A method that is called at the moment when a class is being used to construct an object.
+オブジェクトを構築するためにクラスが使用された時点で呼び出されるメソッド。
 
 ## --video-solution--
 

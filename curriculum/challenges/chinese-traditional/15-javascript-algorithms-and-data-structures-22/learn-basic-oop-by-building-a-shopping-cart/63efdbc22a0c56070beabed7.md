@@ -1,6 +1,6 @@
 ---
 id: 63efdbc22a0c56070beabed7
-title: Step 23
+title: 步驟-23
 challengeType: 0
 dashedName: step-23
 ---
@@ -315,7 +315,7 @@ class ShoppingCart {
 
     const totalCountPerProduct = {};
     this.items.forEach((dessert) => {
-      
+
     })
   }
 --fcc-editable-region--

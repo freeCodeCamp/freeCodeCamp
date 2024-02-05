@@ -1,6 +1,6 @@
 ---
 id: 5900f4181000cf542c50ff2b
-title: 'Problem 172: Investigating numbers with few repeated digits'
+title: '问题172：调查重复数字很少的数字'
 challengeType: 1
 forumTopicId: 301807
 dashedName: problem-172-investigating-numbers-with-few-repeated-digits

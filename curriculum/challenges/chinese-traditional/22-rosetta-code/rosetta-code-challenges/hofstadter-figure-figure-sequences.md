@@ -1,6 +1,6 @@
 ---
 id: 59622f89e4e137560018a40e
-title: Hofstadter Figure-Figure sequences
+title: Hofstadter 圖-圖序列
 challengeType: 1
 forumTopicId: 302286
 dashedName: hofstadter-figure-figure-sequences
@@ -26,11 +26,9 @@ The sequence $R_n$ is defined by the recurrence relation $R_n = R_{n-1} + S_{n-1
 
 Create two functions named `ffr` and `ffs` that return `R(n)` or `S(n)`, respectively, for any index `n`. Note that the Hofstadter Figure-Figure sequences are 1-indexed, with $R_1 = 1$ and $S_1 = 2$.
 
-No maximum value for `n` should be assumed.
+不應假定 `n` 的最大值。
 
-**References**
-
- <p>Rosetta: <a href='https://rosettacode.org/wiki/Hofstadter_Figure-Figure_sequences' target='_blank'>Hofstadter Figure-Figure sequences</a></p>.
+**參考**<p>Rosetta: <a href='https://rosettacode.org/wiki/Hofstadter_Figure-Figure_sequences' target='_blank'>Hofstadter Figure-Figure sequences</a></p>.
 
 
 # --hints--

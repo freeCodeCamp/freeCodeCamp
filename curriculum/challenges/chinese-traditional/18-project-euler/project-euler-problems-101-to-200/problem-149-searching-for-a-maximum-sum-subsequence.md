@@ -1,6 +1,6 @@
 ---
 id: 5900f4021000cf542c50ff13
-title: 'Problem 149: Searching for a maximum-sum subsequence'
+title: '問題 149：搜索最大和子序列'
 challengeType: 1
 forumTopicId: 301778
 dashedName: problem-149-searching-for-a-maximum-sum-subsequence
@@ -12,23 +12,23 @@ Looking at the table below, it is easy to verify that the maximum possible sum o
 
 $$\begin{array}{|r|r|r|r|} \hline −2 &  5 &  3 & 2 \\\\ \hline 9 & −6 &  5 & 1 \\\\ \hline 3 &  2 &  7 & 3 \\\\ \hline −1 &  8 & −4 & 8 \\\\ \hline \end{array}$$
 
-Now, let us repeat the search, but on a much larger scale:
+現在我們重複一遍搜索過程，但是這次是在一個更大規模的表格中：
 
-First, generate four million pseudo-random numbers using a specific form of what is known as a "Lagged Fibonacci Generator":
+首先，使用被稱爲“滯後斐波那契生成器”的特殊方法，生成四百萬個僞隨機數：
 
-For $1 ≤ k ≤ 55$, $s_k = (100003 − 200003k + 300007{k}^3) \\ (modulo\\ 1000000) − 500000$.
+對於 $1 ≤ k ≤ 55$，$s_k = (100003 − 200003k + 300007{k}^3) \\ (modulo\\ 1000000) − 500000$。
 
-For $56 ≤ k ≤ 4000000$, $s_k = (s_{k − 24} + s_{k − 55} + 1000000) \\ (modulo\\ 1000000) − 500000$.
+對於 $56 ≤ k ≤ 4000000$，$s_k = (s_{k − 24} + s_{k − 55} + 1000000) \\ (modulo\\ 1000000) − 500000$。
 
-Thus, $s_{10} = −393027$ and $s_{100} = 86613$.
+可得，$s_{10} = −393027$，$s_{100} = 86613$。
 
-The terms of $s$ are then arranged in a 2000×2000 table, using the first 2000 numbers to fill the first row (sequentially), the next 2000 numbers to fill the second row, and so on.
+這些數字 $s$ 隨後排列在一個 2000 x 2000 的表格中，前 2000 個數字填入第一行（順序填入），後 2000 個數字填充第二行，依次類推。
 
-Finally, find the greatest sum of (any number of) adjacent entries in any direction (horizontal, vertical, diagonal or anti-diagonal).
+最後，請找到任意方向（水平、垂直、對象線或反對角線）上相鄰數字（任意數量）的最大和。
 
 # --hints--
 
-`maximumSubSequence()` should return `52852124`.
+`maximumSubSequence()` 應該返回 `52852124`。
 
 ```js
 assert.strictEqual(maximumSubSequence(), 52852124);

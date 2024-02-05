@@ -20,7 +20,7 @@ If you use Replit, follow these steps to set up the project:
 -   Next, you will see a `.replit` window.
 -   Select `Use run command` and click the `Done` button.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+When you are done, make sure a working demo of your project is hosted somewhere public. Luego envíe la URL esto en el campo Enlace Solution. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo de enlace GitHub.
 
 # --instructions--
 
@@ -90,7 +90,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>GET</b> request to `/api/books/{_id}` to retrieve a single object of a book containing the properties `title`, `_id`, and a `comments` array (empty array if no comments present). If no book is found, return the string `no book exists`.
+You can send a <b>GET</b> request to `/api/books/{_id}` to retrieve a single object of a book containing the properties `title`, `_id`, and a `comments` array (empty array if no comments present). Si no se encuentra ningún libro, devuelve la cadena `no book exists`.
 
 ```js
 async (getUserInput) => {
@@ -114,7 +114,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a <b>POST</b> request containing `comment` as the form body data to `/api/books/{_id}` to add a comment to a book. The returned response will be the books object similar to <b>GET</b> `/api/books/{_id}` request in an earlier test. If `comment` is not included in the request, return the string `missing required field comment`. If no book is found, return the string `no book exists`.
+You can send a <b>POST</b> request containing `comment` as the form body data to `/api/books/{_id}` to add a comment to a book. The returned response will be the books object similar to <b>GET</b> `/api/books/{_id}` request in an earlier test. If `comment` is not included in the request, return the string `missing required field comment`. Si no se encuentra ningún libro, devuelve la cadena `no book exists`.
 
 ```js
 async (getUserInput) => {

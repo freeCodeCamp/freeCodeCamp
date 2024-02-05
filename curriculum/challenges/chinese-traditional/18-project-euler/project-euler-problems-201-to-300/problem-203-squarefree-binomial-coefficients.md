@@ -1,6 +1,6 @@
 ---
 id: 5900f4381000cf542c50ff4a
-title: 'Problem 203: Squarefree Binomial Coefficients'
+title: '問題203：無平方二項係數'
 challengeType: 1
 forumTopicId: 301844
 dashedName: problem-203-squarefree-binomial-coefficients
@@ -16,11 +16,11 @@ $$\begin{array}{ccccccccccccccc}    &   &   &   &    &    &    &  1 &    &    & 
    &   & 1 &   &  5 &    & 10 &    & 10 &    &  5 &   & 1 &   &   \\\\    & 1 &   & 6 &    & 15 &    & 20 &    & 15 &    & 6 &   & 1 &   \\\\
  1 &   & 7 &   & 21 &    & 35 &    & 35 &    & 21 &   & 7 &   & 1 \\\\ &   &   &   &    &    &    & \ldots \end{array}$$
 
-It can be seen that the first eight rows of Pascal's triangle contain twelve distinct numbers: 1, 2, 3, 4, 5, 6, 7, 10, 15, 20, 21 and 35.
+可以看出Pascal三角形的前八行包含十二個不同的數字：1,2,3,4,5,6,7,10,15,20,21和35。
 
-A positive integer n is called squarefree if no square of a prime divides n. Of the twelve distinct numbers in the first eight rows of Pascal's triangle, all except 4 and 20 are squarefree. The sum of the distinct squarefree numbers in the first eight rows is 105.
+如果沒有素數的平方除n，則正整數n稱爲squarefree。 在Pascal三角形的前八行中的十二個不同數字中，除了4和20之外的所有數字都是無方形的。 前八行中不同的無平方數字的總和爲105。
 
-Find the sum of the distinct squarefree numbers in the first 51 rows of Pascal's triangle.
+找到Pascal三角形的前51行中不同的無平方數字的總和。
 
 # --hints--
 

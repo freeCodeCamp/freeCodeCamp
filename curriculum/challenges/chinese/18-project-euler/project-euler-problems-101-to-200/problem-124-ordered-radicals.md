@@ -1,6 +1,6 @@
 ---
 id: 5900f3e81000cf542c50fefb
-title: 'Problem 124: Ordered radicals'
+title: '问题 124：根数排序'
 challengeType: 1
 forumTopicId: 301751
 dashedName: problem-124-ordered-radicals
@@ -10,7 +10,7 @@ dashedName: problem-124-ordered-radicals
 
 The radical of $n$, $rad(n)$, is the product of the distinct prime factors of $n$. For example, $504 = 2^3 × 3^2 × 7$, so $rad(504) = 2 × 3 × 7 = 42$.
 
-If we calculate $rad(n)$ for $1 ≤ n ≤ 10$, then sort them on $rad(n)$, and sorting on $n$ if the radical values are equal, we get:
+如果我们为 $1 ≤ n ≤ 10$ 计算 $rad(n)$，然后按 $rad(n)$ 对它们进行排序，如果部首值相等则按 $n$ 排序，我们得到：
 
 <div style="text-align: center;">
   <table cellpadding="2" cellspacing="0" border="0" align="center">
@@ -112,11 +112,11 @@ If we calculate $rad(n)$ for $1 ≤ n ≤ 10$, then sort them on $rad(n)$, and s
   </table>
 </div><br>
 
-Let $E(k)$ be the $k$th element in the sorted $n$ column; for example, $E(4) = 8$ and $E(6) = 9$. If $rad(n)$ is sorted for $1 ≤ n ≤ 100000$, find $E(10000)$.
+记 $E(k)$ 为已经排序的 $n$ 列中的第 $k$ 个元素；例如，$E(4) = 8$ 且 $E(6) = 9$。 如果 $rad(n)$ 按 $1 ≤ n ≤ 100000$ 排序，找到 $E(10000)$。
 
 # --hints--
 
-`orderedRadicals()` should return `21417`.
+`orderedRadicals()` 应该返回 `21417`。
 
 ```js
 assert.strictEqual(orderedRadicals(), 21417);

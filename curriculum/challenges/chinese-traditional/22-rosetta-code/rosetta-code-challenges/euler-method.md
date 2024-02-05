@@ -1,6 +1,6 @@
 ---
 id: 59880443fb36441083c6c20e
-title: Euler method
+title: 歐拉方法
 challengeType: 1
 forumTopicId: 302258
 dashedName: euler-method
@@ -10,61 +10,61 @@ dashedName: euler-method
 
 Euler's method numerically approximates solutions of first-order ordinary differential equations (ODEs) with a given initial value. It is an explicit method for solving initial value problems (IVPs), as described in <a href="https://www.freecodecamp.org/news/eulers-method-explained-with-examples/" title="Euler's Method Explained with Examples" target="_blank" rel="noopener noreferrer nofollow">this article</a>.
 
-The ODE has to be provided in the following form:
+ODE 必須以下列形式提供：
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dy(t)}{dt} = f(t,y(t))$</big></li>
 </ul>
 
-with an initial value
+有初始值
 
 <ul style='list-style: none;'>
   <li><big>$y(t_0) = y_0$</big></li>
 </ul>
 
-To get a numeric solution, we replace the derivative on the LHS with a finite difference approximation:
+爲了得到數值解，我們用有限差分近似替換 LHS 上的導數：
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dy(t)}{dt}  \approx \frac{y(t+h)-y(t)}{h}$</big></li>
 </ul>
 
-then solve for $y(t+h)$:
+然後求解 $y(t+h)$：
 
 <ul style='list-style: none;'>
   <li><big>$y(t+h) \approx y(t) + h \, \frac{dy(t)}{dt}$</big></li>
 </ul>
 
-which is the same as
+這與下述相同
 
 <ul style='list-style: none;'>
   <li><big>$y(t+h) \approx y(t) + h \, f(t,y(t))$</big></li>
 </ul>
 
-The iterative solution rule is then:
+那麼迭代求解規則是：
 
 <ul style='list-style: none;'>
   <li><big>$y_{n+1} = y_n + h \, f(t_n, y_n)$</big></li>
 </ul>
 
-where $h$ is the step size, the most relevant parameter for accuracy of the solution. A smaller step size increases accuracy but also the computation cost, so it has always has to be hand-picked according to the problem at hand.
+其中 $h$ 是步長，與解的準確性最相關的參數。 較小的步長會提高準確性，但也會增加計算成本，因此必須始終根據手頭的問題手動選擇。
 
-**Example: Newton's Cooling Law**
+**示例：牛頓冷卻定律**
 
-Newton's cooling law describes how an object of initial temperature $T(t_0) = T_0$ cools down in an environment of temperature $T_R$:
+牛頓冷卻定律描述了初始溫度爲 $T(t_0) = T_0$ 的物體如何在溫度爲 $T_R$ 的環境中冷卻：
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dT(t)}{dt} = -k \, \Delta T$</big></li>
 </ul>
 
-or
+或者
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dT(t)}{dt} = -k \, (T(t) - T_R)$</big></li>
 </ul>
 
-It says that the cooling rate $\\frac{dT(t)}{dt}$ of the object is proportional to the current temperature difference $\\Delta T = (T(t) - T_R)$ to the surrounding environment.
+它表示物體的冷卻速率 $\\frac{dT(t)}{dt}$ 與當前與周圍環境的溫差 $\\Delta T = (T(t) - T_R)$ 成正比。
 
-The analytical solution, which we will compare to the numerical approximation, is
+我們將與數值近似進行比較的解析解是
 
 <ul style='list-style: none;'>
   <li><big>$T(t) = T_R + (T_0 - T_R) \; e^{-k t}$</big></li>
@@ -72,54 +72,54 @@ The analytical solution, which we will compare to the numerical approximation, i
 
 # --instructions--
 
-Implement a routine of Euler's method and then use it to solve the given example of Newton's cooling law for three different step sizes of:
+實現歐拉方法的一個例程，然後使用它來解決三個不同步長的牛頓冷卻定律的給定示例：
 
 <ul>
   <li><code>2 s</code></li>
-  <li><code>5 s</code> and</li>
+  <li><code>5 s</code> 和</li>
   <li><code>10 s</code></li>
 </ul>
 
-and compare with the analytical solution.
+並與解析解進行比較。
 
-**Initial values:**
+**初始值：**
 
 <ul>
   <li>initial temperature <big>$T_0$</big> shall be <code>100 °C</code></li>
-  <li>room temperature <big>$T_R$</big> shall be <code>20 °C</code></li>
-  <li>cooling constant <big>$k$</big> shall be <code>0.07</code></li>
-  <li>time interval to calculate shall be from <code>0 s</code> to <code>100 s</code></li>
-</ul>  
+  <li>室溫 <big>$T_R$</big> 應爲 <code>20 °C</code></li>
+  <li>冷卻常數 <big>$k$</big> 應爲 <code>0.07</code></li>
+  <li>計算時間間隔爲 <code>0 s</code> 到 <code>100 s</code></li>
+</ul>
 
-First parameter to the function is initial time, second parameter is initial temperature, third parameter is elapsed time and fourth parameter is step size.
+該函數的第一個參數是初始時間，第二個參數是初始溫度，第三個參數是經過時間，第四個參數是步長。
 
 # --hints--
 
-`eulersMethod` should be a function.
+`eulersMethod` 應該是一個函數。
 
 ```js
 assert(typeof eulersMethod === 'function');
 ```
 
-`eulersMethod(0, 100, 100, 2)` should return a number.
+`eulersMethod(0, 100, 100, 2)` 應該返回一個數字。
 
 ```js
 assert(typeof eulersMethod(0, 100, 100, 2) === 'number');
 ```
 
-`eulersMethod(0, 100, 100, 2)` should return 20.0424631833732.
+`eulersMethod(0, 100, 100, 2)` 應該返回 20.0424631833732。
 
 ```js
 assert.equal(eulersMethod(0, 100, 100, 2), 20.0424631833732);
 ```
 
-`eulersMethod(0, 100, 100, 5)` should return 20.01449963666907.
+`eulersMethod(0, 100, 100, 5)` 應該返回 20.01449963666907。
 
 ```js
 assert.equal(eulersMethod(0, 100, 100, 5), 20.01449963666907);
 ```
 
-`eulersMethod(0, 100, 100, 10)` should return 20.000472392.
+`eulersMethod(0, 100, 100, 10)` 應該返回 20.000472392。
 
 ```js
 assert.equal(eulersMethod(0, 100, 100, 10), 20.000472392);

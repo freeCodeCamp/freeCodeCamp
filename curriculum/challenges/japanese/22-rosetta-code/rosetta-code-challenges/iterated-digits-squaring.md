@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ec1
-title: Iterated digits squaring
+title: 各位の2乗を繰り返す
 challengeType: 1
 forumTopicId: 302291
 dashedName: iterated-digits-squaring
@@ -16,53 +16,53 @@ If you add the square of the digits of a Natural number (an integer bigger than 
 
 # --instructions--
 
-Write a function that takes a number as a parameter and returns 1 or 89 after performing the mentioned process.
+パラメータとして数値を取り、上記プロセスを実行した後に 1 または 89 を返す関数を記述してください。
 
 # --hints--
 
-`iteratedSquare` should be a function.
+`iteratedSquare` は関数とします。
 
 ```js
 assert(typeof iteratedSquare == 'function');
 ```
 
-`iteratedSquare(4)` should return a number.
+`iteratedSquare(4)` は数値を返す必要があります。
 
 ```js
 assert(typeof iteratedSquare(4) == 'number');
 ```
 
-`iteratedSquare(4)` should return `89`.
+`iteratedSquare(4)` は`89`を返す必要があります。
 
 ```js
 assert.equal(iteratedSquare(4), 89);
 ```
 
-`iteratedSquare(7)` should return `1`.
+`iteratedSquare(7)` は`1`を返す必要があります。
 
 ```js
 assert.equal(iteratedSquare(7), 1);
 ```
 
-`iteratedSquare(15)` should return `89`.
+`iteratedSquare(15)` は`89`を返す必要があります。
 
 ```js
 assert.equal(iteratedSquare(15), 89);
 ```
 
-`iteratedSquare(20)` should return `89`.
+`iteratedSquare(20)` は`89`を返す必要があります。
 
 ```js
 assert.equal(iteratedSquare(20), 89);
 ```
 
-`iteratedSquare(70)` should return `1`.
+`iteratedSquare(70)`は`1`を返す必要があります。
 
 ```js
 assert.equal(iteratedSquare(70), 1);
 ```
 
-`iteratedSquare(100)` should return `1`.
+`iteratedSquare(100)` は`1`を返す必要があります。
 
 ```js
 assert.equal(iteratedSquare(100), 1);

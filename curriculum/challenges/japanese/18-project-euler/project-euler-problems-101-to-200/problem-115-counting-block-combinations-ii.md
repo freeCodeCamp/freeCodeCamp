@@ -1,6 +1,6 @@
 ---
 id: 5900f3df1000cf542c50fef1
-title: 'Problem 115: Counting block combinations II'
+title: '問題 115: ブロックの組み合わせを数え上げる (2)'
 challengeType: 1
 forumTopicId: 301741
 dashedName: problem-115-counting-block-combinations-ii
@@ -8,23 +8,23 @@ dashedName: problem-115-counting-block-combinations-ii
 
 # --description--
 
-A row measuring `n` units in length has red blocks with a minimum length of `m` units placed on it, such that any two red blocks (which are allowed to be different lengths) are separated by at least one black square.
+長さ `n` 単位の 1 列に、長さ `m` 単位以上の赤ブロックが置かれています。2 つの赤ブロック (長さが異なっていても良い) がある場合、それらは少なくとも 1 つの黒マスで区切られています。
 
-Let the fill-count function, $F(m, n)$, represent the number of ways that a row can be filled.
+列を埋める方法が何通りあるかを、fill-count 関数 $F(m, n)$ で表すことにします。
 
-For example, $F(3, 29) = 673135$ and $F(3, 30) = 1089155$.
+例えば、$F(3, 29) = 673135$, $F(3, 30) = 1089155$ です。
 
-That is, for m = 3, it can be seen that n = 30 is the smallest value for which the fill-count function first exceeds one million.
+したがって、m = 3 のとき、fill-count 関数が初めて 100 万を超える n の最小値は 30 です。
 
-In the same way, for m = 10, it can be verified that $F(10, 56) = 880711$ and $F(10, 57) = 1148904$, so n = 57 is the least value for which the fill-count function first exceeds one million.
+同様に、m = 10 のときに $F(10, 56) = 880711$ および $F(10, 57) = 1148904$ であることが分かります。したがって、fill-count 関数が初めて100 万を超える n の最小値は 57 です。
 
-For m = 50, find the least value of `n` for which the fill-count function first exceeds one million.
+m = 50のとき、fill-count 関数が初めて 100 万を超える `n` の最小値を見つけなさい。
 
-**Note:** This is a more difficult version of Problem 114.
+**注:** これは、問題 114 をより難しくした問題です。
 
 # --hints--
 
-`countingBlockTwo()` should return `168`.
+`countingBlockTwo()` は `168` を返す必要があります。
 
 ```js
 assert.strictEqual(countingBlockTwo(), 168);

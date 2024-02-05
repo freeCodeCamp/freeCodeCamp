@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f190b6c005b0e76f090
-title: 'Relational Databases: Many-to-many Relationships'
+title: 'リレーショナルデータベース: 多対多のリレーションシップ'
 challengeType: 11
 videoId: z-SBYcvEQOc
 bilibiliIds:
@@ -14,37 +14,37 @@ dashedName: relational-databases-many-to-many-relationships
 
 More resources:
 
-\- <a href="https://www.youtube.com/watch?v=uQ3Qv1z_Vao" target="_blank" rel="noopener noreferrer nofollow">Exercise: Email</a>
+\- <a href="https://www.youtube.com/watch?v=uQ3Qv1z_Vao" target="_blank" rel="noopener noreferrer nofollow">演習: Email</a>
 
-\- <a href="https://www.youtube.com/watch?v=qEkUEAz8j3o" target="_blank" rel="noopener noreferrer nofollow">Exercise: Roster</a>
+\- <a href="https://www.youtube.com/watch?v=qEkUEAz8j3o" target="_blank" rel="noopener noreferrer nofollow">演習: Roster</a>
 
-\- <a href="https://www.youtube.com/watch?v=I-E7avcPeSE" target="_blank" rel="noopener noreferrer nofollow">Exercise: Tracks</a>
+\- <a href="https://www.youtube.com/watch?v=I-E7avcPeSE" target="_blank" rel="noopener noreferrer nofollow">演習: Tracks</a>
 
-\- <a href="https://www.youtube.com/watch?v=RZRAoBFIH6A" target="_blank" rel="noopener noreferrer nofollow">Exercise: Twfriends</a>
+\- <a href="https://www.youtube.com/watch?v=RZRAoBFIH6A" target="_blank" rel="noopener noreferrer nofollow">演習: Twfriends</a>
 
-\- <a href="https://www.youtube.com/watch?v=xBaJddvJL4A" target="_blank" rel="noopener noreferrer nofollow">Exercise: Twspider</a>
+\- <a href="https://www.youtube.com/watch?v=xBaJddvJL4A" target="_blank" rel="noopener noreferrer nofollow">演習: Twspider</a>
 
 # --question--
 
 ## --text--
 
-Which is an example of a many-to-many relationship?
+多対多のリレーションシップの具体例はどれですか？
 
 ## --answers--
 
-teacher to student
+先生と生徒
 
 ---
 
-customer to order
+客と注文
 
 ---
 
-book to pages
+本とページ
 
 ---
 
-city to country
+都市と国
 
 ## --video-solution--
 

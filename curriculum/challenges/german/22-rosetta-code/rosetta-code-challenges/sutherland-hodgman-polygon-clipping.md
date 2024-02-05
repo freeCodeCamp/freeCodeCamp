@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8045
-title: Sutherland-Hodgman polygon clipping
+title: Sutherland-Hodgman-Polygonclipping
 challengeType: 1
 forumTopicId: 302336
 dashedName: sutherland-hodgman-polygon-clipping
@@ -12,23 +12,23 @@ The Sutherland-Hodgman clipping algorithm finds the polygon that is the intersec
 
 <pre>[(50, 150), (200, 50), (350, 150), (350, 300), (250, 300), (200, 250), (150, 350), (100, 250), (100, 200)]</pre>
 
-and clip it by the rectangle defined by the points:
+und „clippe“ (schneide) es mithilfe des Rechtecks, das durch die folgenden Punkte definiert wird:
 
 <pre>[(100, 100), (300, 100), (300, 300), (100, 300)]</pre>
 
 # --instructions--
 
-Write a function that takes 2 arrays as parameters. The first array contains the points of the subject polygon and the second array contains the points of the clipping polygon. The function should return an array containing the points of the clipped polygon. Each number should be rounded to 3 decimal places.
+Schreibe eine Funktion, die zwei Arrays als Parameter annimmt. Das erste Array enthält die Punkte des Subjekt-Polygons und das zweite Array enthält die Punkte des Clipping-Polygons. Die Funktion sollte ein Array mit den Punkten des „geclippten“ (abgeschnittenen) Polygons zurückgeben. Jede Zahl sollte auf 3 Dezimalstellen gerundet werden.
 
 # --hints--
 
-`clip` should be a function.
+`clip` sollte eine Funktion sein.
 
 ```js
 assert(typeof clip == 'function');
 ```
 
-`clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])` should return an array.
+`clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])` sollte ein Array zurückgeben.
 
 ```js
 assert(
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-`clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])` should return `[[100, 116.667], [125, 100], [275, 100], [300, 116.667], [300, 300], [250, 300], [200, 250], [175, 300], [125, 300], [100, 250]]`.
+`clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])` sollte `[[100, 116.667], [125, 100], [275, 100], [300, 116.667], [300, 300], [250, 300], [200, 250], [175, 300], [125, 300], [100, 250]]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -94,7 +94,7 @@ assert.deepEqual(
 );
 ```
 
-`clip([[150, 200], [400, 450], [30, 50]], [[10, 10], [300, 200], [400, 600], [100, 300]])` should return `[[150, 200], [350, 400], [348.611, 394.444], [30, 50]]`.
+`clip([[150, 200], [400, 450], [30, 50]], [[10, 10], [300, 200], [400, 600], [100, 300]])` sollte `[[150, 200], [350, 400], [348.611, 394.444], [30, 50]]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -120,7 +120,7 @@ assert.deepEqual(
 );
 ```
 
-`clip([[250, 200], [100, 450], [130, 250]], [[50, 60], [100, 230], [400, 600], [100, 300]])` should return `[[129.167, 329.167], [119.565, 319.565], [121.854, 304.305]]`.
+`clip([[250, 200], [100, 450], [130, 250]], [[50, 60], [100, 230], [400, 600], [100, 300]])` sollte `[[129.167, 329.167], [119.565, 319.565], [121.854, 304.305]]` zurückgeben.
 
 ```js
 assert.deepEqual(

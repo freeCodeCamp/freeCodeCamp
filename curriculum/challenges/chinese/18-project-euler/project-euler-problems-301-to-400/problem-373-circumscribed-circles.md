@@ -1,6 +1,6 @@
 ---
 id: 5900f4e11000cf542c50fff4
-title: 'Problem 373: Circumscribed Circles'
+title: '问题373：外接圆圈'
 challengeType: 1
 forumTopicId: 302035
 dashedName: problem-373-circumscribed-circles

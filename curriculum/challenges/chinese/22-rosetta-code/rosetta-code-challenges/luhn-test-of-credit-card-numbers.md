@@ -1,6 +1,6 @@
 ---
 id: 5ea28156e79528a9ab248f27
-title: Luhn test of credit card numbers
+title: 信用卡号的 Luhn 测试
 challengeType: 1
 forumTopicId: 385284
 dashedName: luhn-test-of-credit-card-numbers
@@ -10,20 +10,20 @@ dashedName: luhn-test-of-credit-card-numbers
 
 The Luhn test is used by some credit card companies to distinguish valid credit card numbers from what could be a random selection of digits.
 
-Those companies using credit card numbers that can be validated by the Luhn test have numbers that pass the following test:
+那些使用可以通过 Luhn 测试验证的信用卡号码的公司拥有通过以下测试的号码：
 
 <ol>
   <li> Reverse the order of the digits in the number.</li>
-  <li> Take the first, third, ... and every other odd digit in the reversed digits and sum them to form the partial sum s1</li>
-  <li> Taking the second, fourth ... and every other even digit in the reversed digits:</li>
+  <li> 取第一个、第三个 ... 以及反转数字中的每隔一个奇数，并将它们相加以形成部分和 s1</li>
+  <li> 取倒数第二个、第四个 … 以及反转数字中每隔一个的偶数：</li>
     <ol>
       <li>Multiply each digit by two and sum the digits if the answer is greater than nine to form partial sums for the even digits.</li>
-      <li>Sum the partial sums of the even digits to form s2.</li>
+      <li>将偶数位的部分和相加以形成 s2。</li>
     </ol>
-  <li>If s1 + s2 ends in zero then the original number is in the form of a valid credit card number as verified by the Luhn test.</li>
+  <li>如果 s1 + s2 以零结尾，则原始号码采用 Luhn 测试验证的有效信用卡号码的形式。</li>
 </ol>
 
-For example, if the trial number is 49927398716:
+例如，如果试用号是 49927398716：
 
 ```bash
 Reverse the digits:
@@ -44,53 +44,53 @@ s1 + s2 = 70 which ends in zero which means that 49927398716 passes the Luhn tes
 
 # --instructions--
 
-Write a function that will validate a number with the Luhn test. Return true if it's a valid number. Otherwise, return false.
+编写一个函数，用 Luhn 测试验证一个数字。 如果它是一个有效数字，则返回 true。 否则，返回 false。
 
 # --hints--
 
-`luhnTest` should be a function.
+`luhnTest` 应该是一个函数。
 
 ```js
 assert(typeof luhnTest === 'function');
 ```
 
-`luhnTest("4111111111111111")` should return a boolean.
+`luhnTest("4111111111111111")` 应该返回一个布尔值。
 
 ```js
 assert(typeof luhnTest('4111111111111111') === 'boolean');
 ```
 
-`luhnTest("4111111111111111")` should return `true`.
+`luhnTest("4111111111111111")` 应该返回 `true`。
 
 ```js
 assert.equal(luhnTest('4111111111111111'), true);
 ```
 
-`luhnTest("4111111111111112")` should return `false`.
+`luhnTest("4111111111111112")` 应该返回 `false`。
 
 ```js
 assert.equal(luhnTest('4111111111111112'), false);
 ```
 
-`luhnTest("49927398716")` should return `true`.
+`luhnTest("49927398716")` 应该返回 `true`。
 
 ```js
 assert.equal(luhnTest('49927398716'), true);
 ```
 
-`luhnTest("49927398717")` should return `false`.
+`luhnTest("49927398717")` 应该返回 `false`。
 
 ```js
 assert.equal(luhnTest('49927398717'), false);
 ```
 
-`luhnTest("1234567812345678")` should return `false`.
+`luhnTest("1234567812345678")` 应该返回 `false`。
 
 ```js
 assert.equal(luhnTest('1234567812345678'), false);
 ```
 
-`luhnTest("1234567812345670")` should return `true`.
+`luhnTest("1234567812345670")` 应该返回 `true`。
 
 ```js
 assert.equal(luhnTest('1234567812345670'), true);

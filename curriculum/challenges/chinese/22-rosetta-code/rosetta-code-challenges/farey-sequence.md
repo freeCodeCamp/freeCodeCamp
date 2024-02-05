@@ -1,6 +1,6 @@
 ---
 id: 59c3ec9f15068017c96eb8a3
-title: Farey sequence
+title: 法里序列
 challengeType: 1
 forumTopicId: 302266
 dashedName: farey-sequence
@@ -10,16 +10,16 @@ dashedName: farey-sequence
 
 The Farey sequence <code>F<sub>n</sub></code> of order `n` is the sequence of completely reduced fractions between `0` and `1` which, when in lowest terms, have denominators less than or equal to `n`, arranged in order of increasing size.
 
-The *Farey sequence* is sometimes incorrectly called a *Farey series*.
+*Farey 序列* 有时被错误地称为 *Farey 系列*。
 
-Each Farey sequence:
+每个 Farey 序列：
 
 <ul>
   <li>starts with the value  0,  denoted by the fraction  $ \frac{0}{1} $</li>
   <li>ends with the value  1,  denoted by the fraction  $ \frac{1}{1}$.</li>
 </ul>
 
-The Farey sequences of orders `1` to `5` are:
+Farey 序列的 `1` 阶到 `5` 阶是：
 
 <ul>
   <li style='list-style: none;'>${\bf\it{F}}_1 = \frac{0}{1}, \frac{1}{1}$</li>
@@ -31,17 +31,17 @@ The Farey sequences of orders `1` to `5` are:
 
 # --instructions--
 
-Write a function that returns the Farey sequence of order `n`. The function should have one parameter that is `n`. It should return the sequence as an array.
+编写一个返回 `n` 阶 Farey 序列的函数。 该函数应该有一个参数，即 `n`。 It should return the sequence as an array.
 
 # --hints--
 
-`farey` should be a function.
+`farey` 应该是一个函数。
 
 ```js
 assert(typeof farey === 'function');
 ```
 
-`farey(3)` should return an array
+`farey(3)` 应该返回一个数组
 
 ```js
 assert(Array.isArray(farey(3)));

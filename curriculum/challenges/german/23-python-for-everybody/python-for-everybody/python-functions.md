@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f060b6c005b0e76f05a
-title: Python Functions
+title: Python Funktionen
 challengeType: 11
 videoId: 3JGF-n3tDPU
 bilibiliIds:
@@ -18,23 +18,23 @@ What is the purpose of the "def" keyword in Python?
 
 ## --answers--
 
-It is slang that means "The following code is really cool."
+Es ist ein Slang, und bedeutet: "Der folgende Code ist wirklich cool."
 
 ---
 
-It indicates the start of a function.
+Es zeigt den Beginn einer Funktion an.
 
 ---
 
-It indicates that the following indented section of code is to be stored for later.
+Es zeigt an, dass der folgende eingerückte Codeabschnitt für später gespeichert werden soll.
 
 ---
 
-It indicates the start of a function, and the following indented section of code is to be stored for later.
+Es zeigt den Beginn einer Funktion an, und der folgende eingerückte Codeabschnitt soll für später gespeichert werden.
 
 ---
 
-None of the above.
+Keine der oben genannten Möglichkeiten.
 
 ## --video-solution--
 

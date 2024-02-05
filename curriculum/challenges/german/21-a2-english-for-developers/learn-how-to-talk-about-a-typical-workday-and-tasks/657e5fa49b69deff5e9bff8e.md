@@ -20,11 +20,11 @@ Listen to the audio to complete the sentence below.
 
 `Absolutely. If you see any security breaches or incidents, you _ _ report them _.`
 
-## --blanks--
+## -blanks--
 
 `have`
 
-### --feedback--
+### --Feedback--
 
 Shows a requirement.
 
@@ -32,7 +32,7 @@ Shows a requirement.
 
 `to`
 
-### --feedback--
+### --Feedback--
 
 Used to express obligation.
 

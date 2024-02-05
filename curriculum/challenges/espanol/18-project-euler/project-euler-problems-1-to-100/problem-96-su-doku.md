@@ -100,27 +100,27 @@ Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle 
   </table>
 </div>
 
-A well constructed Su Doku puzzle has a unique solution and can be solved by logic, although it may be necessary to employ "guess and test" methods in order to eliminate options (there is much contested opinion over this). The complexity of the search determines the difficulty of the puzzle; the example above is considered easy because it can be solved by straight forward direct deduction.
+Un Sudoku bien construido tiene una solución única y puede resolverse por lógica, aunque puede ser necesario emplear métodos de "adivinar y probar" para eliminar opciones (hay muchas opiniones diversas sobre el tema). La complejidad de las búsquedas determina la dificultad del rompecabezas; el ejemplo anterior se considera fácil porque puede ser resuelto por una sencilla deducción.
 
-The `puzzlesArr` array contains different Su Doku puzzle strings ranging in difficulty, but all with unique solutions.
+El array `puzzlesArr` contiene diferentes combinaciones de Sudoku que varían en dificultades, pero todas con una solución única.
 
-By solving all puzzles in `puzzlesArr`, find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.
+Al resolver todos los rompecabezas de `puzzlesArr`, se encuentra la suma de los números de 3 dígitos situados en la esquina superior izquierda de cada cuadrícula de solución; por ejemplo, 483 es el número de 3 dígitos que se encuentra en la esquina superior izquierda de la cuadrícula de la solución anterior.
 
 # --hints--
 
-`suDoku(testPuzzles1)` should return a number.
+`suDoku(testPuzzles1)` debe devolver un número.
 
 ```js
 assert(typeof suDoku(_testPuzzles1) === 'number');
 ```
 
-`suDoku(testPuzzles1)` should return `1190`.
+`suDoku(testPuzzles1)` debe devolver `1190`.
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles1), 1190);
 ```
 
-`suDoku(testPuzzles2)` should return `24702`.
+`suDoku(testPuzzles2)` debe devolver `24702`.
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles2), 24702);

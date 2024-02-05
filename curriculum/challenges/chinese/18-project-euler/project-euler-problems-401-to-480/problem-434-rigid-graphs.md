@@ -1,6 +1,6 @@
 ---
 id: 5900f51f1000cf542c510031
-title: 'Problem 434: Rigid graphs'
+title: '问题434：刚性图'
 challengeType: 1
 forumTopicId: 302105
 dashedName: problem-434-rigid-graphs
@@ -10,13 +10,13 @@ dashedName: problem-434-rigid-graphs
 
 Recall that a graph is a collection of vertices and edges connecting the vertices, and that two vertices connected by an edge are called adjacent.
 
-Graphs can be embedded in Euclidean space by associating each vertex with a point in the Euclidean space.
+通过将每个顶点与欧氏空间中的一个点相关联，可以将图嵌入到欧氏空间中。
 
-A flexible graph is an embedding of a graph where it is possible to move one or more vertices continuously so that the distance between at least two nonadjacent vertices is altered while the distances between each pair of adjacent vertices is kept constant.
+柔性图是图的嵌入，其中可以连续移动一个或多个顶点，以便至少两个不相邻顶点之间的距离发生变化，而每对相邻顶点之间的距离保持恒定。
 
-A rigid graph is an embedding of a graph which is not flexible.
+刚性图是不灵活的图的嵌入。
 
-Informally, a graph is rigid if by replacing the vertices with fully rotating hinges and the edges with rods that are unbending and inelastic, no parts of the graph can be moved independently from the rest of the graph.
+非正式地，如果通过用完全旋转的铰链替换顶点，并用不弯曲且无弹性的杆代替边，则图形是刚性的，则图形的任何部分都不能独立于图形的其余部分移动。
 
 The grid graphs embedded in the Euclidean plane are not rigid, as the following animation demonstrates:
 

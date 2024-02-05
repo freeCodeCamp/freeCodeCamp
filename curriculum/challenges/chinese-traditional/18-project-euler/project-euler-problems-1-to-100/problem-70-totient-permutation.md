@@ -1,6 +1,6 @@
 ---
 id: 5900f3b21000cf542c50fec5
-title: 'Problem 70: Totient permutation'
+title: '問題70歐拉置換'
 challengeType: 1
 forumTopicId: 302183
 dashedName: problem-70-totient-permutation

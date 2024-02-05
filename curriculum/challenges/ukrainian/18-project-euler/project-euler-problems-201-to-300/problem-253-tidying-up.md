@@ -1,6 +1,6 @@
 ---
 id: 5900f4691000cf542c50ff7c
-title: 'Problem 253: Tidying up'
+title: 'Завдання 253: прибирання'
 challengeType: 1
 forumTopicId: 301901
 dashedName: problem-253-tidying-up
@@ -8,38 +8,38 @@ dashedName: problem-253-tidying-up
 
 # --description--
 
-A small child has a "number caterpillar" consisting of forty jigsaw pieces, each with one number on it, which, when connected together in a line, reveal the numbers 1 to 40 in order.
+Дитина має «числову гусеницю», що складається з сорока пронумерованих кусочків, які при з’єднанні утворюють числовий ряд від 1 до 40.
 
-Every night, the child's father has to pick up the pieces of the caterpillar that have been scattered across the play room. He picks up the pieces at random and places them in the correct order.
+Кожного вечора тато повинен зібрати розкидані по всій ігровій кімнаті кусочки гусениці. Він навмання підіймає кусочки та складає їх у правильному порядку.
 
-As the caterpillar is built up in this way, it forms distinct segments that gradually merge together. The number of segments starts at zero (no pieces placed), generally increases up to about eleven or twelve, then tends to drop again before finishing at a single segment (all pieces placed).
+В процесі такого збирання гусениці спочатку формуються окремі відрізки, які поступово об’єднуються. Кількість відрізків починається з нуля (жодного кусочка), загалом збільшується до 11 або 12, потім знову зменшується поки не завершиться одним відрізком (усі кусочки зібрано).
 
 Наприклад:
 
-| Piece Placed | Segments So Far |
-| ------------ | --------------- |
-| 12           | 1               |
-| 4            | 2               |
-| 29           | 3               |
-| 6            | 4               |
-| 34           | 5               |
-| 5            | 4               |
-| 35           | 4               |
-| …            | …               |
+| Підібраний кусочок | Поточна кількість відрізків |
+| ------------------ | --------------------------- |
+| 12                 | 1                           |
+| 4                  | 2                           |
+| 29                 | 3                           |
+| 6                  | 4                           |
+| 34                 | 5                           |
+| 5                  | 4                           |
+| 35                 | 4                           |
+| …                  | …                           |
 
-Let $M$ be the maximum number of segments encountered during a random tidy-up of the caterpillar. For a caterpillar of ten pieces, the number of possibilities for each $M$ is
+Нехай $M$ буде максимальною кількістю відрізків, отриманих під час прибирання. Кількість варіантів для кожного значення $M$ для гусениці з 10 кусочків становить
 
-| M | Possibilities |
-| - | ------------- |
-| 1 | 512           |
-| 2 | 250912        |
-| 3 | 1815264       |
-| 4 | 1418112       |
-| 5 | 144000        |
+| M | Варіанти |
+| - | -------- |
+| 1 | 512      |
+| 2 | 250912   |
+| 3 | 1815264  |
+| 4 | 1418112  |
+| 5 | 144000   |
 
-so the most likely value of $M$ is 3 and the average value is $\frac{385\\,643}{113\\,400} = 3.400732$, rounded to six decimal places.
+Отже, найімовірнішим значенням $M$ є 3, а середнє значення $\frac{385\\,643}{113\\,400} = 3.400732$, заокруглене до шести знаків після коми.
 
-The most likely value of $M$ for a forty-piece caterpillar is 11; but what is the average value of $M$? Дайте відповідь, заокруглену до шести знаків після коми.
+Найімовірнішим значенням $M$ для гусениці з 40 кусочків є 11. Чому дорівнює середнє значення $M$? Дайте відповідь, заокруглену до шести знаків після коми.
 
 # --hints--
 

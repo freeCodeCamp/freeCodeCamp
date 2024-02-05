@@ -1,6 +1,6 @@
 ---
 id: 5900f5261000cf542c510038
-title: 'Problem 441: The inverse summation of coprime couples'
+title: '问题441：互质夫妇的反向总和'
 challengeType: 1
 forumTopicId: 302113
 dashedName: problem-441-the-inverse-summation-of-coprime-couples
@@ -18,7 +18,7 @@ We also define $S(N)$ as the sum of $R(i)$ for $2 ≤ i ≤ N$.
 
 We can verify that $S(2) = R(2) = \frac{1}{2}$, $S(10) ≈ 6.9147$ and $S(100) ≈ 58.2962$.
 
-Find $S({10}^7)$. Give your answer rounded to four decimal places.
+Find $S({10}^7)$. 将您的答案四舍五入到小数点后四位。
 
 # --hints--
 

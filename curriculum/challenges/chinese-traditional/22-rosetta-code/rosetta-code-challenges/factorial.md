@@ -1,6 +1,6 @@
 ---
 id: 597b2b2a2702b44414742771
-title: Factorial
+title: 階乘
 challengeType: 1
 forumTopicId: 302263
 dashedName: factorial
@@ -10,47 +10,47 @@ dashedName: factorial
 
 Write a function to return the factorial of a number.
 
-Factorial of a number is given by:
+一個數字的階乘是由以下公式給出：
 
 <pre><big>n! = n * (n-1) * (n-2) * ..... * 1</big>
 </pre>
 
-For example:
+例如：
 
 <ul>
   <li><code>3! = 3 * 2 * 1 = 6</code></li>
   <li><code>4! = 4 * 3 * 2 * 1 = 24</code></li>
 </ul>
 
-**Note:** `0! = 1`
+**注意：** `0! = 1`
 
 # --hints--
 
-`factorial` should be a function.
+`factorial` 應該是一個函數。
 
 ```js
 assert(typeof factorial === 'function');
 ```
 
-`factorial(2)` should return a number.
+`factorial(2)` 應該返回一個數字。
 
 ```js
 assert(typeof factorial(2) === 'number');
 ```
 
-`factorial(3)` should return 6.
+`factorial(3)` 應該返回 6。
 
 ```js
 assert.equal(factorial(3), 6);
 ```
 
-`factorial(5)` should return 120.
+`factorial(5)` 應該返回 120。
 
 ```js
 assert.equal(factorial(5), 120);
 ```
 
-`factorial(10)` should return 3,628,800.
+`factorial(10)` 應該返回 3,628,800。
 
 ```js
 assert.equal(factorial(10), 3628800);

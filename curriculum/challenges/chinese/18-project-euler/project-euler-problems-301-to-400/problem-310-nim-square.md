@@ -1,6 +1,6 @@
 ---
 id: 5900f4a21000cf542c50ffb5
-title: 'Problem 310: Nim Square'
+title: '问题310：尼姆广场'
 challengeType: 1
 forumTopicId: 301966
 dashedName: problem-310-nim-square
@@ -10,7 +10,7 @@ dashedName: problem-310-nim-square
 
 Alice and Bob play the game Nim Square.
 
-Nim Square is just like ordinary three-heap normal play Nim, but the players may only remove a square number of stones from a heap.
+Nim Square就像普通的三堆普通游戏Nim一样，但是玩家只能从堆中取出一平方的石头。
 
 The number of stones in the three heaps is represented by the ordered triple ($a$, $b$, $c$).
 

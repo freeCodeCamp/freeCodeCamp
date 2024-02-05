@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7edb
-title: Largest int from concatenated ints
+title: Intero più grande da interi concatenati
 challengeType: 1
 forumTopicId: 302298
 dashedName: largest-int-from-concatenated-ints
@@ -12,43 +12,43 @@ Given a set of positive integers, write a function to order the integers in such
 
 # --hints--
 
-`maxCombine` should be a function.
+`maxCombine` dovrebbe essere una funzione.
 
 ```js
 assert(typeof maxCombine == 'function');
 ```
 
-`maxCombine([1, 3, 3, 4, 55])` should return a number.
+`maxCombine([1, 3, 3, 4, 55])` dovrebbe restituire un numero.
 
 ```js
 assert(typeof maxCombine([1, 3, 3, 4, 55]) == 'number');
 ```
 
-`maxCombine([1, 3, 3, 4, 55])` should return `554331`.
+`maxCombine([1, 3, 3, 4, 55])` dovrebbe restituire `554331`.
 
 ```js
 assert.equal(maxCombine([1, 3, 3, 4, 55]), 554331);
 ```
 
-`maxCombine([71, 45, 23, 4, 5])` should return `71545423`.
+`maxCombine([71, 45, 23, 4, 5])` dovrebbe restituire `71545423`.
 
 ```js
 assert.equal(maxCombine([71, 45, 23, 4, 5]), 71545423);
 ```
 
-`maxCombine([14, 43, 53, 114, 55])` should return `55534314114`.
+`maxCombine([14, 43, 53, 114, 55])` dovrebbe restituire `55534314114`.
 
 ```js
 assert.equal(maxCombine([14, 43, 53, 114, 55]), 55534314114);
 ```
 
-`maxCombine([1, 34, 3, 98, 9, 76, 45, 4])` should return `998764543431`.
+`maxCombine([1, 34, 3, 98, 9, 76, 45, 4])` dovrebbe restituire `998764543431`.
 
 ```js
 assert.equal(maxCombine([1, 34, 3, 98, 9, 76, 45, 4]), 998764543431);
 ```
 
-`maxCombine([54, 546, 548, 60])` should return `6054854654`.
+`maxCombine([54, 546, 548, 60])` dovrebbe restituire `6054854654`.
 
 ```js
 assert.equal(maxCombine([54, 546, 548, 60]), 6054854654);

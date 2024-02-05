@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e03
-title: Cumulative standard deviation
+title: 累积标准差
 challengeType: 1
 forumTopicId: 302240
 dashedName: cumulative-standard-deviation
@@ -12,62 +12,62 @@ Suppose that the entire population of interest is eight students in a particular
 
 $2, 4, 4, 4, 5, 5, 7, 9$
 
-These eight data points have the mean (average) of 5:
+这八个数据点的平均值为5。
 
 $$\mu ={\frac {2+4+4+4+5+5+7+9}{8}}={\frac {40}{8}}=5$$
 
-First, calculate the deviations of each data point from the mean, and square the result of each:
+首先，计算每个数据点与平均值的偏差，并求每个结果的平方
 
-| Deviations of each data|  Square the result  |
-| ---------------------- | --------------------|
-| $(2-5)^{2}=(-3)^{2}=9$ | $(5-5)^{2}=0^{2}=0$ |
-| $(4-5)^{2}=(-1)^{2}=1$ | $(5-5)^{2}=0^{2}=0$ |
-| $(4-5)^{2}=(-1)^{2}=1$ | $(7-5)^{2}=2^{2}=4$ |
-| $(4-5)^{2}=(-1)^{2}=1$ | $(9-5)^{2}=4^{2}=16$|
+| Deviations of each data | 平方结果                 |
+| ----------------------- | -------------------- |
+| $(2-5)^{2}=(-3)^{2}=9$  | $(5-5)^{2}=0^{2}=0$  |
+| $(4-5)^{2}=(-1)^{2}=1$  | $(5-5)^{2}=0^{2}=0$  |
+| $(4-5)^{2}=(-1)^{2}=1$  | $(7-5)^{2}=2^{2}=4$  |
+| $(4-5)^{2}=(-1)^{2}=1$  | $(9-5)^{2}=4^{2}=16$ |
 
-The variance is the mean of these values:
+方差是这些数值的平均值。
 
 $$\sigma ^{2}={\frac {9+1+1+1+0+0+4+16}{8}}={\frac {32}{8}}=4$$
 
-and the population standard deviation is equal to the square root of the variance:
+而且人口标准差等于方差的平方根。
 
 $$\sigma ={\sqrt {4}}=2$$
 
-Write a function that takes an array of numbers as parameter and returns the <a href="https://rosettacode.org/wiki/Standard_deviation" target="_blank" rel="noopener noreferrer nofollow">standard deviation</a> of the series.
+编写一个函数，该函数将一个数组作为参数并返回该序列的 <a href="https://rosettacode.org/wiki/Standard_deviation" target="_blank" rel="noopener noreferrer nofollow">标准差</a>。
 
 # --hints--
 
-`standardDeviation` should be a function.
+`standardDeviation` 应该是一个函数。
 
 ```js
 assert(typeof standardDeviation == 'function');
 ```
 
-`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` should return a number.
+`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` 应该返回一个数字。
 
 ```js
 assert(typeof standardDeviation([2, 4, 4, 4, 5, 5, 7, 9]) == 'number');
 ```
 
-`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` should return `2`.
+`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` 应该返回 `2`。
 
 ```js
 assert.equal(standardDeviation([2, 4, 4, 4, 5, 5, 7, 9]), 2);
 ```
 
-`standardDeviation([600, 470, 170, 430, 300])` should return `147.323`.
+`standardDeviation([600, 470, 170, 430, 300])` 应该返回 `147.323`。
 
 ```js
 assert.equal(standardDeviation([600, 470, 170, 430, 300]), 147.323);
 ```
 
-`standardDeviation([75, 83, 96, 100, 121, 125])` should return `18.239`.
+`standardDeviation([75, 83, 96, 100, 121, 125])` 应该返回 `18.239`。
 
 ```js
 assert.equal(standardDeviation([75, 83, 96, 100, 121, 125]), 18.239);
 ```
 
-`standardDeviation([23, 37, 45, 49, 56, 63, 63, 70, 72, 82])` should return `16.87`.
+`standardDeviation([23, 37, 45, 49, 56, 63, 63, 70, 72, 82])` 应该返回 `16.87`。
 
 ```js
 assert.equal(
@@ -76,7 +76,7 @@ assert.equal(
 );
 ```
 
-`standardDeviation([271, 354, 296, 301, 333, 326, 285, 298, 327, 316, 287, 314])` should return `22.631`.
+`standardDeviation([271, 354, 296, 301, 333, 326, 285, 298, 327, 316, 287, 314])` 应该返回 `22.631`。
 
 ```js
 assert.equal(

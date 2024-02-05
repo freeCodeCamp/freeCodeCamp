@@ -12,17 +12,17 @@ Implement a function which:
 
 <ul>
   <li>takes a positive integer representing a duration in seconds as input (e.g., <code>100</code>), and</li>
-  <li>returns a string which shows the same duration decomposed into weeks, days, hours, minutes, and seconds as detailed below (e.g., <code>1 min, 40 sec</code>).</li>
+  <li>返回一个字符串，该字符串显示分解为周、天、小时、分钟和秒的相同持续时间，如下详述（例如，<code>1 min, 40 sec</code>）。</li>
 </ul>
 
-Demonstrate that it passes the following three test-cases:
+证明它通过了以下三个测试用例：
 
 <div style='font-size:115%; font-weight: bold;'>Test Cases</div>
 
-| Input number | Output number                         |
-| ------------ | ------------------------------------- |
-| 7259         | <code>2 hr, 59 sec</code>             |
-| 86400        | <code>1 d</code>                      |
+| Input number | 输出结果                      |
+| ------------ | ------------------------- |
+| 7259         | <code>2 hr, 59 sec</code> |
+| 86400        | <code>1 d</code> |
 | 6000000      | <code>9 wk, 6 d, 10 hr, 40 min</code> |
 
 <div style="font-size:115%; font-weight: bold;">Details</div>
@@ -40,37 +40,37 @@ Demonstrate that it passes the following three test-cases:
 
   </li>
   <li>
-    However, <strong>only</strong> include quantities with non-zero values in the output (e.g., return <code>1 d</code> and not <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
+    但是，<strong>仅</strong> 在输出中包含具有非零值的数量（例如，返回 <code>1 d</code> 而不是 <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>）。
   </li>
   <li>
-    Give larger units precedence over smaller ones as much as possible (e.g., return <code>2 min, 10 sec</code> and not <code>1 min, 70 sec</code> or <code>130 sec</code>).
+    尽可能让较大的单位优先于较小的单位（例如，返回 <code>2 min, 10 sec</code> 而不是 <code>1 min, 70 sec</code> 或 <code>130 sec</code>)。
   </li>
   <li>
-    Mimic the formatting shown in the test-cases (quantities sorted from largest unit to smallest and separated by comma+space; value and unit of each quantity separated by space).
+    模仿测试用例中显示的格式（数量从最大单位到最小单位排序并用逗号+空格分隔；每个数量的值和单位用空格分隔）。
   </li>
 </ul>
 
 # --hints--
 
-`convertSeconds` should be a function.
+`convertSeconds` 应该是一个函数。
 
 ```js
 assert(typeof convertSeconds === 'function');
 ```
 
-`convertSeconds(7259)` should return `2 hr, 59 sec`.
+`convertSeconds(7259)` 应该返回 `2 hr, 59 sec`。
 
 ```js
 assert.equal(convertSeconds(testCases[0]), results[0]);
 ```
 
-`convertSeconds(86400)` should return `1 d`.
+`convertSeconds(86400)` 应该返回 `1 d`。
 
 ```js
 assert.equal(convertSeconds(testCases[1]), results[1]);
 ```
 
-`convertSeconds(6000000)` should return `9 wk, 6 d, 10 hr, 40 min`.
+`convertSeconds(6000000)` 应该返回 `9 wk, 6 d, 10 hr, 40 min`。
 
 ```js
 assert.equal(convertSeconds(testCases[2]), results[2]);

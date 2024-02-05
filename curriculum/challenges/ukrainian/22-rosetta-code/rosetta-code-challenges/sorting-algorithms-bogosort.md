@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8002
-title: Sorting algorithms/Bogosort
+title: Алгоритми сортування/Випадкове сортування
 challengeType: 1
 forumTopicId: 302311
 dashedName: sorting-algorithmsbogosort
@@ -10,15 +10,15 @@ dashedName: sorting-algorithmsbogosort
 
 Bogosort a list of numbers.
 
-Bogosort simply shuffles a collection randomly until it is sorted.
+Випадкове сортування просто перемішує набір елементів випадковим чином, поки він не упорядкований.
 
-"Bogosort" is a perversely inefficient algorithm only used as an in-joke.
+«Випадкове сортування» – помилковий, неефективний алгоритм, який використовується лише як жарт.
 
-Its average run-time is O(n!) because the chance that any given shuffle of a set will end up in sorted order is about one in *n* factorial, and the worst case is infinite since there's no guarantee that a random shuffling will ever produce a sorted sequence.
+Середній час його виконання становить O(n!), бо ймовірність того, що будь-яке перемішування набору закінчиться у відсортованому порядку, становить приблизно один у *n* факторіалі, а в гіршому випадку – нескінченність, оскільки немає гарантії, що випадкове перемішування коли-небудь призведе до упорядкованої послідовності.
 
-Its best case is O(n) since a single pass through the elements may suffice to order them.
+Кращим випадком є O(n), оскільки одного проходження по елементах може бути достатньо, щоб упорядкувати їх.
 
-Pseudocode:
+Псевдокод:
 
 <pre><b>while not</b> InOrder(list) <b>do</b>
   Shuffle(list)
@@ -27,37 +27,37 @@ Pseudocode:
 
 # --hints--
 
-`bogosort` should be a function.
+`bogosort` має бути функцією.
 
 ```js
 assert(typeof bogosort == 'function');
 ```
 
-`bogosort([25, 32, 12, 7, 20])` should return an array.
+`bogosort([25, 32, 12, 7, 20])` має повернути масив.
 
 ```js
 assert(Array.isArray(bogosort([25, 32, 12, 7, 20])));
 ```
 
-`bogosort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`bogosort([25, 32, 12, 7, 20])` має повернути `[7, 12, 20, 25, 32]`.
 
 ```js
 assert.deepEqual(bogosort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`bogosort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`bogosort([38, 45, 35, 8, 13])` має повернути `[8, 13, 35, 38, 45]`.
 
 ```js
 assert.deepEqual(bogosort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`bogosort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`bogosort([43, 36, 20, 34, 24])` має повернути `[20, 24, 34, 36, 43]`.
 
 ```js
 assert.deepEqual(bogosort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`bogosort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`bogosort([12, 33, 26, 18, 1, 16, 38])` має повернути `[1, 12, 16, 18, 26, 33, 38]`.
 
 ```js
 assert.deepEqual(bogosort([12, 33, 26, 18, 1, 16, 38]), [
@@ -71,7 +71,7 @@ assert.deepEqual(bogosort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`bogosort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`bogosort([3, 39, 48, 16, 1, 4, 29])` має повернути `[1, 3, 4, 16, 29, 39, 48]`.
 
 ```js
 assert.deepEqual(bogosort([3, 39, 48, 16, 1, 4, 29]), [

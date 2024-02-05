@@ -12,18 +12,18 @@ dashedName: pandas-introduction
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*بدلاً من استخدام (notebooks.ai) كما هو موضح بالفيديو يمكنك استخدام (Google Colab).*
 
-More resources:
+المزيد من المصادر:
 
--  <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas" target="_blank" rel="noopener noreferrer nofollow">Notebooks on GitHub</a>
--  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">How to open Notebooks from GitHub using Google Colab.</a>
+-  <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas" target="_blank" rel="noopener noreferrer nofollow">ال Notebooks في GitHub</a>
+-  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebookس/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">كيفية فتح (Notebook) من (GitHub) باستخدام (Google Colab).</a>
 
 # --question--
 
 ## --text--
 
-What will the following code print out?
+ماذا سيطبع الكود التالي؟
 
 ```py
 import pandas as pd

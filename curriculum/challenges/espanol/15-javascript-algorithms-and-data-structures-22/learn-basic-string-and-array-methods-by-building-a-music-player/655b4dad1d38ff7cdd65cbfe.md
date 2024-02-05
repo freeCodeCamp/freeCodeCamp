@@ -1,8 +1,8 @@
 ---
 id: 655b4dad1d38ff7cdd65cbfe
-title: Step 84
+title: Paso 90
 challengeType: 0
-dashedName: step-84
+dashedName: step-90
 ---
 
 # --description--
@@ -649,7 +649,7 @@ const playSong = (id) => {
 
 const pauseSong = () => {
   userData.songCurrentTime = audio.currentTime;
-  
+
   playButton.classList.remove("playing");
   audio.pause();
 };
@@ -807,6 +807,18 @@ audio.addEventListener("ended", () => {
 
 --fcc-editable-region--
     }
+});
+
+userData?.songs.sort((a,b) => {
+  if (a.title < b.title) {
+    return -1;
+  }
+
+  if (a.title > b.title) {
+    return 1;
+  }
+
+  return 0;
 });
 
 renderSongs(userData?.songs);
@@ -1419,7 +1431,7 @@ const playSong = (id) => {
 
 const pauseSong = () => {
   userData.songCurrentTime = audio.currentTime;
-  
+
   playButton.classList.remove("playing");
   audio.pause();
 };
@@ -1578,6 +1590,18 @@ audio.addEventListener("ended", () => {
       highlightCurrentSong(); 
       setPlayButtonAccessibleText();
     }
+});
+
+userData?.songs.sort((a,b) => {
+  if (a.title < b.title) {
+    return -1;
+  }
+
+  if (a.title > b.title) {
+    return 1;
+  }
+
+  return 0;
 });
 
 renderSongs(userData?.songs);

@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8040
-title: Sum multiples of 3 and 5
+title: 3 と 5 の倍数の和
 challengeType: 1
 forumTopicId: 302332
 dashedName: sum-multiples-of-3-and-5
@@ -12,43 +12,43 @@ The objective is to write a function that finds the sum of all positive multiple
 
 # --hints--
 
-`sumMults` should be a function.
+`sumMults` は関数とします。
 
 ```js
 assert(typeof sumMults == 'function');
 ```
 
-`sumMults(10)` should return a number.
+`sumMults(10)` は数値を返す必要があります。
 
 ```js
 assert(typeof sumMults(10) == 'number');
 ```
 
-`sumMults(10)` should return `23`.
+`sumMults(10)` は `23` を返す必要があります。
 
 ```js
 assert.equal(sumMults(10), 23);
 ```
 
-`sumMults(100)` should return `2318`.
+`sumMults(100)` は `2318` を返す必要があります。
 
 ```js
 assert.equal(sumMults(100), 2318);
 ```
 
-`sumMults(1000)` should return `233168`.
+`sumMults(1000)` は `233168` を返す必要があります。
 
 ```js
 assert.equal(sumMults(1000), 233168);
 ```
 
-`sumMults(10000)` should return `23331668`.
+`sumMults(10000)` は `23331668` を返す必要があります。
 
 ```js
 assert.equal(sumMults(10000), 23331668);
 ```
 
-`sumMults(100000)` should return `2333316668`.
+`sumMults(100000)` は `2333316668` を返す必要があります。
 
 ```js
 assert.equal(sumMults(100000), 2333316668);

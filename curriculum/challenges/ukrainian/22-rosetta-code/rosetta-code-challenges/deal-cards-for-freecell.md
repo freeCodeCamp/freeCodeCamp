@@ -1,6 +1,6 @@
 ---
 id: 59694356a6e7011f7f1c5f4e
-title: Deal cards for FreeCell
+title: Роздати карти для FreeCell
 challengeType: 1
 forumTopicId: 302246
 dashedName: deal-cards-for-freecell
@@ -10,34 +10,34 @@ dashedName: deal-cards-for-freecell
 
 *FreeCell* is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for DOS, then Windows. This version introduced 32000 numbered deals.
 
-As the game became popular, Jim Horne disclosed the algorithm, and other implementations of FreeCell began to reproduce the Microsoft deals. These deals are numbered from 1 to 32000. Newer versions from Microsoft have 1 million deals, numbered from 1 to 1000000; some implementations allow numbers outside that range.
+Як тільки гра стала популярною, Джим Хорн розкрив її алгоритм, що дало початок реалізації нових версій FreeCell, які відтворювали роздачі Microsoft. Нумерація роздач сягала від 1 до 32000. Нові версії від Microsoft мають близько 1 мільйону роздач, нумерованих від 1 до 1000000; а деякі варіації дозволяють нумерацію і поза межами цього діапазону.
 
-The algorithm uses this linear congruential generator from Microsoft C:
+Алгоритм використовує цей лінійний конгруентний метод із Microsoft C:
 
 <ul>
   <li>$state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}$</li>
   <li>$rand_n = state_n \div 2^{16}$</li>
-  <li>$rand_n$ is in range 0 to 32767.</li>
+  <li>$rand_n$ знаходиться у діапазоні від 0 до 32767.</li>
 </ul>
 
-The algorithm follows:
+Після алгоритму:
 
 <ol>
   <li>Seed the RNG with the number of the deal.
-  </li><li>Create an array of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51.</li>
-  <li>Until the array is empty:</li>
-  <li>Choose a random card at index ≡ next random number (mod array length).</li>
+  </li><li>Створіть масив з 52 карт: туз трефи, туз бубни, туз чирви, туз піки, двійка трефи, двійка бубни і т. д. по усім рангам: Туз, 2, 3, 4, 5, 6, 7, 8, 9, 10, Валет, Дама, Король. Індекси масивів від 0 до 51, з тузом трефи на 0 та королем піки на 51.</li>
+  <li>Поки масив не стане пустим:</li>
+  <li>Оберіть випадкову карту із індексом ≡ наступне випадкове число (довжина масиву модулів).</li>
     <ul>
       <li>Swap this random card with the last card of the array.</li>
-      <li>Remove this random card from the array. (Array length goes down by 1.)</li>
-      <li>Deal this random card.</li>
+      <li>Видаліть цю випадкову карту із масиву. (Довжина масиву зменшується на 1.)</li>
+      <li>Роздайте цю випадкову карту.</li>
     </ul>
-  <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
+  <li>Роздайте усі 52 карти, лицем догори, на 8 стовпчиків. Перші 8 карт на 8 стовпчиків, наступні 8 карт на перші 8 карт, і так далі.</li>
 </ol>
 
-**Example:**
+**Наприклад:**
 
-**Order to deal cards**
+**Порядок роздачі карт**
 
 <pre> 1  2  3  4  5  6  7  8
  9 10 11 12 13 14 15 16
@@ -47,7 +47,7 @@ The algorithm follows:
 41 42 43 44 45 46 47 48
 49 50 51 52</pre>
 
-**Game #1**
+**Гра #1**
 
 ```js
 [
@@ -61,7 +61,7 @@ The algorithm follows:
 ]
 ```
 
-**Game #617**
+**Гра #617**
 
 ```js
 [
@@ -77,35 +77,35 @@ The algorithm follows:
 
 # --instructions--
 
-Write a function to take a deal number and deal cards in the same order as this algorithm. The function must return a two dimensional array representing the FreeCell board.
+Напишіть функцію, щоб дізнатись номер роздачі та роздати карти в такому ж порядку, як у алгоритмі. Функція має видати двовимірний масив, що представляє собою дошку FreeCell.
 
 # --hints--
 
-`dealFreeCell` should be a function.
+`dealFreeCell` має бути функцією.
 
 ```js
 assert(typeof dealFreeCell === 'function');
 ```
 
-`dealFreeCell(seed)` should return an object.
+`dealFreeCell(seed)` має повернути об’єкт.
 
 ```js
 assert(typeof dealFreeCell(1) === 'object');
 ```
 
-`dealFreeCell(seed)` should return an array of length 7.
+`dealFreeCell(seed)` повинен повертати масив довжиною 7.
 
 ```js
 assert(dealFreeCell(1).length === 7);
 ```
 
-`dealFreeCell(1)` should return an array identical to example "Game #1"
+`dealFreeCell(1)` повинен повертати масив ідентичний до прикладу "Гра #1"
 
 ```js
 assert.deepEqual(dealFreeCell(1), game1);
 ```
 
-`dealFreeCell(617)` should return an array identical to example "Game #617"
+`dealFreeCell(617)` повинен повертати масив ідентичний до прикладу "Гра #617"
 
 ```js
 assert.deepEqual(dealFreeCell(617), game617);

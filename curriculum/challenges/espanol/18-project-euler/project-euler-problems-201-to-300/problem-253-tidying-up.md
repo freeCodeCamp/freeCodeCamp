@@ -14,7 +14,7 @@ Every night, the child's father has to pick up the pieces of the caterpillar tha
 
 As the caterpillar is built up in this way, it forms distinct segments that gradually merge together. The number of segments starts at zero (no pieces placed), generally increases up to about eleven or twelve, then tends to drop again before finishing at a single segment (all pieces placed).
 
-For example:
+Por ejemplo:
 
 | Piece Placed | Segments So Far |
 | ------------ | --------------- |

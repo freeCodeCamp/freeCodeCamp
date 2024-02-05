@@ -1,6 +1,6 @@
 ---
 id: 5900f4c51000cf542c50ffd7
-title: 'Problem 344: Silver dollar game'
+title: 'Problem 344: Silberdollar-Spiel'
 challengeType: 1
 forumTopicId: 302003
 dashedName: problem-344-silver-dollar-game
@@ -10,23 +10,23 @@ dashedName: problem-344-silver-dollar-game
 
 One variant of N.G. de Bruijn's silver dollar game can be described as follows:
 
-On a strip of squares a number of coins are placed, at most one coin per square. Only one coin, called the silver dollar, has any value. Two players take turns making moves. At each turn a player must make either a regular or a special move.
+Auf einem Streifen von Quadraten wird eine Anzahl von Münzen platziert, höchstens eine Münze pro Quadrat. Nur eine Münze, der Silberdollar, hat einen Wert. Zwei Spieler machen abwechselnd Züge. In jedem Zug muss ein Spieler entweder einen normalen oder einen besonderen Zug machen.
 
-A regular move consists of selecting one coin and moving it one or more squares to the left. The coin cannot move out of the strip or jump on or over another coin.
+Ein regulärer Zug besteht darin, eine Münze auszuwählen und sie ein oder mehrere Felder nach links zu bewegen. Die Münze kann sich nicht aus dem Streifen herausbewegen oder auf oder über eine andere Münze springen.
 
-Alternatively, the player can choose to make the special move of pocketing the leftmost coin rather than making a regular move. If no regular moves are possible, the player is forced to pocket the leftmost coin.
+Alternativ kann der Spieler auch den Sonderzug wählen, bei dem er die linke Münze einsteckt, anstatt einen normalen Zug zu machen. Wenn keine regulären Züge möglich sind, ist der Spieler gezwungen, die Münze links einzusacken.
 
-The winner is the player who pockets the silver dollar.
+Der Gewinner ist der Spieler, der den Silberdollar einsteckt.
 
-<img class="img-responsive center-block" alt="silver dollar game" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Silberdollar-Spiel" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px;" />
 
-A winning configuration is an arrangement of coins on the strip where the first player can force a win no matter what the second player does.
+Eine Gewinnkonfiguration ist eine Anordnung von Münzen auf dem Streifen, bei der der erste Spieler einen Gewinn erzwingen kann, egal was der zweite Spieler tut.
 
-Let $W(n, c)$ be the number of winning configurations for a strip of $n$ squares, $c$ worthless coins and one silver dollar.
+Lasse $W(n, c)$ die Anzahl der Gewinnkonfigurationen für einen Streifen aus $n$ Quadraten sein, $c$ wertlosen Münzen und einem Silberdollar.
 
 You are given that $W(10, 2) = 324$ and $W(100, 10) = 1\\,514\\,704\\,946\\,113\\,500$.
 
-Find $W(1\\,000\\,000, 100)$ modulo the semiprime $1000\\,036\\,000\\,099 (= 1\\,000\\,003 \times 1\\,000\\,033)$.
+Finde $W(1\\,000\\,000, 100)$ modulo der Halbzahl $1000\\,036\\,000\,099 (= 1\\,000\,003 \times 1\\,000\,033)$.
 
 # --hints--
 

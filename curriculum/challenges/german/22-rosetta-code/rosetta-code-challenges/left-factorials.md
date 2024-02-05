@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ee0
-title: Left factorials
+title: Linksseitige Fakultäten
 challengeType: 1
 forumTopicId: 302302
 dashedName: left-factorials
@@ -16,67 +16,67 @@ dashedName: left-factorials
   <li>$n¡$</li>
 </ul>
 
-(It may not be visually obvious, but the last example uses an upside-down exclamation mark.) This task will be using this formula for **left factorial**:
+(Es mag optisch nicht auffallen, aber im letzten Beispiel wird ein auf dem Kopf stehendes Ausrufezeichen verwendet). In dieser Aufgabe wird diese Formel für die **linke Fakultät** verwendet:
 
 $ !n = \\sum\_{k=0}^{n-1} k! $
 
-where $!0 = 0$
+wo $!0 = 0$
 
 # --instructions--
 
-Write a function to calculate the left factorial of a given number.
+Schreibe eine Funktion zur Berechnung der linken Fakultät einer gegebenen Zahl.
 
 # --hints--
 
-`leftFactorial` should be a function.
+`leftFactorial` sollte eine Funktion sein.
 
 ```js
 assert(typeof leftFactorial == 'function');
 ```
 
-`leftFactorial(0)` should return a number.
+`leftFactorial(0)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof leftFactorial(0) == 'number');
 ```
 
-`leftFactorial(0)` should return `0`.
+`leftFactorial(0)` sollte `0` zurückgeben.
 
 ```js
 assert.equal(leftFactorial(0), 0);
 ```
 
-`leftFactorial(1)` should return `1`.
+`leftFactorial(1)` sollte `1` zurückgeben.
 
 ```js
 assert.equal(leftFactorial(1), 1);
 ```
 
-`leftFactorial(2)` should return `2`.
+`leftFactorial(2)` sollte `2` zurückgeben.
 
 ```js
 assert.equal(leftFactorial(2), 2);
 ```
 
-`leftFactorial(3)` should return `4`.
+`leftFactorial(3)` sollte `4` zurückgeben.
 
 ```js
 assert.equal(leftFactorial(3), 4);
 ```
 
-`leftFactorial(10)` should return `409114`.
+`leftFactorial(10)` sollte `409114` zurückgeben.
 
 ```js
 assert.equal(leftFactorial(10), 409114);
 ```
 
-`leftFactorial(17)` should return `22324392524314`.
+`leftFactorial(17)` sollte `22324392524314` zurückgeben.
 
 ```js
 assert.equal(leftFactorial(17), 22324392524314);
 ```
 
-`leftFactorial(19)` should return `6780385526348314`.
+`leftFactorial(19)` sollte `6780385526348314` zurückgeben.
 
 ```js
 assert.equal(leftFactorial(19), 6780385526348314);

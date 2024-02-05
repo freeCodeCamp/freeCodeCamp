@@ -148,7 +148,6 @@ legend {
 }
 
 button {
-  outline: none;
   cursor: pointer;
   text-decoration: none;
   background-color: var(--light-yellow);
@@ -192,11 +191,11 @@ select {
 }
 
 .surplus {
-  color: var(--light-green);
+  color: var(--light-pink);
 }
 
 .deficit {
-  color: var(--light-pink);
+  color: var(--light-green);
 }
 ```
 

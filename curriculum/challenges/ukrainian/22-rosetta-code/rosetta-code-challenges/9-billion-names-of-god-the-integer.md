@@ -1,6 +1,6 @@
 ---
 id: 5949b579404977fbaefcd736
-title: 9 billion names of God the integer
+title: Ціле число "9 мільярдів імен Бога"
 challengeType: 1
 forumTopicId: 302219
 dashedName: 9-billion-names-of-god-the-integer
@@ -10,19 +10,19 @@ dashedName: 9-billion-names-of-god-the-integer
 
 This task is a variation of the short story by Arthur C. Clarke.
 
-(Solvers should be aware of the consequences of completing this task.)
+(Той хто розв'язує завдання, має знати про наслідки виконання даного завдання.)
 
-In detail, to specify what is meant by a "name":
+Детальніше про те, що означає "name"(ім'я):
 
 <ul>
-  <li>The integer 1 has 1 name "1".</li>
-  <li>The integer 2 has 2 names "1+1" and "2".</li>
-  <li>The integer 3 has 3 names "1+1+1", "2+1",  and "3".</li>
-  <li>The integer 4 has 5 names "1+1+1+1", "2+1+1", "2+2", "3+1", "4".</li>
-  <li>The integer 5 has 7 names "1+1+1+1+1", "2+1+1+1", "2+2+1", "3+1+1", "3+2", "4+1", "5".</li>
+  <li>Ціле число 1 має одне ім’я: «1».</li>
+  <li>Ціле число 2 має два імені: «1+1» та «2».</li>
+  <li>Ціле число 3 має три імені: «1+1+1», «2+1» та «3».</li>
+  <li>Ціле число 4 має п’ять імен: «1+1+1+1», «2+1+1», «2+2», «3+1» та «4».</li>
+  <li>Ціле число 5 має сім імен: «1+1+1+1+1», «2+1+1+1», «2+2+1», «3+1+1», «3+2», «4+1» та «5».</li>
 </ul>
 
-This can be visualized in the following form:
+Це можна візуалізувати наступним чином:
 
 <pre>          1
         1   1
@@ -32,53 +32,53 @@ This can be visualized in the following form:
 1   3   3   2   1   1
 </pre>
 
-Where row $n$ corresponds to integer $n$, and each column $C$ in row $m$ from left to right corresponds to the number of names beginning with $C$.
+Де рядки $n$ відповідають цілому числу $n$ і кожна колонка $C$ у рядку $m$ зліва направо відповідає кількості імен, які починаються з $C$.
 
-Optionally note that the sum of the $n$-th row $P(n)$ is the integer partition function.
+Зауважте, що сума $n$-го рядку $P(n)$ - це функція розбиття цілого числа.
 
 # --instructions--
 
-Implement a function that returns the sum of the $n$-th row.
+Використовуйте функцію, що повертає суму $n$-го рядка.
 
 # --hints--
 
-`numberOfNames` should be function.
+`numberOfNames` має бути функцією.
 
 ```js
 assert(typeof numberOfNames === 'function');
 ```
 
-`numberOfNames(5)` should equal 7.
+`numberOfNames(5)` має дорівнювати 7.
 
 ```js
 assert.equal(numberOfNames(5), 7);
 ```
 
-`numberOfNames(12)` should equal 77.
+`numberOfNames(12)` має дорівнювати 77.
 
 ```js
 assert.equal(numberOfNames(12), 77);
 ```
 
-`numberOfNames(18)` should equal 385.
+`numberOfNames(18)` має дорівнювати 385.
 
 ```js
 assert.equal(numberOfNames(18), 385);
 ```
 
-`numberOfNames(23)` should equal 1255.
+`numberOfNames(23)` має дорівнювати 1255.
 
 ```js
 assert.equal(numberOfNames(23), 1255);
 ```
 
-`numberOfNames(42)` should equal 53174.
+`numberOfNames(42)` має дорівнювати 53174.
 
 ```js
 assert.equal(numberOfNames(42), 53174);
 ```
 
-`numberOfNames(123)` should equal 2552338241.
+`numberOfNames(123)` має дорівнювати 2552338241.
 
 ```js
 assert.equal(numberOfNames(123), 2552338241);

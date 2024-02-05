@@ -1,6 +1,6 @@
 ---
 id: 5900f37a1000cf542c50fe8d
-title: 'Problem 14: Longest Collatz sequence'
+title: '問題 14: 最長のコラッツ数列'
 challengeType: 1
 forumTopicId: 301768
 dashedName: problem-14-longest-collatz-sequence
@@ -8,61 +8,61 @@ dashedName: problem-14-longest-collatz-sequence
 
 # --description--
 
-The following iterative sequence is defined for the set of positive integers:
+正の整数の集合について、次の反復数列が定義されています。
 
-<div style='padding-left: 4em;'><var>n</var> → <var>n</var>/2 (<var>n</var> is even)</div>
+<div style='padding-left: 4em;'><var>n</var> → <var>n</var>/2 (<var>n</var> は偶数)</div>
 
-<div style='padding-left: 4em;'><var>n</var> → 3<var>n</var> + 1 (<var>n</var> is odd)</div>
+<div style='padding-left: 4em;'><var>n</var> → 3<var>n</var> + 1 (<var>n</var> は奇数)</div>
 
-Using the rule above and starting with 13, we generate the following sequence:
+13 から始めて上のルールに従うと、次の数列になります。
 
 <div style='text-align: center;'>13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1</div>
 
-It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at 1.
+この数列 (13 から始まり、1 で終わる) に 10 個の項が含まれていることが分かります。 まだ証明されていませんが (コラッツ問題)、どの数から始めても 1 で終わると考えられています。
 
-Which starting number, under the given `limit`, produces the longest chain?
+与えられた `limit` より小さい数のうち、どの数から始めると連鎖が最も長くなりますか。
 
-**Note:** Once the chain starts the terms are allowed to go above `limit`.
+**注:** 連鎖が始まった後であれば項が `limit` を超えても構いません。
 
 # --hints--
 
-`longestCollatzSequence(14)` should return a number.
+`longestCollatzSequence(14)` は数値を返す必要があります。
 
 ```js
 assert(typeof longestCollatzSequence(14) === 'number');
 ```
 
-`longestCollatzSequence(14)` should return 9.
+`longestCollatzSequence(14)` は 9 を返す必要があります。
 
 ```js
 assert.strictEqual(longestCollatzSequence(14), 9);
 ```
 
-`longestCollatzSequence(5847)` should return 3711.
+`longestCollatzSequence(5847)` は 3711 を返す必要があります。
 
 ```js
 assert.strictEqual(longestCollatzSequence(5847), 3711);
 ```
 
-`longestCollatzSequence(46500)` should return 35655.
+`longestCollatzSequence(46500)` は 35655 を返す必要があります。
 
 ```js
 assert.strictEqual(longestCollatzSequence(46500), 35655);
 ```
 
-`longestCollatzSequence(54512)` should return 52527.
+`longestCollatzSequence(54512)` は 52527 を返す必要があります。
 
 ```js
 assert.strictEqual(longestCollatzSequence(54512), 52527);
 ```
 
-`longestCollatzSequence(100000)` should return 77031.
+`longestCollatzSequence(100000)` は 77031 を返す必要があります。
 
 ```js
 assert.strictEqual(longestCollatzSequence(100000), 77031);
 ```
 
-`longestCollatzSequence(1000000)` should return 837799.
+`longestCollatzSequence(1000000)` は 837799 を返す必要があります。
 
 ```js
 assert.strictEqual(longestCollatzSequence(1000000), 837799);

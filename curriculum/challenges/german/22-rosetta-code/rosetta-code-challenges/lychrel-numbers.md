@@ -1,6 +1,6 @@
 ---
 id: 5ea2815a8640bcc6cb7dab3c
-title: Lychrel numbers
+title: Lychrel-Zahlen
 challengeType: 1
 forumTopicId: 385287
 dashedName: lychrel-numbers
@@ -10,20 +10,20 @@ dashedName: lychrel-numbers
 
 <ol>
   <li>Take an integer <code>n₀</code>, greater than zero.</li>
-  <li>Form the next number <code>n</code> of the series by reversing <code>n₀</code> and adding it to <code>n₀</code></li>
-  <li>Stop when <code>n</code> becomes palindromic - i.e. the digits of <code>n</code> in reverse order == <code>n</code>.</li>
+  <li>Bilde die nächste Zahl <code>n</code> der Reihe, indem du <code>n₀</code> umdrehst und zu <code>n₀</code> hinzufügst</li>
+  <li>Stopp, wenn <code>n</code> es palindromisch wird - d.h. die Ziffern von <code>n</code> in == <code>n</code>.</li>
 </ol>
 
 The above recurrence relation when applied to most starting numbers `n` = 1, 2, ... terminates in a palindrome quite quickly.
 
-For example if `n₀` = 12 we get:
+Zum Beispiel, wenn `n₀` = 12 erhalten wir:
 
 ```bash
 12
 12 + 21 = 33,  a palindrome!
 ```
 
-And if `n₀` = 55 we get:
+Und wenn `n₀` = 55 erhalten wir:
 
 ```bash
 55
@@ -31,17 +31,17 @@ And if `n₀` = 55 we get:
 110 + 011 = 121,  a palindrome!
 ```
 
-Notice that the check for a palindrome happens *after* an addition.
+Beachte, dass die Prüfung auf ein Palindrom *nach* einer Addition erfolgt.
 
-Some starting numbers seem to go on forever; the recurrence relation for 196 has been calculated for millions of repetitions forming numbers with millions of digits, without forming a palindrome. These numbers that do not end in a palindrome are called **Lychrel numbers**.
+Einige Anfangszahlen scheinen ewig zu dauern; die Rekursionsbeziehung für 196 wurde für Millionen von Wiederholungen berechnet, die Zahlen mit Millionen von Ziffern bilden, ohne ein Palindrom zu bilden. Diese Zahlen, die nicht mit einem Palindrom enden, werden **Lychrel-Zahlen** genannt.
 
-For the purposes of this task a Lychrel number is any starting number that does not form a palindrome within 500 (or more) iterations.
+Für die Zwecke dieser Aufgabe ist eine Lychrel-Zahl eine beliebige Ausgangszahl, die nicht innerhalb von 500 (oder mehr) Iterationen ein Palindrom bildet.
 
-**Seed and related Lychrel numbers:**
+**Saatgut und verwandte Lychrel-Nummern:**
 
-Any integer produced in the sequence of a Lychrel number is also a Lychrel number.
+Jede Ganzzahl, die in der Folge einer Lychrel-Zahl entsteht, ist auch eine Lynchrel-Zahl.
 
-In general, any sequence from one Lychrel number *might* converge to join the sequence from a prior Lychrel number candidate; for example the sequences for the numbers 196 and then 689 begin:
+Im Allgemeinen *kann* jede Sequenz von einer Lychrel-Zahl konvergieren, um der Sequenz von einem vorherigen Lychrel-Zahlen-Kandidaten beizutreten; die Sequenzen für die Zahlen 196 und dann 689 beginnen zum Beispiel wie folgt:
 
 ```bash
     196
@@ -58,59 +58,59 @@ In general, any sequence from one Lychrel number *might* converge to join the se
     ...
 ```
 
-So we see that the sequence starting with 689 converges to, and continues with the same numbers as that for 196.
+Wir sehen also, dass die Folge, die mit 689 beginnt, zu denselben Zahlen konvergiert wie die für 196 und mit ihnen fortfährt.
 
-Because of this we can further split the Lychrel numbers into true **Seed** Lychrel number candidates, and **Related** numbers that produce no palindromes but have integers in their sequence seen as part of the sequence generated from a lower Lychrel number.
+Aus diesem Grund können wir die Lychrel-Zahlen weiter unterteilen in echte **Saat** Lychrel-Zahlenkandidaten und **Verwandte** Zahlen, die keine Palindrome erzeugen, aber ganze Zahlen in ihrer Sequenz haben, die als Teil der aus einer niedrigeren Lychrel-Zahl erzeugten Sequenz angesehen werden.
 
 # --instructions--
 
-Write a function that takes a number as a parameter. Return true if the number is a Lynchrel number. Otherwise, return false. Remember that the iteration limit is 500.
+Schreibe eine Funktion, die eine Zahl als Parameter annimmt. True wird zurückgegeben, wenn die Zahl eine Lynchrel-Zahl ist. Andernfalls wird false zurückgegeben. Denke daran, dass die Iterationsgrenze bei 500 liegt.
 
 # --hints--
 
-`isLychrel` should be a function.
+`isLychrel` sollte eine Funktion sein.
 
 ```js
 assert(typeof isLychrel === 'function');
 ```
 
-`isLychrel(12)` should return a boolean.
+`isLychrel(12)` sollte einen Boolean zurückgeben.
 
 ```js
 assert(typeof isLychrel(12) === 'boolean');
 ```
 
-`isLychrel(12)` should return `false`.
+`isLychrel(12)` sollte `false` zurückgeben.
 
 ```js
 assert.equal(isLychrel(12), false);
 ```
 
-`isLychrel(55)` should return `false`.
+`isLychrel(55)` sollte `false` zurückgeben.
 
 ```js
 assert.equal(isLychrel(55), false);
 ```
 
-`isLychrel(196)` should return `true`.
+`isLychrel(196)` sollte `true` zurückgeben.
 
 ```js
 assert.equal(isLychrel(196), true);
 ```
 
-`isLychrel(879)` should return `true`.
+`isLychrel(879)` sollte `true` zurückgeben.
 
 ```js
 assert.equal(isLychrel(879), true);
 ```
 
-`isLychrel(44987)` should return `false`.
+`isLychrel(44987)` sollte `false` zurückgeben.
 
 ```js
 assert.equal(isLychrel(44987), false);
 ```
 
-`isLychrel(7059)` should return `true`.
+`isLychrel(7059)` sollte `true` zurückgeben.
 
 ```js
 assert.equal(isLychrel(7059), true);

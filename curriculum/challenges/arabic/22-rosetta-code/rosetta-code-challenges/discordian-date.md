@@ -14,7 +14,7 @@ The <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" re
 The months, weekdays, Apostle events, and Holidays in the Discordian calendar are given by:
 
 Seasons: `'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath'`.
-  
+
 Weekdays: `'Sweetmorn', 'Boomtime', 'Pungenday', 'Prickle-Prickle', 'Setting Orange'`.
 
 Apostle: `'Mungday', 'Mojoday', 'Syaday', 'Zaraday', 'Maladay'`.

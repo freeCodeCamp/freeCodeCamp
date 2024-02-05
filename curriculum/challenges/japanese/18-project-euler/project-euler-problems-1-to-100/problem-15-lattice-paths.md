@@ -1,6 +1,6 @@
 ---
 id: 5900f37b1000cf542c50fe8e
-title: 'Problem 15: Lattice paths'
+title: '問題 15: 格子の経路'
 challengeType: 1
 forumTopicId: 301780
 dashedName: problem-15-lattice-paths
@@ -8,33 +8,33 @@ dashedName: problem-15-lattice-paths
 
 # --description--
 
-Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
+2×2 格子の左上隅から始まり、右下にのみ移動できる場合、右下隅への経路はちょうど 6 つあります。
 
-<img class="img-responsive center-block" alt="a diagram of 6 2 by 2 grids showing all the routes to the bottom right corner" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="右下隅へのすべての経路を示す 6×2 格子の図" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px;" />
 
-How many such routes are there through a given `gridSize`?
+与えられた `gridSize` にそのような経路はいくつありますか。
 
 # --hints--
 
-`latticePaths(4)` should return a number.
+`latticePaths(4)` は数値を返す必要があります。
 
 ```js
 assert(typeof latticePaths(4) === 'number');
 ```
 
-`latticePaths(4)` should return 70.
+`latticePaths(4)` は 70 を返す必要があります。
 
 ```js
 assert.strictEqual(latticePaths(4), 70);
 ```
 
-`latticePaths(9)` should return 48620.
+`latticePaths(9)` は 48620 を返す必要があります。
 
 ```js
 assert.strictEqual(latticePaths(9), 48620);
 ```
 
-`latticePaths(20)` should return 137846528820.
+`latticePaths(20)` は 137846528820 を返す必要があります。
 
 ```js
 assert.strictEqual(latticePaths(20), 137846528820);

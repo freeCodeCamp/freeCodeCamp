@@ -1,6 +1,6 @@
 ---
 id: 5900f4ca1000cf542c50ffdc
-title: 'Problem 349: Langton''s ant'
+title: 'Завдання 349: мураха Ленґтона'
 challengeType: 1
 forumTopicId: 302008
 dashedName: problem-349-langtons-ant
@@ -8,14 +8,14 @@ dashedName: problem-349-langtons-ant
 
 # --description--
 
-An ant moves on a regular grid of squares that are coloured either black or white.
+Мураха рухається по звичайній сітці квадратів, забарвлених у чорний або білий колір.
 
-The ant is always oriented in one of the cardinal directions (left, right, up or down) and moves from square to adjacent square according to the following rules:
+Мураха завжди орієнтується на один з основних напрямів (вліво, вправо, вгору або вниз) і рухається від квадрата до сусіднього квадрата за такими правилами:
 
-- if it is on a black square, it flips the color of the square to white, rotates 90° counterclockwise and moves forward one square.
-- if it is on a white square, it flips the color of the square to black, rotates 90° clockwise and moves forward one square.
+- якщо вона знаходиться на чорному квадраті, то перегортає квадрат на білу сторону, повертається на 90° проти годинникової стрілки і рухається вперед на один квадрат.
+- якщо вона знаходиться на білому квадраті, то перегортає квадрат на чорну сторону, повертається на 90° за годинниковою стрілкою і рухається вперед на один квадрат.
 
-Starting with a grid that is entirely white, how many squares are black after ${10}^{18}$ moves of the ant?
+Скільки квадратів будуть чорними після ${10}^{18}$ ходів мурахи, якщо розпочати з повністю білої сітки?
 
 # --hints--
 

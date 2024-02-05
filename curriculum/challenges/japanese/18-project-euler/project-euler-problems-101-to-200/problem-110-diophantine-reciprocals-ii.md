@@ -1,6 +1,6 @@
 ---
 id: 5900f3db1000cf542c50feed
-title: 'Problem 110: Diophantine Reciprocals II'
+title: '問題 110: ディオファントス逆数 (2)'
 challengeType: 1
 forumTopicId: 301735
 dashedName: problem-110-diophantine-reciprocals-ii
@@ -8,19 +8,19 @@ dashedName: problem-110-diophantine-reciprocals-ii
 
 # --description--
 
-In the following equation x, y, and n are positive integers.
+次の式の x, y, n は正の整数です。
 
 $$\frac{1}{x} + \frac{1}{y} = \frac{1}{n}$$
 
-It can be verified that when `n` = 1260 there are 113 distinct solutions and this is the least value of `n` for which the total number of distinct solutions exceeds one hundred.
+`n` = 1260 の場合に 113 個の相異なる解があり、1260 は相異なる解の総数が 100 を超える `n` の最小値です。
 
-What is the least value of `n` for which the number of distinct solutions exceeds four million?
+相異なる解の数が 400 万を超える最小の `n` を求めなさい。
 
-**Note:** This problem is a much more difficult version of Problem 108 and as it is well beyond the limitations of a brute force approach it requires a clever implementation.
+**注:** これは、問題 108 をかなり難しくした問題です。総当たりで解ける限界をはるかに超えているので、賢い方法が必要です。
 
 # --hints--
 
-`diophantineTwo()` should return `9350130049860600`.
+`diophantineTwo()` は `9350130049860600` を返す必要があります。
 
 ```js
 assert.strictEqual(diophantineTwo(), 9350130049860600);

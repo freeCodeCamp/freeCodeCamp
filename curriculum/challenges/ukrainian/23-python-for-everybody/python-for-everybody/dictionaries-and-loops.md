@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0a0b6c005b0e76f069
-title: Dictionaries and Loops
+title: Словники та цикли
 challengeType: 11
 videoId: EEmekKiKG70
 bilibiliIds:
@@ -14,13 +14,13 @@ dashedName: dictionaries-and-loops
 
 More resources:
 
-\- <a href="https://www.youtube.com/watch?v=PrhZ9qwBDD8" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=PrhZ9qwBDD8" target="_blank" rel="noopener noreferrer nofollow">Вправа</a>
 
 # --question--
 
 ## --text--
 
-What will the following code print?:
+Що надрукує наведений код?:
 
 ```python
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}

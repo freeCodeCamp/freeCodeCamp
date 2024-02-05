@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08d
-title: Representing Relationships in a Relational Database
+title: تمثيل العلاقات في قاعدة بيانات علائقية
 challengeType: 11
 videoId: '-orenCNdC2Q'
 bilibiliIds:
@@ -18,19 +18,19 @@ What is a foreign key?
 
 ## --answers--
 
-A key that is not supposed to be there.
+مفتاح ليس من المفترض أن يكون هناك.
 
 ---
 
-A key that uses non-latin characters.
+مفتاح يستخدم أحرف غير لاتينية.
 
 ---
 
-A number that points to the primary key of an associated row in a different table.
+رقم يشير إلى المفتاح الأساسي لصف مرتبط في جدول مختلف.
 
 ---
 
-A key that the "real world" might use to look up a row.
+مفتاح قد يستخدمه "العالم الحقيقي" للبحث عن صف.
 
 ## --video-solution--
 

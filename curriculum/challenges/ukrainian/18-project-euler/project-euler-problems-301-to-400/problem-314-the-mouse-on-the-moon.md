@@ -1,6 +1,6 @@
 ---
 id: 5900f4a71000cf542c50ffb9
-title: 'Problem 314: The Mouse on the Moon'
+title: 'Завдання 314: Миша на Місяці'
 challengeType: 1
 forumTopicId: 301970
 dashedName: problem-314-the-mouse-on-the-moon
@@ -8,19 +8,19 @@ dashedName: problem-314-the-mouse-on-the-moon
 
 # --description--
 
-The moon has been opened up, and land can be obtained for free, but there is a catch. You have to build a wall around the land that you stake out, and building a wall on the moon is expensive. Every country has been allotted a 500 m by 500 m square area, but they will possess only that area which they wall in. 251001 posts have been placed in a rectangular grid with 1 meter spacing. The wall must be a closed series of straight lines, each line running from post to post.
+Місяць відкрито, і на ньому можна безоплатно отримати ділянку, однак є пастка. Вам потрібно побудувати стіну навколо бажаної ділянки, але побудувати стіну на Місяці — дорого. Кожній країні виділили квадратну ділянку 500м × 500м, однак їй належатиме лише обгороджена частина. На прямокутній сітці розставили 251001 стовп на відстані 1 метр один від одного. Стіна має бути закритою групою прямих ліній, кожна з яких йде від стовпа до стовпа.
 
-The bigger countries of course have built a 2000 m wall enclosing the entire 250 000 $\text{m}^2$ area. The Duchy of Grand Fenwick, has a tighter budget, and has asked you (their Royal Programmer) to compute what shape would get best maximum $\frac{\text{enclosed-area}}{\text{wall-length}}$ ratio.
+Більші країни, звичайно, збудували 2000-метрову стіну, яка обгороджує усі 250 000 $\text{м}^2$ площі. Герцогство Гранд Фенвік має обмежений бюджет, тому Вашу величність королівського програміста попросили вирахувати фігуру, яка надасть найбільше співвідношення $\frac{\text{площа}}{\text{протяжність стін}}$.
 
-You have done some preliminary calculations on a sheet of paper. For a 2000 meter wall enclosing the 250 000 $\text{m}^2$ area the $\frac{\text{enclosed-area}}{\text{wall-length}}$ ratio is 125.
+Ви зробили деякі попередні розрахунки на аркуші паперу. Для 2000-метрової стіни, яка обгороджує 250 000 $\text{м}^2$, співвідношенням $\frac{\text{площа}}{\text{протяжність стін}}$ є 125.
 
-Although not allowed, but to get an idea if this is anything better: if you place a circle inside the square area touching the four sides the area will be equal to $π \times {250}^2 \text{m}^2$ and the perimeter will be $π \times 500 \text{m}$, so the $\frac{\text{enclosed-area}}{\text{wall-length}}$ ratio will also be 125.
+Хоча це і проти правил, є кращий варіант: якщо розташувати коло всередині квадрата так, щоб воно доторкалось всіх чотирьох сторін, площа дорівнюватиме $π \times {250}^2 \text{м}^2$, а периметром буде $π \times 500 \text{м}$. Відповідно співвідношенням $\frac{\text{площа}}{\text{протяжність стін}}$ також буде 125.
 
-However, if you cut off from the square four triangles with sides 75 m, 75 m and $75\sqrt{2}$ m the total area becomes 238750 $\text{m}^2$ and the perimeter becomes $1400 + 300\sqrt{2}$ m. So this gives an $\frac{\text{enclosed-area}}{\text{wall-length}}$ ratio of 130.87, which is significantly better.
+Однак, якщо обрізати з квадрата чотири трикутники зі сторонами 75 м, 75 м та $75\sqrt{2}$ м, загальна площа дорівнюватиме 238750 $\text{м}^2$, а периметр — $1400 + 300\sqrt{2}$ м. Тому співвідношенням $\frac{\text{площа}}{\text{протяжність стін}}$ буде 130.87, що значно краще.
 
-<img class="img-responsive center-block" alt="picture showing difference in enclosed-area between circle and square with cut off four triangles" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="рисунок з різницею площі між колом та квадратом з чотирма вирізаними трикутниками" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px;" />
 
-Find the maximum $\frac{\text{enclosed-area}}{\text{wall-length}}$ ratio. Дайте відповідь, заокруглену до восьми знаків після коми у форматі abc.defghijk.
+Знайдіть максимальне співвідношення $\frac{\text{площа}}{\text{протяжність стін}}$. Дайте відповідь, заокруглену до восьми знаків після коми у форматі abc.defghijk.
 
 # --hints--
 

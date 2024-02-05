@@ -1,6 +1,6 @@
 ---
 id: 5900f3d21000cf542c50fee5
-title: 'Problem 102: Triangle containment'
+title: '問題 102: 三角形による内包'
 challengeType: 1
 forumTopicId: 301726
 dashedName: problem-102-triangle-containment
@@ -8,9 +8,9 @@ dashedName: problem-102-triangle-containment
 
 # --description--
 
-Three distinct points are plotted at random on a Cartesian plane, for which -1000 ≤ x, y ≤ 1000, such that a triangle is formed.
+-1000 ≤ x, y ≤ 1000 のデカルト平面上に三角形を作るような形で、3 つの相異なる点が無作為にプロットされています。
 
-Consider the following two triangles:
+次の 2 つの三角形を考えます。
 
 ```js
 const exampleTriangles = [
@@ -19,31 +19,31 @@ const exampleTriangles = [
 ];
 ```
 
-It can be verified that first triangle contains the origin, whereas second triangle does not.
+1 つ目の三角形には原点が含まれ、2 つ目の三角形には原点が含まれていないことを確認できます。
 
-Using the `triangles` array containing coordinates of triangles, find the number of triangles for which the interior contains the origin.
+三角形の座標が含まれている `triangles` 配列を使用して、原点を内包する三角形の数を求めなさい。
 
 # --hints--
 
-`triangleContainment(exampleTriangles)` should return a number.
+`triangleContainment(exampleTriangles)` は数値を返す必要があります。
 
 ```js
 assert(typeof triangleContainment(_exampleTriangles) === 'number');
 ```
 
-`triangleContainment(exampleTriangles)` should return `1`.
+`triangleContainment(exampleTriangles)` は `1` を返す必要があります。
 
 ```js
 assert.strictEqual(triangleContainment(_exampleTriangles), 1);
 ```
 
-`triangleContainment(testTriangles1)` should return `19`.
+`triangleContainment(testTriangles1)` は `19` を返す必要があります。
 
 ```js
 assert.strictEqual(triangleContainment(_testTriangles1), 19);
 ```
 
-`triangleContainment(testTriangles2)` should return `228`.
+`triangleContainment(testTriangles2)` は `228` を返す必要があります。
 
 ```js
 assert.strictEqual(triangleContainment(_testTriangles2), 228);

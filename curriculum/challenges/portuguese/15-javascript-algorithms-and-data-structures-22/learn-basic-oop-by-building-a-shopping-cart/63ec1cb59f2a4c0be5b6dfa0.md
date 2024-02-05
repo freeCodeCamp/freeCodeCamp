@@ -1,23 +1,23 @@
 ---
 id: 63ec1cb59f2a4c0be5b6dfa0
-title: Step 5
+title: Passo 5
 challengeType: 0
 dashedName: step-5
 ---
 
 # --description--
 
-A shopping cart does not serve much purpose without products. Declare a `products` variable and set it to an empty array. Using an array will allow you to store multiple products.
+Um carrinho de compras não tem muito propósito sem produtos. Declare uma variável `products` e defina-a com um array vazio. O uso de um array permitirá que você armazene vários produtos.
 
 # --hints--
 
-You should declare a `products` variable with `const`.
+Você deve declarar uma variável `products` com `const`.
 
 ```js
 assert.match(code, /const\s+products/);
 ```
 
-You should set the `products` variable to an empty array.
+Você deve definir a variável `products` como um array vazio.
 
 ```js
 assert.match(code, /const\s+products\s*=\s*\[\s*\]/);

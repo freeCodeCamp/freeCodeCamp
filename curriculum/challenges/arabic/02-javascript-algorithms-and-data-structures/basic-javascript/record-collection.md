@@ -8,7 +8,7 @@ dashedName: record-collection
 
 # --description--
 
-You are creating a function that aids in the maintenance of a musical album collection. The collection is organized as an object that contains multiple albums which are also objects. Each album is represented in the collection with a unique `id` as the property name. Within each album object, there are various properties describing information about the album. Not all albums have complete information.
+You are creating a function that aids in the maintenance of a musical album collection. The collection is organized as an object that contains multiple albums which are also objects. Each album is represented in the collection with a unique `id` as the property name. Within each album object, there are various properties describing information about the album. ليست كل السجلات لديها معلومات كاملة.
 
 The `updateRecords` function takes 4 arguments represented by the following function parameters:
 

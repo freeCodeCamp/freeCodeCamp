@@ -1,6 +1,6 @@
 ---
 id: 5900f4311000cf542c50ff44
-title: 'Problem 197: Investigating the behaviour of a recursively defined sequence'
+title: '问题 197：研究递归定义的序列的行为'
 challengeType: 1
 forumTopicId: 301835
 dashedName: problem-197-investigating-the-behaviour-of-a-recursively-defined-sequence

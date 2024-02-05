@@ -1,6 +1,6 @@
 ---
 id: 5900f4b31000cf542c50ffc6
-title: 'Problem 327: Rooms of Doom'
+title: 'Завдання 327: кімнати страху'
 challengeType: 1
 forumTopicId: 301984
 dashedName: problem-327-rooms-of-doom
@@ -8,27 +8,27 @@ dashedName: problem-327-rooms-of-doom
 
 # --description--
 
-A series of three rooms are connected to each other by automatic doors.
+Три кімнати з’єднані між собою автоматичними дверима.
 
-<img class="img-responsive center-block" alt="series of three rooms, connected to each other by automatic doors" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="три кімнати, з’єднані між собою автоматичними дверима" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px;" />
 
-Each door is operated by a security card. Once you enter a room, the door automatically closes, and that security card cannot be used again. A machine will dispense an unlimited number of cards at the start, but each room (including the starting room) contains scanners. If they detect that you are holding more than three security cards or if they detect an unattended security card on the floor, then all the doors will become permanently locked. However, each room contains a box where you may safely store any number of security cards for use at a later stage.
+Кожні двері керуються карткою доступу. Щойно ви заходите в кімнату, двері автоматично зачиняються, і картка доступу не може бути використана знову. На старті автомат видає необмежену кількість карток, але в кожній кімнаті (включно зі стартовою кімнатою) є сканери. Якщо вони виявляють, що ви маєте більше ніж три картки, або якщо сканери помітять картку доступу на підлозі, всі двері зачиняться назавжди. Проте в кожній кімнаті містяться ящики, в яких можна безпечно зберігати будь-яку кількість карток, які можуть бути використані пізніше.
 
-If you simply tried to travel through the rooms one at a time then as you entered room 3 you would have used all three cards and would be trapped in that room forever!
+Якби ви спробували пройти всі кімнати по черзі, то в кімнаті №3 ви б використали усі три картки та залишись в пастці назавжди!
 
-However, if you make use of the storage boxes, then escape is possible. For example, you could enter room 1 using your first card, place one card in the storage box, and use your third card to exit the room back to the start. Then after collecting three more cards from the dispensing machine you could use one to enter room 1 and collect the card you placed in the box a moment ago. You now have three cards again and will be able to travel through the remaining three doors. This method allows you to travel through all three rooms using six security cards in total.
+Однак, якщо ви використаєте ящики для зберігання, то втеча буде можливою. Наприклад, ви можете увійти в кімнату №1, використовуючи першу картку, розмістити одну картку в ящику для зберігання та використати третю картку для того, щоб повернутись на старт. Потім, взявши в автоматі ще три картки, ви можете використати одну картку, щоб увійти в кімнату №1 та забрати картку з ящика. Тепер у вас знову є три картки і ви зможете пройти крізь три двері, що залишилися. Цей спосіб дозволяє вам пройти всі три кімнати, використавши шість карток доступу.
 
-It is possible to travel through six rooms using a total of 123 security cards while carrying a maximum of 3 cards.
+Можна пройти шість кімнат, використавши загалом 123 картки доступу, при тому, що при собі можна мати максимум 3.
 
-Let $C$ be the maximum number of cards which can be carried at any time.
+Нехай $C$ буде максимальною кількістю карток, які можна мати з собою в будь-який час.
 
-Let $R$ be the number of rooms to travel through.
+Нехай $R$ буде кількістю кімнат, через які потрібно пройти.
 
-Let $M(C, R)$ be the minimum number of cards required from the dispensing machine to travel through $R$ rooms carrying up to a maximum of $C$ cards at any time.
+Нехай $M(C, R)$ буде мінімальною кількістю карток, які необхідно взяти в автоматі, щоб пройти $R$ кімнат, маючи з собою $C$ карток.
 
 Наприклад, $M(3, 6) = 123$ та $M(4, 6) = 23$.
 
-And, $\sum M(C, 6) = 146$ for $3 ≤ C ≤ 4$.
+Та $\sum M(C, 6) = 146$ за умови $3 ≤ C ≤ 4$.
 
 Дано, що $\sum M(C, 10) = 10382$ за умови $3 ≤ C ≤ 10$.
 

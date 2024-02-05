@@ -1,6 +1,6 @@
 ---
 id: 5e6dd139859c290b6ab80292
-title: Longest increasing subsequence
+title: 最长递增子序列
 challengeType: 1
 forumTopicId: 385272
 dashedName: longest-increasing-subsequence
@@ -10,55 +10,55 @@ dashedName: longest-increasing-subsequence
 
 The longest increasing subsequence problem is to find a subsequence of a given sequence in which the subsequence's elements are in sorted order, lowest to highest, and in which the subsequence is as long as possible. An example:
 
-For the following array:
+对于以下数组：
 
 ```js
 const array = [3, 10, 2, 1, 20];
 ```
 
-Longest increasing sequence is:
+最长递增序列为：
 
 $\\{3, 10, 20\\}$
 
 # --instructions--
 
-Write a function that takes an array of numbers as a parameter and returns the longest increasing subsequence.
+编写一个函数，将数字数组作为参数并返回最长的递增子序列。
 
-It is guaranteed that every array will have a longest increasing subsequence.
+保证每个数组都有最长的递增子序列。
 
 # --hints--
 
-`findSequence` should be a function.
+`findSequence` 应该是一个函数。
 
 ```js
 assert(typeof findSequence == 'function');
 ```
 
-`findSequence([3, 10, 2, 1, 20])` should return a array.
+`findSequence([3, 10, 2, 1, 20])` 应该返回一个数组。
 
 ```js
 assert(Array.isArray(findSequence([3, 10, 2, 1, 20])));
 ```
 
-`findSequence([3, 10, 2, 1, 20])` should return `[3, 10, 20]`.
+`findSequence([3, 10, 2, 1, 20])` 应该返回 `[3, 10, 20]`。
 
 ```js
 assert.deepEqual(findSequence([3, 10, 2, 1, 20]), [3, 10, 20]);
 ```
 
-`findSequence([2, 7, 3, 5, 8])` should return `[2, 3, 5, 8]`.
+`findSequence([2, 7, 3, 5, 8])` 应该返回 `[2, 3, 5, 8]`。
 
 ```js
 assert.deepEqual(findSequence([2, 7, 3, 5, 8]), [2, 3, 5, 8]);
 ```
 
-`findSequence([2, 6, 4, 5, 1])` should return `[2, 4, 5]`.
+`findSequence([2, 6, 4, 5, 1])` 应该返回 `[2, 4, 5]`。
 
 ```js
 assert.deepEqual(findSequence([2, 6, 4, 5, 1]), [2, 4, 5]);
 ```
 
-`findSequence([10, 22, 9, 33, 21, 50, 60, 80])` should return `[10, 22, 33, 50, 60, 80]`.
+`findSequence([10, 22, 9, 33, 21, 50, 60, 80])` 应该返回 `[10, 22, 33, 50, 60, 80]`。
 
 ```js
 assert.deepEqual(findSequence([10, 22, 9, 33, 21, 50, 60, 80]), [
@@ -71,7 +71,7 @@ assert.deepEqual(findSequence([10, 22, 9, 33, 21, 50, 60, 80]), [
 ]);
 ```
 
-`findSequence([0, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15])` should return `[0, 2, 6, 9, 11, 15`.
+`findSequence([0, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15])` 应该返回 `[0, 2, 6, 9, 11, 15`。
 
 ```js
 assert.deepEqual(

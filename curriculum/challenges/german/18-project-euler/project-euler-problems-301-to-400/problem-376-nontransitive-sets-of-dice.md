@@ -1,6 +1,6 @@
 ---
 id: 5900f4e51000cf542c50fff7
-title: 'Problem 376: Nontransitive sets of dice'
+title: 'Problem 376: Intransitives Würfel-Set'
 challengeType: 1
 forumTopicId: 302038
 dashedName: problem-376-nontransitive-sets-of-dice
@@ -14,7 +14,7 @@ $$\begin{array}{}   \text{Die A: } & 1 & 4 & 4 & 4 & 4 & 4 \\\\
   \text{Die B: } & 2 & 2 & 2 & 5 & 5 & 5 \\\\   \text{Die C: } & 3 & 3 & 3 & 3 & 3 & 6 \\\\
 \end{array}$$
 
-A game is played by two players picking a die in turn and rolling it. The player who rolls the highest value wins.
+Ein Spiel wird von zwei Spielern gespielt, die einen Würfel nehmen und ihn werfen. Der Spieler, der den höchsten Wert wirft, gewinnt.
 
 If the first player picks die $A$ and the second player picks die $B$ we get
 
@@ -28,16 +28,16 @@ If the first player picks die $C$ and the second player picks die $A$ we get
 
 $P(\text{second player wins}) = \frac{25}{36} > \frac{1}{2}$
 
-So whatever die the first player picks, the second player can pick another die and have a larger than 50% chance of winning. A set of dice having this property is called a nontransitive set of dice.
+So whatever die the first player picks, the second player can pick another die and have a larger than 50% chance of winning. Ein Würfelpaar, das diese Eigenschaft hat, wird als intransitive Würfel bezeichnet.
 
-We wish to investigate how many sets of nontransitive dice exist. We will assume the following conditions:
+Wir wollen untersuchen, wie viele Reihen von intransitiven Würfeln es gibt. We will assume the following conditions:
 
 - There are three six-sided dice with each side having between 1 and $N$ pips, inclusive.
 - Dice with the same set of pips are equal, regardless of which side on the die the pips are located.
 - The same pip value may appear on multiple dice; if both players roll the same value neither player wins.
-- The sets of dice $\\{A, B, C\\}$, $\\{B, C, A\\}$ and $\\{C, A, B\\}$ are the same set.
+- Die Würfel-Sets $\\{A, B, C\\}$, $\\{B, C, A\\}$ und $\\{C, A, B\\}$ sind die gleichen Sets.
 
-For $N = 7$ we find there are 9780 such sets.
+Für $N = 7$ gibt es 9780 Sätze.
 
 How many are there for $N = 30$?
 

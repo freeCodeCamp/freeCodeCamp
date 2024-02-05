@@ -1,6 +1,6 @@
 ---
 id: 5900f4d61000cf542c50ffe9
-title: 'Problem 362: Squarefree factors'
+title: 'Problem 362: Quadratfreie Faktoren'
 challengeType: 1
 forumTopicId: 302023
 dashedName: problem-362-squarefree-factors
@@ -14,9 +14,9 @@ Consider the number 54.
 
 $$54, 2 × 27, 3 × 18, 6 × 9, 3 × 3 × 6, 2 × 3 × 9 \text{ and } 2 × 3 × 3 × 3$$
 
-If we require that the factors are all squarefree only two ways remain: $3 × 3 × 6$ and $2 × 3 × 3 × 3$.
+Wenn wir voraussetzen, dass die Faktoren alle quadratfrei sind, bleiben nur zwei Möglichkeiten: $3 × 3 × 6$ und $2 × 3 × 3 × 3$.
 
-Let's call $Fsf(n)$ the number of ways $n$ can be factored into one or more squarefree factors larger than 1, so $Fsf(54) = 2$.
+Nennen wir $Fsf(n)$ die Anzahl der Möglichkeiten, wie $n$ in einen oder mehrere quadratfreie Faktoren größer als 1 zerlegt werden kann, also $Fsf(54) = 2$.
 
 Let $S(n)$ be $\sum Fsf(k)$ for $k = 2$ to $n$.
 

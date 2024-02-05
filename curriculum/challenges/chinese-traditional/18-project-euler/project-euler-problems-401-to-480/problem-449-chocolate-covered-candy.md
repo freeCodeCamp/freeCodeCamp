@@ -1,6 +1,6 @@
 ---
 id: 5900f52d1000cf542c510040
-title: 'Problem 449: Chocolate covered candy'
+title: '問題449：巧克力糖果'
 challengeType: 1
 forumTopicId: 302121
 dashedName: problem-449-chocolate-covered-candy
@@ -16,7 +16,7 @@ If $a = 1$ mm and $b = 1$ mm, the amount of chocolate required is $\frac{28}{3} 
 
 If $a = 2$ mm and $b = 1$ mm, the amount of chocolate required is approximately 60.35475635 mm<sup>3</sup>.
 
-Find the amount of chocolate in mm<sup>3</sup> required if $a = 3$ mm and $b = 1$ mm. Give your answer as the number rounded to 8 decimal places behind the decimal point.
+Find the amount of chocolate in mm<sup>3</sup> required if $a = 3$ mm and $b = 1$ mm. 將數字舍入到小數點後面的小數點後8位。
 
 # --hints--
 

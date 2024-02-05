@@ -1,6 +1,6 @@
 ---
 id: 5e6dd1278e6ca105cde40ea9
-title: Longest common subsequence
+title: Найдовша спільна підпослідовність
 challengeType: 1
 forumTopicId: 385271
 dashedName: longest-common-subsequence
@@ -14,57 +14,57 @@ The **longest common subsequence** (or **LCS**) of groups A and B is the longest
 
 <u>12</u>245<u>3</u>332<u>4</u>
 
-For a string example, consider the sequences `thisisatest` and `testing123testing`. An LCS would be `tsitest`:
+На прикладі рядка розглянемо послідовності `thisisatest` та `testing123testing`. LCS буде `tsitest`:
 
 <u>t</u>hi<u>si</u>sa<u>test</u>
 
 <u>t</u>e<u>s</u>t<u>i</u>ng123<u>test</u>ing.
 
-Your code only needs to deal with strings.
+Ваш код має складатися тільки з рядків.
 
 # --instructions--
 
-Write a case-sensitive function that returns the LCS of two strings. You don't need to show multiple LCS's.
+Напишіть чутливу до регістру символів функцію, яка повертає LCS двох рядків. Вам не потрібно показувати багато LCS.
 
 # --hints--
 
-`lcs` should be a function.
+`lcs` має бути функцією.
 
 ```js
 assert(typeof lcs == 'function');
 ```
 
-`lcs("thisisatest", "testing123testing")` should return a string.
+`lcs("thisisatest", "testing123testing")` повинен вивести рядок.
 
 ```js
 assert(typeof lcs('thisisatest', 'testing123testing') == 'string');
 ```
 
-`lcs("thisisatest", "testing123testing")` should return `"tsitest"`.
+`lcs("thisisatest", "testing123testing")` повинен повернути `"tsitest"`.
 
 ```js
 assert.equal(lcs('thisisatest', 'testing123testing'), 'tsitest');
 ```
 
-`lcs("ABCDGH", "AEDFHR")` should return `"ADH"`.
+`lcs("ABCDGH", "AEDFHR")` повинен повернути `"ADH"`.
 
 ```js
 assert.equal(lcs('ABCDGH', 'AEDFHR'), 'ADH');
 ```
 
-`lcs("AGGTAB", "GXTXAYB")` should return `"GTAB"`.
+`lcs("AGGTAB", "GXTXAYB")` повинен повернути `"GTAB"`.
 
 ```js
 assert.equal(lcs('AGGTAB', 'GXTXAYB'), 'GTAB');
 ```
 
-`lcs("BDACDB", "BDCB")` should return `"BDCB"`.
+`lcs("BDACDB", "BDCB")` повинен повернути `"BDCB"`.
 
 ```js
 assert.equal(lcs('BDACDB', 'BDCB'), 'BDCB');
 ```
 
-`lcs("ABAZDC", "BACBAD")` should return `"ABAD"`.
+`lcs("ABAZDC", "BACBAD")` повинен повернути `"ABAD"`.
 
 ```js
 assert.equal(lcs('ABAZDC', 'BACBAD'), 'ABAD');

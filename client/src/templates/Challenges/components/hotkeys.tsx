@@ -23,7 +23,7 @@ import {
   challengeTestsSelector
 } from '../redux/selectors';
 import './hotkeys.css';
-import { isFinalProject } from '../../../../../shared/config/challenge-types';
+import { isProjectBased } from '../../../utils/curriculum-layout';
 import type { EditorProps } from '../classic/editor';
 
 const mapStateToProps = createSelector(
@@ -121,7 +121,7 @@ function Hotkeys({
       if (
         usesMultifileEditor &&
         typeof challengeType == 'number' &&
-        !isFinalProject(challengeType)
+        !isProjectBased(challengeType)
       ) {
         if (testsArePassing) {
           submitChallenge();
@@ -167,7 +167,7 @@ function Hotkeys({
             }
           },
           showShortcuts: (keyEvent?: KeyboardEvent) => {
-            if (!canFocusEditor && keyEvent?.shiftKey && keyEvent.key === '?') {
+            if (!canFocusEditor && keyEvent?.key === '?') {
               openShortcutsModal();
             }
           }

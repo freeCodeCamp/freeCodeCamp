@@ -209,6 +209,8 @@ const mountFrame =
     };
   };
 
+const actRE = new RegExp(/act\(\.\.\.\) is not supported in production builds/);
+
 const updateProxyConsole =
   (proxyLogger?: ProxyLogger) => (frameContext: Context) => {
     // window does not exist if the preview is hidden, so we have to check.
@@ -248,7 +250,9 @@ const updateProxyConsole =
       frameContext.window.console.error = function proxyWarn(
         ...args: string[]
       ) {
-        proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
+        if (args.every(arg => !actRE.test(arg))) {
+          proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
+        }
         return oldError(...(args as []));
       };
     }

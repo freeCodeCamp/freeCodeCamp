@@ -1,6 +1,6 @@
 ---
 id: 5900f4da1000cf542c50ffed
-title: 'Problem 366: Stone Game III'
+title: 'Завдання 366: гра в камені III'
 challengeType: 1
 forumTopicId: 302027
 dashedName: problem-366-stone-game-iii
@@ -8,37 +8,37 @@ dashedName: problem-366-stone-game-iii
 
 # --description--
 
-Two players, Anton and Bernhard, are playing the following game.
+В гру грають двоє гравців, Антон та Бернгард.
 
-There is one pile of $n$ stones.
+Вони використовують купку з $n$ каменів.
 
-The first player may remove any positive number of stones, but not the whole pile.
+Перший гравець може взяти будь-яку додатну кількість каменів, але не всю купу.
 
-Thereafter, each player may remove at most twice the number of stones his opponent took on the previous move.
+Потім кожен гравець може забрати щонайбільше вдвічі більше каменів ніж його суперник в попередньому ході.
 
-The player who removes the last stone wins.
+Виграє той, хто забрав останній камінь.
 
-E.g. $n = 5$
+Наприклад, $n = 5$
 
-If the first player takes anything more than one stone the next player will be able to take all remaining stones.
+Якщо перший гравець бере більше одного каменя, наступний гравець зможе забрати все, що залишиться.
 
-If the first player takes one stone, leaving four, his opponent will take also one stone, leaving three stones.
+Якщо перший гравець бере один камінь, залишаючи чотири, то його суперник також візьме один камінь, залишивши три.
 
-The first player cannot take all three because he may take at most $2 \times 1 = 2$ stones. So let's say he also takes one stone, leaving 2.
+Перший гравець не може забрати всі три, адже він може взяти не більше $2 \times 1 = 2$ каменів. Скажімо, він також бере один камінь, залишаючи 2.
 
-The second player can take the two remaining stones and wins.
+Другий гравець може забрати два камені, які залишились, та переможе.
 
-So 5 is a losing position for the first player.
+Тому 5 є програшною позицією для першого гравця.
 
-For some winning positions there is more than one possible move for the first player.
+Для деяких виграшних позицій існує більше одного можливого ходу для першого гравця.
 
-E.g. when $n = 17$ the first player can remove one or four stones.
+Наприклад, якщо $n = 17$, то перший гравець може взяти один або чотири камені.
 
-Let $M(n)$ be the maximum number of stones the first player can take from a winning position at his first turn and $M(n) = 0$ for any other position.
+Нехай $M(n)$ буде максимальною кількістю каменів, які може взяти перший гравець для виграшної позиції за перший хід. Тоді $M(n) = 0$ для будь-якої іншої позиції.
 
-$\sum M(n)$ for $n ≤ 100$ is 728.
+$\sum M(n)$ за умови $n ≤ 100$ дорівнює 728.
 
-Знайдіть $\sum M(n)$ за умови $n ≤ {10}^{18}$. Give your answer modulo ${10}^8$.
+Знайдіть $\sum M(n)$ за умови $n ≤ {10}^{18}$. Надайте відповідь за модулем ${10}^8$.
 
 # --hints--
 

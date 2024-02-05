@@ -24,7 +24,7 @@ Let $f(k)$ be the number of winning moves of the first player (i.e. the moves fo
 
 For example, $f(5) = 1$ and $f(10) = 17$.
 
-Find $f(10000)$. Give the last 18 digits of your answer.
+Encuentra $f(10000)$. Give the last 18 digits of your answer.
 
 # --hints--
 

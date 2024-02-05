@@ -1,6 +1,6 @@
 ---
 id: 594db4d0dedb4c06a2a4cefd
-title: Babbage problem
+title: Babbage-Problem
 challengeType: 1
 forumTopicId: 302229
 dashedName: babbage-problem
@@ -12,26 +12,26 @@ Charles Babbage, looking ahead to the sorts of problems his Analytical Engine wo
 
 <blockquote>
   What is the smallest positive integer whose square ends in the digits 269,696?
-  <footer style='margin-left: 2em;'>Babbage, letter to Lord Bowden, 1837; see Hollingdale and Tootill, <i>Electronic Computers</i>, second edition, 1970, p. 125.</footer>
+  <footer style='margin-left: 2em;'>Babbage, Brief an Lord Bowden, 1837; siehe Hollingdale und Tootill, <i>Electronic Computers</i>, zweite Ausgabe, 1970, S. 125.</footer>
 </blockquote>
 
-He thought the answer might be 99,736, whose square is 9,947,269,696; but he couldn't be certain.
+Er dachte, die Antwort könnte 99.736 sein, dessen Quadrat 9,947,269,696 ist, aber er konnte sich nicht sicher sein.
 
-The task is to find out if Babbage had the right answer.
+Die Aufgabe besteht darin, herauszufinden, ob Babbage die richtige Antwort hatte.
 
 # --instructions--
 
-Implement a function to return the lowest integer that satisfies the Babbage problem. If Babbage was right, return Babbage's number.
+Implementiere eine Funktion, um den niedrigsten Integer zurückzugeben, der das Babbage-Problem erfüllt. Wenn Babbage Recht hatte, gibt Babbages Zahl zurück.
 
 # --hints--
 
-`babbage` should be a function.
+`babbage` sollte eine Funktion sein.
 
 ```js
 assert(typeof babbage === 'function');
 ```
 
-`babbage(99736, 269696)` should not return 99736 (there is a smaller answer).
+`babbage(99736, 269696)` sollte nicht 99736 zurückgeben (es gibt eine geringere Antwort).
 
 ```js
 assert.equal(babbage(babbageAns, endDigits), answer);

@@ -1,6 +1,6 @@
 ---
 id: 644b6ad4fa8dfd600a9dff2c
-title: Step 25
+title: ステップ 25
 challengeType: 0
 dashedName: step-25
 ---
@@ -13,7 +13,7 @@ To divide numbers in JavaScript, use the division operator (`/`). For example:
 const quotient = 5 / 2; // 2.5
 ```
 
-In the example above, `5` is the <dfn>dividend</dfn>, or the number to be divided, and `2` is the <dfn>divisor</dfn>, or the number to divide by. The result, `2.5`, is called the <dfn>quotient</dfn>. The result, `2.5`, is called the <dfn>quotient</dfn>.
+In the example above, `5` is the <dfn>dividend</dfn>, or the number to be divided, and `2` is the <dfn>divisor</dfn>, or the number to divide by. The result, `2.5`, is called the <dfn>quotient</dfn>.
 
 Inside your `while` loop, create a variable named `quotient` and assign it the value of `input` divided by `2`.
 

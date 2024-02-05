@@ -11,7 +11,7 @@ dashedName: the-box-model-question-b
 
 ![Значок інспектора](https://cdn.statically.io/gh/TheOdinProject/curriculum/594984d7c9f9e744577f19ea475b3864e8cc7c91/html_css/v2/foundations/inspecting-html-and-css/imgs/01.png)
 
-Коли елемент обрано, вкладка стилів покаже всі застосовані стилі, а також усі змінені стилі (у вигляді закресленого тексту). Наприклад, якщо використати інспектора та натиснути на заголовок «Your Career in Web Development Starts Here» [домашньої сторінки TOP](https://www.theodinproject.com/), справа ви побачите всі стилі, які наразі застосовані до елемента:
+Коли елемент обрано, вкладка стилів покаже всі застосовані стилі, а також усі змінені стилі (у вигляді закресленого тексту). Наприклад, якщо використати інспектора та натиснути на заголовок «Your Career in Web Development Starts Here» [домашньої сторінки проєкту Odin](https://www.theodinproject.com/), справа ви побачите всі стилі, які наразі застосовані до елемента:
 
 ![Змінений стиль](https://cdn.statically.io/gh/TheOdinProject/curriculum/f8fd38fc62578d8e8368f5303126215a492847f0/foundations/html_css/inspecting-html-and-css/imgs/03.png)
 

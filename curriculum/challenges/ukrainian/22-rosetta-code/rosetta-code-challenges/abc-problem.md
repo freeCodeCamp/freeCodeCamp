@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339acc
-title: ABC Problem
+title: Проблема ABC
 challengeType: 1
 forumTopicId: 302220
 dashedName: abc-problem
@@ -34,60 +34,60 @@ You are given a collection of ABC blocks (e.g., childhood alphabet blocks). Ther
 
 # --instructions--
 
-Implement a function that takes a string (word) and determines whether the word can be spelled with the given collection of blocks.
+Реалізуйте функцію, яка бере рядок (слово) та визначає, чи можна написати слово з даного набору кубиків.
 
-Some rules to keep in mind:
+Правила, які треба добре запам'ятати:
 
 <ul>
-  <li>Once a letter on a block is used, that block cannot be used again.</li>
-  <li>The function should be case-insensitive.</li>
+  <li>Якщо літера на блоці вже використана, цей блок не можна використати ще раз.</li>
+  <li>Функція не має бути чутливою до регістру.</li>
 </ul>
 
 # --hints--
 
-`canMakeWord` should be a function.
+`canMakeWord` має бути функцією.
 
 ```js
 assert(typeof canMakeWord === 'function');
 ```
 
-`canMakeWord` should return a boolean.
+`canMakeWord` повинен повернути логічний тип даних.
 
 ```js
 assert(typeof canMakeWord('hi') === 'boolean');
 ```
 
-`canMakeWord("bark")` should return true.
+`canMakeWord("bark")` має повернути true.
 
 ```js
 assert(canMakeWord(words[0]));
 ```
 
-`canMakeWord("BooK")` should return false.
+`canMakeWord("BooK")` має повернути false.
 
 ```js
 assert(!canMakeWord(words[1]));
 ```
 
-`canMakeWord("TReAT")` should return true.
+`canMakeWord("TReAT")` має повернути true.
 
 ```js
 assert(canMakeWord(words[2]));
 ```
 
-`canMakeWord("COMMON")` should return false.
+`canMakeWord("COMMON")` має повернути false.
 
 ```js
 assert(!canMakeWord(words[3]));
 ```
 
-`canMakeWord("squAD")` should return true.
+`canMakeWord("squAD")` має повернути true.
 
 ```js
 assert(canMakeWord(words[4]));
 ```
 
-`canMakeWord("conFUSE")` should return true.
+`canMakeWord("conFUSE")` має повернути true.
 
 ```js
 assert(canMakeWord(words[5]));

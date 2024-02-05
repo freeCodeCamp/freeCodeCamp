@@ -39,7 +39,7 @@ Tu código no debe usar el método `splice`.
 assert(!code.match(/\.?[\s\S]*?splice/g));
 ```
 
-You should not mutate the original array passed to the function.
+No debes mutar el array original pasado a la función.
 
 ```js
 assert.deepEqual(_inputCities, ["Chicago", "Delhi", "Islamabad", "London", "Berlin"]);

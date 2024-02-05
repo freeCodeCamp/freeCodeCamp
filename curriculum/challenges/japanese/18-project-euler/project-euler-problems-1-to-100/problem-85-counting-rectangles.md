@@ -1,6 +1,6 @@
 ---
 id: 5900f3c11000cf542c50fed4
-title: 'Problem 85: Counting rectangles'
+title: '問題 85: 長方形を数え上げる'
 challengeType: 1
 forumTopicId: 302199
 dashedName: problem-85-counting-rectangles
@@ -8,45 +8,45 @@ dashedName: problem-85-counting-rectangles
 
 # --description--
 
-By counting carefully it can be seen that a rectangular grid measuring 3 by 2 contains eighteen rectangles:
+3 x 2 の長方形格子をよく見ながら数えると、18 個の長方形が見つかります。
 
-<img class="img-responsive center-block" alt="a diagram of the different rectangles found within a 3 by 2 rectangular grid" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="3 x 2 の長方形格子に含まれるさまざまな長方形の図" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px;" />
 
-Although there may not exists a rectangular grid that contains exactly `n` rectangles, find the area of the grid with the nearest solution.
+ちょうど `n` 個の長方形が含まれる長方形格子は存在しないかもしれませんが、最も近い解を持つ格子の面積を求めなさい。
 
 # --hints--
 
-`countingRectangles(18)` should return a number.
+`countingRectangles(18)` は数値を返す必要があります。
 
 ```js
 assert(typeof countingRectangles(18) === 'number');
 ```
 
-`countingRectangles(18)` should return `6`.
+`countingRectangles(18)` は `6` を返す必要があります。
 
 ```js
 assert.strictEqual(countingRectangles(18), 6);
 ```
 
-`countingRectangles(250)` should return `22`.
+`countingRectangles(250)` は `22` を返す必要があります。
 
 ```js
 assert.strictEqual(countingRectangles(250), 22);
 ```
 
-`countingRectangles(50000)` should return `364`.
+`countingRectangles(50000)` は `364` を返す必要があります。
 
 ```js
 assert.strictEqual(countingRectangles(50000), 364);
 ```
 
-`countingRectangles(1000000)` should return `1632`.
+`countingRectangles(1000000)` は `1632` を返す必要があります。
 
 ```js
 assert.strictEqual(countingRectangles(1000000), 1632);
 ```
 
-`countingRectangles(2000000)` should return `2772`.
+`countingRectangles(2000000)` は `2772` を返す必要があります。
 
 ```js
 assert.strictEqual(countingRectangles(2000000), 2772);

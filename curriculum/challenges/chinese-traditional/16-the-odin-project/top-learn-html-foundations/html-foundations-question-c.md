@@ -7,46 +7,46 @@ dashedName: html-foundations-question-c
 
 # --description--
 
-To demonstrate an HTML boilerplate, you first need an HTML file to work with.
+要演示一個 HTML 模板，你首先需要一個 HTML 文件用於操作。
 
-Create a new folder on your computer and name it `html-boilerplate`. Within that folder create a new file and name it `index.html`.
+在你的計算機上創建一個新文件夾，並命名它爲 `html-boilerplate`。 在該文件夾中創建一個新文件，命名爲 `index.html`。
 
-You’re probably already familiar with a lot of different types of files, for example doc, pdf, and image files.
+你可能已經熟悉了許多不同類型的文件，例如文檔、pdf 和圖像文件。
 
-To let the computer know you want to create an HTML file, you need to append the filename with the `.html` extension as you have done when creating the `index.html` file.
+要讓計算機知道你想要創建一個 HTML 文件，你需要在文件名添加後綴 `.html`，如你在創建 `index.html` 文件時所做的那樣。
 
-It is worth noting that you named your HTML file index. You should always name the HTML file that will contain the homepage of your websites `index.html`. This is because web servers will by default look for an index.html page when users land on your websites - and not having one will cause big problems.
+值得注意的是，你命名了你的 HTML 文件索引。 你應該總是將包含你的網站主頁的 HTML 文件命名爲 `index.html`。 This is because web servers will by default look for an `index.html` page when users land on your websites - and not having one will cause big problems.
 
-## The DOCTYPE
+## DOCTYPE
 
-Every HTML page starts with a doctype declaration. The doctype’s purpose is to tell the browser what version of HTML it should use to render the document. The latest version of HTML is HTML5, and the doctype for that version is simply `<!DOCTYPE html>`.
+每個 HTML 頁面都以文檔類型聲明開始。 文檔類型的目的是告訴瀏覽器它應該使用什麼版本的 HTML 來渲染文檔。 最新版本的 HTML 是 HTML5，該版本的文檔類型是 `<!DOCTYPE html>`。
 
-The doctypes for older versions of HTML were a bit more complicated. For example, this is the doctype declaration for HTML4:
+舊版本的 HTML 文檔類型比較複雜。 例如：HTML4 的文檔類型聲明是
 
 ```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 ```
 
-However, you probably won’t ever want to be using an older version of HTML, and so you’ll always use `<!DOCTYPE html>`.
+然而，你可能不會想要使用舊版本的 HTML，因此你會總是使用 `<!DOCTYPE html>`。
 
-Open the `index.html` file created earlier in your text editor and add `<!DOCTYPE html>` to the very first line.
+打開你的文本編輯器早些時候創建的 `index.html` 文件，並將 `<!DOCTYPE html>` 添加到第一行。
 
 # --question--
 ## --text--
 
-What is the purpose of the `DOCTYPE` declaration?
+`DOCTYPE` 聲明的目的是什麼？
 
 ## --answers--
 
-It tells the browser which version of HTML to use to render the document.
+它告訴瀏覽器使用哪個版本的 HTML 來渲染文檔。
 
 ---
 
-It tells the browser that this document uses JavaScript.
+它告訴瀏覽器此文檔使用 JavaScript。
 
 ---
 
-It tells the browser the title of the document.
+它告訴瀏覽器文檔的標題。
 
 
 ## --video-solution--

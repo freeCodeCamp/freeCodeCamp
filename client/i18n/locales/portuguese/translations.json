@@ -198,6 +198,7 @@
     "sound-mode": "Adiciona o som agradável de uma guitarra acústica em todo o site. Você receberá feedback musical ao digitar no editor, completar desafios, solicitar certificações e muito mais.",
     "sound-volume": "Volume do modo fogueira:",
     "scrollbar-width": "Largura da barra de rolagem do editor",
+    "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
       "contains invalid characters": "O nome de usuário \"{{username}}\" contém caracteres inválidos",
       "is too short": "O nome de usuário \"{{username}}\" é muito curto",

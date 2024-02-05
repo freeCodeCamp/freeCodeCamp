@@ -1,6 +1,6 @@
 ---
 id: 5900f4a71000cf542c50ffba
-title: 'Problem 315: Digital root clocks'
+title: 'Завдання 315: годинники з цифровими коренями'
 challengeType: 1
 forumTopicId: 301971
 dashedName: problem-315-digital-root-clocks
@@ -8,41 +8,41 @@ dashedName: problem-315-digital-root-clocks
 
 # --description--
 
-<img class="img-responsive center-block" alt="animation of Sam's and Max's clocks calculating digital roots starting from 137" src="https://cdn.freecodecamp.org/curriculum/project-euler/digital-root-clocks.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="анімація годинників Сема і Макса, що обчислюють цифрові корені, починаючи зі 137" src="https://cdn.freecodecamp.org/curriculum/project-euler/digital-root-clocks.gif" style="background-color: white; padding: 10px;" />
 
-Sam and Max are asked to transform two digital clocks into two "digital root" clocks.
+Сему і Максу запропонували перетворити два звичайних електронних годинники на два годинники «цифрових коренів».
 
-A digital root clock is a digital clock that calculates digital roots step by step.
+Годинник цифрових коренів — це годинник, який розраховує цифрові корені крок за кроком.
 
-When a clock is fed a number, it will show it and then it will start the calculation, showing all the intermediate values until it gets to the result. For example, if the clock is fed the number 137, it will show: `137` → `11` → `2` and then it will go black, waiting for the next number.
+Якщо годиннику дати число, воно спочатку відображається на циферблаті, а потім годинник починає розрахунки, показуючи усі проміжні значення, поки не покаже результат. Наприклад, якщо годиннику дати число 137, він покаже `137` → `11` → `2`, після чого циферблат стане чорним, доки не введуть нове число.
 
-Every digital number consists of some light segments: three horizontal (top, middle, bottom) and four vertical (top-left, top-right, bottom-left, bottom-right). Number `1` is made of vertical top-right and bottom-right, number `4` is made by middle horizontal and vertical top-left, top-right and bottom-right. Number `8` lights them all.
+Кожна цифра складається з певних світлових елементів: трьох горизонтальних (верхній, середній, нижній) і чотирьох вертикальних (верхній зліва, верхній справа, нижній зліва, нижній справа). Цифра `1` складається з вертикальних елементів (верхній справа та нижній справа), а цифра `4` складається з горизонтального (середнього) та вертикальних (верхній зліва, верхній справа та нижній справа) елементів. Для цифри `8` світяться всі елементи.
 
-The clocks consume energy only when segments are turned on/off. To turn on a `2` will cost 5 transitions, while a `7` will cost only 4 transitions.
+Годинники споживають енергію лише тоді, коли хоча б деякі елементи вмикаються/вимикаються. Для цифри `2` необхідно п’ять переходів, а для `7` — лише чотири.
 
-Sam and Max built two different clocks.
+Сем і Макс створили два різних годинники.
 
-Sam's clock is fed e.g. number 137: the clock shows `137`, then the panel is turned off, then the next number (`11`) is turned on, then the panel is turned off again and finally the last number (`2`) is turned on and, after some time, off.
+Скажімо, годиннику Сема дали число 137. Спочатку годинник показує `137`, потім циферблат вимикається, показується інше число (`11`), циферблат знову вимикається та зрештою показується кінцеве число (`2`). Через певний час годинник вимикається.
 
-For the example, with number 137, Sam's clock requires:
+Для числа 137 годиннику Сема необхідно:
 
-- `137`: $(2 + 5 + 4) × 2 = 22$ transitions (`137` on/off).
-- `11`: $(2 + 2) × 2 = 8$ transitions (`11` on/off).
-- `2`: $(5) × 2 = 10$ transitions (`2` on/off).
+- `137`: $(2 + 5 + 4) × 2 = 22$ переходів (`137` увімкнено/вимкнено).
+- `11`: $(2 + 2) × 2 = 8$ переходів (`11` увімкнено/вимкнено).
+- `2`: $(5) × 2 = 10$ переходів (`2` увімкнено/вимкнено).
 
-For a grand total of 40 transitions.
+Всього 40 переходів.
 
-Max's clock works differently. Instead of turning off the whole panel, it is smart enough to turn off only those segments that won't be needed for the next number.
+Годинник Макса працює по-іншому. Замість того, щоб вимикати весь циферблат, він досить розумний, щоб вимкнути лише ті елементи, які не знадобляться для наступного числа.
 
-For number 137, Max's clock requires:
+Для числа 137 годиннику Макса необхідно:
 
-- `137` : $2 + 5 + 4 = 11$ transitions (`137` on), $7$ transitions (to turn off the segments that are not needed for number `11`).
-- `11` : $0$ transitions (number `11` is already turned on correctly), $3$ transitions (to turn off the first `1` and the bottom part of the second `1`; the top part is common with number `2`).
-- `2` : $4$ transitions (to turn on the remaining segments in order to get a `2`), $5$ transitions (to turn off number `2`).
+- `137` : $2 + 5 + 4 = 11$ переходів (`137` увімкнено), $7$ переходів (щоб вимкнути елементи, які не потрібні для `11`).
+- `11` : $0$ переходів (число `11` вже увімкнено правильно), $3$ переходи (щоб вимкнути першу цифру `1` та нижню частину другої `1`; верхня частина залишається для цифри `2`).
+- `2` : $4$ переходи (щоб увімкнути інші елементи, потрібні для `2`), $5$ переходів (щоб вимкнути `2`).
 
-For a grand total of 30 transitions.
+Всього 30 переходів.
 
-Of course, Max's clock consumes less power than Sam's one. The two clocks are fed all the prime numbers between $A = {10}^7$ and $B = 2 × {10}^7$. Find the difference between the total number of transitions needed by Sam's clock and that needed by Max's one.
+Звичайно, годинник Макса витрачає менше енергії ніж годинник Сема. Обидва годинники використовують всі прості числа в межах $A = {10}^7$ та $B = 2 × {10}^7$. Знайдіть різницю між загальною кількістю переходів, необхідних для годинників Сема та Макса.
 
 # --hints--
 

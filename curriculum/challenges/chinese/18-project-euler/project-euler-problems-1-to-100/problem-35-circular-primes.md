@@ -1,6 +1,6 @@
 ---
 id: 5900f38f1000cf542c50fea2
-title: 'Problem 35: Circular primes'
+title: '问题35：循环素数'
 challengeType: 1
 forumTopicId: 302009
 dashedName: problem-35-circular-primes
@@ -10,29 +10,29 @@ dashedName: problem-35-circular-primes
 
 The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.
 
-There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
+`circularPrimes(100)`应该返回13。
 
-How many circular primes are there below `n`, whereas 100 ≤ `n` ≤ 1000000?
+`circularPrimes(100000)`应该返回43。
 
-**Note:**
+**注意:**
 
-Circular primes individual rotation can exceed `n`.
+`circularPrimes(500000)`应该返回49。
 
 # --hints--
 
-`circularPrimes(100)` should return a number.
+`circularPrimes(750000)`应该返回49。
 
 ```js
 assert(typeof circularPrimes(100) === 'number');
 ```
 
-`circularPrimes(100)` should return 13.
+`circularPrimes(1000000)`应该返回55。
 
 ```js
 assert(circularPrimes(100) == 13);
 ```
 
-`circularPrimes(100000)` should return 43.
+`circularPrimes(250000)`应该返回45。
 
 ```js
 assert(circularPrimes(100000) == 43);

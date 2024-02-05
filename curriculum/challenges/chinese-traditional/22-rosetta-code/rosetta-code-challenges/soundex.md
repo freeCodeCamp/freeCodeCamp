@@ -8,96 +8,96 @@ dashedName: soundex
 
 # --description--
 
-**Soundex Algorithm** deals with the *intentions* of the words. It creates a representation for similar sounding words. 
+**Soundex Algorithm** deals with the *intentions* of the words. It creates a representation for similar sounding words.
 
-It is used for searching <em>names</em> and <em>addresses</em>. This means that the person who filled in the <em>name</em>, can focus on how it sounds instead of correcting the spelling of <em>names</em>.
+用於搜索 <em>name</em> 和 <em>地址</em>。 這意味着填寫 <em>name</em>的人， 可以專注於如何聽起來而不是更正 <em>name</em> 的拼寫。
 
-For example: 
+例如：
 
-If you are hearing the name `Quenci` for the first time, and misspelled it, you will get **Soundex** code `Q520`. 
+如果你第一次聽到名字 `Quenci` 並且寫錯了它， 您將得到 **Soundex** 代碼 `Q520`
 
-When you spell the name `Quincy` correctly next time, you will still get the same code `Q520`, which means you can link multiple name pronunciations into the same <em>person</em> without the need for adding every spelling. 
+當你下次正確拼寫名稱 `Quincy` 時，你仍然會得到相同的代碼 `Q520`這意味着您可以將多個名稱發音鏈接到同一個 <em>人員</em> ，而無需添加每個拼寫。
 
-Here is the rules: 
+以下是規則：
 
 <ul>
   <li>If a vowel (A, E, I, O, U) separates two consonants that have the same soundex code, the consonant to the right of the vowel is coded. Tymczak is coded as T-522 (T, 5 for the M, 2 for the C, Z ignored (see "Side-by-Side" rule above), 2 for the K). Since the vowel "A" separates the Z and K, the K is coded.</li>
-  <li>If "H" or "W" separate two consonants that have the same soundex code, the consonant to the right of the vowel is not coded. Example: Ashcraft is coded A-261 (A, 2 for the S, C ignored, 6 for the R, 1 for the F). It is not coded A-226.</li>
+  <li>如果“H”或“W”分隔具有相同soundex代碼的兩個輔音，則元音右側的輔音不被編碼。 例如：Ashcraft 的編碼爲 A-261（A，S 爲 2，忽略 C，R 爲 6，F 爲 1）。 它的編碼不是 A-226。</li>
 </ul>
 
 # --instructions--
 
-Write a function that takes a string as a parameter and returns the encoded string.
+編寫一個函數，該函數將字符串作爲參數並返回編碼後的字符串。
 
 # --hints--
 
-`soundex` should be a function.
+`soundex` 應該是一個函數。
 
 ```js
 assert(typeof soundex == 'function');
 ```
 
-`soundex("Soundex")` should return a string.
+`soundex("Soundex")` 應該返回一個字符串。
 
 ```js
 assert(typeof soundex('Soundex') == 'string');
 ```
 
-`soundex("Soundex")` should return `"S532"`.
+`soundex("Soundex")` 應該返回 `"S532"`。
 
 ```js
 assert.equal(soundex('Soundex'), 'S532');
 ```
 
-`soundex("Example")` should return `"E251"`.
+`soundex("Example")` 應該返回 `"E251"`。
 
 ```js
 assert.equal(soundex('Example'), 'E251');
 ```
 
-`soundex("Sownteks")` should return `"S532"`.
+`soundex("Sownteks")` 應該返回 `"S532"`。
 
 ```js
 assert.equal(soundex('Sownteks'), 'S532');
 ```
 
-`soundex("Ekzampul")` should return `"E251"`.
+`soundex("Ekzampul")` 應該返回 `"E251"`。
 
 ```js
 assert.equal(soundex('Ekzampul'), 'E251');
 ```
 
-`soundex("Euler")` should return `"E460"`.
+`soundex("Euler")` 應該返回 `"E460"`。
 
 ```js
 assert.equal(soundex('Euler'), 'E460');
 ```
 
-`soundex("Gauss")` should return `"G200"`.
+`soundex("Gauss")` 應該返回 `"G200"`。
 
 ```js
 assert.equal(soundex('Gauss'), 'G200');
 ```
 
-`soundex("Hilbert")` should return `"H416"`.
+`soundex("Hilbert")` 應該返回 `"H416"`。
 
 ```js
 assert.equal(soundex('Hilbert'), 'H416');
 ```
 
-`soundex("Knuth")` should return `"K530"`.
+`soundex("Knuth")` 應該返回 `"K530"`。
 
 ```js
 assert.equal(soundex('Knuth'), 'K530');
 ```
 
-`soundex("Lloyd")` should return `"L300"`.
+`soundex("Lloyd")` 應該返回 `"L300"`。
 
 ```js
 assert.equal(soundex('Lloyd'), 'L300');
 ```
 
-`soundex("Lukasiewicz")` should return `"L222"`.
+`soundex("Lukasiewicz")` 應該返回 `"L222"`。
 
 ```js
 assert.equal(soundex('Lukasiewicz'), 'L222');

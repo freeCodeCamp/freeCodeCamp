@@ -1,6 +1,6 @@
 ---
 id: 5e6dd15004c88cf00d2a78b3
-title: Loop over multiple arrays simultaneously
+title: 同時循環多個數組
 challengeType: 1
 forumTopicId: 385279
 dashedName: loop-over-multiple-arrays-simultaneously
@@ -10,13 +10,13 @@ dashedName: loop-over-multiple-arrays-simultaneously
 
 Loop over multiple arrays and create a new array whose $i^{th}$ element is the concatenation of $i^{th}$ element of each of the given.
 
-For this example, if you are given this array of arrays:
+對於這個例子，如果你得到這個數組數組：
 
 ```js
 [ ["a", "b", "c"], ["A", "B", "C"], [1, 2, 3] ]
 ```
 
-the output should be:
+輸出應該是：
 
 ```js
 ["aA1","bB2","cC3"]
@@ -24,17 +24,17 @@ the output should be:
 
 # --instructions--
 
-Write a function that takes an array of arrays as a parameter and returns an array of strings satisfying the given description.
+編寫一個函數，將數組數組作爲參數並返回滿足給定描述的字符串數組。
 
 # --hints--
 
-`loopSimult` should be a function.
+`loopSimult` 應該是一個函數。
 
 ```js
 assert(typeof loopSimult == 'function');
 ```
 
-`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` should return a array.
+`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` 應該返回一個數組。
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` should return `["aA1", "bB2", "cC3"]`.
+`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` 應該返回 `["aA1", "bB2", "cC3"]`。
 
 ```js
 assert.deepEqual(
@@ -61,7 +61,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["c", "b", "c"], ["4", "5", "C"], [7, 7, 3]])` should return `["c47", "b57", "cC3"]`.
+`loopSimult([["c", "b", "c"], ["4", "5", "C"], [7, 7, 3]])` 應該返回 `["c47", "b57", "cC3"]`。
 
 ```js
 assert.deepEqual(
@@ -74,7 +74,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["a", "b", "c", "d"], ["A", "B", "C", "d"], [1, 2, 3, 4]])` should return `["aA1", "bB2", "cC3", "dd4"]`.
+`loopSimult([["a", "b", "c", "d"], ["A", "B", "C", "d"], [1, 2, 3, 4]])` 應該返回 `["aA1", "bB2", "cC3", "dd4"]`。
 
 ```js
 assert.deepEqual(
@@ -87,7 +87,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["a", "b"], ["A", "B"], [1, 2]])` should return `["aA1", "bB2"]`.
+`loopSimult([["a", "b"], ["A", "B"], [1, 2]])` 應該返回 `["aA1", "bB2"]`。
 
 ```js
 assert.deepEqual(
@@ -100,7 +100,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["b", "c"], ["B", "C"], [2, 3]])` should return `["bB2", "cC3"]`.
+`loopSimult([["b", "c"], ["B", "C"], [2, 3]])` 應該返回 `["bB2", "cC3"]`。
 
 ```js
 assert.deepEqual(

@@ -1,6 +1,6 @@
 ---
 id: 5900f4e01000cf542c50fff2
-title: 'Problem 371: Licence plates'
+title: 'Завдання 371: номерні знаки'
 challengeType: 1
 forumTopicId: 302033
 dashedName: problem-371-licence-plates
@@ -8,17 +8,17 @@ dashedName: problem-371-licence-plates
 
 # --description--
 
-Oregon licence plates consist of three letters followed by a three digit number (each digit can be from [0...9]).
+Номери транспортних засобів у штаті Орегон складаються з трьох літер та тризначного числа (цифри від 0 до 9 включно).
 
-While driving to work Seth plays the following game:
+Їдучи на роботу, Сет грає в таку гру:
 
-Whenever the numbers of two licence plates seen on his trip add to 1000 that's a win.
+Якщо числа двох номерів, які побачив Сет, в сумі утворюють 1000, то він виграє.
 
-E.g. `MIC-012` and `HAN-988` is a win and `RYU-500` and `SET-500` too (as long as he sees them in the same trip).
+Наприклад, `MIC-012` та `HAN-988` є виграшем, а також `RYU-500` та `SET-500` (за умови, що він побачив їх за одну поїздку).
 
-Find the expected number of plates he needs to see for a win. Дайте відповідь, заокруглену до восьми знаків після коми.
+Знайдіть очікувану кількість номерів, які він повинен побачити, щоб виграти. Дайте відповідь, заокруглену до восьми знаків після коми.
 
-**Note:** We assume that each licence plate seen is equally likely to have any three digit number on it.
+**Примітка:** ми припускаємо, що на кожному побаченому номері з однаковою ймовірністю буде будь-яке тризначне число.
 
 # --hints--
 

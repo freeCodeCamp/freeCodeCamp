@@ -1,6 +1,6 @@
 ---
 id: 5900f5151000cf542c510028
-title: 'Problem 425: Prime connection'
+title: '問題425：主要連接'
 challengeType: 1
 forumTopicId: 302095
 dashedName: problem-425-prime-connection

@@ -1,6 +1,6 @@
 ---
 id: 595011cba5a81735713873bd
-title: Top rank per group
+title: 各グループの上位
 challengeType: 1
 forumTopicId: 302339
 dashedName: top-rank-per-group
@@ -10,7 +10,7 @@ dashedName: top-rank-per-group
 
 Find the top `n` ranked data in each group, where `n` is provided as a parameter. Name of the rank and the group are also provided as parameter.
 
-Given the following data:
+以下のデータが与えられているとします:
 
 ```js
 testData1 = [
@@ -30,13 +30,13 @@ testData1 = [
 ];
 ```
 
-One could rank top 10 employees in each department by calling:
+以下のプログラムを呼び出すことで、各部門の上位 10 人の従業員をランク付けすることができます。
 
 ```js
 topRankPerGroup(10, testData1, 'dept', 'salary')
 ```
 
-Given the following data:
+以下のデータが与えられているとします:
 
 ```js
 testData2 = [
@@ -48,15 +48,15 @@ testData2 = [
 ];
 ```
 
-One could rank the top-rated movie in each genre by calling:
+以下のプログラムを呼び出すことで、各ジャンルで最高評価の映画をランク付けすることができます:
 
 ```js
 topRankPerGroup(1, testData2, 'genre', 'rating')
 ```
 
-The function should return an array with an array for each group containing the top `n` objects.
+関数は各グループの上位 `n` 位までのオブジェクトを含む配列を返す必要があります。
 
-For example, given data:
+例えば、次のデータが与えられているとします:
 
 ```js
 [
@@ -69,7 +69,7 @@ For example, given data:
 ];
 ```
 
-Top two ranking employees in each department by salary would be:
+各部門で給料が上位 2 名の従業員は次のようになります。
 
 ```js
 [ [ { name: 'Kim Arlich', id: 'E10001', salary: 57000, dept: 'D050' },
@@ -80,37 +80,37 @@ Top two ranking employees in each department by salary would be:
 
 # --hints--
 
-`topRankPerGroup` should be a function.
+`topRankPerGroup` は関数とします。
 
 ```js
 assert(typeof topRankPerGroup === 'function');
 ```
 
-`topRankPerGroup` should return undefined on negative n values.
+`topRankPerGroup` は n が負の値の場合は undefined を返す必要があります。
 
 ```js
 assert(typeof topRankPerGroup(-1, []) === 'undefined');
 ```
 
-For `topRankPerGroup(10, testData1, 'dept', 'salary')`, the first result in the first group should be `{ name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050'}`.
+`topRankPerGroup(10, testData1, 'dept', 'salary')` について、最初のグループの最初の結果は `{ name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050'}` でなければなりません。
 
 ```js
 assert.deepEqual(res1[0][0], { name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050'});
 ```
 
-For `topRankPerGroup(10, testData1, 'dept', 'salary')`, the last result in the last group should be `{ name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' }`.
+`topRankPerGroup(10, testData1, 'dept', 'salary')` について、最後のグループの最期の結果は `{ name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' }` でなければなりません。
 
 ```js
 assert.deepEqual(res1[3][3], { name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' });
 ```
 
-`topRankPerGroup(1, ...)` should return only top ranking result per group.
+`topRankPerGroup(1, ...)` はグループごとの最上位の結果のみを返す必要があります。
 
 ```js
 assert.equal(res2[2].length, 1);
 ```
 
-`topRankPerGroup(2, ...)` should return two ranking results per group.
+`topRankPerGroup(2, ...)` はグループごとの上位 2 位までの結果を返す必要があります。
 
 ```js
 assert.equal(res3[2][1].name, 'Maze Runner');

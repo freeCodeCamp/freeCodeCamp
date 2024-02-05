@@ -1,6 +1,6 @@
 ---
 id: 5900f43e1000cf542c50ff50
-title: 'Problem 210: Obtuse Angled Triangles'
+title: '问题210：钝角三角形'
 challengeType: 1
 forumTopicId: 301852
 dashedName: problem-210-obtuse-angled-triangles

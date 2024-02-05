@@ -1,6 +1,6 @@
 ---
 id: 5900f3d01000cf542c50fee3
-title: 'Problem 100: Arranged probability'
+title: '問題 100: 調整された確率'
 challengeType: 1
 forumTopicId: 301724
 dashedName: problem-100-arranged-probability
@@ -8,47 +8,47 @@ dashedName: problem-100-arranged-probability
 
 # --description--
 
-If a box contains twenty-one colored discs, composed of fifteen blue discs and six red discs, and two discs were taken at random, it can be seen that the probability of taking two blue discs.
+箱の中に、15 枚の青い円盤と 6 枚の赤い円盤、計 21 枚の色付き円盤が入っています。2 枚の円盤を無作為に取り出したときにそれが青い円盤 2 枚である確率は、次のように求めることができます。
 
 $${P(BB)} = \frac{15}{21}×\frac{14}{20} = \frac{1}{2}$$
 
-The next such arrangement, for which there is exactly a 50% chance of taking two blue discs at random, is a box containing eighty-five blue discs and thirty-five red discs.
+無作為に取り出した 2 枚が青い円盤である確率がちょうど 50% になるように調整した場合、枚数が次に多いのは、85 枚の青い円盤と 35 枚の赤い円盤が入った箱です。
 
-By finding the first arrangement to contain over `limit` discs in total, determine the number of blue discs that the box would contain.
+合計枚数が `limit` より多くなる最初の調整方法を見つけ、その箱に入っている青い円盤の枚数を求めなさい。
 
 # --hints--
 
-`arrangedProbability(20)` should return a number.
+`arrangedProbability(20)` は数値を返す必要があります。
 
 ```js
 assert(typeof arrangedProbability(10) === 'number');
 ```
 
-`arrangedProbability(20)` should return `15`.
+`arrangedProbability(20)` は `15` を返す必要があります。
 
 ```js
 assert.strictEqual(arrangedProbability(20), 15);
 ```
 
-`arrangedProbability(100)` should return `85`.
+`arrangedProbability(100)` は `85` を返す必要があります。
 
 ```js
 assert.strictEqual(arrangedProbability(100), 85);
 ```
 
-`arrangedProbability(100000)` should return `97513`.
+`arrangedProbability(100000)` は `97513` を返す必要があります。
 
 ```js
 assert.strictEqual(arrangedProbability(100000), 97513);
 ```
 
-`arrangedProbability(1000000000)` should return `3822685023`.
+`arrangedProbability(1000000000)` は `3822685023` を返す必要があります。
 
 ```js
 assert.strictEqual(arrangedProbability(1000000000), 3822685023);
 ```
 
-`arrangedProbability(1000000000000)` should return `756872327473`.
+`arrangedProbability(1000000000000)` は `756872327473` を返す必要があります。
 
 ```js
 assert.strictEqual(arrangedProbability(1000000000000), 756872327473);

@@ -8,7 +8,7 @@ dashedName: problem-73-counting-fractions-in-a-range
 
 # --description--
 
-Розглянемо дріб $\frac{n}{d}$, де `n` та `d` є додатними цілими числами. Якщо `n` &lt; `d` та найбільший спільний дільник ${HCF}(n, d) = 1$, то це називається скоротним правильним дробом.
+Розглянемо дріб $\frac{n}{d}$, де `n` та `d` є натуральними числами. Якщо `n` &lt; `d` та найбільший спільний дільник ${НСД}(n, d) = 1$, то це називається скоротним правильним дробом.
 
 Якщо перерахувати скоротні правильні дроби для `d` ≤ 8 у порядку зростання, то отримаємо:
 
@@ -66,18 +66,56 @@ countingFractionsInARange(8);
 # --solutions--
 
 ```js
-function countingFractionsInARange(limit) {
-  let result = 0;
-  const stack = [[3, 2]];
-  while (stack.length > 0) {
-    const [startDenominator, endDenominator] = stack.pop();
-    const curDenominator = startDenominator + endDenominator;
-    if (curDenominator <= limit) {
-      result++;
-      stack.push([startDenominator, curDenominator]);
-      stack.push([curDenominator, endDenominator]);
+class PrimeSeive {
+  constructor(num) {
+    const seive = Array(Math.floor((num - 1) / 2)).fill(true);
+    const upper = Math.floor((num - 1) / 2);
+    const sqrtUpper = Math.floor((Math.sqrt(num) - 1) / 2);
+
+    for (let i = 0; i <= sqrtUpper; i++) {
+      if (seive[i]) {
+        // Позначте значення в масиві seive
+        const prime = 2 * i + 3;
+        // Позначте всі дільники цього числа як false (не цілі числа)
+        const primeSquaredIndex = 2 * i ** 2 + 6 * i + 3;
+        for (let j = primeSquaredIndex; j < upper; j += prime) {
+          seive[j] = false;
+        }
+      }
     }
+
+    this._seive = seive;
   }
-  return result;
+
+  isPrime(num) {
+    return num === 2
+      ? true
+      : num % 2 === 0
+        ? false
+        : this.isOddPrime(num);
+  }
+
+  isOddPrime(num) {
+    return this._seive[(num - 3) / 2];
+  }
+};
+const primeSeive = new PrimeSeive(12001);
+
+function countingFractionsInARange(num) {
+  const moebius = Array(num + 1).fill(1)
+
+  // Згенеруйте члени функції Мебіуса
+  for (let i = 2; i <= num; i++) {
+    if (!primeSeive.isPrime(i)) continue;
+    for (let j = i; j <= num; j += i) moebius[j] *= -1;
+    for (let j = i * i; j <= num; j += i * i) moebius[j] = 0;
+  }
+  // Обчисліть суму функції Ейлера
+  let sum = 0;
+  for (let i = 1; i <= num; i++) {
+    const coeff = Math.floor(num / i - 2);
+    sum += moebius[i] * Math.floor(coeff * coeff / 12 + 0.5);
+  }
+  return sum;
 }
 ```

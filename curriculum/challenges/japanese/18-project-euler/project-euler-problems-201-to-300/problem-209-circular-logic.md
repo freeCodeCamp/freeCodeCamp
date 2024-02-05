@@ -1,6 +1,6 @@
 ---
 id: 5900f43e1000cf542c50ff4f
-title: 'Problem 209: Circular Logic'
+title: '問題 209: 循環論法'
 challengeType: 1
 forumTopicId: 301850
 dashedName: problem-209-circular-logic
@@ -8,7 +8,7 @@ dashedName: problem-209-circular-logic
 
 # --description--
 
-A $k$-input binary truth table is a map from $k$ input bits (binary digits, 0 [false] or 1 [true]) to 1 output bit. For example, the $2$-input binary truth tables for the logical $AND$ and $XOR$ functions are:
+$k$ 入力の 2 進真理値表は、$k$ 個の入力ビット (2 進数、0 [false] または 1 [true]) から 1 個の出力ビットへの写像です。 例えば、論理関数 $AND$ と $XOR$ に対する $2$ 入力の 2 進真理値表は次のとおりです。
 
 | x | y | x AND y |
 | - | - | ------- |
@@ -24,15 +24,15 @@ A $k$-input binary truth table is a map from $k$ input bits (binary digits, 0 [f
 | 1 | 0 | 1       |
 | 1 | 1 | 0       |
 
-How many $6$-input binary truth tables, $τ$, satisfy the formula
+次の式を満たす $6$ 入力の 2 進真理値表 $τ$ はいくつありますか。
 
 $$τ(a, b, c, d, e, f) \\; AND \\; τ(b, c, d, e, f, a \\; XOR \\; (b \\; AND \\; c)) = 0$$
 
-for all $6$-bit inputs ($a$, $b$, $c$, $d$, $e$, $f$)?
+ただし、すべての $6$ ビット入力 ($a$, $b$, $c$, $d$, $e$, $f$) についてこれを満たす必要があります。
 
 # --hints--
 
-`circularLogic()` should return `15964587728784`.
+`circularLogic()` は `15964587728784` を返す必要があります。
 
 ```js
 assert.strictEqual(circularLogic(), 15964587728784);

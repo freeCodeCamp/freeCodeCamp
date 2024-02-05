@@ -1,6 +1,6 @@
 ---
 id: 599d1566a02b571412643b84
-title: Ethiopian multiplication
+title: Äthiopische Multiplikation
 challengeType: 1
 forumTopicId: 302257
 dashedName: ethiopian-multiplication
@@ -10,7 +10,7 @@ dashedName: ethiopian-multiplication
 
 Ethiopian multiplication is a method of multiplying integers using only addition, doubling, and halving.
 
-**Method:**
+**Methode:**
 
 <ol>
   <li>Take two numbers to be multiplied and write them down at the top of two columns</li>
@@ -20,12 +20,12 @@ Ethiopian multiplication is a method of multiplying integers using only addition
   <li>Sum the values in the right-hand column that remain to produce the result of multiplying the original two numbers together</li>
 </ol>
 
-**For example:** `17 × 34`
+**Zum Beispiel:** `17 × 34`
 
 <pre>17   34
 </pre>
 
-Halving the first column:
+Halbierung der ersten Spalte:
 
 <pre>17   34
 8
@@ -34,7 +34,7 @@ Halving the first column:
 1
 </pre>
 
-Doubling the second column:
+Verdoppelung der zweiten Spalte:
 
 <pre>17   34
 8    68
@@ -43,7 +43,7 @@ Doubling the second column:
 1   544
 </pre>
 
-Strike-out rows whose first cell is even:
+Zeilen, deren erste Zelle gerade ist, werden durchgestrichen:
 
 <pre>17   34
 8    <strike>68</strike>
@@ -52,7 +52,7 @@ Strike-out rows whose first cell is even:
 1   544
 </pre>
 
-Sum the remaining numbers in the right-hand column:
+Addiere die verbleibenden Zahlen in der rechten Spalte:
 
 <!-- markdownlint-disable MD003 -->
 
@@ -67,55 +67,55 @@ Sum the remaining numbers in the right-hand column:
 
 <!-- markdownlint-enable MD003 -->
 
-So `17` multiplied by `34`, by the Ethiopian method is `578`.
+Das heißt, `17` multipliziert mit `34`, ist nach der äthiopischen Methode `578`.
 
 # --instructions--
 
-The task is to define three named functions/methods/procedures/subroutines:
+Die Aufgabe besteht darin, drei benannte Funktionen/Methoden/Prozeduren/Unterprogramme zu definieren:
 
 <ol>
   <li>one to halve an integer,</li>
-  <li>one to double an integer, and</li>
-  <li>one to state if an integer is even</li>
+  <li>eine, um eine ganze Zahl zu verdoppeln, und</li>
+  <li>eine, um festzustellen, ob eine ganze Zahl gerade ist</li>
 </ol>
 
-Use these functions to create a function that does Ethiopian multiplication.
+Verwende diese Funktionen, um eine Funktion für die äthiopische Multiplikation zu erstellen.
 
 <!-- markdownlint-disable MD046-->
 
 # --hints--
 
-`eth_mult` should be a function.
+`eth_mult` sollte eine Funktion sein.
 
 ```js
 assert(typeof eth_mult === 'function');
 ```
 
-`eth_mult(17,34)` should return `578`.
+`eth_mult(17,34)` sollte `578` zurückgeben.
 
 ```js
 assert.equal(eth_mult(17, 34), 578);
 ```
 
-`eth_mult(23,46)` should return `1058`.
+`eth_mult(23,46)` sollte `1058` zurückgeben.
 
 ```js
 assert.equal(eth_mult(23, 46), 1058);
 ```
 
-`eth_mult(12,27)` should return `324`.
+`eth_mult(12,27)` sollte `324` zurückgeben.
 
 ```js
 assert.equal(eth_mult(12, 27), 324);
 ```
 
-`eth_mult(56,98)` should return `5488`.
+`eth_mult(56,98)` sollte `5488` zurückgeben.
 
 ```js
 assert.equal(eth_mult(56, 98), 5488);
 ```
 
-`eth_mult(63,74)` should return `4662`.
+`eth_mult(63,74)` sollte `4662` zurückgeben.
 
 ```js
 assert.equal(eth_mult(63, 74), 4662);

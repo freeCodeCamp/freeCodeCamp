@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f050b6c005b0e76f057
-title: Intermediate Expressions
+title: التعبيرات المتوسطة (Intermediate Expressions)
 challengeType: 11
 videoId: dKgUaIa5ATg
 bilibiliIds:
@@ -14,15 +14,15 @@ dashedName: intermediate-expressions
 
 More resources:
 
-\- <a href="https://youtu.be/t_4DPwsaGDY" target="_blank" rel="noopener noreferrer nofollow">Exercise 1</a>
+<a href="https://youtu.be/t_4DPwsaGDY" target="_blank" rel="noopener noreferrer nofollow">تمرين 1</a>
 
-\- <a href="https://youtu.be/wgkC8SxraAQ" target="_blank" rel="noopener noreferrer nofollow">Exercise 2</a>
+<a href="https://youtu.be/wgkC8SxraAQ" target="_blank" rel="noopener noreferrer nofollow">تمرين 2</a>
 
 # --question--
 
 ## --text--
 
-What will print out after running this code:
+ما الذي سيطبع بعد تشغيل هذه التعليمة البرمجية:
 
 ```python
 width = 15

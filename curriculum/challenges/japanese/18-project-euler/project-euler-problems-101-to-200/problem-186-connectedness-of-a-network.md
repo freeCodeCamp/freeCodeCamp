@@ -1,6 +1,6 @@
 ---
 id: 5900f4281000cf542c50ff39
-title: 'Problem 186: Connectedness of a network'
+title: '問題 186: ネットワークのつながり'
 challengeType: 1
 forumTopicId: 301822
 dashedName: problem-186-connectedness-of-a-network
@@ -8,30 +8,30 @@ dashedName: problem-186-connectedness-of-a-network
 
 # --description--
 
-Here are the records from a busy telephone system with one million users:
+下表は、100 万人のユーザーを持つ混雑した電話システムの記録です。
 
-| RecNr | Caller | Called |
-| ----- | ------ | ------ |
-| 1     | 200007 | 100053 |
-| 2     | 600183 | 500439 |
-| 3     | 600863 | 701497 |
-| ...   | ...    | ...    |
+| 記録 No. | 発信者    | 着信者    |
+| ------ | ------ | ------ |
+| 1      | 200007 | 100053 |
+| 2      | 600183 | 500439 |
+| 3      | 600863 | 701497 |
+| ...    | ...    | ...    |
 
-The telephone number of the caller and the called number in record $n$ are $Caller(n) = S_{2n - 1}$ and $Called(n) = S_{2n}$ where ${S}_{1,2,3,\ldots}$ come from the "Lagged Fibonacci Generator":
+記録 No. $n$ における発信者の電話番号と着信者の電話番号は、$Caller(n) = S_{2n - 1}$ と $Called(n) = S_{2n}$ であり、ここで、${S}_{1,2,3,\ldots}$ は「ラグ付きフィボナッチ 法」で生成されます。
 
-For $1 ≤ k ≤ 55$, $S_k = [100003 - 200003k + 300007{k}^3]\\;(\text{modulo}\\;1000000)$
+$1 ≤ k ≤ 55$ のとき、$S_k = [100003 - 200003k + 300007{k}^3]\\;(\text{mod}\\;1000000)$ です。
 
-For $56 ≤ k$, $S_k = [S_{k - 24} + S_{k - 55}]\\;(\text{modulo}\\;1000000)$
+$56 ≤ k$ のとき、$S_k = [S_{k - 24} + S_{k - 55}]\\;(\text{mod}\\;1000000)$ です。
 
-If $Caller(n) = Called(n)$ then the user is assumed to have misdialled and the call fails; otherwise the call is successful.
+$Caller(n) = Called(n)$ の場合、ユーザーがかけ間違えたものとされ、発信は失敗します。それ以外の場合、発信は成功します。
 
-From the start of the records, we say that any pair of users $X$ and $Y$ are friends if $X$ calls $Y$ or vice-versa. Similarly, $X$ is a friend of a friend of $Z$ if $X$ is a friend of $Y$ and $Y$ is a friend of $Z$; and so on for longer chains.
+記録の開始時点から、$X$ が $Y$ に、またはその逆に電話をかけたら、「ユーザ $X$ とユーザ $Y$ の対は友達である」ということにします。 同様に、$X$ が $Y$ の友達であり、$Y$ が $Z$ の友達であれば、$X$ は $Z$ の友達です。このように友達の輪が広がっていきます。
 
-The Prime Minister's phone number is 524287. After how many successful calls, not counting misdials, will 99% of the users (including the PM) be a friend, or a friend of a friend etc., of the Prime Minister?
+首相の電話番号は 524287 です。 間違い電話を除き、発信が何回成功すれば、ユーザーの 99% (首相を含む) が首相の友達、友達の友達、または友達の友達の友達… (以下同様) になりますか。
 
 # --hints--
 
-`connectednessOfANetwork()` should return `2325629`.
+`connectednessOfANetwork()` は `2325629` を返す必要があります。
 
 ```js
 assert.strictEqual(connectednessOfANetwork(), 2325629);

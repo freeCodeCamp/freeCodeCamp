@@ -1,6 +1,6 @@
 ---
 id: 5900f41c1000cf542c50ff2f
-title: 'Problem 176: Right-angled triangles that share a cathetus'
+title: '問題176：共用一個cathetus的直角三角形'
 challengeType: 1
 forumTopicId: 301811
 dashedName: problem-176-right-angled-triangles-that-share-a-cathetus

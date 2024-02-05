@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ec5
-title: Josephus problem
+title: Josephus-Problem
 challengeType: 1
 forumTopicId: 302294
 dashedName: josephus-problem
@@ -10,63 +10,63 @@ dashedName: josephus-problem
 
 Josephus problem is a math puzzle with a grim description: $n$ prisoners are standing on a circle, sequentially numbered from $0$ to $n-1$.
 
-An executioner walks along the circle, starting from prisoner $0$, removing every $k$-th prisoner and killing him.
+Ein Hinrichter geht entlang des Kreises, beginnend bei Gefangenem $0$, entfernt jeden $k$-ten Gefangenen und tötet ihn.
 
-As the process goes on, the circle becomes smaller and smaller, until only one prisoner remains, who is then freed.
+Im Laufe des Prozesses wird der Kreis immer kleiner, bis nur ein Gefangener übrig bleibt, der dann freigelassen wird.
 
-For example, if there are $n=5$ prisoners and $k=2$, the order the prisoners are killed in (let's call it the "killing sequence") will be 1, 3, 0, and 4, and the survivor will be #2.
+Ein Beispiel: Wenn es $n=5$ Gefangene gibt und $k=2$ ist, wird die Reihenfolge, in der die Gefangenen getötet werden (nennen wir es die "Tötungssequenz") 1, 3, 0 und 4 sein und der Überlebende wird #2 sein.
 
-Given any $n, k > 0$, find out which prisoner will be the final survivor.
+Wenn irgendein $n und k > 0$ gegeben ist, finde heraus, welcher Gefangene der endgültige Überlebende sein wird.
 
-In one such incident, there were 41 prisoners and every 3<sup>rd</sup> prisoner was being killed ($k=3$).
+In einem solchen Fall gab es 41 Gefangene und jeder 3<sup>te</sup> Gefangene wurde getötet ($k=3$).
 
-Among them was a clever chap name Josephus who worked out the problem, stood at the surviving position, and lived on to tell the tale.
+Unter ihnen befand sich ein cleverer Bursche namens Josephus, der das Problem löste, an der überlebenden Stelle stand und weiterlebte, um die Geschichte zu erzählen.
 
-Which number was he?
+Welche Zahl war er?
 
 # --instructions--
 
-Write a function that takes the initial number of prisoners and `k` as parameters and returns the number of the prisoner that survives.
+Schreibe eine Funktion, die die anfängliche Anzahl der Gefangenen und `k` als Parameter nimmt und die Anzahl der überlebenden Gefangenen zurückgibt.
 
 # --hints--
 
-`josephus` should be a function.
+`josephus` sollte eine Funktion sein.
 
 ```js
 assert(typeof josephus == 'function');
 ```
 
-`josephus(30,3)` should return a number.
+`josephus(30,3)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof josephus(30, 3) == 'number');
 ```
 
-`josephus(30,3)` should return `28`.
+`josephus(30,3)` sollte `28` zurückgeben.
 
 ```js
 assert.equal(josephus(30, 3), 28);
 ```
 
-`josephus(30,5)` should return `2`.
+`josephus(30,5)` sollte `2` zurückgeben.
 
 ```js
 assert.equal(josephus(30, 5), 2);
 ```
 
-`josephus(20,2)` should return `8`.
+`josephus(20,2)` sollte `8` zurückgeben.
 
 ```js
 assert.equal(josephus(20, 2), 8);
 ```
 
-`josephus(17,6)` should return `1`.
+`josephus(17,6)` sollte `1` zurückgeben.
 
 ```js
 assert.equal(josephus(17, 6), 1);
 ```
 
-`josephus(29,4)` should return `1`.
+`josephus(29,4)` sollte `1` zurückgeben.
 
 ```js
 assert.equal(josephus(29, 4), 1);

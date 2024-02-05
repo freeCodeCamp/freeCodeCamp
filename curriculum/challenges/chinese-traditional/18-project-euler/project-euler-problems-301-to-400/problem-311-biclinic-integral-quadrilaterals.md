@@ -1,6 +1,6 @@
 ---
 id: 5900f4a31000cf542c50ffb6
-title: 'Problem 311: Biclinic Integral Quadrilaterals'
+title: '問題311：雙斜積分四邊形'
 challengeType: 1
 forumTopicId: 301967
 dashedName: problem-311-biclinic-integral-quadrilaterals

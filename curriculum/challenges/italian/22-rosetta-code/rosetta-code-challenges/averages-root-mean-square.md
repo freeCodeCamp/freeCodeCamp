@@ -1,6 +1,6 @@
 ---
 id: 594da033de4190850b893874
-title: Averages/Root mean square
+title: Medie/Valore efficace
 challengeType: 1
 forumTopicId: 302228
 dashedName: averagesroot-mean-square
@@ -10,19 +10,19 @@ dashedName: averagesroot-mean-square
 
 Compute the Root Mean Square (RMS) of the numbers 1 through 10 inclusive.
 
-The <abbr title="Root mean square">RMS</abbr> is calculated by taking the square root of the mean of the squares of the numbers, given by the equation:
+La <abbr title="media quadratica">RMS</abbr> è calcolata prendendo la radice quadrata della media del quadrato dei numeri, dato dall'equazione:
 
 $$x\_{\\mathrm{rms}} = \\sqrt {{{x_1}^2 + {x_2}^2 + \\cdots + {x_n}^2} \\over n}. $$
 
 # --hints--
 
-`rms` should be a function.
+`rms` dovrebbe essere una funzione.
 
 ```js
 assert(typeof rms === 'function');
 ```
 
-`rms([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])` should equal `6.2048368229954285`.
+`rms([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])` dovrebbe essere uguale a `6.2048368229954285`.
 
 ```js
 assert.equal(rms(arr1), answer1);

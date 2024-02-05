@@ -36,4 +36,4 @@ Which of the following lines of code creates a variable correctly?
 
 ## --video-solution--
 
-2
+٢

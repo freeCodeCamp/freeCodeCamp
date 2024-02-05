@@ -1,6 +1,6 @@
 ---
 id: 5900f5201000cf542c510032
-title: 'Завдання 435: многочлени з чисел Фібоначчі'
+title: 'Завдання 435: многочлени чисел Фібоначчі'
 challengeType: 1
 forumTopicId: 302106
 dashedName: problem-435-polynomials-of-fibonacci-numbers

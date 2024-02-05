@@ -10,21 +10,21 @@ dashedName: build-a-roman-numeral-converter
 
 Roman numerals are based on seven symbols and can be written using various combinations to represent Arabic numerals. For example:
 
-| Roman numerals | Arabic numerals |
-|----------------|-----------------|
-| M              | 1000            |
-| CM             | 900             |
-| D              | 500             |
-| CD             | 400             |
-| C              | 100             |
-| XC             | 90              |
-| L              | 50              |
-| XL             | 40              |
-| X              | 10              |
-| IX             | 9               |
-| V              | 5               |
-| IV             | 4               |
-| I              | 1               |
+| Roman numerals | Números arábigos |
+| -------------- | ---------------- |
+| M              | 1000             |
+| CM             | 900              |
+| D              | 500              |
+| CD             | 400              |
+| C              | 100              |
+| XC             | 90               |
+| L              | 50               |
+| XL             | 40               |
+| X              | 10               |
+| IX             | 9                |
+| V              | 5                |
+| IV             | 4                |
+| I              | 1                |
 
 **Objective:** Build an app that is functionally similar to <a href="https://roman-numeral-converter.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://roman-numeral-converter.freecodecamp.rocks</a>
 
@@ -230,6 +230,7 @@ assert.strictEqual(outputEl.innerText.trim(), 'MMMCMXCIX');
   --gray-75: #3b3b4f;
   --gray-85: #1b1b32;
   --gray-90: #0a0a23;
+  --blue-50: #198eee;
   --error: #a94442;
   --danger-color: #850000;
   --danger-background: #ffadad;
@@ -296,6 +297,11 @@ label {
   font-weight: bold;
 }
 
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--blue-50);
+}
+
 input {
   display: block;
   font-size: 2.5rem;
@@ -307,12 +313,9 @@ input {
   color: white;
   background-color: var(--gray-90);
   border: 1px solid var(--gray-05);
-  outline: none;
-  outline-style: none;
 }
 
 button {
-  outline: none;
   cursor: pointer;
   margin-top: 15px;
   text-decoration: none;

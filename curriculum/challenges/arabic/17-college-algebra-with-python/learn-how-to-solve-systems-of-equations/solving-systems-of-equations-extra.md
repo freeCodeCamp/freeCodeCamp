@@ -36,4 +36,4 @@ To zoom in or out on a graph, an interactive slider is useful
 
 ## --video-solution--
 
-3
+الثالث

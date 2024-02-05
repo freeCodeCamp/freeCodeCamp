@@ -1,6 +1,6 @@
 ---
 id: 5900f3cc1000cf542c50fede
-title: 'Problem 95: Amicable chains'
+title: '問題 95: 友愛鎖'
 challengeType: 1
 forumTopicId: 302212
 dashedName: problem-95-amicable-chains
@@ -8,45 +8,45 @@ dashedName: problem-95-amicable-chains
 
 # --description--
 
-The proper divisors of a number are all the divisors excluding the number itself. For example, the proper divisors of 28 are 1, 2, 4, 7, and 14. As the sum of these divisors is equal to 28, we call it a perfect number.
+数の真の約数とは、その数自体を除くすべての約数です。 例えば、28の真の約数は 1, 2, 4, 7, 14 です。 これらの約数の和は 28 に等しく、このような数を完全数と呼びます。
 
-Interestingly the sum of the proper divisors of 220 is 284 and the sum of the proper divisors of 284 is 220, forming a chain of two numbers. For this reason, 220 and 284 are called an amicable pair.
+面白いことに、220 の真の約数の和は 284であり、284 の真の約数の和は 220 で、2 つの数字の連鎖を形成します。 このため、220 と 284は友愛数ペアと呼ばれます。
 
-Perhaps less well known are longer chains. For example, starting with 12496, we form a chain of five numbers:
+おそらくあまり知られていないのは、もっと長い連鎖です。 例えば、12496 から始めて 5 つの数字の連鎖を作ります。
 
 $$ 12496 → 14288 → 15472 → 14536 → 14264 \\,(→ 12496 → \cdots) $$
 
-Since this chain returns to its starting point, it is called an amicable chain.
+この連鎖は出発点に戻るので、友愛鎖と呼ばれます。
 
-Find the smallest member of the longest amicable chain with no element exceeding `limit`.
+どの要素も `limit` を超えない、最も長い友愛鎖の最小の数字を求めなさい。
 
 # --hints--
 
-`amicableChains(300)` should return a number.
+`amicableChains(300)` は数値を返す必要があります。
 
 ```js
 assert(typeof amicableChains(300) === 'number');
 ```
 
-`amicableChains(300)` should return `220`.
+`amicableChains(300)` は `220` を返す必要があります。
 
 ```js
 assert.strictEqual(amicableChains(300), 220);
 ```
 
-`amicableChains(15000)` should return `220`.
+`amicableChains(15000)` は `220` を返す必要があります。
 
 ```js
 assert.strictEqual(amicableChains(15000), 220);
 ```
 
-`amicableChains(100000)` should return `12496`.
+`amicableChains(100000)` は `12496` を返す必要があります。
 
 ```js
 assert.strictEqual(amicableChains(100000), 12496);
 ```
 
-`amicableChains(1000000)` should return `14316`.
+`amicableChains(1000000)` は `14316` を返す必要があります。
 
 ```js
 assert.strictEqual(amicableChains(1000000), 14316);

@@ -8,9 +8,9 @@ dashedName: problem-1-multiples-of-3-or-5
 
 # --description--
 
-If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+Si listamos todos los números naturales por debajo de 10 que son múltiplos de 3 o 5, obtenemos 3, 5, 6 y 9. La suma de estos múltiplos es 23.
 
-Find the sum of all the multiples of 3 or 5 below the provided parameter value `number`.
+Encuentre la suma de todos los múltiplos de 3 o 5 debajo del valor del parámetro proporcionado `number`.
 
 # --hints--
 

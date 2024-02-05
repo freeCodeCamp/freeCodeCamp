@@ -1,6 +1,6 @@
 ---
 id: 5900f3bb1000cf542c50fece
-title: 'Problem 79: Passcode derivation'
+title: '問題 79: パスコードの導出'
 challengeType: 1
 forumTopicId: 302192
 dashedName: problem-79-passcode-derivation
@@ -8,33 +8,33 @@ dashedName: problem-79-passcode-derivation
 
 # --description--
 
-A common security method used for online banking is to ask the user for three random characters from a passcode. For example, if the passcode was `531278`, they may ask for the 2nd, 3rd, and 5th characters; the expected reply would be: `317`.
+オンラインバンキングに使用される一般的なセキュリティ手段は、パスコードから無作為に選ばれた 3 文字をユーザーに入力してもらうことです。 例えばパスコードが `531278` の場合、2 番目、3 番目、5 番目の文字を入力してもらうと `317` が入力されるはずです。
 
-The arrays, `keylog1`, `keylog2`, and `keylog3`, contains fifty successful login attempts.
+配列 (`keylog1`, `keylog2`, `keylog3`) には、成功した 50 回のログインに使われた文字が格納されています。
 
-Given that the three characters are always asked for in order, analyze the array so as to determine the shortest possible secret passcode of unknown length.
+3 文字は常に順序どおりに入力してもらうと仮定します。配列を解析して、不明な長さの秘密のパスコードとして考えられるもののうち最短のものを求めなさい。
 
 # --hints--
 
-`passcodeDerivation(keylog1)` should return a number.
+`passcodeDerivation(keylog1)` は数値を返す必要があります。
 
 ```js
 assert(typeof passcodeDerivation(_keylog1) === 'number');
 ```
 
-`passcodeDerivation(keylog1)` should return `531278`.
+`passcodeDerivation(keylog1)` は `531278` を返す必要があります。
 
 ```js
 assert.strictEqual(passcodeDerivation(_keylog1), 531278);
 ```
 
-`passcodeDerivation(keylog2)` should return `1230567`.
+`passcodeDerivation(keylog2)` は `1230567` を返す必要があります。
 
 ```js
 assert.strictEqual(passcodeDerivation(_keylog2), 1230567);
 ```
 
-`passcodeDerivation(keylog3)` should return `73162890`.
+`passcodeDerivation(keylog3)` は `73162890` を返す必要があります。
 
 ```js
 assert.strictEqual(passcodeDerivation(_keylog3), 73162890);

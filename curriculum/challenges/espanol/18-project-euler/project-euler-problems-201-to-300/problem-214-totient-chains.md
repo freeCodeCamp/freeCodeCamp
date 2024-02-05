@@ -10,7 +10,7 @@ dashedName: problem-214-totient-chains
 
 Let $φ$ be Euler's totient function, i.e. for a natural number $n$, $φ(n)$ is the number of $k$, $1 ≤ k ≤ n$, for which $gcd(k,n) = 1$.
 
-By iterating $φ$, each positive integer generates a decreasing chain of numbers ending in 1. E.g. if we start with 5 the sequence 5,4,2,1 is generated. Here is a listing of all chains with length 4:
+By iterating $φ$, each positive integer generates a decreasing chain of numbers ending in 1. P.ej. if we start with 5 the sequence 5,4,2,1 is generated. Here is a listing of all chains with length 4:
 
 $$\begin{align}    5,4,2,1 & \\\\
    7,6,2,1 & \\\\    8,4,2,1 & \\\\

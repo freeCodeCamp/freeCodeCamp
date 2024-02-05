@@ -1,6 +1,6 @@
 ---
 id: 5900f3be1000cf542c50fed1
-title: 'Problem 82: Path sum: three ways'
+title: '問題 82：路徑和：三種方式'
 challengeType: 1
 forumTopicId: 302196
 dashedName: problem-82-path-sum-three-ways
@@ -10,29 +10,29 @@ dashedName: problem-82-path-sum-three-ways
 
 **Note:** This problem is a more challenging version of Problem 81.
 
-The minimal path sum in the 5 by 5 matrix below, by starting in any cell in the left column and finishing in any cell in the right column, and only moving up, down, and right, is indicated in red and bold; the sum is equal to `994`.
+下面的 5 x 5 矩陣中的最小路徑和，從左列的任何單元格開始，到右列的任何單元格結束，並且僅向上、向下和向右移動，以紅色和粗體表示；總和等於 `994`。
 
   $$\begin{pmatrix}   131 & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\
   \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\   630 & 803 & 746 & 422 & 111\\\\
   537 & 699 & 497 & 121 & 956\\\\ 805 & 732 & 524 & 37 & 331 \end{pmatrix}$$
 
-Find the minimal path sum from the left column to the right column in `matrix`, a 2D array representing a matrix. The maximum matrix size used in tests will be 80 by 80.
+在 `matrix` 中找到從左列到右列的最小路徑和，這是一個表示矩陣的二維數組。 測試中使用的最大矩陣大小爲 80 x 80。
 
 # --hints--
 
-`pathSumThreeWays(testMatrix1)` should return a number.
+`pathSumThreeWays(testMatrix1)` 應該返回一個數字。
 
 ```js
 assert(typeof pathSumThreeWays(_testMatrix1) === 'number');
 ```
 
-`pathSumThreeWays(testMatrix1)` should return `994`.
+`pathSumThreeWays(testMatrix1)` 應該返回 `994`。
 
 ```js
 assert.strictEqual(pathSumThreeWays(_testMatrix1), 994);
 ```
 
-`pathSumThreeWays(testMatrix2)` should return `260324`.
+`pathSumThreeWays(testMatrix2)` 應該返回 `260324`。
 
 ```js
 assert.strictEqual(pathSumThreeWays(_testMatrix2), 260324);

@@ -1,6 +1,6 @@
 ---
 id: 5900f49b1000cf542c50ffad
-title: 'Problem 302: Strong Achilles Numbers'
+title: '問題302：強阿喀琉斯數'
 challengeType: 1
 forumTopicId: 301956
 dashedName: problem-302-strong-achilles-numbers

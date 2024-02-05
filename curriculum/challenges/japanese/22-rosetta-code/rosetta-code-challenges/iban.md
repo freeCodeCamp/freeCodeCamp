@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7eaf
-title: IBAN
+title: IBAN（国際銀行口座番号）
 challengeType: 1
 forumTopicId: 302289
 dashedName: iban
@@ -10,59 +10,59 @@ dashedName: iban
 
 The International Bank Account Number (IBAN) is an internationally agreed means of identifying bank accounts across national borders with a reduced risk of propagating transcription errors.
 
-The <abbr title="International Bank Account Number">IBAN</abbr> consists of up to 34 alphanumeric characters:
+<abbr title="International Bank Account Number">IBAN</abbr> は最長 34 文字の英数字で構成されます:
 
 <ul>
   <li>first the two-letter <abbr title="International Organization for Standardization">ISO</abbr> 3166-1 alpha-2 country code</li>
-  <li>then two check digits, and</li>
-  <li>finally a country-specific Basic Bank Account Number (BBAN).</li>
+  <li>続いて 2 桁のチェックデジット、</li>
+  <li>最後に、国ごとの基本銀行口座番号 (BBAN) となっています。</li>
 </ul>
 
-The check digits enable a sanity check of the bank account number to confirm its integrity even before submitting a transaction.
+チェックデジットにより、トランザクションの送信前であっても、銀行口座番号のサニティーチェックを行いその整合性を確認することが可能です。
 
 # --instructions--
 
-Write a function that takes IBAN string as parameter. If it is valid return true. Otherwise, return false.
+パラメータとしてIBAN文字列を取る関数を記述してください。 有効なら true を、 それ以外は、falseを返します。
 
 # --hints--
 
-`isValid` should be a function.
+`isValid` は関数とします。
 
 ```js
 assert(typeof isValid == 'function');
 ```
 
-`isValid("GB82 WEST 1234 5698 7654 32")` should return a boolean.
+`isValid("GB82 WEST 1234 5698 7654 32")` はブール値を返す必要があります。
 
 ```js
 assert(typeof isValid('GB82 WEST 1234 5698 7654 32') == 'boolean');
 ```
 
-`isValid("GB82 WEST 1234 5698 7654 32")` should return `true`.
+`isValid("GB82 WEST 1234 5698 7654 32")` は`true`を返す必要があります。
 
 ```js
 assert.equal(isValid('GB82 WEST 1234 5698 7654 32'), true);
 ```
 
-`isValid("GB82 WEST 1.34 5698 7654 32")` should return `false`.
+`isValid("GB82 WEST 1.34 5698 7654 32")` は`false`を返す必要があります。
 
 ```js
 assert.equal(isValid('GB82 WEST 1.34 5698 7654 32'), false);
 ```
 
-`isValid("GB82 WEST 1234 5698 7654 325")` should return `false`.
+`isValid("GB82 WEST 1234 5698 7654 325")` は`false`を返す必要があります。
 
 ```js
 assert.equal(isValid('GB82 WEST 1234 5698 7654 325'), false);
 ```
 
-`isValid("GB82 TEST 1234 5698 7654 32")` should return `false`.
+`isValid("GB82 TEST 1234 5698 7654 32")` は`false`を返す必要があります。
 
 ```js
 assert.equal(isValid('GB82 TEST 1234 5698 7654 32'), false);
 ```
 
-`isValid("SA03 8000 0000 6080 1016 7519")` should return `true`.
+`isValid("SA03 8000 0000 6080 1016 7519")` は`true`を返す必要があります。
 
 ```js
 assert.equal(isValid('SA03 8000 0000 6080 1016 7519'), true);

@@ -1,6 +1,6 @@
 ---
 id: 59713bd26bdeb8a594fb9413
-title: Count the coins
+title: Підрахунок монет
 challengeType: 1
 forumTopicId: 302238
 dashedName: count-the-coins
@@ -11,48 +11,48 @@ dashedName: count-the-coins
 There are four types of common coins in US currency:
 
 <ul>
-  <li>quarters (25 cents)</li>
-  <li>dimes (10 cents)</li>
-  <li>nickels (5 cents), and</li>
-  <li>pennies (1 cent)</li>
+  <li>чверті (25 центів)</li>
+  <li>дайми (10 центів)</li>
+  <li>нікелі (5 центів)</li>
+  <li>пенні (1 цент)</li>
 </ul>
 
-<p>There are six ways to make change for 15 cents:</p>
+<p>Існує шість способів розміняти 15 центів:</p>
 
 <ul>
-  <li>A dime and a nickel</li>
-  <li>A dime and 5 pennies</li>
-  <li>3 nickels</li>
-  <li>2 nickels and 5 pennies</li>
-  <li>A nickel and 10 pennies</li>
-  <li>15 pennies</li>
+  <li>1 дайм та 1 нікель</li>
+  <li>1 дайм та 5 пенні</li>
+  <li>3 нікелі</li>
+  <li>2 нікелі та 5 пенні</li>
+  <li>1 нікель та 10 пенні</li>
+  <li>15 пенні</li>
 </ul>
 
 # --instructions--
 
-Implement a function to determine how many ways there are to make change for a given input, `cents`, that represents an amount of US pennies using these common coins.
+Створіть функцію, яка буде визначати, скількома способами можна розміняти введену кількість `cents`, що представляє суму американських пенні, використовуючи ці поширені монети.
 
 # --hints--
 
-`countCoins` should be a function.
+`countCoins` має бути функцією.
 
 ```js
 assert(typeof countCoins === 'function');
 ```
 
-`countCoins(15)` should return `6`.
+`countCoins(15)` має повертати `6`.
 
 ```js
 assert.equal(countCoins(15), 6);
 ```
 
-`countCoins(85)` should return `163`.
+`countCoins(85)` повинен повертати `163`.
 
 ```js
 assert.equal(countCoins(85), 163);
 ```
 
-`countCoins(100)` should return `242`.
+`countCoins(100)` має повертати `242`.
 
 ```js
 assert.equal(countCoins(100), 242);

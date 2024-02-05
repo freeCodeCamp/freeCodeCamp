@@ -44,12 +44,12 @@ const certifiedUserAccount = {
 
 const client = new MongoClient(MONGOHQ_URL, { useNewUrlParser: true });
 
-log('Connected successfully to mongo');
-
-const db = client.db('freecodecamp');
-const msUsername = db.collection('MsUsername');
-
 const run = async () => {
+  await client.db('admin').command({ ping: 1 });
+  log('Connected successfully to mongo');
+
+  const db = client.db('freecodecamp');
+  const msUsername = db.collection('MsUsername');
   if (args.includes('--delete-only')) {
     await msUsername.deleteOne({
       _id: { $eq: msAccountId }

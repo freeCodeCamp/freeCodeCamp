@@ -1,6 +1,6 @@
 ---
 id: 5900f49d1000cf542c50ffb0
-title: 'Problem 305: Reflexive Position'
+title: '問題305：反身姿勢'
 challengeType: 1
 forumTopicId: 301959
 dashedName: problem-305-reflexive-position

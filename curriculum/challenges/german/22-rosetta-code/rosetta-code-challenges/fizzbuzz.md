@@ -12,47 +12,47 @@ Write a program that generates an array of integers from 1 to 100 (inclusive). B
 
 <ul>
     <li>for multiples of 3, add <code>"Fizz"</code> to the array instead of the number</li>
-    <li>for multiples of 5, add <code>"Buzz"</code> to the array instead of the number</li>
-    <li>for multiples of 3 and 5, add <code>"FizzBuzz"</code> to the array instead of the number</li>
+    <li>für die Vielfachen von 5 füge anstelle der Zahl <code>"Buzz"</code> dem Array hinzu</li>
+    <li>für die Vielfachen von 3 und 5 füge dem Array <code>"FizzBuzz"</code> anstelle der Zahl hinzu</li>
 </ul>
 
 # --instructions--
 
-Your program should return an array containing the results based on the rules above.
+Dein Programm sollte ein Array zurückgeben, deren Ergebnisse den darüberstehenden Regeln entsprichen.
 
 # --hints--
 
-`fizzBuzz` should be a function.
+`fizzBuzz` sollte eine Funktion sein.
 
 ```js
 assert(typeof fizzBuzz == 'function');
 ```
 
-`fizzBuzz()` should return an Array.
+`fizzBuzz()` sollte ein Array zurückgeben.
 
 ```js
 assert(Array.isArray(fizzBuzz()) == true);
 ```
 
-Numbers divisible by only 3 should return `"Fizz"`.
+Zahlen, die nur durch 3 teilbar sind, sollten `"Fizz"` ergeben.
 
 ```js
 assert.equal(fizzBuzz()[2], 'Fizz');
 ```
 
-Numbers divisible by only 5 should return `"Buzz"`.
+Zahlen, die nur durch 5 teilbar sind, sollten `"Buzz"` zurückgeben.
 
 ```js
 assert.equal(fizzBuzz()[99], 'Buzz');
 ```
 
-Numbers divisible by both 3 and 5 should return `"FizzBuzz"`.
+Zahlen, die sowohl durch 3 als auch durch 5 teilbar sind, sollten `"FizzBuzz"` zurückgeben.
 
 ```js
 assert.equal(fizzBuzz()[89], 'FizzBuzz');
 ```
 
-Numbers not divisible by either 3 or 5 should return the number itself.
+Zahlen, die weder durch 3 noch durch 5 teilbar sind, sollten die Zahl selbst zurückgeben.
 
 ```js
 assert.equal(fizzBuzz()[12], 13);

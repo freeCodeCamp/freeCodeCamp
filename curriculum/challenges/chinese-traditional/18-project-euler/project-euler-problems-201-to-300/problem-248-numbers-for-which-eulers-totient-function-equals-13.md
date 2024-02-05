@@ -1,6 +1,6 @@
 ---
 id: 5900f4651000cf542c50ff77
-title: 'Problem 248: Numbers for which Euler’s totient function equals 13!'
+title: '問題248：Euler的totient函數等於13的數字！'
 challengeType: 1
 forumTopicId: 301895
 dashedName: problem-248-numbers-for-which-eulers-totient-function-equals-13

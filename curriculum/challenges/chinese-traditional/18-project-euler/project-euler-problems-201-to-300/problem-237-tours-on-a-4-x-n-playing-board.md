@@ -1,6 +1,6 @@
 ---
 id: 5900f4591000cf542c50ff6c
-title: 'Problem 237: Tours on a 4 x n playing board'
+title: '問題237：在4 x n遊戲板上游覽'
 challengeType: 1
 forumTopicId: 301882
 dashedName: problem-237-tours-on-a-4-x-n-playing-board

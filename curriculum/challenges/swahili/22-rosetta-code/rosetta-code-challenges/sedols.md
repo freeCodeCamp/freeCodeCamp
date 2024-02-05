@@ -67,7 +67,7 @@ assert(sedol('228276') === '2282765');
 ```js
 function sedol(input) {
   const checkSum = 0
-  
+
   return checkSum;
 }
 ```

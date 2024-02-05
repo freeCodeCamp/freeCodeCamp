@@ -12,9 +12,9 @@ For this challenge, you will create a program to play Rock, Paper, Scissors. A p
 
 You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   ابدأ باستيراد (import) المشروع على Replit.
+-   بعد ذلك، سترى نافذة `.replit`.
+-   اختار `Use run command` وانقر على زر `Done`.
 
 We are still developing the interactive instructional part of the machine learning curriculum. For now, you will have to use other resources to learn how to pass this challenge.
 
@@ -28,7 +28,7 @@ The file `RPS.py` shows an example function that you will need to update. The ex
 
 *Hint: To defeat all four opponents, your program may need to have multiple strategies that change depending on the plays of the opponent.*
 
-## Development
+## التطوير
 
 Do not modify `RPS_game.py`. Write all your code in `RPS.py`. For development, you can use `main.py` to test your code.
 
@@ -52,11 +52,11 @@ play(player, quincy, 1000, verbose=True)
 
 Click the "run" button and `main.py` will run.
 
-## Testing
+## الاختبار
 
 The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. If you uncomment the last line in `main.py`, the tests will run automatically whenever you hit the "run" button.
 
-## Submitting
+## التقديم
 
 Copy your project's URL and submit it to freeCodeCamp.
 

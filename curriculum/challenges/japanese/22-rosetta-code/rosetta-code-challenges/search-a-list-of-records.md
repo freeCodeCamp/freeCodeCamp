@@ -1,6 +1,6 @@
 ---
 id: 5eb3e497b8d6d7f63c5517ea
-title: Search a list of records
+title: レコードリストを検索する
 challengeType: 1
 forumTopicId: 385315
 dashedName: search-a-list-of-records
@@ -12,47 +12,47 @@ A record consists of attributes that describe an entity. Each attribute has a na
 
 # --instructions--
 
-Write a function that takes a string as a parameter. The function should return the index of the item in `list` for which the value of the `name` attribute matches the given string.
+パラメータとして文字列を取る関数を記述してください。 この関数は、`name` 属性の値が指定された文字列と一致する `list`内の項目のインデックスを返す必要があります。
 
 # --hints--
 
-`searchCity` should be a function.
+`searchCity` は関数とします。
 
 ```js
 assert(typeof searchCity === 'function');
 ```
 
-`searchCity("Dar Es Salaam")` should return a number.
+`searchCity("Dar Es Salaam")` は数値を返す必要があります。
 
 ```js
 assert(typeof searchCity('Dar Es Salaam') === 'number');
 ```
 
-`searchCity("Dar Es Salaam")` should return `6`.
+`searchCity("Dar Es Salaam")` は `6` を返す必要があります。
 
 ```js
 assert.equal(searchCity('Dar Es Salaam'), 6);
 ```
 
-`searchCity("Casablanca")` should return `9`.
+`searchCity("Casablanca")` は `9` を返す必要があります。
 
 ```js
 assert.equal(searchCity('Casablanca'), 9);
 ```
 
-`searchCity("Cairo")` should return `1`.
+`searchCity("Cairo")` は `1` を返す必要があります。
 
 ```js
 assert.equal(searchCity('Cairo'), 1);
 ```
 
-`searchCity("Mogadishu")` should return `4`.
+`searchCity("Mogadishu")` は `4` を返す必要があります。
 
 ```js
 assert.equal(searchCity('Mogadishu'), 4);
 ```
 
-`searchCity("Lagos")` should return `0`.
+`searchCity("Lagos")` は `0` を返す必要があります。
 
 ```js
 assert.equal(searchCity('Lagos'), 0);

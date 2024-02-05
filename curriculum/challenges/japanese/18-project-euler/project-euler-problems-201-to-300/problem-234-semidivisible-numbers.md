@@ -1,6 +1,6 @@
 ---
 id: 5900f4571000cf542c50ff69
-title: 'Problem 234: Semidivisible numbers'
+title: '問題 234: 半整除可能な数'
 challengeType: 1
 forumTopicId: 301878
 dashedName: problem-234-semidivisible-numbers
@@ -8,19 +8,19 @@ dashedName: problem-234-semidivisible-numbers
 
 # --description--
 
-For an integer $n ≥ 4$, we define the lower prime square root of $n$, denoted by $lps(n)$, as the $\text{largest prime} ≤ \sqrt{n}$ and the upper prime square root of $n$, $ups(n)$, as the $\text{smallest prime} ≥ \sqrt{n}$.
+整数 $n ≥ 4$ について、$n$ の「下位素数平方根 (lower prime square root)」を $lps(n)$ と表し、$\text{最大の素数} ≤ \sqrt{n}$ と定義します。また、$n$ の「上位素数平方根 (upper prime square root)」を $ups(n)$ と表し、$\text{最小の素数} ≥ \sqrt{n}$ と定義します。
 
-So, for example, $lps(4) = 2 = ups(4)$, $lps(1000) = 31$, $ups(1000) = 37$.
+例えば、$lps(4) = 2 = ups(4)$, $lps(1000) = 31$, $ups(1000) = 37$ です。
 
-Let us call an integer $n ≥ 4$ semidivisible, if one of $lps(n)$ and $ups(n)$ divides $n$, but not both.
+$lps(n)$ と $ups(n)$ の両方ではなくいずれか 1 つが $n$ の約数であるとき、整数 $n ≥4$ を「半整除可能 (semidivisible)」な数と呼ぶことにします。
 
-The sum of the semidivisible numbers not exceeding 15 is 30, the numbers are 8, 10 and 12. 15 is not semidivisible because it is a multiple of both $lps(15) = 3$ and $ups(15) = 5$. As a further example, the sum of the 92 semidivisible numbers up to 1000 is 34825.
+15 以下の半整除可能な数は 8, 10, 12 で、それらの和は 30 です。 15 は $lps(15) = 3$ と $ups(15) = 5$ の倍数なので、半整除可能な数ではありません。 他の例としては、1000 以下の半整除可能な数は 92 個 あり、それらの和は 34825 です。
 
-What is the sum of all semidivisible numbers not exceeding 999966663333?
+999966663333 以下の半整除可能な数の総和を求めなさい。
 
 # --hints--
 
-`semidivisibleNumbers()` should return `1259187438574927000`.
+`semidivisibleNumbers()` は `1259187438574927000` を返す必要があります。
 
 ```js
 assert.strictEqual(semidivisibleNumbers(), 1259187438574927000);

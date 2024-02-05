@@ -1,6 +1,6 @@
 ---
 id: 5900f4301000cf542c50ff42
-title: 'Problem 196: Prime triplets'
+title: '問題 196: 三つ子素数'
 challengeType: 1
 forumTopicId: 301834
 dashedName: problem-196-prime-triplets
@@ -8,7 +8,7 @@ dashedName: problem-196-prime-triplets
 
 # --description--
 
-Build a triangle from all positive integers in the following way:
+正の整数をすべて使用して下図のように三角形を作ります。
 
 $$\begin{array}{rrr}   &  1 \\\\
   &  \color{red}{2} &  \color{red}{3} \\\\   &  4 & \color{red}{5} &  6 \\\\
@@ -18,23 +18,23 @@ $$\begin{array}{rrr}   &  1 \\\\
   & 46 & \color{red}{47} & 48 & 49 & 50 & 51 & 52 & \color{red}{53} & 54 & 55 \\\\   & 56 & 57 & 58 & \color{red}{59} & 60 & \color{red}{61} & 62 & 63 & 64 & 65 & 66 \\\\
   & \cdots \end{array}$$
 
-Each positive integer has up to eight neighbours in the triangle.
+それぞれの正の整数は、三角形の中で最大 8 つの整数と隣接しています。
 
-A set of three primes is called a prime triplet if one of the three primes has the other two as neighbours in the triangle.
+3 つの素数のいずれかが他の 2 つと三角形の中で隣接する場合、その 3 つの素数の組は三つ子素数と呼ばれます。
 
-For example, in the second row, the prime numbers 2 and 3 are elements of some prime triplet.
+例えば、2 行目では 素数 2 と 3 が三つ子素数の要素です。
 
-If row 8 is considered, it contains two primes which are elements of some prime triplet, i.e. 29 and 31. If row 9 is considered, it contains only one prime which is an element of some prime triplet: 37.
+8 行目を見ると、三つ子素数の要素である 2 つの素数、すなわち 29 と 31 が含まれています。 9 行目を見ると、三つ子素数の要素である素数は 1 つだけあり、それは 37 です。
 
-Define $S(n)$ as the sum of the primes in row $n$ which are elements of any prime triplet. Then $S(8) = 60$ and $S(9) = 37$.
+$n$ 行目にある、任意の三つ子素数の要素である素数の和を、$S(n)$ とします。 この場合、$S(8) = 60$, $S(9) = 37$ となります。
 
-You are given that $S(10000) = 950007619$.
+$S(10000) = 950007619$ が与えられます。
 
-Find $S(5678027) + S(7208785)$.
+$S(5678027) + S(7208785)$ を求めなさい。
 
 # --hints--
 
-`primeTriplets()` should return `322303240771079940`.
+`primeTriplets()` は `322303240771079940` を返す必要があります。
 
 ```js
 assert.strictEqual(primeTriplets(), 322303240771079940);

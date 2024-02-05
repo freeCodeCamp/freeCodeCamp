@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad8
-title: Zig-zag matrix
+title: 之字形矩陣
 challengeType: 1
 forumTopicId: 302348
 dashedName: zig-zag-matrix
@@ -10,7 +10,7 @@ dashedName: zig-zag-matrix
 
 A 'zig-zag' array is a square arrangement of the first $N^2$ integers, where the numbers increase sequentially as you zig-zag along the array's anti-diagonals.
 
-For example, for the input `5`, the following result should be produced:
+例如，對於輸入 `5`，應該產生以下結果：
 
 <pre>
  0  1  5  6 14
@@ -22,41 +22,41 @@ For example, for the input `5`, the following result should be produced:
 
 # --instructions--
 
-Write a function that takes the size of the zig-zag matrix, and returns the corresponding matrix as two-dimensional array.
+編寫一個函數，該函數採用 zig-zag 矩陣的大小，並以二維數組的形式返回相應的矩陣。
 
 # --hints--
 
-ZigZagMatrix should be a function.
+ZigZagMatrix 應該是一個函數。
 
 ```js
 assert.equal(typeof ZigZagMatrix, 'function');
 ```
 
-ZigZagMatrix should return array.
+ZigZagMatrix 應返回數組。
 
 ```js
 assert.equal(typeof ZigZagMatrix(1), 'object');
 ```
 
-ZigZagMatrix should return an array of nested arrays.
+ZigZagMatrix 應返回嵌套數組的數組。
 
 ```js
 assert.equal(typeof ZigZagMatrix(1)[0], 'object');
 ```
 
-ZigZagMatrix(1) should return \[[0]].
+ZigZagMatrix(1) 應返回 \[[0]]。
 
 ```js
 assert.deepEqual(ZigZagMatrix(1), zm1);
 ```
 
-ZigZagMatrix(2) should return \[[0, 1], [2, 3]].
+ZigZagMatrix(2) 應該返回 \[[0, 1], [2, 3]]。
 
 ```js
 assert.deepEqual(ZigZagMatrix(2), zm2);
 ```
 
-ZigZagMatrix(5) should return specified matrix.
+ZigZagMatrix(5) 應返回指定的矩陣。
 
 ```js
 assert.deepEqual(ZigZagMatrix(5), zm5);

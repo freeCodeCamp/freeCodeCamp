@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ed4
-title: Knapsack problem/Unbounded
+title: 揹包問題/無界
 challengeType: 1
 forumTopicId: 323655
 dashedName: knapsack-problemunbounded
@@ -10,19 +10,19 @@ dashedName: knapsack-problemunbounded
 
 A traveler gets diverted and has to make an unscheduled stop in what turns out to be Shangri-La. Opting to leave, he is allowed to take as much as he likes of the items available there, so long as it will fit in his knapsack, and he can carry it.
 
-He knows that he can carry no more than a particular value of maximum weight in total; and that the capacity of his knapsack has a limited volume.
+他知道他總共不能攜帶超過特定值的最大重量；而且他的揹包容量有限。
 
-Looking just above the bar codes on the items he finds their weights and volumes. He digs out his recent copy of a financial paper and gets the value of each item.
+查看物品上的條形碼上方，他會發現它們的重量和體積。 他翻出他最近的一份財務文件，並獲得了每一項的價值。
 
-He can only take whole units of any item, but there is much more of any item than he could ever carry.
+他只能帶走任何物品的整個單位，但任何物品的數量都比他所能攜帶的要多得多。
 
 # --instructions--
 
-Write a function that takes an array of objects, maximum weight, and maximum volume as parameters. Each object has 4 attributes: name, value, weight, and volume. The function should return the maximum value of items the traveller can take with him.
+編寫一個函數，將對象數組、最大重量和最大體積作爲參數。 每個對象都有 4 個屬性：名稱、值、重量和體積。 該函數應返回旅行者可以隨身攜帶的物品的最大值。
 
 # --hints--
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.25)` should return `54500`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.25)` 應該返回 `54500`。
 
 ```js
 assert.equal(
@@ -39,7 +39,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 55, 0.25)` should return `88400`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 55, 0.25)` 應該返回 `88400`。
 
 ```js
 assert.equal(
@@ -56,7 +56,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.15)` should return `42500`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.15)` 應該返回 `42500`。
 
 ```js
 assert.equal(
@@ -73,7 +73,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 35, 0.35)` should return `75900`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 35, 0.35)` 應該返回 `75900`。
 
 ```js
 assert.equal(
@@ -90,7 +90,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 15, 0.25)` should return `43200`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 15, 0.25)` 應該返回 `43200`。
 
 ```js
 assert.equal(

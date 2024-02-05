@@ -1,6 +1,6 @@
 ---
 id: 5e94a54cc7b022105bf0fd2c
-title: Word frequency
+title: Wortfrequenz
 challengeType: 1
 forumTopicId: 393913
 dashedName: word-frequency
@@ -12,64 +12,64 @@ Given a text string and an integer n, return the n most common words in the file
 
 # --instructions--
 
-Write a function to count the occurrences of each word and return the n most commons words along with the number of their occurrences in decreasing frequency.
+Schreibe eine Funktion, die die Vorkommen der einzelnen Wörter zählt und die n häufigsten Wörter zusammen mit der Anzahl ihrer Vorkommen in abnehmender Häufigkeit zurückgibt.
 
-The function should return a 2D array with each of the elements in the following form: `[word, freq]`. `word` should be the lowercase version of the word and `freq` the number denoting the count.
+Die Funktion sollte ein 2D-Array mit jedem der Elemente in der folgenden Form zurückgeben: `[word, freq]`. `word` sollte die klein geschriebene Version des Wortes sein und `freq` die Zahl, die die Anzahl angibt.
 
-The function should return an empty array, if no string is provided.
+Die Funktion sollte eine leere Anordnung zurückgeben, wenn keine Zeichenkette angegeben wird.
 
-The function should be case insensitive, for example, the strings "Hello" and "hello" should be treated the same.
+Die Funktion sollte die Groß- und Kleinschreibung nicht berücksichtigen, z. B. sollten die Zeichenketten "Hallo" und "hallo" gleich behandelt werden.
 
-You can treat words that have special characters such as underscores, dashes, apostrophes, commas, etc., as distinct words.
+Du kannst Wörter, die Sonderzeichen wie Unterstriche, Bindestriche, Apostrophe, Kommas usw. enthalten, als eigene Wörter behandeln.
 
-For example, given the string "Hello hello goodbye", your function should return `[['hello', 2], ['goodbye', 1]]`.
+Bei der Zeichenkette "Hello hello goodbye" zum Beispiel sollte deine Funktion `[['hello', 2], ['goodbye', 1]]` zurückgeben.
 
 # --hints--
 
-`wordFrequency` should be a function.
+`wordFrequency` sollte eine Funktion sein.
 
 ```js
 assert(typeof wordFrequency == 'function');
 ```
 
-`wordFrequency` should return an array.
+`wordFrequency` sollte ein Array zurückgeben.
 
 ```js
 assert(Array.isArray(wordFrequency('test')));
 ```
 
-`wordFrequency("Hello hello world", 2)` should return `[['hello', 2], ['world', 1]]`
+`wordFrequency("Hello hello world", 2)` sollte `[['hello', 2], ['world', 1]]` zurückgeben
 
 ```js
 assert.deepEqual(wordFrequency(example_1, 2), example_1_solution);
 ```
 
-`wordFrequency("The quick brown fox jumped over the lazy dog", 1)` should return `[['the', 2]]`
+`wordFrequency("The quick brown fox jumped over the lazy dog", 1)` sollte `[['the', 2]]` zurückgeben
 
 ```js
 assert.deepEqual(wordFrequency(example_2, 1), example_2_solution);
 ```
 
-`wordFrequency("Opensource opensource open-source open source", 1)` should return `[['opensource', 2]]`
+`wordFrequency("Opensource opensource open-source open source", 1)` sollte `[['opensource', 2]]` zurückgeben
 
 ```js
 assert.deepEqual(wordFrequency(example_3, 1), example_3_solution);
 ```
 
-`wordFrequency("Apple App apply aPP aPPlE", 3)` should return `[['app', 2], ['apple', 2], ['apply', 1]]` or `[['apple', 2], ['app', 2], ['apply', 1]]`
+`wordFrequency("Apple App apply aPP aPPlE", 3)` sollte `[['app', 2], ['apple', 2], ['apply', 1]]` oder `[['apple', 2], ['app', 2], ['apply', 1]]` zurückgeben
 
 ```js
 const arr = JSON.stringify(wordFrequency(example_4, 3));
 assert(arr === example_4_solution_a || arr === example_4_solution_b);
 ```
 
-`wordFrequency("c d a d c a b d d c", 4)` should return `[['d', 4], ['c', 3], ['a', 2], ['b', 1]]`
+`wordFrequency("c d a d c a b d d c", 4)` sollte `[['d', 4], ['c', 3], ['a', 2], ['b', 1]]` zurückgeben
 
 ```js
 assert.deepEqual(wordFrequency(example_5, 4), example_5_solution);
 ```
 
-`wordFrequency("", 5)` should return `[]`
+`wordFrequency("", 5)` sollte `[]` zurückgeben
 
 ```js
 assert.deepEqual(wordFrequency(example_6, 5), example_6_solution);

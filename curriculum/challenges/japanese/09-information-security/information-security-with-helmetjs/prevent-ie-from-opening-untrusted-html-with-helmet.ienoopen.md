@@ -8,7 +8,7 @@ dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+前のチャレンジで案内した通り、このプロジェクトはこちらの <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> にあるスタータープロジェクトをベースに構築するか、<a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> からクローンして取り組んでください。
 
 一部のウェブアプリケーションでは、信頼されていない HTML をダウンロード用に提供しています。 Internet Explorer の一部のバージョンではデフォルトで、あなたのサイトのコンテキストで、こうした HTML ファイルを開きます。 つまり、あなたのページのコンテキストで、信頼されていない HTML ページが悪意のある動作を始める可能性があります。 このミドルウェアは、X-Download-Options ヘッダーを設定して、そうしたファイルを開かないようにします。 これにより、IE ユーザーは信頼されたサイトのコンテキストでダウンロードを実行できなくなります。
 

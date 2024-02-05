@@ -1,6 +1,6 @@
 ---
 id: 5900f46b1000cf542c50ff7d
-title: 'Problem 254: Sums of Digit Factorials'
+title: '问题254：数字因子的总和'
 challengeType: 1
 forumTopicId: 301902
 dashedName: problem-254-sums-of-digit-factorials

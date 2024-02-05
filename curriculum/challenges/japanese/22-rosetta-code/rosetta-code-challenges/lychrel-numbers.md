@@ -1,6 +1,6 @@
 ---
 id: 5ea2815a8640bcc6cb7dab3c
-title: Lychrel numbers
+title: リクレル数
 challengeType: 1
 forumTopicId: 385287
 dashedName: lychrel-numbers
@@ -10,20 +10,20 @@ dashedName: lychrel-numbers
 
 <ol>
   <li>Take an integer <code>n₀</code>, greater than zero.</li>
-  <li>Form the next number <code>n</code> of the series by reversing <code>n₀</code> and adding it to <code>n₀</code></li>
-  <li>Stop when <code>n</code> becomes palindromic - i.e. the digits of <code>n</code> in reverse order == <code>n</code>.</li>
+  <li><code>n₀</code> を反転させ、 これを <code>n₀</code> に追加して、級数の次の数 <code>n</code> を作ります。</li>
+  <li><code>n</code> が回文数になったとき、すなわち逆順の <code>n</code> の桁 == <code>n</code> になったときに停止します。</li>
 </ol>
 
 The above recurrence relation when applied to most starting numbers `n` = 1, 2, ... terminates in a palindrome quite quickly.
 
-For example if `n₀` = 12 we get:
+例えば、 `n₀` = 12 の場合、以下のようになります。
 
 ```bash
 12
 12 + 21 = 33,  a palindrome!
 ```
 
-And if `n₀` = 55 we get:
+`n₀` = 55 の場合、以下のようになります。
 
 ```bash
 55
@@ -31,17 +31,17 @@ And if `n₀` = 55 we get:
 110 + 011 = 121,  a palindrome!
 ```
 
-Notice that the check for a palindrome happens *after* an addition.
+加算の*後に*回文数のチェックが行われることに注意してください。
 
-Some starting numbers seem to go on forever; the recurrence relation for 196 has been calculated for millions of repetitions forming numbers with millions of digits, without forming a palindrome. These numbers that do not end in a palindrome are called **Lychrel numbers**.
+開始数の中にはこのプロセスが永遠に続くかのように見えるものもあります。開始数が 196 のこの漸化式は回文数を形成せずに、数百万桁の数字を形成しながら、何百万もの計算を繰り返しています。 回文数で終わらない数字を**リクレル数**と呼びます。
 
-For the purposes of this task a Lychrel number is any starting number that does not form a palindrome within 500 (or more) iterations.
+このタスクでは、リクレル数は、500 回 (以上) の繰り返しの範囲において回文数を形成しない任意の開始数とします。
 
-**Seed and related Lychrel numbers:**
+**種子数と親族リクレル数:**
 
-Any integer produced in the sequence of a Lychrel number is also a Lychrel number.
+リクレル数の数列で生成される整数もリクレル数になります。
 
-In general, any sequence from one Lychrel number *might* converge to join the sequence from a prior Lychrel number candidate; for example the sequences for the numbers 196 and then 689 begin:
+一般に、1つのリクレル数からの数列は、以前のリクレル数候補からの数列に収束する*ことがあります*。例えば196と689で始まる数列は次のようになります。
 
 ```bash
     196
@@ -58,59 +58,59 @@ In general, any sequence from one Lychrel number *might* converge to join the se
     ...
 ```
 
-So we see that the sequence starting with 689 converges to, and continues with the same numbers as that for 196.
+689 で始まる数列が、196 の数列に収束し、196 の場合と同じ数字が続くことが分かります。
 
-Because of this we can further split the Lychrel numbers into true **Seed** Lychrel number candidates, and **Related** numbers that produce no palindromes but have integers in their sequence seen as part of the sequence generated from a lower Lychrel number.
+このことから、リクレル数を真の**種子数**としてのリクレル数候補と、回文数にはならないものの、より小さいリクレル数から生成された数列の一部とみられる整数を数列内に生成する**親族**数にさらに分割できます。
 
 # --instructions--
 
-Write a function that takes a number as a parameter. Return true if the number is a Lynchrel number. Otherwise, return false. Remember that the iteration limit is 500.
+パラメータとして数値を取る関数を記述してください。 数値がリクレル数の場合は true を返します。 それ以外は、falseを返します。 繰り返しの範囲は 500 回であることに注意してください。
 
 # --hints--
 
-`isLychrel` should be a function.
+`isLychrel` は関数とします。
 
 ```js
 assert(typeof isLychrel === 'function');
 ```
 
-`isLychrel(12)` should return a boolean.
+`isLychrel(12)` はブール値を返す必要があります。
 
 ```js
 assert(typeof isLychrel(12) === 'boolean');
 ```
 
-`isLychrel(12)` should return `false`.
+`isLychrel(12)` は `false` を返す必要があります。
 
 ```js
 assert.equal(isLychrel(12), false);
 ```
 
-`isLychrel(55)` should return `false`.
+`isLychrel(55)` は `false` を返す必要があります。
 
 ```js
 assert.equal(isLychrel(55), false);
 ```
 
-`isLychrel(196)` should return `true`.
+`isLychrel(196)` は `true` を返す必要があります。
 
 ```js
 assert.equal(isLychrel(196), true);
 ```
 
-`isLychrel(879)` should return `true`.
+`isLychrel(879)` は `true` を返す必要があります。
 
 ```js
 assert.equal(isLychrel(879), true);
 ```
 
-`isLychrel(44987)` should return `false`.
+`isLychrel(44987)` は `false` を返す必要があります。
 
 ```js
 assert.equal(isLychrel(44987), false);
 ```
 
-`isLychrel(7059)` should return `true`.
+`isLychrel(7059)` は `true` を返す必要があります。
 
 ```js
 assert.equal(isLychrel(7059), true);

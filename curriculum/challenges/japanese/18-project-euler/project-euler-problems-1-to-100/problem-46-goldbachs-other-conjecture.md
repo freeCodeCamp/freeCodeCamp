@@ -1,6 +1,6 @@
 ---
 id: 5900f39a1000cf542c50fead
-title: 'Problem 46: Goldbach''s other conjecture'
+title: '問題 46: もう一つのゴールドバッハの予想'
 challengeType: 1
 forumTopicId: 302134
 dashedName: problem-46-goldbachs-other-conjecture
@@ -8,7 +8,7 @@ dashedName: problem-46-goldbachs-other-conjecture
 
 # --description--
 
-It was proposed by Christian Goldbach that every odd composite number can be written as the sum of a prime and twice a square.
+クリスティアン・ゴールドバッハは、奇数の合成数はすべて素数と平方数の 2 倍の和で表せると予想しました。
 
 <div style='margin-left: 2em;'>
   9 = 7 + 2×1<sup>2</sup><br>
@@ -19,19 +19,19 @@ It was proposed by Christian Goldbach that every odd composite number can be wri
   33 = 31 + 2×1<sup>2</sup>
 </div>
 
-It turns out that the conjecture was false.
+この予想は誤りであることが後に判明しました。
 
-What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
+奇数の合成数のうち、平方数の 2 倍と素数の和では表せない最小のものを求めなさい。
 
 # --hints--
 
-`goldbachsOtherConjecture()` should return a number.
+`goldbachsOtherConjecture()` は数値を返す必要があります。
 
 ```js
 assert(typeof goldbachsOtherConjecture() === 'number');
 ```
 
-`goldbachsOtherConjecture()` should return 5777.
+`goldbachsOtherConjecture()` は 5777 を返す必要があります。
 
 ```js
 assert.strictEqual(goldbachsOtherConjecture(), 5777);

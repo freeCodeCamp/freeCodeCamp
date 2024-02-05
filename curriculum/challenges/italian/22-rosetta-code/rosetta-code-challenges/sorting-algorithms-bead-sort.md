@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8001
-title: Sorting algorithms/Bead sort
+title: Algoritmi di ordinamento/Bead sort
 challengeType: 1
 forumTopicId: 302310
 dashedName: sorting-algorithmsbead-sort
@@ -10,45 +10,45 @@ dashedName: sorting-algorithmsbead-sort
 
 A *bead sort* starts by creating a matrix of zeroes whose length is equal to the value of the largest element in the input array. The matrix is transformed by adding one to all elements between the zeroth index and the index indicated by the current element. This process is repeated, until you have filled the matrix.
 
-Iterating over the matrix, summing the number of elements greater than zero, then decreasing the value of each element by one yields the sorted array.
+Iterare sulla matrice, sommare i numeri degli elementi maggiori di zero, poi diminuire il valore di ogni elemento di uno produce l'array ordinato.
 
-**Note:** Each element in the input array is unique.
+**Nota:** Ogni elemento dell'array di input è unico.
 
-Sort an array of positive integers using the Bead Sort Algorithm.
+Ordina un array di numeri interi positivi usando l'algoritmo Bead Sort.
 
 # --hints--
 
-`beadSort` should be a function.
+`beadSort` dovrebbe essere una funzione.
 
 ```js
 assert(typeof beadSort == 'function');
 ```
 
-`beadSort([25, 32, 12, 7, 20])` should return an array.
+`beadSort([25, 32, 12, 7, 20])` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(beadSort([25, 32, 12, 7, 20])));
 ```
 
-`beadSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`beadSort([25, 32, 12, 7, 20])` dovrebbe restituire `[7, 12, 20, 25, 32]`.
 
 ```js
 assert.deepEqual(beadSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`beadSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`beadSort([38, 45, 35, 8, 13])` dovrebbe restituire `[8, 13, 35, 38, 45]`.
 
 ```js
 assert.deepEqual(beadSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`beadSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`beadSort([43, 36, 20, 34, 24])` dovrebbe restituire `[20, 24, 34, 36, 43]`.
 
 ```js
 assert.deepEqual(beadSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`beadSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`beadSort([12, 33, 26, 18, 1, 16, 38])` dovrebbe restituire `[1, 12, 16, 18, 26, 33, 38]`.
 
 ```js
 assert.deepEqual(beadSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -62,7 +62,7 @@ assert.deepEqual(beadSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`beadSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`beadSort([3, 39, 48, 16, 1, 4, 29])` dovrebbe restituire `[1, 3, 4, 16, 29, 39, 48]`.
 
 ```js
 assert.deepEqual(beadSort([3, 39, 48, 16, 1, 4, 29]), [

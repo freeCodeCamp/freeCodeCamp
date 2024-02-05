@@ -1,6 +1,6 @@
 ---
 id: 5eaf48389ee512d4d103684b
-title: Self Describing Numbers
+title: 自己記述数
 challengeType: 1
 forumTopicId: 385289
 dashedName: self-describing-numbers
@@ -10,50 +10,50 @@ dashedName: self-describing-numbers
 
 There are several so-called "self-describing" or "self-descriptive" integers.
 
-An integer is said to be "self-describing" if it has the property that, when digit positions are labeled 0 to N-1, the digit in each position is equal to the number of times that digit appears in the number.
+各桁が 0 から N-1 にラベル付けされているとき、各桁の数字がこの数字内でその桁が現れる回数と同じという性質を持つ場合、その整数は「自己記述数」と呼ばれます。
 
-For example, **2020** is a four-digit self describing number:
+例えば、 **2020** は4桁の自己記述数です。
 
 <ul>
     <li> position 0 has value 2 and there are two 0s in the number; </li>
-    <li> position 1 has value 0 and there are no 1s in the number; </li>
-    <li> position 2 has value 2 and there are two 2s; </li>
-    <li> position 3 has value 0 and there are zero 3s; </li>
+    <li> 1 の位置の値は 0 で、この数字内には 1 がありません。 </li>
+    <li> 2 の位置の値は 2 で、この数字内には 2 つの 2 があります。 </li>
+    <li> 3 の位置の値は 0 で、この数字内には 3 がありません。 </li>
 </ul>
 
-Self-describing numbers &lt; 100,000,000 are: 1210, 2020, 21200, 3211000, 42101000.
+自己記述数 &lt; 100000000 は、1210, 2020, 21200, 3211000, 42100000 です。
 
 # --instructions--
 
-Write a function that takes a positive integer as a parameter. If it is self-describing return true. Otherwise, return false.
+パラメータとして正の整数を取る関数を記述してください。 それが自己記述数の場合は true を返します。 それ以外の場合は、false を返します。
 
 # --hints--
 
-`isSelfDescribing` should be a function.
+`isSelfDescribing` は関数とします。
 
 ```js
 assert(typeof isSelfDescribing == 'function');
 ```
 
-`isSelfDescribing()` should return a boolean.
+`isSelfDescribing()` はブール値を返す必要があります。
 
 ```js
 assert(typeof isSelfDescribing(2020) == 'boolean');
 ```
 
-`isSelfDescribing(2020)` should return `true`.
+`isSelfDescribing(2020)` は `true` を返す必要があります。
 
 ```js
 assert.equal(isSelfDescribing(2020), true);
 ```
 
-`isSelfDescribing(3021)` should return `false`.
+`isSelfDescribing(3021)` は `false` を返す必要があります。
 
 ```js
 assert.equal(isSelfDescribing(3021), false);
 ```
 
-`isSelfDescribing(3211000)` should return `true`.
+`isSelfDescribing(3211000)` は `true` を返す必要があります。
 
 ```js
 assert.equal(isSelfDescribing(3211000), true);
@@ -89,7 +89,7 @@ function isSelfDescribing(n) {
     if (digits.length != count.length) {
         return false;
     }
-    
+
     for (let i=0; i< digits.length; i++){
       if (digits[i] !== count[i]) {
         return false;

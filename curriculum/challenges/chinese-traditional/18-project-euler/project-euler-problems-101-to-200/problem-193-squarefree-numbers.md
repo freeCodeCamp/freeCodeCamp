@@ -1,6 +1,6 @@
 ---
 id: 5900f42f1000cf542c50ff41
-title: 'Problem 193: Squarefree Numbers'
+title: '問題193：無廣場數字'
 challengeType: 1
 forumTopicId: 301831
 dashedName: problem-193-squarefree-numbers

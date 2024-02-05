@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ace
-title: Accumulator factory
+title: Акумуляторна фабрика
 challengeType: 1
 forumTopicId: 302222
 dashedName: accumulator-factory
@@ -12,37 +12,37 @@ A problem posed by Paul Graham is that of creating a function that takes a singl
 
 # --instructions--
 
-Create a function that takes a number $n$ and generates accumulator functions that return the sum of every number ever passed to them.
+Створіть функцію, яка приймає число $n$ і генерує акумуляторні функції, які повертають суму кожного числа, яке до них додадуть.
 
-**Rules:**
+**Правила:**
 
-Do not use global variables.
+Не використовуйте глобальні змінні.
 
-**Hint:**
+**Підказка:**
 
-Closures save outer state.
+Закриття економить зовнішній стан.
 
 # --hints--
 
-`accumulator` should be a function.
+`accumulator` має бути функцією.
 
 ```js
 assert(typeof accumulator === 'function');
 ```
 
-`accumulator(0)` should return a function.
+`accumulator(0)` має відображати функцію.
 
 ```js
 assert(typeof accumulator(0) === 'function');
 ```
 
-`accumulator(0)(2)` should return a number.
+`accumulator(0)(2)` має відображати число.
 
 ```js
 assert(typeof accumulator(0)(2) === 'number');
 ```
 
-Passing in the values 3, -4, 1.5, and 5 should return 5.5.
+Перехід у значеннях 3, -4, 1.5 і 5 має видати 5,5.
 
 ```js
 assert(testFn(5) === 5.5);

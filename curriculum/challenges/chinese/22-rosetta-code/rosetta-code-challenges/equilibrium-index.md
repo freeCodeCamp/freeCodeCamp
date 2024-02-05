@@ -1,6 +1,6 @@
 ---
 id: 5987fd532b954e0f21b5d3f6
-title: Equilibrium index
+title: 均衡指数
 challengeType: 1
 forumTopicId: 302255
 dashedName: equilibrium-index

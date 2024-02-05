@@ -1,6 +1,6 @@
 ---
 id: 5900f4e41000cf542c50fff5
-title: 'Problem 375: Minimum of subsequences'
+title: '问题 375：子序列的最小值'
 challengeType: 1
 forumTopicId: 302037
 dashedName: problem-375-minimum-of-subsequences

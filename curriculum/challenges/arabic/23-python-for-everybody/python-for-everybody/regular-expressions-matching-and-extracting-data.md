@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0b0b6c005b0e76f06f
-title: 'Regular Expressions: Matching and Extracting Data'
+title: 'التعبيرات العادية: المطابقة واستخراج البيانات'
 challengeType: 11
 videoId: LaCZnTbQGkE
 bilibiliIds:

@@ -1,6 +1,6 @@
 ---
 id: 6331d2b0b51aeedd1a2bd655
-title: "Solving Systems"
+title: "連立方程式を解く"
 challengeType: 15
 videoId: CNGUQzXfC6c
 dashedName: solving-systems
@@ -8,35 +8,35 @@ dashedName: solving-systems
 
 # --description--
 
-The first video will show you the math behind solving a system of two equations without graphing, how you can factor an equation, and solve for a certain variable.
+最初の動画では、数学を用いてグラフを描かずに 2 つの式の連立方程式を解く方法と、方程式を因数分解して特定の変数について解く方法を紹介します。
 
-Here is the <a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+<a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">この動画で使用している Colab ノートブックはこちら</a>です。
 
 # --assignment--
 
-Add code to your notebook to solve and graph systems of equations
+連立方程式を解いてグラフ表示するコードをノートブックに追加してください。
 
 # --question--
 
 ## --text--
 
-Which of the following can SymPy do that matplotlib can't do?
+SymPy では実行できて matplotlib では実行できないことはどれですか？
 
 ## --answers--
 
-Solve for a variable
+変数について解く
 
 ---
 
-Display an x-y axis
+x-y 軸を表示する
 
 ---
 
-Graph an equation or two
+1 つまたは 2 つの方程式をグラフ表示する
 
 ---
 
-Show tic marks on the graph
+グラフに目盛りを表示する
 
 ## --video-solution--
 

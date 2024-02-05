@@ -1,6 +1,6 @@
 ---
 id: 5900f39c1000cf542c50feae
-title: 'Problem 47: Distinct primes factors'
+title: '問題 47: 相異なる素因数'
 challengeType: 1
 forumTopicId: 302145
 dashedName: problem-47-distinct-primes-factors
@@ -8,14 +8,14 @@ dashedName: problem-47-distinct-primes-factors
 
 # --description--
 
-The first two consecutive numbers to have two distinct prime factors are:
+相異なる 2 つの素因数を持つ 2 つの連続する数のうち、最小のものは次のとおりです。
 
 <div style='padding-left: 4em;'>
   14 = 2 × 7<br>
   15 = 3 × 5
 </div>
 
-The first three consecutive numbers to have three distinct prime factors are:
+相異なる 3 つの素因数を持つ 3 つの連続する数のうち、最小のものは次のとおりです。
 
 <div style='padding-left: 4em;'>
   644 = 2<sup>2</sup> × 7 × 23<br>
@@ -23,29 +23,29 @@ The first three consecutive numbers to have three distinct prime factors are:
   646 = 2 × 17 × 19
 </div>
 
-Find the first four consecutive integers to have four distinct prime factors each. What is the first of these numbers?
+それぞれ 4 つの相異なる素因数を持つ 4 つの連続する整数のうち、最小のものを求めなさい。 それらの数の 1 つ目は何ですか。
 
 # --hints--
 
-`distinctPrimeFactors(2, 2)` should return a number.
+`distinctPrimeFactors(2, 2)` は数値を返します。
 
 ```js
 assert(typeof distinctPrimeFactors(2, 2) === 'number');
 ```
 
-`distinctPrimeFactors(2, 2)` should return 14.
+`distinctPrimeFactors(2, 2)` は 14 を返す必要があります。
 
 ```js
 assert.strictEqual(distinctPrimeFactors(2, 2), 14);
 ```
 
-`distinctPrimeFactors(3, 3)` should return 644.
+`distinctPrimeFactors(3, 3)` は 644 を返す必要があります。
 
 ```js
 assert.strictEqual(distinctPrimeFactors(3, 3), 644);
 ```
 
-`distinctPrimeFactors(4, 4)` should return 134043.
+`distinctPrimeFactors(4, 4)` は 134043 を返す必要があります。
 
 ```js
 assert.strictEqual(distinctPrimeFactors(4, 4), 134043);

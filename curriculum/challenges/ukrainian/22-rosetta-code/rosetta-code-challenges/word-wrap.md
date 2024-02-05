@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad4
-title: Word wrap
+title: Перенесення слів
 challengeType: 1
 forumTopicId: 302344
 dashedName: word-wrap
@@ -12,7 +12,7 @@ Even today, with proportional fonts and complex layouts, there are still cases w
 
 # --instructions--
 
-Write a function that can wrap this text to any number of characters. As an example, the text wrapped to 80 characters should look like the following:
+Напишіть функцію, яка може перенести даний текст на будь-яку кількість символів. Як приклад, перенесений текст із 80 символів, має виглядати наступним чином:
 
 <pre>
 Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX
@@ -23,37 +23,37 @@ than a simple minimum length algorithm.
 
 # --hints--
 
-wrap should be a function.
+wrap має бути функцією.
 
 ```js
 assert.equal(typeof wrap, 'function');
 ```
 
-wrap should return a string.
+перенесення має повернути рядок.
 
 ```js
 assert.equal(typeof wrap('abc', 10), 'string');
 ```
 
-wrap(80) should return 4 lines.
+wrap(80) має повернути 4 рядки.
 
 ```js
 assert(wrapped80.split('\n').length === 4);
 ```
 
-Your `wrap` function should return our expected text.
+Ваша функція `wrap` має повернути наш очікуваний текст.
 
 ```js
 assert.equal(wrapped80.split('\n')[0], firstRow80);
 ```
 
-wrap(42) should return 7 lines.
+wrap(42) має повернути 7 рядків.
 
 ```js
 assert(wrapped42.split('\n').length === 7);
 ```
 
-Your `wrap` function should return our expected text.
+Ваша функція `wrap` має повернути наш очікуваний текст.
 
 ```js
 assert.equal(wrapped42.split('\n')[0], firstRow42);

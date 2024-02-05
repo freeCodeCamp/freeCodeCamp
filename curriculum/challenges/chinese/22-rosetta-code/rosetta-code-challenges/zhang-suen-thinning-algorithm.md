@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad7
-title: Zhang-Suen thinning algorithm
+title: Zhang-Suen 细化算法
 challengeType: 1
 forumTopicId: 302347
 dashedName: zhang-suen-thinning-algorithm
@@ -25,7 +25,7 @@ const testImage1 = [
 ];
 ```
 
-It produces the thinned output:
+细化后的输出图像为：
 
 ```js
 [ '                               ',
@@ -42,23 +42,18 @@ It produces the thinned output:
 
 ## Algorithm
 
-Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes. The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
+假设黑色像素为 1，白色像素为 0，并且输入图像是一个由 1 和 0 组成的 N×M 矩形阵列。 该算法对可以有八个邻居的所有黑色像素 P1 进行操作。 邻居按顺序排列为：
 
-$$\begin{array}{|c|c|c|}
-  \\hline
-  P9 & P2              & P3\\\\ \\hline
-  P8 & \boldsymbol{P1} & P4\\\\ \\hline
-  P7 & P6              & P5\\\\ \\hline
-\end{array}$$
+$$\begin{array}{|c|c|c|} \\hline P9 & P2              & P3\\\\ \\hline P8 & \boldsymbol{P1} & P4\\\\ \\hline P7 & P6              & P5\\\\ \\hline \end{array}$$
 
-Obviously the boundary pixels of the image cannot have the full eight neighbours.
+显然，图像的边界像素不可能有完整的八个邻域。
 
 - Define $A(P1)$ = the number of transitions from white to black, ($0 \to 1$) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).
-- Define $B(P1)$ = the number of black pixel neighbours of P1. ($= \\sum(P2 \ldots P9)$)
+- 定义 $B(P1)$ = P1 的黑色像素邻居的数量。 ($= \\sum(P2 \ldots P9)$)
 
-**Step 1:**
+**步骤 1：**
 
-All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.
+测试所有像素，并且在此阶段仅记录满足以下所有条件（同时）的像素。
 
 1. The pixel is black and has eight neighbours
 2. $2 \le B(P1) \le 6$
@@ -66,55 +61,55 @@ All pixels are tested and pixels satisfying all the following conditions (simult
 4. At least one of $P2$, $P4$ and $P6$ is white
 5. At least one of $P4$, $P6$ and $P8$ is white
 
-After iterating over the image and collecting all the pixels satisfying all step 1 conditions, all these condition satisfying pixels are set to white.
+在对图像进行迭代并收集满足所有步骤 1 条件的所有像​​素后，将所有这些满足条件的像素设置为白色。
 
-**Step 2:**
+**步骤 2：**
 
-All pixels are again tested and pixels satisfying all the following conditions are just noted at this stage.
+再次测试所有像素，并在此阶段仅记录满足以下所有条件的像素。
 
 1. The pixel is black and has eight neighbours
 2. $2 \le B(P1) \le 6$
 3. $A(P1) = 1$
-4. At least one of $P2$, $P4$ and $P8$ is white
-5. At least one of $P2$, $P6$ and $P8$ is white
+4. $P2$、$P4$ 和 $P8$ 中的至少一个是白色的
+5. $P2$、$P6$ 和 $P8$ 中的至少一个是白色的
 
-After iterating over the image and collecting all the pixels satisfying all step 2 conditions, all these condition satisfying pixels are again set to white.
+在迭代图像并收集满足所有步骤 2 条件的所有像​​素后，所有这些满足条件的像素再次设置为白色。
 
-**Iteration:**
+**迭代：**
 
-If any pixels were set in this round of either step 1 or step 2 then all steps are repeated until no image pixels are so changed.
+如果在这轮步骤 1 或步骤 2 中设置了任何像素，则重复所有步骤，直到没有图像像素发生如此变化。
 
 # --instructions--
 
-Write a routine to perform Zhang-Suen thinning on the provided `image`, an array of strings, where each string represents single line of the image. In the string, `#` represents black pixel, and whitespace represents white pixel. Function should return thinned image, using the same representation.
+编写一个例程，对提供的 `image`（一个字符串数组）执行 Zhang-Suen 细化，其中每个字符串代表图像的单行。 字符串中，`#`代表黑色像素，空格代表白色像素。 函数应返回细化图像，使用相同的表示。
 
 # --hints--
 
-`thinImage` should be a function.
+`thinImage` 应该是一个函数。
 
 ```js
 assert.equal(typeof thinImage, 'function');
 ```
 
-`thinImage` should return an array.
+`thinImage` 应该返回一个数组。
 
 ```js
 assert(Array.isArray(thinImage(_testImage1)));
 ```
 
-`thinImage` should return an array of strings.
+`thinImage` 应该返回一个字符串数组。
 
 ```js
 assert.equal(typeof thinImage(_testImage1)[0], 'string');
 ```
 
-`thinImage(testImage1)` should return a thinned image as in the example.
+`thinImage(testImage1)` 应该返回一个细化的图像，如示例中所示。
 
 ```js
 assert.deepEqual(thinImage(_testImage1), expected1);
 ```
 
-`thinImage(testImage2)` should return a thinned image.
+`thinImage(testImage2)` 应该返回一个细化的图像。
 
 ```js
 assert.deepEqual(thinImage(_testImage2), expected2);

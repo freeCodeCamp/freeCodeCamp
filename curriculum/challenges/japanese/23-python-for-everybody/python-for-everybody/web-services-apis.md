@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f150b6c005b0e76f07f
-title: 'Web Services: APIs'
+title: 'ウェブサービス: API'
 challengeType: 11
 videoId: oUNn1psfBJg
 bilibiliIds:
@@ -18,19 +18,19 @@ What does API stand for?
 
 ## --answers--
 
-Application Portable Intelligence
+アプリケーション・ポータブル・インテリジェンス
 
 ---
 
-Associate Programming International
+アソシエイト・プログラミング・インターナショナル
 
 ---
 
-Application Program Interface
+アプリケーション・プログラム・インターフェイス
 
 ---
 
-Action Portable Interface
+アクション・ポータブル・インターフェイス
 
 ## --video-solution--
 

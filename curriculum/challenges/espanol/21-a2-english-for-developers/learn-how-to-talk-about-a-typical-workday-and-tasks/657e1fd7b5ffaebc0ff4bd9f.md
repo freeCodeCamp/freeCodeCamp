@@ -26,7 +26,7 @@ Why is Tom thanking Brian?
 
 For giving him a time management app.
 
-### --feedback--
+### --retroalimentación--
 
 Tom is thanking Brian for tips, not for giving him an app.
 
@@ -38,7 +38,7 @@ Because he finds Brian's tips helpful.
 
 For inviting him to lunch.
 
-### --feedback--
+### --retroalimentación--
 
 The thank you is for advice, not for a lunch invitation.
 
@@ -46,7 +46,7 @@ The thank you is for advice, not for a lunch invitation.
 
 For helping him with a project.
 
-### --feedback--
+### --retroalimentación--
 
 Tom's gratitude is related to the tips about organization, not specific project help.
 

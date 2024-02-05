@@ -1,7 +1,6 @@
-import { Modal } from '@freecodecamp/react-bootstrap';
+import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/ui';
 
 import { Spacer } from '../helpers';
 
@@ -36,8 +35,9 @@ function ResetModal(props: ResetModalProps): JSX.Element {
         <hr />
         <Button
           block={true}
-          size='large'
-          variant='primary'
+          bsSize='lg'
+          bsStyle='primary'
+          className='btn-invert'
           onClick={props.onHide}
           type='button'
         >
@@ -46,8 +46,9 @@ function ResetModal(props: ResetModalProps): JSX.Element {
         <Spacer size='small' />
         <Button
           block={true}
-          size='large'
-          variant='danger'
+          bsSize='lg'
+          bsStyle='danger'
+          className='btn-danger'
           onClick={props.reset}
           type='button'
         >

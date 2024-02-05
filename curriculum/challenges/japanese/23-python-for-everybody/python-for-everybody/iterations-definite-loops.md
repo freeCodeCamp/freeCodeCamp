@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f05d
-title: 'Iterations: Definite Loops'
+title: '繰り返し: 有限ループ'
 challengeType: 11
 videoId: hiRTRAqNlpE
 bilibiliIds:

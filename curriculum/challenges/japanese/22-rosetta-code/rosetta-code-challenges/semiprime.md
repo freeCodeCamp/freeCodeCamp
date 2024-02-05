@@ -1,6 +1,6 @@
 ---
 id: 5eb3e4aa847216613aa81983
-title: Semiprime
+title: 半素数
 challengeType: 1
 forumTopicId: 385318
 dashedName: semiprime
@@ -14,77 +14,77 @@ Semiprime numbers are natural numbers that are products of exactly two (possibly
 
 # --instructions--
 
-Write a function that returns true if a number is semiprime, or false if it is not.
+数値が半素数の場合は true を返し、それ以外の場合は false を返す関数を記述してください。
 
 # --hints--
 
-`isSemiPrime` should be a function.
+`isSemiPrime` は関数とします。
 
 ```js
 assert(typeof isSemiPrime === 'function');
 ```
 
-`isSemiPrime(100)` should return a boolean.
+`isSemiPrime(100)` はブール値を返す必要があります。
 
 ```js
 assert(typeof isSemiPrime(100) === 'boolean');
 ```
 
-`isSemiPrime(100)` should return `false`.
+`isSemiPrime(100)` は `false` を返す必要があります。
 
 ```js
 assert.equal(isSemiPrime(100), false);
 ```
 
-`isSemiPrime(504)` should return `false`.
+`isSemiPrime(504)` は `false` を返す必要があります。
 
 ```js
 assert.equal(isSemiPrime(504), false);
 ```
 
-`isSemiPrime(4)` should return `true`.
+`isSemiPrime(4)` は `true` を返す必要があります。
 
 ```js
 assert.equal(isSemiPrime(4), true);
 ```
 
-`isSemiPrime(46)` should return `true`.
+`isSemiPrime(46)` は `true` を返す必要があります。
 
 ```js
 assert.equal(isSemiPrime(46), true);
 ```
 
-`isSemiPrime(13)` should return `false`.
+`isSemiPrime(13)` は `false` を返す必要があります。
 
 ```js
 assert.equal(isSemiPrime(13), false);
 ```
 
-`isSemiPrime(74)` should return `true`.
+`isSemiPrime(74)` は `true` を返す必要があります。
 
 ```js
 assert.equal(isSemiPrime(74), true);
 ```
 
-`isSemiPrime(1679)` should return `true`.
+`isSemiPrime(1679)` は `true` を返す必要があります。
 
 ```js
 assert.equal(isSemiPrime(1679), true);
 ```
 
-`isSemiPrime(2)` should return `false`.
+`isSemiPrime(2)` は `false` を返す必要があります。
 
 ```js
 assert.equal(isSemiPrime(2), false);
 ```
 
-`isSemiPrime(95)` should return `true`.
+`isSemiPrime(95)` は `true` を返す必要があります。
 
 ```js
 assert.equal(isSemiPrime(95), true);
 ```
 
-`isSemiPrime(124)` should return `false`.
+`isSemiPrime(124)` は `false` を返す必要があります。
 
 ```js
 assert.equal(isSemiPrime(124), false);

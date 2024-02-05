@@ -1,6 +1,6 @@
 ---
 id: 5900f5481000cf542c51005a
-title: 'Problem 475: Music festival'
+title: '问题475：音乐节'
 challengeType: 1
 forumTopicId: 302152
 dashedName: problem-475-music-festival
@@ -10,7 +10,7 @@ dashedName: problem-475-music-festival
 
 $12n$ musicians participate at a music festival. On the first day, they form $3n$ quartets and practice all day.
 
-It is a disaster. At the end of the day, all musicians decide they will never again agree to play with any member of their quartet.
+这是一场灾难。 在一天结束时，所有音乐家都决定再也不会同意与他们四重奏的任何成员一起玩。
 
 On the second day, they form $4n$ trios, each musician avoiding his previous quartet partners.
 

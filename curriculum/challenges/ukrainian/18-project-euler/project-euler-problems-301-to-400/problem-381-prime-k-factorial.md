@@ -1,6 +1,6 @@
 ---
 id: 5900f4ea1000cf542c50fffc
-title: 'Problem 381: (prime-k) factorial'
+title: 'Завдання 381: факторіал (просте число k)'
 challengeType: 1
 forumTopicId: 302045
 dashedName: problem-381-prime-k-factorial
@@ -8,13 +8,13 @@ dashedName: problem-381-prime-k-factorial
 
 # --description--
 
-For a prime $p$ let $S(p) = (\sum (p - k)!)\bmod (p)$ for $1 ≤ k ≤ 5$.
+Нехай $S(p) = (\sum (p - k)!)\bmod (p)$ за умови $1 ≤ k ≤ 5$, де $p$ є простим числом.
 
 Наприклад, якщо $p = 7$,
 
 $$(7 - 1)! + (7 - 2)! + (7 - 3)! + (7 - 4)! + (7 - 5)! = 6! + 5! + 4! + 3! + 2! = 720 + 120 + 24 + 6 + 2 = 872$$
 
-As $872\bmod (7) = 4$, $S(7) = 4$.
+Оскільки $872\bmod (7) = 4$, $S(7) = 4$.
 
 Можна довести, що $\sum S(p) = 480$ за умови $5 ≤ p &lt; 100$.
 

@@ -13,7 +13,7 @@ After going to that link, create a copy of the notebook either in your own accou
 
 # --instructions--
 
-For this challenge, you need to create a multi-function calculator using Python that take input and do the following:
+For this challenge, you need to create a financial calculator using Python that take input and do the following:
 
 - Calculate annuity with monthly or continuous growth
 - Calculate monthly mortgage payment

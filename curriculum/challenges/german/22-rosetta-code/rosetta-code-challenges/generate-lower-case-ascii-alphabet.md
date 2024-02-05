@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e7a
-title: Generate lower case ASCII alphabet
+title: Kleinbuchstaben-ASCII-Alphabet generieren
 challengeType: 1
 forumTopicId: 302274
 dashedName: generate-lower-case-ascii-alphabet
@@ -12,43 +12,43 @@ Write a function to generate an array of lower case ASCII characters for a given
 
 # --hints--
 
-`lascii` should be a function.
+`lascii` sollte eine Funktion sein.
 
 ```js
 assert(typeof lascii == 'function');
 ```
 
-`lascii("a","d")` should return an array.
+`lascii("a","d")` sollte ein Array zurückgeben.
 
 ```js
 assert(Array.isArray(lascii('a', 'd')));
 ```
 
-`lascii('a','d')` should return `[ 'a', 'b', 'c', 'd' ]`.
+`lascii('a','d')` sollte `[ 'a', 'b', 'c', 'd' ]` zurückgeben.
 
 ```js
 assert.deepEqual(lascii('a', 'd'), results[0]);
 ```
 
-`lascii('c','i')` should return `[ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ]`.
+`lascii('c','i')` sollte `[ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ]` zurückgeben.
 
 ```js
 assert.deepEqual(lascii('c', 'i'), results[1]);
 ```
 
-`lascii('m','q')` should return `[ 'm', 'n', 'o', 'p', 'q' ]`.
+`lascii('m','q')` sollte `[ 'm', 'n', 'o', 'p', 'q' ]` zurückgeben.
 
 ```js
 assert.deepEqual(lascii('m', 'q'), results[2]);
 ```
 
-`lascii('k','n')` should return `[ 'k', 'l', 'm', 'n' ]`.
+`lascii('k','n')` sollte `[ 'k', 'l', 'm', 'n' ]` zurückgeben.
 
 ```js
 assert.deepEqual(lascii('k', 'n'), results[3]);
 ```
 
-`lascii('t','z')` should return `[ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]`.
+`lascii('t','z')` sollte `[ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]` zurückgeben.
 
 ```js
 assert.deepEqual(lascii('t', 'z'), results[4]);

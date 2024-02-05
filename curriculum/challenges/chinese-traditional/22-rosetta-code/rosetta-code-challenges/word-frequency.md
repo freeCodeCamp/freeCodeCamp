@@ -1,6 +1,6 @@
 ---
 id: 5e94a54cc7b022105bf0fd2c
-title: Word frequency
+title: 詞頻
 challengeType: 1
 forumTopicId: 393913
 dashedName: word-frequency
@@ -12,64 +12,64 @@ Given a text string and an integer n, return the n most common words in the file
 
 # --instructions--
 
-Write a function to count the occurrences of each word and return the n most commons words along with the number of their occurrences in decreasing frequency.
+編寫一個函數來計算每個單詞的出現次數，並返回 n 個最常用的單詞以及它們出現頻率遞減的次數。
 
-The function should return a 2D array with each of the elements in the following form: `[word, freq]`. `word` should be the lowercase version of the word and `freq` the number denoting the count.
+該函數應返回一個二維數組，其中包含以下形式的每個元素：`[word, freq]`。 `word` 應該是單詞的小寫版本，`freq` 是表示計數的數字。
 
-The function should return an empty array, if no string is provided.
+如果未提供字符串，該函數應返回一個空數組。
 
-The function should be case insensitive, for example, the strings "Hello" and "hello" should be treated the same.
+該函數應該不區分大小寫，例如，字符串“Hello”和“hello”應該被視爲相同。
 
-You can treat words that have special characters such as underscores, dashes, apostrophes, commas, etc., as distinct words.
+您可以將具有特殊字符（例如下劃線、破折號、撇號、逗號等）的單詞視爲不同的單詞。
 
-For example, given the string "Hello hello goodbye", your function should return `[['hello', 2], ['goodbye', 1]]`.
+例如，給定字符串“Hello hello goodbye”，你的函數應該返回`[['hello', 2], ['goodbye', 1]]`。
 
 # --hints--
 
-`wordFrequency` should be a function.
+`wordFrequency` 應該是一個函數。
 
 ```js
 assert(typeof wordFrequency == 'function');
 ```
 
-`wordFrequency` should return an array.
+`wordFrequency` 應該返回一個數組。
 
 ```js
 assert(Array.isArray(wordFrequency('test')));
 ```
 
-`wordFrequency("Hello hello world", 2)` should return `[['hello', 2], ['world', 1]]`
+`wordFrequency("Hello hello world", 2)` 應該返回`[['hello', 2], ['world', 1]]`
 
 ```js
 assert.deepEqual(wordFrequency(example_1, 2), example_1_solution);
 ```
 
-`wordFrequency("The quick brown fox jumped over the lazy dog", 1)` should return `[['the', 2]]`
+`wordFrequency("The quick brown fox jumped over the lazy dog", 1)` 應該返回`[['the', 2]]`
 
 ```js
 assert.deepEqual(wordFrequency(example_2, 1), example_2_solution);
 ```
 
-`wordFrequency("Opensource opensource open-source open source", 1)` should return `[['opensource', 2]]`
+`wordFrequency("Opensource opensource open-source open source", 1)` 應該返回`[['opensource', 2]]`
 
 ```js
 assert.deepEqual(wordFrequency(example_3, 1), example_3_solution);
 ```
 
-`wordFrequency("Apple App apply aPP aPPlE", 3)` should return `[['app', 2], ['apple', 2], ['apply', 1]]` or `[['apple', 2], ['app', 2], ['apply', 1]]`
+`wordFrequency("Apple App apply aPP aPPlE", 3)` 應該返回 `[['app', 2], ['apple', 2], ['apply', 1]]` 或 `[['apple', 2], ['app', 2], ['apply', 1]]`
 
 ```js
 const arr = JSON.stringify(wordFrequency(example_4, 3));
 assert(arr === example_4_solution_a || arr === example_4_solution_b);
 ```
 
-`wordFrequency("c d a d c a b d d c", 4)` should return `[['d', 4], ['c', 3], ['a', 2], ['b', 1]]`
+`wordFrequency("c d a d c a b d d c", 4)` 應該返回 `[['d', 4], ['c', 3], ['a', 2], ['b', 1]]`
 
 ```js
 assert.deepEqual(wordFrequency(example_5, 4), example_5_solution);
 ```
 
-`wordFrequency("", 5)` should return `[]`
+`wordFrequency("", 5)` 應該返回 `[]`
 
 ```js
 assert.deepEqual(wordFrequency(example_6, 5), example_6_solution);

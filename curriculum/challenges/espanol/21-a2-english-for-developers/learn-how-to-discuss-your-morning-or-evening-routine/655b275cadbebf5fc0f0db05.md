@@ -17,15 +17,15 @@ Focus on the specific actions and timing of Maria's activities on Tuesdays.
 
 # --fillInTheBlank--
 
-## --sentence--
+## Frases
 
 `On Tuesdays, I learn Japanese. I _ online lessons at 7 _`
 
-## --blanks--
+## Palabra correcta
 
 `take`
 
-### --feedback--
+### --retroalimentación--
 
 Used here to describe the action of participating in online lessons.
 
@@ -33,7 +33,7 @@ Used here to describe the action of participating in online lessons.
 
 `PM`
 
-### --feedback--
+### --retroalimentación--
 
 Specifies that the lessons occur in the evening, not in the morning `AM`. Use capital letters.
 

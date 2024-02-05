@@ -1,6 +1,6 @@
 ---
 id: 5900f4be1000cf542c50ffd0
-title: 'Problem 337: Totient Stairstep Sequences'
+title: '問題337歐拉序列階梯'
 challengeType: 1
 forumTopicId: 301995
 dashedName: problem-337-totient-stairstep-sequences

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08e
-title: 'Relational Databases: Relationship Building'
+title: 'قواعد البيانات العلائقية: بناء العلاقات'
 challengeType: 11
 videoId: CSbqczsHVnc
 bilibiliIds:
@@ -18,17 +18,17 @@ What does the INSERT command do in SQL?
 
 ## --answers--
 
-It defines a new row by listing the fields we want to include followed by the values we want placed in the new row.
+يحدد صفًا جديدًا من خلال سرد الحقول التي نريد تضمينها متبوعة بالقيم التي نريد وضعها في الصف الجديد.
 
 ---
 
-It defines a new column by listing the rows we want to include followed by the values we want placed in the new column.
+يحدد عمودًا جديدًا من خلال سرد الصفوف التي نريد تضمينها متبوعة بالقيم التي نريد وضعها في العمود الجديد.
 
 ---
 
-It defines a new table by listing the rows and fields we want to include followed by the values that we want placed in the table.
+يحدد جدولًا جديدًا من خلال سرد الصفوف والحقول التي نريد تضمينها متبوعة بالقيم التي نريد وضعها في الجدول.
 
 ## --video-solution--
 
-1
+الأول
 

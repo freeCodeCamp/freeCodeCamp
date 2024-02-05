@@ -24,7 +24,7 @@ How many sliders would you add to change the coefficients in a quadratic graph?
 
 ---
 
-2
+الثاني
 
 ---
 
@@ -36,4 +36,4 @@ How many sliders would you add to change the coefficients in a quadratic graph?
 
 ## --video-solution--
 
-3
+الثالث

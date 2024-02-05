@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f080b6c005b0e76f063
-title: Files as a Sequence
+title: Файли як послідовність
 challengeType: 11
 videoId: cIA0EokbaHE
 bilibiliIds:
@@ -14,29 +14,29 @@ dashedName: files-as-a-sequence
 
 More resources:
 
-\- <a href="https://www.youtube.com/watch?v=il1j4wkte2E" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=il1j4wkte2E" target="_blank" rel="noopener noreferrer nofollow">Вправа</a>
 
 # --question--
 
 ## --text--
 
-What does the word 'continue' do in the middle of a loop?
+Що робить команда «continue», якщо вона розташована всередині циклу?
 
 ## --answers--
 
-Skips to the code directly after the loop.
+Переходить до коду одразу після циклу.
 
 ---
 
-Skips to the next line in the code.
+Переходить до наступного рядка коду.
 
 ---
 
-Skips to the next iteration of the loop.
+Переходить до наступної ітерації циклу.
 
 ---
 
-Skips the next block of code.
+Пропускає наступний блок коду.
 
 ## --video-solution--
 

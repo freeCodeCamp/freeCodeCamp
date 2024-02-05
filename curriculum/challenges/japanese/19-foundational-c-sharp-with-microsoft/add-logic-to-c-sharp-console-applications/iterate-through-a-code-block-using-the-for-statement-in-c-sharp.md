@@ -14,7 +14,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-for/" target="_blank" rel="noreferrer">Iterate Through a Code Block Using the `for` Statement in C#</a> module on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/csharp-for/" target="_blank" rel="noreferrer">Iterate Through a Code Block Using the `for` Statement in C#</a> module on Microsoft Learn. 次に、下記の質問に回答してください。
 
 # --question--
 

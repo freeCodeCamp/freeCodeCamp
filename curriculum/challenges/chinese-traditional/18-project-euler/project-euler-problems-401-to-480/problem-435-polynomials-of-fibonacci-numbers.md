@@ -1,6 +1,6 @@
 ---
 id: 5900f5201000cf542c510032
-title: 'Problem 435: Polynomials of Fibonacci numbers'
+title: '問題435：斐波那契數的多項式'
 challengeType: 1
 forumTopicId: 302106
 dashedName: problem-435-polynomials-of-fibonacci-numbers

@@ -17,7 +17,7 @@ Add the CSS property `flex-direction` to the header's `.profile-name` element an
 
 # --hints--
 
-Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+كود `.follow-btn` الخاص بك يجب أن يتم عرضه على الصفحة. تأكد من إيقاف تشغيل أي اضافات مثل مانعي الإعلانات ad blockers.
 
 ```js
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');

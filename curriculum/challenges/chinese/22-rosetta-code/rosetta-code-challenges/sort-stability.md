@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8014
-title: Sort stability
+title: 排序稳定性
 challengeType: 1
 forumTopicId: 302308
 dashedName: sort-stability
@@ -10,7 +10,7 @@ dashedName: sort-stability
 
 When sorting records in a table by a particular column or field, a <a href="https://www.freecodecamp.org/news/stability-in-sorting-algorithms-a-treatment-of-equality-fa3140a5a539/" target="_blank" rel="noopener noreferrer nofollow">stable sort</a> will always retain the relative order of records that have the same key.
 
-For example, in this table of countries and cities, a stable sort on the **second** column, the cities, would keep the US Birmingham above the UK Birmingham. (Although an unstable sort *might*, in this case, place the US Birmingham above the UK Birmingham, a stable sort routine would *guarantee* it).
+例如，在这个国家和城市表中，对**第二** 列（城市）的稳定排序将使美国伯明翰高于英国伯明翰。 （尽管在这种情况下，不稳定的排序 *可能* 将美国伯明翰置于英国伯明翰之上，稳定排序例程将 *保证* 它）。
 
 <pre>UK  London
 US  New York
@@ -18,21 +18,21 @@ US  Birmingham
 UK  Birmingham
 </pre>
 
-Similarly, stable sorting on just the first column would generate "UK London" as the first item and "US Birmingham" as the last item (since the order of the elements having the same first word – "UK" or "US" – would be maintained).
+类似地，仅对第一列进行稳定排序将生成“UK London”作为第一项，“US Birmingham”作为最后一项（因为具有相同第一个单词的元素的顺序——“UK”或“US”——将保持）。
 
 # --instructions--
 
-Write a function that takes a 2D array as a parameter. Each element has 2 elements similar to the above example. The function should sort the array as mentioned previously and return the sorted array.
+编写一个以二维数组为参数的函数。 每个元素有 2 个元素，类似于上面的例子。 该函数应该如前所述对数组进行排序并返回排序后的数组。
 
 # --hints--
 
-`stableSort` should be a function.
+`stableSort` 应该是一个函数。
 
 ```js
 assert(typeof stableSort == 'function');
 ```
 
-`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` should return an array.
+`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` 应该返回一个数组。
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` should return `[["US", "Birmingham"], ["UK", "Birmingham"], ["UK", "London"], ["US", "New York"]]`.
+`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` 应该返回 `[["US", "Birmingham"], ["UK", "Birmingham"], ["UK", "London"], ["US", "New York"]]`。
 
 ```js
 assert.deepEqual(
@@ -66,7 +66,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[2, 2], [1, 2], [1, 4], [1, 5]])` should return `[[2, 2], [1, 2], [1, 4], [1, 5]]`.
+`stableSort([[2, 2], [1, 2], [1, 4], [1, 5]])` 应该返回 `[[2, 2], [1, 2], [1, 4], [1, 5]]`。
 
 ```js
 assert.deepEqual(
@@ -85,7 +85,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[11, 55], [12, 45], [11, 45], [32, 45]])` should return `[[12, 45], [11, 45], [32, 45], [11, 55]]`.
+`stableSort([[11, 55], [12, 45], [11, 45], [32, 45]])` 应该返回 `[[12, 45], [11, 45], [32, 45], [11, 55]]`。
 
 ```js
 assert.deepEqual(
@@ -104,7 +104,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[10, 22], [1, 2], [1, 4], [1, 5], [10, 9]])` should return `[[1, 2], [1, 4], [1, 5], [10, 9], [10, 22]]`.
+`stableSort([[10, 22], [1, 2], [1, 4], [1, 5], [10, 9]])` 应该返回 `[[1, 2], [1, 4], [1, 5], [10, 9], [10, 22]]`。
 
 ```js
 assert.deepEqual(
@@ -125,7 +125,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[55, 54], [12, 22], [31, 43], [31, 54], [10, 49]])` should return `[[12, 22], [31, 43], [10, 49], [55, 54], [31, 54]]`.
+`stableSort([[55, 54], [12, 22], [31, 43], [31, 54], [10, 49]])` 应该返回 `[[12, 22], [31, 43], [10, 49], [55, 54], [31, 54]]`。
 
 ```js
 assert.deepEqual(

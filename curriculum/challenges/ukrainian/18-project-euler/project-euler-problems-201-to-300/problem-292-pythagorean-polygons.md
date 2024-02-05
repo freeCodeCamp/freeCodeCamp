@@ -1,6 +1,6 @@
 ---
 id: 5900f4911000cf542c50ffa3
-title: 'Problem 292: Pythagorean Polygons'
+title: 'Завдання 292: багатокутники Піфагора'
 challengeType: 1
 forumTopicId: 301944
 dashedName: problem-292-pythagorean-polygons
@@ -8,16 +8,16 @@ dashedName: problem-292-pythagorean-polygons
 
 # --description--
 
-We shall define a pythagorean polygon to be a convex polygon with the following properties:
+Піфагоровий багатокутник — це опуклий багатокутник з такими властивостями:
 
-- there are at least three vertices,
-- no three vertices are aligned,
-- each vertex has integer coordinates,
-- each edge has integer length.
+- має принаймні три вершини,
+- вершини не знаходяться на одній прямій,
+- координатами кожної вершини є цілі числа,
+- довжиною кожного ребра є ціле число.
 
-For a given integer $n$, define $P(n)$ as the number of distinct pythagorean polygons for which the perimeter is $≤ n$.
+Дано $n$. Визначимо $P(n)$ як кількість різних піфагорових багатокутників, периметр яких $≤ n$.
 
-Pythagorean polygons should be considered distinct as long as none is a translation of another.
+Піфагорові багатокутники мають розглядатися як різні, якщо жоден з них не є відтворенням іншого.
 
 Дано, що $P(4) = 1$, $P(30) = 3655$ та $P(60) = 891045$.
 

@@ -1,6 +1,6 @@
 ---
 id: 6363d2899078df117ce4c407
-title: "Spreadsheets and Additional Resources"
+title: "スプレッドシートとその他のリソース"
 challengeType: 15
 videoId: JH9Uk2mi3Dc
 dashedName: spreadsheets-and-additional-resources
@@ -8,13 +8,13 @@ dashedName: spreadsheets-and-additional-resources
 
 # --description--
 
-Let's look at how you can connect your Math and Python knowledge with external data. This video will show you how to get data from other sources, then transform it so that you can graph it and interpret it.
+数学と Python の知識を外部データに結びつける方法を見てみましょう。 この動画では、他のソースからデータを取得して変換し、グラフ表示して解釈できるようにする方法を説明します。
 
 # --question--
 
 ## --text--
 
-What library helps you to read data from a .csv and store it as a dataframe where you can select columns?
+.csv からデータを読み取り、列を選択できるデータフレームとして保存するには、どのライブラリが役立ちますか？
 
 ## --answers--
 

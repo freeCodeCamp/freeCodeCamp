@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ec2
-title: Jaro distance
+title: Подібність Джаро
 challengeType: 1
 forumTopicId: 302292
 dashedName: jaro-distance
@@ -10,26 +10,26 @@ dashedName: jaro-distance
 
 The Jaro distance is a measure of similarity between two strings. The higher the Jaro distance for two strings is, the more similar the strings are. The score is normalized such that `0` equates to no similarity and `1` is an exact match.
 
-**Definition**
+**Визначення**
 
-The Jaro distance \\( d_j \\) of two given strings \\(s_1\\) and \\(s_2\\) is
+Подібність Джаро \\( d_j \\) з двох вибраних рядків \\((\\1\\) і \\(s_2\\) є
 
 \\begin{align}d_j = \\begin{cases}0& & \\text{if }m=0 \\\\\\\\{\\frac {1}{3}}\\left({\\frac {m}{|s\_{1}|}}+{\\frac {m}{|s\_{2}|}}+{\\frac {m-t}{m}}\\right)& & \\text{otherwise}\\end{cases}\\end{align}
 
-Where:
+Де:
 
 <ul>
-  <li>\(m\) is the number of <i>matching characters</i>;</li>
-  <li> \(t\) is half the number of <i>transpositions</i>.</li>
+  <li>\(m\) є кількістю <i>однакових символів</i>;</li>
+  <li> \(t\) є половиною кількості <i>транспозицій</i>.</li>
 </ul>
 
-Two characters from \\(s_1\\) and \\(s_2\\) respectively, are considered *matching* only if they are the same and not farther than \\(\\left\\lfloor\\frac{\\max(|s_1|,|s_2|)}{2}\\right\\rfloor-1\\).
+Два символи з \\(s_1\\) та \\(s_2\\) відповідно, вважаються *співпадінням*, якщо вони однакові і розташовані не далі, ніж \\(\\left\\lfloor\\frac{\\max(|s_1|, s_2|)}{2}\\right\\rfloor-1\\).
 
-Each character of \\(s_1\\) is compared with all its matching characters in \\(s_2\\) . The number of matching (but different sequence order) characters divided by 2 defines the number of *transpositions*.
+Кожен символ \\(s_1\\) порівнюється з усіма відповідними символами у \\(s_2\\) . Кількість відповідних (але в різному порядку) символів, розділених на 2, визначає кількість * транспозицій *.
 
-**Example**
+**Наприклад**
 
-Given the strings \\(s_1\\) *DWAYNE* and \\(s_2\\) *DUANE* we find:
+У рядках \\(s_1\\) *DWAYNE* та \\(s_2\\) *DUANE* виявили:
 
 <ul>
   <li>\(m = 4\)</li>
@@ -38,51 +38,51 @@ Given the strings \\(s_1\\) *DWAYNE* and \\(s_2\\) *DUANE* we find:
   <li>\(t = 0\)</li>
 </ul>
 
-We find a Jaro score of: \\(d_j = \\frac{1}{3}\\left(\\frac{4}{6} + \\frac{4}{5} + \\frac{4-0}{4}\\right) = 0.822\\).
+Ми знайшли: \\(d_j = \\frac{1}{3}\\left(\\frac{4}{6} + \\frac{4}{5} + \\frac{4-0}{4}\\right) = 0.822\\).
 
 # --instructions--
 
-Write a function a that takes two strings as parameters and returns the associated Jaro distance.
+Напишіть функцію а, у параметрах встановіть дві рядки. Це має бути схоже на подібність Джаро.
 
 # --hints--
 
-`jaro` should be a function.
+`jaro` має бути функцією.
 
 ```js
 assert(typeof jaro == 'function');
 ```
 
-`jaro("MARTHA", "MARHTA")` should return a number.
+`jaro("MARTHA", "MARHTA")` має повернути число.
 
 ```js
 assert(typeof jaro('MARTHA', 'MARHTA') == 'number');
 ```
 
-`jaro("MARTHA", "MARHTA")` should return `0.9444444444444445`.
+`jaro("MARTHA", "MARHTA")` має повернути `0.9444444444444445`.
 
 ```js
 assert.equal(jaro('MARTHA', 'MARHTA'), 0.9444444444444445);
 ```
 
-`jaro("DIXON", "DICKSONX")` should return `0.7666666666666666`.
+`jaro("DIXON", "DICKSONX")` має повернути `0.7666666666666666`.
 
 ```js
 assert.equal(jaro('DIXON', 'DICKSONX'), 0.7666666666666666);
 ```
 
-`jaro("JELLYFISH", "SMELLYFISH")` should return `0.8962962962962964`.
+`jaro("JELLYFISH", "SMELLYFISH")` має повернути `0.8962962962962964`.
 
 ```js
 assert.equal(jaro('JELLYFISH', 'SMELLYFISH'), 0.8962962962962964);
 ```
 
-`jaro("HELLOS", "CHELLO")` should return `0.888888888888889`.
+`jaro("HELLOS", "CHELLO")` має повернути `0.888888888888889`.
 
 ```js
 assert.equal(jaro('HELLOS', 'CHELLO'), 0.888888888888889);
 ```
 
-`jaro("ABCD", "BCDA")` should return `0.8333333333333334`.
+`jaro("ABCD", "BCDA")` має повернути `0.8333333333333334`.
 
 ```js
 assert.equal(jaro('ABCD', 'BCDA'), 0.8333333333333334);

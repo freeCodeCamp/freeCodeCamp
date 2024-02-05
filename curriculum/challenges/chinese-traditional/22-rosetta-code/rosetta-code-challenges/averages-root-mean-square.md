@@ -1,6 +1,6 @@
 ---
 id: 594da033de4190850b893874
-title: Averages/Root mean square
+title: 平均值/均方根
 challengeType: 1
 forumTopicId: 302228
 dashedName: averagesroot-mean-square

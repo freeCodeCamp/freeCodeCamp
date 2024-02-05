@@ -1,6 +1,6 @@
 ---
 id: 5900f4861000cf542c50ff98
-title: 'Problem 281: Pizza Toppings'
+title: 'Завдання 281: начинки для піци'
 challengeType: 1
 forumTopicId: 301932
 dashedName: problem-281-pizza-toppings
@@ -8,15 +8,15 @@ dashedName: problem-281-pizza-toppings
 
 # --description--
 
-You are given a pizza (perfect circle) that has been cut into $m·n$ equal pieces and you want to have exactly one topping on each slice.
+У вас є піца (ідеальне коло), нарізана на однакові шматочки $m·n$, і ви хочете, щоб на всіх шматочках була різна начинка.
 
-Let $f(m,n)$ denote the number of ways you can have toppings on the pizza with $m$ different toppings ($m ≥ 2$), using each topping on exactly $n$ slices ($n ≥ 1$). Reflections are considered distinct, rotations are not.
+Нехай $f(m,n)$ позначає можливу кількість начинок на піці з $m$ різними начинками ($m ≥ 2$), якщо кожну з них використано на $n$ шматочках ($n ≥ 1$). Відбиття вважаються різними, обертання — ні.
 
-Thus, for instance, $f(2,1) = 1$, $f(2,2) = f(3,1) = 2$ and $f(3,2) = 16$. $f(3,2)$ is shown below:
+Таким чином, наприклад, $f(2,1) = 1$, $f(2,2) = f(3,1) = 2$ та $f(3,2) = 16$. $f(3,2)$ показано нижче:
 
-<img class="img-responsive center-block" alt="animation with 16 ways to have 3 different toppings on 2 slices each" src="https://cdn.freecodecamp.org/curriculum/project-euler/pizza-toppings.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="анімація з 16-ма способами для 3 різних начинок, кожна на 2 шматочках" src="https://cdn.freecodecamp.org/curriculum/project-euler/pizza-toppings.gif" style="background-color: white; padding: 10px;" />
 
-Find the sum of all $f(m,n)$ such that $f(m,n) ≤ {10}^{15}$.
+Знайдіть суму всіх $f(m,n)$, за яких $f(m,n) ≤ {10}^{15}$.
 
 # --hints--
 

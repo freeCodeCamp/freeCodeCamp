@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7eca
-title: Kaprekar numbers
+title: Kaprekar 數字
 challengeType: 1
 forumTopicId: 302296
 dashedName: kaprekar-numbers
@@ -15,9 +15,9 @@ A positive integer is a Kaprekar number if:
   <li>The decimal representation of its square may be split once into two parts consisting of positive integers which sum to the original number. </li>
 </ul>
 
-Note that a split resulting in a part consisting purely of 0s is not valid, as 0 is not considered positive.
+請注意，導致部分完全由 0 組成的拆分是無效的，因爲 0 不被視爲正數。
 
-Example Kaprekar numbers:
+Kaprekar 數字示例：
 
 <ul>
   <li><code>2223</code> is a Kaprekar number, as <code>2223 * 2223 = 4941729</code>, <code>4941729</code> may be split to <code>494</code> and <code>1729</code>, and <code>494 + 1729 = 2223</code></li>
@@ -26,59 +26,59 @@ Example Kaprekar numbers:
 
 # --instructions--
 
-Write a function that takes a number $n$, a base $bs$, and returns true if the number is a Kaprekar number for the given base. Otherwise, the function returns false.
+編寫一個函數，它接受一個數字 $n$，一個基數 $bs$，如果該數字是給定基數的 Kaprekar 數，則返回 true。 否則，該函數返回 false。
 
 # --hints--
 
-`isKaprekar` should be a function.
+`isKaprekar` 應該是一個函數。
 
 ```js
 assert(typeof isKaprekar == 'function');
 ```
 
-`isKaprekar(1, 10)` should return a boolean.
+`isKaprekar(1, 10)` 應該返回一個布爾值。
 
 ```js
 assert(typeof isKaprekar(1, 10) == 'boolean');
 ```
 
-`isKaprekar(1, 10)` should return `true`.
+`isKaprekar(1, 10)` 應該返回 `true`。
 
 ```js
 assert.equal(isKaprekar(1, 10), true);
 ```
 
-`isKaprekar(9, 10)` should return `true`.
+`isKaprekar(9, 10)` 應該返回 `true`。
 
 ```js
 assert.equal(isKaprekar(9, 10), true);
 ```
 
-`isKaprekar(2223, 10)` should return `true`.
+`isKaprekar(2223, 10)` 應該返回 `true`。
 
 ```js
 assert.equal(isKaprekar(2223, 10), true);
 ```
 
-`isKaprekar(22823, 10)` should return `false`.
+`isKaprekar(22823, 10)` 應該返回 `false`。
 
 ```js
 assert.equal(isKaprekar(22823, 10), false);
 ```
 
-`isKaprekar(9, 17)` should return `false`.
+`isKaprekar(9, 17)` 應該返回 `false`。
 
 ```js
 assert.equal(isKaprekar(9, 17), false);
 ```
 
-`isKaprekar(225, 17)` should return `true`.
+`isKaprekar(225, 17)` 應該返回 `true`。
 
 ```js
 assert.equal(isKaprekar(225, 17), true);
 ```
 
-`isKaprekar(999, 17)` should return `false`.
+`isKaprekar(999, 17)` 應該返回 `false`。
 
 ```js
 assert.equal(isKaprekar(999, 17), false);

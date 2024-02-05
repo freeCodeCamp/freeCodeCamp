@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8002
-title: Sorting algorithms/Bogosort
+title: ソートアルゴリズム / ボゴソート
 challengeType: 1
 forumTopicId: 302311
 dashedName: sorting-algorithmsbogosort
@@ -10,15 +10,15 @@ dashedName: sorting-algorithmsbogosort
 
 Bogosort a list of numbers.
 
-Bogosort simply shuffles a collection randomly until it is sorted.
+ボゴソートは、ソートされるまで集合をランダムに、単にシャッフルするものです。
 
-"Bogosort" is a perversely inefficient algorithm only used as an in-joke.
+「ボゴソート」はネタとしてのみ使用される、とんでもなく非効率的なアルゴリズムです。
 
-Its average run-time is O(n!) because the chance that any given shuffle of a set will end up in sorted order is about one in *n* factorial, and the worst case is infinite since there's no guarantee that a random shuffling will ever produce a sorted sequence.
+平均実行時間は O(n!) です。なぜなら、セットのシャッフルがソートされる確率は約 *n* 階乗分の 1 であるためです。最悪の場合は無限に続くことになりますが、それはランダムなシャッフルがソートされた数列を生成する保証がないからです。
 
-Its best case is O(n) since a single pass through the elements may suffice to order them.
+最短のケースは O(n) です。なぜなら、たった 1 回の実行でソートされる可能性があるからです。
 
-Pseudocode:
+擬似コード:
 
 <pre><b>while not</b> InOrder(list) <b>do</b>
   Shuffle(list)
@@ -27,37 +27,37 @@ Pseudocode:
 
 # --hints--
 
-`bogosort` should be a function.
+`bogosort` は関数とします。
 
 ```js
 assert(typeof bogosort == 'function');
 ```
 
-`bogosort([25, 32, 12, 7, 20])` should return an array.
+`bogosort([25, 32, 12, 7, 20])` は配列を返す必要があります。
 
 ```js
 assert(Array.isArray(bogosort([25, 32, 12, 7, 20])));
 ```
 
-`bogosort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`bogosort([25, 32, 12, 7, 20])` は `[7, 12, 20, 25, 32]` を返す必要があります。
 
 ```js
 assert.deepEqual(bogosort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`bogosort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`bogosort([38, 45, 35, 8, 13])` は `[8, 13, 35, 38, 45]` を返す必要があります。
 
 ```js
 assert.deepEqual(bogosort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`bogosort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`bogosort([43, 36, 20, 34, 24])` は `[20, 24, 34, 36, 43]` を返す必要があります。
 
 ```js
 assert.deepEqual(bogosort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`bogosort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`bogosort([12, 33, 26, 18, 1, 16, 38])` は `[1, 12, 16, 18, 26, 33, 38]` を返す必要があります。
 
 ```js
 assert.deepEqual(bogosort([12, 33, 26, 18, 1, 16, 38]), [
@@ -71,7 +71,7 @@ assert.deepEqual(bogosort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`bogosort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`bogosort([3, 39, 48, 16, 1, 4, 29])` は `[1, 3, 4, 16, 29, 39, 48]` を返す必要があります。
 
 ```js
 assert.deepEqual(bogosort([3, 39, 48, 16, 1, 4, 29]), [

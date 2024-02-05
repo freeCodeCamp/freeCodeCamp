@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e7b
-title: Generator/Exponential
+title: 生成器/指數
 challengeType: 1
 forumTopicId: 302275
 dashedName: generatorexponential
@@ -10,57 +10,57 @@ dashedName: generatorexponential
 
 A generator is an executable entity (like a function or procedure) that contains code that yields a sequence of values, one at a time, so that each time you call the generator, the next value in the sequence is provided.
 
-Generators are often built on top of coroutines or objects so that the internal state of the object is handled "naturally".
+生成器通常構建在協程或對象之上，以便“自然地”處理對象的內部狀態。
 
-Generators are often used in situations where a sequence is potentially infinite, and where it is possible to construct the next value of the sequence with only minimal state.
+生成器通常用於序列可能無限的情況，並且可以僅用最小狀態構造序列的下一個值。
 
 # --instructions--
 
-Write a function that uses generators to generate squares and cubes. Create a new generator that filters all cubes from the generator of squares.
+編寫一個使用生成器生成平方和三次方的函數。 創建一個新的生成器，從平方成器中過濾所有三次方。
 
-The function should return the \\( n^{th} \\) value of the filtered generator.
+該函數應返回過濾生成器的 \\( n^{th} \\) 值。
 
-For example for \\(n=7\\), the function should return 81 as the sequence would be 4, 9, 16, 25, 36, 49, 81. Here 64 is filtered out, as it is a cube.
+例如對於 \\(n=7\\)，函數應該返回 81，因爲序列是 4、9、16、25、36、49、81。 這裏 64 被過濾掉了，因爲它是一個三次方。
 
 # --hints--
 
-`exponentialGenerator` should be a function.
+`exponentialGenerator` 應該是一個函數。
 
 ```js
 assert(typeof exponentialGenerator == 'function');
 ```
 
-`exponentialGenerator()` should return a number.
+`exponentialGenerator()` 應該返回一個數字。
 
 ```js
 assert(typeof exponentialGenerator(10) == 'number');
 ```
 
-`exponentialGenerator(10)` should return `144`.
+`exponentialGenerator(10)` 應該返回 `144`。
 
 ```js
 assert.equal(exponentialGenerator(10), 144);
 ```
 
-`exponentialGenerator(12)` should return `196`.
+`exponentialGenerator(12)` 應該返回 `196`。
 
 ```js
 assert.equal(exponentialGenerator(12), 196);
 ```
 
-`exponentialGenerator(14)` should return `256`.
+`exponentialGenerator(14)` 應該返回 `256`。
 
 ```js
 assert.equal(exponentialGenerator(14), 256);
 ```
 
-`exponentialGenerator(20)` should return `484`.
+`exponentialGenerator(20)` 應該返回 `484`。
 
 ```js
 assert.equal(exponentialGenerator(20), 484);
 ```
 
-`exponentialGenerator(25)` should return `784`.
+`exponentialGenerator(25)` 應該返回 `784`。
 
 ```js
 assert.equal(exponentialGenerator(25), 784);

@@ -1,6 +1,6 @@
 ---
 id: 5900f4811000cf542c50ff94
-title: 'Problem 277: A Modified Collatz sequence'
+title: 'Завдання 277: модифікована послідовність Коллатца'
 challengeType: 1
 forumTopicId: 301927
 dashedName: problem-277-a-modified-collatz-sequence
@@ -8,25 +8,25 @@ dashedName: problem-277-a-modified-collatz-sequence
 
 # --description--
 
-A modified Collatz sequence of integers is obtained from a starting value $a_1$ in the following way:
+Модифіковану послідовність Коллатца з цілих чисел отримують від початкового значення $a_1$ таким чином:
 
-$a_{n + 1} = \frac{a_n}{3}$ if $a_n$ is divisible by 3. We shall denote this as a large downward step, "D".
+$a_{n + 1} = \frac{a_n}{3}$, якщо $a_n$ ділиться на 3 без остачі. Позначимо це великим кроком вниз, «D».
 
-$a_{n + 1} = \frac{4a_n + 2}{3}$ if $a_n$ divided by 3 gives a remainder of 1. We shall denote this as an upward step, "U".
+$a_{n + 1} = \frac{4a_n + 2}{3}$, якщо $a_n$ при діленні на 3 дає залишок 1. Позначимо це великим кроком вверх, «U».
 
-$a_{n + 1} = \frac{2a_n - 1}{3}$ if $a_n$ divided by 3 gives a remainder of 2. We shall denote this as a small downward step, "d".
+$a_{n + 1} = \frac{2a_n - 1}{3}$, якщо $a_n$ при діленні на 3 дає залишок 2. Позначимо це малим кроком вниз, «d».
 
-The sequence terminates when some $a_n = 1$.
+Послідовність припиняється, коли деякі $a_n = 1$.
 
-Given any integer, we can list out the sequence of steps. For instance if $a_1 = 231$, then the sequence $\\{a_n\\} = \\{231, 77, 51, 17, 11, 7, 10, 14, 9, 3, 1\\}$ corresponds to the steps "DdDddUUdDD".
+Для будь-якого цілого числа можна сформувати послідовність кроків. Наприклад, якщо $a_1 = 231$, то послідовність $\\{a_n\\} = \\{231, 77, 51, 17, 11, 7, 10, 14, 9, 3, 1\\}$ відповідає крокам «DdDddUUdDD».
 
-Of course, there are other sequences that begin with that same sequence "DdDddUUdDD....".
+Звичайно, існують й інші послідовності, які починаються з тієї ж послідовності «DdDddUUdDD....».
 
-For instance, if $a_1 = 1004064$, then the sequence is DdDddUUdDDDdUDUUUdDdUUDDDUdDD.
+Наприклад, якщо $a_1 = 1004064$, то послідовністю буде DdDddUUdDDDdUDUUUdDdUUDDDUdDD.
 
-In fact, 1004064 is the smallest possible $a_1 > {10}^6$ that begins with the sequence DdDddUUdDD.
+Фактично, 1004064 є найменшим можливим значенням $a_1 > {10}^6$, що починається з послідовності DdDddUUdDD.
 
-What is the smallest $a_1 > {10}^{15}$ that begins with the sequence "UDDDUdddDDUDDddDdDddDDUDDdUUDd"?
+Яким є найменше значення $a_1 > {10}^{15}$, що починається з послідовності «UDDDUdddDDUDDddDdDddDDUDDdUUDd»?
 
 # --hints--
 

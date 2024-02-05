@@ -1,6 +1,6 @@
 ---
 id: 5900f3c81000cf542c50fedb
-title: 'Problem 92: Square digit chains'
+title: '問題 92: 各位の平方数の連鎖'
 challengeType: 1
 forumTopicId: 302209
 dashedName: problem-92-square-digit-chains
@@ -8,44 +8,44 @@ dashedName: problem-92-square-digit-chains
 
 # --description--
 
-A number chain is created by continuously adding the square of the digits in a number to form a new number until it has been seen before.
+ある数の各位の 2 乗を足し合わせて新しい数を作ることを、以前と同じ数が現れるまで続けて、数の連鎖を作ります。
 
-For example,
+例えば次のようになります。
 
 $$\begin{align}   & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\
   & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
 
-Therefore any chain that arrives at 1 or 89 will become stuck in an endless loop. What is most amazing is that EVERY starting number will eventually arrive at 1 or 89.
+したがって、1 または 89 に達する連鎖はすべて無限ループに入ります。 最も驚くべきことは、どの数から始めても最終的に 1 または 89 に達するということです。
 
-How many starting numbers below `limit` will arrive at 89?
+`limit` 未満の数のうち、そこから始めると最終的に 89 に達する数はいくつありますか。
 
 # --hints--
 
-`squareDigitChains(100)` should return a number.
+`squareDigitChains(100)` は数値を返す必要があります。
 
 ```js
 assert(typeof squareDigitChains(100) === 'number');
 ```
 
-`squareDigitChains(100)` should return `80`.
+`squareDigitChains(100)` は `80` を返す必要があります。
 
 ```js
 assert.strictEqual(squareDigitChains(100), 80);
 ```
 
-`squareDigitChains(1000)` should return `857`.
+`squareDigitChains(1000)` は `857` を返す必要があります。
 
 ```js
 assert.strictEqual(squareDigitChains(1000), 857);
 ```
 
-`squareDigitChains(100000)` should return `85623`.
+`squareDigitChains(100000)` は `85623` を返す必要があります。
 
 ```js
 assert.strictEqual(squareDigitChains(100000), 85623);
 ```
 
-`squareDigitChains(10000000)` should return `8581146`.
+`squareDigitChains(10000000)` は `8581146` を返す必要があります。
 
 ```js
 assert.strictEqual(squareDigitChains(10000000), 8581146);

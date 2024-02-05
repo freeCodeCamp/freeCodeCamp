@@ -1,6 +1,6 @@
 ---
 id: 5900f3f11000cf542c50ff03
-title: 'Problem 132: Large repunit factors'
+title: '問題 132: 巨大なレピュニット数の因数'
 challengeType: 1
 forumTopicId: 301760
 dashedName: problem-132-large-repunit-factors
@@ -8,15 +8,15 @@ dashedName: problem-132-large-repunit-factors
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define $R(k)$ to be a repunit of length $k$.
+1 のみで構成される数はレピュニット数と呼ばれます。 ここでは、長さ $k$ のレピュニット数を $R(k)$ とします。
 
-For example, $R(10) = 1111111111 = 11 × 41 × 271 × 9091$, and the sum of these prime factors is 9414.
+例えば、$R(10) = 1111111111 = 11 × 41 × 271 × 9091$ で、これらの素因数の和は 9414 です。
 
-Find the sum of the first forty prime factors of $R({10}^9)$.
+$R({10}^9)$ の最初の 40 個の素因数の和を求めなさい。
 
 # --hints--
 
-`largeRepunitFactors()` should return `843296`.
+`largeRepunitFactors()` は `843296` を返す必要があります。
 
 ```js
 assert.strictEqual(largeRepunitFactors(), 843296);

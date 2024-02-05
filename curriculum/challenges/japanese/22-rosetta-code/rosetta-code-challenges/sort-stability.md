@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8014
-title: Sort stability
+title: ソートの安定性
 challengeType: 1
 forumTopicId: 302308
 dashedName: sort-stability
@@ -10,7 +10,7 @@ dashedName: sort-stability
 
 When sorting records in a table by a particular column or field, a <a href="https://www.freecodecamp.org/news/stability-in-sorting-algorithms-a-treatment-of-equality-fa3140a5a539/" target="_blank" rel="noopener noreferrer nofollow">stable sort</a> will always retain the relative order of records that have the same key.
 
-For example, in this table of countries and cities, a stable sort on the **second** column, the cities, would keep the US Birmingham above the UK Birmingham. (Although an unstable sort *might*, in this case, place the US Birmingham above the UK Birmingham, a stable sort routine would *guarantee* it).
+例えば、この国と都市の表で **2 番目**の列の都市で安定ソートを行うと、米国のバーミンガムが英国のバーミンガムの上という順序が保たれます。 (このケースでは、不安定ソートでも米国のバーミンガムが英国のバーミンガムの上に配置される*可能性*はありますが、安定ソートのルーチンはそれを*保証*します）。
 
 <pre>UK  London
 US  New York
@@ -18,21 +18,21 @@ US  Birmingham
 UK  Birmingham
 </pre>
 
-Similarly, stable sorting on just the first column would generate "UK London" as the first item and "US Birmingham" as the last item (since the order of the elements having the same first word – "UK" or "US" – would be maintained).
+同様に 最初の列だけに安定ソートを行うと、最初の項目として「UK London」が、最後の項目として「US Birmingham」が来ます (同じ最初の単語 – 「UK」または「US」 – を持つ要素の順序が維持されるため)。
 
 # --instructions--
 
-Write a function that takes a 2D array as a parameter. Each element has 2 elements similar to the above example. The function should sort the array as mentioned previously and return the sorted array.
+パラメータとして2 次元配列を取る関数を記述してください。 各要素には、上記の例に似た 2 つの要素があります。 この関数は、前述のように配列をソートし、ソートされた配列を返します。
 
 # --hints--
 
-`stableSort` should be a function.
+`stableSort` は関数とします。
 
 ```js
 assert(typeof stableSort == 'function');
 ```
 
-`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` should return an array.
+`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` は配列を返す必要があります。
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` should return `[["US", "Birmingham"], ["UK", "Birmingham"], ["UK", "London"], ["US", "New York"]]`.
+`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` は `[["US", "Birmingham"], ["UK", "Birmingham"], ["UK", "London"], ["US", "New York"]]` を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -66,7 +66,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[2, 2], [1, 2], [1, 4], [1, 5]])` should return `[[2, 2], [1, 2], [1, 4], [1, 5]]`.
+`stableSort([[2, 2], [1, 2], [1, 4], [1, 5]])` は `[[2, 2], [1, 2], [1, 4], [1, 5]]` を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -85,7 +85,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[11, 55], [12, 45], [11, 45], [32, 45]])` should return `[[12, 45], [11, 45], [32, 45], [11, 55]]`.
+`stableSort([[11, 55], [12, 45], [11, 45], [32, 45]])` は `[[12, 45], [11, 45], [32, 45], [11, 55]]` を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -104,7 +104,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[10, 22], [1, 2], [1, 4], [1, 5], [10, 9]])` should return `[[1, 2], [1, 4], [1, 5], [10, 9], [10, 22]]`.
+`stableSort([[10, 22], [1, 2], [1, 4], [1, 5], [10, 9]])` は `[[1, 2], [1, 4], [1, 5], [10, 9], [10, 22]]` を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -125,7 +125,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[55, 54], [12, 22], [31, 43], [31, 54], [10, 49]])` should return `[[12, 22], [31, 43], [10, 49], [55, 54], [31, 54]]`.
+`stableSort([[55, 54], [12, 22], [31, 43], [31, 54], [10, 49]])` は `[[12, 22], [31, 43], [10, 49], [55, 54], [31, 54]]` を返す必要があります。
 
 ```js
 assert.deepEqual(

@@ -1,6 +1,6 @@
 ---
 id: 5900f4d01000cf542c50ffe3
-title: 'Problem 356: Largest roots of cubic polynomials'
+title: '问题 356：三次多项式的最大根数'
 challengeType: 1
 forumTopicId: 302016
 dashedName: problem-356-largest-roots-of-cubic-polynomials

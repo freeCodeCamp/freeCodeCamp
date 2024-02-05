@@ -1,6 +1,6 @@
 ---
 id: 5900f37d1000cf542c50fe8f
-title: 'Problem 16: Power digit sum'
+title: '問題16：電源數字總和'
 challengeType: 1
 forumTopicId: 301791
 dashedName: problem-16-power-digit-sum

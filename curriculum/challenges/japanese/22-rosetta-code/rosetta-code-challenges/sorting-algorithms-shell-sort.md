@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8010
-title: Sorting algorithms/Shell sort
+title: ソートアルゴリズム / シェルソート
 challengeType: 1
 forumTopicId: 302317
 dashedName: sorting-algorithmsshell-sort
@@ -10,49 +10,49 @@ dashedName: sorting-algorithmsshell-sort
 
 Write a function to sort an array of elements using the Shell sort algorithm, a diminishing increment sort. The function should return the sorted array.
 
-The Shell sort (also known as Shellsort or Shell's method) is named after its inventor, Donald Shell, who published the algorithm in 1959.
+シェルソート (シェルメソッドとも呼ばれます) は、1959年にこのアルゴリズムを発表した発案者のドナルド・シェルにちなんで名付けられています。
 
-Shell sort is a sequence of interleaved insertion sorts based on an increment sequence. The increment size is reduced after each pass until the increment size is 1.
+シェルソートは、増分列に基づく交互的な挿入ソートの列です。 増分サイズが1になるまで、パスごとに増分サイズを減少させます。
 
-With an increment size of 1, the sort is a basic insertion sort, but by this time the data is guaranteed to be almost sorted, which is insertion sort's "best case".
+増分サイズが 1 の場合、シェルソートは単なる挿入ソートです。 しかし、この時点までにデータはほぼソートされていることが確実であり、ここでは挿入ソートが「ベストケース」となります。
 
-Any sequence will sort the data as long as it ends in 1, but some work better than others.
+どの列の場合も 1 になるまでデータをソートしますが、他よりも優れたいくつかの方法があります。
 
-Empirical studies have shown a geometric increment sequence with a ratio of about 2.2 work well in practice.
+実証研究では、約 2.2 の割合で実際にうまく動作する幾何学的増分列が示されています。
 
 # --hints--
 
-`shellSort` should be a function.
+`shellSort` は関数とします。
 
 ```js
 assert(typeof shellSort == 'function');
 ```
 
-`shellSort([25, 32, 12, 7, 20])` should return an array.
+`shellSort([25, 32, 12, 7, 20])` は配列を返す必要があります。
 
 ```js
 assert(Array.isArray(shellSort([25, 32, 12, 7, 20])));
 ```
 
-`shellSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`shellSort([25, 32, 12, 7, 20])` は `[7, 12, 20, 25, 32]` を返す必要があります。
 
 ```js
 assert.deepEqual(shellSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`shellSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`shellSort([38, 45, 35, 8, 13])` は `[8, 13, 35, 38, 45]` を返す必要があります。
 
 ```js
 assert.deepEqual(shellSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`shellSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`shellSort([43, 36, 20, 34, 24])` は `[20, 24, 34, 36, 43]` を返す必要があります。
 
 ```js
 assert.deepEqual(shellSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`shellSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`shellSort([12, 33, 26, 18, 1, 16, 38])` は `[1, 12, 16, 18, 26, 33, 38]` を返す必要があります。
 
 ```js
 assert.deepEqual(shellSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -66,7 +66,7 @@ assert.deepEqual(shellSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`shellSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`shellSort([3, 39, 48, 16, 1, 4, 29])` は `[1, 3, 4, 16, 29, 39, 48]` を返す必要があります。
 
 ```js
 assert.deepEqual(shellSort([3, 39, 48, 16, 1, 4, 29]), [

@@ -17,15 +17,15 @@ In this exercise, you will explore the phrase `pique one's interest`. This phras
 
 # --fillInTheBlank--
 
-## --sentence--
+## Frases
 
 `I _ a course in organizational _, and it _ my interest in the workplace and employee dynamics.`
 
-## --blanks--
+## Palabra correcta
 
 `took`
 
-### --feedback--
+### --retroalimentación--
 
 This word refers to the action of participating in or completing a course.
 
@@ -33,7 +33,7 @@ This word refers to the action of participating in or completing a course.
 
 `psychology`
 
-### --feedback--
+### --retroalimentación--
 
 This word describes the study of the mind and behavior, particularly in a workplace setting in this context.
 
@@ -41,6 +41,6 @@ This word describes the study of the mind and behavior, particularly in a workpl
 
 `piqued`
 
-### --feedback--
+### --retroalimentación--
 
 This word means to arouse or stimulate interest or curiosity. You should correctly use its simple past tense.

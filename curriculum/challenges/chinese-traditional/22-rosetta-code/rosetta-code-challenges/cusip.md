@@ -12,65 +12,65 @@ A **CUSIP** is a nine-character alphanumeric code that identifies a North Americ
 
 # --instructions--
 
-Write a function that takes a string as a parameter and checks if the string is valid CUSIP.
+編寫一個函數，將一個字符串作爲參數並檢查該字符串是否是有效的 CUSIP。
 
 # --hints--
 
-`isCusip` should be a function.
+`isCusip` 應該是一個函數。
 
 ```js
 assert(typeof isCusip == 'function');
 ```
 
-`isCusip("037833100")` should return a boolean.
+`isCusip("037833100")` 應該返回一個布爾值。
 
 ```js
 assert(typeof isCusip('037833100') == 'boolean');
 ```
 
-`isCusip("037833100")` should return `true`.
+`isCusip("037833100")` 應該返回 `true`。
 
 ```js
 assert.equal(isCusip('037833100'), true);
 ```
 
-`isCusip("17275R102")` should return `true`.
+`isCusip("17275R102")` 應該返回 `true`。
 
 ```js
 assert.equal(isCusip('17275R102'), true);
 ```
 
-`isCusip("38259P50a")` should return `false`.
+`isCusip("38259P50a")` 應該返回 `false`。
 
 ```js
 assert.equal(isCusip('38259P50a'), false);
 ```
 
-`isCusip("38259P508")` should return `true`.
+`isCusip("38259P508")` 應該返回 `true`。
 
 ```js
 assert.equal(isCusip('38259P508'), true);
 ```
 
-`isCusip("38259P50#")` should return `false`.
+`isCusip("38259P50#")` 應該返回 `false`。
 
 ```js
 assert.equal(isCusip('38259P50#'), false);
 ```
 
-`isCusip("68389X105")` should return `true`.
+`isCusip("68389X105")` 應該返回 `true`。
 
 ```js
 assert.equal(isCusip('68389X105'), true);
 ```
 
-`isCusip("68389X106")` should return `false`.
+`isCusip("68389X106")` 應該返回 `false`。
 
 ```js
 assert.equal(isCusip('68389X106'), false);
 ```
 
-`isCusip("5949181")` should return `false`.
+`isCusip("5949181")` 應該返回 `false`。
 
 ```js
 assert.equal(isCusip('5949181'), false);

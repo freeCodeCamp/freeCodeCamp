@@ -36,4 +36,4 @@ A method should throw an exception when an exception type matches the intended p
 
 ## --video-solution--
 
-2
+٢

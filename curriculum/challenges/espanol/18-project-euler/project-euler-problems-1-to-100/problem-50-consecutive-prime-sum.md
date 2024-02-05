@@ -12,27 +12,27 @@ The prime 41, can be written as the sum of six consecutive primes:
 
 <div style='text-align: center;'>41 = 2 + 3 + 5 + 7 + 11 + 13</div>
 
-This is the longest sum of consecutive primes that adds to a prime below one-hundred.
+Esta es la suma más larga de primos consecutivos que suma un primo por debajo de cien.
 
-The longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953.
+La suma más larga de primos consecutivos debajo de una centena que suma a un primo, contiene 21 terminos, y es igual a 953.
 
-Which prime, below one-million, can be written as the sum of the most consecutive primes?
+Cuál primo, por debajo de un millón, puede escribirse como la suma de más primos consecutivos?
 
 # --hints--
 
-`consecutivePrimeSum(1000)` should return a number.
+`consecutivePrimeSum(1000)` debería devolver un número.
 
 ```js
 assert(typeof consecutivePrimeSum(1000) === 'number');
 ```
 
-`consecutivePrimeSum(1000)` should return 953.
+`consecutivePrimeSum(1000)` debería devolver 953.
 
 ```js
 assert.strictEqual(consecutivePrimeSum(1000), 953);
 ```
 
-`consecutivePrimeSum(1000000)` should return 997651.
+`consecutivePrimeSum(1000000)` debería devolver 997651.
 
 ```js
 assert.strictEqual(consecutivePrimeSum(1000000), 997651);

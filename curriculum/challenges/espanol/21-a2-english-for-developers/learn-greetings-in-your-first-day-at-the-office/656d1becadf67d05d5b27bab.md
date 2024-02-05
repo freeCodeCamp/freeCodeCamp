@@ -25,7 +25,7 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
 
 `he`
 
-### --feedback--
+### --retroalimentación--
 
 `He` refers to a male.
 
@@ -33,7 +33,7 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
 
 `they`
 
-### --feedback--
+### --retroalimentación--
 
 `They` is plural and refers to more than one person.
 
@@ -41,7 +41,7 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
 
 `it`
 
-### --feedback--
+### --retroalimentación--
 
 `It` is usually used for things or animals.
 
@@ -57,7 +57,7 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
 
 4
 
-# --scene--
+# --escena---
 
 ```json
 {

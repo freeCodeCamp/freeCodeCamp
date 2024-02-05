@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8042
-title: Sum of squares
+title: 平方和
 challengeType: 1
 forumTopicId: 302334
 dashedName: sum-of-squares
@@ -12,43 +12,43 @@ Write a function to find the sum of squares of an array of integers.
 
 # --hints--
 
-`sumsq` should be a function.
+`sumsq` は関数とします。
 
 ```js
 assert(typeof sumsq == 'function');
 ```
 
-`sumsq([1, 2, 3, 4, 5])` should return a number.
+`sumsq([1, 2, 3, 4, 5])` は数値を返す必要があります。
 
 ```js
 assert(typeof sumsq([1, 2, 3, 4, 5]) == 'number');
 ```
 
-`sumsq([1, 2, 3, 4, 5])` should return `55`.
+`sumsq([1, 2, 3, 4, 5])` は `55` を返す必要があります。
 
 ```js
 assert.equal(sumsq([1, 2, 3, 4, 5]), 55);
 ```
 
-`sumsq([25, 32, 12, 7, 20])` should return `2242`.
+`sumsq([25, 32, 12, 7, 20])` は `2242` を返す必要があります。
 
 ```js
 assert.equal(sumsq([25, 32, 12, 7, 20]), 2242);
 ```
 
-`sumsq([38, 45, 35, 8, 13])` should return `4927`.
+`sumsq([38, 45, 35, 8, 13])` は `4927` を返す必要があります。
 
 ```js
 assert.equal(sumsq([38, 45, 35, 8, 13]), 4927);
 ```
 
-`sumsq([43, 36, 20, 34, 24])` should return `5277`.
+`sumsq([43, 36, 20, 34, 24])` は `5277` を返す必要があります。
 
 ```js
 assert.equal(sumsq([43, 36, 20, 34, 24]), 5277);
 ```
 
-`sumsq([12, 33, 26, 18, 1, 16, 3])` should return `2499`.
+`sumsq([12, 33, 26, 18, 1, 16, 3])` は `2499` を返す必要があります。
 
 ```js
 assert.equal(sumsq([12, 33, 26, 18, 1, 16, 3]), 2499);

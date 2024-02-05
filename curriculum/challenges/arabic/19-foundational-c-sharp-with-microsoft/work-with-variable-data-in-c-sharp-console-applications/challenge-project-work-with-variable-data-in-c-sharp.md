@@ -36,4 +36,4 @@ The array sort is noticeably faster using `String.Trim()` on each element.
 
 ## --video-solution--
 
-2
+٢

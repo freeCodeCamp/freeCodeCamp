@@ -16,7 +16,7 @@ dashedName: jupyter-notebooks-importing-and-exporting-data
 
 Weitere Ressourcen:
 
--  <a href="https://github.com/ine-rmotr-curriculum/ds-content-interactive-jupyterlab-tutorial" target="_blank" rel="noopener noreferrer nofollow">Notebooks auf GitHub</a>
+-  <a href="https://github.com/rmotr-curriculum/ds-content-interactive-jupyterlab-tutorial" target="_blank" rel="noopener noreferrer nofollow">Notebooks auf GitHub</a>
 -  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Wie man Notebooks über Github mit Google Colab öffnet.</a>
 
 # --question--

@@ -1,6 +1,6 @@
 ---
 id: 5951815dd895584b06884620
-title: Circles of given radius through two points
+title: 通过两点的给定半径的圆
 challengeType: 1
 forumTopicId: 302231
 dashedName: circles-of-given-radius-through-two-points
@@ -10,7 +10,7 @@ dashedName: circles-of-given-radius-through-two-points
 
 Given two points on a plane and a radius, usually two circles of given radius can be drawn through the points.
 
-**Exceptions:**
+**例外：**
 
 <ul>
   <li>A radius of zero should be treated as never describing circles (except in the case where the points are coincident).</li>
@@ -21,17 +21,17 @@ Given two points on a plane and a radius, usually two circles of given radius ca
 
 # --instructions--
 
-Implement a function that takes two points and a radius and returns the two circles through those points. For each resulting circle, provide the coordinates for the center of each circle rounded to four decimal digits. Return each coordinate as an array, and coordinates as an array of arrays.
+实现一个函数，它接受两个点和一个半径，并返回通过这些点的两个圆。 对于每个结果圆，提供四舍五入到四位小数的每个圆的中心坐标。 将每个坐标作为数组返回，并将所有坐标组作为数组返回。
 
-**For edge cases, return the following:**
+**对于边缘情况，返回以下内容：**
 
 <ul>
   <li>If points are on the diameter, return one point. If the radius is also zero however, return <code>"Radius Zero"</code>.</li>
-  <li>If points are coincident, return <code>"Coincident point. Infinite solutions"</code>.</li>
-  <li>If points are farther apart than the diameter, return <code>"No intersection. Points further apart than circle diameter"</code>.</li>
+  <li>如果点重合，返回 <code>"Coincident point. Infinite solutions"</code>.</li>
+  <li>如果点相距比直径更远，则返回 <code>"No intersection. Points further apart than circle diameter"</code>.</li>
 </ul>
 
-**Sample inputs:**
+**示例输入：**
 
 <pre>      p1                p2           r
 0.1234, 0.9876    0.8765, 0.2345    2.0
@@ -43,37 +43,37 @@ Implement a function that takes two points and a radius and returns the two circ
 
 # --hints--
 
-`getCircles` should be a function.
+`getCircles` 应该是一个函数。
 
 ```js
 assert(typeof getCircles === 'function');
 ```
 
-`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 2.0)` should return `[[1.8631, 1.9742], [-0.8632, -0.7521]]`.
+`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 2.0)` 应该返回 `[[1.8631, 1.9742], [-0.8632, -0.7521]]`。
 
 ```js
 assert.deepEqual(getCircles(...testCases[0]), answers[0]);
 ```
 
-`getCircles([0.0000, 2.0000], [0.0000, 0.0000], 1.0)` should return `[0, 1]`
+`getCircles([0.0000, 2.0000], [0.0000, 0.0000], 1.0)` 应该返回 `[0, 1]`
 
 ```js
 assert.deepEqual(getCircles(...testCases[1]), answers[1]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` should return `Coincident point. Infinite solutions`
+`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` 应该返回 `Coincident point. Infinite solutions`
 
 ```js
 assert.deepEqual(getCircles(...testCases[2]), answers[2]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` should return `No intersection. Points further apart than circle diameter`
+`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` 应该返回 `No intersection. Points further apart than circle diameter`
 
 ```js
 assert.deepEqual(getCircles(...testCases[3]), answers[3]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 0.0)` should return `Radius Zero`
+`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 0.0)` 应该返回 `Radius Zero`
 
 ```js
 assert.deepEqual(getCircles(...testCases[4]), answers[4]);

@@ -1,26 +1,26 @@
 ---
 id: 647e23438acb466c97ccbefe
-title: 'Modify the Content of Strings Using Built-In String Data Type Methods in C#'
+title: '在 C# 中使用內置字符串數據類型方法修改字符串內容'
 challengeType: 19
 dashedName: modify-the-content-of-string-using-built-in-string-data-type-methods-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+這個挑戰將有一部分在 Microsoft Learn 平臺上完成。 請按照如下說明來完成挑戰：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-modify-content/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-modify-content/</a> and complete all the tasks for the "Modify the Content of Strings Using Built-In String Data Type Methods in C#" module. This is **required** to earn the "Work with Variable Data in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳轉到 <a href="https://learn.microsoft.com/training/modules/csharp-modify-content/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-modify-content/</a>，然後完成“在 C# 中使用內置字符串數據類型方法修改字符串內容”模塊的所有任務。 這是在 Microsoft Learn 上獲得“在 C# 控制檯應用程序中使用變量數據”的獎盃以及參加認證考試所**必需**的。
+1. 完成後，返回並正確回答下面的問題。
 
-# --assignment--
+# --任務--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-modify-content/" target="_blank" rel="noreferrer">Modify the Content of Strings Using Built-In String Data Type Methods in C#</a> module on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/csharp-modify-content/" target="_blank" rel="noreferrer">使用 C# 中的內置字符串數據類型方法修改字符串內容</a> 模塊。 然後，回答下面的問題。
 
 # --question--
 
 ## --text--
 
-Which method finds the next index of either the `-` char, the `=` char, or the `_` char?
+哪種方法可以找到字符 `-`、`=` 或 `_` 的下一個索引？
 
 ## --answers--
 

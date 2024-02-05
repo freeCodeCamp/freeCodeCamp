@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad5
-title: Y combinator
+title: Y комбінатор
 challengeType: 1
 forumTopicId: 302345
 dashedName: y-combinator
@@ -10,45 +10,45 @@ dashedName: y-combinator
 
 In strict <a href="https://www.freecodecamp.org/news/the-principles-of-functional-programming/" target="_blank" rel="noopener noreferrer nofollow">functional programming</a> and the lambda calculus, functions (lambda expressions) don't have state and are only allowed to refer to arguments of enclosing functions. This rules out the usual definition of a recursive function wherein a function is associated with the state of a variable and this variable's state is used in the body of the function.
 
-The Y combinator is itself a stateless function that, when applied to another stateless function, returns a recursive version of the function. The Y combinator is the simplest of the class of such functions, called fixed-point combinators.
+Комбінатор Y сам по собі є функцією без стану, яка при застосуванні до іншої такої функції повертає рекурсивну версію функції. Y комбінатор є найпростішим із класу таких функцій, які називаються комбінаторами з фіксованою точкою.
 
 # --instructions--
 
-Define the stateless Y combinator function and use it to compute the factorials. The `factorial(N)` function is already given to you. 
+Визначте функцію Y-комбінатора без збереження стану та використайте її для обчислення факторіалів. Функція `factorial(N)` вже дана.
 
 # --hints--
 
-Y should return a function.
+Y повинен повернути функцію.
 
 ```js
 assert.equal(typeof Y((f) => (n) => n), 'function');
 ```
 
-factorial(1) should return 1.
+factorial(1) повинен повернути 1.
 
 ```js
 assert.equal(factorial(1), 1);
 ```
 
-factorial(2) should return 2.
+factorial(2) повинен повернути 2.
 
 ```js
 assert.equal(factorial(2), 2);
 ```
 
-factorial(3) should return 6.
+factorial(3) повинен повернути 6.
 
 ```js
 assert.equal(factorial(3), 6);
 ```
 
-factorial(4) should return 24.
+factorial(4) повинен повернути 24.
 
 ```js
 assert.equal(factorial(4), 24);
 ```
 
-factorial(10) should return 3628800.
+factorial(10) повинен повернути 3628800.
 
 ```js
 assert.equal(factorial(10), 3628800);

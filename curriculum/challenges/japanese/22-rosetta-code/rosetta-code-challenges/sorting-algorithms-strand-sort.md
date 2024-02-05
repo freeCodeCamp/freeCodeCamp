@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8013
-title: Sorting algorithms/Strand sort
+title: ソートアルゴリズム / ストランドソート
 challengeType: 1
 forumTopicId: 302319
 dashedName: sorting-algorithmsstrand-sort
@@ -8,13 +8,13 @@ dashedName: sorting-algorithmsstrand-sort
 
 # --description--
 
-The **Strand sort** creates sorted subsets that are merged to create the final result. 
+The **Strand sort** creates sorted subsets that are merged to create the final result.
 
-Consider an `unsortedArray = [3, 1, 4, 2]`. Pick the first item `3` and copy it into a separate array. Search for any bigger item following this item. When you find the a larger item, in this case `4`, copy it to the separate array, `[3, 4]`, and compare the following items to this new value, `4`.
+`unsortedArray = [3, 1, 4, 2]` を考えてみましょう。 最初の項目 `3` を選択し、別の配列にコピーします。 この項目の後にある、より大きな項目を探します。 より大きな項目 (この例では `4`) が見つかったら、それを別の配列 `[3, 4]` にコピーし、次の項目をこの新しい値 `4` と比較します。
 
-After you have reached the end of the array, remove the items you copied, `[3, 4]`, and start again with the first item remaining in the `unsortedArray`, in this case `1`.
+配列の最後に達したら、コピーした項目 `[3, 4]` を削除し、`unsortedArray` に残っている最初の項目 (この例では `1`) から再び始めます。
 
-Following this process results in two sorted arrays, `[3, 4]` and `[1, 2]`. Merge these two arrays to create the `strandSortedArray`.
+このプロセスの結果、2 つのソートされた配列 `[3, 4]` と `[1, 2]` が得られます。 これらの 2 つの配列を結合して `strandSortedArray` を作成します。
 
 ```js
 const unsortedArray = [3, 1, 4, 2];

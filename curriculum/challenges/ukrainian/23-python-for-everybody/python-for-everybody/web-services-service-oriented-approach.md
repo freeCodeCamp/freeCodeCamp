@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f140b6c005b0e76f07e
-title: 'Web Services: Service Oriented Approach'
+title: 'Вебсервіси: сервісно-орієнтовний підхід'
 challengeType: 11
 videoId: muerlsCHExI
 bilibiliIds:
@@ -18,15 +18,15 @@ With a services oriented approach to developing web apps, where is the data loca
 
 ## --answers--
 
-Spread across many computer systems connected via the internet or internal network.
+Розповсюджені між багатьма комп’ютерними системами, які поєднані між собою через інтернет або внутрішню мережу.
 
 ---
 
-Within different services on the main web server.
+В межах різних служб на головному вебсервері.
 
 ---
 
-On a separate database server.
+На окремому сервері бази даних.
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 5eb3e4a21f462f409d656c73
-title: Self-referential sequence
+title: 自己参照数列
 challengeType: 1
 forumTopicId: 385317
 dashedName: self-referential-sequence
@@ -12,37 +12,37 @@ There are several ways to generate a self-referential sequence. One very common 
 
 <pre>0, 10, 1110, 3110, 132110, 1113122110, 311311222110 ...</pre>
 
-The terms generated grow in length geometrically and never converge.
+生成された項は幾何学的に成長し、決して収束しません。
 
-Another way to generate a self-referential sequence is to summarize the previous term.
+自己参照数列を生成するもう一つの方法は、前の項を要約することです。
 
-Count how many of each alike digit there is, then concatenate the sum and digit for each of the sorted enumerated digits. Note that the first five terms are the same as for the previous sequence.
+同じ数字がいくつあるかを数え、ソートした各数字の個数と数字を連結します。 最初の 5 つの項は、前の数列と同じであることに注意してください。
 
 <pre>0, 10, 1110, 3110, 132110, 13123110, 23124110 ...</pre>
 
-Sort the digits largest to smallest. Do not include counts of digits that do not appear in the previous term.
+数字は最大から最小への順にソートします。 前の項に現れない数字はカウントに含めません。
 
-Depending on the seed value, series generated this way always either converge to a stable value or to a short cyclical pattern. (For our purposes, converge means that an element matches a previously seen element.) The sequence shown, with a seed value of 0, converges to a stable value of 1433223110 after 11 iterations. The seed value that converges most quickly is 22. It goes stable after the first element. (The next element is 22, which has been seen before.)
+シード値に応じて、このように生成された数列は常に安定値または短周期パターンに収束します (この場合の収束とは、要素が以前に現れた要素と一致することを意味します)。 上記のシード値が 0 の数列は、11回繰り返すと安定値 1433223110 に収束します。 最も迅速に収束するシード値は22です。 最初の要素の後に安定します。 (次の要素の22はすでに現れています)。
 
 # --instructions--
 
-Write a function that takes the seed value as parameter, generates a self referential sequence until it converges, and returns it as an array.
+シード値をパラメータとして取り、収束するまで自己参照数列を生成し、それを配列として返す関数を記述してください。
 
 # --hints--
 
-`selfReferential` should be a function.
+`selfReferential` は関数とします。
 
 ```js
 assert(typeof selfReferential === 'function');
 ```
 
-`selfReferential(40)` should return a array.
+`selfReferential(40)` は配列を返す必要があります。
 
 ```js
 assert(Array.isArray(selfReferential(40)));
 ```
 
-`selfReferential(40)` should return `["40", "1410", "142110", "14123110", "1413124110", "2413125110", "151413224110", "152413225110", "251413324110", "152423224110", "152413423110"]`.
+`selfReferential(40)` は `["40", "1410", "142110", "14123110", "1413124110", "2413125110", "151413224110", "152413225110", "251413324110", "152423224110", "152413423110"]` を返す必要があります。
 
 ```js
 assert.deepEqual(selfReferential(40), [
@@ -60,7 +60,7 @@ assert.deepEqual(selfReferential(40), [
 ]);
 ```
 
-`selfReferential(132110)` should return `["132110", "13123110", "23124110", "1413223110", "1423224110", "2413323110", "1433223110"]`.
+`selfReferential(132110)` は `["132110", "13123110", "23124110", "1413223110", "1423224110", "2413323110", "1433223110"]` を返す必要があります。
 
 ```js
 assert.deepEqual(selfReferential(132110), [
@@ -74,7 +74,7 @@ assert.deepEqual(selfReferential(132110), [
 ]);
 ```
 
-`selfReferential(132211)` should return `["132211", "132231", "232221", "134211", "14131231", "14231241", "24132231", "14233221"]`.
+`selfReferential(132211)` は `["132211", "132231", "232221", "134211", "14131231", "14231241", "24132231", "14233221"]` を返す必要があります。
 
 ```js
 assert.deepEqual(selfReferential(132211), [
@@ -89,7 +89,7 @@ assert.deepEqual(selfReferential(132211), [
 ]);
 ```
 
-`selfReferential(1413223110)` should return `["1413223110", "1423224110", "2413323110", "1433223110"]`.
+`selfReferential(1413223110)` は `["1413223110", "1423224110", "2413323110", "1433223110"]` を返す必要があります。
 
 ```js
 assert.deepEqual(selfReferential(1413223110), [
@@ -100,7 +100,7 @@ assert.deepEqual(selfReferential(1413223110), [
 ]);
 ```
 
-`selfReferential(251413126110)` should return `["251413126110", "16151413225110", "16251413226110", "26151413325110", "16251423225110", "16251413424110", "16153413225110"]`.
+`selfReferential(251413126110)` は `["251413126110", "16151413225110", "16251413226110", "26151413325110", "16251423225110", "16251413424110", "16153413225110"]` を返す必要があります。
 
 ```js
 assert.deepEqual(selfReferential(251413126110), [

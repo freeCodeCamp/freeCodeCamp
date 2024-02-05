@@ -12,7 +12,7 @@ For any two strings of digits, $A$ and $B$, we define $F_{A,B}$ to be the sequen
 
 Further, we define $D_{A,B}(n)$ to be the $n^{\text{th}}$ digit in the first term of $F_{A,B}$ that contains at least $n$ digits.
 
-Example:
+Ejemplo:
 
 Let $A = 1\\,415\\,926\\,535$, $B = 8\\,979\\,323\\,846$. We wish to find $D_{A,B}(35)$, say.
 

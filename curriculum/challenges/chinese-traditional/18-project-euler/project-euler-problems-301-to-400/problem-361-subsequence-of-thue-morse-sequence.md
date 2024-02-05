@@ -1,6 +1,6 @@
 ---
 id: 5900f4d51000cf542c50ffe8
-title: 'Problem 361: Subsequence of Thue-Morse sequence'
+title: '問題361：Thue-Morse序列的子序列'
 challengeType: 1
 forumTopicId: 302022
 dashedName: problem-361-subsequence-of-thue-morse-sequence

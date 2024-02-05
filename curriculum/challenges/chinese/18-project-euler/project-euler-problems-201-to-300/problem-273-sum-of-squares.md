@@ -1,6 +1,6 @@
 ---
 id: 5900f47e1000cf542c50ff90
-title: 'Problem 273: Sum of Squares'
+title: '问题 273：正方形的总和'
 challengeType: 1
 forumTopicId: 301923
 dashedName: problem-273-sum-of-squares

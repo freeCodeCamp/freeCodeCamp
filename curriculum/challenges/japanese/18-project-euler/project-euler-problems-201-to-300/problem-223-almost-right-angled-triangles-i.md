@@ -1,6 +1,6 @@
 ---
 id: 5900f44b1000cf542c50ff5e
-title: 'Problem 223: Almost right-angled triangles I'
+title: '問題 223: ほぼ直角三角形 (1)'
 challengeType: 1
 forumTopicId: 301866
 dashedName: problem-223-almost-right-angled-triangles-i
@@ -8,13 +8,13 @@ dashedName: problem-223-almost-right-angled-triangles-i
 
 # --description--
 
-Let us call an integer sided triangle with sides $a ≤ b ≤ c$ barely acute if the sides satisfy $a^2 + b^2 = c^2 + 1$.
+3 辺 ($a ≤ b ≤ c$) の長さがすべて整数である三角形について、3 辺が $a^2 + b^2 = c^2 + 1$ を満たすものを「わずかに鋭角の三角形」と呼ぶことにします。
 
-How many barely acute triangles are there with perimeter $≤ 25\\,000\\,000$?
+周長が $25\\,000\\,000$ 以下の「わずかに鋭角な三角形」はいくつありますか。
 
 # --hints--
 
-`almostRightAngledTrianglesOne()` should return `61614848`.
+`almostRightAngledTrianglesOne()` は `61614848` を返す必要があります。
 
 ```js
 assert.strictEqual(almostRightAngledTrianglesOne(), 61614848);

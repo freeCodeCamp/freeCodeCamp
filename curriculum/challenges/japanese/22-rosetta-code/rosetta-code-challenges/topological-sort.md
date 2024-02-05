@@ -1,6 +1,6 @@
 ---
 id: 594fa2746886f41f7d8bf225
-title: Topological sort
+title: トポロジカルソート
 challengeType: 1
 forumTopicId: 302340
 dashedName: topological-sort
@@ -12,14 +12,14 @@ Given a mapping between items, and items they depend on, a topological sort orde
 
 # --instructions--
 
-Write a function that will return a list with valid compile order of libraries from their dependencies.
+依存関係からのライブラリの有効なコンパイル順でリストを返す関数を記述してください。
 
 - Assume library names are single words.
-- Items mentioned as only dependents have no dependents of their own, but their order of compiling must be given.
-- Any self dependencies should be ignored.
-- Any un-orderable dependencies should be ignored.
+- 依存する側としてのみ記載されている項目には、自身に依存している項目はありませんが、そのコンパイル順は規定される必要があります。
+- 自己依存関係はすべて無視する必要があります。
+- 順序付けできない依存関係はすべて無視する必要があります。
 
-Use the following data as an example:
+次のデータを例として使用します。
 
 <pre>
 LIBRARY          LIBRARY DEPENDENCIES
@@ -39,11 +39,11 @@ std_cell_lib     ieee std_cell_lib
 synopsys
 </pre>
 
-The compiling of a library in the VHDL language has the constraint that a library must be compiled after any library it depends on. The above data would be un-orderable if, for example, `dw04` is added to the list of dependencies of `dw01`.
+VHDL言語のライブラリのコンパイルには、ライブラリが依存するライブラリの後にコンパイルされなければならないという制約があります。 例えば、 `dw04` が `dw01`の依存関係のリストに追加された場合、上記のデータは順序不能になります。
 
-The input of the function will be a multiline string, each line will consist of the name of the library, followed by its dependencies (if exist).
+関数の入力は複数行の文字列になります。それぞれの行はライブラリの名前で構成され、それに依存しているもの (存在する場合) が続きます。
 
-For example:
+例えば:
 
 ```js
 const libsSimple =
@@ -53,37 +53,37 @@ const libsSimple =
 
 # --hints--
 
-`topologicalSort` should be a function.
+`topologicalSort` は関数とします。
 
 ```js
 assert(typeof topologicalSort === 'function');
 ```
 
-`topologicalSort(libsSimple)` should return an array.
+`topologicalSort(libsSimple)` は配列を返す必要があります。
 
 ```js
 assert(Array.isArray(topologicalSort(libsSimple)));
 ```
 
-`topologicalSort(libsSimple)` should return `['bbb', 'aaa']`.
+`topologicalSort(libsSimple)` は `['bbb', 'aaa']` を返す必要があります。
 
 ```js
 assert.deepEqual(topologicalSort(libsSimple), ['bbb', 'aaa']);
 ```
 
-`topologicalSort(libsVHDL)` should return `['ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06', 'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys', 'dw03', 'des_system_lib']`.
+`topologicalSort(libsVHDL)` は `['ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06', 'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys', 'dw03', 'des_system_lib']` を返す必要があります。
 
 ```js
 assert.deepEqual(topologicalSort(libsVHDL), ['ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06', 'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys', 'dw03', 'des_system_lib']);
 ```
 
-`topologicalSort(libsCustom)` should return `['base', 'c', 'd', 'b', 'a']`.
+`topologicalSort(libsCustom)` は `['base', 'c', 'd', 'b', 'a']` を返す必要があります。
 
 ```js
 assert.deepEqual(topologicalSort(libsCustom), ['base', 'c', 'd', 'b', 'a']);
 ```
 
-`topologicalSort` should ignore unorderable dependencies.
+`topologicalSort` は順序付けできない依存関係を無視しなければなりません。
 
 ```js
 assert.deepEqual(topologicalSort(libsUnorderable), ['Base']);

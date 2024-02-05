@@ -1,6 +1,6 @@
 ---
 id: 59713bd26bdeb8a594fb9413
-title: Count the coins
+title: Cuenta las monedas
 challengeType: 1
 forumTopicId: 302238
 dashedName: count-the-coins
@@ -17,42 +17,42 @@ There are four types of common coins in US currency:
   <li>pennies (1 cent)</li>
 </ul>
 
-<p>There are six ways to make change for 15 cents:</p>
+<p>Hay seis formas de dar cambio por 15 centavos:</p>
 
 <ul>
   <li>A dime and a nickel</li>
-  <li>A dime and 5 pennies</li>
-  <li>3 nickels</li>
-  <li>2 nickels and 5 pennies</li>
-  <li>A nickel and 10 pennies</li>
-  <li>15 pennies</li>
+  <li>Una moneda de diez centavos y 5 centavos</li>
+  <li>3 monedas de cinco centavos</li>
+  <li>2 monedas de cinco centavos y 5 centavos</li>
+  <li>Una moneda de cinco centavos y 10 centavos</li>
+  <li>15 centavos</li>
 </ul>
 
 # --instructions--
 
-Implement a function to determine how many ways there are to make change for a given input, `cents`, that represents an amount of US pennies using these common coins.
+Implemente una función para determinar cuántas formas hay de cambiar una entrada dada, `cents`, que representa una cantidad de centavos estadounidenses usando estas monedas comunes.
 
 # --hints--
 
-`countCoins` should be a function.
+`countCoins` debería ser una función.
 
 ```js
 assert(typeof countCoins === 'function');
 ```
 
-`countCoins(15)` should return `6`.
+`countCoins(15)` debe devolver `6`.
 
 ```js
 assert.equal(countCoins(15), 6);
 ```
 
-`countCoins(85)` should return `163`.
+`countCoins(85)` debe devolver `163`.
 
 ```js
 assert.equal(countCoins(85), 163);
 ```
 
-`countCoins(100)` should return `242`.
+`countCoins(100)` debe devolver `242`.
 
 ```js
 assert.equal(countCoins(100), 242);

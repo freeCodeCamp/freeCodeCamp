@@ -1,6 +1,6 @@
 ---
 id: 5900f39f1000cf542c50feb2
-title: 'Problem 51: Prime digit replacements'
+title: '問題 51: 素数の桁置換'
 challengeType: 1
 forumTopicId: 302162
 dashedName: problem-51-prime-digit-replacements
@@ -8,33 +8,33 @@ dashedName: problem-51-prime-digit-replacements
 
 # --description--
 
-By replacing the 1st digit of the 2-digit number \*3, it turns out that six of the nine possible values: 13, 23, 43, 53, 73, and 83, are all prime.
+2 桁の数 \*3 の 1 桁目を置き換えることで、あり得る 9 つの値のうち 6 つ (13, 23, 43, 53, 73, 83) がすべて素数であることが分かります。
 
-By replacing the 3rd and 4th digits of 56\*\*3 with the same digit, this 5-digit number is the first example having seven primes among the ten generated numbers, yielding the family: 56003, 56113, 56333, 56443, 56663, 56773, and 56993. Consequently 56003, being the first member of this family, is the smallest prime with this property.
+56\*\*3 の 3 桁目と 4 桁目を同一の数字に置き換えると、この 5 桁の数は、得られる 10 個の数字のうち 7 つが素数である最初の例であり、56003, 56113, 56333, 56443, 56663, 56773, 56993 からなる族を形成します。 したがって、この族の 1 つ目である 56003 は、この性質を持つ最小の素数です。
 
-Find the smallest prime which, by replacing part of the number (not necessarily adjacent digits) with the same digit, is part of an `n` prime value family.
+数の一部 (隣り合う桁でなくても良い) を同一の数字に置き換えると `n` 個の素数値の族に属するような素数のうち、最小のものを求めなさい。
 
 # --hints--
 
-`primeDigitReplacements(6)` should return a number.
+`primeDigitReplacements(6)` は数値を返す必要があります。
 
 ```js
 assert(typeof primeDigitReplacements(6) === 'number');
 ```
 
-`primeDigitReplacements(6)` should return `13`.
+`primeDigitReplacements(6)` は `13` を返す必要があります。
 
 ```js
 assert.strictEqual(primeDigitReplacements(6), 13);
 ```
 
-`primeDigitReplacements(7)` should return `56003`.
+`primeDigitReplacements(7)` は `56003` を返す必要があります。
 
 ```js
 assert.strictEqual(primeDigitReplacements(7), 56003);
 ```
 
-`primeDigitReplacements(8)` should return `121313`.
+`primeDigitReplacements(8)` は `121313` を返す必要があります。
 
 ```js
 assert.strictEqual(primeDigitReplacements(8), 121313);

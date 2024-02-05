@@ -92,47 +92,47 @@ A given rectangle is made from *m* × *n* squares. If *m* and *n* are not both o
 
 # --instructions--
 
-Write a function that calculates the number of different ways to cut an *m* × *n* rectangle.
+Scrivi una funzione che calcola il numero di modi diversi per tagliare un rettangolo *m* × *n*.
 
 # --hints--
 
-`cutRectangle` should be a function.
+`cutRectangle` dovrebbe essere una funzione.
 
 ```js
 assert(typeof cutRectangle == 'function');
 ```
 
-`cutRectangle(2, 2)` should return a number.
+`cutRectangle(2, 2)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof cutRectangle(2, 2) == 'number');
 ```
 
-`cutRectangle(2, 2)` should return `2`.
+`cutRectangle(2, 2)` dovrebbe restituire `2`.
 
 ```js
 assert.equal(cutRectangle(2, 2), 2);
 ```
 
-`cutRectangle(4, 3)` should return `9`.
+`cutRectangle(4, 3)` dovrebbe restituire `9`.
 
 ```js
 assert.equal(cutRectangle(4, 3), 9);
 ```
 
-`cutRectangle(4, 4)` should return `22`.
+`cutRectangle(4, 4)` dovrebbe restituire `22`.
 
 ```js
 assert.equal(cutRectangle(4, 4), 22);
 ```
 
-`cutRectangle(8, 3)` should return `53`.
+`cutRectangle(8, 3)` dovrebbe restituire `53`.
 
 ```js
 assert.equal(cutRectangle(8, 3), 53);
 ```
 
-`cutRectangle(7, 4)` should return `151`.
+`cutRectangle(7, 4)` dovrebbe restituire `151`.
 
 ```js
 assert.equal(cutRectangle(7, 4), 151);

@@ -10,9 +10,9 @@ dashedName: amicable-pairs
 
 Two integers $N$ and $M$ are said to be amicable pairs if $N \\neq M$ and the sum of the proper divisors of $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$ as well as $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
 
-**Example:**
+**例如：**
 
-**1184** and **1210** are an amicable pair, with proper divisors:
+**1184** 和 **1210** 是友好的一對，具有適當的除數：
 
 <ul>
   <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592 and</li>

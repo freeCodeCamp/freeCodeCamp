@@ -1,6 +1,6 @@
 ---
 id: 59694356a6e7011f7f1c5f4e
-title: Deal cards for FreeCell
+title: Deal Karten für FreeCell
 challengeType: 1
 forumTopicId: 302246
 dashedName: deal-cards-for-freecell
@@ -10,34 +10,34 @@ dashedName: deal-cards-for-freecell
 
 *FreeCell* is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for DOS, then Windows. This version introduced 32000 numbered deals.
 
-As the game became popular, Jim Horne disclosed the algorithm, and other implementations of FreeCell began to reproduce the Microsoft deals. These deals are numbered from 1 to 32000. Newer versions from Microsoft have 1 million deals, numbered from 1 to 1000000; some implementations allow numbers outside that range.
+Als das Spiel populär wurde, legte Jim Horne den Algorithmus offen, und andere FreeCell-Implementierungen begannen, die Microsoft-Angebote zu reproduzieren. Diese Geschäfte sind von 1 bis 32000 nummeriert. Neuere Versionen von Microsoft haben 1 Million Geschäfte, nummeriert von 1 bis 1000000; einige Implementierungen erlauben Zahlen außerhalb dieses Bereichs.
 
-The algorithm uses this linear congruential generator from Microsoft C:
+Der Algorithmus verwendet diesen linearen kongruentiellen Generator von Microsoft C:
 
 <ul>
   <li>$state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}$</li>
   <li>$rand_n = state_n \div 2^{16}$</li>
-  <li>$rand_n$ is in range 0 to 32767.</li>
+  <li>$rand_n$ reicht von 0 bis 32767.</li>
 </ul>
 
-The algorithm follows:
+Es folgt der Algorithmus:
 
 <ol>
   <li>Seed the RNG with the number of the deal.
-  </li><li>Create an array of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51.</li>
-  <li>Until the array is empty:</li>
-  <li>Choose a random card at index ≡ next random number (mod array length).</li>
+  </li><li>Erstelle einen Array von 52 Karten: Kreuz-Ass, Karo-Ass, Herz-Ass, Pik-Ass, Kreuz-2, Karo-2, und so weiter durch die Ränge: Ass, 2, 3, 4, 5, 6, 7, 8, 9, 10, Bube, Königin, König. Die Array-Indizes sind 0 bis 51, wobei das Kreuz-Ass auf 0 und der Pik-König auf 51 steht.</li>
+  <li>Bis das Array leer ist:</li>
+  <li>Wähle eine zufällige Karte mit dem Index ≡ nächste Zufallszahl (mod array length).</li>
     <ul>
       <li>Swap this random card with the last card of the array.</li>
-      <li>Remove this random card from the array. (Array length goes down by 1.)</li>
-      <li>Deal this random card.</li>
+      <li>Entferne diese zufällige Karte aus dem Feld. (Array-Länge wird um 1 heruntergesetzt)</li>
+      <li>Gib diese zufällige Karte aus.</li>
     </ul>
-  <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
+  <li>Gib alle 52 Karten aufgedeckt in 8 Spalten aus. Die ersten 8 Karten kommen in 8 Spalten, die nächsten 8 Karten kommen auf die ersten 8 Karten und so weiter.</li>
 </ol>
 
-**Example:**
+**Beispiel:**
 
-**Order to deal cards**
+**Reihenfolge der Kartenausgabe**
 
 <pre> 1  2  3  4  5  6  7  8
  9 10 11 12 13 14 15 16
@@ -47,7 +47,7 @@ The algorithm follows:
 41 42 43 44 45 46 47 48
 49 50 51 52</pre>
 
-**Game #1**
+**Spiel #1**
 
 ```js
 [
@@ -61,7 +61,7 @@ The algorithm follows:
 ]
 ```
 
-**Game #617**
+**Spiel #617**
 
 ```js
 [
@@ -77,35 +77,35 @@ The algorithm follows:
 
 # --instructions--
 
-Write a function to take a deal number and deal cards in the same order as this algorithm. The function must return a two dimensional array representing the FreeCell board.
+Schreibe eine Funktion, die eine Geschäftsnummer annimmt und die Karten in der gleichen Reihenfolge wie dieser Algorithmus austeilt. Die Funktion muss ein zweidimensionales Feld zurückgeben, das das FreeCell-Brett darstellt.
 
 # --hints--
 
-`dealFreeCell` should be a function.
+`dealFreeCell` sollte eine Funktion sein.
 
 ```js
 assert(typeof dealFreeCell === 'function');
 ```
 
-`dealFreeCell(seed)` should return an object.
+`dealFreeCell(seed)` sollte ein Objekt zurückgeben.
 
 ```js
 assert(typeof dealFreeCell(1) === 'object');
 ```
 
-`dealFreeCell(seed)` should return an array of length 7.
+`dealFreeCell(seed)` sollte ein Array mit der Länge 7 zurückgeben.
 
 ```js
 assert(dealFreeCell(1).length === 7);
 ```
 
-`dealFreeCell(1)` should return an array identical to example "Game #1"
+`dealFreeCell(1)` sollte ein Array zurückgeben, das identisch zum Beispiel "Spiel #1" ist
 
 ```js
 assert.deepEqual(dealFreeCell(1), game1);
 ```
 
-`dealFreeCell(617)` should return an array identical to example "Game #617"
+`dealFreeCell(617)` sollte ein Array zurückgeben, das identisch zum Beispiel "Spiel #617" ist
 
 ```js
 assert.deepEqual(dealFreeCell(617), game617);

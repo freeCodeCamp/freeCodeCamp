@@ -1,28 +1,28 @@
 ---
 id: 63d83ff239c73468b059cd3f
-title: "Build a Multi-Function Calculator"
+title: "多機能計算機を作成する"
 challengeType: 10
 dashedName: build-a-multi-function-calculator
 ---
 
 # --description--
 
-You will be <a href="https://colab.research.google.com/drive/1jT7atuRCOnkdPyDmlgKVJqxouDSx7Ioh?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
+このプロジェクトには <a href="https://colab.research.google.com/drive/1jT7atuRCOnkdPyDmlgKVJqxouDSx7Ioh?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Google Colaboratory</a> を使用して取り組んでください。
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+上記のリンクにアクセスした後、自分のアカウントまたはローカルに、ノートブックのコピーを作成してください。 プロジェクトを完了し、テストが成功したら (テストはリンクに含まれています)、下記入力欄からプロジェクトリンクを提出してください。 Google Colaboratory のリンクを送信する場合は、リンクの共有設定を必ず「リンクを知っている全員」に設定してください。
 
 # --instructions--
 
-For this challenge, you need to create a multi-function calculator using Python that take input and do the following:
+このチャレンジでは、入力を受け取り、次の処理を実行する多機能計算機を Python を使用して作成する必要があります。
 
-- solve proportions
-- solve for x in equations
-- factor square roots
-- convert decimals to fractions and percents
-- convert fractions to decimals and percents
-- convert percents to decimals and fractions
+- 比例式を解く
+- 方程式の x について解く
+- 平方根へ因数分解する
+- 小数を分数とパーセントに変換する
+- 分数を小数とパーセントに変換する
+- パーセントを小数と分数に変換する
 
-If you are struggling, you can follow the <a href="https://www.youtube.com/embed/PdsvcZNPEEs" target="_blank" rel="noopener noreferrer nofollow">video walkthrough for this project.</a>
+自力で解決できない場合は、<a href="https://www.youtube.com/embed/PdsvcZNPEEs" target="_blank" rel="noopener noreferrer nofollow">このプロジェクトの動画ウォークスルー</a>を参考にしてください。
 
-Once you're done, submit the URL to the public Colab notebook on your Google drive.
+作業を終えたら、Google ドライブの公開 Colab ノートブックの URL を提出してください。
 

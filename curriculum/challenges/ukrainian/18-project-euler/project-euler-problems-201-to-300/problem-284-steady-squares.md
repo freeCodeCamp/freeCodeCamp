@@ -1,6 +1,6 @@
 ---
 id: 5900f4891000cf542c50ff9b
-title: 'Problem 284: Steady Squares'
+title: 'Завдання 284: незмінні квадрати'
 challengeType: 1
 forumTopicId: 301935
 dashedName: problem-284-steady-squares
@@ -8,13 +8,13 @@ dashedName: problem-284-steady-squares
 
 # --description--
 
-The 3-digit number 376 in the decimal numbering system is an example of numbers with the special property that its square ends with the same digits: ${376}^2 = 141376$. Let's call a number with this property a steady square.
+Тризначне число 376 в десятковій системі є прикладом чисел зі спеціальною властивістю: його квадрат закінчується тими ж цифрами (${376}^2 = 141376$). Назвемо такі числа незмінними квадратами.
 
-Steady squares can also be observed in other numbering systems. In the base 14 numbering system, the 3-digit number $c37$ is also a steady square: $c37^2 = aa0c37$, and the sum of its digits is $c+3+7=18$ in the same numbering system. The letters $a$, $b$, $c$ and $d$ are used for the 10, 11, 12 and 13 digits respectively, in a manner similar to the hexadecimal numbering system.
+Незмінні квадрати існують також і в інших системах числення. В системі числення з основою 14, тризначне число $c37$ також є незмінним квадратом: $c37^2 = aa0c37$, а сума його цифр в тій же системі дорівнює $c+3+7=18$. Літери $a$, $b$, $c$ та $d$ використовують для позначення цифр 10, 11, 12 та 13 відповідно, так само як і в шістнадцятковій системі числення.
 
-For $1 ≤ n ≤ 9$, the sum of the digits of all the $n$-digit steady squares in the base 14 numbering system is $2d8$ (582 decimal). Steady squares with leading 0's are not allowed.
+За умови $1 ≤ n ≤ 9$ сума цифр всіх $n$-значних незмінних квадратів в системі числення з основою 14 дорівнює $2d8$ (582 в десятковій системі). Незмінні квадрати з нулями на початку заборонені.
 
-Find the sum of the digits of all the $n$-digit steady squares in the base 14 numbering system for $1 ≤ n ≤ 10000$ (decimal) and give your answer as a string in the base 14 system using lower case letters where necessary.
+Знайдіть суму цифр всіх $n$-значних незмінних квадратів в системі числення з основою 14, якщо $1 ≤ n ≤ 10000$ (у десятковій системі) та надайте відповідь у вигляді рядка в системі числення з основою 14, використовуючи нижній регістр за потреби.
 
 # --hints--
 

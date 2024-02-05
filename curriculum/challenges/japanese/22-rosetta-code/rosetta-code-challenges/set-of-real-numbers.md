@@ -1,6 +1,6 @@
 ---
 id: 5eb3e4b20aa93c437f9e9717
-title: Set of real numbers
+title: 実数集合
 challengeType: 1
 forumTopicId: 385322
 dashedName: set-of-real-numbers
@@ -17,52 +17,52 @@ All real numbers form the uncountable set ℝ. Among its subsets, relatively sim
   <li>(<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> < <i>x</i> and <i>x</i> ≤ <i>b</i> }</li>
 </ul>
 
-Note that if *a* = *b*, of the four only \[*a*, *a*] would be non-empty.
+*a* = *b* の場合、4つのうち \[*a*, *a*] のみが空集合になりません。
 
-**Task**
+**タスク**
 
 <ul>
   <li>Devise a way to represent any set of real numbers, for the definition of "any" in the implementation notes below.</li>
-  <li>Provide methods for these common set operations (<i>x</i> is a real number; <i>A</i> and <i>B</i> are sets):</li>
+  <li>以下の共通の集合演算のための方法を提供します (<i>x</i> は実数; <i>A</i> と <i>B</i> は集合)。</li>
   <ul>
     <li>
       <i>x</i> ∈ <i>A</i>: determine if <i>x</i> is an element of <i>A</i><br>
       example: 1 is in [1, 2), while 2, 3, ... are not.
     </li>
     <li>
-      <i>A</i> ∪ <i>B</i>: union of <i>A</i> and <i>B</i>, i.e. {<i>x</i> | <i>x</i> ∈ <i>A</i> or <i>x</i> ∈ <i>B</i>}<br>
-      example: [0, 2) ∪ (1, 3) = [0, 3); [0, 1) ∪ (2, 3] = well, [0, 1) ∪ (2, 3]
+      <i>A</i> ∪ <i>B</i>: <i>A</i> と <i>B</i> の和集合、つまり {<i>x</i> | <i>x</i> ∈ <i>A</i> or <i>x</i> ∈ <i>B</i>}<br>
+       例: [0, 2) ∪ (1, 3) = [0, 3); [0, 1) ∪ (2, 3] = [0, 1) ∪ (2, 3]
     </li>
     <li>
-      <i>A</i> ∩ <i>B</i>: intersection of <i>A</i> and <i>B</i>, i.e. {<i>x</i> | <i>x</i> ∈ <i>A</i> and <i>x</i> ∈ <i>B</i>}<br>
-      example: [0, 2) ∩ (1, 3) = (1, 2); [0, 1) ∩ (2, 3] = empty set
+      <i>A</i> ∩ <i>B</i>: <i>A</i> と <i>B</i> の共通部分、つまり  {<i>x</i> | <i>x</i> ∈ <i>A</i> and <i>x</i> ∈ <i>B</i>}<br>
+       例: [0, 2) ∩ (1, 3) = (1, 2); [0, 1) ∩ (2, 3] = 空集合
     </li>
     <li>
-      <i>A</i> - <i>B</i>: difference between <i>A</i> and <i>B</i>, also written as <i>A</i> \ <i>B</i>, i.e. {<i>x</i> | <i>x</i> ∈ <i>A</i> and <i>x</i> ∉ <i>B</i>}<br>
-      example: [0, 2) − (1, 3) = [0, 1]
+      <i>A</i> - <i>B</i>: <i>A</i> と <i>B</i> の差集合、<i>A</i> \ <i>B</i> とも表記する。つまり  {<i>x</i> | <i>x</i> ∈ <i>A</i> and <i>x</i> ∉ <i>B</i>}<br>
+       例: [0, 2) − (1, 3) = [0, 1]
     </li>
   </ul>
 </ul>
 
 # --instructions--
 
-Write a function that takes 2 objects, a string and an array as parameters. The objects represents the set and have attributes: `low`, `high` and `rangeType`.
+2 つのオブジェクト、1 つの文字列、1 つの配列をパラメータとして取る関数を記述してください。 オブジェクトは集合を表し、次の属性を持ちます: `low`、`high` および `rangeType`
 
-The `rangeType` can have values 0, 1, 2 and 3 for `CLOSED`, `BOTH_OPEN`, `LEFT_OPEN` and `RIGHT_OPEN`, respectively. The function should implement a set using this information.
+`rangeType`では、`CLOSED`、`BOTH_OPEN`、`LEFT_OPEN`、`RIGHT_OPEN` に対して、それぞれ0、1、2、3の値を持つことができます。 この関数は、この情報を使用して集合を実装するものとします。
 
-The string represents the operation to be performed on the sets. It can be: `"union"`, `"intersect"` and `"subtract"` (difference).
+文字列は集合に実行される演算を表します。 以下のいずれかとなります。`"union"` (和集合)、`"intersect"` (共通部分、積集合)、`"subtract"` (差集合)。
 
-After performing the operation, the function should check if the values in the array are present in the resultant set and store a corresponding boolean value to an array. The function should return this array.
+演算の実行後、関数は配列内の値が結果の集合に存在するかどうかをチェックし、対応するブール値を配列に格納します。 この関数はこの配列を返す必要があります。
 
 # --hints--
 
-`realSet` should be a function.
+`realSet` は関数とします。
 
 ```js
 assert(typeof realSet == 'function');
 ```
 
-`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` should return a array.
+`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` は配列を返す必要があります。
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` should return `[true, false, false]`.
+`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` は `[true, false, false]` を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -91,7 +91,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":2, "rangeType":3}, {"low":1, "high":2, "rangeType":2}, "intersect", [0, 1, 2])` should return `[false, false, false]`.
+`realSet({"low":0, "high":2, "rangeType":3}, {"low":1, "high":2, "rangeType":2}, "intersect", [0, 1, 2])` は `[false, false, false]` を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -105,7 +105,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":1}, "subtract", [0, 1, 2])` should return `[true, true, true]`.
+`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":1}, "subtract", [0, 1, 2])` は `[true, true, true]` を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -119,7 +119,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":0}, "subtract", [0, 1, 2])` should return `[false, false, true]`.
+`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":0}, "subtract", [0, 1, 2])` は `[false, false, true]` を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -133,7 +133,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":33, "rangeType":1}, {"low":30, "high":31, "rangeType":0}, "intersect", [30, 31, 32])` should return `[true, true, false]`.
+`realSet({"low":0, "high":33, "rangeType":1}, {"low":30, "high":31, "rangeType":0}, "intersect", [30, 31, 32])` は `[true, true, false]` を返す必要があります。
 
 ```js
 assert.deepEqual(

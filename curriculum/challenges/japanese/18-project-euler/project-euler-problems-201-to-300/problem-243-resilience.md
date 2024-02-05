@@ -1,6 +1,6 @@
 ---
 id: 5900f4601000cf542c50ff73
-title: 'Problem 243: Resilience'
+title: '問題 243: 抵抗力'
 challengeType: 1
 forumTopicId: 301890
 dashedName: problem-243-resilience
@@ -8,23 +8,23 @@ dashedName: problem-243-resilience
 
 # --description--
 
-A positive fraction whose numerator is less than its denominator is called a proper fraction.
+分子が分母より小さい正の分数は真分数と呼ばれます。
 
-For any denominator, $d$, there will be $d−1$ proper fractions; for example, with $d = 12$:
+任意の分母 $d$ に対して $d−1$ 個の真分数があります。例えば、$d = 12$ の真分数は次のとおりです。
 
 $$\frac{1}{12}, \frac{2}{12}, \frac{3}{12}, \frac{4}{12}, \frac{5}{12}, \frac{6}{12}, \frac{7}{12}, \frac{8}{12}, \frac{9}{12}, \frac{10}{12}, \frac{11}{12}$$
 
-We shall call a fraction that cannot be cancelled down a resilient fraction.
+約分できない分数を「抵抗分数」 (resilient fraction) と呼ぶことにします。
 
-Furthermore we shall define the resilience of a denominator, $R(d)$, to be the ratio of its proper fractions that are resilient; for example, $R(12) = \frac{4}{11}$.
+さらに、分母の抵抗性 (resilience) を、その分母の真分数に対する抵抗分数の比率と定義して $R(d) と表します。例えば、$R(12) = \frac{4}{11}$ です。
 
-In fact, $d = 12$ is the smallest denominator having a resilience $R(d) &lt; \frac{4}{10}$.
+実のところ $d = 12$ は、$R(d) &lt; \frac{4}{10} $ を満たす抵抗性を持つ最小の分母です。
 
-Find the smallest denominator $d$, having a resilience $R(d) &lt; \frac{15\\,499}{94\\,744}$.
+$R(d) &lt; \frac{15\\,499}{94\\,744}$ を満たす抵抗性を持つ最小の分母 $d$ を求めなさい。
 
 # --hints--
 
-`resilience()` should return `892371480`.
+`resilience()` は `892371480` を返す必要があります。
 
 ```js
 assert.strictEqual(resilience(), 892371480);

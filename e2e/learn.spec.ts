@@ -1,8 +1,6 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import words from '../client/i18n/locales/english/motivation.json';
-
-let page: Page;
 
 const superBlocks = [
   'Responsive Web Design',
@@ -28,24 +26,17 @@ const superBlocks = [
   'Legacy Python for Everybody'
 ];
 
-test.beforeAll(async ({ browser }) => {
-  page = await browser.newPage();
+test('the page should render correctly', async ({ page }) => {
   await page.goto('/learn');
-});
-
-test('the page should render with correct title', async () => {
   await expect(page).toHaveTitle(
     'Learn to Code — For Free — Coding Courses for Busy People'
   );
-});
 
-test('the page should have the correct header', async () => {
   const header = page.getByTestId('learn-heading');
   await expect(header).toBeVisible();
   await expect(header).toContainText(translations.learn.heading);
-});
 
-test('the page should have all static data correctly placed', async () => {
+  // Advice for new learners
   const learnReadThisSection = page.getByTestId('learn-read-this-section');
   await expect(learnReadThisSection).toBeVisible();
 
@@ -60,9 +51,7 @@ test('the page should have all static data correctly placed', async () => {
   for (const paragraph of await learnReadThisSectionParagraphs.all()) {
     await expect(paragraph).toBeVisible();
   }
-});
-
-test('the page renders all curriculum certifications', async () => {
+  // certifications
   const curriculumBtns = page.getByTestId('curriculum-map-button');
   await expect(curriculumBtns).toHaveCount(superBlocks.length);
   for (let i = 0; i < superBlocks.length; i++) {
@@ -74,7 +63,9 @@ test('the page renders all curriculum certifications', async () => {
 test.describe('Learn (authenticated user)', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-  test('the page shows a random quote for an authenticated user', async () => {
+  test('the page shows a random quote for an authenticated user', async ({
+    page
+  }) => {
     await page.goto('/learn');
     const shownQuote = await page.getByTestId('random-quote').textContent();
 

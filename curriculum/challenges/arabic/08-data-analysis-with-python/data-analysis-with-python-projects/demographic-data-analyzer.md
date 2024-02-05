@@ -10,9 +10,9 @@ dashedName: demographic-data-analyzer
 
 You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   ابدأ باستيراد (import) المشروع على Replit.
+-   بعد ذلك، سترى نافذة `.replit`.
+-   اختار `Use run command` وانقر على زر `Done`.
 
 
 We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
@@ -51,15 +51,15 @@ Use the starter code in the file `demographic_data_analyzer`. Update the code so
 
 Unit tests are written for you under `test_module.py`.
 
-## Development
+## التطوير
 
 For development, you can use `main.py` to test your functions. Click the "run" button and `main.py` will run.
 
-## Testing
+## الاختبار
 
 We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
 
-## Submitting
+## التقديم
 
 Copy your project's URL and submit it to freeCodeCamp.
 

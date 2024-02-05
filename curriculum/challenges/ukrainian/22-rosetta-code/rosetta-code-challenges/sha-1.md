@@ -10,57 +10,57 @@ dashedName: sha-1
 
 **SHA-1** or **SHA1** is a one-way hash function; it computes a 160-bit message digest.
 
-SHA-1 often appears in security protocols; for example, many HTTPS websites use RSA with SHA-1 to secure their connections.
+SHA-1 часто використовується в протоколах безпеки; до прикладу, багато HTTPS веб-сайтів використовують RSA з SHA-1, аби захистити свої з'єднання.
 
-BitTorrent uses SHA-1 to verify downloads.
+BitTorrent використовує SHA-1 для перевірки завантажень.
 
-Git and Mercurial use SHA-1 digests to identify commits.
+Git і Mercurial використовують дайджести SHA-1 для визначення комітів.
 
-A US government standard, <a href="https://rosettacode.org/wiki/SHA-1/FIPS-180-1" target="_blank" rel="noopener noreferrer nofollow">FIPS 180-1</a>, defines SHA-1.
+Стандарт уряду США, <a href="https://rosettacode.org/wiki/SHA-1/FIPS-180-1" target="_blank" rel="noopener noreferrer nofollow">FIPS 180-1</a>, визначає SHA-1.
 
 # --instructions--
 
-Write a function that returns the SHA-1 message digest for a given string.
+Напишіть функцію, яка повертає дайджест повідомлення SHA-1 для заданого рядка.
 
 # --hints--
 
-`SHA1` should be a function.
+`SHA1` має бути функцією.
 
 ```js
 assert(typeof SHA1 === 'function');
 ```
 
-`SHA1("abc")` should return a string.
+`SHA1("abc")` має повернути рядок.
 
 ```js
 assert(typeof SHA1('abc') === 'string');
 ```
 
-`SHA1("abc")` should return `"a9993e364706816aba3e25717850c26c9cd0d89d"`.
+`SHA1("abc")` має повернути `"a9993e364706816aba3e25717850c26c9cd0d89d"`.
 
 ```js
 assert.equal(SHA1('abc'), 'a9993e364706816aba3e25717850c26c9cd0d89d');
 ```
 
-`SHA1("Rosetta Code")` should return `"48c98f7e5a6e736d790ab740dfc3f51a61abe2b5"`.
+`SHA1("Rosetta Code")` має повернути `"48c98f7e5a6e736d790ab740dfc3f51a61abe2b5"`.
 
 ```js
 assert.equal(SHA1('Rosetta Code'), '48c98f7e5a6e736d790ab740dfc3f51a61abe2b5');
 ```
 
-`SHA1("Hello world")` should return `"7b502c3a1f48c8609ae212cdfb639dee39673f5e"`.
+`SHA1("Hello world")` має повернути `"7b502c3a1f48c8609ae212cdfb639dee39673f5e"`.
 
 ```js
 assert.equal(SHA1('Hello world'), '7b502c3a1f48c8609ae212cdfb639dee39673f5e');
 ```
 
-`SHA1("Programming")` should return `"d1a946bf8b2f2a7292c250063ee28989d742cd4b"`.
+`SHA1("Programming")` має повернути `"d1a946bf8b2f2a7292c250063ee28989d742cd4b"`.
 
 ```js
 assert.equal(SHA1('Programming'), 'd1a946bf8b2f2a7292c250063ee28989d742cd4b');
 ```
 
-`SHA1("is Awesome")` should return `"6537205da59c72b57ed3881843c2d24103d683a3"`.
+`SHA1("is Awesome")` має повернути `"6537205da59c72b57ed3881843c2d24103d683a3"`.
 
 ```js
 assert.equal(SHA1('is Awesome'), '6537205da59c72b57ed3881843c2d24103d683a3');

@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad5
-title: Y combinator
+title: Y 组合器
 challengeType: 1
 forumTopicId: 302345
 dashedName: y-combinator
@@ -10,45 +10,45 @@ dashedName: y-combinator
 
 In strict <a href="https://www.freecodecamp.org/news/the-principles-of-functional-programming/" target="_blank" rel="noopener noreferrer nofollow">functional programming</a> and the lambda calculus, functions (lambda expressions) don't have state and are only allowed to refer to arguments of enclosing functions. This rules out the usual definition of a recursive function wherein a function is associated with the state of a variable and this variable's state is used in the body of the function.
 
-The Y combinator is itself a stateless function that, when applied to another stateless function, returns a recursive version of the function. The Y combinator is the simplest of the class of such functions, called fixed-point combinators.
+Y 组合子本身是一个无状态函数，当应用于另一个无状态函数时，返回该函数的递归版本。 Y 组合子是这类功能中最简单的一类，称为不动点组合子。
 
 # --instructions--
 
-Define the stateless Y combinator function and use it to compute the factorials. The `factorial(N)` function is already given to you. 
+定义无状态的 Y 组合子函数并使用它来计算阶乘。 `factorial(N)` 函数已经定义好了。
 
 # --hints--
 
-Y should return a function.
+Y 应该返回一个函数。
 
 ```js
 assert.equal(typeof Y((f) => (n) => n), 'function');
 ```
 
-factorial(1) should return 1.
+factorial(1) 应该返回 1。
 
 ```js
 assert.equal(factorial(1), 1);
 ```
 
-factorial(2) should return 2.
+factorial(2) 应该返回 2。
 
 ```js
 assert.equal(factorial(2), 2);
 ```
 
-factorial(3) should return 6.
+factorial(3) 应该返回 6。
 
 ```js
 assert.equal(factorial(3), 6);
 ```
 
-factorial(4) should return 24.
+factorial(4) 应该返回 24。
 
 ```js
 assert.equal(factorial(4), 24);
 ```
 
-factorial(10) should return 3628800.
+factorial(10) 应该返回 3628800。
 
 ```js
 assert.equal(factorial(10), 3628800);

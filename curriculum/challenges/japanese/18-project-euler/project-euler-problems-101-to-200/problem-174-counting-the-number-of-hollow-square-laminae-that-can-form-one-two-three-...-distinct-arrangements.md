@@ -1,7 +1,7 @@
 ---
 id: 5900f41a1000cf542c50ff2d
 title: >-
-  Problem 174: Counting the number of "hollow" square laminae that can form one, two, three, ... distinct arrangements
+  問題 174: 1, 2, 3, ... 種類の配置を作れる「穴あき」正方層を数え上げる
 challengeType: 1
 forumTopicId: 301809
 dashedName: >-
@@ -10,21 +10,21 @@ dashedName: >-
 
 # --description--
 
-We shall define a square lamina to be a square outline with a square "hole" so that the shape possesses vertical and horizontal symmetry.
+輪郭が正方形であり、正方形の「穴」があり、上下対称かつ左右対称であるものを「正方層」と呼ぶことにします。
 
-Given eight tiles it is possible to form a lamina in only one way: 3x3 square with a 1x1 hole in the middle. However, using thirty-two tiles it is possible to form two distinct laminae.
+8 枚のタイルを使って作れる正方層は 1 通り (1 x 1 の穴を持つ 3 x 3) のみです。 しかし、32 枚のタイルを使うと 2 通りの正方層を作成できます。
 
-<img class="img-responsive center-block" alt="two square lamina with holes 2x2 and 7x7" src="https://cdn.freecodecamp.org/curriculum/project-euler/using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="それぞれ 2 x 2 と 7 x 7 の穴がある 2 つの正方層" src="https://cdn.freecodecamp.org/curriculum/project-euler/using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed.gif" style="background-color: white; padding: 10px;" />
 
-If $t$ represents the number of tiles used, we shall say that $t = 8$ is type $L(1)$ and $t = 32$ is type $L(2)$.
+使用するタイルの枚数を $t$ で表し、$t = 8$ は $L(1)$ 型、$t = 32$ は $L(2)$ 型であると表現することにします。
 
-Let $N(n)$ be the number of $t ≤ 1000000$ such that $t$ is type $L(n)$; for example, $N(15) = 832$.
+$t$ が $L(n)$ 型であるような $t (≤ 1000000)$ の数を $N(n)$ とします。例えば、$N(15) = 832$ です。
 
-What is $\sum N(n)$ for $1 ≤ n ≤ 10$?
+$1 ≤ n ≤ 10$ のとき、$\sum N(n)$ を求めなさい。
 
 # --hints--
 
-`hollowSquareLaminaeDistinctArrangements()` should return `209566`.
+`hollowSquareLaminaeDistinctArrangements()` は `209566` を返す必要があります。
 
 ```js
 assert.strictEqual(hollowSquareLaminaeDistinctArrangements(), 209566);

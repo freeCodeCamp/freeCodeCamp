@@ -1,6 +1,6 @@
 ---
 id: 5900f4f41000cf542c510007
-title: 'Problem 392: Enmeshed unit circle'
+title: 'Завдання 392: одиничне коло, покрите сіткою'
 challengeType: 1
 forumTopicId: 302057
 dashedName: problem-392-enmeshed-unit-circle
@@ -8,27 +8,27 @@ dashedName: problem-392-enmeshed-unit-circle
 
 # --description--
 
-A rectilinear grid is an orthogonal grid where the spacing between the gridlines does not have to be equidistant.
+Прямолінійна сітка — це прямокутна сітка, де відстань між лініями не повинна бути рівновіддаленою.
 
-An example of such grid is logarithmic graph paper.
+Прикладом такої сітки є логарифмічний розграфлений листок.
 
-Consider rectilinear grids in the Cartesian coordinate system with the following properties:
+Розглянемо прямолінійні сітки у декартовій системі координат з наступними властивостями:
 
-- The gridlines are parallel to the axes of the Cartesian coordinate system.
-- There are $N + 2$ vertical and $N + 2$ horizontal gridlines. Hence there are $(N + 1) \times (N + 1)$ rectangular cells.
-- The equations of the two outer vertical gridlines are $x = -1$ and $x = 1$.
-- The equations of the two outer horizontal gridlines are $y = -1$ and $y = 1$.
-- The grid cells are colored red if they overlap with the unit circle, black otherwise.
+- Лінії сітки паралельні осям декартової системи координат.
+- Існує $N + 2$ вертикальних та $N + 2$ горизонтальних ліній сітки. Вони утворюють $(N + 1) \times (N + 1)$ прямокутних клітинок.
+- Рівняннями двох зовнішніх вертикальних ліній сітки є $x = -1$ та $x = 1$.
+- Рівняннями двох зовнішніх горизонтальних ліній сітки є $y = -1$ та $y = 1$.
+- Клітинки сітки позначені червоним, якщо вони перекривають одиничне коло, або чорним, якщо навпаки.
 
-For this problem we would like you to find the positions of the remaining $N$ inner horizontal and $N$ inner vertical gridlines so that the area occupied by the red cells is minimized.
+У цьому завданні вам потрібно знайти такі розташування $N$ внутрішніх горизонтальних та $N$ внутрішніх вертикальних ліній сітки, які залишились, щоб мінімізувати площу, зайняту червоними клітинками.
 
-E.g. here is a picture of the solution for $N = 10$:
+Наприклад, ось рисунок розв’язку за умови $N = 10$:
 
-<img class="img-responsive center-block" alt="solution for N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="розв’язок для N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;" />
 
-The area occupied by the red cells for $N = 10$ rounded to 10 digits behind the decimal point is 3.3469640797.
+Площа, зайнята червоними клітинками, за умови $N = 10$, округлена до 10 знаків після коми, дорівнює 3.3469640797.
 
-Find the positions for $N = 400$. Give as your answer the area occupied by the red cells rounded to 10 digits behind the decimal point.
+Знайдіть розташування за умови $N = 400$. У своїй відповіді зазначте площу, зайняту червоними клітинками, заокруглену до 10 знаків після коми.
 
 # --hints--
 

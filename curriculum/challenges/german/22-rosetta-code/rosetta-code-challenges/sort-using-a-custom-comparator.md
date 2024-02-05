@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8016
-title: Sort using a custom comparator
+title: Sortieren mit einem benutzerdefinierten Komparator
 challengeType: 1
 forumTopicId: 302309
 dashedName: sort-using-a-custom-comparator
@@ -12,13 +12,13 @@ Write a function to sort an array (or list) of strings in order of descending le
 
 # --hints--
 
-`lengthSorter` should be a function.
+`lengthSorter` sollte eine Funktion sein.
 
 ```js
 assert(typeof lengthSorter == 'function');
 ```
 
-`lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])` should return an array.
+`lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])` sollte ein Array zurückgeben.
 
 ```js
 assert(
@@ -37,7 +37,7 @@ assert(
 );
 ```
 
-`lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])` should return `["strings", "sample", "sorted", "Here", "some", "are", "be", "to"]`.
+`lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])` sollte `["strings", "sample", "sorted", "Here", "some", "are", "be", "to"]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -55,7 +55,7 @@ assert.deepEqual(
 );
 ```
 
-`lengthSorter(["I", "hope", "your", "day", "is", "going", "good", "?"])` should return `["going", "good", "hope", "your", "day", "is", "?","I"]`.
+`lengthSorter(["I", "hope", "your", "day", "is", "going", "good", "?"])` sollte `["going", "good", "hope", "your", "day", "is", "?","I"]` zurückgeben.
 
 ```js
 assert.deepEqual(
@@ -64,7 +64,7 @@ assert.deepEqual(
 );
 ```
 
-`lengthSorter(["Mine", "is", "going", "great"])` should return `["going", "great", "Mine", "is"]`.
+`lengthSorter(["Mine", "is", "going", "great"])` sollte `["going", "great", "Mine", "is"]` zurückgeben.
 
 ```js
 assert.deepEqual(lengthSorter(['Mine', 'is', 'going', 'great']), [
@@ -75,7 +75,7 @@ assert.deepEqual(lengthSorter(['Mine', 'is', 'going', 'great']), [
 ]);
 ```
 
-`lengthSorter(["Have", "fun", "sorting", "!!"])` should return `["sorting", "Have", "fun", "!!"]`.
+`lengthSorter(["Have", "fun", "sorting", "!!"])` sollte `["sorting", "Have", "fun", "!!"]` zurückgeben.
 
 ```js
 assert.deepEqual(lengthSorter(['Have', 'fun', 'sorting', '!!']), [
@@ -86,7 +86,7 @@ assert.deepEqual(lengthSorter(['Have', 'fun', 'sorting', '!!']), [
 ]);
 ```
 
-`lengthSorter(["Everything", "is", "good", "!!"])` should return `["Everything", "good", "!!", "is"]`.
+`lengthSorter(["Everything", "is", "good", "!!"])` sollte `["Everything", "good", "!!", "is"]` zurückgeben.
 
 ```js
 assert.deepEqual(lengthSorter(['Everything', 'is', 'good', '!!']), [

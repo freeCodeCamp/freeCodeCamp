@@ -1,6 +1,6 @@
 ---
 id: 5992e222d397f00d21122931
-title: Fibonacci word
+title: 斐波那契數列
 challengeType: 1
 forumTopicId: 302269
 dashedName: fibonacci-word
@@ -16,27 +16,27 @@ Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<su
 Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<sub>n-2</sub>
 </pre>
 
-Entropy calculation is required in this challenge, <a href="https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy" target="_blank" rel="noopener noreferrer nofollow">as shown in this Rosetta Code challenge</a>
+在這個挑戰中需要進行熵計算，如本羅塞塔代碼挑戰所示
 
 # --instructions--
 
-Write a function to return the first `n` Fibonacci Words. The number of `n` is provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` is computed for the string `Word` and rounded to 8 decimal digits of accuracy. Note that the indices of this sequence start at `1`.
+編寫一個返回最低的 n 個出租車號碼的函數。 `n` 將作爲函數的參數提供。 該函數應該返回一個對象數組。 對象的格式應爲：`{ N: 1, Length: 1, Entropy: 0, Word: '1' }`。 對於字符串 ` Word ` 計算熵，並將精度四捨五入到小數點後8位。 注意，這個序列的索引從 ` 1 ` 開始。
 
 # --hints--
 
-`fibWord` should be a function.
+`fibWord` 應該是一個函數
 
 ```js
 assert(typeof fibWord === 'function');
 ```
 
-`fibWord(5)` should return an array.
+`fibWord(5)`應該返回一個數組
 
 ```js
 assert(Array.isArray(fibWord(5)));
 ```
 
-`fibWord(5)` should return `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }]`.
+` fibWord (5) ` 應該返回 ` [{ N: 1，長度: 1，熵: 0，Word: “1”} ，{ N: 2，長度: 1，熵: 0，Word: “0”} ，{ N: 3，長度: 2，熵: 1，Word: “01”} ，{ N: 4，長度: 3，熵: 0.91829583，Word: “010”} ，{ N: 5，長度: 5，熵: 0.97095059，Word: “01001”}] `。
 
 ```js
 assert.deepEqual(fibWord(5), words5);

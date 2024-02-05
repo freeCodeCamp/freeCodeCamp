@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e78
-title: General FizzBuzz
+title: Спільний FizzBuzz
 challengeType: 1
 forumTopicId: 302273
 dashedName: general-fizzbuzz
@@ -10,23 +10,23 @@ dashedName: general-fizzbuzz
 
 Write a generalized version of <a href="https://rosettacode.org/wiki/FizzBuzz" target="_blank" rel="noopener noreferrer nofollow">FizzBuzz</a> that works for any list of factors, along with their words.
 
-This is basically a "fizzbuzz" implementation where the rules of the game are supplied to the user. Create a function to implement this. The function should take two parameters.
+В основному, це реалізація "fizzbuzz", де надаються правила гри користувачу. Створіть функцію для реалізації цього. Функція повинна приймати два параметри.
 
-The first will be an array with the FizzBuzz rules. For example: `[ [3, "Fizz"] , [5, "Buzz"] ]`.
+Перший - масив із правилами FizzBuzz. До прикладу: `[ [3, "Fizz"] , [5, "Buzz"] ]`.
 
-This indicates that `Fizz` should be printed if the number is a multiple of 3 and `Buzz` if it is a multiple of 5. If it is a multiple of both then the strings should be concatenated in the order specified in the array. In this case, `FizzBuzz` if the number is a multiple of 3 and 5.
+Це вказує на те, що потрібно вивести `Fizz`, якщо число кратне 3, і `Buzz` якщо воно кратне 5. Якщо у двох випадках число кратне, тоді рядки мають бути об'єднані в порядку вказаному в масиві. У цьому випадку `FizzBuzz` виконується якщо число ділиться на 3 і 5.
 
-The second parameter is the number for which the function should return a string as stated above.
+Другий параметр - це число, для якого функція повинна повернути рядок як зазначається вище.
 
 # --hints--
 
-`genFizzBuzz` should be a function.
+`genFizzBuzz` має бути функцією.
 
 ```js
 assert(typeof genFizzBuzz == 'function');
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` should return a string.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` має повернути рядок.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` should return `"Fizz"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` має повернути `"Fizz"`.
 
 ```js
 assert.equal(
@@ -55,7 +55,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 10)` should return `"Buzz"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 10)` має повернути `"Buzz"`.
 
 ```js
 assert.equal(
@@ -70,7 +70,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 12)` should return `"Buzz"`.
+`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 12)` має повернути `"Buzz"`.
 
 ```js
 assert.equal(
@@ -85,7 +85,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 13)` should return `"13"`.
+`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 13)` має повернути `"13"`.
 
 ```js
 assert.equal(
@@ -100,7 +100,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 15)` should return `"BuzzFizz"`.
+`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 15)` має повернути `"BuzzFizz"`.
 
 ```js
 assert.equal(
@@ -115,7 +115,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 15)` should return `"FizzBuzz"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 15)` має повернути `"FizzBuzz"`.
 
 ```js
 assert.equal(
@@ -130,7 +130,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"],[7, "Baxx"]], 105)` should return `"FizzBuzzBaxx"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"],[7, "Baxx"]], 105)` має повернути `"FizzBuzzBaxx"`.
 
 ```js
 assert.equal(

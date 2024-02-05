@@ -1,6 +1,6 @@
 ---
 id: 59c3ec9f15068017c96eb8a3
-title: Farey sequence
+title: Sequenza di Farey
 challengeType: 1
 forumTopicId: 302266
 dashedName: farey-sequence
@@ -10,16 +10,16 @@ dashedName: farey-sequence
 
 The Farey sequence <code>F<sub>n</sub></code> of order `n` is the sequence of completely reduced fractions between `0` and `1` which, when in lowest terms, have denominators less than or equal to `n`, arranged in order of increasing size.
 
-The *Farey sequence* is sometimes incorrectly called a *Farey series*.
+La *sequenza Farey* è a volte erroneamente chiamata una *serie di Farey*.
 
-Each Farey sequence:
+Ogni sequenza di Farey:
 
 <ul>
   <li>starts with the value  0,  denoted by the fraction  $ \frac{0}{1} $</li>
   <li>ends with the value  1,  denoted by the fraction  $ \frac{1}{1}$.</li>
 </ul>
 
-The Farey sequences of orders `1` to `5` are:
+Le sequenze Farey di ordine da `1` a `5` sono:
 
 <ul>
   <li style='list-style: none;'>${\bf\it{F}}_1 = \frac{0}{1}, \frac{1}{1}$</li>
@@ -31,35 +31,35 @@ The Farey sequences of orders `1` to `5` are:
 
 # --instructions--
 
-Write a function that returns the Farey sequence of order `n`. The function should have one parameter that is `n`. It should return the sequence as an array.
+Scrivi una funzione che restituisce la sequenza Farey di ordine `n`. La funzione dovrebbe avere un parametro `n`. Dovrebbe restituire la sequenza come un array.
 
 # --hints--
 
-`farey` should be a function.
+`farey` dovrebbe essere una funzione.
 
 ```js
 assert(typeof farey === 'function');
 ```
 
-`farey(3)` should return an array
+`farey(3)` dovrebbe restituire un array
 
 ```js
 assert(Array.isArray(farey(3)));
 ```
 
-`farey(3)` should return `['0/1','1/3','1/2','2/3','1/1']`
+`farey(3)` dovrebbe restituire `['0/1','1/3','1/2','2/3','1/1']`
 
 ```js
 assert.deepEqual(farey(3),['0/1', '1/3', '1/2', '2/3', '1/1']);
 ```
 
-`farey(4)` should return `['0/1','1/4','1/3','1/2','2/3','3/4','1/1']`
+`farey(4)` dovrebbe restituire `['0/1','1/4','1/3','1/2','2/3','3/4','1/1']`
 
 ```js
 assert.deepEqual(farey(4), ['0/1', '1/4', '1/3', '1/2', '2/3', '3/4', '1/1']);
 ```
 
-`farey(5)` should return `['0/1','1/5','1/4','1/3','2/5','1/2','3/5','2/3','3/4','4/5','1/1']`
+`farey(5)` dovrebbe restituire `['0/1','1/5','1/4','1/3','2/5','1/2','3/5','2/3','3/4','4/5','1/1']`
 
 ```js
 assert.deepEqual(farey(5), [

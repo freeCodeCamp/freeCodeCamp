@@ -1,6 +1,6 @@
 ---
 id: 65823bbbdb4eaa4f9d20a0fb
-title: Step 16
+title: ステップ 16
 challengeType: 20
 dashedName: step-16
 ---
@@ -31,11 +31,11 @@ You should have `lambda expense: expense['amount']` in your `total_expenses` fun
 ```py
 def add_expense(expenses, amount, category):
     expenses.append({'amount': amount, 'category': category})
-    
+
 def print_expenses(expenses):
     for expense in expenses:
         print(f'Amount: {expense["amount"]}, Category: {expense["category"]}')
-    
+
 --fcc-editable-region--
 def total_expenses(expenses):
     pass

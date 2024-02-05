@@ -1,6 +1,6 @@
 ---
 id: 5900f3e41000cf542c50fef6
-title: 'Problem 119: Digit power sum'
+title: '問題 119: 各位の和の累乗'
 challengeType: 1
 forumTopicId: 301745
 dashedName: problem-119-digit-power-sum
@@ -8,17 +8,17 @@ dashedName: problem-119-digit-power-sum
 
 # --description--
 
-The number 512 is interesting because it is equal to the sum of its digits raised to some power: $5 + 1 + 2 = 8$, and $8^3 = 512$. Another example of a number with this property is $614656 = 28^4$.
+512 は興味深い数字です。各位の和の累乗と等しいからです。すなわち、$5 + 1 + 2 = 8$, $8^3 = 512$ です。 この性質を持つ数は他にも $614656 = 28^4$ などがあります。
 
-We shall define $a_n$ to be the $n-th$ term of this sequence and insist that a number must contain at least two digits to have a sum.
+$a_n$ をこの数列の第 $n$ 項と定義し、また、和を持つには 2 桁以上の数でなければならないものとします。
 
-You are given that $a_2 = 512$ and $a_{10} = 614656$.
+$a_2 = 512$ と $a_{10} = 614656$ が与えられます。
 
-Find $a_{30}$.
+$a_{30} $ を求めなさい。
 
 # --hints--
 
-`digitPowerSum()` should return `248155780267521`.
+`digitPowerSum()` は `248155780267521` を返す必要があります。
 
 ```js
 assert.strictEqual(digitPowerSum(), 248155780267521);

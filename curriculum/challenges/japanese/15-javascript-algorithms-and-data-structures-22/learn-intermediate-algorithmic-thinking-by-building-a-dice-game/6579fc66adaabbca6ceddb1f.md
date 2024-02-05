@@ -1,13 +1,13 @@
 ---
 id: 6579fc66adaabbca6ceddb1f
-title: Step 1
+title: ステップ 1
 challengeType: 0
 dashedName: step-1
 ---
 
 # --description--
 
-In this project, you will learn algorithmic thinking by building a dice game. There are a total of 6 rounds and for each round, the player can roll the dice up to 3 times and collect a score. 
+In this project, you will learn algorithmic thinking by building a dice game. There are a total of 6 rounds and for each round, the player can roll the dice up to 3 times and collect a score.
 
 The HTML and CSS have been provided for you. Feel free to explore them.
 
@@ -18,7 +18,7 @@ When you are ready, use the `querySelectorAll()` method to target all elements w
 You should have a `const` variable called `listOfAllDice`.
 
 ```js
-assert.match(code, /const\s*listOfAllDice\s*/);
+assert.match(code, /const\s+listOfAllDice\s*/);
 ```
 
 You should assign the `document.querySelectorAll()` method to the `listOfAllDice` variable.
@@ -30,7 +30,7 @@ assert.match(code, /const\s+listOfAllDice\s*=\s*document\.querySelectorAll\s*\(.
 You should target all elements with the `class` of `die` inside the `querySelectorAll` method.
 
 ```js
-assert.match(code, /const\s*listOfAllDice\s*=\s*document\.querySelectorAll\s*\(\s*['"]\.die['"]\s*\)/);
+assert.match(code, /const\s+listOfAllDice\s*=\s*document\.querySelectorAll\s*\(\s*('|")\.die\1\s*\)/);
 ```
 
 # --seed--

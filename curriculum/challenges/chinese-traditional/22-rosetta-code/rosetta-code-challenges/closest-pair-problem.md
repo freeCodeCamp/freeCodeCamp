@@ -1,6 +1,6 @@
 ---
 id: 5951a53863c8a34f02bf1bdc
-title: Closest-pair problem
+title: 最近對的問題
 challengeType: 1
 forumTopicId: 302232
 dashedName: closest-pair-problem
@@ -10,7 +10,7 @@ dashedName: closest-pair-problem
 
 Provide a function to find the closest two points among a set of given points in two dimensions.
 
-The straightforward solution is a $O(n^2)$ algorithm (which we can call *brute-force algorithm*); the pseudo-code (using indexes) could be simply:
+直接的解決方案是 $O(n^2)$ 的算法（我們可以稱之爲 *brute-force 算法*）；僞代碼（使用索引）可能很簡單：
 
 <pre><strong>bruteForceClosestPair</strong> of P(1), P(2), ... P(N)
 <strong>if</strong> N &#x3C; 2 <strong>then</strong>
@@ -30,7 +30,7 @@ The straightforward solution is a $O(n^2)$ algorithm (which we can call *brute-f
 <strong>endif</strong>
 </pre>
 
-A better algorithm is based on the recursive divide and conquer approach, which is $O(n\log n)$ a pseudo-code could be:
+更好的算法基於遞歸分治法，即 $O(n\log n)$，僞代碼可以是：
 
 <pre><strong>closestPair</strong> of (xP, yP)
   where xP is P(1) .. P(N) sorted by x coordinate, and
@@ -65,9 +65,9 @@ A better algorithm is based on the recursive divide and conquer approach, which 
 <strong>endif</strong>
 </pre>
 
-For the input, expect the argument to be an array of `Point` objects with `x` and `y` members set to numbers. Return an object containing the key:value pairs for `distance` and `pair` (the pair of two closest points).
+對於輸入，期望參數是一個 `Point` 對象數組，其中 `x` 和 `y` 成員設置爲數字。 返回一個包含 `distance` 和 `pair` （兩個最近點的對）的鍵-值對的對象。
 
-For example `getClosestPair` with input array `points`:
+例如帶有輸入數組 `points` 的 `getClosestPair`：
 
 ```js
 const points = [
@@ -77,7 +77,7 @@ const points = [
 ];
 ```
 
-Would return:
+會返回：
 
 ```js
 {
@@ -95,24 +95,24 @@ Would return:
 }
 ```
 
-**Note:** Sort the `pair` array by their `x` values in incrementing order.
+**注意：** 按 `x` 值的遞增順序對 `pair` 數組進行排序。
 
 
 # --hints--
 
-`getClosestPair` should be a function.
+`getClosestPair` 應該是一個函數。
 
 ```js
 assert(typeof getClosestPair === 'function');
 ```
 
-`getClosestPair(points1).distance` should be `0.0894096443343775`.
+`getClosestPair(points1).distance` 應該是 `0.0894096443343775`。
 
 ```js
 assert.equal(getClosestPair(points1).distance, answer1.distance);
 ```
 
-`getClosestPair(points1).pair` should be `[ { x: 7.46489, y: 4.6268 }, { x: 7.46911, y: 4.71611 } ]`.
+`getClosestPair(points1).pair` 應該是 `[ { x: 7.46489, y: 4.6268 }, { x: 7.46911, y: 4.71611 } ]`。
 
 ```js
 assert.deepEqual(
@@ -121,13 +121,13 @@ assert.deepEqual(
 );
 ```
 
-`getClosestPair(points2).distance` should be `65.06919393998976`.
+`getClosestPair(points2).distance` 應該是 `65.06919393998976`。
 
 ```js
 assert.equal(getClosestPair(points2).distance, answer2.distance);
 ```
 
-`getClosestPair(points2).pair` should be `[ { x: 37134, y: 1963 }, { x: 37181, y: 2008 } ]`.
+`getClosestPair(points2).pair` 應該是 `[ { x: 37134, y: 1963 }, { x: 37181, y: 2008 } ]`。
 
 ```js
 assert.deepEqual(
@@ -136,13 +136,13 @@ assert.deepEqual(
 );
 ```
 
-`getClosestPair(points3).distance` should be `6754.625082119658`.
+`getClosestPair(points3).distance` 應該是 `6754.625082119658`。
 
 ```js
 assert.equal(getClosestPair(points3).distance, answer3.distance);
 ```
 
-`getClosestPair(points3).pair` should be `[ { x: 46817, y: 64975 }, { x: 48953, y: 58567 } ]`.
+`getClosestPair(points3).pair` 應該是 `[ { x: 46817, y: 64975 }, { x: 48953, y: 58567 } ]`。
 
 ```js
 assert.deepEqual(

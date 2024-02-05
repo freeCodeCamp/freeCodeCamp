@@ -12,9 +12,9 @@ Euler discovered the remarkable quadratic formula:
 
 <div style='margin-left: 4em;'>$n^2 + n + 41$</div>
 
-It turns out that the formula will produce 40 primes for the consecutive integer values $0 \\le n \\le 39$. However, when $n = 40, 40^2 + 40 + 41 = 40(40 + 1) + 41$ is divisible by 41, and certainly when $n = 41, 41^2 + 41 + 41$ is clearly divisible by 41.
+歐拉發現了顯着的二次公式：$ n ^ 2 + n + 41 $事實證明，公式將爲連續的整數值$ 0 \\ le n \\ le 39 $產生40個素數。 However, when $n = 40, 40^2 + 40 + 41 = 40(40 + 1) + 41$ is divisible by 41, and certainly when $n = 41, 41^2 + 41 + 41$ is clearly divisible by 41.
 
-The incredible formula $n^2 - 79n + 1601$ was discovered, which produces 80 primes for the consecutive values $0 \\le n \\le 79$. The product of the coefficients, −79 and 1601, is −126479.
+The incredible formula $n^2 - 79n + 1601$ was discovered, which produces 80 primes for the consecutive values $0 \\le n \\le 79$. 係數-79和1601的乘積是-126479。
 
 Considering quadratics of the form:
 

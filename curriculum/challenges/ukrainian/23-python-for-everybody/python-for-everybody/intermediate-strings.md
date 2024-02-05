@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f061
-title: Intermediate Strings
+title: Робота з рядками
 challengeType: 11
 videoId: KgT_fYLXnyk
 bilibiliIds:
@@ -14,13 +14,13 @@ dashedName: intermediate-strings
 
 More resources:
 
-\- <a href="https://www.youtube.com/watch?v=1bSqHot-KwE" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=1bSqHot-KwE" target="_blank" rel="noopener noreferrer nofollow">Вправа</a>
 
 # --question--
 
 ## --text--
 
-What is the value of i in the following code?
+Яке значення матиме змінна i після виконання даного коду?
 
 ```python
 word = "bananana"

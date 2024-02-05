@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ec5
-title: Josephus problem
+title: Задача Йосифа Флавія
 challengeType: 1
 forumTopicId: 302294
 dashedName: josephus-problem
@@ -10,63 +10,63 @@ dashedName: josephus-problem
 
 Josephus problem is a math puzzle with a grim description: $n$ prisoners are standing on a circle, sequentially numbered from $0$ to $n-1$.
 
-An executioner walks along the circle, starting from prisoner $0$, removing every $k$-th prisoner and killing him.
+Кат йде по колу, починаючи від ув’язненого $0$, виводить кожного $k$-го ув’язненого і вбиває його.
 
-As the process goes on, the circle becomes smaller and smaller, until only one prisoner remains, who is then freed.
+З часом, коло стає все меншим і меншим, поки не залишиться лише один в’язень, якого потім відпускають.
 
-For example, if there are $n=5$ prisoners and $k=2$, the order the prisoners are killed in (let's call it the "killing sequence") will be 1, 3, 0, and 4, and the survivor will be #2.
+Наприклад, якщо є $n = 5$ ув'язнених і $k = 2$, порядок вбивства в'язнів (назвемо це "послідовністю вбивств") буде 1, 3, 0 і 4, а вцілілий буде #2.
 
-Given any $n, k > 0$, find out which prisoner will be the final survivor.
+Враховуючи будь-які $n, k > 0$, дізнайтеся, хто з ув'язнених виживе.
 
-In one such incident, there were 41 prisoners and every 3<sup>rd</sup> prisoner was being killed ($k=3$).
+В одному з таких випадків було 41 ув'язнених, а кожен 3 <sup>rd</sup> в'язень був убитий ($k=3$).
 
-Among them was a clever chap name Josephus who worked out the problem, stood at the surviving position, and lived on to tell the tale.
+Серед них був розумний хлопець на ім'я Йосип, який вирішив цю задачу, та обрав виграшну позицію, а згодом постійно розповідав про це.
 
-Which number was he?
+Який номер він обрав?
 
 # --instructions--
 
-Write a function that takes the initial number of prisoners and `k` as parameters and returns the number of the prisoner that survives.
+Напишіть функцію, яка бере початкову кількість ув’язнених та `k` як параметри і повертає номер в’язня, який вижив.
 
 # --hints--
 
-`josephus` should be a function.
+`josephus` має бути функцією.
 
 ```js
 assert(typeof josephus == 'function');
 ```
 
-`josephus(30,3)` should return a number.
+`josephus(30,3)` повинен повернути число.
 
 ```js
 assert(typeof josephus(30, 3) == 'number');
 ```
 
-`josephus(30,3)` should return `28`.
+`josephus(30,3)` має повернути `28`.
 
 ```js
 assert.equal(josephus(30, 3), 28);
 ```
 
-`josephus(30,5)` should return `2`.
+`josephus(30,5)` має повернути `2`.
 
 ```js
 assert.equal(josephus(30, 5), 2);
 ```
 
-`josephus(20,2)` should return `8`.
+`josephus(20,2)` повинен повернути `8`.
 
 ```js
 assert.equal(josephus(20, 2), 8);
 ```
 
-`josephus(17,6)` should return `1`.
+`josephus(17,6)` повинен повернути `1`.
 
 ```js
 assert.equal(josephus(17, 6), 1);
 ```
 
-`josephus(29,4)` should return `1`.
+`josephus(29,4)` повинен повернути `1`.
 
 ```js
 assert.equal(josephus(29, 4), 1);

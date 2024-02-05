@@ -109,6 +109,7 @@ assert(getCorrectStyle()?.textAlign === 'center');
 # --seed--
 
 ## --seed-contents--
+
 ```css
 ```
 

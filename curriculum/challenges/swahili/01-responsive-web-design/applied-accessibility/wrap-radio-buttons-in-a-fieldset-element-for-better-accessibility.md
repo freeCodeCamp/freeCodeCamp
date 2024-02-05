@@ -15,7 +15,7 @@ The `fieldset` tag surrounds the entire grouping of radio buttons to achieve thi
 
 The `fieldset` wrapper and `legend` tag are not necessary when the choices are self-explanatory, like a gender selection. Using a `label` with the `for` attribute for each radio button is sufficient.
 
-Here's an example:
+Hapa kuna mfano:
 
 ```html
 <form>

@@ -14,13 +14,13 @@ Crea una aplicación full stack de JavaScript que sea funcionalmente similar a e
 -   Usa este <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow"> proyecto inicial de Replit</a> para completar tu proyecto.
 -   Usa un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-If you use Replit, follow these steps to set up the project:
+Si usas Replit, sigue los estos pasos para configurar el proyecto:
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   Empieza por importar el proyecto en Replit.
+-   Después, verá `.replit` en una ventana.
+-   Seleccione `Use run command` y click en el botón `Done`.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+Cuando hayas terminado, asegúrate de que una demo funcional de tu proyecto está alojada en algún lugar público. Luego envíe la URL esto en el campo Enlace Solution. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo de enlace GitHub.
 
 # --instructions--
 
@@ -31,9 +31,9 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 - All routing logic can go into `/routes/api.js`
 - See the `puzzle-strings.js` file in `/controllers` for some sample puzzles your application should solve
 - To run the challenge tests on this page, set `NODE_ENV` to `test` without quotes in the `.env` file
-- To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+- Para ejecutar las pruebas en la consola, use el comando `npm run test`. Para abrir la consola Replit, presiona Ctrl+Shift+P (Cmd en Mac) y tipear "open shell"
 
-Write the following tests in `tests/1_unit-tests.js`:
+Escribe las siguientes pruebas en `tests/1_unit-tests.js`:
 
 -   Logic handles a valid puzzle string of 81 characters
 -   Logic handles a puzzle string with invalid characters (not 1-9 or `.`)
@@ -67,7 +67,7 @@ Write the following tests in `tests/2_functional-tests.js`
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Debes proporcionar tu propio proyecto, no la URL ejemplo.
 
 ```js
 (getUserInput) => {

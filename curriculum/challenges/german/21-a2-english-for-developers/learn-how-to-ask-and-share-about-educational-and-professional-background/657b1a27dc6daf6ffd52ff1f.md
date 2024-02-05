@@ -26,7 +26,7 @@ What does `master's degree` in the context of the dialogue refer to?
 
 A degree for school teachers
 
-### --feedback--
+### --Feedback--
 
 `Master's degree` refers to an advanced academic degree, not specifically for teachers.
 
@@ -34,7 +34,7 @@ A degree for school teachers
 
 A primary level educational degree
 
-### --feedback--
+### --Feedback--
 
 `Master's degree` is a higher education qualification, beyond the primary level.
 

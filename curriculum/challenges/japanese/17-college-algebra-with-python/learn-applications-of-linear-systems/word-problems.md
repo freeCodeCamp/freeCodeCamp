@@ -1,6 +1,6 @@
 ---
 id: 6363d2019078df117ce4c3fe
-title: "Word Problems"
+title: "文章問題"
 challengeType: 15
 videoId: 3ZM3XMn1QYo
 dashedName: word-problems
@@ -8,43 +8,43 @@ dashedName: word-problems
 
 # --description--
 
-This first video will look at key words that tell you what math operation to use. Then you will see how to apply some of your code to different problems.
+この最初の動画では、使用すべき数学演算を示すキーワードを見ていきます。 次に、さまざまな問題にコードを適用する方法を説明します。
 
-**Here are links to the textbooks you will need to complete the assignments for this video:**
+**この動画の課題に取り組むのに必要な教科書へのリンクを下記に示します:**
 
-\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021) by Jean-Paul Oliver</a>
+\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">『Business Math, a Step-by-Step Handbook (2021)』、Jean-Paul Oliver著</a>
 
-\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry by Jay Abramson</a>
+\- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">『Algebra and Trigonometry』、Jay Abramson著</a>
 
 # --assignment--
 
-Complete the problems on pages 63, 75, 85, and 118 from "Business Math, a Step-by-Step Handbook (2021)".
+『Business Math, a Step-by-Step Handbook (2021)』の 63 ページ、75 ページ、85 ページ、118 ページにある問題を解いてください。
 
 ---
 
-Complete the problems on pages 304, 308, and 321 from "Algebra and Trigonometry".
+『Algebra and Trigonometry』の 304 ページ、308 ページ、321 ページにある問題を解いてください。
 
 # --question--
 
 ## --text--
 
-Which of the following key words indicate subtraction?
+引き算を示すキーワードは次のうちどれですか？
 
 ## --answers--
 
-plus, more, increase, up
+プラス、より多い、増加、上昇 (plus, more, increase, up)
 
 ---
 
-difference, less, decrease, down
+差、より少ない、減少、下降 (difference, less, decrease, down)
 
 ---
 
-of, by, factor, area, times
+係数、面積、倍数 (of, by, factor, area, times)
 
 ---
 
-out of, per, divided, quotient
+割る、～当たり、分割、商 (out of, per, divided, quotient)
 
 ## --video-solution--
 

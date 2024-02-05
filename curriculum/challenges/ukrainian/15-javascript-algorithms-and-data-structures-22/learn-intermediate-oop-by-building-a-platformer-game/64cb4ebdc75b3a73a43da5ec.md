@@ -1,6 +1,6 @@
 ---
 id: 64cb4ebdc75b3a73a43da5ec
-title: Step 103
+title: Крок 103
 challengeType: 0
 dashedName: step-103
 ---
@@ -42,7 +42,7 @@ assert.match(code, /\s*setTimeout\s*\(\s*\(\s*\)\s*=>[^,]*,\s*2000\s*\)/s);
 Your callback function should set the `checkpointScreen` `display` property to `none`.
 
 ```js
-assert.match(code, /\s*if\s*\(isCheckpointCollisionDetectionActive\)\s*{\s*setTimeout\s*\(\s*\(\s*\)\s*=>\s*\(\s*checkpointScreen\.style\.display\s*=\s*["']none["']\s*\)\s*,\s*2000\s*\)\s*;?\s*}/s);
+assert.match(code, /\s*if\s*\(isCheckpointCollisionDetectionActive\)\s*{\s*setTimeout\s*\(\s*\(\s*\)\s*=>\s*(\(\s*checkpointScreen\.style\.display\s*=\s*("|')none\2\s*\)|\{\s*checkpointScreen\.style\.display\s*=\s*("|')none\3\s*;?\s*\}|\s*checkpointScreen\.style\.display\s*=\s*("|')none\4\s*)\s*,\s*2000\s*\)\s*;?\s*}/s);
 ```
 
 # --seed--

@@ -12,7 +12,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 1. Go to <a href="https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/</a> and complete all the tasks for the "Create and Throw Exceptions in C# Console Applications" module. This is **required** earn to the "Debug C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
 1. When you are finished, come back and correctly answer the question below.
 
-# --assignment--
+# --tarea--
 
 Complete the <a href="https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/" target="_blank" rel="noreferrer">Create and Throw Exceptions in C# Console Applications</a> module on Microsoft Learn. Then, answer the question below.
 

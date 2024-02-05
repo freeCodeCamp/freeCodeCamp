@@ -100,27 +100,27 @@ Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle 
   </table>
 </div>
 
-A well constructed Su Doku puzzle has a unique solution and can be solved by logic, although it may be necessary to employ "guess and test" methods in order to eliminate options (there is much contested opinion over this). The complexity of the search determines the difficulty of the puzzle; the example above is considered easy because it can be solved by straight forward direct deduction.
+一個構造良好的數獨謎題應該只有一個唯一的解，可以通過邏輯解出，雖然可能需要採用“猜測和測試”方法來排除選項（對此有很多爭議的意見）。 搜索的複雜性決定了謎題的難度；上面的示例很簡單，因此可以通過直接的邏輯推理來解出答案。
 
-The `puzzlesArr` array contains different Su Doku puzzle strings ranging in difficulty, but all with unique solutions.
+`puzzlesArr` 數組裏有若干個數獨謎題字符串，難度不一，但是每個謎題的解都是唯一的。
 
-By solving all puzzles in `puzzlesArr`, find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.
+通過解出 `puzzlesArr` 數組中所有謎題，返回所有解左上角三位數字之和；舉個例子，483 就是上述例子中左上角的三位數字。
 
 # --hints--
 
-`suDoku(testPuzzles1)` should return a number.
+`suDoku(testPuzzles1)` 應該返回一個數字。
 
 ```js
 assert(typeof suDoku(_testPuzzles1) === 'number');
 ```
 
-`suDoku(testPuzzles1)` should return `1190`.
+`suDoku(testPuzzles1)` 應該返回 `1190`。
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles1), 1190);
 ```
 
-`suDoku(testPuzzles2)` should return `24702`.
+`suDoku(testPuzzles2)` 應該返回 `24702`。
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles2), 24702);

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0c0b6c005b0e76f073
-title: 'Networking: Write a Web Browser'
+title: 'ネットワーキング: ウェブブラウザーを作成する'
 challengeType: 11
 videoId: zjyT9DaAjx4
 bilibiliIds:
@@ -34,19 +34,19 @@ mysock.close()
 
 ## --answers--
 
-A simple web server.
+シンプルなウェブサーバー。
 
 ---
 
-A simple email client.
+シンプルな電子メールクライアント。
 
 ---
 
-A simple todo list.
+シンプルな todo リスト。
 
 ---
 
-A simple web browser.
+シンプルなウェブブラウザー。
 
 ## --video-solution--
 

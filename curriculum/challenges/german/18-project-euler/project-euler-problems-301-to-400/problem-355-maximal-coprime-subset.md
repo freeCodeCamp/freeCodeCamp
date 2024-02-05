@@ -1,6 +1,6 @@
 ---
 id: 5900f4d01000cf542c50ffe2
-title: 'Problem 355: Maximal coprime subset'
+title: 'Problem 355: Maximale koprimale Teilmenge'
 challengeType: 1
 forumTopicId: 302015
 dashedName: problem-355-maximal-coprime-subset

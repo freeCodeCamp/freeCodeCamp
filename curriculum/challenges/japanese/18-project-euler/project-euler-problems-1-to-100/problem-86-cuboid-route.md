@@ -1,6 +1,6 @@
 ---
 id: 5900f3c31000cf542c50fed5
-title: 'Problem 86: Cuboid route'
+title: '問題 86: 直方体の経路'
 challengeType: 1
 forumTopicId: 302200
 dashedName: problem-86-cuboid-route
@@ -8,43 +8,43 @@ dashedName: problem-86-cuboid-route
 
 # --description--
 
-A spider, S, sits in one corner of a cuboid room, measuring 6 by 5 by 3, and a fly, F, sits in the opposite corner. By travelling on the surfaces of the room the shortest "straight line" distance from S to F is 10 and the path is shown on the diagram.
+寸法 6 × 5 × 3 の直方体の部屋の一方の角にクモ S、反対側の角にハエ F がいます。 部屋の表面を移動するとして、S から F までの最短の「直線」距離は 10 です。その経路が図に示されています。
 
-<img class="img-responsive center-block" alt="a diagram of a spider and fly's path from one corner of a cuboid room to the opposite corner" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="直方体の部屋の一方の角から反対側の角に至る、クモとハエの間の経路図" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px;" />
 
-However, there are up to three "shortest" path candidates for any given cuboid and the shortest route doesn't always have integer length.
+しかし、任意の直方体に対して「最短」経路の候補は最大 3 本あります。最短経路の長さが整数であるとは限りません。
 
-It can be shown that there are exactly `2060` distinct cuboids, ignoring rotations, with integer dimensions, up to a maximum size of M by M by M, for which the shortest route has integer length when M = 100. This is the least value of M for which the number of solutions first exceeds two thousand; the number of solutions when M = 99 is `1975`.
+M = 100 のとき、最短経路の長さが整数かつ寸法が整数 (最大寸法 M x M x M) である相異なる直方体は、回転を無視すればちょうど `2060` 個存在することが分かっています。 これは、解が 2000 個を超える最初の M 値です。M = 99 では解が `1975` 個あります。
 
-Find the least value of M such that the number of solutions first exceeds `n`.
+解の個数が `n` を超える最初の M を求めなさい。
 
 # --hints--
 
-`cuboidRoute(2000)` should return a number.
+`cuboidRoute(2000)` は数値を返す必要があります。
 
 ```js
 assert(typeof cuboidRoute(2000) === 'number');
 ```
 
-`cuboidRoute(2000)` should return `100`.
+`cuboidRoute(2000)` は `100` を返す必要があります。
 
 ```js
 assert.strictEqual(cuboidRoute(2000), 100);
 ```
 
-`cuboidRoute(25000)` should return `320`.
+`cuboidRoute(25000)` は `320` を返す必要があります。
 
 ```js
 assert.strictEqual(cuboidRoute(25000), 320);
 ```
 
-`cuboidRoute(500000)` should return `1309`.
+`cuboidRoute(500000)` は `1309` を返す必要があります。
 
 ```js
 assert.strictEqual(cuboidRoute(500000), 1309);
 ```
 
-`cuboidRoute(1000000)` should return `1818`.
+`cuboidRoute(1000000)` は `1818` を返す必要があります。
 
 ```js
 assert.strictEqual(cuboidRoute(1000000), 1818);

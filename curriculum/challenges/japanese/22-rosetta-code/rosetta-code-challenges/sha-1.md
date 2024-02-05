@@ -10,57 +10,57 @@ dashedName: sha-1
 
 **SHA-1** or **SHA1** is a one-way hash function; it computes a 160-bit message digest.
 
-SHA-1 often appears in security protocols; for example, many HTTPS websites use RSA with SHA-1 to secure their connections.
+SHA-1は、多くの場合、セキュリティプロトコルに登場します。たとえば、多くのHTTPSウェブサイトは、接続を保護するためにSHA-1を用いたRSAを使用しています。
 
-BitTorrent uses SHA-1 to verify downloads.
+BitTorrentは、ダウンロードを確認するためにSHA-1を使用しています。
 
-Git and Mercurial use SHA-1 digests to identify commits.
+Git と Mercurial は SHA-1 ダイジェストを使用してコミットを識別しています。
 
-A US government standard, <a href="https://rosettacode.org/wiki/SHA-1/FIPS-180-1" target="_blank" rel="noopener noreferrer nofollow">FIPS 180-1</a>, defines SHA-1.
+米国政府の連邦情報処理標準 (FIPS) <a href="https://rosettacode.org/wiki/SHA-1/FIPS-180-1" target="_blank" rel="noopener noreferrer nofollow">FIPS 180-1</a>で、SHA-1 が定義されています。
 
 # --instructions--
 
-Write a function that returns the SHA-1 message digest for a given string.
+与えられた文字列の SHA-1 メッセージダイジェストを返す関数を記述してください。
 
 # --hints--
 
-`SHA1` should be a function.
+`SHA1` は関数とします。
 
 ```js
 assert(typeof SHA1 === 'function');
 ```
 
-`SHA1("abc")` should return a string.
+`SHA1("abc")` は文字列を返す必要があります。
 
 ```js
 assert(typeof SHA1('abc') === 'string');
 ```
 
-`SHA1("abc")` should return `"a9993e364706816aba3e25717850c26c9cd0d89d"`.
+`SHA1("abc")` は `"a9993e364706816aba3e25717850c26c9cd0d89d"` を返す必要があります。
 
 ```js
 assert.equal(SHA1('abc'), 'a9993e364706816aba3e25717850c26c9cd0d89d');
 ```
 
-`SHA1("Rosetta Code")` should return `"48c98f7e5a6e736d790ab740dfc3f51a61abe2b5"`.
+`SHA1("Rosetta Code")` は `"48c98f7e5a6e736d790ab740dfc3f51a61abe2b5"` を返す必要があります。
 
 ```js
 assert.equal(SHA1('Rosetta Code'), '48c98f7e5a6e736d790ab740dfc3f51a61abe2b5');
 ```
 
-`SHA1("Hello world")` should return `"7b502c3a1f48c8609ae212cdfb639dee39673f5e"`.
+`SHA1("Hello world")` は `"7b502c3a1f48c8609ae212cdfb639dee39673f5e"` を返す必要があります。
 
 ```js
 assert.equal(SHA1('Hello world'), '7b502c3a1f48c8609ae212cdfb639dee39673f5e');
 ```
 
-`SHA1("Programming")` should return `"d1a946bf8b2f2a7292c250063ee28989d742cd4b"`.
+`SHA1("Programming")` は `"d1a946bf8b2f2a7292c250063ee28989d742cd4b"` を返す必要があります。
 
 ```js
 assert.equal(SHA1('Programming'), 'd1a946bf8b2f2a7292c250063ee28989d742cd4b');
 ```
 
-`SHA1("is Awesome")` should return `"6537205da59c72b57ed3881843c2d24103d683a3"`.
+`SHA1("is Awesome")` は `"6537205da59c72b57ed3881843c2d24103d683a3"` を返す必要があります。
 
 ```js
 assert.equal(SHA1('is Awesome'), '6537205da59c72b57ed3881843c2d24103d683a3');

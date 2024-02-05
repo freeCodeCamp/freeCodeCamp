@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f05f
-title: 'Iterations: More Patterns'
+title: 'Iteraciones: Más patrones'
 challengeType: 11
 videoId: 9Wtqo6vha1M
 bilibiliIds:
@@ -14,13 +14,13 @@ dashedName: iterations-more-patterns
 
 More resources:
 
-\- <a href="https://www.youtube.com/watch?v=kjxXZQw0uPg" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=kjxXZQw0uPg" target="_blank" rel="noopener noreferrer nofollow">Ejercicio</a>
 
 # --question--
 
 ## --text--
 
-Which of these evaluates to False?
+¿Cuál de estos se evalúa en False?
 
 ## --answers--
 

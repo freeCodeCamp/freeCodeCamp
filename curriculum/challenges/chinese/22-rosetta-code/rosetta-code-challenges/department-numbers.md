@@ -1,6 +1,6 @@
 ---
 id: 59f40b17e79dbf1ab720ed7a
-title: Department Numbers
+title: 部门编号
 challengeType: 1
 forumTopicId: 302249
 dashedName: department-numbers
@@ -12,19 +12,19 @@ There is a highly organized city that has decided to assign a number to each of 
 
 <ul>
   <li>Police department</li>
-  <li>Sanitation department</li>
-  <li>Fire department</li>
+  <li>环卫部</li>
+  <li>消防局</li>
 </ul>
 
-Each department can have a number between 1 and 7 (inclusive).
+每个部门可以有一个介于 1 和 7（含）之间的数字。
 
-The three department numbers are to be unique (different from each other) and must add up to the number 12.
+三个部门编号必须是唯一的（彼此不同）并且必须加起来为数字 12。
 
-The Chief of the Police doesn't like odd numbers and wants to have an even number for his department.
+警察局长不喜欢奇数，希望他的部门有一个偶数。
 
 # --instructions--
 
-Write a program which outputs all valid combinations as an array.
+编写一个程序，将所有有效组合输出为一个数组。
 
 ```js
 [2, 3, 7] [2, 4, 6] [2, 6, 4]
@@ -36,25 +36,25 @@ Write a program which outputs all valid combinations as an array.
 
 # --hints--
 
-`combinations` should be a function.
+`combinations` 应该是一个函数。
 
 ```js
 assert(typeof combinations === 'function');
 ```
 
-`combinations([1, 2, 3], 6)` should return an Array.
+`combinations([1, 2, 3], 6)` 应该返回一个数组。
 
 ```js
 assert(Array.isArray(combinations([1, 2, 3], 6)));
 ```
 
-`combinations([1, 2, 3, 4, 5, 6, 7], 12)` should return an array of length 14.
+`combinations([1, 2, 3, 4, 5, 6, 7], 12)` 应该返回一个长度为 14 的数组。
 
 ```js
 assert(combinations(nums, total).length === len);
 ```
 
-`combinations([1, 2, 3, 4, 5, 6, 7], 12)` should return all valid combinations.
+`combinations([1, 2, 3, 4, 5, 6, 7], 12)` 应该返回所有有效的组合。
 
 ```js
 assert.deepEqual(combinations(nums, total), result);

@@ -1,6 +1,6 @@
 ---
 id: 5900f3e61000cf542c50fef9
-title: 'Problem 122: Efficient exponentiation'
+title: '问题 122：有效求幂'
 challengeType: 1
 forumTopicId: 301749
 dashedName: problem-122-efficient-exponentiation
@@ -12,22 +12,22 @@ The most naive way of computing $n^{15}$ requires fourteen multiplications:
 
 $$n × n × \ldots × n = n^{15}$$
 
-But using a "binary" method you can compute it in six multiplications:
+但是使用“二进制”方法，您可以通过六次乘法来计算它：
 
 $$\begin{align}   & n × n = n^2\\\\
   & n^2 × n^2 = n^4\\\\   & n^4 × n^4 = n^8\\\\
   & n^8 × n^4 = n^{12}\\\\   & n^{12} × n^2 = n^{14}\\\\
   & n^{14} × n = n^{15} \end{align}$$
 
-However it is yet possible to compute it in only five multiplications:
+然而，仍然可以只用五次乘法来计算它：
 
 $$\begin{align}   & n × n = n^2\\\\
   & n^2 × n = n^3\\\\   & n^3 × n^3 = n^6\\\\
   & n^6 × n^6 = n^{12}\\\\ & n^{12} × n^3 = n^{15} \end{align}$$
 
-We shall define $m(k)$ to be the minimum number of multiplications to compute $n^k$; for example $m(15) = 5$.
+我们将定义 $m(k)$ 为计算 $n^k$ 的最小乘法次数；例如 $m(15) = 5$。
 
-For $1 ≤ k ≤ 200$, find $\sum{m(k)}$.
+对于 $1 ≤ k ≤ 200$，求 $\sum{m(k)}$。
 
 # --hints--
 

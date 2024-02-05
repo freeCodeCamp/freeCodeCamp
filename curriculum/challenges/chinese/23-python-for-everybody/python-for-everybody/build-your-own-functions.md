@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f060b6c005b0e76f05b
-title: Build your own Functions
+title: 编写你自己的函数
 challengeType: 11
 videoId: nLDychdBwUg
 bilibiliIds:
@@ -14,13 +14,13 @@ dashedName: build-your-own-functions
 
 More resources:
 
-\- <a href="https://www.youtube.com/watch?v=ksvGhDsjtpw" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=ksvGhDsjtpw" target="_blank" rel="noopener noreferrer nofollow">练习</a>
 
 # --question--
 
 ## --text--
 
-What will the following Python program print out?:
+下面这个 Python 程序会打印什么？：
 
 ```python
 def fred():

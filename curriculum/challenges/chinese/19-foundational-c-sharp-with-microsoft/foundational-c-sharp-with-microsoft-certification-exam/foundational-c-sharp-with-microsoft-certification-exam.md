@@ -1,6 +1,6 @@
 ---
 id: 647e22d18acb466c97ccbef8
-title: 'Foundational C# with Microsoft Certification Exam'
+title: '微软基础 C# 认证考试'
 challengeType: 17
 dashedName: foundational-c-sharp-with-microsoft-certification-exam
 prerequisites:
@@ -26,13 +26,13 @@ prerequisites:
 
 # --description--
 
-Pass this exam to earn your Foundational C# with Microsoft Certification. Before starting the exam, please review the following guidelines:
+通过此考试来获取微软基础 C# 认证。 在开始考试前，请查看以下指南：
 
-- You must complete the entire exam in one session.
-- Exiting the exam at any point before you are finished, will result in the loss of your progress.
-- There is no time limit, but your total time taken will be recorded.
-- The exam consists of 80 multiple-choice questions.
-- Complete the exam and correctly answer at least 70% of the questions to earn your certification.
+- 你必须一次性完成整个考试。
+- 在完成考试之前的任何时候退出都将导致丢失进度。
+- 没有时间限制，但所花的总时间将被记录。
+- 考试由 80 道多项选择题组成。
+- 完成考试并正确回答至少 70% 的问题即可获得认证。
 
 # --instructions--
 

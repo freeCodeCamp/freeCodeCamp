@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad0
-title: Align columns
+title: Вирівнювання стовпців
 challengeType: 1
 forumTopicId: 302224
 dashedName: align-columns
@@ -12,7 +12,7 @@ Given an array of many lines, where fields within a line are delineated by a sin
 
 # --instructions--
 
-Use the following text to test your programs:
+Щоб перевірити свої програми, використовуйте наступний текст:
 
 ```js
 const testText = [
@@ -29,16 +29,16 @@ const testText = [
 ];
 ```
 
-**Note that:**
+**Зауважте, що:**
 
-- The example input texts lines may, or may not, have trailing dollar characters.
-- All columns should share the same alignment.
-- Consecutive space characters produced adjacent to the end of lines are insignificant for the purposes of the task.
-- Output text will be viewed in a mono-spaced font on a plain text editor or basic terminal. Lines in it should be joined using new line character (`\n`).
-- The minimum space between columns should be computed from the text and not hard-coded.
-- It is not a requirement to add separating characters between or around columns.
+- Введені тексти в прикладі можуть мати символ долара вкінці.
+- Усі стовпці повинні мати однакове вирівнювання.
+- Декілька послідовно розміщених символів пробілу у кінці рядків, є неважливими для цілей завдання.
+- Вихідний текст буде відображатися моношироким шрифтом у звичайному текстовому редакторі або базовому терміналі. Рядки в ньому слід з'єднати, використовуючи новий символ рядка (`\n`).
+- Мінімальний простір між стовпцями слід обчислювати з даного тексту, а не жорстко його кодувати.
+- Не обов'язково додавати розділові символи між стовпцями або навколо них.
 
-For example, one of the lines from the `testText`, after justifying to the right, left and center respectively:
+Наприклад, один з рядків взятий із `testText`, після вирівнювання праворуч, ліворуч та посередині відповідно:
 
 ```js
 '    column        are separated     by     at    least       one space.\n'
@@ -48,25 +48,25 @@ For example, one of the lines from the `testText`, after justifying to the right
 
 # --hints--
 
-`formatText` should be a function.
+`formatText` має бути функцією.
 
 ```js
 assert(typeof formatText === 'function');
 ```
 
-`formatText(testText, 'right')` should produce text with columns justified to the right.
+`formatText(testText, 'right')` має створити стовпець із текстом, який буде вирівняний по правій стороні.
 
 ```js
 assert.strictEqual(formatText(_testText, 'right'), rightAligned);
 ```
 
-`formatText(testText, 'left')` should produce text with columns justified to the left.
+`formatText(testText, 'left')` має створити стовпець із текстом, який буде вирівняний по лівій стороні.
 
 ```js
 assert.strictEqual(formatText(_testText, 'left'), leftAligned);
 ```
 
-`formatText(testText, 'center')` should produce text with columns justified to the center.
+`formatText(testText, 'center')` має створити стовпець із текстом, який буде вирівняний по центру.
 
 ```js
 assert.strictEqual(formatText(_testText, 'center'), centerAligned);

@@ -34,10 +34,7 @@ import {
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
-import {
-  challengeTypes,
-  isFinalProject
-} from '../../../../../shared/config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,
@@ -66,8 +63,8 @@ import {
   setScrollbarArrowStyles
 } from '../utils/index';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
+import { isProjectBased } from '../../../utils/curriculum-layout';
 import LowerJaw from './lower-jaw';
-
 import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
@@ -511,7 +508,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
       ],
       run: () => {
-        if (props.usesMultifileEditor && !isFinalProject(props.challengeType)) {
+        if (props.usesMultifileEditor && !isProjectBased(props.challengeType)) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
           } else {

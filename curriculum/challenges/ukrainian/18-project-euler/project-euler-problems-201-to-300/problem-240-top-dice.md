@@ -1,6 +1,6 @@
 ---
 id: 5900f45d1000cf542c50ff6f
-title: 'Завдання 240: кості з найбільшими числами'
+title: 'Завдання 240: кубики з найбільшими числами'
 challengeType: 1
 forumTopicId: 301887
 dashedName: problem-240-top-dice

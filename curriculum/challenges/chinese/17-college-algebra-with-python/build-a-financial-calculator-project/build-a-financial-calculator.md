@@ -13,7 +13,7 @@ dashedName: build-a-financial-calculator
 
 # --instructions--
 
-在这项挑战中，使用 Python 创建一个多功能计算器，计算器可以接受输入并实现以下功能：
+For this challenge, you need to create a financial calculator using Python that take input and do the following:
 
 - 按每月增长率或连续增长率计算养老金
 - 计算每月抵押付款

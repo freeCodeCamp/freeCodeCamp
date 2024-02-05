@@ -19,7 +19,7 @@ This is what the lines look like for a 3x3 grid:
 
 To control the number of columns an item will consume, you can use the `grid-column` property in conjunction with the line numbers you want the item to start and stop at.
 
-Here's an example:
+إليك مثال:
 
 ```css
 grid-column: 1 / 3;

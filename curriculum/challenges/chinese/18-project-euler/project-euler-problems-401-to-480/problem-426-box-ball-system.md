@@ -1,6 +1,6 @@
 ---
 id: 5900f5171000cf542c510029
-title: 'Problem 426: Box-ball system'
+title: '问题426：箱式球系统'
 challengeType: 1
 forumTopicId: 302096
 dashedName: problem-426-box-ball-system

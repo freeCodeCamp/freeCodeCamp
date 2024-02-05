@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad5
-title: Y combinator
+title: Y コンビネータ
 challengeType: 1
 forumTopicId: 302345
 dashedName: y-combinator
@@ -10,11 +10,11 @@ dashedName: y-combinator
 
 In strict <a href="https://www.freecodecamp.org/news/the-principles-of-functional-programming/" target="_blank" rel="noopener noreferrer nofollow">functional programming</a> and the lambda calculus, functions (lambda expressions) don't have state and are only allowed to refer to arguments of enclosing functions. This rules out the usual definition of a recursive function wherein a function is associated with the state of a variable and this variable's state is used in the body of the function.
 
-The Y combinator is itself a stateless function that, when applied to another stateless function, returns a recursive version of the function. The Y combinator is the simplest of the class of such functions, called fixed-point combinators.
+Y コンビネータ は、それ自体がステートレス関数であり、他のステートレス関数に適用されると、関数の再帰バージョンを返します。 Y コンビネータは、不動点コンビネータと呼ばれるこのような関数のクラスの最も単純なものです。
 
 # --instructions--
 
-Define the stateless Y combinator function and use it to compute the factorials. The `factorial(N)` function is already given to you. 
+ステートレスな Y コンビネータ関数を定義し、それを使用して階乗を計算してください。 The `factorial(N)` function is already given to you.
 
 # --hints--
 

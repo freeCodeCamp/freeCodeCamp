@@ -1,9 +1,8 @@
 ---
 id: 657dbdae2bd6f60bda3226cc
-title: Task 80
+title: Task 78
 challengeType: 22
-dashedName: task-80
-audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+dashedName: task-78
 ---
 
 <!-- (audio) Tom: Tell me about our team meetings, Sophie. Do they happen every week? -->
@@ -16,7 +15,7 @@ When you want to know how often something happens, you can use `every` followed 
 
 # --instructions--
 
-Listen to the audio to complete the sentence below.
+Höre dir das Audio an, um die unteren Sätze zu vervollständigen.
 
 # --fillInTheBlank--
 
@@ -24,10 +23,55 @@ Listen to the audio to complete the sentence below.
 
 `Tell me about our team meetings, Sophie. Do they happen _ week?`
 
-## --blanks--
+## -blanks--
 
 `every`
 
 ### --feedback--
 
 Tom is asking if the meetings happen every week.
+
+
+# --Szene--
+
+```json
+{
+  "setup": {
+    "background": "company2-center.png",
+    "characters": [
+      {
+        "character": "Tom",
+        "position": {"x":50,"y":15,"z":1.2},
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "1.3-4.mp3",
+      "startTime": 1,
+      "startTimestamp": 0.00,
+      "finishTimestamp": 3.70
+    }
+  },
+  "commands": [
+    {
+      "character": "Tom",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Tom",
+      "startTime": 1,
+      "finishTime": 4.70,
+      "dialogue": {
+        "text": "Tell me about our team meetings, Sophie. Do they happen every week?",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Tom",
+      "opacity": 0,
+      "startTime": 5.20
+    }
+  ]
+}
+```

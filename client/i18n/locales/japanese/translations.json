@@ -198,6 +198,7 @@
     "sound-mode": "これは快適なアコースティックギターの音をウェブサイトの至る所へ追加します。エディターにタイプしたり、チャレンジを完了したり、認定証を請求したり、その他いろいろなことをする度に音のフィードバックを受け取ります。",
     "sound-volume": "キャンプファイアモードの音量:",
     "scrollbar-width": "エディターのスクロールバーの幅",
+    "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
       "contains invalid characters": "ユーザー名 \"{{username}}\" に無効な文字が含まれています",
       "is too short": "ユーザー名 \"{{username}}\" は短すぎます",
@@ -912,8 +913,8 @@
     "title": {
       "Responsive Web Design": "レスポンシブウェブデザイン",
       "responsive-web-design": "レスポンシブウェブデザイン認定証",
-      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
-      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
+      "JavaScript Algorithms and Data Structures": "JavaScript アルゴリズムとデータ構造",
+      "javascript-algorithms-and-data-structures": "JavaScript アルゴリズムとデータ構造認定証",
       "javascript-algorithms-and-data-structures-v8": "JavaScript アルゴリズムとデータ構造認定証",
       "Front End Development Libraries": "フロントエンド開発ライブラリ",
       "front-end-development-libraries": "フロントエンド開発ライブラリ認定証",

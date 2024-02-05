@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f060b6c005b0e76f05a
-title: Python Functions
+title: Python の関数
 challengeType: 11
 videoId: 3JGF-n3tDPU
 bilibiliIds:
@@ -18,23 +18,23 @@ What is the purpose of the "def" keyword in Python?
 
 ## --answers--
 
-It is slang that means "The following code is really cool."
+「次のコードは本当にクールです」という意味のスラング。
 
 ---
 
-It indicates the start of a function.
+関数の始まりを示す。
 
 ---
 
-It indicates that the following indented section of code is to be stored for later.
+以降のインデントされたコードセクションを後で保存する必要があることを示す。
 
 ---
 
-It indicates the start of a function, and the following indented section of code is to be stored for later.
+関数の始まりを示し、以降のインデントされたコードセクションを後で保存する必要があることを示す。
 
 ---
 
-None of the above.
+上記のいずれでもない。
 
 ## --video-solution--
 

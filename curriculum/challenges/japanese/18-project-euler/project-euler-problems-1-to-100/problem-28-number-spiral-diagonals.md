@@ -1,6 +1,6 @@
 ---
 id: 5900f3881000cf542c50fe9b
-title: 'Problem 28: Number spiral diagonals'
+title: '問題 28: らせん状に配置された数字の対角線'
 challengeType: 1
 forumTopicId: 301930
 dashedName: problem-28-number-spiral-diagonals
@@ -8,7 +8,7 @@ dashedName: problem-28-number-spiral-diagonals
 
 # --description--
 
-Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:
+数 1 から始めて時計回りに右へ移動していくと、次のように 5 x 5 のらせんができます。
 
 <div style='padding-left: 4em;'>
   <div style='color: red; display: inline;'>21</div> 22 23 24 <div style='color: red; display: inline;'>25</div><br>
@@ -18,37 +18,37 @@ Starting with the number 1 and moving to the right in a clockwise direction a 5 
   <div style='color: red; display: inline;'>17</div> 16 15 14 <div style='color: red; display: inline;'>13</div><br>
 </div>
 
-It can be verified that the sum of the numbers on the diagonals is 101.
+2 本の対角線上の数の和が 101 であることを確認できます。
 
-What is the sum of the numbers on the diagonals in an `n` by `n` spiral formed in the same way?
+同じように得られた `n` x `n` のらせんの 2 本の対角線上の数の和を求めなさい。
 
 # --hints--
 
-`spiralDiagonals(101)` should return a number.
+`spiralDiagonals(101)` は数値を返す必要があります。
 
 ```js
 assert(typeof spiralDiagonals(101) === 'number');
 ```
 
-`spiralDiagonals(101)` should return 692101.
+`spiralDiagonals(101)` は 692101 を返す必要があります
 
 ```js
 assert(spiralDiagonals(101) == 692101);
 ```
 
-`spiralDiagonals(303)` should return 18591725.
+`spiralDiagonals(303)` は、18591725 を返す必要があります。
 
 ```js
 assert(spiralDiagonals(303) == 18591725);
 ```
 
-`spiralDiagonals(505)` should return 85986601.
+`spiralDiagonals(505)` は85986601を返す必要があります。
 
 ```js
 assert(spiralDiagonals(505) == 85986601);
 ```
 
-`spiralDiagonals(1001)` should return 669171001.
+`spiralDiagonals(1001)` は 669171001 を返す必要があります。
 
 ```js
 assert(spiralDiagonals(1001) == 669171001);

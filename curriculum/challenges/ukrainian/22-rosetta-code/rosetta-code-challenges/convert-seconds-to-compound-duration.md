@@ -11,21 +11,21 @@ dashedName: convert-seconds-to-compound-duration
 Implement a function which:
 
 <ul>
-  <li>takes a positive integer representing a duration in seconds as input (e.g., <code>100</code>), and</li>
-  <li>returns a string which shows the same duration decomposed into weeks, days, hours, minutes, and seconds as detailed below (e.g., <code>1 min, 40 sec</code>).</li>
+  <li>приймає натуральне число, яке представляє тривалість в секундах (наприклад, <code>100</code>), та</li>
+  <li>повертає рядок тієї самої тривалості у вигляді тижнів, днів, годин, хвилин та секунд (наприклад, <code>1 min, 40 sec</code>).</li>
 </ul>
 
-Demonstrate that it passes the following three test-cases:
+Демонстрація того, що вона передає наступні три тестові випадки:
 
-<div style='font-size:115%; font-weight: bold;'>Test Cases</div>
+<div style='font-size:115%; font-weight: bold;'>Тестові випадки</div>
 
-| Input number | Output number                         |
-| ------------ | ------------------------------------- |
-| 7259         | <code>2 hr, 59 sec</code>             |
-| 86400        | <code>1 d</code>                      |
+| Вхідне число | Вихідне число             |
+| ------------ | ------------------------- |
+| 7259         | <code>2 hr, 59 sec</code> |
+| 86400        | <code>1 d</code> |
 | 6000000      | <code>9 wk, 6 d, 10 hr, 40 min</code> |
 
-<div style="font-size:115%; font-weight: bold;">Details</div>
+<div style="font-size:115%; font-weight: bold;">Деталі</div>
 <ul>
   <li>
     The following five units should be used:
@@ -40,37 +40,37 @@ Demonstrate that it passes the following three test-cases:
 
   </li>
   <li>
-    However, <strong>only</strong> include quantities with non-zero values in the output (e.g., return <code>1 d</code> and not <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
+    Однак <strong>only</strong> містить кількість не нульових значень при виході (наприклад <code>1 d</code> а не <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
   </li>
   <li>
-    Give larger units precedence over smaller ones as much as possible (e.g., return <code>2 min, 10 sec</code> and not <code>1 min, 70 sec</code> or <code>130 sec</code>).
+    Надавати перевагу максимально великим одиницям над меншими одиницями (наприклад повернути <code>2 min, 10 sec</code> а не <code>1 min, 70 sec</code> чи <code>130 sec</code>).
   </li>
   <li>
-    Mimic the formatting shown in the test-cases (quantities sorted from largest unit to smallest and separated by comma+space; value and unit of each quantity separated by space).
+    Мімікрійне форматування, показане у тестових випадках ( кількість відсортована від найбільшої одиниці до найменшої і відокремлена комою+пробілом; значення і одиниця всіх значень відділена пробілом).
   </li>
 </ul>
 
 # --hints--
 
-`convertSeconds` should be a function.
+`convertSeconds` має бути функцією.
 
 ```js
 assert(typeof convertSeconds === 'function');
 ```
 
-`convertSeconds(7259)` should return `2 hr, 59 sec`.
+`convertSeconds(7259)` має повернути `2 hr, 59 sec`.
 
 ```js
 assert.equal(convertSeconds(testCases[0]), results[0]);
 ```
 
-`convertSeconds(86400)` should return `1 d`.
+`convertSeconds(86400)` має повернути `1 d`.
 
 ```js
 assert.equal(convertSeconds(testCases[1]), results[1]);
 ```
 
-`convertSeconds(6000000)` should return `9 wk, 6 d, 10 hr, 40 min`.
+`convertSeconds(6000000)` має повернути `9 wk, 6 d, 10 hr, 40 min`.
 
 ```js
 assert.equal(convertSeconds(testCases[2]), results[2]);

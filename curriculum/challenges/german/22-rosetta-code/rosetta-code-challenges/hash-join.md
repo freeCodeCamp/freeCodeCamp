@@ -1,6 +1,6 @@
 ---
 id: 5956795bc9e2c415eb244de1
-title: Hash join
+title: Hash-Join
 challengeType: 1
 forumTopicId: 302284
 dashedName: hash-join
@@ -10,18 +10,18 @@ dashedName: hash-join
 
 An inner join is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the nested loop join algorithm, but a more scalable alternative is the hash join algorithm.
 
-The "hash join" algorithm consists of two steps:
+Der "Hash Join"-Algorithmus besteht aus zwei Schritten:
 
 <ol>
   <li><strong>Hash phase:</strong> Create a multimap from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
   <ul>
     <li>The multimap must support hash-based lookup which scales better than a simple linear search, because that's the whole point of this algorithm.</li>
-    <li>Ideally we should create the multimap for the smaller table, thus minimizing its creation time and memory size.</li>
+    <li>Idealerweise sollte die Multimap für die kleinere Tabelle erstellt werden, um die Erstellungszeit und die Speichergröße zu minimieren.</li>
   </ul>
-  <li><strong>Join phase:</strong> Scan the other table, and find matching rows by looking in the multimap created before.</li>
+  <li><strong>Join-Phase:</strong> Scanne die andere Tabelle und finde übereinstimmende Zeilen in der zuvor erstellten Multimap.</li>
 </ol>
 
-In pseudo-code, the algorithm could be expressed as follows:
+Als Pseudocode könnte der Algorithmus wie folgt ausgedrückt werden:
 
 <pre><strong>let</strong> <i>A</i> = the first input table (or ideally, the larger one)
 <strong>let</strong> <i>B</i> = the second input table (or ideally, the smaller one)
@@ -39,9 +39,9 @@ In pseudo-code, the algorithm could be expressed as follows:
 
 # --instructions--
 
-Implement the "hash join" algorithm as a function and demonstrate that it passes the test-case listed below. The function should accept two arrays of objects and return an array of combined objects.
+Implementiere den "hash join"-Algorithmus als Funktion und zeige, dass er den unten aufgeführten Testfall besteht. Die Funktion sollte zwei Anordnungen mit Objekten akzeptieren und eine Anordnung mit kombinierten Objekten zurückgeben.
 
-**Input**
+**Eingabe**
 
 <table>
   <tr>
@@ -139,17 +139,17 @@ Implement the "hash join" algorithm as a function and demonstrate that it passes
 | 28    | Alan   | Alan        | Ghosts    |
 | 28    | Alan   | Alan        | Zombies   |
 
-The order of the rows in the output table is not significant.
+Die Reihenfolge der Zeilen in der Ausgabetabelle ist nicht von Bedeutung.
 
 # --hints--
 
-`hashJoin` should be a function.
+`hashJoin` sollte eine Funktion sein.
 
 ```js
 assert(typeof hashJoin === 'function');
 ```
 
-`hashJoin([{ age: 27, name: "Jonah" }, { age: 18, name: "Alan" }, { age: 28, name: "Glory" }, { age: 18, name: "Popeye" }, { age: 28, name: "Alan" }], [{ character: "Jonah", nemesis: "Whales" }, { character: "Jonah", nemesis: "Spiders" }, { character: "Alan", nemesis: "Ghosts" }, { character:"Alan", nemesis: "Zombies" }, { character: "Glory", nemesis: "Buffy" }, { character: "Bob", nemesis: "foo" }])` should return `[{"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Whales"}, {"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Spiders"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}, {"A_age": 28,"A_name": "Glory", "B_character": "Glory", "B_nemesis": "Buffy"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}]`
+`hashJoin([{ age: 27, name: "Jonah" }, { age: 18, name: "Alan" }, { age: 28, name: "Glory" }, { age: 18, name: "Popeye" }, { age: 28, name: "Alan" }], [{ character: "Jonah", nemesis: "Whales" }, { character: "Jonah", nemesis: "Spiders" }, { character: "Alan", nemesis: "Ghosts" }, { character:"Alan", nemesis: "Zombies" }, { character: "Glory", nemesis: "Buffy" }, { character: "Bob", nemesis: "foo" }])` sollte `[{"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Whales"}, {"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Spiders"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}, {"A_age": 28,"A_name": "Glory", "B_character": "Glory", "B_nemesis": "Buffy"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}]` zurückgeben
 
 ```js
 assert.deepEqual(hashJoin(hash1, hash2), res);

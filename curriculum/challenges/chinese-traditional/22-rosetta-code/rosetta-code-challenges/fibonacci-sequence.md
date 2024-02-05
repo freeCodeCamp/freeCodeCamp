@@ -1,6 +1,6 @@
 ---
 id: 597f24c1dda4e70f53c79c81
-title: Fibonacci sequence
+title: 斐波那契序列
 challengeType: 1
 forumTopicId: 302268
 dashedName: fibonacci-sequence
@@ -10,41 +10,41 @@ dashedName: fibonacci-sequence
 
 Write a function to generate the <code>n<sup>th</sup></code> Fibonacci number.
 
-The <code>n<sup>th</sup></code> Fibonacci number is given by:
+第 <code>n<sup>th</sup></code> 個斐波那契數由下式給出：
 
 <code>F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n-2</sub></code>
 
-The first two terms of the series are 0 and 1.
+級數的前兩項是 0 和 1。
 
-Hence, the series is: 0, 1, 1, 2, 3, 5, 8, 13...
+因此，該系列是：0, 1, 1, 2, 3, 5, 8, 13...
 
 # --hints--
 
-`fibonacci` should be a function.
+`fibonacci` 應該是一個函數。
 
 ```js
 assert(typeof fibonacci === 'function');
 ```
 
-`fibonacci(2)` should return a number.
+`fibonacci(2)` 應該返回一個數字。
 
 ```js
 assert(typeof fibonacci(2) == 'number');
 ```
 
-`fibonacci(3)` should return 2.
+`fibonacci(3)` 應該返回 2。
 
 ```js
 assert.equal(fibonacci(3), 2);
 ```
 
-`fibonacci(5)` should return 5.
+`fibonacci(5)` 應該返回 5。
 
 ```js
 assert.equal(fibonacci(5), 5);
 ```
 
-`fibonacci(10)` should return 55.
+`fibonacci(10)` 應該返回 55。
 
 ```js
 assert.equal(fibonacci(10), 55);

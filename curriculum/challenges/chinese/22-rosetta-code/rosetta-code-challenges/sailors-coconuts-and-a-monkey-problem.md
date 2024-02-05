@@ -1,6 +1,6 @@
 ---
 id: 59da22823d04c95919d46269
-title: 'Sailors, coconuts and a monkey problem'
+title: '船员、椰子和猴子问题'
 challengeType: 1
 forumTopicId: 302304
 dashedName: sailors-coconuts-and-a-monkey-problem
@@ -8,39 +8,39 @@ dashedName: sailors-coconuts-and-a-monkey-problem
 
 # --description--
 
-Five sailors are shipwrecked on an island and collect a large pile of coconuts during the day. 
+Five sailors are shipwrecked on an island and collect a large pile of coconuts during the day.
 
-That night the first sailor wakes up and decides to take his first share early so tries to divide the pile of coconuts equally into five piles but finds that there is one coconut left over, so he tosses it to a monkey and then hides "his" one of the five equally sized piles of coconuts and pushes the other four piles together to form a single visible pile of coconuts again and goes to bed. 
+当天晚上入睡后，第一个船员醒来决定拿走属于他的那份，他把椰子分成了五堆，但是发现多了一个椰子，他把多出来的椰子扔给了猴子，把自己的那一堆藏了起来，然后把剩下的四堆椰子合在一起，回去继续睡觉。
 
-To cut a long story short, each of the sailors in turn gets up once during the night and performs the same actions of dividing the coconut pile into five, finding that one coconut is left over and giving that single remainder coconut to the monkey, then push the other four piles together to form a single pile. 
+接着，第二、第三、第四、第五个船员依次醒来做了同样的事情。分完椰子后，发现还剩下一个椰子，把它扔给了猴子，把剩下的四堆椰子合在一起。
 
-In the morning (after the surreptitious and separate action of each of the five sailors during the night), the remaining coconuts are divided into five equal piles for each of the sailors, whereupon it is found that the pile of coconuts divides equally amongst the sailors with no remainder. (Nothing for the monkey in the morning.)
+在早上（在五个水手中的每个人在晚上分别偷走椰子之后），剩下的椰子被平均分成五堆给每个水手，然后发现椰子可以被平均分给每个水手，没有剩余。 （早上猴子啥都没分到。）
 
 # --instructions--
 
-Create a function that returns the minimum possible size of the initial pile of coconuts collected during the day for `N` sailors. **Note:** Of course the tale is told in a world where the collection of any number of coconuts in a day and multiple divisions of the pile, etc. can occur in time fitting the story line, so as not to affect mathematics.
+创建一个函数，该函数返回收集在一天中的初始椰子堆的最小可能大小，假设有 `N` 名水手。 **注意**：当然，这个故事发生在一个假想的世界里，在这个世界里，每天可以收集任意数量的椰子，并进行多次分配，等等，以适应故事情节，因此不会影响数学计算。
 
 # --hints--
 
-`splitCoconuts` should be a function.
+`splitCoconuts` 应该是一个函数。
 
 ```js
 assert(typeof splitCoconuts === 'function');
 ```
 
-`splitCoconuts(5)` should return 3121.
+`splitCoconuts(5)` 应该返回 3121。
 
 ```js
 assert(splitCoconuts(5) === 3121);
 ```
 
-`splitCoconuts(6)` should return 233275.
+`splitCoconuts(6)` 应该返回 233275。
 
 ```js
 assert(splitCoconuts(6) === 233275);
 ```
 
-`splitCoconuts(7)` should return 823537.
+`splitCoconuts(7)` 应该返回 823537。
 
 ```js
 assert(splitCoconuts(7) === 823537);

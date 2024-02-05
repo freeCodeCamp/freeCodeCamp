@@ -1,6 +1,6 @@
 ---
 id: 5900f3a21000cf542c50feb5
-title: 'Problem 54: Poker hands'
+title: '问题54：扑克手'
 challengeType: 1
 forumTopicId: 302165
 dashedName: problem-54-poker-hands
@@ -14,13 +14,13 @@ In the card game poker, a hand consists of five cards and are ranked, from lowes
   <li>High Card: Highest value card.</li>
   <li>One Pair: Two cards of the same value.</li>
   <li>Two Pairs: Two different pairs.</li>
-  <li>Three of a Kind: Three cards of the same value.</li>
-  <li>Straight: All cards are consecutive values.</li>
+  <li>三种类型：三张相同价值的牌。</li>
+  <li>直：所有卡都是连续值。</li>
   <li>Flush: All cards of the same suit.</li>
   <li>Full House: Three of a kind and a pair.</li>
-  <li>Four of a Kind: Four cards of the same value.</li>
+  <li>四种：四张相同价值的牌。</li>
   <li>Straight Flush: All cards are consecutive values of same suit.</li>
-  <li>Royal Flush: Ten, Jack, Queen, King, Ace, in same suit.</li>
+  <li>皇家同花顺：十，杰克，女王，国王，王牌，同样的诉讼。</li>
 </ul>
 
 The cards are valued in the order: 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace.
@@ -37,9 +37,9 @@ Consider the following five hands dealt to two players:
 | <strong>4</strong> | 4D 6S 9H QH QC <br> Pair of Queens <br> Highest card Nine | 3D 6D 7H QD QS <br> Pair of Queens <br> Highest card Seven | Player 1 |
 | <strong>5</strong> | 2H 2D 4C 4D 4S <br> Full House <br> with Three Fours      | 3C 3D 3S 9S 9D <br> Full House <br> with Three Threes      | Player 1 |
 
-The global array (`handsArr`) passed to the function, contains one-thousand random hands dealt to two players. Each line of the file contains ten cards (separated by a single space): the first five are Player 1's cards and the last five are Player 2's cards. You can assume that all hands are valid (no invalid characters or repeated cards), each player's hand is in no specific order, and in each hand there is a clear winner.
+The global array (`handsArr`) passed to the function, contains one-thousand random hands dealt to two players. 该文件的每一行包含十张牌（由一个空格分隔）：前五张是Player 1的牌，后五张是Player 2的牌。 你可以假设所有的牌都是有效的（没有无效的角色或重复的牌），每个牌手的牌都没有特定的顺序，而且每手牌都有明显的赢家。
 
-How many hands does Player 1 win?
+玩家1赢了多少手牌？
 
 # --hints--
 

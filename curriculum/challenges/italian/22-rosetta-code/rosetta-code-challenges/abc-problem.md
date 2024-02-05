@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339acc
-title: ABC Problem
+title: Problema ABC
 challengeType: 1
 forumTopicId: 302220
 dashedName: abc-problem
@@ -34,60 +34,60 @@ You are given a collection of ABC blocks (e.g., childhood alphabet blocks). Ther
 
 # --instructions--
 
-Implement a function that takes a string (word) and determines whether the word can be spelled with the given collection of blocks.
+Implementa una funzione che prende una stringa (parola) e determina se la parola può essere scritta con la collezione di blocchi data.
 
-Some rules to keep in mind:
+Alcune regole da tenere a mente:
 
 <ul>
   <li>Once a letter on a block is used, that block cannot be used again.</li>
-  <li>The function should be case-insensitive.</li>
+  <li>La funzione non deve fare distinzione tra maiuscole e minuscole.</li>
 </ul>
 
 # --hints--
 
-`canMakeWord` should be a function.
+`canMakeWord` dovrebbe essere una funzione.
 
 ```js
 assert(typeof canMakeWord === 'function');
 ```
 
-`canMakeWord` should return a boolean.
+`canMakeWord` dovrebbe restituire un valore booleano.
 
 ```js
 assert(typeof canMakeWord('hi') === 'boolean');
 ```
 
-`canMakeWord("bark")` should return true.
+`canMakeWord("bark")` dovrebbe restituire true.
 
 ```js
 assert(canMakeWord(words[0]));
 ```
 
-`canMakeWord("BooK")` should return false.
+`canMakeWord("BooK")` dovrebbe restituire false.
 
 ```js
 assert(!canMakeWord(words[1]));
 ```
 
-`canMakeWord("TReAT")` should return true.
+`canMakeWord("TReAT")` dovrebbe restituire true.
 
 ```js
 assert(canMakeWord(words[2]));
 ```
 
-`canMakeWord("COMMON")` should return false.
+`canMakeWord("COMMON")` dovrebbe restituire false.
 
 ```js
 assert(!canMakeWord(words[3]));
 ```
 
-`canMakeWord("squAD")` should return true.
+`canMakeWord("squAD")` dovrebbe restituire true.
 
 ```js
 assert(canMakeWord(words[4]));
 ```
 
-`canMakeWord("conFUSE")` should return true.
+`canMakeWord("conFUSE")` dovrebbe restituire false.
 
 ```js
 assert(canMakeWord(words[5]));

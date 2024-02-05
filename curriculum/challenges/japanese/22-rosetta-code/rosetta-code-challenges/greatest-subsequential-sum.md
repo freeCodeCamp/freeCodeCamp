@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e84
-title: Greatest subsequential sum
+title: 最大部分配列
 challengeType: 1
 forumTopicId: 302278
 dashedName: greatest-subsequential-sum
@@ -10,29 +10,29 @@ dashedName: greatest-subsequential-sum
 
 Given a sequence of integers, find a continuous subsequence which maximizes the sum of its elements, that is, the elements of no other single subsequence add up to a value larger than this one.
 
-An empty subsequence is considered to have the sum of \\( 0 \\); thus if all elements are negative, the result must be the empty sequence.
+空の部分配列は、\\( 0 \\); の和を取るとみなされるため、すべての要素が負の場合、結果は空の数列でなければなりません。
 
 # --hints--
 
-`maximumSubsequence` should be a function.
+`maximumSubsequence` は関数とします。
 
 ```js
 assert(typeof maximumSubsequence == 'function');
 ```
 
-`maximumSubsequence([ 1, 2, -1, 3, 10, -10 ])` should return an array.
+`maximumSubsequence([ 1, 2, -1, 3, 10, -10 ])` は配列を返す必要があります。
 
 ```js
 assert(Array.isArray(maximumSubsequence([1, 2, -1, 3, 10, -10])));
 ```
 
-`maximumSubsequence([ 1, 2, -1, 3, 10, -10 ])` should return `[ 1, 2, -1, 3, 10 ]`.
+`maximumSubsequence([ 1, 2, -1, 3, 10, -10 ])` は`[ 1, 2, -1, 3, 10 ]`を返す必要があります。
 
 ```js
 assert.deepEqual(maximumSubsequence([1, 2, -1, 3, 10, -10]), [1, 2, -1, 3, 10]);
 ```
 
-`maximumSubsequence([ 0, 8, 10, -2, -4, -1, -5, -3 ])` should return `[ 0, 8, 10 ]`.
+`maximumSubsequence([ 0, 8, 10, -2, -4, -1, -5, -3 ])` は`[ 0, 8, 10 ]`を返す必要があります。
 
 ```js
 assert.deepEqual(maximumSubsequence([0, 8, 10, -2, -4, -1, -5, -3]), [
@@ -42,25 +42,25 @@ assert.deepEqual(maximumSubsequence([0, 8, 10, -2, -4, -1, -5, -3]), [
 ]);
 ```
 
-`maximumSubsequence([ 9, 9, -10, 1 ])` should return `[ 9, 9 ]`.
+`maximumSubsequence([ 9, 9, -10, 1 ])` は`[ 9, 9 ]`を返す必要があります。
 
 ```js
 assert.deepEqual(maximumSubsequence([9, 9, -10, 1]), [9, 9]);
 ```
 
-`maximumSubsequence([ 7, 1, -5, -3, -8, 1 ])` should return `[ 7, 1 ]`.
+`maximumSubsequence([ 7, 1, -5, -3, -8, 1 ])` は`[ 7, 1 ]`を返す必要があります。
 
 ```js
 assert.deepEqual(maximumSubsequence([7, 1, -5, -3, -8, 1]), [7, 1]);
 ```
 
-`maximumSubsequence([ -3, 6, -1, 4, -4, -6 ])` should return `[ 6, -1, 4 ]`.
+`maximumSubsequence([ -3, 6, -1, 4, -4, -6 ])` は `[ 6, -1, 4 ]`を返す必要があります。
 
 ```js
 assert.deepEqual(maximumSubsequence([-3, 6, -1, 4, -4, -6]), [6, -1, 4]);
 ```
 
-`maximumSubsequence([ -1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1 ])` should return `[ 3, 5, 6, -2, -1, 4 ]`.
+`maximumSubsequence([ -1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1 ])` は`[ 3, 5, 6, -2, -1, 4 ]`を返す必要があります。
 
 ```js
 assert.deepEqual(maximumSubsequence([-1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1]), [

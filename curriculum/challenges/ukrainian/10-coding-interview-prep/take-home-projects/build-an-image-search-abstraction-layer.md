@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443edefaeb5bdee
-title: Створення шару абстракції для пошуку зображень
+title: Створіть шар абстракції для пошуку зображень
 challengeType: 4
 forumTopicId: 302361
 dashedName: build-an-image-search-abstraction-layer
@@ -8,7 +8,7 @@ dashedName: build-an-image-search-abstraction-layer
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який дозволяє шукати зображення, схоже до цього: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10</a> та переглядати останні пошукові запити, схоже до цього: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/recent/" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/recent/</a>. Для виконання проєкту використайте конструктор сайту на власний вибір.
+Створіть повний пакет застосунку JavaScript, який дозволяє шукати зображення, схоже до цього: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10</a> та переглядати останні пошукові запити, схоже до цього: <a href="https://image-search-abstraction-layer.freecodecamp.rocks/recent/" target="_blank" rel="noopener noreferrer nofollow">https://image-search-abstraction-layer.freecodecamp.rocks/recent/</a>. Для виконання проєкту використайте конструктор сайту на власний вибір.
 
 Тут наведено конкретні історії користувача, які варто імплементувати в даний проєкт:
 

@@ -1,6 +1,6 @@
 ---
 id: 5ea28156e79528a9ab248f27
-title: Luhn test of credit card numbers
+title: クレジットカード番号のLuhnテスト
 challengeType: 1
 forumTopicId: 385284
 dashedName: luhn-test-of-credit-card-numbers
@@ -10,20 +10,20 @@ dashedName: luhn-test-of-credit-card-numbers
 
 The Luhn test is used by some credit card companies to distinguish valid credit card numbers from what could be a random selection of digits.
 
-Those companies using credit card numbers that can be validated by the Luhn test have numbers that pass the following test:
+Luhnテストで検証可能なクレジットカード番号を使用している企業が発行するカード番号は、以下のテストをパスします。
 
 <ol>
   <li> Reverse the order of the digits in the number.</li>
-  <li> Take the first, third, ... and every other odd digit in the reversed digits and sum them to form the partial sum s1</li>
-  <li> Taking the second, fourth ... and every other even digit in the reversed digits:</li>
+  <li> この逆順にした数字の 1 番目、3 番目、... さらに他のすべての奇数桁を取り、それらを合計して部分和 s1 を形成します</li>
+  <li> この逆順にした数字の 2 番目、4 番目、さらに他のすべての偶数桁を取ります。</li>
     <ol>
       <li>Multiply each digit by two and sum the digits if the answer is greater than nine to form partial sums for the even digits.</li>
-      <li>Sum the partial sums of the even digits to form s2.</li>
+      <li>偶数桁の部分和を合計して s2 を形成します。</li>
     </ol>
-  <li>If s1 + s2 ends in zero then the original number is in the form of a valid credit card number as verified by the Luhn test.</li>
+  <li>s1 + s2 の答がゼロで終わる場合、元の番号は Luhn テストで検証された有効なクレジットカード番号の形式となっています。</li>
 </ol>
 
-For example, if the trial number is 49927398716:
+たとえば、トライアル番号が 49927398716の場合:
 
 ```bash
 Reverse the digits:
@@ -44,53 +44,53 @@ s1 + s2 = 70 which ends in zero which means that 49927398716 passes the Luhn tes
 
 # --instructions--
 
-Write a function that will validate a number with the Luhn test. Return true if it's a valid number. Otherwise, return false.
+Luhnテストで数値を検証する関数を記述してください。 有効な数値の場合は true を返します。 それ以外は、falseを返します。
 
 # --hints--
 
-`luhnTest` should be a function.
+`luhnTest` は関数とします。
 
 ```js
 assert(typeof luhnTest === 'function');
 ```
 
-`luhnTest("4111111111111111")` should return a boolean.
+`luhnTest("4111111111111111")` はブール値を返す必要があります。
 
 ```js
 assert(typeof luhnTest('4111111111111111') === 'boolean');
 ```
 
-`luhnTest("4111111111111111")` should return `true`.
+`luhnTest("4111111111111111")` は `true` を返す必要があります。
 
 ```js
 assert.equal(luhnTest('4111111111111111'), true);
 ```
 
-`luhnTest("4111111111111112")` should return `false`.
+`luhnTest("4111111111111112")` は `false` を返す必要があります。
 
 ```js
 assert.equal(luhnTest('4111111111111112'), false);
 ```
 
-`luhnTest("49927398716")` should return `true`.
+`luhnTest("49927398716")` は `true` を返す必要があります。
 
 ```js
 assert.equal(luhnTest('49927398716'), true);
 ```
 
-`luhnTest("49927398717")` should return `false`.
+`luhnTest("49927398717")` は `false` を返す必要があります。
 
 ```js
 assert.equal(luhnTest('49927398717'), false);
 ```
 
-`luhnTest("1234567812345678")` should return `false`.
+`luhnTest("1234567812345678")` は `false` を返す必要があります。
 
 ```js
 assert.equal(luhnTest('1234567812345678'), false);
 ```
 
-`luhnTest("1234567812345670")` should return `true`.
+`luhnTest("1234567812345670")` は `true` を返す必要があります。
 
 ```js
 assert.equal(luhnTest('1234567812345670'), true);

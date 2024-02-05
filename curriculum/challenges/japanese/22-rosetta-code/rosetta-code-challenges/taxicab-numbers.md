@@ -1,6 +1,6 @@
 ---
 id: 594ecc0d9a8cf816e3340187
-title: Taxicab numbers
+title: タクシー数
 challengeType: 1
 forumTopicId: 302337
 dashedName: taxicab-numbers
@@ -10,24 +10,24 @@ dashedName: taxicab-numbers
 
 A taxicab number (the definition that is being used here) is a positive integer that can be expressed as the sum of two positive cubes in more than one way.
 
-The first taxicab number is `1729`, which is:
+最初のタクシー数は `1729`で、次のようになります:
 
-1<sup>3</sup> + 12<sup>3</sup> and
+1<sup>3</sup> + 12<sup>3</sup> および
 
 9<sup>3</sup> + 10<sup>3</sup>.
 
-Taxicab numbers are also known as:
+タクシー数には、次のような呼び方もあります:
 
 <ul>
   <li>taxi numbers</li>
-  <li>taxi-cab numbers</li>
-  <li>taxi cab numbers</li>
-  <li>Hardy-Ramanujan numbers</li>
+  <li>タクシーキャブ数</li>
+  <li>タクシー・キャブ数</li>
+  <li>ハーディ＝ラマヌジャン数</li>
 </ul>
 
 # --instructions--
 
-Write a function that returns the lowest `n` taxicab numbers. For each of the taxicab numbers, show the number as well as its constituent cubes.
+最小の `n` 個のタクシー数を返す関数を記述してください。 それぞれのタクシー数について、数値とその構成立方数を示します。
 
 # --hints--
 

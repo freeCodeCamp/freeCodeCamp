@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0b0b6c005b0e76f070
-title: 'Regular Expressions: Practical Applications'
+title: 'التعبيرات العادية: التطبيقات العملية'
 challengeType: 11
 videoId: xCjFU9G6x48
 bilibiliIds:

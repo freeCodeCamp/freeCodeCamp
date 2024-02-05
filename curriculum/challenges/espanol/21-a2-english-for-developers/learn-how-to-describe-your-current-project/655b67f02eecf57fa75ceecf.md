@@ -13,10 +13,9 @@ Sophie: That's important work. I'm helping our team learn how to stay safe onlin
 
 # --description--
 
-`Stay` is used to indicate remaining in a particular state or condition. 
-It's often used in instructions or advice to keep oneself in a certain situation. For example:
+`Stay` is used to indicate remaining in a particular state or condition. It's often used in instructions or advice to keep oneself in a certain situation. Por ejemplo:
 
-`Stay safe online` (continue being safe while using the internet) 
+`Stay safe online` (continue being safe while using the internet)
 
 `Stay calm during the test` (continue being calm)
 
@@ -25,15 +24,15 @@ It's often used in instructions or advice to keep oneself in a certain situation
 
 # --fillInTheBlank--
 
-## --sentence--
+## Frases
 
 `That's important work. I'm _ our team learn how to _ safe online.`
 
-## --blanks--
+## Palabra correcta
 
 `helping`
 
-### --feedback--
+### --retroalimentación--
 
 This word indicates that Sophie is actively providing assistance or support to her team. It is in the gerund form `-ing`
 
@@ -41,6 +40,6 @@ This word indicates that Sophie is actively providing assistance or support to h
 
 `stay`
 
-### --feedback--
+### --retroalimentación--
 
 This word is used to suggest maintaining a certain state, in this case, being safe while online.

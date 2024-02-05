@@ -1,6 +1,6 @@
 ---
 id: 5900f4931000cf542c50ffa6
-title: 'Problem 295: Lenticular holes'
+title: 'Завдання 295: лінзоподібні отвори'
 challengeType: 1
 forumTopicId: 301947
 dashedName: problem-295-lenticular-holes
@@ -8,26 +8,26 @@ dashedName: problem-295-lenticular-holes
 
 # --description--
 
-We call the convex area enclosed by two circles a lenticular hole if:
+Опукла область, охоплена двома колами, називається лінзоподібним отвором, якщо:
 
-- The centres of both circles are on lattice points.
-- The two circles intersect at two distinct lattice points.
-- The interior of the convex area enclosed by both circles does not contain any lattice points.
+- Центри обох кіл знаходяться в точках сітки.
+- Два кола перетинаються в двох різних точках сітки.
+- Внутрішня частина опуклої області, охопленої двома колами, не містить точок сітки.
 
-Consider the circles:
+Розглянемо ці кола:
 
 $$\begin{align}   & C_0: x^2 + y^2 = 25 \\\\
   & C_1: {(x + 4)}^2 + {(y - 4)}^2 = 1 \\\\ & C_2: {(x - 12)}^2 + {(y - 4)}^2 = 65 \end{align}$$
 
-The circles $C_0$, $C_1$ and $C_2$ are drawn in the picture below.
+Кола $C_0$, $C_1$ та $C_2$ намальовані на рисунку нижче.
 
-<img class="img-responsive center-block" alt="C_0, C_1 and C_2 circles" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="кола C_0, C_1 та C_2" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px;" />
 
-$C_0$ and $C_1$ form a lenticular hole, as well as $C_0$ and $C_2$.
+Лінзоподібний отвір утворюють як $C_0$ та $C_1$, так і $C_0$ та $C_2$.
 
-We call an ordered pair of positive real numbers ($r_1$, $r_2$) a lenticular pair if there exist two circles with radii $r_1$ and $r_2$ that form a lenticular hole. We can verify that ($1$, $5$) and ($5$, $\sqrt{65}$) are the lenticular pairs of the example above.
+Впорядковану пару додатних дійсних чисел ($r_1$, $r_2$) називають лінзоподібною парою, якщо існують два кола з радіусами $r_1$ та $r_2$, які утворюють лінзоподібний отвір. Можна довести, що ($1$, $5$) та ($5$, $\sqrt{65}$) є лінзоподібними парами в прикладі вище.
 
-Let $L(N)$ be the number of distinct lenticular pairs ($r_1$, $r_2$) for which $0 &lt; r_1 ≤ r_2 ≤ N$. We can verify that $L(10) = 30$ and $L(100) = 3442$.
+Нехай $L(N)$ буде кількістю різних лінзоподібних пар ($r_1$, $r_2$), за яких $0 &lt; r_1 ≤ r_2 ≤ N$. Можна довести, що $L(10) = 30$ та $L(100) = 3442$.
 
 Знайдіть $L(100\\,000)$.
 

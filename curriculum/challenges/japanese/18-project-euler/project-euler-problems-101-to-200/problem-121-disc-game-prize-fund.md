@@ -1,6 +1,6 @@
 ---
 id: 5900f3e51000cf542c50fef8
-title: 'Problem 121: Disc game prize fund'
+title: '問題 121: 円盤ゲームの賞金額'
 challengeType: 1
 forumTopicId: 301748
 dashedName: problem-121-disc-game-prize-fund
@@ -8,17 +8,17 @@ dashedName: problem-121-disc-game-prize-fund
 
 # --description--
 
-A bag contains one red disc and one blue disc. In a game of chance a player takes a disc at random and its colour is noted. After each turn the disc is returned to the bag, an extra red disc is added, and another disc is taken at random.
+袋の中に、赤い円盤 1 枚と青い円盤 1 枚が入っています。 運で勝負が決まるゲームにおいて、プレイヤーは無作為に円盤を取り、その色が記録されます。 ターンごとに円盤が袋に戻され、赤い円盤が 1 枚追加され、またプレイヤーが無作為に円盤を 1 枚取ります。
 
-The player pays £1 to play and wins if they have taken more blue discs than red discs at the end of the game.
+プレイヤーは 1 ポンド払ってゲームに参加し、ゲーム終了時に赤い円盤よりも青い円盤を多く取っていたら勝ちです。
 
-If the game is played for four turns, the probability of a player winning is exactly 11/120, and so the maximum prize fund the banker should allocate for winning in this game would be £10 before they would expect to incur a loss. Note that any payout will be a whole number of pounds and also includes the original £1 paid to play the game, so in the example given the player actually wins £9.
+このゲームが 4 ターン行われた場合、プレイヤーの勝率はちょうど 11/120 なので、胴元が確率的に損失を出さないようにこのゲームの勝利に割り当てるべき賞金額は、最大 10 ポンドです。 なお、支払いは 1 ポンド単位であり、ゲームをプレイするために支払った最初の 1 ポンドも含まれています。したがってこの例では、プレイヤーが実際に得る利益は 9 ポンドになります。
 
-Find the maximum prize fund that should be allocated to a single game in which fifteen turns are played.
+15 ターンが行われる 1 回のゲームに割り当てるべき最大賞金額を求めなさい。
 
 # --hints--
 
-`discGamePrize()` should return `2269`.
+`discGamePrize()` は `2269` を返す必要があります。
 
 ```js
 assert.strictEqual(discGamePrize(), 2269);

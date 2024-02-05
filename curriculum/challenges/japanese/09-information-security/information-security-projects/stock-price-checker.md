@@ -33,19 +33,19 @@ Replit を使用する場合は、下記の手順でプロジェクトをセッ�
 3.  `server.js` にセキュリティ機能を追加します。
 4.  `tests/2_functional-tests.js` にすべての機能テストを作成します。
 
-**Note** Privacy Considerations: Due to the requirement that only 1 like per IP should be accepted, you will have to save IP addresses. It is important to remain compliant with data privacy laws such as the General Data Protection Regulation. One option is to get permission to save the user's data, but it is much simpler to anonymize it. For this challenge, remember to anonymize IP addresses before saving them to the database. If you need ideas on how to do this, you may choose to hash the data, truncate it, or set part of the IP address to 0.
+**プライバシーに対する注意事項**: 1 つの IP に対して 1 つの「いいね！」しか受け付けないという条件があるため、IP アドレスを保存する必要があります。 GDPR (一般データ保護規則) などのデータプライバシー関連の法令を遵守することが重要です。 ユーザーのデータを保存するための権限を取得するという方法もありますが、データを匿名化する方がはるかに簡単です。 このチャレンジでは、データベースに保存する前に必ず IP アドレスを匿名化してください。 その方法として、データをハッシュ化する、切り詰める、IP アドレスの一部を 0 にする、などが考えられます。
 
-Write the following tests in `tests/2_functional-tests.js`:
+次のテストを `tests/2_functional-tests.js` に記述してください。
 
--   Viewing one stock: GET request to `/api/stock-prices/`
--   Viewing one stock and liking it: GET request to `/api/stock-prices/`
--   Viewing the same stock and liking it again: GET request to `/api/stock-prices/`
--   Viewing two stocks: GET request to `/api/stock-prices/`
--   Viewing two stocks and liking them: GET request to `/api/stock-prices/`
+-   1 つの株式を表示: `/api/stock-prices/` への GET リクエスト
+-   1 つの株式を表示して「いいね！」をクリック: `/api/stock-prices/` への GET リクエスト
+-   もう一度同じ株式を表示して「いいね！」をクリック: `/api/stock-prices/` への GET リクエスト
+-   2 つの株式を表示: `/api/stock-prices/` への GET リクエスト
+-   2 つの株式を表示して「いいね！」をクリック: `/api/stock-prices/` への GET リクエスト
 
 # --hints--
 
-You can provide your own project, not the example URL.
+サンプルの URL ではなく、自分で作成したプロジェクトを提出してください。
 
 ```js
 (getUserInput) => {
@@ -55,7 +55,7 @@ You can provide your own project, not the example URL.
 };
 ```
 
-You should set the content security policies to only allow loading of scripts and CSS from your server.
+コンテンツセキュリティポリシーを設定して、自分のサーバーからのみスクリプトや CSS の読み込みを許可するようにしてください。
 
 ```js
 async (getUserInput) => {
@@ -70,7 +70,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a `GET` request to `/api/stock-prices`, passing a NASDAQ stock symbol to a `stock` query parameter. The returned object will contain a property named `stockData`.
+`GET` リクエストを `/api/stock-prices` に送信し、NASDAQ 株式表示記号を `stock` クエリパラメーターに渡すことができます。 返されるオブジェクトには、`stockData` というプロパティが含まれます。
 
 ```js
 async (getUserInput) => {
@@ -82,7 +82,7 @@ async (getUserInput) => {
 };
 ```
 
-The `stockData` property includes the `stock` symbol as a string, the `price` as a number, and `likes` as a number.
+`stockData` プロパティには、文字列としての `stock` 記号、数値としての `price`、数値としての `likes` が含まれています。
 
 ```js
 async (getUserInput) => {
@@ -97,13 +97,13 @@ async (getUserInput) => {
 };
 ```
 
-You can also pass along a `like` field as `true` (boolean) to have your like added to the stock(s). Only 1 like per IP should be accepted.
+また、`like` フィールドに `true` (ブール値) を渡すと、その株式の「いいね！」が増えます。 「いいね！」は、1 つの IP につき 1 回のみ受け付ける必要があります。
 
 ```js
 
 ```
 
-If you pass along 2 stocks, the returned value will be an array with information about both stocks. Instead of `likes`, it will display `rel_likes` (the difference between the likes on both stocks) for both `stockData` objects.
+2 つの株式を渡した場合、返される値は 2 つの株式に関する情報を持つ配列となります。 その場合 `likes` の代わりに、両方の `stockData` オブジェクトの `rel_likes` (両株式の「いいね！」の差) を表示します。
 
 ```js
 async (getUserInput) => {
@@ -118,7 +118,7 @@ async (getUserInput) => {
 };
 ```
 
-All 5 functional tests are complete and passing.
+5 件の機能テストがすべて記述され、成功する状態になっています。
 
 ```js
 async (getUserInput) => {

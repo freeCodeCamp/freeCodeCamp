@@ -1,6 +1,6 @@
 ---
 id: 5eb3e4af7d0e7b760b46cedc
-title: Set consolidation
+title: セットの結合
 challengeType: 1
 forumTopicId: 385319
 dashedName: set-consolidation
@@ -12,54 +12,54 @@ Given two sets of items then if any item is common to any set then the result of
 
 <ul>
   <li>The two input sets if no common item exists between the two input sets of items.</li>
-  <li>The single set that is the union of the two input sets if they share a common item.</li>
+  <li>共通項目がある場合は、2つの入力セットを結合した単一のセット。</li>
 </ul>
 
-Given N sets of items where N > 2 then the result is the same as repeatedly replacing all combinations of two sets by their consolidation until no further consolidation between set pairs is possible. If N &lt; 2 then consolidation has no strict meaning and the input can be returned.
+N (N > 2) 個の項目セットが与えられている場合は、セット間の結合が不可能になるまで、2 つのセットのすべての組み合わせの結合を繰り返すのと同じ結果になります。 N &lt; 2 の場合は、結合には厳密に意味がなく、その入力を返すことになります。
 
-Here are some examples:
+いくつかの例を次に示します。
 
-**Example 1:**
+**例1:**
 
-Given the two sets `{A,B}` and `{C,D}` then there is no common element between the sets and the result is the same as the input.
+2つのセット `{A,B}` と `{C,D}` が与えられると、セット間に共通の要素はなく、結果は入力と同じです。
 
-**Example 2:**
+**例2:**
 
-Given the two sets `{A,B}` and `{B,D}` then there is a common element `B` between the sets and the result is the single set `{B,D,A}`. (Note that order of items in a set is immaterial: `{A,B,D}` is the same as `{B,D,A}` and `{D,A,B}`, etc).
+2つのセット `{A,B}` と `{B,D}` が与えられると、セット間に共通の要素 `B`があり、結果は単一のセット `{B,D,A}`になります。 (セット内の項目の順序は重要ではないことに注意してください。たとえば、`{A,B,D}` は `{B,D,A}` や `{D,A,B}` と同じです)。
 
-**Example 3:**
+**例3:**
 
-Given the three sets `{A,B}` and `{C,D}` and `{D,B}` then there is no common element between the sets `{A,B}` and `{C,D}` but the sets `{A,B}` and `{D,B}` do share a common element that consolidates to produce the result `{B,D,A}`. On examining this result with the remaining set, `{C,D}`, they share a common element and so consolidate to the final output of the single set `{A,B,C,D}`
+`{A,B}`、`{C,D}`、`{D,B}`の3つのセットが与えられている場合、セット `{A,B}` と `{C,D}` の間に共通の要素はありません。しかし、セット`{A,B}` と `{D,B}` には共通の要素があり、結合の結果 `{B,D,A}` を生成します。 この結果を残りのセット `{C,D}` と比べると、共通の要素があるため結合して、最終的に単一のセット `{A,B,C,D}` が出力されます。
 
-**Example 4:**
+**例4:**
 
-The consolidation of the five sets:
+5つのセットの結合の例は以下のとおりです。
 
-`{H,I,K}`, `{A,B}`, `{C,D}`, `{D,B}`, and `{F,G,H}`
+`{H,I,K}`、`{A,B}`、`{C,D}`、`{D,B}`、`{F,G,H}` の場合
 
-Is the two sets:
+以下の 2 つのセットになります。
 
-`{A, C, B, D}`, and `{G, F, I, H, K}`
+`{A, C, B, D}` と `{G, F, I, H, K}`
 
 # --instructions--
 
-Write a function that takes an array of strings as a parameter. Each string is represents a set with the characters representing the set elements. The function should return a 2D array containing the consolidated sets. Note: Each set should be sorted.
+パラメータとして文字列の配列を取る関数を記述してください。 各文字列は、セットの要素である文字列のセットを表します。 この関数は、結合セットを含む 2 次元配列を返します。 注: 各セットはソートする必要があります。
 
 # --hints--
 
-`setConsolidation` should be a function.
+`setConsolidation` は関数とします。
 
 ```js
 assert(typeof setConsolidation === 'function');
 ```
 
-`setConsolidation(["AB", "CD"])` should return a array.
+`setConsolidation(["AB", "CD"])` は配列を返す必要があります。
 
 ```js
 assert(Array.isArray(setConsolidation(['AB', 'CD'])));
 ```
 
-`setConsolidation(["AB", "CD"])` should return `[["C", "D"], ["A", "B"]]`.
+`setConsolidation(["AB", "CD"])` は `[["C", "D"], ["A", "B"]]` を返す必要があります。
 
 ```js
 assert.deepEqual(setConsolidation(['AB', 'CD']), [
@@ -68,19 +68,19 @@ assert.deepEqual(setConsolidation(['AB', 'CD']), [
 ]);
 ```
 
-`setConsolidation(["AB", "BD"])` should return `[["A", "B", "D"]]`.
+`setConsolidation(["AB", "BD"])` は `[["A", "B", "D"]]` を返す必要があります。
 
 ```js
 assert.deepEqual(setConsolidation(['AB', 'BD']), [['A', 'B', 'D']]);
 ```
 
-`setConsolidation(["AB", "CD", "DB"])` should return `[["A", "B", "C", "D"]]`.
+`setConsolidation(["AB", "CD", "DB"])` は `[["A", "B", "C", "D"]]` を返す必要があります。
 
 ```js
 assert.deepEqual(setConsolidation(['AB', 'CD', 'DB']), [['A', 'B', 'C', 'D']]);
 ```
 
-`setConsolidation(["HIK", "AB", "CD", "DB", "FGH"])` should return `[["F", "G", "H", "I", "K"], ["A", "B", "C", "D"]]`.
+`setConsolidation(["HIK", "AB", "CD", "DB", "FGH"])` は `[["F", "G", "H", "I", "K"], ["A", "B", "C", "D"]]` を返す必要があります。
 
 ```js
 assert.deepEqual(setConsolidation(['HIK', 'AB', 'CD', 'DB', 'FGH']), [

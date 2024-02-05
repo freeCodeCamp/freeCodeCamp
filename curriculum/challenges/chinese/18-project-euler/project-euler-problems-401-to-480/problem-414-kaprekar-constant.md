@@ -1,6 +1,6 @@
 ---
 id: 5900f50b1000cf542c51001d
-title: 'Problem 414: Kaprekar constant'
+title: '问题414：标题常量'
 challengeType: 1
 forumTopicId: 302083
 dashedName: problem-414-kaprekar-constant
@@ -10,9 +10,9 @@ dashedName: problem-414-kaprekar-constant
 
 6174 is a remarkable number; if we sort its digits in increasing order and subtract that number from the number you get when you sort the digits in decreasing order, we get $7641 - 1467 = 6174$.
 
-Even more remarkable is that if we start from any 4 digit number and repeat this process of sorting and subtracting, we'll eventually end up with 6174 or immediately with 0 if all digits are equal.
+更值得注意的是，如果我们从任何4位数字开始并重复这个排序和减法过程，我们最终将以6174结束或者如果所有数字相等则立即结束0。
 
-This also works with numbers that have less than 4 digits if we pad the number with leading zeroes until we have 4 digits.
+如果我们用前导零填充数字直到我们有4位数，这也适用于少于4位的数字。
 
 E.g. let's start with the number 0837:
 
@@ -34,7 +34,7 @@ Note that we can define $sb(i)$ for all integers $i &lt; b^5$. If $i$ written in
 
 Define $S(b)$ as the sum of $sb(i)$ for $0 &lt; i &lt; b^5$. E.g. $S(15) = 5\\,274\\,369$ $S(111) = 400\\,668\\,930\\,299$
 
-Find the sum of $S(6k + 3)$ for $2 ≤ k ≤ 300$. Give the last 18 digits as your answer.
+Find the sum of $S(6k + 3)$ for $2 ≤ k ≤ 300$. 给出最后18位数字作为答案。
 
 # --hints--
 

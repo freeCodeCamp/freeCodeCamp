@@ -1,6 +1,6 @@
 ---
 id: 5900f4da1000cf542c50ffed
-title: 'Problem 366: Stone Game III'
+title: '问题366：石头游戏III'
 challengeType: 1
 forumTopicId: 302027
 dashedName: problem-366-stone-game-iii
@@ -12,13 +12,13 @@ Two players, Anton and Bernhard, are playing the following game.
 
 There is one pile of $n$ stones.
 
-The first player may remove any positive number of stones, but not the whole pile.
+设M（n）是第一个玩家在第一个回合的胜利位置可以获得的最大结石数，M（n）= 0表示任何其他位置。
 
 Thereafter, each player may remove at most twice the number of stones his opponent took on the previous move.
 
-The player who removes the last stone wins.
+移除最后一块石头的玩家获胜。
 
-E.g. $n = 5$
+例如： $n = 5$
 
 If the first player takes anything more than one stone the next player will be able to take all remaining stones.
 

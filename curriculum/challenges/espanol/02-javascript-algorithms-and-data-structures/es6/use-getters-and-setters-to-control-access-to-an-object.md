@@ -46,7 +46,7 @@ Ten en cuenta la sintaxis usada para invocar el getter y el setter. Ni siquiera 
 
 Utiliza la palabra clave `class` para crear una clase `Thermostat`. El `constructor` acepta una temperatura Fahrenheit.
 
-In the class, create a `getter` to obtain the temperature in Celsius and a `setter` that accepts a temperature in Celsius.
+En la clase, crea un `getter` para obtener la temperatura en Celsius y un `setter` que acepte una temperatura en Celsius.
 
 Recuerda que `C = 5/9 * (F - 32)` y `F = C * 9.0 / 5 + 32` donde `F` es el valor de la temperatura en Fahrenheit y `C` es el valor de la misma temperatura en Celsius.
 
@@ -65,7 +65,7 @@ assert.isFunction(Thermostat);
 assert.isFunction(Thermostat?.constructor);
 ```
 
-The `class` keyword should be used.
+Se debe usar la palabra clave `class`.
 
 ```js
 assert.match(code, /class/);

@@ -1,5 +1,6 @@
 ---
-id: 637f4e2f72c65bc8e73dfe22
+id: 637f4e3672c65bc8e73dfe23
+videoId: V8UAEoOvqFg
 title: Questão F sobre Fundamentos de HTML
 challengeType: 15
 dashedName: html-foundations-question-f
@@ -7,59 +8,41 @@ dashedName: html-foundations-question-f
 
 # --description--
 
-O elemento `<head>` é onde você coloca as metainformações importantes sobre suas páginas da web, além de coisas necessárias para que suas páginas da web sejam renderizadas corretamente no navegador. Dentro de `<head>`, você não deve usar elementos que exibam conteúdo na página.
+O elemento final necessário para completar o boilerplate do HTML é o elemento `<body>`. Aqui vai todo o conteúdo que será exibido aos usuários - texto, imagens, listas, links e assim por diante.
 
-## O elemento meta charset
-Você deve sempre ter a tag `meta` para a codificação do conjunto de caracteres, ou `charset`, da página no elemento `head`: `<meta charset="utf-8">`.
+Para completar o boilerplate, adicione um elemento `body` ao arquivo `index.html`. O elemento `body` também deve ir dentro do elemento `html` e estará sempre abaixo do elemento `head`, assim:
 
-Definir a codificação é muito importante, pois garante que a página da web exibirá símbolos especiais e caracteres de diferentes idiomas corretamente no navegador.
+# --atividade--
 
-## Elemento title
-Outro elemento que você sempre deve incluir na head de um documento HTML é o elemento `title`:
+Assista e acompanhe o vídeo de Kevin Powell, Build your first web page. O vídeo está acima.
 
-```html
-<title>My First Webpage</title>
-```
+---
 
-O elemento `title` é usado para dar às páginas da web um título legível, o qual é exibido na guia do navegador da sua página.
+Desenvolva sua memória muscular excluindo o conteúdo do arquivo `index.html` e tente escrever todo o boilerplate novamente de memória. Não se preocupe se precisar dar uma olhada no conteúdo da aula nas primeiras vezes caso não saiba o que fazer. Apenas siga fazendo isso até que você possa fazer o processo algumas vezes de memória.
 
-Se você não incluir um elemento `title`, o título da página da web seria o padrão para o nome do arquivo. No seu caso, seria `index.html`, o que não é muito significativo para usuários. Isto tornaria muito difícil encontrar sua página da web se o usuário tivesse muitas abas do navegador abertas.
+---
 
-Há muito mais elementos que podem ser inseridos em `head` em um documento HTML. No entanto, por agora, é crucial saber apenas os dois elementos que vemos aqui. Você verá mais elementos que serão colocados em `head` durante a continuação do currículo.
-
-De volta ao arquivo `index.html`, vamos adicionar um elemento `head` e, dentro dele, um elemento `meta` `charset` e um elemento `title`. O elemento head vai dentro do elemento HTML e deve ser sempre o primeiro elemento após a tag de abertura de `<html>`:
-
-
-```html
-<!DOCTYPE html>
-
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>My First Webpage</title>
-  </head>
-</html>
-```
+Teste seu boilerplate através deste [validador de HTML](https://www.freeformatter.com/html-validator.html). Os validadores garantem que a marcação está correta e são uma excelente ferramenta de aprendizado, pois fornecem feedback sobre erros de sintaxe que você pode estar cometendo de vez em quando sem saber, como deixar de colocar tags de fechamento ou adicionar espaços a mais em seu HTML.
 
 # --question--
 
 ## --text--
 
-Qual é a finalidade do elemento `head`?
+Qual é a finalidade do elemento `body`?
 
 ## --answers--
 
-O elemento `head` é usado para exibir todos os elementos que são exibidos na página da web.
+É aqui que todas as informações importantes sobre a página da web são exibidas, como as tags `title` e `meta`.
 
 ---
 
-O elemento `head` é usado para exibir informações importantes sobre sua página da web e é usado para renderizar as páginas da web corretamente com elementos `meta`.
+É aqui que você informa ao navegador como renderizar a página da web corretamente.
 
 ---
 
-O elemento `head` é usado para exibir o conteúdo do cabeçalho na parte superior da página da web.
+É aqui que vai todo o conteúdo que será exibido na página, como imagens, textos e links.
 
 
 ## --video-solution--
 
-2
+3

@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ed5
-title: Knight's tour
+title: O passeio do cavalo
 challengeType: 1
 forumTopicId: 302297
 dashedName: knights-tour
@@ -12,47 +12,47 @@ Knight's Tour Problem: You have an empty `width` \* `height` chessboard, but for
 
 # --instructions--
 
-Write a function that takes `width` and `height` as parameters and returns the number of initial positions from where it is possible to achieve the task stated above.
+Escreva uma função que receba `width` e `height` como parâmetros e retorne o número de posições iniciais de onde é possível realizar a tarefa indicada acima.
 
 # --hints--
 
-`knightTour` should be a function.
+`knightTour` deve ser uma função.
 
 ```js
 assert(typeof knightTour == 'function');
 ```
 
-`knightTour(6, 6)` should return a number.
+`knightTour(6, 6)` deve retornar um número.
 
 ```js
 assert(typeof knightTour(6, 6) == 'number');
 ```
 
-`knightTour(6, 6)` should return `36`.
+`knightTour(6, 6)` deve retornar `36`.
 
 ```js
 assert.equal(knightTour(6, 6), 36);
 ```
 
-`knightTour(5, 6)` should return `30`.
+`knightTour(5, 6)` deve retornar `30`.
 
 ```js
 assert.equal(knightTour(5, 6), 30);
 ```
 
-`knightTour(4, 6)` should return `12`.
+`knightTour(4, 6)` deve retornar `12`.
 
 ```js
 assert.equal(knightTour(4, 6), 12);
 ```
 
-`knightTour(7, 3)` should return `10`.
+`knightTour(7, 3)` deve retornar `10`.
 
 ```js
 assert.equal(knightTour(7, 3), 10);
 ```
 
-`knightTour(8, 6)` should return `48`.
+`knightTour(8, 6)` deve retornar `48`.
 
 ```js
 assert.equal(knightTour(8, 6), 48);

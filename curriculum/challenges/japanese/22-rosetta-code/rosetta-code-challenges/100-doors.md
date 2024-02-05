@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339acb
-title: 100 doors
+title: 100個のドア
 challengeType: 1
 forumTopicId: 302217
 dashedName: 100-doors
@@ -12,23 +12,23 @@ There are 100 doors in a row that are all initially closed. You make 100 passes 
 
 # --instructions--
 
-Implement a function to determine the state of the doors after the last pass. Return the final result in an array, with only the door number included in the array if it is open.
+3回の訪問が終了した時点でのドアの状態を示す関数を作成します。 配列形式で最終的な結果を返します。開いている状態のドアの番号を配列形式で返します。
 
 # --hints--
 
-`getFinalOpenedDoors` should be a function.
+`getFinalOpenedDoors` という関数です。
 
 ```js
 assert(typeof getFinalOpenedDoors === 'function');
 ```
 
-`getFinalOpenedDoors` should return an array.
+`getFinalOpenedDoors` は配列を返します。
 
 ```js
 assert(Array.isArray(getFinalOpenedDoors(100)));
 ```
 
-`getFinalOpenedDoors` should produce the correct result.
+`getFinalOpenedDoors` は正確な結果を返します。
 
 ```js
 assert.deepEqual(getFinalOpenedDoors(100), solution);

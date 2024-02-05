@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8036
-title: Strip control codes and extended characters from a string
+title: 文字列から制御コードと拡張文字を削除する
 challengeType: 1
 forumTopicId: 302327
 dashedName: strip-control-codes-and-extended-characters-from-a-string
@@ -12,43 +12,43 @@ The task is to strip control codes and extended characters from a string. The so
 
 # --hints--
 
-`strip` should be a function.
+`strip` は関数とします。
 
 ```js
 assert(typeof strip == 'function');
 ```
 
-`strip("abc")` should return a string.
+`strip("abc")` は文字列を返す必要があります。
 
 ```js
 assert(typeof strip('abc') == 'string');
 ```
 
-`strip("\ba\x00b\n\rc\fd\xc3")` should return `"abcd"`.
+`strip("\ba\x00b\n\rc\fd\xc3")` は `"abcd"` を返す必要があります。
 
 ```js
 assert.equal(strip('\ba\x00b\n\rc\fd\xc3'), 'abcd');
 ```
 
-`strip("\u0000\n abc\u00E9def\u007F")` should return `" abcdef"`.
+`strip("\u0000\n abc\u00E9def\u007F")` は `" abcdef"` を返す必要があります。
 
 ```js
 assert.equal(strip('\u0000\n abc\u00E9def\u007F'), ' abcdef');
 ```
 
-`strip("a\n\tb\u2102d\u2147f")` should return `"abdf"`.
+`strip("a\n\tb\u2102d\u2147f")` は `"abdf"` を返す必要があります。
 
 ```js
 assert.equal(strip('a\n\tb\u2102d\u2147f'), 'abdf');
 ```
 
-`strip("Français.")` should return `"Franais."`.
+`strip("Français.")` は `"Franais."` を返す必要があります。
 
 ```js
 assert.equal(strip('Français.'), 'Franais.');
 ```
 
-`strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ")` should return `"123abcDEF+-*/"`.
+`strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ")` は `"123abcDEF+-*/"` を返す必要があります。
 
 ```js
 assert.equal(strip('123\tabc\u0007DEF\u007F+-*/€æŧðłþ'), '123abcDEF+-*/');

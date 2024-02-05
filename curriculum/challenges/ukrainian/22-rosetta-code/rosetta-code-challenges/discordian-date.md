@@ -1,6 +1,6 @@
 ---
 id: 59f4eafba0343628bb682785
-title: Discordian date
+title: Дискордіанський календар
 challengeType: 1
 forumTopicId: 302250
 dashedName: discordian-date
@@ -9,33 +9,33 @@ dashedName: discordian-date
 # --description--
 The Gregorian calendar is a solar calendar with 12 months of 28-31 days each. A week consists of seven days, and there are 52 weeks and 1 day per year. The year consists of 365 days with a leap day added to February every leap year. A leap year occurs every four years, except for the first three centurial years of every 400 years.
 
-The <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" rel="noopener noreferrer nofollow">Discordian calendar</a> is aligned with the Gregorian calendar, and begins on January 1. The week consists of five days, and there are 73 weeks per year. The year also consists of 365 days, with an extra day inserted between Chaos 59 and Chaos 60 every leap year.
+<a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" rel="noopener noreferrer nofollow">Дискордіанський календар</a> узгоджується з Григоріанським календарем, та починається 1 січня. Тиждень складається з п’яти днів і у році 73 тижні. Рік також складається з 365 днів, додатковий день вставляється між Хаосом 59 і Хаосом 60 кожного високосного року.
 
-The months, weekdays, Apostle events, and Holidays in the Discordian calendar are given by:
+Місяці, дні тижня, дні Апостолів та Свята в Дискордіанському календарі представлено:
 
-Seasons: `'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath'`.
-  
-Weekdays: `'Sweetmorn', 'Boomtime', 'Pungenday', 'Prickle-Prickle', 'Setting Orange'`.
+Пори року: `'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath'`.
 
-Apostle: `'Mungday', 'Mojoday', 'Syaday', 'Zaraday', 'Maladay'`.
+Дні тижня: `'Sweetmorn', 'Boomtime', 'Pungenday', 'Prickle-Prickle', 'Setting Orange'`.
 
-Holidays: `'Chaoflux', 'Discoflux', 'Confuflux', 'Bureflux', 'Afflux'`.
+Апостол: `'Mungday', 'Mojoday', 'Syaday', 'Zaraday', 'Maladay'`.
+
+Свята: `'Chaoflux', 'Discoflux', 'Confuflux', 'Bureflux', 'Afflux'`.
 
 # --instructions--
 
-Convert a given date from the Gregorian calendar to the Discordian calendar.
+Перетворіть певну дату з григоріанського календаря на дискордіанський.
 
-Note that the day Chaos 1, 3188 YOLD in the Discordian calendar is the day January 1, 2022 in the Gregorian calendar.
+Зауважте, що день 1 Хаосу 3188 РДР за Дискордіанським календарем є днем 1 Січня 2022 року за Григоріанським календарем.
 
 # --hints--
 
-`discordianDate` should be a function.
+`discordianDate` має бути функцією.
 
 ```js
 assert(typeof discordianDate === 'function');
 ```
 
-`discordianDate(new Date(2010, 6, 22))` should return `"Pungenday, the 57th day of Confusion in the YOLD 3176"`.
+`discordianDate(new Date(2010, 6, 22))` повинен повертати `"Pungenday, the 57th day of Confusion in the YOLD 3176"`.
 
 ```js
 assert(
@@ -44,7 +44,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 1, 28))` should return `"Prickle-Prickle, the 59th day of Chaos in the YOLD 3178"`.
+`discordianDate(new Date(2012, 1, 28))` повинен повертати `"Prickle-Prickle, the 59th day of Chaos in the YOLD 3178"`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 2, 1))` should return `"Setting Orange, the 60th day of Chaos in the YOLD 3178"`.
+`discordianDate(new Date(2012, 2, 1))` повинен повертати `"Setting Orange, the 60th day of Chaos in the YOLD 3178"`.
 
 ```js
 assert(
@@ -89,7 +89,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2015, 9, 19))` should return `"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"`.
+`discordianDate(new Date(2015, 9, 19))` повинен повертати `"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"`.
 
 ```js
 assert(

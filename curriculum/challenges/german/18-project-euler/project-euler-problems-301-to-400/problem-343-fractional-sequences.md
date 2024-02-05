@@ -1,6 +1,6 @@
 ---
 id: 5900f4c41000cf542c50ffd6
-title: 'Problem 343: Fractional Sequences'
+title: 'Problem 343: Bruchteilige Sequenzen'
 challengeType: 1
 forumTopicId: 302002
 dashedName: problem-343-fractional-sequences
@@ -11,7 +11,7 @@ dashedName: problem-343-fractional-sequences
 For any positive integer $k$, a finite sequence $a_i$ of fractions $\frac{x_i}{y_i}$ is defined by:
 
 - $a_1 = \displaystyle\frac{1}{k}$ and
-- $a_i = \displaystyle\frac{(x_{i - 1} + 1)}{(y_{i - 1} - 1)}$ reduced to lowest terms for $i > 1$.
+- $a_i = \displaystyle\frac{(x_{i - 1} + 1)}{(y_{i - 1} - 1)}$ reduziert auf kleinste Terme für $i > 1$.
 
 When $a_i$ reaches some integer $n$, the sequence stops. (That is, when $y_i = 1$.)
 

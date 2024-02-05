@@ -29,7 +29,7 @@ test('should render', () => {
 
   const button = screen.getByText(/submit/i);
   expect(button).toHaveAttribute('type', 'submit');
-  expect(button).toHaveAttribute('aria-disabled', 'true');
+  expect(button).toBeDisabled();
 });
 
 test('should render with default values', () => {

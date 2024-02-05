@@ -1,6 +1,6 @@
 ---
 id: 5900f44e1000cf542c50ff5f
-title: 'Problem 224: Almost right-angled triangles II'
+title: '問題 224：幾乎直角三角形 II'
 challengeType: 1
 forumTopicId: 301867
 dashedName: problem-224-almost-right-angled-triangles-ii

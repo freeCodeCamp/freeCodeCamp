@@ -1,6 +1,6 @@
 ---
 id: 5900f3ae1000cf542c50fec1
-title: 'Problem 66: Diophantine equation'
+title: '問題 66: ディオファントス方程式'
 challengeType: 1
 forumTopicId: 302178
 dashedName: problem-66-diophantine-equation
@@ -8,15 +8,15 @@ dashedName: problem-66-diophantine-equation
 
 # --description--
 
-Consider quadratic Diophantine equations of the form:
+次のような二次のディオファントス方程式を考えます。
 
 <div style='text-align: center;'>x<sup>2</sup> – Dy<sup>2</sup> = 1</div>
 
-For example, when D=13, the minimal solution in x is 649<sup>2</sup> – 13×180<sup>2</sup> = 1.
+例えば、D=13 のとき、x の最小解は 649<sup>2</sup> – 13×180<sup>2</sup> = 1 です。
 
-It can be assumed that there are no solutions in positive integers when D is square.
+D が平方数のとき、正整数の中に解は存在しないと想定できます。
 
-By finding minimal solutions in x for D = {2, 3, 5, 6, 7}, we obtain the following:
+D = {2, 3, 5, 6, 7} に対する x の最小解を求めると、以下が得られます。
 
 <div style='margin-left: 2em;'>
   3<sup>2</sup> – 2×2<sup>2</sup> = 1<br>
@@ -26,43 +26,43 @@ By finding minimal solutions in x for D = {2, 3, 5, 6, 7}, we obtain the followi
   8<sup>2</sup> – 7×3<sup>2</sup> = 1<br>
 </div>
 
-Hence, by considering minimal solutions in `x` for D ≤ 7, the largest `x` is obtained when D=5.
+したがって、D ≤ 7 に対する `x` の最小解を考えると、D=5 のときに `x` が最大になります。
 
-Find the value of D ≤ `n` in minimal solutions of `x` for which the largest value of `x` is obtained.
+`x` が最大になるような 、`x` の最小解における値 D (≤ `n`) を求めなさい。
 
 # --hints--
 
-`diophantineEquation(7)` should return a number.
+`diophantineEquation(7)` は数値を返す必要があります。
 
 ```js
 assert(typeof diophantineEquation(7) === 'number');
 ```
 
-`diophantineEquation(7)` should return `5`.
+`diophantineEquation(7)` は `5` を返す必要があります。
 
 ```js
 assert.strictEqual(diophantineEquation(7), 5);
 ```
 
-`diophantineEquation(100)` should return `61`.
+`diophantineEquation(100)` は `61` を返す必要があります。
 
 ```js
 assert.strictEqual(diophantineEquation(100), 61);
 ```
 
-`diophantineEquation(409)` should return `409`.
+`diophantineEquation(409)` は `409` を返す必要があります。
 
 ```js
 assert.strictEqual(diophantineEquation(409), 409);
 ```
 
-`diophantineEquation(500)` should return `421`.
+`diophantineEquation(500)` は `421` を返す必要があります。
 
 ```js
 assert.strictEqual(diophantineEquation(500), 421);
 ```
 
-`diophantineEquation(1000)` should return `661`.
+`diophantineEquation(1000)` は `661` を返す必要があります。
 
 ```js
 assert.strictEqual(diophantineEquation(1000), 661);

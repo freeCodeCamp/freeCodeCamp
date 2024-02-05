@@ -30,12 +30,14 @@ In this project, you'll build an app that will search for Pokémon by name or ID
 1. When the `#search-input` element contains the value `Red` and the `#search-button` element is clicked, an alert should appear with the text `Pokémon not found`
 1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, and `#special-defense` elements should be `PIKACHU`, `#25` or `25`, `Weight: 60` or `60`, `Height: 4` or `4`, `35`, `55`, `40`, `50`, `50`, and `90`, respectively
 1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, you should add an `img` element with the `id` of `sprite` and the `src` set to the Pokémon's `front_default` sprite to the page
-1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `#types` element should contain a single inner element with the value `ELECTRIC`
+1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `#types` element should contain a single inner element with the value `ELECTRIC`. The `#types` element content should be cleared between searches
 1. When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, and `#special-defense` elements should be `GENGAR`, `#94` or `94`, `Weight: 405` or `405`, `Height: 15` or `15`, `60`, `65`, `60`, `130`, `75`, and `110`, respectively
 1. When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, you should add an `img` element with the `id` of `sprite` and the `src` set to the Pokémon's `front_default` sprite to the page
-1. When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `#types` element should contain a two inner element with the text values `GHOST` and `POISON`, respectively
+1. When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `#types` element should contain two inner elements with the text values `GHOST` and `POISON`, respectively. The `#types` element content should be cleared between searches
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+Fulfill the user stories and pass all the tests below to complete this project. あなた独自のアレンジを加えましょう。 Happy Coding!
+
+**Note:** When running the tests there will be a slight delay. Please wait a few seconds to allow the tests to finish. Do not refresh the page before they are done.
 
 # --hints--
 
@@ -146,7 +148,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/red'); // Fetch from proxy to simulate network delay
 
     if (!res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow the alert to trigger
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow the alert to trigger
 
       assert.include(['pokémon not found', 'pokemon not found'], alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase());
     }
@@ -169,7 +171,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow UI to update
 
       const pokemonName = document.getElementById('pokemon-name');
       const pokemonID = document.getElementById('pokemon-id');
@@ -212,7 +214,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow UI to update
 
       const sprite = document.getElementById('sprite');
       assert.isTrue(sprite.src.endsWith('sprites/pokemon/25.png'));
@@ -223,22 +225,22 @@ async () => {
 };
 ```
 
-When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `#types` element should contain a single inner element with the value `ELECTRIC`.
+When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `#types` element should contain a single inner element with the value `ELECTRIC`. Make sure the `#type` element content is cleared between searches.
 
 ```js
 async () => {
   try {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
-    const typesEl = document.getElementById('types');
     searchInput.value = 'Pikachu';
-    typesEl.innerHTML = ''; // Clear types element before test
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow UI to update
+
+      const typesEl = document.getElementById('types');
 
       assert.lengthOf(typesEl.children, 1);
       assert.strictEqual(typesEl?.children[0]?.innerText.trim().toLowerCase(), 'electric');
@@ -262,7 +264,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow UI to update
 
       const pokemonName = document.getElementById('pokemon-name');
       const pokemonID = document.getElementById('pokemon-id');
@@ -305,7 +307,7 @@ async () => {
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow UI to update
 
       const sprite = document.getElementById('sprite');
       assert.isTrue(sprite.src.endsWith('sprites/pokemon/94.png'));
@@ -316,23 +318,23 @@ async () => {
 };
 ```
 
-When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `#types` element should contain a two inner element with the text values `GHOST` and `POISON`, respectively.
+When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `#types` element should contain two inner elements with the text values `GHOST` and `POISON`, respectively. Make sure the `#type` element content is cleared between searches.
 
 ```js
 async () => {
   try {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
-    const typesEl = document.getElementById('types');
     searchInput.value = '94';
-    typesEl.innerHTML = ''; // Clear types element before test
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 50)); // Brief additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow UI to update
       const targetTypes = ['ghost', 'poison'];
+
+      const typesEl = document.getElementById('types');
 
       assert.lengthOf(typesEl.children, 2);
       assert.sameMembers(['ghost', 'poison'], [...typesEl.children].map(el => el.innerText.trim().toLowerCase()));
@@ -519,6 +521,11 @@ label {
   align-self: center;
 }
 
+#search-input:focus-visible,
+#search-button:focus-visible {
+  outline: 3px solid #198eee;
+}
+
 #search-input {
   height: 40px;
   padding-left: 10px;
@@ -532,7 +539,6 @@ label {
   text-align: center;
   background-color: #7f21ab;
   color: #f5f6f7;
-  outline: none;
   border: none;
 }
 

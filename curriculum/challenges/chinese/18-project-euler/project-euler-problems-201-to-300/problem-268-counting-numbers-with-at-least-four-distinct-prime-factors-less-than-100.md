@@ -1,7 +1,7 @@
 ---
 id: 5900f4791000cf542c50ff8b
 title: >-
-  Problem 268: Counting numbers with at least four distinct prime factors less than 100
+  问题 268：计算至少有四个不同的质因数小于 100 的数
 challengeType: 1
 forumTopicId: 301917
 dashedName: >-

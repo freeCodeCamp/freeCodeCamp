@@ -1,6 +1,6 @@
 ---
 id: 5900f4621000cf542c50ff75
-title: 'Problem 246: Tangents to an ellipse'
+title: '问题 246：椭圆的切线'
 challengeType: 1
 forumTopicId: 301893
 dashedName: problem-246-tangents-to-an-ellipse

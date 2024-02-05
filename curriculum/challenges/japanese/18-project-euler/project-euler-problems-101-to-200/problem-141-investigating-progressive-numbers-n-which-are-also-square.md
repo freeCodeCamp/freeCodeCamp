@@ -1,6 +1,6 @@
 ---
 id: 5900f3f91000cf542c50ff0b
-title: 'Problem 141: Investigating progressive numbers, n, which are also square'
+title: '問題 141: 平方数でもある漸増数 n を調べ上げる'
 challengeType: 1
 forumTopicId: 301770
 dashedName: problem-141-investigating-progressive-numbers-n-which-are-also-square
@@ -8,19 +8,19 @@ dashedName: problem-141-investigating-progressive-numbers-n-which-are-also-squar
 
 # --description--
 
-A positive integer, $n$, is divided by $d$ and the quotient and remainder are $q$ and $r$ respectively. In addition $d$, $q$, and $r$ are consecutive positive integer terms in a geometric sequence, but not necessarily in that order.
+正の整数 $n$ を $d$ で除し、商を $q$、余りを $r$ と表します。 さらに、$d$, $q$, $r$ は等比数列内の連続した正の整数項ですが、必ずしもこの順序ではありません。
 
-For example, 58 divided by 6 has a quotient of 9 and a remainder of 4. It can also be seen that 4, 6, 9 are consecutive terms in a geometric sequence (common ratio $\frac{3}{2}$).
+例えば、58 を 6で割ると商が 9、余りが 4 です。 4, 6, 9 が、等比数列 (公比 $\frac{3}{2}$) 内の連続した項であることも分かります 。
 
-We will call such numbers, $n$, progressive.
+このような数 $n$ を「漸増的」な数と呼ぶことにします。
 
-Some progressive numbers, such as 9 and 10404 = ${102}^2$, also happen to be perfect squares. The sum of all progressive perfect squares below one hundred thousand is 124657.
+一部の漸増的な数、例えば 9 や 10404 = ${102}^2$ は完全平方数でもあります。 10 万未満の漸増的な完全平方数の総和は 124657です。
 
-Find the sum of all progressive perfect squares below one trillion (${10}^{12}$).
+1 兆 (${10}^{12}$) 未満の漸増的な完全平方数の総和を求めなさい。
 
 # --hints--
 
-`progressivePerfectSquares()` should return `878454337159`.
+`progressivePerfectSquares()` は `878454337159` を返す必要があります。
 
 ```js
 assert.strictEqual(progressivePerfectSquares(), 878454337159);

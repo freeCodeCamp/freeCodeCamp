@@ -10,7 +10,7 @@ dashedName: problem-359-hilberts-new-hotel
 
 An infinite number of people (numbered 1, 2, 3, etc.) are lined up to get a room at Hilbert's newest infinite hotel. The hotel contains an infinite number of floors (numbered 1, 2, 3, etc.), and each floor contains an infinite number of rooms (numbered 1, 2, 3, etc.).
 
-Initially the hotel is empty. Hilbert declares a rule on how the $n^{\text{th}}$ person is assigned a room: person $n$ gets the first vacant room in the lowest numbered floor satisfying either of the following:
+Initially the hotel is empty. Hilbert stellt eine Regel auf, wie die $n^{\text{th}}$ Person ein Zimmer zugewiesen bekommt: Person $n$ bekommt das erste freie Zimmer in der niedrigsten Etage, die eine der folgenden Bedingungen erfüllt:
 
 - the floor is empty
 - the floor is not empty, and if the latest person taking a room in that floor is person $m$, then $m + n$ is a perfect square

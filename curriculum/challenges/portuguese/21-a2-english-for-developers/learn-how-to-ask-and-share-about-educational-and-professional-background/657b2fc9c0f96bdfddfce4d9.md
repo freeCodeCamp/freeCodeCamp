@@ -17,11 +17,11 @@ In this exercise, you will explore the phrase `pique one's interest`. This phras
 
 # --fillInTheBlank--
 
-## --sentence--
+## --frase--
 
 `I _ a course in organizational _, and it _ my interest in the workplace and employee dynamics.`
 
-## --blanks--
+## --espaços em branco--
 
 `took`
 

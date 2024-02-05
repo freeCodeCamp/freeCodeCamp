@@ -12,7 +12,7 @@ Find solutions to the *sum to one hundred* puzzle.
 
 Add (insert) the mathematical operators **+** or **─** (plus or minus) before any of the digits in the decimal numeric string **123456789** such that the resulting mathematical expression adds up to a particular sum (in this iconic case, **100**).
 
-Example:
+مثال:
 
 <pre><b>123 + 4 - 5 + 67 - 89   =   100</b></pre>
 

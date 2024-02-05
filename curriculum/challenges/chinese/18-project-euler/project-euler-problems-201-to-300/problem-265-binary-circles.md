@@ -1,6 +1,6 @@
 ---
 id: 5900f4761000cf542c50ff88
-title: 'Problem 265: Binary Circles'
+title: '问题265：二进制圆圈'
 challengeType: 1
 forumTopicId: 301914
 dashedName: problem-265-binary-circles

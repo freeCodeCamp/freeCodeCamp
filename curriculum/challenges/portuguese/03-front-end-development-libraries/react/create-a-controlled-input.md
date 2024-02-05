@@ -16,7 +16,7 @@ O editor de código tem o esqueleto de um componente chamado `ControlledInput` p
 
 Primeiro, crie um método chamado `handleChange()` que tem um parâmetro chamado `event`. Quando o método é chamado, ele recebe um objeto `event` que contém a string do texto do elemento `input`. Você pode acessar essa string com `event.target.value` dentro do método. Atualize a propriedade `input` do `state` do componente com essa nova string.
 
-No método `render`, crie o elemento `input` acima da tag `h4`. Adicione o atributo `value` o qual é igual a propriedade `input` do `state` do componente. Em seguida, adicione o manipulador de evento `onChange()` definido para o método `handleChange()`.
+No método `render`, crie o elemento `input` acima da tag `h4`. Adicione o atributo `value` o qual é igual a propriedade `input` do `state` do componente. Adicione a propriedade `onChange` ao método manipulador de eventos `handleChange()`.
 
 Quando você digita na caixa de entrada, o texto é processado pelo método `handleChange()`, definido como a propriedade `input` no local `state`, e renderizado como o valor do `input` na página. O componente `state` é a única fonte de verdade em relação aos dados de entrada.
 

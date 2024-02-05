@@ -1,6 +1,6 @@
 ---
 id: 5900f3a61000cf542c50feb9
-title: 'Problem 58: Spiral primes'
+title: '問題 58: らせん素数'
 challengeType: 1
 forumTopicId: 302169
 dashedName: problem-58-spiral-primes
@@ -8,7 +8,7 @@ dashedName: problem-58-spiral-primes
 
 # --description--
 
-Starting with 1 and spiralling anticlockwise in the following way, a square spiral with side length 7 is formed.
+次のように 1 から始めて反時計回りにらせん状に数字を置いていくと、辺の長さが 7 の正方形のらせんができます。
 
 <div style='text-align: center;'>
   <strong><span style='color: red;'>37</span></strong> 36 35 34 33 32 <strong><span style='color: red;'>31</span></strong><br>
@@ -20,31 +20,31 @@ Starting with 1 and spiralling anticlockwise in the following way, a square spir
   <strong><span style='color: red;'>43</span></strong> 44 45 46 47 48 49<br>
 </div>
 
-It is interesting to note that the odd squares lie along the bottom right diagonal, but what is more interesting is that 8 out of the 13 numbers lying along both diagonals are prime; that is, a ratio of 8/13 ≈ 62%.
+興味深いことに、右下の対角線上に奇数の平方数が現れます。しかしもっと興味深いのは、両方の対角線上にある 13 個の数字のうち 8 個が素数であることです。その割合は 8/13 ≈ 62% です。
 
-If one complete new layer is wrapped around the spiral above, a square spiral with side length 9 will be formed. If this process is continued, what is the side length of the square spiral for which the percent of primes along both diagonals first falls below `percent`?
+このらせんの周りに完全な 1 層を新たに加えると、辺の長さが 9 の正方形のらせんになります。 この処理を続けた場合に、両方の対角線上の素数の割合が最初に `percent` を下回るような正方形のらせんの辺長を求めなさい。
 
 # --hints--
 
-`spiralPrimes(50)` should return a number.
+`spiralPrimes(50)` は数値を返す必要があります。
 
 ```js
 assert(typeof spiralPrimes(50) === 'number');
 ```
 
-`spiralPrimes(50)` should return `11`.
+`spiralPrimes(50)` は `11` を返す必要があります。
 
 ```js
 assert.strictEqual(spiralPrimes(50), 11);
 ```
 
-`spiralPrimes(15)` should return `981`.
+`spiralPrimes(15)` は `981` を返す必要があります。
 
 ```js
 assert.strictEqual(spiralPrimes(15), 981);
 ```
 
-`spiralPrimes(10)` should return `26241`.
+`spiralPrimes(10)` は `26241` を返す必要があります。
 
 ```js
 assert.strictEqual(spiralPrimes(10), 26241);

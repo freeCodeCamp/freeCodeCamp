@@ -1,6 +1,6 @@
 ---
 id: 5900f4231000cf542c50ff36
-title: 'Problem 183: Maximum product of parts'
+title: '問題 183: 分割された数の最大積'
 challengeType: 1
 forumTopicId: 301819
 dashedName: problem-183-maximum-product-of-parts
@@ -8,27 +8,27 @@ dashedName: problem-183-maximum-product-of-parts
 
 # --description--
 
-Let $N$ be a positive integer and let $N$ be split into $k$ equal parts, $r = \frac{N}{k}$, so that $N = r + r + \cdots + r$.
+$N$ を正の整数とし、$N$ を $k$ 個に等分します。$r = \frac{N}{k}$ とすると、$N = r + \cdots + r$ です。
 
-Let $P$ be the product of these parts, $P = r × r × \cdots × r = r^k$.
+分割された各部の積を $P$ とすると、$P = r × r × \cdots × r = r^k$ となります。
 
-For example, if 11 is split into five equal parts, 11 = 2.2 + 2.2 + 2.2 + 2.2 + 2.2, then $P = {2.2}^5 = 51.53632$.
+例えば、11 を 5 等分すると 11 = 2.2 + 2.2 + 2.2 + 2.2 + 2.2 なので、$P = {2.2}^5 = 51.53632$ です。
 
-Let $M(N) = P_{max}$ for a given value of $N$.
+与えられた任意の値 $N$ について、$M(N) = P_{max}$ と定義します。
 
-It turns out that the maximum for $N = 11$ is found by splitting eleven into four equal parts which leads to $P_{max} = {(\frac{11}{4})}^4$; that is, $M(11) = \frac{14641}{256} = 57.19140625$, which is a terminating decimal.
+$N = 11$ のときの最大値を求めるには 11 を 4 等分し、$P_{max} = {(\frac{11}{4})}^4$ を導きます。つまり、$M(11) = \frac{14641}{256} = 57.9140625$ であり、これは有限小数です。
 
-However, for $N = 8$ the maximum is achieved by splitting it into three equal parts, so $M(8) = \frac{512}{27}$, which is a non-terminating decimal.
+しかし $N = 8 のときは、最大値を求めるには 3 等分します。$M(8) = \frac{512}{27}$ となり、これは無限小数です。
 
-Let $D(N) = N$ if $M(N)$ is a non-terminating decimal and $D(N) = -N$ if $M(N)$ is a terminating decimal.
+$M(N) が無限小数であれば $D(N)=N$ とし、$M(N) が有限小数であれば $D(N)=-N とします。
 
-For example, $\sum D(N)$ for $5 ≤ N ≤ 100$ is 2438.
+例えば、$5 ≤ N ≤ 100$ のとき、$\sum D(N)$ は 2438 です。
 
-Find $\sum D(N)$ for $5 ≤ N ≤ 10000$.
+$5 ≤ N ≤ 10000$ のとき、$\sum D(N)$ を求めなさい。
 
 # --hints--
 
-`maximumProductOfParts()` should return `48861552`.
+`maximumProductOfParts()` は `48861552` を返す必要があります。
 
 ```js
 assert.strictEqual(maximumProductOfParts(), 48861552);

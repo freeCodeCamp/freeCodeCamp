@@ -1,6 +1,6 @@
 ---
 id: 5951ed8945deab770972ae56
-title: Towers of Hanoi
+title: Torri di Hanoi
 challengeType: 1
 forumTopicId: 302341
 dashedName: towers-of-hanoi
@@ -9,40 +9,40 @@ dashedName: towers-of-hanoi
 # --description--
 
 Solve the Towers of Hanoi problem. The number of objects will be given as the first parameter, followed by the strings used to identify each stack of objects. Create a nested array containing the list of moves, `["source", "destination"]`.
- 
-For example, the parameters `(4, 'A', 'B', 'C')`, will result in nested array of moves `[['A', 'C'], ['B', 'A']]`, indicating that the 1st move was to move an object from stack `A` to `C` and the 2nd move was to move an object from stack `B` to `A`.
+
+Per esempio, i parametri `(4, 'A', 'B', 'C')`, risulteranno nell'array annidato di mosse `[['A', 'C'], ['B', 'A']]`, indicando che la prima mossa sia muovere un oggetto dalla pila `A` alla pila `C` e la seconda mossa sia muovere un oggetto dalla pila `B` alla pila `A`.
 
 # --instructions--
 
-Write a function that returns the moves to stack the objects in a nested array.
+Scrivi una funzione che restituisce le mosse per impilare gli oggetti in un array annidato.
 
 # --hints--
 
-`towerOfHanoi` should be a function.
+`towerOfHanoi` dovrebbe essere una funzione.
 
 ```js
 assert(typeof towerOfHanoi === 'function');
 ```
 
-`towerOfHanoi(3, ...)` should return 7 moves.
+`towerOfHanoi(3, ...)` dovrebbe restituire 7 mosse.
 
 ```js
 assert(res3.length === 7);
 ```
 
-`towerOfHanoi(3, 'A', 'B', 'C')` should return `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B']]`.
+`towerOfHanoi(3, 'A', 'B', 'C')` dovrebbe restituire `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B']]`.
 
 ```js
 assert.deepEqual(towerOfHanoi(3, 'A', 'B', 'C'), res3Moves);
 ```
 
-`towerOfHanoi(5, "X", "Y", "Z")` 10th move should be Y -> X.
+La decima mossa di `towerOfHanoi(5, "X", "Y", "Z")` dovrebbe essere Y -> X.
 
 ```js
 assert.deepEqual(res5[9], ['Y', 'X']);
 ```
 
-`towerOfHanoi(7, 'A', 'B', 'C')` first ten moves should be `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B'], ['A','C'], ['B','C'], ['B','A']]`
+Le prime dieci mosse di `towerOfHanoi(7, 'A', 'B', 'C')` dovrebbero essere `['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B'], ['A','C'], ['B','A']]`
 
 ```js
 assert.deepEqual(towerOfHanoi(7, 'A', 'B', 'C').slice(0, 10), res7First10Moves);

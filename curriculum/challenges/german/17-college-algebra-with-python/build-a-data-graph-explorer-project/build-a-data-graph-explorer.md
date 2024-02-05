@@ -13,7 +13,7 @@ Once you complete the project, submit your project link below. If you are submit
 
 # --instructions--
 
-For this challenge, you need to create a multi-function calculator using Python that take input and do the following:
+For this challenge, you need to create a data graph explorer using Python that take input and do the following:
 
 - Get a .csv file in three ways
   - uploading it from the local computer

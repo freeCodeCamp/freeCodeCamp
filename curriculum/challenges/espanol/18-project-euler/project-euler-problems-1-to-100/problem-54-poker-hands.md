@@ -1,6 +1,6 @@
 ---
 id: 5900f3a21000cf542c50feb5
-title: 'Problem 54: Poker hands'
+title: 'Problema 54: Manos de Poker'
 challengeType: 1
 forumTopicId: 302165
 dashedName: problem-54-poker-hands
@@ -12,24 +12,24 @@ In the card game poker, a hand consists of five cards and are ranked, from lowes
 
 <ul>
   <li>High Card: Highest value card.</li>
-  <li>One Pair: Two cards of the same value.</li>
-  <li>Two Pairs: Two different pairs.</li>
-  <li>Three of a Kind: Three cards of the same value.</li>
-  <li>Straight: All cards are consecutive values.</li>
-  <li>Flush: All cards of the same suit.</li>
-  <li>Full House: Three of a kind and a pair.</li>
-  <li>Four of a Kind: Four cards of the same value.</li>
-  <li>Straight Flush: All cards are consecutive values of same suit.</li>
-  <li>Royal Flush: Ten, Jack, Queen, King, Ace, in same suit.</li>
+  <li>Un Par: Dos cartas del mismo valor.</li>
+  <li>Dos Pares: Dos pares diferentes.</li>
+  <li>Tres de un tipo: Tres cartas de un mismo valor.</li>
+  <li>Escalera: Todas las cartas tienen valores consecutivos.</li>
+  <li>Color: Todas las cartas del mismo palo.</li>
+  <li>Full: Tres de un tipo y un par.</li>
+  <li>Poker: Cuatro cartas del mismo valor.</li>
+  <li>Escalera de Color: Todas las cartas son de valor consecutivo y del mismo palo.</li>
+  <li>Escalera Real: Diez, J, Reina, Rey, As, del mismo palo.</li>
 </ul>
 
-The cards are valued in the order: 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace.
+Las cartas son valoradas en el orden: 2, 3, 4, 5, 6, 7, 8, 9, 10, Sota, Reina, Rey, As.
 
-If two players have the same ranked hands then the rank made up of the highest value wins; for example, a pair of eights beats a pair of fives (see example 1 below). But if two ranks tie, for example, both players have a pair of queens, then highest cards in each hand are compared (see example 4 below); if the highest cards tie then the next highest cards are compared, and so on.
+Si dos jugadores tienen la misma clasificación de cartas, entonces el rango hecho de más alto valor gana; por ejemplo, un par de ochos pega a un par de cincos (mira ejemplo 1 más abajo). Pero si dos clasificaciones empatan, por ejemplo, ambos jugadores tiene un par reinas, entonces las cartas altas en cada mano son comparadas (ver ejemplo 4 abajo); si las cartas altas empatan entonces la siguiente carta más alta es comparada y así sucesivamente.
 
-Consider the following five hands dealt to two players:
+Considera las siguientes manos de cinco repartidas a dos jugadores:
 
-| Hand                      | Player 1                                                              | Player 2                                                               | Winner   |
+| Hand                      | Jugador 1                                                             | Jugador 2                                                              | Ganador  |
 | ------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------- |
 | <strong>1</strong> | 5H 5C 6S 7S KD <br> Pair of Fives                               | 2C 3S 8S 8D TD <br> Pair of Eights                               | Player 2 |
 | <strong>2</strong> | 5D 8C 9S JS AC <br> Highest card Ace                            | 2C 5C 7D 8S QH <br> Highest card Queen                           | Player 1 |

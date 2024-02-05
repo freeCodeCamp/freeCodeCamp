@@ -36,13 +36,13 @@ assert(reciprocalCycles(700) == 659);
 assert(reciprocalCycles(800) == 743);
 ```
 
-`reciprocalCycles(900)` should return 887.
+= 0（142857）
 
 ```js
 assert(reciprocalCycles(900) == 887);
 ```
 
-`reciprocalCycles(1000)` should return 983.
+= 0.125
 
 ```js
 assert(reciprocalCycles(1000) == 983);

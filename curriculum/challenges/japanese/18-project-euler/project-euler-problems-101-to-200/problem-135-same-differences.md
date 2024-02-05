@@ -1,6 +1,6 @@
 ---
 id: 5900f3f31000cf542c50ff06
-title: 'Problem 135: Same differences'
+title: '問題 135: 同一の差違'
 challengeType: 1
 forumTopicId: 301763
 dashedName: problem-135-same-differences
@@ -8,17 +8,17 @@ dashedName: problem-135-same-differences
 
 # --description--
 
-Given the positive integers, $x$, $y$, and $z$, are consecutive terms of an arithmetic progression, the least value of the positive integer, $n$, for which the equation, $x^2 − y^2 − z^2 = n$, has exactly two solutions is $n = 27$:
+正の整数 $x$, $y$, $z$ が等差数列の連続項であるとき、式 $x^2 − y^2 − z^2 = n$ がちょうど 2 つの解を持つような最小の正の整数 $n$ は、$n = 27$ です。
 
 $$34^2 − 27^2 − 20^2 = 12^2 − 9^2 − 6^2 = 27$$
 
-It turns out that $n = 1155$ is the least value which has exactly ten solutions.
+$n = 1155$ は、ちょうど 10 個の解を持つ最小値であることが分かります。
 
-How many values of $n$ less than one million have exactly ten distinct solutions?
+相異なる解をちょうど 10 個持つ 100 万未満 の$n$ の値はいくつありますか。
 
 # --hints--
 
-`sameDifferences()` should return `4989`.
+`sameDifferences()` は `4989` を返す必要があります。
 
 ```js
 assert.strictEqual(sameDifferences(), 4989);

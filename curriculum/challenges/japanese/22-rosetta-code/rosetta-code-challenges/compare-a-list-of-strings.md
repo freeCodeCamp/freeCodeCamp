@@ -1,6 +1,6 @@
 ---
 id: 596e457071c35c882915b3e4
-title: Compare a list of strings
+title: 文字列リストの比較
 challengeType: 1
 forumTopicId: 302235
 dashedName: compare-a-list-of-strings

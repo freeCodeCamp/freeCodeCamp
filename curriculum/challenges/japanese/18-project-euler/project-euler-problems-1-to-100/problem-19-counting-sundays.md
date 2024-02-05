@@ -1,6 +1,6 @@
 ---
 id: 5900f37f1000cf542c50fe92
-title: 'Problem 19: Counting Sundays'
+title: '問題 19: 日曜日を数え上げる'
 challengeType: 1
 forumTopicId: 301827
 dashedName: problem-19-counting-sundays
@@ -8,37 +8,37 @@ dashedName: problem-19-counting-sundays
 
 # --description--
 
-You are given the following information, but you may prefer to do some research for yourself.
+次の情報が与えられていますが、自分で調べても構いません。
 
 <ul>
-  <li>1 Jan 1900 was a Monday.</li>
-  <li>Thirty days has September,<br>April, June and November.<br>All the rest have thirty-one,<br>Saving February alone,<br>Which has twenty-eight, rain or shine.<br>And on leap years, twenty-nine.</li>
-  <li>A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.</li>
+  <li>1900 年 1 月 1 日は月曜日であった。</li>
+  <li>9 月、<br>4 月、6 月、11 月は 30 日あり、<br>残りの月は 31 日ある。<br>2 月だけは例外で、<br>28 日あり、<br>うるう年には 29 日ある。</li>
+  <li>4 で割り切れる年はうるう年だが、400 で割り切れない 100 の倍数年はうるう年ではない。</li>
 </ul>
 
-How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+20 世紀 (1901 年 1 月 1 日〜2000 年 12 月 31 日) の間に月の 1 日目が日曜日であったのは何回ですか。
 
 # --hints--
 
-`countingSundays(1943, 1946)` should return a number.
+`countingSundays(1943, 1946)` は数値を返す必要があります。
 
 ```js
 assert(typeof countingSundays(1943, 1946) === 'number');
 ```
 
-`countingSundays(1943, 1946)` should return 6.
+`countingSundays(1943, 1946)` は 6 を返す必要があります。
 
 ```js
 assert.strictEqual(countingSundays(1943, 1946), 6);
 ```
 
-`countingSundays(1995, 2000)` should return 10.
+`countingSundays(1995, 2000)` は 10 を返す必要があります。
 
 ```js
 assert.strictEqual(countingSundays(1995, 2000), 10);
 ```
 
-`countingSundays(1901, 2000)` should return 171.
+`countingSundays(1901, 2000)` は 171 を返す必要があります。
 
 ```js
 assert.strictEqual(countingSundays(1901, 2000), 171);

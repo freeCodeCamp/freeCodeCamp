@@ -11,7 +11,7 @@ dashedName: know-when-alt-text-should-be-left-blank
 
 In the last challenge, you learned that including an `alt` attribute when using `img` tags is mandatory. However, sometimes images are grouped with a caption already describing them, or are used for decoration only. In these cases, `alt` text may seem redundant or unnecessary.
 
-When an image is already explained with text content or does not add meaning to a page, the `img` still needs an `alt` attribute, but it can be set to an empty string. Here's an example:
+When an image is already explained with text content or does not add meaning to a page, the `img` still needs an `alt` attribute, but it can be set to an empty string. Hapa kuna mfano:
 
 ```html
 <img src="visualDecoration.jpeg" alt="">

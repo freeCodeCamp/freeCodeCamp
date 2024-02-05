@@ -1,6 +1,6 @@
 ---
 id: 5900f4e51000cf542c50fff6
-title: 'Problem 374: Maximum Integer Partition Product'
+title: 'Завдання 374: максимальний добуток розкладання'
 challengeType: 1
 forumTopicId: 302036
 dashedName: problem-374-maximum-integer-partition-product
@@ -8,23 +8,23 @@ dashedName: problem-374-maximum-integer-partition-product
 
 # --description--
 
-An integer partition of a number $n$ is a way of writing $n$ as a sum of positive integers.
+Розкладання цілого числа $n$ — це спосіб запису числа $n$ у вигляді суми натуральних чисел.
 
-Partitions that differ only in the order of their summands are considered the same. A partition of $n$ into distinct parts is a partition of $n$ in which every part occurs at most once.
+Розкладання, які відрізняються лише порядком доданків, вважаються однаковими. Розкладання числа $n$ на різні частини — це розкладання числа $n$, де кожна частина зустрічається не більше одного разу.
 
-The partitions of 5 into distinct parts are:
+Розкладання числа 5 на різні частини:
 
-5, 4 + 1 and 3 + 2.
+5, 4 + 1 та 3 + 2.
 
-Let $f(n)$ be the maximum product of the parts of any such partition of $n$ into distinct parts and let $m(n)$ be the number of elements of any such partition of $n$ with that product.
+Нехай $f(n)$ буде максимальним добутком частин будь-якого такого розкладання $n$ на різні частини, а $m(n)$ буде кількістю елементів розкладання $n$ з таким добутком.
 
-So $f(5) = 6$ and $m(5) = 2$.
+Отже, $f(5) = 6$ та $m(5) = 2$.
 
-For $n = 10$ the partition with the largest product is $10 = 2 + 3 + 5$, which gives $f(10) = 30$ and $m(10) = 3$. And their product, $f(10) \times m(10) = 30 \times 3 = 90$
+Розкладанням з найбільшим добутком за умови $n = 10$ є $10 = 2 + 3 + 5$, для якого $f(10) = 30$ та $m(10) = 3$. Їх добуток становить $f(10) \times m(10) = 30 \times 3 = 90$
 
 Можна довести, що $\sum f(n) \times m(n)$ за умови $1 ≤ n ≤ 100 = 1\\,683\\,550\\,844\\,462$.
 
-Знайдіть $\sum f(n) \times m(n)$ за умови $1 ≤ n ≤ {10}^{14}$. Give your answer modulo $982\\,451\\,653$, the 50 millionth prime.
+Знайдіть $\sum f(n) \times m(n)$ за умови $1 ≤ n ≤ {10}^{14}$. Надайте відповідь за модулем $982\\,451\\,653$ (це 50-мільйонне просте число).
 
 # --hints--
 

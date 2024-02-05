@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0c0b6c005b0e76f073
-title: 'Networking: Write a Web Browser'
+title: 'توّصيل الشبكات: كتابة متصفح ويب'
 challengeType: 11
 videoId: zjyT9DaAjx4
 bilibiliIds:
@@ -34,19 +34,19 @@ mysock.close()
 
 ## --answers--
 
-A simple web server.
+خادم ويب بسيط.
 
 ---
 
-A simple email client.
+بريد إلكتروني بسيط.
 
 ---
 
-A simple todo list.
+قائمة مهام بسيطة.
 
 ---
 
-A simple web browser.
+متصفح ويب بسيط.
 
 ## --video-solution--
 

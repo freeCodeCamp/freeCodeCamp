@@ -26,13 +26,13 @@ You should have a closing `</div>` tag.
 assert(code.match(/<\/div>/i));
 ```
 
-You should not change your existing `body` element. Make sure you did not delete the closing tag.
+既存の `body` 要素を変更しないでください。 終了タグを削除していないか確認してください。
 
 ```js
 assert($('body').length === 1);
 ```
 
-Your `div` tag should be nested in the `body`.
+`div` タグは `body` の中にネストされている必要があります。
 
 ```js
 const div = $('div')[0];

@@ -1,6 +1,6 @@
 ---
 id: 5eb3e497b8d6d7f63c5517ea
-title: Search a list of records
+title: 搜索記錄列表
 challengeType: 1
 forumTopicId: 385315
 dashedName: search-a-list-of-records
@@ -12,47 +12,47 @@ A record consists of attributes that describe an entity. Each attribute has a na
 
 # --instructions--
 
-Write a function that takes a string as a parameter. The function should return the index of the item in `list` for which the value of the `name` attribute matches the given string.
+編寫一個將字符串作爲參數的函數。 該函數應返回 `list` 中與給定字符串匹配的 `name` 屬性值的項目的索引。
 
 # --hints--
 
-`searchCity` should be a function.
+`searchCity` 應該是一個函數。
 
 ```js
 assert(typeof searchCity === 'function');
 ```
 
-`searchCity("Dar Es Salaam")` should return a number.
+`searchCity("Dar Es Salaam")` 應該返回一個數字。
 
 ```js
 assert(typeof searchCity('Dar Es Salaam') === 'number');
 ```
 
-`searchCity("Dar Es Salaam")` should return `6`.
+`searchCity("Dar Es Salaam")` 應該返回 `6`。
 
 ```js
 assert.equal(searchCity('Dar Es Salaam'), 6);
 ```
 
-`searchCity("Casablanca")` should return `9`.
+`searchCity("Casablanca")` 應該返回 `9`。
 
 ```js
 assert.equal(searchCity('Casablanca'), 9);
 ```
 
-`searchCity("Cairo")` should return `1`.
+`searchCity("Cairo")` 應該返回 `1`。
 
 ```js
 assert.equal(searchCity('Cairo'), 1);
 ```
 
-`searchCity("Mogadishu")` should return `4`.
+`searchCity("Mogadishu")` 應該返回 `4`。
 
 ```js
 assert.equal(searchCity('Mogadishu'), 4);
 ```
 
-`searchCity("Lagos")` should return `0`.
+`searchCity("Lagos")` 應該返回 `0`。
 
 ```js
 assert.equal(searchCity('Lagos'), 0);

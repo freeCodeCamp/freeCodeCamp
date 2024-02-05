@@ -8,59 +8,75 @@ dashedName: caesars-cipher
 
 # --description--
 
-One of the simplest and most widely known <dfn>ciphers</dfn> is a <dfn>Caesar cipher</dfn>, also known as a <dfn>shift cipher</dfn>. In a shift cipher the meanings of the letters are shifted by some set amount.
+Mojawapo ya <dfn>ciphers</dfn> na inayojulikana sana ni <dfn>Caesar cipher, inayojulikana pia kama <dfn>shift cipher</dfn>. Katika shift cipher, maana za herufi hubadilishwa kwa kiwango kilichowekwa.</p> 
 
-A common modern use is the <a href="https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/" target="_blank" rel="noopener noreferrer nofollow">ROT13</a> cipher, where the values of the letters are shifted by 13 places. Thus `A ↔ N`, `B ↔ O` and so on.
+<p spaces-before="0">
+  Mojawapo ya matumizi ya kawaida na ya kisasa ni <a href="https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/" target="_blank" rel="noopener noreferrer nofollow">ROT13</a> cipher ambapo thamani za herufi zinabadilishwa kwa nafasi 13. Hivyo basi, <code>A ↔ N</code>, <code>B ↔ O</code> na kadhalika.
+</p>
 
-Write a function which takes a <a href="https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/" target="_blank" rel="noopener noreferrer nofollow">ROT13</a> encoded string as input and returns a decoded string.
+<p spaces-before="0">
+  Andika utaratibu inayochukuwa mfuatano uliosimbwa kwa <a href="https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/" target="_blank" rel="noopener noreferrer nofollow">ROT13</a> kama ingizo na kurudisha mfuatano uliofafanuliwa.
+</p>
 
-All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
+<p spaces-before="0">
+  Herufi zote zitakuwa herufi kubwa. Usivibadilishe vibambo visivyo vya alfabeti (yaani nafasi, uakifishaji) lakini uvipitishe mbele.
+</p>
 
-# --hints--
+<h1 spaces-before="0">
+  --hints--
+</h1>
 
-`rot13("SERR PBQR PNZC")` should decode to the string `FREE CODE CAMP`
+<p spaces-before="0">
+  <code>rot13("SERR PBQR PNZC")</code> inafaa kufafanua kwa mfuatano <code>FREE CODE CAMP</code>
+</p>
 
-```js
-assert(rot13('SERR PBQR PNZC') === 'FREE CODE CAMP');
-```
+<pre><code class="js">assert(rot13('SERR PBQR PNZC') === 'FREE CODE CAMP');
+</code></pre>
 
-`rot13("SERR CVMMN!")` should decode to the string `FREE PIZZA!`
+<p spaces-before="0">
+  <code>rot13("SERR CVMMN!")</code>inafaa kufafanua kwa mfuatano <code>FREE PIZZA!</code>
+</p>
 
-```js
-assert(rot13('SERR CVMMN!') === 'FREE PIZZA!');
-```
+<pre><code class="js">assert(rot13('SERR CVMMN!') === 'FREE PIZZA!');
+</code></pre>
 
-`rot13("SERR YBIR?")` should decode to the string `FREE LOVE?`
+<p spaces-before="0">
+  <code>rot13("SERR YBIR?")</code> inafaa kufafanua kwa mfuatano <code>FREE LOVE?</code>
+</p>
 
-```js
-assert(rot13('SERR YBIR?') === 'FREE LOVE?');
-```
+<pre><code class="js">assert(rot13('SERR YBIR?') === 'FREE LOVE?');
+</code></pre>
 
-`rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")` should decode to the string `THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.`
+<p spaces-before="0">
+  <code>rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")</code> inafaa kufafanua kwa mfuatano <code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code>
+</p>
 
-```js
-assert(
+<pre><code class="js">assert(
   rot13('GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.') ===
     'THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.'
 );
-```
+</code></pre>
 
-# --seed--
+<h1 spaces-before="0">
+  --seed--
+</h1>
 
-## --seed-contents--
+<h2 spaces-before="0">
+  --seed-contents--
+</h2>
 
-```js
-function rot13(str) {
+<pre><code class="js">function rot13(str) {
   return str;
 }
 
 rot13("SERR PBQR PNZC");
-```
+</code></pre>
 
-# --solutions--
+<h1 spaces-before="0">
+  --solutions--
+</h1>
 
-```js
-var lookup = {
+<pre><code class="js">var lookup = {
   'A': 'N','B': 'O','C': 'P','D': 'Q',
   'E': 'R','F': 'S','G': 'T','H': 'U',
   'I': 'V','J': 'W','K': 'X','L': 'Y',
@@ -85,4 +101,4 @@ function rot13(encodedStr) {
   // Only change code above this line
   return decodedArr.join(""); // Array to String
 }
-```
+</code></pre>

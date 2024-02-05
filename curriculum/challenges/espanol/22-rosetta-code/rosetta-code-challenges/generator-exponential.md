@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e7b
-title: Generator/Exponential
+title: Generador/Exponencial
 challengeType: 1
 forumTopicId: 302275
 dashedName: generatorexponential
@@ -10,57 +10,57 @@ dashedName: generatorexponential
 
 A generator is an executable entity (like a function or procedure) that contains code that yields a sequence of values, one at a time, so that each time you call the generator, the next value in the sequence is provided.
 
-Generators are often built on top of coroutines or objects so that the internal state of the object is handled "naturally".
+Los generadores a menudo se construyen sobre coroutinas u objetos de modo que el estado interno del objeto se maneja "naturalmente".
 
-Generators are often used in situations where a sequence is potentially infinite, and where it is possible to construct the next value of the sequence with only minimal state.
+Los generadores se utilizan a menudo en situaciones en las que una secuencia es potencialmente infinita, y donde es posible construir el siguiente valor de la secuencia con sólo estado mínimo.
 
 # --instructions--
 
-Write a function that uses generators to generate squares and cubes. Create a new generator that filters all cubes from the generator of squares.
+Escribe una función que utilice generadores para generar cuadrados y cubos. Crear un nuevo generador que filtra todos los cubos del generador de cuadrados.
 
-The function should return the \\( n^{th} \\) value of the filtered generator.
+La función debe devolver el valor \\( n^{th} \\) del generador filtrado.
 
-For example for \\(n=7\\), the function should return 81 as the sequence would be 4, 9, 16, 25, 36, 49, 81. Here 64 is filtered out, as it is a cube.
+Por ejemplo, para \\(n=7\\), la función debe devolver 81 ya que la secuencia sería 4, 9, 16, 25, 36, 49, 81. Aquí se filtra 64, como un cubo.
 
 # --hints--
 
-`exponentialGenerator` should be a function.
+`exponentialGenerator` debe ser una función.
 
 ```js
 assert(typeof exponentialGenerator == 'function');
 ```
 
-`exponentialGenerator()` should return a number.
+`exponentialGenerator()` debe devolver un número.
 
 ```js
 assert(typeof exponentialGenerator(10) == 'number');
 ```
 
-`exponentialGenerator(10)` should return `144`.
+`exponentialGenerator(10)` debe devolver `144`.
 
 ```js
 assert.equal(exponentialGenerator(10), 144);
 ```
 
-`exponentialGenerator(12)` should return `196`.
+`exponentialGenerator(12)` debe devolver `196`.
 
 ```js
 assert.equal(exponentialGenerator(12), 196);
 ```
 
-`exponentialGenerator(14)` should return `256`.
+`exponentialGenerator(14)` debe devolver `256`.
 
 ```js
 assert.equal(exponentialGenerator(14), 256);
 ```
 
-`exponentialGenerator(20)` should return `484`.
+`exponentialGenerator(20)` debe devolver `484`.
 
 ```js
 assert.equal(exponentialGenerator(20), 484);
 ```
 
-`exponentialGenerator(25)` should return `784`.
+`exponentialGenerator(25)` debe devolver `784`.
 
 ```js
 assert.equal(exponentialGenerator(25), 784);

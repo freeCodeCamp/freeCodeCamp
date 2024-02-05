@@ -1,6 +1,6 @@
 ---
 id: 657efdcf7fe23b76c0cff9ec
-title: Step 7
+title: 7° passo
 challengeType: 20
 dashedName: step-7
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f41a1000cf542c50ff2c
 title: >-
-  Problem 173: Using up to one million tiles how many different "hollow" square laminae can be formed?
+  問題173：使用多達一百萬個瓷磚可以形成多少個不同的“空心”方形薄片？
 challengeType: 1
 forumTopicId: 301808
 dashedName: >-

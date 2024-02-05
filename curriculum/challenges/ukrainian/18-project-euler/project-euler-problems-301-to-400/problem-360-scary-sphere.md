@@ -1,6 +1,6 @@
 ---
 id: 5900f4d41000cf542c50ffe7
-title: 'Problem 360: Scary Sphere'
+title: 'Завдання 360: страшна сфера'
 challengeType: 1
 forumTopicId: 302021
 dashedName: problem-360-scary-sphere
@@ -8,15 +8,15 @@ dashedName: problem-360-scary-sphere
 
 # --description--
 
-Given two points ($x_1$, $y_1$, $z_1$) and ($x_2$, $y_2$, $z_2$) in three dimensional space, the Manhattan distance between those points is defined as $|x_1 - x_2| + |y_1 - y_2| + |z_1 - z_2|$.
+Мангеттенська відстань для двох заданих точок ($x_1$, $y_1$, $z_1$) та ($x_2$, $y_2$, $z_2$) у тривимірному просторі визначена як $|x_1 - x_2| + |y_1 - y_2| + |z_1 - z_2|$.
 
-Let $C(r)$ be a sphere with radius $r$ and center in the origin $O(0, 0, 0)$.
+Нехай $C(r)$ буде сферою з радіусом $r$ та центром в початку координат $O(0, 0, 0)$.
 
-Let $I(r)$ be the set of all points with integer coordinates on the surface of $C(r)$.
+Нехай $I(r)$ буде множиною всіх точок з цілими координатами на поверхні $C(r)$.
 
-Let $S(r)$ be the sum of the Manhattan distances of all elements of $I(r)$ to the origin $O$.
+Нехай $S(r)$ буде сумою мангеттенських відстаней всіх елементів з $I(r)$ до початку координат $O$.
 
-E.g. $S(45)=34518$.
+Наприклад, $S(45)=34518$.
 
 Знайдіть $S({10}^{10})$.
 

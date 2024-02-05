@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0c0b6c005b0e76f073
-title: 'Networking: Write a Web Browser'
+title: 'Vernetzung: Programmieren eines Web-Browsers'
 challengeType: 11
 videoId: zjyT9DaAjx4
 bilibiliIds:
@@ -34,19 +34,19 @@ mysock.close()
 
 ## --answers--
 
-A simple web server.
+Einen einfachen Webserver.
 
 ---
 
-A simple email client.
+Einen einfachen E-Mail-Client.
 
 ---
 
-A simple todo list.
+Eine einfache ToDo-Liste.
 
 ---
 
-A simple web browser.
+Einen einfachen Webbrowser.
 
 ## --video-solution--
 

@@ -8,9 +8,9 @@ dashedName: problem-1-multiples-of-3-or-5
 
 # --description--
 
-If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+3 または 5 の倍数である 10 未満の自然数をすべて並べると、3, 5, 6, 9 になります。 これらの倍数の和は 23 です。
 
-Find the sum of all the multiples of 3 or 5 below the provided parameter value `number`.
+与えられたパラメータ値 `number` 未満である、3 または 5 の倍数の総和を求めなさい。
 
 # --hints--
 

@@ -8,7 +8,7 @@ dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+前のチャレンジで案内した通り、このプロジェクトはこちらの <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> にあるスタータープロジェクトをベースに構築するか、<a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> からクローンして取り組んでください。
 
 このチャレンジでは、最新のブラウザーでさまざまなタイプの攻撃のリスクや影響を大幅に軽減することができる、新しい有望な防御方法を紹介します。 コンテンツセキュリティポリシー (CSP) を設定および構成すると、意図しないものがページに挿入されるのを防ぐことができます。 これにより、XSS の脆弱性、望ましくないトラッキング、悪意のあるフレームなどのさまざまな攻撃からアプリが保護されます。 CSP を機能させるには、信頼できるコンテンツソースの許可リストを定義します。 これらは、ウェブページが必要とするリソースの種類ごと (スクリプト、スタイルシート、フォント、フレーム、メディアなど) に構成できます。 複数のディレクティブを利用できるため、ウェブサイトの所有者はきめ細かい制御が可能です。 詳細については、HTML 5 Rocks、KeyCDN を参照してください。 Unfortunately CSP is unsupported by older browsers.
 

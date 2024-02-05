@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08c
-title: Relational Database Design
+title: تصميم قواعد البيانات العلائقية
 challengeType: 11
 videoId: AqdfbrpkbHk
 bilibiliIds:
@@ -30,7 +30,7 @@ What is the best practice for how many times a piece of string data should be st
 
 ---
 
-3
+الثالث
 
 ## --video-solution--
 

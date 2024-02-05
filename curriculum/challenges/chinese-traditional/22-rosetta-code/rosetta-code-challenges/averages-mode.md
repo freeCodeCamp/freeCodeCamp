@@ -1,6 +1,6 @@
 ---
 id: 594d8d0ab97724821379b1e6
-title: Averages/Mode
+title: 平均值模式
 challengeType: 1
 forumTopicId: 302226
 dashedName: averagesmode
@@ -10,9 +10,9 @@ dashedName: averagesmode
 
 Write a function `mode` to find the value that appears most in an array.
 
-The case where the collection is empty may be ignored. Care must be taken to handle the case where the mode is non-unique.
+可以忽略集合爲空的情況。 必須小心處理模式不唯一的情況。
 
-If it is not appropriate or possible to support a general collection, use a vector (array), if possible. If it is not appropriate or possible to support an unspecified value type, use integers.
+如果不適合或不可能支持常規集合，請儘可能使用向量（數組）。 如果不適合或不可能支持未指定的值類型，請使用整數。
 
 # --hints--
 

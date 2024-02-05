@@ -1,6 +1,6 @@
 ---
 id: 5900f5311000cf542c510042
-title: 'Problem 451: Modular inverses'
+title: '问题451：模逆'
 challengeType: 1
 forumTopicId: 302124
 dashedName: problem-451-modular-inverses
@@ -10,7 +10,7 @@ dashedName: problem-451-modular-inverses
 
 Consider the number 15.
 
-There are eight positive numbers less than 15 which are coprime to 15: 1, 2, 4, 7, 8, 11, 13, 14.
+考虑数字15.有八个正数小于15，它们与15：1,2,4,7,8,11,13,14相互作用。
 
 The modular inverses of these numbers modulo 15 are: 1, 8, 4, 13, 2, 11, 7, 14 because
 

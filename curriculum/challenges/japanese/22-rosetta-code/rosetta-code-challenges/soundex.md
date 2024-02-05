@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8017
-title: Soundex
+title: サウンデックス
 challengeType: 1
 forumTopicId: 302320
 dashedName: soundex
@@ -8,21 +8,21 @@ dashedName: soundex
 
 # --description--
 
-**Soundex Algorithm** deals with the *intentions* of the words. It creates a representation for similar sounding words. 
+**Soundex Algorithm** deals with the *intentions* of the words. It creates a representation for similar sounding words.
 
-It is used for searching <em>names</em> and <em>addresses</em>. This means that the person who filled in the <em>name</em>, can focus on how it sounds instead of correcting the spelling of <em>names</em>.
+<em>名前</em>や<em>住所</em>の検索に使用されます。 たとえば、<em>名前</em>を記入した人が、<em>名前</em>の綴りを修正する代わりに、その発音に注目できるようになります。
 
-For example: 
+以下に例を示します。
 
-If you are hearing the name `Quenci` for the first time, and misspelled it, you will get **Soundex** code `Q520`. 
+`Quenci` という名前を初めて聞いたときに綴りを間違えた場合、**Soundex** コード `Q520` が返されます。
 
-When you spell the name `Quincy` correctly next time, you will still get the same code `Q520`, which means you can link multiple name pronunciations into the same <em>person</em> without the need for adding every spelling. 
+次回、名前 `Quincy` を正しく綴っても、同じコード `Q520` が返されます。つまり、複数の名前の発音を、すべての綴りを追加しなくても、同じ<em>人物</em>にリンクすることができます。
 
-Here is the rules: 
+ルールは次のようになっています:
 
 <ul>
   <li>If a vowel (A, E, I, O, U) separates two consonants that have the same soundex code, the consonant to the right of the vowel is coded. Tymczak is coded as T-522 (T, 5 for the M, 2 for the C, Z ignored (see "Side-by-Side" rule above), 2 for the K). Since the vowel "A" separates the Z and K, the K is coded.</li>
-  <li>If "H" or "W" separate two consonants that have the same soundex code, the consonant to the right of the vowel is not coded. Example: Ashcraft is coded A-261 (A, 2 for the S, C ignored, 6 for the R, 1 for the F). It is not coded A-226.</li>
+  <li>"H" または "W" が同じサウンデックスコードを持つ 2 つの子音を分離している場合、母音の右側の子音はコード化されません。 例: Ashcraft は A-261 (A、Sを2、Cは無視、Rを6、Fを1) にコード化されます。 A-226 にはコード化されません。</li>
 </ul>
 
 # --instructions--

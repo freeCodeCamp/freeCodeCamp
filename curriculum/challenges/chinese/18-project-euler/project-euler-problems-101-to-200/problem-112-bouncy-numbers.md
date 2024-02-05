@@ -1,6 +1,6 @@
 ---
 id: 5900f3dd1000cf542c50feef
-title: 'Problem 112: Bouncy numbers'
+title: '问题 112：有弹性的数字'
 challengeType: 1
 forumTopicId: 301738
 dashedName: problem-112-bouncy-numbers
@@ -10,19 +10,19 @@ dashedName: problem-112-bouncy-numbers
 
 Working from left-to-right if no digit is exceeded by the digit to its left it is called an increasing number; for example, 134468.
 
-Similarly if no digit is exceeded by the digit to its right it is called a decreasing number; for example, 66420.
+同样，如果右边的数字没有超过任何数字，则称为递减数；例如，66420。
 
-We shall call a positive integer that is neither increasing nor decreasing a "bouncy" number; for example, 155349.
+我们将既不增加也不减少的正整数称为“有弹性”数；例如，155349。
 
-Clearly there cannot be any bouncy numbers below one-hundred, but just over half of the numbers below one-thousand (525) are bouncy. In fact, the least number for which the proportion of bouncy numbers first reaches 50% is 538.
+显然，不可能有低于一百的任何有弹性的数字，但低于一千 (525) 的数字中只有一半以上是有弹性的。 事实上，有弹性数字的比例首先达到 50% 的最小数字是 538。
 
-Surprisingly, bouncy numbers become more and more common and by the time we reach 21780 the proportion of bouncy numbers is equal to 90%.
+令人惊讶的是，有弹性的数字变得越来越普遍，当我们达到 21780 时，有弹性的数字的比例等于 90%。
 
-Find the least number for which the proportion of bouncy numbers is exactly 99%.
+找出有弹性数的比例恰好为 99% 的最小数。
 
 # --hints--
 
-`bouncyNumbers()` should return `1587000`.
+`bouncyNumbers()` 应该返回 `1587000`。
 
 ```js
 assert.strictEqual(bouncyNumbers(), 1587000);

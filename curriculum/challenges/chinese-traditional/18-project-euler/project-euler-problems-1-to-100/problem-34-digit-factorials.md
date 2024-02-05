@@ -1,6 +1,6 @@
 ---
 id: 5900f38e1000cf542c50fea1
-title: 'Problem 34: Digit factorials'
+title: '問題 34：數字階乘'
 challengeType: 1
 forumTopicId: 301998
 dashedName: problem-34-digit-factorials
@@ -12,7 +12,7 @@ dashedName: problem-34-digit-factorials
 
 Find the numbers and the sum of the numbers which are equal to the sum of the factorial of their digits.
 
-**Note:** as 1! = 1 and 2! = 2 are not sums they are not included.
+**Note:** as 1! = 1和2！ = 2不是它們不包括在內的總和。
 
 # --hints--
 

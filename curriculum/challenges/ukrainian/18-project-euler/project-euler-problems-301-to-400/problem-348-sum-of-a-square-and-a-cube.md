@@ -1,6 +1,6 @@
 ---
 id: 5900f4c81000cf542c50ffdb
-title: 'Problem 348: Sum of a square and a cube'
+title: 'Завдання 348: сума квадрата і куба'
 challengeType: 1
 forumTopicId: 302007
 dashedName: problem-348-sum-of-a-square-and-a-cube
@@ -8,17 +8,17 @@ dashedName: problem-348-sum-of-a-square-and-a-cube
 
 # --description--
 
-Many numbers can be expressed as the sum of a square and a cube. Some of them in more than one way.
+Багато чисел можна виразити як суму квадрата та куба. Деякі з них більше ніж одним способом.
 
-Consider the palindromic numbers that can be expressed as the sum of a square and a cube, both greater than 1, in exactly 4 different ways.
+Розглянемо паліндромні числа, які можна виразити як суму квадрата та куба (обидва більші за 1) чотирма різними способами.
 
-For example, 5229225 is a palindromic number and it can be expressed in exactly 4 different ways:
+Наприклад, 5229225 є паліндромним числом, яке можна записати чотирма способами:
 
 $$\begin{align}   & {2285}^2 + {20}^3 \\\\
   & {2223}^2 + {66}^3 \\\\   & {1810}^2 + {125}^3 \\\\
   & {1197}^2 + {156}^3 \end{align}$$
 
-Find the sum of the five smallest such palindromic numbers.
+Знайдіть суму п’яти найменших таких паліндромних чисел.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f3931000cf542c50fea5
-title: 'Problem 38: Pandigital multiples'
+title: '問題 38: パンデジタル倍数'
 challengeType: 1
 forumTopicId: 302042
 dashedName: problem-38-pandigital-multiples
@@ -8,33 +8,33 @@ dashedName: problem-38-pandigital-multiples
 
 # --description--
 
-Take the number 192 and multiply it by each of 1, 2, and 3:
+192 に 1, 2, 3 をそれぞれ乗じます。
 
 $$\begin{align}   192 × 1 = 192\\\\
   192 × 2 = 384\\\\   192 × 3 = 576\\\\
 \end{align}$$
 
-By concatenating each product we get the 1 to 9 pandigital, 192384576. We will call 192384576 the concatenated product of 192 and (1, 2, 3).
+それぞれの積を連結すると、1 から 9 のパンデジタル数 192384576 になります。 192384576 を 192 と (1, 2, 3) の「連結積」と呼ぶことにします。
 
-The same can be achieved by starting with 9 and multiplying by 1, 2, 3, 4, and 5, giving the pandigital, 918273645, which is the concatenated product of 9 and (1, 2, 3, 4, 5).
+同様に、9 に 1, 2, 3, 4, 5 を乗じるとパンデジタル数 918273645 になります。これは 9 と (1, 2, 3, 4, 5) の連結積です。
 
-What is the largest 1 to `k` pandigital `k`-digit number that can be formed as the concatenated product of an integer with (1, 2, ..., `n`) where `n` > 1?
+`n` > 1 のとき、整数と (1, 2, ..., `n`) の連結積として成り立つ、1 から `k` が使われている `k` 桁のパンデジタル数のうち、最大のものを求めなさい。
 
 # --hints--
 
-`pandigitalMultiples(8)` should return a number.
+`pandigitalMultiples(8)` は数値を返す必要があります。
 
 ```js
 assert(typeof pandigitalMultiples(8) === 'number');
 ```
 
-`pandigitalMultiples(8)` should return `78156234`.
+`pandigitalMultiples(8)` は `78156234` を返す必要があります。
 
 ```js
 assert.strictEqual(pandigitalMultiples(8), 78156234);
 ```
 
-`pandigitalMultiples(9)` should return `932718654`.
+`pandigitalMultiples(9)` は `932718654` を返す必要があります。
 
 ```js
 assert.strictEqual(pandigitalMultiples(9), 932718654);

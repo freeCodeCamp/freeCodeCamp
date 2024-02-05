@@ -1,6 +1,6 @@
 ---
 id: 5900f44b1000cf542c50ff5d
-title: 'Problem 222: Sphere Packing'
+title: '問題 222: 球を詰める'
 challengeType: 1
 forumTopicId: 301865
 dashedName: problem-222-sphere-packing
@@ -8,13 +8,13 @@ dashedName: problem-222-sphere-packing
 
 # --description--
 
-What is the length of the shortest pipe, of internal radius 50mm, that can fully contain 21 balls of radii 30mm, 31mm, ..., 50mm?
+内半径が 50 mm のパイプの中に半径 30 mm, 31 mm, ..., 50 mm の球を 21 個詰める場合、これらが完全に詰まるパイプの最短の長さを求めなさい。
 
-Give your answer in micrometres (${10}^{-6}$ m) rounded to the nearest integer.
+回答は、マイクロメートル (${10}^{-6}$ m) 単位で最も近い整数に四捨五入すること。
 
 # --hints--
 
-`spherePacking()` should return `1590933`.
+`spherePacking()` は `1590933` を返す必要があります。
 
 ```js
 assert.strictEqual(spherePacking(), 1590933);

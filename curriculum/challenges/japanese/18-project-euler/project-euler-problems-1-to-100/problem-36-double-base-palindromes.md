@@ -1,6 +1,6 @@
 ---
 id: 5900f3901000cf542c50fea3
-title: 'Problem 36: Double-base palindromes'
+title: '問題 36: 2 種類の基数の回文'
 challengeType: 1
 forumTopicId: 302020
 dashedName: problem-36-double-base-palindromes
@@ -8,39 +8,39 @@ dashedName: problem-36-double-base-palindromes
 
 # --description--
 
-The decimal number, 585 = 1001001001<sub>2</sub> (binary), is palindromic in both bases.
+10 進数 585 = 1001001001001<sub>2</sub> (2 進数) は、両方の基数で回文になります。
 
-Find the sum of all numbers, less than `n`, whereas 1000 ≤ `n` ≤ 1000000, which are palindromic in base 10 and base 2.
+1000 ≤ `n` ≤ 1000000 のとき、10 進法と 2 進法で回文になる `n` 未満の数の総和を求めなさい。
 
-(Please note that the palindromic number, in either base, may not include leading zeros.)
+(注: いずれの基数でも、回文数には先行ゼロを使えません。)
 
 # --hints--
 
-`doubleBasePalindromes(1000)` should return a number.
+`doubleBasePalindromes(1000)` は数値を返す必要があります。
 
 ```js
 assert(typeof doubleBasePalindromes(1000) === 'number');
 ```
 
-`doubleBasePalindromes(1000)` should return 1772.
+`doubleBasePalindromes(1000)` は 1772 を返す必要があります。
 
 ```js
 assert(doubleBasePalindromes(1000) == 1772);
 ```
 
-`doubleBasePalindromes(50000)` should return 105795.
+`doubleBasePalindromes(50000)` は 105795 を返す必要があります。
 
 ```js
 assert(doubleBasePalindromes(50000) == 105795);
 ```
 
-`doubleBasePalindromes(500000)` should return 286602.
+`doubleBasePalindromes(500000)` は 286602 を返す必要があります。
 
 ```js
 assert(doubleBasePalindromes(500000) == 286602);
 ```
 
-`doubleBasePalindromes(1000000)` should return 872187.
+`doubleBasePalindromes(1000000)` は 872187 を返す必要があります。
 
 ```js
 assert(doubleBasePalindromes(1000000) == 872187);

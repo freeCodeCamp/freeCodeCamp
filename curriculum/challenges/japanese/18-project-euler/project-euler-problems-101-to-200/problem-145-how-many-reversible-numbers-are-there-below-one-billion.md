@@ -1,6 +1,6 @@
 ---
 id: 5900f3fd1000cf542c50ff10
-title: 'Problem 145: How many reversible numbers are there below one-billion?'
+title: '問題 145: 10 億未満に可逆数はいくつあるか'
 challengeType: 1
 forumTopicId: 301774
 dashedName: problem-145-how-many-reversible-numbers-are-there-below-one-billion
@@ -8,15 +8,15 @@ dashedName: problem-145-how-many-reversible-numbers-are-there-below-one-billion
 
 # --description--
 
-Some positive integers $n$ have the property that the sum [ $n + reverse(n)$ ] consists entirely of odd (decimal) digits. For instance, $36 + 63 = 99$ and $409 + 904 = 1313$. We will call such numbers reversible; so 36, 63, 409, and 904 are reversible. Leading zeroes are not allowed in either $n$ or $reverse(n)$.
+いくつかの正の整数 $n$ は、和 [ $n + reverse(n)$] の桁がすべて奇数 (10 進数) であるという性質を持ちます。 例えば、$36 + 63 = 99$, $409 + 904 = 1313$ です。 このような数字を「可逆数」と呼ぶことにします。36, 63, 409, 904 は可逆数です。 先行ゼロは、$n$ と $reverse(n)$ のいずれにも使用できません。
 
-There are 120 reversible numbers below one-thousand.
+1000 未満の可逆数は 120 個あります。
 
-How many reversible numbers are there below one-billion (${10}^9$)?
+10 億 (${10}^9$) 未満の可逆数はいくつありますか。
 
 # --hints--
 
-`reversibleNumbers()` should return `608720`.
+`reversibleNumbers()` は `608720` を返す必要があります。
 
 ```js
 assert.strictEqual(reversibleNumbers(), 608720);

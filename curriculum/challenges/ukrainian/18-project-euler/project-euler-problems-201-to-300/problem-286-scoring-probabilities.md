@@ -1,6 +1,6 @@
 ---
 id: 5900f48a1000cf542c50ff9d
-title: 'Problem 286: Scoring probabilities'
+title: 'Завдання 286: ймовірності попадання'
 challengeType: 1
 forumTopicId: 301937
 dashedName: problem-286-scoring-probabilities
@@ -8,9 +8,9 @@ dashedName: problem-286-scoring-probabilities
 
 # --description--
 
-Barbara is a mathematician and a basketball player. She has found that the probability of scoring a point when shooting from a distance $x$ is exactly ($1 - \frac{x}{q}$), where $q$ is a real constant greater than 50.
+Барбара — математикиня і баскетболістка. Вона дізналась, що ймовірність попасти в кільце, коли кидаєш м’яч з відстані $x$, дорівнює рівно ($1 - \frac{x}{q}$), де $q$ є дійсною константою, більшою за 50.
 
-During each practice run, she takes shots from distances $x = 1, x = 2, \ldots, x = 50$ and, according to her records, she has precisely a 2 % chance to score a total of exactly 20 points.
+На кожному тренуванні вона робить кидок з відстаней $x = 1, x = 2, \ldots, x = 50$ та, згідно з її записами, ймовірність отримати 20 очок складає 2%.
 
 Знайдіть $q$ та дайте відповідь, заокруглену до десяти знаків після коми.
 

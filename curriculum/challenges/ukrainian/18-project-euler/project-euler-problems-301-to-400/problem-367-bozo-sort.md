@@ -1,6 +1,6 @@
 ---
 id: 5900f4db1000cf542c50ffee
-title: 'Problem 367: Bozo sort'
+title: 'Завдання 367: сортування бозо'
 challengeType: 1
 forumTopicId: 302028
 dashedName: problem-367-bozo-sort
@@ -8,25 +8,25 @@ dashedName: problem-367-bozo-sort
 
 # --description--
 
-Bozo sort, not to be confused with the slightly less efficient bogo sort, consists out of checking if the input sequence is sorted and if not swapping randomly two elements. This is repeated until eventually the sequence is sorted.
+Сортування бозо, яке не варто плутати з менш ефективним випадковим сортуванням, полягає в тому, щоб перевірити, чи вхідна послідовність відсортована та, якщо ні, переставити два випадкові елементи. Процес повторюється, поки послідовність не буде відсортована.
 
-If we consider all permutations of the first 4 natural numbers as input the expectation value of the number of swaps, averaged over all $4!$ input sequences is $24.75$.
+Якщо розглянути всі перестановки перших чотирьох натуральних чисел як вхідні, то очікувана кількість перестановок, усереднена для всіх $4!$ вхідних перестановок, становить $24.75$.
 
-The already sorted sequence takes 0 steps.
+Вже відсортованій послідовності потрібно 0 перестановок.
 
-In this problem we consider the following variant on bozo sort.
+У цьому завданні ми розглядаємо наступний варіант сортування бозо.
 
-If the sequence is not in order we pick three elements at random and shuffle these three elements randomly.
+Якщо послідовність не відсортована, ми вибираємо три елементи навмання і перемішуємо ці три елементи випадковим чином.
 
-All $3! = 6$ permutations of those three elements are equally likely.
+Всі $3! = 6$ перестановок цих трьох елементів однаково ймовірні.
 
-The already sorted sequence will take 0 steps.
+Вже відсортованій послідовності потрібно 0 перестановок.
 
-If we consider all permutations of the first 4 natural numbers as input the expectation value of the number of shuffles, averaged over all $4!$ input sequences is $27.5$.
+Якщо розглянути всі перестановки перших чотирьох натуральних чисел як вхідні, то очікувана кількість перестановок, усереднена для всіх $4!$ вхідних перестановок, становить $27.5$.
 
-Consider as input sequences the permutations of the first 11 natural numbers.
+Вважайте вхідними послідовностями перестановки перших 11 натуральних чисел.
 
-Averaged over all $11!$ input sequences, what is the expected number of shuffles this sorting algorithm will perform? Give your answer rounded to the nearest integer.
+Яка очікувана кількість перестановок, які виконає цей алгоритм (усереднена для всіх $11!$ вхідних послідовностей)? Закругліть свою відповідь до найближчого цілого числа.
 
 # --hints--
 

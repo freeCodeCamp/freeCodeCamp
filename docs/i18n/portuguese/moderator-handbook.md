@@ -213,6 +213,20 @@ Por favor, compareça quando estiver com pelo menos 13 anos de idade.
 Obrigado(a) pela compreensão.
 ```
 
+### Account Deletion Requests
+
+If a user requests their account to be deleted, send the following:
+
+```markdown
+Deleting an account with many posts disrupts the flow of conversation, and could remove helpful information for other Campers.
+
+We can anonymize your account, which will remove your username along with any other public information associated with your forum account. Your posts will remain, but will be attributed to an anonymous user, and you will be unable to log in to the account, as it will no longer be associated with an email address.
+
+If you would like to proceed with this, please reply to this message with your consent.
+```
+
+If a user insists on having their account deleted, ask them to email `support[at]freecodecamp.org` with a link to their forum account.
+
 ### Moderando via celular
 
 É possível moderar o fórum por um celular, mas você pode encontrar algumas peculiaridades. Esta não é uma lista exaustiva.

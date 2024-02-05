@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f170b6c005b0e76f08b
-title: Make a Relational Database
+title: Construa um banco de dados relacional
 challengeType: 11
 videoId: MQ5z4bdF92U
 bilibiliIds:

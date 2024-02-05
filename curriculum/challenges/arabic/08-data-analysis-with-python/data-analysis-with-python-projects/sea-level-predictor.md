@@ -10,12 +10,12 @@ dashedName: sea-level-predictor
 
 You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
+-   ابدأ باستيراد (import) المشروع على Replit.
+-   بعد ذلك، سترى نافذة `.replit`.
+-   اختار `Use run command` وانقر على زر `Done`.
 
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+وما زلنا نطور الجزء التعليمي التفاعلي من منهج Python. الآن، إليك بعض مقاطع الفيديو على قناة اليوتيوب الخاصة بي freeCodeCamp.org التي ستعلمك كلّما تحتاج إليه لإكمال هذا المشروع:
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
@@ -37,15 +37,15 @@ Unit tests are written for you under `test_module.py`.
 
 The boilerplate also includes commands to save and return the image.
 
-## Development
+## التطوير
 
 For development, you can use `main.py` to test your functions. Click the "run" button and `main.py` will run.
 
-## Testing
+## الاختبار
 
 We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
 
-## Submitting
+## التقديم
 
 Copy your project's URL and submit it to freeCodeCamp.
 

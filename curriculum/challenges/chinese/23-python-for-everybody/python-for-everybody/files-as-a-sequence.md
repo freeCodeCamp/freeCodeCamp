@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f080b6c005b0e76f063
-title: Files as a Sequence
+title: 文件作为序列
 challengeType: 11
 videoId: cIA0EokbaHE
 bilibiliIds:
@@ -14,29 +14,29 @@ dashedName: files-as-a-sequence
 
 More resources:
 
-\- <a href="https://www.youtube.com/watch?v=il1j4wkte2E" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=il1j4wkte2E" target="_blank" rel="noopener noreferrer nofollow">练习</a>
 
 # --question--
 
 ## --text--
 
-What does the word 'continue' do in the middle of a loop?
+“continue”这个词在循环中间起到什么作用？
 
 ## --answers--
 
-Skips to the code directly after the loop.
+循环后直接跳转到代码。
 
 ---
 
-Skips to the next line in the code.
+跳到代码的下一行。
 
 ---
 
-Skips to the next iteration of the loop.
+跳到循环的下一个迭代。
 
 ---
 
-Skips the next block of code.
+跳过下一个代码块。
 
 ## --video-solution--
 

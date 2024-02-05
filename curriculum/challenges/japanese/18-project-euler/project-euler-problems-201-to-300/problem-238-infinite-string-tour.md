@@ -1,6 +1,6 @@
 ---
 id: 5900f45b1000cf542c50ff6d
-title: 'Problem 238: Infinite string tour'
+title: '問題 238: 無限文字列ツアー'
 challengeType: 1
 forumTopicId: 301883
 dashedName: problem-238-infinite-string-tour
@@ -8,32 +8,32 @@ dashedName: problem-238-infinite-string-tour
 
 # --description--
 
-Create a sequence of numbers using the "Blum Blum Shub" pseudo-random number generator:
+"Blum Blum Shub" 擬似乱数法により次の数列を作ります。
 
 $$ s_0 = 14025256 \\\\
 s_{n + 1} = {s_n}^2 \\; mod \\; 20\\,300\\,713 $$
 
-Concatenate these numbers $s_0s_1s_2\ldots$ to create a string $w$ of infinite length. Then, $w = 14025256741014958470038053646\ldots$
+これらの数 $s_0s_1s_2\ldots$ を連結して、無限長の文字列 $w$ を作成します。 したがって、$w = 14025256741014958470038053646\ldots$ です。
 
-For a positive integer $k$, if no substring of $w$ exists with a sum of digits equal to $k$, $p(k)$ is defined to be zero. If at least one substring of $w$ exists with a sum of digits equal to $k$, we define $p(k) = z$, where $z$ is the starting position of the earliest such substring.
+正の整数 $k$ について、各位の和が $k$ に等しくなるような $w$ の部分文字列が存在しない場合、$p(k)$ を 0 とします。 各位の和が $k$ に等しくなるような $w$ の部分文字列が少なくとも 1 つ存在する場合、$p(k) = z$ と定義します。ここで、$z$ はそのような部分文字列のうち最も前にある部分文字列の先頭位置です。
 
-For instance:
+例:
 
-The substrings 1, 14, 1402, … with respective sums of digits equal to 1, 5, 7, … start at position 1, hence $p(1) = p(5) = p(7) = \ldots = 1$.
+部分文字列 1, 14, 1402, … はそれぞれ各位の和が 1, 5, 7, …であり、位置 1 から始まります。したがって、$p(1) = p(5) = p(7) = \ldots = 1$ です。
 
-The substrings 4, 402, 4025, … with respective sums of digits equal to 4, 6, 11, … start at position 2, hence $p(4) = p(6) = p(11) = \ldots = 2$.
+部分文字列 4, 402, 4025, … はそれぞれ各位の和が 4, 6, 11, …であり、位置 2 から始まります。したがって、$p(4) = p(6) = p(11) = \ldots = 2$ です。
 
-The substrings 02, 0252, … with respective sums of digits equal to 2, 9, … start at position 3, hence $p(2) = p(9) = \ldots = 3$.
+部分文字列 02, 0252, … はそれぞれ各位の和が 2, 9, …であり、位置 3 から始まります。したがって、$p(2) = p(9) = \ldots = 3$ です。
 
-Note that substring 025 starting at position 3, has a sum of digits equal to 7, but there was an earlier substring (starting at position 1) with a sum of digits equal to 7, so $p(7) = 1$, not 3.
+注意点として、位置 3 から始まる部分文字列 025 の各位の和は 7 ですが、各位の和が 7 である部分文字列 (位置 1 から始まる) がそれより前にあるので、$p(7) = 1$ です (3 ではありません)。
 
-We can verify that, for $0 &lt; k ≤ {10}^3$, $\sum p(k) = 4742$.
+$0 &lt; k ≤ {10}^3$ のとき、$\sum p(k) = 4742$ であることを確認できます。
 
-Find $\sum p(k)$, for $0 &lt; k ≤ 2 \times {10}^{15}$.
+$0 &lt; k ≤ 2 \times {10}^{15}$ のとき、$\sum p(k)$ を求めなさい。
 
 # --hints--
 
-`infiniteStringTour()` should return `9922545104535660`.
+`infiniteStringTour()` は `9922545104535660` を返す必要があります。
 
 ```js
 assert.strictEqual(infiniteStringTour(), 9922545104535660);

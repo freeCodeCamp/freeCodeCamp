@@ -12,7 +12,7 @@ dashedName: functions
 
 這是<a href="https://colab.research.google.com/drive/1d0e55NoKjKILIum34POv04h0OLpE_pkn" target="_blank" rel="noopener noreferrer nofollow">這個和下一個視頻中用到的 Colab 筆記本</a>。
 
-# --assignment--
+# --作業--
 
 在你的代數 Colab 筆記本上添加代碼，創建用於小數到分數轉換的 Python 函數。
 

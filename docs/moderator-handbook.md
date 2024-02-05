@@ -216,6 +216,20 @@ Please rejoin once you have reached at least 13 years of age.
 Thank you for understanding.
 ```
 
+### Account Deletion Requests
+
+If a user requests their account to be deleted, send the following:
+
+```markdown
+Deleting an account with many posts disrupts the flow of conversation, and could remove helpful information for other Campers.
+
+We can anonymize your account, which will remove your username along with any other public information associated with your forum account. Your posts will remain, but will be attributed to an anonymous user, and you will be unable to log in to the account, as it will no longer be associated with an email address.
+
+If you would like to proceed with this, please reply to this message with your consent.
+```
+
+If a user insists on having their account deleted, ask them to email `support[at]freecodecamp.org` with a link to their forum account.
+
 ### Moderating Via Cell Phone
 
 Moderating the forum is possible via a cell phone but you may encounter some usage quirks. This is not an exhaustive list.

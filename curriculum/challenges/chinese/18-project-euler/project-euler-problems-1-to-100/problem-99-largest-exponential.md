@@ -1,6 +1,6 @@
 ---
 id: 5900f3d01000cf542c50fee2
-title: 'Problem 99: Largest exponential'
+title: '问题 99：最大指数'
 challengeType: 1
 forumTopicId: 302216
 dashedName: problem-99-largest-exponential
@@ -10,25 +10,25 @@ dashedName: problem-99-largest-exponential
 
 Comparing two numbers written in index form like $2^{11}$ and $3^7$ is not difficult, as any calculator would confirm that $2^{11} = 2048 &lt; 3^7 = 2187$.
 
-However, confirming that $632382^{518061} &lt; 519432^{525806}$ would be much more difficult, as both numbers contain over three million digits.
+但是，确认 $632382^{518061} &lt; 519432^{525806}$ 会困难得多，因为这两个数字都包含超过三百万位数字。
 
-Using the 2D `baseExp` array of base/exponent pairs, determine pair with the greatest numerical value and return it.
+使用二维 `baseExp` 基/指数对数组​​，确定具有最大数值的对并返回它。
 
 # --hints--
 
-`largestExponential(testArray1)` should return an array.
+`largestExponential(testArray1)` 应该返回一个数组。
 
 ```js
 assert(Array.isArray(largestExponential(_testArray1)));
 ```
 
-`largestExponential(testArray1)` should return `[840237, 507276]`.
+`largestExponential(testArray1)` 应该返回 `[840237, 507276]`。
 
 ```js
 assert.deepEqual(largestExponential(_testArray1), [840237, 507276]);
 ```
 
-`largestExponential(testArray2)` should return `[895447, 504922]`.
+`largestExponential(testArray2)` 应该返回 `[895447, 504922]`。
 
 ```js
 assert.deepEqual(largestExponential(_testArray2), [895447, 504922]);

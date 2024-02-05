@@ -1,6 +1,6 @@
 ---
 id: 587d7fb0367417b2b2512bed
-title: Meet the Node console
+title: مقابلة وحدة التحكم الخاصة بالعقدة (Node)
 challengeType: 2
 forumTopicId: 301515
 dashedName: meet-the-node-console

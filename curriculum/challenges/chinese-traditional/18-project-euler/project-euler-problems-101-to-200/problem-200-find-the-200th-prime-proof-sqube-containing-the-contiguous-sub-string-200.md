@@ -16,7 +16,7 @@ For example, $200 = {5^2}{2^3}$ or $120072949 = {{23}^2}{{61}^3}$.
 
 The first five squbes are 72, 108, 200, 392, and 500.
 
-Interestingly, 200 is also the first number for which you cannot change any single digit to make a prime; we shall call such numbers, prime-proof. The next prime-proof sqube which contains the contiguous sub-string `200` is 1992008.
+有趣的是，200 也是第一個不能改變任何一位數來構成素數的數字；我們將稱這些數字爲素數證明。 The next prime-proof sqube which contains the contiguous sub-string `200` is 1992008.
 
 Find the 200th prime-proof sqube containing the contiguous sub-string `200`.
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4fe1000cf542c510010
-title: 'Problem 400: Fibonacci tree game'
+title: '问题400：斐波纳契树游戏'
 challengeType: 1
 forumTopicId: 302067
 dashedName: problem-400-fibonacci-tree-game

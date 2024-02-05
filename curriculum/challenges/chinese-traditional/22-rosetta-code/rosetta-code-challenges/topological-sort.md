@@ -1,6 +1,6 @@
 ---
 id: 594fa2746886f41f7d8bf225
-title: Topological sort
+title: 拓撲排序
 challengeType: 1
 forumTopicId: 302340
 dashedName: topological-sort
@@ -12,12 +12,12 @@ Given a mapping between items, and items they depend on, a topological sort orde
 
 # --instructions--
 
-Write a function that will return a list with valid compile order of libraries from their dependencies.
+編寫一個函數，該函數將返回一個列表，其中包含來自其依賴項的庫的有效編譯順序。
 
 - Assume library names are single words.
-- Items mentioned as only dependents have no dependents of their own, but their order of compiling must be given.
+- 僅被提及爲依賴項的項目沒有其自身的依賴項，但必須給出其編譯順序。
 - Any self dependencies should be ignored.
-- Any un-orderable dependencies should be ignored.
+- 應忽略任何不可排序的依賴項。
 
 Use the following data as an example:
 
@@ -39,9 +39,9 @@ std_cell_lib     ieee std_cell_lib
 synopsys
 </pre>
 
-The compiling of a library in the VHDL language has the constraint that a library must be compiled after any library it depends on. The above data would be un-orderable if, for example, `dw04` is added to the list of dependencies of `dw01`.
+用 VHDL 語言編譯一個庫有一個約束，即一個庫必須在它所依賴的任何庫之後編譯。 例如，如果將 `dw04` 添加到 `dw01` 的依賴項列表中，則上述數據將是不可排序的。
 
-The input of the function will be a multiline string, each line will consist of the name of the library, followed by its dependencies (if exist).
+該函數的輸入將是一個多行字符串，每一行將由庫的名稱組成，後跟其依賴項（如果存在）。
 
 For example:
 
@@ -53,37 +53,37 @@ const libsSimple =
 
 # --hints--
 
-`topologicalSort` should be a function.
+`topologicalSort` 應該是一個函數。
 
 ```js
 assert(typeof topologicalSort === 'function');
 ```
 
-`topologicalSort(libsSimple)` should return an array.
+`topologicalSort(libsSimple)` 應該返回一個數組。
 
 ```js
 assert(Array.isArray(topologicalSort(libsSimple)));
 ```
 
-`topologicalSort(libsSimple)` should return `['bbb', 'aaa']`.
+`topologicalSort(libsSimple)` 應該返回 `['bbb', 'aaa']`。
 
 ```js
 assert.deepEqual(topologicalSort(libsSimple), ['bbb', 'aaa']);
 ```
 
-`topologicalSort(libsVHDL)` should return `['ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06', 'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys', 'dw03', 'des_system_lib']`.
+`topologicalSort(libsVHDL)` 應該返回 `['ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06', 'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys', 'dw03', 'des_system_lib']`。
 
 ```js
 assert.deepEqual(topologicalSort(libsVHDL), ['ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06', 'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys', 'dw03', 'des_system_lib']);
 ```
 
-`topologicalSort(libsCustom)` should return `['base', 'c', 'd', 'b', 'a']`.
+`topologicalSort(libsCustom)` 應該返回 `['base', 'c', 'd', 'b', 'a']`。
 
 ```js
 assert.deepEqual(topologicalSort(libsCustom), ['base', 'c', 'd', 'b', 'a']);
 ```
 
-`topologicalSort` should ignore unorderable dependencies.
+`topologicalSort` 應該忽略無序依賴。
 
 ```js
 assert.deepEqual(topologicalSort(libsUnorderable), ['Base']);

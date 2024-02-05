@@ -1,6 +1,6 @@
 ---
 id: 5900f4d91000cf542c50ffea
-title: 'Problem 364: Comfortable distance'
+title: '問題364：舒適的距離'
 challengeType: 1
 forumTopicId: 302025
 dashedName: problem-364-comfortable-distance

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f090b6c005b0e76f066
-title: Strings and Lists
+title: 字符串和列表
 challengeType: 11
 videoId: lxcFa7ldCi0
 bilibiliIds:
@@ -14,13 +14,13 @@ dashedName: strings-and-lists
 
 More resources:
 
-\- <a href="https://www.youtube.com/watch?v=-9TfJF2dwHI" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=-9TfJF2dwHI" target="_blank" rel="noopener noreferrer nofollow">练习</a>
 
 # --question--
 
 ## --text--
 
-What does n equal in this code?
+在这个代码中，n 等于什么？
 
 ```python
 words = 'His e-mail is q-lar@freecodecamp.org'
@@ -31,7 +31,7 @@ n = parts[1]
 
 ## --answers--
 
-mail
+邮件
 
 ---
 

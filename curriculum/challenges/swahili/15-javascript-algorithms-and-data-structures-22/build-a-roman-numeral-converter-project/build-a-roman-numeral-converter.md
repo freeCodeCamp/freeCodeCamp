@@ -11,7 +11,7 @@ dashedName: build-a-roman-numeral-converter
 Roman numerals are based on seven symbols and can be written using various combinations to represent Arabic numerals. For example:
 
 | Roman numerals | Arabic numerals |
-|----------------|-----------------|
+| -------------- | --------------- |
 | M              | 1000            |
 | CM             | 900             |
 | D              | 500             |
@@ -230,6 +230,7 @@ assert.strictEqual(outputEl.innerText.trim(), 'MMMCMXCIX');
   --gray-75: #3b3b4f;
   --gray-85: #1b1b32;
   --gray-90: #0a0a23;
+  --blue-50: #198eee;
   --error: #a94442;
   --danger-color: #850000;
   --danger-background: #ffadad;
@@ -296,6 +297,11 @@ label {
   font-weight: bold;
 }
 
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--blue-50);
+}
+
 input {
   display: block;
   font-size: 2.5rem;
@@ -307,12 +313,9 @@ input {
   color: white;
   background-color: var(--gray-90);
   border: 1px solid var(--gray-05);
-  outline: none;
-  outline-style: none;
 }
 
 button {
-  outline: none;
   cursor: pointer;
   margin-top: 15px;
   text-decoration: none;

@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc801d
-title: Split a character string based on change of character
+title: 根据字符的变化拆分字符串
 challengeType: 1
 forumTopicId: 302322
 dashedName: split-a-character-string-based-on-change-of-character
@@ -14,7 +14,7 @@ Split a (character) string into comma (plus a blank) delimited strings based on 
 "gHHH5YY++///\\"
 </pre>
 
-should be split as:
+应该拆分为：
 
 <pre>
 ["g", "HHH", "5", "YY", "++", "///", "\\" ];
@@ -22,25 +22,25 @@ should be split as:
 
 # --hints--
 
-`split` should be a function.
+`split` 应该是一个函数。
 
 ```js
 assert(typeof split == 'function');
 ```
 
-`split("hello")` should return an array.
+`split("hello")` 应该返回一个数组。
 
 ```js
 assert(Array.isArray(split('hello')));
 ```
 
-`split("hello")` should return `["h", "e", "ll", "o"]`.
+`split("hello")` 应该返回 `["h", "e", "ll", "o"]`。
 
 ```js
 assert.deepEqual(split('hello'), ['h', 'e', 'll', 'o']);
 ```
 
-`split("commission")` should return `["c", "o", "mm", "i", "ss", "i", "o", "n"]`.
+`split("commission")` 应该返回 `["c", "o", "mm", "i", "ss", "i", "o", "n"]`.。
 
 ```js
 assert.deepEqual(split('commission'), [
@@ -55,7 +55,7 @@ assert.deepEqual(split('commission'), [
 ]);
 ```
 
-`split("ssss----====llloooo")` should return `["ssss", "----", "====", "lll", "oooo"]`.
+`split("ssss----====llloooo")` 应该返回 `["ssss", "----", "====", "lll", "oooo"]`。
 
 ```js
 assert.deepEqual(split('ssss----====llloooo'), [
@@ -67,7 +67,7 @@ assert.deepEqual(split('ssss----====llloooo'), [
 ]);
 ```
 
-`split("sssmmmaaammmaaat")` should return `["sss", "mmm", "aaa", "mmm", "aaa", "t"]`.
+`split("sssmmmaaammmaaat")` 应该返回 `["sss", "mmm", "aaa", "mmm", "aaa", "t"]`。
 
 ```js
 assert.deepEqual(split('sssmmmaaammmaaat'), [
@@ -80,7 +80,7 @@ assert.deepEqual(split('sssmmmaaammmaaat'), [
 ]);
 ```
 
-`split("gHHH5YY++///\\")` should return `["g", "HHH", "5", "YY", "++", "///", "\\"]`.
+`split("gHHH5YY++///\\")` 应该返回 `["g", "HHH", "5", "YY", "++", "///", "\\"]`。
 
 ```js
 assert.deepEqual(split('gHHH5YY++///\\'), [

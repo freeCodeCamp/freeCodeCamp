@@ -1,6 +1,6 @@
 ---
 id: 5900f3911000cf542c50fea4
-title: 'Problem 37: Truncatable primes'
+title: '問題 37: 切り詰め可能な素数'
 challengeType: 1
 forumTopicId: 302031
 dashedName: problem-37-truncatable-primes
@@ -8,39 +8,39 @@ dashedName: problem-37-truncatable-primes
 
 # --description--
 
-The number 3797 has an interesting property. Being prime itself, it is possible to continuously remove digits from left to right, and remain prime at each stage: 3797, 797, 97, and 7. Similarly we can work from right to left: 3797, 379, 37, and 3.
+3797 という数には興味深い性質があります。 その数自体が素数であり、左から右へ 1 桁ずつ消していくと、いずれの段階でも素数のままです (3797, 797, 97, 7)。 右から左へ桁を消しても同じことが起こります (3797, 379, 37, 3)。
 
-Find the sum of the only `n` (8 ≤ `n` ≤ 11) primes that are both truncatable from left to right and right to left.
+左から右、および右から左へ切り詰めても素数のままである、`n` (8 ≤ `n` ≤ 11) 個しかない素数の和を求めなさい。
 
-NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
+注: 2, 3, 5, 7 は切り詰め可能な素数とはみなされません。
 
 # --hints--
 
-`truncatablePrimes(8)` should return a number.
+`truncatablePrimes(8)` は数値を返す必要があります。
 
 ```js
 assert(typeof truncatablePrimes(8) === 'number');
 ```
 
-`truncatablePrimes(8)` should return 1986.
+`truncatablePrimes(8)` は 1986 を返す必要があります。
 
 ```js
 assert(truncatablePrimes(8) == 1986);
 ```
 
-`truncatablePrimes(9)` should return 5123.
+`truncatablePrimes(9)` は 5123 を返す必要があります。
 
 ```js
 assert(truncatablePrimes(9) == 5123);
 ```
 
-`truncatablePrimes(10)` should return 8920.
+`truncatablePrimes(10)` は 8920 を返す必要があります。
 
 ```js
 assert(truncatablePrimes(10) == 8920);
 ```
 
-`truncatablePrimes(11)` should return 748317.
+`truncatablePrimes(11)` は 748317 を返す必要があります。
 
 ```js
 assert(truncatablePrimes(11) == 748317);

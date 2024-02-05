@@ -1,6 +1,6 @@
 ---
 id: 5900f4391000cf542c50ff4c
-title: 'Problem 205: Dice Game'
+title: '問題 205: サイコロゲーム'
 challengeType: 1
 forumTopicId: 301846
 dashedName: problem-205-dice-game
@@ -8,17 +8,17 @@ dashedName: problem-205-dice-game
 
 # --description--
 
-Peter has nine four-sided (pyramidal) dice, each with faces numbered 1, 2, 3, 4.
+ピーターは 4 面サイコロ (ピラミッド型) のサイコロを 9 つ持っており、それぞれの面の数字は 1, 2, 3, 4 です。
 
-Colin has six six-sided (cubic) dice, each with faces numbered 1, 2, 3, 4, 5, 6.
+コリンは 6 面サイコロ (立方体) を 6 つ持っており、それぞれの面の数字は 1, 2, 3, 4, 5, 6 です。
 
-Peter and Colin roll their dice and compare totals: the highest total wins. The result is a draw if the totals are equal.
+ピーターとコリンがサイコロを振り、出目の合計を比べ、大きい方が勝ちます。 合計が同じである場合は引き分けです。
 
-What is the probability that Pyramidal Pete beats Cubic Colin? Give your answer rounded to seven decimal places in the form 0.abcdefg
+ピーター (ピラミッド型) がコリン (立方体) に勝つ確率を求めなさい。 回答は、四捨五入して小数第 7 位まで求め、0.abcdefg の形式にすること。
 
 # --hints--
 
-`diceGame()` should return `0.5731441`.
+`diceGame()` は `0.5731441` を返す必要があります。
 
 ```js
 assert.strictEqual(diceGame(), 0.5731441);

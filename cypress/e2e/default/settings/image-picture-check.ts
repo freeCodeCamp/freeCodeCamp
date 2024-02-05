@@ -32,9 +32,6 @@ describe('Picture input field', () => {
         }
       );
     cy.wait(500);
-    cy.get('#camper-identity')
-      .find('button')
-      .contains('Save')
-      .should('not.be.disabled');
+    cy.get('#camper-identity > .btn').should('not.be.disabled');
   });
 });

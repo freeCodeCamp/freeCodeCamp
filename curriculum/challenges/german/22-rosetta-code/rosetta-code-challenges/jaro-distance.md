@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ec2
-title: Jaro distance
+title: Jaro-Distanz
 challengeType: 1
 forumTopicId: 302292
 dashedName: jaro-distance
@@ -12,24 +12,24 @@ The Jaro distance is a measure of similarity between two strings. The higher the
 
 **Definition**
 
-The Jaro distance \\( d_j \\) of two given strings \\(s_1\\) and \\(s_2\\) is
+Die Jaro-Distanz \\( d_j \\) von zwei angegebenen Strings \\(s_1\\) und \\(s_2\\) ist
 
 \\begin{align}d_j = \\begin{cases}0& & \\text{if }m=0 \\\\\\\\{\\frac {1}{3}}\\left({\\frac {m}{|s\_{1}|}}+{\\frac {m}{|s\_{2}|}}+{\\frac {m-t}{m}}\\right)& & \\text{otherwise}\\end{cases}\\end{align}
 
-Where:
+Wobei:
 
 <ul>
   <li>\(m\) is the number of <i>matching characters</i>;</li>
   <li> \(t\) is half the number of <i>transpositions</i>.</li>
 </ul>
 
-Two characters from \\(s_1\\) and \\(s_2\\) respectively, are considered *matching* only if they are the same and not farther than \\(\\left\\lfloor\\frac{\\max(|s_1|,|s_2|)}{2}\\right\\rfloor-1\\).
+Zwei Zeichen aus \\(s_1\\) bzw. \\(s_2\\) gelten nur dann als *übereinstimmend*, wenn sie gleich sind und nicht weiter als \\\(\\\ links\\lfloor\\\frac{\\\max(|s_1|,|s_2|)}{2}\\\rechts\rfloor-1\\).
 
-Each character of \\(s_1\\) is compared with all its matching characters in \\(s_2\\) . The number of matching (but different sequence order) characters divided by 2 defines the number of *transpositions*.
+Jedes Zeichen von \\(s_1\\) wird mit all seinen passenden Zeichen in \\(s_2\\) verglichen. Die Anzahl der übereinstimmenden Zeichen (aber mit unterschiedlicher Reihenfolge der Sequenz) geteilt durch 2 definiert die Anzahl von *Transpositionen*.
 
-**Example**
+**Beispiel**
 
-Given the strings \\(s_1\\) *DWAYNE* and \\(s_2\\) *DUANE* we find:
+Bei den Zeichenketten \\(s_1\\) *DWAYNE* und \\(s_2\\) *DUANE* finden wir:
 
 <ul>
   <li>\(m = 4\)</li>
@@ -38,51 +38,51 @@ Given the strings \\(s_1\\) *DWAYNE* and \\(s_2\\) *DUANE* we find:
   <li>\(t = 0\)</li>
 </ul>
 
-We find a Jaro score of: \\(d_j = \\frac{1}{3}\\left(\\frac{4}{6} + \\frac{4}{5} + \\frac{4-0}{4}\\right) = 0.822\\).
+Wir finden eine Jaro-Punktzahl in Höhe von: \\(d_j = \\frac{1}{3}\\left(\\frac{4}{6} + \\frac{4}{5} + \\frac{4-0}{4}\\right) = 0.822\\).
 
 # --instructions--
 
-Write a function a that takes two strings as parameters and returns the associated Jaro distance.
+Schreibe eine Funktion, die zwei Strings als Parameter empfängt und die zugehörige Jaro-Distanz zurückgibt.
 
 # --hints--
 
-`jaro` should be a function.
+`jaro` sollte eine Funktion sein.
 
 ```js
 assert(typeof jaro == 'function');
 ```
 
-`jaro("MARTHA", "MARHTA")` should return a number.
+`jaro("MARTHA", "MARHTA")` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof jaro('MARTHA', 'MARHTA') == 'number');
 ```
 
-`jaro("MARTHA", "MARHTA")` should return `0.9444444444444445`.
+`jaro("MARTHA", "MARHTA")` sollte `0.9444444444444445` zurückgeben.
 
 ```js
 assert.equal(jaro('MARTHA', 'MARHTA'), 0.9444444444444445);
 ```
 
-`jaro("DIXON", "DICKSONX")` should return `0.7666666666666666`.
+`jaro("DIXON", "DICKSONX")` sollte `0.7666666666666666` zurückgeben.
 
 ```js
 assert.equal(jaro('DIXON', 'DICKSONX'), 0.7666666666666666);
 ```
 
-`jaro("JELLYFISH", "SMELLYFISH")` should return `0.8962962962962964`.
+`jaro("JELLYFISH", "SMELLYFISH")` sollte `0.8962962962962964` zurückgeben.
 
 ```js
 assert.equal(jaro('JELLYFISH', 'SMELLYFISH'), 0.8962962962962964);
 ```
 
-`jaro("HELLOS", "CHELLO")` should return `0.888888888888889`.
+`jaro("HELLOS", "CHELLO")` sollte `0.888888888888889` zurückgeben.
 
 ```js
 assert.equal(jaro('HELLOS', 'CHELLO'), 0.888888888888889);
 ```
 
-`jaro("ABCD", "BCDA")` should return `0.8333333333333334`.
+`jaro("ABCD", "BCDA")` sollte `0.8333333333333334` zurückgeben.
 
 ```js
 assert.equal(jaro('ABCD', 'BCDA'), 0.8333333333333334);

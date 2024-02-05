@@ -1,6 +1,6 @@
 ---
 id: 5eb3e4a21f462f409d656c73
-title: Self-referential sequence
+title: Самовідносна послідовність
 challengeType: 1
 forumTopicId: 385317
 dashedName: self-referential-sequence
@@ -12,37 +12,37 @@ There are several ways to generate a self-referential sequence. One very common 
 
 <pre>0, 10, 1110, 3110, 132110, 1113122110, 311311222110 ...</pre>
 
-The terms generated grow in length geometrically and never converge.
+Створені умови геометрично збільшуються у довжину і ніколи не сходяться.
 
-Another way to generate a self-referential sequence is to summarize the previous term.
+Іншим шляхом створення самовідносної послідовності є узагальнення попередніх значень.
 
-Count how many of each alike digit there is, then concatenate the sum and digit for each of the sorted enumerated digits. Note that the first five terms are the same as for the previous sequence.
+Порахуйте, скільки тут однакових цифр, тоді об'єднайте суму і цифру для кожної з відсортованих перелічених цифр. Зверніть увагу, що перші п'ять термінів такі ж, як і для попередньої послідовності.
 
 <pre>0, 10, 1110, 3110, 132110, 13123110, 23124110 ...</pre>
 
-Sort the digits largest to smallest. Do not include counts of digits that do not appear in the previous term.
+Класифікуйте цифри від найбільшої до найменшої. Не враховуйте кількість цифр, які не з'являються у попередньому значенні.
 
-Depending on the seed value, series generated this way always either converge to a stable value or to a short cyclical pattern. (For our purposes, converge means that an element matches a previously seen element.) The sequence shown, with a seed value of 0, converges to a stable value of 1433223110 after 11 iterations. The seed value that converges most quickly is 22. It goes stable after the first element. (The next element is 22, which has been seen before.)
+Залежно від початкового значення, ряди згенеровані таким чином, що завжди або будуть наближені до стабільного значення, або до короткого циклічного шаблону. (Для наших цілей, збіг означає те, що елемент відповідає елементу, який раніше переглядали.) Послідовність, яка представлена з нульовим значенням, наближається до стабільного 1433223110 після 11 ітерацій. Початкове значення, яке збігається найшвидше – нуль. Воно стає стабільним після першого елементу. (Наступний елемент 22, який був розглянутий раніше)
 
 # --instructions--
 
-Write a function that takes the seed value as parameter, generates a self referential sequence until it converges, and returns it as an array.
+Створіть функцію, що приймає початкове значення як параметр, генерує самовідносну послідовність допоки вона сходиться, і повертає це як масив.
 
 # --hints--
 
-`selfReferential` should be a function.
+`selfReferential` має бути функцією.
 
 ```js
 assert(typeof selfReferential === 'function');
 ```
 
-`selfReferential(40)` should return a array.
+`selfReferential(40)`має повернути масив.
 
 ```js
 assert(Array.isArray(selfReferential(40)));
 ```
 
-`selfReferential(40)` should return `["40", "1410", "142110", "14123110", "1413124110", "2413125110", "151413224110", "152413225110", "251413324110", "152423224110", "152413423110"]`.
+`selfReferential(40)`повинен повернути`["40", "1410", "142110", "14123110", "1413124110", "2413125110", "151413224110", "152413225110", "251413324110", "152423224110", "152413423110"]`.
 
 ```js
 assert.deepEqual(selfReferential(40), [
@@ -60,7 +60,7 @@ assert.deepEqual(selfReferential(40), [
 ]);
 ```
 
-`selfReferential(132110)` should return `["132110", "13123110", "23124110", "1413223110", "1423224110", "2413323110", "1433223110"]`.
+`selfReferential(132110)`повинен повернути`["132110", "13123110", "23124110", "1413223110", "1423224110", "2413323110", "1433223110"]`.
 
 ```js
 assert.deepEqual(selfReferential(132110), [
@@ -74,7 +74,7 @@ assert.deepEqual(selfReferential(132110), [
 ]);
 ```
 
-`selfReferential(132211)` should return `["132211", "132231", "232221", "134211", "14131231", "14231241", "24132231", "14233221"]`.
+`selfReferential(132211)`повинен повернути`["132211", "132231", "232221", "134211", "14131231", "14231241", "24132231", "14233221"]`.
 
 ```js
 assert.deepEqual(selfReferential(132211), [
@@ -89,7 +89,7 @@ assert.deepEqual(selfReferential(132211), [
 ]);
 ```
 
-`selfReferential(1413223110)` should return `["1413223110", "1423224110", "2413323110", "1433223110"]`.
+`selfReferential(1413223110)`повинен повернути`["1413223110", "1423224110", "2413323110", "1433223110"]`.
 
 ```js
 assert.deepEqual(selfReferential(1413223110), [
@@ -100,7 +100,7 @@ assert.deepEqual(selfReferential(1413223110), [
 ]);
 ```
 
-`selfReferential(251413126110)` should return `["251413126110", "16151413225110", "16251413226110", "26151413325110", "16251423225110", "16251413424110", "16153413225110"]`.
+`selfReferential(251413126110)`повинен повернути`["251413126110", "16151413225110", "16251413226110", "26151413325110", "16251423225110", "16251413424110", "16153413225110"]`.
 
 ```js
 assert.deepEqual(selfReferential(251413126110), [

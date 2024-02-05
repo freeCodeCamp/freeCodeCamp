@@ -1,6 +1,6 @@
 ---
 id: 5900f3c11000cf542c50fed3
-title: 'Problem 84: Monopoly odds'
+title: '問題 84：壟斷賠率'
 challengeType: 1
 forumTopicId: 302198
 dashedName: problem-84-monopoly-odds

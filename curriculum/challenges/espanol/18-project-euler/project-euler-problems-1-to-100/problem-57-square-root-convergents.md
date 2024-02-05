@@ -12,7 +12,7 @@ It is possible to show that the square root of two can be expressed as an infini
 
 <div style='text-align: center;'>$\sqrt 2 =1+ \frac 1 {2+ \frac 1 {2 +\frac 1 {2+ \dots}}}$</div>
 
-By expanding this for the first four iterations, we get:
+Al expandir esto para las primeras cuatro iteraciones, obtenemos:
 
 $1 + \\frac 1 2 = \\frac 32 = 1.5$
 
@@ -22,31 +22,31 @@ $1 + \\frac 1 {2 + \\frac 1 {2+\\frac 1 2}} = \\frac {17}{12} = 1.41666 \\dots$
 
 $1 + \\frac 1 {2 + \\frac 1 {2+\\frac 1 {2+\\frac 1 2}}} = \\frac {41}{29} = 1.41379 \\dots$
 
-The next three expansions are $\\frac {99}{70}$, $\\frac {239}{169}$, and $\\frac {577}{408}$, but the eighth expansion, $\\frac {1393}{985}$, is the first example where the number of digits in the numerator exceeds the number of digits in the denominator.
+Las siguientes expansiones son $\\frac {99}{70}$, $\\frac {239}{169}$, y $\\frac {577}{408}$, pero la octava expansión, $\\frac {1393}{985}$, es el primer ejemplo dónde el número de dígitos en el numerador excede el número de dígitos en el denominador.
 
-In the first `n` expansions, how many fractions contain a numerator with more digits than denominator?
+En la primera expansión `n`, ¿cuántas fraciones contienen un numerador con más dígitos que el denominador?
 
 # --hints--
 
-`squareRootConvergents(10)` should return a number.
+`squareRootConvergents(10)` debería devolver un número.
 
 ```js
 assert(typeof squareRootConvergents(10) === 'number');
 ```
 
-`squareRootConvergents(10)` should return 1.
+`squareRootConvergents(10)` debería devolver 1.
 
 ```js
 assert.strictEqual(squareRootConvergents(10), 1);
 ```
 
-`squareRootConvergents(100)` should return 15.
+`squareRootConvergents(100)` debería devolver 15.
 
 ```js
 assert.strictEqual(squareRootConvergents(100), 15);
 ```
 
-`squareRootConvergents(1000)` should return 153.
+`squareRootConvergents(1000)` debería devolver 153.
 
 ```js
 assert.strictEqual(squareRootConvergents(1000), 153);

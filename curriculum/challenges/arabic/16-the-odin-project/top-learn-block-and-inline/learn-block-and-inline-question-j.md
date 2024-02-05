@@ -4,11 +4,12 @@ title: Learn Block and Inline Question J
 challengeType: 15
 dashedName: learn-block-and-inline-question-j
 ---
+
 # --description--
 
 Now that you have a basic understanding on how adding width and height to `inline` elements works, what happens when you add a top padding of 10 pixels to a `span` element?
 
-# --question--    
+# --question--
 
 ## --text--
 
@@ -32,4 +33,4 @@ Padding has no effect on the layout of a `span` element.
 
 ## --video-solution--
 
-2
+٢

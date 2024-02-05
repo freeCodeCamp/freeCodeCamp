@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f140b6c005b0e76f07e
-title: 'Web Services: Service Oriented Approach'
+title: 'خدمات الويب: نهج موجه نحو الخدمة'
 challengeType: 11
 videoId: muerlsCHExI
 bilibiliIds:
@@ -18,17 +18,17 @@ With a services oriented approach to developing web apps, where is the data loca
 
 ## --answers--
 
-Spread across many computer systems connected via the internet or internal network.
+2 - الانتشار عبر العديد من النظم الحاسوبية الموّصلة عبر الإنترنت أو الشبكة الداخلية.
 
 ---
 
-Within different services on the main web server.
+داخل مختلف الخدمات على خادم الويب الرئيسي.
 
 ---
 
-On a separate database server.
+على خادم قاعدة بيانات منفصل.
 
 ## --video-solution--
 
-1
+الأول
 

@@ -51,91 +51,91 @@ Replit を使用する場合は、下記の手順でプロジェクトをセッ�
 };
 ```
 
-Multiple players can connect to a server and play.
+複数のプレイヤーがサーバーに接続してプレイすることができます。
 
 ```js
 
 ```
 
-Each player has an avatar.
+プレイヤーはそれぞれアバターを持ちます。
 
 ```js
 
 ```
 
-Each player is represented by an object created by the `Player` class in `Player.mjs`.
+各プレイヤーは、`Player.mjs` の `Player` クラスによって作成されるオブジェクトにより表現されます。
 
 ```js
 
 ```
 
-At a minimum, each player object should contain a unique `id`, a `score`, and `x` and `y` coordinates representing the player's current position.
+各プレーヤーオブジェクトには、最低限として、固有の `id`、`score`、プレーヤーの現在の位置を示す `x` および `y` 座標を含める必要があります。
 
 ```js
 
 ```
 
-The game has at least one type of collectible item. Complete the `Collectible` class in `Collectible.mjs` to implement this.
+ゲームには少なくとも 1 種類のコレクションアイテムがあります。 それを実装するために、`Collectible.mjs` で `Collectible` クラスを作成してください。
 
 ```js
 
 ```
 
-At a minimum, each collectible item object created by the `Collectible` class should contain a unique `id`, a `value`, and `x` and `y` coordinates representing the item's current position.
+`Collectible` クラスにより作成された各コレクションアイテムオブジェクトには、最低限として、固有の `id`、`value`、アイテムの現在の位置を示す `x` および `y` 座標を含める必要があります。
 
 ```js
 
 ```
 
-Players can use the WASD and/or arrow keys to move their avatar. Complete the `movePlayer` method in `Player.mjs` to implement this.
+プレイヤーは、WASD キーや矢印キーを使用してアバターを動かすことができます。 それを実装するために、`Player.mjs` で `movePlayer` メソッドを作成してください。
 
 ```js
 
 ```
 
-The `movePlayer` method should accept two arguments: a string of "up", "down", "left", or "right", and a number for the amount of pixels the player's position should change. `movePlayer` should adjust the `x` and `y` coordinates of the player object it's called from.
+`movePlayer` メソッドは、"up"、"down"、"left"、"right" のいずれかの文字列と、プレーヤーの位置を変更するピクセル量を表す数値の、2 つの引数を受け取る必要があります。 `movePlayer` は、呼び出し元のプレイヤーオブジェクトの `x` 座標と `y` 座標を調整する必要があります。
 
 ```js
 
 ```
 
-The player's score should be used to calculate their rank among the other players. Complete the `calculateRank` method in the `Player` class to implement this.
+プレーヤーのスコアを使用して、他のプレーヤーとの相対順位を計算する必要があります。 それを実装するために、`Player` クラスの `calculateRank` メソッドを完成させてください。
 
 ```js
 
 ```
 
-The `calculateRank` method should accept an array of objects representing all connected players and return the string `Rank: currentRanking/totalPlayers`. For example, in a game with two players, if Player A has a score of 3 and Player B has a score of 5, `calculateRank` for Player A should return `Rank: 2/2`.
+`calculateRank` メソッドは、すべての接続中のプレイヤーを表すオブジェクトの配列を受け取り、文字列 `Rank: currentRanking/totalPlayers` を返す必要があります。 たとえば、プレイヤーが 2 人のゲームで、プレイヤー A のスコアが 3、プレイヤー B のスコアが 5 の場合、プレイヤー A の `calculateRank` は `Rank: 2/2` を返す必要があります。
 
 ```js
 
 ```
 
-Players can collide with a collectible item. Complete the `collision` method in `Player.mjs` to implement this.
+プレイヤーはコレクションアイテムにぶつかって接触することができます。 それを実装するために、`Player.mjs` で `collision` メソッドを作成してください。
 
 ```js
 
 ```
 
-The `collision` method should accept a collectible item's object as an argument. If the player's avatar intersects with the item, the `collision` method should return `true`.
+`collision` メソッドは、コレクションアイテムのオブジェクトを引数として受け取る必要があります。 プレイヤーのアバターがアイテムに接触した場合、`collision` メソッドは `true` を返す必要があります。
 
 ```js
 
 ```
 
-All players are kept in sync.
+すべてのプレイヤーは同期が保たれます。
 
 ```js
 
 ```
 
-Players can disconnect from the game at any time.
+プレイヤーはいつでもゲームから離れることができます。
 
 ```js
 
 ```
 
-Prevent the client from trying to guess / sniff the MIME type.
+クライアントによる MIME タイプの推測や参照の試行を防いでください。
 
 ```js
 async (getUserInput) => {
@@ -145,7 +145,7 @@ async (getUserInput) => {
 };
 ```
 
-Prevent cross-site scripting (XSS) attacks.
+クロスサイトスクリプティング (XSS) 攻撃を防いでください。
 
 ```js
 async (getUserInput) => {
@@ -155,7 +155,7 @@ async (getUserInput) => {
 };
 ```
 
-Nothing from the website is cached in the client.
+ウェブサイトからクライアントにキャッシュされるものは何もありません。
 
 ```js
 async (getUserInput) => {
@@ -171,7 +171,7 @@ async (getUserInput) => {
 };
 ```
 
-The headers say that the site is powered by "PHP 7.4.3" even though it isn't (as a security measure).
+ヘッダーには、サイトで "PHP 7.4.3" が使用されていることを記述します。ただし実際には使用されていません (セキュリティ対策が目的です)。
 
 ```js
 async (getUserInput) => {

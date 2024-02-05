@@ -1,6 +1,6 @@
 ---
 id: 5900f4551000cf542c50ff68
-title: 'Problem 233: Lattice points on a circle'
+title: '問題 233: 円周上の格子点'
 challengeType: 1
 forumTopicId: 301877
 dashedName: problem-233-lattice-points-on-a-circle
@@ -8,15 +8,15 @@ dashedName: problem-233-lattice-points-on-a-circle
 
 # --description--
 
-Let $f(N)$ be the number of points with integer coordinates that are on a circle passing through $(0,0)$, $(N,0)$,$(0,N)$, and $(N,N)$.
+$(0,0)$, $(N,0)$, $(0,N)$, $(N,N)$ を通過する円周上にある、整数座標を持つ点の個数を $f(N)$ とします。
 
-It can be shown that $f(10000) = 36$.
+$f(10000) = 36$ であることが分かっています。
 
-What is the sum of all positive integers $N ≤ {10}^{11}$ such that $f(N) = 420$?
+$f(N) = 420$ が成り立つ正の整数 $N ≤ {10}^{11}$ の総和を求めなさい。
 
 # --hints--
 
-`latticePointsOnACircle()` should return `271204031455541300`.
+`latticePointsOnACircle()` は `271204031455541300` を返す必要があります。
 
 ```js
 assert.strictEqual(latticePointsOnACircle(), 271204031455541300);

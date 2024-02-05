@@ -1,6 +1,6 @@
 ---
 id: 5eb3e4af7d0e7b760b46cedc
-title: Set consolidation
+title: 集的合并
 challengeType: 1
 forumTopicId: 385319
 dashedName: set-consolidation
@@ -12,54 +12,54 @@ Given two sets of items then if any item is common to any set then the result of
 
 <ul>
   <li>The two input sets if no common item exists between the two input sets of items.</li>
-  <li>The single set that is the union of the two input sets if they share a common item.</li>
+  <li>如果两个输入集共享一个公共项，则它们是两个输入集的并集。</li>
 </ul>
 
-Given N sets of items where N > 2 then the result is the same as repeatedly replacing all combinations of two sets by their consolidation until no further consolidation between set pairs is possible. If N &lt; 2 then consolidation has no strict meaning and the input can be returned.
+给定 N 组项目，其中 N > 2，那么结果与通过合并重复替换两个集合的所有组合，直到集合对之间不可能进一步合并为止。 如果 N &lt; 2，则合并没有严格意义，可以返回输入。
 
-Here are some examples:
+这里有些例子：
 
-**Example 1:**
+**示例 1：**
 
-Given the two sets `{A,B}` and `{C,D}` then there is no common element between the sets and the result is the same as the input.
+给定两个集合 `{A,B}` 和 `{C,D}` 那么集合之间没有公共元素，结果与输入相同。
 
-**Example 2:**
+**示例 2：**
 
-Given the two sets `{A,B}` and `{B,D}` then there is a common element `B` between the sets and the result is the single set `{B,D,A}`. (Note that order of items in a set is immaterial: `{A,B,D}` is the same as `{B,D,A}` and `{D,A,B}`, etc).
+给定两个集合 `{A,B}` 和 `{B,D}` 那么集合之间有一个公共元素 `B` 并且结果是单个集合 `{B,D,A}`。 （请注意，集合中项目的顺序无关紧要：`{A,B,D}` 与 `{B,D,A}` 和 `{D,A,B}` 等相同）。
 
-**Example 3:**
+**示例 3：**
 
-Given the three sets `{A,B}` and `{C,D}` and `{D,B}` then there is no common element between the sets `{A,B}` and `{C,D}` but the sets `{A,B}` and `{D,B}` do share a common element that consolidates to produce the result `{B,D,A}`. On examining this result with the remaining set, `{C,D}`, they share a common element and so consolidate to the final output of the single set `{A,B,C,D}`
+给定三个集合 `{A,B}`、`{C,D}` 和 `{D,B}`，那么 `{A,B}` 和 `{C,D}` 之间没有公共元素集合，但集合 `{A,B}` 和 `{D,B}` 确实共享一个公共元素，该元素合并以产生结果 `{B,D,A}`。 在用剩余的集合 `{C,D}` 检查这个结果时，它们共享一个公共元素，因此合并到最终输出的单个集合 `{A,B,C,D}`
 
-**Example 4:**
+**示例 4：**
 
-The consolidation of the five sets:
+五个集合的合并：
 
-`{H,I,K}`, `{A,B}`, `{C,D}`, `{D,B}`, and `{F,G,H}`
+`{H,I,K}`、`{A,B}`、`{C,D}`、`{D,B}` 和 `{F,G,H}`
 
-Is the two sets:
+是两个集合：
 
-`{A, C, B, D}`, and `{G, F, I, H, K}`
+`{A, C, B, D}` 和 `{G, F, I, H, K}`
 
 # --instructions--
 
-Write a function that takes an array of strings as a parameter. Each string is represents a set with the characters representing the set elements. The function should return a 2D array containing the consolidated sets. Note: Each set should be sorted.
+编写一个将字符串数组作为参数的函数。 每个字符串代表一个集合，字符代表集合元素。 该函数应返回一个包含合并集的二维数组。 注意：每组都应排序。
 
 # --hints--
 
-`setConsolidation` should be a function.
+`setConsolidation` 应该是一个函数。
 
 ```js
 assert(typeof setConsolidation === 'function');
 ```
 
-`setConsolidation(["AB", "CD"])` should return a array.
+`setConsolidation(["AB", "CD"])` 应该返回一个数组。
 
 ```js
 assert(Array.isArray(setConsolidation(['AB', 'CD'])));
 ```
 
-`setConsolidation(["AB", "CD"])` should return `[["C", "D"], ["A", "B"]]`.
+`setConsolidation(["AB", "CD"])` 应该返回 `[["C", "D"], ["A", "B"]]`。
 
 ```js
 assert.deepEqual(setConsolidation(['AB', 'CD']), [
@@ -68,19 +68,19 @@ assert.deepEqual(setConsolidation(['AB', 'CD']), [
 ]);
 ```
 
-`setConsolidation(["AB", "BD"])` should return `[["A", "B", "D"]]`.
+`setConsolidation(["AB", "BD"])` 应该返回 `[["A", "B", "D"]]`。
 
 ```js
 assert.deepEqual(setConsolidation(['AB', 'BD']), [['A', 'B', 'D']]);
 ```
 
-`setConsolidation(["AB", "CD", "DB"])` should return `[["A", "B", "C", "D"]]`.
+`setConsolidation(["AB", "CD", "DB"])` 应该返回 `[["A", "B", "C", "D"]]`。
 
 ```js
 assert.deepEqual(setConsolidation(['AB', 'CD', 'DB']), [['A', 'B', 'C', 'D']]);
 ```
 
-`setConsolidation(["HIK", "AB", "CD", "DB", "FGH"])` should return `[["F", "G", "H", "I", "K"], ["A", "B", "C", "D"]]`.
+`setConsolidation(["HIK", "AB", "CD", "DB", "FGH"])` 应该返回 `[["F", "G", "H", "I", "K"], ["A", "B", "C", "D"]]`。
 
 ```js
 assert.deepEqual(setConsolidation(['HIK', 'AB', 'CD', 'DB', 'FGH']), [

@@ -1,6 +1,6 @@
 ---
 id: 594db4d0dedb4c06a2a4cefd
-title: Babbage problem
+title: 巴貝奇問題
 challengeType: 1
 forumTopicId: 302229
 dashedName: babbage-problem
@@ -12,26 +12,26 @@ Charles Babbage, looking ahead to the sorts of problems his Analytical Engine wo
 
 <blockquote>
   What is the smallest positive integer whose square ends in the digits 269,696?
-  <footer style='margin-left: 2em;'>Babbage, letter to Lord Bowden, 1837; see Hollingdale and Tootill, <i>Electronic Computers</i>, second edition, 1970, p. 125.</footer>
+  <footer style='margin-left: 2em;'>巴貝奇，給鮑登勳爵的信，1837 年；參見 Hollingdale and Tootill, <i>Electronic Computers</i>, second edition, 1970, p. 125。</footer>
 </blockquote>
 
-He thought the answer might be 99,736, whose square is 9,947,269,696; but he couldn't be certain.
+他認爲答案可能是 99,736，其平方是 9,947,269,696；但他不能確定。
 
-The task is to find out if Babbage had the right answer.
+任務是找出巴貝奇是否有正確的答案。
 
 # --instructions--
 
-Implement a function to return the lowest integer that satisfies the Babbage problem. If Babbage was right, return Babbage's number.
+實現一個函數來返回滿足 Babbage 問題的最小整數。 如果巴貝奇是對的，返回巴貝奇的數字。
 
 # --hints--
 
-`babbage` should be a function.
+`babbage` 應該是一個函數。
 
 ```js
 assert(typeof babbage === 'function');
 ```
 
-`babbage(99736, 269696)` should not return 99736 (there is a smaller answer).
+`babbage(99736, 269696)` 不應返回 99736（有一個較小的答案）。
 
 ```js
 assert.equal(babbage(babbageAns, endDigits), answer);

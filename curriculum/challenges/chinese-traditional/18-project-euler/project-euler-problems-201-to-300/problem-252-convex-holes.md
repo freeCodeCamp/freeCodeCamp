@@ -1,6 +1,6 @@
 ---
 id: 5900f4691000cf542c50ff7b
-title: 'Problem 252: Convex Holes'
+title: '問題252：凸孔'
 challengeType: 1
 forumTopicId: 301900
 dashedName: problem-252-convex-holes
@@ -10,7 +10,7 @@ dashedName: problem-252-convex-holes
 
 Given a set of points on a plane, we define a convex hole to be a convex polygon having as vertices any of the given points and not containing any of the given points in its interior (in addition to the vertices, other given points may lie on the perimeter of the polygon).
 
-As an example, the image below shows a set of twenty points and a few such convex holes. The convex hole shown as a red heptagon has an area equal to 1049694.5 square units, which is the highest possible area for a convex hole on the given set of points.
+作爲示例，下面的圖像示出了一組二十個點和一些這樣的凸孔。 顯示爲紅色七邊形的凸孔具有等於1049694.5平方單位的面積，這是給定點集上的凸孔的最高可能區域。
 
 <img class="img-responsive center-block" alt="set of twenty points and convex holes on plane" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px;" />
 

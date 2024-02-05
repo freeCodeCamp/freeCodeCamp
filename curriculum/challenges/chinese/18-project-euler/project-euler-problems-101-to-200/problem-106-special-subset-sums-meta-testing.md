@@ -1,6 +1,6 @@
 ---
 id: 5900f3d71000cf542c50fee9
-title: 'Problem 106: Special subset sums: meta-testing'
+title: '问题 106：特殊子集和：元测试'
 challengeType: 1
 forumTopicId: 301730
 dashedName: problem-106-special-subset-sums-meta-testing
@@ -11,19 +11,19 @@ dashedName: problem-106-special-subset-sums-meta-testing
 Let $S(A)$ represent the sum of elements in set A of size n. We shall call it a special sum set if for any two non-empty disjoint subsets, B and C, the following properties are true:
 
 1. $S(B) ≠ S(C)$; that is, sums of subsets cannot be equal.
-2. If B contains more elements than C then $S(B) > S(C)$.
+2. 如果 B 包含的元素多于 C，则 $S(B) > S(C)$。
 
-For this problem we shall assume that a given set contains n strictly increasing elements and it already satisfies the second rule.
+对于这个问题，我们假设给定的集合包含 n 个严格递增的元素，并且它已经满足第二条规则。
 
-Surprisingly, out of the 25 possible subset pairs that can be obtained from a set for which n = 4, only 1 of these pairs need to be tested for equality (first rule). Similarly, when n = 7, only 70 out of the 966 subset pairs need to be tested.
+令人惊讶的是，在可以从 n = 4 的集合中获得的 25 个可能的子集对中，这些对中只有 1 个需要进行相等性测试（第一条规则）。 类似地，当 n = 7 时，966 个子集对中只有 70 个需要测试。
 
-For n = 12, how many of the 261625 subset pairs that can be obtained need to be tested for equality?
+对于 n = 12，可以获得的 261625 个子集对中有多少需要进行相等性测试？
 
-**Note:** This problem is related to Problem 103 and Problem 105.
+**注意：** 此问题与问题 103 和问题 105 相关。
 
 # --hints--
 
-`subsetSumsMetaTesting()` should return `21384`.
+`subsetSumsMetaTesting()` 应该返回 `21384`。
 
 ```js
 assert.strictEqual(subsetSumsMetaTesting(), 21384);

@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7edc
-title: Last Friday of each month
+title: 毎月の最終金曜日
 challengeType: 1
 forumTopicId: 302299
 dashedName: last-friday-of-each-month
@@ -12,61 +12,61 @@ Write a function that returns the date of the last Friday of a given month for a
 
 # --hints--
 
-`lastFriday` should be a function.
+`lastFriday` は関数とします。
 
 ```js
 assert(typeof lastFriday == 'function');
 ```
 
-`lastFriday(2018, 1)` should return a number.
+`lastFriday(2018, 1)` は数値を返す必要があります。
 
 ```js
 assert(typeof lastFriday(2018, 1) == 'number');
 ```
 
-`lastFriday(2018, 1)` should return `26`.
+`lastFriday(2018, 1)` は `26` を返す必要があります。
 
 ```js
 assert.equal(lastFriday(2018, 1), 26);
 ```
 
-`lastFriday(2017, 2)` should return `24`.
+`lastFriday(2017, 2)` は `24` を返す必要があります。
 
 ```js
 assert.equal(lastFriday(2017, 2), 24);
 ```
 
-`lastFriday(2012, 3)` should return `30`.
+`lastFriday(2012, 3)` は `30` を返す必要があります。
 
 ```js
 assert.equal(lastFriday(2012, 3), 30);
 ```
 
-`lastFriday(1900, 4)` should return `27`.
+`lastFriday(1900, 4)` は `27` を返す必要があります。
 
 ```js
 assert.equal(lastFriday(1900, 4), 27);
 ```
 
-`lastFriday(2000, 5)` should return `26`.
+`lastFriday(2000, 5)` は `26` を返す必要があります。
 
 ```js
 assert.equal(lastFriday(2000, 5), 26);
 ```
 
-`lastFriday(2006, 6)` should return `30`.
+`lastFriday(2006, 6)` は `30` を返す必要があります。
 
 ```js
 assert.equal(lastFriday(2006, 6), 30);
 ```
 
-`lastFriday(2010, 7)` should return `30`.
+`lastFriday(2010, 7)` は `30` を返す必要があります。
 
 ```js
 assert.equal(lastFriday(2010, 7), 30);
 ```
 
-`lastFriday(2005, 8)` should return `26`.
+`lastFriday(2005, 8)` は `26` を返す必要があります。
 
 ```js
 assert.equal(lastFriday(2005, 8), 26);

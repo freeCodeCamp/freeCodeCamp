@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8036
-title: Strip control codes and extended characters from a string
+title: 從字符串中剝離控制代碼和擴展字符
 challengeType: 1
 forumTopicId: 302327
 dashedName: strip-control-codes-and-extended-characters-from-a-string
@@ -12,43 +12,43 @@ The task is to strip control codes and extended characters from a string. The so
 
 # --hints--
 
-`strip` should be a function.
+`strip` 應該是一個函數。
 
 ```js
 assert(typeof strip == 'function');
 ```
 
-`strip("abc")` should return a string.
+`strip("abc")` 應該返回一個字符串。
 
 ```js
 assert(typeof strip('abc') == 'string');
 ```
 
-`strip("\ba\x00b\n\rc\fd\xc3")` should return `"abcd"`.
+`strip("\ba\x00b\n\rc\fd\xc3")` 應該返回 `"abcd"`。
 
 ```js
 assert.equal(strip('\ba\x00b\n\rc\fd\xc3'), 'abcd');
 ```
 
-`strip("\u0000\n abc\u00E9def\u007F")` should return `" abcdef"`.
+`strip("\u0000\n abc\u00E9def\u007F")` 應該返回 `" abcdef"`。
 
 ```js
 assert.equal(strip('\u0000\n abc\u00E9def\u007F'), ' abcdef');
 ```
 
-`strip("a\n\tb\u2102d\u2147f")` should return `"abdf"`.
+`strip("a\n\tb\u2102d\u2147f")` 應該返回 `"abdf"`。
 
 ```js
 assert.equal(strip('a\n\tb\u2102d\u2147f'), 'abdf');
 ```
 
-`strip("Français.")` should return `"Franais."`.
+`strip("Français.")` 應該返回 `"Franais."`。
 
 ```js
 assert.equal(strip('Français.'), 'Franais.');
 ```
 
-`strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ")` should return `"123abcDEF+-*/"`.
+`strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ")` 應該返回 `"123abcDEF+-*/"`。
 
 ```js
 assert.equal(strip('123\tabc\u0007DEF\u007F+-*/€æŧðłþ'), '123abcDEF+-*/');

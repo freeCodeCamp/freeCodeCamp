@@ -1,6 +1,6 @@
 ---
 id: 5900f38f1000cf542c50fea2
-title: 'Problem 35: Circular primes'
+title: '問題 35: 循環素数'
 challengeType: 1
 forumTopicId: 302009
 dashedName: problem-35-circular-primes
@@ -8,55 +8,55 @@ dashedName: problem-35-circular-primes
 
 # --description--
 
-The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.
+数 197 は循環素数と呼ばれます。各位を循環させてできる数 197, 971, 719 がいずれも素数だからです。
 
-There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
+そのような素数は 100 未満に 13 個あります。2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, 97 です。
 
-How many circular primes are there below `n`, whereas 100 ≤ `n` ≤ 1000000?
+100 ≤ `n` ≤ 1000000 のとき、`n` 未満の循環素数はいくつありますか。
 
-**Note:**
+**注:**
 
-Circular primes individual rotation can exceed `n`.
+循環素数の各位を循環させたときにできる数が `n` を超えても構いません。
 
 # --hints--
 
-`circularPrimes(100)` should return a number.
+`circularPrimes(100)` は数値を返す必要があります。
 
 ```js
 assert(typeof circularPrimes(100) === 'number');
 ```
 
-`circularPrimes(100)` should return 13.
+`circularPrimes(100)` は 13 を返す必要があります。
 
 ```js
 assert(circularPrimes(100) == 13);
 ```
 
-`circularPrimes(100000)` should return 43.
+`circularPrimes(100000)` は 43 を返す必要があります。
 
 ```js
 assert(circularPrimes(100000) == 43);
 ```
 
-`circularPrimes(250000)` should return 45.
+`circularPrimes(250000)` は 45 を返す必要があります。
 
 ```js
 assert(circularPrimes(250000) == 45);
 ```
 
-`circularPrimes(500000)` should return 49.
+`circularPrimes(500000)` は 49 を返す必要があります。
 
 ```js
 assert(circularPrimes(500000) == 49);
 ```
 
-`circularPrimes(750000)` should return 49.
+`circularPrimes(750000)` は 49 を返す必要があります。
 
 ```js
 assert(circularPrimes(750000) == 49);
 ```
 
-`circularPrimes(1000000)` should return 55.
+`circularPrimes(1000000)` は 55 を返す必要があります。
 
 ```js
 assert(circularPrimes(1000000) == 55);

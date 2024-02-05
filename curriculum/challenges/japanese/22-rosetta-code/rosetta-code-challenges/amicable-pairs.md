@@ -1,6 +1,6 @@
 ---
 id: 5949b579404977fbaefcd737
-title: Amicable pairs
+title: 友愛数
 challengeType: 1
 forumTopicId: 302225
 dashedName: amicable-pairs
@@ -10,16 +10,16 @@ dashedName: amicable-pairs
 
 Two integers $N$ and $M$ are said to be amicable pairs if $N \\neq M$ and the sum of the proper divisors of $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$ as well as $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
 
-**Example:**
+**例:**
 
-**1184** and **1210** are an amicable pair, with proper divisors:
+**1184** と **1210** は、真の約数の和から友愛数だと分かります。
 
 <ul>
   <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592 and</li>
-  <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605 respectively.</li>
+  <li>1、2、5、10、11、22、55、110、121、242、605</li>
 </ul>
 
-The sum of the divisors for the first value, **1184**, is **1210** and the sum of the divisors for the second value, **1210**, is **1184**.
+最初の値 **1184** の約数の和は **1210** であり、 2 番目の値 **1210** の約数の和は **1184** です。
 
 # --instructions--
 

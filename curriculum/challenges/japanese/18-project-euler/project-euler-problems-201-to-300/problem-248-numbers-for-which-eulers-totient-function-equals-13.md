@@ -1,6 +1,6 @@
 ---
 id: 5900f4651000cf542c50ff77
-title: 'Problem 248: Numbers for which Euler’s totient function equals 13!'
+title: '問題 248: オイラーのトーティエント関数が 13! となる数'
 challengeType: 1
 forumTopicId: 301895
 dashedName: problem-248-numbers-for-which-eulers-totient-function-equals-13
@@ -8,13 +8,13 @@ dashedName: problem-248-numbers-for-which-eulers-totient-function-equals-13
 
 # --description--
 
-The first number $n$ for which $φ(n) = 13!$ is $6\\,227\\,180\\,929$.
+$φ(n) = 13!$ を満たす最小の数 $n$ は $6\\,227\\,180\\,929$ です。
 
-Find the ${150\\,000}^{\text{th}}$ such number.
+上の式を満たす ${150\\,000}$ 番目の数を求めなさい。
 
 # --hints--
 
-`eulersTotientFunctionEquals()` should return `23507044290`.
+`eulersTotientFunctionEquals()` は `23507044290` を返す必要があります。
 
 ```js
 assert.strictEqual(eulersTotientFunctionEquals(), 23507044290);

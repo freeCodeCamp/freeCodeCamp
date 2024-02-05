@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f050b6c005b0e76f056
-title: 'Variables, Expressions, and Statements'
+title: '変数、式、ステートメント'
 challengeType: 11
 videoId: nELR-uyyrok
 bilibiliIds:

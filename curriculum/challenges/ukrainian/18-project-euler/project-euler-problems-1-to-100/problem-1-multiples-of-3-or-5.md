@@ -1,6 +1,6 @@
 ---
 id: 5900f36e1000cf542c50fe80
-title: 'Problem 1: Multiples of 3 or 5'
+title: 'Завдання 1: кратні чисел 3 та 5'
 challengeType: 1
 forumTopicId: 301722
 dashedName: problem-1-multiples-of-3-or-5
@@ -8,37 +8,37 @@ dashedName: problem-1-multiples-of-3-or-5
 
 # --description--
 
-If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+Якщо ми запишемо усі натуральні числа до 10, кратних 3 та 5, то отримаємо 3, 5, 6 та 9. Сумою цих кратних є 23.
 
-Find the sum of all the multiples of 3 or 5 below the provided parameter value `number`.
+Знайдіть суму всіх чисел кратних 3 та 5, які менші певного заданого значення `number`.
 
 # --hints--
 
-`multiplesOf3Or5(10)` should return a number.
+`multiplesOf3Or5(10)` має повернути число.
 
 ```js
 assert(typeof multiplesOf3Or5(10) === 'number');
 ```
 
-`multiplesOf3Or5(49)` should return 543.
+`multiplesOf3Or5(49)` має повернути 543.
 
 ```js
 assert.strictEqual(multiplesOf3Or5(49), 543);
 ```
 
-`multiplesOf3Or5(1000)` should return 233168.
+`multiplesOf3Or5(1000)` має повернути 233168.
 
 ```js
 assert.strictEqual(multiplesOf3Or5(1000), 233168);
 ```
 
-`multiplesOf3Or5(8456)` should return 16687353.
+`multiplesOf3Or5(8456)` має повернути 16687353.
 
 ```js
 assert.strictEqual(multiplesOf3Or5(8456), 16687353);
 ```
 
-`multiplesOf3Or5(19564)` should return 89301183.
+`multiplesOf3Or5(19564)` має повернути 89301183.
 
 ```js
 assert.strictEqual(multiplesOf3Or5(19564), 89301183);

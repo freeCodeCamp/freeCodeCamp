@@ -1,6 +1,6 @@
 ---
 id: 644a0eadcbccaf1d13c7d137
-title: Step 19
+title: ステップ 19
 challengeType: 0
 dashedName: step-19
 ---

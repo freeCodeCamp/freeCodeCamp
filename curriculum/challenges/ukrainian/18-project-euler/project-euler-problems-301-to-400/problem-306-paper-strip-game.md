@@ -1,6 +1,6 @@
 ---
 id: 5900f49f1000cf542c50ffb1
-title: 'Problem 306: Paper-strip Game'
+title: 'Завдання 306: гра з паперовими смужками'
 challengeType: 1
 forumTopicId: 301960
 dashedName: problem-306-paper-strip-game
@@ -8,23 +8,23 @@ dashedName: problem-306-paper-strip-game
 
 # --description--
 
-The following game is a classic example of Combinatorial Game Theory:
+Наведена нижче гра є класичним прикладом комбінаторної теорії ігор:
 
-Two players start with a strip of $n$ white squares and they take alternate turns. On each turn, a player picks two contiguous white squares and paints them black. The first player who cannot make a move loses.
+Двоє гравців починають зі смужки з $n$ білих квадратів і ходять по черзі. Під час кожного ходу гравець вибирає два суміжних білих квадрати і розмальовує їх у чорний колір. Програє той гравець, який не може зробити хід.
 
-- $n = 1$: No valid moves, so the first player loses automatically.
-- $n = 2$: Only one valid move, after which the second player loses.
-- $n = 3$: Two valid moves, but both leave a situation where the second player loses.
-- $n = 4$: There are three valid moves for the first player; who is able to win the game by painting the two middle squares.
-- $n = 5$: Four valid moves for the first player (shown below in red); but no matter what the player does, the second player (blue) wins.
+- $n = 1$: немає дійсних ходів, тому перший гравець автоматично програє.
+- $n = 2$: лише один дійсний хід, після якого другий гравець програє.
+- $n = 3$: два дійсні ходи, але в обох програє другий гравець.
+- $n = 4$: три дійсні ходи для першого гравця, який може виграти гру, замалювавши два середніх квадрати.
+- $n = 5$: чотири дійсні ходи для першого гравця (показано нижче червоним кольором), але незважаючи на його дії, виграє другий гравець (синій колір).
 
-<img class="img-responsive center-block" alt="valid starting moves for strip with 5 squares" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="дійсні початкові ходи на смужці з 5 квадратів" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px;" />
 
-So, for $1 ≤ n ≤ 5$, there are 3 values of $n$ for which the first player can force a win.
+Тому за умови $1 ≤ n ≤ 5$ існує три значення $n$, за яких може виграти перший гравець.
 
-Similarly, for $1 ≤ n ≤ 50$, there are 40 values of $n$ for which the first player can force a win.
+Так само за умови $1 ≤ n ≤ 50$ існує сорок значень $n$, за яких може виграти перший гравець.
 
-For $1 ≤ n ≤ 1\\,000\\,000$, how many values of $n$ are there for which the first player can force a win?
+Скільки існує значень $n$ за умови $1 ≤ n ≤ 1\\,000\\,000$, за яких може виграти перший гравець?
 
 # --hints--
 

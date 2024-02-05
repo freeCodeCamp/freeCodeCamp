@@ -1,6 +1,6 @@
 ---
 id: 63e1798f811fda1bc546bba0
-title: "Functions and Graphing: Extra"
+title: "関数とグラフ表示: おまけ"
 challengeType: 15
 videoId: N7Fh1xKrIM4
 dashedName: functions-and-graphing-extra
@@ -8,19 +8,19 @@ dashedName: functions-and-graphing-extra
 
 # --description--
 
-This next video will show you the connection between functions and graphing. Notice how the graph is a way to represent the inputs and outputs of a function. Then the video will show you how to graph a function with Python.
+この動画では、関数とグラフの関係を説明します。 グラフは関数の入出力を表す方法であることに注目してください。 そして、Python で関数をグラフ表示する方法を紹介します。
 
-Here is the <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go with this video.</a>
+この動画と合わせて<a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV" target="_blank" rel="noopener noreferrer nofollow">こちらの Colab ノートブック</a>も利用してください。
 
 # --assignment--
 
-Add code to your algebra Colab notebook for functions and graphing.
+関数とグラフ表示のためのコードを代数学用の Colab ノートブックに追加してください。
 
 # --question--
 
 ## --text--
 
-What Python library would you import to create arrays that you can graph?
+グラフ表示が可能な配列を作成する場合にインポートする Python ライブラリはどれですか？
 
 ## --answers--
 

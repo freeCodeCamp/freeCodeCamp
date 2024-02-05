@@ -1,6 +1,6 @@
 ---
 id: 594fa2746886f41f7d8bf225
-title: Topological sort
+title: Clase topológica
 challengeType: 1
 forumTopicId: 302340
 dashedName: topological-sort
@@ -12,14 +12,14 @@ Given a mapping between items, and items they depend on, a topological sort orde
 
 # --instructions--
 
-Write a function that will return a list with valid compile order of libraries from their dependencies.
+Escriba una función que devolverá una lista con orden de compilación válido de librerías a partir de sus dependencias.
 
 - Assume library names are single words.
-- Items mentioned as only dependents have no dependents of their own, but their order of compiling must be given.
-- Any self dependencies should be ignored.
-- Any un-orderable dependencies should be ignored.
+- Los artículos mencionados como únicos dependientes no tienen dependientes propios, pero su orden de recolección debe ser dado.
+- Cualquier autodependencia debe ser ignorada.
+- Cualquier dependencia no ordenable debería ser ignorada.
 
-Use the following data as an example:
+Usar los siguientes datos como ejemplo:
 
 <pre>
 LIBRARY          LIBRARY DEPENDENCIES
@@ -39,11 +39,11 @@ std_cell_lib     ieee std_cell_lib
 synopsys
 </pre>
 
-The compiling of a library in the VHDL language has the constraint that a library must be compiled after any library it depends on. The above data would be un-orderable if, for example, `dw04` is added to the list of dependencies of `dw01`.
+La compilación de una biblioteca en el lenguaje VHDL tiene la restricción de que una biblioteca debe compilarse después de cualquier biblioteca de la esta dependa. Los datos anteriores no se podrían ordenar si, por ejemplo, `dw04` se agrega a la lista de dependencias de `dw01`.
 
-The input of the function will be a multiline string, each line will consist of the name of the library, followed by its dependencies (if exist).
+La entrada de la función será una cadena de varias líneas, cada línea consistirá en el nombre de la biblioteca, seguido de sus dependencias (si existen).
 
-For example:
+Por ejemplo:
 
 ```js
 const libsSimple =
@@ -53,37 +53,37 @@ const libsSimple =
 
 # --hints--
 
-`topologicalSort` should be a function.
+`topologicalSort` debería ser una función.
 
 ```js
 assert(typeof topologicalSort === 'function');
 ```
 
-`topologicalSort(libsSimple)` should return an array.
+`topologicalSort(libsSimple)` debería devolver una matriz.
 
 ```js
 assert(Array.isArray(topologicalSort(libsSimple)));
 ```
 
-`topologicalSort(libsSimple)` should return `['bbb', 'aaa']`.
+`topologicalSort(libsSimple)` debería devolver `['bbb', 'aaa']`.
 
 ```js
 assert.deepEqual(topologicalSort(libsSimple), ['bbb', 'aaa']);
 ```
 
-`topologicalSort(libsVHDL)` should return `['ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06', 'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys', 'dw03', 'des_system_lib']`.
+`topologicalSort(libsVHDL)` debería retornar `['ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06', 'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys', 'dw03', 'des_system_lib']`.
 
 ```js
 assert.deepEqual(topologicalSort(libsVHDL), ['ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06', 'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys', 'dw03', 'des_system_lib']);
 ```
 
-`topologicalSort(libsCustom)` should return `['base', 'c', 'd', 'b', 'a']`.
+`topologicalSort(libsCustom)` debería retornar`['base', 'c', 'd', 'b', 'a']`.
 
 ```js
 assert.deepEqual(topologicalSort(libsCustom), ['base', 'c', 'd', 'b', 'a']);
 ```
 
-`topologicalSort` should ignore unorderable dependencies.
+`topologicalSort` debe ignorar las dependencias no ordenadas.
 
 ```js
 assert.deepEqual(topologicalSort(libsUnorderable), ['Base']);

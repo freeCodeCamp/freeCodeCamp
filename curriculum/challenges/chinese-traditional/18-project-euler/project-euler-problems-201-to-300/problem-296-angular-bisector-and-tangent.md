@@ -1,6 +1,6 @@
 ---
 id: 5900f4941000cf542c50ffa7
-title: 'Problem 296: Angular Bisector and Tangent'
+title: '問題296：角平分線和切線'
 challengeType: 1
 forumTopicId: 301948
 dashedName: problem-296-angular-bisector-and-tangent

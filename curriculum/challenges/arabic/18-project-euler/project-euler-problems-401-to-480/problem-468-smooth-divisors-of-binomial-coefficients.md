@@ -12,7 +12,7 @@ An integer is called B-smooth if none of its prime factors is greater than $B$.
 
 Let $SB(n)$ be the largest B-smooth divisor of $n$.
 
-Examples:
+على سبيل المثال:
 
 $$\begin{align}   & S_1(10) = 1 \\\\
   & S_4(2\\,100) = 12 \\\\ & S_{17}(2\\,496\\,144) = 5\\,712 \end{align}$$

@@ -1,28 +1,28 @@
 ---
 id: 63d83ffd39c73468b059cd40
-title: "Build a Graphing Calculator"
+title: "グラフ電卓を作成する"
 challengeType: 10
 dashedName: build-a-graphing-calculator
 ---
 
 # --description--
 
-You will be <a href="https://colab.research.google.com/drive/1BHKshb67jWVVZQ9VlzQOpdFA-gzJkSUF?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
+このプロジェクトには <a href="https://colab.research.google.com/drive/1BHKshb67jWVVZQ9VlzQOpdFA-gzJkSUF?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Google Colaboratory</a> を使用して取り組んでください。
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+上記のリンクにアクセスした後、自分のアカウントまたはローカルに、ノートブックのコピーを作成してください。 プロジェクトを完了し、テストが成功したら (テストはリンクに含まれています)、下記入力欄からプロジェクトリンクを提出してください。 Google Colaboratory のリンクを送信する場合は、リンクの共有設定を必ず「リンクを知っている全員」に設定してください。
 
 # --instructions--
 
-For this challenge, you need to create a graphing calculator using Python that can take input and do the following:
+このチャレンジでは、Python を使用して入力を受け取り、次の処理を実行できるグラフ電卓を作成する必要があります。
 
-- Graph one or more functions
-- Create a table of (x,y) values
-- Shade above or below the line
-- Solve and graph a system of equations
-- Zoom in or out on a graph
-- Solve quadratic equations
+- 1 つまたは複数の関数をグラフ表示する
+- (x,y) 値の表を作成する
+- 線の上または下に色を塗る
+- 連立方程式を解いてグラフ表示する
+- グラフを拡大縮小する
+- 二次方程式を解く
 
-If you are struggling, you can follow the <a href="https://www.youtube.com/embed/EM0yNdZBdfQ" target="_blank" rel="noopener noreferrer nofollow">video walkthrough for this project.</a>
+自力で解決できない場合は、<a href="https://www.youtube.com/embed/EM0yNdZBdfQ" target="_blank" rel="noopener noreferrer nofollow">このプロジェクトの動画ウォークスルー</a>を参考にしてください。
 
-Once you're done, submit the URL to the public Colab notebook on your Google drive.
+作業を終えたら、Google ドライブの公開 Colab ノートブックの URL を提出してください。
 

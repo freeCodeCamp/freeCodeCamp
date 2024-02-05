@@ -1,6 +1,6 @@
 ---
 id: 5900f4381000cf542c50ff4b
-title: 'Problem 204: Generalised Hamming Numbers'
+title: '問題 204: 一般化ハミング数'
 challengeType: 1
 forumTopicId: 301845
 dashedName: problem-204-generalised-hamming-numbers
@@ -8,19 +8,19 @@ dashedName: problem-204-generalised-hamming-numbers
 
 # --description--
 
-A Hamming number is a positive number which has no prime factor larger than 5.
+ハミング数とは、いずれの素因数も 5 を超えないような正の数です。
 
-So the first few Hamming numbers are 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15.
+したがって、ハミング数を最小のものからいくつか並べると、1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15 となります。
 
-There are 1105 Hamming numbers not exceeding ${10}^8$.
+${10}^8$ を超えないハミング数は 1105 個あります。
 
-We will call a positive number a generalised Hamming number of type $n$, if it has no prime factor larger than $n$. Hence the Hamming numbers are the generalised Hamming numbers of type 5.
+$n$ を超える素因数を持たない正の数を、$n$ 型の「一般化ハミング数」と呼ぶことにします。 したがって、ハミング数は 5 型の一般化ハミング数です。
 
-How many generalised Hamming numbers of type 100 are there which don't exceed ${10}^9$?
+${10}^9$ を超えない 100 型の一般化ハミング数はいくつありますか。
 
 # --hints--
 
-`generalisedHammingNumbers()` should return `2944730`.
+`generalisedHammingNumbers()` は `2944730` を返す必要があります。
 
 ```js
 assert.strictEqual(generalisedHammingNumbers(), 2944730);

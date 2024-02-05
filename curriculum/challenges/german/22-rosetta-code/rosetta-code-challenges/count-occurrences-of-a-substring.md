@@ -1,6 +1,6 @@
 ---
 id: 596fda99c69f779975a1b67d
-title: Count occurrences of a substring
+title: Vorkommen eines Substrings zählen
 challengeType: 1
 forumTopicId: 302237
 dashedName: count-occurrences-of-a-substring
@@ -10,40 +10,40 @@ dashedName: count-occurrences-of-a-substring
 
 Create a function, or show a built-in function, to count the number of non-overlapping occurrences of a substring inside a string.
 
-The function should take two arguments:
+Die Funktion sollte zwei Argumente haben:
 
 <ul>
   <li>the first argument being the string to search, and</li>
-  <li>the second a substring to be searched for.</li>
+  <li>die zweite ein Substring, nach dem gesucht werden soll.</li>
 </ul>
 
-It should return an integer count.
+Es sollte eine ganzzahlige Anzahl zurückgeben.
 
-The matching should yield the highest number of non-overlapping matches.
+Der Abgleich sollte die höchste Anzahl von sich nicht überschneidenden Übereinstimmungen ergeben.
 
-In general, this essentially means matching from left-to-right or right-to-left.
+Im Allgemeinen bedeutet dies, dass der Abgleich von links nach rechts oder von rechts nach links erfolgt.
 
 # --hints--
 
-`countSubstring` should be a function.
+`countSubstring` sollte eine Funktion sein.
 
 ```js
 assert(typeof countSubstring === 'function');
 ```
 
-`countSubstring("the three truths", "th")` should return `3`.
+`countSubstring("the three truths", "th")` sollte `3` zurückgeben.
 
 ```js
 assert.equal(countSubstring(testCases[0], searchString[0]), results[0]);
 ```
 
-`countSubstring("ababababab", "abab")` should return `2`.
+`countSubstring("ababababab", "abab")` sollte `2` zurückgeben.
 
 ```js
 assert.equal(countSubstring(testCases[1], searchString[1]), results[1]);
 ```
 
-`countSubstring("abaabba*bbaba*bbab", "a*b")` should return `2`.
+`countSubstring("abaabba*bbaba*bbab", "a*b")` sollte `2` zurückgeben.
 
 ```js
 assert.equal(countSubstring(testCases[2], searchString[2]), results[2]);

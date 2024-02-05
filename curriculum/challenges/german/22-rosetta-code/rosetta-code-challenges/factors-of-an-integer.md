@@ -1,6 +1,6 @@
 ---
 id: 597f1e7fbc206f0e9ba95dc4
-title: Factors of an integer
+title: Faktoren einer Ganzzahl
 challengeType: 1
 forumTopicId: 302265
 dashedName: factors-of-an-integer
@@ -10,29 +10,29 @@ dashedName: factors-of-an-integer
 
 Write a function that returns the factors of a positive integer as an array.
 
-These factors are the positive integers by which the number being factored can be divided to yield a positive integer result.
+Die Faktoren sind die positiven Ganzzahlen, durch die die dargestellte Zahl aufgeteilt werden kann, um ein positives Ganzzahlergebnis zu erzielen.
 
 # --hints--
 
-`factors` should be a function.
+`factors` sollte eine Funktion sein.
 
 ```js
 assert(typeof factors === 'function');
 ```
 
-`factors(45)` should return `[1,3,5,9,15,45]`.
+`factors(45)` sollte `[1,3,5,9,15,45]` zurückgeben.
 
 ```js
 assert.deepEqual(factors(45), ans[0]);
 ```
 
-`factors(53)` should return `[1,53]`.
+`factors(53)` sollte `[1,53]` zurückgeben.
 
 ```js
 assert.deepEqual(factors(53), ans[1]);
 ```
 
-`factors(64)` should return `[1,2,4,8,16,32,64]`.
+`factors(64)` sollte `[1,2,4,8,16,32,64]` zurückgeben.
 
 ```js
 assert.deepEqual(factors(64), ans[2]);

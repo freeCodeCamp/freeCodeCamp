@@ -1,6 +1,6 @@
 ---
 id: 5949b579404977fbaefcd736
-title: 9 billion names of God the integer
+title: 90 億個神的整數名稱
 challengeType: 1
 forumTopicId: 302219
 dashedName: 9-billion-names-of-god-the-integer
@@ -10,19 +10,19 @@ dashedName: 9-billion-names-of-god-the-integer
 
 This task is a variation of the short story by Arthur C. Clarke.
 
-(Solvers should be aware of the consequences of completing this task.)
+(解題者應意識到完成這項任務的後果)。
 
-In detail, to specify what is meant by a "name":
+詳細地，要指定“名稱”的含義：
 
 <ul>
   <li>The integer 1 has 1 name "1".</li>
   <li>The integer 2 has 2 names "1+1" and "2".</li>
   <li>The integer 3 has 3 names "1+1+1", "2+1",  and "3".</li>
   <li>The integer 4 has 5 names "1+1+1+1", "2+1+1", "2+2", "3+1", "4".</li>
-  <li>The integer 5 has 7 names "1+1+1+1+1", "2+1+1+1", "2+2+1", "3+1+1", "3+2", "4+1", "5".</li>
+  <li>整數 5 有 7 個名稱 "1+1+1+1+1", "2+1+1+1", "2+2+1", "3+1+1", "3+2", "4+1", "5"。</li>
 </ul>
 
-This can be visualized in the following form:
+這可以被看作如下的表
 
 <pre>          1
         1   1
@@ -32,53 +32,53 @@ This can be visualized in the following form:
 1   3   3   2   1   1
 </pre>
 
-Where row $n$ corresponds to integer $n$, and each column $C$ in row $m$ from left to right corresponds to the number of names beginning with $C$.
+第 $n$ 行對應着整數 $n$, 第 $m$ 行中從左到右每一列 $C$ 對應着從 $C$ 開始的整數的名稱。
 
-Optionally note that the sum of the $n$-th row $P(n)$ is the integer partition function.
+可選地注意第 $n$ 行的總和 $P(n)$ 是整數分段函數。
 
 # --instructions--
 
-Implement a function that returns the sum of the $n$-th row.
+實現一個返回第 $n$ 行總和的函數。
 
 # --hints--
 
-`numberOfNames` should be function.
+`numberOfNames` 應是函數。
 
 ```js
 assert(typeof numberOfNames === 'function');
 ```
 
-`numberOfNames(5)` should equal 7.
+`numberOfNames(5)` 應該等於 7。
 
 ```js
 assert.equal(numberOfNames(5), 7);
 ```
 
-`numberOfNames(12)` should equal 77.
+`numberOfNames(12)` 應該等於 77。
 
 ```js
 assert.equal(numberOfNames(12), 77);
 ```
 
-`numberOfNames(18)` should equal 385.
+`numberOfNames(18)` 應該等於 385。
 
 ```js
 assert.equal(numberOfNames(18), 385);
 ```
 
-`numberOfNames(23)` should equal 1255.
+`numberOfNames(23)` 應該等於 1255。
 
 ```js
 assert.equal(numberOfNames(23), 1255);
 ```
 
-`numberOfNames(42)` should equal 53174.
+`numberOfNames(42)` 應該等於 53174。
 
 ```js
 assert.equal(numberOfNames(42), 53174);
 ```
 
-`numberOfNames(123)` should equal 2552338241.
+`numberOfNames(123)` 應等於 2552338241。
 
 ```js
 assert.equal(numberOfNames(123), 2552338241);

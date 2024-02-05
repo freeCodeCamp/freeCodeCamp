@@ -24,7 +24,7 @@ dashedName: build-a-pong-game
 
 完了したら、CodePen のプロジェクトへのリンクを入れて、「このチャレンジを完了しました」ボタンをクリックしてください。
 
-You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
+<a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp フォーラム</a>でプロジェクトを共有することにより、フィードバックを得ることができます。
 
 # --solutions--
 

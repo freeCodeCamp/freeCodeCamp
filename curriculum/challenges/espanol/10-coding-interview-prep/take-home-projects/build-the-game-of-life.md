@@ -37,7 +37,7 @@ Fulfill the below user stories and get all of the tests to pass. Use whichever l
 
 When you are finished, include a link to your project and click the "I've completed this challenge" button.
 
-You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
+Puedes obtener opiniones de tu proyecto compartiéndolo en el <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">foro freeCodeCamp</a>.
 
 # --solutions--
 

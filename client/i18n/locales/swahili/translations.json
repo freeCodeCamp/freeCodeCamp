@@ -198,6 +198,7 @@
     "sound-mode": "Hii inaongeza sauti ya kupendeza ya gitaa la akustika kwenye tovuti. Utapata maoni ya muziki unapoandika kwenye kihariri, unapokamilisha changamoto, unapopata cheti na zaidi.",
     "sound-volume": "Sauti ya Campfire:",
     "scrollbar-width": "Upana wa Upau wa kusogeza wa Kihariri",
+    "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
       "contains invalid characters": "Jina la mtumiaji \"{{username}}\" lina vibambo batili",
       "is too short": "Jina la mtumiaji \"{{username}}\" ni fupi mno",

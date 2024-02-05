@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0d0b6c005b0e76f075
-title: 'Networking: Using urllib in Python'
+title: '网络：在 Python 中使用 urllib'
 challengeType: 11
 videoId: 7lFM1T_CxBs
 bilibiliIds:
@@ -25,15 +25,15 @@ for line in fhand:
 
 ## --answers--
 
-Just contents of "romeo.txt".
+只有 “romeo.txt” 的内容。
 
 ---
 
-A header and the contents of "romeo.txt".
+“romeo.txt” 的 header 和内容。
 
 ---
 
-A header, a footer, and the contents of "romeo.txt".
+“romeo.txt” 的 header、footer 和内容。
 
 ## --video-solution--
 

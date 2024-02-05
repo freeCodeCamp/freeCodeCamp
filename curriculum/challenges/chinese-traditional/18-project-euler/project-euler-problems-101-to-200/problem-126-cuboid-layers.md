@@ -1,6 +1,6 @@
 ---
 id: 5900f3ea1000cf542c50fefd
-title: 'Problem 126: Cuboid layers'
+title: '問題126：長方體層'
 challengeType: 1
 forumTopicId: 301753
 dashedName: problem-126-cuboid-layers
@@ -10,21 +10,21 @@ dashedName: problem-126-cuboid-layers
 
 The minimum number of cubes to cover every visible face on a cuboid measuring 3 x 2 x 1 is twenty-two.
 
-<img class="img-responsive center-block" alt="3x2x1 cuboid covered by twenty-two 1x1x1 cubes" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="3x2x1 的長方體被 22 個 1x1x1 的立方體覆蓋" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px;" />
 
-If we add a second layer to this solid it would require forty-six cubes to cover every visible face, the third layer would require seventy-eight cubes, and the fourth layer would require one-hundred and eighteen cubes to cover every visible face.
+如果我們再添加第二層來覆蓋現在這個體的每一個可見面，則需要 64 個立方體，第三層需要 78 個立方體，第四層需要 118 個。
 
-However, the first layer on a cuboid measuring 5 x 1 x 1 also requires twenty-two cubes; similarly, the first layer on cuboids measuring 5 x 3 x 1, 7 x 2 x 1, and 11 x 1 x 1 all contain forty-six cubes.
+而覆蓋尺寸爲 5 x 1 x 1 的長方體第一層同樣也需要 22 個小立方體；類似的覆蓋尺寸爲 5 x 3 x 1，7 x 2 x 1，和 11 x 1 x 1 的第一層都需要 46 個立方體。
 
-We shall define $C(n)$ to represent the number of cuboids that contain $n$ cubes in one of its layers. So $C(22) = 2$, $C(46) = 4$, $C(78) = 5$, and $C(118) = 8$.
+我們定義 $C(n)$ 爲可以用 $n$ 個小立方體覆蓋其某一層表面的長方體的數目。 則 $C(22) = 2$，$C(46) = 4$，$C(78) = 5$，而 $C(118) = 8$。
 
-It turns out that 154 is the least value of $n$ for which $C(n) = 10$.
+可以發現 154 是滿足 $C(n) = 10$ 時 $n$ 的最小值。
 
-Find the least value of $n$ for which $C(n) = 1000$.
+求滿足 $C(n) = 1000$ 時，$n$ 的最小值。
 
 # --hints--
 
-`cuboidLayers()` should return `18522`.
+`cuboidLayers()` 應該返回 `18522`。
 
 ```js
 assert.strictEqual(cuboidLayers(), 18522);

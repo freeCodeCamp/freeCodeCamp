@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7eca
-title: Kaprekar numbers
+title: カプレカ数
 challengeType: 1
 forumTopicId: 302296
 dashedName: kaprekar-numbers
@@ -15,70 +15,70 @@ A positive integer is a Kaprekar number if:
   <li>The decimal representation of its square may be split once into two parts consisting of positive integers which sum to the original number. </li>
 </ul>
 
-Note that a split resulting in a part consisting purely of 0s is not valid, as 0 is not considered positive.
+ただし、分割された部分が 0 のみであった場合は、0 は正とはみなされないため、無効となることに注意してください。
 
-Example Kaprekar numbers:
+カプレカ数の例:
 
 <ul>
   <li><code>2223</code> is a Kaprekar number, as <code>2223 * 2223 = 4941729</code>, <code>4941729</code> may be split to <code>494</code> and <code>1729</code>, and <code>494 + 1729 = 2223</code></li>
-  <li>The series of Kaprekar numbers is known as A006886, and begins as <code>1, 9, 45, 55, ...</code></li>
+  <li>一連のカプレカ数は A006886 として知られており、 <code>1, 9, 45, 55, ...</code> で始まります。</li>
 </ul>
 
 # --instructions--
 
-Write a function that takes a number $n$, a base $bs$, and returns true if the number is a Kaprekar number for the given base. Otherwise, the function returns false.
+数値 $n$、底 $bs$ を取り、数値が与えられた底に対するカプレカ数の場合は true を返す関数を記述してください。 それ以外の場合、関数は false を返します。
 
 # --hints--
 
-`isKaprekar` should be a function.
+`isKaprekar` は関数とします。
 
 ```js
 assert(typeof isKaprekar == 'function');
 ```
 
-`isKaprekar(1, 10)` should return a boolean.
+`isKaprekar(1, 10)` はブール値を返す必要があります。
 
 ```js
 assert(typeof isKaprekar(1, 10) == 'boolean');
 ```
 
-`isKaprekar(1, 10)` should return `true`.
+`isKaprekar(1, 10)` は `true` を返す必要があります。
 
 ```js
 assert.equal(isKaprekar(1, 10), true);
 ```
 
-`isKaprekar(9, 10)` should return `true`.
+`isKaprekar(9, 10)` は `true` を返す必要があります。
 
 ```js
 assert.equal(isKaprekar(9, 10), true);
 ```
 
-`isKaprekar(2223, 10)` should return `true`.
+`isKaprekar(2223, 10)` は `true` を返す必要があります。
 
 ```js
 assert.equal(isKaprekar(2223, 10), true);
 ```
 
-`isKaprekar(22823, 10)` should return `false`.
+`isKaprekar(22823, 10)` は `false` を返す必要があります。
 
 ```js
 assert.equal(isKaprekar(22823, 10), false);
 ```
 
-`isKaprekar(9, 17)` should return `false`.
+`isKaprekar(9, 17)` は `false` を返す必要があります。
 
 ```js
 assert.equal(isKaprekar(9, 17), false);
 ```
 
-`isKaprekar(225, 17)` should return `true`.
+`isKaprekar(225, 17)` は `true` を返す必要があります。
 
 ```js
 assert.equal(isKaprekar(225, 17), true);
 ```
 
-`isKaprekar(999, 17)` should return `false`.
+`isKaprekar(999, 17)` は `false` を返す必要があります。
 
 ```js
 assert.equal(isKaprekar(999, 17), false);

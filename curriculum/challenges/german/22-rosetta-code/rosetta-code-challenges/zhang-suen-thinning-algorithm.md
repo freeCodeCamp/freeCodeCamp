@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad7
-title: Zhang-Suen thinning algorithm
+title: Zhang-Suen-Ausdünnungsalgorithmus
 challengeType: 1
 forumTopicId: 302347
 dashedName: zhang-suen-thinning-algorithm
@@ -25,7 +25,7 @@ const testImage1 = [
 ];
 ```
 
-It produces the thinned output:
+Es erzeugt die verdünnte Ausgabe:
 
 ```js
 [ '                               ',
@@ -42,23 +42,18 @@ It produces the thinned output:
 
 ## Algorithm
 
-Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes. The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
+Nehmen wir an, dass schwarze Pixel eine Eins und weiße Pixel eine Null sind, und dass das Eingabebild eine rechteckige N x M-Matrix aus Einsen und Nullen ist. Der Algorithmus arbeitet mit allen schwarzen Pixeln P1, die acht Nachbarn haben können. Die Nachbarn sind der Reihe nach wie folgt angeordnet:
 
-$$\begin{array}{|c|c|c|}
-  \\hline
-  P9 & P2              & P3\\\\ \\hline
-  P8 & \boldsymbol{P1} & P4\\\\ \\hline
-  P7 & P6              & P5\\\\ \\hline
-\end{array}$$
+$$\begin{array}{|c|c|c|} \\hline P9 & P2              & P3\\\\ \\hline P8 & \boldsymbol{P1} & P4\\\\ \\hline P7 & P6              & P5\\\\ \\hline \end{array}$$
 
-Obviously the boundary pixels of the image cannot have the full eight neighbours.
+Es ist offensichtlich, dass die Randpixel des Bildes nicht alle acht Nachbarn haben können.
 
 - Define $A(P1)$ = the number of transitions from white to black, ($0 \to 1$) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).
-- Define $B(P1)$ = the number of black pixel neighbours of P1. ($= \\sum(P2 \ldots P9)$)
+- Definiere $B(P1)$ = die Anzahl der schwarzen Pixel-Nachbarn von P1. ($= \\sum(P2 \ldots P9)$)
 
-**Step 1:**
+**Schritt 1:**
 
-All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.
+Alle Pixel werden getestet, und Pixel, die alle folgenden Bedingungen (gleichzeitig) erfüllen, werden in diesem Stadium lediglich vermerkt.
 
 1. The pixel is black and has eight neighbours
 2. $2 \le B(P1) \le 6$
@@ -66,55 +61,55 @@ All pixels are tested and pixels satisfying all the following conditions (simult
 4. At least one of $P2$, $P4$ and $P6$ is white
 5. At least one of $P4$, $P6$ and $P8$ is white
 
-After iterating over the image and collecting all the pixels satisfying all step 1 conditions, all these condition satisfying pixels are set to white.
+Nach der Iteration über das Bild und dem Sammeln aller Pixel, die alle Bedingungen von Schritt 1 erfüllen, werden alle Pixel, die diese Bedingungen erfüllen, auf weiß gesetzt.
 
-**Step 2:**
+**Schritt 2:**
 
-All pixels are again tested and pixels satisfying all the following conditions are just noted at this stage.
+Alle Pixel werden erneut getestet, und Pixel, die alle folgenden Bedingungen erfüllen, werden in diesem Stadium einfach vermerkt.
 
 1. The pixel is black and has eight neighbours
 2. $2 \le B(P1) \le 6$
 3. $A(P1) = 1$
-4. At least one of $P2$, $P4$ and $P8$ is white
-5. At least one of $P2$, $P6$ and $P8$ is white
+4. Mindestens eines von $P2$, $P4$ und $P8$ ist weiß
+5. Mindestens eines von $P2$, $P6$ und $P8$ ist weiß
 
-After iterating over the image and collecting all the pixels satisfying all step 2 conditions, all these condition satisfying pixels are again set to white.
+Nach der Iteration über das Bild und dem Sammeln aller Pixel, die alle Bedingungen von Schritt 2 erfüllen, werden alle Pixel, die diese Bedingungen erfüllen, wieder auf weiß gesetzt.
 
 **Iteration:**
 
-If any pixels were set in this round of either step 1 or step 2 then all steps are repeated until no image pixels are so changed.
+Wenn in dieser Runde von Schritt 1 oder Schritt 2 Pixel gesetzt wurden, werden alle Schritte wiederholt, bis keine Bildpixel mehr verändert werden.
 
 # --instructions--
 
-Write a routine to perform Zhang-Suen thinning on the provided `image`, an array of strings, where each string represents single line of the image. In the string, `#` represents black pixel, and whitespace represents white pixel. Function should return thinned image, using the same representation.
+Schreibe eine Routine zur Durchführung der Zhang-Suen-Durchforstung für das angegebene `image`, eine Anordnung von Zeichenketten, wobei jede Zeichenfolge eine einzelne Zeile des Bildes darstellt. Im String steht `#` für schwarze Pixel und Leerzeichen für weiße Pixel. Die Funktion sollte ein ausgedünntes Bild zurückgeben, das die gleiche Darstellung verwendet.
 
 # --hints--
 
-`thinImage` should be a function.
+`thinImage` sollte eine Funktion sein.
 
 ```js
 assert.equal(typeof thinImage, 'function');
 ```
 
-`thinImage` should return an array.
+`thinImage` sollte ein Array zurückgeben.
 
 ```js
 assert(Array.isArray(thinImage(_testImage1)));
 ```
 
-`thinImage` should return an array of strings.
+`thinImage` sollte ein Array an Strings zurückgeben.
 
 ```js
 assert.equal(typeof thinImage(_testImage1)[0], 'string');
 ```
 
-`thinImage(testImage1)` should return a thinned image as in the example.
+`thinImage(testImage1)` sollte ein ausgedünntes Bild wie im Beispiel zurückgeben.
 
 ```js
 assert.deepEqual(thinImage(_testImage1), expected1);
 ```
 
-`thinImage(testImage2)` should return a thinned image.
+`thinImage(testImage2)` sollte ein ausgedünntes Bild zurückgeben.
 
 ```js
 assert.deepEqual(thinImage(_testImage2), expected2);

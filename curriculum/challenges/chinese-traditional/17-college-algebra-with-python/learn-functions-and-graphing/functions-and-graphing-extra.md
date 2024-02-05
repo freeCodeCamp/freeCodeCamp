@@ -12,7 +12,7 @@ dashedName: functions-and-graphing-extra
 
 這是<a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV" target="_blank" rel="noopener noreferrer nofollow">和視頻配套的 Colab 筆記本</a>。
 
-# --assignment--
+# --作業--
 
 在你的代數 Colab 筆記本上添加代碼，用於函數和圖像。
 

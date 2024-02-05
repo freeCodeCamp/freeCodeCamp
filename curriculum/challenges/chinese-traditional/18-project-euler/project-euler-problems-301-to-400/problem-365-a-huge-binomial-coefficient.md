@@ -1,6 +1,6 @@
 ---
 id: 5900f4da1000cf542c50ffec
-title: 'Problem 365: A huge binomial coefficient'
+title: '問題365：巨大的二項式係數'
 challengeType: 1
 forumTopicId: 302026
 dashedName: problem-365-a-huge-binomial-coefficient

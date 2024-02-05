@@ -9,11 +9,11 @@ dashedName: dialogue-meeting-a-client
 
 Watch the video above to understand the context of the upcoming lessons.
 
-# --assignment--
+# --tarea--
 
 Watch the video
 
-# --scene--
+# --escena---
 
 ```json
 {

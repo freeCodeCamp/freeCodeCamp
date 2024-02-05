@@ -1,6 +1,6 @@
 ---
 id: 5900f3db1000cf542c50feed
-title: 'Problem 110: Diophantine Reciprocals II'
+title: '問題 110：丟番圖倒數 II'
 challengeType: 1
 forumTopicId: 301735
 dashedName: problem-110-diophantine-reciprocals-ii
@@ -12,15 +12,15 @@ In the following equation x, y, and n are positive integers.
 
 $$\frac{1}{x} + \frac{1}{y} = \frac{1}{n}$$
 
-It can be verified that when `n` = 1260 there are 113 distinct solutions and this is the least value of `n` for which the total number of distinct solutions exceeds one hundred.
+可以驗證，當 `n` = 1260 時，有 113 個不同的解，這是 `n` 中不同解總數超過一百的最小值。
 
-What is the least value of `n` for which the number of distinct solutions exceeds four million?
+不同解數超過四百萬的 `n` 的最小值是多少？
 
-**Note:** This problem is a much more difficult version of Problem 108 and as it is well beyond the limitations of a brute force approach it requires a clever implementation.
+**注意：** 這個問題是問題 108 的一個更難的版本，因爲它遠遠超出了蠻力方法的限制，它需要一個巧妙的實現。
 
 # --hints--
 
-`diophantineTwo()` should return `9350130049860600`.
+`diophantineTwo()` 應該返回 `9350130049860600`。
 
 ```js
 assert.strictEqual(diophantineTwo(), 9350130049860600);

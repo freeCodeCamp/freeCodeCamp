@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e7b
-title: Generator/Exponential
+title: ジェネレータ／指数関数
 challengeType: 1
 forumTopicId: 302275
 dashedName: generatorexponential
@@ -10,57 +10,57 @@ dashedName: generatorexponential
 
 A generator is an executable entity (like a function or procedure) that contains code that yields a sequence of values, one at a time, so that each time you call the generator, the next value in the sequence is provided.
 
-Generators are often built on top of coroutines or objects so that the internal state of the object is handled "naturally".
+ジェネレータは、オブジェクトの内部状態が「自然に」処理されるように、しばしば、コルーチンやオブジェクトに追加して作成されます。
 
-Generators are often used in situations where a sequence is potentially infinite, and where it is possible to construct the next value of the sequence with only minimal state.
+ジェネレータは、数列が無限になる可能性がある場合、 そして最小限の状態さえあれば、数列の次の値を生成することが可能な場合によく使用されます。
 
 # --instructions--
 
-Write a function that uses generators to generate squares and cubes. Create a new generator that filters all cubes from the generator of squares.
+ジェネレータを使って正方形や立方体を生成する関数を記述してください。 正方形のジェネレータからすべての立方体をフィルタリングする新しいジェネレータを作成します。
 
-The function should return the \\( n^{th} \\) value of the filtered generator.
+この関数は、フィルタリングされたジェネレータの \\( n^{th} \\) 値を返します。
 
-For example for \\(n=7\\), the function should return 81 as the sequence would be 4, 9, 16, 25, 36, 49, 81. Here 64 is filtered out, as it is a cube.
+例えば、\\(n=7\\) の場合、数列は4,9,16,25,36,49,81となるため、この関数は81を返すことになります。 ここで、64は立方体であるため除外されます。
 
 # --hints--
 
-`exponentialGenerator` should be a function.
+`exponentialGenerator` は関数とします。
 
 ```js
 assert(typeof exponentialGenerator == 'function');
 ```
 
-`exponentialGenerator()` should return a number.
+`exponentialGenerator()` は数値を返す必要があります。
 
 ```js
 assert(typeof exponentialGenerator(10) == 'number');
 ```
 
-`exponentialGenerator(10)` should return `144`.
+`exponentialGenerator(10)` は`144`を返す必要があります。
 
 ```js
 assert.equal(exponentialGenerator(10), 144);
 ```
 
-`exponentialGenerator(12)` should return `196`.
+`exponentialGenerator(12)` は`196`を返す必要があります。
 
 ```js
 assert.equal(exponentialGenerator(12), 196);
 ```
 
-`exponentialGenerator(14)` should return `256`.
+`exponentialGenerator(14)` は`256`を返す必要があります。
 
 ```js
 assert.equal(exponentialGenerator(14), 256);
 ```
 
-`exponentialGenerator(20)` should return `484`.
+`exponentialGenerator(20)` は`484`を返す必要があります。
 
 ```js
 assert.equal(exponentialGenerator(20), 484);
 ```
 
-`exponentialGenerator(25)` should return `784`.
+`exponentialGenerator(25)` は`784`を返す必要があります。
 
 ```js
 assert.equal(exponentialGenerator(25), 784);

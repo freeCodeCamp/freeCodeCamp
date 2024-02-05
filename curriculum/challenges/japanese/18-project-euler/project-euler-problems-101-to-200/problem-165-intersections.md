@@ -1,6 +1,6 @@
 ---
 id: 5900f4111000cf542c50ff24
-title: 'Problem 165: Intersections'
+title: '問題 165: 交点'
 challengeType: 1
 forumTopicId: 301799
 dashedName: problem-165-intersections
@@ -8,37 +8,37 @@ dashedName: problem-165-intersections
 
 # --description--
 
-A segment is uniquely defined by its two endpoints. By considering two line segments in plane geometry there are three possibilities: the segments have zero points, one point, or infinitely many points in common.
+線分は 2 つの端点によって一意に定義されます。 平面上にある 2 本の線分について考えると、共有点がない、共有点が 1 つある、共有点が無数にある、という 3 つの可能性があります。
 
-Moreover when two segments have exactly one point in common it might be the case that that common point is an endpoint of either one of the segments or of both. If a common point of two segments is not an endpoint of either of the segments it is an interior point of both segments.
+さらに、2 本の線分が共有点をちょうど 1 つ持つ場合、その共通点が、いずれかまたは両方の線分の端点であり得ます。 2 本の線分の共有点がいずれの線分の端点でもない場合、それは両方の線分の内点です。
 
-We will call a common point $T$ of two segments $L_1$ and $L_2$ a true intersection point of $L_1$ and $L_2$ if $T$ is the only common point of $L_1$ and $L_2$ and $T$ is an interior point of both segments.
+点 $T$ が 2 本の線分 $L_1$ と $L_2$ の唯一の共有点であり、かつ、$T$ が両方の線分の内点である場合、$L_1$ と $L_2$ の共有点 $T$ を $L_1$ と $L_2$ の「真の交点」と呼ぶことにします。
 
-Consider the three segments $L_1$, $L_2$, and $L_3$:
+3 本の線分 $L_1$, $L_2$, $L_3$ について考えます。
 
-$$\begin{align}   & L_1: (27, 44) \\;\text{to}\\; (12, 32) \\\\
-  & L_2: (46, 53) \\;\text{to}\\; (17, 62) \\\\   & L_3: (46, 70) \\;\text{to}\\; (22, 40) \\\\
+$$\begin{align}   & L_1: (27, 44) \\;\text{から}\\; (12, 32) \\\\
+  & L_2: (46, 53) \\;\text{から}\\; (17, 62) \\\\   & L_3: (46, 70) \\;\text{から}\\; (22, 40) \\\\
 \end{align}$$
 
-It can be verified that line segments $L_2$ and $L_3$ have a true intersection point. We note that as the one of the end points of $L_3$: (22, 40) lies on $L_1$ this is not considered to be a true point of intersection. $L_1$ and $L_2$ have no common point. So among the three line segments, we find one true intersection point.
+線分 $L_2$ と $L_3$ が真の交点を持つことを確認できます。 なお、$L_3$ の一方の端点 (22, 40) は $L_1$ 上にありますが、これを真の交点とはみなしません。 $L_1$ と $L_2$ に共有点はありません。 したがって、この 3 本の線分には真の交差点が 1 つあります。
 
-Now let us do the same for 5000 line segments. To this end, we generate 20000 numbers using the so-called "Blum Blum Shub" pseudo-random number generator.
+次に、5000 本の線分について同じことをします。 このために、"Blum Blum Shub" と呼ばれる擬似乱数法を使用して 20000 個の数を生成します。
 
 $$\begin{align}   & s_0 = 290797 \\\\
-  & s_{n + 1} = s_n × s_n (\text{modulo}\\; 50515093) \\\\   & t_n = s_n (\text{modulo}\\; 500) \\\\
+  & s_{n + 1} = s_n × s_n (\text{mod}\\; 50515093) \\\\   & t_n = s_n (\text{mod}\\; 500) \\\\
 \end{align}$$
 
-To create each line segment, we use four consecutive numbers $t_n$. That is, the first line segment is given by:
+それぞれの線分を作成するには、4 つの連続数字 $t_n$ を使用します。 つまり、最初の線分は次によって与えられます。
 
-($_t$1, $t_2$) to ($t_3$, $t_4$)
+($_t$1, $t_2$) から ($t_3$, $t_4$)
 
-The first four numbers computed according to the above generator should be: 27, 144, 12 and 232. The first segment would thus be (27, 144) to (12, 232).
+上の生成法によって計算される最初の 4 つの数は 27, 144, 12, 232 です。 したがって、最初の線分は (27, 144) から (12, 232) となります。
 
-How many distinct true intersection points are found among the 5000 line segments?
+これらの 5000 本の線分には、相異なる真の交点がいくつありますか。
 
 # --hints--
 
-`distinctIntersections()` should return `2868868`.
+`distinctIntersections()` は `2868868` を返す必要があります 。
 
 ```js
 assert.strictEqual(distinctIntersections(), 2868868);

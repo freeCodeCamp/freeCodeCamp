@@ -41,7 +41,7 @@ ourPets[1].names[0];
 
 # --instructions--
 
-Usando la notazione a punto e a parentesi, imposta la variabile `secondTree` al secondo elemento nella lista `trees` dall'oggetto `myPlants`.
+Using dot and bracket notation, set the variable `secondTree` to the second element in the `list` array from the second object in the `myPlants` array.
 
 # --hints--
 

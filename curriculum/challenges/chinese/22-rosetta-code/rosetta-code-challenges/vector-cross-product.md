@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad2
-title: Vector cross product
+title: 矢量叉积
 challengeType: 1
 forumTopicId: 302342
 dashedName: vector-cross-product
@@ -12,23 +12,23 @@ A vector is defined as having three dimensions as being represented by an ordere
 
 # --instructions--
 
-Write a function that takes two vectors (arrays) as input and computes their cross product. Your function should return `null` on invalid inputs such as vectors of different lengths.
+编写一个函数，将两个向量（数组）作为输入并计算它们的叉积。 该函数应该在无效输入（例如不同长度的向量）上返回 `null`。
 
 # --hints--
 
-`crossProduct` should be a function.
+`crossProduct` 应该是一个函数。
 
 ```js
 assert.equal(typeof crossProduct, 'function');
 ```
 
-`crossProduct()` should return null.
+`crossProduct()` 应该返回 null。
 
 ```js
 assert.equal(crossProduct(), null);
 ```
 
-`crossProduct([1, 2, 3], [4, 5, 6])` should return `[-3, 6, -3]`.
+`crossProduct([1, 2, 3], [4, 5, 6])` 应该返回 `[-3, 6, -3]`。
 
 ```js
 assert.deepEqual(res12, exp12);

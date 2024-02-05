@@ -1,6 +1,6 @@
 ---
 id: 5900f3ef1000cf542c50ff01
-title: 'Problem 129: Repunit divisibility'
+title: '問題 129: レピュニット数の被整除性'
 challengeType: 1
 forumTopicId: 301756
 dashedName: problem-129-repunit-divisibility
@@ -8,17 +8,17 @@ dashedName: problem-129-repunit-divisibility
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define $R(k)$ to be a repunit of length $k$; for example, $R(6) = 111111$.
+1 のみで構成される数はレピュニット数と呼ばれます。 ここでは、長さ $k$ のレピュニット数を $R(k)$ と定義します。例えば、$R(6) = 111111$ です。
 
-Given that $n$ is a positive integer and $GCD(n, 10) = 1$, it can be shown that there always exists a value, $k$, for which $R(k)$ is divisible by $n$, and let $A(n)$ be the least such value of $k$; for example, $A(7) = 6$ and $A(41) = 5$.
+$n$ を正の整数とし、$GCD(n, 10) = 1$ が与えられる場合、$R(k)$ が $n$ で割り切れるような値 $k$ が必ず存在することを証明できます。また、そのような $k$ の最小値を $A(n)$ とします。例えば、$A(7) = 6$, $A(41) = 5$ です。
 
-The least value of $n$ for which $A(n)$ first exceeds ten is 17.
+$A(n)$ が初めて 10 を超えるときの $n$ の最小値は 17 です。
 
-Find the least value of $n$ for which $A(n)$ first exceeds one-million.
+$A(n)$ が初めて 100 万を超えるときの $n$ の最小値を求めなさい。
 
 # --hints--
 
-`repunitDivisibility()` should return `1000023`.
+`repunitDivisibility()` は `1000023` を返す必要があります。
 
 ```js
 assert.strictEqual(repunitDivisibility(), 1000023);

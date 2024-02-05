@@ -36,4 +36,4 @@ The `break` keyword tells the runtime to exit the application.
 
 ## --video-solution--
 
-2
+٢

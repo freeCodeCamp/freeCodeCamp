@@ -1,6 +1,6 @@
 ---
 id: 63dbd0375d93712ff177d969
-title: "Business Applications of College Algebra: Extra"
+title: "代数学のビジネスへの応用: おまけ"
 challengeType: 15
 videoId: 9n_ZybF0Phc
 dashedName: business-applications-of-college-algebra-extra
@@ -8,29 +8,29 @@ dashedName: business-applications-of-college-algebra-extra
 
 # --description--
 
-This video is showing you some economics applications, and creating graphs and formulas.
+この動画では、経済学への応用例をいくつか紹介し、グラフや式を作成します。
 
 # --question--
 
 ## --text--
 
-Which of the following is not true of supply and demand graphs?
+次のうち、需給グラフの説明として正しくない文章はどれですか？
 
 ## --answers--
 
-The supply curve has a positive slope
+供給曲線は正の傾きを持つ
 
 ---
 
-The demand curve has a negative slope
+需要曲線は負の傾きを持つ
 
 ---
 
-The supply curve and demand curve will intersect
+供給曲線と需要曲線は交差する
 
 ---
 
-The supply curve and demand curve will always be straight lines
+供給曲線と需要曲線は常に直線になる
 
 ## --video-solution--
 

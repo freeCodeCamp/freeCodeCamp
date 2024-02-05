@@ -1,6 +1,6 @@
 ---
 id: 59667989bf71cf555dd5d2ff
-title: S-Expressions
+title: S-вирази
 challengeType: 1
 forumTopicId: 302303
 dashedName: s-expressions
@@ -12,43 +12,43 @@ dashedName: s-expressions
 
 # --instructions--
 
-Write a simple reader/parser for S-Expressions that handles quoted and unquoted strings, integers and floats.
+Напишіть простий синтаксичний аналізатор для S-виразів, який зможе опрацьовувати рядки та цілі числа в лапках та без них.
 
-The function should read a single but nested S-Expression from a string and return it as a (nested) array.
+Функція має зчитувати один, але вкладений S-вираз з рядка і повернути його як (вкладений) масив.
 
-Newlines and other whitespace may be ignored unless contained within a quoted string.
+За межами лапок символи розриву строки та інші пробіли можуть бути проігноровані.
 
-"`()`" inside quoted strings are not interpreted, but treated as part of the string.
+"`()`" всередині лапок не інтерпретуються, а розглядається як частина рядка.
 
-Handling escaped quotes inside a string is optional; thus "`(foo"bar)`" may be treated as a string "`foo"bar`", or as an error.
+Обробка пропущених лапок всередині рядка не є обов'язковою; таким чином "`(foo"bar)`" може розглядатися як рядок "`foo"bar`", або як помилка.
 
-For this, the reader need not recognize `\` for escaping, but should, in addition, recognize numbers if the language has appropriate data types.
+Для цього не потрібно розпізнавати `\` для екранування, але окрім того варто розгледіти цифри, якщо мова має відповідні типи даних.
 
-Note that with the exception of `()"` (`\` if escaping is supported) and whitespace, there are no special characters. Anything else is allowed without quotes.
+Зверніть увагу, що, за винятком пробілів та `()"` (`\`, якщо екранування підтримується), спеціальних символів немає. Все інше можна використовувати без лапок.
 
-The reader should be able to read the following input
+Читач повинен прочитати наступні вхідні дані
 
 <pre>((data "quoted data" 123 4.5)
 (data (!@# (4.5) "(more" "data)")))
 </pre>
 
-and turn it into a native data structure.
+і перетворити їх на початкову структуру даних.
 
 # --hints--
 
-`parseSexpr` should be a function.
+`parseSexpr` має бути функцією.
 
 ```js
 assert(typeof parseSexpr === 'function');
 ```
 
-`parseSexpr('(data1 data2 data3)')` should return `['data1', 'data2', 'data3']`
+`parseSexpr('(data1 data2 data3)')` має повернути `['data1', 'data2', 'data3']`
 
 ```js
 assert.deepEqual(parseSexpr(simpleSExpr), simpleSolution);
 ```
 
-`parseSexpr('((data "quoted data" 123 4.5) (data (!@# (4.5) "(more" "data)")))')` should return `[['data', '"quoted data"', 123, 4.5], ['data', ['!@#', [4.5], '"(more"', '"data)"']]]`.
+`parseSexpr('((data "quoted data" 123 4.5) (data (!@# (4.5) "(more" "data)")))')` має повернути `[['data', '"quoted data"', 123, 4.5], ['data', ['!@#', [4.5], '"(more"', '"data)"']]]`.
 
 ```js
 assert.deepEqual(parseSexpr(basicSExpr), basicSolution);

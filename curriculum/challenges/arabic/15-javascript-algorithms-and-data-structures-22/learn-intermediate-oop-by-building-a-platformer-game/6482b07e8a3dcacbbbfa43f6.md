@@ -1,6 +1,6 @@
 ---
 id: 6482b07e8a3dcacbbbfa43f6
-title: Step 9
+title: الخطوة 9
 challengeType: 0
 dashedName: step-9
 ---
@@ -16,7 +16,7 @@ Use `let` to create a new variable called `isCheckpointCollisionDetectionActive`
 You should use the `let` keyword to declare your `isCheckpointCollisionDetectionActive` variable.
 
 ```js
-assert.match(code, /let isCheckpointCollisionDetectionActive/);
+assert.match(code, /let\s+isCheckpointCollisionDetectionActive/);
 ```
 
 

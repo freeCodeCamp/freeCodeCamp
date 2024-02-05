@@ -1,6 +1,6 @@
 ---
 id: 5900f3801000cf542c50fe93
-title: 'Problem 20: Factorial digit sum'
+title: '問題 20: 階乗の各位の和'
 challengeType: 1
 forumTopicId: 301839
 dashedName: problem-20-factorial-digit-sum
@@ -8,46 +8,46 @@ dashedName: problem-20-factorial-digit-sum
 
 # --description--
 
-`n`! means `n` × (`n` − 1) × ... × 3 × 2 × 1
+`n`! は、`n` × (`n` − 1) × ... 3 × 2 × 1 を意味します。
 
-For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,  
-and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
+例えば 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800 であり、  
+10! の各位の和は 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27 です。
 
-Find the sum of the digits `n`!
+`n`! の各位の和を求めなさい。
 
 # --hints--
 
-`sumFactorialDigits(10)` should return a number.
+`sumFactorialDigits(10)` は数値を返す必要があります。
 
 ```js
 assert(typeof sumFactorialDigits(10) === 'number');
 ```
 
-`sumFactorialDigits(10)` should return 27.
+`sumFactorialDigits(10)` は 27 を返す必要があります。
 
 ```js
 assert.strictEqual(sumFactorialDigits(10), 27);
 ```
 
-`sumFactorialDigits(25)` should return 72.
+`sumFactorialDigits(25)` は 72 を返す必要があります。
 
 ```js
 assert.strictEqual(sumFactorialDigits(25), 72);
 ```
 
-`sumFactorialDigits(50)` should return 216.
+`sumFactorialDigits(50)` は 216 を返す必要があります。
 
 ```js
 assert.strictEqual(sumFactorialDigits(50), 216);
 ```
 
-`sumFactorialDigits(75)` should return 432.
+`sumFactorialDigits(75)` は 432 を返す必要があります。
 
 ```js
 assert.strictEqual(sumFactorialDigits(75), 432);
 ```
 
-`sumFactorialDigits(100)` should return 648.
+`sumFactorialDigits(100)` は 648 を返す必要があります。
 
 ```js
 assert.strictEqual(sumFactorialDigits(100), 648);

@@ -1,6 +1,6 @@
 ---
 id: 594d8d0ab97724821379b1e6
-title: Averages/Mode
+title: Medie/Moda
 challengeType: 1
 forumTopicId: 302226
 dashedName: averagesmode
@@ -10,25 +10,25 @@ dashedName: averagesmode
 
 Write a function `mode` to find the value that appears most in an array.
 
-The case where the collection is empty may be ignored. Care must be taken to handle the case where the mode is non-unique.
+Il caso in cui una collezione è vuota può essere ignorato. Devi fare attenzione per gestire il caso dove la moda non è unica.
 
-If it is not appropriate or possible to support a general collection, use a vector (array), if possible. If it is not appropriate or possible to support an unspecified value type, use integers.
+Se non è appropriato o possibile supportare una collezione generale, usa un vettore (array), se possibile. Se non è appropriato o possibile supportare un tipo di valore non specificato, usa numeri interi.
 
 # --hints--
 
-`mode` should be a function.
+`mode` dovrebbe essere una funzione.
 
 ```js
 assert(typeof mode === 'function');
 ```
 
-`mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])` should equal `[6]`
+`mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])` dovrebbe essere uguale a `[6]`
 
 ```js
 assert.deepEqual(mode(arr1), [6]);
 ```
 
-`mode([1, 2, 4, 4, 1])` should equal `[1, 4]`.
+`mode([1, 2, 4, 4, 1])` dovrebbe essere uguale a `[1, 4]`.
 
 ```js
 assert.deepEqual(mode(arr2).sort(), [1, 4]);

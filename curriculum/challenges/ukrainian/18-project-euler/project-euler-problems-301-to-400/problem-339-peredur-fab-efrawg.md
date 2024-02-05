@@ -1,6 +1,6 @@
 ---
 id: 5900f4c01000cf542c50ffd2
-title: 'Problem 339: Peredur fab Efrawg'
+title: 'Завдання 339: Передур, син Еврауга'
 challengeType: 1
 forumTopicId: 301997
 dashedName: problem-339-peredur-fab-efrawg
@@ -8,11 +8,11 @@ dashedName: problem-339-peredur-fab-efrawg
 
 # --description--
 
-"And he came towards a valley, through which ran a river; and the borders of the valley were wooded, and on each side of the river were level meadows. And on one side of the river he saw a flock of white sheep, and on the other a flock of black sheep. And whenever one of the white sheep bleated, one of the black sheep would cross over and become white; and when one of the black sheep bleated, one of the white sheep would cross over and become black." - Peredur the Son of Evrawc
+«І він підійшов до долини, через яку протікала річка. Краї долини були покриті лісами, а по обидва боки річки розкинулись луги. З одного боку річки він побачив отару білих овець, а з іншого — отару чорних овець. І щоразу, коли одна з білих овець бекала, одна з чорних овець перепливала річку і ставала білою; а коли одна з чорних овець бекала, одна з білих овець перепливала річку і ставала чорною.» — Передур, син Еврауга
 
-Initially, each flock consists of $n$ sheep. Each sheep (regardless of color) is equally likely to be the next sheep to bleat. After a sheep has bleated and a sheep from the other flock has crossed over, Peredur may remove a number of white sheep in order to maximize the expected final number of black sheep. Let $E(n)$ be the expected final number of black sheep if Peredur uses an optimal strategy.
+Спочатку кожна отара складається з $n$ овець. Кожна вівця (незалежно від кольору) з однаковою ймовірністю стане наступною вівцею, яка бекатиме. Коли вівця бекає, а вівця з іншої отари перепливає річку, Передур може забрати певну кількість білих овець, щоб максимізувати очікувану кінцеву кількість чорних овець. Нехай $E(n)$ буде очікуваною кінцевою кількістю чорних овець, якщо Передур використає оптимальну стратегію.
 
-You are given that $E(5) = 6.871346$ rounded to 6 places behind the decimal point.
+Дано, що $E(5) = 6.871346$ (заокруглено до 6 знаків після коми).
 
 Знайдіть $E(10\\,000)$ та дайте відповідь, заокруглену до шести знаків після коми.
 

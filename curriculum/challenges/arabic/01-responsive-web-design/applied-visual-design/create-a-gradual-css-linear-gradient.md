@@ -17,7 +17,7 @@ background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...);
 
 The first argument specifies the direction from which color transition starts - it can be stated as a degree, where `90deg` makes a horizontal gradient (from left to right) and `45deg` makes a diagonal gradient (from bottom left to top right). The following arguments specify the order of colors used in the gradient.
 
-Example:
+مثال:
 
 ```css
 background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));
