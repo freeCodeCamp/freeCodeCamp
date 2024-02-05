@@ -77,6 +77,7 @@ function DonateModal({
       className='donation-modal'
       onExited={handleModalHide}
       show={show}
+      data-cy='donation-modal'
     >
       <DonationModalBody
         closeDonationModal={closeDonationModal}
