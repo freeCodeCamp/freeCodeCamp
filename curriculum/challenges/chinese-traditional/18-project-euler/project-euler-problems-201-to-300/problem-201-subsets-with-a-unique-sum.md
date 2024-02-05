@@ -1,6 +1,6 @@
 ---
 id: 5900f4361000cf542c50ff48
-title: 'Problem 201: Subsets with a unique sum'
+title: '問題201：唯一總和子集'
 challengeType: 1
 forumTopicId: 301841
 dashedName: problem-201-subsets-with-a-unique-sum
@@ -10,7 +10,7 @@ dashedName: problem-201-subsets-with-a-unique-sum
 
 For any set $A$ of numbers, let $sum(A)$ be the sum of the elements of $A$.
 
-Consider the set $B = \\{1,3,6,8,10,11\\}$. There are 20 subsets of $B$ containing three elements, and their sums are:
+考慮集合 $B = \\{1,3,6,8,10,11\\}$。 $B$ 有20個子集包含三個元素，並且他們的總和是：
 
 $$\begin{align}   & sum(\\{1,3,6\\}) = 10 \\\\
   & sum(\\{1,3,8\\}) = 12 \\\\   & sum(\\{1,3,10\\}) = 14 \\\\
@@ -24,15 +24,15 @@ $$\begin{align}   & sum(\\{1,3,6\\}) = 10 \\\\
   & sum(\\{6,8,11\\}) = 25 \\\\   & sum(\\{6,10,11\\}) = 27 \\\\
   & sum(\\{8,10,11\\}) = 29 \\end{align}$$
 
-Some of these sums occur more than once, others are unique. For a set $A$, let $U(A,k)$ be the set of unique sums of $k$-element subsets of $A$, in our example we find $U(B,3) = \\{10,12,14,18,21,25,27,29\\}$ and $sum(U(B,3)) = 156$.
+這其中的總和有些不只出現一次，另一些是唯一的。 對於集合 $A$，允許 $U(A,k)$ 是唯一的總和 $k$元素子集的 $A$在我們的示例中，我們找到 $U(B,3) = \\{10,12,14,18,21,25,27,29\\}$ 和 $sum(U(B,3)) = 156美元。
 
-Now consider the $100$-element set $S = \\{1^2, 2^2, \ldots , {100}^2\\}$. $S$ has $100\\,891\\,344\\,545\\,564\\,193\\,334\\,812\\,497\\,256\\;$ $50$-element subsets.
+現在考慮 $100$元素集 $S = \\{1^2, 2^2, \lpots , {100}^2\\}$。 $S$ 有 $100\\,891\\,344\\,545\\,564\\,193\,334\\,812\\,497\\,256\;$ $50$-元素子集。
 
-Determine the sum of all integers which are the sum of exactly one of the $50$-element subsets of $S$, i.e. find $sum(U(S,50))$.
+確定所有整數的總和，這些整數正好是 $50$元素子集中的一個 $S$的總和，即找到 $sum(U(S,50)$)。
 
 # --hints--
 
-`uniqueSubsetsSum()` should return `115039000`.
+`crissCross()` 應該返回 `115039000`.
 
 ```js
 assert.strictEqual(uniqueSubsetsSum(), 115039000);

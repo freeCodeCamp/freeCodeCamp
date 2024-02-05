@@ -1,6 +1,6 @@
 ---
 id: 5900f3bd1000cf542c50fed0
-title: 'Problem 81: Path sum: two ways'
+title: '問題 81: 経路の和: 2 方向'
 challengeType: 1
 forumTopicId: 302195
 dashedName: problem-81-path-sum-two-ways
@@ -8,29 +8,29 @@ dashedName: problem-81-path-sum-two-ways
 
 # --description--
 
-In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom right, by **only moving to the right and down**, is indicated in bold red and is equal to `2427`.
+下の 5 x 5 行列において、**右と下への移動のみ**により左上から右下へ移動するものとします。和が最小になる経路が赤い太字で示され、その和は `2427` になります。
 
   $$\begin{pmatrix}   \color{red}{131} & 673 & 234 & 103 & 18\\\\
   \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\   630 & 803 & \color{red}{746} & \color{red}{422} & 111\\\\
   537 & 699 & 497 & \color{red}{121} & 956\\\\ 805 & 732 & 524 & \color{red}{37} & \color{red}{331} \end{pmatrix}$$
 
-Find the minimal path sum from the top left to the bottom right by only moving right and down in `matrix`, a 2D array representing a matrix. The maximum matrix size used in the tests will be 80 by 80.
+行列を表す二次元配列 `matrix` において、右と下への移動のみにより左上から右下へ到達する経路の最小和を求めなさい。 このテストで使用される行列の大きさは最大 80 x 80 です。
 
 # --hints--
 
-`pathSumTwoWays(testMatrix1)` should return a number.
+`pathSumTwoWays(testMatrix1)` は数値を返す必要があります。
 
 ```js
 assert(typeof pathSumTwoWays(_testMatrix1) === 'number');
 ```
 
-`pathSumTwoWays(testMatrix1)` should return `2427`.
+`pathSumTwoWays(testMatrix1)` は `2427` を返す必要があります。
 
 ```js
 assert.strictEqual(pathSumTwoWays(_testMatrix1), 2427);
 ```
 
-`pathSumTwoWays(testMatrix2)` should return `427337`.
+`pathSumTwoWays(testMatrix2)` は `427337` を返す必要があります。
 
 ```js
 assert.strictEqual(pathSumTwoWays(_testMatrix2), 427337);

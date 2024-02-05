@@ -12,9 +12,9 @@ Let's call $S$ the (infinite) string that is made by concatenating the consecuti
 
 Thus, $S = 1234567891011121314151617181920212223242\ldots$
 
-It's easy to see that any number will show up an infinite number of times in $S$.
+Es ist leicht zu erkennen, dass jede Zahl unendlich oft in $S$ vorkommt.
 
-Let's call $f(n)$ the starting position of the $n^{\text{th}}$ occurrence of $n$ in $S$. For example, $f(1) = 1$, $f(5) = 81$, $f(12) = 271$ and $f(7780) = 111\\,111\\,365$.
+Nennen wir $f(n)$ die Anfangsposition des $n^{\text{th}}$-Vorkommens von $n$ in $S$. For example, $f(1) = 1$, $f(5) = 81$, $f(12) = 271$ and $f(7780) = 111\\,111\\,365$.
 
 Find $\sum f(3^k) for 1 ≤ k ≤ 13$.
 

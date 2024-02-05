@@ -1,6 +1,6 @@
 ---
 id: 5900f3fc1000cf542c50ff0e
-title: 'Problem 143: Investigating the Torricelli point of a triangle'
+title: '问题 143：三角形托里拆利点的研究'
 challengeType: 1
 forumTopicId: 301772
 dashedName: problem-143-investigating-the-torricelli-point-of-a-triangle
@@ -10,17 +10,17 @@ dashedName: problem-143-investigating-the-torricelli-point-of-a-triangle
 
 Let ABC be a triangle with all interior angles being less than 120 degrees. Let X be any point inside the triangle and let $XA = p$, $XC = q$, and $XB = r$.
 
-Fermat challenged Torricelli to find the position of X such that p + q + r was minimised.
+费马曾经向托里拆利提出挑战：找到令 p + q + r 最小的点 X 的位置。
 
-Torricelli was able to prove that if equilateral triangles AOB, BNC and AMC are constructed on each side of triangle ABC, the circumscribed circles of AOB, BNC, and AMC will intersect at a single point, T, inside the triangle. Moreover he proved that T, called the Torricelli/Fermat point, minimises $p + q + r$. Even more remarkable, it can be shown that when the sum is minimised, $AN = BM = CO = p + q + r$ and that AN, BM and CO also intersect at T.
+托里拆利证明，若对三角形 ABC 三边分别构造等边三角形 AOB、BNC 和 AMC，则三角形 AOB、BNC 和 AMC 的外接圆相交于三角形 ABC 内的一点 T。 此外，他还证明这个后来被称为托里拆利点或费马点的点 T，就是使得 $p + q + r$ 最小的点。 更值得注意的是，当和最小时，满足 $AN = BM = CO = p + q + r$ 且 AN、BM 和 CO 也相交于点 T。
 
-<img class="img-responsive center-block" alt="equilateral triangles AOB, BNC and AMC constructed on each side of triangle ABC; with the circumscribed circles of AOB, BNC, and AMC will intersecting at a single point, T, inside the triangle" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-the-torricelli-point-of-a-triangle.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="等边三角形 AOB、BNC 和 AMC 由三角形 ABC 的三边构成，且三角形 AOB、BNC 和 AMC 的外接圆相交于三角形 ABC 内的一点 T。" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-the-torricelli-point-of-a-triangle.png" style="background-color: white; padding: 10px;" />
 
-If the sum is minimised and a, b, c, p, q and r are all positive integers we shall call triangle ABC a Torricelli triangle. For example, $a = 399$, $b = 455$, $c = 511$ is an example of a Torricelli triangle, with $p + q + r = 784$. Find the sum of all distinct values of $p + q + r ≤ 120000$ for Torricelli triangles.
+如果当和最小时且有 a、b、c、p、q 和 r 均为正整数，我们就称三角形 ABC 为托里拆利三角形。 例如，$a = 399$、$b = 455$、$c = 511$ 就是一个托里拆利三角形，此时 $p + q + r = 784$。 对于所有满足 $p + q + r ≤ 120000$ 的托里拆利三角形，求出所有不同值的总和。
 
 # --hints--
 
-`sumTorricelliTriangles()` should return `30758397`.
+`sumTorricelliTriangles()` 应该返回 `30758397`。
 
 ```js
 assert.strictEqual(sumTorricelliTriangles(), 30758397);

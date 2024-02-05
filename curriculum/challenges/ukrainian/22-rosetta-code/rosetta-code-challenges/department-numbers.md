@@ -1,6 +1,6 @@
 ---
 id: 59f40b17e79dbf1ab720ed7a
-title: Department Numbers
+title: Номери відділів
 challengeType: 1
 forumTopicId: 302249
 dashedName: department-numbers
@@ -11,20 +11,20 @@ dashedName: department-numbers
 There is a highly organized city that has decided to assign a number to each of their departments:
 
 <ul>
-  <li>Police department</li>
-  <li>Sanitation department</li>
-  <li>Fire department</li>
+  <li>Поліція</li>
+  <li>Водоканал</li>
+  <li>Пожежна охорона</li>
 </ul>
 
-Each department can have a number between 1 and 7 (inclusive).
+Кожен відділ може мати номер від 1 до 7 (включно).
 
-The three department numbers are to be unique (different from each other) and must add up to the number 12.
+Номери кожного з відділу мають бути унікальними (тобто бути відмінними одне від одного) та щоб в сумі було до номера 12.
 
-The Chief of the Police doesn't like odd numbers and wants to have an even number for his department.
+Шеф поліції не любить непарних чисел і хоче мати парне число для свого відділу.
 
 # --instructions--
 
-Write a program which outputs all valid combinations as an array.
+Напишіть програму, яка виводить всі дійсні комбінації у вигляді масиву.
 
 ```js
 [2, 3, 7] [2, 4, 6] [2, 6, 4]
@@ -36,25 +36,25 @@ Write a program which outputs all valid combinations as an array.
 
 # --hints--
 
-`combinations` should be a function.
+`combinations` має бути функцією.
 
 ```js
 assert(typeof combinations === 'function');
 ```
 
-`combinations([1, 2, 3], 6)` should return an Array.
+`combinations([1, 2, 3], 6)` повинні повернути масив.
 
 ```js
 assert(Array.isArray(combinations([1, 2, 3], 6)));
 ```
 
-`combinations([1, 2, 3, 4, 5, 6, 7], 12)` should return an array of length 14.
+`combinations([1, 2, 3, 4, 5, 6, 7], 12)` мають повернутися як рядок довжиною 14.
 
 ```js
 assert(combinations(nums, total).length === len);
 ```
 
-`combinations([1, 2, 3, 4, 5, 6, 7], 12)` should return all valid combinations.
+`combinations([1, 2, 3, 4, 5, 6, 7], 12)` повинен повертати всі дійсні комбінації.
 
 ```js
 assert.deepEqual(combinations(nums, total), result);

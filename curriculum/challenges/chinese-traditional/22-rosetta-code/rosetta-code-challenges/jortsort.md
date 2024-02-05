@@ -10,7 +10,7 @@ dashedName: jortsort
 
 jortSort is a sorting toolset that makes the user do the work and guarantees efficiency because you don't have to sort ever again. It was originally presented by Jenn "Moneydollars" Schiffer at the prestigious JSConf2014.
 
-jortSort should be a function that takes a single array of comparable objects as its argument. It then sorts the array in ascending order and compares the sorted array to the originally provided array. If the arrays match (i.e. the original array was already sorted), the function returns true. If the arrays do not match (i.e. the original array was not sorted), the function returns false.
+jortSort是一個函數，它將一個可比較對象數組作爲其參數。 然後它按升序對數組進行排序，並將排序後的數組與最初提供的數組進行比較。 如果數組匹配（即原始數組已經排序），則該函數返回true。 如果數組不匹配（即原始數組未排序），則該函數返回false。
 
 # --hints--
 

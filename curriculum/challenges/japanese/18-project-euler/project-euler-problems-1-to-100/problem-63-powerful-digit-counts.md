@@ -1,6 +1,6 @@
 ---
 id: 5900f3ab1000cf542c50febe
-title: 'Problem 63: Powerful digit counts'
+title: '問題 63: 累乗の桁数'
 challengeType: 1
 forumTopicId: 302175
 dashedName: problem-63-powerful-digit-counts
@@ -8,73 +8,73 @@ dashedName: problem-63-powerful-digit-counts
 
 # --description--
 
-The 5-digit number, 16807 = 7<sup>5</sup>, is also a fifth power. Similarly, the 9-digit number, 134217728 = 8<sup>9</sup>, is a ninth power.
+5 桁の数 16807 = 7<sup>5</sup> は、数の 5 乗です。 同様に、9 桁の数 134217728 = 8<sup>9</sup> は、数の 9 乗です。
 
-Complete the function so that it returns how many positive integers are of length `n` and an `n`th power.
+数の `n` 乗である `n` 桁の正の整数がいくつあるかを返す関数を完成させなさい。
 
 # --hints--
 
-`powerfulDigitCounts(1)` should return a number.
+`powerfulDigitCounts(1)` は数値を返す必要があります。
 
 ```js
 assert(typeof powerfulDigitCounts(1) === 'number');
 ```
 
-`powerfulDigitCounts(1)` should return `9`.
+`powerfulDigitCounts(1)` は `9` を返す必要があります。
 
 ```js
 assert.strictEqual(powerfulDigitCounts(1), 9);
 ```
 
-`powerfulDigitCounts(2)` should return `6`.
+`powerfulDigitCounts(2)` は `6` を返す必要があります。
 
 ```js
 assert.strictEqual(powerfulDigitCounts(2), 6);
 ```
 
-`powerfulDigitCounts(3)` should return `5`.
+`powerfulDigitCounts(3)` は `5` を返す必要があります。
 
 ```js
 assert.strictEqual(powerfulDigitCounts(3), 5);
 ```
 
-`powerfulDigitCounts(4)` should return `4`.
+`powerfulDigitCounts(4)` は `4` を返す必要があります。
 
 ```js
 assert.strictEqual(powerfulDigitCounts(4), 4);
 ```
 
-`powerfulDigitCounts(5)` should return `3`.
+`powerfulDigitCounts(5)` は `3` を返す必要があります。
 
 ```js
 assert.strictEqual(powerfulDigitCounts(5), 3);
 ```
 
-`powerfulDigitCounts(6)` should return `3`.
+`powerfulDigitCounts(6)` は `3` を返す必要があります。
 
 ```js
 assert.strictEqual(powerfulDigitCounts(6), 3);
 ```
 
-`powerfulDigitCounts(7)` should return `2`.
+`powerfulDigitCounts(7)` は `2` を返す必要があります。
 
 ```js
 assert.strictEqual(powerfulDigitCounts(7), 2);
 ```
 
-`powerfulDigitCounts(8)` should return `2`.
+`powerfulDigitCounts(8)` は `2` を返す必要があります。
 
 ```js
 assert.strictEqual(powerfulDigitCounts(8), 2);
 ```
 
-`powerfulDigitCounts(10)` should return `2`.
+`powerfulDigitCounts(10)` は `2` を返す必要があります。
 
 ```js
 assert.strictEqual(powerfulDigitCounts(10), 2);
 ```
 
-`powerfulDigitCounts(21)` should return `1`.
+`powerfulDigitCounts(21)` は `1` を返す必要があります。
 
 ```js
 assert.strictEqual(powerfulDigitCounts(21), 1);

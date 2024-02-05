@@ -12,25 +12,25 @@ dashedName: book-recommendation-engine-using-knn
 
 上記のリンクにアクセスした後、自分のアカウントまたはローカルに、ノートブックのコピーを作成してください。 プロジェクトを完了し、テストが成功したら (テストはリンクに含まれています)、下記にプロジェクトリンクを送信してください。 Google Colaboratory のリンクを送信する場合は、リンクの共有設定を必ず「リンクを知っている全員」に設定してください。
 
-We are still developing the interactive instructional content for the machine learning curriculum. For now, you can go through the video challenges in this certification. You may also have to seek out additional learning resources, similar to what you would do when working on a real-world project.
+機械学習カリキュラム用の対話型教育コンテンツは、現在開発中です。 現状、この認定講座では動画チャレンジを受講できます。 プロジェクトに取り組むにあたり、場合によってはその他の学習資料を探して参考にする必要もあります。これは実際の仕事でプロジェクトに取り組む場合も同様です。
 
 # --instructions--
 
-In this challenge, you will create a book recommendation algorithm using **K-Nearest Neighbors**.
+このチャレンジでは、**K 近傍法**を使用して書籍推薦アルゴリズムを作成します。
 
-You will use the <a href="http://www2.informatik.uni-freiburg.de/~cziegler/BX/" target="_blank" rel="noopener noreferrer nofollow">Book-Crossings dataset</a>. This dataset contains 1.1 million ratings (scale of 1-10) of 270,000 books by 90,000 users.
+<a href="http://www2.informatik.uni-freiburg.de/~cziegler/BX/" target="_blank" rel="noopener noreferrer nofollow">ブッククロッシングのデータセット</a>を使用してください。 このデータセットには、90,000 人のユーザーによる 270,000 冊の本に関する 110 万件の (10 段階の) 評価が含まれています。
 
-After importing and cleaning the data, use `NearestNeighbors` from `sklearn.neighbors` to develop a model that shows books that are similar to a given book. The Nearest Neighbors algorithm measures the distance to determine the “closeness” of instances.
+データをインポートしてクリーニングしたら、`sklearn.neighbors` の `NearestNeighbors` を使用して、指定された本と似た本を表示するモデルを作成してください。 Nearest Neighbors アルゴリズムは、distance (距離) を測定してインスタンスの「近さ」を求めます。
 
-Create a function named `get_recommends` that takes a book title (from the dataset) as an argument and returns a list of 5 similar books with their distances from the book argument.
+本のタイトルを (データセットから) 引数として 1 つ取り、それと似た 5 冊の本に、引数の本からの distance を添えたリストを返す `get_recommends` という名前の関数を作成してください。
 
-This code:
+このコードは:
 
 ```py
 get_recommends("The Queen of the Damned (Vampire Chronicles (Paperback))")
 ```
 
-should return:
+次のものを返します。
 
 ```py
 [
@@ -45,11 +45,11 @@ should return:
 ]
 ```
 
-Notice that the data returned from `get_recommends()` is a list. The first element in the list is the book title passed into the function. The second element in the list is a list of five more lists. Each of the five lists contains a recommended book and the distance from the recommended book to the book passed into the function.
+`get_recommends()` が返すデータがリストであることに注目してください。 リストの最初の要素は関数に渡された本のタイトルです。 リストの 2 番目の要素は 5 つのリストを持つリストです。 5 つのリストはそれぞれ推薦本と、推薦本から関数に渡された本までの distance を含みます。
 
-If you graph the dataset (optional), you will notice that most books are not rated frequently. To ensure statistical significance, remove from the dataset users with less than 200 ratings and books with less than 100 ratings.
+(オプション作業) データセットをグラフにしてみると、ほとんどの書籍が頻繁には評価されていないことがわかります。 意味のある統計にするため、評価が 200 未満のユーザーと 100 未満の書籍をデータセットから削除してください。
 
-The first three cells import libraries you may need and the data to use. The final cell is for testing. Write all your code in between those cells.
+最初の 3 つのセルでは、必要と思われるライブラリと使用するデータをインポートします。 最後のセルはテスト用です。 これらのセルの間にすべてのコードを記述してください。
 
 # --hints--
 

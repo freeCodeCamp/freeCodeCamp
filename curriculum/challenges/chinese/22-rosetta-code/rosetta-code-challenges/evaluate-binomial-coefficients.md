@@ -1,6 +1,6 @@
 ---
 id: 598de241872ef8353c58a7a2
-title: Evaluate binomial coefficients
+title: 评估二项式系数
 challengeType: 1
 forumTopicId: 302259
 dashedName: evaluate-binomial-coefficients
@@ -10,43 +10,43 @@ dashedName: evaluate-binomial-coefficients
 
 Write a function to calculate the binomial coefficient for the given value of n and k.
 
-This formula is recommended:
+写一个函数来计算给定n和k值的二项式系数。
 
-$\\binom{n}{k} = \\frac{n!}{(n-k)!k!} = \\frac{n(n-1)(n-2)\\ldots(n-k+1)}{k(k-1)(k-2)\\ldots 1}$
+$\\binom{n}{k} = \\frac{n!}{(n-k)!k!} } = \\ frac {n（n-1）（n-2）\\ ldots（n-k + 1）} { k（k-1）（k-2）\\ ldots 1} $
 
 # --hints--
 
-`binom` should be a function.
+`binom`是一个功能。
 
 ```js
 assert(typeof binom === 'function');
 ```
 
-`binom(5,3)` should return 10.
+`binom(5,3)`应该返回10。
 
 ```js
 assert.equal(binom(5, 3), 10);
 ```
 
-`binom(7,2)` should return 21.
+`binom(7,2)`应该返回21。
 
 ```js
 assert.equal(binom(7, 2), 21);
 ```
 
-`binom(10,4)` should return 210.
+`binom(10,4)`应该返回210。
 
 ```js
 assert.equal(binom(10, 4), 210);
 ```
 
-`binom(6,1)` should return 6.
+`binom(6,1)`应该返回6。
 
 ```js
 assert.equal(binom(6, 1), 6);
 ```
 
-`binom(12,8)` should return 495.
+`binom(12,8)`应该返回495。
 
 ```js
 assert.equal(binom(12, 8), 495);

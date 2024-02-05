@@ -1,6 +1,6 @@
 ---
 id: 5900f4cb1000cf542c50ffde
-title: 'Problem 351: Hexagonal orchards'
+title: '問題351：六角形果園'
 challengeType: 1
 forumTopicId: 302011
 dashedName: problem-351-hexagonal-orchards

@@ -1,6 +1,6 @@
 ---
 id: 59c3ec9f15068017c96eb8a3
-title: Farey sequence
+title: ファレイ数列
 challengeType: 1
 forumTopicId: 302266
 dashedName: farey-sequence
@@ -10,16 +10,16 @@ dashedName: farey-sequence
 
 The Farey sequence <code>F<sub>n</sub></code> of order `n` is the sequence of completely reduced fractions between `0` and `1` which, when in lowest terms, have denominators less than or equal to `n`, arranged in order of increasing size.
 
-The *Farey sequence* is sometimes incorrectly called a *Farey series*.
+*ファレイ数列* は、 間違って *ファレイseries* と呼ばれることがあります。
 
-Each Farey sequence:
+各ファレイ数列：
 
 <ul>
   <li>starts with the value  0,  denoted by the fraction  $ \frac{0}{1} $</li>
   <li>ends with the value  1,  denoted by the fraction  $ \frac{1}{1}$.</li>
 </ul>
 
-The Farey sequences of orders `1` to `5` are:
+`1` から `5` のファレイ数列は以下のとおりです。
 
 <ul>
   <li style='list-style: none;'>${\bf\it{F}}_1 = \frac{0}{1}, \frac{1}{1}$</li>
@@ -31,17 +31,17 @@ The Farey sequences of orders `1` to `5` are:
 
 # --instructions--
 
-Write a function that returns the Farey sequence of order `n`. The function should have one parameter that is `n`. It should return the sequence as an array.
+位数 `n` のファレイ数列を返す関数を作成します。 関数にはパラメータ `n` が必要です。 関数は数列を配列として返します。
 
 # --hints--
 
-`farey` should be a function.
+`farey` という関数です。
 
 ```js
 assert(typeof farey === 'function');
 ```
 
-`farey(3)` should return an array
+`farey(3)` は配列を返します。
 
 ```js
 assert(Array.isArray(farey(3)));
