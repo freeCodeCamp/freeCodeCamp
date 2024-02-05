@@ -158,15 +158,12 @@ function DonationModalBody({
   const [donationAttempted, setDonationAttempted] = useState(false);
   const [showHeaderAndFooter, setShowHeaderAndFooter] = useState(true);
   const donationAnimationFlag = useFeature('donation-animation').on;
-
-
-  const handleProcessing = () => {
-    setDonationAttempted(true);
-  };
-
   const [isAnimationVisible, setIsAnimationVisible] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const { t } = useTranslation();
+  const handleProcessing = () => {
+    setDonationAttempted(true);
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
