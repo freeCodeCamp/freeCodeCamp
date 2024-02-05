@@ -19,6 +19,7 @@ type DonationModalBodyProps = {
   activeDonors?: number;
   closeDonationModal: typeof closeDonationModal;
   recentlyClaimedBlock: RecentlyClaimedBlock;
+  executeGA: (arg: { event: string; action: string }) => void;
 };
 
 const Illustration = ({
@@ -115,8 +116,22 @@ function CloseButtonRow({
   );
 }
 
-const Benefits = ({ setShowForm }: { setShowForm: (arg: boolean) => void }) => {
+const Benefits = ({
+  setShowForm,
+  executeGA
+}: {
+  setShowForm: (arg: boolean) => void;
+  executeGA: (arg: { event: string; action: string }) => void;
+}) => {
   const { t } = useTranslation();
+
+  const handleBecomeSupprterClick = () => {
+    executeGA({
+      event: 'donation_related',
+      action: `Modal Become Supporter Click`
+    });
+    setShowForm(true);
+  };
   return (
     <Row className={'donate-btn-group'}>
       <Col xs={12}>
@@ -125,7 +140,7 @@ const Benefits = ({ setShowForm }: { setShowForm: (arg: boolean) => void }) => {
         <button
           className='text-center confirm-donation-btn donate-btn-group'
           type='submit'
-          onClick={() => setShowForm(true)}
+          onClick={handleBecomeSupprterClick}
         >
           {t('donate.become-supporter')}
         </button>
@@ -137,7 +152,8 @@ const Benefits = ({ setShowForm }: { setShowForm: (arg: boolean) => void }) => {
 
 function DonationModalBody({
   closeDonationModal,
-  recentlyClaimedBlock
+  recentlyClaimedBlock,
+  executeGA
 }: DonationModalBodyProps): JSX.Element {
   const [donationAttempted, setDonationAttempted] = useState(false);
   const [showHeaderAndFooter, setShowHeaderAndFooter] = useState(true);
@@ -227,7 +243,7 @@ function DonationModalBody({
                 isAnimationEnabled={donationAnimationFlag}
               />
             ) : (
-              <Benefits setShowForm={setShowForm} />
+              <Benefits setShowForm={setShowForm} executeGA={executeGA} />
             )}
             {(showHeaderAndFooter || donationAttempted) && (
               <CloseButtonRow

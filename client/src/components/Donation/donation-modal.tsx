@@ -81,6 +81,7 @@ function DonateModal({
       <DonationModalBody
         closeDonationModal={closeDonationModal}
         recentlyClaimedBlock={recentlyClaimedBlock}
+        executeGA={executeGA}
       />
     </Modal>
   );
