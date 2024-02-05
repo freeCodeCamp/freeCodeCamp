@@ -61,36 +61,36 @@ function ModalHeader({
   donationAnimationFlag: boolean;
 }) {
   const { t } = useTranslation();
-  if (showHeaderAndFooter && !donationAttempted) {
-    if (!showForm && donationAnimationFlag) {
-      return (
-        <Row className='text-center block-modal-text'>
-          <Col sm={10} smOffset={1} xs={12}>
-            <h2>{t('donate.modal-benefits-title')}</h2>
-          </Col>
-        </Row>
-      );
-    }
-    if (!donationAnimationFlag)
-      return (
-        <Row className='text-center block-modal-text'>
-          <Col sm={10} smOffset={1} xs={12}>
-            {recentlyClaimedBlock !== null && (
-              <b>
-                {t('donate.nicely-done', {
-                  block: t(
-                    `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
-                  )
-                })}
-              </b>
-            )}
-            <h2>{t('donate.help-us-develop')}</h2>
-          </Col>
-        </Row>
-      );
+ if (!showHeaderAndFooter || donationAttempted) {
+    return null;
+  } else if (!donationAnimationFlag) {
+    return (
+      <Row className='text-center block-modal-text'>
+        <Col sm={10} smOffset={1} xs={12}>
+          {recentlyClaimedBlock !== null && (
+            <b>
+              {t('donate.nicely-done', {
+                block: t(
+                  `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
+                )
+              })}
+            </b>
+          )}
+          <h2>{t('donate.help-us-develop')}</h2>
+        </Col>
+      </Row>
+    );
+  } else if (!showForm) {
+    return (
+      <Row className='text-center block-modal-text'>
+        <Col sm={10} smOffset={1} xs={12}>
+          <h2>{t('donate.modal-benefits-title')}</h2>
+        </Col>
+      </Row>
+    );
+  } else {
+    return null;
   }
-
-  return null;
 }
 
 function CloseButtonRow({
@@ -125,7 +125,7 @@ const Benefits = ({
 }) => {
   const { t } = useTranslation();
 
-  const handleBecomeSupprterClick = () => {
+  const handleBecomeSupporterClick = () => {
     executeGA({
       event: 'donation_related',
       action: `Modal Become Supporter Click`
@@ -140,7 +140,7 @@ const Benefits = ({
         <button
           className='text-center confirm-donation-btn donate-btn-group'
           type='submit'
-          onClick={handleBecomeSupprterClick}
+          onClick={handleBecomeSupporterClick}
         >
           {t('donate.become-supporter')}
         </button>
