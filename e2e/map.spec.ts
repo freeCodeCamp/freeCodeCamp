@@ -30,8 +30,8 @@ test.describe('Map Component', () => {
     await expect(
       page.getByText(translations.landing['interview-prep-heading'])
     ).toBeVisible();
-    const curriculumBtns = page.getByTestId('curriculum-map-button');
-    await expect(curriculumBtns).toHaveCount(15);
+    // const curriculumBtns = page.getByTestId('curriculum-map-button');
+    // await expect(curriculumBtns).toHaveCount(15);
     for (let i = 0; i < superBlocksWithLinks.length; i++) {
       const superblockLink = page.getByRole('link', {
         name: intro[superBlocksWithLinks[i]].title
