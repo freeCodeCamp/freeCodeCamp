@@ -159,9 +159,6 @@ function DonationModalBody({
   const [showHeaderAndFooter, setShowHeaderAndFooter] = useState(true);
   const donationAnimationFlag = useFeature('donation-animation').on;
 
-  // uncomment to testing the animation
-  // recentlyClaimedBlock = true;
-  // donationAnimationFlag = true;
 
   const handleProcessing = () => {
     setDonationAttempted(true);

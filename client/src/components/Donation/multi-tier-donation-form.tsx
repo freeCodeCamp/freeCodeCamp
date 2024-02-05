@@ -45,7 +45,6 @@ function SelectionTabs({
     setDonationAmount(Number(value) as DonationAmount);
   };
   useFeature('aa-test-in-component');
-  console.log('isAnimationEnabled', isAnimationEnabled);
 
   return (
     <Row
