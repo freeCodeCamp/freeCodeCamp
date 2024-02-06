@@ -5,7 +5,7 @@ import curriculum from '../shared/config/curriculum.json';
 interface Curriculum {
   [key: string]: unknown;
 }
-const patchedCurriculum: Curriculum = {};
+const typedCurriculum = curriculum as Curriculum;
 
 for (const key in curriculum) {
   patchedCurriculum[key.replace('/', '-')] = (curriculum as Curriculum)[key];
