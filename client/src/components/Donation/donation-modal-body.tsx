@@ -161,7 +161,7 @@ const AnimationContainer = ({
       <p style={{ opacity: 0, position: 'absolute' }}>
         {t('donate.animation-description')}{' '}
       </p>
-      <div className='donation-animatoin-container' aria-hidden='true'>
+      <div className='donation-animation-container' aria-hidden='true'>
         <div className='donation-animation-bullet-points'>
           <p className='donation-animation-bullet-1'>
             {t('donate.become-supporter')}
