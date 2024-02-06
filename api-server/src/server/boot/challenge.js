@@ -338,7 +338,7 @@ export async function createChallengeUrlResolver(
 
 export function isValidChallengeCompletion(req, res, next) {
   const {
-    body: { id, challengeType, solution }
+    body: { id, challengeType, solution, githubLink }
   } = req;
 
   // ToDO: Validate other things (challengeFiles, etc)
@@ -355,10 +355,18 @@ export function isValidChallengeCompletion(req, res, next) {
     log('challengeType', challengeType, isNumeric(challengeType));
     return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
-  const isUrlValid =
-    challengeType === challengeTypes.backEndProject ||
-    (solution && isURL(solution));
-  if ('solution' in req.body && !isUrlValid) {
+  // If `backEndProject`:
+  // - `solution` needs to exist, but does not have to be valid URL
+  // - `githubLink` needs to exist and be valid URL
+  if (challengeType === challengeTypes.backEndProject) {
+    if (!solution || !githubLink) {
+      log('isObjectId', id, ObjectID.isValid(id));
+      return res.status(403).json(isValidChallengeCompletionErrorMsg);
+    } else if (!isURL(githubLink)) {
+      log('isObjectId', id, ObjectID.isValid(id));
+      return res.status(403).json(isValidChallengeCompletionErrorMsg);
+    }
+  } else if ('solution' in req.body && !isURL(solution)) {
     log('isObjectId', id, ObjectID.isValid(id));
     return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
