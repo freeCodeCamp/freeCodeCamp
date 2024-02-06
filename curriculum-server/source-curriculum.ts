@@ -7,9 +7,9 @@ interface Curriculum {
 }
 const typedCurriculum = curriculum as Curriculum;
 
-for (const key in curriculum) {
-  patchedCurriculum[key.replace('/', '-')] = (curriculum as Curriculum)[key];
-}
+const patchedCurriculum = Object.keys(typedCurriculum).reduce((acc, key) => {
+  return { ...acc, [key.replace(/\//g, '-')]: typedCurriculum[key] };
+}, {});
 
 void fs
   .mkdir('data', { recursive: true })
