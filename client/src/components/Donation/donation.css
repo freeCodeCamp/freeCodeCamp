@@ -874,17 +874,12 @@ a.patreon-button:hover {
 .tester-text {
   margin-top: 80px;
 }
-/* .donation-animatoin-container {
-  background: url('file:///Users/home/Downloads/bear-with-progress-bar%20(1).svg');
-  min-height: 600px;
-  background-repeat: no-repeat;
-} */
 
 @media (max-width: 768px) {
   .donation-animation-bullet-points p {
     font-size: 150%;
   }
-  #donaition-animation {
+  #donation-animation {
     object-fit: cover;
     min-height: 600px;
     width: 100%;

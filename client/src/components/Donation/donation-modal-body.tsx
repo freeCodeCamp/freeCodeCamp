@@ -177,9 +177,9 @@ const AnimationContainer = ({
           </p>
         </div>
         <img
-          alt={'asdfasd'}
+          alt=''
           src={donationAnimation}
-          id={'donaition-animation'}
+          id={'donation-animation'}
           data-playwright-test-label='not-found-image'
         />
       </div>
