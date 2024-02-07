@@ -364,7 +364,7 @@
     "assignments": "Assignments",
     "question": "Question",
     "solution-link": "Solution Link",
-    "source-code-link": "Source Code Link",
+    "github-link": "GitHub Link",
     "ms-link": "Microsoft Link",
     "submit-and-go": "Submit and go to my next challenge",
     "congratulations": "Congratulations, your code passes. Submit your code to continue.",
