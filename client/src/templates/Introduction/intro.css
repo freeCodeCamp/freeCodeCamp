@@ -511,9 +511,9 @@ ToDo: find out why, and remove the need for it */
   position: relative;
 }
 
-.grid-project-block:hover {
+.block-grid.grid-project-block:hover {
   cursor: pointer;
-  background: var(--tertiary-background) !important;
+  background: var(--tertiary-background);
 }
 
 .grid-project-block a.block-header {
