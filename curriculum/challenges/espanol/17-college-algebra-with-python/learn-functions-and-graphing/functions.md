@@ -12,7 +12,7 @@ This first video will show you what it means to be a function, and then it will 
 
 Here is the <a href="https://colab.research.google.com/drive/1d0e55NoKjKILIum34POv04h0OLpE_pkn" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this and the next videos.</a>
 
-# --assignment--
+# --tarea--
 
 Add code to your algebra Colab notebook that creates Python functions for decimal-to-fraction conversions
 

@@ -12,65 +12,65 @@ A **CUSIP** is a nine-character alphanumeric code that identifies a North Americ
 
 # --instructions--
 
-Write a function that takes a string as a parameter and checks if the string is valid CUSIP.
+Escreva uma função que recebe uma string como um parâmetro e verifica se a string é um CUSIP válido.
 
 # --hints--
 
-`isCusip` should be a function.
+`isCusip` deve ser uma função.
 
 ```js
 assert(typeof isCusip == 'function');
 ```
 
-`isCusip("037833100")` should return a boolean.
+`isCusip("037833100")` deve retornar um booleano.
 
 ```js
 assert(typeof isCusip('037833100') == 'boolean');
 ```
 
-`isCusip("037833100")` should return `true`.
+`isCusip("037833100")` deve retornar `true`.
 
 ```js
 assert.equal(isCusip('037833100'), true);
 ```
 
-`isCusip("17275R102")` should return `true`.
+`isCusip("17275R102")` deve retornar `true`.
 
 ```js
 assert.equal(isCusip('17275R102'), true);
 ```
 
-`isCusip("38259P50a")` should return `false`.
+`isCusip("38259P50a")` deve retornar `false`.
 
 ```js
 assert.equal(isCusip('38259P50a'), false);
 ```
 
-`isCusip("38259P508")` should return `true`.
+`isCusip("38259P508")` deve retornar `true`.
 
 ```js
 assert.equal(isCusip('38259P508'), true);
 ```
 
-`isCusip("38259P50#")` should return `false`.
+`isCusip("38259P50#")` deve retornar `false`.
 
 ```js
 assert.equal(isCusip('38259P50#'), false);
 ```
 
-`isCusip("68389X105")` should return `true`.
+`isCusip("68389X105")` deve retornar `true`.
 
 ```js
 assert.equal(isCusip('68389X105'), true);
 ```
 
-`isCusip("68389X106")` should return `false`.
+`isCusip("68389X106")` deve retornar `false`.
 
 ```js
 assert.equal(isCusip('68389X106'), false);
 ```
 
-`isCusip("5949181")` should return `false`.
+`isCusip("5949181")` deve retornar `false`.
 
 ```js
 assert.equal(isCusip('5949181'), false);

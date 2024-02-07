@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f6a0b6c005b0e76f096
-title: 'Data Visualization: Page Rank'
+title: 'Візуалізація даних: Page Rank'
 challengeType: 11
 videoId: 6-w_qIUwaxU
 bilibiliIds:
@@ -18,15 +18,15 @@ How does the PageRank algorithm work?
 
 ## --answers--
 
-It determines which pages are most highly connected.
+Він визначає, які сторінки найбільш пов’язані.
 
 ---
 
-It ranks pages based on view counts.
+Він ранжує сторінки за кількістю переглядів.
 
 ---
 
-It figures out which pages contain the most important content.
+Він визначає, які сторінки містять найважливіший контент.
 
 ## --video-solution--
 

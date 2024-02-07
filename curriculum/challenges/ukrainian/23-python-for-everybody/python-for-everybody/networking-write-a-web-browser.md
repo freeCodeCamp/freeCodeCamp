@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0c0b6c005b0e76f073
-title: 'Networking: Write a Web Browser'
+title: 'Мережа: написання веббраузера'
 challengeType: 11
 videoId: zjyT9DaAjx4
 bilibiliIds:
@@ -34,19 +34,19 @@ mysock.close()
 
 ## --answers--
 
-A simple web server.
+Простий вебсервер.
 
 ---
 
-A simple email client.
+Простий клієнт пошти.
 
 ---
 
-A simple todo list.
+Простий список завдань.
 
 ---
 
-A simple web browser.
+Простий веббраузер.
 
 ## --video-solution--
 

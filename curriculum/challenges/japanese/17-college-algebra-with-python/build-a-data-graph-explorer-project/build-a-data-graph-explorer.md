@@ -1,30 +1,30 @@
 ---
 id: 63d8402e39c73468b059cd43
-title: "Build a Data Graph Explorer"
+title: "データグラフエクスプローラーを作成する"
 challengeType: 10
 dashedName: build-a-data-graph-explorer
 ---
 
 # --description--
 
-You will be <a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
+このプロジェクトには <a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">Google Colaboratory</a> を使用して取り組んでください。
 
-Once you complete the project, submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+プロジェクトを完了したら、下記入力欄からプロジェクトリンクを提出してください。 Google Colaboratory のリンクを送信する場合は、リンクの共有設定を必ず「リンクを知っている全員」に設定してください。
 
 # --instructions--
 
-For this challenge, you need to create a multi-function calculator using Python that take input and do the following:
+このチャレンジでは、入力を受け取り、次の処理を実行するデータグラフエクスプローラーを Python を使用して作成する必要があります。
 
-- Get a .csv file in three ways
-  - uploading it from the local computer
-  - getting a url from user input
-  - putting the url in the code
-- Use the Pandas library to save the .csv as a dataframe
-- Print headings and the first two rows
-- Store the column names as a list
-- Choose one or two columns and convert the data to Numpy arrays
-- Display data as a scatter plot or a line graph
-- Be able to do this for different column combinations, and interpret the graphs
+- .csv ファイルを 3 つの方法で取得する
+  - ローカルコンピューターからアップロードする
+  - ユーザー入力から URL を取得する
+  - コードに URL を記述する
+- Pandas ライブラリを使用して .csv をデータフレームとして保存する
+- 見出しと最初の 2 行を出力する
+- 列名をリストとして保存する
+- 列を 1 つまたは 2 つ選択し、データを Numpy 配列に変換する
+- データを散布図または折れ線グラフとして表示する
+- 以上の処理をさまざまな列の組み合わせで行い、グラフを解釈できるようにする
 
-Once you're done, submit the URL to the public Colab notebook on your Google drive.
+作業を終えたら、Google ドライブの公開 Colab ノートブックの URL を提出してください。
 

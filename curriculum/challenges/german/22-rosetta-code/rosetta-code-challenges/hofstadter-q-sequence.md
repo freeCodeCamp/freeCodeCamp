@@ -1,6 +1,6 @@
 ---
 id: 59637c4d89f6786115efd814
-title: Hofstadter Q sequence
+title: Hofstadter Q-Folge
 challengeType: 1
 forumTopicId: 302287
 dashedName: hofstadter-q-sequence
@@ -12,45 +12,45 @@ The Hofstadter Q sequence is defined as:
 
 $Q(1)=Q(2)=1, \\\\ Q(n)=Q\\big(n-Q(n-1)\\big)+Q\\big(n-Q(n-2)), \\quad n>2.$
 
-It is defined like the Fibonacci sequence, but whereas the next term in the Fibonacci sequence is the sum of the previous two terms, in the Q sequence the previous two terms tell you how far to go back in the Q sequence to find the two numbers to sum to make the next term of the sequence.
+Sie ist wie die Fibonacci-Folge definiert, aber während der nächste Term in der Fibonacci-Folge die Summe der beiden vorhergehenden Terme ist, geben in der Q-Folge die beiden vorhergehenden Terme an, wie weit man in der Q-Folge zurückgehen muss, um die beiden Zahlen zu finden, die man addieren muss, um den nächsten Term der Folge zu bilden.
 
 # --instructions--
 
-Implement the Hofstadter Q Sequence equation as a function. The function should accept number, `n`, and return an integer.
+Implementiere die Gleichung der Hofstadter Q-Sequenz als Funktion. Die Funktion sollte eine Zahl, `n`, akzeptieren und eine ganze Zahl zurückgeben.
 
 # --hints--
 
-`hofstadterQ` should be a function.
+`hofstadterQ` sollte eine Funktion sein.
 
 ```js
 assert(typeof hofstadterQ === 'function');
 ```
 
-`hofstadterQ()` should return `integer`
+`hofstadterQ()` sollte `integer` zurückgeben
 
 ```js
 assert(Number.isInteger(hofstadterQ(1000)));
 ```
 
-`hofstadterQ(1000)` should return `502`
+`hofstadterQ(1000)` sollte `502` zurückgeben
 
 ```js
 assert.equal(hofstadterQ(testCase[0]), res[0]);
 ```
 
-`hofstadterQ(1500)` should return `755`
+`hofstadterQ(1500)` sollte `755` zurückgeben
 
 ```js
 assert.equal(hofstadterQ(testCase[1]), res[1]);
 ```
 
-`hofstadterQ(2000)` should return `1005`
+`hofstadterQ(2000)` sollte `1005` zurückgeben
 
 ```js
 assert.equal(hofstadterQ(testCase[2]), res[2]);
 ```
 
-`hofstadterQ(2500)` should return `1261`
+`hofstadterQ(2500)` sollte `1261` zurückgeben
 
 ```js
 assert.equal(hofstadterQ(testCase[3]), res[3]);

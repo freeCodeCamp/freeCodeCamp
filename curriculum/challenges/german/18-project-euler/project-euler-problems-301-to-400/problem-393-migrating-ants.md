@@ -1,6 +1,6 @@
 ---
 id: 5900f4f61000cf542c510008
-title: 'Problem 393: Migrating ants'
+title: 'Problem 393: Wandernde Ameisen'
 challengeType: 1
 forumTopicId: 302058
 dashedName: problem-393-migrating-ants
@@ -10,9 +10,9 @@ dashedName: problem-393-migrating-ants
 
 An $n × n$ grid of squares contains $n^2$ ants, one ant per square.
 
-All ants decide to move simultaneously to an adjacent square (usually 4 possibilities, except for ants on the edge of the grid or at the corners).
+Alle Ameisen entscheiden sich gleichzeitig für ein benachbartes Feld (in der Regel 4 Möglichkeiten, außer für Ameisen am Rand des Gitters oder in den Ecken).
 
-We define $f(n)$ to be the number of ways this can happen without any ants ending on the same square and without any two ants crossing the same edge between two squares.
+Wir definieren $f(n)$ als die Anzahl der Möglichkeiten, wie dies geschehen kann, ohne dass Ameisen auf demselben Feld enden und ohne dass zwei Ameisen dieselbe Kante zwischen zwei Feldern überqueren.
 
 You are given that $f(4) = 88$.
 

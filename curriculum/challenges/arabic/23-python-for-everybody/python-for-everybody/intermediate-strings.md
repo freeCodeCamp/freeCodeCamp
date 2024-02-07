@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f061
-title: Intermediate Strings
+title: النصوص المتوسطة (Intermediate Strings)
 challengeType: 11
 videoId: KgT_fYLXnyk
 bilibiliIds:
@@ -14,13 +14,13 @@ dashedName: intermediate-strings
 
 More resources:
 
-\- <a href="https://www.youtube.com/watch?v=1bSqHot-KwE" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+<a href="https://www.youtube.com/watch?v=1bSqHot-KwE" target="_blank" rel="noopener noreferrer nofollow">تمرين</a>
 
 # --question--
 
 ## --text--
 
-What is the value of i in the following code?
+ما هي قيمة i في الكود التالي؟
 
 ```python
 word = "bananana"
@@ -33,7 +33,7 @@ nanana
 
 ---
 
-2
+الثاني
 
 ---
 

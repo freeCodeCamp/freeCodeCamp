@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0c0b6c005b0e76f074
-title: 'Networking: Text Processing'
+title: 'Vernetzungen: Textverarbeitung'
 challengeType: 11
 videoId: Pv_pJgVu8WI
 bilibiliIds:

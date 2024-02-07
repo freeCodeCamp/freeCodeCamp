@@ -1,6 +1,6 @@
 ---
 id: 5900f3e21000cf542c50fef5
-title: 'Problem 118: Pandigital prime sets'
+title: '問題 118: パンデジタル素数集合'
 challengeType: 1
 forumTopicId: 301744
 dashedName: problem-118-pandigital-prime-sets
@@ -8,13 +8,13 @@ dashedName: problem-118-pandigital-prime-sets
 
 # --description--
 
-Using all of the digits 1 through 9 and concatenating them freely to form decimal integers, different sets can be formed. Interestingly with the set $\\{2, 5, 47, 89, 631\\}$, all of the elements belonging to it are prime.
+1 から 9 までのすべての数字を自由につなげて 10 進数の整数を作ると、さまざまな集合を作ることができます。 興味深いことに、集合 $\\{2, 5, 47, 89, 631\\}$ は、それに属するすべての要素が素数です。
 
-How many distinct sets containing each of the digits one through nine exactly once contain only prime elements?
+1 から 9 までの数字をそれぞれちょうど 1 回含む相異なる集合のうち、素数のみを含むものはいくつありますか。
 
 # --hints--
 
-`pandigitalPrimeSets()` should return `44680`.
+`pandigitalPrimeSets()` は `44680` を返す必要があります。
 
 ```js
 assert.strictEqual(pandigitalPrimeSets(), 44680);

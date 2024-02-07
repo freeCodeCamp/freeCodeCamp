@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { isOldRespCert, isRelationalDbCert } from '../../../utils/is-a-cert';
 import { Link } from '../../../components/helpers';
@@ -16,6 +17,7 @@ interface LegacyLinksProps {
 
 function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
   const { t } = useTranslation();
+  const codeAllyDisabledFeature = useFeature('codeally_disabled');
 
   if (isOldRespCert(superBlock))
     return (
@@ -39,17 +41,19 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
             <p>{t('intro:misc-text.english-only')}</p>
           </Alert>
         )}
-        <Alert variant='info'>
-          <p>
-            <Link
-              external={true}
-              sameTab={false}
-              to={`https://forum.freecodecamp.org/t/how-to-troubleshoot-the-web-version-of-the-relational-database-curriculum/500231`}
-            >
-              {t('intro:misc-text.read-database-cert-article')}
-            </Link>
-          </p>
-        </Alert>
+        {codeAllyDisabledFeature.on ? null : (
+          <Alert variant='info'>
+            <p>
+              <Link
+                external={true}
+                sameTab={false}
+                to={`https://forum.freecodecamp.org/t/how-to-troubleshoot-the-web-version-of-the-relational-database-curriculum/500231`}
+              >
+                {t('intro:misc-text.read-database-cert-article')}
+              </Link>
+            </p>
+          </Alert>
+        )}
       </>
     );
   else return <></>;

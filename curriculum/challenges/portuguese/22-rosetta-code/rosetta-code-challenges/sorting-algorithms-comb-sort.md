@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8005
-title: Sorting algorithms/Comb sort
+title: Algoritmos de ordenação/ordenação do pente
 challengeType: 1
 forumTopicId: 302313
 dashedName: sorting-algorithmscomb-sort
@@ -10,22 +10,22 @@ dashedName: sorting-algorithmscomb-sort
 
 Implement a *comb sort*.
 
-The **Comb Sort** is a variant of the Bubble Sort.
+A **ordenação de pente** (Comb Sort) é uma variante da ordenação de bolha (Bubble Sort).
 
-Like the Shell sort, the Comb Sort increases the gap used in comparisons and exchanges.
+Assim como ordenação Shell Sort, a Comb Sort aumenta a diferença usada nas comparações e trocas.
 
-Dividing the gap by $(1-e^{-\\varphi})^{-1} \\approx 1.247330950103979$ works best, but 1.3 may be more practical.
+Dividir a diferença por $(1-e^{-\\varphi})^{-1} \\approx 1,247330950103979$ funciona melhor, mas 1,3 pode ser mais prático.
 
-Some implementations use the insertion sort once the gap is less than a certain amount.
+Algumas implementações usam a ordenação de inserção, já que a diferença é menor do que uma certa quantidade.
 
-Variants:
+Variantes:
 
 <ul>
   <li>Combsort11 makes sure the gap ends in (11, 8, 6, 4, 3, 2, 1), which is significantly faster than the other two possible endings.</li>
-  <li>Combsort with different endings changes to a more efficient sort when the data is almost sorted (when the gap is small). Comb sort with a low gap isn't much better than the Bubble Sort.</li>
+  <li>A ordenação de pente com terminações diferentes muda para uma ordenação mais eficiente quando os dados estão quase ordenados (quando a diferença é pequena). A ordenação de pente com diferença baixa não é muito melhor que a ordenação de bolha.</li>
 </ul>
 
-Pseudocode:
+Pseudocódigo:
 
 <pre><b>function</b> combsort(<b>array</b> input)
   gap := input<b>.size</b> <i>//initialize gap size</i>
@@ -53,41 +53,41 @@ Pseudocode:
 
 # --instructions--
 
-Write a function that sorts a given array using Comb sort.
+Escreva uma função que ordene um determinado array usando uma ordenação de pente.
 
 # --hints--
 
-`combSort` should be a function.
+`combSort` deve ser uma função.
 
 ```js
 assert(typeof combSort == 'function');
 ```
 
-`combSort([25, 32, 12, 7, 20])` should return an array.
+`combSort([25, 32, 12, 7, 20])` deve retornar um array.
 
 ```js
 assert(Array.isArray(combSort([25, 32, 12, 7, 20])));
 ```
 
-`combSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`combSort([25, 32, 12, 7, 20])` deve retornar `[7, 12, 20, 25, 32]`.
 
 ```js
 assert.deepEqual(combSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`combSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`combSort([38, 45, 35, 8, 13])` deve retornar `[8, 13, 35, 38, 45]`.
 
 ```js
 assert.deepEqual(combSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`combSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`combSort([43, 36, 20, 34, 24])` deve retornar `[20, 24, 34, 36, 43]`.
 
 ```js
 assert.deepEqual(combSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`combSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`combSort([12, 33, 26, 18, 1, 16, 38])` deve retornar `[1, 12, 16, 18, 26, 33, 38]`.
 
 ```js
 assert.deepEqual(combSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -101,7 +101,7 @@ assert.deepEqual(combSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`combSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`combSort([3, 39, 48, 16, 1, 4, 29])` deve retornar `[1, 3, 4, 16, 29, 39, 48]`.
 
 ```js
 assert.deepEqual(combSort([3, 39, 48, 16, 1, 4, 29]), [

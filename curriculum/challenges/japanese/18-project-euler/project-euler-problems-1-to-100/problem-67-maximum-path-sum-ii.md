@@ -1,6 +1,6 @@
 ---
 id: 5900f3b01000cf542c50fec2
-title: 'Problem 67: Maximum path sum II'
+title: '問題 67: 経路の最大和 (2)'
 challengeType: 1
 forumTopicId: 302179
 dashedName: problem-67-maximum-path-sum-ii
@@ -8,7 +8,7 @@ dashedName: problem-67-maximum-path-sum-ii
 
 # --description--
 
-By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+下の三角形の頂点から開始し、下の段にある隣接する数字へと移動していくと、頂点から一番下までの最大和は 23 になります。
 
 <div style='text-align: center;'>
   <strong style='color: red;'>3</strong><br>
@@ -17,27 +17,27 @@ By starting at the top of the triangle below and moving to adjacent numbers on t
   8 5 <strong style='color: red;'>9</strong> 3
 </div>
 
-That is, 3 + 7 + 4 + 9 = 23.
+すなわち、3 + 7 + 4 + 9 = 23 です。
 
-Find the maximum total from top to bottom in `numTriangle`, a 2D array defined in the background containing a triangle with one-hundred rows.
+あらかじめ用意された二次元配列 `numTriangle` に、100 段の三角形が含まれています。この三角形の頂点から一番下までの経路の最大和を求めなさい。
 
-**Note:** This is a much more difficult version of Problem 18. It is not possible to try every route to solve this problem, as there are 2<sup>99</sup> altogether! If you could check one trillion (10<sup>12</sup>) routes every second it would take over twenty billion years to check them all. There is an efficient algorithm to solve it. ;o)
+**注:** これは、問題 18 をかなり難しくした問題です。 全部で 2<sup>99</sup> 通りもあるので、すべての経路を試してこの問題を解くことは不可能です！ 毎秒 1 兆 (10<sup>12</sup>) 本の経路を調べることができたとしても、全部を調べるのに 200 億年以上かかるでしょう。 この問題を解くための効率的なアルゴリズムがあります。 ;o)
 
 # --hints--
 
-`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` should return a number.
+`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` は数値を返す必要があります。
 
 ```js
 assert(typeof maximumPathSumII(_testTriangle) === 'number');
 ```
 
-`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` should return 23.
+`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` は 23 を返す必要があります。
 
 ```js
 assert.strictEqual(maximumPathSumII(_testTriangle), 23);
 ```
 
-`maximumPathSumII(numTriangle)` should return 7273.
+`maximumPathSumII(numTriangle)` は 7273 を返す必要があります。
 
 ```js
 assert.strictEqual(maximumPathSumII(_numTriangle), 7273);

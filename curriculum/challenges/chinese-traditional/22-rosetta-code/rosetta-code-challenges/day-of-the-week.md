@@ -1,6 +1,6 @@
 ---
 id: 5966f99c45e8976909a85575
-title: Day of the week
+title: 一週中的天
 challengeType: 1
 forumTopicId: 302245
 dashedName: day-of-the-week
@@ -12,17 +12,17 @@ A company decides that whenever Xmas falls on a Sunday they will give their work
 
 # --instructions--
 
-Write a function that takes a start year and an end year and return an array of all the years where the 25th of December will be a Sunday.
+一家公司決定，每當聖誕節落在星期天，他們將給予他們的工人所有額外帶薪假期，這樣，在任何公共假期，工人將不必在下一週（12月25日到1月1日之間）工作。
 
 # --hints--
 
-`findXmasSunday` should be a function.
+任務：
 
 ```js
 assert(typeof findXmasSunday === 'function');
 ```
 
-`findXmasSunday(2000, 2100)` should return an array.
+編寫一個開始年份和結束年份的函數，並返回12月25日爲星期日的所有年份的數組。
 
 ```js
 assert(typeof findXmasSunday(2000, 2100) === 'object');

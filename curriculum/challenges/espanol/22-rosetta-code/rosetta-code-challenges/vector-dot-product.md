@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad3
-title: Vector dot product
+title: Producto punto de vectores
 challengeType: 1
 forumTopicId: 302343
 dashedName: vector-dot-product
@@ -12,47 +12,47 @@ A vector can have one or more values represented by an ordered collection. Examp
 
 # --instructions--
 
-Write a function that takes two vectors (represented as one-dimensional arrays) as input and computes their dot product. Your function should return `null` on invalid inputs such as vectors of different lengths or passing anything other than two vectors.
+Escribe una función que tome dos vectores (representados como arreglos unidimensionales) como entrada y calcule su producto punto. Tu función debe devolver `null` en entradas inválidas como vectores de diferentes longitud o ingresando cualquier cosa aparte de dos vectores.
 
 # --hints--
 
-`dotProduct` should be a function.
+`dotProduct` debe ser una función.
 
 ```js
 assert.equal(typeof dotProduct, 'function');
 ```
 
-`dotProduct()` should return `null`.
+`dotProduct()` debe devolver `null`.
 
 ```js
 assert.equal(dotProduct(), null);
 ```
 
-`dotProduct([1], [1])` should return `1`.
+`dotProduct([1], [1])` debe devolver `1`.
 
 ```js
 assert.equal(dotProduct([1], [1]), 1);
 ```
 
-`dotProduct([1], [1, 2])` should return `null`.
+`dotProduct([1], [1, 2])` debe devolver `null`.
 
 ```js
 assert.equal(dotProduct([1], [1, 2]), null);
 ```
 
-`dotProduct([1, 3, -5], [4, -2, -1])` should return `3`.
+`dotProduct([1, 3, -5], [4, -2, -1])` debe devolver `3`.
 
 ```js
 assert.equal(dotProduct([1, 3, -5], [4, -2, -1]), 3);
 ```
 
-`dotProduct([3, 2, 1], [2, 4, 2], [5, 3, 1])` should return `null`.
+`dotProduct([3, 2, 1], [2, 4, 2], [5, 3, 1])` debe devolver `null`.
 
 ```js
 assert.equal(dotProduct([3, 2, 1], [2, 4, 2], [5, 3, 1]), null);
 ```
 
-`dotProduct([ 0, 3, 6, 9, 12 ], [ 0, 4, 8, 12, 16 ])` should return `360`.
+`dotProduct([ 0, 3, 6, 9, 12 ], [ 0, 4, 8, 12, 16 ])` debe devolver `360`.
 
 ```js
 assert.equal(dotProduct([ 0, 3, 6, 9, 12 ], [ 0, 4, 8, 12, 16 ]), 360);

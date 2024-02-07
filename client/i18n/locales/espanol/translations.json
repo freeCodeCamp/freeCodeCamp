@@ -198,6 +198,7 @@
     "sound-mode": "Esto agrega un placentero sonido de guitarra acústica en todo el sitio web. Obtendrás reacciones musicales a medida que escribas en el editor, completes desafíos, obtengas certificados y mucho más.",
     "sound-volume": "Volumen de fogata:",
     "scrollbar-width": "Ancho de la barra de desplazamiento",
+    "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
       "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres inválidos",
       "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
@@ -363,7 +364,7 @@
     "assignments": "Asignaciones",
     "question": "Pregunta",
     "solution-link": "Enlace a la solución",
-    "github-link": "Enlace de GitHub",
+    "source-code-link": "Source Code Link",
     "ms-link": "Link de Microsoft",
     "submit-and-go": "Enviar y pasar a mi siguiente desafío",
     "congratulations": "Felicidades, tu código ha sido aprobado. Envía tu código para continuar.",

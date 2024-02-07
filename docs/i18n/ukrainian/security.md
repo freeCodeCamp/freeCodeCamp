@@ -12,7 +12,7 @@
 
 1. Переконайтесь, що використовуєте **найновіші**, **стабільні** та **оновлені** версії операційної системи та веббраузера, доступних на вашій машині.
 2. Ми відносимо звіти, для яких використовувались інструменти та утиліти про повідомлення проблеми із конфігурацією SPF та DKIM, тестами SSL тощо, до категорії [«випрошування щедрот»](https://www.troyhunt.com/beg-bounties) та не відповідаємо на них.
-3. Наразі ми не пропонуємо жодних винагород, але будемо раді розмістити ваше ім’я у нашому списку [Зали слави](security-hall-of-fame.md), при умові, що звіти забрали чимало зусиль.
+3. While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](https://contribute.freecodecamp.org/#/security-hall-of-fame) list, provided the reports are not low-effort.
 
 ### Звітність
 

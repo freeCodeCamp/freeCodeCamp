@@ -1,6 +1,6 @@
 ---
 id: 5900f4d01000cf542c50ffe2
-title: 'Problem 355: Maximal coprime subset'
+title: 'Завдання 355: максимальна підмножина взаємно простих чисел'
 challengeType: 1
 forumTopicId: 302015
 dashedName: problem-355-maximal-coprime-subset
@@ -8,9 +8,9 @@ dashedName: problem-355-maximal-coprime-subset
 
 # --description--
 
-Define $Co(n)$ to be the maximal possible sum of a set of mutually co-prime elements from $\\{1, 2, \ldots, n\\}$. For example $Co(10)$ is 30 and hits that maximum on the subset $\\{1, 5, 7, 8, 9\\}$.
+Визначимо $Co(n)$ як максимально можливу суму множини взаємно простих елементів з $\\{1, 2, \ldots, n\\}$. Наприклад, $Co(10)$ дорівнює 30 і досягає цього максимуму в підмножині $\\{1, 5, 7, 8, 9\\}$.
 
-Вам дано, що $Co(30) = 193$ та $Co(100) = 1356$.
+Дано, що $Co(30) = 193$ та $Co(100) = 1356$.
 
 Знайдіть $Co(200\\,000)$.
 

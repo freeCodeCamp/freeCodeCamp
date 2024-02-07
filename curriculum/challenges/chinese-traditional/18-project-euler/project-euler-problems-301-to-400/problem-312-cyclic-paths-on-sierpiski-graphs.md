@@ -1,6 +1,6 @@
 ---
 id: 5900f4a51000cf542c50ffb7
-title: 'Problem 312: Cyclic paths on Sierpiński graphs'
+title: '問題312：Sierpiński圖上的循環路徑'
 challengeType: 1
 forumTopicId: 301968
 dashedName: problem-312-cyclic-paths-on-sierpiski-graphs

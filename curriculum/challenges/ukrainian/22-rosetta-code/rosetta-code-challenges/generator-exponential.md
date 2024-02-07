@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e7b
-title: Generator/Exponential
+title: Генератор/Експонента
 challengeType: 1
 forumTopicId: 302275
 dashedName: generatorexponential
@@ -10,57 +10,57 @@ dashedName: generatorexponential
 
 A generator is an executable entity (like a function or procedure) that contains code that yields a sequence of values, one at a time, so that each time you call the generator, the next value in the sequence is provided.
 
-Generators are often built on top of coroutines or objects so that the internal state of the object is handled "naturally".
+Генератори часто будуються поверх співпрограм або об'єктів, щоб внутрішній стан об'єкта оброблявся "природним чином".
 
-Generators are often used in situations where a sequence is potentially infinite, and where it is possible to construct the next value of the sequence with only minimal state.
+Генератори часто використовуються в ситуаціях, коли послідовність потенційно нескінченна, і де можливо побудувати наступне значення послідовності з лише мінімальним станом.
 
 # --instructions--
 
-Write a function that uses generators to generate squares and cubes. Create a new generator that filters all cubes from the generator of squares.
+Запишіть функцію, яка використовує генератори для створення квадратів і кубів. Створіть новий генератор, який відфільтрує всі куби з генератора квадратів.
 
-The function should return the \\( n^{th} \\) value of the filtered generator.
+Функція має повернути \\( n^{th} \\) значення відфільтрованого генератора.
 
-For example for \\(n=7\\), the function should return 81 as the sequence would be 4, 9, 16, 25, 36, 49, 81. Here 64 is filtered out, as it is a cube.
+Наприклад, для \\(n=7\\) має повернути 81, оскільки послідовність буде 4, 16, 25, 36, 49, 81. Тут число 64 відфільтровано, оскільки це куб.
 
 # --hints--
 
-`exponentialGenerator` should be a function.
+`exponentialGenerator` має бути функцією.
 
 ```js
 assert(typeof exponentialGenerator == 'function');
 ```
 
-`exponentialGenerator()` should return a number.
+`exponentialGenerator()` має повернути число.
 
 ```js
 assert(typeof exponentialGenerator(10) == 'number');
 ```
 
-`exponentialGenerator(10)` should return `144`.
+`exponentialGenerator(10)` має повернути `144`.
 
 ```js
 assert.equal(exponentialGenerator(10), 144);
 ```
 
-`exponentialGenerator(12)` should return `196`.
+`exponentialGenerator(12)` має повернути `196`.
 
 ```js
 assert.equal(exponentialGenerator(12), 196);
 ```
 
-`exponentialGenerator(14)` should return `256`.
+`exponentialGenerator(14)` має повернути `256`.
 
 ```js
 assert.equal(exponentialGenerator(14), 256);
 ```
 
-`exponentialGenerator(20)` should return `484`.
+`exponentialGenerator(20)` має повернути `484`.
 
 ```js
 assert.equal(exponentialGenerator(20), 484);
 ```
 
-`exponentialGenerator(25)` should return `784`.
+`exponentialGenerator(25)` має повернути `784`.
 
 ```js
 assert.equal(exponentialGenerator(25), 784);

@@ -1,6 +1,6 @@
 ---
 id: 5900f4361000cf542c50ff48
-title: 'Problem 201: Subsets with a unique sum'
+title: '問題 201: 唯一の和を持つ部分集合'
 challengeType: 1
 forumTopicId: 301841
 dashedName: problem-201-subsets-with-a-unique-sum
@@ -8,9 +8,9 @@ dashedName: problem-201-subsets-with-a-unique-sum
 
 # --description--
 
-For any set $A$ of numbers, let $sum(A)$ be the sum of the elements of $A$.
+数の任意の集合 $A$ について、$A$ の要素の和を $sum(A)$ とします。
 
-Consider the set $B = \\{1,3,6,8,10,11\\}$. There are 20 subsets of $B$ containing three elements, and their sums are:
+集合 $B = \\{1,3,6,8,10,11\\}$ を考えてみます。 $B$ には 3 要素からなる部分集合が 20 個あり、それぞれの和は次のとおりです。
 
 $$\begin{align}   & sum(\\{1,3,6\\}) = 10 \\\\
   & sum(\\{1,3,8\\}) = 12 \\\\   & sum(\\{1,3,10\\}) = 14 \\\\
@@ -24,15 +24,15 @@ $$\begin{align}   & sum(\\{1,3,6\\}) = 10 \\\\
   & sum(\\{6,8,11\\}) = 25 \\\\   & sum(\\{6,10,11\\}) = 27 \\\\
   & sum(\\{8,10,11\\}) = 29 \\end{align}$$
 
-Some of these sums occur more than once, others are unique. For a set $A$, let $U(A,k)$ be the set of unique sums of $k$-element subsets of $A$, in our example we find $U(B,3) = \\{10,12,14,18,21,25,27,29\\}$ and $sum(U(B,3)) = 156$.
+これらの和には、複数回現れるものと、1 回のみ現れるものがあります。 集合 $A$ について、$A$ の $k$ 個の要素からなる部分集合のうち、その和が全体で 1 回だけ現れるような集合を $U(A,k) と表すことにします。上の例では、$U(B,3) = \\{10,12,14,18,21,25,27,29\\}$ かつ $sum(U(B,3)) = 156$ です。
 
-Now consider the $100$-element set $S = \\{1^2, 2^2, \ldots , {100}^2\\}$. $S$ has $100\\,891\\,344\\,545\\,564\\,193\\,334\\,812\\,497\\,256\\;$ $50$-element subsets.
+次に、$100$ 個の要素からなる集合 $S = \\{1^2, 2^2, \ldots , {100}^2\\}$ を考えます。 $S$ には $50$ 個の要素からなる部分集合が $100\\,891\\,344\\,545\\,564\\,193\\,334\\,812\\,497\\,256\\;$ 個あります。
 
-Determine the sum of all integers which are the sum of exactly one of the $50$-element subsets of $S$, i.e. find $sum(U(S,50))$.
+集合 $S$ について、$50$ 個の要素からなる部分集合の和のうち 1 回のみ現れる和である整数の総和、すなわち $sum(U(S,50))$ を求めなさい。
 
 # --hints--
 
-`uniqueSubsetsSum()` should return `115039000`.
+`uniqueSubsetsSum()` は `115039000` を返す必要があります。
 
 ```js
 assert.strictEqual(uniqueSubsetsSum(), 115039000);

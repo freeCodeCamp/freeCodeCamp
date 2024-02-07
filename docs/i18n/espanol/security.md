@@ -12,7 +12,7 @@ Agradecemos la divulgación responsable de las vulnerabilidades que puedan afect
 
 1. Asegúrese de que está utilizando las versiones **más recientes**, **estables** y **actualizadas** del sistema operativo y del navegador o navegadores web disponibles en su máquina.
 2. Consideramos que el uso de herramientas y utilidades en línea para informar de problemas con las configuraciones de SPF y DKIM, las pruebas del servidor SSL, etc., entra en la categoría de ["mendigar recompensas"](https://www.troyhunt.com/beg-bounties) y no podemos responder a estos informes.
-3. Aunque por el momento no ofrecemos recompensas ni botines, estaremos encantados de incluir tu nombre en nuestra lista del [Salón de la Fama](security-hall-of-fame.md), siempre que los informes no sean de bajo esfuerzo.
+3. While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](https://contribute.freecodecamp.org/#/security-hall-of-fame) list, provided the reports are not low-effort.
 
 ### Reportando
 

@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e78
-title: General FizzBuzz
+title: 一般的な FizzBuzz プログラム
 challengeType: 1
 forumTopicId: 302273
 dashedName: general-fizzbuzz
@@ -10,23 +10,23 @@ dashedName: general-fizzbuzz
 
 Write a generalized version of <a href="https://rosettacode.org/wiki/FizzBuzz" target="_blank" rel="noopener noreferrer nofollow">FizzBuzz</a> that works for any list of factors, along with their words.
 
-This is basically a "fizzbuzz" implementation where the rules of the game are supplied to the user. Create a function to implement this. The function should take two parameters.
+これは基本的に、このゲームのルールをユーザーに提供する "fizzbuzz" 実装です。 これを実装する関数を作成します。 この関数は 2 つのパラメーターを取得する必要があります。
 
-The first will be an array with the FizzBuzz rules. For example: `[ [3, "Fizz"] , [5, "Buzz"] ]`.
+1つ目は、FizzBuzz ルールの配列です。 例: `[ [3, "Fizz"] , [5, "Buzz"] ]`.
 
-This indicates that `Fizz` should be printed if the number is a multiple of 3 and `Buzz` if it is a multiple of 5. If it is a multiple of both then the strings should be concatenated in the order specified in the array. In this case, `FizzBuzz` if the number is a multiple of 3 and 5.
+これは、数値が 3 の倍数の場合、 `Fizz` が出力され、5の倍数の場合、 `Buzz` が出力されることを示します。 両方の倍数であれば、文字列は配列で指定された順番で連結される必要があります。 このケースでは、数値が 3 と 5 の倍数の場合、 `FizzBuzz` となります。
 
-The second parameter is the number for which the function should return a string as stated above.
+2 つ目のパラメーターは、関数が上記のように文字列を返す対象となる数値です。
 
 # --hints--
 
-`genFizzBuzz` should be a function.
+`genFizzBuzz` は関数とします。
 
 ```js
 assert(typeof genFizzBuzz == 'function');
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` should return a string.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` は文字列を返す必要があります。
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` should return `"Fizz"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` は`"Fizz"`を返す必要があります。
 
 ```js
 assert.equal(
@@ -55,7 +55,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 10)` should return `"Buzz"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 10)` は`"Buzz"`を返す必要があります。
 
 ```js
 assert.equal(
@@ -70,7 +70,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 12)` should return `"Buzz"`.
+`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 12)` は、`"Buzz"`を返す必要があります。
 
 ```js
 assert.equal(
@@ -85,7 +85,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 13)` should return `"13"`.
+`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 13)` は`"13"`を返す必要があります。
 
 ```js
 assert.equal(
@@ -100,7 +100,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 15)` should return `"BuzzFizz"`.
+`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 15)`は`"BuzzFizz"`を返す必要があります。
 
 ```js
 assert.equal(
@@ -115,7 +115,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 15)` should return `"FizzBuzz"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 15)` は`"FizzBuzz"`を返す必要があります。
 
 ```js
 assert.equal(
@@ -130,7 +130,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"],[7, "Baxx"]], 105)` should return `"FizzBuzzBaxx"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"],[7, "Baxx"]], 105)` は`"FizzBuzzBaxx"`を返す必要があります。
 
 ```js
 assert.equal(

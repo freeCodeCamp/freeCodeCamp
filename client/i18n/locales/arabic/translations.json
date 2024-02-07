@@ -198,6 +198,7 @@
     "sound-mode": "هذا يضيف صوت قيتارة ممتع في جميع أنحاء الموقع. سوف تحصل على تنبيهات موسيقية عند الكتابة على المحرر وإكمال التحديات وعند المطالبة بالشهادات وغير ذلك.",
     "sound-volume": "مستوي صوت Campfire:",
     "scrollbar-width": "Editor Scrollbar Width",
+    "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
       "contains invalid characters": "اسم المستخدم\"{{username}}\" يحتوي على أحرف غير صالحة",
       "is too short": "اسم المستخدم \"{{username}}\" قصير جداً",
@@ -363,7 +364,7 @@
     "assignments": "Assignments",
     "question": "Question",
     "solution-link": "رابط الحل",
-    "github-link": "رابط Github",
+    "source-code-link": "Source Code Link",
     "ms-link": "Microsoft Link",
     "submit-and-go": "أرسل وانتقل إلى التحدي التالي",
     "congratulations": "تهانينا، نجح كودك. قدّم كودك للمتابعة.",
