@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad5
-title: Y combinator
+title: Y Kombinator
 challengeType: 1
 forumTopicId: 302345
 dashedName: y-combinator
@@ -10,45 +10,45 @@ dashedName: y-combinator
 
 In strict <a href="https://www.freecodecamp.org/news/the-principles-of-functional-programming/" target="_blank" rel="noopener noreferrer nofollow">functional programming</a> and the lambda calculus, functions (lambda expressions) don't have state and are only allowed to refer to arguments of enclosing functions. This rules out the usual definition of a recursive function wherein a function is associated with the state of a variable and this variable's state is used in the body of the function.
 
-The Y combinator is itself a stateless function that, when applied to another stateless function, returns a recursive version of the function. The Y combinator is the simplest of the class of such functions, called fixed-point combinators.
+Der Y-Kombinator ist selbst eine zustandslose Funktion, die bei Anwendung auf eine andere zustandslose Funktion eine rekursive Version der Funktion zurückgibt. Der Y-Kombinator ist die einfachste Klasse solcher Funktionen, die Fixpunkt-Kombinatoren genannt werden.
 
 # --instructions--
 
-Define the stateless Y combinator function and use it to compute the factorials. The `factorial(N)` function is already given to you. 
+Definiere die zustandslose Y-Kombinatorfunktion und verwende diese zur Berechnung der Fakultäten. Die `factorial(N)`-Funktion ist bereits gegeben.
 
 # --hints--
 
-Y should return a function.
+Y sollte eine Funktion zurückgeben.
 
 ```js
 assert.equal(typeof Y((f) => (n) => n), 'function');
 ```
 
-factorial(1) should return 1.
+factorial(1) sollte 1 zurückgeben.
 
 ```js
 assert.equal(factorial(1), 1);
 ```
 
-factorial(2) should return 2.
+factorial(2) sollte 2 zurückgeben.
 
 ```js
 assert.equal(factorial(2), 2);
 ```
 
-factorial(3) should return 6.
+factorial(3) sollte 6 zurückgeben.
 
 ```js
 assert.equal(factorial(3), 6);
 ```
 
-factorial(4) should return 24.
+factorial(4) sollte 24 zurückgeben.
 
 ```js
 assert.equal(factorial(4), 24);
 ```
 
-factorial(10) should return 3628800.
+factorial(10) sollte 3628800 zurückgeben.
 
 ```js
 assert.equal(factorial(10), 3628800);

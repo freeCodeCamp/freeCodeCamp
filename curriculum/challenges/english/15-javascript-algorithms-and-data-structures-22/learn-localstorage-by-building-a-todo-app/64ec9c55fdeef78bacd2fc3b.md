@@ -18,13 +18,13 @@ Use arrow syntax to create a `reset` function and set it to a pair of curly brac
 You should use `const` and arrow syntax to create a `reset` function.
 
 ```js
-assert.match(code, /const\s+reset\s*=\s*\(\)\s*=>\s*\{\s*/)
+assert.match(code, /const\s+reset\s*=\s*\(\s*\)\s*=>\s*\{\s*/)
 ```
 
 Your `reset` function should be empty.
 
 ```js
-assert.match(reset.toString(), /\(\)\s*\{\s*\}/);
+assert.match(reset.toString(), /\(\s*\)\s*\{\s*\}/);
 ```
 
 # --seed--
@@ -39,7 +39,7 @@ assert.match(reset.toString(), /\(\)\s*\{\s*\}/);
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Learn localStorage By Building a Todo App</title>
+  <title>Learn localStorage by Building a Todo App</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 

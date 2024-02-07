@@ -1,13 +1,13 @@
 ---
 id: 657c9dbff0fee6196fa8dcff
-title: Step 16
+title: 步骤 16
 challengeType: 0
 dashedName: step-16
 ---
 
 # --description--
 
-When the user rolls the dice, you will need to generate 5 random numbers representing each die value. 
+When the user rolls the dice, you will need to generate 5 random numbers representing each die value.
 
 To start, create a `for` loop that will loop a total of 5 times.
 
@@ -28,13 +28,13 @@ assert.match(code, /for\s*\(\s*let\s+i\s*=\s*0\s*;/);
 Your `for` loop should have a condition that checks if `i` is less than `5`.
 
 ```js
-assert.match(code, /for\s*\(\s*let\s*i\s*=\s*0\s*;\s*i\s*<\s*5\s*;/);
+assert.match(code, /for\s*\(\s*let\s+i\s*=\s*0\s*;\s*i\s*<\s*5\s*;/);
 ```
 
 Your `for` loop should increment `i` by `1` each time it runs.
 
 ```js
-assert.match(code, /for\s*\(\s*let\s*i\s*=\s*0\s*;\s*i\s*<\s*5\s*;\s*i\s*\+\+\s*\)/);
+assert.match(code, /for\s*\(\s*let\s+i\s*=\s*0\s*;\s*i\s*<\s*5\s*;\s*i\s*\+\+\s*\)/);
 ```
 
 # --seed--

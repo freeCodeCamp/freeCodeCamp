@@ -39,7 +39,7 @@ assert.match(reset.toString(), /\(\)\s*\{\s*\}/);
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Learn localStorage By Building a Todo App</title>
+  <title>Learn localStorage by Building a Todo App</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -65,7 +65,7 @@ assert.match(reset.toString(), /\(\)\s*\{\s*\}/);
           <textarea class="form-control" id="description-input" cols="30" rows="5"></textarea>
         </div>
         <div class="task-form-footer">
-          <button id="add-or-update-task-btn" class="btn large-btn" type="submit" aria-label="add task">
+          <button id="add-or-update-task-btn" class="btn large-btn" type="submit">
             Add Task
           </button>
         </div>
@@ -74,10 +74,10 @@ assert.match(reset.toString(), /\(\)\s*\{\s*\}/);
         <form method="dialog">
           <p class="discard-message-text">Discard unsaved changes?</p>
           <div class="confirm-close-dialog-btn-container">
-            <button id="cancel-btn" class="btn" aria-label="cancel">
+            <button id="cancel-btn" class="btn">
               Cancel
             </button>
-            <button id="discard-btn" class="btn" aria-label="discard">
+            <button id="discard-btn" class="btn">
               Discard
             </button>
           </div>
@@ -330,16 +330,17 @@ taskForm.addEventListener("submit", (e) => {
     taskData.unshift(taskObj);
   }
 
-  taskData.forEach(({id, title, date, description}) => 
-    (tasksContainer.innerHTML += `
-      <div class="task" id="${id}">
-        <p><strong>Title:</strong> ${title}</p>
-        <p><strong>Date:</strong> ${date}</p>
-        <p><strong>Description:</strong> ${description}</p>
-        <button type="button" class="btn">Edit</button>
-        <button type="button" class="btn">Delete</button>
-      </div>
-    `)
+  taskData.forEach(({id, title, date, description}) => {
+      (tasksContainer.innerHTML += `
+        <div class="task" id="${id}">
+          <p><strong>Title:</strong> ${title}</p>
+          <p><strong>Date:</strong> ${date}</p>
+          <p><strong>Description:</strong> ${description}</p>
+          <button type="button" class="btn">Edit</button>
+          <button type="button" class="btn">Delete</button>
+        </div>
+      `)
+    } 
   );
 
   taskForm.classList.toggle("hidden");

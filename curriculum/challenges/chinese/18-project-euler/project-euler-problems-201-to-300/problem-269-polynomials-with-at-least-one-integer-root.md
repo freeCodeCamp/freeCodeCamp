@@ -1,6 +1,6 @@
 ---
 id: 5900f4791000cf542c50ff8c
-title: 'Problem 269: Polynomials with at least one integer root'
+title: '问题269：具有至少一个整数根的多项式'
 challengeType: 1
 forumTopicId: 301918
 dashedName: problem-269-polynomials-with-at-least-one-integer-root

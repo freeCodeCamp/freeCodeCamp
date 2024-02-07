@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8036
-title: Strip control codes and extended characters from a string
+title: Remover códigos de controle e caracteres estendidos a partir de uma string
 challengeType: 1
 forumTopicId: 302327
 dashedName: strip-control-codes-and-extended-characters-from-a-string
@@ -12,43 +12,43 @@ The task is to strip control codes and extended characters from a string. The so
 
 # --hints--
 
-`strip` should be a function.
+`strip` deve ser uma função.
 
 ```js
 assert(typeof strip == 'function');
 ```
 
-`strip("abc")` should return a string.
+`strip("abc")` deve retornar uma string.
 
 ```js
 assert(typeof strip('abc') == 'string');
 ```
 
-`strip("\ba\x00b\n\rc\fd\xc3")` should return `"abcd"`.
+`strip("\ba\x00b\n\rc\fd\xc3")` deve retornar `"abcd"`.
 
 ```js
 assert.equal(strip('\ba\x00b\n\rc\fd\xc3'), 'abcd');
 ```
 
-`strip("\u0000\n abc\u00E9def\u007F")` should return `" abcdef"`.
+`strip("\u0000\n abc\u00E9def\u007F")` deve retornar `" abcdef"`.
 
 ```js
 assert.equal(strip('\u0000\n abc\u00E9def\u007F'), ' abcdef');
 ```
 
-`strip("a\n\tb\u2102d\u2147f")` should return `"abdf"`.
+`strip("a\n\tb\u2102d\u2147f")` deve retornar `"abdf"`.
 
 ```js
 assert.equal(strip('a\n\tb\u2102d\u2147f'), 'abdf');
 ```
 
-`strip("Français.")` should return `"Franais."`.
+`strip("Français.")` deve retornar `"Franais."`.
 
 ```js
 assert.equal(strip('Français.'), 'Franais.');
 ```
 
-`strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ")` should return `"123abcDEF+-*/"`.
+`strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ")` deve retornar `"123abcDEF+-*/"`.
 
 ```js
 assert.equal(strip('123\tabc\u0007DEF\u007F+-*/€æŧðłþ'), '123abcDEF+-*/');

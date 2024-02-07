@@ -28,19 +28,19 @@ assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1/)
 You should use arrow syntax to set your event listener to an empty pair of curly braces.
 
 ```js
-assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\)\s*=>\s*\{/)
+assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\s*\)\s*=>\s*\{/)
 ```
 
 Your event listener should use the `close()` method on `confirmCloseDialog`.
 
 ```js
-assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\)\s*=>\s*\{\s*confirmCloseDialog\.close\(\);?/)
+assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\s*\)\s*=>\s*\{\s*confirmCloseDialog\.close\(\s*\);?/)
 ```
 
 Your event listener should use `classList` to toggle the class `hidden` on `taskForm`.
 
 ```js
-assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\)\s*=>\s*\{\s*confirmCloseDialog\.close\(\);?\s*taskForm\.classList\.toggle\(\s*('|"|`)hidden\2\s*\);?\s*\}\);?/)
+assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\s*\)\s*=>\s*\{\s*confirmCloseDialog\.close\(\s*\);?\s*taskForm\.classList\.toggle\(\s*('|"|`)hidden\2\s*\);?\s*\}\s*\);?/)
 ```
 
 # --seed--
@@ -55,7 +55,7 @@ assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\)\s
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Learn localStorage By Building a Todo App</title>
+  <title>Learn localStorage by Building a Todo App</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 

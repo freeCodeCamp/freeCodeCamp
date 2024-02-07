@@ -1,6 +1,6 @@
 ---
 id: 5900f5191000cf542c51002c
-title: 'Problem 429: Sum of squares of unitary divisors'
+title: '問題429：單一除數的平方和'
 challengeType: 1
 forumTopicId: 302099
 dashedName: problem-429-sum-of-squares-of-unitary-divisors

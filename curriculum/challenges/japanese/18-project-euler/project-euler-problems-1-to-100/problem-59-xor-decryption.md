@@ -1,6 +1,6 @@
 ---
 id: 5900f3a81000cf542c50feba
-title: 'Problem 59: XOR decryption'
+title: '問題 59: XOR 復号'
 challengeType: 1
 forumTopicId: 302170
 dashedName: problem-59-xor-decryption
@@ -8,25 +8,25 @@ dashedName: problem-59-xor-decryption
 
 # --description--
 
-Each character on a computer is assigned a unique code and the preferred standard is ASCII (American Standard Code for Information Interchange). For example, uppercase A = 65, asterisk (\*) = 42, and lowercase k = 107.
+コンピュータ上の各文字には固有のコードが割り当てられ、推奨される標準は ASCII (American Standard Code for Information Interchange) です。 例えば、大文字の A = 65、アスタリスク(\*) = 42、小文字の k = 107です。
 
-A modern encryption method is to take a text file, convert the bytes to ASCII, then XOR each byte with a given value, taken from a secret key. The advantage with the XOR function is that using the same encryption key on the cipher text, restores the plain text; for example, 65 XOR 42 = 107, then 107 XOR 42 = 65.
+現代の暗号方式の一つは、テキストファイルを取り込み、バイトを ASCII に変換した後、秘密鍵から取得する所与の値を使って各バイトを XOR 暗号化します。 XOR 関数の利点は、同じ暗号鍵を暗号文に使用して平文を復元できることです。例えば、65 XOR 42 = 107 で暗号化したものを 107 XOR 42 = 65 で復号します。
 
-For unbreakable encryption, the key is the same length as the plain text message, and the key is made up of random bytes. The user would keep the encrypted message and the encryption key in different locations, and without both "halves", it is impossible to decrypt the message.
+暗号が解読されないように、鍵は平文のメッセージと同じ長さであり、無作為なバイトで構成されます。 ユーザーは、暗号化されたメッセージと暗号鍵を別々の場所に保存します。それらの「片割れ」が両方そろわない限り、メッセージを復号することはできません。
 
-Unfortunately, this method is impractical for most users, so the modified method is to use a password as a key. If the password is shorter than the message, which is likely, the key is repeated cyclically throughout the message. The balance for this method is using a sufficiently long password key for security, but short enough to be memorable.
+残念ながら、この手法はほとんどのユーザーにとって実用的ではないため調整が加えられ、パスワードが鍵として使われます。 パスワードがメッセージより短い場合 (よくあることです)、メッセージ全体を通して鍵が循環的に繰り返し使用されます。 この方法で必要になるバランスは、セキュリティを確保するために十分に長く、かつ、覚えられる程度に短いパスワード鍵を使用することです。
 
-Your task has been made easy, as the encryption key consists of three lower case characters. Using `cipher`, an array containing the encrypted ASCII codes, and the knowledge that the plain text must contain common English words, decrypt the message and find the sum of the ASCII values in the original text.
+この問題では暗号鍵が 3 つの小文字で構成されるので、作業は簡単です。 暗号化された ASCII コードが含まれている配列 `cipher` を使用し、また、平文には一般的な英単語が含まれているという前提で、メッセージを復号して元のテキスト内の ASCII 値の和を求めなさい。
 
 # --hints--
 
-`XORDecryption(cipher)` should return a number.
+`XORDecryption(cipher)` は数値を返す必要があります。
 
 ```js
 assert(typeof XORDecryption(cipher) === 'number');
 ```
 
-`XORDecryption(cipher)` should return 129448.
+`XORDecryption(cipher)` は 129448 を返す必要があります。
 
 ```js
 assert.strictEqual(XORDecryption(cipher), 129448);

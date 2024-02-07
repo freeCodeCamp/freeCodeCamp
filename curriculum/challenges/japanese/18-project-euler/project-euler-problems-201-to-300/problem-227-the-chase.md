@@ -1,6 +1,6 @@
 ---
 id: 5900f44f1000cf542c50ff61
-title: 'Problem 227: The Chase'
+title: '問題 227: チェイス'
 challengeType: 1
 forumTopicId: 301870
 dashedName: problem-227-the-chase
@@ -8,23 +8,23 @@ dashedName: problem-227-the-chase
 
 # --description--
 
-"The Chase" is a game played with two dice and an even number of players.
+「チェイス」とは、2 つのサイコロと偶数人のプレイヤーで遊ぶゲームです。
 
-The players sit around a table; the game begins with two opposite players having one die each. On each turn, the two players with a die roll it.
+プレイヤーはテーブルの周りに座ります。ゲームの開始時、互いに対面に座っている 2 人がサイコロを 1 つずつ持っています。 それぞれのターンで、サイコロを持っている 2 人がそれを振ります。
 
-If the player rolls a 1, he passes the die to his neighbour on the left.
+1 の目が出たら、左隣の人にサイコロを渡します。
 
-If the player rolls a 6, he passes the die to his neighbour on the right.
+6 の目が出たら、右隣の人にサイコロを渡します。
 
-Otherwise, he keeps the die for the next turn.
+それ以外の場合、次のターンまでサイコロをそのまま持っています。
 
-The game ends when one player has both dice after they have been rolled and passed; that player has then lost.
+サイコロが振られてプレイヤー間を移動するうちに 1 人のプレイヤーがサイコロを 2 つとも持ったら、そのプレイヤーは負け、ゲームは終わります。
 
-In a game with 100 players, what is the expected number of turns the game lasts? Give your answer rounded to ten significant digits.
+100 人のプレイヤーでこのゲームをすると何回目のターンまで続くかについて、その期待値を求めなさい。 回答は、四捨五入して有効数字 10 桁にすること。
 
 # --hints--
 
-`theChase()` should return `3780.618622`.
+`theChase()` は `3780.618622` を返す必要があります。
 
 ```js
 assert.strictEqual(theChase(), 3780.618622);

@@ -10,32 +10,32 @@ dashedName: subleq
 
 Subleq is an example of a One-Instruction Set Computer (OISC).
 
-It is named after its only instruction, which is **SU**btract and **B**ranch if **L**ess than or **EQ**ual to zero.
+この名前は、**SU**btract and **B**ranch if **L**ess than or **EQ**ual to zero というこのコンピュータの唯一の命令から取られています。
 
-Your task is to create an interpreter which emulates such a machine.
+タスクは、このようなマシンをエミュレートするインタプリタを作成することです。
 
-The machine's memory consists of an array of signed integers. Any reasonable word size is fine, but the memory must be able to hold negative as well as positive numbers.
+マシンのメモリは、符号付き整数の配列で構成されています。 妥当な単語サイズであれば問題ありませんが、メモリは正の数だけでなく負の数も保持できる必要があります。
 
-Execution begins with the instruction pointer aimed at the first word, which is address 0. It proceeds as follows:
+アドレス 0 である最初の単語を指す命令ポインタから実行が始まります。 次のように進みます。
 
 <ol>
   <li>Let A, B, and C be the value stored in the three consecutive words in memory starting at the instruction pointer.</li>
-  <li>Advance the instruction pointer 3 words to point at the address after the one containing C.</li>
-  <li>If A is -1, then a character is read from standard input and its code point stored in the address given by B. C is unused.</li>
-  <li>If B is -1, then the number contained in the address given by A is interpreted as a code point and the corresponding character output. C is again unused.</li>
-  <li>Otherwise, both A and B are treated as the addresses of memory locations. The number contained in the address given by A is subtracted from the number at the address given by B (and the result stored back in address B). If the result is zero or negative, the value C becomes the new instruction pointer.</li>
-  <li>If the instruction pointer becomes negative, execution halts.</li>
+  <li>命令ポインタを 3 単語進め、C を含むものの後のアドレスを指します。</li>
+  <li>A が -1 の場合、標準入力から文字が読み込まれ、そのコードポイントは B が指定するアドレスに格納されます。C は使用されません。</li>
+  <li>B が -1 の場合、A が指定するアドレスに含まれる数値はコードポイントとして解釈され、対応する文字が出力されます。 Cは今度も使用されません。</li>
+  <li>それ以外の場合、A と B の両方がメモリ位置のアドレスとして扱われます。 A が指定するアドレスに格納されている数が、B が指定するアドレスの数から引かれます。 (そして、その結果がアドレス B に戻されます) 。 結果がゼロまたは負の場合、値 C が新しい命令ポインタになります。</li>
+  <li>この命令ポインタが負になると、実行は停止します。</li>
 </ol>
 
-Other negative addresses besides -1 may be treated as equivalent to -1, or generate an error, as you see fit.
+-1 以外の負のアドレスを -1 と同等のものとして扱うか、エラーを生成するかは任意とします。
 
-Your solution should accept a program to execute on the machine, separately from the input fed to the program itself.
+解答では、マシン上で実行するプログラムは、プログラム自体への入力とは別に取り込む必要があります。
 
-This program should be in raw subleq "machine code" - whitespace-separated decimal numbers, with no symbolic names or other assembly-level extensions, to be loaded into memory starting at address 0. Show the output of your solution when fed this "Hello, world!" program. (Note that the example assumes ASCII or a superset of it, such as any of the Latin-N character sets or Unicode. You may translate it into another character set if your implementation is on a non-ASCiI-compatible environment.)
+このプログラムは、生の subleq "機械語" である必要があります。つまり、 空白で区切られた 10 進数で、シンボリック名やアセンブリレベルの拡張子などを含みません。アドレス 0 からメモリに読み込まれ始めます。 この「Hello, world!」プログラムを与えた場合の、解答の出力を表示してください。 (この例では Latin-N 文字セットや Unicode のような、ASCII またはその上位セットを前提としていることに注意してください。 ASCII 互換でない環境で実装している場合は、別の文字セットに変換してください)。
 
 <pre>15 17 -1 17 -1 -1 16 1 -1 16 3 -1 15 15 0 0 -1 72 101 108 108 111 44 32 119 111 114 108 100 33 10 0</pre>
 
-Which corresponds to something like this in a hypothetical assembler language:
+これは仮想アセンブラ言語では、以下のようになります。
 
 <pre>start:
     zero, message, -1
@@ -50,17 +50,17 @@ message: "Hello, world!\n\0"
 
 # --instructions--
 
-Write a function that takes an array of integers as a parameter. This represents the memory elements. The function should interpret the sequence and return the output string. For this task, assume that there is no standard input.
+パラメータとして整数の配列を取る関数を記述してください。 これはメモリ要素を表します。 関数は数列を解釈し、出力文字列を返します。 このタスクでは、標準入力がないと仮定します。
 
 # --hints--
 
-`Subleq` should be a function.
+`Subleq` は関数とします。
 
 ```js
 assert(typeof Subleq == 'function');
 ```
 
-`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` should return a string.
+`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` は文字列を返す必要があります。
 
 ```js
 assert(
@@ -100,7 +100,7 @@ assert(
 );
 ```
 
-`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` should return `"Hello, world!"`.
+`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` は `"Hello, world!"` を返す必要があります。
 
 ```js
 assert.equal(

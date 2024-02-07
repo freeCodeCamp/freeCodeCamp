@@ -1,6 +1,6 @@
 ---
 id: 5900f3e51000cf542c50fef8
-title: 'Problem 121: Disc game prize fund'
+title: 'Problema 121: Fondo de premio de juego de disco'
 challengeType: 1
 forumTopicId: 301748
 dashedName: problem-121-disc-game-prize-fund
@@ -10,15 +10,15 @@ dashedName: problem-121-disc-game-prize-fund
 
 A bag contains one red disc and one blue disc. In a game of chance a player takes a disc at random and its colour is noted. After each turn the disc is returned to the bag, an extra red disc is added, and another disc is taken at random.
 
-The player pays £1 to play and wins if they have taken more blue discs than red discs at the end of the game.
+El jugador paga £1 para jugar y gana si ha tomado más discos azules que discos rojos al final del juego.
 
-If the game is played for four turns, the probability of a player winning is exactly 11/120, and so the maximum prize fund the banker should allocate for winning in this game would be £10 before they would expect to incur a loss. Note that any payout will be a whole number of pounds and also includes the original £1 paid to play the game, so in the example given the player actually wins £9.
+Si la partida es jugada para cuatro turnos, la probabilidad de que un jugador gane es exactamente 11/120, por lo tanto el fondo máximo de premios que el banquero debe asignar para ganar en este juego sería de £10 antes que esperen incurrir en una pérdida. Note que cualquier pago será un número entero de libras y también incluyen el original £1 pagados para juga el juego, así que en el ejemplo dado el jugador gana actualmente gana £9.
 
-Find the maximum prize fund that should be allocated to a single game in which fifteen turns are played.
+Encuentra el fondo máximo de premios que debería asignarse a un solo juego en el que se juegan quince turnos.
 
 # --hints--
 
-`discGamePrize()` should return `2269`.
+`discGamePrize()` debería devolver `2269`.
 
 ```js
 assert.strictEqual(discGamePrize(), 2269);

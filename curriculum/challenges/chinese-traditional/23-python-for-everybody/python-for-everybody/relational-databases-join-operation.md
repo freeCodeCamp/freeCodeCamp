@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08f
-title: 'Relational Databases: Join Operation'
+title: '關係數據庫：聯接操作'
 challengeType: 11
 videoId: jvDw3D9GKac
 bilibiliIds:
@@ -18,15 +18,15 @@ When using a JOIN clause in an SQL statement, what does ON do?
 
 ## --answers--
 
-It indicates what tables to perform the JOIN on.
+它指示在哪些表上執行 JOIN。
 
 ---
 
-It specifies the fields to use for the JOIN.
+它指定用於 JOIN 的字段。
 
 ---
 
-It indicates how the two tables are to be joined.
+它指示如何將兩個表連接在一起。
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f41f1000cf542c50ff32
-title: 'Problem 179: Consecutive positive divisors'
+title: '问题179：连续的正向除数'
 challengeType: 1
 forumTopicId: 301814
 dashedName: problem-179-consecutive-positive-divisors

@@ -1,6 +1,6 @@
 ---
 id: 59637c4d89f6786115efd814
-title: Hofstadter Q sequence
+title: Hofstadter Q 序列
 challengeType: 1
 forumTopicId: 302287
 dashedName: hofstadter-q-sequence
@@ -16,41 +16,41 @@ It is defined like the Fibonacci sequence, but whereas the next term in the Fibo
 
 # --instructions--
 
-Implement the Hofstadter Q Sequence equation as a function. The function should accept number, `n`, and return an integer.
+將 Hofstadter Q 序列方程實現爲函數。 該函數應該接受數字，`n`，並返回一個整數。
 
 # --hints--
 
-`hofstadterQ` should be a function.
+`hofstadterQ` 應該是一個函數。
 
 ```js
 assert(typeof hofstadterQ === 'function');
 ```
 
-`hofstadterQ()` should return `integer`
+`hofstadterQ()` 應該返回 `integer`
 
 ```js
 assert(Number.isInteger(hofstadterQ(1000)));
 ```
 
-`hofstadterQ(1000)` should return `502`
+`hofstadterQ(1000)` 應該返回 `502`
 
 ```js
 assert.equal(hofstadterQ(testCase[0]), res[0]);
 ```
 
-`hofstadterQ(1500)` should return `755`
+`hofstadterQ(1500)` 應該返回 `755`
 
 ```js
 assert.equal(hofstadterQ(testCase[1]), res[1]);
 ```
 
-`hofstadterQ(2000)` should return `1005`
+`hofstadterQ(2000)` 應該返回 `1005`
 
 ```js
 assert.equal(hofstadterQ(testCase[2]), res[2]);
 ```
 
-`hofstadterQ(2500)` should return `1261`
+`hofstadterQ(2500)` 應該返回 `1261`
 
 ```js
 assert.equal(hofstadterQ(testCase[3]), res[3]);

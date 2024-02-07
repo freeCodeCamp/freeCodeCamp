@@ -74,30 +74,28 @@ coinPartitions(7);
 # --solutions--
 
 ```js
+// compute pentagonal numbers per generating function
+const pentagonalNumbers = Array(251)
+  .fill(0)
+  .flatMap((_, i) => i ? [i * (3 * i - 1) / 2, i * (3 * i - 1) / 2 + i] : []);
+
 function coinPartitions(divisor) {
-  const partitions = [1];
+  // helper data
+  const signs = [1, 1, -1, -1];
 
-  let n = 0;
-  while (partitions[n] !== 0) {
-    n++;
-    partitions.push(0);
-
-    let i = 0;
-    let pentagonal = 1;
-    while (pentagonal <= n) {
-      const sign = i % 4 > 1 ? -1 : 1;
-      partitions[n] += sign * partitions[n - pentagonal];
-      partitions[n] = partitions[n] % divisor;
-
-      i++;
-
-      let k = Math.floor(i / 2) + 1;
-      if (i % 2 !== 0) {
-        k *= -1;
-      }
-      pentagonal = Math.floor((k * (3 * k - 1)) / 2);
+  // compute partition counts until we find a multiple of divisor
+  const partitions = Array(divisor + 1).fill(0);
+  partitions[0] = 1;
+  for (let i = 1; partitions[i - 1] > 0; i++) {
+    // compute next partition count
+    for (let j = 0; pentagonalNumbers[j] <= i; j++) {
+      partitions[i] += partitions[i - pentagonalNumbers[j]] * signs[j % 4];
     }
+
+    partitions[i] = partitions[i] % divisor;
+    if (partitions[i] < 0) partitions[i] += divisor; // positive mod
+    // return when found
+    if (partitions[i] === 0) return i;
   }
-  return n;
 }
 ```

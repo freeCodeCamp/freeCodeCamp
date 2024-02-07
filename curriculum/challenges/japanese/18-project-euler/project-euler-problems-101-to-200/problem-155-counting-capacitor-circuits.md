@@ -1,6 +1,6 @@
 ---
 id: 5900f4081000cf542c50ff1a
-title: 'Problem 155: Counting Capacitor Circuits'
+title: '問題 155: キャパシタ回路を数え上げる'
 challengeType: 1
 forumTopicId: 301786
 dashedName: problem-155-counting-capacitor-circuits
@@ -8,23 +8,23 @@ dashedName: problem-155-counting-capacitor-circuits
 
 # --description--
 
-An electric circuit uses exclusively identical capacitors of the same value C.
+ある電気回路は、C (電気容量) の値が同じである同一のキャパシタのみを使用しています。
 
-The capacitors can be connected in series or in parallel to form sub-units, which can then be connected in series or in parallel with other capacitors or other sub-units to form larger sub-units, and so on up to a final circuit.
+いくつかのキャパシタを直列または並列に接続してサブユニットを作ります。そのサブユニットを別のキャパシタやサブユニットと直列または並列に接続して、サブユニットを拡張することができます。これを繰り返すことで最終的な回路が完成します。
 
-Using this simple procedure and up to n identical capacitors, we can make circuits having a range of different total capacitances. For example, using up to $n = 3$ capacitors of $60 μF$ each, we can obtain the following 7 distinct total capacitance values:
+この簡単な手順と、最大 n 個の同一キャパシタを使用して、さまざまな総容量の回路を作ることができます。 例えば、それぞれ $60 μF$ のキャパシタを最大 $n = 3$ 個使用すると、次に示す 7 種類の総容量値が得られます。
 
-<img class="img-responsive center-block" alt="example circuits having up to three capacitors, each of 60 μF" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="各 60 μF のキャパシタを最大 3 個持つ回路の例" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px;" />
 
-If we denote by $D(n)$ the number of distinct total capacitance values we can obtain when using up to $n$ equal-valued capacitors and the simple procedure described above, we have: $D(1) = 1, D(2) = 3, D(3)=7, \ldots$
+最大 $n$ 個の同一値のキャパシタと、上述の簡単な手順とを使って得られる総容量値の種類の数を $D(n)$ とすると、$D(1) = 1, D(2) = 3, D(3)=7, \ldots$ となります。
 
-Find $D(18)$.
+$D(18)$ を求めなさい。
 
-Reminder: When connecting capacitors $C_1$, $C_2$ etc in parallel, the total capacitance is $C_T = C_1 + C_2 + \cdots$, whereas when connecting them in series, the overall capacitance is given by: $\frac{1}{C_T} = \frac{1}{C_1} + \frac{1}{C_2} + \cdots$.
+注: キャパシタ $C_1$, $C_2$ などを並列に接続したときの総電気容量は $C_T = C_1 + C_2 + \cdots$ であり、直列に接続したときの総電気容量は $\frac{1}{C_T} = \frac{1}{C_1} + \frac{1}{C_2} + \cdots$ です。
 
 # --hints--
 
-`capacitanceValues()` should return `3857447`.
+`capacitanceValues()` は `3857447` を返す必要があります。
 
 ```js
 assert.strictEqual(capacitanceValues(), 3857447);

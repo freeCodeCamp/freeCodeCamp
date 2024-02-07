@@ -1,6 +1,6 @@
 ---
 id: 5900f3bb1000cf542c50fece
-title: 'Problem 79: Passcode derivation'
+title: '问题79：密码派生'
 challengeType: 1
 forumTopicId: 302192
 dashedName: problem-79-passcode-derivation
@@ -12,7 +12,7 @@ A common security method used for online banking is to ask the user for three ra
 
 The arrays, `keylog1`, `keylog2`, and `keylog3`, contains fifty successful login attempts.
 
-Given that the three characters are always asked for in order, analyze the array so as to determine the shortest possible secret passcode of unknown length.
+鉴于总是按顺序询问三个字符，分析该文件以确定未知长度的最短可能秘密密码。
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0e0b6c005b0e76f07b
-title: 'Web Services: XML'
+title: 'XML-Webdienste'
 challengeType: 11
 videoId: _pZ0srbg7So
 bilibiliIds:
@@ -27,19 +27,19 @@ What is wrong with the following XML?:
 
 ## --answers--
 
-Email tag is missing closing tag.
+E-Mail-Tag fehlt ein abschließendes Tag.
 
 ---
 
-Spacing will cause XML to be invalid.
+Durch Leerzeichen wird XML ungültig.
 
 ---
 
-Phone tag is missing closing tag.
+Telefon-Tag fehlt ein abschließendes Tag.
 
 ---
 
-Plain text should be encoded using UTF-8.
+Einfacher Text sollte mit UTF-8 kodiert werden.
 
 ## --video-solution--
 

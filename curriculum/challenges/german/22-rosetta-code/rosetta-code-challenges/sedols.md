@@ -10,7 +10,7 @@ dashedName: sedols
 
 <abbr title="Stock Exchange Daily Official List">SEDOL</abbr> is a list of securities identification numbers issued by the London Stock Exchange.
 
-For each number list of 6-digit <abbr title="Stock Exchange Daily Official List">SEDOL</abbr>s, calculate and append the checksum digit. That is, given the input string on the left, your function should return the corresponding string on the right:
+Für jede Nummernliste der 6-stelligen <abbr title="Stock Exchange Daily Official List">SEDOL</abbr> wird die Prüfziffer berechnet und angehängt. Das heißt, dass deine Funktion bei der Eingabe der Zeichenfolge auf der linken Seite die entsprechende Zeichenfolge auf der rechten Seite zurückgeben sollte:
 
 <pre>
 710889 => 7108899
@@ -26,35 +26,35 @@ B0YBKT => B0YBKT7
 B00030 => B000300
 </pre>
 
-Check that each input is correctly formed, especially with respect to valid characters allowed in a SEDOL string. Your function should return `null` on an invalid input.
+Prüfe, ob jede Eingabe korrekt geformt ist, insbesondere im Hinblick auf die zulässigen Zeichen in einer SEDOL-Zeichenfolge. Ihre Funktion sollte bei einer ungültigen Eingabe `null` zurückgeben.
 
 # --hints--
 
-`sedol` should be a function.
+`sedol` sollte eine Funktion sein.
 
 ```js
 assert(typeof sedol === 'function');
 ```
 
-`sedol('a')` should return null.
+`sedol('a')` sollte null zurückgeben.
 
 ```js
 assert(sedol('a') === null);
 ```
 
-`sedol('710889')` should return '7108899'.
+`sedol('710889')` sollte '7108899' zurückgeben.
 
 ```js
 assert(sedol('710889') === '7108899');
 ```
 
-`sedol('BOATER')` should return null.
+`sedol('BOATER')` sollte null zurückgeben.
 
 ```js
 assert(sedol('BOATER') === null);
 ```
 
-`sedol('228276')` should return '2282765'.
+`sedol('228276')` sollte '2282765' zurückgeben.
 
 ```js
 assert(sedol('228276') === '2282765');
@@ -67,7 +67,7 @@ assert(sedol('228276') === '2282765');
 ```js
 function sedol(input) {
   const checkSum = 0
-  
+
   return checkSum;
 }
 ```

@@ -12,7 +12,7 @@ Apprezziamo la notifica responsabile di vulnerabilità che possa impattare l'int
 
 1. Assicurati di star usando l'**ultima** versione **aggiornata** e **stabile** del tuo sistema operativo e del browser web che sono disponibili sulla tua macchina.
 2. Consideriamo l'ultilizzo di strumenti e utility online per riportare problemi con le configurazioni SPF & DKIM, o test SSL Server, nella categoria ["beg bounties"](https://www.troyhunt.com/beg-bounties) e non siamo in grado di rispondere a questi report.
-3. Anche se non offriamo ricompense al momento, saremo felici di aggiungere il tuo nome alla lista nella [Hall of Fame](security-hall-of-fame.md), sempre che i report siano validi.
+3. While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](https://contribute.freecodecamp.org/#/security-hall-of-fame) list, provided the reports are not low-effort.
 
 ### Segnalare
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f3e41000cf542c50fef7
-title: 'Problem 120: Square remainders'
+title: '問題 120: 平方数で除した余り'
 challengeType: 1
 forumTopicId: 301747
 dashedName: problem-120-square-remainders
@@ -8,15 +8,15 @@ dashedName: problem-120-square-remainders
 
 # --description--
 
-Let `r` be the remainder when ${(a − 1)}^n + {(a + 1)}^n$ is divided by $a^2$.
+${(a − 1)}^n + {(a + 1)}^n$ を $a^2$ で除した余りを `r` とします。
 
-For example, if $a = 7$ and $n = 3$, then $r = 42: 6^3 + 8^3 = 728 ≡ 42 \\ \text{mod}\\ 49$. And as `n` varies, so too will `r`, but for $a = 7$ it turns out that $r_{max} = 42$.
+例えば、$a = 7$ かつ $n = 3$ のとき、$r = 42: 6^3 + 8^3 = 728 ≡ 42 \\ \text{mod}\\ 49$ です。 `n` が変わると `r` も変わりますが、$a = 7$ のときに $r_{max} = 42$ となります。
 
-For $3 ≤ a ≤ 1000$, find $\sum{r}_{max}$.
+$3 ≤ a ≤ 1000$ のとき、$\sum{r}_{max}$ を求めなさい。
 
 # --hints--
 
-`squareRemainders()` should return `333082500`.
+`squareRemainders()` は `333082500` を返す必要があります。
 
 ```js
 assert.strictEqual(squareRemainders(), 333082500);

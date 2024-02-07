@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8005
-title: Sorting algorithms/Comb sort
+title: ソートアルゴリズム / コムソート
 challengeType: 1
 forumTopicId: 302313
 dashedName: sorting-algorithmscomb-sort
@@ -10,13 +10,13 @@ dashedName: sorting-algorithmscomb-sort
 
 Implement a *comb sort*.
 
-The **Comb Sort** is a variant of the Bubble Sort.
+**コムソート**はバブルソートの派生版です。
 
-Like the Shell sort, the Comb Sort increases the gap used in comparisons and exchanges.
+シェルソートと同様に、コムソートでは比較と交換で使用する間隔を増やします。
 
-Dividing the gap by $(1-e^{-\\varphi})^{-1} \\approx 1.247330950103979$ works best, but 1.3 may be more practical.
+間隔を $(1-e^{-\\varphi})^{-1} \\approx 1.247330950103979$ で割るのが最適ですが、1.3 がより実用的かもしれません。
 
-Some implementations use the insertion sort once the gap is less than a certain amount.
+一部の実装では、間隔が一定距離以下になると挿入ソートを使用します。
 
 Variants:
 
