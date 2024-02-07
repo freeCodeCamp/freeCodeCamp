@@ -1,6 +1,6 @@
 ---
 id: 5e4ce2eaac708cc68c1df260
-title: Levenshtein distance
+title: レーベンシュタイン距離
 challengeType: 1
 forumTopicId: 385264
 dashedName: levenshtein-distance
@@ -10,69 +10,69 @@ dashedName: levenshtein-distance
 
 In information theory and computer science, the **Levenshtein distance** is a metric for measuring the amount of difference between two sequences (i.e. an edit distance). The Levenshtein distance between two strings is defined as the minimum number of edits needed to transform one string into the other, with the allowable edit operations being insertion, deletion, or substitution of a single character.
 
-Example:
+例:
 
-The Levenshtein distance between "**kitten**" and "**sitting**" is 3, since the following three edits change one into the other, and there isn't a way to do it with fewer than three edits:
+"**kitten**" と "**sitting**" の間のレーベンシュタイン距離は 3 です。以下の 3 回で一方から他方へと変換され、かつ 3 回より少ない回数の編集でこの変換を行う方法がないからです。
 
 <ul>
   <li><strong>k</strong>itten   <strong>s</strong>itten    (substitution of 'k' with 's')</li>
-  <li>sitt<strong>e</strong>n   sitt<strong>i</strong>n    (substitution of 'e' with 'i')</li>
-  <li>sittin   sittin<strong>g</strong>    (insert 'g' at the end).</li>
+  <li>sitt<strong>e</strong>n   sitt<strong>i</strong>n    ('e' を 'i' で置換)</li>
+  <li>sittin   sittin<strong>g</strong>    (最後に 'g' を挿入)</li>
 </ul>
 
-*The Levenshtein distance between "**rosettacode**", "**raisethysword**" is **8**.*
+*"**rosettacode**" と "**raisethysword**" とのレーベンシュタイン距離は **8** となります。*
 
-*The distance between two strings is same as that when both strings are reversed.*
+*2つの文字列間のレーベンシュタイン距離は、両方の文字列を逆にした場合も同じです。*
 
 # --instructions--
 
-Write a function that returns the Levenshtein distance between two strings given as parameters.
+パラメータとして与えられた 2 つの文字列間のレーベンシュタイン距離を返す関数を記述してください。
 
 # --hints--
 
-`levenshtein` should be a function.
+`levenshtein` は関数とします。
 
 ```js
 assert(typeof levenshtein == 'function');
 ```
 
-`levenshtein("mist", "dist")` should return a number.
+`levenshtein("mist", "dist")` は数値を返す必要があります。
 
 ```js
 assert(typeof levenshtein('mist', 'dist') == 'number');
 ```
 
-`levenshtein("mist", "dist")` should return `1`.
+`levenshtein("mist", "dist")` は `1` を返す必要があります。
 
 ```js
 assert.equal(levenshtein('mist', 'dist'), 1);
 ```
 
-`levenshtein("tier", "tor")` should return `2`.
+`levenshtein("tier", "tor")` は `2` を返す必要があります。
 
 ```js
 assert.equal(levenshtein('tier', 'tor'), 2);
 ```
 
-`levenshtein("kitten", "sitting")` should return `3`.
+`levenshtein("kitten", "sitting")` は `3` を返す必要があります。
 
 ```js
 assert.equal(levenshtein('kitten', 'sitting'), 3);
 ```
 
-`levenshtein("stop", "tops")` should return `2`.
+`levenshtein("stop", "tops")` は `2` を返す必要があります。
 
 ```js
 assert.equal(levenshtein('stop', 'tops'), 2);
 ```
 
-`levenshtein("rosettacode", "raisethysword")` should return `8`.
+`levenshtein("rosettacode", "raisethysword")` は `8` を返す必要があります。
 
 ```js
 assert.equal(levenshtein('rosettacode', 'raisethysword'), 8);
 ```
 
-`levenshtein("mississippi", "swiss miss")` should return `8`.
+`levenshtein("mississippi", "swiss miss")` は `8` を返す必要があります。
 
 ```js
 assert.equal(levenshtein('mississippi', 'swiss miss'), 8);

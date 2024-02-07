@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e78
-title: General FizzBuzz
+title: 一般的 FizzBu​​zz
 challengeType: 1
 forumTopicId: 302273
 dashedName: general-fizzbuzz
@@ -10,23 +10,23 @@ dashedName: general-fizzbuzz
 
 Write a generalized version of <a href="https://rosettacode.org/wiki/FizzBuzz" target="_blank" rel="noopener noreferrer nofollow">FizzBuzz</a> that works for any list of factors, along with their words.
 
-This is basically a "fizzbuzz" implementation where the rules of the game are supplied to the user. Create a function to implement this. The function should take two parameters.
+这基本上是一个“fizzbuzz”实现，其中将游戏规则由用户提供。 创建一个函数来实现这一点。 该函数应该有两个参数。
 
-The first will be an array with the FizzBuzz rules. For example: `[ [3, "Fizz"] , [5, "Buzz"] ]`.
+第一个将是具有 FizzBu​​zz 规则的数组。 例如：`[ [3, "Fizz"] , [5, "Buzz"] ]`。
 
-This indicates that `Fizz` should be printed if the number is a multiple of 3 and `Buzz` if it is a multiple of 5. If it is a multiple of both then the strings should be concatenated in the order specified in the array. In this case, `FizzBuzz` if the number is a multiple of 3 and 5.
+这表示如果数字是 3 的倍数，则应打印 `Fizz`，如果是 5 的倍数，则应打印 `Buzz`。 如果它是两者的倍数，则应按照数组中指定的顺序连接字符串。 在这种情况下，如果数字是 3 和 5 的倍数，则为 `FizzBuzz`。
 
-The second parameter is the number for which the function should return a string as stated above.
+第二个参数是函数应该返回一个字符串的数字，如上所述。
 
 # --hints--
 
-`genFizzBuzz` should be a function.
+`genFizzBuzz` 应该是一个函数。
 
 ```js
 assert(typeof genFizzBuzz == 'function');
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` should return a string.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` 应该返回一个字符串。
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` should return `"Fizz"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` 应该返回 `"Fizz"`。
 
 ```js
 assert.equal(
@@ -55,7 +55,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 10)` should return `"Buzz"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 10)` 应该返回 `"Buzz"`。
 
 ```js
 assert.equal(
@@ -70,7 +70,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 12)` should return `"Buzz"`.
+`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 12)` 应该返回 `"Buzz"`。
 
 ```js
 assert.equal(
@@ -85,7 +85,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 13)` should return `"13"`.
+`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 13)` 应该返回 `"13"`。
 
 ```js
 assert.equal(
@@ -100,7 +100,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 15)` should return `"BuzzFizz"`.
+`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 15)` 应该返回 `"BuzzFizz"`。
 
 ```js
 assert.equal(
@@ -115,7 +115,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 15)` should return `"FizzBuzz"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 15)` 应该返回 `"FizzBuzz"`。
 
 ```js
 assert.equal(
@@ -130,7 +130,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"],[7, "Baxx"]], 105)` should return `"FizzBuzzBaxx"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"],[7, "Baxx"]], 105)` 应该返回 `"FizzBuzzBaxx"`。
 
 ```js
 assert.equal(

@@ -1,6 +1,6 @@
 ---
 id: 5900f3b11000cf542c50fec4
-title: 'Problem 69: Totient maximum'
+title: '問題 69: トーティエント関数の最大値'
 challengeType: 1
 forumTopicId: 302181
 dashedName: problem-69-totient-maximum
@@ -8,11 +8,11 @@ dashedName: problem-69-totient-maximum
 
 # --description--
 
-Euler's Totient function, ${\phi}(n)$ (sometimes called the phi function), is used to determine the number of numbers less than `n` which are relatively prime to `n`. For example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime to nine, ${\phi}(9) = 6$.
+オイラーのトーティエント関数 ${\phi}(n)$ (別名: ファイ関数) は、`n` と互いに素な `n` 未満の数の個数を求めるために使用されます。 例えば 1, 2, 4, 5, 7, 8 はすべて 9 未満で、かつ 9 と互いに素なので、${\phi}(9) = 6$ と表されます。
 
 <div style='margin-left: 4em;'>
 
-| $n$ | $\text{Relatively Prime}$ | $\displaystyle{\phi}(n)$ | $\displaystyle\frac{n}{{\phi}(n)}$ |
+| $n$ | $\text{互いに素な数}$ | $\displaystyle{\phi}(n)$ | $\displaystyle\frac{n}{{\phi}(n)}$ |
 | --- | ------------------------- | ------------------------ | ---------------------------------- |
 | 2   | 1                         | 1                        | 2                                  |
 | 3   | 1,2                       | 2                        | 1.5                                |
@@ -26,37 +26,37 @@ Euler's Totient function, ${\phi}(n)$ (sometimes called the phi function), is us
 
 </div>
 
-It can be seen that `n` = 6 produces a maximum $\displaystyle\frac{n}{{\phi}(n)}$ for `n` ≤ 10.
+`n` ≤ 10 の場合、`n` = 6 のときに $\displaystyle\frac{n}{{\phi}(n)}$ が最大になることが分かります。
 
-Find the value of `n` ≤ `limit` for which $\displaystyle\frac{n}{{\phi(n)}}$ is a maximum.
+$\displaystyle\frac{n}{{\phi(n)}}$ が最大になるような、`limit` 以下の値 `n` を求めなさい。
 
 # --hints--
 
-`totientMaximum(10)` should return a number.
+`totientMaximum(10)` は数値を返す必要があります。
 
 ```js
 assert(typeof totientMaximum(10) === 'number');
 ```
 
-`totientMaximum(10)` should return `6`.
+`totientMaximum(10)` は `6` を返す必要があります。
 
 ```js
 assert.strictEqual(totientMaximum(10), 6);
 ```
 
-`totientMaximum(10000)` should return `2310`.
+`totientMaximum(10000)` は `2310` を返す必要があります。
 
 ```js
 assert.strictEqual(totientMaximum(10000), 2310);
 ```
 
-`totientMaximum(500000)` should return `30030`.
+`totientMaximum(500000)` は `30030` を返す必要があります。
 
 ```js
 assert.strictEqual(totientMaximum(500000), 30030);
 ```
 
-`totientMaximum(1000000)` should return `510510`.
+`totientMaximum(1000000)` は `510510` を返す必要があります。
 
 ```js
 assert.strictEqual(totientMaximum(1000000), 510510);

@@ -1,6 +1,6 @@
 ---
 id: 597b2b2a2702b44414742771
-title: Factorial
+title: Факторіал
 challengeType: 1
 forumTopicId: 302263
 dashedName: factorial
@@ -10,47 +10,47 @@ dashedName: factorial
 
 Write a function to return the factorial of a number.
 
-Factorial of a number is given by:
+Факторіал числа визначається як:
 
 <pre><big>n! = n * (n-1) * (n-2) * ..... * 1</big>
 </pre>
 
-For example:
+Наприклад:
 
 <ul>
   <li><code>3! = 3 * 2 * 1 = 6</code></li>
   <li><code>4! = 4 * 3 * 2 * 1 = 24</code></li>
 </ul>
 
-**Note:** `0! = 1`
+**Примітка:** `0! = 1`
 
 # --hints--
 
-`factorial` should be a function.
+`factorial` має бути функцією.
 
 ```js
 assert(typeof factorial === 'function');
 ```
 
-`factorial(2)` should return a number.
+`factorial(2)` має повернути число.
 
 ```js
 assert(typeof factorial(2) === 'number');
 ```
 
-`factorial(3)` should return 6.
+`factorial(3)` має повернути число 6.
 
 ```js
 assert.equal(factorial(3), 6);
 ```
 
-`factorial(5)` should return 120.
+`factorial(5)` має повернути число 120.
 
 ```js
 assert.equal(factorial(5), 120);
 ```
 
-`factorial(10)` should return 3,628,800.
+`factorial(10)` має повернути число 3,628,800.
 
 ```js
 assert.equal(factorial(10), 3628800);

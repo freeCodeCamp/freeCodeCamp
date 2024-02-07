@@ -1,6 +1,6 @@
 ---
 id: 5900f41e1000cf542c50ff30
-title: 'Problem 177: Integer angled Quadrilaterals'
+title: '問題177：整數角四邊形'
 challengeType: 1
 forumTopicId: 301812
 dashedName: problem-177-integer-angled-quadrilaterals

@@ -13,10 +13,9 @@ Sophie: That's important work. I'm helping our team learn how to stay safe onlin
 
 # --description--
 
-`Stay` is used to indicate remaining in a particular state or condition. 
-It's often used in instructions or advice to keep oneself in a certain situation. For example:
+`Stay` is used to indicate remaining in a particular state or condition. It's often used in instructions or advice to keep oneself in a certain situation. على سبيل المثال:
 
-`Stay safe online` (continue being safe while using the internet) 
+`Stay safe online` (continue being safe while using the internet)
 
 `Stay calm during the test` (continue being calm)
 

@@ -28,7 +28,7 @@ React で、別のコンポーネントを参照するカスタム HTML タグ�
 
 コードエディターに、`ChildComponent` という単純な関数型コンポーネントと、`ParentComponent` というクラスコンポーネントがあります。 `ParentComponent` の中に `ChildComponent` をレンダーして、2 つのコンポーネントをまとめて作成してください。 必ずフォワードスラッシュで `ChildComponent` タグを終了してください。
 
-**Note:** `ChildComponent` is defined with an ES6 arrow function because this is a very common practice when using React.
+**注:** `ChildComponent` は ES6 のアロー関数で定義されています。これは React を使用するときのごく一般的な記法です。
 
 # --hints--
 

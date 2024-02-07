@@ -84,15 +84,7 @@ describe('external curriculum data build', () => {
       ({ dashedName }) => dashedName
     );
 
-    const isUpcoming = [
-      'javascript-algorithms-and-data-structures-v8',
-      'college-algebra-with-python',
-      'foundational-c-sharp-with-microsoft',
-      'the-odin-project',
-      'upcoming-python',
-      'example-certification',
-      'a2-english-for-developers'
-    ];
+    const isUpcoming = ['upcoming-python', 'example-certification'];
 
     // TODO: this is a hack, we should have a single source of truth for the
     // list of superblocks that are available.

@@ -10,35 +10,35 @@ dashedName: problem-366-stone-game-iii
 
 Two players, Anton and Bernhard, are playing the following game.
 
-There is one pile of $n$ stones.
+Es gibt einen Stapel von $n$ Steinen.
 
-The first player may remove any positive number of stones, but not the whole pile.
+Der erste Spieler darf eine beliebige positive Anzahl von Steinen entfernen, aber nicht den ganzen Stapel.
 
-Thereafter, each player may remove at most twice the number of stones his opponent took on the previous move.
+Danach darf jeder Spieler höchstens doppelt so viele Steine entfernen, wie sein Gegner im vorangegangenen Zug genommen hat.
 
-The player who removes the last stone wins.
+Der Spieler, der den letzten Stein entfernt, gewinnt.
 
 E.g. $n = 5$
 
-If the first player takes anything more than one stone the next player will be able to take all remaining stones.
+Wenn der erste Spieler mehr als einen Stein nimmt, kann der nächste Spieler alle verbleibenden Steine nehmen.
 
-If the first player takes one stone, leaving four, his opponent will take also one stone, leaving three stones.
+Wenn der erste Spieler einen Stein nimmt, so dass vier übrig bleiben, nimmt sein Gegner ebenfalls einen Stein, so dass drei Steine übrig bleiben.
 
-The first player cannot take all three because he may take at most $2 \times 1 = 2$ stones. So let's say he also takes one stone, leaving 2.
+Der erste Spieler kann nicht alle drei Steine nehmen, weil er höchstens $2 \mal 1 = 2$ Steine nehmen darf. Nehmen wir also an, er nimmt auch einen Stein, sodass 2 übrig bleiben.
 
-The second player can take the two remaining stones and wins.
+Der zweite Spieler kann die beiden verbleibenden Steine nehmen und gewinnt.
 
-So 5 is a losing position for the first player.
+5 ist also eine Verlustposition für den ersten Spieler.
 
-For some winning positions there is more than one possible move for the first player.
+Bei einigen Gewinnstellungen gibt es mehr als einen möglichen Zug für den ersten Spieler.
 
-E.g. when $n = 17$ the first player can remove one or four stones.
+E.g. bei $n = 17$ kann der erste Spieler einen oder vier Steine entfernen.
 
-Let $M(n)$ be the maximum number of stones the first player can take from a winning position at his first turn and $M(n) = 0$ for any other position.
+Lass $M(n)$ die maximale Anzahl von Steinen sein, die der erste Spieler in seinem ersten Zug von einer Gewinnposition nehmen kann, und $M(n) = 0$ für jede andere Position.
 
 $\sum M(n)$ for $n ≤ 100$ is 728.
 
-Find $\sum M(n)$ for $n ≤ {10}^{18}$. Give your answer modulo ${10}^8$.
+Find $\sum M(n)$ for $n ≤ {10}^{18}$. Gib deine Antwort modulo ${10}^8$.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f160b6c005b0e76f085
-title: Python Objects
+title: Objetos do Python
 challengeType: 11
 videoId: uJxGeTYy0us
 bilibiliIds:
@@ -18,19 +18,19 @@ Which is NOT true about objects in Python?
 
 ## --answers--
 
-Objects get created and used.
+Os objetos são criados e usados.
 
 ---
 
-Objects are bits of code and data.
+Objetos são pedaços de código e dados.
 
 ---
 
-Objects hide detail.
+Objetos escondem detalhes.
 
 ---
 
-Objects are one of the five standard data types.
+Os objetos são um dos cinco tipos de dados padrão.
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ed5
-title: Knight's tour
+title: ナイトツアー
 challengeType: 1
 forumTopicId: 302297
 dashedName: knights-tour
@@ -12,47 +12,47 @@ Knight's Tour Problem: You have an empty `width` \* `height` chessboard, but for
 
 # --instructions--
 
-Write a function that takes `width` and `height` as parameters and returns the number of initial positions from where it is possible to achieve the task stated above.
+パラメータとして `width` と `height` を受け取り、上記のタスクの達成が可能な開始位置の数値を返す関数を記述してください。
 
 # --hints--
 
-`knightTour` should be a function.
+`knightTour` は関数とします。
 
 ```js
 assert(typeof knightTour == 'function');
 ```
 
-`knightTour(6, 6)` should return a number.
+`knightTour(6, 6)` は数値を返す必要があります.
 
 ```js
 assert(typeof knightTour(6, 6) == 'number');
 ```
 
-`knightTour(6, 6)` should return `36`.
+`knightTour(6, 6)` は `36` を返す必要があります。
 
 ```js
 assert.equal(knightTour(6, 6), 36);
 ```
 
-`knightTour(5, 6)` should return `30`.
+`knightTour(5, 6)` は `30` を返す必要があります。
 
 ```js
 assert.equal(knightTour(5, 6), 30);
 ```
 
-`knightTour(4, 6)` should return `12`.
+`knightTour(4, 6)` は `12` を返す必要があります。
 
 ```js
 assert.equal(knightTour(4, 6), 12);
 ```
 
-`knightTour(7, 3)` should return `10`.
+`knightTour(7, 3)` は `10` を返す必要があります。
 
 ```js
 assert.equal(knightTour(7, 3), 10);
 ```
 
-`knightTour(8, 6)` should return `48`.
+`knightTour(8, 6)` は `48` を返す必要があります。
 
 ```js
 assert.equal(knightTour(8, 6), 48);

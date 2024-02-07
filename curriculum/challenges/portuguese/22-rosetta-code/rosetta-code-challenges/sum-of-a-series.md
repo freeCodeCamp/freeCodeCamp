@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8041
-title: Sum of a series
+title: Soma de uma série
 challengeType: 1
 forumTopicId: 302333
 dashedName: sum-of-a-series
@@ -12,47 +12,47 @@ Compute the **n**<sup>th</sup> term of a <em>series</em>, i.e. the sum of the **
 
 # --instructions--
 
-Write a function that take $a$ and $b$ as parameters and returns the sum of $a^{th}$ to $b^{th}$ members of the sequence.
+Escreva uma função que receba $a$ e $b$ como parâmetros e retorne a soma do $a$-ésimo ao $b$-ésimo termos da sequência.
 
 # --hints--
 
-`sum` should be a function.
+`sum` deve ser uma função.
 
 ```js
 assert(typeof sum == 'function');
 ```
 
-`sum(1, 100)` should return a number.
+`sum(1, 100)` deve retornar um número.
 
 ```js
 assert(typeof sum(1, 100) == 'number');
 ```
 
-`sum(1, 100)` should return `1.6349839001848923`.
+`sum(1, 100)` deve retornar `1.6349839001848923`.
 
 ```js
 assert.equal(sum(1, 100), 1.6349839001848923);
 ```
 
-`sum(33, 46)` should return `0.009262256361481223`.
+`sum(33, 46)` deve retornar `0.009262256361481223`.
 
 ```js
 assert.equal(sum(33, 46), 0.009262256361481223);
 ```
 
-`sum(21, 213)` should return `0.044086990748706555`.
+`sum(21, 213)` deve retornar `0.044086990748706555`.
 
 ```js
 assert.equal(sum(21, 213), 0.044086990748706555);
 ```
 
-`sum(11, 111)` should return `0.08619778593108679`.
+`sum(11, 111)` deve retornar `0.08619778593108679`.
 
 ```js
 assert.equal(sum(11, 111), 0.08619778593108679);
 ```
 
-`sum(1, 10)` should return `1.5497677311665408`.
+`sum(1, 10)` deve retornar `1.5497677311665408`.
 
 ```js
 assert.equal(sum(1, 10), 1.5497677311665408);

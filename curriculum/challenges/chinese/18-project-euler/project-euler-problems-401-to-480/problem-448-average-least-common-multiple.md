@@ -1,6 +1,6 @@
 ---
 id: 5900f52c1000cf542c51003f
-title: 'Problem 448: Average least common multiple'
+title: '问题 448：平均最小公倍数'
 challengeType: 1
 forumTopicId: 302120
 dashedName: problem-448-average-least-common-multiple

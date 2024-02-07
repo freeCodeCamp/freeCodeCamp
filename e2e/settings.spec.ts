@@ -305,6 +305,7 @@ test.describe('Settings', () => {
           name: translations.settings.labels['keyboard-shortcuts']
         })
         .locator('p')
+        .first()
     ).toBeVisible();
     await expect(
       page.getByText(translations.settings['scrollbar-width'])

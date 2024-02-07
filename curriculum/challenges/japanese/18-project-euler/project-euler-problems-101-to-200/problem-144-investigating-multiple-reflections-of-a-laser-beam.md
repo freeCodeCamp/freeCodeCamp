@@ -1,6 +1,6 @@
 ---
 id: 5900f3fc1000cf542c50ff0f
-title: 'Problem 144: Investigating multiple reflections of a laser beam'
+title: '問題 144: レーザー光線の多重反射を調べ上げる'
 challengeType: 1
 forumTopicId: 301773
 dashedName: problem-144-investigating-multiple-reflections-of-a-laser-beam
@@ -8,34 +8,34 @@ dashedName: problem-144-investigating-multiple-reflections-of-a-laser-beam
 
 # --description--
 
-In laser physics, a "white cell" is a mirror system that acts as a delay line for the laser beam. The beam enters the cell, bounces around on the mirrors, and eventually works its way back out.
+レーザー物理学において、「ホワイトセル」(white cell) はレーザー光線に対して遅延線の働きをするミラー系のことです。 光線はホワイトセルに入り、ミラーで反射し、最終的に出て行きます。
 
-The specific white cell we will be considering is an ellipse with the equation $4{x}^2 + y^2 = 100$
+ここでは、特定のホワイトセルを式 $4{x}^2 + y^2 = 100$ で表される楕円と考えます。
 
-The section corresponding to $−0.01 ≤ x ≤ +0.01$ at the top is missing, allowing the light to enter and exit through the hole.
+その上部には $−0.01 ≤ x ≤ +0.01$ に対応する個所に穴があり、そこから光線が出入りできます。
 
 <div style="text-align: center">
-  <img class="img-responsive center-block" alt="light beam starting at point (0.0, 10.1), and impacting the mirror at point (1.4, -9.6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
-  <img class="img-responsive center-block" alt="animation with first 10 reflections of the beam" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
+  <img class="img-responsive center-block" alt="点 (0.0, 10.1) から出発し、点 (1.4, -9.6) でミラーに当たる光線" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
+  <img class="img-responsive center-block" alt="光線の最初の 10 回の反射を示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
 </div><br>
 
-The light beam in this problem starts at the point (0.0, 10.1) just outside the white cell, and the beam first impacts the mirror at (1.4, -9.6).
+この問題では、光線はホワイトセルのすぐ外側 (0.0, 10.1) から発射され、まず (1.4, -9.6) でミラーに反射します。
 
-Each time the laser beam hits the surface of the ellipse, it follows the usual law of reflection "angle of incidence equals angle of reflection." That is, both the incident and reflected beams make the same angle with the normal line at the point of incidence.
+光線は、楕円の内側に当たるたびに、「入射角と反射角は等しい」という反射の一般法則に従って進みます。 つまり、入射光線と反射光線の両方が、入射点における法線に対して同じ角度を成します。
 
-In the figure on the left, the red line shows the first two points of contact between the laser beam and the wall of the white cell; the blue line shows the line tangent to the ellipse at the point of incidence of the first bounce.
+上に示した左側の図では、赤い線は光線がホワイトセルの壁に接する最初の 2 点を示し、青い線は最初に反射する入射点における楕円の接線を示しています。
 
-The slope m of the tangent line at any point (x, y) of the given ellipse is: $m = −4 × \frac{x}{y}$
+与えられた楕円の任意の点 (x, y) における接線の m の傾きは $m = −4 × \frac{x}{y}$ です。
 
-The normal line is perpendicular to this tangent line at the point of incidence.
+法線は、入射点における接線に対して直角を成します。
 
-The animation on the right shows the first 10 reflections of the beam.
+右側のアニメーションは、最初の 10 回の反射を示しています。
 
-How many times does the beam hit the internal surface of the white cell before exiting?
+光線は、ホワイトセルから出るまでの間にその内側に何回当たりますか。
 
 # --hints--
 
-`laserBeamReflections()` should return `354`.
+`laserBeamReflections()` は `354` を返す必要があります。
 
 ```js
 assert.strictEqual(laserBeamReflections(), 354);

@@ -1,6 +1,6 @@
 ---
 id: 5900f5021000cf542c510014
-title: 'Problem 405: A rectangular tiling'
+title: '問題405：矩形平鋪'
 challengeType: 1
 forumTopicId: 302073
 dashedName: problem-405-a-rectangular-tiling

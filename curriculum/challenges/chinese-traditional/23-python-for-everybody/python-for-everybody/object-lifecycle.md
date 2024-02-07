@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f170b6c005b0e76f087
-title: Object Lifecycle
+title: 對象的生命週期
 challengeType: 11
 videoId: p1r3h_AMMIM
 bilibiliIds:

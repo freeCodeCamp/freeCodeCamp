@@ -1,6 +1,6 @@
 ---
 id: 5e6dd14797f5ce267c2f19d0
-title: Look-and-say sequence
+title: 読み上げ数列
 challengeType: 1
 forumTopicId: 385277
 dashedName: look-and-say-sequence
@@ -10,62 +10,62 @@ dashedName: look-and-say-sequence
 
 The Look and say sequence is a recursively defined sequence of numbers.
 
-Sequence Definition
+数列の定義
 
 <ul><li>Take a decimal number</li>
-<li><span>Look</span> at the number, visually grouping consecutive runs of the same digit.</li>
-<li><span>Say</span> the number, from left to right, group by group; as how many of that digit there are - followed by the digit grouped.</li></ul><span> This becomes the next number of the sequence.</span>
+<li>数字を<span>見て</span>、同じ数字の連続した並びのグループを視覚的に把握します</li>
+<li>番号を左から右へグループごとに、数字が何個あるかと、続けてそのグループの数字を<span>読み上げ</span>ます。</li></ul><span> これが数列の次の数値になります。</span>
 
-An example:
+以下に例を示します。
 
 <ul><li>Starting with the number 1, you have <span>one</span> 1 which produces 11</li>
-<li>Starting with 11, you have <span>two</span> 1's. I.E.: 21</li>
-<li>Starting with 21, you have <span>one</span> 2, then <span>one</span> 1. I.E.: (12)(11) which becomes 1211</li>
-<li>Starting with 1211, you have <span>one</span> 1, <span>one</span> 2, then <span>two</span> 1's. I.E.: (11)(12)(21) which becomes 111221</li></ul>
+<li>11 から始めると、<span>2</span> 個の1。 つまり、21になります</li>
+<li>21から始めると、 <span>1</span> 個の 2、<span>1</span> 個の 1。 つまり、(12)(11) で 1211 になります</li>
+<li>1211から始めると、 <span>1</span> 個の 1、 <span>1</span> 個の 2、そして <span>2</span> 個の 1。 つまり、(11)(12)(21) で 111221 になります</li></ul>
 
 # --instructions--
 
-Write a function that accepts a string as a parameter, processes it, and returns the resultant string.
+文字列をパラメータとして取る関数を記述し、それを実行して結果の文字列を返してください。
 
 # --hints--
 
-`lookAndSay` should be a function.
+`lookAndSay` は関数とします。
 
 ```js
 assert(typeof lookAndSay == 'function');
 ```
 
-`lookAndSay("1")` should return a string.
+`lookAndSay("1")` は文字列を返す必要があります。
 
 ```js
 assert(typeof lookAndSay('1') == 'string');
 ```
 
-`lookAndSay("1")` should return `"11"`.
+`lookAndSay("1")` は `"11"` を返す必要があります。
 
 ```js
 assert.equal(lookAndSay('1'), '11');
 ```
 
-`lookAndSay("11")` should return `"21"`.
+`lookAndSay("11")` は `"21"` を返す必要があります。
 
 ```js
 assert.equal(lookAndSay('11'), '21');
 ```
 
-`lookAndSay("21")` should return `"1211"`.
+`lookAndSay("21")` は `"1211"` を返す必要があります。
 
 ```js
 assert.equal(lookAndSay('21'), '1211');
 ```
 
-`lookAndSay("1211")` should return `"111221"`.
+`lookAndSay("1211")` は `"111221"` を返す必要があります。
 
 ```js
 assert.equal(lookAndSay('1211'), '111221');
 ```
 
-`lookAndSay("3542")` should return `"13151412"`.
+`lookAndSay("3542")` は `"13151412"` を返す必要があります。
 
 ```js
 assert.equal(lookAndSay('3542'), '13151412');

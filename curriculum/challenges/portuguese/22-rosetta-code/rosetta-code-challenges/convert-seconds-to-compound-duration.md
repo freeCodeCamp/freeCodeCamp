@@ -12,20 +12,20 @@ Implement a function which:
 
 <ul>
   <li>takes a positive integer representing a duration in seconds as input (e.g., <code>100</code>), and</li>
-  <li>returns a string which shows the same duration decomposed into weeks, days, hours, minutes, and seconds as detailed below (e.g., <code>1 min, 40 sec</code>).</li>
+  <li>retorna uma string que mostra a mesma duração decomposta em semanas, dias, horas, minutos e segundos detalhados abaixo (por exemplo, <code>1 min, 40 sec</code>).</li>
 </ul>
 
-Demonstrate that it passes the following three test-cases:
+Demonstre que a função passa pelos três casos de teste:
 
-<div style='font-size:115%; font-weight: bold;'>Test Cases</div>
+<div style='font-size:115%; font-weight: bold;'>Casos de teste</div>
 
-| Input number | Output number                         |
-| ------------ | ------------------------------------- |
-| 7259         | <code>2 hr, 59 sec</code>             |
-| 86400        | <code>1 d</code>                      |
+| Input number | Número de saída           |
+| ------------ | ------------------------- |
+| 7259         | <code>2 hr, 59 sec</code> |
+| 86400        | <code>1 d</code> |
 | 6000000      | <code>9 wk, 6 d, 10 hr, 40 min</code> |
 
-<div style="font-size:115%; font-weight: bold;">Details</div>
+<div style="font-size:115%; font-weight: bold;">Detalhes</div>
 <ul>
   <li>
     The following five units should be used:
@@ -40,37 +40,37 @@ Demonstrate that it passes the following three test-cases:
 
   </li>
   <li>
-    However, <strong>only</strong> include quantities with non-zero values in the output (e.g., return <code>1 d</code> and not <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
+    No entanto, <strong>somente</strong> inclua quantidades com valores diferentes de zero na saída (por exemplo, retorne <code>1 d</code> em vez de <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
   </li>
   <li>
-    Give larger units precedence over smaller ones as much as possible (e.g., return <code>2 min, 10 sec</code> and not <code>1 min, 70 sec</code> or <code>130 sec</code>).
+    Dê precedência a unidades maiores sobre unidades menores tanto quanto possível (por exemplo, retorne <code>2 min, 10 sec</code> e não <code>1 min, 70 sec</code> ou <code>130 sec</code>).
   </li>
   <li>
-    Mimic the formatting shown in the test-cases (quantities sorted from largest unit to smallest and separated by comma+space; value and unit of each quantity separated by space).
+    Imite a formatação mostrada nos casos de teste (quantidades ordenadas da maior unidade para a menor e separadas por vírgula + espaço, alem de valor e unidade de cada quantidade separada por espaço).
   </li>
 </ul>
 
 # --hints--
 
-`convertSeconds` should be a function.
+`convertSeconds` deve ser uma função.
 
 ```js
 assert(typeof convertSeconds === 'function');
 ```
 
-`convertSeconds(7259)` should return `2 hr, 59 sec`.
+`convertSeconds(7259)` deve retornar `2 hr, 59 sec`.
 
 ```js
 assert.equal(convertSeconds(testCases[0]), results[0]);
 ```
 
-`convertSeconds(86400)` should return `1 d`.
+`convertSeconds(86400)` deve retornar `1 d`.
 
 ```js
 assert.equal(convertSeconds(testCases[1]), results[1]);
 ```
 
-`convertSeconds(6000000)` should return `9 wk, 6 d, 10 hr, 40 min`.
+`convertSeconds(6000000)` deve retornar `9 wk, 6 d, 10 hr, 40 min`.
 
 ```js
 assert.equal(convertSeconds(testCases[2]), results[2]);

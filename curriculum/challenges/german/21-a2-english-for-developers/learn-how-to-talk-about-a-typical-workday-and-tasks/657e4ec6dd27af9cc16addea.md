@@ -7,7 +7,7 @@ dashedName: task-74
 
 # --description--
 
-`Regulations` are official rules made by a government or authority. They are designed to control how something works or how people act, especially in businesses. 
+`Regulations` are official rules made by a government or authority. They are designed to control how something works or how people act, especially in businesses.
 
 Example: `Health and safety regulations ensure a safe workplace`.
 
@@ -22,7 +22,7 @@ What are `regulations` usually in a business context?
 
 Personal preferences.
 
-### --feedback--
+### --Feedback--
 
 Regulations are formal rules, not personal preferences.
 
@@ -30,7 +30,7 @@ Regulations are formal rules, not personal preferences.
 
 Informal team agreements.
 
-### --feedback--
+### --Feedback--
 
 Regulations are more formal than informal agreements.
 

@@ -12,7 +12,7 @@ A palavra-chave `!important` pode ser usada para substituir valores em alguns ca
 
 ### Suporte a RTL
 
-Estamos nos esforçando para apoiar o layout da direita para a esquerda (do inglês, right-to-left, ou RTL) na base de código para os idiomas que são lidos nessa direção. Por isso, você precisa estar atento à maneira como estilizar os componentes. Seguem aqui algumas dicas práticas para isso:
+Estamos nos esforçando para apoiar o layout da direita para a esquerda (do inglês, right-to-left, ou RTL) na base de código para os idiomas que são lidos nessa direção. For this, you need to be mindful of how to style components. Seguem aqui algumas dicas práticas para isso:
 
 - Não use as propriedades `float`
   - Em vez disso, use layouts com Flexbox e Grid, pois eles já têm incorporado o suporte a esses idiomas e serão mais fáceis de manter e revisar.
@@ -172,7 +172,7 @@ api/
 
 #### Testes de integração
 
-Testes de integração testam a API como um todo. Os testes exigirão simulação (mocking, em inglês) e não devem exigir fixtures além dos dados de semeamento (seeding) de banco de dados e um método para autenticar.
+Testes de integração testam a API como um todo. The tests will require mocking and should not require fixtures beyond the database seeding data and a method for authentication.
 
 Normalmente, cada arquivo de teste de integração estará diretamente relacionado a uma rota. Os testes de integração estão localizados no diretório `api/tests/`:
 

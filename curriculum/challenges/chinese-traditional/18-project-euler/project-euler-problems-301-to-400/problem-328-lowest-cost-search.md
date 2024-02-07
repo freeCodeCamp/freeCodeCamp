@@ -1,6 +1,6 @@
 ---
 id: 5900f4b41000cf542c50ffc7
-title: 'Problem 328: Lowest-cost Search'
+title: '問題328：成本最低的搜索'
 challengeType: 1
 forumTopicId: 301985
 dashedName: problem-328-lowest-cost-search
