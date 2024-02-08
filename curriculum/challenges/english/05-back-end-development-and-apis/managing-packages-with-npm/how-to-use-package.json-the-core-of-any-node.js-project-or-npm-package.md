@@ -30,6 +30,8 @@ Add your name as the `author` of the project in the `package.json` file.
 
 **Note:** Remember that you’re writing JSON, so all field names must use double-quotes (") and be separated with a comma (,).
 
+If you are using Gitpod, make sure the app is running and the preview window is open. Copy the preview window's URL and paste it into the Solution Link input below.
+
 # --hints--
 
 `package.json` should have a valid "author" key
