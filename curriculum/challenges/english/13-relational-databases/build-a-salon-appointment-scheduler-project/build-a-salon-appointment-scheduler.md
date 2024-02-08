@@ -3,7 +3,8 @@ id: 5f87ac112ae598023a42df1a
 title: Build a Salon Appointment Scheduler
 challengeType: 13
 helpCategory: Backend Development
-url: https://github.com/freeCodeCamp/learn-salon-appointment-scheduler
+url: https://github.com/moT01/learn-salon-appointment-scheduler/tree/feat/gp
+coderoadTutorial: https%3A%2F%2Fraw.githubusercontent.com%2FmoT01%2Flearn-salon-appointment-scheduler%2Ffeat%2Fgp%2Ftutorial.json
 dashedName: build-a-salon-appointment-scheduler
 ---
 

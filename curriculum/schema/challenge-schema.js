@@ -221,6 +221,10 @@ const schema = Joi.object()
       is: [challengeTypes.codeAllyPractice, challengeTypes.codeAllyCert],
       then: Joi.string().required()
     }),
+    coderoadTutorial: Joi.when('challengeType', {
+      is: [challengeTypes.codeAllyPractice, challengeTypes.codeAllyCert],
+      then: Joi.string().required()
+    }),
     usesMultifileEditor: Joi.boolean()
   })
   .xor('helpCategory', 'isPrivate');

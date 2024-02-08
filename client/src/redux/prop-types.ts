@@ -178,6 +178,7 @@ export type ChallengeNode = {
     certification: string;
     challengeOrder: number;
     challengeType: number;
+    coderoadTutorial: string;
     dashedName: string;
     description: string;
     challengeFiles: ChallengeFiles;

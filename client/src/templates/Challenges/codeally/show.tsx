@@ -48,7 +48,7 @@ import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import './codeally.css';
-import { CodeAllyIframe } from '../../../components/growth-book/codeally-iframe';
+// import { CodeAllyIframe } from '../../../components/growth-book/codeally-iframe';
 import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
 
 // Redux
@@ -191,7 +191,8 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
             superBlock,
             title,
             translationPending,
-            url
+            url,
+            coderoadTutorial
           }
         }
       },
@@ -201,11 +202,11 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
       partiallyCompletedChallenges,
-      showCodeAlly,
+      // showCodeAlly,
       t,
-      tryToShowCodeAlly,
-      updateSolutionFormValues,
-      userToken = null
+      // tryToShowCodeAlly,
+      updateSolutionFormValues
+      // userToken = null
     } = this.props;
 
     const blockNameTitle = `${t(
@@ -214,21 +215,23 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
 
     // Initial CodeAlly login includes a tempToken in redirect URL
-    const queryParams = new URLSearchParams(window.location.search);
-    const codeAllyTempToken: string | null = queryParams.get('tempToken');
+    // const queryParams = new URLSearchParams(window.location.search);
+    // const codeAllyTempToken: string | null = queryParams.get('tempToken');
 
-    const tempToken = codeAllyTempToken ? `tempToken=${codeAllyTempToken}` : '';
+    // const tempToken = codeAllyTempToken ? `tempToken=${codeAllyTempToken}` : '';
 
     // Include a unique param to avoid CodeAlly caching issues
-    const date = `date=${Date.now()}`;
+    // const date = `date=${Date.now()}`;
 
     // User token for submitting CodeRoad tutorials
-    const envVariables = userToken
-      ? `envVariables=CODEROAD_WEBHOOK_TOKEN=${userToken}`
-      : '';
+    // const envVariables = userToken
+    //   ? `envVariables=CODEROAD_WEBHOOK_TOKEN=${userToken}`
+    //   : '';
 
-    const goBackTo = `goBackTo=${window.location.href}`;
+    // const goBackTo = `goBackTo=${window.location.href}`;
 
+    const gitpodUrl = `https://gitpod.io/?autostart=true#CODEROAD_TUTORIAL_URL=${coderoadTutorial},CODEROAD_DISABLE_RUN_ON_SAVE=true/${url}`;
+    console.log(gitpodUrl);
     const isPartiallyCompleted = partiallyCompletedChallenges.some(
       challenge => challenge.id === challengeId
     );
@@ -236,15 +239,10 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     const isCompleted = completedChallenges.some(
       challenge => challenge.id === challengeId
     );
-    const titleContext = t('learn.source-code-link');
-    return showCodeAlly ? (
-      <LearnLayout>
-        <Helmet title={windowTitle} />
-        <CodeAllyIframe
-          src={`https://codeally.io/embed/?repoUrl=${url}&${goBackTo}&${envVariables}&${tempToken}&${date}`}
-        />
-      </LearnLayout>
-    ) : (
+
+    // const titleContext = t('learn.source-code-link');
+
+    return (
       <Hotkeys
         containerRef={this.container}
         nextChallengePath={nextChallengePath}
@@ -268,17 +266,38 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                 <PrismFormatted text={description} />
                 <Spacer size='medium' />
                 <div className='ca-description'>
-                  <Trans i18nKey='learn.github-required'>
-                    <a
-                      href='https://github.com/join'
-                      rel='noopener noreferrer'
-                      target='_blank'
-                      title={titleContext}
-                    >
-                      placeholder
-                    </a>
-                  </Trans>
+                  <p>{t('learn.gitpod.intro')}</p>
+
+                  <ol>
+                    <li>
+                      <Trans i18nKey='learn.gitpod.step-1'>
+                        <a
+                          href='https://github.com/join'
+                          rel='noopener noreferrer'
+                          target='_blank'
+                          title={t('learn.source-code-link')}
+                        >
+                          placeholder
+                        </a>
+                      </Trans>
+                    </li>
+
+                    <li>{t('learn.gitpod.step-2')}</li>
+                    <li>{t('learn.gitpod.step-3')}</li>
+                    <li>
+                      {t('learn.gitpod.step-4')}
+                      <ul>
+                        <li>{t('learn.gitpod.step-5')}</li>
+                        <li>{t('learn.gitpod.step-6')}</li>
+                        <li>{t('learn.gitpod.step-7')}</li>
+                        <li>{t('learn.gitpod.step-8')}</li>
+                      </ul>
+                    </li>
+
+                    <li>{t('learn.gitpod.step-9')}</li>
+                  </ol>
                 </div>
+
                 <Spacer size='medium' />
                 {isSignedIn &&
                   challengeType === challengeTypes.codeAllyCert && (
@@ -302,15 +321,38 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                     </>
                   )}
                 <Alert id='codeally-cookie-warning' variant='info'>
-                  <p>{t(`intro:misc-text.enable-cookies`)}</p>
+                  <p>
+                    <Trans i18nKey='learn.gitpod.continue-project'>
+                      <a
+                        href='https://gitpod.io/workspaces'
+                        rel='noopener noreferrer'
+                        target='_blank'
+                      >
+                        placeholder
+                      </a>
+                    </Trans>
+                  </p>
+                  <Trans i18nKey='learn.gitpod.learn-more'>
+                    <a
+                      href='https://forum.freecodecamp.org/t/using-gitpod-in-the-curriculum/668669'
+                      rel='noopener noreferrer'
+                      target='_blank'
+                    >
+                      placeholder
+                    </a>
+                  </Trans>
+                </Alert>
+                <Alert id='codeally-cookie-warning' variant='danger'>
+                  {t('learn.gitpod.logout-warning')}
                 </Alert>
                 <CodeAllyButton
-                  onClick={tryToShowCodeAlly}
+                  // onClick={tryToShowCodeAlly}
                   text={
                     challengeType === challengeTypes.codeAllyCert
                       ? t('buttons.click-start-project')
                       : t('buttons.click-start-course')
                   }
+                  url={gitpodUrl}
                 />
                 {isSignedIn &&
                   challengeType === challengeTypes.codeAllyCert && (
@@ -376,6 +418,7 @@ export const query = graphql`
         title
         translationPending
         url
+        coderoadTutorial
       }
     }
   }
