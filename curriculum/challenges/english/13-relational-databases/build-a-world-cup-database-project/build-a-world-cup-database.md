@@ -3,8 +3,8 @@ id: 5f9771307d4d22b9d2b75a94
 title: Build a World Cup Database
 challengeType: 13
 helpCategory: Backend Development
-url: https://github.com/moT01/learn-world-cup-database/tree/feat/gp
-coderoadTutorial: https%3A%2F%2Fraw.githubusercontent.com%2FmoT01%2Flearn-world-cup-database%2Ffeat%2Fgp%2Ftutorial.json
+url: https://github.com/freeCodeCamp/learn-world-cup-database
+coderoadTutorial: https%3A%2F%2Fraw.githubusercontent.com%2FfreeCodeCamp%2Flearn-world-cup-database%2Fmain%2Ftutorial.json
 dashedName: build-a-world-cup-database
 ---
 
