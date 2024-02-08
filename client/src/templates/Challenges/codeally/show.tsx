@@ -20,15 +20,10 @@ import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import Hotkeys from '../components/hotkeys';
-import {
-  hideCodeAlly,
-  tryToShowCodeAlly,
-  updateUserToken
-} from '../../../redux/actions';
+import { updateUserToken } from '../../../redux/actions';
 import {
   completedChallengesSelector,
   partiallyCompletedChallengesSelector,
-  showCodeAllySelector,
   isSignedInSelector,
   userTokenSelector
 } from '../../../redux/selectors';
@@ -61,21 +56,18 @@ const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
   isSignedInSelector,
   partiallyCompletedChallengesSelector,
-  showCodeAllySelector,
   userTokenSelector,
   (
     completedChallenges: CompletedChallenge[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean,
     partiallyCompletedChallenges: CompletedChallenge[],
-    showCodeAlly: boolean,
     userToken: string | null
   ) => ({
     completedChallenges,
     isChallengeCompleted,
     isSignedIn,
     partiallyCompletedChallenges,
-    showCodeAlly,
     userToken
   })
 );
@@ -85,9 +77,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     {
       challengeMounted,
       createFlashMessage,
-      hideCodeAlly,
       openCompletionModal: () => openModal('completion'),
-      tryToShowCodeAlly,
       updateUserToken,
       updateChallengeMeta,
       updateSolutionFormValues
@@ -101,7 +91,6 @@ interface ShowCodeAllyProps {
   completedChallenges: CompletedChallenge[];
   createFlashMessage: typeof createFlashMessage;
   data: { challengeNode: ChallengeNode };
-  hideCodeAlly: () => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
   openCompletionModal: () => void;
@@ -109,9 +98,7 @@ interface ShowCodeAllyProps {
     challengeMeta: ChallengeMeta;
   };
   partiallyCompletedChallenges: CompletedChallenge[];
-  showCodeAlly: boolean;
   t: TFunction;
-  tryToShowCodeAlly: () => void;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateUserToken: (arg0: string) => void;
   updateSolutionFormValues: () => void;
