@@ -20,7 +20,11 @@ import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import Hotkeys from '../components/hotkeys';
-import { hideCodeAlly, tryToShowCodeAlly } from '../../../redux/actions';
+import {
+  hideCodeAlly,
+  tryToShowCodeAlly,
+  updateUserToken
+} from '../../../redux/actions';
 import {
   completedChallengesSelector,
   partiallyCompletedChallengesSelector,
@@ -46,9 +50,9 @@ import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
+import { postUserToken } from '../../../utils/ajax';
 
 import './codeally.css';
-// import { CodeAllyIframe } from '../../../components/growth-book/codeally-iframe';
 import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
 
 // Redux
@@ -84,6 +88,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       hideCodeAlly,
       openCompletionModal: () => openModal('completion'),
       tryToShowCodeAlly,
+      updateUserToken,
       updateChallengeMeta,
       updateSolutionFormValues
     },
@@ -108,6 +113,7 @@ interface ShowCodeAllyProps {
   t: TFunction;
   tryToShowCodeAlly: () => void;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
+  updateUserToken: (arg0: string) => void;
   updateSolutionFormValues: () => void;
   userToken: string | null;
 }
@@ -135,10 +141,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     });
     challengeMounted(challengeMeta.id);
     this.container.current?.focus();
-  }
-
-  componentWillUnmount() {
-    this.props.hideCodeAlly();
   }
 
   handleSubmit = ({
@@ -176,6 +178,45 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     }
   };
 
+  openGitpod = (userToken?: string) => {
+    const {
+      data: {
+        challengeNode: {
+          challenge: { url, coderoadTutorial }
+        }
+      }
+    } = this.props;
+
+    const gitpodDomain = `https://gitpod.io/?autostart=true#CODEROAD_TUTORIAL_URL=${coderoadTutorial},CODEROAD_DISABLE_RUN_ON_SAVE=true`;
+    const tokenEnv = userToken ? `,CODEROAD_WEBHOOK_TOKEN=${userToken}` : '';
+    const gitpodUrl = `${gitpodDomain}${tokenEnv}/${url}`;
+
+    window.open(gitpodUrl, '_blank');
+  };
+
+  startCourse = async () => {
+    const { isSignedIn, userToken, updateUserToken } = this.props;
+
+    if (!isSignedIn) {
+      this.openGitpod();
+    } else if (!userToken) {
+      const createUserTokenResponse = await postUserToken();
+      const { data = { userToken: null } } = createUserTokenResponse;
+
+      if (data?.userToken) {
+        updateUserToken(data.userToken);
+        this.openGitpod(data.userToken);
+      } else {
+        createFlashMessage({
+          type: 'danger',
+          message: FlashMessages.StartProjectErr
+        });
+      }
+    } else {
+      this.openGitpod(userToken);
+    }
+  };
+
   render() {
     const {
       completedChallenges,
@@ -190,9 +231,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
             notes,
             superBlock,
             title,
-            translationPending,
-            url,
-            coderoadTutorial
+            translationPending
           }
         }
       },
@@ -202,11 +241,8 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
       partiallyCompletedChallenges,
-      // showCodeAlly,
       t,
-      // tryToShowCodeAlly,
       updateSolutionFormValues
-      // userToken = null
     } = this.props;
 
     const blockNameTitle = `${t(
@@ -214,24 +250,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     )}: ${title}`;
     const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
 
-    // Initial CodeAlly login includes a tempToken in redirect URL
-    // const queryParams = new URLSearchParams(window.location.search);
-    // const codeAllyTempToken: string | null = queryParams.get('tempToken');
-
-    // const tempToken = codeAllyTempToken ? `tempToken=${codeAllyTempToken}` : '';
-
-    // Include a unique param to avoid CodeAlly caching issues
-    // const date = `date=${Date.now()}`;
-
-    // User token for submitting CodeRoad tutorials
-    // const envVariables = userToken
-    //   ? `envVariables=CODEROAD_WEBHOOK_TOKEN=${userToken}`
-    //   : '';
-
-    // const goBackTo = `goBackTo=${window.location.href}`;
-
-    const gitpodUrl = `https://gitpod.io/?autostart=true#CODEROAD_TUTORIAL_URL=${coderoadTutorial},CODEROAD_DISABLE_RUN_ON_SAVE=true/${url}`;
-    console.log(gitpodUrl);
     const isPartiallyCompleted = partiallyCompletedChallenges.some(
       challenge => challenge.id === challengeId
     );
@@ -239,8 +257,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     const isCompleted = completedChallenges.some(
       challenge => challenge.id === challengeId
     );
-
-    // const titleContext = t('learn.source-code-link');
 
     return (
       <Hotkeys
@@ -320,7 +336,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       <Spacer size='medium' />
                     </>
                   )}
-                <Alert id='codeally-cookie-warning' variant='info'>
+                <Alert variant='info'>
                   <p>
                     <Trans i18nKey='learn.gitpod.continue-project'>
                       <a
@@ -342,17 +358,20 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                     </a>
                   </Trans>
                 </Alert>
-                <Alert id='codeally-cookie-warning' variant='danger'>
-                  {t('learn.gitpod.logout-warning')}
-                </Alert>
+                {isSignedIn && (
+                  <Alert variant='danger'>
+                    {t('learn.gitpod.logout-warning')}
+                  </Alert>
+                )}
                 <CodeAllyButton
-                  // onClick={tryToShowCodeAlly}
                   text={
                     challengeType === challengeTypes.codeAllyCert
                       ? t('buttons.click-start-project')
                       : t('buttons.click-start-course')
                   }
-                  url={gitpodUrl}
+                  // `this.startCourse` being an async callback is acceptable
+                  //eslint-disable-next-line @typescript-eslint/no-misused-promises
+                  onClick={this.startCourse}
                 />
                 {isSignedIn &&
                   challengeType === challengeTypes.codeAllyCert && (

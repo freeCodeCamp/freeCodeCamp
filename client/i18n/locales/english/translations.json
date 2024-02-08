@@ -427,7 +427,7 @@
       "step-7": "Clicking on the \"Command Palette\" option,",
       "step-8": "and running the \"CodeRoad: Start\" command",
       "step-9": "Follow the instructions in CodeRoad to complete the course",
-      "continue-project": "Clicking the button below will start a new project. If you have previously started the course, go to <0>your Gitpod dashboard to continue.</0>",
+      "continue-project": "Clicking the button below will start a new project. If you have previously started the course, go to <0>your Gitpod dashboard</0> to continue.",
       "learn-more": "Learn more about Gitpod workspaces and how to <0>maximize your free usage.</0>",
       "logout-warning": "If you log out of freeCodeCamp before you complete this entire course, your progress will not be saved to your freeCodeCamp account."
     },

@@ -6,16 +6,21 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/ui';
 
 interface CodeAllyButtonProps {
-  // onClick: () => void;
   text: string;
-  url: string;
+  onClick: () => void;
 }
 
 export function CodeAllyButton(props: CodeAllyButtonProps): JSX.Element | null {
   const codeAllyDisabledFeature = useFeature('codeally_disabled');
   const { t } = useTranslation();
+
   return codeAllyDisabledFeature.on ? null : (
-    <Button href={props.url} target='_blank' variant='primary' block={true}>
+    <Button
+      onClick={props.onClick}
+      disabled={codeAllyDisabledFeature.on}
+      variant='primary'
+      block={true}
+    >
       <span className='sr-only'>, {t('aria.opens-new-window')}</span>
       {props.text}&nbsp;&nbsp;
       <FontAwesomeIcon icon={faExternalLinkAlt} />
