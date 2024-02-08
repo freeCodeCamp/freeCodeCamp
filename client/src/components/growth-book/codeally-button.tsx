@@ -14,9 +14,9 @@ export function CodeAllyButton(props: CodeAllyButtonProps): JSX.Element | null {
   const codeAllyDisabledFeature = useFeature('codeally_disabled');
   const { t } = useTranslation();
 
-  return codeAllyDisabledFeature.on ? null : (
+  return (
     <Button
-      onClick={props.onClick}
+      onClick={codeAllyDisabledFeature.on ? () => {} : props.onClick}
       disabled={codeAllyDisabledFeature.on}
       variant='primary'
       block={true}
