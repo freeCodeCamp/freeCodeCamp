@@ -21,7 +21,6 @@ describe('User token widget on settings page,', function () {
         '/learn/relational-database/learn-bash-by-building-a-boilerplate/build-a-boilerplate'
       );
       cy.contains('Start the course').click();
-      // cy.get('[data-cy=codeally-frame]').should('be.visible');
     });
 
     it('should allow you to delete your token', () => {
