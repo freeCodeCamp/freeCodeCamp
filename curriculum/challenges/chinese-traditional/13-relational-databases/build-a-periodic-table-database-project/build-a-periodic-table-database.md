@@ -4,6 +4,7 @@ title: 構建一個元素週期表數據庫
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-periodic-table-database
+coderoadTutorial: https%3A%2F%2Fraw.githubusercontent.com%2FfreeCodeCamp%2Flearn-periodic-table-database%2Fmain%2Ftutorial.json
 dashedName: build-a-periodic-table-database
 ---
 

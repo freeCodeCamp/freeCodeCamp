@@ -4,6 +4,7 @@ title: Criar um banco de dados do Mario
 challengeType: 12
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-relational-databases-by-building-a-mario-database
+coderoadTutorial: https%3A%2F%2Fraw.githubusercontent.com%2FfreeCodeCamp%2Flearn-relational-databases-by-building-a-mario-database%2Fmain%2Ftutorial.json
 dashedName: build-a-mario-database
 ---
 

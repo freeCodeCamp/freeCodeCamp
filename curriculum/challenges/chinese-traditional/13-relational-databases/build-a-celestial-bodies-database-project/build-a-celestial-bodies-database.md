@@ -4,6 +4,7 @@ title: 構建一個天體數據庫
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-celestial-bodies-database
+coderoadTutorial: https%3A%2F%2Fraw.githubusercontent.com%2FfreeCodeCamp%2Flearn-celestial-bodies-database%2Fmain%2Ftutorial.json
 dashedName: build-a-celestial-bodies-database
 ---
 
