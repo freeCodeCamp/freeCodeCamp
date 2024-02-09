@@ -7,48 +7,32 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
-AUDIO REFERENCE: 
+AUDIO REFERENCE:
 Linda: Ok, it's a bike date, then.
 -->
 
 # --description--
 
-The phrase `Ok, it's a bike date, then.` suggests an arrangement between Jake and Linda to go cycling together. It conveys a casual and enjoyable plan related to their shared interest in cycling.
+The word `date` can be used in different contexts. While it often refers to a romantic meeting between two people, it can also simply mean an appointment or a planned event between friends or colleagues. For example, saying `Let's set a date for our next meeting` uses `date` in a non-romantic way, referring to choosing a day for a meeting.
 
-# --question--
+# --fillInTheBlank--
 
-## --text--
+## --sentence--
 
-What does the phrase `Ok, it's a bike date, then.` convey in this context?
+`Ok, it's a _ _, then.`
 
-## --answers--
+## --blanks--
 
-A professional cycling event
-
-### --feedback--
-
-It implies a formal or organized gathering, which is not the focus in this context.
-
----
-
-A casual plan to go cycling together
-
----
-
-A mandatory activity
+`bike`
 
 ### --feedback--
 
-It suggests something obligatory, while the plan is casual and voluntary.
+This word specifies the type of activity planned, indicating it's an outing involving bicycles.
 
 ---
 
-A cycling competition
+`date`
 
 ### --feedback--
 
-It implies a more competitive setting, which is not the tone of their conversation.
-
-## --video-solution--
-
-2
+This word refers to a scheduled meeting or event.
