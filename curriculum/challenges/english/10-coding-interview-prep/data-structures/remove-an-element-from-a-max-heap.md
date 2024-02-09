@@ -88,18 +88,16 @@ The `remove` method should remove the greatest element from the max heap while m
 
 ```js
 function isHeap(arr, i, n) {
-  if (i >= (n - 1) / 2) {
-    return true;
-  }
-  if (
-    arr[i] >= arr[2 * i + 1] &&
-    arr[i] >= arr[2 * i + 2] &&
-    isHeap(arr, 2 * i + 1, n) &&
-    isHeap(arr, 2 * i + 2, n)
-  ) {
-    return true;
-  }
-  return false;
+  if( arr[i] < arr[2 * i + 1] || arr[i] < arr[2 * i + 2] ){
+        return false;
+    }
+    if (i > (n - 1) / 2) {
+        return true;
+    }
+    if (isHeap(arr, 2 * i + 1, n) && isHeap(arr, 2 * i + 2, n)) {
+        return true;
+    }
+    return false;
 }
 
 assert(
@@ -111,7 +109,7 @@ assert(
       return false;
     }
   let max = Infinity;
-  const [result, vals] = [[], [2, 15, 3, 7, 12, 7, 10, 90]];
+  const [result, vals] = [[], [9, 3, 5, 2, 15, 3, 7, 12, 7, 10, 90]];
   vals.forEach((val) => test.insert(val));
   for (let i = 0; i < vals.length; i++) {
     const curHeap = test.print();
