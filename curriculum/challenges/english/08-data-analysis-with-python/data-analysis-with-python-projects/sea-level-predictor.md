@@ -28,17 +28,15 @@ Use the data to complete the following tasks:
 - Plot a new line of best fit just using the data from year 2000 through the most recent year in the dataset. Make the line also go through the year 2050 to predict the sea level rise in 2050 if the rate of rise continues as it has since the year 2000.
 - The x label should be `Year`, the y label should be `Sea Level (inches)`, and the title should be `Rise in Sea Level`.
 
-Unit tests are written for you under `test_module.py`.
-
 The boilerplate also includes commands to save and return the image.
 
 ## Development
 
-For development, you can use `main.py` to test your functions. Just run the command `python main.py` in the console to run the `main.py` file.
+Write your code in `sea_level_predictor.py`. For development, you can use `main.py` to test your code.
 
 ## Testing
 
-We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you run the command `python main.py` in the console.
+The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience.
 
 ## Submitting
 

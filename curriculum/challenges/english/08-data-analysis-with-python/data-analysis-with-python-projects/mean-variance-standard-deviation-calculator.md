@@ -50,15 +50,13 @@ For example, `calculate([0,1,2,3,4,5,6,7,8])` should return:
 }
 ```
 
-The unit tests for this project are in `test_module.py`.
-
 ## Development
 
-For development, you can use `main.py` to test your `calculate()` function. Just run the command `python main.py` in the console to run the `main.py` file.
+Write your code in `mean_var_std.py`. For development, you can use `main.py` to test your code.
 
 ## Testing
 
-We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you run the command `python main.py` in the console.
+The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience.
 
 ## Submitting
 
