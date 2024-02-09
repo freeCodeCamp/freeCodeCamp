@@ -257,7 +257,7 @@ If no feedback is here, a generic "wrong answer" message will be shown.
     },
     {
       "character": "Maria",
-      // When the command starts: Maria will start saying this line 1.3 seconds into the scene. Note that this is the same time as the audio.startTime above. It doesn't have to match that (maybe there's a pause at the begninning of the audio or something)
+      // When the command starts: Maria will start saying this line 1.3 seconds into the scene. Note that this is the same time as the audio.startTime above. It doesn't have to match that (maybe there's a pause at the beginning of the audio or something)
       "startTime": 1.3,
       // The character will stop moving their mouth at the finishTime
       "finishTime": 4.95,

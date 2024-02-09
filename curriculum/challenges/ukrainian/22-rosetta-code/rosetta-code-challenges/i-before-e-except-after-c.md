@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7eb0
-title: I before E except after C
+title: 'І перед Е (виняток: окрім після С)'
 challengeType: 1
 forumTopicId: 302288
 dashedName: i-before-e-except-after-c
@@ -10,68 +10,68 @@ dashedName: i-before-e-except-after-c
 
 **<a href="http://www.rosettacode.org/wiki/I_before_E_except_after_C" target="_blank" rel="noopener noreferrer nofollow">"I before E, except after C"</a>** is a general rule for English language spelling. If one is unsure whether a word is spelled with the digraph `ei` or `ie`, the rhyme suggests that the correct order is `ie` unless the preceding letter is `c`, in which case it may be `ei`.
 
-Using the words provided, check if the two sub-clauses of the phrase are plausible individually:
+Використовуючи надані слова, перевірте, чи два підпункти фрази переконливі окремо:
 
 <ol>
   <li>
     <i>"I before E when not preceded by C".</i>
   </li>
   <li>
-    <i>"E before I when preceded by C".</i>
+    <i>"E до того, коли перед мною передувала С".</i>
   </li>
 </ol>
 
-If both sub-phrases are plausible then the original phrase can be said to be plausible.
+Вихідна фраза є правдоподібною, якщо обидві субфрази правдоподібні.
 
 # --instructions--
 
-Write a function that accepts a word and check if the word follows this rule. The function should return true if the word follows the rule and false if it does not.
+Напишіть функцію, яка допускає слово і перевірте, чи воно підлягає правилу. Якщо слово підлягає правилу, то функція успішна, якщо ні - функція хибна.
 
 # --hints--
 
-`IBeforeExceptC` should be a function.
+`IBeforeExceptC` має бути функцією.
 
 ```js
 assert(typeof IBeforeExceptC == 'function');
 ```
 
-`IBeforeExceptC("receive")` should return a boolean.
+`IBeforeExceptC("receive")` має повертати булеве значення.
 
 ```js
 assert(typeof IBeforeExceptC('receive') == 'boolean');
 ```
 
-`IBeforeExceptC("receive")` should return `true`.
+`IBeforeExceptC("receive")` має повертати `true`.
 
 ```js
 assert.equal(IBeforeExceptC('receive'), true);
 ```
 
-`IBeforeExceptC("science")` should return `false`.
+`IBeforeExceptC("science")` має повертати `false`.
 
 ```js
 assert.equal(IBeforeExceptC('science'), false);
 ```
 
-`IBeforeExceptC("imperceivable")` should return `true`.
+`IBeforeExceptC("imperceivable")` має повертати `true`.
 
 ```js
 assert.equal(IBeforeExceptC('imperceivable'), true);
 ```
 
-`IBeforeExceptC("inconceivable")` should return `true`.
+`IBeforeExceptC("inconceivable")` має повертати `true`.
 
 ```js
 assert.equal(IBeforeExceptC('inconceivable'), true);
 ```
 
-`IBeforeExceptC("insufficient")` should return `false`.
+`IBeforeExceptC("insufficient")` має повертати `false`.
 
 ```js
 assert.equal(IBeforeExceptC('insufficient'), false);
 ```
 
-`IBeforeExceptC("omniscient")` should return `false`.
+`IBeforeExceptC("omniscient")` має повертати `false`.
 
 ```js
 assert.equal(IBeforeExceptC('omniscient'), false);

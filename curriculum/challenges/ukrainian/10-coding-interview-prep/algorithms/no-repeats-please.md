@@ -14,61 +14,61 @@ dashedName: no-repeats-please
 
 # --hints--
 
-`permAlone("aab")` має повертати число.
+`permAlone("aab")` має повернути число.
 
 ```js
 assert.isNumber(permAlone('aab'));
 ```
 
-`permAlone("aab")` має повертати 2.
+`permAlone("aab")` має повернути 2.
 
 ```js
 assert.strictEqual(permAlone('aab'), 2);
 ```
 
-`permAlone("aaa")` має повертати 0.
+`permAlone("aaa")` має повернути 0.
 
 ```js
 assert.strictEqual(permAlone('aaa'), 0);
 ```
 
-`permAlone("aabb")` має повертати 8.
+`permAlone("aabb")` має повернути 8.
 
 ```js
 assert.strictEqual(permAlone('aabb'), 8);
 ```
 
-`permAlone("abcdefa")` має повертати 3600.
+`permAlone("abcdefa")` має повернути 3600.
 
 ```js
 assert.strictEqual(permAlone('abcdefa'), 3600);
 ```
 
-`permAlone("abfdefa")` має повертати 2640.
+`permAlone("abfdefa")` має повернути 2640.
 
 ```js
 assert.strictEqual(permAlone('abfdefa'), 2640);
 ```
 
-`permAlone("zzzzzzzz")` має повертати 0.
+`permAlone("zzzzzzzz")` має повернути 0.
 
 ```js
 assert.strictEqual(permAlone('zzzzzzzz'), 0);
 ```
 
-`permAlone("a")` має повертати 1.
+`permAlone("a")` має повернути 1.
 
 ```js
 assert.strictEqual(permAlone('a'), 1);
 ```
 
-`permAlone("aaab")` має повертати 0.
+`permAlone("aaab")` має повернути 0.
 
 ```js
 assert.strictEqual(permAlone('aaab'), 0);
 ```
 
-`permAlone("aaabb")` має повертати 12.
+`permAlone("aaabb")` має повернути 12.
 
 ```js
 assert.strictEqual(permAlone('aaabb'), 12);

@@ -1,6 +1,6 @@
 ---
 id: 63c9f24afbc9cf324dcaa9a4
-title: Step 92
+title: الخطوة 92
 challengeType: 0
 dashedName: step-92
 ---
@@ -91,7 +91,7 @@ assert.isAbove(clearForm.toString().indexOf('output'), clearForm.toString().inde
             </span>
           </div>
           <div>
-            <button type="submit" id="calculate-calories">
+            <button type="submit">
               Calculate Remaining Calories
             </button>
             <button type="button" id="clear">Clear</button>
@@ -194,11 +194,11 @@ select {
 }
 
 .surplus {
-  color: var(--light-green);
+  color: var(--light-pink);
 }
 
 .deficit {
-  color: var(--light-pink);
+  color: var(--light-green);
 }
 ```
 
@@ -260,7 +260,7 @@ function calculateCalories(e) {
 
   const consumedCalories = breakfastCalories + lunchCalories + dinnerCalories + snacksCalories;
   const remainingCalories = budgetCalories - consumedCalories + exerciseCalories;
-  const surplusOrDeficit = remainingCalories >= 0 ? 'Surplus' : 'Deficit';
+  const surplusOrDeficit = remainingCalories < 0 ? 'Surplus' : 'Deficit';
   output.innerHTML = `
   <span class="${surplusOrDeficit.toLowerCase()}">${Math.abs(remainingCalories)} Calorie ${surplusOrDeficit}</span>
   <hr>

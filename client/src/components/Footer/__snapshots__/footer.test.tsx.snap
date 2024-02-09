@@ -345,7 +345,8 @@ exports[`<Footer /> matches snapshot 1`] = `
                 target="_blank"
               >
                 <img
-                  alt="Apple Store"
+                  alt="Download on the App Store"
+                  lang="en"
                   src={{}}
                 />
               </a>
@@ -357,7 +358,8 @@ exports[`<Footer /> matches snapshot 1`] = `
                 target="_blank"
               >
                 <img
-                  alt="Google Play"
+                  alt="Get it on Google Play"
+                  lang="en"
                   src={{}}
                 />
               </a>

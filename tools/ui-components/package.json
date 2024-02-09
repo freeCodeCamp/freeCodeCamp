@@ -35,8 +35,8 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "@babel/core": "7.23.3",
-    "@babel/preset-env": "7.23.3",
+    "@babel/core": "7.23.7",
+    "@babel/preset-env": "7.23.7",
     "@babel/preset-typescript": "7.23.3",
     "@rollup/plugin-babel": "5.3.1",
     "@rollup/plugin-commonjs": "19.0.2",
@@ -53,7 +53,7 @@
     "@storybook/react": "6.5.16",
     "@testing-library/jest-dom": "5.17.0",
     "@testing-library/react": "12.1.5",
-    "@types/jest": "29.5.8",
+    "@types/jest": "29.5.12",
     "@types/react": "16.14.51",
     "@types/react-dom": "^16.9.17",
     "@types/testing-library__jest-dom": "^5",
@@ -61,7 +61,7 @@
     "babel-loader": "8.3.0",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
-    "npm-run-all": "4.1.5",
+    "npm-run-all2": "5.0.0",
     "postcss": "8.4.31",
     "postcss-import": "14.1.0",
     "rollup": "2.79.1",

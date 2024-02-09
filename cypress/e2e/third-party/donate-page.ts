@@ -11,7 +11,7 @@ describe('Donate page', () => {
     });
     cy.get("[data-cy='donation-confirmation-button']").click();
     cy.contains('We are processing your donation.').should('be.visible');
-    cy.contains('Thank you for being a supporter.', { timeout: 10000 }).should(
+    cy.contains('Thank You for Being a Supporter', { timeout: 10000 }).should(
       'be.visible'
     );
   });

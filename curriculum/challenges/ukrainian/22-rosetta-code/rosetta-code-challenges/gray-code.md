@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e80
-title: Gray code
+title: Код Грея
 challengeType: 1
 forumTopicId: 302276
 dashedName: gray-code
@@ -10,21 +10,21 @@ dashedName: gray-code
 
 Gray code is a form of binary encoding where transitions between consecutive numbers differ by only one bit.
 
-This is a useful encoding for reducing hardware data hazards with values that change rapidly and/or connect to slower hardware as inputs.
+Це корисне кодування для зменшення ризиків настання небезпеки для апаратних даних зі значеннями, що швидко змінюються та/або підключаються до повільнішого апаратного забезпечення як вхідних даних.
 
-It is also useful for generating inputs for Karnaugh maps in order from left to right or top to bottom.
+Це також корисно для створення вхідних даних для карт Карно в порядку зліва направо або зверху вниз.
 
 # --instructions--
 
-Create a function to encode a number to and decode a number from Gray code. The function should will have 2 parameters.
+Створіть функцію для кодування номера та декодування номера з коду Грея. Функція повинна мати 2 параметри.
 
-The first would be a boolean. The function should encode for true and decode for false. The second parameter would be the number to be encoded/decoded.
+Перший - це логічний тип даних. Функція має кодувати true і декодувати false. Другим параметром буде число, яке потрібно закодувати/декодувати.
 
-Display the normal binary representations, Gray code representations, and decoded Gray code values for all 5-bit binary numbers (0-31 inclusive, leading 0's not necessary).
+Поккажіть нормальні бінарні значення, значення коду Грея, і декодування даних коду Грея для всіх 5-бінарних чисел (0-31 включно, провідні нулі не є необхідними).
 
-There are many possible Gray codes. The following encodes what is called "binary reflected Gray code."
+Існує багато можливих кодів Грея. Наступні кодування називаються "двійковим відображувальним кодом Грея."
 
-Encoding (MSB is bit 0, b is binary, g is Gray code):
+Кодування (MSB є бітом 0, b є бінарним, g - кодом Грея):
 
 <pre>if b[i-1] = 1
   g[i] = not b[i]
@@ -32,63 +32,63 @@ else
   g[i] = b[i]
 </pre>
 
-Or:
+Або:
 
-<pre>g = b xor (b logically right shifted 1 time)
+<pre>g = b xor (b логічно зміщено праворуч 1 раз)
 </pre>
 
-Decoding (MSB is bit 0, b is binary, g is Gray code):
+Декодування (MSB є бітом 0, b є бінарним, g - кодом Грея):
 
 <pre>b[0] = g[0]<br>
-for other bits:
+для інших бітів:
 b[i] = g[i] xor b[i-1]
 </pre>
 
 # --hints--
 
-`gray` should be a function.
+`gray` має бути функцією.
 
 ```js
 assert(typeof gray == 'function');
 ```
 
-`gray(true,177)` should return a number.
+`gray(true,177)` має повернути число.
 
 ```js
 assert(typeof gray(true, 177) == 'number');
 ```
 
-`gray(true,177)` should return `233`.
+`gray(true,177)` має повернути `233`.
 
 ```js
 assert.equal(gray(true, 177), 233);
 ```
 
-`gray(true,425)` should return `381`.
+`gray(true,425)` має повернути `381`.
 
 ```js
 assert.equal(gray(true, 425), 381);
 ```
 
-`gray(true,870)` should return `725`.
+`gray(true,870)` має повернути `725`.
 
 ```js
 assert.equal(gray(true, 870), 725);
 ```
 
-`gray(false,233)` should return `177`.
+`gray(false,233)` має повернути `177`.
 
 ```js
 assert.equal(gray(false, 233), 177);
 ```
 
-`gray(false,381)` should return `425`.
+`gray(false,381)` має повернути `425`.
 
 ```js
 assert.equal(gray(false, 381), 425);
 ```
 
-`gray(false,725)` should return `870`.
+`gray(false,725)`має повернути `870`.
 
 ```js
 assert.equal(gray(false, 725), 870);

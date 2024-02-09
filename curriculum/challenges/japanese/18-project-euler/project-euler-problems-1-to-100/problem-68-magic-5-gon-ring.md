@@ -1,6 +1,6 @@
 ---
 id: 5900f3b01000cf542c50fec3
-title: 'Problem 68: Magic 5-gon ring'
+title: '問題 68: 魔法の五角リング'
 challengeType: 1
 forumTopicId: 302180
 dashedName: problem-68-magic-5-gon-ring
@@ -8,17 +8,17 @@ dashedName: problem-68-magic-5-gon-ring
 
 # --description--
 
-Consider the following "magic" 3-gon ring, filled with the numbers 1 to 6, and each line adding to nine.
+下図は 1 から 6 までの数字が埋められた「魔法」の三角リングで、それぞれの線に沿って数字を足していくと 9 になります。
 
-<img class="img-responsive center-block" alt="a completed example of a 3-gon ring" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="三角リングの完成例" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px;" />
 
-Working **clockwise**, and starting from the group of three with the numerically lowest external node (4,3,2 in this example), each solution can be described uniquely. For example, the above solution can be described by the set: 4,3,2; 6,2,1; 5,1,3.
+外側のノードのうち値が最も低いノードから伸びる線上にある 3 つのノードのグループ (この例では 4, 3, 2) から始めて、**時計回り** に進むと、それぞれの解を一意に記述できます。 例えば、上の解は 4,3,2; 6,2,1; 5,1,3 という集合で表すことができます。
 
-It is possible to complete the ring with four different totals: 9, 10, 11, and 12. There are eight solutions in total.
+4 種類の和 (9, 10, 11, 12) でリングを完成させることができます。 全部で 8 つの解があります。
 
 <div style='text-align: center;'>
 
-| <div style='width: 100px;'>Total</div> | <div style='width: 250px;'>Solution Set</div> |
+| <div style='width: 100px;'>合計</div> | <div style='width: 250px;'>解の集合</div> |
 | -------------------------------------- | --------------------------------------------- |
 | 9                                      | 4,2,3; 5,3,1; 6,1,2                           |
 | 9                                      | 4,3,2; 6,2,1; 5,1,3                           |
@@ -31,21 +31,21 @@ It is possible to complete the ring with four different totals: 9, 10, 11, and 1
 
 </div>
 
-By concatenating each group it is possible to form 9-digit strings; the maximum string for a 3-gon ring is 432621513.
+各グループを連結すると 9 桁の文字列になります。三角リングの最大文字列は 432621513 です。
 
-Using the numbers 1 to 10, and depending on arrangements, it is possible to form 16- and 17-digit strings. What is the maximum **16-digit** string for a "magic" 5-gon ring?
+1 から 10 の数字を使用した場合、それらの配置に応じて 16 桁および 17 桁の文字列が得られます。 「魔法」の五角リングで得られる **16 桁** の文字列のうち最大のものを求めなさい。
 
-<img class="img-responsive center-block" alt="a blank diagram of a 5-gon ring" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="数字のない五角リングの図" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px;" />
 
 # --hints--
 
-`magic5GonRing()` should return a number.
+`magic5GonRing()` は数値を返す必要があります。
 
 ```js
 assert(typeof magic5GonRing() === 'number');
 ```
 
-`magic5GonRing()` should return 6531031914842725.
+`magic5GonRing()` は 6531031914842725 を返す必要があります。
 
 ```js
 assert.strictEqual(magic5GonRing(), 6531031914842725);

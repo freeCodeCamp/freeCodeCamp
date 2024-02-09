@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0e0b6c005b0e76f07a
-title: Using Web Services
+title: Utilização de serviços da web
 challengeType: 11
 videoId: oNl1OVDPGKE
 bilibiliIds:
@@ -18,23 +18,23 @@ What are the two most common ways to send data over the internet?
 
 ## --answers--
 
-JSON and TXT
+JSON e TXT
 
 ---
 
-JSON and XML
+JSON e XML
 
 ---
 
-XML and TXT
+XML e TXT
 
 ---
 
-XML and PHP
+XML e PHP
 
 ---
 
-PHP and TXT
+PHP e TXT
 
 ## --video-solution--
 

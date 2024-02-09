@@ -1,6 +1,6 @@
 ---
 id: 5900f3941000cf542c50fea7
-title: 'Problem 40: Champernowne''s constant'
+title: '問題 40: チャンパーノウン定数'
 challengeType: 1
 forumTopicId: 302066
 dashedName: problem-40-champernownes-constant
@@ -8,37 +8,37 @@ dashedName: problem-40-champernownes-constant
 
 # --description--
 
-An irrational decimal fraction is created by concatenating the positive integers:
+正の整数を連結することで得られる、次のような無理数の小数を考えます。
 
 0.12345678910**1**112131415161718192021...
 
-It can be seen that the 12<sup>th</sup> digit of the fractional part is 1.
+小数第 12<sup></sup> 位が 1 であることが分かります。
 
-If *d<sub>n</sub>* represents the *n*<sup>th</sup> digit of the fractional part, find the value of the following expression.
+*d<sub>n</sub>* が小数第 *n* 位を表すとき、次の式の値を求めなさい。
 
 d<sub>1</sub> × d<sub>10</sub> × d<sub>100</sub> × d<sub>1000</sub> × d<sub>10000</sub> × d<sub>100000</sub> × d<sub>1000000</sub>
 
 # --hints--
 
-`champernownesConstant(100)` should return a number.
+`champernownesConstant(100)` は数値を返す必要があります。
 
 ```js
 assert(typeof champernownesConstant(100) === 'number');
 ```
 
-`champernownesConstant(100)` should return 5.
+`champernownesConstant(100)` は 5 を返す必要があります。
 
 ```js
 assert.strictEqual(champernownesConstant(100), 5);
 ```
 
-`champernownesConstant(1000)` should return 15.
+`champernownesConstant(1000)` は 15 を返す必要があります。
 
 ```js
 assert.strictEqual(champernownesConstant(1000), 15);
 ```
 
-`champernownesConstant(1000000)` should return 210.
+`champernownesConstant(1000000)` は 210 を返す必要があります。
 
 ```js
 assert.strictEqual(champernownesConstant(1000000), 210);

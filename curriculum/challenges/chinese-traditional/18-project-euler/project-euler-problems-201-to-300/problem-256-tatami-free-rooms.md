@@ -1,6 +1,6 @@
 ---
 id: 5900f46c1000cf542c50ff7e
-title: 'Problem 256: Tatami-Free Rooms'
+title: '問題256：無榻榻米房間'
 challengeType: 1
 forumTopicId: 301904
 dashedName: problem-256-tatami-free-rooms
@@ -10,11 +10,11 @@ dashedName: problem-256-tatami-free-rooms
 
 Tatami are rectangular mats, used to completely cover the floor of a room, without overlap.
 
-Assuming that the only type of available tatami has dimensions 1×2, there are obviously some limitations for the shape and size of the rooms that can be covered.
+假設唯一可用的榻榻米尺寸爲1×2，那麼可以覆蓋的房間的形狀和大小顯然存在一些限制。
 
 For this problem, we consider only rectangular rooms with integer dimensions $a$, $b$ and even size $s = a \times b$. We use the term 'size' to denote the floor surface area of the room, and — without loss of generality — we add the condition $a ≤ b$.
 
-There is one rule to follow when laying out tatami: there must be no points where corners of four different mats meet. For example, consider the two arrangements below for a 4×4 room:
+鋪設榻榻米時要遵循一條規則：四個不同墊子的角落必須相遇。 例如，考慮下面兩個4×4房間的安排：
 
 <img class="img-responsive center-block" alt="two arrangements of mats in 4x4 room" src="https://cdn.freecodecamp.org/curriculum/project-euler/tatami-free-rooms.gif" style="background-color: white; padding: 10px;" />
 

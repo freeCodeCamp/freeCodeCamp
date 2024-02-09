@@ -1,6 +1,6 @@
 ---
 id: 5900f54b1000cf542c51005d
-title: 'Problem 479: Roots on the Rise'
+title: '問題479：崛起的根源'
 challengeType: 1
 forumTopicId: 302156
 dashedName: problem-479-roots-on-the-rise

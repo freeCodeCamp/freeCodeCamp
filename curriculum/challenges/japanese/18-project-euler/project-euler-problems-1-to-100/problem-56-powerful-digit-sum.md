@@ -1,6 +1,6 @@
 ---
 id: 5900f3a41000cf542c50feb7
-title: 'Problem 56: Powerful digit sum'
+title: '問題 56: 累乗の各位の和'
 challengeType: 1
 forumTopicId: 302167
 dashedName: problem-56-powerful-digit-sum
@@ -8,43 +8,43 @@ dashedName: problem-56-powerful-digit-sum
 
 # --description--
 
-A googol ($10^{100}$) is a massive number: one followed by one-hundred zeros; $100^{100}$ is almost unimaginably large: one followed by two-hundred zeros. Despite their size, the sum of the digits in each number is only 1.
+グーゴル ($10^{100}$) は 1 の後に 0 が 100 個も続く巨大な数で、$100^{100}$は 1 の後に 0 が 200 個続く、想像を絶する大きさの数です。 その大きさにもかかわらず、どちらの数も各位の和はわずか 1 です。
 
-Considering natural numbers of the form, $a^b$, where `a`, `b` &lt; `n`, what is the maximum digital sum?
+`a`, `b` &lt; `n` のとき、自然数 $a^b$ の最大の各位の和を求めなさい。
 
 # --hints--
 
-`powerfulDigitSum(3)` should return a number.
+`powerfulDigitSum(3)` は数値を返す必要があります。
 
 ```js
 assert(typeof powerfulDigitSum(3) === 'number');
 ```
 
-`powerfulDigitSum(3)` should return `4`.
+`powerfulDigitSum(3)` は `4` を返す必要があります。
 
 ```js
 assert.strictEqual(powerfulDigitSum(3), 4);
 ```
 
-`powerfulDigitSum(10)` should return `45`.
+`powerfulDigitSum(10)` は `45` を返す必要があります。
 
 ```js
 assert.strictEqual(powerfulDigitSum(10), 45);
 ```
 
-`powerfulDigitSum(50)` should return `406`.
+`powerfulDigitSum(50)` は `406` を返す必要があります。
 
 ```js
 assert.strictEqual(powerfulDigitSum(50), 406);
 ```
 
-`powerfulDigitSum(75)` should return `684`.
+`powerfulDigitSum(75)` は `684` を返す必要があります。
 
 ```js
 assert.strictEqual(powerfulDigitSum(75), 684);
 ```
 
-`powerfulDigitSum(100)` should return `972`.
+`powerfulDigitSum(100)` は `972` を返す必要があります。
 
 ```js
 assert.strictEqual(powerfulDigitSum(100), 972);

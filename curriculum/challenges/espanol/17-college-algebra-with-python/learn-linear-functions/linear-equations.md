@@ -12,7 +12,7 @@ This video will show you the math behind finding the y-intercept in a linear fun
 
 Here is the <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go with the last two videos,</a> so you can see the formulas.
 
-# --assignment--
+# --tarea--
 
 Add code to your algebra Colab notebook to graph a function from points or from equation input.
 

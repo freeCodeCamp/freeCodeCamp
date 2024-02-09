@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8010
-title: Sorting algorithms/Shell sort
+title: 排序算法/Shell 排序
 challengeType: 1
 forumTopicId: 302317
 dashedName: sorting-algorithmsshell-sort
@@ -10,49 +10,49 @@ dashedName: sorting-algorithmsshell-sort
 
 Write a function to sort an array of elements using the Shell sort algorithm, a diminishing increment sort. The function should return the sorted array.
 
-The Shell sort (also known as Shellsort or Shell's method) is named after its inventor, Donald Shell, who published the algorithm in 1959.
+Shell 排序（也称为 Shellsort 或 Shell 方法）以其发明者 Donald Shell 的名字命名，他于 1959 年发布了该算法。
 
-Shell sort is a sequence of interleaved insertion sorts based on an increment sequence. The increment size is reduced after each pass until the increment size is 1.
+Shell 排序是基于增量序列的交错插入排序序列。 每次通过后增量大小都会减小，直到增量大小为 1。
 
-With an increment size of 1, the sort is a basic insertion sort, but by this time the data is guaranteed to be almost sorted, which is insertion sort's "best case".
+增量大小为 1 时，排序是基本的插入排序，但此时数据可以保证几乎已排序，这是插入排序的“最佳情况”。
 
-Any sequence will sort the data as long as it ends in 1, but some work better than others.
+只要以 1 结尾，任何序列都会对数据进行排序，但有些序列比其他序列更好。
 
-Empirical studies have shown a geometric increment sequence with a ratio of about 2.2 work well in practice.
+实证研究表明，比率约为 2.2 的几何增量序列在实践中效果很好。
 
 # --hints--
 
-`shellSort` should be a function.
+`shellSort` 应该是一个函数。
 
 ```js
 assert(typeof shellSort == 'function');
 ```
 
-`shellSort([25, 32, 12, 7, 20])` should return an array.
+`shellSort([25, 32, 12, 7, 20])` 应该返回一个数组。
 
 ```js
 assert(Array.isArray(shellSort([25, 32, 12, 7, 20])));
 ```
 
-`shellSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`shellSort([25, 32, 12, 7, 20])` 应该返回 `[7, 12, 20, 25, 32]`。
 
 ```js
 assert.deepEqual(shellSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`shellSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`shellSort([38, 45, 35, 8, 13])` 应该返回 `[8, 13, 35, 38, 45]`。
 
 ```js
 assert.deepEqual(shellSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`shellSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`shellSort([43, 36, 20, 34, 24])` 应该返回 `[20, 24, 34, 36, 43]`。
 
 ```js
 assert.deepEqual(shellSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`shellSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`shellSort([12, 33, 26, 18, 1, 16, 38])` 应该返回 `[1, 12, 16, 18, 26, 33, 38]`。
 
 ```js
 assert.deepEqual(shellSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -66,7 +66,7 @@ assert.deepEqual(shellSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`shellSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`shellSort([3, 39, 48, 16, 1, 4, 29])` 应该返回`[1, 3, 4, 16, 29, 39, 48]`。
 
 ```js
 assert.deepEqual(shellSort([3, 39, 48, 16, 1, 4, 29]), [

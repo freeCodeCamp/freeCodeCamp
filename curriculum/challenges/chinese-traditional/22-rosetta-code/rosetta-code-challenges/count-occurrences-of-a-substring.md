@@ -1,6 +1,6 @@
 ---
 id: 596fda99c69f779975a1b67d
-title: Count occurrences of a substring
+title: 計算子字符串的出現次數
 challengeType: 1
 forumTopicId: 302237
 dashedName: count-occurrences-of-a-substring
@@ -10,40 +10,40 @@ dashedName: count-occurrences-of-a-substring
 
 Create a function, or show a built-in function, to count the number of non-overlapping occurrences of a substring inside a string.
 
-The function should take two arguments:
+該函數應採用兩個參數：
 
 <ul>
   <li>the first argument being the string to search, and</li>
-  <li>the second a substring to be searched for.</li>
+  <li>第二個參數是要搜索的子字符串。</li>
 </ul>
 
-It should return an integer count.
+它應該返回一個整數計數。
 
-The matching should yield the highest number of non-overlapping matches.
+匹配應產生最大數量的非重疊匹配。
 
-In general, this essentially means matching from left-to-right or right-to-left.
+一般來說，這實質上意味着從左到右或從右到左匹配。
 
 # --hints--
 
-`countSubstring` should be a function.
+`countSubstring` 應該是一個函數。
 
 ```js
 assert(typeof countSubstring === 'function');
 ```
 
-`countSubstring("the three truths", "th")` should return `3`.
+`countSubstring("the three truths", "th")` 應該返回 `3`。
 
 ```js
 assert.equal(countSubstring(testCases[0], searchString[0]), results[0]);
 ```
 
-`countSubstring("ababababab", "abab")` should return `2`.
+`countSubstring("ababababab", "abab")` 應該返回 `2`。
 
 ```js
 assert.equal(countSubstring(testCases[1], searchString[1]), results[1]);
 ```
 
-`countSubstring("abaabba*bbaba*bbab", "a*b")` should return `2`.
+`countSubstring("abaabba*bbaba*bbab", "a*b")` 應該返回 `2`。
 
 ```js
 assert.equal(countSubstring(testCases[2], searchString[2]), results[2]);

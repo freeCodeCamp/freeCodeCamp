@@ -1,5 +1,4 @@
 // Package Utilities
-import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -49,6 +48,8 @@ import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import './codeally.css';
+import { CodeAllyIframe } from '../../../components/growth-book/codeally-iframe';
+import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
 
 // Redux
 const mapStateToProps = createSelector(
@@ -235,17 +236,12 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     const isCompleted = completedChallenges.some(
       challenge => challenge.id === challengeId
     );
-    const titleContext = t('learn.github-link');
+    const titleContext = t('learn.source-code-link');
     return showCodeAlly ? (
       <LearnLayout>
         <Helmet title={windowTitle} />
-        <iframe
-          className='codeally-frame'
-          data-cy='codeally-frame'
-          name={`codeAlly${Date.now()}`}
-          sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+        <CodeAllyIframe
           src={`https://codeally.io/embed/?repoUrl=${url}&${goBackTo}&${envVariables}&${tempToken}&${date}`}
-          title='Editor'
         />
       </LearnLayout>
     ) : (
@@ -308,17 +304,14 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                 <Alert id='codeally-cookie-warning' variant='info'>
                   <p>{t(`intro:misc-text.enable-cookies`)}</p>
                 </Alert>
-                <Button
-                  aria-describedby='codeally-cookie-warning'
-                  block={true}
-                  bsStyle='primary'
-                  data-cy='start-codeally'
+                <CodeAllyButton
                   onClick={tryToShowCodeAlly}
-                >
-                  {challengeType === challengeTypes.codeAllyCert
-                    ? t('buttons.click-start-project')
-                    : t('buttons.click-start-course')}
-                </Button>
+                  text={
+                    challengeType === challengeTypes.codeAllyCert
+                      ? t('buttons.click-start-project')
+                      : t('buttons.click-start-course')
+                  }
+                />
                 {isSignedIn &&
                   challengeType === challengeTypes.codeAllyCert && (
                     <>
@@ -343,6 +336,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       />
                     </>
                   )}
+                <Spacer size='xxSmall' />
                 <ProjectToolPanel />
                 <br />
                 <Spacer size='medium' />

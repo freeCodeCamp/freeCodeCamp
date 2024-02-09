@@ -1,6 +1,6 @@
 ---
 id: 5900f4021000cf542c50ff14
-title: 'Problem 148: Exploring Pascal''s triangle'
+title: 'Problema 148: Explorando el triángulo de Pascal'
 challengeType: 1
 forumTopicId: 301777
 dashedName: problem-148-exploring-pascals-triangle
@@ -20,15 +20,15 @@ We can easily verify that none of the entries in the first seven rows of Pascal'
 1   6   15  20  15  6   1
 ```
 
-However, if we check the first one hundred rows, we will find that only 2361 of the 5050 entries are not divisible by 7.
+Sin embargo, si comprobamos las primeras cien filas, encontramos que solo 2361 de las 5050 entradas no son divisibles para 7.
 
 # --instructions--
 
-Find the number of entries which are not divisible by 7 in the first one billion (${10}^9$) rows of Pascal's triangle.
+Encuentra el número de entradas cuales no son divisibles para 7 en los primeros mil millones (${10}^9$) de filas del triángulo de Pascal.
 
 # --hints--
 
-`entriesOfPascalsTriangle()` should return `2129970655314432`.
+`entriesOfPascalsTriangle()` debería devolver `2129970655314432`.
 
 ```js
 assert.strictEqual(entriesOfPascalsTriangle(), 2129970655314432);

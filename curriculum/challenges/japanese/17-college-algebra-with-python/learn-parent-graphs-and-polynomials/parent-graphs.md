@@ -1,6 +1,6 @@
 ---
 id: 6363d2529078df117ce4c402
-title: "Parent Graphs"
+title: "親関数"
 challengeType: 15
 videoId: 6S2QhY8rIcw
 dashedName: parent-graphs
@@ -8,15 +8,15 @@ dashedName: parent-graphs
 
 # --description--
 
-In this video, you will see what these parent graphs look like, how to modify them, and how to do this all with Python code.
+この動画では、親関数がどのようなものかを示し、それらを変更する方法、それを Python コードで行う方法を説明します。
 
-Here is the <a href="https://colab.research.google.com/drive/1uwKuaHCC2WCUFKmXW-5NqWUlEP9ak7Pz?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+この動画と合わせて<a href="https://colab.research.google.com/drive/1uwKuaHCC2WCUFKmXW-5NqWUlEP9ak7Pz?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">こちらの Colab ノートブック</a>も利用してください。
 
 # --question--
 
 ## --text--
 
-In numpy, what is the cube root of x?
+numpy での x の立方根の記述はどれですか？
 
 ## --answers--
 

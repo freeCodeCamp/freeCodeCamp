@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import Caret from '../../assets/icons/caret';
 import { Spacer } from '../helpers';
+import GreenPass from '../../assets/icons/green-pass';
 
 const POBOX = (
   <>
@@ -225,14 +226,25 @@ export const SupportBenefitsText = ({
   );
 };
 
-const BenefitsList = (): JSX.Element => {
+export const BenefitsList = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <ul>
       <li>{t('donate.support-benefits-1')}</li>
       <li>{t('donate.support-benefits-2')}</li>
       <li>{t('donate.support-benefits-3')}</li>
-      <li>{t('donate.support-benefits-4')}</li>
+      <li>
+        <Trans i18nKey='donate.support-benefits-4'>
+          <a
+            href='https://discord.gg/KVUmVXA'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            placeholder
+          </a>
+          <code>placeholder</code>
+        </Trans>
+      </li>
       <li>{t('donate.support-benefits-5')}</li>
     </ul>
   );
@@ -304,5 +316,25 @@ export const GetSupporterBenefitsText = ({
       <p>{t('donate.as-you-see')}</p>
       {!isDonating ? <p>{t('donate.get-benefits')}</p> : null}
     </>
+  );
+};
+
+export const ModalBenefitList = () => {
+  const { t } = useTranslation();
+  return (
+    <ul>
+      <li>
+        <GreenPass aria-disabled={true} />
+        {t('donate.help-us-more-certifications')}
+      </li>
+      <li>
+        <GreenPass aria-disabled={true} />
+        {t('donate.remove-donation-popups')}
+      </li>
+      <li>
+        <GreenPass aria-disabled={true} />
+        {t('donate.help-millions-learn')}
+      </li>
+    </ul>
   );
 };

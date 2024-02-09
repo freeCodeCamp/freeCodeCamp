@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8001
-title: Sorting algorithms/Bead sort
+title: ソートアルゴリズム / ビーズソート
 challengeType: 1
 forumTopicId: 302310
 dashedName: sorting-algorithmsbead-sort
@@ -10,45 +10,45 @@ dashedName: sorting-algorithmsbead-sort
 
 A *bead sort* starts by creating a matrix of zeroes whose length is equal to the value of the largest element in the input array. The matrix is transformed by adding one to all elements between the zeroth index and the index indicated by the current element. This process is repeated, until you have filled the matrix.
 
-Iterating over the matrix, summing the number of elements greater than zero, then decreasing the value of each element by one yields the sorted array.
+行列に繰り返し処理を行って、0 より大きい要素の数を足し合わせ、それから各要素の値を 1 減らすと、ソートされた配列が得られます。
 
-**Note:** Each element in the input array is unique.
+**注:** 入力配列の各要素は一意です。
 
-Sort an array of positive integers using the Bead Sort Algorithm.
+ビーズソートアルゴリズムを使用して、正の整数の配列を並べ替えてください。
 
 # --hints--
 
-`beadSort` should be a function.
+`beadSort` は関数とします。
 
 ```js
 assert(typeof beadSort == 'function');
 ```
 
-`beadSort([25, 32, 12, 7, 20])` should return an array.
+`beadSort([25, 32, 12, 7, 20])` は配列を返す必要があります。
 
 ```js
 assert(Array.isArray(beadSort([25, 32, 12, 7, 20])));
 ```
 
-`beadSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`beadSort([25, 32, 12, 7, 20])` は `[7, 12, 20, 25, 32]` を返す必要があります。
 
 ```js
 assert.deepEqual(beadSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`beadSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`beadSort([38, 45, 35, 8, 13])` は `[8, 13, 35, 38, 45]` を返す必要があります。
 
 ```js
 assert.deepEqual(beadSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`beadSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`beadSort([43, 36, 20, 34, 24])` は `[20, 24, 34, 36, 43]` を返す必要があります。
 
 ```js
 assert.deepEqual(beadSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`beadSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`beadSort([12, 33, 26, 18, 1, 16, 38])` は `[1, 12, 16, 18, 26, 33, 38]` を返す必要があります。
 
 ```js
 assert.deepEqual(beadSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -62,7 +62,7 @@ assert.deepEqual(beadSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`beadSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`beadSort([3, 39, 48, 16, 1, 4, 29])` は `[1, 3, 4, 16, 29, 39, 48]` を返す必要があります。
 
 ```js
 assert.deepEqual(beadSort([3, 39, 48, 16, 1, 4, 29]), [

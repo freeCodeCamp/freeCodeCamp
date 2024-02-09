@@ -7,8 +7,10 @@ import {
   Col,
   Row
 } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '../helpers';
+
 import {
   PaymentContext,
   subscriptionAmounts,
@@ -25,20 +27,24 @@ type MultiTierDonationFormProps = {
   paymentContext: PaymentContext;
   isMinimalForm?: boolean;
   defaultTheme?: Themes;
+  isAnimationEnabled?: boolean;
 };
 function SelectionTabs({
   donationAmount,
   setDonationAmount,
-  setShowDonateForm
+  setShowDonateForm,
+  isAnimationEnabled
 }: {
   donationAmount: DonationAmount;
   setDonationAmount: React.Dispatch<React.SetStateAction<DonationAmount>>;
   setShowDonateForm: React.Dispatch<React.SetStateAction<boolean>>;
+  isAnimationEnabled?: boolean;
 }) {
   const { t } = useTranslation();
   const switchTab = (value: string): void => {
     setDonationAmount(Number(value) as DonationAmount);
   };
+  useFeature('aa-test-in-component');
 
   return (
     <Row
@@ -94,7 +100,9 @@ function SelectionTabs({
           data-cy='donation-tier-selection-button'
           onClick={() => setShowDonateForm(true)}
         >
-          {t('buttons.donate')}
+          {isAnimationEnabled
+            ? t('buttons.confirm-amount')
+            : t('buttons.donate')}
         </button>
         <Spacer size='medium' />
       </Col>
@@ -135,7 +143,8 @@ const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
   handleProcessing,
   setShowHeaderAndFooter,
   isMinimalForm,
-  paymentContext
+  paymentContext,
+  isAnimationEnabled
 }) => {
   const [donationAmount, setDonationAmount] = useState(defaultTierAmount);
 
@@ -152,6 +161,7 @@ const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
           donationAmount={donationAmount}
           setDonationAmount={setDonationAmount}
           setShowDonateForm={setShowDonateForm}
+          isAnimationEnabled={isAnimationEnabled}
         />
       </div>
       <div {...(!showDonateForm && { className: 'hide' })}>

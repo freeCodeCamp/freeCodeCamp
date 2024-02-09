@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f090b6c005b0e76f067
-title: Python Dictionaries
+title: Dizionari in Python
 challengeType: 11
 videoId: dnzvfimrRMg
 bilibiliIds:

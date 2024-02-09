@@ -1,6 +1,6 @@
 ---
 id: 5900f4571000cf542c50ff6a
-title: 'Problem 235: An Arithmetic Geometric sequence'
+title: '问题 235：算术几何序列'
 challengeType: 1
 forumTopicId: 301879
 dashedName: problem-235-an-arithmetic-geometric-sequence
@@ -14,7 +14,7 @@ Let $s(n) = \sum_{k=1 \ldots n} u(k)$.
 
 Find the value of $r$ for which $s(5000) = -600\\,000\\,000\\,000$.
 
-Give your answer rounded to 12 places behind the decimal point.
+将你的答案四舍五入到小数点后 12 位。
 
 # --hints--
 

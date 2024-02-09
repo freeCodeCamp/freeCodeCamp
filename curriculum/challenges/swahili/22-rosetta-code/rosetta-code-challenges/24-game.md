@@ -24,10 +24,10 @@ Implement a function that takes a string of four digits as its argument, with ea
   <li> The order of the digits when given does not have to be preserved. </li>
 </ul>
 
-| Example input                 | Example output            |
-| ----------------------------- | ------------------------- |
-| <code>solve24("4878");</code> | <code>(7-8/8)\*4</code>   |
-| <code>solve24("1234");</code> | <code>3\*1\*4\*2</code>   |
+| Example input             | Example output            |
+| ------------------------- | ------------------------- |
+| <code>solve24("4878");</code> | <code>(7-8/8)\*4</code> |
+| <code>solve24("1234");</code> | <code>3\*1\*4\*2</code> |
 | <code>solve24("6789");</code> | <code>(6\*8)/(9-7)</code> |
 | <code>solve24("1127");</code> | <code>(1+7)\*(2+1)</code> |
 

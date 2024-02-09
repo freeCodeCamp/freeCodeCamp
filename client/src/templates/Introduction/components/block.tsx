@@ -19,16 +19,7 @@ import { completedChallengesSelector } from '../../../redux/selectors';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import {
-  isCollegeAlgebraPyCert,
-  isNewJsCert,
-  isSciCompPyCert,
-  isNewRespCert
-} from '../../../utils/is-a-cert';
-import {
-  isCodeAllyPractice,
-  isFinalProject
-} from '../../../../../shared/config/challenge-types';
+import { isGridBased, isProjectBased } from '../../../utils/curriculum-layout';
 import Challenges from './challenges';
 import '../intro.css';
 
@@ -105,7 +96,6 @@ class Block extends Component<BlockProps> {
       t
     } = this.props;
 
-    const isOdinProject = blockDashedName == 'the-odin-project';
     let completedCount = 0;
 
     const challengesWithCompleted = challenges.map(({ challenge }) => {
@@ -120,13 +110,11 @@ class Block extends Component<BlockProps> {
     });
 
     const isProjectBlock = challenges.some(({ challenge }) => {
-      const isTakeHomeProject = blockDashedName === 'take-home-projects';
+      return isProjectBased(challenge.challengeType, blockDashedName);
+    });
 
-      return (
-        (isFinalProject(challenge.challengeType) ||
-          isCodeAllyPractice(challenge.challengeType)) &&
-        !isTakeHomeProject
-      );
+    const isGridBlock = challenges.some(({ challenge }) => {
+      return isGridBased(superBlock, challenge.challengeType);
     });
 
     const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock, {
@@ -209,7 +197,6 @@ class Block extends Component<BlockProps> {
               <Challenges
                 challengesWithCompleted={challengesWithCompleted}
                 isProjectBlock={isProjectBlock}
-                superBlock={superBlock}
               />
             )}
           </div>
@@ -238,7 +225,6 @@ class Block extends Component<BlockProps> {
             <Challenges
               challengesWithCompleted={challengesWithCompleted}
               isProjectBlock={isProjectBlock}
-              superBlock={superBlock}
             />
           </div>
         </ScrollableAnchor>
@@ -300,7 +286,7 @@ class Block extends Component<BlockProps> {
               <Challenges
                 challengesWithCompleted={challengesWithCompleted}
                 isProjectBlock={isProjectBlock}
-                superBlock={superBlock}
+                isGridMap={true}
                 blockTitle={blockTitle}
               />
             )}
@@ -350,23 +336,15 @@ class Block extends Component<BlockProps> {
       </ScrollableAnchor>
     );
 
-    const shouldBeGrid = [
-      isNewRespCert(superBlock),
-      isNewJsCert(superBlock),
-      isCollegeAlgebraPyCert(superBlock),
-      isSciCompPyCert(superBlock) && !isProjectBlock
-    ].some(Boolean);
-
     const blockrenderer = () => {
-      if (isProjectBlock && !isOdinProject)
-        return shouldBeGrid ? GridProjectBlock : ProjectBlock;
-      return shouldBeGrid ? GridBlock : Block;
+      if (isProjectBlock) return isGridBlock ? GridProjectBlock : ProjectBlock;
+      return isGridBlock ? GridBlock : Block;
     };
 
     return (
       <>
         {blockrenderer()}
-        {shouldBeGrid && !isProjectBlock ? null : <Spacer size='medium' />}
+        {isGridBlock && !isProjectBlock ? null : <Spacer size='medium' />}
       </>
     );
   }

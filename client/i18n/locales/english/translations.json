@@ -93,7 +93,9 @@
     "link-account": "Link Account",
     "unlink-account": "Unlink Account",
     "update-card": "Update your card",
-    "donate-now": "Donate Now"
+    "donate-now": "Donate Now",
+    "confirm-amount": "Confirm amount",
+    "skip-advertisement": "Skip Advertisement"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -128,7 +130,6 @@
     "interview-prep-heading": "Prepare for the developer interview job search:",
     "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
-    "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
     "faq": "Frequently asked questions:",
     "faqs": [
       {
@@ -199,6 +200,7 @@
     "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
     "sound-volume": "Campfire Volume:",
     "scrollbar-width": "Editor Scrollbar Width",
+    "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
       "contains invalid characters": "Username \"{{username}}\" contains invalid characters",
       "is too short": "Username \"{{username}}\" is too short",
@@ -364,7 +366,7 @@
     "assignments": "Assignments",
     "question": "Question",
     "solution-link": "Solution Link",
-    "github-link": "GitHub Link",
+    "source-code-link": "Source Code Link",
     "ms-link": "Microsoft Link",
     "submit-and-go": "Submit and go to my next challenge",
     "congratulations": "Congratulations, your code passes. Submit your code to continue.",
@@ -373,6 +375,7 @@
     "running-tests": "// running tests",
     "tests-completed": "// tests completed",
     "console-output": "// console output",
+    "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "sign-in-save": "Sign in to save your progress",
     "download-solution": "Download my solution",
     "download-results": "Download my results",
@@ -433,6 +436,7 @@
     "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead.",
     "preview-external-window": "Preview currently showing in external window.",
     "fill-in-the-blank": "Fill in the blank",
+    "blank": "blank",
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
@@ -511,7 +515,7 @@
     "progress-modal-cta-8": "Donate now to help us develop new courses on emerging tools and programming concepts.",
     "progress-modal-cta-9": "Donate now to support our math for developers curriculum.",
     "progress-modal-cta-10": "Donate now to help us develop free professional programming certifications for all.",
-    "help-us-reach-goal": "Donate now to help our charity reach our goal of 10,000 monthly supporters by 2024.",
+    "help-us-reach-20k": "Donate now to help our charity reach our goal of 20,000 monthly supporters this year.",
     "beta-certification": "This certification is currently in beta. Please consider donating to support the completion of its development.",
     "help-us-develop": "Help us develop free professional programming certifications for all.",
     "nicely-done": "Nicely done. You just completed {{block}}.",
@@ -576,12 +580,13 @@
     "other-support": "If there is some other way you'd like to support our charity and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org.",
     "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
     "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy.",
+    "flying-bear": "Illustration of an adorable teddy bear wearing a graduation cap and flying with a Supporter badge.",
     "crucial-contribution": "Your contribution will be crucial in creating resources that empower millions of people to learn new skills and support their families.",
     "support-benefits-title": "Benefits from becoming a Supporter:",
     "support-benefits-1": "No more donation prompt popups",
     "support-benefits-2": "You'll get a Supporter badge",
     "support-benefits-3": "Your profile image will get a golden halo around it",
-    "support-benefits-4": "You'll gain access to special Supporter Discord channels",
+    "support-benefits-4": "You'll gain access to special Supporter Discord channels - <0>join our Discord</0> and use the <1>/supporter</1> command to get access",
     "support-benefits-5": "And more benefits to come in 2024",
     "exclusive-features": "Here is the list of exclusive features for you as a Supporter:",
     "current-initiatives-title": "Current Initiatives:",
@@ -596,7 +601,14 @@
     "community-achivements-3": "Merged <0>2,753</0> code contributions into our open source repositories on GitHub",
     "community-achivements-4": "Translated <0>2,106,203</0> words to make our curriculum and tutorials more accessible to speakers of many world languages",
     "as-you-see": "As you can see, we're getting things done. So you can rest assured that we'll put your donations to good use.",
-    "get-benefits": "Get the benefits and the knowledge that you’re helping our charity change education for the better. Become a Supporter today."
+    "get-benefits": "Get the benefits and the knowledge that you’re helping our charity change education for the better. Become a supporter today.",
+    "modal-benefits-title": "Support us",
+    "help-us-more-certifications": "Help us build more certifications",
+    "remove-donation-popups": "Remove donation popups",
+    "help-millions-learn": "Help millions of people learn",
+    "reach-goals-faster": "Reach your goals faster",
+    "remove-distractions": "Remove distractions",
+    "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world."
   },
   "report": {
     "sign-in": "You need to be signed in to report a user",
@@ -913,6 +925,7 @@
       "responsive-web-design": "Responsive Web Design Certification",
       "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
       "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures Certification",
       "Front End Development Libraries": "Front End Development Libraries",
       "front-end-development-libraries": "Front End Development Libraries Certification",
       "Data Visualization": "Data Visualization",
