@@ -329,7 +329,10 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                   )}
                 <Alert variant='info'>
                   <p>
-                    <Trans i18nKey='learn.gitpod.continue-project'>
+                    <Trans
+                      values={{ course: title }}
+                      i18nKey='learn.gitpod.continue-project'
+                    >
                       <a
                         href='https://gitpod.io/workspaces'
                         rel='noopener noreferrer'
@@ -351,7 +354,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                 </Alert>
                 {isSignedIn && (
                   <Alert variant='danger'>
-                    {t('learn.gitpod.logout-warning')}
+                    {t('learn.gitpod.logout-warning', { course: title })}
                   </Alert>
                 )}
                 <CodeAllyButton
