@@ -271,6 +271,8 @@ function sellWeapon() {
   }
 }
 
+let fighting;
+
 function fightSlime() {
   fighting = 0;
   goFight();
