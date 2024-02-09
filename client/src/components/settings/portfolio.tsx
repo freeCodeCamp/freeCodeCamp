@@ -228,6 +228,11 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       this.validationImages[id] = validationImage;
     } else if (this.validationImages[id].src !== encodeURI(image)) {
       this.validationImages[id].src = encodeURI(image);
+    } else if (this.state.imageValidation && this.state.imageValidation[id]) {
+      return {
+        state: this.state.imageValidation[id]?.state,
+        message: this.state.imageValidation[id]?.message
+      };
     }
     return {
       state: state,
@@ -241,7 +246,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
         imageValidation: {
           ...prevState.imageValidation,
           [id]: {
-            state: 'warning',
+            state: 'error',
             message: this.props.t('validation.url-not-image')
           }
         }
@@ -272,6 +277,8 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       urlState,
       descriptionState,
       imageState,
+      this.state.imageValidation &&
+        this.state.imageValidation[id]?.state == 'error',
       urlIsValid
     ].some(state => state === 'error' || false);
 
