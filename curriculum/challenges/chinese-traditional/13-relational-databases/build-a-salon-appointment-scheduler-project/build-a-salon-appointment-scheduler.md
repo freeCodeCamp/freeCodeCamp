@@ -4,7 +4,6 @@ title: 創建一個沙龍預約安排程序
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-salon-appointment-scheduler
-coderoadTutorial: https%3A%2F%2Fraw.githubusercontent.com%2FfreeCodeCamp%2Flearn-salon-appointment-scheduler%2Fmain%2Ftutorial.json
 dashedName: build-a-salon-appointment-scheduler
 ---
 

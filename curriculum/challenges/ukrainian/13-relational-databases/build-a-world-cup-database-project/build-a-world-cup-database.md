@@ -4,7 +4,6 @@ title: Створіть базу даних «Чемпіонат світу»
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-world-cup-database
-coderoadTutorial: https%3A%2F%2Fraw.githubusercontent.com%2FfreeCodeCamp%2Flearn-world-cup-database%2Fmain%2Ftutorial.json
 dashedName: build-a-world-cup-database
 ---
 
