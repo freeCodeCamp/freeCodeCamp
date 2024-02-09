@@ -4,11 +4,9 @@ import { Alert } from '@freecodecamp/ui';
 import { useFeature } from '@growthbook/growthbook-react';
 import Spacer from '../../components/helpers/spacer';
 
-export function CodeAllyDown(): JSX.Element | null {
-  const codeAllyDownFeature = useFeature('codeally_down');
+const Down = () => {
   const { t } = useTranslation();
-
-  return codeAllyDownFeature.on ? (
+  return (
     <Alert variant='danger'>
       <p>
         <Trans i18nKey='intro:misc-text.course-maintenance'>
@@ -24,5 +22,63 @@ export function CodeAllyDown(): JSX.Element | null {
       <Spacer size='small' />
       <p>{t('intro:misc-text.progress-wont-save')}</p>
     </Alert>
+  );
+};
+
+const DisablingSoon = () => {
+  const { t } = useTranslation();
+  return (
+    <Alert variant='danger'>
+      <p>{t('intro:misc-text.course-disabling-soon')}</p>
+      <Spacer size='small' />
+      <p>
+        <Trans i18nKey='intro:misc-text.run-locally'>
+          <a
+            href='https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad'
+            rel='noreferrer'
+            target='_blank'
+          >
+            placeholder
+          </a>
+        </Trans>
+      </p>
+      <Spacer size='small' />
+      <p>{t('intro:misc-text.progress-wont-save')}</p>
+    </Alert>
+  );
+};
+
+const Disabled = () => {
+  const { t } = useTranslation();
+  return (
+    <Alert variant='danger'>
+      <p>
+        <Trans i18nKey='intro:misc-text.course-disabled'>
+          <a
+            href='https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad'
+            rel='noreferrer'
+            target='_blank'
+          >
+            placeholder
+          </a>
+        </Trans>
+      </p>
+      <Spacer size='small' />
+      <p>{t('intro:misc-text.progress-wont-save')}</p>
+    </Alert>
+  );
+};
+
+export function CodeAllyDown(): JSX.Element | null {
+  const codeAllyDownFeature = useFeature('codeally_down');
+  const codeAllyDisablingSoonFeature = useFeature('codeally_disabling_soon');
+  const codeAllyDisabledFeature = useFeature('codeally_disabled');
+
+  return codeAllyDisabledFeature.on ? (
+    <Disabled />
+  ) : codeAllyDisablingSoonFeature.on ? (
+    <DisablingSoon />
+  ) : codeAllyDownFeature.on ? (
+    <Down />
   ) : null;
 }

@@ -1,12 +1,14 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { isOldRespCert, isRelationalDbCert } from '../../../utils/is-a-cert';
 import { Link } from '../../../components/helpers';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import envData from '../../../../config/env.json';
+import { GitpodNote } from '../../../components/growth-book/gitpod-note';
 
 const { clientLocale } = envData;
 
@@ -16,8 +18,9 @@ interface LegacyLinksProps {
 
 function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
   const { t } = useTranslation();
+  const codeAllyDisabledFeature = useFeature('codeally_disabled');
 
-  if (isOldRespCert(superBlock))
+  if (isOldRespCert(superBlock)) {
     return (
       <>
         <Alert variant='info'>
@@ -30,7 +33,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
         </Alert>
       </>
     );
-  else if (isRelationalDbCert(superBlock))
+  } else if (isRelationalDbCert(superBlock)) {
     return (
       <>
         <CodeAllyDown />
@@ -39,20 +42,28 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
             <p>{t('intro:misc-text.english-only')}</p>
           </Alert>
         )}
-        <Alert variant='info'>
-          <p>
-            <Link
-              external={true}
-              sameTab={false}
-              to={`https://forum.freecodecamp.org/t/how-to-troubleshoot-the-web-version-of-the-relational-database-curriculum/500231`}
-            >
-              {t('intro:misc-text.read-database-cert-article')}
-            </Link>
-          </p>
-        </Alert>
+        {codeAllyDisabledFeature.on ? null : (
+          <Alert variant='info'>
+            <p>
+              <Link
+                external={true}
+                sameTab={false}
+                to={`https://forum.freecodecamp.org/t/how-to-troubleshoot-the-web-version-of-the-relational-database-curriculum/500231`}
+              >
+                {t('intro:misc-text.read-database-cert-article')}
+              </Link>
+            </p>
+          </Alert>
+        )}
       </>
     );
-  else return <></>;
+  } else {
+    return (
+      <>
+        <GitpodNote superBlock={superBlock} />
+      </>
+    );
+  }
 }
 
 export default LegacyLinks;
