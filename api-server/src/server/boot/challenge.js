@@ -359,10 +359,7 @@ export function isValidChallengeCompletion(req, res, next) {
   // - `solution` needs to exist, but does not have to be valid URL
   // - `githubLink` needs to exist and be valid URL
   if (challengeType === challengeTypes.backEndProject) {
-    if (!solution || !githubLink) {
-      log('isObjectId', id, ObjectID.isValid(id));
-      return res.status(403).json(isValidChallengeCompletionErrorMsg);
-    } else if (!isURL(githubLink)) {
+    if (!solution || !isURL(githubLink + '')) {
       log('isObjectId', id, ObjectID.isValid(id));
       return res.status(403).json(isValidChallengeCompletionErrorMsg);
     }
