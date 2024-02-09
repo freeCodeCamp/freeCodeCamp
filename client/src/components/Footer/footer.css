@@ -45,6 +45,7 @@
 .site-footer .col-header,
 .trending-guides .col-header {
   text-align: center;
+  font-family: var(--font-family-sans-serif);
   font-weight: 700;
   font-size: 16px;
   padding: 0 15px 15px;
@@ -90,7 +91,7 @@
 .footer-desc-col {
   padding-inline: 15px;
   margin-bottom: 30px;
-  align-self: center;
+  align-self: start;
 }
 
 .footer-desc-col a {
