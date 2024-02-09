@@ -3,8 +3,7 @@ id: 602d9ff222201c65d2a019f2
 title: Build a Periodic Table Database
 challengeType: 13
 helpCategory: Backend Development
-url: https://github.com/freeCodeCamp/learn-periodic-table-database
-coderoadTutorial: https%3A%2F%2Fraw.githubusercontent.com%2FfreeCodeCamp%2Flearn-periodic-table-database%2Fmain%2Ftutorial.json
+url: freeCodeCamp/learn-periodic-table-database
 dashedName: build-a-periodic-table-database
 ---
 

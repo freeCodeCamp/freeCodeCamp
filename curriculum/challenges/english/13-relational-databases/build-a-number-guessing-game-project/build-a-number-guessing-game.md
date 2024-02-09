@@ -3,8 +3,7 @@ id: 602da04c22201c65d2a019f4
 title: Build a Number Guessing Game
 challengeType: 13
 helpCategory: Backend Development
-url: https://github.com/freeCodeCamp/learn-number-guessing-game
-coderoadTutorial: https%3A%2F%2Fraw.githubusercontent.com%2FfreeCodeCamp%2Flearn-number-guessing-game%2Fmain%2Ftutorial.json
+url: freeCodeCamp/learn-number-guessing-game
 dashedName: build-a-number-guessing-game
 ---
 

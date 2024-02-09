@@ -169,14 +169,18 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     const {
       data: {
         challengeNode: {
-          challenge: { url, coderoadTutorial }
+          challenge: { url }
         }
       }
     } = this.props;
 
+    const repoUrl = `https://github.com/${url}`;
+    const coderoadTutorial = encodeURIComponent(
+      `https://raw.githubusercontent.com/${url}/main/tutorial.json`
+    );
     const gitpodDomain = `https://gitpod.io/?autostart=true#CODEROAD_TUTORIAL_URL=${coderoadTutorial},CODEROAD_DISABLE_RUN_ON_SAVE=true`;
     const tokenEnv = userToken ? `,CODEROAD_WEBHOOK_TOKEN=${userToken}` : '';
-    const gitpodUrl = `${gitpodDomain}${tokenEnv}/${url}`;
+    const gitpodUrl = `${gitpodDomain}${tokenEnv}/${repoUrl}`;
 
     window.open(gitpodUrl, '_blank');
   };
@@ -424,7 +428,6 @@ export const query = graphql`
         title
         translationPending
         url
-        coderoadTutorial
       }
     }
   }

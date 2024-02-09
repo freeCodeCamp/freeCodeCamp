@@ -78,7 +78,6 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   block
                   certification
                   challengeType
-                  coderoadTutorial
                   dashedName
                   disableLoopProtectTests
                   disableLoopProtectPreview
@@ -333,7 +332,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Challenge {
       audioPath: String
       challengeFiles: [FileContents]
-      coderoadTutorial: String
       notes: String
       url: String
       assignments: [String]
