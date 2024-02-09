@@ -1,0 +1,89 @@
+{
+  "name": "refactor-bst",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "refactor-bst",
+  "order": 50,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "scientific-computing-with-python",
+  "superOrder": 10,
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "65c4eb814cc977c95cd7df0e",
+      "title": "Step 1"
+    },
+    {
+      "id": "65c4ef8463f869d0eaf87c67",
+      "title": "Step 2"
+    },
+    {
+      "id": "65c4f013851cefd1a4fe4c96",
+      "title": "Step 3"
+    },
+    {
+      "id": "65c4f02dbd3557d23f12db62",
+      "title": "Step 4"
+    },
+    {
+      "id": "65c4f07da204f4d2f325fbd3",
+      "title": "Step 5"
+    },
+    {
+      "id": "65c4f09e074dd8d37830ea00",
+      "title": "Step 6"
+    },
+    {
+      "id": "65c4f0b82db314d3fcc0b8e1",
+      "title": "Step 7"
+    },
+    {
+      "id": "65c4f0d32ca17ad4b1636b0e",
+      "title": "Step 8"
+    },
+    {
+      "id": "65c4f195de7e2ad5932be717",
+      "title": "Step 9"
+    },
+    {
+      "id": "65c4f22498d22ed775ef8efb",
+      "title": "Step 10"
+    },
+    {
+      "id": "65c4f2851645e8d84d14f5d1",
+      "title": "Step 11"
+    },
+    {
+      "id": "65c4f2b7178afed8e88f782f",
+      "title": "Step 12"
+    },
+    {
+      "id": "65c4f2d9fd872fd99ac659dd",
+      "title": "Step 13"
+    },
+    {
+      "id": "65c4f300da28d8da361bfa93",
+      "title": "Step 14"
+    },
+    {
+      "id": "65c4f3258d2e4cdacc919dfd",
+      "title": "Step 15"
+    },
+    {
+      "id": "65c4f33bc3c3d8db7f732787",
+      "title": "Step 16"
+    },
+    {
+      "id": "65c4f37ba6cbcfdc77e24165",
+      "title": "Step 17"
+    },
+    {
+      "id": "65c4f3aee69d11dcfdbcfc00",
+      "title": "Step 18"
+    }
+  ],
+  "helpCategory": "Python"
+}
