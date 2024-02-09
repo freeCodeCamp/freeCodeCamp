@@ -760,6 +760,6 @@ userData?.songs.sort((a,b) => {
   return 0;
 });
 
-renderSongs(userData?.songs);
+renderSongs(sortSongs());
 setPlayButtonAccessibleText();
 ```
