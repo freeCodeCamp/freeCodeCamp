@@ -31,6 +31,7 @@ type PortfolioProps = {
 type PortfolioState = {
   portfolio: PortfolioProjectData[];
   unsavedItemId: string | null;
+  imageValidation?: Record<string, ProfileValidation>;
 };
 
 interface ProfileValidation {
@@ -53,15 +54,18 @@ function createFindById(id: string) {
 }
 
 class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
+  validationImages: Record<string, HTMLImageElement>;
   static displayName: string;
   constructor(props: PortfolioProps) {
     super(props);
 
     const { portfolio = [] } = props;
+    this.validationImages = {};
 
     this.state = {
       portfolio: [...portfolio],
-      unsavedItemId: null
+      unsavedItemId: null,
+      imageValidation: {}
     };
   }
 
@@ -94,6 +98,16 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
 
   handleAdd = () => {
     const item = createEmptyPortfolioItem();
+
+    if (!this.validationImages[item.id]) {
+      const validationImage = new Image();
+      validationImage.addEventListener(
+        'error',
+        this.imageValidationErrorEvent(item.id)
+      );
+      this.validationImages[item.id] = validationImage;
+    }
+
     this.setState(state => ({
       portfolio: [item, ...state.portfolio],
       unsavedItemId: item.id
@@ -101,6 +115,14 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
   };
 
   handleRemoveItem = (id: string) => {
+    if (!this.validationImages[id]) {
+      this.validationImages[id].removeEventListener(
+        'error',
+        this.imageValidationErrorEvent(id)
+      );
+      delete this.validationImages[id];
+    }
+
     this.setState(
       state => ({
         portfolio: state.portfolio.filter(p => p.id !== id)
@@ -178,9 +200,53 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
         message: t('validation.url-not-image')
       };
     }
-    return isURL(maybeUrl)
+    return isURL(maybeUrl, { require_protocol: true })
       ? { state: 'success', message: '' }
       : { state: 'warning', message: t('validation.use-valid-url') };
+  }
+
+  getImageValidation(image: string, id: string) {
+    const { state, message } = this.getUrlValidation(image, true);
+    if (!this.validationImages[id] && this.state.imageValidation) {
+      this.setState(prevState => ({
+        imageValidation: {
+          ...prevState.imageValidation,
+          [id]: {
+            state: state as 'success' | 'warning' | 'error' | null | undefined,
+            message: message
+          }
+        }
+      }));
+    }
+
+    if (!this.validationImages[id]) {
+      const validationImage = new Image();
+      validationImage.addEventListener(
+        'error',
+        this.imageValidationErrorEvent(id)
+      );
+      this.validationImages[id] = validationImage;
+    } else if (this.validationImages[id].src !== encodeURI(image)) {
+      this.validationImages[id].src = encodeURI(image);
+    }
+    return {
+      state: state,
+      message: message
+    };
+  }
+
+  imageValidationErrorEvent(id: string) {
+    return () => {
+      this.setState(prevState => ({
+        imageValidation: {
+          ...prevState.imageValidation,
+          [id]: {
+            state: 'warning',
+            message: this.props.t('validation.url-not-image')
+          }
+        }
+      }));
+    };
   }
 
   formCorrect(portfolio: PortfolioProjectData) {
@@ -191,10 +257,8 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     const { state: urlState, message: urlMessage } = this.getUrlValidation(url);
     const { state: descriptionState, message: descriptionMessage } =
       this.getDescriptionValidation(description);
-    const { state: imageState, message: imageMessage } = this.getUrlValidation(
-      image,
-      true
-    );
+    const { state: imageState, message: imageMessage } =
+      this.getImageValidation(image, id);
     const pristine = this.isFormPristine(id);
 
     const urlIsValid = !isURL(url, {
@@ -303,7 +367,13 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           </FormGroup>
           <FormGroup
             controlId={`${id}-image`}
-            validationState={pristine ? null : imageState}
+            validationState={
+              pristine
+                ? null
+                : this.state.imageValidation && this.state.imageValidation[id]
+                  ? this.state.imageValidation[id].state
+                  : imageState
+            }
           >
             <ControlLabel htmlFor={`${id}-image-input`}>
               {t('settings.labels.image')}
@@ -315,8 +385,14 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               data-cy='portfolio-image'
               id={`${id}-image-input`}
             />
-            {imageMessage ? (
-              <HelpBlock data-cy='validation-message'>{imageMessage}</HelpBlock>
+            {this.state.imageValidation && this.state.imageValidation[id] ? (
+              this.state.imageValidation[id].message
+            ) : imageMessage ? (
+              <HelpBlock data-cy='validation-message'>
+                {this.state.imageValidation && this.state.imageValidation[id]
+                  ? this.state.imageValidation[id].message
+                  : imageMessage}
+              </HelpBlock>
             ) : null}
           </FormGroup>
           <FormGroup
