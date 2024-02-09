@@ -16,6 +16,7 @@ import { GeneratedExam } from './exam-types';
 describe('Exam helpers', () => {
   describe('generateRandomExam()', () => {
     const randomizedExam: GeneratedExam = generateRandomExam(examJson as Exam);
+    console.log('writing a test');
 
     it('should have three questions', () => {
       expect(randomizedExam.length).toBe(3);
