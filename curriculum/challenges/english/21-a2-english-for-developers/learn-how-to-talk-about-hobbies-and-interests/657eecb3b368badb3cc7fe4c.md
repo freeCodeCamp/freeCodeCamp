@@ -8,20 +8,20 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 <!--
 AUDIO REFERENCE: 
-Sarah: Are you kidding? I go to at least one convention every year. It's the best moment of the year to me!
+Sarah: I go to at least one convention every year.
 -->
 
 # --description--
 
-The expression `at least` is used to indicate a minimum or lowest quantity or degree.
+The expression `at least` is used when you want to say the smallest amount or number of something is okay or enough. It's like saying "no less than this amount".
+
+For example, if you say, `I study English for at least 30 minutes every day`, it means you spend 30 minutes or more studying English daily, but never less than 30 minutes.
 
 # --fillInTheBlank--
 
 ## --sentence--
 
-`James: I didn't know you had these geeky interests.`
-
-`Sarah: Are you kidding? I go to _ _ one convention every year. It's the best moment of the year to me!`
+`I go to _ _ one convention every year.`
 
 ## --blanks--
 

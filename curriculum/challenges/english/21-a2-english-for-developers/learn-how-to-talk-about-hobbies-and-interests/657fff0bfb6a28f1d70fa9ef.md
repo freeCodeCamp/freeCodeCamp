@@ -15,6 +15,8 @@ Tom: Thanks for the invite, Sarah. I appreciate it, but I'm not really into sci-
 
 The expression `I appreciate it, but` is used to express gratitude for an offer or gesture while politely declining or stating a personal limitation or preference.
 
+For example, if your friend offers to help you with coding challenge, and you're thankful but want to try it on your own first, you might say, `I appreciate it, but I want to give it a shot by myself first.`
+
 # --fillInTheBlank--
 
 ## --sentence--

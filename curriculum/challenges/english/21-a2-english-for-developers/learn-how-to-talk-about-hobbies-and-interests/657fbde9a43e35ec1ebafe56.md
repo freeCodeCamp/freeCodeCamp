@@ -3,11 +3,17 @@ id: 657fbde9a43e35ec1ebafe56
 title: Task 78
 challengeType: 19
 dashedName: task-78
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
+
+<!--
+AUDIO REFERENCE: 
+Sarah: There's a big convention next month. Would you like to come?
+-->
 
 # --description--
 
-The expression `Would you like to come?` is used to invite someone to an event or activity in a friendly manner.
+Listen to the audio and answer the question.
 
 # --question--
 

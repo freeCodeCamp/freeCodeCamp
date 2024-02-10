@@ -8,20 +8,20 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 <!--
 AUDIO REFERENCE: 
-Sarah: Are you kidding? I go to at least one convention every year. It's the best moment of the year to me!
+Sarah: Are you kidding?
 -->
 
 # --description--
 
 The expression `Are you kidding?` is used to express disbelief, surprise, or sometimes to confirm if someone is joking.
 
+If your friend tells you they saw a dog riding a skateboard down the street, you might be surprised and say `Are you kidding?` to ask if they're really serious or just joking.
+
 # --fillInTheBlank--
 
 ## --sentence--
 
-`James: I didn't know you had these geeky interests.`
-
-`Sarah: Are you _? I go to at least one convention every year. It's the best moment of the year to me!`
+`Sarah: Are you _?`
 
 ## --blanks--
 
