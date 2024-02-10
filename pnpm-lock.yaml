@@ -859,8 +859,8 @@ importers:
         specifier: 6.12.7
         version: 6.12.7
       '@types/react-redux':
-        specifier: 7.1.30
-        version: 7.1.30
+        specifier: 7.1.33
+        version: 7.1.33
       '@types/react-responsive':
         specifier: 8.0.8
         version: 8.0.8
@@ -11015,8 +11015,8 @@ packages:
       '@types/react-instantsearch-core': 6.26.10
     dev: true
 
-  /@types/react-redux@7.1.30:
-    resolution: {integrity: sha512-i2kqM6YaUwFKduamV6QM/uHbb0eCP8f8ZQ/0yWf+BsAVVsZPRYJ9eeGWZ3uxLfWwwA0SrPRMTPTqsPFkY3HZdA==}
+  /@types/react-redux@7.1.33:
+    resolution: {integrity: sha512-NF8m5AjWCkert+fosDsN3hAlHzpjSiXlVy9EgQEmLoBhaNXbmyeGs/aj5dQzKuF+/q+S7JQagorGDW8pJ28Hmg==}
     dependencies:
       '@types/hoist-non-react-statics': 3.3.2
       '@types/react': 16.14.51
@@ -27710,7 +27710,7 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.20.13
-      '@types/react-redux': 7.1.30
+      '@types/react-redux': 7.1.33
       hoist-non-react-statics: 3.3.2
       loose-envify: 1.4.0
       prop-types: 15.8.1
