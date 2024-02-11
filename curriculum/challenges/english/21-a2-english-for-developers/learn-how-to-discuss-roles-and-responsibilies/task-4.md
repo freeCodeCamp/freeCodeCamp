@@ -8,31 +8,41 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 <!--
 AUDIO REFERENCE:
-Bob: Hey, have you met Anna yet? She's now in charge of the HR department.
+Sophie: No, I haven’t seen her yet.
 -->
 
 # --description--
 
-Fill in blanks with words that you have already learned.
+The present perfect tense negative form is used to talk about things that have not happened at any time up until now. It's formed using `have not` or `has not` (`haven't`/`hasn't`) followed by the past participle of the verb.
+
+For example: `I haven't finished my homework yet.` or `She hasn't called me back.`
 
 # --fillInTheBlank--
 
 ## --sentence--
 
-`Hey, have you met Anna _? She's now in _ of the HR department.`
+`No, I _ _ her _.`
 
 ## --blanks--
+
+`haven't`
+
+### --feedback--
+
+It's the contraction of `have not` used to make a negative statement in the present perfect tense.
+
+---
+
+`seen`
+
+### --feedback--
+
+It's the past participle of `see` used to indicate the action of seeing someone has not occurred.
+
+---
 
 `yet`
 
 ### --feedback--
 
-This word is often used in questions to ask if something has happened up to the present time.
-
----
-
-`charge`
-
-### --feedback--
-
-This word indicates a position of control or responsibility.
+It's used at the end of a negative present perfect sentence to imply something that hasn't happened up to the present moment.

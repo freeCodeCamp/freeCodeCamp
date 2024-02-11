@@ -3,45 +3,51 @@ id: 65b2301790bb3c256a5787a3
 title: Task 7
 challengeType: 19
 dashedName: task-7
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
+
+<!--
+AUDIO REFERENCE: 
+Bob: She's now in charge of the HR department.
+-->
 
 # --description--
 
-When describing someone's appearance, you often use `with` followed by a feature. For example, `with glasses` for someone who wears glasses, `with curly hair` for someone who has curly hair, or `with a blue jacket` for someone wearing a blue jacket.
+Listen to the audio and choose the right answer.
 
 # --question--
 
 ## --text--
 
-If a character in a book is introduced as `the woman with red hair and green eyes`, how is she being described?
+What does Bob's statement tell us about the woman?
 
 ## --answers--
 
-She has red hair and green eyes.
+She is responsible for the HR department.
 
 ---
 
-She has short, brown hair.
+She works in the HR department.
 
 ### --feedback--
 
-The description given specifies red hair and green eyes, not short, brown hair.
+While she does work there, Bob's statement specifically tells us about her role as the leader, not just a member.
 
 ---
 
-She is wearing a red dress.
+She is new to the HR department.
 
 ### --feedback--
 
-The description focuses on her hair and eye color, not her clothing.
+Bob's statement focuses on her responsibility, not how long she's been part of the department.
 
 ---
 
-She never wears makeup.
+She is looking for a job in the HR department.
 
 ### --feedback--
 
-The description provides details about her hair and eyes, not her makeup choices.
+Bob's statement indicates she already has a significant role, not that she is seeking employment.
 
 ## --video-solution--
 

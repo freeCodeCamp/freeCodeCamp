@@ -5,44 +5,49 @@ challengeType: 19
 dashedName: task-5
 ---
 
+<!--
+AUDIO REFERENCE:
+Sophie: No, I haven’t seen her yet.
+-->
+
 # --description--
 
-The phrase `in her early 40s` is used to describe someone's age. This way of describing age helps to give a general idea without specifying the exact number. It's common to use terms like `early`, `mid`, and `late` to describe different parts of a decade in age.
+Listening and choose the right answer.
 
 # --question--
 
 ## --text--
 
-What does `in her early 40s` imply about a person's age?
+What does Sophie mean?
 
 ## --answers--
 
-The person is in her late 30s.
-
-### --feedback--
-
-`Early 40s` suggests the age range is just above 40, not in the late 30s.
+She has not seen someone up to this moment.
 
 ---
 
-The person is between 40 and 43 years old.
-
----
-
-The person is just turning 40.
+She saw someone a long time ago.
 
 ### --feedback--
 
-`Early 40s` implies a range of a few years after turning 40, not just turning 40.
+Sophie's use of the present perfect tense negative indicates the action hasn't happened, not that it happened in the past.
 
 ---
 
-The person is almost 50.
+She sees someone regularly.
 
 ### --feedback--
 
-`Early 40s` is not nearing 50.
+Sophie's statement indicates the absence of an meeting, not a regular meeting.
+
+---
+
+She will never see the person.
+
+### --feedback--
+
+The use of `yet` implies the possibility of seeing the person in the future, not that it will never happen.
 
 ## --video-solution--
 
-2
+1

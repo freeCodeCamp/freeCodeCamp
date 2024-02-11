@@ -7,39 +7,46 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
-AUDIO REFERENCE:
+AUDIO REFERENCE: 
 Bob: She is a tall woman in her early 40s, with long blond hair and glasses.
 -->
 
 # --description--
-Describing people physically often involves using adjectives like `tall`, `short`, `young`, or `old` before a noun like `woman` or `man`. These adjectives give people information about the appearance of the person being described.
+
+The structure `in + someone's early/late + numbers` is used to talk about a person's age without specifying exactly how old they are.
+
+Examples:
+
+`My brother is in his early 20s.` This gives a general idea that he is at the beginning of his twenties without specifying the exact age.
+
+`My aunt is in her late 50s.` It suggests she is towards the end of her fifties, close to turning 60, but doesn't say the precise age.
 
 # --fillInTheBlank--
 
 ## --sentence--
 
-`She is a _ woman _ her early 40s, _ long blond hair and glasses.`
+`She is a tall woman _ _ _ 40s, with long blond hair and glasses.`
 
 ## --blanks--
-
-`tall`
-
-### --feedback--
-
-This word describes someone's height as above average.
-
----
 
 `in`
 
 ### --feedback--
 
-This word is used here to specify a time frame related to age.
+It starts the phrase to indicate the period of age.
 
 ---
 
-`with`
+`her`
 
 ### --feedback--
 
-This word indicates possession or presence of certain features, like hair and glasses.
+It shows that you are talking about the woman's age.
+
+---
+
+`early`
+
+### --feedback--
+
+It indicates the lower end of the 40s age range.

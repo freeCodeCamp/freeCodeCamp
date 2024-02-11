@@ -3,46 +3,52 @@ id: 65b22c705b53e41be902b63b
 title: Task 3
 challengeType: 19
 dashedName: task-3
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
+
+<!--
+AUDIO REFERENCE: 
+Bob: Hey, have you met Anna yet?
+-->
 
 # --description--
 
-The phrase `in charge of` is used to describe having control or responsibility for something or someone. It indicates that a person has the authority to make decisions and manage a situation, project, group, or organization.
+The word `yet` is often used in questions and negative statements in the present perfect tense to talk about something that hasn't happened up to the present moment but is expected to happen. It's a way to ask or say if something has occurred or not until now.
 
 # --question--
 
 ## --text--
 
-What does `in charge of` imply in a sentence like `She is in charge of the marketing department`?
+What does Bob want to know by using `yet` in his question?
 
 ## --answers--
 
-She works in the marketing department.
-
-### --feedback--
-
-Working in a department does not necessarily mean being responsible for managing it.
+If the person has met Anna at any time up until now
 
 ---
 
-She leads and manages the marketing department.
-
----
-
-She occasionally helps out in the marketing department.
+If the person has never heard of Anna
 
 ### --feedback--
 
-Being `in charge of` implies a regular and authoritative role, not occasional assistance.
+Bob's use of `yet`` implies he's asking about meeting Anna, not about hearing of her.
 
 ---
 
-She has no connection to the marketing department.
+If Anna is planning to meet the person later
 
 ### --feedback--
 
-The phrase directly implies a significant and managerial connection to the department.
+The use of `yet` asks about something that might have already happened, not about future plans.
+
+---
+
+If meeting Anna is not possible
+
+### --feedback--
+
+`Yet` suggests the action could still happen, not that it's impossible.
 
 ## --video-solution--
 
-2
+1
