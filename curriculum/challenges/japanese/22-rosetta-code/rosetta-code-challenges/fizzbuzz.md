@@ -12,8 +12,8 @@ Write a program that generates an array of integers from 1 to 100 (inclusive). B
 
 <ul>
     <li>for multiples of 3, add <code>"Fizz"</code> to the array instead of the number</li>
-    <li>5の倍数の場合は、数値ではなく、<code>"Buzz"</code> を配列に 追加します</li>
-    <li>3と5の倍数の場合は、数値ではなく、<code>"FizzBuzz"</code> を配列に 追加します</li>
+    <li>5 の倍数の場合は、数値ではなく、<code>"Buzz"</code> を配列に 追加します</li>
+    <li>3 と 5 の倍数の場合は、数値ではなく、<code>"FizzBuzz"</code> を配列に追加します</li>
 </ul>
 
 # --instructions--
@@ -34,25 +34,25 @@ assert(typeof fizzBuzz == 'function');
 assert(Array.isArray(fizzBuzz()) == true);
 ```
 
-3 でのみ割り切れる数値は、 `"Fizz"` を返す必要があります。
+3 でのみ割り切れる数値は、`"Fizz"` を返す必要があります。
 
 ```js
 assert.equal(fizzBuzz()[2], 'Fizz');
 ```
 
-5 でのみ割り切れる数値は、 `"Buzz"` を返す必要があります。
+5 でのみ割り切れる数値は、`"Buzz"` を返す必要があります。
 
 ```js
 assert.equal(fizzBuzz()[99], 'Buzz');
 ```
 
-3と5 の両方で割り切れる数値は、 `"FizzBuzz"` を返す必要があります。
+3 と 5 の両方で割り切れる数値は、`"FizzBuzz"` を返す必要があります。
 
 ```js
 assert.equal(fizzBuzz()[89], 'FizzBuzz');
 ```
 
-3 または 5のいずれでも割り切れない数値は、その数値自体を返す必要があります。
+3 または 5 のいずれでも割り切れない数値は、その数値自体を返す必要があります。
 
 ```js
 assert.equal(fizzBuzz()[12], 13);

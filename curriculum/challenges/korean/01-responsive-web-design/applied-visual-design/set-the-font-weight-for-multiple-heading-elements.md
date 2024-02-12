@@ -1,6 +1,6 @@
 ---
 id: 587d781c367417b2b2512ac3
-title: Set the font-weight for Multiple Heading Elements
+title: 여러 헤딩 요소들의 폰트 사이즈를 설정합니다.
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/crVWRHq'
 forumTopicId: 301069
@@ -9,47 +9,47 @@ dashedName: set-the-font-weight-for-multiple-heading-elements
 
 # --description--
 
-You set the `font-size` of each heading tag in the last challenge, here you'll adjust the `font-weight`.
+지난 과제에서 각각의 제목 태그의 `font-size`를 설정했습니다. 여기에서는 `font-weight`를 조정합니다.
 
-The `font-weight` property sets how thick or thin characters are in a section of text.
+`font-weight` 속성은 텍스트 영역에서 문자의 굵기를 설정합니다.
 
 # --instructions--
 
-<ul><li>Set the <code>font-weight</code> of the <code>h1</code> tag to 800.</li><li>Set the <code>font-weight</code> of the <code>h2</code> tag to 600.</li><li>Set the <code>font-weight</code> of the <code>h3</code> tag to 500.</li><li>Set the <code>font-weight</code> of the <code>h4</code> tag to 400.</li><li>Set the <code>font-weight</code> of the <code>h5</code> tag to 300.</li><li>Set the <code>font-weight</code> of the <code>h6</code> tag to 200.</li></ul>
+<ul><li><code>h1</code>태그의 <code>font-weight</code>를 800으로 설정합니다.</li><li><code>h2</code>태그의 <code>font-weight</code>를 600으로 설정합니다.</li><li><code>h3</code>태그의 <code>font-weight</code>를 500으로 설정합니다.</li><li><code>h4</code>태그의 <code>font-weight</code>를 400으로 설정합니다.</li><li><code>h5</code>태그의 <code>font-weight</code>를 300으로 설정합니다.</li><li><code>h6</code>태그의 <code>font-weight</code>를 200으로 설정합니다.</li></ul>
 
 # --hints--
 
-Your code should set the `font-weight` property for the `h1` tag to 800.
+당신의 코드는 `h1` 태그의 `font-weight` 속성을 800으로 설정해야 합니다.
 
 ```js
 assert($('h1').css('font-weight') == '800');
 ```
 
-Your code should set the `font-weight` property for the `h2` tag to 600.
+당신의 코드는 `h2` 태그의 `font-weight` 속성을 600으로 설정해야 합니다.
 
 ```js
 assert($('h2').css('font-weight') == '600');
 ```
 
-Your code should set the `font-weight` property for the `h3` tag to 500.
+당신의 코드는 `h3` 태그의 `font-weight` 속성을 500으로 설정해야 합니다.
 
 ```js
 assert($('h3').css('font-weight') == '500');
 ```
 
-Your code should set the `font-weight` property for the `h4` tag to 400.
+당신의 코드는 `h4` 태그의 `font-weight` 속성을 400으로 설정해야 합니다.
 
 ```js
 assert($('h4').css('font-weight') == '400');
 ```
 
-Your code should set the `font-weight` property for the `h5` tag to 300.
+당신의 코드는 `h5` 태그의 `font-weight` 속성을 300으로 설정해야 합니다.
 
 ```js
 assert($('h5').css('font-weight') == '300');
 ```
 
-Your code should set the `font-weight` property for the `h6` tag to 200.
+당신의 코드는 `h6` 태그의 `font-weight` 속성을 200으로 설정해야 합니다.
 
 ```js
 assert($('h6').css('font-weight') == '200');

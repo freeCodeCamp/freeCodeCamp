@@ -1,26 +1,26 @@
 ---
 id: 647e22338acb466c97ccbeed
-title: Challenge Project - Create a Mini-Game
+title: チャレンジ プロジェクト - ミニゲームを作成する
 challengeType: 19
 dashedName: challenge-project-create-a-mini-game
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+このチャレンジには Microsoft Learn プラットフォームで実行するパートがあります。 下記の手順に従ってチャレンジを完了させてください:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/</a> and complete all the tasks for the "Challenge Project - Create a Mini-Game" module. This is **required** to earn the "Create Methods in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. <a href="https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/</a> へ移動し、「チャレンジ プロジェクト - ミニゲームを作成する (Challenge Project - Create a Mini-Game)」モジュール内のすべてのタスクを完了してください。 これは、Microsoft Learn のトロフィー「C# コンソール アプリケーションのメソッドを作成する」を獲得し、認定試験の受験資格を得るために**必須**となります。
+1. 完了後、このページに戻り、下記の質問に正しく回答してください。
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/" target="_blank" rel="noreferrer">Create a Mini-Game</a> challenge project on Microsoft Learn. Then, answer the question below.
+Microsoft Learn でチャレンジプロジェクト「<a href="https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/" target="_blank" rel="noreferrer">ミニゲームを作成する</a>」を完了させてください。 次に、下記の質問に回答してください。
 
 # --question--
 
 ## --text--
 
-A developer wants to create a method that returns a value in an array. Which of the following options would be a good choice for a method signature?
+ある開発者が、配列内の値を返すメソッドを作成しようとしています。 次のうち、メソッドシグネチャとして適切なものはどれですか？
 
 ## --answers--
 

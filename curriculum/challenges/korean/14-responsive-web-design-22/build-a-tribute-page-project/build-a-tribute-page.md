@@ -208,12 +208,12 @@ assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
     <link
       href="https://fonts.googleapis.com/css?family=Pacifico"
       rel="stylesheet"
-     
+
     />
     <link
       href="https://fonts.googleapis.com/css?family=Lobster"
       rel="stylesheet"
-     
+
     />
     <link href="styles.css" rel="stylesheet" />
     <title>Tribute Page</title>

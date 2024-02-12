@@ -14,8 +14,8 @@ In your Pug file, you're able to use a variable by referencing the variable name
 
 Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site.
 
-Take the following Pug code for example: 
- 
+Take the following Pug code for example:
+
 ```pug
 head
   script(type='text/javascript').

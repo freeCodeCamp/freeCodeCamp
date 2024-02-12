@@ -1,6 +1,6 @@
 ---
 id: 647e23188acb466c97ccbefa
-title: Choose the Correct Data Type in Your C# Code
+title: 'Choose the Correct Data Type in Your C# Code'
 challengeType: 19
 dashedName: choose-the-correct-data-type-in-your-c-sharp-code
 ---

@@ -1,6 +1,6 @@
 ---
 id: 647e230c8acb466c97ccbef9
-title: Challenge Project - Work with Variable Data in C#
+title: 'Challenge Project - Work with Variable Data in C#'
 challengeType: 19
 dashedName: challenge-project-work-with-variable-data-in-c-sharp
 ---

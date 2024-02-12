@@ -1,39 +1,39 @@
 ---
 id: 6570447de7b02272663824e0
-title: Learn Block and Inline Question B
+title: Блокові та рядкові елементи. Запитання B
 challengeType: 15
 dashedName: learn-block-and-inline-question-b
 ---
 
 # --description--
 
-Inline elements, however, do not start on a new line. They appear in line with whatever elements they are placed beside. A clear example of an inline element is a link, or `<a>` tag. If you stick one of these in the middle of a paragraph of text, it will behave like a part of the paragraph. <a  href="https://www.freecodecamp.org/" target="_blank">(Like this)</a> The link’s text will sit alongside other words in that paragraph. Additionally, padding and margin behave differently on inline elements. In general, you do not want to try to put extra padding or margin on inline elements.
+А ось рядкові елементи не починаються з нового рядка. Вони з’являються в рядку з будь-якими елементами, біля яких їх розташували. Хорошим прикладом рядкового елемента є посилання, або тег `<a>`. Якщо розмістити один з таких елементів всередині абзацу тексту, то він поводитиметься як частина абзацу. <a  href="https://www.freecodecamp.org/" target="_blank">(Ось так)</a> Текст посилання знаходитиметься між іншими словами абзацу. До того ж відступ та поле рядкових елементів поводяться по-іншому. Загалом, не намагайтесь надати додатковий відступ або поле до рядкових елементів.
 
 # --question--
 
 ## --assignment--
 
-Search the web for a list of `block` elements and a list of `inline` elements.
+Знайдіть в інтернеті список блокових (`block`) та рядкових (`inline`) елементів.
 
 ## --text--
 
-What is the difference between a `block` element and an `inline` element?
+Яка різниця між блоковими (`block`) та рядковими (`inline`) елементами?
 
 ## --answers--
 
-`block` elements are displayed without line breaks, while `inline` elements are displayed with line breaks.
+Блокові (`block`) елементи відтворюються без розірваних рядків, а рядкові (`inline`) елементи відтворюються з розірваними рядками.
 
 ---
 
-`block` elements take up the full width available, while `inline` elements only take up the space necessary for their content.
+Блокові (`block`) елементи займають всю доступну ширину, а рядкові (`inline`) елементи займають місце, необхідне для свого вмісту.
 
 ---
 
-`block` elements are always positioned horizontally, while `inline` elements are positioned vertically.
+Блокові (`block`) елементи завжди розташовані горизонтально, а рядкові (`inline`) елементи розташовані вертикально.
 
 ---
 
-`block` elements are used for small sections of text, while `inline` elements are used for larger chunks of content.
+Блокові (`block`) елементи використовують для малих розділів тексту, а рядкові (`inline`) елементи використовують для великих частин вмісту.
 
 
 ## --video-solution--

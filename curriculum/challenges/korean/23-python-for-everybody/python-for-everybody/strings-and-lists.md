@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f090b6c005b0e76f066
-title: Strings and Lists
+title: 문자열과 목록
 challengeType: 11
 videoId: lxcFa7ldCi0
 bilibiliIds:
@@ -20,7 +20,7 @@ More resources:
 
 ## --text--
 
-What does n equal in this code?
+이 코드에서 n은 무엇인가요?
 
 ```python
 words = 'His e-mail is q-lar@freecodecamp.org'

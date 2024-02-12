@@ -74,16 +74,16 @@ assert(code.match(/testObj\.\w+/g).length > 1);
 ## --seed-contents--
 
 ```js
-// Setup
+// Налаштування
 const testObj = {
   hat: "ballcap",
   shirt: "jersey",
   shoes: "cleats"
 };
 
-// Only change code below this line
-const hatValue = testObj;      // Change this line
-const shirtValue = testObj;    // Change this line
+// Змініть код лише під цим рядком
+const hatValue = testObj;      // Змініть цей рядок
+const shirtValue = testObj;    // Змініть цей рядок
 ```
 
 # --solutions--

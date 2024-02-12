@@ -8,7 +8,7 @@ dashedName: zeckendorf-number-representation
 
 # --description--
 
-Just as numbers can be represented in a positional notation as sums of multiples of the powers of ten (decimal) or two (binary); all the positive integers can be represented as the sum of one or zero times the distinct members of the Fibonacci series. Recall that the first six distinct Fibonacci numbers are: `1, 2, 3, 5, 8, 13`.
+Assim como os números podem ser representados em uma notação posicional como somas de múltiplos das potências de dez (decimal) ou de dois (binário), todos os números inteiros positivos podem ser representados como a soma de um ou zero vezes os diferentes membros da série Fibonacci. Lembre-se de que os primeiros seis números de Fibonacci distintos são: `1, 2, 3, 5, 8, 13`.
 
 O número decimal onze pode ser escrito como `0*13 + 1*8 + 0*5 + 1*3 + 0*2 + 0*1` ou `010100` na notação posicional, onde as colunas representam a multiplicação por um determinado membro da sequência. Zeros à esquerda são descartados para que o número 11 decimal se torne `10100`. Porém, 10100 não é a única maneira de representar 11 nos números de Fibonacci. `0*13 + 1*8 + 0*5 + 0*3 + 1*2 + 1*1` ou 010011 também representaria o 11 decimal. Para um número de Zeckendorf verdadeiro, há a restrição adicional de que *não sejam usados dois números de Fibonacci consecutivos*, o que leva à antiga solução única.
 

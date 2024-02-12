@@ -1,6 +1,6 @@
 ---
 id: 587d78a5367417b2b2512ad7
-title: Use a CSS Linear Gradient to Create a Striped Element
+title: CSS 선형 그라데이션을 사용하여 줄무늬 요소 만들기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bmQh2'
 forumTopicId: 301072
@@ -9,57 +9,57 @@ dashedName: use-a-css-linear-gradient-to-create-a-striped-element
 
 # --description--
 
-The `repeating-linear-gradient()` function is very similar to `linear-gradient()` with the major difference that it repeats the specified gradient pattern. `repeating-linear-gradient()` accepts a variety of values, but for simplicity, you'll work with an angle value and color stop values in this challenge.
+`repeating-linear-gradient()` 함수는 `linear-gradient()`과 매우 유사하지만 주요 차이점은 지정된 특정한 그라데이션 패턴을 반복한다는 것입니다. `repeating-linear-gradient()`는 다양한 값들을 허용하지만 이번 과제에서는 간단히 각도 값과 색상 정지 값들을 사용할 것입니다.
 
-The angle value is the direction of the gradient. Color stops are like width values that mark where a transition takes place, and are given with a percentage or a number of pixels.
+각도 값은 그라디언트의 방향을 나타냅니다. 색상 정지점는 전환이 발생하는 위치를 나타내며, 백분율이나 픽셀 수로 지정됩니다.
 
-In the example demonstrated in the code editor, the gradient starts with the color `yellow` at 0 pixels which blends into the second color `blue` at 40 pixels away from the start. Since the next color stop is also at 40 pixels, the gradient immediately changes to the third color `green`, which itself blends into the fourth color value `red` as that is 80 pixels away from the beginning of the gradient.
+코드 편집기에서 보여지는 예제에서 그라데이션은 0 픽셀에서 시작하는 색상 `yellow`로 시작되어 시작점에서 40 픽셀 떨어진 곳에서 두 번째 색상 `blue`로 혼합됩니다. 다음 색상 정지점도 40 픽셀에 있기 때문에 그라데이션은 즉시 세 번째 색상 `green`으로 전환되며, 그 자체가 그라데이션 시작점에서 80 픽셀 떨어진 곳에서 네 번째 색상 값 `red`로 혼합됩니다.
 
-For this example, it helps to think about the color stops as pairs where every two colors blend together.
+이번 예시에서는 색상 정지점을 각각 다른 두 개의 색상이 서로 혼합되는 지점으로 생각하는 것이 도움이 됩니다.
 
 ```css
 0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px
 ```
 
-If every two color stop values are the same color, the blending isn't noticeable because it's between the same color, followed by a hard transition to the next color, so you end up with stripes.
+모든 두 색상 정지 값이 동일한 색상인 경우 혼합이 눈에 띄지 않습니다. 왜냐하면 동일한 색상 간의 혼합이며 다음 색상으로의 강한 전환이 이어지기 때문에 줄무늬가 생성됩니다.
 
 # --instructions--
 
-Make stripes by changing the `repeating-linear-gradient()` to use a gradient angle of `45deg`, then set the first two color stops to `yellow`, and finally the second two color stops to `black`.
+줄무늬를 만들려면 `repeating-linear-gradient()`를 `45deg`의 각도를 사용하도록 변경한 다음 첫 번째 두 색상 정지점을 `yellow`로 설정하고 마지막으로 두 번째 두 색상 정지를 `black`으로 설정하세요.
 
 # --hints--
 
-The angle of the `repeating-linear-gradient()` should be 45deg.
+`repeating-linear-gradient()`의 각도는 45도여야 합니다.
 
 ```js
 assert(code.match(/background:\s*?repeating-linear-gradient\(\s*?45deg/gi));
 ```
 
-The angle of the `repeating-linear-gradient()` should no longer be 90deg
+`repeating-linear-gradient()`의 각도는 더이상 90도여선 안됩니다.
 
 ```js
 assert(!code.match(/90deg/gi));
 ```
 
-The color stop at 0 pixels should be `yellow`.
+0픽셀 부분의 색상 정지점은 `yellow`여야 합니다.
 
 ```js
 assert(code.match(/yellow\s+?0(px)?/gi));
 ```
 
-The first color stop at 40 pixels should be `yellow`.
+40픽셀 부분의 첫번째 색상 정지점은 `yellow`여야 합니다.
 
 ```js
 assert(code.match(/yellow\s+?40px/gi));
 ```
 
-The second color stop at 40 pixels should be `black`.
+40픽셀 부분의 두번째 색상 정지점은 `black`여야 합니다.
 
 ```js
 assert(code.match(/yellow\s+?40px,\s*?black\s+?40px/gi));
 ```
 
-The last color stop at 80 pixels should be `black`.
+80픽셀 부분의 마지막 색상 정지점은 `black`여야 합니다.
 
 ```js
 assert(code.match(/black\s+?80px/gi));

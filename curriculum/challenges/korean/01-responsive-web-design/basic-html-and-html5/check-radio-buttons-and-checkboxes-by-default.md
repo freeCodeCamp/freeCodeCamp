@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedd08835
-title: Check Radio Buttons and Checkboxes by Default
+title: 라디오 버튼과 체크박스의 기본값 설정하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cWk3Qh6'
 forumTopicId: 301094
@@ -9,9 +9,9 @@ dashedName: check-radio-buttons-and-checkboxes-by-default
 
 # --description--
 
-You can set a checkbox or radio button to be checked by default using the `checked` attribute.
+`checked` 속성을 사용하여 체크박스(checkbox) 또는 라디오 버튼(radio button)이 체크되어 있도록 기본값을 설정할 수 있습니다.
 
-To do this, just add the word `checked` to the inside of an `input` element. For example:
+그러기 위해선 `input` 요소 내부에 `checked`라는 단어를 추가하면 됩니다. 예시:
 
 ```html
 <input type="radio" name="test-name" checked>
@@ -19,29 +19,29 @@ To do this, just add the word `checked` to the inside of an `input` element. For
 
 # --instructions--
 
-Set the first of your radio buttons and the first of your checkboxes to both be checked by default.
+라디오 버튼의 첫 번째와 체크박스의 첫 번째가 모두 기본적으로 선택되어 있도록 설정하세요.
 
 # --hints--
 
-Your first radio button on your form should be checked by default.
+Form의 첫 번째 라디오 버튼이 기본적으로 선택되어 있어야 합니다.
 
 ```js
 assert($('input[type="radio"]').prop('checked'));
 ```
 
-Your first checkbox on your form should be checked by default.
+Form의 첫 번째 체크박스가 기본적으로 선택되어 있어야 합니다.
 
 ```js
 assert($('input[type="checkbox"]').prop('checked'));
 ```
 
-You should not change the inner text of the `Indoor` label.
+`Indoor` 라벨 내부의 텍스트를 변경하지 마세요.
 
 ```js
 assert.equal(document.querySelector('label[for="indoor"]')?.innerText?.trim(), 'Indoor');
 ```
 
-You should not change the inner text of the `Loving` label.
+`Loving` 라벨 내부의 텍스트를 변경하지 마세요.
 
 ```js
 assert.equal(document.querySelector('label[for="loving"]')?.innerText?.trim(), 'Loving');

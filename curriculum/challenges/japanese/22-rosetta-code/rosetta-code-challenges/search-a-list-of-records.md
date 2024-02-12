@@ -12,7 +12,7 @@ A record consists of attributes that describe an entity. Each attribute has a na
 
 # --instructions--
 
-パラメータとして文字列を取る関数を記述してください。 この関数は、`name` 属性の値が指定された文字列と一致する `list`内の項目のインデックスを返す必要があります。
+パラメータとして文字列を取る関数を記述してください。 この関数は、`name` 属性の値が指定された文字列と一致する `list` 内の項目のインデックスを返す必要があります。
 
 # --hints--
 

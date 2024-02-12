@@ -17,7 +17,7 @@ When the condition evaluates to `true`, the program executes the statement insid
 
 <blockquote>if (<i>condition is true</i>) {<br>  <i>statement is executed</i><br>}</blockquote>
 
-**Example**
+**예:**
 
 ```js
 function test(myCondition) {

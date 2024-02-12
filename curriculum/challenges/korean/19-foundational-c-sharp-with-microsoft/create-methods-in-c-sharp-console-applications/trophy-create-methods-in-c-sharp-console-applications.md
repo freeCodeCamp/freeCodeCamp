@@ -1,6 +1,6 @@
 ---
 id: 647f877f07d29547b3bee1be
-title: Trophy - Create Methods in C# Console Applications
+title: 'Trophy - Create Methods in C# Console Applications'
 challengeType: 18
 dashedName: trophy-create-methods-in-c-sharp-console-applications
 msTrophyId: learn.wwl.get-started-c-sharp-part-5.trophy

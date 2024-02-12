@@ -1,6 +1,6 @@
 ---
 id: bad82fee1348bd9aedf08721
-title: Use RGB to Mix Colors
+title: RGB를 사용하여 색 섞기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cm24JU6'
 forumTopicId: 18368
@@ -9,23 +9,23 @@ dashedName: use-rgb-to-mix-colors
 
 # --description--
 
-Just like with hex code, you can mix colors in RGB by using combinations of different values.
+헥스(hex) 코드와 마찬가지로 RGB 값을 다양하게 조합해서 사용하여 색상을 섞을 수 있습니다.
 
 # --instructions--
 
-Replace the hex codes in our `style` element with their correct RGB values.
+`style` 엘리먼트의 헥스 코드를 올바른 RGB값으로 바꿔주세요.
 
-<table><tbody><tr><th>Color</th><th>RGB</th></tr><tr><td>Blue</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>Red</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>Orchid</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>Sienna</td><td><code>rgb(160, 82, 45)</code></td></tr></tbody></table>
+<table><tbody><tr><th>색</th><th>RGB</th></tr><tr><td>Blue(파란색)</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>Red(빨간색)</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>Orchid(오키드)</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>Sienna(시에나)</td><td><code>rgb(160, 82, 45)</code></td></tr></tbody></table>
 
 # --hints--
 
-Your `h1` element with the text `I am red!` should have the `color` red.
+`I am red!`라는 텍스트가 있는 `h1` 엘리먼트의 `color`는 빨간색이어야 합니다.
 
 ```js
 assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 ```
 
-You should use `rgb` for the color red.
+빨간색을 나타내기 위해 `rgb`를 사용해야 합니다.
 
 ```js
 assert(
@@ -35,13 +35,13 @@ assert(
 );
 ```
 
-Your `h1` element with the text `I am orchid!` should have the `color` orchid.
+`I am orchid!`라는 텍스트가 있는 `h1` 엘리먼트의 `color`는 오키드색이어야 합니다.
 
 ```js
 assert($('.orchid-text').css('color') === 'rgb(218, 112, 214)');
 ```
 
-You should use `rgb` for the color orchid.
+오키드색을 나타내기 위해 `rgb`를 사용해야 합니다.
 
 ```js
 assert(
@@ -51,13 +51,13 @@ assert(
 );
 ```
 
-Your `h1` element with the text `I am blue!` should have the `color` blue.
+`I am blue!`라는 텍스트가 있는 `h1` 엘리먼트의 `color`는 파란색이어야 합니다.
 
 ```js
 assert($('.blue-text').css('color') === 'rgb(0, 0, 255)');
 ```
 
-You should use `rgb` for the color blue.
+파란색을 나타내기 위해 `rgb`를 사용해야 합니다.
 
 ```js
 assert(
@@ -67,13 +67,13 @@ assert(
 );
 ```
 
-Your `h1` element with the text `I am sienna!` should have the `color` sienna.
+`I am sienna!`라는 텍스트가 있는 `h1` 엘리먼트의 `color`는 시에나색이어야 합니다.
 
 ```js
 assert($('.sienna-text').css('color') === 'rgb(160, 82, 45)');
 ```
 
-You should use `rgb` for the color sienna.
+시에나색을 나타내기 위해 `rgb`를 사용해야 합니다.
 
 ```js
 assert(

@@ -4,6 +4,7 @@ title: The Box Model Question B
 challengeType: 15
 dashedName: the-box-model-question-b
 ---
+
 # --description--
 
 In the Elements pane, you can see the entire HTML structure of your page. You can click on any of the elements in this pane to select that specific element. Alternatively, you can click the blue-highlighted icon shown below on the left, and hover over any element on the page.
@@ -14,7 +15,7 @@ When an element is selected, the Styles tab will show all the currently applied 
 
 ![Overwritten style](https://cdn.statically.io/gh/TheOdinProject/curriculum/f8fd38fc62578d8e8368f5303126215a492847f0/foundations/html_css/inspecting-html-and-css/imgs/03.png)
 
-# --question--    
+# --question--
 
 ## --text--
 

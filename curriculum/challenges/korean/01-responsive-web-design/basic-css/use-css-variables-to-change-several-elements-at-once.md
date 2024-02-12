@@ -1,6 +1,6 @@
 ---
 id: 5a9d725e424fe3d0e10cad10
-title: Use CSS Variables to change several elements at once
+title: CSS 변수를 사용하여 한 번에 여러 엘리먼트 변경하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bDECm'
 forumTopicId: 301093
@@ -9,17 +9,17 @@ dashedName: use-css-variables-to-change-several-elements-at-once
 
 # --description--
 
-<dfn>CSS Variables</dfn> are a powerful way to change many CSS style properties at once by changing only one value.
+<dfn>CSS 변수</dfn>는 하나의 값만 변경하여 여러 개의 CSS 스타일 속성을 한번에 변경할 수 있는 강력한 방법입니다.
 
-Follow the instructions below to see how changing just three values can change the styling of many elements.
+아래 설명에 따라 세 가지의 값만 변경하는 것이 얼마나 많은 엘리먼트의 스타일을 바꿀 수 있는지 확인해보세요.
 
 # --instructions--
 
-In the `penguin` class, change the `black` value to `gray`, the `gray` value to `white`, and the `yellow` value to `orange`.
+`penguin` 클래스에서 `black` 값을 `gray`로,  `gray` 값을  `white`로, 그리고  `yellow` 값을  `orange`로 변경합니다.
 
 # --hints--
 
-`penguin` class should declare the `--penguin-skin` variable and assign it to `gray`.
+`penguin` 클래스는 `--penguin-skin` 변수를 선언하고 `gray`에 할당해야 합니다.
 
 ```js
 assert(
@@ -27,7 +27,7 @@ assert(
 );
 ```
 
-`penguin` class should declare the `--penguin-belly` variable and assign it to `white`.
+`penguin` 클래스는 `--penguin-belly` 변수를 선언하고 `white`에 할당해야 합니다.
 
 ```js
 assert(
@@ -35,7 +35,7 @@ assert(
 );
 ```
 
-`penguin` class should declare the `--penguin-beak` variable and assign it to `orange`.
+`penguin` 클래스는 `--penguin-beak` 변수를 선언하고 `orange`에 할당해야 합니다.
 
 ```js
 assert(

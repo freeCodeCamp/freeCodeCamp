@@ -7,7 +7,7 @@ dashedName: step-16
 
 # --description--
 
-When the user rolls the dice, you will need to generate 5 random numbers representing each die value. 
+When the user rolls the dice, you will need to generate 5 random numbers representing each die value.
 
 To start, create a `for` loop that will loop a total of 5 times.
 

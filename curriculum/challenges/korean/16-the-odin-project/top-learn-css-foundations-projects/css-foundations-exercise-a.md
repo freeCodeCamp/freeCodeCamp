@@ -7,8 +7,7 @@ dashedName: css-foundations-exercise-a
 
 # --description--
 
-**Objective:** 
-In this exercise, you're going to practice adding CSS to an HTML file using all three methods: external CSS, internal CSS, and inline CSS. You should only be using type selectors for this exercise when adding styles via the external and internal methods. You should also use keywords for colors (e.g. "blue") instead of using `RGB` or `HEX` values.
+**Objective:** In this exercise, you're going to practice adding CSS to an HTML file using all three methods: external CSS, internal CSS, and inline CSS. You should only be using type selectors for this exercise when adding styles via the external and internal methods. You should also use keywords for colors (e.g. "blue") instead of using `RGB` or `HEX` values.
 
 ## User Stories
 
@@ -121,7 +120,7 @@ if (rules) {
 
 assert(pIsStyled);
 ```
- 
+
 The `button` element should have its `background-color` set to `orange`.
 
 ```js

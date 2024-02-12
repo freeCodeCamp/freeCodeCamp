@@ -1,8 +1,8 @@
 ---
 id: 62a8efb0e3ce826db8daf80f
-title: Paso 131
+title: Step 130
 challengeType: 0
-dashedName: step-131
+dashedName: step-130
 ---
 
 # --description--
@@ -20,7 +20,7 @@ assert.match(defeatMonster.toString(), /update/);
 You should pass `locations[4]` as the argument.
 
 ```js
-assert.match(defeatMonster.toString(), /update\(locations\[4\]\)/);
+assert.match(defeatMonster.toString(), /update\(\s*locations\s*\[\s*4\s*\]\s*\)/);
 ```
 
 # --seed--

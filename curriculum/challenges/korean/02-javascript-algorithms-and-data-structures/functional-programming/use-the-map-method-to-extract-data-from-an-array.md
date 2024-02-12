@@ -33,7 +33,7 @@ const names = users.map(user => user.name);
 console.log(names);
 ```
 
-The console would display the value ` [ 'John', 'Amy', 'camperCat' ]`.
+The console would display the value `[ 'John', 'Amy', 'camperCat' ]`.
 
 # --instructions--
 

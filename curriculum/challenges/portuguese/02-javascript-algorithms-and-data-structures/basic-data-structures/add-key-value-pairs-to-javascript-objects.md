@@ -102,9 +102,9 @@ const foods = {
   plums: 28
 };
 
-// Only change code below this line
+// Altere somente o código abaixo desta linha
 
-// Only change code above this line
+// Altere somente o código acima desta linha
 
 console.log(foods);
 ```

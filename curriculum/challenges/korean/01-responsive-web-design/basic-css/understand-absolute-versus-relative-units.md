@@ -1,6 +1,6 @@
 ---
 id: bad82fee1322bd9aedf08721
-title: Understand Absolute versus Relative Units
+title: 절대 단위와 상대 단위 이해하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN66JSL'
 forumTopicId: 301089
@@ -9,21 +9,21 @@ dashedName: understand-absolute-versus-relative-units
 
 # --description--
 
-The last several challenges all set an element's margin or padding with pixels (`px`). Pixels are a type of length unit, which is what tells the browser how to size or space an item. In addition to `px`, CSS has a number of different length unit options that you can use.
+마지막 여러 도전에서는 요소의 마진(margin) 또는 패딩(padding)을 픽셀(`px`)로 설정했습니다. 픽셀은 브라우저에 항목의 크기 또는 간격을 알려주는 길이 단위의 한 유형입니다. `px` 외에도 CSS에는 사용할 수 있는 여러 다양한 길이 단위 옵션이 있습니다.
 
-The two main types of length units are absolute and relative. Absolute units tie to physical units of length. For example, `in` and `mm` refer to inches and millimeters, respectively. Absolute length units approximate the actual measurement on a screen, but there are some differences depending on a screen's resolution.
+길이 단위의 주요 두 유형은 절대 단위와 상대 단위입니다. 절대 단위는 길이의 물리적 단위에 결합됩니다. 예를 들어, `in`은 인치를, `mm`은 밀리미터를 나타냅니다. 절대 길이 단위는 화면상의 실제 측정을 근사화하지만, 화면의 해상도에 따라 몇 가지 차이가 있을 수 있습니다.
 
-Relative units, such as `em` or `rem`, are relative to another length value. For example, `em` is based on the size of an element's font. If you use it to set the `font-size` property itself, it's relative to the parent's `font-size`.
+`em`이나 `rem`과 같은 상대 단위는 다른 길이 값과 관련이 있습니다. 예를 들어, `em`은 요소의 글꼴 크기를 기준으로 합니다. 이것을 사용하여 `font-size` 속성 자체를 설정하면 부모의 `font-size`에 상대적인 크기가 됩니다.
 
-**Note:** There are several relative unit options that are tied to the size of the viewport. They are covered in the Responsive Web Design Principles section.
+**참고:** 뷰포트 크기에 관련된 여러 상대 단위 옵션이 있습니다. 그에 관해서는 반응형 웹 디자인 원칙 섹션에서 다루고 있습니다.
 
 # --instructions--
 
-Add a `padding` property to the element with class `red-box` and set it to `1.5em`.
+클래스가 `red-box`인 요소에 `padding` 속성을 추가하고 값을 `1.5em`으로 설정하세요.
 
 # --hints--
 
-Your `red-box` class should have a `padding` property.
+`red-box` 클래스는 `padding` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-Your `red-box` class should give elements 1.5em of `padding`.
+`red-box` 클래스는 요소에 1.5em의 `padding`을 지정해야 합니다.
 
 ```js
 assert(code.match(/\.red-box\s*?{[\s\S]*padding\s*:\s*?1\.5em/gi));

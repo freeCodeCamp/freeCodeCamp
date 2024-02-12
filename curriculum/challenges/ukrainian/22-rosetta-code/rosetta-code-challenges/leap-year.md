@@ -8,7 +8,7 @@ dashedName: leap-year
 
 # --description--
 
-Determine whether a given year is a leap year in the Gregorian calendar.
+Визначте, чи даний рік є високосним роком в григоріанському календарі.
 
 # --hints--
 
@@ -18,43 +18,43 @@ Determine whether a given year is a leap year in the Gregorian calendar.
 assert(typeof isLeapYear == 'function');
 ```
 
-`isLeapYear()` повинен повертати логічний тип.
+`isLeapYear()` має повернути булеве значення.
 
 ```js
 assert(typeof isLeapYear(2018) == 'boolean');
 ```
 
-`isLeapYear(2018)` повинен повернути `false`.
+`isLeapYear(2018)` має повернути `false`.
 
 ```js
 assert.equal(isLeapYear(2018), false);
 ```
 
-`isLeapYear(2016)` повинен повернути `true`.
+`isLeapYear(2016)` має повернути `true`.
 
 ```js
 assert.equal(isLeapYear(2016), true);
 ```
 
-`isLeapYear(2000)` повинен повернути `true`.
+`isLeapYear(2000)` має повернути `true`.
 
 ```js
 assert.equal(isLeapYear(2000), true);
 ```
 
-`isLeapYear(1900)` повинен повернути `false`.
+`isLeapYear(1900)` має повернути `false`.
 
 ```js
 assert.equal(isLeapYear(1900), false);
 ```
 
-`isLeapYear(1996)` повинен повернути `true`.
+`isLeapYear(1996)` має повернути `true`.
 
 ```js
 assert.equal(isLeapYear(1996), true);
 ```
 
-`isLeapYear(1800)` повинен повернути `false`.
+`isLeapYear(1800)` має повернути `false`.
 
 ```js
 assert.equal(isLeapYear(1800), false);

@@ -1,6 +1,6 @@
 ---
 id: 647e232c8acb466c97ccbefc
-title: Format Alphanumeric Data for Presentation in C#
+title: 'Format Alphanumeric Data for Presentation in C#'
 challengeType: 19
 dashedName: format-alphanumeric-data-for-presentation-in-c-sharp
 ---

@@ -1,6 +1,6 @@
 ---
 id: 587d78a5367417b2b2512ad9
-title: Use the CSS Transform scale Property to Change the Size of an Element
+title: CSS의 Transform scale 속성을 사용하여 요소의 크기 변경하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MZVSg'
 forumTopicId: 301076
@@ -9,7 +9,7 @@ dashedName: use-the-css-transform-scale-property-to-change-the-size-of-an-elemen
 
 # --description--
 
-To change the scale of an element, CSS has the `transform` property, along with its `scale()` function. The following code example doubles the size of all the paragraph elements on the page:
+CSS에서는 `transform` 속성과 `scale()` 함수를 함께 사용하여 요소의 크기를 변경합니다. 다음은 페이지의 모든 단락(paragraph) 요소 사이즈를 두 배로 늘리는 코드 예제입니다.
 
 ```css
 p {
@@ -19,11 +19,11 @@ p {
 
 # --instructions--
 
-Increase the size of the element with the id of `ball2` to 1.5 times its original size.
+아이디(id) `ball2`의 크기를 원래 크기의 1.5배로 늘리십시오.
 
 # --hints--
 
-The `transform` property for `#ball2` should be set to scale it to 1.5 times its size.
+`#ball2`의 `transform` 속성은 크기를 1.5배로 조정하도록 설정해야 합니다.
 
 ```js
 assert(

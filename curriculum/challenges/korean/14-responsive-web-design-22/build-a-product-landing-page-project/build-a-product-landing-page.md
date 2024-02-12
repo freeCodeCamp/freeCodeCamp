@@ -212,7 +212,7 @@ Your `#nav-bar` should always be at the top of the viewport.
   const header = document.getElementById('header');
   const headerChildren = header.children;
   const navbarCandidates = [header, ...headerChildren];
-  
+
   // Return smallest top position of all navbar candidates
   const getNavbarPosition = (candidates = []) => {
     return candidates.reduce(
@@ -238,7 +238,7 @@ Your `#nav-bar` should always be at the top of the viewport.
     '#header or one of its children should be at the top of the ' +
       'viewport even after scrolling '
   );
-    
+
   window.scroll(0, 0);
 })();
 ```

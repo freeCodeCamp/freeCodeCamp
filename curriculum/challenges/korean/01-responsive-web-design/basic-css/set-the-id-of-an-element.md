@@ -1,6 +1,6 @@
 ---
 id: bad87eee1348bd9aede07836
-title: Set the id of an Element
+title: 요소에 id 지정하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN6MEc2'
 forumTopicId: 18279
@@ -9,13 +9,13 @@ dashedName: set-the-id-of-an-element
 
 # --description--
 
-In addition to classes, each HTML element can also have an `id` attribute.
+클래스 외에도 각 HTML 요소는 `id` 속성을 가질 수 있습니다.
 
-There are several benefits to using `id` attributes: You can use an `id` to style a single element and later you'll learn that you can use them to select and modify specific elements with JavaScript.
+`id` 속성을 사용하는 여러 가지 이점이 있습니다. 하나의 요소에 스타일을 적용하는 데 `id`를 사용할 수 있으며 나중에 JavaScript에서 특정 요소를 선택하고 수정하는 데 사용할 수 있습니다.
 
-`id` attributes should be unique. Browsers won't enforce this, but it is a widely agreed upon best practice. So please don't give more than one element the same `id` attribute.
+`id` 속성은 고유해야 합니다. 브라우저가 이를 강제로 지키게 만들지는 않지만, 광범위하게 합의된 최선의 방법입니다. 따라서 동일한 `id` 속성을 두 개 이상의 요소에 지정하지 마십시오.
 
-Here's an example of how you give your `h2` element the id of `cat-photo-app`:
+여기 `h2` 요소에 `cat-photo-app`이라는 id를 지정하는 방법의 예시가 있습니다.
 
 ```html
 <h2 id="cat-photo-app">
@@ -23,11 +23,11 @@ Here's an example of how you give your `h2` element the id of `cat-photo-app`:
 
 # --instructions--
 
-Give your `form` element the id `cat-photo-form`.
+`form` 요소에 `cat-photo-form`이라는 id를 지정하세요.
 
 # --hints--
 
-Your `form` element should have the id of `cat-photo-form`.
+즉, `form` 요소의 id는 `cat-photo-form`이어야 합니다.
 
 ```js
 assert($('form').attr('id') === 'cat-photo-form');
@@ -139,9 +139,9 @@ assert($('form').attr('id') === 'cat-photo-form');
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
-  
+
   <div class="silver-background">
     <p>Things cats love:</p>
     <ul>
@@ -156,7 +156,7 @@ assert($('form').attr('id') === 'cat-photo-form');
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

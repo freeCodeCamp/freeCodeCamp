@@ -1,6 +1,6 @@
 ---
 id: 647e21708acb466c97ccbee3
-title: Evaluate Boolean Expressions to Make Decisions in C#
+title: 'Evaluate Boolean Expressions to Make Decisions in C#'
 challengeType: 19
 dashedName: evaluate-boolean-expressions-to-make-decisions-in-c-sharp
 ---

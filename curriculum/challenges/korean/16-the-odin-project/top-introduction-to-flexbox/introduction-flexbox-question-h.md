@@ -4,6 +4,7 @@ title: Introduction to Flexbox Question H
 challengeType: 15
 dashedName: introduction-flexbox-question-h
 ---
+
 # --description--
 
 No matter which direction you're using, you need to think of your flex-containers as having 2 axes: the main axis and the cross axis. It is the direction of these axes that changes when the `flex-direction` is changed. In most circumstances, `flex-direction: row` puts the main axis horizontal (left-to-right), and `column` puts the main axis vertical (top-to-bottom).

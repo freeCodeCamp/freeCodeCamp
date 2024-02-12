@@ -8,7 +8,7 @@ dashedName: execute-brain
 
 # --description--
 
-Write a function to implement a Brain\*\*\*\* interpreter. The function will take a string as a parameter and should return a string as the output. More details are given below:
+Escreva uma função para implementar um interpretador de Brain\*\*\*\*. A função receberá uma string como um parâmetro e deve retornar uma string como saída. Mais detalhes são fornecidos abaixo:
 
 RCBF é um conjunto de interpretadores e compiladores <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> escritos pelo Rosetta Code em diversas linguagens.
 
@@ -16,9 +16,9 @@ Abaixo, encontramos os links para cada uma das versões do RCBF.
 
 Uma implementação só precisa implementar corretamente as seguintes instruções:
 
-| Command                   | Descrição                                                                                      |
+| Comando                   | Descrição                                                                                      |
 | ------------------------- | ---------------------------------------------------------------------------------------------- |
-| <code>></code> | Move the pointer to the right                                                                  |
+| <code>></code> | Mova o ponteiro para a direita                                                                 |
 | <code>&lt;</code> | Mova o ponteiro para a esquerda                                                                |
 | <code>+</code> | Incremente a célula de memória sob o ponteiro                                                  |
 | <code>-</code> | Decremente a célula de memória sob o ponteiro                                                  |
@@ -37,10 +37,10 @@ Qualquer tamanho de célula é permitido, suporte a EOF (*E*nd-*O*f-*F*ile) é o
 assert(typeof brain(bye) === 'string');
 ```
 
-`brain("++++++[>++++++++++<-]>+++++.")` should return "A"
+`brain("++++++[>++++++++++++++.")` should return "A"
 
 ```js
-assert.equal(brain('++++++[>++++++++++<-]>+++++.'), 'A');
+assert.equal(brain('++++++[>++++++++++++++.'), 'A');
 ```
 
 `brain(bye)` deve retornar `Goodbye, World!\r\n`
@@ -70,35 +70,19 @@ let fib=`+
 
 ++
 
-+++
-
-++++
++++++++
 
 +>+>>
 
->>++++
+>>++++++++++++++++++++++++
 
-+++++++
-
-++++++++
-
-+++++++++
-
-++++++++++
-
-++++++>++++
++++++++++++++++++++
 
 ++++++++++++
 
 +++++++++++++
 
-+++<<<<<<[>[>>
-
->>>>+>+<<<<<<<-
-
-]>>>>>>>[<<<<<<<
-
-+>>>>>>>-]<[>++++
++++++++
 
 ++++++[-<-[>>+>+<<
 
@@ -116,11 +100,9 @@ let fib=`+
 
 +++++++++++++++++++++++++
 
-+++++++++.[-]]++++++++++<[
++++++++++++++++++++<[
 
-->-<]>+++++++++++++++++++++
-
-+++++++++++++++++++++++++++.
+->-<]>++++++++++++++++++++++++++++++++++++++++++++++++.
 
 [-]<<<<<<<<<<<<[>>>+>+<<<<-]>
 
@@ -129,8 +111,7 @@ let fib=`+
 <<[>>+>+<<<-]>>>[<<<+>>>-]<<[<+
 
 >-]>[<+>-]<<<-]`;
-let hello='++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.'
-let bye='++++++++++[>+>+++>++++>+++++++>++++++++>+++++++++>++++++++++>+++++++++++>++++++++++++<<<<<<<<<-]>>>>+.>>>>+..<.<++++++++.>>>+.<<+.<<<<++++.<++.>>>+++++++.>>>.+++.<+++++++.--------.<<<<<+.<+++.---.';
+let hello='++++++++[>++++++>++++++++++++.>>.<-.<.+++++++++++++[>+>+++++++>+++++++>++++++++>+++++++++++++++++++>+++++++++++++++++++++++++++++++.<++.>>>+++++++.>>>.++++++++++++.---.';
 ```
 
 ## --seed-contents--

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aede08830
-title: Create a Form Element
+title: Form 요소 만들기
 challengeType: 0
 forumTopicId: 16817
 dashedName: create-a-form-element
@@ -8,9 +8,9 @@ dashedName: create-a-form-element
 
 # --description--
 
-You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an `action` attribute on your `form` element.
+순수 HTML만 이용하여 서버에 정보를 보내는 웹 폼(form)을 만들 수 있습니다. `form` 요소에 `action` 속성을 특정하면 이 작업을 할 수 있습니다.
 
-For example:
+예시:
 
 ```html
 <form action="url-where-you-want-to-submit-form-data">
@@ -20,11 +20,11 @@ For example:
 
 # --instructions--
 
-Nest the existing `input` element inside a `form` element and assign `"https://www.freecatphotoapp.com/submit-cat-photo"` to the `action` attribute of the `form` element.
+`form` 요소 안에 기존 `input` 요소를 중첩하고 `"https://www.freecatphotoapp.com/submit-cat-photo"`를 `form` 요소의 `action` 속성에 할당하세요.
 
 # --hints--
 
-The existing `input` element should be nested within a `form` element.
+`input` 요소는 `form` 요소에 중첩되어야 합니다.
 
 ```js
 const inputElem = document.querySelector('form input');
@@ -34,14 +34,14 @@ assert(
 );
 ```
 
-Your `form` should have an `action` attribute which is set to `https://www.freecatphotoapp.com/submit-cat-photo`.
+`form`는 `https://www.freecatphotoapp.com/submit-cat-photo`로 설정된 `action` 속성을 가져야 합니다.
 
 ```js
 const action = $('form').attr('action');
 assert(action.match(/^https:\/\/(www\.)?freecatphotoapp\.com\/submit-cat-photo$/i))
 ```
 
-Your `form` element should have well-formed open and close tags.
+`form` 요소는 여는/닫는 태그로 정확한 형식을 갖추어야 합니다.
 
 ```js
 assert(
