@@ -174,6 +174,10 @@
       "title": "Task 39"
     },
     {
+      "id": "657ef0061e99a3ddd0e1245f",
+      "title": "Dialogue 3: The Collector"
+    },
+    {
       "id": "657eda6e48e0d7c92f0af163",
       "title": "Task 40"
     },
@@ -260,10 +264,6 @@
     {
       "id": "657eed5ed318e4dbbce6903a",
       "title": "Task 61"
-    },
-    {
-      "id": "657ef0061e99a3ddd0e1245f",
-      "title": "Dialogue 3: The Collector"
     },
     {
       "id": "657ef4e5a4a1e1e126eba6dd",
@@ -377,6 +377,10 @@
       "id": "658003d8ff9da6f5c08971a1",
       "title": "Task 88"
     },
+     {
+      "id": "658030876ac4f605145aeae1",
+      "title": "Dialogue 5: Getting into Extreme Sports"
+      },
     {
       "id": "658009d86dc9caf988e2ea64",
       "title": "Task 89"
@@ -444,10 +448,6 @@
     {
       "id": "65802fe92ef0f404ba0437f7",
       "title": "Task 105"
-    },
-    {
-      "id": "658030876ac4f605145aeae1",
-      "title": "Dialogue 5: Getting into Extreme Sports"
     }
   ],
   "helpCategory": "English"

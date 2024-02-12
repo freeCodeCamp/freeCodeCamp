@@ -1,7 +1,7 @@
 ---
 id: 657ec6ac4de4eac8bab2f2a7
 title: Task 39
-challengeType: 19
+challengeType: 22
 dashedName: task-39
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
