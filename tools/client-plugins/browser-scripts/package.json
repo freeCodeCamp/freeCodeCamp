@@ -25,8 +25,8 @@
   "keywords": [],
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
-    "@babel/plugin-transform-runtime": "7.23.7",
-    "@babel/preset-env": "7.23.7",
+    "@babel/plugin-transform-runtime": "7.23.9",
+    "@babel/preset-env": "7.23.9",
     "@babel/preset-typescript": "7.23.3",
     "@freecodecamp/curriculum-helpers": "1.3.0",
     "@types/chai": "4.3.10",
