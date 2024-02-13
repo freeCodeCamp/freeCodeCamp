@@ -2,8 +2,9 @@ import { put, takeEvery, select } from 'redux-saga/effects';
 import store from 'store';
 
 import { randomCompliment } from '../../../utils/get-words';
-import { executeGA, setRenderStartTime } from '../../../redux/actions';
+import { setRenderStartTime } from '../../../redux/actions';
 import { renderStartTimeSelector } from '../../../redux/selectors';
+import callGA from '../../../analytics/call-ga';
 import { CURRENT_CHALLENGE_KEY } from './action-types';
 import { updateSuccessMessage } from './actions';
 
@@ -42,9 +43,9 @@ function* sendRenderTimeSaga({ payload }) {
     const challengeRenderTime = payload - renderStartTime;
     yield put(setRenderStartTime(null));
     yield put(
-      executeGA({
+      callGA({
         event: 'render_time',
-        challengeRenderTime
+        render_time_msec: challengeRenderTime
       })
     );
   }

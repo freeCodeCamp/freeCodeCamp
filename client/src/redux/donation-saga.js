@@ -8,7 +8,7 @@ import {
   takeEvery,
   takeLeading
 } from 'redux-saga/effects';
-
+import callGA from '../analytics/call-ga';
 import {
   addDonation,
   postChargeStripe,
@@ -26,7 +26,6 @@ import {
   postChargeError,
   preventBlockDonationRequests,
   setCompletionCountWhenShownProgressModal,
-  executeGA,
   updateCardError,
   updateCardRedirecting
 } from './actions';
@@ -111,7 +110,7 @@ export function* postChargeSaga({
       yield call(setDonationCookie);
     }
     yield put(
-      executeGA({
+      callGA({
         event:
           paymentProvider === PaymentProvider.Patreon
             ? 'donation_related'

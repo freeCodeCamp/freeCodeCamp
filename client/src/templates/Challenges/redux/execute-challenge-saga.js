@@ -37,8 +37,8 @@ import {
   interruptCodeExecution,
   runPythonCode
 } from '../utils/python-worker-handler';
-import { executeGA } from '../../../redux/actions';
 import { fireConfetti } from '../../../utils/fire-confetti';
+import callGA from '../../../analytics/call-ga';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
@@ -141,7 +141,7 @@ export function* executeChallengeSaga({ payload }) {
       playTone('tests-failed');
       if (challengeMeta.certification === 'responsive-web-design') {
         yield put(
-          executeGA({
+          callGA({
             event: 'challenge_failed',
             challenge_id: challengeMeta.id,
             challenge_path: window?.location?.pathname,
