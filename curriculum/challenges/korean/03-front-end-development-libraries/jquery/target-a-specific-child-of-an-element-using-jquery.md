@@ -4,7 +4,8 @@ title: Target a Specific Child of an Element Using jQuery
 challengeType: 6
 forumTopicId: 18315
 required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+  - 
+    link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 dashedName: target-a-specific-child-of-an-element-using-jquery
 ---
 

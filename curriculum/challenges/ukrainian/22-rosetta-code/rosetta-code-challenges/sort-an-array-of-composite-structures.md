@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ffe
-title: Сортування масивів зі складених структур
+title: Сортування масиву складених структур
 challengeType: 1
 forumTopicId: 302306
 dashedName: sort-an-array-of-composite-structures
@@ -8,7 +8,7 @@ dashedName: sort-an-array-of-composite-structures
 
 # --description--
 
-Write a function that takes an array of objects as a parameter. The function should sort the array according to the 'key' attribute of the objects and return the sorted array.
+Напишіть функцію, яка приймає масив об’єктів як параметр. Функція має відсортувати масив відповідно до атрибута об’єктів «key» і повернути відсортований масив.
 
 # --hints--
 

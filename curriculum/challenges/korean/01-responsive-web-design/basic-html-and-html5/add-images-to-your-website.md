@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08812
-title: Add Images to Your Website
+title: 웹사이트에 이미지 추가하기
 challengeType: 0
 forumTopicId: 16640
 dashedName: add-images-to-your-website
@@ -8,23 +8,23 @@ dashedName: add-images-to-your-website
 
 # --description--
 
-You can add images to your website by using the `img` element, and point to a specific image's URL using the `src` attribute.
+`img` 요소를 이용해서 웹사이트에 이미지를 추가하고 `src` 속성을 이용하여 특정 이미지의 URL을 지정할 수 있습니다.
 
-An example of this would be:
+이에 대한 예는 다음과 같습니다.
 
 ```html
 <img src="https://www.freecatphotoapp.com/your-image.jpg">
 ```
 
-Note that `img` elements are self-closing.
+`img` 요소는 닫는 태그가 없습니다.
 
-All `img` elements **must** have an `alt` attribute. The text inside an `alt` attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.
+모든 `img` 요소는 **반드시** `alt` 속성이 있어야 합니다. `alt` 속성 안의 텍스트는 접근성을 향상시키기 위해 스크린 리더에 사용되며 이미지가 로딩에 실패하면 표시됩니다.
 
-**Note:** If the image is purely decorative, using an empty `alt` attribute is a best practice.
+**노트:** 만약 이미지가 장식을 목적으로 사용되었을 경우 `alt` 속성을 적용된 값이 없이 비어있는 상태로 사용하는 것이 가장 좋습니다.
 
-Ideally the `alt` attribute should not contain special characters unless needed.
+`alt` 속성은 필요하지 않은 한 특수 문자를 포함하지 않아야 합니다.
 
-Let's add an `alt` attribute to our `img` example above:
+위의 예시 `img` 요소에 `alt` 속성을 추가해 보겠습니다.
 
 ```html
 <img src="https://www.freecatphotoapp.com/your-image.jpg" alt="freeCodeCamp logo">
@@ -32,29 +32,29 @@ Let's add an `alt` attribute to our `img` example above:
 
 # --instructions--
 
-Let's try to add an image to our website:
+웹사이트에 이미지를 추가해 보겠습니다.
 
-Within the existing `main` element, insert an `img` element before the existing `p` elements.
+기존 `main` 요소 내에서, `p` 요소 앞에 `img` 요소를 삽입하세요.
 
-Now set the `src` attribute so that it points to the url `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`
+이제 `src` 속성을 설정하여 URL `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg` 을 지정하세요.
 
-Finally, don't forget to give your `img` element an `alt` attribute with applicable text.
+마지막으로, `img` 요소에 적용 가능한 텍스트와 함께 `alt` 속성을 사용하는 것을 잊지 마세요.
 
 # --hints--
 
-Your page should have an image element.
+페이지에는 이미지 요소가 있어야 합니다.
 
 ```js
 assert($('img').length);
 ```
 
-Your image should have a `src` attribute that points to the kitten image.
+이미지에는 아기 고양이 사진을 지정하는 `src` 속성이 있어야 합니다.
 
 ```js
 assert(/^https:\/\/cdn\.freecodecamp\.org\/curriculum\/cat-photo-app\/relaxing-cat\.jpg$/i.test($('img').attr('src')));
 ```
 
-Your image element's `alt` attribute should not be empty.
+이미지 요소의 `alt` 속성은 비어 있지 않아야 합니다.
 
 ```js
 assert(

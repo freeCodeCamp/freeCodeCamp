@@ -4,6 +4,7 @@ title: Links and Images Question H
 challengeType: 15
 dashedName: links-and-images-question-h
 ---
+
 # --description--
 
 Websites would be fairly boring if they could only display text. Luckily HTML provides a wide variety of elements for displaying all sorts of different media. The most widely used of these is the image element.
@@ -29,11 +30,11 @@ Finally add the image to the `index.html` file:
 ```html
 <body>
   <h1>Homepage</h1>
-	<a href="https://www.theodinproject.com/about">click me</a>
+    <a href="https://www.theodinproject.com/about">click me</a>
 
-	<a href="pages/about.html">About</a>
+    <a href="pages/about.html">About</a>
 
-	<img src="images/dog.jpg">
+    <img src="images/dog.jpg">
 </body>
 ```
 

@@ -26,8 +26,7 @@ const nestedSubarray = arr[3][0];
 const element = arr[3][0][1];
 ```
 
-In this example, `subarray` has the value `[[10, 11, 12], 13, 14]`,
-`nestedSubarray` has the value `[10, 11, 12]`,   and `element` has the value `11` .
+In this example, `subarray` has the value `[[10, 11, 12], 13, 14]`, `nestedSubarray` has the value `[10, 11, 12]`,   and `element` has the value `11` .
 
 **Note:** There shouldn't be any spaces between the array name and the square brackets, like `array [0][0]` and even this `array [0] [0]` is not allowed. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
 

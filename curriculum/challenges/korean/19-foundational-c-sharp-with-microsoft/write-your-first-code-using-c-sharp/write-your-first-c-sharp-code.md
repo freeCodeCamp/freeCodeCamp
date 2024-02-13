@@ -1,6 +1,6 @@
 ---
 id: 647e239e8acb466c97ccbf05
-title: Write Your First C# Code
+title: 'Write Your First C# Code'
 challengeType: 19
 dashedName: write-your-first-c-sharp-code
 ---

@@ -4,6 +4,7 @@ title: Introduction to Flexbox Question G
 challengeType: 15
 dashedName: introduction-flexbox-question-g
 ---
+
 # --description--
 
 `flex-shrink` is similar to `flex-grow`, but sets the "shrink factor" of a flex item. `flex-shrink` only ends up being applied if the size of all flex items is larger than their parent container. For example, if our 3 divs from above had a width declaration like: `width: 100px`, and `.flex-container` was smaller than `300px`, our divs would have to shrink to fit.

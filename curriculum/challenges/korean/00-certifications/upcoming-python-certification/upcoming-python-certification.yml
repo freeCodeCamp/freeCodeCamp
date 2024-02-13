@@ -5,5 +5,6 @@ certification: upcoming-python-certification
 challengeType: 7
 isPrivate: true
 tests:
-  - id: 64afc37bf3b37856e035b85e
+  - 
+    id: 64afc37bf3b37856e035b85e
     title: Upcoming Python Project

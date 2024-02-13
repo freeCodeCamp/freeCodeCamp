@@ -1,6 +1,6 @@
 ---
 id: 587d778b367417b2b2512aa8
-title: Add an Accessible Date Picker
+title: 접근성을 갖춘 날짜 선택기 추가하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cR3bRbCV'
 forumTopicId: 301008
@@ -9,13 +9,13 @@ dashedName: add-an-accessible-date-picker
 
 # --description--
 
-Forms often include the `input` field, which can be used to create several different form controls. The `type` attribute on this element indicates what kind of `input` element will be created.
+폼(Form)은 여러 다양한 폼 컨트롤에 사용되는 `input` 필드를 포함합니다. 이러한 HTML 엘리먼트의 `type` 속성을 통해 해당 엘리먼트가 어떤 `input`인지 알 수 있습니다.
 
-You may have noticed the `text` and `submit` input types in prior challenges, and HTML5 introduced an option to specify a `date` field. Depending on browser support, a date picker shows up in the `input` field when it's in focus, which makes filling in a form easier for all users.
+이전 도전 과제에서 `text`와 `submit` 타입을 확인했을 텐데, HTML5에서는 `date` 필드를 지정할 수 있는 옵션도 도입되었습니다. 브라우저별로 다르지만, 날짜 선택기는 어떤 유저든 폼을 채우기 쉽게 `input` 필드가 포커스 상태일 때 나타납니다.
 
-For older browsers, the type will default to `text`, so it helps to show users the expected date format in the `label` or `placeholder` text just in case.
+구형 브라우저의 경우, `text`가 기본 타입으로 되어 있으니, `label`이나 `placeholder` 텍스트를 통해 유저가 날짜 형식을 예상하도록 도와줍니다.
 
-Here's an example:
+아래는 예시입니다.
 
 ```html
 <label for="input1">Enter a date:</label>
@@ -24,29 +24,29 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat is setting up a Mortal Kombat tournament and wants to ask his competitors to see what date works best. Add an `input` tag with a `type` attribute of `date`, an `id` attribute of `pickdate`, and a `name` attribute of `date`.
+Mortal Kombat 토너먼트를 준비 중인 Camper Cat은 그의 참가자들에게 어떤 날짜가 가장 나은지 묻고 싶습니다. `type` 속성으로 `date`를, `id` 속성으로 `pickdate`를, `name` 속성으로 `date`를 갖는 `input` 태그를 추가하세요.
 
 # --hints--
 
-Your code should add one `input` tag for the date selector field.
+코드에 날짜 선택 필드를 위한 `input` 태그 하나를 추가합니다.
 
 ```js
 assert($('input').length == 2);
 ```
 
-Your `input` tag should have a `type` attribute with a value of `date`.
+`input` 태그에 `date`라는 값을 가지는 `type` 속성을 포함해야 합니다.
 
 ```js
 assert($('input').attr('type') == 'date');
 ```
 
-Your `input` tag should have an `id` attribute with a value of `pickdate`.
+`input` 태그에 `pickdate`라는 값을 가지는 `id` 속성을 포함해야 합니다.
 
 ```js
 assert($('input').attr('id') == 'pickdate');
 ```
 
-Your `input` tag should have a `name` attribute with a value of `date`.
+`input` 태그에 `date`라는 값을 가지는 `name` 속성을 추가해야 합니다.
 
 ```js
 assert($('input').attr('name') == 'date');

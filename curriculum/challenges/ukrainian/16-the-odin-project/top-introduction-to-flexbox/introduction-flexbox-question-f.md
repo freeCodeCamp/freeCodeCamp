@@ -1,15 +1,15 @@
 ---
 id: 6571b300cc1de61d7b4dd384
-title: Introduction to Flexbox Question F
+title: Вступ до Flexbox. Запитання F
 challengeType: 15
 dashedName: introduction-flexbox-question-f
 ---
 
 # --description--
 
-`flex-grow` expects a single number as its value, and that number is used as the flex-item's "growth factor". When you applied `flex: 1` to every div inside our container, you were telling every div to grow the same amount. The result of this is that every div ends up the exact same size. If you instead add `flex: 2` to just one of the divs, then that div would grow to 2x the size of the others.
+`flex-grow` очікує число як значення, і це число використовується як «фактор росту» гнучкого предмета. Коли ви застосували `flex: 1` до кожного елемента div в контейнері, ви повідомили всім елементам div зростати однаково. В результаті всі елементи div мають однаковий розмір. А якщо додати `flex: 2` лише до одного елемента div, він буде в два рази більшим за інших.
 
-In the following example the `flex` shorthand has values for `flex-shrink` and `flex-basis` specified with their default values.
+У наступному прикладі скорочення `flex` має значення для `flex-shrink` та `flex-basis`, вказані за замовчуванням.
 
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/YzQqvgK?height=300&amp;default-tab=html%2Cresult&amp;slug-hash=YzQqvgK&amp;editable=true&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_YzQqvgK"></iframe>
 
@@ -17,23 +17,23 @@ In the following example the `flex` shorthand has values for `flex-shrink` and `
 
 ## --text--
 
-What does setting `flex: 2` to one specific div inside a flex container, while other divs have `flex: 1`, imply?
+Що відбудеться, якщо встановити `flex: 2` до одного певного елемента div в гнучкому контейнері, коли всі інші елементи div мають `flex: 1`?
 
 ## --answers--
 
-The container will shrink to accommodate the larger div.
+Контейнер зменшиться, щоб вмістити більший елемент div.
 
 ---
 
-All divs will retain the same size due to conflicting `flex` values.
+Елементи не змінять розмір через конфліктуючі значення `flex`.
 
 ---
 
-The specific div will grow to be twice the size of the others.
+Певний елемент div стане вдвічі більшим за інші елементи.
 
 ---
 
-All divs will shrink equally to adjust to the new `flex` values.
+Всі елементи div зменшаться, щоб відповідати новим розмірам `flex`.
 
 ## --video-solution--
 

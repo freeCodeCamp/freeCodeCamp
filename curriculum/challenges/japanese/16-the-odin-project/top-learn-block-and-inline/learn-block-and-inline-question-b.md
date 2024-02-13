@@ -11,7 +11,7 @@ Inline elements, however, do not start on a new line. They appear in line with w
 
 # --question--
 
-## --宿題--
+## --assignment--
 
 Search the web for a list of `block` elements and a list of `inline` elements.
 

@@ -1,6 +1,6 @@
 ---
 id: 5e6dd14192286d95fc43046e
-title: Завдання найдовшого рядка
+title: Найдовший рядок
 challengeType: 1
 forumTopicId: 385275
 dashedName: longest-string-challenge
@@ -8,11 +8,11 @@ dashedName: longest-string-challenge
 
 # --description--
 
-In this challenge, you have to find the strings that are the longest among the given strings.
+У цьому завданні вам потрібно знайти рядки, які є найдовшими серед наданих.
 
 # --instructions--
 
-Напишіть функцію, яка приймає масив рядків і повертає рядки, довжина яких дорівнює найдовшій довжині.
+Напишіть функцію, яка приймає масив рядків і повертає рядки, довжина яких є найдовшою.
 
 # --hints--
 
@@ -28,7 +28,7 @@ assert(typeof longestString == 'function');
 assert(Array.isArray(longestString(['a', 'bb', 'ccc', 'ee', 'f', 'ggg'])));
 ```
 
-`longestString(["a", "bb", "ccc", "ee", "f", "ggg"])` має повернути масив `["ccc", "ggg"]`.
+`longestString(["a", "bb", "ccc", "ee", "f", "ggg"])` має повернути `["ccc", "ggg"]`.
 
 ```js
 assert.deepEqual(longestString(['a', 'bb', 'ccc', 'ee', 'f', 'ggg']), [

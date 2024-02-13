@@ -1,6 +1,6 @@
 ---
 id: 5a94fdf869fb03452672e45b
-title: Align All Items Vertically using align-items
+title: align-items로 아이템 수직 정렬하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/ckzPeUv'
 forumTopicId: 301121
@@ -9,15 +9,15 @@ dashedName: align-all-items-vertically-using-align-items
 
 # --description--
 
-Using the `align-items` property on a grid container will set the vertical alignment for all the items in our grid.
+그리드 컨테이너에 `align-items` 속성을 사용하면 그리드에 있는 모든 아이템을 수직 정렬시킬 수 있습니다.
 
 # --instructions--
 
-Use it now to move all the items to the end of each cell.
+각 셀의 끝에 모든 아이템을 이동시키도록 이 속성을 사용하세요.
 
 # --hints--
 
-`container` class should have a `align-items` property that has the value of `end`.
+`container` 클래스는 `end` 값을 가진 `align-items` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
     grid-gap: 10px;
     /* Only change code below this line */
 
-    
+
     /* Only change code above this line */
   }
 </style>

@@ -1,6 +1,6 @@
 ---
 id: 5a9d727a424fe3d0e10cad12
-title: Use a custom CSS Variable
+title: 커스텀 CSS 변수 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM989ck'
 forumTopicId: 301090
@@ -9,21 +9,21 @@ dashedName: use-a-custom-css-variable
 
 # --description--
 
-After you create your variable, you can assign its value to other CSS properties by referencing the name you gave it.
+변수를 생성한 후 이 변수의 이름을 참조하여 다른 CSS 속성에 해당 값을 할당할 수 있습니다.
 
 ```css
 background: var(--penguin-skin);
 ```
 
-This will change the background of whatever element you are targeting to gray because that is the value of the `--penguin-skin` variable. Note that styles will not be applied unless the variable names are an exact match.
+이것은 `--penguin-skin` 변수의 값이 회색이기 때문에 대상으로 하는 요소의 배경을 회색으로 변경할 것입니다. 변수의 이름이 완전하게 일치하지 않으면 스타일이 적용되지 않을 것입니다.
 
 # --instructions--
 
-Apply the `--penguin-skin` variable to the `background` property of the `penguin-top`, `penguin-bottom`, `right-hand` and `left-hand` classes.
+`penguin-top`, `penguin-bottom`, `right-hand` 그리고 `left-hand` 클래스의 `background` 속성에 `--penguin-skin` 변수를 적용하세요.
 
 # --hints--
 
-The `--penguin-skin` variable should be applied to the `background` property of the `penguin-top` class.
+`--penguin-skin` 변수는 `penguin-top` 클래스의 `background` 속성에 적용되어야 합니다.
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-The `--penguin-skin` variable should be applied to the `background` property of the `penguin-bottom` class.
+`--penguin-skin` 변수는 `penguin-bottom` 클래스의 `background` 속성에 적용되어야 합니다.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-The `--penguin-skin` variable should be applied to the `background` property of the `right-hand` class.
+`--penguin-skin` 변수는 `right-hand` 클래스의 `background` 속성에 적용되어야 합니다.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-The `--penguin-skin` variable should be applied to the `background` property of the `left-hand` class.
+`--penguin-skin` 변수는 `left-hand` 클래스의 `background` 속성에 적용되어야 합니다.
 
 ```js
 assert(

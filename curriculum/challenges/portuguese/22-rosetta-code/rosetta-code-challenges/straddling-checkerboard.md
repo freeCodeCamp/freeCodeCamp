@@ -8,7 +8,7 @@ dashedName: straddling-checkerboard
 
 # --description--
 
-Implement functions to encrypt and decrypt a message using the **straddling checkerboard** method.
+Implemente funções para criptografar e descriptografar uma mensagem usando o método do **tabuleiro de damas escarranchado**.
 
 Cada função receberá dois argumentos, uma string de `message` e um array `alphabet`. O array `alphabet` conterá 3 strings representando as 3 linhas do tabuleiro de verificação.
 

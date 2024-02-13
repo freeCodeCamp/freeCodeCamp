@@ -1,6 +1,6 @@
 ---
 id: 5900f36e1000cf542c50fe80
-title: 'Problem 1: Multiples of 3 or 5'
+title: 'Problema 1: Múltiplos de 3 ou 5'
 challengeType: 1
 forumTopicId: 301722
 dashedName: problem-1-multiples-of-3-or-5
@@ -14,31 +14,31 @@ Calcule a soma de todos os múltiplos de 3 ou 5 menor que o parâmetro `number`.
 
 # --hints--
 
-`multiplesOf3Or5(10)` should return a number.
+`multiplesOf3Or5(10)` deve retornar um número.
 
 ```js
 assert(typeof multiplesOf3Or5(10) === 'number');
 ```
 
-`multiplesOf3Or5(49)` should return 543.
+`multiplesOf3Or5(49)` deve retornar 543.
 
 ```js
 assert.strictEqual(multiplesOf3Or5(49), 543);
 ```
 
-`multiplesOf3Or5(1000)` should return 233168.
+`multiplesOf3Or5(1000)` deve retornar 233168.
 
 ```js
 assert.strictEqual(multiplesOf3Or5(1000), 233168);
 ```
 
-`multiplesOf3Or5(8456)` should return 16687353.
+`multiplesOf3Or5(8456)` deve retornar 16687353.
 
 ```js
 assert.strictEqual(multiplesOf3Or5(8456), 16687353);
 ```
 
-`multiplesOf3Or5(19564)` should return 89301183.
+`multiplesOf3Or5(19564)` deve retornar 89301183.
 
 ```js
 assert.strictEqual(multiplesOf3Or5(19564), 89301183);

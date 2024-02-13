@@ -1,6 +1,6 @@
 ---
 id: 5a94fe7769fb03452672e463
-title: Use Media Queries to Create Responsive Layouts
+title: 반응형 레이아웃 생성을 위한 미디어 쿼리 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cMbqeHk'
 forumTopicId: 301138
@@ -9,17 +9,17 @@ dashedName: use-media-queries-to-create-responsive-layouts
 
 # --description--
 
-CSS Grid can be an easy way to make your site more responsive by using media queries to rearrange grid areas, change dimensions of a grid, and rearrange the placement of items.
+CSS 그리드는 미디어 쿼리를 사용하여 그리드 영역을 재배치하고 그리드의 차원을 변경하며 항목의 배치를 재조정하여 웹사이트를 보다 반응형으로 만드는 간편한 방법이 될 수 있습니다.
 
-In the preview, when the viewport width is 300px or more, the number of columns changes from 1 to 2. The advertisement area then occupies the left column completely.
+미리보기에서 viewport 너비가 300px 이상일 때 열의 수가 1에서 2로 변합니다. 그런 다음 광고 영역은 완전히 왼쪽 열을 차지합니다.
 
 # --instructions--
 
-When the viewport width is `400px` or more, make the header area occupy the top row completely and the footer area occupy the bottom row completely.
+viewport 너비가 `400px` 이상일 때 헤더 영역이 상단 행을 완전히 차지하고 푸터 영역이 하단 행을 완전히 차지하도록 만드시오.
 
 # --hints--
 
-When the viewport is `400px` or more, `container` class should have a `grid-template-areas` property in which the header and footer areas occupy the top and bottom rows respectively and advert and content occupy the left and right columns of the middle row.
+viewport가 `400px` 이상인 경우, `container` 클래스는 헤더와 푸터 영역이 각각 상단과 하단 행을 차지하고 광고와 내용이 가운데 행의 왼쪽과 오른쪽 열을 차지하는 `grid-template-areas` 속성을 가져야 합니다.
 
 ```js
 assert(

@@ -29,11 +29,11 @@ If two players have the same ranked hands then the rank made up of the highest v
 
 Consider the following five hands dealt to two players:
 
-| Hand               | Player 1                                                  | Player 2                                                   | Winner   |
-| ------------------ | --------------------------------------------------------- | ---------------------------------------------------------- | -------- |
-| <strong>1</strong> | 5H 5C 6S 7S KD <br> Pair of Fives                         | 2C 3S 8S 8D TD <br> Pair of Eights                         | Player 2 |
-| <strong>2</strong> | 5D 8C 9S JS AC <br> Highest card Ace                      | 2C 5C 7D 8S QH <br> Highest card Queen                     | Player 1 |
-| <strong>3</strong> | 2D 9C AS AH AC <br> Three Aces                            | 3D 6D 7D TD QD <br> Flush with Diamonds                    | Player 2 |
+| Hand                      | Player 1                                                              | Player 2                                                               | Winner   |
+| ------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------- |
+| <strong>1</strong> | 5H 5C 6S 7S KD <br> Pair of Fives                               | 2C 3S 8S 8D TD <br> Pair of Eights                               | Player 2 |
+| <strong>2</strong> | 5D 8C 9S JS AC <br> Highest card Ace                            | 2C 5C 7D 8S QH <br> Highest card Queen                           | Player 1 |
+| <strong>3</strong> | 2D 9C AS AH AC <br> Three Aces                                  | 3D 6D 7D TD QD <br> Flush with Diamonds                          | Player 2 |
 | <strong>4</strong> | 4D 6S 9H QH QC <br> Pair of Queens <br> Highest card Nine | 3D 6D 7H QD QS <br> Pair of Queens <br> Highest card Seven | Player 1 |
 | <strong>5</strong> | 2H 2D 4C 4D 4S <br> Full House <br> with Three Fours      | 3C 3D 3S 9S 9D <br> Full House <br> with Three Threes      | Player 1 |
 

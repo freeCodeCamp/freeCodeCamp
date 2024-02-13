@@ -10,7 +10,7 @@ dashedName: post-data-with-the-javascript-xmlhttprequest-method
 
 In the previous examples, you received data from an external resource. You can also send data to an external resource, as long as that resource supports AJAX requests and you know the URL.
 
-JavaScript's `XMLHttpRequest` method is also used to post data to a server. Here's an example:
+JavaScript's `XMLHttpRequest` method is also used to post data to a server. 여기 예시가 있습니다.
 
 ```js
 const xhr = new XMLHttpRequest();
@@ -36,7 +36,7 @@ Finally, the `send` method sends the request with the `body` value. The `body` c
 
 # --instructions--
 
-Update the code so it makes a `POST` request to the API endpoint. Then type your name in the input field and click `Send Message`. Your AJAX function should replace `Reply from Server will be here.` with data from the server. Format the response to display your name appended with the text ` loves cats`.
+Update the code so it makes a `POST` request to the API endpoint. Then type your name in the input field and click `Send Message`. Your AJAX function should replace `Reply from Server will be here.` with data from the server. Format the response to display your name appended with the text `loves cats`.
 
 # --hints--
 

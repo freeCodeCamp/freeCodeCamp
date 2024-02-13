@@ -8,7 +8,7 @@ dashedName: date-format
 
 # --description--
 
-Return an array with two date strings of the current date with the following specifications:
+Поверніть масив з двома рядками поточної дати відповідно до опису нижче:
 
 - Дата в першому рядку повинна мати такий порядок: рік, місяць, день (розділені рискою `-`).
 - Рік в першому рядку має складатись з чотирьох цифр.
@@ -16,7 +16,7 @@ Return an array with two date strings of the current date with the following spe
 - Не скорочуйте назви дня та місяця в другому рядку.
 - День в другому рядку не може починатися з нуля.
 
-Приклад кінцевого результату:
+Приклад виводу:
 
 ```js
 ['2007-11-23', 'Friday, November 23, 2007']
@@ -31,19 +31,19 @@ Return an array with two date strings of the current date with the following spe
 assert(typeof getDateFormats === 'function');
 ```
 
-`getDateFormats` має повернути об'єкт.
+`getDateFormats` має повернути об’єкт.
 
 ```js
 assert(typeof getDateFormats() === 'object');
 ```
 
-`getDateFormats` повинен повернути масив з 2 елементами.
+`getDateFormats` має повернути масив з 2 елементами.
 
 ```js
 assert(getDateFormats().length === 2);
 ```
 
-`getDateFormats` має повернути правильну дату в правильному форматі
+`getDateFormats` має повернути правильну дату в правильному форматі.
 
 ```js
 assert.deepEqual(getDateFormats(), dates, equalsMessage);

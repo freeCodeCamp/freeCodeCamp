@@ -1,6 +1,6 @@
 ---
 id: 587d7791367417b2b2512ab5
-title: Adjust the Height of an Element Using the height Property
+title: height 속성을 이용해서 요소의 높이 조정하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDaDTN'
 forumTopicId: 301034
@@ -9,7 +9,7 @@ dashedName: adjust-the-height-of-an-element-using-the-height-property
 
 # --description--
 
-You can specify the height of an element using the `height` property in CSS, similar to the `width` property. Here's an example that changes the height of an image to 20px:
+요소의 높이는 CSS에서 `height` 속성을 사용하여 지정할 수 있습니다. 이것은 `width` 속성과 유사합니다. 다음은 이미지의 높이를 20픽셀로 변경하는 예제입니다.
 
 ```css
 img {
@@ -19,13 +19,13 @@ img {
 
 # --instructions--
 
-Add a `height` property to the `h4` tag and set it to 25px.
+`h4` 태그에 `height` 속성을 추가하고 값을 25px로 설정하세요.
 
-**Note:** You may need to be at 100% zoom to pass the test on this challenge.
+**참고:** 이 도전 과제를 통과하려면 화면을 100% 줌 상태로 설정해야 할 수도 있습니다.
 
 # --hints--
 
-Your code should change the `h4` `height` property to a value of 25 pixels.
+`h4`의 `height` 속성을 25 픽셀로 변경해야 합니다.
 
 ```js
 assert(

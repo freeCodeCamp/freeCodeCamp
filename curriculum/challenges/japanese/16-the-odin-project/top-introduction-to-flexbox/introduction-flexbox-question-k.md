@@ -19,7 +19,7 @@ Because `justify-content` and `align-items` are based on the main and cross axis
 
 # --question--
 
-## --宿題--
+## --assignment--
 
 Before moving on to the next lesson, see if you can figure out how `align-items` behaves when you change the `flex-direction` property to `column`.
 

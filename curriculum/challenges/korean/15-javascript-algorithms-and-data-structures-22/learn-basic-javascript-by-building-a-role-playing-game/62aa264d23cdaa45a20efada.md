@@ -388,7 +388,7 @@ function pickEight() {
 --fcc-editable-region--
 function pick(guess) {
   const numbers = [];
-  
+
 }
 --fcc-editable-region--
 ```

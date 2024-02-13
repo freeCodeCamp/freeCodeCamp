@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aede08835
-title: Nest Many Elements within a Single div Element
+title: 하나의 div 요소 내에 여러 요소 중첩시키기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cNW4kC3'
 forumTopicId: 18246
@@ -9,39 +9,39 @@ dashedName: nest-many-elements-within-a-single-div-element
 
 # --description--
 
-The `div` element, also known as a division element, is a general purpose container for other elements.
+구분 요소인 `div` 요소는 다른 요소를 담는 일반 컨테이너 입니다.
 
-The `div` element is probably the most commonly used HTML element of all.
+`div` 요소는 가장 많이 쓰이는 HTML 요소일 것입니다.
 
-Just like any other non-self-closing element, you can open a `div` element with `<div>` and close it on another line with `</div>`.
+다른 자체 닫힘이 아닌 요소와 마찬가지로 `div` 요소를 `<div>`로 열 수 있으며 다른 줄에서 `</div>`로 닫을 수 있습니다.
 
 # --instructions--
 
-Nest your "Things cats love" and "Top 3 things cats hate" lists all within a single `div` element.
+하나의 `div` 요소 내에 "Things cats love"와 "Top 3 things cats hate" 목록을 중첩시키세요.
 
-Hint: Try putting your opening `div` tag above your "Things cats love" `p` element and your closing `div` tag after your closing `ol` tag so that both of your lists are within one `div`.
+힌트: "Things cats love" `p` 요소 위에 여는 `div` 그리고 `ol` 태그 다음에 닫는 `div` 넣어 두 목록이 하나의 `div`에 있도록 만들어보세요.
 
 # --hints--
 
-Your `p` elements should be nested inside your `div` element.
+`p` 요소는 `div` 요소 안에 중첩되어야 합니다.
 
 ```js
 assert($('div').children('p').length > 1);
 ```
 
-Your `ul` element should be nested inside your `div` element.
+`ul` 요소는 `div` 요소 안에 중첩되어야 합니다.
 
 ```js
 assert($('div').children('ul').length > 0);
 ```
 
-Your `ol` element should be nested inside your `div` element.
+`ol` 요소는 `div` 요소 안에 중첩되어야 합니다.
 
 ```js
 assert($('div').children('ol').length > 0);
 ```
 
-Your `div` element should have a closing tag.
+`div` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(
@@ -92,7 +92,7 @@ assert(
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
   <div>
     <p>Things cats love:</p>

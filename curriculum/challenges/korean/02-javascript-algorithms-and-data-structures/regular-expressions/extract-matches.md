@@ -12,7 +12,7 @@ So far, you have only been checking if a pattern exists or not within a string. 
 
 To use the `.match()` method, apply the method on a string and pass in the regex inside the parentheses.
 
-Here's an example:
+여기 예시가 있습니다.
 
 ```js
 "Hello, World!".match(/Hello/);

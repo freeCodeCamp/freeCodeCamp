@@ -1,6 +1,6 @@
 ---
 id: 5a94fe8569fb03452672e464
-title: Create Grids within Grids
+title: 그리드 안에 그리드 생성하기
 challengeType: 0
 forumTopicId: 301128
 dashedName: create-grids-within-grids
@@ -8,17 +8,17 @@ dashedName: create-grids-within-grids
 
 # --description--
 
-Turning an element into a grid only affects the behavior of its direct descendants. So by turning a direct descendant into a grid, you have a grid within a grid.
+한 요소를 그리드로 바꾸는 것은 오직 직계 하위 요소들의 행동에만 영향을 미칩니다. 그래서 직계 하위 요소를 그리드로 바꾸면 그리드 안에 그리드를 가지게 됩니다.
 
-For example, by setting the `display` and `grid-template-columns` properties of the element with the `item3` class, you create a grid within your grid.
+예를 들면 `item3` 클래스를 가진 요소의 `display` and `grid-template-columns` 속성들을 설정하여 그리드 안에 그리드를 생성할 수 있습니다.
 
 # --instructions--
 
-Turn the element with the `item3` class into a grid with two columns with a width of `auto` and `1fr` using `display` and `grid-template-columns`.
+`display` and `grid-template-columns`사용하여 `item3` 클래스를 가진 요소를 `auto`와 `1fr` 너비를 가진 두 열로 된 그리드로 변환하세요.
 
 # --hints--
 
-`item3` class should have a `grid-template-columns` property with `auto` and `1fr` as values.
+`item3` 클래스는 `auto`와 `1fr` 값을 가진 `grid-template-columns` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -28,7 +28,7 @@ assert(
 );
 ```
 
-`item3` class should have a `display` property with the value of `grid`.
+`item3` 클래스는 `grid` 값을 가진 `display` 속성을 가져야 합니다.
 
 ```js
 assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));

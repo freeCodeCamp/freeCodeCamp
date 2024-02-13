@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-The function `isEveryoneHere` should return `true` if `Alan`, `Jeff`, `Sarah`, and `Ryan` are properties on the object passed to it. 
+The function `isEveryoneHere` should return `true` if `Alan`, `Jeff`, `Sarah`, and `Ryan` are properties on the object passed to it.
 
 ```js
 assert(isEveryoneHere(users) === true);
@@ -119,7 +119,7 @@ let users = {
 
 function isEveryoneHere(userObj) {
   // Only change code below this line
-  
+
   // Only change code above this line
 }
 

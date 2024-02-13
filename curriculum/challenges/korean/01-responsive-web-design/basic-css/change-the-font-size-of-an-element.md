@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08806
-title: Change the Font Size of an Element
+title: 요소의 폰트 크기 바꾸기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bvDc8'
 forumTopicId: 16777
@@ -9,7 +9,7 @@ dashedName: change-the-font-size-of-an-element
 
 # --description--
 
-Font size is controlled by the `font-size` CSS property, like this:
+폰트 크기는 다음과 같이 `font-size` CSS 속성으로 제어됩니다.
 
 ```css
 h1 {
@@ -19,11 +19,11 @@ h1 {
 
 # --instructions--
 
-Inside the same `<style>` tag that contains your `red-text` class, create an entry for `p` elements and set the `font-size` to 16 pixels (`16px`).
+`red-text` 클래스를 포함하는 동일한 `<style>` 태그 내부에 `p` 요소에 대한 항목을 만들고 `font-size`를 16 픽셀로 설정하세요 (`16px`).
 
 # --hints--
 
-Between the `style` tags, give the `p` elements `font-size` of `16px`. Browser and Text zoom should be at 100%.
+`style` 태그 사이에서 `p` 요소에 `font-size`를 `16px`로 지정하세요. 브라우저와 텍스트 줌을 100%로 설정해야 합니다.
 
 ```js
 assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i));
