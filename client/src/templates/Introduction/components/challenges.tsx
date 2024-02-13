@@ -9,6 +9,7 @@ import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { executeGA } from '../../../redux/actions';
 import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ executeGA }, dispatch);
@@ -39,6 +40,92 @@ function Challenges({
     challenge => challenge.isCompleted
   );
 
+  function gridRenderer() {
+    const challengesGrid: JSX.Element[] = [];
+    let stepOrTaskNumber = 1;
+
+    for (let i = 0; i < challengesWithCompleted.length; i++) {
+      if (challengesWithCompleted[i].challengeType === 21) {
+        challengesGrid.push(
+          <li
+            className={'map-challenge-title map-challenge-wrap'}
+            id={challengesWithCompleted[i].dashedName}
+            key={'map-challenge' + challengesWithCompleted[i].fields.slug}
+          >
+            <Link to={challengesWithCompleted[i].fields.slug}>
+              <span className='badge map-badge'>
+                <CheckMark
+                  isCompleted={challengesWithCompleted[i].isCompleted}
+                />
+              </span>
+              {challengesWithCompleted[i].title}
+            </Link>
+          </li>
+        );
+      } else {
+        const stepsOrTasks: JSX.Element[] = [];
+
+        while (
+          i < challengesWithCompleted.length &&
+          challengesWithCompleted[i].challengeType !== 21
+        ) {
+          stepsOrTasks.push(
+            <li
+              className={`map-challenge-title map-challenge-title-grid ${
+                isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
+              }`}
+              id={challengesWithCompleted[i].dashedName}
+              key={`map-challenge ${challengesWithCompleted[i].fields.slug}`}
+            >
+              {!isProjectBlock ? (
+                <Link
+                  to={challengesWithCompleted[i].fields.slug}
+                  className={`map-grid-item ${
+                    +challengesWithCompleted[i].isCompleted
+                      ? 'challenge-completed'
+                      : ''
+                  }`}
+                >
+                  <span className='sr-only'>
+                    {challengesWithCompleted[i].superBlock ===
+                    SuperBlocks.A2English
+                      ? t('aria.task')
+                      : t('aria.step')}
+                  </span>
+                  <span>{stepOrTaskNumber}</span>
+                  <span className='sr-only'>
+                    {challengesWithCompleted[i].isCompleted
+                      ? t('icons.passed')
+                      : t('icons.not-passed')}
+                  </span>
+                </Link>
+              ) : (
+                <Link to={challengesWithCompleted[i].fields.slug}>
+                  {challengesWithCompleted[i].title}
+                  <span className=' badge map-badge map-project-checkmark'>
+                    <CheckMark
+                      isCompleted={challengesWithCompleted[i].isCompleted}
+                    />
+                  </span>
+                </Link>
+              )}
+            </li>
+          );
+
+          i++;
+          stepOrTaskNumber++;
+        }
+        challengesGrid.push(
+          <ul className={`map-challenges-ul map-challenges-grid `}>
+            {stepsOrTasks}
+          </ul>
+        );
+        i--;
+      }
+    }
+    return challengesGrid;
+  }
+
   return isGridMap ? (
     <>
       {firstIncompleteChallenge && (
@@ -56,44 +143,14 @@ function Challenges({
       )}
       <nav
         aria-label={
-          blockTitle ? t('aria.steps-for', { blockTitle }) : t('aria.steps')
+          blockTitle
+            ? challengesWithCompleted[0].superBlock === SuperBlocks.A2English
+              ? t('aria.dialogues-and-tasks-for', { blockTitle })
+              : t('aria.steps-for', { blockTitle })
+            : t('aria.steps')
         }
       >
-        <ul className={`map-challenges-ul map-challenges-grid `}>
-          {challengesWithCompleted.map((challenge, i) => (
-            <li
-              className={`map-challenge-title map-challenge-title-grid ${
-                isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
-              }`}
-              id={challenge.dashedName}
-              key={`map-challenge ${challenge.fields.slug}`}
-            >
-              {!isProjectBlock ? (
-                <Link
-                  to={challenge.fields.slug}
-                  className={`map-grid-item ${
-                    +challenge.isCompleted ? 'challenge-completed' : ''
-                  }`}
-                >
-                  <span className='sr-only'>{t('aria.step')}</span>
-                  <span>{i + 1}</span>
-                  <span className='sr-only'>
-                    {challenge.isCompleted
-                      ? t('icons.passed')
-                      : t('icons.not-passed')}
-                  </span>
-                </Link>
-              ) : (
-                <Link to={challenge.fields.slug}>
-                  {challenge.title}
-                  <span className=' badge map-badge map-project-checkmark'>
-                    <CheckMark isCompleted={challenge.isCompleted} />
-                  </span>
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
+        {gridRenderer()}
       </nav>
     </>
   ) : (
