@@ -874,8 +874,8 @@ importers:
         specifier: 16.9.12
         version: 16.9.12
       '@types/react-transition-group':
-        specifier: 4.4.9
-        version: 4.4.9
+        specifier: 4.4.10
+        version: 4.4.10
       '@types/redux-actions':
         specifier: 2.6.5
         version: 2.6.5
@@ -11047,8 +11047,8 @@ packages:
       '@types/react': 16.14.51
     dev: true
 
-  /@types/react-transition-group@4.4.9:
-    resolution: {integrity: sha512-ZVNmWumUIh5NhH8aMD9CR2hdW0fNuYInlocZHaZ+dgk/1K49j1w/HoAuK1ki+pgscQrOFRTlXeoURtuzEkV3dg==}
+  /@types/react-transition-group@4.4.10:
+    resolution: {integrity: sha512-hT/+s0VQs2ojCX823m60m5f0sL5idt9SO6Tj6Dg+rdphGPIeJbJ6CxvBYkgkGKrYeDjvIpKTR38UzmtHJOGW3Q==}
     dependencies:
       '@types/react': 16.14.51
     dev: true
