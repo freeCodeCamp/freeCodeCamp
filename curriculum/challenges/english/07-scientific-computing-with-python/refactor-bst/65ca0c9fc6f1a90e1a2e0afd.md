@@ -1,35 +1,22 @@
 ---
-id: 65ca06c9f918730107c9908d
-title: Step 36
+id: 65ca0c9fc6f1a90e1a2e0afd
+title: Step 47
 challengeType: 20
-dashedName: step-36
+dashedName: step-47
 ---
 
 # --description--
 
-Write an `elif` statement that checks if `key > node.key`.
+To find the smallest value in the right subtree, you need to iterate through the left children of the given node until you reach the leftmost (smallest) node in the subtree.
 
-Inside your `elif` block, call the `_delete` method with the right child of the current node and `key` as the arguments and assign the result to the right node.
+To do this, write a `while` loop that runs when `node.left is not None` and move `pass` inside the `while` block. This condition checks if there is a left child. As long as there is a left child, the loop continues and there is a smaller value to be found.
 
 # --hints--
 
-You should write an `elif` statement that checks if `key > node.key`.
+You should use the condition `node.left is not None` in the `while` loop.
 
 ```js
-const after_split = code.split('def _delete(self, node, key):')[1];
-assert.match(after_split, /elif\s+key\s+>\s+node\.key/);
-```
-
-You should call the `_delete` method with `node.right` and `key` as the arguments.
-
-```js
-assert.match(code, /self\._delete\(\s*node\.right,\s*key\s*\)/);
-```
-
-You should assign the result of the `_delete()` call to `node.right`.
-
-```js
-assert.match(code, /node\.right\s*=\s*self\._delete\(\s*node\.right,\s*key\s*\)/);
+({ test: () => assert.match(code, /while\s+node\.left\s+is\s+not\s+None\s*:/) })
 ```
 
 # --seed--
@@ -77,12 +64,30 @@ class BinarySearchTree:
     def search(self, key):
         return self._search(self.root, key)
 
---fcc-editable-region--
     def _delete(self, node, key):
         if node is None:
             return node
         if key < node.key:
             node.left = self._delete(node.left, key)
+        elif key > node.key:
+            node.right = self._delete(node.right, key) 
+        else:
+            if node.left is None:
+                return node.right
+            elif node.right is None:
+                return node.left   
+            
+            node.key = self._min_value(node.right)
+            node.right = self._delete(node.right, node.key)   
+        
+        return node
+
+    def delete(self, key):
+        self.root = self._delete(self.root, key)
+
+--fcc-editable-region--
+    def _min_value(self, node):
+        pass
 
 --fcc-editable-region--
 
