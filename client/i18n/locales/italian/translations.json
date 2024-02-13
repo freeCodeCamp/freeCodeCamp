@@ -93,7 +93,9 @@
     "link-account": "Collega Account",
     "unlink-account": "Scollega Account",
     "update-card": "Update your card",
-    "donate-now": "Donate Now"
+    "donate-now": "Donate Now",
+    "confirm-amount": "Confirm amount",
+    "skip-advertisement": "Skip Advertisement"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -578,6 +580,7 @@
     "other-support": "Se ci sono altri modi in cui vorresti supportare il nostro ente benefico e la sua missione che non sono elencati in questa pagina, o se hai qualsiasi domanda, per favore scrivi a Quincy a quincy@freecodecamp.org.",
     "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
     "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy.",
+    "flying-bear": "Illustration of an adorable teddy bear wearing a graduation cap and flying with a Supporter badge.",
     "crucial-contribution": "Your contribution will be crucial in creating resources that empower millions of people to learn new skills and support their families.",
     "support-benefits-title": "Benefits from becoming a Supporter:",
     "support-benefits-1": "No more donation prompt popups",
@@ -598,7 +601,14 @@
     "community-achivements-3": "Merged <0>2,753</0> code contributions into our open source repositories on GitHub",
     "community-achivements-4": "Translated <0>2,106,203</0> words to make our curriculum and tutorials more accessible to speakers of many world languages",
     "as-you-see": "As you can see, we're getting things done. So you can rest assured that we'll put your donations to good use.",
-    "get-benefits": "Get the benefits and the knowledge that you’re helping our charity change education for the better. Become a Supporter today."
+    "get-benefits": "Get the benefits and the knowledge that you’re helping our charity change education for the better. Become a supporter today.",
+    "modal-benefits-title": "Support us",
+    "help-us-more-certifications": "Help us build more certifications",
+    "remove-donation-popups": "Remove donation popups",
+    "help-millions-learn": "Help millions of people learn",
+    "reach-goals-faster": "Reach your goals faster",
+    "remove-distractions": "Remove distractions",
+    "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world."
   },
   "report": {
     "sign-in": "Devi essere loggato per segnalare un utente",
