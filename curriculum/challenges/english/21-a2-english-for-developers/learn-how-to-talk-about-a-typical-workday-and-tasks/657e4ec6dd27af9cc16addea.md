@@ -1,8 +1,8 @@
 ---
 id: 657e4ec6dd27af9cc16addea
-title: Task 74
+title: Task 78
 challengeType: 19
-dashedName: task-74
+dashedName: task-78
 ---
 
 # --description--
