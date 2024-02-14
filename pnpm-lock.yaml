@@ -293,8 +293,8 @@ importers:
         specifier: 6.3.3
         version: 6.3.3
       ts-jest:
-        specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.23.7)(babel-jest@29.7.0)(jest@29.7.0)(typescript@5.2.2)
+        specifier: 29.1.2
+        version: 29.1.2(@babel/core@7.23.7)(babel-jest@29.7.0)(jest@29.7.0)(typescript@5.2.2)
 
   api-server:
     dependencies:
@@ -30866,9 +30866,9 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /ts-jest@29.1.1(@babel/core@7.23.7)(babel-jest@29.7.0)(jest@29.7.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-D6xjnnbP17cC85nliwGiL+tpoKN0StpgE0TeOjXQTU6MVCfsB4v7aW05CgQ/1OywGb0x/oy9hHFnN+sczTiRaA==}
-    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+  /ts-jest@29.1.2(@babel/core@7.23.7)(babel-jest@29.7.0)(jest@29.7.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-br6GJoH/WUX4pu7FbZXuWGKGNDuU7b8Uj77g/Sp7puZV6EXzuByl6JrECvm0MzVzSTkSHWTihsXt+5XYER5b+g==}
+    engines: {node: ^16.10.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
       '@babel/core': '>=7.0.0-beta.0 <8'
@@ -32826,7 +32826,7 @@ packages:
       require-directory: 2.1.1
       string-width: 4.2.3
       y18n: 5.0.8
-      yargs-parser: 20.2.4
+      yargs-parser: 20.2.9
     dev: true
 
   /yargs@17.7.2:
