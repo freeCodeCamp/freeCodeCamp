@@ -187,8 +187,8 @@ importers:
         specifier: 8.12.0
         version: 8.12.0
       '@fastify/swagger-ui':
-        specifier: 1.10.1
-        version: 1.10.1
+        specifier: 1.10.2
+        version: 1.10.2
       '@fastify/type-provider-typebox':
         specifier: 3.5.0
         version: 3.5.0(@sinclair/typebox@0.31.17)
@@ -6997,8 +6997,8 @@ packages:
       p-limit: 3.1.0
     dev: false
 
-  /@fastify/swagger-ui@1.10.1:
-    resolution: {integrity: sha512-u3EJqNKvVr3X+6jY5i6pbs6/tXCrSlqc2Y+PVjnHBTOGh/d36uHMz+z4jPFy9gie2my6iHUrAdM8itlVmoUjog==}
+  /@fastify/swagger-ui@1.10.2:
+    resolution: {integrity: sha512-f2mRqtblm6eRAFQ3e8zSngxVNEtiYY7rISKQVjPA++ZsWc5WYlPVTb6Bx0G/zy0BIoucNqDr/Q2Vb/kTYkOq1A==}
     dependencies:
       '@fastify/static': 6.11.2
       fastify-plugin: 4.5.1
