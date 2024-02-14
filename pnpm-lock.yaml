@@ -1100,8 +1100,8 @@ importers:
         specifier: 4.1.1
         version: 4.1.1(vite@4.5.2)
       codemirror:
-        specifier: 5.65.15
-        version: 5.65.15
+        specifier: 5.65.16
+        version: 5.65.16
       react:
         specifier: 16.14.0
         version: 16.14.0
@@ -1122,8 +1122,8 @@ importers:
         version: 4.2.1(typescript@5.2.2)(vite@4.5.2)
     devDependencies:
       '@types/codemirror':
-        specifier: 5.60.13
-        version: 5.60.13
+        specifier: 5.60.15
+        version: 5.60.15
       '@types/react':
         specifier: 16.14.56
         version: 16.14.56
@@ -1132,7 +1132,7 @@ importers:
         version: 16.9.24
       '@uiw/react-codemirror':
         specifier: 3.2.10
-        version: 3.2.10(@babel/runtime@7.23.9)(codemirror@5.65.15)(react-dom@16.14.0)(react@16.14.0)
+        version: 3.2.10(@babel/runtime@7.23.9)(codemirror@5.65.16)(react-dom@16.14.0)(react@16.14.0)
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
@@ -10578,8 +10578,8 @@ packages:
       '@types/node': 20.8.2
     dev: true
 
-  /@types/codemirror@5.60.13:
-    resolution: {integrity: sha512-qLWcKUwYDYB7mZpE++0Jn3i1TJ2GW8nlhALRAfjaKgb1HRnk2qcNqWxZ+BpPY1h4n4IQT0foThaOxWHxEL8MnQ==}
+  /@types/codemirror@5.60.15:
+    resolution: {integrity: sha512-dTOvwEQ+ouKJ/rE9LT1Ue2hmP6H1mZv5+CCnNWu2qtiOe2LQa9lCprEY20HxiDmV/Bxh+dXjywmy5aKvoGjULA==}
     dependencies:
       '@types/tern': 0.23.5
     dev: true
@@ -11627,7 +11627,7 @@ packages:
       '@typescript-eslint/types': 6.10.0
       eslint-visitor-keys: 3.4.3
 
-  /@uiw/react-codemirror@3.2.10(@babel/runtime@7.23.9)(codemirror@5.65.15)(react-dom@16.14.0)(react@16.14.0):
+  /@uiw/react-codemirror@3.2.10(@babel/runtime@7.23.9)(codemirror@5.65.16)(react-dom@16.14.0)(react@16.14.0):
     resolution: {integrity: sha512-sSabPpOQFFRAZwm/JZ6gRRqQg0PBPw9nRAT9YepqUSM3TJHQzavZDRDxKF8B9jL+KU24+aKqM/clLlpPPPF5sQ==}
     peerDependencies:
       '@babel/runtime': '>=7.11.0'
@@ -11636,7 +11636,7 @@ packages:
       react-dom: '>=16.8.0'
     dependencies:
       '@babel/runtime': 7.23.9
-      codemirror: 5.65.15
+      codemirror: 5.65.16
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
     dev: true
@@ -14996,8 +14996,8 @@ packages:
     engines: {iojs: '>= 1.0.0', node: '>= 0.12.0'}
     dev: true
 
-  /codemirror@5.65.15:
-    resolution: {integrity: sha512-YC4EHbbwQeubZzxLl5G4nlbLc1T21QTrKGaOal/Pkm9dVDMZXMH7+ieSPEOZCtO9I68i8/oteJKOxzHC2zR+0g==}
+  /codemirror@5.65.16:
+    resolution: {integrity: sha512-br21LjYmSlVL0vFCPWPfhzUCT34FM/pAdK7rRIZwa0rrtrIdotvP4Oh4GUHsu2E3IrQMCfRkL/fN3ytMNxVQvg==}
 
   /collapse-white-space@1.0.6:
     resolution: {integrity: sha512-jEovNnrhMuqyCcjfEJA56v0Xq8SkIoPKDyaHahwo3POf4qcSXqMYuwNcOTzp74vTsR9Tn08z4MxWqAhcekogkQ==}
