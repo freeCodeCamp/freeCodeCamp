@@ -1,6 +1,6 @@
 ---
 id: 587d78a4367417b2b2512ad3
-title: Adjust the Color of Various Elements to Complementary Colors
+title: 다양한 요소의 색상을 보충 색으로 조정하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cWmPpud'
 forumTopicId: 301033
@@ -9,33 +9,33 @@ dashedName: adjust-the-color-of-various-elements-to-complementary-colors
 
 # --description--
 
-The Complementary Colors challenge showed that opposite colors on the color wheel can make each other appear more vibrant when placed side-by-side. However, the strong visual contrast can be jarring if it's overused on a website, and can sometimes make text harder to read if it's placed on a complementary-colored background. In practice, one of the colors is usually dominant and the complement is used to bring visual attention to certain content on the page.
+보충 색 도전 과제를 통해 색상환에서 서로 반대에 위치한 색상이 서로 옆에 있을 때 더 눈에 띌 수 있다는 것을 알 수 있었습니다. 그러나 강한 시각적 대조가 웹사이트에서 과도하게 사용되면 눈에 거슬릴 수 있으며, 보충색 배경 위에 텍스트를 두면 읽기 어려워질 수도 있습니다. 실제로는 일반적으로 한 색상이 우세하고 보충색은 페이지의 특정 콘텐츠에 시각적 관심을 끌기 위해 사용됩니다.
 
 # --instructions--
 
-This page will use a shade of teal (`#09A7A1`) as the dominant color, and its orange (`#FF790E`) complement to visually highlight the sign-up buttons. Change the `background-color` of both the `header` and `footer` from black to the teal color. Then change the `h2` text `color` to teal as well. Finally, change the `background-color` of the `button` to the orange color.
+이 페이지에서는 주로 틸 색상 (`#09A7A1`)을 사용하고 시각적으로 강조할 로그인 버튼에 오렌지 색상 (`#FF790E`) 보충색상으로 사용할 것입니다. `header`와 `footer`의 `background-color`를 검은색에서 틸 색상으로 변경하세요. 그런 다음 `h2` 텍스트의 `color`를 틸 색상으로 변경하세요. 마지막으로, `button`의 `background-color`를 주황색으로 변경하세요.
 
 # --hints--
 
-The `header` element should have a `background-color` of #09A7A1.
+`header` 요소의 `background-color`를 #09A7A1로 설정해야 합니다.
 
 ```js
 assert($('header').css('background-color') == 'rgb(9, 167, 161)');
 ```
 
-The `footer` element should have a `background-color` of #09A7A1.
+`footer` 요소의 `background-color`를 #09A7A1로 설정해야 합니다.
 
 ```js
 assert($('footer').css('background-color') == 'rgb(9, 167, 161)');
 ```
 
-The `h2` element should have a `color` of #09A7A1.
+`h2` 요소의 `color`를 #09A7A1로 설정해야 합니다.
 
 ```js
 assert($('h2').css('color') == 'rgb(9, 167, 161)');
 ```
 
-The `button` element should have a `background-color` of #FF790E.
+`button` 요소의 `background-color`를 #FF790E로 설정해야 합니다.
 
 ```js
 assert($('button').css('background-color') == 'rgb(255, 121, 14)');

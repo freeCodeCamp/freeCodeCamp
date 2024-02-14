@@ -10,20 +10,13 @@ dashedName: problem-330-eulers-number
 
 An infinite sequence of real numbers $a(n)$ is defined for all integers $n$ as follows:
 
-$$ a(n) =
-\begin{cases}
-1                                                       & n < 0 \\\\
-\displaystyle \sum_{i = 1}^{\infty} \frac{a(n - 1)}{i!} & n \ge 0
-\end{cases}
-$$
+$$ a(n) = \begin{cases} 1                                                       & n < 0 \\\\
+\displaystyle \sum_{i = 1}^{\infty} \frac{a(n - 1)}{i!} & n \ge 0 \end{cases} $$
 
 For example,
 
-$$\begin{align}
-  & a(0) = \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \ldots = e − 1 \\\\
-  & a(1) = \frac{e − 1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \ldots = 2e − 3 \\\\
-  & a(2) = \frac{2e − 3}{1!} + \frac{e − 1}{2!} + \frac{1}{3!} + \ldots = \frac{7}{2} e − 6
-\end{align}$$
+$$\begin{align}   & a(0) = \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \ldots = e − 1 \\\\
+  & a(1) = \frac{e − 1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \ldots = 2e − 3 \\\\ & a(2) = \frac{2e − 3}{1!} + \frac{e − 1}{2!} + \frac{1}{3!} + \ldots = \frac{7}{2} e − 6 \end{align}$$
 
 with $e = 2.7182818\ldots$ being Euler's constant.
 

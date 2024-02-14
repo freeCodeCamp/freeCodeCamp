@@ -1,6 +1,6 @@
 ---
 id: 5956795bc9e2c415eb244de1
-title: Хеш-приєднання
+title: Hash join
 challengeType: 1
 forumTopicId: 302284
 dashedName: hash-join
@@ -10,7 +10,7 @@ dashedName: hash-join
 
 An inner join is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the nested loop join algorithm, but a more scalable alternative is the hash join algorithm.
 
-Алгоритм "хеш-приєднання" складається з двох кроків:
+The "hash join" algorithm consists of two steps:
 
 <ol>
   <li><strong>Hash phase:</strong> Create a multimap from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
@@ -52,7 +52,7 @@ An inner join is an operation that combines two data tables into one table, base
           <td style="border:none">
             <table>
               <tr>
-                <th style="padding: 4px; margin: 5px;">Вік</th>
+                <th style="padding: 4px; margin: 5px;">Age</th>
                 <th style="padding: 4px; margin: 5px;">Ім’я</th>
               </tr>
               <tr>

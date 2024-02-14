@@ -1,6 +1,6 @@
 ---
 id: 587d78ac367417b2b2512af7
-title: Use the justify-content Property in the Tweet Embed
+title: 트윗 임베드에 justify-content 속성 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c43GgTa'
 forumTopicId: 301115
@@ -9,21 +9,21 @@ dashedName: use-the-justify-content-property-in-the-tweet-embed
 
 # --description--
 
-The last challenge showed an example of the `justify-content` property. For the tweet embed, this property can be applied to align the items in the `.profile-name` element.
+지난 과제에서 `justify-content` 속성의 예시를 보았습니다. 트윗 임베드에 대해 이 속성은 `.profile-name` 요소에 있는 아이템을 정렬하기 위해 적용됩니다.
 
 # --instructions--
 
-Add the CSS property `justify-content` to the header's `.profile-name` element and set the value to any of the options from the last challenge.
+헤더의 `.profile-name` 요소에 `justify-content` 속성을 추가하고 지난 과제에서 본 선택지 중 하나로 속성 값을 설정하세요.
 
 # --hints--
 
-Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+`.follow-btn`가 페이지에 렌더링되어야 합니다. 광고 차단기 같은 확장 프로그램은 꺼야 합니다.
 
 ```js
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
 ```
 
-The `.profile-name` element should have the `justify-content` property set to any of these values: `center`, `flex-start`, `flex-end`, `space-between`, `space-around`, or `space-evenly`.
+`.profile-name` 요소는 `center`, `flex-start`, `flex-end`, `space-between`, `space-around` 혹은 `space-evenly` 중 하나로 값이 설정된 `justify-content` 속성을 가져야 합니다.
 
 ```js
 assert(

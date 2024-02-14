@@ -1,6 +1,6 @@
 ---
 id: 5a9d7295424fe3d0e10cad14
-title: Inherit CSS Variables
+title: CSS 변수 상속
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLZZhZ'
 forumTopicId: 301088
@@ -9,19 +9,19 @@ dashedName: inherit-css-variables
 
 # --description--
 
-When you create a variable, it is available for you to use inside the selector in which you create it. It also is available in any of that selector's descendants. This happens because CSS variables are inherited, just like ordinary properties.
+변수를 생성하면 생성한 선택자(selector) 내에서 변수를 사용할 수 있습니다. 또한 해당 선택자의 하위 항목에서도 사용할 수 있습니다. CSS의 변수는 일반 속성처럼 상속되기 때문입니다.
 
-To make use of inheritance, CSS variables are often defined in the <dfn>:root</dfn> element.
+상속을 활용하기 위해 CSS 변수를 종종 <dfn>:root</dfn> 요소 안에 정의하기도 합니다.
 
-`:root` is a <dfn>pseudo-class</dfn> selector that matches the root element of the document, usually the `html` element. By creating your variables in `:root`, they will be available globally and can be accessed from any other selector in the style sheet.
+`:root`는 보통 다큐먼트의 root 요소인 `html` 요소와 일치하는 <dfn>pseudo-class</dfn> 선택자입니다. `:root`에 변수를 생성하면 전역에서 사용할 수 있으며 스타일 시트의 다른 선택자에서도 액세스 할 수 있습니다.
 
 # --instructions--
 
-Define a variable named `--penguin-belly` in the `:root` selector and give it the value of `pink`. You can then see that the variable is inherited and that all the child elements which use it get pink backgrounds.
+`:root` 선택자 안에 `--penguin-belly`라는 변수를 정의하고 `pink` 값을 지정하세요. 변수가 상속되면서 이를 사용하는 모든 자식 요소의 배경색이 핑크색이 된 것을 확인할 수 있습니다.
 
 # --hints--
 
-The `--penguin-belly` variable should be declared in the `:root` and assigned the value `pink`.
+`--penguin-belly` 변수는 `:root` 안에 선언되어야 하며, `pink` 값이 할당되어야 합니다.
 
 ```js
 assert(

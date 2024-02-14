@@ -1,6 +1,6 @@
 ---
 id: 647e22958acb466c97ccbef4
-title: Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code
+title: 'Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code'
 challengeType: 19
 dashedName: guided-project-debug-and-handle-exceptions-in-a-c-sharp-console-application-using-visual-studio-code
 ---

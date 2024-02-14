@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08815
-title: Make Circular Images with a border-radius
+title: border-radius를 사용하여 원형 이미지 만들기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvrcB'
 forumTopicId: 18229
@@ -9,21 +9,21 @@ dashedName: make-circular-images-with-a-border-radius
 
 # --description--
 
-In addition to pixels, you can also specify the `border-radius` using a percentage.
+픽셀 외에도 `border-radius`를 퍼센트로 지정할 수 있습니다.
 
 # --instructions--
 
-Give your cat photo a `border-radius` of `50%`.
+고양이 사진에 `50%`의 `border-radius`를 부여합니다.
 
 # --hints--
 
-Your image should have a border radius of `50%`, making it perfectly circular.
+이미지는 완벽한 원 모양이기 위해서 `50%`의 테두리 반지름을 가져야 합니다.
 
 ```js
 assert(parseInt($('img').css('border-top-left-radius')) > 48);
 ```
 
-The `border-radius` value should use a percentage value of `50%`.
+`border-radius` 값은 `50%`의 퍼센트 값을 사용해야 합니다.
 
 ```js
 assert(code.match(/50%/g));

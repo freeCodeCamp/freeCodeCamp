@@ -5,6 +5,7 @@ title: CSS Foundations Question A
 challengeType: 15
 dashedName: css-foundations-question-a
 ---
+
 # --description--
 
 A type selector (or element selector) will select all elements of the given element type, and the syntax is just the name of the element:
@@ -28,7 +29,7 @@ div {
 
 Here, all three `<div>` elements would be selected, while the `<p>` element wouldn’t be.
 
-# --question--    
+# --question--
 
 ## --text--
 

@@ -7,7 +7,7 @@ dashedName: step-63
 
 # --description--
 
-Use `const` and arrow syntax to define a function called `setPlayButtonAccessibleText`. 
+Use `const` and arrow syntax to define a function called `setPlayButtonAccessibleText`.
 
 This function will set the `aria-label` attribute to the current song, or to the first song in the playlist. And if the playlist is empty, it sets the `aria-label` to `"Play"`.
 
@@ -644,7 +644,7 @@ const playSong = (id) => {
 
 const pauseSong = () => {
   userData.songCurrentTime = audio.currentTime;
-  
+
   playButton.classList.remove("playing");
   audio.pause();
 };

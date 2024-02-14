@@ -56,7 +56,7 @@ assert.strictEqual(almostPi(200), 64658);
 
 ```js
 function almostPi(n) {
-  
+
   return true;
 }
 ```

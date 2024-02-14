@@ -29,9 +29,9 @@ The doctypes for older versions of HTML were a bit more complicated. For example
 
 However, you probably won’t ever want to be using an older version of HTML, and so you’ll always use `<!DOCTYPE html>`.
 
-Open the `index.html` file created earlier in your text editor and add `<!DOCTYPE html>` to the very first line. 
+Open the `index.html` file created earlier in your text editor and add `<!DOCTYPE html>` to the very first line.
 
-# --question-- 
+# --question--
 ## --text--
 
 What is the purpose of the `DOCTYPE` declaration?

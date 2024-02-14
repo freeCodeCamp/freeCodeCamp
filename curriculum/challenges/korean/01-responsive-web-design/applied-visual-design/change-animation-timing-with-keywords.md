@@ -1,6 +1,6 @@
 ---
 id: 587d78a8367417b2b2512ae7
-title: Change Animation Timing with Keywords
+title: 키워드를 사용해 애니메이션 실행 속도 변경하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cJKvwCM'
 forumTopicId: 301045
@@ -9,17 +9,17 @@ dashedName: change-animation-timing-with-keywords
 
 # --description--
 
-In CSS animations, the `animation-timing-function` property controls how quickly an animated element changes over the duration of the animation. If the animation is a car moving from point A to point B in a given time (your `animation-duration`), the `animation-timing-function` says how the car accelerates and decelerates over the course of the drive.
+CSS 애니메이션에서, `animation-timing-function` 속성은 애니메이션 실행 시간 내에서 애니메이션이 실행되는 속도를 조절합니다. 예를 들어, A지점에서 B지점으로 지정된 시간(`animation-duration`) 동안 자동차가 이동하는 애니메이션이 있다고 합시다. 이때 `animation-timing-function` 속성은 차가 이동하는 동안 어떤 식으로 가속하거나 감속하는지를 결정합니다.
 
-There are a number of predefined keywords available for popular options. For example, the default value is `ease`, which starts slow, speeds up in the middle, and then slows down again in the end. Other options include `ease-out`, which is quick in the beginning then slows down, `ease-in`, which is slow in the beginning, then speeds up at the end, or `linear`, which applies a constant animation speed throughout.
+이 속성값으로 자주 사용되는 몇 가지 사전 지정된 키워드들이 있습니다. 예를 들어, 기본값은 `ease`로 설정되어 있습니다. 이 속성값을 가질 때는 애니메이션이 느리게 시작했다가 중간 지점에서 속도가 빨라지고, 서서히 느려지며 끝납니다. 다른 옵션으로는 애니메이션이 빠르게 시작했다가 끝으로 갈수록 점점 느려지는 `ease-out`, 느리게 시작했다가 끝으로 갈수록 점점 빨라지는 `ease-in`, 내내 일정한 속도가 적용되는 `linear` 등이 있습니다.
 
 # --instructions--
 
-For the elements with id of `ball1` and `ball2`, add an `animation-timing-function` property to each, and set `#ball1` to `linear`, and `#ball2` to `ease-out`. Notice the difference between how the elements move during the animation but end together, since they share the same `animation-duration` of 2 seconds.
+아이디가 `ball1`인 요소와 `ball2`인 요소에 `animation-timing-function` 속성을 지정해주세요. `#ball1`에는 `linear` 속성값을, `#ball2`에는 `ease-out` 속성값을 적용해주세요. 애니메이션이 실행되는 동안 요소들이 다르게 움직이지만, 2초의 동일한 `animation-duration` 값을 공유하므로 모두 함께 끝난다는 점에 주목하세요.
 
 # --hints--
 
-The value of the `animation-timing-function` property for the element with the id `ball1` should be `linear`.
+아이디가 `ball1`인 요소의 `animation-timing-function` 속성값은 `linear`이어야 합니다.
 
 ```js
 const ball1Animation = __helpers.removeWhiteSpace(
@@ -28,7 +28,7 @@ const ball1Animation = __helpers.removeWhiteSpace(
 assert(ball1Animation == 'linear' || ball1Animation == 'cubic-bezier(0,0,1,1)');
 ```
 
-The value of the `animation-timing-function` property for the element with the id `ball2` should be `ease-out`.
+아이디가 `ball2`인 요소의 `animation-timing-function` 속성값은 `ease-out`이어야 합니다.
 
 ```js
 const ball2Animation = __helpers.removeWhiteSpace(

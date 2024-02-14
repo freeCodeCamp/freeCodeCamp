@@ -1,6 +1,6 @@
 ---
 id: 5c6c06847491271903d37cfd
-title: Use the value attribute with Radio Buttons and Checkboxes
+title: 라디오 버튼과 체크 박스로 value 속성 사용하기
 challengeType: 0
 forumTopicId: 301099
 dashedName: use-the-value-attribute-with-radio-buttons-and-checkboxes
@@ -8,9 +8,9 @@ dashedName: use-the-value-attribute-with-radio-buttons-and-checkboxes
 
 # --description--
 
-When a form gets submitted, the data is sent to the server and includes entries for the options selected. Inputs of type `radio` and `checkbox` report their values from the `value` attribute.
+폼이 제출될 때 데이터가 서버에 보내지고 선택된 것에 대한 항목이 포함됩니다. `radio`와 `checkbox` 입력은 `value` 속성으로부터 값을 알립니다.
 
-For example:
+예시:
 
 ```html
 <label for="indoor">
@@ -21,17 +21,17 @@ For example:
 </label>
 ```
 
-Here, you have two `radio` inputs. When the user submits the form with the `indoor` option selected, the form data will include the line: `indoor-outdoor=indoor`. This is from the `name` and `value` attributes of the "indoor" input.
+여기 두 `radio` 입력이 있습니다. 사용자가 `indoor`를 선택한 폼을 제출할 때 폼 데이터는 다음을 포함할 것입니다: `indoor-outdoor=indoor`. "indoor" input의 `name`과 `value` 속성으로부터 얻은 것입니다.
 
-If you omit the `value` attribute, the submitted form data uses the default value, which is `on`. In this scenario, if the user clicked the "indoor" option and submitted the form, the resulting form data would be `indoor-outdoor=on`, which is not useful. So the `value` attribute needs to be set to something to identify the option.
+만약 `value` 속성을 제거한다면 제출된 폼데이터는 기본 값인 `on`을 사용할 것입니다. 이 경우에 사용자가 "indoor"를 선택하고 폼을 제출했다면 폼 데이터 결과는 `indoor-outdoor=on`이 될 것이며 이는 유용한 정보가 아닙니다. 그래서 선택지가 무엇인지 알수 있도록 `value` 속성을 설정해주어야 합니다.
 
 # --instructions--
 
-Give each of the existing `radio` and `checkbox` inputs the `value` attribute. Do not create any new radio or checkbox elements. Use the input label text, in lowercase, as the value for the attribute.
+기존 `radio`와 `checkbox` 입력에 `value` 속성을 주세요. 새로운 radio나 checkbox 요소를 생성하지 마시기 바랍니다. 해당 속성의 값으로 소문자인 입력 레이블 글자를 사용하세요.
 
 # --hints--
 
-One of your radio buttons should have the `value` attribute of `indoor`.
+라디오 버튼 중 하나는 `indoor`라는 `value` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-One of your radio buttons should have the `value` attribute of `outdoor`.
+라디오 버튼 중 하나는 `outdoor`이라는 `value` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-One of your checkboxes should have the `value` attribute of `loving`.
+체크박스 중 하나는 `loving`이라는 `value` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -60,7 +60,7 @@ assert(
 );
 ```
 
-One of your checkboxes should have the `value` attribute of `lazy`.
+체크박스 중 하나는 `lazy`라는 `value` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -69,7 +69,7 @@ assert(
 );
 ```
 
-One of your checkboxes should have the `value` attribute of `energetic`.
+체크박스 중 하나는 `energetic`이라는 `value` 속성을 가져야 합니다.
 
 ```js
 assert(

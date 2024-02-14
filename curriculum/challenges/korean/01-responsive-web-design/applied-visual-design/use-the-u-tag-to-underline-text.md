@@ -1,6 +1,6 @@
 ---
 id: 587d781a367417b2b2512ab8
-title: Use the u Tag to Underline Text
+title: u태그로 밑줄 텍스트 만들기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN6aQCL'
 forumTopicId: 301082
@@ -9,23 +9,23 @@ dashedName: use-the-u-tag-to-underline-text
 
 # --description--
 
-To underline text, you can use the `u` tag. This is often used to signify that a section of text is important, or something to remember. With the `u` tag, the browser applies the CSS of `text-decoration: underline;` to the element.
+밑줄 텍스트를 만들기 위해서, `u` 태그를 사용할 수 있습니다. 이것은 종종 텍스트의 어느 한 부분이 중요하거나 기억할만 하다는 것을 의미할 때 사용됩니다. `u` 태그를 사용하면, 브라우저는 요소에 `text-decoration: underline;` CSS를 적용합니다.
 
 # --instructions--
 
-Wrap the `u` tag only around the text `Ph.D. students`.
+`u` 태그로 `Ph.D. students` 텍스트만 감싸보세요.
 
-**Note:** Try to avoid using the `u` tag when it could be confused for a link. Anchor tags also have a default underlined formatting.
+**Note:** 링크로 착각될 수 있는 경우에는 `u`태그를 사용하는 것을 삼가하세요. Anchor 태그 또한 기본 밑줄 형태를 가집니다.
 
 # --hints--
 
-Your code should add a `u` tag to the markup.
+당신의 코드는 마크업에 `u` 태그를 추가해야 합니다.
 
 ```js
 assert($('u').length === 1);
 ```
 
-The `u` tag should wrap around the text `Ph.D. students`.
+`u` 태그는 `Ph.D. students`라는 텍스트를 감싸야 합니다.
 
 ```js
 assert($('u').text() === 'Ph.D. students');

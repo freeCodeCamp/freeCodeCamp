@@ -1,6 +1,6 @@
 ---
 id: 587d78ac367417b2b2512af4
-title: Use the flex-direction Property to Make a Column
+title: 열 생성을 위한 flex-direction 속성 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cZmWeA4'
 forumTopicId: 301109
@@ -9,15 +9,15 @@ dashedName: use-the-flex-direction-property-to-make-a-column
 
 # --description--
 
-The last two challenges used the `flex-direction` property set to `row`. This property can also create a column by vertically stacking the children of a flex container.
+이전 두 과제는 `row`로 설정된 `flex-direction` 속성을 사용했습니다. 이 속성은 플렉스 컨테이너의 자식 요소를 수직으로 쌓으며 열을 생성할 수도 있습니다.
 
 # --instructions--
 
-Add the CSS property `flex-direction` to the `#box-container` element, and give it a value of `column`.
+`#box-container` 요소에 `flex-direction` 속성을 추가하고 `column` 값을 주세요.
 
 # --hints--
 
-The `#box-container` element should have a `flex-direction` property set to `column`.
+`#box-container` 요소는 `column`로 설정된 `flex-direction` 속성을 가져야 합니다.
 
 ```js
 assert($('#box-container').css('flex-direction') == 'column');

@@ -8,7 +8,7 @@ dashedName: fibonacci-word
 
 # --description--
 
-The Fibonacci Word Sequence may be created in a manner analogous to the Fibonacci Sequence, but it focuses on iterating concatenation.
+Послідовність слів Фібоначчі можна створити схожим способом до послідовності Фібоначчі, але вона зосереджена на об’єднанні.
 
 <pre>Визначте F_Word<sub>1</sub> як <strong>1</strong>
 Визначте F_Word<sub>2</sub> як <strong>0</strong>
@@ -16,11 +16,11 @@ The Fibonacci Word Sequence may be created in a manner analogous to the Fibonacc
 Утворіть F_Word<sub>n</sub> як F_Word<sub>n-1</sub>, об’єднане з F_word<sub>n-2</sub>
 </pre>
 
-Для цього завдання потрібне обчислення ентропії <a href="https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy" target="_blank" rel="noopener noreferrer nofollow" ="crwd-mark">як показано в цьому завданні Розетта Код</a>
+Для цього завдання обов’язковий ентропічний розрахунок, <a href="https://www.freecodecamp.org/ukrainian/learn/rosetta-code/rosetta-code-challenges/entropy" target="_blank" rel="noopener noreferrer nofollow">як показано в цьому завданні</a>
 
 # --instructions--
 
-Напишіть функцію, що повертає перші `n` слів Фібоначчі. Число `n` надається як параметр функції. Функція має повернути масив об’єктів. Об’єкти мають мати такий вигляд: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` обчислюється для рядка `Word` та округлюється до 8 десяткових цифр точності. Зауважте, що індекси цієї послідовності починаються з `1`.
+Напишіть функцію, яка повертає перші `n` слів Фібоначчі. Число `n` надається як параметр до функції. Функція має повернути масив об’єктів. Об’єкти повинні мати наступний вигляд: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` обчислюється для рядка `Word` та округлюється до 8 десяткових цифр. Зауважте, що індекси цієї послідовності починаються з `1`.
 
 # --hints--
 

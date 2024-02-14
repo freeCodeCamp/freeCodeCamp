@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf04756
-title: Override Styles in Subsequent CSS
+title: 후속 CSS에서 스타일을 재정의하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJDQug'
 forumTopicId: 18253
@@ -9,47 +9,47 @@ dashedName: override-styles-in-subsequent-css
 
 # --description--
 
-Our `pink-text` class overrode our `body` element's CSS declaration!
+우리의 `pink-text` 클래스가 `body` 요소의 CSS 선언을 덮어쓰게 되었습니다!
 
-We just proved that our classes will override the `body` element's CSS. So the next logical question is, what can we do to override our `pink-text` class?
+우리는 방금 클래스가 `body` 요소의 CSS를 덮어쓸 수 있음을 증명했습니다. 그러면 논리적으로 할 수 있는 다음 질문은, `pink-text` 클래스를 덮어쓰기 위해 우리가 할 수 있는 일은 무엇일까요?
 
 # --instructions--
 
-Create an additional CSS class called `blue-text` that gives an element the color blue. Make sure it's below your `pink-text` class declaration.
+요소에 파란색을 지정하는 추가적인 CSS 클래스를 만드세요. 클래스의 이름은 `blue-text`입니다. `pink-text` 클래스 선언 아래에 위치하도록 하세요.
 
-Apply the `blue-text` class to your `h1` element in addition to your `pink-text` class, and let's see which one wins.
+`pink-text` 클래스 외에도 `h1` 요소에 `blue-text` 클래스를 적용하고 이 중 어떤 스타일이 적용될지 확인해보세요.
 
-Applying multiple class attributes to a HTML element is done with a space between them like this:
+HTML 요소에 여러 클래스 속성을 적용하려면 다음과 같이 띄어쓰기로 구분합니다.
 
 ```html
 class="class1 class2"
 ```
 
-**Note:** It doesn't matter which order the classes are listed in the HTML element.
+**참고:** HTML 요소에 클래스를 나열하는 순서는 중요하지 않습니다.
 
-However, the order of the `class` declarations in the `<style>` section is what is important. The second declaration will always take precedence over the first. Because `.blue-text` is declared second, it overrides the attributes of `.pink-text`.
+그러나 `<style>` 섹션의 `class` 선언 순서는 중요합니다. 두 번째 선언이 항상 첫 번째보다 우선합니다. `.blue-text`가 두 번째로 선언되었기 때문에 `.pink-text`의 속성을 덮어씁니다.
 
 # --hints--
 
-Your `h1` element should have the class `pink-text`.
+`h1` 요소는 `pink-text` 클래스를 갖고 있어야 합니다.
 
 ```js
 assert($('h1').hasClass('pink-text'));
 ```
 
-Your `h1` element should have the class `blue-text`.
+`h1` 요소는 `blue-text` 클래스를 갖고 있어야 합니다.
 
 ```js
 assert($('h1').hasClass('blue-text'));
 ```
 
-Both `blue-text` and `pink-text` should belong to the same `h1` element.
+`blue-text` 클래스와 `pink-text` 클래스 모두 `h1`에 속합니다.
 
 ```js
 assert($('.pink-text').hasClass('blue-text'));
 ```
 
-Your `h1` element should be blue.
+`h1` 요소는 파란색으로 나타나야 합니다.
 
 ```js
 assert($('h1').css('color') === 'rgb(0, 0, 255)');

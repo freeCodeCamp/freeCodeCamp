@@ -8,9 +8,9 @@ dashedName: hailstone-sequence
 
 # --description--
 
-The Hailstone sequence of numbers can be generated from a starting positive integer, `n` by:
+A sequência de números de granizo (hailstone) pode ser gerada a partir de um inteiro inicial positivo, `n` da seguinte forma:
 
-- If `n` is `1` then the sequence ends
+- Se `n` for `1`, a sequência termina
 - Se `n` for `even` (par), o próximo `n` da sequência será `= n/2`
 - Se `n` for `odd` (ímpar), o próximo `n` da sequência será `= (3 * n) + 1`
 
@@ -20,7 +20,7 @@ A sequência de granizo também é conhecida como números granizo (porque os va
 
 # --instructions--
 
-1. Create a routine to generate the hailstone sequence for a number
+1. Crie uma rotina para gerar a sequência de Hailstone para um número
 2. A função deve retornar um array com o número menor que `limit` que tenha a maior sequência de hailstone e o tamanho da sequência. (Mas não mostrar a sequência real!)
 
 # --hints--

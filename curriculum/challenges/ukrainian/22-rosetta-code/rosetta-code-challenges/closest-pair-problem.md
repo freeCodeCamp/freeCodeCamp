@@ -8,9 +8,9 @@ dashedName: closest-pair-problem
 
 # --description--
 
-Provide a function to find the closest two points among a set of given points in two dimensions.
+Надайте функцію для пошуку двох найближчих точок серед наданої множини точок у двох вимірах.
 
-Найпростіше рішення це $O(n^2)$ алгоритм (який ми можемо назвати *brute-force algorithm*); цей псевдо-код (з використанням індексів) може бути простим:
+Найпростіший розв’язок — алгоритм $O(n^2)$ (який називають *пошуком грубою силою*); псевдокодом (з використанням індексів) буде:
 
 <pre><strong>bruteForceClosestPair</strong> of P(1), P(2), ... P(N)
 <strong>if</strong> N &#x3C; 2 <strong>then</strong>
@@ -30,7 +30,7 @@ Provide a function to find the closest two points among a set of given points in
 <strong>endif</strong>
 </pre>
 
-Кращий алгоритм базується на рекурсивному розподілі та підхопленні, який є псевдо-кодом $O(n\log n)$:
+Кращий алгоритм базується на підході «Розділяй та володарюй», де $O(n\log n)$. Псевдокодом буде:
 
 <pre><strong>closestPair</strong> of (xP, yP)
   where xP is P(1) .. P(N) sorted by x coordinate, and
@@ -65,7 +65,7 @@ Provide a function to find the closest two points among a set of given points in
 <strong>endif</strong>
 </pre>
 
-Для вхідних даних, слід очікувати, що аргумент буде масивом з `Point` об'єктами, і `x` та `y` заданими числами. Поверніть об'єкт, що містить ключові пари значень для `distance` та `pair` (пара двох найближчих точок).
+Для вхідних даних варто очікувати, що аргументом буде масив об’єктів `Point` з членами `x` та `y` зі значеннями чисел. Поверніть об’єкт, який містить пари ключ:значення із `distance` та `pair` (пара двох найближчих точок).
 
 Наприклад, `getClosestPair` з вхідним масивом `points`:
 
@@ -95,7 +95,7 @@ const points = [
 }
 ```
 
-**Note:** Сортуйте `pair` масиви за їхніми `x` значеннями у зростаючому порядку.
+**Примітка:** відсортуйте масив `pair` за значенням `x` у висхідному порядку.
 
 
 # --hints--

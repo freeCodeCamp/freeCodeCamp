@@ -1,6 +1,6 @@
 ---
 id: 647e228a8acb466c97ccbef3
-title: Create and Throw Exceptions in C# Console Applications
+title: 'Create and Throw Exceptions in C# Console Applications'
 challengeType: 19
 dashedName: create-and-throw-exceptions-in-c-sharp-console-applications
 ---

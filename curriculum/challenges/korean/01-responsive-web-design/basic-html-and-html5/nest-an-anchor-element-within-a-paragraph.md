@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aede08817
-title: Nest an Anchor Element within a Paragraph
+title: 문단 내에 앵커 요소 중첩하기
 challengeType: 0
 forumTopicId: 18244
 dashedName: nest-an-anchor-element-within-a-paragraph
@@ -8,7 +8,7 @@ dashedName: nest-an-anchor-element-within-a-paragraph
 
 # --description--
 
-You can nest links within other text elements.
+다른 텍스트 요소 내에 링크를 중첩할 수 있습니다.
 
 ```html
 <p>
@@ -16,41 +16,41 @@ You can nest links within other text elements.
 </p>
 ```
 
-Let's break down the example. Normal text is wrapped in the `p` element:
+예시를 살펴 보겠습니다. 일반 텍스트는 `p` 요소안에 있습니다.
 
 ```html
 <p> Here's a ... for you to follow. </p>
 ```
 
-Next is the *anchor* element `<a>` (which requires a closing tag `</a>`):  
+다음은 *앵커* 요소 `<a>`입니다 (닫는 태그 `</a>` 필요):
 
 ```html
 <a> ... </a>
 ```
 
-`target` is an anchor tag attribute that specifies where to open the link. The value `_blank` specifies to open the link in a new tab. The `href` is an anchor tag attribute that contains the URL address of the link:  
+`target`은 링크를 열 위치를 지정하는 앵커 태그의 속성입니다. `_blank` 는 새 탭에서 링크를 열도록 지정합니다. `href` 속성은 링크의 URL 주소를 포함하는 앵커 태그의 속성입니다:
 
 ```html
 <a href="https://www.freecodecamp.org" target="_blank"> ... </a>
 ```
 
-The text, `link to www.freecodecamp.org`, within the `a` element is called <dfn>anchor text</dfn>, and will display the link to click:
+`a` 요소 내의 `link to www.freecodecamp.org` 텍스트를 <dfn>anchor text </dfn>라고 하며 클릭할 수 링크를 표시합니다:
 
 ```html
 <a href=" ... " target="...">link to freecodecamp.org</a>
 ```
 
-The final output of the example will look like this:  
+예시의 최종 출력은 다음과 같습니다.
 
-Here's a <a href="https://www.freecodecamp.org" target="_blank">link to www.freecodecamp.org</a> for you to follow.
+여기 확인할 링크 <a href="https://www.freecodecamp.org" target="_blank">link to www.freecodecamp.org</a>가 있습니다.
 
 # --instructions--
 
-Nest the existing `a` element within a new `p` element. Do not create a new anchor tag. The new paragraph should have text that says `View more cat photos`, where `cat photos` is a link, and the rest is plain text.
+새 `p` 요소 내에 기존 `a` 요소를 중첩하세요. 새 앵커 태그를 생성하지 마세요. `cat photos`가 링크이며 나머지는 글자인 새로운 문단은 `View more cat photos`라는 글자를 가져야 합니다.
 
 # --hints--
 
-You should only have one `a` element.
+오직 하나의 `a` 요소만 있어야 합니다.
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-The `a` element should link to "`https://www.freecatphotoapp.com`".
+`a` 요소는 "`https://www.freecatphotoapp.com`"에 연결되어야 합니다.
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-Your `a` element should have the anchor text of `cat photos`
+`a` 요소는 `cat photos`라는 앵커 글자를 가져야 합니다.
 
 ```js
 assert(
@@ -76,13 +76,13 @@ assert(
 );
 ```
 
-You should create a new `p` element. There should be at least 3 total `p` tags in your HTML code.
+새로운 `p` 요소를 만들어야 합니다. HTML 코드에 적어도 3 개의 `p` 태그가 있어야 합니다.
 
 ```js
 assert($('p') && $('p').length > 2);
 ```
 
-Your `a` element should be nested within your new `p` element.
+`a` 요소는 새 `p` 요소 안에 중첩되어야 합니다.
 
 ```js
 assert(
@@ -90,7 +90,7 @@ assert(
 );
 ```
 
-Your `p` element should have the text `View more ` (with a space after it).
+`p` 요소는 (해당 글자 다음 여백이 있는) `View more` 글자를 가져야 합니다.
 
 ```js
 assert(
@@ -101,7 +101,7 @@ assert(
 );
 ```
 
-Your `a` element should <em>not</em> have the text `View more`.
+`a` 요소는 `View more` 글자를 가지지 <em>않아야</em> 합니다.
 
 ```js
 assert(
@@ -111,7 +111,7 @@ assert(
 );
 ```
 
-Each of your `p` elements should have a closing tag.
+`p` 요소 각각은 닫는 태그를 가져야 합니다.
 
 ```js
 assert(
@@ -121,7 +121,7 @@ assert(
 );
 ```
 
-Each of your `a` elements should have a closing tag.
+`a` 요소 각각은 닫는 태그를 가져야 합니다.
 
 ```js
 assert(

@@ -9,7 +9,7 @@ dashedName: step-45
 
 The concept of returning a function within a function is called <dfn>currying</dfn>. This approach allows you to create a variable that holds a function to be called later, but with a reference to the parameters of the outer function call.
 
-For example:
+예시:
 
 ```js
 const innerOne = elemValue(1);

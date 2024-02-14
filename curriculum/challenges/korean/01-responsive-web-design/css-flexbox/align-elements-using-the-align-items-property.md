@@ -1,6 +1,6 @@
 ---
 id: 587d78ad367417b2b2512af8
-title: Align Elements Using the align-items Property
+title: align-items 속성으로 요소 정렬하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c8aggtk'
 forumTopicId: 301101
@@ -9,26 +9,26 @@ dashedName: align-elements-using-the-align-items-property
 
 # --description--
 
-The `align-items` property is similar to `justify-content`. Recall that the `justify-content` property aligned flex items along the main axis. For rows, the main axis is a horizontal line and for columns it is a vertical line.
+`align-items` 속성은 `justify-content`와 유사합니다. `justify-content` 속성은 주축을 따라 플렉스 아이템을 정렬시킨다는 것을 배웠습니다. 행의 주축이 수평선이고 열의 주축은 수직선입니다.
 
-Flex containers also have a **cross axis** which is the opposite of the main axis. For rows, the cross axis is vertical and for columns, the cross axis is horizontal.
+플렉스 컨테이너는 주축과는 반대인 **교차 축**도 있습니다. 행의 교차 축은 수직이고 열의 교차 축은 수평입니다.
 
-CSS offers the `align-items` property to align flex items along the cross axis. For a row, it tells CSS how to push the items in the entire row up or down within the container. And for a column, how to push all the items left or right within the container.
+CSS는 교차 축을 따라 플렉스 아이템을 정렬시키도록 `align-items` 속성을 제공합니다. 이 속성은 행에 대해 컨테이너 내 전체 행에 있는 아이템들을 위 아래로 어떻게 넣는지 결정합니다. 그리고 열에 대해 컨테이너 내 모든 아이템을 어떻게 좌우로 넣는지 결정합니다.
 
-The different values available for `align-items` include:
+`align-items`에 이용 가능한 값들은 다음과 같습니다.
 
-<ul><li><code>flex-start</code>: aligns items to the start of the flex container. For rows, this aligns items to the top of the container. For columns, this aligns items to the left of the container.</li><li><code>flex-end</code>: aligns items to the end of the flex container. For rows, this aligns items to the bottom of the container. For columns, this aligns items to the right of the container.</li><li><code>center</code>: align items to the center. For rows, this vertically aligns items (equal space above and below the items). For columns, this horizontally aligns them (equal space to the left and right of the items).</li><li><code>stretch</code>: stretch the items to fill the flex container. For example, rows items are stretched to fill the flex container top-to-bottom. This is the default value if no <code>align-items</code> value is specified.</li><li><code>baseline</code>: align items to their baselines. Baseline is a text concept, think of it as the line that the letters sit on.</li></ul>
+<ul><li><code>flex-start</code>: 플렉스 컨테이너의 시작에 아이템 정렬 행에 대해 이 값은 컨테이너 상단에 아이템을 정렬시킵니다. 열에 대해 이 값은 컨테이너의 좌측에 아이템을 정렬시킵니다.</li><li><code>flex-end</code>: 플렉스 컨테이너의 끝에 아이템 정렬. 행에 대해 이 값은 컨테이너의 하단에 아이템을 정렬시킵니다. 열에 대해 이 값은 컨테이너 우측에 아이템을 정렬시킵니다.</li><li><code>center</code>: 중앙에 아이템을 정렬. 행에 대해 이 값은 수직으로 아이템을 정렬시킵니다(아이템 위아래로 동일한 간격). 열에 대해 이 값은 수평으로 아이템을 정렬시킵니다(아이템의 좌우에 동일한 간격).</li><li><code>stretch</code>: 플렉스 컨테이너를 채우도록 아이템을 늘림. 예를 들면 행의 아이템은 위아래로 플렉스 컨테이너를 채우도록 늘어납니다. <code>align-items</code> 값이 특정되지 않는다면 이 값은 기본값으로 설정됩니다.</li><li><code>baseline</code>: 아이템의 베이스라인에 아이템을 정렬. 베이스 라인은 텍스트 개념으로, 글자가 올라가 있는 선으로 생각할 수 있습니다.</li></ul>
 
 # --instructions--
 
-An example helps show this property in action. Add the CSS property `align-items` to the `#box-container` element, and give it a value of `center`.
+이 속성을 실제로 보여주는 예시가 도움이 됩니다. `#box-container` 요소에 `align-items` 속성을 추가하고 `center` 값을 주세요.
 
-**Bonus**  
-Try the other options for the `align-items` property in the code editor to see their differences. But note that a value of `center` is the only one that will pass this challenge.
+**보너스**  
+차이 확인을 위해 코드 편집기에 있는 `align-items` 속성에 다른 값을 주세요. 하지만 `center`만이 이 과제를 통과시킬 수 있는 값이라는 것에 주의하시오.
 
 # --hints--
 
-The `#box-container` element should have an `align-items` property set to a value of `center`.
+`#box-container` 요소는 `center` 값으로 설정된 `align-items` 속성을 가져야 합니다.
 
 ```js
 assert($('#box-container').css('align-items') == 'center');

@@ -14,7 +14,7 @@ dashedName: object-lifecycle
 
 ## --text--
 
-What will the following program print?:
+O que será impresso pelo código a seguir?
 
 ```python
 class PartyAnimal:

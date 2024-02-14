@@ -10,13 +10,13 @@ dashedName: fibonacci-sequence
 
 Write a function to generate the <code>n<sup>th</sup></code> Fibonacci number.
 
-<code>n<sup>th</sup></code> フィボナッチ数は以下にように計算されます。
+<code>n</code> 番目のフィボナッチ数は以下のように計算されます。
 
 <code>F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n-2</sub></code>
 
-級数の最初の2つの項は0と1です。
+級数の最初の 2 つの項は 0 と 1 です。
 
-したがって、級数は0、1、1、2、3、5、8、13です。
+したがって、級数は 0、1、1、2、3、5、8、13 です。
 
 # --hints--
 
@@ -32,19 +32,19 @@ assert(typeof fibonacci === 'function');
 assert(typeof fibonacci(2) == 'number');
 ```
 
-`fibonacci(3)` は2を返します。
+`fibonacci(3)` は 2 を返します。
 
 ```js
 assert.equal(fibonacci(3), 2);
 ```
 
-`fibonacci(5)` は5を返します。
+`fibonacci(5)` は 5 を返します。
 
 ```js
 assert.equal(fibonacci(5), 5);
 ```
 
-`fibonacci(10)` は55を返します。
+`fibonacci(10)` は 55 を返します。
 
 ```js
 assert.equal(fibonacci(10), 55);

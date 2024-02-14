@@ -18,7 +18,7 @@ Then, go to your `profile.pug` view, and add the following line below the existi
 h2.center#welcome Welcome, #{username}!
 ```
 
-This creates an `h2` element with the class `center` and id `welcome` containing the text `Welcome, ` followed by the username.
+This creates an `h2` element with the class `center` and id `welcome` containing the text `Welcome,` followed by the username.
 
 Also, in `profile.pug`, add a link referring to the `/logout` route, which will host the logic to unauthenticate a user:
 

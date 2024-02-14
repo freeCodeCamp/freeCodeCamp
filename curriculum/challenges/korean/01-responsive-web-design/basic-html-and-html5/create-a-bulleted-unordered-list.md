@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08827
-title: Create a Bulleted Unordered List
+title: 글머리 기호가 없는 목록 만들기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cDKVPuv'
 forumTopicId: 16814
@@ -9,11 +9,11 @@ dashedName: create-a-bulleted-unordered-list
 
 # --description--
 
-HTML has a special element for creating <dfn>unordered lists</dfn>, or bullet point style lists.
+HTML는 <dfn>순서없는 목록</dfn> 혹은 글머리 기호 스타일을 생성하는데 특별한 요소를 가지고 있습니다.
 
-Unordered lists start with an opening `<ul>` element, followed by any number of `<li>` elements. Finally, unordered lists close with a `</ul>`.
+순서없는 목록은 `<ul>` 요소로 시작되며 `<li>` 요소가 뒤따라옵니다. 마지막으로 순서없는 목록은 `</ul>`로 끝나게 됩니다.
 
-For example:
+예:
 
 ```html
 <ul>
@@ -22,27 +22,27 @@ For example:
 </ul>
 ```
 
-would create a bullet point style list of `milk` and `cheese`.
+`milk`와 `cheese`의 글머리 기호 스타일 목록이 생성됩니다.
 
 # --instructions--
 
-Remove the last two `p` elements and create an unordered list of three things that cats love at the bottom of the page.
+마지막 두 `p` 요소를 삭제하고 페이지 하단에 고양이가 좋아하는 세 개의 순서없는 목록을 만드세요.
 
 # --hints--
 
-Create a `ul` element.
+`ul` 요소를 만드세요.
 
 ```js
 assert($('ul').length > 0);
 ```
 
-You should have three `li` elements within your `ul` element.
+`ul` 요소 안에 3개의 `li` 요소를 가져야 합니다.
 
 ```js
 assert($('ul li').length > 2);
 ```
 
-Your `ul` element should have a closing tag.
+`ul` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-Your `li` elements should have closing tags.
+`li` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-Your `li` elements should not contain an empty string or only white-space.
+`li` 요소는 빈 문자열이나 비어있는 여백을 가지지 않아야 합니다.
 
 ```js
 assert($('ul li').filter((_, item) => !$(item).text().trim()).length === 0);

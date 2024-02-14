@@ -5,6 +5,7 @@ title: CSS Foundations Question C
 challengeType: 15
 dashedName: css-foundations-question-c
 ---
+
 # --description--
 
 What if you have two groups of elements that share some of their style declarations?
@@ -43,7 +44,7 @@ Both our `.read` and `.unread` selectors share the `color: white;` and `backgrou
 
 Both of the examples above (with and without grouping) will have the same result, but the second example reduces the repetition of declarations and makes it easier to edit either the `color` or `background-color` for both classes at once.
 
-# --question--    
+# --question--
 
 ## --text--
 

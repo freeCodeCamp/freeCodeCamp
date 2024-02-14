@@ -1,6 +1,6 @@
 ---
 id: bad88fee1348bd9aedf08816
-title: Link to Internal Sections of a Page with Anchor Elements
+title: 앵커 요소를 이용한 페이지 내부를 연결하는 링크
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cyrDRUL'
 forumTopicId: 301098
@@ -9,11 +9,11 @@ dashedName: link-to-internal-sections-of-a-page-with-anchor-elements
 
 # --description--
 
-`a` (*anchor*) elements can also be used to create internal links to jump to different sections within a webpage.
+`a` (*anchor, 앵커*) 요소를 이용하여 웹페이지 내의 다른 섹션으로 이동하는 내부 링크를 생성할 수도 있습니다.
 
-To create an internal link, you assign a link's `href` attribute to a hash symbol `#` plus the value of the `id` attribute for the element that you want to internally link to, usually further down the page. You then need to add the same `id` attribute to the element you are linking to. An `id` is an attribute that uniquely describes an element.
+내부 링크를 생성하려면 링크의 `href` 속성에 해쉬 기호 `#` 와 연결하고 싶은 요소 (보통 멀리 떨어져 있는) 의 `id` 속성를 지정해야 합니다. 그런 다음 연결하려는 요소에 동일한 `id` 속성을 추가해야 합니다. `id`는 요소를 묘사하는 속성입니다.
 
-Below is an example of an internal anchor link and its target element:
+다음은 내부 앵커 링크 및 대상 요소의 예입니다:
 
 ```html
 <a href="#contacts-header">Contacts</a>
@@ -21,37 +21,37 @@ Below is an example of an internal anchor link and its target element:
 <h2 id="contacts-header">Contacts</h2>
 ```
 
-When users click the `Contacts` link, they'll be taken to the section of the webpage with the **Contacts** heading element.
+만약 사용자가 `Contacts` 링크를 클릭하면 **Contacts** 제목 요소가 있는 웹페이지 섹션으로 이동합니다.
 
 # --instructions--
 
-Change your external link to an internal link by changing the `href` attribute to `#footer` and the text from `cat photos` to `Jump to Bottom`.
+`href` 속성을 `#footer` 로 변경하고 텍스트를 `cat photos` 에서 `Jump to Bottom` 으로 변경하여 현재 존재하는 외부 링크를 내부 링크로 변경하세요.
 
-Remove the `target="_blank"` attribute from the anchor tag since this causes the linked document to open in a new window tab.
+앵커 태그의 `target="_blank"` 속성은 연결된 문서가 새 창 탭에서 열리게 하므로 이를 제거하세요.
 
-Then add an `id` attribute with a value of `footer` to the `<footer>` element at the bottom of the page.
+그런 다음 값이 `footer`인 `id` 속성을 페이지 하단의 `<footer>` 요소에 추가하세요.
 
 # --hints--
 
-There should be only one anchor tag on your page.
+페이지에는 하나의 앵커 태그만 있어야 합니다.
 
 ```js
 assert($('a').length == 1);
 ```
 
-There should be only one `footer` tag on your page.
+페이지에는 하나의 `footer` 태그만 있어야 합니다.
 
 ```js
 assert($('footer').length == 1);
 ```
 
-The `a` tag should have an `href` attribute set to "#footer".
+`a` 태그에는 "#footer"로 설정된 `href` 속성이 있어야 합니다.
 
 ```js
 assert($('a').eq(0).attr('href') == '#footer');
 ```
 
-The `a` tag should not have a `target` attribute.
+`a` 태그에는 `target` 속성이 없어야 합니다.
 
 ```js
 assert(
@@ -60,7 +60,7 @@ assert(
 );
 ```
 
-The `a` text should be "Jump to Bottom".
+`a` 요소의 텍스트는 "Jump to Bottom"이어야 합니다.
 
 ```js
 assert(
@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-The `footer` tag should have an `id` attribute set to "footer".
+`footer` 태그에는 "footer"로 설정된 `id` 속성이 있어야 합니다.
 
 ```js
 assert($('footer').eq(0).attr('id') == 'footer');

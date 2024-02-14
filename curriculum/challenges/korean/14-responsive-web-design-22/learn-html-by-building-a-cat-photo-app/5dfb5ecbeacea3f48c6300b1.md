@@ -18,9 +18,7 @@ Use list item (`li`) elements to create items in a list. Here is an example of l
 
 Within the `ul` element nest three list items to display three things cats love:
 
-`cat nip`
-`laser pointers`
-`lasagna` 
+`cat nip` `laser pointers` `lasagna`
 
 # --hints--
 
@@ -71,7 +69,7 @@ assert(
         <h3>Things cats love:</h3>
 --fcc-editable-region--
         <ul>
-          
+
         </ul>
 --fcc-editable-region--
       </section>

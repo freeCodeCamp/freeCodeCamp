@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e03
-title: Сукупне стандартне відхилення
+title: Cumulative standard deviation
 challengeType: 1
 forumTopicId: 302240
 dashedName: cumulative-standard-deviation
