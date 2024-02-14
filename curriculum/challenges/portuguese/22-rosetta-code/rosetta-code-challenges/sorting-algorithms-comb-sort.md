@@ -8,7 +8,7 @@ dashedName: sorting-algorithmscomb-sort
 
 # --description--
 
-Implement a *comb sort*.
+Implemente uma *ordenação de pente*.
 
 A **ordenação de pente** (Comb Sort) é uma variante da ordenação de bolha (Bubble Sort).
 
@@ -21,16 +21,16 @@ Algumas implementações usam a ordenação de inserção, já que a diferença 
 Variantes:
 
 <ul>
-  <li>Combsort11 makes sure the gap ends in (11, 8, 6, 4, 3, 2, 1), which is significantly faster than the other two possible endings.</li>
+  <li>Combsort11 garante que a diferença termine em (11, 8, 6, 4, 3, 2, 1), o que é significativamente mais rápido do que as outras duas terminações possíveis.</li>
   <li>A ordenação de pente com terminações diferentes muda para uma ordenação mais eficiente quando os dados estão quase ordenados (quando a diferença é pequena). A ordenação de pente com diferença baixa não é muito melhor que a ordenação de bolha.</li>
 </ul>
 
 Pseudocódigo:
 
 <pre><b>function</b> combsort(<b>array</b> input)
-  gap := input<b>.size</b> <i>//initialize gap size</i>
+  gap := input<b>.size</b> <i>//inicialize o tamanho da diferença</i>
   <b>loop until</b> gap = 1 <b>and</b> swaps = 0
-    <i>//update the gap value for a next comb. Below is an example</i>
+    <i>//atualize o valor da diferença para o próximo pente. Below is an example</i>
     gap := int(gap / 1.25)
     <b>if</b> gap &#x3C; 1 
       <i>//minimum gap is 1</i>

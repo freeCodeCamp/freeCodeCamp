@@ -14,21 +14,18 @@ A turn consists of moving each ball exactly once according to the following rule
 
 After one turn the sequence (2, 2, 2, 1, 2) becomes (2, 2, 1, 2, 3) as can be seen below; note that we begin the new sequence starting at the first occupied box.
 
-<img class="img-responsive center-block" alt="animation showing one complete turn from (2, 2, 2, 1, 2) to (2, 2, 1, 2, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-1.gif" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="animation showing one complete turn from (2, 2, 2, 1, 2) to (2, 2, 1, 2, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-1.gif" style="background-color: white; padding: 10px;" />
 
 A system like this is called a Box-Ball System or BBS for short.
 
 It can be shown that after a sufficient number of turns, the system evolves to a state where the consecutive numbers of occupied boxes is invariant. In the example below, the consecutive numbers of occupied boxes evolves to [1, 2, 3]; we shall call this the final state.
 
-<img class="img-responsive center-block" alt="four turns from occupied boxes [2, 2, 2] to final state [1, 2, 3]" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-2.gif" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="four turns from occupied boxes [2, 2, 2] to final state [1, 2, 3]" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-2.gif" style="background-color: white; padding: 10px;" />
 
 We define the sequence $\\{t_i\\}$:
 
-$$\begin{align}
-  & s_0 = 290\\,797 \\\\
-  & s_{k + 1} = {s_k}^2\bmod 50\\,515\\,093 \\\\
-  & t_k = (s_k\bmod 64) + 1
-\end{align}$$
+$$\begin{align}   & s_0 = 290\\,797 \\\\
+  & s_{k + 1} = {s_k}^2\bmod 50\\,515\\,093 \\\\ & t_k = (s_k\bmod 64) + 1 \end{align}$$
 
 Starting from the initial configuration $(t_0, t_1, \ldots, t_{10})$, the final state becomes [1, 3, 10, 24, 51, 75].
 

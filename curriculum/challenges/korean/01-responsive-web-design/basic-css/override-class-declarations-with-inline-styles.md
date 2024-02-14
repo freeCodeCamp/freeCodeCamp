@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf06756
-title: Override Class Declarations with Inline Styles
+title: 클래스 선언을 인라인 스타일로 덮어 쓰기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJDRha'
 forumTopicId: 18252
@@ -9,47 +9,47 @@ dashedName: override-class-declarations-with-inline-styles
 
 # --description--
 
-So we've proven that id declarations override class declarations, regardless of where they are declared in your `style` element CSS.
+우리는 id 선언이 class 선언을 덮어쓸 수 있다는 것을 증명했습니다. 이는 `style` 요소의 CSS에서 어디에 선언되었는지와 관계없이 적용됩니다.
 
-There are other ways that you can override CSS. Do you remember inline styles?
+CSS를 무시할 수 있는 다른 방법도 있습니다. 인라인 스타일을 기억하시나요?
 
 # --instructions--
 
-Use an inline style to try to make our `h1` element white. Remember, inline styles look like this:
+인라인 스타일을 이용해서 `h1` 요소를 흰색으로 만드세요. 기억하세요. 인라인 스타일은 다음과 같이 만들 수 있습니다.
 
 ```html
 <h1 style="color: green;">
 ```
 
-Leave the `blue-text` and `pink-text` classes on your `h1` element.
+`h1` 요소에 `blue-text` 및 `pink-text` 클래스를 남겨두세요.
 
 # --hints--
 
-Your `h1` element should have the class `pink-text`.
+`h1` 요소는 `pink-text` 클래스를 갖고 있어야 합니다.
 
 ```js
 assert($('h1').hasClass('pink-text'));
 ```
 
-Your `h1` element should have the class `blue-text`.
+`h1` 요소는 `blue-text` 클래스를 갖고 있어야 합니다.
 
 ```js
 assert($('h1').hasClass('blue-text'));
 ```
 
-Your `h1` element should have the id of `orange-text`.
+`h1` 요소는 `orange-text` 라는 id를 갖고 있어야 합니다.
 
 ```js
 assert($('h1').attr('id') === 'orange-text');
 ```
 
-Your `h1` element should have an inline style.
+`h1` 요소는 인라인 스타일을 갖고 있어야 합니다.
 
 ```js
 assert(document.querySelector('h1[style]'));
 ```
 
-Your `h1` element should be white.
+`h1` 요소는 흰색으로 나타나야 합니다.
 
 ```js
 assert($('h1').css('color') === 'rgb(255, 255, 255)');

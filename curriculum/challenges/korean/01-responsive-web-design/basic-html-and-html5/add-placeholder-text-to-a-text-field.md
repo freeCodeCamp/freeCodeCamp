@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08830
-title: Add Placeholder Text to a Text Field
+title: 플레이스홀더(Placeholder) 텍스트를 Text Field에 추가하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
 forumTopicId: 16647
@@ -9,29 +9,29 @@ dashedName: add-placeholder-text-to-a-text-field
 
 # --description--
 
-Placeholder text is what is displayed in your `input` element before your user has inputted anything.
+플레이스홀더(Placeholder) 텍스트는 사용자가 무언가를 입력하기 전에 `input` 엘리먼트에 표시되는 내용입니다.
 
-You can create placeholder text like so:
+다음과 같이 플레이스홀더 텍스트를 생성할 수 있습니다.
 
 ```html
 <input type="text" placeholder="this is placeholder text">
 ```
 
-**Note:** Remember that `input` elements are self-closing.
+**참고:** `input` 엘리먼트는 자동으로 닫힙니다 (self-closing).
 
 # --instructions--
 
-Set the `placeholder` value of your text `input` to "cat photo URL".
+`input`의 `placeholder` 값을 "cat photo URL"로 설정하세요.
 
 # --hints--
 
-You should add a `placeholder` attribute to the existing text `input` element.
+기존 텍스트 `input` 엘리먼트에 `placeholder` 속성을 추가해야 합니다.
 
 ```js
 assert($('input[placeholder]').length > 0);
 ```
 
-You should set the value of your `placeholder` attribute to `cat photo URL`.
+`placeholder` 속성값을 `cat photo URL`로 설정해야 합니다.
 
 ```js
 assert(
@@ -43,13 +43,13 @@ assert(
 );
 ```
 
-The finished `input` element should not have a closing tag.
+완성된 `input` 요소에는 닫는 태그(closing tag)가 있으면 안됩니다.
 
 ```js
 assert(!code.match(/<input.*\/?>.*<\/input>/gi));
 ```
 
-The finished `input` element should have valid syntax.
+완성된 `input` 요소에는 정확한 문법(syntax)이 사용되어야 합니다.
 
 ```js
 assert($('input[type=text]').length > 0);
@@ -88,9 +88,9 @@ assert($('input[type=text]').length > 0);
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
-  
+
   <p>Things cats love:</p>
   <ul>
     <li>cat nip</li>

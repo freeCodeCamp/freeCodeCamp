@@ -1,6 +1,6 @@
 ---
 id: 59694356a6e7011f7f1c5f4e
-title: Роздати карти для FreeCell
+title: Deal cards for FreeCell
 challengeType: 1
 forumTopicId: 302246
 dashedName: deal-cards-for-freecell
@@ -26,13 +26,13 @@ dashedName: deal-cards-for-freecell
   <li>Seed the RNG with the number of the deal.
   </li><li>Створіть масив з 52 карт: туз трефи, туз бубни, туз чирви, туз піки, двійка трефи, двійка бубни і т. д. по усім рангам: Туз, 2, 3, 4, 5, 6, 7, 8, 9, 10, Валет, Дама, Король. Індекси масивів від 0 до 51, з тузом трефи на 0 та королем піки на 51.</li>
   <li>Поки масив не стане пустим:</li>
-  <li>Оберіть випадкову карту із індексом ≡ наступне випадкове число (довжина масиву модулів).</li>
     <ul>
+      <li>Choose a random card at <i>index</i> ≡ <i>next random number</i> (mod <i>array length</i>).</li>
       <li>Swap this random card with the last card of the array.</li>
-      <li>Видаліть цю випадкову карту із масиву. (Довжина масиву зменшується на 1.)</li>
-      <li>Роздайте цю випадкову карту.</li>
+      <li>Remove this random card from the array. (Array length goes down by 1.)</li>
+      <li>Deal this random card.</li>
     </ul>
-  <li>Роздайте усі 52 карти, лицем догори, на 8 стовпчиків. Перші 8 карт на 8 стовпчиків, наступні 8 карт на перші 8 карт, і так далі.</li>
+  <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
 </ol>
 
 **Наприклад:**
@@ -47,7 +47,7 @@ dashedName: deal-cards-for-freecell
 41 42 43 44 45 46 47 48
 49 50 51 52</pre>
 
-**Гра #1**
+**Game #1**
 
 ```js
 [
@@ -61,7 +61,7 @@ dashedName: deal-cards-for-freecell
 ]
 ```
 
-**Гра #617**
+**Game #617**
 
 ```js
 [

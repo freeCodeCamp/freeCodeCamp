@@ -5,6 +5,7 @@ title: Links and Images Question D
 challengeType: 15
 dashedName: links-and-images-question-d
 ---
+
 # --description--
 
 
@@ -48,9 +49,9 @@ Back in the `index` page, add the following anchor element to create a link to t
 ```html
 <body>
   <h1>Homepage</h1>
-	<a href="https://www.theodinproject.com/about">click me</a>
+    <a href="https://www.theodinproject.com/about">click me</a>
 
-	<a href="about.html">About</a>
+    <a href="about.html">About</a>
 </body>
 ```
 

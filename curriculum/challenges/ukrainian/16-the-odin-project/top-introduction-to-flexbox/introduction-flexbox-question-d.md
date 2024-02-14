@@ -1,35 +1,35 @@
 ---
 id: 6571b2ffcc1de61d7b4dd382
-title: Introduction to Flexbox Question D
+title: Вступ до Flexbox. Запитання D
 challengeType: 15
 dashedName: introduction-flexbox-question-d
 ---
 
 # --description--
 
-Now that you have a basic understanding of how flexbox works, what is the primairy role of a flex item in a `flexbox` layout? Try and answer the question below.
+У вас є базове розуміння того, як працює flexbox. Яка головна роль гнучких предметів в макеті `flexbox`? Спробуйте відповісти на запитання нижче.
 
 # --question--
 
 ## --text--
 
-What role does a flex item play within a flex container?
+Яку роль відіграють гнучкі предмети в гнучкому контейнері?
 
 ## --answers--
 
-Flex items define the overall layout structure.
+Гнучкі предмети визначають загальну структуру макета.
 
 ---
 
-Flex items set the background colors of flex containers.
+Гнучкі предмети встановлюють колір фону гнучких контейнерів.
 
 ---
 
-Flex items allow the flex container to resize based on content.
+Гнучкі предмети дозволяють гнучким контейнерам змінити розмір на основі вмісту.
 
 ---
 
-Flex items are elements that reside directly within a flex container.
+Гнучкі предмети — це елементи, які живуть в гнучкому контейнері.
 
 ## --video-solution--
 

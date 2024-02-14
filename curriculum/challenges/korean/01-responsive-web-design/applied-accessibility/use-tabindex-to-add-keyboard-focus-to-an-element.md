@@ -1,6 +1,6 @@
 ---
 id: 587d7790367417b2b2512ab0
-title: Use tabindex to Add Keyboard Focus to an Element
+title: 요소에 키보드 포커스를 추가하기 위해 tabindex 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzMDHW'
 forumTopicId: 301027
@@ -9,29 +9,29 @@ dashedName: use-tabindex-to-add-keyboard-focus-to-an-element
 
 # --description--
 
-The HTML `tabindex` attribute has three distinct functions relating to an element's keyboard focus. When it's on a tag, it indicates that the element can be focused on. The value (an integer that's positive, negative, or zero) determines the behavior.
+HTML `tabindex` 속성은 요소의 키보드 포커스와 연관된 세 가지 다른 기능들을 가지고 있습니다. 태그에 있을 시 요소에 초점을 맞출 수 있다는 것을 나타냅니다. 정수 값에 따라 동작이 결정됩니다.
 
-Certain elements, such as links and form controls, automatically receive keyboard focus when a user tabs through a page. It's in the same order as the elements come in the HTML source markup. This same functionality can be given to other elements, such as `div`, `span`, and `p`, by placing a `tabindex="0"` attribute on them. Here's an example:
+링크, 폼 제어와 같은 특정 요소들은 사용자가 페이지를 탐색할 때 자동으로 키보드 포커스를 받습니다. 순서는 HTML 소스 마크업에 요소들이 오는 순서와 같습니다. `div`, `span`, `p`와 같은 다른 요소들에도 `tabindex="0"` 속성을 적용하면 동일한 기능을 부여할 수 있습니다. 여기 예시가 있습니다.
 
 ```html
 <div tabindex="0">I need keyboard focus!</div>
 ```
 
-**Note:** A negative `tabindex` value (typically -1) indicates that an element is focusable, but is not reachable by the keyboard. This method is generally used to bring focus to content programmatically (like when a `div` used for a pop-up window is activated), and is beyond the scope of these challenges.
+**참고:** 음수값의 `tabindex` (통상적으로 -1) 를 사용하면 요소가 포커스를 받을 수 있지만 키보드로 접근할 수는 없습니다. 이 방법은 일반적으로 프로그래밍 방식으로 콘텐츠에 초점을 가져오기 위해 사용되며 (팝업 창에 사용되는 `div`가 활성화될 때처럼) 챌린지의 범위를 벗어납니다.
 
 # --instructions--
 
-Camper Cat created a new survey to collect information about his users. He knows input fields automatically get keyboard focus, but he wants to make sure his keyboard users pause at the instructions while tabbing through the items. Add a `tabindex` attribute to the `p` tag and set its value to `0`. Bonus - using `tabindex` also enables the CSS pseudo-class `:focus` to work on the `p` tag.
+Camper Cat은 사용자들에 대한 정보를 모으기 위한 새로운 설문조사를 만들었습니다. 입력 필드는 자동으로 키보드 포커스를 받는 걸 알지만 키보드 사용자들이 항목들을 탐색하는 동안 지시 사항에서 멈추길 바랍니다. `tabindex` 속성을 `p` 태그에 더하고 `0`으로 설정합니다. 보너스 - `tabindex`를 사용하면 CSS 가상 클래스 `:focus`가 `p` 태그에서도 작동되게 합니다.
 
 # --hints--
 
-Your code should add a `tabindex` attribute to the `p` tag that holds the form instructions.
+폼 지침을 보유한 `p` 태그에 `tabindex` 속성을 추가해야합니다.
 
 ```js
 assert($('p').attr('tabindex'));
 ```
 
-Your code should set the `tabindex` attribute on the `p` tag to a value of 0.
+`p` 태그에 있는 `tabindex` 속성값은 0 이어야 합니다.
 
 ```js
 assert($('p').attr('tabindex') == '0');

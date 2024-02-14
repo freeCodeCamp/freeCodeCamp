@@ -1,6 +1,6 @@
 ---
 id: 587d7790367417b2b2512aaf
-title: Make Links Navigable with HTML Access Keys
+title: HTML Access Keys를 사용하여 링크를 탐색 가능하게 만들기.
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQvmaTp'
 forumTopicId: 301021
@@ -9,11 +9,11 @@ dashedName: make-links-navigable-with-html-access-keys
 
 # --description--
 
-HTML offers the `accesskey` attribute to specify a shortcut key to activate or bring focus to an element. Adding an `accesskey` attribute can make navigation more efficient for keyboard-only users.
+HTML은 요소를 활성화하거나 요소에 초점을 맞추기 위한 단축키를 지정하기 위해 `accesskey` 속성을 제공합니다. `accesskey` 속성을 추가하면 키보드만 사용하는 사용자들이 더 효율적으로 탐색이 가능해집니다.
 
-HTML5 allows this attribute to be used on any element, but it's particularly useful when it's used with interactive ones. This includes links, buttons, and form controls.
+HTML5에서는 이 속성을 모든 요소에 사용할 수 있지만, 상호작용하는 요소와 함께 사용될 때 특히 유용합니다. 이것은 링크, 버튼 및 양식 컨트롤을 포함합니다.
 
-Here's an example:
+여기 예시가 있습니다.
 
 ```html
 <button accesskey="b">Important Button</button>
@@ -21,29 +21,29 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat wants the links around the two blog article titles to have keyboard shortcuts so his site's users can quickly navigate to the full story. Add an `accesskey` attribute to both links and set the first one to `g` (for Garfield) and the second one to `c` (for Chuck Norris).
+캠퍼 캣은 자신의 사이트 사용자가 빠르게 본문으로 이동할 수 있도록 두 개의 블로그 기사 제목 주변에 있는 링크에 키보드 단축키를 더하고 싶습니다. 첫 번째 링크에는 `g` (Garfield의 "g")로, 두 번째 링크에는 `c` (Chuck Norris의 "c")로 `accesskey` 속성을 추가하세요.
 
 # --hints--
 
-Your code should add an `accesskey` attribute to the `a` tag with the `id` of `first`.
+코드에서 `a` 태그에 `id`가 `first`인 `accesskey` 속성을 추가해야 합니다.
 
 ```js
 assert($('#first').attr('accesskey'));
 ```
 
-Your code should add an `accesskey` attribute to the `a` tag with the `id` of `second`.
+코드에서 `a` 태그에 `id`가 `second`인 `accesskey` 속성을 추가해야 합니다.
 
 ```js
 assert($('#second').attr('accesskey'));
 ```
 
-Your code should set the `accesskey` attribute on the `a` tag with the `id` of `first` to `g`. Note that case matters.
+코드에서 `id`가 `first`인 `a` 태그의 `accesskey` 속성을 `g`로 설정해야 합니다. 대소문자가 영향을 미친다는 사실을 주의하세요.
 
 ```js
 assert($('#first').attr('accesskey') == 'g');
 ```
 
-Your code should set the `accesskey` attribute on the `a` tag with the `id` of `second` to `c`. Note that case matters.
+코드에서 `id`가 `second`인 `a` 태그에 `accesskey` 속성을 `c`로 설정해야 합니다. 대소문자가 영향을 미친다는 사실을 주의하세요.
 
 ```js
 assert($('#second').attr('accesskey') == 'c');

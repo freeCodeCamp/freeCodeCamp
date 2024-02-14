@@ -12,7 +12,7 @@ dashedName: networking-web-scraping-with-python
 
 # --description--
 
-More resources:
+Mais recursos:
 
 \- <a href="https://www.youtube.com/watch?v=dWLdI143W-g" target="_blank" rel="noopener noreferrer nofollow">Exercício: socket1</a>
 

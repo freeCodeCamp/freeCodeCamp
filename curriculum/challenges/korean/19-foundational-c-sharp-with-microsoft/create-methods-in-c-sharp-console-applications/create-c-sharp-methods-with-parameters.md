@@ -1,6 +1,6 @@
 ---
 id: 647e224b8acb466c97ccbeef
-title: Create C# Methods with Parameters
+title: 'Create C# Methods with Parameters'
 challengeType: 19
 dashedName: create-c-sharp-methods-with-parameters
 ---

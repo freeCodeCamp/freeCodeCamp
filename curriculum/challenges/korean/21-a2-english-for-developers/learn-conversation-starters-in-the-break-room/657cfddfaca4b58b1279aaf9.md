@@ -27,7 +27,7 @@ Listen to the audio to complete the sentence below.
 
 ### --feedback--
 
-Remember to conjugate the verb. The verb you need is about motivating or inspiring someone to do something. It's similar to cheering someone on. 
+Remember to conjugate the verb. The verb you need is about motivating or inspiring someone to do something. It's similar to cheering someone on.
 
 # --scene--
 

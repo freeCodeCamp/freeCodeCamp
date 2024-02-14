@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08814
-title: Add Rounded Corners with border-radius
+title: border-radius를 사용하여 둥근 모서리 추가하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cbZm2hg'
 forumTopicId: 16649
@@ -9,23 +9,23 @@ dashedName: add-rounded-corners-with-border-radius
 
 # --description--
 
-Your cat photo currently has sharp corners. We can round out those corners with a CSS property called `border-radius`.
+고양이 사진은 현재 날카로운 모서리를 가지고 있습니다. `border-radius`라는 CSS 속성을 사용하여 이 모서리들을 둥글게 만들 수 있습니다.
 
 # --instructions--
 
-You can specify a `border-radius` with pixels. Give your cat photo a `border-radius` of `10px`.
+픽셀로 `border-radius`를 지정할 수 있습니다. 고양이 사진에 `10px`의 `border-radius`를 부여합니다.
 
-**Note:** This challenge allows for multiple possible solutions. For example, you may add `border-radius` to either the `.thick-green-border` class or the `.smaller-image` class.
+**참고:** 이 챌린지는 여러 가지 해결책을 허용합니다. 예를 들어 `.thick-green-border` 클래스나 `.smaller-image` 클래스 중 하나에 `border-radius`를 추가할 수 있습니다.
 
 # --hints--
 
-Your image element should have the class `thick-green-border`.
+사진 요소는 `thick-green-border` 클래스를 가져야 합니다.
 
 ```js
 assert($('img').hasClass('thick-green-border'));
 ```
 
-Your image should have a border radius of `10px`.
+이미지는 `10px`의 테두리 반지름을 가져야 합니다.
 
 ```js
 assert(

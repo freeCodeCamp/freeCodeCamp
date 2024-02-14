@@ -1,6 +1,6 @@
 ---
 id: 587d78a7367417b2b2512ae2
-title: Create Visual Direction by Fading an Element from Left to Right
+title: 왼쪽에서 오른쪽으로 요소가 점점 투명해지도록 시각적인 방향 만들기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJqqAE'
 forumTopicId: 301054
@@ -9,17 +9,17 @@ dashedName: create-visual-direction-by-fading-an-element-from-left-to-right
 
 # --description--
 
-For this challenge, you'll change the `opacity` of an animated element so it gradually fades as it reaches the right side of the screen.
+이번 도전 과제에서는 애니메이션된 요소의 `opacity`를 변경하여 화면 오른쪽으로 갈수록 서서히 투명해지도록합니다.
 
-In the displayed animation, the round element with the gradient background moves to the right by the 50% mark of the animation per the `@keyframes` rule.
+표시된 애니메이션에서는 그라데이션 배경을 가진 둥근 요소가 애니메이션의 50% 지점까지 오른쪽으로 이동합니다. 이는 `@keyframes` 규칙에 따른 것입니다.
 
 # --instructions--
 
-Target the element with the id of `ball` and add the `opacity` property set to 0.1 at `50%`, so the element fades as it moves to the right.
+id가 `ball`인 요소를 대상으로 하여 `opacity` 속성을 추가하고, 해당 속성을 `50%`일 때 0.1로 설정하여 요소가 오른쪽으로 이동할 때 서서히 흐려지도록 합니다.
 
 # --hints--
 
-The `keyframes` rule for fade should set the `opacity` property to 0.1 at 50%.
+fade에 대한 `keyframes`규칙은 `opacity` 속성을 50%일 때 0.1로 설정해야 합니다.
 
 ```js
 assert(

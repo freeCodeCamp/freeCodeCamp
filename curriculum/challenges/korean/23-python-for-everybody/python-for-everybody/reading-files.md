@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f080b6c005b0e76f062
-title: Reading Files
+title: 파일 읽기
 challengeType: 11
 videoId: Fo1tW09KIwo
 bilibiliIds:
