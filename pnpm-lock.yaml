@@ -579,8 +579,8 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0
       chai:
-        specifier: 4.3.10
-        version: 4.3.10
+        specifier: 4.4.1
+        version: 4.4.1
       crypto-browserify:
         specifier: 3.12.0
         version: 3.12.0
@@ -997,8 +997,8 @@ importers:
         specifier: 6.24.1
         version: 6.24.1
       chai:
-        specifier: 4.3.10
-        version: 4.3.10
+        specifier: 4.4.1
+        version: 4.4.1
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
@@ -1301,8 +1301,8 @@ importers:
         specifier: 1.3.0
         version: 1.3.0
       '@types/chai':
-        specifier: 4.3.10
-        version: 4.3.10
+        specifier: 4.3.11
+        version: 4.3.11
       '@types/copy-webpack-plugin':
         specifier: ^8.0.1
         version: 8.0.1(webpack-cli@4.10.0)
@@ -1325,8 +1325,8 @@ importers:
         specifier: 6.0.3
         version: 6.0.3
       chai:
-        specifier: 4.3.10
-        version: 4.3.10
+        specifier: 4.4.1
+        version: 4.4.1
       copy-webpack-plugin:
         specifier: 9.1.0
         version: 9.1.0(webpack@5.89.0)
@@ -1384,8 +1384,8 @@ importers:
         specifier: ^0.5.0
         version: 0.5.1
       chai:
-        specifier: 4.3.10
-        version: 4.3.10
+        specifier: 4.4.1
+        version: 4.4.1
       joi:
         specifier: 17.11.0
         version: 17.11.0
@@ -10541,8 +10541,8 @@ packages:
     resolution: {integrity: sha512-Yq6rIccwcco0TLD5SMUrIM7Fk7Fe/C0jmNRxJJCLtAF6gebDkPuUjK5EHedxecm69Pi/aA+It39Ux4OHmFhjRw==}
     dev: true
 
-  /@types/chai@4.3.10:
-    resolution: {integrity: sha512-of+ICnbqjmFCiixUnqRulbylyXQrPqIGf/B3Jax1wIF3DvSheysQxAWvqHhZiW3IQrycvokcLcFQlveGp+vyNg==}
+  /@types/chai@4.3.11:
+    resolution: {integrity: sha512-qQR1dr2rGIHYlJulmr8Ioq3De0Le9E4MJ5AiaeAETJJpndT1uUNHsGFK3L/UIu+rbkQSdj8J/w2bCsBZc/Y5fQ==}
     dev: true
 
   /@types/chai@4.3.6:
@@ -14644,8 +14644,8 @@ packages:
   /ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
 
-  /chai@4.3.10:
-    resolution: {integrity: sha512-0UXG04VuVbruMUYbJ6JctvH0YnC/4q3/AkT18q4NaITo91CUm0liMS9VqzT9vZhVQ/1eqPanMWjBM+Juhfb/9g==}
+  /chai@4.4.1:
+    resolution: {integrity: sha512-13sOfMv2+DWduEU+/xbun3LScLoqN17nBeTLUsmDfKdoiC1fr0n9PU4guu4AhRcOVFk/sW8LyZWHuhWtQZiF+g==}
     engines: {node: '>=4'}
     dependencies:
       assertion-error: 1.1.0
@@ -23352,6 +23352,7 @@ packages:
 
   /loupe@2.3.6:
     resolution: {integrity: sha512-RaPMZKiMy8/JruncMU5Bt6na1eftNoo++R4Y+N2FrxkDVTrGvcyzFTsaGif4QTeKESheMGegbhw6iUAq+5A8zA==}
+    deprecated: Please upgrade to 2.3.7 which fixes GHSA-4q6p-r6v2-jvc5
     dependencies:
       get-func-name: 2.0.2
 
