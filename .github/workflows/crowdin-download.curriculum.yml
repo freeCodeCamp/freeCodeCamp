@@ -362,6 +362,11 @@ jobs:
           pnpm run build:server
 
       # We do not need to run tests because they are run after the PR is created.
+      ###### Lowercase directory names #####
+
+      - name: Lowercase Directories
+        run: |
+          find curriculum/challenges -depth -type d -exec bash -c 'mv "$1" "${1%/*}/$(basename "$1" | tr "[:upper:]" "[:lower:]")"' _ {} \;
 
       - name: Overwrite Execute-Brain.md
         run: sudo tools/scripts/move-bf.sh
