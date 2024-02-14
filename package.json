@@ -148,7 +148,7 @@
     "process": "0.11.10",
     "start-server-and-test": "1.15.5",
     "store": "2.0.12",
-    "ts-node": "10.9.1",
+    "ts-node": "10.9.2",
     "typescript": "5.2.2",
     "webpack-bundle-analyzer": "4.9.1",
     "yargs": "17.7.2"
