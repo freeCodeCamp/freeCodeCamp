@@ -2,7 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@freecodecamp/ui';
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
-import { isOldRespCert, isRelationalDbCert } from '../../../utils/is-a-cert';
+import {
+  isOldRespCert,
+  isRelationalDbCert,
+  isExamCert
+} from '../../../utils/is-a-cert';
 import { Link } from '../../../components/helpers';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
@@ -38,6 +42,16 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
         {clientLocale != 'english' && (
           <Alert variant='info'>
             <p>{t('intro:misc-text.english-only')}</p>
+          </Alert>
+        )}
+      </>
+    );
+  } else if (isExamCert(superBlock)) {
+    return (
+      <>
+        {clientLocale != 'english' && (
+          <Alert variant='info'>
+            <p>{t('intro:misc-text.exam-english-only')}</p>
           </Alert>
         )}
       </>
