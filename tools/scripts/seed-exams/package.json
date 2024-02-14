@@ -21,7 +21,7 @@
   "devDependencies": {
     "debug": "4.3.4",
     "dotenv": "16.4.4",
-    "joi": "17.11.0",
+    "joi": "17.12.1",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.1.0",
     "lodash": "4.17.21",
