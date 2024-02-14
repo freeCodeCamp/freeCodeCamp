@@ -18,9 +18,9 @@ Working on this project will involve you writing your code using one of the foll
 
 If you use Replit, follow these steps to set up the project:
 
--   Start by importing the project on Replit. 
--   Next, you will see a `.replit` window. 
--   Select `Use run command` and click the `Done` button. 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
@@ -274,7 +274,7 @@ async (getUserInput) => {
   let res = await fetch(`${url}/api/threads/fcc_test`);
   let threads = await res.json();
   const thread_id = threads[0]._id;
-  
+
   const reply_data = { thread_id, text: "fcc_test_reply", delete_password: "delete_me" };
   await fetch(`${url}/api/replies/fcc_test`, {
     method: 'POST',
@@ -321,7 +321,7 @@ async (getUserInput) => {
   const threads = await res.json();
   const thread_id = threads[0]._id;
   const data = { thread_id };
-  
+
   res = await fetch(`${url}/api/threads/fcc_test`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
@@ -353,7 +353,7 @@ async (getUserInput) => {
   const thread_id = threads[0]._id;
   const reply_id = threads[0].replies[0]._id;
   const data = { thread_id, reply_id };
-  
+
   res = await fetch(`${url}/api/replies/fcc_test`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },

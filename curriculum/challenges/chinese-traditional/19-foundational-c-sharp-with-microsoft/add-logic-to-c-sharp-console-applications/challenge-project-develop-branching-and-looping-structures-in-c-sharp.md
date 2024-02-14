@@ -1,38 +1,38 @@
 ---
 id: 647e21598acb466c97ccbee1
-title: 'Challenge Project - Develop Branching and Looping Structures in C#'
+title: '挑戰項目 - 在 C# 中開發分支和循環結構'
 challengeType: 19
 dashedName: challenge-project-develop-branching-and-looping-structures-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+這個挑戰將有一部分在 Microsoft Learn 平臺上完成。 請按照如下說明來完成挑戰：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/</a> and complete all the tasks for the "Challenge Project - Develop Branching and Looping Structures in C#" module. This is **required** to earn the "Add Logic to C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳轉到 <a href="https://learn.microsoft.com/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/</a>，然後完成“挑戰項目 - 在 C# 中開發分支和循環結構”模塊的所有任務。 這是在 Microsoft Learn 上獲得“向 C# 控制檯應用程序添加邏輯”的獎盃以及參加認證考試所**必需**的。
+1. 完成後，返回並正確回答下面的問題。
 
-# --assignment--
+# --任務--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/" target="_blank" rel="noreferrer">Develop Branching and Looping Structures in C#</a> challenge project on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/" target="_blank" rel="noreferrer">在 C# 中開發分支和循環結構</a> 的挑戰項目。 然後，回答下面的問題。
 
 # --question--
 
 ## --text--
 
-A developer needs to create an iteration statement. Under what condition is a `while` statement a better choice than a `do` statement?
+開發人員需要創建迭代語句。 在什麼條件下 `while` 語句比 `do` 語句更好？
 
 ## --answers--
 
-When the expression values evaluated by the iteration statement are unknown prior to the iteration code block.
+當迭代語句評估的表達式值在迭代代碼塊之前未知時。
 
 ---
 
-When the expression values evaluated by the iteration statement are known prior to the iteration code block.
+當迭代語句評估的表達式值在迭代代碼塊之前已知時。
 
 ---
 
-When the developer creates nested `do` or `while` loops.
+當開發人員創建嵌套的 `do` 或者 `while` 循環時。
 
 ## --video-solution--
 

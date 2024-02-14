@@ -5,6 +5,7 @@ title: CSS Foundations Question H
 challengeType: 15
 dashedName: css-foundations-question-h
 ---
+
 # --description--
 
 Inline `CSS` makes it possible to add styles directly to `HTML` elements, though this method isn’t as recommended:
@@ -19,11 +20,9 @@ The first thing to note is that there aren't any selectors here, since the style
 
 If you need to add a unique style for a single element, this method can work just fine. Generally, though, this isn’t exactly a recommended way for adding CSS to HTML for a few reasons:
 
-It can quickly become pretty messy once you start adding a lot of declarations to a single element, causing your HTML file to become unnecessarily bloated.
-If you want many elements to have the same style, you would have to copy + paste the same style to each individual element, causing lots of unnecessary repetition and more bloat.
-Any inline CSS will override the other two methods, which can cause unexpected results. (While you won’t dive into it here, this can actually be taken advantage of).
+It can quickly become pretty messy once you start adding a lot of declarations to a single element, causing your HTML file to become unnecessarily bloated. If you want many elements to have the same style, you would have to copy + paste the same style to each individual element, causing lots of unnecessary repetition and more bloat. Any inline CSS will override the other two methods, which can cause unexpected results. (While you won’t dive into it here, this can actually be taken advantage of).
 
-# --question--    
+# --question--
 
 ## --text--
 

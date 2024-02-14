@@ -8,13 +8,13 @@ dashedName: jaro-distance
 
 # --description--
 
-The Jaro distance is a measure of similarity between two strings. The higher the Jaro distance for two strings is, the more similar the strings are. The score is normalized such that `0` equates to no similarity and `1` is an exact match.
+Подібність Джаро — це міра схожості між двома рядками. Чим більший показник подібності Джаро для двох рядків, тим більше вони схожі. Якщо показник дорівнює `0`, то схожості немає; якщо `1`, то схожість точна.
 
 **Визначення**
 
-Подібність Джаро \\( d_j \\) з двох вибраних рядків \\((\\1\\) і \\(s_2\\) є
+Подібність Джаро \\( d_j \\) для двох наданих рядків \\(s_1\\) та \\(s_2\\):
 
-\\begin{align}d_j = \\begin{cases}0& & \\text{if }m=0 \\\\\\\\{\\frac {1}{3}}\\left({\\frac {m}{|s\_{1}|}}+{\\frac {m}{|s\_{2}|}}+{\\frac {m-t}{m}}\\right)& & \\text{otherwise}\\end{cases}\\end{align}
+\\begin{align}d_j = \\begin{cases}0& & \\text{якщо }m=0 \\\\\\\\{\\frac {1}{3}}\\left({\\frac {m}{|s\_{1}|}}+{\\frac {m}{|s\_{2}|}}+{\\frac {m-t}{m}}\\right)& & \\text{в іншому випадку}\\end{cases}\\end{align}
 
 Де:
 
@@ -23,13 +23,13 @@ The Jaro distance is a measure of similarity between two strings. The higher the
   <li> \(t\) є половиною кількості <i>транспозицій</i>.</li>
 </ul>
 
-Два символи з \\(s_1\\) та \\(s_2\\) відповідно, вважаються *співпадінням*, якщо вони однакові і розташовані не далі, ніж \\(\\left\\lfloor\\frac{\\max(|s_1|, s_2|)}{2}\\right\\rfloor-1\\).
+Два символи з \\(s_1\\) та \\(s_2\\) вважаються *однаковими*, якщо вони ідентичні та розташовані не далі, ніж \\(\\left\\lfloor\\frac{\\max(|s_1|,|s_2|)}{2}\\right\\rfloor-1\\).
 
-Кожен символ \\(s_1\\) порівнюється з усіма відповідними символами у \\(s_2\\) . Кількість відповідних (але в різному порядку) символів, розділених на 2, визначає кількість * транспозицій *.
+Кожен символ з \\(s_1\\) порівнюють з усіма однаковими символами з \\(s_2\\). Кількість однакових символів (але в різному порядку), поділена на 2, визначає кількість *транспозицій*.
 
 **Наприклад**
 
-У рядках \\(s_1\\) *DWAYNE* та \\(s_2\\) *DUANE* виявили:
+Дано рядки \\(s_1\\) *DWAYNE* та \\(s_2\\) *DUANE*, тому:
 
 <ul>
   <li>\(m = 4\)</li>
@@ -38,11 +38,11 @@ The Jaro distance is a measure of similarity between two strings. The higher the
   <li>\(t = 0\)</li>
 </ul>
 
-Ми знайшли: \\(d_j = \\frac{1}{3}\\left(\\frac{4}{6} + \\frac{4}{5} + \\frac{4-0}{4}\\right) = 0.822\\).
+Знайдемо показник Джаро: \\(d_j = \\frac{1}{3}\\left(\\frac{4}{6} + \\frac{4}{5} + \\frac{4-0}{4}\\right) = 0.822\\).
 
 # --instructions--
 
-Напишіть функцію а, у параметрах встановіть дві рядки. Це має бути схоже на подібність Джаро.
+Напишіть функцію, яка приймає два рядки як параметри та повертає подібність Джаро.
 
 # --hints--
 

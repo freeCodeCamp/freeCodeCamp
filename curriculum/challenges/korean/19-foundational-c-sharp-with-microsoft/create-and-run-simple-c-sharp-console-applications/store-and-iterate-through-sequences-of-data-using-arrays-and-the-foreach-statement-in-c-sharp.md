@@ -1,6 +1,6 @@
 ---
 id: 647e22058acb466c97ccbeec
-title: Store and Iterate Through Sequences of Data Using Arrays and the foreach Statement in C#
+title: 'Store and Iterate Through Sequences of Data Using Arrays and the foreach Statement in C#'
 challengeType: 19
 dashedName: store-and-iterate-through-sequences-of-data-using-arrays-and-the-foreach-statement-in-c-sharp
 ---

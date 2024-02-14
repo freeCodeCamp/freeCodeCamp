@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f060b6c005b0e76f05b
-title: Build your own Functions
+title: 나만의 함수 만들기
 challengeType: 11
 videoId: nLDychdBwUg
 bilibiliIds:
@@ -20,7 +20,7 @@ More resources:
 
 ## --text--
 
-What will the following Python program print out?:
+다음 파이썬 프로그램은 무엇을 출력하나요?:
 
 ```python
 def fred():

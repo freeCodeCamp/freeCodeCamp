@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08736
-title: Style the HTML Body Element
+title: HTML body 요소에 스타일 더하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB77PHW'
 forumTopicId: 18313
@@ -9,15 +9,15 @@ dashedName: style-the-html-body-element
 
 # --description--
 
-Now let's start fresh and talk about CSS inheritance.
+이제 다시 시작하여 CSS 상속에 대해 이야기해 봅시다.
 
-Every HTML page has a `body` element.
+모든 HTML 페이지에는 `body` 요소가 있습니다.
 
 # --instructions--
 
-We can prove that the `body` element exists here by giving it a `background-color` of black.
+여기서 `body` 요소가 존재하는 것을 검증하기 위해 여기에 검은색 `background-color`을 지정할 수 있습니다.
 
-We can do this by adding the following to our `style` element:
+이를 위해 다음을 `style` 요소에 추가할 수 있습니다.
 
 ```css
 body {
@@ -27,13 +27,13 @@ body {
 
 # --hints--
 
-Your `body` element should have the `background-color` of black.
+`body` 요소는 검은색 `background-color`을 가져야 합니다.
 
 ```js
 assert($('body').css('background-color') === 'rgb(0, 0, 0)');
 ```
 
-Your CSS rule should be properly formatted with both opening and closing curly brackets.
+CSS 규칙은 올바른 형식으로 여는 중괄호와 닫는 중괄호를 가져야 합니다.
 
 ```js
 assert(
@@ -41,7 +41,7 @@ assert(
 );
 ```
 
-Your CSS rule should end with a semi-colon.
+CSS 규칙은 세미콜론으로 끝나야 합니다.
 
 ```js
 assert(

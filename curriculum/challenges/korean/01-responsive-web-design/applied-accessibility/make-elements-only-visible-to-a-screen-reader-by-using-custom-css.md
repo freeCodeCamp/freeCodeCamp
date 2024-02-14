@@ -1,6 +1,6 @@
 ---
 id: 587d778d367417b2b2512aaa
-title: Make Elements Only Visible to a Screen Reader by Using Custom CSS
+title: CSS를 사용하여 화면 낭독기에서만 요소가 보이도록 만들어보세요.
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cJ8QGkhJ'
 forumTopicId: 301020
@@ -9,11 +9,11 @@ dashedName: make-elements-only-visible-to-a-screen-reader-by-using-custom-css
 
 # --description--
 
-Have you noticed that all of the applied accessibility challenges so far haven't used any CSS? This shows the importance of using a logical document outline and semantically meaningful tags around your content before introducing the visual design aspect.
+지금까지 적용된 모든 접근성 도전 과제에서 CSS를 사용하지 않았다는 것을 알아채셨나요? 이것은 시각적 디자인 측면을 생각해보기 전에 먼저 콘텐츠에서 논리적인 문서 개요와 시맨틱적으로 의미있는 태그를 사용하는 것에 대한 중요성을 보여줍니다.
 
-However, CSS's magic can also improve accessibility on your page when you want to visually hide content meant only for screen readers. This happens when information is in a visual format (like a chart), but screen reader users need an alternative presentation (like a table) to access the data. CSS is used to position the screen reader-only elements off the visual area of the browser window.
+그러나 CSS는 화면 낭독기 전용으로 의도된 콘텐츠를 화면에서는 보이지 않도록 숨기면서 페이지의 접근성을 향상시킬 수도 있습니다. 차트처럼 시각적으로 제공되는 정보에 대해서 화면 낭독기 사용자는 이를 대체할 수 있는 표와 같은 형식의 정보가 필요한데 이런 경우에 유용하게 쓰일 수 있습니다. CSS는 화면 낭독기 전용 요소를 브라우저의 시각적 영역 밖에 배치하는 데(브라우저 창 안에서는 보이지 않도록) 사용됩니다.
 
-Here's an example of the CSS rules that accomplish this:
+다음은 이를 구현하는 CSS 규칙의 예입니다:
 
 ```css
 .sr-only {
@@ -26,38 +26,38 @@ Here's an example of the CSS rules that accomplish this:
 }
 ```
 
-**Note:** The following CSS approaches will NOT do the same thing:
+**참고:** 다음 CSS 방법들은 동일한 작업을 수행하지 않습니다.
 
 <ul>
-<li><code>display: none;</code> or <code>visibility: hidden;</code> hides content for everyone, including screen reader users</li>
-<li>Zero values for pixel sizes, such as <code>width: 0px; height: 0px;</code> removes that element from the flow of your document, meaning screen readers will ignore it</li>
+<li><code>display: none;</code> 또는 <code>visibility: hidden;</code>은 화면 낭독기 사용자를 포함한 모든 사용자에게 콘텐츠를 숨깁니다.</li>
+<li>픽셀 크기를 0으로 만드는 경우, 예를 들어 <code>width: 0px; height: 0px;</code>은 해당 요소를 문서의 흐름에서 제거하므로 화면 낭독기에서 무시됩니다.</li>
 </ul>
 
 # --instructions--
 
-Camper Cat created a really cool stacked bar chart for his training page, and put the data into a table for his visually impaired users. The table already has an `sr-only` class, but the CSS rules aren't filled in yet. Give the `position` an `absolute` value, the `left` a `-10000px` value, and the `width` and `height` both `1px` values.
+캠퍼 캣은 그의 훈련 페이지에 쌓여있는 멋진 막대 차트를 만들었고 시각적으로 장애가 있는 사용자를 위해 데이터를 표로 정리했습니다. 표에는 이미 `sr-only` 클래스가 지정되어 있지만 아직 CSS 규칙이 작성되지 않았습니다. `position` 속성에 `absolute` 값을, `left`에 `-10000px` 값을, 그리고 `width`와 `height`에 각각 `1px` 값을 지정하세요.
 
 # --hints--
 
-Your code should set the `position` property of the `sr-only` class to a value of `absolute`.
+코드에서 `sr-only` 클래스의 `position` 속성 값을 `absolute` 로 설정해야 합니다.
 
 ```js
 assert($('.sr-only').css('position') == 'absolute');
 ```
 
-Your code should set the `left` property of the `sr-only` class to a value of `-10000px`.
+코드에서 `sr-only` 클래스의 `left` 속성 값을 `-10000px` 로 설정해야 합니다.
 
 ```js
 assert($('.sr-only').css('left') == '-10000px');
 ```
 
-Your code should set the `width` property of the `sr-only` class to a value of `1` pixel.
+코드에서 `sr-only` 클래스의 `width` 속성 값을 `1`픽셀로 설정해야 합니다.
 
 ```js
 assert(code.match(/width:\s*?1px/gi));
 ```
 
-Your code should set the `height` property of the `sr-only` class to a value of `1` pixel.
+코드에서 `sr-only` 클래스의 `height` 속성 값을 `1`픽셀로 설정해야 합니다.
 
 ```js
 assert(code.match(/height:\s*?1px/gi));

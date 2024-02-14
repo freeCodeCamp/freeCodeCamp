@@ -38,19 +38,19 @@ assert(typeof factorial === 'function');
 assert(typeof factorial(2) === 'number');
 ```
 
-`factorial(3)` は6を返します。
+`factorial(3)` は 6 を返します。
 
 ```js
 assert.equal(factorial(3), 6);
 ```
 
-`factorial(5)` は120を返します。
+`factorial(5)` は 120 を返します。
 
 ```js
 assert.equal(factorial(5), 120);
 ```
 
-`factorial(10)` は3,628,800を返します。
+`factorial(10)` は 3,628,800 を返します。
 
 ```js
 assert.equal(factorial(10), 3628800);

@@ -1,26 +1,26 @@
 ---
 id: 647e1f4e8acb466c97ccbedf
-title: 'Add Looping Logic to Your Code Using the do-while and while Statements in C#'
+title: 'C# で do-while ステートメントと while ステートメントを使用して、ループ ロジックをコードに追加する'
 challengeType: 19
 dashedName: add-looping-logic-to-your-code-using-the-do-while-and-while-statements-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+このチャレンジには Microsoft Learn プラットフォームで実行するパートがあります。 下記の手順に従ってチャレンジを完了させてください:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-do-while/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-do-while/</a> and complete all the tasks for the "Add Looping Logic to Your Code Using the do-while and while Statements in C#" module. This is **required** to earn the "Add Logic to C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. <a href="https://learn.microsoft.com/training/modules/csharp-do-while/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-do-while/</a> へ移動し、「C# で do-while ステートメントと while ステートメントを使用して、ループ ロジックをコードに追加する (Add Looping Logic to Your Code Using the do-while and while Statements in C#)」モジュール内のすべてのタスクを完了してください。 これは、Microsoft Learn のトロフィー「C# コンソール アプリケーションにロジックを追加する」を獲得し、認定試験の受験資格を得るために**必須**となります。
+1. 完了後、このページに戻り、下記の質問に正しく回答してください。
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-do-while/" target="_blank" rel="noreferrer">Add Looping Logic to Your Code Using the `do`-`while` and `while` Statements in C#</a> module on Microsoft Learn. Then, answer the question below.
+Microsoft Learn で「<a href="https://learn.microsoft.com/training/modules/csharp-do-while/" target="_blank" rel="noreferrer">C# で `do`-`while` ステートメントと `while` ステートメントを使用して、ループ ロジックをコードに追加する</a>」モジュールを完了してください。 次に、下記の質問に回答してください。
 
 # --question--
 
 ## --text--
 
-A developer needs to iterate through an array of items to find one that matches a certain criteria. Which is the best iteration statement for this purpose?
+ある開発者が、配列内の項目を反復処理して、特定の条件に一致する項目を見つける必要があるとします。 この目的に最適な反復ステートメントはどれですか？
 
 ## --answers--
 

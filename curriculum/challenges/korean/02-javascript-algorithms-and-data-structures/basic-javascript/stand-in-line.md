@@ -92,7 +92,7 @@ testArr = [1,2,3,4,5];
 ```js
 function nextInLine(arr, item) {
   // Only change code below this line
-  
+
   return item;
   // Only change code above this line
 }

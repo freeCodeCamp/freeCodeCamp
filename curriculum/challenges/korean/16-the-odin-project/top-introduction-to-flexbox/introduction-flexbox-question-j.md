@@ -4,6 +4,7 @@ title: Introduction to Flexbox Question J
 challengeType: 15
 dashedName: introduction-flexbox-question-j
 ---
+
 # --description--
 
 Let's look at an example.
@@ -16,7 +17,7 @@ Adding `flex: 1` to `.item` makes each of the items grow to fill the available s
 
 Remove `flex: 1` from `.item` and add `justify-content: space-between` to `.container`. Doing so should give you something like this:
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/495704c6eb6bf33bc927534f231533a82b27b2ac/html_css/v2/foundations/flexbox/imgs/07.png" alt="an image displaying three blue squares which are spread out over the entire width of it's container">
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/495704c6eb6bf33bc927534f231533a82b27b2ac/html_css/v2/foundations/flexbox/imgs/07.png" alt="an image displaying three blue squares which are spread out over the entire width of it's container" />
 
 `justify-content` aligns items across the **main axis**. There are a few values that you can use here. You'll learn the rest of them in the reading assignments, but for now try changing it to center, which should center the boxes along the main axis.
 

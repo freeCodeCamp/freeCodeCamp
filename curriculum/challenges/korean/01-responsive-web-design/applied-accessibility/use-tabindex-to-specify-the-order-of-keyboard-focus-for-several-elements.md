@@ -1,6 +1,6 @@
 ---
 id: 587d7790367417b2b2512ab1
-title: Use tabindex to Specify the Order of Keyboard Focus for Several Elements
+title: 여러 요소들의 키보드 포커스 순서를 tabindex를 활용하여 지정하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzRRcb'
 forumTopicId: 301028
@@ -9,13 +9,13 @@ dashedName: use-tabindex-to-specify-the-order-of-keyboard-focus-for-several-elem
 
 # --description--
 
-The `tabindex` attribute also specifies the exact tab order of elements. This is achieved when the attribute's value is set to a positive number of 1 or higher.
+`tabindex` 속성은 요소들의 정확한 탭 순서를 지정합니다. 이는 속성값이 1과 같거나 큰 양수로 설정되어있을 때 달성됩니다.
 
-Setting a `tabindex="1"` will bring keyboard focus to that element first. Then it cycles through the sequence of specified `tabindex` values (2, 3, etc.), before moving to default and `tabindex="0"` items.
+`tabindex="1"`을 설정하면 해당 요소부터 키보드 포커스가 됩니다. 특정 `tabindex` 값(2, 3, 등등) 들의 순서를 지나간 후 기본값과 `tabindex="0"` 항목들로 이동합니다.
 
-It's important to note that when the tab order is set this way, it overrides the default order (which uses the HTML source). This may confuse users who are expecting to start navigation from the top of the page. This technique may be necessary in some circumstances, but in terms of accessibility, take care before applying it.
+탭의 순서가 이렇게 설정되었을 시 HTML 소스를 활용하는 기존 순서는 덮어씌워진다는 점을 기억하세요. 이는 페이지 상단부터 탐색을 시작할 것이라고 예상하는 사용자들을 혼란시킬 수 있습니다. 상황에 따라 이 기술이 필요할 수도 있지만 접근성 측면에서 봤을 때 적용하기 전 주의를 기울여야 합니다.
 
-Here's an example:
+여기 예시가 있습니다.
 
 ```html
 <div tabindex="1">I get keyboard focus, and I get it first!</div>
@@ -27,31 +27,31 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat has a search field on his Inspirational Quotes page that he plans to position in the upper right corner with CSS. He wants the search `input` and submit `input` form controls to be the first two items in the tab order. Add a `tabindex` attribute set to `1` to the `search` `input`, and a `tabindex` attribute set to `2` to the `submit` `input`.
+캠퍼 캣은 인상적인 명언 페이지에 검색 필드를 CSS로 우측 최상단에 배치하고 싶어합니다. 검색 `input`과 제출 `input` 폼 제어가 탭 순서에서 최우선이어야 합니다. `1`로 설정된 `tabindex` 속성을 `search` `input`에 추가하고 `2`로 설정된 `tabindex` 속성을 `submit` `input`에 추가합니다.
 
-Another thing to note is that some browsers may place you in the middle of your tab order when an element is clicked. An element has been added to the page that ensures you will always start at the beginning of your tab order.
+또 다른 주의할 사항은 일부 브라우저들은 요소를 클릭했을 때 탭 순서의 중간에 배치될 수 있다는 점입니다. 탭 순서의 처음에서 항상 시작하게 해주는 요소가 페이지에 추가되었습니다.
 
 # --hints--
 
-Your code should add a `tabindex` attribute to the `search` `input` tag.
+`tabindex` 속성을 `search` `input` 태그에 추가해야 합니다.
 
 ```js
 assert($('#search').attr('tabindex'));
 ```
 
-Your code should add a `tabindex` attribute to the `submit` `input` tag.
+`tabindex` 속성을 `submit` `input` 태그에 추가해야 합니다.
 
 ```js
 assert($('#submit').attr('tabindex'));
 ```
 
-Your code should set the `tabindex` attribute on the `search` `input` tag to a value of 1.
+`search` `input` 태그에 있는 `tabindex` 속성을 1로 설정해야 합니다.
 
 ```js
 assert($('#search').attr('tabindex') == '1');
 ```
 
-Your code should set the `tabindex` attribute on the `submit` `input` tag to a value of 2.
+`submit` `input` 태그에 있는 `tabindex` 속성을 2로 설정해야 합니다.
 
 ```js
 assert($('#submit').attr('tabindex') == '2');

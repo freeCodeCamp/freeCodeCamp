@@ -7,7 +7,7 @@ dashedName: step-1
 
 # --description--
 
-In this project, you will learn algorithmic thinking by building a dice game. There are a total of 6 rounds and for each round, the player can roll the dice up to 3 times and collect a score. 
+In this project, you will learn algorithmic thinking by building a dice game. There are a total of 6 rounds and for each round, the player can roll the dice up to 3 times and collect a score.
 
 The HTML and CSS have been provided for you. Feel free to explore them.
 

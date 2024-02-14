@@ -24,7 +24,7 @@ The `some` method would return `true`.
 
 # --instructions--
 
-Use the `some` method inside the `checkPositive` function to check if any element in `arr` is positive. The function should return a Boolean value.
+Use the `some` method inside the `checkPositive` function to check if any element in `arr` is positive. 이 함수는 불리언(boolean) 값을 반환해야 합니다.
 
 # --hints--
 
@@ -40,7 +40,7 @@ assert(code.match(/\.some/g));
 assert(checkPositive([1, 2, 3, -4, 5]));
 ```
 
-`checkPositive([1, 2, 3, 4, 5])` should return `true`.
+`checkPositive([1, 2, 3, 4, 5])`는 `true`를 반환해야 합니다.
 
 ```js
 assert(checkPositive([1, 2, 3, 4, 5]));

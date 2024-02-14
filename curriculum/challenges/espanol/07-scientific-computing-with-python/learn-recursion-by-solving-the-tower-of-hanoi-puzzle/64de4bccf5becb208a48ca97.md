@@ -1,6 +1,6 @@
 ---
 id: 64de4bccf5becb208a48ca97
-title: Step 13
+title: Paso 13
 challengeType: 20
 dashedName: step-13
 ---

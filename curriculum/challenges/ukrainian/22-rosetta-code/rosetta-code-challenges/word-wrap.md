@@ -8,11 +8,11 @@ dashedName: word-wrap
 
 # --description--
 
-Even today, with proportional fonts and complex layouts, there are still cases where you need to wrap text at a specified column. The basic task is to wrap a paragraph of text in a simple way.
+Навіть сьогодні, коли існують пропорційні шрифти та складні макети, зустрічаються випадки, що потрібно розмістити текст у вказаному стовпчику. Основне завдання — розмістити певний абзац тексту в межах стовпчика простим способом.
 
 # --instructions--
 
-Напишіть функцію, яка може перенести даний текст на будь-яку кількість символів. Як приклад, перенесений текст із 80 символів, має виглядати наступним чином:
+Напишіть функцію, яка може перенести даний текст з будь-якою кількістю символів. Наприклад, ось текст, рядок якого містить до 80 символів:
 
 <pre>
 Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX
@@ -23,37 +23,37 @@ than a simple minimum length algorithm.
 
 # --hints--
 
-wrap має бути функцією.
+`wrap` має бути функцією.
 
 ```js
 assert.equal(typeof wrap, 'function');
 ```
 
-перенесення має повернути рядок.
+`wrap` має повернути рядок.
 
 ```js
 assert.equal(typeof wrap('abc', 10), 'string');
 ```
 
-wrap(80) має повернути 4 рядки.
+`wrap(80)` має повернути 4 рядки.
 
 ```js
 assert(wrapped80.split('\n').length === 4);
 ```
 
-Ваша функція `wrap` має повернути наш очікуваний текст.
+Функція `wrap` має повернути очікуваний текст.
 
 ```js
 assert.equal(wrapped80.split('\n')[0], firstRow80);
 ```
 
-wrap(42) має повернути 7 рядків.
+`wrap(42)` має повернути 7 рядків.
 
 ```js
 assert(wrapped42.split('\n').length === 7);
 ```
 
-Ваша функція `wrap` має повернути наш очікуваний текст.
+Функція `wrap` має повернути очікуваний текст.
 
 ```js
 assert.equal(wrapped42.split('\n')[0], firstRow42);

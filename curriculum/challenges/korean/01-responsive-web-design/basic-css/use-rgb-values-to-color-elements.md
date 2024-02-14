@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aede08718
-title: Use RGB values to Color Elements
+title: Color 엘리먼트에 RGB 값 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkp2fr'
 forumTopicId: 18369
@@ -9,25 +9,25 @@ dashedName: use-rgb-values-to-color-elements
 
 # --description--
 
-Another way you can represent colors in CSS is by using `RGB` values.
+CSS에서 색상을 표현하는 또 다른 방법은 `RGB` 값을 사용하는 것입니다.
 
-The `RGB` value for black looks like this:
+검정색의 `RGB` 값은 다음과 같습니다:
 
 ```css
 rgb(0, 0, 0)
 ```
 
-The `RGB` value for white looks like this:
+하얀색의 `RGB` 값은 다음과 같습니다:
 
 ```css
 rgb(255, 255, 255)
 ```
 
-Instead of using six hexadecimal digits like you do with hex code, with `RGB` you specify the brightness of each color with a number between 0 and 255.
+헥스 코드(hex code)처럼 6자리의 16진수를 사용하는 대신 `RGB`를 사용하면 0에서 255 사이의 숫자로 각 색상의 밝기를 지정할 수 있습니다.
 
-If you do the math, the two digits for one color equal 16 times 16, which gives us 256 total values. So `RGB`, which starts counting from zero, has the exact same number of possible values as hex code.
+계산을 해보면 한 색의 두 자리 숫자는 16 곱하기 16과 같아서 총 256개의 값이 나옵니다. 따라서 0부터 세기 시작하는 `RGB`는 헥스 코드와 가능한 값의 수가 정확히 일치합니다.
 
-Here's an example of how you'd change the `body` background to orange using its RGB code.
+다음은 RGB 코드를 사용하여 `body`의 배경색을 orange로 변경하는 방법의 예시입니다.
 
 ```css
 body {
@@ -37,17 +37,17 @@ body {
 
 # --instructions--
 
-Let's replace the hex code in our `body` element's background color with the RGB value for black: `rgb(0, 0, 0)`
+`body` 요소의 배경색에 있는 헥스 코드를 black에 대한 RGB 값인 `rgb(0, 0, 0)`로 바꿔주세요.
 
 # --hints--
 
-Your `body` element should have a black background.
+`body` 요소는 검정 배경색을 갖고 있어야 합니다.
 
 ```js
 assert($('body').css('background-color') === 'rgb(0, 0, 0)');
 ```
 
-You should use `rgb` to give your `body` element a background of black.
+`body` 요소의 배경색을 검정색으로 지정하려면 `rgb`를 사용해야 합니다.
 
 ```js
 assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/gi));

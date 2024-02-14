@@ -46,7 +46,7 @@ const p = Array.from(document.querySelectorAll('P'));
 
 const everyPHasBackgroundColor = p?.every((paragraph) => {
   const style = getComputedStyle(paragraph);
-  
+
   return style?.backgroundColor === 'rgb(255, 255, 0)';
 })
 
@@ -81,7 +81,7 @@ assert(thirdElementClasses.some(thirdElementClass => {
 
 }))
 
-``` 
+```
 
 The fourth element should have a `font-size` of `24px`.
 

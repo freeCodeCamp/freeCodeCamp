@@ -1,6 +1,6 @@
 ---
 id: 587d78b1367417b2b2512b0a
-title: Use a Retina Image for Higher Resolution Displays
+title: 고해상도 디스플레이를 위한 레티나 이미지 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pzrPu4/cVZ4Rfp'
 forumTopicId: 301142
@@ -9,9 +9,9 @@ dashedName: use-a-retina-image-for-higher-resolution-displays
 
 # --description--
 
-With the increase of internet connected devices, their sizes and specifications vary, and the displays they use could be different externally and internally. Pixel density is an aspect that could be different on one device from others and this density is known as Pixel Per Inch(PPI) or Dots Per Inch(DPI). The most famous such display is the one known as a "Retina Display" on the latest Apple MacBook Pro notebooks, and recently iMac computers. Due to the difference in pixel density between a "Retina" and "Non-Retina" displays, some images that have not been made with a High-Resolution Display in mind could look "pixelated" when rendered on a High-Resolution display.
+인터넷으로 연결된 장치의 증가로 인해 그것들의 크기와 사양들은 다양하고 사용되는 디스플레이는 내외적으로 다를 수 있습니다. 화소 밀도는 한 기기에서 다른 기기와 다를 수 있는 측면으로, 이 밀도는 화소 당 인치(PPI) 또는 도트 당 인치(DPI)로 알려져 있습니다. 가장 유명한 디스플레이는 최신 애플 맥북 그리고 최근에 아이맥 컴퓨터에 있는 "레티나 디스플레이"로 알려져 있습니다. "레티나"와 "비-레티나" 디스플레이 간의 픽셀 밀도 차이로 인해, 고해상도 디스플레이에서 렌더링될 때 일부 고해상도 디스플레이를 고려하지 않고 만들어진 이미지는 "픽셀화"된 것처럼 보일 수 있습니다.
 
-The simplest way to make your images properly appear on High-Resolution Displays, such as the MacBook Pros "retina display" is to define their `width` and `height` values as only half of what the original file is. Here is an example of an image that is only using half of the original height and width:
+맥북 프로 "레티나 디스플레이"같이 고해상도 디스플레이에서 이미지를 잘 보이도록 만드는 가장 간단한 방법은 이미지의 `width`와 `height` 를 원래 파일의 반절로 정의하는 것입니다. 여기 본래의 높이와 너비의 반절을 사용하는 이미지 예시가 있습니다.
 
 ```html
 <style>
@@ -22,17 +22,17 @@ The simplest way to make your images properly appear on High-Resolution Displays
 
 # --instructions--
 
-Set the `width` and `height` of the `img` tag to half of their original values. In this case, both the original `height` and the original `width` are `200px`.
+`img` 태그의 `width`와 `height`를 원래 값의 반절로 설정하세요. 이 경우에 원래 `height`와 `width`는 `200px`입니다.
 
 # --hints--
 
-Your `img` tag should have a `width` of 100 pixels.
+`img` 태그는 100px의 `width`를 가져야 합니다.
 
 ```js
 assert(document.querySelector('img').width === 100);
 ```
 
-Your `img` tag should have a `height` of 100 pixels.
+`img` 태그는 100px의 `height`를 가져야 합니다.
 
 ```js
 assert(document.querySelector('img').height === 100);

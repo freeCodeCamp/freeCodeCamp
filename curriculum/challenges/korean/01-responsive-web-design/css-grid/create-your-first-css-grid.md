@@ -1,6 +1,6 @@
 ---
 id: 5a858944d96184f06fd60d61
-title: Create Your First CSS Grid
+title: 첫 CSS 그리드 생성하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cqwREC4'
 forumTopicId: 301129
@@ -9,17 +9,17 @@ dashedName: create-your-first-css-grid
 
 # --description--
 
-Turn any HTML element into a grid container by setting its `display` property to `grid`. This gives you the ability to use all the other properties associated with CSS Grid.
+`display` 속성을 `grid`로 설정하여 HTML 요소를 그리드 컨테이너로 변환하세요. 이는 CSS 그리드에 관련된 모든 속성을 사용할 수 있게 해줍니다.
 
-**Note:** In CSS Grid, the parent element is referred to as the <dfn>container</dfn> and its children are called <dfn>items</dfn>.
+**주의:** CSS 그리드에서 부모 요소는 <dfn>컨테이너</dfn>라 하고 그 자식 요소는 <dfn>아이템</dfn>이라고 합니다.
 
 # --instructions--
 
-Change the display of the div with the `container` class to `grid`.
+`container` 클래스를 가진 div의 display를 `grid`로 바꾸세요.
 
 # --hints--
 
-`container` class should have a `display` property with a value of `grid`.
+`container` 클래스는 `grid` 값을 가지는 `display` 속성을 가져야 합니다.
 
 ```js
 assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
@@ -43,7 +43,7 @@ assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
     background: LightGray;
     /* Only change code below this line */
 
-    
+
     /* Only change code above this line */
   }
 </style>

@@ -1,6 +1,6 @@
 ---
 id: bad88fee1348bd9aedf08825
-title: Adjust the Padding of an Element
+title: 요소의 패딩 조절하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cED8ZC2'
 forumTopicId: 301083
@@ -9,25 +9,25 @@ dashedName: adjust-the-padding-of-an-element
 
 # --description--
 
-Now let's put our Cat Photo App away for a little while and learn more about styling HTML.
+잠시 Cat Photo App을 내려놓고 HTML 스타일링에 대해 더 알아보겠습니다.
 
-You may have already noticed this, but all HTML elements are essentially little rectangles.
+이미 눈치 채셨을 수도 있지만, 모든 HTML 요소는 본질적으로 작은 직사각형입니다.
 
-Three important properties control the space that surrounds each HTML element: `padding`, `border`, and `margin`.
+각 HTML 요소를 둘러싸는 공간을 제어하는 세 가지 중요한 속성이 있는데, 이는 `padding`, `border`, 그리고 `margin`입니다.
 
-An element's `padding` controls the amount of space between the element's content and its `border`.
+요소의 `padding`은 요소의 콘텐츠와 그 `border` 사이의 공간을 제어합니다.
 
-Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has more `padding` than the blue box.
+파란 상자와 빨간 상자가 노란 상자 안에 중첩되어 있는 것을 볼 수 있습니다. 빨간 상자는 파란 상자보다 더 많은 `padding`을 가지고 있습니다.
 
-When you increase the blue box's `padding`, it will increase the distance (`padding`) between the text and the border around it.
+파란 상자의 `padding`을 증가시키면 텍스트와 그 주변의 테두리 간의 거리(`padding`)가 증가합니다.
 
 # --instructions--
 
-Change the `padding` of your blue box to match that of your red box.
+파란 상자의 `padding`을 빨간 상자의 것과 동일하게 변경합니다.
 
 # --hints--
 
-Your `blue-box` class should give elements `20px` of `padding`.
+`blue-box` 클래스는 요소에 `20px`의 `padding`을 부여합니다.
 
 ```js
 assert($('.blue-box').css('padding-top') === '20px');

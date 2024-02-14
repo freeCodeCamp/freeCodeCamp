@@ -54,7 +54,7 @@ Dein Code sollte die `@for`-Direktive verwenden.
 assert(code.match(/@for /g));
 ```
 
-Deine Klasse `.text-1` sollte eine `font-size` von 15px haben.
+Deine Klasse `.text-1` sollte eine`font-size` von 15px haben.
 
 ```js
 assert($('.text-1').css('font-size') == '15px');

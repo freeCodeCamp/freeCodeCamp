@@ -1,6 +1,6 @@
 ---
 id: 587d7788367417b2b2512aa2
-title: Make Screen Reader Navigation Easier with the nav Landmark
+title: 화면 낭독기 탐색을 더욱 쉽게 만들어주는 내비게이션 랜드마크
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/czVwWSv'
 forumTopicId: 301024
@@ -9,35 +9,35 @@ dashedName: make-screen-reader-navigation-easier-with-the-nav-landmark
 
 # --description--
 
-The `nav` element is another HTML5 item with the embedded landmark feature for easy screen reader navigation. This tag is meant to wrap around the main navigation links in your page.
+`nav` 요소는 화면 낭독기 내비게이션을 위한 내장된 랜드마크 기능을 가진 또 다른 HTML5 항목입니다. 이 태그는 페이지의 주요 내비게이션 링크를 감싸기 위해 사용됩니다.
 
-If there are repeated site links at the bottom of the page, it isn't necessary to markup those with a `nav` tag as well. Using a `footer` (covered in the next challenge) is sufficient.
+페이지 하단에 반복되는 사이트 링크가 있다면, 해당 부분은 `nav` 태그로 표시할 필요가 없습니다. `footer` 태그만 사용하더라도 충분합니다 (다음 도전 과제에서 다룰 예정입니다).
 
 # --instructions--
 
-Camper Cat included navigation links at the top of his training page, but wrapped them in a `div`. Change the `div` to a `nav` tag to improve the accessibility on his page.
+캠퍼캣은 훈련 페이지 상단에 네비게이션 링크를 포함시켰지만, 이를 `div`로 감쌌습니다. 이 페이지의 접근성을 향상시키기 위해 `div`를 `nav` 태그로 변경하세요.
 
 # --hints--
 
-Your code should have one `nav` tag.
+`nav` 태그는 하나만 있어야 합니다.
 
 ```js
 assert($('nav').length == 1);
 ```
 
-Your `nav` tags should wrap around the `ul` and its list items.
+`nav` 태그는 `ul`과 그에 따른 리스트 아이템들을 둘러싸야 합니다.
 
 ```js
 assert($('nav').children('ul').length == 1);
 ```
 
-Your code should not have any `div` tags.
+`div` 태그는 하나도 없어야 합니다.
 
 ```js
 assert($('div').length == 0);
 ```
 
-Your `nav` element should have a closing tag.
+`nav` 요소에는 닫는 태그가 있어야 합니다.
 
 ```js
 assert(

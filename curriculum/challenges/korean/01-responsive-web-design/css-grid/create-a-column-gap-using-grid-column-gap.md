@@ -1,6 +1,6 @@
 ---
 id: 5a9036ee38fddaf9a66b5d35
-title: Create a Column Gap Using grid-column-gap
+title: grid-column-gap으로 열 간격 생성하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cVZ8vfD'
 forumTopicId: 301124
@@ -9,21 +9,21 @@ dashedName: create-a-column-gap-using-grid-column-gap
 
 # --description--
 
-So far in the grids you have created, the columns have all been tight up against each other. Sometimes you want a gap in between the columns. To add a gap between the columns, use the `grid-column-gap` property like this:
+지금까지 생성해 온 그리드는 열의 간격이 넓지 않았습니다. 열 사이에 간격을 줘야할 때가 있습니다. 열 사이에 간격을 주려면 아래와 같이 `grid-column-gap` 속성을 사용하면 됩니다.
 
 ```css
 grid-column-gap: 10px;
 ```
 
-This creates 10px of empty space between all of our columns.
+이는 모든 열 사이에 10px 간격의 공백을 생성합니다.
 
 # --instructions--
 
-Give the columns in the grid a `20px` gap.
+그리드의 열 사이에 `20px` 간격을 주세요.
 
 # --hints--
 
-`container` class should have a `grid-column-gap` property that has the value of `20px`.
+`container` 클래스는 `20px`의 갑을 가지는 `grid-column-gap` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
     grid-template-rows: 1fr 1fr 1fr;
     /* Only change code below this line */
 
-   
+
     /* Only change code above this line */
   }
 </style>

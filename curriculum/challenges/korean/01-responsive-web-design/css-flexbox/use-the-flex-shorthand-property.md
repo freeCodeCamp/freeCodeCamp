@@ -1,6 +1,6 @@
 ---
 id: 587d78ae367417b2b2512afe
-title: Use the flex Shorthand Property
+title: flex 단축 속성 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cbpW2tE'
 forumTopicId: 301112
@@ -9,21 +9,21 @@ dashedName: use-the-flex-shorthand-property
 
 # --description--
 
-There is a shortcut available to set several flex properties at once. The `flex-grow`, `flex-shrink`, and `flex-basis` properties can all be set together by using the `flex` property.
+여러 플렉스 속성을 한번에 사용할 수 있는 방법이 있습니다. `flex-grow`, `flex-shrink` 그리고 `flex-basis` 속성은 모두 `flex` 속성을 이용하여 함께 설정할 수 있습니다.
 
-For example, `flex: 1 0 10px;` will set the item to `flex-grow: 1;`, `flex-shrink: 0;`, and `flex-basis: 10px;`.
+예를 들어 `flex: 1 0 10px;`는 아이템을 `flex-grow: 1;`, `flex-shrink: 0;` 그리고 `flex-basis: 10px;`로 설정하게 됩니다.
 
-The default property settings are `flex: 0 1 auto;`.
+디폴트 설정은 `flex: 0 1 auto;`입니다.
 
 # --instructions--
 
-Add the CSS property `flex` to both `#box-1` and `#box-2`. Give `#box-1` the values so its `flex-grow` is `2`, its `flex-shrink` is `2`, and its `flex-basis` is `150px`. Give `#box-2` the values so its `flex-grow` is `1`, its `flex-shrink` is `1`, and its `flex-basis` is `150px`.
+`#box-1`과 `#box-2`에 `flex` 속성을 추가하세요. `#box-1`에 `flex-grow`는 `2`, `flex-shrink`는 `2` 그리고 `flex-basis`는 `150px`가 되도록 값을 주세요. `#box-2`에 `flex-grow`는 `1`, `flex-shrink`는 `1` 그리고 `flex-basis`는 `150px`가 되도록 값을 주세요.
 
-These values will cause `#box-1` to grow to fill the extra space at twice the rate of `#box-2` when the container is greater than 300px and shrink at twice the rate of `#box-2` when the container is less than 300px. 300px is the combined size of the `flex-basis` values of the two boxes.
+이 값들은 컨테이너가 300px보다 클 때 `#box-1`가 `#box-2`보다 여분의 공간을 두배로 차지하도록 만들고 컨테이너가 300px보다 작을 때 `#box-2`보다 여분 공간의 반절을 차지하게 만듭니다. 300px는 두 상자의 `flex-basis` 값의 합친 크기입니다.
 
 # --hints--
 
-The `#box-1` element should have the `flex` property set to a value of `2 2 150px`.
+`#box-1` 요소는 `2 2 150px`로 설정된 `flex` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-The `#box-2` element should have the `flex` property set to a value of `1 1 150px`.
+`#box-2` 요소는 `1 1 150px`로 설정된 `flex` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-Your code should use the `flex` property for `#box-1` and `#box-2`.
+`#box-1`과 `#box-2`에 `flex` 속성을 사용해야 합니다.
 
 ```js
 assert(code.match(/flex:\s*?\d\s+?\d\s+?150px;/g).length == 2);

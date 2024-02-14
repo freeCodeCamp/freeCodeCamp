@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08829
-title: Create a Text Field
+title: 글자 필드 만들기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/c2EVnf6'
 forumTopicId: 16823
@@ -9,25 +9,25 @@ dashedName: create-a-text-field
 
 # --description--
 
-Now let's create a web form.
+이제 웹폼을 만들어보겠습니다.
 
-`input` elements are a convenient way to get input from your user.
+`input` 요소는 사용자로부터 입력을 받는 편리한 방법입니다.
 
-You can create a text input like this:
+다음과 같이 글자 입력을 만들 수 있습니다.
 
 ```html
 <input type="text">
 ```
 
-Note that `input` elements are self-closing.
+`input` 요소는 스스로 여닫는 태그임을 알아두시오.
 
 # --instructions--
 
-Create an `input` element of type `text` below your lists.
+목록 하위에 `text` 유형의 `input` 요소를 만드시오.
 
 # --hints--
 
-Your app should have an `input` element of type `text`.
+어플리케이션은 `text` 유형의 `input` 요소를 가져야 합니다.
 
 ```js
 assert($('input[type=text]').length > 0);

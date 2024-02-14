@@ -43,7 +43,7 @@ Note also that if the Gaussian Integer ($a + bi$) is a divisor of a rational int
 The following is a table of all of the divisors for the first five positive rational integers:
 
 | n | Gaussian integer divisors with positive real part | Sum s(n) of these divisors |
-|---|---------------------------------------------------|----------------------------|
+| - | ------------------------------------------------- | -------------------------- |
 | 1 | 1                                                 | 1                          |
 | 2 | 1, 1 + i, 1 - i, 2                                | 5                          |
 | 3 | 1, 3                                              | 4                          |

@@ -1,6 +1,6 @@
 ---
 id: 5e6a54a558d3af90110a60a0
-title: 'Introduction: Why Program?'
+title: '소개: 왜 프로그래밍을 배워야 하나요?'
 challengeType: 11
 videoId: 3muQV-Im3Z0
 bilibiliIds:
@@ -26,11 +26,11 @@ More resources:
 
 ## --text--
 
-Who should learn to program?
+누가 프로그래밍을 배워야 하나요?
 
 ## --answers--
 
-College students.
+대학생
 
 ### --feedback--
 

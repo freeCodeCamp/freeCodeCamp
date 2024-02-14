@@ -294,7 +294,7 @@ function defeatMonster() {
   xp += monsters[fighting].level;
   goldText.innerText = gold;
   xpText.innerText = xp;
-  
+
 }
 --fcc-editable-region--
 

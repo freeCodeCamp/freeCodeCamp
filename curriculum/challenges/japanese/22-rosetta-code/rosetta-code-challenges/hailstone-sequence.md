@@ -16,7 +16,7 @@ The Hailstone sequence of numbers can be generated from a starting positive inte
 
 コラッツの予想 (証明されていない) では、初期値が何であれ、ヘイルストーンシーケンスは常に終了するとされています。
 
-ヘイルストーンシーケンスは、ヘイルストーン数としても知られています (値が通常は雲の中の雹 (ヘイルストーン) のように何度も上下するためです)。 あるいはコラッツ数列とも呼ばれます。
+ヘイルストーンシーケンスは、ヘイルストーン数としても知られています (値が通常は雲の中の雹 (ヘイルストーン) のように何度も上下するためです)。あるいはコラッツ数列とも呼ばれます。
 
 # --instructions--
 
@@ -37,19 +37,19 @@ assert(typeof hailstoneSequence === 'function');
 assert(Array.isArray(hailstoneSequence(30)));
 ```
 
-`hailstoneSequence(30)` は`[27, 112]`を返す必要があります。
+`hailstoneSequence(30)` は `[27, 112]` を返す必要があります。
 
 ```js
 assert.deepEqual(hailstoneSequence(30), [27, 112]);
 ```
 
-`hailstoneSequence(50000)` は`[35655, 324]`を返す必要があります。
+`hailstoneSequence(50000)` は `[35655, 324]` を返す必要があります。
 
 ```js
 assert.deepEqual(hailstoneSequence(50000), [35655, 324]);
 ```
 
-`hailstoneSequence(100000)` は`[77031, 351]`を返す必要があります。
+`hailstoneSequence(100000)` は `[77031, 351]` を返す必要があります。
 
 ```js
 assert.deepEqual(hailstoneSequence(100000), [77031, 351]);

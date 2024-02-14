@@ -1,6 +1,6 @@
 ---
 id: 647e21c48acb466c97ccbee7
-title: Call Methods From the .NET Class Library Using C#
+title: 'Call Methods From the .NET Class Library Using C#'
 challengeType: 19
 dashedName: call-methods-from-the-dot-net-class-library-using-c-sharp
 ---

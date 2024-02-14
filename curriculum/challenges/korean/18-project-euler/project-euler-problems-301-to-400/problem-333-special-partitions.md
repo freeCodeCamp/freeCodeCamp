@@ -14,10 +14,8 @@ Let's consider only those such partitions where none of the terms can divide any
 
 Many integers have more than one valid partition, the first being 11 having the following two partitions.
 
-$$\begin{align}
-  & 11 = 2 + 9 = (2^1 \times 3^0 + 2^0 \times 3^2) \\\\
-  & 11 = 8 + 3 = (2^3 \times 3^0 + 2^0 \times 3^1)
-\end{align}$$
+$$\begin{align}   & 11 = 2 + 9 = (2^1 \times 3^0 + 2^0 \times 3^2) \\\\
+  & 11 = 8 + 3 = (2^3 \times 3^0 + 2^0 \times 3^1) \end{align}$$
 
 Let's define $P(n)$ as the number of valid partitions of $n$. For example, $P(11) = 2$.
 

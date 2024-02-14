@@ -1,6 +1,6 @@
 ---
 id: 587d78a7367417b2b2512ae0
-title: Use CSS Animation to Change the Hover State of a Button
+title: CSS 애니메이션을 사용하여 버튼의 호버 상태 변경하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cg4vZAa'
 forumTopicId: 301073
@@ -9,9 +9,9 @@ dashedName: use-css-animation-to-change-the-hover-state-of-a-button
 
 # --description--
 
-You can use CSS `@keyframes` to change the color of a button in its hover state.
+CSS의 `@keyframes`를 사용하여 마우스 호버(hover) 시 버튼의 색상을 변경할 수 있습니다.
 
-Here's an example of changing the width of an image on hover:
+다음은 마우스를 호버했을 때 이미지의 너비를 변경하는 예제입니다.
 
 ```html
 <style>
@@ -35,19 +35,19 @@ Here's an example of changing the width of an image on hover:
 
 # --instructions--
 
-Note that `ms` stands for milliseconds, where 1000ms is equal to 1s.
+`ms`는 밀리초를 뜻하며 1000밀리초(1000ms)는 1초(1s)입니다.
 
-Use CSS `@keyframes` to change the `background-color` of the `button` element so it becomes `#4791d0` when a user hovers over it. The `@keyframes` rule should only have an entry for `100%`.
+CSS의 `@keyframes`를 사용하여 유저가 마우스를 호버했을 때 `button` 요소의 `background-color`가 `#4791d0` 색이 되도록 변경하십시오. `@keyframes` 규칙에는 `100%`항목만 있어야 합니다.
 
 # --hints--
 
-The @keyframes rule should use the `animation-name` background-color.
+@keyframes 규칙에서 `animation-name`은 background-color가 되어야 합니다.
 
 ```js
 assert(code.match(/@keyframes\s+?background-color\s*?{/g));
 ```
 
-There should be one rule under `@keyframes` that changes the `background-color` to `#4791d0` at 100%.
+`@keyframes`에는 100%일 때 `background-color`를 `#4791d0`색으로 변경하는 규칙이 하나여야 합니다.
 
 ```js
 assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi));

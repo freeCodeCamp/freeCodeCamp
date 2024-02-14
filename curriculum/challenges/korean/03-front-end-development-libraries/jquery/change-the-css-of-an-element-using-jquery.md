@@ -4,7 +4,8 @@ title: Change the CSS of an Element Using jQuery
 challengeType: 6
 forumTopicId: 16776
 required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
+  - 
+    link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 dashedName: change-the-css-of-an-element-using-jquery
 ---
 

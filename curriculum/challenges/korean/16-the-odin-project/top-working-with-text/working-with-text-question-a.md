@@ -5,6 +5,7 @@ title: Working With Text Question A
 challengeType: 15
 dashedName: working-with-text-question-a
 ---
+
 # --description--
 
 What would you expect the following text to output on an HTML page?
