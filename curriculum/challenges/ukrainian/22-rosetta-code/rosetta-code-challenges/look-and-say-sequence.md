@@ -1,6 +1,6 @@
 ---
 id: 5e6dd14797f5ce267c2f19d0
-title: Послідовність "подивися-і-скажи"
+title: Послідовність «глянь і скажи»
 challengeType: 1
 forumTopicId: 385277
 dashedName: look-and-say-sequence
@@ -8,13 +8,13 @@ dashedName: look-and-say-sequence
 
 # --description--
 
-The Look and say sequence is a recursively defined sequence of numbers.
+Послідовність «глянь і скажи» — це рекурсивно визначена послідовність чисел.
 
 Визначення послідовності
 
-<ul><li>Take a decimal number</li>
-<li><span>Подивіться</span>на число, візуально групуючи цифри, які послідовно повторюються.</li>
-<li><span>Назвіть</span> число зліва направо, група за групою; скільки таких цифр можливо.</li></ul><span> Це число стає наступним у послідовності.</span>
+<ul><li>Візьміть десяткове число</li>
+<li><span>Погляньте</span> на число, візуально групуючи послідовні цифри, які повторюються.</li>
+<li><span>Скажіть</span> число зліва направо по групах. Тобто назвіть кількість повторюваних цифр та саму цифру.</li></ul><span> Це число стане наступним числом в послідовності.</span>
 
 Наприклад:
 
@@ -25,7 +25,7 @@ The Look and say sequence is a recursively defined sequence of numbers.
 
 # --instructions--
 
-Напишіть функцію, яка приймає рядок в якості параметра, обробляє його, і повертає результат.
+Напишіть функцію, яка приймає рядок як параметр, обробляє його і повертає кінцевий рядок.
 
 # --hints--
 
@@ -35,37 +35,37 @@ The Look and say sequence is a recursively defined sequence of numbers.
 assert(typeof lookAndSay == 'function');
 ```
 
-`lookAndSay("1")` повинен повернути рядок.
+`lookAndSay("1")` має повернути рядок.
 
 ```js
 assert(typeof lookAndSay('1') == 'string');
 ```
 
-`lookAndSay("1")` повинен повертати `"11"`.
+`lookAndSay("1")` має повернути `"11"`.
 
 ```js
 assert.equal(lookAndSay('1'), '11');
 ```
 
-`lookAndSay("11")` повинен повертати `"21"`.
+`lookAndSay("11")` має повернути `"21"`.
 
 ```js
 assert.equal(lookAndSay('11'), '21');
 ```
 
-`lookAndSay("21")` повинен повертати `"1211"`.
+`lookAndSay("21")` має повернути `"1211"`.
 
 ```js
 assert.equal(lookAndSay('21'), '1211');
 ```
 
-`lookAndSay("1211")` повинен повертати `"111221"`.
+`lookAndSay("1211")` має повернути `"111221"`.
 
 ```js
 assert.equal(lookAndSay('1211'), '111221');
 ```
 
-`lookAndSay("3542")` повинен повертати `"13151412"`.
+`lookAndSay("3542")` має повернути `"13151412"`.
 
 ```js
 assert.equal(lookAndSay('3542'), '13151412');

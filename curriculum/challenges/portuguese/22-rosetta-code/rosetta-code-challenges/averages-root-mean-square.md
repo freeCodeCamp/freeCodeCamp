@@ -8,7 +8,7 @@ dashedName: averagesroot-mean-square
 
 # --description--
 
-Compute the Root Mean Square (RMS) of the numbers 1 through 10 inclusive.
+Calcule a raiz do valor quadrático médio (RMS) dos números de 1 a 10.
 
 A <abbr title="raiz do valor quadrático médio">RMS</abbr> é calculada pela raiz quadrada da média dos quadrados dos números, dada pela equação:
 

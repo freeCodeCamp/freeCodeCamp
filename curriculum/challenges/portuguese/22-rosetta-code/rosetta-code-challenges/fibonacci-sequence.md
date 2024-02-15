@@ -8,7 +8,7 @@ dashedName: fibonacci-sequence
 
 # --description--
 
-Write a function to generate the <code>n<sup>th</sup></code> Fibonacci number.
+Escreva uma função para gerar o <code>n<sup>th</sup></code> (enésimo) número de Fibonacci.
 
 O <code>n<sup>th</sup></code> (enésimo) número de Fibonacci é dado por:
 

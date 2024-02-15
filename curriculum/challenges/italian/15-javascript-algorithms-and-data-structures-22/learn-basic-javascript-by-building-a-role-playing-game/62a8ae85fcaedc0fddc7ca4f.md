@@ -37,7 +37,7 @@ Il secondo oggetto di `locations` dovrebbe avere una proprietà `button text` co
 assert.isArray(locations[1]["button text"]);
 ```
 
-I valori della proprietà `button text` dovrebbero essere le stringhe `Buy 10 health (10 gold)`, `Buy weapon (30 gold)` e `Go to town square`.
+Your `button text` property should have the string values `"Buy 10 health (10 gold)"`, `"Buy weapon (30 gold)"`, and `"Go to town square"`.
 
 ```js
 assert.equal(locations[1]["button text"][0], "Buy 10 health (10 gold)");
@@ -65,7 +65,7 @@ Il secondo oggetto di `locations` dovrebbe avere una proprietà `text` con una s
 assert.isString(locations[1].text);
 ```
 
-Il secondo oggetto di `locations` dovrebbe avere una proprietà `text` con il valore `You enter the store.`.
+Your second `locations` object should have a `text` property with the value of `"You enter the store."`.
 
 ```js
 assert.equal(locations[1].text, "You enter the store.");

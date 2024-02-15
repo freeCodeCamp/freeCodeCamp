@@ -8,7 +8,7 @@ dashedName: longest-string-challenge
 
 # --description--
 
-In this challenge, you have to find the strings that are the longest among the given strings.
+Nesse desafio, você precisa encontrar as strings que são as mais longas entre as strings fornecidas.
 
 # --instructions--
 

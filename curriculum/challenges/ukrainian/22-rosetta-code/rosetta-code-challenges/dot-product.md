@@ -8,7 +8,7 @@ dashedName: dot-product
 
 # --description--
 
-Create a function, to compute the **dot product**, also known as the **scalar product** of two vectors.
+Створіть функцію, щоб обчислити **скалярний добуток** двох векторів.
 
 # --hints--
 
@@ -18,7 +18,7 @@ Create a function, to compute the **dot product**, also known as the **scalar pr
 assert(typeof dotProduct == 'function');
 ```
 
-`dotProduct([1, 3, -5], [4, -2, -1])` має повертатись як число.
+`dotProduct([1, 3, -5], [4, -2, -1])` має повернути число.
 
 ```js
 assert(typeof dotProduct([1, 3, -5], [4, -2, -1]) == 'number');

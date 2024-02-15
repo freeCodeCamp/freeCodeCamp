@@ -8,7 +8,7 @@ dashedName: sum-of-squares
 
 # --description--
 
-Write a function to find the sum of squares of an array of integers.
+Напишіть функцію, щоб знайти суму квадратів в масиві цілих чисел.
 
 # --hints--
 
@@ -42,7 +42,7 @@ assert.equal(sumsq([25, 32, 12, 7, 20]), 2242);
 assert.equal(sumsq([38, 45, 35, 8, 13]), 4927);
 ```
 
-`sumsq([43, 36, 20, 34, 24])`має повернути `5277`.
+`sumsq([43, 36, 20, 34, 24])` має повернути `5277`.
 
 ```js
 assert.equal(sumsq([43, 36, 20, 34, 24]), 5277);

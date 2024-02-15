@@ -8,7 +8,7 @@ dashedName: subleq
 
 # --description--
 
-Subleq is an example of a One-Instruction Set Computer (OISC).
+Subleq é um exemplo de máquina de uma instrução (OISC).
 
 Seu nome vem de sua única instrução, que é **SU**btract and **B**ranch if **L**ess than or **EQ**ual (subtraia e ramifique se for menor ou igual) a zero.
 
@@ -19,7 +19,7 @@ A memória da máquina consiste em um array de números inteiros com sinal. Qual
 A execução começa com o ponteiro de instrução mirando a primeira palavra, que é o endereço 0. Ela prossegue da seguinte forma:
 
 <ol>
-  <li>Let A, B, and C be the value stored in the three consecutive words in memory starting at the instruction pointer.</li>
+  <li>Permita que A, B e C sejam valores armazenado nas três palavras consecutivas na memória, começando no ponteiro de instrução.</li>
   <li>Avance o ponteiro de instrução 3 palavras para apontar para o endereço após o que contém C.</li>
   <li>Se A é -1, então um caractere é lido a partir da entrada padrão e seu ponto de código armazenado no endereço fornecido por B. C não é usado.</li>
   <li>Se B é -1, então o número contido no endereço dado por A é interpretado como um ponto de código e a saída de caractere correspondente. C, mais uma vez, não é utilizado.</li>

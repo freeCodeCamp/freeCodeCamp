@@ -8,14 +8,14 @@ dashedName: 9-billion-names-of-god-the-integer
 
 # --description--
 
-This task is a variation of the short story by Arthur C. Clarke.
+Esta tarefa é uma variação de um conto de Arthur C. Clarke.
 
 (Quem chegar à solução deve estar ciente das consequências de concluir esta tarefa.)
 
 Em detalhes, para especificar o que significa um "nome":
 
 <ul>
-  <li>The integer 1 has 1 name "1".</li>
+  <li>O inteiro 1 tem 1 nome: "1".</li>
   <li>O inteiro 2 tem 2 nomes: "1+1" e "2".</li>
   <li>O inteiro 3 tem 3 nomes: "1+1+1", "2+1" e "3".</li>
   <li>O inteiro 4 tem 5 nomes: "1+1+1+1", "2+1+1", "2+2", "3+1", "4".</li>

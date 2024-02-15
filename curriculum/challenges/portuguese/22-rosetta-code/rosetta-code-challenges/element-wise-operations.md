@@ -8,12 +8,12 @@ dashedName: element-wise-operations
 
 # --description--
 
-Implement basic element-wise matrix-matrix and scalar-matrix operations.
+Implemente operações básicas matriz-matriz e escalar-matriz de elementos.
 
 **Implemente:**
 
 <ul>
-  <li>addition</li>
+  <li>adição</li>
   <li>subtração</li>
   <li>multiplicação</li>
   <li>divisão</li>
