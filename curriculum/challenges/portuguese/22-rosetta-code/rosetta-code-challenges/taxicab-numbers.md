@@ -8,7 +8,7 @@ dashedName: taxicab-numbers
 
 # --description--
 
-A taxicab number (the definition that is being used here) is a positive integer that can be expressed as the sum of two positive cubes in more than one way.
+Um número de taxicab (a definição que será usada aqui) é um número inteiro positivo que pode ser expresso como a soma de dois cubos positivos de mais de uma maneira.
 
 O primeiro número taxicab é `1729`, que é:
 
@@ -19,7 +19,7 @@ O primeiro número taxicab é `1729`, que é:
 Os números taxicab também são conhecidos como:
 
 <ul>
-  <li>taxi numbers</li>
+  <li>números taxi</li>
   <li>números taxi-cab</li>
   <li>números taxi cab</li>
   <li>Números de Hardy-Ramanujan</li>

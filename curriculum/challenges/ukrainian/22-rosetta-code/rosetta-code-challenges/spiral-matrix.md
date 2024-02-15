@@ -8,7 +8,7 @@ dashedName: spiral-matrix
 
 # --description--
 
-Produce a spiral array. A *spiral array* is a square arrangement of the first N<sup>2</sup> natural numbers, where the numbers increase sequentially as you go around the edges of the array spiraling inwards. For example, given **5**, produce this array:
+Створіть спіральний масив. *Спіральний масив* — це квадратне розташування перших N<sup>2</sup> натуральних чисел, де числа послідовно збільшуються по краях масиву до середини. Наприклад, якщо дано **5**, то результатом буде:
 
 <pre>
 0  1  2  3  4

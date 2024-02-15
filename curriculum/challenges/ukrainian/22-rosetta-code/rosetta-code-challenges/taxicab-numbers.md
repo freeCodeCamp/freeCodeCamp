@@ -1,6 +1,6 @@
 ---
 id: 594ecc0d9a8cf816e3340187
-title: Числа Taxicab
+title: Числа таксі
 challengeType: 1
 forumTopicId: 302337
 dashedName: taxicab-numbers
@@ -8,15 +8,15 @@ dashedName: taxicab-numbers
 
 # --description--
 
-A taxicab number (the definition that is being used here) is a positive integer that can be expressed as the sum of two positive cubes in more than one way.
+Число таксі (визначення, яке використовується тут) — це натуральне число, яке можна виразити як суму двох кубів додатних чисел декількома способами.
 
-Першим n-им числом Харді–Рамануджана є `1729`, який є:
+Першим числом таксі є `1729`:
 
-1<sup>3</sup> + 12<sup>3</sup> і
+1<sup>3</sup> + 12<sup>3</sup> та
 
 9<sup>3</sup> + 10<sup>3</sup>.
 
-Дані числа також відомі як:
+Англійською мовою числа таксі також відомі як:
 
 <ul>
   <li>taxi numbers</li>
@@ -27,7 +27,7 @@ A taxicab number (the definition that is being used here) is a positive integer 
 
 # --instructions--
 
-Напишіть функцію, що повертає `n`-найменші числа taxicab. Для кожного даного числа покажіть також і число включаючи його складові в третьому ступені.
+Напишіть функцію, яка повертає `n` найменших чисел таксі. Для кожного з чисел таксі вкажіть число і куби, з яких воно складається.
 
 # --hints--
 
@@ -49,19 +49,19 @@ assert(typeof taxicabNumbers(2) === 'object');
 assert(typeof taxicabNumbers(100)[0] === 'number');
 ```
 
-`taxicabNumbers(4)` має повернути [1729, 4104, 13832, 20683].
+`taxicabNumbers(4)` має повернути `[1729, 4104, 13832, 20683]`.
 
 ```js
 assert.deepEqual(taxicabNumbers(4), res4);
 ```
 
-`taxicabNumbers(25)` має повернути [1729, 4104, 13832, 20683, 32832, 39312, 40033, 46683, 64232, 65728, 110656, 110808, 134379, 149389, 165464, 171288, 195841, 216027, 216125, 262656, 314496, 320264, 327763, 373464, 402597]
+`taxicabNumbers(25)` має повернути `[1729, 4104, 13832, 20683, 32832, 39312, 40033, 46683, 64232, 65728, 110656, 110808, 134379, 149389, 165464, 171288, 195841, 216027, 216125, 262656, 314496, 320264, 327763, 373464, 402597]`.
 
 ```js
 assert.deepEqual(taxicabNumbers(25), res25);
 ```
 
-`taxicabNumbers(39)` отриманими числами від 20 до 29 мають бути [314496,320264,327763,373464,402597,439101,443889,513000,513856].
+Вихідними числами `taxicabNumbers(39)` від 20 до 29 мають бути `[314496,320264,327763,373464,402597,439101,443889,513000,513856]`.
 
 ```js
 assert.deepEqual(taxicabNumbers(39).slice(20, 29), res39From20To29);

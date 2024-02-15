@@ -8,19 +8,19 @@ dashedName: count-the-coins
 
 # --description--
 
-There are four types of common coins in US currency:
+Existem quatro tipos de moedas comuns nos EUA:
 
 <ul>
-  <li>quarters (25 cents)</li>
-  <li>dimes (10 cents)</li>
-  <li>nickels (5 cents), and</li>
-  <li>pennies (1 cent)</li>
+  <li>quarters (25 centavos)</li>
+  <li>dimes (10 centavos)</li>
+  <li>nickels (5 centavos) e</li>
+  <li>pennies (1 centavo)</li>
 </ul>
 
 <p>Há seis maneiras de fazer troco com 15 centavos:</p>
 
 <ul>
-  <li>A dime and a nickel</li>
+  <li>Um dime e um nickel</li>
   <li>Um dime e 5 pennies</li>
   <li>3 nickels</li>
   <li>2 nickels e 5 pennies</li>

@@ -8,7 +8,7 @@ dashedName: count-the-coins
 
 # --description--
 
-There are four types of common coins in US currency:
+В грошовому обігу США є такі ходові монети:
 
 <ul>
   <li>чверті (25 центів)</li>
@@ -30,7 +30,7 @@ There are four types of common coins in US currency:
 
 # --instructions--
 
-Створіть функцію, яка буде визначати, скількома способами можна розміняти введену кількість `cents`, що представляє суму американських пенні, використовуючи ці поширені монети.
+Реалізуйте функцію, щоб визначити, скількома способами можна розміняти наданий ввід (`cents`), який представляє кількість пенні США, використовуючи ходові монети.
 
 # --hints--
 
@@ -40,19 +40,19 @@ There are four types of common coins in US currency:
 assert(typeof countCoins === 'function');
 ```
 
-`countCoins(15)` має повертати `6`.
+`countCoins(15)` має повернути `6`.
 
 ```js
 assert.equal(countCoins(15), 6);
 ```
 
-`countCoins(85)` повинен повертати `163`.
+`countCoins(85)` має повернути `163`.
 
 ```js
 assert.equal(countCoins(85), 163);
 ```
 
-`countCoins(100)` має повертати `242`.
+`countCoins(100)` має повернути `242`.
 
 ```js
 assert.equal(countCoins(100), 242);

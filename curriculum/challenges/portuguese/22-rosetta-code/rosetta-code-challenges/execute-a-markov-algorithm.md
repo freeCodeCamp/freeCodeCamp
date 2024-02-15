@@ -8,11 +8,11 @@ dashedName: execute-a-markov-algorithm
 
 # --description--
 
-Markov Concepts are used in machine learning, because of its simple approach in data manipulation. With a set number of `rules` you can manipulate given `data` to create a desired `output`.
+Os conceitos de Markov são utilizados na aprendizagem de máquina, devido à abordagem simples na manipulação de dados. Com um número definido de regras (`rules`), você pode manipular dados (`data`) para criar uma saída (`output`) desejada.
 
 Adicionamos em segundo plano:
 
-The `rules` in the form of nested array, and the `data` in the form of array, too. E as saídas (`outputs`) desejadas.
+As regras (`rules`) no formato de array aninhado e os dados (`data`) também na forma de um array. E as saídas (`outputs`) desejadas.
 
 As regras (`rules`):
 
@@ -100,7 +100,7 @@ assert.deepEqual(markov(rules[1], datas[1]), outputs[1]);
 assert.deepEqual(markov(rules[2], datas[2]), outputs[2]);
 ```
 
-`markov(["_+1 -> _1+","1+1 -> 11+","1! -> !1",",! -> !+","_! -> _","1*1 -> x,@y","1x -> xX","X, -> 1,1","X1 -> 1X","_x -> _X",",x -> ,X","y1 -> 1y","y_ -> _","1@1 -> x,@y","1@_ -> @_",",@_ -> !_","++ -> +","_1 -> 1","1+_ -> 1","_+_ -> "],"_1111*11111_")` should return the string `11111111111111111111`.
+`markov(["_+1 -> _1+","1+1 -> 11+","1! -> !1",",! -> !+","_! -> _","1*1 -> x,@y","1x -> xX","X, -> 1,1","X1 -> 1X","_x -> _X",",x -> ,X","y1 -> 1y","y_ -> _","1@1 -> x,@y","1@_ -> @_",",@_ -> !_","++ -> +","_1 -> 1","1+_ -> 1","_+_ -> "],"_1111*11111_")` deve retornar a string `11111111111111111111`.
 
 ```js
 assert.deepEqual(markov(rules[3], datas[3]), outputs[3]);

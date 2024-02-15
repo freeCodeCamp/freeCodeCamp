@@ -22,21 +22,21 @@ You should use bracket notation to access the property of `totalCountPerProduct`
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]/);
 ```
 
 You should use the assignment operator to update the value of the property of `totalCountPerProduct` that corresponds to `dessert.id`.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=/);
 ```
 
 You should update the value of `totalCountPerProduct` to be the current value plus one.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\[\s*dessert\.id\s*\]\s*\+\s*1/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*\+\s*1/);
 ```
 
 

@@ -14,7 +14,7 @@ dashedName: regular-expressions
 
 ## --text--
 
-Which regex matches only a white space character?
+Qual regex corresponde apenas a um caractere de espaço em branco?
 
 ## --answers--
 

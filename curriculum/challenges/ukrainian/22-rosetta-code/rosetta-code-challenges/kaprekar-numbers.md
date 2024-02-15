@@ -8,14 +8,14 @@ dashedName: kaprekar-numbers
 
 # --description--
 
-A positive integer is a Kaprekar number if:
+Натуральне число є числом Капрекара, якщо:
 
 <ul>
   <li>Це 1, або</li>
   <li>Десяткове представлення квадрата цього числа можна розділити на дві частини з натуральних чисел, сума яких дорівнюватиме початковому числу. </li>
 </ul>
 
-Зауважте, що розділ у результаті якого вийдуть лише нулі, є недопустимим, оскільки 0 не вважається додатним числом.
+Зверніть увагу, що розділ з нулями не може бути дійсним, оскільки 0 не є натуральним числом.
 
 Приклади чисел Капрекара:
 
@@ -26,7 +26,7 @@ A positive integer is a Kaprekar number if:
 
 # --instructions--
 
-Напишіть функцію, яка приймає число $n$, основа $bs$, і повертає true, якщо число - це число Капрекара для цієї основи. В іншому випадку видається результат false.
+Напишіть функцію, яка приймає число $n$, основу $bs$ та повертає true, якщо число є числом Капрекара за наданої основою. В іншому випадку функція повертає false.
 
 # --hints--
 
@@ -36,49 +36,49 @@ A positive integer is a Kaprekar number if:
 assert(typeof isKaprekar == 'function');
 ```
 
-`isKaprekar(1, 10)` повинен стати логічним значенням.
+`isKaprekar(1, 10)` має повернути булеве значення.
 
 ```js
 assert(typeof isKaprekar(1, 10) == 'boolean');
 ```
 
-`isKaprekar(1, 10)`повинен повертати `true`.
+`isKaprekar(1, 10)` має повернути `true`.
 
 ```js
 assert.equal(isKaprekar(1, 10), true);
 ```
 
-`isKaprekar(9, 10)` повинен повертати `true`.
+`isKaprekar(9, 10)` має повернути `true`.
 
 ```js
 assert.equal(isKaprekar(9, 10), true);
 ```
 
-`isKaprekar(2223, 10)` повинен повертати `true`.
+`isKaprekar(2223, 10)` має повернути `true`.
 
 ```js
 assert.equal(isKaprekar(2223, 10), true);
 ```
 
-`isKaprekar(22823, 10)` повинен повертати `false`.
+`isKaprekar(22823, 10)` має повернути `false`.
 
 ```js
 assert.equal(isKaprekar(22823, 10), false);
 ```
 
-`isKaprekar(9, 17)` повинен повертати `false`.
+`isKaprekar(9, 17)` має повернути `false`.
 
 ```js
 assert.equal(isKaprekar(9, 17), false);
 ```
 
-`isKaprekar(225, 17)` повинен повертати `true`.
+`isKaprekar(225, 17)` має повернути `true`.
 
 ```js
 assert.equal(isKaprekar(225, 17), true);
 ```
 
-`isKaprekar(999, 17)` повинен повертати `false`.
+`isKaprekar(999, 17)` має повернути `false`.
 
 ```js
 assert.equal(isKaprekar(999, 17), false);

@@ -1,6 +1,6 @@
 ---
 id: 5e4ce2b6ac708cc68c1df25e
-title: Остання літера-перша літера
+title: Гра в слова
 challengeType: 1
 forumTopicId: 385256
 dashedName: last-letter-first-letter
@@ -8,20 +8,20 @@ dashedName: last-letter-first-letter
 
 # --description--
 
-A certain children's game involves starting with a word in a particular category. Each participant in turn says a word, but that word must begin with the final letter of the previous word. Once a word has been given, it cannot be repeated. If an opponent cannot give a word in the category, they fall out of the game.
+Гра в слова розпочинається зі слова в певній категорії. Кожен учасник по черзі каже слово, що починається на останню літеру попереднього слова. Якщо слово вже назвали, повторювати його не можна. Якщо суперник не може назвати слово з певної категорії, він вибуває з гри.
 
-Нижче наведений приклад категорії "тварини",
+Наприклад, якщо категорією є тварини:
 
-<pre>Child 1: dog
-Child 2: goldfish
-Child 1: hippopotamus
-Child 2: snake
+<pre>Гравець 1: тигр
+Гравець 2: рак
+Гравець 1: кріт
+Гравець 2: тушканчик
 ...
 </pre>
 
 # --instructions--
 
-Напишіть функцію, яка охоплює вхідний масив слів. Функція повинна видавати масив слів, в яких перша літера кожного слова така ж сама, як остання літера попереднього слова. Використовуйте лише слова з вхідного масиву, і якщо слово було використане, то повторювати його не можна. Слова в масиві видачі слід вибирати та впорядковувати таким чином, щоб вони були якомога довшими.
+Напишіть функцію, яка приймає вхідний масив слів. Функція має повернути масив слів, де перша літера кожного слова така ж сама, як остання літера попереднього слова. Використовуйте лише слова з вхідного масиву та не повторюйте слова. Слова у вихідному масиві потрібно вибрати та впорядкувати таким чином, щоб він був якомога довшим.
 
 # --hints--
 
@@ -31,7 +31,7 @@ Child 2: snake
 assert(typeof findLongestChain == 'function');
 ```
 
-`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` повинен видавати масив.
+`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` має повернути масив.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` повинен видавати `["involves", "starting", "game", "each"]`.
+`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` має повернути `["involves", "starting", "game", "each"]`.
 
 ```js
 assert.deepEqual(
@@ -66,7 +66,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["audino", "bagon", "kangaskhan", "banette", "bidoof", "braviary", "exeggcute", "yamask"])` повинен видавати `["braviary", "yamask", "kangaskhan"]`
+`findLongestChain(["audino", "bagon", "kangaskhan", "banette", "bidoof", "braviary", "exeggcute", "yamask"])` має повернути `["braviary", "yamask", "kangaskhan"]`.
 
 ```js
 assert.deepEqual(
@@ -84,7 +84,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["harp", "poliwrath", "poochyena", "porygon2", "porygonz", "archana"])` повинен видавати `["poliwrath", "harp", "poochyena", "archana"]`.
+`findLongestChain(["harp", "poliwrath", "poochyena", "porygon2", "porygonz", "archana"])` має повернути `["poliwrath", "harp", "poochyena", "archana"]`.
 
 ```js
 assert.deepEqual(
@@ -100,7 +100,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["scolipede", "elephant", "zeaking", "sealeo", "silcoon", "tigers"])` повинен видавати `["scolipede", "elephant", "tigers", "sealeo"]`.
+`findLongestChain(["scolipede", "elephant", "zeaking", "sealeo", "silcoon", "tigers"])` має повернути `["scolipede", "elephant", "tigers", "sealeo"]`.
 
 ```js
 assert.deepEqual(
@@ -116,7 +116,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["loudred", "lumineon", "lunatone", "machamp", "magnezone", "nosepass", "petilil", "pidgeotto", "pikachu"])` повинен видавати `["machamp", "petilil", "lumineon", "nosepass"]`.
+`findLongestChain(["loudred", "lumineon", "lunatone", "machamp", "magnezone", "nosepass", "petilil", "pidgeotto", "pikachu"])` має повернути `["machamp", "petilil", "lumineon", "nosepass"]`.
 
 ```js
 assert.deepEqual(

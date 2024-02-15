@@ -12,6 +12,7 @@ const anna = `${characters}/anna`;
 const bob = `${characters}/bob`;
 const brian = `${characters}/brian`;
 const david = `${characters}/david`;
+const expert = `${characters}/npc`;
 const jake = `${characters}/jake`;
 const james = `${characters}/james`;
 const linda = `${characters}/linda`;
@@ -34,13 +35,13 @@ export const characterAssets = {
     mouthOpen: `${alice}/mouth-laugh.png`
   },
   Amy: {
-    base: `${amy}/girl.png`,
-    brows: `${amy}/girl.png`,
-    eyesClosed: `${amy}/girl.png`,
-    eyesOpen: `${amy}/girl.png`,
+    base: `${amy}/girl-base.png`,
+    brows: `${amy}/girl-base.png`,
+    eyesClosed: `${amy}/girl-eyes-closed.png`,
+    eyesOpen: `${amy}/girl-eyes-open.png`,
     glasses: null,
-    mouthClosed: `${amy}/girl.png`,
-    mouthOpen: `${amy}/girl.png`
+    mouthClosed: `${amy}/girl-mouth-smile.png`,
+    mouthOpen: `${amy}/girl-mouth-laugh.png`
   },
   Anna: {
     base: `${anna}/base.png`,
@@ -77,6 +78,15 @@ export const characterAssets = {
     glasses: null,
     mouthClosed: `${david}/mouth-smile.png`,
     mouthOpen: `${david}/mouth-laugh.png`
+  },
+  Expert: {
+    base: `${expert}/man-base.png`,
+    brows: `${expert}/man-base.png`,
+    eyesClosed: `${expert}/man-eyes-closed.png`,
+    eyesOpen: `${expert}/man-eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${expert}/man-mouth-smile.png`,
+    mouthOpen: `${expert}/man-mouth-laugh.png`
   },
   Jake: {
     base: `${jake}/base.png`,
@@ -124,13 +134,13 @@ export const characterAssets = {
     mouthOpen: `${maria}/mouth-laugh.png`
   },
   Mark: {
-    base: `${mark}/boy.png`,
-    brows: `${mark}/boy.png`,
-    eyesClosed: `${mark}/boy.png`,
-    eyesOpen: `${mark}/boy.png`,
+    base: `${mark}/boy-base.png`,
+    brows: `${mark}/boy-base.png`,
+    eyesClosed: `${mark}/boy-eyes-closed.png`,
+    eyesOpen: `${mark}/boy-eyes-open.png`,
     glasses: null,
-    mouthClosed: `${mark}/boy.png`,
-    mouthOpen: `${mark}/boy.png`
+    mouthClosed: `${mark}/boy-mouth-smile.png`,
+    mouthOpen: `${mark}/boy-mouth-laugh.png`
   },
   Sarah: {
     base: `${sarah}/base.png`,

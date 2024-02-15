@@ -8,15 +8,15 @@ dashedName: circles-of-given-radius-through-two-points
 
 # --description--
 
-Given two points on a plane and a radius, usually two circles of given radius can be drawn through the points.
+Dados dois pontos em um plano e num raio, geralmente dois círculos de um determinado raio podem ser traçados através dos pontos.
 
 **Exceções:**
 
 <ul>
-  <li>A radius of zero should be treated as never describing circles (except in the case where the points are coincident).</li>
-  <li>If the points are coincident then an infinite number of circles with the point on their circumference can be drawn, unless the radius is equal to zero as well which then collapses the circles to a point.</li>
-  <li>If the points form a diameter then return a single circle.</li>
-  <li>If the points are too far apart then no circles can be drawn.</li>
+  <li>Um raio de zero deve ser tratado como nunca descrevendo círculos (exceto no caso em que os pontos são coincidentes).</li>
+  <li>Se os pontos forem coincidentes, pode haver um número infinito de círculos em que o ponto de sua circunferência pode ser desenhado, a não ser que o raio seja igual a zero, o que fará com que os círculos não passem de um ponto.</li>
+  <li>Se os pontos formarem um diâmetro, então retorne um único círculo.</li>
+  <li>Se os pontos estiverem muito distantes, não será possível desenhar os círculos.</li>
 </ul>
 
 # --instructions--
@@ -26,7 +26,7 @@ Implementa uma função que recebe dois pontos e um raio e retorna os dois círc
 **Para casos extremos, retorne o seguinte:**
 
 <ul>
-  <li>If points are on the diameter, return one point. If the radius is also zero however, return <code>"Radius Zero"</code>.</li>
+  <li>Se os pontos estão no diâmetro, retorne um ponto. No entanto, se o raio também for zero, retorne <code>"Radius Zero"</code>.</li>
   <li>Se os pontos forem coincidentes, retorne <code>"Coincident point. Infinite solutions"</code>.</li>
   <li>Se os pontos estiverem mais distantes do que o diâmetro, retorne <code>"No intersection. Points further apart than circle diameter"</code>.</li>
 </ul>

@@ -22,21 +22,21 @@ Dovresti usare la notazione con parentesi per accedere alla proprietà di `total
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]/);
 ```
 
 Dovresti usare l'operatore di assegnazione per aggiornare il valore della proprietà di `totalCountPerProduct` che corrisponde a `dessert.id`.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=/);
 ```
 
 Dovresti aggiornare il valore di `totalCountPerProduct` in modo che sia il valore attuale più uno.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\[\s*dessert\.id\s*\]\s*\+\s*1/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*\+\s*1/);
 ```
 
 

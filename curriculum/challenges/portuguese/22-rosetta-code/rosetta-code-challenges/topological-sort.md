@@ -8,13 +8,13 @@ dashedName: topological-sort
 
 # --description--
 
-Given a mapping between items, and items they depend on, a topological sort orders items so that no item precedes an item it depends upon. There are two popular algorithms for topological sorting: Kahn's (1962) topological sort and depth-first search.
+Dado um mapeamento entre itens e itens dos quais eles dependem, uma ordenação topológica de itens faz com que nenhum item preceda um item do qual ele depende. Existem dois algoritmos populares para a ordenação topológica: a ordenação topológica de Kahn (1962) e a busca profunda.
 
 # --instructions--
 
 Escreva uma função que retorne uma lista com ordem de compilação válida de bibliotecas a partir de suas dependências.
 
-- Assume library names are single words.
+- Assuma que os nomes das bibliotecas são palavras únicas.
 - Itens mencionados apenas como dependentes não têm dependentes próprios, mas sua ordem de compilação deve ser dada.
 - Quaisquer autodependências devem ser ignoradas.
 - Quaisquer dependências não ordenáveis devem ser ignoradas.
@@ -22,8 +22,8 @@ Escreva uma função que retorne uma lista com ordem de compilação válida de 
 Use os seguintes dados como exemplo:
 
 <pre>
-LIBRARY          LIBRARY DEPENDENCIES
-=======          ====================
+BIBLIOTECA       DEPENDÊNCIAS
+==========       ====================
 des_system_lib   std synopsys std_cell_lib des_system_lib dw02 dw01 ramlib ieee
 dw01             ieee dw01 dware gtech
 dw02             ieee dw02 dware

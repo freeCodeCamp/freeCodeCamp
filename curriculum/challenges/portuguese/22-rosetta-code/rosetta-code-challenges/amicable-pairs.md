@@ -8,14 +8,14 @@ dashedName: amicable-pairs
 
 # --description--
 
-Two integers $N$ and $M$ are said to be amicable pairs if $N \\neq M$ and the sum of the proper divisors of $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$ as well as $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
+Dizemos que dois números inteiros, $N$ e $M$, são pares amigáveis se $N \\neq M$ e a soma dos divisores apropriados de $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$, assim como $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
 
 **Exemplo:**
 
 **1184** e **1210** são um par amigável, com divisores adequados:
 
 <ul>
-  <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592 and</li>
+  <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592 e</li>
   <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605, respectivamente.</li>
 </ul>
 

@@ -213,9 +213,9 @@ Please rejoin once you have reached at least 13 years of age.
 Thank you for understanding.
 ```
 
-### Account Deletion Requests
+### Запити на видалення облікового запису
 
-If a user requests their account to be deleted, send the following:
+Якщо користувач надсилає запит на видалення свого облікового запису, надішліть наступне:
 
 ```markdown
 Deleting an account with many posts disrupts the flow of conversation, and could remove helpful information for other Campers.
@@ -225,7 +225,7 @@ We can anonymize your account, which will remove your username along with any ot
 If you would like to proceed with this, please reply to this message with your consent.
 ```
 
-If a user insists on having their account deleted, ask them to email `support[at]freecodecamp.org` with a link to their forum account.
+Якщо користувач наполягає на видаленні свого облікового запису, попросіть його написати лист на `support[at]freecodecamp.org` з посиланням на обліковий запис на форумі.
 
 ### Модерація через мобільний телефон
 

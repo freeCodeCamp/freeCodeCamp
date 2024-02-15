@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ace
-title: Акумуляторна фабрика
+title: Фабрика акумуляторів
 challengeType: 1
 forumTopicId: 302222
 dashedName: accumulator-factory
@@ -8,11 +8,11 @@ dashedName: accumulator-factory
 
 # --description--
 
-A problem posed by Paul Graham is that of creating a function that takes a single (numeric) argument and which returns another function that is an accumulator. The returned accumulator function in turn also takes a single numeric argument, and returns the sum of all the numeric values passed in so far to that accumulator (including the initial value passed when the accumulator was created).
+Проблема, поставлена Полом Гремом, полягає у створенні функції, яка приймає один (числовий) аргумент та повертає іншу функцію, тобто акумулятор. Повернений акумулятор також приймає один числовий аргумент та повертає суму всіх числових значень, переданих до акумулятора (включно з початковим переданим значенням, коли було створено акумулятор).
 
 # --instructions--
 
-Створіть функцію, яка приймає число $n$ і генерує акумуляторні функції, які повертають суму кожного числа, яке до них додадуть.
+Створіть функцію, яка приймає число $n$ та генерує акумулятори, що повертають суму всіх переданих чисел.
 
 **Правила:**
 
@@ -20,7 +20,7 @@ A problem posed by Paul Graham is that of creating a function that takes a singl
 
 **Підказка:**
 
-Закриття економить зовнішній стан.
+Замикання економить зовнішній стан.
 
 # --hints--
 
@@ -30,19 +30,19 @@ A problem posed by Paul Graham is that of creating a function that takes a singl
 assert(typeof accumulator === 'function');
 ```
 
-`accumulator(0)` має відображати функцію.
+`accumulator(0)` має повернути функцію.
 
 ```js
 assert(typeof accumulator(0) === 'function');
 ```
 
-`accumulator(0)(2)` має відображати число.
+`accumulator(0)(2)` має повернути число.
 
 ```js
 assert(typeof accumulator(0)(2) === 'number');
 ```
 
-Перехід у значеннях 3, -4, 1.5 і 5 має видати 5,5.
+Якщо передати значення 3, -4, 1.5 та 5, то має повернутись 5.5.
 
 ```js
 assert(testFn(5) === 5.5);

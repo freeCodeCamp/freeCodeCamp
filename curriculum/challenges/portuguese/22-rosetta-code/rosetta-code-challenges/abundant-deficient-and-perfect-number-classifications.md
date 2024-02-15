@@ -8,7 +8,7 @@ dashedName: abundant-deficient-and-perfect-number-classifications
 
 # --description--
 
-These define three classifications of positive integers based on their proper divisors.
+Estas classificações definem três categorias de inteiros positivos com base nos seus divisores.
 
 Vamos considerar que $P(n)$ é a soma dos divisores apropriados de `n`, onde todos os divisores adequados são inteiros positivos `n` diferentes de `n`.
 

@@ -8,7 +8,7 @@ dashedName: accumulator-factory
 
 # --description--
 
-A problem posed by Paul Graham is that of creating a function that takes a single (numeric) argument and which returns another function that is an accumulator. The returned accumulator function in turn also takes a single numeric argument, and returns the sum of all the numeric values passed in so far to that accumulator (including the initial value passed when the accumulator was created).
+Um problema proposto por Paul Graham é o de criar uma função que recebe um único argumento (numérico) e que retorna outra função que é um acumulador. A função de acumulador retornada, por sua vez, também recebe um único argumento numérico e retorna a soma de todos os valores numéricos passados até aquele momento para esse acumulador (incluindo o valor inicial passado quando o acumulador foi criado).
 
 # --instructions--
 

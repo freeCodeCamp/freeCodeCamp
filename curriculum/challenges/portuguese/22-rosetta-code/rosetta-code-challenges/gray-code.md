@@ -8,7 +8,7 @@ dashedName: gray-code
 
 # --description--
 
-Gray code is a form of binary encoding where transitions between consecutive numbers differ by only one bit.
+O Código de Gray é uma forma de codificação binária, onde as transições entre números consecutivos diferem apenas em um bit.
 
 Esta é uma codificação útil para reduzir riscos de dados de hardware com valores que se alteram rapidamente e/ou estejam associados ao hardware mais lento como entradas.
 

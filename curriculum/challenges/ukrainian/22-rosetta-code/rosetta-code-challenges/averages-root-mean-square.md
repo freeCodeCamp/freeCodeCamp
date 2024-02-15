@@ -1,6 +1,6 @@
 ---
 id: 594da033de4190850b893874
-title: Середнє значення квадратного кореня
+title: 'Середні значення: середнє квадратне значення'
 challengeType: 1
 forumTopicId: 302228
 dashedName: averagesroot-mean-square
@@ -8,9 +8,9 @@ dashedName: averagesroot-mean-square
 
 # --description--
 
-Compute the Root Mean Square (RMS) of the numbers 1 through 10 inclusive.
+Знайдіть середнє квадратне значення (RMS) чисел від 1 до 10 включно.
 
-<abbr title="Середнє квадратичне">Середнє квадратичне</abbr> обчислюється беручи квадратний корінь із середніх квадратів чисел, отриманих за формулою:
+Щоб знайти <abbr title="Root mean square">середнє квадратне значення</abbr>, знайдіть квадратний корінь середнього значення чисел, що задано формулою:
 
 $$x\_{\\mathrm{rms}} = \\sqrt {{{x_1}^2 + {x_2}^2 + \\cdots + {x_n}^2} \\over n}. $$
 

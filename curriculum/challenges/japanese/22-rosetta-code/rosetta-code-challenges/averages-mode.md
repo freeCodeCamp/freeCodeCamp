@@ -1,6 +1,6 @@
 ---
 id: 594d8d0ab97724821379b1e6
-title: 平均/最頻値
+title: 平均 / 最頻値
 challengeType: 1
 forumTopicId: 302226
 dashedName: averagesmode
@@ -12,7 +12,7 @@ Write a function `mode` to find the value that appears most in an array.
 
 データが空の場合は無視します。 最頻値が1つではない場合には注意が必要です。
 
-一般的なデータの使用が不適切または不可能な場合は、可能であればベクトル(配列)を使用します。 指定されていない値型の使用が不適切または不可能な場合は、整数を使用します。
+一般的なデータの使用が不適切または不可能な場合は、可能であればベクトル (配列) を使用します。 指定されていない値型の使用が不適切または不可能な場合は、整数を使用します。
 
 # --hints--
 
@@ -22,13 +22,13 @@ Write a function `mode` to find the value that appears most in an array.
 assert(typeof mode === 'function');
 ```
 
-`mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])` は `[6]`になります。
+`mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])` は `[6]` になります。
 
 ```js
 assert.deepEqual(mode(arr1), [6]);
 ```
 
-`mode([1, 2, 4, 4, 1])` は `[1, 4]`になります。
+`mode([1, 2, 4, 4, 1])` は `[1, 4]` になります。
 
 ```js
 assert.deepEqual(mode(arr2).sort(), [1, 4]);

@@ -1,26 +1,26 @@
 ---
 id: 62aa20e9cf1be9358f5aceae
-title: Passo 149
+title: Step 149
 challengeType: 0
 dashedName: step-149
 ---
 
 # --description--
 
-Adicione uma instrução `else` à primeira instrução `if` dentro da função `attack()`. Na instrução `else`, use o operador `+=` para adicionar o texto `You miss.` ao final de `text.innerText`.
+Adicione uma instrução `else` à primeira instrução `if` dentro da função `attack()`. In the `else` statement, use the `+=` operator to add the text `" You miss."` to the end of `text.innerText`.
 
 # --hints--
 
 Você deve adicionar um bloco `else` após o seu bloco `if (isMonsterHit())`.
 
 ```js
-assert.match(attack.toString(), /if\s*\(isMonsterHit\(\)\s*\)\s*\{\s*monsterHealth\s*-=\s*weapons\[currentWeapon\]\.power\s*\+\s*Math\.floor\(Math\.random\(\)\s*\*\s*xp\)\s*\+\s*1;\s*\}\s*else/)
+assert.match(attack.toString(), /if\s*\(\s*isMonsterHit\(\s*\)\s*\)\s*\{\s*monsterHealth\s*-=\s*weapons\s*\[\s*currentWeapon\s*\]\s*\.power\s*\+\s*Math\.floor\(\s*Math\.random\(\s*\)\s*\*\s*xp\s*\)\s*\+\s*1;\s*\}\s*else/)
 ```
 
-Você deve adicionar o texto `You miss.` no final do `text.innerText`. Lembre-se de usar a atribuição composta e certifique-se de que haja um espaço antes da palavra `You`.
+You should add the text `" You miss."` to the end of `text.innerText`. Lembre-se de usar a atribuição composta e certifique-se de que haja um espaço antes da palavra `You`.
 
 ```js
-assert.match(attack.toString(), /if\s*\(isMonsterHit\(\)\s*\)\s*\{\s*monsterHealth\s*-=\s*weapons\[currentWeapon\]\.power\s*\+\s*Math\.floor\(Math\.random\(\)\s*\*\s*xp\)\s*\+\s*1;\s*\}\s*else\s*\{\s*text\.innerText\s*\+=\s*('|")\sYou miss\.\1/)
+assert.match(attack.toString(), /if\s*\(\s*isMonsterHit\(\s*\)\s*\)\s*\{\s*monsterHealth\s*-=\s*weapons\s*\[\s*currentWeapon\s*\]\s*\.power\s*\+\s*Math\.floor\(\s*Math\.random\(\s*\)\s*\*\s*xp\s*\)\s*\+\s*1;\s*\}\s*else\s*\{\s*text\.innerText\s*\+=\s*('|")\sYou miss\.\1/)
 ```
 
 # --seed--
@@ -185,13 +185,13 @@ const locations = [
     name: "lose",
     "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
     "button functions": [restart, restart, restart],
-    text: "You die. ☠️"
+    text: "You die. &#x2620;"
   },
   { 
     name: "win", 
     "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
     "button functions": [restart, restart, restart], 
-    text: "You defeat the dragon! YOU WIN THE GAME! 🎉" 
+    text: "You defeat the dragon! YOU WIN THE GAME! &#x1F389;" 
   }
 ];
 
@@ -208,7 +208,7 @@ function update(location) {
   button1.onclick = location["button functions"][0];
   button2.onclick = location["button functions"][1];
   button3.onclick = location["button functions"][2];
-  text.innerText = location.text;
+  text.innerHTML = location.text;
 }
 
 function goTown() {

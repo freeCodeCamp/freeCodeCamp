@@ -1,6 +1,6 @@
 ---
 id: 596fd036dc1ab896c5db98b1
-title: Convert seconds to compound duration
+title: Converter segundos para duração composta
 challengeType: 1
 forumTopicId: 302236
 dashedName: convert-seconds-to-compound-duration
@@ -8,10 +8,10 @@ dashedName: convert-seconds-to-compound-duration
 
 # --description--
 
-Implement a function which:
+Implementar uma função que:
 
 <ul>
-  <li>takes a positive integer representing a duration in seconds as input (e.g., <code>100</code>), and</li>
+  <li>receba um inteiro positivo que represente uma duração em segundos como entrada (por exemplo, <code>100</code>) e</li>
   <li>retorna uma string que mostra a mesma duração decomposta em semanas, dias, horas, minutos e segundos detalhados abaixo (por exemplo, <code>1 min, 40 sec</code>).</li>
 </ul>
 
@@ -19,16 +19,16 @@ Demonstre que a função passa pelos três casos de teste:
 
 <div style='font-size:115%; font-weight: bold;'>Casos de teste</div>
 
-| Input number | Número de saída           |
-| ------------ | ------------------------- |
-| 7259         | <code>2 hr, 59 sec</code> |
-| 86400        | <code>1 d</code> |
-| 6000000      | <code>9 wk, 6 d, 10 hr, 40 min</code> |
+| Número de entrada | Número de saída           |
+| ----------------- | ------------------------- |
+| 7259              | <code>2 hr, 59 sec</code> |
+| 86400             | <code>1 d</code> |
+| 6000000           | <code>9 wk, 6 d, 10 hr, 40 min</code> |
 
 <div style="font-size:115%; font-weight: bold;">Detalhes</div>
 <ul>
   <li>
-    The following five units should be used:
+    As cinco unidades abaixo devem ser usadas:
 
 | Unit   | Suffix used in Output | Conversion            |
 | ------ | --------------------- | --------------------- |

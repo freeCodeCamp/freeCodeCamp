@@ -8,10 +8,10 @@ dashedName: left-factorials
 
 # --description--
 
-**Left factorials**, $ !n $, may refer to either *subfactorials* or to *factorial sums*. The same notation can be confusingly seen used for the two different definitions. Sometimes, *subfactorials* (also known as *derangements*) may use any of the notations:
+**Fatoriais restantes**, $ !n $, podem se referir a *subfatoriais* ou a *somas de fatorial*. A mesma notação pode ser vista de modo confuso para as duas definições diferentes. Às vezes, *subfatoriais* (também conhecidos como *desarranjos*) podem usar qualquer uma das notações a seguir:
 
 <ul>
-  <li>$!n`$</li>
+  <li>$!n$</li>
   <li>$!n$</li>
   <li>$n¡$</li>
 </ul>

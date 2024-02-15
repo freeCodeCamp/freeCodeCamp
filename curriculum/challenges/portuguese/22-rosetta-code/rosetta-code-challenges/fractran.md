@@ -8,14 +8,14 @@ dashedName: fractran
 
 # --description--
 
-FRACTRAN is a Turing-complete esoteric programming language invented by the mathematician John Horton Conway.
+FRACTRAN é uma linguagem de programação esotérica, completa para testes Turing, inventada pelo matemático John Horton Conway.
 
 Um programa em FRACTRAN é uma lista ordenada de frações positivas $P = (f_1, f_2, \\ldots, f_m)$, juntamente com uma primeira entrada positiva inteira $n$.
 
 O programa é executado atualizando o inteiro $n$ da seguinte forma:
 
 <ul>
-  <li>for the first fraction, $f_i$, in the list for which $nf_i$ is an integer, replace $n$ with $nf_i$ ;</li>
+  <li>para a primeira fração, $f_i$, na lista para a qual $nf_i$ é um número inteiro, substitua $n$ por $nf_i$;</li>
   <li>repita essa regra até que nenhuma fração na lista produza um inteiro quando multiplicado por $n$, e então pare.</li>
 </ul>
 

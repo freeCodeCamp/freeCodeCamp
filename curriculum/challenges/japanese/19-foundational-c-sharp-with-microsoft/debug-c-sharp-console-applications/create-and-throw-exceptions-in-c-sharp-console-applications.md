@@ -1,38 +1,38 @@
 ---
 id: 647e228a8acb466c97ccbef3
-title: 'Create and Throw Exceptions in C# Console Applications'
+title: 'C# コンソール アプリケーションで例外を作成してスローする'
 challengeType: 19
 dashedName: create-and-throw-exceptions-in-c-sharp-console-applications
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+このチャレンジには Microsoft Learn プラットフォームで実行するパートがあります。 下記の手順に従ってチャレンジを完了させてください:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/</a> and complete all the tasks for the "Create and Throw Exceptions in C# Console Applications" module. This is **required** earn to the "Debug C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. <a href="https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/</a> へ移動し、「C# コンソール アプリケーションで例外を作成してスローする (Create and Throw Exceptions in C# Console Applications)」モジュール内のすべてのタスクを完了してください。 これは、Microsoft Learn のトロフィー「C# コンソール アプリケーションのデバッグ」を獲得し、認定試験の受験資格を得るために**必須**となります。
+1. 完了後、このページに戻り、下記の質問に正しく回答してください。
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/" target="_blank" rel="noreferrer">Create and Throw Exceptions in C# Console Applications</a> module on Microsoft Learn. Then, answer the question below.
+Microsoft Learn で「<a href="https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/" target="_blank" rel="noreferrer">C# コンソール アプリケーションで例外を作成してスローする</a>」モジュールを完了してください。 次に、下記の質問に回答してください。
 
 # --question--
 
 ## --text--
 
-When should a method throw an exception?
+メソッドはいつ例外をスローすべきですか？
 
 ## --answers--
 
-A method should throw an exception when the method can complete its intended purpose.
+メソッドは、意図した目的を完了できる場合に例外をスローすべきである。
 
 ---
 
-A method should throw an exception when the method can't complete its intended purpose.
+メソッドは、意図した目的を完了できない場合に例外をスローすべきである。
 
 ---
 
-A method should throw an exception when an exception type matches the intended purpose of the method.
+メソッドは、例外の種類が意図した目的に一致する場合に例外をスローすべきである。
 
 ## --video-solution--
 

@@ -8,7 +8,7 @@ dashedName: leap-year
 
 # --description--
 
-Determine whether a given year is a leap year in the Gregorian calendar.
+Determine se o ano fornecido é um ano bissexto no calendário Gregoriano.
 
 # --hints--
 

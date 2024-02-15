@@ -8,10 +8,10 @@ dashedName: set-consolidation
 
 # --description--
 
-Given two sets of items then if any item is common to any set then the result of applying *consolidation* to those sets is a set of sets whose contents is:
+Dados dois conjuntos de itens, se qualquer item for comum a qualquer dos conjuntos, o resultado de aplicar a *consolidação* àqueles conjuntos é um conjunto de conjuntos, cujo conteúdo é:
 
 <ul>
-  <li>The two input sets if no common item exists between the two input sets of items.</li>
+  <li>Os dois conjuntos de entrada, se não existir nenhum item comum entre os dois conjuntos de itens de entrada.</li>
   <li>O conjunto único que é a união dos dois conjuntos de entrada define se partilham um item em comum.</li>
 </ul>
 

@@ -14,7 +14,7 @@ dashedName: introduction-python-as-a-language
 
 ## --text--
 
-What will print out after running these two lines of code:
+O que será impresso após a execução destas duas linhas de código:
 
 ```python
 x = 6

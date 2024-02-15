@@ -8,7 +8,7 @@ dashedName: generatorexponential
 
 # --description--
 
-A generator is an executable entity (like a function or procedure) that contains code that yields a sequence of values, one at a time, so that each time you call the generator, the next value in the sequence is provided.
+Um gerador é uma entidade executável (como uma função ou procedimento) que contém um código que retorna uma sequência de valores, um de cada vez, para que a cada vez que você chame o gerador, o próximo valor na sequência seja fornecido.
 
 Os geradores muitas vezes são criados a partir de co-rotinas ou objetos para que o estado interno do objeto seja tratado "naturalmente".
 

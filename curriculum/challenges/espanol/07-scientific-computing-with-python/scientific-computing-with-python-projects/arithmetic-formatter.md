@@ -1,6 +1,6 @@
 ---
 id: 5e44412c903586ffb414c94c
-title: Arithmetic Formatter
+title: Formateador aritmético
 challengeType: 10
 forumTopicId: 462359
 dashedName: arithmetic-formatter
@@ -8,16 +8,16 @@ dashedName: arithmetic-formatter
 
 # --description--
 
-You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow"> working on this project with our Replit starter code</a>.
+Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código inicial en Replit</a>.
 
--   Start by importing the project on Replit. 
--   Next, you will see a `.replit` window. 
--   Select `Use run command` and click the `Done` button. 
+-   Comienza importando el proyecto en Replit.
+-   Después verás una ventana `.replit`
+-   Selecciona `Use run command` y presiona el botón `Done`
 
 
 # --instructions--
 
-Students in primary school often arrange arithmetic problems vertically to make them easier to solve. For example, "235 + 52" becomes:
+Los estudiantes de primaria suelen colocar los problemas aritméticos en vertical para facilitar su resolución. Por ejemplo, "235 + 52" se convierte a:
 
 ```py
   235
@@ -25,17 +25,17 @@ Students in primary school often arrange arithmetic problems vertically to make 
 -----
 ```
 
-Create a function that receives a list of strings that are arithmetic problems and returns the problems arranged vertically and side-by-side. The function should optionally take a second argument. When the second argument is set to `True`, the answers should be displayed.
+Crea una función que reciba una lista de cadenas que sean problemas aritméticos y devuelva los problemas ordenados verticalmente y uno al lado del otro. La función debe tomar opcionalmente un segundo argumento. Cuando el segundo argumento se establezca como `True`, se deberán mostrar las respuestas.
 
-## Example
+## Ejemplo
 
-Function Call:
+Llamando a la función:
 
 ```py
 arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
 ```
 
-Output:
+Resultado:
 
 ```py
    32      3801      45      123
@@ -43,13 +43,13 @@ Output:
 -----    ------    ----    -----
 ```
 
-Function Call:
+Llamando a la función:
 
 ```py
 arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 ```
 
-Output:
+Resultado:
 
 ```py
   32         1      9999      523
@@ -58,41 +58,37 @@ Output:
   40     -3800     19998      474
 ```
 
-## Rules
+## Reglas
 
-The function will return the correct conversion if the supplied problems are properly formatted, otherwise, it will **return** a **string** that describes an error that is meaningful to the user.
+La función devolverá la conversión correcta si los problemas suministrados están correctamente formateados, de lo contrario, **devolverá** una **cadena** que describe un error significativo para el usuario.
 
 
-- Situations that will return an error:
-  - If there are **too many problems** supplied to the function. The limit is **five**, anything more will return:
-    `Error: Too many problems.`
-  - The appropriate operators the function will accept are **addition** and **subtraction**. Multiplication and division will return an error. Other operators not mentioned in this bullet point will not need to be tested. The error returned will be:
-    `Error: Operator must be '+' or '-'.`
-  - Each number (operand) should only contain digits. Otherwise, the function will return:
-    `Error: Numbers must only contain digits.`
-  - Each operand (aka number on each side of the operator) has a max of four digits in width. Otherwise, the error string returned will be:
-    `Error: Numbers cannot be more than four digits.`
-- If the user supplied the correct format of problems, the conversion you return will follow these rules:
-  - There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom).
-  - Numbers should be right-aligned.
-  - There should be four spaces between each problem.
-  - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
+- Situaciones que devolverán un error:
+  - Si se pasan **demasiados problemas** a la función. El límite es **cinco**, si se pasan más se devolverá: `Error: Too many problems.`
+  - Los únicos operadores que aceptará la función son **adición** y **sustracción**. Multiplicación y división devolverán un error. Otros operadores no mencionados en este punto no necesitarán ser probados. El error devuelto será: `Error: Operator must be '+' or '-'.`
+  - Cada número (operando) solo debe contener dígitos. En otro caso, la función devolverá: `Error: Numbers must only contain digits.`
+  - Cada operando (los números a cada lado del operador) tiene que tener un máximo de cuatro dígitos. En otro caso, la cadena de error devuelta será: `Error: Numbers cannot be more than four digits.`
+- Si el usuario proporciona a la función los problemas con el formato correcto, la conversión a devolver por la función seguirá las siguientes reglas:
+  - Debe haber un solo espacio entre el operador y el operando más largo, el operador estará en la misma línea que el segundo operando, ambos operandos estarán en el mismo orden en que fueron pasados (el primero será el que aparezca arriba y el segundo estará debajo).
+  - Los números deben estar alineados a la derecha.
+  - Debe haber cuatro espacios entre cada problema.
+  - Debe haber guiones (-) al final de cada problema. Dichos guiones deben extenderse a lo largo de la longitud de cada problema por separado. (Véase el ejemplo más arriba.)
 
-## Development
+## Desarrollo
 
-Write your code in `arithmetic_arranger.py`. For development, you can use `main.py` to test your `arithmetic_arranger()` function. Click the "run" button and `main.py` will run.
+Escribe tu código en `arithmetic_arranger.py`. Durante el desarrollo de tu programa puedes utilizar `main.py` para probar el funcionamiento de tu función `arithmetic_arranger()`. Haz clic en el botón "run" y se ejecutará `main.py`.
 
-## Testing
+## Pruebas
 
-The unit tests for this project are in `test_module.py`. We are running the tests from `test_module.py` in `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button. Alternatively you may run the tests by inputting `pytest` in the console.
+Las pruebas unitarias para este proyecto están en `test_module.py`. Ejecutamos las pruebas de `test_module.py` a `main.py` para tu conveniencia. Las pruebas se ejecutarán automáticamente cada vez que pulses el botón "run". También puedes ejecutar las pruebas introduciendo `pytest` en la consola.
 
-## Submitting
+## Envío
 
-Copy your project's URL and submit it to freeCodeCamp.
+Copia el enlace de tu proyecto y envíalo a freeCodeCamp.
 
 # --hints--
 
-It should correctly format an arithmetic problem and pass all tests.
+Debe formatear correctamente un problema aritmético y pasar todas las pruebas.
 
 ```js
 

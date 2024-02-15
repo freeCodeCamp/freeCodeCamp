@@ -12,15 +12,15 @@ A generator is an executable entity (like a function or procedure) that contains
 
 ジェネレータは、オブジェクトの内部状態が「自然に」処理されるように、しばしば、コルーチンやオブジェクトに追加して作成されます。
 
-ジェネレータは、数列が無限になる可能性がある場合、 そして最小限の状態さえあれば、数列の次の値を生成することが可能な場合によく使用されます。
+ジェネレータは、数列が無限になる可能性がある場合、そして最小限の状態さえあれば、数列の次の値を生成することが可能な場合によく使用されます。
 
 # --instructions--
 
-ジェネレータを使って正方形や立方体を生成する関数を記述してください。 正方形のジェネレータからすべての立方体をフィルタリングする新しいジェネレータを作成します。
+ジェネレータを使って平方数や立方数を生成する関数を記述してください。 平方数のジェネレータからすべての立方数をフィルタリングする新しいジェネレータを作成します。
 
-この関数は、フィルタリングされたジェネレータの \\( n^{th} \\) 値を返します。
+この関数は、フィルタリングされたジェネレータの \\( n \\) 番目の値を返します。
 
-例えば、\\(n=7\\) の場合、数列は4,9,16,25,36,49,81となるため、この関数は81を返すことになります。 ここで、64は立方体であるため除外されます。
+例えば、\\(n=7\\) の場合、数列は 4, 9, 16, 25, 36, 49, 81 となるため、この関数は 81 を返すことになります。 ここで、64 は立方数であるため除外されます。
 
 # --hints--
 
@@ -36,31 +36,31 @@ assert(typeof exponentialGenerator == 'function');
 assert(typeof exponentialGenerator(10) == 'number');
 ```
 
-`exponentialGenerator(10)` は`144`を返す必要があります。
+`exponentialGenerator(10)` は `144` を返す必要があります。
 
 ```js
 assert.equal(exponentialGenerator(10), 144);
 ```
 
-`exponentialGenerator(12)` は`196`を返す必要があります。
+`exponentialGenerator(12)` は `196` を返す必要があります。
 
 ```js
 assert.equal(exponentialGenerator(12), 196);
 ```
 
-`exponentialGenerator(14)` は`256`を返す必要があります。
+`exponentialGenerator(14)` は `256` を返す必要があります。
 
 ```js
 assert.equal(exponentialGenerator(14), 256);
 ```
 
-`exponentialGenerator(20)` は`484`を返す必要があります。
+`exponentialGenerator(20)` は `484` を返す必要があります。
 
 ```js
 assert.equal(exponentialGenerator(20), 484);
 ```
 
-`exponentialGenerator(25)` は`784`を返す必要があります。
+`exponentialGenerator(25)` は `784` を返す必要があります。
 
 ```js
 assert.equal(exponentialGenerator(25), 784);

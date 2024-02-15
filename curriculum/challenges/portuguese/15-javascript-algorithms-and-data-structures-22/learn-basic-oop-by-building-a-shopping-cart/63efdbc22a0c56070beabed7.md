@@ -22,21 +22,21 @@ Você deve usar a notação de colchete para acessar a propriedade de `totalCoun
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]/);
 ```
 
 Você deve usar o operador de atribuição para atualizar o valor da propriedade de `totalCountPerProduct` que corresponde a `dessert.id`.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=/);
 ```
 
 Você deve atualizar o valor de `totalCountPerProduct` para que seja o valor atual mais um.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\[\s*dessert\.id\s*\]\s*\+\s*1/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*\+\s*1/);
 ```
 
 

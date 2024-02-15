@@ -8,7 +8,7 @@ dashedName: top-rank-per-group
 
 # --description--
 
-Find the top `n` ranked data in each group, where `n` is provided as a parameter. Name of the rank and the group are also provided as parameter.
+Encontre os melhores `n` dados classificados em cada grupo, onde `n` é fornecido como um parâmetro. O nome da classificação e o grupo também são fornecidos como parâmetro.
 
 Considerando os dados a seguir:
 

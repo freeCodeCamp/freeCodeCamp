@@ -8,7 +8,7 @@ dashedName: factorial
 
 # --description--
 
-Write a function to return the factorial of a number.
+Escreva uma função que retorne o fatorial de um número.
 
 O fatorial de um número é dado por:
 

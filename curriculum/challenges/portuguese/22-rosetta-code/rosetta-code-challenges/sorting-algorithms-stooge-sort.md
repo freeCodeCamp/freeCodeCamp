@@ -8,11 +8,11 @@ dashedName: sorting-algorithmsstooge-sort
 
 # --description--
 
-Write a function to perform Stooge Sort on an array of integers. The function should return a sorted array.
+Escreva uma função para executar ordenação Stooge Sort em um array de números inteiros. A função deve retornar o array ordenado.
 
 O algoritmo de ordenação fantoche é o seguinte:
 
-<pre><b>algorithm</b> stoogesort(<b>array</b> L, i = 0, j = <b>length</b>(L)-1)
+<pre><b>Algoritmo</b> stoogesort(<b>array</b> L, i = 0, j = <b>length</b>(L)-1)
   <b>if</b> L[j] &#x3C; L[i] <b>then</b>
     L[i] <b>↔</b> L[j]
   <b>if</b> j - i > 1 <b>then</b>

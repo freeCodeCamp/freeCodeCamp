@@ -8,7 +8,7 @@ dashedName: sorting-algorithmsshell-sort
 
 # --description--
 
-Write a function to sort an array of elements using the Shell sort algorithm, a diminishing increment sort. The function should return the sorted array.
+Escreva uma função para classificar um array de elementos usando o algoritmo de Shell Sort, uma ordenação com incremento decrescente. A função deve retornar o array ordenado.
 
 A ordenação de concha (também conhecida como método de Shell ou shellsort) recebeu o nome em homenagem ao seu inventor, Donald Shell, que publicou o algoritmo em 1959.
 

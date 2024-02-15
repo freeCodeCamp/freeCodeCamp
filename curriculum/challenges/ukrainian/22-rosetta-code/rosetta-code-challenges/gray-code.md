@@ -10,15 +10,15 @@ dashedName: gray-code
 
 Gray code is a form of binary encoding where transitions between consecutive numbers differ by only one bit.
 
-Це корисне кодування для зменшення ризиків настання небезпеки для апаратних даних зі значеннями, що швидко змінюються та/або підключаються до повільнішого апаратного забезпечення як вхідних даних.
+This is a useful encoding for reducing hardware data hazards with values that change rapidly and/or connect to slower hardware as inputs.
 
-Це також корисно для створення вхідних даних для карт Карно в порядку зліва направо або зверху вниз.
+It is also useful for generating inputs for Karnaugh maps in order from left to right or top to bottom.
 
 # --instructions--
 
-Створіть функцію для кодування номера та декодування номера з коду Грея. Функція повинна мати 2 параметри.
+Create a function to encode a number to and decode a number from Gray code. Функція повинна мати 2 параметри.
 
-Перший - це логічний тип даних. Функція має кодувати true і декодувати false. Другим параметром буде число, яке потрібно закодувати/декодувати.
+The first would be a boolean. The function should encode for true and decode for false. The second parameter would be the number to be encoded/decoded.
 
 Поккажіть нормальні бінарні значення, значення коду Грея, і декодування даних коду Грея для всіх 5-бінарних чисел (0-31 включно, провідні нулі не є необхідними).
 
@@ -88,7 +88,7 @@ assert.equal(gray(false, 233), 177);
 assert.equal(gray(false, 381), 425);
 ```
 
-`gray(false,725)`має повернути `870`.
+`gray(false,725)` should return `870`.
 
 ```js
 assert.equal(gray(false, 725), 870);

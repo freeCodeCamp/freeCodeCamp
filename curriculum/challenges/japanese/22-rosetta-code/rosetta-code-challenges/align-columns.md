@@ -48,7 +48,7 @@ For example, one of the lines from the `testText`, after justifying to the right
 
 # --hints--
 
-`formatText` という関数です。
+`formatText` という関数があります。
 
 ```js
 assert(typeof formatText === 'function');

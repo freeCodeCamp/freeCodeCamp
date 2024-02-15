@@ -8,10 +8,10 @@ dashedName: balanced-brackets
 
 # --description--
 
-Determine whether a generated string of brackets is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
+Determine se uma sequência de colchetes gerada é equilibrada, ou seja, se consiste inteiramente de pares de colchetes de abertura/fechamento (nessa ordem), nenhum dos quais colocado incorretamente.
 
 **Exemplos:**
-| Input                     | Saída |
+| Entrada                   | Saída |
 | ------------------------- | ----- |
 | <code>\[]</code> | true  |
 | <code>]\[</code> | false |

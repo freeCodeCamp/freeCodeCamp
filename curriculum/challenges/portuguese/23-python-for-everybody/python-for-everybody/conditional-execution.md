@@ -14,7 +14,7 @@ dashedName: conditional-execution
 
 ## --text--
 
-Which code is indented correctly to print "Yes" if x = 0 and y = 10?
+Qual código está indentado corretamente para imprimir "Yes" se x = 0 e y = 10?
 
 ## --answers--
 

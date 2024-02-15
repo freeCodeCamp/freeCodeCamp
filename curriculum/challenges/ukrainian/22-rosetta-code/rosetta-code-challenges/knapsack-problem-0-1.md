@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ed1
-title: Задача пакування рюкзака/0-1
+title: Задача пакування рюкзака 0-1
 challengeType: 1
 forumTopicId: 323649
 dashedName: knapsack-problem0-1
@@ -8,17 +8,17 @@ dashedName: knapsack-problem0-1
 
 # --description--
 
-The 0-1 knapsack problem is defined as follows:
+Умова задачі пакування рюкзака 0-1:
 
-Дано масив об'єктів, які потрібно помістити в рюкзак. Кожен об'єкт має назву, вагу та цінність. Необхідно обрати об'єкти в такий спосіб, аби максимізувати сумарну вартість (або користь), але не перевищити максимально припустиму масу.
+Дано масив предметів, які потрібно помістити в рюкзак. Кожен об’єкт має 3 атрибути: назва, вага та цінність. Потрібно обрати предмети в такий спосіб, щоб максимізувати цінність, але не перевищити максимально допустиму вагу.
 
 # --instructions--
 
-Напишіть функцію, щоб розв'язати задачу пакування рюкзака. У параметрах функції вказується масив об’єктів і максимальна вагу. Вона має повернути найбільше можливе значення.
+Напишіть функцію, щоб розв’язати задачу пакування рюкзака. Функції надано масив предметів та максимальну вагу як параметри. Вона має повернути найбільшу можливу цінність.
 
 # --hints--
 
-`knapsack([{ name:'map', weight:9, value:150 }, { name:'compass', weight:13, value:35 }, { name:'water', weight:153, value:200 }, { name:'sandwich', weight:50, value:160 }, { name:'glucose', weight:15, value:60 }, { name:'tin', weight:68, value:45 }, { name:'banana', weight:27, value:60 }, { name:'apple', weight:39, value:40 }], 100)` має повертати `405`.
+`knapsack([{ name:'map', weight:9, value:150 }, { name:'compass', weight:13, value:35 }, { name:'water', weight:153, value:200 }, { name:'sandwich', weight:50, value:160 }, { name:'glucose', weight:15, value:60 }, { name:'tin', weight:68, value:45 }, { name:'banana', weight:27, value:60 }, { name:'apple', weight:39, value:40 }], 100)` має повернути `405`.
 
 ```js
 assert.equal(
@@ -39,7 +39,7 @@ assert.equal(
 );
 ```
 
-`knapsack([{ name:'map', weight:9, value:150 }, { name:'compass', weight:13, value:35 }, { name:'water', weight:153, value:200 }, { name:'sandwich', weight:50, value:160 }, { name:'glucose', weight:15, value:60 }, { name:'tin', weight:68, value:45 }, { name:'banana', weight:27, value:60 }, { name:'apple', weight:39, value:40 }], 200)` має повертати`510`.
+`knapsack([{ name:'map', weight:9, value:150 }, { name:'compass', weight:13, value:35 }, { name:'water', weight:153, value:200 }, { name:'sandwich', weight:50, value:160 }, { name:'glucose', weight:15, value:60 }, { name:'tin', weight:68, value:45 }, { name:'banana', weight:27, value:60 }, { name:'apple', weight:39, value:40 }], 200)` має повернути `510`.
 
 ```js
 assert.equal(
@@ -60,7 +60,7 @@ assert.equal(
 );
 ```
 
-`knapsack([{ name:'cheese', weight:23, value:30 }, { name:'beer', weight:52, value:10 }, { name:'suntan cream', weight:11, value:70 }, { name:'camera', weight:32, value:30 }, { name:'T-shirt', weight:24, value:15 }, { name:'trousers', weight:48, value:10 }, { name:'umbrella', weight:73, value:40 }], 100)` має повертати`145`.
+`knapsack([{ name:'cheese', weight:23, value:30 }, { name:'beer', weight:52, value:10 }, { name:'suntan cream', weight:11, value:70 }, { name:'camera', weight:32, value:30 }, { name:'T-shirt', weight:24, value:15 }, { name:'trousers', weight:48, value:10 }, { name:'umbrella', weight:73, value:40 }], 100)` має повернути `145`.
 
 ```js
 assert.equal(
@@ -80,7 +80,7 @@ assert.equal(
 );
 ```
 
-`knapsack([{ name:'cheese', weight:23, value:30 }, { name:'beer', weight:52, value:10 }, { name:'suntan cream', weight:11, value:70 }, { name:'camera', weight:32, value:30 }, { name:'T-shirt', weight:24, value:15 }, { name:'trousers', weight:48, value:10 }, { name:'umbrella', weight:73, value:40 }], 200)` має повертати`185`.
+`knapsack([{ name:'cheese', weight:23, value:30 }, { name:'beer', weight:52, value:10 }, { name:'suntan cream', weight:11, value:70 }, { name:'camera', weight:32, value:30 }, { name:'T-shirt', weight:24, value:15 }, { name:'trousers', weight:48, value:10 }, { name:'umbrella', weight:73, value:40 }], 200)` має повернути `185`.
 
 ```js
 assert.equal(
@@ -100,7 +100,7 @@ assert.equal(
 );
 ```
 
-`knapsack([{ name:'waterproof trousers', weight:42, value:70 }, { name:'waterproof overclothes', weight:43, value:75 }, { name:'note-case', weight:22, value:80 }, { name:'sunglasses', weight:7, value:20 }, { name:'towel', weight:18, value:12 }, { name:'socks', weight:4, value:50 }, { name:'book', weight:30, value:10 }], 100)` має повертати`237`.
+`knapsack([{ name:'waterproof trousers', weight:42, value:70 }, { name:'waterproof overclothes', weight:43, value:75 }, { name:'note-case', weight:22, value:80 }, { name:'sunglasses', weight:7, value:20 }, { name:'towel', weight:18, value:12 }, { name:'socks', weight:4, value:50 }, { name:'book', weight:30, value:10 }], 100)` має повернути `237`.
 
 ```js
 assert.equal(
@@ -120,7 +120,7 @@ assert.equal(
 );
 ```
 
-`knapsack([{ name:'waterproof trousers', weight:42, value:70 }, { name:'waterproof overclothes', weight:43, value:75 }, { name:'note-case', weight:22, value:80 }, { name:'sunglasses', weight:7, value:20 }, { name:'towel', weight:18, value:12 }, { name:'socks', weight:4, value:50 }, { name:'book', weight:30, value:10 }], 200)` має повертати`317`.'
+`knapsack([{ name:'waterproof trousers', weight:42, value:70 }, { name:'waterproof overclothes', weight:43, value:75 }, { name:'note-case', weight:22, value:80 }, { name:'sunglasses', weight:7, value:20 }, { name:'towel', weight:18, value:12 }, { name:'socks', weight:4, value:50 }, { name:'book', weight:30, value:10 }], 200)` має повернути `317`.'
 
 ```js
 assert.equal(

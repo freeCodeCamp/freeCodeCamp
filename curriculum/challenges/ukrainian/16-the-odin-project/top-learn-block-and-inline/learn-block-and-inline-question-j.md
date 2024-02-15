@@ -1,35 +1,35 @@
 ---
 id: 65704485e7b02272663824e8
-title: Learn Block and Inline Question J
+title: Блокові та рядкові елементи. Запитання J
 challengeType: 15
 dashedName: learn-block-and-inline-question-j
 ---
 
 # --description--
 
-Now that you have a basic understanding on how adding width and height to `inline` elements works, what happens when you add a top padding of 10 pixels to a `span` element?
+Тепер у вас є базове розуміння того, як додати ширину та висоту до рядкових (`inline`) елементів. Що ж відбудеться, якщо додати верхній відступ зі значенням 10 пікселів до елемента `span`?
 
 # --question--
 
 ## --text--
 
-What happens when you add `padding-top: 10px;` to a `span` element?
+Що відбудеться, якщо додати `padding-top: 10px;` до елемента `span`?
 
 ## --answers--
 
-The `span` element's content will shift downward by 10 pixels.
+Вміст елемента `span` переміститься вниз на 10 пікселів.
 
 ---
 
-The `span` element will gain additional space above its content.
+Елемент `span` отримає додаткове місце зверху свого вмісту.
 
 ---
 
-The `span` element's width will increase by 10 pixels.
+Ширина елемента `span` збільшиться на 10 пікселів.
 
 ---
 
-Padding has no effect on the layout of a `span` element.
+Відступ не впливає на макет елемента `span`.
 
 ## --video-solution--
 

@@ -150,17 +150,10 @@ legend {
 }
 
 button {
-  outline: none;
   cursor: pointer;
   text-decoration: none;
   background-color: var(--light-yellow);
   border: 2px solid var(--dark-yellow);
-}
-
-.clear {
-  background-color: var(--light-pink);
-  color: var(--dark-red);
-  border-color: var(--dark-red);
 }
 
 button,
@@ -275,8 +268,8 @@ function calculateCalories(e) {
 function getCaloriesFromInputs(list) {
   let calories = 0;
 
-  for (let i = 0; i < list.length; i++) {
-    const currVal = cleanInputString(list[i].value);
+  for (const item of list) {
+    const currVal = cleanInputString(item.value);
     const invalidInputMatch = isInvalidInput(currVal);
 
     if (invalidInputMatch) {
@@ -293,8 +286,8 @@ function getCaloriesFromInputs(list) {
 function clearForm() {
   const inputContainers = Array.from(document.querySelectorAll('.input-container'));
 
-  for (let i = 0; i < inputContainers.length; i++) {
-    inputContainers[i].innerHTML = '';
+  for (const container of inputContainers) {
+    container.innerHTML = '';
   }
 
   budgetNumberInput.value = '';

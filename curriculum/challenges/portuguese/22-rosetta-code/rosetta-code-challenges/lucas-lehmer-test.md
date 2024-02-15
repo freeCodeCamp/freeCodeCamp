@@ -8,7 +8,7 @@ dashedName: lucas-lehmer-test
 
 # --description--
 
-Lucas-Lehmer Test: for $p$ an odd prime, the Mersenne number $2^p-1$ is prime if and only if $2^p-1$ divides $S(p-1)$ where $S(n+1)=(S(n))^2-2$, and $S(1)=4$.
+Teste de Lucas-Lehmer: para um primo ímpar $p$, o número de Mersenne $2^p-1$ é primo se e somente se $2^p-1$ puder dividir $S(p-1)$, onde $S(n+1)=(S(n))^2-2$ e $S(1)=4$.
 
 # --instructions--
 

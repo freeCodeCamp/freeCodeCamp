@@ -8,7 +8,7 @@ dashedName: greatest-subsequential-sum
 
 # --description--
 
-Given a sequence of integers, find a continuous subsequence which maximizes the sum of its elements, that is, the elements of no other single subsequence add up to a value larger than this one.
+Dada uma sequência de números inteiros, encontre uma subsequência contínua que maximize a soma de seus elementos, ou seja, os elementos de nenhuma outra subsequência somam um valor superior a este.
 
 Uma subsequência vazia é considerada ter a soma de \\( 0 \\). Portanto, se todos os elementos são negativos, o resultado deve ser a sequência vazia.
 

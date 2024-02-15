@@ -1,6 +1,6 @@
 ---
 id: 596e414344c3b2872167f0fe
-title: Comma quibbling (створення рядків значень розділених комою)
+title: Гра комами
 challengeType: 1
 forumTopicId: 302234
 dashedName: comma-quibbling
@@ -8,11 +8,11 @@ dashedName: comma-quibbling
 
 # --description--
 
-<a href="https://rosettacode.org/wiki/Comma_quibbling" target="_blank" rel="noopener noreferrer nofollow">Comma quibbling</a> is a task originally set by Eric Lippert in his blog.
+<a href="https://rosettacode.org/wiki/Comma_quibbling" target="_blank" rel="noopener noreferrer nofollow">Гра комами</a> — це завдання, яке спочатку з’явилось на блозі Еріка Ліпперта.
 
 # --instructions--
 
-Напишіть функцію для генерації вихідного рядка, який є об'єднанням вхідних слів з списку/послідовності, де:
+Напишіть функцію для генерації вихідного рядка, який є об’єднанням вхідних слів зі списку/послідовності, де:
 
 <ol>
   <li>Ввід без слів повертає вихідний рядок лише з двох дужок (<code>"{}"</code>)</li>
@@ -21,7 +21,7 @@ dashedName: comma-quibbling
   <li>Ввід трьох і більше слів (наприклад, <code>["ABC", "DEF", "G", "H"]</code>) повертає вихідний рядок зі всіма словами в дужках, де слова розділені <code>", "</code>, а останнє слово розділене <code>" and "</code> (наприклад, <code>"{ABC, DEF, G and H}"</code>)</li>
 </ol>
 
-Перевірте вашу функцію з наступною серією вхідних даних, показуючи ваш вихідний результат тут на сторінці:
+Протестуйте функцію за допомогою наступних вхідних даних, показавши вивід на цій сторінці:
 
 <ul>
   <li>[] # (без вхідних слів).</li>
@@ -30,7 +30,7 @@ dashedName: comma-quibbling
   <li>["ABC", "DEF", "G", "H"]</li>
 </ul>
 
-**Зверніть увагу:** Припустіть, що слова не є порожніми рядками у верхньому регістрі для цього завдання.
+**Примітка:** припускайте, що словами в цьому завданні є рядки у верхньому регістрі.
 
 # --hints--
 
@@ -40,31 +40,31 @@ dashedName: comma-quibbling
 assert(typeof quibble === 'function');
 ```
 
-Функція `quibble(["ABC"])` має повернути рядок.
+`quibble(["ABC"])` має повернути рядок.
 
 ```js
 assert(typeof quibble(['ABC']) === 'string');
 ```
 
-Функція `quibble([])` має повернути "{}".
+`quibble([])` має повернути `"{}"`.
 
 ```js
 assert.equal(quibble(testCases[0]), results[0]);
 ```
 
-Функція `quibble(["ABC"])` має повернути `"{ABC}"`.
+`quibble(["ABC"])` має повернути `"{ABC}"`.
 
 ```js
 assert.equal(quibble(testCases[1]), results[1]);
 ```
 
-Функція `quibble(["ABC", "DEF"])` має повернути `"{ABC and DEF}"`.
+`quibble(["ABC", "DEF"])` має повернути `"{ABC and DEF}"`.
 
 ```js
 assert.equal(quibble(testCases[2]), results[2]);
 ```
 
-Функція `quibble(["ABC", "DEF", "G", "H"])` має повернути `"{ABC, DEF, G and H}"`.
+`quibble(["ABC", "DEF", "G", "H"])` має повернути `"{ABC, DEF, G and H}"`.
 
 ```js
 assert.equal(quibble(testCases[3]), results[3]);

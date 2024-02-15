@@ -8,14 +8,14 @@ dashedName: last-letter-first-letter
 
 # --description--
 
-A certain children's game involves starting with a word in a particular category. Each participant in turn says a word, but that word must begin with the final letter of the previous word. Once a word has been given, it cannot be repeated. If an opponent cannot give a word in the category, they fall out of the game.
+Um certo jogo infantil envolve começar com uma palavra em uma determinada categoria. Cada participante, em sua vez, diz uma palavra, mas essa palavra deve começar com a letra final da palavra anterior. Quando uma palavra é dita, ela não pode ser repetida. Se o oponente não disser uma palavra da categoria, ele sai do jogo.
 
 Por exemplo, com a categoria "animais",
 
-<pre>Child 1: dog
-Child 2: goldfish
-Child 1: hippopotamus
-Child 2: snake
+<pre>Criança 1: cachorro
+Criança 2: onça
+Criança 1: antílope
+Criança 2: elefante
 ...
 </pre>
 

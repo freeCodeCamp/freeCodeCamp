@@ -16,7 +16,7 @@ dashedName: introduction-why-program
 
 # --description--
 
-More resources:
+Mais recursos:
 
 \- <a href="https://youtu.be/F7mtLrYzZP8" target="_blank" rel="noopener noreferrer nofollow">Instale Python no Windows</a>
 

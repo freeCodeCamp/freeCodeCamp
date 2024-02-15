@@ -8,7 +8,7 @@ dashedName: sum-to-100
 
 # --description--
 
-Find solutions to the *sum to one hundred* puzzle.
+Encontre soluções para o desafio de *soma até cem*.
 
 Adicione (insira) os operadores matemáticos **+** ou **─** (mais ou menos) antes de cada um dos dígitos na string numérica decimal **123456789**, de modo que a expressão matemática resultante chegue a uma soma específica (no caso conhecido, **100**).
 

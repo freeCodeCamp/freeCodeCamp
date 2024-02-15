@@ -8,16 +8,16 @@ dashedName: ethiopian-multiplication
 
 # --description--
 
-Ethiopian multiplication is a method of multiplying integers using only addition, doubling, and halving.
+A multiplicação etíope é um método de multiplicação de inteiros usando apenas adição, duplicação e divisão pela metade.
 
 **Método:**
 
 <ol>
-  <li>Take two numbers to be multiplied and write them down at the top of two columns</li>
-  <li>In the left-hand column repeatedly halve the last number, discarding any remainders, and write the result below the last in the same column, until you write a value of <code>1</code></li>
-  <li>In the right-hand column repeatedly double the last number and write the result below. stop when you add a result in the same row as where the left hand column shows <code>1</code></li>
-  <li>Examine the table produced and discard any row where the value in the left column is even</li>
-  <li>Sum the values in the right-hand column that remain to produce the result of multiplying the original two numbers together</li>
+  <li>Pegue dois números para serem multiplicados e anote-os no topo de duas colunas</li>
+  <li>Na coluna da esquerda, reduza repetidamente pela metade o último número, descartando quaisquer restos, e escreva o resultado abaixo do último na mesma coluna, até você escrever o valor de <code>1</code></li>
+  <li>Na coluna da direita, duplique repetidamente o último número e escreva o resultado abaixo. Pare quando adicionar um resultado na mesma linha onde a coluna da esquerda mostre <code>1</code></li>
+  <li>Examinar a tabela produzida e descarte qualquer linha onde o valor na coluna da esquerda seja par</li>
+  <li>Soma os valores na coluna da direita que permanecem para produzir o resultado da multiplicação dos dois números originais juntos</li>
 </ol>
 
 **Por exemplo:** `17 × 34`
@@ -74,7 +74,7 @@ Temos, então, que `17` multiplicado por `34`, pelo método etíope, é `578`.
 A tarefa é definir três funções/métodos/procedimentos/sub-rotinas nomeadas:
 
 <ol>
-  <li>one to halve an integer,</li>
+  <li>um para dividir pela metade um número inteiro,</li>
   <li>um para dobrar um número inteiro, e</li>
   <li>uma para declarar se um inteiro é par</li>
 </ol>

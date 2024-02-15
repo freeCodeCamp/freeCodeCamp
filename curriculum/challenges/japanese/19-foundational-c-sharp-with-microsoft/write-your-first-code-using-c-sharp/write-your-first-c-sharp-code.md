@@ -1,38 +1,38 @@
 ---
 id: 647e239e8acb466c97ccbf05
-title: 'Write Your First C# Code'
+title: '最初の C# コードを記述する'
 challengeType: 19
 dashedName: write-your-first-c-sharp-code
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+このチャレンジには Microsoft Learn プラットフォームで実行するパートがあります。 下記の手順に従ってチャレンジを完了させてください:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-write-first/</a> and complete all the tasks in the "Write Your First C# Code" module. This is **required** to earn the "Write Your First Code Using C#" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-write-first/</a> へ移動し、「最初の C# コードを記述する (Write Your First C# Code)」モジュール内のすべてのタスクを完了してください。 これは、Microsoft Learn のトロフィー「C# を使用して最初のコードを書く」を獲得し、認定試験の受験資格を得るために**必須**となります。
+1. 完了後、このページに戻り、下記の質問に正しく回答してください。
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank" rel="noreferrer">Write Your First C# Code</a> module on Microsoft Learn. Then, answer the question below.
+Microsoft Learn で「<a href="https://learn.microsoft.com/training/modules/csharp-write-first/" target="_blank" rel="noreferrer">最初の C# コードを記述する</a>」モジュールを完了してください。 次に、下記の質問に回答してください。
 
 # --question--
 
 ## --text--
 
-What is the difference between `Console.Write` and `Console.WriteLine`?
+`Console.Write` と `Console.WriteLine` の違いは何ですか？
 
 ## --answers--
 
-`Console.Write` prints the output on a new line.
+`Console.Write` は出力を新しい行に表示する
 
 ---
 
-`Console.WriteLine` prints the output on a new line.
+`Console.WriteLine` は出力を新しい行に表示する
 
 ---
 
-`Console.WriteLine` appends a new line after the output.
+`Console.WriteLine` は出力の後に新しい行を追加する
 
 ## --video-solution--
 

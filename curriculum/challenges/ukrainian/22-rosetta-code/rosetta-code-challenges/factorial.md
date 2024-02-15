@@ -8,9 +8,9 @@ dashedName: factorial
 
 # --description--
 
-Write a function to return the factorial of a number.
+Напишіть функцію, яка поверне факторіал числа.
 
-Факторіал числа визначається як:
+Факторіал числа задано виразом:
 
 <pre><big>n! = n * (n-1) * (n-2) * ..... * 1</big>
 </pre>
@@ -38,19 +38,19 @@ assert(typeof factorial === 'function');
 assert(typeof factorial(2) === 'number');
 ```
 
-`factorial(3)` має повернути число 6.
+`factorial(3)` має повернути `6`.
 
 ```js
 assert.equal(factorial(3), 6);
 ```
 
-`factorial(5)` має повернути число 120.
+`factorial(5)` має повернути `120`.
 
 ```js
 assert.equal(factorial(5), 120);
 ```
 
-`factorial(10)` має повернути число 3,628,800.
+`factorial(10)` має повернути `3,628,800`.
 
 ```js
 assert.equal(factorial(10), 3628800);

@@ -1,6 +1,6 @@
 ---
 id: 599c333915e0ea32d04d4bec
-title: Операції Element-wise
+title: Поелементні операції
 challengeType: 1
 forumTopicId: 302252
 dashedName: element-wise-operations
@@ -8,9 +8,9 @@ dashedName: element-wise-operations
 
 # --description--
 
-Implement basic element-wise matrix-matrix and scalar-matrix operations.
+Реалізуйте базові поелементні операції для матриць та скалярів.
 
-**Виконайте:**
+**Реалізуйте:**
 
 <ul>
   <li>додавання</li>
@@ -20,7 +20,7 @@ Implement basic element-wise matrix-matrix and scalar-matrix operations.
   <li>піднесення до степеня</li>
 </ul>
 
-Перший параметр буде виконувати операцію "m_add" для додавання матриці та "s_add" для скалярного додавання. Другий і третій параметри будуть матрицями, на яких повинні виконуватися дії.
+Першим параметром буде операція, яку потрібно виконати: наприклад, "m_add" для додавання матриці та "s_add" для додавання скаляра. Другим та третім параметрами будуть матриці, над якими виконуватимуться операції.
 
 # --hints--
 

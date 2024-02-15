@@ -8,7 +8,7 @@ dashedName: y-combinator
 
 # --description--
 
-In strict <a href="https://www.freecodecamp.org/news/the-principles-of-functional-programming/" target="_blank" rel="noopener noreferrer nofollow">functional programming</a> and the lambda calculus, functions (lambda expressions) don't have state and are only allowed to refer to arguments of enclosing functions. This rules out the usual definition of a recursive function wherein a function is associated with the state of a variable and this variable's state is used in the body of the function.
+Em <a href="https://www.freecodecamp.org/news/the-principles-of-functional-programming/" target="_blank" rel="noopener noreferrer nofollow">programação funcional</a> estrita e em cálculo de lambda, as funções (expressões lambda) não têm estado e é permitido apenas se referir a argumentos de funções encapsuladas. Isso exclui a definição habitual de uma função recursiva, na qual uma função é associada ao estado de uma variável e o estado dessa variável é usado no corpo da função.
 
 O combinador Y é uma função sem estado que, ao ser aplicada a outra função sem estado, retorna uma versão recursiva da função. O combinador Y é a classe mais simples de tais funções, chamadas de combinadores de pontos fixos.
 

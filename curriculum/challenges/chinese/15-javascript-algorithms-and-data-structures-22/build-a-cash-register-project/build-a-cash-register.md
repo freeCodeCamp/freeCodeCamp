@@ -10,11 +10,9 @@ dashedName: build-a-cash-register
 
 Here you'll build a cash register app that will return change to the customer based on the price of the item, the amount of cash provided by the customer, and the amount of cash in the cash drawer. You'll also need to show different messages to the user in different scenarios, such as when the customer provides too little cash or when the cash drawer doesn't have enough to issue the correct change.
 
-There are a few variables you'll need to use in your code:
+In the `script.js` file, you have been provided with the `price` and `cid` variables. The `price` variable is the price of the item, and the `cid` variable is the cash-in-drawer, which is a 2D array listing the available currency in the cash drawer.
 
-- `price`：商品的价格，以浮点数表示。
-- `cash`：顾客为商品提供的现金金额，通过页面上的`input`元素来提供。
-- `cid`：现金抽屉，一个列出现金抽屉中可用货币的二维数组。
+The other variable you will need add is the `cash` variable, which is the amount of cash provided by the customer for the item, which is provided via an `input` element on the page.
 
 If you'd like to test your application with different values for `price` and `cid`, make sure to declare them with the `let` keyword so they can be reassigned by our tests.
 

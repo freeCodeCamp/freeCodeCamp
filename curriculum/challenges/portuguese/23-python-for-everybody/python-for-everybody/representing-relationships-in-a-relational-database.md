@@ -14,7 +14,7 @@ dashedName: representing-relationships-in-a-relational-database
 
 ## --text--
 
-What is a foreign key?
+O que é uma chave estrangeira?
 
 ## --answers--
 

@@ -8,13 +8,13 @@ dashedName: semiprime
 
 # --description--
 
-Semiprime numbers are natural numbers that are products of exactly two (possibly equal) <a href="https://rosettacode.org/wiki/prime_number" target="_blank" rel="noopener noreferrer nofollow">prime numbers</a>.
+Напівпрості числа — це натуральні числа, які є добутками двох (можливо рівних) <a href="https://rosettacode.org/wiki/prime_number" target="_blank" rel="noopener noreferrer nofollow">простих чисел</a>.
 
 <pre>1679  =  23 x 73</pre>
 
 # --instructions--
 
-Напишіть функцію, яка повертає true, якщо число є напівпростим, або false, якщо це не так.
+Напишіть функцію, яка повертає true, якщо число є напівпростим, або false, якщо навпаки.
 
 # --hints--
 
@@ -24,7 +24,7 @@ Semiprime numbers are natural numbers that are products of exactly two (possibly
 assert(typeof isSemiPrime === 'function');
 ```
 
-`isSemiPrime(100)` має повернути логічне значення.
+`isSemiPrime(100)` має повернути булеве значення.
 
 ```js
 assert(typeof isSemiPrime(100) === 'boolean');

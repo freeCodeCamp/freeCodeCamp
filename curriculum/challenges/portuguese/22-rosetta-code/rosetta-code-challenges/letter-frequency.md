@@ -8,7 +8,7 @@ dashedName: letter-frequency
 
 # --description--
 
-Given a string, calculate the frequency of each character.
+Ao receber uma string, calcule a frequência de cada caractere.
 
 Todos os caracteres devem ser contados. Isto inclui letras minúsculas e maiúsculas, dígitos, espaços em branco, caracteres especiais ou quaisquer outros caracteres distintos.
 

@@ -1,0 +1,48 @@
+---
+id: 657e761058c1e469fb387f68
+title: Task 127
+challengeType: 19
+dashedName: task-127
+---
+
+# --description--
+
+In software testing, `bugs` refer to errors or problems in the software that need to be identified and fixed. Understanding this term is crucial for comprehending the role of a QA tester.
+
+# --question--
+
+## --text--
+
+What are `bugs` in software?
+
+## --answers--
+
+Features that users like.
+
+### --feedback--
+
+`Bugs` are not features, but issues.
+
+---
+
+The software's security measures.
+
+### --feedback--
+
+`Bugs` relate to errors, not security measures directly.
+
+---
+
+Parts of the software that are new.
+
+### --feedback--
+
+`Bugs` are not new parts, but problems.
+
+---
+
+Errors or problems that need to be fixed.
+
+## --video-solution--
+
+4

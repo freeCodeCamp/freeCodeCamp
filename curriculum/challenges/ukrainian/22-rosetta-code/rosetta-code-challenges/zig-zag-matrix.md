@@ -8,9 +8,9 @@ dashedName: zig-zag-matrix
 
 # --description--
 
-A 'zig-zag' array is a square arrangement of the first $N^2$ integers, where the numbers increase sequentially as you zig-zag along the array's anti-diagonals.
+Зигзагоподібний масив — це квадратне розташування перших $N^2$ цілих чисел, де числа послідовно збільшуються по діагоналях.
 
-Наприклад, для введення `5` такий результат має згенеруватися:
+Наприклад, якщо ввести `5`, то результатом буде:
 
 <pre>
  0  1  5  6 14
@@ -26,37 +26,37 @@ A 'zig-zag' array is a square arrangement of the first $N^2$ integers, where the
 
 # --hints--
 
-ZigZagMatrix має бути функцією.
+`ZigZagMatrix` має бути функцією.
 
 ```js
 assert.equal(typeof ZigZagMatrix, 'function');
 ```
 
-Зигзагоподібна матриця повинна повернути масив.
+`ZigZagMatrix` має повернути масив.
 
 ```js
 assert.equal(typeof ZigZagMatrix(1), 'object');
 ```
 
-Зигзагоподібна матриця повинна повернути масив вкладених масивів.
+`ZigZagMatrix` має повернути масив вкладених масивів.
 
 ```js
 assert.equal(typeof ZigZagMatrix(1)[0], 'object');
 ```
 
-Зигзагоподібна матриця повинна повернути \[[0]].
+`ZigZagMatrix(1)` має повернути `\[[0]]`.
 
 ```js
 assert.deepEqual(ZigZagMatrix(1), zm1);
 ```
 
-Зигзагоподібна матриця(2) повинна повернути \[[0, 1], [2, 3]].
+`ZigZagMatrix(2)` має повернути `\[[0, 1], [2, 3]]`.
 
 ```js
 assert.deepEqual(ZigZagMatrix(2), zm2);
 ```
 
-Зигзагоподібна матриця(5) повинна повернути задану матрицю.
+`ZigZagMatrix(5)` має повернути вказану матрицю.
 
 ```js
 assert.deepEqual(ZigZagMatrix(5), zm5);

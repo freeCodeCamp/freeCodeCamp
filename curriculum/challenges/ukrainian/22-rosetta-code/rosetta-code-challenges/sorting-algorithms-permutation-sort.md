@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc800c
-title: Алгоритми сортування/Сортування перестановкою
+title: 'Алгоритми сортування: сортування перестановкою'
 challengeType: 1
 forumTopicId: 302316
 dashedName: sorting-algorithmspermutation-sort
@@ -8,7 +8,7 @@ dashedName: sorting-algorithmspermutation-sort
 
 # --description--
 
-Write a function to implement a permutation sort, which proceeds by generating the possible permutations of the input array until discovering the sorted one. The function should return the sorted array.
+Напишіть функцію для реалізації сортування перестановкою, яка продовжує генерувати можливі перестановки вхідного масиву до отримання відсортованого масиву. Функція має повернути відсортований масив.
 
 Псевдокод:
 

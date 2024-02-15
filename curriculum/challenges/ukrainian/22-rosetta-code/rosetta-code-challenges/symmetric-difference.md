@@ -8,15 +8,15 @@ dashedName: symmetric-difference
 
 # --description--
 
-Given two sets *A* and *B*, compute $(A \\setminus B) \\cup (B \\setminus A).$ That is, enumerate the items that are in *A* or *B* but not both. This set is called the symmetric difference of *A* and *B*. In other words: $(A \\cup B) \\setminus (A \\cap B)$ (the set of items that are in at least one of *A* or *B* minus the set of items that are in both *A* and *B*).
+Дано дві множини: *A* та *B*. Обчисліть $(A \\setminus B) \\cup (B \\setminus A).$ Тобто перерахуйте предмети, які розташовані або в *A*, або в *B*, але не в обох одночасно. Ця множина називається симетричною різницею множин *A* та *B*. Іншими словами: $(A \\cup B) \\setminus (A \\cap B)$ (множина предметів, які знаходяться в *A* або *B*, мінус множина предметів, які знаходяться в *A* та *B*).
 
 Наприклад:
 
-Для множин `A = [1, 2, 3]` та `B = [1, 3, 4]` симетрична різниця *A* та *B* є `[2, 4]`.
+Для множин `A = [1, 2, 3]` та `B = [1, 3, 4]` симетричною різницею множин *A* та *B* є `[2, 4]`.
 
 # --instructions--
 
-Створіть функцію, яка приймає два масиви як параметри та повертає симетричну різницю. Відсортуйте отриманий масив перед поверненням.
+Напишіть функцію, яка приймає два масиви як параметри та повертає симетричну різницю. Відсортуйте отриманий масив, перш ніж повернути його.
 
 # --hints--
 

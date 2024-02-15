@@ -116,6 +116,7 @@ export type Characters =
   | 'Bob'
   | 'Brian'
   | 'David'
+  | 'Expert'
   | 'Jake'
   | 'James'
   | 'Linda'

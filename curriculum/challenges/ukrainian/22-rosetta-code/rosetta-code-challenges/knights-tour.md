@@ -8,11 +8,11 @@ dashedName: knights-tour
 
 # --description--
 
-Knight's Tour Problem: You have an empty `width` \* `height` chessboard, but for a single knight on some square. The knight must perform a sequence of legal moves that result in the knight visiting every square on the chessboard exactly once. Note that it is *not* a requirement that the tour be "closed"; that is, the knight need not end within a single move of its start position.
+У вас є порожня шахівниця (розміром `ширина` \* `висота`) з одним конем на одній з клітинок. Кінь повинен виконати послідовність ходів таким чином, щоб побувати на кожній клітинці шахівниці лише один раз. Зауважте, що маршрут *необов’язково* повинен бути замкнутим; тобто кінь може закінчити гру, опинившись не на початковій позиції.
 
 # --instructions--
 
-Напишіть функцію, яка бере `width` і `height` як параметри й повертає кількість початкових позицій звідти, де можливо виконати завдання, про яке йшлося вище.
+Напишіть функцію, яка приймає ширину (`width`) та висоту (`height`) як параметри і повертає кількість початкових позицій, за яких можливо виконати завдання вище.
 
 # --hints--
 
@@ -22,37 +22,37 @@ Knight's Tour Problem: You have an empty `width` \* `height` chessboard, but for
 assert(typeof knightTour == 'function');
 ```
 
-`knightTour(6, 6)` повинен повернути число.
+`knightTour(6, 6)` має повернути число.
 
 ```js
 assert(typeof knightTour(6, 6) == 'number');
 ```
 
-`knightTour(6, 6)` повинен повернути `36`.
+`knightTour(6, 6)` має повернути `36`.
 
 ```js
 assert.equal(knightTour(6, 6), 36);
 ```
 
-`knightTour(5, 6)`повинен повернути `30`.
+`knightTour(5, 6)` має повернути `30`.
 
 ```js
 assert.equal(knightTour(5, 6), 30);
 ```
 
-`knightTour(4, 6)` повинен повернути. `12`.
+`knightTour(4, 6)` має повернути `12`.
 
 ```js
 assert.equal(knightTour(4, 6), 12);
 ```
 
-`knightTour(7, 3)` повинен повернути `10`.
+`knightTour(7, 3)` має повернути `10`.
 
 ```js
 assert.equal(knightTour(7, 3), 10);
 ```
 
-`knightTour(8, 6)` повинен повернути `48`.
+`knightTour(8, 6)` має повернути `48`.
 
 ```js
 assert.equal(knightTour(8, 6), 48);

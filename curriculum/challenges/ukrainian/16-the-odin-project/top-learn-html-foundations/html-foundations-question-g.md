@@ -13,19 +13,19 @@ HTML та CSS — це дві мови, які працюють разом, що
 
 ## --text--
 
-What are the primary responsibilities of HTML and CSS in creating a webpage?
+Які основні обов’язки виконують HTML та CSS при створенні вебсторінки?
 
 ## --answers--
 
-HTML structures the content, while CSS styles the elements.
+HTML структурує вміст, а CSS стилізує елементи.
 
 ---
 
-HTML creates the visual design, while CSS organizes the content.
+HTML створює візуальний дизайн, а CSS організовує вміст.
 
 ---
 
-CSS manages the functionality, while HTML controls the layout.
+CSS контролює функціоналом, а HTML — макетом.
 
 
 ## --video-solution--

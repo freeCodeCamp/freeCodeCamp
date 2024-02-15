@@ -22,21 +22,21 @@ Du solltest die Klammerschreibweise verwenden, um auf die Eigenschaft von `total
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]/);
 ```
 
 Du solltest den Zuweisungsoperator verwenden, um den Wert der Eigenschaft von `totalCountPerProduct` zu aktualisieren, die `dessert.id` entspricht.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=/);
 ```
 
 Du solltest den Wert von `totalCountPerProduct` auf den aktuellen Wert plus eins aktualisieren.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\[\s*dessert\.id\s*\]\s*\+\s*1/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*\+\s*1/);
 ```
 
 

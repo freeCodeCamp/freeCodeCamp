@@ -8,7 +8,7 @@ dashedName: sedols
 
 # --description--
 
-<abbr title="Stock Exchange Daily Official List">SEDOL</abbr> is a list of securities identification numbers issued by the London Stock Exchange.
+A <abbr title="Stock Exchange Daily Official List">SEDOL</abbr> é uma lista de números de identificação de segurança emitidos pela Bolsa de Valores de Londres.
 
 Para cada lista de números de 6 algarismos da <abbr title="Stock Exchange Daily Official List">SEDOL</abbr>, calcule e acrescente o algarismo da soma de verificação. Ou seja, dada a string de entrada à esquerda, sua função deve retornar a string correspondente à direita:
 

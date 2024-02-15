@@ -1,5 +1,6 @@
 const { root } = require('mdast-builder');
 const find = require('unist-util-find');
+const visit = require('unist-util-visit');
 const getAllBetween = require('./utils/between-headings');
 const getAllBefore = require('./utils/before-heading');
 const mdastToHtml = require('./utils/mdast-to-html');
@@ -39,6 +40,8 @@ function plugin() {
     if (fillInTheBlankNodes.length > 0) {
       const fillInTheBlankTree = root(fillInTheBlankNodes);
 
+      validateBlanksCount(fillInTheBlankTree);
+
       const sentenceNodes = getAllBetween(fillInTheBlankTree, '--sentence--');
       const blanksNodes = getAllBetween(fillInTheBlankTree, '--blanks--');
 
@@ -47,6 +50,18 @@ function plugin() {
       file.data.fillInTheBlank = fillInTheBlank;
     }
   }
+}
+
+function validateBlanksCount(fillInTheBlankTree) {
+  let blanksCount = 0;
+  visit(fillInTheBlankTree, { value: '--blanks--' }, () => {
+    blanksCount++;
+  });
+
+  if (blanksCount !== 1)
+    throw Error(
+      `There should only be one --blanks-- section in the fillInTheBlank challenge`
+    );
 }
 
 function getfillInTheBlank(sentenceNodes, blanksNodes) {

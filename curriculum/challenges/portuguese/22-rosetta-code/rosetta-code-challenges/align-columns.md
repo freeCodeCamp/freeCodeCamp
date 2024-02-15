@@ -8,7 +8,7 @@ dashedName: align-columns
 
 # --description--
 
-Given an array of many lines, where fields within a line are delineated by a single `$` character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.
+Dado um array de muitas linhas, onde os campos dentro de uma linha são delineados por um único caractere `$`, escreva um programa que alinha cada coluna de campos, garantindo que as palavras em cada coluna estejam separadas por pelo menos um espaço. Além disso, permita que cada palavra em uma coluna seja deixada justificada à esquerda, justificada à direita ou justificada ao centro em sua coluna.
 
 # --instructions--
 
@@ -31,7 +31,7 @@ const testText = [
 
 **Observe que:**
 
-- The example input texts lines may, or may not, have trailing dollar characters.
+- As linhas de textos de entrada de exemplo podem, ou não, ter caracteres de dólar à frente.
 - Todas as colunas devem compartilhar o mesmo alinhamento.
 - Caracteres de espaço consecutivos adjacentes produzidos ao final das linhas são insignificantes para os propósitos da tarefa.
 - O texto de saída será visto em uma fonte monoespaçada em um editor de texto simples ou em um terminal básico. As linhas nele devem ser unidas usando o caractere de nova linha (`\n`).

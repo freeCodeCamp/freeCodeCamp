@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ed3
-title: Задача пакування рюкзака/Безперервна
+title: Задача пакування рюкзака тривалої дії
 challengeType: 1
 forumTopicId: 323654
 dashedName: knapsack-problemcontinuous
@@ -8,17 +8,17 @@ dashedName: knapsack-problemcontinuous
 
 # --description--
 
-A thief burgles a butcher's shop, where he can select from some items.
+Злодій грабує м’ясну лавку і може вибрати декілька продуктів.
 
-Злодій знає вагу і ціну кожного предмета. Оскільки його рюкзак має обмеження максимальної ваги, він хоче вибрати предмети так, щоб отримати максимальний прибуток. Він може розрізати предмети; після різання ціна товару знизиться пропорційно початковій ціні за співвідношенням мас. Тобто половина товару коштуватиме вдвічі дешевше від початкової вартості.
+Злодій знає вагу і ціну всіх продуктів. Оскільки його рюкзак може витримати лише певну вагу, він хоче вибрати продукти так, щоб отримати максимальний прибуток. Він може розрізати продукти; після цього ціна товару знизиться пропорційно початковій ціні за співвідношенням ваги. Тобто половина продукту коштуватиме вдвічі менше від початкової ціни.
 
 # --instructions--
 
-Напишіть функцію, яка приймає масив об'єктів, що становлять товари, доступні в магазині. Кожен об'єкт має назву, вагу та вартість. У параметрах функції також вказується максимальна вага. Функція повинна повернути максимально можливе значення, а загальна вага вибраних елементів не повинна перевищувати максимальну вагу.
+Напишіть функцію, яка приймає масив продуктів, доступних в магазині. Кожен об’єкт має 3 атрибути: назва, вага та цінність. Функція також приймає максимальну вагу як параметр. Функція має повернути найбільшу можливу цінність, а загальна вага вибраних продуктів не може перевищувати максимально допустиму вагу.
 
 # --hints--
 
-`knapContinuous([{ "weight":3.8, "value":36, name:"beef" }, { "weight":5.4, "value":43, name:"pork" }, { "weight":3.6, "value":90, name:"ham" }, { "weight":2.4, "value":45, name:"greaves" }, { "weight":4.0, "value":30, name:"flitch" }, { "weight":2.5, "value":56, name:"brawn" }, { "weight":3.7, "value":67, name:"welt" }, { "weight":3.0, "value":95, name:"salami" }, { "weight":5.9, "value":98, name:"sausage" }], 10)` має повертати`257.875`.
+`knapContinuous([{ "weight":3.8, "value":36, name:"beef" }, { "weight":5.4, "value":43, name:"pork" }, { "weight":3.6, "value":90, name:"ham" }, { "weight":2.4, "value":45, name:"greaves" }, { "weight":4.0, "value":30, name:"flitch" }, { "weight":2.5, "value":56, name:"brawn" }, { "weight":3.7, "value":67, name:"welt" }, { "weight":3.0, "value":95, name:"salami" }, { "weight":5.9, "value":98, name:"sausage" }], 10)` має повернути `257.875`.
 
 ```js
 assert.equal(
@@ -40,7 +40,7 @@ assert.equal(
 );
 ```
 
-`knapContinuous([{ "weight":3.8, "value":36, name:"beef" }, { "weight":5.4, "value":43, name:"pork" }, { "weight":3.6, "value":90, name:"ham" }, { "weight":2.4, "value":45, name:"greaves" }, { "weight":4.0, "value":30, name:"flitch" }, { "weight":2.5, "value":56, name:"brawn" }, { "weight":3.7, "value":67, name:"welt" }, { "weight":3.0, "value":95, name:"salami" }, { "weight":5.9, "value":98, name:"sausage" }], 12)` має повертати`295.05405405405406`.
+`knapContinuous([{ "weight":3.8, "value":36, name:"beef" }, { "weight":5.4, "value":43, name:"pork" }, { "weight":3.6, "value":90, name:"ham" }, { "weight":2.4, "value":45, name:"greaves" }, { "weight":4.0, "value":30, name:"flitch" }, { "weight":2.5, "value":56, name:"brawn" }, { "weight":3.7, "value":67, name:"welt" }, { "weight":3.0, "value":95, name:"salami" }, { "weight":5.9, "value":98, name:"sausage" }], 12)` має повернути `295.05405405405406`.
 
 ```js
 assert.equal(
@@ -62,7 +62,7 @@ assert.equal(
 );
 ```
 
-`knapContinuous([{ "weight":3.8, "value":36, name:"beef" }, { "weight":5.4, "value":43, name:"pork" }, { "weight":3.6, "value":90, name:"ham" }, { "weight":2.4, "value":45, name:"greaves" }, { "weight":4.0, "value":30, name:"flitch" }, { "weight":2.5, "value":56, name:"brawn" }, { "weight":3.7, "value":67, name:"welt" }, { "weight":3.0, "value":95, name:"salami" }, { "weight":5.9, "value":98, name:"sausage" }], 15)` має повертати`349.3783783783784`.
+`knapContinuous([{ "weight":3.8, "value":36, name:"beef" }, { "weight":5.4, "value":43, name:"pork" }, { "weight":3.6, "value":90, name:"ham" }, { "weight":2.4, "value":45, name:"greaves" }, { "weight":4.0, "value":30, name:"flitch" }, { "weight":2.5, "value":56, name:"brawn" }, { "weight":3.7, "value":67, name:"welt" }, { "weight":3.0, "value":95, name:"salami" }, { "weight":5.9, "value":98, name:"sausage" }], 15)` має повернути `349.3783783783784`.
 
 ```js
 assert.equal(
@@ -84,7 +84,7 @@ assert.equal(
 );
 ```
 
-`knapContinuous([{ "weight":3.8, "value":36, name:"beef" }, { "weight":5.4, "value":43, name:"pork" }, { "weight":3.6, "value":90, name:"ham" }, { "weight":2.4, "value":45, name:"greaves" }, { "weight":4.0, "value":30, name:"flitch" }, { "weight":2.5, "value":56, name:"brawn" }, { "weight":3.7, "value":67, name:"welt" }, { "weight":3.0, "value":95, name:"salami" }, { "weight":5.9, "value":98, name:"sausage" }], 22)` має повертати`459.5263157894737`.
+`knapContinuous([{ "weight":3.8, "value":36, name:"beef" }, { "weight":5.4, "value":43, name:"pork" }, { "weight":3.6, "value":90, name:"ham" }, { "weight":2.4, "value":45, name:"greaves" }, { "weight":4.0, "value":30, name:"flitch" }, { "weight":2.5, "value":56, name:"brawn" }, { "weight":3.7, "value":67, name:"welt" }, { "weight":3.0, "value":95, name:"salami" }, { "weight":5.9, "value":98, name:"sausage" }], 22)` має повернути `459.5263157894737`.
 
 ```js
 assert.equal(
@@ -106,7 +106,7 @@ assert.equal(
 );
 ```
 
-`knapContinuous([{ "weight":3.8, "value":36, name:"beef" }, { "weight":5.4, "value":43, name:"pork" }, { "weight":3.6, "value":90, name:"ham" }, { "weight":2.4, "value":45, name:"greaves" }, { "weight":4.0, "value":30, name:"flitch" }, { "weight":2.5, "value":56, name:"brawn" }, { "weight":3.7, "value":67, name:"welt" }, { "weight":3.0, "value":95, name:"salami" }, { "weight":5.9, "value":98, name:"sausage" }], 24)` має повертати`478.4736842105263`.
+`knapContinuous([{ "weight":3.8, "value":36, name:"beef" }, { "weight":5.4, "value":43, name:"pork" }, { "weight":3.6, "value":90, name:"ham" }, { "weight":2.4, "value":45, name:"greaves" }, { "weight":4.0, "value":30, name:"flitch" }, { "weight":2.5, "value":56, name:"brawn" }, { "weight":3.7, "value":67, name:"welt" }, { "weight":3.0, "value":95, name:"salami" }, { "weight":5.9, "value":98, name:"sausage" }], 24)` має повернути `478.4736842105263`.
 
 ```js
 assert.equal(

@@ -8,7 +8,7 @@ dashedName: date-manipulation
 
 # --description--
 
-Given a date string in EST, output the given date as a string with 12 hours added to the time. Time zone should be preserved.
+Dada uma string de data no fuso horário EST, retorne a data informada como uma string com 12 horas adicionadas à hora. O fuso horário deve ser preservado.
 
 Exemplo de entrada: `"March 6 2009 7:30pm EST"`
 

@@ -28,10 +28,10 @@ In this project, you'll build an app that will search for Pokémon by name or ID
 1. Ви повинні мати елемент з `id` зі значенням `special-defense`
 1. Ви повинні мати елемент з `id` зі значенням `speed`
 1. Якщо елемент `#search-input` містить значення `Red` та натиснути на елемент `#search-button`, то має з’явитись попередження з текстом `Pokémon not found`
-1. Якщо елемент `#search-input` містить значення `Pikachu` та натиснути на елемент `#search-button`, то значеннями в елементах `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack` та `#special-defense` відповідно мають бути `PIKACHU`, `#25` або `25`, `Weight: 60` або `60`, `Height: 4` або `4`, `35`, `55`, `40`, `50`, `50` та `90`
+1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, `#special-defense`, and `#speed` elements should be `PIKACHU`, `#25` or `25`, `Weight: 60` or `60`, `Height: 4` or `4`, `35`, `55`, `40`, `50`, `50`, and `90`, respectively
 1. Якщо елемент `#search-input` містить значення `Pikachu` та натиснути на елемент `#search-button`, то на сторінку потрібно додати елемент `img` з `id` зі значенням `sprite` та `src` зі значенням спрайту покемона `front_default`
 1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `#types` element should contain a single inner element with the value `ELECTRIC`. The `#types` element content should be cleared between searches
-1. Якщо елемент `#search-input` містить значення `94` та натиснути на елемент `#search-button`, то значеннями в елементах `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack` та `#special-defense` відповідно мають бути `GENGAR`, `#94` або `94`, `Weight: 405` або `405`, `Height: 15` або `15`, `60`, `65`, `60`, `130`, `75` та `110`
+1. When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, `#special-defense`, and `#speed`elements should be `GENGAR`, `#94` or `94`, `Weight: 405` or `405`, `Height: 15` or `15`, `60`, `65`, `60`, `130`, `75`, and `110`, respectively
 1. Якщо елемент `#search-input` містить значення `94` та натиснути на елемент `#search-button`, то на сторінку потрібно додати елемент `img` з `id` зі значенням `sprite` та `src` зі значенням спрайту покемона `front_default`
 1. When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `#types` element should contain two inner elements with the text values `GHOST` and `POISON`, respectively. The `#types` element content should be cleared between searches
 
@@ -158,7 +158,7 @@ async () => {
 };
 ```
 
-When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, and `#special-defense` elements should be `PIKACHU`, `#25` or `25`, `Weight: 60` or `60`, `Height: 4` or `4`, `35`, `55`, `40`, `50`, `50`, and `90`, respectively.
+When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, `#special-defense`, and `#speed` elements should be `PIKACHU`, `#25` or `25`, `Weight: 60` or `60`, `Height: 4` or `4`, `35`, `55`, `40`, `50`, `50`, and `90`, respectively.
 
 ```js
 async () => {
@@ -251,7 +251,7 @@ async () => {
 };
 ```
 
-When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, and `#special-defense` elements should be `GENGAR`, `#94` or `94`, `Weight: 405` or `405`, `Height: 15` or `15`, `60`, `65`, `60`, `130`, `75`, and `110`, respectively.
+When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, `#special-defense`, and `#speed` elements should be `GENGAR`, `#94` or `94`, `Weight: 405` or `405`, `Height: 15` or `15`, `60`, `65`, `60`, `130`, `75`, and `110`, respectively.
 
 ```js
 async () => {

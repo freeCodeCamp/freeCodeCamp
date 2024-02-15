@@ -20,7 +20,7 @@ test.describe('Search', () => {
       await expect(searchInput).toBeVisible();
       await expect(searchInput).toHaveAttribute(
         'placeholder',
-        'Search 9,000+ tutorials'
+        'Search 10,700+ tutorials'
       );
     }
   });

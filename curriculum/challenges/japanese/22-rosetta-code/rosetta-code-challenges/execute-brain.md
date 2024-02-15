@@ -1,6 +1,6 @@
 ---
 id: 59e0a8df964e4540d5abe599
-title: Brain****の実行
+title: Execute Brain****
 challengeType: 1
 forumTopicId: 302261
 dashedName: execute-brain
@@ -10,28 +10,28 @@ dashedName: execute-brain
 
 Write a function to implement a Brain\*\*\*\* interpreter. The function will take a string as a parameter and should return a string as the output. More details are given below:
 
-RCBFは ロゼッタコード用に様々な言語で書かれた<a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> コンパイラおよびインタプリタのセットです。
+RCBF is a set of <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> compilers and interpreters written for Rosetta Code in a variety of languages.
 
-以下は、RCBFの各バージョンへのリンクです。
+Below are links to each of the versions of RCBF.
 
-実装には以下の手順を適切に実行する必要があります。
+An implementation need only properly implement the following instructions:
 
-| Command                   | 説明                                                          |
-| ------------------------- | ----------------------------------------------------------- |
-| <code>></code> | Move the pointer to the right                               |
-| <code>&lt;</code> | ポインタを左に移動します                                                |
-| <code>+</code> | ポインタの下にあるメモリーセルを増やします                                       |
-| <code>-</code> | ポインタの下にあるメモリーセルを減らします                                       |
-| <code>.</code> | ポインターのセルで示された文字を出力します                                       |
-| <code>,</code> | 文字を入力し、ポインタのセルに格納します                                        |
-| <code>\[</code> | ポインタの下のセルが 0 の場合、一致する <code>]</code> をジャンプします      |
-| <code>]</code> | ポインタの下のセルがゼロでない場合、一致する <code>\[</code> にジャンプして戻ります |
+| Command           | Description                                                                        |
+| ----------------- | ---------------------------------------------------------------------------------- |
+| <code>></code>    | Move the pointer to the right                                                      |
+| <code>&lt;</code> | Move the pointer to the left                                                       |
+| <code>+</code>    | Increment the memory cell under the pointer                                        |
+| <code>-</code>    | Decrement the memory cell under the pointer                                        |
+| <code>.</code>    | Output the character signified by the cell at the pointer                          |
+| <code>,</code>    | Input a character and store it in the cell at the pointer                          |
+| <code>\[</code>   | Jump past the matching <code>]</code> if the cell under the pointer is 0           |
+| <code>]</code>    | Jump back to the matching <code>\[</code> if the cell under the pointer is nonzero |
 
-セルのサイズに制限はありません。メモリに制限があるかどうかに関わらず、EOF (*E*nd-*O*-*F*ile) のサポートは任意です。
+Any cell size is allowed, EOF (*E*nd-*O*-*F*ile) support is optional, as is whether you have bounded or unbounded memory.
 
 # --hints--
 
-`brain(bye)` は文字列を返します。
+`brain(bye)` should return a string
 
 ```js
 assert(typeof brain(bye) === 'string');
@@ -43,19 +43,19 @@ assert(typeof brain(bye) === 'string');
 assert.equal(brain('++++++[>++++++++++<-]>+++++.'), 'A');
 ```
 
-`brain(bye)` は `Goodbye, World!\r\n` を返します。
+`brain(bye)` should return `Goodbye, World!\r\n`
 
 ```js
 assert.equal(brain(bye), 'Goodbye, World!\r\n');
 ```
 
-`brain(hello)` は `Hello World!\n` を返します。
+`brain(hello)` should return `Hello World!\n`
 
 ```js
 assert.equal(brain(hello), 'Hello World!\n');
 ```
 
-`brain(fib)` は `1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89` を返します。
+`brain(fib)` should return `1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89`
 
 ```js
 assert.equal(brain(fib), '1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89');

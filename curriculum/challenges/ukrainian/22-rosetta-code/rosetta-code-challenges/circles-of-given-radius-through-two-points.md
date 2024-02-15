@@ -8,27 +8,27 @@ dashedName: circles-of-given-radius-through-two-points
 
 # --description--
 
-Given two points on a plane and a radius, usually two circles of given radius can be drawn through the points.
+Якщо дано дві точки на площині та радіус, то зазвичай через ці точки можна провести два кола заданого радіуса.
 
 **Винятки:**
 
 <ul>
-  <li>A radius of zero should be treated as never describing circles (except in the case where the points are coincident).</li>
-  <li>If the points are coincident then an infinite number of circles with the point on their circumference can be drawn, unless the radius is equal to zero as well which then collapses the circles to a point.</li>
-  <li>If the points form a diameter then return a single circle.</li>
-  <li>If the points are too far apart then no circles can be drawn.</li>
+  <li>Нульовий радіус повинен розглядатися як такий, що ніколи не описує кола (крім випадку, коли точки співпадають).</li>
+  <li>Якщо точки збігаються, то можна намалювати нескінченну кількість кіл, що проходять через цю точку на окружності (крім випадку, коли радіус також дорівнює нулю, що перетворить кола на точку).</li>
+  <li>Якщо точки утворюють діаметр, то поверніть одне коло.</li>
+  <li>Якщо точки знаходяться занадто далеко одна від одної, то неможливо намалювати кола.</li>
 </ul>
 
 # --instructions--
 
-Реалізуйте функцію, яка приймає дві точки і радіус і повертається як два кола через ці точки. Для кожного кола, що утвориться, встановіть координати для центру кожного кола округлені до чотирьох десяткових чисел. Поверніть кожну координату як масив і координати як масив масивів.
+Напишіть функцію, яка приймає дві точки і радіус та повертає два кола через ці точки. Для кожного отриманого кола надайте координати центру, округлені до чотирьох знаків після коми. Поверніть кожну координату як масив, а координати — як масив масивів.
 
-**Для складних випадків повертається наступне:**
+**В граничних випадках поверніть наступне:**
 
 <ul>
-  <li>If points are on the diameter, return one point. If the radius is also zero however, return <code>"Radius Zero"</code>.</li>
-  <li>Якщо точки збігаються, поверніть <code>"Точку збігу. Безкінечні рішення"</code>.</li>
-  <li>Якщо точки розташовані далі, ніж діаметр, поверніть <code>"Без перетину. Точки, які віддалені одна від одної, відносно діаметра кола"</code>.</li>
+  <li>Якщо точки знаходяться на діаметрі, поверніть одну точку. Якщо радіус також дорівнює нулю, то поверніть <code>"Radius Zero"</code>.</li>
+  <li>Якщо точки збігаються, то поверніть <code>"Coincident point. Infinite solutions"</code>.</li>
+  <li>Якщо точки знаходяться одна від одної далі за діаметр, то поверніть <code>"No intersection. Points further apart than circle diameter"</code>.</li>
 </ul>
 
 **Приклади вхідних даних:**
@@ -49,31 +49,31 @@ Given two points on a plane and a radius, usually two circles of given radius ca
 assert(typeof getCircles === 'function');
 ```
 
-`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 2.0)` повинен повернутися як `[[1.8631, 1.9742], [-0.8632, -0.7521]]`.
+`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 2.0)` має повернути `[[1.8631, 1.9742], [-0.8632, -0.7521]]`.
 
 ```js
 assert.deepEqual(getCircles(...testCases[0]), answers[0]);
 ```
 
-`getCircles([0.0000, 2.0000], [0.0000, 0.0000], 1.0)` повинен повернутися як `[0, 1]`
+`getCircles([0.0000, 2.0000], [0.0000, 0.0000], 1.0)` має повернути `[0, 1]`
 
 ```js
 assert.deepEqual(getCircles(...testCases[1]), answers[1]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` має повертатися `Точка збігу. Безкінечні рішення"`
+`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` має повернути `Coincident point. Infinite solutions`
 
 ```js
 assert.deepEqual(getCircles(...testCases[2]), answers[2]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` має повертатися `Без перетину. Точки, які віддалені одна від одної, відносно діаметра кола"`
+`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` має повернути `No intersection. Points further apart than circle diameter`
 
 ```js
 assert.deepEqual(getCircles(...testCases[3]), answers[3]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 0.0)` має повертатися як `Radius Zero`
+`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 0.0)` має повернути `Radius Zero`
 
 ```js
 assert.deepEqual(getCircles(...testCases[4]), answers[4]);

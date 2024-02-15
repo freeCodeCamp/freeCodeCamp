@@ -8,7 +8,7 @@ dashedName: largest-int-from-concatenated-ints
 
 # --description--
 
-Given a set of positive integers, write a function to order the integers in such a way that the concatenation of the numbers forms the largest possible integer and return this integer.
+Dado um conjunto de números inteiros positivos, escreva uma função para ordenar os números de tal forma que a concatenação dos números forme o maior número inteiro possível e retorne este inteiro.
 
 # --hints--
 

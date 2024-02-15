@@ -12,7 +12,7 @@ dashedName: intermediate-strings
 
 # --description--
 
-More resources:
+Mais recursos:
 
 \- <a href="https://www.youtube.com/watch?v=1bSqHot-KwE" target="_blank" rel="noopener noreferrer nofollow">Exercício</a>
 

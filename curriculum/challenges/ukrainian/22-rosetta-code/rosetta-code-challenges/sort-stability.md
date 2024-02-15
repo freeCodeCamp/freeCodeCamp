@@ -8,9 +8,9 @@ dashedName: sort-stability
 
 # --description--
 
-When sorting records in a table by a particular column or field, a <a href="https://www.freecodecamp.org/news/stability-in-sorting-algorithms-a-treatment-of-equality-fa3140a5a539/" target="_blank" rel="noopener noreferrer nofollow">stable sort</a> will always retain the relative order of records that have the same key.
+При сортуванні записів в таблиці за певним стовпцем або полем, <a href="https://www.freecodecamp.org/news/stability-in-sorting-algorithms-a-treatment-of-equality-fa3140a5a539/" target="_blank" rel="noopener noreferrer nofollow">стабільне сортування</a> завжди зберігатиме відносний порядок записів з однаковим ключем.
 
-Наприклад, у цій таблиці країн і міст стабільне сортування в **другому** стовпці розташує Бірмінгем у США над Бірмінгемом у Великобританії серед міст. (Хоча нестабільне сортування *може* в цьому випадку розташувати Бірмінгем у США над Бірмінгемом у Великобританії, стабільна процедура сортування це *забезпечить*).
+Наприклад, у цій таблиці країн та міст стабільне сортування в **другому** стовпці (міста) розташує Бірмінгем в США над Бірмінгемом в Англії. (Хоча в цьому випадку нестабільне сортування *може* розташувати Бірмінгем в США над Бірмінгемом в Англії, стабільне сортування це *гарантує*).
 
 <pre>UK  London
 US  New York
@@ -18,7 +18,7 @@ US  Birmingham
 UK  Birmingham
 </pre>
 
-Аналогічним чином стабільне сортування лише першої колонки призведе до розташування «UK London» першим елементом, а «US Birmingham» – останнім (оскільки порядок елементів, що мають одне і те ж перше слово – «UK» або «US» – буде враховуватись).
+Аналогічним чином стабільне сортування лише першої колонки призведе до розташування «UK London» першим елементом, а «US Birmingham» — останнім (оскільки враховується порядок елементів, що мають одне і те ж перше слово: «UK» або «US»).
 
 # --instructions--
 

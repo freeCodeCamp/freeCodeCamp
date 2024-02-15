@@ -1,38 +1,38 @@
 ---
 id: 647e22b38acb466c97ccbef6
-title: 'Implement the Visual Studio Code Debugging Tools for C#'
+title: 'C# 用の Visual Studio Code デバッグ ツールを実装する'
 challengeType: 19
 dashedName: implement-the-visual-studio-code-debugging-tools-for-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+このチャレンジには Microsoft Learn プラットフォームで実行するパートがあります。 下記の手順に従ってチャレンジを完了させてください:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/</a> and complete all the tasks for the "Implement the Visual Studio Code Debugging Tools for C#" module. This is **required** to earn the "Debug C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. <a href="https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/</a> へ移動し、「C# 用の Visual Studio Code デバッグ ツールを実装する (Implement the Visual Studio Code Debugging Tools for C#)」モジュール内のすべてのタスクを完了してください。 これは、Microsoft Learn のトロフィー「C# コンソール アプリケーションのデバッグ」を獲得し、認定試験の受験資格を得るために**必須**となります。
+1. 完了後、このページに戻り、下記の質問に正しく回答してください。
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/" target="_blank" rel="noreferrer">Implement the Visual Studio Code Debugging Tools for C#</a> module on Microsoft Learn. Then, answer the question below.
+Microsoft Learn で「<a href="https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/" target="_blank" rel="noreferrer">C# 用の Visual Studio Code デバッグ ツールを実装する</a>」モジュールを完了してください。 次に、下記の質問に回答してください。
 
 # --question--
 
 ## --text--
 
-Which section of the RUN AND DEBUG view is used to track the current point of execution within the running application?
+「実行とデバッグ」ビューのセクションのうち、実行中アプリケーションの現在の実行ポイントを追跡するために使われるものはどれですか？
 
 ## --answers--
 
-The VARIABLES section.
+「変数」セクション
 
 ---
 
-The CALL STACK section.
+「コールスタック」セクション
 
 ---
 
-The WATCH section.
+「ウォッチ式」セクション
 
 ## --video-solution--
 

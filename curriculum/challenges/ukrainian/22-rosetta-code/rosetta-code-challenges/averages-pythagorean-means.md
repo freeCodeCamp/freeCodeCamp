@@ -1,6 +1,6 @@
 ---
 id: 594d966a1467eb84194f0086
-title: Піфагорові середні
+title: 'Середні значення: Піфагорові середні'
 challengeType: 1
 forumTopicId: 302227
 dashedName: averagespythagorean-means
@@ -8,9 +8,9 @@ dashedName: averagespythagorean-means
 
 # --description--
 
-Compute all three of the <a href="https://en.wikipedia.org/wiki/Pythagorean_means" target="_blank" rel="noopener noreferrer nofollow">Pythagorean means</a> of the set of integers $1$ through $10$ (inclusive).
+Обчисліть всі три <a href="https://uk.wikipedia.org/wiki/Піфагорові_середні" target="_blank" rel="noopener noreferrer nofollow">Піфагорові середні</a> з множини цілих чисел від $1$ до $10$ (включно).
 
-Покажіть, що $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$ для цього набору цілих чисел.
+Доведіть, що $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$ для цієї множини натуральних чисел.
 
 <ul>
   <li>Найчастішим з трьох середніх є <a class='rosetta__link--rosetta' href='https://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean' target='_blank'>середнє арифметичне</a> — сума множини, поділена на її довжину:<br>
@@ -23,9 +23,9 @@ Compute all three of the <a href="https://en.wikipedia.org/wiki/Pythagorean_mean
 
 # --instructions--
 
-При написанні функції, врахуйте, що вхідні дані — впорядкований масив всіх включених чисел.
+При написанні функції врахуйте, що вхідними даними є впорядкований масив всіх включених чисел.
 
-Для відповіді, будь ласка, виведіть об'єкт у наступному форматі:
+У відповіді, будь ласка, надайте об’єкт в наступному форматі:
 
 ```js
 {
@@ -46,7 +46,7 @@ Compute all three of the <a href="https://en.wikipedia.org/wiki/Pythagorean_mean
 assert(typeof pythagoreanMeans === 'function');
 ```
 
-`pythagoreanMeans([1, 2, ..., 10])` має дорівнювати тому ж результату, що й вище.
+`pythagoreanMeans([1, 2, ..., 10])` має дорівнювати вихідним даним вище.
 
 ```js
 assert.deepEqual(pythagoreanMeans(range1), answer1);

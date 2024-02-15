@@ -14,7 +14,7 @@ dashedName: loops-and-iterations
 
 ## --text--
 
-What will the following code print out?:
+O que será impresso pelo código a seguir?:
 
 ```python
 n = 0

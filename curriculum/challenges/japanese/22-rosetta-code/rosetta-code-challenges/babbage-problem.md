@@ -15,7 +15,7 @@ Charles Babbage, looking ahead to the sorts of problems his Analytical Engine wo
   <footer style='margin-left: 2em;'>Babbage, letter to Lord Bowden, 1837; see Hollingdale and Tootill, <i>Electronic Computers</i>, second edition, 1970, p. 125.</footer>
 </blockquote>
 
-答えは99,736で、その2乗は9,947,269,696であると考えましたが、確信はありませんでした。
+答えは 99,736 で、その 2 乗は 9,947,269,696 であると考えましたが、確信はありませんでした。
 
 バベッジの答えが正しかったかどうかを調べましょう。
 
@@ -25,13 +25,13 @@ Charles Babbage, looking ahead to the sorts of problems his Analytical Engine wo
 
 # --hints--
 
-`babbage` という関数です。
+`babbage` という関数があります。
 
 ```js
 assert(typeof babbage === 'function');
 ```
 
-`babbage(99736, 269696)` は 99736 を返さないはずです(もっと小さな答えがあります)。
+`babbage(99736, 269696)` は 99736 を返さないはずです (もっと小さな答えがあります)。
 
 ```js
 assert.equal(babbage(babbageAns, endDigits), answer);

@@ -8,10 +8,10 @@ dashedName: fibonacci-n-step-number-sequences
 
 # --description--
 
-These number series are an expansion of the ordinary Fibonacci sequence where:
+Estas séries numéricas são uma expansão da sequência comum de Fibonacci, onde:
 
 <ol>
-  <li>For $n = 2$ we have the Fibonacci sequence; with initial values $[1, 1]$ and $F_k^2 = F_{k-1}^2 + F_{k-2}^2$</li>
+  <li>Para $n = 2$, temos a sequência de Fibonacci, com os valores iniciais $[1, 1]$ e $F_k^2 = F_{k-1}^2 + F_{k-2}^2$</li>
   <li>Para $n = 3$, temos a sequência de tribonacci, com os valores iniciais $[1, 1, 2]$ e $F_k^3 = F_{k-1}^3 + F_{k-2}^3 + F_{k-3}^3$</li>
   <li>Para $n = 4$, temos a sequência de tetranacci, com os valores iniciais $[1, 1, 2, 4]$ e $F_k^4 = F_{k-1}^4 + F_{k-2}^4 + F_{k-3}^4 + F_{k-4}^4$...</li>
   <li>Para a $n>2$ mais geral, temos a sequência de Fibonacci de $n$ passos - $F_k^n$, com os valores iniciais dos primeiros $n$ valores da $(n-1)$-ésima sequência de Fibonacci da $n$-ésima etapa $F_k^{n-1}$, e o $k$-ésimo valor dessa $n$-ésima sequência sendo $F_k^n = \sum_{i=1}^{(n)} {F_{k-i}^{(n)}}$</li>

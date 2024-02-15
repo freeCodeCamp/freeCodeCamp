@@ -1,26 +1,26 @@
 ---
 id: 647e21708acb466c97ccbee3
-title: 'Evaluate Boolean Expressions to Make Decisions in C#'
+title: 'C# でブール式を評価して決定を行う'
 challengeType: 19
 dashedName: evaluate-boolean-expressions-to-make-decisions-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+このチャレンジには Microsoft Learn プラットフォームで実行するパートがあります。 下記の手順に従ってチャレンジを完了させてください:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-evaluate-boolean-expressions/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-evaluate-boolean-expressions/</a> and complete all the tasks for the "Evaluate Boolean Expressions to Make Decisions in C#" module. This is **required** to earn the "Add Logic to C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. <a href="https://learn.microsoft.com/training/modules/csharp-evaluate-boolean-expressions/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-evaluate-boolean-expressions/</a> へ移動し、「C# でブール式を評価して決定を行う (Evaluate Boolean Expressions to Make Decisions in C#)」モジュール内のすべてのタスクを完了してください。 これは、Microsoft Learn のトロフィー「C# コンソール アプリケーションにロジックを追加する」を獲得し、認定試験の受験資格を得るために**必須**となります。
+1. 完了後、このページに戻り、下記の質問に正しく回答してください。
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-evaluate-boolean-expressions/" target="_blank" rel="noreferrer">Evaluate Boolean Expressions to Make Decisions in C#</a> module on Microsoft Learn. Then, answer the question below.
+Microsoft Learn で「<a href="https://learn.microsoft.com/training/modules/csharp-evaluate-boolean-expressions/" target="_blank" rel="noreferrer">C# でブール式を評価して決定を行う</a>」モジュールを完了してください。 次に、下記の質問に回答してください。
 
 # --question--
 
 ## --text--
 
-Which of the following lines of code is a valid use of the conditional operator?
+次のうち、条件演算子の有効な使い方はどれですか？
 
 ## --answers--
 

@@ -8,12 +8,12 @@ dashedName: extensible-prime-generator
 
 # --description--
 
-Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.
+Escreva um gerador de números primos, em ordem, que se ajuste automaticamente para acomodar a geração de qualquer número primo razoavelmente alto.
 
 O gerador deve poder:
 
 <ul>
-  <li>Show the first <code>n</code> prime numbers</li>
+  <li>Mostrar os <code>n</code> primeiros números primos</li>
   <li>Mostrar os números primos em um intervalo</li>
   <li>Mostrar a quantidade de números primos em um intervalo</li>
   <li>Mostrar o <code>n<sup>th</sup></code> (enésimo) número primo</li>

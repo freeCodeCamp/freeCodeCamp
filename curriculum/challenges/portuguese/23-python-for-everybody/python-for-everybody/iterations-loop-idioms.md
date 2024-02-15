@@ -14,7 +14,7 @@ dashedName: iterations-loop-idioms
 
 ## --text--
 
-Below is code to find the smallest value from a list of values. One line has an error that will cause the code to not work as expected. Which line is it?:
+Abaixo está o código para encontrar o menor valor de uma lista de valores. Uma linha tem um erro que fará com que o código não funcione como esperado. Qual é a linha?:
 
 ```python
 smallest = None

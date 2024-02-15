@@ -1,6 +1,6 @@
 ---
 id: 59e09e6d412c5939baa02d16
-title: Виконайте алгоритм Маркова
+title: Виконання алгоритму Маркова
 challengeType: 1
 forumTopicId: 302260
 dashedName: execute-a-markov-algorithm
@@ -8,13 +8,13 @@ dashedName: execute-a-markov-algorithm
 
 # --description--
 
-Markov Concepts are used in machine learning, because of its simple approach in data manipulation. With a set number of `rules` you can manipulate given `data` to create a desired `output`.
+Ідеї Маркова використовують в машинному навчанні завдяки простому підходу до маніпулювання даними. Завдяки встановленій кількості правил (`rules`) ви можете маніпулювати заданими даними (`data`), щоб отримати бажані вихідні дані (`output`).
 
 Ми додали у фоновому режимі:
 
-The `rules` in the form of nested array, and the `data` in the form of array, too. Та бажані `outputs`.
+Правила (`rules`) у вигляді вкладеного масиву та дані (`data`) у вигляді масиву. А також бажані вихідні дані (`outputs`).
 
-`rules`:
+Правила (`rules`):
 
 ```js
 let rules=[
@@ -48,7 +48,7 @@ let rules=[
 ];
 ```
 
-`data`:
+Дані (`data`):
 
 ```js
 let data=[
@@ -60,7 +60,7 @@ let data=[
         ];
 ```
 
-`outputs`:
+Вихідні дані (`outputs`):
 
 ```js
 let outputs=[
@@ -72,7 +72,7 @@ let outputs=[
     ]
 ```
 
-Використовуючи Алгоритм Маркова, змініть `data` на бажаний `outputs` за допомогою наданих вам `rules`.
+Змініть дані (`data`) на бажані вихідні дані (`outputs`) за допомогою наданих правил (`rules`), використовуючи алгоритм Маркова.
 
 # --hints--
 
@@ -82,31 +82,31 @@ let outputs=[
 assert(typeof markov === 'function');
 ```
 
-`markov(["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` має повертати рядок `I bought a bag of apples from my brother.`.
+`markov(["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` має повернути рядок `I bought a bag of apples from my brother.`.
 
 ```js
 assert.deepEqual(markov(rules[0], datas[0]), outputs[0]);
 ```
 
-`markov(["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` має повертати рядок `I bought a bag of apples from T shop.`.
+`markov(["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` має повернути рядок `I bought a bag of apples from T shop.`.
 
 ```js
 assert.deepEqual(markov(rules[1], datas[1]), outputs[1]);
 ```
 
-`markov(["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As W my Bgage from T S.")` має повертати рядок `I bought a bag of apples with my money from T shop.`.
+`markov(["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As W my Bgage from T S.")` має повернути рядок `I bought a bag of apples with my money from T shop.`.
 
 ```js
 assert.deepEqual(markov(rules[2], datas[2]), outputs[2]);
 ```
 
-`markov(["_+1 -> _1+","1+1 -> 11+","1! -> !1",",! -> !+","_! -> _","1*1 -> x,@y","1x -> xX","X, -> 1,1","X1 -> 1X","_x -> _X",",x -> ,X","y1 -> 1y","y_ -> _","1@1 -> x,@y","1@_ -> @_",",@_ -> !_","++ -> +","_1 -> 1","1+_ -> 1","_+_ -> "],"_1111*11111_")` should return the string `11111111111111111111`.
+`markov(["_+1 -> _1+","1+1 -> 11+","1! -> !1",",! -> !+","_! -> _","1*1 -> x,@y","1x -> xX","X, -> 1,1","X1 -> 1X","_x -> _X",",x -> ,X","y1 -> 1y","y_ -> _","1@1 -> x,@y","1@_ -> @_",",@_ -> !_","++ -> +","_1 -> 1","1+_ -> 1","_+_ -> "],"_1111*11111_")` має повернути рядок `11111111111111111111`.
 
 ```js
 assert.deepEqual(markov(rules[3], datas[3]), outputs[3]);
 ```
 
-`markov(["A0 -> 1B","0A1 -> C01","1A1 -> C11","0B0 -> A01","1B0 -> A11","B1 -> 1B","0C0 -> B01","1C0 -> B11","0C1 -> H01","1C1 -> H11"],"")` має повертати рядок `00011H1111000`.
+`markov(["A0 -> 1B","0A1 -> C01","1A1 -> C11","0B0 -> A01","1B0 -> A11","B1 -> 1B","0C0 -> B01","1C0 -> B11","0C1 -> H01","1C1 -> H11"],"")` має повернути рядок `00011H1111000`.
 
 ```js
 assert.deepEqual(markov(rules[4], datas[4]), outputs[4]);

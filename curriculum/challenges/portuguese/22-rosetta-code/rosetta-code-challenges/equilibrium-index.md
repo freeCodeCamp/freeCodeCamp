@@ -8,7 +8,7 @@ dashedName: equilibrium-index
 
 # --description--
 
-An equilibrium index of a sequence is an index into the sequence such that the sum of elements at lower indices is equal to the sum of elements at higher indices.
+Um índice de equilíbrio de uma sequência é um índice na sequência, tal que a soma dos elementos nos índices mais baixos é igual à soma dos elementos nos índices mais altos.
 
 Por exemplo, em uma sequência $A$:
 

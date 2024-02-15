@@ -8,14 +8,14 @@ dashedName: emirp-primes
 
 # --description--
 
-An emirp (**prime** spelled backwards) are primes that when reversed (in their decimal representation) are a different prime.
+Um omirp (**primo** escrito ao contrário) é um número primo que, quando invertido (em sua representação decimal) é um número primo diferente.
 
 # --instructions--
 
 Escreva uma função que:
 
 <ul>
-  <li>Shows the first <code>n</code> emirp numbers.</li>
+  <li>Mostra os <code>n</code> primeiros números omirp.</li>
   <li>Mostra os números omirp em um intervalo.</li>
   <li>Mostra o número de omirps em um intervalo.</li>
   <li>Mostre o <code>n<sup>th</sup></code> (enésimo) número omirp.</li>

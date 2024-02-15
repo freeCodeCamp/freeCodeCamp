@@ -8,13 +8,13 @@ dashedName: i-before-e-except-after-c
 
 # --description--
 
-**<a href="http://www.rosettacode.org/wiki/I_before_E_except_after_C" target="_blank" rel="noopener noreferrer nofollow">"I before E, except after C"</a>** is a general rule for English language spelling. If one is unsure whether a word is spelled with the digraph `ei` or `ie`, the rhyme suggests that the correct order is `ie` unless the preceding letter is `c`, in which case it may be `ei`.
+**<a href="http://www.rosettacode.org/wiki/I_before_E_except_after_C" target="_blank" rel="noopener noreferrer nofollow">"I antes de E, exceto após o C"</a>** é uma regra geral para a ortografia do inglês. Quando não temos certeza se uma palavra é escrita com o dígrafo `ei` ou `ie`, a rima sugere que a ordem correta é `ie`, a menos que a letra anterior seja `c`, caso no qual ele deve ser `ei`.
 
 Usando as palavras fornecidas, verifique se as duas subcláusulas da frase são plausíveis individualmente:
 
 <ol>
   <li>
-    <i>"I before E when not preceded by C".</i>
+    <i>"I antes de E quando não for precedido por C".</i>
   </li>
   <li>
     <i>"E antes de I quando for precedido por C".</i>

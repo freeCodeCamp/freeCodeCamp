@@ -14,7 +14,7 @@ dashedName: introduction-elements-of-python
 
 ## --text--
 
-What will the following program print out:
+Qual será a impressão do seguinte programa em Python:
 
 ```python
 x = 43

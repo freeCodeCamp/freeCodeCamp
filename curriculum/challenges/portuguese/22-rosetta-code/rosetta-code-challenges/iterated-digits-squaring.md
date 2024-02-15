@@ -8,7 +8,7 @@ dashedName: iterated-digits-squaring
 
 # --description--
 
-If you add the square of the digits of a Natural number (an integer bigger than zero), you always end with either 1 or 89:
+Se você somar o quadrado dos dígitos de um número natural (um número inteiro maior que zero), você sempre terminará com 1 ou 89:
 
 <pre>15 -> 26 -> 40 -> 16 -> 37 -> 58 -> 89
 7 -> 49 -> 97 -> 130 -> 10 -> 1

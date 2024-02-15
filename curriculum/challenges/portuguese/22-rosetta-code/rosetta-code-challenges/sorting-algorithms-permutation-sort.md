@@ -8,12 +8,12 @@ dashedName: sorting-algorithmspermutation-sort
 
 # --description--
 
-Write a function to implement a permutation sort, which proceeds by generating the possible permutations of the input array until discovering the sorted one. The function should return the sorted array.
+Escreva uma função para implementar uma ordenação de permutação, que gere as possíveis permutações do array de entrada até descobrir a forma ordenada. A função deve retornar o array ordenado.
 
 Pseudocódigo:
 
-<pre><b>while not</b> InOrder(list) <b>do</b>
-  nextPermutation(list)
+<pre><b>while not</b> NaOrdem(lista) <b>do</b>
+  proximaPermutacao(lista)
 <b>done</b>
 </pre>
 

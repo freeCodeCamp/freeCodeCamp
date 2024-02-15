@@ -8,17 +8,16 @@ dashedName: word-wrap
 
 # --description--
 
-Even today, with proportional fonts and complex layouts, there are still cases where you need to wrap text at a specified column. The basic task is to wrap a paragraph of text in a simple way.
+Mesmo hoje, com fontes proporcionais e layouts complexos, ainda há casos em que você precisa quebrar o texto em uma determinada coluna. A tarefa básica é quebrar um parágrafo de um texto de uma forma simples.
 
 # --instructions--
 
 Escreva uma função que possa quebrar este texto para qualquer número de caracteres. Como exemplo, o texto quebrado com 80 caracteres deve se parecer com o seguinte:
 
 <pre>
-Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX
-algorithm. If your language provides this, you get easy extra credit, but you
-must reference documentation indicating that the algorithm is something better
-than a simple minimum length algorithm.
+Quebre o texto usando um algoritmo mais sofisticado, como o algoritmo de Knuth e Plass TeX. Se o seu idioma fornece isso, você obtém crédito extra fácil, mas você
+deve fazer referência à documentação que indica que o algoritmo é algo melhor
+do que um simples algoritmo de comprimento mínimo.
 </pre>
 
 # --hints--

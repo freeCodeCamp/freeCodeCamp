@@ -210,7 +210,7 @@ textarea.inputarea {
 .vs .monaco-scrollable-element .scrollbar .arrow-background {
   height: var(--monaco-scrollbar-arrow-box-size) !important;
   background-color: #666;
-  z-index: 998;
+  z-index: 199;
 }
 
 /* arrow icons - includes both up and down */
@@ -221,7 +221,7 @@ textarea.inputarea {
   height: var(--monaco-scrollbar-arrow-icon-size) !important;
   font-size: var(--monaco-scrollbar-arrow-icon-font-size) !important;
   color: white;
-  z-index: 999;
+  z-index: 199;
 }
 
 /* down arrow icon only */

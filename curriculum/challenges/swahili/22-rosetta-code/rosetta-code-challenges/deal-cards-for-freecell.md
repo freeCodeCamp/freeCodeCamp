@@ -26,8 +26,8 @@ The algorithm follows:
   <li>Seed the RNG with the number of the deal.
   </li><li>Create an array of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51.</li>
   <li>Until the array is empty:</li>
-  <li>Choose a random card at index ≡ next random number (mod array length).</li>
     <ul>
+      <li>Choose a random card at <i>index</i> ≡ <i>next random number</i> (mod <i>array length</i>).</li>
       <li>Swap this random card with the last card of the array.</li>
       <li>Remove this random card from the array. (Array length goes down by 1.)</li>
       <li>Deal this random card.</li>

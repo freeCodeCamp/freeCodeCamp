@@ -1,45 +1,45 @@
 ---
 id: 6571b300cc1de61d7b4dd383
-title: Introduction to Flexbox Question E
+title: Вступ до Flexbox. Запитання E
 challengeType: 15
 dashedName: introduction-flexbox-question-e
 ---
 
 # --description--
 
-The `flex` declaration is actually a shorthand for 3 properties that you can set on a flex item. These properties affect how flex items size themselves within their container. You've seen some shorthand properties before, but you haven't officially defined them yet.
+Насправді оголошення `flex` є скороченням трьох властивостей, які можна встановити в гнучкому предметі. Ці властивості впливають на те, як гнучкі предмети розміщуються в контейнерах самостійно. Раніше ви вже бачили скорочені властивості, але ми не представляли їх офіційно.
 
-> Shorthand properties are CSS properties that let you set the values of multiple other CSS properties simultaneously. Using a shorthand property, you can write more concise (and often more readable) stylesheets, saving time and energy.
+> Скорочені властивості — це властивості, які дозволяють одночасно встановити значення декількох інших властивостей CSS. За допомогою скорочених властивостей можна писати стисліші (та читабельніші) таблиці стилів, що зберігає час та енергію.
 
-In this case, `flex` is actually a shorthand for `flex-grow`, `flex-shrink` and `flex-basis`.
+У цьому випадку `flex` є скороченням властивостей `flex-grow`, `flex-shrink` та `flex-basis`.
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/0cc6b26bb0c4b94524369d327c97a8fb11e83b6b/foundations/html_css/flexbox/imgs/10.png" alt="flex shorthand" />
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/0cc6b26bb0c4b94524369d327c97a8fb11e83b6b/foundations/html_css/flexbox/imgs/10.png" alt="скорочення flex" />
 
-In the above screenshot, `flex: 1` equates to: `flex-grow: 1`, `flex-shrink: 1`, `flex-basis: 0`.
+`flex: 1` зі знімка екрана вище дорівнює `flex-grow: 1`, `flex-shrink: 1`, `flex-basis: 0`.
 
-Very often, you see the flex shorthand defined with only one value. In that case, that value is applied to `flex-grow`. So when you put `flex: 1` on our divs, you were actually specifying a shorthand of `flex: 1 1 0`.
+Дуже часто можна побачити, що скорочення визначене лише одним значенням. У такому випадку це значення застосоване до `flex-grow`. Тому, якщо ви додаєте `flex: 1` до елементів div, насправді ви вказуєте скорочення `flex: 1 1 0`.
 
 # --question--
 
 ## --text--
 
-Which properties are set by the `flex` shorthand?
+Які властивості задані скороченням `flex`?
 
 ## --answers--
 
-`flex-grow`, `flex-shrink`, and `flex`
+`flex-grow`, `flex-shrink` та `flex`
 
 ---
 
-`flex-basis`, `flex-wrap`, and `flex-direction`
+`flex-basis`, `flex-wrap` та `flex-direction`
 
 ---
 
-`flex-grow`, `flex-shrink`, and `flex-basis`
+`flex-grow`, `flex-shrink` та `flex-basis`
 
 ---
 
-`flex-direction`, `flex`, and `flex-wrap`
+`flex-direction`, `flex` та `flex-wrap`
 
 ## --video-solution--
 

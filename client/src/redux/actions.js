@@ -101,10 +101,6 @@ export const deleteUserTokenComplete = createAction(
   actionTypes.deleteUserTokenComplete
 );
 
-export const hideCodeAlly = createAction(actionTypes.hideCodeAlly);
-export const showCodeAlly = createAction(actionTypes.showCodeAlly);
-export const tryToShowCodeAlly = createAction(actionTypes.tryToShowCodeAlly);
-
 export const startExam = createAction(actionTypes.startExam);
 export const stopExam = createAction(actionTypes.stopExam);
 export const clearExamResults = createAction(actionTypes.clearExamResults);

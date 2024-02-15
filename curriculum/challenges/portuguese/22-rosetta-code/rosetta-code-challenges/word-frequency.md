@@ -8,7 +8,7 @@ dashedName: word-frequency
 
 # --description--
 
-Given a text string and an integer n, return the n most common words in the file (and the number of their occurrences) in decreasing frequency.
+Dados uma string e um número inteiro n, retorne as n palavras mais comuns no arquivo (e o número de ocorrências de cada uma) em frequência decrescente.
 
 # --instructions--
 

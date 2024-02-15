@@ -8,9 +8,9 @@ dashedName: iban
 
 # --description--
 
-The International Bank Account Number (IBAN) is an internationally agreed means of identifying bank accounts across national borders with a reduced risk of propagating transcription errors.
+Міжнародний номер банківського рахунку (IBAN) — це міжнародно узгоджений спосіб ідентифікації міжбанківських рахунків зі зниженим ризиком поширення помилок записів.
 
-<abbr title="Міжнародний номер банківського рахунку">IBAN</abbr> складається аж до 34 буквено-цифрових символів:
+Довжина <abbr title="International Bank Account Number">IBAN</abbr> не може перевищувати 34 алфавітно-цифрові знаки:
 
 <ul>
   <li>перші дві літери позначають код країни за <abbr title="International Organization for Standardization">ISO</abbr> 3166-1 alpha-2</li>
@@ -18,11 +18,11 @@ The International Bank Account Number (IBAN) is an internationally agreed means 
   <li>внутрішньодержавний номер рахунку (BBAN).</li>
 </ul>
 
-Контрольні цифри дають змогу перевірити правильність номеру банківського рахунку, щоб підтвердити його цілісність навіть перед поданням транзакції.
+Контрольні числа дозволяють здійснити перевірку номеру рахунку, щоб підтвердити його цілісність перед транзакцією.
 
 # --instructions--
 
-Напишіть функцію, яка приймає рядок IBAN як параметр. Якщо вона допустима, поверніть true. Якщо ні, поверніть false.
+Напишіть функцію, яка приймає рядок IBAN як параметр. Якщо він дійсний, то поверніть true. Якщо ні — поверніть false.
 
 # --hints--
 
@@ -32,7 +32,7 @@ The International Bank Account Number (IBAN) is an internationally agreed means 
 assert(typeof isValid == 'function');
 ```
 
-`isValid("GB82 WEST 1234 5698 7654 32")` має повернути логічне значення.
+`isValid("GB82 WEST 1234 5698 7654 32")` має повернути булеве значення.
 
 ```js
 assert(typeof isValid('GB82 WEST 1234 5698 7654 32') == 'boolean');

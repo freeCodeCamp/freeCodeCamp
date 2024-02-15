@@ -13,7 +13,7 @@ Depois de acessar o link, crie uma cópia do notebook em sua conta pessoal ou lo
 
 # --instructions--
 
-For this challenge, you need to create a financial calculator using Python that take input and do the following:
+Para este desafio, você precisará criar uma calculadora financeira usando Python que receberá entradas e fará o seguinte:
 
 - Calcular a anuidade com crescimento mensal ou contínuo
 - Calcular o pagamento mensal de hipoteca

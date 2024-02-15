@@ -3,8 +3,10 @@
   padding: 20px;
   border: 4px solid var(--tertiary-background);
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .fill-in-the-blank-wrap > p {

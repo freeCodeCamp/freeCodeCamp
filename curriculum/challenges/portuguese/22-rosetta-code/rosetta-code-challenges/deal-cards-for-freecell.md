@@ -8,7 +8,7 @@ dashedName: deal-cards-for-freecell
 
 # --description--
 
-*FreeCell* is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for DOS, then Windows. This version introduced 32000 numbered deals.
+O *FreeCell* é o jogo de cartas de paciência que Paul Alfille introduziu no sistema PLATO, em 1978. Jim Horne, da Microsoft, mudou o nome para FreeCell e implementou novamente o jogo no DOS e depois no Windows. A versão do Windows apresentava 32 mil distribuições numeradas.
 
 À medida que o jogo se tornou popular, Jim Horne revelou o algoritmo, e outras implementações do FreeCell começaram a reproduzir as distribuições de cartas da versão da Microsoft. Estas distribuições eram numeradas de 1 a 32000. As versões mais recentes da Microsoft têm 1 milhão de distribuições, numeradas de 1 a 1000000. Algumas implementações permitem números fora desse intervalo.
 
@@ -23,12 +23,12 @@ O algoritmo usa o gerador de congruência linear do C da Microsoft:
 Segue o algoritmo:
 
 <ol>
-  <li>Seed the RNG with the number of the deal.
+  <li>Faça o seed do RNG (intervalo) com o número da distribuição.
   </li><li>Crie um array de 52 cartas: Ás de Paus, Ás de Ouro, Ás de Copas, Ás de Espadas, 2 de Paus, 2 de Ouro, e assim por diante: Ás, 2, 3, 4, 5, 6, 7, 8, 9, 10, Valete, Rainha, Rei. Os índices do array vão de 0 a 51, estando o Ás de Paus no índice 0 e o Rei de Espadas no índice 51.</li>
   <li>Até que o array esteja vazio:</li>
-  <li>Escolha uma carta aleatória no índice ≡ próximo número aleatório (tamanho do array mod).</li>
     <ul>
-      <li>Swap this random card with the last card of the array.</li>
+      <li>Escolha uma carta aleatória no <i>index</i> ≡ <i>next random number</i> (mod <i>array length</i>).</li>
+      <li>Troque esta carta aleatória pela última carta do array.</li>
       <li>Remova esta carta aleatória do array. (O comprimento do array diminui em 1.)</li>
       <li>Distribua esta carta aleatória.</li>
     </ul>

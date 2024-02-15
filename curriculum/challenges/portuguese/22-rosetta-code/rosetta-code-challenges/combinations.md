@@ -8,7 +8,7 @@ dashedName: combinations
 
 # --description--
 
-Given non-negative integers `m` and `n`, generate all size `m` combinations of the integers from `0` (zero) to `n-1` in sorted order (each combination is sorted and the entire table is sorted).
+Dado os números inteiros não negativos `m` e `n`, gere todas as combinações de tamanho `m` dos inteiros de `0` (zero) a `n-1` em ordem (cada combinação é ordenada, assim como a tabela inteira).
 
 **Exemplo:**
 

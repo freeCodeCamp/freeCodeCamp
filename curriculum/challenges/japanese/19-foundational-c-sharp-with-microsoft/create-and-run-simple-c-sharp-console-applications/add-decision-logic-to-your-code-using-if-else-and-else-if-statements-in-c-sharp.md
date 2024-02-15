@@ -1,26 +1,26 @@
 ---
 id: 647e21ba8acb466c97ccbee6
-title: 'Add Decision Logic to Your Code Using if, else, and else if statements in C#'
+title: 'C# の if、else、else if ステートメントを使って、コードに決定ロジックを追加する'
 challengeType: 19
 dashedName: add-decision-logic-to-your-code-using-if-else-and-else-if-statements-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+このチャレンジには Microsoft Learn プラットフォームで実行するパートがあります。 下記の手順に従ってチャレンジを完了させてください:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-if-elseif-else/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-if-elseif-else/</a> and complete all the tasks for the "Add Decision Logic to Your Code Using if, else, and else if statements in C#" module. This is **required** to earn the "Create and Run Simple C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. <a href="https://learn.microsoft.com/training/modules/csharp-if-elseif-else/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-if-elseif-else/</a> へ移動し、「C# の if、else、else if ステートメントを使って、コードに決定ロジックを追加する (Add Decision Logic to Your Code Using if, else, and else if statements in C#)」モジュール内のすべてのタスクを完了してください。 これは、Microsoft Learn のトロフィー「単純な C# コンソール アプリケーションを作成して実行する」を獲得し、認定試験の受験資格を得るために**必須**となります。
+1. 完了後、このページに戻り、下記の質問に正しく回答してください。
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-if-elseif-else/" target="_blank" rel="noreferrer">Add Decision Logic to Your Code Using `if`, `else`, and `else if` Statements in C#</a> module on Microsoft Learn. Then, answer the question below.
+Microsoft Learn で「<a href="https://learn.microsoft.com/training/modules/csharp-if-elseif-else/" target="_blank" rel="noreferrer">C# の `if`、`else`、`else if` ステートメントを使って、コードに決定ロジックを追加する</a>」モジュールを完了してください。 次に、下記の質問に回答してください。
 
 # --question--
 
 ## --text--
 
-Which of the choices below is not a valid operator in C#?
+次のうち、C# において有効な演算子ではないものはどれですか？
 
 ## --answers--
 

@@ -8,7 +8,7 @@ dashedName: day-of-the-week
 
 # --description--
 
-A company decides that whenever Xmas falls on a Sunday they will give their workers all extra paid holidays so that, together with any public holidays, workers will not have to work the following week (between the 25th of December and the first of January).
+Uma empresa decide que, sempre que o Natal cai num domingo, dará aos seus trabalhadores todas as férias remuneradas extra, para que, juntamente com quaisquer feriados públicos, os trabalhadores não tenham de trabalhar na semana seguinte (entre 25 de dezembro e 1 de janeiro).
 
 # --instructions--
 

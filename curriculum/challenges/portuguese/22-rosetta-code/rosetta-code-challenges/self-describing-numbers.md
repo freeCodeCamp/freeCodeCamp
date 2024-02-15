@@ -8,14 +8,14 @@ dashedName: self-describing-numbers
 
 # --description--
 
-There are several so-called "self-describing" or "self-descriptive" integers.
+Há vários inteiros chamados "autodescritivos" ou "de autodescrição".
 
 Diz-se que um número inteiro é "autodescritivo" quando ele tem uma propriedade que, quando as posições dos dígitos são rotuladas de 0 a N-1, o algarismo em cada posição é igual ao número de vezes em que o algarismo aparece no número.
 
 Por exemplo, **2020** é um número autodescritivo de quatro dígitos:
 
 <ul>
-    <li> position 0 has value 2 and there are two 0s in the number; </li>
+    <li> a posição 0 tem o valor 2 e há dois 0s no número; </li>
     <li> a posição 1 tem valor 0 e o número 1 não é encontrado no número; </li>
     <li> a posição 2 tem o valor 2 e há dois 2s no número; </li>
     <li> a posição 3 tem o valor 0 e o número 3 não é encontrado no número; </li>

@@ -8,7 +8,7 @@ dashedName: zhang-suen-thinning-algorithm
 
 # --description--
 
-This is an algorithm used to thin a black and white i.e. one bit per pixel images. For example, with an input image of:
+Este é um algoritmo usado para afinar imagens em preto e branco, ou seja, imagens de um bit por pixel. Por exemplo, com uma imagem de entrada de:
 
 ```js
 const testImage1 = [
@@ -40,7 +40,7 @@ Ele produz a saída fina:
   '                               ' ];
 ```
 
-## Algorithm
+## Algoritmo
 
 Suponha que os pixels pretos são um e os pixels brancos são zeros. Leve em conta também que a imagem de entrada é um array retangular, de N por M, de uns e zeros. O algoritmo opera em todos os pixels pretos P1 que podem ter oito vizinhos. Os vizinhos estão, por ordem, organizados como:
 
@@ -48,18 +48,18 @@ $$\begin{array}{|c|c|c|} \\hline P9 & P2              & P3\\\\ \\hline P8 & \bol
 
 Obviamente que os pixels da borda da imagem não podem ter todos os oito vizinhos.
 
-- Define $A(P1)$ = the number of transitions from white to black, ($0 \to 1$) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).
+- Defina $A(P1)$ = o número de transições de branco para preto, ($0 \to 1$) na sequência P2, P3, P4, P5, P6, P7, P8, P9, P2. (Observe o P2 adicional no final - é circular).
 - Defina $B(P1)$ = o número de vizinhos de P1 que são pixels pretos. ($= \\sum(P2 \ldots P9)$)
 
 **Passo 1:**
 
 Todos os pixels são testados e pixels satisfazendo todas as seguintes condições (simultaneamente) são apenas anotados nesta fase.
 
-1. The pixel is black and has eight neighbours
+1. O pixel é preto e tem oito vizinhos
 2. $2 \le B(P1) \le 6$
 3. $A(P1) = 1$
-4. At least one of $P2$, $P4$ and $P6$ is white
-5. At least one of $P4$, $P6$ and $P8$ is white
+4. Pelo menos um dos pixels, entre $P2$, $P4$ e $P6$, é branco
+5. Pelo menos um dos pixels, entre $P4$, $P6$ e $P8$, é branco
 
 Depois de iterar sobre a imagem e coletar todos os pixels satisfazendo todas as condições do passo 1, todos estes pixels que satisfazem as condições são definidos como brancos.
 
@@ -67,7 +67,7 @@ Depois de iterar sobre a imagem e coletar todos os pixels satisfazendo todas as 
 
 Todos os pixels são testados novamente e pixels satisfazendo todas as seguintes condições (simultaneamente) são apenas anotados nesta fase.
 
-1. The pixel is black and has eight neighbours
+1. O pixel é preto e tem oito vizinhos
 2. $2 \le B(P1) \le 6$
 3. $A(P1) = 1$
 4. Pelo menos um dos pixels, entre $P2$, $P4$ e $P8$, é branco

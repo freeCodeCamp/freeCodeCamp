@@ -8,7 +8,7 @@ dashedName: sailors-coconuts-and-a-monkey-problem
 
 # --description--
 
-Five sailors are shipwrecked on an island and collect a large pile of coconuts during the day.
+Cinco marinheiros são náufragos em uma ilha e coletam muitos cocos durante o dia.
 
 Naquela noite, o primeiro marinheiro acorda e decide tomar a sua parte dos cocos mais cedo, então tenta dividir o monte de cocos igualmente em cinco pilhas, mas descobre que ainda há um coco sobrando. Então, ele o joga para um macaco e então esconde "sua" pilha, uma das cinco pilhas de cocos de tamanho igual, e empurra os outros quatro montes para formar um único monte visível de cocos novamente e vai para a cama.
 

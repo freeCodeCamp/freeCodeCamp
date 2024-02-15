@@ -1,27 +1,27 @@
 ---
 id: 6570447ce7b02272663824df
-title: Learn Block and Inline Question A
+title: Блокові та рядкові елементи. Запитання A
 challengeType: 15
 dashedName: learn-block-and-inline-question-a
 ---
 
 # --description--
 
-Most of the elements that you have learned about so far are block elements. In other words, their default style is `display: block`. By default, block elements will appear on the page stacked atop each other, each new element starting on a new line.
+Більшість елементів, про які ви вже дізнались, є блоковими елементами. Іншими словами, їхнім стилем за замовчуванням є `display: block`. За замовчуванням блокові елементи з’являються на сторінці один на одному, а кожен новий елемент починається з нового рядка.
 
 # --question--
 
 ## --text--
 
-Which of the following statements about block elements is true?
+Яке з тверджень про блокові елементи є правильним?
 
 ## --answers--
 
-Block elements take up only the space necessary for their content.
+Блокові елементи займають лише місце, необхідне для свого вмісту.
 
 ---
 
-Block elements start on a new line and take up the full width available.
+Блокові елементи починаються з нового рядка та займають всю доступну ширину.
 
 ## --video-solution--
 

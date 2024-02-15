@@ -14,13 +14,13 @@ Use an `if` statement to check if `nextSongExists` exists, then call the `playNe
 You should create an `if` statement with the condition `nextSongExists`.
 
 ```js
-assert.match(code, /if\s*\(nextSongExists\)\s*\{\s*/)
+assert.match(code, /if\s*\(\s*nextSongExists\s*\)\s*\{\s*/)
 ```
 
 You should call the `playNextSong` function inside your `if` statement.
 
 ```js
-assert.match(code, /if\s*\(nextSongExists\)\s*\{\s*playNextSong\(\);?\s*\}/)
+assert.match(code, /if\s*\(\s*nextSongExists\s*\)\s*\{\s*playNextSong\(\s*\);?\s*\}/)
 ```
 
 # --seed--
@@ -583,7 +583,7 @@ const playSong = (id) => {
   if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
     audio.currentTime = 0;
   } else {
-    audio.currentTime = userData.songCurrentTime;
+    audio.currentTime = userData?.songCurrentTime;
   }
   userData.currentSong = song;
   playButton.classList.add("playing");
@@ -647,7 +647,7 @@ const deleteSong = (id) => {
   highlightCurrentSong(); 
   setPlayButtonAccessibleText(); 
 
-  if (userData.songs.length === 0) {
+  if (userData?.songs.length === 0) {
     const resetButton = document.createElement("button");
     const resetText = document.createTextNode("Reset Playlist");
 
@@ -722,7 +722,7 @@ const setPlayButtonAccessibleText = () => {
   );
 };
 
-const getCurrentSongIndex = () => userData?.songs.indexOf(userData.currentSong);
+const getCurrentSongIndex = () => userData?.songs.indexOf(userData?.currentSong);
 
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {

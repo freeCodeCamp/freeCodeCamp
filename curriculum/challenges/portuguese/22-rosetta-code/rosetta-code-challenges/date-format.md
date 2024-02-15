@@ -8,9 +8,9 @@ dashedName: date-format
 
 # --description--
 
-Return an array with two date strings of the current date with the following specifications:
+Retorna um array com duas strings de data com a data atual de acordo com as seguintes especificações:
 
-- The first string's date order should be the year number, month number, and day number separated by dashes (`-`).
+- A ordem de data da primeira string deve ser o número do ano, o número do mês e o número do dia separados por traços (`-`).
 - O ano da primeira string deve ter quatro dígitos de tamanho.
 - O mês e o dia da primeira string não devem conter zeros precedentes.
 - Os nomes dos dias e dos meses na segunda string não devem ser abreviados.

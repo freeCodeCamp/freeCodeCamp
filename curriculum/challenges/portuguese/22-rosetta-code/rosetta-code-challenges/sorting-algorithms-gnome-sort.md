@@ -8,7 +8,7 @@ dashedName: sorting-algorithmsgnome-sort
 
 # --description--
 
-Gnome sort is a sorting algorithm which is similar to <a href="https://rosettacode.org/wiki/Insertion_sort" target="_blank" rel="noopener noreferrer nofollow">Insertion sort</a>, except that moving an element to its proper place is accomplished by a series of swaps, as in <a href="https://rosettacode.org/wiki/Bubble" target="_blank" rel="noopener noreferrer nofollow">Bubble Sort</a>.
+A ordenação do gnomo é um algoritmo de ordenação semelhante à <a href="https://rosettacode.org/wiki/Insertion_sort" target="_blank" rel="noopener noreferrer nofollow">ordenação de inserção</a>, exceto pelo fato de que mover um elemento para o lugar adequado é realizado por uma série de trocas, como na <a href="https://rosettacode.org/wiki/Bubble" target="_blank" rel="noopener noreferrer nofollow">ordenação de bolha</a>.
 
 O pseudocódigo para o algoritmo é:
 
@@ -17,7 +17,7 @@ O pseudocódigo para o algoritmo é:
   j := 2
   <b>while</b> i &#x3C; size <b>do</b>
     <b>if</b> a[i-1] &#x3C;= a[i] <b>then</b>
-      <i>/// for descending sort, use >= for comparison</i>
+      <i>/// para a ordenação descendente, use >= para a comparação</i>
       i := j
       j := j + 1
     <b>else</b>

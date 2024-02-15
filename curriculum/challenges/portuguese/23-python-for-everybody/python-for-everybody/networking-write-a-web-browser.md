@@ -14,7 +14,7 @@ dashedName: networking-write-a-web-browser
 
 ## --text--
 
-What does the following code create?:
+O que será criado pelo código abaixo?
 
 ```py
 import socket

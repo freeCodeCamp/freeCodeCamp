@@ -8,14 +8,14 @@ dashedName: hash-join
 
 # --description--
 
-An inner join is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the nested loop join algorithm, but a more scalable alternative is the hash join algorithm.
+Um inner join é uma operação que combina duas tabelas de dados em uma tabela, com base na correspondência dos valores da coluna. A maneira mais simples de implementar esta operação é o algoritmo de junção de laço aninhado, mas uma alternativa mais escalável é o algoritmo de junção de hashes.
 
 O algoritmo de união de hashes (ou "hash join") consiste em duas etapas:
 
 <ol>
-  <li><strong>Hash phase:</strong> Create a multimap from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
+  <li><strong>Fase de hash:</strong> crie um multimapa a partir de uma das duas tabelas, mapeando a partir de cada valor de coluna da junção para todas as linhas que a contêm.</li>
   <ul>
-    <li>The multimap must support hash-based lookup which scales better than a simple linear search, because that's the whole point of this algorithm.</li>
+    <li>O multimapa deve suportar uma pesquisa baseada em hash, que seja melhor dimensionada do que uma simples pesquisa linear, pois esse é o sentido desse algoritmo.</li>
     <li>Idealmente, devemos criar o multimapa para a tabela menor, assim minimizando seu tempo de criação e o tamanho da memória.</li>
   </ul>
   <li><strong>Fase de união:</strong> escaneie a outra tabela e encontre linhas correspondentes buscando no multimapa criado anteriormente.</li>
@@ -23,18 +23,18 @@ O algoritmo de união de hashes (ou "hash join") consiste em duas etapas:
 
 Em pseudocódigo, o algoritmo poderia ser expresso da seguinte forma:
 
-<pre><strong>let</strong> <i>A</i> = the first input table (or ideally, the larger one)
-<strong>let</strong> <i>B</i> = the second input table (or ideally, the smaller one)
-<strong>let</strong> <i>j<sub>A</sub></i> = the join column ID of table <i>A</i>
-<strong>let</strong> <i>j<sub>B</sub></i> = the join column ID of table <i>B</i>
-<strong>let</strong> <i>M<sub>B</sub></i> = a multimap for mapping from single values to multiple rows of table <i>B</i> (starts out empty)
-<strong>let</strong> <i>C</i> = the output table (starts out empty)
-<strong>for each</strong> row <i>b</i> in table <i>B</i>:
-  <strong>place</strong> <i>b</i> in multimap <i>M<sub>B</sub></i> under key <i>b(j<sub>B</sub>)</i>
-<strong>for each</strong> row <i>a</i> in table <i>A</i>:
-  <strong>for each</strong> row <i>b</i> in multimap <i>M<sub>B</sub></i> under key <i>a(j<sub>A</sub>)</i>:
-    <strong>let</strong> <i>c</i> = the concatenation of row <i>a</i> and row <i>b</i>
-    <strong>place</strong> row <i>c</i> in table <i>C</i>
+<pre><strong>permita que</strong> <i>A</i> = a primeira tabela de entrada (ou idealmente, a maior)
+<strong>permita que</strong> <i>B</i> = a segunda tabela de entrada (ou idealmente, a menor)
+<strong>permita que</strong> <i>j<sub>A</sub></i> = o ID da coluna de união da tabela <i>A</i>
+<strong>permita que</strong> <i>j<sub>B</sub></i> = o ID da coluna de união da tabela <i>B</i>
+<strong>permita que</strong> <i>M<sub>B</sub></i> = um multimapa para o mapeamento de valores únicos para múltiplas linhas da tabela <i>B</i> (começa vazio)
+<strong>permita que</strong> <i>C</i> = a tabela de saída (começa vazia)
+<strong>para cada</strong> linha <i>b</i> na tabela <i>B</i>:
+  <strong>coloque</strong> <i>b</i> no multimapa <i>M<sub>B</sub></i> com a chave <i>b(j<sub>B</sub>)</i>
+<strong>para cada</strong> linha <i>a</i> na tabela <i>A</i>:
+  <strong>para cada</strong> linha <i>b</i> no multimapa <i>M<sub>B</sub></i> com a chave <i>a(j<sub>A</sub>)</i>:
+    <strong>permita que</strong> <i>c</i> = a concatenação da linha <i>a</i> e da linha <i>b</i>
+    <strong>coloque</strong> a linha <i>c</i> na tabela <i>C</i>
 </pre>
 
 # --instructions--
@@ -52,8 +52,8 @@ Implemente o algoritmo de "hash join" como uma função e demonstre que ele pass
           <td style="border:none">
             <table>
               <tr>
-                <th style="padding: 4px; margin: 5px;">Age</th>
-                <th style="padding: 4px; margin: 5px;">Name</th>
+                <th style="padding: 4px; margin: 5px;">Idade</th>
+                <th style="padding: 4px; margin: 5px;">Nome</th>
               </tr>
               <tr>
                 <td style="padding: 4px; margin: 5px;">27</td>
@@ -82,8 +82,8 @@ Implemente o algoritmo de "hash join" como uma função e demonstre que ele pass
           <td style="border:none">
             <table>
               <tr>
-                <th style="padding: 4px; margin: 5px;">Character</th>
-                <th style="padding: 4px; margin: 5px;">Nemesis</th>
+                <th style="padding: 4px; margin: 5px;">Personagem</th>
+                <th style="padding: 4px; margin: 5px;">Inimigo</th>
               </tr>
               <tr>
                 <td style="padding: 4px; margin: 5px;">Jonah</td>
@@ -113,13 +113,13 @@ Implemente o algoritmo de "hash join" como uma função e demonstre que ele pass
             <i>j<sub>A</sub> =</i>
           </td>
           <td style="border:none">
-            <i><code>Name</code> (i.e. column 1)</i>
+            <i><code>Name</code> (ou seja, a coluna 1)</i>
           </td>
           <td style="border:none">
             <i>j<sub>B</sub> =</i>
           </td>
           <td style="border:none">
-            <i><code>Character</code> (i.e. column 0)</i>
+            <i><code>Character</code> (ou seja, a coluna 0)</i>
           </td>
         </tr>
       </table>

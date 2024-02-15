@@ -8,7 +8,7 @@ dashedName: sudoku
 
 # --description--
 
-Write a function to solve a partially filled-in normal 9x9 Sudoku grid and return the result. The blank fields are represented by `-1`.
+Escreva uma função para resolver uma grade 9x9 normal, parcialmente preenchida, e retornar o resultado. Os campos em branco são representados por `-1`.
 
 # --hints--
 

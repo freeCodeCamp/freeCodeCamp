@@ -1,6 +1,6 @@
 ---
 id: 5e444147903586ffb414c94f
-title: Polygon Area Calculator
+title: Calculador de área de polígonos
 challengeType: 10
 forumTopicId: 462363
 dashedName: polygon-area-calculator
@@ -8,20 +8,20 @@ dashedName: polygon-area-calculator
 
 # --description--
 
-You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
+Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código inicial en Replit</a>.
 
--   Start by importing the project on Replit. 
--   Next, you will see a `.replit` window. 
--   Select `Use run command` and click the `Done` button. 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
 
 
 # --instructions--
 
-In this project you will use object oriented programming to create a Rectangle class and a Square class. The Square class should be a subclass of Rectangle and inherit methods and attributes.
+En este proyecto usarás programación orientada a objetos para crear una clase Rectangle y una clase Square. La clase Square debe ser una subclase de Rectangle y heredar métodos y atributos.
 
-## Rectangle class
+## Clase Rectángulo
 
-When a Rectangle object is created, it should be initialized with `width` and `height` attributes. The class should also contain the following methods:
+Cuando se crea un objeto Rectangle, debe ser inicializado con los atributos `width` y `height`. La clase debe contener también los siguientes métodos:
 
 - `set_width`
 - `set_height`
@@ -31,17 +31,17 @@ When a Rectangle object is created, it should be initialized with `width` and `h
 - `get_picture`: Returns a string that represents the shape using lines of "\*". The number of lines should be equal to the height and the number of "\*" in each line should be equal to the width. There should be a new line (`\n`) at the end of each line. If the width or height is larger than 50, this should return the string: "Too big for picture.".
 - `get_amount_inside`: Takes another shape (square or rectangle) as an argument. Returns the number of times the passed in shape could fit inside the shape (with no rotations). For instance, a rectangle with a width of 4 and a height of 8 could fit in two squares with sides of 4.
 
-Additionally, if an instance of a Rectangle is represented as a string, it should look like: `Rectangle(width=5, height=10)`
+Además, si una instancia de un Rectángulo se representa como una cadena, debería verse como: `Rectangle(width=5, height=10)`
 
-## Square class
+## Clase Square
 
-The Square class should be a subclass of Rectangle. When a Square object is created, a single side length is passed in. The `__init__` method should store the side length in both the `width` and `height` attributes from the Rectangle class.
+La clase Square debería ser una subclase de Rectangle. Cuando se crea un objeto de Square, se pasa una longitud de un solo lado. El método `__init__` debería almacenar la longitud lateral en ambos atributos `width` y `height` de la clase Rectangle.
 
-The Square class should be able to access the Rectangle class methods but should also contain a `set_side` method. If an instance of a Square is represented as a string, it should look like: `Square(side=9)`
+La clase Square debería ser capaz de acceder a los métodos de la clase Rectangle, pero también debería contener un método `set_side`. Si una instancia de un Square se representa como una cadena, debería verse como: `Square(side=9)`
 
-Additionally, the `set_width` and `set_height` methods on the Square class should set both the width and height.
+Además, los métodos `set_width` y `set_height` en la clase Square deben establecer tanto el ancho como la altura.
 
-## Usage example
+## Ejemplo de uso
 
 ```py
 rect = shape_calculator.Rectangle(10, 5)
@@ -63,7 +63,7 @@ rect.set_width(16)
 print(rect.get_amount_inside(sq))
 ```
 
-That code should return:
+Ese código debería retornar:
 
 ```bash
 50
@@ -84,23 +84,23 @@ Square(side=4)
 8
 ```
 
-The unit tests for this project are in `test_module.py`.
+Las pruebas unitarias para este proyecto están en `test_module.py`.
 
-## Development
+## Desarrollo
 
-Write your code in `shape_calculator.py`. For development, you can use `main.py` to test your `shape_calculator()` function. Click the "run" button and `main.py` will run.
+Escribe tu código en `shape_calculator.py`. Para el desarrollo, puedes usar `main.py` para probar tu función `shape_calculator()`. Haz clic en el botón "run" y se ejecutará `main.py`.
 
-## Testing
+## Pruebas
 
-We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
+Importamos las pruebas de `test_module.py` a `main.py` para tu conveniencia. Las pruebas se ejecutarán automáticamente cada vez que pulses el botón "run".
 
-## Submitting
+## Envío
 
-Copy your project's URL and submit it to freeCodeCamp.
+Copia el enlace de tu proyecto y envíalo a freeCodeCamp.
 
 # --hints--
 
-It should create a Rectangle class and Square class and pass all tests.
+Debería crear una clase Rectangle y una clase Square y pasar todas las pruebas.
 
 ```js
 

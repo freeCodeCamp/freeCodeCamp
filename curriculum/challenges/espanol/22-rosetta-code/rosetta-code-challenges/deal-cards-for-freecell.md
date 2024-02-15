@@ -26,13 +26,13 @@ A continuación el algoritmo:
   <li>Seed the RNG with the number of the deal.
   </li><li>Crea un arreglo de 52 cartas: As de Tréboles, As de Diamantes, As de Corazones, As de Espadas, 2 de Tréboles, 2 de Diamantes, y así sucesivamente por los rangos: As, 2, 3, 4, 5, 6, 7, 8, 9, 10, Sota, Reina, Rey. Los índices del arreglo son de 0 a 51, con As de Tréboles en 0, y Rey de Espadas al 51.</li>
   <li>Hasta que el arreglo quede vacío:</li>
-  <li>Escoge una carta aleatoria al índice ≡ siguiente número aleatorio (mod array length).</li>
     <ul>
+      <li>Choose a random card at <i>index</i> ≡ <i>next random number</i> (mod <i>array length</i>).</li>
       <li>Swap this random card with the last card of the array.</li>
-      <li>Remueve esta carta aleatoria del arreglo. (Longitud del arreglo bajara en 1)</li>
-      <li>Reparte esta carta aleatoria.</li>
+      <li>Remove this random card from the array. (Array length goes down by 1.)</li>
+      <li>Deal this random card.</li>
     </ul>
-  <li>Reparte todas las 52 cartas, boca arriba, sobre 8 columnas. Las primeras 8 cartas van en 8 columnas, las siguientes 8 van sobre las primeras 8 cartas, y así sucesivamente.</li>
+  <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
 </ol>
 
 **Por ejemplo:**

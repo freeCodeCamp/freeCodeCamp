@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7eb0
-title: 'І перед Е (виняток: окрім після С)'
+title: Правило «I before E except after C»
 challengeType: 1
 forumTopicId: 302288
 dashedName: i-before-e-except-after-c
@@ -8,24 +8,24 @@ dashedName: i-before-e-except-after-c
 
 # --description--
 
-**<a href="http://www.rosettacode.org/wiki/I_before_E_except_after_C" target="_blank" rel="noopener noreferrer nofollow">"I before E, except after C"</a>** is a general rule for English language spelling. If one is unsure whether a word is spelled with the digraph `ei` or `ie`, the rhyme suggests that the correct order is `ie` unless the preceding letter is `c`, in which case it may be `ei`.
+**<a href="http://www.rosettacode.org/wiki/I_before_E_except_after_C" target="_blank" rel="noopener noreferrer nofollow">«I before E, except after C»</a>** — це загальне правило для вимови в англійській мові. Якщо ви не впевнені, як правильно писати слово: `ei` чи `ie`, то рима вказує на те, що правильний порядок `ie`. Але, якщо перед цими літерами стоїть `c`, то може бути `ei`.
 
-Використовуючи надані слова, перевірте, чи два підпункти фрази переконливі окремо:
+Використовуючи надані слова, перевірте, чи два підпункти фрази правдиві:
 
 <ol>
   <li>
-    <i>"I before E when not preceded by C".</i>
+    <i>«I before E when not preceded by C» (укр. «I перед E, але перед C»).</i>
   </li>
   <li>
-    <i>"E до того, коли перед мною передувала С".</i>
+    <i>«E before I when preceded by C» (укр. «E перед I, але після C»).</i>
   </li>
 </ol>
 
-Вихідна фраза є правдоподібною, якщо обидві субфрази правдоподібні.
+Якщо обидва підпункти правдиві, то початкова фраза також правдива.
 
 # --instructions--
 
-Напишіть функцію, яка допускає слово і перевірте, чи воно підлягає правилу. Якщо слово підлягає правилу, то функція успішна, якщо ні - функція хибна.
+Напишіть функцію, яка приймає слово і перевіряє, чи воно відповідає правилу. Функція має повернути true, якщо слово відповідає правилу, або false, якщо навпаки.
 
 # --hints--
 
@@ -35,43 +35,43 @@ dashedName: i-before-e-except-after-c
 assert(typeof IBeforeExceptC == 'function');
 ```
 
-`IBeforeExceptC("receive")` має повертати булеве значення.
+`IBeforeExceptC("receive")` має повернути булеве значення.
 
 ```js
 assert(typeof IBeforeExceptC('receive') == 'boolean');
 ```
 
-`IBeforeExceptC("receive")` має повертати `true`.
+`IBeforeExceptC("receive")` має повернути `true`.
 
 ```js
 assert.equal(IBeforeExceptC('receive'), true);
 ```
 
-`IBeforeExceptC("science")` має повертати `false`.
+`IBeforeExceptC("science")` має повернути `false`.
 
 ```js
 assert.equal(IBeforeExceptC('science'), false);
 ```
 
-`IBeforeExceptC("imperceivable")` має повертати `true`.
+`IBeforeExceptC("imperceivable")` має повернути `true`.
 
 ```js
 assert.equal(IBeforeExceptC('imperceivable'), true);
 ```
 
-`IBeforeExceptC("inconceivable")` має повертати `true`.
+`IBeforeExceptC("inconceivable")` має повернути `true`.
 
 ```js
 assert.equal(IBeforeExceptC('inconceivable'), true);
 ```
 
-`IBeforeExceptC("insufficient")` має повертати `false`.
+`IBeforeExceptC("insufficient")` має повернути `false`.
 
 ```js
 assert.equal(IBeforeExceptC('insufficient'), false);
 ```
 
-`IBeforeExceptC("omniscient")` має повертати `false`.
+`IBeforeExceptC("omniscient")` має повернути `false`.
 
 ```js
 assert.equal(IBeforeExceptC('omniscient'), false);

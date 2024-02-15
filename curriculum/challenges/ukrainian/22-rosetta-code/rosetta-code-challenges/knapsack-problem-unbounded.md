@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ed4
-title: Задача пакування рюкзака/Необмежена
+title: Задача пакування рюкзака без обмежень
 challengeType: 1
 forumTopicId: 323655
 dashedName: knapsack-problemunbounded
@@ -8,21 +8,21 @@ dashedName: knapsack-problemunbounded
 
 # --description--
 
-A traveler gets diverted and has to make an unscheduled stop in what turns out to be Shangri-La. Opting to leave, he is allowed to take as much as he likes of the items available there, so long as it will fit in his knapsack, and he can carry it.
+Турист змінює курс і змушений зробити незаплановану зупинку в Шангрі-Ла. Перед від'їздом йому дозволили взяти стільки предметів, скільки захоче, за умови, що вибрані предмети помістяться в рюкзак, і він зможе його нести.
 
-Він знає максимальну вагу, яку зможе нести; і, що об'єм рюкзака обмежений.
+Він знає максимальну вагу, яку зможе нести, і що об’єм рюкзака обмежений.
 
-Над штрих-кодами предметів написана їх вага та об'єм. Він витягує свою останню копію фінансового звіту та дізнається ціну кожного предмету.
+Над штрих-кодами предметів написана їхні вага та об’єм. Він витягує останню копію фінансового звіту та дізнається цінність кожного предмету.
 
-Йому можна брати лише цілі предмети, і їх є набагато більше, ніж він би зміг нести.
+Йому можна брати лише цілі предмети, а їх є набагато більше, ніж він би зміг нести.
 
 # --instructions--
 
-Напишіть функцію, а у її параметрах вкажіть масив об'єктів, максимальну вагу та максимальний об'єм. Кожен об'єкт має назву, вартість, вагу та об'єм. Функція має повернути максимальне значення предметів, які мандрівник може взяти з собою.
+Напишіть функцію, яка приймає масив предметів, максимальну вагу та максимальний об’єм як параметри. Кожен об’єкт має 4 атрибути: назва, цінність, вага та об’єм. Функція має повернути максимальну цінність предметів, які турист може взяти з собою.
 
 # --hints--
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.25)` має повертати `54500`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.25)` має повернути `54500`.
 
 ```js
 assert.equal(
@@ -39,7 +39,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 55, 0.25)` має повертати `88400`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 55, 0.25)` має повернути `88400`.
 
 ```js
 assert.equal(
@@ -56,7 +56,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.15)` має повертати `42500`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.15)` має повернути `42500`.
 
 ```js
 assert.equal(
@@ -73,7 +73,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 35, 0.35)` має повертати `75900`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 35, 0.35)` має повернути `75900`.
 
 ```js
 assert.equal(
@@ -90,7 +90,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 15, 0.25)` має повертати`43200`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 15, 0.25)` має повернути `43200`.
 
 ```js
 assert.equal(

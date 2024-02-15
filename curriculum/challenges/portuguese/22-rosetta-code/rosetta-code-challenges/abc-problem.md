@@ -8,7 +8,7 @@ dashedName: abc-problem
 
 # --description--
 
-You are given a collection of ABC blocks (e.g., childhood alphabet blocks). There are 20 blocks with two letters on each block. A complete alphabet is guaranteed amongst all sides of the blocks. The sample collection of blocks:
+Você recebe uma coleção de blocos ABC (por exemplo, blocos de alfabeto de infância). Há 20 blocos com duas letras em cada bloco. Um alfabeto completo é garantido entre todos os lados dos blocos. A coleção de amostra de blocos:
 
 <pre>(B O)
 (X K)
@@ -39,7 +39,7 @@ Implemente uma função que recebe uma string (palavra) e determina se a palavra
 Algumas regras para se ter em mente:
 
 <ul>
-  <li>Once a letter on a block is used, that block cannot be used again.</li>
+  <li>Quando uma letra em um bloco é usada, esse bloco não pode ser usado novamente.</li>
   <li>A função não deve distinguir maiúsculas e minúsculas.</li>
 </ul>
 

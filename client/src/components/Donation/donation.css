@@ -273,6 +273,19 @@ li.disabled > a {
 .donation-modal p {
   font-size: 0.9rem;
 }
+
+.donation-modal ul {
+  padding: 0;
+}
+
+.donation-modal li {
+  list-style-type: none;
+  margin-bottom: 4px;
+}
+.donation-modal li svg {
+  margin: 0 5px;
+}
+
 .donation-label-modal {
   font-weight: normal;
   text-align: center;
@@ -735,4 +748,140 @@ a.patreon-button:hover {
 .supporter-badge-container svg {
   height: 6em;
   width: auto;
+}
+
+#supporter-bear {
+  height: 250px;
+}
+
+.donation-animation-container,
+.donation-animation-bullet-points {
+  position: relative;
+  width: 100%;
+}
+
+.donation-animation-bullet-points p {
+  position: absolute;
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-size: 200%;
+  padding: 0 20px;
+}
+
+.donation-animation-bullet-1 {
+  animation-name: animation-bullet-1;
+}
+
+.donation-animation-bullet-2 {
+  animation-name: animation-bullet-2;
+}
+
+.donation-animation-bullet-3 {
+  animation-name: animation-bullet-3;
+}
+
+.donation-animation-bullet-4 {
+  animation-name: animation-bullet-4;
+}
+
+.donation-animation-bullet-1,
+.donation-animation-bullet-2,
+.donation-animation-bullet-3,
+.donation-animation-bullet-4 {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-duration: 20s;
+  margin-top: 40px;
+  animation-timing-function: normal;
+}
+
+@keyframes animation-bullet-1 {
+  1% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  2.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  19.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  21% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+}
+
+@keyframes animation-bullet-2 {
+  21% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  22.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  38.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  40% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+}
+
+@keyframes animation-bullet-3 {
+  40% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  41.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  64% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  65.5% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+}
+
+@keyframes animation-bullet-4 {
+  65.5% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  67% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  96% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  97.5% {
+    opacity: 0;
+  }
+}
+
+.tester-text {
+  margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .donation-animation-bullet-points p {
+    font-size: 150%;
+  }
+  #donation-animation {
+    object-fit: cover;
+    min-height: 600px;
+    width: 100%;
+  }
 }

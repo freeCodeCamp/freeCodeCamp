@@ -14,7 +14,7 @@ dashedName: python-lists
 
 ## --text--
 
-What is the value of x after running this code:
+Qual é o valor x após a execução deste código:
 
 ```python
 fruit = "banana"

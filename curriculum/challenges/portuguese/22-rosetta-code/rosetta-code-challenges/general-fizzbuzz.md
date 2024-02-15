@@ -8,7 +8,7 @@ dashedName: general-fizzbuzz
 
 # --description--
 
-Write a generalized version of <a href="https://rosettacode.org/wiki/FizzBuzz" target="_blank" rel="noopener noreferrer nofollow">FizzBuzz</a> that works for any list of factors, along with their words.
+Escreva uma versão generalizada do algoritmo <a href="https://rosettacode.org/wiki/FizzBuzz" target="_blank" rel="noopener noreferrer nofollow">FizzBuzz</a>, que funcione para qualquer lista de fatores, juntamente com suas palavras.
 
 Esta é basicamente uma implementação de "fizzbuzz" onde as regras do jogo são fornecidas ao utilizador. Crie uma função para implementar isso. A função deve receber dois parâmetros.
 

@@ -3,6 +3,7 @@ const mockFillInTheBlankYouAreAST = require('../__fixtures__/ast-fill-in-the-bla
 const mockFillInTheBlankTwoSentencesAST = require('../__fixtures__/ast-fill-in-the-blank-two-sentences.json');
 const mockFillInTheBlankBadSentence = require('../__fixtures__/ast-fill-in-the-blank-bad-sentence.json');
 const mockFillInTheBlankBadParagraph = require('../__fixtures__/ast-fill-in-the-blank-bad-paragraph.json');
+const mockFillInTheBlankMultipleBlanks = require('../__fixtures__/ast-fill-in-the-blank-many-blanks.json');
 const addFillInTheBlankQuestion = require('./add-fill-in-the-blank');
 
 describe('fill-in-the-blanks plugin', () => {
@@ -123,6 +124,15 @@ Example of good formatting:
 \`by a blank line\`
 
 `
+    );
+  });
+
+  it('should throw if there are multiple --blanks-- sections', () => {
+    // TODO: Check if this is too wordy
+    expect(() => {
+      plugin(mockFillInTheBlankMultipleBlanks, file);
+    }).toThrow(
+      `There should only be one --blanks-- section in the fillInTheBlank challenge`
     );
   });
 

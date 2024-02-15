@@ -14,7 +14,7 @@ dashedName: web-services-apis
 
 ## --text--
 
-What does API stand for?
+O que significa API?
 
 ## --answers--
 

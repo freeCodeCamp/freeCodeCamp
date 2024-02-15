@@ -8,7 +8,7 @@ dashedName: sum-digits-of-an-integer
 
 # --description--
 
-Write a function that takes a string as a parameter. This string represents a number that can be in any base (less than 37) and return the sum of its digits.
+Напишіть функцію, яка приймає рядок як параметр. Цей рядок представляє число за будь-якою основою (меншою за 37) та повертає суму його цифр.
 
 <ul>
   <li><b>1</b><sub>10</sub> сумується як <b>1</b></li>

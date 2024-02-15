@@ -8,7 +8,7 @@ dashedName: vector-cross-product
 
 # --description--
 
-A vector is defined as having three dimensions as being represented by an ordered collection of three numbers: (X, Y, Z).
+Um vetor é definido como tendo três dimensões e sendo representado por uma coleção ordenada de três números: (X, Y, Z).
 
 # --instructions--
 

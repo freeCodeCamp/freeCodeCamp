@@ -8,13 +8,13 @@ dashedName: fibonacci-sequence
 
 # --description--
 
-Write a function to generate the <code>n<sup>th</sup></code> Fibonacci number.
+Напишіть функцію, щоб знайти <code>n<sup>-не</sup></code> число Фібоначчі.
 
-Число Фібоначчі <code>n<sup>th</sup></code>задається:
+<code>n<sup>-не</sup></code> число Фібоначчі задане формулою:
 
 <code>F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n-2</sub></code>
 
-Першими двома членами послідовностей є 0 і 1.
+Першими двома членами послідовності є 0 та 1.
 
 Отже, послідовність наступна: 0, 1, 1, 2, 3, 5, 8, 13...
 
@@ -32,19 +32,19 @@ assert(typeof fibonacci === 'function');
 assert(typeof fibonacci(2) == 'number');
 ```
 
-`fibonacci(3)` має повернути число 2.
+`fibonacci(3)` має повернути 2.
 
 ```js
 assert.equal(fibonacci(3), 2);
 ```
 
-`fibonacci(5)` має повернути число 5.
+`fibonacci(5)` має повернути 5.
 
 ```js
 assert.equal(fibonacci(5), 5);
 ```
 
-`fibonacci(10)` має повернути число 55.
+`fibonacci(10)` має повернути 55.
 
 ```js
 assert.equal(fibonacci(10), 55);

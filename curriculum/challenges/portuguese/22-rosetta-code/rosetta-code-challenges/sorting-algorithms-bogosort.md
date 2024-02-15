@@ -8,7 +8,7 @@ dashedName: sorting-algorithmsbogosort
 
 # --description--
 
-Bogosort a list of numbers.
+Faça a ordenação Bogosort de uma lista de números.
 
 O Bogosort simplesmente embaralha uma coleção aleatoriamente até que ela fica ordenada.
 
@@ -20,8 +20,8 @@ O melhor caso é O(n), uma vez que um único passo através dos elementos pode b
 
 Pseudocódigo:
 
-<pre><b>while not</b> InOrder(list) <b>do</b>
-  Shuffle(list)
+<pre><b>while not</b> NaOrdem(lista) <b>do</b>
+  Embaralhar(lista)
 <b>done</b>
 </pre>
 

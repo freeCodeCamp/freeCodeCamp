@@ -8,7 +8,7 @@ dashedName: ackermann-function
 
 # --description--
 
-The Ackermann function is a classic example of a recursive function, notable especially because it is not a primitive recursive function. It grows very quickly in value, as does the size of its call tree.
+A função de Ackermann é um exemplo clássico de uma função recursiva, especialmente porque não é uma função recursiva primitiva. Ela cresce muito rapidamente em valor, assim como no tamanho da sua árvore de chamadas.
 
 A função de Ackermann é geralmente definida da seguinte forma:
 

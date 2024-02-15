@@ -1,6 +1,6 @@
 ---
 id: 595011cba5a81735713873bd
-title: Найкращий на групу
+title: Найкращі показники групи
 challengeType: 1
 forumTopicId: 302339
 dashedName: top-rank-per-group
@@ -8,9 +8,9 @@ dashedName: top-rank-per-group
 
 # --description--
 
-Find the top `n` ranked data in each group, where `n` is provided as a parameter. Name of the rank and the group are also provided as parameter.
+Знайдіть `n` найкращих об’єктів в кожній групі, де `n` надано як параметр. Назву групи також надано як параметр.
 
-За наведеними нижче даними:
+Дано наступні дані:
 
 ```js
 testData1 = [
@@ -30,13 +30,13 @@ testData1 = [
 ];
 ```
 
-Перші топ 10 працівників кожного відділення можуть бути виставлені в рейтинг таким чином:
+Щоб знайти десять найкращих працівників з кожного відділення, викличте:
 
 ```js
 topRankPerGroup(10, testData1, 'dept', 'salary')
 ```
 
-За наведеними нижче даними:
+Дано наступні дані:
 
 ```js
 testData2 = [
@@ -48,15 +48,15 @@ testData2 = [
 ];
 ```
 
-Можна ранжувати фільми з найвищими рейтингами за жанром таким чином:
+Щоб знайти найкращі фільми кожного жанру, викличте:
 
 ```js
 topRankPerGroup(1, testData2, 'genre', 'rating')
 ```
 
-Функція має повернути масив з окремим масивом для кожної групи, що матимуть топ `n` об'єкти.
+Функція має повернути масив з окремим масивом для кожної категорії, що містить `n` найкращих об’єктів.
 
-Наприклад, за такими даними:
+Наприклад, дано такі дані:
 
 ```js
 [
@@ -69,7 +69,7 @@ topRankPerGroup(1, testData2, 'genre', 'rating')
 ];
 ```
 
-Два найкращі працівники за показником зарплати були б:
+Двома працівниками з кожного відділення з найбільшою зарплатнею будуть:
 
 ```js
 [ [ { name: 'Kim Arlich', id: 'E10001', salary: 57000, dept: 'D050' },
@@ -86,13 +86,13 @@ topRankPerGroup(1, testData2, 'genre', 'rating')
 assert(typeof topRankPerGroup === 'function');
 ```
 
-`topRankPerGroup` має повернути невизначені або від'ємні значення n.
+`topRankPerGroup` має повернути `undefined`, якщо значення n від’ємне.
 
 ```js
 assert(typeof topRankPerGroup(-1, []) === 'undefined');
 ```
 
-Для `topRankPerGroup(10, testData1, 'dept', 'salary')`, першим результатом у першій групі має бути `{ name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050'}`.
+Для `topRankPerGroup(10, testData1, 'dept', 'salary')`, першим результатом в першій групі має бути `{ name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050'}`.
 
 ```js
 assert.deepEqual(res1[0][0], { name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050'});
@@ -104,13 +104,13 @@ assert.deepEqual(res1[0][0], { name: 'John Rappl', id: 'E21437', salary: 47000, 
 assert.deepEqual(res1[3][3], { name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' });
 ```
 
-`topRankPerGroup(1, ...)` має повернути лише найвищий результат із групи.
+`topRankPerGroup(1, ...)` має повернути лише найкращий результат для кожної групи.
 
 ```js
 assert.equal(res2[2].length, 1);
 ```
 
-`topRankPerGroup(2, ...)` має повернути два найкращих результати з групи.
+`topRankPerGroup(2, ...)` має повернути два найкращих результати для кожної групи.
 
 ```js
 assert.equal(res3[2][1].name, 'Maze Runner');

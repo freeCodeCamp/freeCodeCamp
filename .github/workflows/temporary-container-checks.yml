@@ -167,4 +167,5 @@ jobs:
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
-          spec: ${{ matrix.spec }}
+          # Only run one test to keep the run time down.
+          spec: 'cypress/e2e/default/learn/challenges/backend.ts'

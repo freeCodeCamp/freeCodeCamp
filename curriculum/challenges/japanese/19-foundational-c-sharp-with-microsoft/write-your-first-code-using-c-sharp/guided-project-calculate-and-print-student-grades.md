@@ -1,26 +1,26 @@
 ---
 id: 647e235a8acb466c97ccbf00
-title: Guided Project - Calculate and Print Student Grades
+title: ガイド付きプロジェクト - 学生の成績を計算して印刷する
 challengeType: 19
 dashedName: guided-project-calculate-and-print-student-grades
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+このチャレンジには Microsoft Learn プラットフォームで実行するパートがあります。 下記の手順に従ってチャレンジを完了させてください:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/</a> and complete all the tasks for the "Guided Project - Calculate and Print Student Grades" module. This is **required** to earn the "Write Your First Code Using C#" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/</a> へ移動し、「ガイド付きプロジェクト - 学生の成績を計算して印刷する (Guided Project - Calculate and Print Student Grades)」モジュール内のすべてのタスクを完了してください。 これは、Microsoft Learn のトロフィー「C# を使用して最初のコードを書く」を獲得し、認定試験の受験資格を得るために**必須**となります。
+1. 完了後、このページに戻り、下記の質問に正しく回答してください。
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/" target="_blank" rel="noreferrer">Calculate and Print Student Grades</a> guided project on Microsoft Learn. Then, answer the question below.
+Microsoft Learn でガイド付きプロジェクト「<a href="https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/" target="_blank" rel="noreferrer">学生の成績を計算して印刷する</a>」を完了してください。 次に、下記の質問に回答してください。
 
 # --question--
 
 ## --text--
 
-What is wrong with the following code?
+下記のコードのどこに誤りがありますか？
 
 ```clike
 int sophiaSum;
@@ -29,15 +29,15 @@ Console.WriteLine("Sophia: " + sophiaSum);
 
 ## --answers--
 
-`sophiaSum` is not initialized before use
+`sophiaSum` が使用前に初期化されていない
 
 ---
 
-`sophiaSum` is not implicitly typed to a string
+`sophiaSum` が暗黙的に文字列型となっていない
 
 ---
 
-`sophiaSum` should use the var keyword
+`sophiaSum` には var というキーワードを使うべきである
 
 ## --video-solution--
 

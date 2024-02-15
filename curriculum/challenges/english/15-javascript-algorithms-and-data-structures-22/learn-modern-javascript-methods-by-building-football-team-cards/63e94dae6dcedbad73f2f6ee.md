@@ -25,7 +25,7 @@ You should unpack all 5 object properties from objects in `arr` using object des
 
 ```js
 
-assert.match(code, /{\s*((name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname))\s*}\s*/)
+assert.match(code, /{\s*((name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname))\s*}\s*/)
 
 
 ```

@@ -9,7 +9,6 @@ import {
 import { createAcceptTermsSaga } from './accept-terms-saga';
 import { actionTypes, ns as MainApp } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
-import { createCodeAllySaga } from './codeally-saga';
 import { createDonationSaga } from './donation-saga';
 import failedUpdatesEpic from './failed-updates-epic';
 import { createFetchUserSaga } from './fetch-user-saga';
@@ -63,7 +62,6 @@ const initialState = {
   showCertFetchState: {
     ...defaultFetchState
   },
-  showCodeAlly: false,
   user: {},
   userFetchState: {
     ...defaultFetchState
@@ -93,7 +91,6 @@ export const epics = [hardGoToEpic, failedUpdatesEpic, updateCompleteEpic];
 export const sagas = [
   ...createAcceptTermsSaga(actionTypes),
   ...createAppMountSaga(actionTypes),
-  ...createCodeAllySaga(actionTypes),
   ...createDonationSaga(actionTypes),
   ...createGaSaga(actionTypes),
   ...createFetchUserSaga(actionTypes),
@@ -416,18 +413,6 @@ export const reducer = handleActions(
             userToken: null
           }
         }
-      };
-    },
-    [actionTypes.hideCodeAlly]: state => {
-      return {
-        ...state,
-        showCodeAlly: false
-      };
-    },
-    [actionTypes.showCodeAlly]: state => {
-      return {
-        ...state,
-        showCodeAlly: true
       };
     },
     [actionTypes.startExam]: state => {

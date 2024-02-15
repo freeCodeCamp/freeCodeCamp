@@ -13,20 +13,20 @@ dashedName: html-foundations-question-h
 
 ## --text--
 
-Why are HTML and CSS not typically classified as programming languages?
+Чому HTML та CSS зазвичай не класифікуються як мови програмування?
 
 ## --answers--
 
-They lack the ability to create webpages.
+Їм не вистачає здатності створювати вебсторінки.
 
 ---
 
-They focus on presenting information rather than programming logic.
+Вони зосереджуються на відтворенні інформації, а не логіці програмування.
 
 ---
 
-They are outdated technologies.
+Це застарілі технології.
 
 ## --video-solution--
 
-1
+2

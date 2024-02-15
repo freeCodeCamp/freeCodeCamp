@@ -8,7 +8,7 @@ dashedName: lzw-compression
 
 # --description--
 
-The Lempel-Ziv-Welch (LZW) algorithm provides loss-less data compression.
+O algoritmo de Lempel-Ziv-Welch (LZW) fornece compressão de dados sem perda.
 
 # --instructions--
 

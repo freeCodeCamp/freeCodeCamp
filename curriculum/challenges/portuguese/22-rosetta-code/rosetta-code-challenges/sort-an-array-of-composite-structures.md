@@ -8,7 +8,7 @@ dashedName: sort-an-array-of-composite-structures
 
 # --description--
 
-Write a function that takes an array of objects as a parameter. The function should sort the array according to the 'key' attribute of the objects and return the sorted array.
+Escreva uma função que receba um array de objetos como parâmetro. A função deve ordenar o array de acordo com o atributo 'key' dos objetos e retornar o array ordenado.
 
 # --hints--
 

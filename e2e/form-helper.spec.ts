@@ -83,7 +83,7 @@ test.describe('Test form with solution link and github link', () => {
     );
     await expect(githubLinkInputLabel).toBeVisible();
     await expect(githubLinkInputLabel).toHaveText(
-      translations.learn['github-link']
+      translations.learn['source-code-link']
     );
 
     const githubLinkInput = solutionForm.getByTestId('githubLink-form-control');

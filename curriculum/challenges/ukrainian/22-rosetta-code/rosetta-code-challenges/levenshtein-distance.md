@@ -8,11 +8,11 @@ dashedName: levenshtein-distance
 
 # --description--
 
-In information theory and computer science, the **Levenshtein distance** is a metric for measuring the amount of difference between two sequences (i.e. an edit distance). The Levenshtein distance between two strings is defined as the minimum number of edits needed to transform one string into the other, with the allowable edit operations being insertion, deletion, or substitution of a single character.
+В теорії інформації та комп’ютерній науці, **відстань Левенштейна** — це метрика для вимірювання різниці між двома послідовностями (тобто відстань редагування). Відстань Левенштейна між двома рядками визначається як мінімальна кількість операцій додавання, видалення або заміни символа, необхідних для перетворення одного рядка в інший.
 
 Наприклад:
 
-Відстань Левенштейна між "**kitten**" і "**sitting**" складають 3, оскільки неможливо перетворити одне слово в інше за меншу кількість операцій:
+Відстань Левенштейна між **kitten** та **sitting** становить 3, оскільки одне слово в інше неможливо перетворити за менше ніж три операції:
 
 <ul>
   <li><strong>k</strong>itten   <strong>s</strong>itten    (заміна «k» на «s»)</li>
@@ -20,13 +20,13 @@ In information theory and computer science, the **Levenshtein distance** is a me
   <li>sittin   sittin<strong>g</strong>    (додавання «g» вкінці).</li>
 </ul>
 
-*Відстань Левенштейна між "**rosettacode**" та "**raisethysword**" складає **8**.*
+*Відстань Левенштейна між **rosettacode** та **raisethysword** становить **8**.*
 
 *Якщо рядки поміняти місцями, відстань між ними не зміниться.*
 
 # --instructions--
 
-Напишіть функцію, яка повертає відстань Левенштейна між двома рядками, вказаними як параметри.
+Напишіть функцію, яка повертає відстань Левенштейна між двома рядками, заданими як параметри.
 
 # --hints--
 

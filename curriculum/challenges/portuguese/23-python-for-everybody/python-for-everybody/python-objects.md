@@ -14,7 +14,7 @@ dashedName: python-objects
 
 ## --text--
 
-Which is NOT true about objects in Python?
+Qual das alternativas NÃO é verdadeira sobre objetos no Python?
 
 ## --answers--
 

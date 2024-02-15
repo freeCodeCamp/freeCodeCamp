@@ -8,13 +8,13 @@ dashedName: topological-sort
 
 # --description--
 
-Given a mapping between items, and items they depend on, a topological sort orders items so that no item precedes an item it depends upon. There are two popular algorithms for topological sorting: Kahn's (1962) topological sort and depth-first search.
+項目間のマッピングが与えられ、項目間に依存関係があるとき、トポロジカルソートは、項目がその依存している項目に先行しないように項目を並べます。 トポロジカルソートには、カーン (1962年) のトポロジカルソートと、深さ優先探索という、2 つの一般的なアルゴリズムがあります。
 
 # --instructions--
 
-依存関係からのライブラリの有効なコンパイル順でリストを返す関数を記述してください。
+依存関係から、有効なコンパイル順でライブラリのリストを返す関数を記述してください。
 
-- Assume library names are single words.
+- ライブラリ名は 1 つの単語とします。
 - 依存する側としてのみ記載されている項目には、自身に依存している項目はありませんが、そのコンパイル順は規定される必要があります。
 - 自己依存関係はすべて無視する必要があります。
 - 順序付けできない依存関係はすべて無視する必要があります。
@@ -39,7 +39,7 @@ std_cell_lib     ieee std_cell_lib
 synopsys
 </pre>
 
-VHDL言語のライブラリのコンパイルには、ライブラリが依存するライブラリの後にコンパイルされなければならないという制約があります。 例えば、 `dw04` が `dw01`の依存関係のリストに追加された場合、上記のデータは順序不能になります。
+VHDL 言語のライブラリのコンパイルには、ライブラリが依存するライブラリの後にコンパイルされなければならないという制約があります。 例えば、`dw04` が `dw01` の依存関係のリストに追加された場合、上記のデータは順序付け不可能になります。
 
 関数の入力は複数行の文字列になります。それぞれの行はライブラリの名前で構成され、それに依存しているもの (存在する場合) が続きます。
 

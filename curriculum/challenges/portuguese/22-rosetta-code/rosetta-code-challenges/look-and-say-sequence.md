@@ -8,17 +8,17 @@ dashedName: look-and-say-sequence
 
 # --description--
 
-The Look and say sequence is a recursively defined sequence of numbers.
+A sequência para olhar e dizer é uma sequência de números recursivamente definida.
 
 Definição da sequência
 
-<ul><li>Take a decimal number</li>
+<ul><li>Recebe um número decimal</li>
 <li><span>Olha</span> para o número, agrupando visualmente sequências consecutivas do mesmo dígito.</li>
 <li><span>Diz</span> o número, da esquerda para a direita, grupo após grupo, descrevendo quantos daquele dígito há na sequência, e, logo após, os dígitos agrupados.</li></ul><span> Esse se torna o próximo número da sequência.</span>
 
 Exemplo:
 
-<ul><li>Starting with the number 1, you have <span>one</span> 1 which produces 11</li>
+<ul><li>Começando pelo número 1, você tem <span>um</span> 1, o que gera o número 11</li>
 <li>Começando com 11, você tem <span>dois</span> 1s. Ou seja, 21</li>
 <li>Começando com 21, você tem <span>um</span> 2 e depois <span>um</span> 1. Ou seja: (12)(11), que depois se torna 1211</li>
 <li>Começando com 1211, você tem <span>um</span> 1, <span>um</span> 2 e <span>dois</span> 1s. Ou seja: (11)(12)(21), que depois se torna 111221</li></ul>

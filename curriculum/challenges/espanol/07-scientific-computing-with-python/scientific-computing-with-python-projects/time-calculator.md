@@ -1,6 +1,6 @@
 ---
 id: 5e444136903586ffb414c94d
-title: Time Calculator
+title: Calculadora de tiempo
 challengeType: 10
 forumTopicId: 462360
 dashedName: time-calculator
@@ -8,27 +8,27 @@ dashedName: time-calculator
 
 # --description--
 
-You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-time-calculator" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>. 
+Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-time-calculator" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código inicial en Replit</a>.
 
--   Start by importing the project on Replit. 
--   Next, you will see a `.replit` window. 
--   Select `Use run command` and click the `Done` button. 
+-   Start by importing the project on Replit.
+-   Next, you will see a `.replit` window.
+-   Select `Use run command` and click the `Done` button.
 
 # --instructions--
 
-Write a function named `add_time` that takes in two required parameters and one optional parameter:
+Escribe una función llamada `add_time` que tome dos parámetros requeridos y un parámetro opcional:
 
 - a start time in the 12-hour clock format (ending in AM or PM)
 - a duration time that indicates the number of hours and minutes
 - (optional) a starting day of the week, case insensitive
 
-The function should add the duration time to the start time and return the result.
+La función debe agregar la duración a la hora de inicio y devolver el resultado.
 
-If the result will be the next day, it should show `(next day)` after the time. If the result will be more than one day later, it should show `(n days later)` after the time, where "n" is the number of days later.
+Si el resultado es el día siguiente, debería mostrar `(next day)` después de la hora. Si el resultado es más de un día después, debería mostrar `(n days later)` después del tiempo, donde "n" es el número de días más tarde.
 
-If the function is given the optional starting day of the week parameter, then the output should display the day of the week of the result. The day of the week in the output should appear after the time and before the number of days later.
+Si a la función se le da el parámetro opcional de día de la semana, entonces la salida debe mostrar el día de la semana del resultado. El día de la semana en la salida debe aparecer después de la hora y antes del número de días después.
 
-Below are some examples of different cases the function should handle. Pay close attention to the spacing and punctuation of the results.
+A continuación se muestran algunos ejemplos de casos diferentes que la función debe manejar. Preste atención a los espacios y la puntuación de los resultados.
 
 ```py
 add_time("3:00 PM", "3:10")
@@ -50,23 +50,23 @@ add_time("6:30 PM", "205:12")
 # Returns: 7:42 AM (9 days later)
 ```
 
-Do not import any Python libraries. Assume that the start times are valid times. The minutes in the duration time will be a whole number less than 60, but the hour can be any whole number.
+No importes ninguna librería Python. Asume que las horas de inicio son horas válidas. Los minutos en el tiempo de duración serán un número entero inferior a 60, pero la hora puede ser cualquier número entero.
 
-## Development
+## Desarrollo
 
-Write your code in `time_calculator.py`. For development, you can use `main.py` to test your `time_calculator()` function. Click the "run" button and `main.py` will run.
+Escribe tu código en `time_calculator.py`. Para el desarrollo, puedes usar `main.py` para probar tu función `time_calculator()`. Haz clic en el botón "run" y se ejecutará `main.py`.
 
-## Testing
+## Pruebas
 
-The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
+Las pruebas unitarias para este proyecto están en `test_module.py`. Importamos las pruebas de `test_module.py` a `main.py` para tu comodidad. Las pruebas se ejecutarán automáticamente cada vez que presiones el botón "run".
 
-## Submitting
+## Envío
 
-Copy your project's URL and submit it to freeCodeCamp.
+Copia el URL de tu proyecto y envíalo a freeCodeCamp.
 
 # --hints--
 
-It should correctly add times and pass all tests.
+Debe calcular correctamente las probabilidades y pasar todas las pruebas.
 
 ```js
 

@@ -1,6 +1,6 @@
 ---
 id: 596fda99c69f779975a1b67d
-title: Кількість входжень підрядка
+title: Частотність підрядка
 challengeType: 1
 forumTopicId: 302237
 dashedName: count-occurrences-of-a-substring
@@ -8,7 +8,7 @@ dashedName: count-occurrences-of-a-substring
 
 # --description--
 
-Create a function, or show a built-in function, to count the number of non-overlapping occurrences of a substring inside a string.
+Створіть функцію або покажіть вбудовану функцію, щоб підрахувати частотність підрядка (який не перетинається) в середині рядка.
 
 Функція має приймати два аргументи:
 
@@ -17,11 +17,11 @@ Create a function, or show a built-in function, to count the number of non-overl
   <li>другий аргумент є підрядком, який шукатимуть.</li>
 </ul>
 
-Вона має повертати ціле число.
+Вона має повернути ціле число.
 
-Відповідність повинна дати найбільшу кількість співпадінь, які не перекриваються.
+Сумісність має відповідати найбільшій кількості збігів, які не перетинаються.
 
-Загалом, це означає співпадіння з ліва на право або з права на ліво.
+Загалом це означає збіги зліва направо або справа наліво.
 
 # --hints--
 
@@ -31,19 +31,19 @@ Create a function, or show a built-in function, to count the number of non-overl
 assert(typeof countSubstring === 'function');
 ```
 
-`countSubstring("the three truths", "th")` має повертати `3`.
+`countSubstring("the three truths", "th")` має повернути `3`.
 
 ```js
 assert.equal(countSubstring(testCases[0], searchString[0]), results[0]);
 ```
 
-`countSubstring("ababababab", "abab")` має повертати `2`.
+`countSubstring("ababababab", "abab")` має повернути `2`.
 
 ```js
 assert.equal(countSubstring(testCases[1], searchString[1]), results[1]);
 ```
 
-`countSubstring("abaabba*bbaba*bbab", "a*b")` має повертати `2`.
+`countSubstring("abaabba*bbaba*bbab", "a*b")` має повернути `2`.
 
 ```js
 assert.equal(countSubstring(testCases[2], searchString[2]), results[2]);

@@ -8,7 +8,7 @@ dashedName: sum-of-squares
 
 # --description--
 
-Write a function to find the sum of squares of an array of integers.
+Escreva uma função para encontrar a soma dos quadrados de um array de números inteiros.
 
 # --hints--
 

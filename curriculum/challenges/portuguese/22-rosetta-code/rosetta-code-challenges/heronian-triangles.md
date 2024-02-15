@@ -8,7 +8,7 @@ dashedName: heronian-triangles
 
 # --description--
 
-Hero's formula for the area of a triangle given the length of its three sides `a`, `b`, and `c` is given by:
+A fórmula de Hero para a área de um triângulo dado o comprimento de seus três lados `a`, `b` e `c` é dada por:
 
 $A = \\sqrt{s(s-a)(s-b)(s-c)},$
 
