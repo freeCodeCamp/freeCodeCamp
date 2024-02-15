@@ -236,6 +236,7 @@ button.map-title {
 .map-challenge-title a {
   padding: 10px 15px;
   width: 100%;
+  align-items: center;
 }
 
 .map-challenges-grid {
