@@ -14,13 +14,12 @@ import {
 import {
   postChargeComplete,
   postChargeProcessing,
-  executeGA,
   updateCardRedirecting,
   updateCardError
 } from './actions';
 
 jest.mock('../utils/ajax');
-jest.mock('../analytics');
+jest.mock('../analytics/call-ga');
 jest.mock('../utils/stripe', () => ({
   stripe: Promise.resolve({
     redirectToCheckout: jest.fn()
@@ -42,12 +41,61 @@ const analyticsDataMock = {
   event: 'donation',
   action: 'Donate Page Stripe Payment Submission',
   duration: 'month',
-  amount: '500'
+  amount: '500',
+  completed_challenges: 4,
+  completed_challenges_session: 2,
+  isSignedIn: true
+};
+
+const signedInStoreMock = {
+  app: {
+    appUsername: 'devuser',
+    completionCount: 2,
+    user: {
+      devuser: {
+        completedChallenges: [
+          {
+            id: 'bd7123c8c441eddfaeb5bdef',
+            completedDate: '1475094716730',
+            challengeFiles: []
+          },
+          {
+            id: 'bd7123c8c441eddfaeb5bdeg',
+            completedDate: '1475094716734',
+            challengeFiles: []
+          },
+          {
+            id: 'bd7123c8c441eddfaeb5bdeh',
+            completedDate: '1475094716733',
+            challengeFiles: []
+          },
+          {
+            id: 'bd7123c8c441eddfaeb5bdes',
+            completedDate: '1475094716732',
+            challengeFiles: []
+          }
+        ]
+      }
+    }
+  }
+};
+
+const signedOutStoreMock = {
+  app: {
+    appUsername: '',
+    completionCount: 0,
+    user: {
+      '': {
+        completedChallenges: []
+      }
+    }
+  }
 };
 
 describe('donation-saga', () => {
   it('calls postChargeStrip for Stripe', () => {
     return expectSaga(postChargeSaga, postChargeDataMock)
+      .withState(signedInStoreMock)
       .put(postChargeProcessing())
       .call(postChargeStripe, postChargeDataMock.payload)
       .put(postChargeComplete())
@@ -56,88 +104,98 @@ describe('donation-saga', () => {
       .run();
   });
 
-  // it('calls postChargeStripCard for Stripe Card', () => {
-  //   const stripeCardDataMock = {
-  //     payload: { ...postChargeDataMock.payload, paymentProvider: 'stripe card' }
-  //   };
+  it('calls postChargeStripCard for Stripe Card', () => {
+    const stripeCardDataMock = {
+      payload: { ...postChargeDataMock.payload, paymentProvider: 'stripe card' }
+    };
 
-  //   const stripeCardAnalyticsDataMock = analyticsDataMock;
-  //   stripeCardAnalyticsDataMock.action =
-  //     'Donate Page Stripe Card Payment Submission';
+    const stripeCardAnalyticsDataMock = analyticsDataMock;
+    stripeCardAnalyticsDataMock.action =
+      'Donate Page Stripe Card Payment Submission';
 
-  //   const { paymentMethodId, amount, duration } = stripeCardDataMock.payload;
-  //   const optimizedPayload = { paymentMethodId, amount, duration };
-  //   return expectSaga(postChargeSaga, stripeCardDataMock)
-  //     .put(postChargeProcessing())
-  //     .call(postChargeStripeCard, optimizedPayload)
-  //     .put(postChargeComplete())
-  //     .call(setDonationCookie)
-  //     .put(executeGA(stripeCardAnalyticsDataMock))
-  //     .run();
-  // });
+    const { paymentMethodId, amount, duration } = stripeCardDataMock.payload;
+    const optimizedPayload = { paymentMethodId, amount, duration };
+    return expectSaga(postChargeSaga, stripeCardDataMock)
+      .withState(signedInStoreMock)
+      .put(postChargeProcessing())
+      .call(postChargeStripeCard, optimizedPayload)
+      .put(postChargeComplete())
+      .call(setDonationCookie)
+      .call(callGA, stripeCardAnalyticsDataMock)
+      .run();
+  });
 
-  // it('calls addDonate for Paypal if user signed in', () => {
-  //   const paypalDataMock = {
-  //     payload: { ...postChargeDataMock.payload, paymentProvider: 'paypal' }
-  //   };
+  it('calls addDonate for Paypal if user signed in', () => {
+    const paypalDataMock = {
+      payload: { ...postChargeDataMock.payload, paymentProvider: 'paypal' }
+    };
 
-  //   const paypalAnalyticsDataMock = analyticsDataMock;
-  //   paypalAnalyticsDataMock.action = 'Donate Page Paypal Payment Submission';
+    let paypalAnalyticsDataMock = analyticsDataMock;
+    paypalAnalyticsDataMock.action = 'Donate Page Paypal Payment Submission';
 
-  //   const storeMock = {
-  //     app: {
-  //       appUsername: 'devuser'
-  //     }
-  //   };
+    const { amount, duration } = paypalDataMock.payload;
+    return expectSaga(postChargeSaga, paypalDataMock)
+      .withState(signedInStoreMock)
+      .put(postChargeProcessing())
+      .call(addDonation, { amount, duration })
+      .put(postChargeComplete())
+      .call(setDonationCookie)
+      .call(callGA, paypalAnalyticsDataMock)
+      .run();
+  });
 
-  //   const { amount, duration } = paypalDataMock.payload;
-  //   return expectSaga(postChargeSaga, paypalDataMock)
-  //     .withState(storeMock)
-  //     .put(postChargeProcessing())
-  //     .call(addDonation, { amount, duration })
-  //     .put(postChargeComplete())
-  //     .call(setDonationCookie)
-  //     .put(executeGA(paypalAnalyticsDataMock))
-  //     .run();
-  // });
+  it('does not call addDonate for Paypal if user not signed in', () => {
+    let paypalDataMock = {
+      payload: { ...postChargeDataMock.payload, paymentProvider: 'paypal' }
+    };
 
-  // it('does not call addDonate for Paypal if user not signed in', () => {
-  //   const paypalDataMock = {
-  //     payload: { ...postChargeDataMock.payload, paymentProvider: 'paypal' }
-  //   };
+    const paypalAnalyticsDataMock = {
+      ...analyticsDataMock,
+      action: 'Donate Page Paypal Payment Submission',
+      isSignedIn: false,
+      completed_challenges: 0,
+      completed_challenges_session: 0
+    };
 
-  //   const paypalAnalyticsDataMock = analyticsDataMock;
-  //   paypalAnalyticsDataMock.action = 'Donate Page Paypal Payment Submission';
+    const signedOutStoreMock = {
+      app: {
+        appUsername: '',
+        completionCount: 0,
+        user: {
+          '': {
+            completedChallenges: []
+          }
+        }
+      }
+    };
 
-  //   const storeMock = {
-  //     app: {}
-  //   };
+    return expectSaga(postChargeSaga, paypalDataMock)
+      .withState(signedOutStoreMock)
+      .put(postChargeProcessing())
+      .not.call.fn(addDonation)
+      .put(postChargeComplete())
+      .call(setDonationCookie)
+      .call(callGA, paypalAnalyticsDataMock)
+      .run();
+  });
 
-  //   return expectSaga(postChargeSaga, paypalDataMock)
-  //     .withState(storeMock)
-  //     .put(postChargeProcessing())
-  //     .not.call.fn(addDonation)
-  //     .put(postChargeComplete())
-  //     .call(setDonationCookie)
-  //     .put(executeGA(paypalAnalyticsDataMock))
-  //     .run();
-  // });
+  it('does not call api for Patreon', () => {
+    const patreonDataMock = {
+      payload: { ...postChargeDataMock.payload, paymentProvider: 'patreon' }
+    };
 
-  // it('does not call api for Patreon', () => {
-  //   const patreonDataMock = {
-  //     payload: { ...postChargeDataMock.payload, paymentProvider: 'patreon' }
-  //   };
-
-  //   const patreonAnalyticsDataMock = analyticsDataMock;
-  //   patreonAnalyticsDataMock.action = 'Donate Page Patreon Payment Redirection';
-  //   patreonAnalyticsDataMock.event = 'donation_related';
-  //   return expectSaga(postChargeSaga, patreonDataMock)
-  //     .not.call.fn(addDonation)
-  //     .not.call.fn(postChargeStripeCard)
-  //     .not.call.fn(postChargeStripe)
-  //     .put(executeGA(patreonAnalyticsDataMock))
-  //     .run();
-  // });
+    const patreonAnalyticsDataMock = {
+      event: 'donation_related',
+      action: 'Donate Page Patreon Payment Redirection'
+    };
+    return expectSaga(postChargeSaga, patreonDataMock)
+      .withState(signedOutStoreMock)
+      .not.call.fn(addDonation)
+      .not.call.fn(postChargeStripeCard)
+      .not.call.fn(postChargeStripe)
+      .call(callGA, patreonAnalyticsDataMock)
+      .run();
+  });
 
   it('handles successful card update', () => {
     updateStripeCard.mockResolvedValue({

@@ -2,6 +2,7 @@ import {
   DonationAmount,
   DonationDuration
 } from '../../../shared/config/donation-settings';
+import { ChallengeFiles } from '../redux/prop-types';
 import TagManager from '.';
 
 type DonationEventAction =
@@ -20,8 +21,9 @@ interface DonationEvent {
   action: DonationEventAction;
   duration: DonationDuration;
   amount: DonationAmount;
-  completedChallenges: number;
-  completedChallengesInSession: number;
+  completed_challenges: number;
+  completed_challenges_session: number;
+  isSignedIn: boolean;
 }
 
 type DonationRelatedEventAction =
@@ -35,8 +37,6 @@ type DonationRelatedEventAction =
 interface DonationRelatedEvent {
   event: 'donation_related';
   action: DonationRelatedEventAction;
-  // completedChallenges: number;
-  // completedChallengesInSession: number;
 }
 
 type DonationViewEventAction =
@@ -52,7 +52,7 @@ interface DonationViewEvent {
 
 interface RenderTimeEvent {
   event: 'render_time';
-  challengeRenderTime: number;
+  render_time_msec: number;
 }
 
 interface PageViewEvent {
@@ -71,10 +71,10 @@ interface ChallengeFailedEvent {
   event: 'challenge_failed';
   challenge_id: string;
   challenge_path: string;
-  challenge_files: string;
+  challenge_files: ChallengeFiles;
 }
 
-type GAevent =
+export type GAevent =
   | DonationViewEvent
   | DonationEvent
   | DonationRelatedEvent

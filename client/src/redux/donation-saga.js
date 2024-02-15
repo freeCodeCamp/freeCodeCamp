@@ -33,7 +33,9 @@ import {
   isDonatingSelector,
   recentlyClaimedBlockSelector,
   shouldRequestDonationSelector,
-  isSignedInSelector
+  isSignedInSelector,
+  completionCountSelector,
+  completedChallengesSelector
 } from './selectors';
 
 const defaultDonationErrorMessage = i18next.t('donate.error-2');
@@ -66,6 +68,7 @@ export function* postChargeSaga({
   }
 }) {
   try {
+    const isSignedIn = yield select(isSignedInSelector);
     if (paymentProvider !== PaymentProvider.Patreon) {
       yield put(postChargeProcessing());
     }
@@ -94,9 +97,9 @@ export function* postChargeSaga({
       }
     } else if (paymentProvider === PaymentProvider.Paypal) {
       // If the user is signed in and the payment goes through call api
-      let isSignedIn = yield select(isSignedInSelector);
       // look into skip add donation
       // what to do with "data" that comes through
+
       if (isSignedIn) yield call(addDonation, { amount, duration });
     }
     if (
@@ -109,17 +112,29 @@ export function* postChargeSaga({
       yield put(postChargeComplete());
       yield call(setDonationCookie);
     }
-    yield put(
-      callGA({
+    if (paymentProvider === PaymentProvider.Patreon) {
+      yield call(callGA, {
+        event: 'donation_related',
+        action: stringifyDonationEvents(paymentContext, paymentProvider)
+      });
+    } else {
+      const completedChallenges = yield select(completedChallengesSelector);
+      const completedChallengesInSession = yield select(
+        completionCountSelector
+      );
+      yield call(callGA, {
         event:
           paymentProvider === PaymentProvider.Patreon
             ? 'donation_related'
             : 'donation',
         action: stringifyDonationEvents(paymentContext, paymentProvider),
         duration,
-        amount
-      })
-    );
+        amount,
+        completed_challenges: completedChallenges.length,
+        completed_challenges_session: completedChallengesInSession,
+        isSignedIn: isSignedIn
+      });
+    }
   } catch (error) {
     const err =
       error.response && error.response.data
