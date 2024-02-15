@@ -92,7 +92,13 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         // frameDocument ready:
         $(() => {
           try {
-            const test: unknown = eval(testString);
+            let test: unknown;
+            if (__file('script.js').indexOf(editableContents) > -1) {
+              const script = editableContents;
+              test = eval(script + ';' + testString);
+            } else {
+              test = eval(testString);
+            }
             resolve(test);
           } catch (err) {
             reject(err);
