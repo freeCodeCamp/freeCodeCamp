@@ -1,4 +1,4 @@
-import { put, takeEvery, select } from 'redux-saga/effects';
+import { put, takeEvery, select, call } from 'redux-saga/effects';
 import store from 'store';
 
 import { randomCompliment } from '../../../utils/get-words';
@@ -42,12 +42,10 @@ function* sendRenderTimeSaga({ payload }) {
   if (renderStartTime) {
     const challengeRenderTime = payload - renderStartTime;
     yield put(setRenderStartTime(null));
-    yield put(
-      callGA({
-        event: 'render_time',
-        render_time_msec: challengeRenderTime
-      })
-    );
+    yield call(callGA, {
+      event: 'render_time',
+      render_time_msec: challengeRenderTime
+    });
   }
 }
 
