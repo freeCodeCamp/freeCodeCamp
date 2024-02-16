@@ -57,7 +57,8 @@
         "caughtErrorsIgnorePattern": "^_"
       }
     ],
-    "filenames-simple/naming-convention": ["warn"]
+    "filenames-simple/naming-convention": ["warn"],
+    "testing-library/await-async-events": "off"
   },
   "overrides": [
     {
