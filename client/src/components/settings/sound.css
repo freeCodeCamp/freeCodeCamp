@@ -6,18 +6,16 @@
 }
 
 input[type='range'] {
-  -webkit-appearance: none;
+  appearance: none;
   overflow: hidden;
+  border: 1px solid var(--secondary-color);
 }
 
-input[type='range']:focus {
-  outline-color: transparent;
-}
 /* Special styling for WebKit/Blink */
 input[type='range']::-webkit-slider-thumb {
   box-shadow: -2000px 0 0 2000px var(--gray-90);
   -webkit-appearance: none;
-  border: 2px solid var(--secondary-color);
+  border-left: 2px solid var(--secondary-color);
   height: 25px;
   width: 16px;
   background: var(--quaternary-background);
@@ -30,7 +28,7 @@ input[type='range']::-moz-range-thumb {
   border-radius: 0;
   height: 25px;
   width: 16px;
-  background: var(--quaternary-background);
+  background: var(--gray-90);
   cursor: pointer;
 }
 
