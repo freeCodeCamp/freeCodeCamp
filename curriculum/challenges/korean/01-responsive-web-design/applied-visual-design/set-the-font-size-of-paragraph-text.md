@@ -1,6 +1,6 @@
 ---
 id: 587d781c367417b2b2512ac4
-title: Set the font-size of Paragraph Text
+title: 단락 텍스트의 폰트 크기 설정
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJ36Cr'
 forumTopicId: 301068
@@ -9,15 +9,15 @@ dashedName: set-the-font-size-of-paragraph-text
 
 # --description--
 
-The `font-size` property in CSS is not limited to headings, it can be applied to any element containing text.
+CSS에서 `font-size` 속성은 제목 태그로만 제한되지 않으며 텍스트를 포함하는 모든 요소에 적용할 수 있습니다.
 
 # --instructions--
 
-Change the value of the `font-size` property for the paragraph to 16px to make it more visible.
+단락태그를 보다 잘 보이게 하기 위해 `font-size` 속성의 값을 16px로 수정합니다.
 
 # --hints--
 
-Your `p` tag should have a `font-size` of 16 pixels.
+`p`태그는 16px의 `font-size`가 있어야 합니다.
 
 ```js
 assert($('p').css('font-size') == '16px');

@@ -1,6 +1,6 @@
 ---
 id: 59d9c6bc214c613ba73ff012
-title: SEDOLs (списки ідентифікаційних кодів цінних паперів)
+title: SEDOL
 challengeType: 1
 forumTopicId: 302305
 dashedName: sedols
@@ -8,9 +8,9 @@ dashedName: sedols
 
 # --description--
 
-<abbr title="Stock Exchange Daily Official List">SEDOL</abbr> is a list of securities identification numbers issued by the London Stock Exchange.
+<abbr title="Stock Exchange Daily Official List">SEDOL</abbr> — це список ідентифікаційних кодів цінних паперів, виданий Лондонською фондовою біржею.
 
-Для кожного списку чисел з 6-цифрових <abbr title="Stock Exchange Daily Official List">SEDOL</abbr>s, порахуйте та додайте число контрольної суми. Тобто враховуючи вхідний рядок зліва, ваша функція повинна повернутися відповідним рядком справа:
+Розрахуйте та додайте цифру контрольної суми до кожного списку з 6-значними кодами <abbr title="Stock Exchange Daily Official List">SEDOL</abbr>. Тобто, якщо дано вхідний рядок зліва, функція має повернути відповідний рядок справа:
 
 <pre>
 710889 => 7108899
@@ -26,7 +26,7 @@ B0YBKT => B0YBKT7
 B00030 => B000300
 </pre>
 
-Перевірте, щоб кожне введення було правильно сформовано, особливо стосовно допустимих символів, дозволених у рядку SEDOL. Ваша функція повинна повернути `null` на недопустиме введення.
+Перевірте, щоб вхідні дані були правильно сформовані (зверніть особливу увагу на допустимі символи в рядку SEDOL). Функція має повернути `null`, якщо вхідні дані недійсні.
 
 # --hints--
 
@@ -36,25 +36,25 @@ B00030 => B000300
 assert(typeof sedol === 'function');
 ```
 
-`sedol('a')` має повернутись нулем.
+`sedol('a')` має повернути `null`.
 
 ```js
 assert(sedol('a') === null);
 ```
 
-`sedol('710889')` має повернути '7108899'.
+`sedol('710889')` має повернути `'7108899'`.
 
 ```js
 assert(sedol('710889') === '7108899');
 ```
 
-`sedol('BOATER')` має повернутись нулем.
+`sedol('BOATER')` має повернути `null`.
 
 ```js
 assert(sedol('BOATER') === null);
 ```
 
-`sedol('228276')` має повернути '2282765'.
+`sedol('228276')` має повернути `'2282765'`.
 
 ```js
 assert(sedol('228276') === '2282765');

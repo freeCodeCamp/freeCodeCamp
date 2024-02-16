@@ -1,6 +1,6 @@
 ---
 id: 5a90373638fddaf9a66b5d39
-title: Use grid-row to Control Spacing
+title: 간격 제어를 위한 grid-row 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c9WBLU4'
 forumTopicId: 301137
@@ -9,15 +9,15 @@ dashedName: use-grid-row-to-control-spacing
 
 # --description--
 
-Of course, you can make items consume multiple rows just like you can with columns. You define the horizontal lines you want an item to start and stop at using the `grid-row` property on a grid item.
+열과 마찬가지로 아이템이 여러 행을 차지하도록 만들 수 있습니다. 아이템이 시작하고 끝나길 원하는 수평 라인은 그리드 항목의 `grid-row` 속성을 사용하여 정의합니다.
 
 # --instructions--
 
-Make the element with the `item5` class consume the last two rows.
+`item5` 클래스를 가진 요소가 마지막 두 행을 차지하도록 만드세요.
 
 # --hints--
 
-`item5` class should have a `grid-row` property.
+`item5` 클래스는 `grid-row` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-`item5` class should have a `grid-row` property which results in it consuming the last two rows of the grid.
+`item5` 클래스는 그리드의 마지막 두 행을 차지하도록 하는 `grid-row` 속성을 가져야 합니다.
 
 ```js
 const rowStart = getComputedStyle($('.item5')[0]).gridRowStart;

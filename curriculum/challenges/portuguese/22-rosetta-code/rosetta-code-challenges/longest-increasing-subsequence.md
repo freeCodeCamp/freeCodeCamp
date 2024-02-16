@@ -8,7 +8,7 @@ dashedName: longest-increasing-subsequence
 
 # --description--
 
-The longest increasing subsequence problem is to find a subsequence of a given sequence in which the subsequence's elements are in sorted order, lowest to highest, and in which the subsequence is as long as possible. An example:
+O problema da maior subsequência crescente é encontrar uma subsequência de uma determinada sequência em que os elementos da subsequência estejam em ordem classificada, do mais baixo para mais alto, e em que a subsequência seja a mais longa possível. Exemplo:
 
 Para o seguinte array:
 

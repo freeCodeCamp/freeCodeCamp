@@ -1,6 +1,6 @@
 ---
 id: 647e23508acb466c97ccbeff
-title: Perform Operations on Arrays Using Helper Methods in C#
+title: 'Perform Operations on Arrays Using Helper Methods in C#'
 challengeType: 19
 dashedName: perform-operations-on-arrays-using-helpers-methods-in-c-sharp
 ---

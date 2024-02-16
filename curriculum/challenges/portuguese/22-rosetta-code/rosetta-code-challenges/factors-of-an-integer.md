@@ -8,7 +8,7 @@ dashedName: factors-of-an-integer
 
 # --description--
 
-Write a function that returns the factors of a positive integer as an array.
+Escreva uma função que retorne os fatores de um inteiro positivo como um array.
 
 Estes fatores são os inteiros positivos através dos quais o número que está sendo fatorado pode ser dividido para produzir um resultado inteiro e positivo.
 

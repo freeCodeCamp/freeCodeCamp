@@ -1,6 +1,6 @@
 ---
 id: 647e226a8acb466c97ccbef1
-title: Write Your First C# Method
+title: 'Write Your First C# Method'
 challengeType: 19
 dashedName: write-your-first-c-sharp-method
 ---

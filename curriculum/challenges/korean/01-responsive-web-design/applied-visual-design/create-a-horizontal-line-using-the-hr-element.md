@@ -1,6 +1,6 @@
 ---
 id: 587d781b367417b2b2512abb
-title: Create a Horizontal Line Using the hr Element
+title: hr 요소를 사용하여 수평선 만들기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bR8t7'
 forumTopicId: 301049
@@ -9,23 +9,23 @@ dashedName: create-a-horizontal-line-using-the-hr-element
 
 # --description--
 
-You can use the `hr` tag to add a horizontal line across the width of its containing element. This can be used to define a change in topic or to visually separate groups of content.
+`<hr>` 태그를 사용하여 해당 요소의 너비 전체에 달하는 수평선을 추가할 수 있습니다. 이 선은 주제를 변경하거나 콘텐츠 그룹을 시각적으로 분리하는 데 사용될 수 있습니다.
 
 # --instructions--
 
-Add an `hr` tag underneath the `h4` which contains the card title.
+카드 제목을 포함하는 `h4` 아래에 `hr` 태그를 추가하세요.
 
-**Note:** In HTML, `hr` is a self-closing tag, and therefore doesn't need a separate closing tag.
+**참고:** HTML에서 `hr`은 스스로 닫히는 태그이기 때문에 별도의 닫는 태그가 필요하지 않습니다.
 
 # --hints--
 
-Your code should add an `hr` tag to the markup.
+코드에서 마크업에 `hr` 태그를 추가해야 합니다.
 
 ```js
 assert($('hr').length == 1);
 ```
 
-The `hr` tag should come between the title and the paragraph.
+`hr` 태그는 제목과 단락 사이에 와야 합니다.
 
 ```js
 assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi));

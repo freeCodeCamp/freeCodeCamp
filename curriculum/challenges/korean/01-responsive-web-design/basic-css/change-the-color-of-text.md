@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08803
-title: Change the Color of Text
+title: 텍스트의 색상 바꾸기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkVmSm'
 forumTopicId: 16775
@@ -9,39 +9,39 @@ dashedName: change-the-color-of-text
 
 # --description--
 
-Now let's change the color of some of our text.
+이제 일부 텍스트의 색상을 변경해 보겠습니다.
 
-We can do this by changing the `style` of your `h2` element.
+`h2`요소의 `style`를 변경함으로써 색상을 변경할 수 있습니다.
 
-The property that is responsible for the color of an element's text is the `color` style property.
+스타일 속성인 `color`가 요소의 텍스트 색상을 담당하고 있습니다.
 
-Here's how you would set your `h2` element's text color to blue:
+`h2`요소의 텍스트 색상을 파란색으로 바꾸는 방법은 다음과 같습니다.
 
 ```html
 <h2 style="color: blue;">CatPhotoApp</h2>
 ```
 
-Note that it is a good practice to end inline `style` declarations with a `;` .
+인라인 `style`선언은 `;`로 끝내는 것이 좋습니다.
 
 # --instructions--
 
-Change your `h2` element's style so that its text color is red.
+`h2`요소의 텍스트 색상이 빨간색이 되도록 변경하세요.
 
 # --hints--
 
-Your `h2` element should have a `style` declaration.
+`h2`요소에는 `style` 선언이 있어야 합니다.
 
 ```js
 assert($('h2').attr('style'));
 ```
 
-Your `h2` element should have color set to `red`.
+`h2`요소는 `red`색상으로 설정되어야 합니다.
 
 ```js
 assert($('h2')[0].style.color === 'red');
 ```
 
-Your `style` declaration should end with a `;` .
+`style`선언은 `;`로 끝나야 합니다.
 
 ```js
 assert($('h2').attr('style') && $('h2').attr('style').endsWith(';'));

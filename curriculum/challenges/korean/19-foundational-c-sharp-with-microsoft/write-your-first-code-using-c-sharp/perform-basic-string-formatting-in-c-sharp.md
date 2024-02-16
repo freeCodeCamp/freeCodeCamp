@@ -1,6 +1,6 @@
 ---
 id: 647e23828acb466c97ccbf03
-title: Perform Basic String Formatting in C#
+title: 'Perform Basic String Formatting in C#'
 challengeType: 19
 dashedName: perform-basic-string-formatting-in-c-sharp
 ---

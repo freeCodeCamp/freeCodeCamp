@@ -1,6 +1,6 @@
 ---
 id: 587d78ae367417b2b2512afd
-title: Use the flex-basis Property to Set the Initial Size of an Item
+title: 아이템의 초기 크기 설정을 위한 flex-basis 속성 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c3d9nCa'
 forumTopicId: 301108
@@ -9,35 +9,35 @@ dashedName: use-the-flex-basis-property-to-set-the-initial-size-of-an-item
 
 # --description--
 
-The `flex-basis` property specifies the initial size of the item before CSS makes adjustments with `flex-shrink` or `flex-grow`.
+`flex-basis` 속성은 CSS가 `flex-shrink` 혹은 `flex-grow`로 조정을 하기 전에 아이템의 초기 크기를 특정합니다.
 
-The units used by the `flex-basis` property are the same as other size properties (`px`, `em`, `%`, etc.). The value `auto` sizes items based on the content.
+`flex-basis` 속성은 다른 크기 속성과 같은 단위를 사용합니다(`px`, `em`, `%` 등등). `auto` 값은 내용을 기준으로 아이템의 크기를 정합니다.
 
 # --instructions--
 
-Set the initial size of the boxes using `flex-basis`. Add the CSS property `flex-basis` to both `#box-1` and `#box-2`. Give `#box-1` a value of `10em` and `#box-2` a value of `20em`.
+`flex-basis` 사용하여 상자의 초기 크기를 설정하세요. `#box-1`과 `#box-2`에 `flex-basis`를 추가하세요. `#box-1`에 `10em` 그리고 `#box-2`에 `20em` 값을 주세요.
 
 # --hints--
 
-The `#box-1` element should have the `flex-basis` property.
+`#box-1` 요소는 `flex-basis` 속성을 가져야 합니다.
 
 ```js
 assert($('#box-1').css('flex-basis') != 'auto');
 ```
 
-The `#box-1` element should have a `flex-basis` value of `10em`.
+`#box-1` 요소는 `10em` 값을 준 `flex-basis` 속성을 가져야 합니다.
 
 ```js
 assert(code.match(/#box-1\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?10em;/g));
 ```
 
-The `#box-2` element should have the `flex-basis` property.
+`#box-2` 요소는 `flex-basis` 속성을 가져야 합니다.
 
 ```js
 assert($('#box-2').css('flex-basis') != 'auto');
 ```
 
-The `#box-2` element should have a `flex-basis` value of `20em`.
+`#box-2` 요소는 `20em` 값을 준 `flex-basis` 속성을 가져야 합니다.
 
 ```js
 assert(code.match(/#box-2\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?20em;/g));

@@ -1,6 +1,6 @@
 ---
 id: 5a94fe6269fb03452672e462
-title: Create Flexible Layouts Using auto-fit
+title: auto-fit으로 유연한 레이아웃 생성하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c3dPph8'
 forumTopicId: 301127
@@ -9,17 +9,17 @@ dashedName: create-flexible-layouts-using-auto-fit
 
 # --description--
 
-`auto-fit` works almost identically to `auto-fill`. The only difference is that when the container's size exceeds the size of all the items combined, `auto-fill` keeps inserting empty rows or columns and pushes your items to the side, while `auto-fit` collapses those empty rows or columns and stretches your items to fit the size of the container.
+`auto-fit`은 `auto-fill`과 거의 비슷하게 동작합니다. 유일한 차이점은 컨테이너 크기가 모든 아이템을 합쳤을 때보다 클 때 `auto-fill`은 계속 빈 행혹은 열을 추가하여 아이템을 옆으로 밀어 넣는 반면에 `auto-fit`은 그 빈 행과 열을 축소시켜 아이템들을 컨테이너 크기에 맞게 늘립니다.
 
-**Note:** If your container can't fit all your items on one row, it will move them down to a new one.
+**주의:** 컨테이너가 한 행에 모든 아이템을 담을 수 없다면 아이템은 다음 행에 위치하게 됩니다.
 
 # --instructions--
 
-In the second grid, use `auto-fit` with `repeat` to fill the grid with columns that have a minimum width of `60px` and maximum of `1fr`. Then resize the preview to see the difference.
+두번째 그리드에서 최소 `60px`과 최대 `1fr` 너비를 가진 열로 그리드를 채우도록 `repeat`와 `auto-fit`을 사용하세요. 그런 다음에 차이를 확인하기 위해 미리보기의 크기를 조정하세요.
 
 # --hints--
 
-`container2` class should have a `grid-template-columns` property with `repeat` and `auto-fit` that will fill the grid with columns that have a minimum width of `60px` and a maximum of `1fr`.
+`container2` 클래스는 최소 `60px`과 최대 `1fr` 너비를 가진 열로 grid를 채우는 `repeat`와 `auto-fit`을 가진 `grid-template-columns` 속성을 가져야 합니다.
 
 ```js
 assert(

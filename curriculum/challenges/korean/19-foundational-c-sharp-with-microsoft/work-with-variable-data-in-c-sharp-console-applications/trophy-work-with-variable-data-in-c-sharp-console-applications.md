@@ -1,6 +1,6 @@
 ---
 id: 647f867a07d29547b3bee1bc
-title: Trophy - Work with Variable Data in C# Console Applications
+title: 'Trophy - Work with Variable Data in C# Console Applications'
 challengeType: 18
 dashedName: trophy-work-with-variable-data-in-c-sharp-console-applications
 msTrophyId: learn.wwl.get-started-c-sharp-part-4.trophy

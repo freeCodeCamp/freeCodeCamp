@@ -8,7 +8,7 @@ dashedName: evaluate-binomial-coefficients
 
 # --description--
 
-Write a function to calculate the binomial coefficient for the given value of n and k.
+Escreva uma função para calcular o coeficiente binomial para o valor dado de n e k.
 
 Esta fórmula é recomendada:
 

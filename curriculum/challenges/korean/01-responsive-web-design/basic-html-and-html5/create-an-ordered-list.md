@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08828
-title: Create an Ordered List
+title: 순서가 있는 목록 만들기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cQ3B8TM'
 forumTopicId: 16824
@@ -9,11 +9,11 @@ dashedName: create-an-ordered-list
 
 # --description--
 
-HTML has another special element for creating <dfn>ordered lists</dfn>, or numbered lists.
+HTML은 <dfn>순서가 있는 목록</dfn> 혹은 번호가 매겨진 목록을 만들기 위한 특별한 요소를 제공합니다.
 
-Ordered lists start with an opening `<ol>` element, followed by any number of `<li>` elements. Finally, ordered lists are closed with the `</ol>` tag.
+순서가 있는 목록은 `<ol>` 요소로 시작하며 `<li>` 요소가 뒤따릅니다. 마지막으로 순서가 있는 목록은 `</ol>` 태그로 닫힙니다.
 
-For example:
+예시:
 
 ```html
 <ol>
@@ -22,51 +22,51 @@ For example:
 </ol>
 ```
 
-would create a numbered list of `Garfield` and `Sylvester`.
+`Garfield`와 `Sylvester`의 번호가 매겨진 목록이 생성됩니다.
 
 # --instructions--
 
-Create an ordered list of the top 3 things cats hate the most.
+고양이가 제일 싫어하는 세 가지의 순서가 있는 목록을 만드세요.
 
 # --hints--
 
-You should have an ordered list for `Top 3 things cats hate:`
+`Top 3 things cats hate:`을 위한 순서가 있는 목록을 가져야 합니다.
 
 ```js
 assert(/Top 3 things cats hate:/i.test($('ol').prev().text()));
 ```
 
-You should have an unordered list for `Things cats love:`
+`Things cats love:`을 위한 순서가 없는 목록을 가져야 합니다.
 
 ```js
 assert(/Things cats love:/i.test($('ul').prev().text()));
 ```
 
-You should have only one `ul` element.
+`ul` 요소는 하나만 있어야 합니다.
 
 ```js
 assert.equal($('ul').length, 1);
 ```
 
-You should have only one `ol` element.
+`ol` 요소는 하나만 있어야 합니다.
 
 ```js
 assert.equal($('ol').length, 1);
 ```
 
-You should have three `li` elements within your `ul` element.
+`ul` 요소 안에 세 개의 `li` 요소가 있어야 합니다.
 
 ```js
 assert.equal($('ul li').length, 3);
 ```
 
-You should have three `li` elements within your `ol` element.
+`ol` 요소 안에 세 개의 `li` 요소가 있어야 합니다.
 
 ```js
 assert.equal($('ol li').length, 3);
 ```
 
-Your `ul` element should have a closing tag.
+`ul` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(
@@ -75,7 +75,7 @@ assert(
 );
 ```
 
-Your `ol` element should have a closing tag.
+`ol` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(
@@ -84,7 +84,7 @@ assert(
 );
 ```
 
-Your `li` element should have a closing tag.
+`li` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-The `li` elements in your unordered list should not be empty.
+순서가 없는 목록에 있는 `li` 요소는 비어있지 않아야 합니다.
 
 ```js
 $('ul li').each((i, val) =>
@@ -102,7 +102,7 @@ $('ul li').each((i, val) =>
 );
 ```
 
-The `li` elements in your ordered list should not be empty.
+순서가 있는 목록 안에 있는 `li` 요소는 비어있지 않아야 합니다.
 
 ```js
 $('ol li').each((i, val) =>

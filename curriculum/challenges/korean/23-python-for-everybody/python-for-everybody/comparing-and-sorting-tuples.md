@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0b0b6c005b0e76f06d
-title: Comparing and Sorting Tuples
+title: 튜플 비교 및 정렬
 challengeType: 11
 videoId: dZXzBXUxxCs
 bilibiliIds:
@@ -20,7 +20,7 @@ More resources:
 
 ## --text--
 
-Which does the same thing as the following code?:
+다음 코드와 동일한 작업을 하는 코드는 무엇인가요?
 
 ```python
 lst = []

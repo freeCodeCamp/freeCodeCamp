@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f061
-title: Intermediate Strings
+title: 중급 문자열
 challengeType: 11
 videoId: KgT_fYLXnyk
 bilibiliIds:
@@ -20,7 +20,7 @@ More resources:
 
 ## --text--
 
-What is the value of i in the following code?
+다음 코드에서 i의 값은 무엇인가요?
 
 ```python
 word = "bananana"

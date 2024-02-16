@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f05d
-title: 'Iterations: Definite Loops'
+title: '반복: 유한정 반복 루프'
 challengeType: 11
 videoId: hiRTRAqNlpE
 bilibiliIds:

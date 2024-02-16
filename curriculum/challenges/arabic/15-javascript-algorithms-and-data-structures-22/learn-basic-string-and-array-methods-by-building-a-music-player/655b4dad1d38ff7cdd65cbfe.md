@@ -17,28 +17,28 @@ You should call the `pauseSong` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /pauseSong\(\);?/)
+assert.match(splitter[1], /pauseSong\(\s*\);?/)
 ```
 
 You should call the `setPlayerDisplay` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /setPlayerDisplay\(\);?/)
+assert.match(splitter[1], /setPlayerDisplay\(\s*\);?/)
 ```
 
 You should call the `highlightCurrentSong` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /highlightCurrentSong\(\);?/)
+assert.match(splitter[1], /highlightCurrentSong\(\s*\);?/)
 ```
 
 You should call the `setPlayButtonAccessibleText` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /highlightCurrentSong\(\);?\s*setPlayButtonAccessibleText\(\);?/)
+assert.match(splitter[1], /highlightCurrentSong\(\s*\);?\s*setPlayButtonAccessibleText\(\s*\);?/)
 ```
 
 # --seed--
@@ -636,7 +636,7 @@ const playSong = (id) => {
   if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
     audio.currentTime = 0;
   } else {
-    audio.currentTime = userData.songCurrentTime;
+    audio.currentTime = userData?.songCurrentTime;
   }
   userData.currentSong = song;
   playButton.classList.add("playing");
@@ -700,7 +700,7 @@ const deleteSong = (id) => {
   highlightCurrentSong(); 
   setPlayButtonAccessibleText(); 
 
-  if (userData.songs.length === 0) {
+  if (userData?.songs.length === 0) {
     const resetButton = document.createElement("button");
     const resetText = document.createTextNode("Reset Playlist");
 
@@ -775,7 +775,7 @@ const setPlayButtonAccessibleText = () => {
   );
 };
 
-const getCurrentSongIndex = () => userData?.songs.indexOf(userData.currentSong);
+const getCurrentSongIndex = () => userData?.songs.indexOf(userData?.currentSong);
 
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {
@@ -1418,7 +1418,7 @@ const playSong = (id) => {
   if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
     audio.currentTime = 0;
   } else {
-    audio.currentTime = userData.songCurrentTime;
+    audio.currentTime = userData?.songCurrentTime;
   }
   userData.currentSong = song;
   playButton.classList.add("playing");
@@ -1482,7 +1482,7 @@ const deleteSong = (id) => {
   highlightCurrentSong(); 
   setPlayButtonAccessibleText(); 
 
-  if (userData.songs.length === 0) {
+  if (userData?.songs.length === 0) {
     const resetButton = document.createElement("button");
     const resetText = document.createTextNode("Reset Playlist");
 
@@ -1557,7 +1557,7 @@ const setPlayButtonAccessibleText = () => {
   );
 };
 
-const getCurrentSongIndex = () => userData?.songs.indexOf(userData.currentSong);
+const getCurrentSongIndex = () => userData?.songs.indexOf(userData?.currentSong);
 
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {

@@ -62,7 +62,7 @@ The `plotImages` function will be used a few times to plot images. It takes an a
 
 ## Cell 5
 
-Recreate the `train_image_generator` using `ImageDataGenerator`. 
+Recreate the `train_image_generator` using `ImageDataGenerator`.
 
 Since there are a small number of training examples, there is a risk of overfitting. One way to fix this problem is by creating more training data from existing training examples by using random transformations.
 
@@ -90,7 +90,7 @@ Run this cell to visualize the accuracy and loss of the model.
 
 Now it is time to use your model to predict whether a brand new image is a cat or a dog.
 
-In this cell, get the probability that each test image (from `test_data_gen`) is a dog or a cat. `probabilities` should be a list of integers. 
+In this cell, get the probability that each test image (from `test_data_gen`) is a dog or a cat. `probabilities` should be a list of integers.
 
 Call the `plotImages` function and pass in the test images and the probabilities corresponding to each test image.
 

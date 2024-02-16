@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08804
-title: Comment out HTML
+title: HTML 주석 처리
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cGyGbca'
 forumTopicId: 16782
@@ -9,41 +9,41 @@ dashedName: comment-out-html
 
 # --description--
 
-Remember that in order to start a comment, you need to use `<!--` and to end a comment, you need to use `-->`
+주석을 시작하려면 `<!--`를 사용해야 하고, 주석을 끝내려면 `-->`를 사용해야 합니다.
 
-Here you'll need to end the comment before your `h2` element begins.
+여기에서는 `h2` 요소가 시작되기 전에 주석을 끝내야 합니다.
 
 # --instructions--
 
-Comment out your `h1` element and your `p` element, but not your `h2` element.
+`h1` 요소와 `p` 요소를 주석 처리하지만 `h2` 요소는 주석 처리하지 마십시오.
 
 # --hints--
 
-Your `h1` element should be commented out so that it is not visible on the page.
+`h1` 요소는 주석 처리되어 페이지에 보이지 않아야 합니다.
 
 ```js
 assert($('h1').length === 0);
 ```
 
-Your `h2` element should not be commented out so that it is visible on the page.
+`h2` 요소는 주석 처리되지 않아서 페이지에 보여야 합니다.
 
 ```js
 assert($('h2').length > 0);
 ```
 
-Your `p` element should be commented out so that it is not visible on the page.
+`p` 요소는 주석 처리되어 페이지에 보이지 않아야 합니다.
 
 ```js
 assert($('p').length === 0);
 ```
 
-Each of your comments should be closed with `-->`.
+모든 주석은 `-->`로 끝나야 합니다.
 
 ```js
 assert(code.match(/[^fc]-->/g).length > 1);
 ```
 
-You should not change the order of the `h1`, `h2`, or `p` elements in the code.
+`h1`, `h2` 또는 `p` 요소의 순서가 변경되면 안 됩니다.
 
 ```js
 assert(

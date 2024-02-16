@@ -1,6 +1,6 @@
 ---
 id: 647e21658acb466c97ccbee2
-title: Control Variable Scope and Logic Using Code Blocks in C#
+title: 'Control Variable Scope and Logic Using Code Blocks in C#'
 challengeType: 19
 dashedName: control-variable-scope-and-logic-using-code-blocks-in-c-sharp
 ---
@@ -20,7 +20,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-code-b
 
 ## --text--
 
-Which of the following statements is true about showing/removing the curly braces for code blocks associated with an `if` statement? 
+Which of the following statements is true about showing/removing the curly braces for code blocks associated with an `if` statement?
 
 ## --answers--
 

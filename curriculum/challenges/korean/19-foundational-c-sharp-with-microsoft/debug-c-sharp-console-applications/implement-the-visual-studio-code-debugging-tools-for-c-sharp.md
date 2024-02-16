@@ -1,6 +1,6 @@
 ---
 id: 647e22b38acb466c97ccbef6
-title: Implement the Visual Studio Code Debugging Tools for C#
+title: 'Implement the Visual Studio Code Debugging Tools for C#'
 challengeType: 19
 dashedName: implement-the-visual-studio-code-debugging-tools-for-c-sharp
 ---

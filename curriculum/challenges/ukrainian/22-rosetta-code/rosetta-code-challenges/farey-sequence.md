@@ -1,6 +1,6 @@
 ---
 id: 59c3ec9f15068017c96eb8a3
-title: Ряд Фарея
+title: Послідовність Фарея
 challengeType: 1
 forumTopicId: 302266
 dashedName: farey-sequence
@@ -8,18 +8,18 @@ dashedName: farey-sequence
 
 # --description--
 
-The Farey sequence <code>F<sub>n</sub></code> of order `n` is the sequence of completely reduced fractions between `0` and `1` which, when in lowest terms, have denominators less than or equal to `n`, arranged in order of increasing size.
+Послідовність Фарея <code>F<sub>n</sub></code> порядку `n` — це послідовність нескоротних дробів від `0` до `1`, знаменники яких менші або дорівнюють `n`, а дроби розташовані в порядку зростання.
 
-*Ряд Фарея* деколи помилково називають *Серією Фарея*.
+Іноді *послідовність Фарея* помилково називають *рядом Фарея*.
 
-Кожен ряд Фарея:
+Кожна послідовність Фарея:
 
 <ul>
   <li>починається зі значення 0, що виражено дробом $ \frac{0}{1} $</li>
   <li>закінчується значенням 1, що виражено дробом $ \frac{1}{1}$.</li>
 </ul>
 
-Послідовностями рядів Фарея від `1` до `5` є:
+Послідовності Фарея порядку від `1` до `5`:
 
 <ul>
   <li style='list-style: none;'>${\bf\it{F}}_1 = \frac{0}{1}, \frac{1}{1}$</li>
@@ -31,7 +31,7 @@ The Farey sequence <code>F<sub>n</sub></code> of order `n` is the sequence of co
 
 # --instructions--
 
-Напишіть функцію, яка повертає послідовність ряду Фарея`n`. Функція повинна мати один параметр, який є`n`. Вона має повернути послідовність у вигляді масиву.
+Напишіть функцію, яка повертає послідовність Фарея порядку `n`. Функція повинна мати один параметр: `n`. Вона має повернути послідовність у вигляді масиву.
 
 # --hints--
 
@@ -41,13 +41,13 @@ The Farey sequence <code>F<sub>n</sub></code> of order `n` is the sequence of co
 assert(typeof farey === 'function');
 ```
 
-`farey(3)` має повернути масив
+`farey(3)` має повернути масив.
 
 ```js
 assert(Array.isArray(farey(3)));
 ```
 
-`farey(3)` має повертати `['0/1','1/3','1/2','2/3','1/1']`
+`farey(3)` має повернути `['0/1','1/3','1/2','2/3','1/1']`
 
 ```js
 assert.deepEqual(farey(3),['0/1', '1/3', '1/2', '2/3', '1/1']);

@@ -4,6 +4,7 @@ title: Working With Text Question B
 challengeType: 15
 dashedName: working-with-text-question-b
 ---
+
 # --description--
 
 Headings are different from other HTML text elements: they are displayed larger and bolder than other text to signify that they are headings.

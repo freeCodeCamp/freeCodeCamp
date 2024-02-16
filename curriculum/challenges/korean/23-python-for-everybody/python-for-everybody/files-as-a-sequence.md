@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f080b6c005b0e76f063
-title: Files as a Sequence
+title: 파일을 시퀀스로
 challengeType: 11
 videoId: cIA0EokbaHE
 bilibiliIds:
@@ -20,23 +20,23 @@ More resources:
 
 ## --text--
 
-What does the word 'continue' do in the middle of a loop?
+루프 중간에 'continue'라는 단어는 무엇을 하나요?
 
 ## --answers--
 
-Skips to the code directly after the loop.
+루프 바로 뒤의 코드로 건너뜁니다.
 
 ---
 
-Skips to the next line in the code.
+코드의 다음 줄로 건너뜁니다.
 
 ---
 
-Skips to the next iteration of the loop.
+루프의 다음 반복으로 건너뜁니다.
 
 ---
 
-Skips the next block of code.
+다음 코드 블록을 건너뜁니다.
 
 ## --video-solution--
 

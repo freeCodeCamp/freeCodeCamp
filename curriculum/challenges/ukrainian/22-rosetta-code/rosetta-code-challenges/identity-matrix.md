@@ -8,7 +8,7 @@ dashedName: identity-matrix
 
 # --description--
 
-An *identity matrix* is a square matrix of size \\( n \\times n \\), where the diagonal elements are all `1`s (ones), and all the other elements are all `0`s (zeroes).
+*Одинична матриця* — це квадратна матриця розміром \\( n \\times n \\), де всі діагональні елементи є `1` (одиницями), а всі інші елементи є `0` (нулями).
 
 <ul>
   <li style='list-style: none;'>\(\displaystyle I_{n}=\begin{bmatrix} 1 &#x26; 0 &#x26; 0 \cr 0 &#x26; 1 &#x26; 0 \cr 0 &#x26; 0 &#x26; 1 \cr \end{bmatrix}\)</li>
@@ -16,7 +16,7 @@ An *identity matrix* is a square matrix of size \\( n \\times n \\), where the d
 
 # --instructions--
 
-Напишіть функцію, яка приймає число `n` як параметр і повертає одиничну матрицю порядку \\( n \\times n \\).
+Напишіть функцію, яка приймає число `n` як параметр та повертає одиничну матрицю порядку \\( n \\times n \\).
 
 # --hints--
 

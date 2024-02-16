@@ -1,6 +1,6 @@
 ---
 id: 587d78a7367417b2b2512adf
-title: Learn How the CSS @keyframes and animation Properties Work
+title: CSS @keyframes 규칙과 animation 속성이 어떻게 작동하는지 알기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakprhv'
 forumTopicId: 301059
@@ -9,13 +9,13 @@ dashedName: learn-how-the-css-keyframes-and-animation-properties-work
 
 # --description--
 
-To animate an element, you need to know about the animation properties and the `@keyframes` rule. The animation properties control how the animation should behave and the `@keyframes` rule controls what happens during that animation. There are eight animation properties in total. This challenge will keep it simple and cover the two most important ones first:
+요소에 애니메이션을 적용하려면 animation 속성 및 `@keyframes`규칙에 대해 이해해야 합니다 Animation 속성은 애니메이션 동작을 제어하며, `@keyframes` 규칙은 애니메이션이 진행되는 동안 중간 동작을 정의합니다. Animation 속성은 총 8가지가 있습니다. 이 챌린지에서는 간단하게 두 가지 주요 측면을 다룰 것입니다.
 
-`animation-name` sets the name of the animation, which is later used by `@keyframes` to tell CSS which rules go with which animations.
+`animation-name` 속성은 애니메이션의 이름을 설정합니다. 이 이름은 `@keyframes`를 사용할 때 CSS에게 어떤 규칙이 어떤 애니메이션에 적용되어야 하는지 알려줍니다.
 
-`animation-duration` sets the length of time for the animation.
+`animation-duration` 속성은 애니메이션이 한 사이클을 완료하는 데 걸리는 시간을 지정합니다.
 
-`@keyframes` is how to specify exactly what happens within the animation over the duration. This is done by giving CSS properties for specific "frames" during the animation, with percentages ranging from 0% to 100%. If you compare this to a movie, the CSS properties for 0% is how the element displays in the opening scene. The CSS properties for 100% is how the element appears at the end, right before the credits roll. Then CSS applies the magic to transition the element over the given duration to act out the scene. Here's an example to illustrate the usage of `@keyframes` and the animation properties:
+`@keyframes`은 애니메이션의 지속 시간 동안 정확히 어떤 동작들이 발생하는지를 지정할 때 사용됩니다. 애니메이션이 실행되는 동안, 0%에서 100%까지의 백분율로 이루어진 특정 "프레임"에 대해 CSS 속성을 지정하면 됩니다. 영화와 비교해보면, 0%에 적용되는 CSS 속성은 요소가 영화 첫 장면에서 어떻게 보여질 것인지를 나타냅니다. 한편 100%에 적용되는 CSS 속성들은 영화 마지막, 즉 엔딩 크레딧 직전에 요소가 어떻게 보여질지를 나타냅니다. 그런 다음, CSS는 해당 장면을 연출하기 위해 주어진 기간 동안 요소를 부드럽게 전환하는 특별한 기술을 적용합니다. `@keyframes`와 애니메이션 속성의 사용법을 설명하기 위한 예제가 있습니다.
 
 ```css
 #anim {
@@ -33,45 +33,45 @@ To animate an element, you need to know about the animation properties and the `
 }
 ```
 
-For the element with the `anim` id, the code snippet above sets the `animation-name` to `colorful` and sets the `animation-duration` to 3 seconds. Then the `@keyframes` rule links to the animation properties with the name `colorful`. It sets the color to blue at the beginning of the animation (0%) which will transition to yellow by the end of the animation (100%). You aren't limited to only beginning-end transitions, you can set properties for the element for any percentage between 0% and 100%.
+`anim`이라는 id를 가진 요소에 대해, 위의 코드는 `colorful`이라는 `animation-name`을 부여하고 `animation-duration`은 3초로 지정합니다. 그리고 `@keyframes` 규칙은 `colorful`라는 이름의 애니메이션 속성들과 연결됩니다. 애니메이션의 시작 지점(0%) 에서는 색깔이 파란색이었다가, 애니메이션의 종료 지점(100%) 에서는 노란색이 되도록 전환이 이루어집니다. 애니메이션의 시작 지점과 종료 지점 간에만 국한되지 않고, 0% 부터 100% 사이의 모든 백분율에 대해 요소의 속성을 지정할 수 있습니다.
 
 # --instructions--
 
-Create an animation for the element with the id `rect`, by setting the `animation-name` to `rainbow` and the `animation-duration` to 4 seconds. Next, declare a `@keyframes` rule, and set the `background-color` at the beginning of the animation (`0%`) to blue, the middle of the animation (`50%`) to green, and the end of the animation (`100%`) to yellow.
+`rect`라는 id를 가진 요소에 대해 애니메이션을 생성합니다. `animation-name`은 `rainbow`로 설정하고, `animation-duration`은 4초로 설정합니다. 그 다음, `@keyframes` 규칙을 선언합니다. 애니메이션의 시작점(`0%`) 에서는 `background-color`를 파란색으로, 중간 지점(`50%`) 에서는 초록색으로, 종료 지점(`100%`) 에서는 노란색으로 전환됩니다.
 
 # --hints--
 
-The element with id of `rect` should have an `animation-name` property with a value of `rainbow`.
+`rect`라는 id를 가진 요소는 `animation-name`이라는 속성을 가져야 하며 이 속성값은 `rainbow`어야 합니다.
 
 ```js
 assert($('#rect').css('animation-name') == 'rainbow');
 ```
 
-The element with id of `rect` should have an `animation-duration` property with a value of 4s.
+`rect`라는 id를 가진 요소는 `animation-duration`이라는 속성을 가져야 하며 이 속성값은 4초로 지정돼야 합니다.
 
 ```js
 assert($('#rect').css('animation-duration') == '4s');
 ```
 
-The `@keyframes` rule should use the `animation-name` of `rainbow`.
+`@keyframes`규칙은 `rainbow`라는 `animation-name`에 적용됩니다.
 
 ```js
 assert(code.match(/@keyframes\s+?rainbow\s*?{/g));
 ```
 
-The `@keyframes` rule for `rainbow` should use a `background-color` of `blue` at 0%.
+`rainbow`에 적용되는 `@keyframes` 규칙은 0%에서 `background-color`를 `blue`로 설정해야 합니다.
 
 ```js
 assert(code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?}/gi));
 ```
 
-The `@keyframes` rule for `rainbow` should use a `background-color` of `green` at 50%.
+`rainbow`에 적용되는 `@keyframes` 규칙은 50%에서 `background-color`를 `green`로 설정해야 합니다.
 
 ```js
 assert(code.match(/50%\s*?{\s*?background-color:\s*?green;\s*?}/gi));
 ```
 
-The `@keyframes` rule for rainbow should use a `background-color` of `yellow` at 100%.
+`rainbow`에 적용되는 `@keyframes` 규칙은 100%에서 `background-color`를 `yellow`로 설정해야 합니다.
 
 ```js
 assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi));

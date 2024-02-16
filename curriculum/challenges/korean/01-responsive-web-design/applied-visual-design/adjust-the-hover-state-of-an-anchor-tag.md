@@ -1,6 +1,6 @@
 ---
 id: 587d781d367417b2b2512ac8
-title: Adjust the Hover State of an Anchor Tag
+title: 앵커 태그의 hover 상태 조정하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakRGcm'
 forumTopicId: 301035
@@ -9,9 +9,9 @@ dashedName: adjust-the-hover-state-of-an-anchor-tag
 
 # --description--
 
-This challenge will touch on the usage of pseudo-classes. A pseudo-class is a keyword that can be added to selectors, in order to select a specific state of the element.
+이 도전 과제에서는 가상 클래스의 사용에 대해 다룹니다. 가상 클래스는 요소의 특정 상태를 선택하기 위해 선택기에 추가할 수 있는 키워드입니다.
 
-For example, the styling of an anchor tag can be changed for its hover state using the `:hover` pseudo-class selector. Here's the CSS to change the `color` of the anchor tag to red during its hover state:
+예를 들어, 앵커 태그의 스타일은 `:hover` 가상 클래스 선택기를 사용하여 hover 상태에 대해 변경될 수 있습니다. 다음은 hover 상태일때 앵커 태그의 `color`를 빨간색으로 변경하는 CSS입니다.
 
 ```css
 a:hover {
@@ -21,17 +21,17 @@ a:hover {
 
 # --instructions--
 
-The code editor has a CSS rule to style all `a` tags black. Add a rule so that when the user hovers over the `a` tag, the `color` is blue.
+코드 에디터에는 모든 `a` 태그를 검은색으로 스타일링하는 CSS 규칙이 있습니다. 사용자가 `a` 태그 위로 마우스를 올릴 때 `color`가 파란색으로 변경되도록 규칙을 추가하세요.
 
 # --hints--
 
-The anchor tag `color` should remain black, only add CSS rules for the `:hover` state.
+앵커 태그의 `color`는 검은색으로 유지되어야 하며, `:hover` 상태에 대한 CSS 규칙만 추가하세요.
 
 ```js
 assert($('a').css('color') == 'rgb(0, 0, 0)');
 ```
 
-The anchor tag should have a `color` of blue on hover.
+앵커 태그는 hover 상태일 때 `color`가 파란색이어야 합니다.
 
 ```js
 assert(

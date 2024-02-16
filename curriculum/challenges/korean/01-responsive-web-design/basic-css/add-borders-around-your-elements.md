@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9bedf08813
-title: Add Borders Around Your Elements
+title: 요소에 테두리 (border) 만들기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvnHZ'
 forumTopicId: 16630
@@ -9,9 +9,9 @@ dashedName: add-borders-around-your-elements
 
 # --description--
 
-CSS borders have properties like `style`, `color` and `width`.
+CSS 테두리는 `style`, `color`, `width`와 같은 속성을 가집니다.
 
-For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class:
+예를 들면, HTML 요소의 가장자리에 5px의 테두리를 만들고 싶다고 했을 때, 우리는 다음과 같은 클래스를 사용할 수 있습니다.
 
 ```html
 <style>
@@ -25,9 +25,9 @@ For example, if we wanted to create a red, 5 pixel border around an HTML element
 
 # --instructions--
 
-Create a class called `thick-green-border`. This class should add a 10px, solid, green border around an HTML element. Apply the class to your cat photo.
+`thick-green-border`라는 클래스를 만들어주세요. 이 클래스는 10px, 직선, 초록색의 보더를 HTML 요소에 적용해야 합니다. 고양이 사진에 클래스를 적용하세요.
 
-Remember that you can apply multiple classes to an element using its `class` attribute, by separating each class name with a space. For example:
+`class` 속성을 이용해 클래스 이름을 띄어쓰기로 분리하여 요소에 여러 개의 클래스를 적용할 수 있다는 것을 기억하세요. 예:
 
 ```html
 <img class="class1 class2">
@@ -35,19 +35,19 @@ Remember that you can apply multiple classes to an element using its `class` att
 
 # --hints--
 
-Your `img` element should have the class `smaller-image`.
+`img` 요소는 `smaller-image` 클래스를 가져야 합니다.
 
 ```js
 assert($('img').hasClass('smaller-image'));
 ```
 
-Your `img` element should have the class `thick-green-border`.
+`img` 요소는 `thick-green-border` 클래스를 가져야 합니다.
 
 ```js
 assert($('img').hasClass('thick-green-border'));
 ```
 
-Your image should have a border width of `10px`.
+이미지는 `10px` 두께의 테두리를 가져야 합니다.
 
 ```js
 assert(
@@ -57,13 +57,13 @@ assert(
 );
 ```
 
-Your image should have a border style of `solid`.
+이미지는 `solid` 스타일의 테두리를 가져야 합니다.
 
 ```js
 assert($('img').css('border-right-style') === 'solid');
 ```
 
-The border around your `img` element should be green.
+`img` 요소 주위의 테두리는 초록색이어야 합니다.
 
 ```js
 assert($('img').css('border-left-color') === 'rgb(0, 128, 0)');

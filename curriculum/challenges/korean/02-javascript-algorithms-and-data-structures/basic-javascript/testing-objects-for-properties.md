@@ -10,7 +10,7 @@ dashedName: testing-objects-for-properties
 
 To check if a property on a given object exists or not, you can use the `.hasOwnProperty()` method. `someObject.hasOwnProperty(someProperty)` returns `true` or `false` depending on if the property is found on the object or not.
 
-**Example**
+**예)**
 
 ```js
 function checkForProperty(object, property) {

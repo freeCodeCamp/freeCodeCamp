@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08746
-title: Inherit Styles from the Body Element
+title: HTML Body 요소로부터 스타일 상속하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c9bmdtR'
 forumTopicId: 18204
@@ -9,27 +9,27 @@ dashedName: inherit-styles-from-the-body-element
 
 # --description--
 
-Now we've proven that every HTML page has a `body` element, and that its `body` element can also be styled with CSS.
+이제 모든 HTML 페이지에는 `body` 요소가 있고, 해당 `body` 요소에 대해 CSS로 스타일을 지정할 수 있음을 확인했습니다.
 
-Remember, you can style your `body` element just like any other HTML element, and all your other elements will inherit your `body` element's styles.
+`body` 요소에도 다른 HTML 요소들과 마찬가지로 CSS를 통해 스타일을 지정할 수 있고, 다른 모든 요소들은 `body` 요소에 지정된 스타일을 상속받게 된다는 점을 기억하세요.
 
 # --instructions--
 
-First, create a `h1` element with the text `Hello World`
+먼저, `Hello World`라는 텍스트를 가진 `h1` 요소를 생성해주세요.
 
-Then, let's give all elements on your page the color of `green` by adding `color: green;` to your `body` element's style declaration.
+`body` 요소의 스타일 선언에 `color: green;`을 추가해 페이지의 모든 요소들에 `green` 색상을 적용해 주세요.
 
-Finally, give your `body` element the font-family of `monospace` by adding `font-family: monospace;` to your `body` element's style declaration.
+마지막으로, `body` 요소의 스타일 선언에 `font-family: monospace;`를 추가하여 `body`요소에 `monospace` 글꼴을 적용해주세요.
 
 # --hints--
 
-You should create an `h1` element.
+`h1` 요소를 생성해야 합니다.
 
 ```js
 assert($('h1').length > 0);
 ```
 
-Your `h1` element should have the text `Hello World`.
+`h1` 요소에는 `Hello World` 라는 텍스트가 있어야 합니다.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-Your `h1` element should have a closing tag.
+`h1` 요소에는 닫는 태그가 있어야 합니다.
 
 ```js
 assert(
@@ -50,13 +50,13 @@ assert(
 );
 ```
 
-Your `body` element should have the `color` property of `green`.
+`body`요소에는 `color` 속성이 있어야 하며 이 속성값은 `green`이어야 합니다.
 
 ```js
 assert($('body').css('color') === 'rgb(0, 128, 0)');
 ```
 
-Your `body` element should have the `font-family` property of `monospace`.
+`body`요소에는 `font-family` 속성이 있어야 하며 이 속성값은 `monospace`이어야 합니다.
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-Your `h1` element should inherit the font `monospace` from your `body` element.
+`h1`요소는 `body`요소로부터 `monospace` 폰트를 상속받아야 합니다.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-Your `h1` element should inherit the color `green` from your `body` element.
+`h1`요소는 `body`요소로부터 `green` 색상을 상속받아야 합니다.
 
 ```js
 assert($('h1').length > 0 && $('h1').css('color') === 'rgb(0, 128, 0)');

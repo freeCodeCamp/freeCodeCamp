@@ -1,6 +1,6 @@
 ---
 id: 5a9d72ad424fe3d0e10cad16
-title: Use a media query to change a variable
+title: 변수 변환하기 위한 미디어 쿼리 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cWmL8UP'
 forumTopicId: 301091
@@ -9,17 +9,17 @@ dashedName: use-a-media-query-to-change-a-variable
 
 # --description--
 
-CSS Variables can simplify the way you use media queries.
+CSS 변수는 미디어 쿼리를 사용하는 방법을 간소화시킬 수 있습니다.
 
-For instance, when your screen is smaller or larger than your media query break point, you can change the value of a variable, and it will apply its style wherever it is used.
+예를 들면, 화면이 미디어 쿼리 변환점보다 작거나 클 때 변수의 값을 바꿀 수 있으며 변수가 사용되는 모든 곳에 그 스타일이 적용될 것입니다.
 
 # --instructions--
 
-In the `:root` selector of the media query, change it so `--penguin-size` is redefined and given a value of `200px`. Also, redefine `--penguin-skin` and give it a value of `black`. Then resize the preview to see this change in action.
+미디어 쿼리의 `:root` 셀렉터에서 `--penguin-size`을 재정의하고 값을 `200px`로 변환하세요. 또한 `--penguin-skin`을 재정의하고 `black` 값을 주세요. 그런 다음 변화 확인을 위해 미리보기 크기를 조정해보세요.
 
 # --hints--
 
-`:root` should reassign the `--penguin-size` variable to `200px`.
+`:root`는 `--penguin-size` 변수에 `200px`을 재할당해야 합니다.
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-`:root` should reassign the `--penguin-skin` variable to `black`.
+`:root`는 `--penguin-skin` 변수에 `black`를 재할당해야 합니다.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 587d774c367417b2b2512a9c
-title: Add a Text Alternative to Images for Visually Impaired Accessibility
+title: 시각 장애 접근성을 위한 대체 텍스트 추가하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 16628
@@ -9,23 +9,23 @@ dashedName: add-a-text-alternative-to-images-for-visually-impaired-accessibility
 
 # --description--
 
-You've likely seen an `alt` attribute on an `img` tag in other challenges. `alt` text describes the image's content and provides a text-alternative for it. An `alt` attribute helps in cases where the image fails to load or can't be seen by a user. Search engines also use it to understand what an image contains to include it in search results. Here's an example:
+다른 도전 과제들에서 `img` 태그의 `alt` 속성을 본 적 있을 것입니다. `alt` 텍스트는 이미지의 내용을 설명하는 대체 텍스트를 제공합니다. `alt` 속성은 이미지 다운로드가 실패하는 등의 이유로 사용자가 이미지를 볼 수 없을 경우에 도움이 됩니다. 검색 엔진 또한 이미지가 어떤 내용을 담는지 이해하고 이를 검색 결과에 반영하기 위해서 이를 활용합니다. 여기 예시가 있습니다.
 
 ```html
 <img src="importantLogo.jpeg" alt="Company logo">
 ```
 
-People with visual impairments rely on screen readers to convert web content to an audio interface. They won't get information if it's only presented visually. For images, screen readers can access the `alt` attribute and read its contents to deliver key information.
+시각 장애가 있는 사람들은 웹 콘텐츠를 음성으로 변환해주는 스크린 리더에 의존합니다. 만일콘텐츠가 시각적으로만 제공된다면, 이들은 아무런 정보도 얻지 못할 것입니다. 이미지의 경우, 스크린 리더가 `alt` 속성에 접근해 콘텐츠를 읽을 수 있으므로 중요한 정보가 전달됩니다.
 
-Good `alt` text provides the reader a brief description of the image. You should always include an `alt` attribute on your image. Per HTML5 specification, this is now considered mandatory.
+잘 쓰인 `alt` 대체 텍스트는 이미지를 명료하게 표현합니다. 이미지에 항상 `alt` 속성을 추가하세요. HTML5 명세에 따르면, 이는 의무사항으로 간주됩니다.
 
 # --instructions--
 
-Camper Cat happens to be both a coding ninja and an actual ninja, who is building a website to share his knowledge. The profile picture he wants to use shows his skills and should be appreciated by all site visitors. Add an `alt` attribute in the `img` tag, that explains Camper Cat is doing karate. (The image `src` doesn't link to an actual file, so you should see the `alt` text in the display.)
+캠퍼 캣은 코딩과 무술을 잘 합니다. 캠퍼 캣은 개인 웹사이트에서 자신의 지식을 공유하고 싶어합니다. 캠퍼 캣은 자신의 프로필 사진으로 방문자들을 감탄시키고 싶습니다. `alt`와 `img`태그를 더해서 캠퍼 캣이 무술을 할 수 있다는 설명을 더해주세요. `src` 이미지에는 실제 파일의 링크가 걸려있지 않으므로, 화면의 `alt` 텍스트를 보세요.
 
 # --hints--
 
-Your `img` tag should have an `alt` attribute and it should not be empty.
+`img` 태그에는 `alt` 속성이 있어야 하며, 빈 텍스트가 들어가면 안 됩니다.
 
 ```js
 assert($('img').attr('alt'));

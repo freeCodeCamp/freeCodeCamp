@@ -8,7 +8,7 @@ dashedName: hofstadter-q-sequence
 
 # --description--
 
-The Hofstadter Q sequence is defined as:
+A sequência de Hofstadter Q é definida como:
 
 $Q(1)=Q(2)=1, \\\\ Q(n)=Q\\big(n-Q(n-1)\\big)+Q\\big(n-Q(n-2)), \\quad n>2.$
 
