@@ -69,7 +69,7 @@ describe('<Button />', () => {
 
     userEvent.click(button);
 
-    expect(onClick).not.toBeCalled();
+    expect(onClick).not.toHaveBeenCalled();
   });
 
   it('should render an anchor element if the `href` prop is defined', () => {
