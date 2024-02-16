@@ -93,7 +93,7 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         $(() => {
           try {
             let test: unknown;
-            if (__file('script.js').indexOf(editableContents) > -1) {
+            if ((__file('script.js')?.indexOf(editableContents) ?? -1) > -1) {
               const script = editableContents;
               test = eval(script + ';' + testString);
             } else {
