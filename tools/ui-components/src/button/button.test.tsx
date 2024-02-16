@@ -99,4 +99,16 @@ describe('<Button />', () => {
     // Ensure that a link element is not rendered
     expect(link).not.toBeInTheDocument();
   });
+
+  it('test - should trigger the onClick prop on click', () => {
+    const onClick = jest.fn();
+
+    render(<Button onClick={onClick}>Hello world</Button>);
+
+    const button = screen.getByRole('button', { name: /hello world/i });
+
+    userEvent.click(button);
+
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
 });
