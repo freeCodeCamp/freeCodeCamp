@@ -122,7 +122,7 @@ describe('<DropDownButton>', () => {
     const Item = within(unorderedList).getByText('Hello world');
     userEvent.click(Item);
 
-    expect(onClick).not.toBeCalled();
+    expect(onClick).not.toHaveBeenCalled();
   });
 
   it('should render an anchor element if the `href` prop is defined', () => {
