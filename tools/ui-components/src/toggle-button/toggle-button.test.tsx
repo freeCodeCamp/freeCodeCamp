@@ -17,7 +17,7 @@ describe('<ToggleButton />', () => {
 
     userEvent.click(screen.getByRole('button', { name: /on/i }));
 
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
   });
 
   it('should be checked if checked prop is true', () => {
@@ -59,7 +59,7 @@ describe('<ToggleButton />', () => {
 
     userEvent.click(screen.getByRole('button', { name: /on/i }));
 
-    expect(onChange).not.toBeCalled();
+    expect(onChange).not.toHaveBeenCalled();
   });
 
   it('should have value property if radio', () => {

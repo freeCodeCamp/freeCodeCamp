@@ -792,12 +792,6 @@ importers:
       '@babel/plugin-syntax-dynamic-import':
         specifier: 7.8.3
         version: 7.8.3(@babel/core@7.23.7)
-      '@codesee/babel-plugin-instrument':
-        specifier: 0.587.0
-        version: 0.587.0(@babel/core@7.23.7)
-      '@codesee/tracker':
-        specifier: 0.587.0
-        version: 0.587.0
       '@testing-library/react':
         specifier: 12.1.5
         version: 12.1.5(react-dom@16.14.0)(react@16.14.0)
@@ -5866,19 +5860,6 @@ packages:
       '@babel/core': 7.23.7
       '@babel/helper-plugin-utils': 7.22.5
 
-  /@babel/plugin-transform-typescript@7.22.15(@babel/core@7.23.7):
-    resolution: {integrity: sha512-1uirS0TnijxvQLnlv5wQBwOX3E1wCFX7ITv+9pBV2wKEk4K+M5tqDaoNXnTH8tjEIYHLO98MwiTWO04Ggz4XuA==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/core': 7.23.7
-      '@babel/helper-annotate-as-pure': 7.22.5
-      '@babel/helper-create-class-features-plugin': 7.22.15(@babel/core@7.23.7)
-      '@babel/helper-plugin-utils': 7.22.5
-      '@babel/plugin-syntax-typescript': 7.22.5(@babel/core@7.23.7)
-    dev: true
-
   /@babel/plugin-transform-typescript@7.23.3(@babel/core@7.23.7):
     resolution: {integrity: sha512-ogV0yWnq38CFwH20l2Afz0dfKuZBx9o/Y2Rmh5vuSS0YD1hswgEgTfyTzuSrT2q9btmHRSqYoSfwFUVaC1M1Jw==}
     engines: {node: '>=6.9.0'}
@@ -6522,26 +6503,6 @@ packages:
     dependencies:
       exec-sh: 0.3.6
       minimist: 1.2.8
-    dev: true
-
-  /@codesee/babel-plugin-instrument@0.587.0(@babel/core@7.23.7):
-    resolution: {integrity: sha512-kay2VYlVFUugILxnzNdeExTSGYDYgtpSuvevgVk6nIDSaZUVq8YisesePwro/Mo+op7mMMdXpaRvj5d2yncfBQ==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/core': 7.23.7
-      '@babel/plugin-syntax-jsx': 7.22.5(@babel/core@7.23.7)
-      '@babel/plugin-transform-typescript': 7.22.15(@babel/core@7.23.7)
-      array.prototype.flatmap: 1.3.2
-      jest-util: 27.5.1
-      object-path: 0.11.8
-      pkg-up: 3.1.0
-    dev: true
-
-  /@codesee/tracker@0.587.0:
-    resolution: {integrity: sha512-qCz4rA53Yy+u22N+ypMD4O4jPQmc/+/n2e6CV54z9SxAb7eN5DQyuckVF5JUOrW4yjU/n7UdFKsyaCJ9S0BDJw==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     dev: true
 
   /@colors/colors@1.5.0:
@@ -7677,17 +7638,6 @@ packages:
       '@types/istanbul-reports': 3.0.2
       '@types/node': 20.8.2
       '@types/yargs': 15.0.16
-      chalk: 4.1.2
-    dev: true
-
-  /@jest/types@27.5.1:
-    resolution: {integrity: sha512-Cx46iJ9QpwQTjIdq5VJu2QTMMs3QlEjI0x1QbBP5W1+nMzyc2XmimiRR/CbX9TO0cPTeUlxWMOu8mslYsJ8DEw==}
-    engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
-    dependencies:
-      '@types/istanbul-lib-coverage': 2.0.4
-      '@types/istanbul-reports': 3.0.2
-      '@types/node': 20.8.2
-      '@types/yargs': 16.0.6
       chalk: 4.1.2
     dev: true
 
@@ -11253,12 +11203,6 @@ packages:
     resolution: {integrity: sha512-2FeD5qezW3FvLpZ0JpfuaEWepgNLl9b2gQYiz/ce0NhoB1W/D+VZu98phITXkADYerfr/jb7JcDcVhITsc9bwg==}
     dependencies:
       '@types/yargs-parser': 21.0.1
-
-  /@types/yargs@16.0.6:
-    resolution: {integrity: sha512-oTP7/Q13GSPrgcwEwdlnkoZSQ1Hg9THe644qq8PG6hhJzjZ3qj1JjEFPIwWV/IXVs5XGIVqtkNOS9kh63WIJ+A==}
-    dependencies:
-      '@types/yargs-parser': 21.0.1
-    dev: true
 
   /@types/yargs@17.0.26:
     resolution: {integrity: sha512-Y3vDy2X6zw/ZCumcwLpdhM5L7jmyGpmBCTYMHDLqT2IKVMYRRLdv6ZakA+wxhra6Z/3bwhNbNl9bDGXaFU+6rw==}
@@ -22330,18 +22274,6 @@ packages:
       micromatch: 4.0.5
     dev: true
 
-  /jest-util@27.5.1:
-    resolution: {integrity: sha512-Kv2o/8jNvX1MQ0KGtw480E/w4fBCDOnH6+6DmeKi6LZUIlKA5kwY0YNdlzaWTiVgxqAqik11QyxDOKk543aKXw==}
-    engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
-    dependencies:
-      '@jest/types': 27.5.1
-      '@types/node': 20.8.2
-      chalk: 4.1.2
-      ci-info: 3.8.0
-      graceful-fs: 4.2.11
-      picomatch: 2.3.1
-    dev: true
-
   /jest-util@29.7.0:
     resolution: {integrity: sha512-z6EbKajIpqGKU56y5KBUgy1dt1ihhQJgWzUlZHArA/+X2ad7Cb5iF+AK1EWVL/Bo7Rz9uurpqw6SiBCefUbCGA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -25466,11 +25398,6 @@ packages:
   /object-path@0.11.5:
     resolution: {integrity: sha512-jgSbThcoR/s+XumvGMTMf81QVBmah+/Q7K7YduKeKVWL7N111unR2d6pZZarSk6kY/caeNxUDyxOvMWyzoU2eg==}
     engines: {node: '>= 10.12.0'}
-
-  /object-path@0.11.8:
-    resolution: {integrity: sha512-YJjNZrlXJFM42wTBn6zgOJVar9KFJvzx6sTWDte8sWZF//cnjl0BxHNpfZx+ZffXX63A9q0b1zsFiBX4g4X5KA==}
-    engines: {node: '>= 10.12.0'}
-    dev: true
 
   /object-visit@1.0.1:
     resolution: {integrity: sha512-GBaMwwAVK9qbQN3Scdo0OyvgPW7l3lnaVMj84uTOZlswkX0KpF6fyDBJhtTthf7pymztoN36/KEr1DyhF96zEA==}
