@@ -821,6 +821,8 @@ const sortSongs = () => {
 
     return 0;
   });
+
+  return userData?.songs;
 };
 
 renderSongs(sortSongs());
@@ -1606,6 +1608,8 @@ const sortSongs = () => {
 
     return 0;
   });
+
+  return userData?.songs;
 };
 
 renderSongs(sortSongs());
