@@ -177,17 +177,17 @@ function diffArray(arr1, arr2) {
   const newArr = [];
 
   set1.forEach(element => {
-    if (!set2.has(element)) {
-      newArr.push(element);
-    }
+    if (!set2.has(element)) newArr.push(element);
+
   });
 
   set2.forEach(element => {
-    if (!set1.has(element)) {
-      newArr.push(element);
-    }
+    if (!set1.has(element)) newArr.push(element);
+
   });
 
   return newArr;
+  
 }
+
 ```
