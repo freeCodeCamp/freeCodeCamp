@@ -1,13 +1,12 @@
 {
   "name": "Learn How to Talk About a Typical Workday and Tasks",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "learn-how-to-talk-about-a-typical-workday-and-tasks",
   "order": 3,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "a2-english-for-developers",
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "655c0f0e52bfc67bdeae16b4",
