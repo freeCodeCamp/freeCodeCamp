@@ -404,7 +404,18 @@ export const schemas = {
               )
             ),
             username: Type.String(),
-            userToken: Type.Optional(Type.String())
+            userToken: Type.Optional(Type.String()),
+            completedSurveys: Type.Array(
+              Type.Object({
+                title: Type.String(),
+                responses: Type.Array(
+                  Type.Object({
+                    question: Type.String(),
+                    response: Type.String()
+                  })
+                )
+              })
+            )
           })
         ),
         result: Type.String()

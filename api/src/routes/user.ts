@@ -7,7 +7,8 @@ import {
   normalizeChallenges,
   normalizeProfileUI,
   normalizeTwitter,
-  removeNulls
+  removeNulls,
+  normalizeSurveys
 } from '../utils/normalize';
 import {
   getCalendar,
@@ -511,7 +512,15 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           }
         });
 
-        const [userToken, user] = await Promise.all([userTokenP, userP]);
+        const completedSurveysP = fastify.prisma.survey.findMany({
+          where: { userId: req.session.user.id }
+        });
+
+        const [userToken, user, completedSurveys] = await Promise.all([
+          userTokenP,
+          userP,
+          completedSurveysP
+        ]);
 
         if (!user?.username) {
           void res.code(500);
@@ -552,7 +561,8 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
               twitter: normalizeTwitter(twitter),
               username: usernameDisplay || username,
-              userToken: encodedToken
+              userToken: encodedToken,
+              completedSurveys: normalizeSurveys(completedSurveys)
             }
           },
           result: user.username
