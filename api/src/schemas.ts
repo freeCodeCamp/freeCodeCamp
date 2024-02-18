@@ -33,6 +33,10 @@ const examResults = Type.Object({
   examTimeInSeconds: Type.Number()
 });
 
+const surveyTitles = Type.Union([
+  Type.Literal('Foundational C# with Microsoft Survey')
+]);
+
 export const schemas = {
   // Settings:
   updateMyProfileUI: {
@@ -758,6 +762,39 @@ export const schemas = {
           message: Type.Literal('flash.ms.transcript.link-err-3')
         })
       ])
+    }
+  },
+  submitSurvey: {
+    body: Type.Object({
+      surveyResults: Type.Object({
+        title: surveyTitles,
+        responses: Type.Array(
+          Type.Object({
+            question: Type.String(),
+            response: Type.String()
+          })
+        )
+      })
+    }),
+    response: {
+      200: Type.Object({
+        type: Type.Literal('success'),
+        message: Type.Literal('flash.survey.success')
+      }),
+      400: Type.Union([
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.survey.err-1')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.survey.err-2')
+        })
+      ]),
+      500: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.survey.err-3')
+      })
     }
   },
   examChallengeCompleted: {
