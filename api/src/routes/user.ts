@@ -408,7 +408,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
 
         const newSurvey = {
           ...surveyResults,
-          id: nanoid(),
           userId: user.id
         };
 

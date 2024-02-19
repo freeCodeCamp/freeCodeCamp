@@ -261,7 +261,7 @@ type DonationStartDate {
 }
 
 model Survey {
-  id        String           @id @map("_id") @db.ObjectId
+  id        String           @id @default(auto()) @map("_id") @db.ObjectId
   userId    String           @db.ObjectId
   title     String
   responses SurveyResponse[]
