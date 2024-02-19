@@ -642,7 +642,7 @@
   },
   "search": {
     "label": "Cerca",
-    "placeholder": "Cerca tra più di 200 articoli",
+    "placeholder": "Search 10,700+ tutorials",
     "see-results": "Vedi tutti i risultati per {{searchQuery}}",
     "no-tutorials": "Nessun tutorial trovato",
     "try": "Cerchi qualcosa? Prova la barra di ricerca su questa pagina.",
