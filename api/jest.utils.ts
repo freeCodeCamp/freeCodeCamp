@@ -1,8 +1,28 @@
+import { execSync } from 'child_process';
+
 import request from 'supertest';
 
 import { build } from './src/app';
 import { createUserInput } from './src/utils/create-user';
 import { examJson } from './__mocks__/exam';
+import { MONGOHQ_URL } from './src/utils/env';
+
+jest.mock('./src/utils/env', () => {
+  const createTestConnectionURL = (url: string, dbId: string) =>
+    url.replace(/(.*)(\?.*)/, `$1${dbId}$2`);
+  // There are other properties, and this type is too narrow, but we're only
+  // interested in MONGOHQ_URL here.
+  const actual: {
+    MONGOHQ_URL: string;
+  } = jest.requireActual('./src/utils/env');
+  return {
+    ...actual,
+    MONGOHQ_URL: createTestConnectionURL(
+      actual.MONGOHQ_URL,
+      process.env.JEST_WORKER_ID!
+    )
+  };
+});
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
@@ -71,11 +91,35 @@ export function setupServer(): void {
     fastify = await build();
     await fastify.ready();
 
+    // Prisma does not support TTL indexes in the schema yet, so, to avoid
+    // conflicts with the TTL index in the sessions collection, we need to
+    // create it manually (before interacting with the db in any way)
+    await fastify.prisma.$runCommandRaw({
+      createIndexes: 'sessions',
+      indexes: [
+        {
+          key: { expires: 1 },
+          name: 'expires_1',
+          background: true,
+          expireAfterSeconds: 0
+        }
+      ]
+    });
+    // push the schema to the test db to setup indexes, unique constraints, etc
+    execSync('pnpm prisma db push -- --skip-generate', {
+      env: {
+        ...process.env,
+        MONGOHQ_URL
+      }
+    });
+
     global.fastifyTestInstance = fastify;
     // allow a little time to setup the db
   }, 10000);
 
   afterAll(async () => {
+    await fastifyTestInstance.prisma.$runCommandRaw({ dropDatabase: 1 });
+
     // Due to a prisma bug, this is not enough, we need to --force-exit jest:
     // https://github.com/prisma/prisma/issues/18146
     await fastifyTestInstance.close();
