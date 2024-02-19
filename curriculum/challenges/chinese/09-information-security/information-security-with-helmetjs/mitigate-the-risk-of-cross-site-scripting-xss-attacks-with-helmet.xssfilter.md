@@ -9,11 +9,11 @@ dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xs
 
 # --description--
 
-请注意，本项目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化项目的基础上进行开发，你也可以从 <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 跨站脚本（XSS）是一种常见的攻击类型，恶意脚本被注入到易受攻击的页面，目的是窃取敏感数据，如会话 cookies 或密码。
 
-降低 XSS 攻击风险的基本规则很简单："永远不要相信用户的输入"。 作为一个开发者，你应该始终对所有来自外部的输入进行消毒。 这包括来自表单、GET 查询URL，甚至来自 POST 请求体的数据。 净化意味着你应该找到并编码可能有危险的字符，例如 &lt;, >。
+The basic rule to lower the risk of an XSS attack is simple: "Never trust user's input". 作为一个开发者，你应该始终对所有来自外部的输入进行消毒。 这包括来自表单、GET 查询URL，甚至来自 POST 请求体的数据。 净化意味着你应该找到并编码可能有危险的字符，例如 &lt;, >。
 
 现代浏览器通过采用更好的软件策略来帮助降低风险。 通常情况下，这些都是可以通过 http 头文件来配置的。
 

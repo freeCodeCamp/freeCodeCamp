@@ -45,7 +45,7 @@ ourStorage.desk.drawer;
 assert(gloveBoxContents === 'maps');
 ```
 
-Your code should use dot notation, where possible, to access `myStorage`.
+你的代碼應該儘可能使用點號來訪問 `myStorage`。
 
 ```js
 assert.match(code, /myStorage\.car\.inside/);
@@ -57,7 +57,7 @@ assert.match(code, /myStorage\.car\.inside/);
 assert.match(code, /const\s+gloveBoxContents\s*=/);
 ```
 
-You should not change the `myStorage` object.
+你不應該更改 `myStorage` 對象。
 
 ```js
 const expectedMyStorage = {
