@@ -16,37 +16,37 @@ $\\binom{n}{k} = \\frac{n!}{(n-k)!k!} = \\frac{n(n-1)(n-2)\\ldots(n-k+1)}{k(k-1)
 
 # --hints--
 
-`binom` という関数です。
+`binom` は関数でなければなりません。
 
 ```js
 assert(typeof binom === 'function');
 ```
 
-`binom(5,3)` は10を返します。
+`binom(5,3)` は 10 を返します。
 
 ```js
 assert.equal(binom(5, 3), 10);
 ```
 
-`binom(7,2)` は21を返します。
+`binom(7,2)` は 21 を返します。
 
 ```js
 assert.equal(binom(7, 2), 21);
 ```
 
-`binom(10,4)` は210を返します。
+`binom(10,4)` は 210 を返します。
 
 ```js
 assert.equal(binom(10, 4), 210);
 ```
 
-`binom(6,1)` は6を返します。
+`binom(6,1)` は 6 を返します。
 
 ```js
 assert.equal(binom(6, 1), 6);
 ```
 
-`binom(12,8)` は495を返します。
+`binom(12,8)` は 495 を返します。
 
 ```js
 assert.equal(binom(12, 8), 495);

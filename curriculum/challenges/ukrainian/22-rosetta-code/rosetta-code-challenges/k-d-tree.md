@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ecb
-title: K-d дерево
+title: К-вимірне дерево
 challengeType: 1
 forumTopicId: 302295
 dashedName: k-d-tree
@@ -8,11 +8,11 @@ dashedName: k-d-tree
 
 # --description--
 
-A k-d tree (short for *k*-dimensional tree) is a space-partitioning data structure for organizing points in a k-dimensional space. k-d trees are a useful data structure for several applications, such as searches involving a multidimensional search key (e.g. range searches and nearest neighbor searches). k-d trees are a special case of binary space partitioning trees. k-d trees are not suitable, however, for efficiently finding the nearest neighbor in high dimensional spaces. As a general rule, if the dimensionality is *k*, the number of points in the data, *N*, should be *N* ≫ 2<sup><i>k</i></sup>. Otherwise, when k-d trees are used with high-dimensional data, most of the points in the tree will be evaluated and the efficiency is no better than exhaustive search, and other methods such as approximate nearest-neighbor are used instead.
+К-вимірне дерево — це структура даних, яка розділяє простір для організації точок у k-вимірному просторі. К-вимірні дерева є корисною структурою даних для декількох застосувань, серед яких пошуки з використанням багатовимірного ключа пошуку (наприклад, пошуки в діапазоні та пошуки найближчого сусіда). К-вимірні дерева є особливим випадком дерев двійкового поділу простору. Однак k-вимірні дерева не підходять для ефективного пошуку найближчого сусіда в просторах високої розмірності. Як правило, якщо розмірність дорівнює *k*, то кількістю точок в даних має бути *N* ≫ 2<sup><i>k</i></sup>. В іншому випадку, коли k-вимірні дерева використовуються з високорозмірними даними, то більшість точок в дереві будуть оцінені, і ефективність не буде кращою за пошук методом повного перебору, а натомість буде використано інші методи, такі як приблизний пошук найближчого сусіда.
 
 # --instructions--
 
-Напишіть функцію, яка виконає пошук найближчого сусіда за допомогою k-d дерева. Функція потребує два параметри: масив k-вимірних точок і одну k-вимірну точку, найближчий сусід якої має бути виданий функцією. K-вимірна точка буде дана як набір k-елементів.
+Напишіть функцію, щоб виконати пошук найближчого сусіда за допомогою k-вимірного дерева. Функція приймає два параметри: масив k-вимірних точок і одну k-вимірну точку, найближчого сусіда якої має повернути функція. K-вимірна точка буде надана як масив з k елементів.
 
 # --hints--
 
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` має повернути масив.
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` має повернути `[ 8, 1 ]`.
 
 ```js
 assert.deepEqual(
@@ -61,7 +61,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` має повернути масив.
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [7, 1])` має повернути `[ 8, 1 ]`.
 
 ```js
 assert.deepEqual(
@@ -80,7 +80,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` має повернути масив.
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [3, 2])` має повернути `[ 2, 3 ]`.
 
 ```js
 assert.deepEqual(
@@ -99,7 +99,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` має повернути масив.
+`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [1, 2, 3])` має повернути `[ 1, 2, 5 ]`.
 
 ```js
 assert.deepEqual(
@@ -118,7 +118,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` має повернути масив.
+`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [4, 5, 6])` має повернути `[ 4, 6, 7 ]`.
 
 ```js
 assert.deepEqual(
@@ -137,7 +137,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` має повернути масив.
+`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [8, 8, 8])` має повернути `[ 7, 8, 9 ]`.
 
 ```js
 assert.deepEqual(

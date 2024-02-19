@@ -213,6 +213,20 @@ Please rejoin once you have reached at least 13 years of age.
 Thank you for understanding.
 ```
 
+### Запити на видалення облікового запису
+
+Якщо користувач надсилає запит на видалення свого облікового запису, надішліть наступне:
+
+```markdown
+Deleting an account with many posts disrupts the flow of conversation, and could remove helpful information for other Campers.
+
+We can anonymize your account, which will remove your username along with any other public information associated with your forum account. Your posts will remain, but will be attributed to an anonymous user, and you will be unable to log in to the account, as it will no longer be associated with an email address.
+
+If you would like to proceed with this, please reply to this message with your consent.
+```
+
+Якщо користувач наполягає на видаленні свого облікового запису, попросіть його написати лист на `support[at]freecodecamp.org` з посиланням на обліковий запис на форумі.
+
 ### Модерація через мобільний телефон
 
 Форум можливо модерувати через мобільний телефон, але ви можете зіткнутися з певними проблемами. У списку перелічено не всі проблеми.

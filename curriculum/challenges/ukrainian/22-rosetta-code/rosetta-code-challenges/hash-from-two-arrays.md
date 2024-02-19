@@ -8,7 +8,7 @@ dashedName: hash-from-two-arrays
 
 # --description--
 
-Given two arrays, create a hash object where the elements from one array (the keys) are linked to the elements of the other (the values).
+Дано два масиви. Створіть хеш-об’єкт, де елементи одного масиву (ключі) з’єднані з елементами іншого масиву (значення).
 
 Наприклад:
 
@@ -18,7 +18,7 @@ const secondArr = ["a", "b", "c"];
 const hashObj = arrToObj(firstArr, secondArr);
 ```
 
-Хеш-об’єкт, створений із наведених вище масивів, буде `{1: "a", 2: "b", 3: "c"}`.
+Хеш-об’єктом, створеним з двох масивів вище, буде `{1: "a", 2: "b", 3: "c"}`.
 
 # --hints--
 

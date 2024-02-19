@@ -13,7 +13,7 @@ Depois de completar o projeto, envie o link dele abaixo. Se você estiver envian
 
 # --instructions--
 
-For this challenge, you need to create a data graph explorer using Python that take input and do the following:
+Para este desafio, você precisará criar um explorador de gráficos de dados usando Python que receberá entradas e fará o seguinte:
 
 - Obter um arquivo .csv de três maneiras
   - enviando pelo computador local

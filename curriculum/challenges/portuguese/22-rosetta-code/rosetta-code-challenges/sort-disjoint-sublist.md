@@ -8,7 +8,7 @@ dashedName: sort-disjoint-sublist
 
 # --description--
 
-Given a list of values and a set of integer indices into that value list, the task is to sort the values at the given indices, but preserving the values at indices outside the set of those to be sorted.
+Dada uma lista de valores e um conjunto de índices inteiros nessa lista de valores a tarefa é ordenar os valores nos índices indicados, mas preservando os valores nos índices exteriores ao conjunto dos que devem ser ordenados.
 
 Faça a função funcionar com a seguinte lista de valores e conjunto de índices:
 

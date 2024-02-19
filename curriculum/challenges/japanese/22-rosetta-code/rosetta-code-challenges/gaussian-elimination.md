@@ -10,7 +10,7 @@ dashedName: gaussian-elimination
 
 Write a function to solve \\(Ax = b\\) using Gaussian elimination then backwards substitution.
 
-\\(A\\) は \\(n \\times n\\) 行列とします。 また、\\(x\\) と \\(b\\) は \\(n\\) に 1ベクトルを掛けます。
+\\(A\\) は \\(n \\times n\\) 行列とします。 また、\\(x\\) と \\(b\\) は \\(n\\) に 1 ベクトルを掛けます。
 
 精度を向上させるために、部分ピボット選択とスケーリングを使用してください。
 
@@ -22,7 +22,7 @@ Write a function to solve \\(Ax = b\\) using Gaussian elimination then backwards
 assert(typeof gaussianElimination == 'function');
 ```
 
-`gaussianElimination([[1,1],[1,-1]], [5,1])`は、配列を返す必要があります。
+`gaussianElimination([[1,1],[1,-1]], [5,1])` は、配列を返す必要があります。
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-`gaussianElimination([[1,1],[1,-1]], [5,1])` は、`[ 3, 2 ]`を返す必要があります。
+`gaussianElimination([[1,1],[1,-1]], [5,1])` は、`[ 3, 2 ]` を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -53,7 +53,7 @@ assert.deepEqual(
 );
 ```
 
-`gaussianElimination([[2,3],[2,1]] , [8,4])` は、`[ 1, 2 ]`を返す必要があります。
+`gaussianElimination([[2,3],[2,1]] , [8,4])` は、`[ 1, 2 ]` を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -68,7 +68,7 @@ assert.deepEqual(
 );
 ```
 
-`gaussianElimination([[1,3],[5,-2]], [14,19])` は `[ 5, 3 ]`を返す必要があります。
+`gaussianElimination([[1,3],[5,-2]], [14,19])` は `[ 5, 3 ]` を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -83,7 +83,7 @@ assert.deepEqual(
 );
 ```
 
-`gaussianElimination([[1,1],[5,-1]] , [10,14])` は`[ 4, 6 ]`を返す必要があります。
+`gaussianElimination([[1,1],[5,-1]] , [10,14])` は`[ 4, 6 ]` を返す必要があります。
 
 ```js
 assert.deepEqual(
@@ -98,7 +98,7 @@ assert.deepEqual(
 );
 ```
 
-`gaussianElimination([[1,2,3],[4,5,6],[7,8,8]] , [6,15,23])` は、`[ 1, 1, 1 ]`を返す必要があります。
+`gaussianElimination([[1,2,3],[4,5,6],[7,8,8]] , [6,15,23])` は、`[ 1, 1, 1 ]` を返す必要があります。
 
 ```js
 assert.deepEqual(

@@ -1,6 +1,6 @@
 ---
 id: 594faaab4e2a8626833e9c3d
-title: Розбиття рядка на лексеми методом екранування
+title: Tokenize a string with escaping
 challengeType: 1
 forumTopicId: 302338
 dashedName: tokenize-a-string-with-escaping
@@ -10,7 +10,7 @@ dashedName: tokenize-a-string-with-escaping
 
 Write a function or program that can split a string at each non-escaped occurrence of a separator character.
 
-Вона має містити три вхідні параметри:
+Вона має приймати три вхідні параметри:
 
 <ul>
   <li><strong>рядок</strong></li>
@@ -27,21 +27,21 @@ Write a function or program that can split a string at each non-escaped occurren
   <li>Порожні поля мають зберегтись, навіть спочатку та вкінці.</li>
 </ul>
 
-Правила для екранування:
+Правила для переходу:
 
 <ul>
   <li>"Escaped" means preceded by an occurrence of the escape character that is not already escaped itself.</li>
-  <li>Якщо escape-символ передує символу, що немає спеціального значення, то він все ще вважається екранованим (але не робить нічого особливого).</li>
-  <li>Кожна поява escape-символу, який використовувався для екранування чогось, не повинна стати частиною виводу.</li>
+  <li>When the escape character precedes a character that has no special meaning, it still counts as an escape (but does not do anything special).</li>
+  <li>Each occurrences of the escape character that was used to escape something, should not become part of the output.</li>
 </ul>
 
-Доведіть, що ваша функція задовольняє наступний тестовий приклад:
+Доведемо, що функція задовольняє такий випадок:
 
 Дано рядок
 
 <pre>one^|uno||three^^^^|four^^^|^cuatro|</pre>
 
-і використовуючи `|`як розділювач і `^` як escape-символ, ваша функція має вивести наступний масив:
+використовуючи `|` як відокремлювальний символ та `^` як символ переходу, функція має вивести наступний масив:
 
 <pre>  ['one|uno', '', 'three^^', 'four^|cuatro', '']
 </pre>

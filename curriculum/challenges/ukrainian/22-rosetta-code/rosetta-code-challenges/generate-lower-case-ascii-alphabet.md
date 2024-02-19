@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e7a
-title: Згенерувати нижній регістр ASCII абетки
+title: Алфавіт ASCII в нижньому регістрі
 challengeType: 1
 forumTopicId: 302274
 dashedName: generate-lower-case-ascii-alphabet
@@ -8,7 +8,7 @@ dashedName: generate-lower-case-ascii-alphabet
 
 # --description--
 
-Write a function to generate an array of lower case ASCII characters for a given range. For example, given the range `['a', 'd']`, the function should return `['a', 'b', 'c', 'd']`.
+Напишіть функцію, щоб згенерувати масив символів ASCII заданого діапазону в нижньому регістрі. Наприклад, якщо надано діапазон `['a', 'd']`, то функція має повернути `['a', 'b', 'c', 'd']`.
 
 # --hints--
 

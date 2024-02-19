@@ -1,6 +1,6 @@
 ---
 id: 596fd036dc1ab896c5db98b1
-title: Convert seconds to compound duration
+title: Конвертація секунд в складену тривалість
 challengeType: 1
 forumTopicId: 302236
 dashedName: convert-seconds-to-compound-duration
@@ -8,14 +8,14 @@ dashedName: convert-seconds-to-compound-duration
 
 # --description--
 
-Implement a function which:
+Реалізуйте функцію, яка:
 
 <ul>
   <li>приймає натуральне число, яке представляє тривалість в секундах (наприклад, <code>100</code>), та</li>
   <li>повертає рядок тієї самої тривалості у вигляді тижнів, днів, годин, хвилин та секунд (наприклад, <code>1 min, 40 sec</code>).</li>
 </ul>
 
-Демонстрація того, що вона передає наступні три тестові випадки:
+Розглянемо три тестові випадки:
 
 <div style='font-size:115%; font-weight: bold;'>Тестові випадки</div>
 
@@ -28,25 +28,25 @@ Implement a function which:
 <div style="font-size:115%; font-weight: bold;">Деталі</div>
 <ul>
   <li>
-    The following five units should be used:
+    Використайте наступні п’ять одиниць:
 
-| Unit   | Suffix used in Output | Conversion            |
+| Одиниця   | Суфікс | Конвертація            |
 | ------ | --------------------- | --------------------- |
-| week   | <code>wk</code>       | 1 week = 7 days       |
-| day    | <code>d</code>        | 1 day = 24 hours      |
-| hour   | <code>hr</code>       | 1 hour = 60 minutes   |
-| minute | <code>min</code>      | 1 minute = 60 seconds |
-| second | <code>sec</code>      | ---                   |
+| тиждень   | <code>wk</code>       | 1 тиждень = 7 днів       |
+| день    | <code>d</code>        | 1 день = 24 години      |
+| година   | <code>hr</code>       | 1 година = 60 хвилин   |
+| хвилина | <code>min</code>      | 1 хвилина = 60 секунд |
+| секунда | <code>sec</code>      | ---                   |
 
   </li>
   <li>
-    Однак <strong>only</strong> містить кількість не нульових значень при виході (наприклад <code>1 d</code> а не <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
+    Однак у вихідному числі використайте <strong>лише</strong> ті значення, які більші за нуль (наприклад, поверніть <code>1 d</code>, а не <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
   </li>
   <li>
-    Надавати перевагу максимально великим одиницям над меншими одиницями (наприклад повернути <code>2 min, 10 sec</code> а не <code>1 min, 70 sec</code> чи <code>130 sec</code>).
+    Надавайте перевагу більшим одиницям над меншими (наприклад, поверніть <code>2 min, 10 sec</code>, а не <code>1 min, 70 sec</code> чи <code>130 sec</code>).
   </li>
   <li>
-    Мімікрійне форматування, показане у тестових випадках ( кількість відсортована від найбільшої одиниці до найменшої і відокремлена комою+пробілом; значення і одиниця всіх значень відділена пробілом).
+    Використайте те ж саме форматування, що й в тестових випадках (одиниці відсортовані від найбільшої до найменшої та розділені комою+пробілом; значення та одиниця розділені пробілом).
   </li>
 </ul>
 
