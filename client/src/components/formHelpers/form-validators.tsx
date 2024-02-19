@@ -39,7 +39,7 @@ export const pathValidator: Validator = value =>
   isPathRoot(value) ? <Trans>validation.path-url</Trans> : null;
 
 export const sourceCodeLinkExistsValidator: Validator = value =>
-  value ? <Trans>validation.source-code-link-required</Trans> : null;
+  value ? null : <Trans>validation.source-code-link-required</Trans>;
 
 export function composeValidators(...validators: Validator[]) {
   return (value: string): ReturnType<Validator> | null =>
