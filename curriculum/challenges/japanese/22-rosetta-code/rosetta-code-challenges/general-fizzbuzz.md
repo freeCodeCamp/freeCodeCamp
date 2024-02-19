@@ -100,7 +100,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 15)`は`"BuzzFizz"`を返す必要があります。
+`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 15)` は`"BuzzFizz"` を返す必要があります。
 
 ```js
 assert.equal(
@@ -130,7 +130,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"],[7, "Baxx"]], 105)` は`"FizzBuzzBaxx"`を返す必要があります。
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"],[7, "Baxx"]], 105)` は `"FizzBuzzBaxx"` を返す必要があります。
 
 ```js
 assert.equal(

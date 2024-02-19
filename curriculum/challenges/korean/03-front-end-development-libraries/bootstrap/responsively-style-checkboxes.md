@@ -4,7 +4,8 @@ title: Responsively Style Checkboxes
 challengeType: 0
 forumTopicId: 18269
 required:
-  - link: >-
+  - 
+    link: >-
       https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css
     raw: true
 dashedName: responsively-style-checkboxes

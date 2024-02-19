@@ -1,6 +1,6 @@
 ---
 id: 587d781c367417b2b2512ac0
-title: Use the text-transform Property to Make Text Uppercase
+title: 글자를 대문자로 만들기 위한 text-transform 속성 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVZQSP'
 forumTopicId: 301081
@@ -9,25 +9,25 @@ dashedName: use-the-text-transform-property-to-make-text-uppercase
 
 # --description--
 
-The `text-transform` property in CSS is used to change the appearance of text. It's a convenient way to make sure text on a webpage appears consistently, without having to change the text content of the actual HTML elements.
+CSS에서 `text-transform` 속성은 글자의 생김새를 변형시킵니다. 실제 HTML 요소의 글자 내용을 변형할 필요 없이 웹페이지에 있는 글자가 일관되게 나타나도록 만들어주는 간편한 방법입니다.
 
-The following table shows how the different `text-transform`values change the example text "Transform me".
+다음 표는 각기 다른 `text-transform` 값들이 어떻게 예시 글자인 "Transform me"를 변형시키는지를 보여줍니다.
 
-<table><thead><tr><th>Value</th><th>Result</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"transform me"</td></tr><tr><td><code>uppercase</code></td><td>"TRANSFORM ME"</td></tr><tr><td><code>capitalize</code></td><td>"Transform Me"</td></tr><tr><td><code>initial</code></td><td>Use the default value</td></tr><tr><td><code>inherit</code></td><td>Use the <code>text-transform</code> value from the parent element</td></tr><tr><td><code>none</code></td><td><strong>Default:</strong> Use the original text</td></tr></tbody></table>
+<table><thead><tr><th>값</th><th>결과</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"transform me"</td></tr><tr><td><code>uppercase</code></td><td>"TRANSFORM ME"</td></tr><tr><td><code>capitalize</code></td><td>"Transform Me"</td></tr><tr><td><code>initial</code></td><td>기본값을 사용</td></tr><tr><td><code>inherit</code></td><td>부모 요소의 <code>text-transform</code> 값 사용</td></tr><tr><td><code>none</code></td><td><strong>디폴트:</strong> 원래 글자 사용</td></tr></tbody></table>
 
 # --instructions--
 
-Transform the text of the `h4` to be uppercase using the `text-transform` property.
+`text-transform` 속성을 사용하여 `h4` 글자를 대문자로 만드세요.
 
 # --hints--
 
-The `h4` text should be `uppercase`.
+`h4` 글자는 `uppercase`이어야 합니다.
 
 ```js
 assert($('h4').css('text-transform') === 'uppercase');
 ```
 
-The original text of the h4 should not be changed.
+h4의 원래 글자는 변형되지 않아야 합니다.
 
 ```js
 assert($('h4').text() !== $('h4').text().toUpperCase());

@@ -1,6 +1,6 @@
 ---
 id: 587d781b367417b2b2512aba
-title: Use the s Tag to Strikethrough Text
+title: s 태그로 취소선이 적용된 텍스트 만들기
 challengeType: 0
 videoUrl: ''
 forumTopicId: 301079
@@ -9,21 +9,21 @@ dashedName: use-the-s-tag-to-strikethrough-text
 
 # --description--
 
-To strikethrough text, which is when a horizontal line cuts across the characters, you can use the `s` tag. It shows that a section of text is no longer valid. With the `s` tag, the browser applies the CSS of `text-decoration: line-through;` to the element.
+가로선이 문자열의 중앙을 자르는 취소선 텍스트를 만드려면, `s` 태그를 사용하면 됩니다. 취소선은 텍스트 섹션이 더 이상 유효하지 않음을 나타냅니다. `s` 태그를 사용하면, 브라우저는 엘리먼트에 `text-decoration: line-through;` CSS를 적용합니다.
 
 # --instructions--
 
-Wrap the `s` tag around `Google` inside the `h4` tag and then add the word `Alphabet` beside it without the strikethrough formatting.
+`h4` 태그 내부에 있는 `Google` 텍스트를 `s`태그로 감싼 뒤, 취소선 형태가 아닌 `Alphabet` 단어를 옆에 추가해 보세요.
 
 # --hints--
 
-Your code should add one `s` tag to the markup.
+당신의 코드는 마크업에 `s` 태그를 하나 추가해야 합니다.
 
 ```js
 assert($('s').length == 1);
 ```
 
-A `s` tag should wrap around the `Google` text in the `h4` tag. It should not contain the word `Alphabet`.
+`s` 태그는 `h4`태그 안에서 `Google` 텍스트를 감싸야 합니다. 이것은 `Alphabet`단어를 포함하지 않아야 합니다.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-You should include the word `Alphabet` in the `h4` tag, without strikethrough formatting.
+`Alphabet` 단어를 `h4`태그 내부에 취소선없이 포함하여야 합니다.
 
 ```js
 assert(

@@ -5,6 +5,7 @@ title: CSS Foundations Question B
 challengeType: 15
 dashedName: css-foundations-question-b
 ---
+
 # --description--
 
 Class selectors will select all elements with the given `class`, which is just an attribute you place on an HTML element. Here’s how you add a class to an HTML tag and select it in CSS:
@@ -50,7 +51,7 @@ Instead of a period, you use a hashtag immediately followed by the case-sensitiv
 
 The major difference between classes and IDs is that an element can only have one `id`. An `id` cannot be repeated on a single page, and the `id` attribute should not contain any whitespace at all.
 
-# --question--    
+# --question--
 
 ## --text--
 

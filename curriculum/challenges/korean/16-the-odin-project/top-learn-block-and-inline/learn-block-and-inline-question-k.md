@@ -4,11 +4,12 @@ title: Learn Block and Inline Question K
 challengeType: 15
 dashedName: learn-block-and-inline-question-k
 ---
+
 # --description--
 
 Now that you have a basic understanding on how adding width and height to `inline` elements works.
 
-# --question--    
+# --question--
 
 ## --text--
 

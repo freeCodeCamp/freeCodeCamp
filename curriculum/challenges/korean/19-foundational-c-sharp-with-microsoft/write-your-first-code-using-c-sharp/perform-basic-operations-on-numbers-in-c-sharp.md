@@ -1,6 +1,6 @@
 ---
 id: 647e23788acb466c97ccbf02
-title: Perform Basic Operations on Numbers in C#
+title: 'Perform Basic Operations on Numbers in C#'
 challengeType: 19
 dashedName: perform-basic-operations-on-numbers-in-c-sharp
 ---

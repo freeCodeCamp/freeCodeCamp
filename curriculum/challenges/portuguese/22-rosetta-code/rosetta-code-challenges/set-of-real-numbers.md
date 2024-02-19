@@ -8,13 +8,13 @@ dashedName: set-of-real-numbers
 
 # --description--
 
-All real numbers form the uncountable set ℝ. Among its subsets, relatively simple are the convex sets, each expressed as a range between two real numbers *a* and *b* where *a* ≤ *b*. There are actually four cases for the meaning of "between", depending on open or closed boundary:
+Todos os números reais formam o conjunto incontável ℝ. Among its subsets, relatively simple are the convex sets, each expressed as a range between two real numbers *a* and *b* where *a* ≤ *b*. Na verdade, há quatro casos para o significado de "entre", dependendo dos limites abertos ou fechados:
 
 <ul>
-  <li>[<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> ≤ <i>x</i> and <i>x</i> ≤ <i>b</i> }</li>
-  <li>(<i>a</i>, <i>b</i>): {<i>x</i> | <i>a</i> < <i>x</i> and <i>x</i> < <i>b</i> }</li>
-  <li>[<i>a</i>, <i>b</i>): {<i>x</i> | <i>a</i> ≤ <i>x</i> and <i>x</i> < <i>b</i> }</li>
-  <li>(<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> < <i>x</i> and <i>x</i> ≤ <i>b</i> }</li>
+  <li>[<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> ≤ <i>x</i> e <i>x</i> ≤ <i>b</i> }</li>
+  <li>(<i>a</i>, <i>b</i>): {<i>x</i> | <i>a</i> < <i>x</i> e <i>x</i> < <i>b</i> }</li>
+  <li>[<i>a</i>, <i>b</i>): {<i>x</i> | <i>a</i> ≤ <i>x</i> e <i>x</i> < <i>b</i> }</li>
+  <li>(<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> < <i>x</i> e <i>x</i> ≤ <i>b</i> }</li>
 </ul>
 
 Observe que, se *a* = *b*, dos quatro, apenas \[*a*, *a*] não seria vazio.
@@ -22,12 +22,12 @@ Observe que, se *a* = *b*, dos quatro, apenas \[*a*, *a*] não seria vazio.
 **Tarefa**
 
 <ul>
-  <li>Devise a way to represent any set of real numbers, for the definition of "any" in the implementation notes below.</li>
+  <li>Elabore uma forma de representar qualquer conjunto de números reais, para a definição de "qualquer" nas notas de implementação abaixo.</li>
   <li>Forneça métodos para estas operações com conjuntos comuns (<i>x</i> é um número real; <i>A</i> e <i>B</i> são conjuntos):</li>
   <ul>
     <li>
-      <i>x</i> ∈ <i>A</i>: determine if <i>x</i> is an element of <i>A</i><br>
-      example: 1 is in [1, 2), while 2, 3, ... are not.
+      <i>x</i> ∈ <i>A</i>: determine se <i>x</i> é um elemento de <i>A</i><br>
+      exemplo: 1 está em [1, 2), enquanto 2, 3, ... não estão.
     </li>
     <li>
       <i>A</i> ∪ <i>B</i>: união de <i>A</i> e <i>B</i>, ou seja, {<i>x</i> | <i>x</i> ∈ <i>A</i> ou <i>x</i> ∈ <i>B</i>}<br>

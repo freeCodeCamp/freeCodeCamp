@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f060b6c005b0e76f059
-title: More Conditional Structures
+title: 더 많은 조건부 구조들
 challengeType: 11
 videoId: HdL82tAZR20
 bilibiliIds:
@@ -22,7 +22,7 @@ More resources:
 
 ## --text--
 
-Given the following code:
+다음 코드가 제공됩니다:
 
 ```python
 temp = "5 degrees"
@@ -32,7 +32,7 @@ cel = (fahr - 32.0) * 5.0 / 9.0
 print(cel)
 ```
 
-Which line/lines should be surrounded by `try` block?
+어떤 줄(들)이 `try` 블록으로 둘러싸져야 하나요?
 
 ## --answers--
 
@@ -52,7 +52,7 @@ Which line/lines should be surrounded by `try` block?
 
 ---
 
-None
+없음
 
 ## --video-solution--
 

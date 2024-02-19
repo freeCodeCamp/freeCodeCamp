@@ -8,7 +8,7 @@ dashedName: generate-lower-case-ascii-alphabet
 
 # --description--
 
-Write a function to generate an array of lower case ASCII characters for a given range. For example, given the range `['a', 'd']`, the function should return `['a', 'b', 'c', 'd']`.
+Escreva uma função para gerar um array de caracteres ASCII em letras minúsculas para um determinado intervalo. Por exemplo, dado o intervalo `['a', 'd']`, a função deve retornar `['a', 'b', 'c', 'd']`.
 
 # --hints--
 

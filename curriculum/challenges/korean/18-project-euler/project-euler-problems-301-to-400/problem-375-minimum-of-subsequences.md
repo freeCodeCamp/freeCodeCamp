@@ -10,10 +10,8 @@ dashedName: problem-375-minimum-of-subsequences
 
 Let $S_n$ be an integer sequence produced with the following pseudo-random number generator:
 
-$$\begin{align}
-        S_0 & = 290\\,797 \\\\
-  S_{n + 1} & = {S_n}^2\bmod 50\\,515\\,093
-\end{align}$$
+$$\begin{align}         S_0 & = 290\\,797 \\\\
+  S_{n + 1} & = {S_n}^2\bmod 50\\,515\\,093 \end{align}$$
 
 Let $A(i, j)$ be the minimum of the numbers $S_i, S_{i + 1}, \ldots, S_j$ for $i ≤ j$. Let $M(N) = \sum A(i, j)$ for $1 ≤ i ≤ j ≤ N$.
 

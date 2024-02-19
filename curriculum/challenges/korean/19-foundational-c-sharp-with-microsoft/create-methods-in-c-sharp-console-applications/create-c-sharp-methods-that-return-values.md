@@ -1,6 +1,6 @@
 ---
 id: 647e223c8acb466c97ccbeee
-title: Create C# Methods that Return Values
+title: 'Create C# Methods that Return Values'
 challengeType: 19
 dashedName: create-c-sharp-methods-that-return-values
 ---

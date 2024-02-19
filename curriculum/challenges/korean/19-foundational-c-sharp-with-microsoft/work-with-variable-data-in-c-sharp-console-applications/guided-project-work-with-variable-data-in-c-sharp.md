@@ -1,6 +1,6 @@
 ---
 id: 647e23368acb466c97ccbefd
-title: Guided Project - Work with Variable Data in C#
+title: 'Guided Project - Work with Variable Data in C#'
 challengeType: 19
 dashedName: guided-project-work-with-variable-data-in-c-sharp
 ---

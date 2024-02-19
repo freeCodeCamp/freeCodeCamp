@@ -1,6 +1,6 @@
 ---
 id: 587d78ad367417b2b2512af9
-title: Use the align-items Property in the Tweet Embed
+title: 트윗 임베드 align-items 속성 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cd3PNfq'
 forumTopicId: 301106
@@ -9,21 +9,21 @@ dashedName: use-the-align-items-property-in-the-tweet-embed
 
 # --description--
 
-The last challenge introduced the `align-items` property and gave an example. This property can be applied to a few tweet embed elements to align the flex items inside them.
+이전 과제에서 `align-items` 속성을 소개하고 예시를 살펴보았습니다. 이 속성은 몇몇 트윗 임베드 요소 안에 있는 플렉스 아이템 정렬시키도록 적용될 수 있습니다.
 
 # --instructions--
 
-Add the CSS property `align-items` to the header's `.follow-btn` element. Set the value to `center`.
+헤더의 `.follow-btn` 요소에 `align-items` 속성을 추가하세요. 값을 `center`로 설정하세요.
 
 # --hints--
 
-Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+`.follow-btn`는 페이지에 렌더링되어야 합니다. 광고 차단기같은 확장 프로그램은 꺼야합니다.
 
 ```js
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
 ```
 
-The `.follow-btn` element should have the `align-items` property set to a value of `center`.
+`.follow-btn` 요소는 `center`로 설정된 `align-items` 속성을 가져야 합니다.
 
 ```js
 assert($('.follow-btn').css('align-items') == 'center');

@@ -1,6 +1,6 @@
 ---
 id: bad87fed1348bd9aede07836
-title: Give a Background Color to a div Element
+title: div 요소에 배경색 주기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cdRKMCk'
 forumTopicId: 18190
@@ -9,9 +9,9 @@ dashedName: give-a-background-color-to-a-div-element
 
 # --description--
 
-You can set an element's background color with the `background-color` property.
+`background-color` 속성을 사용하여 요소의 배경색을 설정할 수 있습니다.
 
-For example, if you wanted an element's background color to be `green`, you'd put this within your `style` element:
+예를 들어, 요소의 배경색을 `green`으로 설정하려면 다음과 같이 `style` 요소 안에 넣습니다.
 
 ```css
 .green-background {
@@ -21,23 +21,23 @@ For example, if you wanted an element's background color to be `green`, you'd pu
 
 # --instructions--
 
-Create a class called `silver-background` with the `background-color` of `silver`. Assign this class to your `div` element.
+`silver`의 `background-color`를 갖는 `silver-background` 클래스를 생성하세요. `div` 요소에 이 클래스를 적용하세요.
 
 # --hints--
 
-Your`div` element should have the class `silver-background`.
+`div` 요소에는 `silver-background` 클래스가 있어야 합니다.
 
 ```js
 assert($('div').hasClass('silver-background'));
 ```
 
-Your `div` element should have a silver background.
+`div` 요소는 silver 배경색을 갖고 있어야 합니다.
 
 ```js
 assert($('div').css('background-color') === 'rgb(192, 192, 192)');
 ```
 
-A class named `silver-background` should be defined within the `style` element and the value of `silver` should be assigned to the `background-color` property.
+`silver-background` 클래스는 `style` 요소 내에서 정의되어야 하며, `background-color` 속성에는 `silver`의 값이 할당되어야 합니다.
 
 ```js
 assert(code.match(/\.silver-background\s*{\s*background-color\s*:\s*silver\s*;?\s*}/));

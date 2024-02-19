@@ -10,21 +10,21 @@ dashedName: factors-of-a-mersenne-number
 
 A Mersenne number is a number in the form of <code>2<sup>P</sup>-1</code>.
 
-`P` が素数の場合、メルセンヌ数はメルセンヌの素数である場合があります。 ( `P` が素数でない場合、メルセンヌ数も素数ではありません。)
+`P` が素数の場合、メルセンヌ数はメルセンヌの素数である場合があります。 (`P` が素数でない場合、メルセンヌ数も素数ではありません。)
 
-メルセンヌ素数を求めるには、長い時間を要する可能性がある <a href="https://rosettacode.org/wiki/Lucas-Lehmer test" target="_blank" rel="noopener noreferrer nofollow">Lucas-Lehmer test</a> を開始する前に、小さな因数を見つけることによって指数を除去することをお勧めします。
+メルセンヌ素数を求めるには、長い時間を要する可能性がある <a href="https://rosettacode.org/wiki/Lucas-Lehmer test" target="_blank" rel="noopener noreferrer nofollow">リュカ–レーマー・テスト</a> を開始する前に、小さな因数を見つけることによって指数を除去することをお勧めします。
 
 数字が <code>2<sup>P</sup>-1</code> を割るかどうか (すなわち、<code>2<sup>P</sup> mod (the number) = 1</code> となるかどうか) を判定するのに適した非常に効率的なアルゴリズムがあります。
 
 指数と剰余演算 (modPow などと呼ばれる) の組み込み実装が既にある言語もあります。
 
-以下は、このmodPowを自分で実装する方法です。
+以下は、この modPow を自分で実装する方法です。
 
-例えば、 <code>2<sup>23</sup> mod 47</code> を計算してみましょう。
+例えば、<code>2<sup>23</sup> mod 47</code> を計算してみましょう。
 
-指数23を2進数に変換すると、10111が得られます。 <code><tt>square</tt> = 1</code> から始めて、繰り返し2乗にしていきます。
+指数 23 を 2 進数に変換すると、10111 が得られます。 <code><tt>square</tt> = 1</code> から始めて、繰り返し 2 乗にしていきます。
 
-指数の上位ビットを削除し、1である場合、`square` に冪乗の底 (2) を掛けて、<code><tt>square</tt> modulo 47</code>を計算します。
+指数の上位ビットを削除し、1 である場合、`square` に冪乗の底 (2) を掛けて、<code><tt>square</tt> modulo 47</code> を計算します。
 
 最後のステップのモジュロの結果を、次のステップの `square` の初期値として使用します。
 
@@ -38,19 +38,19 @@ square        top bit  multiply by 2  mod 47
 27*27 = 729   1        729*2 = 1458      1
 </pre>
 
-<code>2<sup>23</sup> mod 47 = 1</code>であるため、 47 は <code>2<sup>P</sup>-1</code> の因数です。
+<code>2<sup>23</sup> mod 47 = 1</code>であるため、47 は <code>2<sup>P</sup>-1</code> の因数です。
 
-(これを理解するには、両辺から1を引きます: <code>2<sup>23</sup>-1 = 0 mod 47</code>。)
+(これを理解するには、両辺から 1 を引きます: <code>2<sup>23</sup>-1 = 0 mod 47</code>。)
 
 47 が因数であるとしているので、<code>2<sup>23</sup>-1</code> は素数ではありません。
 
 メルセンヌ数には他にも特有の性質があるため、メルセンヌ数を使用するとプロセスをもっと改善できます。
 
-<code>2<sup>P</sup>-1</code> の因数 `q` は `2kP+1`の形を取り、`k` は正の整数またはゼロです。 さらに、`q` は `1` または `7 mod 8` です。
+<code>2<sup>P</sup>-1</code> の因数 `q` は `2kP+1` の形を取り、`k` は正の整数またはゼロです。 さらに、`q` は `1` または `7 mod 8` です。
 
 最後に、潜在的因数 `q` は<a href="https://rosettacode.org/wiki/Primality_by_trial_division" target="_blank" rel="noopener noreferrer nofollow">素数</a>でなければなりません。
 
-他の試行徐算アルゴリズムと同様に、アルゴリズムは `2kP+1 > sqrt(N)`となった場合に停止します。これらのテストは、`P` が素数である場合に、メルセンヌ数に対してのみ働きます。 例えば、<code>M<sub>4</sub>=15</code> はこれらの手法で因数を生成しません。3と5を考えると、いずれも`2kP+1`に適合しません。
+他の試行徐算アルゴリズムと同様に、アルゴリズムは `2kP+1 > sqrt(N)`となった場合に停止します。これらのテストは、`P` が素数である場合に、メルセンヌ数に対してのみ働きます。 例えば、<code>M<sub>4</sub>=15</code> はこれらの手法で因数を生成しません。3 と 5 を考えると、いずれも `2kP+1` に適合しません。
 
 # --instructions--
 

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aecf08801
-title: Introduction to HTML5 Elements
+title: HTML5 요소 소개
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cBkZGpt7'
 forumTopicId: 301097
@@ -9,11 +9,11 @@ dashedName: introduction-to-html5-elements
 
 # --description--
 
-HTML5 introduces more descriptive HTML tags. These include `main`, `header`, `footer`, `nav`, `video`, `article`, `section` and others.
+HTML5는 더 세분된 HTML 태그를 도입합니다. 여기에는 `main`, `header`, `footer`, `nav`, `video`, `article`, `section` 이 포함됩니다.
 
-These tags give a descriptive structure to your HTML, make your HTML easier to read, and help with Search Engine Optimization (SEO) and accessibility. The `main` HTML5 tag helps search engines and other developers find the main content of your page.
+이러한 태그는 자세한 HTML 구조를 제공하고, HTML을 읽기 쉽게 만들고, 검색 엔진 최적화 (Search Engine Optimization, SEO) 및 접근성을 지원합니다. `main` HTML5 태그는 검색 엔진과 다른 개발자가 페이지의 주요 콘텐츠를 찾는 데 도움이 됩니다.
 
-Example usage, a `main` element with two child elements nested inside it:
+내부에 두 개의 하위 요소가 중첩된 `main` 요소 예시:
 
 ```html
 <main> 
@@ -22,23 +22,23 @@ Example usage, a `main` element with two child elements nested inside it:
 </main>
 ```
 
-**Note:** Many of the new HTML5 tags and their benefits are covered in the Applied Accessibility section.
+**노트:** 많은 새 HTML5 태그와 그 이점은 접근성 섹션에서 다룹니다.
 
 # --instructions--
 
-Create a second `p` element with the following kitty ipsum text: `Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
+다음 kitty ipsum 텍스트를 사용하여 두 번째 `p` 요소를 만드세요. `Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
 
-Then, create a `main` element and nest only the two `p` elements inside the `main` element.
+그 다음, `main` 요소를 만들고 `main` 요소 안에 두 개의 `p` 요소를 중첩하세요.
 
 # --hints--
 
-You should have 2 `p` elements with Kitty Ipsum text.
+Kitty Ipsum 텍스트가 있는 2개의 `p` 요소가 있어야 합니다.
 
 ```js
 assert($('p').length > 1);
 ```
 
-Each of your `p` elements should have a closing tag.
+모든 `p` 요소에는 닫는 태그가 있어야 합니다.
 
 ```js
 assert(
@@ -47,31 +47,31 @@ assert(
 );
 ```
 
-Your `p` element should contain the first few words of the provided additional `kitty ipsum` text.
+`p` 요소는 제공된 `kitty ipsum` 텍스트의 처음 몇 단어를 포함해야 합니다.
 
 ```js
 assert.isTrue(/Purr\s+jump\s+eat/gi.test($('p').text()));
 ```
 
-Your code should have one `main` element.
+코드에는 `main` 요소가 있어야 합니다.
 
 ```js
 assert($('main').length === 1);
 ```
 
-The `main` element should have two paragraph elements as children.
+`main` 요소에는 두 개의 문단 요소가 중첩돼 있어야 합니다.
 
 ```js
 assert($('main').children('p').length === 2);
 ```
 
-The opening `main` tag should come before the first paragraph tag.
+`main`의 여는 태그는 첫 번째 문단 태그 앞에 와야 합니다.
 
 ```js
 assert(code.match(/<main>\s*?<p>/g));
 ```
 
-The closing `main` tag should come after the second closing paragraph tag.
+`main`의 닫는 태그는 두 번째 문단의 닫는 태그 뒤에 와야 합니다.
 
 ```js
 assert(code.match(/<\/p>\s*?<\/main>/g));

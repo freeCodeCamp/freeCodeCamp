@@ -40,7 +40,7 @@ Your app should serve asset files from the `/public` directory to the `/public` 
   );
 ```
 
-Your app should not serve files from any other folders except from `/public` directory 
+Your app should not serve files from any other folders except from `/public` directory
 
 ```js
 (getUserInput) =>

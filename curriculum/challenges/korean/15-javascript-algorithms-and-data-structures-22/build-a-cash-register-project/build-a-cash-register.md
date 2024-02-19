@@ -24,14 +24,14 @@ Your application should show different messages depending on the price of the it
 
 |    Currency Unit    |       Amount       |
 |:-------------------:|:------------------:|
-|        Penny        |    $0.01 (PENNY)   |
-|        Nickle       |   $0.05 (NICKEL)   |
-|         Dime        |     $0.1 (DIME)    |
-|       Quarter       |   $0.25 (QUARTER)  |
-|        Dollar       |      $1 (ONE)      |
-|     Five Dollars    |      $5 (FIVE)     |
-|     Ten Dollars     |      $10 (TEN)     |
-|    Twenty Dollars   |    $20 (TWENTY)    |
+|        Penny        |   $0.01 (PENNY)    |
+|       Nickle        |   $0.05 (NICKEL)   |
+|        Dime         |    $0.1 (DIME)     |
+|       Quarter       |  $0.25 (QUARTER)   |
+|       Dollar        |      $1 (ONE)      |
+|    Five Dollars     |     $5 (FIVE)      |
+|     Ten Dollars     |     $10 (TEN)      |
+|   Twenty Dollars    |    $20 (TWENTY)    |
 | One Hundred Dollars | $100 (ONE HUNDRED) |
 
 **Objective:** Build an app that is functionally similar to <a href="https://cash-register.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://cash-register.freecodecamp.rocks</a>

@@ -1,6 +1,6 @@
 ---
 id: 587d7791367417b2b2512ab3
-title: Create Visual Balance Using the text-align Property
+title: 문단 정렬 속성을 사용해 시각적 균형 이루기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3b4EAp'
 forumTopicId: 301053
@@ -9,31 +9,31 @@ dashedName: create-visual-balance-using-the-text-align-property
 
 # --description--
 
-This section of the curriculum focuses on Applied Visual Design. The first group of challenges build on the given card layout to show a number of core principles.
+이번 단원에서는 응용 시각 디자인에 중점을 둡니다. 첫 번째 과제는 주어진 카드 레이아웃을 기반으로 여러 핵심 원칙을 보여줍니다.
 
-Text is often a large part of web content. CSS has several options for how to align it with the `text-align` property.
+글자는 웹 컨텐츠에서 큰 부분을 차지합니다. CSS에는 `text-align` 속성을 사용하여 텍스트를 정렬하는 여러 옵션이 있습니다.
 
-`text-align: justify;` spaces the text so that each line has equal width.
+`text-align: justify;`는 각 행이 동일한 너비를 가지도록 텍스트 사이를 공백으로 채웁니다.
 
-`text-align: center;` centers the text
+`text-align: center;`는 텍스트를 가운데 정렬로 만듭니다.
 
-`text-align: right;` right-aligns the text
+`text-align: right;`는 텍스트는 오른쪽 정렬합니다.
 
-And `text-align: left;` (the default) left-aligns the text.
+그리고 `text-align: left;`는 (기본값과 마찬가지로) 텍스트를 왼쪽 정렬합니다.
 
 # --instructions--
 
-Align the `h4` tag's text, which says "Google", to the center. Then justify the paragraph tag which contains information about how Google was founded.
+`h4` 태그의 텍스트인 "Google"을 가운데 정렬하십시오. 그런 다음 Google이 어떻게 설립되었는지에 대한 정보가 포함된 단락 태그를 맞춰 정렬하십시오.
 
 # --hints--
 
-Your code should use the text-align property on the `h4` tag to set it to `center`.
+코드에서 text-align 속성을 사용하여 `h4` 태그의 텍스트를 `center`에 맞추도록 설정해야 합니다.
 
 ```js
 assert($('h4').css('text-align') == 'center');
 ```
 
-Your code should use the text-align property on the `p` tag to set it to `justify`.
+코드에서 text-align 속성을 사용하여 `p` 태그의 텍스트를 `justify`로 설정해야 합니다.
 
 ```js
 assert($('p').css('text-align') == 'justify');

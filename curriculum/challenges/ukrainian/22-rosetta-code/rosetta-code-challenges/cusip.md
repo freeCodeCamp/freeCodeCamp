@@ -8,11 +8,11 @@ dashedName: cusip
 
 # --description--
 
-A **CUSIP** is a nine-character alphanumeric code that identifies a North American financial security for the purposes of facilitating clearing and settlement of trades. The CUSIP was adopted as an American National Standard under Accredited Standards X9.6.
+**CUSIP** — це дев’ятизначний буквено-цифровий код, який ідентифікує північноамериканську фінансову безпеку з метою сприяння клірингу і врегулювання фінансових угод. CUSIP був прийнятий як американський національний стандарт відповідно до акредитованих стандартів X9.6.
 
 # --instructions--
 
-Запишіть функцію, яка приймає рядок в якості параметра і перевіряє, чи дійсний рядок CUSIP.
+Напишіть функцію, яка приймає рядок як параметр та перевіряє, чи цей рядок є дійсним CUSIP.
 
 # --hints--
 
@@ -22,55 +22,55 @@ A **CUSIP** is a nine-character alphanumeric code that identifies a North Americ
 assert(typeof isCusip == 'function');
 ```
 
-`isCusip("037833100")` має повертати логічний тип даних.
+`isCusip("037833100")` має повернути булеве значення.
 
 ```js
 assert(typeof isCusip('037833100') == 'boolean');
 ```
 
-`isCusip("037833100")` має повертати `true`.
+`isCusip("037833100")` має повернути `true`.
 
 ```js
 assert.equal(isCusip('037833100'), true);
 ```
 
-`isCusip("17275R102")` має повертати `true`.
+`isCusip("17275R102")` має повернути `true`.
 
 ```js
 assert.equal(isCusip('17275R102'), true);
 ```
 
-`isCusip("38259P50a")` має повертати `false`.
+`isCusip("38259P50a")` має повернути `false`.
 
 ```js
 assert.equal(isCusip('38259P50a'), false);
 ```
 
-`isCusip("38259P508")` має повертати `true`.
+`isCusip("38259P508")` має повернути `true`.
 
 ```js
 assert.equal(isCusip('38259P508'), true);
 ```
 
-`isCusip("38259P50#")` має повертати `false`.
+`isCusip("38259P50#")` має повернути `false`.
 
 ```js
 assert.equal(isCusip('38259P50#'), false);
 ```
 
-`isCusip("68389X105")` має повертати `true`.
+`isCusip("68389X105")` має повернути `true`.
 
 ```js
 assert.equal(isCusip('68389X105'), true);
 ```
 
-`isCusip("68389X106")` має повертати `false`.
+`isCusip("68389X106")` має повернути `false`.
 
 ```js
 assert.equal(isCusip('68389X106'), false);
 ```
 
-`isCusip("5949181")` має повертати `false`.
+`isCusip("5949181")` має повернути `false`.
 
 ```js
 assert.equal(isCusip('5949181'), false);

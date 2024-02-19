@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9afdf08726
-title: Use Clockwise Notation to Specify the Margin of an Element
+title: 시계 방향 표기법(clockwise notation)을 사용하여 요소의 마진을 지정하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpybAd'
 forumTopicId: 18345
@@ -9,47 +9,47 @@ dashedName: use-clockwise-notation-to-specify-the-margin-of-an-element
 
 # --description--
 
-Let's try this again, but with `margin` this time.
+이번에는 `margin`을 사용해 봅시다.
 
-Instead of specifying an element's `margin-top`, `margin-right`, `margin-bottom`, and `margin-left` properties individually, you can specify them all in one line, like this:
+요소의 `margin-top`, `margin-right`, `margin-bottom`, `margin-left` 속성을 개별적으로 지정하는 대신 다음과 같이 한 줄에 모두 지정할 수 있습니다.
 
 ```css
 margin: 10px 20px 10px 20px;
 ```
 
-These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific margin instructions.
+이 네 가지 값은 시계처럼 작동하여 위, 오른쪽, 아래, 왼쪽 순서로 동작하며, 각 면에 마진 지시 사항을 사용하는 것과 정확히 같은 결과를 만듭니다.
 
 # --instructions--
 
-Use Clockwise Notation to give the element with the `blue-box` class a margin of `40px` on its top and left side, but only `20px` on its bottom and right side.
+시계 방향 표기법을 사용하여 `blue-box` 클래스가 있는 요소에 상단과 왼쪽에는 `40px`, 하단과 오른쪽에는 `20px`의 여백을 지정해보세요.
 
 # --hints--
 
-Your `blue-box` class should give the top of elements `40px` of `margin`.
+`blue-box` 클래스는 요소의 상단에 `40px`의 `margin`을 주어야 합니다.
 
 ```js
 assert($('.blue-box').css('margin-top') === '40px');
 ```
 
-Your `blue-box` class should give the right of elements `20px` of `margin`.
+`blue-box` 클래스는 요소의 오른쪽에 `20px`의 `margin`을 주어야 합니다.
 
 ```js
 assert($('.blue-box').css('margin-right') === '20px');
 ```
 
-Your `blue-box` class should give the bottom of elements `20px` of `margin`.
+`blue-box` 클래스는 요소의 하단에 `20px`의 `margin`을 주어야 합니다.
 
 ```js
 assert($('.blue-box').css('margin-bottom') === '20px');
 ```
 
-Your `blue-box` class should give the left of elements `40px` of `margin`.
+`blue-box` 클래스는 요소의 왼쪽에 `40px`의 `margin`을 주어야 합니다.
 
 ```js
 assert($('.blue-box').css('margin-left') === '40px');
 ```
 
-You should use the clockwise notation to set the margin of `blue-box` class.
+시계 방향 표기법을 사용하여 `blue-box` 클래스의 마진을 설정해야 합니다.
 
 ```js
 assert(

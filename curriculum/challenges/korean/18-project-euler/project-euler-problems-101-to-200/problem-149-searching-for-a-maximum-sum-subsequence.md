@@ -10,13 +10,7 @@ dashedName: problem-149-searching-for-a-maximum-sum-subsequence
 
 Looking at the table below, it is easy to verify that the maximum possible sum of adjacent numbers in any direction (horizontal, vertical, diagonal or anti-diagonal) is $16 (= 8 + 7 + 1)$.
 
-$$\begin{array}{|r|r|r|r|}
-  \hline
-  −2 &  5 &  3 & 2 \\\\ \hline
-   9 & −6 &  5 & 1 \\\\ \hline
-   3 &  2 &  7 & 3 \\\\ \hline
-  −1 &  8 & −4 & 8 \\\\ \hline
-\end{array}$$
+$$\begin{array}{|r|r|r|r|} \hline −2 &  5 &  3 & 2 \\\\ \hline 9 & −6 &  5 & 1 \\\\ \hline 3 &  2 &  7 & 3 \\\\ \hline −1 &  8 & −4 & 8 \\\\ \hline \end{array}$$
 
 Now, let us repeat the search, but on a much larger scale:
 

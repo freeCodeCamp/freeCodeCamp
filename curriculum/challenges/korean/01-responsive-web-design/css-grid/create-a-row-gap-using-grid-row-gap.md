@@ -1,6 +1,6 @@
 ---
 id: 5a9036ee38fddaf9a66b5d36
-title: Create a Row Gap using grid-row-gap
+title: grid-row-gap으로 행 간격 생성하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cPbJ2Cv'
 forumTopicId: 301125
@@ -9,15 +9,15 @@ dashedName: create-a-row-gap-using-grid-row-gap
 
 # --description--
 
-You can add a gap in between the rows of a grid using `grid-row-gap` in the same way that you added a gap in between columns in the previous challenge.
+이전 과제에서 열 사이에 간격을 주었던 것처럼 `grid-row-gap`를 사용하여 그리드의 행 사이에 간격을 줄 수 있습니다.
 
 # --instructions--
 
-Create a gap for the rows that is `5px` tall.
+행 사이에 `5px` 높이의 간격을 생성하세요.
 
 # --hints--
 
-`container` class should have a `grid-row-gap` property that has the value of `5px`.
+`container` 클래스는 `5px`의 값을 가진 `grid-row-gap` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
     grid-template-rows: 1fr 1fr 1fr;
     /* Only change code below this line */
 
-    
+
     /* Only change code above this line */
   }
 </style>

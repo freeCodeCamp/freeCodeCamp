@@ -1,6 +1,6 @@
 ---
 id: 647f882207d29547b3bee1c0
-title: Trophy - Add Logic to C# Console Applications
+title: 'Trophy - Add Logic to C# Console Applications'
 challengeType: 18
 dashedName: trophy-add-logic-to-c-sharp-console-applications
 msTrophyId: learn.wwl.get-started-c-sharp-part-3.trophy

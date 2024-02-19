@@ -1,6 +1,6 @@
 ---
 id: 5a9d72a1424fe3d0e10cad15
-title: Change a variable for a specific area
+title: 특정 영역에 대한 변수 변경하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cdRwbuW'
 forumTopicId: 301085
@@ -9,17 +9,17 @@ dashedName: change-a-variable-for-a-specific-area
 
 # --description--
 
-When you create your variables in `:root` they will set the value of that variable for the whole page.
+`:root`에 변수를 생성하면 전체 페이지에 해당 변수의 값이 설정됩니다.
 
-You can then overwrite these variables by setting them again within a specific selector.
+그런 다음 특정 선택자(selector)에서 변수를 다시 설정하여 이러한 변수를 덮어쓸 수 있습니다.
 
 # --instructions--
 
-Change the value of `--penguin-belly` to `white` in the `penguin` class.
+`penguin` 클래스에서 `--penguin-belly` 값을 `white`로 변경하십시오.
 
 # --hints--
 
-The `penguin` class should reassign the `--penguin-belly` variable to `white`.
+`penguin` 클래스는 `--penguin-belly` 값을 `white`로 다시 할당해야 합니다.
 
 ```js
 assert(
@@ -27,13 +27,13 @@ assert(
 );
 ```
 
-The `penguin` class should not contain the `background-color` property.
+`penguin` 클래스에 `background-color` 속성이 포함되면 안 됩니다.
 
 ```js
 assert(
   code.match(/^((?!background-color\s*?:\s*?)[\s\S])*$/g)
 );
-``` 
+```
 
 
 # --seed--

@@ -10,12 +10,12 @@ dashedName: problem-236-luxury-hampers
 
 Suppliers 'A' and 'B' provided the following numbers of products for the luxury hamper market:
 
-|       Product      | 'A'  | 'B'  |
-|--------------------|------|------|
-|    Beluga Caviar   | 5248 | 640  |
-|    Christmas Cake  | 1312 | 1888 |
-|    Gammon Joint    | 2624 | 3776 |
-|    Vintage Port    | 5760 | 3776 |
+| Product            | 'A'  | 'B'  |
+| ------------------ | ---- | ---- |
+| Beluga Caviar      | 5248 | 640  |
+| Christmas Cake     | 1312 | 1888 |
+| Gammon Joint       | 2624 | 3776 |
+| Vintage Port       | 5760 | 3776 |
 | Champagne Truffles | 3936 | 5664 |
 
 Although the suppliers try very hard to ship their goods in perfect condition, there is inevitably some spoilage - i.e. products gone bad.

@@ -1,6 +1,6 @@
 ---
 id: 587d78b1367417b2b2512b0c
-title: Make Typography Responsive
+title: 텍스트를 반응형으로 만들기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pzrPu4/crzN7T8'
 forumTopicId: 301141
@@ -9,13 +9,13 @@ dashedName: make-typography-responsive
 
 # --description--
 
-Instead of using `em` or `px` to size text, you can use viewport units for responsive typography. Viewport units, like percentages, are relative units, but they are based off different items. Viewport units are relative to the viewport dimensions (width or height) of a device, and percentages are relative to the size of the parent container element.
+글자 크기 조정을 위해 `em`혹은 `px` 사용하는 대신에 반응형 텍스트를 위한 뷰포트 단위를 사용할 수 있습니다. 백분율같은 뷰포트 단위는 상대적 단위지만 다른 아이템들에 기준을 둡니다. 뷰포트 단위는 기기의 뷰포트 차원(너비, 높이)에 상대적이고 백분율은 부모 컨테이너의 크기에 상대적입니다.
 
-The four different viewport units are:
+네 개의 뷰포트 유닛이 있습니다.
 
-<ul><li><code>vw</code> (viewport width): <code>10vw</code> would be 10% of the viewport's width.</li><li><code>vh</code> (viewport height): <code>3vh</code> would be 3% of the viewport's height.</li><li><code>vmin</code> (viewport minimum): <code>70vmin</code> would be 70% of the viewport's smaller dimension (height or width).</li><li><code>vmax</code> (viewport maximum): <code>100vmax</code> would be 100% of the viewport's bigger dimension (height or width).</li></ul>
+<ul><li><code>vw</code> (뷰포트 너비): <code>10vw</code>는 뷰포트 너비의 10%입니다.</li><li><code>vh</code> (뷰포트 높이): <code>3vh</code>는 뷰포트 높이의 3%입니다.</li><li><code>vmin</code> (뷰포트 최소값): <code>70vmin</code>는 뷰포트의 더 작은 차원(높이 혹은 너비)의 70%입니다.</li><li><code>vmax</code> (뷰포트 최대값): <code>100vmax</code>는 뷰포트의 더 큰 차원(높이 혹은 너비)의 100%입니다.</li></ul>
 
-Here is an example that sets a `body` tag to 30% of the viewport's width.
+역 `body` 태그를 뷰포트 너비의 30%로 설정하는 예시입니다.
 
 ```css
 body { width: 30vw; }
@@ -23,11 +23,11 @@ body { width: 30vw; }
 
 # --instructions--
 
-Set the `width` of the `h2` tag to 80% of the viewport's width and the `width` of the paragraph as 75% of the viewport's smaller dimension.
+`h2` 태그의 `width`를 뷰포트의 너비의 80% 그리고 그 문단의 `width`를 뷰포트의 더 작은 차원의 75%로 설정하세요.
 
 # --hints--
 
-Your `h2` tag should have a `width` of 80vw.
+`h2` 태그는 80vw `width`를 가져야 합니다.
 
 ```js
 assert(
@@ -37,7 +37,7 @@ assert(
 );
 ```
 
-Your `p` tag should have a `width` of 75vmin.
+`p` 태그는 75vmin `width`를 가져야 합니다.
 
 ```js
 assert(
