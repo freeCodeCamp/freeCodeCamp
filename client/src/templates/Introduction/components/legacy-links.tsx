@@ -46,15 +46,11 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
         )}
       </>
     );
-  } else if (isExamCert(superBlock)) {
+  } else if (isExamCert(superBlock) && clientLocale != 'english') {
     return (
-      <>
-        {clientLocale != 'english' && (
-          <Alert variant='info'>
-            <p>{t('intro:misc-text.exam-english-only')}</p>
-          </Alert>
-        )}
-      </>
+      <Alert variant='info'>
+        <p>{t('intro:misc-text.exam-english-only')}</p>
+      </Alert>
     );
   } else {
     return (
