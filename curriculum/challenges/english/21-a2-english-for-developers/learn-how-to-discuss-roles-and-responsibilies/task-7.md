@@ -13,7 +13,7 @@ Bob: She's now in charge of the HR department.
 
 # --description--
 
-Listen to the audio and choose the right answer.
+Listen to the audio and answer the question.
 
 # --question--
 

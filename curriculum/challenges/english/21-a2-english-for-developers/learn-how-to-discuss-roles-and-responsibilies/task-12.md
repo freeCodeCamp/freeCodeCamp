@@ -7,48 +7,56 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
-AUDIO REFERENCE:
-Sophie: She's been working with tech companies for about ten years.
+AUDIO REFERENCE: 
+Bob: She is a tall woman in her early 40s, with long blond hair and glasses.
 -->
 
 # --description--
 
-The word `for` is used to indicate the duration of time an action has been taking place. In tenses like present perfect or present perfect continuous, `for` introduces how long the action has been happening.
+When describing someone's appearance, you often use `with` followed by a feature.
+
+Examples:
+
+`with glasses` for someone who wears glasses
+
+`with curly hair` for someone who has curly hair, or
+
+`with a blue jacket` for someone wearing a blue jacket
 
 # --question--
 
 ## --text--
 
-What does `for` indicate in the sentence?
+How does Bob use `with` to describe the woman's appearance?
 
 ## --answers--
 
-The reason she works with tech companies
-
-### --feedback--
-
-`For` in this context is about the length of time, not the reason behind the action.
+`To mention her long blond hair and glasses`
 
 ---
 
-The specific tasks she does at tech companies
+`To talk about her height`
 
 ### --feedback--
 
-`For` indicates duration, not the details of the work done.
+Height is described without using `with`.
 
 ---
 
-The location where she works
+`To say how old she is`
 
 ### --feedback--
 
-The usage of `for` here refers to time, not a place.
+Age is mentioned not using `with`.
 
 ---
 
-The length of time she has been working with tech companies
+`To describe her clothes`
+
+### --feedback--
+
+Clothes are not mentioned in Bob's description.
 
 ## --video-solution--
 
-4
+1

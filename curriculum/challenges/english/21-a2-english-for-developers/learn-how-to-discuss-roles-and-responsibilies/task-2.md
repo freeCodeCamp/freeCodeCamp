@@ -13,7 +13,7 @@ Bob: Hey, have you met Anna yet?
 
 # --description--
 
-Listening and select the right answer.
+Listen to the audio and answer the question.
 
 # --question--
 

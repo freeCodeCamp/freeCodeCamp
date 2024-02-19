@@ -7,48 +7,48 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
-AUDIO REFERENCE:
-Bob: Word is that she’s strict but fair.
+AUDIO REFERENCE: 
+Bob: She's quite serious and organized, which makes her excellent at her job.
 -->
 
 # --description--
 
-The phrase `word is` is an informal way of saying that there is a rumor or general belief about something. It's used to introduce information that is commonly known or believed by people, but not officially confirmed. For example, saying `Word is that the new movie is amazing` means many people believe the new movie is great.
+Listen to the audio and answer the question.
 
 # --question--
 
 ## --text--
 
-What does `word is` in Bob's statement suggest?
+Why is she excellent at her job according to Bob?
 
 ## --answers--
 
-He's reading a written statement about her.
-
-### --feedback--
-
-`Word is` refers to rumors or general belief, not to reading something written.
+Because she focuses deeply on her work and keeps things in order
 
 ---
 
-It's a common belief or rumor that she’s strict but fair.
-
----
-
-He has no information about her.
+Because she is very funny and relaxed
 
 ### --feedback--
 
-`Word is` indicates there is some information or belief, not a lack of information.
+Bob's description suggests she is focused and well-planned, not funny and relaxed.
 
 ---
 
-He is making an official announcement.
+Because she arrives late
 
 ### --feedback--
 
-`Word is` is used for informal rumors or beliefs, not for official announcements.
+Being `organized and serious` about work usually means being punctual, not late.
+
+---
+
+Because she doesn't like her job
+
+### --feedback--
+
+Bob implies that her attitude and method make her good at her job, not disliking it.
 
 ## --video-solution--
 
-2
+1

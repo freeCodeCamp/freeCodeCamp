@@ -1,54 +1,50 @@
 ---
 id: 65b25c9be41791441e86e045
 title: Task 15
-challengeType: 19
+challengeType: 22
 dashedName: task-15
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
 AUDIO REFERENCE:
-Bob: She makes sure we follow the rules and that everyone is happy.
+Bob: She's quite serious and organized, which makes her excellent at her job.
 -->
 
 # --description--
 
-The word `everyone` is used to refer to all people in a group. It's important to note that even though `everyone` sounds like it's talking about many people, you use it with a singular verb, as if it's just one person. This is similar to other words starting with `every` like `everything` and `everybody`. For example, you say `Everyone is happy` or `Everybody goes to the party`.
+The word `quite` is used to describe adjectives or adverbs to a certain degree, often meaning "very" or to a significant extent but not completely. For example, `The test was quite difficult.` This means the test was very difficult, but not to the extreme.
 
-# --question--
+`Serious` means showing deep thought, not joking, or focusing intensely on something important. For example, `He is serious about learning English.` This shows he is very focused and committed to learning English, not doing it just for fun.
 
-## --text--
+`Organized` means arranged or planned well, making sure everything is where it should be or done at the right time. For instance, `She keeps the Trello board very organized.` It means she arranges and manages the Trello board (a tool for organizing tasks and projects) in a neat and orderly way, making sure everything is well-planned and easy to find.
 
-What does `everyone` in Bob's statement refer to, and how is it used in a sentence?
+# --fillInTheBlank--
 
-## --answers--
+## --sentence--
 
-It refers to each person individually and is used with plural verbs.
+`She's _ _ and _, which makes her excellent at her job.`
 
-### --feedback--
+## --blanks--
 
-Even though `everyone` seems like it's about many people, it's actually used with singular verbs.
-
----
-
-It refers to only a few people in the group, used with singular verbs.
+`quite`
 
 ### --feedback--
 
-`Everyone` refers to all people in a group, not just a few.
+It's used here to emphasize the extent.
 
 ---
 
-It refers to people outside the group, used with plural verbs.
+`serious`
 
 ### --feedback--
 
-`Everyone` refers to all people in the specified group, and it's used with singular verbs.
+It describes her attitude of being focused and not taking things lightly.
 
 ---
 
-`All people in the group, used with singular verbs`
+`organized`
 
-## --video-solution--
+### --feedback--
 
-4
+It shows she plans well and keeps things in order.

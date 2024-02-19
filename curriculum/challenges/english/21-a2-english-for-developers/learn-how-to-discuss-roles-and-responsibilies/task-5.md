@@ -12,7 +12,7 @@ Sophie: No, I haven’t seen her yet.
 
 # --description--
 
-Listening and choose the right answer.
+Listen to the audio and answer the question.
 
 # --question--
 

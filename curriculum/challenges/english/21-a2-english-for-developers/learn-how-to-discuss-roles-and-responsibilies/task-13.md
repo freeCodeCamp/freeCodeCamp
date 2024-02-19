@@ -1,54 +1,48 @@
 ---
 id: 65b25b541262654062a21e74
 title: Task 13
-challengeType: 19
+challengeType: 22
 dashedName: task-13
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
-AUDIO REFERENCE:
-Sophie: Ten years? That's impressive! What does she do exactly?
+AUDIO REFERENCE: 
+Bob: You’ll recognize her right away.
 -->
 
 # --description--
 
-The word `impressive` is an adjective used to describe something that is really good or makes you feel admiration. It's like saying "Wow!" to something that is very well done or is a big achievement.
+The verb `recognize` means to know someone or something because you have seen, heard, met, or experienced them before. For example, when you see a friend at a party, you `recognize` him because you know what he looks like.
 
-# --question--
+The phrase `right away` means quickly or very soon. For instance, `If you find a bug in the code, tell me and I'll fix it right away.` This means if you discover a problem in the computer program, let me know and I will correct it immediately.
 
-## --text--
+# --fillInTheBlank--
 
-What does Sophie mean by saying `That's impressive` about the ten years of work?
+## --sentence--
 
-## --answers--
+`You’ll _ her _ _.`
 
-She thinks ten years is too much time to work.
+## --blanks--
 
-### --feedback--
-
-`Impressive` means she thinks it's really good, not too much.
-
----
-
-She thinks working for ten years is really good and admires it.
-
----
-
-She is not sure if working for ten years is good.
+`recognize`
 
 ### --feedback--
 
-`Impressive` shows she thinks it's good, not that she is unsure.
+This word means to identify someone or something you know from before.
 
 ---
 
-She does not think working for ten years is special.
+`right`
 
 ### --feedback--
 
-`Impressive` means she thinks it's special.
+It's part of the phrase that means "very soon".
 
-## --video-solution--
+---
 
-2
+`away`
+
+### --feedback--
+
+It completes the phrase, emphasizing that the action will happen without delay.

@@ -7,47 +7,47 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
-AUDIO REFERENCE:
-Bob: Well, she's responsible for hiring people and taking care of workers.
+AUDIO REFERENCE: 
+Bob: You’ll recognize her right away.
 -->
 
 # --description--
 
-The phrase `responsible for doing something` means having the duty or obligation to do that thing. It's used to describe a person's role or tasks in a job or situation. For example, if someone says, `I am responsible for organizing the event`, it means it's their job to plan and manage the event.
+Listen to the audio and answer the question.
 
 # --question--
 
 ## --text--
 
-What does `responsible for` imply in Bob's statement about her job?
+What does Bob mean?
 
 ## --answers--
 
-She has the duty to hire people and look after the workers.
+You will know who she is as soon as you see her.
 
 ---
 
-She occasionally helps with hiring and caring for workers.
+You will not know who she is.
 
 ### --feedback--
 
-`Responsible for` implies it's her main duty, not just occasional help.
+Bob's statement suggests the opposite, that you will indeed know her when you see her.
 
 ---
 
-She has no role in hiring or caring for workers.
+You will meet her for the first time.
 
 ### --feedback--
 
-`Responsible for` directly states that these are her duties, not that she has no role in them.
+To `recognize` someone means you have seen or known them before, not that it's the first meeting.
 
 ---
 
-She only takes care of hiring, not the workers.
+You will forget who she is.
 
 ### --feedback--
 
-The statement includes both hiring people and taking care of workers as her responsibilities.
+`Recognizing` someone means remembering them, not forgetting.
 
 ## --video-solution--
 
