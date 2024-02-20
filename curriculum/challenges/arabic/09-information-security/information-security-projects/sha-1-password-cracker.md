@@ -9,12 +9,7 @@ dashedName: sha-1-password-cracker
 
 # --description--
 
-You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
-
--   ابدأ باستيراد (import) المشروع على Replit.
--   بعد ذلك، سترى نافذة `.replit`.
--   اختار `Use run command` وانقر على زر `Done`.
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 وما زلنا نطور الجزء التعليمي التفاعلي من منهج Python. الآن، إليك بعض مقاطع الفيديو على قناة اليوتيوب الخاصة بي freeCodeCamp.org التي ستعلمك كلّما تحتاج إليه لإكمال هذا المشروع:
 
@@ -52,11 +47,11 @@ The `hashlib` library has been imported for you. You should consider using it in
 
 ## التطوير
 
-Write your code in `password_cracker.py`. For development, you can use `main.py` to test your code. Click the "run" button and `main.py` will run.
+Write your code in `password_cracker.py`. For development, you can use `main.py` to test your code.
 
 ## الاختبار
 
-The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
+The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience.
 
 ## التقديم
 

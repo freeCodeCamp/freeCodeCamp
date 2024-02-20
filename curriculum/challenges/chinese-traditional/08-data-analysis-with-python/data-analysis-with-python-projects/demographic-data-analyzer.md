@@ -8,12 +8,7 @@ dashedName: demographic-data-analyzer
 
 # --description--
 
-你將使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 的初始化項目</a>來完成這個項目。
-
--   首先在 Replit 中導入項目。
--   接着，你將看到一個 `.replit` 窗口。
--   選擇 `Use run command` 並點擊 `Done` 按鈕。
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-demographic-data-analyzer/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 我們仍在開發 Python 課程的交互式教學部分。 目前，你可以在 YouTube 上通過 freeCodeCamp.org 上傳的一些視頻學習這個項目相關的知識。
 
@@ -47,17 +42,15 @@ dashedName: demographic-data-analyzer
 - 哪個國家/地區的收入 >50K 的人口比例最高，該比例是多少？
 - 找出印度收入 >50K 的人最受歡迎的職業。
 
-使用文件 `demographic_data_analyzer` 中的啓動代碼。 更新代碼，以便將所有設置爲“None”的變量設置爲適當的計算或代碼。 將所有小數四捨五入到最接近的十分之一。
-
-單元測試是在 `test_module.py` 下爲你編寫的。
+Use the starter code in the file `demographic_data_analyzer.py`. Update the code so all variables set to `None` are set to the appropriate calculation or code. 將所有小數四捨五入到最接近的十分之一。
 
 ## 開發
 
-對於開發，你可以使用 `main.py` 來測試你的函數。 單擊“運行”按鈕，`main.py` 將運行。
+Write your code in `demographic_data_analyzer.py`. For development, you can use `main.py` to test your code.
 
 ## 測試
 
-爲了你的方便，我們將測試從 `test_module.py` 導入到 `main.py`。 只要你點擊“運行”按鈕，測試就會自動運行。
+The unit tests for this project are in `test_module.py`. 爲了你的方便，我們將測試從 `test_module.py` 導入到 `main.py`。
 
 ## 提交
 
