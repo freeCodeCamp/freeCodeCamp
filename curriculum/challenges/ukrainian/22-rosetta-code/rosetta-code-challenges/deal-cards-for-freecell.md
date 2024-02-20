@@ -1,6 +1,6 @@
 ---
 id: 59694356a6e7011f7f1c5f4e
-title: Deal cards for FreeCell
+title: Роздача карт для FreeCell
 challengeType: 1
 forumTopicId: 302246
 dashedName: deal-cards-for-freecell
@@ -8,31 +8,31 @@ dashedName: deal-cards-for-freecell
 
 # --description--
 
-*FreeCell* is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for DOS, then Windows. This version introduced 32000 numbered deals.
+*FreeCell* — це пасьянс, представлений Полом Альфілле у системі PLATO в 1978 році. Джим Хорн з Microsoft змінив назву на FreeCell і відновив гру для DOS, а потім для Windows. У цій версії було представлено 32 000 роздач.
 
-Як тільки гра стала популярною, Джим Хорн розкрив її алгоритм, що дало початок реалізації нових версій FreeCell, які відтворювали роздачі Microsoft. Нумерація роздач сягала від 1 до 32000. Нові версії від Microsoft мають близько 1 мільйону роздач, нумерованих від 1 до 1000000; а деякі варіації дозволяють нумерацію і поза межами цього діапазону.
+Як тільки гра стала популярною, Джим Хорн розкрив її алгоритм, що дало початок реалізації нових версій FreeCell, які відтворювали роздачі Microsoft. Ці роздачі пронумеровані від 1 до 32 000. Новіші версії від Microsoft мають близько 1 мільйону роздач, пронумерованих від 1 до 1 000 000, а деякі реалізації дозволяють числа поза межами цього діапазону.
 
-Алгоритм використовує цей лінійний конгруентний метод із Microsoft C:
+Алгоритм використовує цей лінійний конгруентний метод від Microsoft C:
 
 <ul>
   <li>$state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}$</li>
   <li>$rand_n = state_n \div 2^{16}$</li>
-  <li>$rand_n$ знаходиться у діапазоні від 0 до 32767.</li>
+  <li>$rand_n$ знаходиться в діапазоні від 0 до 32 767.</li>
 </ul>
 
-Після алгоритму:
+Алгоритм діє наступним чином:
 
 <ol>
-  <li>Seed the RNG with the number of the deal.
-  </li><li>Створіть масив з 52 карт: туз трефи, туз бубни, туз чирви, туз піки, двійка трефи, двійка бубни і т. д. по усім рангам: Туз, 2, 3, 4, 5, 6, 7, 8, 9, 10, Валет, Дама, Король. Індекси масивів від 0 до 51, з тузом трефи на 0 та королем піки на 51.</li>
-  <li>Поки масив не стане пустим:</li>
+  <li>Надайте генератору випадкових чисел номер роздачі.
+  </li><li>Створіть масив з 52 карт: туз трефи, туз бубни, туз чирви, туз піки, двійка трефи, двійка бубни і так далі (туз, 2, 3, 4, 5, 6, 7, 8, 9, 10, валет, дама, король). Індекси масиву починаються з 0 та закінчуються на 51, де туз трефи має індекс 0, а король піки — 51.</li>
+  <li>Допоки масив не стане порожнім:</li>
     <ul>
-      <li>Choose a random card at <i>index</i> ≡ <i>next random number</i> (mod <i>array length</i>).</li>
-      <li>Swap this random card with the last card of the array.</li>
-      <li>Remove this random card from the array. (Array length goes down by 1.)</li>
-      <li>Deal this random card.</li>
+      <li>Оберіть випадкову карту за <i>індексом</i>, який логічно еквівалентний <i>наступному випадковому числу</i> (mod <i>довжина масиву</i>).</li>
+      <li>Поміняйте цю випадкову карту з останньою картою масиву.</li>
+      <li>Видаліть цю випадкову карту з масиву. (Довжина масиву зменшується на 1.)</li>
+      <li>Роздайте цю випадкову карту.</li>
     </ul>
-  <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
+  <li>Роздайте всі 52 карти, лицем догори, на 8 частин. Перші 8 карт роздайте на 8 частин, наступні 8 карт роздайте поверх перших 8 карт і так далі.</li>
 </ol>
 
 **Наприклад:**
@@ -47,7 +47,7 @@ dashedName: deal-cards-for-freecell
 41 42 43 44 45 46 47 48
 49 50 51 52</pre>
 
-**Game #1**
+**Гра №1**
 
 ```js
 [
@@ -61,7 +61,7 @@ dashedName: deal-cards-for-freecell
 ]
 ```
 
-**Game #617**
+**Гра №617**
 
 ```js
 [
@@ -77,7 +77,7 @@ dashedName: deal-cards-for-freecell
 
 # --instructions--
 
-Напишіть функцію, щоб дізнатись номер роздачі та роздати карти в такому ж порядку, як у алгоритмі. Функція має видати двовимірний масив, що представляє собою дошку FreeCell.
+Напишіть функцію, яка приймає номер роздачі та роздає карти в тому ж порядку, як цей алгоритм. Функція має повернути двовимірний масив, який представляє дошку FreeCell.
 
 # --hints--
 
@@ -93,19 +93,19 @@ assert(typeof dealFreeCell === 'function');
 assert(typeof dealFreeCell(1) === 'object');
 ```
 
-`dealFreeCell(seed)` повинен повертати масив довжиною 7.
+`dealFreeCell(seed)` має повернути масив довжиною 7.
 
 ```js
 assert(dealFreeCell(1).length === 7);
 ```
 
-`dealFreeCell(1)` повинен повертати масив ідентичний до прикладу "Гра #1"
+`dealFreeCell(1)` має повернути масив, ідентичний до прикладу «Гра №1».
 
 ```js
 assert.deepEqual(dealFreeCell(1), game1);
 ```
 
-`dealFreeCell(617)` повинен повертати масив ідентичний до прикладу "Гра #617"
+`dealFreeCell(617)` має повернути масив, ідентичний до прикладу «Гра №617».
 
 ```js
 assert.deepEqual(dealFreeCell(617), game617);
