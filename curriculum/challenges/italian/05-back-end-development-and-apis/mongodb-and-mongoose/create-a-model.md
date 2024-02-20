@@ -12,7 +12,7 @@ dashedName: create-a-model
 
 Innanzitutto abbiamo bisogno di uno Schema. Ogni schema mappa a una collezione MongoDB. Definisce la forma dei documenti all'interno di quella collezione. Gli schemi sono elementi costitutivi dei modelli. Possono essere annidati per creare modelli complessi, ma per ora terremo le cose semplici. Un modello ti permette di creare istanze dei tuoi oggetti, chiamate documenti.
 
-Replit è un vero server, e nei server reali le interazioni con il database avvengono nelle funzioni del gestore. Queste funzioni vengono eseguite quando si verifica qualche evento (ad esempio, qualcuno raggiunge un endpoint sulla tua API). Seguiremo lo stesso approccio in questi esercizi. La funzione `done()` è una callback che ci dice che possiamo procedere dopo aver completato un'operazione asincrona come l'inserimento, la ricerca, l'aggiornamento o la cancellazione. Segue la convenzione Node e dovrebbe essere chiamata come `done(null, data)` in caso di successo, o `done(err)` in caso di errore.
+Gitpod is a real server, and in real servers, the interactions with the database happen in handler functions. Queste funzioni vengono eseguite quando si verifica qualche evento (ad esempio, qualcuno raggiunge un endpoint sulla tua API). Seguiremo lo stesso approccio in questi esercizi. La funzione `done()` è una callback che ci dice che possiamo procedere dopo aver completato un'operazione asincrona come l'inserimento, la ricerca, l'aggiornamento o la cancellazione. Segue la convenzione Node e dovrebbe essere chiamata come `done(null, data)` in caso di successo, o `done(err)` in caso di errore.
 
 Attenzione - Quando interagisci con i servizi remoti, potrebbero verificarsi degli errori!
 

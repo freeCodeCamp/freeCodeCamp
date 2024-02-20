@@ -11,7 +11,7 @@ dashedName: introduction-flexbox-question-f
 
 У наступному прикладі скорочення `flex` має значення для `flex-shrink` та `flex-basis`, вказані за замовчуванням.
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/YzQqvgK?height=300&amp;default-tab=html%2Cresult&amp;slug-hash=YzQqvgK&amp;editable=true&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_YzQqvgK"></iframe>
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/YzQqvgK?height=300&amp;default-tab=html%2Cresult&amp;slug-hash=YzQqvgK&amp;editable=true&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="Вставка CodePen" loading="lazy" id="cp_embed_YzQqvgK"></iframe>
 
 # --question--
 
@@ -25,7 +25,7 @@ dashedName: introduction-flexbox-question-f
 
 ---
 
-Елементи не змінять розмір через конфліктуючі значення `flex`.
+Елементи div не змінять розмір через конфліктуючі значення `flex`.
 
 ---
 
@@ -33,7 +33,7 @@ dashedName: introduction-flexbox-question-f
 
 ---
 
-Всі елементи div зменшаться, щоб відповідати новим розмірам `flex`.
+Елементи div зменшаться, щоб відповідати новим розмірам `flex`.
 
 ## --video-solution--
 

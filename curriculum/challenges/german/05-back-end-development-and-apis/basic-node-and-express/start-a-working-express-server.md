@@ -22,7 +22,7 @@ den String 'Response String' zurückgeben.
 
 # --instructions--
 
-Benutze die `app.get()`-Methode, um den String "Hello Express" an GET Anfragen zu erstellen, die mit `/` (Hauptverzeichnis) übereinstimmen. Stelle über einen Blick auf die Logs sicher, dass dein Code funktioniert; siehe dann die Ergebnisse in der Vorschau ein – wenn du Replit verwendest.
+Benutze die `app.get()`-Methode, um den String "Hello Express" an GET Anfragen zu erstellen, die mit `/` (Hauptverzeichnis) übereinstimmen. Be sure that your code works by looking at the logs, then see the results in the preview if you are using Gitpod.
 
 **Hinweis:** Der gesamte Code für diese Lektionen sollte zwischen den wenigen Codezeilen eingefügt werden, mit denen du angefangen hast.
 

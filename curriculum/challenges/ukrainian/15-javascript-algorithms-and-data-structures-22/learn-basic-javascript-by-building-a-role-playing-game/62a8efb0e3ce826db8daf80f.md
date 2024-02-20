@@ -1,6 +1,6 @@
 ---
 id: 62a8efb0e3ce826db8daf80f
-title: Step 130
+title: Крок 130
 challengeType: 0
 dashedName: step-130
 ---

@@ -8,23 +8,23 @@ dashedName: gray-code
 
 # --description--
 
-Gray code is a form of binary encoding where transitions between consecutive numbers differ by only one bit.
+Код Грея — це форма бінарного програмування, де послідовні числа відрізняються лише одним бітом.
 
-This is a useful encoding for reducing hardware data hazards with values that change rapidly and/or connect to slower hardware as inputs.
+Таке програмування корисне для зменшення конфліктів апаратних даних зі значеннями, які швидко змінюються і/або підключаються до повільнішого обладнання як вхідні дані.
 
-It is also useful for generating inputs for Karnaugh maps in order from left to right or top to bottom.
+Воно також корисне для генерування вхідних даних для карт Карно в порядку зліва направо або зверху вниз.
 
 # --instructions--
 
-Create a function to encode a number to and decode a number from Gray code. Функція повинна мати 2 параметри.
+Створіть функцію, щоб зашифрувати число в код Грея та розшифрувати число з коду Грея. Функція повинна мати 2 параметри.
 
-The first would be a boolean. The function should encode for true and decode for false. The second parameter would be the number to be encoded/decoded.
+Перший параметр — булеве значення. Функція має зашифровувати, якщо true, та розшифровувати, якщо false. Другий параметр — число, яке потрібно зашифрувати/розшифрувати.
 
-Поккажіть нормальні бінарні значення, значення коду Грея, і декодування даних коду Грея для всіх 5-бінарних чисел (0-31 включно, провідні нулі не є необхідними).
+Відтворіть звичайні бінарні представлення, представлення коду Грея та розшифровані значення коду Грея для всіх 5-бітних бінарних чисел (від 0 до 31 включно, початкові нулі необов’язкові).
 
-Існує багато можливих кодів Грея. Наступні кодування називаються "двійковим відображувальним кодом Грея."
+Існує багато можливих кодів Грея. Шифрування нижче називають «бінарним відображеним кодом Грея».
 
-Кодування (MSB є бітом 0, b є бінарним, g - кодом Грея):
+Шифрування (0 — найбільш значимий біт, b — бінарний, g — код Грея):
 
 <pre>if b[i-1] = 1
   g[i] = not b[i]
@@ -37,7 +37,7 @@ else
 <pre>g = b xor (b логічно зміщено праворуч 1 раз)
 </pre>
 
-Декодування (MSB є бітом 0, b є бінарним, g - кодом Грея):
+Розшифрування (0 — найбільш значимий біт, b — бінарний, g — код Грея):
 
 <pre>b[0] = g[0]<br>
 для інших бітів:
@@ -88,7 +88,7 @@ assert.equal(gray(false, 233), 177);
 assert.equal(gray(false, 381), 425);
 ```
 
-`gray(false,725)` should return `870`.
+`gray(false,725)` має повернути `870`.
 
 ```js
 assert.equal(gray(false, 725), 870);
