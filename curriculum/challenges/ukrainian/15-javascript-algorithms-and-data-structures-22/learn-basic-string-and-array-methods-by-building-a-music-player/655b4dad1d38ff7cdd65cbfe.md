@@ -1,6 +1,6 @@
 ---
 id: 655b4dad1d38ff7cdd65cbfe
-title: Step 90
+title: Крок 90
 challengeType: 0
 dashedName: step-90
 ---

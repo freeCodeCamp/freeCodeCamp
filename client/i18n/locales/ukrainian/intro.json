@@ -750,8 +750,8 @@
   "scientific-computing-with-python": {
     "title": "Наукові обчислення з Python (бета-версія)",
     "intro": [
-      "Python — одна з найпопулярніших гнучких мов програмування на сьогодні. Ви можете використовувати її для всього: від базових скриптів до машинного навчання.",
-      "У сертифікації «Наукові обчислення з Python» ви дізнаєтесь основи Python, серед яких змінні, цикли, умовні переходи та функції. Тоді ви швидко перейдете до складних структур даних, роботи з мережами, реляційних баз даних та візуалізації даних."
+      "The Scientific Computing with Python (Beta) curriculum will equip you with the skills to analyze and manipulate data using Python, a powerful and versatile programming language. You'll learn key concepts like data structures, algorithm, Object Oriented Programming, and how to perform complex calculations using a variety of tools.",
+      "This comprehensive course will guide you through the fundamentals of scientific computing, including data structures, and algorithms."
     ],
     "note": "",
     "blocks": {
@@ -1316,15 +1316,21 @@
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Дізнайтесь, як говорити про типовий робочий день та завдання",
-        "intro": ["Дізнайтеся про типовий робочий день."]
+        "intro": [
+          "In this course, you'll learn how to talk about your workday and the tasks that you perform in the workplace and how to share them with others. It mainly focuses on the structures used for describing your activities and task-related vocabulary."
+        ]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "Дізнайтесь, як обговорювати ранкову або вечірню рутину",
-        "intro": ["Дізнайтеся про рутину."]
+        "intro": [
+          "In this course, you'll learn how to talk about details of your routine and share them with someone else. It mainly focuses on the structures used for declaring routine actions and related vocabulary."
+        ]
       },
       "learn-how-to-describe-your-current-project": {
         "title": "Дізнайтесь, як описувати поточний проєкт",
-        "intro": ["Дізнайтеся про проєкти."]
+        "intro": [
+          "In this course, you'll learn how to talk about the projects that you are involved in and how to inform others of what you are doing in these projects. It mainly focuses on the structures used for informing it and on the related vocabulary."
+        ]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Дізнайтесь, як запитувати та розповідати про навчання і досвід роботи",
@@ -1451,9 +1457,9 @@
     "legacy-desc": "Ці курси більше не входять до сертифікацій, але вони досі доступні для навчання.",
     "legacy-go-back": "Перейдіть до поточної версії навчальної програми.",
     "course-maintenance": "Ці курси знаходяться на технічному обслуговуванні. Якщо вони не працюють, див. як запустити їх локально на <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
-    "course-disabling-soon": "The browser version of these courses will be temporarily disabled soon and your virtual machines will be deleted. Any progress in your virtual machines will be lost. If you have any files you want from them, you should save them to your computer. We apologize for any inconvenience. We hope to have an improved browser version of these courses available again in the next few weeks.",
-    "course-disabled": "These courses are temporarily unavailable to run in the browser. We apologize for any inconvenience. You can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>. We hope to have an improved browser version available again soon.",
-    "run-locally": "For now, we recommend running the courses locally on your computer. You can learn how at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
+    "course-disabling-soon": "Вебверсія цих курсів буде тимчасово недоступна, а віртуальні машини будуть видалені. Будь-який прогрес на віртуальних машинах буде втрачено. Якщо у вас є файли, які ви хочете зберегти, збережіть їх на своєму комп’ютері. Просимо вибачення за будь-які незручності. Ми сподіваємося, що покращена вебверсія цих курсів стане доступною в найближчий час.",
+    "course-disabled": "Ці курси тимчасово недоступні для виконання в браузері. Просимо вибачення за будь-які незручності. Ви можете дізнатись, як запустити їх локально на <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>. Ми сподіваємося, що покращена вебверсія стане доступною в найближчий час.",
+    "run-locally": "Наразі ми рекомендуємо запускати курси локально на своєму комп’ютері. Більше деталей за посиланням <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
     "progress-wont-save": "Ваш прогрес не буде збережений в обліковому записі freeCodeCamp при локальному запуску.",
     "go-back-to-learn": "Поверніться до стабільної версії навчальної програми.",
     "read-database-cert-article": "Будь ласка, прочитайте повідомлення на форумі, перш ніж продовжити.",

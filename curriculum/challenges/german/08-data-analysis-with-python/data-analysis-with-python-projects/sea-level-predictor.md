@@ -8,12 +8,7 @@ dashedName: sea-level-predictor
 
 # --description--
 
-Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor" target="_blank" rel="noopener noreferrer nofollow">mit unserem Relpit-Startercode an diesem Projekt arbeiten</a>.
-
--   Beginne, indem du das Projekt in Replit importierst.
--   Daraufhin wird ein `.replit`-Fenster angezeigt.
--   Wähle `Use run command` und klicke auf die `Done`-Schaltfläche.
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-sea-level-predictor/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 Wir sind noch dabei, den interaktiven Teil des Python-Lehrplans zu entwickeln. Zurzeit kannst du dir lediglich einige Videos auf unserem YouTube-Channel für freeCodeCamp.org ansehen – diese bringen dir alles bei, was du wissen musst, um dieses Projekt abzuschließen:
 
@@ -33,17 +28,15 @@ Benutze die Daten, um folgende Aufgaben abzuschließen:
 - Zeichne eine neue Linie der besten Passform nur mit den Daten vom Jahr 2000 bis zum jüngsten Jahr im Datensatz. Lass die Linie auch durch das Jahr 2050 laufen, um den Anstieg des Meeresspiegels im Jahr 2050 vorherzusagen, wenn die Anstiegsrate weiterhin so verläuft wie seit dem Jahr 2000.
 - Die x-Beschriftung sollte `Year`, die y-Beschriftung sollte `Sea Level (inches)` und der Titel sollte `Rise in Sea Level` lauten.
 
-Unit-Tests werden für dich unter `test_module.py` geschrieben.
-
 Die Boilerplate enthält auch Befehle zum Speichern und Zurückgeben des Bildes.
 
 ## Entwicklung
 
-Für die Entwicklung kannst du `main.py` verwenden, um deine Funktionen zu testen. Klicken Sie auf die Schaltfläche "Ausführen" und `main.py` wird ausgeführt.
+Write your code in `sea_level_predictor.py`. For development, you can use `main.py` to test your code.
 
 ## Prüfung
 
-Wir haben die Tests von `test_module.py` nach `main.py` importiert, um Ihnen die Arbeit zu erleichtern. Die Tests werden automatisch ausgeführt, sobald du auf die Schaltfläche "Ausführen" klickst.
+The unit tests for this project are in `test_module.py`. Wir haben die Tests von `test_module.py` nach `main.py` importiert, um Ihnen die Arbeit zu erleichtern.
 
 ## Submitting
 
