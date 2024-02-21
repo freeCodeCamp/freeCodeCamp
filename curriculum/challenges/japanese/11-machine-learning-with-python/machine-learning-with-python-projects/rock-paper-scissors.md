@@ -10,11 +10,7 @@ dashedName: rock-paper-scissors
 
 このチャレンジでは、じゃんけんするプログラムを作成します。 手をランダムに選択するプログラムの勝率は、通常は 50% になります。 このチャレンジに合格するには、プログラムで 4 つの異なるボットを相手に試合を行う必要があり、各試合で 60％ 以上の勝率を達成しなければなりません。
 
-<a href="https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors" target="_blank" rel="noopener noreferrer nofollow">このプロジェクトには Replit スターターコードを使用して取り組んでください</a>。
-
--   まず、Replit でプロジェクトをインポートします。
--   すると、`.replit` ファイルのウィンドウが表示されます。
--   `Use run command` を選択して `Done` ボタンをクリックします。
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-rock-paper-scissors/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 機械学習カリキュラム用の対話型教育コンテンツは、現在開発中です。 現在、このチャレンジに合格する方法を学ぶには他の資料を活用する必要があります。
 
@@ -50,11 +46,9 @@ play(player1, player2, num_games[, verbose])
 play(player, quincy, 1000, verbose=True)
 ```
 
-「Run」ボタンをクリックすると `main.py` が実行されます。
-
 ## テスト
 
-このプロジェクトの単体テストは `test_module.py` にあります。 あらかじめ `test_module.py` から `main.py` にテストをインポートしてあります。 `main.py` の最後の行のコメントを外すと、「Run」ボタンを押すたびにテストが自動的に実行されます。
+このプロジェクトの単体テストは `test_module.py` にあります。 あらかじめ `test_module.py` から `main.py` にテストをインポートしてあります。 If you uncomment the last line in `main.py`, the tests will run automatically whenever you run `python main.py` in the console.
 
 ## 提出
 

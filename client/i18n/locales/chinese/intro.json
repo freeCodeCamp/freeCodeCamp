@@ -750,8 +750,8 @@
   "scientific-computing-with-python": {
     "title": "Scientific Computing with Python (Beta)",
     "intro": [
-      "Python 是目前最火、最灵活的编程语言之一。你可以用它来做很多事，包括从基础算法到机器学习。",
-      "在这个认证中，你会学习 Python 基础知识，例如变量、循环、条件和函数。然后你会马上很快学习到复杂数据结构、网络，关系数据库和数据可视化。"
+      "The Scientific Computing with Python (Beta) curriculum will equip you with the skills to analyze and manipulate data using Python, a powerful and versatile programming language. You'll learn key concepts like data structures, algorithm, Object Oriented Programming, and how to perform complex calculations using a variety of tools.",
+      "This comprehensive course will guide you through the fundamentals of scientific computing, including data structures, and algorithms."
     ],
     "note": "",
     "blocks": {
@@ -1312,15 +1312,21 @@
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Learn How to Talk About a Typical Workday and Tasks",
-        "intro": ["Learn about a typical workday."]
+        "intro": [
+          "In this course, you'll learn how to talk about your workday and the tasks that you perform in the workplace and how to share them with others. It mainly focuses on the structures used for describing your activities and task-related vocabulary."
+        ]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "Learn How to Discuss Your Morning or Evening Routine",
-        "intro": ["Learn about routines."]
+        "intro": [
+          "In this course, you'll learn how to talk about details of your routine and share them with someone else. It mainly focuses on the structures used for declaring routine actions and related vocabulary."
+        ]
       },
       "learn-how-to-describe-your-current-project": {
         "title": "Learn How to Describe Your Current Project",
-        "intro": ["Learn about projects."]
+        "intro": [
+          "In this course, you'll learn how to talk about the projects that you are involved in and how to inform others of what you are doing in these projects. It mainly focuses on the structures used for informing it and on the related vocabulary."
+        ]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Learn How to Ask and Share About Educational and Professional Background",

@@ -642,7 +642,7 @@
   },
   "search": {
     "label": "بحث",
-    "placeholder": "البحث في 9000+ درس",
+    "placeholder": "Search 10,700+ tutorials",
     "see-results": "عرض جميع النتائج لـ {{searchQuery}}",
     "no-tutorials": "لا توجد دروس",
     "try": "هل تبحث عن شيء ما؟ جرب شريط البحث في هذه الصفحة.",

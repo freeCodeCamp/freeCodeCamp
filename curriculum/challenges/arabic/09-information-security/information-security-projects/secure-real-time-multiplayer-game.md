@@ -11,16 +11,8 @@ dashedName: secure-real-time-multiplayer-game
 Develop a 2D real time multiplayer game using the HTML Canvas API and Socket.io that is functionally similar to this: <a href="https://secure-real-time-multiplayer-game.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://secure-real-time-multiplayer-game.freecodecamp.rocks/</a>. العمل على هذا المشروع سوف ينطوي على كتابة كودك باستخدام إحدى الطرق التالية:
 
 -   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
--   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
+-   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
 -   استخدم أي منشئ موقع لإكمال المشروع. تحقق انك أضفت جميع الملفات من مستودعنا في GitHub في مشروعك.
-
-إذا استخدمت Replit، اتبع هذه الخطوات لإعداد المشروع:
-
--   ابدأ باستيراد (import) المشروع إلى Replit.
--   بعد ذلك، سترى نافذة `.replit`.
--   اختار `Use run command` وانقر على زر `Done`.
-
-عند الانتهاء، تأكد من استضافة ديمو (demo) أو عرض عملي لمشروعك في مكان عام. ثم أرسل عنوان URL للمشروع في خانة Solution Link. وإن أردت تستطيع أيضًا إرسال رابط إلى الكود المصدري للمشروع الخاص بك في خانة GitHub Link.
 
 # --instructions--
 

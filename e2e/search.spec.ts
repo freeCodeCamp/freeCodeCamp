@@ -1,37 +1,65 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
-const searchElements = {
-  searchButton: 'fcc-search-button',
-  searchClear: 'fcc-search-clear'
-};
-
 test.describe('Search', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
   });
 
   test('should display correct placeholder', async ({ page, isMobile }) => {
-    const searchInput = page.getByLabel(translations.search.label);
-
     if (isMobile) {
-      await expect(searchInput).not.toBeVisible();
-    } else {
+      const menuButton = page.getByRole('button', {
+        name: translations.buttons.menu
+      });
+      await expect(menuButton).toBeVisible();
+      await menuButton.click();
+
+      const searchInput = page.getByLabel(translations.search.label);
+
       await expect(searchInput).toBeVisible();
       await expect(searchInput).toHaveAttribute(
         'placeholder',
         'Search 9,000+ tutorials'
       );
+    } else {
+      const searchInput = page.getByLabel(translations.search.label);
+
+      await expect(searchInput).toBeVisible();
+      await expect(searchInput).toHaveAttribute(
+        'placeholder',
+        'Search 10,700+ tutorials'
+      );
     }
   });
 
-  test('searching with enter key', async ({ context, page, isMobile }) => {
-    const searchInput = page.getByLabel(translations.search.label);
-
+  test('should return the search results when the user presses Enter', async ({
+    context,
+    page,
+    isMobile
+  }) => {
     if (isMobile) {
-      await expect(searchInput).not.toBeVisible();
-    } else {
+      const menuButton = page.getByRole('button', {
+        name: translations.buttons.menu
+      });
+      await menuButton.click();
+
+      const searchInput = page.getByLabel(translations.search.label);
       await expect(searchInput).toBeVisible();
+
+      await searchInput.fill('test');
+      await page.keyboard.press('Enter');
+
+      // Wait for the new page to load.
+      const newPage = await context.waitForEvent('page');
+      await newPage.waitForLoadState();
+
+      expect(newPage.url()).toBe(
+        'https://www.freecodecamp.org/news/search/?query=test'
+      );
+    } else {
+      const searchInput = page.getByLabel(translations.search.label);
+      await expect(searchInput).toBeVisible();
+
       await searchInput.fill('test');
       await page.keyboard.press('Enter');
 
@@ -45,37 +73,78 @@ test.describe('Search', () => {
     }
   });
 
-  test('searching with search button click', async ({
+  test('should return the search results when the user clicks the search button', async ({
     context,
     page,
     isMobile
   }) => {
-    const searchInput = page.getByLabel(translations.search.label);
-
     if (isMobile) {
-      await expect(searchInput).not.toBeVisible();
-    } else {
+      const menuButton = page.getByRole('button', {
+        name: translations.buttons.menu
+      });
+      await menuButton.click();
+
+      const searchInput = page.getByLabel(translations.search.label);
       await expect(searchInput).toBeVisible();
+
       await searchInput.fill('test');
-      await page.getByTestId(searchElements.searchButton).click();
+      await page
+        .getByRole('button', { name: translations.icons.magnifier })
+        .click();
 
-      // wait for results to open in new window
-      await page.waitForTimeout(1000);
+      // Wait for the new page to load.
+      const newPage = await context.waitForEvent('page');
+      await newPage.waitForLoadState();
 
-      const url = context.pages()[1].url();
-      expect(url).toBe('https://www.freecodecamp.org/news/search/?query=test');
+      expect(newPage.url()).toBe(
+        'https://www.freecodecamp.org/news/search/?query=test'
+      );
+    } else {
+      const searchInput = page.getByLabel(translations.search.label);
+      await expect(searchInput).toBeVisible();
+
+      await searchInput.fill('test');
+      await page
+        .getByRole('button', { name: translations.icons.magnifier })
+        .click();
+
+      // Wait for the new page to load.
+      const newPage = await context.waitForEvent('page');
+      await newPage.waitForLoadState();
+
+      expect(newPage.url()).toBe(
+        'https://www.freecodecamp.org/news/search/?query=test'
+      );
     }
   });
 
-  test('clearing search with clear button', async ({ page, isMobile }) => {
-    const searchInput = page.getByLabel(translations.search.label);
-
+  test('should clear the search input when the user clicks the clear button', async ({
+    page,
+    isMobile
+  }) => {
     if (isMobile) {
-      await expect(searchInput).not.toBeVisible();
-    } else {
+      const menuButton = page.getByRole('button', {
+        name: translations.buttons.menu
+      });
+      await menuButton.click();
+
+      const searchInput = page.getByLabel(translations.search.label);
       await expect(searchInput).toBeVisible();
+
       await searchInput.fill('test');
-      await page.getByTestId(searchElements.searchClear).click();
+      await page
+        .getByRole('button', { name: translations.icons['input-reset'] })
+        .click();
+
+      await expect(searchInput).toHaveValue('');
+    } else {
+      const searchInput = page.getByLabel(translations.search.label);
+      await expect(searchInput).toBeVisible();
+
+      await searchInput.fill('test');
+      await page
+        .getByRole('button', { name: translations.icons['input-reset'] })
+        .click();
 
       await expect(searchInput).toHaveValue('');
     }

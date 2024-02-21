@@ -1,6 +1,6 @@
 ---
 id: 63e94dae6dcedbad73f2f6ee
-title: Step 26
+title: Крок 26
 challengeType: 0
 dashedName: step-26
 ---
@@ -25,7 +25,7 @@ You should unpack all 5 object properties from objects in `arr` using object des
 
 ```js
 
-assert.match(code, /{\s*((name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname))\s*}\s*/)
+assert.match(code, /{\s*((name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname))\s*}\s*/)
 
 
 ```
