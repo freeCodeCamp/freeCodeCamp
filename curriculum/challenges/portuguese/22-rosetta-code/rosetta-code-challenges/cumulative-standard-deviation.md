@@ -8,7 +8,7 @@ dashedName: cumulative-standard-deviation
 
 # --description--
 
-Suppose that the entire population of interest is eight students in a particular class. For a finite set of numbers, the population standard deviation is found by taking the square root of the average of the squared deviations of the values subtracted from their average value. The marks of a class of eight students (that is, a statistical population) are the following eight values:
+Suponha que a população de interesse sejam oito alunos em uma determinada sala de aula. Para um conjunto finito de números, o desvio-padrão da população é encontrado pegando a raiz quadrada da média dos desvios padrão ao quadrado dos valores subtraídos de seu valor médio. As notas de uma turma de oito alunos (ou seja, de uma população estatística) são os oito valores seguintes:
 
 $2, 4, 4, 4, 5, 5, 7, 9$
 
@@ -18,12 +18,12 @@ $$\mu ={\frac {2+4+4+4+5+5+7+9}{8}}={\frac {40}{8}}=5$$
 
 Primeiro, calcule os desvios de cada ponto de dados da média e calcule o quadrado do resultado de cada uma:
 
-| Deviations of each data | Quadrado do resultado |
-| ----------------------- | --------------------- |
-| $(2-5)^{2}=(-3)^{2}=9$  | $(5-5)^{2}=0^{2}=0$   |
-| $(4-5)^{2}=(-1)^{2}=1$  | $(5-5)^{2}=0^{2}=0$   |
-| $(4-5)^{2}=(-1)^{2}=1$  | $(7-5)^{2}=2^{2}=4$   |
-| $(4-5)^{2}=(-1)^{2}=1$  | $(9-5)^{2}=4^{2}=16$  |
+| Desvios de cada ponto  | Quadrado do resultado |
+| ---------------------- | --------------------- |
+| $(2-5)^{2}=(-3)^{2}=9$ | $(5-5)^{2}=0^{2}=0$   |
+| $(4-5)^{2}=(-1)^{2}=1$ | $(5-5)^{2}=0^{2}=0$   |
+| $(4-5)^{2}=(-1)^{2}=1$ | $(7-5)^{2}=2^{2}=4$   |
+| $(4-5)^{2}=(-1)^{2}=1$ | $(9-5)^{2}=4^{2}=16$  |
 
 A variância é a média desses valores:
 

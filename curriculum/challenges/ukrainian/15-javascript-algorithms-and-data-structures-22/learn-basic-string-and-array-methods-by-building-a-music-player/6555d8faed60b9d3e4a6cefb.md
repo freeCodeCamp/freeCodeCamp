@@ -1,6 +1,6 @@
 ---
 id: 6555d8faed60b9d3e4a6cefb
-title: Step 63
+title: Крок 63
 challengeType: 0
 dashedName: step-63
 ---
@@ -28,13 +28,13 @@ assert.isFunction(setPlayButtonAccessibleText)
 Your `setPlayButtonAccessibleText` function should use an arrow syntax.
 
 ```js
-assert.match(code, /const\s+setPlayButtonAccessibleText\s*=\s*\(\)\s*=>\s*/)
+assert.match(code, /const\s+setPlayButtonAccessibleText\s*=\s*\(\s*\)\s*=>\s*/)
 ```
 
 Your `setPlayButtonAccessibleText` function  should be empty.
 
 ```js
-assert.match(code, /const\s+setPlayButtonAccessibleText\s*=\s*\(\)\s*=>\s*\{\n?\s*?\};?/)
+assert.match(code, /const\s+setPlayButtonAccessibleText\s*=\s*\(\s*\)\s*=>\s*\{\n?\s*?\};?/)
 ```
 
 # --seed--
@@ -632,7 +632,7 @@ const playSong = (id) => {
   if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
     audio.currentTime = 0;
   } else {
-    audio.currentTime = userData.songCurrentTime;
+    audio.currentTime = userData?.songCurrentTime;
   }
   userData.currentSong = song;
   playButton.classList.add("playing");
@@ -719,7 +719,7 @@ const renderSongs = (array) => {
 
 --fcc-editable-region--
 
-const getCurrentSongIndex = () => userData?.songs.indexOf(userData.currentSong);
+const getCurrentSongIndex = () => userData?.songs.indexOf(userData?.currentSong);
 
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {

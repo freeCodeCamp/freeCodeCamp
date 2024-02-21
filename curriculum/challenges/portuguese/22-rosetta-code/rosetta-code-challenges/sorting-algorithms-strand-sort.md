@@ -8,7 +8,7 @@ dashedName: sorting-algorithmsstrand-sort
 
 # --description--
 
-The **Strand sort** creates sorted subsets that are merged to create the final result.
+A ordenação **Strand Sort** cria subconjuntos ordenados que são mesclados para criar o resultado final.
 
 Considere `unsortedArray = [3, 1, 4, 2]`. Escolha o primeiro item `3` e copie-o para um array separado. Procure por qualquer item maior após este item. Quando você encontrar um item maior, neste caso, `4`, copie-o para o array separado, `[3, 4]`, e compare os itens a seguir com este novo valor, `4`.
 

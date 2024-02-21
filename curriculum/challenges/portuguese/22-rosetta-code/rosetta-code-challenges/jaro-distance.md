@@ -8,7 +8,7 @@ dashedName: jaro-distance
 
 # --description--
 
-The Jaro distance is a measure of similarity between two strings. The higher the Jaro distance for two strings is, the more similar the strings are. The score is normalized such that `0` equates to no similarity and `1` is an exact match.
+A distância de Jaro é uma medida de semelhança entre duas strings. Quanto maior a distância de Jaro entre as duas strings, mais parecidas elas são. A pontuação é normalizada, de modo que `0` é igual a nenhuma similaridade e `1` é uma correspondência exata.
 
 **Definição**
 
@@ -19,8 +19,8 @@ A distância de Jaro \\( d_j \\) de duas strings fornecidas \\(s_1\\) e \\(s_2\\
 Onde:
 
 <ul>
-  <li>\(m\) is the number of <i>matching characters</i>;</li>
-  <li> \(t\) is half the number of <i>transpositions</i>.</li>
+  <li>\(m\) é o número de <i>caracteres correspondentes</i>;</li>
+  <li> \(t\) é a metade do número de <i>transposições</i>.</li>
 </ul>
 
 Dois caracteres de \\(s_1\\) e \\(s_2\\), respectivamente, são considerados *correspondentes* somente se forem iguais e não mais distante do que \\(\\left\\lfloor\\frac{\\max(|s_1|,|s_2|)}{2}\\right\\rfloor-1\\).

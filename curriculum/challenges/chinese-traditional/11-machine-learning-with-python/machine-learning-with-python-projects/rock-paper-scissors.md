@@ -10,11 +10,7 @@ dashedName: rock-paper-scissors
 
 在這個挑戰中，你將創建一個程序來玩石頭、剪刀、布。 一個隨機選取的程序通常會有 50% 的時間獲勝。 要通過這一挑戰，你的程序必須與四個不同的機器人進行對戰，並達到至少 60% 勝率。
 
-你將使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 的初始化項目</a>來完成這個項目。
-
--   首先在 Replit 中導入項目。
--   接着，你將看到一個 `.replit` 窗口。
--   選擇 `Use run command` 並點擊 `Done` 按鈕。
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-rock-paper-scissors/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 我們仍在開發機器學習課程的交互式課程部分。 現在，你需要使用其他資源來學習如何通過這一挑戰。
 
@@ -50,11 +46,9 @@ play(player1, player2, num_games[, verbose])
 play(player, quincy, 1000, verbose=True)
 ```
 
-單擊“運行”按鈕，`main.py` 將運行。
-
 ## 測試
 
-這個項目的單元測試在 `test_module.py` 中。 爲了你的方便，我們將測試從 `test_module.py` 導入到 `main.py`。 如果你移除 `main.py` 中最後一行的註釋，則只要你點擊“運行”按鈕，測試就會自動運行。
+這個項目的單元測試在 `test_module.py` 中。 爲了你的方便，我們將測試從 `test_module.py` 導入到 `main.py`。 If you uncomment the last line in `main.py`, the tests will run automatically whenever you run `python main.py` in the console.
 
 ## 提交
 

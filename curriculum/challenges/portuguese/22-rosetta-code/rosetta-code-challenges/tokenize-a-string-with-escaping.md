@@ -8,14 +8,14 @@ dashedName: tokenize-a-string-with-escaping
 
 # --description--
 
-Write a function or program that can split a string at each non-escaped occurrence of a separator character.
+Escreva uma função ou programa que possa dividir uma string em cada ocorrência sem escape de um caractere separador.
 
 Ela deve aceitar três parâmetros de entrada:
 
 <ul>
-  <li>The <strong>string</strong></li>
-  <li>The <strong>separator character</strong></li>
-  <li>The <strong>escape character</strong></li>
+  <li>A <strong>string</strong></li>
+  <li>O <strong>caractere separador</strong></li>
+  <li>O <strong>caractere de escape</strong></li>
 </ul>
 
 Ela deve ter como saída uma lista de strings.
@@ -23,14 +23,14 @@ Ela deve ter como saída uma lista de strings.
 Regras para a divisão:
 
 <ul>
-  <li>The fields that were separated by the separators, become the elements of the output list.</li>
+  <li>Os campos que foram separados pelos separadores se tornam os elementos da lista de saída.</li>
   <li>Campos vazios devem ser preservados, mesmo no início e no fim.</li>
 </ul>
 
 Regras para o escape:
 
 <ul>
-  <li>"Escaped" means preceded by an occurrence of the escape character that is not already escaped itself.</li>
+  <li>Com "escape" significa precedido por uma ocorrência do caractere de escape, que já não estiver escapado por si mesmo.</li>
   <li>Quando o caractere de escape preceder um caractere que não tem nenhum significado especial, ele ainda conta como um escape (mas não faz nada especial).</li>
   <li>Cada ocorrência do caractere de escape que for usada para fazer o escape de algo não deve se tornar parte do resultado.</li>
 </ul>

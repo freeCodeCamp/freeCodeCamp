@@ -26,13 +26,13 @@ Es folgt der Algorithmus:
   <li>Seed the RNG with the number of the deal.
   </li><li>Erstelle einen Array von 52 Karten: Kreuz-Ass, Karo-Ass, Herz-Ass, Pik-Ass, Kreuz-2, Karo-2, und so weiter durch die Ränge: Ass, 2, 3, 4, 5, 6, 7, 8, 9, 10, Bube, Königin, König. Die Array-Indizes sind 0 bis 51, wobei das Kreuz-Ass auf 0 und der Pik-König auf 51 steht.</li>
   <li>Bis das Array leer ist:</li>
-  <li>Wähle eine zufällige Karte mit dem Index ≡ nächste Zufallszahl (mod array length).</li>
     <ul>
+      <li>Choose a random card at <i>index</i> ≡ <i>next random number</i> (mod <i>array length</i>).</li>
       <li>Swap this random card with the last card of the array.</li>
-      <li>Entferne diese zufällige Karte aus dem Feld. (Array-Länge wird um 1 heruntergesetzt)</li>
-      <li>Gib diese zufällige Karte aus.</li>
+      <li>Remove this random card from the array. (Array length goes down by 1.)</li>
+      <li>Deal this random card.</li>
     </ul>
-  <li>Gib alle 52 Karten aufgedeckt in 8 Spalten aus. Die ersten 8 Karten kommen in 8 Spalten, die nächsten 8 Karten kommen auf die ersten 8 Karten und so weiter.</li>
+  <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
 </ol>
 
 **Beispiel:**

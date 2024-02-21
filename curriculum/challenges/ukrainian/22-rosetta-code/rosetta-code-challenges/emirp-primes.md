@@ -1,6 +1,6 @@
 ---
 id: 599d0ba974141b0f508b37d5
-title: Emirp primes (Прості числа Емірпа)
+title: Ітсорп числа
 challengeType: 1
 forumTopicId: 302253
 dashedName: emirp-primes
@@ -8,7 +8,7 @@ dashedName: emirp-primes
 
 # --description--
 
-An emirp (**prime** spelled backwards) are primes that when reversed (in their decimal representation) are a different prime.
+Ітсорп числа (**прості** у зворотньому порядку) — це прості числа, які утворюють інші прості числа при записі задом наперед.
 
 # --instructions--
 
@@ -21,7 +21,7 @@ An emirp (**prime** spelled backwards) are primes that when reversed (in their d
   <li>Показує <code>n<sup>-не</sup></code> ітсорп число.</li>
 </ul>
 
-Функція повинна приймати два параметри. Перший отримає `n` або діапазон у вигляді масиву. Другий отримає логічний тип, що вказує, чи повертається функція emirps у вигляді масиву або окремого числа (кількість простих чисел у діапазоні або просте число <code>n<sup>th</sup></code>). Відповідно до параметрів функція повинна повертати масив або число.
+Функція повинна приймати два параметри. Перший отримає `n` або діапазон у вигляді масиву. Другий отримає булеве значення, яке вказує, чи функція повертає ітсорп як масив чи окреме число (кількість простих чисел в діапазоні або <code>n<sup>-не</sup></code> просте число). Відповідно до параметрів функція має повернути масив або число.
 
 # --hints--
 
@@ -31,7 +31,7 @@ An emirp (**prime** spelled backwards) are primes that when reversed (in their d
 assert(typeof emirps === 'function');
 ```
 
-`emirps(20,true)` повинен повертатися як `[13,17,31,37,71,73,79,97,107,113,149,157,167,179,199,311,337,347,359,389]`
+`emirps(20,true)` має повернути `[13,17,31,37,71,73,79,97,107,113,149,157,167,179,199,311,337,347,359,389]`
 
 ```js
 assert.deepEqual(emirps(20, true), [
@@ -58,13 +58,13 @@ assert.deepEqual(emirps(20, true), [
 ]);
 ```
 
-`emirps(1000)` повинен повертатися як `70529`
+`emirps(1000)` має повернути `70529`
 
 ```js
 assert.deepEqual(emirps(1000), 70529);
 ```
 
-`emirps([7700,8000],true)` повинен повертатися як `[7717,7757,7817,7841,7867,7879,7901,7927,7949,7951,7963]`
+`emirps([7700,8000],true)` має повернути `[7717,7757,7817,7841,7867,7879,7901,7927,7949,7951,7963]`
 
 ```js
 assert.deepEqual(emirps([7700, 8000], true), [
@@ -82,7 +82,7 @@ assert.deepEqual(emirps([7700, 8000], true), [
 ]);
 ```
 
-`emirps([7700,8000],false)` повинен повертатися як `11`
+`emirps([7700,8000],false)` має повернути `11`
 
 ```js
 assert.deepEqual(emirps([7700, 8000], false), 11);

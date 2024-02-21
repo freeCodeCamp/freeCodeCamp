@@ -1,15 +1,15 @@
 ---
 id: 645147516c245de4d11eb7ba
-title: Certification Exam
+title: 認證考試
 challengeType: 17
 dashedName: certification-exam
 ---
 
 # --description--
 
-Here are some rules:
+規則
 
-- click start
+- 點擊開始
 
 # --instructions--
 
