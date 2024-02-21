@@ -1,0 +1,38 @@
+---
+id: 657d50434d1a007661712182
+title: Task 1
+challengeType: 22
+dashedName: task-1
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+---
+
+<!--
+AUDIO REFERENCE: 
+Maria: Hey, I noticed that you have got a camera on your desk. Are you into photography?
+-->
+
+# --description--
+
+The phrase `have got` is used to indicate possession. In this dialogue, Maria notices something on Bob's desk and inquires about his interest in photography.
+
+# --fillInTheBlank--
+
+## --sentence--
+
+`Hey, I noticed that you _ _ a camera on your desk. Are you into photography?`
+
+## --blanks--
+
+`have`
+
+### --feedback--
+
+This word is part of the phrase used to indicate possession or ownership of something.
+
+---
+
+`got`
+
+### --feedback--
+
+This word completes the phrase emphasizing the possession of the camera by Bob.

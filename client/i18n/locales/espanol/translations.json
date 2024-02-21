@@ -376,6 +376,7 @@
     "tests-completed": "// pruebas completadas",
     "console-output": "// salida de consola",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
+    "indentation-error": "Your code has an indentation error. You may need to add 'pass' on a new line to form a valid block of code.",
     "sign-in-save": "Inicia sesión para guardar tu progreso",
     "download-solution": "Descargar mi solución",
     "download-results": "Download my results",
@@ -642,7 +643,7 @@
   },
   "search": {
     "label": "Buscar",
-    "placeholder": "Encuentra + 9,000 Tutoriales",
+    "placeholder": "Search 10,700+ tutorials",
     "see-results": "Ver todos los resultados de {{searchQuery}}",
     "no-tutorials": "No se encontraron tutoriales",
     "try": "¿Buscando algo? Prueba la barra de búsqueda en esta página.",

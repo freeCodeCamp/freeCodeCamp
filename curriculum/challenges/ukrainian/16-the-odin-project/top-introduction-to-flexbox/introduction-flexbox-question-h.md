@@ -1,23 +1,23 @@
 ---
 id: 6571c34668e4b3b17d3957f9
-title: Introduction to Flexbox Question H
+title: Вступ до Flexbox. Запитання H
 challengeType: 15
 dashedName: introduction-flexbox-question-h
 ---
 
 # --description--
 
-No matter which direction you're using, you need to think of your flex-containers as having 2 axes: the main axis and the cross axis. It is the direction of these axes that changes when the `flex-direction` is changed. In most circumstances, `flex-direction: row` puts the main axis horizontal (left-to-right), and `column` puts the main axis vertical (top-to-bottom).
+Незалежно від того, який напрямок ви використовуєте, вважайте, що гнучкі контейнери мають 2 осі: головну та перехресну. Якщо змінюється `flex-direction`, то змінюється напрямок цих осей. В більшості випадків, `flex-direction: row` розміщує головну вісь горизонтально (зліва направо), а `column` — вертикально (зверху вниз).
 
-In other words, in our very first example, you put `display: flex` on a div and it arranged its children horizontally. This is a demonstration of `flex-direction: row`, the default setting. The following example is very similar. If you uncomment the line that says `flex-direction: column`, those divs will stack vertically.
+Іншими словами, в першому прикладі до елемента div було застосовано `display: flex`, що розташувало його дочірні елементи горизонтально. Це демонстрація `flex-direction: row`, що є налаштуванням за замовчуванням. Наступний приклад дуже схожий. Якщо ви розкоментуєте рядок `flex-direction: column`, то елементи div стануть вертикально.
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="400" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/BaZKPdw?height=400&amp;default-tab=html%2Cresult&amp;slug-hash=BaZKPdw&amp;editable=true&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_BaZKPdw"></iframe>
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="400" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/BaZKPdw?height=400&amp;default-tab=html%2Cresult&amp;slug-hash=BaZKPdw&amp;editable=true&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="Вставка CodePen" loading="lazy" id="cp_embed_BaZKPdw"></iframe>
 
 # --question--
 
 ## --text--
 
-Which CSS property changes the main axis direction in flex containers to arrange items from top to bottom?
+Яка властивість CSS змінює напрямок головної осі в гнучких контейнерах, щоб розташувати предмети зверху вниз?
 
 ## --answers--
 

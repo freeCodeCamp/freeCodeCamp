@@ -22,8 +22,8 @@ dashedName: record-collection
 -   Ваша функція завжди повинна повертати весь об’єкт `records`.
 -   Якщо `value` є пустим рядком, видаліть дану властивість `prop` з альбому.
 -   Якщо `prop` не є `tracks` та `value` не є пустим рядком, призначте `value` до `prop` альбому.
--   If `prop` is `tracks` and `value` isn't an empty string, but the album doesn't have a `tracks` property, create an empty array and add `value` to it.
--   If prop is `tracks` and `value` isn't an empty string, add `value` to the end of the album's existing `tracks` array.
+-   Якщо `prop` є `tracks` та `value` не є пустим рядком, але альбом не має властивості `tracks`, створіть порожній масив та додайте `value` до нього.
+-   Якщо `prop` є `tracks` та `value` не є пустим рядком, додайте `value` в кінець наявного масиву `tracks`.
 
 **Примітка:** копія об’єкту `recordCollection` використовується для тестів. Ви не повинні напряму змінювати об’єкт `recordCollection`.
 

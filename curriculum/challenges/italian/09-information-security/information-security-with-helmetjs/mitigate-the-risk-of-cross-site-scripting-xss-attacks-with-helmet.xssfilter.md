@@ -9,11 +9,11 @@ dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xs
 
 # --description--
 
-Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, o clonato da <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Il cross-site scripting (XSS) è un tipo di attacco frequente in cui script dannosi vengono iniettati in pagine vulnerabili, con lo scopo di rubare dati sensibili come cookie di sessione, o password.
 
-La regola di base per ridurre il rischio di un attacco XSS è semplice: “Non fidarti mai dell’input dell’utente”. Come sviluppatore dovresti sempre sanificare tutti gli input provenienti dall'esterno. Questo include i dati provenienti da moduli, URL di query GET e persino dal corpo delle richieste POST. Sanificare significa che si dovrebbe trovare e codificare i caratteri che possono essere pericolosi, ad esempio &lt;, >.
+The basic rule to lower the risk of an XSS attack is simple: "Never trust user's input". Come sviluppatore dovresti sempre sanificare tutti gli input provenienti dall'esterno. Questo include i dati provenienti da moduli, URL di query GET e persino dal corpo delle richieste POST. Sanificare significa che si dovrebbe trovare e codificare i caratteri che possono essere pericolosi, ad esempio &lt;, >.
 
 I browser moderni possono aiutare a mitigare il rischio adottando strategie software migliori. Spesso sono configurabili tramite intestazioni http.
 

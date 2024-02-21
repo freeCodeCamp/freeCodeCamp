@@ -81,7 +81,7 @@ assert(foods.grapes === 35);
 assert(foods.strawberries === 27);
 ```
 
-The definition of the `foods` object should not be changed.
+`foods` 對象的定義不應更改。
 
 ```js
 assert(

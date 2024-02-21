@@ -1,43 +1,43 @@
 ---
 id: 6571c34568e4b3b17d3957f8
-title: Introduction to Flexbox Question G
+title: Вступ до Flexbox. Запитання G
 challengeType: 15
 dashedName: introduction-flexbox-question-g
 ---
 
 # --description--
 
-`flex-shrink` is similar to `flex-grow`, but sets the "shrink factor" of a flex item. `flex-shrink` only ends up being applied if the size of all flex items is larger than their parent container. For example, if our 3 divs from above had a width declaration like: `width: 100px`, and `.flex-container` was smaller than `300px`, our divs would have to shrink to fit.
+Властивість `flex-shrink` схожа до `flex-grow`, але встановлює «коефіцієнт стиснення» гнучкого предмета. `flex-shrink` застосовується лише в тому випадку, коли розмір всіх гнучких предметів більший за їхній батьківський контейнер. Наприклад, якби три елементи div мали оголошення ширини `width: 100px`, а значення `.flex-container` було меншим за `300px`, то елементам div потрібно було б стиснутись, щоб поміститись.
 
-The default shrink factor is `flex-shrink: 1`, which means all items will shrink evenly. If you do not want an item to shrink then you can specify `flex-shrink: 0;`. You can also specify higher numbers to make certain items shrink at a higher rate than normal.
+Коефіцієнтом стиснення за замовчуванням є `flex-shrink: 1`, тобто всі предмети стискаються рівномірно. Якщо ви не хочете, щоб предмет стискався, вкажіть `flex-shrink: 0;`. Ви можете вказати більше значення, щоб змусити певні предмети стискатися більше, ніж за звичайних значень.
 
-Here's an example. If you shrink your browser window you'll notice that `.two` never gets smaller than the given width of `250px`, even though the `flex-grow` rule would otherwise specify that each element should be equally sized.
+Ось приклад. Якщо зменшити вікно браузера, ви помітите, що `.two` ніколи не буде меншим за задану ширину `250px`, навіть якщо правило `flex-grow` вказує, що елементи мають бути однакового розміру.
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/JjJXZVz?height=300&amp;default-tab=html%2Cresult&amp;slug-hash=JjJXZVz&amp;editable=true&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_JjJXZVz"></iframe>
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/JjJXZVz?height=300&amp;default-tab=html%2Cresult&amp;slug-hash=JjJXZVz&amp;editable=true&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="Вставка CodePen" loading="lazy" id="cp_embed_JjJXZVz"></iframe>
 
-An important implication to notice here is that when you specify `flex-grow` or `flex-shrink`, flex items do not necessarily respect your given values for `width`. In the above example, all 3 divs are given a `width` of `250px`, but when their parent is big enough, they grow to fill it. Likewise, when the parent is too small, the default behavior is for them to shrink to fit. This is not a bug, but it could be confusing behavior if you aren’t expecting it.
+Важливо звернути увагу: якщо ви вказали `flex-grow` або `flex-shrink`, то не факт, що гнучкі предмети дотримаються заданих значень `width`. У прикладі вище всі 3 елементи div мають `width` зі значенням `250px`, але якщо їхній батьківський контейнер достатньо великий, вони збільшуються, щоб заповнити його. А якщо батьківський контейнер замалий, вони за замовчуванням зменшуються, щоб поміститись. Це не помилка, але може збити з пантелику, якщо ви цього не знаєте.
 
 # --question--
 
 ## --text--
 
-What is the default behavior of `flex-shrink` when applied to flex items?
+Яка поведінка властивості `flex-shrink` за замовчуванням, якщо застосувати її до гнучких предметів?
 
 ## --answers--
 
-It prevents any item from shrinking.
+Вона заважає будь-якому предмету стискатися.
 
 ---
 
-It makes all items shrink at an equal rate.
+Вона стискає предмети відносно решти.
 
 ---
 
-It causes only specific items to shrink.
+Вона робить так, що стискаються лише певні предмети.
 
 ---
 
-It enlarges the items' sizes equally.
+Вона однаково збільшує розміри предметів.
 
 
 ## --video-solution--
