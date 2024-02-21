@@ -30,7 +30,6 @@ import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
 import {
-  auth0Routes,
   devLoginCallback,
   devLegacyAuthRoutes,
   mobileAuth0Routes
@@ -204,7 +203,6 @@ export const build = async (
 
   void fastify.register(prismaPlugin);
 
-  void fastify.register(auth0Routes, { prefix: '/auth' });
   void fastify.register(mobileAuth0Routes);
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
