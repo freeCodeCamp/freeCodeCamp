@@ -37,8 +37,8 @@ importers:
         specifier: 5.17.0
         version: 5.17.0
       '@testing-library/user-event':
-        specifier: 13.5.0
-        version: 13.5.0(@testing-library/dom@8.20.1)
+        specifier: 14.5.2
+        version: 14.5.2(@testing-library/dom@8.20.1)
       '@types/jest':
         specifier: 29.5.12
         version: 29.5.12
@@ -10377,13 +10377,12 @@ packages:
       react-dom: 16.14.0(react@16.14.0)
     dev: true
 
-  /@testing-library/user-event@13.5.0(@testing-library/dom@8.20.1):
-    resolution: {integrity: sha512-5Kwtbo3Y/NowpkbRuSepbyMFkZmHgD+vPzYB/RJ4oxt5Gj/avFFBYjhw27cqSVPVw/3a67NK1PbiIr9k4Gwmdg==}
-    engines: {node: '>=10', npm: '>=6'}
+  /@testing-library/user-event@14.5.2(@testing-library/dom@8.20.1):
+    resolution: {integrity: sha512-YAh82Wh4TIrxYLmfGcixwD18oIjyC1pFQC2Y01F2lzV2HTMiYrI0nze0FD0ocB//CKS/7jIUgae+adPqxK5yCQ==}
+    engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
     dependencies:
-      '@babel/runtime': 7.23.1
       '@testing-library/dom': 8.20.1
     dev: true
 
