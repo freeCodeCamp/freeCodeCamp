@@ -1,54 +1,48 @@
 ---
 id: 65b78bde6c6910b32eef74ba
 title: Task 31
-challengeType: 19
+challengeType: 22
 dashedName: task-31
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
 AUDIO REFERENCE:
-Alice: Anna is the head of HR, and she has to make sure our company runs smoothly when it comes to HR.
+Sophie: Those are very positive things you've just said.
 -->
 
 # --description--
 
-`Smoothly` is an adverb that describes how something is done in an uninterrupted, trouble-free manner. For instance, if a company's HR department runs `smoothly`, it means it operates without any issues.
+The phrase `you've just said` is used in the present perfect tense to refer to something that someone has said very recently. `You've` is a contraction of `you have`, and `said` is the past participle of `say`. The word `just` is used to indicate that something happened a very short time ago.
 
-# --question--
+For example, `I've just finished my homework` means I finished my homework very recently.
 
-## --text--
+# --fillInTheBlank--
 
-What does `smoothly` imply when Alice says `she has to make sure our company runs smoothly when it comes to HR`?
+## --sentence--
 
-## --answers--
+`Those are very positive things _ _ _ _.`
 
-The company is facing a lot of problems and interruptions.
+## --blanks--
 
-### --feedback--
-
-`Smoothly` suggests the opposite that the company runs without problems or interruptions.
-
----
-
-The company runs without any problems or interruptions.
-
----
-
-The company's office space is very well-organized.
+`you've`
 
 ### --feedback--
 
-`Smoothly` here refers to the operational aspect of the company, not the physical space.
+This contraction stands for `you have`, used with the present perfect tense.
 
 ---
 
-The company is not well-managed.
+`just`
 
 ### --feedback--
 
-`Smoothly` implies that the company is well-managed and free of issues, not poorly managed.
+This word indicates something happened moments ago.
 
-## --video-solution--
+---
 
-2
+`said`
+
+### --feedback--
+
+This is the past participle of `say`, used to describe what someone has expressed in words recently.

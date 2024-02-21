@@ -1,54 +1,40 @@
 ---
 id: 65b623813c9f7d5b26b3437f
 title: Task 21
-challengeType: 19
+challengeType: 22
 dashedName: task-21
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
-AUDIO REFERENCE:
-Alice: I've seen her a couple of times.
+AUDIO REFERENCE: 
+Bob: Well, she's responsible for hiring people and taking care of workers.
 -->
 
 # --description--
 
-This dialogue uses a contraction in the present perfect tense. `I've` is a contraction of `I have`, and it's common in informal English. Other similar contractions include `you've` (you have), `we've` (we have), and `they've` (they have). These contractions make speech and writing more fluid and natural.
+The phrase `responsible for` means someone has a duty to do something at work or in life. You can use a noun or an `-ing` form of a verb to describe the duties or tasks.
 
-# --question--
+Examples: `She's responsible for the team.`, or `I am responsible for teaching English.`
 
-## --text--
+# --fillInTheBlank--
 
-What does `I've seen her` indicate in Alice's statement?
+## --sentence--
 
-## --answers--
+`Well, she's _ _ hiring people and taking care of workers.`
 
-Alice has seen her at unspecified times in the past.
+## --blanks--
 
----
-
-Alice will see her in the future.
+`responsible`
 
 ### --feedback--
 
-The present perfect tense refers to past experiences, not future plans.
+This word means having a duty or job to do something.
 
 ---
 
-Alice sees her regularly.
+`for`
 
 ### --feedback--
 
-`I've seen her` does not specifically indicate regularity, just that it has happened.
-
----
-
-Alice has never seen her before.
-
-### --feedback--
-
-`I've seen her` directly contradicts the idea of never having seen her.
-
-## --video-solution--
-
-1
+This preposition is used to connect `responsible` with the tasks she does.

@@ -7,48 +7,48 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
-AUDIO REFERENCE:
-Tom: Well, I noticed that she's always in the office super early and leaves pretty late.
+AUDIO REFERENCE: 
+Bob: Well, she's responsible for hiring people and taking care of workers.
 -->
 
 # --description--
 
-The phrase `pretty late` is an example of using one adjective to modify another for emphasis. In this case, `pretty` (meaning quite or fairly) modifies `late`. It suggests that something is later than normal, but not extremely late.
+Listen to the audio and answer the question.
 
 # --question--
 
 ## --text--
 
-What does `pretty late` imply in Tom’s statement?
+What are her main duties according to Bob?
 
 ## --answers--
 
-She leaves the office right after her work ends.
-
-### --feedback--
-
-`Pretty late` implies she stays longer than the standard end of the workday, not leaving right after.
+Giving jobs to new staff and looking after the team
 
 ---
 
-She leaves the office quite late after the standard work hours end.
-
----
-
-She is the last person to leave the office every day.
+Making coffee and cleaning the office
 
 ### --feedback--
 
-While `pretty late` indicates staying later, it doesn't necessarily mean being the last person every day.
+Bob mentions her main duties are related to managing staff, not office maintenance.
 
 ---
 
-She rarely stays in the office after regular hours.
+Organizing parties and events
 
 ### --feedback--
 
-`Pretty late` suggests that she stays beyond regular hours, not rarely staying.
+Her duties are more about staff management, not event planning.
+
+---
+
+Writing reports and emails
+
+### --feedback--
+
+Bob talks about her managing roles, not about writing tasks.
 
 ## --video-solution--
 
-2
+1

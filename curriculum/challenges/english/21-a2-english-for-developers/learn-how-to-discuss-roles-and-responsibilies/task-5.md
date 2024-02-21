@@ -22,15 +22,15 @@ What does Sophie mean?
 
 ## --answers--
 
-She has not seen someone up to this moment.
-
----
-
 She saw someone a long time ago.
 
 ### --feedback--
 
 Sophie's use of the present perfect tense negative indicates the action hasn't happened, not that it happened in the past.
+
+---
+
+She has not seen someone up to this moment.
 
 ---
 
@@ -50,4 +50,4 @@ The use of `yet` implies the possibility of seeing the person in the future, not
 
 ## --video-solution--
 
-1
+2

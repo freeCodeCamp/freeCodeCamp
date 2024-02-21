@@ -3,46 +3,50 @@ id: 65b78da7683e2cb7061d0021
 title: Task 32
 challengeType: 19
 dashedName: task-32
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
+
+<!--
+AUDIO REFERENCE:
+Sophie: Those are very positive things you've just said.
+-->
 
 # --description--
 
-The adjective `smooth` describes something that is even, flat, and without any bumps or roughness. It can also refer to situations or actions that are free from difficulties, problems, or disruptions. For example, when talking about `a smooth ride`, it means the journey was comfortable and without any issues.
+Listen to the audio and answer the question.
 
 # --question--
 
 ## --text--
 
-What does `smooth` imply when used to describe a surface or an experience, like `a smooth road` or `a smooth transition`?
+What does Sophie say about the things that were mentioned?
 
 ## --answers--
 
-The road is bumpy and uncomfortable.
-
 ### --feedback--
 
-`Smooth` describes the opposite: a surface that is even and not bumpy.
+Describing the things as `very positive` suggests they are important, not unimportant.
 
 ---
 
-The surface or experience is even, flat, and comfortable.
-
----
-
-The transition was full of problems and difficult.
+They are negative.
 
 ### --feedback--
 
-`Smooth` in this context suggests an easy and problem-free transition, not a difficult one.
+Sophie actually describes the things as `very positive`, not negative.
 
 ---
 
-The road is very steep and difficult to travel on.
+They were said a long time ago.
 
 ### --feedback--
 
-`Smooth` indicates an easy surface to travel on, not a steep and difficult one.
+The use of `just` indicates that the things were said recently, not a long time ago.
+
+---
+
+They are very positive and were said recently.
 
 ## --video-solution--
 
-2
+4

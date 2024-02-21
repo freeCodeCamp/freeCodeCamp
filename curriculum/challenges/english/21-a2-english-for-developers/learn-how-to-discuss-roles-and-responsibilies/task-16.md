@@ -23,7 +23,11 @@ Why is she excellent at her job according to Bob?
 
 ## --answers--
 
-Because she focuses deeply on her work and keeps things in order
+Because she arrives late
+
+### --feedback--
+
+Being `organized and serious` about work usually means being punctual, not late.
 
 ---
 
@@ -35,11 +39,7 @@ Bob's description suggests she is focused and well-planned, not funny and relaxe
 
 ---
 
-Because she arrives late
-
-### --feedback--
-
-Being `organized and serious` about work usually means being punctual, not late.
+Because she focuses deeply on her work and keeps things in order
 
 ---
 
@@ -51,4 +51,4 @@ Bob implies that her attitude and method make her good at her job, not disliking
 
 ## --video-solution--
 
-1
+3

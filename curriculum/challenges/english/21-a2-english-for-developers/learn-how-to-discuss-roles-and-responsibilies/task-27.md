@@ -1,48 +1,50 @@
 ---
 id: 65b6569bfdca437e79a45159
 title: Task 27
-challengeType: 19
+challengeType:22
 dashedName: task-27
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
+
+<!--
+AUDIO REFERENCE:
+Bob: Word is that she’s strict but fair.
+-->
 
 # --description--
 
-`Serious` is an adjective that describes someone or something as having a solemn or thoughtful character or manner. It can also mean that a situation is important and not funny. For example, when you say, `a serious discussion`, it means the discussion is important and needs careful thought.
+`Strict` means someone enforces rules strongly. For example, `My teacher is strict about homework deadlines.` It means the teacher insists that everyone hands in their homework on time.
 
-# --question--
+`Fair` means treating everyone equally and justly. For example, `The judge was fair in her decision`, meaning the judge made a decision based on the rules and without favoritism.
 
-## --text--
+`But` is a word used to connect two ideas that might seem opposite or different. It shows contrast. For example, `I like apples but not oranges.` This statement shows a preference for apples over oranges.
 
-What does `serious` imply when used to describe a situation, like `a serious problem`?
+# --fillInTheBlank--
 
-## --answers--
+## --sentence--
 
-The problem is funny and not important.
+`Word is that she’s _ _ _.`
 
-### --feedback--
+## --blanks--
 
-`Serious` describes something important and significant, not something funny or unimportant.
-
----
-
-The problem is important and needs careful attention.
-
----
-
-The problem can be ignored.
+`strict`
 
 ### --feedback--
 
-Describing a problem as `serious` suggests it's important and shouldn't be ignored.
+This word means she enforces rules strongly.
 
 ---
 
-The problem is very easy to solve.
+`but`
 
 ### --feedback--
 
-A `serious` problem implies complexity and difficulty, not ease of solution.
+This word shows contrast between being `strict` and another quality.
 
-## --video-solution--
+---
 
-2
+`fair`
+
+### --feedback--
+
+This word means she treats everyone equally and justly.

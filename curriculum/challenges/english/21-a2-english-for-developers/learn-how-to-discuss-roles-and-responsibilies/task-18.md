@@ -8,46 +8,46 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 <!--
 AUDIO REFERENCE:
-Bob: and she always looks out for the best interests of the team.
+Bob: She's been working with tech companies for about ten years.
 -->
 
 # --description--
 
-The phrase `looks out for` means to take care of or protect someone's welfare or best interests. It suggests being attentive and proactive about ensuring the well-being or advantage of others. 
+Listen to the audio and answer the question.
 
 # --question--
 
 ## --text--
 
-What does `looks out for the best interests of the team` imply in Bob's statement about her behavior towards the team?
+What does Bob say about her work experience?
 
 ## --answers--
 
-She takes care and protects the team's welfare and interests.
+She has a long history with tech companies, working there for around ten years.
 
 ---
 
-She ignores the needs and interests of the team.
+She recently started working with tech companies.
 
 ### --feedback--
 
-`Looks out for` specifically means to take care of or protect, not to ignore.
+Bob's statement emphasizes a long-term engagement, not something recent.
 
 ---
 
-She only focuses on her own interests, not the team's.
+She no longer works with tech companies.
 
 ### --feedback--
 
-The phrase implies she is attentive to the team's interests, not just her own.
+Bob indicates that she is still working with them, not that she has stopped.
 
 ---
 
-She is unaware of what the team needs.
+She worked with tech companies only for a short time.
 
 ### --feedback--
 
-`Looks out for` suggests she is very aware and proactive about the team's needs and interests.
+`about ten years` contradicts the idea of being a short time.
 
 ## --video-solution--
 

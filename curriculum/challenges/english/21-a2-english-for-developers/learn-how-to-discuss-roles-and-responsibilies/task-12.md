@@ -31,11 +31,7 @@ How does Bob use `with` to describe the woman's appearance?
 
 ## --answers--
 
-`To mention her long blond hair and glasses`
-
----
-
-`To talk about her height`
+To talk about her height
 
 ### --feedback--
 
@@ -43,7 +39,11 @@ Height is described without using `with`.
 
 ---
 
-`To say how old she is`
+To mention her long blond hair and glasses
+
+---
+
+To say how old she is
 
 ### --feedback--
 
@@ -51,7 +51,7 @@ Age is mentioned not using `with`.
 
 ---
 
-`To describe her clothes`
+To describe her clothes
 
 ### --feedback--
 
@@ -59,4 +59,4 @@ Clothes are not mentioned in Bob's description.
 
 ## --video-solution--
 
-1
+2

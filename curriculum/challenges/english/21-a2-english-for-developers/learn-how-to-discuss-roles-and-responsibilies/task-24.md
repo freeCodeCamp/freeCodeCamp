@@ -1,54 +1,38 @@
 ---
 id: 65b629dbf8298669fb4c1572
 title: Task 24
-challengeType: 19
+challengeType: 22
 dashedName: task-24
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
-AUDIO REFERENCE:
-Alice: Yeah, she's very committed.
+AUDIO REFERENCE: 
+Bob: She makes sure we follow the rules and that everyone is happy.
 -->
 
 # --description--
 
-The word `committed` is an adjective that describes someone who is dedicated and loyal to a task or goal. It implies that the person is willing to give time and energy to something that they believe in or see as important. This adjective is often used to describe people who are consistently engaged and serious about their responsibilities or projects.
+The word `everyone`  means every person in a group. `Every-` is used when talking about all things or people in a group, one by one.
 
-# --question--
+It's important to note that `everyone` sounds like it's talking about many people, but you use it with a singular verb. This is similar to other words starting with `every-` like `everything` and `everybody`.
 
-## --text--
+For example, you say `Everyone goes to the party`, `Evertying is right` or `Everybody works hard`.
 
-What does `committed` imply about a person in Alice's statement?
+`Make sure` means to check or ensure something is correct before moving on. For example, you `make sure the code runs` means you check the code to be certain it has no errors and can run properly.
 
-## --answers--
+`Follow the rules` means to do what the rules say. If there is a rule that says `use camelCase for variable names`, to `follow the rules` means you name your variables like `myVariable` instead of `my_variable`.
 
-She frequently changes her mind.
+# --fillInTheBlank--
 
-### --feedback--
+## --sentence--
 
-Being `committed` suggests firm dedication, not frequently changing one's mind.
+`She makes sure we follow the rules and that _ is happy.`
 
----
+## --blanks--
 
-She isn't interested in her work or goals.
-
-### --feedback--
-
-`Committed` means the opposite. It shows a strong interest and dedication to work or goals.
-
----
-
-She is dedicated and serious about what she does.
-
----
-
-She prefers to avoid taking on responsibilities.
+`everyone`
 
 ### --feedback--
 
-A `committed` person tends to embrace responsibilities, not to avoid them.
-
-## --video-solution--
-
-3
+This word is used to refer to each person in a group. It emphasizes that no person is excluded from being happy in this context.

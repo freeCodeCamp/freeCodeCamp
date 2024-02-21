@@ -8,47 +8,47 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 
 <!--
 AUDIO REFERENCE:
-Alice: She seems to take her work very seriously.
+Bob: She makes sure we follow the rules and that everyone is happy.
 -->
 
 # --description--
 
-The phrase `seem to` is used to express the appearance or impression of something, often based on a subjective view. It suggests a perception or belief about how things are, without definite certainty. For example, `You seem to be happy` means that, based on observation, it appears the person is happy, though it's not confirmed.
+Listen to the audio and answer the question.
 
 # --question--
 
 ## --text--
 
-What does `seem to` suggest when Alice's statement?
+Who does she make happy according to Bob?
 
 ## --answers--
 
-She definitely does not take her work seriously.
-
-### --feedback--
-
-`Seems to` implies that it appears she takes her work seriously, not the opposite.
+All the people
 
 ---
 
-It appears or looks like she takes her work very seriously.
-
----
-
-She is not concerned about her work at all.
+Only herself
 
 ### --feedback--
 
-`Seems to take her work very seriously` implies that she shows concern and dedication to her work.
+Bob mentions that she makes sure `everyone` is happy, not just herself.
 
 ---
 
-She is responsible for someone else's work.
+Just the teachers
 
 ### --feedback--
 
-`Seems to take her work very seriously` is about her attitude towards her own work, not responsibility for others' work.
+Bob says `everyone`, which means all the people, not just a specific group like teachers.
+
+---
+
+Only the students
+
+### --feedback--
+
+Bob mentions `everyone`, indicating all people involved.
 
 ## --video-solution--
 
-2
+1

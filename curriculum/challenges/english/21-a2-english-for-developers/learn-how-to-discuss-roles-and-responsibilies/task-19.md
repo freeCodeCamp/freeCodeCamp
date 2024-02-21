@@ -7,32 +7,26 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
-AUDIO REFERENCE:
-Sophie: Those are very positive things you've just said.
+AUDIO REFERENCE: 
+Sophie: Ten years? That's impressive!
 -->
 
 # --description--
 
-This dialogue uses a contraction common in English. Contractions like `you've` (`you have`), `she's` (`she has`), or `they've` (`they have`) in the present perfect tense make speech sound more natural and are often used in informal conversations. Adding `just` in this tense indicates an action that happened very recently, emphasizing its closeness to the present moment.
+The word `impressive` means something is very good or amazing. It's like saying "Wow!" when you hear or see something really great.
+
+For example, if a friend tells you they can speak three languages, you can say, `It's impressive!` This means you think what they can do is very cool and amazing.
 
 # --fillInTheBlank--
 
 ## --sentence--
 
-`Those are very positive things _ _ said.`
+`Ten years? That's _!`
 
 ## --blanks--
 
-`you’ve`
+`impressive`
 
 ### --feedback--
 
-Contraction of `you have`, used here in the present perfect tense.
-
----
-
-`just`
-
-### --feedback--
-
-Used to indicate that the action happened a very short time ago.
+It means something is very good or makes you say "Wow!"

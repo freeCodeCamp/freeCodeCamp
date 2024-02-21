@@ -23,7 +23,11 @@ What does Bob's statement tell us about the woman?
 
 ## --answers--
 
-She is responsible for the HR department.
+She is looking for a job in the HR department.
+
+### --feedback--
+
+Bob's statement indicates she already has a significant role, not that she is seeking employment.
 
 ---
 
@@ -43,12 +47,8 @@ Bob's statement focuses on her responsibility, not how long she's been part of t
 
 ---
 
-She is looking for a job in the HR department.
-
-### --feedback--
-
-Bob's statement indicates she already has a significant role, not that she is seeking employment.
+She is responsible for the HR department.
 
 ## --video-solution--
 
-1
+4

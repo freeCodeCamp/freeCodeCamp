@@ -1,54 +1,54 @@
 ---
 id: 65b25f2c3284994aa6632194
 title: Task 17
-challengeType: 19
+challengeType: 22
 dashedName: task-17
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
-AUDIO REFERENCE:
-Bob: Word is that she’s strict but fair.
+AUDIO REFERENCE: 
+Bob: She's been working with tech companies for about ten years.
 -->
 
 # --description--
 
-The word `but` is a conjunction used to show contrast between two ideas or statements. It connects phrases or clauses, presenting a difference or exception. In the phrase `strict but fair`, `but` links two qualities that might seem opposite but are true at the same time. `Strict` suggests being very firm and setting clear rules, while `fair` means treating people in a just and equal way.
+The structure `have/has been doing + verb-ing` is used in the present perfect continuous tense. It emphasizes actions that started in the past and are still continuing now. `Been` is the past participle form of the verb `be`.
 
-# --question--
+It can be used with `for` followed by a period of time or `since` followed by a specific starting point in time to highlight the duration or how long the action happens.
 
-## --text--
+Examples:
 
-What does `strict but fair` in Bob's statement imply about the person he's talking about?
+`We have been studying English for three years.` This means we started studying English three years ago and are still studying it now.
 
-## --answers--
+`He has been playing the guitar since he was ten.` This means he started playing the guitar when he was ten years old and continues to play it.
 
-She is lenient and does not enforce rules.
+# --fillInTheBlank--
 
-### --feedback--
+## --sentence--
 
-`Strict but fair` suggests she is firm in rule enforcement, not lenient.
+`_ _ working with tech companies _ about ten years.`
 
----
+## --blanks--
 
-She is unfair in her strictness.
-
-### --feedback--
-
-`But fair` indicates that despite being strict, she is also just and reasonable.
-
----
-
-She is strict in some situations and fair in others.
+`She's`
 
 ### --feedback--
 
-The phrase implies she is both strict and fair at the same time, not in separate situations.
+It's the contraction for `She has`, starting the sentence with a capital letter.
 
 ---
 
-She enforces rules firmly but treats people justly and equally.
+`been`
 
-## --video-solution--
+### --feedback--
 
-4
+It's a part of the present perfect continuous tense, showing the action is ongoing.
+
+---
+
+`for`
+
+### --feedback--
+
+This word is used to introduce the duration of time the action has been happening.

@@ -7,48 +7,49 @@ audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
-AUDIO REFERENCE:
-Tom: Hey, have you ever worked with Anna from HR?
+AUDIO REFERENCE: 
+Bob: She's been working with tech companies for about ten years.
+Sophie: Ten years? That's impressive!
 -->
 
 # --description--
 
-In the dialogue, `have you ever worked with` uses the present perfect tense in a question form, combined with `ever`. It’s formed with `have/has` and the subject (`you`/`she`) plus the past participle of a verb, like `worked`. It's used to talk about experiences that have happened at any time in a person's life up to now. `Ever` in questions asks if something has happened at any time in the past, suggesting a broad, unspecified time frame.
+Listen to the audio and answer the question.
 
 # --question--
 
 ## --text--
 
-What is Tom asking with `have you ever worked with Anna from HR`?
+How does Sophie think about the ten years?
 
 ## --answers--
 
-He wants to know if the person will work with Anna in the future.
+She finds it boring.
 
 ### --feedback--
 
-The present perfect tense asks about past experiences, not future plans.
+`Impressive` is used for things we find amazing, not boring.
 
 ---
 
-He is asking about the frequency of working with Anna.
+She is unhappy about the time.
 
 ### --feedback--
 
-`Ever` inquires if it has happened at all, not about how often it has happened.
+`Impressive` means she thinks it's good, not bad.
 
 ---
 
-He is inquiring if the person has had the experience of working with Anna at any time in the past.
-
----
-
-He is confirming that the person currently works with Anna.
+She is confused.
 
 ### --feedback--
 
-The present perfect tense with `ever` is used to ask about any past experience, not to confirm a current situation.
+Sophie understands and is amazed, not confused.
+
+---
+
+She thinks it's great someone did something for so long.
 
 ## --video-solution--
 
-3
+4

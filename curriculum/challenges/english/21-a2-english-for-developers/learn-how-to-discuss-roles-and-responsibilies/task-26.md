@@ -1,54 +1,40 @@
 ---
 id: 65b655b819433f7c3e9df224
 title: Task 26
-challengeType: 19
+challengeType: 22
 dashedName: task-26
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
 AUDIO REFERENCE:
-Alice: She seems to take her work very seriously.
+Bob: Word is that she’s strict but fair.
 -->
 
 # --description--
 
-`Seriously` is an adverb meaning in a serious way or to a serious degree. It often describes how something is done with earnest intent or focus.
+The phrase `word is` is used when sharing information or rumors you've heard from others. It's like saying `people say` or `I've heard`.
 
-# --question--
+For example, if someone says, `Word is that the new update will make the program faster`, they mean they've heard the new update will improve the program's speed.
 
-## --text--
+# --fillInTheBlank--
 
-What does `seriously` in Alice's statement imply about her approach to work?`
+## --sentence--
 
-## --answers--
+`_ _ that she’s strict but fair.`
 
-She does not care much about her work.
+## --blanks--
 
-### --feedback--
-
-`Seriously` implies a high level of care and dedication, contradicting the idea of not caring.
-
----
-
-She finds her work amusing.
+`Word`
 
 ### --feedback--
 
-Taking something `seriously` suggests a focused, earnest approach, not that it's amusing.
+This is the information or rumor being shared. The first letter should be upperclass.
 
 ---
 
-She approaches her work with a high level of dedication and care.
-
----
-
-She works in a relaxed and casual manner.
+`is`
 
 ### --feedback--
 
-`Seriously` indicates a diligent and earnest approach, not a relaxed or casual one.
-
-## --video-solution--
-
-3
+This verb connects the information to what is being said about it.

@@ -1,54 +1,46 @@
 ---
 id: 65b657fea6ef4e81eb9a10fd
 title: Task 29
-challengeType: 19
+challengeType: 22
 dashedName: task-29
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
 AUDIO REFERENCE:
-Tom: I don't really know much about her, to be honest. What's her role?
+Bob: Word is that she’s strict but fair, and she always looks out for the best interests of the team.
 -->
 
 # --description--
 
-The question `What's her role?` is asking for information about a person's job or position.
+The phrase `look out for` means to watch over and protect someone or something, making sure they are safe or their needs are met. For example, `You should look out for your children at the park.` means you should make sure your children are safe while you are at the park.
 
-# --question--
+# --fillInTheBlank--
 
-## --text--
+## --sentence--
 
-What is Tom asking with `What's her role`?
+`Word is that she’s strict but fair, and she always _ _ _ the best interests of the team.`
 
-## --answers--
+## --blanks--
 
-He is inquiring about her job or position.
-
----
-
-He wants to know her age.
+`looks`
 
 ### --feedback--
 
-Asking about someone's role refers to their job or position, not their age.
+This is the first part of a phrase meaning to watch over and protect. You should use its third-person singular form.
 
----
+## --blanks--
 
-He is asking if she likes her job.
-
-### --feedback--
-
-The question about someone's role is about what they do, not their feelings about the job.
-
----
-
-He is confirming she has no job.
+`out`
 
 ### --feedback--
 
-The question implies seeking information about her job, not confirming its absence.
+This part of the phrase indicates watching over.
 
-## --video-solution--
+## --blanks--
 
-1
+`for`
+
+### --feedback--
+
+This preposition is used to specify who or what you are protecting or caring for.

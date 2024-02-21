@@ -1,54 +1,58 @@
 ---
 id: 65b625b0ce7ac75e1115c8cb
 title: Task 22
-challengeType: 19
+challengeType: 22
 dashedName: task-22
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
-AUDIO REFERENCE:
-Tom: Well, I noticed that she's always in the office super early and leaves pretty late.
+AUDIO REFERENCE: 
+Bob: Well, she's responsible for hiring people and taking care of workers.
 -->
 
 # --description--
 
-In English, sometimes an adjective can modify another adjective to give more detail. For instance, `super early` combines `super` (meaning very or extremely) with `early` (adjective). This creates a stronger emphasis on the adjective it modifies.
+After `responsible for`, you use the `-ing` form of verbs to describe these tasks. 
 
-# --question--
+`Hiring` means to give someone a job. A simple example could be, `The manager is hiring new workers.`
 
-## --text--
+`Taking care of` means to look after or ensure someone's well-being. An example is, `She is taking care of her sick friend.`
 
-What does `super early` mean when Tom says `I noticed that she's always in the office super early`?
+# --fillInTheBlank--
 
-## --answers--
+## --sentence--
 
-She arrived exactly on time.
+`Well, she's responsible for _ people and _ _ _ workers.`
 
-### --feedback--
+## --blanks--
 
-`Super early` suggests arriving much earlier than the scheduled time, not just on time.
-
----
-
-She arrived much earlier than the scheduled time.
-
----
-
-She was slightly late.
+`hiring`
 
 ### --feedback--
 
-`Super early` indicates arriving earlier, not being late.
+It means to give someone a job or position.
 
 ---
 
-She didn't come to the office at all.
+`taking`
 
 ### --feedback--
 
-Arriving `super early` implies presence, not absence.
+This word starts the phrase for looking after someone.
 
-## --video-solution--
+---
 
-2
+`care`
+
+### --feedback--
+
+It's the part of the phrase meaning to ensure someone's well-being.
+
+---
+
+`of`
+
+### --feedback--
+
+This small word connects `taking care` with who is being looked after, in this case, `workers`.

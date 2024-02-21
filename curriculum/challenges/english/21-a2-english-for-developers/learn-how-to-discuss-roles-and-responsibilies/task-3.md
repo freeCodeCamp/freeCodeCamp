@@ -23,7 +23,11 @@ What does Bob want to know by using `yet` in his question?
 
 ## --answers--
 
-If the person has met Anna at any time up until now
+If Anna is planning to meet the person later
+
+### --feedback--
+
+The use of `yet` asks about something that might have already happened, not about future plans.
 
 ---
 
@@ -35,11 +39,7 @@ Bob's use of `yet`` implies he's asking about meeting Anna, not about hearing of
 
 ---
 
-If Anna is planning to meet the person later
-
-### --feedback--
-
-The use of `yet` asks about something that might have already happened, not about future plans.
+If the person has met Anna at any time up until now
 
 ---
 
@@ -51,4 +51,4 @@ If meeting Anna is not possible
 
 ## --video-solution--
 
-1
+3
