@@ -143,7 +143,7 @@
     "lodash": "4.17.21",
     "markdownlint": "0.31.0",
     "npm-run-all2": "5.0.2",
-    "prettier": "3.1.0",
+    "prettier": "3.2.5",
     "prismjs": "1.29.0",
     "process": "0.11.10",
     "start-server-and-test": "1.15.5",
