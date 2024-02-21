@@ -1464,6 +1464,7 @@
     "go-back-to-learn": "カリキュラムの安定版へ戻る。",
     "read-database-cert-article": "続行する前に、こちらのフォーラム投稿をお読みください。",
     "enable-cookies": "サードパーティーの Cookie が有効になっていることを確認してから開始してください。",
-    "english-only": "このセクションのコースは、英語版でのみ利用可能です。現時点ではタイトルと紹介文のみが翻訳に対応しており、レッスン自体は翻訳されておりません。"
+    "english-only": "このセクションのコースは、英語版でのみ利用可能です。現時点ではタイトルと紹介文のみが翻訳に対応しており、レッスン自体は翻訳されておりません。",
+    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
   }
 }

@@ -1464,6 +1464,7 @@
     "go-back-to-learn": "العودة إلى النسخة المستقرة من المنهج الدراسي.",
     "read-database-cert-article": "الرجاء قراءة هذا الموضوع قبل المتابعة.",
     "enable-cookies": "يجب عليك السماح باستخدام third-party cookies قبل البَدْء.",
-    "english-only": "الدورات الدراسية في هذا القسم متاحة باللغة الإنكليزية فقط. ونحن قادرون فقط على تَرْجَمَة العناوين والمقدمات في الوقت الحاضر، وليس الدروس ذاتها."
+    "english-only": "الدورات الدراسية في هذا القسم متاحة باللغة الإنكليزية فقط. ونحن قادرون فقط على تَرْجَمَة العناوين والمقدمات في الوقت الحاضر، وليس الدروس ذاتها.",
+    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
   }
 }
