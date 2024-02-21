@@ -157,9 +157,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody
   ],
   [Languages.Japanese]: [
-    SuperBlocks.CollegeAlgebraPy,
-    SuperBlocks.FoundationalCSharp,
-    SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
     SuperBlocks.UpcomingPython,
