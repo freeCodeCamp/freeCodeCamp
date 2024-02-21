@@ -1,6 +1,6 @@
 ---
 id: 5956795bc9e2c415eb244de1
-title: Hash join
+title: Хеш-об’єднання
 challengeType: 1
 forumTopicId: 302284
 dashedName: hash-join
@@ -8,40 +8,40 @@ dashedName: hash-join
 
 # --description--
 
-An inner join is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the nested loop join algorithm, but a more scalable alternative is the hash join algorithm.
+Внутрішнє об’єднання — це операція, яка об’єднує дві таблиці даних в одну таблицю на основі відповідних значень стовпців. Найпростіший спосіб реалізації цієї операції — алгоритм об’єднання вкладеними циклами, але більш масштабований альтернативний варіант — це алгоритм хеш-об’єднання.
 
-The "hash join" algorithm consists of two steps:
+Алгоритм «хеш-об’єднання» складається з двох кроків:
 
 <ol>
-  <li><strong>Hash phase:</strong> Create a multimap from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
+  <li><strong>Етап хешування:</strong> створіть мультивідображення з однієї з двох таблиць, мапуючи значення з кожного стовпця до всіх рядків, які містять його.</li>
   <ul>
-    <li>The multimap must support hash-based lookup which scales better than a simple linear search, because that's the whole point of this algorithm.</li>
-    <li>В ідеалі, ми створюємо мультимедійне відображення для меншої таблиці, таким чином мінімізуючи час створення та розмір пам'яті.</li>
+    <li>Мультивідображення має підтримувати пошук на основі хешу, що масштабується краще, ніж простий лінійний пошук, оскільки це суть цього алгоритму.</li>
+    <li>В ідеальні потрібно створити мультивідображення для меншої таблиці, щоб мінімізувати час створення і розмір пам’яті.</li>
   </ul>
-  <li><strong>Приєднатися до фази:</strong> Скануйте іншу таблицю, знайдіть відповідні рядки, дивлячись у багатофункціональну карту, створену раніше.</li>
+  <li><strong>Етап об’єднання:</strong> проскануйте іншу таблицю та знайдіть рядки, які збігаються, глянувши на мультивідображення, створене раніше.</li>
 </ol>
 
-В псевдокоді алгоритм може бути виражений так:
+В псевдокоді алгоритм буде виражений наступним чином:
 
-<pre><strong>let</strong> <i>A</i> = the first input table (or ideally, the larger one)
-<strong>let</strong> <i>B</i> = the second input table (or ideally, the smaller one)
-<strong>let</strong> <i>j<sub>A</sub></i> = the join column ID of table <i>A</i>
-<strong>let</strong> <i>j<sub>B</sub></i> = the join column ID of table <i>B</i>
-<strong>let</strong> <i>M<sub>B</sub></i> = a multimap for mapping from single values to multiple rows of table <i>B</i> (starts out empty)
-<strong>let</strong> <i>C</i> = the output table (starts out empty)
-<strong>for each</strong> row <i>b</i> in table <i>B</i>:
-  <strong>place</strong> <i>b</i> in multimap <i>M<sub>B</sub></i> under key <i>b(j<sub>B</sub>)</i>
-<strong>for each</strong> row <i>a</i> in table <i>A</i>:
-  <strong>for each</strong> row <i>b</i> in multimap <i>M<sub>B</sub></i> under key <i>a(j<sub>A</sub>)</i>:
-    <strong>let</strong> <i>c</i> = the concatenation of row <i>a</i> and row <i>b</i>
-    <strong>place</strong> row <i>c</i> in table <i>C</i>
+<pre><strong>let</strong> <i>A</i> = перша вхідна таблиця (в ідеалі та, що більша)
+<strong>let</strong> <i>B</i> = друга вхідна таблиця (в ідеалі та, що менша)
+<strong>let</strong> <i>j<sub>A</sub></i> = ID стовпця до об’єднання таблиці <i>A</i>
+<strong>let</strong> <i>j<sub>B</sub></i> = ID стовпця до об’єднання таблиці <i>B</i>
+<strong>let</strong> <i>M<sub>B</sub></i> = мультивідображення для мапування значень до декількох рядків таблиці <i>B</i> (спочатку порожня)
+<strong>let</strong> <i>C</i> = вихідна таблиця (спочатку порожня)
+<strong>for each</strong> рядок <i>b</i> в таблиці <i>B</i>:
+  <strong>place</strong> <i>b</i> в мультивідображенні <i>M<sub>B</sub></i> під ключем <i>b(j<sub>B</sub>)</i>
+<strong>for each</strong> рядок <i>a</i> в таблиці <i>A</i>:
+  <strong>for each</strong> рядок <i>b</i> в мультивідображенні <i>M<sub>B</sub></i> під ключем <i>a(j<sub>A</sub>)</i>:
+    <strong>let</strong> <i>c</i> = об’єднання рядків <i>a</i> та <i>b</i>
+    <strong>place</strong> рядок <i>c</i> в таблиці <i>C</i>
 </pre>
 
 # --instructions--
 
-Реалізуйте алгоритм "хеш-приєднання" як функцію, та продемонструйте, що вона передає тестове значення, вказане нижче. Функція має приймати два масиви об'єктів і повертати масив комбінованих об’єктів.
+Реалізуйте алгоритм «хеш-об’єднання» як функцію та продемонструйте, що він проходить тестовий випадок вище. Функція має приймати два масиви об’єктів і повернути масив об’єднаних об’єктів.
 
-**Input**
+**Вхідні дані**
 
 <table>
   <tr>
@@ -53,7 +53,7 @@ The "hash join" algorithm consists of two steps:
             <table>
               <tr>
                 <th style="padding: 4px; margin: 5px;">Age</th>
-                <th style="padding: 4px; margin: 5px;">Ім’я</th>
+                <th style="padding: 4px; margin: 5px;">Name</th>
               </tr>
               <tr>
                 <td style="padding: 4px; margin: 5px;">27</td>
@@ -82,8 +82,8 @@ The "hash join" algorithm consists of two steps:
           <td style="border:none">
             <table>
               <tr>
-                <th style="padding: 4px; margin: 5px;">Персонаж</th>
-                <th style="padding: 4px; margin: 5px;">Ворог</th>
+                <th style="padding: 4px; margin: 5px;">Character</th>
+                <th style="padding: 4px; margin: 5px;">Nemesis</th>
               </tr>
               <tr>
                 <td style="padding: 4px; margin: 5px;">Jonah</td>
@@ -113,13 +113,13 @@ The "hash join" algorithm consists of two steps:
             <i>j<sub>A</sub> =</i>
           </td>
           <td style="border:none">
-            <i><code>Name</code> (i.e. column 1)</i>
+            <i><code>Name</code> (тобто стовпчик 1)</i>
           </td>
           <td style="border:none">
             <i>j<sub>B</sub> =</i>
           </td>
           <td style="border:none">
-            <i><code>Character</code> (i.e. column 0)</i>
+            <i><code>Character</code> (тобто стовпчик 0)</i>
           </td>
         </tr>
       </table>
@@ -127,17 +127,17 @@ The "hash join" algorithm consists of two steps:
   </tr>
 </table>
 
-**Результат**
+**Вихідні дані**
 
-| A_вік | A_ім'я | B_персонаж | B_ворог |
-| ----- | ------ | ---------- | ------- |
-| 27    | Jonah  | Jonah      | Whales  |
-| 27    | Jonah  | Jonah      | Spiders |
-| 18    | Alan   | Alan       | Ghosts  |
-| 18    | Alan   | Alan       | Zombies |
-| 28    | Glory  | Glory      | Buffy   |
-| 28    | Alan   | Alan       | Ghosts  |
-| 28    | Alan   | Alan       | Zombies |
+| A_age | A_name | B_character | B_nemesis |
+| ----- | ------ | ----------- | --------- |
+| 27    | Jonah  | Jonah       | Whales    |
+| 27    | Jonah  | Jonah       | Spiders   |
+| 18    | Alan   | Alan        | Ghosts    |
+| 18    | Alan   | Alan        | Zombies   |
+| 28    | Glory  | Glory       | Buffy     |
+| 28    | Alan   | Alan        | Ghosts    |
+| 28    | Alan   | Alan        | Zombies   |
 
 Порядок рядків у вихідній таблиці не є важливим.
 

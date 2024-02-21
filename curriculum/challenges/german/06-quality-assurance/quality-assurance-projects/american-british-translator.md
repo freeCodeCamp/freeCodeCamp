@@ -11,16 +11,8 @@ dashedName: american-british-translator
 Erstelle eine vollständige JavaScript-Anwendung, die eine ähnliche Funktionalität wie <a href="https://american-british-translator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://american-british-translator.freecodecamp.rocks/</a> aufweist. Working on this project will involve you writing your code using one of the following methods:
 
 -   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
--   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
+-   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
 -   Verwende einen Site-Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien von unserem GitHub-Repo zu integrieren.
-
-Wenn du Replit verwendest, dann folge diesen Schritten, um das Projekt einzurichten:
-
--   Beginne, indem du das Projekt in Replit importierst.
--   Daraufhin wird ein `.replit`-Fenster angezeigt.
--   Select `Use run command` and click the `Done` button.
-
-Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 # --instructions--
 
@@ -28,8 +20,8 @@ Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projek
 -   Vervollständige die `/api/translate`-Route in `/routes/api.js`
 -   Erstelle alle Unit/Funktionstests in `tests/1_unit-tests.js` und `tests/2_functional-tests.js`
 -   In den JavaScript-Dateien unter `/components` findest du die verschiedenen Schreibweisen und Begriffe, die deine Anwendung übersetzen soll
--   To run the tests on Replit, set `NODE_ENV` to `test` without quotes in the `.env` file
--   Um die Tests in der Konsole auszuführen, verwendest du den Befehl `npm run test`. Um die Replit-Konsole zu öffnen, drückst du Strg+Umschalt+P (Cmd auf einem Mac) und gibst "open shell" ein
+-   To run the tests automatically, set `NODE_ENV` to `test` without quotes in the `.env` file
+-   Um die Tests in der Konsole auszuführen, verwendest du den Befehl `npm run test`.
 
 Schreibe die folgenden Tests in `tests/1_unit-tests.js`:
 
