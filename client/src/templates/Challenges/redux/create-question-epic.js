@@ -122,7 +122,10 @@ function createQuestionEpic(action$, state$, { window }) {
         : '### ' + i18next.t('forum-help.camper-code') + '\n\n';
 
       const whatsHappeningHeading = i18next.t('forum-help.whats-happening');
-      const describe = i18next.t('forum-help.describe');
+      const helpModalFormDescription = document.getElementById(
+        'help-modal-form-description'
+      );
+      const describe = helpModalFormDescription.value;
       const projectOrCodeHeading = projectFormValues.length
         ? `###${i18next.t('forum-help.camper-project')}\n\n`
         : camperCodeHeading;
