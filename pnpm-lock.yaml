@@ -139,8 +139,8 @@ importers:
         specifier: 5.0.2
         version: 5.0.2
       prettier:
-        specifier: 3.1.0
-        version: 3.1.0
+        specifier: 3.2.5
+        version: 3.2.5
       prismjs:
         specifier: 1.29.0
         version: 1.29.0
@@ -1161,8 +1161,8 @@ importers:
         specifier: 8.2.6
         version: 8.2.6
       prettier:
-        specifier: 3.1.0
-        version: 3.1.0
+        specifier: 3.2.5
+        version: 3.2.5
       ts-node:
         specifier: 10.9.2
         version: 10.9.2(@types/node@20.8.2)(typescript@5.2.2)
@@ -26890,8 +26890,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  /prettier@3.1.0:
-    resolution: {integrity: sha512-TQLvXjq5IAibjh8EpBIkNKxO749UEWABoiIZehEPiY4GNpVdhaFKqSTu+QrlU6D2dPAfubRmtJTi4K4YkQ5eXw==}
+  /prettier@3.2.5:
+    resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
