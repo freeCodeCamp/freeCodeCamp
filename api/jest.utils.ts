@@ -12,8 +12,8 @@ declare global {
 }
 
 type Options = {
-  sendCSRFToken: boolean;
-};
+  sendCSRFToken?: boolean;
+} & Record<string, unknown>;
 
 const requests = {
   GET: (resource: string) => request(fastifyTestInstance?.server).get(resource),

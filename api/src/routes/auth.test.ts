@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { defaultUserEmail, setupServer, superRequest } from '../../jest.utils';
 
+// TODO: replace dev login with the /signin, /signout routes
 describe('dev login', () => {
   setupServer();
   beforeEach(async () => {
@@ -91,5 +93,61 @@ describe('dev login', () => {
       usernameDisplay: expect.stringMatching(fccUuidRe)
     });
     expect(user.username).toBe(user.usernameDisplay);
+  });
+});
+
+describe('dev login take 2', () => {
+  setupServer();
+
+  beforeEach(async () => {
+    await fastifyTestInstance.prisma.user.deleteMany({
+      where: { email: defaultUserEmail }
+    });
+  });
+
+  afterAll(async () => {
+    await fastifyTestInstance.prisma.user.deleteMany({
+      where: { email: defaultUserEmail }
+    });
+  });
+
+  describe('GET /signin', () => {
+    it('should create an account if one does not exist', async () => {
+      const res = await superRequest('/signin', { method: 'GET' });
+
+      const count = await fastifyTestInstance.prisma.user.count({
+        where: { email: defaultUserEmail }
+      });
+
+      expect(count).toBe(1);
+      expect(res.body).toStrictEqual({});
+    });
+
+    it('should set the jwt_access_token cookie', async () => {
+      const res = await superRequest('/signin', { method: 'GET' });
+
+      expect(res.status).toBe(302);
+      expect(res.headers['set-cookie']).toEqual(
+        expect.arrayContaining([expect.stringMatching(/jwt_access_token=/)])
+      );
+      // TODO: check the cookie value
+    });
+
+    it.todo('should create a session');
+
+    it('should redirect to the Referer', async () => {
+      const res = await superRequest(
+        '/signin',
+        { method: 'GET' },
+        // referer must be one of the allowed origins (www.freecodecamp.org is
+        // allowed)
+        { headers: { referer: 'https://www.freecodecamp.org/espanol/learn' } }
+      );
+
+      expect(res.status).toBe(302);
+      expect(res.headers.location).toBe(
+        'https://www.freecodecamp.org/espanol/learn'
+      );
+    });
   });
 });
