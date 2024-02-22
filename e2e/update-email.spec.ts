@@ -58,6 +58,8 @@ test.describe('The update-email page', () => {
 
 test.describe('The update-email page when signed out', () => {
   test('Redirects to signin page when user is not logged in', async () => {
+    await page.context().clearCookies();
+
     await page.goto('/update-email');
     await expect(page).toHaveURL(/.*\/signin\/?$/);
   });
