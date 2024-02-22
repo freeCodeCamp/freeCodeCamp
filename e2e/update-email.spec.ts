@@ -14,7 +14,10 @@ test.describe('The update-email page', () => {
     await page
       .context()
       .storageState({ path: 'playwright/.auth/certified-user.json' });
-    await page.goto('/update-email', { waitUntil: 'domcontentloaded' });
+    await page.goto('/update-email');
+    //log the whole url
+    console.log(page.url());
+    throw new Error('url: ' + page.url());
   });
 
   test('The page renders with correct title', async () => {
