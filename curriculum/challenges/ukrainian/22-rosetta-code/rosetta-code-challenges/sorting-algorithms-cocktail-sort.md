@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8004
-title: Sorting algorithms/Cocktail sort
+title: 'Алгоритми сортування: сортування змішуванням'
 challengeType: 1
 forumTopicId: 302312
 dashedName: sorting-algorithmscocktail-sort
@@ -8,45 +8,45 @@ dashedName: sorting-algorithmscocktail-sort
 
 # --description--
 
-The <a href="https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort" target="_blank" rel="noopener noreferrer nofollow">cocktail sort</a> is an improvement on the Bubble Sort. Given an array of numbers, the cocktail sort will traverse the array from start to finish, moving the largest number to the end. Then, it will traverse the array backwards and move the smallest number to the start. It repeats these two passes, moving the next largest/smallest number to its correct position in the array until it is sorted.
+<a href="https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort" target="_blank" rel="noopener noreferrer nofollow">Сортування змішуванням</a> — це покращена версія сортування бульбашкою. Маючи масив чисел, сортування змішуванням проходитиме масив від початку до кінця, переміщуючи найбільше число в кінець. Потім він обійде масив у зворотньому порядку та перемістить найменше число на початок. Ці дії повторюються, переміщуючи наступне найбільше/найменше число на правильну позицію в масиві, доки він не буде відсортований.
 
 # --instructions--
 
-Write a function that sorts a given array using cocktail sort.
+Напишіть функцію, яка впорядкує даний масив, використовуючи сортування змішуванням.
 
 # --hints--
 
-`cocktailSort` should be a function.
+`cocktailSort` має бути функцією.
 
 ```js
 assert(typeof cocktailSort == 'function');
 ```
 
-`cocktailSort([25, 32, 12, 7, 20])` should return an array.
+`cocktailSort([25, 32, 12, 7, 20])` має повернути масив.
 
 ```js
 assert(Array.isArray(cocktailSort([25, 32, 12, 7, 20])));
 ```
 
-`cocktailSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`cocktailSort([25, 32, 12, 7, 20])` має повернути `[7, 12, 20, 25, 32]`.
 
 ```js
 assert.deepEqual(cocktailSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`cocktailSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`cocktailSort([38, 45, 35, 8, 13])` має повернути `[8, 13, 35, 38, 45]`.
 
 ```js
 assert.deepEqual(cocktailSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`cocktailSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`cocktailSort([43, 36, 20, 34, 24])` має повернути `[20, 24, 34, 36, 43]`.
 
 ```js
 assert.deepEqual(cocktailSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`cocktailSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`cocktailSort([12, 33, 26, 18, 1, 16, 38])` має повернути `[1, 12, 16, 18, 26, 33, 38]`.
 
 ```js
 assert.deepEqual(cocktailSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -60,7 +60,7 @@ assert.deepEqual(cocktailSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`cocktailSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`cocktailSort([3, 39, 48, 16, 1, 4, 29])` має повернути `[1, 3, 4, 16, 29, 39, 48]`.
 
 ```js
 assert.deepEqual(cocktailSort([3, 39, 48, 16, 1, 4, 29]), [

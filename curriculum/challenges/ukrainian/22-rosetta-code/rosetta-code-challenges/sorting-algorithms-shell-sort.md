@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8010
-title: Sorting algorithms/Shell sort
+title: 'Алгоритми сортування: сортування Шелла'
 challengeType: 1
 forumTopicId: 302317
 dashedName: sorting-algorithmsshell-sort
@@ -8,51 +8,51 @@ dashedName: sorting-algorithmsshell-sort
 
 # --description--
 
-Write a function to sort an array of elements using the Shell sort algorithm, a diminishing increment sort. The function should return the sorted array.
+Напишіть функцію для сортування масиву елементів за допомогою алгоритму сортування Шелла, що є сортуванням зі зменшенням приросту. Функція має повернути відсортований масив.
 
-The Shell sort (also known as Shellsort or Shell's method) is named after its inventor, Donald Shell, who published the algorithm in 1959.
+Сортування Шелла (також відоме як метод Шелла) названо на честь його автора — Дональда Шелла, який опублікував алгоритм у 1959 році.
 
-Shell sort is a sequence of interleaved insertion sorts based on an increment sequence. The increment size is reduced after each pass until the increment size is 1.
+Сортування Шелла — це послідовність перемежованих сортувань включенням на основі послідовності приросту. Величина приросту зменшується після кожного проходження, поки не дорівнюватиме 1.
 
-With an increment size of 1, the sort is a basic insertion sort, but by this time the data is guaranteed to be almost sorted, which is insertion sort's "best case".
+Сортування з величиною приросту 1 — це базове сортування включенням, але до цього часу дані практично відсортовані, що є «найкращим випадком» для сортування включенням.
 
-Any sequence will sort the data as long as it ends in 1, but some work better than others.
+Будь-яка послідовність сортуватиме дані, поки вона закінчується на 1, але деякі працюють краще за інші.
 
-Empirical studies have shown a geometric increment sequence with a ratio of about 2.2 work well in practice.
+Емпіричні дослідження показали, що геометрична послідовність приросту з відношенням приблизно 2.2 добре працює на практиці.
 
 # --hints--
 
-`shellSort` should be a function.
+`shellSort` має бути функцією.
 
 ```js
 assert(typeof shellSort == 'function');
 ```
 
-`shellSort([25, 32, 12, 7, 20])` should return an array.
+`shellSort([25, 32, 12, 7, 20])` має повернути масив.
 
 ```js
 assert(Array.isArray(shellSort([25, 32, 12, 7, 20])));
 ```
 
-`shellSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`shellSort([25, 32, 12, 7, 20])` має повернути `[7, 12, 20, 25, 32]`.
 
 ```js
 assert.deepEqual(shellSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`shellSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`shellSort([38, 45, 35, 8, 13])` має повернути `[8, 13, 35, 38, 45]`.
 
 ```js
 assert.deepEqual(shellSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`shellSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`shellSort([43, 36, 20, 34, 24])` має повернути `[20, 24, 34, 36, 43]`.
 
 ```js
 assert.deepEqual(shellSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`shellSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`shellSort([12, 33, 26, 18, 1, 16, 38])` має повернути `[1, 12, 16, 18, 26, 33, 38]`.
 
 ```js
 assert.deepEqual(shellSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -66,7 +66,7 @@ assert.deepEqual(shellSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`shellSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`shellSort([3, 39, 48, 16, 1, 4, 29])` має повернути `[1, 3, 4, 16, 29, 39, 48]`.
 
 ```js
 assert.deepEqual(shellSort([3, 39, 48, 16, 1, 4, 29]), [

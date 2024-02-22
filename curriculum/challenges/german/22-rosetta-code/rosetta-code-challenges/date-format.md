@@ -1,6 +1,6 @@
 ---
 id: 59669d08d75b60482359409f
-title: Date format
+title: Datumsformat
 challengeType: 1
 forumTopicId: 302243
 dashedName: date-format
@@ -11,12 +11,12 @@ dashedName: date-format
 Return an array with two date strings of the current date with the following specifications:
 
 - The first string's date order should be the year number, month number, and day number separated by dashes (`-`).
-- The first string's year should be four digits in length.
-- The first string's month and day should not contain any leading zeros.
-- The second string's weekday and month names should not be abbreviated.
-- The second string's day should not contain any leading zeros.
+- Die Jahreszahl des ersten Strings sollte vier Ziffern lang sein.
+- Der Monat und der Tag des ersten Strings dürfen keine führenden Nullen enthalten.
+- Die Wochentags- und Monatsnamen des zweiten Strings sollten nicht abgekürzt werden.
+- Der Tag der zweite String sollte keine führenden Nullen enthalten.
 
-Example outputs:
+Beispielhafte Ausgaben:
 
 ```js
 ['2007-11-23', 'Friday, November 23, 2007']
@@ -25,25 +25,25 @@ Example outputs:
 
 # --hints--
 
-`getDateFormats` should be a function.
+`getDateFormats` sollte eine Funktion sein.
 
 ```js
 assert(typeof getDateFormats === 'function');
 ```
 
-`getDateFormats` should return an object.
+`getDateFormats` sollte ein Objekt zurückgeben.
 
 ```js
 assert(typeof getDateFormats() === 'object');
 ```
 
-`getDateFormats` should return an array with 2 elements.
+`getDateFormats` sollte ein Array mit 2 Elementen zurückgeben.
 
 ```js
 assert(getDateFormats().length === 2);
 ```
 
-`getDateFormats` should return the correct date in the right format
+`getDateFormats` sollte das richtige Datum im richtigen Format zurückgeben
 
 ```js
 assert.deepEqual(getDateFormats(), dates, equalsMessage);

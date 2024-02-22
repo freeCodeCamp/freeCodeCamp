@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339acd
-title: 'Abundant, deficient and perfect number classifications'
+title: 'Збиткові, досконалі та надлишкові числа'
 challengeType: 1
 forumTopicId: 302221
 dashedName: abundant-deficient-and-perfect-number-classifications
@@ -8,55 +8,55 @@ dashedName: abundant-deficient-and-perfect-number-classifications
 
 # --description--
 
-These define three classifications of positive integers based on their proper divisors.
+Натуральні числа можна класифікувати на три категорії на основі їхніх властивих дільників.
 
-Let $P(n)$ be the sum of the proper divisors of `n` where proper divisors are all positive integers `n` other than `n` itself.
+Нехай $P(n)$ буде сумою властивих дільників числа `n`, де властивими дільниками є всі натуральні числа `n`, окрім самого числа `n`.
 
-If `P(n) < n` then `n` is classed as `deficient`
+Якщо `P(n) < n`, то `n` класифікується як `deficient` (збиткове).
 
-If `P(n) === n` then `n` is classed as `perfect`
+Якщо `P(n) === n`, то `n` класифікується як `perfect` (досконале).
 
-If `P(n) > n` then `n` is classed as `abundant`
+Якщо `P(n) > n`, то `n` класифікується як `abundant` (надлишкове).
 
-**Example**: `6` has proper divisors of `1`, `2`, and `3`. `1 + 2 + 3 = 6`, so `6` is classed as a perfect number.
+**Наприклад**: властивими дільниками числа `6` є `1`, `2` та `3`. `1 + 2 + 3 = 6`, тому `6` класифікується як досконале число.
 
 # --instructions--
 
-Implement a function that calculates how many of the integers from `1` to `num` (inclusive) are in each of the three classes. Output the result as an array in the following format `[deficient, perfect, abundant]`.
+Реалізуйте функцію, яка розраховує кількість цілих чисел від `1` до `num` (включно) в кожній з трьох категорій. Виведіть результат у вигляді масиву в наступному форматі: `[збиткове, досконале, надлишкове]`.
 
 # --hints--
 
-`getDPA` should be a function.
+`getDPA` має бути функцією.
 
 ```js
 assert(typeof getDPA === 'function');
 ```
 
-`getDPA(5000)` should return an array.
+`getDPA(5000)` має повернути масив.
 
 ```js
 assert(Array.isArray(getDPA(5000)));
 ```
 
-`getDPA(5000)` return array should have a length of `3`.
+`getDPA(5000)` має повернути масив довжиною `3`.
 
 ```js
 assert(getDPA(5000).length === 3);
 ```
 
-`getDPA(5000)` should return `[3758, 3, 1239]`.
+`getDPA(5000)` має повернути `[3758, 3, 1239]`.
 
 ```js
 assert.deepEqual(getDPA(5000), [3758, 3, 1239]);
 ```
 
-`getDPA(10000)` should return `[7508, 4, 2488]`.
+`getDPA(10000)` має повернути `[7508, 4, 2488]`.
 
 ```js
 assert.deepEqual(getDPA(10000), [7508, 4, 2488]);
 ```
 
-`getDPA(20000)` should return `[15043, 4, 4953]`.
+`getDPA(20000)` має повернути `[15043, 4, 4953]`.
 
 ```js
 assert.deepEqual(getDPA(20000), [15043, 4, 4953]);

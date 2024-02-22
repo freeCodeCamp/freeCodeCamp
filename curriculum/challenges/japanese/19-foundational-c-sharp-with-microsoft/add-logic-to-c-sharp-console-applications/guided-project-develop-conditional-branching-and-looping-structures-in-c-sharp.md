@@ -1,38 +1,38 @@
 ---
 id: 647e217e8acb466c97ccbee4
-title: 'Guided Project - Develop Conditional Branching and Looping Structures in C#'
+title: 'ガイド付きプロジェクト - C# で条件付き分岐とループ構造を開発する'
 challengeType: 19
 dashedName: guided-project-develop-conditional-branching-and-looping-structures-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+このチャレンジには Microsoft Learn プラットフォームで実行するパートがあります。 下記の手順に従ってチャレンジを完了させてください:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/</a> and complete all the tasks for the "Guided Project - Develop Conditional Branching and Looping Structures in C#" module. This is **required** to earn the "Add Logic to C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. <a href="https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/</a> へ移動し、「ガイド付きプロジェクト - C# で条件付き分岐とループ構造を開発する (Guided Project - Develop Conditional Branching and Looping Structures in C#)」モジュール内のすべてのタスクを完了してください。 これは、Microsoft Learn のトロフィー「C# コンソール アプリケーションにロジックを追加する」を獲得し、認定試験の受験資格を得るために**必須**となります。
+1. 完了後、このページに戻り、下記の質問に正しく回答してください。
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/" target="_blank" rel="noreferrer">Develop Conditional Branching and Looping Structures in C#</a> guided project on Microsoft Learn. Then, answer the question below.
+Microsoft Learn でガイド付きプロジェクト「<a href="https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/" target="_blank" rel="noreferrer">C# で条件付き分岐とループ構造を開発する</a>」を完了してください。 次に、下記の質問に回答してください。
 
 # --question--
 
 ## --text--
 
-When is it appropriate to use a `switch-case` construct rather than a `if-elseif-else` construct?
+`if-elseif-else` 構文より `switch-case` 構文を使う方が適切なのは、どのような場合ですか？
 
 ## --answers--
 
-A `switch-case` construct is appropriate when more than 2-3 `else if` code blocks are required.
+`else if` コードブロックが 2、3 個より多く必要になる場合、`switch-case` 構文が適切である。
 
 ---
 
-A `switch-case` construct is appropriate when the number of `case` patterns is small.
+`case` パターンの数が少ない場合、`switch-case` 構文が適切である。
 
 ---
 
-A `switch-case` construct is appropriate when the selection statement is inside a loop.
+選択ステートメントがループ内にある場合、`switch-case` 構文が適切である。
 
 
 ## --video-solution--

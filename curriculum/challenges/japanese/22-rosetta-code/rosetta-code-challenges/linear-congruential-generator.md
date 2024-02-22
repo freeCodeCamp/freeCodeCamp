@@ -1,6 +1,6 @@
 ---
 id: 5e4ce2f5ac708cc68c1df261
-title: Linear congruential generator
+title: 線形合同法
 challengeType: 1
 forumTopicId: 385266
 dashedName: linear-congruential-generator
@@ -12,61 +12,61 @@ A linear congruential generator (LCG) is an <em>algorithm</em> that yields a seq
 
 $$r_{n + 1} = (a \times r_n + c) \bmod m$$
 
-Where:
+ここでは、
 
 <ul>
 <li>$ r_0 $ is a seed.</li>
-<li>$r_1$, $r_2$, $r_3$, ..., are the random numbers.</li>
-<li>$a$, $c$, $m$ are constants.</li>
+<li>$r_1$, $r_2$, $r_3$, ... は乱数です。</li>
+<li>$a$, $c$, $m$ は定数です。</li>
 </ul>
 
-If one chooses the values of $a$, $c$ and $m$ with care, then the generator produces a uniform distribution of integers from $0$ to $m - 1$.
+$a$、$c$、および $m$ の値を慎重に選択すると、発生器は $0$ から $m -1$ までの整数の一様分布を発生させます。
 
-<abbr title="linear congruential generator">LCG</abbr> numbers have poor quality. $r_n$ and $r\_{n + 1}$ are not independent, as true random numbers would be. Anyone who knows $r_n$ can predict $r\_{n + 1}$, therefore <abbr title="linear congruential generator">LCG</abbr> is not cryptographically secure. The <abbr title="linear congruential generator">LCG</abbr> is still good enough for simple tasks like Miller-Rabin primality test, or FreeCell deals. Among the benefits of the <abbr title="linear congruential generator">LCG</abbr>, one can easily reproduce a sequence of numbers, from the same $r_0$. One can also reproduce such sequence with a different programming language, because the formula is so simple.
+<abbr title="線形合同法">LCG</abbr> の数値は質がよくありません。 $r_n$ と $r\_{n + 1}$ には真の乱数にあるような独立性がありません。 $r_n$ を知っている人は誰でも $r\_{n + 1}$ を予測できます。そのため、<abbr title="線形合同法">LCG</abbr> は暗号的に安全ではありません。 それでも、ミラー–ラビン素数判定法やフリーセルのカード配りのような単純なタスクには、<abbr title="線形合同法">LCG</abbr> は十分有効です。 また <abbr title="線形合同法">LCG</abbr> には、同じ $r_0$ から簡単に数列を再現できるという利点もあります。 式がとても簡単なので、このような数列を異なるプログラミング言語で再現することも可能です。
 
 # --instructions--
 
-Write a function that takes $r_0,a,c,m,n$ as parameters and returns $r_n$.
+$r_0,a,c,m,n$ をパラメータとして取り、 $r_n$ を返す関数を記述してください。
 
 # --hints--
 
-`linearCongGenerator` should be a function.
+`linearCongGenerator` は関数とします。
 
 ```js
 assert(typeof linearCongGenerator == 'function');
 ```
 
-`linearCongGenerator(324, 1145, 177, 2148, 3)` should return a number.
+`linearCongGenerator(324, 1145, 177, 2148, 3)` は数値を返す必要があります。
 
 ```js
 assert(typeof linearCongGenerator(324, 1145, 177, 2148, 3) == 'number');
 ```
 
-`linearCongGenerator(324, 1145, 177, 2148, 3)` should return `855`.
+`linearCongGenerator(324, 1145, 177, 2148, 3)` は `855` を返す必要があります。
 
 ```js
 assert.equal(linearCongGenerator(324, 1145, 177, 2148, 3), 855);
 ```
 
-`linearCongGenerator(234, 11245, 145, 83648, 4)` should return `1110`.
+`linearCongGenerator(234, 11245, 145, 83648, 4)` は `1110` を返す必要があります。
 
 ```js
 assert.equal(linearCongGenerator(234, 11245, 145, 83648, 4), 1110);
 ```
 
-`linearCongGenerator(85, 11, 1234, 214748, 5)` should return `62217`.
+`linearCongGenerator(85, 11, 1234, 214748, 5)` は `62217` を返す必要があります。
 
 ```js
 assert.equal(linearCongGenerator(85, 11, 1234, 214748, 5), 62217);
 ```
 
-`linearCongGenerator(0, 1103515245, 12345, 2147483648, 1)` should return `12345`.
+`linearCongGenerator(0, 1103515245, 12345, 2147483648, 1)` は `12345` を返す必要があります。
 
 ```js
 assert.equal(linearCongGenerator(0, 1103515245, 12345, 2147483648, 1), 12345);
 ```
 
-`linearCongGenerator(0, 1103515245, 12345, 2147483648, 2)` should return `1406932606`.
+`linearCongGenerator(0, 1103515245, 12345, 2147483648, 2)` は `1406932606` を返す必要があります。
 
 ```js
 assert.equal(

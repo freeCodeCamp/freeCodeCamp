@@ -1,6 +1,6 @@
 ---
 id: 6331d26fb51aeedd1a2bd64c
-title: "Graphing"
+title: "グラフ表示"
 challengeType: 15
 videoId: vUefCkh8-wc
 dashedName: graphing
@@ -8,23 +8,23 @@ dashedName: graphing
 
 # --description--
 
-This next video will show you the connection between functions and graphing. Notice how the graph is a way to represent the inputs and outputs of a function. Then the video will show you how to graph a function with Python.
+この動画では、関数とグラフの関係を説明します。 グラフは関数の入出力を表す方法であることに注目してください。 そして、Python で関数をグラフ表示する方法を紹介します。
 
-Here is the <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go with the last two videos</a> so you can start making your own graphs.
+直前の 2 つの動画と合わせて<a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">こちらの Colab ノートブック</a>も利用して、自分でグラフを作成してみてください。
 
 # --assignment--
 
-Add code to your algebra Colab notebook for functions and graphing.
+関数とグラフ表示のためのコードを代数学用の Colab ノートブックに追加してください。
 
 ---
 
-Run the following notebook to see <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">more ways to create graphs using algebra and Python.</a>
+次のノートブックを実行して、<a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">代数と Python を使用したその他のグラフ表示方法</a>を確かめてください。
 
 # --question--
 
 ## --text--
 
-Which of the following would put a blue line on a graph?
+グラフに青い線を描くコードは次のうちどれですか？
 
 ## --answers--
 

@@ -1,7 +1,7 @@
 // We have to specify pyodide.js because we need to import that file (not .mjs)
 // and 'import' defaults to .mjs
 import { loadPyodide, type PyodideInterface } from 'pyodide/pyodide.js';
-import type { PyProxy } from 'pyodide/ffi';
+import type { PyProxy, PythonError } from 'pyodide/ffi';
 import pkg from 'pyodide/package.json';
 import * as helpers from '@freecodecamp/curriculum-helpers';
 import chai from 'chai';
@@ -103,35 +103,6 @@ ctx.onmessage = async (e: PythonRunEvent) => {
 
     const { input, test } = evaluatedTestString as EvaluatedTeststring;
 
-    const inputIterator = (input ?? []).values();
-    const testInput = () => {
-      const next = inputIterator.next();
-      if (next.done) {
-        // TODO: handle this error in the UI
-        throw new Error('Too many input calls');
-      } else {
-        return next.value;
-      }
-    };
-
-    // Clear out the old import otherwise it will use the old input/print
-    // functions
-    pyodide.runPython(`
-import sys
-try:
-  del sys.modules['jscustom']
-  del jscustom
-except (KeyError, NameError):
-  pass
-
-`);
-
-    // Make input available to python (print is not used yet)
-    pyodide.registerJsModule('jscustom', {
-      input: testInput
-      // print: () => {}
-    });
-
     // Some tests rely on __name__ being set to __main__ and we new dicts do not
     // have this set by default.
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -146,16 +117,41 @@ except (KeyError, NameError):
       runPython
     };
 
-    runPython(
-      `
-  import jscustom
-  from jscustom import input
-  `
-    );
+    runPython(`
+def __inputGen(xs):
+  def gen():
+    for x in xs:
+      yield x
+  iter = gen()
+  def input(arg=None):
+    return next(iter)
+
+  return input
+
+input = __inputGen(${JSON.stringify(input ?? [])})
+`);
 
     // Evaluates the learner's code so that any variables they define are
     // available to the test.
-    runPython(code);
+    try {
+      runPython(code);
+    } catch (e) {
+      const err = e as PythonError;
+
+      // Quite a lot of lessons can easily lead users to write code that has
+      // indentation errors. In these cases we want to provide a more helpful
+      // error message. For other errors, we can just provide the standard
+      // message.
+      const errorType =
+        err.type === 'IndentationError' ? 'indentation' : 'other';
+      return ctx.postMessage({
+        err: {
+          message: err.message,
+          stack: err.stack,
+          errorType
+        }
+      });
+    }
     // TODO: remove the next line, creating __locals, once all the tests access
     // variables directly.
     runPython('__locals = globals()');

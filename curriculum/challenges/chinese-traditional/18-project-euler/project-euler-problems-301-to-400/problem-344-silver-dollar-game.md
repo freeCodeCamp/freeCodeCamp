@@ -1,6 +1,6 @@
 ---
 id: 5900f4c51000cf542c50ffd7
-title: 'Problem 344: Silver dollar game'
+title: '問題344：銀元遊戲'
 challengeType: 1
 forumTopicId: 302003
 dashedName: problem-344-silver-dollar-game
@@ -10,13 +10,13 @@ dashedName: problem-344-silver-dollar-game
 
 One variant of N.G. de Bruijn's silver dollar game can be described as follows:
 
-On a strip of squares a number of coins are placed, at most one coin per square. Only one coin, called the silver dollar, has any value. Two players take turns making moves. At each turn a player must make either a regular or a special move.
+在正方形條上放置了許多硬幣，每平方最多一枚硬幣。 只有一枚硬幣，稱爲銀元，具有任何價值。 兩名球員輪流做出動作。 在每個回合中，玩家必須進行常規或特殊動作。
 
-A regular move consists of selecting one coin and moving it one or more squares to the left. The coin cannot move out of the strip or jump on or over another coin.
+常規移動包括選擇一個硬幣並將其移動到左側的一個或多個方塊。 硬幣不能從條帶中移出或跳到另一個硬幣上或上方。
 
-Alternatively, the player can choose to make the special move of pocketing the leftmost coin rather than making a regular move. If no regular moves are possible, the player is forced to pocket the leftmost coin.
+或者，玩家可以選擇將最左邊的硬幣扒竊而不是定期移動。 如果沒有可能的常規動作，則玩家被迫掏出最左邊的硬幣。
 
-The winner is the player who pockets the silver dollar.
+獲勝者是兜售銀元的玩家。
 
 <img class="img-responsive center-block" alt="silver dollar game" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px;" />
 

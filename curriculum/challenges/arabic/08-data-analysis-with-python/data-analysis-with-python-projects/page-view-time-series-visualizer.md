@@ -8,14 +8,9 @@ dashedName: page-view-time-series-visualizer
 
 # --description--
 
-You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-page-view-time-series-visualizer" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-page-view-time-series-visualizer" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
-
-
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+وما زلنا نطور الجزء التعليمي التفاعلي من منهج Python. الآن، إليك بعض مقاطع الفيديو على قناة اليوتيوب الخاصة بي freeCodeCamp.org التي ستعلمك كلّما تحتاج إليه لإكمال هذا المشروع:
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
@@ -33,19 +28,19 @@ Use the data to complete the following tasks:
 - Create a `draw_bar_plot` function that draws a bar chart similar to "examples/Figure_2.png". It should show average daily page views for each month grouped by year. The legend should show month labels and have a title of `Months`. On the chart, the label on the x axis should be `Years` and the label on the y axis should be `Average Page Views`.
 - Create a `draw_box_plot` function that uses Seaborn to draw two adjacent box plots similar to "examples/Figure_3.png". These box plots should show how the values are distributed within a given year or month and how it compares over time. The title of the first chart should be `Year-wise Box Plot (Trend)` and the title of the second chart should be `Month-wise Box Plot (Seasonality)`. Make sure the month labels on bottom start at `Jan` and the x and y axis are labeled correctly. The boilerplate includes commands to prepare the data.
 
-For each chart, make sure to use a copy of the data frame. Unit tests are written for you under `test_module.py`.
+For each chart, make sure to use a copy of the data frame.
 
 The boilerplate also includes commands to save and return the image.
 
-## Development
+## التطوير
 
-For development, you can use `main.py` to test your functions. Click the "run" button and `main.py` will run.
+Write your code in `time_series_visualizer.py`. For development, you can use `main.py` to test your code.
 
-## Testing
+## الاختبار
 
-We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
+The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience.
 
-## Submitting
+## التقديم
 
 Copy your project's URL and submit it to freeCodeCamp.
 

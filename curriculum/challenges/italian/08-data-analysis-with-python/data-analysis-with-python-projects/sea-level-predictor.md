@@ -8,16 +8,11 @@ dashedName: sea-level-predictor
 
 # --description--
 
-Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice d'inizio su Replit</a>.
-
--   Inizia importando il progetto su Replit.
--   Poi vedrai una finestra `.replit`.
--   Seleziona `Use run command` e clicca sul pulsante `Done`.
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-sea-level-predictor/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Python. Per ora, ecco alcuni video sul canale YouTube di freeCodeCamp.org che ti insegneranno tutto quello che devi sapere per completare questo progetto:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Video corso Python for Everybody</a> (14 ore)
 
 - <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow"> Come analizzare i dati con Python Pandas </a>(10 ore)
 
@@ -33,17 +28,15 @@ Usa i dati per completare le seguenti attività:
 - Traccia una nuova retta di regressione utilizzando i dati dall'anno 2000 all'anno più recente nel set di dati. Fai passare la linea anche per l'anno 2050 per prevedere quale sarà l'aumento del livello del mare nel 2050 se il tasso di crescita continuerà come ha fatto dal 2000 in poi.
 - L'asse x dovrebbe essere `Year`, l'asse y dovrebbe essere `Sea Level (inches)` e il titolo dovrebbe essere `Rise in Sea Level`.
 
-I test unitari sono scritti per te in `test_module.py`.
-
 Il boilerplate include anche comandi per salvare e restituire l'immagine.
 
 ## Sviluppo
 
-Nello sviluppo, puoi usare `main.py` per testare le tue funzioni. Usa il bottone "run" e `main.py` sarà eseguito.
+Write your code in `sea_level_predictor.py`. For development, you can use `main.py` to test your code.
 
 ## Test
 
-Abbiamo importato i test da `test_module.py` in `main.py` per tua convenienza. I test saranno eseguiti automaticamente quando usi il bottone "run".
+The unit tests for this project are in `test_module.py`. Abbiamo importato i test da `test_module.py` in `main.py` per tua convenienza.
 
 ## Invio
 

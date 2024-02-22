@@ -31,13 +31,6 @@ body {
   min-height: 80vh;
 }
 
-.codeally-frame {
-  display: block;
-  height: calc(100vh - var(--header-height));
-  width: 100%;
-  border: 0;
-}
-
 .btn-cta-big {
   max-height: 100%;
   font-size: 1.5rem;
@@ -269,6 +262,8 @@ input[type='submit']:hover,
   color: var(--secondary-background);
 }
 
+button[aria-disabled='true'],
+button[aria-disabled='true']:hover,
 .btn.disabled,
 .btn[disabled],
 fieldset[disabled] .btn,

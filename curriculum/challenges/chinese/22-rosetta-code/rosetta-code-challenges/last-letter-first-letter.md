@@ -1,6 +1,6 @@
 ---
 id: 5e4ce2b6ac708cc68c1df25e
-title: Last letter-first letter
+title: 单词接龙
 challengeType: 1
 forumTopicId: 385256
 dashedName: last-letter-first-letter
@@ -10,7 +10,7 @@ dashedName: last-letter-first-letter
 
 A certain children's game involves starting with a word in a particular category. Each participant in turn says a word, but that word must begin with the final letter of the previous word. Once a word has been given, it cannot be repeated. If an opponent cannot give a word in the category, they fall out of the game.
 
-For example, with "animals" as the category,
+例如，以“动物”为类别，
 
 <pre>Child 1: dog
 Child 2: goldfish
@@ -21,17 +21,17 @@ Child 2: snake
 
 # --instructions--
 
-Write a function that takes an input array of words. The function should return an array of words where the first letter of each word is the same as the last letter of the previous word. Only use the words in the input array, and once a word is used it cannot be repeated. The words in the return array should be selected and sequenced so that that its length is maximized.
+编写一个函数，该函数接受输入的单词数组。 该函数应该返回一个单词数组，其中每个单词的第一个字母与前一个单词的最后一个字母相同。 只使用输入数组中的词，一个词一旦用过就不能重复。 应选择返回数组中的单词并对其进行排序，以使其长度最大化。
 
 # --hints--
 
-`findLongestChain` should be a function.
+`findLongestChain` 应该是一个函数。
 
 ```js
 assert(typeof findLongestChain == 'function');
 ```
 
-`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` should return an array.
+`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` 应该返回一个数组。
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` should return `["involves", "starting", "game", "each"]`.
+`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` 应该返回 `["involves", "starting", "game", "each"]`。
 
 ```js
 assert.deepEqual(
@@ -66,7 +66,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["audino", "bagon", "kangaskhan", "banette", "bidoof", "braviary", "exeggcute", "yamask"])` should return `["braviary", "yamask", "kangaskhan"]`
+`findLongestChain(["audino", "bagon", "kangaskhan", "banette", "bidoof", "braviary", "exeggcute", "yamask"])` 应该返回 `["braviary", "yamask", "kangaskhan"]`
 
 ```js
 assert.deepEqual(
@@ -84,7 +84,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["harp", "poliwrath", "poochyena", "porygon2", "porygonz", "archana"])` should return `["poliwrath", "harp", "poochyena", "archana"]`.
+`findLongestChain(["harp", "poliwrath", "poochyena", "porygon2", "porygonz", "archana"])` 应该返回 `["poliwrath", "harp", "poochyena", "archana"]`。
 
 ```js
 assert.deepEqual(
@@ -100,7 +100,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["scolipede", "elephant", "zeaking", "sealeo", "silcoon", "tigers"])` should return `["scolipede", "elephant", "tigers", "sealeo"]`.
+`findLongestChain(["scolipede", "elephant", "zeaking", "sealeo", "silcoon", "tigers"])` 应该返回 `["scolipede", "elephant", "tigers", "sealeo"]`。
 
 ```js
 assert.deepEqual(
@@ -116,7 +116,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["loudred", "lumineon", "lunatone", "machamp", "magnezone", "nosepass", "petilil", "pidgeotto", "pikachu"])` should return `["machamp", "petilil", "lumineon", "nosepass"]`.
+`findLongestChain(["loudred", "lumineon", "lunatone", "machamp", "magnezone", "nosepass", "petilil", "pidgeotto", "pikachu"])` 应该返回 `["machamp", "petilil", "lumineon", "nosepass"]`。
 
 ```js
 assert.deepEqual(

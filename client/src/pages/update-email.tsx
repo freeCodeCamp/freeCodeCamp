@@ -110,16 +110,17 @@ function UpdateEmail({
               >
                 <FormGroup
                   className='update-email-field'
-                  controlId='emailInput'
                   validationState={getEmailValidationState()}
                 >
-                  <ControlLabel>{t('misc.email')}</ControlLabel>
+                  <ControlLabel htmlFor='emailInput'>
+                    {t('misc.email')}
+                  </ControlLabel>
                   <FormControl
+                    id='emailInput'
                     onChange={onChange}
                     placeholder='camperbot@example.com'
                     required={true}
                     type='email'
-                    data-playwright-test-label='update-email-input'
                   />
                 </FormGroup>
                 <Button
@@ -128,7 +129,6 @@ function UpdateEmail({
                   bsStyle='primary'
                   disabled={getEmailValidationState() !== 'success'}
                   type='submit'
-                  data-playwright-test-label='update-email-submit-button'
                 >
                   {isNewEmail
                     ? t('buttons.update-email')
@@ -136,12 +136,7 @@ function UpdateEmail({
                 </Button>
               </form>
               <p className='text-center'>
-                <Link
-                  to='/signout'
-                  data-playwright-test-label='update-email-sign-out-button'
-                >
-                  {t('buttons.sign-out')}
-                </Link>
+                <Link to='/signout'>{t('buttons.sign-out')}</Link>
               </p>
             </Row>
           </Col>

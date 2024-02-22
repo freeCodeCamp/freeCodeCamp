@@ -1,6 +1,6 @@
 ---
 id: 5900f4701000cf542c50ff82
-title: 'Problem 259: Reachable Numbers'
+title: '问题259：可达号码'
 challengeType: 1
 forumTopicId: 301907
 dashedName: problem-259-reachable-numbers
@@ -19,7 +19,7 @@ A positive integer will be called reachable if it can result from an arithmetic 
 
 For example, 42 is reachable, since $\frac{1}{23} \times ((4 \times 5) - 6) \times (78 - 9) = 42$.
 
-What is the sum of all positive reachable integers?
+所有正可达整数的总和是多少？
 
 # --hints--
 

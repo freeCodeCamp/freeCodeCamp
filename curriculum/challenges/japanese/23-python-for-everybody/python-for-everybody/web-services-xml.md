@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0e0b6c005b0e76f07b
-title: 'Web Services: XML'
+title: 'ウェブサービス: XML'
 challengeType: 11
 videoId: _pZ0srbg7So
 bilibiliIds:
@@ -27,19 +27,19 @@ What is wrong with the following XML?:
 
 ## --answers--
 
-Email tag is missing closing tag.
+email タグに終了タグがない。
 
 ---
 
-Spacing will cause XML to be invalid.
+スペースの記述が原因で XML が無効になる。
 
 ---
 
-Phone tag is missing closing tag.
+phone タグに終了タグがない。
 
 ---
 
-Plain text should be encoded using UTF-8.
+プレーンテキストは UTF-8 を使用してエンコードする必要がある。
 
 ## --video-solution--
 

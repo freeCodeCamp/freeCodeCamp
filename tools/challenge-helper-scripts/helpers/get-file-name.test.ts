@@ -3,39 +3,22 @@ import { join } from 'path';
 
 import { getFileName } from './get-file-name';
 
-const metaPath = join(
+const basePath = join(
   process.cwd(),
-  'curriculum',
-  'challenges',
-  '_meta',
-  'project'
+  '__fixtures__' + process.env.JEST_WORKER_ID
 );
-const superBlockPath = join(
-  process.cwd(),
-  'curriculum',
-  'challenges',
-  'english',
-  'superblock'
-);
-const projectPath = join(superBlockPath, 'project');
+const commonPath = join(basePath, 'curriculum', 'challenges');
 
-const cleanFiles = () => {
-  try {
-    fs.rmSync(superBlockPath, { recursive: true });
-  } catch (err) {
-    console.log('Could not remove superblock mock folder. ');
-  }
-  try {
-    fs.rmSync(metaPath, { recursive: true });
-  } catch (err) {
-    console.log('Could not remove meta mock folder.');
-  }
-};
+const block = 'project-get-file-name';
+const metaPath = join(commonPath, '_meta', block);
+const superBlockPath = join(commonPath, 'english', 'superblock-get-file-name');
+const projectPath = join(superBlockPath, block);
 
 describe('getFileName helper', () => {
   beforeEach(() => {
-    fs.mkdirSync(superBlockPath);
-    fs.mkdirSync(projectPath);
+    fs.mkdirSync(superBlockPath, { recursive: true });
+    fs.mkdirSync(projectPath, { recursive: true });
+    fs.mkdirSync(metaPath, { recursive: true });
     fs.writeFileSync(
       join(projectPath, 'this-is-a-challenge.md'),
       '---\nid: a\ntitle: This is a Challenge\n---',
@@ -51,7 +34,6 @@ describe('getFileName helper', () => {
       '---\nid: c\ntitle: I Dunno\n---',
       'utf-8'
     );
-    fs.mkdirSync(metaPath);
     fs.writeFileSync(
       join(metaPath, 'meta.json'),
       `{
@@ -77,6 +59,11 @@ describe('getFileName helper', () => {
 
   afterEach(() => {
     delete process.env.CALLING_DIR;
-    cleanFiles();
+    try {
+      fs.rmSync(basePath, { recursive: true });
+    } catch (err) {
+      console.log(err);
+      console.log('Could not remove fixtures folder.');
+    }
   });
 });

@@ -8,7 +8,7 @@ dashedName: problem-14-longest-collatz-sequence
 
 # --description--
 
-Наступна ітераційна послідовність визначена для набору додатних цілих чисел:
+Наступна ітераційна послідовність визначена для множини натуральних чисел:
 
 <div style='padding-left: 4em;'><var>n</var> → <var>n</var>/2 (<var>n</var> є парним)</div>
 

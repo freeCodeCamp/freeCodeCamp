@@ -50,34 +50,37 @@ export const challengeTypes = {
   fillInTheBlank
 };
 
-export const isFinalProject = (challengeType: number) => {
-  // TODO: remove the type check once everything is converted to TS
-  if (typeof challengeType !== 'number')
-    throw Error('challengeType must be a number');
-  return (
-    challengeType === frontEndProject ||
-    challengeType === backEndProject ||
-    challengeType === jsProject ||
-    challengeType === pythonProject ||
-    challengeType === codeAllyCert ||
-    challengeType === multifileCertProject ||
-    challengeType === exam
-  );
-};
-
-export const isCodeAllyPractice = (challengeType: number) => {
-  // TODO: remove the type check once everything is converted to TS
-  if (typeof challengeType !== 'number')
-    throw Error('challengeType must be a number');
-  return challengeType === codeAllyPractice;
-};
-
 export const hasNoTests = (challengeType: number): boolean =>
   challengeType === multipleChoice ||
   challengeType === theOdinProject ||
   challengeType === video ||
   challengeType === dialogue ||
   challengeType === fillInTheBlank;
+
+export const hasNoSolution = (challengeType: number): boolean => {
+  const noSolutions = [
+    backend,
+    zipline,
+    frontEndProject,
+    backEndProject,
+    step,
+    quiz,
+    invalid,
+    pythonProject,
+    video,
+    codeAllyPractice,
+    codeAllyCert,
+    theOdinProject,
+    colab,
+    exam,
+    msTrophy,
+    multipleChoice,
+    dialogue,
+    fillInTheBlank
+  ];
+
+  return noSolutions.includes(challengeType);
+};
 
 // determine the component view for each challenge
 export const viewTypes = {

@@ -1,6 +1,6 @@
 ---
 id: 5900f48f1000cf542c50ffa1
-title: 'Problem 290: Digital Signature'
+title: '問題290：數字簽名'
 challengeType: 1
 forumTopicId: 301942
 dashedName: problem-290-digital-signature

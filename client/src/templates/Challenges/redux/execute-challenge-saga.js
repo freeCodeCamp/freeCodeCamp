@@ -209,7 +209,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         throw err;
       }
     } catch (err) {
-      const { actual, expected } = err;
+      const { actual, expected, errorType } = err;
 
       newTest.message = text
         .replace('--fcc-expected--', expected)
@@ -217,11 +217,18 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
+      } else if (errorType) {
+        const msgKey =
+          errorType === 'indentation'
+            ? 'learn.indentation-error'
+            : 'learn.syntax-error';
+        newTest.message = `<p>${i18next.t(msgKey)}</p>`;
       } else {
         const { message, stack } = err;
         newTest.err = message + '\n' + stack;
         newTest.stack = stack;
       }
+      console.log('newTest', newTest);
       yield put(updateConsole(newTest.message));
     } finally {
       testResults.push(newTest);
@@ -231,7 +238,8 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
 }
 
 // updates preview frame and the fcc console.
-function* previewChallengeSaga({ flushLogs = true } = {}) {
+export function* previewChallengeSaga(action) {
+  const flushLogs = action?.type !== actionTypes.previewMounted;
   yield delay(700);
 
   const isBuildEnabled = yield select(isBuildEnabledSelector);
@@ -296,13 +304,16 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
   }
 }
 
-function* updatePreviewSaga() {
+// TODO: refactor this so that we can use a single saga for all challenge
+// updates (then they can all go in the same `takeLatest` call and be cancelled
+// appropriately)
+function* updatePreviewSaga(action) {
   const challengeData = yield select(challengeDataSelector);
   if (challengeData.challengeType === challengeTypes.python) {
     yield updatePython(challengeData);
   } else {
     // all other challenges have to recreate the preview
-    yield previewChallengeSaga();
+    yield previewChallengeSaga(action);
   }
 }
 
@@ -345,12 +356,9 @@ export function createExecuteChallengeSaga(types) {
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
     takeLatest(types.updateFile, updatePreviewSaga),
     takeLatest(
-      [types.challengeMounted, types.resetChallenge],
+      [types.challengeMounted, types.resetChallenge, types.previewMounted],
       previewChallengeSaga
     ),
-    takeLatest(types.previewMounted, previewChallengeSaga, {
-      flushLogs: false
-    }),
     takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
   ];
 }

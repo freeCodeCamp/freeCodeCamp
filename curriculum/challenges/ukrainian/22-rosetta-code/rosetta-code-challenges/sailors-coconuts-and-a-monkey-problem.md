@@ -1,6 +1,6 @@
 ---
 id: 59da22823d04c95919d46269
-title: 'Sailors, coconuts and a monkey problem'
+title: 'Задача про моряків, кокоси та мавпочку'
 challengeType: 1
 forumTopicId: 302304
 dashedName: sailors-coconuts-and-a-monkey-problem
@@ -8,39 +8,39 @@ dashedName: sailors-coconuts-and-a-monkey-problem
 
 # --description--
 
-Five sailors are shipwrecked on an island and collect a large pile of coconuts during the day. 
+П’ять моряків розбилися на острові і назбирали багато кокосів протягом дня.
 
-That night the first sailor wakes up and decides to take his first share early so tries to divide the pile of coconuts equally into five piles but finds that there is one coconut left over, so he tosses it to a monkey and then hides "his" one of the five equally sized piles of coconuts and pushes the other four piles together to form a single visible pile of coconuts again and goes to bed. 
+Тієї ночі перший моряк прокидається і вирішує завчасно взяти свою частину, тому намагається поділити всі кокоси порівно на п’ять маленьких купок. Моряк дізнається, що залишається один кокос, тому він кидає його мавпочці, а потім ховає «свою» частину і зіштовхує інші чотири купки разом для того, щоб знову утворити одну купку з кокосами і йде спати.
 
-To cut a long story short, each of the sailors in turn gets up once during the night and performs the same actions of dividing the coconut pile into five, finding that one coconut is left over and giving that single remainder coconut to the monkey, then push the other four piles together to form a single pile. 
+Коротко кажучи, кожен моряк встає протягом ночі один раз та робить те ж саме: ділить купку кокосів на 5 частин, дізнається про зайвий кокос і віддає його мавпочці, а потім зіштовхує інші чотири купки разом, щоб утворити одну.
 
-In the morning (after the surreptitious and separate action of each of the five sailors during the night), the remaining coconuts are divided into five equal piles for each of the sailors, whereupon it is found that the pile of coconuts divides equally amongst the sailors with no remainder. (Nothing for the monkey in the morning.)
+Вранці (після таємних вчинків кожного з п’яти моряків протягом ночі) кокоси, що залишилися, були поділені на п’ять однакових купок для кожного з моряків, після чого виявилося, що вони поділені порівно серед моряків без залишку. (Зранку нічого не залишилось для мавпочки.)
 
 # --instructions--
 
-Create a function that returns the minimum possible size of the initial pile of coconuts collected during the day for `N` sailors. **Note:** Of course the tale is told in a world where the collection of any number of coconuts in a day and multiple divisions of the pile, etc. can occur in time fitting the story line, so as not to affect mathematics.
+Створіть функцію, яка повертає мінімальну можливу кількість кокосів в початковій купці, зібраній протягом дня для `N` моряків. **Примітка:** звичайно, події задачі відбуваються в казковому світі, де збирання кокосів та поділ купок можуть відбуватись в час, який відповідає сюжетній лінії, щоб не впливати на розрахунки.
 
 # --hints--
 
-`splitCoconuts` should be a function.
+`splitCoconuts` має бути функцією.
 
 ```js
 assert(typeof splitCoconuts === 'function');
 ```
 
-`splitCoconuts(5)` should return 3121.
+`splitCoconuts(5)` має повернути 3121.
 
 ```js
 assert(splitCoconuts(5) === 3121);
 ```
 
-`splitCoconuts(6)` should return 233275.
+`splitCoconuts(6)` має повернути 233275.
 
 ```js
 assert(splitCoconuts(6) === 233275);
 ```
 
-`splitCoconuts(7)` should return 823537.
+`splitCoconuts(7)` має повернути 823537.
 
 ```js
 assert(splitCoconuts(7) === 823537);

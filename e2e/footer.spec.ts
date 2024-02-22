@@ -112,13 +112,13 @@ test.describe('Footer mobile app section', () => {
     const appleStoreLink = downloadLinks[0];
 
     await expect(
-      appleStoreLink.getByRole('img', { name: 'Apple Store' })
+      appleStoreLink.getByRole('img', { name: 'Download on the App Store' })
     ).toBeVisible();
     await expect(
-      appleStoreLink.getByRole('link', { name: 'Apple Store' })
+      appleStoreLink.getByRole('link', { name: 'Download on the App Store' })
     ).toBeVisible();
     await expect(
-      appleStoreLink.getByRole('link', { name: 'Apple Store' })
+      appleStoreLink.getByRole('link', { name: 'Download on the App Store' })
     ).toHaveAttribute(
       'href',
       'https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200'
@@ -127,13 +127,13 @@ test.describe('Footer mobile app section', () => {
     const googlePlayLink = downloadLinks[1];
 
     await expect(
-      googlePlayLink.getByRole('img', { name: 'Google Play' })
+      googlePlayLink.getByRole('img', { name: 'Get it on Google Play' })
     ).toBeVisible();
     await expect(
-      googlePlayLink.getByRole('link', { name: 'Google Play' })
+      googlePlayLink.getByRole('link', { name: 'Get it on Google Play' })
     ).toBeVisible();
     await expect(
-      googlePlayLink.getByRole('link', { name: 'Google Play' })
+      googlePlayLink.getByRole('link', { name: 'Get it on Google Play' })
     ).toHaveAttribute(
       'href',
       'https://play.google.com/store/apps/details?id=org.freecodecamp'

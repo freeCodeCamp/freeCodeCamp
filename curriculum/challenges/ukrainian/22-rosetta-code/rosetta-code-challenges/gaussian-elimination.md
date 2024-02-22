@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e77
-title: Gaussian elimination
+title: Метод Гауса
 challengeType: 1
 forumTopicId: 302272
 dashedName: gaussian-elimination
@@ -8,21 +8,21 @@ dashedName: gaussian-elimination
 
 # --description--
 
-Write a function to solve \\(Ax = b\\) using Gaussian elimination then backwards substitution.
+Напишіть функцію, щоб розв’язати \\(Ax = b\\), використавши метод Гауса та обернену підстановку.
 
-\\(A\\) being an \\(n \\times n\\) matrix. Also, \\(x\\) and \\(b\\) are \\(n\\) by 1 vectors.
+\\(A\\) є матрицею \\(n \\times n\\). Крім того, вектори \\(x\\) та \\(b\\) мають розмірність \\(n\\) на 1.
 
-To improve accuracy, please use partial pivoting and scaling.
+Для більшої точності використайте часткову перестановку і масштабування.
 
 # --hints--
 
-`gaussianElimination` should be a function.
+`gaussianElimination` має бути функцією.
 
 ```js
 assert(typeof gaussianElimination == 'function');
 ```
 
-`gaussianElimination([[1,1],[1,-1]], [5,1])` should return an array.
+`gaussianElimination([[1,1],[1,-1]], [5,1])` має повернути масив.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-`gaussianElimination([[1,1],[1,-1]], [5,1])` should return `[ 3, 2 ]`.
+`gaussianElimination([[1,1],[1,-1]], [5,1])` має повернути `[ 3, 2 ]`.
 
 ```js
 assert.deepEqual(
@@ -53,7 +53,7 @@ assert.deepEqual(
 );
 ```
 
-`gaussianElimination([[2,3],[2,1]] , [8,4])` should return `[ 1, 2 ]`.
+`gaussianElimination([[2,3],[2,1]] , [8,4])` має повернути `[ 1, 2 ]`.
 
 ```js
 assert.deepEqual(
@@ -68,7 +68,7 @@ assert.deepEqual(
 );
 ```
 
-`gaussianElimination([[1,3],[5,-2]], [14,19])` should return `[ 5, 3 ]`.
+`gaussianElimination([[1,3],[5,-2]], [14,19])` має повернути `[ 5, 3 ]`.
 
 ```js
 assert.deepEqual(
@@ -83,7 +83,7 @@ assert.deepEqual(
 );
 ```
 
-`gaussianElimination([[1,1],[5,-1]] , [10,14])` should return `[ 4, 6 ]`.
+`gaussianElimination([[1,1],[5,-1]] , [10,14])` має повернути `[ 4, 6 ]`.
 
 ```js
 assert.deepEqual(
@@ -98,7 +98,7 @@ assert.deepEqual(
 );
 ```
 
-`gaussianElimination([[1,2,3],[4,5,6],[7,8,8]] , [6,15,23])` should return `[ 1, 1, 1 ]`.
+`gaussianElimination([[1,2,3],[4,5,6],[7,8,8]] , [6,15,23])` має повернути `[ 1, 1, 1 ]`.
 
 ```js
 assert.deepEqual(

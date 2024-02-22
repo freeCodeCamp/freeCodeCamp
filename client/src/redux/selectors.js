@@ -78,10 +78,6 @@ export const userTokenSelector = state => {
   return userSelector(state).userToken;
 };
 
-export const showCodeAllySelector = state => {
-  return state[MainApp].showCodeAlly;
-};
-
 export const examInProgressSelector = state => {
   return state[MainApp].examInProgress;
 };
@@ -159,6 +155,11 @@ export const certificatesByNameSelector = username => state => {
         certSlug: Certification.RespWebDesign
       },
       {
+        show: isJsAlgoDataStructCertV8,
+        title: 'JavaScript Algorithms and Data Structures (Beta) Certification',
+        certSlug: Certification.JsAlgoDataStructNew
+      },
+      {
         show: isJsAlgoDataStructCert,
         title: 'JavaScript Algorithms and Data Structures Certification',
         certSlug: Certification.JsAlgoDataStruct
@@ -174,19 +175,19 @@ export const certificatesByNameSelector = username => state => {
         certSlug: Certification.DataVis
       },
       {
+        show: isRelationalDatabaseCertV8,
+        title: 'Relational Database Certification',
+        certSlug: Certification.RelationalDb
+      },
+      {
         show: isApisMicroservicesCert,
         title: 'Back End Development and APIs Certification',
         certSlug: Certification.BackEndDevApis
       },
       {
         show: isQaCertV7,
-        title: ' Quality Assurance Certification',
+        title: 'Quality Assurance Certification',
         certSlug: Certification.QualityAssurance
-      },
-      {
-        show: isInfosecCertV7,
-        title: 'Information Security Certification',
-        certSlug: Certification.InfoSec
       },
       {
         show: isSciCompPyCertV7,
@@ -199,14 +200,14 @@ export const certificatesByNameSelector = username => state => {
         certSlug: Certification.DataAnalysisPy
       },
       {
+        show: isInfosecCertV7,
+        title: 'Information Security Certification',
+        certSlug: Certification.InfoSec
+      },
+      {
         show: isMachineLearningPyCertV7,
         title: 'Machine Learning with Python Certification',
         certSlug: Certification.MachineLearningPy
-      },
-      {
-        show: isRelationalDatabaseCertV8,
-        title: 'Relational Database Certification',
-        certSlug: Certification.RelationalDb
       },
       {
         show: isCollegeAlgebraPyCertV8,
@@ -217,11 +218,6 @@ export const certificatesByNameSelector = username => state => {
         show: isFoundationalCSharpCertV8,
         title: 'Foundational C# with Microsoft Certification',
         certSlug: Certification.FoundationalCSharp
-      },
-      {
-        show: isJsAlgoDataStructCertV8,
-        title: 'JavaScript Algorithms and Data Structures (Beta) Certification',
-        certSlug: Certification.JsAlgoDataStructNew
       }
     ],
     legacyCerts: [

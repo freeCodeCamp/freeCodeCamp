@@ -1,6 +1,6 @@
 ---
 id: 5900f5411000cf542c510052
-title: 'Problem 467: Superinteger'
+title: '问题467：超级整数'
 challengeType: 1
 forumTopicId: 302142
 dashedName: problem-467-superinteger
@@ -10,7 +10,7 @@ dashedName: problem-467-superinteger
 
 An integer $s$ is called a superinteger of another integer $n$ if the digits of $n$ form a subsequence of the digits of $s$.
 
-For example, 2718281828 is a superinteger of 18828, while 314159 is not a superinteger of 151.
+例如，2718281828是18828的超级整数，而314159不是151的超级整数。
 
 Let $p(n)$ be the $n$th prime number, and let $c(n)$ be the $n$th composite number. For example, $p(1) = 2$, $p(10) = 29$, $c(1) = 4$ and $c(10) = 18$.
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4f11000cf542c510002
-title: 'Problem 388: Distinct Lines'
+title: 'Завдання 388: різні лінії'
 challengeType: 1
 forumTopicId: 302052
 dashedName: problem-388-distinct-lines
@@ -8,13 +8,13 @@ dashedName: problem-388-distinct-lines
 
 # --description--
 
-Consider all lattice points ($a$, $b$, $c$) with $0 ≤ a, b, c ≤ N$.
+Розглянемо точки сітки ($a$, $b$, $c$) за умови $0 ≤ a, b, c ≤ N$.
 
-From the origin $O(0, 0, 0)$ all lines are drawn to the other lattice points. Let $D(N)$ be the number of distinct such lines.
+Від початку координат $O(0, 0, 0)$ проведено прямі лінії до інших точок. Нехай $D(N)$ буде кількістю таких прямих.
 
-Вам дано, що $D(1\\,000\\,000) = 831\\,909\\,254\\,469\\,114\\,121$.
+Дано, що $D(1\\,000\\,000) = 831\\,909\\,254\\,469\\,114\\,121$.
 
-Знайдіть $D({10}^{10})$. Give as your answer the first nine digits followed by the last nine digits.
+Знайдіть $D({10}^{10})$. У відповіді запишіть дев’ять перших та дев’ять останніх цифр.
 
 # --hints--
 
