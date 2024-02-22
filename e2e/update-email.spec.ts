@@ -64,12 +64,15 @@ test.describe('The update-email page', () => {
     await emailInput.fill('123@gmail.com');
     await expect(submitButton).toBeEnabled();
   });
-});
 
-test.describe('The update-email page when signed out', () => {
   test('Redirects to signin page when user is not logged in', async () => {
-    await page.context().clearCookies();
+    const menuButton = page.getByTestId('header-menu-button');
+    const signOutButton = page.getByTestId('sign-out-button');
+    const singOutConfirmButton = page.getByTestId('signout-button-confirm');
 
+    await menuButton.click();
+    await signOutButton.click();
+    await singOutConfirmButton.click();
     await page.goto('/update-email');
     await expect(page).toHaveURL(/.*\/signin\/?$/);
   });

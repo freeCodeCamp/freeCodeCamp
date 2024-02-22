@@ -291,6 +291,7 @@ function NavLinks({
           <button
             className='nav-link nav-link-signout'
             data-value='sign-out-button'
+            data-playwright-test-label='sign-out-button'
             onClick={handleSignOutClick}
             onKeyDown={handleSignOutKeys}
           >
