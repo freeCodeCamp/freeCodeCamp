@@ -1464,6 +1464,7 @@
     "go-back-to-learn": "Gehe zurück zur stabilen Version des Lehrplans.",
     "read-database-cert-article": "Bitte lies diesen Forenbeitrag, bevor du fortfährst.",
     "enable-cookies": "Bevor du startest, muss du die Cookies von Drittanbietern aktivieren.",
-    "english-only": "Die Kurse in diesem Bereich sind nur auf Englisch verfügbar. Im Moment können wir nur die Titel und Einführungen übersetzen, nicht aber die Lektionen selbst."
+    "english-only": "Die Kurse in diesem Bereich sind nur auf Englisch verfügbar. Im Moment können wir nur die Titel und Einführungen übersetzen, nicht aber die Lektionen selbst.",
+    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
   }
 }

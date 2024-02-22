@@ -1464,6 +1464,7 @@
     "go-back-to-learn": "Volver a la versión estable del currículum.",
     "read-database-cert-article": "Por favor, lea este post del foro antes de continuar.",
     "enable-cookies": "Debes habilitar las cookies de terceros antes de comenzar.",
-    "english-only": "Los cursos de esta sección solo están disponibles en inglés. Solo podemos traducir los títulos y las introducciones en este momento, no las lecciones en sí mismas."
+    "english-only": "Los cursos de esta sección solo están disponibles en inglés. Solo podemos traducir los títulos y las introducciones en este momento, no las lecciones en sí mismas.",
+    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
   }
 }
