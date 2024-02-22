@@ -31,7 +31,7 @@ type PortfolioProps = {
 type PortfolioState = {
   portfolio: PortfolioProjectData[];
   unsavedItemId: string | null;
-  imageValidation?: Record<string, ProfileValidation>;
+  imageValidation: Record<string, ProfileValidation>;
 };
 
 interface ProfileValidation {
@@ -207,36 +207,33 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
 
   getImageValidation(image: string, id: string) {
     const { state, message } = this.getUrlValidation(image, true);
-    if (!this.validationImages[id] && this.state.imageValidation) {
+
+    if (state == 'error') {
+      return {
+        state: state,
+        message: message
+      };
+    }
+
+    if (!this.state.imageValidation[id]) {
       this.setState(prevState => ({
         imageValidation: {
           ...prevState.imageValidation,
           [id]: {
-            state: state as 'success' | 'warning' | 'error' | null | undefined,
+            state: state as 'success' | 'warning',
             message: message
           }
         }
       }));
     }
 
-    if (!this.validationImages[id]) {
-      const validationImage = new Image();
-      validationImage.addEventListener(
-        'error',
-        this.imageValidationErrorEvent(id)
-      );
-      this.validationImages[id] = validationImage;
-    } else if (this.validationImages[id].src !== encodeURI(image)) {
+    if (this.validationImages[id].src !== encodeURI(image)) {
       this.validationImages[id].src = encodeURI(image);
-    } else if (this.state.imageValidation && this.state.imageValidation[id]) {
-      return {
-        state: this.state.imageValidation[id]?.state,
-        message: this.state.imageValidation[id]?.message
-      };
     }
+
     return {
-      state: state,
-      message: message
+      state: this.state.imageValidation[id]?.state || state,
+      message: this.state.imageValidation[id]?.message || message
     };
   }
 
@@ -258,7 +255,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     id: string,
     defaultState?: string | null | undefined
   ) {
-    if (this.state.imageValidation && this.state.imageValidation[id]) {
+    if (this.state.imageValidation[id]) {
       return this.state.imageValidation[id].state;
     } else {
       return defaultState;
@@ -269,7 +266,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     id: string,
     defaultMessage?: string | null | undefined
   ) {
-    if (this.state.imageValidation && this.state.imageValidation[id]) {
+    if (this.state.imageValidation[id]) {
       return this.state.imageValidation[id].message;
     } else {
       return defaultMessage;
@@ -299,8 +296,6 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       urlState,
       descriptionState,
       imageState,
-      this.state.imageValidation &&
-        this.state.imageValidation[id]?.state == 'error',
       urlIsValid
     ].some(state => state === 'error' || false);
 
@@ -396,9 +391,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           </FormGroup>
           <FormGroup
             controlId={`${id}-image`}
-            validationState={
-              pristine ? null : this.getImageValidationState(id, imageState)
-            }
+            validationState={pristine ? null : imageState}
           >
             <ControlLabel htmlFor={`${id}-image-input`}>
               {t('settings.labels.image')}
@@ -410,10 +403,8 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               data-cy='portfolio-image'
               id={`${id}-image-input`}
             />
-            {this.getImageValidationMessage(id, imageMessage) != null ? (
-              <HelpBlock data-cy='validation-message'>
-                {this.getImageValidationMessage(id, imageMessage)}
-              </HelpBlock>
+            {imageMessage ? (
+              <HelpBlock data-cy='validation-message'>{imageMessage}</HelpBlock>
             ) : null}
           </FormGroup>
           <FormGroup
