@@ -135,6 +135,18 @@ describe('dev login take 2', () => {
 
     it.todo('should create a session');
 
+    // duplicate of the server.test test to make sure I've not done something
+    // silly
+    it('should have OWASP recommended headers', async () => {
+      const res = await superRequest('/signin', { method: 'GET' });
+      expect(res.headers).toMatchObject({
+        'cache-control': 'no-store',
+        'content-security-policy': "frame-ancestors 'none'",
+        'x-content-type-options': 'nosniff',
+        'x-frame-options': 'DENY'
+      });
+    });
+
     it('should redirect to the Referer', async () => {
       const res = await superRequest(
         '/signin',
