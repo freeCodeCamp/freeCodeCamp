@@ -254,6 +254,28 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     };
   }
 
+  getImageValidationState(
+    id: string,
+    defaultState?: string | null | undefined
+  ) {
+    if (this.state.imageValidation && this.state.imageValidation[id]) {
+      return this.state.imageValidation[id].state;
+    } else {
+      return defaultState;
+    }
+  }
+
+  getImageValidationMessage(
+    id: string,
+    defaultMessage?: string | null | undefined
+  ) {
+    if (this.state.imageValidation && this.state.imageValidation[id]) {
+      return this.state.imageValidation[id].message;
+    } else {
+      return defaultMessage;
+    }
+  }
+
   formCorrect(portfolio: PortfolioProjectData) {
     const { id, title, description, url, image } = portfolio;
 
@@ -375,11 +397,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           <FormGroup
             controlId={`${id}-image`}
             validationState={
-              pristine
-                ? null
-                : this.state.imageValidation && this.state.imageValidation[id]
-                  ? this.state.imageValidation[id].state
-                  : imageState
+              pristine ? null : this.getImageValidationState(id, imageState)
             }
           >
             <ControlLabel htmlFor={`${id}-image-input`}>
@@ -392,13 +410,9 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               data-cy='portfolio-image'
               id={`${id}-image-input`}
             />
-            {this.state.imageValidation && this.state.imageValidation[id] ? (
-              this.state.imageValidation[id].message
-            ) : imageMessage ? (
+            {this.getImageValidationMessage(id, imageMessage) != null ? (
               <HelpBlock data-cy='validation-message'>
-                {this.state.imageValidation && this.state.imageValidation[id]
-                  ? this.state.imageValidation[id].message
-                  : imageMessage}
+                {this.getImageValidationMessage(id, imageMessage)}
               </HelpBlock>
             ) : null}
           </FormGroup>
