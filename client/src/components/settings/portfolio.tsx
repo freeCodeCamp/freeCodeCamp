@@ -251,28 +251,6 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     };
   }
 
-  getImageValidationState(
-    id: string,
-    defaultState?: string | null | undefined
-  ) {
-    if (this.state.imageValidation[id]) {
-      return this.state.imageValidation[id].state;
-    } else {
-      return defaultState;
-    }
-  }
-
-  getImageValidationMessage(
-    id: string,
-    defaultMessage?: string | null | undefined
-  ) {
-    if (this.state.imageValidation[id]) {
-      return this.state.imageValidation[id].message;
-    } else {
-      return defaultMessage;
-    }
-  }
-
   formCorrect(portfolio: PortfolioProjectData) {
     const { id, title, description, url, image } = portfolio;
 
