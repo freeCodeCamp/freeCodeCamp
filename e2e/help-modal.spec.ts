@@ -51,8 +51,6 @@ test.describe('Help Modal component', () => {
       .getByRole('button', { name: translations.buttons['ask-for-help'] })
       .click();
 
-    const newPagePromise = context.waitForEvent('page');
-
     await page
       .getByRole('button', {
         name: translations.buttons['create-post']
@@ -64,7 +62,35 @@ test.describe('Help Modal component', () => {
         name: translations.buttons['ask-for-help'],
         exact: true
       })
-    ).not.toBeVisible();
+    ).toBeVisible();
+
+    await page
+      .getByRole('checkbox', {
+        name: 'read-search-ask-checkbox'
+      })
+      .click();
+
+    await page
+      .getByRole('checkbox', {
+        name: 'similar-questions-checkbox'
+      })
+      .click();
+
+    await page
+      .getByRole('textbox', {
+        name: 'description'
+      })
+      .type(
+        'Example text with a 100 characters to validate if the rules applied to block users from spamming help forum are working.'
+      );
+
+    await page
+      .getByRole('button', {
+        name: translations.buttons['submit']
+      })
+      .click();
+
+    const newPagePromise = context.waitForEvent('page');
 
     const newPage = await newPagePromise;
     await newPage.waitForLoadState();
