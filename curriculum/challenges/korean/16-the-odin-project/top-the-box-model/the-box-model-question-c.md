@@ -38,7 +38,7 @@ Inspector tab
 
 ---
 
-HTML structure view 
+HTML structure view
 
 
 ## --video-solution--

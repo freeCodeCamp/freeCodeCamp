@@ -1,38 +1,38 @@
 ---
 id: 647e21658acb466c97ccbee2
-title: 'Control Variable Scope and Logic Using Code Blocks in C#'
+title: 'C# でコード ブロックを使用して変数のスコープとロジックを制御する'
 challengeType: 19
 dashedName: control-variable-scope-and-logic-using-code-blocks-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+このチャレンジには Microsoft Learn プラットフォームで実行するパートがあります。 下記の手順に従ってチャレンジを完了させてください:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-code-blocks/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-code-blocks/</a> and complete all the tasks for the "Control Variable Scope and Logic Using Code Blocks in C#" module. This is **required** to earn the "Add Logic to C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. <a href="https://learn.microsoft.com/training/modules/csharp-code-blocks/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-code-blocks/</a> へ移動し、「C# でコード ブロックを使用して変数のスコープとロジックを制御する (Control Variable Scope and Logic Using Code Blocks in C#)」モジュール内のすべてのタスクを完了してください。 これは、Microsoft Learn のトロフィー「C# コンソール アプリケーションにロジックを追加する」を獲得し、認定試験の受験資格を得るために**必須**となります。
+1. 完了後、このページに戻り、下記の質問に正しく回答してください。
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-code-blocks/" target="_blank" rel="noreferrer">Control Variable Scope and Logic Using Code Blocks in C#</a> module on Microsoft Learn. Then, answer the question below.
+Microsoft Learn で「<a href="https://learn.microsoft.com/training/modules/csharp-code-blocks/" target="_blank" rel="noreferrer">C# でコード ブロックを使用して変数のスコープとロジックを制御する</a>」モジュールを完了してください。 次に、下記の質問に回答してください。
 
 # --question--
 
 ## --text--
 
-Which of the following statements is true about showing/removing the curly braces for code blocks associated with an `if` statement?
+`if` ステートメントと関連付けられたコードブロックの中括弧の追加または削除について、正しい文は次のうちどれですか？
 
 ## --answers--
 
-The curly braces can't be removed from the code block for `else if` and `else` statements.
+`else if` および `else` ステートメントのコードブロックから中括弧を削除することはできない。
 
 ---
 
-If the curly braces are removed from the code blocks of an `if-elseif-else`, the white space must also be removed.
+`if-elseif-else` のコードブロックから中括弧を削除する場合、スペースも削除しなければならない。
 
 ---
 
-Always choose a style that improves readability.
+常に、読みやすさを向上させるスタイルを選択する。
 
 ## --video-solution--
 

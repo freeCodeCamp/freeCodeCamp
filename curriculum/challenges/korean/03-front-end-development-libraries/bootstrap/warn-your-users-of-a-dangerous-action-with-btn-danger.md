@@ -8,11 +8,11 @@ dashedName: warn-your-users-of-a-dangerous-action-with-btn-danger
 
 # --description--
 
-Bootstrap comes with several pre-defined colors for buttons. The `btn-danger` class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.
+부트스트랩에는 버튼을 위한 여러 사전에 정의된 색상들이 포함되어 있습니다. The `btn-danger` class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.
 
 Create a button with the text `Delete` and give it the class `btn-danger`.
 
-Note that these buttons still need the `btn` and `btn-block` classes.
+버튼들은 여전히 `btn`와 `btn-block` 클래스들이 있어야 합니다.
 
 # --hints--
 
@@ -34,7 +34,7 @@ Your new button should have the class `btn-danger`.
 assert($('button').hasClass('btn-danger'));
 ```
 
-All of your `button` elements should have closing tags.
+모든 `button` 요소들에는 닫는 태그가 있어야 합니다.
 
 ```js
 assert(

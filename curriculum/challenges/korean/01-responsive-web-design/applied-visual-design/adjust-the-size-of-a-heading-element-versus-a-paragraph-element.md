@@ -1,6 +1,6 @@
 ---
 id: 587d781b367417b2b2512abd
-title: Adjust the Size of a Heading Element Versus a Paragraph Element
+title: 제목 요소와 문단 요소의 크기 조정하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
@@ -9,15 +9,15 @@ dashedName: adjust-the-size-of-a-heading-element-versus-a-paragraph-element
 
 # --description--
 
-The font size of heading elements (`h1` through `h6`) should generally be larger than the font size of paragraph tags. This makes it easier for the user to visually understand the layout and level of importance of everything on the page. You use the `font-size` property to adjust the size of the text in an element.
+제목 요소(`h1`부터 `h6`)의 글꼴 크기는 일반적으로 문단 태그의 글꼴 크기보다 커야 합니다. 이렇게 하면 사용자가 페이지의 레이아웃과 중요도를 시각적으로 더 쉽게 이해할 수 있습니다. 텍스트의 크기를 조절하려면 `font-size` 속성을 사용합니다.
 
 # --instructions--
 
-To make the heading significantly larger than the paragraph, change the `font-size` of the `h4` element to 27 pixels.
+제목을 문단보다 크게 만들려면 `h4` 요소의 `font-size`를 27픽셀로 변경하세요.
 
 # --hints--
 
-Your code should add a `font-size` property to the `h4` element set to 27 pixels.
+`h4` 요소의 `font-size` 속성은 27 픽셀로 적용되어야 합니다.
 
 ```js
 assert($('h4').css('font-size') == '27px');

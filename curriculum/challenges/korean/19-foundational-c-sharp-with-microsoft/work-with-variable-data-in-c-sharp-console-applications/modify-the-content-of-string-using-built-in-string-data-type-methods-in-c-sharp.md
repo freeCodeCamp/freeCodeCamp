@@ -1,6 +1,6 @@
 ---
 id: 647e23438acb466c97ccbefe
-title: Modify the Content of Strings Using Built-In String Data Type Methods in C#
+title: 'Modify the Content of Strings Using Built-In String Data Type Methods in C#'
 challengeType: 19
 dashedName: modify-the-content-of-string-using-built-in-string-data-type-methods-in-c-sharp
 ---

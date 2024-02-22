@@ -5,5 +5,6 @@ certification: example-certification
 challengeType: 7
 isPrivate: true
 tests:
-  - id: 645147516c245de4d11eb7ba
+  - 
+    id: 645147516c245de4d11eb7ba
     title: Certification Exam

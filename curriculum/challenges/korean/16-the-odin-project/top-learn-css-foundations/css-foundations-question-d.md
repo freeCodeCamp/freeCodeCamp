@@ -5,6 +5,7 @@ title: CSS Foundations Question D
 challengeType: 15
 dashedName: css-foundations-question-d
 ---
+
 # --description--
 
 Another way to use selectors is to chain them as a list without any separation. Let’s say you had the following HTML:
@@ -49,7 +50,7 @@ You can take the two elements above and combine them with the following:
 
 In general, you can’t chain more than one type selector since an element can’t be two different types at once. For example, chaining two type selectors like `div` and `p` would give us the selector `divp`, which wouldn’t work since the selector would try to find a literal `<divp>` element, which doesn’t exist.
 
-# --question--    
+# --question--
 
 ## --text--
 

@@ -1,8 +1,8 @@
 ---
 id: 63e94dae6dcedbad73f2f6ee
-title: Passo 27
+title: Step 26
 challengeType: 0
-dashedName: step-27
+dashedName: step-26
 ---
 
 # --description--
@@ -25,7 +25,7 @@ Você deve inserir todas as cinco propriedades dos objetos em `arr` usando a des
 
 ```js
 
-assert.match(code, /{\s*((name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname))\s*}\s*/)
+assert.match(code, /{\s*((name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname))\s*}\s*/)
 
 
 ```

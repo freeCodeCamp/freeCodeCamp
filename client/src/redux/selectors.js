@@ -78,10 +78,6 @@ export const userTokenSelector = state => {
   return userSelector(state).userToken;
 };
 
-export const showCodeAllySelector = state => {
-  return state[MainApp].showCodeAlly;
-};
-
 export const examInProgressSelector = state => {
   return state[MainApp].examInProgress;
 };

@@ -20,11 +20,10 @@ import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import Hotkeys from '../components/hotkeys';
-import { hideCodeAlly, tryToShowCodeAlly } from '../../../redux/actions';
+import { updateUserToken } from '../../../redux/actions';
 import {
   completedChallengesSelector,
   partiallyCompletedChallengesSelector,
-  showCodeAllySelector,
   isSignedInSelector,
   userTokenSelector
 } from '../../../redux/selectors';
@@ -46,9 +45,9 @@ import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
+import { postUserToken } from '../../../utils/ajax';
 
 import './codeally.css';
-import { CodeAllyIframe } from '../../../components/growth-book/codeally-iframe';
 import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
 
 // Redux
@@ -57,21 +56,18 @@ const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
   isSignedInSelector,
   partiallyCompletedChallengesSelector,
-  showCodeAllySelector,
   userTokenSelector,
   (
     completedChallenges: CompletedChallenge[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean,
     partiallyCompletedChallenges: CompletedChallenge[],
-    showCodeAlly: boolean,
     userToken: string | null
   ) => ({
     completedChallenges,
     isChallengeCompleted,
     isSignedIn,
     partiallyCompletedChallenges,
-    showCodeAlly,
     userToken
   })
 );
@@ -81,9 +77,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     {
       challengeMounted,
       createFlashMessage,
-      hideCodeAlly,
       openCompletionModal: () => openModal('completion'),
-      tryToShowCodeAlly,
+      updateUserToken,
       updateChallengeMeta,
       updateSolutionFormValues
     },
@@ -96,7 +91,6 @@ interface ShowCodeAllyProps {
   completedChallenges: CompletedChallenge[];
   createFlashMessage: typeof createFlashMessage;
   data: { challengeNode: ChallengeNode };
-  hideCodeAlly: () => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
   openCompletionModal: () => void;
@@ -104,10 +98,9 @@ interface ShowCodeAllyProps {
     challengeMeta: ChallengeMeta;
   };
   partiallyCompletedChallenges: CompletedChallenge[];
-  showCodeAlly: boolean;
   t: TFunction;
-  tryToShowCodeAlly: () => void;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
+  updateUserToken: (arg0: string) => void;
   updateSolutionFormValues: () => void;
   userToken: string | null;
 }
@@ -135,10 +128,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     });
     challengeMounted(challengeMeta.id);
     this.container.current?.focus();
-  }
-
-  componentWillUnmount() {
-    this.props.hideCodeAlly();
   }
 
   handleSubmit = ({
@@ -176,6 +165,49 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     }
   };
 
+  openGitpod = (userToken?: string) => {
+    const {
+      data: {
+        challengeNode: {
+          challenge: { url }
+        }
+      }
+    } = this.props;
+
+    const repoUrl = `https://github.com/${url}`;
+    const coderoadTutorial = encodeURIComponent(
+      `https://raw.githubusercontent.com/${url}/main/tutorial.json`
+    );
+    const gitpodDomain = `https://gitpod.io/?autostart=true#CODEROAD_TUTORIAL_URL=${coderoadTutorial},CODEROAD_DISABLE_RUN_ON_SAVE=true`;
+    const tokenEnv = userToken ? `,CODEROAD_WEBHOOK_TOKEN=${userToken}` : '';
+    const gitpodUrl = `${gitpodDomain}${tokenEnv}/${repoUrl}`;
+
+    window.open(gitpodUrl, '_blank');
+  };
+
+  startCourse = async () => {
+    const { isSignedIn, userToken, updateUserToken } = this.props;
+
+    if (!isSignedIn) {
+      this.openGitpod();
+    } else if (!userToken) {
+      const createUserTokenResponse = await postUserToken();
+      const { data = { userToken: null } } = createUserTokenResponse;
+
+      if (data?.userToken) {
+        updateUserToken(data.userToken);
+        this.openGitpod(data.userToken);
+      } else {
+        createFlashMessage({
+          type: 'danger',
+          message: FlashMessages.StartProjectErr
+        });
+      }
+    } else {
+      this.openGitpod(userToken);
+    }
+  };
+
   render() {
     const {
       completedChallenges,
@@ -190,8 +222,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
             notes,
             superBlock,
             title,
-            translationPending,
-            url
+            translationPending
           }
         }
       },
@@ -201,33 +232,14 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
       partiallyCompletedChallenges,
-      showCodeAlly,
       t,
-      tryToShowCodeAlly,
-      updateSolutionFormValues,
-      userToken = null
+      updateSolutionFormValues
     } = this.props;
 
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${blockName}.title`
     )}: ${title}`;
     const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
-
-    // Initial CodeAlly login includes a tempToken in redirect URL
-    const queryParams = new URLSearchParams(window.location.search);
-    const codeAllyTempToken: string | null = queryParams.get('tempToken');
-
-    const tempToken = codeAllyTempToken ? `tempToken=${codeAllyTempToken}` : '';
-
-    // Include a unique param to avoid CodeAlly caching issues
-    const date = `date=${Date.now()}`;
-
-    // User token for submitting CodeRoad tutorials
-    const envVariables = userToken
-      ? `envVariables=CODEROAD_WEBHOOK_TOKEN=${userToken}`
-      : '';
-
-    const goBackTo = `goBackTo=${window.location.href}`;
 
     const isPartiallyCompleted = partiallyCompletedChallenges.some(
       challenge => challenge.id === challengeId
@@ -236,15 +248,8 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     const isCompleted = completedChallenges.some(
       challenge => challenge.id === challengeId
     );
-    const titleContext = t('learn.source-code-link');
-    return showCodeAlly ? (
-      <LearnLayout>
-        <Helmet title={windowTitle} />
-        <CodeAllyIframe
-          src={`https://codeally.io/embed/?repoUrl=${url}&${goBackTo}&${envVariables}&${tempToken}&${date}`}
-        />
-      </LearnLayout>
-    ) : (
+
+    return (
       <Hotkeys
         containerRef={this.container}
         nextChallengePath={nextChallengePath}
@@ -268,17 +273,38 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                 <PrismFormatted text={description} />
                 <Spacer size='medium' />
                 <div className='ca-description'>
-                  <Trans i18nKey='learn.github-required'>
-                    <a
-                      href='https://github.com/join'
-                      rel='noopener noreferrer'
-                      target='_blank'
-                      title={titleContext}
-                    >
-                      placeholder
-                    </a>
-                  </Trans>
+                  <p>{t('learn.gitpod.intro')}</p>
+
+                  <ol>
+                    <li>
+                      <Trans i18nKey='learn.gitpod.step-1'>
+                        <a
+                          href='https://github.com/join'
+                          rel='noopener noreferrer'
+                          target='_blank'
+                          title={t('learn.source-code-link')}
+                        >
+                          placeholder
+                        </a>
+                      </Trans>
+                    </li>
+
+                    <li>{t('learn.gitpod.step-2')}</li>
+                    <li>{t('learn.gitpod.step-3')}</li>
+                    <li>
+                      {t('learn.gitpod.step-4')}
+                      <ul>
+                        <li>{t('learn.gitpod.step-5')}</li>
+                        <li>{t('learn.gitpod.step-6')}</li>
+                        <li>{t('learn.gitpod.step-7')}</li>
+                        <li>{t('learn.gitpod.step-8')}</li>
+                      </ul>
+                    </li>
+
+                    <li>{t('learn.gitpod.step-9')}</li>
+                  </ol>
                 </div>
+
                 <Spacer size='medium' />
                 {isSignedIn &&
                   challengeType === challengeTypes.codeAllyCert && (
@@ -301,16 +327,45 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       <Spacer size='medium' />
                     </>
                   )}
-                <Alert id='codeally-cookie-warning' variant='info'>
-                  <p>{t(`intro:misc-text.enable-cookies`)}</p>
+                <Alert variant='info'>
+                  <p>
+                    <Trans
+                      values={{ course: title }}
+                      i18nKey='learn.gitpod.continue-project'
+                    >
+                      <a
+                        href='https://gitpod.io/workspaces'
+                        rel='noopener noreferrer'
+                        target='_blank'
+                      >
+                        placeholder
+                      </a>
+                    </Trans>
+                  </p>
+                  <Trans i18nKey='learn.gitpod.learn-more'>
+                    <a
+                      href='https://forum.freecodecamp.org/t/using-gitpod-in-the-curriculum/668669'
+                      rel='noopener noreferrer'
+                      target='_blank'
+                    >
+                      placeholder
+                    </a>
+                  </Trans>
                 </Alert>
+                {isSignedIn && (
+                  <Alert variant='danger'>
+                    {t('learn.gitpod.logout-warning', { course: title })}
+                  </Alert>
+                )}
                 <CodeAllyButton
-                  onClick={tryToShowCodeAlly}
                   text={
                     challengeType === challengeTypes.codeAllyCert
                       ? t('buttons.click-start-project')
                       : t('buttons.click-start-course')
                   }
+                  // `this.startCourse` being an async callback is acceptable
+                  //eslint-disable-next-line @typescript-eslint/no-misused-promises
+                  onClick={this.startCourse}
                 />
                 {isSignedIn &&
                   challengeType === challengeTypes.codeAllyCert && (

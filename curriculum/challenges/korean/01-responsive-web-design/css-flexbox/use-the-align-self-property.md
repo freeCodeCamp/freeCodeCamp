@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b00
-title: Use the align-self Property
+title: align-self 속성 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvzfv'
 forumTopicId: 301107
@@ -9,23 +9,23 @@ dashedName: use-the-align-self-property
 
 # --description--
 
-The final property for flex items is `align-self`. This property allows you to adjust each item's alignment individually, instead of setting them all at once. This is useful since other common adjustment techniques using the CSS properties `float`, `clear`, and `vertical-align` do not work on flex items.
+플렉스 아이템을 위한 마지막으로 알아볼 속성은 `align-self`입니다. 이 속성은 아이템을 한번에 설정하는 대신 각각의 아이템의 정렬을 조정할 수 있게 해줍니다. `float`, `clear`, 그리고 `vertical-align`같이 다른 일반적인 설정들은 플렉스 아이템에서 동작하지 않기 때문에 이 속성이 유용합니다.
 
-`align-self` accepts the same values as `align-items` and will override any value set by the `align-items` property.
+`align-self`은 `align-items`과 같은 값을 받아들이며 `align-items` 속성으로 설정된 값을 덮어쓰기 합니다.
 
 # --instructions--
 
-Add the CSS property `align-self` to both `#box-1` and `#box-2`. Give `#box-1` a value of `center` and give `#box-2` a value of `flex-end`.
+`#box-1`와 `#box-2`에 `align-self` 속성을 추가하세요. `#box-1`에 `center` 그리고 `#box-2`에 `flex-end` 값을 주세요.
 
 # --hints--
 
-The `#box-1` element should have the `align-self` property set to a value of `center`.
+`#box-1` 요소는 `center`으로 설정된 `align-self` 속성을 가져야 합니다.
 
 ```js
 assert($('#box-1').css('align-self') == 'center');
 ```
 
-The `#box-2` element should have the `align-self` property set to a value of `flex-end`.
+`#box-2` 요소는 `flex-end`로 설정된 `align-self` 속성을 가져야 합니다.
 
 ```js
 assert($('#box-2').css('align-self') == 'flex-end');

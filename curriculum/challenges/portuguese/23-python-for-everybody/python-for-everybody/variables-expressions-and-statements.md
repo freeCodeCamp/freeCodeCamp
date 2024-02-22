@@ -14,7 +14,7 @@ dashedName: variables-expressions-and-statements
 
 ## --text--
 
-What is the symbol used in an assignment statement?
+Qual é o símbolo usado em uma instrução da atribuição?
 
 ## --answers--
 

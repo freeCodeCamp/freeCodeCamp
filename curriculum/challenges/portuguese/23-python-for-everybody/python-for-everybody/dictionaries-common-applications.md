@@ -14,7 +14,7 @@ dashedName: dictionaries-common-applications
 
 ## --text--
 
-What will the following code print?
+O que será impresso pelo código a seguir?
 
 ```python
 counts = { 'quincy' : 1 , 'mrugesh' : 42, 'beau': 100, '0': 10}

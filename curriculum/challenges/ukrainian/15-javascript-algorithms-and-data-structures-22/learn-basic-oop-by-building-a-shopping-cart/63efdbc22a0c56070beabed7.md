@@ -1,6 +1,6 @@
 ---
 id: 63efdbc22a0c56070beabed7
-title: Step 23
+title: Крок 23
 challengeType: 0
 dashedName: step-23
 ---
@@ -22,21 +22,21 @@ assert.match(cart.addItem.toString(), /dessert\.id/);
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]/);
 ```
 
 Ви повинні використовувати оператор присвоєння, щоб оновити значення властивості `totalCountPerProduct`, яка відповідає `dessert.id`.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=/);
 ```
 
 Ви повинні оновити значення `totalCountPerProduct` до поточного значення плюс один.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\[\s*dessert\.id\s*\]\s*\+\s*1/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*\+\s*1/);
 ```
 
 

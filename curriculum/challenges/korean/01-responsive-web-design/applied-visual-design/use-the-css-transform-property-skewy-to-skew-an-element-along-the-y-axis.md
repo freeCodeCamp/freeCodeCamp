@@ -1,6 +1,6 @@
 ---
 id: 587d78a6367417b2b2512adc
-title: Use the CSS Transform Property skewY to Skew an Element Along the Y-Axis
+title: CSS 변형 속성인 SkewY를 사용하여 요소를 Y축을 따라 기울이는 방법
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MZ2uB'
 forumTopicId: 301075
@@ -9,15 +9,15 @@ dashedName: use-the-css-transform-property-skewy-to-skew-an-element-along-the-y-
 
 # --description--
 
-Given that the `skewX()` function skews the selected element along the X-axis by a given degree, it is no surprise that the `skewY()` property skews an element along the Y (vertical) axis.
+선택한 요소를 주어진 각도로 X축을 따라 기울이는 `skewX()` 함수가 있다면, `skewY()` 속성은 요소를 Y (수직) 축을 따라 기울이게 됩니다.
 
 # --instructions--
 
-Skew the element with the id of `top` -10 degrees along the Y-axis by using the `transform` property.
+`transform` 속성을 사용하여 `top` id를 가진 요소를 Y축을 따라 -10도만큼 기울이세요.
 
 # --hints--
 
-The element with id `top` should be skewed by -10 degrees along its Y-axis.
+`top` id를 가진 요소는 Y축을 따라 -10도만큼 기울어야 합니다.
 
 ```js
 assert(code.match(/#top\s*?{\s*?.*?\s*?transform:\s*?skewY\(-10deg\);/g));

@@ -1,6 +1,6 @@
 ---
 id: 647e21eb8acb466c97ccbeea
-title: Guided Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#
+title: 'Guided Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#'
 challengeType: 19
 dashedName: guided-project-develop-foreach-and-if-elseif-else-structures-to-process-array-data-in-c-sharp
 ---

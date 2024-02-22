@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f060b6c005b0e76f05a
-title: Python Functions
+title: 파이썬 함수
 challengeType: 11
 videoId: 3JGF-n3tDPU
 bilibiliIds:
@@ -18,23 +18,23 @@ What is the purpose of the "def" keyword in Python?
 
 ## --answers--
 
-It is slang that means "The following code is really cool."
+"다음 코드는 정말 멋지다"는 뜻의 속어입니다.
 
 ---
 
-It indicates the start of a function.
+함수의 시작을 나타냅니다.
 
 ---
 
-It indicates that the following indented section of code is to be stored for later.
+이 다음 코드의 들여쓰기가 나중에 사용하기 위해 저장된다는 것을 나타냅니다.
 
 ---
 
-It indicates the start of a function, and the following indented section of code is to be stored for later.
+함수의 시작을 나타내며, 이 다음 코드의 들여쓰기가 나중에 사용하기 위해 저장된다는 것을 나타냅니다.
 
 ---
 
-None of the above.
+위의 어느 것도 아님.
 
 ## --video-solution--
 

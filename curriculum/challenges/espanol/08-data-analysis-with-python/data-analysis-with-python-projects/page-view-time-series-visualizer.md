@@ -8,12 +8,7 @@ dashedName: page-view-time-series-visualizer
 
 # --description--
 
-Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-page-view-time-series-visualizer" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código de inicio Replit</a>.
-
--   Empieza importando el proyecto en Replit.
--   Siguiente, verás una ventana `.replit`.
--   Selecciona `Use run command` y click en el botón `Done`.
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-page-view-time-series-visualizer" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 Todavía estamos desarrollando la parte interactiva del currículo de Python. Por el momento, aquí hay algunos videos en el canal de YouTube de freeCodeCamp.org que te enseñaran todo lo que necesitas saber para completar este proyecto:
 
@@ -33,17 +28,17 @@ Utiliza los datos para completar las siguientes tareas:
 - Crea una función `draw_bar_plot` que dibuje un gráfico de barras similar a "examples/Figure_2.png". Debería mostrar el promedio diario de vistas a la página para cada mes agrupadas por año. La leyenda debería mostrar etiquetas mensuales y tener un título de `Months`. En la gráfica, la etiqueta en el eje x debería ser `Years` y la etiqueta en el eje y debería ser `Average Page Views`.
 - Crea `draw_box_plot` una función que use Seaborn para dibujar dos puntos de caja adyacentes similar a "examples/Figure_3.png". Estos diagramas de caja deberían mostrar como los valores son distribuídos dentro de un año dado o mes y como se compara con el tiempo. El título del primer gráfico debería ser `Year-wise Box Plot (Trend)` y el título del segundo gráfico debería ser `Month-wise Box Plot (Seasonality)`. Asegurese que la etiqueta mes mes en la parte inferior empiece en `Jan` y los ejes x y y estén etiquetados correctamente. La plantilla incluye comandos para preparar los datos.
 
-Para cada gráfico, asegúrese de usar una copia de los datos. Las pruebas unitarias están escritas para en `test_module.py`.
+Para cada gráfico, asegúrese de usar una copia de los datos.
 
 El boilerplate también incluye los comandos para guardar y devolver la imagen.
 
 ## Desarrollo
 
-Para el desarrollo, puedes usar `main.py` para probar tus funciones. Haz clic en el botón "run" y se ejecutará `main.py`.
+Write your code in `time_series_visualizer.py`. For development, you can use `main.py` to test your code.
 
 ## Pruebas
 
-Hemos importado las pruebas de `test_module.py` a `main.py` para tu conveniencia. Las pruebas se ejecutarán automáticamente cada vez que presiones el botón "run".
+The unit tests for this project are in `test_module.py`. Hemos importado las pruebas de `test_module.py` a `main.py` para tu conveniencia.
 
 ## Envío
 

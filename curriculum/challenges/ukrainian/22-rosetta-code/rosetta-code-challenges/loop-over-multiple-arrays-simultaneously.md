@@ -1,6 +1,6 @@
 ---
 id: 5e6dd15004c88cf00d2a78b3
-title: Циклічне повторення декількох масивів одночасно
+title: Виконання циклу на декількох масивах одночасно
 challengeType: 1
 forumTopicId: 385279
 dashedName: loop-over-multiple-arrays-simultaneously
@@ -8,15 +8,15 @@ dashedName: loop-over-multiple-arrays-simultaneously
 
 # --description--
 
-Loop over multiple arrays and create a new array whose $i^{th}$ element is the concatenation of $i^{th}$ element of each of the given.
+Виконайте цикл на декількох масивах та створіть новий масив, де $i^{-ий}$ елемент є об’єднанням $i^{-го}$ елемента кожного наданого масиву.
 
-Наприклад, якщо вам дано цей масив масивів:
+Наприклад, якщо дано такий масив масивів:
 
 ```js
 [ ["a", "b", "c"], ["A", "B", "C"], [1, 2, 3] ]
 ```
 
-вихід має бути:
+вихідними даними будуть:
 
 ```js
 ["aA1","bB2","cC3"]
@@ -24,7 +24,7 @@ Loop over multiple arrays and create a new array whose $i^{th}$ element is the c
 
 # --instructions--
 
-Напишіть функцію, яка приймає масив масивів в якості параметра і повертає масив рядків, задовольняючи даний опис.
+Напишіть функцію, яка приймає масив масивів як параметр та повертає масив рядків, задовольняючи даний опис.
 
 # --hints--
 
@@ -34,7 +34,7 @@ Loop over multiple arrays and create a new array whose $i^{th}$ element is the c
 assert(typeof loopSimult == 'function');
 ```
 
-`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` повинен повернути масив.
+`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` має повернути масив.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` повинен повернути `["aA1", "bB2", "cC3"]`.
+`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` має повернути `["aA1", "bB2", "cC3"]`.
 
 ```js
 assert.deepEqual(
@@ -61,7 +61,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["c", "b", "c"], ["4", "5", "C"], [7, 7, 3]])` повинен повернути `["c47", "b57", "cC3"]`.
+`loopSimult([["c", "b", "c"], ["4", "5", "C"], [7, 7, 3]])` має повернути `["c47", "b57", "cC3"]`.
 
 ```js
 assert.deepEqual(
@@ -74,7 +74,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["a", "b", "c", "d"], ["A", "B", "C", "d"], [1, 2, 3, 4]])` повинн повернути `["aA1", "bB2", "cC3", "dd4"]`.
+`loopSimult([["a", "b", "c", "d"], ["A", "B", "C", "d"], [1, 2, 3, 4]])` має повернути `["aA1", "bB2", "cC3", "dd4"]`.
 
 ```js
 assert.deepEqual(
@@ -87,7 +87,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["a", "b"], ["A", "B"], [1, 2]])`повинен повернути `["aA1", "bB2"]`.
+`loopSimult([["a", "b"], ["A", "B"], [1, 2]])` має повернути `["aA1", "bB2"]`.
 
 ```js
 assert.deepEqual(
@@ -100,7 +100,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["b", "c"], ["B", "C"], [2, 3]])` повинен повернути `["bB2", "cC3"]`.
+`loopSimult([["b", "c"], ["B", "C"], [2, 3]])` має повернути `["bB2", "cC3"]`.
 
 ```js
 assert.deepEqual(

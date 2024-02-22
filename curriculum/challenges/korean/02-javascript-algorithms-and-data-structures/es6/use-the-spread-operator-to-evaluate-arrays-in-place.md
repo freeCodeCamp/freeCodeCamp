@@ -28,7 +28,7 @@ const maximus = Math.max(...arr);
 
 `maximus` would have a value of `89`.
 
-`...arr` returns an unpacked array. In other words, it spreads the array. However, the spread operator only works in-place, like in an argument to a function or in an array literal. For example:
+`...arr` returns an unpacked array. In other words, it spreads the array. However, the spread operator only works in-place, like in an argument to a function or in an array literal. 예시:
 
 ```js
 const spreaded = [...arr];

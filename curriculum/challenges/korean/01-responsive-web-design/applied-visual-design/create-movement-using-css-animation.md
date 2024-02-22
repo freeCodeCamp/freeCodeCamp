@@ -1,6 +1,6 @@
 ---
 id: 587d78a7367417b2b2512ae1
-title: Create Movement Using CSS Animation
+title: CSS 애니메이션으로 움직임을 만들기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c7amZfW'
 forumTopicId: 301051
@@ -9,9 +9,9 @@ dashedName: create-movement-using-css-animation
 
 # --description--
 
-When elements have a specified `position`, such as `fixed` or `relative`, the CSS offset properties `right`, `left`, `top`, and `bottom` can be used in animation rules to create movement.
+요소가 `fixed` 또는 `relative`와 같은 특정 `position`을 가지고 있을 때, CSS offset 속성인 `right`, `left`, `top`, 그리고 `bottom`을 사용하여 애니메이션을 만들 수 있습니다.
 
-As shown in the example below, you can push the item downwards then upwards by setting the `top` property of the `50%` keyframe to 50px, but having it set to 0px for the first (`0%`) and the last (`100%`) keyframe.
+아래 예제에서 보는 것처럼, `50%` 키프레임의 `top` 속성을 50px로 설정하고, 첫 번째(`0%`)와 마지막(`100%`) 키프레임에서는 0px로 설정하여 항목을 아래로 밀고 다시 위로 당길 수 있습니다
 
 ```css
 @keyframes rainbow {
@@ -32,23 +32,23 @@ As shown in the example below, you can push the item downwards then upwards by s
 
 # --instructions--
 
-Add a horizontal motion to the `div` animation. Using the `left` offset property, add to the `@keyframes` rule so rainbow starts at 0 pixels at `0%`, moves to 25 pixels at `50%`, and ends at -25 pixels at `100%`. Don't replace the `top` property in the editor - the animation should have both vertical and horizontal motion.
+`div` 에니메이션에 수평 움직임을 더하세요. `@keyframes` 규칙에 `left` 오프셋 속성을 사용하여 무지개가 `0%`에서 0px로 시작하여 `50%`에서 25px로 이동하고, `100%`에서 -25px로 끝나도록합니다. 에디터에서 `top` 속성을 교체하지 마세요. 애니메이션에는 수직 및 수평 움직임 둘 다 있어야 합니다.
 
 # --hints--
 
-The `@keyframes` rule for `0%` should use the `left` offset of 0px.
+`@keyframes` 규칙의 `0%` 부분은 `left` 오프셋을 0px로 사용해야 합니다.
 
 ```js
 assert(code.match(/[^50]0%\s*?{[\s\S]*?left:\s*?0px(;[\s\S]*?|\s*?)}/gi));
 ```
 
-The `@keyframes` rule for `50%` should use the `left` offset of 25px.
+`@keyframes` 규칙의 `50%` 부분은 `left` 오프셋을 25px로 사용해야 합니다.
 
 ```js
 assert(code.match(/50%\s*?{[\s\S]*?left:\s*?25px(;[\s\S]*?|\s*?)}/gi));
 ```
 
-The `@keyframes` rule for `100%` should use the `left` offset of -25px.
+`@keyframes` 규칙의 `100%` 부분은 `left` 오프셋을 -25px로 사용해야 합니다.
 
 ```js
 assert(code.match(/100%\s*?{[\s\S]*?left:\s*?-25px(;[\s\S]*?|\s*?)}/gi));

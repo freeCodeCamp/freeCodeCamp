@@ -15,7 +15,7 @@ Factorial of a number is given by:
 <pre><big>n! = n * (n-1) * (n-2) * ..... * 1</big>
 </pre>
 
-For example:
+예시:
 
 <ul>
   <li><code>3! = 3 * 2 * 1 = 6</code></li>

@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8007
-title: Алгоритми сортування/Сортування гнома
+title: 'Алгоритми сортування: сортування гнома'
 challengeType: 1
 forumTopicId: 302314
 dashedName: sorting-algorithmsgnome-sort
@@ -8,7 +8,7 @@ dashedName: sorting-algorithmsgnome-sort
 
 # --description--
 
-Gnome sort is a sorting algorithm which is similar to <a href="https://rosettacode.org/wiki/Insertion_sort" target="_blank" rel="noopener noreferrer nofollow">Insertion sort</a>, except that moving an element to its proper place is accomplished by a series of swaps, as in <a href="https://rosettacode.org/wiki/Bubble" target="_blank" rel="noopener noreferrer nofollow">Bubble Sort</a>.
+Сортування гнома — це алгоритм сортування, схожий до <a href="https://rosettacode.org/wiki/Insertion_sort" target="_blank" rel="noopener noreferrer nofollow">алгоритму включенням</a>, за винятком того, що переміщення елемента на потрібне місце відбувається послідовністю змін, як в <a href="https://rosettacode.org/wiki/Bubble" target="_blank" rel="noopener noreferrer nofollow">сортуванні бульбашкою</a>.
 
 Псевдокод для алгоритму:
 
@@ -33,7 +33,7 @@ Gnome sort is a sorting algorithm which is similar to <a href="https://rosettaco
 
 # --instructions--
 
-Напишіть функцію для виконання зазначеного вище псевдокоду. Функція має повернути впорядкований масив.
+Напишіть функцію, щоб реалізувати псевдокод вище. Функція має повернути відсортований масив.
 
 # --hints--
 

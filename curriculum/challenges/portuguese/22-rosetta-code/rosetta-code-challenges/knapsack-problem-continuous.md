@@ -8,7 +8,7 @@ dashedName: knapsack-problemcontinuous
 
 # --description--
 
-A thief burgles a butcher's shop, where he can select from some items.
+Um ladrão rouba um açougue, onde ele pode escolher entre alguns itens.
 
 O ladrão sabe os pesos e os preços de cada um dos itens. Como ele tem uma mochila com um limite máximo de peso que ele pode carregar, ele quer selecionar os itens que farão com que ele tenha o máximo de lucro. Ele pode cortar os itens. O item tem um preço reduzido após o corte, que é proporcional ao preço original em razão da proporção das massas. Isso significa que metade de um item tem metade do preço original.
 

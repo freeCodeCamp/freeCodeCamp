@@ -1,6 +1,6 @@
 ---
 id: 5a90376038fddaf9a66b5d3c
-title: Align All Items Horizontally using justify-items
+title: justify-items로 모든 아이템 수평 정렬하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cJbpECn'
 forumTopicId: 301120
@@ -9,15 +9,15 @@ dashedName: align-all-items-horizontally-using-justify-items
 
 # --description--
 
-Sometimes you want all the items in your CSS Grid to share the same alignment. You can use the previously learned properties and align them individually, or you can align them all at once horizontally by using `justify-items` on your grid container. This property can accept all the same values you learned about in the previous two challenges, the difference being that it will move **all** the items in our grid to the desired alignment.
+CSS 그리드에 동일하게 정렬하고 싶을 때가 있습니다. 이전에 배운 속성들을 사용하여 개별적으로 정렬하거나 그리드 컨테이너에 `justify-items`을 사용하여 한 번에 수평 정렬을 시킬 수 있습니다. 이 속성은 이전 두 과제에서 배운 모두 같은 값을 받을 수 있습니다. grid에 있는 **모든** 아이템을 원하는 정렬로 옮겨주는 게 차이가 있습니다.
 
 # --instructions--
 
-Use this property to center all our items horizontally.
+모든 아이템을 수평적으로 중심에 맞추도록 이 속성을 사용하세요.
 
 # --hints--
 
-`container` class should have a `justify-items` property that has the value of `center`.
+`container` 클래스 `center`의 값을 가진 `justify-items` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
     grid-gap: 10px;
     /* Only change code below this line */
 
-    
+
     /* Only change code above this line */
   }
 </style>

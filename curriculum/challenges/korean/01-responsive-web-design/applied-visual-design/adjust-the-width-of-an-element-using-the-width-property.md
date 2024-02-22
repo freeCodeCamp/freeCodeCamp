@@ -1,6 +1,6 @@
 ---
 id: 587d7791367417b2b2512ab4
-title: Adjust the Width of an Element Using the width Property
+title: Width 속성을 이용해서 요소의 너비 조정하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVLPtN'
 forumTopicId: 301039
@@ -9,7 +9,7 @@ dashedName: adjust-the-width-of-an-element-using-the-width-property
 
 # --description--
 
-You can specify the width of an element using the `width` property in CSS. Values can be given in relative length units (such as `em`), absolute length units (such as `px`), or as a percentage of its containing parent element. Here's an example that changes the width of an image to 220px:
+요소의 너비를 지정하려면 CSS에서 `width` 속성을 사용할 수 있습니다. 너비 값은 상대 길이 단위(예: `em`), 절대 길이 단위(예: `px`), 또는 포함하하고 있는부모 요소의 백분율로 지정할 수 있습니다. 이미지의 너비를 220px로 변경하는 예제입니다.
 
 ```css
 img {
@@ -19,11 +19,11 @@ img {
 
 # --instructions--
 
-Add a `width` property to the entire card and set it to an absolute value of 245px. Use the `fullCard` class to select the element.
+전체 카드에 `width` 속성을 추가하고 절대값인 245px로 설정하십시오. `fullCard` 클래스를 사용하여 요소를 선택하세요.
 
 # --hints--
 
-Your code should change the `width` property of the card to 245 pixels by using the `fullCard` class selector.
+`fullCard` 클래스 선택자를 사용하여 카드의 `width` 속성을 245 픽셀로 변경해야 합니다.
 
 ```js
 const fullCard = code.match(/\.fullCard\s*{[\s\S]+?[^}]}/g);

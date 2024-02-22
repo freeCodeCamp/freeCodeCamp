@@ -1,6 +1,6 @@
 ---
 id: 587d78a8367417b2b2512ae4
-title: Make a CSS Heartbeat using an Infinite Animation Count
+title: 무한한 애니메이션 횟수를 사용하여 CSS 두근두근 심장 에니메이션 만들기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cDZpDUr'
 forumTopicId: 301062
@@ -9,23 +9,23 @@ dashedName: make-a-css-heartbeat-using-an-infinite-animation-count
 
 # --description--
 
-Here's one more continuous animation example with the `animation-iteration-count` property that uses the heart you designed in a previous challenge.
+이전 챌린지에서 디자인한 하트를 사용하는 `animation-iteration-count` 속성을 활용한 또 다른 연속 애니메이션 예제가 있습니다.
 
-The one-second long heartbeat animation consists of two animated pieces. The `heart` elements (including the `:before` and `:after` pieces) are animated to change size using the `transform` property, and the background `div` is animated to change its color using the `background` property.
+1초 동안 계속되는 심장 박동 애니메이션은 두 개의 애니메이션 요소로 구성되어 있습니다. `heart` 요소들 (그 중에 `:before`와 `:after` 부분도 포함)은 `transform` 속성을 사용하여 크기를 변경하는 애니메이션을 적용받고, 배경 `div`은 `background` 속성을 사용하여 색상을 변경하는 애니메이션을 적용받습니다.
 
 # --instructions--
 
-Keep the heart beating by adding the `animation-iteration-count` property for both the `back` class and the `heart` class and setting the value to `infinite`. The `heart:before` and `heart:after` selectors do not need any animation properties.
+계속해서 심장이 뛸 수 있도록 `back` 클래스와 `heart` 클래스에 `animation-iteration-count` 속성을 추가하고 값을 `infinite`로 설정하세요. `heart:before` 및 `heart:after` 선택자에는 어떠한 애니메이션 속성도 필요하지 않습니다.
 
 # --hints--
 
-The `animation-iteration-count` property for the `heart` class should have a value of `infinite`.
+`heart` 클래스의 `animation-iteration-count` 속성은 `infinite`여야 합니다.
 
 ```js
 assert($('.heart').css('animation-iteration-count') == 'infinite');
 ```
 
-The `animation-iteration-count` property for the `back` class should have a value of `infinite`.
+`back` 클래스의 `animation-iteration-count` 속성은 `infinite`여야 합니다.
 
 ```js
 assert($('.back').css('animation-iteration-count') == 'infinite');

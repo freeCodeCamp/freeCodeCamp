@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ec1
-title: Ітерація цифр квадрату числа
+title: Ітерація цифрових квадратів
 challengeType: 1
 forumTopicId: 302291
 dashedName: iterated-digits-squaring
@@ -8,7 +8,7 @@ dashedName: iterated-digits-squaring
 
 # --description--
 
-If you add the square of the digits of a Natural number (an integer bigger than zero), you always end with either 1 or 89:
+Якщо додати квадрат цифр натурального числа (ціле число більше за нуль), то в результаті ви завжди отримаєте або 1, або 89:
 
 <pre>15 -> 26 -> 40 -> 16 -> 37 -> 58 -> 89
 7 -> 49 -> 97 -> 130 -> 10 -> 1
@@ -16,7 +16,7 @@ If you add the square of the digits of a Natural number (an integer bigger than 
 
 # --instructions--
 
-Напишіть функцію, яка використовує число як параметр, і видає 1 або 89 після виконання описаного процесу.
+Напишіть функцію, яка приймає число як параметр та повертає 1 або 89 після виконання описаного процесу.
 
 # --hints--
 
@@ -26,43 +26,43 @@ If you add the square of the digits of a Natural number (an integer bigger than 
 assert(typeof iteratedSquare == 'function');
 ```
 
-`iteratedSquare(4)` має повертати число.
+`iteratedSquare(4)` має повернути число.
 
 ```js
 assert(typeof iteratedSquare(4) == 'number');
 ```
 
-`iteratedSquare(4)` має повертати `89`.
+`iteratedSquare(4)` має повернути `89`.
 
 ```js
 assert.equal(iteratedSquare(4), 89);
 ```
 
-`iteratedSquare(7)` має повертати`1`.
+`iteratedSquare(7)` має повернути `1`.
 
 ```js
 assert.equal(iteratedSquare(7), 1);
 ```
 
-`iteratedSquare(15)` має повертати`89`.
+`iteratedSquare(15)` має повернути `89`.
 
 ```js
 assert.equal(iteratedSquare(15), 89);
 ```
 
-`iteratedSquare(20)` має повертати`89`.
+`iteratedSquare(20)` має повернути `89`.
 
 ```js
 assert.equal(iteratedSquare(20), 89);
 ```
 
-`iteratedSquare(70)` має повертати`1`.
+`iteratedSquare(70)` має повернути `1`.
 
 ```js
 assert.equal(iteratedSquare(70), 1);
 ```
 
-`iteratedSquare(100)` має повертати`1`.
+`iteratedSquare(100)` має повернути `1`.
 
 ```js
 assert.equal(iteratedSquare(100), 1);

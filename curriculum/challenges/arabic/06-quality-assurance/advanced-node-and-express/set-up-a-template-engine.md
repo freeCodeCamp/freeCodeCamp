@@ -11,16 +11,8 @@ dashedName: set-up-a-template-engine
 العمل على هذه التحديات سوف ينطوي على كتابة كودك باستخدام إحدى الطرق التالية:
 
 - Clone <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally.
-- Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-advancednode" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete these challenges.
+- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges.
 - استخدم أي منشئ موقع لإكمال المشروع. تحقق انك أضفت جميع الملفات من مستودعنا في GitHub في مشروعك.
-
-إذا استخدمت Replit، اتبع هذه الخطوات لإعداد المشروع:
-
--   ابدأ باستيراد (import) المشروع إلى Replit.
--   بعد ذلك، سترى نافذة `.replit`.
--   اختار `Use run command` وانقر على زر `Done`.
-
-عند الانتهاء، تأكد من استضافة ديمو (demo) أو عرض عملي لمشروعك في مكان عام. ثم أرسل عنوان URL للمشروع في خانة Solution Link.
 
 A template engine enables you to use static template files (such as those written in *Pug*) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server. Then it transforms the template into a static HTML file that is sent to the client. This approach makes it easier to design an HTML page and allows for displaying variables on the page without needing to make an API call from the client.
 

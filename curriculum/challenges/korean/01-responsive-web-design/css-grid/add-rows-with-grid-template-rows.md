@@ -1,6 +1,6 @@
 ---
 id: 5a9036e138fddaf9a66b5d33
-title: Add Rows with grid-template-rows
+title: grid-template-rows로 행 추가하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cbp9Pua'
 forumTopicId: 301119
@@ -9,15 +9,15 @@ dashedName: add-rows-with-grid-template-rows
 
 # --description--
 
-The grid you created in the last challenge will set the number of rows automatically. To adjust the rows manually, use the `grid-template-rows` property in the same way you used `grid-template-columns` in the previous challenge.
+이전 과제에서 생성한 그리드는 자동으로 행의 수를 설정하게 됩니다. 행을 수동으로 조정하려면 이전 과제에서 `grid-template-columns`를 사용한 것처럼 `grid-template-rows` 속성을 사용하면 됩니다.
 
 # --instructions--
 
-Add two rows to the grid that are `50px` tall each.
+높이가 `50px`인 두개의 행을 그리드에 추가하세요.
 
 # --hints--
 
-`container` class should have a `grid-template-rows` property with two units of `50px`.
+`container` 클래스는 두 개의 `50px`을 가진 `grid-template-rows` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
     grid-template-columns: 100px 100px 100px;
     /* Only change code below this line */
 
-    
+
     /* Only change code above this line */
   }
 </style>

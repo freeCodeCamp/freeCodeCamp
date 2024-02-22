@@ -8,7 +8,7 @@ dashedName: 24-game
 
 # --description--
 
-The 24 Game tests a person's mental arithmetic.
+O jogo do 24 testa a aritmética mental de uma pessoa.
 
 O objetivo do jogo é organizar quatro números de maneira que, quando avaliados, o resultado seja 24
 
@@ -18,13 +18,13 @@ Implemente uma função que receba uma string de quatro algarismos como argument
 
 **Regras:**
 <ul>
-  <li> Only the following operators/functions are allowed: multiplication, division, addition, subtraction. </li>
+  <li> Apenas os operadores/funções seguintes são permitidos: multiplicação, divisão, adição, subtração. </li>
   <li> A divisão deve usar o ponto flutuante ou a aritmética de racionais, etc., para preservar os restos. </li>
   <li> Formar números com mais de um dígito a partir dos que foram fornecidos não é permitido. (Portanto, uma resposta de 12+12 quando for fornecido 1, 2, 2 e 1 está errada). </li>
   <li> A ordem dos dígitos fornecida não precisa ser preservada. </li>
 </ul>
 
-| Example input             | Exemplo de saída          |
+| Exemplo de entrada        | Exemplo de saída          |
 | ------------------------- | ------------------------- |
 | <code>solve24("4878");</code> | <code>(7-8/8)\*4</code> |
 | <code>solve24("1234");</code> | <code>3\*1\*4\*2</code> |

@@ -750,8 +750,8 @@
   "scientific-computing-with-python": {
     "title": "Scientific Computing with Python (Beta)",
     "intro": [
-      "Hoy en día, Python es uno de los lenguajes de programación más populares y flexibles. Puedes usarlo para todo, desde programas básicos hasta machine learning.",
-      "En la certificación de Cálculo Científico con Python, aprenderás los fundamentos de Python tales como: variables, bucles, condicionales, y funciones. Luego, avanzarás rápidamente por estructura de datos complejas, redes, base de datos relacionales y visualización de datos."
+      "The Scientific Computing with Python (Beta) curriculum will equip you with the skills to analyze and manipulate data using Python, a powerful and versatile programming language. You'll learn key concepts like data structures, algorithm, Object Oriented Programming, and how to perform complex calculations using a variety of tools.",
+      "This comprehensive course will guide you through the fundamentals of scientific computing, including data structures, and algorithms."
     ],
     "note": "",
     "blocks": {
@@ -1316,15 +1316,21 @@
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Learn How to Talk About a Typical Workday and Tasks",
-        "intro": ["Learn about a typical workday."]
+        "intro": [
+          "In this course, you'll learn how to talk about your workday and the tasks that you perform in the workplace and how to share them with others. It mainly focuses on the structures used for describing your activities and task-related vocabulary."
+        ]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "Learn How to Discuss Your Morning or Evening Routine",
-        "intro": ["Learn about routines."]
+        "intro": [
+          "In this course, you'll learn how to talk about details of your routine and share them with someone else. It mainly focuses on the structures used for declaring routine actions and related vocabulary."
+        ]
       },
       "learn-how-to-describe-your-current-project": {
         "title": "Learn How to Describe Your Current Project",
-        "intro": ["Learn about projects."]
+        "intro": [
+          "In this course, you'll learn how to talk about the projects that you are involved in and how to inform others of what you are doing in these projects. It mainly focuses on the structures used for informing it and on the related vocabulary."
+        ]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Learn How to Ask and Share About Educational and Professional Background",
@@ -1452,12 +1458,13 @@
     "legacy-go-back": "Ve a la versión actual del plan de estudios.",
     "course-maintenance": "Estos cursos están en mantenimiento. Si no funcionan, puede aprender a ejecutarlos localmente en <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
     "course-disabling-soon": "The browser version of these courses will be temporarily disabled soon and your virtual machines will be deleted. Any progress in your virtual machines will be lost. If you have any files you want from them, you should save them to your computer. We apologize for any inconvenience. We hope to have an improved browser version of these courses available again in the next few weeks.",
-    "course-disabled": "These courses are temporarily unavailable to run in the browser. We apologize for any inconvenience. You can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>. We hope to have an improved browser version available again in the next few weeks.",
+    "course-disabled": "These courses are temporarily unavailable to run in the browser. We apologize for any inconvenience. You can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>. We hope to have an improved browser version available again soon.",
     "run-locally": "For now, we recommend running the courses locally on your computer. You can learn how at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
     "progress-wont-save": "Su progreso no se guardará en su cuenta de FreeCodeCamp cuando los ejecute localmente.",
     "go-back-to-learn": "Volver a la versión estable del currículum.",
     "read-database-cert-article": "Por favor, lea este post del foro antes de continuar.",
     "enable-cookies": "Debes habilitar las cookies de terceros antes de comenzar.",
-    "english-only": "Los cursos de esta sección solo están disponibles en inglés. Solo podemos traducir los títulos y las introducciones en este momento, no las lecciones en sí mismas."
+    "english-only": "Los cursos de esta sección solo están disponibles en inglés. Solo podemos traducir los títulos y las introducciones en este momento, no las lecciones en sí mismas.",
+    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
   }
 }

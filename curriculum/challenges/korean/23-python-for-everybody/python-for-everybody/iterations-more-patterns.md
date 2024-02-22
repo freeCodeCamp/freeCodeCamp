@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f05f
-title: 'Iterations: More Patterns'
+title: '반복: 더 많은 패턴'
 challengeType: 11
 videoId: 9Wtqo6vha1M
 bilibiliIds:
@@ -20,7 +20,7 @@ More resources:
 
 ## --text--
 
-Which of these evaluates to False?
+다음 중 거짓인 코드는 무엇인가요?
 
 ## --answers--
 

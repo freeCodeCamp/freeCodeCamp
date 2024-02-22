@@ -1,6 +1,6 @@
 ---
 id: 59e0a8df964e4540d5abe599
-title: Brain**** ausführen
+title: Execute Brain****
 challengeType: 1
 forumTopicId: 302261
 dashedName: execute-brain
@@ -10,28 +10,28 @@ dashedName: execute-brain
 
 Write a function to implement a Brain\*\*\*\* interpreter. The function will take a string as a parameter and should return a string as the output. More details are given below:
 
-RCBF ist eine Menge von <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> Übersetzer und Interpeter, die für Rosetta Code in einer Vielzahl von Sprachen geschrieben wurde.
+RCBF is a set of <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> compilers and interpreters written for Rosetta Code in a variety of languages.
 
-Unten findst du Links zu jeden Versionen von RCBF.
+Below are links to each of the versions of RCBF.
 
-Eine Implementierung muss lediglich die folgenden Anweisungen ordnungsgemäß implementieren:
+An implementation need only properly implement the following instructions:
 
-| Command                   | Beschreibung                                                                                   |
-| ------------------------- | ---------------------------------------------------------------------------------------------- |
-| <code>></code> | Move the pointer to the right                                                                  |
-| <code>&lt;</code> | Bewege den Zeiger nach links                                                                   |
-| <code>+</code> | Erhöhe die Speicherzelle des Zeigers                                                           |
-| <code>-</code> | Verringere die Speicherzelle des Zeigers                                                       |
-| <code>.</code> | Gebe das der Zelle zugehörige Zeichen am Zeiger aus                                            |
-| <code>,</code> | Übergebe und speichere ein Zeichen in der Zelle des Zeigers                                    |
-| <code>\[</code> | Überspringe das jeweilige <code>]</code>, wenn Zelle des Zeigers 0 ist               |
-| <code>]</code> | Springe zum jeweiligen <code>[</code> zurück, wenn Zelle des Zeigers ein nonzero ist |
+| Command           | Description                                                                        |
+| ----------------- | ---------------------------------------------------------------------------------- |
+| <code>></code>    | Move the pointer to the right                                                      |
+| <code>&lt;</code> | Move the pointer to the left                                                       |
+| <code>+</code>    | Increment the memory cell under the pointer                                        |
+| <code>-</code>    | Decrement the memory cell under the pointer                                        |
+| <code>.</code>    | Output the character signified by the cell at the pointer                          |
+| <code>,</code>    | Input a character and store it in the cell at the pointer                          |
+| <code>\[</code>   | Jump past the matching <code>]</code> if the cell under the pointer is 0           |
+| <code>]</code>    | Jump back to the matching <code>\[</code> if the cell under the pointer is nonzero |
 
-Jede Zellgröße ist erlaubt, EOF-Unterstützung (*E*nd-*O**F*ile – Ende der Datei) ist optional, je nachdem, ob es eine Speicherbegrenzung gibt.
+Any cell size is allowed, EOF (*E*nd-*O*-*F*ile) support is optional, as is whether you have bounded or unbounded memory.
 
 # --hints--
 
-`brain(bye)` sollte einen String zurückgeben
+`brain(bye)` should return a string
 
 ```js
 assert(typeof brain(bye) === 'string');
@@ -43,19 +43,19 @@ assert(typeof brain(bye) === 'string');
 assert.equal(brain('++++++[>++++++++++<-]>+++++.'), 'A');
 ```
 
-`brain(bye)` sollte `Goodbye, World!\r\n` zurückgeben
+`brain(bye)` should return `Goodbye, World!\r\n`
 
 ```js
 assert.equal(brain(bye), 'Goodbye, World!\r\n');
 ```
 
-`brain(hello)` sollte `Hello World!\n` zurückgeben
+`brain(hello)` should return `Hello World!\n`
 
 ```js
 assert.equal(brain(hello), 'Hello World!\n');
 ```
 
-`brain(fib)` sollte `1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89` zurückgeben
+`brain(fib)` should return `1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89`
 
 ```js
 assert.equal(brain(fib), '1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89');

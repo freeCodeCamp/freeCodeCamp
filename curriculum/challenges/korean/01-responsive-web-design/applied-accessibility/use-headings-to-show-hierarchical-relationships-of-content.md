@@ -1,6 +1,6 @@
 ---
 id: 587d774d367417b2b2512a9e
-title: Use Headings to Show Hierarchical Relationships of Content
+title: 콘텐츠의 계층적 관계를 보여주기 위해 헤딩 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cqVEktm'
 forumTopicId: 301026
@@ -9,43 +9,43 @@ dashedName: use-headings-to-show-hierarchical-relationships-of-content
 
 # --description--
 
-Headings (`h1` through `h6` elements) are workhorse tags that help provide structure and labeling to your content. Screen readers can be set to read only the headings on a page so the user gets a summary. This means it is important for the heading tags in your markup to have semantic meaning and relate to each other, not be picked merely for their size values.
+헤딩(`h1`부터 `h6` 요소)은 콘텐츠에 구조와 레이블을 제공하는 중요한 태그입니다. 스크린 리더는 페이지에서 제목만 읽도록 설정될 수 있어 사용자에게 요약 정보를 제공합니다. 마크업에서 사용하는 헤딩 태그는 시맨틱적인 의미를 지니고 있고 서로 관련이 있어야 하며, 크기 값만을 고려하여 선택되어서는 안 됩니다.
 
-*Semantic meaning* means that the tag you use around content indicates the type of information it contains.
+*시맨틱적 의미*란 컨텐츠를 포함하는 태그가 해당 정보의 유형을 나타낸다는 것을 의미합니다.
 
-If you were writing a paper with an introduction, a body, and a conclusion, it wouldn't make much sense to put the conclusion as a subsection of the body in your outline. It should be its own section. Similarly, the heading tags in a webpage need to go in order and indicate the hierarchical relationships of your content.
+만약 소개, 본문, 결론으로 이루어진 논문을 작성한다면, 본문의 한 부분으로 결론을 넣는 것은 말이 되지 않을 것입니다. 이는 자체적인 섹션으로 나뉘어져야 합니다. 마찬가지로, 웹페이지의 헤딩 태그는 순서대로 쓰여야 하며 콘텐츠의 계층적인 관계를 나타내어야 합니다.
 
-Headings with equal (or higher) rank start new implied sections, headings with lower rank start subsections of the previous one.
+동일한 (또는 더 높은) 순위의 헤딩은 새로운 섹션이 시작하리라는 것을 암시하고, 더 낮은 순위의 제목은 이전 섹션의 하위 섹션을 시작합니다.
 
-As an example, a page with an `h2` element followed by several subsections labeled with `h4` elements would confuse a screen reader user. With six choices, it's tempting to use a tag because it looks better in a browser, but you can use CSS to edit the relative sizing.
+예를 들어 설명하자면, `h2` 요소로 시작한 페이지에 여러 하위 섹션이 `h4` 요소로 표시된 경우, 스크린 리더 사용자가 혼란스러워 할 수 있습니다. 여섯 가지 선택지가 있기 때문에 브라우저에서 더 잘 보일만한 태그를 사용하고 싶을 수 있지만, 상대적인 크기를 편집하기 위해서는 CSS를 사용하면 됩니다.
 
-One final point, each page should always have one (and only one) `h1` element, which is the main subject of your content. This and the other headings are used in part by search engines to understand the topic of the page.
+마지막으로, 각 페이지에는 항상 하나의 (`h1`) 요소만 있어야 하며, 이는 콘텐츠의 주요 주제입니다. 이런 헤딩들은 검색 엔진이 페이지의 주제를 이해하는 데 일부 사용됩니다.
 
 # --instructions--
 
-Camper Cat wants a page on his site dedicated to becoming a ninja. Help him fix the headings so his markup gives semantic meaning to the content, and shows the proper parent-child relationships of his sections. Change all the `h5` tags to the proper heading level to indicate they are subsections of the `h2` ones. Use `h3` tags for the purpose.
+캠퍼 캣은 자신의 사이트에 닌자가 되는 방법을 담고 있는 페이지를 원합니다. 헤딩을 수정하여 마크업이 시맨틱적 의미를 갖고 또 태그들이 올바른 부모-자식 관계를 나타낼 수 있도록 캠퍼 캣을 도와주세요. 모든 `h5` 태그를 올바른 헤딩 레벨로 변경하여 `h2` 제목의 하위 섹션임을 나타내세요. 이를 위해서 `h3` 태그를 사용하세요.
 
 # --hints--
 
-Your code should have 6 `h3` elements.
+코드에는 6개의 `h3` 요소가 있어야 합니다.
 
 ```js
 assert($('h3').length === 6);
 ```
 
-Your code should have 6 `h3` closing tags.
+코드에는 6개의 `h3` 닫는 태그가 있어야 합니다.
 
 ```js
 assert((code.match(/\/h3/g) || []).length === 6);
 ```
 
-Your code should not have any `h5` elements.
+`h5` 태그는 하나도 없어야 합니다.
 
 ```js
 assert($('h5').length === 0);
 ```
 
-Your code should not have any `h5` closing tags.
+`h5`의 닫는 태그는 하나도 없어야 합니다.
 
 ```js
 assert(/\/h5/.test(code) === false);

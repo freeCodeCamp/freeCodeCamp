@@ -1,6 +1,6 @@
 ---
 id: 647e23248acb466c97ccbefb
-title: Convert Data Types Using Casting and Conversion Techniques in C#
+title: 'Convert Data Types Using Casting and Conversion Techniques in C#'
 challengeType: 19
 dashedName: convert-data-types-using-casting-and-conversion-techniques-in-c-sharp
 ---

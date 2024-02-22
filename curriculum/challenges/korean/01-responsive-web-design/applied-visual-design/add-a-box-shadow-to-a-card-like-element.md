@@ -1,6 +1,6 @@
 ---
 id: 587d781b367417b2b2512abe
-title: Add a box-shadow to a Card-like Element
+title: 카드와 비슷한 엘리먼트에 box-shadow 추가하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVZdUd'
 forumTopicId: 301031
@@ -9,23 +9,23 @@ dashedName: add-a-box-shadow-to-a-card-like-element
 
 # --description--
 
-The `box-shadow` property applies one or more shadows to an element.
+`box-shadow` 속성은 엘리먼트에 하나 이상의 그림자 효과를 적용합니다.
 
-The `box-shadow` property takes the following values, in order:
+`box-shadow` 속성은 순서대로 아래의 값을 취합니다:
 
 <ul>
-  <li><code>offset-x</code> (how far to push the shadow horizontally from the element)</li>
-  <li><code>offset-y</code> (how far to push the shadow vertically from the element)</li>
+  <li><code>offset-x</code> (엘리먼트의 가로 방향으로 얼마나 그림자를 적용할지)</li>
+  <li><code>offset-y</code> (엘리먼트의 세로 방향으로 얼마나 그림자를 적용할지)</li>
   <li><code>blur-radius</code></li>
   <li><code>spread-radius</code></li>
   <li><code>color</code></li>
 </ul>
 
-The `blur-radius` and `spread-radius` values are optional.
+`blur-radius`와 `spread-radius` 값은 선택 항목입니다.
 
-Multiple box-shadows can be created by using commas to separate properties of each `box-shadow` element.
+콤마를 이용하면 각각의 `box-shadow` 엘리먼트 속성들을 구분할 수 있어 여러 box-shadow를 생성할 수 있습니다.
 
-Here's an example of the CSS to create multiple shadows with some blur, at mostly-transparent black colors:
+아래는 거의 투명에 가까운 검정색을 써서 약간의 흐림 효과를 더해 여러 그림자를 만들어보는 CSS 예제입니다.
 
 ```css
 box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -33,17 +33,17 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
 # --instructions--
 
-The element now has an id of `thumbnail`. With this selector, use the example CSS values above to place a `box-shadow` on the card.
+엘리먼트는 `thumbnail`이라는 id 값을 갖습니다. 이 선택자를 이용해, 위 예시의 CSS 값을 이용해 카드 엘리먼트 위에 `box-shadow`를 적용해보세요.
 
 # --hints--
 
-Your code should add a `box-shadow` property for the `thumbnail` id.
+여러분의 코드는 `thumbnail`이라는 id에 `box-shadow` 속성을 추가해야 합니다.
 
 ```js
 assert(code.match(/#thumbnail\s*?{\s*?box-shadow/g));
 ```
 
-You should use the given CSS for the `box-shadow` value.
+주어진 CSS를 이용해 `box-shadow` 값을 사용해야 합니다.
 
 ```js
 assert(

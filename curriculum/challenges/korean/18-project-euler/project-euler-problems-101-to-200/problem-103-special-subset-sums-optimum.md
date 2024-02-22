@@ -15,12 +15,9 @@ Let $S(A)$ represent the sum of elements in set A of size n. We shall call it a 
 
 If $S(A)$ is minimised for a given n, we shall call it an optimum special sum set. The first five optimum special sum sets are given below.
 
-$$\begin{align}
-  & n = 1: \\{1\\} \\\\
-  & n = 2: \\{1, 2\\} \\\\
-  & n = 3: \\{2, 3, 4\\} \\\\
-  & n = 4: \\{3, 5, 6, 7\\} \\\\
-  & n = 5: \\{6, 9, 11, 12, 13\\} \\\\
+$$\begin{align}   & n = 1: \\{1\\} \\\\
+  & n = 2: \\{1, 2\\} \\\\   & n = 3: \\{2, 3, 4\\} \\\\
+  & n = 4: \\{3, 5, 6, 7\\} \\\\   & n = 5: \\{6, 9, 11, 12, 13\\} \\\\
 \end{align}$$
 
 It seems that for a given optimum set, $A = \\{a_1, a_2, \ldots, a_n\\}$, the next optimum set is of the form $B = \\{b, a_1 + b, a_2 + b, \ldots, a_n + b\\}$, where b is the "middle" element on the previous row.

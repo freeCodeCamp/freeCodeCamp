@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08807
-title: Import a Google Font
+title: 구글 폰트 가져오기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9MRsJ'
 forumTopicId: 18200
@@ -9,41 +9,41 @@ dashedName: import-a-google-font
 
 # --description--
 
-In addition to specifying common fonts that are found on most operating systems, we can also specify non-standard, custom web fonts for use on our website. There are many sources for web fonts on the Internet. For this example we will focus on the Google Fonts library.
+다수의 운영 체제에서 찾을 수 있는 일반적인 글꼴을 지정하는 것 외에도 웹 사이트에서 사용할 비표준, 사용자 정의 웹 글꼴을 지정할 수 있습니다. 인터넷에는 웹 글꼴을 얻을 수 있는 많은 소스가 있습니다. 이 예제에서는 Google Fonts 라이브러리에 중점을 둡니다.
 
-Google Fonts is a free library of web fonts that you can use in your CSS by referencing the font's URL.
+Google Fonts는 웹 폰트의 무료 라이브러리로, 해당 폰트의 URL을 참조하여 CSS에서 사용할 수 있습니다.
 
-So, let's go ahead and import and apply a Google font (note that if Google is blocked in your country, you will need to skip this challenge).
+그러면 Google 폰트를 가져와 적용해 보겠습니다. (참고: Google이 귀하의 국가에서 차단된 경우 이 도전 과제를 건너뛰어야 합니다.)
 
-To import a Google Font, you can copy the font's URL from the Google Fonts library and then paste it in your HTML. For this challenge, we'll import the `Lobster` font. To do this, copy the following code snippet and paste it into the top of your code editor (before the opening `style` element):
+Google 폰트를 가져오려면 Google Fonts 라이브러리에서 폰트의 URL을 복사한 다음 HTML에 붙여넣으면 됩니다. 이 도전에서는 `Lobster` 폰트를 가져올 것입니다. 이를 위해 다음 코드 스니펫을 복사하고 코드 편집기의 맨 위에 붙여 넣으세요 (opening `style` element 이전에).
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 ```
 
-Now you can use the `Lobster` font in your CSS by using `Lobster` as the FAMILY_NAME as in the following example:
+이제 다음 예제처럼 FAMILY_NAME으로 `Lobster`를 사용하여 CSS에서 `Lobster` 글꼴을 사용할 수 있습니다.
 
 ```css
 font-family: FAMILY_NAME, GENERIC_NAME;
 ```
 
-The GENERIC_NAME is optional, and is a fallback font in case the other specified font is not available. This is covered in the next challenge.
+GENERIC_NAME은 선택 사항이며 다른 지정된 글꼴을 사용할 수 없는 경우 대체 글꼴로 사용됩니다. 이것은 다음 첼린지에서 살펴보겠습니다.
 
-Family names are case-sensitive and need to be wrapped in quotes if there is a space in the name. For example, you need quotes to use the `"Open Sans"` font, but not to use the `Lobster` font.
+Family names은 대소문자를 구별하며 이름에 공백이 있으면 따옴표로 둘러싸야 합니다. 예를 들어, `"Open Sans"` 폰트를 사용하려면 따옴표가 필요하지만 `Lobster` 폰트를 사용할 때는 따옴표가 필요하지 않습니다.
 
 # --instructions--
 
-Import the `Lobster` font to your web page. Then, use an element selector to set `Lobster` as the `font-family` for your `h2` element.
+당신의 웹페이지에 `Lobster` 폰트를 가져오세요. 그런 다음, `h2` 요소에 대한 `font-family`로 `Lobster`를 설정하기 위해 요소 선택자를 사용하세요.
 
 # --hints--
 
-You should import the `Lobster` font.
+`Lobster` 폰트를 가져와야 합니다.
 
 ```js
 assert($('link[href*="googleapis" i]').length);
 ```
 
-Your `h2` element should use the font `Lobster`.
+`h2` 요소는 `Lobster` 폰트를 써야합니다.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-You should only use an `h2` element selector to change the font.
+폰트를 변경하려면 `h2` 요소 선택자만 사용해야 합니다.
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 );
 ```
 
-Your `p` element should still use the font `monospace`.
+`p` 요소는 여전히 `monospace` 폰트를 사용해야 합니다.
 
 ```js
 assert(

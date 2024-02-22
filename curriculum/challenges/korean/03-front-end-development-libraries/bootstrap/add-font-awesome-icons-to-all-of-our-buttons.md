@@ -4,14 +4,15 @@ title: Add Font Awesome Icons to all of our Buttons
 challengeType: 0
 forumTopicId: 16637
 required:
-  - link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
+  - 
+    link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
     raw: true
 dashedName: add-font-awesome-icons-to-all-of-our-buttons
 ---
 
 # --description--
 
-Font Awesome is a convenient library of icons. These icons can be web fonts or vector graphics. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.
+Font Awesome is a convenient library of icons. These icons can be web fonts or vector graphics. 아이콘들은 폰트처럼 다룰 수 있습니다. 아이콘 크기를 픽셀로 직접 지정하거나, 부모 HTML 요소의 글꼴 크기와 연계해 지정할 수 있습니다.
 
 # --instructions--
 

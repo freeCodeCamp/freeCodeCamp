@@ -659,8 +659,8 @@ describe('userRoutes', () => {
             '<script>const breath = "loud"</script>Luke, I am your father'
         });
 
-        expect(sendEmailSpy).toBeCalledTimes(1);
-        expect(sendEmailSpy).toBeCalledWith(
+        expect(sendEmailSpy).toHaveBeenCalledTimes(1);
+        expect(sendEmailSpy).toHaveBeenCalledWith(
           expect.objectContaining({
             text: expect.stringContaining(
               'Report Details:\n\nLuke, I am your father'
@@ -680,8 +680,8 @@ describe('userRoutes', () => {
           reportDescription: 'Luke, I am your father'
         });
 
-        expect(sendEmailSpy).toBeCalledTimes(1);
-        expect(sendEmailSpy).toBeCalledWith({
+        expect(sendEmailSpy).toHaveBeenCalledTimes(1);
+        expect(sendEmailSpy).toHaveBeenCalledWith({
           from: 'team@freecodecamp.org',
           to: 'support@freecodecamp.org',
           cc: 'foo@bar.com',
