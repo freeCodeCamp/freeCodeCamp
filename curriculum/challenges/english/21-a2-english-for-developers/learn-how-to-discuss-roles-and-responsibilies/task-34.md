@@ -1,38 +1,54 @@
 ---
-id: 65b79150505867c045836b67
+id: 65d5d1bdbd0a7f4e3edb6c8e
 title: Task 34
-challengeType: 22
+challengeType: 19
 dashedName: task-34
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 <!--
 AUDIO REFERENCE:
-Alice: She's been with us for about eight years now.
+Tom: Hey, have you ever worked with Anna from HR?
 -->
 
 # --description--
 
-The phrase `She's been with us` uses the present perfect tense, formed with `have/has` and the past participle of the verb, in this case, `been` from `be`. This tense describes actions or situations that started in the past and are still relevant or continue into the present.
+Listen to the audio and answer the question.
 
-# --fillInTheBlank--
+# --question--
 
-## --sentence--
+## --text--
 
-`_ _ with us for about eight years now.`
+What is Tom asking about?
 
-## --blanks--
+## --answers--
 
-`She's`
+If Anna works in HR
 
 ### --feedback--
 
-This is a contraction of `She has`, indicating the present perfect tense.
+Tom's question is specifically about whether the person has worked with Anna, not about Anna's role.
 
 ---
 
-`been`
+If there has been any experience working with Anna
+
+---
+
+If you like working in HR
 
 ### --feedback--
 
-This word is the past participle of `be`, used here to show duration from the past to the present.
+The question is about past experience with Anna, not personal feelings about working in HR.
+
+---
+
+If Anna has ever worked
+
+### --feedback--
+
+The focus of Tom's question is on the listener's experience with Anna, not on Anna's work history.
+
+## --video-solution--
+
+2

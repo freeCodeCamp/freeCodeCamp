@@ -23,11 +23,11 @@ Based on Bob's description, how old is the woman?
 
 ## --answers--
 
-`Between 40 and 43 years old`
+Between 40 and 43 years old
 
 ---
 
-`Exactly 40 years old`
+Exactly 40 years old
 
 ### --feedback--
 
@@ -35,7 +35,7 @@ Based on Bob's description, how old is the woman?
 
 ---
 
-`In her 50s`
+In her 50s
 
 ### --feedback--
 
@@ -43,7 +43,7 @@ Bob mentions she is in her early 40s, not her 50s.
 
 ---
 
-`Younger than 40`
+Younger than 40
 
 ### --feedback--
 

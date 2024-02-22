@@ -17,7 +17,7 @@ The Present Perfect Tense is formed with `have` or `has` plus the past participl
 
 Use `have` with the pronouns `I`, `you`, `we`, and `they`, and use `has` with `he`, `she`, and `it`.
 
-The word `yet` often accompanies questions in the Present Perfect Tense to inquire if something has happened up to now.
+The word `yet` is often used in questions in the Present Perfect Tense to inquire if something has happened up to now.
 
 # --fillInTheBlank--
 

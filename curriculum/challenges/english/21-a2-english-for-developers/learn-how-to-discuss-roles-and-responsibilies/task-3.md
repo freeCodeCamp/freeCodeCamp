@@ -35,7 +35,7 @@ If the person has never heard of Anna
 
 ### --feedback--
 
-Bob's use of `yet`` implies he's asking about meeting Anna, not about hearing of her.
+Bob's use of `yet` implies he's asking about meeting Anna, not about hearing of her.
 
 ---
 

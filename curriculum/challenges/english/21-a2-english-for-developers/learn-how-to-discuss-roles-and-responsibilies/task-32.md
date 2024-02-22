@@ -23,6 +23,8 @@ What does Sophie say about the things that were mentioned?
 
 ## --answers--
 
+They are not important.
+
 ### --feedback--
 
 Describing the things as `very positive` suggests they are important, not unimportant.

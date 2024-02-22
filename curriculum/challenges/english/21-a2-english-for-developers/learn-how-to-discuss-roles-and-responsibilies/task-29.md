@@ -29,7 +29,7 @@ The phrase `look out for` means to watch over and protect someone or something, 
 
 This is the first part of a phrase meaning to watch over and protect. You should use its third-person singular form.
 
-## --blanks--
+---
 
 `out`
 
@@ -37,7 +37,7 @@ This is the first part of a phrase meaning to watch over and protect. You should
 
 This part of the phrase indicates watching over.
 
-## --blanks--
+---
 
 `for`
 

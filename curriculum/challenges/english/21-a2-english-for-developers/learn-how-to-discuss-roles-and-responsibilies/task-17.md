@@ -13,7 +13,7 @@ Bob: She's been working with tech companies for about ten years.
 
 # --description--
 
-The structure `have/has been doing + verb-ing` is used in the present perfect continuous tense. It emphasizes actions that started in the past and are still continuing now. `Been` is the past participle form of the verb `be`.
+The structure `have/has been + verb-ing` is used in the present perfect continuous tense. It emphasizes actions that started in the past and are still continuing now. `Been` is the past participle form of the verb `be`.
 
 It can be used with `for` followed by a period of time or `since` followed by a specific starting point in time to highlight the duration or how long the action happens.
 

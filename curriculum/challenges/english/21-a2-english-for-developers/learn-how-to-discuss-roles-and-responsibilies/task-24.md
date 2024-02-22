@@ -19,7 +19,7 @@ It's important to note that `everyone` sounds like it's talking about many peopl
 
 For example, you say `Everyone goes to the party`, `Evertying is right` or `Everybody works hard`.
 
-`Make sure` means to check or ensure something is correct before moving on. For example, you `make sure the code runs` means you check the code to be certain it has no errors and can run properly.
+`Make sure` means to check or ensure something is correct before moving on. For example, `You make sure the code runs` means you check the code to be certain it has no errors and can run properly.
 
 `Follow the rules` means to do what the rules say. If there is a rule that says `use camelCase for variable names`, to `follow the rules` means you name your variables like `myVariable` instead of `my_variable`.
 
