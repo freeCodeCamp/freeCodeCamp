@@ -17,7 +17,6 @@ test.describe('The update-email page', () => {
     await page.goto('/update-email');
     //log the whole url
     console.log(page.url());
-    throw new Error('url: ' + page.url());
   });
 
   test('The page renders with correct title', async () => {
