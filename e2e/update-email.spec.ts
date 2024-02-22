@@ -42,6 +42,7 @@ test.describe('The update-email page', () => {
       'placeholder',
       'camperbot@example.com'
     );
+    await expect(submitButton).toBeVisible();
     await expect(submitButton).toHaveAttribute('type', 'submit');
   });
 
