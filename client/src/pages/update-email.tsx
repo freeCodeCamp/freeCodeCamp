@@ -128,6 +128,7 @@ function UpdateEmail({
                   bsSize='lg'
                   bsStyle='primary'
                   disabled={getEmailValidationState() !== 'success'}
+                  data-playwright-test-label='update-email-button'
                   type='submit'
                 >
                   {isNewEmail

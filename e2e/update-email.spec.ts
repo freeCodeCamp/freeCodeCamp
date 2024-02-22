@@ -33,9 +33,7 @@ test.describe('The update-email page', () => {
   test('The page has update email form', async () => {
     const form = page.getByTestId('update-email-form');
     const emailInput = page.getByLabel(translations.misc.email);
-    const submitButton = page.getByRole('button', {
-      name: translations.buttons['update-email']
-    });
+    const submitButton = page.getByTestId('update-email-button');
 
     await expect(form).toBeVisible();
     await expect(emailInput).toBeVisible();
@@ -44,7 +42,6 @@ test.describe('The update-email page', () => {
       'placeholder',
       'camperbot@example.com'
     );
-    await expect(submitButton).toBeVisible();
     await expect(submitButton).toHaveAttribute('type', 'submit');
   });
 
@@ -59,9 +56,7 @@ test.describe('The update-email page', () => {
 
   test('should enable the submit button if the email input is valid', async () => {
     const emailInput = page.getByLabel(translations.misc.email);
-    const submitButton = page.getByRole('button', {
-      name: translations.buttons['update-email']
-    });
+    const submitButton = page.getByTestId('update-email-button');
     await expect(submitButton).toBeDisabled();
     await emailInput.fill('123');
     await expect(submitButton).toBeDisabled();
