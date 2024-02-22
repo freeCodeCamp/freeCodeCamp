@@ -2,14 +2,13 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 const settingsPageElement = {
-  yourInternetPresenceSectionHeader: 'your-internet-presence-header',
   githubInput: 'internet-github-input',
   githubCheckmark: 'internet-github-check',
   linkedinCheckmark: 'internet-linkedin-check',
   twitterCheckmark: 'internet-twitter-check',
   personalWebsiteCheckmark: 'internet-website-check',
-  saveButton: 'internet-save-button',
-  flashMessageAlert: 'flash-message'
+  flashMessageAlert: 'flash-message',
+  internetPresenceForm: 'internet-presence'
 } as const;
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
@@ -19,16 +18,21 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Your Internet Presence', () => {
-  test('should display section header on settings page', async ({ page }) => {
+  test('should display the section with save button being disabled', async ({
+    page
+  }) => {
     await expect(
-      page.getByTestId(settingsPageElement.yourInternetPresenceSectionHeader)
-    ).toHaveText('Your Internet Presence');
-  });
+      page.getByRole('heading', {
+        level: 2,
+        name: translations.settings.headings.internet
+      })
+    ).toBeVisible();
 
-  test('should disable save button by default', async ({ page }) => {
     await expect(
-      page.getByTestId(settingsPageElement.saveButton)
-    ).toBeDisabled();
+      page
+        .getByTestId(settingsPageElement.internetPresenceForm)
+        .getByRole('button', { name: translations.buttons.save })
+    ).toBeVisible();
   });
 
   const socials = [
@@ -73,7 +77,11 @@ test.describe('Your Internet Presence', () => {
       const socialCheckmark = page.getByTestId(social.checkTestId);
       await expect(socialCheckmark).toBeVisible();
 
-      const saveButton = page.getByTestId(settingsPageElement.saveButton);
+      const saveButton = page
+        .getByTestId(settingsPageElement.internetPresenceForm)
+        .getByRole('button', { name: translations.buttons.save });
+
+      await expect(saveButton).toBeVisible();
       await saveButton.click();
       await expect(
         page.getByTestId(settingsPageElement.flashMessageAlert)

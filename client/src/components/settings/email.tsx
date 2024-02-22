@@ -161,9 +161,7 @@ function EmailSettings({
   }
   return (
     <div className='email-settings'>
-      <SectionHeader dataPlaywrightTestLabel='email-settings-header'>
-        {t('settings.email.heading')}
-      </SectionHeader>
+      <SectionHeader>{t('settings.email.heading')}</SectionHeader>
       {isEmailVerified ? null : (
         <FullWidthRow>
           <HelpBlock>
@@ -194,9 +192,7 @@ function EmailSettings({
         >
           <FormGroup controlId='current-email'>
             <ControlLabel>{t('settings.email.current')}</ControlLabel>
-            <FormControl.Static data-playwright-test-label='current-email'>
-              {currentEmail}
-            </FormControl.Static>
+            <FormControl.Static>{currentEmail}</FormControl.Static>
           </FormGroup>
           <div role='group' aria-label={t('settings.email.heading')}>
             <FormGroup

@@ -2,12 +2,8 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 const settingsPageElement = {
-  emailSettingsSectionHeader: 'email-settings-header',
   emailVerificationAlert: 'email-verification-alert',
   emailVerificationLink: 'email-verification-link',
-  currentEmailText: 'current-email',
-  saveButtonName:
-    translations.buttons.save + ' ' + translations.settings.email.heading,
   flashMessageAlert: 'flash-message'
 } as const;
 
@@ -20,24 +16,29 @@ test.beforeEach(async ({ page }) => {
 test.describe('Email Settings', () => {
   test('should display the content correctly', async ({ page }) => {
     await expect(
-      page.getByTestId(settingsPageElement.emailSettingsSectionHeader)
-    ).toHaveText(translations.settings.email.heading);
+      page.getByRole('heading', { name: translations.settings.email.heading })
+    ).toBeVisible();
+
+    await expect(page.getByText('foo@bar.com')).toBeVisible();
+
     await expect(
-      page.getByTestId(settingsPageElement.currentEmailText)
-    ).toHaveText('foo@bar.com');
-    await expect(
-      page.getByRole('button', { name: settingsPageElement.saveButtonName })
+      page.getByRole('button', {
+        name: `${translations.buttons.save} ${translations.settings.email.heading}`
+      })
     ).toBeDisabled();
+
     await expect(
       page
         .getByRole('group', { name: translations.settings.email.weekly })
         .locator('legend')
     ).toBeVisible();
+
     await expect(
       page.getByRole('button', {
         name: translations.buttons['yes-please']
       })
     ).toHaveAttribute('aria-pressed', 'false');
+
     await expect(
       page.getByRole('button', {
         name: translations.buttons['no-thanks']
@@ -53,15 +54,21 @@ test.describe('Email Settings', () => {
 
     const newEmailAddress = 'foo-update@bar.com';
 
+    // Need exact match as there are "New email" and "Confirm new email" labels
     await page
       .getByLabel(translations.settings.email.new, { exact: true })
       .fill(newEmailAddress);
+
     await page
       .getByLabel(translations.settings.email.confirm)
       .fill(newEmailAddress);
+
     await page
-      .getByRole('button', { name: settingsPageElement.saveButtonName })
+      .getByRole('button', {
+        name: `${translations.buttons.save} ${translations.settings.email.heading}`
+      })
       .click();
+
     await expect(
       page.getByTestId(settingsPageElement.flashMessageAlert)
     ).toBeVisible();

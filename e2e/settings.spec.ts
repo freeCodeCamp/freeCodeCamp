@@ -51,20 +51,6 @@ const legacyCertifications = [
   ]
 ];
 
-const portfolio = {
-  title: 'foo bar',
-  url: 'https://foo.bar',
-  image: 'https://foo.bar/image.png',
-  description: 'foo bar'
-};
-
-const personalInformation = {
-  name: 'Full Stack User',
-  location: '',
-  picture: '',
-  about: ''
-};
-
 test.describe('Settings', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/settings');
@@ -283,14 +269,16 @@ test.describe('Settings', () => {
     await expect(removeButton).toBeVisible();
     await page
       .getByLabel(translations.settings.labels.title)
-      .fill(portfolio.title);
-    await page.getByLabel(translations.settings.labels.url).fill(portfolio.url);
+      .fill('My portfolio');
+    await page
+      .getByLabel(translations.settings.labels.url)
+      .fill('https://my-portfolio.com');
     await page
       .getByLabel(translations.settings.labels.image)
-      .fill(portfolio.image);
+      .fill('https://my-portfolio.com/image.png');
     await page
       .getByLabel(translations.settings.labels.description)
-      .fill(portfolio.description);
+      .fill('My description');
     await saveButton.click();
     await expect(
       page.getByTestId(settingsTestIds.flashMessageAlert)
@@ -322,16 +310,16 @@ test.describe('Settings', () => {
     await expect(saveButton).toBeDisabled();
     await expect(
       page.getByLabel(translations.settings.labels.name, { exact: true })
-    ).toHaveValue(personalInformation.name);
+    ).toHaveValue('Full Stack User');
     await expect(
       page.getByLabel(translations.settings.labels.location)
-    ).toHaveValue(personalInformation.location);
+    ).toHaveValue('');
     await expect(
       page.getByLabel(translations.settings.labels.picture)
-    ).toHaveValue(personalInformation.picture);
+    ).toHaveValue('');
     await expect(
       page.getByLabel(translations.settings.labels.about)
-    ).toHaveValue(personalInformation.about);
+    ).toHaveValue('');
     await expect(
       page
         .getByRole('group', {

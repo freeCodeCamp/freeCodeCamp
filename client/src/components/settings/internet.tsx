@@ -197,9 +197,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     const isDisabled = this.isFormPristine() || !this.isFormValid();
     return (
       <>
-        <SectionHeader dataPlaywrightTestLabel='your-internet-presence-header'>
-          {t('settings.headings.internet')}
-        </SectionHeader>
+        <SectionHeader>{t('settings.headings.internet')}</SectionHeader>
         <FullWidthRow>
           <form
             id='internet-presence'
@@ -294,7 +292,6 @@ class InternetSettings extends Component<InternetProps, InternetState> {
               </FormGroup>
             </div>
             <BlockSaveButton
-              data-playwright-test-label='internet-save-button'
               aria-disabled={isDisabled}
               bgSize='lg'
               {...(isDisabled && { tabIndex: -1 })}
