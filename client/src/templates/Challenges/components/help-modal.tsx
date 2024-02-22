@@ -111,16 +111,14 @@ function HelpModal({
             >
               <CheckboxHelpModal
                 name='read-search-ask-checkbox'
-                label={'I have tried the Read-Search-Ask method'}
+                label={t('learn.read-search-ask-checkbox')}
                 onChange={event =>
                   handleCheckboxChange(event, setReadSearchCheckbox)
                 }
               />
               <CheckboxHelpModal
                 name='similar-questions-checkbox'
-                label={
-                  'I searched for similar questions that has already been answered on the forum.'
-                }
+                label={t('learn.similar-questions-checkbox')}
                 onChange={event =>
                   handleCheckboxChange(event, setSimilarQuestionsCheckbox)
                 }
@@ -159,7 +157,7 @@ function HelpModal({
               variant='primary'
               onClick={() => setShowHelpForm(false)}
             >
-              Back
+              {t('buttons.back')}
             </Button>
           </form>
         ) : (

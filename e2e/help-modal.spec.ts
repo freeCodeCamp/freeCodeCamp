@@ -64,13 +64,20 @@ test.describe('Help Modal component', () => {
       })
     ).toBeVisible();
 
-    const checkboxLocator = page.locator('input[type="checkbox"]');
+    const locatorRSACheckbox = page.locator(
+      'input[type="checkbox"][name="read-search-ask-checkbox"]'
+    );
+    const locatorSimilarQuestionsCheckbox = page.locator(
+      'input[type="checkbox"][name="similar-questions-checkbox"]'
+    );
 
-    await checkboxLocator.nth(0).click();
-    await checkboxLocator.nth(1).click();
+    await locatorRSACheckbox.first().click();
+    await locatorSimilarQuestionsCheckbox.first().click();
 
-    await page
-      .getByRole('textbox')
+    const locatorTextarea = page.locator('textarea[name="description"]');
+
+    await locatorTextarea
+      .first()
       .type(
         'Example text with a 100 characters to validate if the rules applied to block users from spamming help forum are working.'
       );
