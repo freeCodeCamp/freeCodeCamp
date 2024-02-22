@@ -14,7 +14,7 @@ test.describe('The update-email page', () => {
     await page
       .context()
       .storageState({ path: 'playwright/.auth/certified-user.json' });
-    await page.goto('/update-email');
+    await page.goto('/update-email', { waitUntil: 'domcontentloaded' });
   });
 
   test('The page renders with correct title', async () => {
