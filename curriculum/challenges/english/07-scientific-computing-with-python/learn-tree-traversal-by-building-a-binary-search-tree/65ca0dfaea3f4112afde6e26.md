@@ -1,8 +1,8 @@
 ---
 id: 65ca0dfaea3f4112afde6e26
-title: Step 52
+title: Step 51
 challengeType: 20
-dashedName: step-52
+dashedName: step-51
 ---
 
 # --description--
