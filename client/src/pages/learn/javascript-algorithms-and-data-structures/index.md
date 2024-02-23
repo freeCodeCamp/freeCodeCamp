@@ -1,5 +1,5 @@
 ---
-title: JavaScript Algorithms and Data Structures
+title: Legacy JavaScript Algorithms and Data Structures
 superBlock: javascript-algorithms-and-data-structures
 certification: javascript-algorithms-and-data-structures
 ---
