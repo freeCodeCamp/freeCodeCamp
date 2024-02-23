@@ -1340,8 +1340,8 @@ importers:
         specifier: 0.11.10
         version: 0.11.10
       pyodide:
-        specifier: ^0.23.3
-        version: 0.23.3
+        specifier: ^0.25.0
+        version: 0.25.0
       sass.js:
         specifier: 0.11.1
         version: 0.11.1
@@ -27099,15 +27099,13 @@ packages:
     resolution: {integrity: sha512-LA0Y9kxMYv47GIPJy6MI84fqTd2HmYZI83W/kM/SkKfDlajnZYfmXFTxkbY+xSBPkLJxltMa9hIkmdc29eguMA==}
     dev: true
 
-  /pyodide@0.23.3:
-    resolution: {integrity: sha512-t95Nu73ENjwoRhThmxvZIHMD7GXTJ3uOt/E0sJ1TxjBvoU/qPys4SV08FtZBMEnpMRKFzE4uecvx2c0qybSZhw==}
+  /pyodide@0.25.0:
+    resolution: {integrity: sha512-RagtX3TfV2M0QAfThG2SMvwE31ikqAFDUXc5/4xhppEoVf4VbL7L0kbKOIdSNg7MbVsHELVxftk66WvT926GpA==}
     dependencies:
       base-64: 1.0.0
-      node-fetch: 2.7.0
       ws: 8.14.2
     transitivePeerDependencies:
       - bufferutil
-      - encoding
       - utf-8-validate
     dev: true
 

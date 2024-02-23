@@ -45,7 +45,7 @@
     "jquery": "3.7.1",
     "lodash-es": "4.17.21",
     "process": "0.11.10",
-    "pyodide": "^0.23.3",
+    "pyodide": "^0.25.0",
     "sass.js": "0.11.1",
     "style-loader": "^3.3.3",
     "util": "0.12.5",
