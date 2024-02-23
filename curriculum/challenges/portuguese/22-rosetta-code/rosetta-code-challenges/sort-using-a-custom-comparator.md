@@ -8,7 +8,7 @@ dashedName: sort-using-a-custom-comparator
 
 # --description--
 
-Write a function to sort an array (or list) of strings in order of descending length, and in ascending lexicographic order for strings of equal length.
+Escrever uma função para ordenar um array (ou lista) de strings em ordem de tamanho decrescente, e em ordem lexicográfica crescente strings de mesmo tamanho.
 
 # --hints--
 

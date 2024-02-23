@@ -10,9 +10,9 @@ dashedName: execute-a-markov-algorithm
 
 Markov Concepts are used in machine learning, because of its simple approach in data manipulation. With a set number of `rules` you can manipulate given `data` to create a desired `output`.
 
-バックグラウンドに追加しました:
+以下のものが用意されています:
 
-The `rules` in the form of nested array, and the `data` in the form of array, too. そして、望ましい `outputs` です。
+ネストされた配列の形式の `rules`、同じく配列の形式の `data`、 そして、期待する `outputs` です。
 
 `rules`:
 
@@ -76,7 +76,7 @@ let outputs=[
 
 # --hints--
 
-`markov` という関数です。
+`markov` は関数でなければなりません。
 
 ```js
 assert(typeof markov === 'function');

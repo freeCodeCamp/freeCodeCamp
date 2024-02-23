@@ -8,7 +8,7 @@ dashedName: cramers-rule
 
 # --description--
 
-<a href="https://rosettacode.org/wiki/Cramer%27s_rule" target="_blank" rel="noopener noreferrer nofollow">Cramer's rule</a> is a formula for solving a system of linear equations by using the determinants of matrices formed from subsets of the coefficients and right hand side values.
+<a href="https://rosettacode.org/wiki/Cramer%27s_rule" target="_blank" rel="noopener noreferrer nofollow">A regra de Cramer</a> é uma fórmula para resolver um sistema de equações lineares usando os determinantes das matrizes formadas a partir de subconjuntos dos valores dos coeficientes e dos valores do lado direito.
 
 O determinante de uma matriz com 2 linhas e duas colunas é dado por:
 

@@ -26,13 +26,13 @@ L'algoritmo segue:
   <li>Seed the RNG with the number of the deal.
   </li><li>Crea un array di 52 carte: Asso di Fiori, Asso di Quadri, Asso di Cuori, Asso di Picche, 2 di Fiori, 2 di Quadri, e così via tra i semi: Asso, 2, 3, 4, 5, 6, 7, 8, 9, 10, Fante, Regina, Re. Gli indici dell'array sono da 0 a 51, con l'asso di fiori a 0, e Re di picche a 51.</li>
   <li>Fino a quando l'array non è vuoto:</li>
-  <li>Scegli una carta casuale dall'indice ≡ prossimo numero casuale (modulo lunghezza dell'array).</li>
     <ul>
+      <li>Choose a random card at <i>index</i> ≡ <i>next random number</i> (mod <i>array length</i>).</li>
       <li>Swap this random card with the last card of the array.</li>
-      <li>Rimuovi questa carta casuale dall'array. (La lunghezza dell'array scende di 1.)</li>
-      <li>Distribuisci questa carta casuale.</li>
+      <li>Remove this random card from the array. (Array length goes down by 1.)</li>
+      <li>Deal this random card.</li>
     </ul>
-  <li>Distribuisci tutte le 52 carte, a faccia in su, su 8 colonne. Le prime 8 carte vanno in 8 colonne, le sucessive 8 carte vanno sulle prime 8 carte, e così via.</li>
+  <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
 </ol>
 
 **Per esempio:**

@@ -93,7 +93,9 @@
     "link-account": "Link Account",
     "unlink-account": "Unlink Account",
     "update-card": "Update your card",
-    "donate-now": "Donate Now"
+    "donate-now": "Donate Now",
+    "confirm-amount": "Confirm amount",
+    "skip-advertisement": "Skip Advertisement"
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
@@ -374,6 +376,7 @@
     "tests-completed": "// pruebas completadas",
     "console-output": "// salida de consola",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
+    "indentation-error": "Your code has an indentation error. You may need to add 'pass' on a new line to form a valid block of code.",
     "sign-in-save": "Inicia sesión para guardar tu progreso",
     "download-solution": "Descargar mi solución",
     "download-results": "Download my results",
@@ -414,6 +417,21 @@
     "help-translate-link": "Ayúdanos a traducir.",
     "project-preview-title": "Aquí hay una vista previa de lo que construirás",
     "github-required": "<0>Crea una cuenta en GitHub</0> si no tienes una. Lo necesitará al crear la máquina virtual de servidores Linux, que puede tardar unos minutos.",
+    "gitpod": {
+      "intro": "This course runs in a virtual Linux machine using Gitpod. Follow these instructions to start the course:",
+      "step-1": "<0>Create a GitHub</0> account if you don't have one",
+      "step-2": "Click the start button below",
+      "step-3": "Login to Gitpod with your GitHub account if you aren't already",
+      "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
+      "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
+      "step-6": "Going to the \"View\" menu,",
+      "step-7": "Clicking on the \"Command Palette\" option,",
+      "step-8": "and running the \"CodeRoad: Start\" command",
+      "step-9": "Follow the instructions in CodeRoad to complete the course",
+      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{course}} course, go to <0>your Gitpod dashboard</0> to continue.",
+      "learn-more": "Learn more about <0>Gitpod workspaces.</0>",
+      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account."
+    },
     "step-1": "Paso 1: Completa el proyecto",
     "step-2": "Paso 2: Envía tu código",
     "submit-public-url": "Cuando haya completado el proyecto, guarde todos los archivos requeridos en un repositorio público y envíe la URL a continuación.",
@@ -578,6 +596,7 @@
     "other-support": "Si hay alguna otra forma en la que te gustaría apoyar a nuestra organización sin fines de lucro y su misión que no aparece aquí, o si tienes alguna pregunta, envía un correo electrónico a Quincy a quincy@freecodecamp.org.",
     "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
     "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy.",
+    "flying-bear": "Illustration of an adorable teddy bear wearing a graduation cap and flying with a Supporter badge.",
     "crucial-contribution": "Your contribution will be crucial in creating resources that empower millions of people to learn new skills and support their families.",
     "support-benefits-title": "Benefits from becoming a Supporter:",
     "support-benefits-1": "No more donation prompt popups",
@@ -598,7 +617,14 @@
     "community-achivements-3": "Merged <0>2,753</0> code contributions into our open source repositories on GitHub",
     "community-achivements-4": "Translated <0>2,106,203</0> words to make our curriculum and tutorials more accessible to speakers of many world languages",
     "as-you-see": "As you can see, we're getting things done. So you can rest assured that we'll put your donations to good use.",
-    "get-benefits": "Get the benefits and the knowledge that you’re helping our charity change education for the better. Become a Supporter today."
+    "get-benefits": "Get the benefits and the knowledge that you’re helping our charity change education for the better. Become a supporter today.",
+    "modal-benefits-title": "Support us",
+    "help-us-more-certifications": "Help us build more certifications",
+    "remove-donation-popups": "Remove donation popups",
+    "help-millions-learn": "Help millions of people learn",
+    "reach-goals-faster": "Reach your goals faster",
+    "remove-distractions": "Remove distractions",
+    "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world."
   },
   "report": {
     "sign-in": "Necesitas iniciar sesión para reportar a un usuario",
@@ -617,7 +643,7 @@
   },
   "search": {
     "label": "Buscar",
-    "placeholder": "Encuentra + 9,000 Tutoriales",
+    "placeholder": "Search 10,700+ tutorials",
     "see-results": "Ver todos los resultados de {{searchQuery}}",
     "no-tutorials": "No se encontraron tutoriales",
     "try": "¿Buscando algo? Prueba la barra de búsqueda en esta página.",

@@ -39,7 +39,7 @@ const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /this\.items\.forEach\(\s*function\s*\(\s*dessert\s*\)/);
 ```
 
-Функція зворотного виклику повинна бути порожньою.
+Функція зворотного виклику має бути порожньою.
 
 ```js
 const cart = new ShoppingCart();

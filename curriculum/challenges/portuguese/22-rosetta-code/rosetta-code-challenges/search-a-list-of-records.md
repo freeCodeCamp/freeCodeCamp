@@ -8,7 +8,7 @@ dashedName: search-a-list-of-records
 
 # --description--
 
-A record consists of attributes that describe an entity. Each attribute has a name and a value. For example, a person can have an attribute `age` with a value of 25. An important operation on a list of records is to find a record with a particular attribute value.
+Um registro é composto de atributos que descrevem uma entidade. Cada atributo tem um nome e um valor. Por exemplo, uma pessoa pode ter um atributo `age` (idade) com um valor de 25. Uma operação importante em uma lista de registros é encontrar um registro com um valor de atributo específico.
 
 # --instructions--
 

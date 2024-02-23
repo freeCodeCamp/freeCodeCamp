@@ -1,6 +1,6 @@
 ---
 id: 5966c21cf732a95f1b67dd28
-title: Зміна дати
+title: Маніпуляція датою
 challengeType: 1
 forumTopicId: 302244
 dashedName: date-manipulation
@@ -8,11 +8,11 @@ dashedName: date-manipulation
 
 # --description--
 
-Given a date string in EST, output the given date as a string with 12 hours added to the time. Time zone should be preserved.
+Дано рядок з датою в EST. Виведіть надану дату як рядок, додавши 12 годин до часу. Не змінюйте часовий пояс.
 
-Приклад заданого формату: `"March 6 2009 7:30pm EST"`
+Приклад вводу: `"March 6 2009 7:30pm EST"`
 
-Приклад вихідного формату: `"March 7 2009 7:30am EST"`
+Приклад виводу: `"March 7 2009 7:30am EST"`
 
 # --hints--
 
@@ -28,7 +28,7 @@ assert(typeof add12Hours === 'function');
 assert(typeof add12Hours('January 17 2017 11:43am EST') === 'string');
 ```
 
-`add12Hours("January 17 2017 11:43am EST")` має видати `"January 17 2017 11:43pm EST"`
+`add12Hours("January 17 2017 11:43am EST")` має повернути `"January 17 2017 11:43pm EST"`
 
 ```js
 assert(
@@ -36,25 +36,25 @@ assert(
 );
 ```
 
-Необхідна зміна дня. `add12Hours("March 6 2009 7:30pm EST")` має видати `"March 7 2009 7:30am EST"`
+Необхідна зміна дня. `add12Hours("March 6 2009 7:30pm EST")` має повернути `"March 7 2009 7:30am EST"`
 
 ```js
 assert(add12Hours('March 6 2009 7:30pm EST') === 'March 7 2009 7:30am EST');
 ```
 
-Необхідна зміна місяця у високосний рік. `add12Hours("February 29 2004 9:15pm EST")` має видати `"March 1 2004 9:15am EST"`
+Необхідна зміна місяця у високосний рік. `add12Hours("February 29 2004 9:15pm EST")` має повернути `"March 1 2004 9:15am EST"`
 
 ```js
 assert(add12Hours('February 29 2004 9:15pm EST') === 'March 1 2004 9:15am EST');
 ```
 
-Необхідна зміна місяця у звичайні роки. `add12Hours("February 28 1999 3:15pm EST")` має видати `"March 1 1999 3:15am EST"`
+Необхідна зміна місяця у звичайні роки. `add12Hours("February 28 1999 3:15pm EST")` має повернути `"March 1 1999 3:15am EST"`
 
 ```js
 assert(add12Hours('February 28 1999 3:15pm EST') === 'March 1 1999 3:15am EST');
 ```
 
-Необхідна зміна року. `add12Hours("December 31 2020 1:45pm EST")` має видати `"January 1 2021 1:45am EST"`
+Необхідна зміна року. `add12Hours("December 31 2020 1:45pm EST")` має повернути `"January 1 2021 1:45am EST"`
 
 ```js
 assert(

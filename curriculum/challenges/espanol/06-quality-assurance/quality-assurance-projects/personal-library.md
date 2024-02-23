@@ -11,16 +11,8 @@ dashedName: personal-library
 Construye una aplicacion Javascript full stack que funcione similarmente a esta: <a href="https://personal-library.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://personal-library.freecodecamp.rocks/</a>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
 
 -   Clona este repositorio de <a href="https://github.com/freeCodeCamp/boilerplate-project-library" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> y complete estos desafíos localmente.
--   Usa este <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-library" target="_blank" rel="noopener noreferrer nofollow"> proyecto inicial de Replit</a> para completar tu proyecto.
+-   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-library" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
 -   Usa un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
-
-If you use Replit, follow these steps to set up the project:
-
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
-
-When you are done, make sure a working demo of your project is hosted somewhere public. Luego envíe la URL esto en el campo Enlace Solution. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo de enlace GitHub.
 
 # --instructions--
 

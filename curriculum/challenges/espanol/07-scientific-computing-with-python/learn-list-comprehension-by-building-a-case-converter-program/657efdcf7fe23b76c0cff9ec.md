@@ -1,6 +1,6 @@
 ---
 id: 657efdcf7fe23b76c0cff9ec
-title: Step 7
+title: Paso 7
 challengeType: 20
 dashedName: step-7
 ---
@@ -34,7 +34,7 @@ You should use the `.append()` method to add `char` to the `snake_cased_char_lis
         const convert_to_snake_case = __helpers.python.getDef("\n" + transformedCode, "convert_to_snake_case");
         const { function_body } = convert_to_snake_case;
 
-        assert.match(function_body, / +snake_cased_char_list.append\(char\)/);
+        assert.match(function_body, / +snake_cased_char_list.append\(\s*char\s*\)/);
     }
 })
 ```

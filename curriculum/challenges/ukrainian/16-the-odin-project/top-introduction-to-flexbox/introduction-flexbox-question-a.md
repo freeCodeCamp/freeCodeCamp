@@ -1,6 +1,6 @@
 ---
 id: 6571b2fccc1de61d7b4dd37f
-title: Introduction to Flexbox Question A
+title: Вступ до Flexbox. Запитання A
 challengeType: 15
 dashedName: introduction-flexbox-question-a
 ---
@@ -9,27 +9,27 @@ dashedName: introduction-flexbox-question-a
 
 ## Перш ніж почнемо
 
-Flexbox layouts can get a little complicated. In a previous lesson, you learned how to inspect and debug things using your browser’s developer tools. Those tools will be crucial for you in the following lessons. If something isn’t behaving the way you expect, inspecting it in the developer tools should be your first step every time.
+Макети Flexbox можуть бути складними. У попередньому уроці ви дізнались, як провести огляд та налаштування за допомогою інструментів розробника в браузері. Ці інструменти будуть надзвичайно важливими в наступних уроках. Якщо щось працює не так, як ви очікуєте, в першу чергу потрібно провести перевірку в інструментах розробника.
 
-Flexbox isn’t necessarily any more difficult than the other concepts that we’ve covered so far, but it does have a few more moving parts. It is going to be somewhat difficult to make use of any of the things you’re learning in these first lessons until you get to the end and can put it all together. As we go, do yourself a favor and <strong>play with all of the code examples.</strong>
+Flexbox не складніший за інші поняття, які ми вже розглянули, але в нього трохи більше складових. На перших уроках буде складно побачити суцільну картину, допоки ви не дійдете до кінця, де поєднаєте все вивчене. Під час проходження уроків бажано <strong>звертати увагу на приклади коду.</strong>
 
-You will almost definitely need to come back and reference these lessons (or a couple of the resources we share with you) when you get to the assignments at the end of the section, but if you take your time and experiment with all the code examples we provide, you’ll know better where to look when that time comes.
+Найімовірніше, вам доведеться повертатися і посилатися на ці уроки (або інші матеріали, які ми надаємо) під час виконання завдань в кінці розділу. Але якщо ви виділите час і експериментуватимете з усіма наданими прикладами коду, ви краще зрозумієте, що робити у певний момент.
 
 ## Пофлексимо
 
-Flexbox is a way to arrange items into rows or columns. These items will flex (i.e. grow or shrink) based on some simple rules that you can define. To get started, let’s look at a simple demonstration.
+Flexbox — це спосіб розташувати предмети в рядки та стовпці. Ці предмети будуть гнутись (тобто збільшуватись або зменшуватись) на основі певних простих правил, які можна визначити. Для початку розглянемо простий приклад.
 
 > Ми впровадили багато інтерактивних прикладів у цих уроках. Настав час поекспериментувати з ними, щоб запам’ятати всі поняття!
 
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true"  frameborder="0" height="400" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/QWgNxrp?height=400&amp;default-tab=html%2Cresult&amp;slug-hash=QWgNxrp&amp;editable=true&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="Вставка CodePen" loading="lazy"></iframe>
 
-We’ll get into exactly what’s going on here soon enough. But for now, let’s uncomment the two flex related CSS declarations in the above Codepen by removing the `/*` and `*/` tags surrounding them, then check out the result.
+Незабаром розберемося, що тут відбувається. Наразі розкоментуємо два пов’язаних гнучкі оголошення CSS з Codepen вище, видаливши теги `/*` та `*/` навколо них, а потім глянемо на результат.
 
 > Коментарі заважають браузеру тлумачити рядки як код і використовуються між певними тегами. CSS використовує `/*` як початковий тег коментаря та `*/` як кінцевий тег коментаря, а HTML та JavaScript мають власний синтаксис. Прокоментовані рядки коду можна знову активувати, просто видаливши теги коментарів навколо коду.
 
-All 3 divs should now be arranged horizontally. If you resize the results frame with the `1x`, `.5x` and `.25x` buttons you’ll also see that the `div` elements will "flex". They will fill the available area and will each have equal width.
+Тепер всі три елементи div мають розташовуватись горизонтально. Якщо змінити їхній розмір за допомогою кнопок `1x`, `.5x` та `.25x`, ви побачите, як елементи `div` почнуть «гнутись». Вони заповнять доступну площу та матимуть однакову ширину.
 
-If you add another `div` to the HTML, inside of `.flex-container`, it will show up alongside the others, and everything will flex to fit within the available area.
+Якщо до HTML всередині `.flex-container` додати ще один `div`, він з’явиться поруч з іншими елементами та все погнеться, щоб поміститись в межах доступної площі.
 
 > Якщо важко побачити зміни в невеликому вбудованому CodePen, натисніть на кнопку «Edit on CodePen» або «Fork on CodePen». Це покаже приклад у повноекранному середовищі. Це особливо знадобиться для деяких наступних прикладів.
 
@@ -37,23 +37,23 @@ If you add another `div` to the HTML, inside of `.flex-container`, it will show 
 
 ## --text--
 
-What happens when the two flex related CSS declarations in the CodePen are uncommented?
+Що відбудеться, якщо розкоментувати два пов’язаних гнучкі оголошення CSS в CodePen?
 
 ## --answers--
 
-The `div` elements become hidden from view, losing their visibility within the container.
+Елементи `div` стануть прихованими, втративши видимість всередині контейнера.
 
 ---
 
-All 3 `div` elements are arranged horizontally, and they flex to fill the available area with equal width.
+Усі три елементи `div` розташуються горизонтально і розтягнуться, щоб заповнити доступну площу однаковою шириною.
 
 ---
 
-Each `div` element enlarges and covers the entire container, overlapping each other.
+Усі елементи `div` збільшаться і покриють весь контейнер, перекривши один одного.
 
 ---
 
-The `div` elements align vertically in a single column, ignoring the flex-related CSS declarations.
+Елементи `div` вирівняються вертикально в один стовпець, ігноруючи оголошення CSS.
 
 ## --video-solution--
 

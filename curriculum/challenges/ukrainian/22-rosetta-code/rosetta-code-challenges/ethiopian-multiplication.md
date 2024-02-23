@@ -8,7 +8,7 @@ dashedName: ethiopian-multiplication
 
 # --description--
 
-Ethiopian multiplication is a method of multiplying integers using only addition, doubling, and halving.
+Ефіопське множення — це метод множення цілих чисел з використанням додавання, подвоєння та ділення на два.
 
 **Метод:**
 
@@ -20,12 +20,12 @@ Ethiopian multiplication is a method of multiplying integers using only addition
   <li>Додайте значення справа, щоб отримати добуток двох початкових чисел</li>
 </ol>
 
-** Наприклад:** `17 × 34`
+**Наприклад:** `17 × 34`
 
 <pre>17   34
 </pre>
 
-Ділимо перший стовпчик:
+Ділимо на два перший стовпчик:
 
 <pre>17   34
 8
@@ -67,11 +67,11 @@ Ethiopian multiplication is a method of multiplying integers using only addition
 
 <!-- markdownlint-enable MD003 -->
 
-Отже `17` помножене `34`, за ефіопським методом - `578`.
+Отже, якщо помножити `17` на `34` за ефіопським методом, то отримаємо `578`.
 
 # --instructions--
 
-Завданням полягає в тому, щоб визначити три іменовані функції, методи, процедури, підпрограми:
+Вам потрібно визначити три функції/методи/процедури/підпрограми:
 
 <ol>
   <li>для ділення цілого числа на два</li>
@@ -79,7 +79,7 @@ Ethiopian multiplication is a method of multiplying integers using only addition
   <li>для визначення, чи ціле число є парним</li>
 </ol>
 
-Використовуйте ці функції, щоб створити функцію, яка виконує ефіопське множення.
+Використайте ці функції, щоб створити функцію, яка виконує ефіопське множення.
 
 <!-- markdownlint-disable MD046-->
 
@@ -91,31 +91,31 @@ Ethiopian multiplication is a method of multiplying integers using only addition
 assert(typeof eth_mult === 'function');
 ```
 
-`eth_mult(17,34)` має повертати `578`.
+`eth_mult(17,34)` має повернути `578`.
 
 ```js
 assert.equal(eth_mult(17, 34), 578);
 ```
 
-`eth_mult(23,46)` має повертати `1058`.
+`eth_mult(23,46)` має повернути `1058`.
 
 ```js
 assert.equal(eth_mult(23, 46), 1058);
 ```
 
-`eth_mult(12,27)` має повертати `324`.
+`eth_mult(12,27)` має повернути `324`.
 
 ```js
 assert.equal(eth_mult(12, 27), 324);
 ```
 
-`eth_mult(56,98)` має повертати `5488`.
+`eth_mult(56,98)` має повернути `5488`.
 
 ```js
 assert.equal(eth_mult(56, 98), 5488);
 ```
 
-`eth_mult(63,74)` має повертати `4662`.
+`eth_mult(63,74)` має повернути `4662`.
 
 ```js
 assert.equal(eth_mult(63, 74), 4662);

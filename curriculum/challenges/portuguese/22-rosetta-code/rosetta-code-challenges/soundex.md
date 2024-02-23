@@ -8,7 +8,7 @@ dashedName: soundex
 
 # --description--
 
-**Soundex Algorithm** deals with the *intentions* of the words. It creates a representation for similar sounding words.
+O **Algoritmo Soundex** lida com as *intenções* das palavras. Ele cria uma representação para palavras que soam semelhantes.
 
 Ele é usado para pesquisar <em>nomes</em> e <em>endereços</em>. Isso significa que a pessoa que preencheu o <em>nome</em> pode se concentrar em como ele soa em vez de corrigir a ortografia dos <em>nomes</em>.
 
@@ -21,7 +21,7 @@ Quando você soletrar o nome `Quincy` corretamente na próxima vez, ainda recebe
 Aqui estão as regras:
 
 <ul>
-  <li>If a vowel (A, E, I, O, U) separates two consonants that have the same soundex code, the consonant to the right of the vowel is coded. Tymczak is coded as T-522 (T, 5 for the M, 2 for the C, Z ignored (see "Side-by-Side" rule above), 2 for the K). Since the vowel "A" separates the Z and K, the K is coded.</li>
+  <li>Se uma vogal (A, E, I, O, U) separa duas consoantes que tenham o mesmo código soundex, a consoante à direita da vogal é codificada. Tymczak é codificado como T-522 (T, 5 para M, 2 para o C, Z ignorado – veja a regra "Lado a lado" acima –, 2 para o K). Uma vez que a vogal "A" separa Z e K, o K está codificado.</li>
   <li>Se "H" ou "W" separa duas consoantes que tenham o mesmo código soundex, a consoante à direita da vogal não é codificada. Exemplo: Ashcraft está codificado A-261 (A, 2 para o S, C ignorado, 6 para o R, 1 para o F). Ele não é codificado A-226.</li>
 </ul>
 
