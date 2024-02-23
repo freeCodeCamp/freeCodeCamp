@@ -226,8 +226,8 @@ importers:
         specifier: 4.5.1
         version: 4.5.1
       joi:
-        specifier: 17.12.1
-        version: 17.12.1
+        specifier: 17.12.2
+        version: 17.12.2
       jsonwebtoken:
         specifier: 9.0.2
         version: 9.0.2
@@ -919,8 +919,8 @@ importers:
         specifier: 1.0.1
         version: 1.0.1
       joi:
-        specifier: 17.12.1
-        version: 17.12.1
+        specifier: 17.12.2
+        version: 17.12.2
       js-yaml:
         specifier: 4.1.0
         version: 4.1.0
@@ -1003,8 +1003,8 @@ importers:
         specifier: 2.2.4
         version: 2.2.4
       joi:
-        specifier: 17.12.1
-        version: 17.12.1
+        specifier: 17.12.2
+        version: 17.12.2
       joi-objectid:
         specifier: 3.0.1
         version: 3.0.1
@@ -1378,8 +1378,8 @@ importers:
         specifier: 4.4.1
         version: 4.4.1
       joi:
-        specifier: 17.12.1
-        version: 17.12.1
+        specifier: 17.12.2
+        version: 17.12.2
       readdirp:
         specifier: 3.6.0
         version: 3.6.0
@@ -1408,8 +1408,8 @@ importers:
         specifier: 16.4.5
         version: 16.4.5
       joi:
-        specifier: 17.12.1
-        version: 17.12.1
+        specifier: 17.12.2
+        version: 17.12.2
       joi-objectid:
         specifier: 3.0.1
         version: 3.0.1
@@ -18920,7 +18920,7 @@ packages:
       gatsby-telemetry: 2.15.0
       hosted-git-info: 3.0.8
       is-valid-path: 0.1.1
-      joi: 17.12.1
+      joi: 17.12.2
       lodash: 4.17.21
       meant: 1.0.3
       node-fetch: 2.7.0
@@ -19156,7 +19156,7 @@ packages:
       fastq: 1.15.0
       gatsby: 3.15.0(@types/node@20.8.2)(babel-eslint@10.1.0)(eslint-import-resolver-typescript@3.5.5)(eslint-plugin-testing-library@3.9.0)(react-dom@16.14.0)(react@16.14.0)(typescript@5.2.2)(webpack-cli@4.10.0)
       graphql: 15.8.0
-      joi: 17.12.1
+      joi: 17.12.2
 
   /gatsby-plugin-webpack-bundle-analyser-v2@1.1.32(gatsby@3.15.0):
     resolution: {integrity: sha512-w6OJAR3CTyiKEKKD5tYu3J56YiQOW/8Sl2GPWmoiwzHIhZGjTOG+NbgkhboAK3+g2vgBlGTUmqgTAiJZWN7E/g==}
@@ -19450,7 +19450,7 @@ packages:
       invariant: 2.2.4
       is-relative: 1.0.0
       is-relative-url: 3.0.0
-      joi: 17.12.1
+      joi: 17.12.2
       json-loader: 0.5.7
       latest-version: 5.1.0
       lodash: 4.17.21
@@ -22264,8 +22264,8 @@ packages:
   /joi-objectid@3.0.1:
     resolution: {integrity: sha512-V/3hbTlGpvJ03Me6DJbdBI08hBTasFOmipsauOsxOSnsF1blxV537WTl1zPwbfcKle4AK0Ma4OPnzMH4LlvTpQ==}
 
-  /joi@17.12.1:
-    resolution: {integrity: sha512-vtxmq+Lsc5SlfqotnfVjlViWfOL9nt/avKNbKYizwf6gsCfq9NYY/ceYRMFD8XDdrjJ9abJyScWmhmIiy+XRtQ==}
+  /joi@17.12.2:
+    resolution: {integrity: sha512-RonXAIzCiHLc8ss3Ibuz45u28GOsWE1UpfDXLbN/9NKbL4tCJf8TWYVKsoYuuh+sAUt7fsSNpA+r2+TBA6Wjmw==}
     dependencies:
       '@hapi/hoek': 9.3.0
       '@hapi/topo': 5.1.0
@@ -31872,7 +31872,7 @@ packages:
     hasBin: true
     dependencies:
       axios: 0.27.2(debug@4.3.4)
-      joi: 17.12.1
+      joi: 17.12.2
       lodash: 4.17.21
       minimist: 1.2.8
       rxjs: 7.8.1
