@@ -1,12 +1,7 @@
 import { Button } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
 import { isString } from 'lodash-es';
-import React, {
-  useState,
-  type FormEvent,
-  type ChangeEvent,
-  useRef
-} from 'react';
+import React, { useState, type FormEvent, type ChangeEvent } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
@@ -24,11 +19,13 @@ import {
   Row
 } from '@freecodecamp/ui';
 
-import { Loader, Spacer } from '../components/helpers';
+import createRedirect from '../components/create-redirect';
+import { Spacer } from '../components/helpers';
 import './update-email.css';
 import { userSelector, isSignedInSelector } from '../redux/selectors';
 import { updateMyEmail } from '../redux/settings/actions';
 import { maybeEmailRE } from '../utils';
+import envData from '../../config/env.json';
 
 interface UpdateEmailProps {
   isNewEmail: boolean;
@@ -37,6 +34,8 @@ interface UpdateEmailProps {
   updateMyEmail: (e: string) => void;
   navigate: (location: string) => void;
 }
+
+const { apiLocation } = envData;
 
 const mapStateToProps = createSelector(
   userSelector,
@@ -53,18 +52,18 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ updateMyEmail }, dispatch);
 
+const RedirectToSignIn = createRedirect(`${apiLocation}/signin`);
+
 function UpdateEmail({
   isNewEmail,
   isSignedIn,
   t,
-  updateMyEmail,
-  navigate
+  updateMyEmail
 }: UpdateEmailProps) {
   const [emailValue, setEmailValue] = useState('');
-  const isSignedInRef = useRef(isSignedIn);
-  if (!isSignedInRef.current) {
-    navigate(`/signin`);
-    return <Loader fullScreen={true} />;
+
+  if (!isSignedIn) {
+    return <RedirectToSignIn />;
   }
 
   function handleSubmit(event: FormEvent) {
