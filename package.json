@@ -112,7 +112,7 @@
     "@testing-library/user-event": "14.5.2",
     "@types/jest": "29.5.12",
     "@types/lodash": "4.14.202",
-    "@types/node": "18.19.17",
+    "@types/node": "18.19.18",
     "@types/store": "2.0.5",
     "@typescript-eslint/eslint-plugin": "6.10.0",
     "@typescript-eslint/parser": "6.10.0",
