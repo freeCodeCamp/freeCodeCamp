@@ -18,7 +18,7 @@
     "ajv-formats": "2.1.1",
     "connect-mongo": "4.6.0",
     "date-fns": "2.30.0",
-    "dotenv": "16.4.4",
+    "dotenv": "16.4.5",
     "express-rate-limit": "^6.7.0",
     "fast-uri": "2.3.0",
     "fastify": "4.24.3",

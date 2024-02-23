@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       dotenv:
-        specifier: 16.4.4
-        version: 16.4.4
+        specifier: 16.4.5
+        version: 16.4.5
     devDependencies:
       '@babel/eslint-parser':
         specifier: 7.23.3
@@ -211,8 +211,8 @@ importers:
         specifier: 2.30.0
         version: 2.30.0
       dotenv:
-        specifier: 16.4.4
-        version: 16.4.4
+        specifier: 16.4.5
+        version: 16.4.5
       express-rate-limit:
         specifier: ^6.7.0
         version: 6.7.0(express@4.18.2)
@@ -904,8 +904,8 @@ importers:
         specifier: 7.0.3
         version: 7.0.3
       dotenv:
-        specifier: 16.4.4
-        version: 16.4.4
+        specifier: 16.4.5
+        version: 16.4.5
       eslint-plugin-testing-library:
         specifier: ^3.9.0
         version: 3.9.0(eslint@7.32.0)(typescript@5.2.2)
@@ -1076,8 +1076,8 @@ importers:
         specifier: 4.17.21
         version: 4.17.21
       dotenv:
-        specifier: 16.4.4
-        version: 16.4.4
+        specifier: 16.4.5
+        version: 16.4.5
       shx:
         specifier: 0.3.4
         version: 0.3.4
@@ -1390,8 +1390,8 @@ importers:
         specifier: 4.3.4
         version: 4.3.4(supports-color@8.1.1)
       dotenv:
-        specifier: 16.4.4
-        version: 16.4.4
+        specifier: 16.4.5
+        version: 16.4.5
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -1405,8 +1405,8 @@ importers:
         specifier: 4.3.4
         version: 4.3.4(supports-color@8.1.1)
       dotenv:
-        specifier: 16.4.4
-        version: 16.4.4
+        specifier: 16.4.5
+        version: 16.4.5
       joi:
         specifier: 17.12.1
         version: 17.12.1
@@ -16616,7 +16616,7 @@ packages:
     hasBin: true
     dependencies:
       cross-spawn: 7.0.3
-      dotenv: 16.4.4
+      dotenv: 16.4.5
       dotenv-expand: 10.0.0
       minimist: 1.2.8
     dev: true
@@ -16630,8 +16630,8 @@ packages:
     resolution: {integrity: sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==}
     dev: true
 
-  /dotenv@16.4.4:
-    resolution: {integrity: sha512-XvPXc8XAQThSjAbY6cQ/9PcBXmFoWuw1sQ3b8HqUCR6ziGXjkTi//kB9SWa2UwqlgdAIuRqAa/9hVljzPehbYg==}
+  /dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
     engines: {node: '>=12'}
 
   /dotenv@6.2.0:
