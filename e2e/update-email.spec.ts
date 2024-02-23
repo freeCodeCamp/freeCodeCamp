@@ -1,6 +1,22 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
+test.describe('The update-email page when the user is not signed in', () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
+
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/update-email');
+  });
+
+  test('should redirect to the signin page', async ({ page }) => {
+    await page.waitForURL('**/learn');
+
+    await expect(
+      page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
+    ).toBeVisible();
+  });
+});
+
 test.describe('The update-email page when the user is signed in', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
@@ -60,21 +76,5 @@ test.describe('The update-email page when the user is signed in', () => {
     await expect(submitButton).toBeDisabled();
     await emailInput.fill('123@gmail.com');
     await expect(submitButton).toBeEnabled();
-  });
-});
-
-test.describe('The update-email page when the user is not signed in', () => {
-  test.use({ storageState: { cookies: [], origins: [] } });
-
-  test.beforeEach(async ({ page }) => {
-    await page.goto('/update-email');
-  });
-
-  test('should redirect to the signin page', async ({ page }) => {
-    await page.waitForURL('**/learn');
-
-    await expect(
-      page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
-    ).toBeVisible();
   });
 });
