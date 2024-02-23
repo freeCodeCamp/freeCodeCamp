@@ -1464,6 +1464,7 @@
     "go-back-to-learn": "Поверніться до стабільної версії навчальної програми.",
     "read-database-cert-article": "Будь ласка, прочитайте повідомлення на форумі, перш ніж продовжити.",
     "enable-cookies": "Увімкніть сторонні файли cookie перед початком роботи.",
-    "english-only": "Курси в цьому розділі доступні лише англійською мовою. Наразі ми можемо перекладати лише заголовки й вступи, а не самі уроки."
+    "english-only": "Курси в цьому розділі доступні лише англійською мовою. Наразі ми можемо перекладати лише заголовки й вступи, а не самі уроки.",
+    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
   }
 }

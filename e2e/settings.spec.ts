@@ -4,8 +4,6 @@ test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 const settingsTestIds = {
   settingsHeading: 'settings-heading',
-  newEmail: 'new-email-input',
-  confirmEmail: 'confirm-email-input',
   internetPresence: 'internet-presence',
   portfolioItems: 'portfolio-items',
   camperIdentity: 'camper-identity'
@@ -256,20 +254,42 @@ test.describe('Settings', () => {
     );
     await expect(addPortfolioButton).toBeVisible();
     await addPortfolioButton.click();
-    await expect(
-      page.getByTestId(settingsTestIds.portfolioItems)
-    ).toBeVisible();
+    await expect(addPortfolioButton).toBeDisabled(); // Add button should be disabled after clicking
+    const portfolioItems = page.getByTestId(settingsTestIds.portfolioItems);
+    await expect(portfolioItems).toBeVisible();
     const saveButton = page.getByRole('button', {
       name: translations.buttons['save-portfolio']
     });
     await expect(saveButton).toBeVisible();
+    await expect(saveButton).toBeDisabled();
     const removeButton = page.getByRole('button', {
       name: translations.buttons['remove-portfolio']
     });
     await expect(removeButton).toBeVisible();
+    await page
+      .getByLabel(translations.settings.labels.title)
+      .fill('My portfolio');
+    await page
+      .getByLabel(translations.settings.labels.url)
+      .fill('https://my-portfolio.com');
+    await page
+      .getByLabel(translations.settings.labels.image)
+      .fill('https://my-portfolio.com/image.png');
+    await page
+      .getByLabel(translations.settings.labels.description)
+      .fill('My description');
+    await saveButton.click();
+    await expect(
+      page.getByText(translations.flash['portfolio-item-updated'])
+    ).toBeVisible();
+    await removeButton.click();
+    await expect(addPortfolioButton).toBeEnabled();
+    await expect(portfolioItems).toBeHidden();
+    await expect(saveButton).toBeHidden();
+    await expect(removeButton).toBeHidden();
   });
 
-  test('Should validate Personal Portfolio Settings', async ({
+  test('Should validate Personal Information Settings', async ({
     page,
     browserName
   }) => {
@@ -286,7 +306,19 @@ test.describe('Settings', () => {
       name: translations.settings.headings['personal-info']
     });
     await expect(saveButton).toBeVisible();
-    await saveButton.press('Enter');
+    await expect(saveButton).toBeDisabled();
+    await expect(
+      page.getByLabel(translations.settings.labels.name, { exact: true })
+    ).toHaveValue('Full Stack User');
+    await expect(
+      page.getByLabel(translations.settings.labels.location)
+    ).toHaveValue('');
+    await expect(
+      page.getByLabel(translations.settings.labels.picture)
+    ).toHaveValue('');
+    await expect(
+      page.getByLabel(translations.settings.labels.about)
+    ).toHaveValue('');
     await expect(
       page
         .getByRole('group', {
@@ -310,15 +342,6 @@ test.describe('Settings', () => {
     await expect(
       page.getByText(translations.settings['scrollbar-width'])
     ).toBeVisible();
-    const addPortfolioButton = page.getByText(
-      translations.buttons['add-portfolio']
-    );
-    await expect(addPortfolioButton).toBeVisible();
-    await addPortfolioButton.click();
-    const removeButton = page.getByRole('button', {
-      name: translations.buttons['remove-portfolio']
-    });
-    await expect(removeButton).toBeVisible();
   });
 
   test('Should validate Academy Honesty Settings', async ({

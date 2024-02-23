@@ -1464,6 +1464,7 @@
     "go-back-to-learn": "Rudi kwenye toleo thabiti la mtaala.",
     "read-database-cert-article": "Tafadhali soma chapisho hili la jukwaa kabla ya kuendelea.",
     "enable-cookies": "Lazima uwashe third-party cookies kabla ya kuanza.",
-    "english-only": "Kozi katika sehemu hii zinapatikana kwa Kiingereza pekee. Tuna uwezo wa kutafsiri mada na utangulizi pekee kwa sasa, si masomo yenyewe."
+    "english-only": "Kozi katika sehemu hii zinapatikana kwa Kiingereza pekee. Tuna uwezo wa kutafsiri mada na utangulizi pekee kwa sasa, si masomo yenyewe.",
+    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
   }
 }
