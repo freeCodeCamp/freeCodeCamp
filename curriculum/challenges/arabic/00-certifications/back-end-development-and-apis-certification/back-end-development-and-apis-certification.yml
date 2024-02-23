@@ -1,0 +1,22 @@
+---
+id: 561add10cb82ac38a17523bc
+title: تطوير واجهات الخلفية وشهادة واجهات برمجة التطبيقات API
+certification: back-end-development-and-apis
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c443edefaeb5bdef
+    title: الخدمة المصغرة للطابع الزمني
+  - 
+    id: bd7158d8c443edefaeb5bdff
+    title: الخدمة المصغرة لمحلل Request Header
+  - 
+    id: bd7158d8c443edefaeb5bd0e
+    title: الخدمة المصغرة لتقصير الروابط
+  - 
+    id: 5a8b073d06fa14fcfde687aa
+    title: متعقب التمارين
+  - 
+    id: bd7158d8c443edefaeb5bd0f
+    title: خدمة مصغرة للبيانات الوصفية للملفات

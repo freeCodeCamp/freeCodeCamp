@@ -1,0 +1,22 @@
+---
+id: 561add10cb82ac38a17523bc
+title: 後端開發和 API 認證
+certification: back-end-development-and-apis
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c443edefaeb5bdef
+    title: 時間戳微服務
+  - 
+    id: bd7158d8c443edefaeb5bdff
+    title: 請求頭解析器微服務
+  - 
+    id: bd7158d8c443edefaeb5bd0e
+    title: 短網址微服務
+  - 
+    id: 5a8b073d06fa14fcfde687aa
+    title: 運動追蹤器
+  - 
+    id: bd7158d8c443edefaeb5bd0f
+    title: 文件元數據微服務

@@ -1,0 +1,22 @@
+.fcc-loader {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.fcc-loader .sk-spinner,
+.script-loading-spinner {
+  color: var(--secondary-color);
+}
+
+.fcc-loader.full-screen-wrapper {
+  height: calc(100vh - var(--header-height, 0px));
+}
+
+.fcc-loader.full-screen-wrapper .sk-spinner {
+  transform: scale(2);
+}

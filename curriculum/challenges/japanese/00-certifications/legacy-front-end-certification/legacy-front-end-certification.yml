@@ -1,0 +1,37 @@
+---
+id: 561add10cb82ac38a17513be
+title: レガシーフロントエンド認定証
+certification: legacy-front-end
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c242eddfaeb5bd13
+    title: 個人ポートフォリオのウェブページを作成する
+  - 
+    id: bd7158d8c442eddfaeb5bd13
+    title: ランダムクォートマシンを作成する
+  - 
+    id: bd7158d8c442eddfaeb5bd0f
+    title: 25 + 5 クロックを作成する
+  - 
+    id: bd7158d8c442eddfaeb5bd17
+    title: JavaScript 電卓を作成する
+  - 
+    id: bd7158d8c442eddfaeb5bd10
+    title: 現在地の天気を表示する
+  - 
+    id: bd7158d8c442eddfaeb5bd1f
+    title: Twitch JSON API を使用する
+  - 
+    id: bd7158d8c442eddfaeb5bd18
+    title: Camper News のストーリーのスタイルを設定する
+  - 
+    id: bd7158d8c442eddfaeb5bd19
+    title: ウィキペディアビューアを作成する
+  - 
+    id: bd7158d8c442eedfaeb5bd1c
+    title: まるばつゲームを作成する
+  - 
+    id: bd7158d8c442eddfaeb5bd1c
+    title: サイモンゲームを作成する

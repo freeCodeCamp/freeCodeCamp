@@ -1,0 +1,37 @@
+---
+id: 561add10cb82ac39a17513bc
+title: Certificación en Visualización de Datos Heredado
+certification: legacy-data-visualization
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7157d8c242eddfaeb5bd13
+    title: Crea un visor de Markdown
+  - 
+    id: bd7156d8c242eddfaeb5bd13
+    title: Construye una Tabla de Clasificación de "Camper"
+  - 
+    id: bd7155d8c242eddfaeb5bd13
+    title: Crea una Caja de Recetas
+  - 
+    id: bd7154d8c242eddfaeb5bd13
+    title: Crea el Juego de la Vida
+  - 
+    id: bd7153d8c242eddfaeb5bd13
+    title: Crea un juego de mazmorras estilo "Roguelike Crawler"
+  - 
+    id: bd7168d8c242eddfaeb5bd13
+    title: Visualiza datos con una gráfica de barras
+  - 
+    id: bd7178d8c242eddfaeb5bd13
+    title: Visualiza datos con un diagrama de dispersión
+  - 
+    id: bd7188d8c242eddfaeb5bd13
+    title: Visualiza datos con un mapa térmico
+  - 
+    id: bd7198d8c242eddfaeb5bd13
+    title: Muestra la contigüidad nacional con un gráfico dirigido por fuerzas
+  - 
+    id: bd7108d8c242eddfaeb5bd13
+    title: Mapea datos a través del globo

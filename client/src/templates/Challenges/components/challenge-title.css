@@ -1,0 +1,117 @@
+.challenge-title-wrap {
+  text-align: center;
+}
+
+.challenge-title {
+  height: fit-content;
+  min-width: 25px;
+  margin: 20px 0px 15px;
+  padding: 0px 3px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: fit-content;
+  white-space: pre-line;
+  flex-grow: 1;
+  flex-shrink: 1;
+  font-size: 16px;
+}
+
+.challenge-title-breadcrumbs {
+  font-size: 16px;
+  border: 1px solid var(--quaternary-background);
+  text-align: center;
+}
+
+.challenge-title-breadcrumbs ol {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-inline-start: 0;
+  width: 100%;
+}
+
+.challenge-title-breadcrumbs ol a {
+  width: 100%;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  padding: 0 3px;
+}
+
+.challenge-title-breadcrumbs ol a:focus {
+  background-color: inherit;
+}
+
+.challenge-title-breadcrumbs ol a:hover {
+  background-color: inherit;
+  text-decoration: underline;
+}
+
+.breadcrumb-left,
+.breadcrumb-right {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-grow: 1;
+  flex-shrink: 2;
+  padding: 0;
+}
+
+.breadcrumb-left {
+  min-width: 3rem;
+  background-color: var(--quaternary-background);
+  margin-inline-end: 0.57rem;
+}
+
+.breadcrumb-left:after {
+  background-color: var(--secondary-background);
+  content: '';
+  border-top: calc(1.375rem / 2) solid transparent;
+  border-bottom: calc(1.2rem / 2) solid transparent;
+  border-inline-start: calc(1.1rem / 2) solid var(--quaternary-background);
+  height: 100%;
+  margin-left: 3px;
+}
+
+.breadcrumb-right {
+  min-width: 50px;
+}
+
+.breadcrumb-rule {
+  margin: 5px -10px;
+}
+
+.challenge-title h1 {
+  font-size: inherit;
+  line-height: 1.42857143;
+  margin: 0;
+  display: inline;
+}
+
+.title-translation-cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 16px;
+  height: 25px;
+  text-decoration: none;
+  color: var(--highlight-color);
+  background-color: var(--highlight-background);
+  margin-bottom: 10px;
+}
+
+.title-translation-cta:hover,
+.title-translation-cta:focus {
+  text-decoration: none;
+  color: var(--highlight-background);
+  background-color: var(--highlight-color);
+}

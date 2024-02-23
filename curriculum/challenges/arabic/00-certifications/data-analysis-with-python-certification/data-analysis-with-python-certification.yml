@@ -1,0 +1,23 @@
+---
+id: 5e46fc95ac417301a38fb934
+title: تحليل البيانات بواسطة شهادة Python
+certification: data-analysis-with-python
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 5e46f7e5ac417301a38fb928
+    title: حاسبة الانحراف المعياري و التباين و المتوسط
+  - 
+    id: 5e46f7e5ac417301a38fb929
+    title: محلل البيانات الديموغرافية
+  - 
+    id: 5e46f7f8ac417301a38fb92a
+    title: مصور البيانات الطبية
+  - 
+    id: 5e46f802ac417301a38fb92b
+    title: مصور السلسلة الزمنية لعرض الصفحة
+  - 
+    id: 5e4f5c4b570f7e3a4949899f
+    title: متوقّع مستوى البحر
+

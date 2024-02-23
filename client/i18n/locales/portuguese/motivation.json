@@ -1,0 +1,782 @@
+{
+  "compliments": [
+    "Top de linha!",
+    "Agora não para mais!",
+    "Fazendo chover!",
+    "Alvo na mira.",
+    "Pisa fundo!",
+    "Uau, que sucesso!",
+    "Pronto para decolar!",
+    "Ao infinito e além!",
+    "Mais um, mais um!",
+    "Siga em frente!",
+    "Desafio concluído e destruído!",
+    "O nível de poder? Está acima dos 9000!",
+    "Loucura da programação!",
+    "Programação longa e próspera.",
+    "E a galera vai à loucura!",
+    "Batendo recordes!",
+    "Vitória perfeita!",
+    "Que eficiência!",
+    "Você tem o dom!",
+    "Tá com tudo!",
+    "É festa na cidade!",
+    "Vamos nessa!",
+    "Para o Batmóvel!",
+    "Solta o freio!",
+    "Você é um mago, Harry!",
+    "Você é uma estrela!",
+    "Muito bem!",
+    "Mandou essa pra fora do estádio!",
+    "Você tá arrebentando!",
+    "Que bruxaria é essa?",
+    "E o mundo está em paz novamente!",
+    "É assim que se faz!",
+    "Fantástico!",
+    "U-húúúúúú!",
+    "A gente já sabia!",
+    "Finalização com combo!",
+    "É bola na rede!",
+    "Você é imparável!",
+    "Legal demais!",
+    "Essa nem tá no mapa!",
+    "Não existe colher!",
+    "Numa escala de 1 a 10? 11!",
+    "Na velocidade da luz!",
+    "Você faz parecer fácil!",
+    "Passou com estrelinhas!",
+    "Tá tudo dominado!",
+    "Mas que alegria!",
+    "E amanhã, tentar dominar o mundo!",
+    "Seus poderes combinados!",
+    "Está vivo. Está vivo!",
+    "Xiiii, código. Tá olhando pra você!",
+    "Legen - espere um pouco - dário!",
+    "Um laço para todos dominar!",
+    "Pelos poderes de Grayskull!",
+    "Você conseguiu!",
+    "Atacaaaaaar!",
+    "Xeque mate!",
+    "Sem enxergar ninguém na frente!",
+    "Keep calm e segue programando!",
+    "Fazendo até um panda triste sorrir!",
+    "Fazendo até o grumpy cat sorrir!",
+    "Na mosca!",
+    "Tá esquentando!",
+    "E a galera aplaude de pé!",
+    "Boa!",
+    "Isso aí!",
+    "Hasta la vista, desafio!",
+    "Exterminado.",
+    "Thundercats, Hooo!",
+    "Ui, isso me dá arrepios!",
+    "Tem que codar todos eles!",
+    "Pikachu, eu escolho você!",
+    "Eeeeeeiiiitaaaaa!",
+    "Cowabunga!",
+    "Pelo poder do Prisma Lunar!",
+    "Zerou!"
+  ],
+  "motivationalQuotes": [
+    {
+      "quote": "Seja lá o que você fizer, seja bom nisso.",
+      "author": "Abraham Lincoln"
+    },
+    {
+      "quote": "Uma mudança de perspectiva já faz subir 80 pontos de QI.",
+      "author": "Alan Kay"
+    },
+    {
+      "quote": "A melhor maneira de prever o futuro é inventá-lo.",
+      "author": "Alan Kay"
+    },
+    {
+      "quote": "O futuro não é um caminho a ser percorrido. É algo que podemos decidir, e enquanto não violarmos alguma lei conhecida do universo, possivelmente, podemos fazer o futuro sair do jeito que queremos que ele seja.",
+      "author": "Alan Kay"
+    },
+    {
+      "quote": "Só podemos enxergar uma pequena distância adiante, mas já podemos ver ali que há muito a ser feito.",
+      "author": "Alan Turing"
+    },
+    {
+      "quote": "Na parte mais intensa do inverno, finalmente aprendi que, dentro de mim, existe um verão invencível.",
+      "author": "Albert Camus"
+    },
+    {
+      "quote": "Quem nunca cometeu um erro jamais tentou fazer algo novo.",
+      "author": "Albert Einstein"
+    },
+    {
+      "quote": "Criatividade é a inteligência se divertindo.",
+      "author": "Albert Einstein"
+    },
+    {
+      "quote": "Eu não tenho talentos especiais. Sou apenas apaixonadamente curioso.",
+      "author": "Albert Einstein"
+    },
+    {
+      "quote": "A vida é como andar de bicicleta. Para manter o equilíbrio, precisamos continuar em frente.",
+      "author": "Albert Einstein"
+    },
+    {
+      "quote": "Torne tudo o mais simples possível, mas não mais simples.",
+      "author": "Albert Einstein"
+    },
+    {
+      "quote": "Nunca memorize algo que você pode pesquisar e encontrar.",
+      "author": "Albert Einstein"
+    },
+    {
+      "quote": "É quando você aceita seus limites que você os ultrapassa.",
+      "author": "Albert Einstein"
+    },
+    {
+      "quote": "Jogar é a forma mais nobre de pesquisa.",
+      "author": "Albert Einstein"
+    },
+    {
+      "quote": "Não podemos resolver problemas com o mesmo pensamento que usamos quando os criamos.",
+      "author": "Albert Einstein"
+    },
+    {
+      "quote": "A sabedoria não é um produto da escola, mas da tentativa de adquiri-la, que leva uma vida.",
+      "author": "Albert Einstein"
+    },
+    {
+      "quote": "Sua imaginação é a prévia das atrações por vir nas suas vidas.",
+      "author": "Albert Einstein"
+    },
+    {
+      "quote": "Há apenas um canto do universo que você pode melhorar com certeza: você mesmo.",
+      "author": "Aldous Huxley"
+    },
+    {
+      "quote": "A maneira mais comum de as pessoas desistirem de seu poder é pensarem que não o têm.",
+      "author": "Alice Walker"
+    },
+    {
+      "quote": "Siga sua luz da lua interna. Não oculte a loucura.",
+      "author": "Allen Ginsberg"
+    },
+    {
+      "quote": "A coisa mais difícil é a decisão de agir. O resto é mera tenacidade.",
+      "author": "Amelia Earhart"
+    },
+    {
+      "quote": "A vida se encolhe ou se amplia na mesma proporção de sua coragem.",
+      "author": "Anaïs Nin"
+    },
+    {
+      "quote": "Semanas de programação podem economizar horas de planejamento.",
+      "author": "Desconhecido"
+    },
+    {
+      "quote": "Qualidade não é um ato, é um hábito.",
+      "author": "Aristóteles"
+    },
+    {
+      "quote": "Comece onde está. Use o que tem. Faça o que puder.",
+      "author": "Arthur Ashe"
+    },
+    {
+      "quote": "Ao errar na preparação, você está se preparando para o erro.",
+      "author": "Benjamin Franklin"
+    },
+    {
+      "quote": "Diga-me e eu esquecerei.  Ensine-me e eu me lembrarei.  Envolva-me e eu aprenderei.",
+      "author": "Benjamin Franklin"
+    },
+    {
+      "quote": "Bem feito é melhor do que bem dito.",
+      "author": "Benjamin Franklin"
+    },
+    {
+      "quote": "Não há atalhos para os lugares onde vale a pena ir.",
+      "author": "Beverly Sills"
+    },
+    {
+      "quote": "Controlar a complexidade é a essência da programação.",
+      "author": "Brian Kernighan"
+    },
+    {
+      "quote": "Não temo aquele que praticou 10 mil golpes uma única vez. Temo o homem que praticou um golpe 10 mil vezes.",
+      "author": "Bruce Lee"
+    },
+    {
+      "quote": "Existem coisas muito, muito melhores adiante do que aquelas que deixamos para trás.",
+      "author": "C.S. Lewis"
+    },
+    {
+      "quote": "Somos aquilo que acreditamos ser.",
+      "author": "C.S. Lewis"
+    },
+    {
+      "quote": "Com a possível exceção da linha do equador, tudo começa em algum lugar.",
+      "author": "C.S. Lewis"
+    },
+    {
+      "quote": "Nunca se é velho demais para se definir uma nova meta, ou para sonhar novamente.",
+      "author": "C.S. Lewis"
+    },
+    {
+      "quote": "Em algum lugar, algo incrível está esperando ser descoberto.",
+      "author": "Carl Sagan"
+    },
+    {
+      "quote": "Se não estiver cometendo erros, também não estará tomando decisões.",
+      "author": "Catherine Cook"
+    },
+    {
+      "quote": "Encontre o que você ama e deixe que te mate.",
+      "author": "Charles Bukowski"
+    },
+    {
+      "quote": "O que mais importa é sua capacidade de caminhar pelo fogo.",
+      "author": "Charles Bukowski"
+    },
+    {
+      "quote": "Não é a espécie mais forte nem a mais inteligente que sobrevive. É aquela que melhor responde às mudanças.",
+      "author": "Charles Darwin"
+    },
+    {
+      "quote": "A vida é 10% o que acontece com você e 90% a forma como você reage a ela.",
+      "author": "Charles R. Swindoll"
+    },
+    {
+      "quote": "Faça coisas estúpidas, mas faça-as com entusiasmo.",
+      "author": "Colette"
+    },
+    {
+      "quote": "Não importa se você é lento, desde que você não pare.",
+      "author": "Confúcio"
+    },
+    {
+      "quote": "O conhecimento verdadeiro é ter noção da extensão de sua ignorância.",
+      "author": "Confúcio"
+    },
+    {
+      "quote": "O passado não pode ser mudado. O futuro ainda está em nossas mãos.",
+      "author": "Confúcio"
+    },
+    {
+      "quote": "Olhar para o código que você escreveu há mais de duas semanas é como olhar para um código que você está vendo pela primeira vez.",
+      "author": "Dan Hurvitz"
+    },
+    {
+      "quote": "Algum dia não é um dia da semana.",
+      "author": "Denise Brennan-Nelson"
+    },
+    {
+      "quote": "UNIX é simples.  Basta ser um gênio para entender sua simplicidade.",
+      "author": "Dennis Ritchie"
+    },
+    {
+      "quote": "Os computadores são ótimos em seguir instruções, mas péssimos leitores de mentes.",
+      "author": "Donald Knuth"
+    },
+    {
+      "quote": "Um bom programador é aquele que sempre olha pros dois lados antes de cruzar uma rua de mão única.",
+      "author": "Doug Linder"
+    },
+    {
+      "quote": "Tempos difíceis nunca duram. Pessoas difíceis, sim.",
+      "author": "Dr. Robert Schuller"
+    },
+    {
+      "quote": "Se as coisas começarem a acontecer, não se preocupe, siga o seu caminho e também vai acontecer.",
+      "author": "Dr. Seuss"
+    },
+    {
+      "quote": "A questão de computadores poderem ou não pensar é como a questão dos submarinos poderem ou não nadar.",
+      "author": "E.W. Dijkstra"
+    },
+    {
+      "quote": "Quando você escreve um código e não olha para ele por mais de seis meses, se dá conta que ele poderia ser escrito por qualquer outra pessoa.",
+      "author": "Lei de Eagleson"
+    },
+    {
+      "quote": "Faça uma coisa assustadora por dia.",
+      "author": "Eleanor Roosevelt"
+    },
+    {
+      "quote": "Com o novo dia, vem a nova força e os novos pensamentos.",
+      "author": "Eleanor Roosevelt"
+    },
+    {
+      "quote": "Você deve fazer coisas que acha que não consegue.",
+      "author": "Eleanor Roosevelt"
+    },
+    {
+      "quote": "Ilumine o amanhã com o dia de hoje.",
+      "author": "Elizabeth Barrett Browning"
+    },
+    {
+      "quote": "O sempre é composto de vários agoras.",
+      "author": "Emily Dickinson"
+    },
+    {
+      "quote": "A educação em ciência da computação pode fazer, de qualquer um, um programador especialista da mesma forma que o estudo de pincéis e pigmentos pode tornar alguém um especialista em pintura.",
+      "author": "Eric Raymond"
+    },
+    {
+      "quote": "Se você não arriscar nada, está arriscando ainda mais.",
+      "author": "Erica Jong"
+    },
+    {
+      "quote": "O mundo quebra todos nós. Mais tarde, muitos estão fortes em locais quebrados.",
+      "author": "Ernest Hemingway"
+    },
+    {
+      "quote": "Não há nada de nobre em ser superior ao seu próximo; a nobreza verdadeira é ser superior a si mesmo antigamente.",
+      "author": "Ernest Hemingway"
+    },
+    {
+      "quote": "Nunca confunda uma única derrota com a derrota final.",
+      "author": "F. Scott Fitzgerald"
+    },
+    {
+      "quote": "Eu atribuo meu sucesso a isso: eu nunca dei ou aceitei qualquer desculpa.",
+      "author": "Florence Nightingale"
+    },
+    {
+      "quote": "A melhor vingança é um sucesso estrondoso.",
+      "author": "Frank Sinatra"
+    },
+    {
+      "quote": "Os únicos limites para nossas realizações de amanhã serão as nossas dúvidas de hoje.",
+      "author": "Franklin D. Roosevelt"
+    },
+    {
+      "quote": "Não importa se é certo ou errado: é muito bom quebrar algo de tempos em tempos.",
+      "author": "Fyodor Dostoevsky"
+    },
+    {
+      "quote": "Quanto mais eu trabalho, mais sorte eu tenho.",
+      "author": "Gary Player"
+    },
+    {
+      "quote": "Desistir é o único modo 100% certo de falhar.",
+      "author": "Gena Showalter"
+    },
+    {
+      "quote": "O único sistema verdadeiramente seguro é o desligado, preso em um bloco de concreto e trancafiado em um cofre de chumbo com guardas armados na porta.",
+      "author": "Gene Spafford"
+    },
+    {
+      "quote": "Uma vida que passou a cometer erros não só é mais honrada, como também mais útil do que uma vida que passou sem fazer nada.",
+      "author": "George Bernard Shaw"
+    },
+    {
+      "quote": "Primeiro, aprenda ciência da computação e toda a teoria. Depois, desenvolva um estilo de programação. Por fim, esqueça tudo e comece a hackear.",
+      "author": "George Carrette"
+    },
+    {
+      "quote": "Descobrir o inesperado é mais importante do que confirmar o que já se sabe.",
+      "author": "George Box"
+    },
+    {
+      "quote": "Só vemos o que conhecemos.",
+      "author": "Goethe"
+    },
+    {
+      "quote": "Sem o trabalho duro, tudo o que cresce são as ervas daninhas.",
+      "author": "Gordon B. Hinckley"
+    },
+    {
+      "quote": "A função do software bom é fazer com que o complexo pareça simples.",
+      "author": "Grady Booch"
+    },
+    {
+      "quote": "Quando você sabe que é capaz de lidar com o que vier, você tem a única segurança que o mundo tem a oferecer.",
+      "author": "Harry Browne"
+    },
+    {
+      "quote": "A dor é inevitável. O sofrimento é opcional.",
+      "author": "Haruki Murakami"
+    },
+    {
+      "quote": "Otimismo é a fé que leva ao sucesso. Nada pode ser conseguido sem esperança e confiança.",
+      "author": "Helen Keller"
+    },
+    {
+      "quote": "O preço de tudo é a quantidade de vida que você oferece em troca.",
+      "author": "Henry David Thoreau"
+    },
+    {
+      "quote": "Se você pensa que pode, está certo. Se pensa que não, também está.",
+      "author": "Henry Ford"
+    },
+    {
+      "quote": "A expressão mais empolgante de se ouvir em ciência, aquela que leva às descobertas, não é 'Eureka!', é 'Que engraçado isso…'",
+      "author": "Isaac Asimov"
+    },
+    {
+      "quote": "Somos todos falhas. Os melhores de nós, ao menos.",
+      "author": "J.M. Barrie"
+    },
+    {
+      "quote": "Não espere por inspiração. Corra atrás dela com um tacape.",
+      "author": "Jack London"
+    },
+    {
+      "quote": "Não espere que as coisas sejam mais fáceis, espere ser melhor.",
+      "author": "Jim Rohn"
+    },
+    {
+      "quote": "Buscando e errando, aprendemos.",
+      "author": "Johann Wolfgang von Goethe"
+    },
+    {
+      "quote": "Saber não basta; devemos aplicar. Desejar não basta; devemos fazer.",
+      "author": "Johann Wolfgang von Goethe"
+    },
+    {
+      "quote": "Primeiro criamos nossos hábitos, depois, nossos hábitos nos fazem.",
+      "author": "John Dryden"
+    },
+    {
+      "quote": "O poder da imaginação nos torna infinitos.",
+      "author": "John Muir"
+    },
+    {
+      "quote": "Que você viva todos os dias de sua vida.",
+      "author": "Jonathan Swift"
+    },
+    {
+      "quote": "Perseverança é errar 19 vezes e ter sucesso na vigésima.",
+      "author": "Julie Andrews"
+    },
+    {
+      "quote": "O trabalho de hoje é a história de amanhã, e somos nós que o fazemos.",
+      "author": "Juliette Gordon Low"
+    },
+    {
+      "quote": "Se você revelar seus segredos ao vento, não culpe o vento por revelá-los às árvores.",
+      "author": "Kahlil Gibran"
+    },
+    {
+      "quote": "Otimismo é um perigo ocupacional em programação; o feedback é a cura.",
+      "author": "Kent Beck"
+    },
+    {
+      "quote": "A oportunidade não bate à porta. Ela se apresenta quando você derruba a porta.",
+      "author": "Kyle Chandler"
+    },
+    {
+      "quote": "Iterar é humano; a recursão é divina.",
+      "author": "Peter Deutsch"
+    },
+    {
+      "quote": "Um bom viajante não tem planos fixos e não está focado em chegar.",
+      "author": "Lao Tzu"
+    },
+    {
+      "quote": "Uma formiga em movimento faz mais que um boi dormindo.",
+      "author": "Lao Tzu"
+    },
+    {
+      "quote": "Faça as coisas difíceis enquanto elas ainda são fáceis e faça as coisas grandes enquanto ainda são pequenas. Uma jornada de mil quilômetros começa com um único passo.",
+      "author": "Lao Tzu"
+    },
+    {
+      "quote": "Esse é o problema com as pessoas que acham que odeiam computadores. O que elas odeiam de fato são programadores ruins.",
+      "author": "Larry Niven"
+    },
+    {
+      "quote": "Já percebi há muito tempo que pessoas de sucesso raramente pararam e esperaram que as coisas acontecessem a elas. Elas foram lá e aconteceram para as coisas.",
+      "author": "Leonardo da Vinci"
+    },
+    {
+      "quote": "Se você, ao menos, é bom em algo, sabe que pode ser melhor.",
+      "author": "Lindsay Buckingham"
+    },
+    {
+      "quote": "Se as pessoas não fizessem nada estúpido, nada de inteligente teria sido feito de fato.",
+      "author": "Ludwig Wittgenstein"
+    },
+    {
+      "quote": "Você só vive uma vez, mas se fizer isso direito, uma vez só já basta.",
+      "author": "Mae West"
+    },
+    {
+      "quote": "Viva como se fosse morrer amanhã. Aprenda como se fosse viver para sempre.",
+      "author": "Mahatma Gandhi"
+    },
+    {
+      "quote": "A força não vem da capacidade física. Ela vem de um desejo indomável.",
+      "author": "Mahatma Gandhi"
+    },
+    {
+      "quote": "A 'paranoia' de uns é a 'redundância em engenharia' de outros.",
+      "author": "Marcus J. Ranum"
+    },
+    {
+      "quote": "Não se deve temer nada na vida, somente compreender. Este é o momento de compreender mais, então temos de temer menos.",
+      "author": "Marie Curie"
+    },
+    {
+      "quote": "Se você tiver tudo sobre controle, não está rápido o suficiente.",
+      "author": "Mario Andretti"
+    },
+    {
+      "quote": "Educação: o caminho da ignorância presunçosa à incerteza miserável.",
+      "author": "Mark Twain"
+    },
+    {
+      "quote": "Não é o que você não sabe que causa o problema. É o que você sabe com certeza e que não é verdade.",
+      "author": "Mark Twain"
+    },
+    {
+      "quote": "O segredo de seguir em frente é começar.",
+      "author": "Mark Twain"
+    },
+    {
+      "quote": "Os dois dias mais importantes de sua vida são o dia que você nasceu e o dia que você descobriu o porquê.",
+      "author": "Mark Twain"
+    },
+    {
+      "quote": "Daqui a vinte anos você estará mais arrependido pelas coisas que não fez do que pelas que fez. Então solte suas amarras. Afaste-se do porto seguro. Agarre o vento em suas velas.",
+      "author": "Mark Twain"
+    },
+    {
+      "quote": "Qualquer idiota pode escrever código que um computador pode entender. Bons programadores escrevem código que humanos podem entender.",
+      "author": "Martin Fowler"
+    },
+    {
+      "quote": "Eu sei, de algum modo, que somente quando está escuro o suficiente, podemos ver as estrelas.",
+      "author": "Martin Luther King Jr."
+    },
+    {
+      "quote": "Nunca é tarde demais para ser o que você seria.",
+      "author": "Mary Anne Evans"
+    },
+    {
+      "quote": "Nada trabalhará a seu favor se você não fizer isso.",
+      "author": "Maya Angelou"
+    },
+    {
+      "quote": "Sentimos prazer na beleza da borboleta, mas raramente admitimos as mudanças pelas quais ela passou para chegar àquela beleza.",
+      "author": "Maya Angelou"
+    },
+    {
+      "quote": "Podemos encontrar muitas derrotas no caminho, mas não podemos jamais ser derrotados.",
+      "author": "Maya Angelou"
+    },
+    {
+      "quote": "Todos têm talento. É a habilidade que necessita de trabalho árduo.",
+      "author": "Michael Jordan"
+    },
+    {
+      "quote": "Eu errei mais de 9 mil arremessos em toda a minha carreira. Perdi quase 300 jogos. Em 26 vezes, confiaram em mim para fazer o arremesso da vitória e eu errei. Eu errei várias e várias vezes na minha vida. E é por isso que tive sucesso.",
+      "author": "Michael Jordan"
+    },
+    {
+      "quote": "Impossível é só uma palavra grande falada por pessoas pequenas que acham mais fácil viver em um mundo que eles receberam nas mãos do que explorar a força que eles têm de mudá-lo. O impossível não é um fato. É uma opinião. O impossível não é uma declaração. É um desafio. Impossível é um potencial. Impossível é temporário. O impossível é nada.",
+      "author": "Muhammad Ali"
+    },
+    {
+      "quote": "Um vencedor é um sonhador que nunca desiste.",
+      "author": "Nelson Mandela"
+    },
+    {
+      "quote": "Sempre parece impossível até ser feito.",
+      "author": "Nelson Mandela"
+    },
+    {
+      "quote": "Errar nunca me vencerá se minha determinação de ter sucesso for forte o suficiente.",
+      "author": "Og Mandino"
+    },
+    {
+      "quote": "Não sou jovem o bastante para saber de tudo.",
+      "author": "Oscar Wilde"
+    },
+    {
+      "quote": "Apenas uma coisa torna um sonho impossível de ser atingido: o medo de errar.",
+      "author": "Paulo Coelho"
+    },
+    {
+      "quote": "Nunca durma irritado. Fique de pé e lute.",
+      "author": "Phyllis Diller"
+    },
+    {
+      "quote": "Não é possível cruzar o mar simplesmente ficando parado e olhando para a água.",
+      "author": "Rabindranath Tagore"
+    },
+    {
+      "quote": "A única pessoa que você está destinado a se tornaré a pessoa que você decidir ser.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "quote": "O que você faz fala tão alto que eu não consigo ouvir o que você diz.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "quote": "As pessoas que são loucas o bastante para achar que podem mudar o mundo, são aquelas que conseguem.",
+      "author": "Rob Siltanen"
+    },
+    {
+      "quote": "A melhor maneira de sair é seguir em frente.",
+      "author": "Robert Frost"
+    },
+    {
+      "quote": "Os sucessos de hoje foram as impossibilidades de ontem.",
+      "author": "Robert H. Schuller"
+    },
+    {
+      "quote": "Não se satisfaça com histórias, com a maneira com as pessoas viveram algo. Desvende seus próprios mitos.",
+      "author": "Rumi"
+    },
+    {
+      "quote": "Esqueça a segurança. Viva onde teme viver. Destrua sua reputação. Seja notório.",
+      "author": "Rumi"
+    },
+    {
+      "quote": "Venda sua esperteza e compre deslumbramento.",
+      "author": "Rumi"
+    },
+    {
+      "quote": "A cura para a dor está na dor.",
+      "author": "Rumi"
+    },
+    {
+      "quote": "Não tenha medo da perfeição - você nunca vai alcançá-la.",
+      "author": "Salvador Dalí"
+    },
+    {
+      "quote": "Não olhe para o relógio. Faça o que ele faz. Siga andando.",
+      "author": "Sam Levenson"
+    },
+    {
+      "quote": "Já tentou. Já errou. Não importa. Tente de novo. Erre de novo. Erre melhor.",
+      "author": "Samuel Beckett"
+    },
+    {
+      "quote": "Quanto mais você sabe, mais percebe que não sabe nada.",
+      "author": "Sócrates"
+    },
+    {
+      "quote": "O grande inimigo do conhecimento não é a ignorância, é a ilusão do conhecimento.",
+      "author": "Stephen Hawking"
+    },
+    {
+      "quote": "O universo não conhece a perfeição.",
+      "author": "Stephen Hawking"
+    },
+    {
+      "quote": "Se você quer descobrir os segredos do universo, ou seguir em uma carreira no século XXI, a programação básica é uma habilidade essencial a ser aprendida.",
+      "author": "Stephen Hawking"
+    },
+    {
+      "quote": "O momento mais assustador é sempre aquele antes de começar.",
+      "author": "Stephen King"
+    },
+    {
+      "quote": "Você pode, você deve, e, se for corajoso o suficiente, você vai.",
+      "author": "Stephen King"
+    },
+    {
+      "quote": "Erga-se, acorde e não pare até atingir seu objetivo.",
+      "author": "Swami Vivekananda"
+    },
+    {
+      "quote": "Dizem que você vê sua vida passar pelos seus olhos antes de morrer. É verdade, o nome disso é Vida.",
+      "author": "Terry Pratchett"
+    },
+    {
+      "quote": "Se você acredita que pode já está a meio caminho do destino.",
+      "author": "Theodore Roosevelt"
+    },
+    {
+      "quote": "Eu não errei. Só encontrei 10 mil maneiras que não deram certo.",
+      "author": "Thomas A. Edison"
+    },
+    {
+      "quote": "Nossa grande fraqueza está em desistir. A maneira mais certa de ter sucesso é sempre tentar pelo menos mais uma vez.",
+      "author": "Thomas A. Edison"
+    },
+    {
+      "quote": "Quanto maior o conflito, mais glorioso é o triunfo.",
+      "author": "Thomas Paine"
+    },
+    {
+      "quote": "A web, como eu a imaginava, nós ainda não a vimos. O futuro ainda é muito maior do que o passado.",
+      "author": "Tim Berners-Lee"
+    },
+    {
+      "quote": "Errar é o tempero que dá ao sucesso seu sabor.",
+      "author": "Truman Capote"
+    },
+    {
+      "quote": "Aqueles que dizem que não pode ser feito não deveriam interromper quem está fazendo.",
+      "author": "Desconhecido"
+    },
+    {
+      "quote": "Mesmo que você caia de cara, ainda estará indo adiante.",
+      "author": "Victor Kiam"
+    },
+    {
+      "quote": "A questão não é saber se você será nocauteado, mas saber se você levantará.",
+      "author": "Vince Lombardi"
+    },
+    {
+      "quote": "Eu sonho com minha pintura e pinto meus sonhos.",
+      "author": "Vincent van Gogh"
+    },
+    {
+      "quote": "Vamos cultivar nosso jardim.",
+      "author": "Voltaire"
+    },
+    {
+      "quote": "Tenha a lua como alvo. Se errar, pode ser que acerte uma estrela.",
+      "author": "W. Clement Stone"
+    },
+    {
+      "quote": "A maneira de começar é parar de falar e começar a fazer.",
+      "author": "Walt Disney"
+    },
+    {
+      "quote": "Você erra 100% das vezes que não tenta.",
+      "author": "Wayne Gretzky"
+    },
+    {
+      "quote": "Não deixe que ontem consuma muito do dia de hoje.",
+      "author": "Will Rogers"
+    },
+    {
+      "quote": "Mesmo que você esteja no caminho certo, você será atropelado se simplesmente ficar parado lá.",
+      "author": "Will Rogers"
+    },
+    {
+      "quote": "Não aguarde para bater no ferro quando ele estiver quente; aqueça-o batendo.",
+      "author": "William Butler Yeats"
+    },
+    {
+      "quote": "Você não consegue nadar por novos horizontes até ter a coragem de não enxergar mais a costa.",
+      "author": "William Faulkner"
+    },
+    {
+      "quote": "Não tenham medo da grandeza. Alguns nascem grandes, alguns conseguem a grandeza e outros têm a grandeza imposta a eles.",
+      "author": "William Shakespeare"
+    },
+    {
+      "quote": "Sabemos o que somos, mas não o que podemos ser.",
+      "author": "William Shakespeare"
+    },
+    {
+      "quote": "Em teoria, não há diferença entre a teoria e a prática. Na prática, sim.",
+      "author": "Yogi Berra"
+    },
+    {
+      "quote": "Você pode enxergar muito se simplesmente olhar.",
+      "author": "Yogi Berra"
+    },
+    {
+      "quote": "Não há elevador para o sucesso. Você precisa usar as escadas.",
+      "author": "Zig Ziglar"
+    },
+    {
+      "quote": "Não é preciso ser grande para começar, mas é preciso começar para ser grande.",
+      "author": "Zig Ziglar"
+    }
+  ]
+}

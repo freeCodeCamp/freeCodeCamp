@@ -1,0 +1,9 @@
+.update-email-field {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+.update-email-field label {
+  margin-bottom: unset;
+}

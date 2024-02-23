@@ -1,0 +1,17 @@
+.social-media-icons {
+  margin-top: 1.5em;
+}
+
+.social-media-icons > a {
+  margin: 0 1.5em 0 0;
+}
+
+.social-media-icons > a:last-child {
+  margin: 0 0 1.5em;
+}
+
+.social-media-icons > a:hover,
+.social-media-icons > a:focus {
+  background: transparent;
+  color: var(--secondary-color);
+}

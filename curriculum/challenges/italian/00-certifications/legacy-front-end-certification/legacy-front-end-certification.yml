@@ -1,0 +1,37 @@
+---
+id: 561add10cb82ac38a17513be
+title: Vecchia Certificazione Front End
+certification: legacy-front-end
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c242eddfaeb5bd13
+    title: Costruisci una pagina per il tuo portfolio personale
+  - 
+    id: bd7158d8c442eddfaeb5bd13
+    title: Costruisci una Macchina per le citazioni casuali
+  - 
+    id: bd7158d8c442eddfaeb5bd0f
+    title: Costruisci un Orologio 25 + 5
+  - 
+    id: bd7158d8c442eddfaeb5bd17
+    title: Costruisci una calcolatrice JavaScript
+  - 
+    id: bd7158d8c442eddfaeb5bd10
+    title: Mostra il Meteo locale
+  - 
+    id: bd7158d8c442eddfaeb5bd1f
+    title: Usa l'API JSON di Twitch
+  - 
+    id: bd7158d8c442eddfaeb5bd18
+    title: Storie di Stylize su Camper News
+  - 
+    id: bd7158d8c442eddfaeb5bd19
+    title: Costruisci un visualizzatore di Wikipedia
+  - 
+    id: bd7158d8c442eedfaeb5bd1c
+    title: Costruisci un gioco Tic Tac Toe
+  - 
+    id: bd7158d8c442eddfaeb5bd1c
+    title: Costruisci un gioco Simon

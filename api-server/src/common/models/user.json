@@ -1,0 +1,520 @@
+{
+  "name": "user",
+  "base": "User",
+  "strict": "filter",
+  "idInjection": true,
+  "emailVerificationRequired": false,
+  "trackChanges": false,
+  "properties": {
+    "email": {
+      "type": "string",
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "background": true,
+          "sparse": true
+        }
+      }
+    },
+    "newEmail": {
+      "type": "string"
+    },
+    "emailVerifyTTL": {
+      "type": "date"
+    },
+    "emailVerified": {
+      "type": "boolean",
+      "default": false
+    },
+    "emailAuthLinkTTL": {
+      "type": "date"
+    },
+    "externalId": {
+      "type": "string",
+      "description": "A uuid/v4 used to identify user accounts"
+    },
+    "unsubscribeId": {
+      "type": "string",
+      "description": "An ObjectId used to unsubscribe users from the mailing list(s)"
+    },
+    "password": {
+      "type": "string",
+      "description": "No longer used for new accounts"
+    },
+    "progressTimestamps": {
+      "type": "array",
+      "default": []
+    },
+    "isBanned": {
+      "type": "boolean",
+      "description": "User is banned from posting to camper news",
+      "default": false
+    },
+    "isCheater": {
+      "type": "boolean",
+      "description": "Users who are confirmed to have broken academic honesty policy are marked as cheaters",
+      "default": false
+    },
+    "githubProfile": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "_csrf": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string",
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "background": true
+        }
+      },
+      "require": true
+    },
+    "usernameDisplay": {
+      "type": "string"
+    },
+    "about": {
+      "type": "string",
+      "default": ""
+    },
+    "name": {
+      "type": "string",
+      "default": ""
+    },
+    "location": {
+      "type": "string",
+      "default": ""
+    },
+    "picture": {
+      "type": "string",
+      "default": ""
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "codepen": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "acceptedPrivacyTerms": {
+      "type": "boolean",
+      "default": false
+    },
+    "sendQuincyEmail": {
+      "type": "boolean",
+      "default": false
+    },
+    "isClassroomAccount": {
+      "type": "boolean",
+      "default": false
+    },
+    "currentChallengeId": {
+      "type": "string",
+      "description": "The challenge last visited by the user",
+      "default": ""
+    },
+    "isHonest": {
+      "type": "boolean",
+      "description": "Camper has signed academic honesty policy",
+      "default": false
+    },
+    "needsModeration": {
+      "type": "boolean",
+      "description": "Camper has challenges needing to be moderated",
+      "default": false,
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "background": true
+        }
+      }
+    },
+    "isFrontEndCert": {
+      "type": "boolean",
+      "description": "Camper is front end certified",
+      "default": false
+    },
+    "isDataVisCert": {
+      "type": "boolean",
+      "description": "Camper is data visualization certified",
+      "default": false
+    },
+    "isBackEndCert": {
+      "type": "boolean",
+      "description": "Campers is back end certified",
+      "default": false
+    },
+    "isFullStackCert": {
+      "type": "boolean",
+      "description": "Campers is full stack certified",
+      "default": false
+    },
+    "isRespWebDesignCert": {
+      "type": "boolean",
+      "description": "Camper is responsive web design certified",
+      "default": false
+    },
+    "is2018DataVisCert": {
+      "type": "boolean",
+      "description": "Camper is data visualization certified (2018)",
+      "default": false
+    },
+    "isFrontEndLibsCert": {
+      "type": "boolean",
+      "description": "Camper is front end libraries certified",
+      "default": false
+    },
+    "isJsAlgoDataStructCert": {
+      "type": "boolean",
+      "description": "Camper is javascript algorithms and data structures certified",
+      "default": false
+    },
+    "isApisMicroservicesCert": {
+      "type": "boolean",
+      "description": "Camper is apis and microservices certified",
+      "default": false
+    },
+    "isInfosecQaCert": {
+      "type": "boolean",
+      "description": "Camper is information security and quality assurance certified",
+      "default": false
+    },
+    "isQaCertV7": {
+      "type": "boolean",
+      "description": "Camper is quality assurance certified",
+      "default": false
+    },
+    "isInfosecCertV7": {
+      "type": "boolean",
+      "description": "Camper is information security certified",
+      "default": false
+    },
+    "is2018FullStackCert": {
+      "type": "boolean",
+      "description": "Camper is full stack certified (2018)",
+      "default": false
+    },
+    "isSciCompPyCertV7": {
+      "type": "boolean",
+      "description": "Camper is scientific computing with Python certified",
+      "default": false
+    },
+    "isDataAnalysisPyCertV7": {
+      "type": "boolean",
+      "description": "Camper is data analysis with Python certified",
+      "default": false
+    },
+    "isMachineLearningPyCertV7": {
+      "type": "boolean",
+      "description": "Camper is machine learning with Python certified",
+      "default": false
+    },
+    "isRelationalDatabaseCertV8": {
+      "type": "boolean",
+      "description": "Camper is relational database certified",
+      "default": false
+    },
+    "isCollegeAlgebraPyCertV8": {
+      "type": "boolean",
+      "description": "Camper is college algebra with Python certified",
+      "default": false
+    },
+    "isFoundationalCSharpCertV8": {
+      "type": "boolean",
+      "description": "Camper is foundational C# certified",
+      "default": false
+    },
+    "isJsAlgoDataStructCertV8": {
+      "type": "boolean",
+      "description": "Camper is javascript algorithms and data structures certified (2023)",
+      "default": false
+    },
+    "completedChallenges": {
+      "type": [
+        {
+          "completedDate": "number",
+          "id": "string",
+          "solution": "string",
+          "githubLink": "string",
+          "challengeType": "number",
+          "isManuallyApproved": "boolean",
+          "files": {
+            "type": [
+              {
+                "contents": {
+                  "type": "string",
+                  "default": ""
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "key": {
+                  "type": "string"
+                }
+              }
+            ],
+            "default": []
+          }
+        }
+      ],
+      "default": []
+    },
+    "partiallyCompletedChallenges": {
+      "type": [
+        {
+          "completedDate": "number",
+          "id": "string"
+        }
+      ],
+      "default": []
+    },
+    "savedChallenges": {
+      "type": [
+        {
+          "lastSavedDate": "number",
+          "id": "string",
+          "challengeType": "number",
+          "files": {
+            "type": [
+              {
+                "contents": {
+                  "type": "string",
+                  "default": ""
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "key": {
+                  "type": "string"
+                }
+              }
+            ],
+            "default": []
+          }
+        }
+      ],
+      "default": []
+    },
+    "completedExams": {
+      "type": [
+        {
+          "completedDate": "number",
+          "id": "string",
+          "challengeType": "number",
+          "examResults": {
+            "type": {
+              "numberOfCorrectAnswers": "number",
+              "numberOfQuestionsInExam": "number",
+              "percentCorrect": "number",
+              "passingPercent": "number",
+              "passed": "boolean",
+              "examTimeInSeconds": "number"
+            }
+          }
+        }
+      ],
+      "default": []
+    },
+    "portfolio": {
+      "type": "array",
+      "default": []
+    },
+    "yearsTopContributor": {
+      "type": "array",
+      "default": []
+    },
+    "rand": {
+      "type": "number",
+      "index": true
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "theme": {
+      "type": "string",
+      "default": "default"
+    },
+    "keyboardShortcuts": {
+      "type": "boolean",
+      "default": false
+    },
+    "profileUI": {
+      "type": "object",
+      "default": {
+        "isLocked": true,
+        "showAbout": false,
+        "showCerts": false,
+        "showDonation": false,
+        "showHeatMap": false,
+        "showLocation": false,
+        "showName": false,
+        "showPoints": false,
+        "showPortfolio": false,
+        "showTimeLine": false
+      }
+    },
+    "badges": {
+      "type": {
+        "coreTeam": {
+          "type": "array",
+          "default": []
+        }
+      },
+      "default": {}
+    },
+    "donationEmails": {
+      "type": ["string"]
+    },
+    "isDonating": {
+      "type": "boolean",
+      "description": "Does the camper have an active donation",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "donations": {
+      "type": "hasMany",
+      "foreignKey": "",
+      "modal": "donation"
+    },
+    "credentials": {
+      "type": "hasMany",
+      "model": "userCredential",
+      "foreignKey": ""
+    },
+    "identities": {
+      "type": "hasMany",
+      "model": "userIdentity",
+      "foreignKey": ""
+    },
+    "pledge": {
+      "type": "hasOne",
+      "model": "pledge",
+      "foreignKey": ""
+    },
+    "authTokens": {
+      "type": "hasMany",
+      "model": "AuthToken",
+      "foreignKey": "userId",
+      "options": {
+        "disableInclude": true
+      }
+    },
+    "articles": {
+      "type": "hasMany",
+      "model": "article",
+      "foreignKey": "externalId"
+    },
+    "userTokens": {
+      "type": "hasMany",
+      "model": "UserToken",
+      "foreignKey": "userId"
+    },
+    "msUsernames": {
+      "type": "hasMany",
+      "model": "MsUsername",
+      "foreignKey": "userId"
+    },
+    "surveys": {
+      "type": "hasMany",
+      "model": "Survey",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY",
+      "property": "create"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY",
+      "property": "login"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY",
+      "property": "verify"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY",
+      "property": "resetPassword"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "doesExist"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "about"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getPublicProfile"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "giveBrowniePoints"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "updateTheme"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getMessages"
+    }
+  ],
+  "methods": {}
+}

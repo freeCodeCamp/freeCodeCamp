@@ -1,0 +1,23 @@
+---
+id: 5e611829481575a52dc59c0e
+title: 质量保证认证
+certification: quality-assurance
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 587d8249367417b2b2512c41
+    title: 公英制转换器
+  - 
+    id: 587d8249367417b2b2512c42
+    title: 问题追踪器
+  - 
+    id: 587d824a367417b2b2512c43
+    title: 个人图书馆
+  - 
+    id: 5e601bf95ac9d0ecd8b94afd
+    title: 数独求解器
+  - 
+    id: 5e601c0d5ac9d0ecd8b94afe
+    title: 美式英语与英式英语转换器
+

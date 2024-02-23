@@ -1,0 +1,90 @@
+code .token.operator {
+  background: none;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: var(--primary-background);
+}
+
+.default pre[class*='language-']::selection,
+.default pre[class*='language-'] ::selection,
+.default code[class*='language-']::selection,
+.default code[class*='language-'] ::selection {
+  background: var(--selection-color);
+}
+
+* {
+  text-shadow: none !important;
+}
+
+/* remove horizontal scrollbars for text-only code */
+code[class='language-markup'] {
+  white-space: normal !important;
+}
+
+/* a11y color adjustments */
+:not(.dark-palette) .token.comment,
+:not(.dark-palette) .token.prolog,
+:not(.dark-palette) .token.doctype,
+:not(.dark-palette) .token.cdata {
+  color: #62707f;
+}
+
+:not(.dark-palette) .token.punctuation {
+  color: #38425c;
+}
+
+:not(.dark-palette) .token.property,
+:not(.dark-palette) .token.tag,
+:not(.dark-palette) .token.constant,
+:not(.dark-palette) .token.symbol,
+:not(.dark-palette) .token.deleted {
+  color: #e00000;
+}
+
+:not(.dark-palette) .token.number {
+  color: #9932cc;
+}
+
+:not(.dark-palette) .token.boolean {
+  color: #1f3a93;
+}
+
+:not(.dark-palette) .token.selector,
+:not(.dark-palette) .token.attr-name,
+:not(.dark-palette) .token.string,
+:not(.dark-palette) .token.char,
+:not(.dark-palette) .token.builtin,
+:not(.dark-palette) .token.inserted {
+  color: #008040;
+}
+
+:not(.dark-palette) .token.operator,
+:not(.dark-palette) .token.entity,
+:not(.dark-palette) .token.url,
+:not(.dark-palette) .language-css .token.string,
+:not(.dark-palette) .style .token.string {
+  color: #38425c;
+}
+
+:not(.dark-palette) .token.atrule,
+:not(.dark-palette) .token.attr-value,
+:not(.dark-palette) .token.keyword {
+  color: #2574a9;
+}
+
+:not(.dark-palette) .token.function,
+:not(.dark-palette) .token.class-name {
+  color: #992900;
+}
+
+:not(.dark-palette) .token.regex,
+:not(.dark-palette) .token.important,
+:not(.dark-palette) .token.variable {
+  color: #856514;
+}
+
+:not(.dark-palette) .line-numbers-rows > span::before {
+  color: #62707f;
+}

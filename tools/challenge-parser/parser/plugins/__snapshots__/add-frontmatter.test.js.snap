@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`process-frontmatter plugin should have an output to match the snapshot 1`] = `
+{
+  "challengeType": 0,
+  "forumTopicId": 18276,
+  "id": "bd7123c8c441eddfaeb5bdef",
+  "title": "Say Hello to HTML Elements",
+  "videoUrl": "https://scrimba.com/p/pVMPUv/cE8Gpt2",
+}
+`;

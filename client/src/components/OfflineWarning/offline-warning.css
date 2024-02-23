@@ -1,0 +1,13 @@
+.offline-warning {
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 150;
+}
+
+.offline-warning a {
+  margin: 0 1ch;
+}
