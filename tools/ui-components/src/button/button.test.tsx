@@ -33,14 +33,14 @@ describe('<Button />', () => {
     ).toHaveAttribute('type', 'submit');
   });
 
-  it('should trigger the onClick prop on click', () => {
+  it('should trigger the onClick prop on click', async () => {
     const onClick = jest.fn();
 
     render(<Button onClick={onClick}>Hello world</Button>);
 
     const button = screen.getByRole('button', { name: /hello world/i });
 
-    userEvent.click(button);
+    await userEvent.click(button);
 
     expect(onClick).toHaveBeenCalledTimes(1);
   });
@@ -56,7 +56,7 @@ describe('<Button />', () => {
     expect(button).not.toHaveAttribute('disabled', 'true');
   });
 
-  it('should not trigger the onClick prop if the button is disabled', () => {
+  it('should not trigger the onClick prop if the button is disabled', async () => {
     const onClick = jest.fn();
 
     render(
@@ -66,8 +66,7 @@ describe('<Button />', () => {
     );
 
     const button = screen.getByRole('button', { name: /hello world/i });
-
-    userEvent.click(button);
+    await userEvent.click(button);
 
     expect(onClick).not.toHaveBeenCalled();
   });
