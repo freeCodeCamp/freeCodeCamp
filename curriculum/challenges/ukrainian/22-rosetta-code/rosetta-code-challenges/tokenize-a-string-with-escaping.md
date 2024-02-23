@@ -1,6 +1,6 @@
 ---
 id: 594faaab4e2a8626833e9c3d
-title: Tokenize a string with escaping
+title: Токенізація рядка символами екранування
 challengeType: 1
 forumTopicId: 302338
 dashedName: tokenize-a-string-with-escaping
@@ -8,14 +8,14 @@ dashedName: tokenize-a-string-with-escaping
 
 # --description--
 
-Write a function or program that can split a string at each non-escaped occurrence of a separator character.
+Напишіть функцію або програму, яка може поділити рядок кожного разу, коли зустрічається неекранований відокремлювальний символ.
 
 Вона має приймати три вхідні параметри:
 
 <ul>
   <li><strong>рядок</strong></li>
   <li><strong>відокремлювальний символ</strong></li>
-  <li><strong>символ переходу</strong></li>
+  <li><strong>символ екранування</strong></li>
 </ul>
 
 Вона має вивести список рядків.
@@ -27,12 +27,12 @@ Write a function or program that can split a string at each non-escaped occurren
   <li>Порожні поля мають зберегтись, навіть спочатку та вкінці.</li>
 </ul>
 
-Правила для переходу:
+Правила для екранування:
 
 <ul>
-  <li>"Escaped" means preceded by an occurrence of the escape character that is not already escaped itself.</li>
-  <li>When the escape character precedes a character that has no special meaning, it still counts as an escape (but does not do anything special).</li>
-  <li>Each occurrences of the escape character that was used to escape something, should not become part of the output.</li>
+  <li>«Екранованим» вважають символ, якщо перед ним стоїть символ екранування, який сам не є екранованим.</li>
+  <li>Якщо символ екранування передує символу, який не має особливого значення, він все одно вважається символом екранування (але не робить нічого особливого).</li>
+  <li>Частиною вихідних даних не повинен бути кожен випадок, коли символ екранування було використано для екранування.</li>
 </ul>
 
 Доведемо, що функція задовольняє такий випадок:
@@ -41,7 +41,7 @@ Write a function or program that can split a string at each non-escaped occurren
 
 <pre>one^|uno||three^^^^|four^^^|^cuatro|</pre>
 
-використовуючи `|` як відокремлювальний символ та `^` як символ переходу, функція має вивести наступний масив:
+використовуючи `|` як відокремлювальний символ та `^` як символ екранування, функція має вивести наступний масив:
 
 <pre>  ['one|uno', '', 'three^^', 'four^|cuatro', '']
 </pre>

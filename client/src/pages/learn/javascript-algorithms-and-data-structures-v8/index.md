@@ -1,5 +1,5 @@
 ---
-title: JavaScript Algorithms and Data Structures
+title: JavaScript Algorithms and Data Structures (Beta)
 superBlock: javascript-algorithms-and-data-structures-v8
 certification: javascript-algorithms-and-data-structures
 ---
