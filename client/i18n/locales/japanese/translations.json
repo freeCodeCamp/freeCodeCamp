@@ -376,6 +376,7 @@
     "tests-completed": "// テストが完了しました",
     "console-output": "// コンソール出力",
     "syntax-error": "コードにエラーがあるためテストを実行できない状態です。コードを修正して再度お試しください。",
+    "indentation-error": "Your code has an indentation error. You may need to add 'pass' on a new line to form a valid block of code.",
     "sign-in-save": "サインインして進行状況を保存",
     "download-solution": "回答をダウンロード",
     "download-results": "結果をダウンロード",
@@ -642,7 +643,7 @@
   },
   "search": {
     "label": "検索",
-    "placeholder": "投稿を検索",
+    "placeholder": "Search 10,700+ tutorials",
     "see-results": "{{searchQuery}} のすべての結果を見る",
     "no-tutorials": "投稿が見つかりませんでした",
     "try": "何かお探しですか？このページの検索バーを試してみてください。",

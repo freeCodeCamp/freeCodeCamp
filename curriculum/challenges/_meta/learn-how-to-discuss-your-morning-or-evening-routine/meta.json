@@ -1,13 +1,12 @@
 {
   "name": "Learn How to Discuss Your Morning or Evening Routine",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "learn-how-to-discuss-your-morning-or-evening-routine",
   "order": 4,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "a2-english-for-developers",
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "655699a46134fa74acaf6204",
