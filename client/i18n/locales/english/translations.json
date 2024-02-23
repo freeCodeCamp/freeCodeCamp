@@ -718,6 +718,8 @@
     "step": "Step",
     "steps": "Steps",
     "steps-for": "Steps for {{blockTitle}}",
+    "task": "Task",
+    "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} code example",
     "opens-new-window": "Opens in new window"
   },

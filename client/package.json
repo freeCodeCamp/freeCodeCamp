@@ -181,7 +181,7 @@
     "copy-webpack-plugin": "9.1.0",
     "core-js": "2.6.12",
     "cross-env": "7.0.3",
-    "dotenv": "16.4.4",
+    "dotenv": "16.4.5",
     "eslint-plugin-testing-library": "^3.9.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.32",
     "jest-environment-jsdom": "29.7.0",
