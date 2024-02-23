@@ -48,15 +48,32 @@ const generateSearchLink = (title: string, block: string) => {
 
 interface CheckbockProps {
   name: string;
-  label: string;
+  i18nkey: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  href: string;
+  t: (text: string) => string;
 }
 
-function CheckboxHelpModal({ name, label, onChange }: CheckbockProps) {
+function CheckboxHelpModal({
+  name,
+  i18nkey,
+  onChange,
+  href,
+  t
+}: CheckbockProps) {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       <input name={name} type='checkbox' onChange={onChange} />
-      <p style={{ textAlign: 'justify' }}>{label}</p>
+      <Trans i18nKey={i18nkey}>
+        <a
+          href={href}
+          rel='noopener noreferrer'
+          target='_blank'
+          title={t(i18nkey)}
+        >
+          placeholder
+        </a>
+      </Trans>
     </div>
   );
 }
@@ -111,17 +128,21 @@ function HelpModal({
             >
               <CheckboxHelpModal
                 name='read-search-ask-checkbox'
-                label={t('learn.read-search-ask-checkbox')}
+                i18nkey={t('learn.read-search-ask-checkbox')}
                 onChange={event =>
                   handleCheckboxChange(event, setReadSearchCheckbox)
                 }
+                href={RSA}
+                t={t}
               />
               <CheckboxHelpModal
                 name='similar-questions-checkbox'
-                label={t('learn.similar-questions-checkbox')}
+                i18nkey={t('learn.similar-questions-checkbox')}
                 onChange={event =>
                   handleCheckboxChange(event, setSimilarQuestionsCheckbox)
                 }
+                href={generateSearchLink(challengeTitle, challengeBlock)}
+                t={t}
               />
               <label htmlFor='description'>
                 {t('forum-help.whats-happening')}
