@@ -1,44 +1,34 @@
 ---
-id: 64c7173772c2497ce99b474c
-title: Step 57
+id: 65afeb7ab6867b43dacbf32b
+title: Step 10
 challengeType: 0
-dashedName: step-57
+dashedName: step-10
 ---
 
 # --description--
 
-The player can jump up by using the up arrow key or the spacebar. 
+As you are designing the game, you will need to make sure that the size of the elements in the game are responsive and adapt to different screen sizes.
 
-Add three new cases for "ArrowUp", " ", and "Spacebar". Remember that you can group cases together when they share the same operation. 
-
-Inside those cases, use the subtraction assignment operator to subtract 8 from `player.velocity.y`.
-
-To close out these cases, make sure to add a `break` statement.
+Start by creating an arrow function called `proportionalSize` that takes in a `size` parameter.
 
 # --hints--
 
-You should add a new `case` clause for "ArrowUp" inside your `switch` statement.
+`proportionalSize` should be a function.
 
 ```js
-assert.match(code, /\s*case\s*('|"|`)\s*ArrowUp\s*\1\s*:\s*/)
+assert.isFunction(proportionalSize);
 ```
 
-You should add a new `case` clause for " " inside your `switch` statement.
+Your `proportionalSize` function should use arrow syntax.
 
 ```js
-assert.match(code, /\s*case\s*('|"|`)\s\1\s*:\s*/);
+assert.match(code, /const\s+proportionalSize\s*=\s*\(?\s*.*\s*\)?\s*=>/);
 ```
 
-You should add a new `case` clause for "Spacebar" inside your `switch` statement.
+Your `proportionalSize` function should have a `size` parameter.
 
 ```js
-assert.match(code, /\s*case\s*('|"|`)\s*Spacebar\s*\1\s*:\s*/)
-```
-
-You should use the subtraction assignment operator to subtract 8 from `player.velocity.y`.
-
-```js
-assert.match(code, /player\.velocity\.y\s*-=\s*8\s*;?/);
+assert.match(code, /const\s+proportionalSize\s*=\s*\(?\s*size\s*\)?\s*=>/);
 ```
 
 # --seed--
@@ -190,110 +180,8 @@ canvas.height = innerHeight;
 const gravity = 0.5;
 let isCheckpointCollisionDetectionActive = true;
 
-const proportionalSize = (size) => {
-  return innerHeight < 500 ? Math.ceil((size / 500) * innerHeight) : size;
-}
-
-class Player {
-  constructor() {
-    this.position = {
-      x: proportionalSize(10),
-      y: proportionalSize(400),
-    };
-    this.velocity = {
-      x: 0,
-      y: 0,
-    };
-    this.width = proportionalSize(40);
-    this.height = proportionalSize(40);
-  }
-  draw() {
-    ctx.fillStyle = "#99c9ff";
-    ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
-  }
-  
-  update() {
-    this.draw();
-    this.position.x += this.velocity.x;
-    this.position.y += this.velocity.y;
-
-    if (this.position.y + this.height + this.velocity.y <= canvas.height) {
-      if (this.position.y < 0) {
-        this.position.y = 0;
-        this.velocity.y = gravity;
-      }
-      this.velocity.y += gravity;
-    } else {
-      this.velocity.y = 0;
-    }
-
-    if (this.position.x < this.width) {
-      this.position.x = this.width;
-    }
-
-    if (this.position.x >= canvas.width - 2 * this.width) {
-      this.position.x = canvas.width - 2 * this.width;
-    }
-  }
-}
-
-const player = new Player();
-
-
-const animate = () => {
-  requestAnimationFrame(animate);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  player.update();
-
-  if (keys.rightKey.pressed && player.position.x < proportionalSize(400)) {
-    player.velocity.x = 5;
-  } else if (keys.leftKey.pressed && player.position.x > proportionalSize(100)) {
-    player.velocity.x = -5;
-  } else {
-    player.velocity.x = 0;
-  }
-}
-
-
-const keys = {
-  rightKey: {
-    pressed: false
-  },
-  leftKey: {
-    pressed: false
-  }
-};
-
-const movePlayer = (key, xVelocity, isPressed) => {
-  if (!isCheckpointCollisionDetectionActive) {
-    player.velocity.x = 0;
-    player.velocity.y = 0;
-    return;
-  }
-
 --fcc-editable-region--
 
-  switch (key) {
-    case "ArrowLeft":
-      keys.leftKey.pressed = isPressed;
-      if (xVelocity === 0) {
-        player.velocity.x = xVelocity;
-      }
-      player.velocity.x -= xVelocity;
-      break;
-    
-  }
-
 --fcc-editable-region--
-}
-
-
-const startGame = () => {
-  canvas.style.display = "block";
-  startScreen.style.display = "none";
-  player.draw();
-}
-
-startBtn.addEventListener("click", startGame);
 
 ```
