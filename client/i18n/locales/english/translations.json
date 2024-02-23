@@ -718,6 +718,8 @@
     "step": "Step",
     "steps": "Steps",
     "steps-for": "Steps for {{blockTitle}}",
+    "task": "Task",
+    "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} code example",
     "opens-new-window": "Opens in new window"
   },
@@ -939,9 +941,9 @@
     "title": {
       "Responsive Web Design": "Responsive Web Design",
       "responsive-web-design": "Responsive Web Design Certification",
-      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
-      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures Certification",
+      "JavaScript Algorithms and Data Structures": "Legacy JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures Certification",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures (Beta) Certification",
       "Front End Development Libraries": "Front End Development Libraries",
       "front-end-development-libraries": "Front End Development Libraries Certification",
       "Data Visualization": "Data Visualization",
