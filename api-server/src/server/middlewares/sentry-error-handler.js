@@ -4,6 +4,11 @@ import { isHandledError } from '../utils/create-handled-error';
 
 // sends directly to Sentry
 export function reportError(err) {
+  // ignore OTP errors created by user
+  if (err.message === 'Invalid authorization code') {
+    return;
+  }
+
   return sentry.dsn === 'dsn_from_sentry_dashboard'
     ? console.error(err)
     : captureException(err);
