@@ -2,8 +2,6 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 test.describe('The update-email page when the user is not signed in', () => {
-  test.use({ storageState: { cookies: [], origins: [] } });
-
   test.beforeEach(async ({ page }) => {
     await page.goto('/update-email');
   });
@@ -12,15 +10,18 @@ test.describe('The update-email page when the user is not signed in', () => {
     await page.waitForURL('**/learn');
 
     await expect(
-      page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
+      page.getByRole('heading', { name: 'Welcome back, Development User' })
     ).toBeVisible();
   });
 });
 
 test.describe('The update-email page when the user is signed in', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeEach(async ({ page }) => {
+    await page.goto('/');
+    await page.getByRole('link', { name: 'Sign in' }).click();
+    await page
+      .context()
+      .storageState({ path: 'playwright/.auth/certified-user.json' });
     await page.goto('/update-email');
   });
 
@@ -40,9 +41,7 @@ test.describe('The update-email page when the user is signed in', () => {
   test('The page has update email form', async ({ page }) => {
     const form = page.getByTestId('update-email-form');
     const emailInput = page.getByLabel(translations.misc.email);
-    const submitButton = page.getByRole('button', {
-      name: translations.buttons['update-email']
-    });
+    const submitButton = page.getByTestId('update-email-button');
 
     await expect(form).toBeVisible();
     await expect(emailInput).toBeVisible();
@@ -68,9 +67,7 @@ test.describe('The update-email page when the user is signed in', () => {
     page
   }) => {
     const emailInput = page.getByLabel(translations.misc.email);
-    const submitButton = page.getByRole('button', {
-      name: translations.buttons['update-email']
-    });
+    const submitButton = page.getByTestId('update-email-button');
     await expect(submitButton).toBeDisabled();
     await emailInput.fill('123');
     await expect(submitButton).toBeDisabled();
