@@ -1,6 +1,6 @@
 ---
 id: 5eb3e497b8d6d7f63c5517ea
-title: Пошук списку записів
+title: Пошук серед записів списку
 challengeType: 1
 forumTopicId: 385315
 dashedName: search-a-list-of-records
@@ -8,11 +8,11 @@ dashedName: search-a-list-of-records
 
 # --description--
 
-A record consists of attributes that describe an entity. Each attribute has a name and a value. For example, a person can have an attribute `age` with a value of 25. An important operation on a list of records is to find a record with a particular attribute value.
+Запис складається з атрибутів, які описують його суть. Кожен атрибут має назву та значення. Наприклад, людина може мати атрибут `age` зі значенням 25. Важлива операція в списку записів — знайти запис з певним значенням атрибута.
 
 # --instructions--
 
-Напишіть функцію, яка приймає рядок як параметр. Функція має повернути індекс елемента в `list`, для якого значення `name` атрибута відповідає заданому рядку.
+Напишіть функцію, яка приймає рядок як параметр. Функція має повернути індекс елемента в списку (`list`), значення атрибута `name` якого відповідає заданому рядку.
 
 # --hints--
 
@@ -22,13 +22,13 @@ A record consists of attributes that describe an entity. Each attribute has a na
 assert(typeof searchCity === 'function');
 ```
 
-`searchCity("Dar Es Salaam")` має повернутися числом.
+`searchCity("Dar Es Salaam")` має повернути число.
 
 ```js
 assert(typeof searchCity('Dar Es Salaam') === 'number');
 ```
 
-`searchCity("Dar Es Salaam")` має повернутись `6`.
+`searchCity("Dar Es Salaam")` має повернути `6`.
 
 ```js
 assert.equal(searchCity('Dar Es Salaam'), 6);

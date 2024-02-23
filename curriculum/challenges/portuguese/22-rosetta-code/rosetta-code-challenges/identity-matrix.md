@@ -8,7 +8,7 @@ dashedName: identity-matrix
 
 # --description--
 
-An *identity matrix* is a square matrix of size \\( n \\times n \\), where the diagonal elements are all `1`s (ones), and all the other elements are all `0`s (zeroes).
+Uma *matriz identidade* é uma matriz quadrada de tamanho \\( n \\times n \\), onde os elementos diagonais são todos `1` (um) e todos os outros elementos são `0`(zero).
 
 <ul>
   <li style='list-style: none;'>\(\displaystyle I_{n}=\begin{bmatrix} 1 &#x26; 0 &#x26; 0 \cr 0 &#x26; 1 &#x26; 0 \cr 0 &#x26; 0 &#x26; 1 \cr \end{bmatrix}\)</li>

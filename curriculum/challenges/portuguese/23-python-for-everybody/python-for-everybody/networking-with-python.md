@@ -14,7 +14,7 @@ dashedName: networking-with-python
 
 ## --text--
 
-What Python library gives access to TCP Sockets?
+Qual biblioteca Python dá acesso a soquetes TCP?
 
 ## --answers--
 

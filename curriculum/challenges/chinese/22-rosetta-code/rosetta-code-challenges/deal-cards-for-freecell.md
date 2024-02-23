@@ -26,13 +26,13 @@ The algorithm uses this linear congruential generator from Microsoft C:
   <li>Seed the RNG with the number of the deal.
   </li><li>Create an array of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. 数组索引为 0 到 51，梅花 A 为 0，黑桃王为 51。</li>
   <li>直到数组为空：</li>
-  <li>在索引 ≡ 下一个随机数（mod 数组长度）处选择一张随机卡片。</li>
     <ul>
+      <li>Choose a random card at <i>index</i> ≡ <i>next random number</i> (mod <i>array length</i>).</li>
       <li>Swap this random card with the last card of the array.</li>
-      <li>从阵列中移除这张随机卡。 （数组长度减 1。）</li>
-      <li>处理这张随机牌。</li>
+      <li>Remove this random card from the array. (Array length goes down by 1.)</li>
+      <li>Deal this random card.</li>
     </ul>
-  <li>处理所有 52 张牌，面朝上，跨越 8 列。 前 8 张牌分 8 列，接下来的 8 张牌排在前 8 张牌上，以此类推。</li>
+  <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
 </ol>
 
 **Example:**

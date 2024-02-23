@@ -9,12 +9,7 @@ dashedName: port-scanner
 
 # --description--
 
-<a href="https://replit.com/github/freeCodeCamp/boilerplate-port-scanner" target="_blank" rel="noopener noreferrer nofollow">このプロジェクトには Replit スターターコードを使用して取り組んでください</a>。
-
--   まず、Replit でプロジェクトをインポートします。
--   すると、`.replit` ファイルのウィンドウが表示されます。
--   `Use run command` を選択して `Done` ボタンをクリックします。
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-port-scanner" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 Python カリキュラムの対話式教育コンテンツを引き続き開発中です。 現在、下記の freeCodeCamp.org YouTube チャンネルで、このプロジェクトの完了に必要なすべての知識について説明する動画をいくつか公開しています。
 
@@ -75,11 +70,11 @@ PORT     SERVICE
 
 ## 開発
 
-`port_scanner.py` にコードを記述してください。 開発には `main.py` を使用してコードをテストすることができます。 「実行」ボタンをクリックすると `main.py` が実行されます。
+`port_scanner.py` にコードを記述してください。 開発には `main.py` を使用してコードをテストすることができます。
 
 ## テスト
 
-このプロジェクトの単体テストは `test_module.py` にあります。 すでに `test_module.py` から `main.py` にテストをインポートしてあります。 「実行」ボタンを押すと自動的にテストが実行されます。
+このプロジェクトの単体テストは `test_module.py` にあります。 すでに `test_module.py` から `main.py` にテストをインポートしてあります。
 
 ## 提出
 

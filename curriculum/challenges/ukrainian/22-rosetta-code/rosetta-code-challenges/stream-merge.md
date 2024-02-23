@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc802a
-title: Злиття Потоків
+title: Злиття потоків
 challengeType: 1
 forumTopicId: 302326
 dashedName: stream-merge
@@ -8,7 +8,7 @@ dashedName: stream-merge
 
 # --description--
 
-Write a function that takes multiple sorted arrays of items, and returns one array of sorted items.
+Напишіть функцію, яка приймає декілька відсортованих масивів та повертає один відсортований масив.
 
 # --hints--
 

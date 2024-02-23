@@ -8,11 +8,11 @@ dashedName: day-of-the-week
 
 # --description--
 
-A company decides that whenever Xmas falls on a Sunday they will give their workers all extra paid holidays so that, together with any public holidays, workers will not have to work the following week (between the 25th of December and the first of January).
+Компанія вирішила: якщо Різдво випадає на неділю, то працівники отримають додаткові оплачувані відпустки та, відповідно, не працюватимуть наступний тиждень (від 25 грудня до 1 січня).
 
 # --instructions--
 
-Напишіть функцію, яка потребує роки початку і кінця відліку, щоб видати масив з усіма роками, коли 25 грудня припадає на неділю.
+Напишіть функцію, яка приймає початковий і кінцевий роки та повертає масив всіх років, коли 25 грудня випадає на неділю.
 
 # --hints--
 
@@ -22,19 +22,19 @@ A company decides that whenever Xmas falls on a Sunday they will give their work
 assert(typeof findXmasSunday === 'function');
 ```
 
-`findXmasSunday(2000, 2100)` має видати масив.
+`findXmasSunday(2000, 2100)` має повернути масив.
 
 ```js
 assert(typeof findXmasSunday(2000, 2100) === 'object');
 ```
 
-`findXmasSunday(1970, 2017)` має видати `[1977, 1983, 1988, 1994, 2005, 2011, 2016]`
+`findXmasSunday(1970, 2017)` має повернути `[1977, 1983, 1988, 1994, 2005, 2011, 2016]`
 
 ```js
 assert.deepEqual(findXmasSunday(1970, 2017), firstSolution);
 ```
 
-`findXmasSunday(2008, 2121)` має видати `[2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 2072, 2078, 2089, 2095, 2101, 2107, 2112, 2118]`
+`findXmasSunday(2008, 2121)` має повернути `[2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 2072, 2078, 2089, 2095, 2101, 2107, 2112, 2118]`
 
 ```js
 assert.deepEqual(findXmasSunday(2008, 2121), secondSolution);

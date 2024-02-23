@@ -16,7 +16,7 @@ dashedName: lychrel-numbers
 
 The above recurrence relation when applied to most starting numbers `n` = 1, 2, ... terminates in a palindrome quite quickly.
 
-例えば、 `n₀` = 12 の場合、以下のようになります。
+例えば、`n₀` = 12 の場合、以下のようになります。
 
 ```bash
 12

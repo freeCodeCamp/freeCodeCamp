@@ -11,24 +11,16 @@ dashedName: issue-tracker
 Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: <a href="https://issue-tracker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://issue-tracker.freecodecamp.rocks/</a>. Lavorare su questo progetto ti porterà a scrivere il tuo codice utilizzando uno dei seguenti metodi:
 
 -   Clonare <a href="https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow">questo repository GitHub</a> e completare il tuo progetto localmente.
--   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
+-   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
 -   Usare un costruttore di siti a tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
-
-Se utilizzi Replit, segui questi passaggi per impostare il progetto:
-
--   Inizia importando il progetto su Replit.
--   Poi vedrai una finestra `.replit`.
--   Seleziona `Use run command` e clicca sul pulsante `Done`.
-
-Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo Link alla soluzione. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo Link GitHub.
 
 # --instructions--
 
 -   Completa le rotte necessarie in `/routes/api.js`
 -   Crea tutti i test funzionali in `tests/2_functional-tests.js`
 -   Copia il file `sample.env` su `.env` e imposta le variabili in modo appropriato
--   Per eseguire i test togli i commenti dalla riga `NODE_ENV=test` nel tuo file `.env`
--   Per eseguire i test nella console, utilizza il comando `npm run test`. Per aprire la console di Replit, premi Ctrl+Maiusc+P (Cmd se su un Mac) e digita "open shell"
+-   To run the tests automatically, add `NODE_ENV=test` in your `.env` file
+-   To run the tests in the console, use the command `npm run test`
 
 Scrivi i seguenti test in `tests/2_functional-tests.js`:
 

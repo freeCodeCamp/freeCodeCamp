@@ -7,7 +7,7 @@ dashedName: discordian-date
 ---
 
 # --description--
-The Gregorian calendar is a solar calendar with 12 months of 28-31 days each. A week consists of seven days, and there are 52 weeks and 1 day per year. The year consists of 365 days with a leap day added to February every leap year. A leap year occurs every four years, except for the first three centurial years of every 400 years.
+O calendário gregoriano é um calendário solar com 12 meses de 28-31 dias cada. Uma semana consiste em sete dias e com 52 semanas e 1 dia por ano. O ano consiste em 365 dias, com um dia a mais adicionado a fevereiro nos anos bissextos. Um ano bissexto ocorre a cada quatro anos, exceto para os primeiros três anos de virada de século de cada 400 anos.
 
 O <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" rel="noopener noreferrer nofollow">calendário discordiano</a> está alinhado ao calendário gregoriano e começa em 1º de janeiro. A semana consiste em cinco dias e com 73 semanas por ano. O ano também consiste em 365 dias, com um dia extra inserido entre o caos 59 e o caos 60 todo ano bissexto.
 
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 1, 29))` should return `"Setting Orange, the 60th day of Chaos in the YOLD 3178. Celebrate St. Tib\'s Day!"`.
+`discordianDate(new Date(2012, 1, 29))` deve retornar `"Setting Orange, the 60th day of Chaos in the YOLD 3178. Celebrate St. Tib\'s Day!"`.
 
 ```js
 assert(
@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2010, 0, 5))` should return `"Setting Orange, the 5th day of Chaos in the YOLD 3176. Celebrate Mungday!"`.
+`discordianDate(new Date(2010, 0, 5))` deve retornar `"Setting Orange, the 5th day of Chaos in the YOLD 3176. Celebrate Mungday!"`.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2011, 4, 3))` should return `"Pungenday, the 50th day of Discord in the YOLD 3177. Celebrate Discoflux!"`.
+`discordianDate(new Date(2011, 4, 3))` deve retornar `"Pungenday, the 50th day of Discord in the YOLD 3177. Celebrate Discoflux!"`.
 
 ```js
 assert(

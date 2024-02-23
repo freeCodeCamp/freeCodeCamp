@@ -1,8 +1,8 @@
 ---
 id: 63e94dae6dcedbad73f2f6ee
-title: Step 27
+title: Step 26
 challengeType: 0
-dashedName: step-27
+dashedName: step-26
 ---
 
 # --description--
@@ -25,7 +25,7 @@ Dovresti estrarre tutte le 5 proprietà dagli oggetti in `arr` usando la destrut
 
 ```js
 
-assert.match(code, /{\s*((name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname))\s*}\s*/)
+assert.match(code, /{\s*((name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname))\s*}\s*/)
 
 
 ```

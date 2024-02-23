@@ -14,7 +14,7 @@ dashedName: relational-database-design
 
 ## --text--
 
-What is the best practice for how many times a piece of string data should be stored in a database?
+Qual é a prática recomendada com relação ao número de vezes que um dado do tipo string pode ser armazenado em um banco de dados?
 
 ## --answers--
 

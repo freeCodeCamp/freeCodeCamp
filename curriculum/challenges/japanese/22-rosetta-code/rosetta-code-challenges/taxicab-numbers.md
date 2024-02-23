@@ -10,11 +10,11 @@ dashedName: taxicab-numbers
 
 A taxicab number (the definition that is being used here) is a positive integer that can be expressed as the sum of two positive cubes in more than one way.
 
-最初のタクシー数は `1729`で、次のようになります:
+最初のタクシー数は `1729`です。これは:
 
 1<sup>3</sup> + 12<sup>3</sup> および
 
-9<sup>3</sup> + 10<sup>3</sup>.
+9<sup>3</sup> + 10<sup>3</sup> と表せます。
 
 タクシー数には、次のような呼び方もあります:
 

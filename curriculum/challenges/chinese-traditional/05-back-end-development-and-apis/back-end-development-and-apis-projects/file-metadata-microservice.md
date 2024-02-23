@@ -11,16 +11,8 @@ dashedName: file-metadata-microservice
 構建一個功能類似於此的全棧 JavaScript 應用程序：<a href="https://file-metadata-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://file-metadata-microservice.freecodecamp.rocks</a>。 在這個項目中，你將使用以下方法之一編寫你的代碼：
 
 -   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-filemetadata/" target="_blank" rel="noopener noreferrer nofollow">這個 GitHub 倉庫</a>，並在本地完成你的項目。
--   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
+-   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-filemetadata/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
 -   使用你選擇的網站生成器來完成項目。 需要包含我們 GitHub 倉庫的所有文件。
-
-如果你使用 Replit，按照以下步驟設置項目：
-
--   首先在 Replit 中導入項目。
--   接着，你將看到一個 `.replit` 窗口。
--   選擇 `Use run command` 並點擊 `Done` 按鈕。
-
-當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 Solution Link 字段中。 也可以將項目的源碼鏈接提交到 GitHub Link 字段中。
 
 # --instructions--
 

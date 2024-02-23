@@ -8,10 +8,10 @@ dashedName: department-numbers
 
 # --description--
 
-There is a highly organized city that has decided to assign a number to each of their departments:
+Existe uma cidade altamente organizada que decidiu atribuir um número a cada um de seus departamentos:
 
 <ul>
-  <li>Police department</li>
+  <li>Departamento de polícia</li>
   <li>Departamento de limpeza sanitária</li>
   <li>Departamento dos bombeiros</li>
 </ul>
