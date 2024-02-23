@@ -244,8 +244,8 @@ importers:
         specifier: 1.5.1
         version: 1.5.1
       nodemailer:
-        specifier: 6.9.9
-        version: 6.9.9
+        specifier: 6.9.10
+        version: 6.9.10
       nodemon:
         specifier: 2.0.22
         version: 2.0.22
@@ -23205,7 +23205,7 @@ packages:
       loopback-datasource-juggler: 3.36.1
       loopback-filters: 1.1.1
       loopback-phase: 3.4.0
-      nodemailer: 6.9.9
+      nodemailer: 6.9.10
       nodemailer-direct-transport: 3.3.2
       nodemailer-stub-transport: 1.1.0
       serve-favicon: 2.5.0
@@ -25096,8 +25096,8 @@ packages:
     resolution: {integrity: sha512-4fwl2f+647IIyuNuf6wuEMqK4oEU9FMJSYme8kPckVSr1rXIXcmI6BNcIWO+1cAK8XeexYKxYoFztam0jAwjkA==}
     dev: false
 
-  /nodemailer@6.9.9:
-    resolution: {integrity: sha512-dexTll8zqQoVJEZPwQAKzxxtFn0qTnjdQTchoU6Re9BUUGBJiOy3YMn/0ShTW6J5M0dfQ1NeDeRTTl4oIWgQMA==}
+  /nodemailer@6.9.10:
+    resolution: {integrity: sha512-qtoKfGFhvIFW5kLfrkw2R6Nm6Ur4LNUMykyqu6n9BRKJuyQrqEGwdXXUAbwWEKt33dlWUGXb7rzmJP/p4+O+CA==}
     engines: {node: '>=6.0.0'}
     dev: false
 
