@@ -12,6 +12,12 @@ import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 
+const getStepNumber = (dashedName: string) => {
+  // dashedName should be in the format 'step-1' or 'task-1'
+  const match = dashedName.match(/-(\d+)/);
+  return match ? match[1] : '';
+};
+
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ executeGA }, dispatch);
 
@@ -114,7 +120,7 @@ function Challenges({
                       ? t('aria.task')
                       : t('aria.step')}
                   </span>
-                  <span>{challenge.dashedName.slice(5)}</span>
+                  <span>{getStepNumber(challenge.dashedName)}</span>
                   <span className='sr-only'>
                     {challenge.isCompleted
                       ? t('icons.passed')
