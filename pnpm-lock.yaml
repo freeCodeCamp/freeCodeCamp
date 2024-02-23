@@ -1292,8 +1292,8 @@ importers:
         specifier: 1.3.0
         version: 1.3.0
       '@types/chai':
-        specifier: 4.3.11
-        version: 4.3.11
+        specifier: 4.3.12
+        version: 4.3.12
       '@types/copy-webpack-plugin':
         specifier: ^8.0.1
         version: 8.0.1(webpack-cli@4.10.0)
@@ -10466,8 +10466,8 @@ packages:
     resolution: {integrity: sha512-Yq6rIccwcco0TLD5SMUrIM7Fk7Fe/C0jmNRxJJCLtAF6gebDkPuUjK5EHedxecm69Pi/aA+It39Ux4OHmFhjRw==}
     dev: true
 
-  /@types/chai@4.3.11:
-    resolution: {integrity: sha512-qQR1dr2rGIHYlJulmr8Ioq3De0Le9E4MJ5AiaeAETJJpndT1uUNHsGFK3L/UIu+rbkQSdj8J/w2bCsBZc/Y5fQ==}
+  /@types/chai@4.3.12:
+    resolution: {integrity: sha512-zNKDHG/1yxm8Il6uCCVsm+dRdEsJlFoDu73X17y09bId6UwoYww+vFBsAcRzl8knM1sab3Dp1VRikFQwDOtDDw==}
     dev: true
 
   /@types/chai@4.3.6:
