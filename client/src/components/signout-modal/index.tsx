@@ -81,7 +81,6 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
           block={true}
           variant='danger'
           data-test-label='signout'
-          data-playwright-test-label='signout-button-confirm'
           onClick={handleSignout}
         >
           {t('signout.certain')}

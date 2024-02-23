@@ -32,7 +32,6 @@ interface UpdateEmailProps {
   isSignedIn: boolean;
   t: TFunction;
   updateMyEmail: (e: string) => void;
-  navigate: (location: string) => void;
 }
 
 const { apiLocation } = envData;
@@ -127,7 +126,6 @@ function UpdateEmail({
                   bsSize='lg'
                   bsStyle='primary'
                   disabled={getEmailValidationState() !== 'success'}
-                  data-playwright-test-label='update-email-button'
                   type='submit'
                 >
                   {isNewEmail
