@@ -1,11 +1,23 @@
 import { FastifyPluginCallback, FastifyRequest } from 'fastify';
-
+import fastifyOauth2, { OAuth2Namespace } from '@fastify/oauth2';
 import rateLimit from 'express-rate-limit';
 // @ts-expect-error - no types
 import MongoStoreRL from 'rate-limit-mongo';
 
-import { AUTH0_DOMAIN, MONGOHQ_URL } from '../utils/env';
+import {
+  API_LOCATION,
+  AUTH0_CLIENT_ID,
+  AUTH0_CLIENT_SECRET,
+  AUTH0_DOMAIN,
+  MONGOHQ_URL
+} from '../utils/env';
 import { findOrCreateUser } from './helpers/auth-helpers';
+
+declare module 'fastify' {
+  interface FastifyInstance {
+    auth0OAuth: OAuth2Namespace;
+  }
+}
 
 const getEmailFromAuth0 = async (req: FastifyRequest) => {
   const auth0Res = await fetch(`https://${AUTH0_DOMAIN}/userinfo`, {
@@ -61,5 +73,41 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
     await findOrCreateUser(fastify, email);
   });
 
+  done();
+};
+
+/**
+ * Route handler for authentication routes.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
+ * @param done Callback to signal that the logic has completed.
+ */
+export const authRoutes: FastifyPluginCallback = (fastify, _options, done) => {
+  void fastify.register(fastifyOauth2, {
+    name: 'auth0OAuth',
+    scope: ['openid', 'email', 'profile'], // TODO: check what scopes the api-server uses
+    credentials: {
+      client: {
+        id: AUTH0_CLIENT_ID,
+        secret: AUTH0_CLIENT_SECRET
+      }
+    },
+    startRedirectPath: '/signin',
+    discovery: { issuer: `https://${AUTH0_DOMAIN}` },
+    callbackUri: `${API_LOCATION}/auth/auth0/callback`
+  });
+
+  fastify.get('/auth/auth0/callback', async function (request, reply) {
+    const { token } =
+      await this.auth0OAuth.getAccessTokenFromAuthorizationCodeFlow(request);
+
+    // TODO: use userinfo.email to find or create a user
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const userinfo = await fastify.auth0OAuth.userinfo(token);
+
+    // TODO: implement whatever redirects and set-cookieing the api-server does
+    void reply.send({ msg: 'success' });
+  });
   done();
 };

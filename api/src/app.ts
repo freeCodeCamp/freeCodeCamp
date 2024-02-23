@@ -26,7 +26,7 @@ import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
 import codeFlowAuth from './plugins/code-flow-auth';
 import notFound from './plugins/not-found';
-import { mobileAuth0Routes } from './routes/auth';
+import { authRoutes, mobileAuth0Routes } from './routes/auth';
 import { devAuthRoutes } from './routes/auth-dev';
 import {
   protectedCertificateRoutes,
@@ -220,8 +220,11 @@ export const build = async (
 
   // Routes not requiring authentication
   void fastify.register(mobileAuth0Routes);
+  // TODO: consolidate with LOCAL_MOCK_AUTH
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devAuthRoutes);
+  } else {
+    void fastify.register(authRoutes);
   }
   void fastify.register(chargeStripeRoute);
   void fastify.register(emailSubscribtionRoutes);
