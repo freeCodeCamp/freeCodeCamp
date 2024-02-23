@@ -1,6 +1,6 @@
 ---
 id: 58a7a6ebf9a6318348e2d5aa
-title: Modify Fill Mode of an Animation
+title: 애니메이션의 채우기 모드를 수정하는 방법
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJDmcE'
 forumTopicId: 301064
@@ -9,9 +9,9 @@ dashedName: modify-fill-mode-of-an-animation
 
 # --description--
 
-That's great, but it doesn't work right yet. Notice how the animation resets after `500ms` has passed, causing the button to revert back to the original color. You want the button to stay highlighted.
+좋아 보이는군요, 하지만 아직 올바르게 작동하지는 않습니다. `500ms`가 지난 후에 애니메이션이 재설정되어 버튼이 원래 색상으로 되돌아 가는 것을 주목하세요. 버튼이 하이라이트 된 상태로 유지되도록 만들어야 합니다.
 
-This can be done by setting the `animation-fill-mode` property to `forwards`. The `animation-fill-mode` specifies the style applied to an element when the animation has finished. You can set it like so:
+그렇게 하기 위해서는 `animation-fill-mode` 속성을 `forwards`로 설정할 수 있습니다. `animation-fill-mode` 속성은 애니메이션이 완료된 후에 요소에 적용되는 스타일을 지정합니다. 다음과 같이 설정해보세요.
 
 ```css
 animation-fill-mode: forwards;
@@ -19,11 +19,11 @@ animation-fill-mode: forwards;
 
 # --instructions--
 
-Set the `animation-fill-mode` property of `button:hover` to `forwards` so the button stays highlighted when a user hovers over it.
+`button:hover`의 `animation-fill-mode` 속성을 `forwards`로 설정하여 사용자가 해당 버튼 위로 이동할 때 버튼이 강조된 상태를 유지하도록합니다.
 
 # --hints--
 
-`button:hover` should have a `animation-fill-mode` property with a value of `forwards`.
+`button:hover`의 `animation-fill-mode` 속성 값은 `forwards`여야 합니다.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 587d78aa367417b2b2512aec
-title: Define the Head and Body of an HTML Document
+title: HTML 문서의 헤드와 바디 정의하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cra9bfP'
 forumTopicId: 301096
@@ -9,11 +9,11 @@ dashedName: define-the-head-and-body-of-an-html-document
 
 # --description--
 
-You can add another level of organization in your HTML document within the `html` tags with the `head` and `body` elements. Any markup with information about your page would go into the `head` tag. Then any markup with the content of the page (what displays for a user) would go into the `body` tag.
+HTML 문서 안에서 `head`와 `body` 요소로 `html` 태그 내에 다른 조직 단계를 추가할 수 있습니다. 페이지에 관한 정보를 가진 모든 마크업은 `head` 태그에 위치합니다. 그런 다음에 사용자에게 보여질 페이지 내용이 담긴 모든 마크업은 `body` 태그에 가게 됩니다.
 
-Metadata elements, such as `link`, `meta`, `title`, and `style`, typically go inside the `head` element.
+`link`, `meta`, `title` 그리고 `style`같은 메타데이터 요소들은 주로 `head` 요소로 가게 됩니다.
 
-Here's an example of a page's layout:
+여기 페이지 레이아웃에 대한 예시가 있습니다.
 
 ```html
 <!DOCTYPE html>
@@ -31,25 +31,25 @@ Here's an example of a page's layout:
 
 # --instructions--
 
-Edit the markup so there's a `head` and a `body`. The `head` element should only include the `title`, and the `body` element should only include the `h1` and `p`.
+`head`와 `body`가 있도록 마크업을 수정하시오. `head` 요소는 오직 `title`을 포함하고 `body` 요소는 오직 `h1`과 `p`를 포함해야 합니다.
 
 # --hints--
 
-There should be only one `head` element on the page.
+페이지에 하나의 `head` 요소만 있어야 합니다.
 
 ```js
 const headElems = code.replace(/\n/g, '').match(/\<head\s*>.*?\<\/head\s*>/g);
 assert(headElems && headElems.length === 1);
 ```
 
-There should be only one `body` element on the page.
+페이지에 하나의 `body` 요소만 있어야 합니다.
 
 ```js
 const bodyElems = code.replace(/\n/g, '').match(/<body\s*>.*?<\/body\s*>/g);
 assert(bodyElems && bodyElems.length === 1);
 ```
 
-The `head` element should be a child of the `html` element.
+`head` 요소는 `html` 요소의 자식 요소이어야 합니다.
 
 ```js
 const htmlChildren = code
@@ -64,7 +64,7 @@ if (htmlChildren) {
 assert(foundHead);
 ```
 
-The `body` element should be a child of the `html` element.
+`body` 요소는 `html` 요소의 자식 요소이어야 합니다.
 
 ```js
 const htmlChildren = code
@@ -78,7 +78,7 @@ if (htmlChildren) {
 assert(foundBody);
 ```
 
-The `head` element should wrap around the `title` element.
+`head` 요소는 `title` 요소를 감싸야 합니다.
 
 ```js
 const headChildren = code
@@ -92,7 +92,7 @@ if (headChildren) {
 assert(foundTitle);
 ```
 
-The `body` element should wrap around both the `h1` and `p` elements.
+`body` 요소는 `h1`과 `p` 요소를 감싸야 합니다.
 
 ```js
 const bodyChildren = code

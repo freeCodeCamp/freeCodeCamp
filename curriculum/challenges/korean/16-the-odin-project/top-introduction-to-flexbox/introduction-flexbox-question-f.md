@@ -4,6 +4,7 @@ title: Introduction to Flexbox Question F
 challengeType: 15
 dashedName: introduction-flexbox-question-f
 ---
+
 # --description--
 
 `flex-grow` expects a single number as its value, and that number is used as the flex-item's "growth factor". When you applied `flex: 1` to every div inside our container, you were telling every div to grow the same amount. The result of this is that every div ends up the exact same size. If you instead add `flex: 2` to just one of the divs, then that div would grow to 2x the size of the others.

@@ -91,7 +91,7 @@ function coinPartitions(divisor) {
     for (let j = 0; pentagonalNumbers[j] <= i; j++) {
       partitions[i] += partitions[i - pentagonalNumbers[j]] * signs[j % 4];
     }
-    
+
     partitions[i] = partitions[i] % divisor;
     if (partitions[i] < 0) partitions[i] += divisor; // positive mod
     // return when found

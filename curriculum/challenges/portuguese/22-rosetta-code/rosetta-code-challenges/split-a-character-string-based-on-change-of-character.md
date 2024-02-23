@@ -8,7 +8,7 @@ dashedName: split-a-character-string-based-on-change-of-character
 
 # --description--
 
-Split a (character) string into comma (plus a blank) delimited strings based on a change of character (left to right). Blanks should be treated as any other character (except they are problematic to display clearly). The same applies to commas. For instance, the string:
+Divida uma string (de caracteres) em vírgulas (mais um espaço em branco) com base em uma mudança de caractere (da esquerda para a direita). Os espaços em branco devem ser tratados como qualquer outro caractere (exceto pelo fato de que são problemáticos para exibir claramente). O mesmo se aplica às vírgulas. Por exemplo, a string:
 
 <pre>
 "gHHH5YY++///\\"

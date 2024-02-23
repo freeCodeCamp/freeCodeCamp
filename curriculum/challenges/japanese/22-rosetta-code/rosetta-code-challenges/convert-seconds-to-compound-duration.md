@@ -15,7 +15,7 @@ Implement a function which:
   <li>以下の詳細のように、週、日、時、分、秒に分解された同じ期間を示す文字列を返します (例えば <code>1 min, 40 sec</code>)。</li>
 </ul>
 
-次の3つのテストケースで正しく変換されることを示します。
+次の 3 つのテストケースで正しく変換されることを示します。
 
 <div style='font-size:115%; font-weight: bold;'>テストケース</div>
 
@@ -46,7 +46,7 @@ Implement a function which:
     可能な限り小さな単位よりも大きな単位を優先します (例えば <code>1 min, 70 sec</code> または <code>130 sec</code> ではなく、<code>2 min, 10 sec</code> を返します)。
   </li>
   <li>
-    テストケースに表示される書式設定（数量が最大単位から最小単位の順でソートされ、カンマ+スペースで区切られ、各数量の値と単位がスペースで区切られる）にします。
+    テストケースに表示される書式設定（数量が最大単位から最小単位の順でソートされ、カンマ + スペースで区切られ、各数量の値と単位がスペースで区切られる）にします。
   </li>
 </ul>
 
@@ -64,7 +64,7 @@ assert(typeof convertSeconds === 'function');
 assert.equal(convertSeconds(testCases[0]), results[0]);
 ```
 
-`convertSeconds(86400)` は `1 d` をを返します。
+`convertSeconds(86400)` は `1 d` を返します。
 
 ```js
 assert.equal(convertSeconds(testCases[1]), results[1]);

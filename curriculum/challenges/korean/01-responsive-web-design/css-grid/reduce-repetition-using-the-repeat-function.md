@@ -1,6 +1,6 @@
 ---
 id: 5a94fe3669fb03452672e45f
-title: Reduce Repetition Using the repeat Function
+title: repeat 함수로 반복 줄이기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cQvqyHR'
 forumTopicId: 301133
@@ -9,37 +9,37 @@ dashedName: reduce-repetition-using-the-repeat-function
 
 # --description--
 
-When you used `grid-template-columns` and `grid-template-rows` to define the structure of a grid, you entered a value for each row or column you created.
+그리드의 구조를 정의하기 위해 `grid-template-columns`와 `grid-template-rows`를 사용했을 때, 생성한 각 행 혹은 열에 값을 입력했습니다.
 
-Let's say you want a grid with 100 rows of the same height. It isn't very practical to insert 100 values individually. Fortunately, there's a better way - by using the `repeat` function to specify the number of times you want your column or row to be repeated, followed by a comma and the value you want to repeat.
+똑같은 높이를 가진 100개의 행을 가진 그리드를 생각해 보겠습니다. 100개의 값을 일일이 넣는 것은 실용적이지 못합니다. 다행히 더 나은 방법이 있습니다 - 행 혹은 열이 반복 횟수와 쉼표와 반복되는 값을 `repeat`에 넣어 사용하면 됩니다.
 
-Here's an example that would create the 100 row grid, each row at 50px tall.
+여기 50px 높이를 준 100개의 행을 가진 그리드 예시가 있습니다.
 
 ```css
 grid-template-rows: repeat(100, 50px);
 ```
 
-You can also repeat multiple values with the repeat function and insert the function amongst other values when defining a grid structure. Here's what that looks like:
+또한 grid 구조를 정의할 때 repeat 함수로 여러 개의 값을 반복하고 다른 값들 사이에 해당 함수를 넣을 수도 있습니다. 다음과 같이 적용될 수 있습니다:
 
 ```css
 grid-template-columns: repeat(2, 1fr 50px) 20px;
 ```
 
-This translates to:
+이는 다음과 동일한 효과를 갖습니다:
 
 ```css
 grid-template-columns: 1fr 50px 1fr 50px 20px;
 ```
 
-**Note:** The `1fr 50px` is repeated twice followed by 20px.
+**주의:** 20px 전에 `1fr 50px`가 두 번 반복됩니다.
 
 # --instructions--
 
-Use `repeat` to remove repetition from the `grid-template-columns` property.
+`grid-template-columns` 속성에서 반복을 없애기 위해 `repeat`을 사용하세요.
 
 # --hints--
 
-`container` class should have a `grid-template-columns` property that is set to repeat 3 columns with the width of `1fr`.
+`container` 클래스는 `1fr` 너비를 가진 3개의 열을 반복하도록 설정된 `grid-template-columns` 속성을 가져야 합니다.
 
 ```js
 assert(

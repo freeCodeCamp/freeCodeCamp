@@ -1,6 +1,6 @@
 ---
 id: 587d778a367417b2b2512aa6
-title: Improve Form Field Accessibility with the label Element
+title: label 요소를 사용하여 폼 필드의 접근성 높이기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMMAN'
 forumTopicId: 301016
@@ -9,13 +9,13 @@ dashedName: improve-form-field-accessibility-with-the-label-element
 
 # --description--
 
-Improving accessibility with semantic HTML markup applies to using both appropriate tag names and attributes. The next several challenges cover some important scenarios using attributes in forms.
+시맨틱 HTML 마크업으로 접근성을 높이는 것은 적절한 태그 이름과 속성을 사용하는데 적용됩니다. 다음 몇 가지 챌린지들은 속성들을 폼에서 활용하는 몇 가지 중요한 시나리오들을 다룹니다.
 
-The `label` tag wraps the text for a specific form control item, usually the name or label for a choice. This ties meaning to the item and makes the form more readable. The `for` attribute on a `label` tag explicitly associates that `label` with the form control and is used by screen readers.
+`label` 태그는 특정 폼 제어 항목을 위해 텍스트를 래핑하는데, 보통 이름이나 레이블을 선택합니다. 이렇게 하면 항목과 의미가 연결되고 폼을 더 읽기 쉽게 만들어 줍니다. `label` 태그에 `for` 속성은 `label`과 폼 제어를 명시적으로 연결해주고 화면 낭독 프로그램에 사용됩니다.
 
-You learned about radio buttons and their labels in a lesson in the Basic HTML section. In that lesson, we wrapped the radio button input element inside a `label` element along with the label text in order to make the text clickable. Another way to achieve this is by using the `for` attribute, as explained in this lesson.
+Basic HTML 단원의 한 수업에서 라디오 버튼들과 이것들의 레이블들에 대해 배웠습니다. 그 수업에서 라디오 버튼 입력 요소와 레이블 텍스트를 `label` 요소 안에 래핑 함으로써 텍스트를 클릭할 수 있게 만들었습니다. 이를 성취하는 또다른 방법은 이 수업에 설명되었던 것처럼 `for` 속성을 사용하는 것입니다.
 
-The value of the `for` attribute must be the same as the value of the `id` attribute of the form control. Here's an example:
+`for` 속성 값이 폼 제어의 `id` 속성 값과 똑같아야 합니다. 여기 예시가 있습니다.
 
 ```html
 <form>
@@ -26,17 +26,17 @@ The value of the `for` attribute must be the same as the value of the `id` attri
 
 # --instructions--
 
-Camper Cat expects a lot of interest in his thoughtful blog posts and wants to include an email sign up form. Add a `for` attribute on the email `label` that matches the `id` on its `input` field.
+Camper Cat은 그의 생각 깊은 블로그 글들로부터 많은 수익을 벌길 기대하고 있고 이메일 가입 폼을 포함하길 원합니다. `input` 필드에 있는 `id`와 일치하는 `for` 속성을 이메일 `label`에 추가합니다.
 
 # --hints--
 
-Your code should have a `for` attribute on the `label` tag that is not empty.
+코드에는 `label` 태그에 비어 있지 않은 `for` 속성이 있어야 합니다.
 
 ```js
 assert($('label').attr('for'));
 ```
 
-Your `for` attribute value should match the `id` value on the email `input`.
+`for` 속성 값은 이메일 `input`에 있는 `id` 값과 일치해야 합니다.
 
 ```js
 assert($('label').attr('for') == 'email');

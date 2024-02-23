@@ -44,15 +44,13 @@ const body = document.querySelectorAll('html > body')[0];
 assert(html && head && body);
 ```
 
-You should have a `title` element within the `head` element that contains the text 
-`The Odin Recipes`.
+You should have a `title` element within the `head` element that contains the text `The Odin Recipes`.
 
 ```js
 assert(document.querySelectorAll('HEAD > TITLE')[0].innerText == 'The Odin Recipes');
 ```
 
-You should have a `h1` element within your `body` element that contains the text
-`Creamy Chocolate Fudge`.
+You should have a `h1` element within your `body` element that contains the text `Creamy Chocolate Fudge`.
 
 ```js
 assert(document.querySelectorAll('BODY > H1')[0].innerText == 'Creamy Chocolate Fudge');
@@ -107,7 +105,7 @@ const h2 = document.querySelectorAll('H2')[2];
 assert(h2.innerText == 'Steps');
 ```
 
-You should have a `<ol>` with the the steps as the list items `<li>`.
+You should have a `<ol>` with the steps as the list items `<li>`.
 
 ```js
 const orderedList = document.querySelectorAll('OL')[0];
@@ -116,7 +114,7 @@ const listItems = document.querySelectorAll('OL > LI');
 assert(orderedList && listItems && listItems.length > 1);
 ```
 
-You should have an `h2` element with the text `More Recipes`. 
+You should have an `h2` element with the text `More Recipes`.
 
 ```js
 const h2 = document.querySelectorAll('H2')[3];

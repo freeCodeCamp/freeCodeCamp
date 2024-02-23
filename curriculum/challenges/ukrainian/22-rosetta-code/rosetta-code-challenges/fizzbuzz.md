@@ -8,7 +8,7 @@ dashedName: fizzbuzz
 
 # --description--
 
-Write a program that generates an array of integers from 1 to 100 (inclusive). But:
+Напишіть програму, яка генерує масив цілих чисел від 1 до 100 (включно). Але:
 
 <ul>
     <li>для кратних числа 3 додайте <code>"Fizz"</code> до масиву замість числа</li>
@@ -18,7 +18,7 @@ Write a program that generates an array of integers from 1 to 100 (inclusive). B
 
 # --instructions--
 
-Ваша програма має повернути масив, що містить результати на основі вищезазначених правил.
+Програма має повернути масив, який містить результати на основі правил вище.
 
 # --hints--
 

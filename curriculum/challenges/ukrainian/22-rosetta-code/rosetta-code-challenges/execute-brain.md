@@ -10,28 +10,28 @@ dashedName: execute-brain
 
 Write a function to implement a Brain\*\*\*\* interpreter. The function will take a string as a parameter and should return a string as the output. More details are given below:
 
-RCBF є множиною <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> компіляторів та інтерпретаторів, написаних для Rosetta code різними мовами.
+RCBF is a set of <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> compilers and interpreters written for Rosetta Code in a variety of languages.
 
-Нижче наведено посилання на кожну з версій RCBF.
+Below are links to each of the versions of RCBF.
 
-Впровадження потребує чіткого дотримання таких інструкцій:
+An implementation need only properly implement the following instructions:
 
-| Команда                   | Опис                                                                             |
-| ------------------------- | -------------------------------------------------------------------------------- |
-| <code>></code> | Перемістити курсор праворуч                                                      |
-| <code>&lt;</code> | Перемістити курсор ліворуч                                                       |
-| <code>+</code> | Збільшити поточну комірку під курсором                                           |
-| <code>-</code> | Зменшити поточну комірку під курсором                                            |
-| <code>.</code> | Вивести значення комірки під курсором                                            |
-| <code>,</code> | Ввести значення та зберегти його в комірці під курсором                          |
-| <code>\[</code> | Перейти до <code>]</code>, якщо значенням комірки під курсором є 0     |
-| <code>]</code> | Перейти до <code>\[</code>, якщо значенням комірки під курсором не є 0 |
+| Command           | Description                                                                        |
+| ----------------- | ---------------------------------------------------------------------------------- |
+| <code>></code>    | Move the pointer to the right                                                      |
+| <code>&lt;</code> | Move the pointer to the left                                                       |
+| <code>+</code>    | Increment the memory cell under the pointer                                        |
+| <code>-</code>    | Decrement the memory cell under the pointer                                        |
+| <code>.</code>    | Output the character signified by the cell at the pointer                          |
+| <code>,</code>    | Input a character and store it in the cell at the pointer                          |
+| <code>\[</code>   | Jump past the matching <code>]</code> if the cell under the pointer is 0           |
+| <code>]</code>    | Jump back to the matching <code>\[</code> if the cell under the pointer is nonzero |
 
-Розмір комірки може бути довільним, EOF (*E*nd-*O*-*F*ile) підтримка не є обов’язковою, так само як і наявність обмеженої й необмеженої пам’яті.
+Any cell size is allowed, EOF (*E*nd-*O*-*F*ile) support is optional, as is whether you have bounded or unbounded memory.
 
 # --hints--
 
-`brain(bye)` повинен вивести рядок
+`brain(bye)` should return a string
 
 ```js
 assert(typeof brain(bye) === 'string');
@@ -43,19 +43,19 @@ assert(typeof brain(bye) === 'string');
 assert.equal(brain('++++++[>++++++++++<-]>+++++.'), 'A');
 ```
 
-`brain(bye)`повинен вивести `Goodbye, World!\r\n`
+`brain(bye)` should return `Goodbye, World!\r\n`
 
 ```js
 assert.equal(brain(bye), 'Goodbye, World!\r\n');
 ```
 
-`brain(hello)`повинен вивести`Hello World!\n`
+`brain(hello)` should return `Hello World!\n`
 
 ```js
 assert.equal(brain(hello), 'Hello World!\n');
 ```
 
-`brain(fib)`повинен вивести`1, 1, 2, 3, 4, 5, 8, 13, 21, 34, 55, 89`
+`brain(fib)` should return `1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89`
 
 ```js
 assert.equal(brain(fib), '1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89');

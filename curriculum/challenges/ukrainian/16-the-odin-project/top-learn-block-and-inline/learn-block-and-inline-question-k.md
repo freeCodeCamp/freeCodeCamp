@@ -1,35 +1,35 @@
 ---
 id: 65704486e7b02272663824e9
-title: Learn Block and Inline Question K
+title: Блокові та рядкові елементи. Запитання K
 challengeType: 15
 dashedName: learn-block-and-inline-question-k
 ---
 
 # --description--
 
-Now that you have a basic understanding on how adding width and height to `inline` elements works.
+Тепер ви знаєте, як додавати ширину та висоту до рядкових (`inline`) елементів.
 
 # --question--
 
 ## --text--
 
-What happens when you add a bottom padding of 15 pixels to a `span` element with display set to `inline-block`?
+Що відбудеться, якщо додати нижній відступ зі значенням 15 пікселів до елемента `span` з властивістю `display` зі значенням `inline-block`?
 
 ## --answers--
 
-The `span` element's content will shift upward by 15 pixels.
+Вміст елемента `span` переміститься вгору на 15 пікселів.
 
 ---
 
-The `span` element's width will increase by 15 pixels.
+Ширина елемента `span` збільшиться на 15 пікселів.
 
 ---
 
-The `span` element will gain additional space below its content.
+Елемент `span` отримає додаткове місце знизу свого вмісту.
 
 ---
 
-Padding has no effect on the layout of an `inline-block` `span` element.
+Відступ не впливає на макет `inline-block` елемента `span`.
 
 ## --video-solution--
 

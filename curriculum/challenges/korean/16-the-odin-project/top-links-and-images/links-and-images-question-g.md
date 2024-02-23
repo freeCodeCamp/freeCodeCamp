@@ -4,6 +4,7 @@ title: Links and Images Question G
 challengeType: 15
 dashedName: links-and-images-question-g
 ---
+
 # --description--
 
 Websites would be fairly boring if they could only display text. Luckily HTML provides a wide variety of elements for displaying all sorts of different media. The most widely used of these is the image element.
@@ -29,11 +30,11 @@ Finally add the image to the `index.html` file:
 ```html
 <body>
   <h1>Homepage</h1>
-	<a href="https://www.theodinproject.com/about">click me</a>
+    <a href="https://www.theodinproject.com/about">click me</a>
 
-	<a href="pages/about.html">About</a>
+    <a href="pages/about.html">About</a>
 
-	<img src="images/dog.jpg">
+    <img src="images/dog.jpg">
 </body>
 ```
 
@@ -70,7 +71,7 @@ This is how the The Odin Project logo example you used earlier looks with an alt
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/ExXjoEp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=ExXjoEp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_ExXjoEp"></iframe>
 
 # --question--
-    
+
 ## --text--
 
 How do you access a parent directory in a filepath?

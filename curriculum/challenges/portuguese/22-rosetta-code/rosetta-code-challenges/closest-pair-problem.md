@@ -8,11 +8,11 @@ dashedName: closest-pair-problem
 
 # --description--
 
-Provide a function to find the closest two points among a set of given points in two dimensions.
+Forneça uma função para encontrar os dois pontos mais próximos entre um conjunto de pontos dados em duas dimensões.
 
 A solução simples é um algoritmo $O(n^2)$ (que podemos chamar de *algoritmo de força bruta*). O pseudocódigo (usando índices) poderia ser, simplesmente:
 
-<pre><strong>bruteForceClosestPair</strong> of P(1), P(2), ... P(N)
+<pre><strong>bruteForceClosestPair</strong> de P(1), P(2), ... P(N)
 <strong>if</strong> N &#x3C; 2 <strong>then</strong>
   <strong>return</strong> ∞
 <strong>else</strong>

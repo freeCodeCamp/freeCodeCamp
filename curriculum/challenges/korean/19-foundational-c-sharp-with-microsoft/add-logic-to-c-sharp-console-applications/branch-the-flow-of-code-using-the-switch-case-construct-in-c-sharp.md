@@ -1,6 +1,6 @@
 ---
 id: 647e214b8acb466c97ccbee0
-title: Branch the Flow of Code Using the switch-case Construct in C#
+title: 'Branch the Flow of Code Using the switch-case Construct in C#'
 challengeType: 19
 dashedName: branch-the-flow-of-code-using-the-switch-case-construct-in-c-sharp
 ---

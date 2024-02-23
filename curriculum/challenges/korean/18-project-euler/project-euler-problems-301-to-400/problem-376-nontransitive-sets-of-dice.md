@@ -10,10 +10,8 @@ dashedName: problem-376-nontransitive-sets-of-dice
 
 Consider the following set of dice with nonstandard pips:
 
-$$\begin{array}{}
-  \text{Die A: } & 1 & 4 & 4 & 4 & 4 & 4 \\\\
-  \text{Die B: } & 2 & 2 & 2 & 5 & 5 & 5 \\\\
-  \text{Die C: } & 3 & 3 & 3 & 3 & 3 & 6 \\\\
+$$\begin{array}{}   \text{Die A: } & 1 & 4 & 4 & 4 & 4 & 4 \\\\
+  \text{Die B: } & 2 & 2 & 2 & 5 & 5 & 5 \\\\   \text{Die C: } & 3 & 3 & 3 & 3 & 3 & 6 \\\\
 \end{array}$$
 
 A game is played by two players picking a die in turn and rolling it. The player who rolls the highest value wins.

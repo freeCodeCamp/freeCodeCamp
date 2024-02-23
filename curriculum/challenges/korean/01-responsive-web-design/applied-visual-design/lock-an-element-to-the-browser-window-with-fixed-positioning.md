@@ -1,6 +1,6 @@
 ---
 id: 587d781e367417b2b2512acc
-title: Lock an Element to the Browser Window with Fixed Positioning
+title: 브라우저 창에 요소를 고정 위치로 설정하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MDNUR'
 forumTopicId: 301061
@@ -9,29 +9,29 @@ dashedName: lock-an-element-to-the-browser-window-with-fixed-positioning
 
 # --description--
 
-The next layout scheme that CSS offers is the `fixed` position, which is a type of absolute positioning that locks an element relative to the browser window. Similar to absolute positioning, it's used with the CSS offset properties and also removes the element from the normal flow of the document. Other items no longer "realize" where it is positioned, which may require some layout adjustments elsewhere.
+CSS가 제공하는 다음 레이아웃은 `fixed` 위치입니다. 이는 브라우저 창에 대해 요소를 상대적으로 고정하는 절대 위치 지정 유형입니다. 절대 위치 지정과 유사하게 CSS 오프셋 속성과 함께 사용되며 문서의 정상 흐름에서 요소를 제거합니다. 다른 항목들은 이제 해당 요소가 어디에 위치한지 "인식"하지 못하게 되며, 이로 인해 다른 곳에서 일부 레이아웃 조정이 필요할 수 있습니다.
 
-One key difference between the `fixed` and `absolute` positions is that an element with a fixed position won't move when the user scrolls.
+`fixed`와 `absolute` 위치의 주요 차이점 중 하나는 fixed 위치를 가진 요소는 사용자가 스크롤할 때 움직이지 않는다는 것입니다.
 
 # --instructions--
 
-The navigation bar in the code is labeled with an id of `navbar`. Change its `position` to `fixed`, and offset it 0 pixels from the `top` and 0 pixels from the `left`. After you have added the code, scroll the preview window to see how the navigation stays in place.
+코드에서 네비게이션 바는 `navbar`라는 id로 지정되어 있습니다. 이 네비게이션바의 `position`을 `fixed`로 변경하고, `top`에서 0 픽셀, `left`에서 0 픽셀로 오프셋하십시오. 코드를 작성한 후 미리보기 창을 스크롤하면서 내비게이션이 제 위치에 머물러 있는지 확인해보세요.
 
 # --hints--
 
-The `#navbar` element should have a `position` set to `fixed`.
+`#navbar` 요소의 `position` 속성을 `fixed`로 설정해야 합니다.
 
 ```js
 assert($('#navbar').css('position') == 'fixed');
 ```
 
-Your code should use the `top` CSS offset of 0 pixels on the `#navbar` element.
+`#navbar` 요소의 `top` CSS 오프셋을 0 픽셀로 설정해야 합니다.
 
 ```js
 assert($('#navbar').css('top') == '0px');
 ```
 
-Your code should use the `left` CSS offset of 0 pixels on the `#navbar` element.
+`#navbar` 요소의 `left` CSS 오프셋을 0 픽셀로 설정해야 합니다.
 
 ```js
 assert($('#navbar').css('left') == '0px');

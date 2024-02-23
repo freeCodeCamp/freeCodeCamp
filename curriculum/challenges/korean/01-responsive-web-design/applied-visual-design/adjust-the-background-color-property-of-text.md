@@ -1,6 +1,6 @@
 ---
 id: 587d781b367417b2b2512abc
-title: Adjust the background-color Property of Text
+title: 텍스트의 background-color 속성 조정하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDqwA6'
 forumTopicId: 301032
@@ -9,23 +9,23 @@ dashedName: adjust-the-background-color-property-of-text
 
 # --description--
 
-Instead of adjusting your overall background or the color of the text to make the foreground easily readable, you can add a `background-color` to the element holding the text you want to emphasize. This challenge uses `rgba()` instead of `hex` codes or normal `rgb()`.
+전체 배경을 조정하거나 전경의 가독성을 위해 텍스트 색상을 바꾸는 대신, 강조하고자 하는 텍스트를 가진 요소 자체에 `background-color`를 입힐 수 있습니다. 이번 도전 과제는 `hex` 코드나 보통의 `rgb()`를 사용하는 대신 `rgba()`를 사용합니다.
 
-<blockquote>rgba stands for:<br>  r = red<br>  g = green<br>  b = blue<br>  a = alpha/level of opacity</blockquote>
+<blockquote>rgba는 아래의 약어입니다:<br>  r = red<br>  g = green<br>  b = blue<br>  a = alpha 값/불투명도 수준</blockquote>
 
-The RGB values can range from 0 to 255. The alpha value can range from 1, which is fully opaque or a solid color, to 0, which is fully transparent or clear. `rgba()` is great to use in this case, as it allows you to adjust the opacity. This means you don't have to completely block out the background.
+RGB는 0에서 255 사이의 값을 가집니다. alpha는 완전히 불투명한 값, 혹은 단색인 1부터 완전히 투명한 값인 0까지의 범위에서 값을 가질 수 있습니다. 불투명도를 조절할 수 있으므로 `rgba()`는 이런 경우 매우 유용합니다. 즉, 배경을 완전히 가리지 않아도 된다는 의미입니다.
 
-You'll use `background-color: rgba(45, 45, 45, 0.1)` for this challenge. It produces a dark gray color that is nearly transparent given the low opacity value of 0.1.
+이번 도전 과제에서는 `background-color: rgba(45, 45, 45, 0.1)`를 사용해 볼 것입니다. 불투명도를 0.1로 낮게 설정하므로 거의 투명에 가까운 어두운 회색이 적용됩니다.
 
 # --instructions--
 
-To make the text stand out more, adjust the `background-color` of the `h4` element to the given `rgba()` value.
+글자를 더욱 눈에 띄게 하려면, `h4` 요소의 `background-color`를 주어진 `rgba()` 값으로 변경할 수 있습니다.
 
-Also for the `h4`, remove the `height` property and add `padding` of 10px.
+또한, `h4`에는 `height` 속성을 삭제하고 `padding` 10px를 추가해봅니다.
 
 # --hints--
 
-Your code should add a `background-color` property to the `h4` element set to `rgba(45, 45, 45, 0.1)`.
+여러분의 코드에는 `h4` 요소의 `background-color` 속성이 `rgba(45, 45, 45, 0.1)`로 설정되어 있어야 합니다.
 
 ```js
 assert(
@@ -35,7 +35,7 @@ assert(
 );
 ```
 
-Your code should add a `padding` property to the `h4` element and set it to 10 pixels.
+여러분의 코드에서 `h4` 요소의 `padding` 속성은 10 픽셀로 적용되어야 합니다.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-The `height` property on the `h4` element should be removed.
+`h4` 요소의 `height` 속성은 지우셔야 합니다.
 
 ```js
 assert(!($('h4').css('height') == '25px'));

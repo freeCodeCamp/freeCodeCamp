@@ -1,6 +1,6 @@
 ---
 id: 647e238f8acb466c97ccbf04
-title: Store and Retrieve Data Using Literal and Variable Values in C#
+title: 'Store and Retrieve Data Using Literal and Variable Values in C#'
 challengeType: 19
 dashedName: store-and-retrieve-data-using-literal-and-variable-values-in-c-sharp
 ---

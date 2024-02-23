@@ -8,7 +8,7 @@ dashedName: define-a-primitive-data-type
 
 # --description--
 
-Define a type that behaves like an integer but has a lowest valid value of 1 and a highest valid value of 10.
+Визначте тип, який поводиться як ціле число, але має найменше допустиме значення 1 та найбільше допустиме значення 10.
 
 Обробка помилок:
 
@@ -25,37 +25,37 @@ Define a type that behaves like an integer but has a lowest valid value of 1 and
 assert(typeof Num === 'function');
 ```
 
-`new Num(4)` має повертати об'єкт.
+`new Num(4)` має повернути об’єкт.
 
 ```js
 assert(typeof new Num(4) === 'object');
 ```
 
-`new Num('test')` має видавати помилку TypeError з повідомленням 'Not a Number'.
+`new Num('test')` має видати TypeError з повідомленням 'Not a Number'.
 
 ```js
 assert.throws(() => new Num('test'), TypeError);
 ```
 
-`new Num(0)` має видавати помилку TypeError з повідомленням 'Out of range'.
+`new Num(0)` має видати TypeError з повідомленням 'Out of range'.
 
 ```js
 assert.throws(() => new Num(0), TypeError);
 ```
 
-`new Num(-5)` має видавати помилку TypeError з повідомленням 'Out of range'.
+`new Num(-5)` має видати TypeError з повідомленням 'Out of range'.
 
 ```js
 assert.throws(() => new Num(-5), TypeError);
 ```
 
-`new Num(10)` має видавати помилку TypeError з повідомленням 'Out of range'.
+`new Num(10)` має видати TypeError з повідомленням 'Out of range'.
 
 ```js
 assert.throws(() => new Num(11), TypeError);
 ```
 
-`new Num(20)` має видавати помилку TypeError з повідомленням 'Out of range'.
+`new Num(20)` має видати TypeError з повідомленням 'Out of range'.
 
 ```js
 assert.throws(() => new Num(20), TypeError);
@@ -85,19 +85,19 @@ assert.equal(new Num(3) * new Num(4), 12);
 assert.equal(new Num(3) / new Num(4), 0.75);
 ```
 
-`new Num(3) < new Num(4)` має бути правдою.
+`new Num(3) < new Num(4)` має бути істиною.
 
 ```js
 assert(new Num(3) < new Num(4));
 ```
 
-`new Num(3) > new Num(4)` має бути помилкою.
+`new Num(3) > new Num(4)` має бути хибою.
 
 ```js
 assert(!(new Num(3) > new Num(4)));
 ```
 
-`(new Num(5)).toString()` має повертати '5'
+`(new Num(5)).toString()` має повернути '5'.
 
 ```js
 assert.equal(new Num(5).toString(), '5');

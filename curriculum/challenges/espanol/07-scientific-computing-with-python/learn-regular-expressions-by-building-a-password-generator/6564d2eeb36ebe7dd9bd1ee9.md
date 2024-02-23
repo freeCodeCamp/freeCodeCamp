@@ -1,6 +1,6 @@
 ---
 id: 6564d2eeb36ebe7dd9bd1ee9
-title: Step 40
+title: Paso 40
 challengeType: 20
 dashedName: step-40
 ---
@@ -48,7 +48,7 @@ def generate_password(length, nums, special_chars, uppercase, lowercase):
         ]        
 --fcc-editable-region--
     return password
-    
+
 # new_password = generate_password(8)
 # print(new_password)
 

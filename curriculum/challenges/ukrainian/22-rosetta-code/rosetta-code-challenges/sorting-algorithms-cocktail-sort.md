@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8004
-title: Алгоритми сортування/Шейкерне сортування
+title: 'Алгоритми сортування: сортування змішуванням'
 challengeType: 1
 forumTopicId: 302312
 dashedName: sorting-algorithmscocktail-sort
@@ -8,11 +8,11 @@ dashedName: sorting-algorithmscocktail-sort
 
 # --description--
 
-The <a href="https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort" target="_blank" rel="noopener noreferrer nofollow">cocktail sort</a> is an improvement on the Bubble Sort. Given an array of numbers, the cocktail sort will traverse the array from start to finish, moving the largest number to the end. Then, it will traverse the array backwards and move the smallest number to the start. It repeats these two passes, moving the next largest/smallest number to its correct position in the array until it is sorted.
+<a href="https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort" target="_blank" rel="noopener noreferrer nofollow">Сортування змішуванням</a> — це покращена версія сортування бульбашкою. Маючи масив чисел, сортування змішуванням проходитиме масив від початку до кінця, переміщуючи найбільше число в кінець. Потім він обійде масив у зворотньому порядку та перемістить найменше число на початок. Ці дії повторюються, переміщуючи наступне найбільше/найменше число на правильну позицію в масиві, доки він не буде відсортований.
 
 # --instructions--
 
-Напишіть функцію, яка упорядкує даний масив, використовуючи шейкерне сортування.
+Напишіть функцію, яка впорядкує даний масив, використовуючи сортування змішуванням.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08805
-title: Use CSS Selectors to Style Elements
+title: CSS 선택자를 사용하여 요소를 스타일링하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cJKMBT2'
 forumTopicId: 18349
@@ -9,20 +9,20 @@ dashedName: use-css-selectors-to-style-elements
 
 # --description--
 
-With CSS, there are hundreds of CSS properties that you can use to change the way an element looks on your page.
+페이지에서 요소가 보이는 방식을 변경할 수 있는 수백 가지의 CSS 속성이 있습니다.
 
-When you entered `<h2 style="color: red;">CatPhotoApp</h2>`, you were styling that individual `h2` element with inline CSS, which stands for Cascading Style Sheets.
+`<h2 style="color: red;">CatPhotoApp</h2>`를 입력했을 때는 해당 개별 `h2` 요소에 인라인 CSS(캐스케이딩 스타일 시트)를 사용하여 스타일을 지정한 것입니다.
 
-That's one way to specify the style of an element, but there's a better way to apply CSS.
+이것은 요소의 스타일을 지정할 수 있는 하나의 방법이지만 CSS를 적용하는 더 나은 방법이 있습니다.
 
-At the top of your code, create a `style` block like this:
+코드 맨 위에 다음과 같은 `style` 블록을 만드세요.
 
 ```html
 <style>
 </style>
 ```
 
-Inside that style block, you can create a <dfn>CSS selector</dfn> for all `h2` elements. For example, if you wanted all `h2` elements to be red, you would add a style rule that looks like this:
+이 스타일 블록 내에서 모든 `h2` 요소를 선택하기 위한 <dfn>CSS selector</dfn>를 만들 수 있습니다. 예를 들어 모든 `h2` 요소를 빨간색으로 만들고 싶다면 다음과 같은 스타일 규칙을 추가하면 됩니다.
 
 ```html
 <style>
@@ -32,39 +32,39 @@ Inside that style block, you can create a <dfn>CSS selector</dfn> for all `h2` e
 </style>
 ```
 
-Note that it's important to have both opening and closing curly braces (`{` and `}`) around each element's style rule(s). You also need to make sure that your element's style definition is between the opening and closing style tags. Finally, be sure to add a semicolon to the end of each of your element's style rules.
+중요한 점은 각 요소의 스타일 규칙 주위에 여는 중괄호(`{`)와 닫는 중괄호(`}`)가 있어야 한다는 것입니다. 또한 요소의 스타일 정의가 여는 및 닫는 스타일 태그 사이에 위치해야 합니다. 마지막으로 각 요소의 스타일 규칙 끝에 세미콜론을 추가하세요.
 
 # --instructions--
 
-Delete your `h2` element's style attribute, and instead create a CSS `style` block. Add the necessary CSS to turn all `h2` elements blue.
+`h2` 요소의 스타일 속성을 삭제하고 대신 CSS `style` 블록을 만들어야 합니다. 모든 `h2` 요소를 파란색으로 변경하기 위해 필요한 CSS를 추가하세요.
 
 # --hints--
 
-The `style` attribute should be removed from your `h2` element.
+`h2` 요소의 `style` 속성을 제거해야 합니다.
 
 ```js
 assert(!$('h2').attr('style'));
 ```
 
-You should create a `style` element.
+그리고 `style` 요소를 생성해야 합니다.
 
 ```js
 assert($('style') && $('style').length >= 1);
 ```
 
-Your `h2` element should be blue.
+`h2` 요소는 파란색으로 나타나야 합니다.
 
 ```js
 assert($('h2').css('color') === 'rgb(0, 0, 255)');
 ```
 
-Your stylesheet `h2` declaration should be valid with a semicolon and closing brace.
+스타일시트에 있는 `h2` 선언은 세미콜론과 닫는 중괄호를 갖고 있어야 합니다.
 
 ```js
 assert(code.match(/h2\s*\{\s*color\s*:.*;\s*\}/g));
 ```
 
-All your `style` elements should be valid and have closing tags.
+모든 `style` 요소는 유효하며 닫는 태그를 갖고 있어야 합니다.
 
 ```js
 assert(

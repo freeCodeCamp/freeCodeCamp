@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f060
-title: Strings in Python
+title: 파이썬의 문자열
 challengeType: 11
 videoId: LYZj207fKpQ
 bilibiliIds:

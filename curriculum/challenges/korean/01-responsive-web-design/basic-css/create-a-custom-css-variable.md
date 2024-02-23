@@ -1,6 +1,6 @@
 ---
 id: 5a9d726c424fe3d0e10cad11
-title: Create a custom CSS Variable
+title: 커스텀 CSS 변수 만들기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQd27Hr'
 forumTopicId: 301086
@@ -9,21 +9,21 @@ dashedName: create-a-custom-css-variable
 
 # --description--
 
-To create a CSS variable, you just need to give it a name with two hyphens in front of it and assign it a value like this:
+CSS 변수를 만들려면 변수 이름 앞에 두 개의 하이픈을 넣고 다음과 같이 값을 할당해 주면 됩니다.
 
 ```css
 --penguin-skin: gray;
 ```
 
-This will create a variable named `--penguin-skin` and assign it the value of `gray`. Now you can use that variable elsewhere in your CSS to change the value of other properties to gray.
+그러면 `--penguin-skin`이라는 이름의 변수가 생성되고 `gray`라는 값이 할당됩니다. 이제 CSS의 어디에서나 해당 변수를 사용하여 다른 속성의 값을 회색으로 바꿀 수 있습니다.
 
 # --instructions--
 
-In the `penguin` class, create a variable name `--penguin-skin` and give it a value of `gray`.
+`penguin` 클래스에서 `--penguin-skin`이라는 변수 이름을 만들고 `gray` 값을 할당하십시오.
 
 # --hints--
 
-`penguin` class should declare the `--penguin-skin` variable and assign it to `gray`.
+`penguin` 클래스는 `--penguin-skin` 변수를 선언하고 `gray`로 할당해야 합니다.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08835
-title: Create a Set of Checkboxes
+title: 체크박스 세트 만들기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cqrkJsp'
 forumTopicId: 16821
@@ -9,17 +9,17 @@ dashedName: create-a-set-of-checkboxes
 
 # --description--
 
-Forms commonly use <dfn>checkboxes</dfn> for questions that may have more than one answer.
+폼(form)은 일반적으로 하나 이상의 답을 가진 질문을 위한 <dfn>체크박스</dfn>를 사용합니다.
 
-Checkboxes are a type of `input`.
+체크박스는 `input`의 한 유형입니다.
 
-Each of your checkboxes can be nested within its own `label` element. By wrapping an `input` element inside of a `label` element it will automatically associate the checkbox input with the label element surrounding it.
+각 체크박스는 `label` 요소 안에 중첩될 수 있습니다. `label` 요소 안의 `input` 요소에 감싸면 체크박스 입력을 자동으로 체크박스를 둘러싼 레이블 요소와 연관시킵니다.
 
-All related checkbox inputs should have the same `name` attribute.
+모든 연관된 체크박스 입력은 같은 `name` 속성을 가져야 합니다.
 
-It is considered best practice to explicitly define the relationship between a checkbox `input` and its corresponding `label` by setting the `for` attribute on the `label` element to match the `id` attribute of the associated `input` element.
+`label` 요소에 있는 `for` 속성을 연관된 `input` 요소의 `id` 속성과 일치시켜 체크박스 `input`과 이에 상응하는 `label` 사이의 관계를 명시적으로 정의하는 것을 모범 사례로 여깁니다.
 
-Here's an example of a checkbox:
+여기 체크박스에 대한 예시가 있습니다.
 
 ```html
 <label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
@@ -27,23 +27,23 @@ Here's an example of a checkbox:
 
 # --instructions--
 
-Add to your form a set of three checkboxes. Each checkbox should be nested within its own `label` element. All three should share the `name` attribute of `personality`.
+세 개의 체크박스 세트를 폼에 추가하세요. 각 체크박스는 `label` 요소 내에 중첩되어야 합니다. 세 개 모두 `personality`의 `name` 속성을 공유해야 합니다.
 
 # --hints--
 
-Your page should have three checkbox elements.
+페이지에 세 개의 체크박스 요소가 있어야 합니다.
 
 ```js
 assert($('input[type="checkbox"]').length > 2);
 ```
 
-Each of your three checkbox elements should be nested in its own `label` element.
+세 개의 체크박스 요소 각각은 `label` 요소 안에 중첩되어야 합니다.
 
 ```js
 assert($('label > input[type="checkbox"]:only-child').length > 2);
 ```
 
-Make sure each of your `label` elements has a closing tag.
+`label` 요소에 닫는 태그가 있는지 확인하세요.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-Your checkboxes should be given the `name` attribute of `personality`.
+체크박스는 `personality`의 `name` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -61,7 +61,7 @@ assert(
 );
 ```
 
-Each of your checkboxes should be added within the `form` tag.
+각 체크박스는 `form` 태그 안에 추가되어야 합니다.
 
 ```js
 assert($('label').parent().get(0).tagName.match('FORM'));
@@ -105,9 +105,9 @@ assert($('label').parent().get(0).tagName.match('FORM'));
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
-  
+
   <p>Things cats love:</p>
   <ul>
     <li>cat nip</li>

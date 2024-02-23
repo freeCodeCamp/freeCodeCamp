@@ -11,16 +11,8 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 Trabajar en estos desafíos implica escribir tu código usando uno de los siguientes métodos:
 
 - Clone este repositorio de <a href="https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow"> GitHub</a> y complete estos desafíos localmente.
-- Usa <a href="https://replit.com/github/freeCodeCamp/boilerplate-npm" target="_blank" rel="noopener noreferrer nofollow">nuestro proyecto de inicio Replit</a> para completar estos desafíos.
+- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges.
 - Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
-
-Si usas Replit, sigue los siguientes pasos para configurar el proyecto:
-
--   Comienza importando el proyecto en Replit.
--   A continuación, verás una ventana `.replit`
--   Selecciona `Use run command` y haz click en el botón `Done`.
-
-Una vez que hayas acabado, asegúrate de que un demo funcional del proyecto esté alojado en algún sitio público. A continuación, introduce la URL en el campo enlace a la solución.
 
 El archivo `package.json` es el centro de cualquier proyecto Node.js o paquete npm. Almacena información del proyecto, de manera similar a como la sección `head` de un documento HTML describe el contenido de una página web. Está formado por un único objeto JSON donde se guarda la información en pares clave-valor. Solo hay dos campos obligatorios: `name` y `version`, pero se considera una buena práctica plasmar información adicional que pueda ser útil a futuros usuarios o mantenedores.
 
@@ -37,6 +29,8 @@ Uno de los datos más comunes de este archivo es el campo `author`. Específica 
 Agrega tu nombre como `author` del proyecto en el fichero `package.json`.
 
 **Nota:** Recuerda que estás escribiendo JSON, de manera que todos los nombres de campos deben ir entre comillas dobles (") y separados por una coma (,).
+
+If you are using Gitpod, make sure the app is running and the preview window is open. Copy the preview window's URL and paste it into the Solution Link input below.
 
 # --hints--
 

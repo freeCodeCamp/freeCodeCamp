@@ -8,15 +8,15 @@ dashedName: sha-1
 
 # --description--
 
-**SHA-1** or **SHA1** is a one-way hash function; it computes a 160-bit message digest.
+**SHA-1** або **SHA1** — це одностороння хеш-функція, яка обраховує дайджест 160-бітового повідомлення.
 
-SHA-1 часто використовується в протоколах безпеки; до прикладу, багато HTTPS веб-сайтів використовують RSA з SHA-1, аби захистити свої з'єднання.
+SHA-1 часто з’являється в протоколах безпеки. Наприклад, багато вебсайтів HTTPS використовують RSA з SHA-1, щоб захистити своє з’єднання.
 
-BitTorrent використовує SHA-1 для перевірки завантажень.
+BitTorrent використовує SHA-1, щоб перевірити завантаження.
 
-Git і Mercurial використовують дайджести SHA-1 для визначення комітів.
+Git та Mercurial використовують дайджести SHA-1, щоб ідентифікувати зміни.
 
-Стандарт уряду США, <a href="https://rosettacode.org/wiki/SHA-1/FIPS-180-1" target="_blank" rel="noopener noreferrer nofollow">FIPS 180-1</a>, визначає SHA-1.
+SHA-1 визначено в стандартах США <a href="https://rosettacode.org/wiki/SHA-1/FIPS-180-1" target="_blank" rel="noopener noreferrer nofollow">FIPS 180-1</a>.
 
 # --instructions--
 

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08822
-title: Adjust the Margin of an Element
+title: 요소의 마진 조절하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJarHW'
 forumTopicId: 16654
@@ -9,19 +9,19 @@ dashedName: adjust-the-margin-of-an-element
 
 # --description--
 
-An element's `margin` controls the amount of space between an element's `border` and surrounding elements.
+요소의 `margin`은 요소의 `border`와 주위 요소들 사이의 공간을 설정합니다.
 
-Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has a bigger `margin` than the blue box, making it appear smaller.
+파란 상자와 빨간 상자가 노란 상자 안에 중첩되어 있습니다. 빨간 상자는 파란 상자보다 큰 `margin`을 가지고 있어 상대적으로 작아 보입니다.
 
-When you increase the blue box's `margin`, it will increase the distance between its border and surrounding elements.
+파란 상자의 `margin`을 증가시키면 테두리와 주변 요소 간의 거리가 증가합니다.
 
 # --instructions--
 
-Change the `margin` of the blue box to match that of the red box.
+파란 상자의 `margin`을 빨간 상자의 것과 동일하게 변경합니다.
 
 # --hints--
 
-Your `blue-box` class should give elements `20px` of `margin`.
+`blue-box` 클래스는 요소에 `20px`의 `margin`을 부여합니다.
 
 ```js
 assert($('.blue-box').css('margin-top') === '20px');

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acdf08812
-title: Size Your Images
+title: 이미지 크기 조절하기
 challengeType: 0
 forumTopicId: 18282
 dashedName: size-your-images
@@ -8,9 +8,9 @@ dashedName: size-your-images
 
 # --description--
 
-CSS has a property called `width` that controls an element's width. Just like with fonts, we'll use `px` (pixels) to specify the image's width.
+CSS에는 `width`라는 요소가 있는데, 이는 요소의 가로 너비를 조정하는 데 사용됩니다. 폰트 크기와 마찬가지로, 이미지의 가로 너비를 정의할 때 `px`(픽셀) 단위를 사용할 것입니다.
 
-For example, if we wanted to create a CSS class called `larger-image` that gave HTML elements a width of 500 pixels, we'd use:
+예를 들어 HTML 요소에 500픽셀의 너비를 부여하는 ` larger-image`라는 CSS 클래스를 만들고 싶다면 다음과 같이 작성하면 됩니다:
 
 ```html
 <style>
@@ -22,11 +22,11 @@ For example, if we wanted to create a CSS class called `larger-image` that gave 
 
 # --instructions--
 
-Create a class called `smaller-image` and use it to resize the image so that it's only 100 pixels wide.
+`smaller-image`라는 클래스를 생성하고, 이를 이미지의 크기를 조정하는 데 사용하여 이미지의 너비를 100픽셀로 지정하세요.
 
 # --hints--
 
-Your `img` element should have the class `smaller-image`.
+`img` 요소는 `smaller-image` 라는 클래스를 갖고 있어야 합니다.
 
 ```js
 assert(
@@ -35,7 +35,7 @@ assert(
 );
 ```
 
-Your image should be 100 pixels wide.
+이미지는 가로 너비가 100픽셀이어야 합니다.
 
 ```js
 assert(
@@ -124,9 +124,9 @@ assert(
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img class="smaller-image" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -141,7 +141,7 @@ assert(
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

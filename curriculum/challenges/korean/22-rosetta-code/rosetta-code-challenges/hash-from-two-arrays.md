@@ -10,7 +10,7 @@ dashedName: hash-from-two-arrays
 
 Given two arrays, create a hash object where the elements from one array (the keys) are linked to the elements of the other (the values).
 
-Example:
+예:
 
 ```js
 const firstArr = [1, 2, 3];

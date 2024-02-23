@@ -15,7 +15,7 @@ We can also delete properties from objects like this:
 delete ourDog.bark;
 ```
 
-Example:
+예:
 
 ```js
 const ourDog = {

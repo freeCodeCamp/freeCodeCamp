@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8036
-title: Коди керування рядка і додаткові символи рядка
+title: Видалення керівних кодів та розширених символів з рядка
 challengeType: 1
 forumTopicId: 302327
 dashedName: strip-control-codes-and-extended-characters-from-a-string
@@ -8,7 +8,7 @@ dashedName: strip-control-codes-and-extended-characters-from-a-string
 
 # --description--
 
-The task is to strip control codes and extended characters from a string. The solution should demonstrate how to achieve each of the following results: A string with control codes and extended characters stripped. In ASCII, the control codes have decimal codes 0 through to 31 and 127. On an ASCII based system, if the control codes are stripped, the resultant string would have all of its characters within the range of 32 to 126 decimal on the ASCII table. On a non-ASCII based system, we consider characters that do not have a corresponding glyph on the ASCII table (within the ASCII range of 32 to 126 decimal) to be an extended character for the purpose of this task.
+Ваше завдання — видалити керівні коди та розширені символи з рядка. Розв’язок має продемонструвати, як в результаті отримати рядок з видаленими керівними кодами та розширеними символами. Керівні коди в ASCII мають десяткові коди від 0 до 31 та 127. На системі, заснованій на ASCII: якщо видалити керівні коди, то вихідний рядок міститиме всі свої символи в діапазоні від 32 до 126 десяткових з таблиці ASCII. На системі, не заснованій на ASCII: ми вважаємо символи, які не мають відповідного гліфа на таблиці ASCII (у межах діапазону ASCII від 32 до 126 десяткових), розширеними символами з метою цього завдання.
 
 # --hints--
 
@@ -18,37 +18,37 @@ The task is to strip control codes and extended characters from a string. The so
 assert(typeof strip == 'function');
 ```
 
-`strip("abc")` повинне повернути рядок.
+`strip("abc")` має повернути рядок.
 
 ```js
 assert(typeof strip('abc') == 'string');
 ```
 
-`strip("\ba\x00b\n\rc\fd\xc3")` має повернути`"abcd"`.
+`strip("\ba\x00b\n\rc\fd\xc3")` має повернути `"abcd"`.
 
 ```js
 assert.equal(strip('\ba\x00b\n\rc\fd\xc3'), 'abcd');
 ```
 
-`strip("\u0000\n abc\u00E9def\u007F")`має повернути`" abcdef"`.
+`strip("\u0000\n abc\u00E9def\u007F")` має повернути `" abcdef"`.
 
 ```js
 assert.equal(strip('\u0000\n abc\u00E9def\u007F'), ' abcdef');
 ```
 
-`strip("a\n\tb\u2102d\u2147f")` має повернути`"abdf"`.
+`strip("a\n\tb\u2102d\u2147f")` має повернути `"abdf"`.
 
 ```js
 assert.equal(strip('a\n\tb\u2102d\u2147f'), 'abdf');
 ```
 
-`strip("Français.")` має повернути`"Franais."`.
+`strip("Français.")` має повернути `"Franais."`.
 
 ```js
 assert.equal(strip('Français.'), 'Franais.');
 ```
 
-`strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ")` має повернути`"123abcDEF+-*/"`.
+`strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ")` має повернути `"123abcDEF+-*/"`.
 
 ```js
 assert.equal(strip('123\tabc\u0007DEF\u007F+-*/€æŧðłþ'), '123abcDEF+-*/');

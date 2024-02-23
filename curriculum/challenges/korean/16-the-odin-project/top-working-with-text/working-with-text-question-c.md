@@ -5,6 +5,7 @@ title: Working With Text Question C
 challengeType: 15
 dashedName: working-with-text-question-c
 ---
+
 # --description--
 
 The `<strong>` element makes text bold. It also semantically marks text as important; this affects tools, like screen readers, that users with visual impairments will rely on to use your website. The tone of voice on some screen readers will change to communicate the importance of the text within a `strong` element. To define a `strong` element you wrap text content in a `<strong>` tag.
