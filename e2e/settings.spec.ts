@@ -6,8 +6,7 @@ const settingsTestIds = {
   settingsHeading: 'settings-heading',
   internetPresence: 'internet-presence',
   portfolioItems: 'portfolio-items',
-  camperIdentity: 'camper-identity',
-  flashMessageAlert: 'flash-message'
+  camperIdentity: 'camper-identity'
 };
 
 const settingsObject = {
@@ -281,8 +280,8 @@ test.describe('Settings', () => {
       .fill('My description');
     await saveButton.click();
     await expect(
-      page.getByTestId(settingsTestIds.flashMessageAlert)
-    ).toContainText(translations.flash['portfolio-item-updated']);
+      page.getByText(translations.flash['portfolio-item-updated'])
+    ).toBeVisible();
     await removeButton.click();
     await expect(addPortfolioButton).toBeEnabled();
     await expect(portfolioItems).toBeHidden();
