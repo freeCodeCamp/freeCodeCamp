@@ -531,8 +531,8 @@ importers:
         specifier: 0.20.0
         version: 0.20.0(react@16.14.0)
       '@loadable/component':
-        specifier: 5.15.3
-        version: 5.15.3(react@16.14.0)
+        specifier: 5.16.3
+        version: 5.16.3(react@16.14.0)
       '@reach/router':
         specifier: 1.3.4
         version: 1.3.4(react-dom@16.14.0)(react@16.14.0)
@@ -6427,7 +6427,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.0
-    dev: true
 
   /@babel/standalone@7.23.7:
     resolution: {integrity: sha512-AsO3aIh9I4qIqK61d6nPxPAdrSuWF4FmOLej3xNIkBIZj+8XJGArQQJw6DnuUkkqbsLp1fARkXOdKiuqWgac0Q==}
@@ -7744,13 +7743,13 @@ packages:
     dev: false
     optional: true
 
-  /@loadable/component@5.15.3(react@16.14.0):
-    resolution: {integrity: sha512-VOgYgCABn6+/7aGIpg7m0Ruj34tGetaJzt4bQ345FwEovDQZ+dua+NWLmuJKv8rWZyxOUSfoJkmGnzyDXH2BAQ==}
+  /@loadable/component@5.16.3(react@16.14.0):
+    resolution: {integrity: sha512-2mVvHs2988oVX2/zM0y6nYhJ4rTVHhkhRnpupBA0Rjl5tS8op9uSR4u5SLVfMLxzpspr2UiIBQD+wEuMsuq4Dg==}
     engines: {node: '>=8'}
     peerDependencies:
       react: ^16.3.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.20.13
+      '@babel/runtime': 7.23.9
       hoist-non-react-statics: 3.3.2
       react: 16.14.0
       react-is: 16.13.1
@@ -8042,7 +8041,7 @@ packages:
   /@radix-ui/primitive@1.0.0:
     resolution: {integrity: sha512-3e7rn8FDMin4CgeL7Z/49smCA3rFYY3Ha2rUQ7HRWFadS5iCRw08ZgVT1LaNTCNqgvrUiyczLflrVrF0SRQtNA==}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
     dev: false
 
   /@radix-ui/react-collection@1.0.2(react-dom@16.14.0)(react@16.14.0):
@@ -8051,7 +8050,7 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0
       react-dom: ^16.8 || ^17.0 || ^18.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@radix-ui/react-compose-refs': 1.0.0(react@16.14.0)
       '@radix-ui/react-context': 1.0.0(react@16.14.0)
       '@radix-ui/react-primitive': 1.0.2(react-dom@16.14.0)(react@16.14.0)
@@ -8065,7 +8064,7 @@ packages:
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       react: 16.14.0
     dev: false
 
@@ -8074,7 +8073,7 @@ packages:
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       react: 16.14.0
     dev: false
 
@@ -8083,7 +8082,7 @@ packages:
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       react: 16.14.0
     dev: false
 
@@ -8092,7 +8091,7 @@ packages:
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@radix-ui/react-use-layout-effect': 1.0.0(react@16.14.0)
       react: 16.14.0
     dev: false
@@ -8103,7 +8102,7 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0
       react-dom: ^16.8 || ^17.0 || ^18.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@radix-ui/react-compose-refs': 1.0.0(react@16.14.0)
       '@radix-ui/react-use-layout-effect': 1.0.0(react@16.14.0)
       react: 16.14.0
@@ -8116,7 +8115,7 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0
       react-dom: ^16.8 || ^17.0 || ^18.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@radix-ui/react-slot': 1.0.1(react@16.14.0)
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
@@ -8128,7 +8127,7 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0
       react-dom: ^16.8 || ^17.0 || ^18.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@radix-ui/primitive': 1.0.0
       '@radix-ui/react-collection': 1.0.2(react-dom@16.14.0)(react@16.14.0)
       '@radix-ui/react-compose-refs': 1.0.0(react@16.14.0)
@@ -8147,7 +8146,7 @@ packages:
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@radix-ui/react-compose-refs': 1.0.0(react@16.14.0)
       react: 16.14.0
     dev: false
@@ -8176,7 +8175,7 @@ packages:
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       react: 16.14.0
     dev: false
 
@@ -8185,7 +8184,7 @@ packages:
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@radix-ui/react-use-callback-ref': 1.0.0(react@16.14.0)
       react: 16.14.0
     dev: false
@@ -8195,7 +8194,7 @@ packages:
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       react: 16.14.0
     dev: false
 
@@ -8229,7 +8228,7 @@ packages:
   /@redux-saga/core@1.2.3:
     resolution: {integrity: sha512-U1JO6ncFBAklFTwoQ3mjAeQZ6QGutsJzwNBjgVLSWDpZTRhobUzuVDS1qH3SKGJD8fvqoaYOjp6XJ3gCmeZWgA==}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@redux-saga/deferred': 1.2.1
       '@redux-saga/delay-p': 1.2.1
       '@redux-saga/is': 1.1.3
@@ -10770,7 +10769,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       '@babel/code-frame': 7.23.5
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@types/aria-query': 4.2.2
       aria-query: 4.2.2
       chalk: 4.1.2
@@ -12725,7 +12724,7 @@ packages:
     resolution: {integrity: sha512-o/HelwhuKpTj/frsOsbNLNgnNGVIFsVP/SW2BSF14gVl7kAfMOJ6/8wUAUvG1R1NHKrfG+2sHZTu0yauT1qBrA==}
     engines: {node: '>=6.0'}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@babel/runtime-corejs3': 7.23.1
     dev: true
 
@@ -13013,7 +13012,7 @@ packages:
     resolution: {integrity: sha512-nP2k70tZ4+GrDUeW+77c/ZOJD3KMXZlW5A07YHNw6+RcggdHwXPIdhYT3Nhzufbfon4UHY8CvYuQllD3Em2rtQ==}
     engines: {node: '>=16.1.0'}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       tslib: 2.6.2
     dev: false
 
@@ -13427,7 +13426,7 @@ packages:
   /babel-plugin-macros@2.8.0:
     resolution: {integrity: sha512-SEP5kJpfGYqYKpBrj5XU3ahw5p5GOHJ0U5ssOSQ/WBVdwkD2Dzlce95exQTs3jOVWPPKLBN2rlEWkCK7dSmLvg==}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       cosmiconfig: 6.0.0
       resolve: 1.22.6
 
@@ -13629,7 +13628,7 @@ packages:
       gatsby: ^3.0.0-next.0
     dependencies:
       '@babel/core': 7.23.0
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@babel/types': 7.23.3
       gatsby: 3.15.0(@types/node@20.8.2)(babel-eslint@10.1.0)(eslint-import-resolver-typescript@3.5.5)(eslint-plugin-testing-library@3.9.0)(react-dom@16.14.0)(react@16.14.0)(typescript@5.2.2)(webpack-cli@4.10.0)
       gatsby-core-utils: 2.15.0
@@ -13642,7 +13641,7 @@ packages:
       gatsby: ^3.0.0-next.0
     dependencies:
       '@babel/core': 7.23.7
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@babel/types': 7.23.3
       gatsby: 3.15.0(@types/node@20.8.2)(babel-eslint@10.1.0)(eslint-import-resolver-typescript@3.5.5)(eslint-plugin-testing-library@3.9.0)(react-dom@16.14.0)(react@16.14.0)(typescript@5.2.2)(webpack-cli@4.10.0)
       gatsby-core-utils: 2.15.0
@@ -14126,7 +14125,7 @@ packages:
       '@babel/plugin-transform-spread': 7.23.3(@babel/core@7.23.0)
       '@babel/preset-env': 7.23.7(@babel/core@7.23.0)
       '@babel/preset-react': 7.23.3(@babel/core@7.23.0)
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       babel-plugin-dynamic-import-node: 2.3.3
       babel-plugin-macros: 2.8.0
       babel-plugin-transform-react-remove-prop-types: 0.4.24
@@ -15899,7 +15898,7 @@ packages:
     resolution: {integrity: sha512-l6U4w4h8uGwKH92I8lopiY9hpa6BPN8IsTm06VwfG4U7xZH1HI5KuP7MVO126cCy+iG482cerhMFE/kTJ/J0Jw==}
     hasBin: true
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
 
   /create-hash@1.2.0:
     resolution: {integrity: sha512-z00bCGNHDG8mHAkP7CtT1qVu+bFQUPjYq/4Iv3C3kWjTFV10zIjfSoeqXo9Asws8gwSHDGj/hl2u4OGIjapeCg==}
@@ -16984,13 +16983,13 @@ packages:
   /dom-helpers@3.4.0:
     resolution: {integrity: sha512-LnuPJ+dwqKDIyotW1VzmOZ5TONUN7CwkCR5hrgawTUbkBGYdeoNLZo6nNfGkCrjtE1nXXaj7iMMpDa8/d9WoIA==}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
     dev: false
 
   /dom-helpers@5.2.1:
     resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       csstype: 3.1.2
     dev: false
 
@@ -17798,7 +17797,7 @@ packages:
     peerDependencies:
       graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       graphql: 15.8.0
       graphql-config: 3.4.1(@types/node@20.8.2)(graphql@15.8.0)(typescript@5.2.2)
       lodash.flatten: 4.4.0
@@ -19429,7 +19428,7 @@ packages:
     resolution: {integrity: sha512-QspRxfSgD4Yb5syp/yNPN+ljXgatfgqq4/TIIJw5mVxVMhNenb8mQ8ihVL5vdhV7x3wUjKTwVIjZ+eU/sMLz7g==}
     engines: {node: '>=12.13.0'}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       ci-info: 2.0.0
       configstore: 5.0.1
       file-type: 16.5.4
@@ -19444,7 +19443,7 @@ packages:
     resolution: {integrity: sha512-lmMDwbnKpqAi+8WWd7MvCTCx3E0u7j8sbVgydERNCYVxKVpzD/aLCH4WPb4EE9m1H1rSm76w0Z+MaentyB/c/Q==}
     engines: {node: '>=14.15.0'}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       ci-info: 2.0.0
       configstore: 5.0.1
       fastq: 1.15.0
@@ -19465,12 +19464,12 @@ packages:
     resolution: {integrity: sha512-w9QSjOBJKi8nADypZycRBNEzRHyBEERUbMygMHEa/Lr8JkWi5YV5TplneDnJv9/R4VXiKA3CcpbIrpGqzp7qmA==}
     engines: {node: '>=12.13.0'}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
 
   /gatsby-legacy-polyfills@1.15.0:
     resolution: {integrity: sha512-CysOx6kjH7jomkhUdMDy5oFPC0vfdHfh96O+ZENW5tk9k4SQ+G64weywm9EfC6coIFPYytBhW/SrE7ZwizKnPA==}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       core-js-compat: 3.9.0
 
   /gatsby-link@3.15.0(@gatsbyjs/reach-router@1.3.9)(react-dom@16.14.0)(react@16.14.0):
@@ -19492,7 +19491,7 @@ packages:
     resolution: {integrity: sha512-Nj5lcMJaACCaWVgRc6T45U7KxhqEPpWZo/IlOaCdX2pWjK/5oWI3hVtfukfFpDRunYtIdw2Vl8bicLgU+viAWA==}
     engines: {node: '>=12.13.0'}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       bluebird: 3.7.2
       chokidar: 3.6.0
       fs-exists-cached: 1.0.0
@@ -19548,7 +19547,7 @@ packages:
     peerDependencies:
       gatsby: ^3.0.0-next.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@babel/traverse': 7.23.3
       '@sindresorhus/slugify': 1.1.2
       chokidar: 3.6.0
@@ -19618,7 +19617,7 @@ packages:
       '@babel/plugin-proposal-numeric-separator': 7.18.6(@babel/core@7.23.7)
       '@babel/plugin-proposal-optional-chaining': 7.17.12(@babel/core@7.23.7)
       '@babel/preset-typescript': 7.23.3(@babel/core@7.23.7)
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       babel-plugin-remove-graphql-queries: 3.15.0(@babel/core@7.23.7)(gatsby@3.15.0)
       gatsby: 3.15.0(@types/node@20.8.2)(babel-eslint@10.1.0)(eslint-import-resolver-typescript@3.5.5)(eslint-plugin-testing-library@3.9.0)(react-dom@16.14.0)(react@16.14.0)(typescript@5.2.2)(webpack-cli@4.10.0)
     transitivePeerDependencies:
@@ -19631,7 +19630,7 @@ packages:
       gatsby: ^3.0.0-next.0
       graphql: ^15.0.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       fastq: 1.15.0
       gatsby: 3.15.0(@types/node@20.8.2)(babel-eslint@10.1.0)(eslint-import-resolver-typescript@3.5.5)(eslint-plugin-testing-library@3.9.0)(react-dom@16.14.0)(react@16.14.0)(typescript@5.2.2)(webpack-cli@4.10.0)
       graphql: 15.8.0
@@ -19658,7 +19657,7 @@ packages:
       react: ^16.9.0 || ^17.0.0
       react-dom: ^16.9.0 || ^17.0.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@gatsbyjs/reach-router': 1.3.9(react-dom@16.14.0)(react@16.14.0)
       prop-types: 15.8.1
       react: 16.14.0
@@ -19672,7 +19671,7 @@ packages:
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/plugin-proposal-optional-chaining': 7.17.12(@babel/core@7.23.7)
       '@babel/plugin-transform-react-jsx': 7.22.15(@babel/core@7.23.7)
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@babel/standalone': 7.23.7
       '@babel/template': 7.22.15
       '@babel/types': 7.23.3
@@ -19774,7 +19773,7 @@ packages:
     requiresBuild: true
     dependencies:
       '@babel/code-frame': 7.23.5
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       '@turist/fetch': 7.2.0(node-fetch@2.7.0)
       '@turist/time': 0.0.2
       async-retry-ng: 2.0.1
@@ -19828,7 +19827,7 @@ packages:
     engines: {node: '>=12.13.0'}
     dependencies:
       '@babel/core': 7.23.7
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
     transitivePeerDependencies:
       - supports-color
 
@@ -23160,7 +23159,7 @@ packages:
     resolution: {integrity: sha512-prXSYk799h3GY3iOWnC6ZigYzMPjxN2svgjJ9shk7oMadSNX3wXy0B6F32PMJv7qtMnrIbUxoEHzbutvxR2LBQ==}
     engines: {node: '>=6.0.0', npm: '>=6.0.0', yarn: '>=1.0.0'}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       app-root-dir: 1.0.2
       core-js: 3.33.0
       dotenv: 8.6.0
@@ -26682,7 +26681,7 @@ packages:
     resolution: {integrity: sha512-Sz2Lkdxz6F2Pgnpi9U5Ng/WdWAUZxmHrNPoVlm3aAemxoy2Qy7LGjQg4uf8qKelDAUW94F4np3iH2YPf2qefcQ==}
     engines: {node: '>=10'}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
     dev: true
 
   /posix-character-classes@0.1.1:
@@ -27837,7 +27836,7 @@ packages:
     dependencies:
       '@babel/core': 7.23.7
       '@babel/generator': 7.23.3
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       ast-types: 0.14.2
       commander: 2.20.3
       doctrine: 3.0.0
@@ -27941,7 +27940,7 @@ packages:
     peerDependencies:
       react: ^16.8.4 || ^17.0.0
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       is-dom: 1.1.0
       prop-types: 15.8.1
       react: 16.14.0
@@ -27998,7 +27997,7 @@ packages:
       react: '>0.13.0'
       react-dom: '>0.13.0'
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       get-node-dimensions: 1.2.1
       prop-types: 15.8.1
       react: 16.14.0
@@ -28525,7 +28524,7 @@ packages:
   /regenerator-transform@0.15.2:
     resolution: {integrity: sha512-hfMp2BoF0qOk3uc5V20ALGDS2ddjQaLrdl7xrGXvAIow7qeWRM2VA2HuCHkUKk9slq3VwEwLNK3DFBqDfPGYtg==}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
 
   /regex-not@1.0.2:
     resolution: {integrity: sha512-J6SDjUgDxQj5NusnOtdFxDwN/+HWykR8GELwctJ7mdqhcyy1xEc4SRFHUXvxTp661YaVKAjfRLZ9cCqS6tn32A==}
@@ -30015,7 +30014,7 @@ packages:
   /standardized-audio-context@25.3.57:
     resolution: {integrity: sha512-MHmZjXXc3zRRuh4Ro8Iah334n+A8Y9EeLeECzElBzpNQYLCwmmKRXPB88WazwkGhux85fU8+gkAbyELJ0ehiCg==}
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.23.9
       automation-events: 6.0.10
       tslib: 2.6.2
     dev: false
