@@ -2,15 +2,17 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 test.describe('The update-email page when the user is not signed in', () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
+
   test.beforeEach(async ({ page }) => {
     await page.goto('/update-email');
   });
 
-  test('should redirect to the signin page', async ({ page }) => {
+  test('should redirect to the learn page', async ({ page }) => {
     await page.waitForURL('**/learn');
 
     await expect(
-      page.getByRole('heading', { name: 'Welcome back, Development User' })
+      page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
     ).toBeVisible();
   });
 });
