@@ -60,7 +60,7 @@
     "@stripe/react-stripe-js": "1.16.5",
     "@stripe/stripe-js": "1.54.2",
     "@testing-library/jest-dom": "5.17.0",
-    "algoliasearch": "4.20.0",
+    "algoliasearch": "4.22.1",
     "assert": "2.0.0",
     "babel-loader": "8.3.0",
     "babel-plugin-preval": "5.1.0",
