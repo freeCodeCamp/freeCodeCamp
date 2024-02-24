@@ -4,7 +4,7 @@
     "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
   },
   "dependencies": {
-    "@aws-sdk/client-ses": "3.449.0",
+    "@aws-sdk/client-ses": "3.521.0",
     "@fastify/cookie": "9.1.0",
     "@fastify/csrf-protection": "6.4.1",
     "@fastify/express": "^2.3.0",
