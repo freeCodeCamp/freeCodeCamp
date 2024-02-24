@@ -181,8 +181,8 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0
       '@fastify/session':
-        specifier: 10.5.0
-        version: 10.5.0
+        specifier: 10.7.0
+        version: 10.7.0
       '@fastify/swagger':
         specifier: 8.12.0
         version: 8.12.0
@@ -6941,8 +6941,8 @@ packages:
       mime: 3.0.0
     dev: false
 
-  /@fastify/session@10.5.0:
-    resolution: {integrity: sha512-2oXXSQ4Yy6pzLgbBoooblgHJ55DYqyxSLoKMq2CGmDZI2WPMrOIvN1bJbllWuUuCe7luPdQju3RJTRvNMW+j/g==}
+  /@fastify/session@10.7.0:
+    resolution: {integrity: sha512-ECA75gnyaxcyIukgyO2NGT3XdbLReNl/pTKrrkRfDc6pVqNtdptwwfx9KXrIMOfsO4B3m84eF3wZ9GgnebiZ4w==}
     dependencies:
       fastify-plugin: 4.5.1
       safe-stable-stringify: 2.4.3
