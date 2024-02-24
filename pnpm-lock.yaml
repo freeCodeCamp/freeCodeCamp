@@ -1550,8 +1550,8 @@ importers:
         specifier: 7.0.2
         version: 7.0.2(rollup@2.79.1)
       tailwindcss:
-        specifier: 3.3.5
-        version: 3.3.5(ts-node@10.9.2)
+        specifier: 3.4.1
+        version: 3.4.1(ts-node@10.9.2)
 
 packages:
 
@@ -30270,8 +30270,8 @@ packages:
       string-width: 4.2.3
       strip-ansi: 6.0.1
 
-  /tailwindcss@3.3.5(ts-node@10.9.2):
-    resolution: {integrity: sha512-5SEZU4J7pxZgSkv7FP1zY8i2TIAOooNZ1e/OGtxIEv6GltpoiXUqWvLy89+a10qYTB1N5Ifkuw9lqQkN9sscvA==}
+  /tailwindcss@3.4.1(ts-node@10.9.2):
+    resolution: {integrity: sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
