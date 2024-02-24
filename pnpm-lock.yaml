@@ -190,8 +190,8 @@ importers:
         specifier: 1.10.2
         version: 1.10.2
       '@fastify/type-provider-typebox':
-        specifier: 3.5.0
-        version: 3.5.0(@sinclair/typebox@0.31.17)
+        specifier: 3.6.0
+        version: 3.6.0(@sinclair/typebox@0.31.17)
       '@immobiliarelabs/fastify-sentry':
         specifier: 7.1.1
         version: 7.1.1
@@ -6981,10 +6981,10 @@ packages:
       - supports-color
     dev: false
 
-  /@fastify/type-provider-typebox@3.5.0(@sinclair/typebox@0.31.17):
-    resolution: {integrity: sha512-f48uGzvLflE/y4pvXOS8qjAC+mZmlqev9CPHnB8NDsBSL4EbeydO61IgPuzOkeNlAYeRP9Y56UOKj1XWFibgMw==}
+  /@fastify/type-provider-typebox@3.6.0(@sinclair/typebox@0.31.17):
+    resolution: {integrity: sha512-HTeOLvirfGg0u1KGao3iXn5rZpYNqlrOmyDnXSXAbWVPa+mDQTTBNs/x5uZzOB6vFAqr0Xcf7x1lxOamNSYKjw==}
     peerDependencies:
-      '@sinclair/typebox': '>=0.26 <=0.31'
+      '@sinclair/typebox': '>=0.26 <=0.32'
     dependencies:
       '@sinclair/typebox': 0.31.17
     dev: false
