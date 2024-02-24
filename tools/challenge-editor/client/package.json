@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@vitejs/plugin-react": "4.1.1",
+    "@vitejs/plugin-react": "4.2.1",
     "codemirror": "5.65.16",
     "react": "16.14.0",
     "react-dom": "16.14.0",
