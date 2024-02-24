@@ -160,8 +160,8 @@ importers:
         specifier: 5.2.2
         version: 5.2.2
       webpack-bundle-analyzer:
-        specifier: 4.9.1
-        version: 4.9.1
+        specifier: 4.10.1
+        version: 4.10.1
       yargs:
         specifier: 17.7.2
         version: 17.7.2
@@ -950,7 +950,7 @@ importers:
         version: 5.90.3(webpack-cli@4.10.0)
       webpack-cli:
         specifier: 4.10.0
-        version: 4.10.0(webpack-bundle-analyzer@4.9.1)(webpack@5.90.3)
+        version: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
 
   curriculum:
     devDependencies:
@@ -1356,7 +1356,7 @@ importers:
         version: 5.90.3(webpack-cli@4.10.0)
       webpack-cli:
         specifier: 4.10.0
-        version: 4.10.0(webpack-bundle-analyzer@4.9.1)(webpack@5.90.3)
+        version: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
 
   tools/client-plugins/gatsby-remark-node-identity: {}
 
@@ -11795,7 +11795,7 @@ packages:
       webpack-cli: 4.x.x
     dependencies:
       webpack: 5.90.3(webpack-cli@4.10.0)
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.9.1)(webpack@5.90.3)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
 
   /@webpack-cli/info@1.5.0(webpack-cli@4.10.0):
     resolution: {integrity: sha512-e8tSXZpw2hPl2uMJY6fsMswaok5FdlGNRTktvFk2sD8RjH0hE2+XistawJx1vmKteh4NmGmNUrp+Tb2w+udPcQ==}
@@ -11803,7 +11803,7 @@ packages:
       webpack-cli: 4.x.x
     dependencies:
       envinfo: 7.10.0
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.9.1)(webpack@5.90.3)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
 
   /@webpack-cli/serve@1.7.0(webpack-cli@4.10.0):
     resolution: {integrity: sha512-oxnCNGj88fL+xzV+dacXs44HcDwf1ovs3AuEzvP7mqXw7fQntqIhQ1BRmynh4qEKQSSSRSWVyXRjmTbZIX9V2Q==}
@@ -11814,7 +11814,7 @@ packages:
       webpack-dev-server:
         optional: true
     dependencies:
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.9.1)(webpack@5.90.3)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
 
   /@xtuc/ieee754@1.2.0:
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
@@ -15938,7 +15938,6 @@ packages:
 
   /debounce@1.2.1:
     resolution: {integrity: sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==}
-    dev: true
 
   /debug@2.2.0:
     resolution: {integrity: sha512-X0rGvJcskG1c3TgSCPqHJ0XJgwlcvOC7elJ5Y0hYuKBZoVqWpAMfLOeIh2UI/DCQ5ruodIjvsugZtjUYUw2pUw==}
@@ -20411,7 +20410,6 @@ packages:
 
   /html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
-    dev: true
 
   /html-minifier-terser@5.1.1:
     resolution: {integrity: sha512-ZPr5MNObqnV/T9akshPKbVgyOqLmy+Bxo7juKCfTfnjNniTAMdy4hz21YQqoofMBJD2kdREaqPPdThoR78Tgxg==}
@@ -22963,9 +22961,6 @@ packages:
     resolution: {integrity: sha512-W3Bx6mdkRTGtlJISOvVD/lbqjTlPPUDTMnlXZFnVwi9NKJ6tiAk6LVdlhZMm17VZisqhKcgzpO5Wz91PCt5b0w==}
     dev: false
 
-  /lodash.invokemap@4.6.0:
-    resolution: {integrity: sha512-CfkycNtMqgUlfjfdh2BhKO/ZXrP8ePOX5lEU/g0R3ItJcnuxWDwokMGKx1hWcfOikmyOVx6X9IwWnDGlgKl61w==}
-
   /lodash.isboolean@3.0.3:
     resolution: {integrity: sha512-Bz5mupy2SVbPHURB98VAcw+aHh4vRV5IPNhILUCsOzRmsTmSQ17jIuqopAentWoehktxGd9e/hbIXq980/1QJg==}
     dev: false
@@ -23014,9 +23009,6 @@ packages:
   /lodash.once@4.1.1:
     resolution: {integrity: sha512-Sb487aTOCr9drQVL8pIxOzVhafOjZN9UU54hiN8PU3uAiSV7lx1yYNpbNmex2PK6dSJoNTSJUUswT651yww3Mg==}
 
-  /lodash.pullall@4.2.0:
-    resolution: {integrity: sha512-VhqxBKH0ZxPpLhiu68YD1KnHmbhQJQctcipvmFnqIBDYzcIHzf3Zpu0tpeOKtR4x76p9yohc506eGdOjTmyIBg==}
-
   /lodash.throttle@4.1.1:
     resolution: {integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==}
     dev: false
@@ -23026,9 +23018,6 @@ packages:
 
   /lodash.uniq@4.5.0:
     resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}
-
-  /lodash.uniqby@4.7.0:
-    resolution: {integrity: sha512-e/zcLx6CSbmaEgFHCA7BnoQKyCtKMxnuWrJygbwPs/AIn+IMKl66L8/s+wBUn5LRw2pZx3bUHibiV1b6aTWIww==}
 
   /lodash.without@4.4.0:
     resolution: {integrity: sha512-M3MefBwfDhgKgINVuBJCO1YR3+gf6s9HNJsIiZ/Ru77Ws6uTb9eBuvrkpzO+9iLoAaRodGuq7tyrPCx+74QYGQ==}
@@ -32017,35 +32006,8 @@ packages:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
-    dev: true
 
-  /webpack-bundle-analyzer@4.9.1:
-    resolution: {integrity: sha512-jnd6EoYrf9yMxCyYDPj8eutJvtjQNp8PHmni/e/ulydHBWhT5J3menXt3HEkScsu9YqMAcG4CfFjs3rj5pVU1w==}
-    engines: {node: '>= 10.13.0'}
-    hasBin: true
-    dependencies:
-      '@discoveryjs/json-ext': 0.5.7
-      acorn: 8.10.0
-      acorn-walk: 8.2.0
-      commander: 7.2.0
-      escape-string-regexp: 4.0.0
-      gzip-size: 6.0.0
-      is-plain-object: 5.0.0
-      lodash.debounce: 4.0.8
-      lodash.escape: 4.0.1
-      lodash.flatten: 4.4.0
-      lodash.invokemap: 4.6.0
-      lodash.pullall: 4.2.0
-      lodash.uniqby: 4.7.0
-      opener: 1.5.2
-      picocolors: 1.0.0
-      sirv: 2.0.3
-      ws: 7.5.9
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
-
-  /webpack-cli@4.10.0(webpack-bundle-analyzer@4.9.1)(webpack@5.90.3):
+  /webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3):
     resolution: {integrity: sha512-NLhDfH/h4O6UOy+0LSso42xvYypClINuMNBVVzX4vX98TmTaTUxwRbXdhucbFMd2qLaCTcLq/PdYrvi8onw90w==}
     engines: {node: '>=10.13.0'}
     hasBin: true
@@ -32077,7 +32039,7 @@ packages:
       interpret: 2.2.0
       rechoir: 0.7.1
       webpack: 5.90.3(webpack-cli@4.10.0)
-      webpack-bundle-analyzer: 4.9.1
+      webpack-bundle-analyzer: 4.10.1
       webpack-merge: 5.9.0
 
   /webpack-dev-middleware@3.7.3(webpack@4.47.0):
@@ -32245,7 +32207,7 @@ packages:
       tapable: 2.2.1
       terser-webpack-plugin: 5.3.10(webpack@5.90.3)
       watchpack: 2.4.0
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.9.1)(webpack@5.90.3)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
       webpack-sources: 3.2.3
     transitivePeerDependencies:
       - '@swc/core'
