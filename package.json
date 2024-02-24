@@ -150,7 +150,7 @@
     "store": "2.0.12",
     "ts-node": "10.9.2",
     "typescript": "5.2.2",
-    "webpack-bundle-analyzer": "4.9.1",
+    "webpack-bundle-analyzer": "4.10.1",
     "yargs": "17.7.2"
   }
 }
