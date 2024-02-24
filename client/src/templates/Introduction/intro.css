@@ -125,6 +125,7 @@ button.map-title {
 }
 
 .map-challenge-wrap > a,
+.map-dialogue-wrap > a,
 .map-project-wrap > a {
   display: flex;
   gap: 7px;
@@ -229,26 +230,13 @@ button.map-title {
 .map-challenge-title {
   display: flex;
   align-items: center;
-  width: 100%;
   font-size: 1.13rem;
 }
 
 .map-challenge-title a {
-  width: 100%;
   padding: 10px 15px;
+  width: 100%;
   align-items: center;
-}
-
-.map-challenges-grid .map-challenge-title a {
-  width: 3.4rem;
-  height: 3.4rem;
-  min-width: 24px;
-  min-height: 24px;
-  padding: 0;
-}
-
-.map-challenges-grid .map-challenge-title a:focus {
-  outline-offset: 1px;
 }
 
 .map-challenges-grid {
@@ -258,17 +246,38 @@ button.map-title {
   justify-content: space-between;
   margin: 0 auto 18px;
   width: calc(100% - 50px);
+  list-style: none;
 }
-.map-challenge-title-grid {
-  flex: 0 1 60px;
+
+.map-challenges-grid .map-challenge-title a:focus {
+  outline-offset: 1px;
 }
-.map-challenges-grid .map-project-wrap {
-  flex: 1 1 100px;
-}
-.map-challenge-title-grid a.map-grid-item {
+
+.map-challenges-grid .map-challenge-wrap {
   margin: 6px 0;
+  max-width: 3.4rem;
+}
+
+.map-challenge-wrap a.map-grid-item {
   justify-content: center;
+  align-items: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  min-width: 24px;
+  min-height: 24px;
   border: 1px dashed var(--background-quaternary);
+}
+
+.map-dialogue-wrap {
+  grid-column: 1 / -1;
+  margin: 0 auto 6px;
+  width: 100%;
+}
+
+.map-dialogue-wrap a {
+  align-items: center;
+  min-height: 50px;
+  padding: 0;
 }
 
 .block-description {
