@@ -54,7 +54,7 @@
     "@freecodecamp/strip-comments": "3.0.1",
     "@freecodecamp/ui": "workspace:*",
     "@growthbook/growthbook-react": "0.20.0",
-    "@loadable/component": "5.15.3",
+    "@loadable/component": "5.16.3",
     "@reach/router": "1.3.4",
     "@redux-saga/core": "^1.2.2",
     "@stripe/react-stripe-js": "1.16.5",
