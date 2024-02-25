@@ -1,9 +1,9 @@
 ---
-id: 65d5cebba7a44042a1815053
+id: 65d9633ff2cc710bd3e18c03
 videoId: nLDychdBwUg
-title: "Dialogue 2: Talking about Anna"
+title: "Dialogue 5: Brian And Sophie Talk about Responsibilities"
 challengeType: 21
-dashedName: dialogue-2-talking-about-anna
+dashedName: dialogue-5-brian-and-sophie-talk-about-responsibilities
 ---
 
 # --description--
