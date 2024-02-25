@@ -21,7 +21,7 @@
     "dotenv": "16.4.5",
     "express-rate-limit": "^6.7.0",
     "fast-uri": "2.3.0",
-    "fastify": "4.24.3",
+    "fastify": "4.26.1",
     "fastify-plugin": "4.5.1",
     "joi": "17.12.2",
     "jsonwebtoken": "9.0.2",
