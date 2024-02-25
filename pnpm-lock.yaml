@@ -536,6 +536,9 @@ importers:
       '@reach/router':
         specifier: 1.3.4
         version: 1.3.4(react-dom@16.14.0)(react@16.14.0)
+      '@redux-devtools/extension':
+        specifier: 3.0.0
+        version: 3.0.0(redux@4.2.1)
       '@redux-saga/core':
         specifier: ^1.2.2
         version: 1.2.2
@@ -734,9 +737,6 @@ importers:
       redux-actions:
         specifier: 2.6.5
         version: 2.6.5
-      redux-devtools-extension:
-        specifier: 2.13.9
-        version: 2.13.9(redux@4.2.1)
       redux-observable:
         specifier: 1.2.0
         version: 1.2.0(redux@4.2.1)(rxjs@6.6.7)
@@ -8204,6 +8204,14 @@ packages:
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
       react-lifecycles-compat: 3.0.4
+    dev: false
+
+  /@redux-devtools/extension@3.0.0(redux@4.2.1):
+    resolution: {integrity: sha512-oWFp1zIiqn8H/AbFw+pJnM3b2YKdRSzB+NycomEuMgxYPcn46iiIN/RJ4TucXfI8CR8QRbWpiBrAXSwY6GC92A==}
+    peerDependencies:
+      redux: ^3.1.0 || ^4.0.0
+    dependencies:
+      redux: 4.2.1
     dev: false
 
   /@redux-saga/core@1.2.2:
@@ -28419,15 +28427,6 @@ packages:
       loose-envify: 1.4.0
       reduce-reducers: 0.4.3
       to-camel-case: 1.0.0
-    dev: false
-
-  /redux-devtools-extension@2.13.9(redux@4.2.1):
-    resolution: {integrity: sha512-cNJ8Q/EtjhQaZ71c8I9+BPySIBVEKssbPpskBfsXqb8HJ002A3KRVHfeRzwRo6mGPqsm7XuHTqNSNeS1Khig0A==}
-    deprecated: Package moved to @redux-devtools/extension.
-    peerDependencies:
-      redux: ^3.1.0 || ^4.0.0
-    dependencies:
-      redux: 4.2.1
     dev: false
 
   /redux-mock-store@1.5.4:
