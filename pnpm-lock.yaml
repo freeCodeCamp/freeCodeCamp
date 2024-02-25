@@ -803,7 +803,7 @@ importers:
         version: 4.3.12
       '@types/enzyme':
         specifier: ^3.10.12
-        version: 3.10.14
+        version: 3.10.18
       '@types/enzyme-adapter-react-16':
         specifier: 1.0.9
         version: 1.0.9
@@ -1299,7 +1299,7 @@ importers:
         version: 8.0.1(webpack-cli@4.10.0)
       '@types/enzyme':
         specifier: 3.10.16
-        version: 3.10.16
+        version: 3.10.18
       '@types/enzyme-adapter-react-16':
         specifier: 1.0.9
         version: 1.0.9
@@ -11322,8 +11322,8 @@ packages:
     resolution: {integrity: sha512-zNKDHG/1yxm8Il6uCCVsm+dRdEsJlFoDu73X17y09bId6UwoYww+vFBsAcRzl8knM1sab3Dp1VRikFQwDOtDDw==}
     dev: true
 
-  /@types/cheerio@0.22.32:
-    resolution: {integrity: sha512-4RrpCp5ufWTLb6/1RCOjazRhUM6DTD79l763det29n8kLmPB7XeN46cxlUf2GsSF+0g6CbWT5nYl8C/Gs15bdg==}
+  /@types/cheerio@0.22.35:
+    resolution: {integrity: sha512-yD57BchKRvTV+JD53UZ6PD8KWY5g5rvvMLRnZR3EQBCZXiDT/HR+pKpMzFGlWNhFrXlo7VPZXtKvIEwZkAWOIA==}
     dependencies:
       '@types/node': 20.11.20
     dev: true
@@ -11384,20 +11384,13 @@ packages:
   /@types/enzyme-adapter-react-16@1.0.9:
     resolution: {integrity: sha512-z24MMxGtUL8HhXdye3tWzjp+19QTsABqLaX2oOZpxMPHRJgLfahQmOeTTrEBQd9ogW20+UmPBXD9j+XOasFHvw==}
     dependencies:
-      '@types/enzyme': 3.10.16
+      '@types/enzyme': 3.10.18
     dev: true
 
-  /@types/enzyme@3.10.14:
-    resolution: {integrity: sha512-JeTG2MNUX1bH2DqccwUe3SuPoLu+kUz5UgR3Tvl9nBdfNj7rBZscytctSjEatd5Ul9GXXGKaQBaxODIgJYVRqA==}
+  /@types/enzyme@3.10.18:
+    resolution: {integrity: sha512-RaO/TyyHZvXkpzinbMTZmd/S5biU4zxkvDsn22ujC29t9FMSzq8tnn8f2MxQ2P8GVhFRG5jTAL05DXKyTtpEQQ==}
     dependencies:
-      '@types/cheerio': 0.22.32
-      '@types/react': 16.14.56
-    dev: true
-
-  /@types/enzyme@3.10.16:
-    resolution: {integrity: sha512-17uMdJjSKjvdn/MhO/G2lRNPZGvJxFpvgONrsRoS1+khtJ6UcnCwC9v3gk2UqPyAkMZb6a1VYxScc/vOgkDl9w==}
-    dependencies:
-      '@types/cheerio': 0.22.32
+      '@types/cheerio': 0.22.35
       '@types/react': 16.14.56
     dev: true
 
@@ -16788,6 +16781,10 @@ packages:
   /csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
 
+  /csstype@3.1.3:
+    resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
+    dev: false
+
   /csurf@1.11.0:
     resolution: {integrity: sha512-UCtehyEExKTxgiu8UHdGvHj4tnpE/Qctue03Giq5gPgMQ9cg/ciod5blZQ5a4uCEenNQjxyGuzygLdKUmee/bQ==}
     engines: {node: '>= 0.8.0'}
@@ -17517,7 +17514,7 @@ packages:
     resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==}
     dependencies:
       '@babel/runtime': 7.23.9
-      csstype: 3.1.2
+      csstype: 3.1.3
     dev: false
 
   /dom-mutator@0.6.0:
