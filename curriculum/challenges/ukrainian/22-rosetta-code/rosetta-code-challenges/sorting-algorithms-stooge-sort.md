@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8012
-title: Алгоритми сортування/Сортування по частинах
+title: 'Алгоритми сортування: недолуге сортування'
 challengeType: 1
 forumTopicId: 302318
 dashedName: sorting-algorithmsstooge-sort
@@ -8,9 +8,9 @@ dashedName: sorting-algorithmsstooge-sort
 
 # --description--
 
-Write a function to perform Stooge Sort on an array of integers. The function should return a sorted array.
+Напишіть функцію, щоб виконати недолуге сортування на масиві цілих чисел. Функція має повернути відсортований масив.
 
-Алгоритм сортування по частинах виглядає наступним чином:
+Алгоритм недолугого сортування:
 
 <pre><b>algorithm</b> stoogesort(<b>array</b> L, i = 0, j = <b>length</b>(L)-1)
   <b>if</b> L[j] &#x3C; L[i] <b>then</b>

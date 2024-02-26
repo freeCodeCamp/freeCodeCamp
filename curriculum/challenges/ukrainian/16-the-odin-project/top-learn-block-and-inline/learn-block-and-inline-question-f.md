@@ -1,35 +1,35 @@
 ---
 id: 65704480e7b02272663824e4
-title: Learn Block and Inline Question F
+title: Блокові та рядкові елементи. Запитання F
 challengeType: 15
 dashedName: learn-block-and-inline-question-f
 ---
 
 # --description--
 
-The concept of “Normal flow” is implied in the box-model resources, but isn’t laid out very specifically. Read <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow" target="_blank">Normal Flow</a> from MDN to make sure you understand how elements lay themselves out by default.
+Поняття «нормального потоку» (англ. Normal flow) використовується в матеріалах блокової моделі, однак не викладене конкретно. Див. <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow" target="_blank">Normal Flow</a> від MDN, щоб підтвердити своє розуміння того, як елементи розташовуються за замовчуванням.
 
 # --question--
 
 ## --text--
 
-What is the "Normal flow" in CSS layouts?
+Що таке «нормальний потік» в макетах CSS?
 
 ## --answers--
 
-Normal flow refers to the process of animating elements in a CSS layout.
+Нормальний потік стосується процесу анімації елементів на макеті CSS.
 
 ---
 
-Normal flow is a CSS property used to control the visibility of elements in a layout.
+Нормальний потік — це властивість CSS, яку використовують для контролю видимості елементів на макеті.
 
 ---
 
-Normal flow is a CSS rule that defines the order of media queries for responsive design.
+Нормальний потік — це правило CSS, яке визначає порядок медіазапитів для адаптивного дизайну.
 
 ---
 
-Normal flow in CSS layouts refers to the default positioning of elements on a webpage.
+Нормальний потік в макетах CSS стосується розташування елементів на вебсторінці за замовчуванням.
 
 ## --video-solution--
 

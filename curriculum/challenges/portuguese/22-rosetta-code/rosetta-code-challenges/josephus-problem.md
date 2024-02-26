@@ -8,7 +8,7 @@ dashedName: josephus-problem
 
 # --description--
 
-Josephus problem is a math puzzle with a grim description: $n$ prisoners are standing on a circle, sequentially numbered from $0$ to $n-1$.
+O problema de Josephus é um desafio de matemática com uma descrição macabra: $n$ prisoneiros estão de pé, em círculo, sequencialmente numerados de $0$ a $n-1$.
 
 Um carrasco caminha pelo círculo, começando pelo prisioneiro $0$, removendo cada $k$-ésimo prisioneiro e matando-o.
 

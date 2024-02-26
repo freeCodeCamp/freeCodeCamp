@@ -8,7 +8,7 @@ dashedName: understand-bcrypt-hashes
 
 # --description--
 
-在下面的挑战中，你将启动一个新的项目，这个项目与之前的项目不同。 你可以在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上找到新的启动项目，或者从 <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆它。
+在下面的挑战中，你将启动一个新的项目，这个项目与之前的项目不同。 You can find the new starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or clone it from <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 BCrypt 哈希值是非常安全的。 哈希值基本上是原始数据的指纹，总是唯一的。 这是通过将原始数据输入一个算法并返回一个固定长度的结果来实现的。 为了使这一过程更加复杂和安全，你还可以向你的哈希值 *加盐*。 对你的哈希加盐处理包含了在哈希过程之前向原始数据添加随机数据，这使得破解哈希更加困难。
 

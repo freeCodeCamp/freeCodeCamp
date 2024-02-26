@@ -1,6 +1,6 @@
 ---
 id: 59e0a8df964e4540d5abe599
-title: 执行脑 ****
+title: Execute Brain****
 challengeType: 1
 forumTopicId: 302261
 dashedName: execute-brain
@@ -12,26 +12,26 @@ Write a function to implement a Brain\*\*\*\* interpreter. The function will tak
 
 RCBF is a set of <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> compilers and interpreters written for Rosetta Code in a variety of languages.
 
-以下是每个 RCBF 版本的链接。
+Below are links to each of the versions of RCBF.
 
-一个实现只需要正确地实现以下指令：
+An implementation need only properly implement the following instructions:
 
-| Command                   | 描述                                             |
-| ------------------------- | ---------------------------------------------- |
-| <code>></code> | Move the pointer to the right                  |
-| <code>&lt;</code> | 向左移动指针                                         |
-| <code>+</code> | 递增指针下的存储单元                                     |
-| <code>-</code> | 递减指针下的存储单元                                     |
-| <code>.</code> | 输出指针所在存储单元所代表的字符                               |
-| <code>,</code> | 输入一个字符并将其存储在指针所在的存储单元中                         |
-| <code>\[</code> | 如果指针下的存储单元为 0，则跳过匹配的 <code>]</code>  |
-| <code>]</code> | 如果指针下的存储单元非 0，则跳回匹配的 <code>\[</code> |
+| Command           | Description                                                                        |
+| ----------------- | ---------------------------------------------------------------------------------- |
+| <code>></code>    | Move the pointer to the right                                                      |
+| <code>&lt;</code> | Move the pointer to the left                                                       |
+| <code>+</code>    | Increment the memory cell under the pointer                                        |
+| <code>-</code>    | Decrement the memory cell under the pointer                                        |
+| <code>.</code>    | Output the character signified by the cell at the pointer                          |
+| <code>,</code>    | Input a character and store it in the cell at the pointer                          |
+| <code>\[</code>   | Jump past the matching <code>]</code> if the cell under the pointer is 0           |
+| <code>]</code>    | Jump back to the matching <code>\[</code> if the cell under the pointer is nonzero |
 
-允许任何单元格大小，EOF (*E*nd-*O*-*F*ile) 支持是可选的，就像你有有界或无界内存一样。
+Any cell size is allowed, EOF (*E*nd-*O*-*F*ile) support is optional, as is whether you have bounded or unbounded memory.
 
 # --hints--
 
-`brain(bye)` 应该返回一个字符串
+`brain(bye)` should return a string
 
 ```js
 assert(typeof brain(bye) === 'string');
@@ -43,19 +43,19 @@ assert(typeof brain(bye) === 'string');
 assert.equal(brain('++++++[>++++++++++<-]>+++++.'), 'A');
 ```
 
-`brain(bye)` 应该返回 `Goodbye, World!\r\n`
+`brain(bye)` should return `Goodbye, World!\r\n`
 
 ```js
 assert.equal(brain(bye), 'Goodbye, World!\r\n');
 ```
 
-`brain(hello)` 应该返回 `Hello World!\n`
+`brain(hello)` should return `Hello World!\n`
 
 ```js
 assert.equal(brain(hello), 'Hello World!\n');
 ```
 
-`brain(fib)` 应该返回 `1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89`
+`brain(fib)` should return `1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89`
 
 ```js
 assert.equal(brain(fib), '1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89');

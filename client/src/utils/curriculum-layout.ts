@@ -6,7 +6,8 @@ import { SuperBlocks } from '../../../shared/config/superblocks';
 const gridBasedSuperBlocks = [
   SuperBlocks.RespWebDesignNew,
   SuperBlocks.JsAlgoDataStructNew,
-  SuperBlocks.SciCompPy
+  SuperBlocks.SciCompPy,
+  SuperBlocks.A2English
 ];
 
 export const isGridBased = (

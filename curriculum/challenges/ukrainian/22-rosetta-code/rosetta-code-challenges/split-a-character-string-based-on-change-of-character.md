@@ -8,13 +8,13 @@ dashedName: split-a-character-string-based-on-change-of-character
 
 # --description--
 
-Split a (character) string into comma (plus a blank) delimited strings based on a change of character (left to right). Blanks should be treated as any other character (except they are problematic to display clearly). The same applies to commas. For instance, the string:
+Розділіть рядок символів на рядки, розділені комами та пробілом, на основі зміни символів (зліва направо). Пробіли потрібно розглядати як будь-які інші символи (за винятком ситуацій, коли їх важко відтворити чітко). Те саме стосується й ком. Наприклад, рядок:
 
 <pre>
 "gHHH5YY++///\\"
 </pre>
 
-повинен розділитися як:
+потрібно розділити як:
 
 <pre>
 ["g", "HHH", "5", "YY", "++", "///", "\\" ];
