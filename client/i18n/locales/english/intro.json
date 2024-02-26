@@ -347,7 +347,7 @@
         "title": "Learn Basic DOM Manipulation by Building a Role Playing Game",
         "intro": [
           "The Document Object Model(DOM) is a programming interface that allows you to create, change, or remove elements from the HTML document.",
-          "In this practice project, you'll learn about DOM manipulation and fundamental JavaScript concepts by coding your own Role Playing Game. You'll learn how to work with the <code>document.querySelector()</code> method, strings, objects, functions, loops, <code>if/else</code> statements, and more."
+          "In this practice project, you'll learn about DOM manipulation and fundamental JavaScript concepts by coding your own Role Playing Game. You'll learn how to work with strings, objects, functions, loops, <code>if/else</code> statements, the <code>document.querySelector()</code> method and more."
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
