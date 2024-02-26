@@ -812,7 +812,7 @@ importers:
         version: 29.5.12
       '@types/jquery':
         specifier: ^3.5.16
-        version: 3.5.20
+        version: 3.5.29
       '@types/js-yaml':
         specifier: 4.0.5
         version: 4.0.5
@@ -11569,16 +11569,10 @@ packages:
       expect: 29.7.0
       pretty-format: 29.7.0
 
-  /@types/jquery@3.5.20:
-    resolution: {integrity: sha512-UI+EGhgYD4LdSZ8gaiziFqXYIIB38VQSDsnAs8jL/div7FGrzrShx4HKCykVzk3tPfiIlusdNP9Wi3G60LCF2Q==}
-    dependencies:
-      '@types/sizzle': 2.3.4
-    dev: true
-
   /@types/jquery@3.5.29:
     resolution: {integrity: sha512-oXQQC9X9MOPRrMhPHHOsXqeQDnWeCDT3PelUIg/Oy8FAbzSZtFHRjc7IpbfFVmpLtJ+UOoywpRsuO5Jxjybyeg==}
     dependencies:
-      '@types/sizzle': 2.3.4
+      '@types/sizzle': 2.3.8
     dev: true
 
   /@types/js-yaml@4.0.5:
@@ -11892,6 +11886,10 @@ packages:
 
   /@types/sizzle@2.3.4:
     resolution: {integrity: sha512-jA2llq2zNkg8HrALI7DtWzhALcVH0l7i89yhY3iBdOz6cBPeACoFq+fkQrjHA39t1hnSFOboZ7A/AY5MMZSlag==}
+    dev: true
+
+  /@types/sizzle@2.3.8:
+    resolution: {integrity: sha512-0vWLNK2D5MT9dg0iOo8GlKguPAU02QjmZitPEsXRuJXU/OGIOt9vT9Fc26wtYuavLxtO45v9PGleoL9Z0k1LHg==}
     dev: true
 
   /@types/source-list-map@0.1.3:
