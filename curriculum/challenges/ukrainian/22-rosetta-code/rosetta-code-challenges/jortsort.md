@@ -8,7 +8,7 @@ dashedName: jortsort
 
 # --description--
 
-jortSort is a sorting toolset that makes the user do the work and guarantees efficiency because you don't have to sort ever again. It was originally presented by Jenn "Moneydollars" Schiffer at the prestigious JSConf2014.
+jortSort — це набір інструментів для сортування, за допомогою яких користувач виконує роботу, і гарантує ефективність, оскільки більше не доведеться сортувати. Вперше цей набір був представлений Дженн Шиффер на престижній конференції JSConf2014.
 
 jortSort має бути функцією, яка приймає масив порівнюваних об’єктів як аргумент. Потім вона сортує масив у порядку зростання та порівнює відсортований масив з початковим масивом. Якщо масиви збігаються (тобто початковий масив вже був відсортований), функція повертає true. Якщо масиви не збігаються (тобто вихідний масив не був відсортований), функція повертає false.
 
@@ -20,7 +20,7 @@ jortSort має бути функцією, яка приймає масив по
 assert(typeof jortsort == 'function');
 ```
 
-`jortsort([1,2,3,4,5])` має повернути boolean.
+`jortsort([1,2,3,4,5])` має повернути булеве значення.
 
 ```js
 assert(typeof jortsort([1, 2, 3, 4, 5]) == 'boolean');

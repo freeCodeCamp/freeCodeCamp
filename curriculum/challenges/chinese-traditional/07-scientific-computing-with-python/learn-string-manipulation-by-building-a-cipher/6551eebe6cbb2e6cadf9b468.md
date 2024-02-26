@@ -1,6 +1,6 @@
 ---
 id: 6551eebe6cbb2e6cadf9b468
-title: Step 2
+title: 步驟 2
 challengeType: 20
 dashedName: step-2
 ---
@@ -15,7 +15,7 @@ string_2 = 'I am also a string'
 string_3 = 'This is not valid"
 ```
 
-Delete your `number` variable and its value. Then, declare another variable called `text` and assign the string `Hello World` to this variable.
+Delete your `number` variable and its value. Then, declare another variable called `text` and assign the string `'Hello World'` to this variable.
 
 # --hints--
 
@@ -32,7 +32,7 @@ You should declare a variable called `text`. Pay attention to place the variable
 assert.match(code, /^text\s*=/m)
 ```
 
-You should assign the string `Hello World` to your `text` variable. Remember to use either single or double quotes to enclose the string and pay attention to the letter case.
+You should assign the string `'Hello World'` to your `text` variable. Remember to use either single or double quotes to enclose the string and pay attention to the letter case.
 
 ```js
 assert.match(code, /^text\s*=\s*("|')Hello World\1\s*(#.*)?$/m)

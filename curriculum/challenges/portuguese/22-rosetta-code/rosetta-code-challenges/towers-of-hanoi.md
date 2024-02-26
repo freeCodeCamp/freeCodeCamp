@@ -8,7 +8,7 @@ dashedName: towers-of-hanoi
 
 # --description--
 
-Solve the Towers of Hanoi problem. The number of objects will be given as the first parameter, followed by the strings used to identify each stack of objects. Create a nested array containing the list of moves, `["source", "destination"]`.
+Resolva o problema das Torres de Hanói. O número de objetos será dado como o primeiro parâmetro, seguido pelas strings usadas para identificar cada pilha de objetos. Crie um array aninhado contendo a lista de movimentos, `["source", "destination"]`.
 
 Por exemplo, os parâmetros `(4, 'A', 'B', 'C')` resultarão em um array aninhado de movimentos `[['A', 'C'], ['B', 'A']]`, indicando que o primeiro movimento foi mover um objeto da pilha `A` para a `C` e o segundo movimento foi mover um objeto da pilha `B` para a `A`.
 

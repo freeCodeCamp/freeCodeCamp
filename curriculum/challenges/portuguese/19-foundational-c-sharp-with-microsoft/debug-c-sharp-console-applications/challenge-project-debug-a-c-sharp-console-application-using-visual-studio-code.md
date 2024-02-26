@@ -20,7 +20,7 @@ Complete o projeto de desafio <a href="https://learn.microsoft.com/training/modu
 
 ## --text--
 
-Which of the following options can be used to set a breakpoint in Visual Studio Code?
+Qual das seguintes opções pode ser usada para definir um ponto de interrupção no Visual Studio Code?
 
 ## --answers--
 

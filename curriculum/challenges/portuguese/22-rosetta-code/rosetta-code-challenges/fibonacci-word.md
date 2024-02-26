@@ -8,12 +8,12 @@ dashedName: fibonacci-word
 
 # --description--
 
-The Fibonacci Word Sequence may be created in a manner analogous to the Fibonacci Sequence, but it focuses on iterating concatenation.
+A sequência de palavra de Fibonacci pode ser criada de uma maneira análoga à sequência de Fibonacci, mas foca na iteração de concatenações.
 
-<pre>Define  F_Word<sub>1</sub>  as  <strong>1</strong>
-Define  F_Word<sub>2</sub>  as  <strong>0</strong>
-Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<sub>1</sub>   i.e.:  <strong>01</strong>
-Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<sub>n-2</sub>
+<pre>Defina a F_Word<sub>1</sub>  como  <strong>1</strong>
+Defina a  F_Word<sub>2</sub>  como  <strong>0</strong>
+Forme a F_Word<sub>3</sub>  como  F_Word<sub>2</sub>   concatenada com a  F_Word <sub>1</sub>, ou seja:  <strong>01</strong>
+Forme a F_Word<sub>n</sub>  como  F_Word<sub>n-1</sub>  concatenada com a  F_word <sub>n-2</sub>
 </pre>
 
 É necessário o cálculo de entropia neste desafio, <a href="https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy" target="_blank" rel="noopener noreferrer nofollow">como mostrado neste desafio do Rosetta Code</a>

@@ -14,7 +14,7 @@ dashedName: reading-files
 
 ## --text--
 
-What is used to indicate a new line in a string?
+O que é usado para indicar uma nova linha em uma string?
 
 ## --answers--
 

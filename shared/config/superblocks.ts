@@ -169,9 +169,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody
   ],
   [Languages.Japanese]: [
-    SuperBlocks.CollegeAlgebraPy,
-    SuperBlocks.FoundationalCSharp,
-    SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
     SuperBlocks.UpcomingPython,
@@ -233,6 +230,30 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.PythonForEverybody
+  ],
+  [Languages.Korean]: [
+    SuperBlocks.RespWebDesignNew,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy,
+    SuperBlocks.CollegeAlgebraPy,
+    SuperBlocks.FoundationalCSharp,
+    SuperBlocks.CodingInterviewPrep,
+    SuperBlocks.ProjectEuler,
+    SuperBlocks.TheOdinProject,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.UpcomingPython,
+    SuperBlocks.A2English,
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.DataVis,
+    SuperBlocks.RelationalDb,
+    SuperBlocks.ExampleCertification,
+    SuperBlocks.RosettaCode
   ]
 };
 

@@ -1,11 +1,11 @@
+import { Button } from '@freecodecamp/react-bootstrap';
 import {
   HelpBlock,
   Alert,
   FormGroup,
   FormGroupProps,
   FormControl,
-  ControlLabel,
-  Button
+  ControlLabel
 } from '@freecodecamp/ui';
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
@@ -150,23 +150,18 @@ function EmailSettings({
           <p className='large-p text-center'>{t('settings.email.missing')}</p>
         </FullWidthRow>
         <FullWidthRow>
-          <Button
-            block={true}
-            size='large'
-            variant='primary'
-            href='/update-email'
-          >
-            {t('buttons.edit')}
-          </Button>
+          <Link style={{ textDecoration: 'none' }} to='/update-email'>
+            <Button block={true} bsSize='lg' bsStyle='primary'>
+              {t('buttons.edit')}
+            </Button>
+          </Link>
         </FullWidthRow>
       </div>
     );
   }
   return (
     <div className='email-settings'>
-      <SectionHeader dataPlaywrightTestLabel='email-settings-header'>
-        {t('settings.email.heading')}
-      </SectionHeader>
+      <SectionHeader>{t('settings.email.heading')}</SectionHeader>
       {isEmailVerified ? null : (
         <FullWidthRow>
           <HelpBlock>
@@ -197,9 +192,7 @@ function EmailSettings({
         >
           <FormGroup controlId='current-email'>
             <ControlLabel>{t('settings.email.current')}</ControlLabel>
-            <FormControl.Static data-playwright-test-label='current-email'>
-              {currentEmail}
-            </FormControl.Static>
+            <FormControl.Static>{currentEmail}</FormControl.Static>
           </FormGroup>
           <div role='group' aria-label={t('settings.email.heading')}>
             <FormGroup
@@ -211,7 +204,6 @@ function EmailSettings({
               </ControlLabel>
               <FormControl
                 data-cy='email-input'
-                data-playwright-test-label='new-email-input'
                 onChange={createHandleEmailFormChange('newEmail')}
                 type='email'
                 value={newEmail}
@@ -232,7 +224,6 @@ function EmailSettings({
               </ControlLabel>
               <FormControl
                 data-cy='confirm-email'
-                data-playwright-test-label='confirm-email-input'
                 onChange={createHandleEmailFormChange('confirmNewEmail')}
                 type='email'
                 value={confirmNewEmail}
@@ -246,9 +237,8 @@ function EmailSettings({
             </FormGroup>
           </div>
           <BlockSaveButton
-            data-playwright-test-label='save-email-button'
-            disabled={isDisabled}
-            bgSize='large'
+            aria-disabled={isDisabled}
+            bgSize='lg'
             {...(isDisabled && { tabIndex: -1 })}
           >
             {t('buttons.save')}{' '}
@@ -263,9 +253,7 @@ function EmailSettings({
           flag={sendQuincyEmail}
           flagName='sendQuincyEmail'
           offLabel={t('buttons.no-thanks')}
-          dataPlaywrightTestOffLabel='no-thanks-button'
           onLabel={t('buttons.yes-please')}
-          dataPlaywrightTestOnLabel='yes-please-button'
           toggleFlag={() => updateQuincyEmail(!sendQuincyEmail)}
         />
       </FullWidthRow>
