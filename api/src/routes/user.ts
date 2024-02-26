@@ -15,7 +15,7 @@ import {
   getPoints,
   type ProgressTimestamp
 } from '../utils/progress';
-import { encodeUserToken } from '../utils/user-token';
+import { encodeUserToken } from '../utils/tokens';
 import { trimTags } from '../utils/validation';
 import { generateReportEmail } from '../utils/email-templates';
 
