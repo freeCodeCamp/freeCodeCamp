@@ -1141,7 +1141,7 @@ importers:
         version: 8.0.1
       '@types/inquirer':
         specifier: ^8.2.5
-        version: 8.2.5
+        version: 8.2.10
       bson-objectid:
         specifier: 2.0.4
         version: 2.0.4
@@ -1299,7 +1299,7 @@ importers:
         version: 8.0.1(webpack-cli@4.10.0)
       '@types/enzyme':
         specifier: 3.10.16
-        version: 3.10.18
+        version: 3.10.16
       '@types/enzyme-adapter-react-16':
         specifier: 1.0.9
         version: 1.0.9
@@ -11387,6 +11387,13 @@ packages:
       '@types/enzyme': 3.10.18
     dev: true
 
+  /@types/enzyme@3.10.16:
+    resolution: {integrity: sha512-17uMdJjSKjvdn/MhO/G2lRNPZGvJxFpvgONrsRoS1+khtJ6UcnCwC9v3gk2UqPyAkMZb6a1VYxScc/vOgkDl9w==}
+    dependencies:
+      '@types/cheerio': 0.22.35
+      '@types/react': 16.14.56
+    dev: true
+
   /@types/enzyme@3.10.18:
     resolution: {integrity: sha512-RaO/TyyHZvXkpzinbMTZmd/S5biU4zxkvDsn22ujC29t9FMSzq8tnn8f2MxQ2P8GVhFRG5jTAL05DXKyTtpEQQ==}
     dependencies:
@@ -11526,10 +11533,11 @@ packages:
     dependencies:
       '@types/node': 20.11.20
 
-  /@types/inquirer@8.2.5:
-    resolution: {integrity: sha512-QXlzybid60YtAwfgG3cpykptRYUx2KomzNutMlWsQC64J/WG/gQSl+P4w7A21sGN0VIxRVava4rgnT7FQmFCdg==}
+  /@types/inquirer@8.2.10:
+    resolution: {integrity: sha512-IdD5NmHyVjWM8SHWo/kPBgtzXatwPkfwzyP3fN1jF2g9BWt5WO+8hL2F4o2GKIYsU40PpqeevuUWvkS/roXJkA==}
     dependencies:
-      '@types/through': 0.0.31
+      '@types/through': 0.0.33
+      rxjs: 7.8.1
     dev: true
 
   /@types/is-function@1.0.1:
@@ -11929,8 +11937,8 @@ packages:
     dependencies:
       '@types/jest': 29.5.12
 
-  /@types/through@0.0.31:
-    resolution: {integrity: sha512-LpKpmb7FGevYgXnBXYs6HWnmiFyVG07Pt1cnbgM1IhEacITTiUaBXXvOR3Y50ksaJWGSfhbEvQFivQEFGCC55w==}
+  /@types/through@0.0.33:
+    resolution: {integrity: sha512-HsJ+z3QuETzP3cswwtzt2vEIiHBk/dCcHGhbmG5X3ecnwFD/lPrMpliGXxSCg03L9AhrdwA4Oz/qfspkDW+xGQ==}
     dependencies:
       '@types/node': 20.11.20
     dev: true
@@ -16989,7 +16997,7 @@ packages:
       ms: 2.1.3
       supports-color: 8.1.1
 
-  /debug@4.3.1:
+  /debug@4.3.1(supports-color@8.1.1):
     resolution: {integrity: sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==}
     engines: {node: '>=6.0'}
     peerDependencies:
@@ -16999,6 +17007,7 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
+      supports-color: 8.1.1
     dev: true
 
   /debug@4.3.4(supports-color@8.1.1):
@@ -19170,7 +19179,7 @@ packages:
     engines: {node: '>= 10.17.0'}
     hasBin: true
     dependencies:
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.1(supports-color@8.1.1)
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -21695,7 +21704,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.1(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -28116,7 +28125,7 @@ packages:
     deprecated: < 19.4.0 is no longer supported
     requiresBuild: true
     dependencies:
-      debug: 4.3.1
+      debug: 4.3.1(supports-color@8.1.1)
       devtools-protocol: 0.0.901419
       extract-zip: 2.0.1(supports-color@8.1.1)
       https-proxy-agent: 5.0.0
