@@ -933,9 +933,6 @@ importers:
       react-test-renderer:
         specifier: 16.14.0
         version: 16.14.0(react@16.14.0)
-      redux-mock-store:
-        specifier: 1.5.4
-        version: 1.5.4
       redux-saga-test-plan:
         specifier: 4.0.6
         version: 4.0.6(@redux-saga/is@1.1.3)(@redux-saga/symbols@1.1.3)(redux-saga@1.2.3)
@@ -28997,12 +28994,6 @@ packages:
     dependencies:
       redux: 4.2.1
     dev: false
-
-  /redux-mock-store@1.5.4:
-    resolution: {integrity: sha512-xmcA0O/tjCLXhh9Fuiq6pMrJCwFRaouA8436zcikdIpYWWCjU76CRk+i2bHx8EeiSiMGnB85/lZdU3wIJVXHTA==}
-    dependencies:
-      lodash.isplainobject: 4.0.6
-    dev: true
 
   /redux-observable@1.2.0(redux@4.2.1)(rxjs@6.6.7):
     resolution: {integrity: sha512-yeR90RP2WzZzCxxnQPlh2uFzyfFLsfXu8ROh53jGDPXVqj71uNDMmvi/YKQkd9ofiVoO4OYb1snbowO49tCEMg==}
