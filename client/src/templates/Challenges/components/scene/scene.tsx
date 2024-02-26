@@ -21,9 +21,8 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
     new Audio(`${sounds}/${audio.filename}${audioTimestamp}`)
   );
 
-  const loadImage = (src: string) => {
-    const img = new Image();
-    img.src = src;
+  const loadImage = (src: string | null) => {
+    if (src) new Image().src;
   };
 
   // on mount
@@ -34,18 +33,16 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
     // preload images
     loadImage(`${backgrounds}/${setup.background}`);
 
-    setup.characters.forEach(character => {
-      const characterImages = characterAssets[character.character];
-      Object.values(characterImages).forEach(src => {
-        if (src) {
-          loadImage(src);
-        }
-      });
-    });
+    setup.characters
+      .map(({ character }) => Object.values(characterAssets[character]))
+      .flat()
+      .forEach(loadImage);
 
-    commands.forEach(command => {
-      if (command.background) loadImage(`${backgrounds}/${command.background}`);
-    });
+    commands
+      .map(({ background }) =>
+        background ? `${backgrounds}/${background}` : null
+      )
+      .forEach(loadImage);
 
     // on unmount
     return () => {
