@@ -22,7 +22,7 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
   );
 
   const loadImage = (src: string | null) => {
-    if (src) new Image().src;
+    if (src) new Image().src = src;
   };
 
   // on mount
