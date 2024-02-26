@@ -31,7 +31,8 @@ import {
 import { CurrentCert } from '../../redux/prop-types';
 import {
   RibbonIcon,
-  IncompleteIcon
+  IncompleteIcon,
+  Arrow
 } from '../../assets/icons/completion-ribbon';
 import {
   certSlugTypeMap,
@@ -74,6 +75,7 @@ const mapStateToProps = createSelector(
 function MapLi({
   superBlock,
   landing = false,
+  last = false,
   trackProgress,
   completed,
   index
@@ -86,7 +88,7 @@ function MapLi({
   index: number;
 }) {
   return (
-    <div
+    <li
       style={{
         display: 'flex',
         flexDirection: 'row',
@@ -119,16 +121,22 @@ function MapLi({
           ) : (
             <IncompleteIcon value={index} />
           )}
+          {!last && <Arrow />}
         </div>
       )}
-      <Link className='btn link-btn btn-lg' to={`/learn/${superBlock}/`}>
+
+      <Link
+        className='btn link-btn btn-lg'
+        to={`/learn/${superBlock}/`}
+        aria-label={getSuperBlockTitleForMap(superBlock)}
+      >
         <div style={linkSpacingStyle}>
           <SuperBlockIcon className='map-icon' superBlock={superBlock} />
           {getSuperBlockTitleForMap(superBlock)}
         </div>
         {landing && <LinkButton />}
       </Link>
-    </div>
+    </li>
   );
 }
 
@@ -154,6 +162,7 @@ function MapStage({
           <MapLi
             key={i}
             index={Number(startingIndex + i + 1)}
+            last={i + 1 === vals.length}
             trackProgress={
               ![SuperBlockStages.Upcoming, SuperBlockStages.Extra].includes(
                 stage

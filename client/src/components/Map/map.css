@@ -42,6 +42,11 @@
   width: auto;
 }
 
+.map-ui ol li .progress-icon .arrow {
+  position: absolute;
+  top: 60px; /* adjust this value to reduce the gap */
+}
+
 .map-ui ol li .progress-number {
   width: calc(42px - 0.1rem);
   height: 40px;

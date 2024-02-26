@@ -4,6 +4,18 @@ interface RibbonProps {
   value: number;
 }
 
+export const Arrow = () => (
+  <svg
+    className='arrow'
+    width='30'
+    height='30'
+    viewBox='0 0 50 50'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path d='M25 50L0 0H50z' fill='black' transform='rotate(180deg)' />
+  </svg>
+);
+
 export const RibbonIcon = ({ value }: RibbonProps): JSX.Element => {
   return (
     <svg
