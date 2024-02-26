@@ -6,13 +6,13 @@ import { defineConfig, devices } from '@playwright/test';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-const envPath = path.resolve(__dirname, '..', '.env');
+const envPath = path.resolve(__dirname, '.env');
 dotenvConfig({ path: envPath });
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './',
+  testDir: 'e2e',
   testMatch: '*.spec.ts',
   /* Run tests in files in parallel */
   fullyParallel: false,
@@ -23,9 +23,10 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [['html', { outputFolder: 'playwright/reporter' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   timeout: 15 * 1000,
+  outputDir: 'playwright/test-results',
 
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */

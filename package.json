@@ -106,6 +106,7 @@
     "@babel/preset-env": "7.23.7",
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
+    "@playwright/test": "^1.41.2",
     "@testing-library/cypress": "9.0.0",
     "@testing-library/dom": "8.20.1",
     "@testing-library/jest-dom": "5.17.0",
