@@ -718,6 +718,8 @@
     "step": "步骤",
     "steps": "步骤",
     "steps-for": "{{blockTitle}} 的步骤",
+    "task": "Task",
+    "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} 代码示例",
     "opens-new-window": "在新窗口打开"
   },
@@ -939,9 +941,9 @@
     "title": {
       "Responsive Web Design": "响应式网页设计",
       "responsive-web-design": "响应式 Web 设计认证",
-      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
-      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures Certification",
+      "JavaScript Algorithms and Data Structures": "Legacy JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures Certification",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures (Beta) Certification",
       "Front End Development Libraries": "前端开发库",
       "front-end-development-libraries": "前端开发库认证",
       "Data Visualization": "数据可视化",
