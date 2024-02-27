@@ -16,12 +16,11 @@ dashedName: the-box-model-question-f
 }
 ```
 
-
-# --question--
-
-## --assignment--
+# --assignment--
 
 Додайте кордон до кожного елемента на сторінці та подивіться, як розміщені блоки.
+
+# --question--
 
 ## --text--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4311000cf542c50ff43
-title: 'Problem 195: Inscribed circles of triangles with one angle of 60 degrees'
+title: '問題 195: 60 度の角を 1 つ持つ三角形の内接円'
 challengeType: 1
 forumTopicId: 301833
 dashedName: problem-195-inscribed-circles-of-triangles-with-one-angle-of-60-degrees
@@ -8,19 +8,19 @@ dashedName: problem-195-inscribed-circles-of-triangles-with-one-angle-of-60-degr
 
 # --description--
 
-Let's call an integer sided triangle with exactly one angle of 60° a 60° triangle.
+60 度の角をちょうど 1 つ持ち、辺の長さが整数である三角形を「60 度三角形」と呼ぶことにします。
 
-Let $r$ be the radius of the inscribed circle of such a 60° triangle.
+60 度三角形の内接円の半径を $r$ とします。
 
-There are 1234 60° triangles for which $r ≤ 100$.
+$r ≤ 100$ である 60 度角三角形は 1234 個あります。
 
-Let $T(n)$ be the number of 60° triangles for which $r ≤ n$, so $T(100) = 1234$, $T(1000) = 22767$, and $T(10000) = 359912$.
+$r ≤ n$ である 60 度三角形の数を $T(n)$ とします。$T(100) = 1234, $T(1000) = 22767, $T(10000) = 359912 です。
 
-Find $T(1053779)$.
+$T(1053779)$ を求めなさい。
 
 # --hints--
 
-`inscribedCirclesOfTriangles()` should return `75085391`.
+`inscribedCirclesOfTriangles()` は `75085391` を返す必要があります。
 
 ```js
 assert.strictEqual(inscribedCirclesOfTriangles(), 75085391);

@@ -8,7 +8,7 @@ dashedName: chart-the-stock-market
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <a href="https://chart-the-stock-market.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://chart-the-stock-market.freecodecamp.rocks/</a>. その際に、ご自身で選択したサイトビルダーを使用して、プロジェクトを完了させてください。
+<a href="https://chart-the-stock-market.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://chart-the-stock-market.freecodecamp.rocks/</a> と同じような機能を持つ、フルスタック JavaScript アプリを構築してください。 その際に、ご自身で選択したサイトビルダーを使用して、プロジェクトを完了させてください。
 
 このプロジェクトに実装する必要がある、具体的なユーザーストーリーはこちらです:
 
@@ -20,7 +20,7 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 
 **ユーザーストーリー:** 他のユーザーが株式を追加または削除する際に、リアルタイムで変更を確認できます。 これを実装するためには、Web Sockets を使用する必要があります。
 
-完了したら、プロジェクトの動作デモがどこか公の場でホストされていることを確認してください。 Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
+完了したら、プロジェクトの動作デモがどこか公の場でホストされていることを確認してください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --solutions--
 

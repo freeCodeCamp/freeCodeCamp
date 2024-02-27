@@ -1,6 +1,6 @@
 ---
 id: 5900f4801000cf542c50ff92
-title: 'Problem 275: Balanced Sculptures'
+title: 'Завдання 275: збалансовані скульптури'
 challengeType: 1
 forumTopicId: 301925
 dashedName: problem-275-balanced-sculptures
@@ -8,20 +8,20 @@ dashedName: problem-275-balanced-sculptures
 
 # --description--
 
-Let us define a balanced sculpture of order $n$ as follows:
+Визначимо збалансовану скульптуру $n$-го порядку як:
 
-- A polyomino made up of $n + 1$ tiles known as the blocks ($n$ tiles) and the plinth (remaining tile);
-- the plinth has its centre at position ($x = 0$, $y = 0$);
-- the blocks have $y$-coordinates greater than zero (so the plinth is the unique lowest tile);
-- the centre of mass of all the blocks, combined, has $x$-coordinate equal to zero.
+- Поліміно, що складається з $n + 1$ плиток, відомих як блоки ($n$ плиток), та основи (залишкової плитки);
+- центр основи розташований на координатах ($x = 0$, $y = 0$);
+- $y$-координати блоків більші за нуль (тому основа є унікальною найнижчою плиткою);
+- центр мас усіх блоків має $x$-координату, рівну нулю.
 
-When counting the sculptures, any arrangements which are simply reflections about the $y$-axis, are <u>not</u> counted as distinct. For example, the 18 balanced sculptures of order 6 are shown below; note that each pair of mirror images (about the $y$-axis) is counted as one sculpture:
+Під час підрахунку скульптур будь-які композиції, які є просто відбиттям навколо осі $y$, <u>не</u> зараховуються як окремі. Наприклад, знизу наведено 18 збалансованих скульптур 6-го порядку. Зауважте, що кожна пара дзеркальних зображень (на осі $y$) зараховується як одна скульптура:
 
-<img class="img-responsive center-block" alt="18 balanced sculptures of order 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/balanced-sculptures.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="18 збалансованих скульптур шостого порядку" src="https://cdn.freecodecamp.org/curriculum/project-euler/balanced-sculptures.gif" style="background-color: white; padding: 10px;" />
 
-There are 964 balanced sculptures of order 10 and 360505 of order 15.
+Існує 964 збалансованих скульптур 10-го порядку та 360505 15-го порядку.
 
-How many balanced sculptures are there of order 18?
+Скільки існує збалансованих скульптур 18-го порядку?
 
 # --hints--
 

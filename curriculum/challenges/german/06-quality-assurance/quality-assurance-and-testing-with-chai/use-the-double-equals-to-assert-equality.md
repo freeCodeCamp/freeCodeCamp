@@ -8,13 +8,13 @@ dashedName: use-the-double-equals-to-assert-equality
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `equal()` compares objects using `==`.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#5` in the `Equality` suite, change each `assert` to either `assert.equal` or `assert.notEqual` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Within `tests/1_unit-tests.js` under the test labeled `#5` in the `Equality` suite, change each `assert` to either `assert.equal` or `assert.notEqual` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
 # --hints--
 

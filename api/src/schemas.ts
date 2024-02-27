@@ -24,6 +24,15 @@ const saveChallengeBody = Type.Object({
   files: Type.Array(file)
 });
 
+const examResults = Type.Object({
+  numberOfCorrectAnswers: Type.Number(),
+  numberOfQuestionsInExam: Type.Number(),
+  percentCorrect: Type.Number(),
+  passingPercent: Type.Number(),
+  passed: Type.Boolean(),
+  examTimeInSeconds: Type.Number()
+});
+
 export const schemas = {
   // Settings:
   updateMyProfileUI: {
@@ -46,6 +55,10 @@ export const schemas = {
         message: Type.Literal('flash.privacy-updated'),
         type: Type.Literal('success')
       }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
         type: Type.Literal('danger')
@@ -60,6 +73,10 @@ export const schemas = {
       200: Type.Object({
         message: Type.Literal('flash.updated-themes'),
         type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
       }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
@@ -101,6 +118,10 @@ export const schemas = {
         message: Type.Literal('flash.updated-socials'),
         type: Type.Literal('success')
       }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
         type: Type.Literal('danger')
@@ -115,6 +136,10 @@ export const schemas = {
       200: Type.Object({
         message: Type.Literal('flash.keyboard-shortcut-updated'),
         type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
       }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
@@ -131,6 +156,10 @@ export const schemas = {
         message: Type.Literal('flash.subscribe-to-quincy-updated'),
         type: Type.Literal('success')
       }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
         type: Type.Literal('danger')
@@ -145,6 +174,10 @@ export const schemas = {
       200: Type.Object({
         message: Type.Literal('buttons.accepted-honesty'),
         type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
       }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
@@ -179,6 +212,10 @@ export const schemas = {
       200: Type.Object({
         message: Type.Literal('flash.privacy-updated'),
         type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
       }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
@@ -277,6 +314,14 @@ export const schemas = {
                   })
                 ),
                 isManuallyApproved: Type.Optional(Type.Boolean())
+              })
+            ),
+            completedExams: Type.Array(
+              Type.Object({
+                id: Type.String(),
+                completedDate: Type.Number(),
+                challengeType: Type.Optional(Type.Number()),
+                examResults
               })
             ),
             completedChallengeCount: Type.Number(),
@@ -401,6 +446,15 @@ export const schemas = {
         message: Type.Literal('flash.provide-username')
       }),
       500: generic500
+    }
+  },
+  deleteMsUsername: {
+    response: {
+      200: Type.Object({ msUsername: Type.Null() }),
+      500: Type.Object({
+        message: Type.Literal('flash.ms.transcript.unlink-err'),
+        type: Type.Literal('error')
+      })
     }
   },
   // Deprecated endpoints:
@@ -571,6 +625,54 @@ export const schemas = {
       })
     }
   },
+  msTrophyChallengeCompleted: {
+    body: Type.Object({
+      id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 })
+    }),
+    response: {
+      200: Type.Object({
+        completedDate: Type.Number(),
+        points: Type.Number(),
+        alreadyCompleted: Type.Boolean()
+      }),
+      400: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.trophy.err-2')
+      }),
+      403: Type.Union([
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.trophy.err-1')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.trophy.err-3')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.trophy.err-4'),
+          variables: Type.Object({
+            msUsername: Type.String()
+          })
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.trophy.err-6')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.profile.err'),
+          variables: Type.Object({
+            msUsername: Type.String()
+          })
+        })
+      ]),
+      500: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.trophy.err-5')
+      })
+    }
+  },
   saveChallenge: {
     body: saveChallengeBody,
     response: {
@@ -588,6 +690,110 @@ export const schemas = {
         message: Type.Literal(
           'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
         )
+      })
+    }
+  },
+  exam: {
+    params: Type.Object({
+      id: Type.String({
+        format: 'objectid',
+        maxLength: 24,
+        minLength: 24
+      })
+    }),
+    response: {
+      200: Type.Object({
+        generatedExam: Type.Array(
+          Type.Object({
+            id: Type.String(),
+            question: Type.String(),
+            answers: Type.Array(
+              Type.Object({
+                id: Type.String(),
+                answer: Type.String()
+              })
+            )
+          })
+        )
+      }),
+      // TODO: Standardize error responses - e.g. { type, message }
+      400: Type.Object({
+        error: Type.String()
+      }),
+      403: Type.Object({
+        error: Type.String()
+      }),
+      500: Type.Object({
+        error: Type.String()
+      })
+    }
+  },
+  postMsUsername: {
+    body: Type.Object({
+      msTranscriptUrl: Type.String({ maxLength: 1000 })
+    }),
+    response: {
+      200: Type.Object({
+        msUsername: Type.String()
+      }),
+      400: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.transcript.link-err-1')
+      }),
+      404: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.transcript.link-err-2')
+      }),
+      403: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.transcript.link-err-4')
+      }),
+      500: Type.Union([
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.transcript.link-err-6')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.transcript.link-err-3')
+        })
+      ])
+    }
+  },
+  examChallengeCompleted: {
+    body: Type.Object({
+      id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
+      challengeType: Type.Number(),
+      userCompletedExam: Type.Object({
+        examTimeInSeconds: Type.Number(),
+        userExamQuestions: Type.Array(
+          Type.Object({
+            id: Type.String(),
+            question: Type.String(),
+            answer: Type.Object({
+              id: Type.String(),
+              answer: Type.String()
+            })
+          }),
+          { minItems: 1 }
+        )
+      })
+    }),
+    response: {
+      200: Type.Object({
+        completedDate: Type.Number(),
+        points: Type.Number(),
+        alreadyCompleted: Type.Boolean(),
+        examResults
+      }),
+      400: Type.Object({
+        error: Type.String()
+      }),
+      403: Type.Object({
+        error: Type.String()
+      }),
+      500: Type.Object({
+        error: Type.String()
       })
     }
   }

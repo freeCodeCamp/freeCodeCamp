@@ -1,6 +1,6 @@
 ---
 id: 5900f4ae1000cf542c50ffbf
-title: 'Problem 320: Factorials divisible by a huge integer'
+title: 'Завдання 320: факторіали, які діляться на велике ціле число'
 challengeType: 1
 forumTopicId: 301977
 dashedName: problem-320-factorials-divisible-by-a-huge-integer
@@ -8,9 +8,9 @@ dashedName: problem-320-factorials-divisible-by-a-huge-integer
 
 # --description--
 
-Let $N(i)$ be the smallest integer $n$ such that $n!$ is divisible by $(i!)^{1234567890}$
+Нехай $N(i)$ буде найменшим цілим числом $n$, за якого $n!$ ділиться на $(i!)^{1234567890}$ без остачі.
 
-Let $S(u) = \sum N(i)$ for $10 ≤ i ≤ u$.
+Нехай $S(u) = \sum N(i)$ за умови $10 ≤ i ≤ u$.
 
 $S(1000)=614\\,538\\,266\\,565\\,663$.
 

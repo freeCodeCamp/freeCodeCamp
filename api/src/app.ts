@@ -1,6 +1,6 @@
 import fastifyCookie from '@fastify/cookie';
 import fastifyCsrfProtection from '@fastify/csrf-protection';
-import middie from '@fastify/middie';
+import express from '@fastify/express';
 import fastifySession from '@fastify/session';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
@@ -18,12 +18,9 @@ import Fastify, {
   RawRequestDefaultExpression,
   RawServerDefault
 } from 'fastify';
-import fastifyAuth0 from 'fastify-auth0-verify';
 
 import prismaPlugin from './db/prisma';
-import { testMiddleware } from './middleware';
 import cors from './plugins/cors';
-import jwtAuthz from './plugins/fastify-jwt-authz';
 import { NodemailerProvider } from './plugins/mail-providers/nodemailer';
 import { SESProvider } from './plugins/mail-providers/ses';
 import mailer from './plugins/mailer';
@@ -31,9 +28,9 @@ import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
 import {
-  auth0Routes,
   devLoginCallback,
-  devLegacyAuthRoutes
+  devLegacyAuthRoutes,
+  mobileAuth0Routes
 } from './routes/auth';
 import { challengeRoutes } from './routes/challenge';
 import { deprecatedEndpoints } from './routes/deprecated-endpoints';
@@ -44,8 +41,6 @@ import { statusRoute } from './routes/status';
 import { userGetRoutes, userRoutes } from './routes/user';
 import {
   API_LOCATION,
-  AUTH0_AUDIENCE,
-  AUTH0_DOMAIN,
   COOKIE_DOMAIN,
   EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
@@ -106,7 +101,7 @@ export const build = async (
     return { hello: 'world' };
   });
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
-  await fastify.register(middie);
+  await fastify.register(express);
   if (SENTRY_DSN) {
     await fastify.register(fastifySentry, { dsn: SENTRY_DSN });
   }
@@ -114,9 +109,6 @@ export const build = async (
   await fastify.register(cors);
   await fastify.register(fastifyCookie);
 
-  // @ts-expect-error @fastify/csrf-protection is overly restrictive, here. It
-  // requires an hmacKey if getToken is provided, but that should only be a
-  // requirement if the getUserInfo function is provided.
   void fastify.register(fastifyCsrfProtection, {
     // TODO: consider signing cookies. We don't on the api-server, but we could
     // as an extra layer of security.
@@ -197,19 +189,9 @@ export const build = async (
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
-  // Auth0 plugin
-  void fastify.register(fastifyAuth0, {
-    domain: AUTH0_DOMAIN,
-    audience: AUTH0_AUDIENCE
-  });
-  void fastify.register(jwtAuthz);
   void fastify.register(sessionAuth);
-
-  void fastify.use('/test', testMiddleware);
-
   void fastify.register(prismaPlugin);
-
-  void fastify.register(auth0Routes, { prefix: '/auth' });
+  void fastify.register(mobileAuth0Routes);
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devLoginCallback, { prefix: '/auth' });
     void fastify.register(devLegacyAuthRoutes);

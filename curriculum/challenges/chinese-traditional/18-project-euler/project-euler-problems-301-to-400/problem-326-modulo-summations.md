@@ -1,6 +1,6 @@
 ---
 id: 5900f4b21000cf542c50ffc5
-title: 'Problem 326: Modulo Summations'
+title: '問題326：模數彙總'
 challengeType: 1
 forumTopicId: 301983
 dashedName: problem-326-modulo-summations

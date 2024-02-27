@@ -21,7 +21,7 @@ dashedName: links-and-images-question-h
 
 - Створіть новий каталог під назвою `images` в межах проєкту `odin-links-and-images`.
 
-- Потім завантажте [це зображення](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) та перемістіть його до щойно створеного каталогу зображень.
+- Потім завантажте <a href="https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640" target="_blank">це зображення</a> та перемістіть його у щойно створений каталог зображень.
 
 - Перейменуйте зображення на `dog.jpg`.
 
@@ -70,11 +70,11 @@ dashedName: links-and-images-question-h
 Ось так виглядає логотип The Odin Project з атрибутом alt:
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/ExXjoEp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=ExXjoEp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="Вставка CodePen" loading="lazy" id="cp_embed_ExXjoEp"></iframe>
 
+# --assignment--
+
+Прочитайте про <a href="https://www.freecodecamp.org/news/image-file-types-picture-format-extensions-jpeg-gif-png-svg-tiff/" target="_blank">чотири основні формати зображень</a>, які можна використовувати у вебмережі.
+
 # --question--
-
-## --assignment--
-
-Прочитайте про  <a href="https://www.internetingishard.com/html-and-css/links-and-images/#image-formats" target="_blank">чотири головні формати зображення</a>, які можна використовувати на вебсайтах.
 
 ## --text--
 
@@ -82,7 +82,7 @@ dashedName: links-and-images-question-h
 
 ## --answers--
 
-TIFF, GIF, PNG та SVG.
+MOV, GIF, PNG та SVG.
 
 ---
 

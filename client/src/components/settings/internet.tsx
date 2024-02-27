@@ -158,11 +158,19 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     return null;
   };
 
-  renderCheck = (url: string, validation: FormGroupProps['validationState']) =>
+  renderCheck = (
+    url: string,
+    validation: FormGroupProps['validationState'],
+    dataPlaywrightTestLabel: string
+  ) =>
     url && validation === 'success' ? (
       <FormControl.Feedback>
         <span>
-          <FontAwesomeIcon icon={faCheck} size='1x' />
+          <FontAwesomeIcon
+            data-playwright-test-label={dataPlaywrightTestLabel}
+            icon={faCheck}
+            size='1x'
+          />
         </span>
       </FormControl.Feedback>
     ) : null;
@@ -191,62 +199,95 @@ class InternetSettings extends Component<InternetProps, InternetState> {
       <>
         <SectionHeader>{t('settings.headings.internet')}</SectionHeader>
         <FullWidthRow>
-          <form id='internet-presence' onSubmit={this.handleSubmit}>
+          <form
+            id='internet-presence'
+            onSubmit={this.handleSubmit}
+            data-playwright-test-label='internet-presence'
+          >
             <div role='group' aria-label={t('settings.headings.internet')}>
               <FormGroup
                 controlId='internet-github'
                 validationState={githubProfileValidation}
               >
-                <ControlLabel>GitHub</ControlLabel>
+                <ControlLabel htmlFor='internet-github-input'>
+                  GitHub
+                </ControlLabel>
                 <FormControl
+                  data-playwright-test-label='internet-github-input'
                   onChange={this.createHandleChange('githubProfile')}
                   placeholder='https://github.com/user-name'
                   type='url'
                   value={githubProfile}
+                  id='internet-github-input'
                 />
-                {this.renderCheck(githubProfile, githubProfileValidation)}
+                {this.renderCheck(
+                  githubProfile,
+                  githubProfileValidation,
+                  'internet-github-check'
+                )}
                 <Info message={githubProfileValidationMessage} />
               </FormGroup>
               <FormGroup
                 controlId='internet-linkedin'
                 validationState={linkedinValidation}
               >
-                <ControlLabel>LinkedIn</ControlLabel>
+                <ControlLabel htmlFor='internet-linkedin-input'>
+                  LinkedIn
+                </ControlLabel>
                 <FormControl
                   onChange={this.createHandleChange('linkedin')}
                   placeholder='https://www.linkedin.com/in/user-name'
                   type='url'
                   value={linkedin}
+                  id='internet-linkedin-input'
                 />
-                {this.renderCheck(linkedin, linkedinValidation)}
+                {this.renderCheck(
+                  linkedin,
+                  linkedinValidation,
+                  'internet-linkedin-check'
+                )}
                 <Info message={linkedinValidationMessage} />
               </FormGroup>
               <FormGroup
-                controlId='internet-picture'
+                controlId='internet-twitter'
                 validationState={twitterValidation}
               >
-                <ControlLabel>Twitter</ControlLabel>
+                <ControlLabel htmlFor='internet-twitter-input'>
+                  Twitter
+                </ControlLabel>
                 <FormControl
                   onChange={this.createHandleChange('twitter')}
                   placeholder='https://twitter.com/user-name'
                   type='url'
                   value={twitter}
+                  id='internet-twitter-input'
                 />
-                {this.renderCheck(twitter, twitterValidation)}
+                {this.renderCheck(
+                  twitter,
+                  twitterValidation,
+                  'internet-twitter-check'
+                )}
                 <Info message={twitterValidationMessage} />
               </FormGroup>
               <FormGroup
                 controlId='internet-website'
                 validationState={websiteValidation}
               >
-                <ControlLabel>{t('settings.labels.personal')}</ControlLabel>
+                <ControlLabel htmlFor='internet-website-input'>
+                  {t('settings.labels.personal')}
+                </ControlLabel>
                 <FormControl
                   onChange={this.createHandleChange('website')}
                   placeholder='https://example.com'
                   type='url'
                   value={website}
+                  id='internet-website-input'
                 />
-                {this.renderCheck(website, websiteValidation)}
+                {this.renderCheck(
+                  website,
+                  websiteValidation,
+                  'internet-website-check'
+                )}
                 <Info message={websiteValidationMessage} />
               </FormGroup>
             </div>

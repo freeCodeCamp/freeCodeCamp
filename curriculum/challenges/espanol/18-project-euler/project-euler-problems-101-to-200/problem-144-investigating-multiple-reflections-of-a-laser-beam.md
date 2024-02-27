@@ -1,6 +1,6 @@
 ---
 id: 5900f3fc1000cf542c50ff0f
-title: 'Problem 144: Investigating multiple reflections of a laser beam'
+title: 'Problema 144: Investigando múltiples reflexiones de un rayo láser'
 challengeType: 1
 forumTopicId: 301773
 dashedName: problem-144-investigating-multiple-reflections-of-a-laser-beam
@@ -10,32 +10,32 @@ dashedName: problem-144-investigating-multiple-reflections-of-a-laser-beam
 
 In laser physics, a "white cell" is a mirror system that acts as a delay line for the laser beam. The beam enters the cell, bounces around on the mirrors, and eventually works its way back out.
 
-The specific white cell we will be considering is an ellipse with the equation $4{x}^2 + y^2 = 100$
+La celda blanca específica a ser considerada es una elipse con la ecuación $4{x}^2 + y^2 = 100$
 
-The section corresponding to $−0.01 ≤ x ≤ +0.01$ at the top is missing, allowing the light to enter and exit through the hole.
+La sección correspondiente a $−0.01 ≤ x ≤ +0.01$ en lo alto está ausente, permitiendo a la luz entrar y salir a través del agujero.
 
 <div style="text-align: center">
   <img class="img-responsive center-block" alt="light beam starting at point (0.0, 10.1), and impacting the mirror at point (1.4, -9.6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
-  <img class="img-responsive center-block" alt="animation with first 10 reflections of the beam" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
+  <img class="img-responsive center-block" alt="animación con los primeros 10 reflexiones de el haz" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
 </div><br>
 
-The light beam in this problem starts at the point (0.0, 10.1) just outside the white cell, and the beam first impacts the mirror at (1.4, -9.6).
+El haz de luz en este problema inicia en el punto (0.0, 10.1) justo por fuera de la celda blanca, y el haz primero impacta al espejo en (1.4, -9.6).
 
-Each time the laser beam hits the surface of the ellipse, it follows the usual law of reflection "angle of incidence equals angle of reflection." That is, both the incident and reflected beams make the same angle with the normal line at the point of incidence.
+Cada vez que el rayo láser golpea la superficie de la elipse, ste sigue las ley usual de la reflexión "ángulo de incidencia es igual al ángulo de reflexión." Es decir, ambos el incidente y el haz reflejado hacen el mismo ángulo con la línea normal en el punto de incidencia.
 
-In the figure on the left, the red line shows the first two points of contact between the laser beam and the wall of the white cell; the blue line shows the line tangent to the ellipse at the point of incidence of the first bounce.
+En la figura de la izquierda, la línea muestra los dos primeros puntos de contacto entre el rayo láser y la pared de la celda blanca; la línea azul muestra la línea tangente hacia la elipse en el punto de incidencia de el primer rebote.
 
-The slope m of the tangent line at any point (x, y) of the given ellipse is: $m = −4 × \frac{x}{y}$
+La pendiente m de la línea tangente en cualquier punto (x, y) de la elipse dada es: $m = −4 × \frac{x}{y}$
 
-The normal line is perpendicular to this tangent line at the point of incidence.
+La línea normal es perpendicular a esta línea tangente en el punto de incidencia.
 
-The animation on the right shows the first 10 reflections of the beam.
+La animación sobre la derecha muestra las primeras 10 reflexiones de el haz.
 
-How many times does the beam hit the internal surface of the white cell before exiting?
+¿Cuántas veces el haz golpea la superficie interna de la celda blanca antes de salir?
 
 # --hints--
 
-`laserBeamReflections()` should return `354`.
+`laserBeamReflections()` debería devolver `354`.
 
 ```js
 assert.strictEqual(laserBeamReflections(), 354);

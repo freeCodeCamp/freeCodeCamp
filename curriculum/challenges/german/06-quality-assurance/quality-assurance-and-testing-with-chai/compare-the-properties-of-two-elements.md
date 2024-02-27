@@ -8,11 +8,11 @@ dashedName: compare-the-properties-of-two-elements
 
 # --description--
 
-Zur Erinnerung: Dieses Projekt baut auf dem folgenden Startprojekt bei <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> auf, oder kopiert von <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 # --instructions--
 
-Passe innerhalb `tests/1_unit-tests.js` beim Test mit der Beschriftung `#8` in der `Comparisons`-Suite jedes `assert` entweder zu `assert.isAbove` an oder zu `assert.isAtMost`, damit der Test durchläuft (er sollte mit `true` ausgewertet werden). Verändere die an die Asserts übergebenen Argumente nicht.
+Within `tests/1_unit-tests.js` under the test labeled `#8` in the `Comparisons` suite, change each `assert` to either `assert.isAbove` or `assert.isAtMost` to make the test pass (should evaluate to `true`). Verändere die an die Asserts übergebenen Argumente nicht.
 
 # --hints--
 

@@ -45,6 +45,7 @@
 .site-footer .col-header,
 .trending-guides .col-header {
   text-align: center;
+  font-family: var(--font-family-sans-serif);
   font-weight: 700;
   font-size: 16px;
   padding: 0 15px 15px;
@@ -52,10 +53,14 @@
 }
 
 .trending-guides-articles {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11em, 1fr));
   grid-column-gap: 3rem;
   grid-row-gap: 0.5rem;
+  white-space: pre;
 }
 
 @media (max-width: 1400px) {
@@ -68,10 +73,6 @@
   .trending-guides-articles {
     grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
   }
-}
-
-.trending-guides-articles {
-  white-space: pre;
 }
 
 .footer-row {
@@ -90,7 +91,7 @@
 .footer-desc-col {
   padding-inline: 15px;
   margin-bottom: 30px;
-  align-self: center;
+  align-self: start;
 }
 
 .footer-desc-col a {
@@ -111,6 +112,23 @@ p.footer-donation a:hover {
   margin: 0 0 3rem;
 }
 
+.mobile-app-container {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-app-container img {
+  width: 9.5rem;
+  height: 3rem;
+  object-fit: cover;
+}
+
 .footer-bottom .our-nonprofit {
   display: flex;
   flex-direction: row;
@@ -125,6 +143,9 @@ p.footer-donation a:hover {
 @media (min-width: 500px) {
   .footer-col {
     font-size: 15;
+  }
+  .mobile-app-container {
+    flex-direction: row;
   }
 }
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4461000cf542c50ff59
-title: 'Problem 218: Perfect right-angled triangles'
+title: 'Завдання 218: ідеальні прямокутні трикутники'
 challengeType: 1
 forumTopicId: 301860
 dashedName: problem-218-perfect-right-angled-triangles
@@ -8,25 +8,25 @@ dashedName: problem-218-perfect-right-angled-triangles
 
 # --description--
 
-Consider the right-angled triangle with sides $a=7$, $b=24$ and $c=25$.
+Розглянемо прямокутний трикутник зі сторонами $a=7$, $b=24$ та $c=25$.
 
-The area of this triangle is 84, which is divisible by the perfect numbers 6 and 28.
+Площа цього трикутника дорівнює 84, що ділиться на досконалі числа 6 і 28.
 
-Moreover it is a primitive right-angled triangle as $gcd(a,b) = 1$ and $gcd(b,c) = 1$.
+До того ж це примітивний прямокутний трикутник, оскільки $нсд(a,b) = 1$ та $нсд(b,c) = 1$.
 
-Also $c$ is a perfect square.
+До того ж $c$ є квадратом цілого числа.
 
-We will call a right-angled triangle perfect if:
+Назвемо прямокутний трикутник ідеальним, якщо:
 
-- it is a primitive right-angled triangle
-- its hypotenuse is a perfect square
+- це примітивний прямокутний трикутник
+- його гіпотенуза є квадратом цілого числа
 
-We will call a right-angled triangle super-perfect if:
+Назвемо прямокутний трикутник надідеальним, якщо:
 
-- it is a perfect right-angled triangle
-- its area is a multiple of the perfect numbers 6 and 28.
+- це ідеальний прямокутний трикутник
+- його площа кратна ідеальним числам 6 та 28.
 
-How many perfect right-angled triangles with $c ≤ {10}^{16}$ exist that are not super-perfect?
+Скільки існує ідеальних прямокутних трикутників за умови $c ≤ {10}^{16}$, які не є надідеальними?
 
 # --hints--
 

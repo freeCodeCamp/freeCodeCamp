@@ -12,11 +12,11 @@ Il primo video ti mostrerà come eseguire conversioni tra frazioni, decimali e p
 
 Ecco il <a href="https://colab.research.google.com/drive/1dgeEEODP7cwm_96_JqbjxxJhVpZcFfGe?usp=sharing#scrollTo=NkMTAVF0BlqE" target="_blank" rel="noopener noreferrer nofollow">notebook Colab notebook usato nel video.</a> Usa questo codice come modello e scrivi il tuo codice per convertire frazioni e decimali.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Aggiungi il codice per convertire frazioni e decimali al tuo notebook Colab.
+
+# --question--
 
 ## --text--
 

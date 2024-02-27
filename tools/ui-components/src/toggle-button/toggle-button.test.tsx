@@ -11,13 +11,13 @@ describe('<ToggleButton />', () => {
     expect(screen.getByRole('button', { name: /on/i })).toBeInTheDocument();
   });
 
-  it('should call onChange when clicked', () => {
+  it('should call onChange when clicked', async () => {
     const onChange = jest.fn();
     render(<ToggleButton onChange={onChange}>On</ToggleButton>);
 
-    userEvent.click(screen.getByRole('button', { name: /on/i }));
+    await userEvent.click(screen.getByRole('button', { name: /on/i }));
 
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
   });
 
   it('should be checked if checked prop is true', () => {
@@ -49,7 +49,7 @@ describe('<ToggleButton />', () => {
     );
   });
 
-  it('should not trigger onChange if disabled prop is true', () => {
+  it('should not trigger onChange if disabled prop is true', async () => {
     const onChange = jest.fn();
     render(
       <ToggleButton disabled={true} onChange={onChange}>
@@ -57,9 +57,9 @@ describe('<ToggleButton />', () => {
       </ToggleButton>
     );
 
-    userEvent.click(screen.getByRole('button', { name: /on/i }));
+    await userEvent.click(screen.getByRole('button', { name: /on/i }));
 
-    expect(onChange).not.toBeCalled();
+    expect(onChange).not.toHaveBeenCalled();
   });
 
   it('should have value property if radio', () => {

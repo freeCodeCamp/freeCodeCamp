@@ -119,6 +119,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       isRelationalDatabaseCertV8,
       isCollegeAlgebraPyCertV8,
       isFoundationalCSharpCertV8,
+      isJsAlgoDataStructCertV8,
       isEmailVerified,
       isHonest,
       sendQuincyEmail,
@@ -165,6 +166,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             id='content-start'
             className='text-center'
             style={{ overflowWrap: 'break-word' }}
+            data-playwright-test-label='settings-heading'
           >
             {t('settings.for', { username: username })}
           </h1>
@@ -226,6 +228,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
             isRespWebDesignCert={isRespWebDesignCert}
             isSciCompPyCertV7={isSciCompPyCertV7}
+            isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
             username={username}
             verifyCert={verifyCert}
             isEmailVerified={isEmailVerified}

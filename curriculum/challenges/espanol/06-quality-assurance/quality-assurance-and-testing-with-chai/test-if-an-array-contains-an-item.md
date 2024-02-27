@@ -8,11 +8,11 @@ dashedName: test-if-an-array-contains-an-item
 
 # --description--
 
-Recuerda, este proyecto se está construyendo partir de una plantilla en <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> o clonado de <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 # --instructions--
 
-Dentro de `tests/1_unit-tests.js` bajo la prueba etiquetada `#12` en `Arrays` suite, cambia cada `assert` a `assert.include` o `assert.notInclude` para pasar la prueba (debe evaluarse como `true`). No modifiques los argumentos pasados ​​a los verificadores.
+Within `tests/1_unit-tests.js` under the test labeled `#12` in the `Arrays` suite, change each `assert` to either `assert.include` or `assert.notInclude` to make the test pass (should evaluate to `true`). No modifiques los argumentos pasados ​​a los verificadores.
 
 # --hints--
 

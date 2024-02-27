@@ -1,4 +1,4 @@
-import { user } from '@prisma/client';
+import { ExamResults, user } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash';
 import { challengeTypes } from '../../../shared/config/challenge-types';
@@ -15,6 +15,10 @@ export const jsCertProjectIds = [
 export const multifileCertProjectIds = getChallenges()
   .filter(c => c.challengeType === challengeTypes.multifileCertProject)
   .map(c => c.id);
+
+export const msTrophyChallenges = getChallenges()
+  .filter(challenge => challenge.challengeType === challengeTypes.msTrophy)
+  .map(({ id, msTrophyId }) => ({ id, msTrophyId }));
 
 type SavedChallengeFile = {
   key: string;
@@ -59,6 +63,7 @@ export type CompletedChallenge = {
   completedDate: number;
   isManuallyApproved?: boolean | null;
   files?: CompletedChallengeFile[];
+  examResults?: ExamResults | null;
 };
 
 /**

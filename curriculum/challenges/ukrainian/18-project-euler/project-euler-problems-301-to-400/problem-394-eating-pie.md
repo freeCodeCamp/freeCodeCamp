@@ -1,6 +1,6 @@
 ---
 id: 5900f4f71000cf542c510009
-title: 'Problem 394: Eating pie'
+title: 'Завдання 394: споживання пирога'
 challengeType: 1
 forumTopicId: 302059
 dashedName: problem-394-eating-pie
@@ -8,22 +8,22 @@ dashedName: problem-394-eating-pie
 
 # --description--
 
-Jeff eats a pie in an unusual way.
+Джефф їсть пиріг незвично.
 
-The pie is circular. He starts with slicing an initial cut in the pie along a radius.
+Пиріг має круглу форму. Перший розріз пирога він робить по радіусу.
 
-While there is at least a given fraction $F$ of pie left, he performs the following procedure:
+Поки залишається принаймні дана частка пирога $F$, він виконує таку процедуру:
 
-- He makes two slices from the pie centre to any point of what is remaining of the pie border, any point on the remaining pie border equally likely. This will divide the remaining pie into three pieces.
-- Going counterclockwise from the initial cut, he takes the first two pie pieces and eats them.
+- Він робить два розрізи від центру пирога до будь-якої точки краю (будь-яка точка на краю пирога однаково ймовірна). Це розділить решту пирога на три частини.
+- Йдучи з початкового розрізу проти годинникової стрілки, він бере перші два куски пирога та з’їдає їх.
 
-When less than a fraction $F$ of pie remains, he does not repeat this procedure. Instead, he eats all of the remaining pie.
+Коли залишається менше частки пирога $F$, він не повторює цю процедуру. Натомість він з’їдає все, що залишилось.
 
-<img class="img-responsive center-block" alt="animation of pie slicing procedure" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="анімація процедури нарізання пирога" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px;" />
 
-For $x ≥ 1$, let $E(x)$ be the expected number of times Jeff repeats the procedure above with $F = \frac{1}{x}$. Можна довести, що $E(1) = 1$, $E(2) ≈ 1.2676536759$ та $E(7.5) ≈ 2.1215732071$.
+Нехай $E(x)$, де $x ≥ 1$, буде очікуваною кількістю разів, коли Джефф повторює процедуру вище за умови $F = \frac{1}{x}$. Можна довести, що $E(1) = 1$, $E(2) ≈ 1.2676536759$ та $E(7.5) ≈ 2.1215732071$.
 
-Find $E(40)$ rounded to 10 decimal places behind the decimal point.
+Знайдіть $E(40)$, округливши до 10 знаків після коми.
 
 # --hints--
 

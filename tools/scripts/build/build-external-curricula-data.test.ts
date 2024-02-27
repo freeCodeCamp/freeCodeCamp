@@ -47,7 +47,7 @@ describe('external curriculum data build', () => {
 
     if (result.error) {
       throw new AssertionError(
-        result.error.toString(),
+        result.error.message,
         `file: available-superblocks.json`
       );
     }
@@ -72,7 +72,7 @@ describe('external curriculum data build', () => {
 
         if (result.error) {
           throw new AssertionError(
-            result.error.toString(),
+            result.error.message,
             `file: ${fileInArray}`
           );
         }
@@ -84,14 +84,7 @@ describe('external curriculum data build', () => {
       ({ dashedName }) => dashedName
     );
 
-    const isUpcoming = [
-      '2022/javascript-algorithms-and-data-structures',
-      'college-algebra-with-python',
-      'foundational-c-sharp-with-microsoft',
-      'the-odin-project',
-      'upcoming-python',
-      'example-certification'
-    ];
+    const isUpcoming = ['upcoming-python', 'example-certification'];
 
     // TODO: this is a hack, we should have a single source of truth for the
     // list of superblocks that are available.

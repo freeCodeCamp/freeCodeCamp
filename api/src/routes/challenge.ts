@@ -1,6 +1,7 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
 import { uniqBy } from 'lodash';
+import { CompletedExam, ExamResults } from '@prisma/client';
 
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import { schemas } from '../schemas';
@@ -9,7 +10,8 @@ import {
   multifileCertProjectIds,
   updateUserChallengeData,
   type CompletedChallenge,
-  saveUserChallengeData
+  saveUserChallengeData,
+  msTrophyChallenges
 } from '../utils/common-challenge-functions';
 import { JWT_SECRET } from '../utils/env';
 import {
@@ -19,9 +21,17 @@ import {
 import { getChallenges } from '../utils/get-challenges';
 import { ProgressTimestamp, getPoints } from '../utils/progress';
 import {
+  validateExamFromDbSchema,
+  validateGeneratedExamSchema,
+  validateUserCompletedExamSchema,
+  validateExamResultsSchema
+} from '../utils/exam-schemas';
+import { generateRandomExam, createExamResults } from '../utils/exam';
+import {
   canSubmitCodeRoadCertProject,
   createProject,
-  updateProject
+  updateProject,
+  verifyTrophyWithMicrosoft
 } from './helpers/challenge-helpers';
 
 interface JwtPayload {
@@ -42,6 +52,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 ) => {
   const challenges = getChallenges();
 
+  // @ts-expect-error - @fastify/csrf-protection needs to update their types
   // eslint-disable-next-line @typescript-eslint/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
   fastify.addHook('onRequest', fastify.authenticateSession);
@@ -420,6 +431,383 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
           type: 'danger'
         } as const;
+      }
+    }
+  );
+
+  fastify.get(
+    '/exam/:id',
+    {
+      schema: schemas.exam,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          return { error: `Valid 'id' not found in request parameters.` };
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const { id } = req.params;
+
+        const { completedChallenges } =
+          await fastify.prisma.user.findUniqueOrThrow({
+            where: { id: req.session.user.id },
+            select: { completedChallenges: true }
+          });
+
+        const examFromDb = await fastify.prisma.exam.findUnique({
+          where: { id }
+        });
+
+        if (!examFromDb) {
+          void reply.code(500);
+          return {
+            error: 'An error occurred trying to get the exam from the database.'
+          };
+        }
+
+        const validExamFromDbSchema = validateExamFromDbSchema(examFromDb);
+
+        if ('error' in validExamFromDbSchema) {
+          void reply.code(500);
+          return {
+            error:
+              'An error occurred validating the exam information from the database.'
+          };
+        }
+
+        const { prerequisites, numberOfQuestionsInExam, title } = examFromDb;
+
+        // Validate User has completed prerequisite challenges
+        const prerequisiteIds = prerequisites.map(p => p.id);
+        const completedPrerequisites = completedChallenges.filter(c =>
+          prerequisiteIds.includes(c.id)
+        );
+
+        if (completedPrerequisites.length !== prerequisiteIds.length) {
+          void reply.code(403);
+          return {
+            error: `You have not completed the required challenges to start the '${title}'.`
+          };
+        }
+
+        const randomizedExam = generateRandomExam(examFromDb);
+        const validGeneratedExamSchema = validateGeneratedExamSchema(
+          randomizedExam,
+          numberOfQuestionsInExam
+        );
+
+        if ('error' in validGeneratedExamSchema) {
+          void reply.code(500);
+          return { error: 'An error occurred trying to randomize the exam.' };
+        }
+
+        return {
+          generatedExam: randomizedExam
+        };
+      } catch (error) {
+        fastify.log.error(error);
+        void reply.code(500);
+        return {
+          error: 'Something went wrong trying to generate your exam.'
+        };
+      }
+    }
+  );
+
+  fastify.post(
+    '/ms-trophy-challenge-completed',
+    {
+      schema: schemas.msTrophyChallengeCompleted,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          void reply.send({ type: 'error', message: 'flash.ms.trophy.err-2' });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const challengeId = req.body.id;
+        const challenge = msTrophyChallenges.find(
+          challenge => challenge.id === challengeId
+        );
+
+        if (!challenge) {
+          return reply
+            .code(400)
+            .send({ type: 'error', message: 'flash.ms.trophy.err-2' });
+        }
+
+        const msUser = await fastify.prisma.msUsername.findFirst({
+          where: { userId: req.session.user.id }
+        });
+
+        if (!msUser || !msUser.msUsername) {
+          return reply
+            .code(403)
+            .send({ type: 'error', message: 'flash.ms.trophy.err-1' });
+        }
+
+        const { msUsername } = msUser;
+
+        // TODO: log error if msTrophyId not found?
+        const msTrophyId = challenge.msTrophyId ?? '';
+
+        const msTrophyStatus = await verifyTrophyWithMicrosoft({
+          msUsername,
+          msTrophyId
+        });
+
+        if (msTrophyStatus.type === 'error') {
+          return reply.code(403).send(msTrophyStatus);
+        }
+
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id },
+          select: { completedChallenges: true, progressTimestamps: true }
+        });
+
+        const { completedChallenges } = user;
+        const progressTimestamps =
+          user.progressTimestamps as ProgressTimestamp[];
+        const oldChallenge = completedChallenges.find(
+          ({ id }) => id === challengeId
+        );
+        const alreadyCompleted = !!oldChallenge;
+        const completedDate = alreadyCompleted
+          ? oldChallenge.completedDate
+          : Date.now();
+
+        if (!alreadyCompleted) {
+          const newChallenge = {
+            id: challengeId,
+            completedDate,
+            solution: msTrophyStatus.msGameStatusApiUrl
+          };
+          await fastify.prisma.user.update({
+            where: { id: req.session.user.id },
+            data: {
+              completedChallenges: {
+                push: newChallenge
+              },
+              progressTimestamps: [...progressTimestamps, completedDate]
+            }
+          });
+        }
+
+        return {
+          alreadyCompleted,
+          points: getPoints(progressTimestamps) + (alreadyCompleted ? 0 : 1),
+          completedDate
+        };
+      } catch (error) {
+        fastify.log.error(error);
+        void reply.code(500);
+        return {
+          type: 'error',
+          message: 'flash.ms.trophy.err-5'
+        } as const;
+      }
+    }
+  );
+
+  fastify.post(
+    '/exam-challenge-completed',
+    {
+      schema: schemas.examChallengeCompleted,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          void reply.send({
+            error: 'Valid request body not found in attempt to submit exam.'
+          });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const { id: userId } = req.session.user;
+        const { userCompletedExam, id, challengeType } = req.body;
+
+        const { completedChallenges, completedExams, progressTimestamps } =
+          await fastify.prisma.user.findUniqueOrThrow({
+            where: { id: userId },
+            select: {
+              completedChallenges: true,
+              completedExams: true,
+              progressTimestamps: true
+            }
+          });
+
+        const examFromDb = await fastify.prisma.exam.findUnique({
+          where: { id }
+        });
+
+        if (!examFromDb) {
+          void reply.code(400);
+          return {
+            error: 'An error occurred trying to get the exam from the database.'
+          };
+        }
+
+        const validExamFromDbSchema = validateExamFromDbSchema(examFromDb);
+        if ('error' in validExamFromDbSchema) {
+          void reply.code(500);
+          return {
+            error:
+              'An error occurred validating the exam information from the database.'
+          };
+        }
+
+        const { prerequisites, numberOfQuestionsInExam, title } = examFromDb;
+
+        const prerequisiteIds = prerequisites.map(p => p.id);
+        const completedPrerequisites = completedChallenges.filter(c =>
+          prerequisiteIds.includes(c.id)
+        );
+
+        if (completedPrerequisites.length !== prerequisiteIds.length) {
+          void reply.code(403);
+          return {
+            error: `You have not completed the required challenges to start the '${title}'.`
+          };
+        }
+
+        const validUserCompletedExam = validateUserCompletedExamSchema(
+          userCompletedExam,
+          numberOfQuestionsInExam
+        );
+        if ('error' in validUserCompletedExam) {
+          fastify.log.error(validUserCompletedExam.error);
+          void reply.code(400);
+          return {
+            error: 'An error occurred validating the submitted exam.'
+          };
+        }
+
+        const examResults = createExamResults(userCompletedExam, examFromDb);
+
+        const validExamResults = validateExamResultsSchema(examResults);
+        if ('error' in validExamResults) {
+          fastify.log.error(validExamResults.error);
+          void reply.code(500);
+          return {
+            error: 'An error occurred validating the submitted exam.'
+          };
+        }
+
+        const newCompletedChallenges: CompletedChallenge[] =
+          completedChallenges;
+        const newCompletedExams: CompletedExam[] = completedExams;
+        const newProgressTimeStamps = progressTimestamps as ProgressTimestamp[];
+        const completedDate = Date.now();
+
+        const newCompletedChallenge = {
+          id,
+          challengeType,
+          completedDate,
+          examResults
+        };
+
+        // Always push to completedExams[] to keep a record of all exams taken.
+        newCompletedExams.push(newCompletedChallenge);
+
+        let addPoint = false;
+
+        const alreadyCompletedIndex = completedChallenges.findIndex(
+          c => c.id === id
+        );
+
+        const alreadyCompleted = alreadyCompletedIndex >= 0;
+
+        if (examResults.passed) {
+          if (alreadyCompleted) {
+            const { percentCorrect } = examResults;
+            const oldChallenge = completedChallenges[
+              alreadyCompletedIndex
+            ] as CompletedChallenge;
+            const oldResults = oldChallenge?.examResults as ExamResults;
+
+            const newChallenge = oldChallenge;
+            newChallenge ? (newChallenge.examResults = examResults) : null;
+
+            // only update if it's a better result
+            if (percentCorrect > oldResults.percentCorrect) {
+              const updatedChallege = {
+                id,
+                challengeType: oldChallenge.challengeType,
+                completedDate: oldChallenge.completedDate,
+                examResults
+              };
+
+              newCompletedChallenges[alreadyCompletedIndex] = updatedChallege;
+
+              await fastify.prisma.user.update({
+                where: { id: userId },
+                data: {
+                  completedExams: newCompletedExams,
+                  completedChallenges: newCompletedChallenges
+                }
+              });
+            } else {
+              await fastify.prisma.user.update({
+                where: { id: userId },
+                data: {
+                  completedExams: newCompletedExams
+                }
+              });
+            }
+
+            // not already completed, push to completedChallenges
+          } else {
+            addPoint = true;
+            newCompletedChallenges.push(newCompletedChallenge);
+
+            await fastify.prisma.user.update({
+              where: { id: userId },
+              data: {
+                completedExams: newCompletedExams,
+                completedChallenges: newCompletedChallenges,
+                progressTimestamps: [
+                  ...newProgressTimeStamps,
+                  newCompletedChallenge.completedDate
+                ]
+              }
+            });
+          }
+
+          // exam not passed
+        } else {
+          await fastify.prisma.user.update({
+            where: { id: userId },
+            data: {
+              completedExams: newCompletedExams
+            }
+          });
+        }
+
+        const points = getPoints(newProgressTimeStamps);
+
+        return {
+          alreadyCompleted,
+          points: addPoint ? points + 1 : points,
+          completedDate,
+          examResults
+        };
+      } catch (error) {
+        fastify.log.error(error);
+        void reply.code(500);
+        return {
+          error: 'An error occurred trying to submit your exam.'
+        };
       }
     }
   );

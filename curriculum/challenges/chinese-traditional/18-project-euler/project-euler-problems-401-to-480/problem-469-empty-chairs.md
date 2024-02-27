@@ -1,6 +1,6 @@
 ---
 id: 5900f5411000cf542c510053
-title: 'Problem 469: Empty chairs'
+title: '問題469：空椅子'
 challengeType: 1
 forumTopicId: 302144
 dashedName: problem-469-empty-chairs
@@ -10,9 +10,9 @@ dashedName: problem-469-empty-chairs
 
 In a room $N$ chairs are placed around a round table.
 
-Knights enter the room one by one and choose at random an available empty chair.
+騎士一個接一個地進入房間，隨意選擇一把可用的空椅子。
 
-To have enough elbow room the knights always leave at least one empty chair between each other.
+爲了擁有足夠的肘部空間，騎士總是在彼此之間留下至少一把空座椅。
 
 When there aren't any suitable chairs left, the fraction $C$ of empty chairs is determined. We also define $E(N)$ as the expected value of $C$.
 

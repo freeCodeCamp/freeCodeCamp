@@ -76,7 +76,7 @@ To fix this, you just need to update the `about` link `href` value to include th
 
 Refresh the `index` page in the browser and try clicking the `about` link again, it should now be back in working order.
 
-In many cases, this will work just fine; however, you can still run into unexpected issues with this approach. Prepending `./` before the link will in most cases prevent such issues. By adding `./` you are specifying to your code that it should start looking for the file/directory relative to the **current** directory.
+In many cases, this will work just fine; however, you can still run into unexpected issues with this approach. Prepending `./` before the link will in most cases prevent such issues. Durch das Hinzufügen von `./` gibst du deinem Code an, dass er nach der Datei/dem Verzeichnis relativ zum **aktuellem**-Verzeichnis suchen soll.
 
 ```html
 <body>
@@ -85,11 +85,11 @@ In many cases, this will work just fine; however, you can still run into unexpec
 </body>
 ```
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Watch Kevin Powell’s HTML File Structure video above.
+
+# --question--
 
 ## --text--
 

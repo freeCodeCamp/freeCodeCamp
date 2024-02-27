@@ -1,6 +1,6 @@
 ---
 id: 5900f3831000cf542c50fe96
-title: 'Problem 23: Non-abundant sums'
+title: '問題 23: 非過剰数の和'
 challengeType: 1
 forumTopicId: 301873
 dashedName: problem-23-non-abundant-sums
@@ -8,41 +8,41 @@ dashedName: problem-23-non-abundant-sums
 
 # --description--
 
-A perfect number is a number for which the sum of its proper divisors is exactly equal to the number. For example, the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.
+完全数とは、その真の約数の和がそれ自体と等しくなるような数のことです。 例えば、28 の真の約数の和は 1 + 2 + 4 + 7 + 14 = 28 なので、28 は完全数です。
 
-A number `n` is called deficient if the sum of its proper divisors is less than `n` and it is called abundant if this sum exceeds `n`.
+数 `n` は、その真の約数の和が `n` より小さい場合は不足数、`n` より大きい場合は過剰数と呼ばれます。
 
-As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest number that can be written as the sum of two abundant numbers is 24. By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers. However, this upper limit cannot be reduced any further by analysis even though it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.
+12 は最小の過剰数 (1 + 2 + 3 + 4 + 6 = 16) なので、2 つの過剰数の和として表せる最小数は 24 です。 数学的解析により、28123 を超えるすべての整数は 2 つの過剰数の和として表せることを証明できます。 しかし、2 つの過剰数の和として表せない最大の数がこの上限よりも小さいことが分かっているにもかかわらず、分析によってこの上限を引き下げることができません。
 
-Find the sum of all positive integers &lt;= `n` which cannot be written as the sum of two abundant numbers.
+2 つの過剰数の和として表せない、`n` 以下の正の整数の総和を求めなさい。
 
 # --hints--
 
-`sumOfNonAbundantNumbers(10000)` should return a number.
+`sumOfNonAbundantNumbers(10000)` は数値を返す必要があります。
 
 ```js
 assert(typeof sumOfNonAbundantNumbers(10000) === 'number');
 ```
 
-`sumOfNonAbundantNumbers(10000)` should return 3731004.
+`sumOfNonAbundantNumbers(10000)` は 3731004 を返す必要があります。
 
 ```js
 assert(sumOfNonAbundantNumbers(10000) === 3731004);
 ```
 
-`sumOfNonAbundantNumbers(15000)` should return 4039939.
+`sumOfNonAbundantNumbers(15000)` は 4039939 を返す必要があります。
 
 ```js
 assert(sumOfNonAbundantNumbers(15000) === 4039939);
 ```
 
-`sumOfNonAbundantNumbers(20000)` should return 4159710.
+`sumOfNonAbundantNumbers(20000)` は4159710を返す必要があります
 
 ```js
 assert(sumOfNonAbundantNumbers(20000) === 4159710);
 ```
 
-`sumOfNonAbundantNumbers(28123)` should return 4179871.
+`sumOfNonAbundantNumbers(28123)` は4179871を返す必要があります。
 
 ```js
 assert(sumOfNonAbundantNumbers(28123) === 4179871);

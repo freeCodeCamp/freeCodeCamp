@@ -8,7 +8,7 @@ dashedName: test-for-truthiness
 
 # --description--
 
-请注意，本项目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化项目的基础上进行开发，你也可以从 <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `isTrue()` 仅当给出的值为 Boolean 的 `true` 时可以通过测试；`isNotTrue()` 则会在给出除 `true` 以外的值时通过测试。
 
@@ -22,7 +22,7 @@ assert.isTrue(1, 'This will NOT pass with the number value 1');
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，`Basic Assertions` 套件中标注为 `#4` 的测试下，修改每个 `assert` 为 `assert.isTrue` 或 `assert.isNotTrue`，通过测试（结果应为 `true`）。 不要修改传入断言的参数。
+Within `tests/1_unit-tests.js` under the test labeled `#4` in the `Basic Assertions` suite, change each `assert` to either `assert.isTrue` or `assert.isNotTrue` to make the test pass (should evaluate to `true`). 不要修改传入断言的参数。
 
 # --hints--
 

@@ -11,20 +11,12 @@ dashedName: learn-how-javascript-assertions-work
 Lavorare su queste sfide ti porterà a scrivere il tuo codice utilizzando uno dei seguenti metodi:
 
 - Clonare <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">questo repository GitHub</a> e completare queste sfide localmente.
-- Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare queste sfide.
+- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges.
 - Usare un costruttore di siti a tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
-
-Se utilizzi Replit, segui questi passaggi per impostare il progetto:
-
--   Inizia importando il progetto su Replit.
--   Poi vedrai una finestra `.replit`.
--   Seleziona `Use run command` e clicca sul pulsante `Done`.
-
-Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo Link alla soluzione.
 
 # --instructions--
 
-All'interno di `tests/1_unit-tests.js`, sotto il test etichettato con `#1`, nella suite `Basic Assertions`, cambia ogni asserzione `assert` in `assert.isNull` o `assert.isNotNull` per far superare il test (dovrebbe risultare `true`). Non cambiare gli argomenti passati alle asserzioni.
+Within `tests/1_unit-tests.js` under the test labeled `#1` in the `Basic Assertions` suite, change each `assert` to either `assert.isNull` or `assert.isNotNull` to make the test pass (should evaluate to `true`). Non cambiare gli argomenti passati alle asserzioni.
 
 # --hints--
 

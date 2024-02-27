@@ -84,7 +84,7 @@ Las pruebas unitarias para este proyecto están en `test_module.py`. Ejecutamos 
 
 ## Envío
 
-Copy your project's URL and submit it to freeCodeCamp.
+Copia el enlace de tu proyecto y envíalo a freeCodeCamp.
 
 # --hints--
 

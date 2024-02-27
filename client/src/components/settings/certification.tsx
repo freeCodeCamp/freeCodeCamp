@@ -68,7 +68,8 @@ const isCertSelector = ({
   isMachineLearningPyCertV7,
   isRelationalDatabaseCertV8,
   isCollegeAlgebraPyCertV8,
-  isFoundationalCSharpCertV8
+  isFoundationalCSharpCertV8,
+  isJsAlgoDataStructCertV8
 }: ClaimedCertifications) => ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -87,7 +88,8 @@ const isCertSelector = ({
   isMachineLearningPyCertV7,
   isRelationalDatabaseCertV8,
   isCollegeAlgebraPyCertV8,
-  isFoundationalCSharpCertV8
+  isFoundationalCSharpCertV8,
+  isJsAlgoDataStructCertV8
 });
 
 const isCertMapSelector = createSelector(
@@ -109,10 +111,11 @@ const isCertMapSelector = createSelector(
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
     isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8
+    isFoundationalCSharpCertV8,
+    isJsAlgoDataStructCertV8
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
-    'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
+    'Legacy JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
     'Front End Development Libraries': isFrontEndLibsCert,
     'Data Visualization': is2018DataVisCert,
     'Back End Development and APIs': isApisMicroservicesCert,
@@ -131,7 +134,9 @@ const isCertMapSelector = createSelector(
     // TODO: remove Example Certification? Also, include Upcoming Python
     // Certification.
     'Example Certification': false,
-    'Upcoming Python Certification': false
+    'Upcoming Python Certification': false,
+    'A2 English for Developers': false,
+    'JavaScript Algorithms and Data Structures (Beta)': isJsAlgoDataStructCertV8
   })
 );
 

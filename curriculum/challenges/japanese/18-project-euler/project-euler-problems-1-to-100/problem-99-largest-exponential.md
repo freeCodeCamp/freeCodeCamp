@@ -1,6 +1,6 @@
 ---
 id: 5900f3d01000cf542c50fee2
-title: 'Problem 99: Largest exponential'
+title: '問題 99: 最大の累乗値'
 challengeType: 1
 forumTopicId: 302216
 dashedName: problem-99-largest-exponential
@@ -8,27 +8,27 @@ dashedName: problem-99-largest-exponential
 
 # --description--
 
-Comparing two numbers written in index form like $2^{11}$ and $3^7$ is not difficult, as any calculator would confirm that $2^{11} = 2048 &lt; 3^7 = 2187$.
+2^{11}$ と $3^7$ のような指数形式で書かれた 2 つの数字を比較することは難しくありません。電卓を使えば、$2^{11}=2048 &lt; 3^7=2187$ であることを確認できるからです。
 
-However, confirming that $632382^{518061} &lt; 519432^{525806}$ would be much more difficult, as both numbers contain over three million digits.
+しかし、$632382^{518061} &lt; 519432^{525806}$ を確認することは、上の場合よりはるかに難しいでしょう。どちらも 300 万桁以上あるからです。
 
-Using the 2D `baseExp` array of base/exponent pairs, determine pair with the greatest numerical value and return it.
+基数と指数のペアの二次元配列 `baseExp` を使用して、最大の数値を持つ対を見つけ、それを返しなさい。
 
 # --hints--
 
-`largestExponential(testArray1)` should return an array.
+`largestExponential(testArray1)` は配列を返す必要があります。
 
 ```js
 assert(Array.isArray(largestExponential(_testArray1)));
 ```
 
-`largestExponential(testArray1)` should return `[840237, 507276]`.
+`largestExponential(testArray1)` は `[840237, 507276]` を返す必要があります。
 
 ```js
 assert.deepEqual(largestExponential(_testArray1), [840237, 507276]);
 ```
 
-`largestExponential(testArray2)` should return `[895447, 504922]`.
+`largestExponential(testArray2)` は `[895447, 504922]` を返す必要があります。
 
 ```js
 assert.deepEqual(largestExponential(_testArray2), [895447, 504922]);

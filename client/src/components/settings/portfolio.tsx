@@ -256,20 +256,27 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     };
     return (
       <FullWidthRow key={id}>
-        <form onSubmit={e => handleSubmit(e, id)} id='portfolio-items'>
+        <form
+          onSubmit={e => handleSubmit(e, id)}
+          id='portfolio-items'
+          data-playwright-test-label='portfolio-items'
+        >
           <FormGroup
             controlId={`${id}-title`}
             validationState={
               pristine || (!pristine && !title) ? null : titleState
             }
           >
-            <ControlLabel>{t('settings.labels.title')}</ControlLabel>
+            <ControlLabel htmlFor={`${id}-title-input`}>
+              {t('settings.labels.title')}
+            </ControlLabel>
             <FormControl
               onChange={this.createOnChangeHandler(id, 'title')}
               required={true}
               type='text'
               value={title}
               data-cy='portfolio-title'
+              id={`${id}-title-input`}
             />
             {titleMessage ? (
               <HelpBlock data-cy='validation-message'>{titleMessage}</HelpBlock>
@@ -279,13 +286,16 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             controlId={`${id}-url`}
             validationState={pristine || (!pristine && !url) ? null : urlState}
           >
-            <ControlLabel>{t('settings.labels.url')}</ControlLabel>
+            <ControlLabel htmlFor={`${id}-url-input`}>
+              {t('settings.labels.url')}
+            </ControlLabel>
             <FormControl
               onChange={this.createOnChangeHandler(id, 'url')}
               required={true}
               type='url'
               value={url}
               data-cy='portfolio-url'
+              id={`${id}-url-input`}
             />
             {urlMessage ? (
               <HelpBlock data-cy='validation-message'>{urlMessage}</HelpBlock>
@@ -295,12 +305,15 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             controlId={`${id}-image`}
             validationState={pristine ? null : imageState}
           >
-            <ControlLabel>{t('settings.labels.image')}</ControlLabel>
+            <ControlLabel htmlFor={`${id}-image-input`}>
+              {t('settings.labels.image')}
+            </ControlLabel>
             <FormControl
               onChange={this.createOnChangeHandler(id, 'image')}
               type='url'
               value={image}
               data-cy='portfolio-image'
+              id={`${id}-image-input`}
             />
             {imageMessage ? (
               <HelpBlock data-cy='validation-message'>{imageMessage}</HelpBlock>
@@ -310,12 +323,15 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             controlId={`${id}-description`}
             validationState={pristine ? null : descriptionState}
           >
-            <ControlLabel>{t('settings.labels.description')}</ControlLabel>
+            <ControlLabel htmlFor={`${id}-description-input`}>
+              {t('settings.labels.description')}
+            </ControlLabel>
             <FormControl
               componentClass='textarea'
               onChange={this.createOnChangeHandler(id, 'description')}
               value={description}
               data-cy='portfolio-description'
+              id={`${id}-description-input`}
             />
             {descriptionMessage ? (
               <HelpBlock data-cy='validation-message'>

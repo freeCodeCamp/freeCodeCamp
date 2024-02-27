@@ -52,19 +52,19 @@ Puedes utilizar cualquier combinación de HTML, JavaScript, CSS, Bootstrap, SASS
 
 **Historia de usuario #18:** Cuando hago clic por primera vez en el elemento con `id="start_stop"`, el temporizador debe empezar a correr desde el valor actualmente mostrado en `id="session-length"`, incluso si el valor ha sido incrementado o decrementado desde el valor original de 25.
 
-**User Story #19:** If the timer is running, the element with the id of `time-left` should display the remaining time in `mm:ss` format (decrementing by a value of 1 and updating the display every 1000ms).
+**Historia de usuario #19:** Si el temporizador está en marcha, el elemento con el id `time-left` debe mostrar el tiempo restante en formato `mm:ss` (decrementando en un valor de 1 y actualizando la pantalla cada 1000ms).
 
-**User Story #20:** If the timer is running and I click the element with `id="start_stop"`, the countdown should pause.
+**Historia de usuario #20:** Si el temporizador está en marcha y hago clic en el elemento con `id="start_stop"`, la cuenta atrás debería pausarse.
 
-**User Story #21:** If the timer is paused and I click the element with `id="start_stop"`, the countdown should resume running from the point at which it was paused.
+**Historia de usuario #21:** Si el temporizador está pausado y hago clic en el elemento `id="start_stop"`, la cuenta atrás debe reanudarse desde el punto en el que fue pausada.
 
-**User Story #22:** When a session countdown reaches zero (NOTE: timer MUST reach 00:00), and a new countdown begins, the element with the id of `timer-label` should display a string indicating a break has begun.
+**Historia de usuario #22:** Cuando la cuenta atrás de la sesión llega a cero (NOTA: el temporizador DEBE llegar a 00:00) y una nueva cuenta atrás comienza, el elemento cuyo id es `timer-label` debe mostrar una cadena en la que se indica que el descanso (break) ha comenzado.
 
-**User Story #23:** When a session countdown reaches zero (NOTE: timer MUST reach 00:00), a new break countdown should begin, counting down from the value currently displayed in the `id="break-length"` element.
+**Historia de usuario #23:** cuando la cuenta regresiva de una sesión llega a cero (NOTA: el temporizador DEBE llegar a las 00:00), debe comenzar una nueva cuenta regresiva de pausa, contando hacia atrás desde el valor que se muestra actualmente en el elemento `id="break-length"`.
 
-**User Story #24:** When a break countdown reaches zero (NOTE: timer MUST reach 00:00), and a new countdown begins, the element with the id of `timer-label` should display a string indicating a session has begun.
+**Historia de usuario #24:** Cuando la cuenta regresiva en el periodo de descanso (break) llega a cero (NOTA: el temporizador DEBE llegar a 00:00) y una nueva cuenta atrás debe comenzar, el elemento cuyo id es `timer-label` debe mostrar una cadena indicando que la sesión ha comenzado.
 
-**User Story #25:** When a break countdown reaches zero (NOTE: timer MUST reach 00:00), a new session countdown should begin, counting down from the value currently displayed in the `id="session-length"` element.
+**Historia de Usuario #25:** Cuando la cuenta regresiva llegue a cero (NOTA: el temporizador DEBE llegar a 00:00), debe comenzar una nueva sesión de conteo regresivo, el cual debe hacerse desde el valor desplegado actualmente en el elemento `id="session-length"`.
 
 **User Story #26:** When a countdown reaches zero (NOTE: timer MUST reach 00:00), a sound indicating that time is up should play. This should utilize an HTML5 `audio` tag and have a corresponding `id="beep"`.
 

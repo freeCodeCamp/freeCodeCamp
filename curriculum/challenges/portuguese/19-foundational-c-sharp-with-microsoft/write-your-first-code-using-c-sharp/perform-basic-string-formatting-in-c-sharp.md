@@ -12,11 +12,11 @@ Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga e
 1. Acesse <a href="https://learn.microsoft.com/training/modules/csharp-basic-formatting/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-basic-formatting/</a> e complete todas as tarefas do módulo "Realize a formatação básica de strings em C#". Isso é **necessário** para conquistar o troféu "Escreva seu primeiro código usando o C#" da Microsoft Learn e para se qualificar para o exame de certificação.
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Complete o módulo <a href="https://learn.microsoft.com/training/modules/csharp-basic-formatting/" target="_blank" rel="noreferrer">Realize a formatação básica de strings em C#</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
+
+# --question--
 
 ## --text--
 

@@ -57,7 +57,7 @@ assert.match(code, /myStorage\.car\.inside/);
 assert.match(code, /const\s+gloveBoxContents\s*=/);
 ```
 
-You should not change the `myStorage` object.
+Você não deve alterar o objeto `myStorage`.
 
 ```js
 const expectedMyStorage = {

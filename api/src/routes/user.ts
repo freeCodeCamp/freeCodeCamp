@@ -26,6 +26,24 @@ const nanoid = customAlphabet(
 );
 
 /**
+ * Helper function to get the api url from the shared transcript link.
+ *
+ * @param msTranscript Shared transcript link.
+ * @returns Microsoft transcript api url.
+ */
+export const getMsTranscriptApiUrl = (msTranscript: string) => {
+  // example msTranscriptUrl: https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo
+  const url = new URL(msTranscript);
+
+  // TODO(Post-MVP): throw if it doesn't match?
+  const transcriptUrlRegex = /\/transcript\/([^/]+)\/?/;
+  const id = transcriptUrlRegex.exec(url.pathname)?.[1];
+  return `https://learn.microsoft.com/api/profiles/transcript/share/${
+    id ?? ''
+  }`;
+};
+
+/**
  * Wrapper for endpoints related to user account management,
  * such as account deletion.
  *
@@ -38,6 +56,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
+  // @ts-expect-error - @fastify/csrf-protection needs to update their types
   // eslint-disable-next-line @typescript-eslint/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
   fastify.addHook('onRequest', fastify.authenticateSession);
@@ -50,6 +69,9 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         await fastify.prisma.userToken.deleteMany({
+          where: { userId: req.session.user.id }
+        });
+        await fastify.prisma.msUsername.deleteMany({
           where: { userId: req.session.user.id }
         });
         await fastify.prisma.user.delete({
@@ -81,6 +103,9 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         await fastify.prisma.userToken.deleteMany({
           where: { userId: req.session.user.id }
         });
+        await fastify.prisma.msUsername.deleteMany({
+          where: { userId: req.session.user.id }
+        });
         await fastify.prisma.user.update({
           where: { id: req.session.user.id },
           data: {
@@ -105,6 +130,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
             isRelationalDatabaseCertV8: false,
             isCollegeAlgebraPyCertV8: false,
             completedChallenges: [],
+            completedExams: [],
             savedChallenges: [],
             partiallyCompletedChallenges: [],
             needsModeration: false
@@ -226,6 +252,116 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  fastify.delete(
+    '/user/ms-username',
+    {
+      schema: schemas.deleteMsUsername
+    },
+    async (req, reply) => {
+      try {
+        await fastify.prisma.msUsername.deleteMany({
+          where: { userId: req.session.user.id }
+        });
+
+        // TODO(Post-MVP): return a generic success message.
+        return { msUsername: null };
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        void reply.send({
+          message: 'flash.ms.transcript.unlink-err',
+          type: 'error'
+        });
+      }
+    }
+  );
+
+  fastify.post(
+    '/user/ms-username',
+    {
+      schema: schemas.postMsUsername,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400).send({
+            message: 'flash.ms.transcript.link-err-1',
+            type: 'error'
+          });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id }
+        });
+
+        const msApiRes = await fetch(
+          getMsTranscriptApiUrl(req.body.msTranscriptUrl)
+        );
+
+        if (!msApiRes.ok) {
+          return reply
+            .status(404)
+            .send({ type: 'error', message: 'flash.ms.transcript.link-err-2' });
+        }
+
+        const { userName } = (await msApiRes.json()) as { userName: string };
+
+        if (!userName) {
+          return reply.status(500).send({
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-3'
+          });
+        }
+
+        // TODO(Post-MVP): make msUsername unique, then we can simply try to
+        // create the record and catch the error.
+        const usernameUsed = !!(await fastify.prisma.msUsername.findFirst({
+          where: {
+            msUsername: userName
+          }
+        }));
+
+        if (usernameUsed) {
+          return reply.status(403).send({
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-4'
+          });
+        }
+
+        // TODO(Post-MVP): do we need to store tll in the database? We aren't
+        // storing the creation date, so we can't expire it.
+
+        // 900 days in ms
+        const ttl = 900 * 24 * 60 * 60 * 1000;
+
+        // TODO(Post-MVP): make userId unique and then we can upsert.
+
+        await fastify.prisma.msUsername.deleteMany({
+          where: { userId: user.id }
+        });
+
+        await fastify.prisma.msUsername.create({
+          data: {
+            msUsername: userName,
+            ttl,
+            userId: user.id
+          }
+        });
+
+        return { msUsername: userName };
+      } catch (err) {
+        fastify.log.error(err);
+        return reply.code(500).send({
+          type: 'error',
+          message: 'flash.ms.transcript.link-err-6'
+        });
+      }
+    }
+  );
+
   done();
 };
 
@@ -261,6 +397,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             about: true,
             acceptedPrivacyTerms: true,
             completedChallenges: true,
+            completedExams: true,
             currentChallengeId: true,
             email: true,
             emailVerified: true,

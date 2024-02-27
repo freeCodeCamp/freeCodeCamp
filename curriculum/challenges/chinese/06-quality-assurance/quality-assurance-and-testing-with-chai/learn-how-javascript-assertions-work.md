@@ -11,20 +11,12 @@ dashedName: learn-how-javascript-assertions-work
 你可以采用下面的任意一种方式完成这些挑战：
 
 - 克隆<a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">这个 GitHub 仓库</a>，并在本地完成这些挑战。
-- 使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成这些挑战。
+- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges.
 - 使用一个你喜欢的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
-
-如果你使用 Replit，请按照以下步骤设置项目：
-
--   首先在 Replit 中导入项目。
--   接着，你将看到一个 `.replit` 窗口。
--   选择 `Use run command` 并点击 `Done` 按钮。
-
-当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 Solution Link 字段中。
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 文件下 `Basic Assertions` suite 内注释为 `#1` 的地方，将每一个 `assert` 更改为 `assert.isNull` 或 `assert.isNotNull`，以使测试通过（应该返回 `true`）。 不要修改传入断言的参数。
+Within `tests/1_unit-tests.js` under the test labeled `#1` in the `Basic Assertions` suite, change each `assert` to either `assert.isNull` or `assert.isNotNull` to make the test pass (should evaluate to `true`). 不要修改传入断言的参数。
 
 # --hints--
 

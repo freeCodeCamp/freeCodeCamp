@@ -14,7 +14,7 @@ env:
 jobs:
   i18n-download-client-ui-translations:
     name: Client
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout Source Files
@@ -276,6 +276,35 @@ jobs:
           # downloads
           download_translations: true
           download_language: sw
+          skip_untranslated_files: false
+          export_only_approved: true
+
+          push_translations: false
+
+          # pull-request
+          create_pull_request: false
+
+          # global options
+          config: './crowdin-config.yml'
+          base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
+
+          # Uncomment below to debug
+          # dryrun_action: true
+
+      ##### Download Korean #####
+      - name: Crowdin Download Korean Translations
+        uses: crowdin/github-action@master
+        # options: https://github.com/crowdin/github-action/blob/master/action.yml
+        with:
+          # uploads
+          upload_sources: false
+          upload_translations: false
+          auto_approve_imported: false
+          import_eq_suggestions: false
+
+          # downloads
+          download_translations: true
+          download_language: ko
           skip_untranslated_files: false
           export_only_approved: true
 

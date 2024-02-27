@@ -8,7 +8,7 @@ dashedName: hash-and-compare-passwords-synchronously
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Синхронне хешування також легко виконати, однак це може спричинити затримку, якщо використовувати його на серверній стороні з високою вартістю або з хешуванням, яке проводиться дуже часто. Хешування цим методом є таким же простим, як і виклик
 

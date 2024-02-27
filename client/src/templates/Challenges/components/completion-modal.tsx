@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import { noop } from 'lodash-es';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Button } from '@freecodecamp/ui';
 
 import Login from '../../../components/Header/components/login';
 import { executeGA } from '../../../redux/actions';
@@ -24,12 +25,11 @@ import {
   challengeMetaSelector,
   isSubmittingSelector
 } from '../redux/selectors';
-import ProgressBar from '../../../components/ProgressBar';
+import Progress from '../../../components/Progress';
 import GreenPass from '../../../assets/icons/green-pass';
+import { Spacer } from '../../../components/helpers';
 
 import './completion-modal.css';
-import { fireConfetti } from '../../../utils/fire-confetti';
-import { certsToProjects } from '../../../../config/cert-and-project-map';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -80,11 +80,6 @@ interface CompletionModalsProps extends StateProps {
 interface CompletionModalState {
   downloadURL: null | string;
 }
-
-const isCertificationProject = (id: string) =>
-  Object.values(certsToProjects).some(cert =>
-    cert.some(project => project.id === id)
-  );
 
 class CompletionModal extends Component<
   CompletionModalsProps,
@@ -157,26 +152,18 @@ class CompletionModal extends Component<
     const {
       close,
       isOpen,
-      id,
       isSignedIn,
       isSubmitting,
       message,
       t,
       dashedName,
-      submitChallenge,
-      completedChallengesIds
+      submitChallenge
     } = this.props;
 
     if (isOpen) {
       executeGA({ event: 'pageview', pagePath: '/completion-modal' });
-      if (
-        isCertificationProject(id) &&
-        !completedChallengesIds.includes(id) &&
-        !isSubmitting
-      ) {
-        fireConfetti();
-      }
     }
+
     return (
       <Modal
         data-cy='completion-modal'
@@ -204,17 +191,20 @@ class CompletionModal extends Component<
             />
           </div>
           <div className='completion-block-details'>
-            <ProgressBar />
+            <Progress />
           </div>
         </Modal.Body>
         <Modal.Footer>
           {isSignedIn ? null : (
-            <Login block={true}>{t('learn.sign-in-save')}</Login>
+            <>
+              <Login block={true}>{t('learn.sign-in-save')}</Login>
+              <Spacer size='xxSmall' />
+            </>
           )}
           <Button
             block={true}
-            bsSize='large'
-            bsStyle='primary'
+            size='large'
+            variant='primary'
             disabled={isSubmitting}
             data-cy='submit-challenge'
             onClick={() => submitChallenge()}
@@ -222,12 +212,12 @@ class CompletionModal extends Component<
             {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
             <span className='hidden-xs'> (Ctrl + Enter)</span>
           </Button>
+          <Spacer size='xxSmall' />
           {this.state.downloadURL ? (
             <Button
               block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-invert'
+              size='large'
+              variant='primary'
               download={`${dashedName}.txt`}
               href={this.state.downloadURL}
             >

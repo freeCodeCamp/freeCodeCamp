@@ -17,7 +17,7 @@ on:
 jobs:
   build-client:
     name: Build Client
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         node-version: [20.x]
@@ -38,7 +38,7 @@ jobs:
           version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
+        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
@@ -72,7 +72,7 @@ jobs:
 
   playwright-run:
     name: E2E Test
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: build-client
     strategy:
       fail-fast: false
@@ -114,7 +114,7 @@ jobs:
           version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
+        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -129,9 +129,7 @@ jobs:
           pnpm run build:server
 
       - name: Seed Database with Certified User
-        run: |
-          pnpm run seed:certified-user
-          pnpm run seed:exams
+        run: pnpm run seed:certified-user
 
       # start-ci uses pm2, so it needs to be installed globally
       - name: Install pm2
@@ -139,7 +137,6 @@ jobs:
 
       - name: Install playwright dependencies
         run: |
-          cd ./e2e
           npx playwright install
           npx playwright install-deps
 
@@ -147,5 +144,4 @@ jobs:
         run: |
           pnpm run start-ci &
           sleep 10
-          cd ./e2e
           npx playwright test --project=${{ matrix.browsers }}

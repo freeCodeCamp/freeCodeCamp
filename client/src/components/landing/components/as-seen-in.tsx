@@ -12,12 +12,12 @@ const AsSeenIn = (): JSX.Element => {
       className='as-seen-in text-center'
       data-playwright-test-label='landing-as-seen-in-container'
     >
-      <p
+      <h2
         className='big-heading'
         data-playwright-test-label='landing-as-seen-in-text'
       >
         {t('landing.as-seen-in')}
-      </p>
+      </h2>
       <AsSeenInText fill='light' />
     </Container>
   );

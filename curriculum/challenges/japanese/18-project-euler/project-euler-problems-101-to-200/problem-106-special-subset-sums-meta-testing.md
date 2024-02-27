@@ -1,6 +1,6 @@
 ---
 id: 5900f3d71000cf542c50fee9
-title: 'Problem 106: Special subset sums: meta-testing'
+title: '問題 106: 特殊和部分集合: メタ検証'
 challengeType: 1
 forumTopicId: 301730
 dashedName: problem-106-special-subset-sums-meta-testing
@@ -8,22 +8,22 @@ dashedName: problem-106-special-subset-sums-meta-testing
 
 # --description--
 
-Let $S(A)$ represent the sum of elements in set A of size n. We shall call it a special sum set if for any two non-empty disjoint subsets, B and C, the following properties are true:
+大きさが n である集合 A の要素の和を、$S(A)$ で表します。 空でなく互いに素な 2 つの部分集合 B と C について、次の性質が真の場合、それを「特殊和集合」と呼ぶことにします。
 
-1. $S(B) ≠ S(C)$; that is, sums of subsets cannot be equal.
-2. If B contains more elements than C then $S(B) > S(C)$.
+1. $S(B) ≠ S(C)$ である。すなわち、部分集合の和が等しくてはならない。
+2. B が C より多くの要素を含むとき、$S(B) > S(C)$ である。
 
-For this problem we shall assume that a given set contains n strictly increasing elements and it already satisfies the second rule.
+この問題では、与えられた集合が n 個の狭義単調増加要素を含み、上の 2 つ目のルールに沿っていると仮定します。
 
-Surprisingly, out of the 25 possible subset pairs that can be obtained from a set for which n = 4, only 1 of these pairs need to be tested for equality (first rule). Similarly, when n = 7, only 70 out of the 966 subset pairs need to be tested.
+意外ですが、n = 4 の集合から得られる 25 個の可能な部分集合の対のうち、等価性の検証が必要なものは 1 つだけです (1 つ目のルール)。 同様に、n = 7 のとき、966 個の部分集合の対のうち検証が必要なものは 70 個だけです。
 
-For n = 12, how many of the 261625 subset pairs that can be obtained need to be tested for equality?
+N = 12 のとき、得られる 261625 個の部分集合の対のうち、等価性の検証が必要なものはいくつありますか。
 
-**Note:** This problem is related to Problem 103 and Problem 105.
+**注:** この問題は、問題 103 および問題 105 と関連しています。
 
 # --hints--
 
-`subsetSumsMetaTesting()` should return `21384`.
+`subsetSumsMetaTesting()` は `21384` を返す必要があります。
 
 ```js
 assert.strictEqual(subsetSumsMetaTesting(), 21384);

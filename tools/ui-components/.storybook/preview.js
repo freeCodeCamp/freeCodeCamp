@@ -11,6 +11,7 @@ export const parameters = {
     }
   },
   backgrounds: {
+    default: 'light-palette',
     values: [
       {
         name: 'light-palette',
@@ -36,8 +37,8 @@ function renderTheme(Story, context) {
     bg => bg.value === selectedBackgroundValue
   )?.name;
 
-  // There can be no background selected, prevent "undefined" className
-  const className = selectedBackgroundName || '';
+  // Use the value of the default background to prevent "undefined" className
+  const className = selectedBackgroundName || parameters.backgrounds.default;
 
   return (
     <div className={className}>

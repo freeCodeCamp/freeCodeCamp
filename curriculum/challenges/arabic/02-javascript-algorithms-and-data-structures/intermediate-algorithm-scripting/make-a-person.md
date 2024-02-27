@@ -19,7 +19,7 @@ setLastName(last)
 setFullName(first, last)
 ```
 
-قم بتشغيل الاختبارات لرؤية المخرجات المتوقعة لكل method. These methods must be the only available means of interacting with the object. Each test will declare a new `Person` instance as `new Person('Bob', 'Ross')`.
+قم بتشغيل الاختبارات لرؤية المخرجات المتوقعة لكل method. يجب أن تكون هذه الـ methods هي الوسيلة الوحيدة المتاحة للتفاعل مع الـ object. Each test will declare a new `Person` instance as `new Person('Bob', 'Ross')`.
 
 # --hints--
 
@@ -32,13 +32,13 @@ assert.match(code, /const\s+Person\s*=\s*function\s*\(\s*first\s*,\s*last\s*\)\s
 You should not reassign the `first` parameter.
 
 ```js
-assert.notMatch(code, /first\s*=\s*/);
+assert.notMatch(code, /\bfirst\s*=\s*/);
 ```
 
 You should not reassign the `last` parameter.
 
 ```js
-assert.notMatch(code, /last\s*=\s*/);
+assert.notMatch(code, /\blast\s*=\s*/);
 ```
 
 No properties should be added. `Object.keys(Person).length` should always return 6.

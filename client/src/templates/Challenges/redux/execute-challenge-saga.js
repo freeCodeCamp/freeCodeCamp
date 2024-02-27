@@ -33,8 +33,12 @@ import {
   updatePreview,
   updateProjectPreview
 } from '../utils/build';
-import { runPythonInFrame, mainPreviewId } from '../utils/frame';
+import {
+  interruptCodeExecution,
+  runPythonCode
+} from '../utils/python-worker-handler';
 import { executeGA } from '../../../redux/actions';
+import { fireConfetti } from '../../../utils/fire-confetti';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
@@ -53,7 +57,8 @@ import {
   challengeTestsSelector,
   isBuildEnabledSelector,
   isExecutingSelector,
-  portalDocumentSelector
+  portalDocumentSelector,
+  isBlockNewlyCompletedSelector
 } from './selectors';
 
 // How long before bailing out of a preview.
@@ -87,7 +92,7 @@ function* executeCancellableChallengeSaga(payload) {
   yield cancel(task);
 }
 
-function* executeChallengeSaga({ payload }) {
+export function* executeChallengeSaga({ payload }) {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
@@ -126,8 +131,12 @@ function* executeChallengeSaga({ payload }) {
     yield put(updateTests(testResults));
 
     const challengeComplete = testResults.every(test => test.pass && !test.err);
+    const isBlockCompleted = yield select(isBlockNewlyCompletedSelector);
     if (challengeComplete) {
       playTone('tests-completed');
+      if (isBlockCompleted) {
+        fireConfetti();
+      }
     } else {
       playTone('tests-failed');
       if (challengeMeta.certification === 'responsive-web-design') {
@@ -141,6 +150,7 @@ function* executeChallengeSaga({ payload }) {
         );
       }
     }
+
     if (challengeComplete && payload?.showCompletionModal) {
       yield put(openModal('completion'));
     }
@@ -199,7 +209,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         throw err;
       }
     } catch (err) {
-      const { actual, expected } = err;
+      const { actual, expected, errorType } = err;
 
       newTest.message = text
         .replace('--fcc-expected--', expected)
@@ -207,11 +217,18 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
+      } else if (errorType) {
+        const msgKey =
+          errorType === 'indentation'
+            ? 'learn.indentation-error'
+            : 'learn.syntax-error';
+        newTest.message = `<p>${i18next.t(msgKey)}</p>`;
       } else {
         const { message, stack } = err;
         newTest.err = message + '\n' + stack;
         newTest.stack = stack;
       }
+      console.log('newTest', newTest);
       yield put(updateConsole(newTest.message));
     } finally {
       testResults.push(newTest);
@@ -221,7 +238,8 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
 }
 
 // updates preview frame and the fcc console.
-function* previewChallengeSaga({ flushLogs = true } = {}) {
+export function* previewChallengeSaga(action) {
+  const flushLogs = action?.type !== actionTypes.previewMounted;
   yield delay(700);
 
   const isBuildEnabled = yield select(isBuildEnabledSelector);
@@ -257,15 +275,13 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
         const portalDocument = yield select(portalDocumentSelector);
         const finalDocument = portalDocument || document;
 
-        yield call(updatePreview, buildData, finalDocument, proxyLogger);
-
-        // Python challenges need to be created in two steps:
-        // 1) build the frame
-        // 2) evaluate the code in the frame. This is necessary to avoid
-        //    recreating the frame (which is slow since loadPyodide takes a long
-        //    time)on every change.
+        // Python challenges do not use the preview frame, they use a web worker
+        // to run the code. The UI is handled by the xterm component, so there
+        // is no need to update the preview frame.
         if (challengeData.challengeType === challengeTypes.python) {
           yield updatePython(challengeData);
+        } else {
+          yield call(updatePreview, buildData, finalDocument, proxyLogger);
         }
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = getTestRunner(buildData, {
@@ -288,30 +304,33 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
   }
 }
 
-function* updatePreviewSaga() {
+// TODO: refactor this so that we can use a single saga for all challenge
+// updates (then they can all go in the same `takeLatest` call and be cancelled
+// appropriately)
+function* updatePreviewSaga(action) {
   const challengeData = yield select(challengeDataSelector);
   if (challengeData.challengeType === challengeTypes.python) {
     yield updatePython(challengeData);
   } else {
     // all other challenges have to recreate the preview
-    yield previewChallengeSaga();
+    yield previewChallengeSaga(action);
   }
 }
 
 function* updatePython(challengeData) {
-  const document = yield getContext('document');
   // TODO: refactor the build pipeline so that we have discrete, composable
   // functions to handle transforming code, embedding it and building the
   // final html. Then we can just use the transformation function here.
   const buildData = yield buildChallengeData(challengeData);
-  const code = buildData.transformedPython;
+  interruptCodeExecution();
+  const code = {
+    contents: buildData.sources.index,
+    editableContents: buildData.sources.editableContents,
+    original: buildData.sources.original
+  };
+
+  runPythonCode(code);
   // TODO: proxy errors to the console
-  try {
-    yield call(runPythonInFrame, document, code, mainPreviewId);
-  } catch (err) {
-    console.log('Error evaluating python code', code);
-    console.log('Message:', err.message);
-  }
 }
 
 function* previewProjectSolutionSaga({ payload }) {
@@ -337,12 +356,9 @@ export function createExecuteChallengeSaga(types) {
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
     takeLatest(types.updateFile, updatePreviewSaga),
     takeLatest(
-      [types.challengeMounted, types.resetChallenge],
+      [types.challengeMounted, types.resetChallenge, types.previewMounted],
       previewChallengeSaga
     ),
-    takeLatest(types.previewMounted, previewChallengeSaga, {
-      flushLogs: false
-    }),
     takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
   ];
 }

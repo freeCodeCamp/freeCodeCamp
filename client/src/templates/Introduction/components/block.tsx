@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import type { DefaultTFuncReturn, TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
-import { ProgressBar } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import envData from '../../../../config/env.json';
 import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
@@ -13,20 +13,13 @@ import Caret from '../../../assets/icons/caret';
 import DropDown from '../../../assets/icons/dropdown';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
+import { ProgressBar } from '../../../components/Progress/progress-bar';
 import { Link, Spacer } from '../../../components/helpers';
 import { completedChallengesSelector } from '../../../redux/selectors';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import {
-  isCollegeAlgebraPyCert,
-  isNewJsCert,
-  isNewRespCert
-} from '../../../utils/is-a-cert';
-import {
-  isCodeAllyPractice,
-  isFinalProject
-} from '../../../../../shared/config/challenge-types';
+import { isGridBased, isProjectBased } from '../../../utils/curriculum-layout';
 import Challenges from './challenges';
 import '../intro.css';
 
@@ -34,7 +27,7 @@ const { curriculumLocale, showUpcomingChanges, showNewCurriculum } = envData;
 
 const mapStateToProps = (
   state: unknown,
-  ownProps: { blockDashedName: string } & unknown
+  ownProps: { blockDashedName: string }
 ) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
 
@@ -103,12 +96,8 @@ class Block extends Component<BlockProps> {
       t
     } = this.props;
 
-    const isNewResponsiveWebDesign = isNewRespCert(superBlock);
-    const isNewJsAlgos = isNewJsCert(superBlock);
-    const isOdinProject = blockDashedName == 'the-odin-project';
-    const isCollegeAlgebraPy = isCollegeAlgebraPyCert(superBlock);
-
     let completedCount = 0;
+
     const challengesWithCompleted = challenges.map(({ challenge }) => {
       const { id } = challenge;
       const isCompleted = completedChallengeIds.some(
@@ -121,13 +110,11 @@ class Block extends Component<BlockProps> {
     });
 
     const isProjectBlock = challenges.some(({ challenge }) => {
-      const isTakeHomeProject = blockDashedName === 'take-home-projects';
+      return isProjectBased(challenge.challengeType, blockDashedName);
+    });
 
-      return (
-        (isFinalProject(challenge.challengeType) ||
-          isCodeAllyPractice(challenge.challengeType)) &&
-        !isTakeHomeProject
-      );
+    const isGridBlock = challenges.some(({ challenge }) => {
+      return isGridBased(superBlock, challenge.challengeType);
     });
 
     const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock, {
@@ -153,7 +140,9 @@ class Block extends Component<BlockProps> {
 
     const progressBarRender = (
       <div aria-hidden='true' className='progress-wrapper'>
-        <ProgressBar now={percentageCompleted} />
+        <div>
+          <ProgressBar now={percentageCompleted} />
+        </div>
         <span>{`${percentageCompleted}%`}</span>
       </div>
     );
@@ -208,7 +197,6 @@ class Block extends Component<BlockProps> {
               <Challenges
                 challengesWithCompleted={challengesWithCompleted}
                 isProjectBlock={isProjectBlock}
-                superBlock={superBlock}
               />
             )}
           </div>
@@ -237,7 +225,6 @@ class Block extends Component<BlockProps> {
             <Challenges
               challengesWithCompleted={challengesWithCompleted}
               isProjectBlock={isProjectBlock}
-              superBlock={superBlock}
             />
           </div>
         </ScrollableAnchor>
@@ -299,7 +286,7 @@ class Block extends Component<BlockProps> {
               <Challenges
                 challengesWithCompleted={challengesWithCompleted}
                 isProjectBlock={isProjectBlock}
-                superBlock={superBlock}
+                isGridMap={true}
                 blockTitle={blockTitle}
               />
             )}
@@ -350,22 +337,14 @@ class Block extends Component<BlockProps> {
     );
 
     const blockrenderer = () => {
-      if (isProjectBlock && !isOdinProject)
-        return isNewResponsiveWebDesign || isNewJsAlgos || isCollegeAlgebraPy
-          ? GridProjectBlock
-          : ProjectBlock;
-      return isNewResponsiveWebDesign || isNewJsAlgos || isCollegeAlgebraPy
-        ? GridBlock
-        : Block;
+      if (isProjectBlock) return isGridBlock ? GridProjectBlock : ProjectBlock;
+      return isGridBlock ? GridBlock : Block;
     };
 
     return (
       <>
         {blockrenderer()}
-        {(isNewResponsiveWebDesign || isNewJsAlgos || isCollegeAlgebraPy) &&
-        !isProjectBlock ? null : (
-          <Spacer size='medium' />
-        )}
+        {isGridBlock && !isProjectBlock ? null : <Spacer size='medium' />}
       </>
     );
   }

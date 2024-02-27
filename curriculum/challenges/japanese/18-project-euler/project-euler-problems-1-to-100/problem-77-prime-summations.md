@@ -1,6 +1,6 @@
 ---
 id: 5900f3b91000cf542c50fecc
-title: 'Problem 77: Prime summations'
+title: '問題 77: 素数の和'
 challengeType: 1
 forumTopicId: 302190
 dashedName: problem-77-prime-summations
@@ -8,7 +8,7 @@ dashedName: problem-77-prime-summations
 
 # --description--
 
-It is possible to write ten as the sum of primes in exactly five different ways:
+10 を素数の和として表す方法はちょうど 5 通りあります。
 
 <div style='margin-left: 4em;'>
   7 + 3<br>
@@ -18,35 +18,35 @@ It is possible to write ten as the sum of primes in exactly five different ways:
   2 + 2 + 2 + 2 + 2<br><br>
 </div>
 
-What is the first value which can be written as the sum of primes in over `n` ways?
+素数の和として表す方法が `n` 通りより多くなる、最初の数を求めなさい。
 
 # --hints--
 
-`primeSummations(5)` should return a number.
+`primeSummations(5)` は数値を返す必要があります。
 
 ```js
 assert(typeof primeSummations(5) === 'number');
 ```
 
-`primeSummations(5)` should return `11`.
+`primeSummations(5)` は `11` を返す必要があります。
 
 ```js
 assert.strictEqual(primeSummations(5), 11);
 ```
 
-`primeSummations(100)` should return `31`.
+`primeSummations(100)` は `31` を返す必要があります。
 
 ```js
 assert.strictEqual(primeSummations(100), 31);
 ```
 
-`primeSummations(1000)` should return `53`.
+`primeSummations(1000)` は `53` を返す必要があります。
 
 ```js
 assert.strictEqual(primeSummations(1000), 53);
 ```
 
-`primeSummations(5000)` should return `71`.
+`primeSummations(5000)` は `71` を返す必要があります。
 
 ```js
 assert.strictEqual(primeSummations(5000), 71);

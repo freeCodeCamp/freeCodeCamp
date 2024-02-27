@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-base-to-string */
 import ObjectID from 'bson-objectid';
 import { insertErms } from './insert-erms';
 

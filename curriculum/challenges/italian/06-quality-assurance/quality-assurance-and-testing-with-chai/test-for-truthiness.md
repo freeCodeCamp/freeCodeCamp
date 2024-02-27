@@ -8,7 +8,7 @@ dashedName: test-for-truthiness
 
 # --description--
 
-Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, o clonato da <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `isTrue()` testa per il valore boleano `true` e `isNotTrue()` passa per qualsiasi cosa che non sia il valore booleano `true`.
 
@@ -22,7 +22,7 @@ Esistono anche `isFalse()` e `isNotFalse()`, si comportano in maniera simile all
 
 # --instructions--
 
-All'interno di `tests/1_unit-tests.js` sotto il test etichettato con `#4` nella suite `Basic Assertions`, cambia ogni `assert` con `assert.isTrue` oppure `assert.isNotTrue` per fare passare il test (dovrebbe essere uguale a `true`). Non cambiare gli argomenti passati alle asserzioni.
+Within `tests/1_unit-tests.js` under the test labeled `#4` in the `Basic Assertions` suite, change each `assert` to either `assert.isTrue` or `assert.isNotTrue` to make the test pass (should evaluate to `true`). Non cambiare gli argomenti passati alle asserzioni.
 
 # --hints--
 

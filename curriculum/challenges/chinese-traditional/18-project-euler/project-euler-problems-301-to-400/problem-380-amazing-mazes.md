@@ -1,6 +1,6 @@
 ---
 id: 5900f4e81000cf542c50fffb
-title: 'Problem 380: Amazing Mazes!'
+title: '問題380：驚人的迷宮！'
 challengeType: 1
 forumTopicId: 302044
 dashedName: problem-380-amazing-mazes
@@ -18,7 +18,7 @@ It can be verified that $C(1, 1) = 1$, $C(2, 2) = 4$, $C(3, 4) = 2415$, and $C(9
 
 Find $C(100, 500)$ and write your answer as a string in scientific notation rounded to 5 significant digits.
 
-When giving your answer, use a lowercase e to separate mantissa and exponent. E.g. if the answer is 1234567891011 then the answer format would be the string `1.2346e12`.
+When giving your answer, use a lowercase e to separate mantissa and exponent. 例如： if the answer is 1234567891011 then the answer format would be the string `1.2346e12`.
 
 # --hints--
 

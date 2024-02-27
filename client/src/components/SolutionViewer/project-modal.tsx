@@ -1,6 +1,8 @@
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Modal } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/ui';
+
 import { CompletedChallenge } from '../../redux/prop-types';
 import SolutionViewer from './solution-viewer';
 
@@ -22,6 +24,7 @@ const ProjectModal = ({
   const { t } = useTranslation();
   return (
     <Modal
+      data-playwright-test-label='project-solution-viewer-modal'
       aria-labelledby='solution-viewer-modal-title'
       bsSize='large'
       onHide={handleSolutionModalHide}
@@ -37,7 +40,12 @@ const ProjectModal = ({
         <SolutionViewer challengeFiles={challengeFiles} solution={solution} />
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={handleSolutionModalHide}>{t('buttons.close')}</Button>
+        <Button
+          data-cy='solution-viewer-close-btn'
+          onClick={handleSolutionModalHide}
+        >
+          {t('buttons.close')}
+        </Button>
       </Modal.Footer>
     </Modal>
   );

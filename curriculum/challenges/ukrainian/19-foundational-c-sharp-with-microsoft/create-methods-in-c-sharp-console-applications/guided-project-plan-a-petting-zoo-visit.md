@@ -12,11 +12,11 @@ dashedName: guided-project-plan-a-petting-zoo-visit
 1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/</a> та виконайте всі завдання модуля «Керований проєкт: сплануйте візит до контактного зоопарку». Це **обов’язково**, щоб отримати трофей зі «Створення методів в консольних застосунках C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
 1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Виконайте керований проєкт <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">«Сплануйте візит до контактного зоопарку»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
+
+# --question--
 
 ## --text--
 
