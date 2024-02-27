@@ -147,18 +147,32 @@ describe('dev login take 2', () => {
       });
     });
 
-    it('should redirect to the Referer', async () => {
-      const res = await superRequest(
-        '/signin',
-        { method: 'GET' },
-        // referer must be one of the allowed origins (www.freecodecamp.org is
-        // allowed)
-        { headers: { referer: 'https://www.freecodecamp.org/espanol/learn' } }
+    // If we start sending the full path in the referer header, we should
+    // implement these features:
+    it.todo('should redirect to the Referer (if it is a valid origin)');
+    it.todo(
+      'should redirect to /valid-language/learn when signing in from /valid-language'
+    );
+    it('should redirect to /learn', async () => {
+      // referer must be one of the allowed origins (www.freecodecamp.org is
+      // allowed)
+      const res = await superRequest('/signin', { method: 'GET' }).set(
+        'referer',
+        'https://www.freecodecamp.org/'
       );
 
       expect(res.status).toBe(302);
-      expect(res.headers.location).toBe(
-        'https://www.freecodecamp.org/espanol/learn'
+      expect(res.headers.location).toBe('https://www.freecodecamp.org/learn');
+    });
+  });
+
+  describe('setAccessTokenCookie', () => {
+    it('should set the jwt_access_token cookie', async () => {
+      const res = await superRequest('/signin', { method: 'GET' });
+
+      expect(res.status).toBe(302);
+      expect(res.headers['set-cookie']).toEqual(
+        expect.arrayContaining([expect.stringMatching(/jwt_access_token=/)])
       );
     });
   });

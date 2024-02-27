@@ -10,6 +10,7 @@ import MongoStoreRL from 'rate-limit-mongo';
 
 import { createUserInput } from '../utils/create-user';
 import { AUTH0_DOMAIN, HOME_LOCATION, MONGOHQ_URL } from '../utils/env';
+import { createAccessToken } from '../utils/tokens';
 
 declare module 'fastify' {
   interface Session {
@@ -143,8 +144,10 @@ export const devLegacyAuthRoutes: FastifyPluginCallback = (
 
     const { id } = await findOrCreateUser(fastify, email);
     req.session.user = { id };
-    await req.session.save();
-    await reply.redirect(HOME_LOCATION + '/learn');
+
+    reply.setAccessTokenCookie(createAccessToken(id));
+    const learnLocation = `${req.getValidReferrer()}/learn`;
+    await reply.redirect(learnLocation);
   });
 
   fastify.get('/signout', async (req, reply) => {
