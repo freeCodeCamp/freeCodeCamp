@@ -15,10 +15,12 @@ interface HelpTranslateProps {
 function HelpTranslate({ superBlock }: HelpTranslateProps): JSX.Element | null {
   const { t } = useTranslation();
 
-  if (isAuditedSuperBlock(clientLocale, superBlock, {
-    showNewCurriculum,
-    showUpcomingChanges
-  })) {
+  if (
+    isAuditedSuperBlock(clientLocale, superBlock, {
+      showNewCurriculum,
+      showUpcomingChanges
+    })
+  ) {
     return null;
   }
 
@@ -32,10 +34,9 @@ function HelpTranslate({ superBlock }: HelpTranslateProps): JSX.Element | null {
         to={t('links:help-translate-link-url')}
       >
         {t('learn.help-translate-link')}
-      Link>
+      </Link>
     </div>
   );
 }
-
 
 export default HelpTranslate;
