@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures",
+    "title": "Legacy JavaScript Algorithms and Data Structures",
     "intro": [
       "Während HTML und CSS den Inhalt und das Styling einer Seite festlegen, wird JavaScript verwendet, um sie interaktiv zu gestalten. In der Zertifizierung \"JavaScript Algorithmen und Datenstrukturen\" lernst du die Grundlagen von JavaScript inklusive Variablen, Arrays, Objekten, Schleifen und Funktionen kennen.",
       "Sobald du die Grundlagen beherrschst, wendest du dieses Wissen an, indem du Algorithmen erstellst, um Strings zu manipulieren, Zahlen zu faktorisieren und sogar die Umlaufbahn der Internationalen Raumstation zu berechnen.",
@@ -1464,6 +1464,7 @@
     "go-back-to-learn": "Gehe zurück zur stabilen Version des Lehrplans.",
     "read-database-cert-article": "Bitte lies diesen Forenbeitrag, bevor du fortfährst.",
     "enable-cookies": "Bevor du startest, muss du die Cookies von Drittanbietern aktivieren.",
-    "english-only": "Die Kurse in diesem Bereich sind nur auf Englisch verfügbar. Im Moment können wir nur die Titel und Einführungen übersetzen, nicht aber die Lektionen selbst."
+    "english-only": "Die Kurse in diesem Bereich sind nur auf Englisch verfügbar. Im Moment können wir nur die Titel und Einführungen übersetzen, nicht aber die Lektionen selbst.",
+    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/await-thenable */
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
@@ -25,11 +26,11 @@ describe('<CloseButton>', () => {
     ).toBeInTheDocument();
   });
 
-  it('should call "onClick" handler on button click', () => {
+  it('should call "onClick" handler on button click', async () => {
     const onClick = jest.fn();
     render(<CloseButton onClick={onClick} />);
 
-    userEvent.click(screen.getByRole('button'));
+    await userEvent.click(screen.getByRole('button'));
 
     expect(onClick).toHaveBeenCalledTimes(1);
   });

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/await-thenable */
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
@@ -5,7 +6,7 @@ import { render, screen } from '@testing-library/react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '.';
 
 describe('<Tabs />', () => {
-  it('should switch tabs content if the tab trigger is pressed', () => {
+  it('should switch tabs content if the tab trigger is pressed', async () => {
     render(
       <Tabs defaultValue='code'>
         <TabsList>
@@ -22,7 +23,7 @@ describe('<Tabs />', () => {
     expect(codeContent).toBeInTheDocument();
 
     const tabsTrigger = screen.getByText('Tests');
-    userEvent.click(tabsTrigger);
+    await userEvent.click(tabsTrigger);
     const testContent = screen.getByText('Here is the test for the code.');
     expect(testContent).toBeInTheDocument();
     expect(codeContent).not.toBeInTheDocument();

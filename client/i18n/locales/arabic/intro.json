@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures",
+    "title": "Legacy JavaScript Algorithms and Data Structures",
     "intro": [
       "في حين أن HTML و CSS يتحكمان في محتوى الصفحة وتصميم الصفحة، يستخدم Javascript لجعلها تفاعلية. في شهادة الخوارزميات وهياكل البيانات في JavaScript، ستتعلم أساسيات JavaScript بما في ذلك المتغيرات variables, والقوائم arrays, والكائنات objects والحلقات loops, والوظائف functions.",
       "بمجرد أن يكون لديك الأساسيات، ستطبق تلك المعرفة عن طريق إنشاء خوارزميات للتلاعب بالسلاسل strings، تحديد الأعداد، بل وحساب مدار محطة الفضاء الدولية.",
@@ -1464,6 +1464,7 @@
     "go-back-to-learn": "العودة إلى النسخة المستقرة من المنهج الدراسي.",
     "read-database-cert-article": "الرجاء قراءة هذا الموضوع قبل المتابعة.",
     "enable-cookies": "يجب عليك السماح باستخدام third-party cookies قبل البَدْء.",
-    "english-only": "الدورات الدراسية في هذا القسم متاحة باللغة الإنكليزية فقط. ونحن قادرون فقط على تَرْجَمَة العناوين والمقدمات في الوقت الحاضر، وليس الدروس ذاتها."
+    "english-only": "الدورات الدراسية في هذا القسم متاحة باللغة الإنكليزية فقط. ونحن قادرون فقط على تَرْجَمَة العناوين والمقدمات في الوقت الحاضر، وليس الدروس ذاتها.",
+    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
   }
 }

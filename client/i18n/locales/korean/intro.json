@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures",
+    "title": "Legacy JavaScript Algorithms and Data Structures",
     "intro": [
       "While HTML and CSS control the content and styling of a page, JavaScript is used to make it interactive. In the JavaScript Algorithm and Data Structures Certification, you'll learn the fundamentals of JavaScript including variables, arrays, objects, loops, and functions.",
       "Once you have the fundamentals down, you'll apply that knowledge by creating algorithms to manipulate strings, factorialize numbers, and even calculate the orbit of the International Space Station.",
@@ -1464,6 +1464,7 @@
     "go-back-to-learn": "Go back to the stable version of the curriculum.",
     "read-database-cert-article": "Please read this forum post before proceeding.",
     "enable-cookies": "You must enable third-party cookies before starting.",
-    "english-only": "The courses in this section are only available in English. We are only able to translate the titles and introductions at the moment, not the lessons themselves."
+    "english-only": "The courses in this section are only available in English. We are only able to translate the titles and introductions at the moment, not the lessons themselves.",
+    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
   }
 }
