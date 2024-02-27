@@ -376,7 +376,7 @@
     "tests-completed": "// tests completed",
     "console-output": "// console output",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
-    "indentation-error": "Your code has an indentation error. You may need to add 'pass' on a new line to form a valid block of code.",
+    "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "Sign in to save your progress",
     "download-solution": "Download my solution",
     "download-results": "Download my results",
