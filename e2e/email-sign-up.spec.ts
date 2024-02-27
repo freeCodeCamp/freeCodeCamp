@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+
 import translations from '../client/i18n/locales/english/translations.json';
 
 const apiLocation = process.env.API_LOCATION || 'http://localhost:3000';
