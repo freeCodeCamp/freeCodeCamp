@@ -2,8 +2,9 @@ import { FastifyPluginCallback } from 'fastify';
 import fp from 'fastify-plugin';
 import jwt from 'jsonwebtoken';
 
-import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
+import { COOKIE_DOMAIN, HOME_LOCATION, JWT_SECRET } from '../utils/env';
 import { AccessToken } from '../utils/tokens';
+import { allowedOrigins } from '../../config/allowed-origins';
 
 declare module 'fastify' {
   interface FastifyReply {
@@ -11,6 +12,10 @@ declare module 'fastify' {
       this: FastifyReply,
       accessToken: AccessToken
     ) => void;
+  }
+
+  interface FastifyRequest {
+    getValidReferrer: (this: FastifyRequest) => string;
   }
 }
 
@@ -28,6 +33,25 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
       });
     }
   );
+
+  const sanitizeReferer = (referer?: string): string => {
+    if (!referer) throw Error();
+    const origin = new URL(referer).origin;
+    if (!allowedOrigins.includes(origin)) throw Error();
+    return origin;
+  };
+
+  fastify.decorateRequest('getValidReferrer', function (): string {
+    const referer = this.headers.referer;
+    let origin = null;
+    try {
+      origin = sanitizeReferer(referer);
+    } catch {
+      this.log.warn(`Invalid referer: ${referer}`);
+    }
+
+    return origin ?? HOME_LOCATION;
+  });
 
   done();
 };
