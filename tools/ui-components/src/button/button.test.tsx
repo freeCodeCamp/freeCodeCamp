@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/await-thenable */
 // Silence the `jest-dom/prefer-enabled-disabled` rule as the rule looks for the `disabled` attribute
 // while the Button component doesn't use it.
 /* eslint-disable jest-dom/prefer-enabled-disabled */

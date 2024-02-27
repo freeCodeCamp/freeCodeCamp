@@ -1,7 +1,7 @@
+import { expect, test, type Page } from '@playwright/test';
 import intro from '../client/i18n/locales/english/intro.json';
 import translations from '../client/i18n/locales/english/translations.json';
 import { SuperBlocks } from '../shared/config/superblocks';
-import { expect, test, type Page } from '@playwright/test';
 
 const landingPageElements = {
   heading: 'landing-header',

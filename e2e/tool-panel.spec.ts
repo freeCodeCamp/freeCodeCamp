@@ -1,5 +1,5 @@
-import translations from '../client/i18n/locales/english/translations.json';
 import { expect, test } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 
 test.describe('Tool Panel', () => {
   test.beforeEach(async ({ page }) => {

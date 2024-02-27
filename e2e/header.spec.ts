@@ -1,7 +1,7 @@
+import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import { availableLangs, hiddenLangs, LangNames } from '../shared/config/i18n';
 import links from '../client/i18n/locales/english/links.json';
-import { test, expect } from '@playwright/test';
 
 const headerComponentElements = {
   skipContent: 'header-skip-content',
