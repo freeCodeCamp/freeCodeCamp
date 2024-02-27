@@ -143,7 +143,6 @@ export const devLegacyAuthRoutes: FastifyPluginCallback = (
     const email = 'foo@bar.com';
 
     const { id } = await findOrCreateUser(fastify, email);
-    req.session.user = { id };
 
     reply.setAccessTokenCookie(createAccessToken(id));
     const learnLocation = `${req.getValidReferrer()}/learn`;
