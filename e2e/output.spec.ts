@@ -1,5 +1,5 @@
-import { test, expect, type Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
+import { test, expect, type Page } from '@playwright/test';
 
 const outputTexts = {
   default: `

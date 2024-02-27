@@ -1,7 +1,7 @@
 import * as fs from 'fs';
-import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import intro from '../client/i18n/locales/english/intro.json';
+import { test, expect } from '@playwright/test';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
