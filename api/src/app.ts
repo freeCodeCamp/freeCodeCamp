@@ -27,6 +27,7 @@ import mailer from './plugins/mailer';
 import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
+import codeFlowAuth from './plugins/code-flow-auth';
 import {
   devLoginCallback,
   devLegacyAuthRoutes,
@@ -191,6 +192,7 @@ export const build = async (
   }
 
   void fastify.register(sessionAuth);
+  void fastify.register(codeFlowAuth);
   void fastify.register(prismaPlugin);
   void fastify.register(mobileAuth0Routes);
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
