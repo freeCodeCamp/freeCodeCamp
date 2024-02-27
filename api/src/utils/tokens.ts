@@ -19,12 +19,19 @@ const nanoid = customAlphabet(
   64
 );
 
+export type AccessToken = {
+  userId: string;
+  id: string;
+  ttl: number;
+  created: string;
+};
+
 /**
  * Creates an access token.
  * @param userId The user ID as a string (yes, it's an ObjectID, but it will be serialized to a string anyway).
  * @returns The access token.
  */
-export const createAccessToken = (userId: string) => {
+export const createAccessToken = (userId: string): AccessToken => {
   return {
     userId,
     id: nanoid(64),
