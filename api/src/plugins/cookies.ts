@@ -5,6 +5,31 @@ import fp from 'fastify-plugin';
 import { COOKIE_SECRET } from '../utils/env';
 
 /**
+ * Signs a cookie value by prefixing it with "s:" and using the COOKIE_SECRET.
+ *
+ * @param value The value to sign.
+ * @returns The signed cookie value.
+ */
+export const sign = (value: string) =>
+  's:' + fastifyCookie.sign(value, COOKIE_SECRET);
+
+/**
+ * Unsigns a cookie value by removing the "s:" prefix and using the COOKIE_SECRET.
+ * Throws an error if the value is not prefixed with "s:".
+ *
+ * @param rawValue The signed cookie value.
+ * @returns The unsigned cookie value.
+ * @throws Error if the value is not prefixed with "s:".
+ */
+export const unsign = (rawValue: string) => {
+  const prefix = rawValue.slice(0, 2);
+  if (prefix !== 's:')
+    throw Error('Signed cookie values must be prefixed with "s:"');
+  const value = rawValue.slice(2);
+  return fastifyCookie.unsign(value, COOKIE_SECRET);
+};
+
+/**
  * Compatibility plugin for using cookies signed by express. By prefixing with
  * "s:" and removing it when unsigning, we can continue to use the same cookies
  * in Fastify.
@@ -16,16 +41,8 @@ import { COOKIE_SECRET } from '../utils/env';
 const cookies: FastifyPluginCallback = (fastify, _options, done) => {
   void fastify.register(fastifyCookie, {
     secret: {
-      sign: value => {
-        return 's:' + fastifyCookie.sign(value, COOKIE_SECRET);
-      },
-      unsign: rawValue => {
-        const prefix = rawValue.slice(0, 2);
-        if (prefix !== 's:')
-          throw Error('Signed cookie values must be prefixed with "s:"');
-        const value = rawValue.slice(2);
-        return fastifyCookie.unsign(value, COOKIE_SECRET);
-      }
+      sign,
+      unsign
     }
   });
 

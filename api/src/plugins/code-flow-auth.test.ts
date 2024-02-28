@@ -1,9 +1,9 @@
 import Fastify, { FastifyInstance } from 'fastify';
-import fastifyCookie from '@fastify/cookie';
 import jwt from 'jsonwebtoken';
 
 import { COOKIE_DOMAIN, HOME_LOCATION, JWT_SECRET } from '../utils/env';
 import { createAccessToken } from '../utils/tokens';
+import cookies, { sign as signCookie } from './cookies';
 import codeFlowAuth from './code-flow-auth';
 
 describe('auth', () => {
@@ -11,7 +11,7 @@ describe('auth', () => {
 
   beforeEach(async () => {
     fastify = Fastify();
-    await fastify.register(fastifyCookie);
+    await fastify.register(cookies);
     await fastify.register(codeFlowAuth);
   });
 
@@ -20,23 +20,28 @@ describe('auth', () => {
   });
 
   describe('setAccessTokenCookie (decorator)', () => {
-    it('should set the jwt_access_token cookie', async () => {
+    // We won't need to keep doubly signing the cookie when we migrate the
+    // authentication, but for the MVP we have to be able to read the cookies
+    // set by the api-server. So, double signing:
+    it('should doubly sign the cookie', async () => {
       const token = createAccessToken('test-id');
       fastify.get('/test', async (req, reply) => {
         reply.setAccessTokenCookie(token);
         return { ok: true };
       });
 
+      const singlySignedToken = jwt.sign({ accessToken: token }, JWT_SECRET);
+      const doublySignedToken = signCookie(singlySignedToken);
+
       const res = await fastify.inject({
         method: 'GET',
         url: '/test'
       });
 
-      const signedToken = jwt.sign({ accessToken: token }, JWT_SECRET);
       expect(res.cookies[0]).toEqual(
         expect.objectContaining({
           name: 'jwt_access_token',
-          value: signedToken,
+          value: doublySignedToken,
           path: '/',
           sameSite: 'Lax',
           domain: COOKIE_DOMAIN

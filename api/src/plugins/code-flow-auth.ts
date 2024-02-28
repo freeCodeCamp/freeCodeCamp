@@ -22,14 +22,15 @@ declare module 'fastify' {
 const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.decorateReply(
     'setAccessTokenCookie',
-    function (accessToken: AccessToken): void {
+    function (accessToken: AccessToken) {
       const signedToken = jwt.sign({ accessToken }, JWT_SECRET);
       void this.setCookie('jwt_access_token', signedToken, {
         path: '/',
         httpOnly: false,
         secure: false,
         sameSite: 'lax',
-        domain: COOKIE_DOMAIN
+        domain: COOKIE_DOMAIN,
+        signed: true
       });
     }
   );
