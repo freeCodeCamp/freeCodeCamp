@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react';
+import { StoryFn, StoryObj } from '@storybook/react';
 import { Modal } from '.';
 
 const story = {
@@ -10,7 +10,7 @@ const story = {
   }
 };
 
-const TriggerButton: Story<typeof Modal> = () => {
+const TriggerButton: StoryFn<typeof Modal> = () => {
   return (
     <Modal size='lg'>
       <Modal.Trigger>Edit profile</Modal.Trigger>
@@ -37,7 +37,7 @@ const TriggerButton: Story<typeof Modal> = () => {
   );
 };
 
-const AutoTrigger: Story<typeof Modal> = () => {
+const AutoTrigger: StoryFn<typeof Modal> = () => {
   return (
     <Modal open={true}>
       <Modal.Layer>
@@ -63,7 +63,14 @@ const AutoTrigger: Story<typeof Modal> = () => {
   );
 };
 
-export const Default = TriggerButton.bind({});
-export const AutoOpen = AutoTrigger.bind({});
+export const Default: StoryObj<typeof Modal> = {
+  render: TriggerButton,
+  args: {}
+};
+
+export const AutoOpen: StoryObj<typeof Modal> = {
+  render: AutoTrigger,
+  args: {}
+};
 
 export default story;
