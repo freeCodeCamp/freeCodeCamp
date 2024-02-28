@@ -251,6 +251,18 @@ ${options.title} description.
 ${options.title} assignment!
 `;
 
+type Template = (opts: ChallengeOptions) => string;
+
+export const getTemplate = (challengeType: string): Template => {
+  const template = challengeTypeToTemplate[challengeType];
+  if (!template) {
+    throw Error(`Challenge type ${challengeType} has no template.
+To create one, please add a new function to this file and include it in the challengeTypeToTemplate map.
+`);
+  }
+  return template;
+};
+
 /**
  * This should be kept in parity with the challengeTypes in the
  * client.
@@ -258,8 +270,9 @@ ${options.title} assignment!
  * Keys are explicitly marked null so we know the challenge type itself
  * exists, and can expand this to use the correct template later on.
  */
-export const challengeTypeToTemplate: {
-  [key: string]: null | ((opts: ChallengeOptions) => string);
+
+const challengeTypeToTemplate: {
+  [key: string]: null | Template;
 } = {
   0: getLegacyChallengeTemplate,
   1: getLegacyChallengeTemplate,
