@@ -490,7 +490,7 @@ ToDo: find out why, and remove the need for it */
     background-position: 0 0;
   }
   to {
-    background-position: 144px 113px; /* Assuming the width of your SVG is 144px */
+    background-position: 144px 113px;
   }
 }
 /* story starts here */
