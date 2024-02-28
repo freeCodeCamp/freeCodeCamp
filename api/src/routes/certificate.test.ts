@@ -245,7 +245,7 @@ describe('certificate routes', () => {
               { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
             ],
             isRespWebDesignCert: false,
-            isJsAlgoDataStructCert: true,
+            isJsAlgoDataStructCertV8: true,
             isFrontEndLibsCert: true,
             is2018DataVisCert: true,
             isRelationalDatabaseCertV8: true,

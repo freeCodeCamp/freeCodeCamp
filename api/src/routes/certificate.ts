@@ -196,6 +196,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             isInfosecCertV7: true,
             isInfosecQaCert: true,
             isJsAlgoDataStructCert: true,
+            isJsAlgoDataStructCertV8: true,
             isMachineLearningPyCertV7: true,
             isQaCertV7: true,
             isRelationalDatabaseCertV8: true,
