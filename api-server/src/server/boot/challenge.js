@@ -120,11 +120,25 @@ const jsCertProjectIds = [
 ];
 
 const multifileCertProjectIds = getChallenges()
-  .filter(challenge => challenge.challengeType === 14)
+  .filter(
+    challenge => challenge.challengeType === challengeTypes.multifileCertProject
+  )
+  .map(challenge => challenge.id);
+
+const multifilePythonCertProjectIds = getChallenges()
+  .filter(
+    challenge =>
+      challenge.challengeType === challengeTypes.multifilePythonCertProject
+  )
   .map(challenge => challenge.id);
 
 const savableChallenges = getChallenges()
-  .filter(challenge => challenge.challengeType === 14)
+  .filter(challenge => {
+    return (
+      challenge.challengeType === challengeTypes.multifileCertProject ||
+      challenge.challengeType === challengeTypes.multifilePythonCertProject
+    );
+  })
   .map(challenge => challenge.id);
 
 const msTrophyChallenges = getChallenges()
@@ -141,7 +155,8 @@ export function buildUserUpdate(
   let completedChallenge = {};
   if (
     jsCertProjectIds.includes(challengeId) ||
-    multifileCertProjectIds.includes(challengeId)
+    multifileCertProjectIds.includes(challengeId) ||
+    multifilePythonCertProjectIds.includes(challengeId)
   ) {
     completedChallenge = {
       ..._completedChallenge,
@@ -397,7 +412,11 @@ export async function modernChallengeCompleted(req, res, next) {
 
   // We only need to know the challenge type if it's a project. If it's a
   // step or normal challenge we can avoid storing in the database.
-  if (jsCertProjectIds.includes(id) || multifileCertProjectIds.includes(id)) {
+  if (
+    jsCertProjectIds.includes(id) ||
+    multifileCertProjectIds.includes(id) ||
+    multifilePythonCertProjectIds.includes(id)
+  ) {
     completedChallenge.challengeType = challengeType;
   }
 

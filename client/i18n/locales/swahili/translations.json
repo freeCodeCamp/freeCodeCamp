@@ -376,6 +376,7 @@
     "tests-completed": "// majaribio yamekamilika",
     "console-output": "// pato la console",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
+    "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "Ingia katika akaunti ili kuhifadhi maendeleo yako",
     "download-solution": "Pakua suluhisho langu",
     "download-results": "Pakua matokeo yangu",
@@ -412,7 +413,7 @@
       "tab-trapped": "Kubonyeza tab kutaingiza herufi ya tab",
       "tab-free": "Kubonyeza tab kutasogeza mkazo hadi kwenye kipengee kinachoweza kuangaziwa"
     },
-    "help-translate": "Bado tunatafsiri vyeti vifuatavyo.",
+    "help-translate": "We are still translating this certification.",
     "help-translate-link": "Tusaidie kutafsiri.",
     "project-preview-title": "Hapa kuna muonyesho wa kile utakachounda",
     "github-required": "<0>Unda akaunti ya GitHub</0> ikiwa huna akaunti. Utaihitaji unapounda mashine ya seva ya Linux. Mchakato huu unaweza kuchukua dakika chache.",
@@ -642,7 +643,7 @@
   },
   "search": {
     "label": "Tafuta",
-    "placeholder": "Tafuta kati ya mafunzo 9,000+",
+    "placeholder": "Search 10,700+ tutorials",
     "see-results": "Tazama matokeo yote ya {{searchQuery}}",
     "no-tutorials": "Hakuna mafunzo yaliyopatikana",
     "try": "Unatafuta kitu? Jaribu upau wa kutafutia kwenye ukurasa huu.",
@@ -717,6 +718,8 @@
     "step": "Hatua",
     "steps": "Hatua",
     "steps-for": "Hatua za {{blockTitle}}",
+    "task": "Task",
+    "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "mfano wa msimbo wa {{codeName}}",
     "opens-new-window": "Inafungua katika kurasa mpya"
   },
@@ -938,9 +941,9 @@
     "title": {
       "Responsive Web Design": "Muundo Wa Wavuti Sikivu",
       "responsive-web-design": "Uthibitishaji wa Muundo wa Wavuti Sikivu",
-      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
-      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures Certification",
+      "JavaScript Algorithms and Data Structures": "Legacy JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures Certification",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures (Beta) Certification",
       "Front End Development Libraries": "Front End Development Libraries",
       "front-end-development-libraries": "Udhibitishaji wa Front End Development Libraries",
       "Data Visualization": "Taswira ya Data",

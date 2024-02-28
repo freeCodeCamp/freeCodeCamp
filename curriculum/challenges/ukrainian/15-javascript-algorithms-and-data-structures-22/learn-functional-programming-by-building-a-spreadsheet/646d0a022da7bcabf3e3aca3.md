@@ -1,6 +1,6 @@
 ---
 id: 646d0a022da7bcabf3e3aca3
-title: Step 45
+title: Крок 45
 challengeType: 0
 dashedName: step-45
 ---

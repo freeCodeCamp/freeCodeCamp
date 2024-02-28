@@ -376,6 +376,7 @@
     "tests-completed": "// 测试完成",
     "console-output": "// 打印输出",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
+    "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "登录以保存你的学习进度",
     "download-solution": "下载我的解决方案",
     "download-results": "Download my results",
@@ -412,7 +413,7 @@
       "tab-trapped": "按下选项卡将插入选项卡字符",
       "tab-free": "按下选项卡将焦点移动到下一个焦点元素"
     },
-    "help-translate": "我们仍然在翻译以下认证课程。",
+    "help-translate": "We are still translating this certification.",
     "help-translate-link": "帮助我们翻译。",
     "project-preview-title": "下面是你将构建的项目的预览",
     "github-required": "如果你没有 GitHub 账户，你需要 <0>创建 GitHub</0> 账户。 你需要创建虚拟 Linux 服务器，这个过程可能需要几分钟。",
@@ -642,7 +643,7 @@
   },
   "search": {
     "label": "搜索",
-    "placeholder": "搜索 1,000+ 篇教程",
+    "placeholder": "Search 10,700+ tutorials",
     "see-results": "查看 {{searchQuery}} 的所有结果",
     "no-tutorials": "未找到教程",
     "try": "想要搜索信息？试试使用页面上的搜索框。",
@@ -717,6 +718,8 @@
     "step": "步骤",
     "steps": "步骤",
     "steps-for": "{{blockTitle}} 的步骤",
+    "task": "Task",
+    "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} 代码示例",
     "opens-new-window": "在新窗口打开"
   },
@@ -938,9 +941,9 @@
     "title": {
       "Responsive Web Design": "响应式网页设计",
       "responsive-web-design": "响应式 Web 设计认证",
-      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
-      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures Certification",
+      "JavaScript Algorithms and Data Structures": "Legacy JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures Certification",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures (Beta) Certification",
       "Front End Development Libraries": "前端开发库",
       "front-end-development-libraries": "前端开发库认证",
       "Data Visualization": "数据可视化",

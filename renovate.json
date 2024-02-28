@@ -1,35 +1,3 @@
 {
-  "extends": ["github>freecodecamp/renovate-config"],
-  "packageRules": [
-    {
-      "groupName": "Disabled",
-      "matchPackageNames": [
-        "monaco-editor",
-        "monaco-editor-webpack-plugin",
-        "react-monaco-editor"
-      ],
-      "matchPackagePatterns": ["^mdast-", "^hast-", "^unist-"],
-      "enabled": false
-    },
-    {
-      "groupName": "Fixed Range - normalize-url",
-      "matchPackageNames": ["normalize-url"],
-      "allowedVersions": "<5.0.0"
-    },
-    {
-      "groupName": "Grouped - Cypress",
-      "matchPackageNames": ["@testing-library/cypress", "cypress"],
-      "automerge": true
-    },
-    {
-      "groupName": "Grouped - Stripe",
-      "matchPackagePrefixes": ["@stripe/"]
-    },
-    {
-      "groupName": "Babel",
-      "matchPackageNames": ["@babel/"],
-      "automerge": false
-    }
-  ],
-  "ignorePaths": ["api-server"]
+  "enabled": false
 }
