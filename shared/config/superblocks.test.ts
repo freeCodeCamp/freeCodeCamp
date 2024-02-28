@@ -6,8 +6,7 @@ import {
   notAuditedSuperBlocks,
   createSuperBlockMap,
   createFlatSuperBlockMap,
-  getAuditedSuperBlocks,
-  getFirstNotAuditedSuperBlock
+  getAuditedSuperBlocks
 } from './superblocks';
 
 describe('superBlockOrder', () => {
@@ -63,26 +62,6 @@ describe('createFlatSuperBlockMap', () => {
     tempSuperBlockMap[SuperBlockStages.New] = [];
     tempSuperBlockMap[SuperBlockStages.Upcoming] = [];
     expect(result).toHaveLength(Object.values(tempSuperBlockMap).flat().length);
-  });
-});
-
-describe('firstNotAuditedSuperBlock', () => {
-  it("should return 'null' when language is 'english'", () => {
-    const result = getFirstNotAuditedSuperBlock({
-      language: Languages.English,
-      showNewCurriculum: false,
-      showUpcomingChanges: false
-    });
-    expect(result).toBeNull();
-  });
-
-  it.skip("should return a SuperBlock when language is 'chinese'", () => {
-    const result = getFirstNotAuditedSuperBlock({
-      language: Languages.Chinese,
-      showNewCurriculum: false,
-      showUpcomingChanges: false
-    });
-    expect(result).toEqual(SuperBlocks.JsAlgoDataStructNew);
   });
 });
 

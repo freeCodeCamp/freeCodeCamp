@@ -286,24 +286,6 @@ export function createFlatSuperBlockMap({
   return Object.values(superBlockMap).flat();
 }
 
-// this is so we know where to display the "help us translate" section
-export function getFirstNotAuditedSuperBlock({
-  language,
-  showNewCurriculum,
-  showUpcomingChanges
-}: LanguagesConfig): SuperBlocks | null {
-  const flatSuperBlockMap = createFlatSuperBlockMap({
-    showNewCurriculum,
-    showUpcomingChanges
-  });
-  for (const superBlock of flatSuperBlockMap) {
-    if (notAuditedSuperBlocks[language as Languages].includes(superBlock)) {
-      return superBlock;
-    }
-  }
-  return null;
-}
-
 export function getAuditedSuperBlocks({
   language = 'english',
   showNewCurriculum,
