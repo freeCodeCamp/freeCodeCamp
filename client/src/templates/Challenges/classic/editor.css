@@ -38,6 +38,7 @@ textarea.inputarea {
   padding-inline: 0 15px;
   padding-block: 15px;
   white-space: pre-wrap;
+  line-height: 0.1;
 }
 
 .editor-upper-jaw {
