@@ -4,8 +4,6 @@ import '../src/normalize.css';
 import '../src/global-element-styles.css';
 import '../src/base.css';
 
-import '../../../client/src/components/layouts/global.css';
-
 export const parameters = {
   controls: {
     matchers: {
