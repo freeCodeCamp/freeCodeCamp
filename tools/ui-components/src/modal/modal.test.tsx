@@ -19,7 +19,7 @@ describe('<Modal />', () => {
     expect(unorderedList).toBeInTheDocument();
   });
 
-  it('should render the Layer with correct classes if Modal is large', () => {
+  it('should render the Layer with correct classes if Modal is large', async () => {
     render(
       <Modal size='lg'>
         <Modal.Trigger>Some Button</Modal.Trigger>
@@ -27,14 +27,14 @@ describe('<Modal />', () => {
       </Modal>
     );
     const ModalTrigger = screen.getByText('Some Button');
-    userEvent.click(ModalTrigger);
+    await userEvent.click(ModalTrigger);
     const unorderedList = screen.getByText('Hello Layer');
     expect(unorderedList).toHaveClass(
       'bg-background-secondary border border-foreground-secondary border-solid fixed top-[25%] left-[25%] md:shadow-lg md:w-[600px] md:mx-auto md:my-[30px] z-20 min-[992px]:w-[900px]'
     );
   });
 
-  it('should render Footer with its classes if Modal is large', () => {
+  it('should render Footer with its classes if Modal is large', async () => {
     render(
       <Modal size='lg'>
         <Modal.Trigger>Some Button</Modal.Trigger>
@@ -44,14 +44,14 @@ describe('<Modal />', () => {
       </Modal>
     );
     const ModalTrigger = screen.getByText('Some Button');
-    userEvent.click(ModalTrigger);
+    await userEvent.click(ModalTrigger);
     const ModalFooter = screen.getByText('Hello Footer');
     expect(ModalFooter).toHaveClass(
       'text-right p-[15px] border border-foreground-secondary border-solid m-0 min-[992px]:w-[900px]'
     );
   });
 
-  it('should render Header with its close button that closes the modal', () => {
+  it('should render Header with its close button that closes the modal', async () => {
     render(
       <Modal>
         <Modal.Trigger>Some Button</Modal.Trigger>
@@ -61,11 +61,11 @@ describe('<Modal />', () => {
       </Modal>
     );
     const ModalTrigger = screen.getByText('Some Button');
-    userEvent.click(ModalTrigger);
+    await userEvent.click(ModalTrigger);
     const ModalHeader = screen.getByText('Hello Header');
     expect(ModalHeader).toBeInTheDocument();
     const closeButton = within(ModalHeader).getByRole('button');
-    userEvent.click(closeButton);
+    await userEvent.click(closeButton);
     expect(ModalHeader).not.toBeInTheDocument();
   });
 });
