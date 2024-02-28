@@ -18,7 +18,7 @@ The only real complication here is that there are many ways to manipulate the si
 
 Be sure to study the diagrams carefully.
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/the-box-model.png" alt="Image depicting a visual representation of the CSS box model. A pink rectangle labeled 'padding' surrounds text that explains the model. A purple border encircles the padding, and outside of it is an area labeled 'margin' indicated by blue arrows. Text inside the box describes the padding as the space between text and the box edge, the border as a purple line, and the margin as the space between the box edge and the window edge.">
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/the-box-model.png" alt="Visual representation of CSS box model with text, surrounded by 'padding' in pink, a purple 'border', and 'margin' indicated by blue arrows, explaining space between text, box edge, and window edge.">
 
 # --assignment--
 
