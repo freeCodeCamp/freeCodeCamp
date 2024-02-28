@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "Алгоритми JavaScript та структури даних",
+    "title": "Алгоритми JavaScript та структури даних (застаріла версія)",
     "intro": [
       "Якщо HTML та CSS відповідають за вміст і стилізацію сторінки, то JavaScript робить її інтерактивною. У сертифікації «Алгоритми JavaScript та структури даних» ви вивчите основи JavaScript, включно зі змінними, масивами, об’єктами, циклами та функціями.",
       "Як тільки ви вивчите основи, ви почнете застосовувати ці знання, створюючи алгоритми, щоб уміло маніпулювати рядками, факторизувати числа, і навіть зможете обчислити орбіту міжнародної космічної станції.",
@@ -750,8 +750,8 @@
   "scientific-computing-with-python": {
     "title": "Наукові обчислення з Python (бета-версія)",
     "intro": [
-      "The Scientific Computing with Python (Beta) curriculum will equip you with the skills to analyze and manipulate data using Python, a powerful and versatile programming language. You'll learn key concepts like data structures, algorithm, Object Oriented Programming, and how to perform complex calculations using a variety of tools.",
-      "This comprehensive course will guide you through the fundamentals of scientific computing, including data structures, and algorithms."
+      "Навчальна програма «Наукові обчислення з Python (бета-версія)» допоможе отримати навички аналізу та маніпулювання даними за допомогою Python — потужної та універсальної мови програмування. Ви вивчите ключові поняття, серед яких структури даних, алгоритми, об’єктноорієнтоване програмування, а також як виконувати складні обчислення за допомогою різноманітних інструментів.",
+      "Цей комплексний курс ознайомить вас з основами наукових обчислень, включно зі структурами даних та алгоритмами."
     ],
     "note": "",
     "blocks": {
@@ -1317,19 +1317,19 @@
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Дізнайтесь, як говорити про типовий робочий день та завдання",
         "intro": [
-          "In this course, you'll learn how to talk about your workday and the tasks that you perform in the workplace and how to share them with others. It mainly focuses on the structures used for describing your activities and task-related vocabulary."
+          "У цьому курсі ви навчитесь розповідати про свій робочий день і завдання, які виконуєте на роботі, а також як ділитися ними з іншими. Основний акцент зроблено на структурах, які використовують для опису діяльності, а також на словниковому запасі, пов’язаному з завданнями."
         ]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "Дізнайтесь, як обговорювати ранкову або вечірню рутину",
         "intro": [
-          "In this course, you'll learn how to talk about details of your routine and share them with someone else. It mainly focuses on the structures used for declaring routine actions and related vocabulary."
+          "У цьому курсі ви навчитесь розповідати про свою щоденну рутину та ділитися нею з іншими. Основний акцент зроблено на структурах, які використовують для опису рутини, а також на словниковому запасі, пов’язаному з щоденними завданнями."
         ]
       },
       "learn-how-to-describe-your-current-project": {
         "title": "Дізнайтесь, як описувати поточний проєкт",
         "intro": [
-          "In this course, you'll learn how to talk about the projects that you are involved in and how to inform others of what you are doing in these projects. It mainly focuses on the structures used for informing it and on the related vocabulary."
+          "У цьому курсі ви навчитесь розповідати про проєкти, в яких ви берете участь, та як інформувати інших про свою участь. Основний акцент зроблено на структурах, які використовують для інформування, а також на пов’язаному словниковому запасі."
         ]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
@@ -1465,6 +1465,6 @@
     "read-database-cert-article": "Будь ласка, прочитайте повідомлення на форумі, перш ніж продовжити.",
     "enable-cookies": "Увімкніть сторонні файли cookie перед початком роботи.",
     "english-only": "Курси в цьому розділі доступні лише англійською мовою. Наразі ми можемо перекладати лише заголовки й вступи, а не самі уроки.",
-    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
+    "exam-english-only": "Зверніть увагу, що наразі екзамен доступний лише англійською мовою. Решта курсів доступні деякими іншими мовами."
   }
 }

@@ -718,6 +718,8 @@
     "step": "Hatua",
     "steps": "Hatua",
     "steps-for": "Hatua za {{blockTitle}}",
+    "task": "Task",
+    "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "mfano wa msimbo wa {{codeName}}",
     "opens-new-window": "Inafungua katika kurasa mpya"
   },
@@ -939,9 +941,9 @@
     "title": {
       "Responsive Web Design": "Muundo Wa Wavuti Sikivu",
       "responsive-web-design": "Uthibitishaji wa Muundo wa Wavuti Sikivu",
-      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
-      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures Certification",
+      "JavaScript Algorithms and Data Structures": "Legacy JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures Certification",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures (Beta) Certification",
       "Front End Development Libraries": "Front End Development Libraries",
       "front-end-development-libraries": "Udhibitishaji wa Front End Development Libraries",
       "Data Visualization": "Taswira ya Data",

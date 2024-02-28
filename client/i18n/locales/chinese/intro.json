@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures",
+    "title": "Legacy JavaScript Algorithms and Data Structures",
     "intro": [
       "HTML 和 CSS 控制页面的内容和样式，JavaScript 则用于页面交互。在 JavaScript 算法和数据结构认证中，你将学习 JavaScript 的基础知识，包括变量、 数组、 对象、 循环和函数。",
       "打好基础之后，你将会通过创建算法来操作字符串、进行阶乘运算甚至计算国际空间站的轨道来应用这些知识。",

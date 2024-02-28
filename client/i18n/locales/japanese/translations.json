@@ -718,6 +718,8 @@
     "step": "ステップ",
     "steps": "ステップ一覧",
     "steps-for": "「{{blockTitle}}」のステップ一覧",
+    "task": "Task",
+    "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} のコード例",
     "opens-new-window": "新しいウィンドウで開く"
   },
@@ -939,9 +941,9 @@
     "title": {
       "Responsive Web Design": "レスポンシブウェブデザイン",
       "responsive-web-design": "レスポンシブウェブデザイン認定証",
-      "JavaScript Algorithms and Data Structures": "JavaScript アルゴリズムとデータ構造",
-      "javascript-algorithms-and-data-structures": "JavaScript アルゴリズムとデータ構造認定証",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript アルゴリズムとデータ構造認定証",
+      "JavaScript Algorithms and Data Structures": "Legacy JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures Certification",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures (Beta) Certification",
       "Front End Development Libraries": "フロントエンド開発ライブラリ",
       "front-end-development-libraries": "フロントエンド開発ライブラリ認定証",
       "Data Visualization": "データ可視化",
