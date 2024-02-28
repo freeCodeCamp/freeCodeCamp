@@ -93,7 +93,9 @@
     "link-account": "Collega Account",
     "unlink-account": "Scollega Account",
     "update-card": "Update your card",
-    "donate-now": "Donate Now"
+    "donate-now": "Donate Now",
+    "confirm-amount": "Confirm amount",
+    "skip-advertisement": "Skip Advertisement"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -198,6 +200,7 @@
     "sound-mode": "Questo aggiunge i piacevoli suoni di una chitarra acustica nel sito. Suonerà mentre scrivi nell'editor, completi sfide, ottieni certificazioni, e altro.",
     "sound-volume": "Volume Campfire:",
     "scrollbar-width": "Larghezza barra di scorrimento editor",
+    "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
       "contains invalid characters": "Il nome utente \"{{username}}\" contiene caratteri non validi",
       "is too short": "Il nome utente \"{{username}}\" è troppo corto",
@@ -363,7 +366,7 @@
     "assignments": "Attività",
     "question": "Domande",
     "solution-link": "Link alla soluzione",
-    "github-link": "Link GitHub",
+    "source-code-link": "Source Code Link",
     "ms-link": "Microsoft Link",
     "submit-and-go": "Invia e vai alla prossima sfida",
     "congratulations": "Congratulazioni, hai superato i test. Invia in tuo codice per continuare.",
@@ -373,6 +376,7 @@
     "tests-completed": "// test completati",
     "console-output": "// output della console",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
+    "indentation-error": "Your code has an indentation error. You may need to add 'pass' on a new line to form a valid block of code.",
     "sign-in-save": "Accedi per salvare i tuoi progressi",
     "download-solution": "Scarica la mia soluzione",
     "download-results": "Scarica i miei risultati",
@@ -413,6 +417,21 @@
     "help-translate-link": "Aiutaci con le traduzioni...",
     "project-preview-title": "Ecco una anticipazione di quello che creerai",
     "github-required": "<0>Crea un account GitHub</0> se non ne hai uno. Ne avrai bisogno quando crei la macchina virtuale di Linux. Questo processo potrebbe richiedere alcuni minuti.",
+    "gitpod": {
+      "intro": "This course runs in a virtual Linux machine using Gitpod. Follow these instructions to start the course:",
+      "step-1": "<0>Create a GitHub</0> account if you don't have one",
+      "step-2": "Click the start button below",
+      "step-3": "Login to Gitpod with your GitHub account if you aren't already",
+      "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
+      "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
+      "step-6": "Going to the \"View\" menu,",
+      "step-7": "Clicking on the \"Command Palette\" option,",
+      "step-8": "and running the \"CodeRoad: Start\" command",
+      "step-9": "Follow the instructions in CodeRoad to complete the course",
+      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{course}} course, go to <0>your Gitpod dashboard</0> to continue.",
+      "learn-more": "Learn more about <0>Gitpod workspaces.</0>",
+      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account."
+    },
     "step-1": "Step 1: Completa il progetto",
     "step-2": "Step 2: Consegna il codice",
     "submit-public-url": "Quando hai completato il progetto salva tutti i file richiesti in una repository pubblica e consegna l'URL qui sotto.",
@@ -577,6 +596,7 @@
     "other-support": "Se ci sono altri modi in cui vorresti supportare il nostro ente benefico e la sua missione che non sono elencati in questa pagina, o se hai qualsiasi domanda, per favore scrivi a Quincy a quincy@freecodecamp.org.",
     "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
     "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy.",
+    "flying-bear": "Illustration of an adorable teddy bear wearing a graduation cap and flying with a Supporter badge.",
     "crucial-contribution": "Your contribution will be crucial in creating resources that empower millions of people to learn new skills and support their families.",
     "support-benefits-title": "Benefits from becoming a Supporter:",
     "support-benefits-1": "No more donation prompt popups",
@@ -597,7 +617,14 @@
     "community-achivements-3": "Merged <0>2,753</0> code contributions into our open source repositories on GitHub",
     "community-achivements-4": "Translated <0>2,106,203</0> words to make our curriculum and tutorials more accessible to speakers of many world languages",
     "as-you-see": "As you can see, we're getting things done. So you can rest assured that we'll put your donations to good use.",
-    "get-benefits": "Get the benefits and the knowledge that you’re helping our charity change education for the better. Become a Supporter today."
+    "get-benefits": "Get the benefits and the knowledge that you’re helping our charity change education for the better. Become a supporter today.",
+    "modal-benefits-title": "Support us",
+    "help-us-more-certifications": "Help us build more certifications",
+    "remove-donation-popups": "Remove donation popups",
+    "help-millions-learn": "Help millions of people learn",
+    "reach-goals-faster": "Reach your goals faster",
+    "remove-distractions": "Remove distractions",
+    "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world."
   },
   "report": {
     "sign-in": "Devi essere loggato per segnalare un utente",
@@ -616,7 +643,7 @@
   },
   "search": {
     "label": "Cerca",
-    "placeholder": "Cerca tra più di 200 articoli",
+    "placeholder": "Search 10,700+ tutorials",
     "see-results": "Vedi tutti i risultati per {{searchQuery}}",
     "no-tutorials": "Nessun tutorial trovato",
     "try": "Cerchi qualcosa? Prova la barra di ricerca su questa pagina.",
@@ -691,6 +718,8 @@
     "step": "Step",
     "steps": "Step",
     "steps-for": "Step per {{blockTitle}}",
+    "task": "Task",
+    "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} esempio di codice",
     "opens-new-window": "Apri in una nuova finestra"
   },
@@ -912,9 +941,9 @@
     "title": {
       "Responsive Web Design": "Web Design Responsivo",
       "responsive-web-design": "Certificazione Web Design Responsivo",
-      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
-      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures Certification",
+      "JavaScript Algorithms and Data Structures": "Legacy JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures Certification",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures (Beta) Certification",
       "Front End Development Libraries": "Librerie di Sviluppo Front End",
       "front-end-development-libraries": "Certificazione Librerie di Sviluppo Front End",
       "Data Visualization": "Visualizzazione Dati",

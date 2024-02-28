@@ -1,6 +1,6 @@
 ---
 id: 5900f4d11000cf542c50ffe4
-title: 'Problem 357: Prime generating integers'
+title: '問題357：Prime生成整數'
 challengeType: 1
 forumTopicId: 302017
 dashedName: problem-357-prime-generating-integers

@@ -1,6 +1,6 @@
 ---
 id: 5900f5041000cf542c510016
-title: 'Problem 407: Idempotents'
+title: '問題407：冪等元素'
 challengeType: 1
 forumTopicId: 302075
 dashedName: problem-407-idempotents

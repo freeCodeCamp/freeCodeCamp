@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0b0b6c005b0e76f070
-title: 'Regular Expressions: Practical Applications'
+title: 'Expressões regulares: aplicações práticas'
 challengeType: 11
 videoId: xCjFU9G6x48
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: regular-expressions-practical-applications
 
 ## --text--
 
-What will search for a "$" in a regular expression?
+O que o "$" vai procurar em uma expressão regular?
 
 ## --answers--
 
@@ -22,7 +22,7 @@ $
 
 ---
 
-\\dollar\\
+\\cifrão\\
 
 ---
 

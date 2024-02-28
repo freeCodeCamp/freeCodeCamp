@@ -238,7 +238,8 @@ export const certTypeTitleMap = {
   [certTypes.fullStack]: 'Legacy Full Stack',
   [certTypes.respWebDesign]: 'Responsive Web Design',
   [certTypes.frontEndDevLibs]: 'Front End Development Libraries',
-  [certTypes.jsAlgoDataStruct]: 'JavaScript Algorithms and Data Structures',
+  [certTypes.jsAlgoDataStruct]:
+    'Legacy JavaScript Algorithms and Data Structures',
   [certTypes.dataVis2018]: 'Data Visualization',
   [certTypes.apisMicroservices]: 'Back End Development and APIs',
   [certTypes.qaV7]: 'Quality Assurance',

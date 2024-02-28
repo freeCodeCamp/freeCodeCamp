@@ -1,6 +1,6 @@
 ---
 id: 5900f3db1000cf542c50feec
-title: 'Problem 109: Darts'
+title: '問題 109: ダーツ'
 challengeType: 1
 forumTopicId: 301733
 dashedName: problem-109-darts
@@ -8,17 +8,17 @@ dashedName: problem-109-darts
 
 # --description--
 
-In the game of darts a player throws three darts at a target board which is split into twenty equal sized sections numbered one to twenty.
+ダーツゲームのターゲットボードは 20 等分され、それぞれのエリアに 1 から 20 までの番号が割り振られています。プレイヤーはそれに向けてダーツを 3 本投げます。
 
-<img class="img-responsive center-block" alt="Darts board" src="https://cdn.freecodecamp.org/curriculum/project-euler/darts.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="ダーツボード" src="https://cdn.freecodecamp.org/curriculum/project-euler/darts.png" style="background-color: white; padding: 10px;" />
 
-The score of a dart is determined by the number of the region that the dart lands in. A dart landing outside the red/green outer ring scores zero. The black and cream regions inside this ring represent single scores. However, the red/green outer ring and middle ring score double and treble scores respectively.
+ダーツのスコアは、ダーツが刺さったエリアの番号によって決まります。 外側にある赤と緑の輪よりも外に刺さったダーツは 0 点です。 この輪の内側にある黒と白の領域は、シングルスコアを表しています。 ただし、赤と緑の輪のうち、外側の輪はダブルスコア、中間の輪はトリプルスコアを表しています。
 
-At the center of the board are two concentric circles called the bull region, or bulls-eye. The outer bull is worth 25 points and the inner bull is a double, worth 50 points.
+ボードの中央には、「ブル」または「ブルズアイ」と呼ばれる同心円が 2 つあります。 外側のブルは 25 点、内側のブルはその倍の 50 点です。
 
-There are many variations of rules but in the most popular game the players will begin with a score of 301 or 501 and the first player to reduce their running total to zero is a winner. However, it is normal to play a "doubles out" system, which means that the player must land a double (including the double bulls-eye at the center of the board) on their final dart to win; any other dart that would reduce their running total to one or lower means the score for that set of three darts is "bust".
+ルールには数多くのバリエーションがありますが、最も一般的なゲームでは 301 点 または 501 点から始め、現在の得点を最も早く 0 点にまで減らしたプレイヤーが勝ちます。 ただし、通常は「ダブルアウト」方式でプレイをします。この方式では、最後のダーツをダブル (ボード中央にあるダブルブルズアイを含む) に刺さなければ勝利できません。それ以外のダーツで現在の得点を 1 点以下に減らしてしまうと、その 3 本組のダーツのスコアは「バスト (無効)」になります。
 
-When a player is able to finish on their current score it is called a "checkout" and the highest checkout is 170: T20 T20 D25 (two treble 20s and double bull). There are exactly eleven distinct ways to checkout on a score of 6:
+プレイヤーが現在の得点で終了できることは「チェックアウト」と呼ばれます。チェックアウトでの最高スコアは 170: T20 T20 D25 (トリプルの 20 x 2 とダブルのブル) です。 スコア 6 でチェックアウトする方法は次ように 11 通りあります。
 
 $$\begin{array}   \text{D3} &    &    \\\\
   D1        & D2 &    \\\\   S2        & D2 &    \\\\
@@ -27,11 +27,11 @@ $$\begin{array}   \text{D3} &    &    \\\\
   S1        & S3 & D1 \\\\   D1        & D1 & D1 \\\\
   D1        & S2 & D1 \\\\ S2        & S2 & D1 \end{array}$$
 
-Note that D1 D2 is considered different from D2 D1 as they finish on different doubles. However, the combination S1 T1 D1 is considered the same as T1 S1 D1. In addition, we shall not include misses in considering combinations; for example, D3 is the same as 0 D3 and 0 0 D3. Incredibly there are 42336 distinct ways of checking out in total. How many distinct ways can a player checkout with a score less than 100?
+注意点として、D1 D2 と D2 D1 は異なるダブルで終了したので互いに異なるとみなされます。 ただし、S1 T1 D1 の組み合わせは T1 S1 D1 と同じとみなされます。 また、組み合わせを考える際にミスは含まれません。例えば D3 は、0 D3 および 0 0 D3 と同じです。 チェックアウトの方法は全部でなんと 42336 通りもあります。 プレイヤーが 100 未満のスコアでチェックアウトする方法は何通りありますか。
 
 # --hints--
 
-`darts()` should return `38182`.
+`darts()` は `38182` を返す必要があります。
 
 ```js
 assert.strictEqual(darts(), 38182);

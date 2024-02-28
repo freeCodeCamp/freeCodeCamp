@@ -1,6 +1,6 @@
 ---
 id: 598ee8b91b410510ae82efef
-title: Extensible prime generator
+title: 可扩展素数生成器
 challengeType: 1
 forumTopicId: 302262
 dashedName: extensible-prime-generator
@@ -10,26 +10,26 @@ dashedName: extensible-prime-generator
 
 Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.
 
-The generator should be able to:
+生成器应该能够：
 
 <ul>
   <li>Show the first <code>n</code> prime numbers</li>
-  <li>Show the prime numbers in a range</li>
-  <li>Show the number of primes in a range</li>
-  <li>Show the <code>n<sup>th</sup></code> prime number</li>
+  <li>显示范围内的素数</li>
+  <li>显示一个范围内的素数的个数</li>
+  <li>显示第 <code>n<sup>th</sup></code> 个素数</li>
 </ul>
 
-The function should have two parameters. The first will receive `n` or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <code>n<sup>th</sup></code> prime). According to the parameters the function should return an array.
+The function should have two parameters. 第一个将接收 `n` 或范围作为数组。 第二个将接收一个布尔值，它指定函数将素数作为数组返回还是单个数字（范围内的素数数或 <code>n<sup>th</sup></code> 素数）。 According to the parameters the function should return an array.
 
 # --hints--
 
-`primeGenerator` should be a function.
+`primeGenerator` 应该是一个函数。
 
 ```js
 assert(typeof primeGenerator === 'function');
 ```
 
-`primeGenerator(20, true)` should return `[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]`.
+`primeGenerator(20, true)` 应该返回 `[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]`。
 
 ```js
 assert.deepEqual(primeGenerator(20, true), [
@@ -56,7 +56,7 @@ assert.deepEqual(primeGenerator(20, true), [
 ]);
 ```
 
-`primeGenerator([100, 150], true)` should return `[101, 103, 107, 109, 113, 127, 131, 137, 139, 149]`.
+`primeGenerator([100, 150], true)` 应该返回 `[101, 103, 107, 109, 113, 127, 131, 137, 139, 149]`。
 
 ```js
 assert.deepEqual(primeGenerator([100, 150], true), [
@@ -73,13 +73,13 @@ assert.deepEqual(primeGenerator([100, 150], true), [
 ]);
 ```
 
-`primeGenerator([7700, 8000], false)` should return `30`.
+`primeGenerator([7700, 8000], false)` 应该返回 `30`。
 
 ```js
 assert.equal(primeGenerator([7700, 8000], false), 30);
 ```
 
-`primeGenerator(10000, false)` should return `104729`.
+`primeGenerator(10000, false)` 应该返回 `104729`。
 
 ```js
 assert.equal(primeGenerator(10000, false), 104729);

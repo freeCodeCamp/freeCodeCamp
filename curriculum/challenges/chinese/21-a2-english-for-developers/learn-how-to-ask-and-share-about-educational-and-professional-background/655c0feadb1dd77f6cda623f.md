@@ -10,6 +10,6 @@ dashedName: dialogue-1-a-job-interview
 
 Watch the video above to understand the context of the upcoming lessons.
 
-# --assignment--
+# --作业--
 
 Watch the video

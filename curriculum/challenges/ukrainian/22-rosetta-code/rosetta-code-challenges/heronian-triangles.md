@@ -1,6 +1,6 @@
 ---
 id: 595b98f8b5a2245e243aa831
-title: Heronian triangles
+title: Трикутники Герона
 challengeType: 1
 forumTopicId: 302285
 dashedName: heronian-triangles
@@ -8,57 +8,57 @@ dashedName: heronian-triangles
 
 # --description--
 
-Hero's formula for the area of a triangle given the length of its three sides `a`, `b`, and `c` is given by:
+Формула Герона для визначення площі трикутника за даними довжинами трьох його сторін `a`, `b` та `c` задана як:
 
 $A = \\sqrt{s(s-a)(s-b)(s-c)},$
 
-where `s` is half the perimeter of the triangle; that is,
+де `s` є півпериметром трикутника; тому
 
 $s=\\frac{a+b+c}{2}.$
 
-Heronian triangles are triangles whose sides and area are all integers.
+Трикутники Герона — це трикутники, сторони та площа яких є цілими числами.
 
-An example is the triangle with sides `3, 4, 5` whose area is `6` (and whose perimeter is `12`).
+Прикладом є трикутник зі сторонами `3, 4, 5`, площа якого дорівнює `6` (а периметр становить `12`).
 
-Note that any triangle whose sides are all an integer multiple of `3, 4, 5`; such as `6, 8, 10,` will also be a Heronian triangle.
+Зверніть увагу, що будь-який трикутник, сторони якого кратні числам `3, 4, 5` (наприклад, `6, 8, 10`), також є трикутником Герона.
 
-Define a Primitive Heronian triangle as a Heronian triangle where the greatest common divisor
+Визначимо примітивний трикутник Герона як трикутник Герона, де найбільшим спільним дільником
 
-of all three sides is `1` (unity).
+всіх трьох сторін є `1` (одиниця).
 
-This will exclude, for example, triangle `6, 8, 10.`
+Це вилучить, наприклад, трикутник `6, 8, 10`.
 
 # --instructions--
 
-Implement a function based on Hero's formula that returns the first <code>n<sub>th</sub></code> ordered triangles in an array of arrays.
+Реалізуйте функцію на основі формули Герона, яка повертає перші `n` впорядкованих трикутників в масиві масивів.
 
 # --hints--
 
-`heronianTriangle` should be a function.
+`heronianTriangle` має бути функцією.
 
 ```js
 assert(typeof heronianTriangle === 'function');
 ```
 
-`heronianTriangle(10)` should return `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17]]`
+`heronianTriangle(10)` має повернути `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17]]`
 
 ```js
 assert.deepEqual(heronianTriangle(testCases[0]), res[0]);
 ```
 
-`heronianTriangle(15)` should return `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15]],`
+`heronianTriangle(15)` має повернути `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15]],`
 
 ```js
 assert.deepEqual(heronianTriangle(testCases[1]), res[1]);
 ```
 
-`heronianTriangle(20)` should return `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53]],`
+`heronianTriangle(20)` має повернути `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53]],`
 
 ```js
 assert.deepEqual(heronianTriangle(testCases[2]), res[2]);
 ```
 
-`heronianTriangle(25)` should return `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53], [19, 20, 37],[16, 17, 17], [17, 17, 30], [16, 25, 39], [13, 20, 21]]`
+`heronianTriangle(25)` має повернути `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53], [19, 20, 37],[16, 17, 17], [17, 17, 30], [16, 25, 39], [13, 20, 21]]`
 
 ```js
 assert.deepEqual(heronianTriangle(testCases[3]), res[3]);

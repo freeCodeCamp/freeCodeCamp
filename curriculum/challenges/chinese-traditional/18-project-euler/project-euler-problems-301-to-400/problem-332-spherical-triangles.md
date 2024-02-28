@@ -1,6 +1,6 @@
 ---
 id: 5900f4b91000cf542c50ffcb
-title: 'Problem 332: Spherical triangles'
+title: '問題332：球形三角形'
 challengeType: 1
 forumTopicId: 301990
 dashedName: problem-332-spherical-triangles
@@ -22,7 +22,7 @@ Let $A(r)$ be the area of the smallest spherical triangle in $T(r)$.
 
 For example $A(14)$ is 3.294040 rounded to six decimal places.
 
-Find $\displaystyle \sum_{r = 1}^{50} A(r)$. Give your answer rounded to six decimal places.
+Find $\displaystyle \sum_{r = 1}^{50} A(r)$. 將您的答案四捨五入到小數點後六位。
 
 # --hints--
 

@@ -8,34 +8,34 @@ dashedName: subleq
 
 # --description--
 
-Subleq is an example of a One-Instruction Set Computer (OISC).
+Subleq є прикладом комп’ютера з одним набором команд.
 
-It is named after its only instruction, which is **SU**btract and **B**ranch if **L**ess than or **EQ**ual to zero.
+Сама назва походить від єдиної команди: **SU**btract and **B**ranch if **L**ess than or **EQ**ual to zero (укр. відняти і перейти, якщо результат менший або дорівнює нулю).
 
-Your task is to create an interpreter which emulates such a machine.
+Ваше завдання — створити інтерпретатор, який емулює таку машину.
 
-The machine's memory consists of an array of signed integers. Any reasonable word size is fine, but the memory must be able to hold negative as well as positive numbers.
+Пам’ять машини складається з масиву цілих чисел зі знаком. Підходить будь-який розмір слова, але пам’ять має зберігати як від’ємні, так і додатні числа.
 
-Execution begins with the instruction pointer aimed at the first word, which is address 0. It proceeds as follows:
+Виконання починається з покажчика команд, спрямованого на перше слово, яке має адресу 0. Воно відбувається наступним чином:
 
 <ol>
-  <li>Let A, B, and C be the value stored in the three consecutive words in memory starting at the instruction pointer.</li>
-  <li>Advance the instruction pointer 3 words to point at the address after the one containing C.</li>
-  <li>If A is -1, then a character is read from standard input and its code point stored in the address given by B. C is unused.</li>
-  <li>If B is -1, then the number contained in the address given by A is interpreted as a code point and the corresponding character output. C is again unused.</li>
-  <li>Otherwise, both A and B are treated as the addresses of memory locations. The number contained in the address given by A is subtracted from the number at the address given by B (and the result stored back in address B). If the result is zero or negative, the value C becomes the new instruction pointer.</li>
-  <li>If the instruction pointer becomes negative, execution halts.</li>
+  <li>Нехай A, B та C будуть значеннями, збереженими в трьох послідовних словах в пам’яті, починаючи з покажчика команд.</li>
+  <li>Перемістіть покажчик команд на 3 слова, щоб він вказував на адресу після тієї, що містить C.</li>
+  <li>Якщо A дорівнює -1, то зі стандартного вводу зчитується символ, а його кодова точка зберігається за адресою, вказаною B. C не використовується.</li>
+  <li>Якщо B дорівнює -1, то число, яке міститься за адресою, вказаною A, інтерпретується як кодова точка, і виводиться відповідний символ. C знову не використовується.</li>
+  <li>В іншому випадку A та B розглядаються як адреси місць в пам’яті. Число, яке міститься за адресою, вказаною A, віднімається від числа за адресою, вказаною B (а результат зберігається за адресою B). Якщо результат дорівнює нулю або є від’ємним, то значення C стає новим покажчиком команд.</li>
+  <li>Якщо покажчик команд стає від’ємним, то виконання зупиняється.</li>
 </ol>
 
-Other negative addresses besides -1 may be treated as equivalent to -1, or generate an error, as you see fit.
+Інші від’ємні адреси (окрім -1) можна розглядати як еквівалентні -1 або викликати помилку, якщо це доцільно.
 
-Your solution should accept a program to execute on the machine, separately from the input fed to the program itself.
+Ваш розв’язок має приймати програму для виконання на машині окремо від вводу, який надається програмі самостійно.
 
-This program should be in raw subleq "machine code" - whitespace-separated decimal numbers, with no symbolic names or other assembly-level extensions, to be loaded into memory starting at address 0. Show the output of your solution when fed this "Hello, world!" program. (Note that the example assumes ASCII or a superset of it, such as any of the Latin-N character sets or Unicode. You may translate it into another character set if your implementation is on a non-ASCiI-compatible environment.)
+Ця програма має бути в звичайному машинному коді subleq: десяткові числа, розділені пропусками, без символьних назв або інших розширень на рівні мови асемблера, які будуть завантажені в пам’ять, починаючи з адреси 0. Покажіть вивід свого розв’язку, коли виконується "Hello, world!". (Зауважте, що цей приклад передбачає ASCII або його надмножину, наприклад, будь-який з наборів символів Latin-N або Unicode. Ви можете перекласти його на інший набір символів, якщо ваша реалізація виконується в несумісному з ASCII середовищі.)
 
 <pre>15 17 -1 17 -1 -1 16 1 -1 16 3 -1 15 15 0 0 -1 72 101 108 108 111 44 32 119 111 114 108 100 33 10 0</pre>
 
-Which corresponds to something like this in a hypothetical assembler language:
+Що в гіпотетичній мові асемблера відповідає чомусь подібному:
 
 <pre>start:
     zero, message, -1
@@ -50,17 +50,17 @@ message: "Hello, world!\n\0"
 
 # --instructions--
 
-Write a function that takes an array of integers as a parameter. This represents the memory elements. The function should interpret the sequence and return the output string. For this task, assume that there is no standard input.
+Напишіть функцію, яка приймає масив цілих чисел як параметр. Це представляє елементи пам’яті. Функція має інтерпретувати послідовність та повернути вихідний рядок. Для цього завдання припустимо, що стандартного вводу немає.
 
 # --hints--
 
-`Subleq` should be a function.
+`Subleq` має бути функцією.
 
 ```js
 assert(typeof Subleq == 'function');
 ```
 
-`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` should return a string.
+`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` має повернути рядок.
 
 ```js
 assert(
@@ -100,7 +100,7 @@ assert(
 );
 ```
 
-`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` should return `"Hello, world!"`.
+`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` має повернути `"Hello, world!"`.
 
 ```js
 assert.equal(

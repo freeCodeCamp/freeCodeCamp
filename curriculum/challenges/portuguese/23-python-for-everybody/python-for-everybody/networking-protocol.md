@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0c0b6c005b0e76f072
-title: Networking Protocol
+title: Protocolo de rede
 challengeType: 11
 videoId: c6vZGescaSc
 bilibiliIds:
@@ -14,7 +14,7 @@ dashedName: networking-protocol
 
 ## --text--
 
-What type of HTTP request is usually used to access a website?
+Que tipo de requisição HTTP é geralmente usada para acessar um site?
 
 ## --answers--
 

@@ -19,10 +19,10 @@ Demonstrate that it passes the following three test-cases:
 
 <div style='font-size:115%; font-weight: bold;'>Test Cases</div>
 
-| Input number | Output number                         |
-| ------------ | ------------------------------------- |
-| 7259         | <code>2 hr, 59 sec</code>             |
-| 86400        | <code>1 d</code>                      |
+| Input number | Output number             |
+| ------------ | ------------------------- |
+| 7259         | <code>2 hr, 59 sec</code> |
+| 86400        | <code>1 d</code> |
 | 6000000      | <code>9 wk, 6 d, 10 hr, 40 min</code> |
 
 <div style="font-size:115%; font-weight: bold;">Details</div>

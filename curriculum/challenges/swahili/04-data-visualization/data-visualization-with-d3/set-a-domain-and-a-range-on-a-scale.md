@@ -14,7 +14,7 @@ Say a dataset has values ranging from 50 to 480. This is the input information f
 
 You want to map those points along the `x` axis on the SVG, between 10 units and 500 units. This is the output information, also known as the <dfn>range</dfn>.
 
-The `domain()` and `range()` methods set these values for the scale. Both methods take an array of at least two elements as an argument. Here's an example:
+The `domain()` and `range()` methods set these values for the scale. Both methods take an array of at least two elements as an argument. Hapa kuna mfano:
 
 ```js
 scale.domain([50, 480]);

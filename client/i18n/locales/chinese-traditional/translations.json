@@ -93,7 +93,9 @@
     "link-account": "關聯賬戶",
     "unlink-account": "取消關聯賬戶",
     "update-card": "Update your card",
-    "donate-now": "Donate Now"
+    "donate-now": "Donate Now",
+    "confirm-amount": "Confirm amount",
+    "skip-advertisement": "Skip Advertisement"
   },
   "landing": {
     "big-heading-1": "免費學習編程",
@@ -198,6 +200,7 @@
     "sound-mode": "爲整個網站添加令人愉快的吉他原聲音樂。在編輯器輸入、完成挑戰、申請認證等時刻，你將獲得音樂反饋。",
     "sound-volume": "營火音效音量",
     "scrollbar-width": "編輯器滾動條寬度",
+    "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
       "contains invalid characters": "用戶名 \"{{username}}\" 含有無效字符",
       "is too short": "用戶名 \"{{username}}\" 太短",
@@ -363,7 +366,7 @@
     "assignments": "任務",
     "question": "問題",
     "solution-link": "解決方案鏈接",
-    "github-link": "GitHub 鏈接",
+    "source-code-link": "Source Code Link",
     "ms-link": "Microsoft Link",
     "submit-and-go": "提交併訪問下一個挑戰",
     "congratulations": "恭喜，你的代碼已通過。請提交你的代碼以繼續。",
@@ -373,6 +376,7 @@
     "tests-completed": "// 測試完成",
     "console-output": "// 打印輸出",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
+    "indentation-error": "Your code has an indentation error. You may need to add 'pass' on a new line to form a valid block of code.",
     "sign-in-save": "登錄以保存你的學習進度",
     "download-solution": "下載我的解決方案",
     "download-results": "Download my results",
@@ -413,6 +417,21 @@
     "help-translate-link": "幫助我們翻譯。",
     "project-preview-title": "下面是你將構建的項目的預覽",
     "github-required": "如果你沒有 GitHub 賬戶，你需要 <0>創建 GitHub</0> 賬戶。 你需要創建虛擬 Linux 服務器，這個過程可能需要幾分鐘。",
+    "gitpod": {
+      "intro": "This course runs in a virtual Linux machine using Gitpod. Follow these instructions to start the course:",
+      "step-1": "<0>Create a GitHub</0> account if you don't have one",
+      "step-2": "Click the start button below",
+      "step-3": "Login to Gitpod with your GitHub account if you aren't already",
+      "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
+      "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
+      "step-6": "Going to the \"View\" menu,",
+      "step-7": "Clicking on the \"Command Palette\" option,",
+      "step-8": "and running the \"CodeRoad: Start\" command",
+      "step-9": "Follow the instructions in CodeRoad to complete the course",
+      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{course}} course, go to <0>your Gitpod dashboard</0> to continue.",
+      "learn-more": "Learn more about <0>Gitpod workspaces.</0>",
+      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account."
+    },
     "step-1": "步驟 1：完成項目",
     "step-2": "步驟 2：提交你的代碼",
     "submit-public-url": "當你完成項目後，將所有所需文件保存到公共倉庫並將 URL 填寫到下方。",
@@ -577,6 +596,7 @@
     "other-support": "如果你想要通過此處未列出的其他方式支持我們的慈善組織和它的使命，或者如果你有任何問題，請給 Quincy 發送電子郵件到 quincy@freecodecamp.org。",
     "bear-progress-alt": "Illustration of an adorable teddy bear with a pleading expression holding an empty money jar.",
     "bear-completion-alt": "Illustration of an adorable teddy bear holding a large trophy.",
+    "flying-bear": "Illustration of an adorable teddy bear wearing a graduation cap and flying with a Supporter badge.",
     "crucial-contribution": "Your contribution will be crucial in creating resources that empower millions of people to learn new skills and support their families.",
     "support-benefits-title": "Benefits from becoming a Supporter:",
     "support-benefits-1": "No more donation prompt popups",
@@ -597,7 +617,14 @@
     "community-achivements-3": "Merged <0>2,753</0> code contributions into our open source repositories on GitHub",
     "community-achivements-4": "Translated <0>2,106,203</0> words to make our curriculum and tutorials more accessible to speakers of many world languages",
     "as-you-see": "As you can see, we're getting things done. So you can rest assured that we'll put your donations to good use.",
-    "get-benefits": "Get the benefits and the knowledge that you’re helping our charity change education for the better. Become a Supporter today."
+    "get-benefits": "Get the benefits and the knowledge that you’re helping our charity change education for the better. Become a supporter today.",
+    "modal-benefits-title": "Support us",
+    "help-us-more-certifications": "Help us build more certifications",
+    "remove-donation-popups": "Remove donation popups",
+    "help-millions-learn": "Help millions of people learn",
+    "reach-goals-faster": "Reach your goals faster",
+    "remove-distractions": "Remove distractions",
+    "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world."
   },
   "report": {
     "sign-in": "你需要先登錄才能舉報用戶",
@@ -616,7 +643,7 @@
   },
   "search": {
     "label": "搜索",
-    "placeholder": "搜索 1,000+ 篇教程",
+    "placeholder": "Search 10,700+ tutorials",
     "see-results": "查看 {{searchQuery}} 的所有結果",
     "no-tutorials": "未找到教程",
     "try": "想要搜索信息？試試使用頁面上的搜索框。",
@@ -691,6 +718,8 @@
     "step": "步驟",
     "steps": "步驟",
     "steps-for": "{{blockTitle}} 的步驟",
+    "task": "Task",
+    "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} 代碼示例",
     "opens-new-window": "在新窗口打開"
   },
@@ -912,9 +941,9 @@
     "title": {
       "Responsive Web Design": "響應式網頁設計",
       "responsive-web-design": "響應式 Web 設計認證",
-      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
-      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures Certification",
+      "JavaScript Algorithms and Data Structures": "Legacy JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures Certification",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures (Beta) Certification",
       "Front End Development Libraries": "前端開發庫",
       "front-end-development-libraries": "前端開發庫認證",
       "Data Visualization": "數據可視化",

@@ -1,6 +1,6 @@
 ---
 id: 5900f4dd1000cf542c50ffef
-title: 'Problem 368: A Kempner-like series'
+title: '问题368：类似肯珀纳的系列'
 challengeType: 1
 forumTopicId: 302029
 dashedName: problem-368-a-kempner-like-series
@@ -10,9 +10,9 @@ dashedName: problem-368-a-kempner-like-series
 
 The harmonic series $1 + \dfrac{1}{2} + \dfrac{1}{3} + \dfrac{1}{4} + \ldots$ is well known to be divergent.
 
-If we however omit from this series every term where the denominator has a 9 in it, the series remarkably enough converges to approximately 22.9206766193. This modified harmonic series is called the Kempner series.
+然而，如果我们在这个系列中省略了分母中有9个的每个项，则该系列显着地收敛到大约22.9206766193。 这种改进的谐波系列称为肯普纳系列。
 
-Let us now consider another modified harmonic series by omitting from the harmonic series every term where the denominator has 3 or more equal consecutive digits. One can verify that out of the first 1200 terms of the harmonic series, only 20 terms will be omitted.
+现在让我们通过省略分母具有3个或更多相等连续数字的每个项的谐波系列来考虑另一个修正的谐波系列。 可以验证在谐波系列的前1200个项中，仅省略20个项。
 
 These 20 omitted terms are:
 

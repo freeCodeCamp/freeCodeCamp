@@ -1,8 +1,8 @@
 ---
 id: 655b4bbff1dbf66cb2ed4dac
-title: Step 88
+title: Step 91
 challengeType: 0
-dashedName: step-88
+dashedName: step-91
 ---
 
 # --description--
@@ -14,13 +14,13 @@ Use an `if` statement to check if `nextSongExists` exists, then call the `playNe
 You should create an `if` statement with the condition `nextSongExists`.
 
 ```js
-assert.match(code, /if\s*\(nextSongExists\)\s*\{\s*/)
+assert.match(code, /if\s*\(\s*nextSongExists\s*\)\s*\{\s*/)
 ```
 
 You should call the `playNextSong` function inside your `if` statement.
 
 ```js
-assert.match(code, /if\s*\(nextSongExists\)\s*\{\s*playNextSong\(\);?\s*\}/)
+assert.match(code, /if\s*\(\s*nextSongExists\s*\)\s*\{\s*playNextSong\(\s*\)\s*;?\s*\}/)
 ```
 
 # --seed--
@@ -583,7 +583,7 @@ const playSong = (id) => {
   if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
     audio.currentTime = 0;
   } else {
-    audio.currentTime = userData.songCurrentTime;
+    audio.currentTime = userData?.songCurrentTime;
   }
   userData.currentSong = song;
   playButton.classList.add("playing");
@@ -647,7 +647,7 @@ const deleteSong = (id) => {
   highlightCurrentSong(); 
   setPlayButtonAccessibleText(); 
 
-  if (userData.songs.length === 0) {
+  if (userData?.songs.length === 0) {
     const resetButton = document.createElement("button");
     const resetText = document.createTextNode("Reset Playlist");
 
@@ -659,7 +659,7 @@ const deleteSong = (id) => {
     resetButton.addEventListener("click", () => {
       userData.songs = [...allSongs];
 
-      renderSongs(userData?.songs); 
+      renderSongs(sortSongs()); 
       setPlayButtonAccessibleText();
       resetButton.remove();
     });
@@ -722,7 +722,7 @@ const setPlayButtonAccessibleText = () => {
   );
 };
 
-const getCurrentSongIndex = () => userData?.songs.indexOf(userData.currentSong);
+const getCurrentSongIndex = () => userData?.songs.indexOf(userData?.currentSong);
 
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {
@@ -748,18 +748,22 @@ audio.addEventListener("ended", () => {
 --fcc-editable-region--
 });
 
-userData?.songs.sort((a,b) => {
-  if (a.title < b.title) {
-    return -1;
-  }
+const sortSongs = () => {
+  userData?.songs.sort((a,b) => {
+    if (a.title < b.title) {
+      return -1;
+    }
 
-  if (a.title > b.title) {
-    return 1;
-  }
+    if (a.title > b.title) {
+      return 1;
+    }
 
-  return 0;
-});
+    return 0;
+  });
 
-renderSongs(userData?.songs);
+  return userData?.songs;
+};
+
+renderSongs(sortSongs());
 setPlayButtonAccessibleText();
 ```

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0d0b6c005b0e76f075
-title: 'Networking: Using urllib in Python'
+title: 'الشبكات: استخدام urllib في البايثون'
 challengeType: 11
 videoId: 7lFM1T_CxBs
 bilibiliIds:
@@ -25,17 +25,17 @@ for line in fhand:
 
 ## --answers--
 
-Just contents of "romeo.txt".
+فقط محتويات "romeo.txt".
 
 ---
 
-A header and the contents of "romeo.txt".
+رأس ومحتوى "romeo.txt".
 
 ---
 
-A header, a footer, and the contents of "romeo.txt".
+رأس، تذييل ومحتويات "romeo.txt".
 
 ## --video-solution--
 
-1
+الأول
 

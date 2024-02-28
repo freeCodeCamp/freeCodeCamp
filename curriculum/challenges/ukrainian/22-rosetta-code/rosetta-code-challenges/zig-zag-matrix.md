@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad8
-title: Zig-zag matrix
+title: Зигзагоподібна матриця
 challengeType: 1
 forumTopicId: 302348
 dashedName: zig-zag-matrix
@@ -8,9 +8,9 @@ dashedName: zig-zag-matrix
 
 # --description--
 
-A 'zig-zag' array is a square arrangement of the first $N^2$ integers, where the numbers increase sequentially as you zig-zag along the array's anti-diagonals.
+Зигзагоподібний масив — це квадратне розташування перших $N^2$ цілих чисел, де числа послідовно збільшуються по діагоналях.
 
-For example, for the input `5`, the following result should be produced:
+Наприклад, якщо ввести `5`, то результатом буде:
 
 <pre>
  0  1  5  6 14
@@ -22,41 +22,41 @@ For example, for the input `5`, the following result should be produced:
 
 # --instructions--
 
-Write a function that takes the size of the zig-zag matrix, and returns the corresponding matrix as two-dimensional array.
+Напишіть функцію, яка приймає розмір зигзагоподібної матриці та повертає відповідну матрицю як двовимірний масив.
 
 # --hints--
 
-ZigZagMatrix should be a function.
+`ZigZagMatrix` має бути функцією.
 
 ```js
 assert.equal(typeof ZigZagMatrix, 'function');
 ```
 
-ZigZagMatrix should return array.
+`ZigZagMatrix` має повернути масив.
 
 ```js
 assert.equal(typeof ZigZagMatrix(1), 'object');
 ```
 
-ZigZagMatrix should return an array of nested arrays.
+`ZigZagMatrix` має повернути масив вкладених масивів.
 
 ```js
 assert.equal(typeof ZigZagMatrix(1)[0], 'object');
 ```
 
-ZigZagMatrix(1) should return \[[0]].
+`ZigZagMatrix(1)` має повернути `\[[0]]`.
 
 ```js
 assert.deepEqual(ZigZagMatrix(1), zm1);
 ```
 
-ZigZagMatrix(2) should return \[[0, 1], [2, 3]].
+`ZigZagMatrix(2)` має повернути `\[[0, 1], [2, 3]]`.
 
 ```js
 assert.deepEqual(ZigZagMatrix(2), zm2);
 ```
 
-ZigZagMatrix(5) should return specified matrix.
+`ZigZagMatrix(5)` має повернути вказану матрицю.
 
 ```js
 assert.deepEqual(ZigZagMatrix(5), zm5);

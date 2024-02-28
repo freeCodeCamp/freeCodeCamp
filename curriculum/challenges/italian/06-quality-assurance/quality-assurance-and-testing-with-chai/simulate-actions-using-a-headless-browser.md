@@ -7,13 +7,13 @@ dashedName: simulate-actions-using-a-headless-browser
 
 # --description--
 
-Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, o clonato da <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Nelle prossime sfide, simulerai l'interazione umana con una pagina utilizzando un headless browser (browser senza testa).
 
 I browser senza intestazione sono browser web senza interfaccia grafica. Essi sono in grado di visualizzare e interpretare HTML, CSS, e JavaScript allo stesso modo in cui farebbe un browser normale, rendendoli particolarmente utili per testare le pagine web.
 
-Per le seguenti sfide userai Zombie.js, che è un browser senza testa leggero che non si basa su binari aggiuntivi da installare. Questa funzione lo rende utilizzabile in ambienti limitati come Replit. Ma ci sono molte altre, più potenti opzioni di browser senza intestazione.
+Per le seguenti sfide userai Zombie.js, che è un browser senza testa leggero che non si basa su binari aggiuntivi da installare. Ma ci sono molte altre, più potenti opzioni di browser senza intestazione.
 
 Mocha consente di eseguire qualche codice prima dell'effettiva esecuzione dei test. Questo può essere utile per fare cose come aggiungere voci a un database che sarà utilizzato nel resto dei test.
 
@@ -28,7 +28,7 @@ Ci sono diversi altri tipi di hook che possono eseguire il codice prima di ogni 
 All'interno di `tests/2_functional-tests.js`, immediatamente dopo la dichiarazione `Browser`, aggiungi l'URL del tuo progetto alla proprietà `site` della variabile:
 
 ```js
-Browser.site = 'https://boilerplate-mochachai.your-username.repl.co'; // Your URL here
+Browser.site = 'http://localhost:3000'; // Your URL here
 ```
 
 Poi al livello di root della suite `'Functional Tests with Zombie.js'`, instanzia una nuova istanza dell'oggetto `Browser` con il seguente codice:

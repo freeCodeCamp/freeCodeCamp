@@ -1,6 +1,6 @@
 ---
 id: 5e94a54cc7b022105bf0fd2c
-title: Word frequency
+title: 単語頻度
 challengeType: 1
 forumTopicId: 393913
 dashedName: word-frequency
@@ -12,64 +12,64 @@ Given a text string and an integer n, return the n most common words in the file
 
 # --instructions--
 
-Write a function to count the occurrences of each word and return the n most commons words along with the number of their occurrences in decreasing frequency.
+各単語の発生回数をカウントし、n 個の頻出単語をその発生回数とともに頻出度の高い順で返す関数を記述してください。
 
-The function should return a 2D array with each of the elements in the following form: `[word, freq]`. `word` should be the lowercase version of the word and `freq` the number denoting the count.
+この関数は、`[word, freq]` の形式で各要素を含む 2 次元配列を返す必要があります。 `word` は単語の小文字バージョンで、`freq` はカウントを表す数字とします。
 
-The function should return an empty array, if no string is provided.
+文字列が指定されていない場合、関数は空の配列を返す必要があります。
 
-The function should be case insensitive, for example, the strings "Hello" and "hello" should be treated the same.
+関数は大文字と小文字を区別しないものとします。例えば、文字列 "Hello" と "hello" は同じものとして扱われます。
 
-You can treat words that have special characters such as underscores, dashes, apostrophes, commas, etc., as distinct words.
+アンダースコア、ダッシュ、アポストロフィ、カンマなどの特殊文字の付いた単語は別の単語として扱うことができます。
 
-For example, given the string "Hello hello goodbye", your function should return `[['hello', 2], ['goodbye', 1]]`.
+例えば、"Hello hello goodbye" という文字列を与えると、関数は `[['hello', 2], ['goodbye', 1]]` を返します。
 
 # --hints--
 
-`wordFrequency` should be a function.
+`wordFrequency` は関数とします。
 
 ```js
 assert(typeof wordFrequency == 'function');
 ```
 
-`wordFrequency` should return an array.
+`wordFrequency` は配列を返す必要があります。
 
 ```js
 assert(Array.isArray(wordFrequency('test')));
 ```
 
-`wordFrequency("Hello hello world", 2)` should return `[['hello', 2], ['world', 1]]`
+`wordFrequency("Hello hello world", 2)` は `[['hello', 2], ['world', 1]]` を返す必要があります。
 
 ```js
 assert.deepEqual(wordFrequency(example_1, 2), example_1_solution);
 ```
 
-`wordFrequency("The quick brown fox jumped over the lazy dog", 1)` should return `[['the', 2]]`
+`wordFrequency("The quick brown fox jumped over the lazy dog", 1)` は `[['the', 2]]` を返す必要があります。
 
 ```js
 assert.deepEqual(wordFrequency(example_2, 1), example_2_solution);
 ```
 
-`wordFrequency("Opensource opensource open-source open source", 1)` should return `[['opensource', 2]]`
+`wordFrequency("Opensource opensource open-source open source", 1)` は `[['opensource', 2]]` を返す必要があります。
 
 ```js
 assert.deepEqual(wordFrequency(example_3, 1), example_3_solution);
 ```
 
-`wordFrequency("Apple App apply aPP aPPlE", 3)` should return `[['app', 2], ['apple', 2], ['apply', 1]]` or `[['apple', 2], ['app', 2], ['apply', 1]]`
+`wordFrequency("Apple App apply aPP aPPlE", 3)` は `[['app', 2], ['apple', 2], ['apply', 1]]` または `[['apple', 2], ['app', 2], ['apply', 1]]` を返す必要があります。
 
 ```js
 const arr = JSON.stringify(wordFrequency(example_4, 3));
 assert(arr === example_4_solution_a || arr === example_4_solution_b);
 ```
 
-`wordFrequency("c d a d c a b d d c", 4)` should return `[['d', 4], ['c', 3], ['a', 2], ['b', 1]]`
+`wordFrequency("c d a d c a b d d c", 4)` は `[['d', 4], ['c', 3], ['a', 2], ['b', 1]]` を返す必要があります。
 
 ```js
 assert.deepEqual(wordFrequency(example_5, 4), example_5_solution);
 ```
 
-`wordFrequency("", 5)` should return `[]`
+`wordFrequency("", 5)` は `[]` を返す必要があります。
 
 ```js
 assert.deepEqual(wordFrequency(example_6, 5), example_6_solution);

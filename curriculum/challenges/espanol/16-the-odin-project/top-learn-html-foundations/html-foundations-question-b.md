@@ -4,6 +4,7 @@ title: HTML Foundations Question B
 challengeType: 15
 dashedName: html-foundations-question-b
 ---
+
 # --description--
 
 You can think of elements as containers for content. The opening and closing tags tell the browser what content the element contains. The browser can then use that information to determine how it should interpret and format the content.
@@ -15,7 +16,7 @@ HTML has a vast list of predefined tags that you can use to create all kinds of 
 Using the correct elements for content is called semantic HTML. You will explore this in much more depth later on in the curriculum.
 
 # --question--
-    
+
 ## --text--
 
 Why are self-closing tags like `<br/>` or `<img>` essential in HTML?

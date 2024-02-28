@@ -1,6 +1,6 @@
 ---
 id: 594faaab4e2a8626833e9c3d
-title: Tokenize a string with escaping
+title: Токенізація рядка символами екранування
 challengeType: 1
 forumTopicId: 302338
 dashedName: tokenize-a-string-with-escaping
@@ -8,65 +8,65 @@ dashedName: tokenize-a-string-with-escaping
 
 # --description--
 
-Write a function or program that can split a string at each non-escaped occurrence of a separator character.
+Напишіть функцію або програму, яка може поділити рядок кожного разу, коли зустрічається неекранований відокремлювальний символ.
 
-It should accept three input parameters:
-
-<ul>
-  <li>The <strong>string</strong></li>
-  <li>The <strong>separator character</strong></li>
-  <li>The <strong>escape character</strong></li>
-</ul>
-
-It should output a list of strings.
-
-Rules for splitting:
+Вона має приймати три вхідні параметри:
 
 <ul>
-  <li>The fields that were separated by the separators, become the elements of the output list.</li>
-  <li>Empty fields should be preserved, even at the start and end.</li>
+  <li><strong>рядок</strong></li>
+  <li><strong>відокремлювальний символ</strong></li>
+  <li><strong>символ екранування</strong></li>
 </ul>
 
-Rules for escaping:
+Вона має вивести список рядків.
+
+Правила для відокремлення:
 
 <ul>
-  <li>"Escaped" means preceded by an occurrence of the escape character that is not already escaped itself.</li>
-  <li>When the escape character precedes a character that has no special meaning, it still counts as an escape (but does not do anything special).</li>
-  <li>Each occurrences of the escape character that was used to escape something, should not become part of the output.</li>
+  <li>Поля, розділені відокремлювальними символами, стають елементами вихідного списку.</li>
+  <li>Порожні поля мають зберегтись, навіть спочатку та вкінці.</li>
 </ul>
 
-Demonstrate that your function satisfies the following test-case:
+Правила для екранування:
 
-Given the string
+<ul>
+  <li>«Екранованим» вважають символ, якщо перед ним стоїть символ екранування, який сам не є екранованим.</li>
+  <li>Якщо символ екранування передує символу, який не має особливого значення, він все одно вважається символом екранування (але не робить нічого особливого).</li>
+  <li>Частиною вихідних даних не повинен бути кожен випадок, коли символ екранування було використано для екранування.</li>
+</ul>
+
+Доведемо, що функція задовольняє такий випадок:
+
+Дано рядок
 
 <pre>one^|uno||three^^^^|four^^^|^cuatro|</pre>
 
-and using `|` as a separator and `^` as escape character, your function should output the following array:
+використовуючи `|` як відокремлювальний символ та `^` як символ екранування, функція має вивести наступний масив:
 
 <pre>  ['one|uno', '', 'three^^', 'four^|cuatro', '']
 </pre>
 
 # --hints--
 
-`tokenize` should be a function.
+`tokenize` має бути функцією.
 
 ```js
 assert(typeof tokenize === 'function');
 ```
 
-`tokenize` should return an array.
+`tokenize` має повернути масив.
 
 ```js
 assert(typeof tokenize('a', 'b', 'c') === 'object');
 ```
 
-`tokenize('one^|uno||three^^^^|four^^^|^cuatro|', '|', '^')` should return `['one|uno', '', 'three^^', 'four^|cuatro', '']`
+`tokenize('one^|uno||three^^^^|four^^^|^cuatro|', '|', '^')` має повернути `['one|uno', '', 'three^^', 'four^|cuatro', '']`
 
 ```js
 assert.deepEqual(tokenize(testStr1, '|', '^'), res1);
 ```
 
-`tokenize('a@&bcd&ef&&@@hi', '&', '@')` should return `['a&bcd', 'ef', '', '@hi']`
+`tokenize('a@&bcd&ef&&@@hi', '&', '@')` має повернути `['a&bcd', 'ef', '', '@hi']`
 
 ```js
 assert.deepEqual(tokenize(testStr2, '&', '@'), res2);

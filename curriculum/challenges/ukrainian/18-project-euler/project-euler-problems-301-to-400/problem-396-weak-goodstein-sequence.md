@@ -1,6 +1,6 @@
 ---
 id: 5900f4f81000cf542c51000b
-title: 'Problem 396: Weak Goodstein sequence'
+title: 'Завдання 396: слабка послідовність Гудштейна'
 challengeType: 1
 forumTopicId: 302061
 dashedName: problem-396-weak-goodstein-sequence
@@ -8,25 +8,25 @@ dashedName: problem-396-weak-goodstein-sequence
 
 # --description--
 
-For any positive integer $n$, the $n$th weak Goodstein sequence $\\{g1, g2, g3, \ldots\\}$ is defined as:
+Для будь-якого натурального числа $n$, $n$-на слабка послідовність Гудштейна $\\{g1, g2, g3, \ldots\\}$ визначається як:
 
 - $g_1 = n$
-- for $k > 1$, $g_k$ is obtained by writing $g_{k - 1}$ in base $k$, interpreting it as a base $k + 1$ number, and subtracting 1.
+- за умови $k > 1$, $g_k$ отримується через запис $g_{k - 1}$ в основі $k$, інтерпретуючи його як число в основі $k + 1$, та віднявши 1.
 
-The sequence terminates when $g_k$ becomes 0.
+Послідовність припиняється, коли значенням $g_k$ стає 0.
 
-For example, the $6$th weak Goodstein sequence is $\\{6, 11, 17, 25, \ldots\\}$:
+Наприклад, $6$-ою слабкою послідовністю Гудштейна є $\\{6, 11, 17, 25, \ldots\\}$:
 
 - $g_1 = 6$.
-- $g_2 = 11$ since $6 = 110_2$, $110_3 = 12$, and $12 - 1 = 11$.
-- $g_3 = 17$ since $11 = 102_3$, $102_4 = 18$, and $18 - 1 = 17$.
-- $g_4 = 25$ since $17 = 101_4$, $101_5 = 26$, and $26 - 1 = 25$.
+- $g_2 = 11$, оскільки $6 = 110_2$, $110_3 = 12$ та $12 - 1 = 11$.
+- $g_3 = 17$, оскільки $11 = 102_3$, $102_4 = 18$ та $18 - 1 = 17$.
+- $g_4 = 25$, оскільки $17 = 101_4$, $101_5 = 26$ та $26 - 1 = 25$.
 
-and so on.
+і так далі.
 
-It can be shown that every weak Goodstein sequence terminates.
+Можна довести, що кожна слабка послідовність Гудштейна закінчується.
 
-Let $G(n)$ be the number of nonzero elements in the $n$th weak Goodstein sequence.
+Нехай $G(n)$ буде кількістю ненульових елементів в $n$-ій послідовності Гудштейна.
 
 Можна довести, що $G(2) = 3$, $G(4) = 21$ та $G(6) = 381$.
 

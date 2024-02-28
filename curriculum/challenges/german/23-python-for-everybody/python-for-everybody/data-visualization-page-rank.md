@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f6a0b6c005b0e76f096
-title: 'Data Visualization: Page Rank'
+title: 'Datenvisualisierung: Seiten-Ranking'
 challengeType: 11
 videoId: 6-w_qIUwaxU
 bilibiliIds:
@@ -18,15 +18,15 @@ How does the PageRank algorithm work?
 
 ## --answers--
 
-It determines which pages are most highly connected.
+Er bestimmt, welche Seiten am meisten verlinkt sind.
 
 ---
 
-It ranks pages based on view counts.
+Er bewertet Seiten basierend auf der Anzahl von Besuchern der Seiten.
 
 ---
 
-It figures out which pages contain the most important content.
+Er ermittelt, welche Seiten die wichtigsten Inhalte enthalten.
 
 ## --video-solution--
 

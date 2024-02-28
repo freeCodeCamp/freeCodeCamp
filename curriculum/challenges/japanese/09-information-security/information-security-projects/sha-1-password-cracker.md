@@ -9,20 +9,15 @@ dashedName: sha-1-password-cracker
 
 # --description--
 
-<a href="https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">このプロジェクトには Replit スターターコードを使用して取り組んでください</a>。
-
--   まず、Replit でプロジェクトをインポートします。
--   すると、`.replit` ファイルのウィンドウが表示されます。
--   `Use run command` を選択して `Done` ボタンをクリックします。
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 Python カリキュラムの対話式教育コンテンツを引き続き開発中です。 現在、下記の freeCodeCamp.org YouTube チャンネルで、このプロジェクトの完了に必要なすべての知識について説明する動画をいくつか公開しています。
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">「みんなの Python」ビデオコース</a> (14 時間)
 
-- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Basics in Depth</a> (4 hours)
+- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Python の基礎を詳しく学ぶ</a> (4 時間)
 
-- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Intermediate Python Course</a> (6 hours)
+- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Python 中級コース</a> (6 時間)
 
 # --instructions--
 
@@ -38,25 +33,25 @@ Python カリキュラムの対話式教育コンテンツを引き続き開発�
 
 関数のテストに使用できるハッシュ化されたパスワードの例を次に示します。
 
-- `b305921a3723cd5d70a375cd21a61e60aabb84ec` should return "sammy123"
-- `c7ab388a5ebefbf4d550652f1eb4d833e5316e3e` should return "abacab"
-- `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8` should return "password"
+- `b305921a3723cd5d70a375cd21a61e60aabb84ec` は "sammy123" を返す
+- `c7ab388a5ebefbf4d550652f1eb4d833e5316e3e` は "abacab" を返す
+- `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8` は "password" を返す
 
 `use_salts` を `True` に設定した場合に関数のテストに使用できるハッシュ化されたパスワードの例を次に示します。
 
-- `53d8b3dc9d39f0184144674e310185e41a87ffd5` should return "superman"
-- `da5a4e8cf89539e66097acd2f8af128acae2f8ae` should return "q1w2e3r4t5"
-- `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` should return "bubbles1"
+- `53d8b3dc9d39f0184144674e310185e41a87ffd5` は "superman" を返す
+- `da5a4e8cf89539e66097acd2f8af128acae2f8ae` は "q1w2e3r4t5" を返す
+- `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` は "bubbles1" を返す
 
-`hashlib` ライブラリをあらかじめインポートしてあります。 You should consider using it in your code. <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">Learn more about "hashlib" here</a>.
+`hashlib` ライブラリをあらかじめインポートしてあります。 このライブラリの使用を検討してください。 <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">hashlib の詳細についてはこちらを参照してください</a>。
 
 ## 開発
 
-`password_cracker.py` にコードを記述してください。 開発には `main.py` を使用してコードをテストすることができます。 「実行」ボタンをクリックすると `main.py` が実行されます。
+`password_cracker.py` にコードを記述してください。 開発には `main.py` を使用してコードをテストすることができます。
 
 ## テスト
 
-このプロジェクトの単体テストは `test_module.py` にあります。 すでに `test_module.py` から `main.py` にテストをインポートしてあります。 「実行」ボタンを押すと自動的にテストが実行されます。
+このプロジェクトの単体テストは `test_module.py` にあります。 すでに `test_module.py` から `main.py` にテストをインポートしてあります。
 
 ## 提出
 

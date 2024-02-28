@@ -1,6 +1,6 @@
 ---
 id: 5eb3e4af7d0e7b760b46cedc
-title: Set consolidation
+title: Встановлене об’єднання
 challengeType: 1
 forumTopicId: 385319
 dashedName: set-consolidation
@@ -8,58 +8,58 @@ dashedName: set-consolidation
 
 # --description--
 
-Given two sets of items then if any item is common to any set then the result of applying *consolidation* to those sets is a set of sets whose contents is:
+Дано дві множини елементів. Якщо між цими множинами є спільний елемент, то результатом їх *об’єднання* є множина множин, вмістом якої є:
 
 <ul>
-  <li>The two input sets if no common item exists between the two input sets of items.</li>
-  <li>The single set that is the union of the two input sets if they share a common item.</li>
+  <li>Дві вхідні множини, якщо між ними не існує спільного елемента.</li>
+  <li>Одна множина, яка є об’єднанням двох вхідних множин, якщо в них є спільний елемент.</li>
 </ul>
 
-Given N sets of items where N > 2 then the result is the same as repeatedly replacing all combinations of two sets by their consolidation until no further consolidation between set pairs is possible. If N &lt; 2 then consolidation has no strict meaning and the input can be returned.
+Якщо дано N множин елементів, де N > 2, то результат буде таким самим, як і для багаторазової перестановки всіх комбінацій двох множин шляхом їх об’єднання, допоки не буде можливим наступне об’єднання. Якщо N &lt; 2, то об’єднання не має строгого значення та вхідні дані можна повернути.
 
-Here are some examples:
+Ось декілька прикладів:
 
-**Example 1:**
+**Приклад 1:**
 
-Given the two sets `{A,B}` and `{C,D}` then there is no common element between the sets and the result is the same as the input.
+Дано дві множини: `{A,B}` та `{C,D}`. Оскільки між ними немає спільних елементів, результат буде таким же, як і вхідні дані.
 
-**Example 2:**
+**Приклад 2:**
 
-Given the two sets `{A,B}` and `{B,D}` then there is a common element `B` between the sets and the result is the single set `{B,D,A}`. (Note that order of items in a set is immaterial: `{A,B,D}` is the same as `{B,D,A}` and `{D,A,B}`, etc).
+Дано дві множини: `{A,B}` та `{B,D}`. Між ними є спільний елемент `B`, тому результатом буде множина `{B,D,A}`. (Зауважте, що порядок елементів не має значення: `{A,B,D}` позначає те ж саме, що й `{B,D,A}`, `{D,A,B}` тощо).
 
-**Example 3:**
+**Приклад 3:**
 
-Given the three sets `{A,B}` and `{C,D}` and `{D,B}` then there is no common element between the sets `{A,B}` and `{C,D}` but the sets `{A,B}` and `{D,B}` do share a common element that consolidates to produce the result `{B,D,A}`. On examining this result with the remaining set, `{C,D}`, they share a common element and so consolidate to the final output of the single set `{A,B,C,D}`
+Дано три множини: `{A,B}`, `{C,D}` та `{D,B}`. Між `{A,B}` та `{C,D}` немає спільних елементів, але між `{A,B}` та `{D,B}` є спільний елемент, що утворює результат `{B,D,A}`. Цей результат має спільний елемент з множиною, яка залишилась (`{C,D}`), тому кінцевим результатом буде множина `{A,B,C,D}`.
 
-**Example 4:**
+**Приклад 4:**
 
-The consolidation of the five sets:
+Об’єднанням п’яти множин:
 
-`{H,I,K}`, `{A,B}`, `{C,D}`, `{D,B}`, and `{F,G,H}`
+`{H,I,K}`, `{A,B}`, `{C,D}`, `{D,B}` та `{F,G,H}`
 
-Is the two sets:
+є дві множини:
 
-`{A, C, B, D}`, and `{G, F, I, H, K}`
+`{A, C, B, D}` та `{G, F, I, H, K}`
 
 # --instructions--
 
-Write a function that takes an array of strings as a parameter. Each string is represents a set with the characters representing the set elements. The function should return a 2D array containing the consolidated sets. Note: Each set should be sorted.
+Напишіть функцію, яка приймає масив рядків як параметр. Кожен рядок представляє множину символів, які є елементами множини. Функція має повернути 2D-масив, який містить об’єднані множини. Примітка: множини мають бути відсортованими.
 
 # --hints--
 
-`setConsolidation` should be a function.
+`setConsolidation` має бути функцією.
 
 ```js
 assert(typeof setConsolidation === 'function');
 ```
 
-`setConsolidation(["AB", "CD"])` should return a array.
+`setConsolidation(["AB", "CD"])` має повернути масив.
 
 ```js
 assert(Array.isArray(setConsolidation(['AB', 'CD'])));
 ```
 
-`setConsolidation(["AB", "CD"])` should return `[["C", "D"], ["A", "B"]]`.
+`setConsolidation(["AB", "CD"])` має повернути `[["C", "D"], ["A", "B"]]`.
 
 ```js
 assert.deepEqual(setConsolidation(['AB', 'CD']), [
@@ -68,19 +68,19 @@ assert.deepEqual(setConsolidation(['AB', 'CD']), [
 ]);
 ```
 
-`setConsolidation(["AB", "BD"])` should return `[["A", "B", "D"]]`.
+`setConsolidation(["AB", "BD"])` має повернути `[["A", "B", "D"]]`.
 
 ```js
 assert.deepEqual(setConsolidation(['AB', 'BD']), [['A', 'B', 'D']]);
 ```
 
-`setConsolidation(["AB", "CD", "DB"])` should return `[["A", "B", "C", "D"]]`.
+`setConsolidation(["AB", "CD", "DB"])` має повернути `[["A", "B", "C", "D"]]`.
 
 ```js
 assert.deepEqual(setConsolidation(['AB', 'CD', 'DB']), [['A', 'B', 'C', 'D']]);
 ```
 
-`setConsolidation(["HIK", "AB", "CD", "DB", "FGH"])` should return `[["F", "G", "H", "I", "K"], ["A", "B", "C", "D"]]`.
+`setConsolidation(["HIK", "AB", "CD", "DB", "FGH"])` має повернути `[["F", "G", "H", "I", "K"], ["A", "B", "C", "D"]]`.
 
 ```js
 assert.deepEqual(setConsolidation(['HIK', 'AB', 'CD', 'DB', 'FGH']), [

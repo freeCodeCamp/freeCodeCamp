@@ -1,0 +1,32 @@
+---
+id: 657d5b2d1fe085857b5083f2
+title: Task 4
+challengeType: 22
+dashedName: task-4
+---
+
+# --description--
+
+In the expression `have got`, the verb `have` takes different forms depending on the subject. It is important to recognize and use the correct form.
+
+# --fillInTheBlank--
+
+## --sentence--
+
+`She _ _ an interesting project.`
+
+## --blanks--
+
+`has`
+
+### --feedback--
+
+This blank needs the correct form of `have` that matches the third-person singular subject.
+
+---
+
+`got`
+
+### --feedback--
+
+This blank is for the second part of the expression that indicates possession.

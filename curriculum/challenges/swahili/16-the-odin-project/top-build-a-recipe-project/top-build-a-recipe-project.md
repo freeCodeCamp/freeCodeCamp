@@ -9,7 +9,7 @@ dashedName: top-build-a-recipe-project
 
 The website will consist of a main index page which will have links to a few recipes. The website won’t look very pretty by the time you’ve finished.
 
-**User Stories:**
+**Maelekezo:**
 
 1. Your recipe page should contain a `DOCTYPE` tag.
 1. Your recipe page should include an `html` element with a `head` and `body` element as children.
@@ -105,7 +105,7 @@ const h2 = document.querySelectorAll('H2')[2];
 assert(h2.innerText == 'Steps');
 ```
 
-You should have a `<ol>` with the the steps as the list items `<li>`.
+You should have a `<ol>` with the steps as the list items `<li>`.
 
 ```js
 const orderedList = document.querySelectorAll('OL')[0];
