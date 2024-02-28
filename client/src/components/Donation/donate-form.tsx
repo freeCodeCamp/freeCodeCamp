@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import Spinner from 'react-spinkit';
 import { createSelector } from 'reselect';
 import type { TFunction } from 'i18next';
-import { Button } from '@freecodecamp/react-bootstrap';
 
 import {
   defaultDonation,
@@ -218,13 +217,19 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
 
     const confirmationWithEditAmount = (
       <>
-        {t('donate.confirm-multitier', {
-          usd: formattedAmountLabel(donationAmount)
-        })}
+        <b>
+          {t('donate.confirm-multitier', {
+            usd: formattedAmountLabel(donationAmount)
+          })}
+        </b>
 
-        <Button bsStyle='primary' className='btn-link' onClick={editAmount}>
+        <button
+          type='button'
+          className='edit-amount-button'
+          onClick={editAmount}
+        >
           {t('donate.edit-amount')}
-        </Button>
+        </button>
       </>
     );
 
@@ -235,7 +240,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     };
     return (
       <>
-        <b className={confirmationClass()}>{confirmationWithEditAmount}</b>
+        <div className={confirmationClass()}>{confirmationWithEditAmount}</div>
         <Spacer size={editAmount ? 'small' : 'medium'} />
         <fieldset
           data-playwright-test-label='donation-form'

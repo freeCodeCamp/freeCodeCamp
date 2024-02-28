@@ -24,7 +24,7 @@ After defining a function in Python, indent each line of the function how many s
 
 ## --answers--
 
-2
+الثاني
 
 ---
 

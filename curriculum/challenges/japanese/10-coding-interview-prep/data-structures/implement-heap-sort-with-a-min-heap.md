@@ -18,7 +18,7 @@ dashedName: implement-heap-sort-with-a-min-heap
 
 # --hints--
 
-The `MinHeap` data structure should exist.
+`MinHeap` データ構造を用意する必要があります。
 
 ```js
 assert(
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-`MinHeap` should have a method called `insert`.
+`MinHeap` には `insert` というメソッドが必要です。
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`MinHeap` should have a method called `remove`.
+`MinHeap` には `remove` というメソッドが必要です。
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-`MinHeap` should have a method called `sort`.
+`MinHeap` には `sort` というメソッドが必要です。
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-The `sort` method should return an array containing all items added to the min heap in sorted order.
+`sort` メソッドは、最小ヒープに追加されたすべての要素がソート順に格納されている配列を返す必要があります。
 
 ```js
 assert(

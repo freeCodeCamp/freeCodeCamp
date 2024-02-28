@@ -27,11 +27,8 @@ body {
   height: 100%;
 }
 
-.codeally-frame {
-  display: block;
-  height: calc(100vh - var(--header-height));
-  width: 100%;
-  border: 0;
+.page-wrapper-80 {
+  min-height: 80vh;
 }
 
 .btn-cta-big {
@@ -265,6 +262,8 @@ input[type='submit']:hover,
   color: var(--secondary-background);
 }
 
+button[aria-disabled='true'],
+button[aria-disabled='true']:hover,
 .btn.disabled,
 .btn[disabled],
 fieldset[disabled] .btn,
@@ -455,7 +454,7 @@ input:focus {
 }
 code {
   padding: 1px 4px;
-  background-color: var(--quaternary-background);
+  background-color: var(--tertiary-background);
   color: var(--tertiary-color);
   border-radius: 0;
   font-family: var(--font-family-monospace);
@@ -463,7 +462,7 @@ code {
 }
 
 :not(pre) > code {
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--gray-45);
 }
 
 .challenge-instructions code {
@@ -478,32 +477,6 @@ hr {
 .btn-primary.active {
   background-color: var(--secondary-color);
   color: var(--secondary-background);
-}
-
-.challenge-instructions table {
-  display: inline-block;
-  overflow: auto;
-}
-
-.challenge-instructions table thead {
-  display: table-header-group;
-  vertical-align: middle;
-  border-color: inherit;
-}
-
-.challenge-instructions table th {
-  font-weight: 700;
-}
-
-.challenge-instructions table th,
-.challenge-instructions table td {
-  padding: 6px 13px;
-  border: 1px solid var(--secondary-color);
-  text-align: center;
-}
-
-.challenge-instructions table tbody tr:nth-of-type(odd) {
-  background-color: var(--tertiary-background);
 }
 
 .challenge-output span {
@@ -545,9 +518,9 @@ blockquote .small {
 
 .alert .btn,
 [role='alert'] .btn {
-  background-color: #d9edf7;
-  color: #31708f;
-  border-color: #31708f;
+  background-color: transparent;
+  color: inherit;
+  border-color: inherit;
 }
 .alert .btn:hover,
 .alert .btn:focus,

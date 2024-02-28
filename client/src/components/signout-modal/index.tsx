@@ -1,16 +1,15 @@
 import React from 'react';
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { Button } from '@freecodecamp/ui';
 
 import { Spacer } from '../helpers';
 import { hardGoTo as navigate, closeSignoutModal } from '../../redux/actions';
 import { isSignoutModalOpenSelector } from '../../redux/selectors';
 import { apiLocation } from '../../../config/env.json';
-
-import './signout-modal.css';
 
 const mapStateToProps = createSelector(
   isSignoutModalOpenSelector,
@@ -71,22 +70,18 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
         <hr />
         <Button
           block={true}
-          bsStyle='primary'
+          variant='primary'
           data-test-label='cancel-signout'
-          className='btn-invert'
           onClick={handleModalHide}
-          type='button'
         >
           {t('signout.nevermind')}
         </Button>
         <Spacer size='small' />
         <Button
           block={true}
-          bsStyle='danger'
+          variant='danger'
           data-test-label='signout'
-          className='btn-signout'
           onClick={handleSignout}
-          type='button'
         >
           {t('signout.certain')}
         </Button>

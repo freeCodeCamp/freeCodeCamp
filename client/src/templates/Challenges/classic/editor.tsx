@@ -34,10 +34,7 @@ import {
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
-import {
-  challengeTypes,
-  isFinalProject
-} from '../../../../../shared/config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,
@@ -61,10 +58,14 @@ import {
   isChallengeCompletedSelector
 } from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
-import { enhancePrismAccessibility } from '../utils/index';
+import {
+  enhancePrismAccessibility,
+  setScrollbarArrowStyles
+} from '../utils/index';
+import { initializeMathJax } from '../../../utils/math-jax';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
+import { isProjectBased } from '../../../utils/curriculum-layout';
 import LowerJaw from './lower-jaw';
-
 import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
@@ -282,7 +283,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
-    renderIndentGuides: false,
+    renderIndentGuides:
+      props.challengeType === challengeTypes.python ||
+      props.challengeType === challengeTypes.multifilePythonCertProject,
     minimap: {
       enabled: false
     },
@@ -291,14 +294,21 @@ const Editor = (props: EditorProps): JSX.Element => {
     scrollbar: {
       horizontal: 'hidden',
       vertical: 'visible',
-      verticalHasArrows: false,
+      verticalHasArrows: true,
       useShadows: false,
-      verticalScrollbarSize: getScrollbarWidth()
+      verticalScrollbarSize: getScrollbarWidth(),
+      // this helps the scroll bar fit properly between the arrows,
+      // but doesn't do anything for the arrows themselves
+      arrowSize: getScrollbarWidth()
     },
     parameterHints: {
       enabled: false
     },
-    tabSize: 2,
+    tabSize:
+      props.challengeType !== challengeTypes.python &&
+      props.challengeType !== challengeTypes.multifilePythonCertProject
+        ? 2
+        : 4,
     dragAndDrop: true,
     lightbulb: {
       enabled: false
@@ -392,6 +402,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       addContentChangeListener();
       resetAttempts();
       showEditableRegion(editor);
+      initializeMathJax();
     }
 
     const storedAccessibilityMode = () => {
@@ -505,7 +516,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
       ],
       run: () => {
-        if (props.usesMultifileEditor && !isFinalProject(props.challengeType)) {
+        if (props.usesMultifileEditor && !isProjectBased(props.challengeType)) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
           } else {
@@ -533,7 +544,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_S
       ],
       run:
-        props.challengeType === challengeTypes.multifileCertProject &&
+        (props.challengeType === challengeTypes.multifileCertProject ||
+          props.challengeType === challengeTypes.multifilePythonCertProject) &&
         props.isSignedIn
           ? // save to database
             props.saveChallenge
@@ -602,6 +614,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       scrollGutterNode
     );
     editor.addContentWidget(scrollGutterWidget);
+
+    // update scrollbar arrows
+    setScrollbarArrowStyles(getScrollbarWidth());
   };
 
   const toggleAriaRoledescription = () => {
@@ -850,7 +865,8 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   const onChange = (editorValue: string) => {
-    const { updateFile, fileKey } = props;
+    const { updateFile, fileKey, isResetting } = props;
+    if (isResetting) return;
     // TODO: now that we have getCurrentEditableRegion, should the overlays
     // follow that directly? We could subscribe to changes to that and redraw if
     // those imply that the positions have changed (i.e. if the content height

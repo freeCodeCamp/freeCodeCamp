@@ -1,6 +1,6 @@
 ---
 id: 5900f36f1000cf542c50fe82
-title: 'Problem 3: Largest prime factor'
+title: '問題 3: 最大素因数'
 challengeType: 1
 forumTopicId: 301952
 dashedName: problem-3-largest-prime-factor
@@ -8,55 +8,55 @@ dashedName: problem-3-largest-prime-factor
 
 # --description--
 
-The prime factors of 13195 are 5, 7, 13 and 29.
+13195 の素因数は 5, 7, 13, 29 です。
 
-What is the largest prime factor of the given `number`?
+与えられた `number` の最大素因数を求めなさい。
 
 # --hints--
 
-`largestPrimeFactor(2)` should return a number.
+`largestPrimeFactor(2)` は数値を返す必要があります。
 
 ```js
 assert(typeof largestPrimeFactor(2) === 'number');
 ```
 
-`largestPrimeFactor(2)` should return 2.
+`largestPrimeFactor(2)` は 2 を返す必要があります。
 
 ```js
 assert.strictEqual(largestPrimeFactor(2), 2);
 ```
 
-`largestPrimeFactor(3)` should return 3.
+`largestPrimeFactor(3)` は 3 を返す必要があります。
 
 ```js
 assert.strictEqual(largestPrimeFactor(3), 3);
 ```
 
-`largestPrimeFactor(5)` should return 5.
+`largestPrimeFactor(5)` は 5 を返す必要があります。
 
 ```js
 assert.strictEqual(largestPrimeFactor(5), 5);
 ```
 
-`largestPrimeFactor(7)` should return 7.
+`largestPrimeFactor(7)` は 7 を返す必要があります。
 
 ```js
 assert.strictEqual(largestPrimeFactor(7), 7);
 ```
 
-`largestPrimeFactor(8)` should return 2.
+`largestPrimeFactor(8)` は 2 を返す必要があります。
 
 ```js
 assert.strictEqual(largestPrimeFactor(8), 2);
 ```
 
-`largestPrimeFactor(13195)` should return 29.
+`largestPrimeFactor(13195)` は 29 を返す必要があります。
 
 ```js
 assert.strictEqual(largestPrimeFactor(13195), 29);
 ```
 
-`largestPrimeFactor(600851475143)` should return 6857.
+`largestPrimeFactor(600851475143)` は 6857 を返す必要があります。
 
 ```js
 assert.strictEqual(largestPrimeFactor(600851475143), 6857);

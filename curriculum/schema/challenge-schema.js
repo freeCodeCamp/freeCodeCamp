@@ -2,6 +2,12 @@ const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
 const { challengeTypes } = require('../../shared/config/challenge-types');
+const {
+  availableCharacters,
+  availableBackgrounds,
+  availableAudios,
+  availableAlignments
+} = require('./scene-assets');
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
@@ -26,6 +32,55 @@ const prerequisitesJoi = Joi.object().keys({
   title: Joi.string().required()
 });
 
+const positionJoi = Joi.object().keys({
+  x: Joi.number().required().strict(),
+  y: Joi.number().required().strict(),
+  z: Joi.number().required().strict()
+});
+
+const setupCharacterJoi = Joi.object().keys({
+  character: Joi.string()
+    .valid(...availableCharacters)
+    .required(),
+  position: positionJoi.required(),
+  opacity: Joi.number().strict()
+});
+
+const setupAudioJoi = Joi.object().keys({
+  filename: Joi.string()
+    .valid(...availableAudios)
+    .required(),
+  startTime: Joi.number().required().strict(),
+  startTimestamp: Joi.number().strict(),
+  finishTimestamp: Joi.number().strict()
+});
+
+const setupJoi = Joi.object().keys({
+  background: Joi.string()
+    .valid(...availableBackgrounds)
+    .required(),
+  characters: Joi.array().items(setupCharacterJoi).min(1).required(),
+  audio: setupAudioJoi.required(),
+  alwaysShowDialogue: Joi.boolean()
+});
+
+const DialogueJoi = Joi.object().keys({
+  text: Joi.string().required(),
+  align: Joi.string().valid(...availableAlignments)
+});
+
+const commandJoi = Joi.object().keys({
+  background: Joi.string().valid(...availableBackgrounds),
+  character: Joi.string()
+    .valid(...availableCharacters)
+    .required(),
+  position: positionJoi,
+  opacity: Joi.number().strict(),
+  startTime: Joi.number().required().strict(),
+  finishTime: Joi.number().strict(),
+  dialogue: DialogueJoi
+});
+
 const schema = Joi.object()
   .keys({
     audioPath: Joi.string(),
@@ -33,8 +88,8 @@ const schema = Joi.object()
     blockId: Joi.objectId(),
     challengeOrder: Joi.number(),
     removeComments: Joi.bool().required(),
-    certification: Joi.string().regex(slugRE),
-    challengeType: Joi.number().min(0).max(22).required(),
+    certification: Joi.string().regex(slugWithSlashRE),
+    challengeType: Joi.number().min(0).max(23).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
@@ -57,7 +112,11 @@ const schema = Joi.object()
       'HTML-CSS',
       'Python',
       'Backend Development',
-      'C-Sharp'
+      'C-Sharp',
+      'English',
+      'Odin',
+      'Euler',
+      'Rosetta'
     ),
     videoUrl: Joi.string().allow(''),
     fillInTheBlank: Joi.object().keys({
@@ -89,7 +148,7 @@ const schema = Joi.object()
     }),
     // video challenges only:
     videoId: Joi.when('challengeType', {
-      is: [challengeTypes.video, challengeTypes.dialogue],
+      is: [challengeTypes.video],
       then: Joi.string().required()
     }),
     videoLocaleIds: Joi.when('challengeType', {
@@ -132,6 +191,10 @@ const schema = Joi.object()
       is: challengeTypes.dialogue,
       then: Joi.array().items(Joi.string()).required(),
       otherwise: Joi.array().items(Joi.string())
+    }),
+    scene: Joi.object().keys({
+      setup: setupJoi.required(),
+      commands: Joi.array().items(commandJoi)
     }),
     solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
     superBlock: Joi.string().regex(slugWithSlashRE),

@@ -1,4 +1,5 @@
 import { test, expect, type Page, type Locator } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 
 const challengeButtons = [
   'Instructions',
@@ -25,7 +26,9 @@ function getTabsRowLocator(page: Page): Locator {
 
 test('Action row buttons are visible', async ({ isMobile, page }) => {
   const previewPaneButton = page.getByTestId('preview-pane-button');
-  const previewPortalButton = page.getByTestId('preview-portal-button');
+  const previewPortalButton = page.getByRole('button', {
+    name: translations.aria['move-preview-to-new-window']
+  });
   const actionRow = getActionRowLocator(page);
   const tabsRow = getTabsRowLocator(page);
 
@@ -44,7 +47,7 @@ test('Action row buttons are visible', async ({ isMobile, page }) => {
   }
 });
 
-test('Clicking instructions button hides editor buttons', async ({
+test('Clicking instructions button hides instructions panel, but not editor buttons', async ({
   isMobile,
   page
 }) => {
@@ -59,7 +62,7 @@ test('Clicking instructions button hides editor buttons', async ({
 
     for (let i = 0; i < editorButtons.length; i++) {
       const btn = tabsRow.getByRole('button', { name: editorButtons[i] });
-      await expect(btn).toBeHidden();
+      await expect(btn).toBeVisible();
     }
 
     const instructionsPanelTitle = page.getByRole('heading', {
@@ -106,7 +109,9 @@ test('Clicking Preview Pane button hides preview', async ({
 test('Clicking Preview Portal button opens the preview in a new tab', async ({
   page
 }) => {
-  const previewPortalButton = page.getByTestId('preview-portal-button');
+  const previewPortalButton = page.getByRole('button', {
+    name: translations.aria['move-preview-to-new-window']
+  });
   const browserContext = page.context();
 
   const [newPage] = await Promise.all([

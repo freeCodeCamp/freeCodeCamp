@@ -14,7 +14,7 @@ const responsiveWeb22Base = '/learn/2022/responsive-web-design';
 const jsAlgoBase =
   '/learn/javascript-algorithms-and-data-structures/' +
   'javascript-algorithms-and-data-structures-projects';
-const jsAlgo22Base = '/learn/2022/javascript-algorithms-and-data-structures';
+const jsAlgo22Base = '/learn/javascript-algorithms-and-data-structures-v8';
 const feLibsBase =
   '/learn/front-end-development-libraries/front-end-development-libraries-projects';
 const dataVisBase = '/learn/data-visualization/data-visualization-projects';
@@ -99,39 +99,39 @@ const allStandardCerts = [
     ]
   },
   {
-    id: '561abd10cb81ac38a17513bc',
-    title: 'JavaScript Algorithms and Data Structures',
-    certSlug: Certification.JsAlgoDataStruct,
+    id: '658180220947283cdc0689ce',
+    title: 'JavaScript Algorithms and Data Structures (Beta)',
+    certSlug: Certification.JsAlgoDataStructNew,
     projects: [
       {
-        id: 'aaa48de84e1ecc7c742e1124',
-        title: 'Palindrome Checker',
-        link: getJavaScriptAlgoPath('palindrome-checker'),
-        certSlug: Certification.JsAlgoDataStruct
+        id: '657bdc55a322aae1eac3838f',
+        title: 'Build a Palindrome Checker',
+        link: getJavaScriptAlgoPath('build-a-palindrome-checker'),
+        certSlug: Certification.JsAlgoDataStructNew
       },
       {
-        id: 'a7f4d8f2483413a6ce226cac',
-        title: 'Roman Numeral Converter',
-        link: getJavaScriptAlgoPath('roman-numeral-converter'),
-        certSlug: Certification.JsAlgoDataStruct
+        id: '657bdc8ba322aae1eac38390',
+        title: 'Build a Roman Numeral Converter',
+        link: getJavaScriptAlgoPath('build-a-roman-numeral-converter'),
+        certSlug: Certification.JsAlgoDataStructNew
       },
       {
-        id: '56533eb9ac21ba0edf2244e2',
-        title: 'Caesars Cipher',
-        link: getJavaScriptAlgoPath('caesars-cipher'),
-        certSlug: Certification.JsAlgoDataStruct
+        id: '657bdcb9a322aae1eac38391',
+        title: 'Build a Telephone Number Validator',
+        link: getJavaScriptAlgoPath('build-a-telephone-number-validator'),
+        certSlug: Certification.JsAlgoDataStructNew
       },
       {
-        id: 'aff0395860f5d3034dc0bfc9',
-        title: 'Telephone Number Validator',
-        link: getJavaScriptAlgoPath('telephone-number-validator'),
-        certSlug: Certification.JsAlgoDataStruct
+        id: '657bdcc3a322aae1eac38392',
+        title: 'Build a Cash Register',
+        link: getJavaScriptAlgoPath('build-a-cash-register'),
+        certSlug: Certification.JsAlgoDataStructNew
       },
       {
-        id: 'aa2e6f85cab2ab736c9a9b24',
-        title: 'Cash Register',
-        link: getJavaScriptAlgoPath('cash-register'),
-        certSlug: Certification.JsAlgoDataStruct
+        id: '6555c1d3e11a1574434cf8b5',
+        title: 'Build a Pokémon Search App',
+        link: getJavaScriptAlgoPath('build-a-pokemon-search-app'),
+        certSlug: Certification.JsAlgoDataStructNew
       }
     ]
   },
@@ -575,6 +575,43 @@ const allStandardCerts = [
     ]
   },
   {
+    id: '561abd10cb81ac38a17513bc',
+    title: 'Legacy JavaScript Algorithms and Data Structures',
+    certSlug: Certification.JsAlgoDataStruct,
+    projects: [
+      {
+        id: 'aaa48de84e1ecc7c742e1124',
+        title: 'Palindrome Checker',
+        link: `${jsAlgoBase}/palindrome-checker`,
+        certSlug: Certification.JsAlgoDataStruct
+      },
+      {
+        id: 'a7f4d8f2483413a6ce226cac',
+        title: 'Roman Numeral Converter',
+        link: `${jsAlgoBase}/roman-numeral-converter`,
+        certSlug: Certification.JsAlgoDataStruct
+      },
+      {
+        id: '56533eb9ac21ba0edf2244e2',
+        title: 'Caesars Cipher',
+        link: `${jsAlgoBase}/caesars-cipher`,
+        certSlug: Certification.JsAlgoDataStruct
+      },
+      {
+        id: 'aff0395860f5d3034dc0bfc9',
+        title: 'Telephone Number Validator',
+        link: `${jsAlgoBase}/telephone-number-validator`,
+        certSlug: Certification.JsAlgoDataStruct
+      },
+      {
+        id: 'aa2e6f85cab2ab736c9a9b24',
+        title: 'Cash Register',
+        link: `${jsAlgoBase}/cash-register`,
+        certSlug: Certification.JsAlgoDataStruct
+      }
+    ]
+  },
+  {
     id: '660add10cb82ac38a17513be',
     title: 'Legacy Back End',
     certSlug: Certification.LegacyBackEnd,
@@ -812,9 +849,7 @@ function getCollegeAlgebraPyPath(project: string) {
 }
 
 function getJavaScriptAlgoPath(project: string) {
-  return showUpcomingChanges
-    ? `${jsAlgo22Base}/${project}-project/${project}`
-    : `${jsAlgoBase}/${project}`;
+  return `${jsAlgo22Base}/${project}-project/${project}`;
 }
 
 type FilteredCert<T, U> = T extends { certSlug: U } ? T : never;

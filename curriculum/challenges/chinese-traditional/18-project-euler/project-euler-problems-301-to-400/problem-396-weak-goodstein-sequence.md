@@ -1,6 +1,6 @@
 ---
 id: 5900f4f81000cf542c51000b
-title: 'Problem 396: Weak Goodstein sequence'
+title: '問題396：弱Goodstein序列'
 challengeType: 1
 forumTopicId: 302061
 dashedName: problem-396-weak-goodstein-sequence

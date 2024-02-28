@@ -1,17 +1,31 @@
+.fill-in-the-blank-wrap {
+  background-color: var(--primary-background);
+  padding: 20px;
+  border: 4px solid var(--tertiary-background);
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.fill-in-the-blank-wrap > p {
+  margin: 0;
+  font-size: 1.25em;
+}
+
 .fill-in-the-blank-input {
   padding: 0;
   text-align: center;
-  background-color: var(--quaternary-background);
-  color: var(--tertiary-color);
+  background-color: var(--primary-background);
   border-radius: 0;
-  font-family: var(--font-family-monospace);
   overflow-wrap: anywhere;
   line-height: 1.5rem;
   z-index: 1;
   position: relative;
-  border: 1px solid var(--secondary-color);
   border-left: none;
   border-right: none;
+  border-top: none;
   border-bottom-width: 4px;
   border-bottom-color: var(--gray-45) !important;
 }

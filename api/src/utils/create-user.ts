@@ -18,6 +18,7 @@ export function createUserInput(email: string): Prisma.userCreateInput {
     about: '',
     acceptedPrivacyTerms: false,
     completedChallenges: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
+    completedExams: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
     currentChallengeId: '',
     donationEmails: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
     email,

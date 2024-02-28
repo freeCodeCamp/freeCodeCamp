@@ -45,6 +45,15 @@ const saveChallengeBody = Type.Object({
   files: Type.Array(file)
 });
 
+const examResults = Type.Object({
+  numberOfCorrectAnswers: Type.Number(),
+  numberOfQuestionsInExam: Type.Number(),
+  percentCorrect: Type.Number(),
+  passingPercent: Type.Number(),
+  passed: Type.Boolean(),
+  examTimeInSeconds: Type.Number()
+});
+
 export const schemas = {
   // Settings:
   updateMyProfileUI: {
@@ -326,6 +335,14 @@ export const schemas = {
                   })
                 ),
                 isManuallyApproved: Type.Optional(Type.Boolean())
+              })
+            ),
+            completedExams: Type.Array(
+              Type.Object({
+                id: Type.String(),
+                completedDate: Type.Number(),
+                challengeType: Type.Optional(Type.Number()),
+                examResults
               })
             ),
             completedChallengeCount: Type.Number(),
@@ -888,6 +905,43 @@ export const schemas = {
       500: Type.Object({
         type: Type.Literal('danger'),
         message: Type.Literal('flash.went-wrong')
+      })
+    }
+  },
+  examChallengeCompleted: {
+    body: Type.Object({
+      id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
+      challengeType: Type.Number(),
+      userCompletedExam: Type.Object({
+        examTimeInSeconds: Type.Number(),
+        userExamQuestions: Type.Array(
+          Type.Object({
+            id: Type.String(),
+            question: Type.String(),
+            answer: Type.Object({
+              id: Type.String(),
+              answer: Type.String()
+            })
+          }),
+          { minItems: 1 }
+        )
+      })
+    }),
+    response: {
+      200: Type.Object({
+        completedDate: Type.Number(),
+        points: Type.Number(),
+        alreadyCompleted: Type.Boolean(),
+        examResults
+      }),
+      400: Type.Object({
+        error: Type.String()
+      }),
+      403: Type.Object({
+        error: Type.String()
+      }),
+      500: Type.Object({
+        error: Type.String()
       })
     }
   }

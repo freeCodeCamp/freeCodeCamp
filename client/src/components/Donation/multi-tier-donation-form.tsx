@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '@freecodecamp/react-bootstrap';
 import {
   Tabs,
   TabsContent,
@@ -8,8 +7,10 @@ import {
   Col,
   Row
 } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '../helpers';
+
 import {
   PaymentContext,
   subscriptionAmounts,
@@ -26,20 +27,24 @@ type MultiTierDonationFormProps = {
   paymentContext: PaymentContext;
   isMinimalForm?: boolean;
   defaultTheme?: Themes;
+  isAnimationEnabled?: boolean;
 };
 function SelectionTabs({
   donationAmount,
   setDonationAmount,
-  setShowDonateForm
+  setShowDonateForm,
+  isAnimationEnabled
 }: {
   donationAmount: DonationAmount;
   setDonationAmount: React.Dispatch<React.SetStateAction<DonationAmount>>;
   setShowDonateForm: React.Dispatch<React.SetStateAction<boolean>>;
+  isAnimationEnabled?: boolean;
 }) {
   const { t } = useTranslation();
   const switchTab = (value: string): void => {
     setDonationAmount(Number(value) as DonationAmount);
   };
+  useFeature('aa-test-in-component');
 
   return (
     <Row
@@ -89,16 +94,16 @@ function SelectionTabs({
             );
           })}
         </Tabs>
-        <Button
-          block={true}
-          bsStyle='primary'
+        <button
           className='text-center confirm-donation-btn donate-btn-group'
           type='submit'
           data-cy='donation-tier-selection-button'
           onClick={() => setShowDonateForm(true)}
         >
-          {t('buttons.donate')}
-        </Button>
+          {isAnimationEnabled
+            ? t('buttons.confirm-amount')
+            : t('buttons.donate')}
+        </button>
         <Spacer size='medium' />
       </Col>
     </Row>
@@ -109,12 +114,14 @@ function DonationFormRow({
   handleProcessing,
   isMinimalForm,
   setShowDonateForm,
-  donationAmount
+  donationAmount,
+  paymentContext
 }: {
   handleProcessing?: () => void;
   isMinimalForm?: boolean;
   setShowDonateForm: React.Dispatch<React.SetStateAction<boolean>>;
   donationAmount: DonationAmount;
+  paymentContext: PaymentContext;
 }) {
   return (
     <Row>
@@ -122,7 +129,7 @@ function DonationFormRow({
         <DonateForm
           handleProcessing={handleProcessing}
           isMinimalForm={isMinimalForm}
-          paymentContext={PaymentContext.Modal}
+          paymentContext={paymentContext}
           editAmount={() => setShowDonateForm(false)}
           selectedDonationAmount={donationAmount}
         />
@@ -135,7 +142,9 @@ function DonationFormRow({
 const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
   handleProcessing,
   setShowHeaderAndFooter,
-  isMinimalForm
+  isMinimalForm,
+  paymentContext,
+  isAnimationEnabled
 }) => {
   const [donationAmount, setDonationAmount] = useState(defaultTierAmount);
 
@@ -152,6 +161,7 @@ const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
           donationAmount={donationAmount}
           setDonationAmount={setDonationAmount}
           setShowDonateForm={setShowDonateForm}
+          isAnimationEnabled={isAnimationEnabled}
         />
       </div>
       <div {...(!showDonateForm && { className: 'hide' })}>
@@ -160,6 +170,7 @@ const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
           handleProcessing={handleProcessing}
           setShowDonateForm={setShowDonateForm}
           isMinimalForm={isMinimalForm}
+          paymentContext={paymentContext}
         />
       </div>
     </>

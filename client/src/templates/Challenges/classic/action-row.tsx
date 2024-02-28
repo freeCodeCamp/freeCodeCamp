@@ -1,6 +1,6 @@
-import React from 'react';
 import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import EditorTabs from './editor-tabs';
 
@@ -86,7 +86,6 @@ const ActionRow = ({
             <span aria-hidden='true'>{t('learn.editor-tabs.preview')}</span>
           </button>
           <button
-            data-playwright-test-label='preview-portal-button'
             aria-expanded={!!showPreviewPortal}
             onClick={() => togglePane('showPreviewPortal')}
           >

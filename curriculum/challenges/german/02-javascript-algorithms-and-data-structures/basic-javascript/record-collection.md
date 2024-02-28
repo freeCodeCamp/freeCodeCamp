@@ -22,7 +22,8 @@ Vervollständige die Funktion mit Hilfe der folgenden Regeln, um das an die Funk
 -   Deine Funktion muss immer das gesamte `records`-Objekt zurückgeben.
 -   Falls `value` einen leeren String darstellt, lösche die angegebene `prop`-Eigenschaft aus dem Album.
 -   Falls `prop` nicht `tracks` darstellt und `value` kein leerer String ist, dann weise `value` dem `prop` des jeweiligen Albums zu.
--   Wenn `prop` `tracks` ist und `value` keinen leeren String darstellt, dann musst du das `tracks`-Array des Albums aktualisieren. Wenn das Album keine `tracks`-Eigenschaft hat, dann weise ihm ein leeres Array zu. Füge dann den `value` als letzten Eintrag im `tracks`-Array des Albums hinzu.
+-   If `prop` is `tracks` and `value` isn't an empty string, but the album doesn't have a `tracks` property, create an empty array and add `value` to it.
+-   If prop is `tracks` and `value` isn't an empty string, add `value` to the end of the album's existing `tracks` array.
 
 **Hinweis:** Für die Tests wird eine Kopie des Objekts `recordCollection` verwendet. Du solltest das Objekt `recordCollection` nicht direkt anpassen.
 

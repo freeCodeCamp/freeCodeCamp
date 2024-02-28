@@ -11,24 +11,16 @@ dashedName: issue-tracker
 構建一個 JavaScript 全棧應用，在功能上與 <a href="https://issue-tracker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://issue-tracker.freecodecamp.rocks/</a> 類似。 可以採用下面的任意一種方式完成這個挑戰：
 
 -   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow">這個 GitHub 倉庫</a>，並在本地完成你的項目。
--   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
+-   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
 -   使用一個你喜歡的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
-
-如果你使用 Replit，請按照以下步驟設置項目：
-
--   首先在 Replit 中導入項目。
--   接着，你將看到一個 `.replit` 窗口。
--   選擇 `Use run command` 並點擊 `Done` 按鈕。
-
-當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 Solution Link 字段中。 也可以將項目的源碼鏈接提交到 GitHub Link 字段中。
 
 # --instructions--
 
 -   在 `/routes/api.js` 中完成必要的路由
 -   在 `tests/2_functional-tests.js` 中創建所有的功能測試
 -   複製 `sample.env` 文件到 `.env` 並按需設置變量
--   在 `.env` 文件中取消註釋 `NODE_ENV=test` 來運行測試
--   使用 `npm run test` 命令在 console 中運行測試。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），並輸入“open shell”，打開 Replit 控制檯
+-   To run the tests automatically, add `NODE_ENV=test` in your `.env` file
+-   To run the tests in the console, use the command `npm run test`
 
 在 `tests/2_functional-tests.js` 中編寫下以下測試：
 
