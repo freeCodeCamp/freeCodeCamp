@@ -25,6 +25,7 @@ const {
   respWebDesignId,
   frontEndDevLibsId,
   jsAlgoDataStructId,
+  jsAlgoDataStructV8Id,
   dataVis2018Id,
   apisMicroservicesId,
   qaV7Id,
@@ -327,6 +328,7 @@ function createCertTypeIds(challenges: ReturnType<typeof getChallenges>) {
   return {
     // legacy
     [certTypes.frontEnd]: getCertById(legacyFrontEndChallengeId, challenges),
+    [certTypes.jsAlgoDataStruct]: getCertById(jsAlgoDataStructId, challenges),
     [certTypes.backEnd]: getCertById(legacyBackEndChallengeId, challenges),
     [certTypes.dataVis]: getCertById(legacyDataVisId, challenges),
     [certTypes.infosecQa]: getCertById(legacyInfosecQaId, challenges),
@@ -336,7 +338,10 @@ function createCertTypeIds(challenges: ReturnType<typeof getChallenges>) {
     [certTypes.respWebDesign]: getCertById(respWebDesignId, challenges),
     [certTypes.frontEndDevLibs]: getCertById(frontEndDevLibsId, challenges),
     [certTypes.dataVis2018]: getCertById(dataVis2018Id, challenges),
-    [certTypes.jsAlgoDataStruct]: getCertById(jsAlgoDataStructId, challenges),
+    [certTypes.jsAlgoDataStructV8]: getCertById(
+      jsAlgoDataStructV8Id,
+      challenges
+    ),
     [certTypes.apisMicroservices]: getCertById(apisMicroservicesId, challenges),
     [certTypes.qaV7]: getCertById(qaV7Id, challenges),
     [certTypes.infosecV7]: getCertById(infosecV7Id, challenges),
@@ -394,6 +399,7 @@ function assertTestsExist(
 interface CertI {
   isRespWebDesignCert?: boolean;
   isJsAlgoDataStructCert?: boolean;
+  isJsAlgoDataStructCertV8?: boolean;
   isFrontEndLibsCert?: boolean;
   is2018DataVisCert?: boolean;
   isApisMicroservicesCert?: boolean;
@@ -417,6 +423,7 @@ function getUserIsCertMap(user: CertI) {
   const {
     isRespWebDesignCert = false,
     isJsAlgoDataStructCert = false,
+    isJsAlgoDataStructCertV8 = false,
     isFrontEndLibsCert = false,
     is2018DataVisCert = false,
     isApisMicroservicesCert = false,
@@ -439,6 +446,7 @@ function getUserIsCertMap(user: CertI) {
   return {
     isRespWebDesignCert,
     isJsAlgoDataStructCert,
+    isJsAlgoDataStructCertV8,
     isFrontEndLibsCert,
     is2018DataVisCert,
     isApisMicroservicesCert,
