@@ -1,4 +1,3 @@
-import fastifyCookie from '@fastify/cookie';
 import fastifyCsrfProtection from '@fastify/csrf-protection';
 import express from '@fastify/express';
 import fastifySession from '@fastify/session';
@@ -20,6 +19,7 @@ import Fastify, {
 } from 'fastify';
 
 import prismaPlugin from './db/prisma';
+import cookies from './plugins/cookies';
 import cors from './plugins/cors';
 import { NodemailerProvider } from './plugins/mail-providers/nodemailer';
 import { SESProvider } from './plugins/mail-providers/ses';
@@ -53,6 +53,7 @@ import {
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 import { certificateRoutes } from './routes/certificate';
+
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -109,7 +110,7 @@ export const build = async (
   }
 
   await fastify.register(cors);
-  await fastify.register(fastifyCookie);
+  await fastify.register(cookies);
 
   void fastify.register(fastifyCsrfProtection, {
     // TODO: consider signing cookies. We don't on the api-server, but we could
