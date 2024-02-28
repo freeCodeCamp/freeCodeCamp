@@ -15,8 +15,7 @@ Closing tags tell the browser where an element ends. They are almost the same as
 
 A full paragraph element looks like this:
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/html-foundations/html-foundations-01.png" alt="GPT
-The image shows a basic HTML paragraph element. It consists of an opening tag <p>, followed by the words 'some text content' representing the content of the paragraph, and concludes with a closing tag </p>. There are labels pointing to each part: 'Opening Tag' at the beginning, 'Content' in the middle, and 'Closing Tag' at the end.">
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/html-foundations/html-foundations-01.png" alt='An opening p tag, followed by the content string "some text content", followed by a closing p tag.'>
 
 # --assignment--
 
