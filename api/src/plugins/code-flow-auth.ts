@@ -30,7 +30,8 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
         secure: false,
         sameSite: 'lax',
         domain: COOKIE_DOMAIN,
-        signed: true
+        signed: true,
+        maxAge: accessToken.ttl
       });
     }
   );

@@ -44,7 +44,8 @@ describe('auth', () => {
           value: doublySignedToken,
           path: '/',
           sameSite: 'Lax',
-          domain: COOKIE_DOMAIN
+          domain: COOKIE_DOMAIN,
+          maxAge: 77760000000
         })
       );
     });
