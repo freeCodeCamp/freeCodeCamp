@@ -376,7 +376,7 @@
     "tests-completed": "// test completati",
     "console-output": "// output della console",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
-    "indentation-error": "Your code has an indentation error. You may need to add 'pass' on a new line to form a valid block of code.",
+    "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "Accedi per salvare i tuoi progressi",
     "download-solution": "Scarica la mia soluzione",
     "download-results": "Scarica i miei risultati",
@@ -413,7 +413,7 @@
       "tab-trapped": "Premendo tab ora potrai inserire il carattere tab",
       "tab-free": "Premendo tab ora potrai spostare il focus sull'elemento successivo"
     },
-    "help-translate": "Stiamo ancora traducendo le seguenti certificazioni.",
+    "help-translate": "We are still translating this certification.",
     "help-translate-link": "Aiutaci con le traduzioni...",
     "project-preview-title": "Ecco una anticipazione di quello che creerai",
     "github-required": "<0>Crea un account GitHub</0> se non ne hai uno. Ne avrai bisogno quando crei la macchina virtuale di Linux. Questo processo potrebbe richiedere alcuni minuti.",
