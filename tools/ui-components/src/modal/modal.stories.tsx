@@ -1,76 +1,78 @@
-import React from 'react';
-import { StoryFn, StoryObj } from '@storybook/react';
-import { Modal } from '.';
+import React, { useState } from 'react';
+import { StoryObj, StoryFn, Meta } from '@storybook/react';
+
+import { Button } from '../button';
+import { Modal, type ModalProps } from './modal';
 
 const story = {
   title: 'Example/Modal',
-  component: Modal,
-  argTypes: {
-    size: { control: { type: 'text' } }
+  component: Modal
+} satisfies Meta<typeof Modal>;
+
+type Story = StoryObj<typeof Modal>;
+
+const AutoOpenTemplate: StoryFn<ModalProps> = args => {
+  return <Modal {...args} />;
+};
+
+const WithTriggerTemplate: StoryFn<ModalProps> = args => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div>
+      <Button onClick={() => setOpen(true)}>Open modal</Button>
+      <Modal {...args} open={open} onClose={() => setOpen(false)} />
+    </div>
+  );
+};
+
+export const AutoOpen: Story = {
+  render: AutoOpenTemplate,
+  args: {
+    open: true,
+    children: (
+      <>
+        <Modal.Header>Edit profile</Modal.Header>
+        <Modal.Body>Content</Modal.Body>
+        <Modal.Footer>
+          <Button>Submit</Button>
+          <Button>Cancel</Button>
+        </Modal.Footer>
+      </>
+    )
   }
 };
 
-const TriggerButton: StoryFn<typeof Modal> = () => {
-  return (
-    <Modal size='lg'>
-      <Modal.Trigger>Edit profile</Modal.Trigger>
-      <Modal.Layer>
-        <Modal.Header closeButton={true}>Edit profile</Modal.Header>
-        <Modal.Body>
-          <fieldset>
-            <label htmlFor='name'>Name</label>
-            <input id='name' defaultValue='Pedro Duarte' />
-          </fieldset>
-          <fieldset>
-            <label htmlFor='username'>Username</label>
-            <input id='username' defaultValue='@peduarte' />
-          </fieldset>
-        </Modal.Body>
+export const WithoutCloseButton: Story = {
+  render: WithTriggerTemplate,
+  args: {
+    children: (
+      <>
+        <Modal.Header showCloseButton={false}>Edit profile</Modal.Header>
+        <Modal.Body>Content</Modal.Body>
         <Modal.Footer>
-          Click save when you&apos;re done.
-          <Modal.Close className='ml-1 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none'>
-            Save changes
-          </Modal.Close>
+          <Button>Submit</Button>
+          <Button>Cancel</Button>
         </Modal.Footer>
-      </Modal.Layer>
-    </Modal>
-  );
+      </>
+    )
+  }
 };
 
-const AutoTrigger: StoryFn<typeof Modal> = () => {
-  return (
-    <Modal open={true}>
-      <Modal.Layer>
-        <Modal.Header closeButton={true}>Edit profile</Modal.Header>
-        <Modal.Body>
-          <fieldset>
-            <label htmlFor='name'>Name</label>
-            <input id='name' defaultValue='Pedro Duarte' />
-          </fieldset>
-          <fieldset>
-            <label htmlFor='username'>Username</label>
-            <input id='username' defaultValue='@peduarte' />
-          </fieldset>
-        </Modal.Body>
+export const WithTrigger: Story = {
+  render: WithTriggerTemplate,
+  args: {
+    children: (
+      <>
+        <Modal.Header>Edit profile</Modal.Header>
+        <Modal.Body>Content</Modal.Body>
         <Modal.Footer>
-          Click save when you&apos;re done.
-          <Modal.Close className='ml-1 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none'>
-            Save changes
-          </Modal.Close>
+          <Button>Submit</Button>
+          <Button>Cancel</Button>
         </Modal.Footer>
-      </Modal.Layer>
-    </Modal>
-  );
-};
-
-export const Default: StoryObj<typeof Modal> = {
-  render: TriggerButton,
-  args: {}
-};
-
-export const AutoOpen: StoryObj<typeof Modal> = {
-  render: AutoTrigger,
-  args: {}
+      </>
+    )
+  }
 };
 
 export default story;
