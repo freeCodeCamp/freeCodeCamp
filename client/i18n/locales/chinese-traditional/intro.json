@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures",
+    "title": "Legacy JavaScript Algorithms and Data Structures",
     "intro": [
       "HTML 和 CSS 控制頁面的內容和樣式，JavaScript 則用於頁面交互。在 JavaScript 算法和數據結構認證中，你將學習 JavaScript 的基礎知識，包括變量、 數組、 對象、 循環和函數。",
       "打好基礎之後，你將會通過創建算法來操作字符串、進行階乘運算甚至計算國際空間站的軌道來應用這些知識。",

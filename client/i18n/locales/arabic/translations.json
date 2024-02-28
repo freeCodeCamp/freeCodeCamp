@@ -718,6 +718,8 @@
     "step": "الخطوة",
     "steps": "الخطوات",
     "steps-for": "خطوات {{blockTitle}}",
+    "task": "Task",
+    "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} مثال على الكود",
     "opens-new-window": "فتح في نافذة جديدة"
   },
@@ -939,9 +941,9 @@
     "title": {
       "Responsive Web Design": "تصميم مواقع الويب المتجاوبة",
       "responsive-web-design": "شهادة تصميم مواقع الويب المتجاوبة",
-      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
-      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures Certification",
+      "JavaScript Algorithms and Data Structures": "Legacy JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures Certification",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures (Beta) Certification",
       "Front End Development Libraries": "مكتبات تطوير واجهة المستخدم",
       "front-end-development-libraries": "شهادة مكتبات تطوير واجهة المستخدم",
       "Data Visualization": "التصوير المرئي للبيانات",

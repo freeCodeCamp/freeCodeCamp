@@ -718,6 +718,8 @@
     "step": "步驟",
     "steps": "步驟",
     "steps-for": "{{blockTitle}} 的步驟",
+    "task": "Task",
+    "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} 代碼示例",
     "opens-new-window": "在新窗口打開"
   },
@@ -939,9 +941,9 @@
     "title": {
       "Responsive Web Design": "響應式網頁設計",
       "responsive-web-design": "響應式 Web 設計認證",
-      "JavaScript Algorithms and Data Structures": "JavaScript Algorithms and Data Structures",
-      "javascript-algorithms-and-data-structures": "JavaScript Algorithms and Data Structures Certification",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures Certification",
+      "JavaScript Algorithms and Data Structures": "Legacy JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures Certification",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures (Beta) Certification",
       "Front End Development Libraries": "前端開發庫",
       "front-end-development-libraries": "前端開發庫認證",
       "Data Visualization": "數據可視化",

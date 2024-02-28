@@ -1,6 +1,6 @@
 import React from 'react';
-import { Story } from '@storybook/react';
-import { Container, ContainerProps } from '.';
+import { Meta, StoryFn, StoryObj } from '@storybook/react';
+import { Container } from '.';
 
 const story = {
   title: 'Example/Container',
@@ -12,9 +12,9 @@ const story = {
       }
     }
   }
-};
+} satisfies Meta<typeof Container>;
 
-const Template: Story<ContainerProps> = args => {
+const Template: StoryFn<typeof Container> = args => {
   return (
     <Container {...args}>
       <p>Random text to test the element width</p>
@@ -33,7 +33,9 @@ const Template: Story<ContainerProps> = args => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: StoryObj<typeof Container> = {
+  render: Template,
+  args: {}
+};
 
 export default story;

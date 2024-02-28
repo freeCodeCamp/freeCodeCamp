@@ -1,22 +1,16 @@
-import i18next from 'i18next';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import {
   SuperBlockStages,
   SuperBlocks,
-  getFirstNotAuditedSuperBlock,
   superBlockOrder
 } from '../../../../shared/config/superblocks';
 import { SuperBlockIcon } from '../../assets/icons/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { Link, Spacer } from '../helpers';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
-import {
-  curriculumLocale,
-  showUpcomingChanges,
-  showNewCurriculum
-} from '../../../config/env.json';
+import { showUpcomingChanges } from '../../../config/env.json';
 
 import './map.css';
 
@@ -30,12 +24,6 @@ const linkSpacingStyle = {
   alignItems: 'center',
   gap: '15px'
 };
-
-const firstNotAuditedSuperBlock = getFirstNotAuditedSuperBlock({
-  language: curriculumLocale,
-  showNewCurriculum,
-  showUpcomingChanges
-});
 
 const coreCurriculum = [
   ...superBlockOrder[SuperBlockStages.FrontEnd],
@@ -52,25 +40,6 @@ function MapLi({
 }) {
   return (
     <>
-      {firstNotAuditedSuperBlock === superBlock && (
-        <>
-          <hr />
-          <div style={{ textAlign: 'center' }}>
-            <p style={{ marginBottom: 0 }}>
-              {i18next.t('learn.help-translate')}{' '}
-            </p>
-            <Link
-              external={true}
-              sameTab={false}
-              to={i18next.t('links:help-translate-link-url')}
-            >
-              {i18next.t('learn.help-translate-link')}
-            </Link>
-            <Spacer size='medium' />
-          </div>
-        </>
-      )}
-
       <li
         data-test-label='curriculum-map-button'
         data-playwright-test-label='curriculum-map-button'
