@@ -376,7 +376,7 @@
     "tests-completed": "// виконані тести",
     "console-output": "// вивід консолі",
     "syntax-error": "У коді виникла помилка ще до того, як запустились тести. Будь ласка, виправте це і спробуйте знову.",
-    "indentation-error": "Your code has an indentation error. You may need to add 'pass' on a new line to form a valid block of code.",
+    "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "Увійдіть, щоб зберегти свій прогрес",
     "download-solution": "Завантажити розв’язок",
     "download-results": "Завантажити результати",
@@ -413,7 +413,7 @@
       "tab-trapped": "При натисканні клавіші tab ви вставите символ табуляції",
       "tab-free": "При натисканні клавіші tab ви перемістите фокус на наступний елемент, який можна сфокусувати"
     },
-    "help-translate": "Ми досі перекладаємо наступні сертифікації.",
+    "help-translate": "We are still translating this certification.",
     "help-translate-link": "Допоможіть нам з перекладом.",
     "project-preview-title": "Попередній перегляд того, що ви будете створювати",
     "github-required": "<0>Створіть обліковий запис GitHub</0>, якщо у вас його немає. Він знадобиться під час створення віртуальної серверної машини Linux. Цей процес може зайняти кілька хвилин.",
