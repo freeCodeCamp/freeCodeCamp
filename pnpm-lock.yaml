@@ -261,6 +261,9 @@ importers:
       stripe:
         specifier: 8.222.0
         version: 8.222.0
+      validator:
+        specifier: 13.11.0
+        version: 13.11.0
     devDependencies:
       '@total-typescript/ts-reset':
         specifier: 0.5.1
@@ -277,6 +280,9 @@ importers:
       '@types/supertest':
         specifier: 2.0.16
         version: 2.0.16
+      '@types/validator':
+        specifier: 13.11.2
+        version: 13.11.2
       dotenv-cli:
         specifier: 7.3.0
         version: 7.3.0
@@ -10167,6 +10173,10 @@ packages:
 
   /@types/uuid@9.0.8:
     resolution: {integrity: sha512-jg+97EGIcY9AGHJJRaaPVgetKDsrTgbRjQ5Msgjh/DQKEFl0DtyRr/VCOyD1T2R1MNeWPK/u7JoGhlDZnKBAfA==}
+    dev: true
+
+  /@types/validator@13.11.2:
+    resolution: {integrity: sha512-nIKVVQKT6kGKysnNt+xLobr+pFJNssJRi2s034wgWeFBUx01fI8BeHTW2TcRp7VcFu9QCYG8IlChTuovcm0oKQ==}
     dev: true
 
   /@types/validator@13.7.12:
