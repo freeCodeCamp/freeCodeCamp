@@ -63,15 +63,15 @@ export const formatCertificationValidation = (
 
   return error.instancePath === '' &&
     Object.values(certTypes).includes(error.params.missingProperty as CertLogs)
-    ? {
+    ? ({
         type: 'error',
         message:
           'You have not provided the valid param for us to display the certification.'
-      }
-    : {
+      } as const)
+    : ({
         type: 'error',
         message: 'That does not appear to be a valid certification request.'
-      };
+      } as const);
 };
 
 /**

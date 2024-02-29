@@ -1,4 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
+import { Certification } from '../../shared/config/certification-settings';
 // import type { certTypes } from '../../shared/config/certification-settings';
 
 // type CertTypes = keyof typeof certTypes;
@@ -755,41 +756,90 @@ export const schemas = {
   // certification
   certSlug: {
     params: Type.Object({
-      // certSlug: Type.Literal(CertTypes),
-      certSlug: Type.Union([
-        Type.Literal('legacy-front-end'),
-        Type.Literal('responsive-web-design'),
-        Type.Literal('javascript-algorithms-and-data-structures'),
-        Type.Literal('front-end-development-libraries'),
-        Type.Literal('data-visualization'),
-        Type.Literal('relational-database-v8'),
-        Type.Literal('back-end-development-and-apis'),
-        Type.Literal('quality-assurance-v7'),
-        Type.Literal('scientific-computing-with-python-v7'),
-        Type.Literal('data-analysis-with-python-v7'),
-        Type.Literal('information-security-v7'),
-        Type.Literal('machine-learning-with-python-v7'),
-        Type.Literal('college-algebra-with-python-v8'),
-        // Type.Literal('foundational-c-sharp-with-microsoft'),
-        Type.Literal('legacy-back-end'),
-        Type.Literal('legacy-data-visualization'),
-        Type.Literal('information-security-and-quality-assurance'),
-        Type.Literal('full-stack')
-      ]),
+      certSlug: Type.String(),
       username: Type.String()
     }),
     response: {
-      200: Type.Object({
-        certSlug: Type.String(),
-        username: Type.String(),
-        name: Type.Optional(Type.String()),
-        certTitle: Type.String(),
-        date: Type.Number(),
-        completionTime: Type.Number()
+      200: Type.Union([
+        Type.Object({
+          type: Type.Literal('info'),
+          message: Type.Literal('flash.username-not-found'),
+          variables: Type.Object({
+            username: Type.String()
+          })
+        }),
+        Type.Object({
+          type: Type.Literal('info'),
+          message: Type.Literal('flash.not-eligible')
+        }),
+        Type.Object({
+          type: Type.Literal('info'),
+          message: Type.Literal('flash.not-honest'),
+          variables: Type.Object({
+            username: Type.String()
+          })
+        }),
+        Type.Object({
+          type: Type.Literal('info'),
+          message: Type.Literal('flash.profile-private'),
+          variables: Type.Object({
+            username: Type.String()
+          })
+        }),
+        Type.Object({
+          type: Type.Literal('info'),
+          message: Type.Literal('flash.add-name')
+        }),
+        Type.Object({
+          type: Type.Literal('info'),
+          message: Type.Literal('flash.certs-private'),
+          variables: Type.Object({
+            username: Type.String()
+          })
+        }),
+        Type.Object({
+          type: Type.Literal('info'),
+          message: Type.Literal('flash.timeline-private'),
+          variables: Type.Object({
+            username: Type.String()
+          })
+        }),
+        Type.Object({
+          certSlug: Type.Enum(Certification),
+          certTitle: Type.String(),
+          username: Type.String(),
+          date: Type.Number(),
+          completionTime: Type.Number()
+        }),
+        Type.Object({
+          certSlug: Type.Enum(Certification),
+          username: Type.String(),
+          name: Type.Optional(Type.String()),
+          certTitle: Type.String(),
+          date: Type.Number(),
+          completionTime: Type.Number()
+        }),
+        Type.Object({
+          type: Type.Literal('info'),
+          message: Type.Literal('flash.user-not-certified'),
+          variables: Type.Object({
+            username: Type.String(),
+            cert: Type.String()
+          })
+        })
+      ]),
+      404: Type.Object({
+        message: Type.Literal('flash.cert-not-found'),
+        type: Type.Literal('info'),
+        variables: Type.Object({
+          certSlug: Type.String()
+        })
       }),
-      400: Type.Object({
-        message: Type.String(),
-        type: Type.Literal('info')
+      500: Type.Object({
+        type: Type.Literal('danger'),
+        message: Type.Literal(
+          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        )
       })
     }
   },
