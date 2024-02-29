@@ -29,13 +29,17 @@ export type AccessToken = {
 /**
  * Creates an access token.
  * @param userId The user ID as a string (yes, it's an ObjectID, but it will be serialized to a string anyway).
+ * @param ttl The time to live for the token in milliseconds (default: 77760000000).
  * @returns The access token.
  */
-export const createAccessToken = (userId: string): AccessToken => {
+export const createAccessToken = (
+  userId: string,
+  ttl?: number
+): AccessToken => {
   return {
     userId,
     id: nanoid(64),
-    ttl: 77760000000,
+    ttl: ttl ?? 77760000000,
     created: new Date().toISOString()
   };
 };

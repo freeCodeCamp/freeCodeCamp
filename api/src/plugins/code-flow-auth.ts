@@ -1,6 +1,7 @@
-import { FastifyPluginCallback } from 'fastify';
+import { FastifyPluginCallback, FastifyReply, FastifyRequest } from 'fastify';
 import fp from 'fastify-plugin';
 import jwt from 'jsonwebtoken';
+import { isBefore } from 'date-fns';
 
 import { COOKIE_DOMAIN, HOME_LOCATION, JWT_SECRET } from '../utils/env';
 import { AccessToken } from '../utils/tokens';
@@ -16,6 +17,10 @@ declare module 'fastify' {
 
   interface FastifyRequest {
     getValidReferrer: (this: FastifyRequest) => string;
+  }
+
+  interface FastifyInstance {
+    authorize: (req: FastifyRequest, reply: FastifyReply) => void;
   }
 }
 
@@ -33,6 +38,38 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
         signed: true,
         maxAge: accessToken.ttl
       });
+    }
+  );
+
+  const TOKEN_REQUIRED = 'Access token is required for this request';
+  const TOKEN_INVALID = 'Your access token is invalid';
+  const TOKEN_EXPIRED = 'Access token is no longer valid';
+
+  const send401 = (reply: FastifyReply, message: string) =>
+    reply.status(401).send({ type: 'info', message });
+
+  fastify.decorate(
+    'authorize',
+    function (req: FastifyRequest, reply: FastifyReply) {
+      const tokenCookie = req.cookies.jwt_access_token;
+      if (!tokenCookie) return send401(reply, TOKEN_REQUIRED);
+
+      const unsignedToken = req.unsignCookie(tokenCookie);
+      if (!unsignedToken.valid) return send401(reply, TOKEN_REQUIRED);
+
+      const accessToken = unsignedToken.value;
+
+      try {
+        jwt.verify(accessToken!, JWT_SECRET);
+      } catch {
+        return send401(reply, TOKEN_INVALID);
+      }
+
+      const {
+        accessToken: { created, ttl }
+      } = jwt.decode(accessToken!) as { accessToken: AccessToken };
+      const valid = isBefore(Date.now(), Date.parse(created) + ttl);
+      if (!valid) return send401(reply, TOKEN_EXPIRED);
     }
   );
 

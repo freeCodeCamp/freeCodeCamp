@@ -19,7 +19,7 @@ describe('auth', () => {
     await fastify.close();
   });
 
-  describe('setAccessTokenCookie (decorator)', () => {
+  describe('setAccessTokenCookie', () => {
     // We won't need to keep doubly signing the cookie when we migrate the
     // authentication, but for the MVP we have to be able to read the cookies
     // set by the api-server. So, double signing:
@@ -48,6 +48,90 @@ describe('auth', () => {
           maxAge: 77760000000
         })
       );
+    });
+  });
+
+  describe('authorize', () => {
+    beforeEach(() => {
+      fastify.addHook('onRequest', fastify.authorize);
+      fastify.get('/test', () => {
+        return { message: 'ok' };
+      });
+    });
+
+    it('should reject if the access token is missing', async () => {
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test'
+      });
+
+      expect(res.json()).toEqual({
+        type: 'info',
+        message: 'Access token is required for this request'
+      });
+      expect(res.statusCode).toBe(401);
+    });
+
+    it('should reject if the access token is not signed', async () => {
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123') },
+        JWT_SECRET
+      );
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        cookies: {
+          jwt_access_token: token
+        }
+      });
+
+      expect(res.json()).toEqual({
+        type: 'info',
+        message: 'Access token is required for this request'
+      });
+      expect(res.statusCode).toBe(401);
+    });
+
+    it('should reject if the access token is invalid', async () => {
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123') },
+        'invalid-secret'
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        cookies: {
+          jwt_access_token: signCookie(token)
+        }
+      });
+
+      expect(res.json()).toEqual({
+        type: 'info',
+        message: 'Your access token is invalid'
+      });
+      expect(res.statusCode).toBe(401);
+    });
+
+    it('should reject if the access token has expired', async () => {
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123', -1) },
+        JWT_SECRET
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        cookies: {
+          jwt_access_token: signCookie(token)
+        }
+      });
+
+      expect(res.json()).toEqual({
+        type: 'info',
+        message: 'Access token is no longer valid'
+      });
+      expect(res.statusCode).toBe(401);
     });
   });
 

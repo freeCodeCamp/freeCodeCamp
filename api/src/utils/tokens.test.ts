@@ -16,4 +16,13 @@ describe('createAccessToken', () => {
       userId
     });
   });
+
+  it('sets the ttl, defaulting to 77760000000 ms', () => {
+    const userId = 'abc';
+    const ttl = 123;
+    const actual = createAccessToken(userId, ttl);
+
+    expect(actual.ttl).toBe(ttl);
+    expect(createAccessToken(userId).ttl).toBe(77760000000);
+  });
 });
