@@ -71,7 +71,7 @@ function CheckboxHelpModal({
           target='_blank'
           title={t(i18nkey)}
         >
-          placeholder
+          {t(i18nkey)}
         </a>
       </Trans>
     </div>
