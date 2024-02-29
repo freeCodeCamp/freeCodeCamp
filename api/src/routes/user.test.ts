@@ -273,6 +273,21 @@ const tokenData = [
   { created: new Date(), id: '789', ttl: 1000, userId: otherUserId }
 ];
 
+const mockSurveyResults = {
+  title: 'Foundational C# with Microsoft Survey',
+  responses: [
+    {
+      question: 'Please describe your role:',
+      response: 'Beginner developer (less than 2 years experience)'
+    },
+    {
+      question:
+        'Prior to this course, how experienced were you with .NET and C#?',
+      response: 'Novice (no prior experience)'
+    }
+  ]
+};
+
 describe('userRoutes', () => {
   setupServer();
 
@@ -957,6 +972,20 @@ Thanks and regards,
           });
 
           expect(mockedFetch).toHaveBeenCalledWith(msTranscriptApiUrl);
+        });
+      });
+    });
+
+    describe('/user/submit-survey', () => {
+      test('POST returns 200 status code with "success" message', async () => {
+        const response = await superPost('/user/submit-survey').send({
+          surveyResults: mockSurveyResults
+        });
+
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toStrictEqual({
+          type: 'success',
+          message: 'flash.survey.success'
         });
       });
     });
