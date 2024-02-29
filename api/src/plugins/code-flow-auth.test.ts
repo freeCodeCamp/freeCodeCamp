@@ -133,6 +133,30 @@ describe('auth', () => {
       });
       expect(res.statusCode).toBe(401);
     });
+
+    it('should populate the request with the user if the token is valid', async () => {
+      const fakeUser = { id: '123', username: 'test-user' };
+      // @ts-expect-error prisma isn't defined, since we're not building the
+      // full application here.
+      fastify.prisma = { user: { findUnique: () => fakeUser } };
+
+      fastify.get('/test-user', req => {
+        return { user: req.user };
+      });
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123') },
+        JWT_SECRET
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test-user',
+        cookies: {
+          jwt_access_token: signCookie(token)
+        }
+      });
+      expect(res.json()).toEqual({ user: fakeUser });
+    });
   });
 
   // NOTE: fastify.inject handles all the mocking, but we need a way to access

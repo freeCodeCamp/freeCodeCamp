@@ -17,6 +17,8 @@ declare module 'fastify' {
 
   interface FastifyRequest {
     getValidReferrer: (this: FastifyRequest) => string;
+    // TODO: type user
+    user: unknown;
   }
 
   interface FastifyInstance {
@@ -50,26 +52,31 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
 
   fastify.decorate(
     'authorize',
-    function (req: FastifyRequest, reply: FastifyReply) {
+    async function (req: FastifyRequest, reply: FastifyReply) {
       const tokenCookie = req.cookies.jwt_access_token;
       if (!tokenCookie) return send401(reply, TOKEN_REQUIRED);
 
       const unsignedToken = req.unsignCookie(tokenCookie);
       if (!unsignedToken.valid) return send401(reply, TOKEN_REQUIRED);
 
-      const accessToken = unsignedToken.value;
+      const jwtAccessToken = unsignedToken.value;
 
       try {
-        jwt.verify(accessToken!, JWT_SECRET);
+        jwt.verify(jwtAccessToken!, JWT_SECRET);
       } catch {
         return send401(reply, TOKEN_INVALID);
       }
 
       const {
-        accessToken: { created, ttl }
-      } = jwt.decode(accessToken!) as { accessToken: AccessToken };
+        accessToken: { created, ttl, userId }
+      } = jwt.decode(jwtAccessToken!) as { accessToken: AccessToken };
       const valid = isBefore(Date.now(), Date.parse(created) + ttl);
       if (!valid) return send401(reply, TOKEN_EXPIRED);
+
+      const user = await fastify.prisma.user.findUnique({
+        where: { id: userId }
+      });
+      req.user = user;
     }
   );
 
