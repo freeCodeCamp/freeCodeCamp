@@ -977,6 +977,42 @@ Thanks and regards,
     });
 
     describe('/user/submit-survey', () => {
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.survey.deleteMany({
+          where: { userId: defaultUserId }
+        });
+      });
+
+      test('POST returns 400 for invalid survey title', async () => {
+        const response = await superPost('/user/submit-survey').send({
+          surveyResults: { ...mockSurveyResults, title: 'Invalid Survey' }
+        });
+
+        expect(response.statusCode).toBe(400);
+        expect(response.body).toStrictEqual({
+          type: 'error',
+          message: 'flash.survey.err-1'
+        });
+      });
+
+      test('POST returns 400 if user already submitted survey', async () => {
+        // Submit survey for first time
+        await superPost('/user/submit-survey').send({
+          surveyResults: mockSurveyResults
+        });
+
+        // Submit same survey again to get failed response
+        const response = await superPost('/user/submit-survey').send({
+          surveyResults: mockSurveyResults
+        });
+
+        expect(response.statusCode).toBe(400);
+        expect(response.body).toStrictEqual({
+          type: 'error',
+          message: 'flash.survey.err-2'
+        });
+      });
+
       test('POST returns 200 status code with "success" message', async () => {
         const response = await superPost('/user/submit-survey').send({
           surveyResults: mockSurveyResults
@@ -1007,7 +1043,8 @@ Thanks and regards,
       { path: '/user/user-token', method: 'POST' },
       { path: '/user/ms-username', method: 'DELETE' },
       { path: '/user/report-user', method: 'POST' },
-      { path: '/user/ms-username', method: 'POST' }
+      { path: '/user/ms-username', method: 'POST' },
+      { path: '/user/submit-survey', method: 'POST' }
     ];
 
     endpoints.forEach(({ path, method }) => {
