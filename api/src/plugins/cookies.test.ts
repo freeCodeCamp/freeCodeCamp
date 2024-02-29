@@ -32,9 +32,8 @@ describe('cookies', () => {
 
   it('should be able to unsign cookies', async () => {
     const signedCookie = `test=s%3A${fastifyCookie.sign('value', COOKIE_SECRET)}`;
-    fastify.get('/test', async (req, _reply) => {
-      const unsigned = req.unsignCookie(req.cookies.test!);
-      return { cookie: unsigned.value };
+    fastify.get('/test', (req, reply) => {
+      void reply.send({ unsigned: req.unsignCookie(req.cookies.test!) });
     });
 
     const res = await fastify.inject({
@@ -45,27 +44,27 @@ describe('cookies', () => {
       }
     });
 
-    expect(res.json()).toEqual({ cookie: 'value' });
+    expect(res.json()).toEqual({
+      unsigned: { value: 'value', renew: false, valid: true }
+    });
   });
 
-  it('should give a helpful error message when unsigning a cookie without the "s:" prefix', async () => {
+  it('should reject cookies not prefixed with "s:"', async () => {
     const signedCookie = `test=${fastifyCookie.sign('value', COOKIE_SECRET)}`;
-    fastify.get('/test', async (req, _reply) => {
-      try {
-        req.unsignCookie(signedCookie);
-        return { ok: true };
-      } catch (e) {
-        return { error: (e as Error).message };
-      }
+    fastify.get('/test', (req, reply) => {
+      void reply.send({ unsigned: req.unsignCookie(req.cookies.test!) });
     });
 
     const res = await fastify.inject({
       method: 'GET',
-      url: '/test'
+      url: '/test',
+      headers: {
+        cookie: signedCookie
+      }
     });
 
     expect(res.json()).toEqual({
-      error: 'Signed cookie values must be prefixed with "s:"'
+      unsigned: { value: null, renew: false, valid: false }
     });
   });
 });

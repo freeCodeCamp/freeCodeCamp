@@ -15,16 +15,14 @@ export const sign = (value: string) =>
 
 /**
  * Unsigns a cookie value by removing the "s:" prefix and using the COOKIE_SECRET.
- * Throws an error if the value is not prefixed with "s:".
  *
  * @param rawValue The signed cookie value.
  * @returns The unsigned cookie value.
- * @throws Error if the value is not prefixed with "s:".
  */
 export const unsign = (rawValue: string) => {
   const prefix = rawValue.slice(0, 2);
-  if (prefix !== 's:')
-    throw Error('Signed cookie values must be prefixed with "s:"');
+  if (prefix !== 's:') return { valid: false, renew: false, value: null };
+
   const value = rawValue.slice(2);
   return fastifyCookie.unsign(value, COOKIE_SECRET);
 };
