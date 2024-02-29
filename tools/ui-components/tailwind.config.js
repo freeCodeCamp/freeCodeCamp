@@ -1,5 +1,6 @@
 const plugin = require('tailwindcss/plugin');
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: 'jit',
   corePlugins: {
@@ -10,6 +11,7 @@ module.exports = {
     './src/**/*.js',
     './src/**/*.ts',
     './src/**/*.tsx',
+    './src/**/*stories.tsx',
     '!./src/**/*.test.tsx'
   ],
   darkMode: 'class',
@@ -106,5 +108,6 @@ module.exports = {
     plugin(({ addVariant }) => {
       addVariant('aria-disabled', '&[aria-disabled="true"]');
     })
-  ]
+  ],
+  safelist: ['background-danger']
 };

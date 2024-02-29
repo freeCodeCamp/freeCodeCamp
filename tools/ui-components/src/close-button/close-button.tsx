@@ -3,7 +3,7 @@ import React from 'react';
 export interface CloseButtonProps {
   className?: string;
   label?: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 /**
