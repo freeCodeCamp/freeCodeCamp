@@ -376,7 +376,7 @@
     "tests-completed": "// Tests abgeschlossen",
     "console-output": "// Konsolen-Ausgabe",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
-    "indentation-error": "Your code has an indentation error. You may need to add 'pass' on a new line to form a valid block of code.",
+    "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "Melde dich an, um deinen Fortschritt zu speichern",
     "download-solution": "Meine Lösung herunterladen",
     "download-results": "Download my results",
@@ -413,7 +413,7 @@
       "tab-trapped": "Pressing tab will now insert the tab character",
       "tab-free": "Pressing tab will now move focus to the next focusable element"
     },
-    "help-translate": "Wir übersetzen noch die folgenden Zertifikate.",
+    "help-translate": "We are still translating this certification.",
     "help-translate-link": "Hilf uns, zu übersetzen.",
     "project-preview-title": "Hier ist eine Vorschau auf das, was du erstellen wirst",
     "github-required": "<0>Erstelle ein GitHub</0>-Konto, wenn du noch keines hast. Du benötigst es, wenn du die virtuelle Linux-Server-Maschine erstellst. Dieser Vorgang kann ein paar Minuten dauern.",
