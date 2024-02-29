@@ -425,15 +425,17 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
           const { username, name } = user;
 
           if (!user.profileUI.showName) {
+            void reply.code(200);
             return {
               certSlug,
               certTitle,
               username,
               date: completedDate,
               completionTime
-            };
+            } as const;
           }
 
+          void reply.code(200);
           return {
             certSlug,
             certTitle,
@@ -441,13 +443,13 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             name,
             date: completedDate,
             completionTime
-          };
+          } as const;
         } else {
           return {
             type: 'info',
             message: 'flash.user-not-certified',
             variables: { username, cert: certTypeTitleMap[certType] }
-          };
+          } as const;
         }
       } catch (err) {
         fastify.log.error(err);

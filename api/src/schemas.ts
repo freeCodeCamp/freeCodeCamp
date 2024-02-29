@@ -760,6 +760,7 @@ export const schemas = {
       username: Type.String()
     }),
     response: {
+      // TODO(POST_MVP): Most of these should not be 200s
       200: Type.Union([
         Type.Object({
           type: Type.Literal('info'),
@@ -813,9 +814,9 @@ export const schemas = {
         }),
         Type.Object({
           certSlug: Type.Enum(Certification),
-          username: Type.String(),
-          name: Type.Optional(Type.String()),
           certTitle: Type.String(),
+          username: Type.String(),
+          name: Type.String(),
           date: Type.Number(),
           completionTime: Type.Number()
         }),
@@ -828,6 +829,10 @@ export const schemas = {
           })
         })
       ]),
+      400: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.String()
+      }),
       404: Type.Object({
         message: Type.Literal('flash.cert-not-found'),
         type: Type.Literal('info'),
