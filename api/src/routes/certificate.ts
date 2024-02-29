@@ -295,11 +295,11 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
 
         if (!assertCertSlugIsKeyofCertSlugTypeMap(certSlug)) {
           void reply.code(404);
-          return {
+          return reply.send({
             type: 'info',
             message: 'flash.cert-not-found',
             variables: { certSlug }
-          } as const;
+          } as const);
         }
 
         const certType = certSlugTypeMap[certSlug];
@@ -340,57 +340,57 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
         });
 
         if (user === null) {
-          return {
+          return reply.send({
             type: 'info',
             message: 'flash.username-not-found',
             variables: { username }
-          } as const;
+          } as const);
         }
 
         if (user.isCheater || user.isBanned) {
-          return {
+          return reply.send({
             type: 'info',
             message: 'flash.not-eligible'
-          } as const;
+          } as const);
         }
 
         if (!user.isHonest) {
-          return {
+          return reply.send({
             type: 'info',
             message: 'flash.not-honest',
             variables: { username }
-          } as const;
+          } as const);
         }
 
         if (user.profileUI?.isLocked) {
-          return {
+          return reply.send({
             type: 'info',
             message: 'flash.profile-private',
             variables: { username }
-          } as const;
+          } as const);
         }
 
         if (!user.name) {
-          return {
+          return reply.send({
             type: 'info',
             message: 'flash.add-name'
-          } as const;
+          } as const);
         }
 
         if (!user.profileUI?.showCerts) {
-          return {
+          return reply.send({
             type: 'info',
             message: 'flash.certs-private',
             variables: { username }
-          } as const;
+          } as const);
         }
 
         if (!user.profileUI?.showTimeLine) {
-          return {
+          return reply.send({
             type: 'info',
             message: 'flash.timeline-private',
             variables: { username }
-          } as const;
+          } as const);
         }
 
         if (user[certType]) {
@@ -426,39 +426,39 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
 
           if (!user.profileUI.showName) {
             void reply.code(200);
-            return {
+            return reply.send({
               certSlug,
               certTitle,
               username,
               date: completedDate,
               completionTime
-            } as const;
+            } as const);
           }
 
           void reply.code(200);
-          return {
+          return reply.send({
             certSlug,
             certTitle,
             username,
             name,
             date: completedDate,
             completionTime
-          } as const;
+          } as const);
         } else {
-          return {
+          return reply.send({
             type: 'info',
             message: 'flash.user-not-certified',
             variables: { username, cert: certTypeTitleMap[certType] }
-          } as const;
+          });
         }
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
-        return {
+        return reply.send({
           message:
             'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
           type: 'danger'
-        } as const;
+        } as const);
       }
     }
   );

@@ -52,7 +52,6 @@ import {
   SESSION_SECRET
 } from './utils/env';
 import { isObjectID } from './utils/validation';
-import { certificateRoutes } from './routes/certificate';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
