@@ -30,5 +30,5 @@ A function that reduces the time a model needs to train.
 
 ## --video-solution--
 
-2
+الثاني
 

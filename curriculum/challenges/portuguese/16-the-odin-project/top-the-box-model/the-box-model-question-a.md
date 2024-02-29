@@ -13,11 +13,11 @@ Para abrir o inspetor, você pode clicar com o botão direito em qualquer elemen
 
 Não se assuste com todas as ferramentas que você verá agora! Para esta lição, nos concentraremos nos painéis Elementos e Estilos.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Divirta-se um pouco com as ferramentas de desenvolvimento do Chrome e veja se consegue responder à seguinte pergunta.
+
+# --question--
 
 ## --text--
 

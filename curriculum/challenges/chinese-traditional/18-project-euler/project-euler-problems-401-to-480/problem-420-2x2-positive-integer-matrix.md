@@ -10,7 +10,7 @@ dashedName: problem-420-2x2-positive-integer-matrix
 
 A positive integer matrix is a matrix whose elements are all positive integers.
 
-Some positive integer matrices can be expressed as a square of a positive integer matrix in two different ways. Here is an example:
+Some positive integer matrices can be expressed as a square of a positive integer matrix in two different ways. 這是一個例子：
 
 $$\begin{pmatrix}   40 & 12 \\\\
   48 & 40 \end{pmatrix} =

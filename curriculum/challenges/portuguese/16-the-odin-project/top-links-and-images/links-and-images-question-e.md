@@ -22,7 +22,7 @@ Para usar imagens que você tem em seus próprios sites, você pode usar um cami
 
 - Crie um diretório chamado `images` dentro do projeto `odin-links-and-images`.
 
-- Em seguida, faça o download [desta imagem](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) e mova-a para o diretório `images` que você acabou de criar.
+- Next, download <a href="https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640" target="_blank">this image</a> and move it into the `images` directory you just created.
 
 - Renomeie a imagem para `dog.jpg`.
 
@@ -71,11 +71,11 @@ O atributo `alt` é usado para descrever uma imagem. Ele será usado no lugar da
 É assim que o logotipo do The Odin Project que você usou anteriormente fica com um atributo `alt` incluído:
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/ExXjoEp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=ExXjoEp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen incorporado" loading="lazy" id="cp_embed_ExXjoEp"></iframe>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Assista ao vídeo de Kevin Powell sobre imagens do HTML acima.
+
+# --question--
 
 ## --text--
 

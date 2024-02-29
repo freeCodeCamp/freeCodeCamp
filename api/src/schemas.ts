@@ -10,6 +10,27 @@ const generic500 = Type.Object({
   type: Type.Literal('danger')
 });
 
+const isCertMap = Type.Object({
+  isRespWebDesignCert: Type.Boolean(),
+  isJsAlgoDataStructCert: Type.Boolean(),
+  isFrontEndLibsCert: Type.Boolean(),
+  is2018DataVisCert: Type.Boolean(),
+  isApisMicroservicesCert: Type.Boolean(),
+  isInfosecQaCert: Type.Boolean(),
+  isQaCertV7: Type.Boolean(),
+  isInfosecCertV7: Type.Boolean(),
+  isFrontEndCert: Type.Boolean(),
+  isBackEndCert: Type.Boolean(),
+  isDataVisCert: Type.Boolean(),
+  isFullStackCert: Type.Boolean(),
+  isSciCompPyCertV7: Type.Boolean(),
+  isDataAnalysisPyCertV7: Type.Boolean(),
+  isMachineLearningPyCertV7: Type.Boolean(),
+  isRelationalDatabaseCertV8: Type.Boolean(),
+  isCollegeAlgebraPyCertV8: Type.Boolean(),
+  isFoundationalCSharpCertV8: Type.Boolean()
+});
+
 const file = Type.Object({
   contents: Type.String(),
   key: Type.String(),
@@ -25,6 +46,15 @@ const saveChallengeBody = Type.Object({
     minLength: 24
   }),
   files: Type.Array(file)
+});
+
+const examResults = Type.Object({
+  numberOfCorrectAnswers: Type.Number(),
+  numberOfQuestionsInExam: Type.Number(),
+  percentCorrect: Type.Number(),
+  passingPercent: Type.Number(),
+  passed: Type.Boolean(),
+  examTimeInSeconds: Type.Number()
 });
 
 export const schemas = {
@@ -49,6 +79,10 @@ export const schemas = {
         message: Type.Literal('flash.privacy-updated'),
         type: Type.Literal('success')
       }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
         type: Type.Literal('danger')
@@ -63,6 +97,10 @@ export const schemas = {
       200: Type.Object({
         message: Type.Literal('flash.updated-themes'),
         type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
       }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
@@ -104,6 +142,10 @@ export const schemas = {
         message: Type.Literal('flash.updated-socials'),
         type: Type.Literal('success')
       }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
         type: Type.Literal('danger')
@@ -118,6 +160,10 @@ export const schemas = {
       200: Type.Object({
         message: Type.Literal('flash.keyboard-shortcut-updated'),
         type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
       }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
@@ -134,6 +180,10 @@ export const schemas = {
         message: Type.Literal('flash.subscribe-to-quincy-updated'),
         type: Type.Literal('success')
       }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
         type: Type.Literal('danger')
@@ -148,6 +198,10 @@ export const schemas = {
       200: Type.Object({
         message: Type.Literal('buttons.accepted-honesty'),
         type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
       }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
@@ -182,6 +236,10 @@ export const schemas = {
       200: Type.Object({
         message: Type.Literal('flash.privacy-updated'),
         type: Type.Literal('success')
+      }),
+      400: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
       }),
       500: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
@@ -280,6 +338,14 @@ export const schemas = {
                   })
                 ),
                 isManuallyApproved: Type.Optional(Type.Boolean())
+              })
+            ),
+            completedExams: Type.Array(
+              Type.Object({
+                id: Type.String(),
+                completedDate: Type.Number(),
+                challengeType: Type.Optional(Type.Number()),
+                examResults
               })
             ),
             completedChallengeCount: Type.Number(),
@@ -404,6 +470,15 @@ export const schemas = {
         message: Type.Literal('flash.provide-username')
       }),
       500: generic500
+    }
+  },
+  deleteMsUsername: {
+    response: {
+      200: Type.Object({ msUsername: Type.Null() }),
+      500: Type.Object({
+        message: Type.Literal('flash.ms.transcript.unlink-err'),
+        type: Type.Literal('error')
+      })
     }
   },
   // Deprecated endpoints:
@@ -574,6 +649,54 @@ export const schemas = {
       })
     }
   },
+  msTrophyChallengeCompleted: {
+    body: Type.Object({
+      id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 })
+    }),
+    response: {
+      200: Type.Object({
+        completedDate: Type.Number(),
+        points: Type.Number(),
+        alreadyCompleted: Type.Boolean()
+      }),
+      400: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.trophy.err-2')
+      }),
+      403: Type.Union([
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.trophy.err-1')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.trophy.err-3')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.trophy.err-4'),
+          variables: Type.Object({
+            msUsername: Type.String()
+          })
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.trophy.err-6')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.profile.err'),
+          variables: Type.Object({
+            msUsername: Type.String()
+          })
+        })
+      ]),
+      500: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.trophy.err-5')
+      })
+    }
+  },
   saveChallenge: {
     body: saveChallengeBody,
     response: {
@@ -667,6 +790,202 @@ export const schemas = {
       400: Type.Object({
         message: Type.String(),
         type: Type.Literal('info')
+      })
+    }
+  },
+  postMsUsername: {
+    body: Type.Object({
+      msTranscriptUrl: Type.String({ maxLength: 1000 })
+    }),
+    response: {
+      200: Type.Object({
+        msUsername: Type.String()
+      }),
+      400: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.transcript.link-err-1')
+      }),
+      404: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.transcript.link-err-2')
+      }),
+      403: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.ms.transcript.link-err-4')
+      }),
+      500: Type.Union([
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.transcript.link-err-6')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.ms.transcript.link-err-3')
+        })
+      ])
+    }
+  },
+  // /certificate/
+  certificateVerify: {
+    // TODO(POST_MVP): Remove partial validation from route for schema validation
+    body: Type.Object({
+      certSlug: Type.String({ maxLength: 1024 })
+    }),
+    response: {
+      200: Type.Object({
+        response: Type.Union([
+          Type.Object({
+            type: Type.Literal('info'),
+            message: Type.Union([Type.Literal('flash.already-claimed')]),
+            variables: Type.Object({
+              name: Type.String()
+            })
+          }),
+          Type.Object({
+            type: Type.Literal('success'),
+            message: Type.Literal('flash.cert-claim-success'),
+            variables: Type.Object({
+              username: Type.String(),
+              name: Type.String()
+            })
+          })
+        ]),
+        isCertMap,
+        completedChallenges: Type.Array(
+          Type.Object({
+            id: Type.String(),
+            completedDate: Type.Number(),
+            solution: Type.Optional(Type.String()),
+            githubLink: Type.Optional(Type.String()),
+            challengeType: Type.Optional(Type.Number()),
+            // Technically, files is optional, but the db default was [] and
+            // the client treats null, undefined and [] equivalently.
+            // TODO(Post-MVP): make this optional.
+            files: Type.Array(
+              Type.Object({
+                contents: Type.String(),
+                key: Type.String(),
+                ext: Type.String(),
+                name: Type.String(),
+                path: Type.Optional(Type.String())
+              })
+            ),
+            isManuallyApproved: Type.Optional(Type.Boolean())
+          })
+        )
+      }),
+      400: Type.Union([
+        Type.Object({
+          response: Type.Object({
+            type: Type.Literal('info'),
+            message: Type.Union([Type.Literal('flash.incomplete-steps')]),
+            variables: Type.Object({
+              name: Type.String()
+            })
+          }),
+          isCertMap,
+          completedChallenges: Type.Array(
+            Type.Object({
+              id: Type.String(),
+              completedDate: Type.Number(),
+              solution: Type.Optional(Type.String()),
+              githubLink: Type.Optional(Type.String()),
+              challengeType: Type.Optional(Type.Number()),
+              // Technically, files is optional, but the db default was [] and
+              // the client treats null, undefined and [] equivalently.
+              // TODO(Post-MVP): make this optional.
+              files: Type.Array(
+                Type.Object({
+                  contents: Type.String(),
+                  key: Type.String(),
+                  ext: Type.String(),
+                  name: Type.String(),
+                  path: Type.Optional(Type.String())
+                })
+              ),
+              isManuallyApproved: Type.Optional(Type.Boolean())
+            })
+          )
+        }),
+        Type.Object({
+          response: Type.Object({
+            type: Type.Literal('danger'),
+            message: Type.Union([Type.Literal('flash.wrong-name')]),
+            variables: Type.Object({
+              name: Type.String()
+            })
+          })
+        }),
+        Type.Object({
+          response: Type.Object({
+            type: Type.Literal('info'),
+            message: Type.Union([Type.Literal('flash.name-needed')])
+          }),
+          isCertMap,
+          completedChallenges: Type.Array(
+            Type.Object({
+              id: Type.String(),
+              completedDate: Type.Number(),
+              solution: Type.Optional(Type.String()),
+              githubLink: Type.Optional(Type.String()),
+              challengeType: Type.Optional(Type.Number()),
+              // Technically, files is optional, but the db default was [] and
+              // the client treats null, undefined and [] equivalently.
+              // TODO(Post-MVP): make this optional.
+              files: Type.Array(
+                Type.Object({
+                  contents: Type.String(),
+                  key: Type.String(),
+                  ext: Type.String(),
+                  name: Type.String(),
+                  path: Type.Optional(Type.String())
+                })
+              ),
+              isManuallyApproved: Type.Optional(Type.Boolean())
+            })
+          )
+        })
+      ]),
+      500: Type.Object({
+        type: Type.Literal('danger'),
+        message: Type.Literal('flash.went-wrong')
+      })
+    }
+  },
+  examChallengeCompleted: {
+    body: Type.Object({
+      id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
+      challengeType: Type.Number(),
+      userCompletedExam: Type.Object({
+        examTimeInSeconds: Type.Number(),
+        userExamQuestions: Type.Array(
+          Type.Object({
+            id: Type.String(),
+            question: Type.String(),
+            answer: Type.Object({
+              id: Type.String(),
+              answer: Type.String()
+            })
+          }),
+          { minItems: 1 }
+        )
+      })
+    }),
+    response: {
+      200: Type.Object({
+        completedDate: Type.Number(),
+        points: Type.Number(),
+        alreadyCompleted: Type.Boolean(),
+        examResults
+      }),
+      400: Type.Object({
+        error: Type.String()
+      }),
+      403: Type.Object({
+        error: Type.String()
+      }),
+      500: Type.Object({
+        error: Type.String()
       })
     }
   }

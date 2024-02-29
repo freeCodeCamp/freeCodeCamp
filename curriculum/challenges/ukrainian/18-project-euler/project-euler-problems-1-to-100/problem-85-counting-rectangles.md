@@ -8,7 +8,7 @@ dashedName: problem-85-counting-rectangles
 
 # --description--
 
-Якщо уважно порахувати, можна побачити, що прямокутна сітка 3х2 містить вісімнадцять прямокутників:
+Якщо уважно порахувати, можна побачити, що прямокутна сітка 3×2 містить вісімнадцять прямокутників:
 
 <img class="img-responsive center-block" alt="діаграма різних прямокутників, знайдених у прямокутній сітці 3х2" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px;" />
 

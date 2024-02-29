@@ -9,7 +9,6 @@ exports[`<Footer /> matches snapshot 1`] = `
   >
     <div
       className="footer-desc-col"
-      data-playwright-test-label="footer-desc-col"
     >
       <p>
         footer.tax-exempt-status
@@ -38,14 +37,15 @@ exports[`<Footer /> matches snapshot 1`] = `
     >
       <h2
         className="col-header"
+        id="trending-guides"
       >
         footer.trending-guides
       </h2>
-      <div
+      <ul
+        aria-labelledby="trending-guides"
         className="trending-guides-articles"
-        data-playwright-test-label="trending-guides-articles"
       >
-        <span>
+        <li>
           <a
             href="trending:article0link"
             rel="noopener noreferrer"
@@ -53,8 +53,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article0title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article1link"
             rel="noopener noreferrer"
@@ -62,8 +62,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article1title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article2link"
             rel="noopener noreferrer"
@@ -71,8 +71,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article2title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article3link"
             rel="noopener noreferrer"
@@ -80,8 +80,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article3title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article4link"
             rel="noopener noreferrer"
@@ -89,8 +89,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article4title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article5link"
             rel="noopener noreferrer"
@@ -98,8 +98,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article5title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article6link"
             rel="noopener noreferrer"
@@ -107,8 +107,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article6title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article7link"
             rel="noopener noreferrer"
@@ -116,8 +116,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article7title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article8link"
             rel="noopener noreferrer"
@@ -125,8 +125,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article8title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article9link"
             rel="noopener noreferrer"
@@ -134,8 +134,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article9title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article10link"
             rel="noopener noreferrer"
@@ -143,8 +143,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article10title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article11link"
             rel="noopener noreferrer"
@@ -152,8 +152,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article11title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article12link"
             rel="noopener noreferrer"
@@ -161,8 +161,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article12title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article13link"
             rel="noopener noreferrer"
@@ -170,8 +170,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article13title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article14link"
             rel="noopener noreferrer"
@@ -179,8 +179,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article14title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article15link"
             rel="noopener noreferrer"
@@ -188,8 +188,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article15title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article16link"
             rel="noopener noreferrer"
@@ -197,8 +197,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article16title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article17link"
             rel="noopener noreferrer"
@@ -206,8 +206,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article17title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article18link"
             rel="noopener noreferrer"
@@ -215,8 +215,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article18title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article19link"
             rel="noopener noreferrer"
@@ -224,8 +224,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article19title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article20link"
             rel="noopener noreferrer"
@@ -233,8 +233,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article20title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article21link"
             rel="noopener noreferrer"
@@ -242,8 +242,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article21title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article22link"
             rel="noopener noreferrer"
@@ -251,8 +251,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article22title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article23link"
             rel="noopener noreferrer"
@@ -260,8 +260,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article23title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article24link"
             rel="noopener noreferrer"
@@ -269,8 +269,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article24title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article25link"
             rel="noopener noreferrer"
@@ -278,8 +278,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article25title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article26link"
             rel="noopener noreferrer"
@@ -287,8 +287,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article26title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article27link"
             rel="noopener noreferrer"
@@ -296,8 +296,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article27title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article28link"
             rel="noopener noreferrer"
@@ -305,8 +305,8 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article28title
           </a>
-        </span>
-        <span>
+        </li>
+        <li>
           <a
             href="trending:article29link"
             rel="noopener noreferrer"
@@ -314,7 +314,58 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             trending:article29title
           </a>
-        </span>
+        </li>
+      </ul>
+      <div
+        className="spacer"
+        style={
+          {
+            "padding": "15px 0",
+          }
+        }
+      />
+      <div>
+        <h2
+          className="col-header"
+          id="mobile-app"
+        >
+          footer.mobile-app
+        </h2>
+        <div
+          className=" min-h-[1px] px-[15px]  md:w-2/3    md:ml-[16.6%]    "
+        >
+          <ul
+            aria-labelledby="mobile-app"
+            className="mobile-app-container"
+          >
+            <li>
+              <a
+                href="https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  alt="Download on the App Store"
+                  lang="en"
+                  src={{}}
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://play.google.com/store/apps/details?id=org.freecodecamp"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  alt="Get it on Google Play"
+                  lang="en"
+                  src={{}}
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

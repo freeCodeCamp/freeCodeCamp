@@ -1,5 +1,4 @@
 // Package Utilities
-import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -10,7 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Button } from '@freecodecamp/ui';
 
 // Local Utilities
 import Loader from '../../../components/helpers/loader';
@@ -21,7 +20,10 @@ import Hotkeys from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
+import Scene from '../components/scene/scene';
 import PrismFormatted from '../components/prism-formatted';
+import ChallengeTitle from '../components/challenge-title';
+import ChallengeHeading from '../components/challenge-heading';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -216,7 +218,10 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             bilibiliIds,
             fields: { blockName },
             question: { text, answers, solution },
-            assignments
+            assignments,
+            audioPath,
+            translationPending,
+            scene
           }
         }
       },
@@ -225,12 +230,19 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
-      t
+      t,
+      isChallengeCompleted
     } = this.props;
 
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
+
+    const feedback =
+      this.state.selectedOption !== null
+        ? answers[this.state.selectedOption].feedback
+        : undefined;
+
     return (
       <Hotkeys
         executeChallenge={() => {
@@ -268,13 +280,40 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
               )}
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
-                <h2>{title}</h2>
+                <ChallengeTitle
+                  isCompleted={isChallengeCompleted}
+                  translationPending={translationPending}
+                >
+                  {title}
+                </ChallengeTitle>
                 <PrismFormatted className={'line-numbers'} text={description} />
                 <Spacer size='medium' />
+                {audioPath && (
+                  <>
+                    {/* TODO: Add tracks for audio elements */}
+                    {/* eslint-disable-next-line jsx-a11y/media-has-caption*/}
+                    <audio className='audio' controls>
+                      <source
+                        src={`https://cdn.freecodecamp.org/${audioPath}`}
+                        type='audio/mp3'
+                      />
+                    </audio>
+                    <Spacer size='medium' />
+                  </>
+                )}
+              </Col>
+
+              {scene && (
+                <>
+                  <Scene scene={scene} /> <Spacer size='medium' />
+                </>
+              )}
+
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ObserveKeys>
                   {assignments.length > 0 && (
                     <>
-                      <h2>{t('learn.assignments')}</h2>
+                      <ChallengeHeading heading={t('learn.assignments')} />
                       <div className='video-quiz-options'>
                         {assignments.map((assignment, index) => (
                           <label
@@ -304,10 +343,10 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     </>
                   )}
 
-                  <h2>{t('learn.question')}</h2>
+                  <ChallengeHeading heading={t('learn.question')} />
                   <PrismFormatted className={'line-numbers'} text={text} />
                   <div className='video-quiz-options'>
-                    {answers.map((option, index) => (
+                    {answers.map(({ answer }, index) => (
                       <label className='video-quiz-option-label' key={index}>
                         <input
                           aria-label={t('aria.answer')}
@@ -325,7 +364,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                         </span>
                         <PrismFormatted
                           className={'video-quiz-option'}
-                          text={option}
+                          text={answer}
                         />
                       </label>
                     ))}
@@ -338,7 +377,16 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   }}
                 >
                   {this.state.isWrongAnswer && (
-                    <span>{t('learn.wrong-answer')}</span>
+                    <span>
+                      {feedback ? (
+                        <PrismFormatted
+                          className={'multiple-choice-feedback'}
+                          text={feedback}
+                        />
+                      ) : (
+                        t('learn.wrong-answer')
+                      )}
+                    </span>
                   )}
                   {!this.state.allAssignmentsCompleted &&
                     assignments.length > 0 && (
@@ -351,9 +399,8 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 <Spacer size='medium' />
                 <Button
                   block={true}
-                  bsSize='large'
-                  bsStyle='primary'
-                  data-playwright-test-label='check-answer-button'
+                  size='medium'
+                  variant='primary'
                   onClick={() =>
                     this.handleSubmit(
                       solution,
@@ -364,12 +411,11 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 >
                   {t('buttons.check-answer')}
                 </Button>
+                <Spacer size='xxSmall' />
                 <Button
                   block={true}
-                  bsSize='large'
-                  bsStyle='primary'
-                  className='btn-invert'
-                  data-playwright-test-label='ask-for-help-button'
+                  size='medium'
+                  variant='primary'
                   onClick={openHelpModal}
                 >
                   {t('buttons.ask-for-help')}
@@ -420,11 +466,52 @@ export const query = graphql`
         }
         question {
           text
-          answers
+          answers {
+            answer
+            feedback
+          }
           solution
+        }
+        scene {
+          setup {
+            background
+            characters {
+              character
+              position {
+                x
+                y
+                z
+              }
+              opacity
+            }
+            audio {
+              filename
+              startTime
+              startTimestamp
+              finishTimestamp
+            }
+            alwaysShowDialogue
+          }
+          commands {
+            background
+            character
+            position {
+              x
+              y
+              z
+            }
+            opacity
+            startTime
+            finishTime
+            dialogue {
+              text
+              align
+            }
+          }
         }
         translationPending
         assignments
+        audioPath
       }
     }
   }

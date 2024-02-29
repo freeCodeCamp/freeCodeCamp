@@ -10,7 +10,7 @@ dashedName: problem-413-one-child-numbers
 
 We say that a $d$-digit positive number (no leading zeros) is a one-child number if exactly one of its sub-strings is divisible by $d$.
 
-For example, 5671 is a 4-digit one-child number. Among all its sub-strings 5, 6, 7, 1, 56, 67, 71, 567, 671 and 5671, only 56 is divisible by 4.
+例如，5671 是一个 4 位数的单子号码。 在它的所有子串 5、6、7、1、56、67、71、567、671 和 5671 中，只有 56 能被 4 整除。
 
 Similarly, 104 is a 3-digit one-child number because only 0 is divisible by 3. 1132451 is a 7-digit one-child number because only 245 is divisible by 7.
 

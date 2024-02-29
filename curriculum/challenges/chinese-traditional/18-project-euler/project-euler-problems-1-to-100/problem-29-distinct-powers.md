@@ -17,7 +17,7 @@ Consider all integer combinations of $a^b$ for 2 ≤ a ≤ 5 and 2 ≤ b ≤ 5:
   5<sup>2</sup>=25, 5<sup>3</sup>=125, 5<sup>4</sup>=625, 5<sup>5</sup>=3125 <br>
 </div>
 
-If they are then placed in numerical order, with any repeats removed, we get the following sequence of 15 distinct terms:
+22 = 4、23 = 8、24 = 16、25 = 32
 
 <div style='padding-left: 4em;'>
   4, 8, 9, 16, 25, 27, 32, 64, 81, 125, 243, 256, 625, 1024, 3125
@@ -39,19 +39,19 @@ assert(typeof distinctPowers(15) === 'number');
 assert.strictEqual(distinctPowers(15), 177);
 ```
 
-`distinctPowers(20)` should return 324.
+如果然後按數字順序放置它們，並刪除所有重複項，則會得到以下15個不同術語的序列：
 
 ```js
 assert.strictEqual(distinctPowers(20), 324);
 ```
 
-`distinctPowers(25)` should return 519.
+4，8，9，16，25，27，32，64，81，125，243，256，625，1024，3125
 
 ```js
 assert.strictEqual(distinctPowers(25), 519);
 ```
 
-`distinctPowers(30)` should return 755.
+對於2≤a≤n和2≤b≤n，由ab生成的序列中有多少個不同的項？
 
 ```js
 assert.strictEqual(distinctPowers(30), 755);

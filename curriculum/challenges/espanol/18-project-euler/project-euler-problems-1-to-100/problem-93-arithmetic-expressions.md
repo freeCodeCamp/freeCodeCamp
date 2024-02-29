@@ -10,7 +10,7 @@ dashedName: problem-93-arithmetic-expressions
 
 By using each of the digits from the set, {1, 2, 3, 4}, exactly once, and making use of the four arithmetic operations (+, −, \*, /) and brackets/parentheses, it is possible to form different positive integer targets.
 
-For example,
+Por ejemplo,
 
 <div style='margin-left: 4em;'>
   8 = (4 * (1 + 3)) / 2<br>
@@ -19,21 +19,21 @@ For example,
   36 = 3 * 4 * (2 + 1)
 </div>
 
-Note that concatenations of the digits, like 12 + 34, are not allowed.
+Tenga en cuenta que no se permiten concatenaciones de dígitos, como 12 + 34.
 
-Using the set, {1, 2, 3, 4}, it is possible to obtain thirty-one different target numbers of which 36 is the maximum, and each of the numbers 1 to 28 can be obtained before encountering the first non-expressible number.
+Usando el conjunto (set), {1, 2, 3, 4}, es possible obtener treinta y uno números objetivos de los cuales 36 es el máximo, y cada uno de los números de 1 a 28 pueden ser obtenidos antes de encontrar el primer número no expresible.
 
-Find the set of four distinct digits, `a` &lt; `b` &lt; `c` &lt; `d`, for which the longest set of consecutive positive integers, 1 to `n`, can be obtained, giving your answer as a string: `abcd`.
+Encuentra el conjunto de cuatro dígitos distintos, `a` &lt; `b` &lt; `c` &lt; `d`, para el cual el conjunto más largo de enteros positivos consecutivos, 1 a `n`, puedan ser obtenidos, dando su respuesta como una cadena: `abcd`.
 
 # --hints--
 
-`arithmeticExpressions()` should return a number.
+`arithmeticExpressions()` debe devolver un número.
 
 ```js
 assert(typeof arithmeticExpressions() === 'number');
 ```
 
-`arithmeticExpressions()` should return 1258.
+`arithmeticExpressions()` debe devolver 1258.
 
 ```js
 assert.strictEqual(arithmeticExpressions(), 1258);

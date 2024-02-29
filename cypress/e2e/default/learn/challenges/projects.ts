@@ -147,7 +147,7 @@ describe('project submission', () => {
             // TODO: if we write a test to check that the solution is visible
             // before reloading, we should include that here.
             cy.contains('Solution for');
-            cy.contains('Close').click();
+            cy.get(`[data-cy="solution-viewer-close-btn"]`).click();
           });
 
           // Claim and view solutions on certification page
@@ -245,9 +245,10 @@ describe('project submission', () => {
       .type('https://replit.com/@camperbot/python-project#main.py');
 
     cy.contains("I've completed this challenge").click();
+    cy.get('[data-cy=completion-modal]').should('exist');
     cy.get('[data-cy=submit-challenge]').as('submitChallenge');
     cy.get('@submitChallenge').click();
-    cy.get('@submitChallenge').should('be.disabled');
+    cy.get('@submitChallenge').should('have.attr', 'aria-disabled');
     // After the api responds, the button is enabled, but since the modal leaves
     // the DOM we just check for that.
     cy.get('[data-cy=completion-modal]').should('not.exist');

@@ -18,6 +18,60 @@ a container directive
 }
 `;
 
+exports[`challenge parser it should parse md with a scene 1`] = `
+{
+  "assignments": [],
+  "description": "<section id="description">
+<p>This challenge has a scene.</p>
+</section>",
+  "scene": {
+    "commands": [
+      {
+        "character": "Maria",
+        "opacity": 1,
+        "startTime": 0,
+      },
+      {
+        "character": "Maria",
+        "dialogue": {
+          "align": "center",
+          "text": "I'm Maria, the team lead.",
+        },
+        "finishTime": 2.4,
+        "startTime": 0.7,
+      },
+      {
+        "character": "Maria",
+        "opacity": 0,
+        "startTime": 3.4,
+      },
+    ],
+    "setup": {
+      "audio": {
+        "filename": "1.1-1.mp3",
+        "finishTimestamp": 4,
+        "startTime": 1,
+        "startTimestamp": 2.6,
+      },
+      "background": "company2-center.png",
+      "characters": [
+        {
+          "character": "Maria",
+          "opacity": 0,
+          "position": {
+            "x": 50,
+            "y": 0,
+            "z": 1.5,
+          },
+        },
+      ],
+    },
+  },
+  "solutions": [],
+  "tests": [],
+}
+`;
+
 exports[`challenge parser it should parse video questions 1`] = `
 {
   "assignments": [],
@@ -33,10 +87,19 @@ exports[`challenge parser it should parse video questions 1`] = `
 </section>",
   "question": {
     "answers": [
-      "<p>Some inline <code>code</code></p>",
-      "<p>Some <em>italics</em></p>
+      {
+        "answer": "<p>Some inline <code>code</code></p>",
+        "feedback": "<p>That is not correct.</p>",
+      },
+      {
+        "answer": "<p>Some <em>italics</em></p>
 <p>A second answer paragraph.</p>",
-      "<p><code> code in </code> code tags</p>",
+        "feedback": null,
+      },
+      {
+        "answer": "<p><code> code in </code> code tags</p>",
+        "feedback": null,
+      },
     ],
     "solution": 3,
     "text": "<p>Question line 1</p>

@@ -105,7 +105,7 @@ const h2 = document.querySelectorAll('H2')[2];
 assert(h2.innerText == 'Steps');
 ```
 
-Ви повинні мати `<ol>` з кроками приготування у вигляді елементів списку `<li>`.
+Ви повинні мати `<ol>` з кроками як елементи списку `<li>`.
 
 ```js
 const orderedList = document.querySelectorAll('OL')[0];
@@ -201,4 +201,8 @@ assert(allAnchorsHaveHrefHash && anchorTags.length > 0);
     </ul>
   </body>
 </html>
+```
+
+```css
+
 ```

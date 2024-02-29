@@ -44,9 +44,8 @@ export default async function bootChallenge(app, done) {
   const send200toNonUser = ifNoUserSend(true);
   const api = app.loopback.Router();
   const router = app.loopback.Router();
-  const challengeUrlResolver = await createChallengeUrlResolver(
-    getChallenges()
-  );
+  const challengeUrlResolver =
+    await createChallengeUrlResolver(getChallenges());
   const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
     challengeUrlResolver,
     normalizeParams,
@@ -121,11 +120,25 @@ const jsCertProjectIds = [
 ];
 
 const multifileCertProjectIds = getChallenges()
-  .filter(challenge => challenge.challengeType === 14)
+  .filter(
+    challenge => challenge.challengeType === challengeTypes.multifileCertProject
+  )
+  .map(challenge => challenge.id);
+
+const multifilePythonCertProjectIds = getChallenges()
+  .filter(
+    challenge =>
+      challenge.challengeType === challengeTypes.multifilePythonCertProject
+  )
   .map(challenge => challenge.id);
 
 const savableChallenges = getChallenges()
-  .filter(challenge => challenge.challengeType === 14)
+  .filter(challenge => {
+    return (
+      challenge.challengeType === challengeTypes.multifileCertProject ||
+      challenge.challengeType === challengeTypes.multifilePythonCertProject
+    );
+  })
   .map(challenge => challenge.id);
 
 const msTrophyChallenges = getChallenges()
@@ -142,7 +155,8 @@ export function buildUserUpdate(
   let completedChallenge = {};
   if (
     jsCertProjectIds.includes(challengeId) ||
-    multifileCertProjectIds.includes(challengeId)
+    multifileCertProjectIds.includes(challengeId) ||
+    multifilePythonCertProjectIds.includes(challengeId)
   ) {
     completedChallenge = {
       ..._completedChallenge,
@@ -339,7 +353,7 @@ export async function createChallengeUrlResolver(
 
 export function isValidChallengeCompletion(req, res, next) {
   const {
-    body: { id, challengeType, solution }
+    body: { id, challengeType, solution, githubLink }
   } = req;
 
   // ToDO: Validate other things (challengeFiles, etc)
@@ -356,7 +370,15 @@ export function isValidChallengeCompletion(req, res, next) {
     log('challengeType', challengeType, isNumeric(challengeType));
     return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
-  if ('solution' in req.body && !isURL(solution)) {
+  // If `backEndProject`:
+  // - `solution` needs to exist, but does not have to be valid URL
+  // - `githubLink` needs to exist and be valid URL
+  if (challengeType === challengeTypes.backEndProject) {
+    if (!solution || !isURL(githubLink + '')) {
+      log('isObjectId', id, ObjectID.isValid(id));
+      return res.status(403).json(isValidChallengeCompletionErrorMsg);
+    }
+  } else if ('solution' in req.body && !isURL(solution)) {
     log('isObjectId', id, ObjectID.isValid(id));
     return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
@@ -390,7 +412,11 @@ export async function modernChallengeCompleted(req, res, next) {
 
   // We only need to know the challenge type if it's a project. If it's a
   // step or normal challenge we can avoid storing in the database.
-  if (jsCertProjectIds.includes(id) || multifileCertProjectIds.includes(id)) {
+  if (
+    jsCertProjectIds.includes(id) ||
+    multifileCertProjectIds.includes(id) ||
+    multifilePythonCertProjectIds.includes(id)
+  ) {
     completedChallenge.challengeType = challengeType;
   }
 
@@ -428,7 +454,11 @@ async function projectCompleted(req, res, next) {
   ]);
   completedChallenge.completedDate = Date.now();
 
-  if (!completedChallenge.solution) {
+  if (
+    !completedChallenge.solution ||
+    (completedChallenge.challengeType === challengeTypes.backEndProject &&
+      !completedChallenge.githubLink)
+  ) {
     return res.status(403).json({
       type: 'error',
       message:

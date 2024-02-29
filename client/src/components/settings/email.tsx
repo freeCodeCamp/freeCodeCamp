@@ -161,9 +161,7 @@ function EmailSettings({
   }
   return (
     <div className='email-settings'>
-      <SectionHeader dataPlaywrightTestLabel='email-settings-header'>
-        {t('settings.email.heading')}
-      </SectionHeader>
+      <SectionHeader>{t('settings.email.heading')}</SectionHeader>
       {isEmailVerified ? null : (
         <FullWidthRow>
           <HelpBlock>
@@ -194,22 +192,22 @@ function EmailSettings({
         >
           <FormGroup controlId='current-email'>
             <ControlLabel>{t('settings.email.current')}</ControlLabel>
-            <FormControl.Static data-playwright-test-label='current-email'>
-              {currentEmail}
-            </FormControl.Static>
+            <FormControl.Static>{currentEmail}</FormControl.Static>
           </FormGroup>
           <div role='group' aria-label={t('settings.email.heading')}>
             <FormGroup
               controlId='new-email'
               validationState={newEmailValidation}
             >
-              <ControlLabel>{t('settings.email.new')}</ControlLabel>
+              <ControlLabel htmlFor='new-email-input'>
+                {t('settings.email.new')}
+              </ControlLabel>
               <FormControl
                 data-cy='email-input'
-                data-playwright-test-label='new-email-input'
                 onChange={createHandleEmailFormChange('newEmail')}
                 type='email'
                 value={newEmail}
+                id='new-email-input'
               />
               {newEmailValidationMessage ? (
                 <HelpBlock data-cy='validation-message'>
@@ -221,13 +219,15 @@ function EmailSettings({
               controlId='confirm-email'
               validationState={confirmEmailValidation}
             >
-              <ControlLabel>{t('settings.email.confirm')}</ControlLabel>
+              <ControlLabel htmlFor='confirm-email-input'>
+                {t('settings.email.confirm')}
+              </ControlLabel>
               <FormControl
                 data-cy='confirm-email'
-                data-playwright-test-label='confirm-email-input'
                 onChange={createHandleEmailFormChange('confirmNewEmail')}
                 type='email'
                 value={confirmNewEmail}
+                id='confirm-email-input'
               />
               {confirmEmailValidationMessage ? (
                 <HelpBlock data-cy='validation-message'>
@@ -237,7 +237,6 @@ function EmailSettings({
             </FormGroup>
           </div>
           <BlockSaveButton
-            data-playwright-test-label='save-email-button'
             aria-disabled={isDisabled}
             bgSize='lg'
             {...(isDisabled && { tabIndex: -1 })}
@@ -254,9 +253,7 @@ function EmailSettings({
           flag={sendQuincyEmail}
           flagName='sendQuincyEmail'
           offLabel={t('buttons.no-thanks')}
-          dataPlaywrightTestOffLabel='no-thanks-button'
           onLabel={t('buttons.yes-please')}
-          dataPlaywrightTestOnLabel='yes-please-button'
           toggleFlag={() => updateQuincyEmail(!sendQuincyEmail)}
         />
       </FullWidthRow>

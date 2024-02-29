@@ -8,15 +8,15 @@ dashedName: build-a-25--5-clock
 
 # --description--
 
-**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
+**Hinweis:** **React 18 weist bekannte Inkompatibilitäten mit den Tests für dieses Projekt auf (siehe [Problem](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**.
 
 **Objective:** Build an app that is functionally similar to this: <a href="https://25--5-clock.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://25--5-clock.freecodecamp.rocks</a>.
 
-Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
+Erfülle die untenstehenden User Stories und bestehe die Tests. Use whichever libraries or APIs you need. Gib dem Ganzen deinen persönlichen Stil.
 
-You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
+You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. Wir erwägen die Unterstützung weiterer Frontend-Frameworks wie Angular und Vue, aber derzeit werden sie noch nicht unterstützt. Wir nehmen gerne Fehlermeldungen an, die den vorgeschlagenen Technologiestack für dieses Projekt verwenden, und versuchen sie zu beheben. Viel Spaß beim Programmieren!
 
-**User Story #1:** I can see an element with `id="break-label"` that contains a string (e.g. "Break Length").
+**User Story #1:** Ich kann ein Element mit `id="break-label"` sehen, das einen String enthält (z. B. "Break Length").
 
 **User Story #2:** I can see an element with `id="session-label"` that contains a string (e.g. "Session Length").
 

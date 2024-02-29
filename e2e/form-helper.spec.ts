@@ -83,7 +83,7 @@ test.describe('Test form with solution link and github link', () => {
     );
     await expect(githubLinkInputLabel).toBeVisible();
     await expect(githubLinkInputLabel).toHaveText(
-      translations.learn['github-link']
+      translations.learn['source-code-link']
     );
 
     const githubLinkInput = solutionForm.getByTestId('githubLink-form-control');
@@ -91,6 +91,12 @@ test.describe('Test form with solution link and github link', () => {
 
     // The form submit button should be enabled as the form is now filled
     await solutionLinkInput.fill('test-input');
+    await expect(solutionFormButton).toBeEnabled();
+
+    // The form submit button should be enabled as the GitHub link is now filled
+    await solutionLinkInput.fill('');
+    await expect(solutionFormButton).toBeDisabled();
+    await githubLinkInput.fill('test-input');
     await expect(solutionFormButton).toBeEnabled();
   });
 });

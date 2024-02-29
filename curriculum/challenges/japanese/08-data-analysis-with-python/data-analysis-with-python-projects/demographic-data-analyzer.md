@@ -8,12 +8,7 @@ dashedName: demographic-data-analyzer
 
 # --description--
 
-<a href="https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer" target="_blank" rel="noopener noreferrer nofollow">このプロジェクトには Replit スターターコードを使用して取り組んでください</a>。
-
--   まず、Replit でプロジェクトをインポートします。
--   すると、`.replit` ファイルのウィンドウが表示されます。
--   `Use run command` を選択して `Done` ボタンをクリックします。
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-demographic-data-analyzer/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 Python カリキュラムの対話式教育コンテンツを引き続き開発中です。 現在、下記の freeCodeCamp.org YouTube チャンネルで、このプロジェクトの完了に必要なすべての知識について説明する動画をいくつか公開しています。
 
@@ -47,17 +42,15 @@ Pandas を使用して次の問いに答える必要があります。
 - >50K (50K を超える額) を稼いでいる人の割合が最も高い国はどこですか？その割合は何パーセントですか？
 - インドで >50K を稼いでいる人に最も人気のある職業を特定してください。
 
-ファイル `demographic_data_analyzer` のスターターコードを使用してください。 "None" に設定されているすべての変数が適切な計算またはコードに設定されるように、コードを更新してください。 小数はすべて最も近い小数点以下 1 桁に丸めてください。
-
-`test_module.py` の下に単体テストが記述してあります。
+Use the starter code in the file `demographic_data_analyzer.py`. Update the code so all variables set to `None` are set to the appropriate calculation or code. 小数はすべて最も近い小数点以下 1 桁に丸めてください。
 
 ## 開発
 
-開発には `main.py` を使用して関数をテストすることができます。 「実行」ボタンをクリックすると `main.py` が実行されます。
+Write your code in `demographic_data_analyzer.py`. For development, you can use `main.py` to test your code.
 
 ## テスト
 
-すでに `test_module.py` から `main.py` にテストをインポートしてあります。 「実行」ボタンを押すと自動的にテストが実行されます。
+The unit tests for this project are in `test_module.py`. すでに `test_module.py` から `main.py` にテストをインポートしてあります。
 
 ## 提出
 

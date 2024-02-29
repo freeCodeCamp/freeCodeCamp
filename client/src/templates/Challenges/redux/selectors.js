@@ -31,6 +31,7 @@ export const isResetModalOpenSelector = state => state[ns].modal.reset;
 export const isExitExamModalOpenSelector = state => state[ns].modal.exitExam;
 export const isFinishExamModalOpenSelector = state =>
   state[ns].modal.finishExam;
+export const isSurveyModalOpenSelector = state => state[ns].modal.survey;
 export const isExamResultsModalOpenSelector = state =>
   state[ns].modal.examResults;
 export const isProjectPreviewModalOpenSelector = state =>
@@ -88,6 +89,7 @@ export const challengeDataSelector = state => {
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
     challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
     challengeType === challengeTypes.python
   ) {
     const { required = [], template = '' } = challengeMetaSelector(state);

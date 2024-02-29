@@ -1,6 +1,6 @@
 ---
 id: 5900f4051000cf542c50ff18
-title: 'Problem 153: Investigating Gaussian Integers'
+title: '問題 153: ガウス整数を調べ上げる'
 challengeType: 1
 forumTopicId: 301784
 dashedName: problem-153-investigating-gaussian-integers
@@ -8,57 +8,57 @@ dashedName: problem-153-investigating-gaussian-integers
 
 # --description--
 
-As we all know the equation $x^2 = -1$ has no solutions for real $x$.
+式 $x^2 = -1$ が実数 $x$ に対する解を持たないことは周知のとおりです。
 
-If we however introduce the imaginary number $i$ this equation has two solutions: $x = i$ and $x = -i$.
+しかし虚数 $i$ を導入すると、この式は 2 つの解を持ちます。$x = i$ と $x = -i$ です。
 
-If we go a step further the equation ${(x - 3)}^2 = -4$ has two complex solutions: $x = 3 + 2i$ and $x = 3 - 2i$, which are called each others' complex conjugate.
+さらに一歩進めると、式 ${(x - 3)}^2 = -4$ は 2 つの複素数の解を持ちます。$x = 3 + 2i$ と $x = 3 - 2i$ です。これらは互いの共役複素数と呼ばれます。
 
-Numbers of the form $a + bi$ are called complex numbers.
+$a + bi$ の形式で表される数は複素数と呼ばれます。
 
-In general $a + bi$ and $a − bi$ are each other's complex conjugate. A Gaussian Integer is a complex number $a + bi$ such that both $a$ and $b$ are integers.
+一般に、$a + bi$ と $a − bi$ は互いに共役複素数です。 ガウス整数とは、$a$ と $b$ の両方が整数である複素数 $a + bi$ です。
 
-The regular integers are also Gaussian integers (with $b = 0$).
+普通の整数はガウス整数 ($b = 0$ の場合) でもあります。
 
-To distinguish them from Gaussian integers with $b ≠ 0$ we call such integers "rational integers."
+$b ≠ 0$ であるガウス整数と区別するために、普通の整数を「有理整数」と呼びます。
 
-A Gaussian integer is called a divisor of a rational integer $n$ if the result is also a Gaussian integer.
+有理整数 $n$ をガウス整数で割った結果もガウス整数である場合、有理整数を割った方のガウス整数を約数 (divisor) と呼びます。
 
-If for example we divide 5 by $1 + 2i$ we can simplify in the following manner:
+例えば、5 を $1 + 2i$ で割る場合は次のように簡略化できます。
 
-Multiply numerator and denominator by the complex conjugate of $1 + 2i$: $1 − 2i$.
+分子と分母に $1 + 2i$ の共役複素数 ($1 − 2i$) を乗じます。
 
-The result is:
+結果:
 
 $$\frac{5}{1 + 2i} = \frac{5}{1 + 2i} \frac{1 - 2i}{1 - 2i} = \frac{5(1 - 2i)}{1 - {(2i)}^2} = \frac{5(1 - 2i)}{1 - (-4)} = \frac{5(1 - 2i)}{5} = 1 - 2i$$
 
-So $1 + 2i$ is a divisor of 5.
+したがって、$1 + 2i$ は 5 の約数です。
 
-Note that $1 + i$ is not a divisor of 5 because:
+$1 + i$ が 5 の約数ではないことに注意してください。理由を次に示します。
 
 $$\frac{5}{1 + i} = \frac{5}{2} - \frac{5}{2}i$$
 
-Note also that if the Gaussian Integer ($a + bi$) is a divisor of a rational integer $n$, then its complex conjugate ($a − bi$) is also a divisor of $n$. In fact, 5 has six divisors such that the real part is positive: {1, 1 + 2i, 1 − 2i, 2 + i, 2 − i, 5}.
+また、ガウス整数 ($a + bi$) が有理整数 $n$ の約数である場合、その共役複素数 ($a − bi$) も $n$ の約数であることに注意してください。 実際、5 は 実部が正である約数を 6 つ持ち、それらは {1, 1 + 2i, 1 − 2i, 2 + i, 2 − i, 5} です。
 
-The following is a table of all of the divisors for the first five positive rational integers:
+下表は、最初の 5 つの正の有理整数の約数を示しています。
 
-| n | Gaussian integer divisors with positive real part | Sum s(n) of these divisors |
-| - | ------------------------------------------------- | -------------------------- |
-| 1 | 1                                                 | 1                          |
-| 2 | 1, 1 + i, 1 - i, 2                                | 5                          |
-| 3 | 1, 3                                              | 4                          |
-| 4 | 1, 1 + i, 1 - i, 2, 2 + 2i, 2 - 2i, 4             | 13                         |
-| 5 | 1, 1 + 2i, 1 - 2i, 2 + i, 2 - i, 5                | 12                         |
+| n | 実部が正であるガウス整数の約数                       | 約数の和 s(n) |
+| - | ------------------------------------- | --------- |
+| 1 | 1                                     | 1         |
+| 2 | 1, 1 + i, 1 - i, 2                    | 5         |
+| 3 | 1, 3                                  | 4         |
+| 4 | 1, 1 + i, 1 - i, 2, 2 + 2i, 2 - 2i, 4 | 13        |
+| 5 | 1, 1 + 2i, 1 - 2i, 2 + i, 2 - i, 5    | 12        |
 
-For divisors with positive real parts, then, we have: $\displaystyle\sum_{n=1}^5 s(n) = 35$.
+これにより、実部が正である約数について $\displaystyle\sum_{n=1}^5 (n) = 35$ が得られます。
 
-For $1 ≤ n ≤ {10}^5$, $\displaystyle\sum_{n = 1}^{{10}^5} s(n) = 17924657155$.
+$1 ≤ n ≤ {10}^5$ のとき、$\displaystyle\sum_{n = 1}^{{10}^5} s(n) = 17924657155$ です。
 
-What is $\displaystyle\sum_{n=1}^{{10}^8} s(n)$?
+$\displaystyle\sum_{n=1}^{{10}^8} s(n)$ を求めなさい。
 
 # --hints--
 
-`sumGaussianIntegers()` should return `17971254122360636`.
+`sumGaussianIntegers()` は `17971254122360636` を返す必要があります。
 
 ```js
 assert.strictEqual(sumGaussianIntegers(), 17971254122360636);

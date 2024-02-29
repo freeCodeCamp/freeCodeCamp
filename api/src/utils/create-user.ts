@@ -18,6 +18,7 @@ export function createUserInput(email: string): Prisma.userCreateInput {
     about: '',
     acceptedPrivacyTerms: false,
     completedChallenges: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
+    completedExams: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
     currentChallengeId: '',
     donationEmails: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
     email,
@@ -33,6 +34,7 @@ export function createUserInput(email: string): Prisma.userCreateInput {
     isDataAnalysisPyCertV7: false,
     isDataVisCert: false,
     isDonating: false,
+    isFoundationalCSharpCertV8: false,
     isFrontEndCert: false,
     isFrontEndLibsCert: false,
     isFullStackCert: false,

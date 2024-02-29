@@ -2,6 +2,53 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import links from '../client/i18n/locales/english/links.json';
 
+const BOTTOM_LINKS = [
+  {
+    title: translations.footer.links.about,
+    href: links.footer['about-url']
+  },
+  {
+    title: translations.footer.links.alumni,
+    href: 'https://www.linkedin.com/school/free-code-camp/people/'
+  },
+  {
+    title: translations.footer.links['open-source'],
+    href: 'https://github.com/freeCodeCamp/'
+  },
+  {
+    title: translations.footer.links.shop,
+    href: links.footer['shop-url']
+  },
+  {
+    title: translations.footer.links.support,
+    href: links.footer['support-url']
+  },
+  {
+    title: translations.footer.links.sponsors,
+    href: links.footer['sponsors-url']
+  },
+  {
+    title: translations.footer.links.honesty,
+    href: links.footer['honesty-url']
+  },
+  {
+    title: translations.footer.links.coc,
+    href: links.footer['coc-url']
+  },
+  {
+    title: translations.footer.links.privacy,
+    href: links.footer['privacy-url']
+  },
+  {
+    title: translations.footer.links.tos,
+    href: links.footer['tos-url']
+  },
+  {
+    title: translations.footer.links.copyright,
+    href: links.footer['copyright-url']
+  }
+];
+
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
@@ -34,7 +81,7 @@ test.describe('Footer Trending Guides section', () => {
     ).toBeVisible();
 
     const articles = await page
-      .getByTestId('trending-guides-articles')
+      .getByRole('list', { name: translations.footer['trending-guides'] })
       .getByRole('link')
       .all();
 
@@ -46,109 +93,69 @@ test.describe('Footer Trending Guides section', () => {
   });
 });
 
-test.describe('Footer bottom links', () => {
-  test('should display correct link to about us page', async ({ page }) => {
-    const link = page.getByRole('link', {
-      name: translations.footer.links.about
-    });
+test.describe('Footer mobile app section', () => {
+  test('should render the download links correctly', async ({ page }) => {
+    await expect(
+      page.getByRole('heading', {
+        level: 2,
+        name: translations.footer['mobile-app']
+      })
+    ).toBeVisible();
 
-    await expect(link).toBeVisible();
-    await expect(link).toHaveAttribute('href', links.footer['about-url']);
-  });
+    const downloadLinks = await page
+      .getByRole('list', { name: translations.footer['mobile-app'] })
+      .getByRole('listitem')
+      .all();
 
-  test('should display correct link to alumni page', async ({ page }) => {
-    const link = page.getByRole('link', {
-      name: translations.footer.links.alumni
-    });
+    expect(downloadLinks).toHaveLength(2);
 
-    await expect(link).toBeVisible();
-    await expect(link).toHaveAttribute(
+    const appleStoreLink = downloadLinks[0];
+
+    await expect(
+      appleStoreLink.getByRole('img', { name: 'Download on the App Store' })
+    ).toBeVisible();
+    await expect(
+      appleStoreLink.getByRole('link', { name: 'Download on the App Store' })
+    ).toBeVisible();
+    await expect(
+      appleStoreLink.getByRole('link', { name: 'Download on the App Store' })
+    ).toHaveAttribute(
       'href',
-      'https://www.linkedin.com/school/free-code-camp/people/'
+      'https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200'
+    );
+
+    const googlePlayLink = downloadLinks[1];
+
+    await expect(
+      googlePlayLink.getByRole('img', { name: 'Get it on Google Play' })
+    ).toBeVisible();
+    await expect(
+      googlePlayLink.getByRole('link', { name: 'Get it on Google Play' })
+    ).toBeVisible();
+    await expect(
+      googlePlayLink.getByRole('link', { name: 'Get it on Google Play' })
+    ).toHaveAttribute(
+      'href',
+      'https://play.google.com/store/apps/details?id=org.freecodecamp'
     );
   });
+});
 
-  test('should display correct link to open-source page', async ({ page }) => {
-    const link = page.getByRole('link', {
-      name: translations.footer.links['open-source']
-    });
+test.describe('Footer bottom section', () => {
+  test('should display the content correctly', async ({ page, isMobile }) => {
+    if (isMobile) {
+      await expect(
+        page.getByRole('heading', {
+          name: translations.footer['our-nonprofit']
+        })
+      ).toBeVisible();
+    }
 
-    await expect(link).toBeVisible();
-    await expect(link).toHaveAttribute(
-      'href',
-      'https://github.com/freeCodeCamp/'
-    );
-  });
+    for (const item of BOTTOM_LINKS) {
+      const link = page.getByRole('link', { name: item.title });
 
-  test('should display correct link to shop', async ({ page }) => {
-    const link = page.getByRole('link', {
-      name: translations.footer.links.shop
-    });
-
-    await expect(link).toBeVisible();
-    await expect(link).toHaveAttribute('href', links.footer['shop-url']);
-  });
-
-  test('should display correct link to support page', async ({ page }) => {
-    const link = page.getByRole('link', {
-      name: translations.footer.links.support
-    });
-
-    await expect(link).toBeVisible();
-    await expect(link).toHaveAttribute('href', links.footer['support-url']);
-  });
-
-  test('should display correct link to sponsors page', async ({ page }) => {
-    const link = page.getByRole('link', {
-      name: translations.footer.links.sponsors
-    });
-
-    await expect(link).toBeVisible();
-    await expect(link).toHaveAttribute('href', links.footer['sponsors-url']);
-  });
-
-  test('should display correct link to honesty page', async ({ page }) => {
-    const link = page.getByRole('link', {
-      name: translations.footer.links.honesty
-    });
-
-    await expect(link).toBeVisible();
-    await expect(link).toHaveAttribute('href', links.footer['honesty-url']);
-  });
-
-  test('should display correct link to coc page', async ({ page }) => {
-    const link = page.getByRole('link', {
-      name: translations.footer.links.coc
-    });
-
-    await expect(link).toBeVisible();
-    await expect(link).toHaveAttribute('href', links.footer['coc-url']);
-  });
-
-  test('should display correct link to privacy page', async ({ page }) => {
-    const link = page.getByRole('link', {
-      name: translations.footer.links.privacy
-    });
-
-    await expect(link).toBeVisible();
-    await expect(link).toHaveAttribute('href', links.footer['privacy-url']);
-  });
-
-  test('should display correct link to tos page', async ({ page }) => {
-    const link = page.getByRole('link', {
-      name: translations.footer.links.tos
-    });
-
-    await expect(link).toBeVisible();
-    await expect(link).toHaveAttribute('href', links.footer['tos-url']);
-  });
-
-  test('should display correct link to copyright page', async ({ page }) => {
-    const link = page.getByRole('link', {
-      name: translations.footer.links.copyright
-    });
-
-    await expect(link).toBeVisible();
-    await expect(link).toHaveAttribute('href', links.footer['copyright-url']);
+      await expect(link).toBeVisible();
+      await expect(link).toHaveAttribute('href', item.href);
+    }
   });
 });

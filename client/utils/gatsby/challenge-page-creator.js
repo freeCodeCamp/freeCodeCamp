@@ -49,6 +49,16 @@ const msTrophy = path.resolve(
   '../../src/templates/Challenges/ms-trophy/show.tsx'
 );
 
+const dialogue = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/dialogue/show.tsx'
+);
+
+const fillInTheBlank = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/fill-in-the-blank/show.tsx'
+);
+
 const views = {
   backend,
   classic,
@@ -58,7 +68,9 @@ const views = {
   codeAlly,
   odin,
   exam,
-  msTrophy
+  msTrophy,
+  dialogue,
+  fillInTheBlank
   // quiz: Quiz
 };
 
@@ -158,6 +170,7 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
       challengeOrder === 0 &&
       usesMultifileEditor &&
       challengeType !== challengeTypes.multifileCertProject &&
+      challengeType !== challengeTypes.multifilePythonCertProject &&
       // TODO: revert this to enable project previews for python challenges
       challengeType !== challengeTypes.python,
     challengeData: {

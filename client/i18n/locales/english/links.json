@@ -16,18 +16,25 @@
     "other-ways-url": "https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp",
     "download-irs-url": "https://s3.amazonaws.com/freecodecamp/Free+Code+Camp+Inc+IRS+Determination+Letter.pdf",
     "download-990-url": "https://freecodecamp.s3.amazonaws.com/freeCodeCamp+2019+f990.pdf",
-    "one-time-url": "https://paypal.me/freecodecamp"
+    "one-time-url": "https://paypal.me/freecodecamp",
+    "one-time-external-url": "https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp/#how-can-i-make-a-one-time-donation",
+    "mail-check-url": "https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp/#can-i-mail-a-physical-check"
   },
   "nav": {
     "contribute": "https://contribute.freecodecamp.org/#/",
     "forum": "https://forum.freecodecamp.org/",
-    "news": "https://freecodecamp.org/news/"
+    "news": "https://freecodecamp.org/news/",
+    "podcast": "https://freecodecamp.libsyn.com/"
   },
   "help": {
     "HTML-CSS": "HTML-CSS",
     "JavaScript": "JavaScript",
     "Python": "Python",
     "Backend Development": "Backend Development",
-    "C-Sharp": "C-Sharp"
+    "C-Sharp": "C-Sharp",
+    "English": "English",
+    "Odin": "The Odin Project",
+    "Euler": "Project Euler",
+    "Rosetta": "Rosetta Code"
   }
 }

@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
   binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
 }
 
@@ -26,6 +26,7 @@ type CompletedChallenge {
   id                 String
   isManuallyApproved Boolean? // Undefined
   solution           String? // Null | Undefined
+  examResults        ExamResults? // Undefined
 }
 
 type PartiallyCompletedChallenge {
@@ -79,6 +80,7 @@ model user {
   acceptedPrivacyTerms         Boolean
   // badges    Json? // Undefined | { coreTeam [][] } removed, as new API never uses it.
   completedChallenges          CompletedChallenge[]
+  completedExams               CompletedExam[] // Undefined
   currentChallengeId           String?
   donationEmails               String[] // Undefined | String[] (only possible for built in Types like String)
   email                        String
@@ -95,6 +97,7 @@ model user {
   isDataAnalysisPyCertV7       Boolean? // Undefined
   isDataVisCert                Boolean? // Undefined
   isDonating                   Boolean
+  isFoundationalCSharpCertV8   Boolean? // Undefined
   isFrontEndCert               Boolean? // Undefined
   isFrontEndLibsCert           Boolean? // Undefined
   isFullStackCert              Boolean? // Undefined
@@ -102,6 +105,7 @@ model user {
   isInfosecCertV7              Boolean? // Undefined
   isInfosecQaCert              Boolean? // Undefined
   isJsAlgoDataStructCert       Boolean? // Undefined
+  isJsAlgoDataStructCertV8     Boolean? // Undefined
   isMachineLearningPyCertV7    Boolean? // Undefined
   isQaCertV7                   Boolean? // Undefined
   isRelationalDatabaseCertV8   Boolean? // Undefined
@@ -110,6 +114,7 @@ model user {
   is2018DataVisCert            Boolean? // Undefined
   is2018FullStackCert          Boolean? // Undefined
   isCollegeAlgebraPyCertV8     Boolean? // Undefined
+  isUpcomingPythonCertV8     Boolean? // Undefined
   keyboardShortcuts            Boolean? // Undefined
   linkedin                     String? // Null | Undefined
   location                     String? // Null
@@ -195,6 +200,15 @@ model sessions {
   @@index([expires], map: "expires_1")
 }
 
+model MsUsername {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  userId     String @db.ObjectId
+  ttl        Int
+  msUsername String
+
+  @@index([userId, id], map: "userId_1__id_1")
+}
+
 model Exam {
   id                      String         @id @map("_id") @db.ObjectId
   numberOfQuestionsInExam Int            @db.Int
@@ -202,6 +216,22 @@ model Exam {
   prerequisites           Prerequisite[] // undefined | Prerequisite[]
   title                   String
   questions               Question[]
+}
+
+type CompletedExam {
+  id            String
+	challengeType Int
+	completedDate Float // TODO(Post-MVP): Change to DateTime?
+	examResults		ExamResults
+}
+
+type ExamResults {
+	numberOfCorrectAnswers  Int
+	numberOfQuestionsInExam Int
+	percentCorrect          Float
+	passingPercent          Int
+	passed                  Boolean
+	examTimeInSeconds       Int
 }
 
 type Question {

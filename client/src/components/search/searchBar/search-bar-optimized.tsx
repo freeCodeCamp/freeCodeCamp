@@ -19,6 +19,9 @@ const SearchBarOptimized = ({
     event.preventDefault();
     if (value && value.length > 1) {
       window.open(`${searchUrl}?query=${encodeURIComponent(value)}`, '_blank');
+      setValue('');
+      // Blur the input to remove the selection
+      inputElementRef.current?.blur();
     }
   };
   const onClick = () => {
@@ -54,11 +57,7 @@ const SearchBarOptimized = ({
               value={value}
               ref={inputElementRef}
             />
-            <button
-              className='ais-SearchBox-submit'
-              type='submit'
-              data-playwright-test-label='fcc-search-button'
-            >
+            <button className='ais-SearchBox-submit' type='submit'>
               <Magnifier />
             </button>
             {value && (
@@ -66,7 +65,6 @@ const SearchBarOptimized = ({
                 className='ais-SearchBox-reset'
                 onClick={onClick}
                 type='button'
-                data-playwright-test-label='fcc-search-clear'
               >
                 <InputReset />
               </button>
