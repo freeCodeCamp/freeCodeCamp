@@ -352,7 +352,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           challengeType === challengeTypes.multifileCertProject ||
           challengeType === challengeTypes.multifilePythonCertProject
         ) {
-          completedChallenge.isManuallyApproved = true;
+          completedChallenge.isManuallyApproved = false;
           user.needsModeration = true;
         }
 
