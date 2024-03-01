@@ -10,7 +10,7 @@ Increasing or decreasing a number by one is among the most common numerical oper
 
 So, there are special operators for it:
 
-- Increment ++ increases a variable by 1:
+- Increment `++` increases a variable by 1:
 
 ```js
 let counter = 2;
@@ -21,7 +21,7 @@ counter++;
 console.log(counter); // 3
 ```
 
-- Decrement -- decreases a variable by 1:
+- Decrement `--` decreases a variable by 1:
 
 ```js
 let counter = 2;
@@ -62,8 +62,7 @@ let counter = 0;
 counter++;
 ++counter;
 
-// 2, the lines above did the same
-console.log( counter );
+console.log( counter ); // 2, the lines above did the same
 ```
 
 - If we’d like to increase a value and immediately use the result of the operator, you need the prefix form:
@@ -100,15 +99,15 @@ There is no difference; both alert statements will show the same result.
 
 ---
 
-Statement A will log 4 because `++counter` increments the value before the multiplication. Statement B will log 2 because `counter++` increments the value after the multiplication.
+Statement A will log `4` because `++counter` increments the value before the multiplication. Statement B will log `2` because `counter++` increments the value after the multiplication.
 
 ---
 
-Statement A will log 2 because `++counter` is a syntax error. Statement B will log 4 because `counter++` is the correct way to increment a counter.
+Statement A will log `2` because `++counter` is a syntax error. Statement B will log `4` because `counter++` is the correct way to increment a counter.
 
 ---
 
-Both statements will log 3 because the counter is incremented in both cases before the `console.log`.
+Both statements will log `3` because the counter is incremented in both cases before the `console.log`.
 
 
 ## --video-solution--

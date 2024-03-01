@@ -74,7 +74,7 @@ console.log('3' + 2 - 1);
 
 ---
 
-`31`, because + concatenates `'3'` and `2` into `'32'`, then `-` subtracts `1` to result in `31`.
+`31`, because `+` concatenates `'3'` and `2` into `'32'`, then `-` subtracts `1` to result in `31`.
 
 
 ## --video-solution--
