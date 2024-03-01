@@ -77,7 +77,8 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
       const user = await fastify.prisma.user.findUnique({
         where: { id: userId }
       });
-      req.user = user ?? undefined;
+      if (!user) return send401(reply, TOKEN_INVALID);
+      req.user = user;
     }
   );
 

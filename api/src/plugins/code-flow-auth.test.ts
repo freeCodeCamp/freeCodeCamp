@@ -134,14 +134,34 @@ describe('auth', () => {
       expect(res.statusCode).toBe(401);
     });
 
-    it.todo('should reject if the user is not found');
+    it('should reject if the user is not found', async () => {
+      // @ts-expect-error prisma isn't defined, since we're not building the
+      // full application here.
+      fastify.prisma = { user: { findUnique: () => null } };
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123') },
+        JWT_SECRET
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        cookies: {
+          jwt_access_token: signCookie(token)
+        }
+      });
+
+      expect(res.json()).toEqual({
+        type: 'info',
+        message: 'Your access token is invalid'
+      });
+    });
 
     it('should populate the request with the user if the token is valid', async () => {
       const fakeUser = { id: '123', username: 'test-user' };
       // @ts-expect-error prisma isn't defined, since we're not building the
       // full application here.
       fastify.prisma = { user: { findUnique: () => fakeUser } };
-
       fastify.get('/test-user', req => {
         return { user: req.user };
       });
@@ -157,6 +177,7 @@ describe('auth', () => {
           jwt_access_token: signCookie(token)
         }
       });
+
       expect(res.json()).toEqual({ user: fakeUser });
     });
   });
