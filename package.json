@@ -69,7 +69,6 @@
     "reload:server": "pm2 reload api-server/ecosystem.config.js",
     "preseed": "npm-run-all create:shared",
     "playwright:install-build-tools": "npx playwright install --with-deps",
-    "playwright:install-build-tools-linux": "sh ./playwright-install.sh",
     "rename-challenges": "ts-node tools/challenge-helper-scripts/rename-challenge-files.ts",
     "seed": "pnpm seed:surveys && pnpm seed:exams && cross-env DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user",
     "seed:certified-user": "pnpm seed:surveys && pnpm seed:exams && pnpm seed:ms-username && cross-env DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user certified-user",
