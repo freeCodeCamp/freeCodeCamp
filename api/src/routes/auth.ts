@@ -145,7 +145,7 @@ export const devLegacyAuthRoutes: FastifyPluginCallback = (
     const { id } = await findOrCreateUser(fastify, email);
 
     reply.setAccessTokenCookie(createAccessToken(id));
-    const referer = req.getValidReferrer();
+    const referer = req.validateReferrer();
     await reply.redirect(referer ?? new URL('learn', HOME_LOCATION).href);
   });
 
@@ -154,7 +154,7 @@ export const devLegacyAuthRoutes: FastifyPluginCallback = (
     void reply.clearCookie('csrf_token');
     void reply.clearCookie('_csrf');
 
-    const referer = req.getValidReferrer();
+    const referer = req.validateReferrer();
     await reply.redirect(referer ?? HOME_LOCATION);
   });
   done();

@@ -17,7 +17,7 @@ declare module 'fastify' {
   }
 
   interface FastifyRequest {
-    getValidReferrer: (this: FastifyRequest) => string | null;
+    validateReferrer: (this: FastifyRequest) => string | null;
     // TODO: is the full user the correct type here?
     user?: user;
   }
@@ -89,7 +89,7 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
     return new URL(pathname, origin).href;
   };
 
-  fastify.decorateRequest('getValidReferrer', function (): string | null {
+  fastify.decorateRequest('validateReferrer', function (): string | null {
     const referer = this.headers.referer;
     let origin = null;
     try {

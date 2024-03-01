@@ -184,12 +184,12 @@ describe('auth', () => {
 
   // NOTE: fastify.inject handles all the mocking, but we need a way to access
   // the system under test. Reply.send is just there so that we can assert
-  // what getValidReferrer returns.
-  describe('getValidReferrer', () => {
+  // what validateReferrer returns.
+  describe('validateReferrer', () => {
     const fCCDotOrg = 'https://www.freecodecamp.org/';
     beforeEach(() => {
       fastify.get('/test', async (req, reply) => {
-        void reply.send({ referrer: req.getValidReferrer() });
+        void reply.send({ referrer: req.validateReferrer() });
       });
     });
 
