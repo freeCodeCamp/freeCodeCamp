@@ -348,10 +348,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           completedDate: Date.now()
         };
 
-        if (
-          challengeType === challengeTypes.multifileCertProject ||
-          challengeType === challengeTypes.multifilePythonCertProject
-        ) {
+        if (challengeType === challengeTypes.multifileCertProject) {
           completedChallenge.isManuallyApproved = false;
           user.needsModeration = true;
         }
