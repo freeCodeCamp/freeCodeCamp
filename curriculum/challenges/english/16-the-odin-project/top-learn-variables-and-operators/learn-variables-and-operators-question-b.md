@@ -6,28 +6,57 @@ dashedName: learn-variables-and-operators-question-b
 ---
 # --description--
 
+You can think of variables as “storage containers” for data in your code.
+
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/d39eaf2ca95e80705f703bb218216c10508f5047/foundations/javascript_basics/fundamentals-1/imgs/00.png" alt='the concept of variables in coding as boxes labeled "birthday" that store and provide access to data, specifically a date "16-09-2003"'>
+
+A variable is a “named storage” for data. We can use variables to store goodies, visitors, and other data.
+
+To create a variable in JavaScript, use the `let` keyword.
+
+The statement below creates (in other words: declares) a variable with the name “message”:
+
+```js
+let message;
+```
+
+Now, we can put some data into it by using the assignment operator `=`:
+
+```js
+let message;
+
+// store the string 'Hello' in the variable named message
+message = 'Hello'; 
+```
+
+To be concise, we can combine the variable declaration and assignment into a single line:
+
+```js
+let message = 'Hello';
+```
+
 
 # --question--
 
 ## --text--
 
-Which statement accurately describes how to include JavaScript in an HTML document?
+What is the purpose of using the `let` keyword in JavaScript?
 
 ## --answers--
 
-JavaScript can only be included internally within a `<script>` tag in the HTML body.
+To perform mathematical operations.
 
 ---
 
-JavaScript code must be written in the `<head>` section of an HTML document for it to execute properly.
+To declare a constant value that cannot be changed.
 
 ---
 
-JavaScript can be included directly in an HTML file using a `<script>` tag or linked externally via a `<script src="javascript.js">` tag. 
+To declare a variable that can store data, which can be assigned and changed.
 
 ---
 
-External JavaScript files require a special attribute in the `<script>` tag to be recognized by web browsers.
+To create a function.
 
 
 ## --video-solution--
