@@ -21,6 +21,7 @@ import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isGridBased, isProjectBased } from '../../../utils/curriculum-layout';
 import Challenges from './challenges';
+
 import '../intro.css';
 
 const { curriculumLocale, showUpcomingChanges, showNewCurriculum } = envData;

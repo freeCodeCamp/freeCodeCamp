@@ -89,7 +89,7 @@ const schema = Joi.object()
     challengeOrder: Joi.number(),
     removeComments: Joi.bool().required(),
     certification: Joi.string().regex(slugWithSlashRE),
-    challengeType: Joi.number().min(0).max(22).required(),
+    challengeType: Joi.number().min(0).max(23).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),

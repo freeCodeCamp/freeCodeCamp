@@ -8,7 +8,7 @@ dashedName: gaussian-elimination
 
 # --description--
 
-Write a function to solve \\(Ax = b\\) using Gaussian elimination then backwards substitution.
+Escreva uma função para calcular \\(Ax = b\\) usando a eliminação gaussiana e, em seguida, a substituição reversa.
 
 \\(A\\) sendo uma matriz \\(n \\times n\\). Além disso, \\(x\\) e \\(b\\) são vetores \\(n\\) por 1.
 

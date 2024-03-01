@@ -8,7 +8,7 @@ dashedName: factors-of-a-mersenne-number
 
 # --description--
 
-A Mersenne number is a number in the form of <code>2<sup>P</sup>-1</code>.
+Um número de Mersenne é um número na forma de <code>2<sup>P</sup>-1</code>.
 
 Se `P` for primo, o número de Mersenne pode ser primo de Mersenne. (Se `P` não for primo, o número de Mersenne também não será primo.)
 
@@ -28,8 +28,8 @@ Remova a parte superior do expoente e, se for 1, multiplique `square` pela base 
 
 Use o resultado do módulo da última etapa como o valor inicial de `square` na próxima etapa:
 
-<pre>Remove   Optional
-square        top bit  multiply by 2  mod 47
+<pre>Remova   Opcional
+square        pte sup  multiplique 2  mod 47
 ------------  -------  -------------  ------
 1*1 = 1       1  0111  1*2 = 2           2
 2*2 = 4       0   111     no             4

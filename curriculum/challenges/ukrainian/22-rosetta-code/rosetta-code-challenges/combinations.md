@@ -8,11 +8,11 @@ dashedName: combinations
 
 # --description--
 
-Given non-negative integers `m` and `n`, generate all size `m` combinations of the integers from `0` (zero) to `n-1` in sorted order (each combination is sorted and the entire table is sorted).
+Вам дано невід’ємні цілі числа `m` та `n`. Згенеруйте `m` комбінацій всіх розмірів з цілих чисел від `0` (нуля) до `n-1` у відсортованому порядку (всі комбінації та таблиця мають бути відсортованими).
 
 **Наприклад:**
 
-`3` комб. `5` дає:
+Комбінаціями чисел `3` та `5` є:
 
 <pre>0 1 2
 0 1 3
@@ -34,13 +34,13 @@ Given non-negative integers `m` and `n`, generate all size `m` combinations of t
 assert(typeof combinations === 'function');
 ```
 
-Функція `combinations(3, 5)` повинна вертати `[[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 2, 3], [0, 2, 4], [0, 3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]`.
+`combinations(3, 5)` має повернути `[[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 2, 3], [0, 2, 4], [0, 3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]`.
 
 ```js
 assert.deepEqual(combinations(testInput1[0], testInput1[1]), testOutput1);
 ```
 
-Функція `combinations(4, 6)` повинна вертати `[[0,1,2,3], [0,1,2,4], [0,1,2,5], [0,1,3,4], [0,1,3,5], [0,1,4,5], [0,2,3,4], [0,2,3,5], [0,2,4,5], [0,3,4,5], [1,2,3,4], [1,2,3,5], [1,2,4,5], [1,3,4,5], [2,3,4,5]]`
+`combinations(4, 6)` має повернути `[[0,1,2,3], [0,1,2,4], [0,1,2,5], [0,1,3,4], [0,1,3,5], [0,1,4,5], [0,2,3,4], [0,2,3,5], [0,2,4,5], [0,3,4,5], [1,2,3,4], [1,2,3,5], [1,2,4,5], [1,3,4,5], [2,3,4,5]]`
 
 ```js
 assert.deepEqual(combinations(testInput2[0], testInput2[1]), testOutput2);

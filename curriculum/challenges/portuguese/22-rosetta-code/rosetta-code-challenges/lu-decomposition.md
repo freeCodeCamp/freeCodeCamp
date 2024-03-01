@@ -8,7 +8,7 @@ dashedName: lu-decomposition
 
 # --description--
 
-Every square matrix $A$ can be decomposed into a product of a lower triangular matrix $L$ and a upper triangular matrix $U$. This is known as the LU decomposition.
+Toda matriz quadrada $A$ pode ser decomposta em um produto de uma matriz triangular inferior $L$ e uma matriz triangular superior $U$. Essa é conhecida como a decomposição de LU.
 
 $A = LU$
 

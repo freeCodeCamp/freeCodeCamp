@@ -1,18 +1,18 @@
-import { Story } from '@storybook/react';
-import React from 'react';
-import { CloseButton, CloseButtonProps } from './close-button';
+import { Meta, StoryObj } from '@storybook/react';
+import { CloseButton } from './close-button';
 
 const story = {
   title: 'Example/CloseButton',
   component: CloseButton
-};
+} satisfies Meta<typeof CloseButton>;
 
-const Template: Story<CloseButtonProps> = args => <CloseButton {...args} />;
+type Story = StoryObj<typeof CloseButton>;
 
-export const Basic = Template.bind({});
-Basic.args = {
-  className: '',
-  label: ''
+export const Basic: Story = {
+  args: {
+    className: '',
+    label: ''
+  }
 };
 
 export default story;

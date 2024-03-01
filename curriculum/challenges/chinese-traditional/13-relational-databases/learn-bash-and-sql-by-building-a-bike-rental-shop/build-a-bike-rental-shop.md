@@ -3,7 +3,7 @@ id: 5f5b969a05380d2179fe6e18
 title: 構建一個自行車出租商店
 challengeType: 12
 helpCategory: Backend Development
-url: https://github.com/freeCodeCamp/learn-bash-and-sql-by-building-a-bike-rental-shop
+url: freeCodeCamp/learn-bash-and-sql-by-building-a-bike-rental-shop
 dashedName: build-a-bike-rental-shop
 ---
 

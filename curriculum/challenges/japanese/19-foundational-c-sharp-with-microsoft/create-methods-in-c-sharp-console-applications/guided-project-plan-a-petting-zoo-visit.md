@@ -1,38 +1,38 @@
 ---
 id: 647e225e8acb466c97ccbef0
-title: Guided Project - Plan a Petting Zoo Visit
+title: ガイド付きプロジェクト - ふれあい動物園への訪問を計画する
 challengeType: 19
 dashedName: guided-project-plan-a-petting-zoo-visit
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+このチャレンジには Microsoft Learn プラットフォームで実行するパートがあります。 下記の手順に従ってチャレンジを完了させてください:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/</a> and complete all the tasks for the "Guided Project - Plan a Petting Zoo Visit" module. This is **required** to earn the "Create Methods in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/</a> へ移動し、「ガイド付きプロジェクト - ふれあい動物園への訪問を計画する (Guided Project - Plan a Petting Zoo Visit)」モジュール内のすべてのタスクを完了してください。 これは、Microsoft Learn のトロフィー「C# コンソール アプリケーションのメソッドを作成する」を獲得し、認定試験の受験資格を得るために**必須**となります。
+1. 完了後、このページに戻り、下記の質問に正しく回答してください。
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">Plan a Petting Zoo Visit</a> guided project on Microsoft Learn. Then, answer the question below.
+Microsoft Learn でガイド付きプロジェクト「<a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">ふれあい動物園への訪問を計画する</a>」を完了させてください。 次に、下記の質問に回答してください。
 
 # --question--
 
 ## --text--
 
-What is the purpose of defining an optional parameter in a method?
+メソッドに省略可能な引数を定義する目的は何ですか？
 
 ## --answers--
 
-To cause a method to perform a different task.
+メソッドが異なるタスクを実行できるようにするため。
 
 ---
 
-To overload a method.
+メソッドをオーバーロードするため。
 
 ---
 
-To simplify the required parameters when a parameter isn't significant to the result.
+あるパラメーターが結果に対して重要でない場合に、必須パラメーターをシンプルにするため
 
 ## --video-solution--
 
