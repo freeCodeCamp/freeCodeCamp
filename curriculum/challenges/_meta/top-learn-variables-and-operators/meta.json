@@ -1,0 +1,21 @@
+{
+  "name": "TOP Learn Variables and Operators",
+  "isUpcomingChange": false,
+  "dashedName": "top-learn-variables-and-operators",
+  "helpCategory": "Odin",
+  "order": 10,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "the-odin-project",
+  "challengeOrder": [
+    {
+      "id": "65e185b1500d930ce8ed909b",
+      "title": "Learn Variables and Operators Question A"
+    },
+    {
+      "id": "65e18d61500d930ce8ed90a5",
+      "title": "Learn Variables and Operators Question B"
+    }
+  ]
+}
