@@ -187,8 +187,8 @@ export async function devLogin(): Promise<string[]> {
       id: defaultUserId
     }
   });
-  const res = await superRequest('/auth/dev-callback', { method: 'GET' });
-  expect(res.status).toBe(200);
+  const res = await superRequest('/signin', { method: 'GET' });
+  expect(res.status).toBe(302);
   return res.get('Set-Cookie');
 }
 

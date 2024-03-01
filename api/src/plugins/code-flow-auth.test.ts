@@ -134,6 +134,8 @@ describe('auth', () => {
       expect(res.statusCode).toBe(401);
     });
 
+    it.todo('should reject if the user is not found');
+
     it('should populate the request with the user if the token is valid', async () => {
       const fakeUser = { id: '123', username: 'test-user' };
       // @ts-expect-error prisma isn't defined, since we're not building the

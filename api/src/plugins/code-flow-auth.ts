@@ -2,6 +2,7 @@ import { FastifyPluginCallback, FastifyReply, FastifyRequest } from 'fastify';
 import fp from 'fastify-plugin';
 import jwt from 'jsonwebtoken';
 import { isBefore } from 'date-fns';
+import { type user } from '@prisma/client';
 
 import { COOKIE_DOMAIN, HOME_LOCATION, JWT_SECRET } from '../utils/env';
 import { AccessToken } from '../utils/tokens';
@@ -18,7 +19,7 @@ declare module 'fastify' {
   interface FastifyRequest {
     getValidReferrer: (this: FastifyRequest) => string;
     // TODO: type user
-    user: unknown;
+    user?: user;
   }
 
   interface FastifyInstance {
@@ -76,7 +77,7 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
       const user = await fastify.prisma.user.findUnique({
         where: { id: userId }
       });
-      req.user = user;
+      req.user = user ?? undefined;
     }
   );
 

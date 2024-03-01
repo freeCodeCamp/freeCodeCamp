@@ -597,7 +597,7 @@ describe('userRoutes', () => {
         });
 
         // devLogin must not be used here since it overrides the user
-        const res = await superRequest('/auth/dev-callback', { method: 'GET' });
+        const res = await superRequest('/signin', { method: 'GET' });
         const setCookies = res.get('Set-Cookie');
 
         const publicUser = {
