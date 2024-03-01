@@ -6,13 +6,13 @@ dashedName: learn-variables-and-operators-question-c
 ---
 # --description--
 
-To declare a constant (unchanging) variable, use const instead of `let`:
+To declare a constant (unchanging) variable, use `const` instead of `let`:
 
 ```javascript
 const myBirthday = '16-09-2003';
 ```
 
-Variables declared using const are called “constants”. They cannot be reassigned. An attempt to do so would cause an error:
+Variables declared using `const` are called "constants". They cannot be reassigned. An attempt to do so would cause an error:
 
 ```javascript
 const myBirthday = '16-09-2003';

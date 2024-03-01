@@ -2,7 +2,7 @@
 id: 65e1b46e500d930ce8ed90ad
 title: Learn Variables and Operators Question I
 challengeType: 15
-dashedName: learn-variables-and-operators-question-I
+dashedName: learn-variables-and-operators-question-i
 ---
 # --description--
 
@@ -34,15 +34,15 @@ console.log(counter); // 1
 
 The operators `++` and `--` can be placed either before or after a variable.
 
-- When the operator goes after the variable, it is in “postfix form”: `counter++`.
+- When the operator goes after the variable, it is in "postfix form": `counter++`.
 
-- The “prefix form” is when the operator goes before the variable: `++counter`.
+- The "prefix form" is when the operator goes before the variable: `++counter`.
 
 Both of these statements do the same thing: increase `counter` by `1`.
 
-Is there any difference? Yes, but we can only see it if we use the returned value of `++/--`  .
+Is there any difference? Yes, but you can only see it if you use the returned value of `++/--`  .
 
-Let’s clarify. As we know, all operators return a value. Increment/decrement is no exception. The prefix form returns the new value while the postfix form returns the old value (prior to increment/decrement).
+Let’s clarify. As you know, all operators return a value. Increment/decrement is no exception. The prefix form returns the new value while the postfix form returns the old value (prior to increment/decrement).
 
 To see the difference, here’s an example:
 
@@ -66,14 +66,14 @@ counter++;
 console.log( counter );
 ```
 
-- If we’d like to increase a value and immediately use the result of the operator, we need the prefix form:
+- If we’d like to increase a value and immediately use the result of the operator, you need the prefix form:
 
 ```js
 let counter = 0;
 console.log( ++counter ); // 1
 ```
 
-- If we’d like to increment a value but use its previous value, we need the postfix form:
+- If we’d like to increment a value but use its previous value, you need the postfix form:
 
 ```js 
 let counter = 0;

@@ -6,7 +6,7 @@ dashedName: learn-variables-and-operators-question-g
 ---
 # --description--
 
-The plus `+` exists in two forms: the binary form that we used in the last challenge and the unary form.
+The plus `+` exists in two forms: the binary form that you used in the last challenge and the unary form.
 
 The unary plus or, in other words, the plus operator `+` applied to a single value, doesn’t do anything to numbers. But if the operand is not a number, the unary plus converts it into a number.
 
@@ -25,7 +25,7 @@ console.log( +true ); // 1
 console.log( +"" );   //
 ```
 
-The need to convert strings to numbers arises very often. For example, if we are getting values from HTML form fields, they are usually strings. What if we want to sum them?
+The need to convert strings to numbers arises very often. For example, if you are getting values from HTML form fields, they are usually strings. What if you want to sum them?
 
 The binary plus would add them as strings:
 
@@ -36,7 +36,7 @@ let oranges = "3";
 alert( apples + oranges ); // "23", the binary plus concatenates strings
 ```
 
-If we want to treat them as numbers, we need to convert and then sum them:
+If you want to treat them as numbers, you need to convert and then sum them:
 
 ```js
 let apples = "2";
