@@ -6,6 +6,7 @@ import {
   setupServer,
   superRequest
 } from '../../jest.utils';
+import { HOME_LOCATION } from '../utils/env';
 
 // TODO: replace dev login with the /signin, /signout routes
 describe('dev login', () => {
@@ -152,22 +153,26 @@ describe('dev login take 2', () => {
       });
     });
 
-    // If we start sending the full path in the referer header, we should
-    // implement these features:
-    it.todo('should redirect to the Referer (if it is a valid origin)');
-    it.todo(
-      'should redirect to /valid-language/learn when signing in from /valid-language'
-    );
-    it('should redirect to /learn', async () => {
-      // referer must be one of the allowed origins (www.freecodecamp.org is
-      // allowed)
+    it('should redirect to the Referer (if it is a valid origin)', async () => {
       const res = await superRequest('/signin', { method: 'GET' }).set(
         'referer',
-        'https://www.freecodecamp.org/'
+        'https://www.freecodecamp.org/some-path/or/other'
       );
 
       expect(res.status).toBe(302);
-      expect(res.headers.location).toBe('https://www.freecodecamp.org/learn');
+      expect(res.headers.location).toBe(
+        'https://www.freecodecamp.org/some-path/or/other'
+      );
+    });
+
+    it.todo(
+      'should redirect to /valid-language/learn when signing in from /valid-language'
+    );
+    it('should redirect to /learn by default', async () => {
+      const res = await superRequest('/signin', { method: 'GET' });
+
+      expect(res.status).toBe(302);
+      expect(res.headers.location).toBe(`${HOME_LOCATION}/learn`);
     });
   });
 

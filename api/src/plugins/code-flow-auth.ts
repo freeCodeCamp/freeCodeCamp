@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import { isBefore } from 'date-fns';
 import { type user } from '@prisma/client';
 
-import { COOKIE_DOMAIN, HOME_LOCATION, JWT_SECRET } from '../utils/env';
+import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
 import { AccessToken } from '../utils/tokens';
 import { allowedOrigins } from '../../config/allowed-origins';
 
@@ -17,8 +17,8 @@ declare module 'fastify' {
   }
 
   interface FastifyRequest {
-    getValidReferrer: (this: FastifyRequest) => string;
-    // TODO: type user
+    getValidReferrer: (this: FastifyRequest) => string | null;
+    // TODO: is the full user the correct type here?
     user?: user;
   }
 
@@ -84,12 +84,12 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
 
   const sanitizeReferer = (referer?: string): string => {
     if (!referer) throw Error();
-    const origin = new URL(referer).origin;
+    const { origin, pathname } = new URL(referer);
     if (!allowedOrigins.includes(origin)) throw Error();
-    return origin;
+    return new URL(pathname, origin).href;
   };
 
-  fastify.decorateRequest('getValidReferrer', function (): string {
+  fastify.decorateRequest('getValidReferrer', function (): string | null {
     const referer = this.headers.referer;
     let origin = null;
     try {
@@ -98,7 +98,7 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
       this.log.warn(`Invalid referer: ${referer}`);
     }
 
-    return origin ?? HOME_LOCATION;
+    return origin;
   });
 
   done();

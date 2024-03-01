@@ -9,7 +9,7 @@ import rateLimit from 'express-rate-limit';
 import MongoStoreRL from 'rate-limit-mongo';
 
 import { createUserInput } from '../utils/create-user';
-import { AUTH0_DOMAIN, MONGOHQ_URL } from '../utils/env';
+import { AUTH0_DOMAIN, HOME_LOCATION, MONGOHQ_URL } from '../utils/env';
 import { createAccessToken } from '../utils/tokens';
 
 declare module 'fastify' {
@@ -145,8 +145,8 @@ export const devLegacyAuthRoutes: FastifyPluginCallback = (
     const { id } = await findOrCreateUser(fastify, email);
 
     reply.setAccessTokenCookie(createAccessToken(id));
-    const learnLocation = `${req.getValidReferrer()}/learn`;
-    await reply.redirect(learnLocation);
+    const referer = req.getValidReferrer();
+    await reply.redirect(referer ?? new URL('learn', HOME_LOCATION).href);
   });
 
   fastify.get('/signout', async (req, reply) => {
@@ -154,7 +154,8 @@ export const devLegacyAuthRoutes: FastifyPluginCallback = (
     void reply.clearCookie('csrf_token');
     void reply.clearCookie('_csrf');
 
-    await reply.redirect(req.getValidReferrer());
+    const referer = req.getValidReferrer();
+    await reply.redirect(referer ?? HOME_LOCATION);
   });
   done();
 };

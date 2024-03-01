@@ -1,7 +1,7 @@
 import Fastify, { FastifyInstance } from 'fastify';
 import jwt from 'jsonwebtoken';
 
-import { COOKIE_DOMAIN, HOME_LOCATION, JWT_SECRET } from '../utils/env';
+import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
 import { createAccessToken } from '../utils/tokens';
 import cookies, { sign as signCookie } from './cookies';
 import codeFlowAuth from './code-flow-auth';
@@ -183,17 +183,17 @@ describe('auth', () => {
   });
 
   // NOTE: fastify.inject handles all the mocking, but we need a way to access
-  // the system under test. Reply.redirect is just there so that we can assert
+  // the system under test. Reply.send is just there so that we can assert
   // what getValidReferrer returns.
   describe('getValidReferrer', () => {
-    const fCCDotOrg = 'https://www.freecodecamp.org';
+    const fCCDotOrg = 'https://www.freecodecamp.org/';
     beforeEach(() => {
       fastify.get('/test', async (req, reply) => {
-        void reply.redirect(req.getValidReferrer());
+        void reply.send({ referrer: req.getValidReferrer() });
       });
     });
 
-    it('should use HOME_LOCATION as the default origin', async () => {
+    it('should use return null if the origin is invalid', async () => {
       const res = await fastify.inject({
         method: 'GET',
         url: '/test',
@@ -202,7 +202,7 @@ describe('auth', () => {
         }
       });
 
-      expect(res.headers.location).toBe(HOME_LOCATION);
+      expect(res.json()).toEqual({ referrer: null });
     });
 
     it('should use the referer as the origin if it is a valid origin', async () => {
@@ -214,22 +214,22 @@ describe('auth', () => {
         }
       });
 
-      expect(res.headers.location).toBe(fCCDotOrg);
+      expect(res.json()).toEqual({ referrer: fCCDotOrg });
     });
 
-    it('should ignore everything after the origin', async () => {
+    it('should ignore query params', async () => {
       const res = await fastify.inject({
         method: 'GET',
         url: '/test',
         headers: {
-          referer: fCCDotOrg + '/stuff/?and=things'
+          referer: fCCDotOrg + 'stuff/?and=things'
         }
       });
 
-      expect(res.headers.location).toBe(fCCDotOrg);
+      expect(res.json()).toEqual({ referrer: fCCDotOrg + 'stuff/' });
     });
 
-    it('should default to HOME_LOCATION if the referer is gibberish', async () => {
+    it('should return null if the referer is gibberish', async () => {
       const res = await fastify.inject({
         method: 'GET',
         url: '/test',
@@ -238,7 +238,7 @@ describe('auth', () => {
         }
       });
 
-      expect(res.headers.location).toBe(HOME_LOCATION);
+      expect(res.json()).toEqual({ referrer: null });
     });
 
     it('should log a warning if the referer is invalid', async () => {
@@ -252,7 +252,7 @@ describe('auth', () => {
         }
       });
 
-      expect(res.headers.location).toBe(HOME_LOCATION);
+      expect(res.json()).toEqual({ referrer: null });
       expect(warnSpy).toHaveBeenCalledWith('Invalid referer: ' + fakeFCCDotOrg);
     });
   });
