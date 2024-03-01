@@ -23,12 +23,26 @@ describe('certificate routes', () => {
       jest.restoreAllMocks();
     });
 
-    xdescribe('GET /certificate/showCert/:username/:certSlug', () => {
-      test('should return user not found if we cannot find the user', async () => {
+    describe('GET /certificate/showCert/:username/:certSlug', () => {
+      beforeEach(async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: defaultUserEmail },
+          data: {
+            username: 'foobar',
+            name: 'foobar',
+            isHonest: true,
+            isBanned: false,
+            isCheater: false,
+            profileUI: { isLocked: false, showCerts: true, showTimeLine: true }
+          }
+        });
+      });
+      test('should return user not found if the user cannot be found', async () => {
         const response = await superRequest(
-          'certificate/not-a-valid-user-name/javascript-algorithms-and-data-structures',
+          '/certificate/showCert/not-a-valid-user-name/javascript-algorithms-and-data-structures',
           {
-            method: 'GET'
+            method: 'GET',
+            setCookies
           }
         );
         expect(response.body).toEqual({
@@ -36,71 +50,72 @@ describe('certificate routes', () => {
           message: 'flash.username-not-found',
           variables: { username: 'not-a-valid-user-name' }
         });
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(200);
       });
       test('should ask user to add name if there is no name', async () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
-          data: { username: 'foobar', name: null }
+          data: { name: null }
         });
         const response = await superRequest(
-          'certificate/foobar/javascript-algorithms-and-data-structures',
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
           {
-            method: 'GET'
+            method: 'GET',
+            setCookies
           }
         );
         expect(response.body).toEqual({
           type: 'info',
-          message: 'flash.add-name',
-          variables: { username: 'foobar' }
+          message: 'flash.add-name'
         });
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(200);
       });
       test('should return not eligible if user is banned', async () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
-          data: { username: 'foobar', name: 'foobar', isBanned: true }
+          data: { isBanned: true }
         });
         const response = await superRequest(
-          'certificate/foobar/javascript-algorithms-and-data-structures',
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
           {
-            method: 'GET'
+            method: 'GET',
+            setCookies
           }
         );
         expect(response.body).toEqual({
           type: 'info',
-          message: 'flash.not-eligible',
-          variables: { username: 'foobar' }
+          message: 'flash.not-eligible'
         });
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(200);
       });
       test('should return not eligible if user is cheater', async () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
-          data: { username: 'foobar', name: 'foobar', isCheater: true }
+          data: { isCheater: true }
         });
         const response = await superRequest(
-          'certificate/foobar/javascript-algorithms-and-data-structures',
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
           {
-            method: 'GET'
+            method: 'GET',
+            setCookies
           }
         );
         expect(response.body).toEqual({
           type: 'info',
-          message: 'flash.not-eligible',
-          variables: { username: 'foobar' }
+          message: 'flash.not-eligible'
         });
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(200);
       });
       test('should return not honest if user is not honest', async () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
-          data: { username: 'foobar', name: 'foobar', isHonest: false }
+          data: { isHonest: false }
         });
         const response = await superRequest(
-          'certificate/foobar/javascript-algorithms-and-data-structures',
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
           {
-            method: 'GET'
+            method: 'GET',
+            setCookies
           }
         );
         expect(response.body).toEqual({
@@ -108,21 +123,21 @@ describe('certificate routes', () => {
           message: 'flash.not-honest',
           variables: { username: 'foobar' }
         });
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(200);
       });
       test('should return profile private if profile is private', async () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
           data: {
-            username: 'foobar',
-            name: 'foobar',
-            profileUI: { isLocked: true }
+            // All properties need to be defined, as this op SETs `profileUI`
+            profileUI: { isLocked: true, showTimeLine: true, showCerts: true }
           }
         });
         const response = await superRequest(
-          'certificate/foobar/javascript-algorithms-and-data-structures',
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
           {
-            method: 'GET'
+            method: 'GET',
+            setCookies
           }
         );
         expect(response.body).toEqual({
@@ -130,21 +145,20 @@ describe('certificate routes', () => {
           message: 'flash.profile-private',
           variables: { username: 'foobar' }
         });
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(200);
       });
       test('should return certs private if certs are private', async () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
           data: {
-            username: 'foobar',
-            name: 'foobar',
-            profileUI: { showCerts: false }
+            profileUI: { showCerts: false, showTimeLine: true, isLocked: false }
           }
         });
         const response = await superRequest(
-          'certificate/foobar/javascript-algorithms-and-data-structures',
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
           {
-            method: 'GET'
+            method: 'GET',
+            setCookies
           }
         );
         expect(response.body).toEqual({
@@ -152,21 +166,20 @@ describe('certificate routes', () => {
           message: 'flash.certs-private',
           variables: { username: 'foobar' }
         });
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(200);
       });
       test('should return timeline private if timeline is private', async () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
           data: {
-            username: 'foobar',
-            name: 'foobar',
-            profileUI: { showTimeLine: false }
+            profileUI: { showTimeLine: false, showCerts: true, isLocked: false }
           }
         });
         const response = await superRequest(
-          'certificate/foobar/javascript-algorithms-and-data-structures',
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
           {
-            method: 'GET'
+            method: 'GET',
+            setCookies
           }
         );
         expect(response.body).toEqual({
@@ -174,7 +187,7 @@ describe('certificate routes', () => {
           message: 'flash.timeline-private',
           variables: { username: 'foobar' }
         });
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(200);
       });
     });
 
@@ -218,373 +231,373 @@ describe('certificate routes', () => {
         expect(response.status).toBe(400);
       });
 
-      // test('should return 400 if certSlug is invalid', async () => {
-      //   const response = await superRequest('/certificate/verify', {
-      //     method: 'PUT',
-      //     setCookies
-      //   }).send({
-      //     certSlug: 'non-existant'
-      //   });
-      //   expect(response.body).toMatchObject({
-      //     response: {
-      //       message: 'flash.wrong-name',
-      //       variables: { name: 'non-existant' }
-      //     }
-      //   });
-      //   expect(response.status).toBe(400);
-      // });
+      test('should return 400 if certSlug is invalid', async () => {
+        const response = await superRequest('/certificate/verify', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          certSlug: 'non-existant'
+        });
+        expect(response.body).toMatchObject({
+          response: {
+            message: 'flash.wrong-name',
+            variables: { name: 'non-existant' }
+          }
+        });
+        expect(response.status).toBe(400);
+      });
 
-      // test('should return 500 if user not found in db', async () => {
-      //   jest
-      //     .spyOn(fastifyTestInstance.prisma.user, 'findUnique')
-      //     .mockImplementation(
-      //       () => Promise.resolve(null) as PrismaPromise<null>
-      //     );
-      //   const response = await superRequest('/certificate/verify', {
-      //     method: 'PUT',
-      //     setCookies
-      //   }).send({
-      //     certSlug: Certification.RespWebDesign
-      //   });
+      test('should return 500 if user not found in db', async () => {
+        jest
+          .spyOn(fastifyTestInstance.prisma.user, 'findUnique')
+          .mockImplementation(
+            () => Promise.resolve(null) as PrismaPromise<null>
+          );
+        const response = await superRequest('/certificate/verify', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          certSlug: Certification.RespWebDesign
+        });
 
-      //   expect(response.body).toStrictEqual({
-      //     message: 'flash.went-wrong',
-      //     type: 'danger'
-      //   });
-      //   expect(response.status).toBe(500);
-      // });
+        expect(response.body).toStrictEqual({
+          message: 'flash.went-wrong',
+          type: 'danger'
+        });
+        expect(response.status).toBe(500);
+      });
 
-      // test('should return 400 if user has not set a `name`', async () => {
-      //   await fastifyTestInstance.prisma.user.update({
-      //     where: { id: defaultUserId },
-      //     data: {
-      //       name: null
-      //     }
-      //   });
+      test('should return 400 if user has not set a `name`', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            name: null
+          }
+        });
 
-      //   const response = await superRequest('/certificate/verify', {
-      //     method: 'PUT',
-      //     setCookies
-      //   }).send({
-      //     certSlug: Certification.RespWebDesign
-      //   });
+        const response = await superRequest('/certificate/verify', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          certSlug: Certification.RespWebDesign
+        });
 
-      //   expect(response.body).toMatchObject({
-      //     response: {
-      //       type: 'info',
-      //       message: 'flash.name-needed'
-      //     },
-      //     isCertMap: {
-      //       is2018DataVisCert: false,
-      //       isApisMicroservicesCert: false,
-      //       isBackEndCert: false,
-      //       isCollegeAlgebraPyCertV8: false,
-      //       isDataAnalysisPyCertV7: false,
-      //       isDataVisCert: false,
-      //       isFoundationalCSharpCertV8: false,
-      //       isFrontEndCert: false,
-      //       isFrontEndLibsCert: false,
-      //       isFullStackCert: false,
-      //       isInfosecCertV7: false,
-      //       isInfosecQaCert: false,
-      //       isJsAlgoDataStructCert: false,
-      //       isMachineLearningPyCertV7: false,
-      //       isQaCertV7: false,
-      //       isRelationalDatabaseCertV8: false,
-      //       isRespWebDesignCert: false,
-      //       isSciCompPyCertV7: false
-      //     },
-      //     completedChallenges: []
-      //   });
-      //   expect(response.status).toBe(400);
-      // });
+        expect(response.body).toMatchObject({
+          response: {
+            type: 'info',
+            message: 'flash.name-needed'
+          },
+          isCertMap: {
+            is2018DataVisCert: false,
+            isApisMicroservicesCert: false,
+            isBackEndCert: false,
+            isCollegeAlgebraPyCertV8: false,
+            isDataAnalysisPyCertV7: false,
+            isDataVisCert: false,
+            isFoundationalCSharpCertV8: false,
+            isFrontEndCert: false,
+            isFrontEndLibsCert: false,
+            isFullStackCert: false,
+            isInfosecCertV7: false,
+            isInfosecQaCert: false,
+            isJsAlgoDataStructCert: false,
+            isMachineLearningPyCertV7: false,
+            isQaCertV7: false,
+            isRelationalDatabaseCertV8: false,
+            isRespWebDesignCert: false,
+            isSciCompPyCertV7: false
+          },
+          completedChallenges: []
+        });
+        expect(response.status).toBe(400);
+      });
 
-      // test('should return 200 if user already claimed cert', async () => {
-      //   await fastifyTestInstance.prisma.user.updateMany({
-      //     where: { email: defaultUserEmail },
-      //     data: {
-      //       completedChallenges: [],
-      //       isRespWebDesignCert: true
-      //     }
-      //   });
-      //   const response = await superRequest('/certificate/verify', {
-      //     method: 'PUT',
-      //     setCookies
-      //   }).send({
-      //     certSlug: Certification.RespWebDesign
-      //   });
+      test('should return 200 if user already claimed cert', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: defaultUserEmail },
+          data: {
+            completedChallenges: [],
+            isRespWebDesignCert: true
+          }
+        });
+        const response = await superRequest('/certificate/verify', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          certSlug: Certification.RespWebDesign
+        });
 
-      //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      //   expect(response.body.response).toStrictEqual({
-      //     type: 'info',
-      //     message: 'flash.already-claimed',
-      //     variables: {
-      //       name: 'Responsive Web Design'
-      //     }
-      //   });
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        expect(response.body.response).toStrictEqual({
+          type: 'info',
+          message: 'flash.already-claimed',
+          variables: {
+            name: 'Responsive Web Design'
+          }
+        });
 
-      //   expect(response.status).toBe(200);
-      // });
+        expect(response.status).toBe(200);
+      });
 
-      // test('should return 400 if not all requirements have been met to claim', async () => {
-      //   await fastifyTestInstance.prisma.user.updateMany({
-      //     where: { email: defaultUserEmail },
-      //     data: {
-      //       completedChallenges: [
-      //         { id: '587d78af367417b2b2512b03', completedDate: 123456789 },
-      //         { id: '587d78af367417b2b2512b04', completedDate: 123456789 },
-      //         { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
-      //         { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
-      //       ],
-      //       isRespWebDesignCert: false
-      //     }
-      //   });
-      //   const response = await superRequest('/certificate/verify', {
-      //     method: 'PUT',
-      //     setCookies
-      //   }).send({
-      //     certSlug: Certification.RespWebDesign
-      //   });
+      test('should return 400 if not all requirements have been met to claim', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: defaultUserEmail },
+          data: {
+            completedChallenges: [
+              { id: '587d78af367417b2b2512b03', completedDate: 123456789 },
+              { id: '587d78af367417b2b2512b04', completedDate: 123456789 },
+              { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
+              { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
+            ],
+            isRespWebDesignCert: false
+          }
+        });
+        const response = await superRequest('/certificate/verify', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          certSlug: Certification.RespWebDesign
+        });
 
-      //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      //   expect(response.body.response).toStrictEqual({
-      //     message: 'flash.incomplete-steps',
-      //     type: 'info',
-      //     variables: { name: 'Responsive Web Design' }
-      //   });
-      //   expect(response.status).toBe(400);
-      // });
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        expect(response.body.response).toStrictEqual({
+          message: 'flash.incomplete-steps',
+          type: 'info',
+          variables: { name: 'Responsive Web Design' }
+        });
+        expect(response.status).toBe(400);
+      });
 
-      // test('should return 500 if db update fails', async () => {
-      //   await fastifyTestInstance.prisma.user.updateMany({
-      //     where: { email: defaultUserEmail },
-      //     data: {
-      //       completedChallenges: [
-      //         { id: 'bd7158d8c442eddfaeb5bd18', completedDate: 123456789 },
-      //         { id: '587d78af367417b2b2512b03', completedDate: 123456789 },
-      //         { id: '587d78af367417b2b2512b04', completedDate: 123456789 },
-      //         { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
-      //         { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
-      //       ]
-      //     }
-      //   });
-      //   jest
-      //     .spyOn(fastifyTestInstance.prisma.user, 'update')
-      //     .mockImplementation(() => {
-      //       throw new Error('test');
-      //     });
-      //   const response = await superRequest('/certificate/verify', {
-      //     method: 'PUT',
-      //     setCookies
-      //   }).send({
-      //     certSlug: Certification.RespWebDesign
-      //   });
+      test('should return 500 if db update fails', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: defaultUserEmail },
+          data: {
+            completedChallenges: [
+              { id: 'bd7158d8c442eddfaeb5bd18', completedDate: 123456789 },
+              { id: '587d78af367417b2b2512b03', completedDate: 123456789 },
+              { id: '587d78af367417b2b2512b04', completedDate: 123456789 },
+              { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
+              { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
+            ]
+          }
+        });
+        jest
+          .spyOn(fastifyTestInstance.prisma.user, 'update')
+          .mockImplementation(() => {
+            throw new Error('test');
+          });
+        const response = await superRequest('/certificate/verify', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          certSlug: Certification.RespWebDesign
+        });
 
-      //   expect(response.body).toStrictEqual({
-      //     message: 'flash.went-wrong',
-      //     type: 'danger'
-      //   });
-      //   expect(response.status).toBe(500);
-      // });
+        expect(response.body).toStrictEqual({
+          message: 'flash.went-wrong',
+          type: 'danger'
+        });
+        expect(response.status).toBe(500);
+      });
 
-      // // Note: Email does not actually send (work) in development, but status should still be 200.
-      // test('should send the certified email, if all current certifications are met', async () => {
-      //   await fastifyTestInstance.prisma.user.updateMany({
-      //     where: { email: defaultUserEmail },
-      //     data: {
-      //       completedChallenges: [
-      //         { id: 'bd7158d8c442eddfaeb5bd18', completedDate: 123456789 },
-      //         { id: '587d78af367417b2b2512b03', completedDate: 123456789 },
-      //         { id: '587d78af367417b2b2512b04', completedDate: 123456789 },
-      //         { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
-      //         { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
-      //       ],
-      //       isRespWebDesignCert: false,
-      //       isJsAlgoDataStructCertV8: true,
-      //       isFrontEndLibsCert: true,
-      //       is2018DataVisCert: true,
-      //       isRelationalDatabaseCertV8: true,
-      //       isApisMicroservicesCert: true,
-      //       isQaCertV7: true,
-      //       isSciCompPyCertV7: true,
-      //       isDataAnalysisPyCertV7: true,
-      //       isInfosecCertV7: true,
-      //       isMachineLearningPyCertV7: true,
-      //       isCollegeAlgebraPyCertV8: true,
-      //       isFoundationalCSharpCertV8: true
-      //     }
-      //   });
+      // Note: Email does not actually send (work) in development, but status should still be 200.
+      test('should send the certified email, if all current certifications are met', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: defaultUserEmail },
+          data: {
+            completedChallenges: [
+              { id: 'bd7158d8c442eddfaeb5bd18', completedDate: 123456789 },
+              { id: '587d78af367417b2b2512b03', completedDate: 123456789 },
+              { id: '587d78af367417b2b2512b04', completedDate: 123456789 },
+              { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
+              { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
+            ],
+            isRespWebDesignCert: false,
+            isJsAlgoDataStructCertV8: true,
+            isFrontEndLibsCert: true,
+            is2018DataVisCert: true,
+            isRelationalDatabaseCertV8: true,
+            isApisMicroservicesCert: true,
+            isQaCertV7: true,
+            isSciCompPyCertV7: true,
+            isDataAnalysisPyCertV7: true,
+            isInfosecCertV7: true,
+            isMachineLearningPyCertV7: true,
+            isCollegeAlgebraPyCertV8: true,
+            isFoundationalCSharpCertV8: true
+          }
+        });
 
-      //   const spy = jest.spyOn(fastifyTestInstance, 'sendEmail');
+        const spy = jest.spyOn(fastifyTestInstance, 'sendEmail');
 
-      //   const response = await superRequest('/certificate/verify', {
-      //     method: 'PUT',
-      //     setCookies
-      //   }).send({
-      //     certSlug: Certification.RespWebDesign
-      //   });
+        const response = await superRequest('/certificate/verify', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          certSlug: Certification.RespWebDesign
+        });
 
-      //   expect(spy).toHaveBeenCalled();
-      //   expect(response.status).toBe(200);
-      // });
+        expect(spy).toHaveBeenCalled();
+        expect(response.status).toBe(200);
+      });
 
-      // test('should return 200 if all went well', async () => {
-      //   await fastifyTestInstance.prisma.user.updateMany({
-      //     where: { email: defaultUserEmail },
-      //     data: {
-      //       completedChallenges: [
-      //         { id: 'bd7158d8c442eddfaeb5bd18', completedDate: 123456789 },
-      //         { id: '587d78af367417b2b2512b03', completedDate: 123456789 },
-      //         { id: '587d78af367417b2b2512b04', completedDate: 123456789 },
-      //         { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
-      //         { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
-      //       ],
-      //       isRespWebDesignCert: false
-      //     }
-      //   });
+      test('should return 200 if all went well', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: defaultUserEmail },
+          data: {
+            completedChallenges: [
+              { id: 'bd7158d8c442eddfaeb5bd18', completedDate: 123456789 },
+              { id: '587d78af367417b2b2512b03', completedDate: 123456789 },
+              { id: '587d78af367417b2b2512b04', completedDate: 123456789 },
+              { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
+              { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
+            ],
+            isRespWebDesignCert: false
+          }
+        });
 
-      //   const response = await superRequest('/certificate/verify', {
-      //     method: 'PUT',
-      //     setCookies
-      //   }).send({
-      //     certSlug: Certification.RespWebDesign
-      //   });
+        const response = await superRequest('/certificate/verify', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          certSlug: Certification.RespWebDesign
+        });
 
-      //   const user = await fastifyTestInstance.prisma.user.findFirst({
-      //     where: { email: defaultUserEmail }
-      //   });
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: defaultUserEmail }
+        });
 
-      //   expect(user).toMatchObject({ isRespWebDesignCert: true });
-      //   expect(response.body).toStrictEqual({
-      //     response: {
-      //       message: 'flash.cert-claim-success',
-      //       type: 'success',
-      //       variables: {
-      //         name: 'Responsive Web Design',
-      //         username: 'fcc'
-      //       }
-      //     },
-      //     isCertMap: {
-      //       isRespWebDesignCert: true,
-      //       isJsAlgoDataStructCert: false,
-      //       isFrontEndLibsCert: false,
-      //       is2018DataVisCert: false,
-      //       isApisMicroservicesCert: false,
-      //       isInfosecQaCert: false,
-      //       isQaCertV7: false,
-      //       isInfosecCertV7: false,
-      //       isFrontEndCert: false,
-      //       isBackEndCert: false,
-      //       isDataVisCert: false,
-      //       isFullStackCert: false,
-      //       isSciCompPyCertV7: false,
-      //       isDataAnalysisPyCertV7: false,
-      //       isMachineLearningPyCertV7: false,
-      //       isRelationalDatabaseCertV8: false,
-      //       isCollegeAlgebraPyCertV8: false,
-      //       isFoundationalCSharpCertV8: false
-      //     },
-      //     completedChallenges: [
-      //       {
-      //         completedDate: 123456789,
-      //         files: [],
-      //         id: 'bd7158d8c442eddfaeb5bd18'
-      //       },
-      //       {
-      //         completedDate: 123456789,
-      //         files: [],
-      //         id: '587d78af367417b2b2512b03'
-      //       },
-      //       {
-      //         completedDate: 123456789,
-      //         files: [],
-      //         id: '587d78af367417b2b2512b04'
-      //       },
-      //       {
-      //         completedDate: 123456789,
-      //         files: [],
-      //         id: '587d78b0367417b2b2512b05'
-      //       },
-      //       {
-      //         completedDate: 123456789,
-      //         files: [],
-      //         id: 'bd7158d8c242eddfaeb5bd13'
-      //       },
-      //       {
-      //         challengeType: 7,
-      //         // TODO: use matcher for date near now
-      //         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      //         completedDate: expect.any(Number),
-      //         files: [],
-      //         id: '561add10cb82ac38a17513bc'
-      //       }
-      //     ]
-      //   });
-      //   expect(response.status).toBe(200);
-      // });
+        expect(user).toMatchObject({ isRespWebDesignCert: true });
+        expect(response.body).toStrictEqual({
+          response: {
+            message: 'flash.cert-claim-success',
+            type: 'success',
+            variables: {
+              name: 'Responsive Web Design',
+              username: 'fcc'
+            }
+          },
+          isCertMap: {
+            isRespWebDesignCert: true,
+            isJsAlgoDataStructCert: false,
+            isFrontEndLibsCert: false,
+            is2018DataVisCert: false,
+            isApisMicroservicesCert: false,
+            isInfosecQaCert: false,
+            isQaCertV7: false,
+            isInfosecCertV7: false,
+            isFrontEndCert: false,
+            isBackEndCert: false,
+            isDataVisCert: false,
+            isFullStackCert: false,
+            isSciCompPyCertV7: false,
+            isDataAnalysisPyCertV7: false,
+            isMachineLearningPyCertV7: false,
+            isRelationalDatabaseCertV8: false,
+            isCollegeAlgebraPyCertV8: false,
+            isFoundationalCSharpCertV8: false
+          },
+          completedChallenges: [
+            {
+              completedDate: 123456789,
+              files: [],
+              id: 'bd7158d8c442eddfaeb5bd18'
+            },
+            {
+              completedDate: 123456789,
+              files: [],
+              id: '587d78af367417b2b2512b03'
+            },
+            {
+              completedDate: 123456789,
+              files: [],
+              id: '587d78af367417b2b2512b04'
+            },
+            {
+              completedDate: 123456789,
+              files: [],
+              id: '587d78b0367417b2b2512b05'
+            },
+            {
+              completedDate: 123456789,
+              files: [],
+              id: 'bd7158d8c242eddfaeb5bd13'
+            },
+            {
+              challengeType: 7,
+              // TODO: use matcher for date near now
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              completedDate: expect.any(Number),
+              files: [],
+              id: '561add10cb82ac38a17513bc'
+            }
+          ]
+        });
+        expect(response.status).toBe(200);
+      });
 
-      // // Tests for all certifications as to what may currently be claimed, and what may no longer be claimed
-      // test('should return 400 if certSlug is not allowed', async () => {
-      //   const claimableCerts = [
-      //     Certification.RespWebDesign,
-      //     Certification.JsAlgoDataStruct,
-      //     Certification.FrontEndDevLibs,
-      //     Certification.DataVis,
-      //     Certification.RelationalDb,
-      //     Certification.BackEndDevApis,
-      //     Certification.QualityAssurance,
-      //     Certification.SciCompPy,
-      //     Certification.DataAnalysisPy,
-      //     Certification.InfoSec,
-      //     Certification.MachineLearningPy,
-      //     Certification.CollegeAlgebraPy,
-      //     Certification.FoundationalCSharp,
-      //     Certification.LegacyFrontEnd,
-      //     Certification.LegacyBackEnd,
-      //     Certification.LegacyDataVis,
-      //     Certification.LegacyInfoSecQa,
-      //     Certification.LegacyFullStack
-      //   ];
-      //   const unclaimableCerts = ['fake-slug'];
+      // Tests for all certifications as to what may currently be claimed, and what may no longer be claimed
+      test('should return 400 if certSlug is not allowed', async () => {
+        const claimableCerts = [
+          Certification.RespWebDesign,
+          Certification.JsAlgoDataStruct,
+          Certification.FrontEndDevLibs,
+          Certification.DataVis,
+          Certification.RelationalDb,
+          Certification.BackEndDevApis,
+          Certification.QualityAssurance,
+          Certification.SciCompPy,
+          Certification.DataAnalysisPy,
+          Certification.InfoSec,
+          Certification.MachineLearningPy,
+          Certification.CollegeAlgebraPy,
+          Certification.FoundationalCSharp,
+          Certification.LegacyFrontEnd,
+          Certification.LegacyBackEnd,
+          Certification.LegacyDataVis,
+          Certification.LegacyInfoSecQa,
+          Certification.LegacyFullStack
+        ];
+        const unclaimableCerts = ['fake-slug'];
 
-      //   if (SHOW_UPCOMING_CHANGES) {
-      //     claimableCerts.push(Certification.UpcomingPython);
-      //   } else {
-      //     unclaimableCerts.push(Certification.UpcomingPython);
-      //   }
+        if (SHOW_UPCOMING_CHANGES) {
+          claimableCerts.push(Certification.UpcomingPython);
+        } else {
+          unclaimableCerts.push(Certification.UpcomingPython);
+        }
 
-      //   for (const certSlug of claimableCerts) {
-      //     const response = await superRequest('/certificate/verify', {
-      //       method: 'PUT',
-      //       setCookies
-      //     }).send({
-      //       certSlug
-      //     });
+        for (const certSlug of claimableCerts) {
+          const response = await superRequest('/certificate/verify', {
+            method: 'PUT',
+            setCookies
+          }).send({
+            certSlug
+          });
 
-      //     // `flash.incomplete-steps` comes after the check for whether a certification may be claimed or not.
-      //     expect(response.body).toMatchObject({
-      //       response: { message: 'flash.incomplete-steps' }
-      //     });
-      //     expect(response.status).toBe(400);
-      //   }
+          // `flash.incomplete-steps` comes after the check for whether a certification may be claimed or not.
+          expect(response.body).toMatchObject({
+            response: { message: 'flash.incomplete-steps' }
+          });
+          expect(response.status).toBe(400);
+        }
 
-      //   for (const certSlug of unclaimableCerts) {
-      //     const response = await superRequest('/certificate/verify', {
-      //       method: 'PUT',
-      //       setCookies
-      //     }).send({
-      //       certSlug
-      //     });
+        for (const certSlug of unclaimableCerts) {
+          const response = await superRequest('/certificate/verify', {
+            method: 'PUT',
+            setCookies
+          }).send({
+            certSlug
+          });
 
-      //     expect(response.body).toMatchObject({
-      //       response: {
-      //         variables: { name: certSlug },
-      //         message: 'flash.wrong-name'
-      //       }
-      //     });
-      //     expect(response.status).toBe(400);
-      //   }
-      // });
+          expect(response.body).toMatchObject({
+            response: {
+              variables: { name: certSlug },
+              message: 'flash.wrong-name'
+            }
+          });
+          expect(response.status).toBe(400);
+        }
+      });
     });
   });
 });

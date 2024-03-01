@@ -197,7 +197,6 @@ export const build = async (
     void fastify.register(devLoginCallback, { prefix: '/auth' });
     void fastify.register(devLegacyAuthRoutes);
   }
-  void fastify.register(certificateRoutes);
   void fastify.register(challengeRoutes);
   void fastify.register(settingRoutes);
   void fastify.register(donateRoutes);
