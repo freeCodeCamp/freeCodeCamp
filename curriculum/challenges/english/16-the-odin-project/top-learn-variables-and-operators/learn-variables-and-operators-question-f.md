@@ -40,7 +40,7 @@ Here, operators work one after another. The first `+` sums two numbers, so it re
 console.log('1' + 2 + 2) // "122" and not "14"
 ```
 
-Here, the first `+` concatenates the string and the number, so it returns `12`, then the next `+` adds `2` to it, so it’s like `'12' + 2 = '122'`.
+Here, the first `+` concatenates the string and the number, so it returns `'12'`, then the next `+` adds `2` to it, so it’s like `'12' + 2 = '122'`.
 
 The binary `+` is the only operator that supports strings in such a way. Other arithmetic operators work only with numbers and always convert their operands to numbers.
 
