@@ -197,9 +197,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     const isDisabled = this.isFormPristine() || !this.isFormValid();
     return (
       <>
-        <SectionHeader dataPlaywrightTestLabel='your-internet-presence-header'>
-          {t('settings.headings.internet')}
-        </SectionHeader>
+        <SectionHeader>{t('settings.headings.internet')}</SectionHeader>
         <FullWidthRow>
           <form
             id='internet-presence'
@@ -237,7 +235,6 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   LinkedIn
                 </ControlLabel>
                 <FormControl
-                  data-playwright-test-label='internet-linkedin-input'
                   onChange={this.createHandleChange('linkedin')}
                   placeholder='https://www.linkedin.com/in/user-name'
                   type='url'
@@ -259,7 +256,6 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   Twitter
                 </ControlLabel>
                 <FormControl
-                  data-playwright-test-label='internet-twitter-input'
                   onChange={this.createHandleChange('twitter')}
                   placeholder='https://twitter.com/user-name'
                   type='url'
@@ -281,7 +277,6 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   {t('settings.labels.personal')}
                 </ControlLabel>
                 <FormControl
-                  data-playwright-test-label='internet-website-input'
                   onChange={this.createHandleChange('website')}
                   placeholder='https://example.com'
                   type='url'
@@ -297,7 +292,6 @@ class InternetSettings extends Component<InternetProps, InternetState> {
               </FormGroup>
             </div>
             <BlockSaveButton
-              data-playwright-test-label='internet-save-button'
               aria-disabled={isDisabled}
               bgSize='lg'
               {...(isDisabled && { tabIndex: -1 })}

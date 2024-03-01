@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures",
+    "title": "Legacy JavaScript Algorithms and Data Structures",
     "intro": [
       "Mentre HTML e CSS controllano il contenuto e lo stile della pagina, JavaScript viene utilizzato per renderla interattiva. Nella Certificazione Algoritmi e Strutture Dati in JavaScript, imparerai le basi di JavaScript, tra cui variabili, array, oggetti, loop e funzioni.",
       "Una volta che avrai appreso le basi, applicherai queste conoscenze creando algoritmi per manipolare stringhe, fattorizzare numeri, e persino calcolare l'orbita della Stazione Spaziale Internazionale.",
@@ -1464,6 +1464,7 @@
     "go-back-to-learn": "Torna alla versione stabile del curriculum.",
     "read-database-cert-article": "Per favore leggi questo post sul forum prima di procedere.",
     "enable-cookies": "Devi abilitare i cookie di terze parti prima di iniziare.",
-    "english-only": "I corsi in questa sezione sono disponibili solo in inglese. Siamo solo in grado di tradurre i titoli e le introduzioni in questo momento, non le lezioni stesse."
+    "english-only": "I corsi in questa sezione sono disponibili solo in inglese. Siamo solo in grado di tradurre i titoli e le introduzioni in questo momento, non le lezioni stesse.",
+    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
   }
 }

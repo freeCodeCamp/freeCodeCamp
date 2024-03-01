@@ -22,13 +22,7 @@ const superBlocksWithLinks = [
 ];
 
 const superBlockTitleOverride: Record<string, string> = {
-  'Responsive Web Design': 'Legacy Responsive Web Design Challenges',
-  'JavaScript Algorithms and Data Structures':
-    'JavaScript Algorithms and Data Structures Certification'
-};
-
-const superBlockSlugOverride: Record<string, string> = {
-  '2022/responsive-web-design': 'responsive-web-design'
+  'Responsive Web Design': 'Responsive Web Design Certification'
 };
 
 test.describe('Map Component', () => {
@@ -44,6 +38,7 @@ test.describe('Map Component', () => {
     ).toBeVisible();
     const curriculumBtns = page.getByTestId('curriculum-map-button');
     await expect(curriculumBtns).toHaveCount(superBlocksWithLinks.length);
+
     for (let i = 0; i < superBlocksWithLinks.length; i++) {
       const superblockLink = page.getByRole('link', {
         // This is a hacky bypass because `Responsive Web Design` hits both links.
@@ -51,13 +46,12 @@ test.describe('Map Component', () => {
           superBlockTitleOverride[intro[superBlocksWithLinks[i]].title] ??
           intro[superBlocksWithLinks[i]].title
       });
-      expect(await superblockLink.getAttribute('href')).toBe(
-        `/learn/${
-          superBlockSlugOverride[superBlocksWithLinks[i]] ??
-          superBlocksWithLinks[i]
-        }/`
+
+      await expect(superblockLink).toBeVisible();
+      await expect(superblockLink).toHaveAttribute(
+        'href',
+        `/learn/${superBlocksWithLinks[i]}/`
       );
-      await superblockLink.click();
     }
   });
 });
