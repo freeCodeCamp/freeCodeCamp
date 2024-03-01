@@ -1,7 +1,7 @@
 // We have to specify pyodide.js because we need to import that file (not .mjs)
 // and 'import' defaults to .mjs
 import { loadPyodide, type PyodideInterface } from 'pyodide/pyodide.js';
-import type { PyProxy } from 'pyodide/ffi';
+import type { PyProxy, PythonError } from 'pyodide/ffi';
 import pkg from 'pyodide/package.json';
 import * as helpers from '@freecodecamp/curriculum-helpers';
 import chai from 'chai';
@@ -45,6 +45,15 @@ async function setupPyodide() {
   // weird state. NOTE: this has to come after pyodide is loaded, because
   // pyodide modifies self while loading.
   Object.freeze(self);
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+  pyodide.FS.writeFile(
+    '/home/pyodide/ast_helpers.py',
+    helpers.python.astHelpers,
+    {
+      encoding: 'utf8'
+    }
+  );
 
   ctx.postMessage({ type: 'contentLoaded' });
 
@@ -131,21 +140,40 @@ def __inputGen(xs):
 input = __inputGen(${JSON.stringify(input ?? [])})
 `);
 
+    runPython(`from ast_helpers import Node as _Node`);
+
+    // The tests need the user's code as a string, so we write it to the virtual
+    // filesystem.
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    pyodide.FS.writeFile('/user_code.py', code, { encoding: 'utf8' });
+
+    runPython(`
+with open("/user_code.py", "r") as f:
+  from ast import parse as _parse
+  _code = f.read()
+  _tree = _parse(_code)
+`);
+
     // Evaluates the learner's code so that any variables they define are
     // available to the test.
     try {
       runPython(code);
-    } catch (err) {
-      // We don't, yet, want user code to raise exceptions. When they do, we
-      // count this as a failing test.
-      ctx.postMessage({
+    } catch (e) {
+      const err = e as PythonError;
+
+      // Quite a lot of lessons can easily lead users to write code that has
+      // indentation errors. In these cases we want to provide a more helpful
+      // error message. For other errors, we can just provide the standard
+      // message.
+      const errorType =
+        err.type === 'IndentationError' ? 'indentation' : 'other';
+      return ctx.postMessage({
         err: {
-          message: (err as Error).message,
-          stack: (err as Error).stack,
-          syntaxError: true
+          message: err.message,
+          stack: err.stack,
+          errorType
         }
       });
-      return;
     }
     // TODO: remove the next line, creating __locals, once all the tests access
     // variables directly.

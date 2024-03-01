@@ -70,7 +70,10 @@ function* executeCancellableChallengeSaga(payload) {
   const { challengeFiles } = yield select(challengeDataSelector);
 
   // if multifileCertProject, see if body/code size is submittable
-  if (challengeType === challengeTypes.multifileCertProject) {
+  if (
+    challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.multifilePythonCertProject
+  ) {
     const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 
@@ -209,7 +212,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         throw err;
       }
     } catch (err) {
-      const { actual, expected, syntaxError } = err;
+      const { actual, expected, errorType } = err;
 
       newTest.message = text
         .replace('--fcc-expected--', expected)
@@ -217,14 +220,18 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
-      } else if (syntaxError) {
-        newTest.err = 'syntax error';
-        newTest.message = `<p>${i18next.t('learn.syntax-error')}</p>`;
+      } else if (errorType) {
+        const msgKey =
+          errorType === 'indentation'
+            ? 'learn.indentation-error'
+            : 'learn.syntax-error';
+        newTest.message = `<p>${i18next.t(msgKey)}</p>`;
       } else {
         const { message, stack } = err;
         newTest.err = message + '\n' + stack;
         newTest.stack = stack;
       }
+      console.log('newTest', newTest);
       yield put(updateConsole(newTest.message));
     } finally {
       testResults.push(newTest);
@@ -274,7 +281,11 @@ export function* previewChallengeSaga(action) {
         // Python challenges do not use the preview frame, they use a web worker
         // to run the code. The UI is handled by the xterm component, so there
         // is no need to update the preview frame.
-        if (challengeData.challengeType === challengeTypes.python) {
+        if (
+          challengeData.challengeType === challengeTypes.python ||
+          challengeData.challengeType ===
+            challengeTypes.multifilePythonCertProject
+        ) {
           yield updatePython(challengeData);
         } else {
           yield call(updatePreview, buildData, finalDocument, proxyLogger);
@@ -305,7 +316,10 @@ export function* previewChallengeSaga(action) {
 // appropriately)
 function* updatePreviewSaga(action) {
   const challengeData = yield select(challengeDataSelector);
-  if (challengeData.challengeType === challengeTypes.python) {
+  if (
+    challengeData.challengeType === challengeTypes.python ||
+    challengeData.challengeType === challengeTypes.multifilePythonCertProject
+  ) {
     yield updatePython(challengeData);
   } else {
     // all other challenges have to recreate the preview

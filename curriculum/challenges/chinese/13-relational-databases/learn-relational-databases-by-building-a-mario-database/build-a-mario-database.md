@@ -3,7 +3,7 @@ id: 5f2c289f164c29556da632fd
 title: 构建一个马里奥数据库
 challengeType: 12
 helpCategory: Backend Development
-url: https://github.com/freeCodeCamp/learn-relational-databases-by-building-a-mario-database
+url: freeCodeCamp/learn-relational-databases-by-building-a-mario-database
 dashedName: build-a-mario-database
 ---
 

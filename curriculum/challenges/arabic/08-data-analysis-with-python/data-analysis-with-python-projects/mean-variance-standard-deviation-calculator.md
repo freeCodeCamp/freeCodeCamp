@@ -8,12 +8,7 @@ dashedName: mean-variance-standard-deviation-calculator
 
 # --description--
 
-You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
-
--   ابدأ باستيراد (import) المشروع على Replit.
--   بعد ذلك، سترى نافذة `.replit`.
--   اختار `Use run command` وانقر على زر `Done`.
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 وما زلنا نطور الجزء التعليمي التفاعلي من منهج Python. الآن، إليك بعض مقاطع الفيديو على قناة اليوتيوب الخاصة بي freeCodeCamp.org التي ستعلمك كلّما تحتاج إليه لإكمال هذا المشروع:
 
@@ -55,15 +50,13 @@ For example, `calculate([0,1,2,3,4,5,6,7,8])` should return:
 }
 ```
 
-The unit tests for this project are in `test_module.py`.
-
 ## التطوير
 
-For development, you can use `main.py` to test your `calculate()` function. انقر فوق زر "run" (التشغيل) و `main.py` سيتم تشغيله.
+Write your code in `mean_var_std.py`. For development, you can use `main.py` to test your code.
 
 ## الاختبار
 
-We imported the tests from `test_module.py` to `main.py` for your convenience. سيتم تشغيل الاختبارات تلقائياً عندما تضغط على زر "run".
+The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience.
 
 ## التقديم
 

@@ -97,6 +97,7 @@ model user {
   isDataAnalysisPyCertV7       Boolean? // Undefined
   isDataVisCert                Boolean? // Undefined
   isDonating                   Boolean
+  isFoundationalCSharpCertV8   Boolean? // Undefined
   isFrontEndCert               Boolean? // Undefined
   isFrontEndLibsCert           Boolean? // Undefined
   isFullStackCert              Boolean? // Undefined
@@ -104,6 +105,7 @@ model user {
   isInfosecCertV7              Boolean? // Undefined
   isInfosecQaCert              Boolean? // Undefined
   isJsAlgoDataStructCert       Boolean? // Undefined
+  isJsAlgoDataStructCertV8     Boolean? // Undefined
   isMachineLearningPyCertV7    Boolean? // Undefined
   isQaCertV7                   Boolean? // Undefined
   isRelationalDatabaseCertV8   Boolean? // Undefined
@@ -112,6 +114,7 @@ model user {
   is2018DataVisCert            Boolean? // Undefined
   is2018FullStackCert          Boolean? // Undefined
   isCollegeAlgebraPyCertV8     Boolean? // Undefined
+  isUpcomingPythonCertV8     Boolean? // Undefined
   keyboardShortcuts            Boolean? // Undefined
   linkedin                     String? // Null | Undefined
   location                     String? // Null

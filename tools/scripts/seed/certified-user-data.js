@@ -25,6 +25,7 @@ module.exports = {
   is2018DataVisCert: true,
   isFrontEndLibsCert: true,
   isJsAlgoDataStructCert: true,
+  isJsAlgoDataStructCertV8: true,
   isApisMicroservicesCert: true,
   isInfosecQaCert: true,
   isQaCertV7: true,

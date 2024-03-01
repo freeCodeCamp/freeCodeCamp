@@ -136,14 +136,10 @@ jobs:
         run: npm i -g pm2
 
       - name: Install playwright dependencies
-        run: |
-          cd ./e2e
-          npx playwright install
-          npx playwright install-deps
+        run: npx playwright install --with-deps
 
       - name: Run playwright tests
         run: |
           pnpm run start-ci &
           sleep 10
-          cd ./e2e
           npx playwright test --project=${{ matrix.browsers }}

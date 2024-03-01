@@ -41,13 +41,19 @@ const syncChallenges = async () => {
           );
         }
         const englishContent = await readFile(path, 'utf-8');
+        if (path.endsWith('LICENSE.txt')) {
+          await writeFile(targetPath, englishContent, 'utf-8');
+          return;
+        }
         const langContent = await readFile(targetPath, 'utf-8');
         const engLines = englishContent.split('\n');
         const engId = engLines.find(l => l.startsWith('id'));
         const engSlug = engLines.find(l => l.startsWith('dashedName'));
         const langLines = langContent.split('\n');
         const langId = langLines.find(l => l.startsWith('id'));
-        const langSlug = langLines.find(l => l.startsWith('dashedName'));
+        const langSlug = langLines.find(
+          l => l.startsWith('dashedName') || l.startsWith('certification:')
+        );
         if (!langSlug) {
           throw new Error(
             `Missing dashedName for ${targetPath}. Please add it so that it matches the English version.`
