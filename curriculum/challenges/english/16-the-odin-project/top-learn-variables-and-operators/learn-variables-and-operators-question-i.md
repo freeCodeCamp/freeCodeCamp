@@ -18,7 +18,7 @@ let counter = 2;
 // works the same as counter = counter + 1, but is shorter
 counter++;      
 
-console.lopg(counter); // 3
+console.log(counter); // 3
 ```
 
 - Decrement -- decreases a variable by 1:
@@ -77,7 +77,7 @@ console.log( ++counter ); // 1
 
 ```js 
 let counter = 0;
-alert( counter++ ); // 0
+console.log( counter++ ); // 0
 ```
 
 # --question--
