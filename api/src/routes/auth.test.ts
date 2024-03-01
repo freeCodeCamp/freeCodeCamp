@@ -1,6 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { defaultUserEmail, setupServer, superRequest } from '../../jest.utils';
+import {
+  defaultUserEmail,
+  devLogin,
+  setupServer,
+  superRequest
+} from '../../jest.utils';
 
 // TODO: replace dev login with the /signin, /signout routes
 describe('dev login', () => {
@@ -163,6 +168,32 @@ describe('dev login take 2', () => {
 
       expect(res.status).toBe(302);
       expect(res.headers.location).toBe('https://www.freecodecamp.org/learn');
+    });
+  });
+
+  describe('GET /signout', () => {
+    beforeEach(async () => {
+      await devLogin();
+    });
+    it('should clear all the cookies', async () => {
+      const res = await superRequest('/signout', { method: 'GET' });
+
+      const setCookie = res.headers['set-cookie'];
+      expect(setCookie).toEqual(
+        expect.arrayContaining([
+          'jwt_access_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT',
+          '_csrf=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT',
+          'csrf_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT'
+        ])
+      );
+      expect(setCookie).toHaveLength(3);
+    });
+
+    it('should redirect to / on the client by default', async () => {
+      const res = await superRequest('/signout', { method: 'GET' });
+
+      expect(res.headers.location).toBe('http://localhost:8000');
+      expect(res.status).toBe(302);
     });
   });
 

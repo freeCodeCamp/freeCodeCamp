@@ -121,17 +121,21 @@ export const build = async (
     getToken: req => req.headers['csrf-token'] as string
   });
 
-  // All routes should add a CSRF token to the response
+  // All routes except signout should add a CSRF token to the response
   fastify.addHook('onRequest', (_req, reply, done) => {
-    const token = reply.generateCsrf();
-    // Path is necessary to ensure that only one cookie is set and it is valid
-    // for all routes.
-    void reply.setCookie('csrf_token', token, {
-      path: '/',
-      sameSite: 'strict',
-      domain: COOKIE_DOMAIN,
-      secure: FREECODECAMP_NODE_ENV === 'production'
-    });
+    const isSignout = _req.url === '/signout' || _req.url === '/signout/';
+
+    if (!isSignout) {
+      const token = reply.generateCsrf();
+      // Path is necessary to ensure that only one cookie is set and it is valid
+      // for all routes.
+      void reply.setCookie('csrf_token', token, {
+        path: '/',
+        sameSite: 'strict',
+        domain: COOKIE_DOMAIN,
+        secure: FREECODECAMP_NODE_ENV === 'production'
+      });
+    }
     done();
   });
 
