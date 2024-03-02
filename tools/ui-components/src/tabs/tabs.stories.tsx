@@ -1,13 +1,13 @@
 import React from 'react';
-import { Story } from '@storybook/react';
+import { Meta, StoryFn, StoryObj } from '@storybook/react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '.';
 
 const story = {
   title: 'Example/Tabs',
   component: Tabs
-};
+} satisfies Meta<typeof Tabs>;
 
-const Template: Story<React.ComponentProps<typeof Tabs>> = args => {
+const Template: StoryFn<typeof Tabs> = args => {
   return (
     <Tabs {...args}>
       <TabsList>
@@ -22,12 +22,17 @@ const Template: Story<React.ComponentProps<typeof Tabs>> = args => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  id: 'uncontrolled-tab-example',
-  defaultValue: 'code',
-  onSelect: () => {
-    console.log('onSelect');
+type Story = StoryObj<typeof Tabs>;
+
+export const Default: Story = {
+  render: Template,
+
+  args: {
+    id: 'uncontrolled-tab-example',
+    defaultValue: 'code',
+    onSelect: () => {
+      console.log('onSelect');
+    }
   }
 };
 

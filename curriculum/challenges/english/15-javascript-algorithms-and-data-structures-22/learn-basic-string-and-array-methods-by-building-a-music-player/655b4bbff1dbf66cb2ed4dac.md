@@ -20,7 +20,7 @@ assert.match(code, /if\s*\(\s*nextSongExists\s*\)\s*\{\s*/)
 You should call the `playNextSong` function inside your `if` statement.
 
 ```js
-assert.match(code, /if\s*\(\s*nextSongExists\s*\)\s*\{\s*playNextSong\(\s*\);?\s*\}/)
+assert.match(code, /if\s*\(\s*nextSongExists\s*\)\s*\{\s*playNextSong\(\s*\)\s*;?\s*\}/)
 ```
 
 # --seed--

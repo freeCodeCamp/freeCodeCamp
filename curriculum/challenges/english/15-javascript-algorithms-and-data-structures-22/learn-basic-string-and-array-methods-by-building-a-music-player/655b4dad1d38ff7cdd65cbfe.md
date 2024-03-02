@@ -17,28 +17,28 @@ You should call the `pauseSong` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /pauseSong\(\s*\);?/)
+assert.match(splitter[1], /pauseSong\(\s*\)\s*;?/)
 ```
 
 You should call the `setPlayerDisplay` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /setPlayerDisplay\(\s*\);?/)
+assert.match(splitter[1], /setPlayerDisplay\(\s*\)\s*;?/)
 ```
 
 You should call the `highlightCurrentSong` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /highlightCurrentSong\(\s*\);?/)
+assert.match(splitter[1], /highlightCurrentSong\(\s*\)\s*;?/)
 ```
 
 You should call the `setPlayButtonAccessibleText` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /highlightCurrentSong\(\s*\);?\s*setPlayButtonAccessibleText\(\s*\);?/)
+assert.match(splitter[1], /highlightCurrentSong\(\s*\)\s*;?\s*setPlayButtonAccessibleText\(\s*\)\s*;?/)
 ```
 
 # --seed--

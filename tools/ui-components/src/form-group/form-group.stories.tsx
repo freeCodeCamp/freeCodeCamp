@@ -1,9 +1,9 @@
 import React from 'react';
-import { Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { FormControl } from '../form-control';
 
 import { ControlLabel } from '../control-label';
-import { FormGroup, FormGroupProps } from '.';
+import { FormGroup } from '.';
 
 const story = {
   title: 'Example/FormGroup',
@@ -15,7 +15,9 @@ const story = {
     as: { control: { type: 'text' } },
     validationState: { options: ['success', 'warning', 'error', null] }
   }
-};
+} satisfies Meta<typeof FormGroup>;
+
+type Story = StoryObj<typeof FormGroup>;
 
 const Child = () => {
   return (
@@ -26,31 +28,31 @@ const Child = () => {
   );
 };
 
-const Template: Story<FormGroupProps> = args => {
-  return <FormGroup {...args} />;
+export const Default: Story = {
+  args: {
+    children: <Child />
+  }
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  children: <Child />
+export const Success: Story = {
+  args: {
+    children: <Child />,
+    validationState: 'success'
+  }
 };
 
-export const Success = Template.bind({});
-Success.args = {
-  children: <Child />,
-  validationState: 'success'
+export const Error: Story = {
+  args: {
+    children: <Child />,
+    validationState: 'error'
+  }
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  children: <Child />,
-  validationState: 'error'
-};
-
-export const warning = Template.bind({});
-warning.args = {
-  children: <Child />,
-  validationState: 'warning'
+export const Warning: Story = {
+  args: {
+    children: <Child />,
+    validationState: 'warning'
+  }
 };
 
 export default story;
