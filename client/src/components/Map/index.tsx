@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 import {
   SuperBlockStages,
   SuperBlocks,
@@ -14,8 +15,27 @@ import { showUpcomingChanges } from '../../../config/env.json';
 
 import './map.css';
 
+import {
+  isSignedInSelector,
+  currentCertsSelector
+} from '../../redux/selectors';
+
+import {
+  RibbonIcon,
+  Arrow,
+  IncompleteIcon
+} from '../../assets/icons/completion-ribbon';
+
+import { CurrentCert } from '../../redux/prop-types';
+import {
+  certSlugTypeMap,
+  superBlockCertTypeMap
+} from '../../../../shared/config/certification-settings';
+
 interface MapProps {
   forLanding?: boolean;
+  isSignedIn: boolean;
+  currentCerts: CurrentCert[];
 }
 
 const linkSpacingStyle = {
@@ -31,12 +51,29 @@ const coreCurriculum = [
   ...superBlockOrder[SuperBlockStages.Python]
 ];
 
+const mapStateToProps = createSelector(
+  isSignedInSelector,
+  currentCertsSelector,
+  (isSignedIn: boolean, currentCerts) => ({
+    isSignedIn,
+    currentCerts
+  })
+);
+
 function MapLi({
   superBlock,
-  landing = false
+  landing = false,
+  last = false,
+  trackProgress,
+  completed,
+  index
 }: {
   superBlock: SuperBlocks;
   landing: boolean;
+  last?: boolean;
+  trackProgress: boolean;
+  completed: boolean;
+  index: number;
 }) {
   return (
     <>
@@ -44,6 +81,16 @@ function MapLi({
         data-test-label='curriculum-map-button'
         data-playwright-test-label='curriculum-map-button'
       >
+        {trackProgress && (
+          <div className='progress-icon'>
+            {completed ? (
+              <RibbonIcon value={index} />
+            ) : (
+              <IncompleteIcon value={index} />
+            )}
+            {!last && <Arrow />}
+          </div>
+        )}
         <Link className='btn link-btn btn-lg' to={`/learn/${superBlock}/`}>
           <div style={linkSpacingStyle}>
             <SuperBlockIcon className='map-icon' superBlock={superBlock} />
@@ -56,8 +103,30 @@ function MapLi({
   );
 }
 
-function Map({ forLanding = false }: MapProps): React.ReactElement {
+function Map({
+  forLanding = false,
+  isSignedIn,
+  currentCerts
+}: MapProps): React.ReactElement {
   const { t } = useTranslation();
+
+  const isTracking = (stage: SuperBlocks) =>
+    ![
+      ...superBlockOrder[SuperBlockStages.Upcoming],
+      ...superBlockOrder[SuperBlockStages.Extra]
+    ].includes(stage);
+
+  const isCompleted = (stage: SuperBlocks) => {
+    return isSignedIn
+      ? Boolean(
+          currentCerts?.find(
+            (cert: { certSlug: string }) =>
+              (certSlugTypeMap as { [key: string]: string })[cert.certSlug] ===
+              (superBlockCertTypeMap as { [key: string]: string })[stage]
+          )
+        )
+      : false;
+  };
 
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
@@ -66,7 +135,15 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
       </h2>
       <ul>
         {coreCurriculum.map((superBlock, i) => (
-          <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+          <MapLi
+            key={i}
+            superBlock={superBlock}
+            landing={forLanding}
+            trackProgress={isTracking(superBlock)}
+            index={i}
+            completed={isCompleted(superBlock)}
+            last={i + 1 == coreCurriculum.length}
+          />
         ))}
       </ul>
       <Spacer size='medium' />
@@ -75,7 +152,15 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
       </h2>
       <ul>
         {superBlockOrder[SuperBlockStages.English].map((superBlock, i) => (
-          <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+          <MapLi
+            key={i}
+            superBlock={superBlock}
+            landing={forLanding}
+            trackProgress={isTracking(superBlock)}
+            completed={isCompleted(superBlock)}
+            index={i}
+            last={i + 1 == superBlockOrder[SuperBlockStages.English].length}
+          />
         ))}
       </ul>
       <Spacer size='medium' />
@@ -84,7 +169,17 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
       </h2>
       <ul>
         {superBlockOrder[SuperBlockStages.Professional].map((superBlock, i) => (
-          <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+          <MapLi
+            key={i}
+            superBlock={superBlock}
+            landing={forLanding}
+            trackProgress={isTracking(superBlock)}
+            completed={isCompleted(superBlock)}
+            index={i}
+            last={
+              i + 1 == superBlockOrder[SuperBlockStages.Professional].length
+            }
+          />
         ))}
       </ul>
       <Spacer size='medium' />
@@ -93,7 +188,15 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
       </h2>
       <ul>
         {superBlockOrder[SuperBlockStages.Extra].map((superBlock, i) => (
-          <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+          <MapLi
+            key={i}
+            superBlock={superBlock}
+            landing={forLanding}
+            trackProgress={isTracking(superBlock)}
+            completed={isCompleted(superBlock)}
+            index={i}
+            last={i + 1 == superBlockOrder[SuperBlockStages.Extra].length}
+          />
         ))}
       </ul>
       <Spacer size='medium' />
@@ -102,7 +205,15 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
       </h2>
       <ul>
         {superBlockOrder[SuperBlockStages.Legacy].map((superBlock, i) => (
-          <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+          <MapLi
+            key={i}
+            superBlock={superBlock}
+            landing={forLanding}
+            trackProgress={isTracking(superBlock)}
+            completed={isCompleted(superBlock)}
+            index={i}
+            last={i + 1 == superBlockOrder[SuperBlockStages.Legacy].length}
+          />
         ))}
       </ul>
       {showUpcomingChanges && (
@@ -113,7 +224,17 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
           </h2>
           <ul>
             {superBlockOrder[SuperBlockStages.Upcoming].map((superBlock, i) => (
-              <MapLi key={i} superBlock={superBlock} landing={forLanding} />
+              <MapLi
+                key={i}
+                superBlock={superBlock}
+                landing={forLanding}
+                trackProgress={isTracking(superBlock)}
+                completed={isCompleted(superBlock)}
+                index={i}
+                last={
+                  i + 1 == superBlockOrder[SuperBlockStages.Upcoming].length
+                }
+              />
             ))}
           </ul>
         </>
@@ -124,4 +245,4 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
 
 Map.displayName = 'Map';
 
-export default Map;
+export default connect(mapStateToProps)(Map);
