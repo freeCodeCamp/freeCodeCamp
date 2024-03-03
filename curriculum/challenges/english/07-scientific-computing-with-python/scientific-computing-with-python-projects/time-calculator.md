@@ -45,7 +45,7 @@ add_time("6:30 PM", "205:12")
 Do not import any Python libraries. Assume that the start times are valid times. The minutes in the duration time will be a whole number less than 60, but the hour can be any whole number.
 
 # --hints--
-Calling `add_time("3:30 PM", "2:12")` should return `"5:42 PM"`.
+Calling `add_time("3:30 PM", "2:12")` should return `'5:42 PM'`.
 
 ```js
 ({
@@ -81,7 +81,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Calling `add_time("11:55 AM", "3:12")`  should return `"3:07 PM"`.
+Calling `add_time("11:55 AM", "3:12")`  should return `'3:07 PM'`.
 
 ```js
 ({
@@ -190,7 +190,7 @@ t.result.wasSuccessful()
 ```
 
 
-Calling `add_time("2:59 AM", "24:00")` should return `"2:59 AM"`.
+Calling `add_time("2:59 AM", "24:00")` should return `'2:59 AM'`.
 
 ```js
 ({
@@ -226,7 +226,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Calling `add_time("11:59 PM", "24:05")` should return `"12:04 AM (2 days later)"`.
+Calling `add_time("11:59 PM", "24:05")` should return `'12:04 AM (2 days later)'`.
 
 ```js
 ({
@@ -262,7 +262,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Calling `add_time("8:16 PM", "466:02")` should return `"6:18 AM (20 days later)"`.
+Calling `add_time("8:16 PM", "466:02")` should return `'6:18 AM (20 days later)'`.
 
 ```js
 ({
@@ -335,7 +335,7 @@ t.result.wasSuccessful()
 ```
 
 
-Calling `add_time("3:30 PM", "2:12", "Monday")`should return `"5:42 PM, Monday"`.
+Calling `add_time("3:30 PM", "2:12", "Monday")`should return `'5:42 PM, Monday'`.
 
 ```js
 ({
@@ -372,7 +372,7 @@ t.result.wasSuccessful()
 ```
 
 
-Calling `add_time("2:59 AM", "24:00", "saturDay")` should return `"2:59 AM, Sunday (next day)"`.
+Calling `add_time("2:59 AM", "24:00", "saturDay")` should return `'2:59 AM, Sunday (next day)'`.
 
 ```js
 ({
@@ -408,7 +408,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Calling `add_time("11:59 PM", "24:05", "Wednesday")` should return `"12:04 AM, Friday (2 days later)"`.
+Calling `add_time("11:59 PM", "24:05", "Wednesday")` should return `'12:04 AM, Friday (2 days later)'`.
 
 ```js
 ({
@@ -444,7 +444,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Calling `add_time("8:16 PM", "466:02", "tuesday") `should return `"6:18 AM, Monday (20 days later)"`.
+Calling `add_time("8:16 PM", "466:02", "tuesday") `should return `'6:18 AM, Monday (20 days later)'`.
 
 ```js
 ({
