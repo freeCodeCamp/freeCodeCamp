@@ -177,6 +177,7 @@ const publicUserData = {
     }
   ],
   completedExams: testUserData.completedExams,
+  completedSurveys: [],
   githubProfile: testUserData.githubProfile,
   isApisMicroservicesCert: testUserData.isApisMicroservicesCert,
   isBackEndCert: testUserData.isBackEndCert,
@@ -608,6 +609,7 @@ describe('userRoutes', () => {
           // missing in the user document.
           completedChallenges: [],
           completedExams: [],
+          completedSurveys: [],
           partiallyCompletedChallenges: [],
           portfolio: [],
           savedChallenges: [],
