@@ -85,10 +85,10 @@ export function createSuperRequest(config: {
   return (resource, options) => superRequest(resource, config, options);
 }
 
-export function setupServer(): void {
+export function setupServer(rateLimitTesting = false): void {
   let fastify: FastifyTestInstance;
   beforeAll(async () => {
-    fastify = await build();
+    fastify = await build({}, rateLimitTesting);
     await fastify.ready();
 
     // Prisma does not support TTL indexes in the schema yet, so, to avoid

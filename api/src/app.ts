@@ -50,8 +50,7 @@ import {
   FREECODECAMP_NODE_ENV,
   MONGOHQ_URL,
   SENTRY_DSN,
-  SESSION_SECRET,
-  TESTING_RATE_LIMIT
+  SESSION_SECRET
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 import { certificateRoutes } from './routes/certificate';
@@ -89,11 +88,14 @@ ajv.addFormat('objectid', {
  *
  * @param options The options to pass to the Fastify constructor.
  * @returns The instantiated Fastify server, with TypeBox.
+ *
+ * @param rateLimitTesting - If true, rate limiting will be enabled for testing.
  */
 export const build = async (
   options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {
     logger: true
-  }
+  },
+  rateLimitTesting: boolean = false
 ): Promise<FastifyInstanceWithTypeProvider> => {
   // TODO: Old API returns 403s for failed validation. We now return 400 (default) from AJV.
   // Watch when implementing in client
@@ -138,7 +140,7 @@ export const build = async (
     done();
   });
 
-  if (TESTING_RATE_LIMIT || FREECODECAMP_NODE_ENV === 'production') {
+  if (rateLimitTesting || FREECODECAMP_NODE_ENV === 'production') {
     void fastify.register(fastifyRedis, {
       host: 'localhost',
       port: 6379
@@ -153,7 +155,11 @@ export const build = async (
         await reply.status(429).send('Rate limit exceeded');
       }
 
-      await fastify.redis.multi().incr(key).expire(key, 60).exec();
+      await fastify.redis
+        .multi()
+        .incr(key)
+        .expire(key, FREECODECAMP_NODE_ENV === 'production' ? 60 : 10)
+        .exec();
     });
   }
 

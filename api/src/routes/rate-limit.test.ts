@@ -4,17 +4,20 @@ describe('Rate Limiting', () => {
   let superGet: ReturnType<typeof createSuperRequest>;
 
   beforeAll(async () => {
-    process.env.TESTING_RATE_LIMIT = 'true';
+    // process.env.TESTING_RATE_LIMIT = 'true';
+  });
+
+  setupServer(true);
+
+  beforeEach(async () => {
     const setCookies = await devLogin();
     superGet = createSuperRequest({ method: 'GET', setCookies });
   });
 
-  setupServer();
-
   test('Should rate limit excessive requests', async () => {
     const route = '/status/ping';
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 30; i++) {
       // Not rate-limited yet
       const response = await superGet(route);
       expect(response.statusCode).not.toBe(429);
@@ -23,15 +26,9 @@ describe('Rate Limiting', () => {
     // Expect a 429 Too Many Requests response
     const rateLimitedResponse = await superGet(route);
     expect(rateLimitedResponse.statusCode).toBe(429);
-
-    // log if limiting is enabled
-    console.log(
-      'Rate limiting is enabled:',
-      process.env.TESTING_RATE_LIMIT === 'true'
-    );
   });
 
-  afterAll(() => {
+  afterEach(() => {
     process.env.TESTING_RATE_LIMIT = 'false';
   });
 });
