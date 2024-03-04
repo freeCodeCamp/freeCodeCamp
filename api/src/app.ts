@@ -153,13 +153,14 @@ export const build = async (
 
       if (Number(current) >= 30) {
         await reply.status(429).send('Rate limit exceeded');
+
+        // We want to reset the rate limit after testing the exceeded rate limit
+        if (rateLimitTesting) {
+          await fastify.redis.del(key);
+        }
       }
 
-      await fastify.redis
-        .multi()
-        .incr(key)
-        .expire(key, FREECODECAMP_NODE_ENV === 'production' ? 60 : 10)
-        .exec();
+      await fastify.redis.multi().incr(key).expire(key, 60).exec();
     });
   }
 
