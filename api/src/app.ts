@@ -19,8 +19,7 @@ import Fastify, {
   RawServerDefault
 } from 'fastify';
 
-import fastifyRedis from '@fastify/redis';
-
+import { Redis } from 'ioredis';
 import prismaPlugin from './db/prisma';
 import cors from './plugins/cors';
 import { NodemailerProvider } from './plugins/mail-providers/nodemailer';
@@ -141,26 +140,15 @@ export const build = async (
   });
 
   if (rateLimitTesting || FREECODECAMP_NODE_ENV === 'production') {
-    void fastify.register(fastifyRedis, {
-      host: 'localhost',
-      port: 6379
-    });
-
-    fastify.addHook('onRequest', async (request, reply) => {
-      const ip = request.ip;
-      const key = `rate_limit:${ip}`;
-      const current = await fastify.redis.get(key);
-
-      if (Number(current) >= 30) {
-        await reply.status(429).send('Rate limit exceeded');
-
-        // We want to reset the rate limit after testing the exceeded rate limit
-        if (rateLimitTesting) {
-          await fastify.redis.del(key);
-        }
-      }
-
-      await fastify.redis.multi().incr(key).expire(key, 60).exec();
+    await fastify.register(import('@fastify/rate-limit'), {
+      redis: new Redis({
+        connectionName: 'UserRateLimit',
+        host: 'localhost',
+        connectTimeout: 500,
+        maxRetriesPerRequest: 1
+      }),
+      max: 30,
+      timeWindow: '1 minute'
     });
   }
 
