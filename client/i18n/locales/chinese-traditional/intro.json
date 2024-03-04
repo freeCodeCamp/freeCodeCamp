@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Legacy Responsive Web Design Challenges",
+    "title": "（舊版）響應式網頁設計挑戰",
     "intro": [
       "在響應式網頁設計認證中，你將學習開發者用來編寫網頁的語言：HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
       "首先，你將通過創建一個展示貓咪圖片的應用，學習 HTML 和 CSS 的基本知識。 然後，通過創建企鵝學習像 CSS 變量這樣的現代技術，以及通過創建網頁表單學習無障礙的最佳實踐。",
@@ -194,7 +194,7 @@
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "Learn More About CSS Pseudo Selectors by Building A Balance Sheet",
+        "title": "通過創建資產負債表學習 CSS 僞選擇器",
         "intro": [
           "你可以使用 CSS 僞選擇器來更改特定的 HTML 元素。",
           "在本課程中，你將使用僞選擇器創建資產負債表。你將學習如何在將鼠標懸停在元素上時更改其樣式，並觸發網頁上的其他事件。"
@@ -208,10 +208,10 @@
         ]
       },
       "learn-intermediate-css-by-building-a-cat-painting": {
-        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "title": "通過創建貓咪繪畫學習中級 CSS",
         "intro": [
-          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts",
-          "In this course, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+          "掌握CSS 定位對於創建具有視覺吸引力和響應性的網頁佈局至關重要。",
+          "在這個課程中，你將創建一幅貓咪繪畫。你將學習如何使用絕對定位、z-index 屬性和 transform 屬性。"
         ]
       }
     }
@@ -300,80 +300,80 @@
     }
   },
   "javascript-algorithms-and-data-structures-v8": {
-    "title": "JavaScript Algorithms and Data Structures (Beta)",
+    "title": "JavaScript 算法和數據結構（Beta）",
     "intro": [
-      "Developers use HTML and CSS to control the content and styling of a page. And they use JavaScript to make that page interactive.",
-      "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",
-      "You'll also learn about Object Oriented Programming (OOP), Functional Programming, algorithmic thinking, how to work with local storage, and how to fetch data using an API."
+      "開發者使用 HTML 和 CSS 來控制頁面的內容與樣式。他們還使用 JavaScript 來讓頁面可以交互。",
+      "在這個 JavaScript 算法與數據結構認證中，你將學習如變量、數組、對象、循環、函數、DOM 等 JavaScript 的基礎知識。",
+      "你還會學習面向對象編程（OOP）、函數式編程、算法思維、如何使用本地存儲，以及如何通過使用 API 來獲取數據。"
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
+    "note": "注意：一些瀏覽器擴展程序，如廣告攔截器和腳本攔截器可能會干擾測試。如果你遇到問題，我們建議你在學習時禁止能更改或攔截頁面內容的擴展程序。",
     "blocks": {
       "build-a-pokemon-search-app-project": {
-        "title": "Build a Pokémon Search App Project",
+        "title": "創建寶可夢搜索應用程序",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a Pokémon search app."
+          "這是你要獲得認證必須做的項目之一。",
+          "在這個項目中，你將創建一個寶可夢搜索應用。"
         ]
       },
       "build-a-cash-register-project": {
-        "title": "Build a Cash Register Project",
+        "title": "創建收銀機項目",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you'll build a cash register web app."
+          "這是你要獲得認證必須做的項目之一。",
+          "在這個項目中，你將創建一個收銀機 web 應用程序。"
         ]
       },
       "build-a-palindrome-checker-project": {
-        "title": "Build a Palindrome Checker Project",
+        "title": "創建迴文檢測項目",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you'll build an application that checks whether a given word is a palindrome."
+          "這是你要獲得認證必須做的項目之一。",
+          "在這個項目中，你將創建一個檢測給定單詞是否是迴文的程序。"
         ]
       },
       "build-a-roman-numeral-converter-project": {
-        "title": "Build a Roman Numeral Converter Project",
+        "title": "創建羅馬數字轉換器項目",
         "intro": [
-          "This is one of the required projects to claim your certification.",
-          "For this project, you'll build an application that converts integers to Roman numerals."
+          "這是你要獲得認證必須做的項目之一。",
+          "在這個項目中，你將創建一個把整數轉換爲羅馬數字的應用。"
         ]
       },
       "build-a-telephone-number-validator-project": {
-        "title": "Build a Telephone Number Validator Project",
+        "title": "創建電話號碼驗證項目",
         "intro": [
-          "This is one of the required projects to claim your certification.",
-          "For this project, you'll build an application that checks if a number is a valid United States phone number."
+          "這是你要獲得認證必須做的項目之一。",
+          "在這個項目中，你將創建一個檢查某個號碼是否是美國電話號碼的應用程序。"
         ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+        "title": "通過創建角色扮演遊戲學習基礎 JavaScript",
         "intro": [
-          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
-          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Role Playing Game. You'll learn how to work with arrays, strings, objects, functions, loops, <code>if/else</code> statements, and more."
+          "JavaScript 是一種功能強大的腳本語言，可用於使網頁具有交互性。它和 HTML 和 CSS 都是 Web 核心技術。所有現代瀏覽器都支持 JavaScript。",
+          "在這個練習項目中，你將通過編程你自己的角色遊戲來學習 JavaScript 中的基本編程概念。你將學習如何使用數組、字符串、對象、函數、循環、 <code>if/else</code> 語句以及更多。"
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
-        "title": "Learn Form Validation by Building a Calorie Counter",
+        "title": "通過創建卡路里計數器學習表單驗證",
         "intro": [
-          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter project, you'll learn how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
-          "In this practice project, you'll learn basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
+          "有時，在編寫 Web 應用程序時，需要能夠接受用戶的輸入。在這個卡路里計數器項目中，你將學習如何驗證用戶輸入、基於該輸入執行計算以及動態更新界面以顯示結果。",
+          "在這個練習項目中，你將學習基本的正則表達式、模板字面量、<code>addEventListener()</code> 方法等。"
         ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
-        "title": "Learn Functional Programming by Building a Spreadsheet",
+        "title": "通過創建電子表格學習函數式編程",
         "intro": [
-          "Functional Programming is a popular approach to software development. In Functional Programming, developers organize code into smaller functions, then combine those functions to build complex programs.",
-          "In this spreadsheet application project, you'll learn about parsing and evaluating mathematical expressions, implementing spreadsheet functions, handling cell references, and creating interactive web interfaces. You'll learn how to dynamically update the page based on user input.",
-          "This project will cover concepts like the <code>map()</code> method, <code>find()</code> method, <code>parseInt()</code>, the <code>includes()</code> method."
+          "函數式編程是一種流行的軟件開發方法。在函數式編程中，開發人員將代碼組織成更小的函數，然後將這些函數組合起來構建複雜的程序。",
+          "在這個電子表格應用程序項目中，你將學習如何解析和計算數學表達式、實現電子表格功能、處理單元格引用以及創建交互式 Web 界面。你將學習如何根據用戶輸入動態更新頁面。",
+          "這個項目將涵蓋各種概念，如 <code>map()</code> 方法、 <code>find()</code> method、<code>parseInt()</code>、<code>includes()</code> 方法。"
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
-        "title": "Learn Modern JavaScript Methods by Building Football Team Cards",
+        "title": "通過創建足球隊卡學習現代 JavaScript 方法",
         "intro": [
-          "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
-          "This project will cover concepts like switch statements, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method, and more."
+          "構建 Web 應用程序的一個常見方面是：處理數據集，然後將信息輸出到屏幕上。在這個運動隊卡片項目中，你將學習如何使用 DOM 操作、對象解構、事件處理和數據過濾。",
+          "這個項目將涵蓋 switch 語句、默認參數、 <code>Object.freeze()</code>、 <code>map()</code> 方法等概念。"
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
-        "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
+        "title": "通過創建統計計算器學習高級數組方法",
         "intro": [
           "As you expand your JavaScript skills, you'll want to get comfortable with array manipulation methods, such as <code>map()</code>, <code>reduce()</code>, and <code>filter()</code>.",
           "In this statistics calculator project, you'll gain experience with handling user input, DOM manipulation, and method chaining. You'll get practice by performing statistical calculations like mean, median, mode, variance, and standard deviation."
@@ -1122,13 +1122,13 @@
         ]
       },
       "top-working-with-text": {
-        "title": "Working with Text",
+        "title": "使用文本",
         "intro": [
           "Explore the intricacies of working with text in web development. Learn about text formatting, manipulation, and presentation to enhance your skills in creating web content."
         ]
       },
       "top-links-and-images": {
-        "title": "Links and Images",
+        "title": "鏈接和圖像",
         "intro": [
           "Learn how to incorporate links and images into your web projects. This course covers the fundamentals of creating links and embedding images to make your websites more interactive and visually appealing."
         ]
@@ -1152,13 +1152,13 @@
         ]
       },
       "top-learn-css-specificity": {
-        "title": "Learn CSS Specificity",
+        "title": "學習 CSS 優先級",
         "intro": [
           "Learn CSS specificity and gain a better understanding of how styles are applied to HTML elements. This course explores the nuances of CSS rules and helps you write efficient and targeted styles for your web pages."
         ]
       },
       "top-the-box-model": {
-        "title": "Learn the Box Model",
+        "title": "學習盒模型",
         "intro": [
           "Learn the CSS box model with this course. Understand how elements are rendered on the web, and learn to manipulate spacing, borders, and padding to achieve your desired layout and design."
         ]
@@ -1217,74 +1217,72 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "(New) Foundational C# with Microsoft",
+    "title": "（新）微軟基礎 C# ",
     "intro": [
-      "This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development.",
-      "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
-      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building applications."
+      "本課程全面介紹 C# 編程，涵蓋其核心概念、語法和在軟件開發中的實際應用。",
+      "通過實踐練習和項目，你將學習 C# 的基礎知識，包括變量、數據類型、控制結構和麪向對象編程原理。",
+      "課程結束時，你將獲得所需的實用技能和知識，從而自信地使用 C# 構建應用程序。"
     ],
-    "note": "Each section below has a trophy associated with it that you must earn on the Microsoft Learn platform. After earning each trophy, you need to verify them on freeCodeCamp. Once you have done those, you can qualify for the certification exam.",
+    "note": "以下每個部分都有一個獎盃，你必須在 Microsoft Learn 平臺上獲得該獎盃。獲得每個獎盃後，你需要在 freeCodeCamp 上進行驗證。完成驗證後，你就有資格參加認證考試。",
     "blocks": {
       "write-your-first-code-using-c-sharp": {
-        "title": "Write Your First Code Using C#",
+        "title": "使用 C# 編寫你的第一行代碼",
         "intro": [
-          "Begin your journey by learning to write your first code using C#. Develop a strong foundation as you explore the fundamentals and syntax of the language, setting the stage for your programming adventures."
+          "學習使用 C# 編寫第一段代碼，開始你的編程之旅。探索這門語言的基本原理和語法，打下堅實的基礎，爲你的編程冒險搭建舞臺。"
         ]
       },
       "create-and-run-simple-c-sharp-console-applications": {
-        "title": "Create and Run Simple C# Console Applications",
+        "title": "創建和運行簡單的 C# 控制檯應用程序",
         "intro": [
-          "Master the art of creating and running simple C# console applications. Dive into the world of console-based programming, where you will gain hands-on experience executing your code and seeing it in action."
+          "掌握創建和運行簡單 C# 控制檯應用程序的藝術。深入基於控制檯的編程世界，在這裏你將執行你的代碼，並查看它如何運行，獲得實踐經驗。"
         ]
       },
       "add-logic-to-c-sharp-console-applications": {
-        "title": "Add Logic to C# Console Applications",
+        "title": "向 C# 控制檯應用程序添加邏輯",
         "intro": [
-          "Unlock the power of logic in C# console applications. Learn how to add logic and decision-making capabilities to your code, enabling your applications to make dynamic choices and respond intelligently to different scenarios."
+          "在 C# 控制檯應用程序中釋放邏輯的力量。瞭解如何在代碼中添加邏輯和決策功能，使你的應用程序能夠做出動態選擇，並對不同場景做出智能響應。"
         ]
       },
       "work-with-variable-data-in-c-sharp-console-applications": {
-        "title": "Work with Variable Data in C# Console Applications",
+        "title": "在 C# 控制檯應用程序中使用變量數據",
         "intro": [
-          "Discover the versatility of variable data in C# console applications. Harness the ability to store and manipulate different types of data, such as numbers and text, as you delve into the essential concepts of variables and data handling."
+          "探索 C# 控制檯應用程序中變量數據的多功能性。在深入學習變量和數據處理的基本概念後，你將掌握存儲和處理不同類型數據（如數字和文本）的能力。"
         ]
       },
       "create-methods-in-c-sharp-console-applications": {
-        "title": "Create Methods in C# Console Applications",
+        "title": "在 C# 控制檯應用程序中創建方法",
         "intro": [
-          "Take your C# console applications to the next level by mastering the art of creating methods. Learn how to organize and modularize your code, making it more manageable, reusable, and efficient."
+          "掌握創建方法的藝術，讓你的 C# 控制檯應用程序更上一層樓。學習如何組織和模塊化你的代碼，使其更易於管理、可重用和高效。"
         ]
       },
       "debug-c-sharp-console-applications": {
-        "title": "Debug C# Console Applications",
+        "title": "調試 C# 控制檯應用程序",
         "intro": [
-          "Sharpen your troubleshooting skills as you dive into the world of debugging C# console applications. Gain the ability to identify and fix issues in your code, ensuring your applications run smoothly and deliver the desired results."
+          "在深入調試 C# 控制檯應用程序的過程中，提升你解決問題的能力。掌握識別和修復代碼問題的能力，確保應用程序順利運行並交付預期結果。"
         ]
       },
       "foundational-c-sharp-with-microsoft-certification-exam": {
-        "title": "Foundational C# with Microsoft Certification Exam",
-        "intro": [
-          "Use what you've learned to pass the exam to earn your Foundational C# with Microsoft Certification"
-        ]
+        "title": "微軟基礎 C# 認證考試",
+        "intro": ["利用所學知識通過考試，獲得你的微軟基礎 C# 認證"]
       }
     }
   },
   "upcoming-python": {
-    "title": "Upcoming Python",
-    "intro": ["placeholder"],
+    "title": "即將推出的 Python ",
+    "intro": ["佔位符"],
     "blocks": {
       "learn-python-by-building-a-blackjack-game": {
-        "title": "Learn Python by Building a Blackjack Game",
-        "intro": ["Learn Python.", ""]
+        "title": "通過創建 21 點遊戲學習 Python",
+        "intro": ["學習 Python。", ""]
       },
       "upcoming-python-project": {
-        "title": "Upcoming Python Project",
-        "intro": ["placeholder"]
+        "title": "即將推出的 Python 項目",
+        "intro": ["佔位符"]
       }
     }
   },
   "a2-english-for-developers": {
-    "title": "A2 English for Developers (Beta)",
+    "title": "面向開發者的 A2 英語（Beta）",
     "intro": [
       "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
       "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
