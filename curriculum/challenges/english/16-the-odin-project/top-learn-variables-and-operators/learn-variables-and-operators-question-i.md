@@ -65,14 +65,14 @@ counter++;
 console.log( counter ); // 2, the lines above did the same
 ```
 
-- If we’d like to increase a value and immediately use the result of the operator, you need the prefix form:
+- If you’d like to increase a value and immediately use the result of the operator, you need the prefix form:
 
 ```js
 let counter = 0;
 console.log( ++counter ); // 1
 ```
 
-- If we’d like to increment a value but use its previous value, you need the postfix form:
+- If you’d like to increment a value but use its previous value, you need the postfix form:
 
 ```js 
 let counter = 0;

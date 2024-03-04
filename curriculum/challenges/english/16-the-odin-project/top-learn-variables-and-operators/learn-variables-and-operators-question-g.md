@@ -51,7 +51,7 @@ alert( +apples + +oranges ); // 5
 
 From a mathematician’s standpoint, the abundance of pluses may seem strange. But from a programmer’s standpoint, there’s nothing special: unary pluses are applied first, they convert strings to numbers, and then the binary plus sums them up.
 
-Why are unary pluses applied to values before the binary ones? As we’re going to see, that’s because of their _higher_ precedence.
+Why are unary pluses applied to values before the binary ones? As you’re going to see, that’s because of their _higher_ precedence.
 
 # --question--
 
