@@ -90,7 +90,9 @@ ajv.addFormat('objectid', {
  * @returns The instantiated Fastify server, with TypeBox.
  */
 export const build = async (
-  options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {}
+  options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {
+    logger: true
+  }
 ): Promise<FastifyInstanceWithTypeProvider> => {
   // TODO: Old API returns 403s for failed validation. We now return 400 (default) from AJV.
   // Watch when implementing in client
@@ -136,19 +138,17 @@ export const build = async (
   });
 
   void fastify.register(fastifyRedis, {
-    host: '127.0.0.1',
+    host: 'localhost',
     port: 6379
   });
 
   fastify.addHook('onRequest', async (request, reply) => {
     const ip = request.ip;
     const key = `rate_limit:${ip}`;
-    const current = Number(await fastify.redis.get(key)) || 0;
+    const current = await fastify.redis.get(key);
 
-    // Rate limit 30 requests per minute
-    if (current >= 30) {
-      await reply.code(429).send('Rate limit exceeded');
-      return;
+    if (Number(current) >= 30) {
+      await reply.status(429).send('Rate limit exceeded');
     }
 
     await fastify.redis.multi().incr(key).expire(key, 60).exec();

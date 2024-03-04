@@ -20,6 +20,14 @@ services:
         # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
         'mongosh --host db:27017 --eval ''try {rs.initiate();} catch (err) { if(err.codeName !== "AlreadyInitialized") throw err };'''
       ]
-
+  redis:
+    image: redis
+    container_name: redis
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis-data:/data
 volumes:
   db-data:
+  redis-data:
