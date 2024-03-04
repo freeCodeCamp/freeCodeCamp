@@ -62,7 +62,7 @@ console.log('3' + 2 - 1);
 
 ## --answers--
 
-`31`, because the subtraction operator forces all operations to be arithmetic.
+`31`, because the `+` operator concatenates the string and number before subtraction.
 
 ---
 
@@ -74,9 +74,8 @@ console.log('3' + 2 - 1);
 
 ---
 
-`31`, because `+` concatenates `'3'` and `2` into `'32'`, then `-` subtracts `1` to result in `31`.
-
+`321`, because the `-` operator is not supported with strings.
 
 ## --video-solution--
 
-4
+1

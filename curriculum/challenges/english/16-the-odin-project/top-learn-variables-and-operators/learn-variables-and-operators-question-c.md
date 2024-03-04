@@ -34,7 +34,7 @@ The reassignment succeeds with no errors.
 
 ---
 
-A runtime error is thrown, indicating immutability violation.
+An error is thrown because `const` declared variables cannot be reassigned.
 
 ---
 
