@@ -163,13 +163,14 @@ describe('auth', () => {
       // full application here.
       fastify.prisma = { user: { findUnique: () => fakeUser } };
       fastify.get('/test-user', req => {
-        return { user: req.user };
+        expect(req.user).toEqual(fakeUser);
+        return { ok: true };
       });
+
       const token = jwt.sign(
         { accessToken: createAccessToken('123') },
         JWT_SECRET
       );
-
       const res = await fastify.inject({
         method: 'GET',
         url: '/test-user',
@@ -178,81 +179,59 @@ describe('auth', () => {
         }
       });
 
-      expect(res.json()).toEqual({ user: fakeUser });
+      expect(res.json()).toEqual({ ok: true });
     });
   });
 
-  // NOTE: fastify.inject handles all the mocking, but we need a way to access
-  // the system under test. Reply.send is just there so that we can assert
-  // what validateReferrer returns.
   describe('validateReferrer', () => {
     const fCCDotOrg = 'https://www.freecodecamp.org/';
-    beforeEach(() => {
-      fastify.get('/test', async (req, reply) => {
-        void reply.send({ referrer: req.validateReferrer() });
-      });
-    });
 
-    it('should use return null if the origin is invalid', async () => {
+    function setupTestRoute({ expected }: { expected: string | null }) {
+      fastify.get('/test', req => {
+        expect(req.validateReferrer()).toEqual(expected);
+        return { ok: true };
+      });
+    }
+
+    async function injectRequest({ referer }: { referer: string }) {
       const res = await fastify.inject({
         method: 'GET',
         url: '/test',
         headers: {
-          referer: 'https://an.n.random.origin'
+          referer
         }
       });
 
-      expect(res.json()).toEqual({ referrer: null });
+      expect(res.json()).toEqual({ ok: true });
+    }
+
+    it('should return null if the origin is invalid', async () => {
+      setupTestRoute({ expected: null });
+      await injectRequest({ referer: 'https://an.n.random.origin' });
     });
 
-    it('should use the referer as the origin if it is a valid origin', async () => {
-      const res = await fastify.inject({
-        method: 'GET',
-        url: '/test',
-        headers: {
-          referer: fCCDotOrg
-        }
-      });
-
-      expect(res.json()).toEqual({ referrer: fCCDotOrg });
+    it('should return the referer if it has a valid origin', async () => {
+      setupTestRoute({ expected: fCCDotOrg });
+      await injectRequest({ referer: fCCDotOrg });
     });
 
     it('should ignore query params', async () => {
-      const res = await fastify.inject({
-        method: 'GET',
-        url: '/test',
-        headers: {
-          referer: fCCDotOrg + 'stuff/?and=things'
-        }
-      });
-
-      expect(res.json()).toEqual({ referrer: fCCDotOrg + 'stuff/' });
+      const expected = fCCDotOrg + 'stuff/';
+      setupTestRoute({ expected });
+      await injectRequest({ referer: expected + '?and=things' });
     });
 
     it('should return null if the referer is gibberish', async () => {
-      const res = await fastify.inject({
-        method: 'GET',
-        url: '/test',
-        headers: {
-          referer: 'gibberish'
-        }
-      });
-
-      expect(res.json()).toEqual({ referrer: null });
+      setupTestRoute({ expected: null });
+      await injectRequest({ referer: 'gibberish' });
     });
 
     it('should log a warning if the referer is invalid', async () => {
       const warnSpy = jest.spyOn(fastify.log, 'warn');
       const fakeFCCDotOrg = 'https://www.freecodecampp.org';
-      const res = await fastify.inject({
-        method: 'GET',
-        url: '/test',
-        headers: {
-          referer: fakeFCCDotOrg
-        }
-      });
+      setupTestRoute({ expected: null });
+      await injectRequest({ referer: fakeFCCDotOrg });
 
-      expect(res.json()).toEqual({ referrer: null });
       expect(warnSpy).toHaveBeenCalledWith('Invalid referer: ' + fakeFCCDotOrg);
     });
   });
