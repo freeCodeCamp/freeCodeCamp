@@ -50,7 +50,8 @@ import {
   FREECODECAMP_NODE_ENV,
   MONGOHQ_URL,
   SENTRY_DSN,
-  SESSION_SECRET
+  SESSION_SECRET,
+  TESTING_RATE_LIMIT
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 import { certificateRoutes } from './routes/certificate';
@@ -137,22 +138,24 @@ export const build = async (
     done();
   });
 
-  void fastify.register(fastifyRedis, {
-    host: 'localhost',
-    port: 6379
-  });
+  if (TESTING_RATE_LIMIT || FREECODECAMP_NODE_ENV === 'production') {
+    void fastify.register(fastifyRedis, {
+      host: 'localhost',
+      port: 6379
+    });
 
-  fastify.addHook('onRequest', async (request, reply) => {
-    const ip = request.ip;
-    const key = `rate_limit:${ip}`;
-    const current = await fastify.redis.get(key);
+    fastify.addHook('onRequest', async (request, reply) => {
+      const ip = request.ip;
+      const key = `rate_limit:${ip}`;
+      const current = await fastify.redis.get(key);
 
-    if (Number(current) >= 30) {
-      await reply.status(429).send('Rate limit exceeded');
-    }
+      if (Number(current) >= 30) {
+        await reply.status(429).send('Rate limit exceeded');
+      }
 
-    await fastify.redis.multi().incr(key).expire(key, 60).exec();
-  });
+      await fastify.redis.multi().incr(key).expire(key, 60).exec();
+    });
+  }
 
   // @ts-expect-error - @fastify/session's types are not, yet, compatible with
   // express-session's types
