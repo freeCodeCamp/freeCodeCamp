@@ -123,16 +123,13 @@ export function* postChargeSaga({
         completionCountSelector
       );
       yield call(callGA, {
-        event:
-          paymentProvider === PaymentProvider.Patreon
-            ? 'donation_related'
-            : 'donation',
+        event: 'donation',
         action: stringifyDonationEvents(paymentContext, paymentProvider),
         duration,
         amount,
         completed_challenges: completedChallenges.length,
         completed_challenges_session: completedChallengesInSession,
-        isSignedIn: isSignedIn
+        isSignedIn
       });
     }
   } catch (error) {

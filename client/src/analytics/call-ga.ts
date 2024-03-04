@@ -85,8 +85,6 @@ export type GAevent =
 
 export default function callGA(payload: GAevent) {
   TagManager.dataLayer({
-    dataLayer: {
-      ...payload
-    }
+    dataLayer: payload
   });
 }

@@ -130,7 +130,7 @@ describe('donation-saga', () => {
       payload: { ...postChargeDataMock.payload, paymentProvider: 'paypal' }
     };
 
-    let paypalAnalyticsDataMock = analyticsDataMock;
+    const paypalAnalyticsDataMock = analyticsDataMock;
     paypalAnalyticsDataMock.action = 'Donate Page Paypal Payment Submission';
 
     const { amount, duration } = paypalDataMock.payload;
@@ -145,7 +145,7 @@ describe('donation-saga', () => {
   });
 
   it('does not call addDonate for Paypal if user not signed in', () => {
-    let paypalDataMock = {
+    const paypalDataMock = {
       payload: { ...postChargeDataMock.payload, paymentProvider: 'paypal' }
     };
 

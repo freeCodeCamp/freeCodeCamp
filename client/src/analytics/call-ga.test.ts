@@ -7,7 +7,6 @@ jest.mock('.', () => ({
 
 describe('callGA function', () => {
   it('calls TagManager dataLayer with the same arguments', () => {
-    // Define the arguments you'll use for testing
     const eventDataMock: GAevent = {
       event: 'donation',
       action: 'Donate Page Stripe Payment Submission',
@@ -19,7 +18,7 @@ describe('callGA function', () => {
     };
     callGA(eventDataMock);
     expect(TagManager.dataLayer).toHaveBeenCalledWith({
-      dataLayer: { ...eventDataMock }
+      dataLayer: eventDataMock
     });
   });
 });
