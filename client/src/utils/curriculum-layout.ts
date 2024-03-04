@@ -16,10 +16,13 @@ export const isGridBased = (
 ) => {
   // Python projects should not be displayed as a grid, but should be displayed
   // as a list of projects. Otherwise, if we do not do this the project will be
-  // shown as a single certificaton project, which is not what we want.
+  // shown as a single certification project.
 
-  if (challengeType === 10) return false;
-
+  if (
+    challengeType === challengeTypes.pythonProject ||
+    challengeType === challengeTypes.multifilePythonCertProject
+  )
+    return false;
   return gridBasedSuperBlocks.includes(superBlock);
 };
 
@@ -33,7 +36,8 @@ const projectBasedChallengeTypes = [
   challengeTypes.codeAllyCert,
   challengeTypes.multifileCertProject,
   challengeTypes.exam,
-  challengeTypes.codeAllyPractice
+  challengeTypes.codeAllyPractice,
+  challengeTypes.multifilePythonCertProject
 ];
 
 export const isProjectBased = (

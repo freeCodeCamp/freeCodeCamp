@@ -53,6 +53,7 @@ import {
   SESSION_SECRET
 } from './utils/env';
 import { isObjectID } from './utils/validation';
+import { certificateRoutes } from './routes/certificate';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -217,6 +218,7 @@ export const build = async (
     void fastify.register(devLoginCallback, { prefix: '/auth' });
     void fastify.register(devLegacyAuthRoutes);
   }
+  void fastify.register(certificateRoutes);
   void fastify.register(challengeRoutes);
   void fastify.register(settingRoutes);
   void fastify.register(donateRoutes);
