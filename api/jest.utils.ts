@@ -115,7 +115,7 @@ export function setupServer(rateLimitTesting = false): void {
 
     global.fastifyTestInstance = fastify;
     // allow a little time to setup the db
-  }, 10000);
+  }, 15000);
 
   afterAll(async () => {
     if (!global.fastifyTestInstance)
