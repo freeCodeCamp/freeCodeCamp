@@ -164,9 +164,7 @@ function EmailSettings({
   }
   return (
     <div className='email-settings'>
-      <SectionHeader dataPlaywrightTestLabel='email-settings-header'>
-        {t('settings.email.heading')}
-      </SectionHeader>
+      <SectionHeader>{t('settings.email.heading')}</SectionHeader>
       {isEmailVerified ? null : (
         <FullWidthRow>
           <HelpBlock>
@@ -197,9 +195,7 @@ function EmailSettings({
         >
           <FormGroup controlId='current-email'>
             <ControlLabel>{t('settings.email.current')}</ControlLabel>
-            <FormControl.Static data-playwright-test-label='current-email'>
-              {currentEmail}
-            </FormControl.Static>
+            <FormControl.Static>{currentEmail}</FormControl.Static>
           </FormGroup>
           <div role='group' aria-label={t('settings.email.heading')}>
             <FormGroup
@@ -211,7 +207,6 @@ function EmailSettings({
               </ControlLabel>
               <FormControl
                 data-cy='email-input'
-                data-playwright-test-label='new-email-input'
                 onChange={createHandleEmailFormChange('newEmail')}
                 type='email'
                 value={newEmail}
@@ -232,7 +227,6 @@ function EmailSettings({
               </ControlLabel>
               <FormControl
                 data-cy='confirm-email'
-                data-playwright-test-label='confirm-email-input'
                 onChange={createHandleEmailFormChange('confirmNewEmail')}
                 type='email'
                 value={confirmNewEmail}
@@ -246,7 +240,6 @@ function EmailSettings({
             </FormGroup>
           </div>
           <BlockSaveButton
-            data-playwright-test-label='save-email-button'
             disabled={isDisabled}
             bgSize='large'
             {...(isDisabled && { tabIndex: -1 })}
@@ -263,9 +256,7 @@ function EmailSettings({
           flag={sendQuincyEmail}
           flagName='sendQuincyEmail'
           offLabel={t('buttons.no-thanks')}
-          dataPlaywrightTestOffLabel='no-thanks-button'
           onLabel={t('buttons.yes-please')}
-          dataPlaywrightTestOnLabel='yes-please-button'
           toggleFlag={() => updateQuincyEmail(!sendQuincyEmail)}
         />
       </FullWidthRow>

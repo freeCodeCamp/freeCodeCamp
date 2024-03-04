@@ -106,7 +106,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     if (certName === 'Legacy Full Stack') {
       const certs = [
         { title: 'Responsive Web Design' },
-        { title: 'JavaScript Algorithms and Data Structures' },
+        { title: 'Legacy JavaScript Algorithms and Data Structures' },
         { title: 'Front End Development Libraries' },
         { title: 'Data Visualization' },
         { title: 'Back End Development and APIs' },

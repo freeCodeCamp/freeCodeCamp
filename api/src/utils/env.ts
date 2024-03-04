@@ -39,6 +39,7 @@ assert.ok(process.env.FCC_ENABLE_SWAGGER_UI);
 assert.ok(process.env.FCC_ENABLE_DEV_LOGIN_MODE);
 assert.ok(process.env.JWT_SECRET);
 assert.ok(process.env.STRIPE_SECRET_KEY);
+assert.ok(process.env.SHOW_UPCOMING_CHANGES);
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.SES_ID);
@@ -109,4 +110,6 @@ export const SES_ID = process.env.SES_ID;
 export const SES_SECRET = process.env.SES_SECRET;
 export const SES_REGION = process.env.SES_REGION;
 export const EMAIL_PROVIDER = process.env.EMAIL_PROVIDER;
+export const SHOW_UPCOMING_CHANGES =
+  process.env.SHOW_UPCOMING_CHANGES === 'true';
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;

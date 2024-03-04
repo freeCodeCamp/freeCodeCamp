@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures",
+    "title": "Legacy JavaScript Algorithms and Data Structures",
     "intro": [
       "Ingawa HTML na CSS hudhibiti maudhui na mtindo wa ukurasa, JavaScript inatumika kuifanya ishirikiane. Katika Uthibitishaji wa Algorithm ya JavaScript na Miundo ya Data, utajifunza misingi ya JavaScript ikijumuisha variables, arrays, objects, loops, na functions.",
       "Baada ya kuelewa misingi yake, utatumia maarifa hayo kwa kuunda algoriti ili kudhibiti strings, kurekebisha nambari, na hata kukokotoa mzingo wa Kituo cha Kimataifa cha Anga cha Juu.",

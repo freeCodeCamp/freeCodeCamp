@@ -18,7 +18,7 @@
   "devDependencies": {
     "@types/cors": "^2.8.13",
     "@types/express": "4.17.21",
-    "dotenv": "16.4.4",
+    "dotenv": "16.4.5",
     "shx": "0.3.4",
     "typescript": "5.2.2"
   }
