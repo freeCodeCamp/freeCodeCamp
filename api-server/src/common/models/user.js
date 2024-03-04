@@ -527,10 +527,9 @@ export default function initializeUser(User) {
         );
       })
       .map(
-        () => ({
-          type: 'info',
-          message: 'Check your email and click the link we sent you to confirm your new email address.'
-        })
+        () =>
+          'Check your email and click the link we sent you to confirm' +
+          ' your new email address.'
       );
   }
 
