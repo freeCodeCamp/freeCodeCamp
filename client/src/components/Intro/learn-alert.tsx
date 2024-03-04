@@ -2,7 +2,7 @@ import React from 'react';
 import { Alert } from '@freecodecamp/ui';
 import { useFeature } from '@growthbook/growthbook-react';
 import { useTranslation } from 'react-i18next';
-import { Link } from '../helpers';
+import { Link, Spacer } from '../helpers';
 import { ProgressBar } from '../Progress/progress-bar';
 
 interface LearnAlertProps {
@@ -17,6 +17,7 @@ const LearnAlert = ({
   const { t } = useTranslation();
   const seasonalAlertFlag = useFeature('seasonal-alert');
   const progressAlertFlag2024 = useFeature('progress-alert-2024');
+  const createUniversityFlag = useFeature('university-alert');
   const progressAlertDefault = (text: string, value?: number) => (
     <Alert variant='info' className='annual-donation-alert'>
       {value && (
@@ -71,7 +72,29 @@ const LearnAlert = ({
     Number(progressAlertFlag2024.value)
   );
 
+  const universityAlert = (
+    <Alert variant='info' className='university-alert'>
+      <p>
+        <b>{t('learn.building-a-university')}</b>
+      </p>
+      <p>{t('learn.if-help-university')}</p>
+      <Spacer size='medium' />
+      <p className={'text-center'}>
+        <Link
+          className='btn'
+          key='donate'
+          sameTab={false}
+          to='/donate'
+          onClick={onLearnDonationAlertClick}
+        >
+          {t('buttons.donate')}
+        </Link>
+      </p>
+    </Alert>
+  );
+
   if (!isDonating) {
+    if (createUniversityFlag) return universityAlert;
     if (progressAlertFlag2024.on) return progressAlert2024;
     if (seasonalAlertFlag.on) return seasonalAlertFlagAlert;
   }

@@ -118,6 +118,9 @@ export function setupServer(): void {
   }, 10000);
 
   afterAll(async () => {
+    if (!global.fastifyTestInstance)
+      throw Error(`fastifyTestInstance was not created. Typically this means that something went wrong when building the fastify instance.
+If you are seeing this error, the root cause is likely an error thrown in the beforeAll hook.`);
     await fastifyTestInstance.prisma.$runCommandRaw({ dropDatabase: 1 });
 
     // Due to a prisma bug, this is not enough, we need to --force-exit jest:

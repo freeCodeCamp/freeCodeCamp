@@ -479,6 +479,20 @@ ToDo: find out why, and remove the need for it */
   border-top-color: var(--blue10);
 }
 
+.university-alert {
+  background-repeat: repeat;
+  animation: slideBackground 10s linear infinite;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="144" height="113" viewBox="0 0 144 113" fill="none"><path d="M83.0205 89.0206L83.0515 78.5206L98.0293 86.0649L114.053 78.1122L114.02 89.1121C114.02 89.1121 107.6 96.0932 97.9998 96.0648C88.3998 96.0365 83.0205 89.0206 83.0205 89.0206Z" fill="%23198EEE" fill-opacity="0.1"/><path d="M76 72L98 59L121 72V81L123.5 87.5H117L120 81V72.5L98 83L76 72Z" fill="%233099F0" fill-opacity="0.1"/><path d="M10.0205 33.0206L10.0515 22.5206L25.0293 30.0649L41.0529 22.1122L41.0204 33.1121C41.0204 33.1121 34.5997 40.0932 24.9998 40.0648C15.3998 40.0365 10.0205 33.0206 10.0205 33.0206Z" fill="%23198EEE" fill-opacity="0.1"/><path d="M3 16L25 3L48 16V25L50.5 31.5H44L47 25V16.5L25 27L3 16Z" fill="%233099F0" fill-opacity="0.1"/></svg>');
+}
+
+@keyframes slideBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 144px 113px;
+  }
+}
 /* story starts here */
 
 .annual-donation-alert .progress-bar-percent {

@@ -1,0 +1,49 @@
+{
+  "name": "TOP Learn Variables and Operators",
+  "isUpcomingChange": false,
+  "dashedName": "top-learn-variables-and-operators",
+  "helpCategory": "Odin",
+  "order": 10,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "the-odin-project",
+  "challengeOrder": [
+    {
+      "id": "65e185b1500d930ce8ed909b",
+      "title": "Learn Variables and Operators Question A"
+    },
+    {
+      "id": "65e18d61500d930ce8ed90a5",
+      "title": "Learn Variables and Operators Question B"
+    },
+    {
+      "id": "65e1957a500d930ce8ed90a6",
+      "title": "Learn Variables and Operators Question C"
+    },
+    {
+      "id": "65e1985e500d930ce8ed90a7",
+      "title": "Learn Variables and Operators Question D"
+    },
+    {
+      "id": "65e19bc3500d930ce8ed90a8",
+      "title": "Learn Variables and Operators Question E"
+    },
+    {
+      "id": "65e1a2ea500d930ce8ed90a9",
+      "title": "Learn Variables and Operators Question F"
+    },
+    {
+      "id": "65e1aaf8500d930ce8ed90aa",
+      "title": "Learn Variables and Operators Question G"
+    },
+    {
+      "id": "65e1aedc500d930ce8ed90ac",
+      "title": "Learn Variables and Operators Question H"
+    },
+    {
+      "id": "65e1b46e500d930ce8ed90ad",
+      "title": "Learn Variables and Operators Question I"
+    }
+  ]
+}

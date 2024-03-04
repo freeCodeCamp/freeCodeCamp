@@ -24,6 +24,7 @@
 .scene-start-btn:active {
   background-color: rgba(0, 0, 0, 0);
   border: none;
+  scale: 0.75;
 }
 
 .scene-a11y-btn {
@@ -37,7 +38,7 @@
 }
 
 .scene-play-btn img {
-  max-width: 75%;
+  transform: translate(5px, 10px);
 }
 
 .scene-a11y-btn svg {
