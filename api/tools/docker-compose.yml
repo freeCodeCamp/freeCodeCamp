@@ -24,7 +24,6 @@ services:
     image: redis
     container_name: redis
     restart: unless-stopped
-    command: redis-server --appendonly yes --loglevel debug
     ports:
       - '6379:6379'
     volumes:

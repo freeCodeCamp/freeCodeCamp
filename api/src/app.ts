@@ -152,7 +152,11 @@ export const build = async (
       max: Number(MAX_REQUEST_LIMIT),
       timeWindow: '1 minute',
       keyGenerator: req => {
-        // First request is missing "session.user"
+        // Before setting up the session, we can't use the user's id
+        // That means user is trying to login, so we use the ip address instead.
+
+        // Or if the user is not logged in, we use the ip address.
+
         if (req.session && req.session.user) {
           return `${req.ip}:${req.session.user.id}`;
         }
