@@ -138,6 +138,15 @@ jobs:
         run: |
           cp sample.env .env
           cat .env
+      - name: Start Redis
+        run: |
+          docker run -d --name redis -p 6379:6379 redis:latest
+          # Wait a few seconds to ensure Redis is up
+          sleep 5
+
+      - name: Verify Redis is running
+        run: |
+          redis-cli -h localhost ping
 
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
@@ -166,15 +175,6 @@ jobs:
       matrix:
         node-version: [20.x]
 
-    services:
-      redis:
-        image: redis
-        options: >-
-          --health-cmd "redis-cli ping"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
@@ -196,6 +196,16 @@ jobs:
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
           echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
+
+      - name: Start Redis
+        run: |
+          docker run -d --name redis -p 6379:6379 redis:latest
+          # Wait a few seconds to ensure Redis is up
+          sleep 5
+
+      - name: Verify Redis is running
+        run: |
+          redis-cli -h localhost ping
 
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
@@ -244,6 +254,16 @@ jobs:
         run: |
           cp sample.env .env
           cat .env
+
+      - name: Start Redis
+        run: |
+          docker run -d --name redis -p 6379:6379 redis:latest
+          # Wait a few seconds to ensure Redis is up
+          sleep 5
+
+      - name: Verify Redis is running
+        run: |
+          redis-cli -h localhost ping
 
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
