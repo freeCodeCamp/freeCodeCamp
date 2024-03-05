@@ -59,26 +59,63 @@ export const createProject = (
   progressTimestamps: [...progressTimestamps, newChallenge.completedDate]
 });
 
+type MSProfileError = {
+  type: 'error';
+  message: 'flash.ms.profile.err';
+  variables: { msUsername: string };
+};
+
+type MSProfileSuccess = {
+  type: 'success';
+  userId: string;
+};
+
 async function getMSProfile(msUsername: string) {
-  const profileError = {
+  const error: MSProfileError = {
     type: 'error',
     message: 'flash.ms.profile.err',
     variables: {
       msUsername
     }
-  } as const;
+  };
 
   const msProfileApi = `https://learn.microsoft.com/api/profiles/${msUsername}`;
   const msProfileApiRes = await fetch(msProfileApi);
 
-  if (!msProfileApiRes.ok) return profileError;
+  if (!msProfileApiRes.ok) return error;
 
   const { userId } = (await msProfileApiRes.json()) as {
     userId: string;
   };
 
-  return userId ? ({ type: 'success', userId } as const) : profileError;
+  const success: MSProfileSuccess = {
+    type: 'success',
+    userId
+  };
+
+  return userId ? success : error;
 }
+
+type AchievementsError = {
+  type: 'error';
+  message: 'flash.ms.trophy.err-3';
+};
+
+type NoAchievementsError = {
+  type: 'error';
+  message: 'flash.ms.trophy.err-6';
+};
+
+type NoTrophyError = {
+  type: 'error';
+  message: 'flash.ms.trophy.err-4';
+  variables: { msUsername: string };
+};
+
+type Validated = {
+  type: 'success';
+  msUserAchievementsApiUrl: string;
+};
 
 /**
  * Handles all communication with the Microsoft Learn APIs.
@@ -106,7 +143,7 @@ export async function verifyTrophyWithMicrosoft({
     return {
       type: 'error',
       message: 'flash.ms.trophy.err-3'
-    } as const;
+    } as AchievementsError;
   }
 
   const { achievements } = (await msUserAchievementsApiRes.json()) as {
@@ -117,7 +154,7 @@ export async function verifyTrophyWithMicrosoft({
     return {
       type: 'error',
       message: 'flash.ms.trophy.err-6'
-    } as const;
+    } as NoAchievementsError;
 
   // TODO: handle the case where there are achievements, but the `typeId` is not
   // a property of the achievements. This suggests that Microsoft has changed
@@ -129,7 +166,7 @@ export async function verifyTrophyWithMicrosoft({
     return {
       type: 'success',
       msUserAchievementsApiUrl
-    } as const;
+    } as Validated;
   } else {
     return {
       type: 'error',
@@ -137,6 +174,6 @@ export async function verifyTrophyWithMicrosoft({
       variables: {
         msUsername
       }
-    } as const;
+    } as NoTrophyError;
   }
 }
