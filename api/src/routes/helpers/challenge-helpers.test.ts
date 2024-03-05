@@ -151,7 +151,7 @@ describe('Challenge Helpers', () => {
       });
     });
 
-    test('returns msAchievementsApiUrl on success', async () => {
+    test('returns msUserAchievementsApiUrl on success', async () => {
       const fetchProfile = createFetchMock({ body: { userId } });
       const fetchAchievements = createFetchMock({
         body: { achievements: [{ typeId: msTrophyId }] }
