@@ -1,5 +1,4 @@
 import {
-  FastifyInstance,
   FastifyPluginCallback,
   FastifyRequest
 } from 'fastify';
@@ -8,9 +7,8 @@ import rateLimit from 'express-rate-limit';
 // @ts-expect-error - no types
 import MongoStoreRL from 'rate-limit-mongo';
 
-import { createUserInput } from '../utils/create-user';
-import { AUTH0_DOMAIN, HOME_LOCATION, MONGOHQ_URL } from '../utils/env';
-import { createAccessToken } from '../utils/tokens';
+import { AUTH0_DOMAIN, MONGOHQ_URL } from '../utils/env';
+import { findOrCreateUser } from './helpers/auth-helpers';
 
 declare module 'fastify' {
   interface Session {
@@ -34,22 +32,6 @@ const getEmailFromAuth0 = async (req: FastifyRequest) => {
 
   const { email } = (await auth0Res.json()) as { email: string };
   return email;
-};
-
-const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
-  // TODO: handle the case where there are multiple users with the same email.
-  // e.g. use findMany and throw an error if more than one is found.
-  const existingUser = await fastify.prisma.user.findFirst({
-    where: { email },
-    select: { id: true }
-  });
-  return (
-    existingUser ??
-    (await fastify.prisma.user.create({
-      data: createUserInput(email),
-      select: { id: true }
-    }))
-  );
 };
 
 /**
@@ -92,40 +74,5 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
     await req.session.save();
   });
 
-  done();
-};
-
-/**
- * Route handler for development login.
- *
- * @deprecated
- * @param fastify The Fastify instance.
- * @param _options Options passed to the plugin via `fastify.register(plugin,
- * options)`.
- * @param done Callback to signal that the logic has completed.
- */
-export const devAuthRoutes: FastifyPluginCallback = (
-  fastify,
-  _options,
-  done
-) => {
-  fastify.get('/signin', async (req, reply) => {
-    const email = 'foo@bar.com';
-
-    const { id } = await findOrCreateUser(fastify, email);
-
-    reply.setAccessTokenCookie(createAccessToken(id));
-    const referer = req.validateReferrer();
-    await reply.redirect(referer ?? new URL('learn', HOME_LOCATION).href);
-  });
-
-  fastify.get('/signout', async (req, reply) => {
-    void reply.clearCookie('jwt_access_token');
-    void reply.clearCookie('csrf_token');
-    void reply.clearCookie('_csrf');
-
-    const referer = req.validateReferrer();
-    await reply.redirect(referer ?? HOME_LOCATION);
-  });
   done();
 };
