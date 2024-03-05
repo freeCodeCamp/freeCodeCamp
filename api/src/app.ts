@@ -47,7 +47,9 @@ import {
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
   FREECODECAMP_NODE_ENV,
+  MAX_REQUEST_LIMIT,
   MONGOHQ_URL,
+  REDIS_HOST,
   SENTRY_DSN,
   SESSION_SECRET
 } from './utils/env';
@@ -143,12 +145,20 @@ export const build = async (
     await fastify.register(import('@fastify/rate-limit'), {
       redis: new Redis({
         connectionName: 'UserRateLimit',
-        host: 'localhost',
+        host: REDIS_HOST,
         connectTimeout: 500,
         maxRetriesPerRequest: 1
       }),
-      max: 30,
-      timeWindow: '1 minute'
+      max: Number(MAX_REQUEST_LIMIT),
+      timeWindow: '1 minute',
+      keyGenerator: req => {
+        // First request is missing "session.user"
+        if (req.session && req.session.user) {
+          return `${req.ip}:${req.session.user.id}`;
+        }
+
+        return req.ip;
+      }
     });
   }
 
