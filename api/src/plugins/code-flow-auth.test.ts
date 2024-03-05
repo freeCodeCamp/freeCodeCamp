@@ -44,8 +44,28 @@ describe('auth', () => {
           value: doublySignedToken,
           path: '/',
           sameSite: 'Lax',
-          domain: COOKIE_DOMAIN,
-          maxAge: 77760000000
+          domain: COOKIE_DOMAIN
+        })
+      );
+    });
+
+    // TODO: Post-MVP sync the cookie max-age with the token ttl (i.e. the
+    // max-age should be the ttl/1000, not ttl)
+    it('should set the max-age of the cookie to match the ttl of the token', async () => {
+      const token = createAccessToken('test-id', 123000);
+      fastify.get('/test', async (req, reply) => {
+        reply.setAccessTokenCookie(token);
+        return { ok: true };
+      });
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test'
+      });
+
+      expect(res.cookies[0]).toEqual(
+        expect.objectContaining({
+          maxAge: 123000
         })
       );
     });
