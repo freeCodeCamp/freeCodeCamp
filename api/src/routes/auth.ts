@@ -53,33 +53,6 @@ const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
 };
 
 /**
- * Route handler for development login. This is only used in local
- * development, and bypasses Auth0, authenticating as the development
- * user.
- *
- * @param fastify The Fastify instance.
- * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
- * @param done Callback to signal that the logic has completed.
- */
-// TODO: 1) use POST 2) make sure we prevent login CSRF
-export const devLoginCallback: FastifyPluginCallback = (
-  fastify,
-  _options,
-  done
-) => {
-  fastify.get('/dev-callback', async req => {
-    const email = 'foo@bar.com';
-
-    const { id } = await findOrCreateUser(fastify, email);
-    req.session.user = { id };
-    await req.session.save();
-    return { statusCode: 200 };
-  });
-
-  done();
-};
-
-/**
  * Route handler for Mobile authentication.
  *
  * @param fastify The Fastify instance.
@@ -123,10 +96,7 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
 };
 
 /**
- * Legacy route handler for development login. This mimics the behaviour of old
- * api-server which the client depends on for authentication. The key difference
- * is that this uses a different cookie (not jwt_access_token), and, if we want
- * to use this for real, we will need to account for that.
+ * Route handler for development login.
  *
  * @deprecated
  * @param fastify The Fastify instance.
@@ -134,7 +104,7 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
  * options)`.
  * @param done Callback to signal that the logic has completed.
  */
-export const devLegacyAuthRoutes: FastifyPluginCallback = (
+export const devAuthRoutes: FastifyPluginCallback = (
   fastify,
   _options,
   done

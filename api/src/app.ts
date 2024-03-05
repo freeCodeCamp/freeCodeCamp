@@ -28,11 +28,7 @@ import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
 import sessionAuth from './plugins/session-auth';
 import codeFlowAuth from './plugins/code-flow-auth';
-import {
-  devLoginCallback,
-  devLegacyAuthRoutes,
-  mobileAuth0Routes
-} from './routes/auth';
+import { devAuthRoutes, mobileAuth0Routes } from './routes/auth';
 import { challengeRoutes } from './routes/challenge';
 import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
@@ -53,7 +49,6 @@ import {
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 import { certificateRoutes } from './routes/certificate';
-
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -201,8 +196,7 @@ export const build = async (
   void fastify.register(prismaPlugin);
   void fastify.register(mobileAuth0Routes);
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
-    void fastify.register(devLoginCallback, { prefix: '/auth' });
-    void fastify.register(devLegacyAuthRoutes);
+    void fastify.register(devAuthRoutes);
   }
   void fastify.register(certificateRoutes);
   void fastify.register(challengeRoutes);
