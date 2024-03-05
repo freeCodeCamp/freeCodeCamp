@@ -144,10 +144,6 @@ jobs:
           # Wait a few seconds to ensure Redis is up
           sleep 5
 
-      - name: Verify Redis is running
-        run: |
-          redis-cli -h localhost ping
-
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
         with:
@@ -203,10 +199,6 @@ jobs:
           # Wait a few seconds to ensure Redis is up
           sleep 5
 
-      - name: Verify Redis is running
-        run: |
-          redis-cli -h localhost ping
-
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
         with:
@@ -260,10 +252,6 @@ jobs:
           docker run -d --name redis -p 6379:6379 redis:latest
           # Wait a few seconds to ensure Redis is up
           sleep 5
-
-      - name: Verify Redis is running
-        run: |
-          redis-cli -h localhost ping
 
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
