@@ -146,6 +146,14 @@ class CompletionModal extends Component<
     this.props.close();
   }
 
+  componentDidUpdate(prevProps: CompletionModalsProps): void {
+    const { isOpen: prevIsOpen } = prevProps;
+    const { isOpen } = this.props;
+    if (!prevIsOpen && isOpen) {
+      callGA({ event: 'pageview', pagePath: '/completion-modal' });
+    }
+  }
+
   render(): JSX.Element {
     const {
       close,
@@ -157,10 +165,6 @@ class CompletionModal extends Component<
       dashedName,
       submitChallenge
     } = this.props;
-
-    if (isOpen) {
-      callGA({ event: 'pageview', pagePath: '/completion-modal' });
-    }
 
     return (
       <Modal
