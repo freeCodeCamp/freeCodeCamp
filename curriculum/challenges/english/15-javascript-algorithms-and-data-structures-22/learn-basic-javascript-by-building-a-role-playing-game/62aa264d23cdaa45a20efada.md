@@ -1,8 +1,8 @@
 ---
 id: 62aa264d23cdaa45a20efada
-title: Step 163
+title: Step 161
 challengeType: 0
-dashedName: step-163
+dashedName: step-161
 ---
 
 # --description--
@@ -30,7 +30,7 @@ assert.match(pick.toString(), /while\s*\(/);
 Your `while` loop should run while `numbers.length < 10`.
 
 ```js
-assert.match(pick.toString(), /while\s*\(\s*numbers.length\s*<\s*10\s*\)/);
+assert.match(pick.toString(), /while\s*\(\s*numbers\.length\s*<\s*10\s*\)/);
 ```
 
 # --seed--
@@ -195,13 +195,13 @@ const locations = [
     name: "lose",
     "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
     "button functions": [restart, restart, restart],
-    text: "You die. ☠️"
+    text: "You die. &#x2620;"
   },
   { 
     name: "win", 
     "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
     "button functions": [restart, restart, restart], 
-    text: "You defeat the dragon! YOU WIN THE GAME! 🎉" 
+    text: "You defeat the dragon! YOU WIN THE GAME! &#x1F389;" 
   },
   {
     name: "easter egg",
@@ -224,7 +224,7 @@ function update(location) {
   button1.onclick = location["button functions"][0];
   button2.onclick = location["button functions"][1];
   button3.onclick = location["button functions"][2];
-  text.innerText = location.text;
+  text.innerHTML = location.text;
 }
 
 function goTown() {
@@ -319,7 +319,11 @@ function attack() {
   if (health <= 0) {
     lose();
   } else if (monsterHealth <= 0) {
-    fighting === 2 ? winGame() : defeatMonster();
+    if (fighting === 2) {
+      winGame();
+    } else {
+      defeatMonster();
+    }
   }
   if (Math.random() <= .1 && inventory.length !== 1) {
     text.innerText += " Your " + inventory.pop() + " breaks.";

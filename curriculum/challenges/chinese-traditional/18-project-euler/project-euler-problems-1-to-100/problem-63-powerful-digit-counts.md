@@ -1,6 +1,6 @@
 ---
 id: 5900f3ab1000cf542c50febe
-title: 'Problem 63: Powerful digit counts'
+title: '問題63：強大的數字計數'
 challengeType: 1
 forumTopicId: 302175
 dashedName: problem-63-powerful-digit-counts

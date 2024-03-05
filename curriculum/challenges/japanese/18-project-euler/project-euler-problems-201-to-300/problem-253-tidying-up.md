@@ -1,6 +1,6 @@
 ---
 id: 5900f4691000cf542c50ff7c
-title: 'Problem 253: Tidying up'
+title: '問題 253: パズルを片付ける'
 challengeType: 1
 forumTopicId: 301901
 dashedName: problem-253-tidying-up
@@ -8,42 +8,42 @@ dashedName: problem-253-tidying-up
 
 # --description--
 
-A small child has a "number caterpillar" consisting of forty jigsaw pieces, each with one number on it, which, when connected together in a line, reveal the numbers 1 to 40 in order.
+ある幼い子供が持っている「数字イモムシ」は、それぞれに数字が 1 つ書かれた 40 ピースのジグソーパズルです。ピースを一列につなげると、1 から 40 までの数字が順番に並びます。
 
-Every night, the child's father has to pick up the pieces of the caterpillar that have been scattered across the play room. He picks up the pieces at random and places them in the correct order.
+子供の父親は毎晩、プレイルームに散らばったイモムシのピースを拾わなければなりません。 父親は無作為にピースを拾い、それらを正しい順序に並べます。
 
-As the caterpillar is built up in this way, it forms distinct segments that gradually merge together. The number of segments starts at zero (no pieces placed), generally increases up to about eleven or twelve, then tends to drop again before finishing at a single segment (all pieces placed).
+このようにイモムシを形作るうちにいくつかの断片ができ、それらが徐々に合体していきます。 断片の数は 0 (ピースが置かれていない状態) で始まり、11 個か 12 個くらいまで増え、その後また減っていき、1 (全ピースが置かれた状態) で終わります。
 
-For example:
+例えば次のようになります。
 
-| Piece Placed | Segments So Far |
-| ------------ | --------------- |
-| 12           | 1               |
-| 4            | 2               |
-| 29           | 3               |
-| 6            | 4               |
-| 34           | 5               |
-| 5            | 4               |
-| 35           | 4               |
-| …            | …               |
+| 置かれたピース | 現在の断片数 |
+| ------- | ------ |
+| 12      | 1      |
+| 4       | 2      |
+| 29      | 3      |
+| 6       | 4      |
+| 34      | 5      |
+| 5       | 4      |
+| 35      | 4      |
+| …       | …      |
 
-Let $M$ be the maximum number of segments encountered during a random tidy-up of the caterpillar. For a caterpillar of ten pieces, the number of possibilities for each $M$ is
+イモムシのピースを無作為に片付ける間に形成される断片の最大数を $M$ とします。 下表は、10 ピースからなるイモムシについて、$M$ が表内のそれぞれの値になるケースがいくつあるかを示しています。
 
-| M | Possibilities |
-| - | ------------- |
-| 1 | 512           |
-| 2 | 250912        |
-| 3 | 1815264       |
-| 4 | 1418112       |
-| 5 | 144000        |
+| M | ケース数    |
+| - | ------- |
+| 1 | 512     |
+| 2 | 250912  |
+| 3 | 1815264 |
+| 4 | 1418112 |
+| 5 | 144000  |
 
-so the most likely value of $M$ is 3 and the average value is $\frac{385\\,643}{113\\,400} = 3.400732$, rounded to six decimal places.
+したがって、最も起こり得る $M$ の値は 3 で、平均値は $\frac{385\\,643}{113\\,400} = 3.400732$ です (小数第 6 位に四捨五入)。
 
-The most likely value of $M$ for a forty-piece caterpillar is 11; but what is the average value of $M$? Give your answer rounded to six decimal places.
+40 ピースのイモムシの場合、最も起こり得る $M$ の値は 11 ですが、$M$ の平均値はいくつですか。 回答は、四捨五入して小数第 6 位まで示すこと。
 
 # --hints--
 
-`tidyingUp()` should return `11.492847`.
+`tidyingUp()` は `11.492847` を返す必要があります。
 
 ```js
 assert.strictEqual(tidyingUp(), 11.492847);

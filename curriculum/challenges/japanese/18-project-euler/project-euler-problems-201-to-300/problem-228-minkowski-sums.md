@@ -1,6 +1,6 @@
 ---
 id: 5900f4511000cf542c50ff63
-title: 'Problem 228: Minkowski Sums'
+title: '問題 228: ミンコフスキー和'
 challengeType: 1
 forumTopicId: 301871
 dashedName: problem-228-minkowski-sums
@@ -8,24 +8,24 @@ dashedName: problem-228-minkowski-sums
 
 # --description--
 
-Let $S_n$ be the regular $n$-sided polygon – or shape – whose vertices $v_k (k = 1, 2, \ldots, n)$ have coordinates:
+各頂点 $v_k (k = 1, 2, \ldots, n)$ が次の座標であるような正 $n$ 角形を $S_n$ とします。
 
 $$\begin{align}   & x_k = cos(\frac{2k - 1}{n} × 180°) \\\\
   & y_k = sin(\frac{2k - 1}{n} × 180°) \end{align}$$
 
-Each $S_n$ is to be interpreted as a filled shape consisting of all points on the perimeter and in the interior.
+それぞれの $S_n$ は、周辺上と内部のすべての点からなる、塗りつぶされた図形として解釈されます。
 
-The Minkowski sum, $S + T$, of two shapes $S$ and $T$ is the result of adding every point in $S$ to every point in $T$, where point addition is performed coordinate-wise: $(u, v) + (x, y) = (u + x, v + y)$.
+2 つの図形 $S$ と $T$ のミンコフスキー和 $S + T$ は、$S$ のすべての点と $T$ のすべての点を加算した結果です。ここで、点の加算は座標形式で $(u, v) + (x, y) = (u + x, v + y)$ とします。
 
-For example, the sum of $S_3$ and $S_4$ is the six-sided shape shown in pink below:
+例えば、$S_3$ と $S_4$ の和は、下図でピンク色で示されている 6 辺の図形です。
 
-<img class="img-responsive center-block" alt="image showing S_3, S_4 and S_3 + S_4" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="S_3, S_4, S_3 + S_4 を示している画像" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px;" />
 
-How many sides does $S_{1864} + S_{1865} + \ldots + S_{1909}$ have?
+$S_{1864} + S_{1865} + \ldots + S_{1909}$ には辺が何本ありますか。
 
 # --hints--
 
-`minkowskiSums()` should return `86226`.
+`minkowskiSums()` は `86226` を返す必要があります。
 
 ```js
 assert.strictEqual(minkowskiSums(), 86226);

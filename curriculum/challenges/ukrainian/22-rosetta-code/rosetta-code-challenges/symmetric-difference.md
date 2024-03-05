@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8046
-title: Symmetric difference
+title: Симетрична різниця
 challengeType: 1
 forumTopicId: 16086
 dashedName: symmetric-difference
@@ -8,25 +8,25 @@ dashedName: symmetric-difference
 
 # --description--
 
-Given two sets *A* and *B*, compute $(A \\setminus B) \\cup (B \\setminus A).$ That is, enumerate the items that are in *A* or *B* but not both. This set is called the symmetric difference of *A* and *B*. In other words: $(A \\cup B) \\setminus (A \\cap B)$ (the set of items that are in at least one of *A* or *B* minus the set of items that are in both *A* and *B*).
+Дано дві множини: *A* та *B*. Обчисліть $(A \\setminus B) \\cup (B \\setminus A).$ Тобто перерахуйте предмети, які розташовані або в *A*, або в *B*, але не в обох одночасно. Ця множина називається симетричною різницею множин *A* та *B*. Іншими словами: $(A \\cup B) \\setminus (A \\cap B)$ (множина предметів, які знаходяться в *A* або *B*, мінус множина предметів, які знаходяться в *A* та *B*).
 
-Example:
+Наприклад:
 
-For sets `A = [1, 2, 3]`, and `B = [1, 3, 4]`, the symmetric difference of *A* and *B* is `[2, 4]`.
+Для множин `A = [1, 2, 3]` та `B = [1, 3, 4]` симетричною різницею множин *A* та *B* є `[2, 4]`.
 
 # --instructions--
 
-Write a function that takes two arrays as parameters and returns the symmetric difference. Sort the resultant array before returning it.
+Напишіть функцію, яка приймає два масиви як параметри та повертає симетричну різницю. Відсортуйте отриманий масив, перш ніж повернути його.
 
 # --hints--
 
-`symmetricDifference` should be a function.
+`symmetricDifference` має бути функцією.
 
 ```js
 assert(typeof symmetricDifference == 'function');
 ```
 
-`symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])` should return an array.
+`symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])` має повернути масив.
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-`symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])` should return `["Jim", "Serena"]`.
+`symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])` має повернути `["Jim", "Serena"]`.
 
 ```js
 assert.deepEqual(
@@ -51,13 +51,13 @@ assert.deepEqual(
 );
 ```
 
-`symmetricDifference([1, 2, 3], [3, 4])` should return `[1, 2, 4]`.
+`symmetricDifference([1, 2, 3], [3, 4])` має повернути `[1, 2, 4]`.
 
 ```js
 assert.deepEqual(symmetricDifference([1, 2, 3], [3, 4]), [1, 2, 4]);
 ```
 
-`symmetricDifference([1, 2, 3, 4, 5], [3, 4, 8, 7])` should return `[1, 2, 5, 7, 8]`.
+`symmetricDifference([1, 2, 3, 4, 5], [3, 4, 8, 7])` має повернути `[1, 2, 5, 7, 8]`.
 
 ```js
 assert.deepEqual(symmetricDifference([1, 2, 3, 4, 5], [3, 4, 8, 7]), [
@@ -69,7 +69,7 @@ assert.deepEqual(symmetricDifference([1, 2, 3, 4, 5], [3, 4, 8, 7]), [
 ]);
 ```
 
-`symmetricDifference([1, 2, 3, 4, 5, 6, 7, 8], [1, 3, 5, 6, 7, 8, 9])` should return `[2, 4, 9]`.
+`symmetricDifference([1, 2, 3, 4, 5, 6, 7, 8], [1, 3, 5, 6, 7, 8, 9])` має повернути `[2, 4, 9]`.
 
 ```js
 assert.deepEqual(
@@ -78,7 +78,7 @@ assert.deepEqual(
 );
 ```
 
-`symmetricDifference([1, 2, 4, 7, 9], [2, 3, 7, 8, 9])` should return `[1, 3, 4, 8]`.
+`symmetricDifference([1, 2, 4, 7, 9], [2, 3, 7, 8, 9])` має повернути `[1, 3, 4, 8]`.
 
 ```js
 assert.deepEqual(symmetricDifference([1, 2, 4, 7, 9], [2, 3, 7, 8, 9]), [

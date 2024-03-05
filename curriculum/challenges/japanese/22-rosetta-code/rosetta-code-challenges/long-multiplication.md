@@ -1,6 +1,6 @@
 ---
 id: 5e4ce2a1ac708cc68c1df25d
-title: Long multiplication
+title: 桁数の多い数字の掛け算
 challengeType: 1
 forumTopicId: 385269
 dashedName: long-multiplication
@@ -10,29 +10,29 @@ dashedName: long-multiplication
 
 Explicitly implement long multiplication.
 
-This is one possible approach to arbitrary-precision integer algebra.
+これは任意精度の整数代数に対するアプローチの一つです。
 
 # --instructions--
 
-Write a function that takes two strings of large numbers as parameters. Your function should return the product of these two large numbers as a string.
+パラメータとして、巨大数の文字列を 2 つ取る関数を記述してください。 関数はこれら 2 つの巨大数の積を文字列として返す必要があります。
 
-**Note:** In JavaScript, arithmetic operations are inaccurate with large numbers, so you will have to implement precise multiplication yourself.
+**注意:** JavaScript では、巨大数の場合の算術演算は不正確になるため、自身で正確な乗算を実装する必要があります。
 
 # --hints--
 
-`mult` should be a function.
+`mult` は関数とします。
 
 ```js
 assert(typeof mult == 'function');
 ```
 
-`mult("18446744073709551616", "18446744073709551616")` should return a string.
+`mult("18446744073709551616", "18446744073709551616")` は文字列を返す必要があります。
 
 ```js
 assert(typeof mult('18446744073709551616', '18446744073709551616') == 'string');
 ```
 
-`mult("18446744073709551616", "18446744073709551616")` should return `"340282366920938463463374607431768211456"`.
+`mult("18446744073709551616", "18446744073709551616")` は `"340282366920938463463374607431768211456"` を返す必要があります。
 
 ```js
 assert.equal(
@@ -41,7 +41,7 @@ assert.equal(
 );
 ```
 
-`mult("31844674073709551616", "1844674407309551616")` should return `"58743055272886011737990786529368211456"`.
+`mult("31844674073709551616", "1844674407309551616")` は `"58743055272886011737990786529368211456"` を返す必要があります。
 
 ```js
 assert.equal(
@@ -50,7 +50,7 @@ assert.equal(
 );
 ```
 
-`mult("1846744073709551616", "44844644073709551616")` should return `"82816580680737279241781007431768211456"`.
+`mult("1846744073709551616", "44844644073709551616")` は `"82816580680737279241781007431768211456"` を返す必要があります。
 
 ```js
 assert.equal(
@@ -59,7 +59,7 @@ assert.equal(
 );
 ```
 
-`mult("1844674407370951616", "1844674407709551616")` should return `"3402823669833978308014392742590611456"`.
+`mult("1844674407370951616", "1844674407709551616")` は `"3402823669833978308014392742590611456"` を返す必要があります。
 
 ```js
 assert.equal(
@@ -68,7 +68,7 @@ assert.equal(
 );
 ```
 
-`mult("2844674407370951616", "1844674407370955616")` should return `"5247498076580334548376218009219475456"`.
+`mult("2844674407370951616", "1844674407370955616")` は `"5247498076580334548376218009219475456"` を返す必要があります。
 
 ```js
 assert.equal(

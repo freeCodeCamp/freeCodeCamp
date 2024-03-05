@@ -1,6 +1,6 @@
 ---
 id: 598eea87e5cf4b116c3ff81a
-title: Factors of a Mersenne number
+title: Множники числа Мерсенна
 challengeType: 1
 forumTopicId: 302264
 dashedName: factors-of-a-mersenne-number
@@ -8,81 +8,81 @@ dashedName: factors-of-a-mersenne-number
 
 # --description--
 
-A Mersenne number is a number in the form of <code>2<sup>P</sup>-1</code>.
+Число Мерсенна — це число вигляду <code>2<sup>P</sup>-1</code>.
 
-If `P` is prime, the Mersenne number may be a Mersenne prime. (If `P` is not prime, the Mersenne number is also not prime.)
+Якщо `P` є простим числом, то число Мерсенна може бути простим числом Мерсенна. (Якщо `P` не є простим числом, то число Мерсенна також не є простим.)
 
-In the search for Mersenne prime numbers it is advantageous to eliminate exponents by finding a small factor before starting a, potentially lengthy, <a href="https://rosettacode.org/wiki/Lucas-Lehmer test" target="_blank" rel="noopener noreferrer nofollow">Lucas-Lehmer test</a>.
+При пошуку простих чисел Мерсенна варто виключити показники степеня, знайшовши невеликий множник перш ніж почати потенційно довгий <a href="https://rosettacode.org/wiki/Lucas-Lehmer test" target="_blank" rel="noopener noreferrer nofollow">тест Люка-Лемера</a>.
 
-There are very efficient algorithms for determining if a number divides <code>2<sup>P</sup>-1</code> (or equivalently, if <code>2<sup>P</sup> mod (the number) = 1</code>).
+Існують дуже ефективні алгоритми, щоб визначити, чи <code>2<sup>P</sup>-1</code> ділиться на число (або ж еквівалентно, чи <code>2<sup>P</sup> mod (число) = 1</code>).
 
-Some languages already have built-in implementations of this exponent-and-mod operation (called modPow or similar).
+Деякі мови програмування вже мають вбудовані реалізації цієї операції степеня-та-модуля (modPow або схожа назва).
 
-The following is how to implement this modPow yourself:
+Нижче показано, як реалізувати modPow самостійно:
 
-For example, let's compute <code>2<sup>23</sup> mod 47</code>.
+Наприклад, обчислимо <code>2<sup>23</sup> mod 47</code>.
 
-Convert the exponent 23 to binary, you get 10111. Starting with <code><tt>square</tt> = 1</code>, repeatedly square it.
+Перетворивши степінь 23 в бінарне значення, ми отримаємо 10111. Починаючи з <code><tt>квадрата</tt> = 1</code>, повторно виконайте піднесення до квадрата.
 
-Remove the top bit of the exponent, and if it's 1 multiply `square` by the base of the exponentiation (2), then compute <code><tt>square</tt> modulo 47</code>.
+Видаліть верхній біт степеня, та якщо він дорівнює 1, то помножте `квадрат` на основу степеня (2), а потім обчисліть <code><tt>квадрат</tt> mod 47</code>.
 
-Use the result of the modulo from the last step as the initial value of `square` in the next step:
+Використайте результат модуля з останнього кроку як початкове значення `квадрата` в наступному кроці:
 
-<pre>Remove   Optional
-square        top bit  multiply by 2  mod 47
+<pre>Знайдіть       Видаліть     Необов’язково
+квадрат        верхній біт  помножте на 2  mod 47
 ------------  -------  -------------  ------
 1*1 = 1       1  0111  1*2 = 2           2
-2*2 = 4       0   111     no             4
+2*2 = 4       0   111  немає             4
 4*4 = 16      1    11  16*2 = 32        32
 32*32 = 1024  1     1  1024*2 = 2048    27
 27*27 = 729   1        729*2 = 1458      1
 </pre>
 
-Since <code>2<sup>23</sup> mod 47 = 1</code>, 47 is a factor of <code>2<sup>P</sup>-1</code>.
+Починаючи з <code>2<sup>23</sup> mod 47 = 1</code>, 47 є множником <code>2<sup>P</sup>-1</code>.
 
-(To see this, subtract 1 from both sides: <code>2<sup>23</sup>-1 = 0 mod 47</code>.)
+(Для перевірки віднімемо 1 з обох сторін: <code>2<sup>23</sup>-1 = 0 mod 47</code>.)
 
-Since we've shown that 47 is a factor, <code>2<sup>23</sup>-1</code> is not prime.
+Оскільки ми довели, що 47 є множником, <code>2<sup>23</sup>-1</code> не є простим числом.
 
-Further properties of Mersenne numbers allow us to refine the process even more.
+Додаткові властивості чисел Мерсенна дозволяють ще більше уточнити процес.
 
-Any factor `q` of <code>2<sup>P</sup>-1</code> must be of the form `2kP+1`, `k` being a positive integer or zero. Furthermore, `q` must be `1` or `7 mod 8`.
+Будь-який множник `q` числа <code>2<sup>P</sup>-1</code> повинен мати вигляд `2kP+1`, де `k` є натуральним числом або нулем. Крім того, `q` має бути `1` або `7 mod 8`.
 
-Finally any potential factor `q` must be <a href="https://rosettacode.org/wiki/Primality_by_trial_division" target="_blank" rel="noopener noreferrer nofollow">prime</a>.
+Зрештою, будь-який потенційний множник `q` має бути <a href="https://rosettacode.org/wiki/Primality_by_trial_division" target="_blank" rel="noopener noreferrer nofollow">простим числом</a>.
 
-As in other trial division algorithms, the algorithm stops when `2kP+1 > sqrt(N)`.These primarily tests only work on Mersenne numbers where `P` is prime. For example, <code>M<sub>4</sub>=15</code> yields no factors using these techniques, but factors into 3 and 5, neither of which fit `2kP+1`.
+Як і в інших алгоритмах перебору, алгоритм зупиняється, коли `2kP+1 > sqrt(N)`. Ці тести переважно працюють на числах Мерсенна, де `P` є простим числом. Наприклад, <code>M<sub>4</sub>=15</code> не має множників за допомогою цих методів, але розкладається на 3 і 5, ні одне з яких не підходить під `2kP+1`.
 
 # --instructions--
 
-Using the above method find a factor of <code>2<sup>p</sup>-1</code>.
+Знайдіть множник <code>2<sup>p</sup>-1</code>, використовуючи метод, описаний вище.
 
 # --hints--
 
-`check_mersenne` should be a function.
+`check_mersenne` має бути функцією.
 
 ```js
 assert(typeof check_mersenne === 'function');
 ```
 
-`check_mersenne(3)` should return a string.
+`check_mersenne(3)` має повернути рядок.
 
 ```js
 assert(typeof check_mersenne(3) == 'string');
 ```
 
-`check_mersenne(3)` should return the string `M3 = 2^3-1 is prime`.
+`check_mersenne(3)` має повернути рядок `M3 = 2^3-1 is prime`.
 
 ```js
 assert.equal(check_mersenne(3), 'M3 = 2^3-1 is prime');
 ```
 
-`check_mersenne(23)` should return the string `M23 = 2^23-1 is composite with factor 47`.
+`check_mersenne(23)` має повернути рядок `M23 = 2^23-1 is composite with factor 47`.
 
 ```js
 assert.equal(check_mersenne(23), 'M23 = 2^23-1 is composite with factor 47');
 ```
 
-`check_mersenne(929)` should return the string `M929 = 2^929-1 is composite with factor 13007`.
+`check_mersenne(929)` має повернути рядок `M929 = 2^929-1 is composite with factor 13007`.
 
 ```js
 assert.equal(

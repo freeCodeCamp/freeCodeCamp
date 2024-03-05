@@ -1,6 +1,6 @@
 ---
 id: 5900f4c81000cf542c50ffdb
-title: 'Problem 348: Sum of a square and a cube'
+title: 'Problem 348: Summe eines Quadrats und eines Würfels'
 challengeType: 1
 forumTopicId: 302007
 dashedName: problem-348-sum-of-a-square-and-a-cube
@@ -10,15 +10,15 @@ dashedName: problem-348-sum-of-a-square-and-a-cube
 
 Many numbers can be expressed as the sum of a square and a cube. Some of them in more than one way.
 
-Consider the palindromic numbers that can be expressed as the sum of a square and a cube, both greater than 1, in exactly 4 different ways.
+Betrachten wir die palindromischen Zahlen, die auf genau 4 verschiedene Arten als Summe eines Quadrats und eines Würfels, beide größer als 1, ausgedrückt werden können.
 
-For example, 5229225 is a palindromic number and it can be expressed in exactly 4 different ways:
+Zum Beispiel ist 5229225 eine palindromische Zahl und kann auf genau 4 verschiedene Arten ausgedrückt werden:
 
 $$\begin{align}   & {2285}^2 + {20}^3 \\\\
   & {2223}^2 + {66}^3 \\\\   & {1810}^2 + {125}^3 \\\\
   & {1197}^2 + {156}^3 \end{align}$$
 
-Find the sum of the five smallest such palindromic numbers.
+Finde die Summe der fünf kleinsten solchen palindromischen Zahlen.
 
 # --hints--
 

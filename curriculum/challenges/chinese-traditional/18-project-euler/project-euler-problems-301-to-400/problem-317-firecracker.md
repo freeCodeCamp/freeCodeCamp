@@ -1,6 +1,6 @@
 ---
 id: 5900f4aa1000cf542c50ffbc
-title: 'Problem 317: Firecracker'
+title: '問題317：鞭炮'
 challengeType: 1
 forumTopicId: 301973
 dashedName: problem-317-firecracker
@@ -12,7 +12,7 @@ A firecracker explodes at a height of 100 m above level ground. It breaks into a
 
 We assume that the fragments move without air resistance, in a uniform gravitational field with $g=9.81 \frac{\text{m}}{\text{s}^2}$.
 
-Find the volume (in $\text{m}^3$) of the region through which the fragments move before reaching the ground. Give your answer rounded to four decimal places.
+Find the volume (in $\text{m}^3$) of the region through which the fragments move before reaching the ground. 將答案四捨五入到小數點後四位。
 
 # --hints--
 

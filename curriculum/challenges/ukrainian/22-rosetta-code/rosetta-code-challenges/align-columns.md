@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad0
-title: Align columns
+title: Вирівнювання стовпців
 challengeType: 1
 forumTopicId: 302224
 dashedName: align-columns
@@ -8,11 +8,11 @@ dashedName: align-columns
 
 # --description--
 
-Given an array of many lines, where fields within a line are delineated by a single `$` character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.
+Вам надано масив з багатьма рядками, де поля в межах рядків обмежені символом `$`. Напишіть програму, яка вирівнює кожен стовпець поля, переконавшись, що слова в кожному стовпці розділені принаймні одним пробілом. Крім того, дозвольте кожному слову в стовпці вирівнюватись за лівим краєм, за правим краєм або по центру.
 
 # --instructions--
 
-Use the following text to test your programs:
+Використайте наступний текст, щоб протестувати програми:
 
 ```js
 const testText = [
@@ -29,16 +29,16 @@ const testText = [
 ];
 ```
 
-**Note that:**
+**Зверніть увагу:**
 
-- The example input texts lines may, or may not, have trailing dollar characters.
-- All columns should share the same alignment.
-- Consecutive space characters produced adjacent to the end of lines are insignificant for the purposes of the task.
-- Output text will be viewed in a mono-spaced font on a plain text editor or basic terminal. Lines in it should be joined using new line character (`\n`).
-- The minimum space between columns should be computed from the text and not hard-coded.
-- It is not a requirement to add separating characters between or around columns.
+- Введені тексти в прикладі можуть мати символ долара вкінці.
+- Усі стовпці повинні мати однакове вирівнювання.
+- Послідовні пробіли, які виникають поруч з кінцем рядків, є незначними для цілей завдання.
+- Вихідний текст буде переглядатися у моноширинному шрифті в звичайному текстовому редакторі або простому терміналі. Рядки в ньому потрібно з’єднати за допомогою символу нового рядка (`\n`).
+- Мінімальний проміжок між стовпцями має обчислюватися з тексту, а не бути жорстко закодованим.
+- Необов’язково додавати розділові символи між стовпцями або навколо них.
 
-For example, one of the lines from the `testText`, after justifying to the right, left and center respectively:
+Наприклад, ось один з рядків в `testText` після вирівнювання за правим краєм, за лівим краєм та по центру:
 
 ```js
 '    column        are separated     by     at    least       one space.\n'
@@ -48,25 +48,25 @@ For example, one of the lines from the `testText`, after justifying to the right
 
 # --hints--
 
-`formatText` should be a function.
+`formatText` має бути функцією.
 
 ```js
 assert(typeof formatText === 'function');
 ```
 
-`formatText(testText, 'right')` should produce text with columns justified to the right.
+`formatText(testText, 'right')` має продукувати текст зі стовпцями, вирівняними за правим краєм.
 
 ```js
 assert.strictEqual(formatText(_testText, 'right'), rightAligned);
 ```
 
-`formatText(testText, 'left')` should produce text with columns justified to the left.
+`formatText(testText, 'left')` має продукувати текст зі стовпцями, вирівняними за лівим краєм.
 
 ```js
 assert.strictEqual(formatText(_testText, 'left'), leftAligned);
 ```
 
-`formatText(testText, 'center')` should produce text with columns justified to the center.
+`formatText(testText, 'center')` має продукувати текст зі стовпцями, вирівняними по центру.
 
 ```js
 assert.strictEqual(formatText(_testText, 'center'), centerAligned);

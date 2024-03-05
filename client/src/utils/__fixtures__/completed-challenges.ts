@@ -1,4 +1,5 @@
 import { challengeFiles } from '../../../utils/__fixtures__/challenges';
+import { challengeTypes } from '../../../../shared/config/challenge-types';
 
 const baseChallenge = {
   id: '1',
@@ -29,7 +30,12 @@ export const withChallenges = {
 
 export const multifileSolution = {
   ...withChallenges,
-  challengeType: 14
+  challengeType: challengeTypes.multifileCertProject
+}
+
+export const multifilePythonSolution = {
+  ...withChallenges,
+  challengeType: challengeTypes.multifilePythonCertProject
 }
 
 export const onlyGithubLink = {

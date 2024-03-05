@@ -1,6 +1,6 @@
 ---
 id: 5900f4d11000cf542c50ffe4
-title: 'Problem 357: Prime generating integers'
+title: 'Завдання 357: цілі числа, які генерують прості числа'
 challengeType: 1
 forumTopicId: 302017
 dashedName: problem-357-prime-generating-integers
@@ -8,11 +8,11 @@ dashedName: problem-357-prime-generating-integers
 
 # --description--
 
-Consider the divisors of 30: 1, 2, 3, 5, 6, 10, 15, 30.
+Розглянемо дільники числа 30: 1, 2, 3, 5, 6, 10, 15, 30.
 
-It can be seen that for every divisor $d$ of 30, $d + \frac{30}{d}$ is prime.
+Можна побачити, що для кожного дільника $d$ числа 30, $d + \frac{30}{d}$ є простим числом.
 
-Find the sum of all positive integers $n$ not exceeding $100\\,000\\,000$ such that for every divisor $d$ of $n$, $d + \frac{n}{d}$ is prime.
+Знайдіть суму всіх натуральних чисел $n$ менших ніж $100\\,000\\,000$, за яких кожен дільник $d$ числа $n$, $d + \frac{n}{d}$ є простим числом.
 
 # --hints--
 

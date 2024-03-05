@@ -1,6 +1,6 @@
 ---
 id: 5900f3fa1000cf542c50ff0d
-title: 'Problem 142: Perfect Square Collection'
+title: '問題 142：完全平方數合集'
 challengeType: 1
 forumTopicId: 301771
 dashedName: problem-142-perfect-square-collection
@@ -12,7 +12,7 @@ Find the smallest $x + y + z$ with integers $x > y > z > 0$ such that $x + y$, $
 
 # --hints--
 
-`perfectSquareCollection()` should return `1006193`.
+`perfectSquareCollection()` 應該返回 `1006193`。
 
 ```js
 assert.strictEqual(perfectSquareCollection(), 1006193);

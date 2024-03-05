@@ -1,6 +1,6 @@
 ---
 id: 5eb3e497b8d6d7f63c5517ea
-title: Search a list of records
+title: Пошук серед записів списку
 challengeType: 1
 forumTopicId: 385315
 dashedName: search-a-list-of-records
@@ -8,51 +8,51 @@ dashedName: search-a-list-of-records
 
 # --description--
 
-A record consists of attributes that describe an entity. Each attribute has a name and a value. For example, a person can have an attribute `age` with a value of 25. An important operation on a list of records is to find a record with a particular attribute value.
+Запис складається з атрибутів, які описують його суть. Кожен атрибут має назву та значення. Наприклад, людина може мати атрибут `age` зі значенням 25. Важлива операція в списку записів — знайти запис з певним значенням атрибута.
 
 # --instructions--
 
-Write a function that takes a string as a parameter. The function should return the index of the item in `list` for which the value of the `name` attribute matches the given string.
+Напишіть функцію, яка приймає рядок як параметр. Функція має повернути індекс елемента в списку (`list`), значення атрибута `name` якого відповідає заданому рядку.
 
 # --hints--
 
-`searchCity` should be a function.
+`searchCity` має бути функцією.
 
 ```js
 assert(typeof searchCity === 'function');
 ```
 
-`searchCity("Dar Es Salaam")` should return a number.
+`searchCity("Dar Es Salaam")` має повернути число.
 
 ```js
 assert(typeof searchCity('Dar Es Salaam') === 'number');
 ```
 
-`searchCity("Dar Es Salaam")` should return `6`.
+`searchCity("Dar Es Salaam")` має повернути `6`.
 
 ```js
 assert.equal(searchCity('Dar Es Salaam'), 6);
 ```
 
-`searchCity("Casablanca")` should return `9`.
+`searchCity("Casablanca")` має повернути `9`.
 
 ```js
 assert.equal(searchCity('Casablanca'), 9);
 ```
 
-`searchCity("Cairo")` should return `1`.
+`searchCity("Cairo")` має повернути `1`.
 
 ```js
 assert.equal(searchCity('Cairo'), 1);
 ```
 
-`searchCity("Mogadishu")` should return `4`.
+`searchCity("Mogadishu")` має повернути `4`.
 
 ```js
 assert.equal(searchCity('Mogadishu'), 4);
 ```
 
-`searchCity("Lagos")` should return `0`.
+`searchCity("Lagos")` має повернути `0`.
 
 ```js
 assert.equal(searchCity('Lagos'), 0);

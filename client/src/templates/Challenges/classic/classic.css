@@ -23,20 +23,23 @@
 }
 
 .monaco-editor-tabs button[aria-expanded='true'],
-.panel-display-tabs button[aria-expanded='true'] {
+.panel-display-tabs button[aria-expanded='true'],
+.tabs-row button[aria-expanded='true'] {
   border-color: var(--primary-color);
   background-color: var(--primary-color);
   color: var(--secondary-background);
 }
 
 .monaco-editor-tabs button:hover,
-.panel-display-tabs button:hover {
+.panel-display-tabs button:hover,
+.tabs-row button:hover {
   color: var(--secondary-color);
   background-color: var(--primary-background);
 }
 
 .monaco-editor-tabs button[aria-expanded='true']:hover,
-.panel-display-tabs button[aria-expanded='true']:hover {
+.panel-display-tabs button[aria-expanded='true']:hover,
+.tabs-row button[aria-expanded='true']:hover {
   background-color: var(--quaternary-color);
   color: var(--secondary-background);
 }

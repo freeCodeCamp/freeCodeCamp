@@ -1,7 +1,7 @@
 ---
 id: 5900f4151000cf542c50ff28
 title: >-
-  Problem 169: Exploring the number of different ways a number can be expressed as a sum of powers of 2
+  問題 169: 数を 2 の累乗の和で表す方法の数を求める
 challengeType: 1
 forumTopicId: 301803
 dashedName: >-
@@ -10,19 +10,19 @@ dashedName: >-
 
 # --description--
 
-Define $f(0)=1$ and $f(n)$ to be the number of different ways $n$ can be expressed as a sum of integer powers of 2 using each power no more than twice.
+$f(0)=1$ と定義し、$n$ を 2 の整数乗の和で表す方法が何通りあるかを $f(n)$ で表すものとします。ただし、それぞれの整数乗は最大 2 回しか使えないものとします。
 
-For example, $f(10)=5$ since there are five different ways to express 10:
+例えば、10 を表す方法は次のように 5 通りあるので、$f(10)=5$ です。
 
 $$\begin{align}   & 1 + 1 + 8 \\\\
   & 1 + 1 + 4 + 4 \\\\   & 1 + 1 + 2 + 2 + 4 \\\\
   & 2 + 4 + 4 \\\\ & 2 + 8 \end{align}$$
 
-What is $f({10}^{25})$?
+$f({10}^{25})$ を求めなさい。
 
 # --hints--
 
-`numberOfWaysToExpress()` should return `178653872807`.
+`numberOfWaysToExpress()` は `178653872807` を返す必要があります。
 
 ```js
 assert.strictEqual(numberOfWaysToExpress(), 178653872807);

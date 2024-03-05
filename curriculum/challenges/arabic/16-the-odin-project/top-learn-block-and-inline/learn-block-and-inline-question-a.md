@@ -4,6 +4,7 @@ title: Learn Block and Inline Question A
 challengeType: 15
 dashedName: learn-block-and-inline-question-a
 ---
+
 # --description--
 
 Most of the elements that you have learned about so far are block elements. In other words, their default style is `display: block`. By default, block elements will appear on the page stacked atop each other, each new element starting on a new line.
@@ -24,4 +25,4 @@ Block elements start on a new line and take up the full width available.
 
 ## --video-solution--
 
-2
+الثاني

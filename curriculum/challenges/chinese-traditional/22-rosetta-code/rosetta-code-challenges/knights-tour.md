@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ed5
-title: Knight's tour
+title: 騎士之旅
 challengeType: 1
 forumTopicId: 302297
 dashedName: knights-tour
@@ -16,43 +16,43 @@ Write a function that takes `width` and `height` as parameters and returns the n
 
 # --hints--
 
-`knightTour` should be a function.
+`knightTour` 應該是一個函數。
 
 ```js
 assert(typeof knightTour == 'function');
 ```
 
-`knightTour(6, 6)` should return a number.
+`knightTour(6, 6)` 應該返回一個數字。
 
 ```js
 assert(typeof knightTour(6, 6) == 'number');
 ```
 
-`knightTour(6, 6)` should return `36`.
+`knightTour(6, 6)` 應該返回 `36`。
 
 ```js
 assert.equal(knightTour(6, 6), 36);
 ```
 
-`knightTour(5, 6)` should return `30`.
+`knightTour(5, 6)` 應該返回 `30`。
 
 ```js
 assert.equal(knightTour(5, 6), 30);
 ```
 
-`knightTour(4, 6)` should return `12`.
+`knightTour(4, 6)` 應該返回 `12`。
 
 ```js
 assert.equal(knightTour(4, 6), 12);
 ```
 
-`knightTour(7, 3)` should return `10`.
+`knightTour(7, 3)` 應該返回 `10`。
 
 ```js
 assert.equal(knightTour(7, 3), 10);
 ```
 
-`knightTour(8, 6)` should return `48`.
+`knightTour(8, 6)` 應該返回 `48`。
 
 ```js
 assert.equal(knightTour(8, 6), 48);

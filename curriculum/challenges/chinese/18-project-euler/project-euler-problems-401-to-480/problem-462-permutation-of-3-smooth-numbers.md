@@ -1,6 +1,6 @@
 ---
 id: 5900f53b1000cf542c51004d
-title: 'Problem 462: Permutation of 3-smooth numbers'
+title: '问题462：3个平滑数的排列'
 challengeType: 1
 forumTopicId: 302137
 dashedName: problem-462-permutation-of-3-smooth-numbers
@@ -16,13 +16,13 @@ This is one of the possible permutations for $N = 20$.
 
 -   1, 2, 4, 3, 9, 8, 16, 6, 18, 12.
 
-This is not a valid permutation because 12 comes before its divisor 6.
+这不是有效的排列，因为12在它的除数6之前出现。
 
--   1, 2, 4, 3, 9, 8, 12, 16, 6, 18.
+-   1,2,4,3,9,8,16,6,18,12。
 
 We can verify that $F(6) = 5$, $F(8) = 9$, $F(20) = 450$ and $F(1000) ≈ 8.8521816557e\\,21$.
 
-Find $F({10}^{18})$. Give as your answer as a string in its scientific notation rounded to ten digits after the decimal point. When giving your answer, use a lowercase `e` to separate mantissa and exponent. E.g. if the answer is $112\\,233\\,445\\,566\\,778\\,899$ then the answer format would be `1.1223344557e17`.
+Find $F({10}^{18})$. Give as your answer as a string in its scientific notation rounded to ten digits after the decimal point. When giving your answer, use a lowercase `e` to separate mantissa and exponent. 例如： if the answer is $112\\,233\\,445\\,566\\,778\\,899$ then the answer format would be `1.1223344557e17`.
 
 # --hints--
 

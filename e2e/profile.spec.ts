@@ -8,8 +8,8 @@ const certs = [
     url: '/certification/certifieduser/responsive-web-design'
   },
   {
-    name: 'JavaScript Algorithms and Data Structures',
-    url: '/certification/certifieduser/javascript-algorithms-and-data-structures'
+    name: 'JavaScript Algorithms and Data Structures (Beta)',
+    url: '/certification/certifieduser/javascript-algorithms-and-data-structures-v8'
   },
   {
     name: 'Front End Development Libraries',
@@ -59,6 +59,10 @@ const certs = [
 
 const legacyCerts = [
   { name: 'Front End', url: '/certification/certifieduser/legacy-front-end' },
+  {
+    name: 'Legacy JavaScript Algorithms and Data Structures',
+    url: '/certification/certifieduser/javascript-algorithms-and-data-structures'
+  },
   { name: 'Back End', url: '/certification/certifieduser/legacy-back-end' },
   {
     name: 'Data Visualization',

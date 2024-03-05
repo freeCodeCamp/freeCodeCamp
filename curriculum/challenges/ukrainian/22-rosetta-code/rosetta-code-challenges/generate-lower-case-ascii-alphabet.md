@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e7a
-title: Generate lower case ASCII alphabet
+title: Алфавіт ASCII в нижньому регістрі
 challengeType: 1
 forumTopicId: 302274
 dashedName: generate-lower-case-ascii-alphabet
@@ -8,47 +8,47 @@ dashedName: generate-lower-case-ascii-alphabet
 
 # --description--
 
-Write a function to generate an array of lower case ASCII characters for a given range. For example, given the range `['a', 'd']`, the function should return `['a', 'b', 'c', 'd']`.
+Напишіть функцію, щоб згенерувати масив символів ASCII заданого діапазону в нижньому регістрі. Наприклад, якщо надано діапазон `['a', 'd']`, то функція має повернути `['a', 'b', 'c', 'd']`.
 
 # --hints--
 
-`lascii` should be a function.
+`lascii` має бути функцією.
 
 ```js
 assert(typeof lascii == 'function');
 ```
 
-`lascii("a","d")` should return an array.
+`lascii("a","d")` має повернути масив.
 
 ```js
 assert(Array.isArray(lascii('a', 'd')));
 ```
 
-`lascii('a','d')` should return `[ 'a', 'b', 'c', 'd' ]`.
+`lascii('a','d')` має повернути `[ 'a', 'b', 'c', 'd' ]`.
 
 ```js
 assert.deepEqual(lascii('a', 'd'), results[0]);
 ```
 
-`lascii('c','i')` should return `[ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ]`.
+`lascii('c','i')` має повернути `[ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ]`.
 
 ```js
 assert.deepEqual(lascii('c', 'i'), results[1]);
 ```
 
-`lascii('m','q')` should return `[ 'm', 'n', 'o', 'p', 'q' ]`.
+`lascii('m','q')` має повернути `[ 'm', 'n', 'o', 'p', 'q' ]`.
 
 ```js
 assert.deepEqual(lascii('m', 'q'), results[2]);
 ```
 
-`lascii('k','n')` should return `[ 'k', 'l', 'm', 'n' ]`.
+`lascii('k','n')` має повернути `[ 'k', 'l', 'm', 'n' ]`.
 
 ```js
 assert.deepEqual(lascii('k', 'n'), results[3]);
 ```
 
-`lascii('t','z')` should return `[ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]`.
+`lascii('t','z')` має повернути `[ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]`.
 
 ```js
 assert.deepEqual(lascii('t', 'z'), results[4]);

@@ -13,7 +13,7 @@ Depois de completar o projeto, envie o link dele abaixo. Se você estiver envian
 
 # --instructions--
 
-Para este desafio, você precisará criar uma calculadora multifuncional usando Python que receberá entradas e fará o seguinte:
+Para este desafio, você precisará criar um explorador de gráficos de dados usando Python que receberá entradas e fará o seguinte:
 
 - Obter um arquivo .csv de três maneiras
   - enviando pelo computador local

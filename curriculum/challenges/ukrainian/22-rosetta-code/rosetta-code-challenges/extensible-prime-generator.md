@@ -1,6 +1,6 @@
 ---
 id: 598ee8b91b410510ae82efef
-title: Extensible prime generator
+title: Розширний генератор простих чисел
 challengeType: 1
 forumTopicId: 302262
 dashedName: extensible-prime-generator
@@ -8,28 +8,28 @@ dashedName: extensible-prime-generator
 
 # --description--
 
-Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.
+Напишіть генератор простих чисел за порядком, який автоматично адаптується для генерації будь-якого достатньо великого простого числа.
 
-The generator should be able to:
+Генератор повинен:
 
 <ul>
-  <li>Show the first <code>n</code> prime numbers</li>
-  <li>Show the prime numbers in a range</li>
-  <li>Show the number of primes in a range</li>
-  <li>Show the <code>n<sup>th</sup></code> prime number</li>
+  <li>показувати перші <code>n</code> простих чисел</li>
+  <li>показувати прості числа в діапазоні</li>
+  <li>показувати кількість простих чисел в діапазоні</li>
+  <li>показувати <code>n<sup>-не</sup></code> просте число</li>
 </ul>
 
-The function should have two parameters. The first will receive `n` or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <code>n<sup>th</sup></code> prime). According to the parameters the function should return an array.
+Функція повинна мати два параметри. Перший отримає `n` або діапазон у вигляді масиву. Другий отримає булеве значення, яке вказує, чи повертає функція прості числа у вигляді масиву, чи одне число (кількість простих чисел у діапазоні або <code>n<sup>-не</sup></code> просте число). Відповідно до параметрів функція має повернути масив.
 
 # --hints--
 
-`primeGenerator` should be a function.
+`primeGenerator` має бути функцією.
 
 ```js
 assert(typeof primeGenerator === 'function');
 ```
 
-`primeGenerator(20, true)` should return `[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]`.
+`primeGenerator(20, true)` має повернути `[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]`.
 
 ```js
 assert.deepEqual(primeGenerator(20, true), [
@@ -56,7 +56,7 @@ assert.deepEqual(primeGenerator(20, true), [
 ]);
 ```
 
-`primeGenerator([100, 150], true)` should return `[101, 103, 107, 109, 113, 127, 131, 137, 139, 149]`.
+`primeGenerator([100, 150], true)` має повернути `[101, 103, 107, 109, 113, 127, 131, 137, 139, 149]`.
 
 ```js
 assert.deepEqual(primeGenerator([100, 150], true), [
@@ -73,13 +73,13 @@ assert.deepEqual(primeGenerator([100, 150], true), [
 ]);
 ```
 
-`primeGenerator([7700, 8000], false)` should return `30`.
+`primeGenerator([7700, 8000], false)` має повернути `30`.
 
 ```js
 assert.equal(primeGenerator([7700, 8000], false), 30);
 ```
 
-`primeGenerator(10000, false)` should return `104729`.
+`primeGenerator(10000, false)` має повернути `104729`.
 
 ```js
 assert.equal(primeGenerator(10000, false), 104729);

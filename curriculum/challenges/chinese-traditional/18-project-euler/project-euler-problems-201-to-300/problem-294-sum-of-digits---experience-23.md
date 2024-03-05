@@ -1,6 +1,6 @@
 ---
 id: 5900f4931000cf542c50ffa5
-title: 'Problem 294: Sum of digits - experience #23'
+title: '問題294：數字總和-經驗＃23'
 challengeType: 1
 forumTopicId: 301946
 dashedName: problem-294-sum-of-digits---experience-23

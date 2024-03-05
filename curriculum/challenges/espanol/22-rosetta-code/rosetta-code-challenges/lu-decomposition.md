@@ -70,7 +70,7 @@ The solution to this problem is *pivoting* $A$, which means rearranging the rows
 
 $PA \\Rightarrow A'$
 
-Example:
+Ejemplo:
 
 \\begin{align} \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 1 & 4 \\\\ 2 & 3 \\end{pmatrix} \\Rightarrow \\begin{pmatrix} 2 & 3 \\\\ 1 & 4 \\end{pmatrix} \\end{align}
 
