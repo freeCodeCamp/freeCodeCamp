@@ -99,18 +99,18 @@ export async function verifyTrophyWithMicrosoft({
 
   if (msProfile.type === 'error') return msProfile;
 
-  const msGameStatusApiUrl = `https://learn.microsoft.com/api/gamestatus/${msProfile.userId}`;
-  const msGameStatusApiRes = await fetch(msGameStatusApiUrl);
+  const msUserAchievementsApiUrl = `https://learn.microsoft.com/api/achievements/user/${msProfile.userId}`;
+  const msUserAchievementsApiRes = await fetch(msUserAchievementsApiUrl);
 
-  if (!msGameStatusApiRes.ok) {
+  if (!msUserAchievementsApiRes.ok) {
     return {
       type: 'error',
       message: 'flash.ms.trophy.err-3'
     } as const;
   }
 
-  const { achievements } = (await msGameStatusApiRes.json()) as {
-    achievements?: { awardUid: string }[];
+  const { achievements } = (await msUserAchievementsApiRes.json()) as {
+    achievements?: { typeId: string }[];
   };
 
   if (!achievements?.length)
@@ -119,12 +119,16 @@ export async function verifyTrophyWithMicrosoft({
       message: 'flash.ms.trophy.err-6'
     } as const;
 
-  const earnedTrophy = achievements?.some(a => a.awardUid === msTrophyId);
+  // TODO: handle the case where there are achievements, but the `typeId` is not
+  // a property of the achievements. This suggests that Microsoft has changed
+  // their API and, to aid debugging, we should report a different error
+  // message.
+  const earnedTrophy = achievements?.some(a => a.typeId === msTrophyId);
 
   if (earnedTrophy) {
     return {
       type: 'success',
-      msGameStatusApiUrl
+      msUserAchievementsApiUrl
     } as const;
   } else {
     return {
