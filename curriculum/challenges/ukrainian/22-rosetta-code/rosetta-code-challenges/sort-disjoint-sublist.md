@@ -8,9 +8,9 @@ dashedName: sort-disjoint-sublist
 
 # --description--
 
-Given a list of values and a set of integer indices into that value list, the task is to sort the values at the given indices, but preserving the values at indices outside the set of those to be sorted.
+Дано список значень та множину індексів для цього списку. Потрібно відсортувати значення за заданими індексами, але зберегти значення, індекс яких знаходиться поза множиною тих, які потрібно відсортувати.
 
-Ваша функція повинна працювати з наступним списком значень і набором індексів:
+Функція має працювати з наступним списком значень та множиною індексів:
 
 <code>values: [7, <b>6</b>, 5, 4, 3, 2, <b>1</b>, <b>0</b>]</code>
 
@@ -18,7 +18,7 @@ Given a list of values and a set of integer indices into that value list, the ta
 indices(0-based): {6, 1, 7}
 ```
 
-З наступним правильним результатом:
+Де правильним результатом буде:
 
 <code>[7, <b>0</b>, 5, 4, 3, 2, <b>1</b>, <b>6</b>]</code>.
 

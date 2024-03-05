@@ -1,6 +1,6 @@
 ---
 id: 647e22a08acb466c97ccbef5
-title: Implement Exception Handling in C# Console Applications
+title: 'Implement Exception Handling in C# Console Applications'
 challengeType: 19
 dashedName: implement-exception-handling-in-c-sharp-console-applications
 ---

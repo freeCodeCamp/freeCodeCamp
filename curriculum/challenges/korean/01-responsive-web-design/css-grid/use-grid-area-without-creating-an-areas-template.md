@@ -1,6 +1,6 @@
 ---
 id: 5a94fe2669fb03452672e45e
-title: Use grid-area Without Creating an Areas Template
+title: 영역 템플릿 생성하지 않고 grid-area 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c6N7VhK'
 forumTopicId: 301135
@@ -9,27 +9,27 @@ dashedName: use-grid-area-without-creating-an-areas-template
 
 # --description--
 
-The `grid-area` property you learned in the last challenge can be used in another way. If your grid doesn't have an areas template to reference, you can create an area on the fly for an item to be placed like this:
+이전 과제에서 배운 `grid-area` 속성은 다른 방식으로 사용될 수 있습니다. 그리드가 참조할 영역 템플릿이 없다면 다음과 같이 배치될 아이템에 동적으로 영역을 생성할 수 있습니다.
 
 ```css
 item1 { grid-area: 1/1/2/4; }
 ```
 
-This is using the line numbers you learned about earlier to define where the area for this item will be. The numbers in the example above represent these values:
+아이템 영역의 위치를 정의하기 위해 이전에 배운 라인 번호를 사용합니다. 위 예시의 번호들은 다음 값들을 나타냅니다:
 
 ```css
 grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;
 ```
 
-So the item in the example will consume the rows between lines 1 and 2, and the columns between lines 1 and 4.
+예시에 있는 아이템은 라인 1과 2 사이의 행과 라인 1과 4 사이의 열을 차지할 것입니다.
 
 # --instructions--
 
-Using the `grid-area` property, place the element with `item5` class between the third and fourth horizontal lines and between the first and fourth vertical lines.
+`grid-area` 속성을 사용하여 `item5` 클래스를 가진 요소를 수평으로 세 번째와 네 번째, 그리고 수직으로 첫 번째와 네 번째 사이에 배치하세요.
 
 # --hints--
 
-The `item5` class should have a `grid-area` property to make it fill the whole area between the third and fourth horizontal lines, and first and fourth vertical lines.
+`item5` 클래스는 수평으로 세 번째와 네 번째 라인 사이, 그리고 수직으로 첫 번째와 네 번째 라인 사이의 전체 영역을 채우기 위해 `grid-area` 속성을 가져야 합니다.
 
 ```js
 assert(

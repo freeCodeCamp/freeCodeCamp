@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0a0b6c005b0e76f069
-title: Dictionaries and Loops
+title: 사전 및 루프
 challengeType: 11
 videoId: EEmekKiKG70
 bilibiliIds:
@@ -20,7 +20,7 @@ More resources:
 
 ## --text--
 
-What will the following code print?:
+다음 코드는 무엇을 출력하나요?:
 
 ```python
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}

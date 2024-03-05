@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08826
-title: Use Clockwise Notation to Specify the Padding of an Element
+title: 시계 방향 표기법을 사용하여 요소에 패딩을 지정하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB7mBS9'
 forumTopicId: 18346
@@ -9,45 +9,45 @@ dashedName: use-clockwise-notation-to-specify-the-padding-of-an-element
 
 # --description--
 
-Instead of specifying an element's `padding-top`, `padding-right`, `padding-bottom`, and `padding-left` properties individually, you can specify them all in one line, like this:
+요소의 `padding-top`, `padding-right`, `padding-bottom`, `padding-left` 속성을 개별적으로 지정하는 대신 다음과 같이 한 줄에 모두 지정할 수 있습니다.
 
 ```css
 padding: 10px 20px 10px 20px;
 ```
 
-These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific padding instructions.
+이 네 가지 값은 시계처럼 작동하여 위, 오른쪽, 아래, 왼쪽의 순서대로 동작하며, 각 면에 패딩 지시 사항을 사용하는 것과 정확히 동일한 결과를 생성합니다.
 
 # --instructions--
 
-Use Clockwise Notation to give the `.blue-box` class a `padding` of `40px` on its top and left side, but only `20px` on its bottom and right side.
+시계 방향 표기법을 사용하여 `.blue-box` 클래스가 있는 요소에 상단과 왼쪽에는 `40px`, 하단과 오른쪽에는 `20px`의 `padding`을 지정해보세요.
 
 # --hints--
 
-Your `blue-box` class should give the top of elements `40px` of `padding`.
+`blue-box` 클래스는 요소의 상단에 `40px`의 `padding`을 주어야 합니다.
 
 ```js
 assert($('.blue-box').css('padding-top') === '40px');
 ```
 
-Your `blue-box` class should give the right of elements `20px` of `padding`.
+`blue-box` 클래스는 요소의 오른쪽에 `20px`의 `padding`을 주어야 합니다.
 
 ```js
 assert($('.blue-box').css('padding-right') === '20px');
 ```
 
-Your `blue-box` class should give the bottom of elements `20px` of `padding`.
+`blue-box` 클래스는 요소의 하단에 `20px`의 `padding`을 주어야 합니다.
 
 ```js
 assert($('.blue-box').css('padding-bottom') === '20px');
 ```
 
-Your `blue-box` class should give the left of elements `40px` of `padding`.
+`blue-box` 클래스는 요소의 왼쪽에 `40px`의 `padding`을 주어야 합니다.
 
 ```js
 assert($('.blue-box').css('padding-left') === '40px');
 ```
 
-You should use the clockwise notation to set the padding of `blue-box` class.
+시계 방향 표기법을 사용하여 `blue-box` 클래스의 패딩을 설정해야 합니다.
 
 ```js
 assert(

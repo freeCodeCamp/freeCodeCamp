@@ -1,6 +1,6 @@
 ---
 id: 5a94fe1369fb03452672e45d
-title: Place Items in Grid Areas Using the grid-area Property
+title: grid-area 속성으로 그리드 영역에 아이템 배치하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cRrqmtV'
 forumTopicId: 301132
@@ -9,7 +9,7 @@ dashedName: place-items-in-grid-areas-using-the-grid-area-property
 
 # --description--
 
-After creating an area template for your grid container, as shown in the previous challenge, you can place an item in your custom area by referencing the name you gave it. To do this, you use the `grid-area` property on an item like this:
+그리드 컨테이너에 대한 영역 템플릿을 이전 도전과 같이 생성한 후에는 원하는 아이템을 해당 이름을 참조하여 사용자 정의 영역에 배치할 수 있습니다. 이를 위해 다음과 같이 `grid-area` 속성을 사용하면 됩니다.
 
 ```css
 .item1 {
@@ -17,15 +17,15 @@ After creating an area template for your grid container, as shown in the previou
 }
 ```
 
-This lets the grid know that you want the `item1` class to go in the area named `header`. In this case, the item will use the entire top row because that whole row is named as the `header` area.
+이 속성은 그리드가 `header`라는 영역에 `item1` 클래스를 배치하길 원한다고 알려주는 역할을 합니다. 이 경우에 전체 행이 `header` 영역으로 이름이 주어졌기 때문에 아이템이 전체 상단 행을 사용할 것입니다.
 
 # --instructions--
 
-Place an element with the `item5` class in the `footer` area using the `grid-area` property.
+`grid-area` 속성을 사용하여 `item5` 클래스를 가진 요소를 `footer` 영역에 배치하세요.
 
 # --hints--
 
-`item5` class should have a `grid-area` property that has the value of `footer`.
+`item5` 클래스는 `footer` 값을 가진 `grid-area` 속성을 가져야 합니다.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
     background: PaleGreen;
     /* Only change code below this line */
 
-    
+
     /* Only change code above this line */
   }
 

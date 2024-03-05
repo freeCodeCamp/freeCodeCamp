@@ -1,6 +1,6 @@
 ---
 id: 587d78ab367417b2b2512af3
-title: Apply the flex-direction Property to Create Rows in the Tweet Embed
+title: 트윗 임베드에 행을 만들기 위해 flex-direction 속성 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cJb8yuq'
 forumTopicId: 301104
@@ -9,27 +9,27 @@ dashedName: apply-the-flex-direction-property-to-create-rows-in-the-tweet-embed
 
 # --description--
 
-The `header` and `footer` in the tweet embed example have child items that could be arranged as rows using the `flex-direction` property. This tells CSS to align the children horizontally.
+트윗 임베드 예시에 있는 `header`와 `footer`는 `flex-direction` 속성을 사용하여 행으로 배치될 수 있는 자식 아이템을 가지고 있습니다. 이는 CSS에게 자식 요소들을 수평으로 정렬하도록 지시합니다.
 
 # --instructions--
 
-Add the CSS property `flex-direction` to both the `header` and `footer` and set the value to `row`.
+`header`와 `footer`에 `flex-direction` 속성을 추가하고 `row` 값을 주시오.
 
 # --hints--
 
-Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+`.follow-btn`는 페이지에 렌더링되어야 합니다. 광고 차단기 같은 확장 프로그램은 꺼야합니다.
 
 ```js
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
 ```
 
-The `header` should have a `flex-direction` property set to `row`.
+`header`는 `row`로 설정된 `flex-direction` 속성을 가져야 합니다.
 
 ```js
 assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g));
 ```
 
-The `footer` should have a `flex-direction` property set to `row`.
+`footer`는 `row`로 설정된 `flex-direction` 속성을 가져야 합니다.
 
 ```js
 assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g));

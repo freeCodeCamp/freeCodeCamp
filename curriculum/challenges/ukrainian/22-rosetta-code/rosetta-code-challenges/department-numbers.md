@@ -1,6 +1,6 @@
 ---
 id: 59f40b17e79dbf1ab720ed7a
-title: Номери відділів
+title: Числа органів
 challengeType: 1
 forumTopicId: 302249
 dashedName: department-numbers
@@ -8,7 +8,7 @@ dashedName: department-numbers
 
 # --description--
 
-There is a highly organized city that has decided to assign a number to each of their departments:
+Існує високо організоване місто, яке вирішило призначити число до кожного зі своїх органів:
 
 <ul>
   <li>Поліція</li>
@@ -16,11 +16,11 @@ There is a highly organized city that has decided to assign a number to each of 
   <li>Пожежна охорона</li>
 </ul>
 
-Кожен відділ може мати номер від 1 до 7 (включно).
+Кожен орган може отримати число від 1 до 7 (включно).
 
-Номери кожного з відділу мають бути унікальними (тобто бути відмінними одне від одного) та щоб в сумі було до номера 12.
+Числа всіх трьох органів мають бути унікальними (тобто відрізнятись) та в сумі дорівнювати 12.
 
-Шеф поліції не любить непарних чисел і хоче мати парне число для свого відділу.
+Голова поліції не любить непарні числа, тому хоче, щоб поліція мала парне число.
 
 # --instructions--
 
@@ -42,19 +42,19 @@ There is a highly organized city that has decided to assign a number to each of 
 assert(typeof combinations === 'function');
 ```
 
-`combinations([1, 2, 3], 6)` повинні повернути масив.
+`combinations([1, 2, 3], 6)` має повернути масив.
 
 ```js
 assert(Array.isArray(combinations([1, 2, 3], 6)));
 ```
 
-`combinations([1, 2, 3, 4, 5, 6, 7], 12)` мають повернутися як рядок довжиною 14.
+`combinations([1, 2, 3, 4, 5, 6, 7], 12)` має повернути масив довжиною 14.
 
 ```js
 assert(combinations(nums, total).length === len);
 ```
 
-`combinations([1, 2, 3, 4, 5, 6, 7], 12)` повинен повертати всі дійсні комбінації.
+`combinations([1, 2, 3, 4, 5, 6, 7], 12)` має повернути всі дійсні комбінації.
 
 ```js
 assert.deepEqual(combinations(nums, total), result);

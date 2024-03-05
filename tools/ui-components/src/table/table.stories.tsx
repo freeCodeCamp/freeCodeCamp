@@ -1,6 +1,7 @@
 import React from 'react';
-import { Story } from '@storybook/react';
-import { Table, TableProps } from '.';
+import { Meta, StoryFn, StoryObj } from '@storybook/react';
+import { Table } from '.';
+
 const exampleTable = (
   <>
     <thead>
@@ -61,23 +62,37 @@ const story = {
       control: { type: 'radio' }
     }
   }
-};
+} satisfies Meta<typeof Table>;
 
-const Template: Story<TableProps> = args => (
+const Template: StoryFn<typeof Table> = args => (
   <Table {...args}>{exampleTable}</Table>
 );
-export const Default = Template.bind({});
-Default.args = {
-  condensed: false,
-  striped: false
+
+type Story = StoryObj<typeof Table>;
+
+export const Default: Story = {
+  render: Template,
+
+  args: {
+    condensed: false,
+    striped: false
+  }
 };
-export const Condensed = Template.bind({});
-Condensed.args = {
-  condensed: true
+
+export const Condensed: Story = {
+  render: Template,
+
+  args: {
+    condensed: true
+  }
 };
-export const Striped = Template.bind({});
-Striped.args = {
-  striped: true
+
+export const Striped: Story = {
+  render: Template,
+
+  args: {
+    striped: true
+  }
 };
 
 export default story;

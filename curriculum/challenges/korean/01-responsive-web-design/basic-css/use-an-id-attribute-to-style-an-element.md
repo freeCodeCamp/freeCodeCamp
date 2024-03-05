@@ -1,6 +1,6 @@
 ---
 id: bad87dee1348bd9aede07836
-title: Use an id Attribute to Style an Element
+title: id 속성을 사용해서 요소를 스타일링하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakyZfL'
 forumTopicId: 18339
@@ -9,11 +9,11 @@ dashedName: use-an-id-attribute-to-style-an-element
 
 # --description--
 
-One cool thing about `id` attributes is that, like classes, you can style them using CSS.
+`id` 속성의 멋진 점은 클래스와 마찬가지로 CSS를 사용하여 스타일을 지정할 수 있다는 것입니다.
 
-However, an `id` is not reusable and should only be applied to one element. An `id` also has a higher specificity (importance) than a class so if both are applied to the same element and have conflicting styles, the styles of the `id` will be applied.
+그러나 `id`는 재사용할 수 없으며 하나의 요소에만 적용해야 합니다. `id`는 클래스보다 높은 특수성(중요도) 을 갖기 때문에 동일한 요소에 두 가지가 모두 적용되고 충돌하는 스타일이 있는 경우 `id`의 스타일이 적용됩니다.
 
-Here's an example of how you can take your element with the `id` attribute of `cat-photo-element` and give it the background color of green. In your `style` element:
+다음은 `cat-photo-element`라는 `id` 속성을 가진 요소를 가져와 배경 색상을 초록색으로 지정하는 방법의 예입니다. `style` 요소에서 다음과 같이 작성하세요.
 
 ```css
 #cat-photo-element {
@@ -21,27 +21,27 @@ Here's an example of how you can take your element with the `id` attribute of `c
 }
 ```
 
-Note that inside your `style` element, you always reference classes by putting a `.` in front of their names. You always reference ids by putting a `#` in front of their names.
+`style` 요소 내에서 클래스를 참조할 때 항상 이름 앞에 `.`을 넣어야 함을 유의하세요. id 를 참조할 때 항상 이름 앞에 `#`을 넣습니다.
 
 # --instructions--
 
-Try giving your form, which now has the `id` attribute of `cat-photo-form`, a green background.
+이제 `id` 속성이 `cat-photo-form`인 양식에 초록색 배경을 지정해 보세요.
 
 # --hints--
 
-Your `form` element should have the id of `cat-photo-form`.
+`form` 요소는 `cat-photo-form`라는 id를 가져야 합니다.
 
 ```js
 assert($('form').attr('id') === 'cat-photo-form');
 ```
 
-Your `form` element should have the `background-color` of green.
+`form` 요소는 초록색의 `background-color`를 가져야 합니다.
 
 ```js
 assert($('#cat-photo-form').css('background-color') === 'rgb(0, 128, 0)');
 ```
 
-Your `form` element should have an `id` attribute.
+`form` 요소는 `id` 속성을 갖고 있어야 합니다.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-You should not give your `form` any `class` or `style` attributes.
+`form` 요소에는 `class` 또는 `style` 속성을 지정하지 않아야 합니다.
 
 ```js
 assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
@@ -166,9 +166,9 @@ assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
-  
+
   <div class="silver-background">
     <p>Things cats love:</p>
     <ul>
@@ -183,7 +183,7 @@ assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

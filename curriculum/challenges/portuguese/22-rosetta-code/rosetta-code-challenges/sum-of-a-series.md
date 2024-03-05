@@ -8,7 +8,7 @@ dashedName: sum-of-a-series
 
 # --description--
 
-Compute the **n**<sup>th</sup> term of a <em>series</em>, i.e. the sum of the **n** first terms of the corresponding <em>sequence</em>. Informally this value, or its limit when **n** tends to infinity, is also called the *sum of the series*, thus the title of this task. For this task, use: $S_n = \displaystyle\sum_{k=1}^n \frac{1}{k^2}$.
+Calcule o **n**<sup></sup>-ésimo termo de uma <em>série</em>, ou seja, a soma dos **n** primeiros termos da <em>sequência</em> correspondente. Informalmente, esse valor, ou seu limite quando **n** tende ao infinito, é também chamado de *soma da série*, razão do título desta tarefa. Para esta tarefa, use: $S_n = \displaystyle\sum_{k=1}^n \frac{1}{k^2}$.
 
 # --instructions--
 

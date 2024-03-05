@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7edb
-title: Найбільше ціле число з об'єднаних цілих чисел
+title: Найбільше ціле число з об’єднаних цілих чисел
 challengeType: 1
 forumTopicId: 302298
 dashedName: largest-int-from-concatenated-ints
@@ -8,7 +8,7 @@ dashedName: largest-int-from-concatenated-ints
 
 # --description--
 
-Given a set of positive integers, write a function to order the integers in such a way that the concatenation of the numbers forms the largest possible integer and return this integer.
+Дано множину натуральних чисел. Напишіть функцію, яка впорядкує цілі числа, щоб утворилось найбільше можливе ціле число, і поверне це число.
 
 # --hints--
 

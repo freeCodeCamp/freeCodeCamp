@@ -8,16 +8,16 @@ dashedName: luhn-test-of-credit-card-numbers
 
 # --description--
 
-The Luhn test is used by some credit card companies to distinguish valid credit card numbers from what could be a random selection of digits.
+O teste de Luhn é usado por algumas empresas de cartões de crédito para distinguir números válidos de cartão de crédito do que poderia ser uma seleção aleatória de dígitos.
 
 Essas empresas que usam números de cartão de crédito que podem ser validados pelo teste de Luhn têm números que passam no teste a seguir:
 
 <ol>
-  <li> Reverse the order of the digits in the number.</li>
+  <li> Inverter a ordem dos dígitos no número.</li>
   <li> Pegar o primeiro, o terceiro, ... e qualquer outro dígito ímpar nos dígitos invertidos e somá-los para formar a soma parcial s1</li>
   <li> Tomando o segundo, o quarto ... e todos os outros dígitos pares nos dígitos invertidos:</li>
     <ol>
-      <li>Multiply each digit by two and sum the digits if the answer is greater than nine to form partial sums for the even digits.</li>
+      <li>Multiplicar cada algarismo por dois e somar os dígitos se a resposta for maior que nove para formar somas parciais para os dígitos pares.</li>
       <li>Somar as somas parciais dos dígitos pares para formar s2.</li>
     </ol>
   <li>Se s1 + s2 terminar em zero, então o número original está na forma de um número de cartão de crédito válido, conforme verificado pelo teste de Luhn.</li>

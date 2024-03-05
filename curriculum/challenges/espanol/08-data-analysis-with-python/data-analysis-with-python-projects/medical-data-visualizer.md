@@ -8,12 +8,7 @@ dashedName: medical-data-visualizer
 
 # --description--
 
-Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código de inicio Replit</a>.
-
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-medical-data-visualizer/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 Todavía estamos desarrollando la parte interactiva del currículo de Python. Por ahora, aquí hay algunos vídeos en nuestro canal de YouTube freeCodeCamp.org que te enseñará todo lo que necesitas saber para completer este proyecto:
 
@@ -65,15 +60,13 @@ Utiliza los datos para completar las siguientes tareas en `medical_data_visualiz
 
 Cada vez que una variable está establecida en `Ninguno`, asegúrese de establecerla en el código correcto.
 
-Las pruebas unitarias están escritas en `test_module.py`.
-
 ## Desarrollo
 
-Para el desarrollo, puedes usar `main.py` para probar tus funciones. Haz clic en el botón "run" y se ejecutará `main.py`.
+Write your code in `medical_data_visualizer.py`. For development, you can use `main.py` to test your code.
 
 ## Pruebas
 
-Hemos importado las pruebas de `test_module.py` a `main.py` para tu conveniencia. Las pruebas se ejecutarán automáticamente cada vez que pulses el botón "run".
+The unit tests for this project are in `test_module.py`. Hemos importado las pruebas de `test_module.py` a `main.py` para tu conveniencia.
 
 ## Envío
 

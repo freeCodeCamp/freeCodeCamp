@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08719
-title: Use Abbreviated Hex Code
+title: 헥스 코드 축약형 사용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkpKAm'
 forumTopicId: 18338
@@ -9,63 +9,63 @@ dashedName: use-abbreviated-hex-code
 
 # --description--
 
-Many people feel overwhelmed by the possibilities of more than 16 million colors. And it's difficult to remember hex code. Fortunately, you can shorten it.
+많은 사람들이 1,600만 가지가 넘는 색상의 가능성에 망연자실합니다. 게다가 헥스 코드는 외우기 어렵지요. 다행히도 축약해서 쓰는 것이 가능합니다.
 
-For example, red's hex code `#FF0000` can be shortened to `#F00`. This shortened form gives one digit for red, one digit for green, and one digit for blue.
+예를 들어 빨간색의 헥스 코드인 `#FF0000`는 `#F00`로 줄여 쓸 수 있습니다. 이 축약형에서는 빨간색에 한 자리, 초록색에 한 자리, 파란색에 한 자리가 주어집니다.
 
-This reduces the total number of possible colors to around 4,000. But browsers will interpret `#FF0000` and `#F00` as exactly the same color.
+이렇게 하면 가능한 색상의 총 가짓수가 약 4,000개로 줄어듭니다. 하지만 브라우저는 `#FF0000`와 `#F00`를 완전히 동일한 색상으로 인식합니다.
 
 # --instructions--
 
-Go ahead, try using the abbreviated hex codes to color the correct elements.
+자 이제, 헥스 코드의 축약형을 사용하여 올바른 요소에 색상을 지정해 보십시오.
 
-<table><tbody><tr><th>Color</th><th>Short Hex Code</th></tr><tr><td>Cyan</td><td><code>#0FF</code></td></tr><tr><td>Green</td><td><code>#0F0</code></td></tr><tr><td>Red</td><td><code>#F00</code></td></tr><tr><td>Fuchsia</td><td><code>#F0F</code></td></tr></tbody></table>
+<table><tbody><tr><th>색상</th><th>헥스 코드 축약형</th></tr><tr><td>청록색(cyan)</td><td><code>#0FF</code></td></tr><tr><td>초록색</td><td><code>#0F0</code></td></tr><tr><td>빨간색</td><td><code>#F00</code></td></tr><tr><td>자홍색(Fuchsia)</td><td><code>#F0F</code></td></tr></tbody></table>
 
 # --hints--
 
-Your `h1` element with the text `I am red!` should be given the `color` red.
+`I am red!`라는 텍스트가 있는 `h1` 요소의 `color`는 빨간색이어야 합니다.
 
 ```js
 assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 ```
 
-The abbreviated hex code for the color red should be used instead of the hex code `#FF0000`.
+헥스 코드 `#FF0000` 대신 빨간색 헥스 코드의 축약형을 사용해야 합니다.
 
 ```js
 assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?#F00\s*?;?\s*?}/gi));
 ```
 
-Your `h1` element with the text `I am green!` should be given the `color` green.
+`I am green!`이라는 텍스트가 있는 `h1` 요소의 `color`는 초록색이어야 합니다.
 
 ```js
 assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
 ```
 
-The abbreviated hex code for the color green should be used instead of the hex code `#00FF00`.
+헥스 코드 `#00FF00` 대신 초록색 헥스 코드의 축약형을 사용해야 합니다.
 
 ```js
 assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?#0F0\s*?;?\s*?}/gi));
 ```
 
-Your `h1` element with the text `I am cyan!` should be given the `color` cyan.
+`I am cyan!`이라는 텍스트가 있는 `h1` 요소의 `color`는 청록색(cyan)이어야 합니다.
 
 ```js
 assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)');
 ```
 
-The abbreviated hex code for the color cyan should be used instead of the hex code `#00FFFF`.
+헥스 코드 `#00FFFF` 대신 청록색(cyan) 헥스 코드의 축약형을 사용해야 합니다.
 
 ```js
 assert(code.match(/\.cyan-text\s*?{\s*?color\s*:\s*?#0FF\s*?;?\s*?}/gi));
 ```
 
-Your `h1` element with the text `I am fuchsia!` should be given the `color` fuchsia.
+`I am fuchsia!`라는 텍스트가 있는 `h1` 요소의 `color`는 자홍색(fuchsia)이어야 합니다.
 
 ```js
 assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)');
 ```
 
-The abbreviated hex code for the color fuchsia should be used instead of the hex code `#FF00FF`.
+헥스 코드 `#FF00FF` 대신 자홍색(fuchsia) 헥스 코드의 축약형을 사용해야 합니다.
 
 ```js
 assert(code.match(/\.fuchsia-text\s*?{\s*?color\s*:\s*?#F0F\s*?;?\s*?}/gi));

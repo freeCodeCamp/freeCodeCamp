@@ -1,6 +1,6 @@
 ---
 id: 647f87dc07d29547b3bee1bf
-title: Trophy - Create and Run Simple C# Console Applications
+title: 'Trophy - Create and Run Simple C# Console Applications'
 challengeType: 18
 dashedName: trophy-create-and-run-simple-c-sharp-console-applications
 msTrophyId: learn.wwl.get-started-c-sharp-part-2.trophy

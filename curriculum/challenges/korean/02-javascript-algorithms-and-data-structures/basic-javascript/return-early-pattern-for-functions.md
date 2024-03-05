@@ -11,7 +11,7 @@ dashedName: return-early-pattern-for-functions
 
 When a `return` statement is reached, the execution of the current function stops and control returns to the calling location.
 
-**Example**
+**예)**
 
 ```js
 function myFun() {

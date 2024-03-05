@@ -10,7 +10,7 @@ curriculum-server/data/curriculum.json
 curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
 docs/**/*.md
-e2e/playwright/.auth
+/playwright
 pnpm-lock.yaml
 shared/config/*.js
 shared/config/curriculum.json

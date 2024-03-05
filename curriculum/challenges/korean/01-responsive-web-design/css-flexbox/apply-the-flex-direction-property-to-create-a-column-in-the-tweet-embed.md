@@ -1,6 +1,6 @@
 ---
 id: 587d78ac367417b2b2512af5
-title: Apply the flex-direction Property to Create a Column in the Tweet Embed
+title: 트윗 임베드에 열을 만들기 위해 flex-direction 속성 적용하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cnzdVC9'
 forumTopicId: 301103
@@ -9,21 +9,21 @@ dashedName: apply-the-flex-direction-property-to-create-a-column-in-the-tweet-em
 
 # --description--
 
-The tweet embed `header` and `footer` used the `flex-direction` property earlier with a row value. Similarly, the items inside the `.profile-name` element would work well stacked as a column.
+트윗 임베드 `header`와 `footer`는 row 값을 가진 `flex-direction` 속성을 사용했습니다. 마찬가지로 `.profile-name` 요소 안에 있는 아이템은 열로 정렬되며 잘 동작할 것입니다.
 
 # --instructions--
 
-Add the CSS property `flex-direction` to the header's `.profile-name` element and set the value to `column`.
+헤더의 `.profile-name` 요소에 `flex-direction` 속성을 추가하고 `column` 값을 주시오.
 
 # --hints--
 
-Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+`.follow-btn`는 페이지에 렌더링되어야 합니다. 광고 차단기 같은 확장 프로그램은 꺼야합니다.
 
 ```js
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
 ```
 
-The `.profile-name` element should have a `flex-direction` property set to `column`.
+`.profile-name` 요소는 `column`로 설정된 `flex-direction` 속성을 가져야 합니다.
 
 ```js
 assert($('.profile-name').css('flex-direction') == 'column');

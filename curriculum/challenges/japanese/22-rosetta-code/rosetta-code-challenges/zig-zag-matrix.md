@@ -10,7 +10,7 @@ dashedName: zig-zag-matrix
 
 A 'zig-zag' array is a square arrangement of the first $N^2$ integers, where the numbers increase sequentially as you zig-zag along the array's anti-diagonals.
 
-例えば、入力 `5`の場合、次の結果となります。
+例えば、入力 `5` の場合、次の結果となります。
 
 <pre>
  0  1  5  6 14

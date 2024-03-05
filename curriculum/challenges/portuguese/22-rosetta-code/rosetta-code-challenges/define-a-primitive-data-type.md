@@ -8,12 +8,12 @@ dashedName: define-a-primitive-data-type
 
 # --description--
 
-Define a type that behaves like an integer but has a lowest valid value of 1 and a highest valid value of 10.
+Defina um tipo que se comporte como um número inteiro, mas que tenha seu valor menor válido de 1 e seu maior valor válido de 10.
 
 Tratamento de erro:
 
 <ul>
-  <li>If you try to instantiate a <code>Num</code> with a value outside of 1 - 10, it should throw a <code>TypeError</code> with an error message of <code>'Out of range'</code>.</li>
+  <li>Se você tentar instanciar um <code>Num</code> com um valor fora do intervalo de 1 - 10, deve lançar um <code>TypeError</code> com uma mensagem de erro de <code>'Out of range'</code>.</li>
   <li>Se você tentar instanciar um <code>Num</code> com um valor que não seja um número, deve lançar um <code>TypeError</code> com uma mensagem de erro de <code>'Not a Number'</code>.</li>
 </ul>
 

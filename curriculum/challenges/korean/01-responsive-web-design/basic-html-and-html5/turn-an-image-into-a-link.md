@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08820
-title: Turn an Image into a Link
+title: 이미지를 링크로 변환하기
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cRdBnUr'
 forumTopicId: 18327
@@ -9,37 +9,37 @@ dashedName: turn-an-image-into-a-link
 
 # --description--
 
-You can make elements into links by nesting them within an `a` element.
+`a` 요소 내에 요소를 중첩하여 링크로 만들 수 있습니다.
 
-Nest your image within an `a` element. Here's an example:
+`a` 요소 내에서 이미지를 중첩합니다. 예시:
 
 ```html
 <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="Three kittens running towards the camera."></a>
 ```
 
-Remember to use `#` as your `a` element's `href` property in order to turn it into a dead link.
+`a` 요소에 없는 링크를 사용하려면 `href` 속성에 `#`를 지정해야 합니다.
 
 # --instructions--
 
-Place the existing image element within an `a` (*anchor*) element.
+기존 이미지 요소를 `a`(*앵커*) 요소 내에 배치하세요.
 
-Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link.
+이 작업을 마치면 마우스로 커서를 이미지 위로 이동하세요. 그러면 커서의 일반 포인터는 링크를 클릭할 수 있는 포인터가 되어야 합니다. 이 사진은 이제 링크입니다.
 
 # --hints--
 
-The existing `img` element should be nested within an `a` element.
+기존 `img` 요소는 `a` 요소 안에 중첩되어야 합니다.
 
 ```js
 assert($('a').children('img').length > 0);
 ```
 
-Your `a` element should be a dead link with a `href` attribute set to `#`.
+`a` 요소는 `href` 속성이 `#`로 지정된 없는 링크여야 합니다.
 
 ```js
 assert(new RegExp('#').test($('a').children('img').parent().attr('href')));
 ```
 
-Each of your `a` elements should have a closing tag.
+모든 `a` 요소에는 닫는 태그가 있어야 합니다.
 
 ```js
 assert(
@@ -71,9 +71,9 @@ assert(
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
-  
+
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>

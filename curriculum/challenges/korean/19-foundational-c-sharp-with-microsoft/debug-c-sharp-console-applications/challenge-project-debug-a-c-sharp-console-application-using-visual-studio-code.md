@@ -1,6 +1,6 @@
 ---
 id: 647e22778acb466c97ccbef2
-title: Challenge Project - Debug a C# Console Application Using Visual Studio Code
+title: 'Challenge Project - Debug a C# Console Application Using Visual Studio Code'
 challengeType: 19
 dashedName: challenge-project-debug-a-c-sharp-console-application-using-visual-studio-code
 ---

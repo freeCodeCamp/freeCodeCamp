@@ -1,6 +1,6 @@
 ---
 id: 5a94fe0569fb03452672e45c
-title: Divide the Grid Into an Area Template
+title: 영역 템플릿으로 그리드 나누기
 challengeType: 0
 forumTopicId: 301130
 dashedName: divide-the-grid-into-an-area-template
@@ -8,7 +8,7 @@ dashedName: divide-the-grid-into-an-area-template
 
 # --description--
 
-You can group cells of your grid together into an <dfn>area</dfn> and give the area a custom name. Do this by using `grid-template-areas` on the container like this:
+그리드의 셀을 한 <dfn>영역(area)</dfn>으로 묶을 수 있고 그 영역에 이름을 줄 수 있습니다. 아래처럼 컨테이너에 `grid-template-areas`을 사용하면 가능합니다.
 
 ```css
 grid-template-areas:
@@ -17,15 +17,15 @@ grid-template-areas:
   "advert footer footer";
 ```
 
-The code above groups the cells of the grid into four areas: `header`, `advert`, `content`, and `footer`. Every word represents a cell and every pair of quotation marks represent a row.
+위 코드는 그리드의 셀을 다음과 같이 네 영역으로 묶습니다: `header`, `advert`, `content`, `footer`. 각 단어는 셀을 나타내며 각 한 쌍의 따옴표는 행을 나타냅니다.
 
 # --instructions--
 
-Change the template so the `footer` area spans the entire bottom row. Defining the areas won't have any visual effect right now. Later, you will make an item use an area to see how it works.
+템플릿을 변경하여 `footer` 영역이 전체 바닥 행을 늘리도록 만드세요. 영역을 정의하는 것은 즉시 시각적인 효과를 주지 않습니다. 이후에 어떻게 동작하는지 확인하기 위해 한 아이템이 한 영역을 사용하도록 만들 것입니다.
 
 # --hints--
 
-`container` class should have a `grid-template-areas` property similar to the example but with the `footer` area spanning the whole bottom row.
+`container` 클래스는 `footer` 영역이 전체 바닥 행을 늘리는 `grid-template-areas` 속성을 가져야 합니다.
 
 ```js
 assert(

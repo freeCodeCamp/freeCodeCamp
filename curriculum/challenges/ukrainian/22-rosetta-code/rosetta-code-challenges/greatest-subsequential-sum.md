@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e84
-title: Найбільша подальша сума
+title: Найбільша сума підпослідовності
 challengeType: 1
 forumTopicId: 302278
 dashedName: greatest-subsequential-sum
@@ -8,9 +8,9 @@ dashedName: greatest-subsequential-sum
 
 # --description--
 
-Given a sequence of integers, find a continuous subsequence which maximizes the sum of its elements, that is, the elements of no other single subsequence add up to a value larger than this one.
+Дано послідовність цілих чисел. Знайдіть неперервну підпослідовність, сума елементів якої є максимальною (тобто при додаванні елементів іншої підпослідовності не вийде більше значення).
 
-Порожня підпослідовність вважається сумою \\( 0 \\); таким чином, якщо всі елементи від'ємні, то результат повинен бути порожньою послідовністю.
+Вважається, що порожня підпослідовність має суму \\( 0 \\). Тому, якщо всі елементи є від’ємними, результат має бути порожньою послідовністю.
 
 # --hints--
 

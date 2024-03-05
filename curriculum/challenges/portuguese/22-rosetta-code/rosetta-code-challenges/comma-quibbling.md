@@ -8,14 +8,14 @@ dashedName: comma-quibbling
 
 # --description--
 
-<a href="https://rosettacode.org/wiki/Comma_quibbling" target="_blank" rel="noopener noreferrer nofollow">Comma quibbling</a> is a task originally set by Eric Lippert in his blog.
+<a href="https://rosettacode.org/wiki/Comma_quibbling" target="_blank" rel="noopener noreferrer nofollow">Entre vírgulas</a> é uma tarefa originalmente criada por Eric Lippert em seu blog.
 
 # --instructions--
 
 Escreva uma função para gerar uma saída de string que é a concatenação das palavras de entrada a partir de uma lista/sequência, onde:
 
 <ol>
-  <li>An input of no words produces the output string of just the two brace characters (<code>"{}"</code>)</li>
+  <li>Uma entrada sem palavra produz como string de saída apenas dois caracteres de chaves (<code>"{}"</code>)</li>
   <li>Uma entrada de apenas uma palavra, por exemplo, <code>["ABC"]</code>, produz a string de saída com a palavra dentro de duas chaves. <code>"{ABC}"</code></li>
   <li>Uma entrada de duas palavras, por exemplo, <code>["ABC", "DEF"]</code>, produz uma string de saída com as duas palavras dentro de duas chaves com as palavras separadas pela string <code>" and "</code>, por exemplo, <code>"{ABC and DEF}"</code></li>
   <li>Uma entrada de três ou mais palavras, por exemplo <code>["ABC", "DEF", "G", "H"]</code>, produz a string de saída de todas elas separadas por <code>", "</code>, exceto a última palavra, que é separada por <code>" and "</code>, com todas elas dentro de duas chaves, por exemplo, <code>"{ABC, DEF, G and H}"</code></li>
@@ -24,7 +24,7 @@ Escreva uma função para gerar uma saída de string que é a concatenação das
 Teste sua função com a série de entradas a seguir mostrando a saída aqui nesta página:
 
 <ul>
-  <li>[] # (No input words).</li>
+  <li>[] # (Sem palavras de entrada).</li>
   <li>["ABC"]</li>
   <li>["ABC", "DEF"]</li>
   <li>["ABC", "DEF", "G", "H"]</li>

@@ -1,6 +1,6 @@
 ---
 id: 5eaf48389ee512d4d103684b
-title: Самоописувальні числа
+title: Самоописові числа
 challengeType: 1
 forumTopicId: 385289
 dashedName: self-describing-numbers
@@ -8,11 +8,11 @@ dashedName: self-describing-numbers
 
 # --description--
 
-There are several so-called "self-describing" or "self-descriptive" integers.
+Всього є декілька «самоописових» цілих чисел.
 
-Ціле число називають самоописувальним, якщо воно має такі властивості, коли розряд цифри позначений від 0 до N-1, а цифра в кожній позиції дорівнює тій кількості разів, за яку вона з'являється в числі.
+Ціле число називають самоописовим, якщо воно має таку властивість: цифра на позиції від 0 до N-1 відповідає кількості разів, скільки ця цифра зустрічається в числі.
 
-До прикладу, **2020** — це самоописувальне чотиризначне число:
+Наприклад, **2020** є чотиризначним самоописовим числом:
 
 <ul>
     <li> нульова позиція має значення 2 та в числі наявні два 0; </li>
@@ -21,11 +21,11 @@ There are several so-called "self-describing" or "self-descriptive" integers.
     <li> третя позиція має значення 0 та в числі немає 3; </li>
 </ul>
 
-Самоописувальними числами &lt; 100,000,000 є: 1210, 2020, 21200, 3211000, 42101000.
+Самоописовими числами &lt; 100 000 000 є 1210, 2020, 21200, 3211000, 42101000.
 
 # --instructions--
 
-Напишіть функцію, яка враховує додатне ціле число як параметр. Якщо число самоописувальне, поверніть true. Якщо ні — поверніть false.
+Напишіть функцію, яка приймає натуральне число як параметр. Якщо воно самоописове, то поверніть true. Якщо ні — поверніть false.
 
 # --hints--
 
@@ -35,25 +35,25 @@ There are several so-called "self-describing" or "self-descriptive" integers.
 assert(typeof isSelfDescribing == 'function');
 ```
 
-`isSelfDescribing()` має повертати логічне значення.
+`isSelfDescribing()` має повернути булеве значення.
 
 ```js
 assert(typeof isSelfDescribing(2020) == 'boolean');
 ```
 
-`isSelfDescribing(2020)` має повертати `true`.
+`isSelfDescribing(2020)` має повернути `true`.
 
 ```js
 assert.equal(isSelfDescribing(2020), true);
 ```
 
-`isSelfDescribing(3021)` має повертати `false`.
+`isSelfDescribing(3021)` має повернути `false`.
 
 ```js
 assert.equal(isSelfDescribing(3021), false);
 ```
 
-`isSelfDescribing(3211000)` має повертати `true`.
+`isSelfDescribing(3211000)` має повернути `true`.
 
 ```js
 assert.equal(isSelfDescribing(3211000), true);

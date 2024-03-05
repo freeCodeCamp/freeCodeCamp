@@ -1,6 +1,6 @@
 ---
 id: 6597b43d854b3fa8e35d66d7
-title: Introduction to Flexbox Question K
+title: Вступ до Flexbox. Запитання K
 challengeType: 15
 dashedName: introduction-flexbox-question-k
 ---
@@ -9,39 +9,39 @@ dashedName: introduction-flexbox-question-k
 
 <iframe allowfullscreen="true" allowpaymentrequest="true"
 style="width: 100%; overflow:hidden; display:block;"
-allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="400" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/MWoyBzR?height=400&amp;default-tab=html%2Cresult&amp;slug-hash=MWoyBzR&amp;editable=true&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" title="CodePen Embed" loading="lazy" id="cp_embed_MWoyBzR"></iframe>
+allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="400" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/MWoyBzR?height=400&amp;default-tab=html%2Cresult&amp;slug-hash=MWoyBzR&amp;editable=true&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" title="Вставка CodePen" loading="lazy" id="cp_embed_MWoyBzR"></iframe>
 
-To change the placement of items along the cross axis use `align-items`. Try getting the boxes to the center of the container by adding `align-items: center` to `.container`. The desired result looks like this:
+Щоб змінити розташування предметів по перехресній осі, використайте `align-items`. Спробуйте розмістити блоки по центру контейнера, додавши `align-items: center` до `.container`. Бажаний результат виглядає так:
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/495704c6eb6bf33bc927534f231533a82b27b2ac/html_css/v2/foundations/flexbox/imgs/08.png" alt="an image displaying three blue squares which are centered in the middle of the flex container" style="margin: 15px 0" />
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/495704c6eb6bf33bc927534f231533a82b27b2ac/html_css/v2/foundations/flexbox/imgs/08.png" alt="зображення з трьома блакитними квадратами, розташованими за центром гнучкого контейнера" style="margin: 15px 0" />
 
-Because `justify-content` and `align-items` are based on the main and cross axis of your container, their behavior changes when you change the flex-direction of a flex-container. For example, when you change `flex-direction` to `column`, `justify-content` aligns vertically and `align-items` aligns horizontally. The most common behavior, however, is the default, i.e. `justify-content` aligns items horizontally (because the main axis defaults to horizontal), and `align-items` aligns them vertically. One of the biggest sticking points that beginners have with flexbox is confusion when this behavior changes.
+Оскільки `justify-content` та `align-items` базуються на головній та перехресній осях контейнера, то їхня поведінка змінюється, якщо ви змінюєте `flex-direction` гнучкого контейнера. Наприклад, якщо змінити `flex-direction` на `column`, то `justify-content` вирівнюватиме вертикально, а `align-items` — горизонтально. Однак найпоширенішою поведінкою є поведінка за замовчуванням: `justify-content` вирівнює предмети горизонтально (оскільки головна вісь за замовчуванням горизонтальна), а `align-items` вирівнює їх вертикально. Одна з найбільших труднощів, з якими початківці стикаються при роботі з flexbox, — це плутанина при зміні поведінки.
 
 # --question--
 
 ## --assignment--
 
-Before moving on to the next lesson, see if you can figure out how `align-items` behaves when you change the `flex-direction` property to `column`.
+Перш ніж перейти до наступного уроку, переконайтесь, що розумієте, як поводиться `align-items` при зміні властивості `flex-direction` на `column`.
 
 ## --text--
 
-When changing the `flex-direction` property to `column` in a flex container, how does `align-items` behave in relation to the flex items?
+Як поводиться `align-items` стосовно гнучких предметів, якщо в гнучкому контейнері змінити властивість `flex-direction` на `column`?
 
 ## --answers--
 
-It distributes space between items evenly.
+Вона рівномірно розподіляє простір між предметами.
 
 ---
 
-It aligns items horizontally along the main axis.
+Вона горизонтально вирівнює предмети вздовж головної осі.
 
 ---
 
-It centers items vertically along the cross axis.
+Вона вертикально центрує предмети вздовж перехресної осі.
 
 ---
 
-It aligns items to the start of the container along the cross axis.
+Вона вирівнює елементи за початком контейнера вздовж перехресної осі.
 
 ## --video-solution--
 

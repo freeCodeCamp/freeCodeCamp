@@ -1,6 +1,6 @@
 ---
 id: 587d7788367417b2b2512aa3
-title: Make Screen Reader Navigation Easier with the footer Landmark
+title: 화면 낭독기 탐색을 더욱 쉽게 만들어주는 푸터 랜드마크
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/crVrDh8'
 forumTopicId: 301022
@@ -9,27 +9,27 @@ dashedName: make-screen-reader-navigation-easier-with-the-footer-landmark
 
 # --description--
 
-Similar to `header` and `nav`, the `footer` element has a built-in landmark feature that allows assistive devices to quickly navigate to it. It's primarily used to contain copyright information or links to related documents that usually sit at the bottom of a page.
+`header`와 `nav` 요소와 마찬가지로, `footer` 요소 또한 보조 장치가 빠르게 탐색할 수 있도록 내장된 랜드마크 기능을 가지고 있습니다. `footer` 요소는 주로 페이지 하단에 위치하며 대개 저작권 정보나 관련 문서 링크를 포함하는 데 사용됩니다.
 
 # --instructions--
 
-Camper Cat's training page is making good progress. Change the `div` he used to wrap his copyright information at the bottom of the page to a `footer` element.
+캠퍼 캣은 훈련을 위한 웹 페이지를 만들고 있습니다. 페이지 하단의 저작권 정보를 감싸고 있는 `div` 를`footer` 요소로 바꿔주세요.
 
 # --hints--
 
-Your code should have one `footer` tag.
+코드에는 `footer` 태그가 하나만 있어야 합니다.
 
 ```js
 assert($('footer').length == 1);
 ```
 
-Your code should not have any `div` tags.
+코드에는 `div` 태그가 하나도 없어야 합니다.
 
 ```js
 assert($('div').length == 0);
 ```
 
-Your code should have an opening and closing `footer` tag.
+코드에는 여는 `footer` 태그와 닫는 `footer` 태그가 하나씩 있어야 합니다.
 
 ```js
 assert(code.match(/<footer>\s*&copy; 2018 Camper Cat\s*<\/footer>/g));

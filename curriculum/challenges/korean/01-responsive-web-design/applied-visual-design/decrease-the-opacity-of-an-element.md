@@ -1,6 +1,6 @@
 ---
 id: 587d781c367417b2b2512abf
-title: Decrease the Opacity of an Element
+title: 요소의 불투명도 감소시키기
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c7aKqu4'
 forumTopicId: 301055
@@ -9,19 +9,19 @@ dashedName: decrease-the-opacity-of-an-element
 
 # --description--
 
-The `opacity` property in CSS is used to adjust the opacity, or conversely, the transparency for an item.
+CSS의 `opacity` 속성은 아이템의 불투명도, 혹은 반대로 투명도를 조절하는 데 사용됩니다.
 
-<blockquote>A value of 1 is opaque, which isn't transparent at all.<br>A value of 0.5 is half see-through.<br>A value of 0 is completely transparent.</blockquote>
+<blockquote>불투명도 값이 1이면 전혀 투명하지 않은 불투명한 상태입니다.<br>값이 0.5면 반투명합니다.<br>값이 0이면 완전히 투명합니다.</blockquote>
 
-The value given will apply to the entire element, whether that's an image with some transparency, or the foreground and background colors for a block of text.
+주어진 값은 투명도가 있는 이미지든 텍스트 블록의 전경 및 배경 색상이든 전체 요소에 적용됩니다.
 
 # --instructions--
 
-Set the `opacity` of the anchor tags to 0.7 using `links` class to select them.
+`links` 클래스를 사용하여 앵커 태그를 선택하고 `opacity`를 0.7로 설정하십시오.
 
 # --hints--
 
-Your code should set the `opacity` property to 0.7 on the anchor tags by selecting the class of `links`.
+코드는 `links` 클래스를 선택하여 앵커 태그의 `opacity` 속성을 0.7로 설정해야 합니다.
 
 ```js
 assert(

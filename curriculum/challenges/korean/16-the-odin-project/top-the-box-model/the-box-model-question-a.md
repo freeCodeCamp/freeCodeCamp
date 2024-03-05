@@ -4,6 +4,7 @@ title: The Box Model Question A
 challengeType: 15
 dashedName: the-box-model-question-a
 ---
+
 # --description--
 
 Being able to inspect and debug your HTML and CSS is critical to frontend development. This lesson will take us through the Chrome Dev Tools, which allow you to see detailed information about your elements and CSS rules, as well as assist you in finding and fixing problems in your code.

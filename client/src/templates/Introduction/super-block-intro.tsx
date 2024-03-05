@@ -29,6 +29,7 @@ import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
+import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';
 import { resetExpansion, toggleBlock } from './redux';
 
@@ -216,6 +217,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 }
                 isDonating={user.isDonating}
               />
+              <HelpTranslate superBlock={superBlock} />
               <Spacer size='large' />
               <h2 className='text-center big-subheading'>
                 {t(`intro:misc-text.courses`)}

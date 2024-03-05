@@ -1,6 +1,6 @@
 ---
 id: 647f85d407d29547b3bee1bb
-title: Trophy - Write Your First Code Using C#
+title: 'Trophy - Write Your First Code Using C#'
 challengeType: 18
 dashedName: trophy-write-your-first-code-using-c-sharp
 msTrophyId: learn.wwl.get-started-c-sharp-part-1.trophy

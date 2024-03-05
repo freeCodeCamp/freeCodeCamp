@@ -134,6 +134,7 @@ function initRunPython() {
     else:
       return ""
   `);
+
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const getResetId = globals.get('__get_reset_id') as PyProxy & (() => string);
   return { runPython, getResetId, globals };
