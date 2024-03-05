@@ -19,6 +19,21 @@ Note that:
 
 # --hints--
 
+You should remove the `pass` keyword from the `insert` method.
+
+```js
+({
+  test: () => {
+    assert.isFalse(
+      runPython(
+        `_Node(_code).find_class("BinarySearchTree").find_function("insert").has_pass()`
+      )
+    );
+  },
+});
+
+```
+
 You should recursively call the `_insert()` method using `self._insert()`
 
 ```js
