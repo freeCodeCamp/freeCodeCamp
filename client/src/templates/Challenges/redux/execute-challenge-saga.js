@@ -37,8 +37,8 @@ import {
   interruptCodeExecution,
   runPythonCode
 } from '../utils/python-worker-handler';
-import { executeGA } from '../../../redux/actions';
 import { fireConfetti } from '../../../utils/fire-confetti';
+import callGA from '../../../analytics/call-ga';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
@@ -70,7 +70,10 @@ function* executeCancellableChallengeSaga(payload) {
   const { challengeFiles } = yield select(challengeDataSelector);
 
   // if multifileCertProject, see if body/code size is submittable
-  if (challengeType === challengeTypes.multifileCertProject) {
+  if (
+    challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.multifilePythonCertProject
+  ) {
     const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 
@@ -140,14 +143,12 @@ export function* executeChallengeSaga({ payload }) {
     } else {
       playTone('tests-failed');
       if (challengeMeta.certification === 'responsive-web-design') {
-        yield put(
-          executeGA({
-            event: 'challenge_failed',
-            challenge_id: challengeMeta.id,
-            challenge_path: window?.location?.pathname,
-            challenge_files: challengeData.challengeFiles
-          })
-        );
+        yield call(callGA, {
+          event: 'challenge_failed',
+          challenge_id: challengeMeta.id,
+          challenge_path: window?.location?.pathname,
+          challenge_files: challengeData.challengeFiles
+        });
       }
     }
 
@@ -278,7 +279,11 @@ export function* previewChallengeSaga(action) {
         // Python challenges do not use the preview frame, they use a web worker
         // to run the code. The UI is handled by the xterm component, so there
         // is no need to update the preview frame.
-        if (challengeData.challengeType === challengeTypes.python) {
+        if (
+          challengeData.challengeType === challengeTypes.python ||
+          challengeData.challengeType ===
+            challengeTypes.multifilePythonCertProject
+        ) {
           yield updatePython(challengeData);
         } else {
           yield call(updatePreview, buildData, finalDocument, proxyLogger);
@@ -309,7 +314,10 @@ export function* previewChallengeSaga(action) {
 // appropriately)
 function* updatePreviewSaga(action) {
   const challengeData = yield select(challengeDataSelector);
-  if (challengeData.challengeType === challengeTypes.python) {
+  if (
+    challengeData.challengeType === challengeTypes.python ||
+    challengeData.challengeType === challengeTypes.multifilePythonCertProject
+  ) {
     yield updatePython(challengeData);
   } else {
     // all other challenges have to recreate the preview
