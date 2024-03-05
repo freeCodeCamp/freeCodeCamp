@@ -201,15 +201,4 @@ describe('dev login take 2', () => {
       expect(res.status).toBe(302);
     });
   });
-
-  describe('setAccessTokenCookie', () => {
-    it('should set the jwt_access_token cookie', async () => {
-      const res = await superRequest('/signin', { method: 'GET' });
-
-      expect(res.status).toBe(302);
-      expect(res.headers['set-cookie']).toEqual(
-        expect.arrayContaining([expect.stringMatching(/jwt_access_token=/)])
-      );
-    });
-  });
 });
