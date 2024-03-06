@@ -120,11 +120,25 @@ const jsCertProjectIds = [
 ];
 
 const multifileCertProjectIds = getChallenges()
-  .filter(challenge => challenge.challengeType === 14)
+  .filter(
+    challenge => challenge.challengeType === challengeTypes.multifileCertProject
+  )
+  .map(challenge => challenge.id);
+
+const multifilePythonCertProjectIds = getChallenges()
+  .filter(
+    challenge =>
+      challenge.challengeType === challengeTypes.multifilePythonCertProject
+  )
   .map(challenge => challenge.id);
 
 const savableChallenges = getChallenges()
-  .filter(challenge => challenge.challengeType === 14)
+  .filter(challenge => {
+    return (
+      challenge.challengeType === challengeTypes.multifileCertProject ||
+      challenge.challengeType === challengeTypes.multifilePythonCertProject
+    );
+  })
   .map(challenge => challenge.id);
 
 const msTrophyChallenges = getChallenges()
@@ -141,7 +155,8 @@ export function buildUserUpdate(
   let completedChallenge = {};
   if (
     jsCertProjectIds.includes(challengeId) ||
-    multifileCertProjectIds.includes(challengeId)
+    multifileCertProjectIds.includes(challengeId) ||
+    multifilePythonCertProjectIds.includes(challengeId)
   ) {
     completedChallenge = {
       ..._completedChallenge,
@@ -397,7 +412,11 @@ export async function modernChallengeCompleted(req, res, next) {
 
   // We only need to know the challenge type if it's a project. If it's a
   // step or normal challenge we can avoid storing in the database.
-  if (jsCertProjectIds.includes(id) || multifileCertProjectIds.includes(id)) {
+  if (
+    jsCertProjectIds.includes(id) ||
+    multifileCertProjectIds.includes(id) ||
+    multifilePythonCertProjectIds.includes(id)
+  ) {
     completedChallenge.challengeType = challengeType;
   }
 
@@ -747,26 +766,26 @@ function createMsTrophyChallengeCompleted(app) {
 
       const { userId } = msProfileJson;
 
-      const msGameStatusApi = `https://learn.microsoft.com/api/gamestatus/${userId}`;
-      const msGameStatusApiRes = await fetch(msGameStatusApi);
-      const msGameStatusJson = await msGameStatusApiRes.json();
+      const msUserAchievementsApi = `https://learn.microsoft.com/api/achievements/user/${userId}`;
+      const msUserAchievementsApiRes = await fetch(msUserAchievementsApi);
+      const msUserAchievementsJson = await msUserAchievementsApiRes.json();
 
-      if (!msGameStatusApiRes.ok) {
+      if (!msUserAchievementsApiRes.ok) {
         return res.status(403).json({
           type: 'error',
           message: 'flash.ms.trophy.err-3'
         });
       }
 
-      if (msGameStatusJson.achievements?.length === 0) {
+      if (msUserAchievementsJson.achievements?.length === 0) {
         return res.status(403).json({
           type: 'error',
           message: 'flash.ms.trophy.err-6'
         });
       }
 
-      const hasEarnedTrophy = msGameStatusJson.achievements?.some(
-        a => a.awardUid === msTrophyId
+      const hasEarnedTrophy = msUserAchievementsJson.achievements?.some(
+        a => a.typeId === msTrophyId
       );
 
       if (!hasEarnedTrophy) {
@@ -781,7 +800,7 @@ function createMsTrophyChallengeCompleted(app) {
 
       const completedChallenge = pick(body, ['id']);
 
-      completedChallenge.solution = msGameStatusApi;
+      completedChallenge.solution = msUserAchievementsApi;
       completedChallenge.completedDate = Date.now();
 
       try {

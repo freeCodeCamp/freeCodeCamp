@@ -1,4 +1,5 @@
 /* the styled-elements and normalized are included here to replicate the presets that exist in the learn app */
+import React from 'react';
 import '../src/normalize.css';
 import '../src/global-element-styles.css';
 import '../src/base.css';
@@ -40,9 +41,13 @@ function renderTheme(Story, context) {
   // Use the value of the default background to prevent "undefined" className
   const className = selectedBackgroundName || parameters.backgrounds.default;
 
-  return (
-    <div className={className}>
-      <Story />
-    </div>
-  );
+  if (className === 'light-palette') {
+    document.body.classList.remove('dark-palette');
+    document.body.classList.add('light-palette');
+  } else {
+    document.body.classList.remove('light-palette');
+    document.body.classList.add('dark-palette');
+  }
+
+  return <Story />;
 }

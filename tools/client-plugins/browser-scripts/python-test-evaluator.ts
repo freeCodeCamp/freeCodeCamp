@@ -46,6 +46,15 @@ async function setupPyodide() {
   // pyodide modifies self while loading.
   Object.freeze(self);
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+  pyodide.FS.writeFile(
+    '/home/pyodide/ast_helpers.py',
+    helpers.python.astHelpers,
+    {
+      encoding: 'utf8'
+    }
+  );
+
   ctx.postMessage({ type: 'contentLoaded' });
 
   return pyodide;
@@ -129,6 +138,20 @@ def __inputGen(xs):
   return input
 
 input = __inputGen(${JSON.stringify(input ?? [])})
+`);
+
+    runPython(`from ast_helpers import Node as _Node`);
+
+    // The tests need the user's code as a string, so we write it to the virtual
+    // filesystem.
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    pyodide.FS.writeFile('/user_code.py', code, { encoding: 'utf8' });
+
+    runPython(`
+with open("/user_code.py", "r") as f:
+  from ast import parse as _parse
+  _code = f.read()
+  _tree = _parse(_code)
 `);
 
     // Evaluates the learner's code so that any variables they define are
