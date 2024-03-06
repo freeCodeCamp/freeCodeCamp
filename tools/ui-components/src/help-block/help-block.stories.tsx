@@ -1,5 +1,4 @@
-import React from 'react';
-import { Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { HelpBlock } from './help-block';
 
 const story = {
@@ -10,15 +9,14 @@ const story = {
       include: ['className', 'children']
     }
   }
-};
+} satisfies Meta<typeof HelpBlock>;
 
-const Template: Story<React.ComponentPropsWithRef<'span'>> = args => {
-  return <HelpBlock {...args} />;
-};
+type Story = StoryObj<typeof HelpBlock>;
 
-export const Default = Template.bind({});
-Default.args = {
-  children: 'This is a HelpBlock'
+export const Default: Story = {
+  args: {
+    children: 'This is a HelpBlock'
+  }
 };
 
 export default story;

@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures",
+    "title": "Legacy JavaScript Algorithms and Data Structures",
     "intro": [
       "في حين أن HTML و CSS يتحكمان في محتوى الصفحة وتصميم الصفحة، يستخدم Javascript لجعلها تفاعلية. في شهادة الخوارزميات وهياكل البيانات في JavaScript، ستتعلم أساسيات JavaScript بما في ذلك المتغيرات variables, والقوائم arrays, والكائنات objects والحلقات loops, والوظائف functions.",
       "بمجرد أن يكون لديك الأساسيات، ستطبق تلك المعرفة عن طريق إنشاء خوارزميات للتلاعب بالسلاسل strings، تحديد الأعداد، بل وحساب مدار محطة الفضاء الدولية.",

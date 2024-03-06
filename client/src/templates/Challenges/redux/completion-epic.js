@@ -116,7 +116,8 @@ function submitModern(type, state) {
       let body;
       if (
         block === 'javascript-algorithms-and-data-structures-projects' ||
-        challengeType === challengeTypes.multifileCertProject
+        challengeType === challengeTypes.multifileCertProject ||
+        challengeType === challengeTypes.multifilePythonCertProject
       ) {
         body = standardizeRequestBody({ id, challengeType, challengeFiles });
       } else {

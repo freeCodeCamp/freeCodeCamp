@@ -1,13 +1,9 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import type { Dispatch } from 'redux';
 
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
-import { executeGA } from '../../../redux/actions';
 import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
@@ -17,9 +13,6 @@ const getStepNumber = (dashedName: string) => {
   const match = dashedName.match(/-(\d+)/);
   return match ? match[1] : '';
 };
-
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ executeGA }, dispatch);
 
 interface Challenges {
   challengesWithCompleted: ChallengeWithCompletedNode[];
@@ -160,4 +153,4 @@ function Challenges({
 
 Challenges.displayName = 'Challenges';
 
-export default connect(null, mapDispatchToProps)(withTranslation()(Challenges));
+export default withTranslation()(Challenges);
