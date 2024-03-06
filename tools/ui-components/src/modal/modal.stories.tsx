@@ -1,21 +1,53 @@
-import React from 'react';
-import { Story } from '@storybook/react';
+import React, { useState } from 'react';
+import { StoryFn, StoryObj, Meta } from '@storybook/react';
 
-import { Modal, type ModalProps } from './modal';
+import { Button } from '../button';
+import { Modal } from './modal';
 
 const story = {
   title: 'Example/Modal',
   component: Modal
-};
+} satisfies Meta<typeof Modal>;
 
-const Template: Story<ModalProps> = () => {
+type Story = StoryObj<typeof Modal>;
+
+const Template: StoryFn<typeof Modal> = args => {
   return (
-    <div id='headlessui-portal-root'>
-      <Modal open />
-    </div>
+    <Modal {...args}>
+      <Modal.Header>Modal title</Modal.Header>
+      <Modal.Body>Modal body</Modal.Body>
+      <Modal.Footer>
+        <Button>Save</Button>
+      </Modal.Footer>
+    </Modal>
   );
 };
 
-export const Default = Template.bind({});
+export const Default: Story = {
+  render: Template,
+  args: { open: true }
+};
+
+const TemplateWithTrigger: StoryFn<typeof Modal> = args => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>Open modal</Button>
+      <Modal {...args} open={open}>
+        <Modal.Header>Modal title</Modal.Header>
+        <Modal.Body>Modal body</Modal.Body>
+        <Modal.Footer>
+          <Button>Save</Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+};
+
+export const WithTrigger: Story = {
+  render: TemplateWithTrigger,
+  args: {}
+};
 
 export default story;
