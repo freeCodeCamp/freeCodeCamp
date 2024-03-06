@@ -8,17 +8,16 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { Button } from '@freecodecamp/ui';
 
 import envData from '../../../../config/env.json';
-import { executeGA } from '../../../redux/actions';
 import { createQuestion, closeModal } from '../redux/actions';
 import { isHelpModalOpenSelector } from '../redux/selectors';
 import { Spacer } from '../../../components/helpers';
 
 import './help-modal.css';
+import callGA from '../../../analytics/call-ga';
 
 interface HelpModalProps {
   closeHelpModal: () => void;
   createQuestion: () => void;
-  executeGA: (attributes: { event: string; pagePath: string }) => void;
   isOpen?: boolean;
   t: (text: string) => string;
   challengeTitle: string;
@@ -32,7 +31,7 @@ const mapStateToProps = (state: unknown) => ({
 });
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
-    { createQuestion, executeGA, closeHelpModal: () => closeModal('help') },
+    { createQuestion, closeHelpModal: () => closeModal('help') },
     dispatch
   );
 
@@ -49,14 +48,13 @@ const generateSearchLink = (title: string, block: string) => {
 function HelpModal({
   closeHelpModal,
   createQuestion,
-  executeGA,
   isOpen,
   t,
   challengeBlock,
   challengeTitle
 }: HelpModalProps): JSX.Element {
   if (isOpen) {
-    executeGA({ event: 'pageview', pagePath: '/help-modal' });
+    callGA({ event: 'pageview', pagePath: '/help-modal' });
   }
   return (
     <Modal dialogClassName='help-modal' onHide={closeHelpModal} show={isOpen}>
