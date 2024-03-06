@@ -23,10 +23,12 @@ describe('auth0 routes', () => {
       const res = await superGet('/signin');
 
       expect(res.status).toBe(302);
-      expect(res.headers.location).toMatch(
-        // TODO: create regex escape function and apply to AUTH0_DOMAIN
-        new RegExp(`https://${AUTH0_DOMAIN}/authorize`)
-      );
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      const redirectUrl = new URL(res.headers.location);
+      expect(redirectUrl.host).toMatch(AUTH0_DOMAIN);
+      expect(redirectUrl.pathname).toBe('/authorize');
     });
+
+    it.todo('should add the referer to the state');
   });
 });
