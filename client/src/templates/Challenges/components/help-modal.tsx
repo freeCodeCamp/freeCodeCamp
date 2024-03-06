@@ -1,7 +1,7 @@
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Modal } from '@freecodecamp/react-bootstrap';
-import { Button } from '@freecodecamp/ui';
+import { Button, FormControl } from '@freecodecamp/ui';
 import React, { useState } from 'react';
 import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -145,15 +145,21 @@ function HelpModal({
                 t={t}
               />
               <label htmlFor='description'>
-                {t('forum-help.whats-happening')}
+                {t('forum-help.whats-happening')} (Min. 50)
               </label>
-              <textarea
+              <FormControl
                 id='help-modal-form-description'
                 name='description'
-                value={description}
-                onChange={event => {
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                   setDescription(event.target.value);
                 }}
+                componentClass='textarea'
+                required={true}
+                style={{
+                  height: 100
+                }}
+                maxLength={500}
+                type='text'
               />
             </div>
             <Spacer size='xxSmall' />
@@ -164,7 +170,7 @@ function HelpModal({
               variant='primary'
               type='submit'
               disabled={
-                description.length < 100 ||
+                description.length < 50 ||
                 !readSearchCheckbox ||
                 !similarQuestionsCheckbox
               }
