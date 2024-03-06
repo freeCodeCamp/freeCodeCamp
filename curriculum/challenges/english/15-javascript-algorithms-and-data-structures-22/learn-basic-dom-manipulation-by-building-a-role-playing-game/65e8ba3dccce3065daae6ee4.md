@@ -1,26 +1,26 @@
 ---
-id: 62a8cb19bd7f8a304e5427a1
-title: Step 86
+id: 65e8ba3dccce3065daae6ee4
+title: Step 64
 challengeType: 0
-dashedName: step-86
+dashedName: step-64
 ---
 
 # --description--
 
-Now update the `goldText` element to display the new value of `gold`, and update the `text` element to display `"You now have a new weapon."`.
+Now that you have a better understanding on how the `location` object works, you can delete your console statement and `update(locations[1]);` function call from your code.
 
 # --hints--
 
-You should update the `innerText` property of the `goldText` element to be `gold`.
+You should not have a `console.log(location["button text"][0]);` statement in your `update` function.
 
 ```js
-assert.match(buyWeapon.toString(), /goldText\.innerText\s*=\s*gold/);
+assert.notMatch(update.toString(), /console\.log\(\s*location\s*\[\s*('|")button text\1\s*\]\s*\[\s*0\s*\];?\s*\)/);
 ```
 
-You should update the `innerText` property of the `text` element to be `"You now have a new weapon."`.
+You should not have a `update(locations[1]);` statement in your code.
 
 ```js
-assert.match(buyWeapon.toString(), /text\.innerText\s*=\s*('|")You now have a new weapon\.\1/);
+assert.notMatch(code, /update\(\s*locations\s*\[\s*1\s*\];?\s*\)/);
 ```
 
 # --seed--
@@ -127,12 +127,6 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
-const weapons = [
-  { name: 'stick', power: 5 },
-  { name: 'dagger', power: 30 },
-  { name: 'claw hammer', power: 50 },
-  { name: 'sword', power: 100 }
-];
 const locations = [
   {
     name: "town square",
@@ -145,12 +139,6 @@ const locations = [
     "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
     "button functions": [buyHealth, buyWeapon, goTown],
     text: "You enter the store."
-  },
-  {
-    name: "cave",
-    "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
-    "button functions": [fightSlime, fightBeast, goTown],
-    text: "You enter the cave. You see some monsters."
   }
 ];
 
@@ -159,26 +147,30 @@ button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
+--fcc-editable-region--
 function update(location) {
-  button1.innerText = location["button text"][0];
-  button2.innerText = location["button text"][1];
-  button3.innerText = location["button text"][2];
-  button1.onclick = location["button functions"][0];
-  button2.onclick = location["button functions"][1];
-  button3.onclick = location["button functions"][2];
-  text.innerText = location.text;
+  console.log(location["button text"][0]);
+  button1.innerText = "Go to store";
+  button2.innerText = "Go to cave";
+  button3.innerText = "Fight dragon";
+  button1.onclick = goStore;
+  button2.onclick = goCave;
+  button3.onclick = fightDragon;
+  text.innerText = "You are in the town square. You see a sign that says \"Store\".";
 }
+update(locations[1]);
+--fcc-editable-region--
 
 function goTown() {
   update(locations[0]);
 }
 
 function goStore() {
-  update(locations[1]);
+
 }
 
 function goCave() {
-  update(locations[2]);
+  console.log("Going to cave.");
 }
 
 function fightDragon() {
@@ -186,30 +178,10 @@ function fightDragon() {
 }
 
 function buyHealth() {
-  if (gold >= 10) {
-    gold -= 10;
-    health += 10;
-    goldText.innerText = gold;
-    healthText.innerText = health;
-  } else {
-    text.innerText = "You do not have enough gold to buy health.";
-  }
+
 }
 
---fcc-editable-region--
 function buyWeapon() {
-  if (gold >= 30) {
-    gold -= 30;
-    currentWeapon++;
-  }
-}
---fcc-editable-region--
-
-function fightSlime() {
-
-}
-
-function fightBeast() {
 
 }
 ```
