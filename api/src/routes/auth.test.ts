@@ -3,7 +3,6 @@ import { createSuperRequest, devLogin, setupServer } from '../../jest.utils';
 import { AUTH0_DOMAIN } from '../utils/env';
 
 jest.mock('../utils/env', () => {
-  console.log('mocking env');
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return {
     ...jest.requireActual('../utils/env'),
