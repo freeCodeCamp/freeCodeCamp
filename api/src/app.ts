@@ -52,6 +52,7 @@ import {
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 import { certificateRoutes } from './routes/certificate';
+import { emailSubscribtionRoutes } from './routes/email-subscription';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -201,6 +202,7 @@ export const build = async (
   void fastify.register(challengeRoutes);
   void fastify.register(settingRoutes);
   void fastify.register(donateRoutes);
+  void fastify.register(emailSubscribtionRoutes);
   void fastify.register(userRoutes);
   void fastify.register(userGetRoutes);
   void fastify.register(deprecatedEndpoints);

@@ -51,6 +51,7 @@ export function createUserInput(email: string): Prisma.userCreateInput {
     keyboardShortcuts: false,
     location: '',
     name: '',
+    // TODO: default this to new nanoId? - see if old API does that
     unsubscribeId: '',
     partiallyCompletedChallenges: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
     picture: '',
