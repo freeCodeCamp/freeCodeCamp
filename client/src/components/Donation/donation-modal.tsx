@@ -6,13 +6,14 @@ import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
 
-import { closeDonationModal, executeGA } from '../../redux/actions';
+import { closeDonationModal } from '../../redux/actions';
 import {
   isDonationModalOpenSelector,
   recentlyClaimedBlockSelector
 } from '../../redux/selectors';
 import { isLocationSuperBlock } from '../../utils/path-parsers';
 import { playTone } from '../../utils/tone';
+import callGA from '../../analytics/call-ga';
 import DonationModalBody from './donation-modal-body';
 
 type RecentlyClaimedBlock = null | { block: string; superBlock: string };
@@ -27,18 +28,11 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
-  bindActionCreators(
-    {
-      closeDonationModal,
-      executeGA
-    },
-    dispatch
-  );
+  bindActionCreators({ closeDonationModal }, dispatch);
 
 type DonateModalProps = {
   activeDonors?: number;
   closeDonationModal: typeof closeDonationModal;
-  executeGA: typeof executeGA;
   location?: WindowLocation;
   recentlyClaimedBlock: RecentlyClaimedBlock;
   show: boolean;
@@ -47,22 +41,22 @@ type DonateModalProps = {
 function DonateModal({
   show,
   closeDonationModal,
-  executeGA,
+
   location,
   recentlyClaimedBlock
 }: DonateModalProps): JSX.Element {
   useEffect(() => {
     if (show) {
       void playTone('donation');
-      executeGA({ event: 'pageview', pagePath: '/donation-modal' });
-      executeGA({
+      callGA({ event: 'pageview', pagePath: '/donation-modal' });
+      callGA({
         event: 'donation_view',
         action: `Displayed ${
           recentlyClaimedBlock !== null ? 'Block' : 'Progress'
         } Donation Modal`
       });
     }
-  }, [show, recentlyClaimedBlock, executeGA]);
+  }, [show, recentlyClaimedBlock]);
 
   const handleModalHide = () => {
     // If modal is open on a SuperBlock page
@@ -82,7 +76,6 @@ function DonateModal({
       <DonationModalBody
         closeDonationModal={closeDonationModal}
         recentlyClaimedBlock={recentlyClaimedBlock}
-        executeGA={executeGA}
       />
     </Modal>
   );
