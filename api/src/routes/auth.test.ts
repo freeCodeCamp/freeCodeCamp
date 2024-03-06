@@ -28,7 +28,5 @@ describe('auth0 routes', () => {
       expect(redirectUrl.host).toMatch(AUTH0_DOMAIN);
       expect(redirectUrl.pathname).toBe('/authorize');
     });
-
-    it.todo('should add the referer to the state');
   });
 });
