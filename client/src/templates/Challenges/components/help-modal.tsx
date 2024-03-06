@@ -9,7 +9,6 @@ import { Dispatch, bindActionCreators } from 'redux';
 
 import envData from '../../../../config/env.json';
 import { Spacer } from '../../../components/helpers';
-import { executeGA } from '../../../redux/actions';
 import { createQuestion, closeModal } from '../redux/actions';
 import { isHelpModalOpenSelector } from '../redux/selectors';
 
