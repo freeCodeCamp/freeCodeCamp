@@ -766,26 +766,26 @@ function createMsTrophyChallengeCompleted(app) {
 
       const { userId } = msProfileJson;
 
-      const msGameStatusApi = `https://learn.microsoft.com/api/gamestatus/${userId}`;
-      const msGameStatusApiRes = await fetch(msGameStatusApi);
-      const msGameStatusJson = await msGameStatusApiRes.json();
+      const msUserAchievementsApi = `https://learn.microsoft.com/api/achievements/user/${userId}`;
+      const msUserAchievementsApiRes = await fetch(msUserAchievementsApi);
+      const msUserAchievementsJson = await msUserAchievementsApiRes.json();
 
-      if (!msGameStatusApiRes.ok) {
+      if (!msUserAchievementsApiRes.ok) {
         return res.status(403).json({
           type: 'error',
           message: 'flash.ms.trophy.err-3'
         });
       }
 
-      if (msGameStatusJson.achievements?.length === 0) {
+      if (msUserAchievementsJson.achievements?.length === 0) {
         return res.status(403).json({
           type: 'error',
           message: 'flash.ms.trophy.err-6'
         });
       }
 
-      const hasEarnedTrophy = msGameStatusJson.achievements?.some(
-        a => a.awardUid === msTrophyId
+      const hasEarnedTrophy = msUserAchievementsJson.achievements?.some(
+        a => a.typeId === msTrophyId
       );
 
       if (!hasEarnedTrophy) {
@@ -800,7 +800,7 @@ function createMsTrophyChallengeCompleted(app) {
 
       const completedChallenge = pick(body, ['id']);
 
-      completedChallenge.solution = msGameStatusApi;
+      completedChallenge.solution = msUserAchievementsApi;
       completedChallenge.completedDate = Date.now();
 
       try {
