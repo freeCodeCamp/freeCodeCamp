@@ -1,7 +1,4 @@
-import {
-  FastifyPluginCallback,
-  FastifyRequest
-} from 'fastify';
+import { FastifyPluginCallback, FastifyRequest } from 'fastify';
 
 import rateLimit from 'express-rate-limit';
 // @ts-expect-error - no types
