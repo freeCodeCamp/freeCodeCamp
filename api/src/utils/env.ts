@@ -113,5 +113,6 @@ export const EMAIL_PROVIDER = process.env.EMAIL_PROVIDER;
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
-export const MAX_REQUEST_LIMIT = process.env.MAX_REQUEST_LIMIT;
+export const MAX_REQUEST_LIMIT = Math.abs(parseInt(process.env.MAX_REQUEST_LIMIT));
+assert.ok(!Number.isNaN(MAX_REQUEST_LIMIT));
 export const REDIS_HOST = process.env.REDIS_HOST;

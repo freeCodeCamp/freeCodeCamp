@@ -96,7 +96,7 @@ export const build = async (
   options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {
     logger: true
   },
-  rateLimitTesting: boolean = false
+  rateLimitTesting = false
 ): Promise<FastifyInstanceWithTypeProvider> => {
   // TODO: Old API returns 403s for failed validation. We now return 400 (default) from AJV.
   // Watch when implementing in client
@@ -157,7 +157,7 @@ export const build = async (
 
         // Or if the user is not logged in, we use the ip address.
 
-        if (req.session && req.session.user) {
+        if (req.session?.user) {
           return `${req.ip}:${req.session.user.id}`;
         }
 
