@@ -1,10 +1,12 @@
 import { FastifyRequest } from 'fastify';
 import jwt from 'jsonwebtoken';
 
-import { allowedOrigins } from '../../config/allowed-origins';
+// import { allowedOrigins } from '../../config/allowed-origins';
+import { availableLangs } from '../../../shared/config/i18n';
+import { allowedOrigins } from './allowed-origins';
+
 // process.env.HOME_LOCATION is being used as a fallback here. If the one
 // provided by the client is invalid we default to this.
-import { availableLangs } from '../../../shared/config/i18n';
 import { HOME_LOCATION } from './env';
 
 /**
@@ -106,7 +108,13 @@ export function getRedirectParams(
   const url = req.headers['referer'];
   // since we do not always redirect the user back to the page they were on
   // we need client locale and origin to construct the redirect url.
-  const returnUrl = new URL(url ? url : HOME_LOCATION);
+  let returnUrl;
+  try {
+    returnUrl = new URL(url ? url : HOME_LOCATION);
+  } catch (e) {
+    returnUrl = new URL(HOME_LOCATION);
+  }
+
   const origin = returnUrl.origin;
   // if this is not one of the client languages, validation will convert
   // this to '' before it is used.

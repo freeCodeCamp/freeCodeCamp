@@ -1,6 +1,13 @@
+import { FastifyRequest } from 'fastify';
 import jwt from 'jsonwebtoken';
 
-import { getReturnTo, normalizeParams } from './redirection';
+import {
+  getReturnTo,
+  normalizeParams,
+  getRedirectParams,
+  getPrefixedLandingPath
+} from './redirection';
+import { HOME_LOCATION } from './env';
 
 const validJWTSecret = 'this is a super secret string';
 const invalidJWTSecret = 'This is not correct secret';
@@ -121,10 +128,78 @@ describe('redirection', () => {
   });
 
   describe('getRedirectParams', () => {
-    it.todo('should decorate the request object');
+    it('should decorate the request object', () => {
+      const req: FastifyRequest = {
+        headers: {
+          referer: `https://www.freecodecamp.org/espanol/learn/rosetta-code/`
+        }
+      } as FastifyRequest;
+
+      const expectedReturn = {
+        origin: 'https://www.freecodecamp.org',
+        pathPrefix: 'espanol',
+        returnTo: 'https://www.freecodecamp.org/espanol/learn/rosetta-code/'
+      };
+
+      const result = getRedirectParams(req);
+      expect(result).toEqual(expectedReturn);
+    });
+
+    it('should use HOME_LOCATION with missing referer', () => {
+      const req: FastifyRequest = {
+        headers: {}
+      } as FastifyRequest;
+
+      const expectedReturn = {
+        returnTo: `${HOME_LOCATION}/learn`,
+        origin: HOME_LOCATION,
+        pathPrefix: ''
+      };
+
+      const result = getRedirectParams(req);
+      expect(result).toEqual(expectedReturn);
+    });
+
+    it('should use HOME_LOCATION with invalid referrer', () => {
+      const req: FastifyRequest = {
+        headers: {
+          referer: 'invalid-url'
+        }
+      } as FastifyRequest;
+
+      const expectedReturn = {
+        returnTo: `${HOME_LOCATION}/learn`,
+        origin: HOME_LOCATION,
+        pathPrefix: ''
+      };
+
+      const result = getRedirectParams(req);
+      expect(result).toEqual(expectedReturn);
+    });
   });
 
   describe('getPrefixedLandingPath', () => {
-    it.todo('check how this is intended to be used and write a test for it');
+    it('should return the origin when no pathPrefix is provided', () => {
+      const result = getPrefixedLandingPath(defaultOrigin);
+      expect(result).toEqual(defaultOrigin);
+    });
+
+    it('should append pathPrefix to origin when pathPrefix is provided', () => {
+      const expectedPath = `${defaultOrigin}/learn`;
+      const result = getPrefixedLandingPath(defaultOrigin, 'learn');
+      expect(result).toEqual(expectedPath);
+    });
+
+    it('should handle empty origin', () => {
+      const pathPrefix = 'learn';
+      const expectedPath = '/learn';
+      const result = getPrefixedLandingPath('', pathPrefix);
+      expect(result).toEqual(expectedPath);
+    });
+
+    it('should handle empty pathPrefix', () => {
+      const result = getPrefixedLandingPath(defaultOrigin, '');
+      expect(result).toEqual(defaultOrigin);
+    });
   });
 });
