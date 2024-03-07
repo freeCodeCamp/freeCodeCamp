@@ -1181,6 +1181,10 @@
         "intro": [
           "Get started with JavaScript by learning about variables and operators. This course covers the fundamentals of JavaScript programming, including data types, operators, and variable declarations."
         ]
+      },
+      "top-learn-data-types-and-conditionals": {
+        "title": "Learn Data Types and Conditionals",
+        "intro": ["Learn about data types and conditionals in JavaScript."]
       }
     }
   },
