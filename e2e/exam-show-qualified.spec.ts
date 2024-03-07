@@ -1,6 +1,6 @@
+import { test, expect } from '@playwright/test';
 import intro from '../client/i18n/locales/english/intro.json';
 import translations from '../client/i18n/locales/english/translations.json';
-import { test, expect } from '@playwright/test';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
