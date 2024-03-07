@@ -9,10 +9,10 @@ describe('Deprecated unsubscribeEndpoints', () => {
   setupServer();
 
   unsubscribeEndpoints.forEach(([endpoint, method]) => {
-    test(`${method} ${endpoint} redirects to referer with "info" message`, async () => {
+    test(`${method} ${endpoint} redirects to origin with "info" message`, async () => {
       const response = await superRequest(endpoint, { method }).set(
         'Referer',
-        'https://www.freecodecamp.org'
+        'https://www.freecodecamp.org/settings'
       );
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
