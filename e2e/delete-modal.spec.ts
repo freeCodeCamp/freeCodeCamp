@@ -89,6 +89,6 @@ test.describe('Delete Modal component', () => {
       .getByRole('button', { name: translations.settings.danger.certain })
       .click();
 
-    await expect(page).toHaveURL(/.*\/learn\/?#/);
+    await expect(page).toHaveURL(/.*\/learn\/?/);
   });
 });
