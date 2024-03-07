@@ -35,6 +35,9 @@ export function CloseButton({
     'focus:outline-none', // Hide the default browser outline
     'focus-visible:ring',
     'focus-visible:ring-focus-outline-color',
+    'focus:opacity-100',
+    // Hover state
+    'hover:opacity-100',
     // Content positioning
     'flex',
     'justify-center',
