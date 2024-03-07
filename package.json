@@ -94,7 +94,7 @@
     "test-utils": "jest utils",
     "test-ui-components": "jest tools/ui-components",
     "postinstall": "cypress cache prune",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "dotenv": "16.4.5"
@@ -135,7 +135,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-testing-library": "5.11.1",
     "execa": "5.1.1",
-    "husky": "8.0.3",
+    "husky": "9.0.11",
     "jest": "29.7.0",
     "js-yaml": "3.14.1",
     "lint-staged": "^13.1.0",
