@@ -2,7 +2,7 @@ import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Modal } from '@freecodecamp/react-bootstrap';
 import { Button, FormControl } from '@freecodecamp/ui';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
@@ -90,6 +90,22 @@ function HelpModal({
   const [readSearchCheckbox, setReadSearchCheckbox] = useState(false);
   const [similarQuestionsCheckbox, setSimilarQuestionsCheckbox] =
     useState(false);
+  const DESCRIPTION_MIN = 50;
+  const DESCRIPTION_MAX = 500;
+
+  const canSubmitForm = useCallback(() => {
+    return (
+      description.length >= DESCRIPTION_MIN &&
+      readSearchCheckbox &&
+      similarQuestionsCheckbox
+    );
+  }, [description, readSearchCheckbox, similarQuestionsCheckbox]);
+
+  const resetFormValues = () => {
+    setDescription('');
+    setReadSearchCheckbox(false);
+    setSimilarQuestionsCheckbox(false);
+  };
 
   const handleCheckboxChange = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -102,7 +118,15 @@ function HelpModal({
     callGA({ event: 'pageview', pagePath: '/help-modal' });
   }
   return (
-    <Modal dialogClassName='help-modal' onHide={closeHelpModal} show={isOpen}>
+    <Modal
+      dialogClassName='help-modal'
+      onHide={() => {
+        closeHelpModal();
+        setShowHelpForm(false);
+        resetFormValues();
+      }}
+      show={isOpen}
+    >
       <Modal.Header className='help-modal-header fcc-modal' closeButton={true}>
         <Modal.Title className='text-center'>
           {t('buttons.ask-for-help')}
@@ -113,7 +137,9 @@ function HelpModal({
           <form
             onSubmit={event => {
               event.preventDefault();
+              if (!canSubmitForm()) return;
               setShowHelpForm(false);
+              resetFormValues();
               createQuestion();
               closeHelpModal();
             }}
@@ -143,7 +169,7 @@ function HelpModal({
                 t={t}
               />
               <label htmlFor='description'>
-                {t('forum-help.whats-happening')} (Min. 50)
+                {t('forum-help.whats-happening')}
               </label>
               <FormControl
                 id='help-modal-form-description'
@@ -156,9 +182,24 @@ function HelpModal({
                 style={{
                   height: 100
                 }}
-                maxLength={500}
+                maxLength={DESCRIPTION_MAX}
                 type='text'
               />
+              {description.length < DESCRIPTION_MIN ? (
+                <p className='chars-left'>
+                  {t('learn.minimum-characters').replace(
+                    '{{characters}}',
+                    (DESCRIPTION_MIN - description.length).toString()
+                  )}
+                </p>
+              ) : (
+                <p className='chars-left'>
+                  {t('learn.characters-left').replace(
+                    '{{characters}}',
+                    (DESCRIPTION_MAX - description.length).toString()
+                  )}
+                </p>
+              )}
             </div>
             <Spacer size='xxSmall' />
 
@@ -167,11 +208,7 @@ function HelpModal({
               size='large'
               variant='primary'
               type='submit'
-              disabled={
-                description.length < 50 ||
-                !readSearchCheckbox ||
-                !similarQuestionsCheckbox
-              }
+              disabled={!canSubmitForm()}
             >
               {t('buttons.submit')}
             </Button>
@@ -180,7 +217,10 @@ function HelpModal({
               block={true}
               size='large'
               variant='primary'
-              onClick={() => setShowHelpForm(false)}
+              onClick={() => {
+                setShowHelpForm(false);
+                resetFormValues();
+              }}
             >
               {t('buttons.back')}
             </Button>
@@ -218,7 +258,10 @@ function HelpModal({
               block={true}
               size='large'
               variant='primary'
-              onClick={() => setShowHelpForm(true)}
+              onClick={() => {
+                setShowHelpForm(true);
+                resetFormValues();
+              }}
             >
               {t('buttons.create-post')}
             </Button>

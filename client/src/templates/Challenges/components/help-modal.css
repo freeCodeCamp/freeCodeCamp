@@ -13,6 +13,10 @@
   word-spacing: -0.4ch;
 }
 
+.chars-left {
+  padding-top: 10px;
+}
+
 @media screen and (max-width: 767px) {
   .help-modal .btn-lg {
     font-size: 16px;
