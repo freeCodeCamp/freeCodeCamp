@@ -1,6 +1,5 @@
-import { expect, test } from '@playwright/test';
-
 import translations from '../client/i18n/locales/english/translations.json';
+import { expect, test } from '@playwright/test';
 
 const course =
   '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code';

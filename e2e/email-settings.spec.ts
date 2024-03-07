@@ -1,5 +1,5 @@
-import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
+import { test, expect } from '@playwright/test';
 
 const settingsPageElement = {
   emailVerificationAlert: 'email-verification-alert',

@@ -1,7 +1,7 @@
-import { test, expect } from '@playwright/test';
 import { SuperBlocks } from '../shared/config/superblocks';
 import type { ListItem } from '../client/src/components/seo/';
 import metaTags from '../client/i18n/locales/english/meta-tags.json';
+import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/');

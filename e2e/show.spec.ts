@@ -1,5 +1,5 @@
-import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
+import { test, expect } from '@playwright/test';
 
 // Tests for challenges rendered by `client/src/templates/Challenges/odin/show.tsx`
 test.describe('Odin challenges', () => {
