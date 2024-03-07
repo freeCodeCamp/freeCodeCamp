@@ -1,39 +1,55 @@
-import React, { type ReactNode } from 'react';
+import React, { ReactNode, createContext, useContext } from 'react';
 import { Dialog } from '@headlessui/react';
 import { CloseButton } from '../close-button';
-import { Button } from '../button';
 
-export interface ModalProps {
+export type ModalProps = {
   children: ReactNode;
-  open?: boolean;
+  open: boolean;
+  onClose: () => void;
   size?: 'large' | 'small';
   variant?: 'default' | 'danger';
-  onClose: () => boolean;
-}
+};
 
-const Header = ({ children }: { children: ReactNode }) => {
+type HeaderProps = {
+  children: ReactNode;
+  showCloseButton?: boolean;
+};
+
+const ModalContext = createContext<Pick<ModalProps, 'onClose'>>({
+  onClose: () => {}
+});
+
+export const Modal = ({ children, open, onClose }: ModalProps) => {
   return (
-    <div>
-      <Dialog.Title>{children}</Dialog.Title>
-      {/* <Close /> */}
-    </div>
+    <ModalContext.Provider value={{ onClose }}>
+      <Dialog open={open} onClose={onClose}>
+        <Dialog.Panel>{children}</Dialog.Panel>
+      </Dialog>
+    </ModalContext.Provider>
   );
 };
 
+const Header = ({ children, showCloseButton = true }: HeaderProps) => {
+  const { onClose } = useContext(ModalContext);
+
+  if (showCloseButton) {
+    return (
+      <div>
+        <Dialog.Title>{children}</Dialog.Title>
+        <CloseButton onClick={onClose} />
+      </div>
+    );
+  }
+
+  return <Dialog.Title>{children}</Dialog.Title>;
+};
+
 const Body = ({ children }: { children: ReactNode }) => {
-  return <Dialog.Description>{children}</Dialog.Description>;
+  return <div>{children}</div>;
 };
 
 const Footer = ({ children }: { children: ReactNode }) => {
   return <div>{children}</div>;
-};
-
-export const Modal = ({ children, open, onClose }: ModalProps) => {
-  return (
-    <Dialog open={open} onClose={onClose}>
-      <Dialog.Panel>{children}</Dialog.Panel>
-    </Dialog>
-  );
 };
 
 Modal.Header = Header;
