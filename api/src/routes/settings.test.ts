@@ -689,6 +689,29 @@ Please wait 5 minutes to resend an authentication link.`
         expect(response.statusCode).toEqual(400);
       });
     });
+
+    describe('/update-my-classroom-mode', () => {
+      test('PUT returns 200 status code with "success" message', async () => {
+        const response = await superPut('/update-my-classroom-mode').send({
+          isClassroomAccount: true
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.classroom-mode-updated',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+      });
+
+      test('PUT returns 400 status code with invalid classroomMode', async () => {
+        const response = await superPut('/update-my-classroom-mode').send({
+          isClassroomAccount: 'invalid'
+        });
+
+        expect(response.body).toEqual(updateErrorResponse);
+        expect(response.statusCode).toEqual(400);
+      });
+    });
   });
 
   describe('Unauthenticated User', () => {
