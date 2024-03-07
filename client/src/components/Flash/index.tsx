@@ -1,5 +1,5 @@
-import { Alert, CloseButton, type AlertProps } from '@freecodecamp/ui';
 import React from 'react';
+import { Alert, CloseButton, type AlertProps } from '@freecodecamp/ui';
 import { useTranslation } from 'react-i18next';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { FlashState } from '../../redux/types';
@@ -38,7 +38,7 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
           <CloseButton
             onClick={handleClose}
             label={t('buttons.close')}
-            className='close'
+          // Remove 'close' class
           />
         </Alert>
       </CSSTransition>
