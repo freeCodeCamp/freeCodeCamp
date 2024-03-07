@@ -9,10 +9,7 @@ const story = {
 type Story = StoryObj<typeof CloseButton>;
 
 export const Basic: Story = {
-  args: {
-    className: '',
-    label: ''
-  }
+  args: {}
 };
 
 export default story;
