@@ -12,12 +12,12 @@ describe('Deprecated unsubscribeEndpoints', () => {
     test(`${method} ${endpoint} redirects to referer with "info" message`, async () => {
       const response = await superRequest(endpoint, { method }).set(
         'Referer',
-        'https://www.freecodecamp.org/settings'
+        'https://www.freecodecamp.org'
       );
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       expect(response.headers.location).toStrictEqual(
-        'https://www.freecodecamp.org/settings' + urlEncodedMessage
+        'https://www.freecodecamp.org' + urlEncodedMessage
       );
       expect(response.status).toBe(302);
     });
