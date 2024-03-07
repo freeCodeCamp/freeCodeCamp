@@ -1,40 +1,45 @@
 ---
 id: 65e97164484dd50f720e6fe7
-videoId: LGQuIIv2RVA
 title: Learn Data Types and Conditionals Question B
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-question-b
 ---
 # --description--
 
-Description Text
+Now that you have gone through the points listed in the assignment of the previous challenge, you should have a good understanding of how strings can be manipulated in JavaScript.
 
-# --assignment--
+Currently, this given string has a trainling space at the end after the exclamation mark this is a problem.
 
-possible assignment
+```javascript
+let greeting = "Hello World!  ";
+
+console.log(greeting);
+```
+
+<a href="https://www.freecodecamp.org/news/javascript-string-handbook" target="_blank"> Link to Guide </a>
 
 # --question--
 
 ## --text--
 
-Question Text
+Following the problem above, which method should be used to remove the trailing space from the string?
 
 ## --answers--
 
-option 1
+The `trim()` method should be used to remove the trailing space from the string.
 
 ---
 
-option 2
+The `replace()` method should be used to remove the trailing space from the string.
 
 ---
 
-option 3
+The `trimEnd()` method should be used to remove the trailing space from the string.
 
 ---
 
-option 4
+The `trimStart()` method should be used to remove the trailing space from the string.
 
 ## --video-solution--
 
-1
+3

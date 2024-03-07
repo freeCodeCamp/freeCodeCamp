@@ -1,40 +1,41 @@
 ---
 id: 65e9725a484dd50f720e6fe9
-videoId: LGQuIIv2RVA
 title: Learn Data Types and Conditionals Question D
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-question-d
 ---
 # --description--
 
-Description Text
+Seeing the example below we want to know the index of the last occurence of the word `The` in the string.
 
-# --assignment--
+```javascript
+let sentence = "freeCodeCamp loves The Odin Project! The Odin Project is great!";
+```
 
-possible assignment
+<a href="https://www.freecodecamp.org/news/javascript-string-handbook" target="_blank"> Link to Guide </a>
 
 # --question--
 
 ## --text--
 
-Question Text
+Which method should be used to find the index of the last occurence of the word `The` in the string?
 
 ## --answers--
 
-option 1
+The `includes()` method should be used to find the index of the last occurence of the word `The` in the string.
 
 ---
 
-option 2
+The `lastIndexOf()` method should be used to find the index of the last occurence of the word `The` in the string.
 
 ---
 
-option 3
+The `indexOf()` method should be used to find the index of the last occurence of the word `The` in the string.
 
 ---
 
-option 4
+The `search()` method should be used to find the index of the last occurence of the word `The` in the string.
 
 ## --video-solution--
 
-1
+2
