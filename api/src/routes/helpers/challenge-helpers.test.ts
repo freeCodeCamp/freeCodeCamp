@@ -79,7 +79,7 @@ describe('Challenge Helpers', () => {
     const msUsername = 'ANRandom';
     const msTrophyId = 'learn.wwl.get-started-c-sharp-part-3.trophy';
     const verifyData = { msUsername, msTrophyId };
-    const gamestatusUrl = `https://learn.microsoft.com/api/gamestatus/${userId}`;
+    const achievementsUrl = `https://learn.microsoft.com/api/achievements/user/${userId}`;
 
     afterEach(() => jest.clearAllMocks());
 
@@ -98,13 +98,13 @@ describe('Challenge Helpers', () => {
       });
     });
 
-    test("handles failure to reach Microsoft's gamestatus api", async () => {
+    test("handles failure to reach Microsoft's achievements api", async () => {
       const fetchProfile = createFetchMock({ body: { userId } });
-      const fetchGameStatus = createFetchMock({ ok: false });
+      const fetchAchievements = createFetchMock({ ok: false });
       jest
         .spyOn(globalThis, 'fetch')
         .mockImplementationOnce(fetchProfile)
-        .mockImplementationOnce(fetchGameStatus);
+        .mockImplementationOnce(fetchAchievements);
 
       const verification = await verifyTrophyWithMicrosoft(verifyData);
 
@@ -116,11 +116,11 @@ describe('Challenge Helpers', () => {
 
     test('handles the case where the user has no achievements', async () => {
       const fetchProfile = createFetchMock({ body: { userId } });
-      const fetchGameStatus = createFetchMock({ body: { achievements: [] } });
+      const fetchAchievements = createFetchMock({ body: { achievements: [] } });
       jest
         .spyOn(globalThis, 'fetch')
         .mockImplementationOnce(fetchProfile)
-        .mockImplementationOnce(fetchGameStatus);
+        .mockImplementationOnce(fetchAchievements);
 
       const verification = await verifyTrophyWithMicrosoft(verifyData);
 
@@ -132,13 +132,13 @@ describe('Challenge Helpers', () => {
 
     test("handles failure to find the trophy in the user's achievements", async () => {
       const fetchProfile = createFetchMock({ body: { userId } });
-      const fetchGameStatus = createFetchMock({
-        body: { achievements: [{ awardUid: 'fake-id' }] }
+      const fetchAchievements = createFetchMock({
+        body: { achievements: [{ typeId: 'fake-id' }] }
       });
       jest
         .spyOn(globalThis, 'fetch')
         .mockImplementationOnce(fetchProfile)
-        .mockImplementationOnce(fetchGameStatus);
+        .mockImplementationOnce(fetchAchievements);
 
       const verification = await verifyTrophyWithMicrosoft(verifyData);
 
@@ -151,21 +151,21 @@ describe('Challenge Helpers', () => {
       });
     });
 
-    test('returns msGameStatusApiUrl on success', async () => {
+    test('returns msUserAchievementsApiUrl on success', async () => {
       const fetchProfile = createFetchMock({ body: { userId } });
-      const fetchGameStatus = createFetchMock({
-        body: { achievements: [{ awardUid: msTrophyId }] }
+      const fetchAchievements = createFetchMock({
+        body: { achievements: [{ typeId: msTrophyId }] }
       });
       jest
         .spyOn(globalThis, 'fetch')
         .mockImplementationOnce(fetchProfile)
-        .mockImplementationOnce(fetchGameStatus);
+        .mockImplementationOnce(fetchAchievements);
 
       const verification = await verifyTrophyWithMicrosoft(verifyData);
 
       expect(verification).toEqual({
         type: 'success',
-        msGameStatusApiUrl: gamestatusUrl
+        msUserAchievementsApiUrl: achievementsUrl
       });
     });
   });

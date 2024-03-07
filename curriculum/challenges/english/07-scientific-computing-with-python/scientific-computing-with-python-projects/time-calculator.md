@@ -190,7 +190,7 @@ t.result.wasSuccessful()
 ```
 
 
-Calling `add_time('2:59 AM', '24:00')` should return `'2:59 AM'`.
+Calling `add_time('2:59 AM', '24:00')` should return `'2:59 AM (next day)'`.
 
 ```js
 ({
@@ -209,7 +209,7 @@ class UnitTests(unittest.TestCase):
     def test_twenty_four(self):
         actual = time_calculator.add_time("2:59 AM", "24:00")
         expected = "2:59 AM (next day)"
-        self.assertEqual(actual, expected, 'Expected calling "add_time()" with "2:59 AM", "24:00" to return "2:59 AM"')
+        self.assertEqual(actual, expected, 'Expected calling "add_time()" with "2:59 AM", "24:00" to return "2:59 AM (next day)"')
         `);
     const testCode = `
 from unittest import main

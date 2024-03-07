@@ -48,7 +48,7 @@ export function CloseButton({
 
   return (
     <button className={classes} onClick={onClick} type='button'>
-      <span className='sr-only'>{label ?? 'Close'}</span>
+      <span className='sr-only'>{label || 'Close'}</span>
       <span aria-hidden>×</span>
     </button>
   );

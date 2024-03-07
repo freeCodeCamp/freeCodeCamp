@@ -1178,6 +1178,12 @@
         "intro": [
           "Дослідіть відмінності між блоковими та рядковими елементами в HTML та CSS. Цей курс надасть уявлення про те, як такі відтворення впливають на макет та поведінку, що дозволить вам приймати обґрунтовані рішення у дизайні."
         ]
+      },
+      "top-learn-variables-and-operators": {
+        "title": "Learn Variables and Operators",
+        "intro": [
+          "Get started with JavaScript by learning about variables and operators. This course covers the fundamentals of JavaScript programming, including data types, operators, and variable declarations."
+        ]
       }
     }
   },
