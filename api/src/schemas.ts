@@ -763,47 +763,75 @@ export const schemas = {
       // TODO(POST_MVP): Most of these should not be 200s
       200: Type.Union([
         Type.Object({
-          type: Type.Literal('info'),
-          message: Type.Literal('flash.username-not-found'),
-          variables: Type.Object({
-            username: Type.String()
-          })
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.username-not-found'),
+              variables: Type.Object({
+                username: Type.String()
+              })
+            })
+          )
         }),
         Type.Object({
-          type: Type.Literal('info'),
-          message: Type.Literal('flash.not-eligible')
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.not-eligible')
+            })
+          )
         }),
         Type.Object({
-          type: Type.Literal('info'),
-          message: Type.Literal('flash.not-honest'),
-          variables: Type.Object({
-            username: Type.String()
-          })
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.not-honest'),
+              variables: Type.Object({
+                username: Type.String()
+              })
+            })
+          )
         }),
         Type.Object({
-          type: Type.Literal('info'),
-          message: Type.Literal('flash.profile-private'),
-          variables: Type.Object({
-            username: Type.String()
-          })
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.profile-private'),
+              variables: Type.Object({
+                username: Type.String()
+              })
+            })
+          )
         }),
         Type.Object({
-          type: Type.Literal('info'),
-          message: Type.Literal('flash.add-name')
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.add-name')
+            })
+          )
         }),
         Type.Object({
-          type: Type.Literal('info'),
-          message: Type.Literal('flash.certs-private'),
-          variables: Type.Object({
-            username: Type.String()
-          })
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.certs-private'),
+              variables: Type.Object({
+                username: Type.String()
+              })
+            })
+          )
         }),
         Type.Object({
-          type: Type.Literal('info'),
-          message: Type.Literal('flash.timeline-private'),
-          variables: Type.Object({
-            username: Type.String()
-          })
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.timeline-private'),
+              variables: Type.Object({
+                username: Type.String()
+              })
+            })
+          )
         }),
         Type.Object({
           certSlug: Type.Enum(Certification),
@@ -821,12 +849,16 @@ export const schemas = {
           completionTime: Type.Number()
         }),
         Type.Object({
-          type: Type.Literal('info'),
-          message: Type.Literal('flash.user-not-certified'),
-          variables: Type.Object({
-            username: Type.String(),
-            cert: Type.String()
-          })
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.user-not-certified'),
+              variables: Type.Object({
+                username: Type.String(),
+                cert: Type.String()
+              })
+            })
+          )
         })
       ]),
       400: Type.Object({

@@ -45,13 +45,13 @@ const {
 } = certIds;
 
 /**
- * Plugin for the certificate endpoints.
+ * Plugin for the protected certificate endpoints.
  *
  * @param fastify The Fastify instance.
  * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
  * @param done The callback to signal that the plugin is ready.
  */
-export const certificateRoutes: FastifyPluginCallbackTypebox = (
+export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
   done
@@ -272,6 +272,21 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  done();
+};
+
+/**
+ * Plugin for the unprotected certificate endpoints.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
+ * @param done The callback to signal that the plugin is ready.
+ */
+export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
+  fastify,
+  _options,
+  done
+) => {
   fastify.get(
     '/certificate/showCert/:username/:certSlug',
     {
@@ -299,7 +314,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             type: 'info',
             message: 'flash.cert-not-found',
             variables: { certSlug }
-          } as const);
+          });
         }
 
         const certType = certSlugTypeMap[certSlug];
@@ -341,56 +356,84 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
 
         if (user === null) {
           return reply.send({
-            type: 'info',
-            message: 'flash.username-not-found',
-            variables: { username }
-          } as const);
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.username-not-found',
+                variables: { username }
+              }
+            ]
+          });
         }
 
         if (user.isCheater || user.isBanned) {
           return reply.send({
-            type: 'info',
-            message: 'flash.not-eligible'
-          } as const);
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.not-eligible'
+              }
+            ]
+          });
         }
 
         if (!user.isHonest) {
           return reply.send({
-            type: 'info',
-            message: 'flash.not-honest',
-            variables: { username }
-          } as const);
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.not-honest',
+                variables: { username }
+              }
+            ]
+          });
         }
 
         if (user.profileUI?.isLocked) {
           return reply.send({
-            type: 'info',
-            message: 'flash.profile-private',
-            variables: { username }
-          } as const);
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.profile-private',
+                variables: { username }
+              }
+            ]
+          });
         }
 
         if (!user.name) {
           return reply.send({
-            type: 'info',
-            message: 'flash.add-name'
-          } as const);
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.add-name'
+              }
+            ]
+          });
         }
 
         if (!user.profileUI?.showCerts) {
           return reply.send({
-            type: 'info',
-            message: 'flash.certs-private',
-            variables: { username }
-          } as const);
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.certs-private',
+                variables: { username }
+              }
+            ]
+          });
         }
 
         if (!user.profileUI?.showTimeLine) {
           return reply.send({
-            type: 'info',
-            message: 'flash.timeline-private',
-            variables: { username }
-          } as const);
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.timeline-private',
+                variables: { username }
+              }
+            ]
+          });
         }
 
         if (user[certType]) {
@@ -432,7 +475,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
               username,
               date: completedDate,
               completionTime
-            } as const);
+            });
           }
 
           void reply.code(200);
@@ -443,12 +486,16 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
             name,
             date: completedDate,
             completionTime
-          } as const);
+          });
         } else {
           return reply.send({
-            type: 'info',
-            message: 'flash.user-not-certified',
-            variables: { username, cert: certTypeTitleMap[certType] }
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.user-not-certified',
+                variables: { username, cert: certTypeTitleMap[certType] }
+              }
+            ]
           });
         }
       } catch (err) {
@@ -458,7 +505,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
           message:
             'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
           type: 'danger'
-        } as const);
+        });
       }
     }
   );

@@ -32,7 +32,10 @@ import {
   devLegacyAuthRoutes,
   mobileAuth0Routes
 } from './routes/auth';
-import { certificateRoutes } from './routes/certificate';
+import {
+  protectedCertificateRoutes,
+  unprotectedCertificateRoutes
+} from './routes/certificate';
 import { challengeRoutes } from './routes/challenge';
 import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
@@ -201,7 +204,8 @@ export const build = async (
   void fastify.register(settingRoutes);
   void fastify.register(donateRoutes);
   void fastify.register(userRoutes);
-  void fastify.register(certificateRoutes);
+  void fastify.register(protectedCertificateRoutes);
+  void fastify.register(unprotectedCertificateRoutes);
   void fastify.register(userGetRoutes);
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);
