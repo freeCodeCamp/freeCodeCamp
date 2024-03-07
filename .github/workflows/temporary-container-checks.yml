@@ -61,16 +61,6 @@ jobs:
           name: client-artifact
           path: client-artifact.tar
 
-      # TODO: Figure out what to do with the webpack stats file. Create it
-      # during the build via a mounted host directory? i.e. docker build -t
-      # myimage -v /path/on/host:/output/dir -f Dockerfile . It's important to
-      # ensure it doesn't end up in the final image, as it's a large file.
-      # - name: Upload Webpack Stats
-      #   uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
-      #   with:
-      #     name: webpack-stats
-      #     path: client/public/stats.json
-
   build-api:
     name: Build Api (Container)
     runs-on: ubuntu-22.04
