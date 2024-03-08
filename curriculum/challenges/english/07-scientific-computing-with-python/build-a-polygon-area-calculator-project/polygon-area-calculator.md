@@ -1,9 +1,9 @@
 ---
 id: 5e444147903586ffb414c94f
-title: Polygon Area Calculator
+title: Build a Polygon Area Calculator Project
 challengeType: 23
 forumTopicId: 462363
-dashedName: polygon-area-calculator
+dashedName: build-a-polygon-area-calculator-project
 ---
 
 # --description--
