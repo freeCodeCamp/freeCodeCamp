@@ -7,23 +7,6 @@ import { createUserInput } from './src/utils/create-user';
 import { examJson } from './__mocks__/exam';
 import { MONGOHQ_URL } from './src/utils/env';
 
-jest.mock('./src/utils/env', () => {
-  const createTestConnectionURL = (url: string, dbId: string) =>
-    url.replace(/(.*)(\?.*)/, `$1${dbId}$2`);
-  // There are other properties, and this type is too narrow, but we're only
-  // interested in MONGOHQ_URL here.
-  const actual: {
-    MONGOHQ_URL: string;
-  } = jest.requireActual('./src/utils/env');
-  return {
-    ...actual,
-    MONGOHQ_URL: createTestConnectionURL(
-      actual.MONGOHQ_URL,
-      process.env.JEST_WORKER_ID!
-    )
-  };
-});
-
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
 declare global {
@@ -118,6 +101,9 @@ export function setupServer(): void {
   }, 10000);
 
   afterAll(async () => {
+    if (!global.fastifyTestInstance)
+      throw Error(`fastifyTestInstance was not created. Typically this means that something went wrong when building the fastify instance.
+If you are seeing this error, the root cause is likely an error thrown in the beforeAll hook.`);
     await fastifyTestInstance.prisma.$runCommandRaw({ dropDatabase: 1 });
 
     // Due to a prisma bug, this is not enough, we need to --force-exit jest:
