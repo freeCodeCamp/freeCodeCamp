@@ -189,6 +189,7 @@ export const HeadlessButton = React.forwardRef<
           download={download}
           target={target}
           ref={ref as React.Ref<HTMLAnchorElement>}
+          onClick={onClick}
           {...rest}
         >
           {children}
