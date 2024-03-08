@@ -41,6 +41,10 @@
   justify-content: space-between;
 }
 
+.map-ui ul li .arrow path {
+  fill: var(--secondary-color);
+}
+
 .map-ui ul li .progress-number {
   width: calc(42px - 0.1rem);
   height: 4rem;

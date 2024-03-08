@@ -24,6 +24,7 @@ export const RibbonIcon = ({ value }: RibbonProps): JSX.Element => {
       height='75%'
       viewBox='0 0 45 50'
       fill='none'
+      className='completeIcon'
       aria-hidden='true'
     >
       <path
@@ -44,8 +45,8 @@ export const RibbonIcon = ({ value }: RibbonProps): JSX.Element => {
         strokeWidth='2'
       />
       <text
-        x='48%'
-        y='57%'
+        x='50%'
+        y='55%'
         fontFamily='Verdana'
         color='black'
         fontSize='1.3rem'
@@ -66,6 +67,7 @@ export const IncompleteIcon = ({ value }: RibbonProps): JSX.Element => {
       width='75%'
       height='75%'
       viewBox='0 0 45 50'
+      className='incompleteIcon'
       fill='none'
       aria-hidden='true'
     >
@@ -79,8 +81,8 @@ export const IncompleteIcon = ({ value }: RibbonProps): JSX.Element => {
         strokeWidth='2'
       />
       <text
-        x='48%'
-        y='57%'
+        x='50%'
+        y='55%'
         fontFamily='Verdana'
         color='black'
         fontSize='1.3rem'
