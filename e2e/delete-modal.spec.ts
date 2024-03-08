@@ -19,8 +19,8 @@ test.describe('Delete Modal component', () => {
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
 
-    //there are 2 dialogs nested per modal, we need the parent one
-    const modalDialog = page.getByRole('dialog').nth(0);
+    //there are 2 dialogs nested per modal, we need the second one
+    const modalDialog = page.getByRole('dialog').nth(1);
     await expect(modalDialog).toBeVisible();
 
     await expect(
@@ -61,7 +61,7 @@ test.describe('Delete Modal component', () => {
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
 
-    const modalDialog = page.getByRole('dialog').nth(0);
+    const modalDialog = page.getByRole('dialog').nth(1);
     await expect(modalDialog).toBeVisible();
     await page
       .getByRole('button', { name: translations.settings.danger.nevermind })
@@ -89,7 +89,7 @@ test.describe('Delete Modal component', () => {
     await page
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
-    const modalDialog = page.getByRole('dialog').nth(0);
+    const modalDialog = page.getByRole('dialog').nth(1);
     await expect(modalDialog).toBeVisible();
     await page
       .getByRole('button', { name: translations.settings.danger.certain })
