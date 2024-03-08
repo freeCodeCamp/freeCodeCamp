@@ -1,8 +1,7 @@
 {
   "name": "Build a Budget App Project",
   "isUpcomingChange": false,
-  "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "usesMultifileEditor": true,  
   "dashedName": "build-a-budget-app-project",
   "order": 12,
   "time": "5 hours",
