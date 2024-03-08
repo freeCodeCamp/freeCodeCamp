@@ -18,6 +18,7 @@ jobs:
         node-version: [20.x]
         apps: [client, api, new-api]
         site_tlds: [dev]
+    environment: staging
 
     steps:
       - name: Checkout Source Files
@@ -31,25 +32,25 @@ jobs:
       - name: Build & Tag Image
         run: |
           docker build \
-            --build-arg HOME_LOCATION=http://localhost:8000 \
-            --build-arg API_LOCATION=http://localhost:3000 \
-            --build-arg FORUM_LOCATION=https://forum.freecodecamp.org \
-            --build-arg NEWS_LOCATION=https://www.freecodecamp.org/news \
-            --build-arg RADIO_LOCATION=https://coderadio.freecodecamp.org \
-            --build-arg CLIENT_LOCALE=english \
-            --build-arg CURRICULUM_LOCALE=english \
-            --build-arg SHOW_LOCALE_DROPDOWN_MENU=false \
-            --build-arg ALGOLIA_APP_ID=app_id_from_algolia_dashboard \
-            --build-arg ALGOLIA_API_KEY=api_key_from_algolia_dashboard \
-            --build-arg STRIPE_PUBLIC_KEY=pk_from_stripe_dashboard \
-            --build-arg PAYPAL_CLIENT_ID=id_from_paypal_dashboard \
-            --build-arg PATREON_CLIENT_ID=id_from_patreon_dashboard \
-            --build-arg DEPLOYMENT_ENV=staging \
-            --build-arg SHOW_UPCOMING_CHANGES=false \
-            --build-arg SHOW_NEW_CURRICULUM=true \
-            --build-arg GROWTHBOOK_URI=api_URI_from_Growthbook_dashboard \
-            --build-arg FREECODECAMP_NODE_ENV=development \
-            --tag registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ matrix.site_tlds }}/learn-${{ matrix.apps }}:$tagname \
+            --build-arg HOME_LOCATION=${{ vars.HOME_LOCATION }} \
+            --build-arg API_LOCATION=${{ vars.API_LOCATION }} \
+            --build-arg FORUM_LOCATION=${{ vars.FORUM_LOCATION }} \
+            --build-arg NEWS_LOCATION=${{ vars.NEWS_LOCATION }} \
+            --build-arg RADIO_LOCATION=${{ vars.RADIO_LOCATION }} \
+            --build-arg CLIENT_LOCALE=${{ vars.CLIENT_LOCALE }} \
+            --build-arg CURRICULUM_LOCALE=${{ vars.CURRICULUM_LOCALE }} \
+            --build-arg SHOW_LOCALE_DROPDOWN_MENU=${{ vars.SHOW_LOCALE_DROPDOWN_MENU }} \
+            --build-arg ALGOLIA_APP_ID=${{ vars.ALGOLIA_APP_ID }} \
+            --build-arg ALGOLIA_API_KEY=${{ vars.ALGOLIA_API_KEY }} \
+            --build-arg STRIPE_PUBLIC_KEY=${{ vars.STRIPE_PUBLIC_KEY }} \
+            --build-arg PAYPAL_CLIENT_ID=${{ vars.PAYPAL_CLIENT_ID }} \
+            --build-arg PATREON_CLIENT_ID=${{ vars.PATREON_CLIENT_ID }} \
+            --build-arg DEPLOYMENT_ENV=${{ vars.DEPLOYMENT_ENV }} \
+            --build-arg SHOW_UPCOMING_CHANGES=${{ vars.SHOW_UPCOMING_CHANGES }} \
+            --build-arg SHOW_NEW_CURRICULUM=${{ vars.SHOW_NEW_CURRICULUM }} \
+            --build-arg GROWTHBOOK_URI=${{ vars.GROWTHBOOK_URI }} \
+            --build-arg FREECODECAMP_NODE_ENV=${{ vars.FREECODECAMP_NODE_ENV }} \
+            --tag registry.digitalocean.com/${{ vars.DOCR_NAME }}/${{ matrix.site_tlds }}/learn-${{ matrix.apps }}:$tagname \
             --file docker/${{ matrix.apps }}/Dockerfile .
 
       - name: Install doctl
@@ -62,5 +63,5 @@ jobs:
 
       - name: Push image to DigitalOcean Container Registry
         run: |
-          docker push registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ matrix.site_tlds }}/learn-${{ matrix.apps }}:$tagname
-          docker push registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ matrix.site_tlds }}/learn-${{ matrix.apps }}:latest
+          docker push registry.digitalocean.com/${{ vars.DOCR_NAME }}/${{ matrix.site_tlds }}/learn-${{ matrix.apps }}:$tagname
+          docker push registry.digitalocean.com/${{ vars.DOCR_NAME }}/${{ matrix.site_tlds }}/learn-${{ matrix.apps }}:latest
