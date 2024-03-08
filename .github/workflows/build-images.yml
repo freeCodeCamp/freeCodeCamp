@@ -1,4 +1,4 @@
-name: Build Images
+name: CI - Build Images
 on:
   workflow_dispatch:
   workflow_run:
