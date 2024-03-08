@@ -29,11 +29,6 @@ describe('<Honesty />', () => {
       <Honesty isHonest={false} updateIsHonest={updateIsHonestMock} />
     );
 
-    /**
-     * This rules had to be disabled because the new lint rules are throwing false positives here.
-     * They were interpreting react-test-renderer functions as @testing-library/react functions.
-     */
-    // eslint-disable-next-line testing-library/await-async-query, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-argument
     root.findByType(Button).props.onClick();
     expect(updateIsHonestMock).toHaveBeenCalledWith({ isHonest: true });
   });
