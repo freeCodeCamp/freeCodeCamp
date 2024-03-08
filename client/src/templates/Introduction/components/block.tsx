@@ -20,7 +20,8 @@ import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isGridBased, isProjectBased } from '../../../utils/curriculum-layout';
-import Challenges from './challenges';
+import ChallengeBlock from './challenge-block';
+const Challenges = ChallengeBlock;
 
 import '../intro.css';
 
@@ -196,7 +197,7 @@ class Block extends Component<BlockProps> {
             </button>
             {isExpanded && (
               <Challenges
-                challengesWithCompleted={challengesWithCompleted}
+                progressionNodes={challengesWithCompleted}
                 isProjectBlock={isProjectBlock}
               />
             )}
@@ -224,7 +225,7 @@ class Block extends Component<BlockProps> {
             </div>
             <BlockIntros intros={blockIntroArr} />
             <Challenges
-              challengesWithCompleted={challengesWithCompleted}
+              progressionNodes={challengesWithCompleted}
               isProjectBlock={isProjectBlock}
             />
           </div>
@@ -284,8 +285,8 @@ class Block extends Component<BlockProps> {
             </div>
             {isExpanded && <BlockIntros intros={blockIntroArr} />}
             {isExpanded && (
-              <Challenges
-                challengesWithCompleted={challengesWithCompleted}
+              <ChallengeBlock
+                progressionNodes={challengesWithCompleted}
                 isProjectBlock={isProjectBlock}
                 isGridMap={true}
                 blockTitle={blockTitle}
