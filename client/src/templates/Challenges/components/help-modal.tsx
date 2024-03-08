@@ -49,6 +49,7 @@ interface CheckbockProps {
   name: string;
   i18nkey: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: boolean;
   href: string;
   t: (text: string) => string;
 }
@@ -57,12 +58,13 @@ function CheckboxHelpModal({
   name,
   i18nkey,
   onChange,
+  value,
   href,
   t
 }: CheckbockProps) {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <input name={name} type='checkbox' onChange={onChange} />
+      <input name={name} type='checkbox' onChange={onChange} checked={value} />
       <Trans i18nKey={i18nkey}>
         <a
           href={href}
@@ -156,6 +158,7 @@ function HelpModal({
                 onChange={event =>
                   handleCheckboxChange(event, setReadSearchCheckbox)
                 }
+                value={readSearchCheckbox}
                 href={RSA}
                 t={t}
               />
@@ -165,6 +168,7 @@ function HelpModal({
                 onChange={event =>
                   handleCheckboxChange(event, setSimilarQuestionsCheckbox)
                 }
+                value={similarQuestionsCheckbox}
                 href={generateSearchLink(challengeTitle, challengeBlock)}
                 t={t}
               />
@@ -182,6 +186,7 @@ function HelpModal({
                 style={{
                   height: 100
                 }}
+                value={description}
                 maxLength={DESCRIPTION_MAX}
                 type='text'
               />
@@ -219,7 +224,6 @@ function HelpModal({
               variant='primary'
               onClick={() => {
                 setShowHelpForm(false);
-                resetFormValues();
               }}
             >
               {t('buttons.back')}
@@ -260,7 +264,6 @@ function HelpModal({
               variant='primary'
               onClick={() => {
                 setShowHelpForm(true);
-                resetFormValues();
               }}
             >
               {t('buttons.create-post')}
