@@ -50,7 +50,7 @@ jobs:
             --build-arg SHOW_NEW_CURRICULUM=${{ vars.SHOW_NEW_CURRICULUM }} \
             --build-arg GROWTHBOOK_URI=${{ vars.GROWTHBOOK_URI }} \
             --build-arg FREECODECAMP_NODE_ENV=${{ vars.FREECODECAMP_NODE_ENV }} \
-            --tag registry.digitalocean.com/${{ vars.DOCR_NAME }}/${{ matrix.site_tlds }}/learn-${{ matrix.apps }}:$tagname \
+            --tag registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ matrix.site_tlds }}/learn-${{ matrix.apps }}:$tagname \
             --file docker/${{ matrix.apps }}/Dockerfile .
 
       - name: Install doctl
@@ -63,5 +63,5 @@ jobs:
 
       - name: Push image to DigitalOcean Container Registry
         run: |
-          docker push registry.digitalocean.com/${{ vars.DOCR_NAME }}/${{ matrix.site_tlds }}/learn-${{ matrix.apps }}:$tagname
-          docker push registry.digitalocean.com/${{ vars.DOCR_NAME }}/${{ matrix.site_tlds }}/learn-${{ matrix.apps }}:latest
+          docker push registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ matrix.site_tlds }}/learn-${{ matrix.apps }}:$tagname
+          docker push registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ matrix.site_tlds }}/learn-${{ matrix.apps }}:latest
