@@ -19,7 +19,6 @@ export const actionTypes = createTypes(
     'serverStatusChange',
     'resetUserData',
     'tryToShowDonationModal',
-    'executeGA',
     'startExam',
     'stopExam',
     'clearExamResults',

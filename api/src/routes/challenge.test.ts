@@ -1032,7 +1032,7 @@ describe('challengeRoutes', () => {
         // Create and Run Simple C# Console Applications's id:
         const trophyChallengeId2 = '647f87dc07d29547b3bee1bf';
         const nonTrophyChallengeId = 'bd7123c8c441eddfaeb5bdef';
-        const solutionUrl = `https://learn.microsoft.com/api/gamestatus/${msUserId}`;
+        const solutionUrl = `https://learn.microsoft.com/api/achievements/user/${msUserId}`;
 
         const idIsMissingOrInvalid = {
           type: 'error',
@@ -1149,7 +1149,7 @@ describe('challengeRoutes', () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
                 type: 'success',
-                msGameStatusApiUrl: solutionUrl
+                msUserAchievementsApiUrl: solutionUrl
               })
             );
             const msUsername = 'ANRandom';
@@ -1192,7 +1192,7 @@ describe('challengeRoutes', () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
                 type: 'success',
-                msGameStatusApiUrl: solutionUrl
+                msUserAchievementsApiUrl: solutionUrl
               })
             );
             const msUsername = 'ANRandom';
@@ -1205,7 +1205,7 @@ describe('challengeRoutes', () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
                 type: 'success',
-                msGameStatusApiUrl: solutionUrl
+                msUserAchievementsApiUrl: solutionUrl
               })
             );
             const resTwo = await superPost(
@@ -1217,7 +1217,7 @@ describe('challengeRoutes', () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
                 type: 'success',
-                msGameStatusApiUrl: solutionUrl
+                msUserAchievementsApiUrl: solutionUrl
               })
             );
             const resUpdate = await superPost(

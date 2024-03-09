@@ -11,6 +11,7 @@ const alice = `${characters}/alice`;
 const anna = `${characters}/anna`;
 const bob = `${characters}/bob`;
 const brian = `${characters}/brian`;
+const candidate = `${characters}/npc`;
 const david = `${characters}/david`;
 const expert = `${characters}/npc`;
 const jake = `${characters}/jake`;
@@ -19,6 +20,7 @@ const linda = `${characters}/linda`;
 const lisa = `${characters}/lisa`;
 const maria = `${characters}/maria`;
 const sarah = `${characters}/sarah`;
+const secondCandidate = `${characters}/npc`;
 const sophie = `${characters}/sophie`;
 const tom = `${characters}/tom`;
 const mark = `${characters}/npc`;
@@ -69,6 +71,15 @@ export const characterAssets = {
     glasses: `${brian}/glasses.png`,
     mouthClosed: `${brian}/mouth-smile.png`,
     mouthOpen: `${brian}/mouth-laugh.png`
+  },
+  Candidate: {
+    base: `${candidate}/boy-base.png`,
+    brows: `${candidate}/boy-base.png`,
+    eyesClosed: `${candidate}/boy-eyes-closed.png`,
+    eyesOpen: `${candidate}/boy-eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${candidate}/boy-mouth-smile.png`,
+    mouthOpen: `${candidate}/boy-mouth-laugh.png`
   },
   David: {
     base: `${david}/base.png`,
@@ -150,6 +161,15 @@ export const characterAssets = {
     glasses: null,
     mouthClosed: `${sarah}/mouth-smile.png`,
     mouthOpen: `${sarah}/mouth-laugh.png`
+  },
+  'Second Candidate': {
+    base: `${secondCandidate}/man-base.png`,
+    brows: `${secondCandidate}/man-base.png`,
+    eyesClosed: `${secondCandidate}/man-eyes-closed.png`,
+    eyesOpen: `${secondCandidate}/man-eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${secondCandidate}/man-mouth-smile.png`,
+    mouthOpen: `${secondCandidate}/man-mouth-laugh.png`
   },
   Sophie: {
     base: `${sophie}/base.png`,

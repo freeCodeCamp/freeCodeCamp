@@ -1,23 +1,16 @@
 import React from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import type { Dispatch } from 'redux';
-import { executeGA } from '../../../redux/actions';
-import { ProgressionNodesWithCompleted } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
+import { ProgressionNodesWithCompleted } from '../../../redux/prop-types';
+import ChallengeNodesList from './challenge-nodes-list';
 import ChallengeOrProjectNodesList from './challenge-or-project-nodes-list';
 import ProjectController from './project-controller';
-import ChallengeNodesList from './challenge-nodes-list';
 
 const getStepNumber = (dashedName: string) => {
   // dashedName should be in the format 'step-1' or 'task-1'
   const match = dashedName.match(/-(\d+)/);
   return match ? match[1] : '';
 };
-
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ executeGA }, dispatch);
 
 interface ChallengeBlock {
   progressionNodes: ProgressionNodesWithCompleted[];
@@ -80,7 +73,4 @@ function ChallengeBlock({
 
 ChallengeBlock.displayName = 'ChallengeBlock';
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(withTranslation()(ChallengeBlock));
+export default withTranslation()(ChallengeBlock);
