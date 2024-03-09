@@ -1,11 +1,8 @@
-import { execSync } from 'child_process';
-
 import request from 'supertest';
 
 import { build } from './src/app';
 import { createUserInput } from './src/utils/create-user';
 import { examJson } from './__mocks__/exam';
-import { MONGOHQ_URL } from './src/utils/env';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
@@ -68,6 +65,77 @@ export function createSuperRequest(config: {
   return (resource, options) => superRequest(resource, config, options);
 }
 
+type IndexData = {
+  collection: string;
+  indexes: {
+    key: Record<string, 1>;
+    name: string;
+    expireAfterSeconds?: number;
+  }[];
+};
+const indexData: IndexData[] = [
+  {
+    collection: 'AccessToken',
+    indexes: [
+      {
+        key: { userId: 1 },
+        name: 'userId_1'
+      }
+    ]
+  },
+  {
+    collection: 'Donation',
+    indexes: [
+      { key: { email: 1 }, name: 'email_1' },
+      { key: { userId: 1 }, name: 'userId_1' }
+    ]
+  },
+  {
+    collection: 'MsUsername',
+    indexes: [{ key: { userId: 1, id: 1 }, name: 'userId_1__id_1' }]
+  },
+  {
+    collection: 'Survey',
+    indexes: [{ key: { userId: 1 }, name: 'userId_1' }]
+  },
+  {
+    collection: 'UserRateLimit',
+    indexes: [
+      {
+        key: { expirationDate: 1 },
+        name: 'expirationDate_1',
+        expireAfterSeconds: 0
+      }
+    ]
+  },
+  {
+    collection: 'UserToken',
+    indexes: [{ key: { userId: 1 }, name: 'userId_1' }]
+  },
+  {
+    collection: 'sessions',
+    indexes: [
+      {
+        key: { expires: 1 },
+        name: 'expires_1',
+        expireAfterSeconds: 0
+      }
+    ]
+  },
+  {
+    collection: 'user',
+    indexes: [
+      {
+        key: { email: 1, sendQuincyEmail: 1 },
+        name: 'mailing-list-pull'
+      },
+      { key: { email: 1 }, name: 'email_1' },
+      { key: { isDonating: 1 }, name: 'isDonating_1' },
+      { key: { username: 1, id: 1 }, name: 'username_1__id_1' }
+    ]
+  }
+];
+
 export function setupServer(): void {
   let fastify: FastifyTestInstance;
   beforeAll(async () => {
@@ -76,25 +144,18 @@ export function setupServer(): void {
 
     // Prisma does not support TTL indexes in the schema yet, so, to avoid
     // conflicts with the TTL index in the sessions collection, we need to
-    // create it manually (before interacting with the db in any way)
-    await fastify.prisma.$runCommandRaw({
-      createIndexes: 'sessions',
-      indexes: [
-        {
-          key: { expires: 1 },
-          name: 'expires_1',
-          background: true,
-          expireAfterSeconds: 0
-        }
-      ]
-    });
-    // push the schema to the test db to setup indexes, unique constraints, etc
-    execSync('pnpm prisma db push -- --skip-generate', {
-      env: {
-        ...process.env,
-        MONGOHQ_URL
-      }
-    });
+    // create it manually (before interacting with the db in any way). Also,
+    // to save time, we create all other indexes so we don't need to invoke
+    // `prisma db push` (which is relatively slow).
+
+    await Promise.all(
+      indexData.map(async ({ collection, indexes }) => {
+        await fastify.prisma.$runCommandRaw({
+          createIndexes: collection,
+          indexes
+        });
+      })
+    );
 
     global.fastifyTestInstance = fastify;
     // allow a little time to setup the db

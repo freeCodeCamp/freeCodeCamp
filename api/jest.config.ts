@@ -4,7 +4,7 @@ const config: Config = {
   verbose: true,
   testRegex: '\\.test\\.ts$',
   transform: {
-    '^.+\\.ts$': 'ts-jest'
+    '^.+\\.ts$': ['ts-jest', { isolatedModules: true }]
   }
 };
 
