@@ -15,6 +15,9 @@ test.describe('Help Modal component', () => {
       .getByRole('button', { name: translations.buttons['ask-for-help'] })
       .click();
 
+    const dialogs = await page.getByRole('dialog').all();
+    expect(dialogs).toHaveLength(2);
+
     await expect(
       page.getByRole('heading', {
         name: translations.buttons['ask-for-help'],
@@ -50,7 +53,8 @@ test.describe('Help Modal component', () => {
     await page
       .getByRole('button', { name: translations.buttons['ask-for-help'] })
       .click();
-
+    const dialogs = await page.getByRole('dialog').all();
+    expect(dialogs).toHaveLength(2);
     const newPagePromise = context.waitForEvent('page');
 
     await page
@@ -68,7 +72,9 @@ test.describe('Help Modal component', () => {
 
     const newPage = await newPagePromise;
     await newPage.waitForLoadState();
-
+    for (const dialog of dialogs) {
+      await expect(dialog).not.toBeVisible();
+    }
     await expect(newPage).toHaveURL(/.*forum\.freecodecamp.org.*/);
   });
 
@@ -76,11 +82,14 @@ test.describe('Help Modal component', () => {
     await page
       .getByRole('button', { name: translations.buttons['ask-for-help'] })
       .click();
-
+    const dialogs = await page.getByRole('dialog').all();
+    expect(dialogs).toHaveLength(2);
     await page
       .getByRole('button', { name: translations.buttons.cancel })
       .click();
-
+    for (const dialog of dialogs) {
+      await expect(dialog).not.toBeVisible();
+    }
     await expect(
       page.getByRole('heading', {
         name: translations.buttons['ask-for-help'],
@@ -93,11 +102,14 @@ test.describe('Help Modal component', () => {
     await page
       .getByRole('button', { name: translations.buttons['ask-for-help'] })
       .click();
-
+    const dialogs = await page.getByRole('dialog').all();
+    expect(dialogs).toHaveLength(2);
     await page
       .getByRole('button', { name: translations.buttons.close })
       .click();
-
+    for (const dialog of dialogs) {
+      await expect(dialog).not.toBeVisible();
+    }
     await expect(
       page.getByRole('heading', {
         name: translations.buttons['ask-for-help'],
@@ -110,6 +122,8 @@ test.describe('Help Modal component', () => {
     await page
       .getByRole('button', { name: translations.buttons['ask-for-help'] })
       .click();
+    const dialogs = await page.getByRole('dialog').all();
+    expect(dialogs).toHaveLength(2);
     const link = page.getByRole('link', { name: 'Read-Search-Ask' });
     await expect(link).toHaveAttribute(
       'href',
@@ -123,6 +137,8 @@ test.describe('Help Modal component', () => {
     await page
       .getByRole('button', { name: translations.buttons['ask-for-help'] })
       .click();
+    const dialogs = await page.getByRole('dialog').all();
+    expect(dialogs).toHaveLength(2);
     const link = page.getByRole('link', {
       name: 'already been answered on the forum'
     });
