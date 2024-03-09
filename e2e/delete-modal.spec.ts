@@ -19,9 +19,9 @@ test.describe('Delete Modal component', () => {
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
 
-    //there are 2 dialogs nested per modal, we need the second one
-    const modalDialog = page.getByRole('dialog').nth(1);
-    await expect(modalDialog).toBeVisible();
+    //there are 2 dialogs nested per modal
+    const dialogs = await page.getByRole('dialog').all();
+    expect(dialogs).toHaveLength(2);
 
     await expect(
       page.getByRole('heading', {
@@ -61,13 +61,16 @@ test.describe('Delete Modal component', () => {
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
 
-    const modalDialog = page.getByRole('dialog').nth(1);
-    await expect(modalDialog).toBeVisible();
+    const dialogs = await page.getByRole('dialog').all();
+    expect(dialogs).toHaveLength(2);
+
     await page
       .getByRole('button', { name: translations.settings.danger.nevermind })
       .click();
 
-    await expect(modalDialog).not.toBeVisible();
+    for (const dialog of dialogs) {
+      await expect(dialog).not.toBeVisible();
+    }
   });
 
   test('deletes account and redirects to /learn after confirmation', async ({
@@ -89,12 +92,14 @@ test.describe('Delete Modal component', () => {
     await page
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
-    const modalDialog = page.getByRole('dialog').nth(1);
-    await expect(modalDialog).toBeVisible();
+    const dialogs = await page.getByRole('dialog').all();
+    expect(dialogs).toHaveLength(2);
     await page
       .getByRole('button', { name: translations.settings.danger.certain })
       .click();
-    await expect(modalDialog).not.toBeVisible();
+    for (const dialog of dialogs) {
+      await expect(dialog).not.toBeVisible();
+    }
     await expect(page).toHaveURL(/.*\/learn\/?/);
   });
 });
