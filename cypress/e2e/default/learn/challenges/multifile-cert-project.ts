@@ -5,7 +5,7 @@ const editorElements = {
   container: '.vertical .reflex-container',
   editor: '.react-monaco-editor-container',
   saveCodeBtn: '[data-cy="save-code-to-database-btn"]',
-  closeFlash: '.close'
+  closeFlash: '.close-flash'
 };
 
 describe('multifileCertProjects', function () {

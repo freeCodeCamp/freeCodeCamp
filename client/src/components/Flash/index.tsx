@@ -35,7 +35,11 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
           data-playwright-test-label='flash-message'
         >
           {t(message, variables)}
-          <CloseButton onClick={handleClose} label={t('buttons.close')} />
+          <CloseButton
+            onClick={handleClose}
+            label={t('buttons.close')}
+            className='close-flash'
+          />
         </Alert>
       </CSSTransition>
     </TransitionGroup>
