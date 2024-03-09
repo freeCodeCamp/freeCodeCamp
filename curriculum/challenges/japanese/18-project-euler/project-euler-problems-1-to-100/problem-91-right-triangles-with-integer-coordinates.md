@@ -1,6 +1,6 @@
 ---
 id: 5900f3c71000cf542c50feda
-title: 'Problem 91: Right triangles with integer coordinates'
+title: '問題 91: 整数座標上の直角三角形'
 challengeType: 1
 forumTopicId: 302208
 dashedName: problem-91-right-triangles-with-integer-coordinates
@@ -8,43 +8,43 @@ dashedName: problem-91-right-triangles-with-integer-coordinates
 
 # --description--
 
-The points ${P}(x_1, y_1)$ and ${Q}(x_2, y_2)$ are plotted at integer coordinates and are joined to the origin, ${O}(0, 0)$, to form ${\Delta}OPQ$.
+点 ${P}(x_1, y_1)$ と ${Q}(x_2, y_2)$ は整数座標上にあり、原点 ${O}(0, 0)$ と共に ${\Delta}OPQ$ を作ります。
 
-<img class="img-responsive center-block" alt="a graph plotting points P (x_1, y_1) and Q(x_2, y_2) at integer coordinates that are joined to the origin O (0, 0)" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="原点 O (0, 0) と結ばれている整数座標上の点 $P(x_1, y_1)$ と $Q(x_2, y_2)$ を示すグラフ" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px;" />
 
-There are exactly fourteen triangles containing a right angle that can be formed when each coordinate lies between 0 and 2 inclusive; that is, $0 ≤ x_1, y_1, x_2, y_2 ≤ 2$.
+各座標が 0 から 2 (0 と 2 を含む) の間にあるとき、すなわち $0 ≤ x_1, y_1, x_2, y_2 ≤ 2$ のときは、ちょうど 14 個の直角三角形が含まれます。
 
-<img class="img-responsive center-block" alt="a diagram showing the 14 triangles containing a right angle that can be formed when each coordinate is between 0 and 2" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="各座標が 0 から 2 の間にあるときに 14 個の直角三角形が含まれることを示す図" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px;" />
 
-Given that $0 ≤ x_1, y_1, x_2, y_2 ≤ limit$, how many right triangles can be formed?
+$0 ≤ x_1, y_1, x_2, y_2 ≤ limit$ のとき、直角三角形をいくつ作れますか。
 
 # --hints--
 
-`rightTrianglesIntCoords(2)` should return a number.
+`rightTrianglesIntCoords(2)` は数値を返す必要があります。
 
 ```js
 assert(typeof rightTrianglesIntCoords(2) === 'number');
 ```
 
-`rightTrianglesIntCoords(2)` should return `14`.
+`rightTrianglesIntCoords(2)` は `14` を返す必要があります。
 
 ```js
 assert.strictEqual(rightTrianglesIntCoords(2), 14);
 ```
 
-`rightTrianglesIntCoords(10)` should return `448`.
+`rightTrianglesIntCoords(10)` は `448` を返す必要があります。
 
 ```js
 assert.strictEqual(rightTrianglesIntCoords(10), 448);
 ```
 
-`rightTrianglesIntCoords(25)` should return `3207`.
+`rightTrianglesIntCoords(25)` は `3207` を返す必要があります。
 
 ```js
 assert.strictEqual(rightTrianglesIntCoords(25), 3207);
 ```
 
-`rightTrianglesIntCoords(50)` should return `14234`.
+`rightTrianglesIntCoords(50)` は `14234` を返す必要があります。
 
 ```js
 assert.strictEqual(rightTrianglesIntCoords(50), 14234);

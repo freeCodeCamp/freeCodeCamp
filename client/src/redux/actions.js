@@ -8,8 +8,6 @@ export const tryToShowDonationModal = createAction(
   actionTypes.tryToShowDonationModal
 );
 
-export const executeGA = createAction(actionTypes.executeGA);
-
 export const allowBlockDonationRequests = createAction(
   actionTypes.allowBlockDonationRequests
 );
@@ -100,10 +98,6 @@ export const deleteUserToken = createAction(actionTypes.deleteUserToken);
 export const deleteUserTokenComplete = createAction(
   actionTypes.deleteUserTokenComplete
 );
-
-export const hideCodeAlly = createAction(actionTypes.hideCodeAlly);
-export const showCodeAlly = createAction(actionTypes.showCodeAlly);
-export const tryToShowCodeAlly = createAction(actionTypes.tryToShowCodeAlly);
 
 export const startExam = createAction(actionTypes.startExam);
 export const stopExam = createAction(actionTypes.stopExam);

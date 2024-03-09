@@ -1,6 +1,6 @@
 ---
 id: 5958469238c0d8d2632f46db
-title: Combinations
+title: Комбінації
 challengeType: 1
 forumTopicId: 302233
 dashedName: combinations
@@ -8,11 +8,11 @@ dashedName: combinations
 
 # --description--
 
-Given non-negative integers `m` and `n`, generate all size `m` combinations of the integers from `0` (zero) to `n-1` in sorted order (each combination is sorted and the entire table is sorted).
+Вам дано невід’ємні цілі числа `m` та `n`. Згенеруйте `m` комбінацій всіх розмірів з цілих чисел від `0` (нуля) до `n-1` у відсортованому порядку (всі комбінації та таблиця мають бути відсортованими).
 
-**Example:**
+**Наприклад:**
 
-`3` comb `5` is:
+Комбінаціями чисел `3` та `5` є:
 
 <pre>0 1 2
 0 1 3
@@ -28,19 +28,19 @@ Given non-negative integers `m` and `n`, generate all size `m` combinations of t
 
 # --hints--
 
-`combinations` should be a function.
+`combinations` має бути функцією.
 
 ```js
 assert(typeof combinations === 'function');
 ```
 
-`combinations(3, 5)` should return `[[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 2, 3], [0, 2, 4], [0, 3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]`.
+`combinations(3, 5)` має повернути `[[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 2, 3], [0, 2, 4], [0, 3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]`.
 
 ```js
 assert.deepEqual(combinations(testInput1[0], testInput1[1]), testOutput1);
 ```
 
-`combinations(4, 6)` should return `[[0,1,2,3], [0,1,2,4], [0,1,2,5], [0,1,3,4], [0,1,3,5], [0,1,4,5], [0,2,3,4], [0,2,3,5], [0,2,4,5], [0,3,4,5], [1,2,3,4], [1,2,3,5], [1,2,4,5], [1,3,4,5], [2,3,4,5]]`
+`combinations(4, 6)` має повернути `[[0,1,2,3], [0,1,2,4], [0,1,2,5], [0,1,3,4], [0,1,3,5], [0,1,4,5], [0,2,3,4], [0,2,3,5], [0,2,4,5], [0,3,4,5], [1,2,3,4], [1,2,3,5], [1,2,4,5], [1,3,4,5], [2,3,4,5]]`
 
 ```js
 assert.deepEqual(combinations(testInput2[0], testInput2[1]), testOutput2);

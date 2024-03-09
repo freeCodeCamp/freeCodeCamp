@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f060b6c005b0e76f05b
-title: Build your own Functions
+title: Crie suas próprias funções
 challengeType: 11
 videoId: nLDychdBwUg
 bilibiliIds:
@@ -12,15 +12,15 @@ dashedName: build-your-own-functions
 
 # --description--
 
-More resources:
+Mais recursos:
 
-\- <a href="https://www.youtube.com/watch?v=ksvGhDsjtpw" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=ksvGhDsjtpw" target="_blank" rel="noopener noreferrer nofollow">Exercício</a>
 
 # --question--
 
 ## --text--
 
-What will the following Python program print out?:
+Qual será a impressão do seguinte programa em Python?:
 
 ```python
 def fred():

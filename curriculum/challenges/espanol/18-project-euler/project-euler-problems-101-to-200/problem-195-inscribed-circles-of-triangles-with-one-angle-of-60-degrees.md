@@ -16,7 +16,7 @@ There are 1234 60° triangles for which $r ≤ 100$.
 
 Let $T(n)$ be the number of 60° triangles for which $r ≤ n$, so $T(100) = 1234$, $T(1000) = 22767$, and $T(10000) = 359912$.
 
-Find $T(1053779)$.
+Encuentra $T(1053779)$.
 
 # --hints--
 

@@ -18,19 +18,19 @@ When you are ready, use the `querySelectorAll()` method to target all elements w
 You should have a `const` variable called `listOfAllDice`.
 
 ```js
-assert.match(code, /const\s*listOfAllDice\s*/);
+assert.match(code, /const\s+listOfAllDice\s*/);
 ```
 
 You should assign the `document.querySelectorAll()` method to the `listOfAllDice` variable.
 
 ```js
-assert.match(code, /const\s+listOfAllDice\s*=\s*document\.querySelectorAll\s*\(.*\);?/);
+assert.match(code, /const\s+listOfAllDice\s*=\s*document\.querySelectorAll\s*\(.*\)\s*;?/);
 ```
 
 You should target all elements with the `class` of `die` inside the `querySelectorAll` method.
 
 ```js
-assert.match(code, /const\s*listOfAllDice\s*=\s*document\.querySelectorAll\s*\(\s*('|")\.die\1\s*\)/);
+assert.match(code, /const\s+listOfAllDice\s*=\s*document\.querySelectorAll\s*\(\s*('|")\.die\1\s*\)/);
 ```
 
 # --seed--

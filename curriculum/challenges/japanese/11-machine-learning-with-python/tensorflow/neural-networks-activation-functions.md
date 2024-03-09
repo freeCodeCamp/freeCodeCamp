@@ -14,7 +14,7 @@ dashedName: neural-networks-activation-functions
 
 ## --text--
 
-Which activation function squishes values between -1 and 1?
+値を -1～1 の間に圧縮する活性化関数はどれですか？
 
 ## --answers--
 

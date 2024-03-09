@@ -16,7 +16,7 @@ Use `let` to create a new variable called `isCheckpointCollisionDetectionActive`
 You should use the `let` keyword to declare your `isCheckpointCollisionDetectionActive` variable.
 
 ```js
-assert.match(code, /let isCheckpointCollisionDetectionActive/);
+assert.match(code, /let\s+isCheckpointCollisionDetectionActive/);
 ```
 
 

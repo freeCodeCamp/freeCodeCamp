@@ -1,36 +1,41 @@
 ---
 id: 6571c34668e4b3b17d3957f9
-title: Introduction to Flexbox Question H
+title: Вступ до Flexbox. Запитання H
 challengeType: 15
 dashedName: introduction-flexbox-question-h
 ---
+
 # --description--
 
-Search through [our handbook](https://www.freecodecamp.org/news/the-css-flexbox-handbook) and find the answer to the question below.
+Незалежно від того, який напрямок ви використовуєте, вважайте, що гнучкі контейнери мають 2 осі: головну та перехресну. Якщо змінюється `flex-direction`, то змінюється напрямок цих осей. В більшості випадків, `flex-direction: row` розміщує головну вісь горизонтально (зліва направо), а `column` — вертикально (зверху вниз).
+
+Іншими словами, в першому прикладі до елемента div було застосовано `display: flex`, що розташувало його дочірні елементи горизонтально. Це демонстрація `flex-direction: row`, що є налаштуванням за замовчуванням. Наступний приклад дуже схожий. Якщо ви розкоментуєте рядок `flex-direction: column`, то елементи div стануть вертикально.
+
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="400" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/BaZKPdw?height=400&amp;default-tab=html%2Cresult&amp;slug-hash=BaZKPdw&amp;editable=true&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" style="width: 100%; overflow:hidden; display:block;" title="Вставка CodePen" loading="lazy" id="cp_embed_BaZKPdw"></iframe>
 
 # --question--
 
 ## --text--
 
-What property is used to align a flex item independently of its parent?
+Яка властивість CSS змінює напрямок головної осі в гнучких контейнерах, щоб розташувати предмети зверху вниз?
 
 ## --answers--
 
-`place-content`
+`align-items`
 
 ---
 
-`align-self`
+`flex-flow`
+
+---
+
+`flex-direction`
 
 ---
 
 `justify-content`
 
----
-
-`align-items`
-
 
 ## --video-solution--
 
-2
+3

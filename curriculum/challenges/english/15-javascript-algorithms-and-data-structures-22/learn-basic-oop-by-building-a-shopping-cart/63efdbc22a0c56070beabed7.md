@@ -22,21 +22,21 @@ You should use bracket notation to access the property of `totalCountPerProduct`
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]/);
 ```
 
 You should use the assignment operator to update the value of the property of `totalCountPerProduct` that corresponds to `dessert.id`.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=/);
 ```
 
 You should update the value of `totalCountPerProduct` to be the current value plus one.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\[\s*dessert\.id\s*\]\s*\+\s*1/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*\+\s*1/);
 ```
 
 
@@ -218,9 +218,9 @@ const products = [
   },
   {
     id: 2,
-    name: "French Macaroon",
+    name: "French Macaron",
     price: 3.99,
-    category: "Macaroon",
+    category: "Macaron",
   },
   {
     id: 3,
@@ -248,9 +248,9 @@ const products = [
   },
   {
     id: 7,
-    name: "Chocolate Macaroons (4 Pack)",
+    name: "Chocolate Macarons (4 Pack)",
     price: 9.99,
-    category: "Macaroon",
+    category: "Macaron",
   },
   {
     id: 8,
@@ -272,9 +272,9 @@ const products = [
   },
   {
     id: 11,
-    name: "Vanilla Macaroons (5 Pack)",
+    name: "Vanilla Macarons (5 Pack)",
     price: 11.99,
-    category: "Macaroon",
+    category: "Macaron",
   },
   {
     id: 12,

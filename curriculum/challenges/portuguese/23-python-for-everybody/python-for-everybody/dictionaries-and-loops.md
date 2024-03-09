@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0a0b6c005b0e76f069
-title: Dictionaries and Loops
+title: Dicionários e laços de repetição
 challengeType: 11
 videoId: EEmekKiKG70
 bilibiliIds:
@@ -12,15 +12,15 @@ dashedName: dictionaries-and-loops
 
 # --description--
 
-More resources:
+Mais recursos:
 
-\- <a href="https://www.youtube.com/watch?v=PrhZ9qwBDD8" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=PrhZ9qwBDD8" target="_blank" rel="noopener noreferrer nofollow">Exercício</a>
 
 # --question--
 
 ## --text--
 
-What will the following code print?:
+O que será impresso pelo código a seguir?:
 
 ```python
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}

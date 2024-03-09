@@ -588,7 +588,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           const newChallenge = {
             id: challengeId,
             completedDate,
-            solution: msTrophyStatus.msGameStatusApiUrl
+            solution: msTrophyStatus.msUserAchievementsApiUrl
           };
           await fastify.prisma.user.update({
             where: { id: req.session.user.id },

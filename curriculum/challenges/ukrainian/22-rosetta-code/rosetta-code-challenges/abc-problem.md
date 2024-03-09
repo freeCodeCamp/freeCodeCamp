@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339acc
-title: ABC Problem
+title: Задача ABC
 challengeType: 1
 forumTopicId: 302220
 dashedName: abc-problem
@@ -8,7 +8,7 @@ dashedName: abc-problem
 
 # --description--
 
-You are given a collection of ABC blocks (e.g., childhood alphabet blocks). There are 20 blocks with two letters on each block. A complete alphabet is guaranteed amongst all sides of the blocks. The sample collection of blocks:
+Вам надано набір блоків ABC (тобто дитячі кубики з алфавітом). Загалом 20 блоків по дві літери на кожному. Гарантовано, що на блоках розташовано всі літери алфавіту. Зразок такого набору:
 
 <pre>(B O)
 (X K)
@@ -34,60 +34,60 @@ You are given a collection of ABC blocks (e.g., childhood alphabet blocks). Ther
 
 # --instructions--
 
-Implement a function that takes a string (word) and determines whether the word can be spelled with the given collection of blocks.
+Реалізуйте функцію, яка приймає рядок (слово) та визначає, чи з даного набору блоків можна скласти це слово.
 
-Some rules to keep in mind:
+Деякі правила:
 
 <ul>
-  <li>Once a letter on a block is used, that block cannot be used again.</li>
-  <li>The function should be case-insensitive.</li>
+  <li>Якщо літера на блоці вже використана, цей блок не можна використати ще раз.</li>
+  <li>Функція не має бути чутливою до регістру.</li>
 </ul>
 
 # --hints--
 
-`canMakeWord` should be a function.
+`canMakeWord` має бути функцією.
 
 ```js
 assert(typeof canMakeWord === 'function');
 ```
 
-`canMakeWord` should return a boolean.
+`canMakeWord` має повернути булеве значення.
 
 ```js
 assert(typeof canMakeWord('hi') === 'boolean');
 ```
 
-`canMakeWord("bark")` should return true.
+`canMakeWord("bark")` має повернути `true`.
 
 ```js
 assert(canMakeWord(words[0]));
 ```
 
-`canMakeWord("BooK")` should return false.
+`canMakeWord("BooK")` має повернути `false`.
 
 ```js
 assert(!canMakeWord(words[1]));
 ```
 
-`canMakeWord("TReAT")` should return true.
+`canMakeWord("TReAT")` має повернути `true`.
 
 ```js
 assert(canMakeWord(words[2]));
 ```
 
-`canMakeWord("COMMON")` should return false.
+`canMakeWord("COMMON")` має повернути `false`.
 
 ```js
 assert(!canMakeWord(words[3]));
 ```
 
-`canMakeWord("squAD")` should return true.
+`canMakeWord("squAD")` має повернути `true`.
 
 ```js
 assert(canMakeWord(words[4]));
 ```
 
-`canMakeWord("conFUSE")` should return true.
+`canMakeWord("conFUSE")` має повернути `true`.
 
 ```js
 assert(canMakeWord(words[5]));

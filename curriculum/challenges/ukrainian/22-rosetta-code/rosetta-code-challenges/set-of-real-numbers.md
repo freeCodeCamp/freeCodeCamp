@@ -1,6 +1,6 @@
 ---
 id: 5eb3e4b20aa93c437f9e9717
-title: Set of real numbers
+title: Множина дійсних чисел
 challengeType: 1
 forumTopicId: 385322
 dashedName: set-of-real-numbers
@@ -8,61 +8,61 @@ dashedName: set-of-real-numbers
 
 # --description--
 
-All real numbers form the uncountable set ℝ. Among its subsets, relatively simple are the convex sets, each expressed as a range between two real numbers *a* and *b* where *a* ≤ *b*. There are actually four cases for the meaning of "between", depending on open or closed boundary:
+Всі дійсні числа утворюють незліченну множину ℝ. Серед її підмножин, відносно простими є опуклі множини, кожна з яких виражена як діапазон між двома дійсними числами *a* та *b*, де *a* ≤ *b*. Насправді є чотири випадки визначення «між», залежно від відкритої чи закритої межі:
 
 <ul>
-  <li>[<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> ≤ <i>x</i> and <i>x</i> ≤ <i>b</i> }</li>
-  <li>(<i>a</i>, <i>b</i>): {<i>x</i> | <i>a</i> < <i>x</i> and <i>x</i> < <i>b</i> }</li>
-  <li>[<i>a</i>, <i>b</i>): {<i>x</i> | <i>a</i> ≤ <i>x</i> and <i>x</i> < <i>b</i> }</li>
-  <li>(<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> < <i>x</i> and <i>x</i> ≤ <i>b</i> }</li>
+  <li>[<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> ≤ <i>x</i> та <i>x</i> ≤ <i>b</i> }</li>
+  <li>(<i>a</i>, <i>b</i>): {<i>x</i> | <i>a</i> < <i>x</i> та <i>x</i> < <i>b</i> }</li>
+  <li>[<i>a</i>, <i>b</i>): {<i>x</i> | <i>a</i> ≤ <i>x</i> та <i>x</i> < <i>b</i> }</li>
+  <li>(<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> < <i>x</i> та <i>x</i> ≤ <i>b</i> }</li>
 </ul>
 
-Note that if *a* = *b*, of the four only \[*a*, *a*] would be non-empty.
+Зверніть увагу: якщо *a* = *b*, то з чотирьох лише \[*a*, *a*] буде непорожньою.
 
-**Task**
+**Завдання**
 
 <ul>
-  <li>Devise a way to represent any set of real numbers, for the definition of "any" in the implementation notes below.</li>
-  <li>Provide methods for these common set operations (<i>x</i> is a real number; <i>A</i> and <i>B</i> are sets):</li>
+  <li>Придумайте спосіб представити будь-яку множину дійсних чисел, де визначення «будь-якої» вказано в примітках щодо реалізації нижче.</li>
+  <li>Надайте методи для таких звичайних операцій над множинами (<i>x</i> є дійсним числом; <i>A</i> та <i>B</i> є множинами):</li>
   <ul>
     <li>
-      <i>x</i> ∈ <i>A</i>: determine if <i>x</i> is an element of <i>A</i><br>
-      example: 1 is in [1, 2), while 2, 3, ... are not.
+      <i>x</i> ∈ <i>A</i>: визначте, чи <i>x</i> є елементом множини <i>A</i><br>
+      наприклад: 1 є в [1, 2), а 2, 3, ... — ні.
     </li>
     <li>
-      <i>A</i> ∪ <i>B</i>: union of <i>A</i> and <i>B</i>, i.e. {<i>x</i> | <i>x</i> ∈ <i>A</i> or <i>x</i> ∈ <i>B</i>}<br>
-      example: [0, 2) ∪ (1, 3) = [0, 3); [0, 1) ∪ (2, 3] = well, [0, 1) ∪ (2, 3]
+      <i>A</i> ∪ <i>B</i>: об’єднання <i>A</i> та <i>B</i>, тобто {<i>x</i> | <i>x</i> ∈ <i>A</i> або <i>x</i> ∈ <i>B</i>}<br>
+      наприклад: [0, 2) ∪ (1, 3) = [0, 3); [0, 1) ∪ (2, 3] = [0, 1) ∪ (2, 3]
     </li>
     <li>
-      <i>A</i> ∩ <i>B</i>: intersection of <i>A</i> and <i>B</i>, i.e. {<i>x</i> | <i>x</i> ∈ <i>A</i> and <i>x</i> ∈ <i>B</i>}<br>
-      example: [0, 2) ∩ (1, 3) = (1, 2); [0, 1) ∩ (2, 3] = empty set
+      <i>A</i> ∩ <i>B</i>: перетин <i>A</i> та <i>B</i>, тобто {<i>x</i> | <i>x</i> ∈ <i>A</i> та <i>x</i> ∈ <i>B</i>}<br>
+      наприклад: [0, 2) ∩ (1, 3) = (1, 2); [0, 1) ∩ (2, 3] = порожня множина
     </li>
     <li>
-      <i>A</i> - <i>B</i>: difference between <i>A</i> and <i>B</i>, also written as <i>A</i> \ <i>B</i>, i.e. {<i>x</i> | <i>x</i> ∈ <i>A</i> and <i>x</i> ∉ <i>B</i>}<br>
-      example: [0, 2) − (1, 3) = [0, 1]
+      <i>A</i> - <i>B</i>: різниця між <i>A</i> та <i>B</i>, також записана як <i>A</i> \ <i>B</i>, тобто {<i>x</i> | <i>x</i> ∈ <i>A</i> та <i>x</i> ∉ <i>B</i>}<br>
+      наприклад: [0, 2) − (1, 3) = [0, 1]
     </li>
   </ul>
 </ul>
 
 # --instructions--
 
-Write a function that takes 2 objects, a string and an array as parameters. The objects represents the set and have attributes: `low`, `high` and `rangeType`.
+Напишіть функцію, яка приймає два об’єкти, рядок і масив як параметри. Об’єкти представляють множину і мають атрибути `low`, `high` та `rangeType`.
 
-The `rangeType` can have values 0, 1, 2 and 3 for `CLOSED`, `BOTH_OPEN`, `LEFT_OPEN` and `RIGHT_OPEN`, respectively. The function should implement a set using this information.
+`rangeType` може мати значення 0, 1, 2 і 3 для `CLOSED`, `BOTH_OPEN`, `LEFT_OPEN` та `RIGHT_OPEN` відповідно. Функція має реалізувати множину, використовуючи цю інформацію.
 
-The string represents the operation to be performed on the sets. It can be: `"union"`, `"intersect"` and `"subtract"` (difference).
+Рядок являє собою операцію, яку потрібно виконати над множинами. Це може бути `"union"` (об’єднання), `"intersect"` (перетин) та `"subtract"` (різниця).
 
-After performing the operation, the function should check if the values in the array are present in the resultant set and store a corresponding boolean value to an array. The function should return this array.
+Після виконання операції функція має перевірити, чи значення з масиву наявні в отриманій множині, та зберегти відповідне булеве значення в масиві. Функція має повернути цей масив.
 
 # --hints--
 
-`realSet` should be a function.
+`realSet` має бути функцією.
 
 ```js
 assert(typeof realSet == 'function');
 ```
 
-`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` should return a array.
+`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` має повернути масив.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` should return `[true, false, false]`.
+`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` має повернути `[true, false, false]`.
 
 ```js
 assert.deepEqual(
@@ -91,7 +91,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":2, "rangeType":3}, {"low":1, "high":2, "rangeType":2}, "intersect", [0, 1, 2])` should return `[false, false, false]`.
+`realSet({"low":0, "high":2, "rangeType":3}, {"low":1, "high":2, "rangeType":2}, "intersect", [0, 1, 2])` має повернути `[false, false, false]`.
 
 ```js
 assert.deepEqual(
@@ -105,7 +105,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":1}, "subtract", [0, 1, 2])` should return `[true, true, true]`.
+`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":1}, "subtract", [0, 1, 2])` має повернути `[true, true, true]`.
 
 ```js
 assert.deepEqual(
@@ -119,7 +119,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":0}, "subtract", [0, 1, 2])` should return `[false, false, true]`.
+`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":0}, "subtract", [0, 1, 2])` має повернути `[false, false, true]`.
 
 ```js
 assert.deepEqual(
@@ -133,7 +133,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":33, "rangeType":1}, {"low":30, "high":31, "rangeType":0}, "intersect", [30, 31, 32])` should return `[true, true, false]`.
+`realSet({"low":0, "high":33, "rangeType":1}, {"low":30, "high":31, "rangeType":0}, "intersect", [30, 31, 32])` має повернути `[true, true, false]`.
 
 ```js
 assert.deepEqual(

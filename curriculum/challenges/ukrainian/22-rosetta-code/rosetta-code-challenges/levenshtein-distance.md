@@ -1,6 +1,6 @@
 ---
 id: 5e4ce2eaac708cc68c1df260
-title: Levenshtein distance
+title: Відстань Левенштейна
 challengeType: 1
 forumTopicId: 385264
 dashedName: levenshtein-distance
@@ -8,71 +8,71 @@ dashedName: levenshtein-distance
 
 # --description--
 
-In information theory and computer science, the **Levenshtein distance** is a metric for measuring the amount of difference between two sequences (i.e. an edit distance). The Levenshtein distance between two strings is defined as the minimum number of edits needed to transform one string into the other, with the allowable edit operations being insertion, deletion, or substitution of a single character.
+В теорії інформації та комп’ютерній науці, **відстань Левенштейна** — це метрика для вимірювання різниці між двома послідовностями (тобто відстань редагування). Відстань Левенштейна між двома рядками визначається як мінімальна кількість операцій додавання, видалення або заміни символа, необхідних для перетворення одного рядка в інший.
 
-Example:
+Наприклад:
 
-The Levenshtein distance between "**kitten**" and "**sitting**" is 3, since the following three edits change one into the other, and there isn't a way to do it with fewer than three edits:
+Відстань Левенштейна між **kitten** та **sitting** становить 3, оскільки одне слово в інше неможливо перетворити за менше ніж три операції:
 
 <ul>
-  <li><strong>k</strong>itten   <strong>s</strong>itten    (substitution of 'k' with 's')</li>
-  <li>sitt<strong>e</strong>n   sitt<strong>i</strong>n    (substitution of 'e' with 'i')</li>
-  <li>sittin   sittin<strong>g</strong>    (insert 'g' at the end).</li>
+  <li><strong>k</strong>itten   <strong>s</strong>itten    (заміна «k» на «s»)</li>
+  <li>sitt<strong>e</strong>n   sitt<strong>i</strong>n    (заміна «e» на «i»)</li>
+  <li>sittin   sittin<strong>g</strong>    (додавання «g» вкінці).</li>
 </ul>
 
-*The Levenshtein distance between "**rosettacode**", "**raisethysword**" is **8**.*
+*Відстань Левенштейна між **rosettacode** та **raisethysword** становить **8**.*
 
-*The distance between two strings is same as that when both strings are reversed.*
+*Якщо рядки поміняти місцями, відстань між ними не зміниться.*
 
 # --instructions--
 
-Write a function that returns the Levenshtein distance between two strings given as parameters.
+Напишіть функцію, яка повертає відстань Левенштейна між двома рядками, заданими як параметри.
 
 # --hints--
 
-`levenshtein` should be a function.
+`levenshtein` має бути функцією.
 
 ```js
 assert(typeof levenshtein == 'function');
 ```
 
-`levenshtein("mist", "dist")` should return a number.
+`levenshtein("mist", "dist")` має повернути число.
 
 ```js
 assert(typeof levenshtein('mist', 'dist') == 'number');
 ```
 
-`levenshtein("mist", "dist")` should return `1`.
+`levenshtein("mist", "dist")` має повернути `1`.
 
 ```js
 assert.equal(levenshtein('mist', 'dist'), 1);
 ```
 
-`levenshtein("tier", "tor")` should return `2`.
+`levenshtein("tier", "tor")` має повернути `2`.
 
 ```js
 assert.equal(levenshtein('tier', 'tor'), 2);
 ```
 
-`levenshtein("kitten", "sitting")` should return `3`.
+`levenshtein("kitten", "sitting")` має повернути `3`.
 
 ```js
 assert.equal(levenshtein('kitten', 'sitting'), 3);
 ```
 
-`levenshtein("stop", "tops")` should return `2`.
+`levenshtein("stop", "tops")` має повернути `2`.
 
 ```js
 assert.equal(levenshtein('stop', 'tops'), 2);
 ```
 
-`levenshtein("rosettacode", "raisethysword")` should return `8`.
+`levenshtein("rosettacode", "raisethysword")` має повернути `8`.
 
 ```js
 assert.equal(levenshtein('rosettacode', 'raisethysword'), 8);
 ```
 
-`levenshtein("mississippi", "swiss miss")` should return `8`.
+`levenshtein("mississippi", "swiss miss")` має повернути `8`.
 
 ```js
 assert.equal(levenshtein('mississippi', 'swiss miss'), 8);

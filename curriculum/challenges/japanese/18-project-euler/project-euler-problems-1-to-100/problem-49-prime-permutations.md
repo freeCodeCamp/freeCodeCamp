@@ -1,6 +1,6 @@
 ---
 id: 5900f39d1000cf542c50feb0
-title: 'Problem 49: Prime permutations'
+title: '問題 49: 素因数の順列'
 challengeType: 1
 forumTopicId: 302159
 dashedName: problem-49-prime-permutations
@@ -8,21 +8,21 @@ dashedName: problem-49-prime-permutations
 
 # --description--
 
-The arithmetic sequence, 1487, 4817, 8147, in which each of the terms increases by 3330, is unusual in two ways: (i) each of the three terms are prime, and, (ii) each of the 4-digit numbers are permutations of one another.
+項が 3330 ずつ増加していく等差数列 1487, 4817, 8147 は、(i) 3 項のそれぞれが素数であり、(ii) 4 桁の各位が互いの順列であるという 2 つの点で特殊です。
 
-There are no arithmetic sequences made up of three 1-, 2-, or 3-digit primes, exhibiting this property, but there is one other 4-digit increasing sequence.
+1 桁、2 桁、または 3 桁の素数からなる等差数列でこの性質を持つものはありませんが、4 桁ではこのように増加していく数列があと 1 つあります。
 
-What 12-digit number do you form by concatenating the three terms in this sequence?
+その数列の 3 項を連結した 12 桁の数を求めなさい。
 
 # --hints--
 
-`primePermutations()` should return a number.
+`primePermutations()` は数値を返す必要があります。
 
 ```js
 assert(typeof primePermutations() === 'number');
 ```
 
-`primePermutations()` should return 296962999629.
+`primePermutations()` は 296962999629 を返す必要があります。
 
 ```js
 assert.strictEqual(primePermutations(), 296962999629);

@@ -1,6 +1,6 @@
 ---
 id: 587d7fb1367417b2b2512bf3
-title: Implement a Root-Level Request Logger Middleware
+title: تنفيذ برنامج وسيط(midleware) لمسجل الطلبات على مستوى الجذر
 challengeType: 2
 forumTopicId: 301514
 dashedName: implement-a-root-level-request-logger-middleware
@@ -8,9 +8,9 @@ dashedName: implement-a-root-level-request-logger-middleware
 
 # --description--
 
-Earlier, you were introduced to the `express.static()` middleware function. Now it’s time to see what middleware is, in more detail. Middleware functions are functions that take 3 arguments: the request object, the response object, and the next function in the application’s request-response cycle. These functions execute some code that can have side effects on the app, and usually add information to the request or response objects. They can also end the cycle by sending a response when some condition is met. If they don’t send the response when they are done, they start the execution of the next function in the stack. This triggers calling the 3rd argument, `next()`.
+في وقت سابق، تم تقديمك إلى دالة `express.static()` midleware. الآن حان الوقت لرؤية ما هو البرنامج الوسيط(midleware) ، بمزيد من التفصيل. وظائف البرامج الوسيطة (midleware) هي وظائف تأخذ 3 تمريرات: عنصر الطلب (request) ، عنصر الاستجابة(response)، والدالة التالية(next) في دورة طلب الاستجابة للتطبيق. هذه الدوال تنفذ بعض التعليمات البرمجية التي يمكن أن يكون لها تأثيرات جانبية على التطبيق، وعادة ما تضيف معلومات إلى كائنات الطلب أو الاستجابة. ويمكنها أيضا أن تنهي الدورة بإرسال رد عند استيفاء بعض الشروط. وإذا لم يرسلوا الرد عند القيام بذلك، فإنهم يشرعون في تنفيذ الوظيفة التالية في المكدس. يؤدي هذا إلى استدعاء الوسيطة الثالثة،`next()`.
 
-Look at the following example:
+انظر إلى المثال التالي:
 
 ```js
 function(req, res, next) {
@@ -19,17 +19,17 @@ function(req, res, next) {
 }
 ```
 
-Let’s suppose you mounted this function on a route. When a request matches the route, it displays the string “I’m a middleware…”, then it executes the next function in the stack. In this exercise, you are going to build root-level middleware. As you have seen in challenge 4, to mount a middleware function at root level, you can use the `app.use(<mware-function>)` method. In this case, the function will be executed for all the requests, but you can also set more specific conditions. For example, if you want a function to be executed only for POST requests, you could use `app.post(<mware-function>)`. Analogous methods exist for all the HTTP verbs (GET, DELETE, PUT, …).
+دعونا نفترض أنك قمت بتركيب هذه الوظيفة على مسار. عندما يتطابق الطلب مع المسار، فإنه يعرض نص "I’m a middleware"، ثم يقوم بتنفيذ الدالة التالية في المكدس. في هذا التمارين ، سوف تقوم ببناء منتوج على مستوى الجذر. كما رأيت في التحدي 4، لتحميل دالة البرنامج الوسيط(middleware) على مستوى الجذر ، يمكنك استخدام طريقة `app.use(<mware-function>)`. في هذه الحالة، سيتم تنفيذ الوظيفة لجميع الطلبات، ولكن يمكنك أيضا وضع شروط أكثر تحديداً. على سبيل المثال، إذا كنت تريد تنفيذ دالة فقط لطلبات POST ، يمكنك استخدام `app.post(<mware-function>)`. توجد طرق مشابهة لجميع أفعال HTTP (GET, DELETE, PUT …).
 
 # --instructions--
 
-Build a simple logger. For every request, it should log to the console a string taking the following format: `method path - ip`. An example would look like this: `GET /json - ::ffff:127.0.0.1`. Note that there is a space between `method` and `path` and that the dash separating `path` and `ip` is surrounded by a space on both sides. You can get the request method (http verb), the relative route path, and the caller’s ip from the request object using `req.method`, `req.path` and `req.ip`. Remember to call `next()` when you are done, or your server will be stuck forever. Be sure to have the ‘Logs’ opened, and see what happens when some request arrives.
+بناء مسجل بسيط. لكل طلب، يجب أن يسجل في وحدة التحكم(console) نص يأخذ التنسيق التالي: `method path - ip`. مثال سيبدوا هكذا: `GET /json - ::ffff:127.0.0.1`. لاحظ أن هناك مسافة بين `method` و `path` وأن الفاصل بين `path` و `ip` محاط بمسافة على كلا الجانبين. يمكنك الحصول على طريقة الطلب (http verb)، ومسار المسار النسبي، و ip للمتصل من عنصر الطلب باستخدام `req.method`, `req.path` and `req.ip`. تذّكر أن تستدعي `next()` عند الانتهاء من ذلك، أو أن الخادم الخاص بك سيكون عالقاً إلى الأبد. تأكد من فتح "السجلات"(Logs) ، ومعرفة ماذا يحدث عند وصول بعض الطلبات.
 
-**Note:** Express evaluates functions in the order they appear in the code. This is true for middleware too. If you want it to work for all the routes, it should be mounted before them.
+**ملاحظة:** express تُقيّم الدوال بالترتيب التي تظهر به في الكود. هذا صحيح أيضا للبرمجيات الوسيطة (middleware). إذا أردت أن تعمل على جميع المسارات ، فيجب تثبيتها قبلها.
 
 # --hints--
 
-Root level logger middleware should be active
+يجب أن يكون البرنامج الوسطي لتسجيل مستوى الروت نشط
 
 ```js
 (getUserInput) =>

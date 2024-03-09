@@ -18,7 +18,7 @@ import {
   setExt,
   compileHeadTail
 } from '../../../../../shared/utils/polyvinyl';
-import createWorker from '../utils/worker-executor';
+import { WorkerExecutor } from '../utils/worker-executor';
 
 const { filename: sassCompile } = sassData;
 
@@ -173,7 +173,7 @@ function getBabelOptions(
   return presets;
 }
 
-const sassWorker = createWorker(sassCompile);
+const sassWorkerExecutor = new WorkerExecutor(sassCompile);
 async function transformSASS(documentElement) {
   // we only teach scss syntax, not sass. Also the compiler does not seem to be
   // able to deal with sass.
@@ -184,7 +184,8 @@ async function transformSASS(documentElement) {
   await Promise.all(
     [].map.call(styleTags, async style => {
       style.type = 'text/css';
-      style.innerHTML = await sassWorker.execute(style.innerHTML, 5000).done;
+      style.innerHTML = await sassWorkerExecutor.execute(style.innerHTML, 5000)
+        .done;
     })
   );
 }

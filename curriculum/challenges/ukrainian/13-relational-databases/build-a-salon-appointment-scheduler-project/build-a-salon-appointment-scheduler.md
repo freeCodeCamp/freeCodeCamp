@@ -3,7 +3,7 @@ id: 5f87ac112ae598023a42df1a
 title: Створіть планувальник «Записи в салоні»
 challengeType: 13
 helpCategory: Backend Development
-url: https://github.com/freeCodeCamp/learn-salon-appointment-scheduler
+url: freeCodeCamp/learn-salon-appointment-scheduler
 dashedName: build-a-salon-appointment-scheduler
 ---
 

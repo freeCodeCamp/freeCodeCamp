@@ -1,6 +1,6 @@
 ---
 id: 5900f4251000cf542c50ff38
-title: 'Problem 185: Number Mind'
+title: '问题185：数字思维'
 challengeType: 1
 forumTopicId: 301821
 dashedName: problem-185-number-mind
@@ -10,7 +10,7 @@ dashedName: problem-185-number-mind
 
 The game Number Mind is a variant of the well known game Master Mind.
 
-Instead of coloured pegs, you have to guess a secret sequence of digits. After each guess you're only told in how many places you've guessed the correct digit. So, if the sequence was 1234 and you guessed 2036, you'd be told that you have one correct digit; however, you would NOT be told that you also have another digit in the wrong place.
+而不是彩色钉，你必须猜测一个秘密的数字序列。 在每次猜测之后，你只会告诉你猜对了多少个正确的数字。 所以，如果序列是1234并且你猜到了2036，那么你会被告知你有一个正确的数字;但是，你不会被告知你在错误的地方也有另一个数字。
 
 For instance, given the following guesses for a 5-digit secret sequence,
 

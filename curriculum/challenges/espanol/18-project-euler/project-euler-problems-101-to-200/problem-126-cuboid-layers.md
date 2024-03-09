@@ -12,7 +12,7 @@ The minimum number of cubes to cover every visible face on a cuboid measuring 3 
 
 <img class="img-responsive center-block" alt="3x2x1 cuboid covered by twenty-two 1x1x1 cubes" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px;" />
 
-If we add a second layer to this solid it would require forty-six cubes to cover every visible face, the third layer would require seventy-eight cubes, and the fourth layer would require one-hundred and eighteen cubes to cover every visible face.
+Si añadimos una segunda capa a este solido necesitaría 46 cubos para cubrir cada cara visible, la terera capa necesitaría 78 cubos, y la cuarta necesitaría 108 cubos para cubrir cada cara visible.
 
 However, the first layer on a cuboid measuring 5 x 1 x 1 also requires twenty-two cubes; similarly, the first layer on cuboids measuring 5 x 3 x 1, 7 x 2 x 1, and 11 x 1 x 1 all contain forty-six cubes.
 
@@ -24,7 +24,7 @@ Find the least value of $n$ for which $C(n) = 1000$.
 
 # --hints--
 
-`cuboidLayers()` should return `18522`.
+`cuboidLayers()` debería devolver `18522`.
 
 ```js
 assert.strictEqual(cuboidLayers(), 18522);

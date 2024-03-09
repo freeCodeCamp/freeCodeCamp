@@ -1,6 +1,6 @@
 ---
 id: 5900f3c51000cf542c50fed8
-title: 'Problem 87: Prime power triples'
+title: '問題 87: 素数の累乗の三つ組'
 challengeType: 1
 forumTopicId: 302201
 dashedName: problem-87-prime-power-triples
@@ -8,7 +8,7 @@ dashedName: problem-87-prime-power-triples
 
 # --description--
 
-The smallest number expressible as the sum of a prime square, prime cube, and prime fourth power is `28`. In fact, there are exactly four numbers below fifty that can be expressed in such a way:
+素数の 2 乗、素数の 3 乗、および素数の 4 乗の和で表せる最小数は `28` です。 このように表せる 50 未満の数はちょうど 4 つあります。
 
 <div style='margin-left: 4em;'>
   28 = 2<sup>2</sup> + 2<sup>3</sup> + 2<sup>4</sup><br>
@@ -17,41 +17,41 @@ The smallest number expressible as the sum of a prime square, prime cube, and pr
   47 = 2<sup>2</sup> + 3<sup>3</sup> + 2<sup>4</sup>
 </div><br>
 
-How many numbers below `n` can be expressed as the sum of a prime square, prime cube, and prime fourth power?
+`n` 未満の数のうち、素数の 2 乗、素数の 3 乗、および素数の 4 乗の和で表せる数はいくつありますか。
 
 # --hints--
 
-`primePowerTriples(50)` should return a number.
+`primePowerTriples(50)` は数値を返す必要があります。
 
 ```js
 assert(typeof primePowerTriples(50) === 'number');
 ```
 
-`primePowerTriples(50)` should return `4`.
+`primePowerTriples(50)` は `4` を返す必要があります。
 
 ```js
 assert.strictEqual(primePowerTriples(50), 4);
 ```
 
-`primePowerTriples(10035)` should return `684`.
+`primePowerTriples(10035)` は `684` を返す必要があります。
 
 ```js
 assert.strictEqual(primePowerTriples(10035), 684);
 ```
 
-`primePowerTriples(500000)` should return `18899`.
+`primePowerTriples(500000)` は `18899` を返す必要があります。
 
 ```js
 assert.strictEqual(primePowerTriples(500000), 18899);
 ```
 
-`primePowerTriples(5000000)` should return `138932`.
+`primePowerTriples(5000000)` は `138932` を返す必要があります。
 
 ```js
 assert.strictEqual(primePowerTriples(5000000), 138932);
 ```
 
-`primePowerTriples(50000000)` should return `1097343`.
+`primePowerTriples(50000000)` は `1097343` を返す必要があります。
 
 ```js
 assert.strictEqual(primePowerTriples(50000000), 1097343);

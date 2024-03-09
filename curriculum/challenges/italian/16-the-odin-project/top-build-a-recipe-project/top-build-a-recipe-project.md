@@ -105,7 +105,7 @@ const h2 = document.querySelectorAll('H2')[2];
 assert(h2.innerText == 'Steps');
 ```
 
-Dovresti avere un `<ol>` con i passaggi come elementi della lista `<li>`.
+You should have a `<ol>` with the steps as the list items `<li>`.
 
 ```js
 const orderedList = document.querySelectorAll('OL')[0];
@@ -201,4 +201,8 @@ assert(allAnchorsHaveHrefHash && anchorTags.length > 0);
     </ul>
   </body>
 </html>
+```
+
+```css
+
 ```

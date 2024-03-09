@@ -1,6 +1,6 @@
 ---
 id: 5ea28156e79528a9ab248f27
-title: Luhn test of credit card numbers
+title: Тест Луна для валідації кредитних карток
 challengeType: 1
 forumTopicId: 385284
 dashedName: luhn-test-of-credit-card-numbers
@@ -8,22 +8,22 @@ dashedName: luhn-test-of-credit-card-numbers
 
 # --description--
 
-The Luhn test is used by some credit card companies to distinguish valid credit card numbers from what could be a random selection of digits.
+Тест Луна використовується деякими компаніями кредитних карток, щоб відрізнити дійсні номери кредитних карток від випадкового набору цифр.
 
-Those companies using credit card numbers that can be validated by the Luhn test have numbers that pass the following test:
+Ці компанії використовують для своїх кредитних карт такі числа, які можна перевірити за допомогою тесту Луна та які проходять наступний тест:
 
 <ol>
-  <li> Reverse the order of the digits in the number.</li>
-  <li> Take the first, third, ... and every other odd digit in the reversed digits and sum them to form the partial sum s1</li>
-  <li> Taking the second, fourth ... and every other even digit in the reversed digits:</li>
+  <li> Розставте цифри в зворотному порядку.</li>
+  <li> Візьміть першу, третю та інші непарні цифри зі зворотного порядку і додайте їх, щоб утворити часткову суму s1</li>
+  <li> Візьміть другу, четверту та інші парні цифри зі зворотного порядку:</li>
     <ol>
-      <li>Multiply each digit by two and sum the digits if the answer is greater than nine to form partial sums for the even digits.</li>
-      <li>Sum the partial sums of the even digits to form s2.</li>
+      <li>Помножте кожну цифру на два та додайте цифри отриманих чисел, якщо відповідь більша за дев’ять, щоб утворити часткові суми парних чисел.</li>
+      <li>Додайте часткові суми парних цифр, щоб утворити s2.</li>
     </ol>
-  <li>If s1 + s2 ends in zero then the original number is in the form of a valid credit card number as verified by the Luhn test.</li>
+  <li>Якщо сума s1 + s2 закінчується нулем, то початкове число є форматом дійсного номера кредитної картки, перевіреного за допомогою тесту Луна.</li>
 </ol>
 
-For example, if the trial number is 49927398716:
+Наприклад, якщо числом для перевірки є 49927398716:
 
 ```bash
 Reverse the digits:
@@ -44,53 +44,53 @@ s1 + s2 = 70 which ends in zero which means that 49927398716 passes the Luhn tes
 
 # --instructions--
 
-Write a function that will validate a number with the Luhn test. Return true if it's a valid number. Otherwise, return false.
+Напишіть функцію, яка дозволить перевірити номер картки за допомогою тесту Луна. Поверніть true, якщо це дійсне число. Якщо ні — поверніть false.
 
 # --hints--
 
-`luhnTest` should be a function.
+`luhnTest` має бути функцією.
 
 ```js
 assert(typeof luhnTest === 'function');
 ```
 
-`luhnTest("4111111111111111")` should return a boolean.
+`luhnTest("4111111111111111")` має повернути булеве значення.
 
 ```js
 assert(typeof luhnTest('4111111111111111') === 'boolean');
 ```
 
-`luhnTest("4111111111111111")` should return `true`.
+`luhnTest("4111111111111111")` має повернути `true`.
 
 ```js
 assert.equal(luhnTest('4111111111111111'), true);
 ```
 
-`luhnTest("4111111111111112")` should return `false`.
+`luhnTest("4111111111111112")` має повернути `false`.
 
 ```js
 assert.equal(luhnTest('4111111111111112'), false);
 ```
 
-`luhnTest("49927398716")` should return `true`.
+`luhnTest("49927398716")` має повернути `true`.
 
 ```js
 assert.equal(luhnTest('49927398716'), true);
 ```
 
-`luhnTest("49927398717")` should return `false`.
+`luhnTest("49927398717")` має повернути `false`.
 
 ```js
 assert.equal(luhnTest('49927398717'), false);
 ```
 
-`luhnTest("1234567812345678")` should return `false`.
+`luhnTest("1234567812345678")` має повернути `false`.
 
 ```js
 assert.equal(luhnTest('1234567812345678'), false);
 ```
 
-`luhnTest("1234567812345670")` should return `true`.
+`luhnTest("1234567812345670")` має повернути `true`.
 
 ```js
 assert.equal(luhnTest('1234567812345670'), true);

@@ -1,6 +1,6 @@
 ---
 id: 5951815dd895584b06884620
-title: Circles of given radius through two points
+title: Кола з заданим радіусом через дві точки
 challengeType: 1
 forumTopicId: 302231
 dashedName: circles-of-given-radius-through-two-points
@@ -8,30 +8,30 @@ dashedName: circles-of-given-radius-through-two-points
 
 # --description--
 
-Given two points on a plane and a radius, usually two circles of given radius can be drawn through the points.
+Якщо дано дві точки на площині та радіус, то зазвичай через ці точки можна провести два кола заданого радіуса.
 
-**Exceptions:**
+**Винятки:**
 
 <ul>
-  <li>A radius of zero should be treated as never describing circles (except in the case where the points are coincident).</li>
-  <li>If the points are coincident then an infinite number of circles with the point on their circumference can be drawn, unless the radius is equal to zero as well which then collapses the circles to a point.</li>
-  <li>If the points form a diameter then return a single circle.</li>
-  <li>If the points are too far apart then no circles can be drawn.</li>
+  <li>Нульовий радіус повинен розглядатися як такий, що ніколи не описує кола (крім випадку, коли точки співпадають).</li>
+  <li>Якщо точки збігаються, то можна намалювати нескінченну кількість кіл, що проходять через цю точку на окружності (крім випадку, коли радіус також дорівнює нулю, що перетворить кола на точку).</li>
+  <li>Якщо точки утворюють діаметр, то поверніть одне коло.</li>
+  <li>Якщо точки знаходяться занадто далеко одна від одної, то неможливо намалювати кола.</li>
 </ul>
 
 # --instructions--
 
-Implement a function that takes two points and a radius and returns the two circles through those points. For each resulting circle, provide the coordinates for the center of each circle rounded to four decimal digits. Return each coordinate as an array, and coordinates as an array of arrays.
+Напишіть функцію, яка приймає дві точки і радіус та повертає два кола через ці точки. Для кожного отриманого кола надайте координати центру, округлені до чотирьох знаків після коми. Поверніть кожну координату як масив, а координати — як масив масивів.
 
-**For edge cases, return the following:**
+**В граничних випадках поверніть наступне:**
 
 <ul>
-  <li>If points are on the diameter, return one point. If the radius is also zero however, return <code>"Radius Zero"</code>.</li>
-  <li>If points are coincident, return <code>"Coincident point. Infinite solutions"</code>.</li>
-  <li>If points are farther apart than the diameter, return <code>"No intersection. Points further apart than circle diameter"</code>.</li>
+  <li>Якщо точки знаходяться на діаметрі, поверніть одну точку. Якщо радіус також дорівнює нулю, то поверніть <code>"Radius Zero"</code>.</li>
+  <li>Якщо точки збігаються, то поверніть <code>"Coincident point. Infinite solutions"</code>.</li>
+  <li>Якщо точки знаходяться одна від одної далі за діаметр, то поверніть <code>"No intersection. Points further apart than circle diameter"</code>.</li>
 </ul>
 
-**Sample inputs:**
+**Приклади вхідних даних:**
 
 <pre>      p1                p2           r
 0.1234, 0.9876    0.8765, 0.2345    2.0
@@ -43,37 +43,37 @@ Implement a function that takes two points and a radius and returns the two circ
 
 # --hints--
 
-`getCircles` should be a function.
+`getCircles` має бути функцією.
 
 ```js
 assert(typeof getCircles === 'function');
 ```
 
-`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 2.0)` should return `[[1.8631, 1.9742], [-0.8632, -0.7521]]`.
+`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 2.0)` має повернути `[[1.8631, 1.9742], [-0.8632, -0.7521]]`.
 
 ```js
 assert.deepEqual(getCircles(...testCases[0]), answers[0]);
 ```
 
-`getCircles([0.0000, 2.0000], [0.0000, 0.0000], 1.0)` should return `[0, 1]`
+`getCircles([0.0000, 2.0000], [0.0000, 0.0000], 1.0)` має повернути `[0, 1]`
 
 ```js
 assert.deepEqual(getCircles(...testCases[1]), answers[1]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` should return `Coincident point. Infinite solutions`
+`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` має повернути `Coincident point. Infinite solutions`
 
 ```js
 assert.deepEqual(getCircles(...testCases[2]), answers[2]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` should return `No intersection. Points further apart than circle diameter`
+`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` має повернути `No intersection. Points further apart than circle diameter`
 
 ```js
 assert.deepEqual(getCircles(...testCases[3]), answers[3]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 0.0)` should return `Radius Zero`
+`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 0.0)` має повернути `Radius Zero`
 
 ```js
 assert.deepEqual(getCircles(...testCases[4]), answers[4]);

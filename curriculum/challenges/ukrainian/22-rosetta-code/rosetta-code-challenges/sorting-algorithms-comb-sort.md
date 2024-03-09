@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8005
-title: Sorting algorithms/Comb sort
+title: 'Алгоритми сортування: сортування гребінцем'
 challengeType: 1
 forumTopicId: 302313
 dashedName: sorting-algorithmscomb-sort
@@ -8,42 +8,42 @@ dashedName: sorting-algorithmscomb-sort
 
 # --description--
 
-Implement a *comb sort*.
+Реалізуйте *сортування гребінцем*.
 
-The **Comb Sort** is a variant of the Bubble Sort.
+**Сортування гребінцем** є варіацією сортування бульбашкою.
 
-Like the Shell sort, the Comb Sort increases the gap used in comparisons and exchanges.
+Подібно до сортування Шелла, сортування гребінцем збільшує розрив, який використовується під час порівнянь та обмінів.
 
-Dividing the gap by $(1-e^{-\\varphi})^{-1} \\approx 1.247330950103979$ works best, but 1.3 may be more practical.
+Розрив краще поділити на $(1-e^{-\\varphi})^{-1} \\approx 1.247330950103979$, але 1.3 може бути практичнішим.
 
-Some implementations use the insertion sort once the gap is less than a certain amount.
+Деякі реалізації використовують сортування включенням, якщо розрив стає меншим за певну величину.
 
-Variants:
+Варіанти:
 
 <ul>
-  <li>Combsort11 makes sure the gap ends in (11, 8, 6, 4, 3, 2, 1), which is significantly faster than the other two possible endings.</li>
-  <li>Combsort with different endings changes to a more efficient sort when the data is almost sorted (when the gap is small). Comb sort with a low gap isn't much better than the Bubble Sort.</li>
+  <li>Combsort11 переконується, що розрив закінчується на (11, 8, 6, 4, 3, 2, 1), що значно швидше, ніж два інші можливих закінчення.</li>
+  <li>Combsort з різними закінченнями переходить до більш ефективного сортування, коли дані практично відсортовані (якщо розрив малий). Сортування гребінцем з малим розривом не набагато краще за сортування бульбашкою.</li>
 </ul>
 
-Pseudocode:
+Псевдокод:
 
 <pre><b>function</b> combsort(<b>array</b> input)
-  gap := input<b>.size</b> <i>//initialize gap size</i>
+  gap := input<b>.size</b> <i>// ініціалізуйте розмір розриву</i>
   <b>loop until</b> gap = 1 <b>and</b> swaps = 0
-    <i>//update the gap value for a next comb. Below is an example</i>
+    <i>// оновіть значення розриву для наступного гребінця. Приклад знизу</i>
     gap := int(gap / 1.25)
     <b>if</b> gap &#x3C; 1 
-      <i>//minimum gap is 1</i>
+      <i>// мінімальний розрив дорівнює 1</i>
       gap := 1
     <b>end if</b>
     i := 0
-    swaps := 0 <i>//see <a href='https://rosettacode.org/wiki/Sorting_algorithms/Bubble_sort' target='_blank'>Bubble Sort</a> for an explanation</i>
-    <i>//a single "comb" over the input list</i>
-    <b>loop until</b> i + gap >= input<b>.size</b> <i>//see <a href='https://rosettacode.org/wiki/Sorting_algorithms/Shell_sort' target='_blank'>Shell sort</a> for similar idea</i>
+    swaps := 0 <i>// див. <a href='https://rosettacode.org/wiki/Sorting_algorithms/Bubble_sort' target='_blank'>сортування бульбашкою</a> для пояснення</i>
+    <i>// єдиний «гребінець» вхідного списку</i>
+    <b>loop until</b> i + gap >= input<b>.size</b> <i>// див. <a href='https://rosettacode.org/wiki/Sorting_algorithms/Shell_sort' target='_blank'>сортування Шелла</a> для схожої ідеї</i>
       <b>if</b> input[i] > input[i+gap]
         <b>swap</b>(input[i], input[i+gap])
-        swaps := 1 <i>// Flag a swap has occurred, so the</i>
-            <i>// list is not guaranteed sorted</i>
+        swaps := 1 <i>// позначте, що відбувся обмін, тому</i>
+            <i>// негарантовано, що список відсортований</i>
       <b>end if</b>
       i := i + 1
     <b>end loop</b>
@@ -53,41 +53,41 @@ Pseudocode:
 
 # --instructions--
 
-Write a function that sorts a given array using Comb sort.
+Напишіть функцію, яка впорядкує даний масив, використовуючи сортування гребінцем.
 
 # --hints--
 
-`combSort` should be a function.
+`combSort` має бути функцією.
 
 ```js
 assert(typeof combSort == 'function');
 ```
 
-`combSort([25, 32, 12, 7, 20])` should return an array.
+`combSort([25, 32, 12, 7, 20])` має повернути масив.
 
 ```js
 assert(Array.isArray(combSort([25, 32, 12, 7, 20])));
 ```
 
-`combSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`combSort([25, 32, 12, 7, 20])` має повернути `[7, 12, 20, 25, 32]`.
 
 ```js
 assert.deepEqual(combSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`combSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`combSort([38, 45, 35, 8, 13])` має повернути `[8, 13, 35, 38, 45]`.
 
 ```js
 assert.deepEqual(combSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`combSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`combSort([43, 36, 20, 34, 24])` має повернути `[20, 24, 34, 36, 43]`.
 
 ```js
 assert.deepEqual(combSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`combSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`combSort([12, 33, 26, 18, 1, 16, 38])` має повернути `[1, 12, 16, 18, 26, 33, 38]`.
 
 ```js
 assert.deepEqual(combSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -101,7 +101,7 @@ assert.deepEqual(combSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`combSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`combSort([3, 39, 48, 16, 1, 4, 29])` має повернути `[1, 3, 4, 16, 29, 39, 48]`.
 
 ```js
 assert.deepEqual(combSort([3, 39, 48, 16, 1, 4, 29]), [

@@ -1,6 +1,6 @@
 ---
 id: 5e4ce2f5ac708cc68c1df261
-title: Linear congruential generator
+title: Лінійний конгруентний генератор
 challengeType: 1
 forumTopicId: 385266
 dashedName: linear-congruential-generator
@@ -8,65 +8,65 @@ dashedName: linear-congruential-generator
 
 # --description--
 
-A linear congruential generator (LCG) is an <em>algorithm</em> that yields a sequence of pseudo-randomized numbers calculated with a discontinuous piecewise linear equation. All linear congruential generators use this formula:
+Лінійний конгруентний генератор (LCG) — це <em>алгоритм</em>, який генерує послідовність псевдовипадкових чисел, обчислених за допомогою розривного кусково-лінійного рівняння. Всі лінійні конгруентні генератори використовують цю формулу:
 
 $$r_{n + 1} = (a \times r_n + c) \bmod m$$
 
-Where:
+Де:
 
 <ul>
-<li>$ r_0 $ is a seed.</li>
-<li>$r_1$, $r_2$, $r_3$, ..., are the random numbers.</li>
-<li>$a$, $c$, $m$ are constants.</li>
+<li>$ r_0 $ є початковим числом.</li>
+<li>$r_1$, $r_2$, $r_3$, ... є випадковими числами.</li>
+<li>$a$, $c$, $m$ є константами.</li>
 </ul>
 
-If one chooses the values of $a$, $c$ and $m$ with care, then the generator produces a uniform distribution of integers from $0$ to $m - 1$.
+Якщо ретельно вибрати значення $a$, $c$ та $m$, то генератор утворюватиме рівномірний розподіл цілих чисел від $0$ до $m - 1$.
 
-<abbr title="linear congruential generator">LCG</abbr> numbers have poor quality. $r_n$ and $r\_{n + 1}$ are not independent, as true random numbers would be. Anyone who knows $r_n$ can predict $r\_{n + 1}$, therefore <abbr title="linear congruential generator">LCG</abbr> is not cryptographically secure. The <abbr title="linear congruential generator">LCG</abbr> is still good enough for simple tasks like Miller-Rabin primality test, or FreeCell deals. Among the benefits of the <abbr title="linear congruential generator">LCG</abbr>, one can easily reproduce a sequence of numbers, from the same $r_0$. One can also reproduce such sequence with a different programming language, because the formula is so simple.
+Числа <abbr title="linear congruential generator">LCG</abbr> мають низьку якість. $r_n$ та $r\_{n + 1}$ не є незалежними, як справжні випадкові числа. Будь-хто, хто знає $r_n$, може передбачити $r\_{n + 1}$, тому <abbr title="linear congruential generator">LCG</abbr> не є криптографічно безпечним. Проте <abbr title="linear congruential generator">LCG</abbr> добре справляється з простими завданнями, такими як тест простоти Міллера-Рабіна або роздача в FreeCell. Однією з переваг <abbr title="linear congruential generator">LCG</abbr> є те, що можна легко відтворити послідовність чисел з того самого $r_0$. Формула настільки проста, що таку послідовність можна відтворити іншою мовою програмування.
 
 # --instructions--
 
-Write a function that takes $r_0,a,c,m,n$ as parameters and returns $r_n$.
+Напишіть функцію, яка приймає $r_0,a,c,m,n$ як параметри та повертає $r_n$.
 
 # --hints--
 
-`linearCongGenerator` should be a function.
+`linearCongGenerator` має бути функцією.
 
 ```js
 assert(typeof linearCongGenerator == 'function');
 ```
 
-`linearCongGenerator(324, 1145, 177, 2148, 3)` should return a number.
+`linearCongGenerator(324, 1145, 177, 2148, 3)` має повернути число.
 
 ```js
 assert(typeof linearCongGenerator(324, 1145, 177, 2148, 3) == 'number');
 ```
 
-`linearCongGenerator(324, 1145, 177, 2148, 3)` should return `855`.
+`linearCongGenerator(324, 1145, 177, 2148, 3)` має повернути `855`.
 
 ```js
 assert.equal(linearCongGenerator(324, 1145, 177, 2148, 3), 855);
 ```
 
-`linearCongGenerator(234, 11245, 145, 83648, 4)` should return `1110`.
+`linearCongGenerator(234, 11245, 145, 83648, 4)` має повернути `1110`.
 
 ```js
 assert.equal(linearCongGenerator(234, 11245, 145, 83648, 4), 1110);
 ```
 
-`linearCongGenerator(85, 11, 1234, 214748, 5)` should return `62217`.
+`linearCongGenerator(85, 11, 1234, 214748, 5)` має повернути `62217`.
 
 ```js
 assert.equal(linearCongGenerator(85, 11, 1234, 214748, 5), 62217);
 ```
 
-`linearCongGenerator(0, 1103515245, 12345, 2147483648, 1)` should return `12345`.
+`linearCongGenerator(0, 1103515245, 12345, 2147483648, 1)` має повернути `12345`.
 
 ```js
 assert.equal(linearCongGenerator(0, 1103515245, 12345, 2147483648, 1), 12345);
 ```
 
-`linearCongGenerator(0, 1103515245, 12345, 2147483648, 2)` should return `1406932606`.
+`linearCongGenerator(0, 1103515245, 12345, 2147483648, 2)` має повернути `1406932606`.
 
 ```js
 assert.equal(

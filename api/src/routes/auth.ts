@@ -79,28 +79,6 @@ export const devLoginCallback: FastifyPluginCallback = (
 };
 
 /**
- * Route handler for Auth0 authentication.
- *
- * @param fastify The Fastify instance.
- * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
- * @param done Callback to signal that the logic has completed.
- */
-// TODO: 1) use POST 2) make sure we prevent login CSRF
-export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
-  fastify.addHook('onRequest', fastify.authenticate);
-
-  fastify.get('/auth0/callback', async req => {
-    const email = await getEmailFromAuth0(req);
-
-    const { id } = await findOrCreateUser(fastify, email);
-    req.session.user = { id };
-    await req.session.save();
-  });
-
-  done();
-};
-
-/**
  * Route handler for Mobile authentication.
  *
  * @param fastify The Fastify instance.

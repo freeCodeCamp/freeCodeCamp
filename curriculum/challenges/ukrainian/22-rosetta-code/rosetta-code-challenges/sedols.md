@@ -1,6 +1,6 @@
 ---
 id: 59d9c6bc214c613ba73ff012
-title: SEDOLs
+title: SEDOL
 challengeType: 1
 forumTopicId: 302305
 dashedName: sedols
@@ -8,9 +8,9 @@ dashedName: sedols
 
 # --description--
 
-<abbr title="Stock Exchange Daily Official List">SEDOL</abbr> is a list of securities identification numbers issued by the London Stock Exchange.
+<abbr title="Stock Exchange Daily Official List">SEDOL</abbr> — це список ідентифікаційних кодів цінних паперів, виданий Лондонською фондовою біржею.
 
-For each number list of 6-digit <abbr title="Stock Exchange Daily Official List">SEDOL</abbr>s, calculate and append the checksum digit. That is, given the input string on the left, your function should return the corresponding string on the right:
+Розрахуйте та додайте цифру контрольної суми до кожного списку з 6-значними кодами <abbr title="Stock Exchange Daily Official List">SEDOL</abbr>. Тобто, якщо дано вхідний рядок зліва, функція має повернути відповідний рядок справа:
 
 <pre>
 710889 => 7108899
@@ -26,35 +26,35 @@ B0YBKT => B0YBKT7
 B00030 => B000300
 </pre>
 
-Check that each input is correctly formed, especially with respect to valid characters allowed in a SEDOL string. Your function should return `null` on an invalid input.
+Перевірте, щоб вхідні дані були правильно сформовані (зверніть особливу увагу на допустимі символи в рядку SEDOL). Функція має повернути `null`, якщо вхідні дані недійсні.
 
 # --hints--
 
-`sedol` should be a function.
+`sedol` має бути функцією.
 
 ```js
 assert(typeof sedol === 'function');
 ```
 
-`sedol('a')` should return null.
+`sedol('a')` має повернути `null`.
 
 ```js
 assert(sedol('a') === null);
 ```
 
-`sedol('710889')` should return '7108899'.
+`sedol('710889')` має повернути `'7108899'`.
 
 ```js
 assert(sedol('710889') === '7108899');
 ```
 
-`sedol('BOATER')` should return null.
+`sedol('BOATER')` має повернути `null`.
 
 ```js
 assert(sedol('BOATER') === null);
 ```
 
-`sedol('228276')` should return '2282765'.
+`sedol('228276')` має повернути `'2282765'`.
 
 ```js
 assert(sedol('228276') === '2282765');
@@ -67,7 +67,7 @@ assert(sedol('228276') === '2282765');
 ```js
 function sedol(input) {
   const checkSum = 0
-  
+
   return checkSum;
 }
 ```

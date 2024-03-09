@@ -8,7 +8,7 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http
 
 # --description--
 
-注意点として、このプロジェクトは <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> にあるスタータープロジェクトをベースに構築されているか、または <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> からクローンされています。
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Mocha では、`chai-http` というプラグインを使用して API エンドポイントへの呼び出しのような非同期操作をテストできます。
 
@@ -42,13 +42,13 @@ However, the tests that run when you submit the link to your project require you
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with no name'` test (`// #1`) to assert the `status` and the `text` of the response to make the test pass. Do not alter the arguments passed to the asserts.
+`tests/2_functional-tests.js` 内で、`'Test GET /hello with no name'` テスト (`// #1`) を変更し、レスポンスの `status` と `text` をアサートしてテストが成功するようにしてください。 アサートに渡された引数は変更しないでください。
 
-There should be no URL query. Without a name URL query, the endpoint responds with `hello Guest`.
+URL クエリはなしとしてください。 名前 (name) の URL クエリがない場合、エンドポイントは `hello Guest` で応答します。
 
 # --hints--
 
-All tests should pass
+すべてのテストが成功する必要があります。
 
 ```js
 (getUserInput) =>
@@ -62,7 +62,7 @@ All tests should pass
   );
 ```
 
-You should test for `res.status` == 200
+`res.status` == 200 をテストする必要があります。
 
 ```js
 (getUserInput) =>
@@ -78,7 +78,7 @@ You should test for `res.status` == 200
   );
 ```
 
-You should test for `res.text` == `'hello Guest'`
+`res.text` == `'hello Guest'` をテストする必要があります。
 
 ```js
 (getUserInput) =>

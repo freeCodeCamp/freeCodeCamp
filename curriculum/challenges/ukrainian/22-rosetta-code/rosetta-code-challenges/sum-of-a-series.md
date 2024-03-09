@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8041
-title: Sum of a series
+title: Сума множини
 challengeType: 1
 forumTopicId: 302333
 dashedName: sum-of-a-series
@@ -8,51 +8,51 @@ dashedName: sum-of-a-series
 
 # --description--
 
-Compute the **n**<sup>th</sup> term of a <em>series</em>, i.e. the sum of the **n** first terms of the corresponding <em>sequence</em>. Informally this value, or its limit when **n** tends to infinity, is also called the *sum of the series*, thus the title of this task. For this task, use: $S_n = \displaystyle\sum_{k=1}^n \frac{1}{k^2}$.
+Обчисліть **n**<sup>-ий</sup> член <em>множини</em>, тобто суму перших **n** членів відповідної <em>послідовності</em>. Неформально таке значення (або його обмеження, коли **n** прагне до нескінченності) називають *сумою множин*, звідси й назва завдання. Для цього завдання використайте: $S_n = \displaystyle\sum_{k=1}^n \frac{1}{k^2}$.
 
 # --instructions--
 
-Write a function that take $a$ and $b$ as parameters and returns the sum of $a^{th}$ to $b^{th}$ members of the sequence.
+Напишіть функцію, яка приймає $a$ та $b$ як параметри і повертає суму членів послідовності від $a$ до $b$.
 
 # --hints--
 
-`sum` should be a function.
+`sum` має бути функцією.
 
 ```js
 assert(typeof sum == 'function');
 ```
 
-`sum(1, 100)` should return a number.
+`sum(1, 100)` має повернути число.
 
 ```js
 assert(typeof sum(1, 100) == 'number');
 ```
 
-`sum(1, 100)` should return `1.6349839001848923`.
+`sum(1, 100)` має повернути `1.6349839001848923`.
 
 ```js
 assert.equal(sum(1, 100), 1.6349839001848923);
 ```
 
-`sum(33, 46)` should return `0.009262256361481223`.
+`sum(33, 46)` має повернути `0.009262256361481223`.
 
 ```js
 assert.equal(sum(33, 46), 0.009262256361481223);
 ```
 
-`sum(21, 213)` should return `0.044086990748706555`.
+`sum(21, 213)` має повернути `0.044086990748706555`.
 
 ```js
 assert.equal(sum(21, 213), 0.044086990748706555);
 ```
 
-`sum(11, 111)` should return `0.08619778593108679`.
+`sum(11, 111)` має повернути `0.08619778593108679`.
 
 ```js
 assert.equal(sum(11, 111), 0.08619778593108679);
 ```
 
-`sum(1, 10)` should return `1.5497677311665408`.
+`sum(1, 10)` має повернути `1.5497677311665408`.
 
 ```js
 assert.equal(sum(1, 10), 1.5497677311665408);

@@ -1,6 +1,6 @@
 ---
 id: 597f1e7fbc206f0e9ba95dc4
-title: Factors of an integer
+title: 整数因子
 challengeType: 1
 forumTopicId: 302265
 dashedName: factors-of-an-integer
@@ -10,7 +10,7 @@ dashedName: factors-of-an-integer
 
 Write a function that returns the factors of a positive integer as an array.
 
-These factors are the positive integers by which the number being factored can be divided to yield a positive integer result.
+编写一个返回正整数因子的函数。
 
 # --hints--
 

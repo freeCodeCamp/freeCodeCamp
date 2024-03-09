@@ -12,7 +12,7 @@ Consider the following "magic" 3-gon ring, filled with the numbers 1 to 6, and e
 
 <img class="img-responsive center-block" alt="a completed example of a 3-gon ring" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px;" />
 
-Working **clockwise**, and starting from the group of three with the numerically lowest external node (4,3,2 in this example), each solution can be described uniquely. For example, the above solution can be described by the set: 4,3,2; 6,2,1; 5,1,3.
+Working **clockwise**, and starting from the group of three with the numerically lowest external node (4,3,2 in this example), each solution can be described uniquely. 例如，上述解決方案可以通過集合來描述：4,3,2; 6,2,1; 5,1,3。
 
 It is possible to complete the ring with four different totals: 9, 10, 11, and 12. There are eight solutions in total.
 

@@ -1,6 +1,6 @@
 ---
 id: 595608ff8bcd7a50bd490181
-title: Hailstone sequence
+title: Сіракузька послідовність
 challengeType: 1
 forumTopicId: 302279
 dashedName: hailstone-sequence
@@ -8,48 +8,48 @@ dashedName: hailstone-sequence
 
 # --description--
 
-The Hailstone sequence of numbers can be generated from a starting positive integer, `n` by:
+Сіракузьку послідовність можна утворити з початкового натурального числа `n` за такими правилами:
 
-- If `n` is `1` then the sequence ends
-- If `n` is `even` then the next `n` of the sequence `= n/2`
-- If `n` is `odd` then the next `n` of the sequence `= (3 * n) + 1`
+- Якщо `n` дорівнює `1`, то послідовність закінчується
+- Якщо `n` є `парним`, то наступне значення `n = n/2`
+- Якщо `n` є `непарним`, то наступне значення `n = (3 * n) + 1`
 
-The (unproven) Collatz conjecture is that the hailstone sequence for any starting number always terminates.
+Гіпотеза Коллатца (недоведена) полягає в тому, що Сіракузька послідовність з будь-яким початковим числом завжди закінчується.
 
-The hailstone sequence is also known as hailstone numbers (because the values are usually subject to multiple descents and ascents like hailstones in a cloud), or as the Collatz sequence.
+Сіракузька послідовність також відома як числа-градини (оскільки значення зазвичай піддаються декільком зниженням і зростанням, що нагадує рух граду) або послідовність Коллатца.
 
 # --instructions--
 
-1. Create a routine to generate the hailstone sequence for a number
-2. Your function should return an array with the number less than `limit` which has the longest hailstone sequence and that sequence's length. (But don't show the actual sequence!)
+1. Створіть процедуру для генерації Сіракузької послідовності з числа
+2. Функція має повернути масив з числом меншим за `limit`, яке має найдовшу Сіракузьку послідовність, та довжиною цієї послідовності. (Але не показуйте саму послідовність!)
 
 # --hints--
 
-`hailstoneSequence` should be a function.
+`hailstoneSequence` має бути функцією.
 
 ```js
 assert(typeof hailstoneSequence === 'function');
 ```
 
-`hailstoneSequence(30)` should return an array.
+`hailstoneSequence(30)` має повернути масив.
 
 ```js
 assert(Array.isArray(hailstoneSequence(30)));
 ```
 
-`hailstoneSequence(30)` should return `[27, 112]`.
+`hailstoneSequence(30)` має повернути `[27, 112]`.
 
 ```js
 assert.deepEqual(hailstoneSequence(30), [27, 112]);
 ```
 
-`hailstoneSequence(50000)` should return `[35655, 324]`.
+`hailstoneSequence(50000)` має повернути `[35655, 324]`.
 
 ```js
 assert.deepEqual(hailstoneSequence(50000), [35655, 324]);
 ```
 
-`hailstoneSequence(100000)` should return `[77031, 351]`.
+`hailstoneSequence(100000)` має повернути `[77031, 351]`.
 
 ```js
 assert.deepEqual(hailstoneSequence(100000), [77031, 351]);

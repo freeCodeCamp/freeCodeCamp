@@ -8,14 +8,9 @@ dashedName: medical-data-visualizer
 
 # --description--
 
-You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-medical-data-visualizer/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
-
-
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+وما زلنا نطور الجزء التعليمي التفاعلي من منهج Python. الآن، إليك بعض مقاطع الفيديو على قناة اليوتيوب الخاصة بي freeCodeCamp.org التي ستعلمك كلّما تحتاج إليه لإكمال هذا المشروع:
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
@@ -65,19 +60,17 @@ Use the data to complete the following tasks in `medical_data_visualizer.py`:
 
 Any time a variable is set to `None`, make sure to set it to the correct code.
 
-Unit tests are written for you under `test_module.py`.
+## التطوير
 
-## Development
+Write your code in `medical_data_visualizer.py`. For development, you can use `main.py` to test your code.
 
-For development, you can use `main.py` to test your functions. Click the "run" button and `main.py` will run.
+## الاختبار
 
-## Testing
+The unit tests for this project are in `test_module.py`. قمنا باستيراد الاختبارات من `test_module.py` إلى `main.py` من أجل تسهيل العملية لك.
 
-We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
+## التسليم
 
-## Submitting
-
-Copy your project's URL and submit it to freeCodeCamp.
+انسخ عنوان URL الخاص بمشروعك وأرسله إلى freeCodeCamp.
 
 # --hints--
 

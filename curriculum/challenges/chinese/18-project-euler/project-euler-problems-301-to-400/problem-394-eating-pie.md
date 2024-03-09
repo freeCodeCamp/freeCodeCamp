@@ -1,6 +1,6 @@
 ---
 id: 5900f4f71000cf542c510009
-title: 'Problem 394: Eating pie'
+title: '问题 394：吃馅饼'
 challengeType: 1
 forumTopicId: 302059
 dashedName: problem-394-eating-pie
@@ -10,7 +10,7 @@ dashedName: problem-394-eating-pie
 
 Jeff eats a pie in an unusual way.
 
-The pie is circular. He starts with slicing an initial cut in the pie along a radius.
+馅饼是圆形的。 他首先沿着半径切割馅饼中的初始切口。
 
 While there is at least a given fraction $F$ of pie left, he performs the following procedure:
 

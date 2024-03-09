@@ -1,11 +1,11 @@
 import React from 'react';
-import { Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { MenuItem } from './menu-item/menu-item';
-import { Dropdown, DropdownProps } from './drop-down';
+import { Dropdown } from './drop-down';
 const story = {
   title: 'Example/Dropdown',
   component: Dropdown
-};
+} satisfies Meta<typeof Dropdown>;
 
 const DropDownChildren = () => (
   <>
@@ -31,41 +31,48 @@ const DropUpChildren = () => (
   </>
 );
 
-export const Menus = (): JSX.Element => (
-  <div
-    style={{
-      height: '220px',
-      width: '220px',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'flex-start'
-    }}
-  >
+export const Menus: StoryObj<typeof Dropdown> = {
+  decorators: [
+    Story => (
+      <div
+        style={{
+          height: '220px',
+          width: '220px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start'
+        }}
+      >
+        {Story()}
+      </div>
+    )
+  ],
+  render: () => (
     <Dropdown>
       <DropDownChildren />
     </Dropdown>
-  </div>
-);
-
-const UpTemplate: Story<DropdownProps> = args => {
-  return (
-    <div
-      style={{
-        height: '220px',
-        width: '220px',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-end'
-      }}
-    >
-      <Dropdown {...args} />
-    </div>
-  );
+  )
 };
 
-export const DropUp = UpTemplate.bind({});
-DropUp.args = {
-  children: <DropUpChildren />,
-  dropup: true
+export const DropUp: StoryObj<typeof Dropdown> = {
+  decorators: [
+    Story => (
+      <div
+        style={{
+          height: '220px',
+          width: '220px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-end'
+        }}
+      >
+        {Story()}
+      </div>
+    )
+  ],
+  args: {
+    children: <DropUpChildren />,
+    dropup: true
+  }
 };
 export default story;

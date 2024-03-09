@@ -23,7 +23,7 @@ import {
   Context,
   Source
 } from './frame';
-import createWorker from './worker-executor';
+import { WorkerExecutor } from './worker-executor';
 
 interface ChallengeFile extends PropTypesChallengeFile {
   source: string;
@@ -48,15 +48,18 @@ interface BuildOptions {
   usesTestRunner?: boolean;
 }
 
-interface WorkerConfig {
-  terminateWorker: boolean;
-  testEvaluator: string;
-}
-
 const { filename: jsTestEvaluator } = jsTestEvaluatorData;
 const { filename: pyTestEvaluator } = pyTestEvaluatorData;
 
 const frameRunnerSrc = `/js/${frameRunnerData.filename}.js`;
+
+const pythonWorkerExecutor = new WorkerExecutor(pyTestEvaluator, {
+  terminateWorker: false,
+  maxWorkers: 1
+});
+const jsWorkerExecutor = new WorkerExecutor(jsTestEvaluator, {
+  terminateWorker: true
+});
 
 type ApplyFunctionProps = (file: ChallengeFile) => Promise<ChallengeFile>;
 
@@ -120,7 +123,8 @@ const buildFunctions = {
   [challengeTypes.pythonProject]: buildBackendChallenge,
   [challengeTypes.multifileCertProject]: buildDOMChallenge,
   [challengeTypes.colab]: buildBackendChallenge,
-  [challengeTypes.python]: buildPythonChallenge
+  [challengeTypes.python]: buildPythonChallenge,
+  [challengeTypes.multifilePythonCertProject]: buildPythonChallenge
 };
 
 export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
@@ -148,7 +152,8 @@ const testRunners = {
   [challengeTypes.backend]: getDOMTestRunner,
   [challengeTypes.pythonProject]: getDOMTestRunner,
   [challengeTypes.python]: getPyTestRunner,
-  [challengeTypes.multifileCertProject]: getDOMTestRunner
+  [challengeTypes.multifileCertProject]: getDOMTestRunner,
+  [challengeTypes.multifilePythonCertProject]: getPyTestRunner
 };
 // TODO: Figure out and (hopefully) simplify the return type.
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -172,7 +177,7 @@ function getJSTestRunner(
   return getWorkerTestRunner(
     { build, sources },
     { proxyLogger, removeComments },
-    { testEvaluator: jsTestEvaluator, terminateWorker: true }
+    jsWorkerExecutor
   );
 }
 
@@ -183,14 +188,14 @@ function getPyTestRunner(
   return getWorkerTestRunner(
     { build, sources },
     { proxyLogger, removeComments },
-    { testEvaluator: pyTestEvaluator, terminateWorker: false }
+    pythonWorkerExecutor
   );
 }
 
 function getWorkerTestRunner(
   { build, sources }: Pick<BuildChallengeData, 'build' | 'sources'>,
   { proxyLogger, removeComments }: TestRunnerConfig,
-  { testEvaluator, terminateWorker }: WorkerConfig
+  workerExecutor: WorkerExecutor
 ) {
   const code = {
     contents: sources.index,
@@ -198,20 +203,16 @@ function getWorkerTestRunner(
     original: sources.original
   };
 
-  const testWorker = createWorker(testEvaluator, { terminateWorker });
-
-  type CreateWorker = ReturnType<typeof createWorker>;
-
-  interface TestWorker extends CreateWorker {
+  interface TestWorkerExecutor extends WorkerExecutor {
     on: (event: string, listener: (...args: string[]) => void) => void;
     done: () => void;
   }
 
   return (testString: string, testTimeout: number, firstTest = true) => {
-    const result = testWorker.execute(
+    const result = workerExecutor.execute(
       { build, testString, code, sources, firstTest, removeComments },
       testTimeout
-    ) as TestWorker;
+    ) as TestWorkerExecutor;
 
     result.on('LOG', proxyLogger);
     return result.done;
@@ -323,7 +324,10 @@ export function buildPythonChallenge({
         .then(checkFilesErrors)
         // Unlike the DOM challenges, there's no need to embed the files in HTML
         .then(challengeFiles => ({
-          challengeType: challengeTypes.python,
+          challengeType:
+            challengeFiles[0].editableRegionBoundaries?.length === 0
+              ? challengeTypes.multifilePythonCertProject
+              : challengeTypes.python,
           sources: buildSourceMap(challengeFiles)
         }))
     );
@@ -394,6 +398,7 @@ export function challengeHasPreview({ challengeType }: ChallengeMeta): boolean {
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
     challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
     challengeType === challengeTypes.python
   );
 }

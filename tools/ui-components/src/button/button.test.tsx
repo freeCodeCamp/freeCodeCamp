@@ -33,14 +33,14 @@ describe('<Button />', () => {
     ).toHaveAttribute('type', 'submit');
   });
 
-  it('should trigger the onClick prop on click', () => {
+  it('should trigger the onClick prop on click if the component is a button element', async () => {
     const onClick = jest.fn();
 
     render(<Button onClick={onClick}>Hello world</Button>);
 
     const button = screen.getByRole('button', { name: /hello world/i });
 
-    userEvent.click(button);
+    await userEvent.click(button);
 
     expect(onClick).toHaveBeenCalledTimes(1);
   });
@@ -56,7 +56,7 @@ describe('<Button />', () => {
     expect(button).not.toHaveAttribute('disabled', 'true');
   });
 
-  it('should not trigger the onClick prop if the button is disabled', () => {
+  it('should not trigger the onClick prop if the button is disabled', async () => {
     const onClick = jest.fn();
 
     render(
@@ -66,10 +66,9 @@ describe('<Button />', () => {
     );
 
     const button = screen.getByRole('button', { name: /hello world/i });
+    await userEvent.click(button);
 
-    userEvent.click(button);
-
-    expect(onClick).not.toBeCalled();
+    expect(onClick).not.toHaveBeenCalled();
   });
 
   it('should render an anchor element if the `href` prop is defined', () => {
@@ -98,5 +97,21 @@ describe('<Button />', () => {
     expect(button).toHaveAttribute('aria-disabled', 'true');
     // Ensure that a link element is not rendered
     expect(link).not.toBeInTheDocument();
+  });
+
+  it('should trigger the onClick prop on click if the component is an anchor element', async () => {
+    const onClick = jest.fn();
+
+    render(
+      <Button href='https://www.freecodecamp.org' onClick={onClick}>
+        freeCodeCamp
+      </Button>
+    );
+
+    const link = screen.getByRole('link', { name: /freeCodeCamp/i });
+
+    await userEvent.click(link);
+
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 });

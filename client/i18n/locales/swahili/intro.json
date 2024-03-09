@@ -194,7 +194,7 @@
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "Pata Maelezo Zaidi Kuhusu CSS Pseudo Selectors Kwa Kuunda Balance Sheet",
+        "title": "Learn More About CSS Pseudo Selectors by Building A Balance Sheet",
         "intro": [
           "Unaweza kutumia CSS pseudo selectors kubadilisha vipengee mahususi vya HTML.",
           "Katika kozi hii, utaunda laha kwa kutumia pseudo selectors. Utajifunza jinsi ya kubadilisha mtindo wa kipengele unapoelea juu yake kwa kutumia kipanya chako, na kuanzisha matukio mengine kwenye ukurasa wako wa tovuti."
@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "Algorithms za JavaScript na Data Structures",
+    "title": "Legacy JavaScript Algorithms and Data Structures",
     "intro": [
       "Ingawa HTML na CSS hudhibiti maudhui na mtindo wa ukurasa, JavaScript inatumika kuifanya ishirikiane. Katika Uthibitishaji wa Algorithm ya JavaScript na Miundo ya Data, utajifunza misingi ya JavaScript ikijumuisha variables, arrays, objects, loops, na functions.",
       "Baada ya kuelewa misingi yake, utatumia maarifa hayo kwa kuunda algoriti ili kudhibiti strings, kurekebisha nambari, na hata kukokotoa mzingo wa Kituo cha Kimataifa cha Anga cha Juu.",
@@ -366,7 +366,7 @@
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
-        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
+        "title": "Learn Modern JavaScript Methods by Building Football Team Cards",
         "intro": [
           "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
           "This project will cover concepts like switch statements, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method, and more."
@@ -388,7 +388,7 @@
         ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "title": "Learn Fetch and Promises by Building an fCC Authors Page",
         "intro": [
           "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
           "This freeCodeCamp authors page project will show you how to use the fetch method, then dynamically update the DOM to display the fetched data.",
@@ -750,8 +750,8 @@
   "scientific-computing-with-python": {
     "title": "Scientific Computing with Python (Beta)",
     "intro": [
-      "Python ni mojawapo ya lugha maarufu zaidi za programu leo. Unaweza kuitumia kwa kila kitu kuanzia uandishi wa kimsingi hadi ujifunzaji wa mashine.",
-      "Katika cheti hiki cha Scientific Computing na Python, utajifunza misingi ya Python kama vile variables, loops, conditionals, na functions. Kisha utaongeza haraka miundo changamano ya data, mitandao, hifadhidata za uhusiano, na taswira ya data."
+      "The Scientific Computing with Python (Beta) curriculum will equip you with the skills to analyze and manipulate data using Python, a powerful and versatile programming language. You'll learn key concepts like data structures, algorithm, Object Oriented Programming, and how to perform complex calculations using a variety of tools.",
+      "This comprehensive course will guide you through the fundamentals of scientific computing, including data structures, and algorithms."
     ],
     "note": "",
     "blocks": {
@@ -770,7 +770,7 @@
         ]
       },
       "learn-list-comprehension-by-building-a-case-converter-program": {
-        "title": "Learn Python List Comprehension By Building a Case Converter Program",
+        "title": "Learn Python List Comprehension by Building a Case Converter Program",
         "intro": [
           "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the `.append()` list method.",
           "In this project, you'll write a program that takes a string formatted in Camel Case or Pascal Case, then converts it into Snake Case.",
@@ -1110,7 +1110,7 @@
     }
   },
   "the-odin-project": {
-    "title": "The Odin Project (Beta)",
+    "title": "The Odin Project - freeCodeCamp Remix (Beta)",
     "intro": [
       "The Odin Project was created in 2013 by a lone developer, Erik Trautman. Over the years, an open source community has sprung up to maintain and expand the project.",
       "freeCodeCamp has expanded upon the open source curriculum to make it run interactively in the browser, with tests to evaluate your code and ensure you've understood key concepts.",
@@ -1177,6 +1177,12 @@
         "title": "Learn the difference between Block and Inline",
         "intro": [
           "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
+        ]
+      },
+      "top-learn-variables-and-operators": {
+        "title": "Learn Variables and Operators",
+        "intro": [
+          "Get started with JavaScript by learning about variables and operators. This course covers the fundamentals of JavaScript programming, including data types, operators, and variable declarations."
         ]
       }
     }
@@ -1316,15 +1322,21 @@
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Learn How to Talk About a Typical Workday and Tasks",
-        "intro": ["Learn about a typical workday."]
+        "intro": [
+          "In this course, you'll learn how to talk about your workday and the tasks that you perform in the workplace and how to share them with others. It mainly focuses on the structures used for describing your activities and task-related vocabulary."
+        ]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "Learn How to Discuss Your Morning or Evening Routine",
-        "intro": ["Learn about routines."]
+        "intro": [
+          "In this course, you'll learn how to talk about details of your routine and share them with someone else. It mainly focuses on the structures used for declaring routine actions and related vocabulary."
+        ]
       },
       "learn-how-to-describe-your-current-project": {
         "title": "Learn How to Describe Your Current Project",
-        "intro": ["Learn about projects."]
+        "intro": [
+          "In this course, you'll learn how to talk about the projects that you are involved in and how to inform others of what you are doing in these projects. It mainly focuses on the structures used for informing it and on the related vocabulary."
+        ]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Learn How to Ask and Share About Educational and Professional Background",
@@ -1451,10 +1463,14 @@
     "legacy-desc": "Kozi hizi si sehemu tena ya njia ya uthibitishaji, lakini bado zinapatikana kwako ili kuendeleza masomo yako.",
     "legacy-go-back": "Nenda kwenye toleo la sasa la mtaala.",
     "course-maintenance": "Kozi hizi zinaendelea na matengenezo. Ikiwa hazifanyi kazi, unaweza kujifunza jinsi ya kuziendesha ndani ya mashine kwenye <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode- na-coderoad</0>.",
+    "course-disabling-soon": "The browser version of these courses will be temporarily disabled soon and your virtual machines will be deleted. Any progress in your virtual machines will be lost. If you have any files you want from them, you should save them to your computer. We apologize for any inconvenience. We hope to have an improved browser version of these courses available again in the next few weeks.",
+    "course-disabled": "These courses are temporarily unavailable to run in the browser. We apologize for any inconvenience. You can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>. We hope to have an improved browser version available again soon.",
+    "run-locally": "For now, we recommend running the courses locally on your computer. You can learn how at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
     "progress-wont-save": "Maendeleo yako hayatahifadhiwa kwenye akaunti yako ya freeCodeCamp unapoyaendesha ndani ya mashine yako.",
     "go-back-to-learn": "Rudi kwenye toleo thabiti la mtaala.",
     "read-database-cert-article": "Tafadhali soma chapisho hili la jukwaa kabla ya kuendelea.",
     "enable-cookies": "Lazima uwashe third-party cookies kabla ya kuanza.",
-    "english-only": "Kozi katika sehemu hii zinapatikana kwa Kiingereza pekee. Tuna uwezo wa kutafsiri mada na utangulizi pekee kwa sasa, si masomo yenyewe."
+    "english-only": "Kozi katika sehemu hii zinapatikana kwa Kiingereza pekee. Tuna uwezo wa kutafsiri mada na utangulizi pekee kwa sasa, si masomo yenyewe.",
+    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
   }
 }

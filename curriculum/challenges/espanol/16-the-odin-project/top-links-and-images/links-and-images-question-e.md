@@ -22,7 +22,7 @@ To use images that you have on your own websites, you can use a relative path.
 
 - Create a new directory named `images` within the `odin-links-and-images` project.
 
-- Next, download [this image](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) and move it into the `images` directory you just created.
+- Next, download <a href="https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640" target="_blank">this image</a> and move it into the `images` directory you just created.
 
 - Rename the image to `dog.jpg`.
 
@@ -71,7 +71,7 @@ The `alt` attribute is used to describe an image. It will be used in place of th
 This is how the The Odin Project logo example you used earlier looks with an `alt` attribute included:
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/ExXjoEp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=ExXjoEp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_ExXjoEp"></iframe>
 
-# --assignment--
+# --tarea--
 
 Watch Kevin Powell’s HTML Images Video above.
 

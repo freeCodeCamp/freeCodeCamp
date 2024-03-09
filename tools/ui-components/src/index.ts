@@ -1,6 +1,6 @@
 // Use this file as the entry point for component export
 export { Alert, type AlertProps } from './alert';
-export { Button } from './button';
+export { Button, type ButtonProps } from './button';
 export { CloseButton } from './close-button';
 export { Image } from './image';
 export { Table } from './table';

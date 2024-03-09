@@ -1,6 +1,6 @@
 ---
 id: 5900f4a71000cf542c50ffba
-title: 'Problem 315: Digital root clocks'
+title: 'Problem 315: Digitale Wurzel-Uhren'
 challengeType: 1
 forumTopicId: 301971
 dashedName: problem-315-digital-root-clocks
@@ -10,39 +10,39 @@ dashedName: problem-315-digital-root-clocks
 
 <img class="img-responsive center-block" alt="animation of Sam's and Max's clocks calculating digital roots starting from 137" src="https://cdn.freecodecamp.org/curriculum/project-euler/digital-root-clocks.gif" style="background-color: white; padding: 10px;" />
 
-Sam and Max are asked to transform two digital clocks into two "digital root" clocks.
+Sam und Max sollen zwei Digitaluhren in zwei "Digitale Wurzel-Uhren" umwandeln.
 
-A digital root clock is a digital clock that calculates digital roots step by step.
+Eine digitale Wurzel-Uhr ist eine digitale Uhr, die Schritt für Schritt digitale Wurzeln berechnet.
 
-When a clock is fed a number, it will show it and then it will start the calculation, showing all the intermediate values until it gets to the result. For example, if the clock is fed the number 137, it will show: `137` → `11` → `2` and then it will go black, waiting for the next number.
+Wenn eine Uhr mit einer Zahl gefüttert wird, zeigt sie diese an und beginnt dann mit der Berechnung, wobei sie alle Zwischenwerte anzeigt, bis sie zum Ergebnis kommt. Wenn die Uhr zum Beispiel mit der Zahl 137 gefüttert wird, zeigt sie: `137` → `11` → `2` an und wird dann schwarz, während sie auf die nächste Zahl wartet.
 
-Every digital number consists of some light segments: three horizontal (top, middle, bottom) and four vertical (top-left, top-right, bottom-left, bottom-right). Number `1` is made of vertical top-right and bottom-right, number `4` is made by middle horizontal and vertical top-left, top-right and bottom-right. Number `8` lights them all.
+Jede digitale Zahl besteht aus einigen Lichtsegmenten: drei horizontalen (oben, Mitte, unten) und vier vertikalen (oben links, oben rechts, unten links, unten rechts). Die Zahl `1` besteht aus vertikal oben-rechts und unten-rechts, die Zahl `4` besteht aus der mittleren Horizontalen und Vertikalen oben-links, oben-rechts und unten-rechts. Nummer `8` beleuchtet sie alle.
 
-The clocks consume energy only when segments are turned on/off. To turn on a `2` will cost 5 transitions, while a `7` will cost only 4 transitions.
+Die Uhren verbrauchen nur dann Energie, wenn die Segmente ein- und ausgeschaltet werden. Das Einschalten einer `2` kostet 5 Übergänge, während ein `7` nur 4 Übergänge kostet.
 
-Sam and Max built two different clocks.
+Sam und Max haben zwei verschiedene Uhren gebaut.
 
-Sam's clock is fed e.g. number 137: the clock shows `137`, then the panel is turned off, then the next number (`11`) is turned on, then the panel is turned off again and finally the last number (`2`) is turned on and, after some time, off.
+Sams Uhr wird z.B. mit der Nummer 137 gespeist: die Uhr zeigt `137`, dann wird das Panel ausgeschaltet, dann wird die nächste Zahl (`11`) eingeschaltet, dann wird das Panel wieder ausgeschaltet und schließlich wird die letzte Zahl (`2`) ein- und nach einiger Zeit wieder ausgeschaltet.
 
-For the example, with number 137, Sam's clock requires:
+Für das Beispiel mit der Nummer 137 benötigt Sams Uhr:
 
 - `137`: $(2 + 5 + 4) × 2 = 22$ transitions (`137` on/off).
 - `11`: $(2 + 2) × 2 = 8$ transitions (`11` on/off).
 - `2`: $(5) × 2 = 10$ transitions (`2` on/off).
 
-For a grand total of 40 transitions.
+Für eine Gesamtsumme von 40 Übergängen.
 
-Max's clock works differently. Instead of turning off the whole panel, it is smart enough to turn off only those segments that won't be needed for the next number.
+Max's Uhr funktioniert anders. Anstatt das gesamte Panel abzuschalten, ist sie klug genug, nur jene Segmente auszuschalten, die für die nächste Nummer nicht benötigt werden.
 
-For number 137, Max's clock requires:
+Für die Nummer 137 ist Max' Uhr erforderlich:
 
 - `137` : $2 + 5 + 4 = 11$ transitions (`137` on), $7$ transitions (to turn off the segments that are not needed for number `11`).
-- `11` : $0$ transitions (number `11` is already turned on correctly), $3$ transitions (to turn off the first `1` and the bottom part of the second `1`; the top part is common with number `2`).
-- `2` : $4$ transitions (to turn on the remaining segments in order to get a `2`), $5$ transitions (to turn off number `2`).
+- `11` : $0$ Übergänge (Zahl `11` ist bereits richtig eingeschaltet), $3$ Übergänge (als erstes ausschalten `1` und der untere Teil des Zweiten `1`; der obere Teil ist gewöhnlich mit der Zahl `2`).
+- `2` : $4$ Übergänge (um die verbleibenden Segmente einzuschalten, um eine `2` zu erhalten), $5$ Übergänge (um die Zahlen `2` auszuschalten).
 
-For a grand total of 30 transitions.
+Für eine Gesamtsumme von 30 Übergängen.
 
-Of course, Max's clock consumes less power than Sam's one. The two clocks are fed all the prime numbers between $A = {10}^7$ and $B = 2 × {10}^7$. Find the difference between the total number of transitions needed by Sam's clock and that needed by Max's one.
+Natürlich verbraucht die Uhr von Max weniger Strom als die von Sam. Den beiden Uhren werden alle Primzahlen zwischen $A = {10}^7$ und $B = 2 × {10}^7$ zugeführt. Ermittle die Differenz zwischen der Gesamtzahl der Übergänge, die Sams Uhr benötigt, und derjenigen, die Max' Uhr benötigt.
 
 # --hints--
 

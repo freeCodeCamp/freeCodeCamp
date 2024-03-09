@@ -1,6 +1,6 @@
 ---
 id: 5900f3b81000cf542c50fecb
-title: 'Problem 76: Counting summations'
+title: '問題 76: 和を数え上げる'
 challengeType: 1
 forumTopicId: 302189
 dashedName: problem-76-counting-summations
@@ -8,7 +8,7 @@ dashedName: problem-76-counting-summations
 
 # --description--
 
-It is possible to write five as a sum in exactly six different ways:
+5 を数の和として表す方法はちょうど 6 通りあります。
 
 <div style='margin-left: 4em;'>
   4 + 1<br>
@@ -19,35 +19,35 @@ It is possible to write five as a sum in exactly six different ways:
   1 + 1 + 1 + 1 + 1<br><br>
 </div>
 
-How many different ways can `n` be written as a sum of at least two positive integers?
+`n` を 2 つ以上の正整数の和として表す方法は何通りありますか。
 
 # --hints--
 
-`countingSummations(5)` should return a number.
+`countingSummations(5)` は数値を返す必要があります。
 
 ```js
 assert(typeof countingSummations(5) === 'number');
 ```
 
-`countingSummations(5)` should return `6`.
+`countingSummations(5)` は `6` を返す必要があります。
 
 ```js
 assert.strictEqual(countingSummations(5), 6);
 ```
 
-`countingSummations(20)` should return `626`.
+`countingSummations(20)` は `626` を返す必要があります。
 
 ```js
 assert.strictEqual(countingSummations(20), 626);
 ```
 
-`countingSummations(50)` should return `204225`.
+`countingSummations(50)` は `204225` を返す必要があります。
 
 ```js
 assert.strictEqual(countingSummations(50), 204225);
 ```
 
-`countingSummations(100)` should return `190569291`.
+`countingSummations(100)` は `190569291` を返す必要があります。
 
 ```js
 assert.strictEqual(countingSummations(100), 190569291);
