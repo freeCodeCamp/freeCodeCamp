@@ -4,7 +4,7 @@ export interface ModalProps {
   children: ReactNode;
   open: boolean;
   onClose: () => void;
-  size?: 'large' | 'medium' | 'small';
+  size?: 'large' | 'medium';
   variant?: 'default' | 'danger';
 }
 

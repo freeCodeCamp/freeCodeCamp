@@ -15,21 +15,11 @@ import { type ModalProps, type HeaderProps } from './types';
 // The value of the left padding is the width of the close button.
 const TITLE_LEFT_PADDING = 24;
 
-const PANEL_DEFAULT_CLASSES = [
-  'flex',
-  'flex-col',
-  'border-solid',
-  'border-1',
-  'border-foreground-secondary',
-  'bg-background-secondary'
-];
+const PANEL_DEFAULT_CLASSES =
+  'flex flex-col border-solid border-1 border-foreground-secondary bg-background-secondary';
 
-const HEADER_DEFAULT_CLASSES = [
-  'p-[15px]',
-  'border-b-1',
-  'border-solid',
-  'border-foreground-secondary'
-];
+const HEADER_DEFAULT_CLASSES =
+  'p-[15px] border-b-1 border-solid border-foreground-secondary';
 
 const ModalContext = createContext<Pick<ModalProps, 'onClose' | 'variant'>>({
   onClose: () => {},
@@ -39,17 +29,17 @@ const ModalContext = createContext<Pick<ModalProps, 'onClose' | 'variant'>>({
 const Header = ({ children, showCloseButton = true }: HeaderProps) => {
   const { onClose, variant } = useContext(ModalContext);
 
-  const classes = [...HEADER_DEFAULT_CLASSES];
+  let classes = HEADER_DEFAULT_CLASSES;
 
   if (variant === 'danger') {
-    classes.push('bg-foreground-danger');
+    classes = classes.concat(' ', 'bg-foreground-danger');
   }
 
   if (showCloseButton) {
-    classes.push(...['flex', 'items-center', 'justify-between']);
+    classes = classes.concat(' ', 'flex items-center justify-between');
 
     return (
-      <div className={classes.join(' ')}>
+      <div className={classes}>
         <Dialog.Title
           className={`m-0 pl-[${TITLE_LEFT_PADDING}px] flex-1 text-md text-center`}
         >
@@ -61,8 +51,8 @@ const Header = ({ children, showCloseButton = true }: HeaderProps) => {
   }
 
   return (
-    <div className={classes.join(' ')}>
-      <Dialog.Title className={'m-0 text-md text-center'}>
+    <div className={classes}>
+      <Dialog.Title className='m-0 text-md text-center'>
         {children}
       </Dialog.Title>
     </div>
@@ -88,25 +78,18 @@ export const Modal = ({
   size = 'medium',
   variant = 'default'
 }: ModalProps) => {
-  const classes = [...PANEL_DEFAULT_CLASSES];
+  let panelClasses = PANEL_DEFAULT_CLASSES;
 
-  switch (size) {
-    case 'large':
-      classes.push('w-[900px]');
-      break;
-    case 'small':
-      classes.push('w-[300px]');
-      break;
-    default:
-      classes.push('w-[600px]');
+  if (size === 'medium') {
+    panelClasses = panelClasses.concat(' ', 'w-[600px]');
+  } else if (size === 'large') {
+    panelClasses = panelClasses.concat(' ', 'w-[900px]');
   }
 
-  switch (variant) {
-    case 'danger':
-      classes.push('text-background-danger');
-      break;
-    default:
-      classes.push('text-foreground-secondary');
+  if (variant === 'default') {
+    panelClasses = panelClasses.concat(' ', 'text-foreground-secondary');
+  } else if (variant === 'danger') {
+    panelClasses = panelClasses.concat(' ', 'text-background-danger');
   }
 
   return (
@@ -114,10 +97,7 @@ export const Modal = ({
       <Transition.Root show={open} as={Fragment}>
         <Dialog onClose={onClose} className='relative z-50'>
           {/* The backdrop, rendered as a fixed sibling to the panel container */}
-          <div
-            aria-hidden
-            className='fixed inset-0 bg-foreground-primary opacity-50'
-          />
+          <div aria-hidden className='fixed inset-0 bg-gray-900 opacity-50' />
 
           {/* Full-screen container of the panel */}
           <div className='fixed inset-0 w-screen flex items-start justify-center pt-[30px]'>
@@ -130,9 +110,7 @@ export const Modal = ({
               leaveFrom='opacity-100 translate-y-0'
               leaveTo='opacity-0 -translate-y-1/4'
             >
-              <Dialog.Panel className={classes.join(' ')}>
-                {children}
-              </Dialog.Panel>
+              <Dialog.Panel className={panelClasses}>{children}</Dialog.Panel>
             </Transition.Child>
           </div>
         </Dialog>
