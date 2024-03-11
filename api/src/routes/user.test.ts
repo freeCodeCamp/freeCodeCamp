@@ -499,7 +499,7 @@ describe('userRoutes', () => {
       });
     });
 
-    describe('user/get-user-session', () => {
+    describe('/user/get-user-session', () => {
       beforeEach(async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: testUserData.email },
