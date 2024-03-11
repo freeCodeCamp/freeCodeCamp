@@ -582,6 +582,27 @@ describe('userRoutes', () => {
         expect(tokenData.id).toBe(userToken);
       });
 
+      test('GET returns the msUsername if it exists', async () => {
+        const msUsernameData = {
+          msUsername: 'foobar',
+          userId: defaultUserId,
+          ttl: 123
+        };
+
+        await fastifyTestInstance.prisma.msUsername.createMany({
+          data: msUsernameData
+        });
+
+        const msUsernames = await fastifyTestInstance.prisma.msUsername.count();
+        expect(msUsernames).toBe(1);
+
+        const response = await superGet('/user/get-session-user');
+
+        const { msUsername } = response.body.user.foobar;
+
+        expect(msUsername).toBe(msUsernameData.msUsername);
+      });
+
       test('GET returns a minimal user when all optional properties are missing', async () => {
         // To get a minimal test user we first delete the existing one...
         await fastifyTestInstance.prisma.user.deleteMany({
