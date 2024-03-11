@@ -341,7 +341,7 @@
     "skip-to-content": "コンテンツへスキップ",
     "welcome-1": "{{name}} さん、おかえりなさい。",
     "welcome-2": "freeCodeCamp.org へようこそ",
-    "start-at-beginning": "コーディングが初めての場合は、<0>最初から開始する</0> ことをお勧めします。",
+    "start-at-beginning": "プログラミングを学ぶのが初めての場合、<0>最初から始める</0>ことをおすすめします。",
     "read-this": {
       "heading": "一度立ち止まって、まずはこちらをお読みください。",
       "p1": "freeCodeCamp は、あなたがソフトウェア開発者として初めての仕事を得るための、実績のある道です。",
@@ -448,8 +448,8 @@
     "challenges-completed": "{{totalChallenges}} 件中 {{completedCount}} 件完了",
     "season-greetings-fcc": "freeCodeCamp コミュニティから季節のご挨拶🎉",
     "if-getting-value": "freeCodeCamp が役に立ったと感じていただけたなら、寄付を通して当チャリティー団体の使命をご支援いただけますと幸いです。",
-    "building-a-university": "We're Building a Free Computer Science University Degree Program 🎉",
-    "if-help-university": "We've already made a ton of progress. Donate now to help our charity with the road ahead.",
+    "building-a-university": "freeCodeCamp では無料のコンピューターサイエンス学位プログラムを作成中です🎉",
+    "if-help-university": "おかげさまで順調に進んでいます。ぜひ、寄付を通してこの先の活動をご支援いただければ幸いです。",
     "preview-external-window": "プレビューは別ウィンドウに表示されています。",
     "fill-in-the-blank": "空欄を埋めてください。",
     "blank": "空欄",
@@ -483,13 +483,13 @@
       "linked": "現在、ユーザー名「{{ msUsername }}」の Microsoft アカウントが freeCodeCamp アカウントにリンクされています。これがあなたの Microsoft ユーザー名でない場合は、リンクを解除してください。",
       "unlinked": "このチャレンジを完了するには、以下の手順に沿ってまず Microsoft のユーザー名を freeCodeCamp アカウントにリンクする必要があります。",
       "link-li-1": "Microsoft アカウントにログインしているブラウザを使用して、<0>https://learn.microsoft.com/users/me/transcript</0> に移動します",
-      "link-li-2": "「リンクを共有」ボタンをクリックします。",
-      "link-li-3": "成績証明書のリンクをお持ちでない場合は、「リンクを作成」ボタンをクリックして作成してください。",
-      "link-li-4": "「リンクをコピー」ボタンをクリックして、成績証明書の URL をコピーします。",
-      "link-li-5": "以下の入力欄に URL を貼り付けてください。URL は次のような形式です: <0>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</0>",
+      "link-li-2": "「リンクの共有」ボタンをクリックします。",
+      "link-li-3": "成績証明書 (トランスクリプト) のリンクをお持ちでない場合には、「リンクの作成」ボタンをクリックして作成してください。",
+      "link-li-4": "「リンクのコピー」ボタンをクリックして、成績証明書の URL をコピーします。",
+      "link-li-5": "下の入力欄に URL を貼り付けてください。URL は次のような形式です: <0>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</0>",
       "link-li-6": "「アカウントをリンク」をクリックして、Microsoft のユーザー名をリンクします。",
       "transcript-label": "Microsoft 成績証明書のリンク",
-      "invalid-transcript": "成績証明書のリンクが正しくありません。以下の形式になっているか確認してください: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - リンク内の大文字の項目が正しいか確認してください。"
+      "invalid-transcript": "成績証明書のリンクが正しくありません。以下の形式になっているか確認してください: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - 特に大文字で示した部分が正しいか確認してください。"
     }
   },
   "donate": {
