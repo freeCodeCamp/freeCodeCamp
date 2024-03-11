@@ -2,7 +2,7 @@
 id: 6568bc85c5beadca3e0f6eb1
 title: 步骤 27
 challengeType: 20
-dashedName: step-27
+dashedName: step-29
 ---
 
 # --description--
