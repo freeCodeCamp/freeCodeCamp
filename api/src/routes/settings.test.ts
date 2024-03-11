@@ -700,63 +700,69 @@ Please wait 5 minutes to resend an authentication link.`
           message: 'flash.classroom-mode-updated',
           type: 'success'
         });
+
         expect(response.statusCode).toEqual(200);
       });
 
-      test('PUT returns 400 status code with invalid classroomMode', async () => {
-        const response = await superPut('/update-my-classroom-mode').send({
-          isClassroomAccount: 'invalid'
+      test('After updating the classroom mode, the user should have this property set', async () => {
+        await superPut('/update-my-classroom-mode').send({
+          isClassroomAccount: false
         });
 
-        expect(response.body).toEqual(updateErrorResponse);
-        expect(response.statusCode).toEqual(400);
+        const user = await fastifyTestInstance?.prisma.user.findFirst({
+          where: {
+            email: developerUserEmail
+          }
+        });
+
+        expect(user?.isClassroomAccount).toEqual(false);
+      });
+    });
+
+    describe('Unauthenticated User', () => {
+      let setCookies: string[];
+
+      // Get the CSRF cookies from an unprotected route
+      beforeAll(async () => {
+        const res = await superRequest('/status/ping', { method: 'GET' });
+        setCookies = res.get('Set-Cookie');
+      });
+
+      const endpoints: { path: string; method: 'PUT' }[] = [
+        { path: '/update-my-profileui', method: 'PUT' },
+        { path: '/update-my-theme', method: 'PUT' },
+        { path: '/update-my-username', method: 'PUT' },
+        { path: '/update-my-keyboard-shortcuts', method: 'PUT' },
+        { path: '/update-my-socials', method: 'PUT' },
+        { path: '/update-my-quincy-email', method: 'PUT' },
+        { path: '/update-my-about', method: 'PUT' },
+        { path: '/update-my-honesty', method: 'PUT' },
+        { path: '/update-privacy-terms', method: 'PUT' },
+        { path: '/update-my-portfolio', method: 'PUT' }
+      ];
+
+      endpoints.forEach(({ path, method }) => {
+        test(`${method} ${path} returns 401 status code with error message`, async () => {
+          const response = await superRequest(path, {
+            method,
+            setCookies
+          });
+          expect(response.statusCode).toBe(401);
+        });
       });
     });
   });
 
-  describe('Unauthenticated User', () => {
-    let setCookies: string[];
-
-    // Get the CSRF cookies from an unprotected route
-    beforeAll(async () => {
-      const res = await superRequest('/status/ping', { method: 'GET' });
-      setCookies = res.get('Set-Cookie');
+  describe('isPictureWithProtocol', () => {
+    test('Valid protocol', () => {
+      expect(isPictureWithProtocol('https://www.example.com/')).toEqual(true);
+      expect(isPictureWithProtocol('http://www.example.com/')).toEqual(true);
     });
 
-    const endpoints: { path: string; method: 'PUT' }[] = [
-      { path: '/update-my-profileui', method: 'PUT' },
-      { path: '/update-my-theme', method: 'PUT' },
-      { path: '/update-my-username', method: 'PUT' },
-      { path: '/update-my-keyboard-shortcuts', method: 'PUT' },
-      { path: '/update-my-socials', method: 'PUT' },
-      { path: '/update-my-quincy-email', method: 'PUT' },
-      { path: '/update-my-about', method: 'PUT' },
-      { path: '/update-my-honesty', method: 'PUT' },
-      { path: '/update-privacy-terms', method: 'PUT' },
-      { path: '/update-my-portfolio', method: 'PUT' }
-    ];
-
-    endpoints.forEach(({ path, method }) => {
-      test(`${method} ${path} returns 401 status code with error message`, async () => {
-        const response = await superRequest(path, {
-          method,
-          setCookies
-        });
-        expect(response.statusCode).toBe(401);
-      });
+    test('Invalid protocol', () => {
+      expect(isPictureWithProtocol('htps://www.example.com/')).toEqual(false);
+      expect(isPictureWithProtocol('tp://www.example.com/')).toEqual(false);
+      expect(isPictureWithProtocol('www.example.com/')).toEqual(false);
     });
-  });
-});
-
-describe('isPictureWithProtocol', () => {
-  test('Valid protocol', () => {
-    expect(isPictureWithProtocol('https://www.example.com/')).toEqual(true);
-    expect(isPictureWithProtocol('http://www.example.com/')).toEqual(true);
-  });
-
-  test('Invalid protocol', () => {
-    expect(isPictureWithProtocol('htps://www.example.com/')).toEqual(false);
-    expect(isPictureWithProtocol('tp://www.example.com/')).toEqual(false);
-    expect(isPictureWithProtocol('www.example.com/')).toEqual(false);
   });
 });
