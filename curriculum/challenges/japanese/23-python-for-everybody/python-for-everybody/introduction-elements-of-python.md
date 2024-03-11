@@ -14,7 +14,7 @@ dashedName: introduction-elements-of-python
 
 ## --text--
 
-What will the following program print out:
+次のプログラムは何を出力しますか？
 
 ```python
 x = 43

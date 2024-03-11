@@ -16,7 +16,7 @@ dashedName: depth-first-search
 
 下のアニメーションはこのアルゴリズムの仕組みを示しています。 このアルゴリズムは一番上のノードから始まり、番号順にノードを訪問します。
 
-<img class='img-responsive' src='https://camo.githubusercontent.com/aaad9e39961daf34d967c616edeb50abf3bf1235/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37662f44657074682d46697273742d5365617263682e676966' />
+<img class='img-responsive' alt="" src='https://camo.githubusercontent.com/aaad9e39961daf34d967c616edeb50abf3bf1235/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37662f44657074682d46697273742d5365617263682e676966' />
 
 幅優先探索とは異なり、1 つのノードを訪問するたびにすべての隣接ノードを訪れるわけではありません。 代わりに、最初に隣接ノードのいずれかを訪れ、その経路上に未訪問のノードがなくなるまで経路を下り続けます。
 

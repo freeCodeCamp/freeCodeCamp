@@ -4,6 +4,7 @@ title: Learn Variables and Operators Question H
 challengeType: 15
 dashedName: learn-variables-and-operators-question-h
 ---
+
 # --description--
 
 If an expression has more than one operator, the execution order is defined by their precedence, or, in other words, the default priority order of operators.
@@ -16,19 +17,19 @@ There are many operators in JavaScript. Every operator has a corresponding prece
 
 Here’s an extract from the precedence table (you don’t need to remember this, but note that unary operators are higher than corresponding binary ones):
 
-| Precedence | Name             | Sign |
-|------------|------------------|------|
-| ...        | ...              | ...  |
-| 14         | unary plus       | +    |
-| 14         | unary negation   | -    |
-| 13         | exponentiation   | **   |
-| 12         | multiplication   | *    |
-| 12         | division         | /    |
-| 11         | addition         | +    |
-| 11         | subtraction      | -    |
-| ...        | ...              | ...  |
-| 2          | assignment       | =    |
-| ...        | ...              | ...  |
+| Precedence | Name           | Sign |
+| ---------- | -------------- | ---- |
+| ...        | ...            | ...  |
+| 14         | unary plus     | +    |
+| 14         | unary negation | -    |
+| 13         | exponentiation | **   |
+| 12         | multiplication | *    |
+| 12         | division       | /    |
+| 11         | addition       | +    |
+| 11         | subtraction    | -    |
+| ...        | ...            | ...  |
+| 2          | assignment     | =    |
+| ...        | ...            | ...  |
 
 
 

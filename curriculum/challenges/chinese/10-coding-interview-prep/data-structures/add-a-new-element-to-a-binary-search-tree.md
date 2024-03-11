@@ -14,7 +14,7 @@ dashedName: add-a-new-element-to-a-binary-search-tree
 
 To begin, we will discuss a particular type of tree, the binary tree. 实际上，我们将讨论特定的二叉树，即二叉搜索树。 让我们来看看这意味着什么。 虽然树形数据结构在一个节点上可以有任意数量的分支，但二叉树每个节点只能有两个分支。 此外，一个二叉搜索树相对于其子子树是有序的，即对于一个节点而言，其左子树中每个节点的值都小于或等于该节点的值，而其右子树中每个节点的值都大于或等于该节点的值。 为了更好地理解这种关系，将这种关系形象化是非常有帮助的：
 
-<div style='width: 100%; display: flex; justify-content: center; align-items: center;'><img style='width: 100%; max-width: 350px; background-color: var(--gray-05);' src='https://user-images.githubusercontent.com/18563015/32136009-1e665d98-bbd6-11e7-9133-63184f9f9182.png'></div>
+<div style='width: 100%; display: flex; justify-content: center; align-items: center;'><img alt="an example of a binairy search tree" style='width: 100%; max-width: 350px; background-color: var(--gray-05);' src='https://user-images.githubusercontent.com/18563015/32136009-1e665d98-bbd6-11e7-9133-63184f9f9182.png'></div>
 
 现在，这种有序的关系是非常容易看到的。 注意，根节点 8 左边的每个值都小于 8，右边的每个值都大于 8。 还要注意的是，这种关系也适用于每个子树。 例如，第一个左孩子节点是一个子树。 3 是父节点，它正好有两个子节点——根据二进制搜索树的规则，我们甚至不用看就知道这个节点的左子节点（以及它的任何子节点）都将小于 3，右子节点（以及它的任何子节点）都将大于 3（但也小于根结点的值），依此类推。
 

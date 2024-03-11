@@ -14,7 +14,7 @@ dashedName: data-visualization-page-rank
 
 ## --text--
 
-How does the PageRank algorithm work?
+PageRank アルゴリズムはどのように動作しますか？
 
 ## --answers--
 

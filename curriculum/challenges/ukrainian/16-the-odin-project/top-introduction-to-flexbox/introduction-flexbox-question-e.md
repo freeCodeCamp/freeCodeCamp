@@ -13,7 +13,7 @@ dashedName: introduction-flexbox-question-e
 
 У цьому випадку `flex` є скороченням властивостей `flex-grow`, `flex-shrink` та `flex-basis`.
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/0cc6b26bb0c4b94524369d327c97a8fb11e83b6b/foundations/html_css/flexbox/imgs/10.png" alt="скорочення flex" />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/flex-box/flexbox-04.png" alt="CSS code setting the flex property to 1 for a div element." />
 
 `flex: 1` зі знімка екрана вище дорівнює `flex-grow: 1`, `flex-shrink: 1`, `flex-basis: 0`.
 

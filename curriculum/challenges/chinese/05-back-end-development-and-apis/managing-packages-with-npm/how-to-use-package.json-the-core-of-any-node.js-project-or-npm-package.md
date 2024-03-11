@@ -14,7 +14,9 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 - Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges.
 - 使用你选择的网站生成器来完成项目。 需要包含我们 GitHub 仓库的所有文件。
 
-`package.json` 文件是所有 Node.js 项目和 npm 包的枢纽， 它存储有关项目的信息，就像 HTML 文档中的 `head` 部分描述网页内容一样。 它由单个 JSON 对象组成，并以键值对的形式存储项目信息， 且至少包含两个必填字段 `name` 和 `version`，但是最好提供有关项目的其他信息，这将对用户或者维护者有所帮助。
+`package.json` 文件是所有 Node.js 项目和 npm 包的枢纽， It stores information about your project. 它由单个 JSON 对象组成，并以键值对的形式存储项目信息， There are only two required fields; `name` and `version`, but it’s good practice to provide additional information.
+
+You can create the `package.json` file from the terminal using the `npm init` command. This will run a guided setup. Using `npm init` with the `-y` flag will generate the file without having it ask any questions, `npm init -y`.
 
 如果你查看项目的文件树，那么可以在文件树的最外层找到 `package.json`。 在接下来的几个挑战中你将完善这个文件。
 

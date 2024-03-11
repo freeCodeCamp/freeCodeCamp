@@ -22,7 +22,7 @@ servirá a string 'Response String'.
 
 # --instructions--
 
-Use o método `app.get()` para servir a string "Hello Express" para solicitações de GET que correspondam ao caminho `/` (root). Be sure that your code works by looking at the logs, then see the results in the preview if you are using Gitpod.
+Use o método `app.get()` para servir a string "Hello Express" para solicitações de GET que correspondam ao caminho `/` (root). Certifique-se de que seu código funciona olhando os logs e, em seguida, veja os resultados na pré-visualização se estiver usando o Gitpod.
 
 **Observação:** todo o código para estas lições deve ser adicionado entre as poucas linhas de código que fornecemos para você no início.
 

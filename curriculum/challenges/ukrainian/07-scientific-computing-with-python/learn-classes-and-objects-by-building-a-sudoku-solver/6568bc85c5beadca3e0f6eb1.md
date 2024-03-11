@@ -1,6 +1,6 @@
 ---
 id: 6568bc85c5beadca3e0f6eb1
-title: Step 27
+title: Крок 27
 challengeType: 20
 dashedName: step-27
 ---

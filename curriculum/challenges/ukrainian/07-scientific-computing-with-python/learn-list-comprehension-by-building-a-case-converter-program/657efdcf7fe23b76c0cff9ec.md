@@ -7,11 +7,11 @@ dashedName: step-7
 
 # --description--
 
-Add an `else` clause on the same level as the existing `if` statement, inside the `for` loop. Add characters that are already in lowercase to the list of converted characters inside the body of the `else` clause.
+Додайте умову `else` до циклу `for` на тому ж рівні, що й наявна інструкція `if`. Додайте символи, які вже в нижньому регістрі, до списку змінених символів у межах тіла умови `else`.
 
 # --hints--
 
-You should add an `else` clause inside the `for` loop. Don't forget the colon at the end.
+Додайте умову `else` в межах циклу `for`. Не забудьте двокрапку вкінці.
 
 ```js
 ({
@@ -25,7 +25,7 @@ You should add an `else` clause inside the `for` loop. Don't forget the colon at
 })
 ```
 
-You should use the `.append()` method to add `char` to the `snake_cased_char_list` variable.
+Використайте метод `.append()`, щоб додати `char` до змінної `snake_cased_char_list`.
 
 ```js
 ({
