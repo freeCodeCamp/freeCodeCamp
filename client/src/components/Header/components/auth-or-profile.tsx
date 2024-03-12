@@ -25,7 +25,6 @@ const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
           isDonating={isUserDonating}
           isTopContributor={isTopContributor}
           picture={user.picture}
-          userName={user.username}
         />
       </Link>
     );
