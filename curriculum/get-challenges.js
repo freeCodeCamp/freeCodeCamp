@@ -338,6 +338,26 @@ ${getFullPath('english', filePath)}
     }
   }
 
+  async function getChallengeWithEnglishSource({
+    filePath,
+    lang,
+    shouldTranslate
+  }) {
+    const englishChallenge = await parseMD(getFullPath('english', filePath));
+    if (!shouldTranslate) return englishChallenge;
+
+    const translatedChallenge = await parseMD(getFullPath(lang, filePath));
+    if (translatedChallenge.tests.length !== englishChallenge.tests.length) {
+      throw Error(
+        `The number of tests in ${filePath} does not match the number of tests in the English version.
+To fix this, run the "i18n - Download Curriculum" action`
+      );
+    }
+    const challenge = replaceSourceCode(translatedChallenge, englishChallenge);
+
+    return translateComments(challenge, COMMENT_TRANSLATIONS, lang);
+  }
+
   async function createChallenge(filePath, maybeMeta) {
     const meta = maybeMeta
       ? maybeMeta
@@ -354,24 +374,11 @@ ${getFullPath('english', filePath)}
         showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
       }) && fs.existsSync(getFullPath(lang, filePath));
 
-    const rawChallenge = shouldTranslate
-      ? await parseMD(getFullPath(lang, filePath))
-      : await parseMD(getFullPath('english', filePath));
-
-    const challengeWithOriginalSource = shouldTranslate
-      ? replaceSourceCode(
-          rawChallenge,
-          await parseMD(getFullPath('english', filePath))
-        )
-      : rawChallenge;
-
-    const challenge = shouldTranslate
-      ? translateComments(
-          challengeWithOriginalSource,
-          COMMENT_TRANSLATIONS,
-          lang
-        )
-      : challengeWithOriginalSource;
+    const challenge = await getChallengeWithEnglishSource({
+      filePath,
+      lang,
+      shouldTranslate
+    });
 
     addMetaToChallenge(challenge, meta);
     fixChallengeProperties(challenge);
