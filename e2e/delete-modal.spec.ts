@@ -6,20 +6,18 @@ test.use({ storageState: 'playwright/.auth/certified-user.json' });
 const supportEmail = 'support@freeCodeCamp.org';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/settings');
 });
 
 test.describe('Delete Modal component', () => {
-  test('renders the modal correctly', async ({ page }) => {
-    await page.getByRole('button', { name: translations.buttons.menu }).click();
-    await page
-      .getByRole('link', { name: translations.buttons.settings })
-      .click();
+  test('should render the modal correctly', async ({ page }) => {
     await page
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
 
-    //there are 2 dialogs nested per modal
+    // There are two elements with the `dialog` role in the DOM.
+    // This appears to be semantically incorrect and should be resolved
+    // once we have migrated the component to use Dialog from the `ui-components` library.
     const dialogs = await page.getByRole('dialog').all();
     expect(dialogs).toHaveLength(2);
 
@@ -50,13 +48,9 @@ test.describe('Delete Modal component', () => {
     expect(closeButtons).toHaveLength(2);
   });
 
-  test('closes modal after user cancels account deleting', async ({ page }) => {
-    await page.getByRole('button', { name: translations.buttons.menu }).click();
-
-    await page
-      .getByRole('link', { name: translations.buttons.settings })
-      .click();
-
+  test('should close the modal after the user cancels account deleting', async ({
+    page
+  }) => {
     await page
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
@@ -73,15 +67,9 @@ test.describe('Delete Modal component', () => {
     }
   });
 
-  test('deletes account and redirects to /learn after confirmation', async ({
+  test('should close the modal and redirect to /learn after the user clicks delete', async ({
     page
   }) => {
-    await page.getByRole('button', { name: translations.buttons.menu }).click();
-
-    await page
-      .getByRole('link', { name: translations.buttons.settings })
-      .click();
-
     await page.route('*/**/account/delete', async route => {
       // intercept the endpoint to prevent user account from being deleted
       // as the deletion will cause subsequent tests to fail
@@ -92,14 +80,18 @@ test.describe('Delete Modal component', () => {
     await page
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
+
     const dialogs = await page.getByRole('dialog').all();
     expect(dialogs).toHaveLength(2);
+
     await page
       .getByRole('button', { name: translations.settings.danger.certain })
       .click();
+
     for (const dialog of dialogs) {
       await expect(dialog).not.toBeVisible();
     }
+
     await expect(page).toHaveURL(/.*\/learn\/?/);
   });
 });
