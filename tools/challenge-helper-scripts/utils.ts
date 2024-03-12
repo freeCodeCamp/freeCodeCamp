@@ -32,6 +32,14 @@ const createStepFile = ({
   return challengeId;
 };
 
+const createTaskFile = (
+  id: string,
+  template: string,
+  path = getProjectPath()
+): void => {
+  fs.writeFileSync(`${path}${id}.md`, template);
+};
+
 const createChallengeFile = (
   title: string,
   template: string,
@@ -107,6 +115,7 @@ const getChallengeSeeds = (
 
 export {
   createStepFile,
+  createTaskFile,
   createChallengeFile,
   updateStepTitles,
   getChallengeSeeds,

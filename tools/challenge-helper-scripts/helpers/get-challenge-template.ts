@@ -37,19 +37,6 @@ challengeType: ${challengeType}
 dashedName: ${dashedName}
 ---`;
 
-const buildFrontMatterWithAudio = ({
-  challengeId,
-  title,
-  dashedName,
-  challengeType
-}: ChallengeOptions) => `---
-id: ${challengeId.toString()}
-title: ${sanitizeTitle(title)}
-challengeType: ${challengeType}
-dashedName: ${dashedName}
-audioPath: Add the path to the audio file here. Or, delete this if you don't have audio.
----`;
-
 export const getLegacyChallengeTemplate = (
   options: ChallengeOptions
 ): string => `${buildFrontMatter(options)}
@@ -182,7 +169,7 @@ Answer 3
 
 export const getMultipleChoiceChallengeTemplate = (
   options: ChallengeOptions
-): string => `${buildFrontMatterWithAudio(options)}
+): string => `${buildFrontMatter(options)}
 
 # --description--
 
@@ -213,7 +200,7 @@ Answer 3
 
 export const getFillInTheBlankChallengeTemplate = (
   options: ChallengeOptions
-): string => `${buildFrontMatterWithAudio(options)}
+): string => `${buildFrontMatter(options)}
 
 # --description--
 
@@ -240,15 +227,15 @@ It's \`in\`
 
 export const getDialogueChallengeTemplate = (
   options: ChallengeOptions
-): string => `${buildFrontMatterWithVideo(options)}
+): string => `${buildFrontMatter(options)}
 
 # --description--
 
-${options.title} description.
+Watch the video below to understand the context of the upcoming lessons.
 
 ## --assignment--
 
-${options.title} assignment!
+Watch the video.
 `;
 
 type Template = (opts: ChallengeOptions) => string;
