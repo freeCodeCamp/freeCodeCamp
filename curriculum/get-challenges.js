@@ -358,9 +358,20 @@ ${getFullPath('english', filePath)}
       ? await parseMD(getFullPath(lang, filePath))
       : await parseMD(getFullPath('english', filePath));
 
-    const challenge = shouldTranslate
-      ? translateComments(rawChallenge, COMMENT_TRANSLATIONS, lang)
+    const challengeWithOriginalSource = shouldTranslate
+      ? replaceSourceCode(
+          rawChallenge,
+          await parseMD(getFullPath('english', filePath))
+        )
       : rawChallenge;
+
+    const challenge = shouldTranslate
+      ? translateComments(
+          challengeWithOriginalSource,
+          COMMENT_TRANSLATIONS,
+          lang
+        )
+      : challengeWithOriginalSource;
 
     addMetaToChallenge(challenge, meta);
     fixChallengeProperties(challenge);
