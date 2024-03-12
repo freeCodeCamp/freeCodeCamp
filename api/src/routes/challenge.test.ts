@@ -775,7 +775,7 @@ describe('challengeRoutes', () => {
                 challengeType: multiFileCertProjectBody.challengeType,
                 files: testFiles,
                 completedDate: expect.any(Number),
-                isManuallyApproved: true
+                isManuallyApproved: false
               }
             ],
             savedChallenges: [
@@ -839,7 +839,7 @@ describe('challengeRoutes', () => {
                 challengeType: updatedMultiFileCertProjectBody.challengeType,
                 files: testFiles,
                 completedDate: expect.any(Number),
-                isManuallyApproved: true
+                isManuallyApproved: false
               },
               {
                 id: HtmlChallengeId,

@@ -1,0 +1,48 @@
+---
+id: 65daa9fa35b2dd6c6e29636d
+title: Task 96
+challengeType: 19
+dashedName: task-96
+---
+
+# --description--
+
+Choose the right answer of using `ago`.
+
+# --question--
+
+## --text--
+
+If I read a book three weeks ago, when did I finish reading it?
+
+## --answers--
+
+I finished reading the book yesterday.
+
+### --feedback--
+
+`Yesterday` is too recent compared to the timeframe mentioned.
+
+---
+
+I finished reading the book last month.
+
+### --feedback--
+
+`Last month` might not accurately match the timeframe depending on the current date.
+
+---
+
+I finished reading it three weeks back.
+
+---
+
+I am still reading the book.
+
+### --feedback--
+
+If you finished the book `three weeks ago`, you are not still reading it.
+
+## --video-solution--
+
+3
