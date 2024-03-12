@@ -17,7 +17,7 @@ let result = x === y;
 console.log(result); // false
 ```
 
-In this example, the `result` variable will contain `false` because `x` is a number and `y` is a string. But if we use the `==` operator, the result will be `true` because JavaScript will convert the string to a number and compare the values.
+In this example, the `result` variable will contain `false` because `x` is a number and `y` is a string. But if you use the `==` operator, the result will be `true` because JavaScript will convert the string to a number and compare the values.
 
 This operator is called the strict equality operator because it checks for both value and type equality. It is often recommended to use the `===` operator to avoid unexpected results when comparing values.
 

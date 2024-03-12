@@ -6,7 +6,7 @@ dashedName: learn-data-types-and-conditionals-question-i
 ---
 # --description--
 
-In the last example, we had two choices `if` or `else`. But what if we want to have more than two choices? We can use the `else if` statement to add more conditions to our code. The `else if` statement allows us to check multiple conditions and execute a block of code when the first condition is true. If the first condition is false, it will check the next condition and so on. If none of the conditions are true, the `else` block will be executed.
+In the last example, you had two choices `if` or `else`. But what if you want to have more than two choices? You can use the `else if` statement to add more conditions to our code. The `else if` statement allows us to check multiple conditions and execute a block of code when the first condition is true. If the first condition is false, it will check the next condition and so on. If none of the conditions are true, the `else` block will be executed.
 
 Here is an example of the `else if` statement:
 

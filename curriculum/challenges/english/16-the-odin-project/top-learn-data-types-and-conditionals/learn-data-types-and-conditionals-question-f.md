@@ -7,7 +7,7 @@ dashedName: learn-data-types-and-conditionals-question-f
 ---
 # --description--
 
-We know that JavaScript has a variety of data types, including strings, numbers and booleans. We can use comparison operators to compare these data types and make decisions based on the results.
+You know that JavaScript has a variety of data types, including strings, numbers and booleans. You can use comparison operators to compare these data types and make decisions based on the results.
 
 The following comparison operators are available in JavaScript:
 
@@ -20,7 +20,7 @@ The following comparison operators are available in JavaScript:
 | >=       | Greater than or equal to                 | x >= y       |
 | <=       | Less than or equal to                    | x <= y       |
 
-To use a comparison in a variable assignment, we can use the `==` operator. For example:
+To use a comparison in a variable assignment, you can use the `==` operator. For example:
 
 ```javascript
 let x = 5;

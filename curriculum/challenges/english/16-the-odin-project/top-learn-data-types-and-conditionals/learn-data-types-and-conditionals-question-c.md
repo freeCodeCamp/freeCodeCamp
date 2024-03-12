@@ -6,7 +6,7 @@ dashedName: learn-data-types-and-conditionals-question-c
 ---
 # --description--
 
-Seeing the example below, we want to make sure the word `loves` is present in the string.
+Seeing the example below, You want to make sure the word `loves` is present in the string.
 
 ```javascript
 let sentence = "freeCodeCamp loves The Odin Project!";

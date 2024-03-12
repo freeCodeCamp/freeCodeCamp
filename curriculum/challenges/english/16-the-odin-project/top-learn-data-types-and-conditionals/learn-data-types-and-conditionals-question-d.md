@@ -6,7 +6,7 @@ dashedName: learn-data-types-and-conditionals-question-d
 ---
 # --description--
 
-Seeing the example below we want to know the index of the last occurence of the word `The` in the string.
+Seeing the example below You want to know the index of the last occurence of the word `The` in the string.
 
 ```javascript
 let sentence = "freeCodeCamp loves The Odin Project! The Odin Project is great!";
