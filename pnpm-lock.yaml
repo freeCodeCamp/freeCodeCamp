@@ -638,6 +638,9 @@ importers:
       i18next:
         specifier: 22.5.1
         version: 22.5.1
+      is-ip:
+        specifier: ^5.0.1
+        version: 5.0.1  
       jquery:
         specifier: 3.7.1
         version: 3.7.1
