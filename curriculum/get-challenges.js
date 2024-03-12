@@ -225,9 +225,7 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
-async function parseTranslation(transPath, dict, lang, parse = parseMD) {
-  const translatedChal = await parse(transPath);
-
+function translateComments(translatedChal, dict, lang) {
   const { challengeType } = translatedChal;
   // challengeType 11 is for video challenges and 3 is for front-end projects
   // neither of which have seeds.
@@ -350,19 +348,19 @@ ${getFullPath('english', filePath)}
     await validate(filePath, meta.superBlock);
 
     // We always try to translate comments (even English ones) to confirm that translations exist.
-    const translateComments =
+    const shouldTranslate =
       isAuditedSuperBlock(lang, meta.superBlock, {
         showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
         showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
       }) && fs.existsSync(getFullPath(lang, filePath));
 
-    const challenge = await (translateComments
-      ? parseTranslation(
-          getFullPath(lang, filePath),
-          COMMENT_TRANSLATIONS,
-          lang
-        )
-      : parseMD(getFullPath('english', filePath)));
+    const rawChallenge = shouldTranslate
+      ? await parseMD(getFullPath(lang, filePath))
+      : await parseMD(getFullPath('english', filePath));
+
+    const challenge = shouldTranslate
+      ? translateComments(rawChallenge, COMMENT_TRANSLATIONS, lang)
+      : rawChallenge;
 
     addMetaToChallenge(challenge, meta);
     fixChallengeProperties(challenge);
@@ -425,6 +423,5 @@ function replaceSourceCode(target, source) {
 }
 
 exports.hasEnglishSource = hasEnglishSource;
-exports.parseTranslation = parseTranslation;
 exports.generateChallengeCreator = generateChallengeCreator;
 exports.replaceSourceCode = replaceSourceCode;
