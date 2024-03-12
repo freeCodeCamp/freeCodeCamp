@@ -7,33 +7,39 @@ dashedName: learn-data-types-and-conditionals-question-e
 ---
 # --description--
 
-Description Text
+Strings defined using backticks are called template literals. They are a new way to define strings in JavaScript. They allow you to embed expressions within the string. This is done by wrapping the expression in `${}`.
 
-# --assignment--
+For example, the following code:
 
-possible assignment
+```javascript
+let name = "John";
+let age = 25;
+let greeting = `Hello, my name is ${name} and I am ${age} years old.`;
+```
+
+will result in the `greeting` variable containing the string "Hello, my name is John and I am 25 years old."
 
 # --question--
 
 ## --text--
 
-Question Text
+Which of the following is the correct way to define a template literal in JavaScript?
 
 ## --answers--
 
-option 1
+"Hello, my name is ${name} and I am ${age} years old."
 
 ---
 
-option 2
+"Hello, my name is `name` and I am `age` years old."
 
 ---
 
-option 3
+"Hello, my name is {name} and I am {age} years old."
 
 ---
 
-option 4
+"Hello, my name is $name and I am $age years old."
 
 ## --video-solution--
 

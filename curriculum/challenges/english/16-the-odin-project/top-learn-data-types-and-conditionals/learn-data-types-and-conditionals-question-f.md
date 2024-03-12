@@ -7,33 +7,52 @@ dashedName: learn-data-types-and-conditionals-question-f
 ---
 # --description--
 
-Description Text
+We know that JavaScript has a variety of data types, including strings, numbers and booleans. We can use comparison operators to compare these data types and make decisions based on the results.
 
-# --assignment--
+The following comparison operators are available in JavaScript:
 
-possible assignment
+| Operator | Description                              | Example      |
+|----------|------------------------------------------|--------------|
+| ==       | Equal (value comparison)                 | x == y       |
+| !=       | Not equal                                | x != y       |
+| >        | Greater than                             | x > y        |
+| <        | Less than                                | x < y        |
+| >=       | Greater than or equal to                 | x >= y       |
+| <=       | Less than or equal to                    | x <= y       |
+
+To use a comparison in a variable assignment, we can use the `==` operator. For example:
+
+```javascript
+let x = 5;
+let y = 5;
+
+let result = x == y;
+
+console.log(result); // true
+```
+
 
 # --question--
 
 ## --text--
 
-Question Text
+Which of the following is the correct way to check if the variable `x` is equal to the number `5` in JavaScript?
 
 ## --answers--
 
-option 1
+`x = 5`
 
 ---
 
-option 2
+`x <= 5`
 
 ---
 
-option 3
+`x == 5`
 
 ---
 
-option 4
+`x >= 5`
 
 ## --video-solution--
 

@@ -1,40 +1,57 @@
 ---
 id: 65e9727a484dd50f720e6fed
-videoId: LGQuIIv2RVA
 title: Learn Data Types and Conditionals Question H
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-question-h
 ---
 # --description--
 
-Description Text
+In any programming language, we need to compare values to make decisions. For exampe, if the weather is sunny, we will go out, otherwise we will stay at home. Another example would be to see if a user has enough points to level up in a game.
 
-# --assignment--
+The if-else conditional statement is used to make decisions in JavaScript. It is often used with comparison operators to compare values and make decisions based on the results.
 
-possible assignment
+An example of an if statement is:
+
+```javascript
+let x = 5;
+
+if (x > 3) {
+  console.log("x is greater than 3");
+} else {
+  console.log("x is less than or equal to 3");
+}
+```
+
+In this example, the `x` variable is compared to the number `3` using the `>` operator. If `x` is greater than `3`, the first block of code will be executed. Otherwise, the second block of code will be executed.
 
 # --question--
 
 ## --text--
 
-Question Text
+What will be the output of the following code?
+
+```javascript
+
+let x = 9;
+let y = "5";
+
+if (x == y) {
+  console.log("x is equal to y");
+} else {
+  console.log("x is not equal to y");
+}
+
+```
 
 ## --answers--
 
-option 1
+"x is equal to y"
 
 ---
 
-option 2
+"x is not equal to y"
 
----
-
-option 3
-
----
-
-option 4
 
 ## --video-solution--
 
-1
+2
