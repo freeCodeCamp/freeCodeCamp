@@ -14,7 +14,7 @@ dashedName: python-objects
 
 ## --text--
 
-Which is NOT true about objects in Python?
+Python のオブジェクトについての説明として正しくないのはどれですか？
 
 ## --answers--
 

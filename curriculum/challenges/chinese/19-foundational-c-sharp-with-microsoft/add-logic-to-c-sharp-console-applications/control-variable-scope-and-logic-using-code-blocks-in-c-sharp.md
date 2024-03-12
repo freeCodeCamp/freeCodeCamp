@@ -1,38 +1,38 @@
 ---
 id: 647e21658acb466c97ccbee2
-title: 'Control Variable Scope and Logic Using Code Blocks in C#'
+title: '在 C# 中使用代码块控制变量作用域和逻辑'
 challengeType: 19
 dashedName: control-variable-scope-and-logic-using-code-blocks-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+这个挑战将有一部分在 Microsoft Learn 平台上完成。 请按照如下说明来完成挑战：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-code-blocks/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-code-blocks/</a> and complete all the tasks for the "Control Variable Scope and Logic Using Code Blocks in C#" module. This is **required** to earn the "Add Logic to C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳转到 <a href="https://learn.microsoft.com/training/modules/csharp-code-blocks/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-code-blocks/</a>，然后完成“在 C# 中使用代码块控制变量作用域和逻辑”模块的所有任务。 这是在 Microsoft Learn 上获得“向 C# 控制台应用程序添加逻辑”的奖杯以及参加认证考试所**必需**的。
+1. 完成后，返回并正确回答下面的问题。
 
-# --assignment--
+# --任务--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-code-blocks/" target="_blank" rel="noreferrer">Control Variable Scope and Logic Using Code Blocks in C#</a> module on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/csharp-code-blocks/" target="_blank" rel="noreferrer">在 C# 中使用代码块控制变量作用域和逻辑</a> 模块。 然后，回答下面的问题。
 
 # --question--
 
 ## --text--
 
-Which of the following statements is true about showing/removing the curly braces for code blocks associated with an `if` statement?
+关于显示/删除与 `if` 语句关联的代码块的大括号，以下哪项陈述是正确的？
 
 ## --answers--
 
-The curly braces can't be removed from the code block for `else if` and `else` statements.
+不能从 `else if` 和 `else` 语句的代码块中删除大括号。
 
 ---
 
-If the curly braces are removed from the code blocks of an `if-elseif-else`, the white space must also be removed.
+如果从 `if-elseif-else` 代码块中删除大括号，则也必须删除空格。
 
 ---
 
-Always choose a style that improves readability.
+始终选择能够提高可读性的代码风格。
 
 ## --video-solution--
 

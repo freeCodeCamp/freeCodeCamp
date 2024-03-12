@@ -1,8 +1,8 @@
 ---
 id: 6482b4fef5fd6bcdfddad730
-title: Passo 10
+title: Step 12
 challengeType: 0
-dashedName: step-10
+dashedName: step-12
 ---
 
 # --description--
@@ -181,6 +181,10 @@ canvas.width = innerWidth;
 canvas.height = innerHeight;
 const gravity = 0.5;
 let isCheckpointCollisionDetectionActive = true;
+
+const proportionalSize = (size) => {
+  return innerHeight < 500 ? Math.ceil((size / 500) * innerHeight) : size;
+}
 
 --fcc-editable-region--
 

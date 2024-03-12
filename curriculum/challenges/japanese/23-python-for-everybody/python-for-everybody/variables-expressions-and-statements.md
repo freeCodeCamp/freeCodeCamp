@@ -14,7 +14,7 @@ dashedName: variables-expressions-and-statements
 
 ## --text--
 
-What is the symbol used in an assignment statement?
+代入ステートメントで使用する記号は何ですか？
 
 ## --answers--
 

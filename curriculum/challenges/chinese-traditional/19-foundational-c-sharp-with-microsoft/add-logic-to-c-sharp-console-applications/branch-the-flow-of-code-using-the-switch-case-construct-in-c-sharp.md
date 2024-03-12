@@ -1,38 +1,38 @@
 ---
 id: 647e214b8acb466c97ccbee0
-title: 'Branch the Flow of Code Using the switch-case Construct in C#'
+title: '在 C# 中使用 switch-case 結構對代碼流進行分支'
 challengeType: 19
 dashedName: branch-the-flow-of-code-using-the-switch-case-construct-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+這個挑戰將有一部分在 Microsoft Learn 平臺上完成。 請按照如下說明來完成挑戰：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-switch-case/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-switch-case/</a> and complete all the tasks for the "Branch the Flow of Code Using the switch-case Construct in C#" module. This is **required** to earn the "Add Logic to C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳轉到 <a href="https://learn.microsoft.com/training/modules/csharp-switch-case/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-switch-case/</a>，然後完成“在 C# 中使用 switch-case 結構對代碼流進行分支”模塊的所有任務。 這是在 Microsoft Learn 上獲得“向 C# 控制檯應用程序添加邏輯”的獎盃以及參加認證考試所**必需**的。
+1. 完成後，返回並正確回答下面的問題。
 
-# --assignment--
+# --任務--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-switch-case/" target="_blank" rel="noreferrer">Branch the Flow of Code Using the `switch`-`case` Construct in C#</a> module on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/csharp-switch-case/" target="_blank" rel="noreferrer">在 C# 中使用 switch-case 結構對代碼流進行分支</a> 模塊。 然後，回答下面的問題。
 
 # --question--
 
 ## --text--
 
-What is the purpose of the `break` keyword?
+`break` 關鍵字的目的是什麼？
 
 ## --answers--
 
-The `break` keyword tells the runtime to continue evaluating other cases in the `switch` construct.
+`break` 關鍵字告訴運行時繼續評估 `switch` 結構中的其他情況。
 
 ---
 
-The `break` keyword tells the runtime to stop evaluating other cases in the `switch` construct.
+`break` 關鍵字告訴運行時停止評估 `switch` 結構中的其他情況。
 
 ---
 
-The `break` keyword tells the runtime to exit the application.
+`break` 關鍵字告訴運行時退出應用程序。
 
 ## --video-solution--
 

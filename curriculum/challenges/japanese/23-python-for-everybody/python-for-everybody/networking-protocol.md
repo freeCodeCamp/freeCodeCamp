@@ -14,7 +14,7 @@ dashedName: networking-protocol
 
 ## --text--
 
-What type of HTTP request is usually used to access a website?
+ウェブサイトにアクセスするために通常使用する HTTP リクエストのタイプはどれですか？
 
 ## --answers--
 

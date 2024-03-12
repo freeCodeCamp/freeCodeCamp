@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08812
-title: Make Images Mobile Responsive
+title: 이미지 모바일 반응형으로 만들기
 challengeType: 0
 forumTopicId: 18232
 dashedName: make-images-mobile-responsive
@@ -8,39 +8,39 @@ dashedName: make-images-mobile-responsive
 
 # --description--
 
-First, add a new image below the existing one. Set its `src` attribute to `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
+우선 기존 이미지 아래 새로운 이미지를 추가하세요. 이미지의 `src` 속성을 `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`로 설정하세요.
 
-It would be great if this image could be exactly the width of our phone's screen.
+이 이미지가 휴대전화 화면의 너비와 정확히 같다면 좋을 것입니다.
 
-Fortunately, with Bootstrap, all we need to do is add the `img-responsive` class to your image. Do this, and the image should perfectly fit the width of your page.
+다행히도 부트스트랩을 사용한다면 `img-responsive` 클래스를 이미지에 추가해주기만 하면 됩니다. 이 작업을 실행하면 이미지는 페이지의 너비에 정확히 맞아야 합니다.
 
 # --hints--
 
-You should have a total of two images.
+두 개의 이미지가 있어야 합니다.
 
 ```js
 assert($('img').length === 2);
 ```
 
-Your new image should be below your old one and have the class `img-responsive`.
+새로운 이미지는 기존 이미지 아래에 위치하고 `img-responsive`라는 클래스를 가져야 합니다.
 
 ```js
 assert($('img:eq(1)').hasClass('img-responsive'));
 ```
 
-Your new image should not have the class `smaller-image`.
+새로운 이미지는 `smaller-image`라는 클래스를 가지지 않아야 합니다.
 
 ```js
 assert(!$('img:eq(1)').hasClass('smaller-image'));
 ```
 
-Your new image should have a `src` of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
+새로운 이미지는 `src` 속성이 `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`로 설정되어야 합니다.
 
 ```js
 assert($('img:eq(1)').attr('src') === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg');
 ```
 
-Your new `img` element should have a closing angle bracket.
+새로운 `img` 요소에는 닫는 꺽쇠 괄호가 있어야 합니다.
 
 ```js
 assert(

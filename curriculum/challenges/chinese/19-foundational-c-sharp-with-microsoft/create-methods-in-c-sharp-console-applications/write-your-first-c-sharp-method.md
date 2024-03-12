@@ -1,26 +1,26 @@
 ---
 id: 647e226a8acb466c97ccbef1
-title: 'Write Your First C# Method'
+title: '编写你的第一个 C# 方法'
 challengeType: 19
 dashedName: write-your-first-c-sharp-method
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+这个挑战将有一部分在 Microsoft Learn 平台上完成。 请按照如下说明来完成挑战：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/write-first-c-sharp-method/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/write-first-c-sharp-method/</a> and complete all the tasks for the "Write Your First C# Method" module. This is **required** to earn the "Create Methods in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳转到 <a href="https://learn.microsoft.com/training/modules/write-first-c-sharp-method/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/write-first-c-sharp-method/</a>，然后完成“编写你的第一个 C# 方法”模块的所有任务。 这是在 Microsoft Learn 上获得“在 C# 控制台应用程序中创建方法”的奖杯以及参加认证考试所**必需**的。
+1. 完成后，返回并正确回答下面的问题。
 
-# --assignment--
+# --任务--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/write-first-c-sharp-method/" target="_blank" rel="noreferrer">Write Your First C# Method</a> module on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/write-first-c-sharp-method/" target="_blank" rel="noreferrer">编写你的第一个 C# 方法</a> 模块。 然后，回答下面的问题。
 
 # --question--
 
 ## --text--
 
-Which of the following correctly declares a method?
+下列哪项正确地声明了一个方法？
 
 ## --answers--
 

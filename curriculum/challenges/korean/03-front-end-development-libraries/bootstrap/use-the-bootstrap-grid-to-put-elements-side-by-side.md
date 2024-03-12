@@ -1,6 +1,6 @@
 ---
 id: bad88fee1348ce8acef08815
-title: Use the Bootstrap Grid to Put Elements Side By Side
+title: 부트스트랩 그리드를 사용하여 요소를 나란히 배치하기
 challengeType: 0
 forumTopicId: 18371
 dashedName: use-the-bootstrap-grid-to-put-elements-side-by-side
@@ -8,33 +8,33 @@ dashedName: use-the-bootstrap-grid-to-put-elements-side-by-side
 
 # --description--
 
-Bootstrap uses a responsive 12-column grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a `div` element.
+부트스트랩은 반응형 12열 그리드 시스템을 사용하는데 이는 요소를 행에 넣고 각 요소의 상대적인 너비를 특정하는 것을 용이하게 해줍니다. 대부분의 부트스트랩 클래스는 `div` 요소에 적용할 수 있습니다.
 
-Bootstrap has different column width attributes that it uses depending on how wide the user's screen is. For example, phones have narrow screens, and laptops have wider screens.
+부트스트랩은 사용자의 화면의 크기에 따라 다른 열 속성을 가지고 있습니다. 예를 들면 휴대 전화는 좁은 화면을 가지고 있고 휴대용 컴퓨터는 더 넓은 화면을 가지고 있습니다.
 
-Take for example Bootstrap's `col-md-*` class. Here, `md` means medium, and `*` is a number specifying how many columns wide the element should be. In this case, the column width of an element on a medium-sized screen, such as a laptop, is being specified.
+부트스트랩의 `col-md-*` class를 예시로 살펴보겠습니다. 여기서 `md`는 중간을 의미하고 `*`는 요소가 몇 열을 가져야 할지 정해주는 숫자를 말합니다. 이 경우에는 휴대용 컴퓨터 같이 중간 크기의 화면에 있는 요소의 열 너비가 정해집니다.
 
-In the Cat Photo App that we're building, we'll use `col-xs-*`, where `xs` means extra small (like an extra-small mobile phone screen), and `*` is the number of columns specifying how many columns wide the element should be.
+개발하고 있는 Cat Photo 앱에 `col-xs-*`를 사용할 것인데 여기서 `xs`는 extra small(모바일 전화의 작은 화면)을 의미하며, `*`는 요소가 몇 열 너비로 표시되어야 하는지를 지정하는 열 수입니다.
 
-Put the `Like`, `Info` and `Delete` buttons side-by-side by nesting all three of them within one `<div class="row">` element, then each of them within a `<div class="col-xs-4">` element.
+`Like`, `Info` 그리고 `Delete` 버튼을 `<div class="row">` 요소 안에 넣은 다음 각 요소를 `<div class="col-xs-4">` 요소 안에 넣어 나란히 배치하시오.
 
-The `row` class is applied to a `div`, and the buttons themselves can be nested within it.
+`row` 클래스는 `div`에 적용되며 버튼은 이 안에 배치시킬 수 있습니다.
 
 # --hints--
 
-Your buttons should all be nested within the same `div` element with the class `row`.
+`row`를 가진 같은 `div` 요소에 모든 버튼이 있어야 합니다.
 
 ```js
 assert($('div.row:has(button)').length > 0);
 ```
 
-Each of your Bootstrap buttons should be nested within its own `div` element with the class `col-xs-4`.
+각각의 부트스트랩 버튼은 `col-xs-4` 클래스를 가진 `div` 요소 안에 있어야 합니다.
 
 ```js
 assert($('div.col-xs-4:has(button)').length > 2);
 ```
 
-Each of your `button` elements should have a closing tag.
+각각의 `button` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(
@@ -44,7 +44,7 @@ assert(
 );
 ```
 
-Each of your `div` elements should have a closing tag.
+각가의 `div` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(
