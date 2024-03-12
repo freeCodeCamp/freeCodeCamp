@@ -1,6 +1,6 @@
 ---
 id: 5987fd532b954e0f21b5d3f6
-title: Equilibrium index
+title: Індекс рівноваги
 challengeType: 1
 forumTopicId: 302255
 dashedName: equilibrium-index
@@ -8,9 +8,9 @@ dashedName: equilibrium-index
 
 # --description--
 
-An equilibrium index of a sequence is an index into the sequence such that the sum of elements at lower indices is equal to the sum of elements at higher indices.
+Індекс рівноваги послідовності — це індекс, де сума елементів нижчих індексів дорівнює сумі елементів вищих індексів.
 
-For example, in a sequence $A$:
+Наприклад, в послідовності $A$:
 
 <ul style='list-style: none;'>
   <li><big>$A_0 = -7$</big></li>
@@ -22,67 +22,67 @@ For example, in a sequence $A$:
   <li><big>$A_6 =  0$</big></li>
 </ul>
 
-`3` is an equilibrium index, because:
+`3` є індексом рівноваги, оскільки:
 
 <ul style='list-style: none;'>
   <li><big>$A_0 + A_1 + A_2 = A_4 + A_5 + A_6$</big></li>
 </ul>
 
-`6` is also an equilibrium index, because:
+`6` також є індексом рівноваги, оскільки:
 
 <ul style='list-style: none;'>
   <li><big>$A_0 + A_1 + A_2 + A_3 + A_4 + A_5 = 0$</big></li>
 </ul>
 
-(sum of zero elements is zero)
+(сума нульових елементів дорівнює нулю)
 
-`7` is not an equilibrium index, because it is not a valid index of sequence $A$.
+`7` не є індексом рівноваги, оскільки це недійсний індекс послідовності $A$.
 
 # --instructions--
 
-Write a function that, given a sequence, returns its equilibrium indices (if any).
+Дано послідовність. Напишіть функцію, яка повертає індекси рівноваги (якщо такі є).
 
-Assume that the sequence may be very long.
+Зверніть увагу, що послідовність може бути дуже довгою.
 
 # --hints--
 
-`equilibrium` should be a function.
+`equilibrium` має бути функцією.
 
 ```js
 assert(typeof equilibrium === 'function');
 ```
 
-`equilibrium([-7, 1, 5, 2, -4, 3, 0])` should return `[3,6]`.
+`equilibrium([-7, 1, 5, 2, -4, 3, 0])` має повернути `[3,6]`.
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[0]), ans[0]);
 ```
 
-`equilibrium([2, 4, 6])` should return `[]`.
+`equilibrium([2, 4, 6])` має повернути `[]`.
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[1]), ans[1]);
 ```
 
-`equilibrium([2, 9, 2])` should return `[1]`.
+`equilibrium([2, 9, 2])` має повернути `[1]`.
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[2]), ans[2]);
 ```
 
-`equilibrium([1, -1, 1, -1, 1, -1, 1])` should return `[0,1,2,3,4,5,6]`.
+`equilibrium([1, -1, 1, -1, 1, -1, 1])` має повернути `[0,1,2,3,4,5,6]`.
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[3]), ans[3]);
 ```
 
-`equilibrium([1])` should return `[0]`.
+`equilibrium([1])` має повернути `[0]`.
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[4]), ans[4]);
 ```
 
-`equilibrium([])` should return `[]`.
+`equilibrium([])` має повернути `[]`.
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[5]), ans[5]);

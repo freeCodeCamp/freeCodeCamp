@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f160b6c005b0e76f085
-title: Python Objects
+title: كائنات Python
 challengeType: 11
 videoId: uJxGeTYy0us
 bilibiliIds:
@@ -18,19 +18,19 @@ Which is NOT true about objects in Python?
 
 ## --answers--
 
-Objects get created and used.
+يتم إنشاء واستخدام الكائنات.
 
 ---
 
-Objects are bits of code and data.
+الكائنات هي جزء من الكود والبيانات.
 
 ---
 
-Objects hide detail.
+الكائنات تخفي التفاصيل.
 
 ---
 
-Objects are one of the five standard data types.
+الكائنات هي أحد أنواع البيانات الخمسة الأساسية.
 
 ## --video-solution--
 

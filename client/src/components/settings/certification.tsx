@@ -114,7 +114,7 @@ const isCertMapSelector = createSelector(
     isJsAlgoDataStructCertV8
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
-    'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
+    'Legacy JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
     'Front End Development Libraries': isFrontEndLibsCert,
     'Data Visualization': is2018DataVisCert,
     'Back End Development and APIs': isApisMicroservicesCert,
@@ -227,7 +227,8 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
             href={certLocation}
             id={'button-' + certSlug}
             // This floating promise is acceptable
-            onClick={void createClickHandler(certSlug)}
+            // eslint-disable-next-line @typescript-eslint/no-misused-promises
+            onClick={createClickHandler(certSlug)}
             target='_blank'
           >
             {isFullStackCert ? t('buttons.show-cert') : t('buttons.claim-cert')}
@@ -397,7 +398,8 @@ function CertificationSettings(props: CertificationSettingsProps) {
               href={certLocation}
               data-cy={`btn-for-${certSlug}`}
               // This floating promise is acceptable
-              onClick={void clickHandler}
+              // eslint-disable-next-line @typescript-eslint/no-misused-promises
+              onClick={clickHandler}
             >
               {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}{' '}
               <span className='sr-only'>{certName}</span>
@@ -417,6 +419,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
         {currentCertTitles.map(title => (
           <Certification key={title} certName={title} t={t} />
         ))}
+        <Spacer size='medium' />
         <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
         <LegacyFullStack {...props} />
         {legacyCertTitles.map(title => (

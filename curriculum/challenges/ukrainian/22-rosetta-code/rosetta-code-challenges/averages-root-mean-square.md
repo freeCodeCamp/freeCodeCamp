@@ -1,6 +1,6 @@
 ---
 id: 594da033de4190850b893874
-title: Averages/Root mean square
+title: 'Середні значення: середнє квадратне значення'
 challengeType: 1
 forumTopicId: 302228
 dashedName: averagesroot-mean-square
@@ -8,21 +8,21 @@ dashedName: averagesroot-mean-square
 
 # --description--
 
-Compute the Root Mean Square (RMS) of the numbers 1 through 10 inclusive.
+Знайдіть середнє квадратне значення (RMS) чисел від 1 до 10 включно.
 
-The <abbr title="Root mean square">RMS</abbr> is calculated by taking the square root of the mean of the squares of the numbers, given by the equation:
+Щоб знайти <abbr title="Root mean square">середнє квадратне значення</abbr>, знайдіть квадратний корінь середнього значення чисел, що задано формулою:
 
 $$x\_{\\mathrm{rms}} = \\sqrt {{{x_1}^2 + {x_2}^2 + \\cdots + {x_n}^2} \\over n}. $$
 
 # --hints--
 
-`rms` should be a function.
+`rms` має бути функцією.
 
 ```js
 assert(typeof rms === 'function');
 ```
 
-`rms([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])` should equal `6.2048368229954285`.
+`rms([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])` має дорівнювати `6.2048368229954285`.
 
 ```js
 assert.equal(rms(arr1), answer1);

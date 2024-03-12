@@ -34,4 +34,4 @@ All of the above
 
 ## --video-solution--
 
-2
+٢

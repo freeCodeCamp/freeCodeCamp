@@ -13,7 +13,7 @@ Dopo aver visitato il link, crea una copia del notebook nel tuo account o localm
 
 # --instructions--
 
-Per questa sfida, usando Python devi creare una calcolatrice multifunzione che prende un input ed esegue le seguenti operazioni:
+For this challenge, you need to create a financial calculator using Python that take input and do the following:
 
 - Calcolare la rendita con crescita mensile o continua
 - Calcolare la rata mensile di un mutuo

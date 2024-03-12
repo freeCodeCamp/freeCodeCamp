@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f140b6c005b0e76f07e
-title: 'Web Services: Service Oriented Approach'
+title: 'ウェブサービス: サービス指向のアプローチ'
 challengeType: 11
 videoId: muerlsCHExI
 bilibiliIds:
@@ -18,15 +18,15 @@ With a services oriented approach to developing web apps, where is the data loca
 
 ## --answers--
 
-Spread across many computer systems connected via the internet or internal network.
+インターネットまたは内部ネットワークを介して接続された多くのコンピューターシステムに散在している。
 
 ---
 
-Within different services on the main web server.
+メインのウェブサーバー上の異なるサービス内にある。
 
 ---
 
-On a separate database server.
+別のデータベースサーバー上にある。
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 6363d2769078df117ce4c406
-title: "Exponents and Logarithms"
+title: "指数と対数"
 challengeType: 15
 videoId: LhzmzugFFu8
 dashedName: exponents-and-logarithms
@@ -8,13 +8,13 @@ dashedName: exponents-and-logarithms
 
 # --description--
 
-Here is the <a href="https://colab.research.google.com/drive/1hg7ecxGT20B8HR2mV75HzMylj9SHIWH8?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+この動画と合わせて<a href="https://colab.research.google.com/drive/1hg7ecxGT20B8HR2mV75HzMylj9SHIWH8?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">こちらの Colab ノートブック</a>も利用してください。
 
 # --question--
 
 ## --text--
 
-What is log<sub>5</sub>(25)?
+log<sub>5</sub>(25) を解くといくつになりますか？
 
 ## --answers--
 

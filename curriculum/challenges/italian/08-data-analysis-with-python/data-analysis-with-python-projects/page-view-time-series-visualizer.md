@@ -8,16 +8,11 @@ dashedName: page-view-time-series-visualizer
 
 # --description--
 
-Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-page-view-time-series-visualizer" target="_blank" rel="noopener noreferrer nofollow"> questo progetto con il nostro codice d'inizio su Replit</a>.
-
--   Inizia importando il progetto su Replit.
--   Poi vedrai una finestra `.replit`.
--   Seleziona `Use run command` e clicca sul pulsante `Done`.
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-page-view-time-series-visualizer" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Python. Per ora, ecco alcuni video sul canale YouTube di freeCodeCamp.org che ti insegneranno tutto quello che devi sapere per completare questo progetto:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Video corso Python for Everybody</a> (14 ore)
 
 - <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow"> Come analizzare i dati con Python Pandas </a>(10 ore)
 
@@ -33,17 +28,17 @@ Utilizza i dati per completare le seguenti attività:
 - Crea una funzione `draw_bar_plot` che disegna un grafico a barre simile a "examples/Figure_2.png". Dovrebbe mostrare le visualizzazioni medie giornaliere delle pagine per ogni mese raggruppato per anno. La legenda dovrebbe mostrare le etichette dei mesi e avere il titolo `Months`. Sul grafico, l'etichetta sull'asse x dovrebbe essere `Years` e l'etichetta sull'asse y dovrebbe essere `Average Page Views`.
 - Crea una funzione `draw_box_plot` che utilizzi Seaborn per disegnare due grafici adiacenti simili a "examples/Figure_3.png". Questi grafici a riquadro devono mostrare come sono distribuiti i valori entro un determinato anno o mese e il confronto nel tempo. Il titolo del primo grafico dovrebbe essere `Year-wise Box Plot (Trend)` e il titolo del secondo grafico dovrebbe essere `Month-wise Box Plot (Seasonality)`. Assicurati che le etichette mensili in basso inizino con `Jan` e gli assi x e y siano etichettati correttamente. Il boilerplate include comandi per preparare i dati.
 
-Per ogni grafico, assicurati di utilizzare una copia del frame di dati. I test unitari sono scritti per te in `test_module.py`.
+Per ogni grafico, assicurati di utilizzare una copia del frame di dati.
 
 Il boilerplate include anche comandi per salvare e restituire l'immagine.
 
 ## Sviluppo
 
-Nello sviluppo, puoi usare `main.py` per testare le tue funzioni. Usa il bottone "run" e `main.py` sarà eseguito.
+Write your code in `time_series_visualizer.py`. For development, you can use `main.py` to test your code.
 
 ## Test
 
-Abbiamo impotato i test da `test_module.py` in `main.py` per la tua convenienza. I test saranno eseguiti automaticamente quando usi il bottone "run".
+The unit tests for this project are in `test_module.py`. Abbiamo impotato i test da `test_module.py` in `main.py` per la tua convenienza.
 
 ## Invio
 

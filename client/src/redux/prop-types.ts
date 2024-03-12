@@ -115,7 +115,9 @@ export type Characters =
   | 'Anna'
   | 'Bob'
   | 'Brian'
+  | 'Candidate'
   | 'David'
+  | 'Expert'
   | 'Jake'
   | 'James'
   | 'Linda'
@@ -123,6 +125,7 @@ export type Characters =
   | 'Maria'
   | 'Mark'
   | 'Sarah'
+  | 'Second Candidate'
   | 'Sophie'
   | 'Tom';
 

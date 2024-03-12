@@ -1,6 +1,6 @@
 ---
 id: 6331d260b51aeedd1a2bd64a
-title: "Fractions and Decimals: Extra"
+title: "分数と小数: おまけ"
 challengeType: 15
 videoId: YHVA6cYIglM
 dashedName: fractions-and-decimals-extra
@@ -8,23 +8,23 @@ dashedName: fractions-and-decimals-extra
 
 # --description--
 
-The following video will show you one way to set up your Google Colaboratory notebook, so that you can continue to build your personalized algebra calculator.
+次の動画では、Google Colaboratory のノートブックを設定する方法の 1 つを紹介します。これで、自分用の代数電卓の作成を続けることができます。
 
-Here is <a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">the Colab notebook used in this video</a> so you can use it as a model.
+<a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">この動画で使用しているこちらの Colab ノートブック</a>を参考にしてください。
 
 # --assignment--
 
-Add the code to factor and solve for a variable to your algebra Colab notebook.
+因数分解をして変数を解くコードを代数学用の Colab ノートブックに追加してください。
 
 ---
 
-Run the code in the following notebook to get <a href="https://colab.research.google.com/drive/1qON4GYbMkaZJA7MYd7-RcDROOkuuBJg9?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">practice converting fractions and decimals.</a> As a bonus, look at the code used to generate the practice problems.
+次のノートブックのコードを実行して、<a href="https://colab.research.google.com/drive/1qON4GYbMkaZJA7MYd7-RcDROOkuuBJg9?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">分数と小数を変換する練習</a>をしてください。おまけとして、練習問題の生成に使用されているコードを見てみましょう。
 
 # --question--
 
 ## --text--
 
-Which of the following languages can you not use in Google Colaboratory?
+次のうち、Google Colaboratory で使用できない言語はどれですか？
 
 ## --answers--
 
@@ -36,11 +36,11 @@ LaTex
 
 ---
 
-English
+英語
 
 ---
 
-Sanskrit
+サンスクリット語
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4551000cf542c50ff67
-title: 'Problem 232: The Race'
+title: '問題 232: レース'
 challengeType: 1
 forumTopicId: 301876
 dashedName: problem-232-the-race
@@ -8,23 +8,23 @@ dashedName: problem-232-the-race
 
 # --description--
 
-Two players share an unbiased coin and take it in turns to play "The Race".
+「レース」というゲームでは、2 人のプレイヤーが偏りのない 1 枚のコインを交代で使います。
 
-On Player 1's turn, he tosses the coin once: if it comes up Heads, he scores one point; if it comes up Tails, he scores nothing.
+プレイヤー 1 は自分のターンでコインを 1 回投げ、表が出たら 1 点を獲得し、裏が出たら 0 点です。
 
-On Player 2's turn, she chooses a positive integer $T$ and tosses the coin $T$ times: if it comes up all Heads, she scores $2^{T - 1}$ points; otherwise, she scores nothing.
+プレイヤー 2 は、自分のターンで正の整数 $T$ を選び、コインを $T$ 回投げます。すべて表が出たら $2^{T - 1}$ 点を獲得し、それ以外の場合は 0 点です。
 
-Player 1 goes first. The winner is the first to 100 or more points.
+最初に投げるのはプレイヤー 1 です。 勝者は、先に 100 点以上に達したプレイヤーです。
 
-On each turn Player 2 selects the number, $T$, of coin tosses that maximises the probability of her winning.
+プレイヤー 2 は自分のターンになるたびに、自分が勝つ確率が最も高くなるようなコイン投げの回数 $T$ を選びます。
 
-What is the probability that Player 2 wins?
+プレイヤー 2 が勝つ確率を求めなさい。
 
-Give your answer rounded to eight decimal places in the form 0.abcdefgh .
+回答は、四捨五入して小数第 8 位まで求め、0.abcdefgh の形式にすること。
 
 # --hints--
 
-`theRace()` should return `0.83648556`.
+`theRace()` は `0.83648556` を返す必要があります。
 
 ```js
 assert.strictEqual(theRace(), 0.83648556);

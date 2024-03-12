@@ -1,33 +1,46 @@
 ---
 id: 6571b300cc1de61d7b4dd383
-title: Introduction to Flexbox Question E
+title: Вступ до Flexbox. Запитання E
 challengeType: 15
 dashedName: introduction-flexbox-question-e
 ---
+
 # --description--
-<!-- empty description -->
+
+Насправді оголошення `flex` є скороченням трьох властивостей, які можна встановити в гнучкому предметі. Ці властивості впливають на те, як гнучкі предмети розміщуються в контейнерах самостійно. Раніше ви вже бачили скорочені властивості, але ми не представляли їх офіційно.
+
+> Скорочені властивості — це властивості, які дозволяють одночасно встановити значення декількох інших властивостей CSS. За допомогою скорочених властивостей можна писати стисліші (та читабельніші) таблиці стилів, що зберігає час та енергію.
+
+У цьому випадку `flex` є скороченням властивостей `flex-grow`, `flex-shrink` та `flex-basis`.
+
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/0cc6b26bb0c4b94524369d327c97a8fb11e83b6b/foundations/html_css/flexbox/imgs/10.png" alt="скорочення flex" />
+
+`flex: 1` зі знімка екрана вище дорівнює `flex-grow: 1`, `flex-shrink: 1`, `flex-basis: 0`.
+
+Дуже часто можна побачити, що скорочення визначене лише одним значенням. У такому випадку це значення застосоване до `flex-grow`. Тому, якщо ви додаєте `flex: 1` до елементів div, насправді ви вказуєте скорочення `flex: 1 1 0`.
+
 # --question--
 
 ## --text--
 
-How do flex items behave when their parent flex container is resized?
+Які властивості задані скороченням `flex`?
 
 ## --answers--
 
-Flex items maintain fixed sizes.
+`flex-grow`, `flex-shrink` та `flex`
 
 ---
 
-Flex items adjust their sizes proportionally.
+`flex-basis`, `flex-wrap` та `flex-direction`
 
 ---
 
-Flex items overflow the container.
+`flex-grow`, `flex-shrink` та `flex-basis`
 
 ---
 
-Flex items collapse into a single column.
+`flex-direction`, `flex` та `flex-wrap`
 
 ## --video-solution--
 
-2
+3

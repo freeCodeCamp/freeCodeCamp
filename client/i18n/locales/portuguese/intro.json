@@ -194,7 +194,7 @@
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "Learn More About CSS Pseudo Selectors by Building A Balance Sheet",
+        "title": "Aprenda mais sobre pseudosseletores de CSS criando uma folha de saldo",
         "intro": [
           "Você pode usar pseudosseletores em CSS para alterar elementos HTML específicos.",
           "Neste curso, você criará uma folha de balanço usando pseudosseletores. Você aprenderá como alterar o estilo de um elemento ao passar o mouse sobre ele e acionar outros eventos em sua página da web."
@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "Algoritmos e estruturas de dados em JavaScript",
+    "title": "Legacy JavaScript Algorithms and Data Structures",
     "intro": [
       "Enquanto o HTML e o CSS controlam o conteúdo e o estilo de uma página, o JavaScript é usado para torná-lo interativo. Na certificação de Algoritmos e Estruturas de Dados em JavaScript, você aprenderá os fundamentos do JavaScript, incluindo variáveis, arrays, objetos, laços e funções.",
       "Assim que souber os fundamentos abaixo, você aplicará esse conhecimento, criando algoritmos para manipular strings, fatorar números e até mesmo calcular a órbita da Estação Espacial Internacional.",
@@ -300,110 +300,110 @@
     }
   },
   "javascript-algorithms-and-data-structures-v8": {
-    "title": "JavaScript Algorithms and Data Structures (Beta)",
+    "title": "Algoritmos e estruturas de dados em JavaScript (Beta)",
     "intro": [
-      "Developers use HTML and CSS to control the content and styling of a page. And they use JavaScript to make that page interactive.",
-      "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",
-      "You'll also learn about Object Oriented Programming (OOP), Functional Programming, algorithmic thinking, how to work with local storage, and how to fetch data using an API."
+      "Desenvolvedores usam HTML e CSS para controlar os componentes e estilizar a página. Eles também usam o JavaScript para tornar essa página interativa.",
+      "Neste certificado de Algoritmos e estruturas de dados em JavaScript, você aprenderá os fundamentos de JavaScript como variáveis, arrays, objetos, laços, funções, o DOM e mais.",
+      "Você também aprenderá sobre Programação Orientada a Objetos (POO), Programação Funcional, pensamento algorítmico, como trabalhar com armazenamento local e como buscar dados usando uma API."
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
+    "note": "Observação: algumas extensões de navegadores, como bloqueadores de anúncios e scripts, podem interferir com os testes. Se você tiver problemas, recomendamos desabilitar as funções de bloqueio de conteúdos de páginas durante o curso.",
     "blocks": {
       "build-a-pokemon-search-app-project": {
-        "title": "Build a Pokémon Search App Project",
+        "title": "Projeto de criação de uma aplicação de busca de Pokémons",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a Pokémon search app."
+          "Este é um dos projetos necessários para obter a certificação.",
+          "Para esse projeto, você criará uma aplicação para a busca de Pokémons."
         ]
       },
       "build-a-cash-register-project": {
-        "title": "Build a Cash Register Project",
+        "title": "Projeto de criação de uma caixa registradora",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you'll build a cash register web app."
+          "Este é um dos projetos necessários para obter a certificação.",
+          "Para esse projeto, você criará uma aplicação de caixa registradora para a web."
         ]
       },
       "build-a-palindrome-checker-project": {
-        "title": "Build a Palindrome Checker Project",
+        "title": "Projeto de criação de verificador de palíndromo",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you'll build an application that checks whether a given word is a palindrome."
+          "Este é um dos projetos necessários para obter a certificação.",
+          "Para esse projeto, você criará uma aplicação que verifica se uma determinada palavra é um palíndromo."
         ]
       },
       "build-a-roman-numeral-converter-project": {
-        "title": "Build a Roman Numeral Converter Project",
+        "title": "Projeto de criação de um conversor de números romanos",
         "intro": [
-          "This is one of the required projects to claim your certification.",
-          "For this project, you'll build an application that converts integers to Roman numerals."
+          "Este é um dos projetos necessários para obter a certificação.",
+          "Para esse projeto, você criará uma aplicação que converte números inteiros em números romanos."
         ]
       },
       "build-a-telephone-number-validator-project": {
-        "title": "Build a Telephone Number Validator Project",
+        "title": "Projeto de criação de um validador de número telefônico",
         "intro": [
-          "This is one of the required projects to claim your certification.",
-          "For this project, you'll build an application that checks if a number is a valid United States phone number."
+          "Este é um dos projetos necessários para obter a certificação.",
+          "Para esse projeto, você criará uma aplicação que verifica se o número de telefone é um número válido de telefone dos Estados Unidos."
         ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+        "title": "Aprenda JavaScript básico criando um jogo de RPG",
         "intro": [
-          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
-          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Role Playing Game. You'll learn how to work with arrays, strings, objects, functions, loops, <code>if/else</code> statements, and more."
+          "O JavaScript é uma poderosa linguagem de script que você pode usar para fazer sites interativos. É uma das tecnologias essenciais da web, junto do HTML e do CSS. Todos os navegadores modernos suportam JavaScript.",
+          "Nesse projeto prático, você aprenderá conceitos fundamentais de programação em JavaScript programando o próprio RPG. Você aprenderá a trabalhar com arrays, strings, objetos, funções, laços, instruções <code>if/else</code> e mais."
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
-        "title": "Learn Form Validation by Building a Calorie Counter",
+        "title": "Aprenda validação de formulário construindo um contador de calorias",
         "intro": [
-          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter project, you'll learn how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
-          "In this practice project, you'll learn basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
+          "Às vezes quando você está programando uma aplicação web, você irá precisar conseguir aceitar uma entrada de um usuário. Neste projeto de contador de calorias, você irá aprender a validar a entrada do usuário, executar cálculos baseados naquela entrada, e atualizar dinamicamente a sua interface para exibir os resultados.",
+          "Neste projeto prático, você aprenderá expressões regulares básicas, template literals, o método <code>addEventListener()</code>, e mais."
         ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
-        "title": "Learn Functional Programming by Building a Spreadsheet",
+        "title": "Aprenda programação funcional criando uma planilha",
         "intro": [
-          "Functional Programming is a popular approach to software development. In Functional Programming, developers organize code into smaller functions, then combine those functions to build complex programs.",
-          "In this spreadsheet application project, you'll learn about parsing and evaluating mathematical expressions, implementing spreadsheet functions, handling cell references, and creating interactive web interfaces. You'll learn how to dynamically update the page based on user input.",
-          "This project will cover concepts like the <code>map()</code> method, <code>find()</code> method, <code>parseInt()</code>, the <code>includes()</code> method."
+          "A programação funcional é uma abordagem popular para desenvolvimento de software. Na programação funcional, os desenvolvedores organizam o código em funções menores, então combinam essas funções para criar programas complexos.",
+          "Nesse projeto de aplicação de planilha, você aprenderá sobre análise e avaliação de expressões matemáticas, implementando funções de planilha, manipulando referências de células e criando interfaces da web interativas. Você aprenderá como atualizar dinamicamente a página baseada na entrada do usuário.",
+          "Esse projeto abrangerá conceitos como o método <code>map()</code>, o método <code>find()</code>, <code>parseInt()</code> e o método <code>includes()</code>."
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
-        "title": "Learn Modern JavaScript Methods by Building Football Team Cards",
+        "title": "Aprenda métodos modernos de JavaScript criando cards de equipes de futebol",
         "intro": [
-          "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
-          "This project will cover concepts like switch statements, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method, and more."
+          "Um aspecto comum da criação de aplicações web é trabalhar com o processamento de conjuntos de dados e, em seguida, enviar informações para a tela. Nesse projeto de cartões da equipe de futebol, você aprenderá como trabalhar com a manipulação do DOM, desestruturação de objetos, manipulação de eventos, e filtragem de dados.",
+          "Esse projeto abrangerá conceitos como instruções switch, parâmetros padrão, <code>Object.freeze()</code>, o método <code>map()</code> e mais."
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
-        "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
+        "title": "Aprenda métodos de arrays avançados criando uma calculadora de estatística",
         "intro": [
-          "As you expand your JavaScript skills, you'll want to get comfortable with array manipulation methods, such as <code>map()</code>, <code>reduce()</code>, and <code>filter()</code>.",
-          "In this statistics calculator project, you'll gain experience with handling user input, DOM manipulation, and method chaining. You'll get practice by performing statistical calculations like mean, median, mode, variance, and standard deviation."
+          "À medida que você expande suas habilidades em JavaScript, vai querer se sentir confortável com métodos de manipulação de arrays, como <code>map()</code>, <code>reduce()</code> e <code>filter()</code>.",
+          "Nesse projeto de calculadora de estatísticas, você ganhará experiência com a manipulação de entradas do usuário, manipulação do DOM e métodos de encadeamento. Você praticará realizando cálculos estatísticos como média, mediana, moda, variância e desvio padrão."
         ]
       },
       "learn-basic-oop-by-building-a-shopping-cart": {
-        "title": "Learn Basic OOP by Building a Shopping Cart",
+        "title": "Aprenda POO básica criando um carrinho de compras",
         "intro": [
-          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, developers use objects and classes to structure their code.",
-          "In this shopping cart project, you'll learn how to define classes and use them. You'll create class instances and implement methods for data manipulation.",
-          "This project will cover concepts like the ternary operator, the spread operator, the <code>this</code> keyword, and more."
+          "POO, ou Programação Orientada a Objetos, é uma das principais abordagens do processo de desenvolvimento de software. Na POO, os desenvolvedores usam objetos e classes para estruturar seus códigos.",
+          "Nesse projeto do carrinho de compras, você aprenderá como definir e usar classes. Você criará instâncias de classes e implementará métodos para a manipulação de dados.",
+          "Esse projeto abrangerá conceitos como operador ternário, o operador spread, a palavra-chave <code>this</code> e muito mais."
         ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "Learn Fetch and Promises by Building an fCC Authors Page",
+        "title": "Aprenda Fetch e Promises criando uma página de autores do fCC",
         "intro": [
-          "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
-          "This freeCodeCamp authors page project will show you how to use the fetch method, then dynamically update the DOM to display the fetched data.",
-          "This project will also teach you how to paginate your data so you can load results in batches."
+          "Um aspecto comum do desenvolvimento web é aprender a buscar dados de uma API externa e, em seguida, trabalhar com JavaScript assíncrono.",
+          "Esse projeto da página de autores do freeCodeCamp mostrará a você como usar o método fetch e a atualizar dinamicamente o DOM para exibir os dados obtidos.",
+          "Esse projeto também ensinará você a paginar os dados para poder carregar os resultados em lotes."
         ]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
-        "title": "Learn Regular Expressions by Building a Spam Filter",
+        "title": "Aprenda expressões regulares criando um filtro de spam",
         "intro": [
-          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
-          "In this spam filter project, you'll learn about capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
+          "Expressões regulares, frequentemente abreviadas como \"regex\" ou \"regexp\", são padrões que ajudam os programadores a corresponder, buscar e substituir texto. As expressões regulares são poderosas, mas podem ser difíceis de entender porque usam muitos caracteres especiais.",
+          "Neste projeto de filtro de spam, você aprenderá a usar caracteres especiais, grupos de captura, buscas positivas e negativas, bem como outras técnicas para encontrar correspondências com o texto desejado."
         ]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
-        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+        "title": "Aprenda o raciocínio básico de algoritmos criando uma ordenação numérica",
         "intro": [
           "In computer science, there are fundamental sorting algorithms that all developers should learn. In this number sorter project, you'll learn how to implement and visualize different sorting algorithms like bubble sort, selection sort, and insertion sort – all with JavaScript.",
           "This project will help you understand the fundamental concepts behind these algorithms, and how you can apply them to sort numerical data in web applications."
@@ -750,8 +750,8 @@
   "scientific-computing-with-python": {
     "title": "Scientific Computing with Python (Beta)",
     "intro": [
-      "Python é uma das linguagens de programação mais populares e flexíveis atualmente. Você pode usá-la para tudo, desde programação básica até aprendizagem de máquina.",
-      "Na certificação em computação científica com Python, você aprenderá o básico sobre Python, como variáveis, \"loops\", condicionais e funções. Depois, você vai evoluir rapidamente para estruturas de dados complexas, redes, bancos de dados relacionais e visualização de dados."
+      "The Scientific Computing with Python (Beta) curriculum will equip you with the skills to analyze and manipulate data using Python, a powerful and versatile programming language. You'll learn key concepts like data structures, algorithm, Object Oriented Programming, and how to perform complex calculations using a variety of tools.",
+      "This comprehensive course will guide you through the fundamentals of scientific computing, including data structures, and algorithms."
     ],
     "note": "",
     "blocks": {
@@ -1178,6 +1178,12 @@
         "intro": [
           "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
         ]
+      },
+      "top-learn-variables-and-operators": {
+        "title": "Learn Variables and Operators",
+        "intro": [
+          "Get started with JavaScript by learning about variables and operators. This course covers the fundamentals of JavaScript programming, including data types, operators, and variable declarations."
+        ]
       }
     }
   },
@@ -1316,15 +1322,21 @@
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Aprenda a falar sobre um dia típico e tarefas",
-        "intro": ["Learn about a typical workday."]
+        "intro": [
+          "In this course, you'll learn how to talk about your workday and the tasks that you perform in the workplace and how to share them with others. It mainly focuses on the structures used for describing your activities and task-related vocabulary."
+        ]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "Aprenda a discutir sobre sua rotina diária ou noturna",
-        "intro": ["Learn about routines."]
+        "intro": [
+          "In this course, you'll learn how to talk about details of your routine and share them with someone else. It mainly focuses on the structures used for declaring routine actions and related vocabulary."
+        ]
       },
       "learn-how-to-describe-your-current-project": {
         "title": "Aprenda a descrever seu projeto atual",
-        "intro": ["Learn about projects."]
+        "intro": [
+          "In this course, you'll learn how to talk about the projects that you are involved in and how to inform others of what you are doing in these projects. It mainly focuses on the structures used for informing it and on the related vocabulary."
+        ]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Aprenda a pedir informações sobre histórico educacional e profissional e como compartilhá-las",
@@ -1451,10 +1463,14 @@
     "legacy-desc": "Estes cursos não fazem mais parte do caminho de certificação, mas ainda estão disponíveis para você continuar aprendendo.",
     "legacy-go-back": "Vá para a versão atual do currículo.",
     "course-maintenance": "Estes cursos estão passando por manutenção. Se eles não estiverem funcionando, você pode aprender como executá-los localmente em <0>https://www.freecodecamp.org/portuguese/news/curso-de-bancos-de-dados-relacionais-como-aprender-sql-no-vscode-usando-o-docker-e-o-freecodecamp/</0>.",
+    "course-disabling-soon": "The browser version of these courses will be temporarily disabled soon and your virtual machines will be deleted. Any progress in your virtual machines will be lost. If you have any files you want from them, you should save them to your computer. We apologize for any inconvenience. We hope to have an improved browser version of these courses available again in the next few weeks.",
+    "course-disabled": "These courses are temporarily unavailable to run in the browser. We apologize for any inconvenience. You can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>. We hope to have an improved browser version available again soon.",
+    "run-locally": "For now, we recommend running the courses locally on your computer. You can learn how at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
     "progress-wont-save": "O progresso não será salvo em sua conta do freeCodeCamp quando executá-los localmente.",
     "go-back-to-learn": "Voltar à versão estável do currículo.",
     "read-database-cert-article": "Leia esta publicação no fórum antes de prosseguir.",
     "enable-cookies": "Você deve habilitar cookies de terceiros antes de iniciar.",
-    "english-only": "Os cursos desta seção estão disponíveis apenas em inglês. Neste momento, só podemos traduzir os títulos e as introduções, não as próprias lições."
+    "english-only": "Os cursos desta seção estão disponíveis apenas em inglês. Neste momento, só podemos traduzir os títulos e as introduções, não as próprias lições.",
+    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
   }
 }

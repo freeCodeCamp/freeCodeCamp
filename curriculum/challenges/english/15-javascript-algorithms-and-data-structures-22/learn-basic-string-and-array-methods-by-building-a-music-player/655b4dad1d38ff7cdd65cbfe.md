@@ -1,8 +1,8 @@
 ---
 id: 655b4dad1d38ff7cdd65cbfe
-title: Step 90
+title: Step 93
 challengeType: 0
-dashedName: step-90
+dashedName: step-93
 ---
 
 # --description--
@@ -17,28 +17,28 @@ You should call the `pauseSong` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /pauseSong\(\);?/)
+assert.match(splitter[1], /pauseSong\(\s*\)\s*;?/)
 ```
 
 You should call the `setPlayerDisplay` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /setPlayerDisplay\(\);?/)
+assert.match(splitter[1], /setPlayerDisplay\(\s*\)\s*;?/)
 ```
 
 You should call the `highlightCurrentSong` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /highlightCurrentSong\(\);?/)
+assert.match(splitter[1], /highlightCurrentSong\(\s*\)\s*;?/)
 ```
 
 You should call the `setPlayButtonAccessibleText` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /highlightCurrentSong\(\);?\s*setPlayButtonAccessibleText\(\);?/)
+assert.match(splitter[1], /highlightCurrentSong\(\s*\)\s*;?\s*setPlayButtonAccessibleText\(\s*\)\s*;?/)
 ```
 
 # --seed--
@@ -636,7 +636,7 @@ const playSong = (id) => {
   if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
     audio.currentTime = 0;
   } else {
-    audio.currentTime = userData.songCurrentTime;
+    audio.currentTime = userData?.songCurrentTime;
   }
   userData.currentSong = song;
   playButton.classList.add("playing");
@@ -700,7 +700,7 @@ const deleteSong = (id) => {
   highlightCurrentSong(); 
   setPlayButtonAccessibleText(); 
 
-  if (userData.songs.length === 0) {
+  if (userData?.songs.length === 0) {
     const resetButton = document.createElement("button");
     const resetText = document.createTextNode("Reset Playlist");
 
@@ -712,7 +712,7 @@ const deleteSong = (id) => {
     resetButton.addEventListener("click", () => {
       userData.songs = [...allSongs];
 
-      renderSongs(userData?.songs); 
+      renderSongs(sortSongs()); 
       setPlayButtonAccessibleText();
       resetButton.remove();
     });
@@ -775,7 +775,7 @@ const setPlayButtonAccessibleText = () => {
   );
 };
 
-const getCurrentSongIndex = () => userData?.songs.indexOf(userData.currentSong);
+const getCurrentSongIndex = () => userData?.songs.indexOf(userData?.currentSong);
 
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {
@@ -809,19 +809,23 @@ audio.addEventListener("ended", () => {
     }
 });
 
-userData?.songs.sort((a,b) => {
-  if (a.title < b.title) {
-    return -1;
-  }
+const sortSongs = () => {
+  userData?.songs.sort((a,b) => {
+    if (a.title < b.title) {
+      return -1;
+    }
 
-  if (a.title > b.title) {
-    return 1;
-  }
+    if (a.title > b.title) {
+      return 1;
+    }
 
-  return 0;
-});
+    return 0;
+  });
 
-renderSongs(userData?.songs);
+  return userData?.songs;
+};
+
+renderSongs(sortSongs());
 setPlayButtonAccessibleText();
 ```
 
@@ -1418,7 +1422,7 @@ const playSong = (id) => {
   if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
     audio.currentTime = 0;
   } else {
-    audio.currentTime = userData.songCurrentTime;
+    audio.currentTime = userData?.songCurrentTime;
   }
   userData.currentSong = song;
   playButton.classList.add("playing");
@@ -1482,7 +1486,7 @@ const deleteSong = (id) => {
   highlightCurrentSong(); 
   setPlayButtonAccessibleText(); 
 
-  if (userData.songs.length === 0) {
+  if (userData?.songs.length === 0) {
     const resetButton = document.createElement("button");
     const resetText = document.createTextNode("Reset Playlist");
 
@@ -1494,7 +1498,7 @@ const deleteSong = (id) => {
     resetButton.addEventListener("click", () => {
       userData.songs = [...allSongs];
 
-      renderSongs(userData?.songs); 
+      renderSongs(sortSongs()); 
       setPlayButtonAccessibleText();
       resetButton.remove();
     });
@@ -1557,7 +1561,7 @@ const setPlayButtonAccessibleText = () => {
   );
 };
 
-const getCurrentSongIndex = () => userData?.songs.indexOf(userData.currentSong);
+const getCurrentSongIndex = () => userData?.songs.indexOf(userData?.currentSong);
 
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {
@@ -1592,18 +1596,22 @@ audio.addEventListener("ended", () => {
     }
 });
 
-userData?.songs.sort((a,b) => {
-  if (a.title < b.title) {
-    return -1;
-  }
+const sortSongs = () => {
+  userData?.songs.sort((a,b) => {
+    if (a.title < b.title) {
+      return -1;
+    }
 
-  if (a.title > b.title) {
-    return 1;
-  }
+    if (a.title > b.title) {
+      return 1;
+    }
 
-  return 0;
-});
+    return 0;
+  });
 
-renderSongs(userData?.songs);
+  return userData?.songs;
+};
+
+renderSongs(sortSongs());
 setPlayButtonAccessibleText();
 ```

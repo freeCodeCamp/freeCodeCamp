@@ -19,7 +19,8 @@ export const getSolutionDisplayType = ({
 }: CompletedChallenge): DisplayType => {
   if (examResults) return 'showExamResults';
   if (challengeFiles?.length)
-    return challengeType === challengeTypes.multifileCertProject
+    return challengeType === challengeTypes.multifileCertProject ||
+      challengeType === challengeTypes.multifilePythonCertProject
       ? 'showMultifileProjectSolution'
       : 'showUserCode';
   if (!solution) return 'none';

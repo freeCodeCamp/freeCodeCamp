@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f060b6c005b0e76f05b
-title: Build your own Functions
+title: 独自の関数を作成する
 challengeType: 11
 videoId: nLDychdBwUg
 bilibiliIds:
@@ -14,13 +14,13 @@ dashedName: build-your-own-functions
 
 More resources:
 
-\- <a href="https://www.youtube.com/watch?v=ksvGhDsjtpw" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
+\- <a href="https://www.youtube.com/watch?v=ksvGhDsjtpw" target="_blank" rel="noopener noreferrer nofollow">演習</a>
 
 # --question--
 
 ## --text--
 
-What will the following Python program print out?:
+次の Python プログラムは何を出力しますか？
 
 ```python
 def fred():

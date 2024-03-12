@@ -11,7 +11,7 @@ dashedName: constructing-strings-with-variables
 
 Sometimes you will need to build a string. By using the concatenation operator (`+`), you can insert one or more variables into a string you're building.
 
-Example:
+Mfano:
 
 ```js
 const ourName = "freeCodeCamp";

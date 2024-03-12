@@ -34,10 +34,7 @@ import {
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
-import {
-  challengeTypes,
-  isFinalProject
-} from '../../../../../shared/config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,
@@ -65,9 +62,10 @@ import {
   enhancePrismAccessibility,
   setScrollbarArrowStyles
 } from '../utils/index';
+import { initializeMathJax } from '../../../utils/math-jax';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
+import { isProjectBased } from '../../../utils/curriculum-layout';
 import LowerJaw from './lower-jaw';
-
 import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
@@ -285,7 +283,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
-    renderIndentGuides: props.challengeType === challengeTypes.python,
+    renderIndentGuides:
+      props.challengeType === challengeTypes.python ||
+      props.challengeType === challengeTypes.multifilePythonCertProject,
     minimap: {
       enabled: false
     },
@@ -304,7 +304,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     parameterHints: {
       enabled: false
     },
-    tabSize: props.challengeType !== challengeTypes.python ? 2 : 4,
+    tabSize:
+      props.challengeType !== challengeTypes.python &&
+      props.challengeType !== challengeTypes.multifilePythonCertProject
+        ? 2
+        : 4,
     dragAndDrop: true,
     lightbulb: {
       enabled: false
@@ -398,6 +402,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       addContentChangeListener();
       resetAttempts();
       showEditableRegion(editor);
+      initializeMathJax();
     }
 
     const storedAccessibilityMode = () => {
@@ -511,7 +516,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
       ],
       run: () => {
-        if (props.usesMultifileEditor && !isFinalProject(props.challengeType)) {
+        if (props.usesMultifileEditor && !isProjectBased(props.challengeType)) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
           } else {
@@ -539,7 +544,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_S
       ],
       run:
-        props.challengeType === challengeTypes.multifileCertProject &&
+        (props.challengeType === challengeTypes.multifileCertProject ||
+          props.challengeType === challengeTypes.multifilePythonCertProject) &&
         props.isSignedIn
           ? // save to database
             props.saveChallenge

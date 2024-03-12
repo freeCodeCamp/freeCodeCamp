@@ -1,6 +1,6 @@
 ---
 id: 5e4ce2b6ac708cc68c1df25e
-title: Last letter-first letter
+title: Ultima lettera-prima lettera
 challengeType: 1
 forumTopicId: 385256
 dashedName: last-letter-first-letter
@@ -10,7 +10,7 @@ dashedName: last-letter-first-letter
 
 A certain children's game involves starting with a word in a particular category. Each participant in turn says a word, but that word must begin with the final letter of the previous word. Once a word has been given, it cannot be repeated. If an opponent cannot give a word in the category, they fall out of the game.
 
-For example, with "animals" as the category,
+Ad esempio, con "animali" come categoria,
 
 <pre>Child 1: dog
 Child 2: goldfish
@@ -21,17 +21,17 @@ Child 2: snake
 
 # --instructions--
 
-Write a function that takes an input array of words. The function should return an array of words where the first letter of each word is the same as the last letter of the previous word. Only use the words in the input array, and once a word is used it cannot be repeated. The words in the return array should be selected and sequenced so that that its length is maximized.
+Scrivi una funzione che accetta un array di parole in input. La funzione dovrebbe restituire un array di parole dove la prima lettera di ogni parola è uguale a l'ultima lettera della parola precedente. Usa solo le parole nell'array di input e una volta usata una parola non può essere ripetuta. Le parole nell'array restituito devono essere selezionate e ordinate in modo che la sua lunghezza sia massimizzata.
 
 # --hints--
 
-`findLongestChain` should be a function.
+`findLongestChain` dovrebbe essere una funzione.
 
 ```js
 assert(typeof findLongestChain == 'function');
 ```
 
-`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` should return an array.
+`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` dovrebbe restituire un array.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` should return `["involves", "starting", "game", "each"]`.
+`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` dovrebbe restituire `["involves", "starting", "game", "each"]`.
 
 ```js
 assert.deepEqual(
@@ -66,7 +66,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["audino", "bagon", "kangaskhan", "banette", "bidoof", "braviary", "exeggcute", "yamask"])` should return `["braviary", "yamask", "kangaskhan"]`
+`findLongestChain(["audino", "bagon", "kangaskhan", "banette", "bidoof", "braviary", "exeggcute", "yamask"])` dovrebbe restituire `["braviary", "yamask", "kangaskhan"]`
 
 ```js
 assert.deepEqual(
@@ -84,7 +84,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["harp", "poliwrath", "poochyena", "porygon2", "porygonz", "archana"])` should return `["poliwrath", "harp", "poochyena", "archana"]`.
+`findLongestChain(["harp", "poliwrath", "poochyena", "porygon2", "porygonz", "archana"])` dovrebbe restituire `["poliwrath", "harp", "poochyena", "archana"]`.
 
 ```js
 assert.deepEqual(
@@ -100,7 +100,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["scolipede", "elephant", "zeaking", "sealeo", "silcoon", "tigers"])` should return `["scolipede", "elephant", "tigers", "sealeo"]`.
+`findLongestChain(["scolipede", "elephant", "zeaking", "sealeo", "silcoon", "tigers"])` dovrebbe restituire `["scolipede", "elephant", "tigers", "sealeo"]`.
 
 ```js
 assert.deepEqual(
@@ -116,7 +116,7 @@ assert.deepEqual(
 );
 ```
 
-`findLongestChain(["loudred", "lumineon", "lunatone", "machamp", "magnezone", "nosepass", "petilil", "pidgeotto", "pikachu"])` should return `["machamp", "petilil", "lumineon", "nosepass"]`.
+`findLongestChain(["loudred", "lumineon", "lunatone", "machamp", "magnezone", "nosepass", "petilil", "pidgeotto", "pikachu"])` dovrebbe restituire `["machamp", "petilil", "lumineon", "nosepass"]`.
 
 ```js
 assert.deepEqual(

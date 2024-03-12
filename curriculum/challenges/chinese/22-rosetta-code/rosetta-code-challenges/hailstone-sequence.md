@@ -11,45 +11,45 @@ dashedName: hailstone-sequence
 The Hailstone sequence of numbers can be generated from a starting positive integer, `n` by:
 
 - If `n` is `1` then the sequence ends
-- If `n` is `even` then the next `n` of the sequence `= n/2`
-- If `n` is `odd` then the next `n` of the sequence `= (3 * n) + 1`
+- 如果 `n` 是 `even`，则序列的下一个 `n` `= n/2`
+- 如果 `n` 是 `odd`，则序列的下一个 `n` `= (3 * n) + 1`
 
-The (unproven) Collatz conjecture is that the hailstone sequence for any starting number always terminates.
+（未经证实的）科拉茨猜想是任何起始数字的冰雹序列总是终止。
 
-The hailstone sequence is also known as hailstone numbers (because the values are usually subject to multiple descents and ascents like hailstones in a cloud), or as the Collatz sequence.
+冰雹序列也称为冰雹数（因为这些值通常像云中的冰雹一样受到多次下降和上升的影响），或称为 Collat​​z 序列。
 
 # --instructions--
 
 1. Create a routine to generate the hailstone sequence for a number
-2. Your function should return an array with the number less than `limit` which has the longest hailstone sequence and that sequence's length. (But don't show the actual sequence!)
+2. 你的函数应该返回一个小于 `limit` 的数组，它具有最长的冰雹序列和该序列的长度。 （但不要显示实际序列！）
 
 # --hints--
 
-`hailstoneSequence` should be a function.
+`hailstoneSequence` 应该是一个函数。
 
 ```js
 assert(typeof hailstoneSequence === 'function');
 ```
 
-`hailstoneSequence(30)` should return an array.
+`hailstoneSequence(30)` 应该返回一个数组。
 
 ```js
 assert(Array.isArray(hailstoneSequence(30)));
 ```
 
-`hailstoneSequence(30)` should return `[27, 112]`.
+`hailstoneSequence(30)` 应该返回 `[27, 112]`。
 
 ```js
 assert.deepEqual(hailstoneSequence(30), [27, 112]);
 ```
 
-`hailstoneSequence(50000)` should return `[35655, 324]`.
+`hailstoneSequence(50000)` 应该返回 `[35655, 324]`。
 
 ```js
 assert.deepEqual(hailstoneSequence(50000), [35655, 324]);
 ```
 
-`hailstoneSequence(100000)` should return `[77031, 351]`.
+`hailstoneSequence(100000)` 应该返回 `[77031, 351]`。
 
 ```js
 assert.deepEqual(hailstoneSequence(100000), [77031, 351]);

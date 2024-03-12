@@ -15,7 +15,7 @@ You’re probably already familiar with a lot of different types of files, for e
 
 To let the computer know you want to create an HTML file, you need to append the filename with the `.html` extension as you have done when creating the `index.html` file.
 
-It is worth noting that you named your HTML file index. You should always name the HTML file that will contain the homepage of your websites `index.html`. This is because web servers will by default look for an index.html page when users land on your websites - and not having one will cause big problems.
+It is worth noting that you named your HTML file index. You should always name the HTML file that will contain the homepage of your websites `index.html`. This is because web servers will by default look for an `index.html` page when users land on your websites - and not having one will cause big problems.
 
 ## The DOCTYPE
 

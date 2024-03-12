@@ -8,7 +8,7 @@ dashedName: configure-helmet-using-the-parent-helmet-middleware
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `app.use(helmet())` では、前に紹介したすべてのミドルウェアが自動的にインクルードされますが、`noCache()` と `contentSecurityPolicy()` は除外されます。しかし、必要に応じてこれらを有効にすることができます。 config オブジェクトを使用して、他のミドルウェアを個別に無効化または構成することもできます。
 

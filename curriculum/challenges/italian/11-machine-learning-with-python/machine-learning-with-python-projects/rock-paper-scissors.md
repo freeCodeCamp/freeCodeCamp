@@ -10,11 +10,7 @@ dashedName: rock-paper-scissors
 
 In questa sfida creerai un programma per giocare a carta, sasso, forbici. Un programma che sceglie a caso di solito vincerà il 50% delle volte. Per superare questa sfida il tuo programma deve giocare partite contro quattro diversi bot, vincendo almeno il 60% dei giochi in ogni partita.
 
-Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice d'inizio su Replit</a>.
-
--   Inizia importando il progetto su Replit.
--   Poi vedrai una finestra `.replit`.
--   Seleziona `Use run command` e clicca sul pulsante `Done`.
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-rock-paper-scissors/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 Stiamo ancora sviluppando la parte di didattica interattiva per il programma di machine learning. Per ora, dovrai utilizzare altre risorse per imparare a superare questa sfida.
 
@@ -50,11 +46,9 @@ Per esempio, ecco come chiamare la funzione se vuoi che `player` e `quincy` gioc
 play(player, quincy, 1000, verbose=True)
 ```
 
-Clicca sul pulsante "run" e `main.py` esguirà.
-
 ## Test
 
-I test unitari per questo progetto sono in `test_module.py`. Abbiamo importato i test da `test_module.py` in `main.py` per tua comodità. Se decommenti l'ultima riga in `main.py` i test eseguiranno automaticamente ogni volta che usi il pulsante "run".
+I test unitari per questo progetto sono in `test_module.py`. Abbiamo importato i test da `test_module.py` in `main.py` per tua comodità. If you uncomment the last line in `main.py`, the tests will run automatically whenever you run `python main.py` in the console.
 
 ## Invio
 

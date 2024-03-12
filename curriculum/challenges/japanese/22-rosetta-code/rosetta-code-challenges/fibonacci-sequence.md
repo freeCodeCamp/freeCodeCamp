@@ -1,6 +1,6 @@
 ---
 id: 597f24c1dda4e70f53c79c81
-title: Fibonacci sequence
+title: フィボナッチ数列
 challengeType: 1
 forumTopicId: 302268
 dashedName: fibonacci-sequence
@@ -10,41 +10,41 @@ dashedName: fibonacci-sequence
 
 Write a function to generate the <code>n<sup>th</sup></code> Fibonacci number.
 
-The <code>n<sup>th</sup></code> Fibonacci number is given by:
+<code>n</code> 番目のフィボナッチ数は以下のように計算されます。
 
 <code>F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n-2</sub></code>
 
-The first two terms of the series are 0 and 1.
+級数の最初の 2 つの項は 0 と 1 です。
 
-Hence, the series is: 0, 1, 1, 2, 3, 5, 8, 13...
+したがって、級数は 0、1、1、2、3、5、8、13 です。
 
 # --hints--
 
-`fibonacci` should be a function.
+`fibonacci` という関数です。
 
 ```js
 assert(typeof fibonacci === 'function');
 ```
 
-`fibonacci(2)` should return a number.
+`fibonacci(2)` は数字を返します。
 
 ```js
 assert(typeof fibonacci(2) == 'number');
 ```
 
-`fibonacci(3)` should return 2.
+`fibonacci(3)` は 2 を返します。
 
 ```js
 assert.equal(fibonacci(3), 2);
 ```
 
-`fibonacci(5)` should return 5.
+`fibonacci(5)` は 5 を返します。
 
 ```js
 assert.equal(fibonacci(5), 5);
 ```
 
-`fibonacci(10)` should return 55.
+`fibonacci(10)` は 55 を返します。
 
 ```js
 assert.equal(fibonacci(10), 55);

@@ -1,6 +1,6 @@
 ---
 id: 5900f37e1000cf542c50fe91
-title: 'Problem 18: Maximum path sum I'
+title: '問題18：最大路徑總和I.'
 challengeType: 1
 forumTopicId: 301815
 dashedName: problem-18-maximum-path-sum-i
@@ -37,7 +37,7 @@ Find the maximum total from top to bottom of the triangle below:
 63 66 04 68 89 53 67 30 73 16 69 87 40 31  
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
 
-**NOTE:** As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
+**NOTE:** As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ; O）
 
 # --hints--
 

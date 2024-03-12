@@ -90,13 +90,11 @@ describe('project submission', () => {
     });
   });
 
-  // This test is appears to be a false negative.
-  // It interacts with an element whose `data-cy` is `btn-for-javascript-algorithms-and-data-structures`,
-  // but there is no elements with this attribute in the implementation.
-  // We need to disable this test as it blocks the UI component migration.
-  // TODO: Write tests for the project submission workflow with Playwright and remove this file.
-  // Tracking issue: https://github.com/freeCodeCamp/freeCodeCamp/issues/52905
-  it.skip(
+  // Access to the clipboard reliably works in Electron browser.
+  // In other browsers, there are popups asking for permission
+  // thus we should only run these tests in Electron
+  // Ref: https://github.com/cypress-io/cypress-example-recipes/tree/master/examples/testing-dom__clipboard
+  it(
     'JavaScript projects can be submitted and then viewed in /settings and on the certifications',
     { browser: 'electron' },
     () => {

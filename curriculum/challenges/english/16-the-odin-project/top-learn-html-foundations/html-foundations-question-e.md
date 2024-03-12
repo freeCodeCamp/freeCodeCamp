@@ -1,5 +1,5 @@
 ---
-id: 6374f208de18c50e48ba767b
+id: 637f4e2f72c65bc8e73dfe22
 title: HTML Foundations Question E
 challengeType: 15
 dashedName: html-foundations-question-e
@@ -7,31 +7,57 @@ dashedName: html-foundations-question-e
 
 # --description--
 
-HTML and CSS are two languages that work together to create everything that you see when you look at something on the internet. HTML is the raw data that a webpage is built out of. All the text, links, cards, lists, and buttons are created in HTML. CSS is what adds style to those plain elements. HTML puts information on a webpage, and CSS positions that information, gives it color, changes the font, and makes it look great!
+The `<head>` element is where you put important meta-information about your webpages, and stuff required for your webpages to render correctly in the browser. Inside the `<head>`, you should not use any element that displays content on the webpage.
 
-Many helpful resources out there keep referring to HTML and CSS as programming languages, but if you want to get technical, labeling them as such is not quite accurate. This is because they are only concerned with presenting information. They are not used to program logic. JavaScript, which you will learn in the next section, is a programming language because it’s used to make webpages do things. Yet, there is quite a lot you can do with just HTML and CSS, and you will definitely need them both. Throughout our curriculum, the following lessons focus on giving you the tools you need to succeed once you reach JavaScript content.
+## The Charset Meta Element
+You should always have the `meta` tag for the `charset` encoding of the webpage in the `head` element: `<meta charset="utf-8">`.
 
-# --assignment--
+Setting the encoding is very important because it ensures that the webpage will display special symbols and characters from different languages correctly in the browser.
 
-Read <a href="https://brytdesigns.com/html-css-javascript-whats-the-difference#What_is_HTML" target="_blank">the HTML vs CSS vs JavaScript article</a>. It is a quick overview of the relationships between HTML, CSS, and JavaScript.
+## Title Element
+Another element you should always include in the head of an HTML document is the `title` element:
+
+```html
+<title>My First Webpage</title>
+```
+
+The `title` element is used to give webpages a human-readable title which is displayed in your webpage’s browser tab.
+
+If you didn’t include a `title` element, the webpage’s title would default to its file name. In your case that would be `index.html`, which isn’t very meaningful for users; this would make it very difficult to find your webpage if the user has many browser tabs open.
+
+There are many more elements that can go within the `head` of an HTML document. However, for now it’s only crucial to know about the two elements you have covered here. You will introduce more elements that go into the `head` throughout the rest of the curriculum.
+
+Back in `index.html` file, let’s add a `head` element with a `charset` `meta` element and a `title` within it. The head element goes within the HTML element and should always be the first element under the opening `<html>` tag:
+
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>My First Webpage</title>
+  </head>
+</html>
+```
 
 # --question--
     
 ## --text--
 
-Which of the following statements is true?
+What is the purpose of the `head` element?
 
 ## --answers--
 
-CSS is used to create the basic structure of a webpage, and HTML is used to add style.
+The `head` element is used to display all elements that are displayed on the webpage.
 
 ---
 
-HTML is used to create the basic structure of a webpage, and CSS is used to add style.
+The `head` element is used to display important information about your webpage and is used to render web pages correctly with `meta` elements.
 
 ---
 
-HTML and CSS are used to add style to a webpage, and JavaScript is used to create the basic structure.
+The `head` element is used to display the header content on top of the webpage.
 
 
 ## --video-solution--

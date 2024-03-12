@@ -1,6 +1,6 @@
 ---
 id: 5900f4e81000cf542c50fffa
-title: 'Problem 379: Least common multiple count'
+title: 'Problem 379: Kleinste gemeinsame Mehrfachzählung'
 challengeType: 1
 forumTopicId: 302041
 dashedName: problem-379-least-common-multiple-count
@@ -10,7 +10,7 @@ dashedName: problem-379-least-common-multiple-count
 
 Let $f(n)$ be the number of couples ($x$, $y$) with $x$ and $y$ positive integers, $x ≤ y$ and the least common multiple of $x$ and $y$ equal to $n$.
 
-Let $g$ be the summatory function of $f$, i.e.: $g(n) = \sum f(i)$ for $1 ≤ i ≤ n$.
+Lasse $g$ die Summationsfunktion von $f$ sein, d.h.: $g(n) = \sum f(i)$ für $1 ≤ i ≤ n$.
 
 You are given that $g({10}^6) = 37\\,429\\,395$.
 

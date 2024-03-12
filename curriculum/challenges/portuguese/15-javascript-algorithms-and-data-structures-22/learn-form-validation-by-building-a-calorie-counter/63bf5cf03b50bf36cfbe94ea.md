@@ -89,7 +89,7 @@ assert.match(addEntry?.toString(), /\(\s*\)/);
             </span>
           </div>
           <div>
-            <button type="submit" id="calculate-calories">
+            <button type="submit">
               Calculate Remaining Calories
             </button>
             <button type="button" id="clear">Clear</button>
@@ -148,17 +148,10 @@ legend {
 }
 
 button {
-  outline: none;
   cursor: pointer;
   text-decoration: none;
   background-color: var(--light-yellow);
   border: 2px solid var(--dark-yellow);
-}
-
-.clear {
-  background-color: var(--light-pink);
-  color: var(--dark-red);
-  border-color: var(--dark-red);
 }
 
 button,
@@ -192,11 +185,11 @@ select {
 }
 
 .surplus {
-  color: var(--light-green);
+  color: var(--light-pink);
 }
 
 .deficit {
-  color: var(--light-pink);
+  color: var(--light-green);
 }
 ```
 

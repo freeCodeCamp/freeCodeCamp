@@ -1,6 +1,11 @@
 /* This module's job is to parse the database output and prepare it for
 serialization */
-import { ProfileUI, CompletedChallenge, ExamResults } from '@prisma/client';
+import {
+  ProfileUI,
+  CompletedChallenge,
+  ExamResults,
+  type Survey
+} from '@prisma/client';
 import _ from 'lodash';
 
 type NullToUndefined<T> = T extends null ? undefined : T;
@@ -105,4 +110,27 @@ export const normalizeChallenges = (
   });
 
   return noNullPath;
+};
+
+type NormalizedSurvey = {
+  title: string;
+  responses: {
+    question: string;
+    response: string;
+  }[];
+};
+
+/**
+ * Remove the extra properties from the SurveyResults array.
+ *
+ * @param surveyResults The SurveyResults array.
+ * @returns The input without the id and userid.
+ */
+export const normalizeSurveys = (
+  surveyResults: Survey[]
+): NormalizedSurvey[] => {
+  return surveyResults.map(survey => {
+    const { title, responses } = survey;
+    return { title, responses };
+  });
 };

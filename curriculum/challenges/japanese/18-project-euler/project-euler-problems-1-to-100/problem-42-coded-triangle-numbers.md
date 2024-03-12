@@ -1,6 +1,6 @@
 ---
 id: 5900f3961000cf542c50fea9
-title: 'Problem 42: Coded triangle numbers'
+title: '問題 42: 符号化された三角数'
 challengeType: 1
 forumTopicId: 302089
 dashedName: problem-42-coded-triangle-numbers
@@ -8,41 +8,41 @@ dashedName: problem-42-coded-triangle-numbers
 
 # --description--
 
-The `n`<sup>th</sup> term of the sequence of triangle numbers is given by, `tn` = ½`n`(`n`+1); so the first ten triangle numbers are:
+三角数の数列の `n` 番目の項は、`tn` = ½`n`(`n`+1) で与えられます。したがって、最初の 10 個の三角数は次のとおりです。
 
 <div style='margin-left: 4em;'>1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...</div>
 
-By converting each letter in a word to a number corresponding to its alphabetical position and adding these values we form a word value. For example, the word value for SKY is 19 + 11 + 25 = 55 = `t`<sub>10</sub>. If the word value is a triangle number then we shall call the word a triangle word.
+単語の各文字をアルファベット順の位置に対応する数値に変換し、それらの値を足すことで単語値が得られます。 例えば、SKY の単語値は 19 + 11 + 25 = 55 = `t`<sub>10</sub> です。 単語値が三角数である場合、その単語を「三角語」と呼ぶことにします。
 
-Using words array of `n`-length, how many are triangle words?
+長さ `n` の単語配列を使用すると、三角語はいくつありますか。
 
 # --hints--
 
-`codedTriangleNumbers(1400)` should return a number.
+`codedTriangleNumbers(1400)` は数値を返す必要があります。
 
 ```js
 assert(typeof codedTriangleNumbers(1400) === 'number');
 ```
 
-`codedTriangleNumbers(1400)` should return 129.
+`codedTriangleNumbers(1400)` は 129 を返す必要があります。
 
 ```js
 assert(codedTriangleNumbers(1400) == 129);
 ```
 
-`codedTriangleNumbers(1500)` should return 137.
+`codedTriangleNumbers(1500)` は 137 を返す必要があります。
 
 ```js
 assert(codedTriangleNumbers(1500) == 137);
 ```
 
-`codedTriangleNumbers(1600)` should return 141.
+`codedTriangleNumbers(1600)` は 141 を返す必要があります。
 
 ```js
 assert(codedTriangleNumbers(1600) == 141);
 ```
 
-`codedTriangleNumbers(1786)` should return 162.
+`codedTriangleNumbers(1786)` は 162 を返す必要があります。
 
 ```js
 assert(codedTriangleNumbers(1786) == 162);
