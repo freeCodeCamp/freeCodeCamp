@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const util = require('util');
 const yaml = require('js-yaml');
-const { findIndex } = require('lodash');
+const { findIndex, cloneDeep } = require('lodash');
 const readDirP = require('readdirp');
 
 const { curriculum: curriculumLangs } =
@@ -404,6 +404,27 @@ function getBlockNameFromPath(filePath) {
   return block;
 }
 
+function replaceSourceCode(target, source) {
+  const replacement = cloneDeep(target);
+
+  if (source.tests) {
+    replacement.tests = replacement.tests.map((test, index) => ({
+      ...test,
+      testString: source.tests[index].testString
+    }));
+  }
+
+  if (source.solutions) {
+    replacement.solutions = cloneDeep(source.solutions);
+  }
+  if (source.challengeFiles) {
+    replacement.challengeFiles = cloneDeep(source.challengeFiles);
+  }
+
+  return replacement;
+}
+
 exports.hasEnglishSource = hasEnglishSource;
 exports.parseTranslation = parseTranslation;
 exports.generateChallengeCreator = generateChallengeCreator;
+exports.replaceSourceCode = replaceSourceCode;

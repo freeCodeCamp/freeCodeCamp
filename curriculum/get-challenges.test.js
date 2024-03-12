@@ -3,8 +3,14 @@ const path = require('path');
 const {
   generateChallengeCreator,
   hasEnglishSource,
-  createCommentMap
+  createCommentMap,
+  replaceSourceCode
 } = require('./get-challenges');
+
+const {
+  sourceChallenge,
+  targetChallenge
+} = require('./__fixtures__/challenges');
 
 const EXISTING_CHALLENGE_PATH = 'challenge.md';
 const MISSING_CHALLENGE_PATH = 'no/challenge.md';
@@ -134,6 +140,84 @@ It should be in
 
       expect(untranslatedTwo.chinese).toBe('Not translated two');
       expect(untranslatedTwo.spanish).toBe('Not translated two');
+    });
+  });
+
+  describe('replaceSourceCode', () => {
+    it('should add the source testStrings to the target challenge', () => {
+      const replaced = replaceSourceCode(targetChallenge, sourceChallenge);
+
+      const expected = [
+        {
+          text: 'italian text one',
+          testString: 'original code'
+        },
+        {
+          text: 'italian text two',
+          testString: 'more original code'
+        }
+      ];
+
+      expect(replaced.tests).toEqual(expected);
+    });
+
+    it('should not modify the original source', () => {
+      const clone = JSON.parse(JSON.stringify(sourceChallenge));
+
+      replaceSourceCode(targetChallenge, sourceChallenge);
+
+      expect(sourceChallenge).toEqual(clone);
+    });
+
+    it('should add the source solutions to the target challenge', () => {
+      const replaced = replaceSourceCode(targetChallenge, sourceChallenge);
+
+      expect(replaced.solutions).toEqual(sourceChallenge.solutions);
+    });
+
+    it('should add the source challengeFiles to the target challenge', () => {
+      const replaced = replaceSourceCode(targetChallenge, sourceChallenge);
+
+      expect(replaced.challengeFiles).toEqual(sourceChallenge.challengeFiles);
+    });
+
+    it('should not add tests if the source challenge has no tests', () => {
+      const { tests: _ignore, ...sourceWithoutTests } = sourceChallenge;
+      const { tests: _alsoIgnore, ...targetWithoutTests } = targetChallenge;
+
+      const replaced = replaceSourceCode(
+        targetWithoutTests,
+        sourceWithoutTests
+      );
+
+      expect(replaced).not.toHaveProperty('tests');
+    });
+
+    it('should not add solutions if the source challenge has no solutions', () => {
+      const { solutions: _ignore, ...sourceWithoutSolutions } = sourceChallenge;
+      const { solutions: _alsoIgnore, ...targetWithoutSolutions } =
+        targetChallenge;
+
+      const replaced = replaceSourceCode(
+        targetWithoutSolutions,
+        sourceWithoutSolutions
+      );
+
+      expect(replaced).not.toHaveProperty('solutions');
+    });
+
+    it('should not add challengeFiles if the source challenge has no challengeFiles', () => {
+      const { challengeFiles: _ignore, ...sourceWithoutChallengeFiles } =
+        sourceChallenge;
+      const { challengeFiles: _alsoIgnore, ...targetWithoutChallengeFiles } =
+        targetChallenge;
+
+      const replaced = replaceSourceCode(
+        targetWithoutChallengeFiles,
+        sourceWithoutChallengeFiles
+      );
+
+      expect(replaced).not.toHaveProperty('challengeFiles');
     });
   });
 });
