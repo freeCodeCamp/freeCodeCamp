@@ -1,0 +1,16 @@
+{
+  "name": "Learn Special Methods by Building a Vector Space",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-special-methods-by-building-a-vector-space",
+  "order": 15,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "scientific-computing-with-python",
+  "superOrder": 10,
+  "isBeta": true,
+  "challengeOrder": [{ "id": "65f01969115f933073b6be03", "title": "Step 1" }],
+  "helpCategory": "Python"
+}

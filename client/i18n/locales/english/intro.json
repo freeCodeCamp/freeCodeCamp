@@ -852,6 +852,10 @@
         "intro": [
           "This is one of the required projects to claim your certification."
         ]
+      },
+      "learn-special-methods-by-building-a-vector-space": {
+        "title": "Learn Special Methods by Building a Vector Space",
+        "intro": ["", ""]
       }
     }
   },
