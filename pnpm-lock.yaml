@@ -1469,40 +1469,40 @@ importers:
         specifier: 8.5.0
         version: 8.5.0(rollup@2.79.1)(tslib@2.6.2)(typescript@5.2.2)
       '@storybook/addon-a11y':
-        specifier: ^8.0.0
+        specifier: 8.0.0
         version: 8.0.0
       '@storybook/addon-actions':
-        specifier: ^8.0.0
+        specifier: 8.0.0
         version: 8.0.0
       '@storybook/addon-docs':
-        specifier: ^8.0.0
+        specifier: 8.0.0
         version: 8.0.0
       '@storybook/addon-essentials':
-        specifier: ^8.0.0
+        specifier: 8.0.0
         version: 8.0.0(@types/react@16.14.56)(react-dom@16.14.0)(react@16.14.0)
       '@storybook/addon-links':
-        specifier: ^8.0.0
+        specifier: 8.0.0
         version: 8.0.0(react@16.14.0)
       '@storybook/addon-mdx-gfm':
-        specifier: ^8.0.0
+        specifier: 8.0.0
         version: 8.0.0
       '@storybook/addon-styling-webpack':
-        specifier: ^0.0.6
+        specifier: 0.0.6
         version: 0.0.6(webpack@5.90.3)
       '@storybook/addon-webpack5-compiler-babel':
-        specifier: ^3.0.3
+        specifier: 3.0.3
         version: 3.0.3(webpack@5.90.3)
       '@storybook/addon-webpack5-compiler-swc':
-        specifier: ^1.0.2
+        specifier: 1.0.2
         version: 1.0.2(webpack@5.90.3)
       '@storybook/blocks':
-        specifier: ^8.0.0
+        specifier: 8.0.0
         version: 8.0.0(@types/react@16.14.56)(react-dom@16.14.0)(react@16.14.0)
       '@storybook/react':
-        specifier: ^8.0.0
+        specifier: 8.0.0
         version: 8.0.0(react-dom@16.14.0)(react@16.14.0)(typescript@5.2.2)
       '@storybook/react-webpack5':
-        specifier: ^8.0.0
+        specifier: 8.0.0
         version: 8.0.0(@swc/core@1.4.2)(esbuild@0.20.1)(react-dom@16.14.0)(react@16.14.0)(typescript@5.2.2)
       '@testing-library/jest-dom':
         specifier: 5.17.0
@@ -1559,7 +1559,7 @@ importers:
         specifier: 7.0.2
         version: 7.0.2(rollup@2.79.1)
       storybook:
-        specifier: ^8.0.0
+        specifier: 8.0.0
         version: 8.0.0(@babel/preset-env@7.23.7)(react-dom@16.14.0)(react@16.14.0)
       style-loader:
         specifier: 3.3.3
@@ -2327,10 +2327,10 @@ packages:
       '@babel/generator': 7.23.6
       '@babel/helper-module-transforms': 7.23.3(@babel/core@7.10.5)
       '@babel/helpers': 7.23.2
-      '@babel/parser': 7.23.6
+      '@babel/parser': 7.24.0
       '@babel/template': 7.22.15
-      '@babel/traverse': 7.23.7
-      '@babel/types': 7.23.6
+      '@babel/traverse': 7.24.0
+      '@babel/types': 7.24.0
       convert-source-map: 1.9.0
       debug: 4.3.4(supports-color@8.1.1)
       gensync: 1.0.0-beta.2
@@ -2931,8 +2931,8 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/template': 7.22.15
-      '@babel/traverse': 7.23.9
-      '@babel/types': 7.23.9
+      '@babel/traverse': 7.24.0
+      '@babel/types': 7.24.0
     transitivePeerDependencies:
       - supports-color
 
@@ -3016,6 +3016,7 @@ packages:
     hasBin: true
     dependencies:
       '@babel/types': 7.23.9
+    dev: true
 
   /@babel/parser@7.24.0:
     resolution: {integrity: sha512-QuP/FxEAzMSjXygs8v4N9dvdXzEHN4W1oF3PxuWAtPo08UdM17u89RDMgjLn/mlc56iM0HlLmVkO/wgR+rDgHg==}
@@ -5989,23 +5990,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@babel/traverse@7.23.9:
-    resolution: {integrity: sha512-I/4UJ9vs90OkBtY6iiiTORVMyIhJ4kAVmsKo9KFc8UOxMeUfi2hvtIBsET5u9GizXE6/GFSuKCTNfgCswuEjRg==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/code-frame': 7.23.5
-      '@babel/generator': 7.23.6
-      '@babel/helper-environment-visitor': 7.22.20
-      '@babel/helper-function-name': 7.23.0
-      '@babel/helper-hoist-variables': 7.22.5
-      '@babel/helper-split-export-declaration': 7.22.6
-      '@babel/parser': 7.23.9
-      '@babel/types': 7.23.9
-      debug: 4.3.4(supports-color@8.1.1)
-      globals: 11.12.0
-    transitivePeerDependencies:
-      - supports-color
-
   /@babel/traverse@7.24.0:
     resolution: {integrity: sha512-HfuJlI8qq3dEDmNU5ChzzpZRWq+oxCZQyMzIMEqLho+AQnhMnKQUzH6ydo3RBl/YjPCuk68Y6s0Gx0AeyULiWw==}
     engines: {node: '>=6.9.0'}
@@ -8880,7 +8864,7 @@ packages:
     hasBin: true
     dependencies:
       '@babel/core': 7.23.7
-      '@babel/types': 7.23.9
+      '@babel/types': 7.24.0
       '@ndelangen/get-tarball': 3.0.9
       '@storybook/codemod': 8.0.0
       '@storybook/core-common': 8.0.0
@@ -8936,7 +8920,7 @@ packages:
     dependencies:
       '@babel/core': 7.23.7
       '@babel/preset-env': 7.23.7(@babel/core@7.23.7)
-      '@babel/types': 7.23.9
+      '@babel/types': 7.24.0
       '@storybook/csf': 0.1.2
       '@storybook/csf-tools': 8.0.0
       '@storybook/node-logger': 8.0.0
@@ -9097,9 +9081,9 @@ packages:
     resolution: {integrity: sha512-VIMaZJiGM2NVzlgxaOyaVlH1pw/VSrJygDqOZyANh/kl4KHA+6xIqOkZC+X0+5K295dTFx2nR6S3btTjwT/Wrg==}
     dependencies:
       '@babel/generator': 7.23.6
-      '@babel/parser': 7.23.9
-      '@babel/traverse': 7.23.9
-      '@babel/types': 7.23.9
+      '@babel/parser': 7.24.0
+      '@babel/traverse': 7.24.0
+      '@babel/types': 7.24.0
       '@storybook/csf': 0.1.2
       '@storybook/types': 8.0.0
       fs-extra: 11.2.0
@@ -10439,7 +10423,7 @@ packages:
   /@types/whatwg-url@8.2.2:
     resolution: {integrity: sha512-FtQu10RWgn3D9U4aazdwIE2yzphmTJREDqNdODHrbrZmmMqI0vMheC/6NE/J1Yveaj8H+ela+YwWTjq5PGmuhA==}
     dependencies:
-      '@types/node': 20.11.20
+      '@types/node': 18.19.18
       '@types/webidl-conversions': 7.0.1
 
   /@types/yargs-parser@21.0.1:
@@ -20840,7 +20824,7 @@ packages:
         optional: true
     dependencies:
       '@babel/core': 7.23.7
-      '@babel/parser': 7.23.9
+      '@babel/parser': 7.24.0
       '@babel/plugin-transform-class-properties': 7.23.3(@babel/core@7.23.7)
       '@babel/plugin-transform-modules-commonjs': 7.23.3(@babel/core@7.23.7)
       '@babel/plugin-transform-nullish-coalescing-operator': 7.23.4(@babel/core@7.23.7)
@@ -25712,8 +25696,8 @@ packages:
     engines: {node: '>=16.14.0'}
     dependencies:
       '@babel/core': 7.23.7
-      '@babel/traverse': 7.23.9
-      '@babel/types': 7.23.9
+      '@babel/traverse': 7.24.0
+      '@babel/types': 7.24.0
       '@types/babel__core': 7.20.5
       '@types/babel__traverse': 7.20.2
       '@types/doctrine': 0.0.9
