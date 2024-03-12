@@ -3,8 +3,6 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-const supportEmail = 'support@freeCodeCamp.org';
-
 test.beforeEach(async ({ page }) => {
   await page.goto('/settings');
 });
@@ -32,7 +30,15 @@ test.describe('Delete Modal component', () => {
     await expect(
       page.getByText(translations.settings.danger['delete-p2'])
     ).toBeVisible();
-    await expect(page.getByRole('link', { name: supportEmail })).toBeVisible();
+
+    const supportLink = page.getByRole('link', {
+      name: 'support@freeCodeCamp.org'
+    });
+    await expect(supportLink).toBeVisible();
+    await expect(supportLink).toHaveAttribute(
+      'href',
+      'mailto:support@freecodecamp.org'
+    );
 
     await expect(
       page.getByRole('button', { name: translations.settings.danger.nevermind })
