@@ -2,7 +2,7 @@ import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Modal } from '@freecodecamp/react-bootstrap';
 import { Button, FormControl } from '@freecodecamp/ui';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useRef, useEffect } from 'react';
 import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
