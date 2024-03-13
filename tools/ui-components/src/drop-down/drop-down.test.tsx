@@ -16,14 +16,15 @@ describe('<DropDownButton>', () => {
         </Dropdown.Menu>
       </Dropdown>
     );
-    const dropdownTrigger = screen.getByText('Some Button');
+    const dropdownTrigger = screen.getByRole('button', { name: 'Some Button' });
     await userEvent.click(dropdownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const item = within(unorderedList).getAllByText('Option');
+    const item = within(unorderedList).getAllByRole('menuitem');
     expect(unorderedList).toBeInTheDocument();
     expect(dropdownTrigger).toBeInTheDocument();
     expect(item.length).toBe(3);
   });
+
   it('should render button with direction to up', async () => {
     render(
       <Dropdown dropup={true}>
@@ -35,7 +36,7 @@ describe('<DropDownButton>', () => {
         </Dropdown.Menu>
       </Dropdown>
     );
-    const dropdownTrigger = screen.getByText('Some Button');
+    const dropdownTrigger = screen.getByRole('button', { name: 'Some Button' });
     await userEvent.click(dropdownTrigger);
     const unorderedList = screen.getByRole('menu');
     expect(unorderedList).toHaveClass(
@@ -52,10 +53,10 @@ describe('<DropDownButton>', () => {
         </Dropdown.Menu>
       </Dropdown>
     );
-    const dropDownTrigger = screen.getByText('test');
+    const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const item = within(unorderedList).getByText('Hello world');
+    const item = within(unorderedList).getByRole('menuitem');
     expect(item).toBeInTheDocument();
   });
 
@@ -71,10 +72,10 @@ describe('<DropDownButton>', () => {
       </Dropdown>
     );
 
-    const dropDownTrigger = screen.getByText('test');
+    const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const Item = within(unorderedList).getByText('Hello world');
+    const Item = within(unorderedList).getByRole('menuitem');
 
     await userEvent.click(Item);
 
@@ -91,10 +92,10 @@ describe('<DropDownButton>', () => {
       </Dropdown>
     );
 
-    const dropDownTrigger = screen.getByText('test');
+    const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const Item = within(unorderedList).getByText('Hello world');
+    const Item = within(unorderedList).getByRole('menuitem');
 
     expect(Item).toHaveAttribute('aria-disabled', 'true');
 
@@ -116,10 +117,10 @@ describe('<DropDownButton>', () => {
       </Dropdown>
     );
 
-    const dropDownTrigger = screen.getByText('test');
+    const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const Item = within(unorderedList).getByText('Hello world');
+    const Item = within(unorderedList).getByRole('menuitem');
     await userEvent.click(Item);
 
     expect(onClick).not.toHaveBeenCalled();
@@ -135,10 +136,10 @@ describe('<DropDownButton>', () => {
       </Dropdown>
     );
 
-    const dropDownTrigger = screen.getByText('test');
+    const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const Item = within(unorderedList).getByText('freeCodeCamp');
+    const Item = within(unorderedList).getByRole('menuitem');
 
     expect(Item).toBeInTheDocument();
     expect(Item).toHaveAttribute('href', 'https://www.freecodecamp.org');
@@ -156,10 +157,10 @@ describe('<DropDownButton>', () => {
       </Dropdown>
     );
 
-    const dropDownTrigger = screen.getByText('test');
+    const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const Item = within(unorderedList).getByText('freeCodeCamp');
+    const Item = within(unorderedList).getByRole('menuitem');
 
     expect(Item).toBeInTheDocument();
     expect(Item).toHaveAttribute('aria-disabled', 'true');
