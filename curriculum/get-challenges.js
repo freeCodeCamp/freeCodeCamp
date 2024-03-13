@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const util = require('util');
 const yaml = require('js-yaml');
-const { findIndex, cloneDeep } = require('lodash');
+const { findIndex, cloneDeep, isEqual } = require('lodash');
 const readDirP = require('readdirp');
 
 const { curriculum: curriculumLangs } =
@@ -353,6 +353,9 @@ ${getFullPath('english', filePath)}
 To fix this, run the "i18n - Download Curriculum" action`
       );
     }
+
+    warnIfCodeTranslated(translatedChallenge, englishChallenge);
+
     const challenge = replaceSourceCode(translatedChallenge, englishChallenge);
 
     return translateComments(challenge, COMMENT_TRANSLATIONS, lang);
@@ -440,6 +443,41 @@ function replaceSourceCode(target, source) {
   return replacement;
 }
 
+function warnIfCodeTranslated(target, source) {
+  const testsTranslated = target.tests?.some(
+    (test, index) => test.testString !== source.tests[index].testString
+  );
+  if (testsTranslated) {
+    console.warn(
+      `testStrings in challenge ${target.id} (title: "${target.title}") do not match the English.
+If the curriculum has been synced with Crowdin, it is possible that the testStrings have been translated.`
+    );
+  }
+
+  const solutionsTranslated = target.solutions?.some(
+    (solution, index) => !isEqual(solution, source.solutions[index])
+  );
+
+  if (solutionsTranslated) {
+    console.warn(
+      `solutions in challenge ${target.id} (title: "${target.title}") do not match the English.
+If the curriculum has been synced with Crowdin, it is possible that the solutions have been translated.`
+    );
+  }
+
+  const challengeFilesTranslated = target.challengeFiles?.some(
+    (file, index) => !isEqual(file, source.challengeFiles[index])
+  );
+
+  if (challengeFilesTranslated) {
+    console.warn(
+      `challengeFiles in challenge ${target.id} (title: "${target.title}") do not match the English.
+If the curriculum has been synced with Crowdin, it is possible that the seed has been translated.`
+    );
+  }
+}
+
 exports.hasEnglishSource = hasEnglishSource;
 exports.generateChallengeCreator = generateChallengeCreator;
 exports.replaceSourceCode = replaceSourceCode;
+exports.warnIfCodeTranslated = warnIfCodeTranslated;
