@@ -40,7 +40,8 @@ textarea.inputarea {
   white-space: pre-wrap;
 }
 
-.editor-upper-jaw p, .editor-lower-jaw p {
+.editor-upper-jaw p,
+.editor-lower-jaw p {
   margin: 0;
 }
 
