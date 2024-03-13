@@ -10,7 +10,7 @@ type ResetModalProps = {
 };
 
 function ResetModalRenderer(props: ResetModalProps): JSX.Element {
-  const isNewModalAvailable = i18n.exists('settings.danger.new-reset-version');
+  const isNewModalAvailable = i18n.exists('settings.danger.new-reset-dialog');
 
   return (
     <>
