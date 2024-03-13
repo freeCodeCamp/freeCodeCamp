@@ -94,7 +94,7 @@ const LearnAlert = ({
   );
 
   if (!isDonating) {
-    if (createUniversityFlag) return universityAlert;
+    if (createUniversityFlag.on) return universityAlert;
     if (progressAlertFlag2024.on) return progressAlert2024;
     if (seasonalAlertFlag.on) return seasonalAlertFlagAlert;
   }
