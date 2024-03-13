@@ -93,6 +93,13 @@ function HelpModal({
     useState(false);
   const DESCRIPTION_MIN = 50;
   const DESCRIPTION_MAX = 500;
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (showHelpForm) {
+      formRef.current?.querySelector('input')?.focus();
+    }
+  }, [showHelpForm]);
 
   const canSubmitForm = useCallback(() => {
     return (
