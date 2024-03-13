@@ -52,7 +52,7 @@ export const shouldRequestDonationSelector = state => {
 
   /*
   When AB testing for showing multiple progress modals is active,
-  show a donation modal every 20
+  show a donation modal every 20 challenge
    */
   if (
     showMultipleProgressModals &&
