@@ -389,7 +389,7 @@
     "minimum-characters": "Add a minimum of {{characters}} more characters",
     "characters-left": "{{characters}} characters left",
     "rsa": "Read, search, ask",
-    "rsa-forum": "<strong>Before making a new post</strong> please see if your question has <0>already been answered on the forum</0>.",
+    "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Reset this lesson?",
     "reset-warn": "Are you sure you wish to reset this lesson? The editors and tests will be reset.",
     "reset-warn-2": "This cannot be undone",
