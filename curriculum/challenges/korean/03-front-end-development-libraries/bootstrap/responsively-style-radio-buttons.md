@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedb08845
-title: Responsively Style Radio Buttons
+title: 라디오 버튼 반응형 스타일링하기
 challengeType: 0
 forumTopicId: 18270
 required:
@@ -13,27 +13,27 @@ dashedName: responsively-style-radio-buttons
 
 # --description--
 
-You can use Bootstrap's `col-xs-*` classes on `form` elements, too! This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is.
+`form` 요소에 부트스트랩 `col-xs-*` 클래스도 사용할 수 있습니다! 이런 방식으로 라디오 버튼은 화면 해상도의 너비에 상관없이 해당 페이지에서 골고루 퍼지게 될 것입니다.
 
-Nest both your radio buttons within a `<div class="row">` element. Then nest each of them within a `<div class="col-xs-6">` element.
+두 라디오 버튼을 `<div class="row">` 요소 내에 중첩시키시오. 그런 다음 각각을 `<div class="col-xs-6">` 요소에 중첩시키시오.
 
-**Note:** As a reminder, radio buttons are `input` elements of type `radio`.
+**주의:** 라디오 버튼은 `radio` 타입을 가진 `input` 요소입니다.
 
 # --hints--
 
-All of your radio buttons should be nested inside one `div` with the class `row`.
+모든 라디오 버튼은 `row` 클래스를 가진 하나의 `div` 요소 안에 중첩되어야 합니다.
 
 ```js
 assert($('div.row:has(input[type="radio"])').length > 0);
 ```
 
-Each of your radio buttons should be nested inside its own `div` with the class `col-xs-6`.
+각 라디오 버튼은 `col-xs-6` 클래스를 가진 개별적인 `div` 안에 중첩되어야 합니다.
 
 ```js
 assert($('div.col-xs-6:has(input[type="radio"])').length > 1);
 ```
 
-All of your `div` elements should have closing tags.
+모든 `div` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(

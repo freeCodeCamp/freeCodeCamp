@@ -14,25 +14,25 @@ dashedName: guided-project-debug-and-handle-exceptions-in-a-c-sharp-console-appl
 
 # --任务--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/" target="_blank" rel="noreferrer">Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code</a> guided project on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成<a href="https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/" target="_blank" rel="noreferrer">使用 Visual Studio Code 调试和处理 C# 控制台应用程序中的异常</a>的引导项目。 然后，回答下面的问题。
 
 # --question--
 
 ## --text--
 
-When is an `ArgumentOutOfRangeException` exception thrown?
+何时抛出 `ArgumentOutOfRangeException` 异常？
 
 ## --answers--
 
-An `ArgumentOutOfRangeException` exception is thrown when an attempt is made to index an array outside the bounds of the array.
+当尝试索引数组超出数组边界时，会抛出 `ArgumentOutOfRangeException` 异常。
 
 ---
 
-An `ArgumentOutOfRangeException` exception is thrown when the value of an argument is outside the allowable range of values as defined by the method.
+当参数的值在方法定义的允许值范围之外时，会抛出 `ArgumentOutOfRangeException` 异常。
 
 ---
 
-An `ArgumentOutOfRangeException` exception is thrown when an attempt is made to store a value of one type in an array of another type.
+当尝试将一种类型的值存储在另一种类型的值的数组中时，会抛出 `ArgumentOutOfRangeException` 异常。
 
 ## --video-solution--
 

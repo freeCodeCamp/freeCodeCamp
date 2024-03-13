@@ -11,7 +11,7 @@ As you’ve seen, flexbox is not just a single CSS property but a whole toolbox 
 
 A flex container is any element that has `display: flex` on it. A flex item is any element that lives directly inside of a flex container.
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/8c0402439e1b0a9a156731bdab4ea64162688dab/foundations/html_css/flexbox/imgs/03.png" />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/flex-box/flexbox-01.png" style="width: 95%; height: 95%;" alt="An outer rectangle representing a flex container encompassing three smaller inner rectangles lined up side by side, each representing a flex item." />
 
 # --question--
 

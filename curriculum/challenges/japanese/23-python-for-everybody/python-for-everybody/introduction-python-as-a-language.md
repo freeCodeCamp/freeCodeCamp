@@ -14,7 +14,7 @@ dashedName: introduction-python-as-a-language
 
 ## --text--
 
-What will print out after running these two lines of code:
+この 2 行のコードを実行すると何が出力されますか？
 
 ```python
 x = 6

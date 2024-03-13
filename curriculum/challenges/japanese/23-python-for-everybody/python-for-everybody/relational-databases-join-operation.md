@@ -14,7 +14,7 @@ dashedName: relational-databases-join-operation
 
 ## --text--
 
-When using a JOIN clause in an SQL statement, what does ON do?
+SQL ステートメントで JOIN 句を使用する場合、ON は何を実行しますか？
 
 ## --answers--
 

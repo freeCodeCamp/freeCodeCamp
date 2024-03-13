@@ -4,6 +4,7 @@ title: Learn Variables and Operators Question A
 challengeType: 15
 dashedName: learn-variables-and-operators-question-a
 ---
+
 # --description--
 The simplest way to get started is to create an HTML file with the JavaScript code inside of it. Type the basic HTML skeleton into a file on your computer somewhere:
 
@@ -51,7 +52,7 @@ JavaScript code must be written in the `<head>` section of an HTML document for 
 
 ---
 
-JavaScript can be included directly in an HTML file using a `<script>` tag or linked externally via a `<script src="javascript.js">` tag. 
+JavaScript can be included directly in an HTML file using a `<script>` tag or linked externally via a `<script src="javascript.js">` tag.
 
 ---
 

@@ -1,23 +1,23 @@
 ---
 id: 64de4bccf5becb208a48ca97
-title: Step 13
+title: Крок 13
 challengeType: 20
 dashedName: step-13
 ---
 
 # --description--
 
-In the Tower of Hanoi puzzle, you can identify the three rods according to their purpose:
+У Ханойській вежі можна визначити три стрижні відповідно до їхнього призначення:
 
-- The first rod is the source, where all the disks are stacked on top of each other at the beginning of the game.
-- The second rod is an auxiliary rod, and it helps in moving the disks to the target rod.
-- The third rod is the target, where all the disks should be placed in order at the end of the game.
+- Перший стрижень є джерелом, де всі диски складені один на одного на початку гри.
+- Другий стрижень є допоміжним стрижнем, і він допомагає переміщати диски до цільового стрижня.
+- Третій стрижень — це мішень, на якій потрібно розмістити всі диски за порядком в кінці гри.
 
-Currently, the `move()` function does not take any parameters. Change the function declaration to take 4 parameters: `n`, `source`, `auxiliary`, and `target`. Then, pass `NUMBER_OF_DISKS` and the strings `'A'`, `'B'`, and `'C'` as arguments to your function call. The order matters.
+Наразі функція `move()` не приймає жодних параметрів. Змініть оголошення функції, щоб вона приймала 4 параметри: `n`, `source`, `auxiliary` та `target`. Потім передайте `NUMBER_OF_DISKS` і рядки `'A'`, `'B'` та `'C'` як аргументи до виклику функції. Порядок має значення.
 
 # --hints--
 
-Your `move()` function should have `n`, `source`, `auxiliary`, and `target` as the parameters. The order matters.
+Функція `move()` повинна мати `n`, `source`, `auxiliary` та `target` як параметри. Порядок має значення.
 
 ```js
 ({ test: () => assert(__pyodide.runPython(`
@@ -27,7 +27,7 @@ Your `move()` function should have `n`, `source`, `auxiliary`, and `target` as t
 })
 ```
 
-You should pass `NUMBER_OF_DISKS` and the strings `'A'`, `'B'`, and `'C'` to `move()`. The order matters.
+Передайте `NUMBER_OF_DISKS` і рядки `'A'`, `'B'` та `'C'` до `move()`. Порядок має значення.
 
 ```js
 ({test: () => assert.match(code, /^move\(\s*NUMBER_OF_DISKS\s*,\s*('|")A\1\s*,\s*('|")B\2\s*,\s*('|")C\3\s*\)/m)

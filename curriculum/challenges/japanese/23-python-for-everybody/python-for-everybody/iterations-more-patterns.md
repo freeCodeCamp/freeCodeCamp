@@ -12,7 +12,7 @@ dashedName: iterations-more-patterns
 
 # --description--
 
-More resources:
+その他のリソース:
 
 \- <a href="https://www.youtube.com/watch?v=kjxXZQw0uPg" target="_blank" rel="noopener noreferrer nofollow">演習</a>
 

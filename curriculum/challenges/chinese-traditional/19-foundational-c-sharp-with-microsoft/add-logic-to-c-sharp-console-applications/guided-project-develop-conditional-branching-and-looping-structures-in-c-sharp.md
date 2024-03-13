@@ -1,38 +1,38 @@
 ---
 id: 647e217e8acb466c97ccbee4
-title: 'Guided Project - Develop Conditional Branching and Looping Structures in C#'
+title: '引導項目 - 在 C# 中開發條件分支和循環結構'
 challengeType: 19
 dashedName: guided-project-develop-conditional-branching-and-looping-structures-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+這個挑戰將有一部分在 Microsoft Learn 平臺上完成。 請按照如下說明來完成挑戰：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/</a> and complete all the tasks for the "Guided Project - Develop Conditional Branching and Looping Structures in C#" module. This is **required** to earn the "Add Logic to C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳轉到 <a href="https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/</a>，然後完成“引導項目 - 在 C# 中開發條件分支和循環結構”模塊的所有任務。 這是在 Microsoft Learn 上獲得“向 C# 控制檯應用程序添加邏輯”的獎盃以及參加認證考試所**必需**的。
+1. 完成後，返回並正確回答下面的問題。
 
-# --assignment--
+# --任務--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/" target="_blank" rel="noreferrer">Develop Conditional Branching and Looping Structures in C#</a> guided project on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/" target="_blank" rel="noreferrer">在 C# 中開發條件分支和循環結構</a> 的引導項目。 然後，回答下面的問題。
 
 # --question--
 
 ## --text--
 
-When is it appropriate to use a `switch-case` construct rather than a `if-elseif-else` construct?
+何時宜使用 `switch-case` 結構而不是 `if-elseif-else` 結構？
 
 ## --answers--
 
-A `switch-case` construct is appropriate when more than 2-3 `else if` code blocks are required.
+`switch-case` 結構適用於需要超過 2-3 個 `else if` 代碼塊時。
 
 ---
 
-A `switch-case` construct is appropriate when the number of `case` patterns is small.
+`switch-case` 結構適用於 `case` 模式數量較少時。
 
 ---
 
-A `switch-case` construct is appropriate when the selection statement is inside a loop.
+`switch-case` 結構適用於選擇語句在循環中時。
 
 
 ## --video-solution--

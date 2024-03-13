@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd8acde08812
-title: Center Text with Bootstrap
+title: 부트스트랩으로 텍스트 가운데 정렬하기
 challengeType: 0
 forumTopicId: 16771
 dashedName: center-text-with-bootstrap
@@ -8,9 +8,9 @@ dashedName: center-text-with-bootstrap
 
 # --description--
 
-Now that we're using Bootstrap, we can center our heading element to make it look better. All we need to do is add the class `text-center` to our `h2` element.
+부트스트랩을 사용하고 있으므로 헤딩 요소를 가운데 정렬함으로서 더 나아보이게 할 수 있습니다. `text-center` 클래스를 `h2` 요소에 추가하면 됩니다.
 
-Remember that you can add several classes to the same element by separating each of them with a space, like this:
+각각의 클래스를 공백으로 구분하여 동일한 요소에 여러 클래스를 추가할 수 있습니다.
 
 ```html
 <h2 class="red-text text-center">your text</h2>
@@ -18,13 +18,13 @@ Remember that you can add several classes to the same element by separating each
 
 # --hints--
 
-Your `h2` element should be centered by applying the class `text-center`
+`h2` 요소는 `text-center` 클래스를 적용해서 가운데 정렬되어야 합니다.
 
 ```js
 assert($('h2').hasClass('text-center'));
 ```
 
-Your `h2` element should still have the class `red-text`
+`h2` 요소는 여전히 `red-text` 클래스를 가지고 있어야 합니다.
 
 ```js
 assert($('h2').hasClass('red-text'));
