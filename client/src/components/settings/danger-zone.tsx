@@ -5,11 +5,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { Panel, Button } from '@freecodecamp/ui';
-
 import { deleteAccount, resetProgress } from '../../redux/settings/actions';
 import { FullWidthRow, Spacer } from '../helpers';
 import DeleteModal from './delete-modal';
-import ResetModal from './reset-modal';
+import ResetModalRenderer from './reset-modal-renderer';
 
 interface DangerZoneProps {
   deleteAccount: () => void;
@@ -69,8 +68,7 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
           <Spacer size='medium' />
         </FullWidthRow>
       </Panel>
-
-      <ResetModal
+      <ResetModalRenderer
         onHide={toggleResetModal}
         reset={resetProgress}
         show={reset}
