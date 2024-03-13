@@ -57,8 +57,7 @@ export const shouldRequestDonationSelector = state => {
   if (
     showMultipleProgressModals &&
     progressDonationModalShown &&
-    completedChallengesLength > 50 &&
-    completionCount - lastCompletionCount >= 30
+    completionCount - lastCompletionCount >= 20
   )
     return true;
 
