@@ -264,7 +264,16 @@
       "reset-p1": "This will really delete all of your progress, points, completed challenges, our records of your projects, any certifications you have, everything.",
       "reset-p2": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "Nevermind, I don't want to delete all of my progress",
-      "reset-confirm": "Reset everything. I want to start from the beginning"
+      "reset-confirm": "Reset everything. I want to start from the beginning",
+      "new-reset-dialog": {
+        "reset-warning": "WARNING!",
+        "reset-action-explanation": "By clicking below you'll RESET everything:",
+        "reset-challenges-and-progress-desc": "Your completed challenges and progress",
+        "reset-code-and-certifications-desc": "Any saved code, including certifications",
+        "reset-certifications-desc": "All completed certifications",
+        "reset-consequence-warning": "This action is irreversible and will take you back to day one.",
+        "reset-recovery-warning": "No recovery is possible, so be sure before proceeding."
+      }
     },
     "email": {
       "missing": "You do not have an email associated with this account.",
