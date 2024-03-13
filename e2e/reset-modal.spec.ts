@@ -19,8 +19,8 @@ test('should render the modal content correctly', async ({ page }) => {
   // There are two elements with the `dialog` role in the DOM.
   // This appears to be semantically incorrect and should be resolved
   // once we have migrated the component to use Dialog from the `ui-components` library.
-  const dialogs = await page.getByRole('dialog').all();
-  expect(dialogs).toHaveLength(2);
+  const dialogs = page.getByRole('dialog');
+  await expect(dialogs).toHaveCount(2);
 
   await expect(
     page.getByRole('button', {
@@ -71,7 +71,14 @@ test('User can reset challenge', async ({ page }) => {
     page.getByText(translations.learn['sorry-keep-trying'])
   ).toBeVisible();
 
-  await page.getByTestId('lowerJaw-reset-button').click();
+  await page.getByRole('button', { name: translations.buttons.reset }).click();
+
+  // There are two elements with the `dialog` role in the DOM.
+  // This appears to be semantically incorrect and should be resolved
+  // once we have migrated the component to use Dialog from the `ui-components` library.
+  const dialogs = page.getByRole('dialog');
+  await expect(dialogs).toHaveCount(2);
+
   await page
     .getByRole('button', { name: translations.buttons['reset-lesson'] })
     .click();
@@ -115,6 +122,13 @@ test('User can reset classic challenge', async ({ page, isMobile }) => {
   await page
     .getByRole('button', { name: translations.buttons['reset-lesson'] })
     .click();
+
+  // There are two elements with the `dialog` role in the DOM.
+  // This appears to be semantically incorrect and should be resolved
+  // once we have migrated the component to use Dialog from the `ui-components` library.
+  const dialogs = page.getByRole('dialog');
+  await expect(dialogs).toHaveCount(2);
+
   await page
     .getByRole('button', { name: translations.buttons['reset-lesson'] })
     .click();
@@ -141,8 +155,8 @@ test('should close when the user clicks the close button', async ({ page }) => {
   // There are two elements with the `dialog` role in the DOM.
   // This appears to be semantically incorrect and should be resolved
   // once we have migrated the component to use Dialog from the `ui-components` library.
-  const dialogs = await page.getByRole('dialog').all();
-  expect(dialogs).toHaveLength(2);
+  const dialogs = page.getByRole('dialog');
+  await expect(dialogs).toHaveCount(2);
 
   await page
     .getByRole('button', {
