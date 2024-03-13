@@ -95,7 +95,9 @@ describe('<DropDownButton>', () => {
     const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const Item = within(unorderedList).getByRole('menuitem');
+    const Item = within(unorderedList).getByRole('menuitem', {
+      name: 'Hello world'
+    });
 
     expect(Item).toHaveAttribute('aria-disabled', 'true');
 
@@ -120,7 +122,9 @@ describe('<DropDownButton>', () => {
     const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const Item = within(unorderedList).getByRole('menuitem');
+    const Item = within(unorderedList).getByRole('menuitem', {
+      name: 'Hello world'
+    });
     await userEvent.click(Item);
 
     expect(onClick).not.toHaveBeenCalled();
@@ -139,7 +143,9 @@ describe('<DropDownButton>', () => {
     const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const Item = within(unorderedList).getByRole('menuitem');
+    const Item = within(unorderedList).getByRole('menuitem', {
+      name: 'freeCodeCamp'
+    });
 
     expect(Item).toBeInTheDocument();
     expect(Item).toHaveAttribute('href', 'https://www.freecodecamp.org');
@@ -160,7 +166,9 @@ describe('<DropDownButton>', () => {
     const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const Item = within(unorderedList).getByRole('menuitem');
+    const Item = within(unorderedList).getByRole('menuitem', {
+      name: 'freeCodeCamp'
+    });
 
     expect(Item).toBeInTheDocument();
     expect(Item).toHaveAttribute('aria-disabled', 'true');
