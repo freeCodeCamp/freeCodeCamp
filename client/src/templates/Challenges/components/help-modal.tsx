@@ -64,14 +64,17 @@ function CheckboxHelpModal({
 }: CheckbockProps) {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <input name={name} type='checkbox' onChange={onChange} checked={value} aria-label={t(i18nkey)} />
+      <input
+        name={name}
+        type='checkbox'
+        onChange={onChange}
+        checked={value}
+        aria-label={t(i18nkey)}
+      />
       <Trans i18nKey={i18nkey}>
-        <a
-          href={href}
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          {t(i18nkey)} <span className='sr-only'>{t('aria.opens-new-window')}
+        <a href={href} rel='noopener noreferrer' target='_blank'>
+          {t(i18nkey)}{' '}
+          <span className='sr-only'>{t('aria.opens-new-window')}</span>
         </a>
       </Trans>
     </div>
@@ -160,28 +163,30 @@ function HelpModal({
               }}
             >
               <fieldset>
-                <legend>You must confirm the following statements before you can submit your post to the forum.</legend>
-              <CheckboxHelpModal
-                name='read-search-ask-checkbox'
-                i18nkey={t('learn.read-search-ask-checkbox')}
-                onChange={event =>
-                  handleCheckboxChange(event, setReadSearchCheckbox)
-                }
-                value={readSearchCheckbox}
-                href={RSA}
-                t={t}
-              />
-              <Spacer size='small' />
-              <CheckboxHelpModal
-                name='similar-questions-checkbox'
-                i18nkey={t('learn.similar-questions-checkbox')}
-                onChange={event =>
-                  handleCheckboxChange(event, setSimilarQuestionsCheckbox)
-                }
-                value={similarQuestionsCheckbox}
-                href={generateSearchLink(challengeTitle, challengeBlock)}
-                t={t}
-              />
+                <legend style={{ fontSize: 'large' }}>
+                  {t('learn.must-confirm-statements')}
+                </legend>
+                <CheckboxHelpModal
+                  name='read-search-ask-checkbox'
+                  i18nkey={t('learn.read-search-ask-checkbox')}
+                  onChange={event =>
+                    handleCheckboxChange(event, setReadSearchCheckbox)
+                  }
+                  value={readSearchCheckbox}
+                  href={RSA}
+                  t={t}
+                />
+                <Spacer size='small' />
+                <CheckboxHelpModal
+                  name='similar-questions-checkbox'
+                  i18nkey={t('learn.similar-questions-checkbox')}
+                  onChange={event =>
+                    handleCheckboxChange(event, setSimilarQuestionsCheckbox)
+                  }
+                  value={similarQuestionsCheckbox}
+                  href={generateSearchLink(challengeTitle, challengeBlock)}
+                  t={t}
+                />
               </fieldset>
               <label htmlFor='help-modal-form-description'>
                 {t('forum-help.whats-happening')}
@@ -245,11 +250,7 @@ function HelpModal({
           <>
             <p className='help-modal-heading'>
               <Trans i18nKey='learn.tried-rsa'>
-                <a
-                  href={RSA}
-                  rel='noopener noreferrer'
-                  target='_blank'
-                >
+                <a href={RSA} rel='noopener noreferrer' target='_blank'>
                   placeholder
                 </a>
               </Trans>
