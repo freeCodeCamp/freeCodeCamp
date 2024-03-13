@@ -1,8 +1,8 @@
 ---
 id: 62aa264d23cdaa45a20efada
-title: Step 165
+title: Step 162
 challengeType: 0
-dashedName: step-165
+dashedName: step-162
 ---
 
 # --description--
@@ -259,7 +259,7 @@ function buyWeapon() {
       let newWeapon = weapons[currentWeapon].name;
       text.innerText = `You now have a ${newWeapon}.`;
       inventory.push(newWeapon);
-      text.innerText += " In your inventory you have: " + inventory;
+      text.innerText += ` In your inventory you have: ${inventory}`;
     } else {
       text.innerText = "You do not have enough gold to buy a weapon.";
     }
@@ -276,7 +276,7 @@ function sellWeapon() {
     goldText.innerText = gold;
     let currentWeapon = inventory.shift();
     text.innerText = "You sold a " + currentWeapon + ".";
-    text.innerText += " In your inventory you have: " + inventory;
+    text.innerText += ` In your inventory you have: ${inventory}`;
   } else {
     text.innerText = "Don't sell your only weapon!";
   }
