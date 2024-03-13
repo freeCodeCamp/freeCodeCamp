@@ -2,7 +2,6 @@ import { Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/ui';
-
 import { Spacer } from '../helpers';
 
 type ResetModalProps = {
@@ -11,7 +10,7 @@ type ResetModalProps = {
   show: boolean;
 };
 
-function ResetModal(props: ResetModalProps): JSX.Element {
+function OldResetModal(props: ResetModalProps): JSX.Element {
   const { t } = useTranslation();
   const { show, onHide } = props;
 
@@ -61,6 +60,6 @@ function ResetModal(props: ResetModalProps): JSX.Element {
   );
 }
 
-ResetModal.displayName = 'ResetModal';
+OldResetModal.displayName = 'OldResetModal';
 
-export default ResetModal;
+export default OldResetModal;
