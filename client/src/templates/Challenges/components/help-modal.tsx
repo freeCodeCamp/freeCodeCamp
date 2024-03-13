@@ -161,6 +161,7 @@ function HelpModal({
                 href={RSA}
                 t={t}
               />
+              <Spacer size='small' />
               <CheckboxHelpModal
                 name='similar-questions-checkbox'
                 i18nkey={t('learn.similar-questions-checkbox')}
