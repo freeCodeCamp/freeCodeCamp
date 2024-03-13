@@ -72,7 +72,7 @@ function CheckboxHelpModal({
           target='_blank'
           title={t(i18nkey)}
         >
-          {t(i18nkey)}
+          {t(i18nkey)} <span className='sr-only'>{t('aria.opens-new-window')}
         </a>
       </Trans>
     </div>
