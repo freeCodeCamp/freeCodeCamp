@@ -151,6 +151,7 @@ function HelpModal({
               createQuestion();
               closeHelpModal();
             }}
+            ref={formRef}
           >
             <div
               style={{
@@ -158,6 +159,8 @@ function HelpModal({
                 flexDirection: 'column'
               }}
             >
+              <fieldset>
+                <legend>You must confirm the following statements before you can submit your post to the forum.</legend>
               <CheckboxHelpModal
                 name='read-search-ask-checkbox'
                 i18nkey={t('learn.read-search-ask-checkbox')}
@@ -179,8 +182,10 @@ function HelpModal({
                 href={generateSearchLink(challengeTitle, challengeBlock)}
                 t={t}
               />
-              <label htmlFor='description'>
+              </fieldset>
+              <label htmlFor='help-modal-form-description'>
                 {t('forum-help.whats-happening')}
+                <span className='sr-only'>50 character minimum</span>
               </label>
               <FormControl
                 id='help-modal-form-description'
