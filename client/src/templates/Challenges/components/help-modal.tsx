@@ -64,7 +64,7 @@ function CheckboxHelpModal({
 }: CheckbockProps) {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <input name={name} type='checkbox' onChange={onChange} checked={value} />
+      <input name={name} type='checkbox' onChange={onChange} checked={value} aria-label={t(i18nkey)} />
       <Trans i18nKey={i18nkey}>
         <a
           href={href}
