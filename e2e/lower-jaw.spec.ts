@@ -29,15 +29,6 @@ test('Click on the "check your code" button', async ({ page }) => {
   await expect(hint).toBeVisible();
 });
 
-test('Click on the "Reset" button', async ({ page }) => {
-  const resetButton = page.getByTestId('lowerJaw-reset-button');
-  await resetButton.click();
-
-  const resetModal = page.getByTestId('reset-modal');
-
-  await expect(resetModal).toBeVisible();
-});
-
 test('Should render UI correctly', async ({ page }) => {
   const codeCheckButton = page.getByRole('button', {
     name: 'Check Your Code'

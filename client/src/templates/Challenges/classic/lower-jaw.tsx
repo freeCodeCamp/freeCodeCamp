@@ -95,7 +95,6 @@ const LowerButtonsPanel = ({
       <hr />
       <div className='utility-bar'>
         <button
-          data-playwright-test-label='lowerJaw-reset-button'
           className='btn fade-in'
           data-cy='reset-code-button'
           onClick={resetButtonEvent}
