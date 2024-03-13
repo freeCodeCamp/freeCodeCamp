@@ -231,18 +231,17 @@ function HelpModal({
           </form>
         ) : (
           <>
-            <h3 className='help-modal-heading'>
+            <p className='help-modal-heading'>
               <Trans i18nKey='learn.tried-rsa'>
                 <a
                   href={RSA}
                   rel='noopener noreferrer'
                   target='_blank'
-                  title={t('learn.rsa')}
                 >
                   placeholder
                 </a>
               </Trans>
-            </h3>
+            </p>
             <div className='alert alert-danger'>
               <FontAwesomeIcon icon={faExclamationCircle} />
               <p>
