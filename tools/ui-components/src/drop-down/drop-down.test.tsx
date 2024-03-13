@@ -75,9 +75,9 @@ describe('<DropDownButton>', () => {
     const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const Item = within(unorderedList).getByRole('menuitem');
+    const item = within(unorderedList).getByRole('menuitem');
 
-    await userEvent.click(Item);
+    await userEvent.click(item);
 
     expect(onClick).toHaveBeenCalledTimes(1);
   });
@@ -95,14 +95,14 @@ describe('<DropDownButton>', () => {
     const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const Item = within(unorderedList).getByRole('menuitem', {
+    const item = within(unorderedList).getByRole('menuitem', {
       name: 'Hello world'
     });
 
-    expect(Item).toHaveAttribute('aria-disabled', 'true');
+    expect(item).toHaveAttribute('aria-disabled', 'true');
 
     // Ensure that the `disabled` attribute is not used.
-    expect(Item).toBeEnabled();
+    expect(item).toBeEnabled();
   });
 
   it('should not trigger the onClick prop if the button is disabled', async () => {
@@ -122,10 +122,10 @@ describe('<DropDownButton>', () => {
     const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const Item = within(unorderedList).getByRole('menuitem', {
+    const item = within(unorderedList).getByRole('menuitem', {
       name: 'Hello world'
     });
-    await userEvent.click(Item);
+    await userEvent.click(item);
 
     expect(onClick).not.toHaveBeenCalled();
   });
@@ -143,12 +143,12 @@ describe('<DropDownButton>', () => {
     const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const Item = within(unorderedList).getByRole('menuitem', {
+    const item = within(unorderedList).getByRole('menuitem', {
       name: 'freeCodeCamp'
     });
 
-    expect(Item).toBeInTheDocument();
-    expect(Item).toHaveAttribute('href', 'https://www.freecodecamp.org');
+    expect(item).toBeInTheDocument();
+    expect(item).toHaveAttribute('href', 'https://www.freecodecamp.org');
   });
 
   it('should render a button element if the `href` and `disabled` props are both defined', async () => {
@@ -166,11 +166,11 @@ describe('<DropDownButton>', () => {
     const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const Item = within(unorderedList).getByRole('menuitem', {
+    const item = within(unorderedList).getByRole('menuitem', {
       name: 'freeCodeCamp'
     });
 
-    expect(Item).toBeInTheDocument();
-    expect(Item).toHaveAttribute('aria-disabled', 'true');
+    expect(item).toBeInTheDocument();
+    expect(item).toHaveAttribute('aria-disabled', 'true');
   });
 });
