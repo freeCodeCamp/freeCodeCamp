@@ -1,38 +1,38 @@
 ---
 id: 647e22a08acb466c97ccbef5
-title: 'Implement Exception Handling in C# Console Applications'
+title: '在 C# 控制檯應用程序中實現異常處理'
 challengeType: 19
 dashedName: implement-exception-handling-in-c-sharp-console-applications
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+這個挑戰將有一部分在 Microsoft Learn 平臺上完成。 請按照如下說明來完成挑戰：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/</a> and complete all the tasks for the "Implement Exception Handling in C# Console Applications" module. This is **required** to earn the "Debug C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳轉到 <a href="https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/</a>，然後完成“在 C# 控制檯應用程序中實現異常處理”模塊的所有任務。 這是在 Microsoft Learn 上獲得“調試 C# 控制檯應用程序”的獎盃以及參加認證考試所**必需**的。
+1. 完成後，返回並正確回答下面的問題。
 
-# --assignment--
+# --任務--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/" target="_blank" rel="noreferrer">Implement Exception Handling in C# Console Applications</a> module on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/" target="_blank" rel="noreferrer">在 C# 控制檯應用程序中實現異常處理</a> 模塊。 然後，回答下面的問題。
 
 # --question--
 
 ## --text--
 
-When is an `ArrayTypeMismatchException` exception thrown?
+何時拋出 `ArrayTypeMismatchException` 異常？
 
 ## --answers--
 
-An `ArrayTypeMismatchException` exception is thrown when an attempt is made to store a value of one type in an array of another type.
+當嘗試將一種類型的值存儲在另一種類型的值的數組中時，會拋出 `ArrayTypeMismatchException` 異常。
 
 ---
 
-An `ArrayTypeMismatchException` exception is thrown when attempting to access a member on a type whose value is null.
+當試圖訪問值爲 null 的成員類型時，會拋出 `ArrayTypeMismatchException` 異常。
 
 ---
 
-An `ArrayTypeMismatchException` exception is thrown when an attempt is made to index an array outside the bounds of the array.
+當嘗試索引數組超出數組邊界時，會拋出 `ArrayTypeMismatchException` 異常。
 
 ## --video-solution--
 

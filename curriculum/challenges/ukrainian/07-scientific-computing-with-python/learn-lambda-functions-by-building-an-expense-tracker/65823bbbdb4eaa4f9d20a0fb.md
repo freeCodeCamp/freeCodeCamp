@@ -7,11 +7,11 @@ dashedName: step-16
 
 # --description--
 
-Within your `total_expenses` function, replace `pass` with a `lambda` function. Use `expense` as the parameter and return the value of the `'amount'` key in the `expense` dictionary.
+Замініть `pass` на функцію `lambda` в межах функції `total_expenses`. Використайте `expense` як параметр та поверніть значення ключа `'amount'` в словнику `expense`.
 
 # --hints--
 
-You should have `lambda expense: expense['amount']` in your `total_expenses` function.
+Функція `total_expenses` повинна містити `lambda expense: expense['amount']`.
 
 ```js
 ({ test: () =>

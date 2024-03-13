@@ -22,19 +22,15 @@ export function CloseButton({
     'text-lg',
     'font-bold',
     'text-foreground-primary',
-    // Active state
-    'active:before:w-full',
-    'active:before:h-full',
-    'active:before:absolute',
-    'active:before:inset-0',
-    'active:before:border-3',
-    'active:before:border-transparent',
-    'active:before:bg-gray-900',
-    'active:before:opacity-20',
     // Focus state
+    'focus:opacity-100',
+    'focus:text-opacity-100',
     'focus:outline-none', // Hide the default browser outline
     'focus-visible:ring',
     'focus-visible:ring-focus-outline-color',
+    // Hover state
+    'hover:opacity-100',
+    'hover:text-opacity-100',
     // Content positioning
     'flex',
     'justify-center',

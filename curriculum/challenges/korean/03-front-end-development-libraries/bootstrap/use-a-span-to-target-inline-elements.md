@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08845
-title: Use a span to Target Inline Elements
+title: 대상이 되는 인라인 요소에 span 사용하기
 challengeType: 0
 forumTopicId: 18370
 dashedName: use-a-span-to-target-inline-elements
@@ -8,19 +8,19 @@ dashedName: use-a-span-to-target-inline-elements
 
 # --description--
 
-You can use spans to create inline elements. Remember when we used the `btn-block` class to make the button fill the entire row?
+인라인 요소를 생성하기 위해 span을 사용할 수 있습니다. 버튼이 전체 행을 채우도록 `btn-block` 사용했다는 것을 기억하실 것입니다.
 
-<button class='btn' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>normal button</button>
+<button class='btn' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>일반 버튼</button>
 
-<button class='btn btn-block' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>btn-block button</button>
+<button class='btn btn-block' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>btn-block 버튼</button>
 
-That illustrates the difference between an "inline" element and a "block" element.
+이는 "인라인"과 "블락" 요소 간의 차이에 대해 설명해줍니다.
 
-By using the inline `span` element, you can put several elements on the same line, and even style different parts of the same line differently.
+인라인 `span` 요소를 사용하여 같은 줄에 여러 요소를 놓을 수 있으며 같은 줄의 다른 부분들을 다르게 스타일링 할 수 있습니다.
 
-Using a `span` element, nest the word `love` inside the `p` element that currently has the text `Things cats love`. Then give the `span` the class `text-danger` to make the text red.
+`span` 요소를 사용하여 현재 `Things cats love`라는 글자를 가진 `p` 요소 안에 단어 `love`를 중첩시키세요. 그런 다음 글자를 빨간색으로 만들도록 `span`에 `text-danger` 클래스를 주세요.
 
-Here's how you would do this for the `p` element that has the text `Top 3 things cats hate`:
+여기 `Top 3 things cats hate`를 가진 `p` 요소에 이 작업을 수행하는 방법이 있습니다:
 
 ```html
 <p>Top 3 things cats <span class="text-danger">hate:</span></p>
@@ -28,13 +28,13 @@ Here's how you would do this for the `p` element that has the text `Top 3 things
 
 # --hints--
 
-Your `span` element should be inside your `p` element.
+`span` 요소는 `p` 요소 안에 있어야 합니다.
 
 ```js
 assert($('p span') && $('p span').length > 0);
 ```
 
-Your `span` element should have just the text `love`.
+`span` 요소는 `love`라는 글자를 가져야 합니다.
 
 ```js
 assert(
@@ -46,13 +46,13 @@ assert(
 );
 ```
 
-Your `span` element should have class `text-danger`.
+`span` 요소는 `text-danger` 클래스를 가져야 합니다.
 
 ```js
 assert($('span').hasClass('text-danger'));
 ```
 
-Your `span` element should have a closing tag.
+`span` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(

@@ -31,22 +31,16 @@ Any cell size is allowed, EOF (*E*nd-*O*-*F*ile) support is optional, as is whet
 
 # --hints--
 
-`brain(bye)` should return a string
+`brain(hello)` should return a string
 
 ```js
-assert(typeof brain(bye) === 'string');
+assert(typeof brain(hello) === 'string');
 ```
 
 `brain("++++++[>++++++++++<-]>+++++.")` should return "A"
 
 ```js
 assert.equal(brain('++++++[>++++++++++<-]>+++++.'), 'A');
-```
-
-`brain(bye)` should return `Goodbye, World!\r\n`
-
-```js
-assert.equal(brain(bye), 'Goodbye, World!\r\n');
 ```
 
 `brain(hello)` should return `Hello World!\n`
@@ -130,7 +124,6 @@ let fib=`+
 
 >-]>[<+>-]<<<-]`;
 let hello='++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.'
-let bye='++++++++++[>+>+++>++++>+++++++>++++++++>+++++++++>++++++++++>+++++++++++>++++++++++++<<<<<<<<<-]>>>>+.>>>>+..<.<++++++++.>>>+.<<+.<<<<++++.<++.>>>+++++++.>>>.+++.<+++++++.--------.<<<<<+.<+++.---.';
 ```
 
 ## --seed-contents--

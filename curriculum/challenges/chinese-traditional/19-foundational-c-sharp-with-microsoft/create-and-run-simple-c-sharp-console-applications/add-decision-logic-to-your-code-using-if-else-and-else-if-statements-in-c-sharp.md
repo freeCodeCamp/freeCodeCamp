@@ -1,26 +1,26 @@
 ---
 id: 647e21ba8acb466c97ccbee6
-title: 'Add Decision Logic to Your Code Using if, else, and else if statements in C#'
+title: '在 C# 中使用 if、else 和 else if 語句向代碼中添加決策邏輯'
 challengeType: 19
 dashedName: add-decision-logic-to-your-code-using-if-else-and-else-if-statements-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+這個挑戰將有一部分在 Microsoft Learn 平臺上完成。 請按照如下說明來完成挑戰：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-if-elseif-else/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-if-elseif-else/</a> and complete all the tasks for the "Add Decision Logic to Your Code Using if, else, and else if statements in C#" module. This is **required** to earn the "Create and Run Simple C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳轉到 <a href="https://learn.microsoft.com/training/modules/csharp-if-elseif-else/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-if-elseif-else/</a>，然後完成“在 C# 中使用 if、else 和 else if 語句向代碼中添加決策邏輯”模塊的所有任務。 這是在 Microsoft Learn 上獲得“創建並運行簡單的 C# 控制檯應用程序”的獎盃以及參加認證考試所**必需**的。
+1. 完成後，返回並正確回答下面的問題。
 
-# --assignment--
+# --任務--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-if-elseif-else/" target="_blank" rel="noreferrer">Add Decision Logic to Your Code Using `if`, `else`, and `else if` Statements in C#</a> module on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/csharp-if-elseif-else/" target="_blank" rel="noreferrer">在 C# 中使用 if、else 和 else if 語句向代碼中添加決策邏輯</a> 模塊。 然後，回答下面的問題。
 
 # --question--
 
 ## --text--
 
-Which of the choices below is not a valid operator in C#?
+下列哪個選項不是 C# 中有效的運算符？
 
 ## --answers--
 

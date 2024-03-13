@@ -20,6 +20,14 @@ Node は単なる JavaScript 環境にすぎません。 クライアントサ�
 
 チャレンジの作業中はターミナルを開いたままにしておくことをお勧めします。 ターミナルの出力を見て、発生したエラーを確認することができます。
 
+The server must be restarted after making changes to its files.
+
+You can stop the server from the terminal using `Ctrl + C` and start it using Node directly (`node mainEntryFile.js`) or using a run script in the `package.json` file with `npm run`.
+
+For example, the `"start": "node server.js"` script would be run from the terminal using `npm run start`.
+
+To implement server auto restarting on file save Node provides the `--watch` flag you can add to your start script `"start": "node --watch server.js"` or you can install an npm package like `nodemon`. We will leave this to you as an exercise.
+
 # --instructions--
 
 `myApp.js` ファイルを変更して、コンソールログに「Hello World」と出力してください。

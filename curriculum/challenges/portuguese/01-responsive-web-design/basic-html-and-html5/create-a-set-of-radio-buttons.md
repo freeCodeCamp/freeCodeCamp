@@ -112,7 +112,7 @@ assert($('label').parent().get(0).tagName.match('FORM'));
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
@@ -140,7 +140,7 @@ assert($('label').parent().get(0).tagName.match('FORM'));
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>

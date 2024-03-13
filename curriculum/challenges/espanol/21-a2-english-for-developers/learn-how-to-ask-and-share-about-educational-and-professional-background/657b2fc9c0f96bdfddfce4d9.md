@@ -3,13 +3,9 @@ id: 657b2fc9c0f96bdfddfce4d9
 title: Task 70
 challengeType: 22
 dashedName: task-70
-audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
-<!--
-AUDIO REFERENCE:
-Anna: I took a course in organizational psychology, and it piqued my interest in the workplace and employee dynamics.
--->
+<!-- (Audio) Anna: I took a course in organizational psychology, and it piqued my interest in the workplace and employee dynamics. -->
 
 # --description--
 
@@ -44,3 +40,47 @@ This word describes the study of the mind and behavior, particularly in a workpl
 ### --retroalimentación--
 
 This word means to arouse or stimulate interest or curiosity. You should correctly use its simple past tense.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-parking.png",
+    "characters": [
+      {
+        "character": "Anna",
+        "position": {"x":50,"y":15,"z":1.2},
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "3.1-5.mp3",
+      "startTime": 1,
+      "startTimestamp": 13.14,
+      "finishTimestamp": 18.62
+    }
+  },
+  "commands": [
+    {
+      "character": "Anna",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Anna",
+      "startTime": 1,
+      "finishTime": 6.48,
+      "dialogue": {
+        "text": "I took a course in organizational psychology and it piqued my interest in the workplace and employee dynamics.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Anna",
+      "opacity": 0,
+      "startTime": 6.98
+    }
+  ]
+}
+```

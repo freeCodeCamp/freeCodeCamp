@@ -12,7 +12,7 @@ dashedName: web-services-api-rate-limiting-and-security
 
 # --description--
 
-More resources:
+その他のリソース:
 
 \- <a href="https://www.youtube.com/watch?v=TJGJN0T8tak" target="_blank" rel="noopener noreferrer nofollow">演習: GeoJSON</a>
 

@@ -210,9 +210,9 @@ const products = [
   },
   {
     id: 2,
-    name: "French Macaroon",
+    name: "French Macaron",
     price: 3.99,
-    category: "Macaroon",
+    category: "Macaron",
   },
   {
     id: 3,
@@ -240,9 +240,9 @@ const products = [
   },
   {
     id: 7,
-    name: "Chocolate Macaroons (4 Pack)",
+    name: "Chocolate Macarons (4 Pack)",
     price: 9.99,
-    category: "Macaroon",
+    category: "Macaron",
   },
   {
     id: 8,
@@ -264,9 +264,9 @@ const products = [
   },
   {
     id: 11,
-    name: "Vanilla Macaroons (5 Pack)",
+    name: "Vanilla Macarons (5 Pack)",
     price: 11.99,
-    category: "Macaroon",
+    category: "Macaron",
   },
   {
     id: 12,

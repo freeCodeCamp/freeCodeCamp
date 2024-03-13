@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedc08845
-title: Add Font Awesome Icons to all of our Buttons
+title: 모든 버튼에 폰트 어썸(Font Awesome) 추가하기
 challengeType: 0
 forumTopicId: 16637
 required:
@@ -12,17 +12,17 @@ dashedName: add-font-awesome-icons-to-all-of-our-buttons
 
 # --description--
 
-Font Awesome is a convenient library of icons. These icons can be web fonts or vector graphics. 아이콘들은 폰트처럼 다룰 수 있습니다. 아이콘 크기를 픽셀로 직접 지정하거나, 부모 HTML 요소의 글꼴 크기와 연계해 지정할 수 있습니다.
+폰트 어썸(Font Awesome)은 간편한 아이콘 라이브러리 입니다. 여기서 제공하는 아이콘들은 웹 폰트 또는 벡터 그래픽입니다. 아이콘들은 폰트처럼 다룰 수 있습니다. 아이콘 크기를 픽셀로 직접 지정하거나, 부모 HTML 요소의 글꼴 크기와 연계해 지정할 수 있습니다.
 
 # --instructions--
 
-Use Font Awesome to add an `info-circle` icon to your info button and a `trash` icon to your delete button.
+Font Awesome을 사용하여 정보 버튼에 `info-circle` 아이콘을 추가하고 삭제 버튼에 `trash` 아이콘을 추가할 수 있습니다.
 
-**Note:** You can use either `i` or `span` elements to complete this challenge.
+**참고:** 이 챌린지를 완료하기 위해 `i`나 `span` 요소를 사용할 수 있습니다.
 
 # --hints--
 
-You should add a `<i class="fas fa-info-circle"></i>` within your `info` button element.
+`info` 버튼 요소 안에 `<i class="fas fa-info-circle"></i>`를 추가해야합니다.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-You should add a `<i class="fas fa-trash"></i>` within your `delete` button element.
+`delete` 버튼 요소에 안에 `<i class="fas fa-trash"></i>`를 추가해야 합니다.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-Each of your `i` elements should have a closing tag and `<i class="fas fa-thumbs-up"></i>` is in your `like` button element.
+각 `i` 요소에는 닫는 태그가 있어야 하고 `<i class="fas fa-thumbs-up"></i>`가 `like` 버튼 요소 안에 있어야합니다.
 
 ```js
 assert(

@@ -14,7 +14,7 @@ dashedName: regular-expressions-practical-applications
 
 ## --text--
 
-What will search for a "$" in a regular expression?
+正規表現で "$" を検索するものは何ですか？
 
 ## --answers--
 

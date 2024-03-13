@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aede08845
-title: Create a Custom Heading
+title: 커스텀 헤딩 생성하기
 challengeType: 0
 forumTopicId: 16816
 dashedName: create-a-custom-heading
@@ -8,23 +8,23 @@ dashedName: create-a-custom-heading
 
 # --description--
 
-We will make a simple heading for our Cat Photo App by putting the title and relaxing cat image in the same row.
+Cat Photo App을 위한 간단한 헤딩을 만들어봅시다. 제목과 나른한 고양이 이미지를 한 줄에 배치하려 합니다.
 
-Remember, Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a `div` element.
+부트스트랩은 반응형 그리드 시스템을 사용하고 있으며, 이 덕분에 쉽게 요소들을 배치하고 각 요소들의 상대적인 너비를 지정할 수 있습니다. 대부분의 부트스트랩 클래스를 `div` 요소에 적용할 수 있습니다.
 
-Nest your first image and your `h2` element within a single `<div class="row">` element. Nest your `h2` element within a `<div class="col-xs-8">` and your image in a `<div class="col-xs-4">` so that they are on the same line.
+하나의 `<div class="row">` 요소 안에 첫 이미지와 `h2` 요소를 모두 넣어주세요. `h2` 요소는 `<div class="col-xs-8">` 요소 안에, 이미지는 `<div class="col-xs-4">` 요소 안에 넣어 두 요소가 한 줄에 있도록 만들어주세요.
 
-Notice how the image is now just the right size to fit along the text?
+텍스트에 맞게 이미지 크기가 조절되었다는 것에 주목하세요.
 
 # --hints--
 
-Your `h2` element and topmost `img` element should both be nested together within a `div` element with the class `row`.
+`h2` 요소와 가장 상단의 `img` 요소는 둘 다 `row` 클래스가 있는 `div` 요소 내에 배치돼야 합니다.
 
 ```js
 assert($('div.row:has(h2)').length > 0 && $('div.row:has(img)').length > 0);
 ```
 
-Your topmost `img` element should be nested within a `div` with the class `col-xs-4`.
+가장 상단의 `img` 요소는 `col-xs-4` 클래스가 있는 `div` 내에 들어있어야 합니다.
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-Your `h2` element should be nested within a `div` with the class `col-xs-8`.
+`h2` 요소는 `col-xs-8` 클래스가 있는 `div` 내에 있어야 합니다.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-All of your `div` elements should have closing tags.
+모든 `div` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(

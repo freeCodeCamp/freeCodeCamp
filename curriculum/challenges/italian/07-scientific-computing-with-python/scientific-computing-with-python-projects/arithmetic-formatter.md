@@ -1,21 +1,12 @@
 ---
 id: 5e44412c903586ffb414c94c
 title: Formattatore aritmetico
-challengeType: 10
+challengeType: 23
 forumTopicId: 462359
 dashedName: arithmetic-formatter
 ---
 
 # --description--
-
-Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice d'inizio su Replit</a>.
-
--   Inizia importando il progetto su Replit.
--   Poi vedrai una finestra `.replit`.
--   Seleziona `Use run command` e clicca sul pulsante `Done`.
-
-
-# --instructions--
 
 Gli studenti delle elementari spesso scrivono l problemi aritmetici in colonna per risolverli più facilmente. Per esempio, "235 + 52" diventa:
 
@@ -25,7 +16,7 @@ Gli studenti delle elementari spesso scrivono l problemi aritmetici in colonna p
 -----
 ```
 
-Crea una funzione che riceve una lista di stringhe che sono problemi aritmetici e restituisce i problemi disposti verticalmente e fianco a fianco. La funzione dovrebbe accettare un secondo argomento facoltativo. Quando il secondo argomento ha valore di `True`, devono essere mostrati anche i risultati.
+Finish the `arithmetic_arranger` function that receives a list of strings which are arithmetic problems, and returns the problems arranged vertically and side-by-side. La funzione dovrebbe accettare un secondo argomento facoltativo. Quando il secondo argomento ha valore di `True`, devono essere mostrati anche i risultati.
 
 ## Esempio
 
@@ -62,44 +53,196 @@ Output:
 
 La funzione restituirà la conversione corretta se i problemi dati sono correttamente formattati, altrimenti, deve **restituire** una **stringa** che descrive un errore significativo per l'utente.
 
-
 - Situazioni che devono restituire un errore:
-  - Se ci sono **troppi problemi** dati alla funzione. Il limite è **cinque**, più di ciò deve restituire: `Error: Too many problems.`
-  - Gli operatori appropriati che la funzione accetterà sono **addizione** e **sottrazione**. Moltiplicazione e divisione devono dare un errore. Altri operatori non menzionati in questa lista non serve che vengano testati. L'errore restituito deve essere: `Error: Operator must be '+' or '-'.`
-  - Ogni numero (operando) deve contenere solo cifre. Altrimenti, la funzione deve restituire: `Error: Numbers must only contain digits.`
-  - Ogni operando (numero da ogni lato dell'operatore) ha una lunghezza di massimo 4 cirre. Altrimenti, la funzione deve restituire: `Error: Numbers cannot be more than four digits.`
+  - Se ci sono **troppi problemi** dati alla funzione. The limit is **five**, anything more will return: `'Error: Too many problems.'`
+  - Gli operatori appropriati che la funzione accetterà sono **addizione** e **sottrazione**. Moltiplicazione e divisione devono dare un errore. Altri operatori non menzionati in questa lista non serve che vengano testati. The error returned will be: `"Error: Operator must be '+' or '-'."`
+  - Ogni numero (operando) deve contenere solo cifre. Otherwise, the function will return: `'Error: Numbers must only contain digits.'`
+  - Ogni operando (numero da ogni lato dell'operatore) ha una lunghezza di massimo 4 cirre. Otherwise, the error string returned will be: `'Error: Numbers cannot be more than four digits.'`
 - Se l'utente ha dato i problemi nel formato corretto, la conversione che restituisci deve seguire le seguenti regole:
   - Ci deve essere un singolo spazio tra l'operatore e il più lungo dei due operandi, l'operatore deve essere sulla stessa riga del secondo operando, entrambi gli operandi devono essere nell'ordine dato (il primo in alto, il secondo in basso).
   - I numeri devono essere allineati a destra.
   - Devono esserci quattro spazi tra ogni problema.
   - Ci devono essere dei trattini sotto ogni problema. I trattini devono avere la stessa larghezza del singolo problema. (L'esempio sopra mostra come deve apparire.)
 
-## Sviluppo
-
-Scrivi il tuo codice in `arithmetic_arranger.py`. Per lo sviluppo, puoi usare `main.py` per testare la tua funzione `arithmetic_arranger()`. Fai clic sul pulsante "Run" e `main.py` verrà eseguito.
-
-## Testare
-
-I test unitari per questo progetto sono in `test_module.py`. Stiamo eseguendo i test da `test_module.py` in `main.py` per la tua convenienza. I test saranno eseguiti automaticamente quando usi il bottone "run". In alternativa puoi eseguire i test eseguendo `pytest` nella console.
-
-## Consegnare
-
-Copy your project's URL and submit it to freeCodeCamp.
-
 # --hints--
 
-Dovrebbe formattare correttamente un problema aritmetico e superare tutti i test.
+`arithmetic_arranger(["3801 - 2", "123 + 49"])` should return `3801      123\n-    2    +  49\n------    -----`.
 
 ```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
 
+TestCase().assertEqual(arithmetic_arranger(["3801 - 2", "123 + 49"]), '  3801      123\\n-    2    +  49\\n------    -----')`);
+  }
+})
+```
+
+`arithmetic_arranger(["1 + 2", "1 - 9380"])` should return `1         1\n+ 2    - 9380\n---    ------`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["1 + 2", "1 - 9380"]), '  1         1\\n+ 2    - 9380\\n---    ------')`);
+  }
+})
+```
+
+`arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"])` should return `3      3801      45      123\n+ 855    -    2    + 43    +  49\n-----    ------    ----    -----`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]), '    3      3801      45      123\\n+ 855    -    2    + 43    +  49\\n-----    ------    ----    -----')`);
+  }
+})
+```
+
+`arithmetic_arranger(["11 + 4", "3801 - 2999", "1 + 2", "123 + 49", "1 - 9380"])` should return `11      3801      1      123         1\n+  4    - 2999    + 2    +  49    - 9380\n----    ------    ---    -----    ------`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["11 + 4", "3801 - 2999", "1 + 2", "123 + 49", "1 - 9380"]), '  11      3801      1      123         1\\n+  4    - 2999    + 2    +  49    - 9380\\n----    ------    ---    -----    ------')`);
+  }
+})
+```
+
+`arithmetic_arranger(["44 + 815", "909 - 2", "45 + 43", "123 + 49", "888 + 40", "653 + 87"])` should return `'Error: Too many problems.'`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["44 + 815", "909 - 2", "45 + 43", "123 + 49", "888 + 40", "653 + 87"]), 'Error: Too many problems.')`);
+  }
+})
+```
+
+`arithmetic_arranger(["3 / 855", "3801 - 2", "45 + 43", "123 + 49"])` should return `"Error: Operator must be '+' or '-'."`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["3 / 855", "3801 - 2", "45 + 43", "123 + 49"]), "Error: Operator must be '+' or '-'.")`);
+  }
+})
+```
+
+`arithmetic_arranger(["24 + 85215", "3801 - 2", "45 + 43", "123 + 49"])` should return `'Error: Numbers cannot be more than four digits.'`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["24 + 85215", "3801 - 2", "45 + 43", "123 + 49"]), "Error: Numbers cannot be more than four digits.")`);
+  }
+})
+```
+
+`arithmetic_arranger(["98 + 3g5", "3801 - 2", "45 + 43", "123 + 49"])` should return `'Error: Numbers must only contain digits.'`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["98 + 3g5", "3801 - 2", "45 + 43", "123 + 49"]), "Error: Numbers must only contain digits.")`);
+  }
+})
+```
+
+`arithmetic_arranger(["3 + 855", "988 + 40"], True)` should return `3      988\n+ 855    +  40\n-----    -----\n  858     1028`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["3 + 855", "988 + 40"], True), "    3      988\\n+ 855    +  40\\n-----    -----\\n  858     1028")`);
+  }
+})
+```
+
+`arithmetic_arranger(["32 - 698", "1 - 3801", "45 + 43", "123 + 49", "988 + 40"], True)` should return `32         1      45      123      988\n- 698    - 3801    + 43    +  49    +  40\n-----    ------    ----    -----    -----\n -666     -3800      88      172     1028`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["32 - 698", "1 - 3801", "45 + 43", "123 + 49", "988 + 40"], True), "   32         1      45      123      988\\n- 698    - 3801    + 43    +  49    +  40\\n-----    ------    ----    -----    -----\\n -666     -3800      88      172     1028")`);
+  }
+})
+```
+
+# --seed--
+
+## --seed-contents--
+
+```py
+def arithmetic_arranger(problems, show_answers=False):
+
+    return problems
+
+print(f'\n{arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])}')
 ```
 
 # --solutions--
 
-```js
-/**
-  Backend challenges don't need solutions,
-  because they would need to be tested against a full working project.
-  Please check our contributing guidelines to learn more.
-*/
+```py
+def arithmetic_arranger(problems, result=False):
+
+    lin1 = ""
+    lin2 = ""
+    lin3 = ""
+    lin4 = ""
+
+    if len(problems) > 5:
+        return 'Error: Too many problems.'
+    for problem in problems:
+        [num1, sym, num2] = problem.split()
+        sign = ['+', '-']
+        if sym not in sign:
+            return ("Error: Operator must be '+' or '-'.")
+        if len(num1) > 4 or len(num2) > 4:
+            return ("Error: Numbers cannot be more than four digits.")
+        if not num1.isnumeric() or not num2.isnumeric():
+            return ("Error: Numbers must only contain digits.")
+
+        lin1 += "  " + num1 + "    " if len(num1) >= len(
+            num2) else " " * (len(num2) + 2 - len(num1)) + num1 + "    "
+        lin2 += sym + " " + num2 + "    " if len(num2) >= len(
+            num1) else sym + " " * (len(num1) - len(num2) + 1) + num2 + "    "
+        nmax = (len(num1) + 2) if len(num1) >= len(num2) else (len(num2) + 2)
+        lin3 += "-" * nmax + "    "
+        op = int(num1) + int(num2) if sym == "+" else int(num1) - int(num2)
+        lin4 += (" " * (nmax - len(str(op)))) + str(op) + "    "
+
+    arranged_problems = lin1.rstrip() + "\n" + lin2.rstrip(
+    ) + "\n" + lin3.rstrip()
+    if result:
+        arranged_problems += "\n" + lin4.rstrip()
+
+    return arranged_problems
 ```
