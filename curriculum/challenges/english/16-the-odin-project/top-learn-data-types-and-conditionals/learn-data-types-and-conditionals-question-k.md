@@ -1,6 +1,5 @@
 ---
 id: 65e9728d484dd50f720e6ff0
-videoId: LGQuIIv2RVA
 title: Learn Data Types and Conditionals Question K
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-question-k

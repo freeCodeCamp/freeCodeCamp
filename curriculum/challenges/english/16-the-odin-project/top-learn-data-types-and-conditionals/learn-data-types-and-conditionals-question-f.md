@@ -1,6 +1,5 @@
 ---
 id: 65e97267484dd50f720e6feb
-videoId: LGQuIIv2RVA
 title: Learn Data Types and Conditionals Question F
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-question-f
@@ -56,4 +55,4 @@ Which of the following is the correct way to check if the variable `x` is equal 
 
 ## --video-solution--
 
-1
+3

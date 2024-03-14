@@ -22,23 +22,23 @@ console.log(greeting);
 
 ## --text--
 
-Following the problem above, which method should be used to remove the trailing space from the string?
+Following the problem above, which method should be used to only remove the trailing space from the string?
 
 ## --answers--
 
-The `trim()` method should be used to remove the trailing space from the string.
+The `trim()` method should be used to only remove the trailing space from the string.
 
 ---
 
-The `replace()` method should be used to remove the trailing space from the string.
+The `replace()` method should be used to only remove the trailing space from the string.
 
 ---
 
-The `trimEnd()` method should be used to remove the trailing space from the string.
+The `trimEnd()` method should be used to only remove the trailing space from the string.
 
 ---
 
-The `trimStart()` method should be used to remove the trailing space from the string.
+The `trimStart()` method should be used to only remove the trailing space from the string.
 
 ## --video-solution--
 
