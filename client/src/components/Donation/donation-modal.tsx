@@ -66,11 +66,11 @@ function DonateModal({
 
   return (
     <Modal
-      aria-label='donation-modal'
-      open={show}
-      onClose={handleModalHide}
-      size='large'
-      variant='default'
+      bsSize='lg'
+      className='donation-modal'
+      onExited={handleModalHide}
+      show={show}
+      data-cy='donation-modal'
     >
       <DonationModalBody
         closeDonationModal={closeDonationModal}
