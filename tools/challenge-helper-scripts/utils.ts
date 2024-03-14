@@ -9,7 +9,7 @@ import { ChallengeSeed, getStepTemplate } from './helpers/get-step-template';
 import {
   isTaskChallenge,
   getPreviousTaskNumber,
-  getTaskNumber
+  getTaskNumberFromTitle
 } from './helpers/task-helpers';
 
 interface Options {
@@ -136,7 +136,7 @@ const updateStepTitles = (): void => {
   });
 };
 
-const updateTaskTitles = (): void => {
+const updateTaskMarkdownFiles = (): void => {
   const meta = getMetaData();
 
   const fileNames: string[] = [];
@@ -163,7 +163,7 @@ const updateTaskTitles = (): void => {
     // if dialogue challenge -> don't do anything, you can only insert task
     // challenges, so dialogue challenge files shouldn't ever change
     if (isTaskChallenge(challenge.title)) {
-      const newTaskNumber = getTaskNumber(challenge?.title);
+      const newTaskNumber = getTaskNumberFromTitle(challenge.title);
 
       const title = `Task ${newTaskNumber}`;
       const dashedName = `task-${newTaskNumber}`;
@@ -191,7 +191,7 @@ export {
   createStepFile,
   createChallengeFile,
   updateStepTitles,
-  updateTaskTitles,
+  updateTaskMarkdownFiles,
   getChallengeSeeds,
   insertStepIntoMeta,
   insertTaskIntoMeta,

@@ -8,14 +8,13 @@ import {
   validateMetaData
 } from './helpers/project-metadata';
 import { createChallengeFile } from './utils';
-import { getLastTask } from './helpers/task-helpers';
+import { getLastTaskNumber } from './helpers/task-helpers';
 
 const createNextTask = async () => {
   validateMetaData();
-  const path = getProjectPath();
 
-  const lastTaskNumber = getLastTask().taskNum;
-  const newTaskNumber = lastTaskNumber + 1;
+  const lastTaskNumber = getLastTaskNumber();
+  const nextTaskNumber = lastTaskNumber + 1;
 
   const msg =
     lastTaskNumber === 0
@@ -23,17 +22,18 @@ const createNextTask = async () => {
       : `The last task challenge that exists is 'Task ${lastTaskNumber}',`;
 
   console.log(
-    `${msg}\nthis will create a 'Task ${newTaskNumber}' challenge at the end of this block.\n`
+    `${msg}\nthis will create a 'Task ${nextTaskNumber}' challenge at the end of this block.\n`
   );
 
   const { challengeType } = await newTaskPrompts();
 
   const options = {
-    title: `Task ${newTaskNumber}`,
-    dashedName: `task-${newTaskNumber}`,
+    title: `Task ${nextTaskNumber}`,
+    dashedName: `task-${nextTaskNumber}`,
     challengeType
   };
 
+  const path = getProjectPath();
   const template = getTemplate(options.challengeType);
   const challengeId = new ObjectID();
   const challengeText = template({ ...options, challengeId });
