@@ -8,20 +8,19 @@ import Intro from '.';
 jest.mock('../../analytics');
 
 function renderWithRedux(ui: JSX.Element) {
-  const store = createStore();
-  return render(<Provider store={store}>{ui}</Provider>);
+  return render(<Provider store={createStore()}>{ui}</Provider>);
 }
 
 describe('<Intro />', () => {
   it('has no blockquotes when loggedOut', () => {
     renderWithRedux(<Intro {...loggedOutProps} />);
-    expect(screen.queryAllByRole('blockquote').length).toBe(0);
-    expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
+    expect(screen.queryByTestId('quote-block')).not.toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1 }));
   });
 
   it('has a blockquote when loggedIn', () => {
     renderWithRedux(<Intro {...loggedInProps} />);
-    expect(screen.queryAllByRole('blockquote').length).toBe(1);
+    expect(screen.getByTestId('quote-block')).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
   });
 });
