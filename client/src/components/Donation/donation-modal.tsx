@@ -65,12 +65,22 @@ function DonateModal({
     }
   };
 
-  return (<>
-  <Modal>
-
-  </Modal>
-
-  </>);
+  return (
+    <Modal
+      aria-label='donation-modal'
+      open={show}
+      onClose={handleModalHide}
+      size='large'
+      variant='default'
+    >
+      <Modal.Body>
+        <DonationModalBody
+          closeDonationModal={closeDonationModal}
+          recentlyClaimedBlock={recentlyClaimedBlock}
+        />
+      </Modal.Body>
+    </Modal>
+  );
 }
 
 DonateModal.displayName = 'DonateModal';
