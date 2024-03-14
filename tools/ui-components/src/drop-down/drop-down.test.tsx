@@ -56,7 +56,9 @@ describe('<DropDownButton>', () => {
     const dropDownTrigger = screen.getByRole('button', { name: 'test' });
     await userEvent.click(dropDownTrigger);
     const unorderedList = screen.getByRole('menu');
-    const item = within(unorderedList).getByRole('menuitem');
+    const item = within(unorderedList).getByRole('menuitem', {
+      name: 'Hello world'
+    });
     expect(item).toBeInTheDocument();
   });
 
