@@ -6,7 +6,7 @@ dashedName: learn-data-types-and-conditionals-question-l
 ---
 # --description--
 
-Another way to compare conditional statements would be the turnery operator. The turnery operator is a shorthand way of writing an if-else statement. It is used to evaluate a condition and return a value based on the result of the condition. The syntax of the turnery operator is as follows:
+Another way to compare conditional statements would be the ternary operator. The ternary operator is a shorthand way of writing an if-else statement. It is used to evaluate a condition and return a value based on the result of the condition. The syntax of the ternary operator is as follows:
 
 ```javascript
 let result = condition ? value1 : value2;
@@ -14,7 +14,7 @@ let result = condition ? value1 : value2;
 
 In the above example, if the condition is true, the value of `result` will be `value1`. Otherwise, the value of `result` will be `value2`.
 
-Turnery operators are often used to assign a value to a variable based on a condition. They are also used to return a value based on a condition.
+Ternary operators are often used to assign a value to a variable based on a condition. They are also used to return a value based on a condition.
 
 # --question--
 

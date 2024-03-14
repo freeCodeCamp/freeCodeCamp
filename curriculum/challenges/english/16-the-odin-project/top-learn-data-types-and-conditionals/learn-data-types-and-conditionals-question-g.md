@@ -33,7 +33,7 @@ Read this article on <a href="https://javascript.info/comparison">JavaScript.inf
 
 ## --text--
 
-What happends when you use the strict equality operator `===` to compare a number of the value `0` and a boolean of the value `false`?
+What happens when you use the strict equality operator `===` to compare a number of the value `0` and a boolean of the value `false`?
 
 ## --answers--
 
