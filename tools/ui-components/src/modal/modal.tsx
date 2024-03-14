@@ -77,7 +77,7 @@ const Modal = ({
   onClose,
   size = 'medium',
   variant = 'default'
-}: ModalProps): JSX.Element => {
+}: ModalProps) => {
   let panelClasses = PANEL_DEFAULT_CLASSES;
 
   if (size === 'medium') {
