@@ -26,6 +26,7 @@
     "create-next-task": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/create-next-task",
     "insert-challenge": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/insert-challenge",
     "insert-step": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/insert-step",
+    "insert-task": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/insert-task",
     "delete-step": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/delete-step",
     "delete-challenge": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/delete-challenge",
     "lint": "ts-node --project ../tsconfig.json lint-localized",

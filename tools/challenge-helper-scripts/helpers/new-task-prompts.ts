@@ -6,11 +6,7 @@ const taskChallenges = [
   challengeTypes.fillInTheBlank
 ];
 
-export const newTaskPrompts = async (
-  newTaskNumber: number
-): Promise<{
-  title: string;
-  dashedName: string;
+export const newTaskPrompts = async (): Promise<{
   challengeType: string;
 }> => {
   const challengeType = await prompt<{ value: string }>({
@@ -26,8 +22,6 @@ export const newTaskPrompts = async (
   });
 
   return {
-    title: `Task ${newTaskNumber}`,
-    dashedName: `task-${newTaskNumber}`,
     challengeType: challengeType.value
   };
 };

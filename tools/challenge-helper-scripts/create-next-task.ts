@@ -8,7 +8,7 @@ import {
   validateMetaData
 } from './helpers/project-metadata';
 import { createTaskFile } from './utils';
-import { getLastTask } from './helpers/get-last-task-number';
+import { getLastTask } from './helpers/task-helpers';
 
 const createNextTask = async () => {
   validateMetaData();
@@ -26,7 +26,14 @@ const createNextTask = async () => {
     `${msg}\nthis will create a 'Task ${newTaskNumber}' challenge at the end of this block.\n`
   );
 
-  const options = await newTaskPrompts(newTaskNumber);
+  const { challengeType } = await newTaskPrompts();
+
+  const options = {
+    title: `Task ${newTaskNumber}`,
+    dashedName: `task-${newTaskNumber}`,
+    challengeType
+  };
+
   const template = getTemplate(options.challengeType);
   const challengeId = new ObjectID();
   const challengeText = template({ ...options, challengeId });
