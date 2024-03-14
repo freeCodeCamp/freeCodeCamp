@@ -35,43 +35,43 @@ export const signInLoadingSelector = state =>
 export const showCertSelector = state => state[MainApp].showCert;
 export const showCertFetchStateSelector = state =>
   state[MainApp].showCertFetchState;
-export const shouldRequestDonationSelector = state => {
-  const completedChallengesLength = completedChallengesSelector(state).length;
-  const completionCount = completionCountSelector(state);
-  const lastCompletionCount =
-    completionCountWhenShownProgressModalSelector(state);
-  const progressDonationModalShown = progressDonationModalShownSelector(state);
-  const isDonating = isDonatingSelector(state);
-  const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
-  const showMultipleProgressModals = showMultipleProgressModalsSelector(state);
+export const shouldRequestDonationSelector = _state => {
+  // const completedChallengesLength = completedChallengesSelector(state).length;
+  // const completionCount = completionCountSelector(state);
+  // const lastCompletionCount =
+  //   completionCountWhenShownProgressModalSelector(state);
+  // const progressDonationModalShown = progressDonationModalShownSelector(state);
+  // const isDonating = isDonatingSelector(state);
+  // const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
+  // const showMultipleProgressModals = showMultipleProgressModalsSelector(state);
+  return true;
+  // // don't request donation if already donating
+  // if (isDonating) return false;
 
-  // don't request donation if already donating
-  if (isDonating) return false;
+  // // a block has been completed
+  // if (recentlyClaimedBlock) return true;
 
-  // a block has been completed
-  if (recentlyClaimedBlock) return true;
+  // /*
+  // When AB testing for showing multiple progress modals is active,
+  // show a donation modal every 20 challenge
+  //  */
+  // if (
+  //   showMultipleProgressModals &&
+  //   progressDonationModalShown &&
+  //   completionCount - lastCompletionCount >= 20
+  // )
+  //   return true;
 
-  /*
-  When AB testing for showing multiple progress modals is active,
-  show a donation modal every 20 challenge
-   */
-  if (
-    showMultipleProgressModals &&
-    progressDonationModalShown &&
-    completionCount - lastCompletionCount >= 20
-  )
-    return true;
+  // // a donation has already been requested
+  // if (progressDonationModalShown) return false;
 
-  // a donation has already been requested
-  if (progressDonationModalShown) return false;
+  // // donations only appear after the user has completed ten challenges (i.e.
+  // // not before the 11th challenge has mounted)
+  // if (completedChallengesLength < 10) return false;
 
-  // donations only appear after the user has completed ten challenges (i.e.
-  // not before the 11th challenge has mounted)
-  if (completedChallengesLength < 10) return false;
-
-  // this will mean we have completed 3 or more challenges this browser session
-  // and enough challenges overall to not be new
-  return completionCount >= 3;
+  // // this will mean we have completed 3 or more challenges this browser session
+  // // and enough challenges overall to not be new
+  // return completionCount >= 3;
 };
 
 export const userTokenSelector = state => {
