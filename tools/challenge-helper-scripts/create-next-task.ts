@@ -7,7 +7,7 @@ import {
   updateMetaData,
   validateMetaData
 } from './helpers/project-metadata';
-import { createTaskFile } from './utils';
+import { createChallengeFile } from './utils';
 import { getLastTask } from './helpers/task-helpers';
 
 const createNextTask = async () => {
@@ -40,7 +40,7 @@ const createNextTask = async () => {
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   const challengeIdString = challengeId.toString();
 
-  createTaskFile(challengeIdString, challengeText, path);
+  createChallengeFile(challengeIdString, challengeText, path);
 
   const meta = getMetaData();
   meta.challengeOrder.push({

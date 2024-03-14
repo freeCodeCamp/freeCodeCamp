@@ -37,21 +37,12 @@ const createStepFile = ({
   return challengeId;
 };
 
-const createTaskFile = (
-  id: string,
-  template: string,
-  path = getProjectPath()
-): void => {
-  fs.writeFileSync(`${path}${id}.md`, template);
-  console.log(`Finished creating new task file: '${id}.md'`);
-};
-
 const createChallengeFile = (
-  title: string,
+  filename: string,
   template: string,
   path = getProjectPath()
 ): void => {
-  fs.writeFileSync(`${path}${title}.md`, template);
+  fs.writeFileSync(`${path}${filename}.md`, template);
 };
 
 interface InsertOptions {
@@ -104,10 +95,6 @@ function insertTaskIntoMeta({
   });
 
   updateMetaData({ ...existingMeta, challengeOrder });
-
-  console.log(
-    `Finished inserting new task and updating titles in 'meta.json'.`
-  );
 }
 
 function deleteStepFromMeta({ stepNum }: { stepNum: number }): void {
@@ -163,8 +150,6 @@ const updateTaskTitles = (): void => {
     const filePath = `${getProjectPath()}${fileName}`;
     const frontMatter = matter.read(filePath);
 
-    // need to update dashedName and title
-    // find in the meta, where the id === challenge id
     const challenge = meta.challengeOrder.find(
       ({ id }) => id === frontMatter.data.id
     );
@@ -193,10 +178,6 @@ const updateTaskTitles = (): void => {
       );
     }
   });
-
-  console.log(
-    `Finished updating all task markdown files with new 'title' and 'dashedName'.`
-  );
 };
 
 const getChallengeSeeds = (
@@ -208,7 +189,6 @@ const getChallengeSeeds = (
 
 export {
   createStepFile,
-  createTaskFile,
   createChallengeFile,
   updateStepTitles,
   updateTaskTitles,

@@ -4,7 +4,11 @@ import { getTemplate } from './helpers/get-challenge-template';
 import { newTaskPrompts } from './helpers/new-task-prompts';
 import { getProjectPath } from './helpers/get-project-info';
 import { validateMetaData } from './helpers/project-metadata';
-import { createTaskFile, insertTaskIntoMeta, updateTaskTitles } from './utils';
+import {
+  createChallengeFile,
+  insertTaskIntoMeta,
+  updateTaskTitles
+} from './utils';
 import { getChallengeOrderFromMeta } from './helpers/get-challenge-order';
 import { getPreviousTaskNumber } from './helpers/task-helpers';
 
@@ -45,9 +49,18 @@ const insertChallenge = async () => {
   const challengeIdString = challengeId.toString();
   const path = getProjectPath();
 
-  createTaskFile(challengeIdString, challengeText, path);
+  createChallengeFile(challengeIdString, challengeText, path);
+  console.log(`Finished creating new task file: '${challengeIdString}.md'`);
+
   insertTaskIntoMeta({ indexToInsert, id: challengeId, title });
+  console.log(
+    `Finished inserting new task and updating titles in 'meta.json'.`
+  );
+
   updateTaskTitles();
+  console.log(
+    `Finished updating all task markdown files with new 'title' and 'dashedName'.`
+  );
 };
 
 void insertChallenge();
