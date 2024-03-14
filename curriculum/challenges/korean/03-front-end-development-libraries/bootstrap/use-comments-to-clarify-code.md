@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908857
-title: Use Comments to Clarify Code
+title: 코드를 명확하게 설명하기 위해 주석 사용하기
 challengeType: 0
 forumTopicId: 18347
 dashedName: use-comments-to-clarify-code
@@ -8,35 +8,35 @@ dashedName: use-comments-to-clarify-code
 
 # --description--
 
-When we start using jQuery, we will modify HTML elements without needing to actually change them in HTML.
+jQuery를 사용하기 시작하면 실제 HTML 안의 요소들을 변경할 필요 없이 수정할 수 있습니다.
 
-Let's make sure that everyone knows they shouldn't actually modify any of this code directly.
+이 코드를 직접 수정하지 않아도 된다는 것을 확인해봅시다.
 
-Remember that you can start a comment with `<!--` and end a comment with `-->`
+`<!--`와 `-->` 함께 주석 처리할 수 있다는 것을 기억하세요.
 
-Add a comment at the top of your HTML that says `Code below this line should not be changed`
+`Code below this line should not be changed`라는 주석을 HTML 상단에 추가하세요.
 
 # --hints--
 
-You should start a comment with `<!--` at the top of your HTML.
+HTML 상단에 `<!--`가 함께 주석을 시작해야 합니다.
 
 ```js
 assert(code.match(/^\s*<!--/));
 ```
 
-Your comment should have the text `Code below this line should not be changed`.
+주석은 `Code below this line should not be changed`이라는 글을 가져야 합니다.
 
 ```js
 assert(code.match(/<!--(?!(>|->|.*-->.*this line))\s*.*this line.*\s*-->/gi));
 ```
 
-You should close your comment with `-->`.
+`-->`과 함께 주석을 닫아야 합니다.
 
 ```js
 assert(code.match(/-->.*\n+.+/g));
 ```
 
-You should have the same number of comment openers and closers.
+주석을 여는 것과 닫는 것의 수가 같아야 합니다.
 
 ```js
 assert(code.match(/<!--/g).length === code.match(/-->/g).length);

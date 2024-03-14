@@ -7,7 +7,8 @@ import {
   normalizeChallenges,
   normalizeProfileUI,
   normalizeTwitter,
-  removeNulls
+  removeNulls,
+  normalizeSurveys
 } from '../utils/normalize';
 import {
   getCalendar,
@@ -74,6 +75,9 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         await fastify.prisma.msUsername.deleteMany({
           where: { userId: req.session.user.id }
         });
+        await fastify.prisma.survey.deleteMany({
+          where: { userId: req.session.user.id }
+        });
         await fastify.prisma.user.delete({
           where: { id: req.session.user.id }
         });
@@ -104,6 +108,9 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           where: { userId: req.session.user.id }
         });
         await fastify.prisma.msUsername.deleteMany({
+          where: { userId: req.session.user.id }
+        });
+        await fastify.prisma.survey.deleteMany({
           where: { userId: req.session.user.id }
         });
         await fastify.prisma.user.update({
@@ -362,6 +369,67 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  fastify.post(
+    '/user/submit-survey',
+    {
+      schema: schemas.submitSurvey,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400).send({
+            type: 'error',
+            message: 'flash.survey.err-1'
+          });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.session.user.id }
+        });
+        const { surveyResults } = req.body;
+        const { title } = surveyResults;
+
+        const completedSurveys = await fastify.prisma.survey.findMany({
+          where: { userId: user.id }
+        });
+
+        const surveyAlreadyTaken = completedSurveys.some(
+          s => s.title === title
+        );
+        if (surveyAlreadyTaken) {
+          return reply.code(400).send({
+            type: 'error',
+            message: 'flash.survey.err-2'
+          });
+        }
+
+        const newSurvey = {
+          ...surveyResults,
+          userId: user.id
+        };
+
+        await fastify.prisma.survey.create({
+          data: newSurvey
+        });
+
+        return {
+          type: 'success',
+          message: 'flash.survey.success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return {
+          type: 'error',
+          message: 'flash.survey.err-3'
+        } as const;
+      }
+    }
+  );
+
   done();
 };
 
@@ -443,7 +511,15 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           }
         });
 
-        const [userToken, user] = await Promise.all([userTokenP, userP]);
+        const completedSurveysP = fastify.prisma.survey.findMany({
+          where: { userId: req.session.user.id }
+        });
+
+        const [userToken, user, completedSurveys] = await Promise.all([
+          userTokenP,
+          userP,
+          completedSurveysP
+        ]);
 
         if (!user?.username) {
           void res.code(500);
@@ -484,7 +560,8 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
               twitter: normalizeTwitter(twitter),
               username: usernameDisplay || username,
-              userToken: encodedToken
+              userToken: encodedToken,
+              completedSurveys: normalizeSurveys(completedSurveys)
             }
           },
           result: user.username

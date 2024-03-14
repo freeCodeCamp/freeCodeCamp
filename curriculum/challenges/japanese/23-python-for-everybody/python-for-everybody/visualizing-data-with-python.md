@@ -14,7 +14,7 @@ dashedName: visualizing-data-with-python
 
 ## --text--
 
-Most data needs to be \_\_\_\_\_\_ before using it.
+ほとんどのデータは使用する前に \_\_\_\_\_\_ する必要があります。
 
 ## --answers--
 

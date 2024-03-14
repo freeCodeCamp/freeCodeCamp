@@ -4,6 +4,7 @@ title: Learn Variables and Operators Question G
 challengeType: 15
 dashedName: learn-variables-and-operators-question-g
 ---
+
 # --description--
 
 The plus `+` exists in two forms: the binary form that you used in the last challenge and the unary form.
@@ -60,7 +61,7 @@ Given the explanation of unary and binary `+` operators in JavaScript, how can y
 
 ## --answers--
 
-`console.log('2' + '3'); // Outputs: '23'` 
+`console.log('2' + '3'); // Outputs: '23'`
 
 ---
 

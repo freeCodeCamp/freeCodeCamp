@@ -1,38 +1,38 @@
 ---
 id: 647e21c48acb466c97ccbee7
-title: 'Call Methods From the .NET Class Library Using C#'
+title: '使用 C# 从 .NET 类库调用方法'
 challengeType: 19
 dashedName: call-methods-from-the-dot-net-class-library-using-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+这个挑战将有一部分在 Microsoft Learn 平台上完成。 请按照如下说明来完成挑战：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-call-methods/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-call-methods/</a> and complete all the tasks for the "Call Methods From the .NET Class Library Using C#" module. This is **required** to earn the "Create and Run Simple C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳转到 <a href="https://learn.microsoft.com/training/modules/csharp-call-methods/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-call-methods/</a>，然后完成“使用 C# 从 .NET 类库调用方法”模块的所有任务。 这是在 Microsoft Learn 上获得“创建并运行简单的 C# 控制台应用程序”的奖杯以及参加认证考试所**必需**的。
+1. 完成后，返回并正确回答下面的问题。
 
-# --assignment--
+# --任务--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-call-methods/" target="_blank" rel="noreferrer">Call Methods from the .NET Class Library Using C#</a> module on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/csharp-call-methods/" target="_blank" rel="noreferrer">使用 C# 从 .NET 类库调用方法</a> 模块。 然后，回答下面的问题。
 
 # --question--
 
 ## --text--
 
-What is an object?
+什么是对象？
 
 ## --answers--
 
-A memory address.
+一个内存地址。
 
 ---
 
-A stateless class.
+一个无状态类。
 
 ---
 
-An instance of a class.
+一个类的实例。
 
 ## --video-solution--
 

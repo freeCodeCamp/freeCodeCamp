@@ -10,8 +10,252 @@
   "isBeta": true,
   "challengeOrder": [
     {
-      "id": "655c1337801e88911c2ef96b",
-      "title": "Dialogue: Placeholder"
+      "id": "6579c5fb3e65fd9cb85253a5",
+      "title": "Dialogue 1: Offering suggestions in a meeting"
+    },
+    {
+      "id": "6579c82fc81196a43686415a",
+      "title": "Task 1"
+    },
+    {
+      "id": "6579c8d3313c5fa61d25d4ff",
+      "title": "Task 2"
+    },
+    {
+      "id": "6579c96067f16bad8e7e6cba",
+      "title": "Task 3"
+    },
+    {
+      "id": "6579cee11b0bd1cc8bf20829",
+      "title": "Task 4"
+    },
+    {
+      "id": "6579cf3ada08bdcfd5eae689",
+      "title": "Task 5"
+    },
+    {
+      "id": "6579cf81a9cec6d21f872959",
+      "title": "Task 6"
+    },
+    {
+      "id": "6579cfc55663f6d40c4a65e1",
+      "title": "Task 7"
+    },
+    {
+      "id": "6579d002683211d5c7d13ef3",
+      "title": "Task 8"
+    },
+    {
+      "id": "6579d035f49339d7aa16ec74",
+      "title": "Task 9"
+    },
+    {
+      "id": "6579d06801111dd95231e7e5",
+      "title": "Task 10"
+    },
+    {
+      "id": "6579d40e7729a7e393cfcdd3",
+      "title": "Task 11"
+    },
+    {
+      "id": "6579d44bd49d1ae58c2603d4",
+      "title": "Task 12"
+    },
+    {
+      "id": "6579d49319613ee79fe12f7d",
+      "title": "Task 13"
+    },
+    {
+      "id": "6579d4ca0578b4e95f1df60e",
+      "title": "Task 14"
+    },
+    {
+      "id": "6579d4f3afd265eb0db874f7",
+      "title": "Task 15"
+    },
+    {
+      "id": "6579d539b1e5c2ec64484e49",
+      "title": "Task 16"
+    },
+    {
+      "id": "6579d56623c2d8ee0f2bea87",
+      "title": "Task 17"
+    },
+    {
+      "id": "6579d58e434920ef874f2502",
+      "title": "Task 18"
+    },
+    {
+      "id": "6579d62a28ab37f24f6ea8f9",
+      "title": "Task 19"
+    },
+    {
+      "id": "6579d67a4c6a3bf5d55ce3fd",
+      "title": "Task 20"
+    },
+    {
+      "id": "6579d7f5a745c0fac805d356",
+      "title": "Task 21"
+    },
+    {
+      "id": "6579d827ebd50afcacb829fe",
+      "title": "Task 22"
+    },
+    {
+      "id": "6579d84f48c9c2fe53b06de9",
+      "title": "Task 23"
+    },
+    {
+      "id": "6579d86fee9092ffb268f962",
+      "title": "Task 24"
+    },
+    {
+      "id": "6579d89bc117c40111641200",
+      "title": "Task 25"
+    },
+    {
+      "id": "6579d8d24bf33b02f22685ac",
+      "title": "Task 26"
+    },
+    {
+      "id": "6579db53194a7c0f617943ac",
+      "title": "Task 27"
+    },
+    {
+      "id": "6579db734a2b8010c3e92ada",
+      "title": "Task 28"
+    },
+    {
+      "id": "6579db9c67d64e123b19c235",
+      "title": "Task 29"
+    },
+    {
+      "id": "6579dbc2c1fc601436f2676b",
+      "title": "Task 30"
+    },
+    {
+      "id": "6579dbf6a3e8a5161a592169",
+      "title": "Task 31"
+    },
+    {
+      "id": "6579dc4332b86017e39b9c03",
+      "title": "Task 32"
+    },
+    {
+      "id": "6579dce8bc44981add67eda9",
+      "title": "Dialogue 2: Asking and offering help on a meeting"
+    },
+    {
+      "id": "6579dd420cf6b81db05470f4",
+      "title": "Task 33"
+    },
+    {
+      "id": "6579dd5f2f35b11f3dcd9702",
+      "title": "Task 34"
+    },
+    {
+      "id": "6579dd80bdd49220560f26ad",
+      "title": "Task 35"
+    },
+    {
+      "id": "6579dd9846f35921af1ffe1c",
+      "title": "Task 36"
+    },
+    {
+      "id": "6579ddb17d88c12323aae5b5",
+      "title": "Task 37"
+    },
+    {
+      "id": "6579ddc94db61d2463022da3",
+      "title": "Task 38"
+    },
+    {
+      "id": "6579dde808b24525c95ec2a3",
+      "title": "Task 39"
+    },
+    {
+      "id": "6579de040244fb274179f001",
+      "title": "Task 40"
+    },
+    {
+      "id": "6579de1f43444d2869022c6d",
+      "title": "Task 41"
+    },
+    {
+      "id": "6579de444ec34929dbc6c2ab",
+      "title": "Task 42"
+    },
+    {
+      "id": "6579de58f1da5a2b4c6ea741",
+      "title": "Task 43"
+    },
+    {
+      "id": "6579de73144df42cb2d373ef",
+      "title": "Task 44"
+    },
+    {
+      "id": "6579de90a68c532e08e96f02",
+      "title": "Task 45"
+    },
+    {
+      "id": "6579df1646568c3268b93637",
+      "title": "Task 46"
+    },
+    {
+      "id": "6579df5f24a43034dbe456f1",
+      "title": "Dialogue 3: Improvement suggestions"
+    },
+    {
+      "id": "6579dfac25b3e6370956a820",
+      "title": "Task 47"
+    },
+    {
+      "id": "6579dfd504a9ad385a3a4fd9",
+      "title": "Task 48"
+    },
+    {
+      "id": "6579e0385253cd3a7bd44902",
+      "title": "Task 49"
+    },
+    {
+      "id": "6579e08f06692a3c176f3faa",
+      "title": "Task 50"
+    },
+    {
+      "id": "6579e0e6402c813da7e25ca2",
+      "title": "Task 51"
+    },
+    {
+      "id": "6579e102b5a7223f0d0e9fc4",
+      "title": "Task 52"
+    },
+    {
+      "id": "6579e12834045640e90e58bd",
+      "title": "Task 53"
+    },
+    {
+      "id": "6579e13cd2c9ee424eb815df",
+      "title": "Task 54"
+    },
+    {
+      "id": "6579e153639adb43c017f3d3",
+      "title": "Task 55"
+    },
+    {
+      "id": "6579e17ff05c5d451c2e4f35",
+      "title": "Task 56"
+    },
+    {
+      "id": "6579e19be475334667ba4333",
+      "title": "Task 57"
+    },
+    {
+      "id": "6579e1b324902e47dae63c90",
+      "title": "Task 58"
+    },
+    {
+      "id": "6579e1cd6c8b6248fa62ed48",
+      "title": "Task 59"
     }
   ],
   "helpCategory": "English"

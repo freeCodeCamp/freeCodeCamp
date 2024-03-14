@@ -1,27 +1,18 @@
 ---
 id: 5e44414f903586ffb414c950
 title: Calculadora de probabilidad
-challengeType: 10
+challengeType: 23
 forumTopicId: 462364
 dashedName: probability-calculator
 ---
 
 # --description--
 
-Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator" target="_blank" rel="noopener noreferrer nofollow">trabajando en este proyecto con nuestro código inicial en Replit</a>.
-
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
-
-
-# --instructions--
-
 Supongamos que hay un sombrero que contiene 5 bolas azules, 4 bolas rojas y 2 bolas verdes. ¿Cuál es la probabilidad de que un sorteo aleatorio de 4 bolas contenga al menos 1 bola roja y 2 bolas verdes? Mientras que sería posible calcular la probabilidad usando matemáticas avanzadas, una manera más fácil es escribir un programa para realizar un gran número de experimentos para estimar una probabilidad aproximada.
 
 Para este proyecto, usted escribirá un programa para determinar la probabilidad aproximada de dibujar ciertas bolas al azar de un sombrero.
 
-Primero, crea una clase `Hat` en `prob_calculator.py`. La clase debe tomar un número variable de argumentos que especifiquen el número de bolas de cada color que están en el sombrero. Por ejemplo, un objeto de clase puede ser creado de cualquiera de estas maneras:
+First, create a `Hat` class in `main.py`. La clase debe tomar un número variable de argumentos que especifiquen el número de bolas de cada color que están en el sombrero. Por ejemplo, un objeto de clase puede ser creado de cualquiera de estas maneras:
 
 ```py
 hat1 = Hat(yellow=3, blue=2, green=6)
@@ -33,7 +24,7 @@ Siempre se creará un sombrero con al menos una pelota. Los argumentos pasados a
 
 La clase `Hat` debe tener un método `draw` que acepte un argumento que indique el número de bolas a sacar del sombrero. Este método debe eliminar bolas al azar de `contents` y devolver esas bolas como una lista de cadenas. Las bolas no deben volver a introducirse en el sombrero durante el sorteo, de forma similar a un experimento de urna sin sustitución. Si el número de bolas a extraer supera la cantidad disponible, devuelve todas las bolas.
 
-A continuación, crea una función `experiment` en `prob_calculator.py` (no dentro de la clase `Hat`). Esta función debe aceptar los siguientes argumentos:
+Next, create an `experiment` function in `main.py` (not inside the `Hat` class). Esta función debe aceptar los siguientes argumentos:
 
 - `hat`: A hat object containing balls that should be copied inside the function.
 - `expected_balls`: An object indicating the exact group of balls to attempt to draw from the hat for the experiment. For example, to determine the probability of drawing 2 blue balls and 1 red ball from the hat, set `expected_balls` to `{"blue":2, "red":1}`.
@@ -54,38 +45,215 @@ probability = experiment(hat=hat,
                   num_experiments=2000)
 ```
 
+The output would be something like this:
+
+```bash
+>>> 0.356
+```
+
 Dado que esto se basa en tablas aleatorias, la probabilidad será ligeramente diferente cada vez que se ejecuta el código.
 
-*Sugerencia: Considere usar los módulos que ya se importan en la parte superior de `prob_calculator.py`. No inicialice semilla aleatoria dentro de `prob_calculator.py`.*
+_Hint: Consider using the modules that are already imported at the top. Do not initialize random seed within the file._
 
-## Desarrollo
-
-Escribe tu código en `prob_calculator.py` Para el desarrollo, puedes usar `main.py` para probar tu código. Haz clic en el botón "run" y se ejecutará `main.py`.
-
-La placa utiliza la declaración `import` para importar los módulos `copy` y `random`. Considere el uso de estos en su proyecto.
-
-## Pruebas
-
-Las pruebas unitarias para este proyecto están en `test_module.py`. Hemos importado las pruebas de `test_module.py` a `main.py` para tu conveniencia. Las pruebas se ejecutarán automaticamente cada vez que presione el botón de "run".
-
-## Envío
-
-Copia la URL de tu proyecto y envíalo a freeCodeCamp.
 
 # --hints--
 
-Debe calcular correctamente las probabilidades y pasar todas las pruebas.
+Creation of `hat` object should add correct contents.
 
 ```js
+({
+  test: () => {
+    pyodide.FS.writeFile("/home/pyodide/probability_calculator.py", code);
+    pyodide.FS.writeFile(
+      "/home/pyodide/test_module.py",
+      `
+import unittest
+import probability_calculator
+from importlib import reload
 
+reload(probability_calculator)
+
+probability_calculator.random.seed(95)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def test_hat_class_contents(self):
+        hat = probability_calculator.Hat(red=3,blue=2)
+        actual = hat.contents
+        expected = ["red","red","red","blue","blue"]
+        self.assertEqual(actual, expected, 'Expected creation of hat object to add correct contents.')
+        `
+    );
+    const testCode = `
+from unittest import main
+import test_module
+from importlib import reload
+
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  },
+});
+```
+
+The `draw` method in `hat` class should reduce number of items in contents.
+
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile("/home/pyodide/probability_calculator.py", code);
+    pyodide.FS.writeFile(
+      "/home/pyodide/test_module.py",
+      `
+import unittest
+import probability_calculator
+from importlib import reload
+
+reload(probability_calculator)
+
+probability_calculator.random.seed(95)
+def test_hat_draw(self):
+        hat = probability_calculator.Hat(red=5,blue=2)
+        actual = hat.draw(2)
+        expected = ['blue', 'red']
+        self.assertEqual(actual, expected, 'Expected hat draw to return two random items from hat contents.')
+        actual = len(hat.contents)
+        expected = 5
+        self.assertEqual(actual, expected, 'Expected hat draw to reduce number of items in contents.')
+        `
+    );
+    const testCode = `
+from unittest import main
+import test_module
+from importlib import reload
+
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  },
+});
+```
+
+The `experiment` method should return a different probability.
+
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile("/home/pyodide/probability_calculator.py", code);
+    pyodide.FS.writeFile(
+      "/home/pyodide/test_module.py",
+      `
+import unittest
+import probability_calculator
+from importlib import reload
+
+reload(probability_calculator)
+
+probability_calculator.random.seed(95)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def test_prob_experiment(self):
+        hat = probability_calculator.Hat(blue=3,red=2,green=6)
+        probability = probability_calculator.experiment(hat=hat, expected_balls={"blue":2,"green":1}, num_balls_drawn=4, num_experiments=1000)
+        actual = probability
+        expected = 0.272
+        self.assertAlmostEqual(actual, expected, delta = 0.01, msg = 'Expected experiment method to return a different probability.')
+        hat = probability_calculator.Hat(yellow=5,red=1,green=3,blue=9,test=1)
+        probability = probability_calculator.experiment(hat=hat, expected_balls={"yellow":2,"blue":3,"test":1}, num_balls_drawn=20, num_experiments=100)
+        actual = probability
+        expected = 1.0
+        self.assertAlmostEqual(actual, expected, delta = 0.01, msg = 'Expected experiment method to return a different probability.')
+        `
+    );
+    const testCode = `
+from unittest import main
+import test_module
+from importlib import reload
+
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  },
+});
+```
+
+# --seed--
+
+## --seed-contents--
+
+```py
+import copy
+import random
+
+class Hat:
+    pass
+
+def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
+    pass
 ```
 
 # --solutions--
 
-```js
-/**
-  Backend challenges don't need solutions,
-  because they would need to be tested against a full working project.
-  Please check our contributing guidelines to learn more.
-*/
+```py
+import copy
+import random
+
+class Hat:
+    def __init__(self, **hat):
+        self.hat = hat
+        contents = []
+        for i in hat:
+            for j in range(hat[i]):
+                contents.append(i)           
+        self.contents = contents
+
+
+    def draw(self, number): 
+        drawn = []
+        if number >= len(self.contents):
+            return self.contents
+        else:
+            for i in range(number):
+                drawn.append(
+                    self.contents.pop(random.randrange(len(self.contents)))
+                )                
+        return drawn
+
+def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
+
+    expected_balls_list = []
+    drawn_list = []
+    success = 0
+    for i in expected_balls:
+        for j in range(expected_balls[i]):
+            expected_balls_list.append(i)
+    for j in range(num_experiments):
+        hat_copy = copy.deepcopy(hat)
+        drawn_list.append(hat_copy.draw(num_balls_drawn))        
+        exp_ball_list_copy = expected_balls_list[:]
+        for k in range(len(drawn_list[j])):
+            try:
+                ind = exp_ball_list_copy.index(drawn_list[j][k])
+                exp_ball_list_copy.pop(ind)
+            except:
+                continue
+        if len(exp_ball_list_copy) == 0:
+            success += 1
+
+
+
+
+    probability = success/num_experiments
+
+    return probability
 ```

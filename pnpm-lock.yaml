@@ -118,8 +118,8 @@ importers:
         specifier: 5.1.1
         version: 5.1.1
       husky:
-        specifier: 8.0.3
-        version: 8.0.3
+        specifier: 9.0.11
+        version: 9.0.11
       jest:
         specifier: 29.7.0
         version: 29.7.0(@types/node@18.19.18)(ts-node@10.9.2)
@@ -1283,8 +1283,8 @@ importers:
         specifier: 7.23.3
         version: 7.23.3(@babel/core@7.23.7)
       '@freecodecamp/curriculum-helpers':
-        specifier: 2.5.0
-        version: 2.5.0
+        specifier: 3.0.0
+        version: 3.0.0
       '@types/chai':
         specifier: 4.3.12
         version: 4.3.12
@@ -6677,8 +6677,8 @@ packages:
       react: 16.14.0
     dev: false
 
-  /@freecodecamp/curriculum-helpers@2.5.0:
-    resolution: {integrity: sha512-ch4C7Fsa9vpGAkSMmxUBH5Wfv1M8XbKd1eq7dUFwKuuKpNfRKpCnulANOc3cTNCAl1U8DUByUpdcRA51pyU3Kw==}
+  /@freecodecamp/curriculum-helpers@3.0.0:
+    resolution: {integrity: sha512-YO5SRclOgV7lyq7Nj+q+y3AGZrvkUACixF1ReobN826X+vOfd5zlUm1hHkbPjdtKJdi3pYBoc+zQhRyDKnY4og==}
     engines: {npm: '>= 4.0.0'}
     dependencies:
       browserify: 17.0.0
@@ -19311,9 +19311,9 @@ packages:
     engines: {node: '>=16.17.0'}
     dev: true
 
-  /husky@8.0.3:
-    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
-    engines: {node: '>=14'}
+  /husky@9.0.11:
+    resolution: {integrity: sha512-AB6lFlbwwyIqMdHYhwPe+kjOC3Oc5P3nThEoW/AaO2BX3vJDjWPFxYLxokUZOo6RNX20He3AaT8sESs9NJcmEw==}
+    engines: {node: '>=18'}
     hasBin: true
     dev: true
 
@@ -25714,7 +25714,7 @@ packages:
       '@types/doctrine': 0.0.9
       '@types/resolve': 1.20.6
       doctrine: 3.0.0
-      resolve: 1.22.6
+      resolve: 1.22.8
       strip-indent: 4.0.0
     transitivePeerDependencies:
       - supports-color

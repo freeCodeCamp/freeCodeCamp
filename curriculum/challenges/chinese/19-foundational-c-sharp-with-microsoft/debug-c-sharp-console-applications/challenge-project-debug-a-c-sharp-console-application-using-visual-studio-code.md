@@ -20,7 +20,7 @@ dashedName: challenge-project-debug-a-c-sharp-console-application-using-visual-s
 
 ## --text--
 
-Which of the following options can be used to set a breakpoint in Visual Studio Code?
+下列哪个选项可以在 Visual Studio Code 中设置断点？
 
 ## --answers--
 

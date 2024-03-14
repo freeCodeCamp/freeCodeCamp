@@ -16,7 +16,7 @@ dashedName: introduction-why-program
 
 # --description--
 
-More resources:
+その他のリソース:
 
 \- <a href="https://youtu.be/F7mtLrYzZP8" target="_blank" rel="noopener noreferrer nofollow">Windows に Python をインストール</a>
 
@@ -38,7 +38,7 @@ College students should learn to program, but there's a better answer.
 
 ---
 
-People who want to become software developers.
+ソフトウェアの開発者になりたい人
 
 ### --feedback--
 
@@ -46,7 +46,7 @@ People who want to become software developers should learn to program, but there
 
 ---
 
-Everyone.
+すべての人
 
 ## --video-solution--
 

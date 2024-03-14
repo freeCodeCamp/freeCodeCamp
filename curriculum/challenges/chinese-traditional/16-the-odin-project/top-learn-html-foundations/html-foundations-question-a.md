@@ -16,7 +16,7 @@ HTML 頁面上幾乎所有的元素都是在開始和結束 HTML 標籤中包裹
 
 一個完整的段落元素看起來像這樣：
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/90b1a362af0bb8635af9593cd8911c9aefb68569/foundations/html_css/html-foundations/imgs/00.png" alt="元素圖表" />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/html-foundations/html-foundations-01.png" alt='An opening p tag, followed by the content string "some text content", followed by a closing p tag.' />
 
 # --作業--
 

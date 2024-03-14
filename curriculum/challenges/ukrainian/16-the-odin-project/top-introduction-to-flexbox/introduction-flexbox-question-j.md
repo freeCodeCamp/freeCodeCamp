@@ -17,7 +17,7 @@ dashedName: introduction-flexbox-question-j
 
 Видаліть `flex: 1` з `.item` та додайте `justify-content: space-between` до `.container`. Результат повинен мати схожий вигляд:
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/495704c6eb6bf33bc927534f231533a82b27b2ac/html_css/v2/foundations/flexbox/imgs/07.png" alt="зображення з трьома блакитними квадратами, розкиданими по всій ширині контейнера" />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/flex-box/flexbox-05.png" alt="Three small boxes within a much larger rectangle. The boxes are arranged in a single row, one close to the left edge of the container, one close to the right edge of the container, and the last directly in the middle of the container, placing as much space as possible between each box." />
 
 `justify-content` вирівнює предмети по **головній осі**. До цієї властивості можна використати декілька значень. Про решту ви дізнаєтесь в завданнях з читання. А зараз спробуйте використати значення `center`, що відцентрує блоки вздовж головної осі.
 

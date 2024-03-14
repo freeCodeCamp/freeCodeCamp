@@ -9,11 +9,11 @@ dashedName: the-box-model-question-b
 
 На панелі елементів можна побачити повну структуру HTML. Ви можете натиснути на будь-який елемент панелі, щоб обрати певний елемент. Або ж ви можете натиснути на голубий значок зліва (показано нижче) та навести на будь-який елемент сторінки.
 
-![Значок інспектора](https://cdn.statically.io/gh/TheOdinProject/curriculum/594984d7c9f9e744577f19ea475b3864e8cc7c91/html_css/v2/foundations/inspecting-html-and-css/imgs/01.png)
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/inspector-icon.png" alt="Aweb development environment with developer tools open, highlighting a blue inspector icon in the top-left for selecting webpage elements to view HTML structure and styles." />
 
-Коли елемент обрано, вкладка стилів покаже всі застосовані стилі, а також усі змінені стилі (у вигляді закресленого тексту). Наприклад, якщо використати інспектора та натиснути на заголовок «Your Career in Web Development Starts Here» [домашньої сторінки проєкту Odin](https://www.theodinproject.com/), справа ви побачите всі стилі, які наразі застосовані до елемента:
+Коли елемент обрано, вкладка стилів покаже всі застосовані стилі, а також усі змінені стилі (у вигляді закресленого тексту). For example, if you use the inspector to click on the “Your Career in Web Development Starts Here” header on <a href="https://www.theodinproject.com/" target="_blank">the The Odin Project homepage</a>, on the right-hand side you’ll see all the styles that are currently affecting the element, as seen below:
 
-![Змінений стиль](https://cdn.statically.io/gh/TheOdinProject/curriculum/f8fd38fc62578d8e8368f5303126215a492847f0/foundations/html_css/inspecting-html-and-css/imgs/03.png)
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/overwritten-style.png" alt="CSS code snippet in the developer console showing .hero_main-heading with applied margin-bottom: 100px, padding-bottom: 1.875rem, .accent color #ce973e. h1 style rules include font-size, weight, letter-spacing, with its margin-bottom: 2rem overridden." />
 
 # --question--
 
