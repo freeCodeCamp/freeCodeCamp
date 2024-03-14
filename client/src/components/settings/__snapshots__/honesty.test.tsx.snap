@@ -1,117 +1,135 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = `
-<section
-  id="honesty-policy"
->
-  <SectionHeader>
-    settings.headings.honesty
-  </SectionHeader>
-  <FullWidthRow>
-    <y
-      className="honesty-panel"
+<DocumentFragment>
+  <section
+    id="honesty-policy"
+  >
+    <div
+      class="mx-[-15px] "
     >
-      <p>
-        settings.honesty.p1
-      </p>
-      <p>
-        settings.honesty.p2
-      </p>
-      <p>
-        settings.honesty.p3
-      </p>
-      <p>
-        settings.honesty.p4
-      </p>
-      <p>
-        settings.honesty.p5
-      </p>
-      <p>
-        settings.honesty.p6
-      </p>
-      <p>
-        <Trans
-          i18nKey="settings.honesty.p7"
+      <div
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+      >
+        <h2
+          class="text-center"
         >
-          <a
-            href="mailto:support@freecodecamp.org"
-          >
-            {
-              "email": "support@freecodecamp.org",
-            }
-          </a>
-        </Trans>
-      </p>
-    </y>
-    <Button
-      active={false}
-      aria-disabled={false}
-      block={true}
-      bsClass="btn"
-      bsStyle="primary"
-      disabled={false}
-      onClick={[Function]}
+          settings.headings.honesty
+        </h2>
+        <hr />
+      </div>
+    </div>
+    <div
+      class="mx-[-15px] "
     >
-      buttons.agree-honesty
-    </Button>
-  </FullWidthRow>
-</section>
+      <div
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+      >
+        <div
+          class="border-1 border-solid shadow-sm mb-6 border-background-tertiary honesty-panel"
+        >
+          <p>
+            settings.honesty.p1
+          </p>
+          <p>
+            settings.honesty.p2
+          </p>
+          <p>
+            settings.honesty.p3
+          </p>
+          <p>
+            settings.honesty.p4
+          </p>
+          <p>
+            settings.honesty.p5
+          </p>
+          <p>
+            settings.honesty.p6
+          </p>
+          <p>
+            <a
+              href="mailto:support@freecodecamp.org"
+            >
+              support@freecodecamp.org
+            </a>
+          </p>
+        </div>
+        <button
+          aria-disabled="false"
+          class="btn btn-primary btn-block"
+          type="button"
+        >
+          buttons.agree-honesty
+        </button>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
 `;
 
 exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted 1`] = `
-<section
-  id="honesty-policy"
->
-  <SectionHeader>
-    settings.headings.honesty
-  </SectionHeader>
-  <FullWidthRow>
-    <y
-      className="honesty-panel"
+<DocumentFragment>
+  <section
+    id="honesty-policy"
+  >
+    <div
+      class="mx-[-15px] "
     >
-      <p>
-        settings.honesty.p1
-      </p>
-      <p>
-        settings.honesty.p2
-      </p>
-      <p>
-        settings.honesty.p3
-      </p>
-      <p>
-        settings.honesty.p4
-      </p>
-      <p>
-        settings.honesty.p5
-      </p>
-      <p>
-        settings.honesty.p6
-      </p>
-      <p>
-        <Trans
-          i18nKey="settings.honesty.p7"
+      <div
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+      >
+        <h2
+          class="text-center"
         >
-          <a
-            href="mailto:support@freecodecamp.org"
-          >
-            {
-              "email": "support@freecodecamp.org",
-            }
-          </a>
-        </Trans>
-      </p>
-    </y>
-    <Button
-      active={false}
-      aria-disabled={true}
-      block={true}
-      bsClass="btn"
-      bsStyle="primary"
-      disabled={false}
-      onClick={[Function]}
+          settings.headings.honesty
+        </h2>
+        <hr />
+      </div>
+    </div>
+    <div
+      class="mx-[-15px] "
     >
-      buttons.accepted-honesty
-    </Button>
-  </FullWidthRow>
-</section>
+      <div
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+      >
+        <div
+          class="border-1 border-solid shadow-sm mb-6 border-background-tertiary honesty-panel"
+        >
+          <p>
+            settings.honesty.p1
+          </p>
+          <p>
+            settings.honesty.p2
+          </p>
+          <p>
+            settings.honesty.p3
+          </p>
+          <p>
+            settings.honesty.p4
+          </p>
+          <p>
+            settings.honesty.p5
+          </p>
+          <p>
+            settings.honesty.p6
+          </p>
+          <p>
+            <a
+              href="mailto:support@freecodecamp.org"
+            >
+              support@freecodecamp.org
+            </a>
+          </p>
+        </div>
+        <button
+          aria-disabled="true"
+          class="btn btn-primary btn-block"
+          type="button"
+        >
+          buttons.accepted-honesty
+        </button>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
 `;

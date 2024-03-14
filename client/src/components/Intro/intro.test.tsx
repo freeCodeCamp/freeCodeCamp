@@ -1,35 +1,28 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import renderer from 'react-test-renderer';
+import { render, screen } from '@testing-library/react';
 import { createStore } from '../../redux/create-store';
 
 import Intro from '.';
 
 jest.mock('../../analytics');
 
-function rendererCreateWithRedux(ui: JSX.Element) {
-  return renderer.create(<Provider store={createStore()}>{ui}</Provider>);
+function renderWithRedux(ui: JSX.Element) {
+  const store = createStore();
+  return render(<Provider store={store}>{ui}</Provider>);
 }
 
 describe('<Intro />', () => {
   it('has no blockquotes when loggedOut', () => {
-    const container = rendererCreateWithRedux(
-      <Intro {...loggedOutProps} />
-    ).root;
-
-    expect(container.findAllByType('blockquote').length === 0).toBeTruthy();
-
-    expect(container.findAllByType('h1').length === 1).toBeTruthy();
+    renderWithRedux(<Intro {...loggedOutProps} />);
+    expect(screen.queryAllByRole('blockquote').length).toBe(0);
+    expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
   });
 
   it('has a blockquote when loggedIn', () => {
-    const container = rendererCreateWithRedux(
-      <Intro {...loggedInProps} />
-    ).root;
-
-    expect(container.findAllByType('blockquote').length === 1).toBeTruthy();
-
-    expect(container.findAllByType('h1').length === 1).toBeTruthy();
+    renderWithRedux(<Intro {...loggedInProps} />);
+    expect(screen.queryAllByRole('blockquote').length).toBe(1);
+    expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
   });
 });
 
