@@ -4,7 +4,6 @@ import React from 'react';
 import Loader from './loader';
 
 describe('<Loader />', () => {
-
   it('renders to the DOM', () => {
     const { container } = render(<Loader />);
     expect(container).toBeTruthy();
