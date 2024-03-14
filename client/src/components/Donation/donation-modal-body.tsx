@@ -1,4 +1,5 @@
-import { Modal, Col, Row } from '@freecodecamp/ui';
+import { Modal } from '@freecodecamp/react-bootstrap';
+import { Col, Row } from '@freecodecamp/ui';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useFeature } from '@growthbook/growthbook-react';
@@ -64,22 +65,20 @@ function ModalHeader({
     return null;
   } else if (!donationAnimationFlag) {
     return (
-      <Modal.Header showCloseButton={false}>
-        <Row className='text-center block-modal-text'>
-          <Col sm={10} smOffset={1} xs={12}>
-            {recentlyClaimedBlock !== null && (
-              <b>
-                {t('donate.nicely-done', {
-                  block: t(
-                    `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
-                  )
-                })}
-              </b>
-            )}
-            <h2>{t('donate.help-us-develop')}</h2>
-          </Col>
-        </Row>
-      </Modal.Header>
+      <Row className='text-center block-modal-text'>
+        <Col sm={10} smOffset={1} xs={12}>
+          {recentlyClaimedBlock !== null && (
+            <b>
+              {t('donate.nicely-done', {
+                block: t(
+                  `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
+                )
+              })}
+            </b>
+          )}
+          <h2>{t('donate.help-us-develop')}</h2>
+        </Col>
+      </Row>
     );
   } else if (!showForm) {
     return (

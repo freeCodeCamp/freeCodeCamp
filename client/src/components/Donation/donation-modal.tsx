@@ -1,4 +1,4 @@
-import { Modal } from '@freecodecamp/ui';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import { WindowLocation } from '@reach/router';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
