@@ -16,3 +16,4 @@ export { FormGroup, type FormGroupProps } from './form-group';
 export { FormControl } from './form-control';
 export { HelpBlock } from './help-block';
 export { Row } from './row';
+export { Modal, type ModalProps, type HeaderProps } from './modal';

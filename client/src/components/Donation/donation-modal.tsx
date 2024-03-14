@@ -1,4 +1,4 @@
-import { Modal } from '@freecodecamp/react-bootstrap';
+import { Modal } from '@freecodecamp/ui';
 import { WindowLocation } from '@reach/router';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -65,20 +65,12 @@ function DonateModal({
     }
   };
 
-  return (
-    <Modal
-      bsSize='lg'
-      className='donation-modal'
-      onExited={handleModalHide}
-      show={show}
-      data-cy='donation-modal'
-    >
-      <DonationModalBody
-        closeDonationModal={closeDonationModal}
-        recentlyClaimedBlock={recentlyClaimedBlock}
-      />
-    </Modal>
-  );
+  return (<>
+  <Modal>
+
+  </Modal>
+
+  </>);
 }
 
 DonateModal.displayName = 'DonateModal';
