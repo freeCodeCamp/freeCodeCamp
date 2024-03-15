@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { schemas } from '../schemas';
-import { HOME_LOCATION } from '../utils/env';
+import { getRedirectParams } from '../utils/redirection';
 
 /**
  * Endpoints to set 'sendQuincyEmail' to true or false using 'unsubscribeId'.
@@ -21,10 +21,9 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.unsubscribe,
       errorHandler(error, request, reply) {
         if (error.validation) {
+          const { origin } = getRedirectParams(request);
           void reply.code(302);
-          // todo: origin? home? look at old API
-          // probably switch to use origin so they get redirected to i18n
-          void reply.redirectWithMessage(HOME_LOCATION, {
+          void reply.redirectWithMessage(origin, {
             type: 'info',
             content: 'We could not find an account to unsubscribe.'
           });
@@ -35,6 +34,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
+        const { origin } = getRedirectParams(req);
         const { unsubscribeId } = req.params;
         const users = await fastify.prisma.user.findMany({
           where: { unsubscribeId }
@@ -42,7 +42,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
 
         if (!users.length) {
           void reply.code(302);
-          return reply.redirectWithMessage(HOME_LOCATION, {
+          return reply.redirectWithMessage(origin, {
             type: 'info',
             content: 'We could not find an account to unsubscribe.'
           });
@@ -58,7 +58,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
         }
 
         return reply.redirectWithMessage(
-          `${HOME_LOCATION}/unsubscribed/${unsubscribeId}`,
+          `${origin}/unsubscribed/${unsubscribeId}`,
           {
             type: 'success',
             content: "We've successfully updated your email preferences."
@@ -67,7 +67,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
       } catch (error) {
         fastify.log.error(error);
         void reply.code(302);
-        return reply.redirectWithMessage(HOME_LOCATION, {
+        return reply.redirectWithMessage(origin, {
           type: 'danger',
           content: 'Something went wrong.'
         });
@@ -81,8 +81,9 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.resubscribe,
       errorHandler(error, request, reply) {
         if (error.validation) {
+          const { origin } = getRedirectParams(request);
           void reply.code(302);
-          void reply.redirectWithMessage(HOME_LOCATION, {
+          void reply.redirectWithMessage(origin, {
             type: 'info',
             content:
               'We were unable to process this request, please check and try again.'
@@ -94,6 +95,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
+        const { origin } = getRedirectParams(req);
         const { unsubscribeId } = req.params;
         const users = await fastify.prisma.user.findMany({
           where: { unsubscribeId }
@@ -101,7 +103,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
 
         if (!users.length) {
           void reply.code(302);
-          return reply.redirectWithMessage(HOME_LOCATION, {
+          return reply.redirectWithMessage(origin, {
             type: 'info',
             content: 'We could not find an account to resubscribe.'
           });
@@ -114,7 +116,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
           }
         });
 
-        return reply.redirectWithMessage(HOME_LOCATION, {
+        return reply.redirectWithMessage(origin, {
           type: 'success',
           content:
             "We've successfully updated your email preferences. Thank you for resubscribing."
@@ -122,7 +124,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
       } catch (error) {
         fastify.log.error(error);
         void reply.code(302);
-        return reply.redirectWithMessage(HOME_LOCATION, {
+        return reply.redirectWithMessage(origin, {
           type: 'danger',
           content: 'Something went wrong.'
         });
