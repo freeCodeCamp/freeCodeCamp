@@ -1,12 +1,16 @@
+const { spawn } = require('child_process');
 const pkg = require('cypress/package.json');
-const execa = require('execa');
 
-const version = pkg.version;
+console.log('Installing Cypress version:', pkg.version);
 
-(async () => {
-  console.log('Installing Cypress ' + version);
-  await execa('pnpm', ['run', 'cypress:install'], {
-    env: { CYPRESS_INSTALL_BINARY: version }
-  });
-  console.log('Cypress installed');
-})();
+const child = spawn('pnpm', ['run', 'cypress:install'], {
+  stdio: 'inherit'
+});
+
+child.on('close', code => {
+  console.log('Cypress installation finished with code:', code);
+});
+
+child.on('error', error => {
+  console.error('Cypress installation error:', error);
+});
