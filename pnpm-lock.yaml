@@ -7488,7 +7488,7 @@ packages:
     engines: {node: '>= 8'}
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
-      fastq: 1.17.1
+      fastq: 1.15.0
 
   /@pkgjs/parseargs@0.11.0:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -17053,6 +17053,7 @@ packages:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
     dependencies:
       reusify: 1.0.4
+    dev: false
 
   /fault@1.0.4:
     resolution: {integrity: sha512-CJ0HCB5tL5fYTEA7ToAq5+kTwd++Borf1/bifxd9iT70QcXr4MRrO3Llf8Ifs70q+SJcGHFtnIE/Nw6giCtECA==}
@@ -17630,7 +17631,7 @@ packages:
       '@babel/runtime': 7.23.9
       ci-info: 2.0.0
       configstore: 5.0.1
-      fastq: 1.17.1
+      fastq: 1.15.0
       file-type: 16.5.4
       fs-extra: 10.1.0
       got: 11.8.6
@@ -17815,7 +17816,7 @@ packages:
       graphql: ^15.0.0
     dependencies:
       '@babel/runtime': 7.23.9
-      fastq: 1.17.1
+      fastq: 1.15.0
       gatsby: 3.15.0(@types/node@18.19.18)(babel-eslint@10.1.0)(eslint-import-resolver-typescript@3.5.5)(eslint-plugin-testing-library@3.9.0)(react-dom@16.14.0)(react@16.14.0)(typescript@5.2.2)(webpack-cli@4.10.0)
       graphql: 15.8.0
       joi: 17.12.2
