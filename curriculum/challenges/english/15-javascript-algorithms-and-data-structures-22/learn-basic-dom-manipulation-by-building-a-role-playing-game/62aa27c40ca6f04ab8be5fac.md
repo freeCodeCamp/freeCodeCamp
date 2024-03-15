@@ -1,8 +1,8 @@
 ---
 id: 62aa27c40ca6f04ab8be5fac
-title: Step 168
+title: Step 170
 challengeType: 0
-dashedName: step-168
+dashedName: step-170
 ---
 
 # --description--
@@ -265,8 +265,7 @@ function sellWeapon() {
     gold += 15;
     goldText.innerText = gold;
     let currentWeapon = inventory.shift();
-    text.innerText = "You sold a " + currentWeapon + ".";
-    text.innerText += ` In your inventory you have: ${inventory}`;
+    text.innerText=`You sold a ${currentWeapon}. In your inventory you have: ${inventory}`;
   } else {
     text.innerText = "Don't sell your only weapon!";
   }

@@ -1,8 +1,8 @@
 ---
 id: 62a8efb0e3ce826db8daf80f
-title: Step 133
+title: Step 135
 challengeType: 0
-dashedName: step-133
+dashedName: step-135
 ---
 
 # --description--
@@ -240,8 +240,7 @@ function sellWeapon() {
     gold += 15;
     goldText.innerText = gold;
     let currentWeapon = inventory.shift();
-    text.innerText = "You sold a " + currentWeapon + ".";
-    text.innerText += ` In your inventory you have: ${inventory}`;
+    text.innerText=`You sold a ${currentWeapon}. In your inventory you have: ${inventory}`;
   } else {
     text.innerText = "Don't sell your only weapon!";
   }
