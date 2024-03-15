@@ -110,6 +110,33 @@ function deleteStepFromMeta({ stepNum }: { stepNum: number }): void {
   updateMetaData({ ...existingMeta, challengeOrder });
 }
 
+function deleteChallengeFromMeta(challengeIndex: number): void {
+  const existingMeta = getMetaData();
+  const challengeOrder = [...existingMeta.challengeOrder];
+  challengeOrder.splice(challengeIndex, 1);
+  updateMetaData({ ...existingMeta, challengeOrder });
+}
+
+function updateTaskMeta() {
+  const existingMeta = getMetaData();
+  const oldOrder = [...existingMeta.challengeOrder];
+
+  let currentTaskNumber = 1;
+
+  const challengeOrder = oldOrder.map(challenge => {
+    if (isTaskChallenge(challenge.title)) {
+      return {
+        id: challenge.id,
+        title: `Task ${currentTaskNumber++}`
+      };
+    } else {
+      return challenge;
+    }
+  });
+
+  updateMetaData({ ...existingMeta, challengeOrder });
+}
+
 const updateStepTitles = (): void => {
   const meta = getMetaData();
 
@@ -160,8 +187,7 @@ const updateTaskMarkdownFiles = (): void => {
       );
     }
 
-    // if dialogue challenge -> don't do anything, you can only insert task
-    // challenges, so dialogue challenge files shouldn't ever change
+    // only update task challenges, dialogue challenges shouldn't change
     if (isTaskChallenge(challenge.title)) {
       const newTaskNumber = getTaskNumberFromTitle(challenge.title);
 
@@ -191,9 +217,11 @@ export {
   createStepFile,
   createChallengeFile,
   updateStepTitles,
+  updateTaskMeta,
   updateTaskMarkdownFiles,
   getChallengeSeeds,
   insertStepIntoMeta,
   insertTaskIntoMeta,
+  deleteChallengeFromMeta,
   deleteStepFromMeta
 };
