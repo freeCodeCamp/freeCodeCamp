@@ -9,7 +9,7 @@ describe('Deprecated unsubscribeEndpoints', () => {
   setupServer();
 
   unsubscribeEndpoints.forEach(([endpoint, method]) => {
-    test(`${method} ${endpoint} redirects to referer with "info" message`, async () => {
+    test(`${method} ${endpoint} redirects to origin with "info" message`, async () => {
       const response = await superRequest(endpoint, { method }).set(
         'Referer',
         'https://www.freecodecamp.org/settings'
@@ -17,7 +17,7 @@ describe('Deprecated unsubscribeEndpoints', () => {
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       expect(response.headers.location).toStrictEqual(
-        'https://www.freecodecamp.org/settings' + urlEncodedMessage
+        'https://www.freecodecamp.org' + urlEncodedMessage
       );
       expect(response.status).toBe(302);
     });
