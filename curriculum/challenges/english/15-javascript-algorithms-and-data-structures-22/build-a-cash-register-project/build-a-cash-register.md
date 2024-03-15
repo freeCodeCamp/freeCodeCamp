@@ -39,7 +39,7 @@ Your application should show different messages depending on the price of the it
 **User Stories:**
 
 1. You should have an `input` element with an `id` of `"cash"`
-1. You should have a `div` element with an `id` of `"change-due"`
+1. You should have a `div`, `span` or `p` element with an `id` of `"change-due"`
 1. You should have a `button` element with an `id` of `"purchase-btn"`
 1. When the value in the `#cash` element is less than `price`, an alert should appear with the text `"Customer does not have enough money to purchase the item"`
 1. When the value in the `#cash` element is equal to `price`, the value in the `#change-due` element should be `"No change due - customer paid with exact cash"`
@@ -64,7 +64,7 @@ You should have a `div` element with an `id` of `"change-due"`.
 
 ```js
 const el = document.getElementById('change-due');
-assert.strictEqual(el?.nodeName?.toLowerCase(), 'div');
+assert(['div', 'span', 'p'].includes(el?.nodeName?.toLowerCase()));
 ```
 
 You should have a `button` element with an `id` of `"purchase-btn"`.
