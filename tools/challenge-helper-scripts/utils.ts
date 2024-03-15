@@ -8,7 +8,6 @@ import { getProjectPath } from './helpers/get-project-info';
 import { ChallengeSeed, getStepTemplate } from './helpers/get-step-template';
 import {
   isTaskChallenge,
-  getPreviousTaskNumber,
   getTaskNumberFromTitle
 } from './helpers/task-helpers';
 
@@ -50,10 +49,23 @@ interface InsertOptions {
   stepId: ObjectID;
 }
 
-interface InsertTaskOptions {
-  indexToInsert: number;
+interface InsertChallengeOptions {
+  index: number;
   id: ObjectID;
   title: string;
+}
+
+function insertChallengeIntoMeta({
+  index,
+  id,
+  title
+}: InsertChallengeOptions): void {
+  const existingMeta = getMetaData();
+  const challengeOrder = [...existingMeta.challengeOrder];
+
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+  challengeOrder.splice(index, 0, { id: id.toString(), title });
+  updateMetaData({ ...existingMeta, challengeOrder });
 }
 
 function insertStepIntoMeta({ stepNum, stepId }: InsertOptions): void {
@@ -66,33 +78,6 @@ function insertStepIntoMeta({ stepNum, stepId }: InsertOptions): void {
     id,
     title: `Step ${index + 1}`
   }));
-
-  updateMetaData({ ...existingMeta, challengeOrder });
-}
-
-function insertTaskIntoMeta({
-  indexToInsert,
-  id,
-  title
-}: InsertTaskOptions): void {
-  const existingMeta = getMetaData();
-  const oldOrder = [...existingMeta.challengeOrder];
-
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
-  oldOrder.splice(indexToInsert, 0, { id: id.toString(), title });
-
-  const challengeOrder = oldOrder.map((challenge, index) => {
-    if (isTaskChallenge(challenge.title)) {
-      const previousTaskNumber = getPreviousTaskNumber(index);
-
-      return {
-        id: challenge.id,
-        title: `Task ${previousTaskNumber + 1}`
-      };
-    } else {
-      return challenge;
-    }
-  });
 
   updateMetaData({ ...existingMeta, challengeOrder });
 }
@@ -220,8 +205,8 @@ export {
   updateTaskMeta,
   updateTaskMarkdownFiles,
   getChallengeSeeds,
+  insertChallengeIntoMeta,
   insertStepIntoMeta,
-  insertTaskIntoMeta,
   deleteChallengeFromMeta,
   deleteStepFromMeta
 };

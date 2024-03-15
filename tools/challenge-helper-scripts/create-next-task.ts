@@ -7,29 +7,20 @@ import {
   updateMetaData,
   validateMetaData
 } from './helpers/project-metadata';
-import { createChallengeFile } from './utils';
-import { getLastTaskNumber } from './helpers/task-helpers';
+import {
+  createChallengeFile,
+  updateTaskMeta,
+  updateTaskMarkdownFiles
+} from './utils';
 
 const createNextTask = async () => {
   validateMetaData();
 
-  const lastTaskNumber = getLastTaskNumber();
-  const nextTaskNumber = lastTaskNumber + 1;
-
-  const msg =
-    lastTaskNumber === 0
-      ? `No task challenges have been created yet,`
-      : `The last task challenge that exists is 'Task ${lastTaskNumber}',`;
-
-  console.log(
-    `${msg}\nthis will create a 'Task ${nextTaskNumber}' challenge at the end of this block.\n`
-  );
-
   const { challengeType } = await newTaskPrompts();
 
   const options = {
-    title: `Task ${nextTaskNumber}`,
-    dashedName: `task-${nextTaskNumber}`,
+    title: `Task 0`,
+    dashedName: 'task-0',
     challengeType
   };
 
@@ -41,6 +32,7 @@ const createNextTask = async () => {
   const challengeIdString = challengeId.toString();
 
   createChallengeFile(challengeIdString, challengeText, path);
+  console.log('Finished creating new task markdown file.');
 
   const meta = getMetaData();
   meta.challengeOrder.push({
@@ -48,8 +40,13 @@ const createNextTask = async () => {
     title: options.title
   });
   updateMetaData(meta);
+  console.log(`Finished inserting task into 'meta.json' file.`);
 
-  console.log(`\n'${options.title}' successfully created.\n`);
+  updateTaskMeta();
+  console.log("Finished updating tasks in 'meta.json'.");
+
+  updateTaskMarkdownFiles();
+  console.log('Finished updating task markdown files.');
 };
 
 void createNextTask();
