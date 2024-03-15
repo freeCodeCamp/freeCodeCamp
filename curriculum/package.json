@@ -32,6 +32,7 @@
     "delete-task": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/delete-task",
     "lint": "ts-node --project ../tsconfig.json lint-localized",
     "repair-meta": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/repair-meta",
+    "reorder-tasks": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/reorder-tasks",
     "update-challenge-order": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/update-challenge-order",
     "update-step-titles": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
     "test": "ts-node ./node_modules/mocha/bin/mocha.js --delay --exit --reporter progress --bail",

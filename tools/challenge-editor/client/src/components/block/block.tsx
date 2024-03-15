@@ -111,6 +111,10 @@ const Block = () => {
               <code>pnpm delete-task</code>: Delete a task style challenge in
               this block.
             </li>
+            <li>
+              <code>pnpm reorder-tasks</code>: Rename the tasks to the correct
+              order.
+            </li>
           </ul>
           <p>
             Refresh the page after running a command to see the changes
