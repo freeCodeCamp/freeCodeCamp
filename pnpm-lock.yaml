@@ -114,9 +114,6 @@ importers:
       eslint-plugin-testing-library:
         specifier: 6.2.0
         version: 6.2.0(eslint@8.57.0)(typescript@5.2.2)
-      execa:
-        specifier: 5.1.1
-        version: 5.1.1
       husky:
         specifier: 9.0.11
         version: 9.0.11
@@ -148,8 +145,8 @@ importers:
         specifier: 0.11.10
         version: 0.11.10
       start-server-and-test:
-        specifier: 1.15.5
-        version: 1.15.5
+        specifier: 2.0.3
+        version: 2.0.3
       store:
         specifier: 2.0.12
         version: 2.0.12
@@ -2450,7 +2447,7 @@ packages:
     resolution: {integrity: sha512-keeZWAV4LU3tW0qRi19HRpabC/ilM0HRBBzf9/k8FFiG4KVpiv0FIy4hHfLfFQZNhziCTPTmd59zoyv6DNISzg==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.23.9
+      '@babel/types': 7.23.6
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.22
       jsesc: 2.5.2
@@ -2676,7 +2673,7 @@ packages:
     resolution: {integrity: sha512-6gfrPwh7OuT6gZyJZvd6WbTfrqAo7vm4xCzAXOusKqq/vWdKXphTpj5klHKNmRUU6/QRGlBsyU9mAIPaWHlqJA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.23.9
+      '@babel/types': 7.23.6
 
   /@babel/helper-module-imports@7.22.15:
     resolution: {integrity: sha512-0pYVBnDKZO2fnSPCrgM/6WMc7eS20Fbok+0r88fp+YtWVLZrp4CkafFGIp+W0VKw4a22sgebPT99y+FDNMdP4w==}
@@ -5892,8 +5889,8 @@ packages:
       '@babel/helper-function-name': 7.23.0
       '@babel/helper-hoist-variables': 7.22.5
       '@babel/helper-split-export-declaration': 7.22.6
-      '@babel/parser': 7.23.9
-      '@babel/types': 7.23.9
+      '@babel/parser': 7.23.3
+      '@babel/types': 7.23.6
       debug: 4.3.4(supports-color@8.1.1)
       globals: 11.12.0
     transitivePeerDependencies:
@@ -5957,7 +5954,6 @@ packages:
       '@babel/helper-string-parser': 7.23.4
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
-    dev: true
 
   /@babel/types@7.23.9:
     resolution: {integrity: sha512-dQjSq/7HaSjRM43FFGnv5keM2HsxpmyV1PfaSVm0nzzjwwTmjOe6J4bC8e3+pTEIgHaHj+1ZlLThRJ2auc/w1Q==}
@@ -7492,7 +7488,7 @@ packages:
     engines: {node: '>= 8'}
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
-      fastq: 1.15.0
+      fastq: 1.17.1
 
   /@pkgjs/parseargs@0.11.0:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -9679,7 +9675,7 @@ packages:
   /@types/babel__template@7.4.2:
     resolution: {integrity: sha512-/AVzPICMhMOMYoSx9MoKpGDKdBRsIXMNByh1PXSZoa+v6ZoLa8xxtsT/uLQ/NJm0XVAWl/BvId4MlDeXJaeIZQ==}
     dependencies:
-      '@babel/parser': 7.23.9
+      '@babel/parser': 7.23.6
       '@babel/types': 7.23.9
 
   /@types/babel__traverse@7.20.2:
@@ -11011,13 +11007,6 @@ packages:
     dependencies:
       acorn: 7.4.1
 
-  /acorn-jsx@5.3.2(acorn@8.10.0):
-    resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
-    peerDependencies:
-      acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
-    dependencies:
-      acorn: 8.10.0
-
   /acorn-jsx@5.3.2(acorn@8.11.3):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
@@ -11406,7 +11395,7 @@ packages:
     resolution: {integrity: sha512-djYB+Zx2vLewY8RWlNCUdHjDXs2XOgm602S9E7P/UpHgfeHL00cRiIF+IN/G/aUJ7kGPb6yO/ErDI5V2s8iycA==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.2
       define-properties: 1.2.1
       es-abstract: 1.22.2
       es-shim-unscopables: 1.0.0
@@ -11424,7 +11413,7 @@ packages:
     resolution: {integrity: sha512-UW+Mz8LG/sPSU8jRDCjVr6J/ZKAGpHfwrZ6kWTG5qCxIEiXdVshqGnu5vEZA8S1y6X4aCSbQZ0/EEsfvEvBiSg==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.2
       define-properties: 1.2.1
       es-abstract: 1.22.2
       es-array-method-boxes-properly: 1.0.0
@@ -11665,11 +11654,12 @@ packages:
       - debug
     dev: false
 
-  /axios@0.27.2(debug@4.3.4):
-    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
+  /axios@1.6.7(debug@4.3.4):
+    resolution: {integrity: sha512-/hDJGff6/c7u0hDkvkGxR/oy6CbCs8ziCsC7SqmhjfozqiJGc8Z11wrv9z9lYfY4K8l+H9TpjcMDX0xOZmx+RA==}
     dependencies:
-      follow-redirects: 1.15.3(debug@4.3.4)
+      follow-redirects: 1.15.5(debug@4.3.4)
       form-data: 4.0.0
+      proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
     dev: true
@@ -13398,6 +13388,12 @@ packages:
     resolution: {integrity: sha512-9EtFOZR8g22CL7BWjJ9BUx1+A/djkofnyW3aOXZORNW2kxoUpx2h+uN2cOqwPmFhnpVmxg+KW2OjOSgChTEvsQ==}
     engines: {node: '>=6'}
     dev: true
+
+  /call-bind@1.0.2:
+    resolution: {integrity: sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==}
+    dependencies:
+      function-bind: 1.1.2
+      get-intrinsic: 1.2.4
 
   /call-bind@1.0.7:
     resolution: {integrity: sha512-GHTSNSYICQ7scH7sZ+M2rFopRoLh8t2bLSW6BbgrtLsahOIB5iyAVJf9GjWK3cYTDaMj4XdBpM1cA6pIS0Kv2w==}
@@ -16521,8 +16517,8 @@ packages:
     resolution: {integrity: sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: 8.10.0
-      acorn-jsx: 5.3.2(acorn@8.10.0)
+      acorn: 8.11.3
+      acorn-jsx: 5.3.2(acorn@8.11.3)
       eslint-visitor-keys: 3.4.3
 
   /esprima@4.0.1:
@@ -17057,7 +17053,6 @@ packages:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
     dependencies:
       reusify: 1.0.4
-    dev: false
 
   /fault@1.0.4:
     resolution: {integrity: sha512-CJ0HCB5tL5fYTEA7ToAq5+kTwd++Borf1/bifxd9iT70QcXr4MRrO3Llf8Ifs70q+SJcGHFtnIE/Nw6giCtECA==}
@@ -17314,6 +17309,18 @@ packages:
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
 
+  /follow-redirects@1.15.5(debug@4.3.4):
+    resolution: {integrity: sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 4.3.4(supports-color@8.1.1)
+    dev: true
+
   /for-each@0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
     dependencies:
@@ -17539,7 +17546,7 @@ packages:
     resolution: {integrity: sha512-Z5kx79swU5P27WEayXM1tBi5Ze/lbIyiNgU3qyXUOf9b2rgXYyF9Dy9Cx+IQv/Lc8WCG6L82zwUPpSS9hGehIg==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.2
       define-properties: 1.2.1
       es-abstract: 1.22.2
       functions-have-names: 1.2.3
@@ -17623,7 +17630,7 @@ packages:
       '@babel/runtime': 7.23.9
       ci-info: 2.0.0
       configstore: 5.0.1
-      fastq: 1.15.0
+      fastq: 1.17.1
       file-type: 16.5.4
       fs-extra: 10.1.0
       got: 11.8.6
@@ -17808,7 +17815,7 @@ packages:
       graphql: ^15.0.0
     dependencies:
       '@babel/runtime': 7.23.9
-      fastq: 1.15.0
+      fastq: 1.17.1
       gatsby: 3.15.0(@types/node@18.19.18)(babel-eslint@10.1.0)(eslint-import-resolver-typescript@3.5.5)(eslint-plugin-testing-library@3.9.0)(react-dom@16.14.0)(react@16.14.0)(typescript@5.2.2)(webpack-cli@4.10.0)
       graphql: 15.8.0
       joi: 17.12.2
@@ -19008,7 +19015,7 @@ packages:
     resolution: {integrity: sha512-6XMlxrAFX4UEEGxctfFnmrFaaZFNf9i5fNuV5wZ3WWQ4FVaNP1aX1LkX9j2mfEx1NpjeE/rL3nmgEn23GdFmrg==}
     dependencies:
       array.prototype.filter: 1.0.3
-      call-bind: 1.0.7
+      call-bind: 1.0.2
 
   /html-encoding-sniffer@2.0.1:
     resolution: {integrity: sha512-D5JbOMBIR/TVZkubHT+OyT2705QvogUW4IBn6nHd756OwieSF9aDYFj4dv6HHEVGYbHaLETa3WggZYWWMyy3ZQ==}
@@ -19573,7 +19580,7 @@ packages:
     resolution: {integrity: sha512-8Q7EARjzEnKpt/PCD7e1cgUS0a6X8u5tdSiMqXhojOdoV9TsMsiO+9VLC5vAmO8N7/GmXn7yjR8qnA6bVAEzfA==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.2
       has-tostringtag: 1.0.0
 
   /is-array-buffer@3.0.2:
@@ -19611,7 +19618,7 @@ packages:
     resolution: {integrity: sha512-gDYaKHJmnj4aWxyj6YHyXVpdQawtVLHU5cb+eztPGczf6cjuTdwve5ZIEfgXqH4e57An1D1AKf8CZ3kYrQRqYA==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.2
       has-tostringtag: 1.0.0
 
   /is-buffer@1.1.6:
@@ -19821,7 +19828,7 @@ packages:
     resolution: {integrity: sha512-E+zBKpQ2t6MEo1VsonYmluk9NxGrbzpeeLC2xIViuO2EjU2xsXsBPwTr3Ykv9l08UYEVEdWeRZNouaZqF6RN0w==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.2
       define-properties: 1.2.1
 
   /is-negative-zero@2.0.2:
@@ -19905,7 +19912,7 @@ packages:
     resolution: {integrity: sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.2
       has-tostringtag: 1.0.0
 
   /is-relative-url@3.0.0:
@@ -23759,7 +23766,7 @@ packages:
     resolution: {integrity: sha512-3cyDsyHgtmi7I7DfSSI2LDp6SK2lwvtbg0p0R1e0RvTqF5ceGx+K2dfSjm1bKDMVCFEDAQvy+o8c6a7VujOddw==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.2
       define-properties: 1.2.1
 
   /object-keys@1.1.1:
@@ -23780,7 +23787,7 @@ packages:
     resolution: {integrity: sha512-1mxKf0e58bvyjSCtKYY4sRe9itRk3PJpquJOjeIkz885CczcI4IvJJDLPS72oowuSh+pBxUFROpX+TU++hxhZQ==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.2
       define-properties: 1.2.1
       has-symbols: 1.0.3
       object-keys: 1.1.1
@@ -23798,7 +23805,7 @@ packages:
     resolution: {integrity: sha512-jCBs/0plmPsOnrKAfFQXRG2NFjlhZgjjcBLSmTnEhU8U6vVTsVe8ANeQJCHTl3gSsI4J+0emOoCgoKlmQPMgmA==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.2
       define-properties: 1.2.1
       es-abstract: 1.22.2
 
@@ -23815,7 +23822,7 @@ packages:
     engines: {node: '>= 0.8'}
     dependencies:
       array.prototype.reduce: 1.0.6
-      call-bind: 1.0.7
+      call-bind: 1.0.2
       define-properties: 1.2.1
       es-abstract: 1.22.2
       safe-array-concat: 1.0.1
@@ -23845,7 +23852,7 @@ packages:
     resolution: {integrity: sha512-aU6xnDFYT3x17e/f0IiiwlGPTy2jzMySGfUB4fq6z7CV8l85CWHDk5ErhyhpfDHhrOMwGFhSQkhMGHaIotA6Ng==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.2
       define-properties: 1.2.1
       es-abstract: 1.22.2
 
@@ -25685,7 +25692,7 @@ packages:
       '@types/doctrine': 0.0.9
       '@types/resolve': 1.20.6
       doctrine: 3.0.0
-      resolve: 1.22.8
+      resolve: 1.22.6
       strip-indent: 4.0.0
     transitivePeerDependencies:
       - supports-color
@@ -27771,10 +27778,9 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /start-server-and-test@1.15.5:
-    resolution: {integrity: sha512-o3EmkX0++GV+qsvIJ/OKWm3w91fD8uS/bPQVPrh/7loaxkpXSuAIHdnmN/P/regQK9eNAK76aBJcHt+OSTk+nA==}
-    engines: {node: '>=6'}
-    deprecated: this package has been deprecated
+  /start-server-and-test@2.0.3:
+    resolution: {integrity: sha512-QsVObjfjFZKJE6CS6bSKNwWZCKBG6975/jKRPPGFfFh+yOQglSeGXiNWjzgQNXdphcBI9nXbyso9tPfX4YAUhg==}
+    engines: {node: '>=16'}
     hasBin: true
     dependencies:
       arg: 5.0.2
@@ -27784,7 +27790,7 @@ packages:
       execa: 5.1.1
       lazy-ass: 1.6.0
       ps-tree: 1.2.0
-      wait-on: 7.0.1(debug@4.3.4)
+      wait-on: 7.2.0(debug@4.3.4)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -27973,7 +27979,7 @@ packages:
     resolution: {integrity: sha512-lfjY4HcixfQXOfaqCvcBuOIapyaroTXhbkfJN3gcB1OtyupngWK4sEET9Knd0cXd28kTUqu/kHoV4HKSJdnjiQ==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.2
       define-properties: 1.2.1
       es-abstract: 1.22.2
 
@@ -29987,12 +29993,12 @@ packages:
       xml-name-validator: 4.0.0
     dev: true
 
-  /wait-on@7.0.1(debug@4.3.4):
-    resolution: {integrity: sha512-9AnJE9qTjRQOlTZIldAaf/da2eW0eSRSgcqq85mXQja/DW3MriHxkpODDSUEg+Gri/rKEcXUZHe+cevvYItaog==}
+  /wait-on@7.2.0(debug@4.3.4):
+    resolution: {integrity: sha512-wCQcHkRazgjG5XoAq9jbTMLpNIjoSlZslrJ2+N9MxDsGEv1HnFoVjOCexL0ESva7Y9cu350j+DWADdk54s4AFQ==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
-      axios: 0.27.2(debug@4.3.4)
+      axios: 1.6.7(debug@4.3.4)
       joi: 17.12.2
       lodash: 4.17.21
       minimist: 1.2.8
@@ -30408,7 +30414,7 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       available-typed-arrays: 1.0.5
-      call-bind: 1.0.7
+      call-bind: 1.0.2
       for-each: 0.3.3
       gopd: 1.0.1
       has-tostringtag: 1.0.0
