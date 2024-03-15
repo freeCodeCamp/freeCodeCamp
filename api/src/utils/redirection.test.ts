@@ -125,6 +125,26 @@ describe('redirection', () => {
         defaultObject
       );
     });
+
+    it('should reject returnTo without trailing slashes', () => {
+      const exampleReturnTo = {
+        ...defaultObject,
+        returnTo: 'https://www.freecodecamp.dev'
+      };
+      expect(normalizeParams(exampleReturnTo, defaultOrigin)).toEqual(
+        defaultObject
+      );
+    });
+
+    it('should not modify the returnTo if it is valid', () => {
+      const exampleReturnTo = {
+        ...defaultObject,
+        returnTo: 'https://www.freecodecamp.dev/'
+      };
+      expect(normalizeParams(exampleReturnTo, defaultOrigin)).toEqual(
+        exampleReturnTo
+      );
+    });
   });
 
   describe('getRedirectParams', () => {
