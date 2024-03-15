@@ -17,4 +17,4 @@ Working on these challenges involves writing code on Replit in our starter proje
 
 Optionally, you may write your project on another platform, but it must be publicly visible for our testing.
 
-Start this project on Replit using <a rel='noopener noreferrer' target='_blank' href='https://replit.com/github/freeCodeCamp/boilerplate-infosec'>this link</a> or clone <a rel='noopener noreferrer' target='_blank' href='https://github.com/freeCodeCamp/boilerplate-infosec/'>this repository</a> on GitHub! If you use Replit, remember to save the link to your project somewhere safe!
+Start this project by clone <a rel='noopener noreferrer' target='_blank' href='https://github.com/freeCodeCamp/boilerplate-infosec/'>this repository</a> on GitHub!
