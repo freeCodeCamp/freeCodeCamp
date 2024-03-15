@@ -11,8 +11,68 @@
   "isBeta": true,
   "challengeOrder": [
     {
-      "id": "655c13c143fbad91f96da5f3",
-      "title": "Dialogue: Placeholder"
+      "id": "65f422e03c1be26ee37dbcf1",
+      "title": "Dialogue 1: Asking for help to understand code"
+    },
+    {
+      "id": "65f424048ab85171c45e9a08",
+      "title": "Task 1"
+    },
+    {
+      "id": "65f425b9d9686e76a354a7ee",
+      "title": "Task 2"
+    },
+    {
+      "id": "65f4264c34d9b678ecd79ad3",
+      "title": "Task 3"
+    },
+    {
+      "id": "65f4271a0a61e57af14a9b35",
+      "title": "Task 4"
+    },
+    {
+      "id": "65f42789b0fe157c08cf04eb",
+      "title": "Task 5"
+    },
+    {
+      "id": "65f434b6c6a3ba9743d08e22",
+      "title": "Task 6"
+    },
+    {
+      "id": "65f435edbd8f519aba51cc93",
+      "title": "Task 7"
+    },
+    {
+      "id": "65f437964aed009f178dd167",
+      "title": "Task 8"
+    },
+    {
+      "id": "65f4386ef80894a17d6b1f3d",
+      "title": "Task 9"
+    },
+    {
+      "id": "65f439533bb1c4a3ab360b62",
+      "title": "Task 10"
+    },
+    {
+      "id": "65f439b8a46608a46ba94c73",
+      "title": "Task 11"
+    },
+    {
+      "id": "65f43a3a8b2c8ba627c31e46",
+      "title": "Task 12"
+    },
+    {
+      "id": "65f43aa270f998a70375bb23",
+      "title": "Task 13"
+    },
+    {
+      "id": "65f43b8a961e01a96a940470",
+      "title": "Task 14"
+    },
+    {
+      "id": "65f43c96b08a08ac434de6cb",
+      "title": "Task 15"
     }
   ],
   "helpCategory": "English"
