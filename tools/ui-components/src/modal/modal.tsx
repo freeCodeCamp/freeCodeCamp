@@ -71,7 +71,7 @@ const Footer = ({ children }: { children: ReactNode }) => {
   return <div className='p-[15px]'>{children}</div>;
 };
 
-export const Modal = ({
+const Modal = ({
   children,
   open,
   onClose,
@@ -122,3 +122,5 @@ export const Modal = ({
 Modal.Header = Header;
 Modal.Body = Body;
 Modal.Footer = Footer;
+
+export { Modal };

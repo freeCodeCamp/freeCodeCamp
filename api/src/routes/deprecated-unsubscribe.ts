@@ -1,6 +1,6 @@
 import { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
-import { HOME_LOCATION } from '../utils/env';
+import { getRedirectParams } from '../utils/redirection';
 
 type Endpoint = [string, 'GET' | 'POST'];
 
@@ -28,8 +28,7 @@ export const unsubscribeDeprecated: FastifyPluginCallbackTypebox = (
       method,
       url: endpoint,
       handler: async (req, reply) => {
-        // TODO: port over getRedirectParams from api-server anduser that
-        const origin = req.headers.referer ?? HOME_LOCATION;
+        const { origin } = getRedirectParams(req);
         void reply.redirectWithMessage(origin, {
           type: 'info',
           content:
