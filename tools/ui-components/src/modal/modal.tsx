@@ -95,7 +95,7 @@ const Modal = ({
   return (
     <ModalContext.Provider value={{ onClose, variant }}>
       <Transition.Root show={open} as={Fragment}>
-        <Dialog onClose={onClose} className='relative z-50'>
+        <Dialog onClose={onClose} className='relative z-999'>
           {/* The backdrop, rendered as a fixed sibling to the panel container */}
           <div aria-hidden className='fixed inset-0 bg-gray-900 opacity-50' />
 
