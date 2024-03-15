@@ -1,0 +1,61 @@
+{
+  "name": "Module-3 : Introduction to Basic Javascript ",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "module-3",
+  "order": 5,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "superOrder": 3,
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "65f3f6213293b31d7df443e5",
+      "title": "Step 1"
+    },
+    {
+      "id": "65f411ef1540c01e03d41b09",
+      "title": "Introduction to Computers"
+    },
+    {
+      "id": "65f416ff62ed3524affa6c2c",
+      "title": "Introduction to Computers - Part 2."
+    },
+    {
+      "id": "65f4128330131d20c7373c2e",
+      "title": "Why do Computers use Binary?"
+    },
+    {
+      "id": "65f413125d6338218918820f",
+      "title": "What is Coding?"
+    },
+    {
+      "id": "65f4132a76991621af4b0e4b",
+      "title": "Importance of Coding"
+    },
+    {
+      "id": "65f4134acd811521d5dd1094",
+      "title": "What are Programming Languages?"
+    },
+    {
+      "id": "65f4136f9d2a942229aa018e",
+      "title": "How Computer Understands our Code? "
+    },
+    {
+      "id": "65f413c4f3b87d224e8b856e",
+      "title": "How Does Computer Understands our Code? - Part - 2"
+    },
+    {
+      "id": "65f413ee386282227bc38a5e",
+      "title": "Why JavaScript?"
+    },
+    {
+      "id": "65f4144757efed229f90c970",
+      "title": "What is NodeJS?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
