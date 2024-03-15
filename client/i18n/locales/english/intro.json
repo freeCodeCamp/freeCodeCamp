@@ -852,6 +852,10 @@
         "intro": [
           "This is one of the required projects to claim your certification."
         ]
+      },
+      "learn-numerical-methods-by-finding-the-square-root-of-a-number-using-the-bisection-method": {
+        "title": "Learn Numerical Methods by Finding the Square Root of a Number Using the Bisection Method",
+        "intro": ["", ""]
       }
     }
   },
