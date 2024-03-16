@@ -168,22 +168,26 @@ diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 
 ```js
 function diffArray(arr1, arr2) {
+  if (arr1.length === 0) return arr2;
+  if (arr2.length === 0) return arr1;
+
+  const set1 = new Set(arr1);
+  const set2 = new Set(arr2);
+
   const newArr = [];
-  const h1 = Object.create(null);
-  arr1.forEach(function(e) {
-    h1[e] = e;
-  });
-  const h2 = Object.create(null);
-  arr2.forEach(function(e) {
-    h2[e] = e;
+
+  set1.forEach(element => {
+    if (!set2.has(element)) newArr.push(element);
+
   });
 
-  Object.keys(h1).forEach(function(e) {
-     if (!(e in h2)) newArr.push(h1[e]);
+  set2.forEach(element => {
+    if (!set1.has(element)) newArr.push(element);
+
   });
-  Object.keys(h2).forEach(function(e) {
-     if (!(e in h1)) newArr.push(h2[e]);
-  });
+
   return newArr;
+
 }
+
 ```

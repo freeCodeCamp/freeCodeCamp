@@ -14,7 +14,7 @@ dashedName: reading-files
 
 ## --text--
 
-What is used to indicate a new line in a string?
+文字列の新しい行を示すために使用するものは何ですか？
 
 ## --answers--
 

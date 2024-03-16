@@ -5,6 +5,7 @@ export const savedChallengesSelector = state =>
   userSelector(state).savedChallenges || [];
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
+export const userIdSelector = state => userSelector(state).id;
 export const partiallyCompletedChallengesSelector = state =>
   userSelector(state).partiallyCompletedChallenges || [];
 export const currentChallengeIdSelector = state =>
@@ -52,13 +53,12 @@ export const shouldRequestDonationSelector = state => {
 
   /*
   When AB testing for showing multiple progress modals is active,
-  show a donation modal every 30 challenges after the first 50
+  show a donation modal every 20 challenge
    */
   if (
     showMultipleProgressModals &&
     progressDonationModalShown &&
-    completedChallengesLength > 50 &&
-    completionCount - lastCompletionCount >= 30
+    completionCount - lastCompletionCount >= 20
   )
     return true;
 

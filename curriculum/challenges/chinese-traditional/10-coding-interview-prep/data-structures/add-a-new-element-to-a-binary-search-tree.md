@@ -14,7 +14,7 @@ dashedName: add-a-new-element-to-a-binary-search-tree
 
 To begin, we will discuss a particular type of tree, the binary tree. 實際上，我們將討論特定的二叉樹，即二叉搜索樹。 讓我們來看看這意味着什麼。 雖然樹形數據結構在一個節點上可以有任意數量的分支，但二叉樹每個節點只能有兩個分支。 此外，一個二叉搜索樹相對於其子子樹是有序的，即對於一個節點而言，其左子樹中每個節點的值都小於或等於該節點的值，而其右子樹中每個節點的值都大於或等於該節點的值。 爲了更好地理解這種關係，將這種關係形象化是非常有幫助的：
 
-<div style='width: 100%; display: flex; justify-content: center; align-items: center;'><img style='width: 100%; max-width: 350px; background-color: var(--gray-05);' src='https://user-images.githubusercontent.com/18563015/32136009-1e665d98-bbd6-11e7-9133-63184f9f9182.png'></div>
+<div style='width: 100%; display: flex; justify-content: center; align-items: center;'><img alt="an example of a binairy search tree" style='width: 100%; max-width: 350px; background-color: var(--gray-05);' src='https://user-images.githubusercontent.com/18563015/32136009-1e665d98-bbd6-11e7-9133-63184f9f9182.png'></div>
 
 現在，這種有序的關係是非常容易看到的。 注意，根節點 8 左邊的每個值都小於 8，右邊的每個值都大於 8。 還要注意的是，這種關係也適用於每個子樹。 例如，第一個左孩子節點是一個子樹。 3 是父節點，它正好有兩個子節點——根據二進制搜索樹的規則，我們甚至不用看就知道這個節點的左子節點（以及它的任何子節點）都將小於 3，右子節點（以及它的任何子節點）都將大於 3（但也小於根結點的值），依此類推。
 

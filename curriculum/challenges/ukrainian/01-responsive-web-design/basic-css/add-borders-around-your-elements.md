@@ -103,7 +103,7 @@ assert($('img').css('border-left-color') === 'rgb(0, 128, 0)');
   <div>
     <p>Things cats love:</p>
     <ul>
-      <li>cat nip</li>
+      <li>catnip</li>
       <li>laser pointers</li>
       <li>lasagna</li>
     </ul>
@@ -165,7 +165,7 @@ assert($('img').css('border-left-color') === 'rgb(0, 128, 0)');
   <div>
     <p>Things cats love:</p>
     <ul>
-      <li>cat nip</li>
+      <li>catnip</li>
       <li>laser pointers</li>
       <li>lasagna</li>
     </ul>

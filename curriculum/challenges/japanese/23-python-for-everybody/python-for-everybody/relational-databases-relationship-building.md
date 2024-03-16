@@ -14,7 +14,7 @@ dashedName: relational-databases-relationship-building
 
 ## --text--
 
-What does the INSERT command do in SQL?
+SQL の INSERT コマンドは何を実行しますか？
 
 ## --answers--
 

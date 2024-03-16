@@ -14,7 +14,7 @@ dashedName: python-dictionaries
 
 ## --text--
 
-What does dict equal after running this code?:
+このコードを実行した後、dict はどれに等しくなりますか？
 
 ```python
 dict = {"Fri": 20, "Thu": 6, "Sat": 1}

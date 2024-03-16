@@ -14,7 +14,7 @@ dashedName: using-web-services
 
 ## --text--
 
-What are the two most common ways to send data over the internet?
+インターネットでデータを送信するための最も一般的な 2 つの方法は何ですか？
 
 ## --answers--
 

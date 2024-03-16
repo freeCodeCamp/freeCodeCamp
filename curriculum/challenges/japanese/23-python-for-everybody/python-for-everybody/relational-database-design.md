@@ -14,7 +14,7 @@ dashedName: relational-database-design
 
 ## --text--
 
-What is the best practice for how many times a piece of string data should be stored in a database?
+文字列データをデータベースに保存する際にベストプラクティスとなっている保存回数は何回ですか？
 
 ## --answers--
 

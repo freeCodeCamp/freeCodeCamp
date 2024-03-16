@@ -16,7 +16,7 @@ Ao chegar ao fim de um caminho, a busca voltará para o último nó com um camin
 
 A animação abaixo mostra como o algoritmo funciona. O algoritmo começa com o nó superior e visita os nós em ordem numerada.
 
-<img class='img-responsive' src='https://camo.githubusercontent.com/aaad9e39961daf34d967c616edeb50abf3bf1235/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37662f44657074682d46697273742d5365617263682e676966' />
+<img class='img-responsive' alt="" src='https://camo.githubusercontent.com/aaad9e39961daf34d967c616edeb50abf3bf1235/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37662f44657074682d46697273742d5365617263682e676966' />
 
 Observe como, diferente da busca em largura, cada vez que um nó é visitado, ele não visita todos os seus vizinhos. Em vez disso, visita pela primeira vez um dos seus vizinhos e continua por esse caminho até que não haja mais nós a visitar nele.
 

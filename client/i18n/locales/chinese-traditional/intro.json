@@ -770,11 +770,11 @@
         ]
       },
       "learn-list-comprehension-by-building-a-case-converter-program": {
-        "title": "Learn Python List Comprehension by Building a Case Converter Program",
+        "title": "通過創建大小寫轉換器程序學習 Python 列表推導",
         "intro": [
-          "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the `.append()` list method.",
-          "In this project, you'll write a program that takes a string formatted in Camel Case or Pascal Case, then converts it into Snake Case.",
-          "The project has two phases: first you'll use a for loop to implement the program. Then you'll learn how to use List Comprehension instead of a loop to achieve the same results."
+          "列表推導是一種從可迭代類型（列表、元組和字符串）構建新的 Python 列表的方法。所有這些都無需使用 for 循環或 `.append()` 列表方法。",
+          "在這個項目中，你將編寫一個程序，接收駝峯或帕斯卡命名格式的字符串，然後將其轉換爲蛇形命名格式。",
+          "該項目分爲兩個階段：首先，你將使用 for 循環來執行程序。然後，你將學習如何使用列表推導代替循環來實現相同的結果。"
         ]
       },
       "learn-regular-expressions-by-building-a-password-generator": {
@@ -788,7 +788,7 @@
         "title": "Learn Algorithm Design by Building a Shortest Path Algorithm",
         "intro": [
           "Algorithms are step-by-step procedures that developers use to perform calculations and solve computational problems.",
-          "In this project, you'll learn how to use functions, loops, conditional statements, and dictionary comprehensions to implement a Shortest Path algorithm."
+          "在本項目中，你將學習如何使用函數、循環、條件語句和字典推導來實現最短路徑算法。"
         ]
       },
       "learn-recursion-by-solving-the-tower-of-hanoi-puzzle": {
@@ -827,7 +827,7 @@
         ]
       },
       "scientific-computing-with-python-projects": {
-        "title": "Python 與科學計算項目",
+        "title": "Python 科學計算項目",
         "intro": [
           "It's time to put your Python skills to the test. By completing these projects, you'll demonstrate that you have a strong foundational knowledge of Python. And you'll qualify for freeCodeCamp's Scientific Computing with Python Certification."
         ]
@@ -835,7 +835,7 @@
     }
   },
   "data-analysis-with-python": {
-    "title": "Python 和數據分析",
+    "title": "Python 數據分析",
     "intro": [
       "數據分析已經存在很長時間了。但是直到幾年前，開發人員還是使用昂貴的閉源工具（如 Tableau）來做數據分析。如今，Python、SQL 和其他開放的庫永遠改變了數據分析領域。",
       "在這個認證中，你會學習使用 Python 做數據分析的基礎知識。然後，你會學習怎麼從 CSV、SQL 等數據源讀取數據，並且怎麼使用 Numpy、Pandas、Matplotlib 和 Seaborn 等庫來處理和可視化數據。"
@@ -843,7 +843,7 @@
     "note": "",
     "blocks": {
       "data-analysis-with-python-course": {
-        "title": "Python 和數據分析",
+        "title": "Python 數據分析",
         "intro": [
           "在 Santiago Basulto 創建的這些綜合視頻課程中，你會學習整個數據分析的過程。你會從 CSV、SQL、Excel 讀取數據，用 Numpy和 Pandas 來處理這些數據，以及使用 Matplotlib 和 Seaborn 來可視化數據。",
           "此外，你還可以通過完整的 Jupyter Notebook 課程和 Python 資料來刷新自己的編程技能。"
@@ -857,10 +857,10 @@
         ]
       },
       "data-analysis-with-python-projects": {
-        "title": "Python 與數據分析",
+        "title": "Python 數據分析",
         "intro": [
           "使用 Python 分析數據的方法很多。通過完成這些項目，你可以證明自己掌握了使用 Python 進行數據分析的基礎知識。",
-          "完成所有項目，即可獲得 Python 與數據分析認證。"
+          "完成所有項目，即可獲得 Python 數據分析認證。"
         ]
       }
     }
@@ -898,7 +898,7 @@
     }
   },
   "machine-learning-with-python": {
-    "title": "Python 和機器學習",
+    "title": "Python 機器學習",
     "intro": [
       "機器學習有許多實際應用程序，你可以在項目中或工作中使用它們。",
       "在這個認證中，你將使用 TensorFlow 框架構建多個神經網絡，同時，你將探索更先進的技術，例如自然語言處理和強化學習。",
@@ -921,7 +921,7 @@
         ]
       },
       "machine-learning-with-python-projects": {
-        "title": "Python 與機器學習項目",
+        "title": "Python 機器學習項目",
         "intro": [
           "機器學習有許多實際應用。通過完成這些免費且具有挑戰性的編程項目，你可以證明自己掌握了機器學習基礎知識，並獲得認證。"
         ]
@@ -1044,7 +1044,7 @@
         ]
       },
       "college-algebra-with-python-conclusion": {
-        "title": "Python 和大學代數：總結",
+        "title": "Python 和大學數學：總結",
         "intro": [
           "這將是本課程的最後一個單元。讓我們看看如何能夠將你的數學和 Python 知識與外部數據連接起來。"
         ]

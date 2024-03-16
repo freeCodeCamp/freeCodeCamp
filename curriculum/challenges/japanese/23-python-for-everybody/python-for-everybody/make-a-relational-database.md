@@ -14,7 +14,7 @@ dashedName: make-a-relational-database
 
 ## --text--
 
-What SQL command would you use to retrieve all users that have the email address `quincy@freecodecamp.org`?
+メールアドレス `quincy@freecodecamp.org` を持つすべてのユーザーを取得するために使用する SQL コマンドはどれですか？
 
 ## --answers--
 
