@@ -8,7 +8,7 @@ superBlock: information-security
 
 HelmetJS is a type of middleware for Express-based applications that automatically sets HTTP headers to prevent sensitive information from unintentionally being passed between the server and client. While HelmetJS does not account for all situations, it does include support for common ones like Content Security Policy, XSS Filtering, and HTTP Strict Transport Security, among others. HelmetJS can be installed on an Express project from npm, after which each layer of protection can be configured to best fit the project.
 
-Working on these challenges involves writing code in our starter project.
+Working on these challenges involves writing code on GitHub in our starter project.
 
 Optionally, you may write your project on another platform, but it must be publicly visible for our testing.
 
