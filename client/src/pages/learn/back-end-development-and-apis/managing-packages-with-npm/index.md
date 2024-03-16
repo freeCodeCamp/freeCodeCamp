@@ -15,8 +15,8 @@ npm saves packages in a folder named <code>node_modules</code>. These packages c
 
 Most developers prefer to install packages local to each project to create a separation between the dependencies of different projects.
 
-Working on these challenges involves writing code in our starter project.
+Working on these challenges involves writing code on GitHub in our starter project.
 
 Optionally, you may write your project on another platform, but it must be publicly visible for our testing.
 
-Start this project by cloning <a href='https://github.com/freeCodeCamp/boilerplate-npm/'>this repository</a> on GitHub! If you use another platform, remember to save the link to your project somewhere safe!
+Start this project cloning <a href='https://github.com/freeCodeCamp/boilerplate-npm/'>this repository</a> on GitHub! If you use another platform, remember to save the link to your project somewhere safe!
