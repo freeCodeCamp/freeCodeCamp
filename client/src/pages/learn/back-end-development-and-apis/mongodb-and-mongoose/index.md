@@ -25,7 +25,7 @@ Working on these challenges involves writing code on Replit in our starter proje
 
 Optionally, you may write your project on another platform, but it must be publicly visible for our testing.
 
-Start this project on Replit using [this link](https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose) or clone [this repository](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) on GitHub! If you use Replit, remember to save the link to your project somewhere safe!
+Start this by cloning [this repository](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) on GitHub!
 
 ## Use MongoDB Atlas to host a free mongodb instance for your projects
 

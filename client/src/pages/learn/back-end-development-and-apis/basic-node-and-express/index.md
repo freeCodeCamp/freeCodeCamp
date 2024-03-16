@@ -24,4 +24,4 @@ Working on these challenges involves writing code on Replit in our starter proje
 
 Optionally, you may write your project on another platform, but it must be publicly visible for our testing.
 
-Start this project on Replit using <a href='https://replit.com/github/freeCodeCamp/boilerplate-express'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-express/'>this repository</a> on GitHub! If you use Replit, remember to save the link to your project somewhere safe!
+Start this project by cloning <a href='https://github.com/freeCodeCamp/boilerplate-express/'>this repository</a> on GitHub!
