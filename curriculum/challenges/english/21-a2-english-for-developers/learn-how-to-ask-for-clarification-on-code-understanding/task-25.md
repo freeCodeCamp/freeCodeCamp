@@ -1,0 +1,54 @@
+---
+id: 65f56b281bb51c5493d3e598
+title: Task 25
+challengeType: 19
+dashedName: task-25
+audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+---
+
+<!--
+AUDIO REFERENCE: 
+Tom: I've tried a few things, but it could be something more complicated.
+-->
+
+# --description--
+
+Practice time! 
+
+# --question--
+
+## --text--
+
+What is Tom expressing about his attempts to fix the problem?
+
+## --answers--
+
+He's confident he has solved the problem.
+
+### --feedback--
+
+Tom indicates that despite trying, the problem might still be unsolved and complicated.
+
+---
+
+He's unsure if his attempts were effective and thinks the issue might be complex.
+
+---
+
+He's asking for help with basic coding skills.
+
+### --feedback--
+
+Tom is not asking for basic help; he's discussing the complexity of a specific problem.
+
+---
+
+He believes the problem is simple and easy to fix.
+
+### --feedback--
+
+Tom suggests the opposite, indicating the problem might be more complicated than expected.
+
+## --video-solution--
+
+2

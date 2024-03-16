@@ -35,7 +35,7 @@ For clarification on a specific part of the code
 
 ---
 
-`To know why Sarah made the changes`
+To know why Sarah made the changes
 
 ### --feedback--
 
