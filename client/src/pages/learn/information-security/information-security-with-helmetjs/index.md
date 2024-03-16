@@ -12,4 +12,4 @@ Working on these challenges involves writing code in our starter project.
 
 Optionally, you may write your project on another platform, but it must be publicly visible for our testing.
 
-Start this project by cloning <a rel='noopener noreferrer' target='_blank' href='https://github.com/freeCodeCamp/boilerplate-infosec/'>this repository</a> on GitHub! If you use Replit, remember to save the link to your project somewhere safe!
+Start this project by cloning <a rel='noopener noreferrer' target='_blank' href='https://github.com/freeCodeCamp/boilerplate-infosec/'>this repository</a> on GitHub! If you use another platform, remember to save the link to your project somewhere safe!
