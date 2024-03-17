@@ -1,0 +1,16 @@
+{
+  "name": "Learn Encapsulation by Building a Projectile Trajectory Calculator",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "projectile-trajectory",
+  "order": 42,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "scientific-computing-with-python",
+  "superOrder": 10,
+  "isBeta": true,
+  "challengeOrder": [{ "id": "65f569725359e10d345bc52a", "title": "Step 1" }],
+  "helpCategory": "Python"
+}
