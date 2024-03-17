@@ -16,13 +16,6 @@ While there are many non-relational databases, Mongo's use of JSON as its docume
 
 Mongoose.js is an npm module for Node.js that allows you to write objects for Mongo as you would in JavaScript. This can make it easier to construct documents for storage in Mongo.
 
-Working on these challenges involves writing code on Replit in our starter project.
-
-- Start by importing the project on Replit.
-- Next, you will see a <code>.replit</code> window.
-- Select <code>Use run command</code> and click the <code>Done</code> button.
-- Complete each challenge and copy the public Replit URL (to the homepage of your app) into the challenge screen to test it!
-
 Optionally, you may write your project on another platform, but it must be publicly visible for our testing.
 
 Start this by cloning [this repository](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) on GitHub!
