@@ -20,6 +20,7 @@ import {
   challengeMetaSelector,
   completedPercentageSelector
 } from '../redux/selectors';
+import callGA from '../../../analytics/call-ga';
 
 interface LowerJawPanelProps extends ShareProps {
   resetButtonText: string;
@@ -298,6 +299,11 @@ const LowerJaw = ({
           data-cy='sign-in-button'
           href={`${apiLocation}/signin`}
           className='btn-cta btn btn-block'
+          onClick={() => {
+            callGA({
+              event: 'sign_in'
+            });
+          }}
         >
           {t('learn.sign-in-save')}
         </a>

@@ -1,4 +1,3 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import React, { ReactNode } from 'react';
@@ -8,6 +7,7 @@ import { createSelector } from 'reselect';
 
 import envData from '../../../../config/env.json';
 import { isSignedInSelector } from '../../../redux/selectors';
+import callGA from '../../../analytics/call-ga';
 
 const { apiLocation, homeLocation } = envData;
 
@@ -32,19 +32,23 @@ const Login = ({
 
   const href = isSignedIn ? `${homeLocation}/learn` : `${apiLocation}/signin`;
   return (
-    <Button
-      bsStyle='default'
+    <a
       className={(block ? 'btn-cta-big btn-block' : '') + ' signup-btn btn-cta'}
       data-test-label={dataTestLabel}
       data-playwright-test-label='header-sign-in-button'
       href={href}
+      onClick={() => {
+        callGA({
+          event: 'sign_in'
+        });
+      }}
     >
       <span className='login-btn-icon'>
         <FontAwesomeIcon icon={faRightToBracket} />
         <span className='sr-only'> {t('buttons.sign-in')}</span>
       </span>
       <span className='login-btn-text'>{children || t('buttons.sign-in')}</span>
-    </Button>
+    </a>
   );
 };
 

@@ -3,13 +3,9 @@ id: 657eecb3b368badb3cc7fe4c
 title: Task 60
 challengeType: 22
 dashedName: task-60
-audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
-<!--
-AUDIO REFERENCE: 
-Sarah: I go to at least one convention every year.
--->
+<!-- (Audio) Sarah: I go to at least one convention every year. It's the best moment of the year for me. -->
 
 # --description--
 
@@ -38,3 +34,47 @@ This word is a preposition commonly used in expressions indicating a minimum amo
 ### --feedback--
 
 This word often follows the previous word to form a phrase meaning "the minimum amount or degree".
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-center.png",
+    "characters": [
+      {
+        "character": "Sarah",
+        "position": {"x":50,"y":0,"z":1.4},
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "3.2-3.mp3",
+      "startTime": 1,
+      "startTimestamp": 30.46,
+      "finishTimestamp": 34.22
+    }
+  },
+  "commands": [
+    {
+      "character": "Sarah",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Sarah",
+      "startTime": 1,
+      "finishTime": 4.76,
+      "dialogue": {
+        "text": "I go to at least one convention every year. It's the best moment of the year for me.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Sarah",
+      "opacity": 0,
+      "startTime": 5.26
+    }
+  ]
+}
+```

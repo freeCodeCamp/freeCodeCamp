@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908853
-title: Add id Attributes to Bootstrap Elements
+title: 부트스트랩 요소에 id 속성 추가하기
 challengeType: 0
 forumTopicId: 16639
 dashedName: add-id-attributes-to-bootstrap-elements
@@ -8,23 +8,23 @@ dashedName: add-id-attributes-to-bootstrap-elements
 
 # --description--
 
-Recall that in addition to class attributes, you can give each of your elements an `id` attribute.
+각 요소에는 클래스 속성 외에도 `id` 속성을 부여할 수 있습니다.
 
-Each id must be unique to a specific element and used only once per page.
+한 요소는 하나의 고유한 id만 가질 수 있으며 각 id는 페이지당 한 번만 사용해야 합니다.
 
-Let's give a unique id to each of our `div` elements of class `well`.
+`well`이라는 클래스를 가진 `div` 요소들에 고유한 id들을 부여해봅시다.
 
-Remember that you can give an element an id like this:
+다음과 같은 방식으로 요소에 id를 부여할 수 있습니다:
 
 ```html
 <div class="well" id="center-well">
 ```
 
-Give the well on the left the id of `left-well`. Give the well on the right the id of `right-well`.
+왼쪽에 위치한 well에 `left-well` 이라는 id를 부여하세요. 오른쪽에 위치한 well에는 `right-well` 이라는 id를 부여하세요.
 
 # --hints--
 
-Your left `well` should have the id of `left-well`.
+왼쪽의 `well`에는 `left-well`이라는 id가 있어야 합니다.
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-Your right `well` should have the id of `right-well`.
+오른쪽의 `well`에는 `right-well`이라는 id가 있어야 합니다.
 
 ```js
 assert(

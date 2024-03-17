@@ -14,7 +14,7 @@ dashedName: loops-and-iterations
 
 ## --text--
 
-What will the following code print out?:
+次のコードは何を表示しますか？
 
 ```python
 n = 0

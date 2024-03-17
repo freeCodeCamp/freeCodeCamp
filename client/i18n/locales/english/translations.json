@@ -969,16 +969,16 @@
       "A2 English for Developers": "A2 English for Developers",
       "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "Legacy Front End",
-      "legacy-front-end": "Front End Certification",
+      "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "Legacy Back End",
-      "legacy-back-end": "Back End Certification",
+      "legacy-back-end": "Legacy Back End Certification",
       "Legacy Data Visualization": "Legacy Data Visualization",
-      "legacy-data-visualization": "Data Visualization Certification",
+      "legacy-data-visualization": "Legacy Data Visualization Certification",
       "Legacy Information Security and Quality Assurance": "Legacy Information Security and Quality Assurance",
-      "information-security-and-quality-assurance": "Information Security and Quality Assurance Certification",
+      "information-security-and-quality-assurance": "Legacy Information Security and Quality Assurance Certification",
       "Legacy Full Stack Certification": "Legacy Full Stack Certification",
       "Legacy Full Stack": "Legacy Full Stack",
-      "full-stack": "Full Stack Certification"
+      "full-stack": "Legacy Full Stack Certification"
     }
   },
   "certification-card": {

@@ -1,6 +1,6 @@
 // Use this file as the entry point for component export
 export { Alert, type AlertProps } from './alert';
-export { Button } from './button';
+export { Button, type ButtonProps } from './button';
 export { CloseButton } from './close-button';
 export { Image } from './image';
 export { Table } from './table';
@@ -16,3 +16,4 @@ export { FormGroup, type FormGroupProps } from './form-group';
 export { FormControl } from './form-control';
 export { HelpBlock } from './help-block';
 export { Row } from './row';
+export { Modal, type ModalProps, type HeaderProps } from './modal';
