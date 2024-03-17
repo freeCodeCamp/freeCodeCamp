@@ -14,7 +14,7 @@ npm i
 pnpm run dev
 ```
 
-Now the server should be running on port 3000 and the client on port 8000.
+Now the server should be running on port `3000` and the client on port `8000`.
 
 For now there's not much to see.
 
