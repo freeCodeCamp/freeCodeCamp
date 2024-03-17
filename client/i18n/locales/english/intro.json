@@ -852,6 +852,10 @@
         "intro": [
           "This is one of the required projects to claim your certification."
         ]
+      },
+      "projectile-trajectory": {
+        "title": "Learn Encapsulation by Building a Projectile Trajectory Calculator",
+        "intro": ["", ""]
       }
     }
   },
