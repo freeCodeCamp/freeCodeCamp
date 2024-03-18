@@ -20,7 +20,7 @@ import {
 } from '@freecodecamp/ui';
 
 import { Spacer } from '../components/helpers';
-import './update-email.css';
+import './show-update-email.css';
 import { userSelector } from '../redux/selectors';
 import { updateMyEmail } from '../redux/settings/actions';
 import { maybeEmailRE } from '../utils';
