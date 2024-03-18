@@ -70,16 +70,16 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         await fastify.prisma.userToken.deleteMany({
-          where: { userId: req.user?.id }
+          where: { userId: req.user!.id }
         });
         await fastify.prisma.msUsername.deleteMany({
-          where: { userId: req.user?.id }
+          where: { userId: req.user!.id }
         });
         await fastify.prisma.survey.deleteMany({
-          where: { userId: req.session.user.id }
+          where: { userId: req.user!.id }
         });
         await fastify.prisma.user.delete({
-          where: { id: req.user?.id }
+          where: { id: req.user!.id }
         });
         await req.session.destroy();
         void reply.clearCookie('sessionId');
@@ -105,16 +105,16 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         await fastify.prisma.userToken.deleteMany({
-          where: { userId: req.user?.id }
+          where: { userId: req.user!.id }
         });
         await fastify.prisma.msUsername.deleteMany({
-          where: { userId: req.user?.id }
+          where: { userId: req.user!.id }
         });
         await fastify.prisma.survey.deleteMany({
-          where: { userId: req.session.user.id }
+          where: { userId: req.user!.id }
         });
         await fastify.prisma.user.update({
-          where: { id: req.user?.id },
+          where: { id: req.user!.id },
           data: {
             progressTimestamps: [Date.now()],
             currentChallengeId: '',
@@ -387,7 +387,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         const user = await fastify.prisma.user.findUniqueOrThrow({
-          where: { id: req.session.user.id }
+          where: { id: req.user?.id }
         });
         const { surveyResults } = req.body;
         const { title } = surveyResults;
@@ -456,11 +456,11 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
     async (req, res) => {
       try {
         const userTokenP = fastify.prisma.userToken.findFirst({
-          where: { userId: req.user?.id }
+          where: { userId: req.user!.id }
         });
 
         const userP = fastify.prisma.user.findUnique({
-          where: { id: req.user?.id },
+          where: { id: req.user!.id },
           select: {
             about: true,
             acceptedPrivacyTerms: true,
@@ -512,7 +512,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
         });
 
         const completedSurveysP = fastify.prisma.survey.findMany({
-          where: { userId: req.session.user.id }
+          where: { userId: req.user!.id }
         });
 
         const [userToken, user, completedSurveys] = await Promise.all([
