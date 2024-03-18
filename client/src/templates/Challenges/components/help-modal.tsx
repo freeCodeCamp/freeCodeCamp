@@ -190,7 +190,7 @@ function HelpModal({
               </fieldset>
               <label htmlFor='help-modal-form-description'>
                 {t('forum-help.whats-happening')}
-                <span className='sr-only'>50 character minimum</span>
+                <span className='sr-only'>{t('learn.min-50-max-500')}</span>
               </label>
               <FormControl
                 id='help-modal-form-description'
@@ -241,14 +241,16 @@ function HelpModal({
               variant='primary'
               onClick={() => {
                 setShowHelpForm(false);
+                resetFormValues();
+                closeHelpModal();
               }}
             >
-              {t('buttons.back')}
+              {t('buttons.cancel')}
             </Button>
           </form>
         ) : (
           <>
-            <p className='help-modal-heading'>
+            <p>
               <Trans i18nKey='learn.tried-rsa'>
                 <a href={RSA} rel='noopener noreferrer' target='_blank'>
                   placeholder
