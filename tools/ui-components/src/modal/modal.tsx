@@ -81,6 +81,10 @@ const Modal = ({
 }: ModalProps) => {
   let panelClasses = PANEL_DEFAULT_CLASSES;
 
+  const testAttributes = testId
+    ? { 'data-testid': testId, 'data-playwright-test-label': testId }
+    : {};
+
   if (size === 'medium') {
     panelClasses = panelClasses.concat(' ', 'w-[600px]');
   } else if (size === 'large') {
@@ -103,8 +107,7 @@ const Modal = ({
           {/* Full-screen container of the panel */}
           <div
             className='fixed inset-0 w-screen flex items-start justify-center pt-[30px] pb-[30px] overflow-scroll'
-            data-testid={testId}
-            data-playwright-test-label={testId}
+            {...testAttributes}
           >
             <Transition.Child
               as={Fragment}
