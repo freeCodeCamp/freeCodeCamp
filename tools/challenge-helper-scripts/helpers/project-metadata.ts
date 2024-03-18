@@ -46,7 +46,7 @@ function validateMetaData(): void {
   challengeOrder.forEach(({ id }) => {
     const filePath = `${getProjectPath()}${id}.md`;
     try {
-    fs.accessSync(filePath);
+      fs.accessSync(filePath);
     } catch (e) {
       throw new Error(
         `The file
