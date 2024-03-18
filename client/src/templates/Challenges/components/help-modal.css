@@ -26,3 +26,7 @@
 a {
   text-align: left;
 }
+
+.help-modal-body legend {
+  color: var(--secondary-color);
+}
