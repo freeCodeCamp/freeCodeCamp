@@ -104,6 +104,7 @@ const Modal = ({
           <div
             className='fixed inset-0 w-screen flex items-start justify-center pt-[30px] pb-[30px] overflow-scroll'
             data-testid={testId}
+            data-playwright-test-label={testId}
           >
             <Transition.Child
               as={Fragment}
