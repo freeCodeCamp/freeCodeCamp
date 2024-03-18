@@ -13,11 +13,8 @@ test.describe('Delete Modal component', () => {
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
 
-    // There are two elements with the `dialog` role in the DOM.
-    // This appears to be semantically incorrect and should be resolved
-    // once we have migrated the component to use Dialog from the `ui-components` library.
     const dialogs = await page.getByRole('dialog').all();
-    expect(dialogs).toHaveLength(2);
+    expect(dialogs).toHaveLength(1);
 
     await expect(
       page.getByRole('heading', {
@@ -62,7 +59,7 @@ test.describe('Delete Modal component', () => {
       .click();
 
     const dialogs = await page.getByRole('dialog').all();
-    expect(dialogs).toHaveLength(2);
+    expect(dialogs).toHaveLength(1);
 
     await page
       .getByRole('button', { name: translations.settings.danger.nevermind })
@@ -88,7 +85,7 @@ test.describe('Delete Modal component', () => {
       .click();
 
     const dialogs = await page.getByRole('dialog').all();
-    expect(dialogs).toHaveLength(2);
+    expect(dialogs).toHaveLength(1);
 
     await page
       .getByRole('button', { name: translations.settings.danger.certain })
