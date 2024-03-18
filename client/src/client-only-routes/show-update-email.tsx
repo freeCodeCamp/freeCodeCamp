@@ -2,8 +2,7 @@ import { Link } from 'gatsby';
 import { isString } from 'lodash-es';
 import React, { useState, type FormEvent, type ChangeEvent } from 'react';
 import Helmet from 'react-helmet';
-import type { TFunction } from 'i18next';
-import { withTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -19,30 +18,52 @@ import {
   Button
 } from '@freecodecamp/ui';
 
-import { Spacer } from '../components/helpers';
+import envData from '../../config/env.json';
+import { Spacer, Loader } from '../components/helpers';
 import './show-update-email.css';
-import { userSelector } from '../redux/selectors';
+import { isSignedInSelector, userSelector } from '../redux/selectors';
+import { hardGoTo as navigate } from '../redux/actions';
 import { updateMyEmail } from '../redux/settings/actions';
 import { maybeEmailRE } from '../utils';
 
-interface UpdateEmailProps {
+const { apiLocation } = envData;
+
+interface ShowUpdateEmailProps {
   isNewEmail: boolean;
-  t: TFunction;
   updateMyEmail: (e: string) => void;
+  path?: string;
+  isSignedIn: boolean;
+  navigate: (location: string) => void;
 }
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ email, emailVerified }: { email: string; emailVerified: boolean }) => ({
-    isNewEmail: !email || emailVerified
+  isSignedInSelector,
+  (
+    { email, emailVerified }: { email: string; emailVerified: boolean },
+    isSignedIn
+  ) => ({
+    isNewEmail: !email || emailVerified,
+    isSignedIn
   })
 );
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ updateMyEmail }, dispatch);
+  bindActionCreators({ updateMyEmail, navigate }, dispatch);
 
-function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
+function ShowUpdateEmail({
+  isNewEmail,
+  updateMyEmail,
+  isSignedIn,
+  navigate
+}: ShowUpdateEmailProps) {
+  const { t } = useTranslation();
   const [emailValue, setEmailValue] = useState('');
+
+  if (!isSignedIn) {
+    navigate(`${apiLocation}/signin`);
+    return <Loader fullScreen={true} />;
+  }
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -123,9 +144,6 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
   );
 }
 
-UpdateEmail.displayName = 'Update-Email';
+ShowUpdateEmail.displayName = 'ShowUpdateEmail';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(UpdateEmail));
+export default connect(mapStateToProps, mapDispatchToProps)(ShowUpdateEmail);
