@@ -93,12 +93,7 @@ function ShowUpdateEmail({
       </Helmet>
       <Container>
         <Spacer size='medium' />
-        <h2
-          className='text-center'
-          data-playwright-test-label='update-email-heading'
-        >
-          {t('misc.update-email-2')}
-        </h2>
+        <h2 className='text-center'>{t('misc.update-email-2')}</h2>
         <Row>
           <Col sm={6} smOffset={3}>
             <Row>
