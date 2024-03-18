@@ -22,13 +22,13 @@ test.describe('Help Modal component', () => {
       })
     ).toBeVisible();
     await expect(
-      page.getByRole('heading', {
-        name: `If you've already tried the Read-Search-Ask method, then you can ask for help on the freeCodeCamp forum.`
-      })
+      page.getByText(
+        `If you've already tried the Read-Search-Ask method, then you can ask for help on the freeCodeCamp forum.`
+      )
     ).toBeVisible();
     await expect(
       page.getByText(
-        `Before making a new post please see if your question has already been answered on the forum.`
+        `Before making a new post please check if your question has already been answered on the forum.`
       )
     ).toBeVisible();
 
