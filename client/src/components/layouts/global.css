@@ -66,7 +66,7 @@ h1 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.5rem;
-  font-family: var()--font-family-sans-serif;
+  font-family: var(--font-family-sans-serif);
   margin: 0.6rem 0;
 }
 h2 {
