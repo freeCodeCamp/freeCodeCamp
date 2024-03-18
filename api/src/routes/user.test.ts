@@ -525,6 +525,14 @@ describe('userRoutes', () => {
         expect(response.statusCode).toBe(500);
       });
 
+      // This should help debugging, since this the route returns this if
+      // anything throws in the handler.
+      test('GET does not return the error response if the request is valid', async () => {
+        const response = await superGet('/user/get-session-user');
+
+        expect(response.body).not.toEqual({ user: {}, result: '' });
+      });
+
       test('GET returns username as the result property', async () => {
         const response = await superGet('/user/get-session-user');
 
