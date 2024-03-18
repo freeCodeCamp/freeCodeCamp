@@ -15,7 +15,7 @@ test.describe('Signout Modal component', () => {
       .click();
 
     const dialogs = page.getByRole('dialog');
-    await expect(dialogs).toHaveCount(2);
+    await expect(dialogs).toHaveCount(1);
 
     await expect(page.getByText(translations.signout.heading)).toBeVisible();
     await expect(page.getByText(translations.signout.p1)).toBeVisible();
@@ -41,7 +41,7 @@ test.describe('Signout Modal component', () => {
       .click();
 
     const dialogs = page.getByRole('dialog');
-    await expect(dialogs).toHaveCount(2);
+    await expect(dialogs).toHaveCount(1);
 
     await page
       .getByRole('button', { name: translations.signout.certain })
@@ -60,7 +60,7 @@ test.describe('Signout Modal component', () => {
       .click();
 
     const dialogs = page.getByRole('dialog');
-    await expect(dialogs).toHaveCount(2);
+    await expect(dialogs).toHaveCount(1);
 
     await page
       .getByRole('button', { name: translations.signout.nevermind })
