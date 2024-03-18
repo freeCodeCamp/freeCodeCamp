@@ -7,7 +7,7 @@ import { Spacer } from '../helpers';
 
 function StagingWarningModal(): JSX.Element {
   const { t } = useTranslation();
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(!store.get('acceptedStagingWarning'));
   const handleModalHide = () => {
     setShow(false);
   };
@@ -20,7 +20,7 @@ function StagingWarningModal(): JSX.Element {
       aria-labelledby='modal-title'
       onClose={handleModalHide}
       open={show}
-      data-testid={'staging-warning-modal'}
+      testId={'staging-warning-modal'}
     >
       <Modal.Header showCloseButton={true}>
         <span style={{ fontWeight: 'bold' }}>

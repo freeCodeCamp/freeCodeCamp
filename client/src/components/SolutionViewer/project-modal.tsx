@@ -23,7 +23,7 @@ const ProjectModal = ({
   const { t } = useTranslation();
   return (
     <Modal
-      data-playwright-test-label='project-solution-viewer-modal'
+      testId='project-solution-viewer-modal'
       aria-labelledby='solution-viewer-modal-title'
       onClose={handleSolutionModalHide}
       open={isOpen}
