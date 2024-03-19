@@ -302,7 +302,7 @@ export const schemas = {
         message: Type.Literal('flash.classroom-mode-updated'),
         type: Type.Literal('success')
       }),
-      400: Type.Object({
+      403: Type.Object({
         message: Type.Literal('flash.wrong-updating'),
         type: Type.Literal('danger')
       })

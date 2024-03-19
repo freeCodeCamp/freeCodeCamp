@@ -580,7 +580,14 @@ ${isLinkSentWithinLimitTTL}`
     '/update-my-classroom-mode',
     {
       schema: schemas.updateMyClassroomMode,
-      errorHandler: updateErrorHandler
+      errorHandler: (error, request, reply) => {
+        if (error.validation) {
+          void reply.code(403);
+          void reply.send({ message: 'flash.wrong-updating', type: 'danger' });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
     },
     async (req, reply) => {
       try {
@@ -599,7 +606,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
-        void reply.code(500);
+        void reply.code(403);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
     }
