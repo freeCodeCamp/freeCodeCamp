@@ -81,9 +81,7 @@ const Modal = ({
 }: ModalProps) => {
   let panelClasses = PANEL_DEFAULT_CLASSES;
 
-  const testAttributes = testId
-    ? { 'data-testid': testId, 'data-playwright-test-label': testId }
-    : {};
+  const testAttributes = testId ? { 'data-testid': testId } : {};
 
   if (size === 'medium') {
     panelClasses = panelClasses.concat(' ', 'w-[600px]');

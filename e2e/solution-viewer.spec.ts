@@ -10,10 +10,7 @@ test.describe('Solution Viewer component', () => {
 
     await page.getByRole('button').filter({ hasText: /view/i }).first().click();
 
-    const projectSolutionViewerModal = page.getByTestId(
-      'project-solution-viewer-modal'
-    );
-    await expect(projectSolutionViewerModal).toBeVisible();
+    const projectSolutionViewerModal = page.getByRole('dialog').first();
 
     // The modal should show the solution title...
     await expect(
