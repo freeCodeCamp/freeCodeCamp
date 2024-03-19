@@ -80,9 +80,14 @@ const Modal = ({
   open,
   onClose,
   size = 'medium',
-  variant = 'default'
+  variant = 'default',
+  testId
 }: ModalProps) => {
   let panelClasses = PANEL_DEFAULT_CLASSES;
+
+  const testAttributes = testId
+    ? { 'data-testid': testId, 'data-playwright-test-label': testId }
+    : {};
 
   if (size === 'medium') {
     panelClasses = panelClasses.concat(' ', 'w-[600px]');
@@ -104,7 +109,10 @@ const Modal = ({
           <div aria-hidden className='fixed inset-0 bg-gray-900 opacity-50' />
 
           {/* Full-screen container of the panel */}
-          <div className='fixed inset-0 w-screen flex items-start justify-center pt-[30px]'>
+          <div
+            className='fixed inset-0 w-screen flex items-start justify-center pt-[30px]'
+            {...testAttributes}
+          >
             <Transition.Child
               as={Fragment}
               enter='transition-all duration-300 ease-out'
