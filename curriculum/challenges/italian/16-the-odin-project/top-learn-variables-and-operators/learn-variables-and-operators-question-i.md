@@ -4,6 +4,7 @@ title: Learn Variables and Operators Question I
 challengeType: 15
 dashedName: learn-variables-and-operators-question-i
 ---
+
 # --description--
 
 Increasing or decreasing a number by one is among the most common numerical operations.

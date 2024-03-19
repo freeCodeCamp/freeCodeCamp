@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908849
-title: Add Elements within Your Bootstrap Wells
+title: 부트스트랩 Well 내에서 요소 추가하기
 challengeType: 0
 forumTopicId: 16636
 dashedName: add-elements-within-your-bootstrap-wells
@@ -8,13 +8,13 @@ dashedName: add-elements-within-your-bootstrap-wells
 
 # --description--
 
-Now we're several `div` elements deep on each column of our row. This is as deep as we'll need to go. Now we can add our `button` elements.
+이제 각 행의 각 열마다 몇 개의 `div` 요소가 배치되었습니다. 이 정도로 깊게 들어가는 것으로 충분합니다. 이제 여기에 `button` 요소를 추가하면 됩니다.
 
-Nest three `button` elements within each of your `div` elements having the class name `well`.
+클래스 이름이 `well`인 각각의 `div` 요소 안에 `button` 요소를 세 개씩 배치해주세요.
 
 # --hints--
 
-Three `button` elements should be nested within each of your `div` elements with class `well`.
+3개의 `button` 요소들은 `well`이란 클래스명을 가진 각각의 `div` 요소들 내에 배치되어야 합니다.
 
 ```js
 assert(
@@ -23,13 +23,13 @@ assert(
 );
 ```
 
-You should have a total of 6 `button` elements.
+총 6개의 `button` 요소가 있어야 합니다.
 
 ```js
 assert($('button') && $('button').length > 5);
 ```
 
-All of your `button` elements should have closing tags.
+모든 `button` 요소들에는 닫는 태그가 있어야 합니다.
 
 ```js
 assert(

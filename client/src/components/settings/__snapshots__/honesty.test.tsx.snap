@@ -44,13 +44,10 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = 
       </p>
     </y>
     <Button
-      active={false}
-      aria-disabled={false}
       block={true}
-      bsClass="btn"
-      bsStyle="primary"
       disabled={false}
       onClick={[Function]}
+      variant="primary"
     >
       buttons.agree-honesty
     </Button>
@@ -102,13 +99,10 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted
       </p>
     </y>
     <Button
-      active={false}
-      aria-disabled={true}
       block={true}
-      bsClass="btn"
-      bsStyle="primary"
-      disabled={false}
+      disabled={true}
       onClick={[Function]}
+      variant="primary"
     >
       buttons.accepted-honesty
     </Button>

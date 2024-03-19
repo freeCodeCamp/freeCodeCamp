@@ -4,6 +4,7 @@ title: Learn Variables and Operators Question C
 challengeType: 15
 dashedName: learn-variables-and-operators-question-c
 ---
+
 # --description--
 
 To declare a constant (unchanging) variable, use `const` instead of `let`:

@@ -14,7 +14,7 @@ dashedName: regular-expressions
 
 ## --text--
 
-Which regex matches only a white space character?
+空白文字のみにマッチする正規表現はどれですか？
 
 ## --answers--
 

@@ -14,7 +14,7 @@ dashedName: introduction-hardware-architecture
 
 ## --text--
 
-Where are your programs stored when they are running?
+実行中のプログラムはどこに保存されていますか？
 
 ## --answers--
 

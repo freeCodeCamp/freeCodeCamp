@@ -8,7 +8,7 @@ dashedName: learn-variables-and-operators-question-b
 
 You can think of variables as "storage containers" for data in your code.
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/d39eaf2ca95e80705f703bb218216c10508f5047/foundations/javascript_basics/fundamentals-1/imgs/00.png" alt='the concept of variables in coding as boxes labeled "birthday" that store and provide access to data, specifically a date "16-09-2003"'>
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/variables-and-operators/top-learn-variables-and-operators.png" alt='the concept of variables in coding as boxes labeled "birthday" that store and provide access to data, specifically a date "16-09-2003"'>
 
 A variable is a "named storage" for data. You can use variables to store goodies, visitors, and other data.
 
