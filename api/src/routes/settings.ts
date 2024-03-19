@@ -594,7 +594,7 @@ ${isLinkSentWithinLimitTTL}`
         const classroomMode = req.body.isClassroomAccount;
 
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user!.id },
           data: {
             isClassroomAccount: classroomMode
           }
