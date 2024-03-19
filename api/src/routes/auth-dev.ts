@@ -1,7 +1,11 @@
 import { FastifyPluginCallback } from 'fastify';
 
 import { createAccessToken } from '../utils/tokens';
-import { getRedirectParams } from '../utils/redirection';
+import {
+  getPrefixedLandingPath,
+  getRedirectParams,
+  haveSamePath
+} from '../utils/redirection';
 import { findOrCreateUser } from './helpers/auth-helpers';
 
 /**
@@ -25,7 +29,16 @@ export const devAuthRoutes: FastifyPluginCallback = (
 
     reply.setAccessTokenCookie(createAccessToken(id));
 
-    const { returnTo } = getRedirectParams(req);
+    const params = getRedirectParams(req);
+    let { returnTo } = params;
+    const { origin, pathPrefix } = params;
+    // if returnTo has a trailing slash, we need to remove it before comparing
+    // it to the prefixed landing path
+    if (returnTo.slice(-1) === '/') {
+      returnTo = returnTo.slice(0, -1);
+    }
+    const redirectBase = getPrefixedLandingPath(origin, pathPrefix);
+    returnTo += haveSamePath(redirectBase, returnTo) ? '/learn' : '';
     await reply.redirect(returnTo);
   });
 

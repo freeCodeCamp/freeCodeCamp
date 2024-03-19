@@ -137,9 +137,29 @@ describe('dev login', () => {
       );
     });
 
-    it.todo(
-      'should redirect to /valid-language/learn when signing in from /valid-language'
-    );
+    it('should redirect to /valid-language/learn when signing in from /valid-language', async () => {
+      const res = await superRequest('/signin', { method: 'GET' }).set(
+        'referer',
+        'https://www.freecodecamp.org/espanol'
+      );
+
+      expect(res.status).toBe(302);
+      expect(res.headers.location).toBe(
+        'https://www.freecodecamp.org/espanol/learn'
+      );
+    });
+
+    it('should handle referers with trailing slahes', async () => {
+      const res = await superRequest('/signin', {
+        method: 'GET'
+      }).set('referer', 'https://www.freecodecamp.org/espanol/');
+
+      expect(res.status).toBe(302);
+      expect(res.headers.location).toBe(
+        'https://www.freecodecamp.org/espanol/learn'
+      );
+    });
+
     it('should redirect to /learn by default', async () => {
       const res = await superRequest('/signin', { method: 'GET' });
 
