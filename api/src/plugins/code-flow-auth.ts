@@ -6,7 +6,7 @@ import { type user } from '@prisma/client';
 
 import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
 import { AccessToken } from '../utils/tokens';
-import { allowedOrigins } from '../../config/allowed-origins';
+import { allowedOrigins } from '../utils/allowed-origins';
 
 declare module 'fastify' {
   interface FastifyReply {
