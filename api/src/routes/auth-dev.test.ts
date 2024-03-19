@@ -169,7 +169,7 @@ describe('dev login', () => {
     it('should redirect to / on the client by default', async () => {
       const res = await superRequest('/signout', { method: 'GET' });
 
-      expect(res.headers.location).toBe('http://localhost:8000');
+      expect(res.headers.location).toBe(HOME_LOCATION);
       expect(res.status).toBe(302);
     });
   });
