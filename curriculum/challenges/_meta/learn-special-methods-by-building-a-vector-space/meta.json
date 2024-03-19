@@ -93,40 +93,56 @@
       "title": "Step 20"
     },
     {
-      "id": "65f06d69c77b513eeebb7aee",
+      "id": "65f4520e363e2642f8112e33",
       "title": "Step 21"
     },
     {
-      "id": "65f06e05634e9a3f2436e823",
+      "id": "65f4535bbdb28d436ff3ddc9",
       "title": "Step 22"
     },
     {
-      "id": "65f07b6fd844ae4c9c29bf82",
+      "id": "65f870003444fb1a2ad171f2",
       "title": "Step 23"
     },
     {
-      "id": "65f07ecc29e2ae4ec8309a16",
+      "id": "65f8709620b2ce1a62608f5a",
       "title": "Step 24"
     },
     {
-      "id": "65f0807c3c29824f8e8b084e",
+      "id": "65f8720685ec351abef26740",
       "title": "Step 25"
     },
     {
-      "id": "65f36353d829913bd298856f",
+      "id": "65f872a0fe6aa21b456ad4fe",
       "title": "Step 26"
     },
     {
-      "id": "65f364e9d1193d3cda30af66",
+      "id": "65f87311e390281b7be0f924",
       "title": "Step 27"
     },
     {
-      "id": "65f365e745281f3d452075ef",
+      "id": "65f8749b13774b1d2e4a7fba",
       "title": "Step 28"
     },
     {
-      "id": "65f3f7a623c91510138cc63b",
+      "id": "65f876d17832001e8e1abb05",
       "title": "Step 29"
+    },
+    {
+      "id": "65f93acbb514857003510e79",
+      "title": "Step 30"
+    },
+    {
+      "id": "65f93b67169a9c703264458a",
+      "title": "Step 31"
+    },
+    {
+      "id": "65f93d4647ce2670dc6f095c",
+      "title": "Step 32"
+    },
+    {
+      "id": "65f93e54a9121571dcdd3e79",
+      "title": "Step 33"
     }
   ],
   "helpCategory": "Python"
