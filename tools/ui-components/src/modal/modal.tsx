@@ -26,7 +26,11 @@ const ModalContext = createContext<Pick<ModalProps, 'onClose' | 'variant'>>({
   variant: 'default'
 });
 
-const Header = ({ children, showCloseButton = true }: HeaderProps) => {
+const Header = ({
+  children,
+  showCloseButton = true,
+  closeButtonClassNames
+}: HeaderProps) => {
   const { onClose, variant } = useContext(ModalContext);
 
   let classes = HEADER_DEFAULT_CLASSES;
@@ -45,7 +49,7 @@ const Header = ({ children, showCloseButton = true }: HeaderProps) => {
         >
           {children}
         </Dialog.Title>
-        <CloseButton onClick={onClose} />
+        <CloseButton onClick={onClose} className={closeButtonClassNames} />
       </div>
     );
   }
@@ -95,7 +99,7 @@ const Modal = ({
   return (
     <ModalContext.Provider value={{ onClose, variant }}>
       <Transition.Root show={open} as={Fragment}>
-        <Dialog onClose={onClose} className='relative z-50'>
+        <Dialog onClose={onClose} className='relative z-1050'>
           {/* The backdrop, rendered as a fixed sibling to the panel container */}
           <div aria-hidden className='fixed inset-0 bg-gray-900 opacity-50' />
 
