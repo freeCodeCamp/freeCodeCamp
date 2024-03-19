@@ -233,13 +233,8 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
                   <ChallengeHeading heading={t('learn.assignments')} />
                   <div className='video-quiz-options'>
                     {assignments.map((assignment, index) => (
-                      <label
-                        className='video-quiz-option-label'
-                        htmlFor={`assignment-${index}`}
-                        key={index}
-                      >
+                      <label className='video-quiz-option-label' key={index}>
                         <input
-                          id={`assignment-${index}`}
                           name='assignment'
                           type='checkbox'
                           onChange={event =>

@@ -318,11 +318,9 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                         {assignments.map((assignment, index) => (
                           <label
                             className='video-quiz-option-label'
-                            htmlFor={`assignment-${index}`}
                             key={index}
                           >
                             <input
-                              id={`assignment-${index}`}
                               name='assignment'
                               type='checkbox'
                               onChange={event =>
