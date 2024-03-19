@@ -196,11 +196,7 @@ function TimelineInner({
         </Table>
       )}
       {id && (
-        <Modal
-          aria-labelledby='contained-modal-title'
-          onClose={closeSolution}
-          open={solutionOpen}
-        >
+        <Modal onClose={closeSolution} open={solutionOpen}>
           <Modal.Header showCloseButton={true}>
             {`${username}'s Solution to ${
               idToNameMap.get(id)?.challengeTitle ?? ''

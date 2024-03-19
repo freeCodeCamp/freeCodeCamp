@@ -6,7 +6,6 @@ export interface ModalProps {
   onClose: () => void;
   size?: 'large' | 'medium';
   variant?: 'default' | 'danger';
-  testId?: string;
 }
 
 export interface HeaderProps {

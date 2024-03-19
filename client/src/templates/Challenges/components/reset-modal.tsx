@@ -41,7 +41,7 @@ function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
     callGA({ event: 'pageview', pagePath: '/reset-modal' });
   }
   return (
-    <Modal testId='reset-modal' onClose={close} open={isOpen} variant='danger'>
+    <Modal onClose={close} open={isOpen} variant='danger'>
       <Modal.Header showCloseButton={true}>{t('learn.reset')}</Modal.Header>
       <Modal.Body>
         <div className='text-center'>

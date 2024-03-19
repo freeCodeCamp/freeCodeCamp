@@ -22,13 +22,7 @@ const ProjectModal = ({
 }: ProjectModalProps): JSX.Element => {
   const { t } = useTranslation();
   return (
-    <Modal
-      testId='project-solution-viewer-modal'
-      aria-labelledby='solution-viewer-modal-title'
-      onClose={handleSolutionModalHide}
-      open={isOpen}
-      size='large'
-    >
+    <Modal onClose={handleSolutionModalHide} open={isOpen} size='large'>
       <Modal.Header showCloseButton={true}>
         {t('settings.labels.solution-for', { projectTitle })}
       </Modal.Header>
