@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedd08845
-title: Add Font Awesome Icons to our Buttons
+title: 버튼에 Font Awesome 아이콘 추가하기
 challengeType: 0
 forumTopicId: 16638
 required:
@@ -12,37 +12,37 @@ dashedName: add-font-awesome-icons-to-our-buttons
 
 # --description--
 
-Font Awesome is a convenient library of icons. These icons can be webfonts or vector graphics. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.
+Font Awesome은 간편한 아이콘 라이브러리입니다. 여기서 제공하는 아이콘들은 웹폰트 또는 벡터 그래픽입니다. 아이콘들은 폰트처럼 다룰 수 있습니다. 아이콘 크기를 픽셀로 직접 지정하거나, 부모 HTML 요소의 글꼴 크기와 연계해 지정할 수 있습니다.
 
-You can include Font Awesome in any app by adding the following code to the top of your HTML:
+Font Awesome은 어떤 앱에서든 사용할 수 있으며, 사용하기 위해서는 HTML 파일의 맨 위에 다음 코드를 삽입하면 됩니다.
 
 ```html
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 ```
 
-In this case, we've already added it for you to this page behind the scenes.
+이번 과제에서는, 저희가 이 코드를 이미 추가해 두었습니다.
 
-The `i` element was originally used to make other elements italic, but is now commonly used for icons. You can add the Font Awesome classes to the `i` element to turn it into an icon, for example:
+`i` 요소는 원래 요소들에 이탤릭체를 주기 위해 사용되었지만, 여기서는 주로 아이콘에 사용됩니다. 다음과 같이 Font Awesome 클래스를 `i` 요소에 추가하여 아이콘을 사용할 수 있습니다.
 
 ```html
 <i class="fas fa-info-circle"></i>
 ```
 
-Note that the `span` element is also acceptable for use with icons.
+`span`요소 또한 아이콘과 함께 사용할 수 있습니다.
 
 # --instructions--
 
-Use Font Awesome to add a `thumbs-up` icon to your like button by giving it an `i` element with the classes `fas` and `fa-thumbs-up`. Make sure to keep the text `Like` next to the icon.
+Font Awesome을 사용해 `thumbs-up`아이콘을 좋아요 버튼에 추가해주세요. `fas`클래스, `fa-thumbs-up`클래스를 가진 `i` 요소를 추가해주시면 됩니다. 아이콘 옆의 `Like`라는 텍스트는 유지돼야 합니다.
 
 # --hints--
 
-You should add an `i` element with the classes `fas` and `fa-thumbs-up`.
+`fas`클래스, `fa-thumbs-up` 클래스를 가진 `i` 요소를 추가해주세요.
 
 ```js
 assert($('i').is('.fas.fa-thumbs-up') || $('span').is('.fas.fa-thumbs-up'));
 ```
 
-Your `fa-thumbs-up` icon should be located within the Like button.
+Like 버튼 안에 `fa-thumbs-up`아이콘이 들어있어야 합니다.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-Your `i` element should be nested within your `button` element.
+`i` 요소는 `button` 요소 안에 중첩되어야 합니다.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-Your icon element should have a closing tag.
+아이콘 요소에는 닫는 태그가 있어야 합니다.
 
 ```js
 assert(code.match(/<\/i>|<\/span>/g));

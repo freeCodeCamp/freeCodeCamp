@@ -63,7 +63,7 @@ assert(
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
@@ -97,7 +97,7 @@ assert(
   <div>
     <p>Things cats love:</p>
     <ul>
-      <li>cat nip</li>
+      <li>catnip</li>
       <li>laser pointers</li>
       <li>lasagna</li>
     </ul>

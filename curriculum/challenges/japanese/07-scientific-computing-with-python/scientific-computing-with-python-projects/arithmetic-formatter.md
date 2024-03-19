@@ -1,21 +1,12 @@
 ---
 id: 5e44412c903586ffb414c94c
 title: 計算の縦書き整形プログラム
-challengeType: 10
+challengeType: 23
 forumTopicId: 462359
 dashedName: arithmetic-formatter
 ---
 
 # --description--
-
-<a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">このプロジェクトには Replit スターターコードを使用します</a>。
-
--   まず、Replit でプロジェクトをインポートします。
--   すると、`.replit` ファイルのウィンドウが表示されます。
--   `Use run command` を選択して `Done` ボタンをクリックします。
-
-
-# --instructions--
 
 小学校の算数では計算問題を解きやすくするために縦書きにすることが多くあります。 たとえば「235 + 52」を次のように記述します。
 
@@ -25,7 +16,7 @@ dashedName: arithmetic-formatter
 -----
 ```
 
-計算問題を表す文字列のリストを受け取り、問題を縦書きに整形して返す関数を作成してください。 この関数はオプションで第 2 引数を受け取れるようにしてください。 第 2 引数が `True` に設定されている場合は、解答を表示する必要があります。
+Finish the `arithmetic_arranger` function that receives a list of strings which are arithmetic problems, and returns the problems arranged vertically and side-by-side. この関数はオプションで第 2 引数を受け取れるようにしてください。 第 2 引数が `True` に設定されている場合は、解答を表示する必要があります。
 
 ## 例
 
@@ -62,44 +53,196 @@ arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 
 入力された問題が正しく整形されている場合、この関数は正しい変換結果を返します。それ以外の場合は、ユーザーにとって意味のあるエラーを記述した**文字列**を**返します**。
 
-
 - エラーを返す場合:
-  - 関数に入力した**問題の数が多すぎる**場合。 上限を **5** つとし、それを超える場合は `Error: Too many problems.` (エラー: 問題が多すぎます) を返します。
-  - 関数が受け取ることのできる適切な演算子は**足し算**と**引き算**です。 掛け算と割り算はエラーを返します。 この箇条書きで指示していない他の演算子についてはテストする必要はありません。 次のようなエラーを返します: `Error: Operator must be '+' or '-'.` (エラー: '+' または '-' の演算子を使用してください)。
-  - 数値 (オペランド) にはそれぞれ数字だけしか入れることができません。 数値以外の場合、関数は次のエラーを返します: `Error: Numbers must only contain digits.` (エラー: 数値には数字のみを含める必要があります)。
-  - それぞれのオペランド (演算子の両側の数値) の幅は最大 4 桁です。 それ以外の場合は、次のようなエラー文字列を返します: `Error: Numbers cannot be more than four digits.` (エラー: 数値は 4 桁以内にする必要があります)。
+  - 関数に入力した**問題の数が多すぎる**場合。 The limit is **five**, anything more will return: `'Error: Too many problems.'`
+  - 関数が受け取ることのできる適切な演算子は**足し算**と**引き算**です。 掛け算と割り算はエラーを返します。 この箇条書きで指示していない他の演算子についてはテストする必要はありません。 The error returned will be: `"Error: Operator must be '+' or '-'."`
+  - 数値 (オペランド) にはそれぞれ数字だけしか入れることができません。 Otherwise, the function will return: `'Error: Numbers must only contain digits.'`
+  - それぞれのオペランド (演算子の両側の数値) の幅は最大 4 桁です。 Otherwise, the error string returned will be: `'Error: Numbers cannot be more than four digits.'`
 - ユーザーが問題を正しい形式で入力した場合は、次のルールに従って変換結果を返します。
   - 2 つの項の長い方と演算子の間が、スペース 1 つ分空くようにしてください。演算子は 2 つ目の項と同じ行に置き、両方の項は与えられたとおりの順序に配置してください (1 つ目の項を上に、2 つ目の項を下に配置してください) 。
   - 数値は右揃えにする必要があります。
   - それぞれの問題の間に 4 つのスペースが必要です。
   - それぞれの問題の一番下にダッシュが必要です。 ダッシュは、各問題の全体の長さに沿った長さにする必要があります (上の表示例を参考にしてください)
 
-## 開発
-
-`arithmetic_arranger.py` にコードを記述してください。 開発時には `main.py` を使用して `arithmetic_arranger()` 関数をテストできます。 「Run」ボタンをクリックすると `main.py` が実行されます。
-
-## テスト
-
-このプロジェクトの単体テストは `test_module.py` にあります。 `test_module.py` のテストを `main.py` で実行できるようになっています。 「Run」ボタンを押すと自動的にテストが実行されます。 または、コンソールに `pytest` と入力してテストを実行することもできます。
-
-## 提出
-
-プロジェクトの URL をコピーし、freeCodeCamp に提出してください。
-
 # --hints--
 
-計算問題を正しく整形し、すべてのテストを成功させる必要があります。
+`arithmetic_arranger(["3801 - 2", "123 + 49"])` should return `3801      123\n-    2    +  49\n------    -----`.
 
 ```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
 
+TestCase().assertEqual(arithmetic_arranger(["3801 - 2", "123 + 49"]), '  3801      123\\n-    2    +  49\\n------    -----')`);
+  }
+})
+```
+
+`arithmetic_arranger(["1 + 2", "1 - 9380"])` should return `1         1\n+ 2    - 9380\n---    ------`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["1 + 2", "1 - 9380"]), '  1         1\\n+ 2    - 9380\\n---    ------')`);
+  }
+})
+```
+
+`arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"])` should return `3      3801      45      123\n+ 855    -    2    + 43    +  49\n-----    ------    ----    -----`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]), '    3      3801      45      123\\n+ 855    -    2    + 43    +  49\\n-----    ------    ----    -----')`);
+  }
+})
+```
+
+`arithmetic_arranger(["11 + 4", "3801 - 2999", "1 + 2", "123 + 49", "1 - 9380"])` should return `11      3801      1      123         1\n+  4    - 2999    + 2    +  49    - 9380\n----    ------    ---    -----    ------`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["11 + 4", "3801 - 2999", "1 + 2", "123 + 49", "1 - 9380"]), '  11      3801      1      123         1\\n+  4    - 2999    + 2    +  49    - 9380\\n----    ------    ---    -----    ------')`);
+  }
+})
+```
+
+`arithmetic_arranger(["44 + 815", "909 - 2", "45 + 43", "123 + 49", "888 + 40", "653 + 87"])` should return `'Error: Too many problems.'`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["44 + 815", "909 - 2", "45 + 43", "123 + 49", "888 + 40", "653 + 87"]), 'Error: Too many problems.')`);
+  }
+})
+```
+
+`arithmetic_arranger(["3 / 855", "3801 - 2", "45 + 43", "123 + 49"])` should return `"Error: Operator must be '+' or '-'."`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["3 / 855", "3801 - 2", "45 + 43", "123 + 49"]), "Error: Operator must be '+' or '-'.")`);
+  }
+})
+```
+
+`arithmetic_arranger(["24 + 85215", "3801 - 2", "45 + 43", "123 + 49"])` should return `'Error: Numbers cannot be more than four digits.'`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["24 + 85215", "3801 - 2", "45 + 43", "123 + 49"]), "Error: Numbers cannot be more than four digits.")`);
+  }
+})
+```
+
+`arithmetic_arranger(["98 + 3g5", "3801 - 2", "45 + 43", "123 + 49"])` should return `'Error: Numbers must only contain digits.'`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["98 + 3g5", "3801 - 2", "45 + 43", "123 + 49"]), "Error: Numbers must only contain digits.")`);
+  }
+})
+```
+
+`arithmetic_arranger(["3 + 855", "988 + 40"], True)` should return `3      988\n+ 855    +  40\n-----    -----\n  858     1028`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["3 + 855", "988 + 40"], True), "    3      988\\n+ 855    +  40\\n-----    -----\\n  858     1028")`);
+  }
+})
+```
+
+`arithmetic_arranger(["32 - 698", "1 - 3801", "45 + 43", "123 + 49", "988 + 40"], True)` should return `32         1      45      123      988\n- 698    - 3801    + 43    +  49    +  40\n-----    ------    ----    -----    -----\n -666     -3800      88      172     1028`.
+
+```js
+({
+  test: () => {
+    runPython(`
+from unittest import TestCase
+
+TestCase().assertEqual(arithmetic_arranger(["32 - 698", "1 - 3801", "45 + 43", "123 + 49", "988 + 40"], True), "   32         1      45      123      988\\n- 698    - 3801    + 43    +  49    +  40\\n-----    ------    ----    -----    -----\\n -666     -3800      88      172     1028")`);
+  }
+})
+```
+
+# --seed--
+
+## --seed-contents--
+
+```py
+def arithmetic_arranger(problems, show_answers=False):
+
+    return problems
+
+print(f'\n{arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])}')
 ```
 
 # --solutions--
 
-```js
-/**
-  Backend challenges don't need solutions,
-  because they would need to be tested against a full working project.
-  Please check our contributing guidelines to learn more.
-*/
+```py
+def arithmetic_arranger(problems, result=False):
+
+    lin1 = ""
+    lin2 = ""
+    lin3 = ""
+    lin4 = ""
+
+    if len(problems) > 5:
+        return 'Error: Too many problems.'
+    for problem in problems:
+        [num1, sym, num2] = problem.split()
+        sign = ['+', '-']
+        if sym not in sign:
+            return ("Error: Operator must be '+' or '-'.")
+        if len(num1) > 4 or len(num2) > 4:
+            return ("Error: Numbers cannot be more than four digits.")
+        if not num1.isnumeric() or not num2.isnumeric():
+            return ("Error: Numbers must only contain digits.")
+
+        lin1 += "  " + num1 + "    " if len(num1) >= len(
+            num2) else " " * (len(num2) + 2 - len(num1)) + num1 + "    "
+        lin2 += sym + " " + num2 + "    " if len(num2) >= len(
+            num1) else sym + " " * (len(num1) - len(num2) + 1) + num2 + "    "
+        nmax = (len(num1) + 2) if len(num1) >= len(num2) else (len(num2) + 2)
+        lin3 += "-" * nmax + "    "
+        op = int(num1) + int(num2) if sym == "+" else int(num1) - int(num2)
+        lin4 += (" " * (nmax - len(str(op)))) + str(op) + "    "
+
+    arranged_problems = lin1.rstrip() + "\n" + lin2.rstrip(
+    ) + "\n" + lin3.rstrip()
+    if result:
+        arranged_problems += "\n" + lin4.rstrip()
+
+    return arranged_problems
 ```

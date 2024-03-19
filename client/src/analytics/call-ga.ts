@@ -74,6 +74,15 @@ interface ChallengeFailedEvent {
   challenge_files: ChallengeFiles;
 }
 
+interface UserData {
+  event: 'user_data';
+  user_id: string;
+}
+
+interface SignIn {
+  event: 'sign_in';
+}
+
 export type GAevent =
   | DonationViewEvent
   | DonationEvent
@@ -81,7 +90,9 @@ export type GAevent =
   | RenderTimeEvent
   | PageViewEvent
   | ExperimentViewEvent
-  | ChallengeFailedEvent;
+  | ChallengeFailedEvent
+  | UserData
+  | SignIn;
 
 export default function callGA(payload: GAevent) {
   TagManager.dataLayer({

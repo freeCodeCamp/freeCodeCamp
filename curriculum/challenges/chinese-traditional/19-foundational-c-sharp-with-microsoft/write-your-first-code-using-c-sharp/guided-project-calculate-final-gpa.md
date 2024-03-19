@@ -1,6 +1,6 @@
 ---
 id: 647e236d8acb466c97ccbf01
-title: 引導項目 - 計算最終GPA
+title: 引導項目 - 計算最終 GPA
 challengeType: 19
 dashedName: guided-project-calculate-final-gpa
 ---
