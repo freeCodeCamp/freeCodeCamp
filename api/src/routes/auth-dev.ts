@@ -1,4 +1,4 @@
-import { FastifyPluginCallback } from 'fastify';
+import { FastifyPluginCallback, FastifyReply, FastifyRequest } from 'fastify';
 
 import { createAccessToken } from '../utils/tokens';
 import {
@@ -7,6 +7,9 @@ import {
   haveSamePath
 } from '../utils/redirection';
 import { findOrCreateUser } from './helpers/auth-helpers';
+
+const trimTrailingSlash = (str: string) =>
+  str.endsWith('/') ? str.slice(0, -1) : str;
 
 /**
  * Route handler for development login.
@@ -22,6 +25,17 @@ export const devAuthRoutes: FastifyPluginCallback = (
   _options,
   done
 ) => {
+  async function handleRedirects(req: FastifyRequest, reply: FastifyReply) {
+    const params = getRedirectParams(req);
+    const { origin, pathPrefix } = params;
+    const returnTo = trimTrailingSlash(params.returnTo);
+    const landingUrl = getPrefixedLandingPath(origin, pathPrefix);
+
+    return await reply.redirect(
+      haveSamePath(landingUrl, returnTo) ? `${returnTo}/learn` : returnTo
+    );
+  }
+
   fastify.get('/signin', async (req, reply) => {
     const email = 'foo@bar.com';
 
@@ -29,17 +43,7 @@ export const devAuthRoutes: FastifyPluginCallback = (
 
     reply.setAccessTokenCookie(createAccessToken(id));
 
-    const params = getRedirectParams(req);
-    let { returnTo } = params;
-    const { origin, pathPrefix } = params;
-    // if returnTo has a trailing slash, we need to remove it before comparing
-    // it to the prefixed landing path
-    if (returnTo.slice(-1) === '/') {
-      returnTo = returnTo.slice(0, -1);
-    }
-    const redirectBase = getPrefixedLandingPath(origin, pathPrefix);
-    returnTo += haveSamePath(redirectBase, returnTo) ? '/learn' : '';
-    await reply.redirect(returnTo);
+    await handleRedirects(req, reply);
   });
 
   fastify.get('/signout', async (req, reply) => {
