@@ -1,7 +1,6 @@
-import { Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/ui';
+import { Button, Modal } from '@freecodecamp/ui';
 
 import { Spacer } from '../helpers';
 
@@ -16,19 +15,9 @@ function ResetModal(props: ResetModalProps): JSX.Element {
   const { show, onHide } = props;
 
   return (
-    <Modal
-      aria-labelledby='modal-title'
-      backdrop={true}
-      bsSize='lg'
-      className='text-center'
-      keyboard={true}
-      onHide={onHide}
-      show={show}
-    >
-      <Modal.Header closeButton={true}>
-        <Modal.Title id='modal-title'>
-          {t('settings.danger.reset-heading')}
-        </Modal.Title>
+    <Modal size='large' onClose={onHide} variant='danger' open={show}>
+      <Modal.Header showCloseButton={true}>
+        {t('settings.danger.reset-heading')}
       </Modal.Header>
       <Modal.Body>
         <p>{t('settings.danger.reset-p1')}</p>
