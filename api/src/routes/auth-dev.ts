@@ -1,7 +1,7 @@
 import { FastifyPluginCallback } from 'fastify';
 
 import { createAccessToken } from '../utils/tokens';
-import { HOME_LOCATION } from '../utils/env';
+import { getRedirectParams } from '../utils/redirection';
 import { findOrCreateUser } from './helpers/auth-helpers';
 
 /**
@@ -24,8 +24,9 @@ export const devAuthRoutes: FastifyPluginCallback = (
     const { id } = await findOrCreateUser(fastify, email);
 
     reply.setAccessTokenCookie(createAccessToken(id));
-    const referer = req.validateReferrer();
-    await reply.redirect(referer ?? new URL('learn', HOME_LOCATION).href);
+
+    const { returnTo } = getRedirectParams(req);
+    await reply.redirect(returnTo);
   });
 
   fastify.get('/signout', async (req, reply) => {
@@ -33,8 +34,8 @@ export const devAuthRoutes: FastifyPluginCallback = (
     void reply.clearCookie('csrf_token');
     void reply.clearCookie('_csrf');
 
-    const referer = req.validateReferrer();
-    await reply.redirect(referer ?? HOME_LOCATION);
+    const { returnTo } = getRedirectParams(req);
+    await reply.redirect(returnTo);
   });
   done();
 };
