@@ -576,5 +576,41 @@ ${isLinkSentWithinLimitTTL}`
     }
   );
 
+  fastify.put(
+    '/update-my-classroom-mode',
+    {
+      schema: schemas.updateMyClassroomMode,
+      errorHandler: (error, request, reply) => {
+        if (error.validation) {
+          void reply.code(403);
+          void reply.send({ message: 'flash.wrong-updating', type: 'danger' });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const classroomMode = req.body.isClassroomAccount;
+
+        await fastify.prisma.user.update({
+          where: { id: req.session.user.id },
+          data: {
+            isClassroomAccount: classroomMode
+          }
+        });
+
+        return {
+          message: 'flash.classroom-mode-updated',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(403);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
   done();
 };
