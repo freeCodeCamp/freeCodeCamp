@@ -1,7 +1,7 @@
 import { validateMetaData } from './helpers/project-metadata';
 import { updateTaskMeta, updateTaskMarkdownFiles } from './utils';
 
-const insertChallenge = () => {
+const reorderTasks = () => {
   validateMetaData();
 
   updateTaskMeta();
@@ -11,4 +11,4 @@ const insertChallenge = () => {
   console.log('Finished updating task markdown files.');
 };
 
-void insertChallenge();
+void reorderTasks();

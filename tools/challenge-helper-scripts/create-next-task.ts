@@ -18,6 +18,7 @@ const createNextTask = async () => {
 
   const { challengeType } = await newTaskPrompts();
 
+  // Placeholder title, to be replaced by updateTaskMarkdownFiles
   const options = {
     title: `Task 0`,
     dashedName: 'task-0',
