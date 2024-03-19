@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { customAlphabet } from 'nanoid';
+import { customNanoid } from './ids';
 
 import { JWT_SECRET } from './env';
 
@@ -12,12 +12,6 @@ import { JWT_SECRET } from './env';
 export function encodeUserToken(userToken: string): string {
   return jwt.sign({ userToken }, JWT_SECRET);
 }
-
-// uppercase, lowercase letters and numbers
-const nanoid = customAlphabet(
-  '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  64
-);
 
 export type AccessToken = {
   userId: string;
@@ -38,7 +32,7 @@ export const createAccessToken = (
 ): AccessToken => {
   return {
     userId,
-    id: nanoid(64),
+    id: customNanoid(),
     ttl: ttl ?? 77760000000,
     created: new Date().toISOString()
   };

@@ -1,8 +1,10 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { ObjectId } from 'mongodb';
-import { customAlphabet } from 'nanoid';
 
 import { schemas } from '../schemas';
+// Loopback creates a 64 character string for the user id, this customizes
+// nanoid to do the same.  Any unique key _should_ be fine, though.
+import { customNanoid } from '../utils/ids';
 import {
   normalizeChallenges,
   normalizeProfileUI,
@@ -18,13 +20,6 @@ import {
 import { encodeUserToken } from '../utils/tokens';
 import { trimTags } from '../utils/validation';
 import { generateReportEmail } from '../utils/email-templates';
-
-// Loopback creates a 64 character string for the user id, this customizes
-// nanoid to do the same.  Any unique key _should_ be fine, though.
-const nanoid = customAlphabet(
-  '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  64
-);
 
 /**
  * Helper function to get the api url from the shared transcript link.
@@ -165,7 +160,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     const token = await fastify.prisma.userToken.create({
       data: {
         created: new Date(),
-        id: nanoid(),
+        id: customNanoid(),
         userId: req.user!.id,
         // TODO(Post-MVP): expire after ttl has passed.
         ttl: 77760000000 // 900 * 24 * 60 * 60 * 1000
