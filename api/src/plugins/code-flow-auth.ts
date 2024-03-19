@@ -6,7 +6,6 @@ import { type user } from '@prisma/client';
 
 import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
 import { AccessToken } from '../utils/tokens';
-import { allowedOrigins } from '../utils/allowed-origins';
 
 declare module 'fastify' {
   interface FastifyReply {
@@ -17,7 +16,6 @@ declare module 'fastify' {
   }
 
   interface FastifyRequest {
-    validateReferrer: (this: FastifyRequest) => string | null;
     // TODO: is the full user the correct type here?
     user?: user;
   }
@@ -81,25 +79,6 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
       req.user = user;
     }
   );
-
-  const sanitizeReferer = (referer?: string): string => {
-    if (!referer) throw Error();
-    const { origin, pathname } = new URL(referer);
-    if (!allowedOrigins.includes(origin)) throw Error();
-    return new URL(pathname, origin).href;
-  };
-
-  fastify.decorateRequest('validateReferrer', function (): string | null {
-    const referer = this.headers.referer;
-    let origin = null;
-    try {
-      origin = sanitizeReferer(referer);
-    } catch {
-      this.log.warn(`Invalid referer: ${referer}`);
-    }
-
-    return origin;
-  });
 
   done();
 };
