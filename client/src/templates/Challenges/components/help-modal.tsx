@@ -70,6 +70,7 @@ function CheckboxHelpModal({
         onChange={onChange}
         checked={value}
         aria-label={t(i18nkey)}
+        aria-required='true'
       />
       <Trans i18nKey={i18nkey}>
         <a href={href} rel='noopener noreferrer' target='_blank'>

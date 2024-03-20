@@ -96,7 +96,8 @@
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
     "skip-advertisement": "Skip Advertisement",
-    "back": "Back"
+    "back": "Back",
+    "close-dialog": "Close dialog"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
