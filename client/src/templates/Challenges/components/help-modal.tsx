@@ -138,9 +138,14 @@ function HelpModal({
         resetFormValues();
       }}
       show={isOpen}
+      aria-labelledby='ask-for-help-modal'
     >
-      <Modal.Header className='help-modal-header fcc-modal' closeButton={true}>
-        <Modal.Title className='text-center'>
+      <Modal.Header
+        className='help-modal-header fcc-modal'
+        closeButton={true}
+        closeLabel={t('buttons.close-dialog')}
+      >
+        <Modal.Title id='ask-for-help-modal' className='text-center'>
           {t('buttons.ask-for-help')}
         </Modal.Title>
       </Modal.Header>
@@ -232,6 +237,7 @@ function HelpModal({
               variant='primary'
               type='submit'
               disabled={!canSubmitForm()}
+              {...(!canSubmitForm() && { tabIndex: '-1' })}
             >
               {t('buttons.submit')}
             </Button>
