@@ -237,7 +237,7 @@ function HelpModal({
               variant='primary'
               type='submit'
               disabled={!canSubmitForm()}
-              {...(!canSubmitForm() && { tabIndex: '-1' })}
+              {...(!canSubmitForm() && { tabIndex: -1 })}
             >
               {t('buttons.submit')}
             </Button>
