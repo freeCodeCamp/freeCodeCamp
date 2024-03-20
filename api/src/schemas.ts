@@ -508,6 +508,43 @@ export const schemas = {
       })
     }
   },
+  // Email subscription endpoints:
+  unsubscribe: {
+    params: Type.Object({
+      unsubscribeId: Type.String({
+        minLength: 1
+      })
+    }),
+    response: {
+      302: Type.Object({
+        // this doesn't seem to work
+        headers: Type.Object({
+          location: Type.String()
+        })
+      }),
+      500: Type.Object({
+        error: Type.String()
+      })
+    }
+  },
+  resubscribe: {
+    params: Type.Object({
+      unsubscribeId: Type.String({
+        minLength: 1
+      })
+    }),
+    response: {
+      302: Type.Object({
+        // this doesn't seem to work
+        headers: Type.Object({
+          location: Type.String()
+        })
+      }),
+      500: Type.Object({
+        error: Type.String()
+      })
+    }
+  },
   // Deprecated endpoints:
   deprecatedEndpoints: {
     response: {
