@@ -44,10 +44,7 @@ export function SolutionDisplayWidget({
     </Button>
   );
   const ShowProjectAndGithubLinkForCertification = (
-    <Dropdown
-      id={`dropdown-for-${id}-${randomIdSuffix}`}
-      data-playwright-test-label='project-link'
-    >
+    <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
       <Dropdown.Toggle className='btn-invert'>
         {viewText}{' '}
         <span className='sr-only'>
@@ -89,7 +86,6 @@ export function SolutionDisplayWidget({
       // as this component is only rendered if `solution` is truthy.
       href={solution ?? undefined}
       rel='noopener noreferrer'
-      data-playwright-test-label='project-link'
       target='_blank'
     >
       {viewText}{' '}

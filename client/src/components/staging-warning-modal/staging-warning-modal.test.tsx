@@ -30,13 +30,12 @@ describe('StagingWarningModal', () => {
     render(<StagingWarningModal />);
     fireEvent.click(screen.getByText('Close'));
 
-    const modal = screen.queryByRole('dialog');
-    expect(modal).not.toBeInTheDocument();
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
   it('displays the correct modal content', () => {
     render(<StagingWarningModal />);
-    const modalContent = screen.queryByRole('dialog');
+    const modalContent = screen.getByRole('dialog');
     expect(modalContent).toHaveTextContent('staging-warning.heading');
     expect(modalContent).toHaveTextContent('staging-warning.p1');
     expect(modalContent).toHaveTextContent('staging-warning.p2');
@@ -49,7 +48,6 @@ describe('StagingWarningModal', () => {
     fireEvent.click(screen.getByTestId('accepts-warning'));
     expect(store.get('acceptedStagingWarning')).toBe(true);
 
-    const modal = screen.queryByRole('dialog');
-    expect(modal).not.toBeInTheDocument();
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 });

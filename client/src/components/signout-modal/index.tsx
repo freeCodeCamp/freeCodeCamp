@@ -46,16 +46,8 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
   };
 
   return (
-    <Modal
-      aria-labelledby='modal-title'
-      size='large'
-      variant='danger'
-      open={show}
-      onClose={handleModalHide}
-    >
-      <Modal.Header showCloseButton={true}>
-        <span style={{ fontWeight: 'bold' }}>{t('signout.heading')}</span>
-      </Modal.Header>
+    <Modal size='large' variant='danger' open={show} onClose={handleModalHide}>
+      <Modal.Header showCloseButton={true}>{t('signout.heading')}</Modal.Header>
       <Modal.Body>
         <p>
           <span style={{ fontWeight: 'bold' }}>{t('signout.p1')}</span>

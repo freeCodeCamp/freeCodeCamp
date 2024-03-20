@@ -13,17 +13,16 @@ test.describe('Delete Modal component', () => {
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
 
-    const dialogs = await page.getByRole('dialog').all();
-    expect(dialogs).toHaveLength(1);
-
     await expect(
-      page.getByRole('heading', {
+      page.getByRole('dialog', {
         name: translations.settings.danger['delete-title']
       })
     ).toBeVisible();
+
     await expect(
       page.getByText(translations.settings.danger['delete-p1'])
     ).toBeVisible();
+
     await expect(
       page.getByText(translations.settings.danger['delete-p2'])
     ).toBeVisible();
@@ -58,16 +57,21 @@ test.describe('Delete Modal component', () => {
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
 
-    const dialogs = await page.getByRole('dialog').all();
-    expect(dialogs).toHaveLength(1);
+    await expect(
+      page.getByRole('dialog', {
+        name: translations.settings.danger['delete-title']
+      })
+    ).toBeVisible();
 
     await page
       .getByRole('button', { name: translations.settings.danger.nevermind })
       .click();
 
-    for (const dialog of dialogs) {
-      await expect(dialog).not.toBeVisible();
-    }
+    await expect(
+      page.getByRole('dialog', {
+        name: translations.settings.danger['delete-title']
+      })
+    ).not.toBeVisible();
   });
 
   test('should close the modal and redirect to /learn after the user clicks delete', async ({
@@ -84,16 +88,21 @@ test.describe('Delete Modal component', () => {
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
 
-    const dialogs = await page.getByRole('dialog').all();
-    expect(dialogs).toHaveLength(1);
+    await expect(
+      page.getByRole('dialog', {
+        name: translations.settings.danger['delete-title']
+      })
+    ).toBeVisible();
 
     await page
       .getByRole('button', { name: translations.settings.danger.certain })
       .click();
 
-    for (const dialog of dialogs) {
-      await expect(dialog).not.toBeVisible();
-    }
+    await expect(
+      page.getByRole('dialog', {
+        name: translations.settings.danger['delete-title']
+      })
+    ).not.toBeVisible();
 
     await expect(page).toHaveURL(/.*\/learn\/?/);
   });

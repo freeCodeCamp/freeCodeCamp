@@ -50,7 +50,6 @@ const ExamResultsModal = ({
 
   return (
     <Modal
-      aria-labelledby='solution-viewer-modal-title'
       onClose={() => {
         closeModal('examResults');
       }}
