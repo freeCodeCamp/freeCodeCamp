@@ -1,7 +1,7 @@
 const plugin = require('tailwindcss/plugin');
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: 'jit',
   corePlugins: {
     preflight: false
   },
@@ -98,7 +98,8 @@ module.exports = {
         '43-px': '43px'
       },
       zIndex: {
-        2: '2'
+        2: '2',
+        50: '50'
       }
     }
   },

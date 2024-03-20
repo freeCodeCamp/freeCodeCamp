@@ -292,8 +292,8 @@ class InternetSettings extends Component<InternetProps, InternetState> {
               </FormGroup>
             </div>
             <BlockSaveButton
-              aria-disabled={isDisabled}
-              bgSize='lg'
+              disabled={isDisabled}
+              bgSize='large'
               {...(isDisabled && { tabIndex: -1 })}
             >
               {t('buttons.save')}{' '}

@@ -94,7 +94,7 @@ export function interruptCodeExecution(): void {
   navigator.serviceWorker.controller?.postMessage(
     JSON.stringify({
       type: 'cancel',
-      value: '' + resetId // Converting to string for convenience. (TODO: check if necesary)
+      value: '' + resetId // Converting to string for convenience. (TODO: check if necessary)
     })
   );
 

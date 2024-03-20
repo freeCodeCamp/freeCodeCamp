@@ -10,6 +10,7 @@ import { Spacer } from '../helpers';
 import { PaymentContext } from '../../../../shared/config/donation-settings'; //
 import donationAnimation from '../../assets/images/donation-bear-animation.svg';
 import supporterBear from '../../assets/images/supporter-bear.svg';
+import callGA from '../../analytics/call-ga';
 import MultiTierDonationForm from './multi-tier-donation-form';
 import { ModalBenefitList } from './donation-text-components';
 
@@ -19,7 +20,6 @@ type DonationModalBodyProps = {
   activeDonors?: number;
   closeDonationModal: typeof closeDonationModal;
   recentlyClaimedBlock: RecentlyClaimedBlock;
-  executeGA: (arg: { event: string; action: string }) => void;
 };
 
 const Illustration = ({
@@ -116,17 +116,10 @@ function CloseButtonRow({
   );
 }
 
-const Benefits = ({
-  setShowForm,
-  executeGA
-}: {
-  setShowForm: (arg: boolean) => void;
-  executeGA: (arg: { event: string; action: string }) => void;
-}) => {
+const Benefits = ({ setShowForm }: { setShowForm: (arg: boolean) => void }) => {
   const { t } = useTranslation();
-
   const handleBecomeSupporterClick = () => {
-    executeGA({
+    callGA({
       event: 'donation_related',
       action: `Modal Become Supporter Click`
     });
@@ -203,8 +196,7 @@ const BecomeASupporterConfirmation = ({
   showForm,
   setShowHeaderAndFooter,
   handleProcessing,
-  setShowForm,
-  executeGA
+  setShowForm
 }: {
   donationAnimationFlag: boolean;
   recentlyClaimedBlock: RecentlyClaimedBlock;
@@ -215,7 +207,6 @@ const BecomeASupporterConfirmation = ({
   setShowHeaderAndFooter: (arg: boolean) => void;
   handleProcessing: () => void;
   setShowForm: (arg: boolean) => void;
-  executeGA: (arg: { event: string; action: string }) => void;
 }) => {
   return (
     <div className='no-delay-fade-in'>
@@ -242,7 +233,7 @@ const BecomeASupporterConfirmation = ({
           isAnimationEnabled={donationAnimationFlag}
         />
       ) : (
-        <Benefits setShowForm={setShowForm} executeGA={executeGA} />
+        <Benefits setShowForm={setShowForm} />
       )}
       {(showHeaderAndFooter || donationAttempted) && (
         <CloseButtonRow
@@ -256,8 +247,7 @@ const BecomeASupporterConfirmation = ({
 
 function DonationModalBody({
   closeDonationModal,
-  recentlyClaimedBlock,
-  executeGA
+  recentlyClaimedBlock
 }: DonationModalBodyProps): JSX.Element {
   const [donationAttempted, setDonationAttempted] = useState(false);
   const [showHeaderAndFooter, setShowHeaderAndFooter] = useState(true);
@@ -293,7 +283,6 @@ function DonationModalBody({
             setShowHeaderAndFooter={setShowHeaderAndFooter}
             handleProcessing={handleProcessing}
             setShowForm={setShowForm}
-            executeGA={executeGA}
           />
         )}
       </div>

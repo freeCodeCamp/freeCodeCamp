@@ -12,7 +12,6 @@ import { createAppMountSaga } from './app-mount-saga';
 import { createDonationSaga } from './donation-saga';
 import failedUpdatesEpic from './failed-updates-epic';
 import { createFetchUserSaga } from './fetch-user-saga';
-import { createGaSaga } from './ga-saga';
 import hardGoToEpic from './hard-go-to-epic';
 import { createReportUserSaga } from './report-user-saga';
 import { createSaveChallengeSaga } from './save-challenge-saga';
@@ -92,7 +91,6 @@ export const sagas = [
   ...createAcceptTermsSaga(actionTypes),
   ...createAppMountSaga(actionTypes),
   ...createDonationSaga(actionTypes),
-  ...createGaSaga(actionTypes),
   ...createFetchUserSaga(actionTypes),
   ...createShowCertSaga(actionTypes),
   ...createReportUserSaga(actionTypes),

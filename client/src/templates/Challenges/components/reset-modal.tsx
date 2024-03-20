@@ -8,9 +8,9 @@ import { createSelector } from 'reselect';
 import { Button } from '@freecodecamp/ui';
 
 // Local Utilities
-import { executeGA } from '../../../redux/actions';
 import { closeModal, resetChallenge } from '../redux/actions';
 import { isResetModalOpenSelector } from '../redux/selectors';
+import callGA from '../../../analytics/call-ga';
 
 // Styles
 import './reset-modal.css';
@@ -18,7 +18,6 @@ import './reset-modal.css';
 // Types
 interface ResetModalProps {
   close: () => void;
-  executeGA: () => void;
   isOpen: boolean;
   reset: () => void;
 }
@@ -35,7 +34,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       close: () => closeModal('reset'),
-      executeGA,
       reset: () => resetChallenge()
     },
     dispatch
@@ -49,7 +47,7 @@ function withActions(...fns: Array<() => void>) {
 function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
   const { t } = useTranslation();
   if (isOpen) {
-    executeGA({ event: 'pageview', pagePath: '/reset-modal' });
+    callGA({ event: 'pageview', pagePath: '/reset-modal' });
   }
   return (
     <Modal

@@ -1,60 +1,60 @@
 ---
 id: bd7158d8c442eddfaeb5bd17
-title: Build a JavaScript Calculator
+title: 자바스크립트 계산기 만들기
 challengeType: 3
 forumTopicId: 301371
 dashedName: build-a-javascript-calculator
 ---
 
 # --description--
-**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
+**참고:** **React 18은이 프로젝트의 테스트와 알려진 호환성 문제가 있습니다 (자세한 내용은 [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922) 참조).**
 
-**Objective:** Build an app that is functionally similar to this: <a href="https://javascript-calculator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://javascript-calculator.freecodecamp.rocks/</a>.
+**목표:** <a href="https://javascript-calculator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://javascript-calculator.freecodecamp.rocks/</a>와 기능적으로 유사한 앱을 만드세요.
 
-Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
+아래 유저 스토리를 충족하고 모든 테스트를 통과시키세요. 어떤 라이브러리나 API를 사용해도 좋습니다. 원하는 스타일로 꾸며주세요.
 
-You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
+이 프로젝트를 완료하기 위해 HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux 및 jQuery를 자유롭게 섞어서 사용할 수 있습니다. 프론트엔드 프레임워크(예: React)는 꼭 사용해야 합니다. 이 섹션은 프론트엔드 프레임워크를 학습하는 것과 관련되어 있기 때문입니다. 위에 나열된 기술 이외의 추가 기술은 권장되지 않으며 사용 시 개인 책임하에 사용하세요. Angular 및 Vue와 같은 다른 프론트엔드 프레임워크를 지원하는 것을 고려 중이지만 현재는 지원되지 않습니다. 이 프로젝트에 제안된 기술 스택을 사용하는 모든 이슈 보고서를 수용하고 문제를 해결하겠습니다. 즐거운 코딩하세요!
 
-**User Story #1:** My calculator should contain a clickable element containing an `=` (equal sign) with a corresponding `id="equals"`.
+**유저 스토리 #1:** 나의 계산기에는 `=` (등호)를 포함한 클릭 가능한 요소가 있어야 하며, 이에 해당하는 `id="equals"`가 있어야 합니다.
 
-**User Story #2:** My calculator should contain 10 clickable elements containing one number each from 0-9, with the following corresponding IDs: `id="zero"`, `id="one"`, `id="two"`, `id="three"`, `id="four"`, `id="five"`, `id="six"`, `id="seven"`, `id="eight"`, and `id="nine"`.
+**유저 스토리 #2:** 나의 계산기에는 0부터 9까지 각각 하나의 숫자를 포함한 10개의 클릭 가능한 요소가 있어야 하며, 각각의 요소에는 다음과 같은 대응하는 ID가 있어야 합니다. `id="zero"`, `id="one"`, `id="two"`, `id="three"`, `id="four"`, `id="five"`, `id="six"`, `id="seven"`, `id="eight"`, 그리고 `id="nine"`.
 
-**User Story #3:** My calculator should contain 4 clickable elements each containing one of the 4 primary mathematical operators with the following corresponding IDs: `id="add"`, `id="subtract"`, `id="multiply"`, `id="divide"`.
+**유저 스토리 #3:** 나의 계산기에는 4개의 클릭 가능한 요소가 있어야 하며, 각각은 4개의 주요 수학 연산자 중 하나를 포함하고 있어야 하며, 다음과 같은 대응하는 ID가 있어야 합니다. `id="add"`, `id="subtract"`, `id="multiply"`, `id="divide"`.
 
-**User Story #4:** My calculator should contain a clickable element containing a `.` (decimal point) symbol with a corresponding `id="decimal"`.
+**유저 스토리 #4:** 나의 계산기에는 `.` (소수점) 기호를 포함한 클릭 가능한 요소가 있어야 하며, 이에 대응하는 `id="decimal"`이 있어야 합니다.
 
-**User Story #5:** My calculator should contain a clickable element with an `id="clear"`.
+**유저 스토리 #5:** 계산기에는 `id="clear"`를 가진 클릭 가능한 요소가 있어야 합니다.
 
-**User Story #6:** My calculator should contain an element to display values with a corresponding `id="display"`.
+**유저 스토리 #6:** 계산기에는 값이 표시되는 요소가 있어야 하며, 이에 대응하는 `id="display"`가 있어야 합니다.
 
-**User Story #7:** At any time, pressing the `clear` button clears the input and output values, and returns the calculator to its initialized state; 0 should be shown in the element with the id of `display`.
+**유저 스토리 #7:** 언제든지 `clear` 버튼을 누르면 입력 및 출력 값이 지워지고 계산기가 초기화 상태로 돌아가야 하며, `display`라는 id를 가진 요소에는 0이 표시되어야 합니다.
 
-**User Story #8:** As I input numbers, I should be able to see my input in the element with the id of `display`.
+**유저 스토리 #8:** 숫자를 입력하는 동안 입력한 내용을 `display`라는 id를 가진 요소에 볼 수 있어야 합니다.
 
-**User Story #9:** In any order, I should be able to add, subtract, multiply and divide a chain of numbers of any length, and when I hit `=`, the correct result should be shown in the element with the id of `display`.
+**유저 스토리 #9:** 아무 순서로든지 어떤 길이의 숫자 체인에 대해 덧셈, 뺄셈, 곱셈 및 나눗셈을 수행할 수 있어야 하며, `=`를 누르면 올바른 결과가 `display`라는 id를 가진 요소에 표시되어야 합니다.
 
-**User Story #10:** When inputting numbers, my calculator should not allow a number to begin with multiple zeros.
+**유저 스토리 #10:** 숫자 입력 중에 계산기는 여러 개의 0으로 시작하는 숫자를 허용해서는 안 됩니다.
 
-**User Story #11:** When the decimal element is clicked, a `.` should append to the currently displayed value; two `.` in one number should not be accepted.
+**유저 스토리 #11:** 소수점 요소를 클릭하면 현재 표시된 값에 `.`이 추가되어야 하며, 하나의 숫자에 두 개 이상의 `.`은 허용되지 않아야 합니다.
 
-**User Story #12:** I should be able to perform any operation (`+`, `-`, `*`, `/`) on numbers containing decimal points.
+**유저 스토리 #12:** 계산기는 소수점을 포함하는 숫자에 대해 어떤 연산(`+`, `-`, `*`, `/`)이든 수행할 수 있어야 합니다.
 
-**User Story #13:** If 2 or more operators are entered consecutively, the operation performed should be the last operator entered (excluding the negative (`-`) sign). For example, if `5 + * 7 =` is entered, the result should be `35` (i.e. `5 * 7`); if `5 * - 5 =` is entered, the result should be `-25` (i.e. `5 * (-5)`).
+**유저 스토리 #13:** 2개 이상의 연산자가 연속으로 입력되면 수행되는 연산은 마지막으로 입력된 연산자여야 하며(음의 부호(`-`)를 제외), 그 외의 연속된 연산자는 허용되지 않아야 합니다. 예를 들어, `5 + * 7 =`를 입력하면 결과는 `35`여야 합니다 (즉, `5 * 7`); 만약 `5 * - 5 =`를 입력하면 결과는 `-25`여야 합니다 (즉, `5 * (-5)`).
 
-**User Story #14:** Pressing an operator immediately following `=` should start a new calculation that operates on the result of the previous evaluation.
+**유저 스토리 #14:** `=` 바로 뒤에 연산자를 누르면 이전 평가의 결과를 기반으로 새로운 계산을 시작해야 합니다.
 
-**User Story #15:** My calculator should have several decimal places of precision when it comes to rounding (note that there is no exact standard, but you should be able to handle calculations like `2 / 7` with reasonable precision to at least 4 decimal places).
+**유저 스토리 #15:** 계산기는 반올림에 대해 소수 자릿수를 여러 개 가지고 있어야 합니다 (정확한 표준은 없지만, 최소 4자리까지는 합리적인 정밀도로 계산할 수 있어야 합니다. 예: `2 / 7`와 같은 계산).
 
-**Note On Calculator Logic:** It should be noted that there are two main schools of thought on calculator input logic: <dfn>immediate execution logic</dfn> and <dfn>formula logic</dfn>. Our example utilizes formula logic and observes order of operation precedence, immediate execution does not. Either is acceptable, but please note that depending on which you choose, your calculator may yield different results than ours for certain equations (see below example). As long as your math can be verified by another production calculator, please do not consider this a bug.
+**계산기 논리에 대한 참고:** 계산기 입력 논리에는 <dfn>즉시 실행 논리</dfn> 및 <dfn>수식 논리</dfn> 두 가지 주요 유형이 있습니다. 우리의 예시는 수식 논리를 사용하며 연산 순서 우선 순위를 준수합니다. 즉시 실행 논리는 이를 준수하지 않습니다. 두 가지 방식 중 어느 것이든 허용되지만, 선택한 방식에 따라 특정 방정식에 대해 결과가 다를 수 있다는 점을 주의하세요 (아래 예시 참조). 수학 계산이 다른 실제 계산기에서 검증될 수 있다면, 이를 버그로 간주하지 마십시오.
 
-**EXAMPLE:** `3 + 5 x 6 - 2 / 4 =`
+**예시:** `3 + 5 x 6 - 2 / 4 =`
 
--   **Immediate Execution Logic:** `11.5`
--   **Formula/Expression Logic:** `32.5`
+-   **즉시 실행 논리:** `11.5`
+-   **수식/표현 논리:** `32.5`
 
-You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+프로젝트를 만들려면 <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">이 CodePen 템플릿을 사용</a>하여 `Save`를 클릭하여 자신의 펜을 만들 수 있습니다. 또는 원하는 환경에서 테스트를 실행하기 위해 이 CDN 링크를 사용할 수 있습니다.`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Once you're done, submit the URL to your working project with all its tests passing.
+완료되면 모든 테스트가 통과되는 작동 프로젝트의 URL을 제출하십시오.
 
 # --solutions--
 

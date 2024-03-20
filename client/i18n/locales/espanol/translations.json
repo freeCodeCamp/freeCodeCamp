@@ -448,8 +448,8 @@
     "challenges-completed": "{{completedCount}} de {{totalChallenges}} desafíos completados",
     "season-greetings-fcc": "Saludos de Temporada de la comunidad freeCodeCamp 🎉",
     "if-getting-value": "Si estás obteniendo mucho de freeCodeCamp, ahora es un buen momento para donar con el fin de apoyar nuestra misión sin fines de lucro.",
-    "building-a-university": "Estamos construyendo un programa gratuito de grado universitario en ciencias de la computación",
-    "if-help-university": "Ya hemos hecho un montón de progresos. Apoyamos nuestra caridad con el largo camino por delante.",
+    "building-a-university": "We're Building a Free Computer Science University Degree Program 🎉",
+    "if-help-university": "We've already made a ton of progress. Donate now to help our charity with the road ahead.",
     "preview-external-window": "Vista previa mostrada actualmente en ventana externa.",
     "fill-in-the-blank": "Fill in the blank",
     "blank": "blank",
@@ -969,16 +969,16 @@
       "A2 English for Developers": "A2 English for Developers",
       "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "Legacy Front End",
-      "legacy-front-end": "Front End Certification",
+      "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "Legacy Back End",
-      "legacy-back-end": "Back End Certification",
+      "legacy-back-end": "Legacy Back End Certification",
       "Legacy Data Visualization": "Legacy Data Visualization",
-      "legacy-data-visualization": "Data Visualization Certification",
+      "legacy-data-visualization": "Legacy Data Visualization Certification",
       "Legacy Information Security and Quality Assurance": "Certificado de Información de Legado y Control de Calidad",
-      "information-security-and-quality-assurance": "Certificación de Garantía de Calidad Y Seguridad de la información",
+      "information-security-and-quality-assurance": "Legacy Information Security and Quality Assurance Certification",
       "Legacy Full Stack Certification": "Certificado de Legacy Full Stack",
       "Legacy Full Stack": "Legacy Full Stack",
-      "full-stack": "Certificado de Full Stack"
+      "full-stack": "Legacy Full Stack Certification"
     }
   },
   "certification-card": {

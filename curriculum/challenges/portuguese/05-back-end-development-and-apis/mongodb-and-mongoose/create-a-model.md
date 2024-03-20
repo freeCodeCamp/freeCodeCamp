@@ -12,7 +12,7 @@ dashedName: create-a-model
 
 Em primeiro lugar, precisamos de um schema. Cada schema mapeia para uma coleção do MongoDB. Ele define a forma dos documentos dentro daquela coleção. Os schemas são os blocos que compõem os modelos. Eles podem ser aninhados para criar modelos complexos, mas, neste caso, vamos simplificar as coisas. Um modelo permite que você crie instâncias de seus objetos, chamados documentos.
 
-Gitpod is a real server, and in real servers, the interactions with the database happen in handler functions. Estas funções são executadas quando algum evento acontece (por exemplo, alguém atinge um endpoint na sua API). Seguiremos a mesma abordagem nestes exercícios. A função `done()` é um callback que nos diz que podemos prosseguir após concluir uma operação assíncrona, como inserir, pesquisar, atualizar ou excluir. Ela segue a convenção do Node e deve ser chamada como `done(null, data)` quando houver sucesso, ou `done(err)` quando houver erro.
+O Gitpod é um servidor real. Em servidores reais, as interações com o banco de dados acontecem em funções de manipulador. Estas funções são executadas quando algum evento acontece (por exemplo, alguém atinge um endpoint na sua API). Seguiremos a mesma abordagem nestes exercícios. A função `done()` é um callback que nos diz que podemos prosseguir após concluir uma operação assíncrona, como inserir, pesquisar, atualizar ou excluir. Ela segue a convenção do Node e deve ser chamada como `done(null, data)` quando houver sucesso, ou `done(err)` quando houver erro.
 
 Aviso - Ao interagir com serviços remotos, podem ocorrer erros!
 

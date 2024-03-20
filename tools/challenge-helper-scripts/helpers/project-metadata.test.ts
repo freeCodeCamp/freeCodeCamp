@@ -130,7 +130,14 @@ dashedName: step-3
       process.env.CALLING_DIR = projectPath;
 
       expect(() => validateMetaData()).toThrow(
-        `ENOENT: no such file or directory, access '${projectPath}/1.md'`
+        `The file
+${projectPath}/1.md
+does not exist, but is required by the challengeOrder of
+${metaPath}/meta.json
+
+To fix this, you can rename the file containing id: 1 to 1.md
+If there is no file for this id, then either the challengeOrder needs to be updated, or the file needs to be created.
+`
       );
     });
 

@@ -1,4 +1,4 @@
-import { Button } from '@freecodecamp/react-bootstrap';
+import { Button } from '@freecodecamp/ui';
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import ShallowRenderer from 'react-test-renderer/shallow';

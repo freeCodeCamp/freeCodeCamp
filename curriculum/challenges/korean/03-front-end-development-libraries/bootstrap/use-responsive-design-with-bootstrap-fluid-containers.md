@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08712
-title: Use Responsive Design with Bootstrap Fluid Containers
+title: 부트스트랩 유동 컨테이너로 반응형 디자인 사용하기
 challengeType: 0
 forumTopicId: 18362
 dashedName: use-responsive-design-with-bootstrap-fluid-containers
@@ -8,31 +8,31 @@ dashedName: use-responsive-design-with-bootstrap-fluid-containers
 
 # --description--
 
-In the HTML5 and CSS section of freeCodeCamp we built a Cat Photo App. Now let's go back to it. This time, we'll style it using the popular Bootstrap responsive CSS framework.
+프리코드캠프의 HTML5와 CSS 섹션에서 고양이 사진 앱을 만들었습니다. 이제 그 앱으로 돌아가보겠습니다. 이번에는 자주 사용되는 부트스트랩 반응형 CSS 프레임워크를 사용하여 스타일링해볼 것입니다.
 
-Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - hence the name <dfn>responsive design</dfn>.
+부트스트랩은 화면의 너비를 알아내고 HTML 요소의 크기를 재종하여 반응할 것입니다. 이로 인해 <dfn>반응형 디자인</dfn>이라고 불립니다.
 
-With responsive design, there is no need to design a mobile version of your website. It will look good on devices with screens of any width.
+반응형 디자인 덕분에 웹사이트의 모바일 디자인을 따로 할 필요가 없습니다. 다양한 화면 크기를 가진 기기들에서 알맞게 보일 것입니다.
 
-You can add Bootstrap to any app by adding the following code to the top of your HTML:
+HTML에 다음 코드를 추가하여 어떤 앱에든지 부트스트랩을 추가할 수 있습니다.
 
 ```html
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 ```
 
-In this case, we've already added it for you to this page behind the scenes. Note that using either `>` or `/>` to close the `link` tag is acceptable.
+이 경우에는 이 페이지를 위하여 이미 부트스트랩을 추가하였습니다. `link`를 닫기 위해 `>`이나 `/>`가 사용될 수 있음에 주의하세요.
 
-To get started, we should nest all of our HTML (except the `link` tag and the `style` element) in a `div` element with the class `container-fluid`.
+시작하기 위해 모든 HTML(`link`와 `style` 요소 제외)를 `container-fluid` 클래스 이름을 가진 `div` 요소 안에 중첩시켜야 합니다.
 
 # --hints--
 
-Your `div` element should have the class `container-fluid`.
+`div` 요소는 `container-fluid`라는 클래스 이름을 가져야 합니다.
 
 ```js
 assert($('div').hasClass('container-fluid'));
 ```
 
-Your `div` element should have a closing tag.
+`div` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-All HTML elements after the closing `style` tag should be nested in `.container-fluid`.
+`style` 태그 다음에 오는 모든 HTML 요소는 `.container-fluid` 안에 중첩되어야 합니다.
 
 ```js
 assert($('.container-fluid').children().length >= 8 && !$('.container-fluid').has("style").length && !$('.container-fluid').has("link").length);
