@@ -1,34 +1,24 @@
 ---
-id: 62aa22aba186563bcbf2c395
-title: Step 170
+id: 65fbbeb5ba68ec54ab80d8d6
+title: Step 147
 challengeType: 0
-dashedName: step-170
+dashedName: step-147
 ---
 
 # --description--
 
-Remember that the increment operator `++` can be used to increase a variable's value by `1`. There is also a <dfn>decrement operator</dfn> `--` that can be used to decrease a variable's value by `1`. For example :
+Now it is time to test out your `defeatMonster` function. 
 
-```js
-let num = 10;
-num--;
-console.log(num); // Output: 9
-```
+Inside your `attack` function, change your `monsterHealth` line to `monsterHealth = 0`. This will simulate the monster being defeated by the player. 
 
-Decrement the value of `currentWeapon` in your `if` statement, after you update the text.
+Click on the `"Fight dragon"` button followed by the `"Attack"` button. You should see the monster's health go down to `0` and the player receive gold and experience points.
 
 # --hints--
 
-You should use the decrement operator.
+Your `monsterHealth` line should be updated to `monsterHealth = 0`.
 
 ```js
-assert.match(attack.toString(), /--/);
-```
-
-You should decrement `currentWeapon` in your `if` statement.
-
-```js
-assert.match(attack.toString(), /(currentWeapon\s*--\s*;?\s*}\s*})$/);
+assert.match(attack.toString(), /monsterHealth\s*=\s*0/);
 ```
 
 # --seed--
@@ -188,18 +178,6 @@ const locations = [
     "button text": ["Go to town square", "Go to town square", "Go to town square"],
     "button functions": [goTown, goTown, goTown],
     text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
-  },
-  {
-    name: "lose",
-    "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
-    "button functions": [restart, restart, restart],
-    text: "You die. &#x2620;"
-  },
-  { 
-    name: "win", 
-    "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
-    "button functions": [restart, restart, restart], 
-    text: "You defeat the dragon! YOU WIN THE GAME! &#x1F389;" 
   }
 ];
 
@@ -209,14 +187,13 @@ button2.onclick = goCave;
 button3.onclick = fightDragon;
 
 function update(location) {
-  monsterStats.style.display = "none";
   button1.innerText = location["button text"][0];
   button2.innerText = location["button text"][1];
   button3.innerText = location["button text"][2];
   button1.onclick = location["button functions"][0];
   button2.onclick = location["button functions"][1];
   button3.onclick = location["button functions"][2];
-  text.innerHTML = location.text;
+  text.innerText = location.text;
 }
 
 function goTown() {
@@ -296,41 +273,19 @@ function goFight() {
   monsterHealthText.innerText = monsterHealth;
 }
 
---fcc-editable-region--
 function attack() {
   text.innerText = `The ${monsters[fighting].name} attacks. You attack it with your ${weapons[currentWeapon].name}.`;
-  health -= getMonsterAttackValue(monsters[fighting].level);
-  if (isMonsterHit()) {
-    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
-  } else {
-    text.innerText += " You miss.";
-  }
+  health -= monsters[fighting].level;
+  --fcc-editable-region--
+  monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+  --fcc-editable-region--
   healthText.innerText = health;
   monsterHealthText.innerText = monsterHealth;
   if (health <= 0) {
     lose();
   } else if (monsterHealth <= 0) {
-    if (fighting === 2) {
-      winGame();
-    } else {
-      defeatMonster();
-    }
+    defeatMonster();
   }
-  if (Math.random() <= .1) {
-    text.innerText += " Your " + inventory.pop() + " breaks.";
-
-  }
-}
---fcc-editable-region--
-
-function getMonsterAttackValue(level) {
-  const hit = (level * 5) - (Math.floor(Math.random() * xp));
-  console.log(hit);
-  return hit > 0 ? hit : 0;
-}
-
-function isMonsterHit() {
-  return Math.random() > .2 || health < 20;
 }
 
 function dodge() {
@@ -346,22 +301,6 @@ function defeatMonster() {
 }
 
 function lose() {
-  update(locations[5]);
-}
 
-function winGame() {
-  update(locations[6]);
-}
-
-function restart() {
-  xp = 0;
-  health = 100;
-  gold = 50;
-  currentWeapon = 0;
-  inventory = ["stick"];
-  goldText.innerText = gold;
-  healthText.innerText = health;
-  xpText.innerText = xp;
-  goTown();
 }
 ```
