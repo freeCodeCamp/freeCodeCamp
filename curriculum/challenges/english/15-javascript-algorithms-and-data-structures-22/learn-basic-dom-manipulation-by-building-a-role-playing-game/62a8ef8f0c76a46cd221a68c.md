@@ -283,7 +283,7 @@ function attack() {
 }
 
 function dodge() {
-  text.innerText = "You dodge the attack from the " + monsters[fighting].name;
+  text.innerText = `You dodge the attack from the ${monsters[fighting].name}`;
 }
 
 --fcc-editable-region--
