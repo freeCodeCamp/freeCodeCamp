@@ -14,9 +14,8 @@ test.describe('Exit Video Modal E2E Test Suite', () => {
   test('Verifies the Correct Rendering of the Video Modal', async ({
     page
   }) => {
-    const dialogs = page.getByRole('dialog');
-    await expect(dialogs).toHaveCount(2);
-    await expect(page.getByTestId('video-modal-title')).toBeVisible();
+    const dialog = page.getByRole('dialog');
+    await expect(dialog).toHaveCount(1);
     await expect(
       page.getByTestId('video-modal-video-player-iframe')
     ).toBeVisible();
@@ -31,14 +30,14 @@ test.describe('Exit Video Modal E2E Test Suite', () => {
   test('Closes the Video Modal When the User clicks on exit button', async ({
     page
   }) => {
-    const dialogs = page.getByRole('dialog');
-    await expect(dialogs).toHaveCount(2);
+    const dialog = page.getByRole('dialog');
+    await expect(dialog).toHaveCount(1);
     await page
       .getByRole('button', { name: translations.buttons.close })
       .click();
-    for (const dialog of await dialogs.all()) {
-      await expect(dialog).not.toBeVisible();
-    }
+
+    await expect(dialog).not.toBeVisible();
+
     await expect(
       page.getByText(translations.buttons['watch-video'])
     ).not.toBeVisible();
