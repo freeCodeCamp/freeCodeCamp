@@ -64,7 +64,7 @@ function bootUser(app) {
     deleteUserSurveys,
     postResetProgress
   );
-  api.get(
+  api.post(
     '/account/reset-progress/:dashedBlockName',
     ifNoUser401,
     postResetProjectProgress
