@@ -21,7 +21,6 @@
   justify-content: space-between;
   width: 100%;
   gap: 0.5rem;
-  max-width: 500px;
 }
 
 .completion-block-name {
