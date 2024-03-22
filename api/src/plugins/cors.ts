@@ -2,15 +2,7 @@ import { FastifyPluginCallback } from 'fastify';
 import fp from 'fastify-plugin';
 
 import { HOME_LOCATION } from '../utils/env';
-
-const allowedOrigins = [
-  'https://www.freecodecamp.dev',
-  'https://www.freecodecamp.org',
-  'https://beta.freecodecamp.dev',
-  'https://beta.freecodecamp.org',
-  'https://chinese.freecodecamp.dev',
-  'https://chinese.freecodecamp.org'
-];
+import { allowedOrigins } from '../utils/allowed-origins';
 
 const cors: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.options('*', (_req, reply) => {

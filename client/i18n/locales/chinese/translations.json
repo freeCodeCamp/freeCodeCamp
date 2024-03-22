@@ -55,7 +55,7 @@
     "reset-lesson": "重置课程",
     "run": "运行",
     "run-test": "运行测试（Ctrl + Enter）",
-    "check-code": "检查您的代码 (Ctrl + Enter)",
+    "check-code": "检查你的代码（Ctrl + Enter）",
     "check-code-2": "检查你的代码",
     "reset": "重置",
     "reset-step": "重置此步骤",
@@ -969,16 +969,16 @@
       "A2 English for Developers": "面向开发者的 A2 英语",
       "a2-english-for-developers": "面向开发者的 A2 英语认证",
       "Legacy Front End": "旧版前端",
-      "legacy-front-end": "前端认证",
+      "legacy-front-end": "旧版前端认证",
       "Legacy Back End": "旧版后端",
-      "legacy-back-end": "后端认证",
+      "legacy-back-end": "旧版后端认证",
       "Legacy Data Visualization": "旧版数据可视化",
-      "legacy-data-visualization": "数据可视化认证",
+      "legacy-data-visualization": "旧版数据可视化认证",
       "Legacy Information Security and Quality Assurance": "旧版信息安全和质量保证",
-      "information-security-and-quality-assurance": "信息安全和质量保证认证",
+      "information-security-and-quality-assurance": "旧版信息安全和质量保证认证",
       "Legacy Full Stack Certification": "旧版全栈认证",
       "Legacy Full Stack": "旧版的全栈",
-      "full-stack": "全栈认证"
+      "full-stack": "旧版全栈认证"
     }
   },
   "certification-card": {

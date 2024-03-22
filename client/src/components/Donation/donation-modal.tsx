@@ -41,7 +41,6 @@ type DonateModalProps = {
 function DonateModal({
   show,
   closeDonationModal,
-
   location,
   recentlyClaimedBlock
 }: DonateModalProps): JSX.Element {

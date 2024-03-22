@@ -39,6 +39,9 @@ test('User can see list of shortcuts  by pressing SHIFT + ?', async ({
     'Skipping on mobile as it does not have a physical keyboard.'
   );
 
+  const dialogs = page.getByRole('dialog');
+  await expect(dialogs).toHaveCount(2);
+
   await expect(
     page.getByRole('heading', { name: translations.shortcuts.title })
   ).toBeVisible();
@@ -69,12 +72,16 @@ test('User can close the modal by pressing ESC', async ({ page, isMobile }) => {
     isMobile,
     'Skipping on mobile as it does not have a physical keyboard.'
   );
-
+  const dialogs = page.getByRole('dialog');
+  await expect(dialogs).toHaveCount(2);
   await expect(
     page.getByRole('heading', { name: translations.shortcuts.title })
   ).toBeVisible();
 
   await page.keyboard.press('Escape');
+  for (const dialog of await dialogs.all()) {
+    await expect(dialog).not.toBeVisible();
+  }
   await expect(
     page.getByRole('heading', { name: translations.shortcuts.title })
   ).not.toBeVisible();
@@ -85,13 +92,17 @@ test('User can disable keyboard shortcuts', async ({ page, isMobile }) => {
     isMobile,
     'Skipping on mobile as it does not have a physical keyboard.'
   );
-
+  const dialogs = page.getByRole('dialog');
+  await expect(dialogs).toHaveCount(2);
   await expect(
     page.getByRole('heading', { name: translations.shortcuts.title })
   ).toBeVisible();
 
   await page.getByRole('button', { name: translations.buttons.off }).click();
   await page.getByRole('button', { name: translations.buttons.close }).click();
+  for (const dialog of await dialogs.all()) {
+    await expect(dialog).not.toBeVisible();
+  }
   await expect(
     page.getByRole('heading', { name: translations.shortcuts.title })
   ).not.toBeVisible();

@@ -969,16 +969,16 @@
       "A2 English for Developers": "A2 English for Developers",
       "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "الواجهة الأمامية التراثية",
-      "legacy-front-end": "شهادة الواجهة الأمامية التراثية",
+      "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "الواجهة الخلفية التراثية",
-      "legacy-back-end": "شهادة الواجهة الخلفية التراثية",
+      "legacy-back-end": "Legacy Back End Certification",
       "Legacy Data Visualization": "التصوير المرئي للبيانات التراثي",
-      "legacy-data-visualization": "شهادة التصوير المرئي للبيانات",
+      "legacy-data-visualization": "Legacy Data Visualization Certification",
       "Legacy Information Security and Quality Assurance": "أمن المعلومات وشهادة ضمان الجودة التراثية",
-      "information-security-and-quality-assurance": "شهادة أمن المعلومات وشهادة ضمان الجودة",
+      "information-security-and-quality-assurance": "Legacy Information Security and Quality Assurance Certification",
       "Legacy Full Stack Certification": "شهادة الشامل الخلفية التراثية",
       "Legacy Full Stack": "الشامل الخلفية التراثية",
-      "full-stack": "شهادة الشامل الخلفية"
+      "full-stack": "Legacy Full Stack Certification"
     }
   },
   "certification-card": {

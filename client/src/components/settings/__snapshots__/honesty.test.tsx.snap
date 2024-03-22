@@ -8,7 +8,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = 
     settings.headings.honesty
   </SectionHeader>
   <FullWidthRow>
-    <y
+    <b
       className="honesty-panel"
     >
       <p>
@@ -42,7 +42,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = 
           </a>
         </Trans>
       </p>
-    </y>
+    </b>
     <Button
       block={true}
       disabled={false}
@@ -63,7 +63,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted
     settings.headings.honesty
   </SectionHeader>
   <FullWidthRow>
-    <y
+    <b
       className="honesty-panel"
     >
       <p>
@@ -97,7 +97,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted
           </a>
         </Trans>
       </p>
-    </y>
+    </b>
     <Button
       block={true}
       disabled={true}

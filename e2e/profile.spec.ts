@@ -58,21 +58,27 @@ const certs = [
 ];
 
 const legacyCerts = [
-  { name: 'Front End', url: '/certification/certifieduser/legacy-front-end' },
+  {
+    name: 'Legacy Front End',
+    url: '/certification/certifieduser/legacy-front-end'
+  },
   {
     name: 'Legacy JavaScript Algorithms and Data Structures',
     url: '/certification/certifieduser/javascript-algorithms-and-data-structures'
   },
-  { name: 'Back End', url: '/certification/certifieduser/legacy-back-end' },
   {
-    name: 'Data Visualization',
+    name: 'Legacy Back End',
+    url: '/certification/certifieduser/legacy-back-end'
+  },
+  {
+    name: 'Legacy Data Visualization',
     url: '/certification/certifieduser/legacy-data-visualization'
   },
   {
-    name: 'Information Security and Quality Assurance',
+    name: 'Legacy Information Security and Quality Assurance',
     url: '/certification/certifieduser/information-security-and-quality-assurance'
   },
-  { name: 'Full Stack', url: '/certification/certifieduser/full-stack' }
+  { name: 'Legacy Full Stack', url: '/certification/certifieduser/full-stack' }
 ];
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });

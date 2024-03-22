@@ -1,4 +1,12 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+*,
+::before,
+::after {
+  /* Override the browser default border width in order to style individual border sides
+   * Ref: https://stackoverflow.com/a/76961084
+   */
+  border-width: 0;
+}
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;

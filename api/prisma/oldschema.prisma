@@ -198,6 +198,7 @@ model user {
   verificationToken            String? // Undefined
   website                      String? // Undefined
   yearsTopContributor          String[]             @default([]) // Undefined | String[]
+  isClassroomAccount           Boolean? // Undefined
 }
 
 // -----------------------------------

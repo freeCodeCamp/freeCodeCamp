@@ -5,16 +5,29 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
   isSignedInSelector,
-  showMultipleProgressModalsSelector
+  showMultipleProgressModalsSelector,
+  userIdSelector,
+  userFetchStateSelector
 } from '../../redux/selectors';
 import { setShowMultipleProgressModals } from '../../redux/actions';
+import { UserFetchState } from '../../redux/prop-types';
+import callGA from '../../analytics/call-ga';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
   showMultipleProgressModalsSelector,
-  (isSignedIn, showMultipleProgressModals: boolean) => ({
+  userIdSelector,
+  userFetchStateSelector,
+  (
+    isSignedIn: boolean,
+    showMultipleProgressModals: boolean,
+    userId: string,
+    userFetchState: UserFetchState
+  ) => ({
     isSignedIn,
-    showMultipleProgressModals
+    showMultipleProgressModals,
+    userId,
+    userFetchState
   })
 );
 
@@ -33,8 +46,20 @@ const GrowthBookReduxConnector = ({
   children,
   isSignedIn,
   showMultipleProgressModals,
-  setShowMultipleProgressModals
+  userId,
+  setShowMultipleProgressModals,
+  userFetchState
 }: GrowthBookReduxConnector) => {
+  // Send user id to GA
+  useEffect(() => {
+    if (userFetchState.complete && isSignedIn) {
+      callGA({
+        event: 'user_data',
+        user_id: userId
+      });
+    }
+  }, [userFetchState, userId, isSignedIn]);
+
   const displayProgressModalMultipleTimes = useFeature(
     'display_progress_modal_multiple_times'
   ).on;
