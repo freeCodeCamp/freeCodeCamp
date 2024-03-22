@@ -1,6 +1,6 @@
 ---
 id: 64de79de2fac6b1536ebcfdd
-title: Step 37
+title: Крок 37
 challengeType: 20
 dashedName: step-37
 ---
@@ -11,7 +11,7 @@ The iterative solution of Tower of Hanoi might seem complete, but change the num
 
 # --hints--
 
-You should set `NUMBER_OF_DISKS` to 4.
+Встановіть `NUMBER_OF_DISKS` на 4.
 
 ```js
 ({ test: () => assert.equal(__userGlobals.get('NUMBER_OF_DISKS'), 4) })

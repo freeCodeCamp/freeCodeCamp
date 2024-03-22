@@ -8,12 +8,11 @@ dashedName: the-box-model-question-d
 
 No painel Elementos, é possível ver toda a estrutura do HTML da página. Você pode clicar em qualquer um dos elementos nesse painel para selecionar o elemento específico. Como alternativa, você pode clicar no ícone realçado em azul mostrado abaixo e à esquerda, passando o mouse sobre qualquer elemento da página.
 
-![Ícone do Inspetor](https://cdn.statically.io/gh/TheOdinProject/curriculum/594984d7c9f9e744577f19ea475b3864e8cc7c91/html_css/v2/foundations/inspecting-html-and-css/imgs/01.png)
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/inspector-icon.png" alt="Aweb development environment with developer tools open, highlighting a blue inspector icon in the top-left for selecting webpage elements to view HTML structure and styles." />
 
 Quando um elemento é selecionado, a guia Estilos mostrará todos os estilos atualmente aplicados, assim como quaisquer estilos que estão sendo substituídos (indicado por um texto com um risco no meio). For example, if you use the inspector to click on the “Your Career in Web Development Starts Here” header on <a href="https://www.theodinproject.com/" target="_blank">the The Odin Project homepage</a>, on the right-hand side you’ll see all the styles that are currently affecting the element, as seen below:
 
-![Estilo sobrescrito](https://cdn.statically.io/gh/TheOdinProject/curriculum/f8fd38fc62578d8e8368f5303126215a492847f0/foundations/html_css/inspecting-html-and-css/imgs/03.png)
-
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/overwritten-style.png" alt="CSS code snippet in the developer console showing .hero_main-heading with applied margin-bottom: 100px, padding-bottom: 1.875rem, .accent color #ce973e. h1 style rules include font-size, weight, letter-spacing, with its margin-bottom: 2rem overridden." />
 # --assignment--
 
 Divirta-se um pouco com as ferramentas de desenvolvimento do Chrome e veja se consegue responder à seguinte pergunta.

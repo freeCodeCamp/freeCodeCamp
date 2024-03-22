@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908850
-title: Apply the Default Bootstrap Button Style
+title: 부트스트랩 기본 버튼 스타일 적용하기
 challengeType: 0
 forumTopicId: 16657
 dashedName: apply-the-default-bootstrap-button-style
@@ -8,19 +8,19 @@ dashedName: apply-the-default-bootstrap-button-style
 
 # --description--
 
-Bootstrap has another button class called `btn-default`.
+부트스트랩에는 `btn-default`라는 또다른 버튼 클래스가 있습니다.
 
-Apply both the `btn` and `btn-default` classes to each of your `button` elements.
+`btn` 클래스와 `btn-default` 클래스를 각각의 `button` 요소들에 적용해보세요.
 
 # --hints--
 
-You should apply the `btn` class to each of your `button` elements.
+`btn` 클래스를 각각의 `button` 요소들에 추가해야 합니다.
 
 ```js
 assert($('.btn').length > 5);
 ```
 
-You should apply the `btn-default` class to each of your `button` elements.
+`btn-default` 클래스를 각각의 `button` 요소들에 추가해야 합니다.
 
 ```js
 assert($('.btn-default').length > 5);

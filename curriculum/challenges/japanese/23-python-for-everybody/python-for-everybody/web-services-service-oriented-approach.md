@@ -14,7 +14,7 @@ dashedName: web-services-service-oriented-approach
 
 ## --text--
 
-With a services oriented approach to developing web apps, where is the data located?
+サービス指向のウェブアプリ開発アプローチでは、データはどこに存在しますか？
 
 ## --answers--
 

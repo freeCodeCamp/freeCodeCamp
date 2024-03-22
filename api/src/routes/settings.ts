@@ -79,7 +79,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   // @ts-expect-error - @fastify/csrf-protection needs to update their types
   // eslint-disable-next-line @typescript-eslint/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
-  fastify.addHook('onRequest', fastify.authenticateSession);
+  fastify.addHook('onRequest', fastify.authorize);
 
   type CommonResponseSchema = {
     response: { 400: (typeof schemas.updateMyProfileUI.response)[400] };
@@ -123,7 +123,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             profileUI: {
               isLocked: req.body.profileUI.isLocked,
@@ -167,7 +167,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const user = await fastify.prisma.user.findUniqueOrThrow({
-        where: { id: req.session.user.id },
+        where: { id: req.user?.id },
         select: {
           email: true,
           emailVerifyTTL: true,
@@ -216,7 +216,7 @@ ${isLinkSentWithinLimitTTL}`
       // ToDo(MVP): email the new email and wait user to confirm it, before we update the user schema.
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             newEmail,
             emailVerified: false,
@@ -239,7 +239,7 @@ ${isLinkSentWithinLimitTTL}`
         }
 
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             emailAuthLinkTTL: new Date()
           }
@@ -263,7 +263,7 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             theme: req.body.theme
           }
@@ -290,7 +290,7 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             website: req.body.website,
             twitter: req.body.twitter,
@@ -320,7 +320,7 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       try {
         const user = await fastify.prisma.user.findFirstOrThrow({
-          where: { id: req.session.user.id }
+          where: { id: req.user?.id }
         });
 
         const newUsernameDisplay = req.body.username.trim();
@@ -379,7 +379,7 @@ ${isLinkSentWithinLimitTTL}`
         }
 
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             username: newUsername,
             usernameDisplay: newUsernameDisplay
@@ -408,7 +408,7 @@ ${isLinkSentWithinLimitTTL}`
 
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             about: req.body.about,
             name: req.body.name,
@@ -438,7 +438,7 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             keyboardShortcuts: req.body.keyboardShortcuts
           }
@@ -465,7 +465,7 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             sendQuincyEmail: req.body.sendQuincyEmail
           }
@@ -492,7 +492,7 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             isHonest: req.body.isHonest
           }
@@ -519,7 +519,7 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             acceptedPrivacyTerms: true,
             sendQuincyEmail: req.body.quincyEmails
@@ -558,7 +558,7 @@ ${isLinkSentWithinLimitTTL}`
           })
         );
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             portfolio
           }
@@ -571,6 +571,42 @@ ${isLinkSentWithinLimitTTL}`
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
+  fastify.put(
+    '/update-my-classroom-mode',
+    {
+      schema: schemas.updateMyClassroomMode,
+      errorHandler: (error, request, reply) => {
+        if (error.validation) {
+          void reply.code(403);
+          void reply.send({ message: 'flash.wrong-updating', type: 'danger' });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const classroomMode = req.body.isClassroomAccount;
+
+        await fastify.prisma.user.update({
+          where: { id: req.user!.id },
+          data: {
+            isClassroomAccount: classroomMode
+          }
+        });
+
+        return {
+          message: 'flash.classroom-mode-updated',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(403);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
     }

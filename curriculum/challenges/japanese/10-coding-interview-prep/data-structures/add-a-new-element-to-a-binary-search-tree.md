@@ -14,7 +14,7 @@ dashedName: add-a-new-element-to-a-binary-search-tree
 
 最初に、特別な種類の木 (二分木) について説明します。 実際には、特別な二分木である「二分探索木」についてです。 これが何を意味するのかを以下に説明します。 ツリーデータ構造では 1 つの ノードが何本でも枝を持てますが、二分木ではすべてのノードに枝が 2 本しかありません。 さらに二分探索木では、左部分木の各ノードの値が親ノードの値以下になり、右部分木の各ノードの値が親ノードの値以上になるという形で、子部分木を基準にして順序が決まります。 視覚化すると、この関係は一目瞭然です。
 
-<div style='width: 100%; display: flex; justify-content: center; align-items: center;'><img style='width: 100%; max-width: 350px; background-color: var(--gray-05);' src='https://user-images.githubusercontent.com/18563015/32136009-1e665d98-bbd6-11e7-9133-63184f9f9182.png'></div>
+<div style='width: 100%; display: flex; justify-content: center; align-items: center;'><img alt="an example of a binairy search tree" style='width: 100%; max-width: 350px; background-color: var(--gray-05);' src='https://user-images.githubusercontent.com/18563015/32136009-1e665d98-bbd6-11e7-9133-63184f9f9182.png'></div>
 
 これで、順序付けの関係が簡単に分かります。 注目すべき点は、根ノードである 8 の左側の値はすべて 8 より小さく、右側の値はすべて 8 より大きいということです。 また、この関係がそれぞれの部分木にも当てはまるという点に注意してください。 例えば、左側にある最初の子は部分木です。 3 は親ノードであり、ちょうど 2 つの子ノードを持っています。二分探索木のルールにより、このノードの左側の子 (およびそのすべての子) は 3 より小さく、右側の子 (およびそのすべての子) は 3 よりも大きい (ただし、この構造の根の値よりも小さい) ということは、もう見なくても分かります。
 

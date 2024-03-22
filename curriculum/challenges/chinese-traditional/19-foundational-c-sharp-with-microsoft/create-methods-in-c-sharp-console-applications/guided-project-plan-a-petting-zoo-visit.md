@@ -1,38 +1,38 @@
 ---
 id: 647e225e8acb466c97ccbef0
-title: Guided Project - Plan a Petting Zoo Visit
+title: 引導項目 - 計劃參觀寵物動物園
 challengeType: 19
 dashedName: guided-project-plan-a-petting-zoo-visit
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+這個挑戰將有一部分在 Microsoft Learn 平臺上完成。 請按照如下說明來完成挑戰：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/</a> and complete all the tasks for the "Guided Project - Plan a Petting Zoo Visit" module. This is **required** to earn the "Create Methods in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳轉到 <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/</a>，然後完成“引導項目 - 計劃參觀寵物動物園”模塊的所有任務。 這是在 Microsoft Learn 上獲得“在 C# 控制檯應用程序中創建方法”的獎盃以及參加認證考試所**必需**的。
+1. 完成後，返回並正確回答下面的問題。
 
-# --assignment--
+# --任務--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">Plan a Petting Zoo Visit</a> guided project on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">計劃參觀寵物動物園</a> 的引導項目。 然後，回答下面的問題。
 
 # --question--
 
 ## --text--
 
-What is the purpose of defining an optional parameter in a method?
+在方法中定義可選參數的目的是什麼？
 
 ## --answers--
 
-To cause a method to perform a different task.
+導致方法執行不同的任務。
 
 ---
 
-To overload a method.
+重載方法。
 
 ---
 
-To simplify the required parameters when a parameter isn't significant to the result.
+當參數對結果不重要時，簡化所需的參數。
 
 ## --video-solution--
 

@@ -1,117 +1,135 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = `
-<section
-  id="honesty-policy"
->
-  <SectionHeader>
-    settings.headings.honesty
-  </SectionHeader>
-  <FullWidthRow>
-    <y
-      className="honesty-panel"
+<DocumentFragment>
+  <section
+    id="honesty-policy"
+  >
+    <div
+      class="mx-[-15px] "
     >
-      <p>
-        settings.honesty.p1
-      </p>
-      <p>
-        settings.honesty.p2
-      </p>
-      <p>
-        settings.honesty.p3
-      </p>
-      <p>
-        settings.honesty.p4
-      </p>
-      <p>
-        settings.honesty.p5
-      </p>
-      <p>
-        settings.honesty.p6
-      </p>
-      <p>
-        <Trans
-          i18nKey="settings.honesty.p7"
+      <div
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+      >
+        <h2
+          class="text-center"
         >
-          <a
-            href="mailto:support@freecodecamp.org"
-          >
-            {
-              "email": "support@freecodecamp.org",
-            }
-          </a>
-        </Trans>
-      </p>
-    </y>
-    <Button
-      active={false}
-      aria-disabled={false}
-      block={true}
-      bsClass="btn"
-      bsStyle="primary"
-      disabled={false}
-      onClick={[Function]}
+          settings.headings.honesty
+        </h2>
+        <hr />
+      </div>
+    </div>
+    <div
+      class="mx-[-15px] "
     >
-      buttons.agree-honesty
-    </Button>
-  </FullWidthRow>
-</section>
+      <div
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+      >
+        <div
+          class="border-1 border-solid shadow-sm mb-6 border-background-tertiary honesty-panel"
+        >
+          <p>
+            settings.honesty.p1
+          </p>
+          <p>
+            settings.honesty.p2
+          </p>
+          <p>
+            settings.honesty.p3
+          </p>
+          <p>
+            settings.honesty.p4
+          </p>
+          <p>
+            settings.honesty.p5
+          </p>
+          <p>
+            settings.honesty.p6
+          </p>
+          <p>
+            <a
+              href="mailto:support@freecodecamp.org"
+            >
+              support@freecodecamp.org
+            </a>
+          </p>
+        </div>
+        <button
+          aria-disabled="false"
+          class=" relative inline-block mt-[0.5px] border-solid border-3 active:before:w-full active:before:h-full active:before:absolute active:before:inset-0 active:before:border-3 active:before:border-transparent active:before:bg-gray-900 active:before:opacity-20 aria-disabled:cursor-not-allowed aria-disabled:opacity-50 focus:outline-none focus-visible:ring focus-visible:ring-focus-outline-color text-center cursor-pointer no-underline block w-full border-foreground-secondary bg-background-quaternary text-foreground-secondary hover:bg-foreground-primary hover:text-background-primary hover:border-foreground-secondary dark:hover:bg-background-primary dark:hover:text-foreground-primary px-3 py-1.5 text-md"
+          type="button"
+        >
+          buttons.agree-honesty
+        </button>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
 `;
 
 exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted 1`] = `
-<section
-  id="honesty-policy"
->
-  <SectionHeader>
-    settings.headings.honesty
-  </SectionHeader>
-  <FullWidthRow>
-    <y
-      className="honesty-panel"
+<DocumentFragment>
+  <section
+    id="honesty-policy"
+  >
+    <div
+      class="mx-[-15px] "
     >
-      <p>
-        settings.honesty.p1
-      </p>
-      <p>
-        settings.honesty.p2
-      </p>
-      <p>
-        settings.honesty.p3
-      </p>
-      <p>
-        settings.honesty.p4
-      </p>
-      <p>
-        settings.honesty.p5
-      </p>
-      <p>
-        settings.honesty.p6
-      </p>
-      <p>
-        <Trans
-          i18nKey="settings.honesty.p7"
+      <div
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+      >
+        <h2
+          class="text-center"
         >
-          <a
-            href="mailto:support@freecodecamp.org"
-          >
-            {
-              "email": "support@freecodecamp.org",
-            }
-          </a>
-        </Trans>
-      </p>
-    </y>
-    <Button
-      active={false}
-      aria-disabled={true}
-      block={true}
-      bsClass="btn"
-      bsStyle="primary"
-      disabled={false}
-      onClick={[Function]}
+          settings.headings.honesty
+        </h2>
+        <hr />
+      </div>
+    </div>
+    <div
+      class="mx-[-15px] "
     >
-      buttons.accepted-honesty
-    </Button>
-  </FullWidthRow>
-</section>
+      <div
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+      >
+        <div
+          class="border-1 border-solid shadow-sm mb-6 border-background-tertiary honesty-panel"
+        >
+          <p>
+            settings.honesty.p1
+          </p>
+          <p>
+            settings.honesty.p2
+          </p>
+          <p>
+            settings.honesty.p3
+          </p>
+          <p>
+            settings.honesty.p4
+          </p>
+          <p>
+            settings.honesty.p5
+          </p>
+          <p>
+            settings.honesty.p6
+          </p>
+          <p>
+            <a
+              href="mailto:support@freecodecamp.org"
+            >
+              support@freecodecamp.org
+            </a>
+          </p>
+        </div>
+        <button
+          aria-disabled="true"
+          class=" relative inline-block mt-[0.5px] border-solid border-3 active:before:w-full active:before:h-full active:before:absolute active:before:inset-0 active:before:border-3 active:before:border-transparent active:before:bg-gray-900 active:before:opacity-20 aria-disabled:cursor-not-allowed aria-disabled:opacity-50 focus:outline-none focus-visible:ring focus-visible:ring-focus-outline-color text-center cursor-pointer no-underline block w-full border-foreground-secondary bg-background-quaternary text-foreground-secondary active:before:hidden px-3 py-1.5 text-md"
+          type="button"
+        >
+          buttons.accepted-honesty
+        </button>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
 `;

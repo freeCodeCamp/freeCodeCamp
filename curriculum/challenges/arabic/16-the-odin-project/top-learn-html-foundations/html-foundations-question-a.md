@@ -16,7 +16,7 @@ dashedName: html-foundations-question-a
 
 يبدو عنصر paragraph كامل كما يلي:
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/90b1a362af0bb8635af9593cd8911c9aefb68569/foundations/html_css/html-foundations/imgs/00.png" alt="مخطط العنصر" />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/html-foundations/html-foundations-01.png" alt='An opening p tag, followed by the content string "some text content", followed by a closing p tag.' />
 
 # --assignment--
 

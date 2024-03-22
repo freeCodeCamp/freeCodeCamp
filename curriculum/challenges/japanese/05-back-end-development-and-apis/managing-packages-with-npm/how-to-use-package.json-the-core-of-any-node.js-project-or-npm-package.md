@@ -14,7 +14,9 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 - Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges.
 - 使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
 
-`package.json` ファイルは、Node.js プロジェクトまたは npm パッケージの中心となります。 It stores information about your project, similar to how the `head` section of an HTML document describes the content of a webpage. ファイルは単一の JSON オブジェクトで構成され、そこに情報がキーと値のペアで保存されます。 There are only two required fields; `name` and `version`, but it’s good practice to provide additional information about your project that could be useful to future users or maintainers.
+`package.json` ファイルは、Node.js プロジェクトまたは npm パッケージの中心となります。 It stores information about your project. ファイルは単一の JSON オブジェクトで構成され、そこに情報がキーと値のペアで保存されます。 There are only two required fields; `name` and `version`, but it’s good practice to provide additional information.
+
+You can create the `package.json` file from the terminal using the `npm init` command. This will run a guided setup. Using `npm init` with the `-y` flag will generate the file without having it ask any questions, `npm init -y`.
 
 If you look at the file tree of your project, you will find the `package.json` file on the top level of the tree. 以降のチャレンジではこのファイルに改良を加えていきます。
 
