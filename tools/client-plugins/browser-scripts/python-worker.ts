@@ -145,19 +145,18 @@ function initRunPython() {
       return ""
   `);
   runPython(`
-def reformat_exception():
+def print_exception():
     from ast_helpers import format_exception
-    return "".join(
-        format_exception(exception=sys.last_value, traceback=sys.last_traceback, filename="<exec>")
-    )
+    formatted = format_exception(exception=sys.last_value, traceback=sys.last_traceback, filename="<exec>")
+    print(formatted)
 `);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  const reformatException = globals.get('reformat_exception') as PyProxy &
+  const printException = globals.get('print_exception') as PyProxy &
     (() => string);
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const getResetId = globals.get('__get_reset_id') as PyProxy & (() => string);
-  return { runPython, getResetId, globals, reformatException };
+  return { runPython, getResetId, globals, printException };
 }
 
 ctx.onmessage = (e: PythonRunEvent | ListenRequestEvent | CancelEvent) => {
@@ -186,13 +185,16 @@ function handleRunRequest(data: PythonRunEvent['data']) {
   // TODO: use reset-terminal for clarity?
   postMessage({ type: 'reset' });
 
-  const { runPython, getResetId, globals, reformatException } = initRunPython();
+  const { runPython, getResetId, globals, printException } = initRunPython();
   // use pyodide.runPythonAsync if we want top-level await
   try {
     runPython(code);
   } catch (e) {
     const err = e as PythonError;
-    console.error(reformatException());
+    // the formatted exception is printed to the terminal
+    printException();
+    // but the full error is logged to the console for debugging
+    console.error(err);
     const resetId = getResetId();
     // TODO: if a user raises a KeyboardInterrupt with a custom message this
     // will be treated as a reset, the client will resend their code and this
@@ -207,6 +209,7 @@ function handleRunRequest(data: PythonRunEvent['data']) {
     }
   } finally {
     getResetId.destroy();
+    printException.destroy();
     globals.destroy();
   }
 }
