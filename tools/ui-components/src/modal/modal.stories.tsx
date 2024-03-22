@@ -3,7 +3,10 @@ import { StoryObj, StoryFn, Meta } from '@storybook/react';
 
 import { Button } from '../button';
 import { Modal } from './modal';
-import { type ModalProps, type HeaderProps } from './types';
+import { type ModalProps, type HeaderProps, type BodyProps } from './types';
+
+type StoryProps = ModalProps & HeaderProps & BodyProps;
+type Story = StoryObj<StoryProps>;
 
 const story = {
   title: 'Example/Modal',
@@ -28,12 +31,11 @@ const story = {
   }
 } satisfies Meta<typeof Modal>;
 
-type Story = StoryObj<ModalProps & HeaderProps>;
-
 const Spacer = () => <div style={{ height: '5px', width: '100%' }} />;
 
-const DefaultTemplate: StoryFn<ModalProps & HeaderProps> = ({
+const DefaultTemplate: StoryFn<StoryProps> = ({
   showCloseButton,
+  alignment,
   ...modalProps
 }) => {
   const [open, setOpen] = useState(false);
@@ -47,7 +49,7 @@ const DefaultTemplate: StoryFn<ModalProps & HeaderProps> = ({
         <Modal.Header showCloseButton={showCloseButton}>
           Lorem ipsum
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body alignment={alignment}>
           <p>
             Laboriosam autem non et nisi. Ut voluptatem sit beatae assumenda
             amet aliquam corporis.
@@ -149,6 +151,20 @@ export const WithoutCloseButton: Story = {
   render: DefaultTemplate,
   args: {
     showCloseButton: false
+  }
+};
+
+export const LeftAlignedBody: Story = {
+  render: DefaultTemplate,
+  args: {
+    alignment: 'left'
+  }
+};
+
+export const StartAlignedBody: Story = {
+  render: DefaultTemplate,
+  args: {
+    alignment: 'start'
   }
 };
 
