@@ -11,6 +11,27 @@
   "superBlock": "scientific-computing-with-python",
   "superOrder": 10,
   "isBeta": true,
-  "challengeOrder": [{ "id": "65f569725359e10d345bc52a", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "65f569725359e10d345bc52a",
+      "title": "Step 1"
+    },
+    {
+      "id": "65fd4b3bedee044b4b957d33",
+      "title": "Step 2"
+    },
+    {
+      "id": "65fd4bd84561a14d3e720061",
+      "title": "Step 3"
+    },
+    {
+      "id": "65fd4c95b0444b4f86a8203c",
+      "title": "Step 4"
+    },
+    {
+      "id": "65fd4cff221e7450e347f749",
+      "title": "Step 5"
+    }
+  ],
   "helpCategory": "Python"
 }
