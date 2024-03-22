@@ -45,13 +45,8 @@ function ShortcutsModal({
   user: { keyboardShortcuts }
 }: ShortcutsModalProps): JSX.Element {
   return (
-    <Modal
-      onClose={closeShortcutsModal}
-      open={isOpen}
-    >
-      <Modal.Header>
-          {t('shortcuts.title')}
-      </Modal.Header>
+    <Modal onClose={closeShortcutsModal} open={isOpen}>
+      <Modal.Header>{t('shortcuts.title')}</Modal.Header>
       <Modal.Body>
         <table>
           <thead>
