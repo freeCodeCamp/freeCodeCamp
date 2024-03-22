@@ -35,6 +35,7 @@ Your low variable should be `0` and your `high` variable should be the maximum o
 })
 
 ```
+
 # --seed--
 
 ## --seed-contents--

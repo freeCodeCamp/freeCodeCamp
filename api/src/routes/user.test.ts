@@ -525,6 +525,14 @@ describe('userRoutes', () => {
         expect(response.statusCode).toBe(500);
       });
 
+      // This should help debugging, since this the route returns this if
+      // anything throws in the handler.
+      test('GET does not return the error response if the request is valid', async () => {
+        const response = await superGet('/user/get-session-user');
+
+        expect(response.body).not.toEqual({ user: {}, result: '' });
+      });
+
       test('GET returns username as the result property', async () => {
         const response = await superGet('/user/get-session-user');
 
@@ -597,7 +605,7 @@ describe('userRoutes', () => {
         });
 
         // devLogin must not be used here since it overrides the user
-        const res = await superRequest('/auth/dev-callback', { method: 'GET' });
+        const res = await superRequest('/signin', { method: 'GET' });
         const setCookies = res.get('Set-Cookie');
 
         const publicUser = {
