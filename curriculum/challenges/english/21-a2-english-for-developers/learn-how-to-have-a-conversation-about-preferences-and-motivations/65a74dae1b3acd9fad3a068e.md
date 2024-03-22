@@ -1,8 +1,8 @@
 ---
 id: 65a74dae1b3acd9fad3a068e
-title: Task 121
+title: Task 132
 challengeType: 22
-dashedName: task-121
+dashedName: task-132
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
