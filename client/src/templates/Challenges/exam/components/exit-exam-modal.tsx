@@ -48,7 +48,9 @@ function ExitExamModal({
       open={isExitExamModalOpen}
       variant='danger'
     >
-      <Modal.Header>{t('learn.exam.exit-header')}</Modal.Header>
+      <Modal.Header closeButtonClassNames='close'>
+        {t('learn.exam.exit-header')}
+      </Modal.Header>
       <Modal.Body>
         <div className='text-center'>{t('learn.exam.exit')}</div>
       </Modal.Body>

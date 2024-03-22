@@ -44,7 +44,9 @@ function FinishExamModal({
 
   return (
     <Modal onClose={closeFinishExamModal} open={isFinishExamModalOpen}>
-      <Modal.Header>{t('learn.exam.finish-header')}</Modal.Header>
+      <Modal.Header closeButtonClassNames='close'>
+        {t('learn.exam.finish-header')}
+      </Modal.Header>
       <Modal.Body>
         <div className='text-center'>{t('learn.exam.finish')}</div>
       </Modal.Body>

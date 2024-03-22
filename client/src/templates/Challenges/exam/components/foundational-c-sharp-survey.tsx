@@ -131,7 +131,10 @@ function FoundationalCSharpSurvey({
 
   return (
     <>
-      <Modal.Header data-cy='c-sharp-survey-modal'>
+      <Modal.Header
+        data-cy='c-sharp-survey-modal'
+        closeButtonClassNames='close'
+      >
         {t('survey.foundational-c-sharp.title')}
       </Modal.Header>
       <Modal.Body>
