@@ -1,6 +1,6 @@
 {
   "name": "Learn How to Discuss Popular Trends in Technology",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "learn-how-to-discuss-popular-trends-in-technology",
   "order": 10,
   "time": "5 hours",
@@ -11,7 +11,27 @@
   "challengeOrder": [
     {
       "id": "655c111ce03db7881e612a27",
-      "title": "Dialogue: Placeholder"
+      "title": "Dialogue 1: Talking About Artificial Intelligence"
+    },
+    {
+      "id": "65fdc3c2cf0b9f186b30c7d4",
+      "title": "Task 1"
+    },
+    {
+      "id": "65fdc24bcb89e8162b96d954",
+      "title": "Dialogue 2: Talking About Remote Work and Collaboration Tools"
+    },
+    {
+      "id": "65fdce67e652825776635f7e",
+      "title": "Dialogue 3: Talking About Quantum Computing"
+    },
+    {
+      "id": "65fdcfcd986a305a20de5e57",
+      "title": "Dialogue 4: Talking About Biometrics"
+    },
+    {
+      "id": "65fdd18dada8515bcb983337",
+      "title": "Dialogue 5: Talking About Augmented Reality"
     }
   ],
   "helpCategory": "English"
