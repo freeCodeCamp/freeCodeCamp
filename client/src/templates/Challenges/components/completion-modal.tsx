@@ -1,13 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import { Modal } from '@freecodecamp/react-bootstrap';
 import { noop } from 'lodash-es';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button } from '@freecodecamp/ui';
+import { Button, Modal } from '@freecodecamp/ui';
 
 import Login from '../../../components/Header/components/login';
 import {
@@ -167,31 +166,14 @@ class CompletionModal extends Component<
     } = this.props;
 
     return (
-      <Modal
-        data-cy='completion-modal'
-        animation={false}
-        bsSize='lg'
-        dialogClassName='challenge-success-modal'
-        keyboard={true}
-        onHide={close}
-        // eslint-disable-next-line @typescript-eslint/unbound-method
-        onKeyDown={isOpen ? this.handleKeypress : noop}
-        show={isOpen}
-      >
-        <Modal.Header
-          className='challenge-list-header fcc-modal'
-          closeButton={true}
-        >
-          <Modal.Title className='completion-message'>{message}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className='completion-modal-body'>
-          <div className='completion-challenge-details'>
+      <Modal onClose={close} open={isOpen} size='large'>
+        <Modal.Header showCloseButton={true}>{message}</Modal.Header>
+        <Modal.Body>
             <GreenPass
               className='completion-success-icon'
               data-testid='fcc-completion-success-icon'
               data-playwright-test-label='completion-success-icon'
             />
-          </div>
           <div className='completion-block-details'>
             <Progress />
           </div>

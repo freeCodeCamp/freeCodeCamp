@@ -1,13 +1,11 @@
-import { Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { closeModal } from '../redux/actions';
+import { Modal } from '@freecodecamp/ui';
 import { isVideoModalOpenSelector } from '../redux/selectors';
 import callGA from '../../../analytics/call-ga';
-
-import './video-modal.css';
 
 interface VideoModalProps {
   closeVideoModal: () => void;
@@ -33,22 +31,19 @@ function VideoModal({
     callGA({ event: 'pageview', pagePath: '/completion-modal' });
   }
   return (
-    <Modal dialogClassName='video-modal' onHide={closeVideoModal} show={isOpen}>
-      <Modal.Header className='video-modal-header fcc-modal' closeButton={true}>
-        <Modal.Title
-          className='text-center'
-          data-playwright-test-label='video-modal-title'
-        >
-          {t('buttons.watch-video')}
-        </Modal.Title>
+    <Modal onClose={closeVideoModal} size='large' open={isOpen as boolean}>
+      <Modal.Header showCloseButton={true}>
+        {t('buttons.watch-video')}
       </Modal.Header>
-      <Modal.Body className='video-modal-body'>
-        <iframe
-          data-playwright-test-label='video-modal-video-player-iframe'
-          frameBorder='0'
-          src={videoUrl}
-          title={t('buttons.watch-video')}
-        />
+      <Modal.Body>
+          <iframe
+            data-playwright-test-label='video-modal-video-player-iframe'
+            frameBorder='0'
+            height='500px'
+            width='100%'
+            src={videoUrl}
+            title={t('buttons.watch-video')}
+          />
         <p>{t('learn.scrimba-tip')}</p>
       </Modal.Body>
     </Modal>

@@ -1,10 +1,9 @@
 import React from 'react';
-import { Modal } from '@freecodecamp/react-bootstrap';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Button } from '@freecodecamp/ui';
+import { Button, Modal } from '@freecodecamp/ui';
 
 import { closeModal } from '../redux/actions';
 import { isShortcutsModalOpenSelector } from '../redux/selectors';
@@ -47,21 +46,13 @@ function ShortcutsModal({
 }: ShortcutsModalProps): JSX.Element {
   return (
     <Modal
-      dialogClassName='shortcuts-modal'
-      onHide={closeShortcutsModal}
-      show={isOpen}
-      aria-labelledby='shortcuts-modal-title'
+      onClose={closeShortcutsModal}
+      open={isOpen}
     >
-      <Modal.Header className='shortcuts-modal-header fcc-modal'>
-        <Modal.Title
-          id='shortcuts-modal-title'
-          className='text-center'
-          componentClass='h1'
-        >
+      <Modal.Header>
           {t('shortcuts.title')}
-        </Modal.Title>
       </Modal.Header>
-      <Modal.Body className='shortcuts-modal-body'>
+      <Modal.Body>
         <table>
           <thead>
             <tr>
