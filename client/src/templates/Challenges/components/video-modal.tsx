@@ -2,14 +2,14 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
-import { closeModal } from '../redux/actions';
 import { Modal } from '@freecodecamp/ui';
+import { closeModal } from '../redux/actions';
 import { isVideoModalOpenSelector } from '../redux/selectors';
 import callGA from '../../../analytics/call-ga';
 
 interface VideoModalProps {
   closeVideoModal: () => void;
-  isOpen?: boolean;
+  isOpen: boolean;
   t: (attribute: string) => string;
   videoUrl?: string;
 }
@@ -31,19 +31,19 @@ function VideoModal({
     callGA({ event: 'pageview', pagePath: '/completion-modal' });
   }
   return (
-    <Modal onClose={closeVideoModal} size='large' open={isOpen as boolean}>
+    <Modal onClose={closeVideoModal} size='large' open={isOpen}>
       <Modal.Header showCloseButton={true}>
         {t('buttons.watch-video')}
       </Modal.Header>
       <Modal.Body>
-          <iframe
-            data-playwright-test-label='video-modal-video-player-iframe'
-            frameBorder='0'
-            height='500px'
-            width='100%'
-            src={videoUrl}
-            title={t('buttons.watch-video')}
-          />
+        <iframe
+          data-playwright-test-label='video-modal-video-player-iframe'
+          frameBorder='0'
+          height='500px'
+          width='100%'
+          src={videoUrl}
+          title={t('buttons.watch-video')}
+        />
         <p>{t('learn.scrimba-tip')}</p>
       </Modal.Body>
     </Modal>

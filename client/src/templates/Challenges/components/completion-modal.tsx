@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import { noop } from 'lodash-es';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
@@ -166,14 +165,14 @@ class CompletionModal extends Component<
     } = this.props;
 
     return (
-      <Modal onClose={close} open={isOpen} size='large'>
+      <Modal onClose={close} open={isOpen ?? false} size='large'>
         <Modal.Header showCloseButton={true}>{message}</Modal.Header>
         <Modal.Body>
-            <GreenPass
-              className='completion-success-icon'
-              data-testid='fcc-completion-success-icon'
-              data-playwright-test-label='completion-success-icon'
-            />
+          <GreenPass
+            className='completion-success-icon'
+            data-testid='fcc-completion-success-icon'
+            data-playwright-test-label='completion-success-icon'
+          />
           <div className='completion-block-details'>
             <Progress />
           </div>

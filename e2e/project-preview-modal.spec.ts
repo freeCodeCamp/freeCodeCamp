@@ -18,7 +18,8 @@ test.describe('Exit Project Preview Modal E2E Test Suite', () => {
         name: translations.buttons.close
       })
     ).toBeVisible();
-    await expect(page.getByTestId('project-preview-modal-title')).toBeVisible();
+
+    await expect(page.getByRole('dialog')).toBeVisible();
     await expect(
       page.locator('div.modal-body').getByTestId('preview-iframe')
     ).toBeVisible();
