@@ -7,7 +7,7 @@ import React, {
 import { Dialog, Transition } from '@headlessui/react';
 
 import { CloseButton } from '../close-button';
-import { type ModalProps, type HeaderProps } from './types';
+import { type ModalProps, type HeaderProps, BodyProps } from './types';
 
 // There is a close button on the right side of the modal title.
 // Some extra padding needs to be added to the left of the title text
@@ -63,9 +63,11 @@ const Header = ({
   );
 };
 
-const Body = ({ children }: { children: ReactNode }) => {
+const Body = ({ children, alignment = 'center' }: BodyProps) => {
   return (
-    <div className='p-[15px] border-b-1 border-solid border-foreground-secondary'>
+    <div
+      className={`p-[15px] border-b-1 border-solid border-foreground-secondary text-${alignment}`}
+    >
       {children}
     </div>
   );
