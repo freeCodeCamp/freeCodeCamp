@@ -99,12 +99,12 @@ const Modal = ({
   return (
     <ModalContext.Provider value={{ onClose, variant }}>
       <Transition.Root show={open} as={Fragment}>
-        <Dialog onClose={onClose} className='relative z-1050'>
+        <Dialog onClose={onClose} className='relative z-1050 w-screen h-screen'>
           {/* The backdrop, rendered as a fixed sibling to the panel container */}
           <div aria-hidden className='fixed inset-0 bg-gray-900 opacity-50' />
 
           {/* Full-screen container of the panel */}
-          <div className='fixed inset-0 w-screen flex items-start justify-center pt-[30px]'>
+          <div className='fixed inset-0 flex items-start justify-center pt-[30px]'>
             <Transition.Child
               as={Fragment}
               enter='transition-all duration-300 ease-out'
