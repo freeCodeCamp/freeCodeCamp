@@ -112,7 +112,7 @@ function linksOrMarkdown(projectFormValues, markdown) {
 function createQuestionEpic(action$, state$, { window }) {
   return action$.pipe(
     ofType(actionTypes.createQuestion),
-    tap(() => {
+    tap(({ payload: describe }) => {
       const state = state$.value;
       let challengeFiles = challengeFilesSelector(state);
       const {
@@ -158,22 +158,20 @@ function createQuestionEpic(action$, state$, { window }) {
         : '### ' + i18next.t('forum-help.camper-code') + '\n\n';
 
       const whatsHappeningHeading = i18next.t('forum-help.whats-happening');
-      const helpModalFormDescription = document.getElementById(
-        'help-modal-form-description'
-      );
-      const describe = helpModalFormDescription.value;
       const projectOrCodeHeading = projectFormValues.length
         ? `###${i18next.t('forum-help.camper-project')}\n\n`
         : camperCodeHeading;
 
       const fullCode = filesToMarkdown(challengeFiles);
+      const fullCodeOrLinks = linksOrMarkdown(projectFormValues, fullCode);
+
       const onlyEditableRegion = editableRegionsToMarkdown(challengeFiles);
-      const markdownCodeOrLinks = linksOrMarkdown(projectFormValues, fullCode);
       const editableRegionOrLinks = linksOrMarkdown(
         projectFormValues,
         onlyEditableRegion
       );
-      const textMessage = `### ${whatsHappeningHeading}\n${describe}\n\n${projectOrCodeHeading}${markdownCodeOrLinks}${endingText}`;
+
+      const textMessage = `### ${whatsHappeningHeading}\n${describe}\n\n${projectOrCodeHeading}${fullCodeOrLinks}${endingText}`;
       const textMessageOnlyEditableRegion = `### ${whatsHappeningHeading}\n${describe}\n\n${projectOrCodeHeading}${editableRegionOrLinks}${endingText}`;
 
       const warning = i18next.t('forum-help.warning');

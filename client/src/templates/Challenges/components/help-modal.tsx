@@ -2,8 +2,8 @@ import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Modal } from '@freecodecamp/react-bootstrap';
 import { Button, FormControl } from '@freecodecamp/ui';
-import React, { useCallback, useState, useRef, useEffect } from 'react';
-import { Trans, withTranslation } from 'react-i18next';
+import React, { useMemo, useState, useRef, useEffect } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
 
@@ -17,14 +17,16 @@ import callGA from '../../../analytics/call-ga';
 
 interface HelpModalProps {
   closeHelpModal: () => void;
-  createQuestion: () => void;
+  createQuestion: (description: string) => void;
   isOpen?: boolean;
-  t: (text: string) => string;
   challengeTitle: string;
   challengeBlock: string;
 }
 
 const { forumLocation } = envData;
+const DESCRIPTION_MIN_CHARS = 50;
+const DESCRIPTION_MAX_CHARS = 500;
+const RSA = forumLocation + '/t/19514';
 
 const mapStateToProps = (state: unknown) => ({
   isOpen: isHelpModalOpenSelector(state) as boolean
@@ -35,8 +37,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-const RSA = forumLocation + '/t/19514';
-
 const generateSearchLink = (title: string, block: string) => {
   const query = /^step\s*\d*$/i.test(title)
     ? encodeURIComponent(`${block} - ${title}`)
@@ -45,39 +45,36 @@ const generateSearchLink = (title: string, block: string) => {
   return search;
 };
 
-interface CheckbockProps {
+interface CheckboxProps {
   name: string;
   i18nkey: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value: boolean;
   href: string;
-  t: (text: string) => string;
 }
 
-function CheckboxHelpModal({
-  name,
-  i18nkey,
-  onChange,
-  value,
-  href,
-  t
-}: CheckbockProps) {
+function Checkbox({ name, i18nkey, onChange, value, href }: CheckboxProps) {
+  const { t } = useTranslation();
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <input
-        name={name}
-        type='checkbox'
-        onChange={onChange}
-        checked={value}
-        aria-label={t(i18nkey)}
-        aria-required='true'
-      />
-      <Trans i18nKey={i18nkey}>
-        <a href={href} rel='noopener noreferrer' target='_blank'>
-          {t(i18nkey)}{' '}
-          <span className='sr-only'>{t('aria.opens-new-window')}</span>
-        </a>
-      </Trans>
+    <div className='checkbox'>
+      <label>
+        <input
+          name={name}
+          type='checkbox'
+          onChange={onChange}
+          checked={value}
+          required
+        />
+        <span className='checkbox-text'>
+          <Trans i18nKey={i18nkey}>
+            <a href={href} rel='noopener noreferrer' target='_blank'>
+              placeholder
+              <span className='sr-only'>{t('aria.opens-new-window')}</span>
+            </a>
+          </Trans>
+        </span>
+      </label>
     </div>
   );
 }
@@ -86,17 +83,16 @@ function HelpModal({
   closeHelpModal,
   createQuestion,
   isOpen,
-  t,
   challengeBlock,
   challengeTitle
 }: HelpModalProps): JSX.Element {
+  const { t } = useTranslation();
   const [showHelpForm, setShowHelpForm] = useState(false);
   const [description, setDescription] = useState('');
   const [readSearchCheckbox, setReadSearchCheckbox] = useState(false);
   const [similarQuestionsCheckbox, setSimilarQuestionsCheckbox] =
     useState(false);
-  const DESCRIPTION_MIN = 50;
-  const DESCRIPTION_MAX = 500;
+
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
@@ -105,9 +101,9 @@ function HelpModal({
     }
   }, [showHelpForm]);
 
-  const canSubmitForm = useCallback(() => {
+  const canSubmitForm = useMemo(() => {
     return (
-      description.length >= DESCRIPTION_MIN &&
+      description.length >= DESCRIPTION_MIN_CHARS &&
       readSearchCheckbox &&
       similarQuestionsCheckbox
     );
@@ -119,11 +115,23 @@ function HelpModal({
     setSimilarQuestionsCheckbox(false);
   };
 
-  const handleCheckboxChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    set: React.Dispatch<React.SetStateAction<boolean>>
-  ) => {
-    set(event.target.checked);
+  const handleClose = () => {
+    closeHelpModal();
+    setShowHelpForm(false);
+    resetFormValues();
+  };
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+
+    if (!canSubmitForm) {
+      return;
+    }
+
+    setShowHelpForm(false);
+    resetFormValues();
+    createQuestion(description);
+    closeHelpModal();
   };
 
   if (isOpen) {
@@ -132,103 +140,85 @@ function HelpModal({
   return (
     <Modal
       dialogClassName='help-modal'
-      onHide={() => {
-        closeHelpModal();
-        setShowHelpForm(false);
-        resetFormValues();
-      }}
+      onHide={handleClose}
       show={isOpen}
       aria-labelledby='ask-for-help-modal'
     >
       <Modal.Header
         className='help-modal-header fcc-modal'
         closeButton={true}
-        closeLabel={t('buttons.close-dialog')}
+        closeLabel={t('buttons.close')}
       >
         <Modal.Title id='ask-for-help-modal' className='text-center'>
           {t('buttons.ask-for-help')}
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body className='help-modal-body text-center'>
+      <Modal.Body className='text-center'>
         {showHelpForm ? (
-          <form
-            onSubmit={event => {
-              event.preventDefault();
-              if (!canSubmitForm()) return;
-              setShowHelpForm(false);
-              resetFormValues();
-              createQuestion();
-              closeHelpModal();
-            }}
-            ref={formRef}
-          >
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column'
-              }}
-            >
-              <fieldset>
-                <legend style={{ fontSize: 'large' }}>
-                  {t('learn.must-confirm-statements')}
-                </legend>
-                <CheckboxHelpModal
-                  name='read-search-ask-checkbox'
-                  i18nkey={t('learn.read-search-ask-checkbox')}
-                  onChange={event =>
-                    handleCheckboxChange(event, setReadSearchCheckbox)
-                  }
-                  value={readSearchCheckbox}
-                  href={RSA}
-                  t={t}
-                />
-                <Spacer size='small' />
-                <CheckboxHelpModal
-                  name='similar-questions-checkbox'
-                  i18nkey={t('learn.similar-questions-checkbox')}
-                  onChange={event =>
-                    handleCheckboxChange(event, setSimilarQuestionsCheckbox)
-                  }
-                  value={similarQuestionsCheckbox}
-                  href={generateSearchLink(challengeTitle, challengeBlock)}
-                  t={t}
-                />
-              </fieldset>
-              <label htmlFor='help-modal-form-description'>
-                {t('forum-help.whats-happening')}
-                <span className='sr-only'>{t('learn.min-50-max-500')}</span>
-              </label>
-              <FormControl
-                id='help-modal-form-description'
-                name='description'
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                  setDescription(event.target.value);
-                }}
-                componentClass='textarea'
-                required={true}
-                style={{
-                  height: 100
-                }}
-                value={description}
-                maxLength={DESCRIPTION_MAX}
-                type='text'
+          <form onSubmit={handleSubmit} ref={formRef}>
+            <fieldset>
+              <legend className='help-form-legend'>
+                {t('learn.must-confirm-statements')}
+              </legend>
+
+              <Checkbox
+                name='read-search-ask-checkbox'
+                i18nkey='learn.read-search-ask-checkbox'
+                onChange={event => setReadSearchCheckbox(event.target.checked)}
+                value={readSearchCheckbox}
+                href={RSA}
               />
-              {description.length < DESCRIPTION_MIN ? (
-                <p className='chars-left'>
-                  {t('learn.minimum-characters').replace(
-                    '{{characters}}',
-                    (DESCRIPTION_MIN - description.length).toString()
-                  )}
-                </p>
-              ) : (
-                <p className='chars-left'>
-                  {t('learn.characters-left').replace(
-                    '{{characters}}',
-                    (DESCRIPTION_MAX - description.length).toString()
-                  )}
-                </p>
-              )}
-            </div>
+
+              <Spacer size='small' />
+
+              <Checkbox
+                name='similar-questions-checkbox'
+                i18nkey='learn.similar-questions-checkbox'
+                onChange={event =>
+                  setSimilarQuestionsCheckbox(event.target.checked)
+                }
+                value={similarQuestionsCheckbox}
+                href={generateSearchLink(challengeTitle, challengeBlock)}
+              />
+            </fieldset>
+
+            <Spacer size='xSmall' />
+
+            <label htmlFor='help-modal-form-description'>
+              {t('forum-help.whats-happening')}
+              <span className='sr-only'>{t('learn.min-50-max-500')}</span>
+            </label>
+
+            <FormControl
+              id='help-modal-form-description'
+              name='description'
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                setDescription(event.target.value);
+              }}
+              componentClass='textarea'
+              rows={5}
+              value={description}
+              minLength={DESCRIPTION_MIN_CHARS}
+              maxLength={DESCRIPTION_MAX_CHARS}
+              required
+            />
+
+            <Spacer size='xSmall' />
+
+            {description.length < DESCRIPTION_MIN_CHARS ? (
+              <p>
+                {t('learn.minimum-characters', {
+                  characters: DESCRIPTION_MIN_CHARS - description.length
+                })}
+              </p>
+            ) : (
+              <p>
+                {t('learn.characters-left', {
+                  characters: DESCRIPTION_MAX_CHARS - description.length
+                })}
+              </p>
+            )}
+
             <Spacer size='xxSmall' />
 
             <Button
@@ -236,8 +226,7 @@ function HelpModal({
               size='large'
               variant='primary'
               type='submit'
-              disabled={!canSubmitForm()}
-              {...(!canSubmitForm() && { tabIndex: -1 })}
+              disabled={!canSubmitForm}
             >
               {t('buttons.submit')}
             </Button>
@@ -246,11 +235,7 @@ function HelpModal({
               block={true}
               size='large'
               variant='primary'
-              onClick={() => {
-                setShowHelpForm(false);
-                resetFormValues();
-                closeHelpModal();
-              }}
+              onClick={handleClose}
             >
               {t('buttons.cancel')}
             </Button>
@@ -279,13 +264,12 @@ function HelpModal({
                 </Trans>
               </p>
             </div>
+
             <Button
               block={true}
               size='large'
               variant='primary'
-              onClick={() => {
-                setShowHelpForm(true);
-              }}
+              onClick={() => setShowHelpForm(true)}
             >
               {t('buttons.create-post')}
             </Button>
@@ -307,7 +291,4 @@ function HelpModal({
 
 HelpModal.displayName = 'HelpModal';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(HelpModal));
+export default connect(mapStateToProps, mapDispatchToProps)(HelpModal);
