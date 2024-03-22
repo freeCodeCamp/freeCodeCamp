@@ -7,7 +7,7 @@ import React, {
 import { Dialog, Transition } from '@headlessui/react';
 
 import { CloseButton } from '../close-button';
-import { type ModalProps, type HeaderProps } from './types';
+import { type ModalProps, type HeaderProps, BodyProps } from './types';
 
 // There is a close button on the right side of the modal title.
 // Some extra padding needs to be added to the left of the title text
@@ -26,7 +26,11 @@ const ModalContext = createContext<Pick<ModalProps, 'onClose' | 'variant'>>({
   variant: 'default'
 });
 
-const Header = ({ children, showCloseButton = true }: HeaderProps) => {
+const Header = ({
+  children,
+  showCloseButton = true,
+  closeButtonClassNames
+}: HeaderProps) => {
   const { onClose, variant } = useContext(ModalContext);
 
   let classes = HEADER_DEFAULT_CLASSES;
@@ -45,7 +49,7 @@ const Header = ({ children, showCloseButton = true }: HeaderProps) => {
         >
           {children}
         </Dialog.Title>
-        <CloseButton onClick={onClose} />
+        <CloseButton onClick={onClose} className={closeButtonClassNames} />
       </div>
     );
   }
@@ -59,9 +63,11 @@ const Header = ({ children, showCloseButton = true }: HeaderProps) => {
   );
 };
 
-const Body = ({ children }: { children: ReactNode }) => {
+const Body = ({ children, alignment = 'center' }: BodyProps) => {
   return (
-    <div className='p-[15px] border-b-1 border-solid border-foreground-secondary'>
+    <div
+      className={`p-[15px] border-b-1 border-solid border-foreground-secondary text-${alignment}`}
+    >
       {children}
     </div>
   );
@@ -95,7 +101,7 @@ const Modal = ({
   return (
     <ModalContext.Provider value={{ onClose, variant }}>
       <Transition.Root show={open} as={Fragment}>
-        <Dialog onClose={onClose} className='relative z-50'>
+        <Dialog onClose={onClose} className='relative z-1050'>
           {/* The backdrop, rendered as a fixed sibling to the panel container */}
           <div aria-hidden className='fixed inset-0 bg-gray-900 opacity-50' />
 
