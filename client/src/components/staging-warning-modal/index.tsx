@@ -17,7 +17,7 @@ function StagingWarningModal(): JSX.Element {
   };
   return (
     <Modal onClose={handleModalHide} open={show} size='large'>
-      <Modal.Header showCloseButton={true}>
+      <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
         <span style={{ fontWeight: 'bold' }}>
           {t('staging-warning.heading')}
         </span>

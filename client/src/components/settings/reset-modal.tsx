@@ -16,7 +16,7 @@ function ResetModal(props: ResetModalProps): JSX.Element {
 
   return (
     <Modal size='large' onClose={onHide} variant='danger' open={show}>
-      <Modal.Header showCloseButton={true}>
+      <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
         {t('settings.danger.reset-heading')}
       </Modal.Header>
       <Modal.Body>

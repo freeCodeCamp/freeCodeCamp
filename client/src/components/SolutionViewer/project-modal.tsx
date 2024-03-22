@@ -23,7 +23,7 @@ const ProjectModal = ({
   const { t } = useTranslation();
   return (
     <Modal onClose={handleSolutionModalHide} open={isOpen} size='large'>
-      <Modal.Header showCloseButton={true}>
+      <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
         {t('settings.labels.solution-for', { projectTitle })}
       </Modal.Header>
       <Modal.Body>

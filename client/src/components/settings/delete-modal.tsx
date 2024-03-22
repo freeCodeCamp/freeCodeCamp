@@ -16,7 +16,7 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
   const { t } = useTranslation();
   return (
     <Modal onClose={onHide} open={show} variant='danger' size='large'>
-      <Modal.Header showCloseButton={true}>
+      <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
         {t('settings.danger.delete-title')}
       </Modal.Header>
       <Modal.Body>

@@ -56,7 +56,7 @@ const ExamResultsModal = ({
       open={isOpen}
       size='large'
     >
-      <Modal.Header showCloseButton={true}>
+      <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
         {t('settings.labels.results-for', { projectTitle })}
       </Modal.Header>
       <Modal.Body>

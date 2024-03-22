@@ -197,7 +197,7 @@ function TimelineInner({
       )}
       {id && (
         <Modal onClose={closeSolution} open={solutionOpen}>
-          <Modal.Header showCloseButton={true}>
+          <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
             {`${username}'s Solution to ${
               idToNameMap.get(id)?.challengeTitle ?? ''
             }`}
