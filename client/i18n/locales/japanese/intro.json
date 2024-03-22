@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures",
+    "title": "Legacy JavaScript Algorithms and Data Structures",
     "intro": [
       "HTML と CSS はページの内容とスタイルを制御しますが、JavaScript はそれを対話式にすることを手掛けます。JavaScript アルゴリズムとデータ構造認定講座では、変数、配列、オブジェクト、ループ、そして関数を含む JavaScript の基礎を学習します。",
       "いったん基礎を習得すれば、その知識を応用して文字列を扱うためのアルゴリズムを作成したり、数の階乗を計算したり、さらに国際宇宙ステーションの軌道を計算することもできます。",
@@ -1178,6 +1178,12 @@
         "intro": [
           "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
         ]
+      },
+      "top-learn-variables-and-operators": {
+        "title": "Learn Variables and Operators",
+        "intro": [
+          "Get started with JavaScript by learning about variables and operators. This course covers the fundamentals of JavaScript programming, including data types, operators, and variable declarations."
+        ]
       }
     }
   },
@@ -1465,6 +1471,6 @@
     "read-database-cert-article": "続行する前に、こちらのフォーラム投稿をお読みください。",
     "enable-cookies": "サードパーティーの Cookie が有効になっていることを確認してから開始してください。",
     "english-only": "このセクションのコースは、英語版でのみ利用可能です。現時点ではタイトルと紹介文のみが翻訳に対応しており、レッスン自体は翻訳されておりません。",
-    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
+    "exam-english-only": "認定試験は現在、英語のみとなっています。その他の部分は翻訳版が提供されている可能性があります。"
   }
 }

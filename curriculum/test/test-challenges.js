@@ -408,7 +408,9 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
               {
                 [challengeTypes.js]: buildJSChallenge,
                 [challengeTypes.jsProject]: buildJSChallenge,
-                [challengeTypes.python]: buildPythonChallenge
+                [challengeTypes.python]: buildPythonChallenge,
+                [challengeTypes.multifilePythonCertProject]:
+                  buildPythonChallenge
               }[challengeType] ?? buildDOMChallenge;
 
             // The python tests are (currently) slow, so we give them more time.

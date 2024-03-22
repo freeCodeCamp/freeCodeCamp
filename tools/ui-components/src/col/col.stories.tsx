@@ -1,6 +1,6 @@
 import React from 'react';
-import { Story } from '@storybook/react';
-import { Col, ColProps } from '.';
+import { Meta, StoryFn, StoryObj } from '@storybook/react';
+import { Col } from '.';
 
 const story = {
   title: 'Example/Col',
@@ -17,9 +17,9 @@ const story = {
     lgOffset: { options: [0, 1, 2, undefined] },
     smPush: { options: [1, undefined] }
   }
-};
+} satisfies Meta<typeof Col>;
 
-const Template: Story<ColProps> = args => {
+const Template: StoryFn<typeof Col> = args => {
   return (
     <Col className='bg-gray-700' {...args}>
       <p>Random text to test the element width</p>
@@ -27,9 +27,12 @@ const Template: Story<ColProps> = args => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  // default props go here
+export const Default: StoryObj<typeof Col> = {
+  render: Template,
+
+  args: {
+    // default props go here
+  }
 };
 
 export default story;

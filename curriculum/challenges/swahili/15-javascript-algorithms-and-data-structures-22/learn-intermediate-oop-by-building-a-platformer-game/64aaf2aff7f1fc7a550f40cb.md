@@ -1,8 +1,8 @@
 ---
 id: 64aaf2aff7f1fc7a550f40cb
-title: Hatua ya 32
+title: Step 36
 challengeType: 0
-dashedName: step-32
+dashedName: step-36
 ---
 
 # --description--
@@ -178,18 +178,22 @@ canvas.height = innerHeight;
 const gravity = 0.5;
 let isCheckpointCollisionDetectionActive = true;
 
+const proportionalSize = (size) => {
+  return innerHeight < 500 ? Math.ceil((size / 500) * innerHeight) : size;
+}
+
 class Player {
   constructor() {
     this.position = {
-      x: 10,
-      y: 400,
+      x: proportionalSize(10),
+      y: proportionalSize(400),
     };
     this.velocity = {
       x: 0,
       y: 0,
     };
-    this.width = 40;
-    this.height = 40;
+    this.width = proportionalSize(40);
+    this.height = proportionalSize(40);
   }
   draw() {
     ctx.fillStyle = "#99c9ff";
@@ -213,6 +217,10 @@ class Player {
 
     if (this.position.x < this.width) {
       this.position.x = this.width;
+    }
+
+    if (this.position.x >= canvas.width - 2 * this.width) {
+      this.position.x = canvas.width - 2 * this.width;
     }
   }
 }

@@ -1175,6 +1175,12 @@
         "intro": [
           "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
         ]
+      },
+      "top-learn-variables-and-operators": {
+        "title": "Learn Variables and Operators",
+        "intro": [
+          "Get started with JavaScript by learning about variables and operators. This course covers the fundamentals of JavaScript programming, including data types, operators, and variable declarations."
+        ]
       }
     }
   },
@@ -1331,15 +1337,21 @@
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Learn How to Ask and Share About Educational and Professional Background",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to ask about another person's educational and professional backgrouns and you'll learn how to share information about your background as well."
+        ]
       },
       "learn-how-to-talk-about-hobbies-and-interests": {
         "title": "Learn How to Talk About Hobbies and Interests",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn different ways to talk about hobbies and things that interest you. You'll also learn how to ask about other people's hobbies and how to invite them to join you in these activities."
+        ]
       },
       "learn-how-to-discuss-roles-and-responsibilies": {
         "title": "Learn How to Discuss Roles and Responsibilities",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
+        ]
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "Learn How to Have a Conversation About Preferences and Motivations",

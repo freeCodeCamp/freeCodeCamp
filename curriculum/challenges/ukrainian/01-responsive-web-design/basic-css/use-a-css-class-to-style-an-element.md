@@ -75,7 +75,7 @@ assert($('h2').attr('style') === undefined);
   <div>
     <p>Things cats love:</p>
     <ul>
-      <li>cat nip</li>
+      <li>catnip</li>
       <li>laser pointers</li>
       <li>lasagna</li>
     </ul>
@@ -117,7 +117,7 @@ assert($('h2').attr('style') === undefined);
   <div>
     <p>Things cats love:</p>
     <ul>
-      <li>cat nip</li>
+      <li>catnip</li>
       <li>laser pointers</li>
       <li>lasagna</li>
     </ul>

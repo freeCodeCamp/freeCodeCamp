@@ -1,6 +1,6 @@
 import React from 'react';
-import { Story } from '@storybook/react';
-import { FormControl, FormControlProps } from '.';
+import { Meta, StoryFn, StoryObj } from '@storybook/react';
+import { FormControl } from '.';
 
 const story = {
   title: 'Example/FormControl',
@@ -31,27 +31,25 @@ const story = {
     required: { control: 'boolean' },
     type: { options: ['text', 'email', 'url'] }
   }
-};
+} satisfies Meta<typeof FormControl>;
 
-const DefaultTemplate: Story<FormControlProps> = args => {
-  return <FormControl {...args} />;
-};
+type Story = StoryObj<typeof FormControl>;
 
-export const Default = DefaultTemplate.bind({});
-Default.args = {
-  // default props go here
-};
+export const Default: Story = {};
 
-const StaticTemplate: Story<React.ComponentProps<'p'>> = args => {
+const StaticTemplate: StoryFn<(typeof FormControl)['Static']> = args => {
   return <FormControl.Static {...args} />;
 };
 
-export const Static = StaticTemplate.bind({});
-Static.args = {
-  children: 'foo@bar.com'
+export const Static: StoryObj<typeof FormControl.Static> = {
+  render: StaticTemplate,
+
+  args: {
+    children: 'foo@bar.com'
+  }
 };
 
-const FeedBackTemplate: Story<React.ComponentProps<'span'>> = args => {
+const FeedBackTemplate: StoryFn<React.ComponentProps<'span'>> = args => {
   return <FormControl.Feedback {...args} />;
 };
 
@@ -71,9 +69,12 @@ const checkMark = (
   </svg>
 );
 
-export const Feedback = FeedBackTemplate.bind({});
-Feedback.args = {
-  children: checkMark
+export const Feedback: StoryObj<typeof FormControl.Feedback> = {
+  render: FeedBackTemplate,
+
+  args: {
+    children: checkMark
+  }
 };
 
 export default story;

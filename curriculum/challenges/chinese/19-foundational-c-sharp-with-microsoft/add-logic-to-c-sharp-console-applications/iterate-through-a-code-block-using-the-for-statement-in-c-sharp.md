@@ -1,26 +1,26 @@
 ---
 id: 647e218f8acb466c97ccbee5
-title: 'Iterate Through a Code Block Using the for Statement in C#'
+title: '在 C# 中使用 for 语句遍历代码块'
 challengeType: 19
 dashedName: iterate-through-a-code-block-using-the-for-statement-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+这个挑战将有一部分在 Microsoft Learn 平台上完成。 请按照如下说明来完成挑战：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-for/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-for/</a> and complete all the tasks for the "Iterate Through a Code Block Using the for Statement in C#" module. This is **required** to earn the "Add Logic to C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳转到 <a href="https://learn.microsoft.com/training/modules/csharp-for/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-for/</a>，然后完成“在 C# 中使用 for 语句遍历代码块”模块的所有任务。 这是在 Microsoft Learn 上获得“向 C# 控制台应用程序添加逻辑”的奖杯以及参加认证考试所**必需**的。
+1. 完成后，返回并正确回答下面的问题。
 
-# --assignment--
+# --任务--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-for/" target="_blank" rel="noreferrer">Iterate Through a Code Block Using the `for` Statement in C#</a> module on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/csharp-for/" target="_blank" rel="noreferrer">在 C# 中使用 for 语句遍历代码块</a> 模块。 然后，回答下面的问题。
 
 # --question--
 
 ## --text--
 
-Which of the following `for` statements is correct?
+下列哪个 `for` 语句是正确的？
 
 ## --answers--
 

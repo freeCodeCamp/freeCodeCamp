@@ -1,27 +1,26 @@
-import React from 'react';
-import { Story } from '@storybook/react';
-import { Link, LinkProps } from '.';
+import { Meta, StoryObj } from '@storybook/react';
+import { Link } from '.';
 
 const story = {
   title: 'Example/Link',
   component: Link
+} satisfies Meta<typeof Link>;
+
+type Story = StoryObj<typeof Link>;
+
+export const Default: Story = {
+  args: {
+    children: 'Go to freeCodeCamp',
+    to: 'https://www.freecodecamp.org'
+  }
 };
 
-const Template: Story<LinkProps> = args => {
-  return <Link {...args} />;
-};
-
-export const Default = Template.bind({});
-Default.args = {
-  children: 'Go to freeCodeCamp',
-  to: 'https://www.freecodecamp.org'
-};
-
-export const Block = Template.bind({});
-Block.args = {
-  children: 'Go to freeCodeCamp',
-  to: 'https://www.freecodecamp.org',
-  block: true
+export const Block: Story = {
+  args: {
+    children: 'Go to freeCodeCamp',
+    to: 'https://www.freecodecamp.org',
+    block: true
+  }
 };
 
 export default story;

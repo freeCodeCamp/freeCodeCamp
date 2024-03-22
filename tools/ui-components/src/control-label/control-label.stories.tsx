@@ -1,6 +1,5 @@
-import React from 'react';
-import { Story } from '@storybook/react';
-import { ControlLabel, ControlLabelProps } from '.';
+import { Meta, StoryObj } from '@storybook/react';
+import { ControlLabel } from '.';
 
 const story = {
   title: 'Example/ControlLabel',
@@ -10,20 +9,19 @@ const story = {
       include: ['className']
     }
   },
-  argType: {
+  argTypes: {
     className: { control: { type: 'text' } },
     htmlFor: { control: { type: 'text' } },
     srOnly: { options: ['srOnly', ''] }
   }
-};
+} satisfies Meta<typeof ControlLabel>;
 
-const Template: Story<ControlLabelProps> = args => {
-  return <ControlLabel {...args} />;
-};
+type Story = StoryObj<typeof ControlLabel>;
 
-export const Default = Template.bind({});
-Default.args = {
-  children: 'Control Label'
+export const Default: Story = {
+  args: {
+    children: 'Control Label'
+  }
 };
 
 export default story;

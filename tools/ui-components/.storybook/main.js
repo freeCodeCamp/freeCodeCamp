@@ -1,18 +1,42 @@
 module.exports = {
-  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.tsx'],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.tsx'],
+
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
+    '@storybook/addon-mdx-gfm',
+    '@storybook/addon-styling-webpack',
     {
-      name: '@storybook/addon-postcss',
+      name: '@storybook/addon-styling-webpack',
+
       options: {
-        postcssLoaderOptions: {
-          implementation: require('postcss')
-        }
+        rules: [
+          {
+            test: /\.css$/,
+            sideEffects: true,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1
+                }
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  implementation: require.resolve('postcss')
+                }
+              }
+            ]
+          }
+        ]
       }
-    }
+    },
+    '@storybook/addon-webpack5-compiler-babel'
   ],
+
   typescript: {
     check: false,
     checkOptions: {},
@@ -23,7 +47,13 @@ module.exports = {
         prop.parent ? !/node_modules/.test(prop.parent.fileName) : true
     }
   },
-  core: {
-    builder: 'webpack5'
+
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {}
+  },
+
+  docs: {
+    autodocs: true
   }
 };

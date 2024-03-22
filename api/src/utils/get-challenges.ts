@@ -3,10 +3,15 @@
 // redirectToCurrentChallenge and, instead, only report the current challenge id
 // via the user object, then we should *not* store this so it can be garbage
 // collected.
-import curriculum from '../../../shared/config/curriculum.json';
-import { SuperBlocks } from '../../../shared/config/superblocks';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
-type Curriculum = { [keyValue in SuperBlocks]?: CurriculumProps };
+const CURRICULUM_PATH = '../shared/config/curriculum.json';
+
+// Curriculum is read using fs, because it is too large for VSCode's LSP to handle type inference which causes anoying behaviour.
+const curriculum = JSON.parse(
+  readFileSync(join(process.cwd(), CURRICULUM_PATH), 'utf-8')
+) as Curriculum;
 
 interface Block {
   challenges: {
@@ -18,25 +23,30 @@ interface Block {
   }[];
 }
 
-interface CurriculumProps {
+type SuperBlock = {
   blocks: Record<string, Block>;
-}
+};
+
+type Curriculum = Record<string, SuperBlock>;
 
 /**
- * Get all the challenges from the curriculum.
- * @returns An array of challenges.
+ * Get all challenges including all certifications as "challenges" (ids and tests).
+ * @returns The whole curricula reduced to an array.
  */
-export function getChallenges() {
-  const superBlockKeys = Object.values(SuperBlocks);
-  const typedCurriculum: Curriculum = curriculum as Curriculum;
+export function getChallenges(): Block['challenges'] {
+  const curricula = Object.values(curriculum);
 
-  return superBlockKeys
-    .map(key => typedCurriculum[key]?.blocks)
-    .reduce((accumulator: Block['challenges'], superBlock) => {
-      const blockKeys = Object.keys(superBlock ?? {});
-      const challengesForBlock = blockKeys.map(
-        key => superBlock?.[key]?.challenges ?? []
-      );
-      return [...accumulator, ...challengesForBlock.flat()];
+  return curricula
+    .map(v => v.blocks)
+    .reduce((acc: Block['challenges'], superBlock) => {
+      const blockKeys = Object.keys(superBlock);
+      const challengesForBlock = blockKeys.map(k => {
+        const block = superBlock[k];
+        if (!block) {
+          return [];
+        }
+        return block.challenges;
+      });
+      return [...acc, ...challengesForBlock.flat()];
     }, []);
 }

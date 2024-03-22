@@ -13,7 +13,7 @@ allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="400" w
 
 Щоб змінити розташування предметів по перехресній осі, використайте `align-items`. Спробуйте розмістити блоки по центру контейнера, додавши `align-items: center` до `.container`. Бажаний результат виглядає так:
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/495704c6eb6bf33bc927534f231533a82b27b2ac/html_css/v2/foundations/flexbox/imgs/08.png" alt="зображення з трьома блакитними квадратами, розташованими за центром гнучкого контейнера" style="margin: 15px 0" />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/flex-box/flexbox-06.png" alt="three blue squares centered in the middle of the flex container" style="margin: 15px 0" />
 
 Оскільки `justify-content` та `align-items` базуються на головній та перехресній осях контейнера, то їхня поведінка змінюється, якщо ви змінюєте `flex-direction` гнучкого контейнера. Наприклад, якщо змінити `flex-direction` на `column`, то `justify-content` вирівнюватиме вертикально, а `align-items` — горизонтально. Однак найпоширенішою поведінкою є поведінка за замовчуванням: `justify-content` вирівнює предмети горизонтально (оскільки головна вісь за замовчуванням горизонтальна), а `align-items` вирівнює їх вертикально. Одна з найбільших труднощів, з якими початківці стикаються при роботі з flexbox, — це плутанина при зміні поведінки.
 

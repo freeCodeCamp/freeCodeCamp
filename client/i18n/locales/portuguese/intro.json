@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "Algoritmos e estruturas de dados em JavaScript",
+    "title": "Legacy JavaScript Algorithms and Data Structures",
     "intro": [
       "Enquanto o HTML e o CSS controlam o conteúdo e o estilo de uma página, o JavaScript é usado para torná-lo interativo. Na certificação de Algoritmos e Estruturas de Dados em JavaScript, você aprenderá os fundamentos do JavaScript, incluindo variáveis, arrays, objetos, laços e funções.",
       "Assim que souber os fundamentos abaixo, você aplicará esse conhecimento, criando algoritmos para manipular strings, fatorar números e até mesmo calcular a órbita da Estação Espacial Internacional.",
@@ -1177,6 +1177,12 @@
         "title": "Learn the difference between Block and Inline",
         "intro": [
           "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
+        ]
+      },
+      "top-learn-variables-and-operators": {
+        "title": "Learn Variables and Operators",
+        "intro": [
+          "Get started with JavaScript by learning about variables and operators. This course covers the fundamentals of JavaScript programming, including data types, operators, and variable declarations."
         ]
       }
     }

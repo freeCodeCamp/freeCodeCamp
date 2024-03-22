@@ -1,7 +1,6 @@
-import { Story } from '@storybook/react';
-import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 
-import { Button, ButtonProps } from '.';
+import { Button } from '.';
 
 const story = {
   title: 'Example/Button',
@@ -49,64 +48,71 @@ const story = {
       control: { type: 'text' }
     }
   }
+} satisfies Meta<typeof Button>;
+
+type Story = StoryObj<typeof Button>;
+
+export const Default: Story = {
+  args: {
+    children: 'Button'
+  }
 };
 
-const Template: Story<ButtonProps> = args => {
-  return <Button {...args} />;
+export const Danger: Story = {
+  args: {
+    variant: 'danger',
+    children: 'Button'
+  }
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  children: 'Button'
+export const Info: Story = {
+  args: {
+    variant: 'info',
+    children: 'Button'
+  }
 };
 
-export const Danger = Template.bind({});
-Danger.args = {
-  variant: 'danger',
-  children: 'Button'
+export const Large: Story = {
+  args: {
+    size: 'large',
+    children: 'Button'
+  }
 };
 
-export const Info = Template.bind({});
-Info.args = {
-  variant: 'info',
-  children: 'Button'
+export const Small: Story = {
+  args: {
+    size: 'small',
+    children: 'Button'
+  }
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  children: 'Button'
+export const Disabled: Story = {
+  args: {
+    children: 'Button',
+    disabled: true
+  }
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  children: 'Button'
+export const FullWidth: Story = {
+  args: {
+    children: 'Button',
+    block: true
+  }
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  children: 'Button',
-  disabled: true
+export const AsALink: Story = {
+  args: {
+    children: "I'm a link that looks like a button",
+    href: 'https://www.freecodecamp.org'
+  }
 };
 
-export const FullWidth = Template.bind({});
-FullWidth.args = {
-  children: 'Button',
-  block: true
-};
-
-export const AsALink = Template.bind({});
-AsALink.args = {
-  children: "I'm a link that looks like a button",
-  href: 'https://www.freecodecamp.org'
-};
-
-export const AsADownloadLink = Template.bind({});
-AsADownloadLink.args = {
-  children: "I'm a download link",
-  href: 'https://www.freecodecamp.org',
-  download: 'my_file.txt'
+export const AsADownloadLink: Story = {
+  args: {
+    children: "I'm a download link",
+    href: 'https://www.freecodecamp.org',
+    download: 'my_file.txt'
+  }
 };
 
 export default story;

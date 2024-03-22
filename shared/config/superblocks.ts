@@ -150,7 +150,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   ],
   [Languages.Ukrainian]: [
     SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
@@ -284,24 +283,6 @@ export function createFlatSuperBlockMap({
     superBlockMap[SuperBlockStages.Upcoming] = [];
   }
   return Object.values(superBlockMap).flat();
-}
-
-// this is so we know where to display the "help us translate" section
-export function getFirstNotAuditedSuperBlock({
-  language,
-  showNewCurriculum,
-  showUpcomingChanges
-}: LanguagesConfig): SuperBlocks | null {
-  const flatSuperBlockMap = createFlatSuperBlockMap({
-    showNewCurriculum,
-    showUpcomingChanges
-  });
-  for (const superBlock of flatSuperBlockMap) {
-    if (notAuditedSuperBlocks[language as Languages].includes(superBlock)) {
-      return superBlock;
-    }
-  }
-  return null;
 }
 
 export function getAuditedSuperBlocks({

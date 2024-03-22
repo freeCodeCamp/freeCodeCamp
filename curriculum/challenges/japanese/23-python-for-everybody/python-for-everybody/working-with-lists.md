@@ -14,7 +14,7 @@ dashedName: working-with-lists
 
 ## --text--
 
-Which method is used to add an item at the end of a list?
+リストの末尾にアイテムを追加するために使用するメソッドはどれですか？
 
 ## --answers--
 

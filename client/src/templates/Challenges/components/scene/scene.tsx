@@ -3,7 +3,7 @@ import { Col } from '@freecodecamp/ui';
 import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
 import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
-import { sounds, images, backgrounds } from './scene-assets';
+import { sounds, images, backgrounds, characterAssets } from './scene-assets';
 import Character from './character';
 
 import './scene.css';
@@ -21,10 +21,28 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
     new Audio(`${sounds}/${audio.filename}${audioTimestamp}`)
   );
 
+  const loadImage = (src: string | null) => {
+    if (src) new Image().src = src;
+  };
+
   // on mount
   useEffect(() => {
     const { current } = audioRef;
     current.addEventListener('canplaythrough', audioLoaded);
+
+    // preload images
+    loadImage(`${backgrounds}/${setup.background}`);
+
+    setup.characters
+      .map(({ character }) => Object.values(characterAssets[character]))
+      .flat()
+      .forEach(loadImage);
+
+    commands
+      .map(({ background }) =>
+        background ? `${backgrounds}/${background}` : null
+      )
+      .forEach(loadImage);
 
     // on unmount
     return () => {
@@ -34,7 +52,7 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
       current.currentTime = 0;
       current.removeEventListener('canplaythrough', audioLoaded);
     };
-  }, [audioRef]);
+  }, [audioRef, setup.background, setup.characters, commands]);
 
   const audioLoaded = () => {
     setSceneIsReady(true);

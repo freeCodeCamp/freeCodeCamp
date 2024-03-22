@@ -10,7 +10,6 @@ import { createSelector } from 'reselect';
 import { Button } from '@freecodecamp/ui';
 
 import Login from '../../../components/Header/components/login';
-import { executeGA } from '../../../redux/actions';
 import {
   isSignedInSelector,
   allChallengesInfoSelector
@@ -30,6 +29,7 @@ import GreenPass from '../../../assets/icons/green-pass';
 import { Spacer } from '../../../components/helpers';
 
 import './completion-modal.css';
+import callGA from '../../../analytics/call-ga';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -64,15 +64,13 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = {
   close: () => closeModal('completion'),
-  submitChallenge,
-  executeGA
+  submitChallenge
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 
 interface CompletionModalsProps extends StateProps {
   close: () => void;
-  executeGA: () => void;
   submitChallenge: () => void;
   t: TFunction;
 }
@@ -148,6 +146,14 @@ class CompletionModal extends Component<
     this.props.close();
   }
 
+  componentDidUpdate(prevProps: CompletionModalsProps): void {
+    const { isOpen: prevIsOpen } = prevProps;
+    const { isOpen } = this.props;
+    if (!prevIsOpen && isOpen) {
+      callGA({ event: 'pageview', pagePath: '/completion-modal' });
+    }
+  }
+
   render(): JSX.Element {
     const {
       close,
@@ -159,10 +165,6 @@ class CompletionModal extends Component<
       dashedName,
       submitChallenge
     } = this.props;
-
-    if (isOpen) {
-      executeGA({ event: 'pageview', pagePath: '/completion-modal' });
-    }
 
     return (
       <Modal

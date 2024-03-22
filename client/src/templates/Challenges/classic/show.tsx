@@ -158,7 +158,8 @@ const StepPreview = ({
   challengeType: number;
   xtermFitRef: React.MutableRefObject<FitAddon | null>;
 }) => {
-  return challengeType === challengeTypes.python ? (
+  return challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.multifilePythonCertProject ? (
     <XtermTerminal xtermFitRef={xtermFitRef} />
   ) : (
     <Preview
@@ -240,6 +241,7 @@ function ShowClassic({
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
     challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
     challengeType === challengeTypes.python;
 
   const getLayoutState = () => {

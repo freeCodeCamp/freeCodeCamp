@@ -1,6 +1,6 @@
 import React from 'react';
-import { Story } from '@storybook/react';
-import { Panel, PanelProps } from '.';
+import { Meta, StoryObj } from '@storybook/react';
+import { Panel } from '.';
 
 const story = {
   title: 'Example/Panel',
@@ -10,11 +10,11 @@ const story = {
       include: ['className', 'variant']
     }
   },
-  argType: {
+  argTypes: {
     className: { control: { type: 'text' } },
     variant: { option: ['primary', 'danger', 'info', undefined] }
   }
-};
+} satisfies Meta<typeof Panel>;
 
 const Child = () => {
   return (
@@ -27,29 +27,33 @@ const Child = () => {
   );
 };
 
-const Template: Story<PanelProps> = args => <Panel {...args} />;
+type Story = StoryObj<typeof Panel>;
 
-export const Default = Template.bind({});
-Default.args = {
-  children: <Child />
+export const Default: Story = {
+  args: {
+    children: <Child />
+  }
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
-  children: <Child />,
-  variant: 'primary'
+export const Primary: Story = {
+  args: {
+    children: <Child />,
+    variant: 'primary'
+  }
 };
 
-export const Info = Template.bind({});
-Info.args = {
-  children: <Child />,
-  variant: 'info'
+export const Info: Story = {
+  args: {
+    children: <Child />,
+    variant: 'info'
+  }
 };
 
-export const Danger = Template.bind({});
-Danger.args = {
-  children: <Child />,
-  variant: 'danger'
+export const Danger: Story = {
+  args: {
+    children: <Child />,
+    variant: 'danger'
+  }
 };
 
 export default story;

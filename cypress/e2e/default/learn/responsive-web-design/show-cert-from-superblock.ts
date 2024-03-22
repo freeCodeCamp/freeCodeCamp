@@ -39,6 +39,7 @@ describe('Front End Development Libraries Superblock', () => {
       cy.url().should('match', /\/settings\/?#certification-settings/);
     });
   });
+
   describe('After submitting all 5 projects', () => {
     before(() => {
       cy.task('seed');

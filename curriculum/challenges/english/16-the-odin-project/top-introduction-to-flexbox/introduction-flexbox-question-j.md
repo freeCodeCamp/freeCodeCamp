@@ -16,7 +16,7 @@ Adding `flex: 1` to `.item` makes each of the items grow to fill the available s
 
 Remove `flex: 1` from `.item` and add `justify-content: space-between` to `.container`. Doing so should give you something like this:
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/495704c6eb6bf33bc927534f231533a82b27b2ac/html_css/v2/foundations/flexbox/imgs/07.png" alt="an image displaying three blue squares which are spread out over the entire width of it's container">
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/flex-box/flexbox-05.png" alt="Three small boxes within a much larger rectangle. The boxes are arranged in a single row, one close to the left edge of the container, one close to the right edge of the container, and the last directly in the middle of the container, placing as much space as possible between each box.">
 
 `justify-content` aligns items across the **main axis**. There are a few values that you can use here. You'll learn the rest of them in the reading assignments, but for now try changing it to center, which should center the boxes along the main axis.
 

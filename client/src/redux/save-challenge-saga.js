@@ -34,7 +34,10 @@ function* saveChallengeSaga() {
   }
 
   // only allow saving of multifileCertProject's
-  if (challengeType === challengeTypes.multifileCertProject) {
+  if (
+    challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.multifilePythonCertProject
+  ) {
     const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 

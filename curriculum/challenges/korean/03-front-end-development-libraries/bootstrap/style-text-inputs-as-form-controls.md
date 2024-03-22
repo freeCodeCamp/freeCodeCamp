@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed908845
-title: Style Text Inputs as Form Controls
+title: 텍스트 입력을 폼 컨트롤로 스타일링하기
 challengeType: 0
 forumTopicId: 18312
 required:
@@ -13,33 +13,33 @@ dashedName: style-text-inputs-as-form-controls
 
 # --description--
 
-You can add the `fa-paper-plane` Font Awesome icon by adding `<i class="fa fa-paper-plane"></i>` within your submit `button` element.
+제출 `button` 요소 내에 `<i class="fa fa-paper-plane"></i>`를 추가하여 `fa-paper-plane` Font Awesome 아이콘을 추가할 수 있습니다.
 
-Give your form's text input field a class of `form-control`. Give your form's submit button the classes `btn btn-primary`. Also give this button the Font Awesome icon of `fa-paper-plane`.
+폼 글자 입력 필드에 `form-control`라는 클래스를 주세요. 폼 제출 버튼에 `btn btn-primary`라는 클래스를 주세요. 또한 이 버튼에 Font Awesome `fa-paper-plane` 아이콘을 주세요.
 
-All textual `<input>`, `<textarea>`, and `<select>` elements with the class `.form-control` have a width of 100%.
+`.form-control` 클래스를 가진 모든 글자 요소 `<input>`, `<textarea>` 그리고 `<select>`는 100% 너비를 가집니다.
 
 # --hints--
 
-The submit button in your form should have the classes `btn btn-primary`.
+폼에 있는 제출 버튼은 `btn btn-primary` 클래스를 가져야 합니다.
 
 ```js
 assert($('button[type="submit"]').hasClass('btn btn-primary'));
 ```
 
-You should add a `<i class="fa fa-paper-plane"></i>` within your submit `button` element.
+제출 `button` 요소 내에 `<i class="fa fa-paper-plane"></i>`를 추가해야 합니다.
 
 ```js
 assert($('button[type="submit"]:has(i.fa.fa-paper-plane)').length > 0);
 ```
 
-The text `input` in your form should have the class `form-control`.
+폼에 있는 글자 `input`은 `form-control` 클래스를 가져야 합니다.
 
 ```js
 assert($('input[type="text"]').hasClass('form-control'));
 ```
 
-Each of your `i` elements should have a closing tag.
+각각의 `i` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(code.match(/<\/i>/g) && code.match(/<\/i/g).length > 3);

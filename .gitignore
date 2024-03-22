@@ -213,3 +213,6 @@ curriculum/build
 ### UI Components ###
 tools/ui-components/dist
 
+### Playwright ###
+
+/playwright

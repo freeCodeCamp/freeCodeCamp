@@ -34,6 +34,7 @@ export function createUserInput(email: string): Prisma.userCreateInput {
     isDataAnalysisPyCertV7: false,
     isDataVisCert: false,
     isDonating: false,
+    isFoundationalCSharpCertV8: false,
     isFrontEndCert: false,
     isFrontEndLibsCert: false,
     isFullStackCert: false,

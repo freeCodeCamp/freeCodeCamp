@@ -4,8 +4,6 @@ import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
@@ -19,7 +17,6 @@ import {
   GetSupporterBenefitsText
 } from '../components/Donation/donation-text-components';
 import { Spacer, Loader } from '../components/helpers';
-import { executeGA } from '../redux/actions';
 import {
   signInLoadingSelector,
   userSelector,
@@ -27,15 +24,8 @@ import {
 } from '../redux/selectors';
 import { PaymentContext } from '../../../shared/config/donation-settings';
 import { DonateFormState } from '../redux/types';
-
-export interface ExecuteGaArg {
-  event: string;
-  action: string;
-  duration?: string;
-  amount?: number;
-}
+import callGA from '../analytics/call-ga';
 interface DonatePageProps {
-  executeGA: (arg: ExecuteGaArg) => void;
   isDonating?: boolean;
   showLoading: boolean;
   t: TFunction;
@@ -57,19 +47,14 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ executeGA }, dispatch);
-
 function DonatePage({
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  executeGA = () => {},
   isDonating = false,
   showLoading,
   t,
   donationFormState
 }: DonatePageProps) {
   useEffect(() => {
-    executeGA({
+    callGA({
       event: 'donation_view',
       action: `Displayed Donate Page`
     });
@@ -153,7 +138,4 @@ function DonatePage({
 
 DonatePage.displayName = 'DonatePage';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(DonatePage));
+export default connect(mapStateToProps)(withTranslation()(DonatePage));

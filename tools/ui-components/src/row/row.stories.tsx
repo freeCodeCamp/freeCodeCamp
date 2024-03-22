@@ -1,19 +1,18 @@
 import React from 'react';
-import { Story } from '@storybook/react';
-import { Row, RowProps } from '.';
+import { Meta, StoryObj } from '@storybook/react';
+import { Row } from '.';
 
 const story = {
   title: 'Example/Row',
   component: Row
-};
+} satisfies Meta<typeof Row>;
 
-const Template: Story<RowProps> = args => {
-  return <Row {...args} />;
-};
+type Story = StoryObj<typeof Row>;
 
-export const Default = Template.bind({});
-Default.args = {
-  children: <p>Random text to test the element width</p>
+export const Default: Story = {
+  args: {
+    children: <p>Random text to test the element width</p>
+  }
 };
 
 export default story;
