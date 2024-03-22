@@ -26,7 +26,7 @@ const ProjectModal = ({
       <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
         {t('settings.labels.solution-for', { projectTitle })}
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body alignment='left'>
         <SolutionViewer challengeFiles={challengeFiles} solution={solution} />
       </Modal.Body>
       <Modal.Footer>
