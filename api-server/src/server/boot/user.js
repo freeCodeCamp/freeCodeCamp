@@ -27,6 +27,7 @@ import {
 import { createDeleteMsUsername } from '../middlewares/ms-username';
 import { validateSurvey, createDeleteUserSurveys } from '../middlewares/survey';
 import { deprecatedEndpoint } from '../utils/disabled-endpoints';
+import { getChallengeIdsForBlock } from '../utils/get-blocks-challenges-mappings';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectHome();
@@ -62,6 +63,11 @@ function bootUser(app) {
     deleteMsUsername,
     deleteUserSurveys,
     postResetProgress
+  );
+  api.get(
+    '/account/reset-progress/:dashedBlockName',
+    ifNoUser401,
+    postResetProjectProgress
   );
   api.post(
     '/user/report-user/',
@@ -466,6 +472,42 @@ function postResetProgress(req, res, next) {
       return res.status(200).json({});
     }
   );
+}
+
+async function postResetProjectProgress(req, res, next) {
+  try {
+    const { user } = req;
+    const { dashedBlockName } = req.params;
+
+    const toResetChallengeIds = getChallengeIdsForBlock(dashedBlockName);
+
+    const originalCount = user.completedChallenges.length;
+    const updatedCompletedChallenges = user.completedChallenges.filter(
+      challenge => !toResetChallengeIds.includes(challenge.id)
+    );
+
+    if (originalCount === updatedCompletedChallenges.length) {
+      return res.status(200).json({
+        message: `No challenges were reset because the user had not completed any challenges in ${dashedBlockName}`
+      });
+    }
+
+    await user.updateAttributes({
+      completedChallenges: updatedCompletedChallenges
+    });
+
+    const response = {
+      message: 'Project progress successfully reset.',
+      completedChallengesCount: `Original completed challenges count was ${originalCount}. New count is ${updatedCompletedChallenges.length}.`
+    };
+
+    return res.status(200).json(response);
+  } catch (err) {
+    if (err.message.startsWith('No block found with the name')) {
+      return res.status(404).json({ message: err.message });
+    }
+    return next(err);
+  }
 }
 
 function createPostDeleteAccount(app) {
