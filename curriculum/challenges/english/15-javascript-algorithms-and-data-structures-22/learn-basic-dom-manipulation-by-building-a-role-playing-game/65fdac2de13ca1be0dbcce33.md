@@ -1,26 +1,24 @@
 ---
-id: 62aa20e9cf1be9358f5aceae
-title: Step 169
+id: 65fdac2de13ca1be0dbcce33
+title: Step 154
 challengeType: 0
-dashedName: step-169
+dashedName: step-154
 ---
 
 # --description--
 
-Add an `else` statement to the first `if` statement inside your `attack()` function. In the `else` statement, use the `+=` operator to add the text `" You miss."` to the end of `text.innerText`.
+Now that you are finished testing the `restart` function, you can set the `health` back to the original code here:
+
+```js
+health -= monsters[fighting].level;
+```
 
 # --hints--
 
-You should add an `else` block after your `if (isMonsterHit())` block.
+Your current line of code should be changed back to `health -= monsters[fighting].level;`.
 
 ```js
-assert.match(attack.toString(), /if\s*\(\s*isMonsterHit\(\s*\)\s*\)\s*\{\s*monsterHealth\s*-=\s*weapons\s*\[\s*currentWeapon\s*\]\s*\.power\s*\+\s*Math\.floor\(\s*Math\.random\(\s*\)\s*\*\s*xp\s*\)\s*\+\s*1\s*;?\s*\}\s*else/)
-```
-
-You should add the text `" You miss."` to the end of `text.innerText`. Remember to use compound assignment and make sure there is a space before the word `You`.
-
-```js
-assert.match(attack.toString(), /if\s*\(\s*isMonsterHit\(\s*\)\s*\)\s*\{\s*monsterHealth\s*-=\s*weapons\s*\[\s*currentWeapon\s*\]\s*\.power\s*\+\s*Math\.floor\(\s*Math\.random\(\s*\)\s*\*\s*xp\s*\)\s*\+\s*1\s*;?\s*\}\s*else\s*\{\s*text\.innerText\s*\+=\s*('|")\sYou miss\.\1/)
+assert.match(attack.toString(), /health\s*-=\s*monsters\[fighting\]\.level;?/);
 ```
 
 # --seed--
@@ -186,12 +184,6 @@ const locations = [
     "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
     "button functions": [restart, restart, restart],
     text: "You die. &#x2620;"
-  },
-  { 
-    name: "win", 
-    "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
-    "button functions": [restart, restart, restart], 
-    text: "You defeat the dragon! YOU WIN THE GAME! &#x1F389;" 
   }
 ];
 
@@ -208,7 +200,7 @@ function update(location) {
   button1.onclick = location["button functions"][0];
   button2.onclick = location["button functions"][1];
   button3.onclick = location["button functions"][2];
-  text.innerHTML = location.text;
+  text.innerText = location.text;
 }
 
 function goTown() {
@@ -288,31 +280,19 @@ function goFight() {
   monsterHealthText.innerText = monsterHealth;
 }
 
---fcc-editable-region--
 function attack() {
   text.innerText = `The ${monsters[fighting].name} attacks. You attack it with your ${weapons[currentWeapon].name}.`;
-  health -= getMonsterAttackValue(monsters[fighting].level);
-  if (isMonsterHit()) {
-    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
-  }
+--fcc-editable-region--
+  health = 0;
+--fcc-editable-region--
+  monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
   healthText.innerText = health;
   monsterHealthText.innerText = monsterHealth;
   if (health <= 0) {
     lose();
   } else if (monsterHealth <= 0) {
-    if (fighting === 2) {
-      winGame();
-    } else {
-      defeatMonster();
-    }
+    defeatMonster();
   }
-}
---fcc-editable-region--
-
-function getMonsterAttackValue(level) {
-  const hit = (level * 5) - (Math.floor(Math.random() * xp));
-  console.log(hit);
-  return hit > 0 ? hit : 0;
 }
 
 function dodge() {
@@ -329,10 +309,6 @@ function defeatMonster() {
 
 function lose() {
   update(locations[5]);
-}
-
-function winGame() {
-  update(locations[6]);
 }
 
 function restart() {
