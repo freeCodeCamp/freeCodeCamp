@@ -1,6 +1,6 @@
 ---
-title: Introduction to the Learn Encapsulation by Building a Projectile Trajectory Calculator
-block: projectile-trajectory
+title: Learn Encapsulation by Building a Projectile Trajectory Calculator
+block: learn-encapsulation-by-building-a-projectile-trajectory-calculator
 superBlock: scientific-computing-with-python
 isBeta: true
 ---
