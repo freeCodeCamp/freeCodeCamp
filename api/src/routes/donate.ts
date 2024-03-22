@@ -32,7 +32,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
   // @ts-expect-error - @fastify/csrf-protection needs to update their types
   // eslint-disable-next-line @typescript-eslint/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
-  fastify.addHook('onRequest', fastify.authenticateSession);
+  fastify.addHook('onRequest', fastify.authorize);
   fastify.post(
     '/donate/add-donation',
     {
@@ -56,7 +56,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         const user = await fastify.prisma.user.findUnique({
-          where: { id: req.session.user.id }
+          where: { id: req.user?.id }
         });
 
         if (user?.isDonating) {
@@ -68,7 +68,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         }
 
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             isDonating: true
           }
@@ -96,7 +96,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         const { paymentMethodId, amount, duration } = req.body;
-        const { id } = req.session.user;
+        const id = req.user!.id;
 
         const user = await fastify.prisma.user.findUniqueOrThrow({
           where: { id }
