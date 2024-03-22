@@ -16,7 +16,7 @@ Una vez que alcance el extremo de una ruta, la búsqueda retrocederá al último
 
 La animación siguiente muestra como funciona el algoritmo. El algoritmo inicia con el nodo de arriba y visita los nodos en orden numerado.
 
-<img class='img-responsive' src='https://camo.githubusercontent.com/aaad9e39961daf34d967c616edeb50abf3bf1235/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37662f44657074682d46697273742d5365617263682e676966' />
+<img class='img-responsive' alt="" src='https://camo.githubusercontent.com/aaad9e39961daf34d967c616edeb50abf3bf1235/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37662f44657074682d46697273742d5365617263682e676966' />
 
 Observa como, a diferencia de la búsqueda en anchura, cada vez que un nodo es visitado, no visita a todos sus vecinos. En cambio, primero visita uno de sus vecinos y continúa por ese camino hasta que no haya más nodos para ser visitados en ese camino.
 

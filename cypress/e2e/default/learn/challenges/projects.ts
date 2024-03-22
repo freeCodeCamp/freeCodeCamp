@@ -89,6 +89,11 @@ describe('project submission', () => {
       // cy.url().should('not.have.string', url);
     });
   });
+
+  // Access to the clipboard reliably works in Electron browser.
+  // In other browsers, there are popups asking for permission
+  // thus we should only run these tests in Electron
+  // Ref: https://github.com/cypress-io/cypress-example-recipes/tree/master/examples/testing-dom__clipboard
   it(
     'JavaScript projects can be submitted and then viewed in /settings and on the certifications',
     { browser: 'electron' },

@@ -1,29 +1,25 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { ObjectId } from 'mongodb';
-import { customAlphabet } from 'nanoid';
 
 import { schemas } from '../schemas';
+// Loopback creates a 64 character string for the user id, this customizes
+// nanoid to do the same.  Any unique key _should_ be fine, though.
+import { customNanoid } from '../utils/ids';
 import {
   normalizeChallenges,
   normalizeProfileUI,
   normalizeTwitter,
-  removeNulls
+  removeNulls,
+  normalizeSurveys
 } from '../utils/normalize';
 import {
   getCalendar,
   getPoints,
   type ProgressTimestamp
 } from '../utils/progress';
-import { encodeUserToken } from '../utils/user-token';
+import { encodeUserToken } from '../utils/tokens';
 import { trimTags } from '../utils/validation';
 import { generateReportEmail } from '../utils/email-templates';
-
-// Loopback creates a 64 character string for the user id, this customizes
-// nanoid to do the same.  Any unique key _should_ be fine, though.
-const nanoid = customAlphabet(
-  '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  64
-);
 
 /**
  * Helper function to get the api url from the shared transcript link.
@@ -59,7 +55,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   // @ts-expect-error - @fastify/csrf-protection needs to update their types
   // eslint-disable-next-line @typescript-eslint/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
-  fastify.addHook('onRequest', fastify.authenticateSession);
+  fastify.addHook('onRequest', fastify.authorize);
 
   fastify.post(
     '/account/delete',
@@ -69,13 +65,16 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         await fastify.prisma.userToken.deleteMany({
-          where: { userId: req.session.user.id }
+          where: { userId: req.user!.id }
         });
         await fastify.prisma.msUsername.deleteMany({
-          where: { userId: req.session.user.id }
+          where: { userId: req.user!.id }
+        });
+        await fastify.prisma.survey.deleteMany({
+          where: { userId: req.user!.id }
         });
         await fastify.prisma.user.delete({
-          where: { id: req.session.user.id }
+          where: { id: req.user!.id }
         });
         await req.session.destroy();
         void reply.clearCookie('sessionId');
@@ -101,13 +100,16 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         await fastify.prisma.userToken.deleteMany({
-          where: { userId: req.session.user.id }
+          where: { userId: req.user!.id }
         });
         await fastify.prisma.msUsername.deleteMany({
-          where: { userId: req.session.user.id }
+          where: { userId: req.user!.id }
+        });
+        await fastify.prisma.survey.deleteMany({
+          where: { userId: req.user!.id }
         });
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user!.id },
           data: {
             progressTimestamps: [Date.now()],
             currentChallengeId: '',
@@ -152,14 +154,14 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   // TODO(Post-MVP): POST -> PUT
   fastify.post('/user/user-token', async req => {
     await fastify.prisma.userToken.deleteMany({
-      where: { userId: req.session.user.id }
+      where: { userId: req.user?.id }
     });
 
     const token = await fastify.prisma.userToken.create({
       data: {
         created: new Date(),
-        id: nanoid(),
-        userId: req.session.user.id,
+        id: customNanoid(),
+        userId: req.user!.id,
         // TODO(Post-MVP): expire after ttl has passed.
         ttl: 77760000000 // 900 * 24 * 60 * 60 * 1000
       }
@@ -178,7 +180,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         const { count } = await fastify.prisma.userToken.deleteMany({
-          where: { userId: req.session.user.id }
+          where: { userId: req.user?.id }
         });
 
         if (count === 0) {
@@ -213,7 +215,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         const user = await fastify.prisma.user.findUniqueOrThrow({
-          where: { id: req.session.user.id }
+          where: { id: req.user?.id }
         });
         const { username, reportDescription: report } = req.body;
 
@@ -260,7 +262,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         await fastify.prisma.msUsername.deleteMany({
-          where: { userId: req.session.user.id }
+          where: { userId: req.user?.id }
         });
 
         // TODO(Post-MVP): return a generic success message.
@@ -294,7 +296,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         const user = await fastify.prisma.user.findUniqueOrThrow({
-          where: { id: req.session.user.id }
+          where: { id: req.user?.id }
         });
 
         const msApiRes = await fetch(
@@ -362,6 +364,67 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  fastify.post(
+    '/user/submit-survey',
+    {
+      schema: schemas.submitSurvey,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400).send({
+            type: 'error',
+            message: 'flash.survey.err-1'
+          });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.user?.id }
+        });
+        const { surveyResults } = req.body;
+        const { title } = surveyResults;
+
+        const completedSurveys = await fastify.prisma.survey.findMany({
+          where: { userId: user.id }
+        });
+
+        const surveyAlreadyTaken = completedSurveys.some(
+          s => s.title === title
+        );
+        if (surveyAlreadyTaken) {
+          return reply.code(400).send({
+            type: 'error',
+            message: 'flash.survey.err-2'
+          });
+        }
+
+        const newSurvey = {
+          ...surveyResults,
+          userId: user.id
+        };
+
+        await fastify.prisma.survey.create({
+          data: newSurvey
+        });
+
+        return {
+          type: 'success',
+          message: 'flash.survey.success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return {
+          type: 'error',
+          message: 'flash.survey.err-3'
+        } as const;
+      }
+    }
+  );
+
   done();
 };
 
@@ -378,7 +441,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  fastify.addHook('onRequest', fastify.authenticateSession);
+  fastify.addHook('onRequest', fastify.authorize);
 
   fastify.get(
     '/user/get-session-user',
@@ -388,11 +451,11 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
     async (req, res) => {
       try {
         const userTokenP = fastify.prisma.userToken.findFirst({
-          where: { userId: req.session.user.id }
+          where: { userId: req.user!.id }
         });
 
         const userP = fastify.prisma.user.findUnique({
-          where: { id: req.session.user.id },
+          where: { id: req.user!.id },
           select: {
             about: true,
             acceptedPrivacyTerms: true,
@@ -443,7 +506,15 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           }
         });
 
-        const [userToken, user] = await Promise.all([userTokenP, userP]);
+        const completedSurveysP = fastify.prisma.survey.findMany({
+          where: { userId: req.user!.id }
+        });
+
+        const [userToken, user, completedSurveys] = await Promise.all([
+          userTokenP,
+          userP,
+          completedSurveysP
+        ]);
 
         if (!user?.username) {
           void res.code(500);
@@ -484,7 +555,8 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
               twitter: normalizeTwitter(twitter),
               username: usernameDisplay || username,
-              userToken: encodedToken
+              userToken: encodedToken,
+              completedSurveys: normalizeSurveys(completedSurveys)
             }
           },
           result: user.username

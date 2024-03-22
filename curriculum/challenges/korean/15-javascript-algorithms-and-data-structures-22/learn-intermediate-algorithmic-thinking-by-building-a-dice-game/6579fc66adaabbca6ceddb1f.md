@@ -24,7 +24,7 @@ assert.match(code, /const\s+listOfAllDice\s*/);
 You should assign the `document.querySelectorAll()` method to the `listOfAllDice` variable.
 
 ```js
-assert.match(code, /const\s+listOfAllDice\s*=\s*document\.querySelectorAll\s*\(.*\);?/);
+assert.match(code, /const\s+listOfAllDice\s*=\s*document\.querySelectorAll\s*\(.*\)\s*;?/);
 ```
 
 You should target all elements with the `class` of `die` inside the `querySelectorAll` method.

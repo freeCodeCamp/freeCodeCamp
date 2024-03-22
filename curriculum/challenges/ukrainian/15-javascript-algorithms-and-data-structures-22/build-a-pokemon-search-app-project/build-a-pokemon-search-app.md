@@ -14,22 +14,22 @@ In this project, you'll build an app that will search for Pokémon by name or ID
 
 **Історія користувача:**
 
-1. Ви повинні мати елемент `input` з `id` зі значенням `search-input`
-1. Ви повинні мати елемент `button` з `id` зі значенням `search-button`
-1. Ви повинні мати елемент з `id` зі значенням `pokemon-name`
-1. Ви повинні мати елемент з `id` зі значенням `pokemon-id`
-1. Ви повинні мати елемент з `id` зі значенням `weight`
-1. Ви повинні мати елемент з `id` зі значенням `height`
-1. Ви повинні мати елемент з `id` зі значенням `types`
-1. Ви повинні мати елемент з `id` зі значенням `hp`
-1. Ви повинні мати елемент з `id` зі значенням `attack`
-1. Ви повинні мати елемент з `id` зі значенням `defense`
-1. Ви повинні мати елемент з `id` зі значенням `special-attack`
-1. Ви повинні мати елемент з `id` зі значенням `special-defense`
-1. Ви повинні мати елемент з `id` зі значенням `speed`
-1. Якщо елемент `#search-input` містить значення `Red` та натиснути на елемент `#search-button`, то має з’явитись попередження з текстом `Pokémon not found`
+1. You should have an `input` element with an `id` of `"search-input"`
+1. You should have a `button` element with an `id` of `"search-button`
+1. You should have an element with an `id` of `"pokemon-name"`
+1. You should have an element with an `id` of `"pokemon-id"`
+1. You should have an element with an `id` of `"weight"`
+1. You should have an element with an `id` of `"height"`
+1. You should have an element with an `id` of `"types"`
+1. You should have an element with an `id` of `"hp"`
+1. You should have an element with an `id` of `"attack"`
+1. You should have an element with an `id` of `"defense"`
+1. You should have an element with an `id` of `"special-attack"`
+1. You should have an element with an `id` of `"special-defense"`
+1. You should have an element with an `id` of `"speed"`
+1. When the `#search-input` element contains the value `Red` and the `#search-button` element is clicked, an alert should appear with the text `"Pokémon not found"`
 1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, `#special-defense`, and `#speed` elements should be `PIKACHU`, `#25` or `25`, `Weight: 60` or `60`, `Height: 4` or `4`, `35`, `55`, `40`, `50`, `50`, and `90`, respectively
-1. Якщо елемент `#search-input` містить значення `Pikachu` та натиснути на елемент `#search-button`, то на сторінку потрібно додати елемент `img` з `id` зі значенням `sprite` та `src` зі значенням спрайту покемона `front_default`
+1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, you should add an `img` element with the `id` of `"sprite"` and the `src` set to the Pokémon's `front_default` sprite to the page
 1. When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `#types` element should contain a single inner element with the value `ELECTRIC`. The `#types` element content should be cleared between searches
 1. When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the values in the `#pokemon-name`, `#pokemon-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, `#special-defense`, and `#speed`elements should be `GENGAR`, `#94` or `94`, `Weight: 405` or `405`, `Height: 15` or `15`, `60`, `65`, `60`, `130`, `75`, and `110`, respectively
 1. Якщо елемент `#search-input` містить значення `94` та натиснути на елемент `#search-button`, то на сторінку потрібно додати елемент `img` з `id` зі значенням `sprite` та `src` зі значенням спрайту покемона `front_default`
@@ -41,7 +41,7 @@ In this project, you'll build an app that will search for Pokémon by name or ID
 
 # --hints--
 
-Ви повинні мати елемент `input` з `id` зі значенням `search-input` та який є **обов’язковим**.
+You should have an `input` element with an `id` of `"search-input"` and is **required**.
 
 ```js
 const el = document.getElementById('search-input');
@@ -49,91 +49,91 @@ assert.strictEqual(el?.nodeName?.toLowerCase(), 'input');
 assert.isTrue(el?.required);
 ```
 
-Ви повинні мати елемент `button` з `id` зі значенням `search-button`.
+You should have a `button` element with an `id` of `"search-button"`.
 
 ```js
 const el = document.getElementById('search-button');
 assert.strictEqual(el?.nodeName?.toLowerCase(), 'button');
 ```
 
-Ви повинні мати елемент з `id` зі значенням `pokemon-name`.
+You should have an element with an `id` of `"pokemon-name"`.
 
 ```js
 const el = document.getElementById('pokemon-name');
 assert.exists(el);
 ```
 
-Ви повинні мати елемент з `id` зі значенням `pokemon-id`.
+You should have an element with an `id` of `"pokemon-id"`.
 
 ```js
 const el = document.getElementById('pokemon-id');
 assert.exists(el);
 ```
 
-Ви повинні мати елемент з `id` зі значенням `weight`.
+You should have an element with an `id` of `"weight"`.
 
 ```js
 const el = document.getElementById('weight');
 assert.exists(el);
 ```
 
-Ви повинні мати елемент з `id` зі значенням `height`.
+You should have an element with an `id` of `"height"`.
 
 ```js
 const el = document.getElementById('height');
 assert.exists(el);
 ```
 
-Ви повинні мати елемент з `id` зі значенням `types`.
+You should have an element with an `id` of `"types"`.
 
 ```js
 const el = document.getElementById('types');
 assert.exists(el);
 ```
 
-Ви повинні мати елемент з `id` зі значенням `hp`.
+You should have an element with an `id` of `"hp"`.
 
 ```js
 const el = document.getElementById('hp');
 assert.exists(el);
 ```
 
-Ви повинні мати елемент з `id` зі значенням `attack`.
+You should have an element with an `id` of `"attack"`.
 
 ```js
 const el = document.getElementById('attack');
 assert.exists(el);
 ```
 
-Ви повинні мати елемент з `id` зі значенням `defense`.
+You should have an element with an `id` of `"defense"`.
 
 ```js
 const el = document.getElementById('defense');
 assert.exists(el);
 ```
 
-Ви повинні мати елемент з `id` зі значенням `special-attack`.
+You should have an element with an `id` of `"special-attack"`.
 
 ```js
 const el = document.getElementById('special-attack');
 assert.exists(el);
 ```
 
-Ви повинні мати елемент з `id` зі значенням `special-defense`.
+You should have an element with an `id` of `"special-defense"`.
 
 ```js
 const el = document.getElementById('special-defense');
 assert.exists(el);
 ```
 
-Ви повинні мати елемент з `id` зі значенням `speed`.
+You should have an element with an `id` of `"speed"`.
 
 ```js
 const el = document.getElementById('speed');
 assert.exists(el);
 ```
 
-When the `#search-input` element contains the value `Red` and the `#search-button` element is clicked, an alert should appear with the text `Pokémon not found`.
+When the `#search-input` element contains the value `Red` and the `#search-button` element is clicked, an alert should appear with the text `"Pokémon not found"`.
 
 ```js
 async () => {
@@ -201,7 +201,7 @@ async () => {
 };
 ```
 
-When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, you should add an `img` element with the `id` of `sprite` and the `src` set to the Pokémon's `front_default` sprite to the page.
+When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, you should add an `img` element with the `id` of `"sprite"` and the `src` set to the Pokémon's `front_default` sprite to the page.
 
 ```js
 async () => {
@@ -294,7 +294,7 @@ async () => {
 };
 ```
 
-When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, you should add an `img` element with the `id` of `sprite` and the `src` set to the Pokémon's `front_default` sprite to the page.
+When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, you should add an `img` element with the `id` of `"sprite"` and the `src` set to the Pokémon's `front_default` sprite to the page.
 
 ```js
 async () => {

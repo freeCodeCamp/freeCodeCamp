@@ -16,7 +16,7 @@ Una volta che raggiunge la fine di un percorso, la ricerca tornerà indietro fin
 
 L'animazione qui sotto mostra come funziona l'algoritmo. L'algoritmo inizia con il nodo iniziale e visita i nodi nell'ordine numerato.
 
-<img class='img-responsive' src='https://camo.githubusercontent.com/aaad9e39961daf34d967c616edeb50abf3bf1235/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37662f44657074682d46697273742d5365617263682e676966' />
+<img class='img-responsive' alt="" src='https://camo.githubusercontent.com/aaad9e39961daf34d967c616edeb50abf3bf1235/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37662f44657074682d46697273742d5365617263682e676966' />
 
 Nota come, a differenza della ricerca breadth-first, ogni volta che un nodo viene visitato, non visita tutti i suoi vicini. Invece, prima visita uno dei suoi vicini e continua lungo quel percorso fino a quando non ci sono più nodi da visitare su di esso.
 

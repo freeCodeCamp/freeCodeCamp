@@ -14,7 +14,9 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 - Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges.
 - استخدم أي منشئ موقع لإكمال المشروع. تحقق انك أضفت جميع الملفات من مستودعنا في GitHub في مشروعك.
 
-إن ملف `package.json` مركز أي مشروع Node.js أو حزمة npm. It stores information about your project, similar to how the `head` section of an HTML document describes the content of a webpage. ويتكون من كائن JSON واحد حيث يتم تخزين المعلومات في أزواج key-value. There are only two required fields; `name` and `version`, but it’s good practice to provide additional information about your project that could be useful to future users or maintainers.
+إن ملف `package.json` مركز أي مشروع Node.js أو حزمة npm. It stores information about your project. ويتكون من كائن JSON واحد حيث يتم تخزين المعلومات في أزواج key-value. There are only two required fields; `name` and `version`, but it’s good practice to provide additional information.
+
+You can create the `package.json` file from the terminal using the `npm init` command. This will run a guided setup. Using `npm init` with the `-y` flag will generate the file without having it ask any questions, `npm init -y`.
 
 If you look at the file tree of your project, you will find the `package.json` file on the top level of the tree. هذا هو الملف الذي سوف تحسنه في التحديات القادمة.
 

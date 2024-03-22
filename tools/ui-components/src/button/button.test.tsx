@@ -33,7 +33,7 @@ describe('<Button />', () => {
     ).toHaveAttribute('type', 'submit');
   });
 
-  it('should trigger the onClick prop on click', async () => {
+  it('should trigger the onClick prop on click if the component is a button element', async () => {
     const onClick = jest.fn();
 
     render(<Button onClick={onClick}>Hello world</Button>);
@@ -97,5 +97,21 @@ describe('<Button />', () => {
     expect(button).toHaveAttribute('aria-disabled', 'true');
     // Ensure that a link element is not rendered
     expect(link).not.toBeInTheDocument();
+  });
+
+  it('should trigger the onClick prop on click if the component is an anchor element', async () => {
+    const onClick = jest.fn();
+
+    render(
+      <Button href='https://www.freecodecamp.org' onClick={onClick}>
+        freeCodeCamp
+      </Button>
+    );
+
+    const link = screen.getByRole('link', { name: /freeCodeCamp/i });
+
+    await userEvent.click(link);
+
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 });

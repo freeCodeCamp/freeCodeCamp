@@ -4,8 +4,7 @@ const save2text = 'save 2';
 const editorElements = {
   container: '.vertical .reflex-container',
   editor: '.react-monaco-editor-container',
-  saveCodeBtn: '[data-cy="save-code-to-database-btn"]',
-  closeFlash: '.close'
+  saveCodeBtn: '[data-cy="save-code-to-database-btn"]'
 };
 
 describe('multifileCertProjects', function () {
@@ -43,7 +42,8 @@ describe('multifileCertProjects', function () {
     cy.focused().clear().click().type(`${save2text}{ctrl+s}`);
     cy.get(editorElements.editor).contains(save2text);
     cy.contains('Your code was saved to the database.');
-    cy.get(editorElements.closeFlash).click();
+    // close flash message
+    cy.get('button:contains("Close")').click();
     // load saved code when navigating site (no hard refresh)'
     cy.contains('Tribute Page').click();
     cy.get(editorElements.container)

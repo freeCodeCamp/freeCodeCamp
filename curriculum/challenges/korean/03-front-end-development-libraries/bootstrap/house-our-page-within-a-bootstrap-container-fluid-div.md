@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908746
-title: House our page within a Bootstrap container-fluid div
+title: 부트스트랩 container-fluid div 안에 페이지 배치하기
 challengeType: 0
 forumTopicId: 18198
 dashedName: house-our-page-within-a-bootstrap-container-fluid-div
@@ -8,19 +8,19 @@ dashedName: house-our-page-within-a-bootstrap-container-fluid-div
 
 # --description--
 
-Now let's make sure all the content on your page is mobile-responsive.
+페이지에 있는 모든 콘텐츠를 모바일 반응형으로 만들어보려 합니다.
 
-Let's nest your `h3` element within a `div` element with the class `container-fluid`.
+`container-fluid`라는 클래스를 가진 `div` 요소 하위에 `h3` 요소를 배치해주세요.
 
 # --hints--
 
-Your `div` element should have the class `container-fluid`.
+`div` 요소는 `container-fluid`라는 클래스를 가져야 합니다.
 
 ```js
 assert($('div').hasClass('container-fluid'));
 ```
 
-Each of your `div` elements should have closing tags.
+각각의 `div` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-Your `h3` element should be nested inside a `div` element.
+`h3` 요소는 `div` 요소 안에 들어있어야 합니다.
 
 ```js
 assert($('div').children('h3').length > 0);

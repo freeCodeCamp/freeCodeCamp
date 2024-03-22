@@ -14,7 +14,7 @@ dashedName: python-functions
 
 ## --text--
 
-What is the purpose of the "def" keyword in Python?
+Python の "def" キーワードの用途は何ですか？
 
 ## --answers--
 

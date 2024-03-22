@@ -14,7 +14,7 @@ dashedName: strings-in-python
 
 ## --text--
 
-What will the following code print?:
+次のコードは何を表示しますか？
 
 ```python
 for n in "banana":

@@ -11,7 +11,259 @@
   "challengeOrder": [
     {
       "id": "655c131291cbcb8febf21e64",
-      "title": "Dialogue: Placeholder"
+      "title": "Dialogue 1: Discussing Issues on GitHub"
+    },
+    {
+      "id": "656b732c8110ff8936f016de",
+      "title": "Task 1"
+    },
+    {
+      "id": "656b74ab2a075f8a05c66f41",
+      "title": "Task 2"
+    },
+    {
+      "id": "656b757d8294618a5eefd710",
+      "title": "Task 3"
+    },
+    {
+      "id": "656bbba66c53330f4316fd9f",
+      "title": "Task 4"
+    },
+    {
+      "id": "656bbbe6d57609104b152625",
+      "title": "Task 5"
+    },
+    {
+      "id": "656bbcc8333087117b4d9153",
+      "title": "Task 6"
+    },
+    {
+      "id": "656bbd3dea715a11ce02b670",
+      "title": "Task 7"
+    },
+    {
+      "id": "656bbded100497126ccc6e5d",
+      "title": "Task 8"
+    },
+    {
+      "id": "656bbe4c45fc9512d58ba0e2",
+      "title": "Task 9"
+    },
+    {
+      "id": "656bbeb152c95913465476e3",
+      "title": "Task 10"
+    },
+    {
+      "id": "656bbf3a1b344e13bc7fa12c",
+      "title": "Task 11"
+    },
+    {
+      "id": "656bbfaf6cbc3f1418acca3c",
+      "title": "Task 12"
+    },
+    {
+      "id": "656bbfedb30479145d464e37",
+      "title": "Task 13"
+    },
+    {
+      "id": "656bc028a62f3a149ed36971",
+      "title": "Task 14"
+    },
+    {
+      "id": "656bc05be141d914dcc812c3",
+      "title": "Task 15"
+    },
+    {
+      "id": "656bc094df5acf151fb264d8",
+      "title": "Task 16"
+    },
+    {
+      "id": "656bc0bd4a112e155c589e33",
+      "title": "Task 17"
+    },
+    {
+      "id": "656bc0f87049dc159ce63187",
+      "title": "Task 18"
+    },
+    {
+      "id": "656bc15142eeeb15e31d258b",
+      "title": "Task 19"
+    },
+    {
+      "id": "656bc3bd0a323317d4117a49",
+      "title": "Task 20"
+    },
+    {
+      "id": "656bc4c430704c19121c5eb4",
+      "title": "Task 21"
+    },
+    {
+      "id": "656bc54c7a049d197017b9c7",
+      "title": "Task 22"
+    },
+    {
+      "id": "656bc5a71b33ae19ad65166a",
+      "title": "Task 23"
+    },
+    {
+      "id": "656bc669dbd6561a22060cf0",
+      "title": "Task 24"
+    },
+    {
+      "id": "656bc75be35fb11a7c27a788",
+      "title": "Task 25"
+    },
+    {
+      "id": "656bc7f08edd541afdd87231",
+      "title": "Task 26"
+    },
+    {
+      "id": "656bc8f4928b351b8a6c4d53",
+      "title": "Task 27"
+    },
+    {
+      "id": "656bcaea19405d1c6f2accb9",
+      "title": "Task 28"
+    },
+    {
+      "id": "656bd6dde3a62c205cb41b2d",
+      "title": "Dialogue 2: Talking About Pull Requests"
+    },
+    {
+      "id": "656bd701970c6c20a9c89b0f",
+      "title": "Task 29"
+    },
+    {
+      "id": "656bd7723e1e4c21039f5916",
+      "title": "Task 30"
+    },
+    {
+      "id": "656bd80d58dd31216af64ddf",
+      "title": "Task 31"
+    },
+    {
+      "id": "656bd968e52c34220164de8d",
+      "title": "Task 32"
+    },
+    {
+      "id": "65a84bec88772eaff6e56679",
+      "title": "Task 33"
+    },
+    {
+      "id": "65a84dad1595bbbc2e9cd895",
+      "title": "Task 34"
+    },
+    {
+      "id": "65a84e922382a7bd112057ad",
+      "title": "Task 35"
+    },
+    {
+      "id": "65a84f2370686dbda3e53aff",
+      "title": "Task 36"
+    },
+    {
+      "id": "65a85090914872be8ca97793",
+      "title": "Task 37"
+    },
+    {
+      "id": "65a851a6389e6cbf2c2cf158",
+      "title": "Task 38"
+    },
+    {
+      "id": "65a853b498eb87c035f6da13",
+      "title": "Task 39"
+    },
+    {
+      "id": "65a85418ea38cdc0a334dab2",
+      "title": "Task 40"
+    },
+    {
+      "id": "65a9457392dfd7d564bc940e",
+      "title": "Task 41"
+    },
+    {
+      "id": "65b28add2c939e25b1d9b0e1",
+      "title": "Task 42"
+    },
+    {
+      "id": "65b28bbe803df52c4e76dd15",
+      "title": "Task 43"
+    },
+    {
+      "id": "65b28d5f4b4c502d2b7917e1",
+      "title": "Task 44"
+    },
+    {
+      "id": "65b28e008537c42da87ace01",
+      "title": "Task 45"
+    },
+    {
+      "id": "65b28ee9c5a5972e8bb2a5f3",
+      "title": "Task 46"
+    },
+    {
+      "id": "65b28f840a0d962f2240e800",
+      "title": "Task 47"
+    },
+    {
+      "id": "65b2af1545e34334b7573de9",
+      "title": "Task 48"
+    },
+    {
+      "id": "65b2af807f713c351c5b9435",
+      "title": "Task 49"
+    },
+    {
+      "id": "65b2b0e08ec66535fa8542eb",
+      "title": "Dialogue 3: Talking About Debugging"
+    },
+    {
+      "id": "65b2b181cb9b2136e833a17a",
+      "title": "Task 50"
+    },
+    {
+      "id": "65b2b2781c59e837a5e0beb2",
+      "title": "Task 51"
+    },
+    {
+      "id": "65b2b383fb6406386dab3499",
+      "title": "Task 52"
+    },
+    {
+      "id": "65b2b3ea62a86838c216db73",
+      "title": "Task 53"
+    },
+    {
+      "id": "65b2b54bf7897c3954e20971",
+      "title": "Task 54"
+    },
+    {
+      "id": "65b2b6255fe7973a8bf80902",
+      "title": "Task 55"
+    },
+    {
+      "id": "65b2b6aef88e363af2749620",
+      "title": "Task 56"
+    },
+    {
+      "id": "65b2b74cb90a3d3b5d1acc48",
+      "title": "Task 57"
+    },
+    {
+      "id": "65b2b80774ecba3c156722aa",
+      "title": "Task 58"
+    },
+    {
+      "id": "65b2ba3323d6d33d470e5f53",
+      "title": "Task 59"
+    },
+    {
+      "id": "65b2bb073ac8d03dfe507810",
+      "title": "Task 60"
+    },
+    {
+      "id": "65b2bd42ca24dd3ede91aa41",
+      "title": "Task 61"
     }
   ],
   "helpCategory": "English"

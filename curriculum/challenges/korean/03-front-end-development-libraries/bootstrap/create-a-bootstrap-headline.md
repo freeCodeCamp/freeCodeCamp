@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908846
-title: Create a Bootstrap Headline
+title: 부트스트랩 헤드라인 생성하기
 challengeType: 0
 forumTopicId: 16812
 dashedName: create-a-bootstrap-headline
@@ -8,23 +8,23 @@ dashedName: create-a-bootstrap-headline
 
 # --description--
 
-Now let's build something from scratch to practice our HTML, CSS and Bootstrap skills.
+이제 HTML, CSS, 부트스트랩 기술을 연습해보기 위해 무언가를 처음부터 만들어봅시다.
 
-We'll build a jQuery playground, which we'll soon put to use in our jQuery challenges.
+앞으로의 jQuery 챌린지에서 활용할 jQuery playground를 만들 것입니다.
 
-To start with, create an `h3` element, with the text `jQuery Playground`.
+먼저, `jQuery Playground`라는 텍스트를 가진 `h3` 요소를 생성해보세요.
 
-Color your `h3` element with the `text-primary` Bootstrap class, and center it with the `text-center` Bootstrap class.
+`h3` 요소에 `text-primary`라는 부트스트랩 클래스를 사용해 색상을 지정하고, `text-center`라는 부트스트랩 클래스로 가운데 정렬해주세요.
 
 # --hints--
 
-You should add an `h3` element to your page.
+페이지에 `h3` 요소를 추가해야 합니다.
 
 ```js
 assert($('h3') && $('h3').length > 0);
 ```
 
-Your `h3` element should have a closing tag.
+`h3` 요소에는 닫는 태그가 있어야 합니다.
 
 ```js
 assert(
@@ -34,19 +34,19 @@ assert(
 );
 ```
 
-Your `h3` element should be colored by applying the class `text-primary`
+`h3` 요소에는 `text-primary` 클래스를 사용해 색깔을 적용해야 합니다.
 
 ```js
 assert($('h3').hasClass('text-primary'));
 ```
 
-Your `h3` element should be centered by applying the class `text-center`
+`h3` 요소는 `text-center` 클래스를 사용해 가운데 정렬을 해야 합니다.
 
 ```js
 assert($('h3').hasClass('text-center'));
 ```
 
-Your `h3` element should have the text `jQuery Playground`.
+`h3` 요소는 `jQuery Playground`라는 텍스트를 갖고 있어야 합니다.
 
 ```js
 assert.isTrue(/jquery(\s)+playground/gi.test($('h3').text()));

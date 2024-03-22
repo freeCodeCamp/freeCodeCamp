@@ -4,6 +4,7 @@ title: Learn Variables and Operators Question D
 challengeType: 15
 dashedName: learn-variables-and-operators-question-d
 ---
+
 # --description--
 
 There are two limitations on variable names in JavaScript:

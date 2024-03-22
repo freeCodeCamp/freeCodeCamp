@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908855
-title: Give Each Element a Unique id
+title: 각 요소들마다 고유한 id 부여하기
 challengeType: 0
 forumTopicId: 18191
 dashedName: give-each-element-a-unique-id
@@ -8,15 +8,15 @@ dashedName: give-each-element-a-unique-id
 
 # --description--
 
-We will also want to be able to use jQuery to target each button by its unique id.
+우리는 각 버튼에 고유한 id를 부여해 jQuery에서 원하는 버튼을 선택할 수 있도록 하려고 합니다.
 
-Give each of your buttons a unique id, starting with `target1` and ending with `target6`.
+각 버튼에 `target1`부터 `target6`까지의 고유한 id를 부여해주세요.
 
-Make sure that `target1` to `target3` are in `#left-well`, and `target4` to `target6` are in `#right-well`.
+`target1`부터 `target3`까지는 `#left-well`에, `target4`부터 `target6`까지는 `#right-well` 에 배치해 주세요.
 
 # --hints--
 
-One `button` element should have the id `target1`.
+한 `button` 요소는 `target1` 이라는 id를 가져야 합니다.
 
 ```js
 assert(
@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-One `button` element should have the id `target2`.
+한 `button` 요소는 `target2` 이라는 id를 가져야 합니다.
 
 ```js
 assert(
@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-One `button` element should have the id `target3`.
+한 `button` 요소는 `target3` 이라는 id를 가져야 합니다.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-One `button` element should have the id `target4`.
+한 `button` 요소는 `target4` 이라는 id를 가져야 합니다.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-One `button` element should have the id `target5`.
+한 `button` 요소는 `target5` 이라는 id를 가져야 합니다.
 
 ```js
 assert(
@@ -61,7 +61,7 @@ assert(
 );
 ```
 
-One `button` element should have the id `target6`.
+한 `button` 요소는 `target6` 이라는 id를 가져야 합니다.
 
 ```js
 assert(

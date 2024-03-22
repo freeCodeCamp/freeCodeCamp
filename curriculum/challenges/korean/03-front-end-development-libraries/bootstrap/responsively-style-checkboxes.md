@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aeda08845
-title: Responsively Style Checkboxes
+title: 체크박스 반응형으로 스타일링하기
 challengeType: 0
 forumTopicId: 18269
 required:
@@ -13,27 +13,27 @@ dashedName: responsively-style-checkboxes
 
 # --description--
 
-Since Bootstrap's `col-xs-*` classes are applicable to all `form` elements, you can use them on your checkboxes too! This way, the checkboxes will be evenly spread out across the page, regardless of how wide the screen resolution is.
+부트스트랩의 `col-xs-*` 클래스가 모든 `form` 요소에 적용될 수 있기 때문에 체크박스에도 이 클래스를 사용할 수 있습니다! 이런 방식으로 체크박스는 화면의 해상도의 너비와 상관없이 해당 페이지에 골고루 퍼지게 될 것입니다.
 
 # --instructions--
 
-Nest all three of your checkboxes in a `<div class="row">` element. Then nest each of them in a `<div class="col-xs-4">` element.
+`<div class="row">` 요소에 세 개의 체크박스를 중첩시키세요. 그런 다음 각각을 `<div class="col-xs-4">` 요소에 중첩시키세요.
 
 # --hints--
 
-All of your checkboxes should be nested inside one `div` with the class `row`.
+모든 체크박스는 `row` 클래스를 가진 하나의 `div` 안에 중첩되어야 합니다.
 
 ```js
 assert($('div.row:has(input[type="checkbox"])').length > 0);
 ```
 
-Each of your checkboxes should be nested inside its own `div` with the class `col-xs-4`.
+각 체크박스는 `col-xs-4` 클래스를 가진 `div` 안에 중첩되어야 합니다.
 
 ```js
 assert($('div.col-xs-4:has(input[type="checkbox"])').length > 2);
 ```
 
-All of your `div` elements should have closing tags.
+모든 `div` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(
