@@ -1,8 +1,14 @@
 // eslint-disable-next-line import/no-unresolved
 import curriculum from '../../../../shared/config/curriculum.json';
 
+let challengeMap = null;
+
 export function getChallengeMapByBlock() {
-  const challengeMap = {};
+  if (challengeMap) {
+    return challengeMap;
+  }
+
+  challengeMap = {};
 
   Object.values(curriculum).forEach(superBlock => {
     if (superBlock.blocks) {
@@ -20,15 +26,9 @@ export function getChallengeMapByBlock() {
 }
 
 export function getChallengeIdsForBlock(dashedName) {
-  console.log('Getting challenge IDs for block:', dashedName);
-  const challengeIds = [];
+  const localChallengeMap = getChallengeMapByBlock();
 
-  Object.values(curriculum).forEach(superBlock => {
-    const block = superBlock.blocks[dashedName];
-    if (block?.challenges) {
-      challengeIds.push(...block.challenges.map(challenge => challenge.id));
-    }
-  });
+  const challengeIds = localChallengeMap[dashedName] || [];
 
   if (challengeIds.length === 0) {
     throw new Error(`No block found with the name: ${dashedName}`);
