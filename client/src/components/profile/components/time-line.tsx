@@ -19,6 +19,7 @@ import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
 import { Link, FullWidthRow } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import TimelinePagination from './timeline-pagination';
 
 const SolutionViewer = Loadable(
@@ -295,9 +296,11 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
       }
     }) => {
       const blockNameTitle = t(`intro:${superBlock}.blocks.${blockName}.title`);
+      const shouldAppendBlockNameToTitle =
+        hasEditableBoundaries || superBlock === SuperBlocks.A2English;
       idToNameMap.set(id, {
         challengeTitle: `${
-          hasEditableBoundaries ? blockNameTitle + ' - ' : ''
+          shouldAppendBlockNameToTitle ? blockNameTitle + ' - ' : ''
         }${title}`,
         challengePath: slug
       });
