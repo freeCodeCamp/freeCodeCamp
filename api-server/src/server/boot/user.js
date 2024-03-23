@@ -44,6 +44,7 @@ function bootUser(app) {
   const deleteMsUsername = createDeleteMsUsername(app);
   const postSubmitSurvey = createPostSubmitSurvey(app);
   const deleteUserSurveys = createDeleteUserSurveys(app);
+  const postResetProjectProgress = createPostResetProjectProgress(app);
 
   api.get('/account', sendNonUserToHome, deprecatedEndpoint);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
@@ -474,40 +475,46 @@ function postResetProgress(req, res, next) {
   );
 }
 
-async function postResetProjectProgress(req, res, next) {
-  try {
-    const { user } = req;
-    const { dashedBlockName } = req.params;
+function createPostResetProjectProgress(app) {
+  return async function postResetProjectProgress(req, res, next) {
+    try {
+      const User = app.models.User;
+      const userId = req.user.id;
+      const { dashedBlockName } = req.params;
 
-    const toResetChallengeIds = getChallengeIdsForBlock(dashedBlockName);
+      const toResetChallengeIds = getChallengeIdsForBlock(dashedBlockName);
 
-    const originalCount = user.completedChallenges.length;
-    const updatedCompletedChallenges = user.completedChallenges.filter(
-      challenge => !toResetChallengeIds.includes(challenge.id)
-    );
+      const result = await User.updateAll(
+        {
+          id: userId,
+          'completedChallenges.id': { in: toResetChallengeIds }
+        },
+        {
+          $pull: {
+            completedChallenges: { id: { $in: toResetChallengeIds } }
+          }
+        }
+      );
 
-    if (originalCount === updatedCompletedChallenges.length) {
+      if (result.count === 0) {
+        return res.status(200).json({
+          message: `No challenges were reset for block ${dashedBlockName}`
+        });
+      }
+
       return res.status(200).json({
-        message: `No challenges were reset because the user had not completed any challenges in ${dashedBlockName}`
+        message: `Project progress for block ${dashedBlockName} successfully reset.`
       });
+    } catch (err) {
+      if (
+        err.message &&
+        err.message.startsWith('No block found with the name')
+      ) {
+        return res.status(404).json({ message: err.message });
+      }
+      return next(err);
     }
-
-    await user.updateAttributes({
-      completedChallenges: updatedCompletedChallenges
-    });
-
-    const response = {
-      message: 'Project progress successfully reset.',
-      completedChallengesCount: `Original completed challenges count was ${originalCount}. New count is ${updatedCompletedChallenges.length}.`
-    };
-
-    return res.status(200).json(response);
-  } catch (err) {
-    if (err.message.startsWith('No block found with the name')) {
-      return res.status(404).json({ message: err.message });
-    }
-    return next(err);
-  }
+  };
 }
 
 function createPostDeleteAccount(app) {
