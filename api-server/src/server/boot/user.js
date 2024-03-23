@@ -27,7 +27,7 @@ import {
 import { createDeleteMsUsername } from '../middlewares/ms-username';
 import { validateSurvey, createDeleteUserSurveys } from '../middlewares/survey';
 import { deprecatedEndpoint } from '../utils/disabled-endpoints';
-import { getChallengeIdsForBlock } from '../utils/get-blocks-challenges-mappings';
+import blocksToChallengesService from '../utils/get-blocks-challenges-mappings';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectHome();
@@ -65,7 +65,7 @@ function bootUser(app) {
     deleteUserSurveys,
     postResetProgress
   );
-  api.post(
+  api.get(
     '/account/reset-progress/:dashedBlockName',
     ifNoUser401,
     postResetProjectProgress
@@ -477,13 +477,21 @@ function postResetProgress(req, res, next) {
 
 function createPostResetProjectProgress(app) {
   return async function postResetProjectProgress(req, res, next) {
+    const { User } = app.models;
+    const userId = req.user.id;
+    const { dashedBlockName } = req.params;
+
+    let toResetChallengeIds;
     try {
-      const User = app.models.User;
-      const userId = req.user.id;
-      const { dashedBlockName } = req.params;
+      toResetChallengeIds =
+        blocksToChallengesService.getChallengeIdsForBlock(dashedBlockName);
+    } catch (error) {
+      return res
+        .status(404)
+        .json({ message: `No block found with the name: ${dashedBlockName}` });
+    }
 
-      const toResetChallengeIds = getChallengeIdsForBlock(dashedBlockName);
-
+    try {
       const result = await User.updateAll(
         {
           id: userId,
@@ -506,12 +514,6 @@ function createPostResetProjectProgress(app) {
         message: `Project progress for block ${dashedBlockName} successfully reset.`
       });
     } catch (err) {
-      if (
-        err.message &&
-        err.message.startsWith('No block found with the name')
-      ) {
-        return res.status(404).json({ message: err.message });
-      }
       return next(err);
     }
   };
