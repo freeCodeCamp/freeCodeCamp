@@ -68,6 +68,7 @@ interface ShowDialogueProps {
 }
 
 interface ShowDialogueState {
+  isPlayingEx: boolean;
   subtitles: string;
   downloadURL: string | null;
   assignmentsCompleted: number;
@@ -83,6 +84,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
   constructor(props: ShowDialogueProps) {
     super(props);
     this.state = {
+      isPlayingEx: false,
       subtitles: '',
       downloadURL: null,
       assignmentsCompleted: 0,
@@ -171,6 +173,12 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
     });
   };
 
+  setIsPlayingEx = (isPlaying: boolean) => {
+    this.setState({
+      isPlayingEx: isPlaying
+    });
+  };
+
   render() {
     const {
       data: {
@@ -205,6 +213,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
         containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
+        playScene={() => this.setIsPlayingEx(true)}
       >
         <LearnLayout>
           <Helmet
@@ -225,7 +234,13 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
                 <Spacer size='medium' />
               </Col>
 
-              {scene && <Scene scene={scene} />}
+              {scene && (
+                <Scene
+                  scene={scene}
+                  isPlayingEx={this.state.isPlayingEx}
+                  setIsPlayingEx={this.setIsPlayingEx}
+                />
+              )}
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />

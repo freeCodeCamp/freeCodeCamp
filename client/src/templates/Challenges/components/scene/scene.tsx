@@ -8,7 +8,15 @@ import Character from './character';
 
 import './scene.css';
 
-export function Scene({ scene }: { scene: FullScene }): JSX.Element {
+export function Scene({
+  scene,
+  isPlayingEx,
+  setIsPlayingEx
+}: {
+  scene: FullScene;
+  isPlayingEx?: boolean;
+  setIsPlayingEx?: (isPlaying: boolean) => void;
+}): JSX.Element {
   const { setup, commands } = scene;
   const { audio, alwaysShowDialogue } = setup;
 
@@ -75,6 +83,15 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
   const [characters, setCharacters] = useState(initCharacters);
   const [dialogue, setDialogue] = useState(initDialogue);
   const [background, setBackground] = useState(initBackground);
+
+  useEffect(() => {
+    if (isPlayingEx && !isPlaying) {
+      playScene();
+    } else if (isPlaying !== isPlayingEx && setIsPlayingEx) {
+      setIsPlayingEx(isPlaying);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isPlayingEx, isPlaying]);
 
   const playScene = () => {
     setIsPlaying(true);
