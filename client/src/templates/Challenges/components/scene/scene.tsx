@@ -85,9 +85,11 @@ export function Scene({
   const [background, setBackground] = useState(initBackground);
 
   useEffect(() => {
+    if (!setIsPlayingExternal) return;
+
     if (isPlayingExternal && !isPlaying) {
       playScene();
-    } else if (isPlaying !== isPlayingExternal && setIsPlayingExternal) {
+    } else if (isPlaying !== isPlayingExternal) {
       setIsPlayingExternal(isPlaying);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
