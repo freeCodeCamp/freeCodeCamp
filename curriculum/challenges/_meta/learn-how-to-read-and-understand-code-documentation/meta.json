@@ -10,8 +10,68 @@
   "isBeta": true,
   "challengeOrder": [
     {
-      "id": "655c1715102daf9d3d0d3330",
-      "title": "Dialogue: Placeholder"
+      "id": "65fd595245455d0dca3434ba",
+      "title": "Dialogue 1: Navigating Documentation"
+    },
+    {
+      "id": "65fd5a9680a9540e9787dec5",
+      "title": "Task 1"
+    },
+    {
+      "id": "65fd5c89285ea50f25bd0241",
+      "title": "Task 2"
+    },
+    {
+      "id": "65fd5d1a6cb7f10f77a06163",
+      "title": "Task 3"
+    },
+    {
+      "id": "65fd5da902959d0fda781aa3",
+      "title": "Task 4"
+    },
+    {
+      "id": "65fd5dfc174596101eae1107",
+      "title": "Task 5"
+    },
+    {
+      "id": "65fd5f2abfdbc510942d76f8",
+      "title": "Task 6"
+    },
+    {
+      "id": "65fd5f86457b4910e35b51c9",
+      "title": "Task 7"
+    },
+    {
+      "id": "65fd620e9ba99c116c42c361",
+      "title": "Task 8"
+    },
+    {
+      "id": "65fd63be9afd7611d2a9b788",
+      "title": "Task 9"
+    },
+    {
+      "id": "65ffa914bc44081a196fa6f7",
+      "title": "Task 10"
+    },
+    {
+      "id": "65ffa9d80e7ffb1ab9b4df1c",
+      "title": "Task 11"
+    },
+    {
+      "id": "65fff2b49779301d9bdab6fa",
+      "title": "Task 12"
+    },
+    {
+      "id": "65fff336d7553c1df86f7968",
+      "title": "Task 13"
+    },
+    {
+      "id": "65fff428290eaa1e5819c119",
+      "title": "Task 14"
+    },
+    {
+      "id": "65fff57ce568cf1ed9702fbf",
+      "title": "Task 15"
     }
   ],
   "helpCategory": "English"
