@@ -10,6 +10,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import ShortcutsModal from '../components/shortcuts-modal';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
@@ -303,6 +304,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Container>
+          <ShortcutsModal />
         </LearnLayout>
       </Hotkeys>
     );
