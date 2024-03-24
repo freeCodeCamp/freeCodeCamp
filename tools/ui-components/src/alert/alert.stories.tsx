@@ -58,14 +58,10 @@ export const WithHeadingAndParagraphs: Story = {
           <strong>Some Heading Text</strong>
         </h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi
-          commodi cumque dicta ducimus eum iure, maiores mollitia, odit porro
-          quas quod rerum soluta sunt tempora unde, vel voluptas voluptates.
+          .
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi
-          commodi cumque dicta ducimus eum iure, maiores mollitia, odit porro
-          quas quod rerum soluta sunt tempora unde, vel voluptas voluptates.
+          .
         </p>
       </>
     )
