@@ -10,12 +10,12 @@ import './scene.css';
 
 export function Scene({
   scene,
-  isPlayingEx,
-  setIsPlayingEx
+  isPlayingExternal,
+  setIsPlayingExternal
 }: {
   scene: FullScene;
-  isPlayingEx?: boolean;
-  setIsPlayingEx?: (isPlaying: boolean) => void;
+  isPlayingExternal?: boolean;
+  setIsPlayingExternal?: (isPlaying: boolean) => void;
 }): JSX.Element {
   const { setup, commands } = scene;
   const { audio, alwaysShowDialogue } = setup;
@@ -85,13 +85,13 @@ export function Scene({
   const [background, setBackground] = useState(initBackground);
 
   useEffect(() => {
-    if (isPlayingEx && !isPlaying) {
+    if (isPlayingExternal && !isPlaying) {
       playScene();
-    } else if (isPlaying !== isPlayingEx && setIsPlayingEx) {
-      setIsPlayingEx(isPlaying);
+    } else if (isPlaying !== isPlayingExternal && setIsPlayingExternal) {
+      setIsPlayingExternal(isPlaying);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isPlayingEx, isPlaying]);
+  }, [isPlayingExternal, isPlaying]);
 
   const playScene = () => {
     setIsPlaying(true);

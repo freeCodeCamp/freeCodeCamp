@@ -69,7 +69,7 @@ interface ShowDialogueProps {
 }
 
 interface ShowDialogueState {
-  isPlayingEx: boolean;
+  isScenePlayingExternal: boolean;
   subtitles: string;
   downloadURL: string | null;
   assignmentsCompleted: number;
@@ -85,7 +85,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
   constructor(props: ShowDialogueProps) {
     super(props);
     this.state = {
-      isPlayingEx: false,
+      isScenePlayingExternal: false,
       subtitles: '',
       downloadURL: null,
       assignmentsCompleted: 0,
@@ -174,9 +174,9 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
     });
   };
 
-  setIsPlayingEx = (isPlaying: boolean) => {
+  setIsScenePlayingExternal = (isPlaying: boolean) => {
     this.setState({
-      isPlayingEx: isPlaying
+      isScenePlayingExternal: isPlaying
     });
   };
 
@@ -214,7 +214,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
         containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
-        playScene={() => this.setIsPlayingEx(true)}
+        playScene={() => this.setIsScenePlayingExternal(true)}
       >
         <LearnLayout>
           <Helmet
@@ -238,8 +238,8 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
               {scene && (
                 <Scene
                   scene={scene}
-                  isPlayingEx={this.state.isPlayingEx}
-                  setIsPlayingEx={this.setIsPlayingEx}
+                  isPlayingExternal={this.state.isScenePlayingExternal}
+                  setIsPlayingExternal={this.setIsScenePlayingExternal}
                 />
               )}
 
