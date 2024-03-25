@@ -132,6 +132,11 @@ function Hotkeys({
         executeChallenge({ showCompletionModal: true });
       }
     },
+    showShortcuts: (keyEvent?: KeyboardEvent) => {
+      if (keyEvent?.key === '?') {
+        openShortcutsModal();
+      }
+    },
     ...(keyboardShortcuts
       ? {
           focusEditor: (keyEvent?: KeyboardEvent) => {
@@ -164,11 +169,6 @@ function Hotkeys({
               } else {
                 void navigate('/learn');
               }
-            }
-          },
-          showShortcuts: (keyEvent?: KeyboardEvent) => {
-            if (!canFocusEditor && keyEvent?.key === '?') {
-              openShortcutsModal();
             }
           }
         }
