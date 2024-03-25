@@ -46,7 +46,9 @@ function ShortcutsModal({
 }: ShortcutsModalProps): JSX.Element {
   return (
     <Modal onClose={closeShortcutsModal} open={isOpen}>
-      <Modal.Header>{t('shortcuts.title')}</Modal.Header>
+      <Modal.Header showCloseButton={false}>
+        {t('shortcuts.title')}
+      </Modal.Header>
       <Modal.Body>
         <table>
           <thead>
