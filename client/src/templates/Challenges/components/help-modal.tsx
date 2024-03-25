@@ -57,16 +57,15 @@ function Checkbox({ name, i18nkey, onChange, value, href }: CheckboxProps) {
 
   return (
     <div className='checkbox-container'>
-      <input
-        id={i18nkey}
-        name={name}
-        type='checkbox'
-        onChange={onChange}
-        checked={value}
-        required
-      />
-      <label htmlFor={i18nkey} className='checkbox-label'>
-        <span>
+      <label>
+        <input
+          name={name}
+          type='checkbox'
+          onChange={onChange}
+          checked={value}
+          required
+        />
+        <span className='checkbox-text'>
           <Trans i18nKey={i18nkey}>
             <a href={href} rel='noopener noreferrer' target='_blank'>
               placeholder

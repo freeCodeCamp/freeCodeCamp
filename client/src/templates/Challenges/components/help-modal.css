@@ -21,12 +21,17 @@
 
 .checkbox-container {
   display: flex;
-  flex-direction: row;
+  width: 100%;
   text-align: left;
 }
 
-.checkbox-label {
-  font-weight: normal;
+.checkbox-container label {
+  display: flex;
+  align-self: left;
+}
+
+.checkbox-text {
+  margin-inline-start: 10px;
 }
 
 @media screen and (max-width: 767px) {
