@@ -62,7 +62,7 @@ test('User can see list of shortcuts  by pressing SHIFT + ?', async ({
   ).toBeVisible();
 
   await expect(
-    page.getByRole('button', { name: translations.buttons.close }).nth(1)
+    page.getByRole('button', { name: translations.buttons.close })
   ).toBeVisible();
 });
 
@@ -97,10 +97,7 @@ test('User can disable keyboard shortcuts', async ({ page, isMobile }) => {
   ).toBeVisible();
 
   await page.getByRole('button', { name: translations.buttons.off }).click();
-  await page
-    .getByRole('button', { name: translations.buttons.close })
-    .nth(1)
-    .click();
+  await page.getByRole('button', { name: translations.buttons.close }).click();
 
   await expect(dialog).not.toBeVisible();
 

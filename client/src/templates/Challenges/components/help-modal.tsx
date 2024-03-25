@@ -56,7 +56,7 @@ function Checkbox({ name, i18nkey, onChange, value, href }: CheckboxProps) {
   const { t } = useTranslation();
 
   return (
-    <div className='checkbox'>
+    <div className='checkbox-container'>
       <label>
         <input
           name={name}
@@ -137,11 +137,7 @@ function HelpModal({
     callGA({ event: 'pageview', pagePath: '/help-modal' });
   }
   return (
-    <Modal
-      onClose={handleClose}
-      open={isOpen ?? false}
-      aria-labelledby='ask-for-help-modal'
-    >
+    <Modal onClose={handleClose} open={isOpen ?? false}>
       <Modal.Header showCloseButton={true}>
         {t('buttons.ask-for-help')}
       </Modal.Header>

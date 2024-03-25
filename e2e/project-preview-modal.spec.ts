@@ -20,9 +20,7 @@ test.describe('Exit Project Preview Modal E2E Test Suite', () => {
     ).toBeVisible();
 
     await expect(page.getByRole('dialog')).toBeVisible();
-    await expect(
-      page.locator('div.modal-body').getByTestId('preview-iframe')
-    ).toBeVisible();
+    await expect(page.getByTestId('preview-iframe').nth(1)).toBeVisible();
     // JS will generate 2 iframes, the right one should be chosen
     await expect(
       page.getByTestId('project-preview-modal-closeButton')

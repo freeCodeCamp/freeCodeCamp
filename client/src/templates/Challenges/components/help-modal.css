@@ -19,10 +19,15 @@
   font-size: 18px;
 }
 
-.checkbox {
+.checkbox-container {
   display: flex;
-  flex-direction: row;
+  width: 100%;
   text-align: left;
+}
+
+.checkbox-container label {
+  display: flex;
+  align-self: left;
 }
 
 .checkbox-text {
