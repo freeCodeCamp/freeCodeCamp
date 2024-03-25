@@ -16,7 +16,7 @@ dashedName: html-foundations-question-a
 
 Повний елемент абзацу виглядає так:
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/html-foundations/html-foundations-01.png" alt='An opening p tag, followed by the content string "some text content", followed by a closing p tag.' />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/html-foundations/html-foundations-01.png" alt='Початковий тег p, після якого йде рядок «some text content», а потім кінцевий тег p.' />
 
 # --assignment--
 

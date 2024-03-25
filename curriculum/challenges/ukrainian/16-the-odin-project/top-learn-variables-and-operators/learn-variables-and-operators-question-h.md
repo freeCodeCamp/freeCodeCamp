@@ -1,35 +1,35 @@
 ---
 id: 65e1aedc500d930ce8ed90ac
-title: Learn Variables and Operators Question H
+title: Вивчіть змінні та оператори. Запитання H
 challengeType: 15
 dashedName: learn-variables-and-operators-question-h
 ---
 
 # --description--
 
-If an expression has more than one operator, the execution order is defined by their precedence, or, in other words, the default priority order of operators.
+Якщо вираз має більше одного оператора, то порядок виконання визначається за пріоритетом, або, іншими словами, за пріоритетним порядком операторів за замовчуванням.
 
-From school, you know that the multiplication in the expression `1 + 2 * 2` should be calculated before the addition. That’s exactly the precedence thing. The multiplication is said to have a higher precedence than the addition.
+Зі школи ви знаєте, що у виразі `1 + 2 * 2` спочатку виконується множення, а потім — додавання. Це і є пріоритетом. Множення має вищий пріоритет за додавання.
 
-Parentheses override any precedence, so if you’re not satisfied with the default order, you can use them to change it. For example, write `(1 + 2) * 2`.
+Круглі дужки нехтують пріоритетом; тому, якщо ви незадоволені порядком за замовчуванням, просто використайте дужки. Наприклад, напишіть `(1 + 2) * 2`.
 
-There are many operators in JavaScript. Every operator has a corresponding precedence number. The one with the larger number executes first. If the precedence is the same, the execution order is from left to right.
+В JavaScript існує багато операторів. Кожен оператор має відповідний номер пріоритету. Першим виконується той, чий номер більший. Якщо пріоритет однаковий, вони виконуються зліва направо.
 
-Here’s an extract from the precedence table (you don’t need to remember this, but note that unary operators are higher than corresponding binary ones):
+Ось частина таблиці пріоритетів (цього не потрібно запам’ятовувати, але зверніть увагу, що унарні оператори розташовані над бінарними):
 
-| Precedence | Name           | Sign |
-| ---------- | -------------- | ---- |
-| ...        | ...            | ...  |
-| 14         | unary plus     | +    |
-| 14         | unary negation | -    |
-| 13         | exponentiation | **   |
-| 12         | multiplication | *    |
-| 12         | division       | /    |
-| 11         | addition       | +    |
-| 11         | subtraction    | -    |
-| ...        | ...            | ...  |
-| 2          | assignment     | =    |
-| ...        | ...            | ...  |
+| Пріоритет | Назва                 | Знак |
+| --------- | --------------------- | ---- |
+| ...       | ...                   | ...  |
+| 14        | унарний плюс          | +    |
+| 14        | унарне віднімання     | -    |
+| 13        | піднесення до степеня | **   |
+| 12        | множення              | *    |
+| 12        | ділення               | /    |
+| 11        | додавання             | +    |
+| 11        | віднімання            | -    |
+| ...       | ...                   | ...  |
+| 2         | присвоєння            | =    |
+| ...       | ...                   | ...  |
 
 
 
@@ -37,23 +37,23 @@ Here’s an extract from the precedence table (you don’t need to remember this
 
 ## --text--
 
-When dealing with multiple operators in a JavaScript expression, which statement is true regarding the order of execution?
+Яке твердження правильне щодо порядку виконання декількох операторів у виразі JavaScript?
 
 ## --answers--
 
-Operators are executed from right to left, regardless of their precedence.
+Оператори виконуються справа наліво, незалежно від пріоритету.
 
 ---
 
-Operators with higher precedence are executed first, and parentheses can override the predefined precedence.
+Першими виконуються оператори з вищим пріоритетом, а круглі дужки можуть змінити визначений пріоритет.
 
 ---
 
-The operator precedence is determined by the operator's speed of execution.
+Пріоритет оператора визначається швидкістю виконання оператора.
 
 ---
 
-Multiplication always takes precedence over addition, and unary operators are executed after binary ones.
+Пріоритет множення вищий за додавання, а унарні оператори виконуються після бінарних.
 
 
 ## --video-solution--

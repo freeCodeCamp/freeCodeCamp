@@ -1,15 +1,11 @@
 ---
 id: 657fbde9a43e35ec1ebafe56
-title: Task 78
+title: Task 75
 challengeType: 19
-dashedName: task-78
-audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+dashedName: task-75
 ---
 
-<!--
-AUDIO REFERENCE: 
-Sarah: There's a big convention next month. Would you like to come?
--->
+<!-- (Audio) Sarah: There's a big convention next month. Would you like to come? -->
 
 # --description--
 
@@ -52,3 +48,47 @@ This option is incorrect because the phrase is not seeking information; rather, 
 ## --video-solution--
 
 2
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-breakroom.png",
+    "characters": [
+      {
+        "character": "Sarah",
+        "position": {"x":50,"y":0,"z":1.4},
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "3.2-4.mp3",
+      "startTime": 1,
+      "startTimestamp": 18.70,
+      "finishTimestamp": 21.36
+    }
+  },
+  "commands": [
+    {
+      "character": "Sarah",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Sarah",
+      "startTime": 1,
+      "finishTime": 3.66,
+      "dialogue": {
+        "text": "There's a big convention next month. Would you like to come?",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Sarah",
+      "opacity": 0,
+      "startTime": 4.16
+    }
+  ]
+}
+```

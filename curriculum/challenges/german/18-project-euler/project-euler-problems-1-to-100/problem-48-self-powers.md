@@ -8,37 +8,37 @@ dashedName: problem-48-self-powers
 
 # --description--
 
-The series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 10<sup>10</sup> = 10405071317.
+Die Serie 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 10<sup>10</sup> = 10405071317.
 
-Find the last ten digits of the series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 1000<sup>1000</sup>.
+Finde die letzten zehn Ziffern der Serie, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + . . + 1000<sup>1000</sup>.
 
 # --hints--
 
-`selfPowers(10, 3)` should return a number.
+`selfPowers(10, 3)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof selfPowers(10, 3) === 'number');
 ```
 
-`selfPowers(10, 3)` should return 317.
+`selfPowers(10, 3)` sollte 317 zurückgeben.
 
 ```js
 assert.strictEqual(selfPowers(10, 3), 317);
 ```
 
-`selfPowers(150, 6)` should return 29045.
+`selfPowers(150, 6)` sollte 29045 zurückgeben.
 
 ```js
 assert.strictEqual(selfPowers(150, 6), 29045);
 ```
 
-`selfPowers(673, 7)` should return 2473989.
+`selfPowers(673, 7)` sollte 2473989 zurückgeben.
 
 ```js
 assert.strictEqual(selfPowers(673, 7), 2473989);
 ```
 
-`selfPowers(1000, 10)` should return 9110846700.
+`selfPowers(1000, 10)` sollte 9110846700 zurückgeben.
 
 ```js
 assert.strictEqual(selfPowers(1000, 10), 9110846700);

@@ -1,6 +1,6 @@
 ---
 id: 6331d258b51aeedd1a2bd649
-title: "Converting Fractions and Decimals"
+title: "Umrechnen von Brüchen und Dezimalzahlen"
 challengeType: 15
 videoId: hVHWr4KXZn0
 dashedName: converting-fractions-and-decimals
@@ -8,19 +8,19 @@ dashedName: converting-fractions-and-decimals
 
 # --description--
 
-The first video will show you how to convert between fractions, decimals, and percents on paper. Then, it will show you how to do it with Python code.
+Im ersten Video wird dir gezeigt, wie du auf dem Papier zwischen Brüchen, Dezimalzahlen und Prozenten umrechnen kannst. Anschließend wird erklärt, wie man das mit Python-Code macht.
 
-Here is the <a href="https://colab.research.google.com/drive/1dgeEEODP7cwm_96_JqbjxxJhVpZcFfGe?usp=sharing#scrollTo=NkMTAVF0BlqE" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in the video.</a> Use this code as a model, and write your own code to convert fractions and decimals.
+Hier ist das <a href="https://colab.research.google.com/drive/1dgeEEODP7cwm_96_JqbjxxJhVpZcFfGe?usp=sharing#scrollTo=NkMTAVF0BlqE" target="_blank" rel="noopener noreferrer nofollow">Colab-Notizbuch, das im Video verwendet wird.</a> Verwende diesen Code als Modell und schreibe deinen eigenen Code, um Brüche und Dezimalzahlen umzurechnen.
 
 # --assignment--
 
-Add the code to convert fractions and decimals to your algebra Colab notebook.
+Füge den Code zum Umrechnen von Brüchen und Dezimalzahlen in dein Algebra-Colab-Notizbuch ein.
 
 # --question--
 
 ## --text--
 
-Which of the following correctly represents "three hundredths" as a decimal?
+Welche der folgenden Angaben stellt "drei Hundertstel" korrekt als Dezimalzahl dar?
 
 ## --answers--
 

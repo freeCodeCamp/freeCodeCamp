@@ -1,6 +1,6 @@
 ---
 id: 5900f3a21000cf542c50feb5
-title: 'Problem 54: Poker hands'
+title: 'Problem 54: Poker-Blätter'
 challengeType: 1
 forumTopicId: 302165
 dashedName: problem-54-poker-hands
@@ -8,54 +8,54 @@ dashedName: problem-54-poker-hands
 
 # --description--
 
-In the card game poker, a hand consists of five cards and are ranked, from lowest to highest, in the following way:
+Beim Kartenspiel Poker besteht ein Blatt aus fünf Karten, die vom niedrigsten bis zum höchsten Wert wie folgt geordnet sind:
 
 <ul>
-  <li>High Card: Highest value card.</li>
-  <li>One Pair: Two cards of the same value.</li>
+  <li>Hohe Karte: Die Karte mit dem höchsten Wert.</li>
+  <li>Ein Paar: Zwei Karten mit gleichem Wert.</li>
   <li>Two Pairs: Two different pairs.</li>
-  <li>Three of a Kind: Three cards of the same value.</li>
-  <li>Straight: All cards are consecutive values.</li>
-  <li>Flush: All cards of the same suit.</li>
-  <li>Full House: Three of a kind and a pair.</li>
-  <li>Four of a Kind: Four cards of the same value.</li>
-  <li>Straight Flush: All cards are consecutive values of same suit.</li>
-  <li>Royal Flush: Ten, Jack, Queen, King, Ace, in same suit.</li>
+  <li>Drilling: Drei Karte mit gleichem Wert.</li>
+  <li>Straight: Alle Karten haben aufeinanderfolgende Werte.</li>
+  <li>Flush: Alle Karten haben das gleiche Zeichen.</li>
+  <li>Full House: Drei von einer Art und ein Paar.</li>
+  <li>Vierling: Vier Karten mit gleichem Wert.</li>
+  <li>Straight Flush: Alle Karten haben aufeinanderfolgende Werte desselben Zeichens.</li>
+  <li>Royal Flush: Zehn, Bube, Dame, König, Ass, in demselben Zeichen.</li>
 </ul>
 
-The cards are valued in the order: 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace.
+Die Karten werden nach der Reihenfolge gewertet: 2, 3, 4, 5, 6, 7, 8, 9, 10, Bube, Dame, König, Ass.
 
-If two players have the same ranked hands then the rank made up of the highest value wins; for example, a pair of eights beats a pair of fives (see example 1 below). But if two ranks tie, for example, both players have a pair of queens, then highest cards in each hand are compared (see example 4 below); if the highest cards tie then the next highest cards are compared, and so on.
+Wenn zwei Spieler die gleiche Wertigkeit haben, gewinnt die Hand mit dem höchsten Wert; zum Beispiel schlägt ein Paar Achten ein Paar Fünfen (siehe Beispiel 1 unten). Sind aber zwei Ränge gleich, haben zum Beispiel beide Spieler ein Paar Damen, dann werden die höchsten Karten in jeder Hand verglichen (siehe Beispiel 4 unten); wenn die höchsten Karte gleich sind, werden die nächsthöchsten Karten verglichen, und so weiter.
 
-Consider the following five hands dealt to two players:
+Betrachte die folgenden fünf Hände, die an zwei Spieler verteilt wurden:
 
-| Hand                      | Player 1                                                              | Player 2                                                               | Winner   |
-| ------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------- |
-| <strong>1</strong> | 5H 5C 6S 7S KD <br> Pair of Fives                               | 2C 3S 8S 8D TD <br> Pair of Eights                               | Player 2 |
-| <strong>2</strong> | 5D 8C 9S JS AC <br> Highest card Ace                            | 2C 5C 7D 8S QH <br> Highest card Queen                           | Player 1 |
-| <strong>3</strong> | 2D 9C AS AH AC <br> Three Aces                                  | 3D 6D 7D TD QD <br> Flush with Diamonds                          | Player 2 |
-| <strong>4</strong> | 4D 6S 9H QH QC <br> Pair of Queens <br> Highest card Nine | 3D 6D 7H QD QS <br> Pair of Queens <br> Highest card Seven | Player 1 |
-| <strong>5</strong> | 2H 2D 4C 4D 4S <br> Full House <br> with Three Fours      | 3C 3D 3S 9S 9D <br> Full House <br> with Three Threes      | Player 1 |
+| Hand                      | Spieler 1                                                          | Spieler 2                                                            | Gewinner  |
+| ------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------- | --------- |
+| <strong>1</strong> | 5H 5C 6S 7S KD <br> Paar Fünfer                              | 2C 3S 8S 8D TD <br> Paar Achter                                | Player 2  |
+| <strong>2</strong> | 5D 8C 9S JS AC <br> Höchste Karte Ass                        | 2C 5C 7D 8S QH <br> Höchste Karte Dame                         | Spieler 1 |
+| <strong>3</strong> | 2D 9C AS AH AC <br> Drei Asse                                | 3D 6D 7D TD QD <br> Flush mit Karos                            | Spieler 2 |
+| <strong>4</strong> | 4D 6S 9H QH QC <br> Paar Damen <br> Höchste Karte Neun | 3D 6D 7H QD QS <br> Paar Damen <br> Höchste Karte Sieben | Spieler 1 |
+| <strong>5</strong> | 2H 2D 4C 4D 4S <br> Full House <br> mit Drei Vierern   | 3C 3D 3S 9S 9D <br> Full House <br> mit Drei Dreiern     | Spieler 1 |
 
-The global array (`handsArr`) passed to the function, contains one-thousand random hands dealt to two players. Each line of the file contains ten cards (separated by a single space): the first five are Player 1's cards and the last five are Player 2's cards. You can assume that all hands are valid (no invalid characters or repeated cards), each player's hand is in no specific order, and in each hand there is a clear winner.
+Das globale Array (`handsArr`), das der Funktion übergeben wurde, beinhaltet eintausend zufällige Blätter, die an zwei Spieler verteilt werden. Jede Zeile der Datei enthält zehn Karten (getrennt durch ein einziges Leerzeichen): die ersten fünf sind die Karten des Spielers 1 und die letzten fünf sind die Karten des Spielers 2. Du kannst davon ausgehen, dass alle Blätter gültig sind (keine ungültigen Zeichen oder wiederholte Karten), das Blatt jedes Spielers ist in keiner bestimmten Reihenfolge, und in jedem Blatt gibt es einen klaren Gewinner.
 
-How many hands does Player 1 win?
+Wie viele Blätter gewinnt Spieler 1?
 
 # --hints--
 
-`pokerHands(testArr)` should return a number.
+`pokerHands(testArr)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof pokerHands(testArr) === 'number');
 ```
 
-`pokerHands(testArr)` should return 2.
+`pokerHands(testArr)` sollte eine 2 zurückgeben.
 
 ```js
 assert.strictEqual(pokerHands(testArr), 2);
 ```
 
-`pokerHands(handsArr)` should return 376.
+`pokerHands(handsArr)` sollte 376 zurückgeben.
 
 ```js
 assert.strictEqual(pokerHands(handsArr), 376);

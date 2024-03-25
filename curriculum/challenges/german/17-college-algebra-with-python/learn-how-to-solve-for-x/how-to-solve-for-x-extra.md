@@ -1,6 +1,6 @@
 ---
 id: 6331d233b51aeedd1a2bd645
-title: "How to Solve for X: Extra"
+title: "Wie man nach X löst: Extra"
 challengeType: 15
 videoId: lFTCVUCbNoM
 dashedName: how-to-solve-for-x-extra
@@ -8,17 +8,17 @@ dashedName: how-to-solve-for-x-extra
 
 # --description--
 
-This video will go deeper, with more examples of how to use SymPy solve. It will also explain how the practice functions generate the random problems.
+Dieses Video erläutert weitere Beispiele für die Verwendung von SymPy solve. Es wird auch erklären, wie die Übungsfunktionen die Zufallsprobleme erzeugen.
 
-Here is the <a href="https://colab.research.google.com/drive/1Jv6WxW93J_1GZao8DkNb4X0D93oVibbs" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a> Use it to add more to the algebra Colab notebook that you are building.
+Hier findest du das <a href="https://colab.research.google.com/drive/1Jv6WxW93J_1GZao8DkNb4X0D93oVibbs" target="_blank" rel="noopener noreferrer nofollow">Colab-Notibuch zu diesem Video.</a> Verwende es als Ergänzung des Colab-Notizbuchs für Algebra, das du gerade erstellst.
 
 # --assignment--
 
-Add the code for more ways to solve for x from the video to your algebra Colab notebook.
+Füge den Code für weitere Lösungsmöglichkeiten für x aus dem Video in dein Algebra-Colab-Notizbuch ein.
 
 ---
 
-Open the following Colab notebook, run the cell, and <a href="https://colab.research.google.com/drive/1XjmHoERFKcvol7FPidQE-wgdvR82HV45" target="_blank" rel="noopener noreferrer nofollow">practice solving one and two-step algebra problems.</a> As a bonus, look at the code that generates the practice problems.
+Öffne das folgende Colab-Notizbuch, führe die Zelle aus und <a href="https://colab.research.google.com/drive/1XjmHoERFKcvol7FPidQE-wgdvR82HV45" target="_blank" rel="noopener noreferrer nofollow">übe das Lösen von ein- und zweistufigen Algebraaufgaben.</a> Zusätzlich kannst du dir den Code ansehen, der die Übungsaufgaben erzeugt.
 
 # --question--
 
