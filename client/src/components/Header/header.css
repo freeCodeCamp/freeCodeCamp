@@ -23,7 +23,6 @@
 @media screen and (max-width:500px) {
   .skip-to-content-button{
     padding-block: 0.5em;
-    padding-inline:.75em;
     font-size:16px;
   }
 }
