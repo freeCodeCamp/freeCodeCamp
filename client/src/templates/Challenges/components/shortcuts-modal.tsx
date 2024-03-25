@@ -80,7 +80,7 @@ function ShortcutsModal({
             </tr>
             <tr>
               <td>{t('shortcuts.play-scene')}</td>
-              <td>CTRL/Command + Space</td>
+              <td>CTRL + Space</td>
             </tr>
             <tr>
               <td>{t('shortcuts.focus-editor')}</td>

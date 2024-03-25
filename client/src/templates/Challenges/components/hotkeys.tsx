@@ -59,7 +59,7 @@ const keyMap = {
   navigatePrev: ['p'],
   navigateNext: ['n'],
   showShortcuts: 'shift+/',
-  playScene: ['ctrl+space', 'command+space']
+  playScene: ['ctrl+space']
 };
 
 export type HotkeysProps = Pick<
