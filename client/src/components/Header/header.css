@@ -7,14 +7,23 @@
 
 .skip-to-content-button {
   position: absolute;
-  top: var(--header-height);
+  top: calc(var(--header-height) + 10px);
   border-radius: 15px;
   font-weight: 600;
   padding-block: 1em;
   padding-inline: 1.5em;
   left: -1000px;
+  z-index:100;
 }
 
 .skip-to-content-button:focus {
-  left: 0;
+  left: 10px;
+  border:red;
+}
+@media screen and (max-width:500px) {
+  .skip-to-content-button{
+    padding-block: 0.5em;
+    padding-inline:.75em;
+    font-size:16px;
+  }
 }
