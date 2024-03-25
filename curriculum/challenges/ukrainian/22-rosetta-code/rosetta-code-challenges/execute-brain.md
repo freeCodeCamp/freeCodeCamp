@@ -1,6 +1,6 @@
 ---
 id: 59e0a8df964e4540d5abe599
-title: Виконання Brain****
+title: Execute Brain****
 challengeType: 1
 forumTopicId: 302261
 dashedName: execute-brain
@@ -8,48 +8,48 @@ dashedName: execute-brain
 
 # --description--
 
-Напишіть функцію, щоб реалізувати інтерпретатор Brain\*\*\*\*. Функція прийматиме рядок як параметр і має повернути рядок як вихідні дані. Деталі наведено нижче:
+Write a function to implement a Brain\*\*\*\* interpreter. The function will take a string as a parameter and should return a string as the output. More details are given below:
 
-RCBF — це набір компіляторів та інтерпретаторів <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a>, написаних для Rosetta Code різними мовами програмування.
+RCBF is a set of <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> compilers and interpreters written for Rosetta Code in a variety of languages.
 
-Нижче наведено посилання на кожну з версій RCBF.
+Below are links to each of the versions of RCBF.
 
-Реалізація потребує лише чіткого дотримання наступних інструкцій:
+An implementation need only properly implement the following instructions:
 
-| Команда                   | Опис                                                                             |
-| ------------------------- | -------------------------------------------------------------------------------- |
-| <code>></code> | Перемістити курсор праворуч                                                      |
-| <code>&lt;</code> | Перемістити курсор ліворуч                                                       |
-| <code>+</code> | Збільшити поточну комірку під курсором                                           |
-| <code>-</code> | Зменшити поточну комірку під курсором                                            |
-| <code>.</code> | Вивести значення комірки під курсором                                            |
-| <code>,</code> | Ввести значення та зберегти його в комірці під курсором                          |
-| <code>\[</code> | Перейти до <code>]</code>, якщо значенням комірки під курсором є 0     |
-| <code>]</code> | Перейти до <code>\[</code>, якщо значенням комірки під курсором не є 0 |
+| Command           | Description                                                                        |
+| ----------------- | ---------------------------------------------------------------------------------- |
+| <code>></code>    | Move the pointer to the right                                                      |
+| <code>&lt;</code> | Move the pointer to the left                                                       |
+| <code>+</code>    | Increment the memory cell under the pointer                                        |
+| <code>-</code>    | Decrement the memory cell under the pointer                                        |
+| <code>.</code>    | Output the character signified by the cell at the pointer                          |
+| <code>,</code>    | Input a character and store it in the cell at the pointer                          |
+| <code>\[</code>   | Jump past the matching <code>]</code> if the cell under the pointer is 0           |
+| <code>]</code>    | Jump back to the matching <code>\[</code> if the cell under the pointer is nonzero |
 
-Дозволений будь-який розмір комірок, підтримка EOF (*E*nd-*O*-*F*ile) не є обов’язковою, так само як обмежена чи необмежена пам’ять.
+Any cell size is allowed, EOF (*E*nd-*O*-*F*ile) support is optional, as is whether you have bounded or unbounded memory.
 
 # --hints--
 
-`brain(hello)` має повернути рядок
+`brain(hello)` should return a string
 
 ```js
 assert(typeof brain(hello) === 'string');
 ```
 
-`brain("++++++[>++++++++++++++.")` має повернути "A"
+`brain("++++++[>++++++++++<-]>+++++.")` should return "A"
 
 ```js
-assert.equal(brain('++++++[>++++++++++++++.'), 'A');
+assert.equal(brain('++++++[>++++++++++<-]>+++++.'), 'A');
 ```
 
-`brain(hello)` має повернути `Hello World!\n`
+`brain(hello)` should return `Hello World!\n`
 
 ```js
 assert.equal(brain(hello), 'Hello World!\n');
 ```
 
-`brain(fib)` має повернути `1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89`
+`brain(fib)` should return `1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89`
 
 ```js
 assert.equal(brain(fib), '1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89');
@@ -64,19 +64,35 @@ let fib=`+
 
 ++
 
-+++++++
++++
+
+++++
 
 +>+>>
 
->>++++++++++++++++++++++++
+>>++++
 
-+++++++++++++++++++
++++++++
+
+++++++++
+
++++++++++
+
+++++++++++
+
+++++++>++++
 
 ++++++++++++
 
 +++++++++++++
 
-+++++++
++++<<<<<<[>[>>
+
+>>>>+>+<<<<<<<-
+
+]>>>>>>>[<<<<<<<
+
++>>>>>>>-]<[>++++
 
 ++++++[-<-[>>+>+<<
 
@@ -94,9 +110,11 @@ let fib=`+
 
 +++++++++++++++++++++++++
 
-+++++++++++++++++++<[
++++++++++.[-]]++++++++++<[
 
-->-<]>++++++++++++++++++++++++++++++++++++++++++++++++.
+->-<]>+++++++++++++++++++++
+
++++++++++++++++++++++++++++.
 
 [-]<<<<<<<<<<<<[>>>+>+<<<<-]>
 
@@ -105,7 +123,7 @@ let fib=`+
 <<[>>+>+<<<-]>>>[<<<+>>>-]<<[<+
 
 >-]>[<+>-]<<<-]`;
-let hello='++++++++[>++++++>++++++++++++.>>.<-.<.+++.------.--------.>>+.>++.'
+let hello='++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.'
 ```
 
 ## --seed-contents--
