@@ -10,12 +10,12 @@ import './scene.css';
 
 export function Scene({
   scene,
-  isPlayingExternal,
-  setIsPlayingExternal
+  isPlaying,
+  setIsPlaying
 }: {
   scene: FullScene;
-  isPlayingExternal?: boolean;
-  setIsPlayingExternal?: (isPlaying: boolean) => void;
+  isPlaying: boolean;
+  setIsPlaying: (isPlaying: boolean) => void;
 }): JSX.Element {
   const { setup, commands } = scene;
   const { audio, alwaysShowDialogue } = setup;
@@ -76,7 +76,6 @@ export function Scene({
     };
   });
 
-  const [isPlaying, setIsPlaying] = useState(false);
   const [sceneIsReady, setSceneIsReady] = useState(true);
   const [showDialogue, setShowDialogue] = useState(false);
   const [accessibilityOn, setAccessibilityOn] = useState(false);
@@ -85,18 +84,15 @@ export function Scene({
   const [background, setBackground] = useState(initBackground);
 
   useEffect(() => {
-    if (!setIsPlayingExternal) return;
-
-    if (isPlayingExternal && !isPlaying) {
+    if (isPlaying) {
       playScene();
-    } else if (isPlaying !== isPlayingExternal) {
-      setIsPlayingExternal(isPlaying);
+    } else {
+      finishScene();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isPlayingExternal, isPlaying]);
+  }, [isPlaying]);
 
   const playScene = () => {
-    setIsPlaying(true);
     setShowDialogue(true);
 
     commands.forEach((command, commandIndex) => {
@@ -156,7 +152,7 @@ export function Scene({
       if (commandIndex === commands.length - 1) {
         setTimeout(
           () => {
-            finishScene();
+            setIsPlaying(false);
           },
           command.finishTime
             ? command.finishTime * 1000 + 500
@@ -170,7 +166,6 @@ export function Scene({
     audioRef.current.pause();
     audioRef.current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
     audioRef.current.currentTime = audio.startTimestamp || 0;
-    setIsPlaying(false);
     setShowDialogue(false);
     setDialogue(initDialogue);
     setCharacters(initCharacters);
@@ -226,7 +221,9 @@ export function Scene({
               <div className='scene-start-screen'>
                 <button
                   className='scene-start-btn scene-play-btn'
-                  onClick={playScene}
+                  onClick={() => {
+                    setIsPlaying(true);
+                  }}
                 >
                   <img src={`${images}/play-button.png`} alt='Press Play' />
                 </button>
