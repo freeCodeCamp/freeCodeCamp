@@ -22,7 +22,9 @@ import {
   challengeFilesSelector,
   challengeTestsSelector,
   isHelpModalOpenSelector,
-  isResetModalOpenSelector
+  isProjectPreviewModalOpenSelector,
+  isResetModalOpenSelector,
+  isShortcutsModalOpenSelector
 } from '../redux/selectors';
 import './hotkeys.css';
 import { isProjectBased } from '../../../utils/curriculum-layout';
@@ -31,6 +33,8 @@ import type { EditorProps } from '../classic/editor';
 const mapStateToProps = createSelector(
   isHelpModalOpenSelector,
   isResetModalOpenSelector,
+  isShortcutsModalOpenSelector,
+  isProjectPreviewModalOpenSelector,
   canFocusEditorSelector,
   challengeFilesSelector,
   challengeTestsSelector,
@@ -38,6 +42,8 @@ const mapStateToProps = createSelector(
   (
     isHelpModalOpen: boolean,
     isResetModalOpen: boolean,
+    isShortcutsModalOpen: boolean,
+    isProjectPreviewModalOpen: boolean,
     canFocusEditor: boolean,
     challengeFiles: ChallengeFiles,
     tests: Test[],
@@ -45,6 +51,8 @@ const mapStateToProps = createSelector(
   ) => ({
     isHelpModalOpen,
     isResetModalOpen,
+    isShortcutsModalOpen,
+    isProjectPreviewModalOpen,
     canFocusEditor,
     challengeFiles,
     tests,
@@ -79,6 +87,8 @@ export type HotkeysProps = Pick<
   > & {
     isHelpModalOpen?: boolean;
     isResetModalOpen?: boolean;
+    isShortcutsModalOpen?: boolean;
+    isProjectPreviewModalOpen?: boolean;
     canFocusEditor: boolean;
     children: React.ReactElement;
     instructionsPanelRef?: React.RefObject<HTMLElement>;
@@ -106,10 +116,19 @@ function Hotkeys({
   openShortcutsModal,
   user: { keyboardShortcuts },
   isHelpModalOpen,
-  isResetModalOpen
+  isResetModalOpen,
+  isShortcutsModalOpen,
+  isProjectPreviewModalOpen
 }: HotkeysProps): JSX.Element {
+  const isModalOpen = [
+    isHelpModalOpen,
+    isResetModalOpen,
+    isShortcutsModalOpen,
+    isProjectPreviewModalOpen
+  ].some(Boolean);
+
   const keyMap = {
-    navigationMode: isHelpModalOpen || isResetModalOpen ? '' : 'escape',
+    navigationMode: isModalOpen ? '' : 'escape',
     executeChallenge: ['ctrl+enter', 'command+enter'],
     focusEditor: 'e',
     focusInstructionsPanel: 'r',
