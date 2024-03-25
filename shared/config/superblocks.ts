@@ -115,7 +115,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody
   ],
   [Languages.Chinese]: [
-    SuperBlocks.FoundationalCSharp,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
