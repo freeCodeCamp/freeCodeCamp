@@ -43,7 +43,103 @@ test.describe('Help Modal component', () => {
     ).toBeVisible();
   });
 
-  test('Create Post button closes help modal and creates new page with forum url', async ({
+  test('should disable the submit button if the checboxes are not checked', async ({
+    page
+  }) => {
+    await page
+      .getByRole('button', { name: translations.buttons['ask-for-help'] })
+      .click();
+
+    await page
+      .getByRole('button', {
+        name: translations.buttons['create-post']
+      })
+      .click();
+
+    await expect(
+      page.getByRole('heading', {
+        name: translations.buttons['ask-for-help'],
+        exact: true
+      })
+    ).toBeVisible();
+
+    const rsaCheckbox = page.getByRole('checkbox', {
+      name: 'I have tried the Read-Search-Ask method'
+    });
+
+    const similarQuestionsCheckbox = page.getByRole('checkbox', {
+      name: 'I have searched for similar questions that have already been answered on the forum'
+    });
+
+    const descriptionInput = page.getByRole('textbox', {
+      name: translations['forum-help']['whats-happening']
+    });
+
+    const submitButton = page.getByRole('button', {
+      name: translations.buttons['submit']
+    });
+
+    await descriptionInput.fill(
+      'Example text with a 100 characters to validate if the rules applied to block users from spamming help forum are working.'
+    );
+
+    await expect(submitButton).toBeDisabled();
+
+    await rsaCheckbox.check();
+    await similarQuestionsCheckbox.uncheck();
+
+    await expect(submitButton).toBeDisabled();
+
+    await rsaCheckbox.uncheck();
+    await similarQuestionsCheckbox.check();
+
+    await expect(submitButton).toBeDisabled();
+  });
+
+  test('should disable the submit button if the description contains less than 50 characters', async ({
+    page
+  }) => {
+    await page
+      .getByRole('button', { name: translations.buttons['ask-for-help'] })
+      .click();
+
+    await page
+      .getByRole('button', {
+        name: translations.buttons['create-post']
+      })
+      .click();
+
+    await expect(
+      page.getByRole('heading', {
+        name: translations.buttons['ask-for-help'],
+        exact: true
+      })
+    ).toBeVisible();
+
+    const rsaCheckbox = page.getByRole('checkbox', {
+      name: 'I have tried the Read-Search-Ask method'
+    });
+
+    const similarQuestionsCheckbox = page.getByRole('checkbox', {
+      name: 'I have searched for similar questions that have already been answered on the forum'
+    });
+
+    const descriptionInput = page.getByRole('textbox', {
+      name: translations['forum-help']['whats-happening']
+    });
+
+    const submitButton = page.getByRole('button', {
+      name: translations.buttons['submit']
+    });
+
+    await rsaCheckbox.click();
+    await similarQuestionsCheckbox.click();
+    await descriptionInput.fill('Example text');
+
+    await expect(submitButton).toBeDisabled();
+  });
+
+  test('should ask the user to fill in the help form and create a forum page', async ({
     context,
     page
   }) => {
@@ -64,29 +160,34 @@ test.describe('Help Modal component', () => {
       })
     ).toBeVisible();
 
-    const locatorRSACheckbox = page.locator(
-      'input[type="checkbox"][name="read-search-ask-checkbox"]'
+    const rsaCheckbox = page.getByRole('checkbox', {
+      name: 'I have tried the Read-Search-Ask method'
+    });
+
+    const similarQuestionsCheckbox = page.getByRole('checkbox', {
+      name: 'I have searched for similar questions that have already been answered on the forum'
+    });
+
+    const descriptionInput = page.getByRole('textbox', {
+      name: translations['forum-help']['whats-happening']
+    });
+
+    const submitButton = page.getByRole('button', {
+      name: translations.buttons['submit']
+    });
+
+    await expect(rsaCheckbox).toBeVisible();
+    await expect(similarQuestionsCheckbox).toBeVisible();
+    await expect(descriptionInput).toBeVisible();
+
+    await rsaCheckbox.check();
+    await similarQuestionsCheckbox.check();
+    await descriptionInput.fill(
+      'Example text with a 100 characters to validate if the rules applied to block users from spamming help forum are working.'
     );
-    const locatorSimilarQuestionsCheckbox = page.locator(
-      'input[type="checkbox"][name="similar-questions-checkbox"]'
-    );
 
-    await locatorRSACheckbox.first().click();
-    await locatorSimilarQuestionsCheckbox.first().click();
-
-    const locatorTextarea = page.locator('textarea[name="description"]');
-
-    await locatorTextarea
-      .first()
-      .type(
-        'Example text with a 100 characters to validate if the rules applied to block users from spamming help forum are working.'
-      );
-
-    await page
-      .getByRole('button', {
-        name: translations.buttons['submit']
-      })
-      .click();
+    await expect(submitButton).toBeEnabled();
+    await submitButton.click();
 
     const newPagePromise = context.waitForEvent('page');
 
