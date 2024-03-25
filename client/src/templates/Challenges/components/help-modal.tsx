@@ -1,7 +1,6 @@
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Modal } from '@freecodecamp/react-bootstrap';
-import { Button, FormControl } from '@freecodecamp/ui';
+import { Button, FormControl, Modal } from '@freecodecamp/ui';
 import React, { useMemo, useState, useRef, useEffect } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -139,21 +138,14 @@ function HelpModal({
   }
   return (
     <Modal
-      dialogClassName='help-modal'
-      onHide={handleClose}
-      show={isOpen}
+      onClose={handleClose}
+      open={isOpen ?? false}
       aria-labelledby='ask-for-help-modal'
     >
-      <Modal.Header
-        className='help-modal-header fcc-modal'
-        closeButton={true}
-        closeLabel={t('buttons.close')}
-      >
-        <Modal.Title id='ask-for-help-modal' className='text-center'>
-          {t('buttons.ask-for-help')}
-        </Modal.Title>
+      <Modal.Header showCloseButton={true}>
+        {t('buttons.ask-for-help')}
       </Modal.Header>
-      <Modal.Body className='text-center'>
+      <Modal.Body>
         {showHelpForm ? (
           <form onSubmit={handleSubmit} ref={formRef}>
             <fieldset>
