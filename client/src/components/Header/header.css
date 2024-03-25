@@ -13,16 +13,16 @@
   padding-block: 1em;
   padding-inline: 1.5em;
   left: -1000px;
-  z-index:100;
+  z-index: 100;
 }
 
 .skip-to-content-button:focus {
   left: 10px;
-  border:red;
+  border: red;
 }
-@media screen and (max-width:500px) {
-  .skip-to-content-button{
+@media screen and (max-width: 500px) {
+  .skip-to-content-button {
     padding-block: 0.5em;
-    font-size:16px;
+    font-size: 16px;
   }
 }
