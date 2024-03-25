@@ -12,7 +12,7 @@ dashedName: more-conditional-structures
 
 # --description--
 
-More resources:
+Додаткові ресурси:
 
 \- <a href="https://www.youtube.com/watch?v=crLerB4ZxMI" target="_blank" rel="noopener noreferrer nofollow">Вправа 1</a>
 

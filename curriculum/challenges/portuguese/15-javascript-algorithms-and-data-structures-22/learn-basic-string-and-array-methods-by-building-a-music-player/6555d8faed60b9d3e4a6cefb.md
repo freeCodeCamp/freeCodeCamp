@@ -7,9 +7,9 @@ dashedName: step-66
 
 # --description--
 
-Use `const` and arrow syntax to define a function called `setPlayButtonAccessibleText`.
+To make the application more accessible, it is important that the play button describes the current song or the first song in the playlist.
 
-This function will set the `aria-label` attribute to the current song, or to the first song in the playlist. And if the playlist is empty, it sets the `aria-label` to `"Play"`.
+Start by creating an empty arrow function called `setPlayButtonAccessibleText`.
 
 # --hints--
 
