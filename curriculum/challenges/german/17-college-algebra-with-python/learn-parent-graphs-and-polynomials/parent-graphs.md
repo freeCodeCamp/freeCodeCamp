@@ -1,6 +1,6 @@
 ---
 id: 6363d2529078df117ce4c402
-title: "Parent Graphs"
+title: "Übergeordnete Graphen"
 challengeType: 15
 videoId: 6S2QhY8rIcw
 dashedName: parent-graphs
@@ -10,13 +10,13 @@ dashedName: parent-graphs
 
 In this video, you will see what these parent graphs look like, how to modify them, and how to do this all with Python code.
 
-Here is the <a href="https://colab.research.google.com/drive/1uwKuaHCC2WCUFKmXW-5NqWUlEP9ak7Pz?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+Hier ist das <a href="https://colab.research.google.com/drive/1uwKuaHCC2WCUFKmXW-5NqWUlEP9ak7Pz?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab-Notizbuch zu diesem Video.</a>
 
 # --question--
 
 ## --text--
 
-In numpy, what is the cube root of x?
+Was ist in Numpy die Quadratwurzel aus x?
 
 ## --answers--
 

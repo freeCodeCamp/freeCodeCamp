@@ -17,7 +17,7 @@ dashedName: build-a-drum-machine
 
 **User Story #1:** I should be able to see an outer container with a corresponding `id="drum-machine"` that contains all other elements.
 
-**User Story #2:** Within `#drum-machine` I can see an element with a corresponding `id="display"`.
+**用户需求 #2:** 在 `#drum-machine` 内，我能看到一个 `id="display"`的元素
 
 **User Story #3:** Within `#drum-machine` I can see 9 clickable drum pad elements, each with a class name of `drum-pad`, a unique id that describes the audio clip the drum pad will be set up to trigger, and an inner text that corresponds to one of the following keys on the keyboard: `Q`, `W`, `E`, `A`, `S`, `D`, `Z`, `X`, `C`. The drum pads MUST be in this order.
 
