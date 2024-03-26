@@ -1,6 +1,6 @@
 ---
 id: 5900f3931000cf542c50fea5
-title: 'Problem 38: Pandigital multiples'
+title: 'Problem 38: Pandigitale Vielfache'
 challengeType: 1
 forumTopicId: 302042
 dashedName: problem-38-pandigital-multiples
@@ -8,33 +8,33 @@ dashedName: problem-38-pandigital-multiples
 
 # --description--
 
-Take the number 192 and multiply it by each of 1, 2, and 3:
+Nimm die Zahl 192 und multipliziere sie jeweils mit 1, 2 und 3:
 
 $$\begin{align}   192 × 1 = 192\\\\
   192 × 2 = 384\\\\   192 × 3 = 576\\\\
 \end{align}$$
 
-By concatenating each product we get the 1 to 9 pandigital, 192384576. We will call 192384576 the concatenated product of 192 and (1, 2, 3).
+Durch Verkettung der einzelnen Produkte erhalten wir die 1 bis 9 pandigital, 192384576. Wir nennen 192384576 das verkettete Produkt von 192 und (1, 2, 3).
 
-The same can be achieved by starting with 9 and multiplying by 1, 2, 3, 4, and 5, giving the pandigital, 918273645, which is the concatenated product of 9 and (1, 2, 3, 4, 5).
+Dasselbe kann erreicht werden, indem man mit 9 beginnt und mit 1, 2, 3, 4 und 5 multipliziert, was das Pandigital 918273645 ergibt, das das verkettete Produkt von 9 und (1, 2, 3, 4, 5) ist.
 
-What is the largest 1 to `k` pandigital `k`-digit number that can be formed as the concatenated product of an integer with (1, 2, ..., `n`) where `n` > 1?
+Was ist die größte 1 bis `k` pandigitale `k`-stellige Zahl, die als verkettetes Produkt einer ganzen Zahl mit (1, 2, ..., `n`) gebildet werden kann, wobei `n` > 1?
 
 # --hints--
 
-`pandigitalMultiples(8)` should return a number.
+`pandigitalMultiples(8)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof pandigitalMultiples(8) === 'number');
 ```
 
-`pandigitalMultiples(8)` should return `78156234`.
+`pandigitalMultiples(8)` sollte `78156234` zurückgeben.
 
 ```js
 assert.strictEqual(pandigitalMultiples(8), 78156234);
 ```
 
-`pandigitalMultiples(9)` should return `932718654`.
+`pandigitalMultiples(9)` sollte `932718654` zurückgeben.
 
 ```js
 assert.strictEqual(pandigitalMultiples(9), 932718654);

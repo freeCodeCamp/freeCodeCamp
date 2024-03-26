@@ -363,6 +363,9 @@ jobs:
 
       # We do not need to run tests because they are run after the PR is created.
 
+      - name: Overwrite Execute-Brain.md
+        run: tools/scripts/execute-brain.sh
+
       # Create Commit
       - name: Commit Changes
         uses: freecodecamp/crowdin-action@main

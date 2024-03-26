@@ -1,13 +1,13 @@
 ---
 id: 637633162724a688c04636e4
-title: HTML Foundations Question H
+title: HTML-Grundlagen Frage H
 challengeType: 15
 dashedName: html-foundations-question-h
 ---
 
 # --description--
 
-Many helpful resources out there keep referring to HTML and CSS as programming languages, but if you want to get technical, labeling them as such is not quite accurate. This is because they are only concerned with presenting information. They are not used to program logic. JavaScript, which you will learn in the next section, is a programming language because it’s used to make webpages do things. Yet, there is quite a lot you can do with just HTML and CSS, and you will definitely need them both. Throughout our curriculum, the following lessons focus on giving you the tools you need to succeed once you reach JavaScript content.
+In vielen hilfreichen Quellen werden HTML und CSS immer wieder als Programmiersprachen bezeichnet, aber wenn man es genau nehmen will, ist diese Bezeichnung nicht ganz zutreffend. Das liegt daran, dass sie sich lediglich mit der Darstellung von Informationen befassen. Sie werden nicht zur Logikprogrammierung verwendet. JavaScript, mit dem du dich im nächsten Abschnitt befassen wirst, ist eine Programmiersprache, denn sie wird verwendet, um Websites zu programmieren. Trotzdem gibt es eine ganze Menge, was du nur mit HTML und CSS machen kannst, und du wirst auf jeden Fall beides brauchen. Throughout our curriculum, the following lessons focus on giving you the tools you need to succeed once you reach JavaScript content.
 
 # --question--
 
