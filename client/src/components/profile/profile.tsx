@@ -11,7 +11,7 @@ import Camper from './components/camper';
 import Certifications from './components/certifications';
 import HeatMap from './components/heat-map';
 import { PortfolioProjects } from './components/portfolio-projects';
-
+import UserContext from './contexts/user-context';
 interface ProfileProps {
   isSessionUser: boolean;
   user: User;
@@ -101,11 +101,11 @@ function UserProfile({
         joinDate={showAbout ? joinDate : ''}
         linkedin={linkedin}
         location={showLocation ? location : ''}
-        name={showName ? name : ''}
         picture={picture}
         twitter={twitter}
-        username={username}
         website={website}
+        username={username}
+        name={showName ? name : ''}
         yearsTopContributor={yearsTopContributor}
       />
       {showPoints && (
@@ -136,7 +136,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
   const showUserProfile = !isLocked || isSessionUser;
 
   return (
-    <>
+    <UserContext user={user}>
       <Helmet>
         <title>{t('buttons.profile')} | freeCodeCamp.org</title>
       </Helmet>
@@ -156,7 +156,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
         )}
         <Spacer size='medium' />
       </Container>
-    </>
+    </UserContext>
   );
 }
 

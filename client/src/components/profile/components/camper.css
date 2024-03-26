@@ -7,7 +7,7 @@
 
 .avatar-camper {
   display: flex;
-  justify-content: center;
+  /*justify-content: center;*/
 }
 
 .avatar-camper .avatar {

@@ -12,7 +12,6 @@ import { AvatarRenderer } from '../../helpers';
 import Link from '../../helpers/link';
 import SupporterBadge from '../../../assets/icons/supporter-badge';
 import SocialIcons from './social-icons';
-
 import './camper.css';
 
 const { clientLocale } = envData;
@@ -73,7 +72,6 @@ function Camper({
   website
 }: CamperProps): JSX.Element {
   const { t } = useTranslation();
-
   return (
     <div>
       <Row>
@@ -93,25 +91,28 @@ function Camper({
         website={website}
       />
       <br />
-      <h2 className='text-center username'>@{username}</h2>
-      {name && <p className='text-center name'>{name}</p>}
-      {location && <p className='text-center location'>{location}</p>}
+      <h2 className='username'>@{username}</h2>
+      {name && <p className='name'>{name}</p>}
+      {about && <p className='bio'>{about}</p>}
+      {location && <p className='location'>{location}</p>}
       {isDonating && (
-        <p className='text-center supporter'>
+        <p className='supporter'>
           <SupporterBadge />
           {t('profile.supporter')}
         </p>
       )}
-      {about && <p className='bio text-center'>{about}</p>}
+
       {joinDate && (
-        <p className='bio text-center'>
+        <p className='bio '>
           <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate, t)}
         </p>
       )}
+      <hr />
+      <h3>Badges</h3>
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>
           <br />
-          <p className='text-center yearsTopContributor'>
+          <p className='yearsTopContributor'>
             <FontAwesomeIcon icon={faAward} />{' '}
             <Link to={t('links:top-contributors')}>
               {t('profile.contributor')}
