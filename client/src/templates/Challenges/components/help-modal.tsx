@@ -60,7 +60,7 @@ function Checkbox({ name, i18nkey, onChange, value, href }: CheckboxProps) {
     <div className='checkbox'>
       <label>
         <input
-          name={name}
+          name={`${name}-checkbox`}
           type='checkbox'
           onChange={onChange}
           checked={value}
@@ -162,7 +162,7 @@ function HelpModal({
               </legend>
 
               <Checkbox
-                name='read-search-ask-checkbox'
+                name='read-search-ask'
                 i18nkey='learn.read-search-ask-checkbox'
                 onChange={event => setReadSearchCheckbox(event.target.checked)}
                 value={readSearchCheckbox}
@@ -172,7 +172,7 @@ function HelpModal({
               <Spacer size='small' />
 
               <Checkbox
-                name='similar-questions-checkbox'
+                name='similar-questions'
                 i18nkey='learn.similar-questions-checkbox'
                 onChange={event =>
                   setSimilarQuestionsCheckbox(event.target.checked)
