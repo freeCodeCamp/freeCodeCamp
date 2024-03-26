@@ -15,6 +15,16 @@
   left: -1000px;
 }
 
-.skip-to-content-button:focus {
-  left: 0;
+@media (min-width: 980px) {
+  .skip-to-content-button:focus {
+    top: 50px;
+    left: 15px;
+  }
+}
+
+@media (max-width: 979px) {
+  .skip-to-content-button:focus {
+    top: 45px;
+    left: 5px;
+  }
 }
