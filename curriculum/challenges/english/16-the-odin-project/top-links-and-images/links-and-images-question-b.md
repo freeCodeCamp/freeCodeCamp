@@ -14,7 +14,7 @@ To get some practice using links and images throughout this lesson you need an H
 
 - Fill in the usual HTML boilerplate.
 
-- finally, add the following `h1` to the `body`: `<h1>Homepage</h1>`
+- Finally, add the following `h1` to the `body`: `<h1>Homepage</h1>`
 
 ## Anchor Elements
 To create a link in HTML, you use the anchor element. An anchor element is defined by wrapping the text or another HTML element you want to be a link with an `<a>` tag.
