@@ -1,6 +1,6 @@
 ---
 id: 5900f37a1000cf542c50fe8c
-title: 'Problem 13: Large sum'
+title: 'Problem 13: Große Summe'
 challengeType: 1
 forumTopicId: 301757
 dashedName: problem-13-large-sum
@@ -8,7 +8,7 @@ dashedName: problem-13-large-sum
 
 # --description--
 
-Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
+Ermittle die ersten zehn Ziffern der Summe folgender hundert 50-stelliger Zahlen.
 
 <div style='padding-left: 4em;'>
   37107287533902102798797998220837590246510135740250<br>
@@ -115,19 +115,19 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
 
 # --hints--
 
-`largeSum(testNums)` should return a number.
+`largeSum(testNums)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof largeSum(testNums) === 'number');
 ```
 
-`largeSum(testNums)` should return 8348422521.
+`largeSum(testNums)` sollte 8348422521 zurückgeben.
 
 ```js
 assert.strictEqual(largeSum(testNums), 8348422521);
 ```
 
-`largeSum(fiftyDigitNums)` should return 5537376230.
+`largeSum(fiftyDigitNums)` sollte 5537376230 zurückgeben.
 
 ```js
 assert.strictEqual(largeSum(fiftyDigitNums), 5537376230);

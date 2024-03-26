@@ -38,13 +38,14 @@ socket.on('user', data => {
 
 # --hints--
 
-事件 `'user'` 应该与 `name`、`currentUsers` 和 `connected` 一起发送。
+Event `'user'` should be emitted with `username`, `currentUsers`, and `connected`.
 
 ```js
 async (getUserInput) => {
   const url = new URL("/_api/server.js", getUserInput("url"));
   const res = await fetch(url);
   const data = await res.text();
+  // Regex is lenient to match both `username` and `name` as the key on purpose.
   assert.match(
     data,
     /io.emit.*('|")user\1.*name.*currentUsers.*connected/s,

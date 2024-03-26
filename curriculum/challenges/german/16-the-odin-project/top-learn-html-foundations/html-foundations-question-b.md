@@ -1,19 +1,19 @@
 ---
 id: 637f4e1672c65bc8e73dfe1f
-title: HTML Foundations Question B
+title: HTML-Grundlagen Frage B
 challengeType: 15
 dashedName: html-foundations-question-b
 ---
 
 # --description--
 
-You can think of elements as containers for content. The opening and closing tags tell the browser what content the element contains. The browser can then use that information to determine how it should interpret and format the content.
+You can think of elements as containers for content. Die öffnenden und abschließenden Tags teilen dem Browser mit, welchen Inhalt das Element enthält. Der Browser kann dann mit diesen Informationen bestimmen, wie er den Inhalt interpretieren und formatieren soll.
 
-There are some HTML elements that do not have a closing tag. These elements often look like this: `<br />` or `<img/>`, but some can also be used without the closing forward slash such as `<br>` or `<img>`. These are known as self-closing tags or empty elements because they don’t wrap any content. You will encounter a few of these in later lessons, but for the most part, elements will have both opening and closing tags.
+Es gibt einige HTML-Elemente, die kein abschließendes Tag haben. Diese Elemente sehen oft wie folgt aus: `<br />` oder `<img/>`, aber einige können auch ohne Schrägstrich verwendet werden, wie z.B. `<br>` oder `<img>`. Sie sind als selbstschließende Tags oder leere Elemente bekannt, da sie keinen inhalt umschließen. In späteren Lektionen wirst du einige davon kennenlernen, aber in den meisten Fällen werden Elemente sowohl öffnende Tags als auch abschließende Tags haben.
 
-HTML has a vast list of predefined tags that you can use to create all kinds of different elements. It is important to use the correct tags for content. Using the correct tags can have a big impact on two aspects of your sites: how they are ranked in search engines; and how accessible they are to users who rely on assistive technologies, like screen readers, to use the internet.
+HTML verfügt über eine umfangreiche Liste von vordefinierten Tags, mit denen du die unterschiedlichsten Elemente erstellen kannst. Es ist wichtig, die richtigen Tags für den Inhalt zu verwenden. Using the correct tags can have a big impact on two aspects of your sites: how they are ranked in search engines; and how accessible they are to users who rely on assistive technologies, like screen readers, to use the internet.
 
-Using the correct elements for content is called semantic HTML. You will explore this in much more depth later on in the curriculum.
+Die Verwendung der richtigen Elemente für den Inhalt wird als semantisches HTML bezeichnet. Im weiteren Verlauf des Lehrplans wirst du dich mit diesem Thema eingehender beschäftigen.
 
 # --question--
 
