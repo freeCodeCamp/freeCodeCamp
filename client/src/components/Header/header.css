@@ -18,11 +18,11 @@
 @media screen and (min-width: 980px) {
   .skip-to-content-button:focus {
     left: 15px;
-  }  
+  }
 }
 
 @media screen and (max-width: 980px) {
   .skip-to-content-button:focus {
     left: 5px;
-  }  
+  }
 }
