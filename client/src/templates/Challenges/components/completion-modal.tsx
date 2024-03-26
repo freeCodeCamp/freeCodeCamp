@@ -166,7 +166,7 @@ class CompletionModal extends Component<
 
     return (
       <Modal onClose={close} open={isOpen ?? false} size='large'>
-        <Modal.Header showCloseButton={true}>{message}</Modal.Header>
+        <Modal.Header>{message}</Modal.Header>
         <Modal.Body>
           <GreenPass
             className='completion-success-icon'
