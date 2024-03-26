@@ -132,13 +132,13 @@ function Hotkeys({
         executeChallenge({ showCompletionModal: true });
       }
     },
-    showShortcuts: (keyEvent?: KeyboardEvent) => {
-      if (keyEvent?.key === '?') {
-        openShortcutsModal();
-      }
-    },
     ...(keyboardShortcuts
       ? {
+          showShortcuts: (keyEvent?: KeyboardEvent) => {
+            if (keyEvent?.key === '?') {
+              openShortcutsModal();
+            }
+          },
           focusEditor: (keyEvent?: KeyboardEvent) => {
             keyEvent?.preventDefault();
             if (editorRef && editorRef.current) {
