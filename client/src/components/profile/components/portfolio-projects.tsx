@@ -17,7 +17,6 @@ export const PortfolioProjects = ({
   if (!portfolioProjects.length) {
     return null;
   }
-  import { require } from '@types/requirejs';
   return (
     <>
       <h2 className='text-center'>{t('profile.portfolio')}</h2>
