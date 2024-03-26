@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import type { PortfolioProjectData } from '../../../redux/prop-types';
+import { require } from '@types/requirejs';
 
 import './portfolio-projects.css';
 
