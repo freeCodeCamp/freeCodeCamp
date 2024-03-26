@@ -19,6 +19,7 @@ To get some practice using links and images throughout this lesson you need an H
 
 ## Anchor Elements
 To create a link in HTML, you use the anchor element. An anchor element is defined by wrapping the text or another HTML element you want to be a link with an `<a>` tag.
+
 Add the following to the `body` of the `index.html` page you created and open it in the browser:
 
 ```html
