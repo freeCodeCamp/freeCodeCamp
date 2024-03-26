@@ -6,9 +6,9 @@ dashedName: learn-data-types-and-conditionals-question-k
 ---
 # --description--
 
-The switch statement is used to perform different actions based on different conditions. It is similar to the if-else statement but is more readable and easier to understand when there are multiple conditions to check. The switch statement is used to select one of many code blocks to be executed.
+The `switch` statement is used to perform different actions based on different conditions. It is similar to the `if-else` statement, but is more readable and easier to understand when there are multiple conditions to check. The `switch` statement is used to select one of many code blocks to be executed.
 
-The switch statement evaluates an expression and compares it with the values of each case. If there is a match, the associated block of code is executed. If there is no match, the default block of code is executed.
+The `switch` statement evaluates an expression and compares it with the values of each case. If there is a match, the associated block of code is executed. If there is no match, the default block of code is executed.
 
 ```javascript
 let day = "Monday";
@@ -46,7 +46,7 @@ In the above example, the value of the `day` variable is compared with the value
 
 ## --text--
 
-Given the JavaScript code snippet below, which modifies the activity variable based on the day of the week, what will be the value of the `activity` variable if the value of the `day` variable is "Tuesday"?
+Given the JavaScript code snippet below, which modifies the `activity` variable based on the day of the week, what will be the value of the `activity` variable if the value of the `day` variable is `"Tuesday"`?
 
 ```javascript
 let day = "Tuesday";

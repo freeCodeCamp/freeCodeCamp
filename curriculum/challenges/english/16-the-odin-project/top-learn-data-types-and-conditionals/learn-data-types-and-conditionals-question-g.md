@@ -27,7 +27,7 @@ There are a lot of ways to use the strict equality operator, and it's important 
 
 # --assignment--
 
-Read this article on <a href="https://javascript.info/comparison">JavaScript.info</a> to learn more about the strict equality operator.
+Read <a href="https://javascript.info/comparison" target="_blank" rel="noopener noreferrer nofollow">this article on JavaScript.info</a> to learn more about the strict equality operator.
 
 # --question--
 

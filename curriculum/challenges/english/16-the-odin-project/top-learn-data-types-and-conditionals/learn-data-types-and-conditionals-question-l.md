@@ -6,7 +6,7 @@ dashedName: learn-data-types-and-conditionals-question-l
 ---
 # --description--
 
-Another way to compare conditional statements would be the ternary operator. The ternary operator is a shorthand way of writing an if-else statement. It is used to evaluate a condition and return a value based on the result of the condition. The syntax of the ternary operator is as follows:
+Another way to compare conditional statements would be the ternary operator. The ternary operator is a shorthand way of writing an `if-else` statement. It is used to evaluate a condition and return a value based on the result of the condition. The syntax of the ternary operator is as follows:
 
 ```javascript
 let result = condition ? value1 : value2;

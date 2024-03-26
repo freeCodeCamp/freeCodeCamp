@@ -26,19 +26,19 @@ Which of the following is the correct way to define a template literal in JavaSc
 
 ## --answers--
 
-"Hello, my name is ${name} and I am ${age} years old."
+``` `Hello, my name is ${name} and I am ${age} years old.` ```
 
 ---
 
-"Hello, my name is `name` and I am `age` years old."
+``` `Hello, my name is `name` and I am `age` years old.` ```
 
 ---
 
-"Hello, my name is {name} and I am {age} years old."
+``` `Hello, my name is {name} and I am {age} years old.` ```
 
 ---
 
-"Hello, my name is $name and I am $age years old."
+``` `Hello, my name is $name and I am $age years old.` ```
 
 ## --video-solution--
 

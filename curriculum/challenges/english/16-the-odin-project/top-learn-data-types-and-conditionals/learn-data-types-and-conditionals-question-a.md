@@ -6,7 +6,7 @@ dashedName: learn-data-types-and-conditionals-question-a
 ---
 # --description--
 
-Depending on what kind of work you’re doing, you might end up working more with pieces of text rather than numbers. A **string** is a piece of text… and is a fundamental building block of the language.
+Depending on what kind of work you're doing, you might end up working more with pieces of text rather than numbers. A **string** is a piece of text… and is a fundamental building block of the language.
 
 HTML provides structure and meaning to text, CSS allows us to precisely style it, and JavaScript offers many features for manipulating strings. These include creating custom welcome messages and prompts, showing the right text labels when needed, sorting terms into the desired order, and much more.
 
@@ -24,7 +24,7 @@ Strings declared using single quotes and strings declared using double quotes ar
 
 # --assignment--
 
-There are many ways to manipulate strings in JavaScript. Go through points 8 through 12 of our <a href="https://www.freecodecamp.org/news/javascript-string-handbook/">JavaScript String Handbook</a>
+There are many ways to manipulate strings in JavaScript. Go through points 8 through 12 of our <a href="https://www.freecodecamp.org/news/javascript-string-handbook/" target="_blank">JavaScript String Handbook</a>
 
 # --question--
 

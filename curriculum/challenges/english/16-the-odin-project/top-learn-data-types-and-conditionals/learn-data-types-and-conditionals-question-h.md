@@ -6,9 +6,9 @@ dashedName: learn-data-types-and-conditionals-question-h
 ---
 # --description--
 
-In any programming language, you need to compare values to make decisions. For exampe, if the weather is sunny,you will go out, otherwise you will stay at home. Another example would be to see if a user has enough points to level up in a game.
+In any programming language, you need to compare values to make decisions. For example, if the weather is sunny, you will go out, otherwise you will stay at home. Another example would be to see if a user has enough points to level up in a game.
 
-The if-else conditional statement is used to make decisions in JavaScript. It is often used with comparison operators to compare values and make decisions based on the results.
+The `if-else` conditional statement is used to make decisions in JavaScript. It is often used with comparison operators to compare values and make decisions based on the results.
 
 An example of an if statement is:
 
@@ -45,11 +45,11 @@ if (x == y) {
 
 ## --answers--
 
-"x is equal to y"
+`x is equal to y`
 
 ---
 
-"x is not equal to y"
+`x is not equal to y`
 
 
 ## --video-solution--

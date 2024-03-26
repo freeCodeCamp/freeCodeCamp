@@ -44,15 +44,15 @@ if (x > 10) {
 
 ## --answers--
 
-"x is less than or equal to 5"
+`x is less than or equal to 5`
 
 ---
 
-"x is greater than 5"
+`x is greater than 5`
 
 ---
 
-"x is greater than 10"
+`x is greater than 10`
 
 ## --video-solution--
 
