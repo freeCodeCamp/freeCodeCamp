@@ -21,7 +21,7 @@
   }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 979px) {
   .skip-to-content-button:focus {
     left: 5px;
   }
