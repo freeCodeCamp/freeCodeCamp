@@ -813,10 +813,10 @@
         ]
       },
       "learn-tree-traversal-by-building-a-binary-search-tree": {
-        "title": "Вивчіть обхід дерева, створивши двійкове дерево пошуку",
+        "title": "Вивчіть обхід дерева, створивши бінарне дерево пошуку",
         "intro": [
-          "Двійкове дерево пошуку (BST) — це поширена структура даних, де дані впорядковані ієрархічно.",
-          "У цьому проєкті ви дізнаєтесь, як сконструювати власне двійкове дерево пошуку (BST) і виконати серединний обхід. Також ви ознайомитеся з ключовими операціями (наприклад, вставка, пошук та видалення)."
+          "Бінарне дерево пошуку — це поширена структура даних, де дані впорядковані ієрархічно.",
+          "У цьому проєкті ви дізнаєтесь, як сконструювати власне бінарне дерево пошуку і виконати серединний обхід. Також ви ознайомитеся з ключовими операціями (наприклад, вставка, пошук та видалення)."
         ]
       },
       "learn-lambda-functions-by-building-an-expense-tracker": {
@@ -1180,9 +1180,9 @@
         ]
       },
       "top-learn-variables-and-operators": {
-        "title": "Learn Variables and Operators",
+        "title": "Вивчіть змінні та оператори",
         "intro": [
-          "Get started with JavaScript by learning about variables and operators. This course covers the fundamentals of JavaScript programming, including data types, operators, and variable declarations."
+          "Почніть знайомство з JavaScript зі змінних та операторів. Цей курс охоплює основи програмування на JavaScript, включно з типами даних, операторами та оголошенням змінних."
         ]
       }
     }
@@ -1340,15 +1340,21 @@
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Дізнайтесь, як запитувати та розповідати про навчання і досвід роботи",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to ask about another person's educational and professional backgrouns and you'll learn how to share information about your background as well."
+        ]
       },
       "learn-how-to-talk-about-hobbies-and-interests": {
         "title": "Дізнайтесь, як говорити про хобі та інтереси",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn different ways to talk about hobbies and things that interest you. You'll also learn how to ask about other people's hobbies and how to invite them to join you in these activities."
+        ]
       },
       "learn-how-to-discuss-roles-and-responsibilies": {
         "title": "Дізнайтесь, як обговорювати посади та обов’язки",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
+        ]
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "Дізнайтесь, як говорити про вподобання та вмотивованість",

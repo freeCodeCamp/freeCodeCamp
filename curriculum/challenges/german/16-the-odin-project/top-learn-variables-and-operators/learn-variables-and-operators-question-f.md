@@ -4,6 +4,7 @@ title: Learn Variables and Operators Question F
 challengeType: 15
 dashedName: learn-variables-and-operators-question-f
 ---
+
 # --description--
 
 Let’s meet the features of JavaScript operators that are beyond school arithmetics.
@@ -19,7 +20,7 @@ console.log(s); // mystring
 
 Note that if any of the operands is a string, then the other one is converted to a string too.
 
-For example:
+Zum Beispiel:
 
 ```js
 console.log(1 + '2'); // '12'

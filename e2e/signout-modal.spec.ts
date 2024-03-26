@@ -14,6 +14,9 @@ test.describe('Signout Modal component', () => {
       .getByRole('button', { name: translations.buttons['sign-out'] })
       .click();
 
+    const dialogs = page.getByRole('dialog');
+    await expect(dialogs).toHaveCount(2);
+
     await expect(page.getByText(translations.signout.heading)).toBeVisible();
     await expect(page.getByText(translations.signout.p1)).toBeVisible();
     await expect(page.getByText(translations.signout.p2)).toBeVisible();
@@ -37,10 +40,16 @@ test.describe('Signout Modal component', () => {
       .getByRole('button', { name: translations.buttons['sign-out'] })
       .click();
 
+    const dialogs = page.getByRole('dialog');
+    await expect(dialogs).toHaveCount(2);
+
     await page
       .getByRole('button', { name: translations.signout.certain })
       .click();
 
+    for (const dialog of await dialogs.all()) {
+      await expect(dialog).not.toBeVisible();
+    }
     await expect(page).toHaveURL(/.*\/learn\/?$/);
   });
 
@@ -50,10 +59,16 @@ test.describe('Signout Modal component', () => {
       .getByRole('button', { name: translations.buttons['sign-out'] })
       .click();
 
+    const dialogs = page.getByRole('dialog');
+    await expect(dialogs).toHaveCount(2);
+
     await page
       .getByRole('button', { name: translations.signout.nevermind })
       .click();
 
+    for (const dialog of await dialogs.all()) {
+      await expect(dialog).not.toBeVisible();
+    }
     await expect(page).toHaveURL('/');
     await expect(
       page.getByText(translations.signout.heading)

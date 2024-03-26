@@ -1,8 +1,8 @@
 ---
 id: 655b4dad1d38ff7cdd65cbfe
-title: Step 90
+title: Step 93
 challengeType: 0
-dashedName: step-90
+dashedName: step-93
 ---
 
 # --description--
@@ -17,28 +17,28 @@ You should call the `pauseSong` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /pauseSong\(\s*\);?/)
+assert.match(splitter[1], /pauseSong\(\s*\)\s*;?/)
 ```
 
 You should call the `setPlayerDisplay` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /setPlayerDisplay\(\s*\);?/)
+assert.match(splitter[1], /setPlayerDisplay\(\s*\)\s*;?/)
 ```
 
 You should call the `highlightCurrentSong` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /highlightCurrentSong\(\s*\);?/)
+assert.match(splitter[1], /highlightCurrentSong\(\s*\)\s*;?/)
 ```
 
 You should call the `setPlayButtonAccessibleText` function.
 
 ```js
 const splitter = code.split('audio.addEventListener("ended", () => {')
-assert.match(splitter[1], /highlightCurrentSong\(\s*\);?\s*setPlayButtonAccessibleText\(\s*\);?/)
+assert.match(splitter[1], /highlightCurrentSong\(\s*\)\s*;?\s*setPlayButtonAccessibleText\(\s*\)\s*;?/)
 ```
 
 # --seed--
@@ -712,7 +712,7 @@ const deleteSong = (id) => {
     resetButton.addEventListener("click", () => {
       userData.songs = [...allSongs];
 
-      renderSongs(userData?.songs); 
+      renderSongs(sortSongs()); 
       setPlayButtonAccessibleText();
       resetButton.remove();
     });
@@ -809,19 +809,23 @@ audio.addEventListener("ended", () => {
     }
 });
 
-userData?.songs.sort((a,b) => {
-  if (a.title < b.title) {
-    return -1;
-  }
+const sortSongs = () => {
+  userData?.songs.sort((a,b) => {
+    if (a.title < b.title) {
+      return -1;
+    }
 
-  if (a.title > b.title) {
-    return 1;
-  }
+    if (a.title > b.title) {
+      return 1;
+    }
 
-  return 0;
-});
+    return 0;
+  });
 
-renderSongs(userData?.songs);
+  return userData?.songs;
+};
+
+renderSongs(sortSongs());
 setPlayButtonAccessibleText();
 ```
 
@@ -1494,7 +1498,7 @@ const deleteSong = (id) => {
     resetButton.addEventListener("click", () => {
       userData.songs = [...allSongs];
 
-      renderSongs(userData?.songs); 
+      renderSongs(sortSongs()); 
       setPlayButtonAccessibleText();
       resetButton.remove();
     });
@@ -1592,18 +1596,22 @@ audio.addEventListener("ended", () => {
     }
 });
 
-userData?.songs.sort((a,b) => {
-  if (a.title < b.title) {
-    return -1;
-  }
+const sortSongs = () => {
+  userData?.songs.sort((a,b) => {
+    if (a.title < b.title) {
+      return -1;
+    }
 
-  if (a.title > b.title) {
-    return 1;
-  }
+    if (a.title > b.title) {
+      return 1;
+    }
 
-  return 0;
-});
+    return 0;
+  });
 
-renderSongs(userData?.songs);
+  return userData?.songs;
+};
+
+renderSongs(sortSongs());
 setPlayButtonAccessibleText();
 ```

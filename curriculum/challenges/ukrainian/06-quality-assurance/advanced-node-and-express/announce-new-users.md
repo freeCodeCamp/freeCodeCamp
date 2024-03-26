@@ -38,13 +38,14 @@ socket.on('user', data => {
 
 # --hints--
 
-Подія `'user'` повинна видаватись з `name`, `currentUsers` та `connected`.
+Подію `'user'` потрібно видати разом з `username`, `currentUsers` та `connected`.
 
 ```js
 async (getUserInput) => {
   const url = new URL("/_api/server.js", getUserInput("url"));
   const res = await fetch(url);
   const data = await res.text();
+  // Regex is lenient to match both `username` and `name` as the key on purpose.
   assert.match(
     data,
     /io.emit.*('|")user\1.*name.*currentUsers.*connected/s,

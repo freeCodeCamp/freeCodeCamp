@@ -18,24 +18,15 @@ export const newChallengePrompts = async (): Promise<{
   });
 
   const lastStep = getLastStep().stepNum;
-  const challengeTypeNum = parseInt(challengeType.value, 10);
-  const isTaskStep =
-    challengeTypeNum === challengeTypes.fillInTheBlank ||
-    challengeTypeNum === challengeTypes.dialogue;
-
-  const defaultTitle = isTaskStep
-    ? `Task ${lastStep + 1}`
-    : `Step ${lastStep + 1}`;
-  const defaultDashedName = isTaskStep
-    ? `task-${lastStep + 1}`
-    : `step-${lastStep + 1}`;
+  const defaultTitle = `Step ${lastStep + 1}`;
+  const defaultDashedName = `step-${lastStep + 1}`;
 
   const dashedName = await prompt<{ value: string }>({
     name: 'value',
-    message: 'What is the short name (in kebab-case) for this challenge?',
+    message: 'What is the dashed name (in kebab-case) for this challenge?',
     validate: (block: string) => {
       if (!block.length) {
-        return 'please enter a short name';
+        return 'please enter a dashed name';
       }
       if (/[^a-z0-9-]/.test(block)) {
         return 'please use alphanumerical characters and kebab case';

@@ -14,7 +14,7 @@ dashedName: python-lists
 
 ## --text--
 
-What is the value of x after running this code:
+このコードを実行した後の x の値は何ですか？
 
 ```python
 fruit = "banana"
