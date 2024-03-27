@@ -9,7 +9,9 @@ import { flatten } from 'lodash';
 // eslint-disable-next-line import/no-unresolved
 import curriculum from '../../../../shared/config/curriculum.json';
 
-export function getChallenges() {
+const blockToChallengeIdMap = getBlockToChallengeIdMap();
+
+function getChallenges() {
   return Object.keys(curriculum)
     .map(key => curriculum[key].blocks)
     .reduce((challengeArray, superBlock) => {
@@ -19,3 +21,35 @@ export function getChallenges() {
       return [...challengeArray, ...flatten(challengesForBlock)];
     }, []);
 }
+
+function getBlockToChallengeIdMap() {
+  let blockToChallengeIdMap = {};
+
+  Object.values(curriculum).forEach(superBlock => {
+    if (superBlock.blocks) {
+      Object.entries(superBlock.blocks).forEach(([dashedName, block]) => {
+        if (block.challenges) {
+          blockToChallengeIdMap[dashedName] = block.challenges.map(
+            challenge => challenge.id
+          );
+        }
+      });
+    }
+  });
+
+  return blockToChallengeIdMap;
+}
+
+function getChallengeIdsForBlock(dashedName) {
+  const challengeIds = blockToChallengeIdMap[dashedName] || [];
+  if (challengeIds.length === 0) {
+    return undefined;
+  }
+  return challengeIds;
+}
+
+module.exports = {
+  blockToChallengeIdMap,
+  getChallengeIdsForBlock,
+  getChallenges
+};
