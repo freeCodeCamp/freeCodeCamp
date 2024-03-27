@@ -11,7 +11,7 @@ import curriculum from '../../../../shared/config/curriculum.json';
 
 const blockToChallengeIdMap = getBlockToChallengeIdMap();
 
-function getChallenges() {
+export function getChallenges() {
   return Object.keys(curriculum)
     .map(key => curriculum[key].blocks)
     .reduce((challengeArray, superBlock) => {
@@ -22,7 +22,7 @@ function getChallenges() {
     }, []);
 }
 
-function getBlockToChallengeIdMap() {
+export function getBlockToChallengeIdMap() {
   let blockToChallengeIdMap = {};
 
   Object.values(curriculum).forEach(superBlock => {
@@ -40,16 +40,10 @@ function getBlockToChallengeIdMap() {
   return blockToChallengeIdMap;
 }
 
-function getChallengeIdsForBlock(dashedName) {
+export function getChallengeIdsForBlock(dashedName) {
   const challengeIds = blockToChallengeIdMap[dashedName] || [];
   if (challengeIds.length === 0) {
     return undefined;
   }
   return challengeIds;
 }
-
-module.exports = {
-  blockToChallengeIdMap,
-  getChallengeIdsForBlock,
-  getChallenges
-};
