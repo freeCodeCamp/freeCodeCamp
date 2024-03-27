@@ -11,8 +11,6 @@ interface PortfolioProjectsProps {
   portfolioProjects: PortfolioProjectData[];
 }
 
-export { require }
-
 export const PortfolioProjects = ({
   portfolioProjects
 }: PortfolioProjectsProps): JSX.Element | null => {
