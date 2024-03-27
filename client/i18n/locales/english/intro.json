@@ -343,11 +343,11 @@
           "For this project, you'll build an application that checks if a number is a valid United States phone number."
         ]
       },
-      "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+      "learn-basic-dom-manipulation-by-building-a-role-playing-game": {
+        "title": "Learn Basic DOM Manipulation by Building a Role Playing Game",
         "intro": [
-          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
-          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Role Playing Game. You'll learn how to work with arrays, strings, objects, functions, loops, <code>if/else</code> statements, and more."
+          "The Document Object Model(DOM) is a programming interface that allows you to create, change, or remove elements from the HTML document.",
+          "In this practice project, you'll learn about DOM manipulation and fundamental JavaScript concepts by coding your own Role Playing Game. You'll learn how to work with strings, objects, functions, loops, <code>if/else</code> statements, the <code>document.querySelector()</code> method and more."
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
