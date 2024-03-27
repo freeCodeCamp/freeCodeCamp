@@ -16,10 +16,7 @@ test.describe('Help Modal component', () => {
       .click();
 
     await expect(
-      page.getByRole('heading', {
-        name: translations.buttons['ask-for-help'],
-        exact: true
-      })
+      page.getByRole('dialog', { name: translations.buttons['ask-for-help'] })
     ).toBeVisible();
     await expect(
       page.getByText(
@@ -57,10 +54,7 @@ test.describe('Help Modal component', () => {
       .click();
 
     await expect(
-      page.getByRole('heading', {
-        name: translations.buttons['ask-for-help'],
-        exact: true
-      })
+      page.getByRole('dialog', { name: translations.buttons['ask-for-help'] })
     ).toBeVisible();
 
     const rsaCheckbox = page.getByRole('checkbox', {
@@ -70,8 +64,6 @@ test.describe('Help Modal component', () => {
     const similarQuestionsCheckbox = page.getByRole('checkbox', {
       name: 'I have searched for similar questions that have already been answered on the forum'
     });
-
-    await expect(similarQuestionsCheckbox).toBeVisible();
 
     const descriptionInput = page.getByRole('textbox', {
       name: translations['forum-help']['whats-happening']
@@ -112,10 +104,7 @@ test.describe('Help Modal component', () => {
       .click();
 
     await expect(
-      page.getByRole('heading', {
-        name: translations.buttons['ask-for-help'],
-        exact: true
-      })
+      page.getByRole('dialog', { name: translations.buttons['ask-for-help'] })
     ).toBeVisible();
 
     const rsaCheckbox = page.getByRole('checkbox', {
@@ -156,10 +145,7 @@ test.describe('Help Modal component', () => {
       .click();
 
     await expect(
-      page.getByRole('heading', {
-        name: translations.buttons['ask-for-help'],
-        exact: true
-      })
+      page.getByRole('dialog', { name: translations.buttons['ask-for-help'] })
     ).toBeVisible();
 
     const rsaCheckbox = page.getByRole('checkbox', {
@@ -204,16 +190,17 @@ test.describe('Help Modal component', () => {
       .getByRole('button', { name: translations.buttons['ask-for-help'] })
       .click();
 
+    const dialog = page.getByRole('dialog', {
+      name: translations.buttons['ask-for-help']
+    });
+
+    await expect(dialog).toBeVisible();
+
     await page
       .getByRole('button', { name: translations.buttons.cancel })
       .click();
 
-    await expect(
-      page.getByRole('heading', {
-        name: translations.buttons['ask-for-help'],
-        exact: true
-      })
-    ).not.toBeVisible();
+    await expect(dialog).not.toBeVisible();
   });
 
   test('Close button closes the modal', async ({ page }) => {
@@ -221,16 +208,17 @@ test.describe('Help Modal component', () => {
       .getByRole('button', { name: translations.buttons['ask-for-help'] })
       .click();
 
+    const dialog = page.getByRole('dialog', {
+      name: translations.buttons['ask-for-help']
+    });
+
+    await expect(dialog).toBeVisible();
+
     await page
       .getByRole('button', { name: translations.buttons.close })
       .click();
 
-    await expect(
-      page.getByRole('heading', {
-        name: translations.buttons['ask-for-help'],
-        exact: true
-      })
-    ).not.toBeVisible();
+    await expect(dialog).not.toBeVisible();
   });
 
   test('Read-Search-Ask link', async ({ page }) => {

@@ -19,31 +19,43 @@ test.describe('Exit Project Preview Modal E2E Test Suite', () => {
       })
     ).toBeVisible();
 
-    await expect(page.getByRole('dialog')).toBeVisible();
-    await expect(page.getByTestId('preview-iframe').nth(1)).toBeVisible();
-    // JS will generate 2 iframes, the right one should be chosen
+    const dialog = page.getByRole('dialog', {
+      name: translations.learn['project-preview-title']
+    });
+    await expect(dialog).toBeVisible();
+    await expect(dialog.getByTitle('CatPhotoApp preview')).toBeVisible();
     await expect(
-      page.getByTestId('project-preview-modal-closeButton')
+      page.getByRole('button', { name: 'Start Coding!' })
     ).toBeVisible();
   });
 
   test('Closes the Project Preview Modal When the User clicks on the close Button', async ({
     page
   }) => {
-    await page.getByTestId('project-preview-modal-closeButton').click();
-    await expect(
-      page.getByTestId('project-preview-modal-title')
-    ).not.toBeVisible();
+    const dialog = page.getByRole('dialog', {
+      name: translations.learn['project-preview-title']
+    });
+
+    await expect(dialog).toBeVisible();
+
+    await page.getByRole('button', { name: 'Start Coding!' }).click();
+
+    await expect(dialog).not.toBeVisible();
   });
 
   test('Closes the Project Preview Modal when the User clicks on X button', async ({
     page
   }) => {
+    const modal = page.getByRole('dialog', {
+      name: translations.learn['project-preview-title']
+    });
+
+    await expect(modal).toBeVisible();
+
     await page
       .getByRole('button', { name: translations.buttons.close })
       .click();
-    await expect(
-      page.getByTestId('project-preview-modal-title')
-    ).not.toBeVisible();
+
+    await expect(modal).not.toBeVisible();
   });
 });

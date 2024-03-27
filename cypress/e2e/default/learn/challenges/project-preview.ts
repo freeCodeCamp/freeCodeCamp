@@ -74,8 +74,9 @@ describe('project preview', () => {
   it('should appear on the first challenges of each practice project', () => {
     practiceProjects.forEach(({ url }) => {
       cy.visit(url + 'step-1');
-      cy.contains("Here's a preview of what you will build");
-      cy.get('#headlessui-portal-root').should('be.visible');
+      cy.get('div[role="dialog"]')
+        .contains("Here's a preview of what you will build")
+        .should('be.visible');
     });
   });
 

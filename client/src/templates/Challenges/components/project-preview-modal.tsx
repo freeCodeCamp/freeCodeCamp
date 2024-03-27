@@ -76,7 +76,6 @@ function ProjectPreviewModal({
           block={true}
           size='large'
           variant='primary'
-          data-playwright-test-label='project-preview-modal-closeButton'
           onClick={() => {
             closeModal('projectPreview');
             setEditorFocusability(true);
