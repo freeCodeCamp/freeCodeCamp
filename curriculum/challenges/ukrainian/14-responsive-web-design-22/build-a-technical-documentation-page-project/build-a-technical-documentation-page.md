@@ -200,7 +200,7 @@ const linkText = Array.from(document.querySelectorAll('.nav-link')).map(el =>
   el.innerText?.trim().toUpperCase()
 )
 const remainder = headerText.filter(str => linkText.indexOf(str) === -1)
-assert(headerText.length > 0 && headerText.length > 0 && remainder.length === 0)
+assert(headerText.length > 0 && linkText.length > 0 && remainder.length === 0)
 ```
 
 Кожен `.nav-link` повинен мати атрибут `href`, що посилає на відповідний `.main-section` (наприклад, якщо натиснути на елемент `.nav-link`, що містить текст «Hello world», сторінка скерує на елемент `section` з таким ідентифікатором).
