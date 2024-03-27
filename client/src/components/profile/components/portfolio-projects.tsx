@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { require } from '@types/requirejs';
 import type { PortfolioProjectData } from '../../../redux/prop-types';
 
 import './portfolio-projects.css';
@@ -9,6 +10,8 @@ import './portfolio-projects.css';
 interface PortfolioProjectsProps {
   portfolioProjects: PortfolioProjectData[];
 }
+
+export require
 
 export const PortfolioProjects = ({
   portfolioProjects
@@ -33,7 +36,7 @@ export const PortfolioProjects = ({
           </a>
 
           {image && (
-            <img alt='' className='portfolio-screen-shot' src={image} />
+            <img alt='' className='portfolio-screen-shot' src={image} onError="this.onerror='null'; this.src={require('https://d33wubrfki0l68.cloudfront.net/2f7693e1933ac514c960f51ceae72c91c6716eb2/b2efd/img/fcc_primary_small.svg')}"/>
           )}
         </div>
       ))}
