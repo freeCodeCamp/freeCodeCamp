@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import require from '@types/requirejs';
+
 import type { PortfolioProjectData } from '../../../redux/prop-types';
 
 import './portfolio-projects.css';
@@ -18,6 +18,7 @@ export const PortfolioProjects = ({
   if (!portfolioProjects.length) {
     return null;
   }
+  import require from '@types/requirejs';
   return (
     <>
       <h2 className='text-center'>{t('profile.portfolio')}</h2>
@@ -41,5 +42,3 @@ export const PortfolioProjects = ({
     </>
   );
 };
-
-export require
