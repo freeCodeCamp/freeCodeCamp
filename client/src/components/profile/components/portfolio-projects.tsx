@@ -11,7 +11,7 @@ interface PortfolioProjectsProps {
   portfolioProjects: PortfolioProjectData[];
 }
 
-export require
+export { require }
 
 export const PortfolioProjects = ({
   portfolioProjects
