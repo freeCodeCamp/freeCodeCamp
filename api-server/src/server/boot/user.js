@@ -27,7 +27,7 @@ import {
 import { createDeleteMsUsername } from '../middlewares/ms-username';
 import { validateSurvey, createDeleteUserSurveys } from '../middlewares/survey';
 import { deprecatedEndpoint } from '../utils/disabled-endpoints';
-import blocksToChallengesService from '../utils/get-blocks-challenges-mappings';
+import { getChallengeIdsForBlock } from '../utils/get-curriculum';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectHome();
@@ -65,11 +65,7 @@ function bootUser(app) {
     deleteUserSurveys,
     postResetProgress
   );
-  api.post(
-    '/account/reset-progress/:dashedBlockName',
-    ifNoUser401,
-    postResetProjectProgress
-  );
+  api.delete('/account/reset-progress/', ifNoUser401, postResetProjectProgress);
   api.post(
     '/user/report-user/',
     ifNoUser401,
@@ -479,44 +475,87 @@ function createPostResetProjectProgress(app) {
   return async function postResetProjectProgress(req, res, next) {
     const { User } = app.models;
     const userId = req.user.id;
-    const { dashedBlockName } = req.params;
+    const { blocks } = req.body;
 
-    let toResetChallengeIds;
-    try {
-      toResetChallengeIds =
-        blocksToChallengesService.getChallengeIdsForBlock(dashedBlockName);
-    } catch (error) {
-      return res
-        .status(404)
-        .json({ message: `No block found with the name: ${dashedBlockName}` });
-    }
+    let toResetChallengeIds = [];
+    let undefinedBlocks = [];
 
-    try {
-      const result = await User.updateAll(
-        {
-          id: userId,
-          'completedChallenges.id': { in: toResetChallengeIds }
-        },
-        {
-          $pull: {
-            completedChallenges: { id: { $in: toResetChallengeIds } }
-          }
+    let isSendBlocks = blocks && blocks.length > 0;
+    let isHasValidBlockToReset = false;
+    let isResetSuccessful = false;
+
+    if (isSendBlocks) {
+      for (const dashedBlockName of blocks) {
+        const blockChallengeIds = getChallengeIdsForBlock(dashedBlockName);
+        if (blockChallengeIds != undefined) {
+          toResetChallengeIds.push(...blockChallengeIds);
+          isHasValidBlockToReset = true;
+        } else {
+          undefinedBlocks.push(dashedBlockName);
         }
-      );
-
-      if (result.count === 0) {
-        return res.status(200).json({
-          message: `No challenges were reset for block ${dashedBlockName}`
-        });
       }
 
-      return res.status(200).json({
-        message: `Project progress for block ${dashedBlockName} successfully reset.`
-      });
-    } catch (err) {
-      return next(err);
+      if (isHasValidBlockToReset) {
+        try {
+          const result = await User.updateAll(
+            {
+              id: userId,
+              'completedChallenges.id': { in: toResetChallengeIds }
+            },
+            {
+              $pull: {
+                completedChallenges: { id: { in: toResetChallengeIds } }
+              }
+            }
+          );
+          isResetSuccessful = result.count > 0;
+        } catch (err) {
+          return next(err);
+        }
+      }
     }
+
+    const resetMessage = buildResetMessage(
+      isSendBlocks,
+      isHasValidBlockToReset,
+      isResetSuccessful,
+      undefinedBlocks
+    );
+    return res.status(200).json({ message: resetMessage });
   };
+
+  function buildResetMessage(
+    isSendBlocks,
+    isHasValidBlockToReset,
+    isResetSuccessful,
+    undefinedBlocks
+  ) {
+    if (!isSendBlocks) {
+      return `No blocks were provided for the reset operation.`;
+    }
+
+    let messageParts = [];
+
+    if (isResetSuccessful) {
+      messageParts.push(
+        `Challenges for the provided blocks have been successfully reset.`
+      );
+    } else if (isHasValidBlockToReset) {
+      messageParts.push(
+        `No challenges were reset. The user might not have completed any challenges for the requested blocks.`
+      );
+    }
+
+    if (undefinedBlocks.length > 0) {
+      messageParts.push(
+        `No challenges found for the following blocks: ${undefinedBlocks.join(', ')}`
+      );
+    } else if (!isHasValidBlockToReset && !isResetSuccessful) {
+      return `No valid challenges were found to reset for the requested blocks.`;
+    }
+
+    return messageParts.join(' ');
+  }
 }
 
 function createPostDeleteAccount(app) {
