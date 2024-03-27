@@ -1,28 +1,22 @@
 ---
-id: 63bf5a518d54f63181ab639a
-title: Step 30
+id: 6603aeb33cbbbd5bbbc79b2e
+title: Step 26
 challengeType: 0
-dashedName: step-30
+dashedName: step-26
 ---
 
 # --description--
 
-The `e` in a number input can also be an uppercase `E`. Regex has a flag for this, however – the `i` flag, which stands for "insensitive". 
+To see the results from the `cleanInputString` function, you will need to add a console statement. Inside that console statement, call the `cleanInputString` function with the string value of `"+-99"` for an argument.
 
-```js
-/Hello/i
-```
-
-The following regex would match `hello`, `Hello`, `HELLO`, and even `hElLo` because of the `i` flag. This flag makes your pattern case-insensitive.
-
-Add the `i` flag to your regex pattern.
+Open up the console and you should see the original string followed by the cleaned string value with the `+-` removed.
 
 # --hints--
 
-Your `regex` value should have the `i` flag.
+You should have a `console.log(cleanInputString("+-99"))` statement.
 
 ```js
-assert.match(isInvalidInput.toString(), /regex\s*=\s*\/e\/i/);
+assert.match(code, /console\.log\(\s*cleanInputString\(\s*('|")\s*\+\-9\s*9\s*\1\s*\)\s*\);?/);
 ```
 
 # --seed--
@@ -199,13 +193,11 @@ const output = document.getElementById('output');
 let isError = false;
 
 function cleanInputString(str) {
+  console.log("original string: ", str);
   const regex = /[+-\s]/g;
   return str.replace(regex, '');
 }
-
 --fcc-editable-region--
-function isInvalidInput(str) {
-  const regex = /e/;
-}
+
 --fcc-editable-region--
 ```
