@@ -7,7 +7,7 @@
 
 .skip-to-content-button {
   position: absolute;
-  top: var(--header-height);
+  top: calc(var(--header-height) + 10px);
   border-radius: 15px;
   font-weight: 600;
   padding-block: 1em;
@@ -15,16 +15,14 @@
   left: -1000px;
 }
 
-@media (min-width: 980px) {
+@media screen and (min-width: 980px) {
   .skip-to-content-button:focus {
-    top: 50px;
     left: 15px;
   }
 }
 
-@media (max-width: 979px) {
+@media screen and (max-width: 979px) {
   .skip-to-content-button:focus {
-    top: 45px;
     left: 5px;
   }
 }
