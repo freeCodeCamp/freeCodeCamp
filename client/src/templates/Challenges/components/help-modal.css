@@ -25,15 +25,6 @@
   text-align: left;
 }
 
-.checkbox-container label {
-  display: flex;
-  align-self: left;
-}
-
-.checkbox-text {
-  margin-inline-start: 10px;
-}
-
 @media screen and (max-width: 767px) {
   .help-modal .btn-lg {
     font-size: 16px;

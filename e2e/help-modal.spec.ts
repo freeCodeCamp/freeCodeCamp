@@ -71,6 +71,8 @@ test.describe('Help Modal component', () => {
       name: 'I have searched for similar questions that have already been answered on the forum'
     });
 
+    await expect(similarQuestionsCheckbox).toBeVisible();
+
     const descriptionInput = page.getByRole('textbox', {
       name: translations['forum-help']['whats-happening']
     });
@@ -132,8 +134,8 @@ test.describe('Help Modal component', () => {
       name: translations.buttons['submit']
     });
 
-    await rsaCheckbox.click();
-    await similarQuestionsCheckbox.click();
+    await rsaCheckbox.check();
+    await similarQuestionsCheckbox.check();
     await descriptionInput.fill('Example text');
 
     await expect(submitButton).toBeDisabled();

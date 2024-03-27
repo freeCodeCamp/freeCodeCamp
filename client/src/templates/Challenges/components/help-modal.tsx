@@ -46,34 +46,45 @@ const generateSearchLink = (title: string, block: string) => {
 
 interface CheckboxProps {
   name: string;
-  i18nkey: string;
+  i18nKey: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value: boolean;
   href: string;
+  label: string;
 }
 
-function Checkbox({ name, i18nkey, onChange, value, href }: CheckboxProps) {
+function Checkbox({
+  name,
+  i18nKey,
+  onChange,
+  value,
+  href,
+  label
+}: CheckboxProps) {
   const { t } = useTranslation();
 
   return (
     <div className='checkbox-container'>
-      <label>
-        <input
-          name={name}
-          type='checkbox'
-          onChange={onChange}
-          checked={value}
-          required
-        />
-        <span className='checkbox-text'>
-          <Trans i18nKey={i18nkey}>
-            <a href={href} rel='noopener noreferrer' target='_blank'>
-              placeholder
-              <span className='sr-only'>{t('aria.opens-new-window')}</span>
-            </a>
-          </Trans>
-        </span>
-      </label>
+      <input
+        id={name}
+        name={name}
+        type='checkbox'
+        onChange={onChange}
+        checked={value}
+        required
+        // Instead of reusing the `i18nKey`, use a plain text version for label
+        // as input label should not contain interactive elements
+        aria-label={t(label)}
+      />
+
+      <span>
+        <Trans i18nKey={i18nKey}>
+          <a href={href} rel='noopener noreferrer' target='_blank'>
+            placeholder
+            <span className='sr-only'>{t('aria.opens-new-window')}</span>
+          </a>
+        </Trans>
+      </span>
     </div>
   );
 }
@@ -151,7 +162,8 @@ function HelpModal({
 
               <Checkbox
                 name='read-search-ask-checkbox'
-                i18nkey='learn.read-search-ask-checkbox'
+                i18nKey='learn.read-search-ask-checkbox'
+                label='aria.rsa-checkbox'
                 onChange={event => setReadSearchCheckbox(event.target.checked)}
                 value={readSearchCheckbox}
                 href={RSA}
@@ -161,7 +173,8 @@ function HelpModal({
 
               <Checkbox
                 name='similar-questions-checkbox'
-                i18nkey='learn.similar-questions-checkbox'
+                i18nKey='learn.similar-questions-checkbox'
+                label='aria.similar-questions-checkbox'
                 onChange={event =>
                   setSimilarQuestionsCheckbox(event.target.checked)
                 }
