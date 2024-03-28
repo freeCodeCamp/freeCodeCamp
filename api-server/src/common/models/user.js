@@ -526,11 +526,10 @@ export default function initializeUser(User) {
           Observable.fromPromise(userUpdate)
         );
       })
-      .map(
-        () =>
-          'Check your email and click the link we sent you to confirm' +
-          ' your new email address.'
-      );
+      .map(() => ({
+        type: 'info',
+        message: `Check your email and click the link we sent you to confirm your new email address.`
+      }));
   }
 
   User.prototype.requestAuthEmail = requestAuthEmail;
