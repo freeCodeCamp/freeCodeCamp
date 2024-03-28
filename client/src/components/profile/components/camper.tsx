@@ -8,7 +8,7 @@ import { AvatarRenderer } from '../../helpers';
 import Link from '../../helpers/link';
 import SupporterBadge from '../../../assets/icons/supporter-badge';
 import SocialIcons from './social-icons';
-import { joinArray, parseDate } from './utils';
+import { formatYears, parseDate } from './utils';
 import './camper.css';
 
 export type CamperProps = Pick<
@@ -86,7 +86,7 @@ function Camper({
               {t('profile.contributor')}
             </Link>
           </p>
-          <p className='text-center'>{joinArray(yearsTopContributor, t)}</p>
+          <p className='text-center'>{formatYears(yearsTopContributor, t)}</p>
         </div>
       )}
       <br />
