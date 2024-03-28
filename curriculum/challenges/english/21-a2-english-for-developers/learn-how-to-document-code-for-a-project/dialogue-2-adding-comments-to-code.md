@@ -1,9 +1,9 @@
 ---
-id: 655c179830a146a155743423
-title: "Dialogue: Placeholder"
-challengeType: 21
+id: 65e86cac39492642332416e9
 videoId: nLDychdBwUg
-dashedName: dialogue-placeholder
+title: "Dialogue 2: Adding Comments to Code"
+challengeType: 21
+dashedName: dialogue-2-adding-comments-to-code
 ---
 
 # --description--
