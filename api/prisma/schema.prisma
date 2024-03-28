@@ -208,6 +208,7 @@ model MsUsername {
   msUsername String
 
   @@index([userId, id], map: "userId_1__id_1")
+  @@index([msUsername], map: "msUsername_1")
 }
 
 model Exam {
