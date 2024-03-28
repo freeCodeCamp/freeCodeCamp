@@ -567,3 +567,12 @@ ToDo: find out why, and remove the need for it */
 .grid-project-block:hover:has(.tags-wrapper a:hover) {
   background: var(--primary-background);
 }
+
+.project-controller {
+  display: flex;
+  justify-content: space-between; /* This will place equal space between elements */
+  align-items: center; /* Align items vertically */
+  width: 100%; /* Full width */
+  padding: 1rem; /* Padding inside the container */
+  box-sizing: border-box; /* Ensure padding does not add to the width */
+}

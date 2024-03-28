@@ -160,7 +160,7 @@ export interface PrerequisiteChallenge {
   title: string;
 }
 
-export type ChallengeWithCompletedNode = {
+export type ProgressionNodesWithCompleted = {
   block: string;
   challengeType: number;
   dashedName: string;
