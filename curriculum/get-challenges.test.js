@@ -1,10 +1,18 @@
 const path = require('path');
+const { omit } = require('lodash');
 
 const {
   generateChallengeCreator,
   hasEnglishSource,
-  createCommentMap
+  createCommentMap,
+  replaceSourceCode,
+  warnIfCodeTranslated
 } = require('./get-challenges');
+
+const {
+  sourceChallenge,
+  targetChallenge
+} = require('./__fixtures__/challenges');
 
 const EXISTING_CHALLENGE_PATH = 'challenge.md';
 const MISSING_CHALLENGE_PATH = 'no/challenge.md';
@@ -134,6 +142,158 @@ It should be in
 
       expect(untranslatedTwo.chinese).toBe('Not translated two');
       expect(untranslatedTwo.spanish).toBe('Not translated two');
+    });
+  });
+
+  describe('replaceSourceCode', () => {
+    it('should add the source testStrings to the target challenge', () => {
+      const replaced = replaceSourceCode(targetChallenge, sourceChallenge);
+
+      const expected = [
+        {
+          text: 'italian text one',
+          testString: 'original code'
+        },
+        {
+          text: 'italian text two',
+          testString: 'more original code'
+        }
+      ];
+
+      expect(replaced.tests).toEqual(expected);
+    });
+
+    it('should not modify the original source', () => {
+      const clone = JSON.parse(JSON.stringify(sourceChallenge));
+
+      replaceSourceCode(targetChallenge, sourceChallenge);
+
+      expect(sourceChallenge).toEqual(clone);
+    });
+
+    it('should add the source solutions to the target challenge', () => {
+      const replaced = replaceSourceCode(targetChallenge, sourceChallenge);
+
+      expect(replaced.solutions).toEqual(sourceChallenge.solutions);
+    });
+
+    it('should add the source challengeFiles to the target challenge', () => {
+      const replaced = replaceSourceCode(targetChallenge, sourceChallenge);
+
+      expect(replaced.challengeFiles).toEqual(sourceChallenge.challengeFiles);
+    });
+
+    it('should not add tests if the source challenge has no tests', () => {
+      const { tests: _ignore, ...sourceWithoutTests } = sourceChallenge;
+      const { tests: _alsoIgnore, ...targetWithoutTests } = targetChallenge;
+
+      const replaced = replaceSourceCode(
+        targetWithoutTests,
+        sourceWithoutTests
+      );
+
+      expect(replaced).not.toHaveProperty('tests');
+    });
+
+    it('should not add solutions if the source challenge has no solutions', () => {
+      const { solutions: _ignore, ...sourceWithoutSolutions } = sourceChallenge;
+      const { solutions: _alsoIgnore, ...targetWithoutSolutions } =
+        targetChallenge;
+
+      const replaced = replaceSourceCode(
+        targetWithoutSolutions,
+        sourceWithoutSolutions
+      );
+
+      expect(replaced).not.toHaveProperty('solutions');
+    });
+
+    it('should not add challengeFiles if the source challenge has no challengeFiles', () => {
+      const { challengeFiles: _ignore, ...sourceWithoutChallengeFiles } =
+        sourceChallenge;
+      const { challengeFiles: _alsoIgnore, ...targetWithoutChallengeFiles } =
+        targetChallenge;
+
+      const replaced = replaceSourceCode(
+        targetWithoutChallengeFiles,
+        sourceWithoutChallengeFiles
+      );
+
+      expect(replaced).not.toHaveProperty('challengeFiles');
+    });
+  });
+
+  describe('warnIfCodeTranslated', () => {
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
+
+    it('should warn if the testStrings differ between challenges', () => {
+      const consoleWarn = jest
+        .spyOn(console, 'warn')
+        .mockImplementation(() => {});
+
+      warnIfCodeTranslated(targetChallenge, sourceChallenge);
+      expect(consoleWarn).toHaveBeenNthCalledWith(
+        1,
+        `testStrings in challenge abc123 (title: "Italian Title") do not match the English.
+If the curriculum has been synced with Crowdin, it is possible that the testStrings have been translated.`
+      );
+    });
+
+    it('should warn if the solutions differ between challenges', () => {
+      const consoleWarn = jest
+        .spyOn(console, 'warn')
+        .mockImplementation(() => {});
+
+      warnIfCodeTranslated(targetChallenge, sourceChallenge);
+      expect(consoleWarn).toHaveBeenNthCalledWith(
+        2,
+        `solutions in challenge abc123 (title: "Italian Title") do not match the English.
+If the curriculum has been synced with Crowdin, it is possible that the solutions have been translated.`
+      );
+    });
+
+    it('should warn if the challengeFiles differ between challenges', () => {
+      const consoleWarn = jest
+        .spyOn(console, 'warn')
+        .mockImplementation(() => {});
+
+      warnIfCodeTranslated(targetChallenge, sourceChallenge);
+      expect(consoleWarn).toHaveBeenNthCalledWith(
+        3,
+        `challengeFiles in challenge abc123 (title: "Italian Title") do not match the English.
+If the curriculum has been synced with Crowdin, it is possible that the seed has been translated.`
+      );
+    });
+
+    it('should not warn if the challenges are the same', () => {
+      const consoleWarn = jest
+        .spyOn(console, 'warn')
+        .mockImplementation(() => {});
+
+      warnIfCodeTranslated(targetChallenge, targetChallenge);
+      expect(consoleWarn).not.toHaveBeenCalled();
+    });
+
+    it('should handle missing tests, solutions, and challengeFiles', () => {
+      const consoleWarn = jest
+        .spyOn(console, 'warn')
+        .mockImplementation(() => {});
+
+      const simplerTarget = omit(targetChallenge, [
+        'tests',
+        'solutions',
+        'challengeFiles'
+      ]);
+      const simplerSource = omit(sourceChallenge, [
+        'tests',
+        'solutions',
+        'challengeFiles'
+      ]);
+
+      warnIfCodeTranslated(simplerTarget, simplerSource);
+      expect(consoleWarn).not.toHaveBeenCalled();
     });
   });
 });

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const util = require('util');
 const yaml = require('js-yaml');
-const { findIndex } = require('lodash');
+const { findIndex, cloneDeep, isEqual } = require('lodash');
 const readDirP = require('readdirp');
 
 const { curriculum: curriculumLangs } =
@@ -225,9 +225,7 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
-async function parseTranslation(transPath, dict, lang, parse = parseMD) {
-  const translatedChal = await parse(transPath);
-
+function translateComments(translatedChal, dict, lang) {
   const { challengeType } = translatedChal;
   // challengeType 11 is for video challenges and 3 is for front-end projects
   // neither of which have seeds.
@@ -340,6 +338,29 @@ ${getFullPath('english', filePath)}
     }
   }
 
+  async function getChallengeWithEnglishSource({
+    filePath,
+    lang,
+    shouldTranslate
+  }) {
+    const englishChallenge = await parseMD(getFullPath('english', filePath));
+    if (!shouldTranslate) return englishChallenge;
+
+    const translatedChallenge = await parseMD(getFullPath(lang, filePath));
+    if (translatedChallenge.tests.length !== englishChallenge.tests.length) {
+      throw Error(
+        `The number of tests in ${filePath} does not match the number of tests in the English version.
+To fix this, run the "i18n - Download Curriculum" action`
+      );
+    }
+
+    warnIfCodeTranslated(translatedChallenge, englishChallenge);
+
+    const challenge = replaceSourceCode(translatedChallenge, englishChallenge);
+
+    return translateComments(challenge, COMMENT_TRANSLATIONS, lang);
+  }
+
   async function createChallenge(filePath, maybeMeta) {
     const meta = maybeMeta
       ? maybeMeta
@@ -350,19 +371,17 @@ ${getFullPath('english', filePath)}
     await validate(filePath, meta.superBlock);
 
     // We always try to translate comments (even English ones) to confirm that translations exist.
-    const translateComments =
+    const shouldTranslate =
       isAuditedSuperBlock(lang, meta.superBlock, {
         showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
         showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
       }) && fs.existsSync(getFullPath(lang, filePath));
 
-    const challenge = await (translateComments
-      ? parseTranslation(
-          getFullPath(lang, filePath),
-          COMMENT_TRANSLATIONS,
-          lang
-        )
-      : parseMD(getFullPath('english', filePath)));
+    const challenge = await getChallengeWithEnglishSource({
+      filePath,
+      lang,
+      shouldTranslate
+    });
 
     addMetaToChallenge(challenge, meta);
     fixChallengeProperties(challenge);
@@ -404,6 +423,61 @@ function getBlockNameFromPath(filePath) {
   return block;
 }
 
+function replaceSourceCode(target, source) {
+  const replacement = cloneDeep(target);
+
+  if (source.tests) {
+    replacement.tests = replacement.tests.map((test, index) => ({
+      ...test,
+      testString: source.tests[index].testString
+    }));
+  }
+
+  if (source.solutions) {
+    replacement.solutions = cloneDeep(source.solutions);
+  }
+  if (source.challengeFiles) {
+    replacement.challengeFiles = cloneDeep(source.challengeFiles);
+  }
+
+  return replacement;
+}
+
+function warnIfCodeTranslated(target, source) {
+  const testsTranslated = target.tests?.some(
+    (test, index) => test.testString !== source.tests[index].testString
+  );
+  if (testsTranslated) {
+    console.warn(
+      `testStrings in challenge ${target.id} (title: "${target.title}") do not match the English.
+If the curriculum has been synced with Crowdin, it is possible that the testStrings have been translated.`
+    );
+  }
+
+  const solutionsTranslated = target.solutions?.some(
+    (solution, index) => !isEqual(solution, source.solutions[index])
+  );
+
+  if (solutionsTranslated) {
+    console.warn(
+      `solutions in challenge ${target.id} (title: "${target.title}") do not match the English.
+If the curriculum has been synced with Crowdin, it is possible that the solutions have been translated.`
+    );
+  }
+
+  const challengeFilesTranslated = target.challengeFiles?.some(
+    (file, index) => !isEqual(file, source.challengeFiles[index])
+  );
+
+  if (challengeFilesTranslated) {
+    console.warn(
+      `challengeFiles in challenge ${target.id} (title: "${target.title}") do not match the English.
+If the curriculum has been synced with Crowdin, it is possible that the seed has been translated.`
+    );
+  }
+}
+
 exports.hasEnglishSource = hasEnglishSource;
-exports.parseTranslation = parseTranslation;
 exports.generateChallengeCreator = generateChallengeCreator;
+exports.replaceSourceCode = replaceSourceCode;
+exports.warnIfCodeTranslated = warnIfCodeTranslated;
