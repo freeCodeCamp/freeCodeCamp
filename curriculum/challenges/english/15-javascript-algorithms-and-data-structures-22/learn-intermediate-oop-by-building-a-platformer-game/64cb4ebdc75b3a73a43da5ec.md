@@ -11,7 +11,7 @@ Create an `if` statement that checks if `isCheckpointCollisionDetectionActive` i
 
 Inside the `if` statement, add a `setTimeout()` that takes in a callback function and a delay of 2000 milliseconds.
 
-For the callback function, it should set the `checkpointScreen` `display` property to `none`.
+For the callback function, it should set the `checkpointScreen` `style.display` property to `"none"`.
 
 # --hints--
 
@@ -39,7 +39,7 @@ Your `setTimeout()` function should have a delay of 2000 milliseconds as the sec
 assert.match(code, /\s*setTimeout\s*\(\s*\(\s*\)\s*=>[^,]*,\s*2000\s*\)/s);
 ```
 
-Your callback function should set the `checkpointScreen` `display` property to `none`.
+Your callback function should set the `checkpointScreen` `style.display` property to `"none"`.
 
 ```js
 assert.match(code, /\s*if\s*\(\s*isCheckpointCollisionDetectionActive\s*\)\s*{\s*setTimeout\s*\(\s*\(\s*\)\s*=>\s*(\(\s*checkpointScreen\.style\.display\s*=\s*("|')none\2\s*\)|\{\s*checkpointScreen\.style\.display\s*=\s*("|')none\3\s*;?\s*\}|\s*checkpointScreen\.style\.display\s*=\s*("|')none\4\s*)\s*,\s*2000\s*\)\s*;?\s*}/s);
