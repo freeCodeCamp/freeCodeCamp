@@ -1,10 +1,9 @@
 import React from 'react';
-import { Modal } from '@freecodecamp/react-bootstrap';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/ui';
+import { Button, Modal } from '@freecodecamp/ui';
 
 import { Spacer } from '../helpers';
 import { hardGoTo as navigate, closeSignoutModal } from '../../redux/actions';
@@ -47,20 +46,9 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
   };
 
   return (
-    <Modal
-      aria-labelledby='modal-title'
-      backdrop={true}
-      bsSize='lg'
-      className='text-center'
-      keyboard={true}
-      onHide={handleModalHide}
-      onClose={handleModalHide}
-      show={show}
-    >
-      <Modal.Header closeButton={true}>
-        <Modal.Title id='modal-title' bsSize='lg'>
-          <span style={{ fontWeight: 'bold' }}>{t('signout.heading')}</span>
-        </Modal.Title>
+    <Modal size='large' variant='danger' open={show} onClose={handleModalHide}>
+      <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
+        {t('signout.heading')}
       </Modal.Header>
       <Modal.Body>
         <p>
