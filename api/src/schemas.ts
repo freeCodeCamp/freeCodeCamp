@@ -451,7 +451,8 @@ export const schemas = {
                   })
                 )
               })
-            )
+            ),
+            msUsername: Type.Optional(Type.String())
           })
         ),
         result: Type.String()
