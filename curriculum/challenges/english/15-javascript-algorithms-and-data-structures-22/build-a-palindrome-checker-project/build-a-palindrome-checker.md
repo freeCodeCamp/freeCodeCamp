@@ -18,7 +18,7 @@ A <dfn>palindrome</dfn> is a word or phrase that can be read the same way forwar
 
 1. You should have an `input` element with an `id` of `"text-input"`
 1. You should have a `button` element with an `id` of `"check-btn"`
-1. You should have a `div` element with an `id` of `"result"`
+1. You should have a `div`, `span` or `p` element with an `id` of `"result"`
 1. When you click on the `#check-btn` element without entering a value into the `#text-input` element, an alert should appear with the text `"Please input a value"`
 1. When the `#text-input` element only contains the letter `A` and the `#check-btn` element is clicked, the `#result` element should contain the text `"A is a palindrome"`
 1. When the `#text-input` element contains the text `eye` and the `#check-btn` element is clicked, the `#result` element should contain the text `"eye is a palindrome"`
@@ -56,7 +56,7 @@ You should have a `div` element with an `id` of `result`.
 
 ```js
 const el = document.getElementById('result');
-assert.strictEqual(el?.nodeName?.toLowerCase(), 'div');
+assert(['div', 'span', 'p'].includes(el?.nodeName?.toLowerCase()));
 ```
 
 When you click on the `#check-btn` element without entering a value into the `#text-input` element, an alert should appear with the text `"Please input a value"`.
