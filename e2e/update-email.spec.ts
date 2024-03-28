@@ -1,28 +1,21 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
-let page: Page;
+test.describe('The update-email page when the user is signed in', () => {
+  test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-test.beforeAll(async ({ browser }) => {
-  page = await browser.newPage();
-  await page.goto('/update-email');
-});
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/update-email');
+  });
 
-test.describe('The update-email page', () => {
-  test('The page renders with correct title', async () => {
+  test('should display the content correctly', async ({ page }) => {
     await expect(page).toHaveTitle(
       'Update your email address | freeCodeCamp.org'
     );
-  });
+    await expect(
+      page.getByRole('heading', { name: translations.misc['update-email-2'] })
+    ).toBeVisible();
 
-  test('The page has correct header', async () => {
-    const header = page.getByTestId('update-email-heading');
-
-    await expect(header).toBeVisible();
-    await expect(header).toContainText(translations.misc['update-email-2']);
-  });
-
-  test('The page has update email form', async () => {
     const form = page.getByTestId('update-email-form');
     const emailInput = page.getByLabel(translations.misc.email);
     const submitButton = page.getByRole('button', {
@@ -38,9 +31,7 @@ test.describe('The update-email page', () => {
     );
     await expect(submitButton).toBeVisible();
     await expect(submitButton).toHaveAttribute('type', 'submit');
-  });
 
-  test('The page has sign out button', async () => {
     const signOutButton = page.getByRole('link', {
       name: translations.buttons['sign-out']
     });
@@ -49,7 +40,9 @@ test.describe('The update-email page', () => {
     await expect(signOutButton).toHaveAttribute('href', '/signout');
   });
 
-  test('should enable the submit button if the email input is valid', async () => {
+  test('should enable the submit button if the email input is valid', async ({
+    page
+  }) => {
     const emailInput = page.getByLabel(translations.misc.email);
     const submitButton = page.getByRole('button', {
       name: translations.buttons['update-email']
@@ -59,5 +52,21 @@ test.describe('The update-email page', () => {
     await expect(submitButton).toBeDisabled();
     await emailInput.fill('123@gmail.com');
     await expect(submitButton).toBeEnabled();
+  });
+});
+
+test.describe('The update-email page when the user is not signed in', () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
+
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/update-email');
+  });
+
+  test('should redirect to the signin page', async ({ page }) => {
+    await page.waitForURL('**/learn');
+
+    await expect(
+      page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
+    ).toBeVisible();
   });
 });

@@ -10,7 +10,6 @@ import { Container } from '@freecodecamp/ui';
 import BigCallToAction from '../components/landing/components/big-call-to-action';
 
 import { Spacer } from '../components/helpers';
-import './update-email.css';
 import {
   isSignedInSelector,
   isDonatingSelector,
