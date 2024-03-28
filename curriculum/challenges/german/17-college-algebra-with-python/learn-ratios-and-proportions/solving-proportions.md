@@ -1,6 +1,6 @@
 ---
 id: 6331d29fb51aeedd1a2bd653
-title: "Solving Proportions"
+title: "Proportionen lösen"
 challengeType: 15
 videoId: 61A3PNx1hjY
 dashedName: solving-proportions
@@ -8,31 +8,31 @@ dashedName: solving-proportions
 
 # --description--
 
-Now we get to the math content. This video will show you how to set up and solve proportions and write code to solve for variables.
+Jetzt kommen wir zum mathematischen Inhalt. In diesem Video wird gezeigt, wie man Proportionen aufstellt und löst und wie man Code schreibt, um Variablen zu lösen.
 
-Here is the <a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_nQ-X1JuLpUmtRD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a> If you have not done so yet, set up your algebra Colab notebook from the last video. Then, add the code from this video to it.
+Hier ist das <a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_nQ-X1JuLpUmtRD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab-Notizbuch zu diesem Video.</a> Falls du dies noch nicht getan hast, dann richte dein Algebra-Colab-Notizbuch aus dem letzten Video ein. Then, add the code from this video to it.
 
 # --assignment--
 
-Add the code from the video to the algebra Colab notebook you created in the first step.
+Füge den Code aus dem Video in das Algebra-Colab-Notizbuch ein, das du im ersten Schritt erstellt hast.
 
 # --question--
 
 ## --text--
 
-In solving a proportion, if one numerator is zero, does the other numerator have to be zero for the statement to be true?
+Wenn bei der Lösung einer Proportion ein Zähler gleich Null ist, muss dann auch der andere Zähler gleich Null sein, damit die Aussage wahr ist?
 
 ## --answers--
 
-Yes
+Ja
 
 ---
 
-No
+Nein
 
 ---
 
-Sometimes
+Manchmal
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 6331d2a9b51aeedd1a2bd654
-title: "Solving Systems of Equations: Extra"
+title: "Lösen von Gleichungssystemen: Extra"
 challengeType: 15
 videoId: 856p7t2V9NY
 dashedName: solving-systems-of-equations-extra
@@ -8,31 +8,31 @@ dashedName: solving-systems-of-equations-extra
 
 # --description--
 
-This video will show you one way to create a calculator that solves and graphs. It will also show you how to zoom in or zoom out on the graph and write the code to build that feature.
+Dieses Video zeigt dir eine Möglichkeit, einen Rechner zu erstellen, der Aufgaben löst und grafisch darstellt. Außerdem wird dir gezeigt, wie du den Graphen vergrößern oder verkleinern kannst und den Code schreiben kannst, um diese Funktion zu erstellen.
 
-Here is the <a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a> This will give you an example of what your notebook could look like so far, as you have some functions in there and create headings for the next few functions.
+Hier ist das <a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab-Notizbuch, das in diesem Video verwendet wird.</a> Dies gibt dir ein Beispiel dafür, wie dein Notizbuch bis jetzt aussehen könnte, da du dort einige Funktionen eingetragen hast und Überschriften für die nächsten Funktionen erstellst.
 
 # --question--
 
 ## --text--
 
-Which of the following is not true?
+Welche der folgenden Aussagen ist nicht wahr?
 
 ## --answers--
 
-When graphing, you can adjust your tic marks on each axis
+Bei der grafischen Darstellung kannst du deine Teilstriche auf jeder Achse anpassen
 
 ---
 
-The `nonlinsolve()` function can solve linear equations
+Die `nonlinsolve()`-Funktion kann lineare Gleichungen lösen
 
 ---
 
-The `linsolve()` function can solve nonlinear equations
+Die `linsolve()`-Funktion kann nichtlineare Gleichungen lösen
 
 ---
 
-To zoom in or out on a graph, an interactive slider is useful
+Um einen Graphen zu vergrößern oder zu verkleinern, ist ein interaktiver Schieberegler nützlich
 
 ## --video-solution--
 

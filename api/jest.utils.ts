@@ -12,8 +12,8 @@ declare global {
 }
 
 type Options = {
-  sendCSRFToken: boolean;
-};
+  sendCSRFToken?: boolean;
+} & Record<string, unknown>;
 
 const requests = {
   GET: (resource: string) => request(fastifyTestInstance?.server).get(resource),
@@ -187,8 +187,8 @@ export async function devLogin(): Promise<string[]> {
       id: defaultUserId
     }
   });
-  const res = await superRequest('/auth/dev-callback', { method: 'GET' });
-  expect(res.status).toBe(200);
+  const res = await superRequest('/signin', { method: 'GET' });
+  expect(res.status).toBe(302);
   return res.get('Set-Cookie');
 }
 

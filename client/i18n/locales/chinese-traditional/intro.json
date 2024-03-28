@@ -1112,7 +1112,8 @@
       "freeCodeCamp 在開源課程的基礎上進行了擴展，使其可以在瀏覽器中交互運行，並通過測試來評估你的代碼，確保你理解了關鍵概念。",
       "如果你想體驗在本地計算機上配置運行所有 The Odin Project，可以在 <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project 網站</a> 上查看原始的 Odin Project。衷心感謝 The Odin Project 社區持續爲世界各地的開發人員維護這一寶貴的學習資源。",
       "本課程爲非官方課程，未經 The Odin Project 認可。本課程對 The Odin Project 課程內容進行了更改。本課程的所有教學材料均採用 CC-BY-SA-NC 4.0 許可協議。",
-      "<a href='https://github.com/TheOdinProject/curriculum?tab=License-1-ov-file#readme' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>"
+      "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>",
+      "This course includes content from <a href='javascript.info'>JavaScript.info</a>, which is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>"
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1180,6 +1181,10 @@
         "intro": [
           "通過學習變量和運算符開始學習 JavaScript。本課程涵蓋 JavaScript 編程的基礎知識，包括數據類型、運算符和變量聲明。"
         ]
+      },
+      "top-learn-data-types-and-conditionals": {
+        "title": "Learn Data Types and Conditionals",
+        "intro": ["Learn about data types and conditionals in JavaScript."]
       }
     }
   },
@@ -1334,15 +1339,21 @@
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "學習如何詢問和分享教育和專業背景",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to ask about another person's educational and professional backgrounds and you'll learn how to share information about your background as well."
+        ]
       },
       "learn-how-to-talk-about-hobbies-and-interests": {
         "title": "學習如何談論興趣與愛好",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn different ways to talk about hobbies and things that interest you. You'll also learn how to ask about other people's hobbies and how to invite them to join you in these activities."
+        ]
       },
       "learn-how-to-discuss-roles-and-responsibilies": {
         "title": "學習如何談論角色和責任",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
+        ]
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "學習如何就偏好和動機進行對話",

@@ -1,6 +1,6 @@
 ---
 id: 5900f39a1000cf542c50fead
-title: 'Problem 46: Goldbach''s other conjecture'
+title: 'Problem 46: Goldbachs andere Vermutung'
 challengeType: 1
 forumTopicId: 302134
 dashedName: problem-46-goldbachs-other-conjecture
@@ -19,19 +19,19 @@ It was proposed by Christian Goldbach that every odd composite number can be wri
   33 = 31 + 2×1<sup>2</sup>
 </div>
 
-It turns out that the conjecture was false.
+Es stellte sich heraus, dass die Vermutung falsch war.
 
-What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
+Was ist das kleinste ungerade Komposit, das nicht als Summe einer Primzahl und eines doppelten Quadrats geschrieben werden kann?
 
 # --hints--
 
-`goldbachsOtherConjecture()` should return a number.
+`goldbachsOtherConjecture()` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof goldbachsOtherConjecture() === 'number');
 ```
 
-`goldbachsOtherConjecture()` should return 5777.
+`goldbachsOtherConjecture()` sollte 5777 zurückgeben.
 
 ```js
 assert.strictEqual(goldbachsOtherConjecture(), 5777);

@@ -1,7 +1,6 @@
 import { FastifyRequest } from 'fastify';
 import jwt from 'jsonwebtoken';
 
-// import { allowedOrigins } from '../../config/allowed-origins';
 import { availableLangs } from '../../../shared/config/i18n';
 import { allowedOrigins } from './allowed-origins';
 
