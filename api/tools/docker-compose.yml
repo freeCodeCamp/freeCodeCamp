@@ -6,7 +6,7 @@ services:
     command: mongod --replSet rs0
     restart: unless-stopped
     ports:
-      - 27018:27017
+      - 27017:27017
     volumes:
       - db-data:/data
   setup:

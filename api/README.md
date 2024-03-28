@@ -18,13 +18,6 @@ cd tools
 docker compose up -d
 ```
 
-Once that's running, update the connection string in the `.env` file to use port `27018`.
-
-```txt
-# Database
-MONGOHQ_URL=mongodb://127.0.0.1:27018/freecodecamp?directConnection=true
-```
-
 The new db will be empty, so you can run the seed script to populate it.
 
 ```bash
