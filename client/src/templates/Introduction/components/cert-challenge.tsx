@@ -129,7 +129,7 @@ const CertChallenge = ({
         <Button
           block={true}
           variant='primary'
-          href={isCertified ? certLocation : `/settings#certification-settings`}
+          href={isCertified ? certLocation : `/settings#cert-${certSlug}`}
           onClick={() => (isCertified ? createClickHandler(certSlug) : false)}
         >
           {isCertified && userLoaded
