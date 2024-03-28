@@ -1,5 +1,10 @@
 // We have to specify pyodide.js because we need to import that file (not .mjs)
-// and 'import' defaults to .mjs
+// and 'import' defaults to .mjs.
+
+// This is to do with how webpack handles node fallbacks - it uses the node
+// resolution algorithm to find the file, but that requires the full file name.
+// We can't add the extension, because it's in a bundle we're importing. However
+// we can import the .js file and then the strictness does not apply.
 import { loadPyodide, type PyodideInterface } from 'pyodide/pyodide.js';
 import pkg from 'pyodide/package.json';
 import type { PyProxy, PythonError } from 'pyodide/ffi';
