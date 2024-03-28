@@ -526,7 +526,7 @@ export const schemas = {
     body: Type.Object({
       id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
       challengeType: Type.Optional(Type.Number()),
-      // Solution does not need to be a valid URL unless it is NOT `backEndProject`
+      // The solution must be a valid URL only if it is a `backEndProject`.
       solution: Type.String({ maxLength: 1024 }),
       githubLink: Type.Optional(Type.String())
     }),
