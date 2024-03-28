@@ -469,7 +469,9 @@ function createShowCert(app) {
         });
       }
 
-      if (!user.name) {
+      // If the user does not have a name, and have set their name to public,
+      // warn them. Otherwise, fallback to username
+      if (!user.name && user.showName) {
         return res.json({
           messages: [
             {
