@@ -7,7 +7,7 @@ dashedName: step-16
 
 # --description--
 
-Within your `total_expenses` function, replace `pass` with a `lambda` function. Use `expense` as the parameter and return the value of the `'amount'` key in the `expense` dictionary.
+In the `total_expenses` function, you'll now integrate a lambda function. Replace the placeholder `pass` with a lambda function that has `expense` as its parameter. This `expense` is expected to be a dictionary, and your lambda function should return the value of the `'amount'` key in the `expense` dictionary.
 
 # --hints--
 
