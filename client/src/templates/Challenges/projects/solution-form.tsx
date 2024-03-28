@@ -63,7 +63,8 @@ export class SolutionForm extends Component<SolutionFormProps> {
       },
       required: ['solution'],
       isEditorLinkAllowed: false,
-      isLocalLinkAllowed: false
+      isLocalLinkAllowed: false,
+      isSourceCodeLinkRequired: false
     };
 
     let formFields = solutionField;
@@ -85,7 +86,8 @@ export class SolutionForm extends Component<SolutionFormProps> {
 
       case challengeTypes.backEndProject:
         formFields = backEndProjectFields;
-        options.required.push('githubLink');
+        // options.required.push('githubLink');
+        options.isSourceCodeLinkRequired = true;
         options.isLocalLinkAllowed = true;
         solutionLink = solutionLink + 'https://3000-project-url.gitpod.io/';
         solutionFormID = 'back-end-form';
