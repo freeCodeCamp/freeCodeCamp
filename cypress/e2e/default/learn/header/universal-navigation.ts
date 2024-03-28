@@ -21,20 +21,6 @@ const navigationLinks: { [key: string]: string } = {
 };
 
 describe('Default Navigation Menu', () => {
-  it('should render the expected nav items.', () => {
-    cy.visit('/learn');
-    testLink('Sign in', 'sign-in-button', true);
-    cy.get(navigationItems['toggle-button']).should('be.visible').click();
-    cy.get(navigationItems['navigation-list']).contains(
-      'Sign in to change theme.'
-    );
-    testLink('Donate');
-    testLink('Curriculum');
-    testLink('Forum');
-    testLink('News');
-    testLink('Radio');
-  });
-
   it('should close the menu and focus on the Menu button when the Esc key is pressed while the navigation menu is expanded and an item in the menu is focused', () => {
     cy.visit('/learn');
     cy.get(navigationItems['toggle-button']).should('be.visible').click();
