@@ -1,38 +1,22 @@
 ---
-id: 63b61584def8fa2ebcc259e0
-title: Step 19
+id: 6603aeb33cbbbd5bbbc79b2e
+title: Step 26
 challengeType: 0
-dashedName: step-19
+dashedName: step-26
 ---
 
 # --description--
 
-You need to split your `str` into individual characters. You can use the <dfn>split()</dfn> method to do this.
+To see the results from the `cleanInputString` function, you will need to add a console statement. Inside that console statement, call the `cleanInputString` function with the string value of `"+-99"` for an argument.
 
-The `split()` method splits a string into an array of substrings, and returns the new array. You can pass in an optional separator which tells the method where each split should happen.
-
-For example, passing an empty string into the `split` method will split the string into an array of individual characters.
-
-```js
-const str = 'Hello World';
-const strArray = str.split('');
-// ["H", "e", "l", "l", "o", " ", "W", "o", "r", "l", "d"]
-```
-
-Split the string passed into the `cleanInputString` function into an array of individual characters and assign it to a variable named `strArray`.
+Open up the console and you should see the original string followed by the cleaned string value with the `+-` removed.
 
 # --hints--
 
-Your `cleanInputString` function should declare a `strArray` variable.
+You should have a `console.log(cleanInputString("+-99"))` statement.
 
 ```js
-assert.match(cleanInputString.toString(), /strArray\s*=/);
-```
-
-Your `strArray` variable should be assigned the value of `str.split('')`.
-
-```js
-assert.match(cleanInputString.toString(), /strArray\s*=\s*str\.split\(\s*('|")\1\s*\)/);
+assert.match(code, /console\.log\(\s*cleanInputString\(\s*('|")\s*\+\-9\s*9\s*\1\s*\)\s*\);?/);
 ```
 
 # --seed--
@@ -208,9 +192,12 @@ const clearButton = document.getElementById('clear');
 const output = document.getElementById('output');
 let isError = false;
 
---fcc-editable-region--
 function cleanInputString(str) {
-  
+  console.log("original string: ", str);
+  const regex = /[+-\s]/g;
+  return str.replace(regex, '');
 }
+--fcc-editable-region--
+
 --fcc-editable-region--
 ```
