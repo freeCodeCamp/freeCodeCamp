@@ -13,37 +13,38 @@ import type {
   RouteGenericInterface
 } from 'fastify';
 import { ResolveFastifyReplyType } from 'fastify/types/type-provider';
-import { getMinutes, isBefore, sub } from 'date-fns';
+import { differenceInMinutes } from 'date-fns';
 import { isProfane } from 'no-profanity';
 
 import { blocklistedUsernames } from '../../../shared/config/constants';
 import { isValidUsername } from '../../../shared/utils/validate';
 import { schemas } from '../schemas';
 
-// TODO: move getWaitMessage and getWaitPeriod to own module and add tests
-function getWaitMessage(lastEmailSentAt: Date | null) {
-  const minutesLeft = getWaitPeriod(lastEmailSentAt);
-  if (minutesLeft <= 0) {
-    return null;
-  }
+type WaitMesssageArgs = {
+  sentAt: Date | null;
+  now?: Date;
+};
 
-  const timeToWait = minutesLeft
-    ? `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}`
-    : 'a few seconds';
+/**
+ * Get a message to display to the user about how long they need to wait before
+ * they can request an authentication link.
+ *
+ * @param param The parameters.
+ * @param param.sentAt The date the last email was sent at.
+ * @param param.now The current date.
+ * @returns The message to display to the user.
+ */
+export function getWaitMessage({ sentAt, now = new Date() }: WaitMesssageArgs) {
+  const minutesLeft = getWaitPeriod({ sentAt, now });
+  if (minutesLeft <= 0) return null;
 
+  const timeToWait = `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}`;
   return `Please wait ${timeToWait} to resend an authentication link.`;
 }
 
-function getWaitPeriod(lastEmailSentAt: Date | null) {
-  if (!lastEmailSentAt) return 0;
-
-  const now = new Date();
-  const fiveMinutesAgo = sub(now, { minutes: 5 });
-  const isWaitPeriodOver = isBefore(lastEmailSentAt, fiveMinutesAgo);
-
-  return isWaitPeriodOver
-    ? 0
-    : 5 - (getMinutes(now) - getMinutes(lastEmailSentAt));
+function getWaitPeriod({ sentAt, now }: Required<WaitMesssageArgs>) {
+  if (sentAt == null) return 0;
+  return 5 - differenceInMinutes(now, sentAt);
 }
 
 /**
@@ -191,7 +192,9 @@ You can update a new email address instead.`
 
       const isResendUpdateToSameEmail =
         newEmail === user.newEmail?.toLowerCase();
-      const isLinkSentWithinLimitTTL = getWaitMessage(user.emailVerifyTTL);
+      const isLinkSentWithinLimitTTL = getWaitMessage({
+        sentAt: user.emailVerifyTTL
+      });
 
       if (isResendUpdateToSameEmail && isLinkSentWithinLimitTTL) {
         void reply.code(429);
@@ -228,7 +231,9 @@ ${isLinkSentWithinLimitTTL}`
         // we need emailVeriftyTTL given that the main thing we want is to
         // restrict the rate of attempts and the emailAuthLinkTTL already does
         // that.
-        const tooManyRequestsMessage = getWaitMessage(user.emailAuthLinkTTL);
+        const tooManyRequestsMessage = getWaitMessage({
+          sentAt: user.emailAuthLinkTTL
+        });
 
         if (tooManyRequestsMessage) {
           void reply.code(429);
