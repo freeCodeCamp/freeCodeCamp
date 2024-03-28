@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trans } from 'react-i18next';
-
+//import { isIP } from 'is-ip';
 // Matches editor links for: Replit, Glitch, CodeSandbox, GitHub. NOT Codespaces, and NOT Gitpod yet
 // Once safari allows negative lookbehinds, this can be used:
 // |(?<!\.app)\.github\.dev
@@ -8,8 +8,8 @@ const editorRegex =
   /repl\.?it(\.com)?\/(@|join\/)|glitch\.com\/edit\/#!|codesandbox\.io\/s\/|github\.com/;
 const fCCRegex =
   /codepen\.io\/freecodecamp|freecodecamp\.rocks|github\.com\/freecodecamp|\.freecodecamp\.org/i;
-const localhostRegex = /localhost:/;
-const httpRegex = /http(?!s|([^s]+?localhost))/;
+const localhostRegex = /localhost:|\[::1\]:|127\.0\.0\.1:/;
+const httpRegex = /http(?!s|([^s]+?(localhost|\[::1\]|127\.0\.0\.1)))/;
 
 function isPathRoot(urlString: string): boolean {
   try {
@@ -28,7 +28,7 @@ export const fCCValidator: Validator = value =>
   fCCRegex.test(value) ? <Trans>validation.own-work-url</Trans> : null;
 
 export const localhostValidator: Validator = value =>
-  localhostRegex.test(value) ? (
+  localhostRegex.test(value) /* && isIP(value)*/ ? (
     <Trans>validation.publicly-visible-url</Trans>
   ) : null;
 
