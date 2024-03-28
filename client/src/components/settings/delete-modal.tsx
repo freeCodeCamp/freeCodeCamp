@@ -29,7 +29,8 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
             </a>
           </Trans>
         </p>
-        <hr />
+      </Modal.Body>
+      <Modal.Footer>
         <Button
           block={true}
           size='large'
@@ -49,9 +50,6 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
         >
           {t('settings.danger.certain')}
         </Button>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>{t('buttons.close')}</Button>
       </Modal.Footer>
     </Modal>
   );
