@@ -477,10 +477,10 @@ function createPostResetProjectProgress(app) {
     const userId = req.user.id;
     const { blocks } = req.body;
 
-    let toResetChallengeIds = [];
-    let undefinedBlocks = [];
+    const toResetChallengeIds = [];
+    const undefinedBlocks = [];
 
-    let isSendBlocks = blocks && blocks.length > 0;
+    const isSendBlocks = blocks && Array.isArray(blocks) && blocks.length > 0;
     let isHasValidBlockToReset = false;
     let isResetSuccessful = false;
 
@@ -489,11 +489,12 @@ function createPostResetProjectProgress(app) {
         const blockChallengeIds = getChallengeIdsForBlock(dashedBlockName);
         if (blockChallengeIds != undefined) {
           toResetChallengeIds.push(...blockChallengeIds);
-          isHasValidBlockToReset = true;
         } else {
           undefinedBlocks.push(dashedBlockName);
         }
       }
+
+      isHasValidBlockToReset = toResetChallengeIds.length > 0;
 
       if (isHasValidBlockToReset) {
         try {
@@ -504,7 +505,7 @@ function createPostResetProjectProgress(app) {
             },
             {
               $pull: {
-                completedChallenges: { id: { in: toResetChallengeIds } }
+                completedChallenges: { id: { $in: toResetChallengeIds } }
               }
             }
           );
@@ -515,46 +516,76 @@ function createPostResetProjectProgress(app) {
       }
     }
 
-    const resetMessage = buildResetMessage(
+    const resetResponse = buildResetResponse(
       isSendBlocks,
       isHasValidBlockToReset,
       isResetSuccessful,
       undefinedBlocks
     );
-    return res.status(200).json({ message: resetMessage });
+
+    return res.status(resetResponse.statusCode).json({
+      message: resetResponse.message,
+      devMessage: resetResponse.devMessage
+    });
   };
 
-  function buildResetMessage(
+  function buildResetResponse(
     isSendBlocks,
     isHasValidBlockToReset,
     isResetSuccessful,
     undefinedBlocks
   ) {
     if (!isSendBlocks) {
-      return `No blocks were provided for the reset operation.`;
+      return {
+        statusCode: 400,
+        message: 'flash.reset-progress.unexpected-error',
+        devMessage: 'No blocks were provided for the reset operation.'
+      };
     }
 
-    let messageParts = [];
+    let userMessageKeys = [];
+    let devMessageParts = [];
+    let statusCode;
 
     if (isResetSuccessful) {
-      messageParts.push(
-        `Challenges for the provided blocks have been successfully reset.`
+      statusCode = 204;
+      userMessageKeys.push('flash.reset-progress.successful-reset');
+      devMessageParts.push(
+        'Challenges for the provided blocks have been successfully reset.'
       );
     } else if (isHasValidBlockToReset) {
-      messageParts.push(
-        `No challenges were reset. The user might not have completed any challenges for the requested blocks.`
+      statusCode = 202;
+      userMessageKeys.push(
+        'flash.reset-progress.no-challenges-done-in-requested-blocks'
+      );
+      devMessageParts.push(
+        'No challenges were reset as none were completed in the requested blocks.'
+      );
+    } else {
+      statusCode = 404;
+      userMessageKeys.push('flash.reset-progress.unexpected-error');
+      devMessageParts.push(
+        'No valid challenges were found to reset for the requested blocks.'
+      );
+    }
+    if (undefinedBlocks && undefinedBlocks.length > 0) {
+      let blockList = undefinedBlocks.join(', ');
+      devMessageParts.push(
+        `Note: no challenges found for the following blocks: ${blockList}`
       );
     }
 
-    if (undefinedBlocks.length > 0) {
-      messageParts.push(
-        `No challenges found for the following blocks: ${undefinedBlocks.join(', ')}`
-      );
-    } else if (!isHasValidBlockToReset && !isResetSuccessful) {
-      return `No valid challenges were found to reset for the requested blocks.`;
-    }
+    const message =
+      userMessageKeys.length > 1
+        ? userMessageKeys.join(' ')
+        : userMessageKeys[0];
+    const devMessage = devMessageParts.join(' ');
 
-    return messageParts.join(' ');
+    return {
+      statusCode,
+      message,
+      devMessage
+    };
   }
 }
 
