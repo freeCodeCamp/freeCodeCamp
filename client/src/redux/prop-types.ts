@@ -158,6 +158,7 @@ export interface FullScene {
 export interface PrerequisiteChallenge {
   id: string;
   title: string;
+  slug?: string;
 }
 
 export type ChallengeWithCompletedNode = {
