@@ -516,7 +516,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
         });
 
         const msUsernameP = fastify.prisma.msUsername.findFirst({
-          where: { userId: req.session.user.id }
+          where: { userId: req.user?.id }
         });
 
         const [userToken, user, completedSurveys, msUsername] =
