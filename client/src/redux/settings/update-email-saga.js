@@ -19,7 +19,11 @@ function* updateMyEmailSaga({ payload: email = '' }) {
         payload: { email, isEmailVerified: false }
       })
     );
-    yield put(createFlashMessage(data));
+    yield put(
+      createFlashMessage({
+        type: 'info',
+        message: data
+      }));
   } catch (e) {
     yield put(updateMyEmailError(e));
   }
