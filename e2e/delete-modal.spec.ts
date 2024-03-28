@@ -43,11 +43,9 @@ test.describe('Delete Modal component', () => {
       page.getByRole('button', { name: translations.settings.danger.certain })
     ).toBeVisible();
 
-    // There are 2 close buttons on the modal: one is sr-only on top, and one on the bottom of modal
-    const closeButtons = await page
-      .getByRole('button', { name: translations.buttons.close })
-      .all();
-    expect(closeButtons).toHaveLength(2);
+    await expect(
+      page.getByRole('button', { name: translations.buttons.close })
+    ).toBeVisible();
   });
 
   test('should close the modal after the user cancels account deleting', async ({
