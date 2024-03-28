@@ -134,6 +134,11 @@ function Hotkeys({
     },
     ...(keyboardShortcuts
       ? {
+          showShortcuts: (keyEvent?: KeyboardEvent) => {
+            if (keyEvent?.key === '?') {
+              openShortcutsModal();
+            }
+          },
           focusEditor: (keyEvent?: KeyboardEvent) => {
             keyEvent?.preventDefault();
             if (editorRef && editorRef.current) {
@@ -164,11 +169,6 @@ function Hotkeys({
               } else {
                 void navigate('/learn');
               }
-            }
-          },
-          showShortcuts: (keyEvent?: KeyboardEvent) => {
-            if (!canFocusEditor && keyEvent?.key === '?') {
-              openShortcutsModal();
             }
           }
         }
