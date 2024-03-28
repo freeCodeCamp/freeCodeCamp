@@ -583,14 +583,8 @@ describe('userRoutes', () => {
       });
 
       test('GET returns the msUsername if it exists', async () => {
-        const msUsernameData = {
-          msUsername: 'foobar',
-          userId: defaultUserId,
-          ttl: 123
-        };
-
-        await fastifyTestInstance.prisma.msUsername.createMany({
-          data: msUsernameData
+        await fastifyTestInstance.prisma.msUsername.create({
+          data: msUsernameData[0] as (typeof msUsernameData)[0]
         });
 
         const msUsernames = await fastifyTestInstance.prisma.msUsername.count();
@@ -600,7 +594,7 @@ describe('userRoutes', () => {
 
         const { msUsername } = response.body.user.foobar;
 
-        expect(msUsername).toBe(msUsernameData.msUsername);
+        expect(msUsername).toBe(msUsernameData[0]?.msUsername);
       });
 
       test('GET returns a minimal user when all optional properties are missing', async () => {
