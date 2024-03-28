@@ -7,7 +7,6 @@ const el = {
   surveyAlert: "[data-cy='c-sharp-survey-alert']",
   startSurveyBtn: "[data-cy='start-csharp-survey-btn']",
   submitSurveyBtn: "[data-cy='submit-csharp-survey-btn']",
-  surveyModal: "[data-cy='c-sharp-survey-modal']",
   startExamBtn: "[data-cy='start-exam-btn']",
   examTime: "[data-cy='exam-time']",
   examInput: '.exam-answer-input-visible',
@@ -53,7 +52,7 @@ describe('C# Exam Challenge', () => {
       cy.get(el.surveyAlert).should('be.visible');
       cy.get(el.startExamBtn).should('have.attr', 'aria-disabled');
       cy.get(el.startSurveyBtn).click();
-      cy.get(el.surveyModal).should('be.visible');
+      cy.contains('Foundational C# with Microsoft Survey').should('be.visible');
       cy.get(el.submitSurveyBtn).should('have.attr', 'aria-disabled');
       cy.contains('Student developer').click();
       cy.contains('Novice (no prior experience').click();

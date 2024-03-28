@@ -38,19 +38,25 @@ test.describe('Finish Exit exam Modal E2E Test Suite', () => {
     page
   }) => {
     await expect(
-      page.getByText(translations.learn.exam['finish-header'])
+      page.getByRole('dialog', {
+        name: translations.learn.exam['finish-header']
+      })
     ).toBeVisible();
+
     await expect(
       page.getByRole('button', {
         name: translations.buttons.close
       })
     ).toBeVisible();
+
     await expect(page.getByText(translations.learn.exam.finish)).toBeVisible();
+
     await expect(
       page.getByRole('button', {
         name: translations.learn.exam['finish-yes']
       })
     ).toBeVisible();
+
     await expect(
       page.getByRole('button', {
         name: translations.learn.exam['finish-no']
@@ -64,8 +70,11 @@ test.describe('Finish Exit exam Modal E2E Test Suite', () => {
     await page
       .getByRole('button', { name: translations.learn.exam['exit-no'] })
       .click();
+
     await expect(
-      page.getByText(translations.learn.exam['exit-header'])
+      page.getByRole('dialog', {
+        name: translations.learn.exam['finish-header']
+      })
     ).not.toBeVisible();
   });
 
@@ -75,8 +84,11 @@ test.describe('Finish Exit exam Modal E2E Test Suite', () => {
     await page
       .getByRole('button', { name: translations.learn.exam['finish-yes'] })
       .click();
+
     await expect(
-      page.getByText(translations.learn.exam['finish-header'])
+      page.getByRole('dialog', {
+        name: translations.learn.exam['finish-header']
+      })
     ).not.toBeVisible();
   });
 
@@ -86,8 +98,11 @@ test.describe('Finish Exit exam Modal E2E Test Suite', () => {
     await page
       .getByRole('button', { name: translations.buttons.close })
       .click();
+
     await expect(
-      page.getByText(translations.learn.exam['finish-header'])
+      page.getByRole('dialog', {
+        name: translations.learn.exam['finish-header']
+      })
     ).not.toBeVisible();
   });
 });

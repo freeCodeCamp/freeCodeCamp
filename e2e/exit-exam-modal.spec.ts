@@ -15,6 +15,7 @@ test.beforeEach(async ({ page }) => {
       name: translations.buttons['click-start-exam']
     })
     .click();
+
   await page
     .getByRole('button', {
       name: translations.buttons['exit-exam']
@@ -27,19 +28,23 @@ test.describe('Exit exam Modal E2E Test Suite', () => {
     page
   }) => {
     await expect(
-      page.getByText(translations.learn.exam['exit-header'])
+      page.getByRole('dialog', { name: translations.learn.exam['exit-header'] })
     ).toBeVisible();
+
     await expect(page.getByText(translations.learn.exam.exit)).toBeVisible();
+
     await expect(
       page.getByRole('button', {
         name: translations.learn.exam['exit-yes']
       })
     ).toBeVisible();
+
     await expect(
       page.getByRole('button', {
         name: translations.buttons.close
       })
     ).toBeVisible();
+
     await expect(
       page.getByRole('button', {
         name: translations.learn.exam['exit-no']
@@ -53,9 +58,11 @@ test.describe('Exit exam Modal E2E Test Suite', () => {
     await page
       .getByRole('button', { name: translations.learn.exam['exit-no'] })
       .click();
+
     await expect(
-      page.getByText(translations.learn.exam['exit-header'])
+      page.getByRole('dialog', { name: translations.learn.exam['exit-header'] })
     ).not.toBeVisible();
+
     await expect(page).toHaveURL(examUrl);
   });
 
@@ -65,8 +72,9 @@ test.describe('Exit exam Modal E2E Test Suite', () => {
     await page
       .getByRole('button', { name: translations.learn.exam['exit-yes'] })
       .click();
+
     await expect(
-      page.getByText(translations.learn.exam['exit-header'])
+      page.getByRole('dialog', { name: translations.learn.exam['exit-header'] })
     ).not.toBeVisible();
 
     await expect(page).toHaveURL(cancelExamUrl);
@@ -80,9 +88,11 @@ test.describe('Exit exam Modal E2E Test Suite', () => {
         name: translations.buttons.close
       })
       .click();
+
     await expect(
-      page.getByText(translations.learn.exam['exit-header'])
+      page.getByRole('dialog', { name: translations.learn.exam['exit-header'] })
     ).not.toBeVisible();
+
     await expect(page).toHaveURL(examUrl);
   });
 });
