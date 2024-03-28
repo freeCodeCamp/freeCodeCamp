@@ -20,23 +20,39 @@ import {
 import {
   canFocusEditorSelector,
   challengeFilesSelector,
-  challengeTestsSelector
+  challengeTestsSelector,
+  isHelpModalOpenSelector,
+  isProjectPreviewModalOpenSelector,
+  isResetModalOpenSelector,
+  isShortcutsModalOpenSelector
 } from '../redux/selectors';
 import './hotkeys.css';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 import type { EditorProps } from '../classic/editor';
 
 const mapStateToProps = createSelector(
+  isHelpModalOpenSelector,
+  isResetModalOpenSelector,
+  isShortcutsModalOpenSelector,
+  isProjectPreviewModalOpenSelector,
   canFocusEditorSelector,
   challengeFilesSelector,
   challengeTestsSelector,
   userSelector,
   (
+    isHelpModalOpen: boolean,
+    isResetModalOpen: boolean,
+    isShortcutsModalOpen: boolean,
+    isProjectPreviewModalOpen: boolean,
     canFocusEditor: boolean,
     challengeFiles: ChallengeFiles,
     tests: Test[],
     user: User
   ) => ({
+    isHelpModalOpen,
+    isResetModalOpen,
+    isShortcutsModalOpen,
+    isProjectPreviewModalOpen,
     canFocusEditor,
     challengeFiles,
     tests,
@@ -49,16 +65,6 @@ const mapDispatchToProps = {
   submitChallenge,
   openShortcutsModal: () => openModal('shortcuts'),
   setIsAdvancing
-};
-
-const keyMap = {
-  navigationMode: 'escape',
-  executeChallenge: ['ctrl+enter', 'command+enter'],
-  focusEditor: 'e',
-  focusInstructionsPanel: 'r',
-  navigatePrev: ['p'],
-  navigateNext: ['n'],
-  showShortcuts: 'shift+/'
 };
 
 export type HotkeysProps = Pick<
@@ -79,6 +85,10 @@ export type HotkeysProps = Pick<
     | 'submitChallenge'
     | 'setEditorFocusability'
   > & {
+    isHelpModalOpen?: boolean;
+    isResetModalOpen?: boolean;
+    isShortcutsModalOpen?: boolean;
+    isProjectPreviewModalOpen?: boolean;
     canFocusEditor: boolean;
     children: React.ReactElement;
     instructionsPanelRef?: React.RefObject<HTMLElement>;
@@ -104,8 +114,29 @@ function Hotkeys({
   tests,
   usesMultifileEditor,
   openShortcutsModal,
-  user: { keyboardShortcuts }
+  user: { keyboardShortcuts },
+  isHelpModalOpen,
+  isResetModalOpen,
+  isShortcutsModalOpen,
+  isProjectPreviewModalOpen
 }: HotkeysProps): JSX.Element {
+  const isModalOpen = [
+    isHelpModalOpen,
+    isResetModalOpen,
+    isShortcutsModalOpen,
+    isProjectPreviewModalOpen
+  ].some(Boolean);
+
+  const keyMap = {
+    navigationMode: isModalOpen ? '' : 'escape',
+    executeChallenge: ['ctrl+enter', 'command+enter'],
+    focusEditor: 'e',
+    focusInstructionsPanel: 'r',
+    navigatePrev: ['p'],
+    navigateNext: ['n'],
+    showShortcuts: 'shift+/'
+  };
+
   const handlers = {
     executeChallenge: (keyEvent?: KeyboardEvent) => {
       // the 'enter' part of 'ctrl+enter' stops HotKeys from listening, so it
@@ -167,7 +198,7 @@ function Hotkeys({
             }
           },
           showShortcuts: (keyEvent?: KeyboardEvent) => {
-            if (!canFocusEditor && keyEvent?.key === '?') {
+            if (keyEvent?.key === '?') {
               openShortcutsModal();
             }
           }

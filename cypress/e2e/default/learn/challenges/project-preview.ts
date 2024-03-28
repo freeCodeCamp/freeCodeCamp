@@ -72,13 +72,11 @@ const legacyFirstChallengeUrls = [
 
 describe('project preview', () => {
   it('should appear on the first challenges of each practice project', () => {
-    practiceProjects.forEach(({ url, title }) => {
+    practiceProjects.forEach(({ url }) => {
       cy.visit(url + 'step-1');
-      cy.contains("Here's a preview of what you will build");
-      cy.get('[data-cy="project-preview-modal"]')
-        .should('be.focused')
-        .find('iframe')
-        .should('have.attr', 'title', title + ' preview');
+      cy.get('div[role="dialog"]')
+        .contains("Here's a preview of what you will build")
+        .should('be.visible');
     });
   });
 

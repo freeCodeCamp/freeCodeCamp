@@ -1,10 +1,9 @@
 import React from 'react';
-import { Modal } from '@freecodecamp/react-bootstrap';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Button } from '@freecodecamp/ui';
+import { Button, Modal } from '@freecodecamp/ui';
 
 import { closeModal } from '../redux/actions';
 import { isShortcutsModalOpenSelector } from '../redux/selectors';
@@ -46,56 +45,47 @@ function ShortcutsModal({
   user: { keyboardShortcuts }
 }: ShortcutsModalProps): JSX.Element {
   return (
-    <Modal
-      dialogClassName='shortcuts-modal'
-      onHide={closeShortcutsModal}
-      show={isOpen}
-      aria-labelledby='shortcuts-modal-title'
-    >
-      <Modal.Header className='shortcuts-modal-header fcc-modal'>
-        <Modal.Title
-          id='shortcuts-modal-title'
-          className='text-center'
-          componentClass='h1'
-        >
-          {t('shortcuts.title')}
-        </Modal.Title>
+    <Modal onClose={closeShortcutsModal} open={isOpen}>
+      <Modal.Header showCloseButton={false}>
+        {t('shortcuts.title')}
       </Modal.Header>
-      <Modal.Body className='shortcuts-modal-body'>
-        <table>
-          <thead>
-            <tr>
-              <th scope='col'>{t('shortcuts.table-header-action')}</th>
-              <th scope='col'>{t('shortcuts.table-header-key')}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{t('shortcuts.navigation-mode')}</td>
-              <td>ESC</td>
-            </tr>
-            <tr>
-              <td>{t('shortcuts.execute-challenge')}</td>
-              <td>CTRL/Command + Enter</td>
-            </tr>
-            <tr>
-              <td>{t('shortcuts.focus-editor')}</td>
-              <td>e</td>
-            </tr>
-            <tr>
-              <td>{t('shortcuts.focus-instructions-panel')}</td>
-              <td>r</td>
-            </tr>
-            <tr>
-              <td>{t('shortcuts.navigate-previous')}</td>
-              <td>p</td>
-            </tr>
-            <tr>
-              <td>{t('shortcuts.navigate-next')}</td>
-              <td>n</td>
-            </tr>
-          </tbody>
-        </table>
+      <Modal.Body>
+        <div className='shortcuts-modal-body'>
+          <table>
+            <thead>
+              <tr>
+                <th scope='col'>{t('shortcuts.table-header-action')}</th>
+                <th scope='col'>{t('shortcuts.table-header-key')}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{t('shortcuts.navigation-mode')}</td>
+                <td>ESC</td>
+              </tr>
+              <tr>
+                <td>{t('shortcuts.execute-challenge')}</td>
+                <td>CTRL/Command + Enter</td>
+              </tr>
+              <tr>
+                <td>{t('shortcuts.focus-editor')}</td>
+                <td>e</td>
+              </tr>
+              <tr>
+                <td>{t('shortcuts.focus-instructions-panel')}</td>
+                <td>r</td>
+              </tr>
+              <tr>
+                <td>{t('shortcuts.navigate-previous')}</td>
+                <td>p</td>
+              </tr>
+              <tr>
+                <td>{t('shortcuts.navigate-next')}</td>
+                <td>n</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </Modal.Body>
       <Modal.Footer>
         <KeyboardShortcutsSettings
