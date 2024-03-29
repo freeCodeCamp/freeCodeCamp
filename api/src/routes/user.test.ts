@@ -499,7 +499,7 @@ describe('userRoutes', () => {
       });
     });
 
-    describe('user/get-user-session', () => {
+    describe('/user/get-user-session', () => {
       beforeEach(async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: testUserData.email },
@@ -588,6 +588,21 @@ describe('userRoutes', () => {
         ) as { userToken: string };
 
         expect(tokenData.id).toBe(userToken);
+      });
+
+      test('GET returns the msUsername if it exists', async () => {
+        await fastifyTestInstance.prisma.msUsername.create({
+          data: msUsernameData[0] as (typeof msUsernameData)[0]
+        });
+
+        const msUsernames = await fastifyTestInstance.prisma.msUsername.count();
+        expect(msUsernames).toBe(1);
+
+        const response = await superGet('/user/get-session-user');
+
+        const { msUsername } = response.body.user.foobar;
+
+        expect(msUsername).toBe(msUsernameData[0]?.msUsername);
       });
 
       test('GET returns a minimal user when all optional properties are missing', async () => {
