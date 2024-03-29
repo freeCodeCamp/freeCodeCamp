@@ -22,7 +22,8 @@ function ResetModal(props: ResetModalProps): JSX.Element {
       <Modal.Body>
         <p>{t('settings.danger.reset-p1')}</p>
         <p>{t('settings.danger.reset-p2')}</p>
-        <hr />
+      </Modal.Body>
+      <Modal.Footer>
         <Button
           block={true}
           size='large'
@@ -42,9 +43,6 @@ function ResetModal(props: ResetModalProps): JSX.Element {
         >
           {t('settings.danger.reset-confirm')}
         </Button>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>{t('buttons.close')}</Button>
       </Modal.Footer>
     </Modal>
   );
