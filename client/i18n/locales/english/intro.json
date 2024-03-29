@@ -852,6 +852,10 @@
         "intro": [
           "This is one of the required projects to claim your certification."
         ]
+      },
+      "learn-concurrency-by-building-a-prime-number-generator": {
+        "title": "Learn concurrency by Building a Prime Number Generator",
+        "intro": ["", ""]
       }
     }
   },

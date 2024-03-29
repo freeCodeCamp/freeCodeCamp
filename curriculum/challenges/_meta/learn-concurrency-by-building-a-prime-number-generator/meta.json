@@ -1,0 +1,105 @@
+{
+  "name": "Learn concurrency by Building a Prime Number Generator",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-concurrency-by-building-a-prime-number-generator",
+  "order": 43,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "scientific-computing-with-python",
+  "superOrder": 10,
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "66054c5254582aeb1b1f132c",
+      "title": "Step 1"
+    },
+    {
+      "id": "66054d3f3a8df3f12a749e77",
+      "title": "Step 2"
+    },
+    {
+      "id": "66058dac03180626609943be",
+      "title": "Step 3"
+    },
+    {
+      "id": "66058e06f1a0ef2bcf270646",
+      "title": "Step 4"
+    },
+    {
+      "id": "66058e2d68c4122efe455c7a",
+      "title": "Step 5"
+    },
+    {
+      "id": "66058eba7dca3338ad94f315",
+      "title": "Step 6"
+    },
+    {
+      "id": "66058fd3bcb83644da718b90",
+      "title": "Step 7"
+    },
+    {
+      "id": "6605924301176d52490e025c",
+      "title": "Step 8"
+    },
+    {
+      "id": "6605927cfe97b45605829d77",
+      "title": "Step 9"
+    },
+    {
+      "id": "6605934ceffc2f631eaa77bf",
+      "title": "Step 10"
+    },
+    {
+      "id": "6605935e2c04ec64d7e85b25",
+      "title": "Step 11"
+    },
+    {
+      "id": "660593fb215f566b83a8bb14",
+      "title": "Step 12"
+    },
+    {
+      "id": "6605941bac5c3e6def4cdc04",
+      "title": "Step 13"
+    },
+    {
+      "id": "66059482ee1fd8742dd43447",
+      "title": "Step 14"
+    },
+    {
+      "id": "6605956440d13678a305fd6d",
+      "title": "Step 15"
+    },
+    {
+      "id": "660595a76e22037c38f9319e",
+      "title": "Step 16"
+    },
+    {
+      "id": "660596b3dde415815b2a51a3",
+      "title": "Step 17"
+    },
+    {
+      "id": "660597224ed66386ae0e2d9e",
+      "title": "Step 18"
+    },
+    {
+      "id": "66059736b16a1d8853592aa7",
+      "title": "Step 19"
+    },
+    {
+      "id": "6605978b1b4cd18e2899c587",
+      "title": "Step 20"
+    },
+    {
+      "id": "660597fdb64efb9315ea3c0c",
+      "title": "Step 21"
+    },
+    {
+      "id": "660598b0b27ac29d94021e9e",
+      "title": "Step 22"
+    }
+  ],
+  "helpCategory": "Python"
+}
