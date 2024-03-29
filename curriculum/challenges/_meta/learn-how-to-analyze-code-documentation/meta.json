@@ -10,8 +10,44 @@
   "isBeta": true,
   "challengeOrder": [
     {
-      "id": "655c17377f3b199fff96fa7f",
-      "title": "Dialogue: Placeholder"
+      "id": "6606682f3fbb93838673920d",
+      "title": "Dialogue 1: Analyzing API documentation"
+    },
+    {
+      "id": "66066c563917c5874b792337",
+      "title": "Task 1"
+    },
+    {
+      "id": "660681a717d84e89da14f6f4",
+      "title": "Task 2"
+    },
+    {
+      "id": "660682b572c0bb8aa3075feb",
+      "title": "Task 3"
+    },
+    {
+      "id": "6606838ecf64478b53a51496",
+      "title": "Task 4"
+    },
+    {
+      "id": "660683e649f8fa8bbd5baac5",
+      "title": "Task 5"
+    },
+    {
+      "id": "66068414094b3a8c10a4770d",
+      "title": "Task 6"
+    },
+    {
+      "id": "6606846eba453e8c7bacb2f7",
+      "title": "Task 7"
+    },
+    {
+      "id": "660684bfc24bf48cfaaf9cfa",
+      "title": "Task 8"
+    },
+    {
+      "id": "660686845b5e788def3527ca",
+      "title": "Task 9"
     }
   ],
   "helpCategory": "English"
