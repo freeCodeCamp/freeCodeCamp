@@ -22,3 +22,18 @@ export interface HeaderProps {
    */
   closeButtonClassNames?: string;
 }
+
+export interface BodyProps {
+  children: ReactNode;
+
+  /**
+   * Use `start` for better right-to-left support.
+   * Use `left` if the modal body contains code blocks.
+   */
+  alignment?: 'center' | 'left' | 'start';
+}
+
+export interface FooterProps {
+  children: ReactNode;
+  alignment?: 'center' | 'end';
+}

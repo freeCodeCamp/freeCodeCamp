@@ -12,7 +12,7 @@ dashedName: intermediate-expressions
 
 # --description--
 
-More resources:
+Додаткові ресурси:
 
 \- <a href="https://youtu.be/t_4DPwsaGDY" target="_blank" rel="noopener noreferrer nofollow">Вправа 1</a>
 

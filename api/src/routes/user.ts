@@ -510,11 +510,17 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           where: { userId: req.user!.id }
         });
 
-        const [userToken, user, completedSurveys] = await Promise.all([
-          userTokenP,
-          userP,
-          completedSurveysP
-        ]);
+        const msUsernameP = fastify.prisma.msUsername.findFirst({
+          where: { userId: req.user?.id }
+        });
+
+        const [userToken, user, completedSurveys, msUsername] =
+          await Promise.all([
+            userTokenP,
+            userP,
+            completedSurveysP,
+            msUsernameP
+          ]);
 
         if (!user?.username) {
           void res.code(500);
@@ -556,7 +562,8 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               twitter: normalizeTwitter(twitter),
               username: usernameDisplay || username,
               userToken: encodedToken,
-              completedSurveys: normalizeSurveys(completedSurveys)
+              completedSurveys: normalizeSurveys(completedSurveys),
+              msUsername: msUsername?.msUsername
             }
           },
           result: user.username

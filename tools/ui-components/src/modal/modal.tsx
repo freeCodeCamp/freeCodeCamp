@@ -1,13 +1,8 @@
-import React, {
-  type ReactNode,
-  createContext,
-  useContext,
-  Fragment
-} from 'react';
+import React, { createContext, useContext, Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
 import { CloseButton } from '../close-button';
-import { type ModalProps, type HeaderProps } from './types';
+import type { ModalProps, HeaderProps, BodyProps, FooterProps } from './types';
 
 // There is a close button on the right side of the modal title.
 // Some extra padding needs to be added to the left of the title text
@@ -63,16 +58,24 @@ const Header = ({
   );
 };
 
-const Body = ({ children }: { children: ReactNode }) => {
+const Body = ({ children, alignment = 'center' }: BodyProps) => {
   return (
-    <div className='p-[15px] border-b-1 border-solid border-foreground-secondary'>
+    <div
+      className={`p-[15px] border-b-1 border-solid border-foreground-secondary text-${alignment}`}
+    >
       {children}
     </div>
   );
 };
 
-const Footer = ({ children }: { children: ReactNode }) => {
-  return <div className='p-[15px]'>{children}</div>;
+const Footer = ({ children, alignment = 'center' }: FooterProps) => {
+  if (alignment === 'end') {
+    return <div className='p-[15px] flex justify-end'>{children}</div>;
+  }
+
+  return (
+    <div className={`p-[15px] flex flex-col justify-center`}>{children}</div>
+  );
 };
 
 const Modal = ({
@@ -104,7 +107,7 @@ const Modal = ({
           <div aria-hidden className='fixed inset-0 bg-gray-900 opacity-50' />
 
           {/* Full-screen container of the panel */}
-          <div className='fixed inset-0 flex items-start justify-center pt-[30px]'>
+          <div className='fixed inset-0 flex items-start justify-center pt-[30px] pb-[30px] overflow-scroll'>
             <Transition.Child
               as={Fragment}
               enter='transition-all duration-300 ease-out'

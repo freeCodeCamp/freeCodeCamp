@@ -5,8 +5,7 @@ import React, { useMemo, useState } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Modal } from '@freecodecamp/react-bootstrap';
-import { Table, Button } from '@freecodecamp/ui';
+import { Table, Button, Modal } from '@freecodecamp/ui';
 
 import envData from '../../../../config/env.json';
 import { getLangCode } from '../../../../../shared/config/i18n';
@@ -197,17 +196,11 @@ function TimelineInner({
         </Table>
       )}
       {id && (
-        <Modal
-          aria-labelledby='contained-modal-title'
-          onHide={closeSolution}
-          show={solutionOpen}
-        >
-          <Modal.Header closeButton={true}>
-            <Modal.Title id='contained-modal-title' className='text-center'>
-              {`${username}'s Solution to ${
-                idToNameMap.get(id)?.challengeTitle ?? ''
-              }`}
-            </Modal.Title>
+        <Modal onClose={closeSolution} open={solutionOpen}>
+          <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
+            {`${username}'s Solution to ${
+              idToNameMap.get(id)?.challengeTitle ?? ''
+            }`}
           </Modal.Header>
           <Modal.Body>
             <SolutionViewer
