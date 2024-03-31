@@ -7,16 +7,22 @@ dashedName: step-57
 
 # --description--
 
-Later on in the curriculum you will learn more about how objects work in JavaScript. But for now, you will apply what you have learned so far to your role playing game.
+Later on in the curriculum, you will dive deeper into objects. But for now, it is time to apply what you have learned to your role playing game.
 
 Start by deleting your `cat` object and console statement. 
 
 # --hints--
 
-Test 1
+You should remove your `cat` object.
 
 ```js
+assert.notInclude(code, "const cat = {");
+```
 
+You should remove your console statement.
+
+```js
+assert.notInclude(code, "console.log(cat[\"Number of legs\"]);");
 ```
 
 # --seed--
