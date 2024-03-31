@@ -44,7 +44,7 @@ function bootUser(app) {
   const deleteMsUsername = createDeleteMsUsername(app);
   const postSubmitSurvey = createPostSubmitSurvey(app);
   const deleteUserSurveys = createDeleteUserSurveys(app);
-  const postResetProjectProgress = createPostResetProjectProgress(app);
+  const deleteResetProjectProgress = createDeleteResetProjectProgress(app);
 
   api.get('/account', sendNonUserToHome, deprecatedEndpoint);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
@@ -65,7 +65,11 @@ function bootUser(app) {
     deleteUserSurveys,
     postResetProgress
   );
-  api.delete('/account/reset-progress/', ifNoUser401, postResetProjectProgress);
+  api.delete(
+    '/account/reset-progress/',
+    ifNoUser401,
+    deleteResetProjectProgress
+  );
   api.post(
     '/user/report-user/',
     ifNoUser401,
@@ -471,8 +475,8 @@ function postResetProgress(req, res, next) {
   );
 }
 
-function createPostResetProjectProgress(app) {
-  return async function postResetProjectProgress(req, res, next) {
+function createDeleteResetProjectProgress(app) {
+  return async function deleteResetProjectProgress(req, res, next) {
     const { User } = app.models;
     const userId = req.user.id;
     const { blocks } = req.body;
@@ -548,13 +552,13 @@ function createPostResetProjectProgress(app) {
     let statusCode;
 
     if (isResetSuccessful) {
-      statusCode = 204;
+      statusCode = 202;
       userMessageKeys.push('flash.reset-progress.successful-reset');
       devMessageParts.push(
         'Challenges for the provided blocks have been successfully reset.'
       );
     } else if (isHasValidBlockToReset) {
-      statusCode = 202;
+      statusCode = 200;
       userMessageKeys.push(
         'flash.reset-progress.no-challenges-done-in-requested-blocks'
       );
