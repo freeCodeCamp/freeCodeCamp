@@ -107,9 +107,22 @@ export function* executeChallengeSaga({ payload }) {
     yield put(initLogs());
     yield put(initConsole(i18next.t('learn.running-tests')));
     // reset tests to initial state
-    const tests = (yield select(challengeTestsSelector)).map(
+    let tests = (yield select(challengeTestsSelector)).map(
       ({ text, testString }) => ({ text, testString })
     );
+
+    const generateUniqueTestName = (testText, index) => {
+      const testName = `Test ${index + 1}`;
+      return testText.includes(testName)
+        ? testText
+        : `${testName}: ${testText}`;
+    };
+
+    tests = tests.map((test, index) => ({
+      ...test,
+      text: generateUniqueTestName(test.text, index)
+    }));
+
     yield put(updateTests(tests));
 
     yield fork(takeEveryLog, consoleProxy);
