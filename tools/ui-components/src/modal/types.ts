@@ -21,6 +21,7 @@ export interface HeaderProps {
    * Tracking issue: https://github.com/freeCodeCamp/freeCodeCamp/issues/52715
    */
   closeButtonClassNames?: string;
+  borderless?: boolean;
 }
 
 export interface BodyProps {
@@ -31,6 +32,7 @@ export interface BodyProps {
    * Use `left` if the modal body contains code blocks.
    */
   alignment?: 'center' | 'left' | 'start';
+  borderless?: boolean;
 }
 
 export interface FooterProps {
