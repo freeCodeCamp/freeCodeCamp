@@ -18,43 +18,43 @@
     },
     {
       "id": "65f411ef1540c01e03d41b09",
-      "title": "Introduction to Computers"
+      "title": "Step 2"
     },
     {
       "id": "65f416ff62ed3524affa6c2c",
-      "title": "Introduction to Computers - Part 2."
+      "title": "Step 3"
     },
     {
       "id": "65f4128330131d20c7373c2e",
-      "title": "Why do Computers use Binary?"
+      "title": "Step 4"
     },
     {
       "id": "65f413125d6338218918820f",
-      "title": "What is Coding?"
+      "title": "Step 5"
     },
     {
       "id": "65f4132a76991621af4b0e4b",
-      "title": "Importance of Coding"
+      "title": "Step 6"
     },
     {
       "id": "65f4134acd811521d5dd1094",
-      "title": "What are Programming Languages?"
+      "title": "Step 7"
     },
     {
       "id": "65f4136f9d2a942229aa018e",
-      "title": "How Computer Understands our Code? "
+      "title": "Step 8"
     },
     {
       "id": "65f413c4f3b87d224e8b856e",
-      "title": "How Does Computer Understands our Code? - Part - 2"
+      "title": "Step 9"
     },
     {
       "id": "65f413ee386282227bc38a5e",
-      "title": "Why JavaScript?"
+      "title": "Step 10"
     },
     {
       "id": "65f4144757efed229f90c970",
-      "title": "What is NodeJS?"
+      "title": "Step 11"
     }
   ],
   "helpCategory": "JavaScript"
