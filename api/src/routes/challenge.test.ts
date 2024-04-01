@@ -362,7 +362,33 @@ describe('challengeRoutes', () => {
           expect(response.body).toStrictEqual(
             isValidChallengeCompletionErrorMsg
           );
-          expect(response.statusCode).toBe(400);
+          expect(response.statusCode).toBe(403);
+        });
+
+        it('POST rejects backendProject requests without URL githubLinks', async () => {
+          const response = await superPost('/project-completed').send({
+            id: id1,
+            challengeType: challengeTypes.backEndProject,
+            // Solution is allowed to be localhost for backEndProject
+            solution: 'http://localhost:3000'
+          });
+
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(403);
+
+          const response_2 = await superPost('/project-completed').send({
+            id: id1,
+            challengeType: challengeTypes.backEndProject,
+            solution: 'http://localhost:3000',
+            githubLink: 'not-a-valid-url'
+          });
+
+          expect(response_2.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response_2.statusCode).toBe(403);
         });
 
         it('POST rejects CodeRoad/CodeAlly projects when the user has not completed the required challenges', async () => {

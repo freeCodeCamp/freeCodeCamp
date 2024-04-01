@@ -1,6 +1,6 @@
 ---
 id: 5900f3a11000cf542c50feb4
-title: 'Problem 53: Combinatoric selections'
+title: 'Problem 53: Kombinatorische Auswahl'
 challengeType: 1
 forumTopicId: 302164
 dashedName: problem-53-combinatoric-selections
@@ -8,45 +8,45 @@ dashedName: problem-53-combinatoric-selections
 
 # --description--
 
-There are exactly ten ways of selecting three from five, 12345:
+Es gibt genau zehn Möglichkeiten, drei von fünf auszuwählen, 12345:
 
-<div style='text-align: center;'>123, 124, 125, 134, 135, 145, 234, 235, 245, and 345</div>
+<div style='text-align: center;'>123, 124, 125, 134, 135, 145, 234, 235, 245, und 345</div>
 
-In combinatorics, we use the notation, $\\displaystyle \\binom 5 3 = 10$
+In der Kombinatorik verwenden wir die Notation $\\displaystyle \\binom 5 3 = 10$
 
-In general, $\\displaystyle \\binom n r = \\dfrac{n!}{r!(n-r)!}$, where $r \\le n$, $n! = n \\times (n-1) \\times ... \\times 3 \\times 2 \\times 1$, and $0! = 1$.
+Im Allgemeinen gilt $\\displaystyle \\\binom n r = \\\dfrac{n!}{r!(n-r)!}$, wobei $r \\le n$, $n! = n \\times (n-1) \\times ... \\times 3 \\times 2 \\times 1$, und $0! = 1$.
 
-It is not until $n = 23$, that a value exceeds one-million: $\\displaystyle \\binom {23} {10} = 1144066$.
+Erst bei $n = 23$ übersteigt ein Wert eine Million: $\\displaystyle \\\binom {23} = 1144066$. {10} = 1144066$.
 
-How many, not necessarily distinct, values of $\\displaystyle \\binom n r$ for $1 \\le n \\le 100$, are greater than one-million?
+Wie viele, nicht notwendigerweise unterschiedliche, Werte von $\\\displaystyle \\\binom n r$ für $1 \\le n \\le 100$, sind größer als eine Million?
 
 # --hints--
 
-`combinatoricSelections(1000)` should return a number.
+`combinatoricSelections(1000)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof combinatoricSelections(1000) === 'number');
 ```
 
-`combinatoricSelections(1000)` should return 4626.
+`combinatoricSelections(1000)` sollte 4626 zurückgeben.
 
 ```js
 assert.strictEqual(combinatoricSelections(1000), 4626);
 ```
 
-`combinatoricSelections(10000)` should return 4431.
+`combinatoricSelections(10000)` sollte 4431 zurückgeben.
 
 ```js
 assert.strictEqual(combinatoricSelections(10000), 4431);
 ```
 
-`combinatoricSelections(100000)` should return 4255.
+`combinatoricSelections(100000)` sollte 4255 zurückgeben.
 
 ```js
 assert.strictEqual(combinatoricSelections(100000), 4255);
 ```
 
-`combinatoricSelections(1000000)` should return 4075.
+`combinatoricSelections(1000000)` sollte 4075 zurückgeben.
 
 ```js
 assert.strictEqual(combinatoricSelections(1000000), 4075);

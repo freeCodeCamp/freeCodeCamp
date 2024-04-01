@@ -1,40 +1,40 @@
 ---
 id: 6391d1a4f7ac71efd0621380
-title: Build a Recipe Page Project
+title: Erstelle ein Rezeptseiten-Projekt
 challengeType: 14
 dashedName: top-build-a-recipe-project
 ---
 
 # --description--
 
-The website will consist of a main index page which will have links to a few recipes. The website won’t look very pretty by the time you’ve finished.
+Die Website wird aus einer Hauptindexseite bestehen, die über Links zu einigen Rezepten verfügt. Die Website wird nicht besonders hübsch aussehen zum Zeitpunkt der Fertigstellung.
 
 **User Stories:**
 
-1. Your recipe page should contain a `DOCTYPE` tag.
-1. Your recipe page should include an `html` element with a `head` and `body` element as children.
-1. You should have a `title` element within the `head` element with the text `The Odin Recipes`.
-1. You should see an `h1` element that has the text `Creamy Chocolate Fudge`.
-1. You should see a related image with an `alt` attribute.
-1. There should be an `h2` element with the text `Description` under the image.
-1. You should see a couple of paragraphs under `Description` that describe the recipe.
-1. There should be an `h2` element with the text `Ingredients`.
-1. Under the `Ingredients` heading there should be an unordered list with the ingredients needed for the recipe.
-1. Under the list of ingredients add another heading called `Steps`.
-1. You should see an ordered list with a couple of steps needed to complete the recipe.
-1. Under the steps there should be an `h2` element with the text `More Recipes`.
-1. You should see a couple of links to other recipes inside an unordered list which has a couple of list items with anchor elements within.
-1. These anchor elements should have `href` attribute with the value set to `#`.
+1. Deine Rezeptseite sollte über einen `DOCTYPE`-Tag verfügen.
+1. Deine Rezeptseite sollte über ein `html`-Element mit einem `head`- und `body`-Element als untergeordnete Elemente verfügen.
+1. Du solltest über ein `title`-Element innerhalb des `head`-Elements mit dem Text `The Odin Recipes` verfügen.
+1. Du solltest ein `h1`-Element sehen können, das den Text `Creamy Chocolate Fudge` enthält.
+1. Du solltest ein zugehöriges Bild mit einem `alt`-Attribut sehen können.
+1. Unter dem Bild sollte es ein `h2`-Element mit dem Text `Description` geben.
+1. Du solltest ein paar Absätze unter `Description` sehen können, die das Rezept beschreiben.
+1. Es sollte ein `h2`-Element mit dem Text `Ingredients` vorhanden sein.
+1. Unter der `Ingredients`-Überschrift sollte sich eine ungeordnete Liste mit den Zutaten befinden, die für das Rezept notwendig sind.
+1. Füge unterhalb der Zutatenliste eine weitere Überschrift namens `Steps` hinzu.
+1. Du solltest eine geordnete Liste mit einigen Schritten sehen können, die für die Zubereitung des Rezepts erforderlich sind.
+1. Unterhalb der Schritte sollte ein `h2`-Element mit dem Text `More Recipes` stehen.
+1. Du solltest einige Links zu anderen Rezepten in einer ungeordneten Liste sehen können, die einige Listeneinträge mit Ankerelementen enthält.
+1. Diese Ankerelemente sollten über ein `href`-Attribut mit dem Wert `#` verfügen.
 
 # --hints--
 
-You should have a `DOCTYPE` tag.
+Du solltest über einen `DOCTYPE`-Tag verfügen.
 
 ```js
 assert(code.match(/<!DOCTYPE\s+?html\s*?>/gi));
 ```
 
-You should have a `html` element with `head` and `body` element.
+Du solltest über ein `html`-Element mit einem `head`- und `body`-Element verfügen.
 
 ```js
 const html = document.querySelectorAll('html')[0];
@@ -44,19 +44,19 @@ const body = document.querySelectorAll('html > body')[0];
 assert(html && head && body);
 ```
 
-You should have a `title` element within the `head` element that contains the text `The Odin Recipes`.
+Du solltest ein `title`-Element innerhalb des `head`-Elements haben, das den Text `The Odin Recipes` enthält.
 
 ```js
 assert(document.querySelectorAll('HEAD > TITLE')[0].innerText == 'The Odin Recipes');
 ```
 
-You should have a `h1` element within your `body` element that contains the text `Creamy Chocolate Fudge`.
+Du solltest ein `h1`-Element innerhalb deines `body`-Elements haben, das den Text `Creamy Chocolate Fudge` enthält.
 
 ```js
 assert(document.querySelectorAll('BODY > H1')[0].innerText == 'Creamy Chocolate Fudge');
 ```
 
-You should have an image with an `alt` attribute.
+Du solltest ein Bild mit einem `alt`-Attribut haben.
 
 ```js
 const img = document.querySelectorAll('IMG')[0];
@@ -64,7 +64,7 @@ const img = document.querySelectorAll('IMG')[0];
 assert(img && img.alt !='' && img.src != '')
 ```
 
-You should have an `h2` element with the text `Description`.
+Du solltest ein `h2`-Element mit dem Text `Description` haben.
 
 ```js
 const h2 = document.querySelectorAll('H2')[0];
@@ -72,7 +72,7 @@ const h2 = document.querySelectorAll('H2')[0];
 assert(h2.innerText == 'Description');
 ```
 
-You should have at least two `p` elements describing the recipe.
+Du solltest mindestens zwei `p`-Elemente haben, die das Rezept beschreiben.
 
 ```js
 const paragraphs = document.querySelectorAll('P');
@@ -80,7 +80,7 @@ const paragraphs = document.querySelectorAll('P');
 assert(paragraphs.length > 1);
 ```
 
-You should have an `h2` element with the text `Ingredients`.
+Du solltest ein `h2`-Element mit dem Text `Ingredients` haben.
 
 ```js
 const h2 = document.querySelectorAll('H2')[1];
@@ -88,7 +88,7 @@ const h2 = document.querySelectorAll('H2')[1];
 assert(h2.innerText == 'Ingredients');
 ```
 
-You should have an unordered list `<ul>` with some ingredients as the list items `<li>`.
+Du solltest eine ungeordnete Liste `<ul>` mit einigen Zutaten als Listeneinträge `<li>` haben.
 
 ```js
 const unorderedList = document.querySelectorAll('UL')[0];
@@ -97,7 +97,7 @@ const listItems = document.querySelectorAll('UL > LI');
 assert(unorderedList && listItems && listItems.length > 1);
 ```
 
-You should have an `h2` element with the text `Steps`.
+Du solltest ein `h2`-Element mit dem Text `Steps` haben.
 
 ```js
 const h2 = document.querySelectorAll('H2')[2];
@@ -114,7 +114,7 @@ const listItems = document.querySelectorAll('OL > LI');
 assert(orderedList && listItems && listItems.length > 1);
 ```
 
-You should have an `h2` element with the text `More Recipes`.
+Du solltest ein `h2`-Element mit dem Text `More Recipes` haben.
 
 ```js
 const h2 = document.querySelectorAll('H2')[3];
@@ -122,7 +122,7 @@ const h2 = document.querySelectorAll('H2')[3];
 assert(h2.innerText == 'More Recipes');
 ```
 
-You should have an unordered list `<ul>` element with list items `<li>` that contain `<a>` tags which lead to other recipes.
+Du solltest ein ungeordnetes Listenelement `<ul>` mit Listeneinträgen `<li>` haben, die `<a>`-Tags enthalten, die zu anderen Rezepten führen.
 
 ```js
 const unorderedList = document.querySelectorAll('UL')[1];
@@ -137,7 +137,7 @@ const containsAnchors =  [...listItems].every(function(listItem) {
 assert(unorderedList && allAreListItems && containsAnchors && listItems.length > 1);
 ```
 
-Your anchor tags linking to the recipes should have a `href` attribute with the value set to `#`
+Deine Ankertags, die zu den Rezepten verlinken, sollten ein `href`-Attribut mit dem Wert `#` haben
 
 ```js
 const anchorTags = document.querySelectorAll("a");

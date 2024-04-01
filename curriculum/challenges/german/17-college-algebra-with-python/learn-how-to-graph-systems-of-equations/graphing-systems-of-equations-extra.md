@@ -1,6 +1,6 @@
 ---
 id: 6331d276b51aeedd1a2bd64d
-title: "Graphing Systems of Equations: Extra"
+title: "Grafische Darstellung von Gleichungssystemen: Extra"
 challengeType: 15
 videoId: q8ad1tTFqns
 dashedName: graphing-systems-of-equations-extra
@@ -8,9 +8,9 @@ dashedName: graphing-systems-of-equations-extra
 
 # --description--
 
-This next video will give you a deeper dive into what you can do with graphing systems of equations, graphing inequalities, and shading above or below the line. You will also see how to download the graph to your computer or your Google Drive.
+This next video will give you a deeper dive into what you can do with graphing systems of equations, graphing inequalities, and shading above or below the line. Außerdem wirst du sehen, wie du die Grafik auf deinen Computer oder dein Google Drive herunterladen kannst.
 
-Here is the <a href="https://colab.research.google.com/drive/1m5oG62NzUHRzBghGCPRfr1SzvbywRWPV?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+Hier ist das <a href="https://colab.research.google.com/drive/1m5oG62NzUHRzBghGCPRfr1SzvbywRWPV?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab-Notizbuch, das in diesem Video verwendet wird.</a>
 
 # --question--
 
@@ -20,7 +20,7 @@ If you want to create an interactive plot with a slider to zoom in and out, wher
 
 ## --answers--
 
-Within the interactive() function
+Innerhalb der interactive()-Funktion
 
 ---
 
@@ -28,11 +28,11 @@ In the slider
 
 ---
 
-Within the function that the interactive() calls
+Innerhalb der Funktion, die von interactive() aufgerufen wird
 
 ---
 
-Before all of the functions
+Vor allen Funktionen
 
 ## --video-solution--
 
