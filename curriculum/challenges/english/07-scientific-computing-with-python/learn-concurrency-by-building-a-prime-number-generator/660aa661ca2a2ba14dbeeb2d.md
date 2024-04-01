@@ -1,7 +1,7 @@
 ---
 id: 660aa661ca2a2ba14dbeeb2d
 title: Step 22
-challengeType: 0
+challengeType: 20
 dashedName: step-22
 ---
 
