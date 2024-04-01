@@ -6,7 +6,7 @@ const buttonClassNames =
 
 // remove additional border styles after migration
 const listClassNames =
-  'flex mb-0 pl-0 mt-0  border-t-[0px] border-r-[0px] border-l-[0px] border-b-[1px] border-solid border-foreground-quaternary';
+  'flex mb-0 pl-0 mt-0 border-b-[1px] border-solid border-foreground-quaternary';
 
 export const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof Trigger>,

@@ -1112,7 +1112,8 @@
       "freeCodeCamp 在开源课程的基础上进行了扩展，使其可以在浏览器中交互运行，并通过测试来评估你的代码，确保你理解了关键概念。",
       "如果你想体验在本地计算机上配置运行所有 The Odin Project，可以在 <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project 网站</a> 上查看原始的 Odin Project。衷心感谢 The Odin Project 社区持续为世界各地的开发人员维护这一宝贵的学习资源。",
       "本课程为非官方课程，未经 The Odin Project 认可。本课程对 The Odin Project 课程内容进行了更改。本课程的所有教学材料均采用 CC-BY-SA-NC 4.0 许可协议。",
-      "<a href='https://github.com/TheOdinProject/curriculum?tab=License-1-ov-file#readme' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>"
+      "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>",
+      "This course includes content from <a href='javascript.info'>JavaScript.info</a>, which is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>"
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1180,6 +1181,10 @@
         "intro": [
           "通过学习变量和运算符开始学习 JavaScript。本课程涵盖 JavaScript 编程的基础知识，包括数据类型、运算符和变量声明。"
         ]
+      },
+      "top-learn-data-types-and-conditionals": {
+        "title": "Learn Data Types and Conditionals",
+        "intro": ["Learn about data types and conditionals in JavaScript."]
       }
     }
   },
@@ -1335,7 +1340,7 @@
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "学习如何询问和分享教育和专业背景",
         "intro": [
-          "In this course, you'll learn how to ask about another person's educational and professional backgrouns and you'll learn how to share information about your background as well."
+          "In this course, you'll learn how to ask about another person's educational and professional backgrounds and you'll learn how to share information about your background as well."
         ]
       },
       "learn-how-to-talk-about-hobbies-and-interests": {

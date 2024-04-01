@@ -32,3 +32,8 @@ export interface BodyProps {
    */
   alignment?: 'center' | 'left' | 'start';
 }
+
+export interface FooterProps {
+  children: ReactNode;
+  alignment?: 'center' | 'end';
+}
