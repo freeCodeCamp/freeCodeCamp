@@ -1,0 +1,30 @@
+.gap-2 {
+  gap: 20px;
+}
+.light-gray-color {
+  color: #d9d9d9;
+}
+.gray-color {
+  color: #5b5b5b;
+  display: inline-block;
+  margin-left: 6px;
+}
+.border-b {
+  border-bottom: 1px solid #efeeee;
+}
+.location-and-date {
+  flex-direction: row;
+}
+@media screen and (max-width: 600px) {
+  .location-and-date {
+    flex-direction: column;
+  }
+}
+.bio-icons-container {
+  margin-top: 20px;
+}
+.bio-icons-container figure div {
+  height: 30px;
+  width: 30px;
+  background-color: #d9d9d9;
+}

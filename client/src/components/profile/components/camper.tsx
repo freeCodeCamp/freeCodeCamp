@@ -1,4 +1,4 @@
-import { faAward, faCalendar } from '@fortawesome/free-solid-svg-icons';
+import { faAward } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -6,10 +6,10 @@ import { Col, Row } from '@freecodecamp/ui';
 import type { User } from '../../../redux/prop-types';
 import { AvatarRenderer } from '../../helpers';
 import Link from '../../helpers/link';
-import SupporterBadge from '../../../assets/icons/supporter-badge';
 import SocialIcons from './social-icons';
 import { formatYears, parseDate } from './utils';
 import './camper.css';
+import Bio from './camper/bio';
 
 export type CamperProps = Pick<
   User,
@@ -28,15 +28,11 @@ export type CamperProps = Pick<
 >;
 
 function Camper({
-  name,
   username,
-  location,
   picture,
-  about,
   yearsTopContributor,
   githubProfile,
   isDonating,
-  joinDate,
   linkedin,
   twitter,
   website
@@ -61,22 +57,7 @@ function Camper({
         username={username}
         website={website}
       />
-      <br />
-      <h2 className='text-center username'>@{username}</h2>
-      {name && <p className='text-center name'>{name}</p>}
-      {location && <p className='text-center location'>{location}</p>}
-      {isDonating && (
-        <p className='text-center supporter'>
-          <SupporterBadge />
-          {t('profile.supporter')}
-        </p>
-      )}
-      {about && <p className='bio text-center'>{about}</p>}
-      {joinDate && (
-        <p className='bio text-center'>
-          <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate, t)}
-        </p>
-      )}
+      <Bio />
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>
           <br />
