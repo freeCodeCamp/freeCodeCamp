@@ -364,7 +364,7 @@ jobs:
       # We do not need to run tests because they are run after the PR is created.
 
       - name: Overwrite Execute-Brain.md
-        run: tools/scripts/move-bf.sh
+        run: sudo tools/scripts/move-bf.sh
 
       # Create Commit
       - name: Commit Changes
