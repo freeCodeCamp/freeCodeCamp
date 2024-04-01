@@ -291,6 +291,38 @@
     {
       "id": "660a9819ad113774d65a1e7c",
       "title": "Step 70"
+    },
+    {
+      "id": "660ac1d158923e805d3c3099",
+      "title": "Step 71"
+    },
+    {
+      "id": "660ac2873b090d80d6aa6ce2",
+      "title": "Step 72"
+    },
+    {
+      "id": "660ac35d55a15d81afdedd76",
+      "title": "Step 73"
+    },
+    {
+      "id": "660ac44c7eec868220318297",
+      "title": "Step 74"
+    },
+    {
+      "id": "660ac4f4f784b9829e89632a",
+      "title": "Step 75"
+    },
+    {
+      "id": "660ac56326c2eb831583c0de",
+      "title": "Step 76"
+    },
+    {
+      "id": "660ac59d7ea60083900b83df",
+      "title": "Step 77"
+    },
+    {
+      "id": "660ac60e22aa218400acb4b6",
+      "title": "Step 78"
     }
   ],
   "helpCategory": "Python"
