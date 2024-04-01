@@ -1,6 +1,6 @@
 ---
 id: 5900f4291000cf542c50ff3c
-title: 'Problem 189: Tri-colouring a triangular grid'
+title: 'Problem 189: Dreifarbige Gestaltung eines Dreiecksgitters'
 challengeType: 1
 forumTopicId: 301825
 dashedName: problem-189-tri-colouring-a-triangular-grid
@@ -8,23 +8,23 @@ dashedName: problem-189-tri-colouring-a-triangular-grid
 
 # --description--
 
-Consider the following configuration of 64 triangles:
+Betrachte die folgende Konfiguration von 64 Dreiecken:
 
-<img class="img-responsive center-block" alt="64 triangles arranged to create larger triangle with side length of 8 triangles" src="https://cdn.freecodecamp.org/curriculum/project-euler/tri-colouring-a-triangular-grid-1.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="64 Dreiecke, die so angeordnet sind, dass sie ein größeres Dreieck mit einer Seitenlänge von 8 Dreiecken bilden" src="https://cdn.freecodecamp.org/curriculum/project-euler/tri-colouring-a-triangular-grid-1.gif" style="background-color: white; padding: 10px;" />
 
-We wish to colour the interior of each triangle with one of three colours: red, green or blue, so that no two neighbouring triangles have the same colour. Such a colouring shall be called valid. Here, two triangles are said to be neighbouring if they share an edge. Note: if they only share a vertex, then they are not neighbours.
+Wir möchten das Innere jedes Dreiecks mit einer von drei Farben einfärben: rot, grün oder blau, sodass keine zwei benachbarten Dreiecke die gleiche Farbe haben. Eine solche Einfärbung wird als gültig bezeichnet. Dabei gelten zwei Dreiecke als benachbart, wenn sie eine gemeinsame Kante haben. Hinweis: Wenn sie nur einen Scheitelpunkt gemeinsam haben, sind sie nicht benachbart.
 
-For example, here is a valid colouring of the above grid:
+Hier ist zum Beispiel eine gültige Färbung des obigen Gitters:
 
-<img class="img-responsive center-block" alt="colored grid of 64 triangles" src="https://cdn.freecodecamp.org/curriculum/project-euler/tri-colouring-a-triangular-grid-2.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="farbiges Gitter aus 64 Dreiecken" src="https://cdn.freecodecamp.org/curriculum/project-euler/tri-colouring-a-triangular-grid-2.gif" style="background-color: white; padding: 10px;" />
 
 A colouring C' which is obtained from a colouring C by rotation or reflection is considered distinct from C unless the two are identical.
 
-How many distinct valid colourings are there for the above configuration?
+Wie viele verschiedene gültige Farbgebungen gibt es für die obige Konfiguration?
 
 # --hints--
 
-`triangularGridColoring()` should return `10834893628237824`.
+`triangularGridColoring()` sollte `10834893628237824` zurückgeben.
 
 ```js
 assert.strictEqual(triangularGridColoring(), 10834893628237824);

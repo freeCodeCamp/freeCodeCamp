@@ -1,6 +1,6 @@
 ---
 id: 5900f41e1000cf542c50ff31
-title: 'Problem 178: Step Numbers'
+title: 'Problem 178: Schrittnummern'
 challengeType: 1
 forumTopicId: 301813
 dashedName: problem-178-step-numbers
@@ -8,19 +8,19 @@ dashedName: problem-178-step-numbers
 
 # --description--
 
-Consider the number 45656.
+Betrachte die Zahl 45656.
 
-It can be seen that each pair of consecutive digits of 45656 has a difference of one.
+Man kann sehen, dass jedes Paar aufeinanderfolgender Ziffern von 45656 eine Differenz von eins aufweist.
 
-A number for which every pair of consecutive digits has a difference of one is called a step number.
+Eine Zahl, bei der jedes Paar aufeinanderfolgender Ziffern eine Differenz von eins aufweist, wird als Schrittzahl bezeichnet.
 
-A pandigital number contains every decimal digit from 0 to 9 at least once.
+Eine Pandigitalzahl enthält jede Dezimalstelle von 0 bis 9 mindestens einmal.
 
-How many pandigital step numbers less than ${10}^{40}$ are there?
+Wie viele Pandigitalschrittzahlen kleiner als ${10}^{40}$ gibt es?
 
 # --hints--
 
-`stepNumbers()` should return `126461847755`.
+`stepNumbers()` sollte `126461847755` zurückgeben.
 
 ```js
 assert.strictEqual(stepNumbers(), 126461847755);

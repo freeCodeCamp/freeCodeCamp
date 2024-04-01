@@ -1,6 +1,6 @@
 ---
 id: 5900f4491000cf542c50ff5c
-title: 'Problem 221: Alexandrian Integers'
+title: 'Problem 221: Alexandrinische Integer'
 challengeType: 1
 forumTopicId: 301864
 dashedName: problem-221-alexandrian-integers
@@ -8,22 +8,22 @@ dashedName: problem-221-alexandrian-integers
 
 # --description--
 
-We shall call a positive integer $A$ an "Alexandrian integer", if there exist integers $p$, $q$, $r$ such that:
+Wir nennen eine positive Integer $A$ eine "alexandrinische Integer", wenn es solche Integer $p$, $q$, $r$ gibt, wie:
 
 $$A = p \times q \times r$$
 
-and
+und
 
 $$\frac{1}{A} = \frac{1}{p} + \frac{1}{q} + \frac{1}{r}$$
 
 
-For example, 630 is an Alexandrian integer ($p = 5$, $q = −7$, $r = −18$). In fact, 630 is the 6th Alexandrian integer, the first 6 Alexandrian integers being: 6, 42, 120, 156, 420 and 630.
+630 ist zum Beispiel eine alexandrinische Integer ($p = 5$, $q = −7$, $r = −18$). In der Tat ist 630 die 6. alexandrinische Integer, die ersten 6 alexandrinischen Integer sind: 6, 42, 120, 156, 420 und 630.
 
-Find the 150000th Alexandrian integer.
+Finde die 150000ste alexandrinische Integer.
 
 # --hints--
 
-`alexandrianIntegers()` should return `1884161251122450`.
+`alexandrianIntegers()` sollte `1884161251122450` zurückgeben.
 
 ```js
 assert.strictEqual(alexandrianIntegers(), 1884161251122450);
