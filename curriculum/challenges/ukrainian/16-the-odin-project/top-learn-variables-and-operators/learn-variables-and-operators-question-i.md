@@ -1,17 +1,17 @@
 ---
 id: 65e1b46e500d930ce8ed90ad
-title: Learn Variables and Operators Question I
+title: Вивчіть змінні та оператори. Запитання I
 challengeType: 15
 dashedName: learn-variables-and-operators-question-i
 ---
 
 # --description--
 
-Increasing or decreasing a number by one is among the most common numerical operations.
+Збільшення або зменшення числа на одиницю — найпоширеніша операція над числами.
 
-So, there are special operators for it:
+Для цього існують спеціальні оператори:
 
-- Increment `++` increases a variable by 1:
+- Збільшення `++` збільшує змінну на 1:
 
 ```js
 let counter = 2;
@@ -22,7 +22,7 @@ counter++;
 console.log(counter); // 3
 ```
 
-- Decrement `--` decreases a variable by 1:
+- Зменшення `--` зменшує змінну на 1:
 
 ```js
 let counter = 2;
@@ -33,19 +33,19 @@ counter--;
 console.log(counter); // 1
 ```
 
-The operators `++` and `--` can be placed either before or after a variable.
+Оператори `++` та `--` можна розмістити або перед, або після змінної.
 
-- When the operator goes after the variable, it is in "postfix form": `counter++`.
+- Якщо оператор розташований після змінної, це постфікс: `counter++`.
 
-- The "prefix form" is when the operator goes before the variable: `++counter`.
+- Якщо оператор розташований перед змінною, це префікс: `++counter`.
 
-Both of these statements do the same thing: increase `counter` by `1`.
+Обидві інструкцію роблять одне і те ж: збільшують `counter` на `1`.
 
-Is there any difference? Yes, but you can only see it if you use the returned value of `++/--`  .
+Чи є якась різниця? Так, але її можна побачити лише тоді, коли використаєте повернене значення `++/--`.
 
-Let’s clarify. As you know, all operators return a value. Increment/decrement is no exception. The prefix form returns the new value while the postfix form returns the old value (prior to increment/decrement).
+Уточнимо. Як відомо, всі оператори повертають значення. Збільшення/зменшення не є виключенням. Префікс повертає нове значення, а постфікс — старе (перед збільшенням/зменшенням).
 
-To see the difference, here’s an example:
+Щоб побачити різницю, ось приклад:
 
 ```js
 let counter = 1;
@@ -54,9 +54,9 @@ let a = ++counter; // (*)
 console.log(a); // 2
 ```
 
-To summarize:
+Зробимо висновки:
 
-- If the result of increment/decrement is not used, there is no difference in which form to use:
+- Якщо результат збільшення/зменшення не використовується, то неважливо, яку форму використовувати:
 
 ```js
 let counter = 0;
@@ -66,14 +66,14 @@ counter++;
 console.log( counter ); // 2, the lines above did the same
 ```
 
-- If you’d like to increase a value and immediately use the result of the operator, you need the prefix form:
+- Якщо ви хочете збільшити значення та одразу ж використати результат оператора, то потрібна форма «префікс»:
 
 ```js
 let counter = 0;
 console.log( ++counter ); // 1
 ```
 
-- If you’d like to increment a value but use its previous value, you need the postfix form:
+- Якщо ви хочете збільшити значення, але використовувати попереднє значення, то потрібна форма «постфікс»:
 
 ```js 
 let counter = 0;
@@ -84,7 +84,7 @@ console.log( counter++ ); // 0
 
 ## --text--
 
-What is the difference in the result of the two console log statements in the JavaScript code below?
+Яка різниця між результатом двох інструкцій в коді JavaScript нижче?
 
 ```js
 let counter = 1;
@@ -96,19 +96,19 @@ console.log(2 * counter++); // Statement B
 
 ## --answers--
 
-There is no difference; both alert statements will show the same result.
+Жодної різниці; обидві інструкції покажуть однаковий результат.
 
 ---
 
-Statement A will log `4` because `++counter` increments the value before the multiplication. Statement B will log `2` because `counter++` increments the value after the multiplication.
+Результатом інструкції A буде `4`, оскільки `++counter` збільшує значення перед множенням. Результатом інструкції B буде `2`, оскільки `counter++` збільшує значення після множення.
 
 ---
 
-Statement A will log `2` because `++counter` is a syntax error. Statement B will log `4` because `counter++` is the correct way to increment a counter.
+Результатом інструкції A буде `2`, оскільки `++counter` є синтаксичною помилкою. Результатом інструкції B буде `4`, оскільки `counter++` є правильним способом збільшити лічильник.
 
 ---
 
-Both statements will log `3` because the counter is incremented in both cases before the `console.log`.
+Результатом обох інструкцій буде `3`, оскільки в обох випадках лічильник збільшується перед `console.log`.
 
 
 ## --video-solution--

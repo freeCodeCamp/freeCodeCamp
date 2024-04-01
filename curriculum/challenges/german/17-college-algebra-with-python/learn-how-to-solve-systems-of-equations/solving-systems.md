@@ -1,6 +1,6 @@
 ---
 id: 6331d2b0b51aeedd1a2bd655
-title: "Solving Systems"
+title: "Systeme lösen"
 challengeType: 15
 videoId: CNGUQzXfC6c
 dashedName: solving-systems
@@ -10,33 +10,33 @@ dashedName: solving-systems
 
 The first video will show you the math behind solving a system of two equations without graphing, how you can factor an equation, and solve for a certain variable.
 
-Here is the <a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+Hier ist das <a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab-Notizbuch, das in diesem Video verwendet wird.</a>
 
 # --assignment--
 
-Add code to your notebook to solve and graph systems of equations
+Füge deinem Notizbuch Code hinzu, um Gleichungssysteme zu lösen und grafisch darzustellen
 
 # --question--
 
 ## --text--
 
-Which of the following can SymPy do that matplotlib can't do?
+Was von den folgenden kann SymPy tun, dass matplotlib nicht tun kann?
 
 ## --answers--
 
-Solve for a variable
+Nach einer Variablen lösen
 
 ---
 
-Display an x-y axis
+Eine x-y-Achse anzeigen
 
 ---
 
-Graph an equation or two
+Eine oder zwei Gleichungen grafisch darstellen
 
 ---
 
-Show tic marks on the graph
+Teilstriche auf dem Graphen anzeigen
 
 ## --video-solution--
 
