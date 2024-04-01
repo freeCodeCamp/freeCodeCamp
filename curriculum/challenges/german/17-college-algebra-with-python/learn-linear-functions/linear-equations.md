@@ -1,6 +1,6 @@
 ---
 id: 6331d28ab51aeedd1a2bd650
-title: "Linear Equations"
+title: "Lineare Gleichungen"
 challengeType: 15
 videoId: u0bgovPh4ME
 dashedName: linear-equations
@@ -8,13 +8,13 @@ dashedName: linear-equations
 
 # --description--
 
-This video will show you the math behind finding the y-intercept in a linear function, so you can develop the whole equation. Then the video will show you how to graph the whole function. You will also see how to do the whole process with Python code.
+In diesem Video erfährst du, wie du den y-Achsenabschnitt einer linearen Funktion findest, um die Gleichung vollständig aufstellen zu können. Anschließend zeigt dir das Video, wie du die ganze Funktion grafisch darstellen kannst. Du wirst auch sehen, wie du den gesamten Prozess mit Python-Code durchführen kannst.
 
-Here is the <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go with the last two videos,</a> so you can see the formulas.
+Hier ist das <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab-Notizbuch zu den letzten beiden Videos,</a> damit du die Formeln sehen kannst.
 
 # --assignment--
 
-Add code to your algebra Colab notebook to graph a function from points or from equation input.
+Füge deinem Algebra-Colab-Notizbuch Code hinzu, um eine Funktion anhand von Punkten oder einer Gleichungseingabe grafisch darzustellen.
 
 # --question--
 

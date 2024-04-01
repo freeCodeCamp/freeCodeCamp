@@ -200,7 +200,7 @@ const linkText = Array.from(document.querySelectorAll('.nav-link')).map(el =>
   el.innerText?.trim().toUpperCase()
 )
 const remainder = headerText.filter(str => linkText.indexOf(str) === -1)
-assert(headerText.length > 0 && headerText.length > 0 && remainder.length === 0)
+assert(headerText.length > 0 && linkText.length > 0 && remainder.length === 0)
 ```
 
 每个 `.nav-link` 都应该有一个 `href` 属性，该属性链接到其对应的 `.main-section`（例如，如果你单击包含文本 “Hello world” 的 `.nav-link` 元素，页面导航到具有该 id 的 `section` 元素）。

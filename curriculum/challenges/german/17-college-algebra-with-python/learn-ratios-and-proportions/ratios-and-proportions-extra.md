@@ -1,6 +1,6 @@
 ---
 id: 6331d298b51aeedd1a2bd652
-title: "Ratios and Proportions: Extra"
+title: "Verhältnisse und Proportionen: Extra"
 challengeType: 15
 videoId: 6o0SsdyUf2U
 dashedName: ratios-and-proportions-extra
@@ -8,17 +8,17 @@ dashedName: ratios-and-proportions-extra
 
 # --description--
 
-The last video in this section will show you how to use proportions in other applications, such as currency exchange rates and unit conversion. It will also show you more about setting up your notebook and working through the practice assignment.
+Das letzte Video in diesem Abschnitt zeigt, wie man Proportionen in anderen Anwendungen verwenden kann, z. B. bei Währungsumrechnungen und der Umrechnung von Einheiten. Dort erfährst du auch mehr über die Einrichtung deines Notizbuchs und die Bearbeitung der Übungsaufgaben.
 
 # --assignment--
 
-Open the following Colab notebook, run the cell, and <a href="https://colab.research.google.com/drive/1XjmHoERFKcvol7FPidQE-wgdvR82HV45" target="_blank" rel="noopener noreferrer nofollow">practice solving one-step algebra problems.</a> As a bonus, look at the code that generates the practice problems.
+Öffne das folgende Colab-Notizbuch, führe die Zelle aus und <a href="https://colab.research.google.com/drive/1XjmHoERFKcvol7FPidQE-wgdvR82HV45" target="_blank" rel="noopener noreferrer nofollow">übe das Lösen von einstufigen Algebraaufgaben.</a> Zusätzlich kannst du dir den Code ansehen, der die Übungsaufgaben generiert.
 
 # --question--
 
 ## --text--
 
-What is another way to write 0.9999... (repeating 9)?
+Wie kann man 0,9999... (Wiederholung von 9) noch schreiben?
 
 ## --answers--
 
@@ -26,7 +26,7 @@ What is another way to write 0.9999... (repeating 9)?
 
 ---
 
-You can't get an exact answer
+Es gibt keine exakte Antwort
 
 ---
 

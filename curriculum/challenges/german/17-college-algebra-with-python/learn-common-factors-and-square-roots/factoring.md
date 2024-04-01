@@ -1,6 +1,6 @@
 ---
 id: 6331d251b51aeedd1a2bd648
-title: "Factoring"
+title: "Faktorisierung"
 challengeType: 15
 videoId: Puyp_-ZYA54
 dashedName: factoring
@@ -8,31 +8,31 @@ dashedName: factoring
 
 # --description--
 
-This first video will show you how to find common factors and divide them out - in writing, then in code using loops and modulus operations.
+In diesem ersten Video wird gezeigt, wie man gemeinsame Faktoren findet und sie aufteilt - zunächst schriftlich, dann im Code mit Schleifen und Modulusoperationen.
 
-Here is the <a href="https://colab.research.google.com/drive/1tB7N3QqHEbGk33v0BdTwZTVkS9ju9yn6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+Hier ist das <a href="https://colab.research.google.com/drive/1tB7N3QqHEbGk33v0BdTwZTVkS9ju9yn6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab-Notizbuch, das in diesem Video verwendet wird.</a>
 
 # --question--
 
 ## --text--
 
-What does the modulus (`%`) operator do in Python?
+Was macht der Modulus (`%`) Operator in Python?
 
 ## --answers--
 
-returns the percent
+gibt den Prozentsatz zurück
 
 ---
 
-divides
+dividiert
 
 ---
 
-returns the remainder when dividing
+gibt den Rest zurück, wenn er dividiert
 
 ---
 
-creates a space
+schafft ein Leerzeichen
 
 ## --video-solution--
 

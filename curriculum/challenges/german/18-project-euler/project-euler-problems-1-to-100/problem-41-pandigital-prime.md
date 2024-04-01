@@ -8,25 +8,25 @@ dashedName: problem-41-pandigital-prime
 
 # --description--
 
-We shall say that an `n`-digit number is pandigital if it makes use of all the digits 1 to `n` exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
+Wir sagen, dass eine `n`-stellige Zahl pandigital ist, wenn sie alle Ziffern 1 bis `n` genau einmal verwendet. For example, 2143 is a 4-digit pandigital and is also prime.
 
-What is the largest `n`-length digit pandigital prime that exists?
+Was ist die größte `n`-zählige pandigitale Primzahl, die es gibt?
 
 # --hints--
 
-`pandigitalPrime(4)` should return a number.
+`pandigitalPrime(4)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof pandigitalPrime(4) === 'number');
 ```
 
-`pandigitalPrime(4)` should return 4231.
+`pandigitalPrime(4)` sollte 4231 zurückgeben.
 
 ```js
 assert(pandigitalPrime(4) == 4231);
 ```
 
-`pandigitalPrime(7)` should return 7652413.
+`pandigitalPrime(7)` sollte 7652413 zurückgeben.
 
 ```js
 assert(pandigitalPrime(7) == 7652413);

@@ -7,7 +7,7 @@ dashedName: step-21
 
 # --description--
 
-`button1` ist eine Variable, die nicht neu zugewiesen wird. If you are not going to assign a new value to a variable, it is best practice to use the `const` keyword to declare it instead of the `let` keyword. Dadurch wird JavaScript angewiesen, einen Fehler zu melden, wenn du sie versehentlich neu zuweist.
+`button1` ist eine Variable, die nicht neu zugewiesen wird. Wenn du einer Variable keinen neuen Wert zuweisen möchtest, ist es empfehlenswert, das `const`-Schlüsselwort anstelle des `let`-Schlüsselworts zu verwenden, um sie zu deklarieren. Dadurch wird JavaScript angewiesen, einen Fehler zu melden, wenn du sie versehentlich neu zuweist.
 
 Ändere deine `button1`-Variable, so dass sie mit dem `const`-Schlüsselwort deklariert wird.
 
