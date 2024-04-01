@@ -97,8 +97,12 @@
       "title": "Step 21"
     },
     {
-      "id": "660598b0b27ac29d94021e9e",
+      "id": "660aa661ca2a2ba14dbeeb2d",
       "title": "Step 22"
+    },
+    {
+      "id": "660598b0b27ac29d94021e9e",
+      "title": "Step 23"
     }
   ],
   "helpCategory": "Python"
