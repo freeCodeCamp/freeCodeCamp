@@ -11,7 +11,7 @@ Comment out the last line of code for now other wise the loop would run indefini
 
 # --hints--
 
-Test 1
+Comment out the line of code `    primes1, primes2, primes3 = loop.run_until_complete(main())`
 
 ```js
 
