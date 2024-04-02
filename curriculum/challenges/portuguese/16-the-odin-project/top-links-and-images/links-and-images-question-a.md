@@ -19,35 +19,37 @@ Para fazer alguns exercícios práticos usando links e imagens nesta lição, vo
 - Por fim, adicione o seguinte `h1` ao `body`: `<h1>Homepage</h1>`
 
 ## Elementos de âncora
-Para criar um link em HTML, use o elemento de âncora. Um elemento de âncora é definido agregando o texto ou outro elemento do HTML que você que seja um link à tag `<a>`. Adicione o seguinte ao `body` da página `index.html` que você criou e abra a página no navegador:
+Para criar um link em HTML, use o elemento de âncora. Um elemento de âncora é definido agregando o texto ou outro elemento do HTML que você que seja um link à tag `<a>`.
+
+Add the following to the `body` of the `index.html` page you created and open it in the browser:
 
 ```html
 <a>click me</a>
 ```
 
-Você pode ter notado que, ao clicar nesse link, nada acontece. Isso ocorre porque uma tag de âncora sozinha não saberá para onde você quer ir. Você tem que informar a ela um destino. Você faz isso utilizando um atributo do HTML.
+You may have noticed that clicking this link doesn’t do anything. This is because an anchor tag on its own won’t know where you want to link to. You have to tell it a destination to go to. You do this by using an HTML attribute.
 
-Um atributo do HTML fornece informações adicionais para um elemento do HTML e sempre vai na tag de abertura do elemento. Um atributo é geralmente composto por duas partes: um nome e um valor. No entanto, nem todos os atributos requerem um valor. No seu caso, você precisa adicionar um atributo `href` (referência de hiperlink) à tag de abertura do elemento de âncora. O valor do atributo `href` é o destino para o qual você quer o seu link vá.
+An HTML attribute gives additional information to an HTML element and always goes in the element’s opening tag. An attribute is usually made up of two parts: a name, and a value; however, not all attributes require a value. In your case, you need to add an `href` (hyperlink reference) attribute to the opening anchor tag. The value of the `href` attribute is the destination you want your link to go to.
 
-Adicione o atributo `href` abaixo ao elemento âncora que você criou anteriormente e tente clicar novamente. Não se esqueça de atualizar o navegador para que as novas alterações possam ser aplicadas.
+Add the following `href` attribute to the anchor element you created previously and try clicking it again, don’t forget to refresh the browser so the new changes can be applied.
 
 ```html
 <a href="https://www.theodinproject.com/about">click me</a>
 ```
 
-Por padrão, qualquer texto agregado a uma tag de âncora sem um atributo `href` parecerá texto simples. Se o atributo `href` estiver presente, o navegador dará ao texto uma cor azul e vai sublinhá-lo para representar um link.
+By default, any text wrapped with an anchor tag without an `href` attribute will look like plain text. If the `href` attribute is present, the browser will give the text a blue color and underline it to signify it is a link.
 
-Vale a pena notar que você pode usar tags de âncora para vincular qualquer tipo de recurso na internet, não apenas outros documentos HTML. Você pode vincular vídeos, arquivos em PDF, imagens e assim por diante. Na maioria das vezes, no entanto, você vinculará a tag a outros documentos HTML.
+It’s worth noting you can use anchor tags to link to any kind of resource on the internet, not just other HTML documents. You can link to videos, pdf files, images, and so on, but for the most part, you will be linking to other HTML documents.
 
 # --assignment--
 
-Assista ao vídeo de Kevin Powell sobre links do HTML acima.
+Watch Kevin Powell’s HTML Links video above.
 
 # --question--
 
 ## --text--
 
-Qual é a tag do HTML usada para criar um link?
+What HTML tag is used to create a link?
 
 ## --answers--
 
