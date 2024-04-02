@@ -46,7 +46,7 @@ test('Should render UI correctly', async ({ page, browserName }) => {
   if (browserName === 'webkit') {
     await expect(codeCheckButton).toHaveText('Check Your Code (⌘ + Enter)');
   } else {
-    await expect(codeCheckButton).toHaveText('Check Your Code (Ctrl + Enter)');
+    await expect(codeCheckButton).toHaveText('Check Your Code (Command + Enter)');
   }
   await expect(lowerJawTips).toHaveCount(0);
 });
