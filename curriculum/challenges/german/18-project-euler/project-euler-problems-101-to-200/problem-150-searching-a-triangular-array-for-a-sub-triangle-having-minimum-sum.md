@@ -1,7 +1,7 @@
 ---
 id: 5900f4031000cf542c50ff15
 title: >-
-  Problem 150: Searching a triangular array for a sub-triangle having minimum-sum
+  Problem 150: Durchsuchen eines dreieckigen Feldes nach einem Unterdreieck mit minimaler Summe
 challengeType: 1
 forumTopicId: 301781
 dashedName: problem-150-searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum
@@ -9,7 +9,7 @@ dashedName: problem-150-searching-a-triangular-array-for-a-sub-triangle-having-m
 
 # --description--
 
-In a triangular array of positive and negative integers, we wish to find a sub-triangle such that the sum of the numbers it contains is the smallest possible.
+In einer dreieckigen Anordnung positiver und negativer Integer soll ein Unterdreieck gefunden werden, bei dem die Summe der darin enthaltenen Zahlen die kleinstmögliche ist.
 
 In the example below, it can be easily verified that the marked triangle satisfies this condition having a sum of −42.
 

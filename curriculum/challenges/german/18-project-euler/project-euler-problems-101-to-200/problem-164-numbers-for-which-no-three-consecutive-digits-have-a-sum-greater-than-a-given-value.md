@@ -1,7 +1,7 @@
 ---
 id: 5900f4111000cf542c50ff23
 title: >-
-  Problem 164: Numbers for which no three consecutive digits have a sum greater than a given value
+  Problem 164: Zahlen, bei denen die Summe von drei aufeinanderfolgenden Ziffern nicht größer als ein bestimmter Wert ist
 challengeType: 1
 forumTopicId: 301798
 dashedName: >-
@@ -10,11 +10,11 @@ dashedName: >-
 
 # --description--
 
-How many 20 digit numbers $n$ (without any leading zero) exist such that no three consecutive digits of $n$ have a sum greater than 9?
+Wie viele 20-stellige Zahlen $n$ (ohne führende Null) gibt es, bei denen keine drei aufeinanderfolgenden Ziffern von $n$ eine Summe größer als 9 haben?
 
 # --hints--
 
-`consecutiveDigitsSum()` should return `378158756814587`.
+`consecutiveDigitsSum()` sollte `378158756814587` zurückgeben.
 
 ```js
 assert.strictEqual(consecutiveDigitsSum(), 378158756814587);

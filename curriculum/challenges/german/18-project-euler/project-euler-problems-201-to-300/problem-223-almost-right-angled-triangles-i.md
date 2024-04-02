@@ -1,6 +1,6 @@
 ---
 id: 5900f44b1000cf542c50ff5e
-title: 'Problem 223: Almost right-angled triangles I'
+title: 'Problem 223: Fast rechtwinklige Dreiecke I'
 challengeType: 1
 forumTopicId: 301866
 dashedName: problem-223-almost-right-angled-triangles-i
@@ -8,13 +8,13 @@ dashedName: problem-223-almost-right-angled-triangles-i
 
 # --description--
 
-Let us call an integer sided triangle with sides $a ≤ b ≤ c$ barely acute if the sides satisfy $a^2 + b^2 = c^2 + 1$.
+Ein integisches Dreieck mit den Seiten $a ≤ b ≤ c$ heißt knapp spitz, wenn die Seiten $a^2 + b^2 = c^2 + 1$ erfüllen.
 
-How many barely acute triangles are there with perimeter $≤ 25\\,000\\,000$?
+Wie viele spitzwinklige Dreiecke gibt es mit dem Umfang $≤ 25\\.000\\.000$?
 
 # --hints--
 
-`almostRightAngledTrianglesOne()` should return `61614848`.
+`almostRightAngledTrianglesOne()` sollte `61614848` zurückgeben.
 
 ```js
 assert.strictEqual(almostRightAngledTrianglesOne(), 61614848);

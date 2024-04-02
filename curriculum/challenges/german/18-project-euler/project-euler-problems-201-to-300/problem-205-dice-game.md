@@ -1,6 +1,6 @@
 ---
 id: 5900f4391000cf542c50ff4c
-title: 'Problem 205: Dice Game'
+title: 'Problem 205: Würfelspiel'
 challengeType: 1
 forumTopicId: 301846
 dashedName: problem-205-dice-game
@@ -8,17 +8,17 @@ dashedName: problem-205-dice-game
 
 # --description--
 
-Peter has nine four-sided (pyramidal) dice, each with faces numbered 1, 2, 3, 4.
+Peter hat neun vierseitige (pyramidenförmige) Würfel, deren Seiten jeweils mit 1, 2, 3, 4 nummeriert sind.
 
-Colin has six six-sided (cubic) dice, each with faces numbered 1, 2, 3, 4, 5, 6.
+Colin hat sechs sechsseitige (kubische) Würfel mit den Seiten 1, 2, 3, 4, 5, 6.
 
-Peter and Colin roll their dice and compare totals: the highest total wins. The result is a draw if the totals are equal.
+Peter und Colin würfeln und vergleichen ihre Ergebnisse: Die höchste Summe gewinnt. Das Ergebnis ist ein Unentschieden, wenn die Summen gleich sind.
 
-What is the probability that Pyramidal Pete beats Cubic Colin? Give your answer rounded to seven decimal places in the form 0.abcdefg
+What is the probability that Pyramidal Pete beats Cubic Colin? Gib deine Antwort auf sieben Dezimalstellen abgerundet in der Form 0.abcdefg
 
 # --hints--
 
-`diceGame()` should return `0.5731441`.
+`diceGame()` sollte `0.5731441` zurückgeben.
 
 ```js
 assert.strictEqual(diceGame(), 0.5731441);
