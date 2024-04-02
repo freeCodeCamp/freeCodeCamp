@@ -56,7 +56,6 @@
     "run": "تشغيل",
     "run-test": "تشغيل الاختبارات (Ctrl + Enter)",
     "check-code": "تيقن من كودك (Ctrl + Enter)",
-    "check-code-macos": "تيقن من كودك (⌘ + Enter)",
     "check-code-2": "تيقن من كودك",
     "reset": "إعادة ضبط",
     "reset-step": "إعادة الخطوة إلى حالتها الأولية",

@@ -56,7 +56,6 @@
     "run": "Запустити",
     "run-test": "Запустити тест (Ctrl + Enter)",
     "check-code": "Перевірити код (Ctrl + Enter)",
-    "check-code-macos": "Перевірити код (⌘ + Enter)",
     "check-code-2": "Перевірити код",
     "reset": "Скинути",
     "reset-step": "Скинути цей крок",
