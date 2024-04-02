@@ -1,6 +1,6 @@
 ---
 id: 5900f3f91000cf542c50ff0b
-title: 'Problem 141: Investigating progressive numbers, n, which are also square'
+title: 'Problem 141: Untersuchung der fortschreitenden Zahlen n, die auch quadratisch sind'
 challengeType: 1
 forumTopicId: 301770
 dashedName: problem-141-investigating-progressive-numbers-n-which-are-also-square
@@ -8,19 +8,19 @@ dashedName: problem-141-investigating-progressive-numbers-n-which-are-also-squar
 
 # --description--
 
-A positive integer, $n$, is divided by $d$ and the quotient and remainder are $q$ and $r$ respectively. In addition $d$, $q$, and $r$ are consecutive positive integer terms in a geometric sequence, but not necessarily in that order.
+A positive integer, $n$, is divided by $d$ and the quotient and remainder are $q$ and $r$ respectively. Außerdem sind $d$, $q$ und $r$ aufeinanderfolgende positive ganzzahlige Terme in einer geometrischen Folge, aber nicht unbedingt in dieser Reihenfolge.
 
-For example, 58 divided by 6 has a quotient of 9 and a remainder of 4. It can also be seen that 4, 6, 9 are consecutive terms in a geometric sequence (common ratio $\frac{3}{2}$).
+Zum Beispiel ergibt 58 geteilt durch 6 einen Quotienten von 9 und einen Rest von 4. Man sieht auch, dass 4, 6, 9 aufeinanderfolgende Terme in einer geometrischen Folge sind (gemeinsames Verhältnis $\frac{3}{2}$).
 
-We will call such numbers, $n$, progressive.
+Wir nennen solche Zahlen, $n$, progressiv.
 
-Some progressive numbers, such as 9 and 10404 = ${102}^2$, also happen to be perfect squares. The sum of all progressive perfect squares below one hundred thousand is 124657.
+Einige fortschrittliche Zahlen, wie 9 und 10404 = ${102}^2$, sind zufällig auch perfekte Quadrate. Die Summe aller progressiven perfekten Quadrate unter hunderttausend ist 124657.
 
-Find the sum of all progressive perfect squares below one trillion (${10}^{12}$).
+Finde die Summe aller progressiv perfekten Quadrate unter einer Billion (${10}^{12}$).
 
 # --hints--
 
-`progressivePerfectSquares()` should return `878454337159`.
+`progressivePerfectSquares()` sollte `878454337159` zurückgeben.
 
 ```js
 assert.strictEqual(progressivePerfectSquares(), 878454337159);

@@ -1,6 +1,6 @@
 ---
 id: 6331d23eb51aeedd1a2bd646
-title: "Solving for X"
+title: "Nach X lösen"
 challengeType: 15
 videoId: _U9PEFKjyb8
 dashedName: solving-for-x
@@ -10,17 +10,17 @@ dashedName: solving-for-x
 
 This first video will show you the essence of algebra and then how Python code does the same task in a different way.
 
-Here is the <a href="https://colab.research.google.com/drive/11Zi77gs1FKoEqfPqYa2HtTENiWZyQAO2?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a> Add the code from the video to your algebra Colab notebook to see how to solve for X using Python. Then change the code if you want, test it, and compare it to paper-and-pencil solving. Remember the equation input needs to be in Python syntax.
+Hier findest du das <a href="https://colab.research.google.com/drive/11Zi77gs1FKoEqfPqYa2HtTENiWZyQAO2?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab-Notibuch zu diesem Video.</a> Füge den Code aus dem Video dein Algebra-Colab-Notizbuch ein, um zu sehen, wie du X mit Python lösen kannst. Ändere dann den Code, wenn du willst, teste und vergleiche ihn mit der Lösung auf Papier. Denke daran, dass die Eingabe der Gleichung in Python-Syntax erfolgen muss.
 
 # --assignment--
 
-Add the code to solve for x from the video to your algebra Colab notebook.
+Füge den Code zum Lösen von x aus dem Video in dein Algebra-Colab-Notizbuch ein.
 
 # --question--
 
 ## --text--
 
-In Python, what is the library you import to solve algebra problems with variables?
+Welche Bibliothek importierst du in Python, um Algebraprobleme mit Variablen zu lösen?
 
 ## --answers--
 
@@ -28,7 +28,7 @@ symba
 
 ---
 
-math
+Mathe
 
 ---
 

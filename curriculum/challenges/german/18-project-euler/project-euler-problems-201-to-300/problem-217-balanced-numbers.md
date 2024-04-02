@@ -1,6 +1,6 @@
 ---
 id: 5900f4461000cf542c50ff58
-title: 'Problem 217: Balanced Numbers'
+title: 'Problem 217: Ausgeglichene Zahlen'
 challengeType: 1
 forumTopicId: 301859
 dashedName: problem-217-balanced-numbers
@@ -8,19 +8,19 @@ dashedName: problem-217-balanced-numbers
 
 # --description--
 
-A positive integer with $k$ (decimal) digits is called balanced if its first $⌈\frac{k}{2}⌉$ digits sum to the same value as its last $⌈\frac{k}{2}⌉$ digits, where $⌈x⌉$, pronounced ceiling of $x$, is the smallest integer $≥ x$, thus $⌈π⌉ = 4$ and $⌈5⌉ = 5$.
+Ein positiver Integer mit $k$ (Dezimal-) Ziffern wird als ausgewogen bezeichnet, wenn die Summe der ersten $⌈\frac{k}{2}⌉$ Ziffern den gleichen Wert wie die Summe ihrer letzten $⌈\frac{k}{2}⌉$ Ziffern ergeben, wobei $⌈x⌉$, sprich Obergrenze von $x$, die kleinste Ganzzahl $≥ x$ ist, also $⌈π⌉ = 4$ und $⌈5⌉ = 5$.
 
-So, for example, all palindromes are balanced, as is 13722.
+So sind z. B. alle Palindrome ausgeglichen, ebenso wie 13722.
 
-Let $T(n)$ be the sum of all balanced numbers less than $10^n$.
+Lasse $T(n)$ die Summe aller ausgeglichenen Zahlen kleiner als $10^n$ sein.
 
-Thus: $T(1) = 45$, $T(2) = 540$ and $T(5) = 334\\,795\\,890$.
+Somit ist: $T(1) = 45$, $T(2) = 540$ und $T(5) = 334\\,795\\,890$.
 
-Find $T(47)\\,mod\\,3^{15}$
+Finde $T(47)\\,mod\\,3^{15}$
 
 # --hints--
 
-`balancedNumbers()` should return `6273134`.
+`balancedNumbers()` sollte `6273134` zurückgeben.
 
 ```js
 assert.strictEqual(balancedNumbers(), 6273134);

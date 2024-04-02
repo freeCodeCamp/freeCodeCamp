@@ -14,9 +14,9 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 - Використайте <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Gitpod</a>, щоб виконати ці завдання.
 - Для виконання проєкту використайте конструктор сайту на власний вибір. Переконайтеся, що приєднали усі файли з нашого репозиторію GitHub.
 
-Файл `package.json` є центром будь-якого проєкту Node.js або пакету npm. It stores information about your project. Він складається з одного об’єкту JSON, де зберігається інформація у парах ключ-значення. There are only two required fields; `name` and `version`, but it’s good practice to provide additional information.
+Файл `package.json` є центром будь-якого проєкту Node.js або пакету npm. Він зберігає інформацію про проєкт. Він складається з одного об’єкту JSON, де зберігається інформація у парах ключ-значення. Лише два поля є обов’язковими: `name` та `version`, але краще надавати додаткову інформацію.
 
-You can create the `package.json` file from the terminal using the `npm init` command. This will run a guided setup. Using `npm init` with the `-y` flag will generate the file without having it ask any questions, `npm init -y`.
+Файл `package.json` можна створити в терміналі за допомогою команди `npm init`. Вона запустить кероване налаштування. Щоб створити файл без зайвих запитань, використайте `npm init` з прапорцем `-y`: `npm init -y`.
 
 Якщо глянути на дерево файлів вашого проєкту, то файл `package.json` буде зверху. Ви будете покращувати цей файл у наступних завданнях.
 

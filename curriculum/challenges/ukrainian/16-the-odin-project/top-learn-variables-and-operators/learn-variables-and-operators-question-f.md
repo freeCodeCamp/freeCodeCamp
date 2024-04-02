@@ -1,51 +1,51 @@
 ---
 id: 65e1a2ea500d930ce8ed90a9
-title: Learn Variables and Operators Question F
+title: Вивчіть змінні та оператори. Запитання F
 challengeType: 15
 dashedName: learn-variables-and-operators-question-f
 ---
 
 # --description--
 
-Let’s meet the features of JavaScript operators that are beyond school arithmetics.
+Ознайомимось з особливостями операторів JavaScript, які виходять за межі шкільної математики.
 
-Usually, the plus operator `+` sums numbers.
+Зазвичай оператор `+` додає числа.
 
-But, if the binary `+` is applied to strings, it merges (concatenates) them:
+А ось якщо бінарний `+` застосувати до рядків, він об’єднає їх:
 
 ```js
 let s = "my" + "string";
 console.log(s); // mystring
 ```
 
-Note that if any of the operands is a string, then the other one is converted to a string too.
+Зверніть увагу, що якщо будь-який з операндів є рядком, то інший теж перетворюється на рядок.
 
-For example:
+Наприклад:
 
 ```js
 console.log(1 + '2'); // '12'
 console.log('1' + 2); // '12'
 ```
 
-See, it doesn’t matter whether the first operand is a string or the second one.
+Неважливо, який операнд є рядком: перший чи другий.
 
-Here’s a more complex example:
+Ось складніший приклад:
 
 ```js
 console.log(2 + 2 + '1') // "41" and not "221"
 ```
 
-Here, operators work one after another. The first `+` sums two numbers, so it returns `4`, then the next `+`   adds the string `1` to it, so it’s like `4 + '1' = '41'`.
+Тут оператори працюють по черзі. Перший `+` додає два числа, тому повертає `4`, а наступний `+` додає рядок `1`, отже `4 + '1' = '41'`.
 
 ```js
 console.log('1' + 2 + 2) // "122" and not "14"
 ```
 
-Here, the first `+` concatenates the string and the number, so it returns `'12'`, then the next `+` adds `2` to it, so it’s like `'12' + 2 = '122'`.
+Перший `+` об’єднує рядок та число, тому повертає `'12'`, а наступний `+` додає `2`, отже `'12' + 2 = '122'`.
 
-The binary `+` is the only operator that supports strings in such a way. Other arithmetic operators work only with numbers and always convert their operands to numbers.
+Бінарний `+` — це єдиний оператор, який підтримує рядки таким чином. Інші математичні оператори працюють лише з числами та завжди перетворюють операнди на числа.
 
-Here’s the demo for subtraction and division:
+Ось віднімання та ділення:
 
 ```js
 console.log( 6 - '2' ); // 4, converts '2' to a number
@@ -55,7 +55,7 @@ console.log( '6' / '2' ); // 3, converts both operands to numbers
 # --question--
 
 ## --text--
-Considering the behavior of the `+` operator with mixed data types in JavaScript, what will be the output of the following code snippet?
+Дано наступний фрагмент коду. Яким буде результат, якщо враховувати поведінку оператора `+` зі змішаними типами даних в JavaScript?
 
 ```js
 console.log('3' + 2 - 1);
@@ -63,19 +63,19 @@ console.log('3' + 2 - 1);
 
 ## --answers--
 
-`31`, because the `+` operator concatenates the string and number before subtraction.
+`31`, оскільки оператор `+` об’єднує рядок та число перед відніманням.
 
 ---
 
-`32`, because `+` concatenates the string and number before subtraction.
+`32`, оскільки `+` об’єднує рядок та число перед відніманням.
 
 ---
 
-`4`, because all operands are converted to numbers first.
+`4`, оскільки спочатку всі операнди перетворюються на числа.
 
 ---
 
-`321`, because the `-` operator is not supported with strings.
+`321`, оскільки оператор `-` не підтримує рядки.
 
 ## --video-solution--
 

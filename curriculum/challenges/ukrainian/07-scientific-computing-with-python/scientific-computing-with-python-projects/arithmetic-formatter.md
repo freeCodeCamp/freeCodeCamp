@@ -16,7 +16,7 @@ dashedName: arithmetic-formatter
 -----
 ```
 
-Finish the `arithmetic_arranger` function that receives a list of strings which are arithmetic problems, and returns the problems arranged vertically and side-by-side. В разі потреби функція повинна приймати другий аргумент. Коли другий аргумент встановлено на `True`, відповіді повинні відображатися.
+Закінчіть функцію `arithmetic_arranger`, яка отримує список рядків з математичними прикладами та послідовно повертає їх у вертикальному вигляді. В разі потреби функція повинна приймати другий аргумент. Коли другий аргумент встановлено на `True`, відповіді повинні відображатися.
 
 ## Наприклад
 
@@ -26,7 +26,7 @@ Finish the `arithmetic_arranger` function that receives a list of strings which 
 arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
 ```
 
-Вивід:
+Вихідні дані:
 
 ```py
    32      3801      45      123
@@ -40,7 +40,7 @@ arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
 arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 ```
 
-Вивід:
+Вихідні дані:
 
 ```py
   32         1      9999      523
@@ -54,10 +54,10 @@ arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 Функція поверне правильне перетворення, якщо надані приклади відформатовані правильно. В іншому випадку буде **повернений** **рядок**, який описує помилку, важливу для користувача.
 
 - Ситуації, які повернуть помилку:
-  - Функції надано **забагато прикладів**. The limit is **five**, anything more will return: `'Error: Too many problems.'`
-  - Функція приймає відповідні оператори: **додавання** та **віднімання**. Множення та ділення поверне помилку. Інші оператори, які не згадані тут, тестовані не будуть. The error returned will be: `"Error: Operator must be '+' or '-'."`
-  - Кожне число (операнд) повинне містити лише цифри. Otherwise, the function will return: `'Error: Numbers must only contain digits.'`
-  - Кожен операнд (тобто число з кожної сторони оператора) може мати максимум чотири цифри по ширині. Otherwise, the error string returned will be: `'Error: Numbers cannot be more than four digits.'`
+  - Функції надано **забагато прикладів**. Ліміт становить **5 прикладів**. Якщо їх більше, то повернеться `'Error: Too many problems.'`
+  - Функція приймає відповідні оператори: **додавання** та **віднімання**. Множення та ділення поверне помилку. Інші оператори, які не згадані тут, тестовані не будуть. Повернеться помилка `"Error: Operator must be '+' or '-'."`
+  - Кожне число (операнд) повинне містити лише цифри. В іншому випадку функція поверне `'Error: Numbers must only contain digits.'`
+  - Кожен операнд (тобто число з кожної сторони оператора) може мати максимум чотири цифри по ширині. В іншому випадку рядок помилки видасть `'Error: Numbers cannot be more than four digits.'`
 - Якщо користувач надав правильний формат прикладу, то перетворення буде дотримуватись таких правил:
   - Повинен бути лише один пробіл між оператором і найдовшим із двох операндів; оператор буде на тому ж рядку, що й другий операнд; обоє операндів будуть в тому порядку, як і надано (перший буде зверху, а другий буде знизу).
   - Числа повинні бути вирівняні за правим краєм.
@@ -118,7 +118,7 @@ TestCase().assertEqual(arithmetic_arranger(["11 + 4", "3801 - 2999", "1 + 2", "1
 })
 ```
 
-`arithmetic_arranger(["44 + 815", "909 - 2", "45 + 43", "123 + 49", "888 + 40", "653 + 87"])` should return `'Error: Too many problems.'`.
+`arithmetic_arranger(["44 + 815", "909 - 2", "45 + 43", "123 + 49", "888 + 40", "653 + 87"])` має повернути `'Error: Too many problems.'`.
 
 ```js
 ({
@@ -131,7 +131,7 @@ TestCase().assertEqual(arithmetic_arranger(["44 + 815", "909 - 2", "45 + 43", "1
 })
 ```
 
-`arithmetic_arranger(["3 / 855", "3801 - 2", "45 + 43", "123 + 49"])` should return `"Error: Operator must be '+' or '-'."`.
+`arithmetic_arranger(["3 / 855", "3801 - 2", "45 + 43", "123 + 49"])` має повернути `"Error: Operator must be '+' or '-'."`.
 
 ```js
 ({
@@ -144,7 +144,7 @@ TestCase().assertEqual(arithmetic_arranger(["3 / 855", "3801 - 2", "45 + 43", "1
 })
 ```
 
-`arithmetic_arranger(["24 + 85215", "3801 - 2", "45 + 43", "123 + 49"])` should return `'Error: Numbers cannot be more than four digits.'`.
+`arithmetic_arranger(["24 + 85215", "3801 - 2", "45 + 43", "123 + 49"])` має повернути `'Error: Numbers cannot be more than four digits.'`.
 
 ```js
 ({
@@ -157,7 +157,7 @@ TestCase().assertEqual(arithmetic_arranger(["24 + 85215", "3801 - 2", "45 + 43",
 })
 ```
 
-`arithmetic_arranger(["98 + 3g5", "3801 - 2", "45 + 43", "123 + 49"])` should return `'Error: Numbers must only contain digits.'`.
+`arithmetic_arranger(["98 + 3g5", "3801 - 2", "45 + 43", "123 + 49"])` має повернути `'Error: Numbers must only contain digits.'`.
 
 ```js
 ({

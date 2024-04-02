@@ -20,13 +20,13 @@ Node — це всього лиш середовище JavaScript. Як і кл�
 
 Ми рекомендуємо тримати термінал відкритим під час роботи над цими завданнями. Читаючи вивід в терміналі, ви можете побачити будь-які помилки, що можуть виникнути.
 
-The server must be restarted after making changes to its files.
+Після внесення змін до файлів потрібно перезапустити сервер.
 
-You can stop the server from the terminal using `Ctrl + C` and start it using Node directly (`node mainEntryFile.js`) or using a run script in the `package.json` file with `npm run`.
+Сервер можна зупинити в терміналі за допомогою `Ctrl + C` та запустити за допомогою безпосередньо Node (`node mainEntryFile.js`) або запустити скрипт в файлі `package.json` за допомогою `npm run`.
 
-For example, the `"start": "node server.js"` script would be run from the terminal using `npm run start`.
+Наприклад, щоб запустити скрипт `"start": "node server.js"` в терміналі, використайте `npm run start`.
 
-To implement server auto restarting on file save Node provides the `--watch` flag you can add to your start script `"start": "node --watch server.js"` or you can install an npm package like `nodemon`. We will leave this to you as an exercise.
+Щоб впровадити автоматичний перезапуск серверу під час зберігання файлів, Node надає прапорець `--watch`, який можна додати до початкового скрипту `"start": "node --watch server.js"`, або можна завантажити пакет npm (наприклад, `nodemon`). Це буде вашим завданням.
 
 # --instructions--
 

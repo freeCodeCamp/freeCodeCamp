@@ -19,7 +19,7 @@ dashedName: override-styles-in-subsequent-css
 
 `pink-text` 클래스 외에도 `h1` 요소에 `blue-text` 클래스를 적용하고 이 중 어떤 스타일이 적용될지 확인해보세요.
 
-HTML 요소에 여러 클래스 속성을 적용하려면 다음과 같이 띄어쓰기로 구분합니다.
+Applying multiple class attributes to an HTML element is done with a space between them like this:
 
 ```html
 class="class1 class2"

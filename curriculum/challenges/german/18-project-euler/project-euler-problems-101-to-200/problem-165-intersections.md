@@ -1,6 +1,6 @@
 ---
 id: 5900f4111000cf542c50ff24
-title: 'Problem 165: Intersections'
+title: 'Problem 165: Schnittstellen'
 challengeType: 1
 forumTopicId: 301799
 dashedName: problem-165-intersections
@@ -8,37 +8,37 @@ dashedName: problem-165-intersections
 
 # --description--
 
-A segment is uniquely defined by its two endpoints. By considering two line segments in plane geometry there are three possibilities: the segments have zero points, one point, or infinitely many points in common.
+Ein Segment ist eindeutig durch seine beiden Endpunkte definiert. By considering two line segments in plane geometry there are three possibilities: the segments have zero points, one point, or infinitely many points in common.
 
-Moreover when two segments have exactly one point in common it might be the case that that common point is an endpoint of either one of the segments or of both. If a common point of two segments is not an endpoint of either of the segments it is an interior point of both segments.
+Wenn zwei Segmente genau einen Punkt gemeinsam haben, kann es außerdem sein, dass dieser gemeinsame Punkt ein Endpunkt entweder eines der Segmente oder beider ist. Wenn ein gemeinsamer Punkt zweier Segmente kein Endpunkt eines der beiden Segmente ist, ist er ein Innenpunkt beider Segmente.
 
-We will call a common point $T$ of two segments $L_1$ and $L_2$ a true intersection point of $L_1$ and $L_2$ if $T$ is the only common point of $L_1$ and $L_2$ and $T$ is an interior point of both segments.
+Wir nennen einen gemeinsamen Punkt $T$ zweier Segmente $L_1$ und $L_2$ einen echten Schnittpunkt von $L_1$ und $L_2$, wenn $T$ der einzige gemeinsame Punkt von $L_1$ und $L_2$ ist und $T$ ein innerer Punkt der beiden Segmente ist.
 
-Consider the three segments $L_1$, $L_2$, and $L_3$:
+Betrachte die drei Segmente $L_1$, $L_2$ und $L_3$:
 
 $$\begin{align}   & L_1: (27, 44) \\;\text{to}\\; (12, 32) \\\\
   & L_2: (46, 53) \\;\text{to}\\; (17, 62) \\\\   & L_3: (46, 70) \\;\text{to}\\; (22, 40) \\\\
 \end{align}$$
 
-It can be verified that line segments $L_2$ and $L_3$ have a true intersection point. We note that as the one of the end points of $L_3$: (22, 40) lies on $L_1$ this is not considered to be a true point of intersection. $L_1$ and $L_2$ have no common point. So among the three line segments, we find one true intersection point.
+Es lässt sich nachweisen, dass die Liniensegmente $L_2$ und $L_3$ einen echten Schnittpunkt haben. Da einer der Endpunkte von $L_3$: (22, 40) auf $L_1$ liegt, wird er nicht als echter Schnittpunkt betrachtet. $L_1$ und $L_2$ haben keinen gemeinsamen Punkt. Unter den drei Liniensegmenten finden wir also einen echten Schnittpunkt.
 
-Now let us do the same for 5000 line segments. To this end, we generate 20000 numbers using the so-called "Blum Blum Shub" pseudo-random number generator.
+Lass uns nun dasselbe für 5000 Liniensegmente tun. Zu diesem Zweck generieren wir 20000 Zahlen mit dem sogenannten "Blum Blum Shub"-Pseudo-Zufallszahlengenerator.
 
 $$\begin{align}   & s_0 = 290797 \\\\
   & s_{n + 1} = s_n × s_n (\text{modulo}\\; 50515093) \\\\   & t_n = s_n (\text{modulo}\\; 500) \\\\
 \end{align}$$
 
-To create each line segment, we use four consecutive numbers $t_n$. That is, the first line segment is given by:
+Für jedes Liniensegment verwenden wir vier aufeinanderfolgende Zahlen $t_n$. Das heißt, das erste Liniensegment ist gegeben durch:
 
-($_t$1, $t_2$) to ($t_3$, $t_4$)
+($_t$1, $t_2$) bis ($t_3$, $t_4$)
 
-The first four numbers computed according to the above generator should be: 27, 144, 12 and 232. The first segment would thus be (27, 144) to (12, 232).
+Die ersten vier Zahlen, die nach dem obigen Generator berechnet werden, sind: 27, 144, 12 und 232. Der erste Abschnitt wäre also (27, 144) bis (12, 232).
 
-How many distinct true intersection points are found among the 5000 line segments?
+Wie viele eindeutige echte Schnittpunkte finden sich unter den 5000 Liniensegmenten?
 
 # --hints--
 
-`distinctIntersections()` should return `2868868`.
+`distinctIntersections()` sollte `2868868` zurückgeben.
 
 ```js
 assert.strictEqual(distinctIntersections(), 2868868);
