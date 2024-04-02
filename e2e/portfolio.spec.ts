@@ -88,5 +88,9 @@ test.describe('Add Portfolio Item', () => {
       .getByRole('button', { name: translations.buttons['save-portfolio'] })
       .nth(0)
       .click();
+
+    await expect(
+      page.locator('text="We have updated your portfolio"')
+    ).toBeVisible();
   });
 });
