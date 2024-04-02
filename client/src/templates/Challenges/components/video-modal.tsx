@@ -32,7 +32,9 @@ function VideoModal({
   }
   return (
     <Modal onClose={closeVideoModal} size='large' open={isOpen}>
-      <Modal.Header>{t('buttons.watch-video')}</Modal.Header>
+      <Modal.Header closeButtonClassNames='close'>
+        {t('buttons.watch-video')}
+      </Modal.Header>
       <Modal.Body>
         <iframe
           data-playwright-test-label='video-modal-video-player-iframe'

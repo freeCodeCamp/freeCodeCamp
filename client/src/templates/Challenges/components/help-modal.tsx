@@ -149,7 +149,7 @@ function HelpModal({
   }
   return (
     <Modal onClose={handleClose} open={isOpen ?? false}>
-      <Modal.Header showCloseButton={true}>
+      <Modal.Header closeButtonClassNames='close'>
         {t('buttons.ask-for-help')}
       </Modal.Header>
       <Modal.Body>

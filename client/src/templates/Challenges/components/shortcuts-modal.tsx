@@ -49,7 +49,7 @@ function ShortcutsModal({
       <Modal.Header showCloseButton={false}>
         {t('shortcuts.title')}
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body alignment='start'>
         <div className='shortcuts-modal-body'>
           <table>
             <thead>

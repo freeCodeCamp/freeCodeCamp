@@ -62,7 +62,7 @@ function ProjectPreviewModal({
       }}
       open={isOpen}
     >
-      <Modal.Header>{previewTitle}</Modal.Header>
+      <Modal.Header closeButtonClassNames='close'>{previewTitle}</Modal.Header>
       <Modal.Body>
         <Preview
           previewId={projectPreviewId}

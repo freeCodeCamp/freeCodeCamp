@@ -128,6 +128,9 @@ function Hotkeys({
   ].some(Boolean);
 
   const keyMap = {
+    // The Modal component needs listen to the 'Escape' keypress event
+    // in order to close itself when the key is press.
+    // Therefore, we don't want HotKeys to hijack the 'escape' event when a modal is open.
     navigationMode: isModalOpen ? '' : 'escape',
     executeChallenge: ['ctrl+enter', 'command+enter'],
     focusEditor: 'e',
@@ -198,7 +201,7 @@ function Hotkeys({
             }
           },
           showShortcuts: (keyEvent?: KeyboardEvent) => {
-            if (keyEvent?.key === '?') {
+            if (!canFocusEditor && keyEvent?.key === '?') {
               openShortcutsModal();
             }
           }

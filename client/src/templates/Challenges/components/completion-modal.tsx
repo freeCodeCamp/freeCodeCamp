@@ -172,7 +172,7 @@ class CompletionModal extends Component<
         // eslint-disable-next-line @typescript-eslint/unbound-method
         onKeyDown={isOpen ? this.handleKeypress : undefined}
       >
-        <Modal.Header>{message}</Modal.Header>
+        <Modal.Header closeButtonClassNames='close'>{message}</Modal.Header>
         <Modal.Body>
           <GreenPass
             className='completion-success-icon'
