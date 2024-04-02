@@ -165,7 +165,13 @@ class CompletionModal extends Component<
     } = this.props;
 
     return (
-      <Modal onClose={close} open={isOpen ?? false} size='large'>
+      <Modal
+        onClose={close}
+        open={isOpen}
+        size='large'
+        // eslint-disable-next-line @typescript-eslint/unbound-method
+        onKeyDown={isOpen ? this.handleKeypress : undefined}
+      >
         <Modal.Header>{message}</Modal.Header>
         <Modal.Body>
           <GreenPass
