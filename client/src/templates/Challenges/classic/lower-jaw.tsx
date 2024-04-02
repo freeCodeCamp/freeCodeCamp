@@ -290,7 +290,9 @@ const LowerJaw = ({
   const isMacos = navigator.userAgent.indexOf('Mac OS X') != -1;
 
   const checkButtonText = showDesktopButton
-    ? isMacos ? t('buttons.check-code-macos') : t('buttons.check-code')
+    ? isMacos
+      ? t('buttons.check-code-macos')
+      : t('buttons.check-code')
     : t('buttons.check-code-2');
 
   const showSignInButton = !isSignedIn && challengeIsCompleted;
