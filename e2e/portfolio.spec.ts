@@ -5,7 +5,7 @@ test.describe('Add Portfolio Item', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
   test.beforeEach(async ({ page }) => {
-    await page.goto('/settings#portfolio-settings'); // Make sure your login redirects to '/settings'
+    await page.goto('/settings#portfolio-settings');
   });
 
   test('should be possible to add a portfolio item', async ({ page }) => {
@@ -61,7 +61,6 @@ test.describe('Add Portfolio Item', () => {
       )
     ).toBeVisible();
 
-    // Append to the description to reach the limit
     await page
       .getByTestId('portfolio-description')
       .nth(0)
