@@ -38,12 +38,16 @@ test('Click on the "Reset" button', async ({ page }) => {
   ).toBeVisible();
 });
 
-test('Should render UI correctly', async ({ page }) => {
+test('Should render UI correctly', async ({ page, browserName }) => {
   const codeCheckButton = page.getByRole('button', {
     name: 'Check Your Code'
   });
   const lowerJawTips = page.getByTestId('failing-test-feedback');
-  await expect(codeCheckButton).toHaveText('Check Your Code (Ctrl + Enter)');
+  if (browserName === 'webkit') {
+    await expect(codeCheckButton).toHaveText('Check Your Code (⌘ + Enter)');
+  } else {
+    await expect(codeCheckButton).toHaveText('Check Your Code (Ctrl + Enter)');
+  }
   await expect(lowerJawTips).toHaveCount(0);
 });
 
