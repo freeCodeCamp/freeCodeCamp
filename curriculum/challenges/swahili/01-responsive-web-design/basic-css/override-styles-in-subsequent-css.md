@@ -19,7 +19,7 @@ Create an additional CSS class called `blue-text` that gives an element the colo
 
 Apply the `blue-text` class to your `h1` element in addition to your `pink-text` class, and let's see which one wins.
 
-Applying multiple class attributes to a HTML element is done with a space between them like this:
+Applying multiple class attributes to an HTML element is done with a space between them like this:
 
 ```html
 class="class1 class2"

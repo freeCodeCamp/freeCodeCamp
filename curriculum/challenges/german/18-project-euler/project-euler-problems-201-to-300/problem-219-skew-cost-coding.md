@@ -8,23 +8,23 @@ dashedName: problem-219-skew-cost-coding
 
 # --description--
 
-Let $A$ and $B$ be bit strings (sequences of 0's and 1's).
+Lasse $A$ und $B$ Bit-Strings sein (Sequenzen von 0en und 1en).
 
 If $A$ is equal to the <u>left</u>most length($A$) bits of $B$, then $A$ is said to be a prefix of $B$.
 
-For example, 00110 is a prefix of <u>00110</u>1001, but not of 00111 or 100110.
+Zum Beispiel ist 00110 ein Präfix von <u>00110</u>1001, aber nicht von 00111 oder 100110.
 
-A prefix-free code of size $n$ is a collection of $n$ distinct bit strings such that no string is a prefix of any other. For example, this is a prefix-free code of size 6:
+Ein präfixfreier Code der Größe $n$ ist eine Sammlung von $n$ unterschiedlichen Bit-Strings, so dass kein String ein Präfix eines anderen ist. Zum Beispiel ist dies ein präfixfreier Code der Größe 6:
 
 $$0000, 0001, 001, 01, 10, 11$$
 
-Now suppose that it costs one penny to transmit a '0' bit, but four pence to transmit a '1'. Then the total cost of the prefix-free code shown above is 35 pence, which happens to be the cheapest possible for the skewed pricing scheme in question. In short, we write $Cost(6) = 35$.
+Nehmen wir jetzt an, dass es einen Cent kostet, ein '0' Bit zu übermitteln, aber vier Cent um eine '1' zu senden. Die Gesamtkosten des oben gezeigten vorwahlfreien Codes betragen dann 35 Pence, was bei dem fraglichen verzerrten Preisschema zufällig der günstigste Wert ist. In Kurzform schreiben wir $Cost(6) = 35$.
 
-What is $Cost(10^9)$?
+Was ergibt $Cost(10^9)$?
 
 # --hints--
 
-`skewCostCoding()` should return `64564225042`.
+`skewCostCoding()` sollte `64564225042` zurückgeben.
 
 ```js
 assert.strictEqual(skewCostCoding(), 64564225042);
