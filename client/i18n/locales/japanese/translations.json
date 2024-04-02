@@ -56,6 +56,7 @@
     "run": "実行",
     "run-test": "テスト実行 (Ctrl + Enter)",
     "check-code": "コードをチェック (Ctrl + Enter)",
+    "check-code-macos": "コードをチェック (⌘ + Enter)",
     "check-code-2": "コードをチェック",
     "reset": "リセット",
     "reset-step": "ステップをリセット",

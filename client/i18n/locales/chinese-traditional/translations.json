@@ -56,6 +56,7 @@
     "run": "運行",
     "run-test": "運行測試（Ctrl + Enter）",
     "check-code": "檢查你的代碼（Ctrl + Enter）",
+    "check-code-macos": "檢查你的代碼（⌘ + Enter）",
     "check-code-2": "檢查你的代碼",
     "reset": "重置",
     "reset-step": "重置此步驟",

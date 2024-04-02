@@ -56,6 +56,7 @@
     "run": "Executar",
     "run-test": "Execute os testes (Ctrl + Enter)",
     "check-code": "Verifique seu código (Ctrl + Enter)",
+    "check-code-macos": "Verifique seu código (⌘ + Enter)",
     "check-code-2": "Verifique seu código",
     "reset": "Redefinir",
     "reset-step": "Reiniciar este passo",

@@ -56,6 +56,7 @@
     "run": "Anzisha",
     "run-test": "Endesha Majaribio (Ctrl + Enter)",
     "check-code": "Angalia Code yako (Ctrl + Enter)",
+    "check-code-macos": "Angalia Code yako (⌘ + Enter)",
     "check-code-2": "Angalia Code Yako",
     "reset": "Anzisha Upya",
     "reset-step": "Weka Upya Hatua Hii",
