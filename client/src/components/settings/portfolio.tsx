@@ -275,8 +275,8 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               required={true}
               type='text'
               value={title}
-              data-cy='portfolio-title'
               id={`${id}-title-input`}
+              data-playwright-test-label='portfolio-title'
             />
             {titleMessage ? (
               <HelpBlock data-cy='validation-message'>{titleMessage}</HelpBlock>
@@ -294,8 +294,8 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               required={true}
               type='url'
               value={url}
-              data-cy='portfolio-url'
               id={`${id}-url-input`}
+              data-playwright-test-label='portfolio-url'
             />
             {urlMessage ? (
               <HelpBlock data-cy='validation-message'>{urlMessage}</HelpBlock>
@@ -312,8 +312,8 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               onChange={this.createOnChangeHandler(id, 'image')}
               type='url'
               value={image}
-              data-cy='portfolio-image'
               id={`${id}-image-input`}
+              data-playwright-test-label='portfolio-image'
             />
             {imageMessage ? (
               <HelpBlock data-cy='validation-message'>{imageMessage}</HelpBlock>
@@ -330,7 +330,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               componentClass='textarea'
               onChange={this.createOnChangeHandler(id, 'description')}
               value={description}
-              data-cy='portfolio-description'
+              data-playwright-test-label='portfolio-description'
               id={`${id}-description-input`}
             />
             {descriptionMessage ? (
@@ -378,7 +378,6 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           <p>{t('settings.share-projects')}</p>
           <Spacer size='small' />
           <Button
-            data-cy='add-portfolio'
             block={true}
             size='large'
             variant='primary'
