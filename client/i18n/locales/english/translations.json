@@ -57,7 +57,7 @@
     "run-test": "Run the Tests (Ctrl + Enter)",
     "check-code": "Check Your Code (Ctrl + Enter)",
     "check-code-2": "Check Your Code",
-    "check-code-3": "Check Your Code (⌘ + Enter)",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "Reset",
     "reset-step": "Reset This Step",
     "help": "Help",
