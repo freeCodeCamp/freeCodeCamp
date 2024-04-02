@@ -1,17 +1,17 @@
 ---
 id: 637f4e8072c65bc8e73dfe2c
-title: Working With Text Question F
+title: Arbeiten mit Text Frage F
 challengeType: 15
 dashedName: working-with-text-question-f
 ---
 
 # --description--
 
-You may have noticed that in all the examples in this lesson you indent any elements that are within other elements. This is known as nesting elements.
+Du hast vielleicht bemerkt, dass du in allen Beispielen dieser Lektion alle Elemente einrückst, die sich innerhalb anderer Elemente befinden. Diese werden als eingebettete Elemente bezeichnet.
 
 When you nest elements within other elements, you create a parent and child relationship between them. The nested elements are the children and the element they are nested within is the parent.
 
-In the following example, the body element is the parent and the paragraph is the child:
+Im folgenden Beispiel, ist das Bodyelement das übergeordnete Element und der Absatz ist das untergeordnete Element:
 
 ```html
 <html>
@@ -23,7 +23,7 @@ In the following example, the body element is the parent and the paragraph is th
  </html>
 ```
 
-Just as in human relationships, HTML parent elements can have many children. Elements at the same level of nesting are considered to be siblings.
+Genau wie in menschlichen Beziehungen können übergeordnete HTML-Elemente viele untergeordnete Elemente haben. Elemente auf der gleichen Verschachtelungsebene werden als Geschwister betrachtet.
 
 For example, the two paragraphs in the following code are siblings, since they are both children of the body tag and are at the same level of nesting as each other:
 
@@ -38,7 +38,7 @@ For example, the two paragraphs in the following code are siblings, since they a
  </html>
 ```
 
-You use indentation to make the level of nesting clear and readable for yourselves and other developers who will work with your HTML in the future. It is recommended to indent any child elements by two spaces.
+Du verwendest die Einrückung, um die Verschachtelungsebene für dich selbst und andere Entwickler, die in Zukunft mit deinem HTML-Code arbeiten werden, klar und lesbar zu machen. Es wird empfohlen, alle untergeordneten Elemente um zwei Leerzeichen einzurücken.
 
 The parent, child, and sibling relationships between elements will become much more important later when you start styling your HTML with CSS and adding behavior with JavaScript. For now, however, it is just important to know the distinction between how elements are related and the terminology used to describe their relationships.
 
@@ -50,7 +50,7 @@ What relationship does an element have with any nested element within it?
 
 ## --answers--
 
-The element within the other element is called the parent element.
+Das Element innerhalb des anderen Elements wird als übergeordnetes Element bezeichnet.
 
 ---
 

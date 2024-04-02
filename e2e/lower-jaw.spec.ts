@@ -33,9 +33,9 @@ test('Click on the "Reset" button', async ({ page }) => {
   const resetButton = page.getByTestId('lowerJaw-reset-button');
   await resetButton.click();
 
-  const resetModal = page.getByTestId('reset-modal');
-
-  await expect(resetModal).toBeVisible();
+  await expect(
+    page.getByRole('dialog', { name: 'Reset this lesson?' })
+  ).toBeVisible();
 });
 
 test('Should render UI correctly', async ({ page }) => {

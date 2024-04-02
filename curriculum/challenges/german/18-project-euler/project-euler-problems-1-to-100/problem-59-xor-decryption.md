@@ -1,6 +1,6 @@
 ---
 id: 5900f3a81000cf542c50feba
-title: 'Problem 59: XOR decryption'
+title: 'Problem 59: XOR-Entschlüsselung'
 challengeType: 1
 forumTopicId: 302170
 dashedName: problem-59-xor-decryption
@@ -8,25 +8,25 @@ dashedName: problem-59-xor-decryption
 
 # --description--
 
-Each character on a computer is assigned a unique code and the preferred standard is ASCII (American Standard Code for Information Interchange). For example, uppercase A = 65, asterisk (\*) = 42, and lowercase k = 107.
+Jedem Zeichen auf einem Computer wird ein eindeutiger Code zugewiesen, und der bevorzugte Standard ist ASCII (American Standard Code for Information Interchange). Zum Beispiel: Großbuchstabe A = 65, Sternchen (\*) = 42 und Kleinbuchstabe k = 107.
 
-A modern encryption method is to take a text file, convert the bytes to ASCII, then XOR each byte with a given value, taken from a secret key. The advantage with the XOR function is that using the same encryption key on the cipher text, restores the plain text; for example, 65 XOR 42 = 107, then 107 XOR 42 = 65.
+Eine moderne Verschlüsselungsmethode besteht darin, eine Textdatei zu nehmen, die Bytes in ASCII umzuwandeln und dann jedes Byte mit einem bestimmten Wert aus einem geheimen Schlüssel XOR zu verknüpfen. Der Vorteil der XOR-Funktion besteht darin, dass der Chiffriertext unter Verwendung desselben Schlüssels zur Verschlüsselung wieder in Klartext hergestellt wird, z. B. 65 XOR 42 = 107, dann 107 XOR 42 = 65.
 
-For unbreakable encryption, the key is the same length as the plain text message, and the key is made up of random bytes. The user would keep the encrypted message and the encryption key in different locations, and without both "halves", it is impossible to decrypt the message.
+Bei der unentschlüsselbaren Verschlüsselung hat der Schlüssel die gleiche Länge wie die Textnachricht, und der Schlüssel besteht aus zufälligen Bytes. Der Nutzer würde die verschlüsselte Nachricht und den Verschlüsselungsschlüssel an verschiedenen Orten aufbewahren, und ohne beide "Hälften" ist es unmöglich, die Nachricht zu entschlüsseln.
 
-Unfortunately, this method is impractical for most users, so the modified method is to use a password as a key. If the password is shorter than the message, which is likely, the key is repeated cyclically throughout the message. The balance for this method is using a sufficiently long password key for security, but short enough to be memorable.
+Leider ist diese Methode für die meisten Nutzer unpraktisch, so dass die modifizierte Methode darin besteht, ein Kennwort als Schlüssel zu verwenden. Wenn das Kennwort kürzer ist als die Nachricht, was wahrscheinlich ist, wird der Schlüssel zyklisch in der Nachricht wiederholt. Das Gleichgewicht bei dieser Methode besteht darin, einen ausreichend langen Passwortschlüssel für die Sicherheit zu verwenden, der aber kurz genug ist, damit man ihn sich einprägen kann.
 
-Your task has been made easy, as the encryption key consists of three lower case characters. Using `cipher`, an array containing the encrypted ASCII codes, and the knowledge that the plain text must contain common English words, decrypt the message and find the sum of the ASCII values in the original text.
+Die Aufgabe wurde euch leicht gemacht, denn der Verschlüsselungsschlüssel besteht aus drei Kleinbuchstaben. Unter Verwendung von `cipher`, einem Array, das die verschlüsselten ASCII-Codes enthält und dem Wissen, dass der Klartext gängige englische Wörter enthalten muss, entschlüssel die Nachricht und finde die Summe der ASCII-Werte im Originaltext.
 
 # --hints--
 
-`XORDecryption(cipher)` should return a number.
+`XORDecryption(cipher)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof XORDecryption(cipher) === 'number');
 ```
 
-`XORDecryption(cipher)` should return 129448.
+`XORDecryption(cipher)` sollte 129448 zurückgeben.
 
 ```js
 assert.strictEqual(XORDecryption(cipher), 129448);

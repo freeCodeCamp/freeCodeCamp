@@ -1,28 +1,28 @@
 ---
 id: 63d83ff239c73468b059cd3f
-title: "Build a Multi-Function Calculator"
+title: "Einen Multi-Funktions-Rechner erstellen"
 challengeType: 10
 dashedName: build-a-multi-function-calculator
 ---
 
 # --description--
 
-You will be <a href="https://colab.research.google.com/drive/1jT7atuRCOnkdPyDmlgKVJqxouDSx7Ioh?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
+Du wirst <a href="https://colab.research.google.com/drive/1jT7atuRCOnkdPyDmlgKVJqxouDSx7Ioh?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">an diesem Projekt mit Google Colaboratory arbeiten</a>.
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+Nachdem du diesen Link aufgerufen hast, erstelle eine Kopie des Notizbuchs entweder in deinem eigenen Konto oder vor Ort. Sobald du das Projekt abgeschlossen hast und es den Test bestanden hat (unter diesem Link enthalten), reiche deinen Projektlink unten ein. Wenn du einen Google Colaboratory-Link übermittelst, stelle sicher, dass du die Linkfreigabe für alle Personen, die den Link verwenden, aktivierst.
 
 # --instructions--
 
-For this challenge, you need to create a multi-function calculator using Python that take input and do the following:
+Für diese Aufgabe musst du einen Multifunktionsrechner mit Python erstellen, der Eingaben verwendet und Folgendes tut:
 
-- solve proportions
-- solve for x in equations
-- factor square roots
-- convert decimals to fractions and percents
-- convert fractions to decimals and percents
-- convert percents to decimals and fractions
+- Proportionen löst
+- Gleichungen nach x löst
+- Quadratwurzeln faktorisiert
+- Dezimalzahlen in Brüche und Prozentsätze umrechnet
+- Brüche in Dezimalzahlen und Prozentsätze umrechnet
+- Prozentsätze in Dezimalstellen und Brüche umrechnet
 
-If you are struggling, you can follow the <a href="https://www.youtube.com/embed/PdsvcZNPEEs" target="_blank" rel="noopener noreferrer nofollow">video walkthrough for this project.</a>
+Wenn du Schwierigkeiten hast, kannst du dir <a href="https://www.youtube.com/embed/PdsvcZNPEEs" target="_blank" rel="noopener noreferrer nofollow">die Videoanleitung für dieses Projekt</a> ansehen.
 
-Once you're done, submit the URL to the public Colab notebook on your Google drive.
+Übermittle die URL an das öffentliche Colab-Notizbuch auf deinem Google-Drive, sobald du fertig bist.
 
