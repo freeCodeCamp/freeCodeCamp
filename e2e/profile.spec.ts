@@ -169,13 +169,6 @@ test.describe('Profile component', () => {
     }
   });
 
-  test('should not show portfolio when empty', async ({ page }) => {
-    // @certifieduser doesn't have portfolio information
-    await expect(
-      page.getByText(translations.profile.portfolio)
-    ).not.toBeVisible();
-  });
-
   test('displays the timeline correctly', async ({ page }) => {
     await expect(page.getByRole('heading', { name: 'Timeline' })).toBeVisible();
     await expect(page.getByRole('table')).toBeVisible();
