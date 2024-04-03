@@ -15,7 +15,7 @@ export function Scene({
 }: {
   scene: FullScene;
   isPlaying: boolean;
-  setIsPlaying: (isPlaying: boolean) => void;
+  setIsPlaying: (shouldPlay: boolean) => void;
 }): JSX.Element {
   const { setup, commands } = scene;
   const { audio, alwaysShowDialogue } = setup;

@@ -207,9 +207,9 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
     });
   };
 
-  setIsScenePlaying = (isPlaying: boolean) => {
+  setIsScenePlaying = (shouldPlay: boolean) => {
     this.setState({
-      isScenePlaying: isPlaying
+      isScenePlaying: shouldPlay
     });
   };
 

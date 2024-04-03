@@ -246,9 +246,9 @@ class ShowFillInTheBlank extends Component<
     return '';
   }
 
-  setIsScenePlaying = (isPlaying: boolean) => {
+  setIsScenePlaying = (shouldPlay: boolean) => {
     this.setState({
-      isScenePlaying: isPlaying
+      isScenePlaying: shouldPlay
     });
   };
 
