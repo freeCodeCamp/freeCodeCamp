@@ -11,7 +11,7 @@ const FullWidthRow = ({
   className
 }: FullWidthRowProps): JSX.Element => (
   <Row className={className}>
-    <Col sm={10} smOffset={1} xs={12}>
+    <Col sm={8} smOffset={2} xs={12}>
       {children}
     </Col>
   </Row>

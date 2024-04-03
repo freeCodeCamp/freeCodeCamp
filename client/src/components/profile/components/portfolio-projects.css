@@ -118,7 +118,7 @@
 /* Timeline pagination */
 .timeline-pagination_list {
   list-style: none;
-  padding: 10px 0 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -139,11 +139,6 @@
 
 .timeline-row > td {
   vertical-align: middle !important;
-}
-
-.timeline-row td:nth-child(2),
-.timeline-row td:nth-child(3) {
-  width: 120px;
 }
 
 .timeline-cert-link {
