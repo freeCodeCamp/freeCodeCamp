@@ -7,7 +7,7 @@ dashedName: step-11
 
 # --description--
 
-In the previous projects, you used regular functions. But in the rest of the projects, you will be working with <dfn>arrow functions</dfn>. In the next few steps, you will learn about arrow functions and how to use them.
+In the previous projects, you used regular functions. But in the rest of the projects, you will be working with <dfn>arrow functions</dfn>. The next few steps will focus on teaching you the basics of arrow functions.
 
 An arrow function is an anonymous function expression and a shorter way to write functions. Anonymous means that the function does not have a name. Arrow functions are always anonymous.
 
@@ -38,13 +38,13 @@ assert.isFunction(printGreeting);
 You should use arrow syntax to create the `printGreeting` function.
 
 ```js
-assert.match(code, /let|const\s+printGreeting\s*=\s*\(\)\s*=>\s*/);
+assert.match(code, /(let|const)\s+printGreeting\s*=\s*\(.*\)\s*=>\s*{\s*[\s\S]*}\s*;?/)
 ```
 
 Your `printGreeting` function should include a `console.log('Hello, world!)`.
 
 ```js
-assert.match(printGreeting.toString(), /console\.log\(['"]Hello, world!['"]\)/);
+assert.match(printGreeting.toString(), /console\.log\(['"]Hello,\s+world!['"]\)/);
 ```
 
 # --seed--
