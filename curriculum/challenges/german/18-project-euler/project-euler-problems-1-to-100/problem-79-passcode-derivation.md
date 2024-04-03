@@ -1,6 +1,6 @@
 ---
 id: 5900f3bb1000cf542c50fece
-title: 'Problem 79: Passcode derivation'
+title: 'Problem 79: Ableitung des Passcodes'
 challengeType: 1
 forumTopicId: 302192
 dashedName: problem-79-passcode-derivation
@@ -8,33 +8,33 @@ dashedName: problem-79-passcode-derivation
 
 # --description--
 
-A common security method used for online banking is to ask the user for three random characters from a passcode. For example, if the passcode was `531278`, they may ask for the 2nd, 3rd, and 5th characters; the expected reply would be: `317`.
+Eine gängige Sicherheitsmethode beim Online-Banking besteht darin, den Nutzer nach drei zufälligen Zeichen eines Passworts zu fragen. Wenn das Passwort z. B. `531278` lautet, wird man nach dem 2., 3. und 5. Zeichen gefragt; die erwartete Antwort wäre `317`.
 
-The arrays, `keylog1`, `keylog2`, and `keylog3`, contains fifty successful login attempts.
+Die Arrays, `keylog1`, `keylog2` und `keylog3` enthalten 50 erfolgreiche Anmeldeversuche.
 
-Given that the three characters are always asked for in order, analyze the array so as to determine the shortest possible secret passcode of unknown length.
+Da die drei Zeichen immer in Reihenfolge angefordert werden, analysiere das Array auf eine Weise, um das kürzeste, mögliche geheime Passwort von unbekannter Länge zu ermitteln.
 
 # --hints--
 
-`passcodeDerivation(keylog1)` should return a number.
+`passcodeDerivation(keylog1)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof passcodeDerivation(_keylog1) === 'number');
 ```
 
-`passcodeDerivation(keylog1)` should return `531278`.
+`passcodeDerivation(keylog1)` sollte `531278` zurückgeben.
 
 ```js
 assert.strictEqual(passcodeDerivation(_keylog1), 531278);
 ```
 
-`passcodeDerivation(keylog2)` should return `1230567`.
+`passcodeDerivation(keylog2)` sollte `1230567` zurückgeben.
 
 ```js
 assert.strictEqual(passcodeDerivation(_keylog2), 1230567);
 ```
 
-`passcodeDerivation(keylog3)` should return `73162890`.
+`passcodeDerivation(keylog3)` sollte `73162890` zurückgeben.
 
 ```js
 assert.strictEqual(passcodeDerivation(_keylog3), 73162890);

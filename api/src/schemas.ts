@@ -297,6 +297,21 @@ export const schemas = {
       })
     }
   },
+  updateMyClassroomMode: {
+    body: Type.Object({
+      isClassroomAccount: Type.Boolean()
+    }),
+    response: {
+      200: Type.Object({
+        message: Type.Literal('flash.classroom-mode-updated'),
+        type: Type.Literal('success')
+      }),
+      403: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      })
+    }
+  },
   // User:
   deleteMyAccount: {
     response: {
@@ -436,7 +451,8 @@ export const schemas = {
                   })
                 )
               })
-            )
+            ),
+            msUsername: Type.Optional(Type.String())
           })
         ),
         result: Type.String()
@@ -511,8 +527,8 @@ export const schemas = {
     body: Type.Object({
       id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
       challengeType: Type.Optional(Type.Number()),
-      solution: Type.String({ format: 'url', maxLength: 1024 }),
-      // TODO(Post-MVP): require format: 'url' for githubLink
+      // The solution must be a valid URL only if it is a `backEndProject`.
+      solution: Type.String({ maxLength: 1024 }),
       githubLink: Type.Optional(Type.String())
     }),
     response: {
@@ -536,9 +552,14 @@ export const schemas = {
       }),
       403: Type.Object({
         type: Type.Literal('error'),
-        message: Type.Literal(
-          'You have to complete the project before you can submit a URL.'
-        )
+        message: Type.Union([
+          Type.Literal(
+            'You have to complete the project before you can submit a URL.'
+          ),
+          Type.Literal(
+            'That does not appear to be a valid challenge submission.'
+          )
+        ])
       }),
       500: Type.Object({
         message: Type.Literal(

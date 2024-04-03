@@ -1,16 +1,16 @@
 ---
 id: 63ee35370d8d4841c3a7091e
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question E
+title: CSS-Grundlagen Frage E
 challengeType: 15
 dashedName: css-foundations-question-e
 ---
 
 # --description--
 
-Combinators allow us to combine multiple selectors differently than either grouping or chaining them, as they show a relationship between the selectors. There are four types of combinators in total, but for right now we’re going to only show you the descendant combinator, which is represented in CSS by a single space between selectors. A descendant combinator will only cause elements that match the last selector to be selected if they also have an ancestor (parent, grandparent, etc) that matches the previous selector.
+Kombinatoren erlauben es uns, mehrere Selektoren unterschiedlich zu kombinieren, als sie entweder gruppieren oder verketten, da sie eine Beziehung zwischen den Selektoren aufweisen. Es gibt insgesamt vier Arten von Kombinatoren, aber im Moment werden wir dir nur den Nachkommen-Kombinator zeigen, welcher in CSS durch ein einzelnes Leerzeichen zwischen Selektoren repräsentiert wird. A descendant combinator will only cause elements that match the last selector to be selected if they also have an ancestor (parent, grandparent, etc) that matches the previous selector.
 
-So something like `.ancestor .child` would select an element with the class `child` if it has an ancestor with the class `ancestor`. Another way to think of it is child will only be selected if it is nested inside of `ancestor`, no matter how deep. Take a quick look at the example below and see if you can tell which elements would be selected based on the CSS rule provided:
+So würde etwa `.ancestor .child` ein Element mit der `child`-Klasse auswählen, wenn es einen Vorfahren mit der `ancestor`-Klasse hat. Another way to think of it is child will only be selected if it is nested inside of `ancestor`, no matter how deep. Wirf einen kurzen Blick auf das nachfolgende Beispiel und prüfe, ob du erkennen kannst, welche Elemente anhand der angegebenen CSS-Regel ausgewählt werden würden:
 
 ```html
 <!-- index.html -->
@@ -33,9 +33,9 @@ So something like `.ancestor .child` would select an element with the class `chi
 }
 ```
 
-In the above example, the first two elements with the `contents` class (`B` and `C`) would be selected, but that last element (`D`) won’t be. Was your guess correct?
+Im vorliegenden Beispiel würden die ersten beiden Elemente mit der `contents`-Klasse (`B` und `C`) ausgewählt werden, das letzte Element (`D`) jedoch nicht. War deine Vermutung richtig?
 
-There’s really no limit to how many combinators you can add to a rule, so `.one .two .three .four` would be totally valid. This would just select an element that has a class of `four` if it has an ancestor with a class of `three`, and if that ancestor has its own ancestor with a class of `two`, and so on. You generally want to avoid trying to select elements that need this level of nesting, though, as it can get pretty confusing and long, and it can cause issues when it comes to specificity.
+Es gibt wirklich kein Limit für die Anzahl der Kombinatoren, die du zu einer Regel hinzufügen kannst, also wäre `.one .two .three .four` vollkommen gültig. Dies würde ein Element mit der `four`-Klasse nur dann auswählen, wenn es einen Vorfahren mit der `three`-Klasse hat, und wenn dieser Vorfahr einen eigenen Vorfahren mit der `two`-Klasse hat, und so weiter. Generell möchtest du aber vermeiden, Elemente auszuwählen, die diese Verschachtelungsebene benötigen, da dies ziemlich verwirrend und langwierig werden kann und zu Schwierigkeiten hinsichtlich der Spezifität führen kann.
 
 # --question--
 
@@ -45,15 +45,15 @@ What does the descendant combinator do?
 
 ## --answers--
 
-It groups certain classes together which share the same declarations.
+Er fasst gewisse Klassen zusammen, die dieselben Deklarationen haben.
 
 ---
 
-It gives the ability to select an element that shares the same `class` and `id`.
+Er ermöglicht es, ein Element auszuwählen, das dieselbe `class` und dieselbe `id` hat.
 
 ---
 
-It allows you to select an element based on its relationship with its ancestor (parent, grandparent, and so on).
+Es ermöglicht dir, ein Element auf der Grundlage seiner Beziehung zu seinen Vorfahren (Eltern, Großeltern usw.) auszuwählen.
 
 
 ## --video-solution--

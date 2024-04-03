@@ -1,8 +1,8 @@
-import { Modal } from '@freecodecamp/react-bootstrap';
-import { Col, Row } from '@freecodecamp/ui';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useFeature } from '@growthbook/growthbook-react';
+import { Col, Row, Modal } from '@freecodecamp/ui';
+
 import BearProgressModal from '../../assets/images/components/bear-progress-modal';
 import BearBlockCompletion from '../../assets/images/components/bear-block-completion-modal';
 import { closeDonationModal } from '../../redux/actions';
@@ -61,6 +61,7 @@ function ModalHeader({
   donationAnimationFlag: boolean;
 }) {
   const { t } = useTranslation();
+
   if (!showHeaderAndFooter || donationAttempted) {
     return null;
   } else if (!donationAnimationFlag) {
@@ -76,7 +77,9 @@ function ModalHeader({
               })}
             </b>
           )}
-          <h2>{t('donate.help-us-develop')}</h2>
+          <Modal.Header showCloseButton={false} borderless>
+            {t('donate.help-us-develop')}
+          </Modal.Header>
         </Col>
       </Row>
     );
@@ -84,7 +87,9 @@ function ModalHeader({
     return (
       <Row className='text-center block-modal-text'>
         <Col sm={10} smOffset={1} xs={12}>
-          <h2>{t('donate.modal-benefits-title')}</h2>
+          <Modal.Header showCloseButton={false} borderless>
+            {t('donate.modal-benefits-title')}
+          </Modal.Header>
         </Col>
       </Row>
     );
@@ -268,8 +273,8 @@ function DonationModalBody({
   }, []);
 
   return (
-    <Modal.Body>
-      <div aria-live={'polite'}>
+    <Modal.Body borderless alignment='start'>
+      <div aria-live='polite' className='donation-modal'>
         {donationAnimationFlag && isAnimationVisible ? (
           <AnimationContainer setIsAnimationVisible={setIsAnimationVisible} />
         ) : (

@@ -8,7 +8,7 @@ dashedName: polygon-area-calculator
 
 # --description--
 
-In this project you will use object oriented programming to create a `Rectangle` class and a `Square` class. The `Square` class should be a subclass of `Rectangle`, and inherit its methods and attributes.
+У цьому проєкті ви будете використовувати об’єктноорієнтоване програмування, щоб створити класи `Rectangle` та `Square`. Клас `Square` має бути підкласом класу `Rectangle` та наслідувати його методи й атрибути.
 
 ## Клас Rectangle
 
@@ -19,18 +19,18 @@ In this project you will use object oriented programming to create a `Rectangle`
 - `get_area`: повертає площу (`width * height`)
 - `get_perimeter`: повертає периметр (`2 * width + 2 * height`)
 - `get_diagonal`: повертає діагональ (`(width ** 2 + height ** 2) ** .5`)
-- `get_picture`: повертає рядок, який представляє фігуру лініями «\*». Кількість ліній повинна дорівнювати висоті, а кількість «\*» у кожному рядку повинна дорівнювати ширині. Наприкінці кожного рядка має бути новий рядок (`\n`). Якщо ширина або висота більші за 50, то повинен повернутись рядок «Too big for picture.» (завеликий для зображення).
+- `get_picture`: повертає рядок, який представляє фігуру лініями "\*". Кількість ліній повинна дорівнювати висоті, а кількість "\*" у кожному рядку повинна дорівнювати ширині. Наприкінці кожного рядка має бути новий рядок (`\n`). Якщо ширина або висота більші за 50, то має повернутись рядок "Too big for picture.".
 - `get_amount_inside`: приймає іншу фігуру (квадрат чи трикутник) як аргумент. Повертає ту кількість разів, скільки передана фігура може поміститися у фігурі (без обертання). Наприклад, прямокутник з шириною 4 і висотою 8 може вмістити два квадрати зі сторонами 4.
 
-Additionally, if an instance of a `Rectangle` is represented as a string, it should look like: `Rectangle(width=5, height=10)`
+Додатково, якщо екземпляр класу `Rectangle` представлений як рядок, то він має виглядати так: `Rectangle(width=5, height=10)`.
 
 ## Клас Square
 
-The `Square` class should be a subclass of `Rectangle`. When a `Square` object is created, a single side length is passed in. The `__init__` method should store the side length in both the `width` and `height` attributes from the `Rectangle` class.
+Клас `Square` має бути підкласом класу `Rectangle`. Коли ви створюєте об’єкт `Square`, передається довжина однієї сторони. Метод `__init__` має зберігати довжину сторони в атрибутах `width` та `height` з класу `Rectangle`.
 
-The `Square` class should be able to access the `Rectangle` class methods but should also contain a `set_side` method. If an instance of a `Square` is represented as a string, it should look like: `Square(side=9)`
+Клас `Square` повинен мати доступ до методів класу `Rectangle`, але також повинен містити метод `set_side`. Якщо екземпляр класу `Square` представлений у вигляді рядка, то він має виглядати так: `Square(side=9)`.
 
-Additionally, the `set_width` and `set_height` methods on the `Square` class should set both the width and height.
+Додатково, методи `set_width` та `set_height` на класі `Square` мають встановити як ширину, так і висоту.
 
 ## Приклад використання
 
@@ -77,7 +77,7 @@ Square(side=4)
 
 # --hints--
 
-The `Square` class should be a subclass of the `Rectangle` class.
+Клас `Square` має бути підкласом класу `Rectangle`.
 
 ```js
 ({
@@ -110,7 +110,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `Square` class should be a distinct class from the `Rectangle` class.
+Клас `Square` має відрізнятись від класу `Rectangle`.
 
 ```js
 ({
@@ -143,7 +143,7 @@ t.result.wasSuccessful()
 })
 ```
 
-A square object should be an instance of the `Square` class and the `Rectangle` class.
+Об’єкт квадрата має бути екземпляром класу `Square` та класу `Rectangle`.
 
 ```js
 ({
@@ -178,7 +178,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The string representation of `Rectangle(3, 6)` should be `Rectangle(width=3, height=6)`.
+Рядковим представленням `Rectangle(3, 6)` має бути `Rectangle(width=3, height=6)`.
 
 ```js
 ({
@@ -213,7 +213,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The string representation of `Square(5)` should be `Square(side=5)`.
+Рядковим представленням `Square(5)` має бути `Square(side=5)`.
 
 ```js
 ({
@@ -458,7 +458,7 @@ t.result.wasSuccessful()
 })
 ```
 
-An instance of the `Rectangle` class should have a different string representation after setting new values.
+Екземпляр класу `Rectangle` повинен мати інше рядкове представлення після встановлення нових значень.
 
 ```js
 ({
@@ -495,7 +495,7 @@ t.result.wasSuccessful()
 })
 ```
 
-An instance of the `Square` class should have a different string representation after setting new values by using `.set_side()`.
+Екземпляр класу `Square` повинен мати інше рядкове представлення після встановлення нових значень за допомогою `.set_side()`.
 
 ```js
 ({
@@ -531,7 +531,7 @@ t.result.wasSuccessful()
 })
 ```
 
-An instance of the `Square` class should have a different string representation after setting new values by using `.set_width()` or `set_height()`.
+Екземпляр класу `Square` повинен мати інше рядкове представлення після встановлення нових значень за допомогою `.set_width()` або `set_height()`.
 
 ```js
 ({
@@ -571,7 +571,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `.get_picture()` method should return a different string representation of a `Rectangle` instance.
+Метод `.get_picture()` має повернути інше рядкове представлення екземпляра `Rectangle`.
 
 ```js
 ({
@@ -608,7 +608,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `.get_picture()` method should return a different string representation of a `Square` instance.
+Метод `.get_picture()` має повернути інше рядкове представлення екземпляра `Square`.
 
 ```js
 ({
@@ -644,7 +644,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `.get_picture()` method should return the string `Too big for picture.` if the `width` or `height` attributes are larger than `50`.
+Метод `.get_picture()` має повернути рядок `Too big for picture.`, якщо атрибути `width` або `height` більші за `50`.
 
 ```js
 ({

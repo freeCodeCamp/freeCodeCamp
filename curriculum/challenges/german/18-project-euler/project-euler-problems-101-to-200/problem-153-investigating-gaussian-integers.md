@@ -1,6 +1,6 @@
 ---
 id: 5900f4051000cf542c50ff18
-title: 'Problem 153: Investigating Gaussian Integers'
+title: 'Problem 153: Untersuchung von Gaußschen Integern'
 challengeType: 1
 forumTopicId: 301784
 dashedName: problem-153-investigating-gaussian-integers
@@ -8,57 +8,57 @@ dashedName: problem-153-investigating-gaussian-integers
 
 # --description--
 
-As we all know the equation $x^2 = -1$ has no solutions for real $x$.
+Wie wir alle wissen, hat die Gleichung $x^2 = -1$ für reelles $x$ keine Lösungen.
 
-If we however introduce the imaginary number $i$ this equation has two solutions: $x = i$ and $x = -i$.
+Führt man jedoch die imaginäre Zahl $i$ ein, so hat diese Gleichung zwei Lösungen: $x = i$ und $x = -i$.
 
-If we go a step further the equation ${(x - 3)}^2 = -4$ has two complex solutions: $x = 3 + 2i$ and $x = 3 - 2i$, which are called each others' complex conjugate.
+Geht man noch einen Schritt weiter, so hat die Gleichung ${(x - 3)}^2 = -4$ zwei komplexe Lösungen: $x = 3 + 2i$ und $x = 3 - 2i$, die man gegenseitig als komplex konjugiert bezeichnet.
 
-Numbers of the form $a + bi$ are called complex numbers.
+Zahlen der Form $a + bi$ werden als komplexe Zahlen bezeichnet.
 
-In general $a + bi$ and $a − bi$ are each other's complex conjugate. A Gaussian Integer is a complex number $a + bi$ such that both $a$ and $b$ are integers.
+Im Allgemeinen sind $a + bi$ und $a - bi$ zueinander komplex konjugiert. Eine Gaußsche Integer ist eine komplexe Zahl $a + bi$, bei der sowohl $a$ als auch $b$ Integer sind.
 
-The regular integers are also Gaussian integers (with $b = 0$).
+Die regulären Integer sind ebenfalls Gaußsche Integer (mit $b = 0$).
 
-To distinguish them from Gaussian integers with $b ≠ 0$ we call such integers "rational integers."
+Um sie von den Gaußschen Integern mit $b ≠ 0$ zu unterscheiden, nennen wir solche Integer "rationale Integer"
 
-A Gaussian integer is called a divisor of a rational integer $n$ if the result is also a Gaussian integer.
+Einen Gaußschen Integer nennt man einen Divisor eines rationalen Integers $n$, wenn das Ergebnis ebenfalls ein Gaußscher Integer ist.
 
-If for example we divide 5 by $1 + 2i$ we can simplify in the following manner:
+Wenn wir zum Beispiel 5 durch $1 + 2i$ teilen, können wir auf folgende Weise vereinfachen:
 
-Multiply numerator and denominator by the complex conjugate of $1 + 2i$: $1 − 2i$.
+Multipliziere Zähler und Nenner mit der komplexen Konjugierten von $1 + 2i$: $1 - 2i$.
 
-The result is:
+Das Ergebnis ist:
 
-$$\frac{5}{1 + 2i} = \frac{5}{1 + 2i} \frac{1 - 2i}{1 - 2i} = \frac{5(1 - 2i)}{1 - {(2i)}^2} = \frac{5(1 - 2i)}{1 - (-4)} = \frac{5(1 - 2i)}{5} = 1 - 2i$$
+$\frac{5}{1 + 2i} = \frac{5}{1 + 2i} \frac{1 - 2i}{1 - 2i} = \frac{5(1 - 2i)}{1 - {(2i)}^2} = \frac{5(1 - 2i)}{1 - (-4)} = \frac{5(1 - 2i)}{5} = 1 - 2i$
 
-So $1 + 2i$ is a divisor of 5.
+Also ist $1 + 2i$ ein Teiler von 5.
 
-Note that $1 + i$ is not a divisor of 5 because:
+Beachte, dass $1 + i$ kein Teiler von 5 ist, weil:
 
 $$\frac{5}{1 + i} = \frac{5}{2} - \frac{5}{2}i$$
 
-Note also that if the Gaussian Integer ($a + bi$) is a divisor of a rational integer $n$, then its complex conjugate ($a − bi$) is also a divisor of $n$. In fact, 5 has six divisors such that the real part is positive: {1, 1 + 2i, 1 − 2i, 2 + i, 2 − i, 5}.
+Man beachte auch, dass, wenn der Gaußsche Integer ($a + bi$) ein Teiler eines rationalen Integers $n$ ist, ihr konjugierter Komplex ($a - bi$) ebenfalls ein Teiler von $n$ ist. In der Tat hat 5 sechs Teiler, deren Realteil positiv ist: {1, 1 + 2i, 1 - 2i, 2 + i, 2 - i, 5}.
 
-The following is a table of all of the divisors for the first five positive rational integers:
+Im Folgenden findest du eine Tabelle mit allen Teilern der ersten fünf positiven rationalen Integer:
 
-| n | Gaussian integer divisors with positive real part | Sum s(n) of these divisors |
-| - | ------------------------------------------------- | -------------------------- |
-| 1 | 1                                                 | 1                          |
-| 2 | 1, 1 + i, 1 - i, 2                                | 5                          |
-| 3 | 1, 3                                              | 4                          |
-| 4 | 1, 1 + i, 1 - i, 2, 2 + 2i, 2 - 2i, 4             | 13                         |
-| 5 | 1, 1 + 2i, 1 - 2i, 2 + i, 2 - i, 5                | 12                         |
+| n | Gaußsche Integer-Divisoren mit positivem realen Teil | Summe s(n) dieser Divisoren |
+| - | ---------------------------------------------------- | --------------------------- |
+| 1 | 1                                                    | 1                           |
+| 2 | 1, 1 + i, 1 - i, 2                                   | 5                           |
+| 3 | 1, 3                                                 | 4                           |
+| 4 | 1, 1 + i, 1 - i, 2, 2 + 2i, 2 - 2i, 4                | 13                          |
+| 5 | 1, 1 + 2i, 1 - 2i, 2 + i, 2 - i, 5                   | 12                          |
 
-For divisors with positive real parts, then, we have: $\displaystyle\sum_{n=1}^5 s(n) = 35$.
+Für Teiler mit positiven Realteilen gilt also: $\displaystyle\sum_{n=1}^5 s(n) = 35$.
 
-For $1 ≤ n ≤ {10}^5$, $\displaystyle\sum_{n = 1}^{{10}^5} s(n) = 17924657155$.
+Für $1 ≤ n ≤ {10}^5$ gilt $\displaystyle\sum_{n = 1}^{{10}^5} s(n) = 17924657155$.
 
-What is $\displaystyle\sum_{n=1}^{{10}^8} s(n)$?
+Was ist $\displaystyle\sum_{n=1}^{{10}^8} s(n)$?
 
 # --hints--
 
-`sumGaussianIntegers()` should return `17971254122360636`.
+`sumGaussianIntegers()` sollte `17971254122360636` zurückgeben.
 
 ```js
 assert.strictEqual(sumGaussianIntegers(), 17971254122360636);

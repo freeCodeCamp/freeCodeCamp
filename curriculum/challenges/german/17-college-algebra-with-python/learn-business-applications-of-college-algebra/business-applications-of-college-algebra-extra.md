@@ -1,6 +1,6 @@
 ---
 id: 63dbd0375d93712ff177d969
-title: "Business Applications of College Algebra: Extra"
+title: "Geschäftliche Anwendungsmöglichkeiten von Hochschulalgebra: Extra"
 challengeType: 15
 videoId: 9n_ZybF0Phc
 dashedName: business-applications-of-college-algebra-extra
@@ -8,29 +8,29 @@ dashedName: business-applications-of-college-algebra-extra
 
 # --description--
 
-This video is showing you some economics applications, and creating graphs and formulas.
+Dieses Video zeigt dir einige wirtschaftliche Anwendungen sowie die Erstellung von Graphen und Formeln.
 
 # --question--
 
 ## --text--
 
-Which of the following is not true of supply and demand graphs?
+Welche der folgenden Aussagen gilt nicht für Angebots- und Nachfragegraphen?
 
 ## --answers--
 
-The supply curve has a positive slope
+Die Angebotskurve hat einen positiven Steigungsparameter
 
 ---
 
-The demand curve has a negative slope
+Die Nachfragekurve hat einen negativen Steigungsparameter
 
 ---
 
-The supply curve and demand curve will intersect
+Die Angebots- und Nachfragekurve werden sich überschneiden
 
 ---
 
-The supply curve and demand curve will always be straight lines
+Die Angebots- und Nachfragekurve sind immer geradlinig
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f3b91000cf542c50fecc
-title: 'Problem 77: Prime summations'
+title: 'Problem 77: Primzahlsummen'
 challengeType: 1
 forumTopicId: 302190
 dashedName: problem-77-prime-summations
@@ -8,7 +8,7 @@ dashedName: problem-77-prime-summations
 
 # --description--
 
-It is possible to write ten as the sum of primes in exactly five different ways:
+Man kann zehn als Summe von Primzahlen auf genau fünf verschiedene Arten schreiben:
 
 <div style='margin-left: 4em;'>
   7 + 3<br>
@@ -18,35 +18,35 @@ It is possible to write ten as the sum of primes in exactly five different ways:
   2 + 2 + 2 + 2 + 2<br><br>
 </div>
 
-What is the first value which can be written as the sum of primes in over `n` ways?
+Was ist der erste Wert, der als Summe von Primzahlen auf über `n` Arten geschrieben werden kann?
 
 # --hints--
 
-`primeSummations(5)` should return a number.
+`primeSummations(5)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof primeSummations(5) === 'number');
 ```
 
-`primeSummations(5)` should return `11`.
+`primeSummations(5)` sollte `11` zurückgeben.
 
 ```js
 assert.strictEqual(primeSummations(5), 11);
 ```
 
-`primeSummations(100)` should return `31`.
+`primeSummations(100)` sollte `31` zurückgeben.
 
 ```js
 assert.strictEqual(primeSummations(100), 31);
 ```
 
-`primeSummations(1000)` should return `53`.
+`primeSummations(1000)` sollte `53` zurückgeben.
 
 ```js
 assert.strictEqual(primeSummations(1000), 53);
 ```
 
-`primeSummations(5000)` should return `71`.
+`primeSummations(5000)` sollte `71` zurückgeben.
 
 ```js
 assert.strictEqual(primeSummations(5000), 71);

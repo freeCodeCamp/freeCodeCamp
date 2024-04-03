@@ -1,6 +1,6 @@
 ---
 id: 5900f3931000cf542c50fea6
-title: 'Problem 39: Integer right triangles'
+title: 'Problem 39: Ganzzahlige rechtwinklige Dreiecke'
 challengeType: 1
 forumTopicId: 302054
 dashedName: problem-39-integer-right-triangles
@@ -8,39 +8,39 @@ dashedName: problem-39-integer-right-triangles
 
 # --description--
 
-If `p` is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
+Wenn `p` der Umfang eines rechtwinkligen Dreiecks mit ganzzahligen Seitenlängen {a,b,c} ist, gibt es genau drei Lösungen für p = 120.
 
 {20,48,52}, {24,45,51}, {30,40,50}
 
-For which value of `p` ≤ `n`, is the number of solutions maximized?
+Für welchen Wert von `p` ≤ `n` ist die Anzahl der Lösungen maximiert?
 
 # --hints--
 
-`intRightTriangles(500)` should return a number.
+`intRightTriangles(500)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof intRightTriangles(500) === 'number');
 ```
 
-`intRightTriangles(500)` should return 420.
+`intRightTriangles(500)` sollte 420 zurückgeben.
 
 ```js
 assert(intRightTriangles(500) == 420);
 ```
 
-`intRightTriangles(800)` should return 720.
+`intRightTriangles(800)` sollte 720 zurückgeben.
 
 ```js
 assert(intRightTriangles(800) == 720);
 ```
 
-`intRightTriangles(900)` should return 840.
+`intRightTriangles(900)` sollte 840 zurückgeben.
 
 ```js
 assert(intRightTriangles(900) == 840);
 ```
 
-`intRightTriangles(1000)` should return 840.
+`intRightTriangles(1000)` sollte 840 zurückgeben.
 
 ```js
 assert(intRightTriangles(1000) == 840);

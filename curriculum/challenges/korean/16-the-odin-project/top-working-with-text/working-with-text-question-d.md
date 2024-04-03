@@ -7,7 +7,7 @@ dashedName: working-with-text-question-d
 
 # --description--
 
-The `em` element makes text italic. It also semantically places emphasis on the text, which again may affect things like screen readers. To define an emphasized element you wrap text content in a `<em>` tag.
+The `em` element makes text italic. It also semantically places emphasis on the text, which again may affect things like screen readers. To define an emphasized element you wrap text content in an `<em>` tag.
 
 To use `em` on its own:
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_6" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/wvewqpp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=wvewqpp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_6" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_wvewqpp"></iframe>

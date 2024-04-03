@@ -1,6 +1,6 @@
 ---
 id: 5900f4291000cf542c50ff3b
-title: 'Problem 188: The hyperexponentiation of a number'
+title: 'Problem 188: Die Hyperexponentialisierung einer Zahl'
 challengeType: 1
 forumTopicId: 301824
 dashedName: problem-188-the-hyperexponentiation-of-a-number
@@ -8,17 +8,17 @@ dashedName: problem-188-the-hyperexponentiation-of-a-number
 
 # --description--
 
-The hyperexponentiation or tetration of a number $a$ by a positive integer $b$, denoted by $a↑↑b$ or ${}^ba$, is recursively defined by:
+Die Hyperexponentialisierung oder Tetration einer Zahl $a$ durch eine positive Integer $b$, bezeichnet als $a↑↑b$ oder ${}^ba$, ist rekursiv definiert durch:
 
 $a↑↑1 = a$,
 
 $a↑↑(k+1) = a^{(a↑↑k)}$.
 
-Thus we have e.g. $3↑↑2 = 3^3 = 27$, hence $3↑↑3 = 3^{27} = 7625597484987$ and $3↑↑4$ is roughly ${10}^{3.6383346400240996 \times {10}^{12}}$. Find the last 8 digits of $1777↑↑1855$.
+Also haben wir z.B. $3↑↑2 = 3^3 = 27$, daher $3↑↑3 = 3^{27} = 7625597484987$ und $3↑↑4$ ist ungefähr ${10}^{3.6383346400240996 \times {10}^{12}}$. Finde die letzten 8 Ziffern von $1777↑↑1855$.
 
 # --hints--
 
-`hyperexponentation()` should return `95962097`.
+`hyperexponentation()` sollte `95962097` zurückgeben.
 
 ```js
 assert.strictEqual(hyperexponentation(), 95962097);
