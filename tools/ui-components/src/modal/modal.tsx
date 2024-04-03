@@ -114,7 +114,9 @@ const Modal = ({
           <div aria-hidden className='fixed inset-0 bg-gray-900 opacity-50' />
 
           {/* Full-screen container of the panel */}
-          <div className='fixed inset-0 flex items-start justify-center pt-[30px] pb-[30px] overflow-scroll'>
+          <div
+            className={`fixed inset-0 flex items-start justify-center p-[10px] md:pt-[30px] md:pb-[30px] overflow-scroll`}
+          >
             <Transition.Child
               as={Fragment}
               enter='transition-all duration-300 ease-out'
