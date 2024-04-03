@@ -25,14 +25,26 @@ const exampleFunction = () => {
 }
 ```
 
-Create a new named arrow function called `printGreeting`. Inside the body of that function use the `console.log()` method to print the string `Hello, world!`.
+Create a new named arrow function called `printGreeting`. Inside the body of that function use the `console.log()` method to print the string `"Hello, world!"`.
 
 # --hints--
 
-Test 1
+You should have a function called `printGreeting`.
 
 ```js
+assert.isFunction(printGreeting);
+```
 
+You should use arrow syntax to create the `printGreeting` function.
+
+```js
+assert.match(code, /let|const\s+printGreeting\s*=\s*\(\)\s*=>\s*/);
+```
+
+Your `printGreeting` function should include a `console.log('Hello, world!)`.
+
+```js
+assert.match(printGreeting.toString(), /console\.log\(['"]Hello, world!['"]\)/);
 ```
 
 # --seed--
