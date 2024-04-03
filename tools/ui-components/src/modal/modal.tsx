@@ -65,13 +65,18 @@ const Header = ({
   );
 };
 
-const Body = ({ children, alignment = 'center', borderless }: BodyProps) => {
+const Body = ({
+  children,
+  alignment = 'center',
+  borderless,
+  className
+}: BodyProps) => {
   const borderClasses = borderless
     ? ''
     : 'border-b-1 border-solid border-foreground-secondary';
 
   return (
-    <div className={`p-[15px] text-${alignment} ${borderClasses}`}>
+    <div className={`p-[15px] text-${alignment} ${borderClasses} ${className}`}>
       {children}
     </div>
   );
@@ -102,7 +107,7 @@ const Modal = ({
   } else if (size === 'large') {
     panelClasses = panelClasses.concat(' ', 'w-[900px]');
   } else if (size === 'xLarge') {
-    panelClasses = panelClasses.concat(' ', 'sm:w-[95vw] md:w-[90vw]');
+    panelClasses = panelClasses.concat(' ', 'w-[95vw] md:w-[90vw]');
   }
 
   if (variant === 'default') {

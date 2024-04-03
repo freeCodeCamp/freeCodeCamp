@@ -37,16 +37,13 @@ function VideoModal({
       <Modal.Header closeButtonClassNames='close'>
         {t('buttons.watch-video')}
       </Modal.Header>
-      <Modal.Body alignment='start'>
-        <div className='video-modal-body'>
-          <iframe
-            data-playwright-test-label='video-modal-video-player-iframe'
-            frameBorder='0'
-            src={videoUrl}
-            title={t('buttons.watch-video')}
-          />
-          <p>{t('learn.scrimba-tip')}</p>
-        </div>
+      <Modal.Body alignment='start' className='video-modal-body'>
+        <iframe
+          data-playwright-test-label='video-modal-video-player-iframe'
+          src={videoUrl}
+          title={t('buttons.watch-video')}
+        />
+        <p>{t('learn.scrimba-tip')}</p>
       </Modal.Body>
     </Modal>
   );
