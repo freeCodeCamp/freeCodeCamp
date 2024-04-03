@@ -15,7 +15,7 @@ test.describe('Exam results modal', () => {
     await expect(viewButton).toBeVisible();
     await viewButton.click();
 
-    await expect(page.getByRole('dialog')).toHaveCount(2);
+    await expect(page.getByRole('dialog')).toHaveCount(1);
 
     await expect(
       page.getByRole('heading', {
@@ -36,7 +36,7 @@ test.describe('Exam results modal', () => {
     await expect(viewButton).toBeVisible();
     await viewButton.click();
 
-    await expect(page.getByRole('dialog')).toHaveCount(2);
+    await expect(page.getByRole('dialog')).toHaveCount(1);
 
     // There are 2 close buttons on the page, and the x button is the first
     const closeButton = page.getByRole('button', { name: 'Close' }).first();
@@ -52,7 +52,7 @@ test.describe('Exam results modal', () => {
     await expect(viewButton).toBeVisible();
     await viewButton.click();
 
-    await expect(page.getByRole('dialog')).toHaveCount(2);
+    await expect(page.getByRole('dialog')).toHaveCount(1);
 
     // There are 2 close buttons on the page, and the close button is the last
     const closeButton = page.getByRole('button', { name: 'Close' }).last();
