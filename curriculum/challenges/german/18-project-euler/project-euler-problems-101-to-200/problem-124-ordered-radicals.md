@@ -1,6 +1,6 @@
 ---
 id: 5900f3e81000cf542c50fefb
-title: 'Problem 124: Ordered radicals'
+title: 'Problem 124: Geordnete Wurzeln'
 challengeType: 1
 forumTopicId: 301751
 dashedName: problem-124-ordered-radicals
@@ -8,9 +8,9 @@ dashedName: problem-124-ordered-radicals
 
 # --description--
 
-The radical of $n$, $rad(n)$, is the product of the distinct prime factors of $n$. For example, $504 = 2^3 × 3^2 × 7$, so $rad(504) = 2 × 3 × 7 = 42$.
+Die Wurzel von $n$, $rad(n)$, ist das Produkt der verschiedenen Primfaktoren von $n$. Zum Beispiel: $504 = 2^3 × 3^2 × 7$, somit $rad(504) = 2 × 3 × 7 = 42$.
 
-If we calculate $rad(n)$ for $1 ≤ n ≤ 10$, then sort them on $rad(n)$, and sorting on $n$ if the radical values are equal, we get:
+Berechnet man $rad(n)$ für $1 ≤ n ≤ 10$, sortiert sie nach $rad(n)$ und sortiert nach $n$, wenn die Wurzelwerte gleich sind, erhält man:
 
 <div style="text-align: center;">
   <table cellpadding="2" cellspacing="0" border="0" align="center">
@@ -112,11 +112,11 @@ If we calculate $rad(n)$ for $1 ≤ n ≤ 10$, then sort them on $rad(n)$, and s
   </table>
 </div><br>
 
-Let $E(k)$ be the $k$th element in the sorted $n$ column; for example, $E(4) = 8$ and $E(6) = 9$. If $rad(n)$ is sorted for $1 ≤ n ≤ 100000$, find $E(10000)$.
+Lasse $E(k)$ das $k$th Element in der geordneten $n$ Spalte sein; zum Beispiel, $E(4) = 8$ und $E(6) = 9$. Wenn $rad(n)$ für $1 ≤ n ≤ 100000$ geordnet ist, findest du $E(10000)$.
 
 # --hints--
 
-`orderedRadicals()` should return `21417`.
+`orderedRadicals()` sollte `21417` zurückgeben.
 
 ```js
 assert.strictEqual(orderedRadicals(), 21417);

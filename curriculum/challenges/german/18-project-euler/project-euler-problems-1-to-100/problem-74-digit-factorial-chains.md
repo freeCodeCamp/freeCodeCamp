@@ -8,53 +8,53 @@ dashedName: problem-74-digit-factorial-chains
 
 # --description--
 
-The number 145 is well known for the property that the sum of the factorial of its digits is equal to 145:
+Die Zahl 145 ist für die Eigenschaft bekannt, dass die Summe der Fakultät ihrer Ziffern 145 beträgt:
 
 $$1! + 4! + 5! = 1 + 24 + 120 = 145$$
 
-Perhaps less well known is 169, in that it produces the longest chain of numbers that link back to 169; it turns out that there are only three such loops that exist:
+Vielleicht weniger bekannt ist 169, womit die längste Kette an Zahlen erstellt wird, die wiederum in Verbindung stehen mit 169. Es stellt sich heraus, dass nur drei solcher Schleifen existieren:
 
 $$\begin{align} &169 → 363601 → 1454 → 169\\\\
 &871 → 45361 → 871\\\\ &872 → 45362 → 872\\\\
 \end{align}$$
 
-It is not difficult to prove that EVERY starting number will eventually get stuck in a loop. For example,
+Es ist nicht schwer zu beweisen, dass JEDE Startzahl irgendwann in einer Schleife stecken bleiben wird. Zum Beispiel,
 
 $$\begin{align} &69 → 363600 → 1454 → 169 → 363601\\ (→ 1454)\\\\
 &78 → 45360 → 871 → 45361\\ (→ 871)\\\\ &540 → 145\\ (→ 145)\\\\
 \end{align}$$
 
-Starting with 69 produces a chain of five non-repeating terms, but the longest non-repeating chain with a starting number below one million is sixty terms.
+Ab 69 wird eine Kette von fünf sich nicht wiederholenden Begriffen produziert, aber die längste sich nicht wiederholende Kette mit einer Anfangszahl von weniger als einer Million beinhaltet sechzig Begriffe.
 
-How many chains, with a starting number below `n`, contain exactly sixty non-repeating terms?
+Wie viele Ketten mit einer Startnummer unter `n` enthalten genau sechzig sich nicht wiederholende Begriffe?
 
 # --hints--
 
-`digitFactorialChains(2000)` should return a number.
+`digitFactorialChains(2000)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof digitFactorialChains(2000) === 'number');
 ```
 
-`digitFactorialChains(2000)` should return `6`.
+`digitFactorialChains(2000)` sollte `6` zurückgeben.
 
 ```js
 assert.strictEqual(digitFactorialChains(2000), 6);
 ```
 
-`digitFactorialChains(100000)` should return `42`.
+`digitFactorialChains(100000)` sollte `42` zurückgeben.
 
 ```js
 assert.strictEqual(digitFactorialChains(100000), 42);
 ```
 
-`digitFactorialChains(500000)` should return `282`.
+`digitFactorialChains(500000)` sollte `282` zurückgeben.
 
 ```js
 assert.strictEqual(digitFactorialChains(500000), 282);
 ```
 
-`digitFactorialChains(1000000)` should return `402`.
+`digitFactorialChains(1000000)` sollte `402` ausgeben.
 
 ```js
 assert.strictEqual(digitFactorialChains(1000000), 402);

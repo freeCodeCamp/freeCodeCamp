@@ -8,11 +8,11 @@ dashedName: problem-140-modified-fibonacci-golden-nuggets
 
 # --description--
 
-Consider the infinite polynomial series $A_G(x) = xG_1 + x^2G_2 + x^3G_3 + \cdots$, where $G_k$ is the $k$th term of the second order recurrence relation $G_k = G_{k − 1} + G_{k − 2}, G_1 = 1$ and $G_2 = 4$; that is, $1, 4, 5, 9, 14, 23, \ldots$.
+Man betrachte die unendliche Polynomreihe $A_G(x) = xG_1 + x^2G_2 + x^3G_3 + \cdots$, wobei $G_k$ der $k$-te Term der Rekursionsbeziehung zweiter Ordnung $G_k = G_{k − 1} + G_{k − 2}, G_1 = 1$ und $G_2 = 4$; d. h. $1, 4, 5, 9, 14, 23, \ldots$.
 
-For this problem we shall be concerned with values of $x$ for which $A_G(x)$ is a positive integer.
+Für dieses Problem werden wir uns mit den Werten von $x$ beschäftigen, für die $A_G(x)$ ein positiver Integer ist.
 
-The corresponding values of $x$ for the first five natural numbers are shown below.
+Die entsprechenden Werte von $x$ für die ersten fünf natürlichen Zahlen sind unten dargestellt.
 
 | $x$                           | $A_G(x)$ |
 | ----------------------------- | -------- |
@@ -22,11 +22,11 @@ The corresponding values of $x$ for the first five natural numbers are shown bel
 | $\frac{\sqrt{137} − 5}{14}$ | $4$      |
 | $\frac{1}{2}$                | $5$      |
 
-We shall call $A_G(x)$ a golden nugget if $x$ is rational because they become increasingly rarer; for example, the 20th golden nugget is 211345365. Find the sum of the first thirty golden nuggets.
+We shall call $A_G(x)$ a golden nugget if $x$ is rational because they become increasingly rarer; for example, the 20th golden nugget is 211345365. Finde die Summe der ersten dreißig goldenen Nuggets.
 
 # --hints--
 
-`modifiedGoldenNuggets()` should return `5673835352990`
+`modifiedGoldenNuggets()` sollte `5673835352990` zurückgeben
 
 ```js
 assert.strictEqual(modifiedGoldenNuggets(), 5673835352990);
