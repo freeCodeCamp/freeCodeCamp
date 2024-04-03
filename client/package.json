@@ -49,7 +49,6 @@
     "@fortawesome/free-solid-svg-icons": "6.4.2",
     "@fortawesome/react-fontawesome": "0.2.0",
     "@freecodecamp/loop-protect": "3.0.0",
-    "@freecodecamp/react-bootstrap": "0.32.3",
     "@freecodecamp/react-calendar-heatmap": "1.1.0",
     "@freecodecamp/strip-comments": "3.0.1",
     "@freecodecamp/ui": "workspace:*",
