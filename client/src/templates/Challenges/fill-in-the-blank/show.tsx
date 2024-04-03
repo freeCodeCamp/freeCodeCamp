@@ -293,6 +293,7 @@ class ShowFillInTheBlank extends Component<
         containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
+        playScene={() => this.setIsScenePlaying(true)}
       >
         <LearnLayout>
           <Helmet

@@ -260,6 +260,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
         containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
+        playScene={() => this.setIsScenePlaying(true)}
       >
         <LearnLayout>
           <Helmet
