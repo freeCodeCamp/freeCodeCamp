@@ -46,16 +46,16 @@ test.describe('Exit Project Preview Modal E2E Test Suite', () => {
   test('Closes the Project Preview Modal when the User clicks on X button', async ({
     page
   }) => {
-    const modal = page.getByRole('dialog', {
+    const dialog = page.getByRole('dialog', {
       name: translations.learn['project-preview-title']
     });
 
-    await expect(modal).toBeVisible();
+    await expect(dialog).toBeVisible();
 
     await page
       .getByRole('button', { name: translations.buttons.close })
       .click();
 
-    await expect(modal).not.toBeVisible();
+    await expect(dialog).not.toBeVisible();
   });
 });
