@@ -1,7 +1,6 @@
-import { Modal } from '@freecodecamp/react-bootstrap';
-import { Col, Row } from '@freecodecamp/ui';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Col, Row, Modal } from '@freecodecamp/ui';
 import { closeDonationModal } from '../../redux/actions';
 import { Spacer } from '../helpers';
 import { PaymentContext } from '../../../../shared/config/donation-settings'; //
@@ -43,6 +42,7 @@ function ModalHeader({
   showForm: boolean;
 }) {
   const { t } = useTranslation();
+
   if (!showHeaderAndFooter || donationAttempted) {
     return null;
   } else if (!showForm) {
@@ -61,7 +61,10 @@ function ModalHeader({
               <Spacer size='small' />
             </>
           )}
-          <h2>{t('donate.modal-benefits-title')}</h2>
+
+          <Modal.Header showCloseButton={false} borderless>
+            {t('donate.modal-benefits-title')}
+          </Modal.Header>
         </Col>
       </Row>
     );
@@ -237,8 +240,8 @@ function DonationModalBody({
   }, []);
 
   return (
-    <Modal.Body>
-      <div aria-live={'polite'}>
+    <Modal.Body borderless alignment='start'>
+      <div aria-live='polite' className='donation-modal'>
         {isAnimationVisible ? (
           <AnimationContainer setIsAnimationVisible={setIsAnimationVisible} />
         ) : (
