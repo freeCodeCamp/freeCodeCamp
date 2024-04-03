@@ -176,11 +176,30 @@ function WebhookSettings({
             <>
               <div role='group' aria-label={t('settings.webhook.heading')}>
                 <p>
-                  {t(
-                    'settings.webhook.sub-heading',
-                    'Optionally be notified of events.'
-                  )}
+                  This feature is in <strong>Beta</strong> and is expected to
+                  change. Webhooks allow you to receive notifications at a
+                  specified endpoint when events occur. If you provide a URL,
+                  data will be emitted each time you complete a challenge. That
+                  data will take the following shape:
                 </p>
+                <pre>
+                  <code>
+                    {JSON.stringify(
+                      {
+                        username: 'certifieduser',
+                        secret: 'some-secret',
+                        completedChallenge: {
+                          id: '5dc174fcf86c76b9248c6eb2',
+                          files: undefined,
+                          completedDate: 1702499864614
+                        },
+                        points: 1
+                      },
+                      null,
+                      2
+                    )}
+                  </code>
+                </pre>
                 <FormGroup
                   controlId='current-email'
                   validationState={newWebhookValidation}

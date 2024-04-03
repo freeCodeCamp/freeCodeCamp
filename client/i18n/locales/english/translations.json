@@ -269,7 +269,6 @@
     },
     "webhook": {
       "heading": "Webhook Settings",
-      "sub-heading": "Optionally be notified of events.",
       "secret": "Secret",
       "new": "Payload url",
       "url": "URL",

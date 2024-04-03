@@ -1,24 +1,5 @@
 const path = require('path');
-const envData = {
-  homeLocation: 'http://localhost:8000',
-  apiLocation: 'http://localhost:3000',
-  forumLocation: 'https://forum.freecodecamp.org',
-  newsLocation: 'https://www.freecodecamp.org/news',
-  radioLocation: 'https://coderadio.freecodecamp.org',
-  clientLocale: 'english',
-  curriculumLocale: 'english',
-  showLocaleDropdownMenu: false,
-  deploymentEnv: 'staging',
-  environment: 'development',
-  algoliaAppId: '',
-  algoliaAPIKey: '',
-  stripePublicKey: null,
-  paypalClientId: null,
-  patreonClientId: null,
-  showUpcomingChanges: false,
-  showNewCurriculum: true,
-  growthbookUri: null
-};
+const envData = require('./config/env.json');
 const {
   buildChallenges,
   replaceChallengeNode,
