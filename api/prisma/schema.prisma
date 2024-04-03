@@ -19,7 +19,7 @@ type File {
 }
 
 type CompletedChallenge {
-  challengeType      Int?     @db.Int // Null | Undefined
+  challengeType      Int?         @db.Int // Null | Undefined
   completedDate      Float // TODO(Post-MVP): Change to DateTime
   files              File[]
   githubLink         String? // Undefined
@@ -220,18 +220,18 @@ model Exam {
 
 type CompletedExam {
   id            String
-	challengeType Int
-	completedDate Float // TODO(Post-MVP): Change to DateTime?
-	examResults		ExamResults
+  challengeType Int
+  completedDate Float // TODO(Post-MVP): Change to DateTime?
+  examResults   ExamResults
 }
 
 type ExamResults {
-	numberOfCorrectAnswers  Int
-	numberOfQuestionsInExam Int
-	percentCorrect          Float
-	passingPercent          Int
-	passed                  Boolean
-	examTimeInSeconds       Int
+  numberOfCorrectAnswers  Int
+  numberOfQuestionsInExam Int
+  percentCorrect          Float
+  passingPercent          Int
+  passed                  Boolean
+  examTimeInSeconds       Int
 }
 
 type Question {
@@ -261,4 +261,18 @@ type DonationEndDate {
 type DonationStartDate {
   date DateTime @map("_date") @db.Date
   when String   @map("_when")
+}
+
+model Survey {
+  id        String           @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String           @db.ObjectId
+  title     String
+  responses SurveyResponse[]
+
+  @@index([userId], map: "userId_1")
+}
+
+type SurveyResponse {
+  question String
+  response String
 }

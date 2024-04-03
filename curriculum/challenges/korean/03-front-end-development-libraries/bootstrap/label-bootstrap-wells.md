@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908854
-title: Label Bootstrap Wells
+title: 부트스트랩 well 라벨링하기
 challengeType: 0
 forumTopicId: 18223
 dashedName: label-bootstrap-wells
@@ -8,15 +8,15 @@ dashedName: label-bootstrap-wells
 
 # --description--
 
-For the sake of clarity, let's label both of our wells with their ids.
+명확성을 위해 두 well에 id를 레이블로 지정해보겠습니다.
 
-Above your left-well, inside its `col-xs-6` `div` element, add a `h4` element with the text `#left-well`.
+왼쪽 well 위 `col-xs-6` `div` 요소 안에 `#left-well`라는 글자를 가진 `h4` 요소를 추가하시오.
 
-Above your right-well, inside its `col-xs-6` `div` element, add a `h4` element with the text `#right-well`.
+오른쪽 well 위에 `col-xs-6` `div` 요소 안에 `#right-well`이라는 글자를 가진 `h4` 요소를 추가하시오.
 
 # --hints--
 
-You should add an `h4` element to each of your `<div class="col-xs-6">` elements.
+각 `<div class="col-xs-6">` 요소에 `h4` 요소를 추가해야 합니다.
 
 ```js
 assert(
@@ -24,19 +24,19 @@ assert(
 );
 ```
 
-One `h4` element should have the text `#left-well`.
+하나의 `h4` 요소는 `#left-well`라는 글자를 가져야 합니다.
 
 ```js
 assert(new RegExp('#left-well', 'gi').test($('h4').text()));
 ```
 
-One `h4` element should have the text `#right-well`.
+하나의 `h4` 요소는 `#right-well`라는 글자를 가져야 합니다.
 
 ```js
 assert(new RegExp('#right-well', 'gi').test($('h4').text()));
 ```
 
-All of your `h4` elements should have closing tags.
+모든 `h4` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(

@@ -1,23 +1,14 @@
 ---
 id: 5e444147903586ffb414c94f
 title: 四角形の面積計算プログラム
-challengeType: 10
+challengeType: 23
 forumTopicId: 462363
 dashedName: polygon-area-calculator
 ---
 
 # --description--
 
-<a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">このプロジェクトには Replit スターターコードを使用します</a>。
-
--   まず、Replit でプロジェクトをインポートします。
--   すると、`.replit` ファイルのウィンドウが表示されます。
--   `Use run command` を選択して `Done` ボタンをクリックします。
-
-
-# --instructions--
-
-このプロジェクトでは、オブジェクト指向プログラミングを使用して、Rectangle クラスと Square クラスを作成します。 Square クラスは Rectangle のサブクラスであり、メソッドと属性を継承する必要があります。
+In this project you will use object oriented programming to create a `Rectangle` class and a `Square` class. The `Square` class should be a subclass of `Rectangle`, and inherit its methods and attributes.
 
 ## Rectangle クラス
 
@@ -31,27 +22,27 @@ Rectangle オブジェクトを作成する際、`width` 属性と `height` 属�
 - `get_picture`: "\*" の行を使用して図形を表す文字列を返します。 行数は高さと等しく、各行の"\*"の数は幅と等しくする必要があります。 各行の末尾に改行 (`\n`) が必要です。 幅または高さが 50 より大きい場合は、文字列 "Too big for picture." を返す必要があります。
 - `get_amount_inside`: 引数として別の図形 (正方形または長方形) を受け取ります。 渡された図形が、その図形の中に何個収まるかを返します (回転はしません)。 たとえば、幅が 4 で高さが 8 の長方形には、一辺が 4 の正方形が 2つ収まります。
 
-また、Rectangle のインスタンスを文字列で表現すると `Rectangle(width=5, height=10)` のようになります。
+Additionally, if an instance of a `Rectangle` is represented as a string, it should look like: `Rectangle(width=5, height=10)`
 
 ## Square クラス
 
-Square クラスは Rectangle のサブクラスである必要があります。 Square オブジェクトが生成されるときは、一辺の長さを渡します。 `__init__` メソッドでは、一辺の長さを Rectangle クラスの `width` 属性と `height` 属性の両方に格納する必要があります。
+The `Square` class should be a subclass of `Rectangle`. When a `Square` object is created, a single side length is passed in. The `__init__` method should store the side length in both the `width` and `height` attributes from the `Rectangle` class.
 
-Square クラスは、Rectangle クラスのメソッドにアクセスできる必要があり、加えて `set_side` メソッドも含める必要があります。 Square のインスタンスを文字列で表現すると `Square(side=9)` のようになります。
+The `Square` class should be able to access the `Rectangle` class methods but should also contain a `set_side` method. If an instance of a `Square` is represented as a string, it should look like: `Square(side=9)`
 
-また、Square クラスの `set_width` と `set_height` メソッドでは、幅と高さの両方を設定する必要があります。
+Additionally, the `set_width` and `set_height` methods on the `Square` class should set both the width and height.
 
 ## 使用例
 
 ```py
-rect = shape_calculator.Rectangle(10, 5)
+rect = Rectangle(10, 5)
 print(rect.get_area())
 rect.set_height(3)
 print(rect.get_perimeter())
 print(rect)
 print(rect.get_picture())
 
-sq = shape_calculator.Square(9)
+sq = Square(9)
 print(sq.get_area())
 sq.set_side(4)
 print(sq.get_diagonal())
@@ -84,34 +75,795 @@ Square(side=4)
 8
 ```
 
-このプロジェクトの単体テストは `test_module.py` にあります。
-
-## 開発
-
-`shape_calculator.py` でコードを記述してください。 開発には `main.py` を使用して `shape_calculator()` 関数をテストすることができます。 「Run」ボタンをクリックすると `main.py` が実行されます。
-
-## テスト
-
-すでに `test_module.py` から `main.py` にテストをインポートしてあります。 「Run」ボタンを押すと自動的にテストが実行されます。
-
-## 提出
-
-プロジェクトの URL をコピーし、freeCodeCamp に提出してください。
-
 # --hints--
 
-Rectangle クラスと Square クラスを作成し、すべてのテストを成功させる必要があります。
+The `Square` class should be a subclass of the `Rectangle` class.
 
 ```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
 
+    def test_subclass(self):
+        actual = issubclass(shape_calculator.Square, shape_calculator.Rectangle)
+        expected = True
+        self.assertEqual(actual, expected, 'Expected Square class to be a subclass of the Rectangle class.')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+The `Square` class should be a distinct class from the `Rectangle` class.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None    
+
+    def test_distinct_classes(self):
+        actual = shape_calculator.Square is not shape_calculator.Rectangle
+        expected = True
+        self.assertEqual(actual, expected, 'Expected Square class to be a distinct class from the Rectangle class.')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+A square object should be an instance of the `Square` class and the `Rectangle` class.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.sq = shape_calculator.Square(5)
+
+    def test_square_is_square_and_rectangle(self):
+        actual = isinstance(self.sq, shape_calculator.Square) and isinstance(self.sq, shape_calculator.Rectangle)
+        expected = True
+        self.assertEqual(actual, expected, 'Expected square object to be an instance of the Square class and the Rectangle class.')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+The string representation of `Rectangle(3, 6)` should be `Rectangle(width=3, height=6)`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.rect = shape_calculator.Rectangle(3, 6)
+
+    def test_rectangle_string(self):
+        actual = str(self.rect)
+        expected = "Rectangle(width=3, height=6)"
+        self.assertEqual(actual, expected, 'Expected string representation of rectangle to be "Rectangle(width=3, height=6)"')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+The string representation of `Square(5)` should be `Square(side=5)`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.sq = shape_calculator.Square(5)
+
+    def test_square_string(self):
+        actual = str(self.sq)
+        expected = "Square(side=5)"
+        self.assertEqual(actual, expected, 'Expected string representation of square to be "Square(side=5)"')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+`Rectangle(3, 6).get_area()` should return `18`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.rect = shape_calculator.Rectangle(3, 6)
+
+    def test_area(self):
+        actual = self.rect.get_area()
+        expected = 18
+        self.assertEqual(actual, expected, 'Expected area of rectangle to be 18')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+`Square(5).get_area()` should return `25`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.sq = shape_calculator.Square(5)
+
+    def test_area(self):        
+        actual = self.sq.get_area()
+        expected = 25
+        self.assertEqual(actual, expected, 'Expected area of square to be 25')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+`Rectangle(3, 6).get_perimeter()` should return `18`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.rect = shape_calculator.Rectangle(3, 6)
+
+    def test_perimeter(self):
+        actual = self.rect.get_perimeter()
+        expected = 18
+        self.assertEqual(actual, expected, 'Expected perimeter of rectangle to be 18')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+`Square(5).get_perimeter()` should return `20`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.sq = shape_calculator.Square(5)
+
+    def test_perimeter(self):
+        actual = self.sq.get_perimeter()
+        expected = 20
+        self.assertEqual(actual, expected, 'Expected perimeter of square to be 20')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+`Rectangle(3, 6).get_diagonal()` should return `6.708203932499369`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.rect = shape_calculator.Rectangle(3, 6)
+
+    def test_diagonal(self):
+        actual = self.rect.get_diagonal()
+        expected = 6.708203932499369
+        self.assertEqual(actual, expected, 'Expected diagonal of rectangle to be 6.708203932499369')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+`Square(5).get_diagonal()` should return `7.0710678118654755`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.sq = shape_calculator.Square(5)
+
+    def test_diagonal(self):
+        actual = self.sq.get_diagonal()
+        expected = 7.0710678118654755
+        self.assertEqual(actual, expected, 'Expected diagonal of square to be 7.0710678118654755')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+An instance of the `Rectangle` class should have a different string representation after setting new values.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.rect = shape_calculator.Rectangle(3, 6)        
+
+    def test_set_attributes(self):
+        self.rect.set_width(7)
+        self.rect.set_height(8)        
+        actual = str(self.rect)
+        expected = "Rectangle(width=7, height=8)"
+        self.assertEqual(actual, expected, 'Expected string representation of rectangle after setting new values to be "Rectangle(width=7, height=8)"')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+An instance of the `Square` class should have a different string representation after setting new values by using `.set_side()`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.sq = shape_calculator.Square(5)
+
+    def test_set_attributes(self):        
+        self.sq.set_side(2)        
+        actual = str(self.sq)
+        expected = "Square(side=2)"
+        self.assertEqual(actual, expected, 'Expected string representation of square after setting new values to be "Square(side=2)"')   
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+An instance of the `Square` class should have a different string representation after setting new values by using `.set_width()` or `set_height()`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.sq = shape_calculator.Square(5)
+
+    def test_set_attributes(self):        
+        self.sq.set_height(2)        
+        actual = str(self.sq)
+        expected = "Square(side=2)"
+        self.assertEqual(actual, expected, 'Expected string representation of square after setting new values to be "Square(side=2)"')
+        self.sq.set_width(4)
+        actual = str(self.sq)
+        expected = "Square(side=4)"
+        self.assertEqual(actual, expected, 'Expected string representation of square after setting width to be "Square(side=4)"')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+The `.get_picture()` method should return a different string representation of a `Rectangle` instance.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.rect = shape_calculator.Rectangle(3, 6)
+
+    def test_rectangle_picture(self):
+        self.rect.set_width(7)
+        self.rect.set_height(3)
+        actual = self.rect.get_picture()
+        expected = "*******\\n*******\\n*******\\n"
+        self.assertEqual(actual, expected, 'Expected rectangle picture to be different.')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+The `.get_picture()` method should return a different string representation of a `Square` instance.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.sq = shape_calculator.Square(5)
+
+    def test_square_picture(self):
+        self.sq.set_side(2)
+        actual = self.sq.get_picture()
+        expected = "**\\n**\\n"
+        self.assertEqual(actual, expected, 'Expected square picture to be different.')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+The `.get_picture()` method should return the string `Too big for picture.` if the `width` or `height` attributes are larger than `50`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.rect = shape_calculator.Rectangle(3, 6)
+
+    def test_big_picture(self):
+        self.rect.set_width(51)
+        self.rect.set_height(3)
+        actual = self.rect.get_picture()
+        expected = "Too big for picture."
+        self.assertEqual(actual, expected, 'Expected message: "Too big for picture."')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+`Rectangle(15,10).get_amount_inside(Square(5))` should return `6`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.rect = shape_calculator.Rectangle(3, 6)
+        self.sq = shape_calculator.Square(5)
+
+    def test_get_amount_inside(self):
+        self.rect.set_height(10)
+        self.rect.set_width(15)
+        actual = self.rect.get_amount_inside(self.sq)
+        expected = 6
+        self.assertEqual(actual, expected, 'Expected "get_amount_inside" to return 6.')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+`Rectangle(4,8).get_amount_inside(Rectangle(3, 6))` should return `1`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.rect = shape_calculator.Rectangle(3, 6)
+
+    def test_get_amount_inside_two_rectangles(self):
+        rect2 = shape_calculator.Rectangle(4, 8)
+        actual = rect2.get_amount_inside(self.rect)
+        expected = 1
+        self.assertEqual(actual, expected, 'Expected "get_amount_inside" to return 1.')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+`Rectangle(2,3).get_amount_inside(Rectangle(3, 6))` should return `0`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import shape_calculator
+from importlib import reload
+reload(shape_calculator)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.rect = shape_calculator.Rectangle(3, 6)
+
+    def test_get_amount_inside_none(self):
+        rect2 = shape_calculator.Rectangle(2, 3)
+        actual = rect2.get_amount_inside(self.rect)
+        expected = 0
+        self.assertEqual(actual, expected, 'Expected "get_amount_inside" to return 0.')    
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+# --seed--
+
+## --seed-contents--
+
+```py
+class Rectangle:
+    pass
+
+class Square:
+    pass
 ```
 
 # --solutions--
 
-```js
-/**
-  Backend challenges don't need solutions,
-  because they would need to be tested against a full working project.
-  Please check our contributing guidelines to learn more.
-*/
+```py
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def __str__(self):
+        return f'Rectangle(width={self.width}, height={self.height})'
+
+    def set_width(self, width):
+        self.width = width
+
+    def set_height(self, height):
+        self.height = height
+
+    def get_area(self):
+        area = self.width * self.height
+        return area
+
+    def get_perimeter(self):
+        perimeter = self.width * 2 + self.height * 2
+        return perimeter
+
+    def get_diagonal(self):
+        diagonal = (self.width ** 2 + self.height ** 2) ** 0.5        
+        return diagonal
+
+    def get_picture(self):
+        if self.width < 50 and self.height < 50:
+            picture = f'{"*"*self.width}\n'*self.height            
+            return picture
+        else:            
+            return 'Too big for picture.'
+
+    def get_amount_inside(self, polygon):
+        h_number = self.height // polygon.height
+        w_number = self.width // polygon.width
+        repetition = h_number * w_number        
+        return repetition
+
+
+class Square(Rectangle):
+    def __init__(self, side):
+        self.width = side
+        self.height = side
+
+    def __str__(self):
+        return f'Square(side={self.width})'
+
+    def set_width(self, side):
+        self.width = side
+        self.height = side
+
+    def set_height(self, side):
+        self.height = side
+        self.width = side
+
+    def set_side(self,side):
+        self.width = side
+        self.height = side
+
 ```

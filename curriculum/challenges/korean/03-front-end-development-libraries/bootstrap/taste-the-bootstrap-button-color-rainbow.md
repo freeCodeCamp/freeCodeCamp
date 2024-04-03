@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acef08811
-title: Taste the Bootstrap Button Color Rainbow
+title: 무지개 색상 부트스트랩 버튼 맛보기
 challengeType: 0
 forumTopicId: 18323
 dashedName: taste-the-bootstrap-button-color-rainbow
@@ -8,27 +8,27 @@ dashedName: taste-the-bootstrap-button-color-rainbow
 
 # --description--
 
-The `btn-primary` class is the main color you'll use in your app. It is useful for highlighting actions you want your user to take.
+`btn-primary` 클래스는 앱에서 사용할 주 색상입니다. 이 클래스는 사용자가 취할 행동을 강조할 때 유용합니다.
 
-Replace Bootstrap's `btn-default` class with `btn-primary` in your button.
+버튼에 있는 부트스트랩의 `btn-default` 클래스를 `btn-primary`으로 대체하세요.
 
-Note that this button will still need the `btn` and `btn-block` classes.
+이 버튼은 `btn`과 `btn-block` 클래스가 필요하다는 것에 주의하세요.
 
 # --hints--
 
-Your button should have the class `btn-primary`.
+버튼은 `btn-primary` 클래스를 가져야 합니다.
 
 ```js
 assert($('button').hasClass('btn-primary'));
 ```
 
-Your button should still have the `btn` and `btn-block` classes.
+버튼은 `btn`과 `btn-block` 클래스를 가져야 합니다.
 
 ```js
 assert($('button').hasClass('btn-block') && $('button').hasClass('btn'));
 ```
 
-All your `button` elements should have closing tags.
+모든 `button` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(

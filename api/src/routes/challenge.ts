@@ -8,6 +8,7 @@ import { schemas } from '../schemas';
 import {
   jsCertProjectIds,
   multifileCertProjectIds,
+  multifilePythonCertProjectIds,
   updateUserChallengeData,
   type CompletedChallenge,
   saveUserChallengeData,
@@ -348,13 +349,14 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         };
 
         if (challengeType === challengeTypes.multifileCertProject) {
-          completedChallenge.isManuallyApproved = true;
+          completedChallenge.isManuallyApproved = false;
           user.needsModeration = true;
         }
 
         if (
           jsCertProjectIds.includes(id) ||
-          multifileCertProjectIds.includes(id)
+          multifileCertProjectIds.includes(id) ||
+          multifilePythonCertProjectIds.includes(id)
         ) {
           completedChallenge.challengeType = challengeType;
         }
@@ -404,7 +406,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           files
         };
 
-        if (!multifileCertProjectIds.includes(challengeId)) {
+        if (
+          !multifileCertProjectIds.includes(challengeId) &&
+          !multifilePythonCertProjectIds.includes(challengeId)
+        ) {
           void reply.code(403);
           return 'That challenge type is not saveable.';
         }

@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd0f
-title: Build a 25 + 5 Clock
+title: 25 + 5 시계 만들기
 challengeType: 3
 forumTopicId: 301373
 dashedName: build-a-25--5-clock
@@ -8,73 +8,73 @@ dashedName: build-a-25--5-clock
 
 # --description--
 
-**Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
+**참고:** **React 18은 이 프로젝트의 테스트와 알려진 호환성 문제가 있습니다 (자세한 내용은 [이슈](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922) 참조)**
 
-**Objective:** Build an app that is functionally similar to this: <a href="https://25--5-clock.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://25--5-clock.freecodecamp.rocks</a>.
+** 목표:**이 앱을 만들어서 이와 유사한 기능을 제공하세요. <a href="https://25--5-clock.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://25--5-clock.freecodecamp.rocks</a>.
 
-Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
+아래의 사용자 이야기를 충족하고 모든 테스트를 통과 시키세요. 필요한 라이브러리 또는 API를 사용하세요. 자신만의 스타일을 적용하세요.
 
-You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
+이 프로젝트를 완료하기 위해 HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux 및 jQuery를 자유롭게 섞어서 사용할 수 있습니다. 프론트엔드 프레임워크(예: React)는 꼭 사용해야 합니다. 이 섹션은 프론트엔드 프레임워크를 학습하는 것과 관련되어 있기 때문입니다. 위에 나열된 기술 이외의 추가 기술은 권장되지 않으며 사용 시 개인 책임하에 사용하세요. Angular 및 Vue와 같은 다른 프론트엔드 프레임워크를 지원하는 것을 고려 중이지만 현재는 지원되지 않습니다. 이 프로젝트에 제안된 기술 스택을 사용하는 모든 이슈 보고서를 수용하고 문제를 해결하겠습니다. 즐거운 코딩하세요!
 
-**User Story #1:** I can see an element with `id="break-label"` that contains a string (e.g. "Break Length").
+**유저 스토리 #1:** 문자열을 포함하는 `id="break-label"` 요소를 볼 수 있습니다(예: "휴식 시간").
 
-**User Story #2:** I can see an element with `id="session-label"` that contains a string (e.g. "Session Length").
+**유저 스토리 #2:** 문자열을 포함하는 `id="session-label"` 요소를 볼 수 있습니다(예: "세션 길이").
 
-**User Story #3:** I can see two clickable elements with corresponding IDs: `id="break-decrement"` and `id="session-decrement"`.
+**유저 스토리 #3:** 두 개의 클릭 가능한 요소를 볼 수 있습니다. 해당 ID는 `id="break-decrement"` 및 `id="session-decrement"`입니다.
 
-**User Story #4:** I can see two clickable elements with corresponding IDs: `id="break-increment"` and `id="session-increment"`.
+**유저 스토리 #4:** 두 개의 클릭 가능한 요소를 볼 수 있습니다. 이 요소들의 ID는 `id="break-increment"` 및 `id="session-increment"`입니다.
 
-**User Story #5:** I can see an element with a corresponding `id="break-length"`, which by default (on load) displays a value of 5.
+**유저 스토리 #5:** 기본적으로(로드될 때) 값이 5로 표시되는 `id="break-length"`를 가진 요소를 볼 수 있습니다.
 
-**User Story #6:** I can see an element with a corresponding `id="session-length"`, which by default displays a value of 25.
+**유저 스토리 #6:** 기본적으로 값이 25로 표시되는 `id="session-length"`를 가진 요소를 볼 수 있습니다.
 
-**User Story #7:** I can see an element with a corresponding `id="timer-label"`, that contains a string indicating a session is initialized (e.g. "Session").
+**유저 스토리 #7:** 세션이 초기화되었음을 나타내는 문자열을 포함하는 `id="timer-label"`를 가진 요소를 볼 수 있습니다(예: "세션").
 
-**User Story #8:** I can see an element with corresponding `id="time-left"`. NOTE: Paused or running, the value in this field should always be displayed in `mm:ss` format (i.e. 25:00).
+**유저 스토리 #8:** `id="time-left"`를 가진 요소를 볼 수 있습니다. 주의: 일시 중지되었든 실행 중이든, 이 항목의 값은 항상 `mm:ss` 형식(예: 25:00)으로 표시되어야 합니다.
 
-**User Story #9:** I can see a clickable element with a corresponding `id="start_stop"`.
+**유저 스토리 #9:** `id="start_stop"`를 가진 클릭 가능한 요소를 볼 수 있습니다.
 
-**User Story #10:** I can see a clickable element with a corresponding `id="reset"`.
+**유저 스토리 #10:** `id="reset"`을 가진 클릭 가능한 요소를 볼 수 있습니다.
 
-**User Story #11:** When I click the element with the id of `reset`, any running timer should be stopped, the value within `id="break-length"` should return to `5`, the value within `id="session-length"` should return to 25, and the element with `id="time-left"` should reset to its default state.
+**유저 스토리 #11:** `reset`의 ID를 가진 요소를 클릭할 때 실행 중인 타이머가 있다면 정지되어야 하고, `id="break-length"` 내의 값은 `5`로 되돌아가야 하며, `id="session-length"` 내의 값은 25로 되돌아가야 하고, `id="time-left"` 내의 요소는 기본 상태로 재설정되어야 합니다.
 
-**User Story #12:** When I click the element with the id of `break-decrement`, the value within `id="break-length"` decrements by a value of 1, and I can see the updated value.
+**유저 스토리 #12:** `break-decrement`의 ID를 가진 요소를 클릭할 때 `id="break-length"` 내의 값이 1 만큼 감소하고 업데이트된 값을 볼 수 있어야 합니다.
 
-**User Story #13:** When I click the element with the id of `break-increment`, the value within `id="break-length"` increments by a value of 1, and I can see the updated value.
+**유저 스토리 #13:** `break-increment`의 ID를 가진 요소를 클릭할 때 `id="break-length"` 내의 값이 1 만큼 증가하고 업데이트된 값을 볼 수 있어야 합니다.
 
-**User Story #14:** When I click the element with the id of `session-decrement`, the value within `id="session-length"` decrements by a value of 1, and I can see the updated value.
+**유저 스토리 #14:** `session-decrement`의 ID를 가진 요소를 클릭할 때 `id="session-length"` 내의 값이 1 만큼 감소하고 업데이트된 값을 볼 수 있어야 합니다.
 
-**User Story #15:** When I click the element with the id of `session-increment`, the value within `id="session-length"` increments by a value of 1, and I can see the updated value.
+**유저 스토리 #15:** `session-increment`의 ID를 가진 요소를 클릭할 때 `id="session-length"` 내의 값이 1 만큼 증가하고 업데이트된 값을 볼 수 있어야 합니다.
 
-**User Story #16:** I should not be able to set a session or break length to &lt;= 0.
+**유저 스토리 #16:** 세션 또는 휴식 길이를 &lt;= 0으로 설정할 수 없어야 합니다.
 
-**User Story #17:** I should not be able to set a session or break length to > 60.
+**유저 스토리 #17:** 세션 또는 휴식 길이를 60 > 로 설정할 수 없어야 합니다.
 
-**User Story #18:** When I first click the element with `id="start_stop"`, the timer should begin running from the value currently displayed in `id="session-length"`, even if the value has been incremented or decremented from the original value of 25.
+**유저 스토리 #18:** 처음으로 `id="start_stop"`을 가진 요소를 클릭하면 타이머는 현재 `id="session-length"`에 표시된 값에서 시작되어야 합니다. 값이 원래 값 25에서 증가하거나 감소한 경우에도 해당합니다.
 
-**User Story #19:** If the timer is running, the element with the id of `time-left` should display the remaining time in `mm:ss` format (decrementing by a value of 1 and updating the display every 1000ms).
+**유저 스토리 #19:** 타이머가 실행 중인 경우 `time-left`의 ID를 가진 요소는 `mm:ss` 형식으로 남은 시간을 표시해야 합니다(1 감소하고 1000ms마다 표시를 업데이트합니다).
 
-**User Story #20:** If the timer is running and I click the element with `id="start_stop"`, the countdown should pause.
+**유저 스토리 #20:** 타이머가 실행 중인 상태에서 `id="start_stop"`을 가진 요소를 클릭하면 카운트다운이 일시 중지되어야 합니다.
 
-**User Story #21:** If the timer is paused and I click the element with `id="start_stop"`, the countdown should resume running from the point at which it was paused.
+**유저 스토리 #21:** 타이머가 일시 중지된 상태에서 `id="start_stop"`을 가진 요소를 클릭하면 카운트다운이 일시 중지된 지점에서부터 다시 실행되어야 합니다.
 
-**User Story #22:** When a session countdown reaches zero (NOTE: timer MUST reach 00:00), and a new countdown begins, the element with the id of `timer-label` should display a string indicating a break has begun.
+**유저 스토리 #22:** 세션 카운트다운이 0에 도달하고 (참고: 타이머는 반드시 00:00에 도달해야 함) 새로운 카운트다운이 시작되면 `timer-label`의 ID를 가진 요소는 휴식 시간이 시작되었음을 나타내는 문자열을 표시해야 합니다.
 
-**User Story #23:** When a session countdown reaches zero (NOTE: timer MUST reach 00:00), a new break countdown should begin, counting down from the value currently displayed in the `id="break-length"` element.
+**유저 스토리 #23:** 세션 카운트다운이 0에 도달하면 (참고: 타이머는 반드시 00:00에 도달해야 함) 새로운 휴식 카운트다운이 `id="break-length"` 요소에 표시된 값에서 시작되어야 합니다.
 
-**User Story #24:** When a break countdown reaches zero (NOTE: timer MUST reach 00:00), and a new countdown begins, the element with the id of `timer-label` should display a string indicating a session has begun.
+**유저 스토리 #24:** 휴식 카운트다운이 0에 도달하고 (참고: 타이머는 반드시 00:00에 도달해야 함) 새로운 카운트다운이 시작되면 `timer-label`의 ID를 가진 요소는 세션이 시작되었음을 나타내는 문자열을 표시해야 합니다.
 
-**User Story #25:** When a break countdown reaches zero (NOTE: timer MUST reach 00:00), a new session countdown should begin, counting down from the value currently displayed in the `id="session-length"` element.
+**유저 스토리 #25:** 휴식 카운트다운이 0에 도달하면 (참고: 타이머는 반드시 00:00에 도달해야 함) `id="session-length"`요소에 표시된 값에서 카운트다운이 시작되어야 합니다.
 
-**User Story #26:** When a countdown reaches zero (NOTE: timer MUST reach 00:00), a sound indicating that time is up should play. This should utilize an HTML5 `audio` tag and have a corresponding `id="beep"`.
+**유저 스토리 #26:** 카운트다운이 0에 도달하면 (참고: 타이머는 반드시 00:00에 도달해야 함) 시간이 다 되었다는 것을 나타내는 소리가 재생되어야 합니다. 이는 HTML5 `audio` 태그를 활용하고 해당 `id="beep"`가 있어야 합니다.
 
-**User Story #27:** The audio element with `id="beep"` must be 1 second or longer.
+**유저 스토리 #27:** `id="beep"`를 가진 오디오 요소는 1초 이상이어야 합니다.
 
-**User Story #28:** The audio element with id of `beep` must stop playing and be rewound to the beginning when the element with the id of `reset` is clicked.
+**유저 스토리 #28:** `reset`의 ID를 가진 요소를 클릭하면 `beep`의 ID를 가진 오디오 요소가 재생을 중지하고 처음으로 되감아져야 합니다.
 
-You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+이 프로젝트를 <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">이 CodePen 템플릿</a>을 사용하여 빌드하고 `Save`를 클릭하여 자체 펜을 만들 수 있습니다. 또는 원하는 모든 환경에서 테스트를 실행하기 위해 이 CDN 링크를 사용할 수 있습니다: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Once you're done, submit the URL to your working project with all its tests passing.
+완료되면 모든 테스트가 통과되는 작동 프로젝트의 URL을 제출하십시오.
 
 # --solutions--
 

@@ -3,14 +3,10 @@ id: 657b1a27dc6daf6ffd52ff1f
 title: Task 28
 challengeType: 19
 dashedName: task-28
-audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
-<!--
-AUDIO REFERENCE:
-Anna: Excellent! Can you share details about your educational background? Were you trained in a specific field?
-Candidate2: I have a master's degree in computer science.
--->
+<!-- (Audio) Anna: Excellent! Can you share details about your educational background? Were you trained in a specific field?
+Second Candidate: I have a master's degree in computer science. -->
 
 # --description--
 
@@ -53,3 +49,71 @@ An advanced academic degree
 ## --video-solution--
 
 4
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "interview-room3.png",
+    "characters": [
+      {
+        "character": "Anna",
+        "position": {"x":50,"y":15,"z":1.2},
+        "opacity": 0
+      },
+      {
+        "character": "Second Candidate",
+        "position": {"x":50,"y":15,"z":1.2},
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "3.1-2.mp3",
+      "startTime": 1,
+      "startTimestamp": 43.44,
+      "finishTimestamp": 51.78
+    }
+  },
+  "commands": [
+    {
+      "character": "Anna",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Anna",
+      "startTime": 1,
+      "finishTime": 5.72,
+      "dialogue": {
+        "text": "Excellent. Can you share details about your educational background? Were you trained in a specific field?",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Anna",
+      "opacity": 0,
+      "startTime": 6
+    },
+    {
+      "character": "Second Candidate",
+      "opacity": 1,
+      "startTime": 6
+    },
+    {
+      "character": "Second Candidate",
+      "startTime": 6.36,
+      "finishTime": 9.34,
+      "dialogue": {
+        "text": "Yes. I have a master's degree in computer science.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Second Candidate",
+      "opacity": 0,
+      "startTime": 9.84
+    }
+  ]
+}
+```

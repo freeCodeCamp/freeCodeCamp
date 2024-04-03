@@ -285,16 +285,14 @@ fieldset[disabled] .btn-primary.focus {
 .btn-cta {
   background-color: #feac32;
   background-image: linear-gradient(#fecc4c, #ffac33);
-  border-width: 3px;
-  border-color: #feac32;
+  border: 3px solid #feac32;
   color: #0a0a23 !important;
 }
 .btn-cta:hover,
 .btn-cta:focus,
 .btn-cta:active:hover {
   background-color: #fecc4c !important;
-  border-width: 3px;
-  border-color: #f1a02a;
+  border: 3px solid #f1a02a;
   background-image: none;
   color: #0a0a23 !important;
 }

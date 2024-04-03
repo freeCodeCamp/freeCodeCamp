@@ -2,7 +2,7 @@
   "name": "@freecodecamp/curriculum",
   "version": "0.0.0-next.4",
   "description": "freeCodeCamp's curriculum seed files",
-  "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
+  "license": "BSD-3-Clause",
   "private": true,
   "engines": {
     "node": ">=16",
