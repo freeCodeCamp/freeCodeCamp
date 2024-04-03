@@ -92,6 +92,8 @@ const Modal = ({
     panelClasses = panelClasses.concat(' ', 'w-[600px]');
   } else if (size === 'large') {
     panelClasses = panelClasses.concat(' ', 'w-[900px]');
+  } else if (size === 'xLarge') {
+    panelClasses = panelClasses.concat(' ', 'sm:w-[95vw] md:w-[90vw]');
   }
 
   if (variant === 'default') {

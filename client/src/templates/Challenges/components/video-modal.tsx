@@ -7,6 +7,8 @@ import { closeModal } from '../redux/actions';
 import { isVideoModalOpenSelector } from '../redux/selectors';
 import callGA from '../../../analytics/call-ga';
 
+import './video-modal.css';
+
 interface VideoModalProps {
   closeVideoModal: () => void;
   isOpen: boolean;
@@ -31,20 +33,20 @@ function VideoModal({
     callGA({ event: 'pageview', pagePath: '/completion-modal' });
   }
   return (
-    <Modal onClose={closeVideoModal} size='large' open={isOpen}>
+    <Modal onClose={closeVideoModal} size='xLarge' open={isOpen}>
       <Modal.Header closeButtonClassNames='close'>
         {t('buttons.watch-video')}
       </Modal.Header>
-      <Modal.Body>
-        <iframe
-          data-playwright-test-label='video-modal-video-player-iframe'
-          frameBorder='0'
-          height='500px'
-          width='100%'
-          src={videoUrl}
-          title={t('buttons.watch-video')}
-        />
-        <p>{t('learn.scrimba-tip')}</p>
+      <Modal.Body alignment='start'>
+        <div className='video-modal-body'>
+          <iframe
+            data-playwright-test-label='video-modal-video-player-iframe'
+            frameBorder='0'
+            src={videoUrl}
+            title={t('buttons.watch-video')}
+          />
+          <p>{t('learn.scrimba-tip')}</p>
+        </div>
       </Modal.Body>
     </Modal>
   );

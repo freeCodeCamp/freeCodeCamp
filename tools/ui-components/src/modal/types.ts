@@ -5,7 +5,7 @@ export interface ModalProps {
   open: boolean;
   onClose: () => void;
   onKeyDown?: React.KeyboardEventHandler;
-  size?: 'large' | 'medium';
+  size?: 'medium' | 'large' | 'xLarge';
   variant?: 'default' | 'danger';
 }
 
