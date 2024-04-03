@@ -1,6 +1,6 @@
 ---
 id: 5900f3aa1000cf542c50febd
-title: 'Problem 62: Cubic permutations'
+title: 'Problem 62: Kubische Permutationen'
 challengeType: 1
 forumTopicId: 302174
 dashedName: problem-62-cubic-permutations
@@ -8,9 +8,9 @@ dashedName: problem-62-cubic-permutations
 
 # --description--
 
-The cube, 41063625 ($345^3$), can be permuted to produce two other cubes: 56623104 ($384^3$) and 66430125 ($405^3$). In fact, 41063625 is the smallest cube which has exactly three permutations of its digits which are also cube.
+Der Würfel 41063625 ($345^3$) kann so permutiert werden, dass zwei weitere Würfel entstehen: 56623104 ($384^3$) und 66430125 ($405^3$). Tatsächlich ist 41063625 der kleinste Würfel, der genau drei Permutationen seiner Ziffern hat, die ebenfalls Würfel sind.
 
-Find the smallest cube for which exactly `n` permutations of its digits are cube.
+Finde den kleinsten Würfel, für den genau `n`-Permutationen seiner Ziffern würfelförmig sind.
 
 # --hints--
 

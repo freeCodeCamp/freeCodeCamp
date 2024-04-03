@@ -1,7 +1,7 @@
 ---
 id: 5900f4161000cf542c50ff29
 title: >-
-  Problem 170: Find the largest 0 to 9 pandigital that can be formed by concatenating products
+  Problem 170: Finde die größte Pandigitale von 0 bis 9, die durch die Verkettung von Produkten gebildet werden kann
 challengeType: 1
 forumTopicId: 301805
 dashedName: >-
@@ -10,20 +10,20 @@ dashedName: >-
 
 # --description--
 
-Take the number 6 and multiply it by each of 1273 and 9854:
+Nimm die Zahl 6 und multipliziere sie jeweils mit 1273 und 9854:
 
 $$\begin{align}   & 6 × 1273 = 7638 \\\\
   & 6 × 9854 = 59124 \\\\ \end{align}$$
 
-By concatenating these products we get the 1 to 9 pandigital 763859124. We will call 763859124 the "concatenated product of 6 and (1273, 9854)". Notice too, that the concatenation of the input numbers, 612739854, is also 1 to 9 pandigital.
+Durch Verkettung dieser Produkte erhalten wir die 1 bis 9 pandigital 763859124. Wir nennen 763859124 das "verkettete Produkt von 6 und (1273, 9854)". Beachte auch, dass die Verkettung der eingegebenen Zahlen, 612739854, ebenfalls 1 bis 9 pandigital ist.
 
-The same can be done for 0 to 9 pandigital numbers.
+Dasselbe gilt für die Ziffern 0 bis 9.
 
-What is the largest 0 to 9 pandigital 10-digit concatenated product of an integer with two or more other integers, such that the concatenation of the input numbers is also a 0 to 9 pandigital 10-digit number?
+Was ist das größte 0 bis 9 pandigitale 10-stellige verkettete Produkt einer ganzen Zahl mit zwei oder mehr anderen Integern, sodass die Verkettung der Eingangszahlen ebenfalls eine 0 bis 9 pandigitale 10-stellige Zahl ist?
 
 # --hints--
 
-`largestPandigital()` should return `9857164023`.
+`largestPandigital()` sollte `9857164023` zurückgeben.
 
 ```js
 assert.strictEqual(largestPandigital(), 9857164023);

@@ -1,6 +1,6 @@
 ---
 id: 5900f3ca1000cf542c50fedc
-title: 'Problem 93: Arithmetic expressions'
+title: 'Problem 93: Arithmetische Ausdrücke'
 challengeType: 1
 forumTopicId: 302210
 dashedName: problem-93-arithmetic-expressions
@@ -8,9 +8,9 @@ dashedName: problem-93-arithmetic-expressions
 
 # --description--
 
-By using each of the digits from the set, {1, 2, 3, 4}, exactly once, and making use of the four arithmetic operations (+, −, \*, /) and brackets/parentheses, it is possible to form different positive integer targets.
+Wenn man jede Ziffer aus dem Set, {1, 2, 3, 4}, genau einmal verwendet und die vier arithmetischen Operationen (+, −, \*, /) und Klammer/Klammern gebraucht, ist es möglich, verschiedene positive Integer-Ziele zu bilden.
 
-For example,
+Zum Beispiel,
 
 <div style='margin-left: 4em;'>
   8 = (4 * (1 + 3)) / 2<br>
@@ -19,21 +19,21 @@ For example,
   36 = 3 * 4 * (2 + 1)
 </div>
 
-Note that concatenations of the digits, like 12 + 34, are not allowed.
+Beachte, dass Verkettungen von Ziffern, wie 12 + 34, nicht zulässig sind.
 
-Using the set, {1, 2, 3, 4}, it is possible to obtain thirty-one different target numbers of which 36 is the maximum, and each of the numbers 1 to 28 can be obtained before encountering the first non-expressible number.
+Mit der Menge {1, 2, 3, 4} kann man einunddreißig verschiedene Zielzahlen erhalten, von denen 36 das Maximum ist, und jede der Zahlen 1 bis 28 kann erhalten werden, bevor man auf die erste nicht aussprechbare Zahl trifft.
 
-Find the set of four distinct digits, `a` &lt; `b` &lt; `c` &lt; `d`, for which the longest set of consecutive positive integers, 1 to `n`, can be obtained, giving your answer as a string: `abcd`.
+Finde die Menge der vier verschiedenen Ziffern, `a` &lt; `b` &lt; `c` &lt; `d`, für die die längste Menge aufeinanderfolgender positiver ganzer Zahlen, 1 bis `n`, erhalten werden kann, indem du deine Antwort als String angibst: `abcd`.
 
 # --hints--
 
-`arithmeticExpressions()` should return a number.
+`arithmeticExpressions()` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof arithmeticExpressions() === 'number');
 ```
 
-`arithmeticExpressions()` should return 1258.
+`arithmeticExpressions()` sollte 1258 zurückgeben.
 
 ```js
 assert.strictEqual(arithmeticExpressions(), 1258);

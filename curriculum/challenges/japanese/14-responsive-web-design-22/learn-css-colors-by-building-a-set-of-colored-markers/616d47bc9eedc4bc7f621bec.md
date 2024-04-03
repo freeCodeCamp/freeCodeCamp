@@ -7,7 +7,7 @@ dashedName: step-10
 
 # --description--
 
-Next, within the `div` element, add another `div` element and give it a class of `marker`.
+次に、その `div` 要素内に別の `div` 要素を追加して、`marker` のクラスを設定してください。
 
 # --hints--
 
