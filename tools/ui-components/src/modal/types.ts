@@ -4,7 +4,8 @@ export interface ModalProps {
   children: ReactNode;
   open: boolean;
   onClose: () => void;
-  size?: 'large' | 'medium';
+  onKeyDown?: React.KeyboardEventHandler;
+  size?: 'medium' | 'large' | 'xLarge';
   variant?: 'default' | 'danger';
 }
 
@@ -32,7 +33,14 @@ export interface BodyProps {
    * Use `left` if the modal body contains code blocks.
    */
   alignment?: 'center' | 'left' | 'start';
+
   borderless?: boolean;
+
+  /**
+   * This is an escape hatch for cases where the component doesn't meet your design requirements.
+   * Use this option sparingly.
+   */
+  className?: string;
 }
 
 export interface FooterProps {

@@ -65,13 +65,18 @@ const Header = ({
   );
 };
 
-const Body = ({ children, alignment = 'center', borderless }: BodyProps) => {
+const Body = ({
+  children,
+  alignment = 'center',
+  borderless,
+  className
+}: BodyProps) => {
   const borderClasses = borderless
     ? ''
     : 'border-b-1 border-solid border-foreground-secondary';
 
   return (
-    <div className={`p-[15px] text-${alignment} ${borderClasses}`}>
+    <div className={`p-[15px] text-${alignment} ${borderClasses} ${className}`}>
       {children}
     </div>
   );
@@ -91,6 +96,7 @@ const Modal = ({
   children,
   open,
   onClose,
+  onKeyDown,
   size = 'medium',
   variant = 'default'
 }: ModalProps) => {
@@ -100,6 +106,8 @@ const Modal = ({
     panelClasses = panelClasses.concat(' ', 'w-[600px]');
   } else if (size === 'large') {
     panelClasses = panelClasses.concat(' ', 'w-[900px]');
+  } else if (size === 'xLarge') {
+    panelClasses = panelClasses.concat(' ', 'w-[95vw] md:w-[90vw]');
   }
 
   if (variant === 'default') {
@@ -111,12 +119,18 @@ const Modal = ({
   return (
     <ModalContext.Provider value={{ onClose, variant }}>
       <Transition.Root show={open} as={Fragment}>
-        <Dialog onClose={onClose} className='relative z-1050 w-screen h-screen'>
+        <Dialog
+          onClose={onClose}
+          className='relative z-1050 w-screen h-screen'
+          onKeyDown={onKeyDown}
+        >
           {/* The backdrop, rendered as a fixed sibling to the panel container */}
           <div aria-hidden className='fixed inset-0 bg-gray-900 opacity-50' />
 
           {/* Full-screen container of the panel */}
-          <div className='fixed inset-0 flex items-start justify-center pt-[30px] pb-[30px] overflow-scroll'>
+          <div
+            className={`fixed inset-0 flex items-start justify-center p-[10px] md:pt-[30px] md:pb-[30px] overflow-scroll`}
+          >
             <Transition.Child
               as={Fragment}
               enter='transition-all duration-300 ease-out'
