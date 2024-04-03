@@ -19,7 +19,7 @@ interface FoudationalCSharpSurveyAlertProps {
   openSurveyModal: () => void;
 }
 
-function FoudationalCSharpSurveyAlert({
+function FoundationalCSharpSurveyAlert({
   openSurveyModal
 }: FoudationalCSharpSurveyAlertProps): JSX.Element {
   const { t } = useTranslation();
@@ -45,6 +45,6 @@ function FoudationalCSharpSurveyAlert({
   );
 }
 
-FoudationalCSharpSurveyAlert.displayName = 'FoundationalCSharpSurveyAlert';
+FoundationalCSharpSurveyAlert.displayName = 'FoundationalCSharpSurveyAlert';
 
-export default connect(null, mapDispatchToProps)(FoudationalCSharpSurveyAlert);
+export default connect(null, mapDispatchToProps)(FoundationalCSharpSurveyAlert);

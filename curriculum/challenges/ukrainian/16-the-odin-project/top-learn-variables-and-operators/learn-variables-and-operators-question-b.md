@@ -1,27 +1,27 @@
 ---
 id: 65e18d61500d930ce8ed90a5
-title: Learn Variables and Operators Question B
+title: Вивчіть змінні та оператори. Запитання B
 challengeType: 15
 dashedName: learn-variables-and-operators-question-b
 ---
 
 # --description--
 
-You can think of variables as "storage containers" for data in your code.
+Змінні можна вважати «тарою для збереження» даних в коді.
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/variables-and-operators/top-learn-variables-and-operators.png" alt='the concept of variables in coding as boxes labeled "birthday" that store and provide access to data, specifically a date "16-09-2003"' />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/variables-and-operators/top-learn-variables-and-operators.png" alt='поняття змінних в програмуванні як коробки з позначкою «birthday», які зберігають та надають дані, а саме дату «16-09-2003»' />
 
-A variable is a "named storage" for data. You can use variables to store goodies, visitors, and other data.
+Змінна — це «іменоване сховище» для даних. Змінні можна використовувати для збереження продуктів, відвідувачів та інших даних.
 
-To create a variable in JavaScript, use the `let` keyword.
+Використайте ключове слово `let`, щоб створити змінну в JavaScript.
 
-The statement below creates (in other words: declares) a variable with the name "message":
+Інструкція нижче створює (або іншими словами, оголошує) змінну під назвою «message»:
 
 ```js
 let message;
 ```
 
-Now, you can put some data into it by using the assignment operator `=`:
+Тепер до неї можна додати певні дані, використовуючи оператор присвоєння `=`:
 
 ```js
 let message;
@@ -30,7 +30,7 @@ let message;
 message = 'Hello'; 
 ```
 
-To be concise, you can combine the variable declaration and assignment into a single line:
+Щоб зменшити код, можна об’єднати оголошення змінної та присвоєння в один рядок:
 
 ```js
 let message = 'Hello';
@@ -41,23 +41,23 @@ let message = 'Hello';
 
 ## --text--
 
-What is the purpose of using the `let` keyword in JavaScript?
+Для чого використовують ключове слово `let` в JavaScript?
 
 ## --answers--
 
-To perform mathematical operations.
+Щоб виконати математичні операції.
 
 ---
 
-To declare a constant value that cannot be changed.
+Щоб оголосити константне значення, яке неможливо змінити.
 
 ---
 
-To declare a variable that can store data, which can be assigned and changed.
+Щоб оголосити змінну, що може зберігати дані, які можна призначити і змінити.
 
 ---
 
-To create a function.
+Щоб створити функцію.
 
 
 ## --video-solution--

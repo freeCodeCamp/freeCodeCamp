@@ -1,10 +1,10 @@
-import { Modal } from '@freecodecamp/react-bootstrap';
 import { WindowLocation } from '@reach/router';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
+import { Modal } from '@freecodecamp/ui';
 
 import { closeDonationModal } from '../../redux/actions';
 import {
@@ -65,13 +65,7 @@ function DonateModal({
   };
 
   return (
-    <Modal
-      bsSize='lg'
-      className='donation-modal'
-      onExited={handleModalHide}
-      show={show}
-      data-cy='donation-modal'
-    >
+    <Modal size='large' onClose={handleModalHide} open={show}>
       <DonationModalBody
         closeDonationModal={closeDonationModal}
         recentlyClaimedBlock={recentlyClaimedBlock}

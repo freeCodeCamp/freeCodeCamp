@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Modal } from '@freecodecamp/react-bootstrap';
 import { Trans, useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/ui';
+import { Button, Modal } from '@freecodecamp/ui';
 
 import store from 'store';
 import { Spacer } from '../helpers';
@@ -17,23 +16,11 @@ function StagingWarningModal(): JSX.Element {
     setShow(false);
   };
   return (
-    <Modal
-      aria-labelledby='modal-title'
-      backdrop={true}
-      bsSize='lg'
-      className='text-center'
-      keyboard={true}
-      onHide={handleModalHide}
-      onClose={handleModalHide}
-      show={show}
-      data-testid={'staging-warning-modal'}
-    >
-      <Modal.Header closeButton={true}>
-        <Modal.Title id='modal-title' bsSize='lg'>
-          <span style={{ fontWeight: 'bold' }}>
-            {t('staging-warning.heading')}
-          </span>
-        </Modal.Title>
+    <Modal onClose={handleModalHide} open={show} size='large'>
+      <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
+        <span style={{ fontWeight: 'bold' }}>
+          {t('staging-warning.heading')}
+        </span>
       </Modal.Header>
       <Modal.Body>
         <p className='text-justify'>{t('staging-warning.p1')}</p>

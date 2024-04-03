@@ -1,6 +1,6 @@
 ---
 id: 5900f4131000cf542c50ff25
-title: 'Problem 166: Criss Cross'
+title: 'Problem 166: Kreuz und quer'
 challengeType: 1
 forumTopicId: 301800
 dashedName: problem-166-criss-cross
@@ -8,21 +8,21 @@ dashedName: problem-166-criss-cross
 
 # --description--
 
-A 4x4 grid is filled with digits $d$, $0 ≤ d ≤ 9$.
+Ein 4x4-Gitter ist mit Ziffern $d$, $0 ≤ d ≤ 9$ gefüllt.
 
-It can be seen that in the grid
+Es ist zu erkennen, dass in dem Gitter
 
 $$\begin{array}{}   6 & 3 & 3 & 0 \\\\
   5 & 0 & 4 & 3 \\\\   0 & 7 & 1 & 4 \\\\
   1 & 2 & 4 & 5 \end{array}$$
 
-the sum of each row and each column has the value 12. Moreover the sum of each diagonal is also 12.
+die Summe von jeder Zeile und jeder Spalte den Wert 12 hat. Darüber hinaus ist die Summe jeder Diagonale auch 12.
 
-In how many ways can you fill a 4x4 grid with the digits $d$, $0 ≤ d ≤ 9$ so that each row, each column, and both diagonals have the same sum?
+Auf wie viele Arten kann man ein 4x4-Gitter mit den Ziffern $d$, $0 ≤ d ≤ 9$ so füllen, dass jede Zeile, jede Spalte und beide Diagonalen die gleiche Summe haben?
 
 # --hints--
 
-`crissCross()` should return `7130034`.
+`crissCross()` sollte `7130034` zurückgeben.
 
 ```js
 assert.strictEqual(crissCross(), 7130034);

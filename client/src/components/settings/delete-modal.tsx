@@ -1,7 +1,6 @@
-import { Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/ui';
+import { Button, Modal } from '@freecodecamp/ui';
 
 import { Spacer } from '../helpers';
 
@@ -16,19 +15,9 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
   const email = 'support@freecodecamp.org';
   const { t } = useTranslation();
   return (
-    <Modal
-      aria-labelledby='modal-title'
-      backdrop={true}
-      bsSize='lg'
-      className='text-center'
-      keyboard={true}
-      onHide={onHide}
-      show={show}
-    >
-      <Modal.Header closeButton={true}>
-        <Modal.Title id='modal-title'>
-          {t('settings.danger.delete-title')}
-        </Modal.Title>
+    <Modal onClose={onHide} open={show} variant='danger' size='large'>
+      <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
+        {t('settings.danger.delete-title')}
       </Modal.Header>
       <Modal.Body>
         <p>{t('settings.danger.delete-p1')}</p>
@@ -40,7 +29,8 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
             </a>
           </Trans>
         </p>
-        <hr />
+      </Modal.Body>
+      <Modal.Footer>
         <Button
           block={true}
           size='large'
@@ -60,9 +50,6 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
         >
           {t('settings.danger.certain')}
         </Button>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>{t('buttons.close')}</Button>
       </Modal.Footer>
     </Modal>
   );

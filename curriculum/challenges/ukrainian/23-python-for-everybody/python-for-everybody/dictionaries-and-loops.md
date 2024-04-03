@@ -12,7 +12,7 @@ dashedName: dictionaries-and-loops
 
 # --description--
 
-More resources:
+Додаткові ресурси:
 
 \- <a href="https://www.youtube.com/watch?v=PrhZ9qwBDD8" target="_blank" rel="noopener noreferrer nofollow">Вправа</a>
 

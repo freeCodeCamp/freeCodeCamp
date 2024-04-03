@@ -1,11 +1,10 @@
 // Package Utilities
-import { Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/ui';
+import { Button, Modal } from '@freecodecamp/ui';
 
 // Local Utilities
 import { closeModal } from '../../redux/actions';
@@ -44,22 +43,14 @@ function FinishExamModal({
   const { t } = useTranslation();
 
   return (
-    <Modal
-      animation={false}
-      dialogClassName='finish-exam-modal'
-      keyboard={true}
-      onHide={closeFinishExamModal}
-      show={isFinishExamModalOpen}
-    >
-      <Modal.Header className='finish-exam-modal-header' closeButton={true}>
-        <Modal.Title className='text-center'>
-          {t('learn.exam.finish-header')}
-        </Modal.Title>
+    <Modal onClose={closeFinishExamModal} open={isFinishExamModalOpen}>
+      <Modal.Header closeButtonClassNames='close'>
+        {t('learn.exam.finish-header')}
       </Modal.Header>
-      <Modal.Body className='reset-modal-body'>
+      <Modal.Body>
         <div className='text-center'>{t('learn.exam.finish')}</div>
       </Modal.Body>
-      <Modal.Footer className='reset-modal-footer'>
+      <Modal.Footer>
         <Button
           data-cy='finish-exam-modal-confirm'
           block={true}

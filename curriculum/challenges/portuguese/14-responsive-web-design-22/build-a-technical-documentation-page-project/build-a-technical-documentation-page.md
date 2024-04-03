@@ -200,7 +200,7 @@ const linkText = Array.from(document.querySelectorAll('.nav-link')).map(el =>
   el.innerText?.trim().toUpperCase()
 )
 const remainder = headerText.filter(str => linkText.indexOf(str) === -1)
-assert(headerText.length > 0 && headerText.length > 0 && remainder.length === 0)
+assert(headerText.length > 0 && linkText.length > 0 && remainder.length === 0)
 ```
 
 Cada `.nav-link` deve ter um atributo `href` que vincule à sua `.main-section` correspondente (por exemplo: se você clicar em um elemento `.nav-link` que contenha o texto "Olá mundo", a página navegará para o elemento `section` com aquele id).

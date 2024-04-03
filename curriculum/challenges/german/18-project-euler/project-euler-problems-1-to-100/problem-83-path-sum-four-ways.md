@@ -1,6 +1,6 @@
 ---
 id: 5900f3bf1000cf542c50fed2
-title: 'Problem 83: Path sum: four ways'
+title: 'Problem 83: Pfadsumme: vier Pfade'
 challengeType: 1
 forumTopicId: 302197
 dashedName: problem-83-path-sum-four-ways
@@ -8,31 +8,31 @@ dashedName: problem-83-path-sum-four-ways
 
 # --description--
 
-**Note:** This problem is a significantly more challenging version of Problem 81.
+**Hinweis:** Dieses Problem ist eine deutlich anspruchsvollere Version von Problem 81.
 
-In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom right, by moving left, right, up, and down, is indicated in bold red and is equal to `2297`.
+In der 5 x 5-Matrix unten ist die minimale Pfadsumme von links oben nach rechts unten, wenn man sich nach links, rechts, oben und unten bewegt, in fetter roter Schrift dargestellt und ist gleich `2297`.
 
   $$\begin{pmatrix}   \color{red}{131} & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\
   \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & \color{red}{150}\\\\   630 & 803 & 746 & \color{red}{422} & \color{red}{111}\\\\
   537 & 699 & 497 & \color{red}{121} & 956\\\\ 805 & 732 & 524 & \color{red}{37} & \color{red}{331} \end{pmatrix}$$
 
-Find the minimal path sum from the top left to the bottom right by moving left, right, up, and down in `matrix`, a 2D array representing a matrix. The maximum matrix size used in tests will be 80 by 80.
+Finde die minimale Wegsumme von links oben nach rechts unten, indem du dich in `matrix`, einem 2D-Array, das eine Matrix darstellt, nach links, rechts, oben und unten bewegst. Die in den Tests verwendete maximale Matrixgröße beträgt 80 x 80.
 
 # --hints--
 
-`pathSumFourWays(testMatrix1)` should return a number.
+`pathSumFourWays(testMatrix1)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof pathSumFourWays(_testMatrix1) === 'number');
 ```
 
-`pathSumFourWays(testMatrix1)` should return `2297`.
+`pathSumFourWays(testMatrix1)` sollte `2297` zurückgeben.
 
 ```js
 assert.strictEqual(pathSumFourWays(_testMatrix1), 2297);
 ```
 
-`pathSumFourWays(testMatrix2)` should return `425185`.
+`pathSumFourWays(testMatrix2)` sollte `425185` zurückgeben.
 
 ```js
 assert.strictEqual(pathSumFourWays(_testMatrix2), 425185);

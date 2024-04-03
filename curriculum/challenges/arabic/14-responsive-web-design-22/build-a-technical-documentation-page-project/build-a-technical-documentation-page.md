@@ -200,7 +200,7 @@ const linkText = Array.from(document.querySelectorAll('.nav-link')).map(el =>
   el.innerText?.trim().toUpperCase()
 )
 const remainder = headerText.filter(str => linkText.indexOf(str) === -1)
-assert(headerText.length > 0 && headerText.length > 0 && remainder.length === 0)
+assert(headerText.length > 0 && linkText.length > 0 && remainder.length === 0)
 ```
 
 يجب أن يكون لكل `.nav-link` سمة `href` التي تربط مع `.main-section` (على سبيل المثال، إذا نقرت على العنصر `.nav-link` الذي يحتوي على النص "Hello world"، تنتقل الصفحة إلى عنصر `section` بهذا المعرف (id)).
