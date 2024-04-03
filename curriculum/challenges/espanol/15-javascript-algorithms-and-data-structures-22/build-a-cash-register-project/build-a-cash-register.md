@@ -1,6 +1,6 @@
 ---
 id: 657bdcc3a322aae1eac38392
-title: Build a Cash Register
+title: Construye una Caja Registradora
 challengeType: 14
 forumTopicId: 16012
 dashedName: build-a-cash-register
@@ -8,9 +8,9 @@ dashedName: build-a-cash-register
 
 # --description--
 
-Here you'll build a cash register app that will return change to the customer based on the price of the item, the amount of cash provided by the customer, and the amount of cash in the cash drawer. You'll also need to show different messages to the user in different scenarios, such as when the customer provides too little cash or when the cash drawer doesn't have enough to issue the correct change.
+Aquí construirás una aplicación de caja registradora que devolverá el cambio al cliente según el precio del artículo, el monto de dinero proporcionado por el cliente, y la cantidad de dinero en la caja de efectivo. También deberás mostrar diferentes mensajes al usuario en diferentes escenarios, tales como cuando el cliente proporciona muy poco dinero en efectivo o cuando la caja registradora no tiene suficiente para emitir el cambio correcto.
 
-In the `script.js` file, you have been provided with the `price` and `cid` variables. The `price` variable is the price of the item, and the `cid` variable is the cash-in-drawer, which is a 2D array listing the available currency in the cash drawer.
+En el archivo `script.js`, se te han proporcionado las variables `price` y `cid`. La variable `price` es el precio del artículo, y la variable `cid` es el cambio que hay caja, que es un arreglo 2D que enumera la moneda disponible en la caja registradora.
 
 The other variable you will need add is the `cash` variable, which is the amount of cash provided by the customer for the item, which is provided via an `input` element on the page.
 
