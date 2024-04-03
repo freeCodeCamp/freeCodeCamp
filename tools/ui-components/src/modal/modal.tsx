@@ -1,13 +1,8 @@
-import React, {
-  type ReactNode,
-  createContext,
-  useContext,
-  Fragment
-} from 'react';
+import React, { createContext, useContext, Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
 import { CloseButton } from '../close-button';
-import { type ModalProps, type HeaderProps, BodyProps } from './types';
+import type { ModalProps, HeaderProps, BodyProps, FooterProps } from './types';
 
 // There is a close button on the right side of the modal title.
 // Some extra padding needs to be added to the left of the title text
@@ -18,8 +13,7 @@ const TITLE_LEFT_PADDING = 24;
 const PANEL_DEFAULT_CLASSES =
   'flex flex-col border-solid border-1 border-foreground-secondary bg-background-secondary';
 
-const HEADER_DEFAULT_CLASSES =
-  'p-[15px] border-b-1 border-solid border-foreground-secondary';
+const HEADER_DEFAULT_CLASSES = 'p-[15px]';
 
 const ModalContext = createContext<Pick<ModalProps, 'onClose' | 'variant'>>({
   onClose: () => {},
@@ -29,7 +23,8 @@ const ModalContext = createContext<Pick<ModalProps, 'onClose' | 'variant'>>({
 const Header = ({
   children,
   showCloseButton = true,
-  closeButtonClassNames
+  closeButtonClassNames,
+  borderless
 }: HeaderProps) => {
   const { onClose, variant } = useContext(ModalContext);
 
@@ -37,6 +32,13 @@ const Header = ({
 
   if (variant === 'danger') {
     classes = classes.concat(' ', 'bg-foreground-danger');
+  }
+
+  if (!borderless) {
+    classes = classes.concat(
+      ' ',
+      'border-b-1 border-solid border-foreground-secondary'
+    );
   }
 
   if (showCloseButton) {
@@ -63,18 +65,26 @@ const Header = ({
   );
 };
 
-const Body = ({ children, alignment = 'center' }: BodyProps) => {
+const Body = ({ children, alignment = 'center', borderless }: BodyProps) => {
+  const borderClasses = borderless
+    ? ''
+    : 'border-b-1 border-solid border-foreground-secondary';
+
   return (
-    <div
-      className={`p-[15px] border-b-1 border-solid border-foreground-secondary text-${alignment}`}
-    >
+    <div className={`p-[15px] text-${alignment} ${borderClasses}`}>
       {children}
     </div>
   );
 };
 
-const Footer = ({ children }: { children: ReactNode }) => {
-  return <div className='p-[15px]'>{children}</div>;
+const Footer = ({ children, alignment = 'center' }: FooterProps) => {
+  if (alignment === 'end') {
+    return <div className='p-[15px] flex justify-end'>{children}</div>;
+  }
+
+  return (
+    <div className={`p-[15px] flex flex-col justify-center`}>{children}</div>
+  );
 };
 
 const Modal = ({
@@ -101,12 +111,12 @@ const Modal = ({
   return (
     <ModalContext.Provider value={{ onClose, variant }}>
       <Transition.Root show={open} as={Fragment}>
-        <Dialog onClose={onClose} className='relative z-1050'>
+        <Dialog onClose={onClose} className='relative z-1050 w-screen h-screen'>
           {/* The backdrop, rendered as a fixed sibling to the panel container */}
           <div aria-hidden className='fixed inset-0 bg-gray-900 opacity-50' />
 
           {/* Full-screen container of the panel */}
-          <div className='fixed inset-0 w-screen flex items-start justify-center pt-[30px]'>
+          <div className='fixed inset-0 flex items-start justify-center pt-[30px] pb-[30px] overflow-scroll'>
             <Transition.Child
               as={Fragment}
               enter='transition-all duration-300 ease-out'

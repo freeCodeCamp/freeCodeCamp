@@ -6,7 +6,7 @@ import {
 } from '../../jest.utils';
 import { createUserInput } from '../utils/create-user';
 
-import { isPictureWithProtocol } from './settings';
+import { isPictureWithProtocol, getWaitMessage } from './settings';
 
 const baseProfileUI = {
   isLocked: false,
@@ -764,5 +764,51 @@ Please wait 5 minutes to resend an authentication link.`
       expect(isPictureWithProtocol('tp://www.example.com/')).toEqual(false);
       expect(isPictureWithProtocol('www.example.com/')).toEqual(false);
     });
+  });
+});
+
+describe('getWaitMessage', () => {
+  const sec = 1000;
+  const min = 60 * 1000;
+  it.each([
+    {
+      sentAt: new Date(0),
+      now: new Date(0),
+      expected: 'Please wait 5 minutes to resend an authentication link.'
+    },
+    {
+      sentAt: new Date(0),
+      now: new Date(59 * sec),
+      expected: 'Please wait 5 minutes to resend an authentication link.'
+    },
+    {
+      sentAt: new Date(0),
+      now: new Date(4 * min),
+      expected: 'Please wait 1 minute to resend an authentication link.'
+    },
+    {
+      sentAt: new Date(0),
+      now: new Date(4 * min + 59 * sec),
+      expected: 'Please wait 1 minute to resend an authentication link.'
+    },
+    {
+      sentAt: new Date(0),
+      now: new Date(5 * min),
+      expected: null
+    }
+  ])(
+    `returns "$expected" when sentAt is $sentAt and now is $now`,
+    ({ sentAt, now, expected }) => {
+      expect(getWaitMessage({ sentAt, now })).toEqual(expected);
+    }
+  );
+
+  it('returns null when sentAt is null', () => {
+    expect(getWaitMessage({ sentAt: null, now: new Date(0) })).toBeNull();
+  });
+  it('uses the current time when now is not provided', () => {
+    expect(getWaitMessage({ sentAt: new Date() })).toEqual(
+      'Please wait 5 minutes to resend an authentication link.'
+    );
   });
 });

@@ -1,15 +1,15 @@
 ---
 id: 648acb0745e79f79650fa2ac
-title: The Cascade of CSS Question H
+title: Die CSS-Kaskade Frage H
 challengeType: 15
 dashedName: the-cascade-of-css-question-h
 ---
 
 # --description--
 
-The final factor, the end of the line, the tie-breaker of the tie-breaker. Let’s say that after every other factor has been taken into account, there are still multiple conflicting rules targeting an element. How does the cascade determine which rule to apply?
+Der letzte Aspekt, das Ende der Fahnenstange, ist der Tie-Breaker des Tie-Breakers. Angenommen, nach Berücksichtigung aller anderen Aspekte gibt es immer noch mehrere widersprüchliche Regeln, die auf ein Element abzielen. Wie bestimmt die Kaskade, welche Regel anzuwenden ist?
 
-Really simply, actually. Whichever rule was the last defined is the winner.
+Eigentlich ganz einfach. Welche Regel auch immer als letztes definiert wurde, ist der Gewinner.
 
 ```css
 /* styles.css */
@@ -23,28 +23,28 @@ Really simply, actually. Whichever rule was the last defined is the winner.
 }
 ```
 
-For an element that has both the `alert` and `warning` classes, the cascade would run through every other factor, including inheritance (none here) and specificity (neither rule is more specific than the other). Since the `.warning` rule was the last one defined, and no other factor was able to determine which rule to apply, it’s the one that gets applied to the element.
+Bei einem Element, das sowohl die `alert`- als auch die `warning`-Klasse hat, würde die Kaskade alle anderen Faktoren durchlaufen, einschließlich Vererbung (hier gibt es keine) und Spezifität (keine Regel ist spezifischer als die andere). Da die Regel `.warning` die letzte war, die definiert wurde, und kein anderer Faktor in der Lage war, zu bestimmen, welche Regel anzuwenden ist, wird sie auf das Element angewendet.
 
 # --question--
 ## --text--
 
-What determines which CSS rule is applied when there are conflicting rules targeting the same element?
+Was bestimmt, welche CSS-Regel angewendet wird, wenn es widersprüchliche Regeln für dasselbe Element gibt?
 
 ## --answers--
 
-The specificity of the CSS rule.
+Die Spezifität der CSS-Regel.
 
 ---
 
-The inheritance hierarchy of the element.
+Die Hierarchie der Vererbung des Elements.
 
 ---
 
-The presence of classes or IDs on the element.
+Das Anwesenheit von Klassen oder IDs auf dem Element.
 
 ---
 
-The order in which the rules were defined.
+Die Reihenfolge, in der die Regeln definiert wurden.
 
 ## --video-solution--
 
