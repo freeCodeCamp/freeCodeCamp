@@ -13,8 +13,7 @@ const TITLE_LEFT_PADDING = 24;
 const PANEL_DEFAULT_CLASSES =
   'flex flex-col border-solid border-1 border-foreground-secondary bg-background-secondary';
 
-const HEADER_DEFAULT_CLASSES =
-  'p-[15px] border-b-1 border-solid border-foreground-secondary';
+const HEADER_DEFAULT_CLASSES = 'p-[15px]';
 
 const ModalContext = createContext<Pick<ModalProps, 'onClose' | 'variant'>>({
   onClose: () => {},
@@ -24,7 +23,8 @@ const ModalContext = createContext<Pick<ModalProps, 'onClose' | 'variant'>>({
 const Header = ({
   children,
   showCloseButton = true,
-  closeButtonClassNames
+  closeButtonClassNames,
+  borderless
 }: HeaderProps) => {
   const { onClose, variant } = useContext(ModalContext);
 
@@ -32,6 +32,13 @@ const Header = ({
 
   if (variant === 'danger') {
     classes = classes.concat(' ', 'bg-foreground-danger');
+  }
+
+  if (!borderless) {
+    classes = classes.concat(
+      ' ',
+      'border-b-1 border-solid border-foreground-secondary'
+    );
   }
 
   if (showCloseButton) {
@@ -58,11 +65,13 @@ const Header = ({
   );
 };
 
-const Body = ({ children, alignment = 'center' }: BodyProps) => {
+const Body = ({ children, alignment = 'center', borderless }: BodyProps) => {
+  const borderClasses = borderless
+    ? ''
+    : 'border-b-1 border-solid border-foreground-secondary';
+
   return (
-    <div
-      className={`p-[15px] border-b-1 border-solid border-foreground-secondary text-${alignment}`}
-    >
+    <div className={`p-[15px] text-${alignment} ${borderClasses}`}>
       {children}
     </div>
   );

@@ -34,6 +34,10 @@ describe('Donate page', () => {
     projects.forEach(project => submitProject(project));
 
     // pop up modal
-    cy.get("[data-cy='donation-modal']");
+    cy.get("div[role='dialog']")
+      .contains(
+        'Help us develop free professional programming certifications for all.'
+      )
+      .should('be.visible');
   });
 });
