@@ -148,7 +148,7 @@ function HelpModal({
     callGA({ event: 'pageview', pagePath: '/help-modal' });
   }
   return (
-    <Modal onClose={handleClose} open={isOpen ?? false}>
+    <Modal onClose={handleClose} open={!!isOpen}>
       <Modal.Header closeButtonClassNames='close'>
         {t('buttons.ask-for-help')}
       </Modal.Header>

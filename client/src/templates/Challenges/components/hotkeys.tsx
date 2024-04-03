@@ -128,7 +128,7 @@ function Hotkeys({
   ].some(Boolean);
 
   const keyMap = {
-    // The Modal component needs listen to the 'Escape' keypress event
+    // The Modal component needs to listen to the 'Escape' keypress event
     // in order to close itself when the key is press.
     // Therefore, we don't want HotKeys to hijack the 'escape' event when a modal is open.
     navigationMode: isModalOpen ? '' : 'escape',

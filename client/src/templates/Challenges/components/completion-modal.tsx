@@ -167,7 +167,7 @@ class CompletionModal extends Component<
     return (
       <Modal
         onClose={close}
-        open={isOpen}
+        open={!!isOpen}
         size='large'
         // eslint-disable-next-line @typescript-eslint/unbound-method
         onKeyDown={isOpen ? this.handleKeypress : undefined}
