@@ -259,10 +259,11 @@ li.disabled > a {
   }
 }
 
-.donation-modal .modal-title {
-  text-align: center;
-  font-weight: 600;
+.donation-modal h2 {
+  font-weight: 600 !important;
   font-size: 1.2rem;
+  /* TODO: Remove this rule once https://github.com/freeCodeCamp/freeCodeCamp/issues/54047 is resolved */
+  font-family: var(--font-family-sans-serif);
 }
 
 .donation-modal b {
@@ -325,11 +326,6 @@ li.disabled > a {
   text-decoration-line: none;
   background-color: var(--quaternary-background);
   color: var(--quaternary-color);
-}
-
-.donation-modal h2 {
-  font-family: var(--font-family-sans-serif);
-  font-size: 1.5rem;
 }
 
 @media (max-width: 500px) {
@@ -401,8 +397,8 @@ li.disabled > a {
     margin: 40px;
   }
 
-  .donation-modal .modal-title {
-    font-weight: 700;
+  .donation-modal h2 {
+    font-weight: 700 !important;
     font-size: 1.5rem;
   }
 }
