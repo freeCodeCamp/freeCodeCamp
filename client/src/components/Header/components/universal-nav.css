@@ -70,6 +70,7 @@
   justify-content: flex-end;
   list-style: none;
   padding: 0;
+  margin: 0;
   position: absolute;
   right: 0;
   width: 100%;
@@ -128,13 +129,12 @@
 .nav-link {
   display: flex;
   align-items: center;
-  padding: 2px 15px 0;
+  padding: 2px 0px 2px 15px;
   color: var(--gray-00);
   background-color: var(--gray-90);
   white-space: normal;
   min-height: var(--header-sub-element-size);
   width: 100%;
-  height: 100%;
   border: none;
 }
 
@@ -262,8 +262,8 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
  */
 .avatar-nav-link {
   display: block;
-  height: var(--header-element-size);
-  width: var(--header-element-size);
+  height: 24px;
+  width: 24px;
 }
 
 .avatar-nav-link:hover,
@@ -312,6 +312,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   overflow-y: auto;
   scrollbar-width: none;
   text-align: left;
+  margin: 0;
   top: calc(var(--header-height) + var(--header-sub-element-size));
 }
 
