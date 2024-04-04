@@ -33,7 +33,7 @@ dashedName: turn-an-image-into-a-link
 assert($('a').children('img').length > 0);
 ```
 
-`a` 요소는 `href` 속성이 `#`로 지정된 없는 링크여야 합니다.
+Your `a` element should be a dead link with an `href` attribute set to `#`.
 
 ```js
 assert(new RegExp('#').test($('a').children('img').parent().attr('href')));

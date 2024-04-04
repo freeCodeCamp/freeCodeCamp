@@ -1,6 +1,6 @@
 ---
 id: 5900f45c1000cf542c50ff6e
-title: 'Problem 239: Twenty-two Foolish Primes'
+title: 'Problem 239: Zweiundzwanzig dumme Primzahlen'
 challengeType: 1
 forumTopicId: 301884
 dashedName: problem-239-twenty-two-foolish-primes
@@ -8,15 +8,15 @@ dashedName: problem-239-twenty-two-foolish-primes
 
 # --description--
 
-A set of disks numbered 1 through 100 are placed in a line in random order.
+Ein Satz Disketten nummeriert von 1 bis 100 sind in einer Reihe in zufälliger Reihenfolge angeordnet.
 
-What is the probability that we have a partial derangement such that exactly 22 prime number discs are found away from their natural positions? (Any number of non-prime disks may also be found in or out of their natural positions.)
+Wie groß ist die Wahrscheinlichkeit, dass wir eine Teilversetzung haben bei der genau 22 Primzahl-Scheiben außerhalb ihrer natürlichen Position gefunden werden? (Jede beliebige Anzahl von Nicht-Primzahl-Scheiben kann auch in oder außerhalb ihrer natürlichen Position gefunden werden.)
 
-Give your answer rounded to 12 places behind the decimal point in the form 0.abcdefghijkl.
+Gib deine Antwort gerundet auf 12 Dezimalstellen hinter dem Komma in Form von 0.abcdefghijkl an.
 
 # --hints--
 
-`twentyTwoFoolishPrimes()` should return `0.001887854841`.
+`twentyTwoFoolishPrimes()` sollte `0.001887854841` zurückgeben.
 
 ```js
 assert.strictEqual(twentyTwoFoolishPrimes(), 0.001887854841);

@@ -55,6 +55,7 @@ assert.ok(process.env.JWT_SECRET);
 assert.ok(process.env.STRIPE_SECRET_KEY);
 assert.ok(process.env.SHOW_UPCOMING_CHANGES);
 assert.ok(process.env.MONGOHQ_URL);
+assert.ok(process.env.COOKIE_SECRET);
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.SES_ID);
@@ -66,6 +67,7 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   );
   assert.ok(process.env.SES_REGION);
   assert.ok(process.env.COOKIE_DOMAIN);
+  assert.notEqual(process.env.COOKIE_SECRET, 'a_cookie_secret');
   assert.ok(process.env.PORT);
   assert.ok(process.env.SENTRY_DSN);
   // The following values can exist in development, but production-like
@@ -125,6 +127,7 @@ export const SENTRY_DSN =
     ? ''
     : process.env.SENTRY_DSN;
 export const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN || 'localhost';
+export const COOKIE_SECRET = process.env.COOKIE_SECRET;
 export const JWT_SECRET = process.env.JWT_SECRET;
 export const SES_ID = process.env.SES_ID;
 export const SES_SECRET = process.env.SES_SECRET;

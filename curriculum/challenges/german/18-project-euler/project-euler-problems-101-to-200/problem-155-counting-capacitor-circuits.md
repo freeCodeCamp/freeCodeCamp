@@ -8,23 +8,23 @@ dashedName: problem-155-counting-capacitor-circuits
 
 # --description--
 
-An electric circuit uses exclusively identical capacitors of the same value C.
+In einem Stromkreis werden ausschließlich identische Kondensatoren mit dem gleichen Wert C verwendet.
 
-The capacitors can be connected in series or in parallel to form sub-units, which can then be connected in series or in parallel with other capacitors or other sub-units to form larger sub-units, and so on up to a final circuit.
+Die Kondensatoren können in Reihe oder parallel geschaltet werden, um Untereinheiten zu bilden, die dann mit anderen Kondensatoren oder anderen Untereinheiten in Reihe oder parallel geschaltet werden können, um größere Untereinheiten zu bilden, und so weiter bis zu einer endgültigen Schaltung.
 
-Using this simple procedure and up to n identical capacitors, we can make circuits having a range of different total capacitances. For example, using up to $n = 3$ capacitors of $60 μF$ each, we can obtain the following 7 distinct total capacitance values:
+Mit diesem einfachen Verfahren und bis zu n identischen Kondensatoren können wir Schaltungen mit einer Reihe unterschiedlicher Gesamtkapazitäten herstellen. Bei Verwendung von bis zu $n = 3$ Kondensatoren mit je $60 μF$ ergeben sich beispielsweise die folgenden 7 unterschiedlichen Gesamtkapazitätswerte:
 
-<img class="img-responsive center-block" alt="example circuits having up to three capacitors, each of 60 μF" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="beispielhafte Schaltkreise mit bis zu drei Kondensatoren, jeweils 60 μF" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px;" />
 
-If we denote by $D(n)$ the number of distinct total capacitance values we can obtain when using up to $n$ equal-valued capacitors and the simple procedure described above, we have: $D(1) = 1, D(2) = 3, D(3)=7, \ldots$
+Wenn wir mit $D(n)$ die Anzahl der unterschiedlichen Gesamtkapazitätswerte angeben, die wir erhalten können, wenn wir bis zu $n$ gleichwertige Kondensatoren und das oben beschriebene einfache Verfahren verwenden, haben wir: $D(1) = 1, D(2) = 3, D(3)=7, ldots$
 
-Find $D(18)$.
+Finde $D(18)$.
 
-Reminder: When connecting capacitors $C_1$, $C_2$ etc in parallel, the total capacitance is $C_T = C_1 + C_2 + \cdots$, whereas when connecting them in series, the overall capacitance is given by: $\frac{1}{C_T} = \frac{1}{C_1} + \frac{1}{C_2} + \cdots$.
+Zur Erinnerung: Beim parallelen Anschluss von Kondensatoren $C_1$, $C_2$ usw. beträgt die Gesamtkapazität $C_T = C_1 + C_2 + cdots$, während beim Anschließen in Reihe die Gesamtkapazität gegeben ist durch: $\frac{1}{C_T} = \frac{1}{C_1} + \frac{1}{C_2} + \cdots$.
 
 # --hints--
 
-`capacitanceValues()` should return `3857447`.
+`capacitanceValues()` sollte `3857447` zurückgeben.
 
 ```js
 assert.strictEqual(capacitanceValues(), 3857447);

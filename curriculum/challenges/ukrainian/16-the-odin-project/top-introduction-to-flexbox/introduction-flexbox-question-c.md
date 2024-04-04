@@ -9,13 +9,13 @@ dashedName: introduction-flexbox-question-c
 
 Як не дивно, будь-який елемент може бути і гнучким контейнером, і гнучким предметом. Іншими словами, ви можете додати `display: flex` до гнучкого предмета, а потім використати flexbox, щоб розташувати його дочірні елементи.
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/flex-box/flexbox-03.png" style="width: 95%; height: 95%;" alt="a flex container that has multiple flex items, within those flex items are nested flex items as well. Making the parent of those nested flex items also a flex container." />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/flex-box/flexbox-03.png" style="width: 95%; height: 95%;" alt="гнучкий контейнер, який містить декілька гнучких предметів, які також містять вкладені гнучкі предмети. З цієї причини батьківський елемент цих вкладених гнучких предметів також є гнучким контейнером." />
 
 Створення та вкладання декількох гнучких контейнерів та предметів — це основний спосіб, яким ви будете створювати складні макети. Зображення нижче було створено виключно за допомогою flexbox, щоб розмістити, змінити розмір та розташувати різні елементи. Flexbox — це дуже потужний інструмент.
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/flex-box/flexbox-02.png" alt="a complex layout of flex items and flex containers. There are multiple flex containers nested into each other, thus making them flex items as well" />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/flex-box/flexbox-02.png" alt="складний макет гнучких предметів та гнучких контейнерів. Існує декілька гнучких контейнерів, вкладених один в одного, що також робить їх гнучкими предметами" />
 
-Certainly, the image features a representation of a CSS Flexbox layout with nested flex containers. The outer container is denoted as "ALSO a flex container" highlighted in blue, and within it is another container marked as "with flex items" in red. Inside the red container, there are three items labeled as "flex items" in peach. This demonstrates that a flex container can be nested within another flex container and contain its own flex items, showcasing the recursive nature of Flexbox layout structures.
+Зображення представляє макет CSS Flexbox з вкладеними гнучкими контейнерами. Зовнішній контейнер позначений як «ALSO a flex container» та виділений синім кольором, а всередині нього розташований інший контейнер, позначений червоним як «with flex items». Усередині червоного контейнера є три предмети, позначені персиковим кольором як «flex items». Це свідчить про те, що гнучкий контейнер може бути вкладений в інший гнучкий контейнер і містити власні гнучкі елементи, демонструючи рекурсивну природу структур макета Flexbox.
 
 # --question--
 

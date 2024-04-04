@@ -114,7 +114,7 @@ model user {
   is2018DataVisCert            Boolean? // Undefined
   is2018FullStackCert          Boolean? // Undefined
   isCollegeAlgebraPyCertV8     Boolean? // Undefined
-  isUpcomingPythonCertV8     Boolean? // Undefined
+  isUpcomingPythonCertV8       Boolean? // Undefined
   keyboardShortcuts            Boolean? // Undefined
   linkedin                     String? // Null | Undefined
   location                     String? // Null
@@ -139,6 +139,7 @@ model user {
   verificationToken            String? // Undefined
   website                      String? // Undefined
   yearsTopContributor          String[] // Undefined | String[]
+  isClassroomAccount           Boolean? // Undefined
 }
 
 // -----------------------------------
@@ -207,6 +208,7 @@ model MsUsername {
   msUsername String
 
   @@index([userId, id], map: "userId_1__id_1")
+  @@index([msUsername], map: "msUsername_1")
 }
 
 model Exam {

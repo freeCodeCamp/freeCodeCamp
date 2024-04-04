@@ -1,13 +1,13 @@
 ---
 id: 6489cf5882cf2e4f86f03ae5
-title: The Cascade of CSS Question D
+title: Die CSS-Kaskade Frage D
 challengeType: 15
 dashedName: the-cascade-of-css-question-d
 ---
 
 # --description--
 
-Now, let’s change things a little bit:
+Jetzt wollen wir die Dinge ein wenig ändern:
 
 ```html
 <!-- index.html -->
@@ -35,7 +35,7 @@ In the example above, despite rule 2 having more class selectors than ID selecto
 
 ## --text--
 
-Based on the modified HTML and CSS code, which color would the `<div class="list" id="subsection"></div>` element be rendered as?
+Auf der Grundlage des geänderten HTML- und CSS-Codes würde das `<div class="list" id="subsection"></div>`-Element in welcher Farbe dargestellt werden?
 
 ## --answers--
 
@@ -43,11 +43,11 @@ orange
 
 ---
 
-red
+rot
 
 ---
 
-blue
+blau
 
 ---
 

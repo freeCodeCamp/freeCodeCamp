@@ -5,8 +5,7 @@ import React, { useMemo, useState } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Modal } from '@freecodecamp/react-bootstrap';
-import { Table, Button } from '@freecodecamp/ui';
+import { Table, Button, Modal } from '@freecodecamp/ui';
 
 import envData from '../../../../config/env.json';
 import { getLangCode } from '../../../../../shared/config/i18n';
@@ -19,6 +18,7 @@ import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
 import { Link, FullWidthRow } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import TimelinePagination from './timeline-pagination';
 
 const SolutionViewer = Loadable(
@@ -197,17 +197,11 @@ function TimelineInner({
         </Table>
       )}
       {id && (
-        <Modal
-          aria-labelledby='contained-modal-title'
-          onHide={closeSolution}
-          show={solutionOpen}
-        >
-          <Modal.Header closeButton={true}>
-            <Modal.Title id='contained-modal-title' className='text-center'>
-              {`${username}'s Solution to ${
-                idToNameMap.get(id)?.challengeTitle ?? ''
-              }`}
-            </Modal.Title>
+        <Modal onClose={closeSolution} open={solutionOpen}>
+          <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
+            {`${username}'s Solution to ${
+              idToNameMap.get(id)?.challengeTitle ?? ''
+            }`}
           </Modal.Header>
           <Modal.Body>
             <SolutionViewer
@@ -295,9 +289,11 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
       }
     }) => {
       const blockNameTitle = t(`intro:${superBlock}.blocks.${blockName}.title`);
+      const shouldAppendBlockNameToTitle =
+        hasEditableBoundaries || superBlock === SuperBlocks.A2English;
       idToNameMap.set(id, {
         challengeTitle: `${
-          hasEditableBoundaries ? blockNameTitle + ' - ' : ''
+          shouldAppendBlockNameToTitle ? blockNameTitle + ' - ' : ''
         }${title}`,
         challengePath: slug
       });

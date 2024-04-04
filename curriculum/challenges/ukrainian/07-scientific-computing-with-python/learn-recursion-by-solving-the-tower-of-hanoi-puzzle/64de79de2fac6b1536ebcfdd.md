@@ -7,7 +7,7 @@ dashedName: step-37
 
 # --description--
 
-The iterative solution of Tower of Hanoi might seem complete, but change the number of disks to `4` and look at the output.
+Можливо, ви вважаєте, що ітераційний розв’язок Ханойської вежі завершено, але змініть кількість дисків на `4` і подивіться на результат.
 
 # --hints--
 
