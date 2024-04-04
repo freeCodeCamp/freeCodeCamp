@@ -39,11 +39,13 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 const generateSearchLink = (title: string, block: string) => {
   const query = /^step\s*\d*$/i.test(title)
-    ? encodeURIComponent(`${block} - ${title}`)
+    ? encodeURIComponent(`${removeHyphens(block)} - ${title}`)
     : encodeURIComponent(title);
   const search = `${forumLocation}/search?q=${query}`;
   return search;
 };
+
+const removeHyphens = (block: string) => block.replace(/-/g, ' ');
 
 interface CheckboxProps {
   name: string;
