@@ -1,6 +1,5 @@
 describe('Settings', () => {
   before(() => {
-    cy.task('seed');
     cy.login();
   });
   it('should be possible to reset your progress', () => {

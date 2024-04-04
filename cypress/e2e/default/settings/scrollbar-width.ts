@@ -1,6 +1,5 @@
 describe('Editor scrollbar width', () => {
   beforeEach(() => {
-    cy.task('seed');
     cy.login();
     cy.visit('/settings');
   });
