@@ -15,6 +15,7 @@ html {
 }
 
 body {
+  margin: 0;
   height: 100%;
   font-family: var(--font-family-sans-serif);
   color: var(--secondary-color);
@@ -577,7 +578,7 @@ blockquote .small {
   background-color: black;
 }
 
-/* 
+/*
  * /learn sets some default styles to all `h2`s.
  * These rules are to override the defaults and apply danger styles to `danger` modal.
  */

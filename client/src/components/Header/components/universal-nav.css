@@ -1,11 +1,11 @@
 .universal-nav {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: var(--theme-color);
   color: var(--gray-00);
-  display: flex;
   font-size: 18px;
   height: var(--header-height);
-  justify-content: space-between;
   padding: 0 5px;
 }
 
@@ -30,8 +30,8 @@
  * Site header logo
  */
 .universal-nav-logo {
-  align-items: center;
   display: flex;
+  align-items: center;
   margin-inline-end: 4px;
   max-inline-size: max-content;
   overflow: hidden;
@@ -65,8 +65,8 @@
  * Site header menu list
  */
 .nav-list {
-  background-color: var(--theme-color);
   display: none;
+  background-color: var(--theme-color);
   justify-content: flex-end;
   list-style: none;
   padding: 0;
@@ -85,8 +85,8 @@
  * Site header language list
  */
 .lang-button-nav[aria-expanded='true'] + .nav-list {
-  -ms-overflow-style: none;
   display: block;
+  -ms-overflow-style: none;
   max-height: calc(100vh - var(--header-height));
   overflow-y: auto;
   scrollbar-width: none;
@@ -126,16 +126,16 @@
  * Site header sub menu items
  */
 .nav-link {
-  padding: 2px 15px 0;
   display: flex;
   align-items: center;
+  padding: 2px 15px 0;
   color: var(--gray-00);
   background-color: var(--gray-90);
   white-space: normal;
   min-height: var(--header-sub-element-size);
   width: 100%;
-  border: none;
   height: 100%;
+  border: none;
 }
 
 .nav-link:focus {
@@ -234,14 +234,14 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
  */
 .exposed-button-nav,
 .lang-button-nav {
+  display: flex;
   align-items: center;
+  justify-content: center;
   background-color: var(--theme-color);
   border: 1px solid var(--gray-00);
   color: var(--gray-00);
-  display: flex;
   font-size: 18px;
   height: var(--header-element-size);
-  justify-content: center;
   min-width: var(--header-element-size);
   padding: 0 4px;
 }
@@ -281,6 +281,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 .avatar-container {
   border: 2px solid var(--gray-15); /* default border */
   height: 100%;
+  width: 100%;
 }
 
 /**
@@ -303,8 +304,8 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 }
 
 .display-menu {
-  -ms-overflow-style: none;
   display: block;
+  -ms-overflow-style: none;
   max-height: calc(
     100vh - var(--header-height) - var(--header-sub-element-size)
   );
