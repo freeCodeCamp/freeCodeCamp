@@ -10,6 +10,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import ShortcutsModal from '../components/shortcuts-modal';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
@@ -73,6 +74,7 @@ interface ShowDialogueState {
   assignmentsCompleted: number;
   allAssignmentsCompleted: boolean;
   videoIsLoaded: boolean;
+  isScenePlaying: boolean;
 }
 
 // Component
@@ -83,6 +85,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
   constructor(props: ShowDialogueProps) {
     super(props);
     this.state = {
+      isScenePlaying: false,
       subtitles: '',
       downloadURL: null,
       assignmentsCompleted: 0,
@@ -171,6 +174,12 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
     });
   };
 
+  setIsScenePlaying = (shouldPlay: boolean) => {
+    this.setState({
+      isScenePlaying: shouldPlay
+    });
+  };
+
   render() {
     const {
       data: {
@@ -205,6 +214,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
         containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
+        playScene={() => this.setIsScenePlaying(true)}
       >
         <LearnLayout>
           <Helmet
@@ -225,7 +235,13 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
                 <Spacer size='medium' />
               </Col>
 
-              {scene && <Scene scene={scene} />}
+              {scene && (
+                <Scene
+                  scene={scene}
+                  isPlaying={this.state.isScenePlaying}
+                  setIsPlaying={this.setIsScenePlaying}
+                />
+              )}
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
@@ -288,6 +304,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Container>
+          <ShortcutsModal />
         </LearnLayout>
       </Hotkeys>
     );
