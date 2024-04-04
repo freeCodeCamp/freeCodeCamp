@@ -2,12 +2,9 @@ import { faAward } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Col, Row } from '@freecodecamp/ui';
 import type { User } from '../../../redux/prop-types';
-import { AvatarRenderer } from '../../helpers';
 import Link from '../../helpers/link';
-import SocialIcons from './social-icons';
-import { formatYears, parseDate } from './utils';
+import { formatYears } from './utils';
 import './camper.css';
 import Bio from './camper/bio';
 
@@ -27,25 +24,11 @@ export type CamperProps = Pick<
   | 'joinDate'
 >;
 
-function Camper({
-  picture,
-  yearsTopContributor,
-  isDonating
-}: CamperProps): JSX.Element {
+function Camper({ yearsTopContributor }: CamperProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
     <div>
-      <Row>
-        <Col className='avatar-camper' xs={12}>
-          <AvatarRenderer
-            isDonating={isDonating}
-            isTopContributor={yearsTopContributor.length > 0}
-            picture={picture}
-          />
-        </Col>
-      </Row>
-
       <Bio />
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>
