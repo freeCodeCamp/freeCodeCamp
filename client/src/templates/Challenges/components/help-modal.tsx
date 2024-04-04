@@ -40,7 +40,8 @@ const generateSearchLink = (title: string, block: string) => {
   const query = /^step\s*\d*$/i.test(title)
     ? encodeURIComponent(`${block} - ${title}`)
     : encodeURIComponent(title);
-  const search = `${forumLocation}/search?q=${query}`;
+  const replacedQuery = query.replace(/-/g, '%20');
+  const search = `${forumLocation}/search?q=${replacedQuery}`;
   return search;
 };
 
