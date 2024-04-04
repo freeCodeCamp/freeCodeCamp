@@ -19,14 +19,10 @@
   font-size: 18px;
 }
 
-.checkbox {
+.checkbox-container {
   display: flex;
-  flex-direction: row;
+  width: 100%;
   text-align: left;
-}
-
-.checkbox-text {
-  margin-inline-start: 10px;
 }
 
 @media screen and (max-width: 767px) {

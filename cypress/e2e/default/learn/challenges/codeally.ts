@@ -31,7 +31,9 @@ describe('CodeAlly cert challenge', function () {
         .type('https://example.com')
         .type('{enter}');
 
-      cy.get('.completion-modal-body');
+      cy.get('div[role="dialog"]')
+        .contains('Submit and go to next challenge')
+        .should('be.visible');
     });
   });
 });
