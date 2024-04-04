@@ -10,13 +10,13 @@ tests:
     title: Microservicio de Marca de Tiempo
   - 
     id: bd7158d8c443edefaeb5bdff
-    title: Microservicio de Analizador de Solicitud de Encabezado
+    title: Microservicio de análisis de cabeceras de solicitud
   - 
     id: bd7158d8c443edefaeb5bd0e
-    title: Microservicio de Abreviador de URL
+    title: Microservicio Acortador de URL
   - 
     id: 5a8b073d06fa14fcfde687aa
-    title: Seguidor de Ejercicio
+    title: Rastreador de ejercicios
   - 
     id: bd7158d8c443edefaeb5bd0f
     title: Microservicio de Metadatos de Archivo
