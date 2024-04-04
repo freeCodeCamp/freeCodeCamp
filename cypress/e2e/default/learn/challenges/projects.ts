@@ -112,11 +112,14 @@ describe('project submission', () => {
             return challenges.find(({ title }) => title === projectTitle);
           }) as Challenge[];
 
-          // We need to wait for everything to finish loading and hydrating, so we
-          // use this text as a proxy for that.
-          const textInNextPage = projectTitles.slice(1);
-          // The following text exists on the donation modal
-          textInNextPage.push('Nicely done');
+          const expectedPaths = projectsInOrder
+            .slice(1)
+            .map(({ block, superBlock, dashedName }) => {
+              return `/learn/${superBlock}/${block}/${dashedName}`;
+            });
+          expectedPaths.push(
+            `/learn/javascript-algorithms-and-data-structures/`
+          );
 
           projectsInOrder.forEach(
             ({ block, superBlock, dashedName, solutions }, i) => {
@@ -139,7 +142,7 @@ describe('project submission', () => {
                   cy.contains('Submit and go to next challenge', {
                     timeout: 16000
                   }).click();
-                  cy.contains(textInNextPage[i]);
+                  cy.url().should('include', expectedPaths[i]);
                 });
               });
             }

@@ -1037,7 +1037,8 @@
     "focus-editor": "Focus Editor",
     "focus-instructions-panel": "Focus Instructions Panel",
     "navigate-previous": "Navigate Previous Exercise",
-    "navigate-next": "Navigate Next Exercise"
+    "navigate-next": "Navigate Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "Sign out of your account",
