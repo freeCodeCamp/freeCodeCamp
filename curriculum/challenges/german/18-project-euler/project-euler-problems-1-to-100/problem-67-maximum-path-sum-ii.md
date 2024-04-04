@@ -1,6 +1,6 @@
 ---
 id: 5900f3b01000cf542c50fec2
-title: 'Problem 67: Maximum path sum II'
+title: 'Problem 67: Maximale Pfadsumme II'
 challengeType: 1
 forumTopicId: 302179
 dashedName: problem-67-maximum-path-sum-ii
@@ -8,7 +8,7 @@ dashedName: problem-67-maximum-path-sum-ii
 
 # --description--
 
-By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+Beginnt man an der Spitze des Dreiecks und geht zu den benachbarten Zahlen in der Reihe darunter, so ergibt sich von oben nach unten eine maximale Summe von 23.
 
 <div style='text-align: center;'>
   <strong style='color: red;'>3</strong><br>
@@ -17,27 +17,27 @@ By starting at the top of the triangle below and moving to adjacent numbers on t
   8 5 <strong style='color: red;'>9</strong> 3
 </div>
 
-That is, 3 + 7 + 4 + 9 = 23.
+Das heißt, 3 + 7 + 4 + 9 = 23.
 
-Find the maximum total from top to bottom in `numTriangle`, a 2D array defined in the background containing a triangle with one-hundred rows.
+Ermittle die maximale Summe von oben nach unten in `numTriangle`, einem im Hintergrund definierten 2D-Array, das ein Dreieck mit einhundert Zeilen enthält.
 
-**Note:** This is a much more difficult version of Problem 18. It is not possible to try every route to solve this problem, as there are 2<sup>99</sup> altogether! If you could check one trillion (10<sup>12</sup>) routes every second it would take over twenty billion years to check them all. There is an efficient algorithm to solve it. ;o)
+**Note:** This is a much more difficult version of Problem 18. Es ist nicht möglich, alle Wege zur Lösung dieses Problems auszuprobieren, da es insgesamt 2<sup>99</sup> gibt! Wenn man jede Sekunde eine Billion (10<sup>12</sup>) Routen überprüfen könnte, würde es über zwanzig Milliarden Jahre dauern, alle zu überprüfen. Es gibt einen effizienten Algorithmus, um es zu lösen. ;o)
 
 # --hints--
 
-`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` should return a number.
+`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof maximumPathSumII(_testTriangle) === 'number');
 ```
 
-`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` should return 23.
+`maximumPathSumII([[3, 0, 0, 0],[7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` sollte 23 zurückgeben.
 
 ```js
 assert.strictEqual(maximumPathSumII(_testTriangle), 23);
 ```
 
-`maximumPathSumII(numTriangle)` should return 7273.
+`maximumPathSumII(numTriangle)` sollte 7273 zurückgeben.
 
 ```js
 assert.strictEqual(maximumPathSumII(_numTriangle), 7273);

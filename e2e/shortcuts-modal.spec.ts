@@ -39,16 +39,12 @@ test('User can see list of shortcuts  by pressing SHIFT + ?', async ({
     'Skipping on mobile as it does not have a physical keyboard.'
   );
 
-  const dialogs = page.getByRole('dialog');
-  await expect(dialogs).toHaveCount(2);
-
   await expect(
-    page.getByRole('heading', { name: translations.shortcuts.title })
+    page.getByRole('dialog', { name: translations.shortcuts.title })
   ).toBeVisible();
 
   for (const shortcut of Object.values(translations.shortcuts)) {
     if (shortcut === translations.shortcuts.title) continue;
-
     await expect(page.getByText(shortcut)).toBeVisible();
   }
 
@@ -72,19 +68,16 @@ test('User can close the modal by pressing ESC', async ({ page, isMobile }) => {
     isMobile,
     'Skipping on mobile as it does not have a physical keyboard.'
   );
-  const dialogs = page.getByRole('dialog');
-  await expect(dialogs).toHaveCount(2);
-  await expect(
-    page.getByRole('heading', { name: translations.shortcuts.title })
-  ).toBeVisible();
+
+  const dialog = page.getByRole('dialog', {
+    name: translations.shortcuts.title
+  });
+
+  await expect(dialog).toBeVisible();
 
   await page.keyboard.press('Escape');
-  for (const dialog of await dialogs.all()) {
-    await expect(dialog).not.toBeVisible();
-  }
-  await expect(
-    page.getByRole('heading', { name: translations.shortcuts.title })
-  ).not.toBeVisible();
+
+  await expect(dialog).not.toBeVisible();
 });
 
 test('User can disable keyboard shortcuts', async ({ page, isMobile }) => {
@@ -92,26 +85,23 @@ test('User can disable keyboard shortcuts', async ({ page, isMobile }) => {
     isMobile,
     'Skipping on mobile as it does not have a physical keyboard.'
   );
-  const dialogs = page.getByRole('dialog');
-  await expect(dialogs).toHaveCount(2);
-  await expect(
-    page.getByRole('heading', { name: translations.shortcuts.title })
-  ).toBeVisible();
+
+  const dialog = page.getByRole('dialog', {
+    name: translations.shortcuts.title
+  });
+
+  await expect(dialog).toBeVisible();
 
   await page.getByRole('button', { name: translations.buttons.off }).click();
   await page.getByRole('button', { name: translations.buttons.close }).click();
-  for (const dialog of await dialogs.all()) {
-    await expect(dialog).not.toBeVisible();
-  }
-  await expect(
-    page.getByRole('heading', { name: translations.shortcuts.title })
-  ).not.toBeVisible();
+
+  await expect(dialog).not.toBeVisible();
+
   await expect(
     page.getByText(new RegExp(translations.flash['keyboard-shortcut-updated']))
   ).toBeVisible();
 
   await page.keyboard.press('Shift+?');
-  await expect(
-    page.getByRole('heading', { name: translations.shortcuts.title })
-  ).not.toBeVisible();
+
+  await expect(dialog).not.toBeVisible();
 });
