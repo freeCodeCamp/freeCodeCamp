@@ -120,7 +120,7 @@ function Stats({ points, calendar }: StatsProps): JSX.Element {
           <p className='stat'>{currentStreak || 0}</p>
         </div>
         <div>
-          <b>Total Points:</b>
+          <b>{t('profile.total-points')}</b>
           <p className='stat'>{points}</p>
         </div>
         <div>
