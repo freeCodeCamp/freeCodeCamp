@@ -308,7 +308,7 @@
     "tweet": "Nimejishindia cheti cha {{certTitle}} @freeCodeCamp! Iangalie hapa: {{certURL}}",
     "avatar": "Ishara ya {{username}}",
     "joined": "Umejiunga {{date}}",
-    "total-points": "Idadi ya pointi: {{count}}",
+    "total-points": "Idadi ya Pointi:",
     "points": "Pointi {{count}} mnamo {{date}}",
     "points_plural": "Alama {{count}} mnamo {{date}}",
     "page-number": "{{pageNumber}} kati ya {{totalPages}}"

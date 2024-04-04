@@ -308,7 +308,7 @@
     "tweet": "{{certTitle}} の認定証を @freeCodeCamp で取得しました！確認はこちら: {{certURL}}",
     "avatar": "{{username}} のアバター",
     "joined": "{{date}}に加入",
-    "total-points": "ポイント数: {{count}}",
+    "total-points": "ポイント数:",
     "points": "{{count}} ポイント ({{date}})",
     "points_plural": "{{count}} ポイント ({{date}})",
     "page-number": "{{pageNumber}} / {{totalPages}}"

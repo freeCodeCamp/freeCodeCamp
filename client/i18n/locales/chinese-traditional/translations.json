@@ -308,7 +308,7 @@
     "tweet": "我獲得了 {{certTitle}} 認證 @freeCodeCamp！在這裏查看：{{certURL}}",
     "avatar": "{{username}} 的頭像",
     "joined": "於 {{date}} 加入",
-    "total-points": "點數： {{count}}",
+    "total-points": "點數：",
     "points": "{{date}} 獲得 {{count}} 分",
     "points_plural": "{{date}} 獲得 {{count}} 分",
     "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁"
