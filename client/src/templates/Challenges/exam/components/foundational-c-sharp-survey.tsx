@@ -1,11 +1,10 @@
-import { Modal } from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Button } from '@freecodecamp/ui';
+import { Button, Modal } from '@freecodecamp/ui';
 
 import { SurveyResults, SurveyResponse } from '../../../../redux/prop-types';
 import { Spacer } from '../../../../components/helpers';
@@ -132,12 +131,10 @@ function FoundationalCSharpSurvey({
 
   return (
     <>
-      <Modal.Header data-cy='c-sharp-survey-modal' closeButton={true}>
-        <Modal.Title className='text-center'>
-          {t('survey.foundational-c-sharp.title')}
-        </Modal.Title>
+      <Modal.Header closeButtonClassNames='close'>
+        {t('survey.foundational-c-sharp.title')}
       </Modal.Header>
-      <Modal.Body className='reset-modal-body'>
+      <Modal.Body>
         {i18nSurvey.map((question, i) => (
           <div key={i}>
             <Spacer size='medium' />
@@ -147,7 +144,6 @@ function FoundationalCSharpSurvey({
               {question.options.map((option, j) => (
                 <label className='video-quiz-option-label' key={j}>
                   <input
-                    aria-label={t('aria.answer')}
                     checked={surveyResponses[i].responseIndex === j}
                     className='sr-only'
                     name={question.question}
@@ -167,7 +163,7 @@ function FoundationalCSharpSurvey({
           </div>
         ))}
       </Modal.Body>
-      <Modal.Footer className='reset-modal-footer'>
+      <Modal.Footer>
         <Button
           block={true}
           size='medium'

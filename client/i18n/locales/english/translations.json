@@ -727,7 +727,9 @@
     "task": "Task",
     "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} code example",
-    "opens-new-window": "Opens in new window"
+    "opens-new-window": "Opens in new window",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
@@ -1035,7 +1037,8 @@
     "focus-editor": "Focus Editor",
     "focus-instructions-panel": "Focus Instructions Panel",
     "navigate-previous": "Navigate Previous Exercise",
-    "navigate-next": "Navigate Next Exercise"
+    "navigate-next": "Navigate Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "Sign out of your account",
