@@ -285,22 +285,14 @@ const LowerJaw = ({
     testsLength &&
     (currentAttempts >= testsLength || currentAttempts >= 3);
 
-  const getBtnCheckCodeLabel = () => {
-    const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
-    const isMacOS = navigator.userAgent.toUpperCase().search('MAC') === 1;
+  const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
+  const isMacOS = navigator.userAgent.includes('Mac OS');
 
-    if (!isDesktop) {
-      return 'buttons.check-code-2';
-    }
-
-    if (isMacOS) {
-      return 'buttons.check-code-3';
-    }
-
-    return 'buttons.check-code';
-  };
-
-  const checkButtonText = t(getBtnCheckCodeLabel());
+  const checkButtonText = isDesktop
+    ? isMacOS
+      ? t('buttons.check-code-3')
+      : t('buttons.check-code')
+    : t('buttons.check-code-2');
 
   const showSignInButton = !isSignedIn && challengeIsCompleted;
   return (
