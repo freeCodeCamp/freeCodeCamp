@@ -147,7 +147,7 @@ function initRunPython() {
   runPython(`
 def print_exception():
     from ast_helpers import format_exception
-    formatted = format_exception(exception=sys.last_value, traceback=sys.last_traceback, filename="<exec>")
+    formatted = format_exception(exception=sys.last_value, traceback=sys.last_traceback, filename="<exec>", new_filename="main.py")
     print(formatted)
 `);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
