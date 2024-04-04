@@ -9,6 +9,7 @@ import envData from '../../../../../../config/env.json';
 import { userSelector } from '../../../../../redux/selectors';
 import { User } from '../../../../../redux/prop-types';
 import './bio.css';
+import SocialIcons from '../../social-icons';
 const { clientLocale } = envData;
 const localeCode = getLangCode(clientLocale);
 function parseDate(joinDate: string, t: TFunction): string {
@@ -21,9 +22,17 @@ function parseDate(joinDate: string, t: TFunction): string {
 }
 const Bio = () => {
   const { t } = useTranslation();
-  const { joinDate, location, username, name, about } = useSelector(
-    userSelector
-  ) as User; //using redux selectors
+  const {
+    joinDate,
+    location,
+    username,
+    name,
+    about,
+    githubProfile,
+    linkedin,
+    twitter,
+    website
+  } = useSelector(userSelector) as User; //using redux selectors
   return (
     <section className='flex-col padding-vertical-3 border-b'>
       <h2 className='username'>@{username}</h2>
@@ -43,17 +52,13 @@ const Bio = () => {
           </div>
         )}
       </div>
-      <div className='flex bio-icons-container gap-2'>
-        <figure>
-          <div></div>
-        </figure>
-        <figure>
-          <div></div>
-        </figure>
-        <figure>
-          <div></div>
-        </figure>
-      </div>
+      <SocialIcons
+        githubProfile={githubProfile}
+        linkedin={linkedin}
+        twitter={twitter}
+        username={username}
+        website={website}
+      />
     </section>
   );
 };

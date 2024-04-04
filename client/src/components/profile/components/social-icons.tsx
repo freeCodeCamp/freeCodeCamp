@@ -78,7 +78,13 @@ function TwitterIcon(handle: string, username: string): JSX.Element {
 }
 
 function SocialIcons(props: SocialIconsProps): JSX.Element | null {
-  const { githubProfile, linkedin, twitter, username, website } = props;
+  const {
+    githubProfile = 'https://github.com/shootermv',
+    linkedin = 'https://www.linkedin.com/in/moshe-vilner-7a7745a/',
+    twitter = 'https://twitter.com/shootermv',
+    username = 'Vasili',
+    website = 'https://gs500coder.blogspot.com'
+  } = props;
   const show = linkedin || githubProfile || website || twitter;
   if (!show) {
     return null;
@@ -86,7 +92,7 @@ function SocialIcons(props: SocialIconsProps): JSX.Element | null {
 
   return (
     <Row>
-      <Col className='text-center social-media-icons' sm={6} smOffset={3}>
+      <Col className='social-media-icons'>
         {linkedin ? LinkedInIcon(linkedin, username) : null}
         {githubProfile ? GitHubIcon(githubProfile, username) : null}
         {website ? WebsiteIcon(website, username) : null}

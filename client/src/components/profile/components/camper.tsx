@@ -28,14 +28,9 @@ export type CamperProps = Pick<
 >;
 
 function Camper({
-  username,
   picture,
   yearsTopContributor,
-  githubProfile,
-  isDonating,
-  linkedin,
-  twitter,
-  website
+  isDonating
 }: CamperProps): JSX.Element {
   const { t } = useTranslation();
 
@@ -50,13 +45,7 @@ function Camper({
           />
         </Col>
       </Row>
-      <SocialIcons
-        githubProfile={githubProfile}
-        linkedin={linkedin}
-        twitter={twitter}
-        username={username}
-        website={website}
-      />
+
       <Bio />
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>
