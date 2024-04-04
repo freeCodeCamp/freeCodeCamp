@@ -227,6 +227,11 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       }));
     }
 
+    if (!this.validationImages[id]) {
+      const validationImage = new Image();
+      this.validationImages[id] = validationImage;
+    }
+
     if (this.validationImages[id].src !== encodeURI(image)) {
       this.validationImages[id].src = encodeURI(image);
     }
