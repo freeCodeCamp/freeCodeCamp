@@ -35,15 +35,6 @@ const config = {
       }
     ],
     [
-      'babel-plugin-transform-imports',
-      {
-        'react-bootstrap': {
-          transform: 'react-bootstrap/lib/${member}',
-          preventFullImport: true
-        }
-      }
-    ],
-    [
       'prismjs',
       {
         languages: [

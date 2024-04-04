@@ -303,66 +303,66 @@
     "title": "JavaScript Algorithms and Data Structures (Beta)",
     "intro": [
       "Developers use HTML and CSS to control the content and styling of a page. And they use JavaScript to make that page interactive.",
-      "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",
-      "You'll also learn about Object Oriented Programming (OOP), Functional Programming, algorithmic thinking, how to work with local storage, and how to fetch data using an API."
+      "Nella certificazione JavaScript Algoritmi e Strutture di Dati, imparerai i fondamenti di JavaScript come variabili, array, oggetti, loop, funzioni, il DOM e altro ancora.",
+      "Imparerai anche la programmazione orientata agli oggetti (OOP), la programmazione funzionale, come sviluppare algoritmi, lavorare con il local storage e come recuperare i dati utilizzando un'API."
     ],
     "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
     "blocks": {
       "build-a-pokemon-search-app-project": {
-        "title": "Build a Pokémon Search App Project",
+        "title": "Costruisci un'App per Cercare i Pokemon",
         "intro": [
           "This is one of the required projects to earn your certification.",
-          "For this project, you will build a Pokémon search app."
+          "In questo progetto, costruirai una App per Cercare i Pokemon."
         ]
       },
       "build-a-cash-register-project": {
         "title": "Build a Cash Register Project",
         "intro": [
           "This is one of the required projects to earn your certification.",
-          "For this project, you'll build a cash register web app."
+          "In questo progetto, costruirai l'app di un registratore di cassa."
         ]
       },
       "build-a-palindrome-checker-project": {
         "title": "Build a Palindrome Checker Project",
         "intro": [
           "This is one of the required projects to earn your certification.",
-          "For this project, you'll build an application that checks whether a given word is a palindrome."
+          "In questo progetto, costruirai un'applicazione che verifica se una data parola è un palindromo."
         ]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "Build a Roman Numeral Converter Project",
         "intro": [
           "This is one of the required projects to claim your certification.",
-          "For this project, you'll build an application that converts integers to Roman numerals."
+          "In questo progetto, costruirai un'applicazione che converte numeri interi in numeri romani."
         ]
       },
       "build-a-telephone-number-validator-project": {
         "title": "Build a Telephone Number Validator Project",
         "intro": [
           "This is one of the required projects to claim your certification.",
-          "For this project, you'll build an application that checks if a number is a valid United States phone number."
+          "In questo progetto, costruirai un'applicazione che verifica se un numero è un numero di telefono valido per gli Stati Uniti."
         ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
         "title": "Learn Basic JavaScript by Building a Role Playing Game",
         "intro": [
-          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
-          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Role Playing Game. You'll learn how to work with arrays, strings, objects, functions, loops, <code>if/else</code> statements, and more."
+          "JavaScript è un potente linguaggio di scripting che viene utilizzato per rendere interattive le pagine web. È una delle principali tecnologie del web, insieme ad HTML e CSS. Tutti i browser moderni supportano JavaScript.",
+          "In questo progetto pratica, imparerai i concetti fondamentali di programmazione in JavaScript creando il tuo gioco di gioco di ruolo. Imparerai come lavorare con array, stringhe, oggetti, funzioni, loop, istruzioni <code>if/else</code> e altro ancora."
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
         "title": "Learn Form Validation by Building a Calorie Counter",
         "intro": [
-          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter project, you'll learn how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
-          "In this practice project, you'll learn basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
+          "A volte quando programmi un'applicazione web, devi essere in grado di accettare l'input di un utente. In questo progetto di un conta calorie, imparerai come convalidare l'input di un utente, eseguire calcoli basati su tale input e aggiornare dinamicamente l'interfaccia per visualizzare i risultati.",
+          "In questo progetto di pratica, imparerai le basi delle espressioni regolari, i template literal, il metodo <code>addEventListener()</code> e altro ancora."
         ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
         "title": "Learn Functional Programming by Building a Spreadsheet",
         "intro": [
-          "Functional Programming is a popular approach to software development. In Functional Programming, developers organize code into smaller functions, then combine those functions to build complex programs.",
+          "La programmazione funzionale è un approccio popolare allo sviluppo del software. Nella programmazione funzionale, gli sviluppatori organizzano il codice in funzioni semplici che combinano per costruire programmi complessi.",
           "In this spreadsheet application project, you'll learn about parsing and evaluating mathematical expressions, implementing spreadsheet functions, handling cell references, and creating interactive web interfaces. You'll learn how to dynamically update the page based on user input.",
-          "This project will cover concepts like the <code>map()</code> method, <code>find()</code> method, <code>parseInt()</code>, the <code>includes()</code> method."
+          "Questo progetto tratterà concetti come l metodi <code>map()</code>, <code>find()</code>, <code>parseInt()</code> e <code>includes()</code>."
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
@@ -1187,7 +1187,7 @@
         ]
       },
       "top-learn-data-types-and-conditionals": {
-        "title": "Learn Data Types and Conditionals",
+        "title": "Impara i Tipi di Dato e le Istruzioni Condizionali",
         "intro": ["Learn about data types and conditionals in JavaScript."]
       }
     }
@@ -1232,11 +1232,11 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "(New) Foundational C# with Microsoft",
+    "title": "(Nuovo) Fondamenti di C# con Microsoft",
     "intro": [
-      "This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development.",
-      "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
-      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building applications."
+      "Questo corso offre un'introduzione completa alla programmazione in C# trattandone i concetti principali, sintassi e applicazione pratica nello sviluppo di software.",
+      "Attraverso esercizi e progetti pratici imparerai i fondamenti di C#, comprese le variabili, i tipi di dati, le strutture di controllo e i principi della programmazione orientati agli oggetti.",
+      "Alla fine di questo corso, avrai acquisito le competenze pratiche e le conoscenze necessarie per usare C# con sicurezza creare applicazioni."
     ],
     "note": "Each section below has a trophy associated with it that you must earn on the Microsoft Learn platform. After earning each trophy, you need to verify them on freeCodeCamp. Once you have done those, you can qualify for the certification exam.",
     "blocks": {

@@ -10,17 +10,17 @@ dashedName: >-
 
 # --description--
 
-For a positive integer $n$, let $f(n)$ be the sum of the squares of the digits (in base 10) of $n$, e.g.
+Für eine positive Integer $n$, lasse $f(n)$ die Summe der Quadrate der Ziffern (zur Basis 10) von $n$ sein, z.B.
 
 $$\begin{align}   & f(3) = 3^2 = 9 \\\\
   & f(25) = 2^2 + 5^2 = 4 + 25 = 29 \\\\   & f(442) = 4^2 + 4^2 + 2^2 = 16 + 16 + 4 = 36 \\\\
 \end{align}$$
 
-Find the last nine digits of the sum of all $n$, $0 &lt; n &lt; {10}^{20}$, such that $f(n)$ is a perfect square.
+Finde die letzten neun Ziffern der Summe aller $n$, $0 &lt; n &lt; {10}^{20}$, sodass $f(n)$ ein perfektes Quadrat ist.
 
 # --hints--
 
-`lastDigitsSumOfPerfectSquare()` should return `142989277`.
+`lastDigitsSumOfPerfectSquare()` sollte `142989277` zurückgeben.
 
 ```js
 assert.strictEqual(lastDigitsSumOfPerfectSquare(), 142989277);

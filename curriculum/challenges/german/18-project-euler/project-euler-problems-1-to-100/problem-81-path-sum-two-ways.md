@@ -1,6 +1,6 @@
 ---
 id: 5900f3bd1000cf542c50fed0
-title: 'Problem 81: Path sum: two ways'
+title: 'Problem 81: Pfadsumme: zwei Wege'
 challengeType: 1
 forumTopicId: 302195
 dashedName: problem-81-path-sum-two-ways
@@ -8,29 +8,29 @@ dashedName: problem-81-path-sum-two-ways
 
 # --description--
 
-In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom right, by **only moving to the right and down**, is indicated in bold red and is equal to `2427`.
+In der unteren 5 x 5-Matrix wird die minimale Pfadsumme von links oben nach unten rechts, indem man sich **nur nach rechts und unten nach bewegte**, in fettgedrucktem rot dargestellt und entspricht `2427`.
 
   $$\begin{pmatrix}   \color{red}{131} & 673 & 234 & 103 & 18\\\\
   \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\   630 & 803 & \color{red}{746} & \color{red}{422} & 111\\\\
   537 & 699 & 497 & \color{red}{121} & 956\\\\ 805 & 732 & 524 & \color{red}{37} & \color{red}{331} \end{pmatrix}$$
 
-Find the minimal path sum from the top left to the bottom right by only moving right and down in `matrix`, a 2D array representing a matrix. The maximum matrix size used in the tests will be 80 by 80.
+Finde die minimale Pfadsumme von oben links nach unten rechts, indem du dich nur nach rechts und nach unten bewegst in der `matrix`, welche ein 2D-Array ist, das eine Matrix darstellt. Die maximale Matrixgröße, die bei den Tests verwendet wird, beträgt 80 x 80.
 
 # --hints--
 
-`pathSumTwoWays(testMatrix1)` should return a number.
+`pathSumTwoWays(testMatrix1)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof pathSumTwoWays(_testMatrix1) === 'number');
 ```
 
-`pathSumTwoWays(testMatrix1)` should return `2427`.
+`pathSumTwoWays(testMatrix1)` sollte `2427` zurückgeben.
 
 ```js
 assert.strictEqual(pathSumTwoWays(_testMatrix1), 2427);
 ```
 
-`pathSumTwoWays(testMatrix2)` should return `427337`.
+`pathSumTwoWays(testMatrix2)` sollte `427337` zurückgeben.
 
 ```js
 assert.strictEqual(pathSumTwoWays(_testMatrix2), 427337);

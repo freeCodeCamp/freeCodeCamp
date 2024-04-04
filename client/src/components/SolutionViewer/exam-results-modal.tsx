@@ -59,7 +59,7 @@ const ExamResultsModal = ({
       <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
         {t('settings.labels.results-for', { projectTitle })}
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body alignment='start'>
         <Spacer size='medium' />
         <div style={{ paddingLeft: '30px' }}>
           <Row>
@@ -82,7 +82,7 @@ const ExamResultsModal = ({
         </div>
         <Spacer size='medium' />
       </Modal.Body>
-      <Modal.Footer>
+      <Modal.Footer alignment='end'>
         <Button
           onClick={() => {
             closeModal('examResults');

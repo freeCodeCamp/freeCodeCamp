@@ -1,6 +1,6 @@
 ---
 id: 5900f4201000cf542c50ff33
-title: 'Problem 180: Rational zeros of a function of three variables'
+title: 'Problem 180: Rationale Nullstellen einer Funktion von drei Variablen'
 challengeType: 1
 forumTopicId: 301816
 dashedName: problem-180-rational-zeros-of-a-function-of-three-variables
@@ -8,26 +8,26 @@ dashedName: problem-180-rational-zeros-of-a-function-of-three-variables
 
 # --description--
 
-For any integer $n$, consider the three functions
+Betrachte für eine beliebige Integer $n$ die drei Funktionen
 
 $$\begin{align}   & f_{1,n}(x,y,z) = x^{n + 1} + y^{n + 1} − z^{n + 1}\\\\
   & f_{2,n}(x,y,z) = (xy + yz + zx) \times (x^{n - 1} + y^{n - 1} − z^{n - 1})\\\\ & f_{3,n}(x,y,z) = xyz \times (x^{n - 2} + y^{n - 2} − z^{n - 2}) \end{align}$$
 
-and their combination
+und ihre Kombination
 
 $$\begin{align} & f_n(x,y,z) = f_{1,n}(x,y,z) + f_{2,n}(x,y,z) − f_{3,n}(x,y,z) \end{align}$$
 
-We call $(x,y,z)$ a golden triple of order $k$ if $x$, $y$, and $z$ are all rational numbers of the form $\frac{a}{b}$ with $0 &lt; a &lt; b ≤ k$ and there is (at least) one integer $n$, so that $f_n(x,y,z) = 0$.
+Wir nennen $(x,y,z)$ ein goldenes Tripel der Ordnung $k$, wenn $x$, $y$ und $z$ alle rationale Zahlen der Form $\frac{a}{b}$ mit $0 &lt; a &lt; b ≤ k$ sind und es (mindestens) eine ganze Zahl $n$ gibt, sodass $f_n(x,y,z) = 0$.
 
-Let $s(x,y,z) = x + y + z$.
+Sei $s(x,y,z) = x + y + z$.
 
-Let $t = \frac{u}{v}$ be the sum of all distinct $s(x,y,z)$ for all golden triples $(x,y,z)$ of order 35. All the $s(x,y,z)$ and $t$ must be in reduced form.
+Lasse $t = \frac{u}{v}$ die Summe aller unterschiedlichen $s(x,y,z)$ für alle goldenen Tripel $(x,y,z)$ der Ordnung 35 sein. Alle $s(x,y,z)$ und $t$ müssen in reduzierter Form vorliegen.
 
-Find $u + v$.
+Finde $u + v$.
 
 # --hints--
 
-`rationalZeros()` should return `285196020571078980`.
+`rationalZeros()` sollte `285196020571078980` zurückgeben.
 
 ```js
 assert.strictEqual(rationalZeros(), 285196020571078980);
