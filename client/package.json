@@ -121,7 +121,7 @@
     "react-youtube": "7.14.0",
     "redux": "4.2.1",
     "redux-actions": "2.6.5",
-    "redux-devtools-extension": "2.13.9",
+    "@redux-devtools/extension": "3.3.0",
     "redux-observable": "1.2.0",
     "redux-saga": "1.2.3",
     "reselect": "4.1.8",
