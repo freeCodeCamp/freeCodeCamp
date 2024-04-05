@@ -111,12 +111,8 @@ export function* executeChallengeSaga({ payload }) {
       ({ text, testString }) => ({ text, testString })
     );
 
-    const generateUniqueTestName = (testText, index) => {
-      const testName = `Test ${index + 1}`;
-      return testText.includes(testName)
-        ? testText
-        : `${testName}: ${testText}`;
-    };
+    const generateUniqueTestName = (testText, index) =>
+      /^\d+\./.test(testText) ? testText : `${index}. ${testText}`;
 
     tests = tests.map((test, index) => ({
       ...test,
