@@ -1,7 +1,6 @@
-import { Modal } from '@freecodecamp/react-bootstrap';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Button } from '@freecodecamp/ui';
+import { Button, Modal } from '@freecodecamp/ui';
 
 import type { CompletedChallenge } from '../../../redux/prop-types';
 import {
@@ -56,28 +55,15 @@ function ProjectPreviewModal({
 
   return (
     <Modal
-      data-playwright-test-label='project-preview-modal'
-      bsSize='lg'
-      data-cy='project-preview-modal'
-      dialogClassName='project-preview-modal'
-      onHide={() => {
+      size='large'
+      onClose={() => {
         closeModal('projectPreview');
         setEditorFocusability(true);
       }}
-      show={isOpen}
+      open={isOpen}
     >
-      <Modal.Header
-        className='project-preview-modal-header fcc-modal'
-        closeButton={true}
-      >
-        <Modal.Title
-          className='text-center'
-          data-playwright-test-label='project-preview-modal-title'
-        >
-          {previewTitle}
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body className='project-preview-modal-body text-center'>
+      <Modal.Header closeButtonClassNames='close'>{previewTitle}</Modal.Header>
+      <Modal.Body>
         <Preview
           previewId={projectPreviewId}
           previewMounted={() =>
@@ -90,7 +76,6 @@ function ProjectPreviewModal({
           block={true}
           size='large'
           variant='primary'
-          data-playwright-test-label='project-preview-modal-closeButton'
           onClick={() => {
             closeModal('projectPreview');
             setEditorFocusability(true);

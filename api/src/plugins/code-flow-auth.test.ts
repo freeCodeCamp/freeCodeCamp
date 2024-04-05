@@ -2,8 +2,8 @@ import Fastify, { FastifyInstance } from 'fastify';
 import jwt from 'jsonwebtoken';
 
 import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
-import { createAccessToken } from '../utils/tokens';
-import cookies, { sign as signCookie } from './cookies';
+import { AccessToken, createAccessToken } from '../utils/tokens';
+import cookies, { sign as signCookie, unsign as unsignCookie } from './cookies';
 import codeFlowAuth from './code-flow-auth';
 
 describe('auth', () => {
@@ -30,23 +30,24 @@ describe('auth', () => {
         return { ok: true };
       });
 
-      const singlySignedToken = jwt.sign({ accessToken: token }, JWT_SECRET);
-      const doublySignedToken = signCookie(singlySignedToken);
-
       const res = await fastify.inject({
         method: 'GET',
         url: '/test'
       });
 
-      expect(res.cookies[0]).toEqual(
-        expect.objectContaining({
-          name: 'jwt_access_token',
-          value: doublySignedToken,
-          path: '/',
-          sameSite: 'Lax',
-          domain: COOKIE_DOMAIN
-        })
-      );
+      const { value, ...rest } = res.cookies[0]!;
+      const unsignedOnce = unsignCookie(value);
+      const unsignedTwice = jwt.verify(unsignedOnce.value!, JWT_SECRET) as {
+        accessToken: AccessToken;
+      };
+      expect(unsignedTwice.accessToken).toEqual(token);
+      expect(rest).toEqual({
+        name: 'jwt_access_token',
+        path: '/',
+        sameSite: 'Lax',
+        domain: COOKIE_DOMAIN,
+        maxAge: token.ttl
+      });
     });
 
     // TODO: Post-MVP sync the cookie max-age with the token ttl (i.e. the

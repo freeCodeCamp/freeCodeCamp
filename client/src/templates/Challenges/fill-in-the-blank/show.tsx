@@ -10,6 +10,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import ShortcutsModal from '../components/shortcuts-modal';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
@@ -77,6 +78,7 @@ interface ShowFillInTheBlankState {
   allBlanksFilled: boolean;
   feedback: string | null;
   showFeedback: boolean;
+  isScenePlaying: boolean;
 }
 
 // Component
@@ -108,7 +110,8 @@ class ShowFillInTheBlank extends Component<
       answersCorrect: emptyArray,
       allBlanksFilled: false,
       feedback: null,
-      showFeedback: false
+      showFeedback: false,
+      isScenePlaying: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -243,6 +246,12 @@ class ShowFillInTheBlank extends Component<
     return '';
   }
 
+  setIsScenePlaying = (shouldPlay: boolean) => {
+    this.setState({
+      isScenePlaying: shouldPlay
+    });
+  };
+
   render() {
     const {
       data: {
@@ -284,6 +293,7 @@ class ShowFillInTheBlank extends Component<
         containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
+        playScene={() => this.setIsScenePlaying(true)}
       >
         <LearnLayout>
           <Helmet
@@ -319,7 +329,11 @@ class ShowFillInTheBlank extends Component<
 
               {scene && (
                 <>
-                  <Scene scene={scene} />
+                  <Scene
+                    scene={scene}
+                    isPlaying={this.state.isScenePlaying}
+                    setIsPlaying={this.setIsScenePlaying}
+                  />
                   <Spacer size='medium' />
                 </>
               )}
@@ -408,6 +422,7 @@ class ShowFillInTheBlank extends Component<
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Container>
+          <ShortcutsModal />
         </LearnLayout>
       </Hotkeys>
     );

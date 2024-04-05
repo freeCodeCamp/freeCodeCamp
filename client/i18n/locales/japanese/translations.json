@@ -123,8 +123,8 @@
         "testimony": "「私はいつも JavaScript を学ぶことに躓いていました。たくさんのコースを受講しましたが、freeCodeCamp に一番のめり込みました。JavaScript だけでなくデータ構造とアルゴリズムも学べることで、ソフトウェアエンジニアとして Spotify という夢の仕事を得るために必要な自信と<strong>スキルを freeCodeCamp は私に与えてくれました</strong>」"
       }
     },
-    "certification-heading": "以下の検証済み認定証を無料で取得できます。",
-    "core-certs-heading": "freeCodeCamp コアカリキュラムの検証済み認定証を無料で取得:",
+    "certification-heading": "以下の検証済認定証を無料で取得できます。",
+    "core-certs-heading": "freeCodeCamp コアカリキュラムの検証済認定証を無料で取得:",
     "learn-english-heading": "開発の現場で使う英語を学ぶ:",
     "professional-certs-heading": "プロフェッショナル認定証を無料で取得:",
     "interview-prep-heading": "就職活動・技術面接に備える:",
@@ -142,7 +142,7 @@
         "question": "freeCodeCamp ではどのようにしてプログラミングを学べますか？",
         "answer": [
           "ブラウザ、コードエディター、モバイルアプリなどからすぐに使える環境で、段階的に、たくさんのプロジェクトを作成しながら学習します。",
-          "また、無料で検証済み認定証を取得できます。"
+          "また、無料で検証済認定証を取得できます。"
         ]
       },
       {
@@ -176,7 +176,7 @@
         ]
       },
       {
-        "question": "無料の検証済み認定証はどうすれば取得できますか？",
+        "question": "無料の検証済認定証はどうすれば取得できますか？",
         "answer": [
           "認定証を取得するには、それぞれ 5 つある認定プロジェクトを完成させ、すべてのテストを成功させる必要があります。"
         ]
@@ -277,7 +277,7 @@
       "weekly": "Quincy からのメールを毎週受け取る"
     },
     "honesty": {
-      "p1": "検証済み認定証を取得する前に、以下の学問的誠実性誓約に同意する必要があります:",
+      "p1": "検証済認定証を取得する前に、以下の学問的誠実性誓約に同意する必要があります:",
       "p2": "「私は、盗作とは他人の作品をコピーして、原作者を明示することなくまるで自分の作品であるかのように提示することであると理解しています。」",
       "p3": "「私は、盗作は知的不正行為であり、発覚した場合、通常は退学または退職などの処分となり得る行為であると理解しています。」",
       "p4": "「jQuery や Bootstrap などのオープンソースライブラリの使用や、オリジナルの作者を明示した短いコードスニペットの使用を除き、私のプロジェクトのコードの 100% は私が書いたもの、または、リアルタイムでペアプログラミングを行った他の freeCodeCamp のカリキュラム受講者とともに書かれたものです。」",
@@ -383,8 +383,14 @@
     "percent-complete": "{{percent}}% 完了",
     "project-complete": "{{totalChallengesInBlock}} 件中 {{completedChallengesInBlock}} 件の認定プロジェクトが完了しました",
     "tried-rsa": "すでに <0>Read-Search-Ask (読む - 検索する - 質問する)</0> メソッドを試したなら、freeCodeCamp フォーラムで助けを求めることができます。",
+    "read-search-ask-checkbox": "<0>Read-Search-Ask (読む - 検索する - 質問する)</0>メソッドを試しました",
+    "similar-questions-checkbox": "<0>フォーラムで解決済みの類似質問</0>を探しました",
+    "minimum-characters": "最低 {{characters}} 文字追加してください",
+    "characters-left": "残り {{characters}} 文字",
+    "must-confirm-statements": "フォーラムに投稿する前に、以下を実行したことを確認してください。",
+    "min-50-max-500": "50 文字以上、500 文字以下",
     "rsa": "読む (Read)、検索する (Search)、質問する (Ask)",
-    "rsa-forum": "<strong>新しい投稿を作成する前に</strong>同じ質問が<0>フォーラム</0>で既に回答されていないか確認してください。",
+    "rsa-forum": "<strong>新しい投稿を作成する前に</strong>、<0>すでに同じ質問がフォーラムで回答されていないか確認</0>してください。",
     "reset": "このレッスンをリセットしますか？",
     "reset-warn": "本当にこのレッスンをリセットしてもよろしいですか？エディターとテストがリセットされます。",
     "reset-warn-2": "この操作は取り消すことが出来ません",
@@ -969,16 +975,16 @@
       "A2 English for Developers": "開発者のための A2 レベル英語",
       "a2-english-for-developers": "開発者のための A2 レベル英語認定証",
       "Legacy Front End": "(レガシー) フロントエンド",
-      "legacy-front-end": "Legacy Front End Certification",
+      "legacy-front-end": "(レガシー) フロントエンド認定証",
       "Legacy Back End": "(レガシー) バックエンド",
-      "legacy-back-end": "Legacy Back End Certification",
+      "legacy-back-end": "(レガシー) バックエンド認定証",
       "Legacy Data Visualization": "(レガシー) データ可視化",
-      "legacy-data-visualization": "Legacy Data Visualization Certification",
+      "legacy-data-visualization": "(レガシー) データ可視化認定証",
       "Legacy Information Security and Quality Assurance": "(レガシー) 情報セキュリティと品質保証",
-      "information-security-and-quality-assurance": "Legacy Information Security and Quality Assurance Certification",
+      "information-security-and-quality-assurance": "(レガシー) 情報セキュリティと品質保証認定証",
       "Legacy Full Stack Certification": "(レガシー) フルスタック認定証",
       "Legacy Full Stack": "(レガシー) フルスタック",
-      "full-stack": "Legacy Full Stack Certification"
+      "full-stack": "(レガシー) フルスタック認定証"
     }
   },
   "certification-card": {

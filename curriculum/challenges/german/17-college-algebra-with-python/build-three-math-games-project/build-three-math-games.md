@@ -7,7 +7,7 @@ dashedName: build-three-math-games
 
 # --description--
 
-You will be <a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">working on this project with Google Colaboratory</a>.
+Du wirst <a href="https://colab.research.google.com/#create=true" target="_blank" rel="noopener noreferrer nofollow">an diesem Projekt mit Google Colaboratory</a> arbeiten.
 
 Once you complete the project, submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
 

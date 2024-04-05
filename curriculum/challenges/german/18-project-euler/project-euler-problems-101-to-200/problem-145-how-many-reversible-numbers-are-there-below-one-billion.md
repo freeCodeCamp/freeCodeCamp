@@ -1,6 +1,6 @@
 ---
 id: 5900f3fd1000cf542c50ff10
-title: 'Problem 145: How many reversible numbers are there below one-billion?'
+title: 'Problem 145: Wie viele umkehrbare Zahlen gibt es unter einer Milliarde?'
 challengeType: 1
 forumTopicId: 301774
 dashedName: problem-145-how-many-reversible-numbers-are-there-below-one-billion
@@ -8,15 +8,15 @@ dashedName: problem-145-how-many-reversible-numbers-are-there-below-one-billion
 
 # --description--
 
-Some positive integers $n$ have the property that the sum [ $n + reverse(n)$ ] consists entirely of odd (decimal) digits. For instance, $36 + 63 = 99$ and $409 + 904 = 1313$. We will call such numbers reversible; so 36, 63, 409, and 904 are reversible. Leading zeroes are not allowed in either $n$ or $reverse(n)$.
+Einige positive Integer $n$ haben die Eigenschaft, dass die Summe [ $n + Umkehrung(n)$ ] ausschließlich aus ungeraden (dezimalen) Ziffern besteht. Beispiel: $36 + 63 = $99 und $409 + 904 = $1313. Wir nennen solche Zahlen umkehrbar; 36, 63, 409 und 904 sind also umkehrbar. Führende Nullen sind weder in $n$ noch in $reverse(n)$ erlaubt.
 
-There are 120 reversible numbers below one-thousand.
+Es gibt 120 umkehrbare Zahlen unter eintausend.
 
-How many reversible numbers are there below one-billion (${10}^9$)?
+Wie viele umkehrbare Zahlen gibt es unter einer Milliarde (${10}^9$)?
 
 # --hints--
 
-`reversibleNumbers()` should return `608720`.
+`reversibleNumbers()` sollte `608720` zurückgeben.
 
 ```js
 assert.strictEqual(reversibleNumbers(), 608720);

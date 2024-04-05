@@ -8,9 +8,9 @@ dashedName: problem-63-powerful-digit-counts
 
 # --description--
 
-The 5-digit number, 16807 = 7<sup>5</sup>, is also a fifth power. Similarly, the 9-digit number, 134217728 = 8<sup>9</sup>, is a ninth power.
+Die 5-stellige Zahl, 16807 = 7<sup>5</sup>, ist ebenfalls eine fünfte Potenz. Ebenso ist die 9-stellige Zahl, 134217728 = 8<sup>9</sup>, eine neunte Potenz.
 
-Complete the function so that it returns how many positive integers are of length `n` and an `n`th power.
+Vervollständige die Funktion so, dass sie die Anzahl der positiven ganzen Zahlen mit der Länge `n` und einer `n`-ten Potenz zurückgibt.
 
 # --hints--
 
@@ -26,7 +26,7 @@ assert(typeof powerfulDigitCounts(1) === 'number');
 assert.strictEqual(powerfulDigitCounts(1), 9);
 ```
 
-`powerfulDigitCounts(2)` should return `6`.
+`powerfulDigitCounts(2)` sollte `6` zurückgeben.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(2), 6);
@@ -44,7 +44,7 @@ assert.strictEqual(powerfulDigitCounts(3), 5);
 assert.strictEqual(powerfulDigitCounts(4), 4);
 ```
 
-`powerfulDigitCounts(5)` should return `3`.
+`powerfulDigitCounts(5)` sollte `3` zurückgeben.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(5), 3);
@@ -56,7 +56,7 @@ assert.strictEqual(powerfulDigitCounts(5), 3);
 assert.strictEqual(powerfulDigitCounts(6), 3);
 ```
 
-`powerfulDigitCounts(7)` should return `2`.
+`powerfulDigitCounts(7)` sollte `2` zurückgeben.
 
 ```js
 assert.strictEqual(powerfulDigitCounts(7), 2);

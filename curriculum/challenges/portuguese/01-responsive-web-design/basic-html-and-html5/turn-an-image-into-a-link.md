@@ -33,7 +33,7 @@ O elemento `img` deve estar dentro do elemento `a`.
 assert($('a').children('img').length > 0);
 ```
 
-O elemento `a` deve ser um link inativo com o atributo `href` definido com o valor `#`.
+Your `a` element should be a dead link with an `href` attribute set to `#`.
 
 ```js
 assert(new RegExp('#').test($('a').children('img').parent().attr('href')));
