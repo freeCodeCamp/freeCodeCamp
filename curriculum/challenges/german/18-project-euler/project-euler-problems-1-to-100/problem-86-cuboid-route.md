@@ -8,9 +8,9 @@ dashedName: problem-86-cuboid-route
 
 # --description--
 
-A spider, S, sits in one corner of a cuboid room, measuring 6 by 5 by 3, and a fly, F, sits in the opposite corner. By travelling on the surfaces of the room the shortest "straight line" distance from S to F is 10 and the path is shown on the diagram.
+Eine Spinne, S, sitzt in einer Ecke eines quaderförmigen Raums mit den Maßen 6 x 5 x 3, und eine Fliege, F, sitzt in der gegenüberliegenden Ecke. Wenn man auf den Oberflächen des Raumes reist, ist die kürzeste "gerade" Entfernung von S nach F 10 und der Weg ist auf dem Diagramm dargestellt.
 
-<img class="img-responsive center-block" alt="a diagram of a spider and fly's path from one corner of a cuboid room to the opposite corner" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="ein Diagramm des Weges einer Spinne und einer Fliege von einer Ecke eines quaderförmigen Raumes zur gegenüberliegenden Ecke" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px;" />
 
 However, there are up to three "shortest" path candidates for any given cuboid and the shortest route doesn't always have integer length.
 
@@ -20,31 +20,31 @@ Find the least value of M such that the number of solutions first exceeds `n`.
 
 # --hints--
 
-`cuboidRoute(2000)` should return a number.
+`cuboidRoute(2000)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof cuboidRoute(2000) === 'number');
 ```
 
-`cuboidRoute(2000)` should return `100`.
+`cuboidRoute(2000)` sollte `100` zurückgeben.
 
 ```js
 assert.strictEqual(cuboidRoute(2000), 100);
 ```
 
-`cuboidRoute(25000)` should return `320`.
+`cuboidRoute(25000)` sollte `320` zurückgeben.
 
 ```js
 assert.strictEqual(cuboidRoute(25000), 320);
 ```
 
-`cuboidRoute(500000)` should return `1309`.
+`cuboidRoute(500000)` sollte `1309` zurückgeben.
 
 ```js
 assert.strictEqual(cuboidRoute(500000), 1309);
 ```
 
-`cuboidRoute(1000000)` should return `1818`.
+`cuboidRoute(1000000)` sollte `1818` zurückgeben.
 
 ```js
 assert.strictEqual(cuboidRoute(1000000), 1818);

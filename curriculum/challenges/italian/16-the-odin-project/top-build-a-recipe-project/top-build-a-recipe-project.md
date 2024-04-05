@@ -24,7 +24,7 @@ Il sito web sarà composto da una pagina index principale che avrà dei link ad 
 1. Dovresti vedere una lista ordinata con un paio di passaggi necessari per completare la ricetta.
 1. Under the steps there should be an `h2` element with the text `More Recipes`.
 1. Dovresti vedere un paio di link ad altre ricette all'interno di una lista non ordinata che ha un paio di elementi di lista con elementi di ancoraggio al suo interno.
-1. These anchor elements should have `href` attribute with the value set to `#`.
+1. These anchor elements should have an `href` attribute with the value set to `#`.
 
 # --hints--
 
@@ -34,7 +34,7 @@ Dovresti avere un tag `DOCTYPE`.
 assert(code.match(/<!DOCTYPE\s+?html\s*?>/gi));
 ```
 
-Dovresti avere un elemento `html` con un elemento `head` e un elemento `body`.
+You should have an `html` element with `head` and `body` element.
 
 ```js
 const html = document.querySelectorAll('html')[0];
@@ -105,7 +105,7 @@ const h2 = document.querySelectorAll('H2')[2];
 assert(h2.innerText == 'Steps');
 ```
 
-You should have a `<ol>` with the steps as the list items `<li>`.
+You should have an `<ol>` with the steps as the list items `<li>`.
 
 ```js
 const orderedList = document.querySelectorAll('OL')[0];
@@ -137,7 +137,7 @@ const containsAnchors =  [...listItems].every(function(listItem) {
 assert(unorderedList && allAreListItems && containsAnchors && listItems.length > 1);
 ```
 
-I tag di ancoraggio che linkano ad altre ricette dovrebbero avere un attributo `href` con il valore `#`
+Your anchor tags linking to the recipes should have an `href` attribute with the value set to `#`.
 
 ```js
 const anchorTags = document.querySelectorAll("a");

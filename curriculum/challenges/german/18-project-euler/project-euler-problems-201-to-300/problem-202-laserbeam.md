@@ -1,6 +1,6 @@
 ---
 id: 5900f4371000cf542c50ff49
-title: 'Problem 202: Laserbeam'
+title: 'Problem 202: Laserstrahl'
 challengeType: 1
 forumTopicId: 301843
 dashedName: problem-202-laserbeam
@@ -8,19 +8,19 @@ dashedName: problem-202-laserbeam
 
 # --description--
 
-Three mirrors are arranged in the shape of an equilateral triangle, with their reflective surfaces pointing inwards. There is an infinitesimal gap at each vertex of the triangle through which a laser beam may pass.
+Drei Spiegel sind in Form eines gleichseitigen Dreiecks angeordnet, wobei die spiegelnden Flächen nach innen gerichtet sind. An jeder Ecke des Dreiecks befindet sich eine winzige Lücke, durch die ein Laserstrahl hindurchstrahlen kann.
 
-Label the vertices $A$, $B$ and $C$. There are 2 ways in which a laser beam may enter vertex $C$, bounce off 11 surfaces, then exit through the same vertex: one way is shown below; the other is the reverse of that.
+Beschrifte die Scheitelpunkte $A$, $B$ und $C$. Es gibt zwei Möglichkeiten, wie ein Laserstrahl in den Scheitelpunkt $C$ eintreten, an 11 Flächen abprallen und dann durch denselben Scheitelpunkt wieder austreten kann: die eine Möglichkeit ist unten dargestellt, die andere ist die umgekehrte.
 
-<img class="img-responsive center-block" alt="one way in which laser beam may enter vertex C, bounce off 11 surfaces and exit through the same vertex" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="eine Möglichkeit, bei der der Laserstrahl in den Scheitelpunkt C eintritt, an 11 Oberflächen abprallt und durch denselben Scheitelpunkt wieder austritt" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px;" />
 
-There are 80840 ways in which a laser beam may enter vertex $C$, bounce off 1000001 surfaces, then exit through the same vertex.
+Es gibt 80840 Möglichkeiten, wie ein Laserstrahl in den Scheitelpunkt $C$ eintritt, an 1000001 Oberflächen abprallt und dann durch denselben Scheitelpunkt wieder austreten kann.
 
-In how many ways can a laser beam enter at vertex $C$, bounce off 12017639147 surfaces, then exit through the same vertex?
+Auf wie viele Arten kann ein Laserstrahl am Scheitelpunkt $C$ eintreten, an 12017639147 Oberflächen abprallen und dann durch denselben Scheitelpunkt wieder austreten?
 
 # --hints--
 
-`laserbeam()` should return `1209002624`.
+`laserbeam()` sollte `1209002624` zurückgeben.
 
 ```js
 assert.strictEqual(laserbeam(), 1209002624);
