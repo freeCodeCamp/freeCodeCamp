@@ -41,10 +41,12 @@ function insertStep(stepNum: number): void {
     throw `Step not inserted. New step number must be less than ${
       challengeOrder.length + 2
     }.`;
-  const challengeType =
-    (getMetaData().superBlock as SuperBlocks) === SuperBlocks.SciCompPy
-      ? challengeTypes.python
-      : challengeTypes.html;
+  const challengeType = [
+    SuperBlocks.SciCompPy,
+    SuperBlocks.UpcomingPython
+  ].includes(getMetaData().superBlock)
+    ? challengeTypes.python
+    : challengeTypes.html;
 
   const challengeSeeds =
     stepNum > 1
@@ -70,10 +72,12 @@ function createEmptySteps(num: number): void {
   }
 
   const nextStepNum = getMetaData().challengeOrder.length + 1;
-  const challengeType =
-    (getMetaData().superBlock as SuperBlocks) === SuperBlocks.SciCompPy
-      ? challengeTypes.python
-      : challengeTypes.html;
+  const challengeType = [
+    SuperBlocks.SciCompPy,
+    SuperBlocks.UpcomingPython
+  ].includes(getMetaData().superBlock)
+    ? challengeTypes.python
+    : challengeTypes.html;
 
   for (let stepNum = nextStepNum; stepNum < nextStepNum + num; stepNum++) {
     const stepId = createStepFile({ stepNum, challengeType });
