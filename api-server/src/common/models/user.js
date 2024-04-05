@@ -528,7 +528,7 @@ export default function initializeUser(User) {
       })
       .map(() => ({
         type: 'info',
-        message: `Check your email and click the link we sent you to confirm your new email address.`
+        message: dedent`Check your email and click the link we sent you to confirm your new email address.`
       }));
   }
 
@@ -606,7 +606,7 @@ export default function initializeUser(User) {
           return Observable.forkJoin(
             Observable.fromPromise(updatePromise),
             this.requestAuthEmail(false, newEmail),
-            (_, message) => message
+            (_, type, message) => message
           );
         });
     } else {
@@ -784,8 +784,8 @@ export default function initializeUser(User) {
           return showCerts
             ? completedChallenges
             : completedChallenges.filter(
-                ({ challengeType }) => challengeType !== 7
-              );
+              ({ challengeType }) => challengeType !== 7
+            );
         } else {
           return [];
         }
