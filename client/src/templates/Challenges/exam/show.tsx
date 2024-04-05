@@ -57,7 +57,7 @@ import ExitExamModal from './components/exit-exam-modal';
 import FinishExamModal from './components/finish-exam-modal';
 import ExamResults from './components/exam-results';
 import MissingPrerequisites from './components/missing-prerequisites';
-import FoundationCSharpSurveyAlert from './components/foundational-c-sharp-survey-alert';
+import FoundationalCSharpSurveyAlert from './components/foundational-c-sharp-survey-alert';
 
 import './exam.css';
 
@@ -554,7 +554,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                         missingPrerequisites={missingPrerequisites}
                       />
                     ) : (
-                      <FoundationCSharpSurveyAlert />
+                      <FoundationalCSharpSurveyAlert />
                     )}
                   </>
                 )}

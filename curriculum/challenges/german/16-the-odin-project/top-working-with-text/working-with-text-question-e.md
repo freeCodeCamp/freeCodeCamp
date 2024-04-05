@@ -9,7 +9,7 @@ dashedName: working-with-text-question-e
 
 Du hast velleicht bemerkt, dass du in allen Beispielen dieser Lektion alle Elemente einrückst, die sich innerhalb anderer Elemente befinden. Diese werden als eingebettete Elemente bezeichnet.
 
-When you nest elements within other elements, you create a parent and child relationship between them. The nested elements are the children and the element they are nested within is the parent.
+Wenn du Elemente in andere Elemente verschachtelst, erstellst du eine übergeordnete und untergeordnete Beziehung zwischen ihnen. Die verschachtelten Elemente sind die untergeordneten Elemente und das Element, in dem sie verschachtelt sind, ist das übergeordnete Element.
 
 Im folgenden Beispiel, ist das `body`-Element das übergeordnete Element und das `p` ist das untergeordnete Element:
 

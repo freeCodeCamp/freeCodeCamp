@@ -7,7 +7,7 @@ dashedName: working-with-text-question-d
 
 # --description--
 
-O elemento `em` torna o texto itálico. Ele também coloca ênfase semântica no texto, o que pode afetar coisas como leitores de tela. Para definir um elemento enfatizado, você encapsula o conteúdo do texto em uma tag `<em>`.
+O elemento `em` torna o texto itálico. Ele também coloca ênfase semântica no texto, o que pode afetar coisas como leitores de tela. To define an emphasized element you wrap text content in an `<em>` tag.
 
 Para usar `em` sozinho:
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_6" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/wvewqpp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=wvewqpp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_6" style="width: 100%; overflow:hidden; display:block;" title="CodePen incorporado" loading="lazy" id="cp_embed_wvewqpp"></iframe>
