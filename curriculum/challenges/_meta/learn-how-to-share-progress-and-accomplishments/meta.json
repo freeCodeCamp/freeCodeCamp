@@ -10,8 +10,60 @@
   "isBeta": true,
   "challengeOrder": [
     {
-      "id": "655cd38e0ee8668d87f50f82",
-      "title": "Dialogue: Placeholder"
+      "id": "66100326d773b61282509e50",
+      "title": "Dialogue 1: During a weekly meeting"
+    },
+    {
+      "id": "661003c35e5ba713abd2da6c",
+      "title": "Task 1"
+    },
+    {
+      "id": "6610041a61d5ec13feffff07",
+      "title": "Task 2"
+    },
+    {
+      "id": "6610056e633ce41466b6c5bc",
+      "title": "Task 3"
+    },
+    {
+      "id": "661005bbe1801e14c303a57a",
+      "title": "Task 4"
+    },
+    {
+      "id": "66100646290700150caff732",
+      "title": "Task 5"
+    },
+    {
+      "id": "661215c06938a71ad4101c93",
+      "title": "Task 6"
+    },
+    {
+      "id": "661216bbf6d9a51b409172a8",
+      "title": "Task 7"
+    },
+    {
+      "id": "661216ff45b1871b85f57a1a",
+      "title": "Task 8"
+    },
+    {
+      "id": "6612181d89fdfc1c2f44309d",
+      "title": "Task 9"
+    },
+    {
+      "id": "661218bc905fb61c898221b4",
+      "title": "Task 10"
+    },
+    {
+      "id": "66121954a1cde81cd252ef26",
+      "title": "Task 11"
+    },
+    {
+      "id": "66121a02da620e1d25ff63d4",
+      "title": "Task 12"
+    },
+    {
+      "id": "66121b3a462fe01da4816b39",
+      "title": "Task 13"
     }
   ],
   "helpCategory": "English"
