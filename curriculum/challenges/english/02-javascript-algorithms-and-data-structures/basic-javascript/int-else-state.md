@@ -1,15 +1,13 @@
 ---
-id: 6606cfbf41669416f1f9fcbc
-title: Introducing else statements
+id: 6612ed8ab22861085436c4d7
+title: Introducing else Statements
 challengeType: 1
-dashedName: else-st
+dashedName: int-else-state
 ---
 
 # --description--
 
 When a condition for an `if` statement is true, the block of code following it is executed. What about when that condition is false? Normally nothing would happen. With an `else` statement, an alternate block of code can be executed.
-
-Jab kisi `if` statement ki shart true hoti hai, uske baad wale code block ko execute kiya jata hai. Lekin agar wo shart false hai, to normally kuch nahi hota. `else` statement ke saath, ek alternate code block ko execute kiya ja sakta hai.
 
 ```js
 if (num > 10) {

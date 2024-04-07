@@ -46,8 +46,16 @@
       "title": "Step 9"
     },
     {
+      "id": "661260d77fe6b7f6af628f7b",
+      "title": "Comment Your JavaScript Code"
+    },
+    {
       "id": "6606c952f62155112026cbb0",
       "title": "Declare JavaScript Variables"
+    },
+    {
+      "id": "66126195048243f78835919c",
+      "title": "Understanding Input and Output in JavaScript"
     },
     {
       "id": "6606ca03a0aa92116bead97f",
@@ -58,12 +66,20 @@
       "title": "Initializing Variables with the assignment operator"
     },
     {
+      "id": "6612d2e8e949deff0fb67b5c",
+      "title": "Initializing Multiple Variables in a Single Line"
+    },
+    {
       "id": "6606ca4e13f21011d7519a2b",
       "title": "Create Decimal with Javascript"
     },
     {
       "id": "6606ca7c680cf9120606740b",
       "title": "Declare string variables"
+    },
+    {
+      "id": "66126284b944c2f80ceff050",
+      "title": "Assigning Multiple Values in a Single Line"
     },
     {
       "id": "6606caa003b026122d3796cc",
@@ -80,6 +96,18 @@
     {
       "id": "6606cb14de147212ca33dc95",
       "title": "Declare a Read-Only Variable with the const Keyword"
+    },
+    {
+      "id": "6612634a986f69f85acd948c",
+      "title": "Assigning the Value of One Variable to Another"
+    },
+    {
+      "id": "6612636b1d3630f8831f390e",
+      "title": "Swapping of Variables"
+    },
+    {
+      "id": "661263e70d0e83f9399022ad",
+      "title": "Learn Operators in JavaScript"
     },
     {
       "id": "6606cb5a07022b12f11c53a4",
@@ -126,6 +154,38 @@
       "title": "Compound assignment with Augmented Division"
     },
     {
+      "id": "6612d9eed3d8de037f4e95c9",
+      "title": "Basic Operations on Variables"
+    },
+    {
+      "id": "6612d9905f3d25033c09e869",
+      "title": "Temperature Converter"
+    },
+    {
+      "id": "6612dad1c726f003e1d542b1",
+      "title": "Swapping Variables using Operators"
+    },
+    {
+      "id": "6612f547127b940ecd79b0b8",
+      "title": "Perfectly Divisible"
+    },
+    {
+      "id": "6612dc88af197504846d7451",
+      "title": "Relational Operators"
+    },
+    {
+      "id": "6612eba87bc1910774356543",
+      "title": "Understanding Decisions with if statements"
+    },
+    {
+      "id": "6612ed0b000dcb07f12da1da",
+      "title": "Use Conditional Logic with if Statements"
+    },
+    {
+      "id": "6612ed8ab22861085436c4d7",
+      "title": "Introducing else Statements"
+    },
+    {
       "id": "6606cd7e93dd661526d76c23",
       "title": "Comparison with the Equality Operator"
     },
@@ -154,6 +214,18 @@
       "title": "Comparison with the Less than Operator"
     },
     {
+      "id": "6612ee88a87eb008ba77eb6f",
+      "title": "Find Greater of two Numbers"
+    },
+    {
+      "id": "6612ef30dcb5c609066ac6fc",
+      "title": "Greatest Number in Four Numbers"
+    },
+    {
+      "id": "6612efd3bc9597095156b8a1",
+      "title": "Finding Greatest in Three Numbers"
+    },
+    {
       "id": "6606cf6d22836816903282f5",
       "title": "Comparison with the Greater than or equal to Operator"
     },
@@ -162,20 +234,40 @@
       "title": "Comparison with the Less than or equal to Operator"
     },
     {
-      "id": "6606cfbf41669416f1f9fcbc",
-      "title": "Introducing else statements"
-    },
-    {
       "id": "6606cfe93d07c01723fb7bda",
       "title": "Introducing else if statements"
     },
     {
-      "id": "6606d040910fcf1759588f57",
-      "title": "Logical order in if else statements"
+      "id": "6612f0aa105bf609c2c8ba7b",
+      "title": "Check if Positive or Negative"
+    },
+    {
+      "id": "6612f1287ba2d00a05b622ff",
+      "title": "Leap Year"
     },
     {
       "id": "6606d0691e2c3e1780002742",
       "title": "Chaining if else statements"
+    },
+    {
+      "id": "6612f20c9620c70a5a2a2f19",
+      "title": "Finding Second Maximum in Three Numbers"
+    },
+    {
+      "id": "6612f2a187c0950a9f5d2cbd",
+      "title": "Finding Third Maximum in Four Numbers"
+    },
+    {
+      "id": "6612f37a60f6910b3b81728b",
+      "title": "Logical Order in if-else Statements"
+    },
+    {
+      "id": "6612f3accc64ff0b6dc7c9b9",
+      "title": "Calculate Gross Salary"
+    },
+    {
+      "id": "6612f46dc9c08b0e5e147c86",
+      "title": "Calculate Electricity Bill"
     },
     {
       "id": "6606d0e224f91f17cffa8b46",

@@ -1,8 +1,8 @@
 ---
-id: 6606d040910fcf1759588f57
-title: Logical order in if else statements
+id: 6612f37a60f6910b3b81728b
+title: Logical Order in if-else Statements
 challengeType: 1
-dashedName: log-order-ifelse-sta
+dashedName: logical-ord
 ---
 
 # --description--
