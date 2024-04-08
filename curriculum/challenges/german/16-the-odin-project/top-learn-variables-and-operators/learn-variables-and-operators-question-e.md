@@ -31,19 +31,19 @@ What is the result of applying the modulus operator to `x` where `x = 10`?
 
 ## --answers--
 
-`x % 3` results in `1`
+`x % 3` resultiert in `1`
 
 ---
 
-`x % 3` results in `3`
+`x % 3` resultiert in `3`
 
 ---
 
-`x % 3` results in `0`
+`x % 3` resultiert in `0`
 
 ---
 
-`x % 3` results in `2`
+`x % 3` resultiert in `2`
 
 
 ## --video-solution--

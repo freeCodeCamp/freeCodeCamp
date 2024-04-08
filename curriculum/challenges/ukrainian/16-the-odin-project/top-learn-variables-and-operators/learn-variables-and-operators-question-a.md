@@ -1,12 +1,12 @@
 ---
 id: 65e185b1500d930ce8ed909b
-title: Learn Variables and Operators Question A
+title: Вивчіть змінні та оператори. Запитання A
 challengeType: 15
 dashedName: learn-variables-and-operators-question-a
 ---
 
 # --description--
-The simplest way to get started is to create an HTML file with the JavaScript code inside of it. Type the basic HTML skeleton into a file on your computer somewhere:
+Найпростіший спосіб розпочати роботу — створити файл HTML з кодом JavaScript всередині. Напишіть основний каркас HTML в файлі будь-де на своєму комп’ютері:
 
 ```html
 <!DOCTYPE html>
@@ -24,39 +24,39 @@ The simplest way to get started is to create an HTML file with the JavaScript co
 </html>
 ```
 
-Save and open this file up in a web browser (you can use <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank" >"Live Server" on Visual Studio Code</a> to do this!) and then open up the browser’s console by right-clicking on the blank webpage and selecting "Inspect" or "Inspect Element". In the ‘Developer Tools’ pane find and select the ‘Console’ tab, where you should see the output of our `console.log` statement.
+Збережіть та відкрийте цей файл у браузері (для цього можна використати <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank" >«Live Server» в Visual Studio Code</a>), а потім відкрийте консоль браузера, натиснувши правою кнопкою миші на порожній вебсторінці та обравши «Перевірити». В інструментах розробника знайдіть та оберіть вкладку «Консоль», де зможете побачити вихідні дані інструкції `console.log`.
 
-> `console.log()` is the command to print something to the developer console in your browser. You can use this to print the results from any of the following articles and exercises to the console. We encourage you to code along with all of the examples in this and future lessons.
+> `console.log()` — це команда, яка друкує що завгодно на консолі розробника в браузері. Її можна використовувати, щоб надрукувати результати будь-якої публікації або завдання на консолі. Ми заохочуємо вас програмувати протягом цього та наступних уроків.
 
-Another way to include JavaScript in a webpage is through an external script. This is very similar to linking external CSS docs to your website.
+Інший спосіб додати JavaScript до вебсторінки — зовнішній скрипт. Він дуже схожий до прив’язки зовнішнього CSS до вебсайту.
 
 ```html
   <script src="javascript.js"></script>
 ```
 
-JavaScript files have the extension `.js` similar to `.css` for stylesheets. External JavaScript files are used for more complex scripts.
+Файли JavaScript мають розширення `.js`, яке схоже до `.css` для таблиць стилів. Зовнішні файли JavaScript використовують для складніших скриптів.
 
 # --question--
 
 ## --text--
 
-Which statement accurately describes how to include JavaScript in an HTML document?
+Яке твердження описує, як додати JavaScript до документа HTML?
 
 ## --answers--
 
-JavaScript can only be included internally within a `<script>` tag in the HTML body.
+JavaScript можна додати лише внутрішньо в межах тегу `<script>` в тілі HTML.
 
 ---
 
-JavaScript code must be written in the `<head>` section of an HTML document for it to execute properly.
+Код JavaScript потрібно написати в розділі `<head>` документа HTML, щоб той правильно виконувався.
 
 ---
 
-JavaScript can be included directly in an HTML file using a `<script>` tag or linked externally via a `<script src="javascript.js">` tag.
+JavaScript можна додати напряму до файлу HTML за допомогою тегу `<script>` або пов’язати зовні за допомогою тегу `<script src="javascript.js">`.
 
 ---
 
-External JavaScript files require a special attribute in the `<script>` tag to be recognized by web browsers.
+Зовнішні файли JavaScript потребують спеціального атрибута в тегу `<script>`, щоб бути визнаними браузерами.
 
 
 ## --video-solution--

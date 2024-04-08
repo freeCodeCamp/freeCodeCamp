@@ -1112,7 +1112,8 @@
       "freeCodeCamp 在開源課程的基礎上進行了擴展，使其可以在瀏覽器中交互運行，並通過測試來評估你的代碼，確保你理解了關鍵概念。",
       "如果你想體驗在本地計算機上配置運行所有 The Odin Project，可以在 <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project 網站</a> 上查看原始的 Odin Project。衷心感謝 The Odin Project 社區持續爲世界各地的開發人員維護這一寶貴的學習資源。",
       "本課程爲非官方課程，未經 The Odin Project 認可。本課程對 The Odin Project 課程內容進行了更改。本課程的所有教學材料均採用 CC-BY-SA-NC 4.0 許可協議。",
-      "<a href='https://github.com/TheOdinProject/curriculum?tab=License-1-ov-file#readme' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>"
+      "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>",
+      "此課程包含來自 <a href='javascript.info'>JavaScript.info</a> 的內容，採用 <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a> 許可。"
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1180,6 +1181,10 @@
         "intro": [
           "通過學習變量和運算符開始學習 JavaScript。本課程涵蓋 JavaScript 編程的基礎知識，包括數據類型、運算符和變量聲明。"
         ]
+      },
+      "top-learn-data-types-and-conditionals": {
+        "title": "學習數據類型和條件",
+        "intro": ["在 JavaScript 中學習數據類型和條件"]
       }
     }
   },
@@ -1299,7 +1304,7 @@
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "學習第一天上班的問候語",
         "intro": [
-          "在第一節課程中，你將學習第一天上班可能遇到的情境中的常用表達方式。你將學習自我介紹、認識他人、詢問午餐推薦以及從安保處領取門禁卡。"
+          "在第一節課程中，你將學習第一天上班可能遇到的情境中的常用表達方式。你將學習自我介紹、認識別人、詢問午餐推薦以及從安保處領取門禁卡。"
         ]
       },
       "learn-introductions-in-an-online-team-meeting": {
@@ -1317,32 +1322,38 @@
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "學習如何談論典型的工作日和任務",
         "intro": [
-          "在本課程中，你將學習如何談論你的工作日和你在工作場所執行的任務，以及如何與他人分享這些內容。課程主要關注用於描述你的活動的結構以及與任務相關的詞彙。"
+          "在本課程中，你將學習如何談論你的工作日和你在工作場所執行的任務，以及如何與別人分享這些內容。課程主要關注用於描述你的活動的結構以及與任務相關的詞彙。"
         ]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "學習如何討論你的晨間或晚間例行活動",
         "intro": [
-          "在本課程中，你將學習如何談論並與他人分享你的例行活動細節。課程的重點是用於談論例行活動的結構和相關詞彙。"
+          "在本課程中，你將學習如何談論並與別人分享你的例行活動細節。課程的重點是用於談論例行活動的結構和相關詞彙。"
         ]
       },
       "learn-how-to-describe-your-current-project": {
         "title": "學習如何描述你當前的項目",
         "intro": [
-          "在本課程中，你將學習如何談論自己參與的項目，以及如何告知他人自己在這些項目中的工作。課程的重點是用於告知他人的結構和相關詞彙。"
+          "在本課程中，你將學習如何談論自己參與的項目，以及如何告知別人自己在這些項目中的工作。課程的重點是用於告知別人的結構和相關詞彙。"
         ]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "學習如何詢問和分享教育和專業背景",
-        "intro": ["", ""]
+        "intro": [
+          "在本課程中，你將學習如何詢問別人的教育和職業背景，並學習如何分享有關你的背景信息。"
+        ]
       },
       "learn-how-to-talk-about-hobbies-and-interests": {
         "title": "學習如何談論興趣與愛好",
-        "intro": ["", ""]
+        "intro": [
+          "在本課程中，你將學習用不同的方式談論自己的愛好和感興趣的事物。你還將學習如何詢問別人的愛好，以及如何邀請別人參加這些活動。"
+        ]
       },
       "learn-how-to-discuss-roles-and-responsibilies": {
         "title": "學習如何談論角色和責任",
-        "intro": ["", ""]
+        "intro": [
+          "在本課程中，你將討論人們在公司內外的角色和責任。你將學習如何詢問關於角色和職責的信息，以及如何分享你自己這方面的信息。"
+        ]
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "學習如何就偏好和動機進行對話",
@@ -1417,7 +1428,7 @@
         "intro": ["", ""]
       },
       "learn-how-to-provide-explanations-when-helping-others": {
-        "title": "學習如何在幫助他人時提供解釋",
+        "title": "學習如何在幫助別人時提供解釋",
         "intro": ["", ""]
       }
     }

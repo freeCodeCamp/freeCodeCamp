@@ -8,12 +8,12 @@ dashedName: budget-app
 
 # --description--
 
-Complete the `Category` class. Він повинен опрацьовувати об’єкти, базуючись на різних категоріях (наприклад, *їжа*, *одяг* та *розваги*). Коли об’єкти створені, вони передаються до назви категорії. Клас повинен мати поле класу під назвою `ledger`, яке є списком. Клас також повинен містити наступні методи:
+Завершіть клас `Category`. Він повинен опрацьовувати об’єкти, базуючись на різних категоріях (наприклад, *їжа*, *одяг* та *розваги*). Коли об’єкти створені, вони передаються до назви категорії. Клас повинен мати поле класу під назвою `ledger`, яке є списком. Клас також повинен містити наступні методи:
 
-- Метод `deposit`, що приймає суму та опис. Якщо жодного опису не дано, то він автоматично стає порожнім рядком. Цей метод повинен додавати об’єкти до списку ledger у вигляді `{"amount": amount, "description": description}`.
+- Метод `deposit`, що приймає суму та опис. Якщо жодного опису не дано, то він автоматично стає порожнім рядком. Цей метод повинен додавати об’єкти до списку головної книги у вигляді `{"amount": amount, "description": description}`.
 - Метод `withdraw` схожий до методу `deposit`, але сума, яку він передає, повинна зберігатися у списку як від’ємне число. Якщо недостатньо коштів, то нічого додавати не потрібно. Цей метод повинен повертати `True`, якщо зняття дійсне, а в іншому випадку повертати `False`.
 - Метод `get_balance`, що повертає поточний баланс категорії бюджету на основі депозитів і зняття.
-- Метод `transfer`, що приймає суму або іншу бюджетну категорію як аргументи. Цей метод повинен додавати виведення суми та опис «Transfer to [Destination Budget Category]» (перенести до [категорія]). Потім він повинен додати депозит до іншої категорії, що містить суму та опис «Transfer from [Source Budget Category]» (перенести з [категорія]). Якщо недостатньо коштів, то нічого додавати не потрібно. Цей метод повинен повертати `True`, якщо переказ дійсний, а в іншому випадку повертати `False`.
+- Метод `transfer`, що приймає суму або іншу бюджетну категорію як аргументи. Цей метод повинен додавати виведення суми та опис "Transfer to [Destination Budget Category]". Потім він повинен додати депозит до іншої категорії, що містить суму та опис "Transfer from [Source Budget Category]". Якщо коштів недостатньо, то нічого додавати не потрібно. Цей метод повинен повертати `True`, якщо переказ дійсний, а в іншому випадку повертати `False`.
 - Метод `check_funds`, що приймає суму як аргумент. Він повертає `False`, якщо сума більша за баланс бюджетної категорії, а в іншому випадку повертає `True`. Цей метод варто використовувати обом методам `withdraw` та `transfer`.
 
 Якщо бюджет надрукований, то повинні відображатися:
@@ -22,7 +22,7 @@ Complete the `Category` class. Він повинен опрацьовувати 
 - Список елементів у записі. Кожен рядок повинен показувати опис і суму. Повинні зображатися перші 23 символи опису, а потім сума. Сума повинна бути вирівняною за правим краєм, містити два десяткові знаки та відображати максимум 7 символів.
 - Рядок, що показує загальну категорію.
 
-Here is an example usage:
+Ось приклад використання:
 
 ```py
 food = Category("Food")
@@ -34,7 +34,7 @@ food.transfer(50, clothing)
 print(food)
 ```
 
-And here is an example of the output:
+І ось приклад виводу:
 
 ```bash
 *************Food*************
@@ -45,9 +45,9 @@ Transfer to Clothing    -50.00
 Total: 923.96
 ```
 
-Окрім класу `Category` створіть функцію під назвою `create_spend_chart` (за межами класу), яка приймає список категорій як аргумент. Вона повинна повертати рядок зі стовпчиковою діаграмою.
+Окрім класу `Category`, створіть функцію під назвою `create_spend_chart` (за межами класу), яка приймає список категорій як аргумент. Вона повинна повертати рядок зі стовпчиковою діаграмою.
 
-Діаграма повинна показувати відсотки, витрачені в кожній категорії, переданій до функції. Відсоток витраченого повинен бути розрахований лише за рахунок зняття, але не з депозитів. Внизу лівої частини графіку повинні бути мітки 0 - 100. Стовпчики у стовпчиковій діаграмі повинні бути створені із символу «o». Висота кожного стовпчика повинна бути округлена до найближчого 10. Горизонтальна лінія під стовпчиками повинна розташовуватись в двох пробілах від кінцевого стовпчика. Назва кожної категорії повинна бути написана вертикально під стовпчиком. Вгорі повинен бути заголовок «Percentage spent by category» (відсоток, витрачений у категорії).
+Діаграма повинна показувати відсотки, витрачені в кожній категорії, переданій до функції. Відсоток витраченого повинен бути розрахований лише за рахунок зняття, але не з депозитів. Внизу лівої частини графіку повинні бути мітки 0 - 100. Стовпчики у стовпчиковій діаграмі повинні бути створені із символу «o». Висота кожного стовпчика повинна бути округлена до найближчого десятка. Горизонтальна лінія під стовпчиками повинна розташовуватись в двох пробілах від кінцевого стовпчика. Назва кожної категорії повинна бути написана вертикально під стовпчиком. Вгорі повинен бути заголовок "Percentage spent by category".
 
 Ця функція буде тестуватися чотирма категоріями.
 
@@ -79,7 +79,7 @@ Percentage spent by category
 
 # --hints--
 
-The `deposit` method should create a specific object in the ledger instance variable.
+Метод `deposit` має створити певний об’єкт у змінній екземпляра головної книги.
 
 ```js
 ({
@@ -117,7 +117,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Calling the `deposit` method with no description should create a blank description.
+Виклик методу `deposit` без опису має створити порожній опис.
 
 ```js
 ({
@@ -155,7 +155,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `withdraw` method should create a specific object in the `ledger` instance variable.
+Метод `withdraw` має створити певний об’єкт у змінній екземпляра `ledger`.
 
 ```js
 ({
@@ -194,7 +194,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Calling the `withdraw` method with no description should create a blank description.
+Виклик методу `withdraw` без опису має створити порожній опис.
 
 ```js
 ({
@@ -233,7 +233,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `withdraw` method should return `True` if the withdrawal took place.
+Метод `withdraw` має повернути `True`, якщо зняття відбулося.
 
 ```js
 ({
@@ -270,7 +270,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Calling `food.deposit(900, "deposit")` and `food.withdraw(45.67, "milk, cereal, eggs, bacon, bread")` should return a balance of `854.33`.
+Виклик `food.deposit(900, "deposit")` та `food.withdraw(45.67, "milk, cereal, eggs, bacon, bread")` має повернути баланс `854.33`.
 
 ```js
 ({
@@ -309,7 +309,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Calling the `transfer` method on a category object should create a specific ledger item in that category object.
+Виклик методу `transfer` на об’єкті категорії має створити певний елемент головної книги в цьому об’єкті категорії.
 
 ```js
 ({
@@ -351,7 +351,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `transfer` method should return `True` if the transfer took place.
+Метод `transfer` має повернути `True`, якщо переказ відбувся.
 
 ```js
 ({
@@ -391,7 +391,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Calling `transfer` on a category object should reduce the balance in the category object.
+Виклик `transfer` на об’єкті категорії має зменшити баланс в об’єкті категорії.
 
 ```js
 ({
@@ -433,7 +433,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `transfer` method should increase the balance of the category object passed as its argument.
+Метод `transfer` має збільшити баланс об’єкта категорії, переданого як аргумент.
 
 ```js
 ({
@@ -475,7 +475,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `transfer` method should create a specific ledger item in the category object passed as its argument.
+Метод `transfer` має створити певний елемент головної книги в об’єкті категорії, переданого як аргумент.
 
 ```js
 ({
@@ -517,7 +517,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `check_funds` method should return `False` if the amount passed to the method is greater than the category balance.
+Метод `check_funds` має повернути `False`, якщо сума, передана до методу, перевищує баланс категорії.
 
 ```js
 ({
@@ -555,7 +555,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `check_funds` method should return `True` if the amount passed to the method is not greater than the category balance.
+Метод `check_funds` має повернути `True`, якщо сума, передана до методу, не перевищує баланс категорії.
 
 ```js
 ({
@@ -593,7 +593,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `withdraw` method should return `False` if the withdrawal didn't take place.
+Метод `withdraw` має повернути `False`, якщо зняття не відбулося.
 
 ```js
 ({
@@ -630,7 +630,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `transfer` method should return `False` if the transfer didn't take place.
+Метод `transfer` має повернути `False`, якщо переказ не відбувся.
 
 ```js
 ({
@@ -668,7 +668,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Printing a `Category` instance should give a different string representation of the object.
+Друк екземпляра `Category` має дати інше рядкове представлення об’єкта.
 
 ```js
 ({
@@ -709,7 +709,7 @@ t.result.wasSuccessful()
 })
 ```
 
-`create_spend_chart` should print a different chart representation. Check that all spacing is exact.
+`create_spend_chart` має надрукувати інше представлення діаграми. Переконайтеся, що всі інтервали точні.
 
 ```js
 ({

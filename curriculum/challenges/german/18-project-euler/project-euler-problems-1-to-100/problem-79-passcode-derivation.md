@@ -8,11 +8,11 @@ dashedName: problem-79-passcode-derivation
 
 # --description--
 
-A common security method used for online banking is to ask the user for three random characters from a passcode. For example, if the passcode was `531278`, they may ask for the 2nd, 3rd, and 5th characters; the expected reply would be: `317`.
+Eine gängige Sicherheitsmethode beim Online-Banking besteht darin, den Nutzer nach drei zufälligen Zeichen eines Passworts zu fragen. Wenn das Passwort z. B. `531278` lautet, wird man nach dem 2., 3. und 5. Zeichen gefragt; die erwartete Antwort wäre `317`.
 
 The arrays, `keylog1`, `keylog2`, and `keylog3`, contains fifty successful login attempts.
 
-Given that the three characters are always asked for in order, analyze the array so as to determine the shortest possible secret passcode of unknown length.
+Da die drei Zeichen immer in Reihenfolge angefordert werden, analysiere das Array auf eine Weise, um das kürzeste, mögliche geheime Passwort von unbekannter Länge zu ermitteln.
 
 # --hints--
 

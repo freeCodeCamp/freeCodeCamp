@@ -1,6 +1,6 @@
 ---
 id: 5900f36f1000cf542c50fe82
-title: 'Problem 3: Largest prime factor'
+title: 'Problem 3: Größter Primfaktor'
 challengeType: 1
 forumTopicId: 301952
 dashedName: problem-3-largest-prime-factor
@@ -8,55 +8,55 @@ dashedName: problem-3-largest-prime-factor
 
 # --description--
 
-The prime factors of 13195 are 5, 7, 13 and 29.
+Die Primfaktoren von 13195 sind 5, 7, 13 und 29.
 
-What is the largest prime factor of the given `number`?
+Was ist der größte Primfaktor der gegebenen `number`?
 
 # --hints--
 
-`largestPrimeFactor(2)` should return a number.
+`largestPrimeFactor(2)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof largestPrimeFactor(2) === 'number');
 ```
 
-`largestPrimeFactor(2)` should return 2.
+`largestPrimeFactor(2)` sollte 2 zurückgeben.
 
 ```js
 assert.strictEqual(largestPrimeFactor(2), 2);
 ```
 
-`largestPrimeFactor(3)` should return 3.
+`largestPrimeFactor(3)` sollte 3 zurückgeben.
 
 ```js
 assert.strictEqual(largestPrimeFactor(3), 3);
 ```
 
-`largestPrimeFactor(5)` should return 5.
+`largestPrimeFactor(5)` sollte 5 zurückgeben.
 
 ```js
 assert.strictEqual(largestPrimeFactor(5), 5);
 ```
 
-`largestPrimeFactor(7)` should return 7.
+`largestPrimeFactor(7)` sollte 7 zurückgeben.
 
 ```js
 assert.strictEqual(largestPrimeFactor(7), 7);
 ```
 
-`largestPrimeFactor(8)` should return 2.
+`largestPrimeFactor(8)` sollte 2 zurückgeben.
 
 ```js
 assert.strictEqual(largestPrimeFactor(8), 2);
 ```
 
-`largestPrimeFactor(13195)` should return 29.
+`largestPrimeFactor(13195)` sollte 29 zurückgeben.
 
 ```js
 assert.strictEqual(largestPrimeFactor(13195), 29);
 ```
 
-`largestPrimeFactor(600851475143)` should return 6857.
+`largestPrimeFactor(600851475143)` sollte 6857 zurückgeben.
 
 ```js
 assert.strictEqual(largestPrimeFactor(600851475143), 6857);
