@@ -1,6 +1,6 @@
 ---
 id: 5900f4301000cf542c50ff42
-title: 'Problem 196: Prime triplets'
+title: 'Problem 196: Primzahldrillinge'
 challengeType: 1
 forumTopicId: 301834
 dashedName: problem-196-prime-triplets
@@ -8,7 +8,7 @@ dashedName: problem-196-prime-triplets
 
 # --description--
 
-Build a triangle from all positive integers in the following way:
+Erstelle ein Dreieck aus allen positiven Integer auf die folgende Art und Weise:
 
 $$\begin{array}{rrr}   &  1 \\\\
   &  \color{red}{2} &  \color{red}{3} \\\\   &  4 & \color{red}{5} &  6 \\\\
@@ -18,19 +18,19 @@ $$\begin{array}{rrr}   &  1 \\\\
   & 46 & \color{red}{47} & 48 & 49 & 50 & 51 & 52 & \color{red}{53} & 54 & 55 \\\\   & 56 & 57 & 58 & \color{red}{59} & 60 & \color{red}{61} & 62 & 63 & 64 & 65 & 66 \\\\
   & \cdots \end{array}$$
 
-Each positive integer has up to eight neighbours in the triangle.
+Jede positive Integer hat bis zu acht Nachbarn im Dreieck.
 
-A set of three primes is called a prime triplet if one of the three primes has the other two as neighbours in the triangle.
+Ein Satz von drei Primzahlen wird als Primzahlentripel bezeichnet, wenn eine der drei Primzahlen die beiden anderen Primzahlen als Nachbarn im Dreieck hat.
 
-For example, in the second row, the prime numbers 2 and 3 are elements of some prime triplet.
+In der zweiten Reihe beispielsweise sind die Primzahlen 2 und 3 Elemente eines Primzahlentripels.
 
-If row 8 is considered, it contains two primes which are elements of some prime triplet, i.e. 29 and 31. If row 9 is considered, it contains only one prime which is an element of some prime triplet: 37.
+Wenn die Reihe 8 berücksichtigt wird, enthält es zwei Primzahlen, die Elemente eines Primzahltripels sind, nämlich 29 und 31. Betrachtet man die Zeile 9, so enthält sie nur eine Primzahl, die ein Element eines Primzahltripletts ist: 37.
 
-Define $S(n)$ as the sum of the primes in row $n$ which are elements of any prime triplet. Then $S(8) = 60$ and $S(9) = 37$.
+Definiere $S(n)$ als Summe der Primzahlen in Reihe $n$, die Elemente eines beliebigen Primzahldrillings sind. Dann gilt $S(8) = 60$ und $S(9) = 37$.
 
-You are given that $S(10000) = 950007619$.
+Es ist gegeben, dass $S(10000) = 950007619$.
 
-Find $S(5678027) + S(7208785)$.
+Finde $S(5678027) + S(7208785)$.
 
 # --hints--
 

@@ -445,7 +445,6 @@ ToDo: find out why, and remove the need for it */
 .block-grid .progress-wrapper {
   width: 100%;
   text-align: left;
-  font-family: var(--font-family-sans-serif);
   display: flex;
   align-items: center;
   margin-top: 18px;

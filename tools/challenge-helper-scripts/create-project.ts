@@ -164,6 +164,7 @@ async function createFirstChallenge(
   return createStepFile({
     projectPath: newChallengeDir + '/',
     stepNum: 1,
+    challengeType: 0,
     challengeSeeds
   });
 }

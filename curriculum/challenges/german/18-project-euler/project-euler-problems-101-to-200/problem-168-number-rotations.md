@@ -1,6 +1,6 @@
 ---
 id: 5900f4151000cf542c50ff27
-title: 'Problem 168: Number Rotations'
+title: 'Problem 168: Zahlendrehungen'
 challengeType: 1
 forumTopicId: 301802
 dashedName: problem-168-number-rotations
@@ -8,13 +8,13 @@ dashedName: problem-168-number-rotations
 
 # --description--
 
-Consider the number 142857. We can right-rotate this number by moving the last digit (7) to the front of it, giving us 714285.
+Betrachte die Zahl 142857. Wir können diese Zahl rechtsherum drehen, indem wir die letzte Ziffer (7) nach vorne verschieben, sodass wir 714285 erhalten.
 
-It can be verified that $714285 = 5 × 142857$.
+Es kann überprüft werden, dass $714285 = 5 × 142857$.
 
-This demonstrates an unusual property of 142857: it is a divisor of its right-rotation.
+Dies zeigt eine ungewöhnliche Eigenschaft von 142857: Es ist ein Teiler ihrer Rechtsdrehung.
 
-For integer number of digits $a$ and $b$, find the last 5 digits of the sum of all integers $n$, $10^a &lt; n &lt; 10^b$, that have this property.
+Für die Integer der Ziffern $a$ und $b$, finde die letzten 5 Ziffern der Summe von allen Integern $n$, $10^a &lt; n &lt; 10^b$, die diese Eigenschaften besitzen.
 
 # --hints--
 
