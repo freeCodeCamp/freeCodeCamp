@@ -64,7 +64,7 @@
     "lint": "npm-run-all create:shared -p lint:*",
     "lint:challenges": "cd ./curriculum && pnpm run lint",
     "lint:js": "eslint --cache --max-warnings 0 .",
-    "lint:ts": "tsc && tsc -p shared && tsc -p tools/ui-components && tsc -p api",
+    "lint:ts": "tsc && tsc -p shared && tsc -p api",
     "lint:prettier": "prettier --list-different .",
     "reload:server": "pm2 reload api-server/ecosystem.config.js",
     "preseed": "npm-run-all create:shared",
