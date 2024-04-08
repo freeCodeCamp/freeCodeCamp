@@ -23,7 +23,7 @@ const story = {
       control: false
     },
     size: {
-      options: ['medium', 'large']
+      options: ['medium', 'large', 'xLarge']
     },
     variant: {
       options: ['default', 'danger']
@@ -137,6 +137,13 @@ export const Large: Story = {
   render: DefaultTemplate,
   args: {
     size: 'large'
+  }
+};
+
+export const ExtraLarge: Story = {
+  render: DefaultTemplate,
+  args: {
+    size: 'xLarge'
   }
 };
 

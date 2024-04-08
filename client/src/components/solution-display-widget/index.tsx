@@ -114,10 +114,7 @@ export function SolutionDisplayWidget({
   );
   const ShowMultifileProjectSolution = (
     <div className='solutions-dropdown'>
-      <Dropdown
-        id={`dropdown-for-${id}-${randomIdSuffix}`}
-        data-playwright-test-label='multifile-dropdown'
-      >
+      <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
         <Dropdown.Toggle className='btn-invert'>
           {viewText}{' '}
           <span className='sr-only'>
@@ -125,18 +122,10 @@ export function SolutionDisplayWidget({
           </span>
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <MenuItem
-            data-playwright-test-label='multifile-dropdown-code'
-            variant='primary'
-            onClick={showUserCode}
-          >
+          <MenuItem variant='primary' onClick={showUserCode}>
             {viewCode}
           </MenuItem>
-          <MenuItem
-            data-playwright-test-label='multifile-dropdown-project'
-            variant='primary'
-            onClick={showProjectPreview}
-          >
+          <MenuItem variant='primary' onClick={showProjectPreview}>
             {viewProject}
           </MenuItem>
         </Dropdown.Menu>

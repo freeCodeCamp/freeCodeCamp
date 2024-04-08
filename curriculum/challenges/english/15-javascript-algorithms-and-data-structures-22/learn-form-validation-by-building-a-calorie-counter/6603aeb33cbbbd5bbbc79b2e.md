@@ -1,57 +1,22 @@
 ---
-id: 63bf45ce0dc8d4270760c6d0
-title: Step 22
+id: 6603aeb33cbbbd5bbbc79b2e
+title: Step 26
 challengeType: 0
-dashedName: step-22
+dashedName: step-26
 ---
 
 # --description--
 
-You will need to check if the array `["+", "-", " "]` does not include the current character. You can use a combination of the <dfn>includes()</dfn> method and the <dfn>!</dfn> operator to do this.
+To see the results from the `cleanInputString` function, you will need to add a `console.log()` statement. Inside that console statement, call the `cleanInputString` function with the string value of `"+-99"` as an argument.
 
-The `.includes()` method returns `true` if the array contains the character, and `false` if not. The logical NOT operator (`!`) will return the opposite of the value of the `.includes()` method.
-
-Here is an example checking if the current character is not in the vowels array. If it is not, that current character is pushed into the `consonantArray`:
-
-```js
-const inputString = "Hello World";
-const charArray = inputString.split('');
-const consonantArray = [];
-
-for (let i = 0; i < charArray.length; i++) {
-  if (!['a', 'e', 'i', 'o', 'u'].includes(charArray[i])) {
-    consonantArray.push(charArray[i]);
-  }
-}
-```
-
-Within your loop, you need to check if the character in `strArray` at index `i` is not a `"+"`, `"-"`, or a space (`" "`). If it is not, `push` it to the `cleanStrArray`.
+Open up the console and you should see the original string followed by the cleaned string value with the `+-` removed.
 
 # --hints--
 
-Your `for` loop should have an `if` statement.
+You should have a `console.log(cleanInputString("+-99"))` statement.
 
 ```js
-assert.match(cleanInputString.toString(), /for\s*\(\s*(let|var)\s+i\s*=\s*0\s*;\s*i\s*<\s*strArray\.length\s*;\s*i\s*\+\+\s*\)\s*\{\s*if\s*\(/);
-```
-
-Your `for` loop should use `!["+", "-", " "].includes()`.
-
-```js
-// the loop protection injects code so we have to look at the raw code directly
-assert.match(code, /for\s*\(\s*(let|var)\s+i\s*=\s*0\s*;\s*i\s*<\s*strArray\.length\s*;\s*i\s*\+\+\s*\)\s*\{\s*if\s*\(\s*!\s*\[\s*("|')\+\2\s*,\s*("|')-\3\s*,\s*("|')\s\4\s*\]\s*\.includes\(/);
-```
-
-Your `for` loop should see if `!["+", "-", " "].includes(strArray[i])`.
-
-```js
-assert.match(code, /for\s*\(\s*(let|var)\s+i\s*=\s*0\s*;\s*i\s*<\s*strArray\.length\s*;\s*i\s*\+\+\s*\)\s*\{\s*if\s*\(\s*!\s*\[\s*("|')\+\2\s*,\s*("|')-\3\s*,\s*("|')\s\4\s*\]\s*\.includes\(\s*strArray\s*\[\s*i\s*\]\s*\)\s*\)(\s*\{)?/);
-```
-
-Your `for` loop should `push` `strArray[i]` to `cleanStrArray`.
-
-```js
-assert.match(code, /for\s*\(\s*(let|var)\s+i\s*=\s*0\s*;\s*i\s*<\s*strArray\.length\s*;\s*i\s*\+\+\s*\)\s*\{\s*if\s*\(\s*!\s*\[\s*("|')\+\2\s*,\s*("|')-\3\s*,\s*("|')\s\4\s*\]\s*\.includes\(\s*strArray\s*\[\s*i\s*\]\s*\)\s*\)(\s*\{)?\s*cleanStrArray\.push\(\s*strArray\s*\[\s*i\s*\]\s*\)\s*;?\s*(\s*\})?/);
+assert.match(code, /console\.log\(\s*cleanInputString\(\s*('|")\s*\+\-9\s*9\s*\1\s*\)\s*\);?/);
 ```
 
 # --seed--
@@ -227,14 +192,12 @@ const clearButton = document.getElementById('clear');
 const output = document.getElementById('output');
 let isError = false;
 
---fcc-editable-region--
 function cleanInputString(str) {
-  const strArray = str.split('');
-  const cleanStrArray = [];
-
-  for (let i = 0; i < strArray.length; i++) {
-
-  }
+  console.log("original string: ", str);
+  const regex = /[+-\s]/g;
+  return str.replace(regex, '');
 }
+--fcc-editable-region--
+
 --fcc-editable-region--
 ```
