@@ -80,7 +80,6 @@
     "start": "npm-run-all create:shared -p develop:server serve:client",
     "start-ci": "npm-run-all create:shared -p start:server serve:client-ci",
     "start:server": "pm2 start api-server/ecosystem.config.js",
-    "storybook": "cd ./tools/ui-components && pnpm run storybook",
     "test": "run-s create:shared build:curriculum build-workers test:*",
     "test:source": "jest",
     "test:api": "cd api && jest --force-exit",
@@ -92,7 +91,6 @@
     "test-server": "jest api-server",
     "test-tools": "jest tools",
     "test-utils": "jest utils",
-    "test-ui-components": "jest tools/ui-components",
     "postinstall": "cypress cache prune",
     "prepare": "husky"
   },
