@@ -57,6 +57,7 @@
     "run-test": "运行测试（Ctrl + Enter）",
     "check-code": "检查你的代码（Ctrl + Enter）",
     "check-code-2": "检查你的代码",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "重置",
     "reset-step": "重置此步骤",
     "help": "帮助",
@@ -727,7 +728,9 @@
     "task": "任务",
     "dialogues-and-tasks-for": "{{blockTitle}} 的对话和任务",
     "code-example": "{{codeName}} 代码示例",
-    "opens-new-window": "在新窗口打开"
+    "opens-new-window": "在新窗口打开",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "在申请认证前，你必须先同意我们的《学术诚信条例》",
@@ -1034,8 +1037,9 @@
     "execute-challenge": "开始挑战",
     "focus-editor": "聚焦编辑器",
     "focus-instructions-panel": "聚焦指示面板",
-    "navigate-previous": "跳转至上一个练习",
-    "navigate-next": "跳转至下一个练习"
+    "navigate-previous": "Navigate To Previous Exercise",
+    "navigate-next": "Navigate To Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "注销你的账户",
