@@ -534,6 +534,9 @@ export default function initializeUser(User) {
 
   User.prototype.requestAuthEmail = requestAuthEmail;
 
+  /**
+   * @param {String} requestedEmail
+   */
   function requestUpdateEmail(requestedEmail) {
     const newEmail = ensureLowerCaseString(requestedEmail);
     const currentEmail = ensureLowerCaseString(this.email);
@@ -606,7 +609,7 @@ export default function initializeUser(User) {
           return Observable.forkJoin(
             Observable.fromPromise(updatePromise),
             this.requestAuthEmail(false, newEmail),
-            (_, type, message) => message
+            (_, response) => response.message
           );
         });
     } else {

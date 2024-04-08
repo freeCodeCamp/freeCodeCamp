@@ -95,7 +95,7 @@ function updateMyEmail(req, res, next) {
   } = req;
   return user
     .requestUpdateEmail(email)
-    .subscribe(message => res.json({ message }), next);
+    .subscribe(response => res.json({ response }), next);
 }
 
 // Re-enable once we can handle the traffic
