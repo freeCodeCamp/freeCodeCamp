@@ -57,6 +57,7 @@
     "run-test": "運行測試（Ctrl + Enter）",
     "check-code": "檢查你的代碼（Ctrl + Enter）",
     "check-code-2": "檢查你的代碼",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "重置",
     "reset-step": "重置此步驟",
     "help": "幫助",
@@ -727,7 +728,9 @@
     "task": "任務",
     "dialogues-and-tasks-for": "{{blockTitle}} 的對話和任務",
     "code-example": "{{codeName}} 代碼示例",
-    "opens-new-window": "在新窗口打開"
+    "opens-new-window": "在新窗口打開",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "在申請認證前，你必須先同意我們的《學術誠信條例》",
@@ -1034,8 +1037,9 @@
     "execute-challenge": "開始挑戰",
     "focus-editor": "聚焦編輯器",
     "focus-instructions-panel": "聚焦指示面板",
-    "navigate-previous": "跳轉至上一個練習",
-    "navigate-next": "跳轉至下一個練習"
+    "navigate-previous": "Navigate To Previous Exercise",
+    "navigate-next": "Navigate To Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "註銷你的賬戶",
