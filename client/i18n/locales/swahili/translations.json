@@ -57,6 +57,7 @@
     "run-test": "Endesha Majaribio (Ctrl + Enter)",
     "check-code": "Angalia Code yako (Ctrl + Enter)",
     "check-code-2": "Angalia Code Yako",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "Anzisha Upya",
     "reset-step": "Weka Upya Hatua Hii",
     "help": "Msaada",
@@ -727,7 +728,9 @@
     "task": "Task",
     "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "mfano wa msimbo wa {{codeName}}",
-    "opens-new-window": "Inafungua katika kurasa mpya"
+    "opens-new-window": "Inafungua katika kurasa mpya",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "Ili kudai uthibitisho, lazima kwanza ukubali sera yetu ya uaminifu kitaaluma",
@@ -1034,8 +1037,9 @@
     "execute-challenge": "Tekeleza Changamoto",
     "focus-editor": "Lenga Kihariri",
     "focus-instructions-panel": "Lenga Paneli ya Maelekezo",
-    "navigate-previous": "Pitia Zoezi Lililotangulia",
-    "navigate-next": "Pitia Zoezi Linalofuata"
+    "navigate-previous": "Navigate To Previous Exercise",
+    "navigate-next": "Navigate To Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "Ondoka kwenye akaunti yako",
