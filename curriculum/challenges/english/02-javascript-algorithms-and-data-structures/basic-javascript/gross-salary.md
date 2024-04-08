@@ -13,12 +13,18 @@ As a payroll manager in a company, your responsibility is to determine the gross
 
 Write a program to take the basic salary of an employee as input and calculate their gross salary according to predefined rules.
 
+For the first 50 units, the rate is Rs. 0.50/unit, so the cost is 50 * 0.50 = Rs. 25.
+For the next 100 units, the rate is Rs. 0.75/unit, so the cost is 100 * 0.75 = Rs. 75.
+The total cost for the first 150 units is Rs. 25 + Rs. 75 = Rs. 100.
+For the next 50 units (200 - 150 = 50 units), the rate is Rs. 1.20/unit, so the cost is 50 * 1.20 = Rs. 60.
+The total cost for 200 units is Rs. 100 + Rs. 60 = Rs. 160.
+Adding the 20% surcharge, the total bill becomes 1.20 * 160 = Rs. 192.
+
 ```js
 Basic Salary <= 10000 : HRA = 20%, DA = 80%
 Basic Salary <= 20000 : HRA = 25%, DA = 90%
 Basic Salary > 20000 : HRA = 30%, DA = 95%
 ```
-
 
 # --instructions--
 
@@ -45,16 +51,7 @@ Prompt 2: What approach would I  take to handle scenarios where the basic salary
 assert(calculateGrossSalary(17000)===36550)
 ```
 
-
-
 # --seed--
-## --after-user-code--
-For the first 50 units, the rate is Rs. 0.50/unit, so the cost is 50 * 0.50 = Rs. 25.
-For the next 100 units, the rate is Rs. 0.75/unit, so the cost is 100 * 0.75 = Rs. 75.
-The total cost for the first 150 units is Rs. 25 + Rs. 75 = Rs. 100.
-For the next 50 units (200 - 150 = 50 units), the rate is Rs. 1.20/unit, so the cost is 50 * 1.20 = Rs. 60.
-The total cost for 200 units is Rs. 100 + Rs. 60 = Rs. 160.
-Adding the 20% surcharge, the total bill becomes 1.20 * 160 = Rs. 192.
 
 ## --seed-contents--
 
@@ -83,5 +80,5 @@ function calculateGrossSalary(basicSalary) {
 
     return basicSalary + HRA + DA;
 }
-
 ```
+
