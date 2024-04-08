@@ -1116,8 +1116,8 @@
       "freeCodeCamp розширив відкриту навчальну програму, щоб зробити її інтерактивною у браузері. Проєкт міститиме тести, щоб оцінити ваш код та переконатись, що ви зрозуміли основні поняття.",
       "Якщо ви хочете отримати оригінальний досвід налаштування проєкту на локальному комп’ютері, див. першоджерело проєкту на <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project</a>. Велика подяка спільноті проєкту «Odin» за підтримку цього цінного навчального ресурсу для розробників з усього світу.",
       "Цей курс неофіційний та не підтримується The Odin Project. До навчальної програми проєкту було внесено зміни, а весь навчальний матеріал курсу підлягає ліцензуванню <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
-      "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>",
-      "This course includes content from <a href='javascript.info'>JavaScript.info</a>, which is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>"
+      "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; Проєкт «Odin»</a>",
+      "Цей курс містить матеріал з <a href='javascript.info'>JavaScript.info</a>, що підлягає ліцензуванню <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>"
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1187,8 +1187,10 @@
         ]
       },
       "top-learn-data-types-and-conditionals": {
-        "title": "Learn Data Types and Conditionals",
-        "intro": ["Learn about data types and conditionals in JavaScript."]
+        "title": "Вивчіть типи даних та умови",
+        "intro": [
+          "Дізнайтесь про типи даних та умовні інструкції в JavaScript."
+        ]
       }
     }
   },
@@ -1344,21 +1346,21 @@
         ]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
-        "title": "Дізнайтесь, як запитувати та розповідати про навчання і досвід роботи",
+        "title": "Дізнайтесь, як запитувати та розповідати про освіту і досвід роботи",
         "intro": [
-          "In this course, you'll learn how to ask about another person's educational and professional backgrounds and you'll learn how to share information about your background as well."
+          "У цьому курсі ви дізнаєтесь, як запитувати про освіту та досвід роботи іншої людини, а також навчитесь ділитися інформацією про власний досвід."
         ]
       },
       "learn-how-to-talk-about-hobbies-and-interests": {
         "title": "Дізнайтесь, як говорити про хобі та інтереси",
         "intro": [
-          "In this course, you'll learn different ways to talk about hobbies and things that interest you. You'll also learn how to ask about other people's hobbies and how to invite them to join you in these activities."
+          "У цьому курсі ви навчитесь говорити про хобі та речі, які вас цікавлять. Ви також дізнаєтесь, як запитувати про захоплення інших людей та як запропонувати їм скласти компанію."
         ]
       },
       "learn-how-to-discuss-roles-and-responsibilies": {
         "title": "Дізнайтесь, як обговорювати посади та обов’язки",
         "intro": [
-          "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
+          "У цьому курсі ви обговорюватимете посади та обов’язки людей в компанії й поза нею. Ви дізнаєтеся, як запитувати про посади та обов’язки, а також як ділитися власною інформацією на цю тему."
         ]
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
