@@ -1,20 +1,20 @@
 ---
 id: 647e21f88acb466c97ccbeeb
-title: Install and Configure Visual Studio Code
+title: Visual Studio Code installieren und konfigurieren
 challengeType: 19
 dashedName: install-and-configure-visual-studio-code
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/install-configure-visual-studio-code/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/install-configure-visual-studio-code/</a> and complete all the tasks for the "Install and Configure Visual Studio Code" module. This is **required** to earn the "Create and Run Simple C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. Gehe zu <a href="https://learn.microsoft.com/training/modules/install-configure-visual-studio-code/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/install-configure-visual-studio-code/</a> und löse alle Aufgaben für das Modul "Installieren und Konfigurieren von Visual Studio Code". Dies ist **erforderlich**, um die "Create und Run Simple C# Console Applicaions"-Trophäe auf Microsoft Learn zu erwerben und sich für die Zertifizierungsprüfung zu qualifizieren.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/install-configure-visual-studio-code/" target="_blank" rel="noreferrer">Install and Configure Visual Studio Code</a> module on Microsoft Learn. Then, answer the question below.
+Schließe das Modul <a href="https://learn.microsoft.com/training/modules/install-configure-visual-studio-code/" target="_blank" rel="noreferrer">Installieren und Konfigurieren von Visual Studio Code</a> auf Microsoft Learn ab. Beantworte dann die Frage unten.
 
 # --question--
 
@@ -24,15 +24,15 @@ Which of the following choices provides the best description of an Integrated De
 
 ## --answers--
 
-Visual Studio Code is an Integrated Development Environment.
+Visual Studio Code ist eine integrierte Entwicklungsumgebung.
 
 ---
 
-An Integrated Development Environment is tool that makes it easier to write code.
+Eine Integrierte Entwicklungsumgebung ist ein Werkzeug, das das Schreiben von Code vereinfacht.
 
 ---
 
-An IDE is a suite of tools that supports the full software development lifecycle.
+Eine IDE ist eine Reihe von Tools, die den kompletten Software-Entwicklungslebenszyklus unterstützen.
 
 ## --video-solution--
 

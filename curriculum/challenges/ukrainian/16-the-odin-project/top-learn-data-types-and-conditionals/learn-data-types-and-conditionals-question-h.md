@@ -1,17 +1,17 @@
 ---
 id: 65e9727a484dd50f720e6fed
-title: Learn Data Types and Conditionals Question H
+title: Вивчіть типи даних та умови. Запитання H
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-question-h
 ---
 
 # --description--
 
-In any programming language, you need to compare values to make decisions. For example, if the weather is sunny, you will go out, otherwise you will stay at home. Another example would be to see if a user has enough points to level up in a game.
+Щоб прийняти рішення в будь-якій мові програмування, потрібно порівняти значення. Наприклад, якщо погода сонячна — ви підете на прогулянку, а якщо навпаки — ви залишитесь дома. Ще один приклад: потрібно перевірити, чи користувач назбирав достатню кількість балів, щоб перейти на наступний рівень гри.
 
-The `if-else` conditional statement is used to make decisions in JavaScript. It is often used with comparison operators to compare values and make decisions based on the results.
+Щоб прийняти рішення в JavaScript, використовують умовну інструкцію `if-else`. Її часто використовують з операторами порівняння, щоб порівняти значення та прийняти рішення на основі результатів.
 
-An example of an if statement is:
+Ось приклад інструкції `if`:
 
 ```javascript
 let x = 5;
@@ -23,13 +23,13 @@ if (x > 3) {
 }
 ```
 
-In this example, the `x` variable is compared to the number `3` using the `>` operator. If `x` is greater than `3`, the first block of code will be executed. Otherwise, the second block of code will be executed.
+У цьому прикладі порівнюють змінну `x` з числом `3`, використовуючи оператор `>`. Якщо значення `x` більше за `3`, то виконується перший блок коду. В іншому випадку виконується другий блок коду.
 
 # --question--
 
 ## --text--
 
-What will be the output of the following code?
+Як буде виглядати результат виконання даного коду?
 
 ```javascript
 

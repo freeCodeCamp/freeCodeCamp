@@ -1,38 +1,38 @@
 ---
 id: 647e21c48acb466c97ccbee7
-title: 'Call Methods From the .NET Class Library Using C#'
+title: 'Aufruf von Methoden aus der .NET-Klassenbibliothek mit C#'
 challengeType: 19
 dashedName: call-methods-from-the-dot-net-class-library-using-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-call-methods/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-call-methods/</a> and complete all the tasks for the "Call Methods From the .NET Class Library Using C#" module. This is **required** to earn the "Create and Run Simple C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. Gehe auf <a href="https://learn.microsoft.com/training/modules/csharp-call-methods/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-call-methods/</a> und löse alle die Aufgaben für das Modul "Aufruf von Methoden aus der .NET-Klassenbibliothek mit C#". Dies ist **erforderlich**, um die "Create und Run Simple C# Console Applicaions"-Trophäe auf Microsoft Learn zu erwerben und sich für die Zertifizierungsprüfung zu qualifizieren.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-call-methods/" target="_blank" rel="noreferrer">Call Methods from the .NET Class Library Using C#</a> module on Microsoft Learn. Then, answer the question below.
+Schließe das Modul <a href="https://learn.microsoft.com/training/modules/csharp-call-methods/" target="_blank" rel="noreferrer">Aufruf von Methoden aus der .NET-Klassenbibliothek mit C#</a> auf Microsoft Learn ab. Beantworte dann die Frage unten.
 
 # --question--
 
 ## --text--
 
-What is an object?
+Was ist ein Objekt?
 
 ## --answers--
 
-A memory address.
+Eine Speicheradresse.
 
 ---
 
-A stateless class.
+Eine zustandslose Klasse.
 
 ---
 
-An instance of a class.
+Eine Instanz einer Klasse.
 
 ## --video-solution--
 

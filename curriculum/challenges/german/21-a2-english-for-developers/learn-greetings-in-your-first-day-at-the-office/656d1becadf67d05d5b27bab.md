@@ -1,19 +1,19 @@
 ---
 id: 656d1becadf67d05d5b27bab
-title: Task 146
+title: Aufgabe 146
 challengeType: 19
 dashedName: task-146
 ---
 
 # --description--
 
-Just like when you learned about the pronoun `he`, pronouns like `she` are used to refer to female individuals. They help avoid repetition in conversation. Look at this part of the dialogue:
+Just like when you learned about the pronoun `he`, pronouns like `she` are used to refer to female individuals. They help avoid repetition in conversation. Siehe dir diesen Teil des Dialogs an:
 
 Sophie: `Oh, come on, Brian!`
 
-Brian: `But it is true. She's the person to go to if you need help!`
+Brian: `But it is true. Sie ist die Person, zu der du gehst, wenn du Hilfe brauchst!`
 
-Here, `She` is used by Brian to refer to Sophie. Instead of repeating Sophie's name, Brian uses the pronoun `she` to make the conversation smoother and avoid redundancy.
+Hier wird `She` von Brian verwendet, um auf Sophie zu verweisen. Instead of repeating Sophie's name, Brian uses the pronoun `she` to make the conversation smoother and avoid redundancy.
 
 # --question--
 
@@ -27,7 +27,7 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
 
 ### --Feedback--
 
-`He` refers to a male.
+`He` bezieht sich auf einen Mann.
 
 ---
 
@@ -35,7 +35,7 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
 
 ### --Feedback--
 
-`They` is plural and refers to more than one person.
+`They` ist Plural und bezieht sich auf mehr als eine Person.
 
 ---
 
