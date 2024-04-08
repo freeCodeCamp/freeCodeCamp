@@ -7,7 +7,7 @@ dashedName: step-6
 
 # --description--
 
-If the `square_target` is equal to  `1`, assign the value `1` to the `root` variable. Also, print the message `'The square root of {square_target} is 1.'`. Remeber to format using an f-string.
+If the `square_target` is equal to  `1`, declare a variable `root` and assign it the value `1` . Also, print the message `'The square root of {square_target} is 1'`. Remember to format the message using an f-string.
 
 # --hints--
 
@@ -22,7 +22,7 @@ You should remove the `pass` keyword.
 })
 ```
 
-You should assign the value `1` to the `root` variable and print the message `'The square root of {square_target} is 1.'` inside `if`.
+You should assign the value `1` to the `root` variable and print the message `'The square root of {square_target} is 1'` inside the `if` body.
 
 ```js
 

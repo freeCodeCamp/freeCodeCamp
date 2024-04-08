@@ -7,9 +7,9 @@ dashedName: step-12
 
 # --description--
 
-Inside the for loop, calculate the midpoint of the interval[`low, high`] using the formula `mid = (low + high) / 2`.
+Inside the for loop, calculate the midpoint of the interval ranging from`low` to `high`. Assign this value to a variable `mid`.
 
-also, calculate the square of the midpoint(`mid`) and store it in the variable `square_mid`.
+Also, calculate the square of the midpoint (`mid`) and store it in the variable `square_mid`.
     
 # --hints--
 
