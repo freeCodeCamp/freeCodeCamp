@@ -7,7 +7,7 @@ dashedName: step-10
 
 # --description--
 
-Set the value of `root` to `None` as at this point, we don't have an approximation yet.
+Set the value of `root` to `None` as at this point, you don't have an approximate value yet.
 
 # --hints--
 
