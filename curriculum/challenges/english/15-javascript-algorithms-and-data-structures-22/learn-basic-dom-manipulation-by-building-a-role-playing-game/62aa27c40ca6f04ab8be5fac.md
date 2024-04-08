@@ -7,20 +7,40 @@ dashedName: step-154
 
 # --description--
 
-A `for` loop runs for a specific number of times. We will break down how a `for` loop runs in the next several steps. For now, copy this loop below and paste it at the end of your `pick` function.
+In the previous project, you learned how to work with `for` loops. Here is the basic syntax again:
 
 ```js
-for (let x = 1; x < 5; x++) {
-
+for(initialization; condition; final-expression) {
+  // code block to be executed
 }
 ```
 
+Inside the `pick` function, create a `for` loop that will run `10` times.
+
+For the initialization, `i` should be set to `0`. 
+
+For the condition, the loop should run as long as `i` is less than `10`.
+
+For the final expression, `i` should be incremented by `1` after each loop iteration. You should use the `++` operator for this.
+
 # --hints--
 
-You should copy the above loop into your `pick` function.
+You should change your initialization in the `for` loop to be `let i = 0;`.
 
 ```js
-assert.match(pick.toString(), /for\s*\(\s*(let|var)\s+x\s*=\s*1\s*;\s*x\s*<\s*5\s*;\s*x\s*\+\+\s*\)/);
+assert.match(pick.toString(), /for\s*\(\s*(let|var)\s+i\s*=\s*0\s*;/)
+```
+
+You should update your condition statement to be `i < 10`.
+
+```js
+assert.match(pick.toString(), /for\s*\(\s*(let|var)\s+i\s*=\s*0\s*;\s*i\s*<\s*10\s*;/)
+```
+
+You should change your final expression to `i++`.
+
+```js
+assert.match(pick.toString(), /for\s*\(\s*(let|var)\s+i\s*=\s*0\s*;\s*i\s*<\s*10\s*;\s*i\+\+\s*\)/)
 ```
 
 # --seed--

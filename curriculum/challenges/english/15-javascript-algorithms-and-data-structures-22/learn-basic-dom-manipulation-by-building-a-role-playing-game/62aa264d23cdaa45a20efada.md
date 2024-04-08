@@ -7,14 +7,15 @@ dashedName: step-150
 
 # --description--
 
-After your `numbers` array, create a `while` loop. A <dfn>while</dfn> loop accepts a condition, and will run the code in the block until the condition is no longer true.
+After your `numbers` array, create a `while` loop. 
 
 Your `while` loop should run while `numbers.length` is less than `10`.
 
-Here is an example of a `while` loop that runs while `i` is less than five.
+You learned about while loops in the previous project and here is the basic syntax:
 
 ```js
-while (i < 5) {
+while (condition) {
+  // code block to be executed
 
 }
 ```
