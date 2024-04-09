@@ -8,6 +8,6 @@ msTrophyId: learn.wwl.get-started-c-sharp-part-5.trophy
 
 # --description--
 
-Now that you've completed all of the "Create Methods in C# Console Applications" challenges, you should have earned the trophy for it on the Microsoft Learn platform. If you don't see this trophy when viewing <a href="https://learn.microsoft.com/users/me/achievements#trophies-section" target="_blank" rel="noreferrer">your achievements page</a>, you have not completed all the tasks and your trophy cannot be verified.
+Now that you've completed all of the "Create Methods in C# Console Applications" challenges, you should have earned the trophy for it on the Microsoft Learn platform. Wenn du diese Trophäe auf <a href="https://learn.microsoft.com/users/me/achievements#trophies-section" target="_blank" rel="noreferrer">deiner Erfolgsseite</a> nicht siehst, hast du nicht alle Aufgaben erledigt und deine Trophäe kann nicht verifiziert werden.
 
-Link your Microsoft username to your freeCodeCamp account and click the "Verify Trophy" button below to complete the challenge. This trophy is **required** to qualify for the certification exam.
+Verknüpfe deinen Microsoft-Benutzernamen mit deinem freeCodeCamp-Konto und klicke unten auf die Schaltfläche "Trophäe bestätigen", um die Aufgabe abzuschließen. Diese Trophäe ist **erforderlich**, um sich für die Zertifizierungsprüfung zu qualifizieren.

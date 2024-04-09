@@ -1,6 +1,6 @@
 ---
 id: 657cfddfaca4b58b1279aaf9
-title: Task 72
+title: Завдання 72
 challengeType: 22
 dashedName: task-72
 ---
