@@ -415,7 +415,7 @@ export async function modernChallengeCompleted(req, res, next) {
           points
         }),
         headers: { 'Content-Type': 'application/json' }
-      });
+      }).catch(() => {});
     }
 
     return res.json({
