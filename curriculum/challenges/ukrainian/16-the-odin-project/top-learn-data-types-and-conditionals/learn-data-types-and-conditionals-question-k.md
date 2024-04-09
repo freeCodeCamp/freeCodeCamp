@@ -1,15 +1,15 @@
 ---
 id: 65e9728d484dd50f720e6ff0
-title: Learn Data Types and Conditionals Question K
+title: Вивчіть типи даних та умови. Запитання K
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-question-k
 ---
 
 # --description--
 
-The `switch` statement is used to perform different actions based on different conditions. It is similar to the `if-else` statement, but is more readable and easier to understand when there are multiple conditions to check. The `switch` statement is used to select one of many code blocks to be executed.
+Інструкцію `switch` використовують, щоб виконати різні дії на основі різних умов. Вона схожа до інструкції `if-else`, але є читабельнішою і її простіше зрозуміти, коли потрібно перевірити декілька умов. Інструкцію `switch` використовують, щоб вибрати один з багатьох блоків коду, які потрібно виконати.
 
-The `switch` statement evaluates an expression and compares it with the values of each case. If there is a match, the associated block of code is executed. If there is no match, the default block of code is executed.
+Інструкція `switch` оцінює вираз та порівнює його зі значеннями кожного випадку. Якщо є збіг, то виконується відповідний блок коду. Якщо збігу немає, то виконується блок коду за замовчуванням.
 
 ```javascript
 let day = "Monday";
@@ -41,13 +41,13 @@ switch (day) {
 }
 ```
 
-In the above example, the value of the `day` variable is compared with the values of each case. If there is a match, the associated block of code is executed. If there is no match, the default block of code is executed.
+У прикладі вище порівнюється змінна `day` зі значеннями кожного випадку. Якщо є збіг, то виконується відповідний блок коду. Якщо збігу немає, то виконується блок коду за замовчуванням.
 
 # --question--
 
 ## --text--
 
-Given the JavaScript code snippet below, which modifies the `activity` variable based on the day of the week, what will be the value of the `activity` variable if the value of the `day` variable is `"Tuesday"`?
+Вище дано фрагмент коду JavaScript, який змінює змінну `activity` на основі дня тижня. Яким буде значення змінної `activity`, якщо значенням змінної `day` є `"Tuesday"`?
 
 ```javascript
 let day = "Tuesday";
@@ -83,19 +83,19 @@ switch (day) {
 
 ## --answers--
 
-The value of the `activity` variable will be `"Attend coding meetup"`.
+Значенням змінної `activity` буде `"Attend coding meetup"`.
 
 ---
 
-The value of the `activity` variable will be `"Watch a movie"`.
+Значенням змінної `activity` буде `"Watch a movie"`.
 
 ---
 
-The value of the `activity` variable will be `"Undefined day"`.
+Значенням змінної `activity` буде `"Undefined day"`.
 
 ---
 
-The value of the `activity` variable will be `"Go to the gym"`.
+Значенням змінної `activity` буде `"Go to the gym"`.
 
 ## --video-solution--
 

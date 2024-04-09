@@ -7,11 +7,11 @@ dashedName: dialogue-1-a-job-interview
 
 # --description--
 
-Watch the video above to understand the context of the upcoming lessons.
+Sieh dir das Video oben an, um den Kontext der kommenden Lektionen zu verstehen.
 
 # --Auftrag--
 
-Watch the video
+Schaue das Video
 
 # --scene--
 
