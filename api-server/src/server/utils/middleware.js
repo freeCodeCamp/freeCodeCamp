@@ -1,5 +1,6 @@
 import dedent from 'dedent';
 import { validationResult } from 'express-validator';
+import { isURL } from 'validator';
 
 import { createValidatorErrorFormatter } from './create-handled-error.js';
 
@@ -118,9 +119,13 @@ export async function ifValidWebhookURL(req, res, next) {
   } = req;
 
   try {
+    if (!isURL(webhook, { require_protocol: true, protocols: ['https'] })) {
+      throw new Error('Invalid URL');
+    }
     await triggerWebhook(webhook, webhookSecret, username);
     next();
   } catch (error) {
+    standardErrorMessage.message = error.message;
     return res.status(500).json(standardErrorMessage);
   }
 }
@@ -136,6 +141,6 @@ const triggerWebhook = async (url, secret, username) => {
     headers: { 'Content-Type': 'application/json' }
   });
   if (!response.ok) {
-    throw new Error(`${response.status} ${response.statusText}`);
+    throw new Error('There was an error sending data to the provided URL.');
   }
 };

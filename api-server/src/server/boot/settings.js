@@ -347,7 +347,8 @@ function updateMyQuincyEmail(...args) {
 
 function updateMyWebhook(...args) {
   const buildUpdate = body => _.pick(body, ['webhook', 'webhookSecret']);
-  const validate = ({ webhook }) => isURL(webhook, { require_protocol: true });
+  const validate = ({ webhook }) =>
+    isURL(webhook, { require_protocol: true, protocols: ['https'] });
   createUpdateUserProperties(
     buildUpdate,
     validate,

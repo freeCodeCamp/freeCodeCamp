@@ -85,10 +85,10 @@ function WebhookSettings({
       };
     }
 
-    if (!isURL(newWebhook)) {
+    if (!isURL(newWebhook, { require_protocol: true, protocols: ['https'] })) {
       return {
         state: 'error',
-        message: 'Invalid URL'
+        message: 'Invalid URL. URL must use https protocol.'
       };
     }
 
@@ -178,10 +178,11 @@ function WebhookSettings({
                 <p>
                   This feature is in <strong>Beta</strong> and is expected to
                   change. Webhooks allow you to receive notifications at a
-                  specified endpoint when events occur. If you provide a URL,
-                  data will be emitted each time you complete a challenge. That
-                  data will take the following shape:
+                  specified endpoint when you complete a challenge if you
+                  provide a URL. The data will include your username, the id of
+                  the completed problem and the date on which it was completed.
                 </p>
+                <p>The data will take the following shape:</p>
                 <pre>
                   <code>
                     {JSON.stringify(
