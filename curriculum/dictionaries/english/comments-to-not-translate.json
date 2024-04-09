@@ -10,6 +10,6 @@
   "3xhkhx": "highPrecedence(\"2*2\");",
   "4143lf": "initialize buttons",
   "y1f9p0": "for (let i = 1; i <= count; i++) {\n  rows.push(padRow(i, count));\n}",
-  "697fln": "while (rows.length <= count) {\n  rows.push(padRow(done, count));\n}",
-  "499lw3": "for (let i = count; i > 0; i--) {\n  rows.push(padRow(done, count));\n}"
+  "697fln": "while (rows.length < count) {\n  rows.push(padRow(rows.length + 1, count));\n}",
+  "499lw3": "for (let i = count; i > 0; i--) {\n  rows.push(padRow(i, count));\n}"
 }
