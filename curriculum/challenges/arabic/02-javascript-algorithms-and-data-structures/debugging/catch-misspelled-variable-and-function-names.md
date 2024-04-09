@@ -55,7 +55,7 @@ assert(code.match(/payables/g).length == 2);
 ```js
 let receivables = 10;
 let payables = 8;
-let netWorkingCapital = recievables - payable;
+let netWorkingCapital = receivables - payable;
 console.log(`Net working capital is: ${netWorkingCapital}`);
 ```
 
