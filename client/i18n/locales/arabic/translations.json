@@ -57,6 +57,7 @@
     "run-test": "تشغيل الاختبارات (Ctrl + Enter)",
     "check-code": "تيقن من كودك (Ctrl + Enter)",
     "check-code-2": "تيقن من كودك",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "إعادة ضبط",
     "reset-step": "إعادة الخطوة إلى حالتها الأولية",
     "help": "مساعدة",
@@ -383,8 +384,14 @@
     "percent-complete": "{{percent}}% مكتمل",
     "project-complete": "أكملت {{completedChallengesInBlock}} من {{totalChallengesInBlock}} مشروعات الشهادات",
     "tried-rsa": "إذا كنت قد جربت طريقة <0>اقرأ-ابحث-اسأل</0>، فيمكنك طلب المساعدة في منتدى freeCodeCamp.",
+    "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
+    "similar-questions-checkbox": "I have searched for <0>similar questions that have already been answered on the forum</0>",
+    "minimum-characters": "Add a minimum of {{characters}} characters",
+    "characters-left": "{{characters}} characters left",
+    "must-confirm-statements": "You must confirm the following statements before you can submit your post to the forum.",
+    "min-50-max-500": "50 character minimum, 500 character maximum",
     "rsa": "اقرأ ، ابحث ، اسأل",
-    "rsa-forum": "<strong>قبل إجراء موضوع جديدة</strong> يرجى الاطلاع على ما إذا كان سؤالك <0> قد تم الإجابة عليه فعلًا في المنتدى </0>.",
+    "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "أعد الدرس ألى حالته الأولية؟",
     "reset-warn": "هل أنت متأكد من رغبتك في إعادة الدرس ألى حالته الأولية؟ سيتم إعادة المحرر والاختبارات إلى حالتهما الأولية.",
     "reset-warn-2": "لا يمكن التراجع عن هذا",
@@ -721,7 +728,9 @@
     "task": "Task",
     "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} مثال على الكود",
-    "opens-new-window": "فتح في نافذة جديدة"
+    "opens-new-window": "فتح في نافذة جديدة",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "للمطالبة بشهادة، يجب عليك أولاً الموافقة على سياسة للصدق الأكاديمي",
@@ -969,16 +978,16 @@
       "A2 English for Developers": "A2 English for Developers",
       "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "الواجهة الأمامية التراثية",
-      "legacy-front-end": "شهادة الواجهة الأمامية التراثية",
+      "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "الواجهة الخلفية التراثية",
-      "legacy-back-end": "شهادة الواجهة الخلفية التراثية",
+      "legacy-back-end": "Legacy Back End Certification",
       "Legacy Data Visualization": "التصوير المرئي للبيانات التراثي",
-      "legacy-data-visualization": "شهادة التصوير المرئي للبيانات",
+      "legacy-data-visualization": "Legacy Data Visualization Certification",
       "Legacy Information Security and Quality Assurance": "أمن المعلومات وشهادة ضمان الجودة التراثية",
-      "information-security-and-quality-assurance": "شهادة أمن المعلومات وشهادة ضمان الجودة",
+      "information-security-and-quality-assurance": "Legacy Information Security and Quality Assurance Certification",
       "Legacy Full Stack Certification": "شهادة الشامل الخلفية التراثية",
       "Legacy Full Stack": "الشامل الخلفية التراثية",
-      "full-stack": "شهادة الشامل الخلفية"
+      "full-stack": "Legacy Full Stack Certification"
     }
   },
   "certification-card": {
@@ -1028,8 +1037,9 @@
     "execute-challenge": "تنفيذ التحدي",
     "focus-editor": "ركز على محرر الكود",
     "focus-instructions-panel": "ركز على لوحة تعليمات",
-    "navigate-previous": "تنقل إلى التمرين السابق",
-    "navigate-next": "تنقل إلى التمرين التالي"
+    "navigate-previous": "Navigate To Previous Exercise",
+    "navigate-next": "Navigate To Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "تسجيل الخروج من حسابك",

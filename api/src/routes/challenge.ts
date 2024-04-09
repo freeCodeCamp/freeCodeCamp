@@ -2,6 +2,7 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import jwt from 'jsonwebtoken';
 import { uniqBy } from 'lodash';
 import { CompletedExam, ExamResults } from '@prisma/client';
+import isURL from 'validator/lib/isURL';
 
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import { schemas } from '../schemas';
@@ -56,7 +57,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
   // @ts-expect-error - @fastify/csrf-protection needs to update their types
   // eslint-disable-next-line @typescript-eslint/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
-  fastify.addHook('onRequest', fastify.authenticateSession);
+  fastify.addHook('onRequest', fastify.authorize);
 
   fastify.post(
     '/coderoad-challenge-completed',
@@ -150,7 +151,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           };
 
           await fastify.prisma.user.update({
-            where: { id: req.session.user.id },
+            where: { id: req.user?.id },
             data: {
               partiallyCompletedChallenges: uniqBy(
                 [finalChallenge, ...partiallyCompletedChallenges],
@@ -192,8 +193,27 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
+      // TODO: considering validation is determined by `challengeType`, it should not come from the client
+      //       Determine `challengeType` by `id`
       const { id: projectId, challengeType, solution, githubLink } = req.body;
-      const userId = req.session.user.id;
+      const userId = req.user?.id;
+
+      // If `backEndProject`:
+      // - `solution` needs to exist, but does not have to be valid URL
+      // - `githubLink` needs to exist and be valid URL
+      if (challengeType === challengeTypes.backEndProject) {
+        if (!solution || !isURL(githubLink + '')) {
+          return void reply.code(403).send({
+            type: 'error',
+            message: 'That does not appear to be a valid challenge submission.'
+          });
+        }
+      } else if (solution && !isURL(solution + '')) {
+        return void reply.code(403).send({
+          type: 'error',
+          message: 'That does not appear to be a valid challenge submission.'
+        });
+      }
 
       try {
         const user = await fastify.prisma.user.findUniqueOrThrow({
@@ -221,6 +241,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const oldChallenge = user.completedChallenges?.find(
           ({ id }) => id === projectId
         );
+
         const updatedChallenge = {
           challengeType,
           solution,
@@ -281,7 +302,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         const user = await fastify.prisma.user.findUniqueOrThrow({
-          where: { id: req.session.user.id }
+          where: { id: req.user?.id }
         });
         const progressTimestamps = user.progressTimestamps as
           | ProgressTimestamp[]
@@ -335,7 +356,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const { id, files, challengeType } = req.body;
 
         const user = await fastify.prisma.user.findUniqueOrThrow({
-          where: { id: req.session.user.id }
+          where: { id: req.user?.id }
         });
         const RawProgressTimestamp = user.progressTimestamps as
           | ProgressTimestamp[]
@@ -399,7 +420,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       try {
         const { files, id: challengeId } = req.body;
         const user = await fastify.prisma.user.findUniqueOrThrow({
-          where: { id: req.session.user.id }
+          where: { id: req.user?.id }
         });
         const challenge = {
           id: challengeId,
@@ -459,7 +480,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         const { completedChallenges } =
           await fastify.prisma.user.findUniqueOrThrow({
-            where: { id: req.session.user.id },
+            where: { id: req.user?.id },
             select: { completedChallenges: true }
           });
 
@@ -550,7 +571,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
 
         const msUser = await fastify.prisma.msUsername.findFirst({
-          where: { userId: req.session.user.id }
+          where: { userId: req.user?.id }
         });
 
         if (!msUser || !msUser.msUsername) {
@@ -574,7 +595,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
 
         const user = await fastify.prisma.user.findUniqueOrThrow({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           select: { completedChallenges: true, progressTimestamps: true }
         });
 
@@ -596,7 +617,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             solution: msTrophyStatus.msUserAchievementsApiUrl
           };
           await fastify.prisma.user.update({
-            where: { id: req.session.user.id },
+            where: { id: req.user?.id },
             data: {
               completedChallenges: {
                 push: newChallenge
@@ -639,7 +660,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        const { id: userId } = req.session.user;
+        const userId = req.user?.id;
         const { userCompletedExam, id, challengeType } = req.body;
 
         const { completedChallenges, completedExams, progressTimestamps } =

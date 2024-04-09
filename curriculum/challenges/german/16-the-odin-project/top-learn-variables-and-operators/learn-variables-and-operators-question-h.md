@@ -11,7 +11,7 @@ If an expression has more than one operator, the execution order is defined by t
 
 From school, you know that the multiplication in the expression `1 + 2 * 2` should be calculated before the addition. That’s exactly the precedence thing. The multiplication is said to have a higher precedence than the addition.
 
-Parentheses override any precedence, so if you’re not satisfied with the default order, you can use them to change it. For example, write `(1 + 2) * 2`.
+Parentheses override any precedence, so if you’re not satisfied with the default order, you can use them to change it. Zum Beispiel, `(1 + 2) * 2` schreiben.
 
 There are many operators in JavaScript. Every operator has a corresponding precedence number. The one with the larger number executes first. If the precedence is the same, the execution order is from left to right.
 

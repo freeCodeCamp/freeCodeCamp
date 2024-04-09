@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "Legacy JavaScript Algorithms and Data Structures",
+    "title": "（旧版）JavaScript 算法和数据结构",
     "intro": [
       "HTML 和 CSS 控制页面的内容和样式，JavaScript 则用于页面交互。在 JavaScript 算法和数据结构认证中，你将学习 JavaScript 的基础知识，包括变量、 数组、 对象、 循环和函数。",
       "打好基础之后，你将会通过创建算法来操作字符串、进行阶乘运算甚至计算国际空间站的轨道来应用这些知识。",
@@ -375,88 +375,88 @@
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "通过创建统计计算器学习高级数组方法",
         "intro": [
-          "As you expand your JavaScript skills, you'll want to get comfortable with array manipulation methods, such as <code>map()</code>, <code>reduce()</code>, and <code>filter()</code>.",
-          "In this statistics calculator project, you'll gain experience with handling user input, DOM manipulation, and method chaining. You'll get practice by performing statistical calculations like mean, median, mode, variance, and standard deviation."
+          "在提升 JavaScript 技能的过程中，你需要熟练掌握数组操作方法，例如 <code>map()</code>、<code>reduce()</code> 和 <code>filter()</code>。",
+          "在这个统计计算器项目中，你将获得处理用户输入、DOM 操作和方法链的经验。你还将练习执行统计计算，例如计算平均值、中位数、众数、方差和标准差。"
         ]
       },
       "learn-basic-oop-by-building-a-shopping-cart": {
-        "title": "Learn Basic OOP by Building a Shopping Cart",
+        "title": "通过创建购物车学习基础 OOP",
         "intro": [
-          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, developers use objects and classes to structure their code.",
-          "In this shopping cart project, you'll learn how to define classes and use them. You'll create class instances and implement methods for data manipulation.",
-          "This project will cover concepts like the ternary operator, the spread operator, the <code>this</code> keyword, and more."
+          "OOP，即面向对象编程，是软件开发过程的主要方法之一。在 OOP 中，开发人员使用对象和类来构造代码。",
+          "在这个购物车项目中，你将学习如何定义和使用类。你将创建类实例并执行数据操作方法。",
+          "这个项目将涵盖三元运算符、扩展运算符、<code>this</code> 关键字等概念。"
         ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "Learn Fetch and Promises by Building an fCC Authors Page",
+        "title": "通过创建 fCC 作者页面学习 Fetch 和 Promises",
         "intro": [
-          "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
-          "This freeCodeCamp authors page project will show you how to use the fetch method, then dynamically update the DOM to display the fetched data.",
-          "This project will also teach you how to paginate your data so you can load results in batches."
+          "web 开发的一个常见方面是学习如何从外部 API 获取数据，使用 JavaScript 进行异步编程。",
+          "这个 freeCodeCamp 作者页面项目将向你展示如何使用 fetch 方法，然后动态更新 DOM 以显示获取的数据。",
+          "本项目还将教你如何对数据进行分页，以便分批加载结果。"
         ]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
-        "title": "Learn Regular Expressions by Building a Spam Filter",
+        "title": "通过创建垃圾邮件过滤器学习正则表达式",
         "intro": [
-          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
-          "In this spam filter project, you'll learn about capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
+          "正则表达式通常简称为 “regex” 或 “regexp”，是帮助程序员匹配、搜索和替换文本的模式。正则表达式功能强大，但由于使用了大量特殊字符，因此可能难以理解。",
+          "在这个垃圾邮件过滤器项目中，你将学习捕获组、正向查找、负向查找和其他技术，以匹配你想要的任何文本。"
         ]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
-        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+        "title": "通过创建数字排序器学习基本算法思维",
         "intro": [
-          "In computer science, there are fundamental sorting algorithms that all developers should learn. In this number sorter project, you'll learn how to implement and visualize different sorting algorithms like bubble sort, selection sort, and insertion sort – all with JavaScript.",
-          "This project will help you understand the fundamental concepts behind these algorithms, and how you can apply them to sort numerical data in web applications."
+          "在计算机科学中，有一些基本的排序算法是所有开发人员都应该学习的。在这个数字排序器项目中，你将学习如何使用 JavaScript 实现冒泡排序、选择排序和插入排序等不同的排序算法并将其可视化。",
+          "本项目将帮助你理解这些算法背后的基本概念，以及如何在 web 应用程序中应用这些算法对数字数据进行排序。"
         ]
       },
       "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Learn Intermediate Algorithmic Thinking by Building a Dice Game",
+        "title": "通过创建骰子游戏学习中级算法思维",
         "intro": [
-          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
-          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
-          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
+          "算法思维包括将复杂问题分解为一连串定义明确、循序渐进的指令的能力。",
+          "在这个骰子游戏项目中，你将学习如何管理游戏状态、实现掷骰子的游戏逻辑、记分以及应用各种组合的规则。",
+          "这个项目涵盖事件处理、数组操作、条件逻辑以及根据游戏状态动态更新用户界面等概念。"
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
-        "title": "Learn Intermediate OOP by Building a Platformer Game",
+        "title": "通过创建平台游戏学习中级 OOP",
         "intro": [
-          "Coding a game is a great way to grasp fundamental programming principles, while also creating an interactive gaming experience.",
-          "In this platformer game project, you'll continue to learn about classes, objects, inheritance, and encapsulation. You'll also learn how to design and organize game elements efficiently and gain insights into problem-solving and code reusability."
+          "编码游戏是掌握基本编程原则的好方法，同时还能创造互动游戏体验。",
+          "在这个平台游戏项目中，你将继续学习类、对象、继承和封装。你还将学习如何有效地设计和组织游戏元素，并获得解决问题和代码可重用性方面的见解。"
         ]
       },
       "learn-localstorage-by-building-a-todo-app": {
-        "title": "Learn localStorage by Building a Todo App",
+        "title": "通过创建 Todo 应用程序学习 localStorage",
         "intro": [
-          "Local storage is a web browser feature that lets web applications store key-value pairs persistently within a user's browser. This allows web apps to save data during one session, then retrieve it in a later page session.",
-          "In this TODO application, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implement event listeners, and toggle UI elements."
+          "本地存储是一种 web 浏览器功能，可让 web 应用程序在用户浏览器中持久存储键值对。这样，web 应用程序就可以在一次会话中保存数据，然后在以后的页面会话中检索这些数据。",
+          "在这个 TODO 应用程序中，你将学习如何处理表单输入、管理本地存储、对任务执行 CRUD（创建、读取、更新、删除）操作、实现事件监听器以及切换 UI 元素。"
         ]
       },
       "learn-the-date-object-by-building-a-date-formatter": {
-        "title": "Learn the Date Object by Building a Date Formatter",
+        "title": "通过创建日期格式器学习 Date 对象",
         "intro": [
-          "Working with dates in JavaScript can be challenging. You have to navigate various methods, formats, and time zones. In this project, you'll learn how to work with the JavaScript Date object, including its methods and properties. You'll also learn how to correctly format dates.",
-          "This project will cover concepts such as the <code>getDate()</code>, <code>getMonth()</code>, and <code>getFullYear()</code> methods."
+          "在 JavaScript 中处理日期很有挑战性。你必须掌握各种方法、格式和时区。在本项目中，你将学习如何使用 JavaScript Date 对象，包括其方法和属性。你还将学习如何正确格式化日期。",
+          "这个项目将涵盖一些概念，如 <code>getDate()</code>、<code>getMonth()</code> 和 <code>getFullYear()</code> 方法。"
         ]
       },
       "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard": {
-        "title": "Learn Asynchronous Programming by Building an fCC Forum Leaderboard",
+        "title": "通过建立fCC论坛排行榜学习异步编程。",
         "intro": [
-          "JavaScript is an asynchronous programming language. And this project will help you gain proficiency in asynchronous concepts. You'll code your own freeCodeCamp forum leaderboard.",
-          "This project will cover the Fetch API, promises, Async/Await, and the try..catch statement."
+          "JavaScript 是一种异步编程语言。这个项目将帮助您掌握异步概念。您将编译自己的免费CodeCamp论坛排行榜。",
+          "该项目将包括Fetch API、promises、Async/Await 和try..catch 声明。"
         ]
       },
       "learn-basic-string-and-array-methods-by-building-a-music-player": {
-        "title": "Learn Basic String and Array Methods by Building a Music Player",
+        "title": "通过创建音乐播放器学习字符串和数组的基本方法",
         "intro": [
-          "Now let's learn some essential string and array methods like the <code>find()</code>, <code>forEach()</code>, <code>map()</code>, and <code>join()</code>. These methods are crucial for developing dynamic web applications.",
-          "In this project, you'll code a basic MP3 player using HTML, CSS, and JavaScript. The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, previous, and shuffle functionalities. You'll even learn how to dynamically update your user interface based on the current song."
+          "现在让我们学习一些基本的字符串和数组方法，例如 <code>find()</code>、<code>forEach()</code>、<code>map()</code> 和 <code>join()</code>。这些方法对于开发动态 web 应用非常重要。",
+          "在本项目中，你将使用 HTML、CSS 和 JavaScript 编写一个基础的 MP3 播放器。该项目涵盖基本概念，如处理音频播放、管理播放列表、实现播放、暂停、下一首、上一首和随机播放功能。你甚至还将学习如何根据当前歌曲动态更新用户界面。"
         ]
       },
       "learn-recursion-by-building-a-decimal-to-binary-converter": {
-        "title": "Learn Recursion by Building a Decimal to Binary Converter",
+        "title": "通过创建十进制到二进制转换器学习递归",
         "intro": [
-          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
-          "In this project, you’ll build a decimal-to-binary converter using JavaScript. You’ll learn the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
+          "递归是一种编程概念，即函数调用自身。这可以将复杂的问题简化为更简单的子问题，直到它们变得简单易解。",
+          "在这个项目中，你将使用 JavaScript 创建一个十进制到二进制的转换器。你将学习递归的基本概念，探索调用栈，并通过动画直观地展示递归过程。"
         ]
       }
     }
@@ -748,94 +748,94 @@
     }
   },
   "scientific-computing-with-python": {
-    "title": "Scientific Computing with Python (Beta)",
+    "title": "Python 科学计算（Beta）",
     "intro": [
-      "The Scientific Computing with Python (Beta) curriculum will equip you with the skills to analyze and manipulate data using Python, a powerful and versatile programming language. You'll learn key concepts like data structures, algorithm, Object Oriented Programming, and how to perform complex calculations using a variety of tools.",
-      "This comprehensive course will guide you through the fundamentals of scientific computing, including data structures, and algorithms."
+      "Python 科学计算（Beta）课程将使你掌握使用 Python 这种强大而通用的编程语言分析和处理数据的技能。你将学习数据结构、算法、面向对象编程等关键概念，以及如何使用各种工具进行复杂计算。",
+      "这个综合课程将指导你学习科学计算的基础知识，包括数据结构和算法。"
     ],
     "note": "",
     "blocks": {
       "learn-string-manipulation-by-building-a-cipher": {
-        "title": "Learn String Manipulation by Building a Cipher",
+        "title": "通过创建密码学习字符串操作",
         "intro": [
-          "Python is a powerful and popular programming language widely used for data science, data visualization, web development, game development, machine learning and more.",
-          "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loops, and conditional statements. You'll use these to code your first programs."
+          "Python 是一种强大而流行的编程语言，广泛应用于数据科学、数据可视化、web 开发、游戏开发、机器学习等领域。",
+          "在本项目中，你将学习 Python 的基本编程概念，如变量、函数、循环和条件语句。你将使用这些概念编写第一个程序。"
         ]
       },
       "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm": {
-        "title": "Learn How to Work with Numbers and Strings by Implementing the Luhn Algorithm",
+        "title": "通过实现卢恩算法学习如何处理数字和字符串",
         "intro": [
-          "The Luhn Algorithm is widely used for error-checking in various applications, such as verifying credit card numbers.",
-          "By building this project, you'll gain experience working with numerical computations and string manipulation."
+          "卢恩算法被广泛用于各种应用中的错误检查，如验证信用卡号码。",
+          "通过创建这个项目，你将获得数字计算和字符串操作的经验。"
         ]
       },
       "learn-list-comprehension-by-building-a-case-converter-program": {
-        "title": "Learn Python List Comprehension by Building a Case Converter Program",
+        "title": "通过创建大小写转换器程序学习 Python 列表推导",
         "intro": [
-          "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the `.append()` list method.",
-          "In this project, you'll write a program that takes a string formatted in Camel Case or Pascal Case, then converts it into Snake Case.",
-          "The project has two phases: first you'll use a for loop to implement the program. Then you'll learn how to use List Comprehension instead of a loop to achieve the same results."
+          "列表推导是一种从可迭代类型（列表、元组和字符串）构建新的 Python 列表的方法。所有这些都无需使用 for 循环或 `.append()` 列表方法。",
+          "在这个项目中，你将编写一个程序，接收驼峰或帕斯卡命名格式的字符串，然后将其转换为蛇形命名格式。",
+          "该项目分为两个阶段：首先，你将使用 for 循环来执行程序。然后，你将学习如何使用列表推导代替循环来实现相同的结果。"
         ]
       },
       "learn-regular-expressions-by-building-a-password-generator": {
-        "title": "Learn Regular Expressions by Building a Password Generator",
+        "title": "通过创建密码生成器学习正则表达式",
         "intro": [
-          "A Python module is a file that contains a set of statements and definitions that you can use in your code.",
-          "In this project, you'll learn how to import modules from the Python standard library. You'll also learn how to use Regular Expressions by building your own password generator program."
+          "Python 模块是一个包含一系列语句和定义的文件，你可以在代码中使用这些语句和定义。",
+          "在本项目中，你将学习如何从 Python 标准库中导入模块。你还将通过构建自己的密码生成器程序来学习如何使用正则表达式。"
         ]
       },
       "learn-algorithm-design-by-building-a-shortest-path-algorithm": {
-        "title": "Learn Algorithm Design by Building a Shortest Path Algorithm",
+        "title": "通过创建最短路径算法学习算法设计",
         "intro": [
-          "Algorithms are step-by-step procedures that developers use to perform calculations and solve computational problems.",
-          "In this project, you'll learn how to use functions, loops, conditional statements, and dictionary comprehensions to implement a Shortest Path algorithm."
+          "算法是开发者用来执行计算和解决计算问题的分步程序。",
+          "在本项目中，你将学习如何使用函数、循环、条件语句和字典推导来实现最短路径算法。"
         ]
       },
       "learn-recursion-by-solving-the-tower-of-hanoi-puzzle": {
-        "title": "Learn Recursion by Solving the Tower of Hanoi Puzzle",
+        "title": "通过解决河内塔谜题学习递归",
         "intro": [
-          "Recursion is a programming approach that allows you to solve complicated computational problems with just a little code.",
-          "In this project, you'll start with a loop-based approach to solving the tower of Hanoi mathematical puzzle. Then you'll learn how to implement a recursive solution."
+          "递归是一种编程方法，它让你只需少量代码就能解决复杂的计算问题。",
+          "在本项目中，你将从基于循环的河内塔数学谜题解法开始。然后，你将学习如何实现递归解法。"
         ]
       },
       "learn-data-structures-by-building-the-merge-sort-algorithm": {
-        "title": "Learn Data Structures by Building the Merge Sort Algorithm",
+        "title": "通过创建归并排序算法学习数据结构",
         "intro": [
-          "The Merge Sort Algorithm is a sorting algorithm based on the divide and conquer principle.",
-          "In this project, you'll learn how to interact with data structures by sorting a list of random numbers using the Merge Sort Algorithm."
+          "归并排序算法是一种基于分治原则的排序算法。",
+          "在本项目中，你将学习如何使用归并排序算法对随机数列表进行排序，从而与数据结构进行交互。"
         ]
       },
       "learn-classes-and-objects-by-building-a-sudoku-solver": {
-        "title": "Learn Classes and Objects by Building a Sudoku Solver",
+        "title": "通过创建数独求解器学习类和对象",
         "intro": [
-          "Classes and objects are important programming concepts. These Object-Oriented Programming tools help developers to achieve code modularity, abstraction, and readability. And they promote reusability.",
-          "In this Sudoku Solver project, you'll learn how to use classes and objects to build a Sudoku grid and to solve a Sudoku puzzle."
+          "类和对象是重要的编程概念。这些面向对象编程工具可以帮助开发人员实现代码的模块化、抽象化和可读性。它们还能提高代码的可重用性。",
+          "在这个数独求解器项目中，你将学习如何使用类和对象来创建数独网格并求解数独谜题。"
         ]
       },
       "learn-tree-traversal-by-building-a-binary-search-tree": {
-        "title": "Learn Tree Traversal by Building a Binary Search Tree",
+        "title": "通过创建二叉搜索树学习树形结构遍历",
         "intro": [
-          "A Binary Search Tree (BST) is an common data structure where data is sorted hierarchically.",
-          "In this project, you'll learn how to construct your own BST and perform an in-order traversal. You'll also learn key operations like insertion, search, and deletion."
+          "二叉搜索树（BST）是一种常见的数据结构，数据按层次排序。",
+          "在本项目中，你将学习如何构建自己的 BST 并执行无序遍历。你还将学习插入、搜索和删除等关键操作。"
         ]
       },
       "learn-lambda-functions-by-building-an-expense-tracker": {
-        "title": "Learn Lambda Functions by Building an Expense Tracker",
+        "title": "通过创建费用跟踪器学习 Lambda 函数",
         "intro": [
-          "Lambda functions give you a concise way to write small, throwaway functions in your code.",
-          "In this project, you'll explore the power of Lambda Functions by creating an expense tracker. Your resulting app will demonstrate how you can use Lambda Functions for efficient, streamlined operations."
+          "Lambda 函数为你提供了一种简洁的方法，让你可以在代码中编写小型的、可丢弃的函数。",
+          "在本项目中，你将通过创建一个费用跟踪器来探索 Lambda 函数的强大功能。你创建的应用程序将展示如何使用 Lambda 函数实现高效、简化的操作。"
         ]
       },
       "scientific-computing-with-python-projects": {
-        "title": "Python 与科学计算项目",
+        "title": "Python 科学计算项目",
         "intro": [
-          "It's time to put your Python skills to the test. By completing these projects, you'll demonstrate that you have a strong foundational knowledge of Python. And you'll qualify for freeCodeCamp's Scientific Computing with Python Certification."
+          "是时候测试一下你的 Python 技能了。通过完成这些项目，你可以展示自己已经掌握了扎实的 Python 基础知识。你还将有资格获得 freeCodeCamp 的 Python 科学计算认证。"
         ]
       }
     }
   },
   "data-analysis-with-python": {
-    "title": "Python 和数据分析",
+    "title": "Python 数据分析",
     "intro": [
       "数据分析已经存在很长时间了。但是直到几年前，开发人员还是使用昂贵的闭源工具（如 Tableau）来做数据分析。如今，Python、SQL 和其他开放的库永远改变了数据分析领域。",
       "在这个认证中，你会学习使用 Python 做数据分析的基础知识。然后，你会学习怎么从 CSV、SQL 等数据源读取数据，并且怎么使用 Numpy、Pandas、Matplotlib 和 Seaborn 等库来处理和可视化数据。"
@@ -843,7 +843,7 @@
     "note": "",
     "blocks": {
       "data-analysis-with-python-course": {
-        "title": "Python 和数据分析",
+        "title": "Python 数据分析",
         "intro": [
           "在 Santiago Basulto 创建的这些综合视频课程中，你会学习整个数据分析的过程。你会从 CSV、SQL、Excel 读取数据，用 Numpy和 Pandas 来处理这些数据，以及使用 Matplotlib 和 Seaborn 来可视化数据。",
           "此外，你还可以通过完整的 Jupyter Notebook 课程和 Python 资料来刷新自己的编程技能。"
@@ -857,10 +857,10 @@
         ]
       },
       "data-analysis-with-python-projects": {
-        "title": "Python 与数据分析",
+        "title": "Python 数据分析",
         "intro": [
           "使用 Python 分析数据的方法很多。通过完成这些项目，你可以证明自己掌握了使用 Python 进行数据分析的基础知识。",
-          "完成所有项目，即可获得 Python 与数据分析认证。"
+          "完成所有项目，即可获得 Python 数据分析认证。"
         ]
       }
     }
@@ -898,7 +898,7 @@
     }
   },
   "machine-learning-with-python": {
-    "title": "Python 和机器学习",
+    "title": "Python 机器学习",
     "intro": [
       "机器学习有许多实际应用程序，你可以在项目中或工作中使用它们。",
       "在这个认证中，你将使用 TensorFlow 框架构建多个神经网络，同时，你将探索更先进的技术，例如自然语言处理和强化学习。",
@@ -921,7 +921,7 @@
         ]
       },
       "machine-learning-with-python-projects": {
-        "title": "Python 与机器学习项目",
+        "title": "Python 机器学习项目",
         "intro": [
           "机器学习有许多实际应用。通过完成这些免费且具有挑战性的编程项目，你可以证明自己掌握了机器学习基础知识，并获得认证。"
         ]
@@ -1044,7 +1044,7 @@
         ]
       },
       "college-algebra-with-python-conclusion": {
-        "title": "Python 和大学代数：总结",
+        "title": "Python 和大学数学：总结",
         "intro": [
           "这将是本课程的最后一个单元。让我们看看如何能够将你的数学和 Python 知识与外部数据连接起来。"
         ]
@@ -1059,17 +1059,17 @@
     }
   },
   "python-for-everybody": {
-    "title": "Legacy Python for Everybody",
+    "title": "（旧版）通用 Python 课程",
     "intro": [
-      "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning."
+      "Python 是目前最流行的、最灵活的编程语言之一。你可以用它来做很多事，包括从基础算法到机器学习。"
     ],
     "note": "",
     "blocks": {
       "python-for-everybody": {
-        "title": "Python for Everybody",
+        "title": "通用 Python 课程",
         "intro": [
-          "Python for everybody is a free video course series that teaches the basics of using Python 3.",
-          "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
+          "通用 Python 课程是一个讲解 Python 3 基础的系列免费视频课程。",
+          "这些课程是 Dr. Charles Severance（Dr. Chuck）创建的。他是密歇根大学信息学院的教授，他教授各种技术课程，包括编程、数据库设计和 web 开发。"
         ]
       }
     }
@@ -1080,7 +1080,7 @@
       "如果你正在寻找免费的编程训练来帮你为下一个工作面试做准备，我们已经帮你准备好了。",
       "这一部分包含了大量编程挑战，可以测试你的算法、数据结构和数学知识。这里还有一些你可以在家慢慢做的项目，用于提升你的技术，或者丰富你的作品集。"
     ],
-    "note": "The Project Euler Project and Rosetta Code have been moved to their own courses. Go back to the curriculum to see the list of courses we offer.",
+    "note": "欧拉计划和罗塞塔代码已移至各自的课程中。返回课程列表查看我们提供的课程。",
     "blocks": {
       "algorithms": {
         "title": "算法",
@@ -1106,80 +1106,85 @@
     }
   },
   "the-odin-project": {
-    "title": "The Odin Project - freeCodeCamp Remix (Beta)",
+    "title": "The Odin Project - freeCodeCamp 版（Beta）",
     "intro": [
-      "The Odin Project was created in 2013 by a lone developer, Erik Trautman. Over the years, an open source community has sprung up to maintain and expand the project.",
-      "freeCodeCamp has expanded upon the open source curriculum to make it run interactively in the browser, with tests to evaluate your code and ensure you've understood key concepts.",
-      "If you want the original experience of configuring all of The Odin Project to run on your local computer, you can check out the original Odin Project on <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project website</a>. A huge thanks to The Odin Project community for continuing to maintain this valuable learning resource for developers all around the world.",
-      "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
-      "<a href='https://github.com/TheOdinProject/curriculum?tab=License-1-ov-file#readme' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>"
+      "The Odin Project 由开发人员 Erik Trautman 创建于 2013 年。多年来，开源社区不断维护和扩展该项目。",
+      "freeCodeCamp 在开源课程的基础上进行了扩展，使其可以在浏览器中交互运行，并通过测试来评估你的代码，确保你理解了关键概念。",
+      "如果你想体验在本地计算机上配置运行所有 The Odin Project，可以在 <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project 网站</a> 上查看原始的 Odin Project。衷心感谢 The Odin Project 社区持续为世界各地的开发人员维护这一宝贵的学习资源。",
+      "本课程为非官方课程，未经 The Odin Project 认可。本课程对 The Odin Project 课程内容进行了更改。本课程的所有教学材料均采用 CC-BY-SA-NC 4.0 许可协议。",
+      "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>",
+      "此课程包含来自 <a href='javascript.info'>JavaScript.info</a> 的内容，采用 <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a> 许可。"
     ],
     "blocks": {
       "top-learn-html-foundations": {
         "title": "学习 HTML 基础",
         "intro": [
-          "Get a solid grasp of HTML essentials with this course. From structuring web pages to understanding semantic tags, you'll build a strong foundation for creating well-organized and accessible content on the web."
+          "通过本课程扎实掌握 HTML 基本知识。从构建网页到理解语义标签，你将为在 web 端创建条理清晰、易于访问的内容打下坚实的基础。"
         ]
       },
       "top-working-with-text": {
         "title": "使用文本",
         "intro": [
-          "Explore the intricacies of working with text in web development. Learn about text formatting, manipulation, and presentation to enhance your skills in creating web content."
+          "探索 web 开发中文本处理的技巧。学习文本格式设置、处理和展示，提升你创建 web 内容的技能。"
         ]
       },
       "top-links-and-images": {
         "title": "链接和图像",
         "intro": [
-          "Learn how to incorporate links and images into your web projects. This course covers the fundamentals of creating links and embedding images to make your websites more interactive and visually appealing."
+          "学习如何在你的 web 项目中添加链接和图片。本课程涵盖创建链接和嵌入图片的基础知识，使你的网站更具互动性和视觉吸引力。"
         ]
       },
       "top-build-a-recipe-project": {
         "title": "通过创建食谱页面学习 HTML 基础",
         "intro": [
-          "Put your HTML skills into practice by building a recipe page. This hands-on project allows you to apply your knowledge and create a functional web page while reinforcing key concepts of HTML development."
+          "通过创建一个菜谱页面，在实践中锻炼你的 HTML 技能。这个项目使你可以运用所学的知识创建一个功能性网页，同时巩固 HTML 开发的关键概念。"
         ]
       },
       "top-learn-css-foundations": {
         "title": "学习 CSS 基础",
         "intro": [
-          "Dive into the world of Cascading Style Sheets (CSS) and learn how to style your HTML elements. Explore styling properties, selectors, and layouts to bring your web pages to life."
+          "深入层叠样式表（CSS）的世界，学习如何为 HTML 元素设计样式。探索样式属性、选择器和布局，让你的网页栩栩如生。"
         ]
       },
       "top-learn-css-foundations-projects": {
         "title": "学习 CSS 基础项目",
         "intro": [
-          "Take your CSS skills to the next level by working on practical projects. This course provides hands-on experience in applying CSS to create responsive designs for real-world scenarios."
+          "通过实践项目，让你的 CSS 技能更上一层楼。你将在本课程中应用 CSS 为实际场景创建响应式设计。"
         ]
       },
       "top-learn-css-specificity": {
         "title": "学习 CSS 优先级",
         "intro": [
-          "Learn CSS specificity and gain a better understanding of how styles are applied to HTML elements. This course explores the nuances of CSS rules and helps you write efficient and targeted styles for your web pages."
+          "学习 CSS 的特性，更好地了解如何给 HTML 元素添加样式。本课程探讨 CSS 规则的细微差别，帮助你为网页编写高效、有针对性的样式。"
         ]
       },
       "top-the-box-model": {
         "title": "学习盒模型",
         "intro": [
-          "Learn the CSS box model with this course. Understand how elements are rendered on the web, and learn to manipulate spacing, borders, and padding to achieve your desired layout and design."
+          "通过本课程学习 CSS 盒模型。了解元素在网页上的呈现方式，学习如何处理间距、边框和边距，以实现理想的布局和设计。"
         ]
       },
       "top-introduction-to-flexbox": {
-        "title": "Introduction to Flexbox",
+        "title": "Flexbox 简介",
         "intro": [
-          "Discover the power of Flexbox, a layout model that simplifies the design of flexible and responsive web layouts. Learn how to create dynamic and adaptive page structures with ease."
+          "了解 Flexbox 的强大功能，这种布局模型可简化灵活、响应性强的网页布局设计。了解如何轻松创建动态的和自适应的页面结构。"
         ]
       },
       "top-learn-block-and-inline": {
-        "title": "Learn the difference between Block and Inline",
+        "title": "学习块和内联之间的差异",
         "intro": [
-          "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
+          "探索 HTML 和 CSS 中块元素和内联元素之间的区别。本课程让你深入了解这些显示类型如何影响布局和行为，使你能够做出明智的设计决策。"
         ]
       },
       "top-learn-variables-and-operators": {
-        "title": "Learn Variables and Operators",
+        "title": "学习变量和运算符",
         "intro": [
-          "Get started with JavaScript by learning about variables and operators. This course covers the fundamentals of JavaScript programming, including data types, operators, and variable declarations."
+          "通过学习变量和运算符开始学习 JavaScript。本课程涵盖 JavaScript 编程的基础知识，包括数据类型、运算符和变量声明。"
         ]
+      },
+      "top-learn-data-types-and-conditionals": {
+        "title": "学习数据类型和条件",
+        "intro": ["在 JavaScript 中学习数据类型和条件"]
       }
     }
   },
@@ -1290,149 +1295,155 @@
   "a2-english-for-developers": {
     "title": "面向开发者的 A2 英语（Beta）",
     "intro": [
-      "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
-      "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
-      "In the second half, you'll practice vocabulary specific to software development. You'll learn how to describe code, discuss tech trends, and participate in stand-up meetings.",
-      "This entire A2-level curriculum includes 105 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
+      "在开发者英语课程中，你将学习英语交流的基本要素。课程遵循欧洲共同语言参考标准（CEFR）的 A2 级，侧重于对开发者有用的词汇。",
+      "课程的前半部分将帮助你熟悉英语语法和用法。你将通过大量的实践练习学习自我介绍、聊天和讨论工作等基础知识。",
+      "在后半部分，你将练习软件开发的专用词汇。你将学习如何描述代码、讨论技术趋势和参加站立会议。",
+      "整个 A2 级课程包括 105 个不同的对话。每一个对话都旨在帮助你积累词汇、增强在专业技术环境中演讲的信心。"
     ],
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
-        "title": "Learn Greetings in your First Day at the Office",
+        "title": "学习第一天上班的问候语",
         "intro": [
-          "In this first course, you'll learn common expressions for situations you may encounter on your first day at work. You'll learn about introductions, getting to know people, asking for lunch recommendations, and getting an access card from security."
+          "在第一节课程中，你将学习第一天上班可能遇到的情境中的常用表达方式。你将学习自我介绍、认识别人、询问午餐推荐以及从安保处领取门禁卡。"
         ]
       },
       "learn-introductions-in-an-online-team-meeting": {
-        "title": "Learn Introductions in an Online Team Meeting",
+        "title": "学习在线上团队会议中自我介绍",
         "intro": [
-          "In this course, you'll learn how to give a personal introduction. You'll also learn how to state your profession, and share your goals in group meetings."
+          "在本课程中，你将学习如何进行个人介绍。你还将学习如何在小组会议中陈述自己的职业和分享自己的目标。"
         ]
       },
       "learn-conversation-starters-in-the-break-room": {
-        "title": "Learn Conversation Starters in the Break Room",
+        "title": "学习在休息室中的对话开场白",
         "intro": [
-          "In this course, you'll learn how to start a conversation in casual settings. You'll also learn how to talk about your hobbies and personality traits. You'll even learn how to ask about places around the town."
+          "在本课程中，你将学习如何在休闲场合开始对话。你还将学习如何谈论自己的爱好和个性特征。你甚至还将学习如何询问城市周边的情况。"
         ]
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
-        "title": "Learn How to Talk About a Typical Workday and Tasks",
+        "title": "学习如何谈论典型的工作日和任务",
         "intro": [
-          "In this course, you'll learn how to talk about your workday and the tasks that you perform in the workplace and how to share them with others. It mainly focuses on the structures used for describing your activities and task-related vocabulary."
+          "在本课程中，你将学习如何谈论你的工作日和你在工作场所执行的任务，以及如何与别人分享这些内容。课程主要关注用于描述你的活动的结构以及与任务相关的词汇。"
         ]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
-        "title": "Learn How to Discuss Your Morning or Evening Routine",
+        "title": "学习如何讨论你的晨间或晚间例行活动",
         "intro": [
-          "In this course, you'll learn how to talk about details of your routine and share them with someone else. It mainly focuses on the structures used for declaring routine actions and related vocabulary."
+          "在本课程中，你将学习如何谈论并与别人分享你的例行活动细节。课程的重点是用于谈论例行活动的结构和相关词汇。"
         ]
       },
       "learn-how-to-describe-your-current-project": {
-        "title": "Learn How to Describe Your Current Project",
+        "title": "学习如何描述你当前的项目",
         "intro": [
-          "In this course, you'll learn how to talk about the projects that you are involved in and how to inform others of what you are doing in these projects. It mainly focuses on the structures used for informing it and on the related vocabulary."
+          "在本课程中，你将学习如何谈论自己参与的项目，以及如何告知别人自己在这些项目中的工作。课程的重点是用于告知别人的结构和相关词汇。"
         ]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
-        "title": "Learn How to Ask and Share About Educational and Professional Background",
-        "intro": ["", ""]
+        "title": "学习如何询问和分享教育和专业背景",
+        "intro": [
+          "在本课程中，你将学习如何询问别人的教育和职业背景，并学习如何分享有关你的背景信息。"
+        ]
       },
       "learn-how-to-talk-about-hobbies-and-interests": {
-        "title": "Learn How to Talk About Hobbies and Interests",
-        "intro": ["", ""]
+        "title": "学习如何谈论兴趣与爱好",
+        "intro": [
+          "在本课程中，你将学习用不同的方式谈论自己的爱好和感兴趣的事物。你还将学习如何询问别人的爱好，以及如何邀请别人参加这些活动。"
+        ]
       },
       "learn-how-to-discuss-roles-and-responsibilies": {
-        "title": "Learn How to Discuss Roles and Responsibilities",
-        "intro": ["", ""]
+        "title": "学习如何谈论角色和责任",
+        "intro": [
+          "在本课程中，你将讨论人们在公司内外的角色和责任。你将学习如何询问关于角色和职责的信息，以及如何分享你自己这方面的信息。"
+        ]
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
-        "title": "Learn How to Have a Conversation About Preferences and Motivations",
+        "title": "学习如何就偏好和动机进行对话",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
-        "title": "Learn How to Discuss Popular Trends in Technology",
+        "title": "学习如何讨论流行的技术趋势",
         "intro": ["", ""]
       },
       "learn-how-to-clarify-information-in-different-interactions": {
-        "title": "Learn How to Clarify Information in Different Interactions",
+        "title": "学习如何在不同的互动中阐明信息",
         "intro": ["", ""]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
-        "title": "Learn How to Use Basic Programming Vocabulary in Conversations",
+        "title": "学习如何在对话中使用基本编程词汇",
         "intro": ["", ""]
       },
       "learn-how-to-use-code-related-concepts-and-terms": {
-        "title": "Learn How to Use Code-related Concepts and Terms",
+        "title": "学习如何使用代码相关的概念和术语",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-tech-trends-and-updates": {
-        "title": "Learn How to Discuss Tech Trends and Updates",
+        "title": "学习如何谈论技术趋势和更新",
         "intro": ["", ""]
       },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
-        "title": "Learn How to Help a Coworker Troubleshoot on GitHub",
+        "title": "学习如何在 GitHub 上帮助同事解决问题",
         "intro": ["", ""]
       },
       "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
-        "title": "Learn How to Share Your Progress in Weekly Stand-up Meetings",
+        "title": "学习如何在每周站立会议上分享你的进展",
         "intro": ["", ""]
       },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
-        "title": "Learn How to Ask for Clarification on Code Understanding",
+        "title": "学习如何要求澄清对代码的理解",
         "intro": ["", ""]
       },
       "learn-how-to-document-code-for-a-project": {
-        "title": "Learn How to Document Code for a Project",
+        "title": "学习如何为项目写代码文档",
         "intro": ["", ""]
       },
       "learn-how-to-read-and-understand-code-documentation": {
-        "title": "Learn How to Read and Understand Code Documentation",
+        "title": "学习如何阅读和理解代码文档",
         "intro": ["", ""]
       },
       "learn-how-to-analyze-code-documentation": {
-        "title": "Learn How to Analyze Code Documentation",
+        "title": "学习如何分析代码文档",
         "intro": ["", ""]
       },
       "learn-how-to-follow-basic-email-convention": {
-        "title": "Learn How to Follow Basic Email Convention",
+        "title": "学习如何遵循基本的电子邮件规范",
         "intro": ["", ""]
       },
       "learn-how-to-share-progress-and-accomplishments": {
-        "title": "Learn How to Share Progress and Accomplishments",
+        "title": "学习如何分享进度和成就",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
-        "title": "Learn How to Talk About Updates and Plans for Tasks and Projects",
+        "title": "学习如何谈论任务和项目的更新和计划",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement-or-disagreement": {
-        "title": "Learn How to Express Agreement or Disagreement",
+        "title": "学习如何表达同意或不同意",
         "intro": ["", ""]
       },
       "learn-how-to-offer-technical-support-and-guidance": {
-        "title": "Learn How to Offer Technical Support and Guidance",
+        "title": "学习如何提供技术支持和指导",
         "intro": ["", ""]
       },
       "learn-how-to-request-and-receive-guidance": {
-        "title": "Learn How to Request and Receive Guidance",
+        "title": "学习如何请求和接受指导",
         "intro": ["", ""]
       },
       "learn-how-to-provide-explanations-when-helping-others": {
-        "title": "Learn How to Provide Explanations When Helping Others",
+        "title": "学习如何在帮助别人时提供解释",
         "intro": ["", ""]
       }
     }
   },
   "rosetta-code": {
-    "title": "Rosetta Code",
+    "title": "罗塞塔代码",
     "intro": [
-      "Level up your creative problem solving skills with these free programming tasks from the classic Rosetta Code library.",
-      "These challenges can prove to be difficult, but they will push your algorithm logic to new heights.",
+      "通过完成经典的罗塞塔代码库中的这些免费编程任务来提升你的创造性问题解决能力。",
+      "这些挑战可能很困难，但是它们会将进一步提升你的算法逻辑。",
       "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
     ],
     "blocks": {
       "rosetta-code-challenges": {
-        "title": "Rosetta Code Challenges",
-        "intro": ["These are the challenges for Rosetta Code."]
+        "title": "罗塞塔代码挑战",
+        "intro": ["这些是罗赛塔代码的挑战。"]
       }
     }
   },
@@ -1457,14 +1468,14 @@
     "legacy-desc": "这些课程不再是认证路径的一部分，但仍可供你进一步学习。",
     "legacy-go-back": "进入当前版本的课程。",
     "course-maintenance": "这些课程正在维护中。如果它们不可用，你可以学习如何在本地运行这些课程 <0>https://www.freecodecamp.org/chinese/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>。",
-    "course-disabling-soon": "The browser version of these courses will be temporarily disabled soon and your virtual machines will be deleted. Any progress in your virtual machines will be lost. If you have any files you want from them, you should save them to your computer. We apologize for any inconvenience. We hope to have an improved browser version of these courses available again in the next few weeks.",
-    "course-disabled": "These courses are temporarily unavailable to run in the browser. We apologize for any inconvenience. You can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>. We hope to have an improved browser version available again soon.",
-    "run-locally": "For now, we recommend running the courses locally on your computer. You can learn how at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
+    "course-disabling-soon": "这些课程的浏览器版本即将被暂时停用，你的虚拟机也将被删除。虚拟机中的任何进度都将丢失。如果你有任何想要的文件，请将它们保存到你的计算机中。对于给你带来的不便，我们深表歉意。我们希望在未来几周内能再次提供这些课程的改进的浏览器版本。",
+    "course-disabled": "这些课程暂时无法在浏览器中运行。不便之处，敬请原谅。你可以通过 <0>https://www.freecodecamp.org/chinese/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0> 了解如何在本地运行这些课程。我们希望能尽快推出改进后的浏览器版本。",
+    "run-locally": "目前，我们建议你在本地计算机上运行课程。你可以通过 <0>https://www.freecodecamp.org/chinese/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0> 了解如何操作。",
     "progress-wont-save": "当你在本地运行它们时，你的进度不会被保存到你的 freeCodeCamp 账户。",
     "go-back-to-learn": "回到正式版课程",
     "read-database-cert-article": "请在继续之前阅读这个论坛帖子。",
     "enable-cookies": "你必须在开始之前启用第三方 cookies。",
     "english-only": "本部分的课程只提供英文。我们目前只能翻译标题和介绍，而不能翻译课程本身。",
-    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
+    "exam-english-only": "请注意，认证考试目前只有英语版本。课程的其余部分有其他语言版本。"
   }
 }

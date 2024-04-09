@@ -19,7 +19,7 @@ test('Check the initial states of submit button and "check your code" button', a
 });
 
 test('Click on the "check your code" button', async ({ page }) => {
-  const checkButton = page.getByTestId('lowerJaw-check-button');
+  const checkButton = page.getByRole('button', { name: 'Check Your Code' });
 
   await checkButton.click();
 
@@ -33,9 +33,9 @@ test('Click on the "Reset" button', async ({ page }) => {
   const resetButton = page.getByTestId('lowerJaw-reset-button');
   await resetButton.click();
 
-  const resetModal = page.getByTestId('reset-modal');
-
-  await expect(resetModal).toBeVisible();
+  await expect(
+    page.getByRole('dialog', { name: 'Reset this lesson?' })
+  ).toBeVisible();
 });
 
 test('Should render UI correctly', async ({ page }) => {
@@ -43,20 +43,26 @@ test('Should render UI correctly', async ({ page }) => {
     name: 'Check Your Code'
   });
   const lowerJawTips = page.getByTestId('failing-test-feedback');
-  await expect(codeCheckButton).toHaveText('Check Your Code (Ctrl + Enter)');
+  await expect(codeCheckButton).toBeVisible();
   await expect(lowerJawTips).toHaveCount(0);
 });
 
-test('Should display full button text on desktop but hide (Ctrl + Enter on mobile)', async ({
+test('Should display the text of the check code button accordingly based on device type and screen size', async ({
   page,
-  isMobile
+  isMobile,
+  browserName
 }) => {
-  const codeCheckButton = page.getByRole('button', {
-    name: 'Check Your Code'
-  });
-  await expect(codeCheckButton).toHaveText('Check Your Code (Ctrl + Enter)');
-
   if (isMobile) {
-    await expect(codeCheckButton).toHaveText('Check Your Code');
+    await expect(
+      page.getByRole('button', { name: 'Check Your Code', exact: true })
+    ).toBeVisible();
+  } else if (browserName === 'webkit') {
+    await expect(
+      page.getByRole('button', { name: 'Check Your Code (Command + Enter)' })
+    ).toBeVisible();
+  } else {
+    await expect(
+      page.getByRole('button', { name: 'Check Your Code (Ctrl + Enter)' })
+    ).toBeVisible();
   }
 });

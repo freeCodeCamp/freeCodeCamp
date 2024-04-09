@@ -298,15 +298,6 @@ exports.onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPlugin({
     name: '@babel/plugin-proposal-export-default-from'
   });
-  actions.setBabelPlugin({
-    name: 'babel-plugin-transform-imports',
-    options: {
-      '@freecodecamp/react-bootstrap': {
-        transform: '@freecodecamp/react-bootstrap/lib/${member}',
-        preventFullImport: true
-      }
-    }
-  });
 };
 
 exports.onCreatePage = async ({ page, actions }) => {

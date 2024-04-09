@@ -164,6 +164,7 @@ async function createFirstChallenge(
   return createStepFile({
     projectPath: newChallengeDir + '/',
     stepNum: 1,
+    challengeType: 0,
     challengeSeeds
   });
 }
@@ -198,10 +199,10 @@ void prompt([
   },
   {
     name: 'block',
-    message: 'What is the short name (in kebab-case) for this project?',
+    message: 'What is the dashed name (in kebab-case) for this project?',
     validate: (block: string) => {
       if (!block.length) {
-        return 'please enter a short name';
+        return 'please enter a dashed name';
       }
       if (/[^a-z0-9-]/.test(block)) {
         return 'please use alphanumerical characters and kebab case';

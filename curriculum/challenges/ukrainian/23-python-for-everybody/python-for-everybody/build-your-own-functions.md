@@ -12,7 +12,7 @@ dashedName: build-your-own-functions
 
 # --description--
 
-More resources:
+Додаткові ресурси:
 
 \- <a href="https://www.youtube.com/watch?v=ksvGhDsjtpw" target="_blank" rel="noopener noreferrer nofollow">Вправа</a>
 

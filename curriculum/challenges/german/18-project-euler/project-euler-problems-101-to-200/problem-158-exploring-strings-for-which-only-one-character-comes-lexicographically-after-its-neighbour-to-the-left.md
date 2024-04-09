@@ -1,7 +1,7 @@
 ---
 id: 5900f40a1000cf542c50ff1d
 title: >-
-  Problem 158: Exploring strings for which only one character comes lexicographically after its neighbour to the left
+  Problem 158: Untersuchung von Strings, bei denen nur ein Zeichen lexikografisch nach seinem linken Nachbarn kommt
 challengeType: 1
 forumTopicId: 301789
 dashedName: >-
@@ -12,23 +12,23 @@ dashedName: >-
 
 Taking three different letters from the 26 letters of the alphabet, character strings of length three can be formed.
 
-Examples are 'abc', 'hat' and 'zyx'.
+Beispiele hierfür sind "abc", "hat" und "zyx".
 
-When we study these three examples we see that for 'abc' two characters come lexicographically after its neighbour to the left.
+Wenn wir diese drei Beispiele untersuchen, sehen wir, dass bei "abc" zwei Zeichen lexikografisch nach dem linken Nachbarn kommen.
 
-For 'hat' there is exactly one character that comes lexicographically after its neighbour to the left. For 'zyx' there are zero characters that come lexicographically after its neighbour to the left.
+Für "hat" gibt es genau ein Zeichen, das lexikografisch nach seinem linken Nachbarn kommt. Für "zyx" gibt es null Zeichen, die lexikografisch nach seinem linken Nachbarn kommen.
 
-In all there are 10400 strings of length 3 for which exactly one character comes lexicographically after its neighbour to the left.
+Insgesamt gibt es 10400 Strings der Länge 3, bei denen genau ein Zeichen lexikografisch nach seinem linken Nachbarn kommt.
 
-We now consider strings of $n ≤ 26$ different characters from the alphabet.
+Wir betrachten nun Strings mit $n ≤ 26$ verschiedenen Zeichen aus dem Alphabet.
 
-For every $n$, $p(n)$ is the number of strings of length $n$ for which exactly one character comes lexicographically after its neighbour to the left.
+Für jedes $n$ ist $p(n)$ die Anzahl der Strings der Länge $n$, bei denen genau ein Zeichen lexikographisch nach seinem linken Nachbarn kommt.
 
-What is the maximum value of $p(n)$?
+Was ist der maximale Wert von $p(n)$?
 
 # --hints--
 
-`lexicographicNeighbours()` should return `409511334375`.
+`lexicographicNeighbours()` sollte `409511334375` zurückgeben.
 
 ```js
 assert.strictEqual(lexicographicNeighbours(), 409511334375);

@@ -10,47 +10,47 @@ dashedName: problem-43-sub-string-divisibility
 
 The number, 1406357289, is a 0 to 9 pandigital number because it is made up of each of the digits 0 to 9 in some order, but it also has a rather interesting sub-string divisibility property.
 
-Let $d_1$ be the $1^{st}$ digit, $d_2$ be the $2^{nd}$ digit, and so on. In this way, we note the following:
+Sei $d_1$ die $1^{st}$-Ziffer, $d_2$ die $2^{nd}$-Ziffer, und so weiter. Auf diese Weise können wir Folgendes feststellen:
 
-- ${d_2}{d_3}{d_4} = 406$ is divisible by 2
-- ${d_3}{d_4}{d_5} = 063$ is divisible by 3
-- ${d_4}{d_5}{d_6} = 635$ is divisible by 5
-- ${d_5}{d_6}{d_7} = 357$ is divisible by 7
-- ${d_6}{d_7}{d_8} = 572$ is divisible by 11
-- ${d_7}{d_8}{d_9} = 728$ is divisible by 13
-- ${d_8}{d_9}{d_{10}} = 289$ is divisible by 17
+- ${d_2}{d_3}{d_4} = 406$ ist durch 2 teilbar
+- ${d_3}{d_4}{d_5} = 063$ ist durch 3 teilbar
+- ${d_4}{d_5}{d_6} = 635$ ist durch 5 teilbar
+- ${d_5}{d_6}{d_7} = 357$ ist durch 7 teilbar
+- ${d_6}{d_7}{d_8} = 572$ ist durch 11 teilbar
+- ${d_7}{d_8}{d_9} = 728$ ist durch 13 teilbar
+- ${d_8}{d_9}{d_{10}} = 289$ ist durch 17 teilbar
 
-Find the sum of all 0 to `n` pandigital numbers with sub-strings fulfilling `n - 2` of these divisibility properties.
+Finde die Summe aller 0 bis `n` pandigitalen Zahlen, deren Sub-Strings `n - 2` dieser Teilbarkeitseigenschaften erfüllen.
 
-**Note:** Pandigital numbers starting with `0` are to be considered in the result.
+**Hinweis:** Pandigitale Zahlen, die mit `0` beginnen, sind im Ergebnis zu berücksichtigen.
 
 # --hints--
 
-`substringDivisibility(5)` should return a number.
+`substringDivisibility(5)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof substringDivisibility(5) === 'number');
 ```
 
-`substringDivisibility(5)` should return `12444480`.
+`substringDivisibility(5)` sollte `12444480` zurückgeben.
 
 ```js
 assert.strictEqual(substringDivisibility(5), 12444480)
 ```
 
-`substringDivisibility(7)` should return `1099210170`.
+`substringDivisibility(7)` sollte `1099210170` zurückgeben.
 
 ```js
 assert.strictEqual(substringDivisibility(7), 1099210170)
 ```
 
-`substringDivisibility(8)` should return `1113342912`.
+`substringDivisibility(8)` sollte `1113342912` zurückgeben.
 
 ```js
 assert.strictEqual(substringDivisibility(8), 1113342912)
 ```
 
-`substringDivisibility(9)` should return `16695334890`.
+`substringDivisibility(9)` sollte `16695334890` zurückgeben.
 
 ```js
 assert.strictEqual(substringDivisibility(9), 16695334890)

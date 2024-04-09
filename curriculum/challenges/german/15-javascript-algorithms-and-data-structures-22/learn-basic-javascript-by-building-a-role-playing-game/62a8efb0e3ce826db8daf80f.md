@@ -1,13 +1,13 @@
 ---
 id: 62a8efb0e3ce826db8daf80f
-title: Step 130
+title: Schritt 130
 challengeType: 0
 dashedName: step-130
 ---
 
 # --description--
 
-Finish the `defeatMonster` function by calling the `update` function with `locations[4]` as the argument.
+Beende die `defeatMonster`-Funktion, indem du die `update`-Funktion mit `locations[4]` als Argument aufrufst.
 
 # --hints--
 
