@@ -225,17 +225,6 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
-async function parseTranslation(transPath, dict, lang, parse = parseMD) {
-  const translatedChal = await parse(transPath);
-
-  const { challengeType } = translatedChal;
-  // challengeType 11 is for video challenges and 3 is for front-end projects
-  // neither of which have seeds.
-  return challengeType !== 11 && challengeType !== 3
-    ? translateCommentsInChallenge(translatedChal, lang, dict)
-    : translatedChal;
-}
-
 async function createCertification(basePath, filePath) {
   function getFullPath(pathLang) {
     return path.resolve(__dirname, basePath, pathLang, filePath);
@@ -356,13 +345,14 @@ ${getFullPath('english', filePath)}
         showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
       }) && fs.existsSync(getFullPath(lang, filePath));
 
-    const challenge = await (translateComments
-      ? parseTranslation(
-          getFullPath(lang, filePath),
-          COMMENT_TRANSLATIONS,
-          lang
-        )
-      : parseMD(getFullPath('english', filePath)));
+    const challengePath = translateComments
+      ? getFullPath(lang, filePath)
+      : getFullPath('english', filePath);
+    const challenge = translateCommentsInChallenge(
+      await parseMD(challengePath),
+      lang,
+      COMMENT_TRANSLATIONS
+    );
 
     addMetaToChallenge(challenge, meta);
     fixChallengeProperties(challenge);
@@ -405,5 +395,4 @@ function getBlockNameFromPath(filePath) {
 }
 
 exports.hasEnglishSource = hasEnglishSource;
-exports.parseTranslation = parseTranslation;
 exports.generateChallengeCreator = generateChallengeCreator;
