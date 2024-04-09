@@ -17,7 +17,7 @@ Modern code editors (and experience) can help identify syntax errors. Semantic a
 Example of a syntax error - often detected by the code editor:
 
 ```js
-funtcion willNotWork(
+function willNotWork(
   console.log("Yuck");
 }
 // "function" keyword is misspelled and there's a missing parenthesis
