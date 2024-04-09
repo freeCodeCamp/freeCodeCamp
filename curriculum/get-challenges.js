@@ -338,19 +338,18 @@ ${getFullPath('english', filePath)}
 
     await validate(filePath, meta.superBlock);
 
-    // We always try to translate comments (even English ones) to confirm that translations exist.
-    const translateComments =
+    // If we can use the language, do so. Otherwise, default to english.
+    const langUsed =
       isAuditedSuperBlock(lang, meta.superBlock, {
         showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
         showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
-      }) && fs.existsSync(getFullPath(lang, filePath));
+      }) && fs.existsSync(getFullPath(lang, filePath))
+        ? lang
+        : 'english';
 
-    const challengePath = translateComments
-      ? getFullPath(lang, filePath)
-      : getFullPath('english', filePath);
     const challenge = translateCommentsInChallenge(
-      await parseMD(challengePath),
-      lang,
+      await parseMD(getFullPath(langUsed, filePath)),
+      langUsed,
       COMMENT_TRANSLATIONS
     );
 
