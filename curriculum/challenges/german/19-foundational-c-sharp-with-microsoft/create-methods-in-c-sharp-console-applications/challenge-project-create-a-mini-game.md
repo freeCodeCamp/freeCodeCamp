@@ -1,26 +1,26 @@
 ---
 id: 647e22338acb466c97ccbeed
-title: Challenge Project - Create a Mini-Game
+title: Challenge-Projekt - Erstelle ein Mini-Spiel
 challengeType: 19
 dashedName: challenge-project-create-a-mini-game
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/</a> and complete all the tasks for the "Challenge Project - Create a Mini-Game" module. This is **required** to earn the "Create Methods in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. Go to <a href="https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/</a> and complete all the tasks for the "Challenge Project - Create a Mini-Game" module. Dies ist **erforderlich**, um die Trophäe "Create Methods in C# Console Applications" auf Microsoft Learn zu erwerben und sich für die Zertifizierungsprüfung zu qualifizieren.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/" target="_blank" rel="noreferrer">Create a Mini-Game</a> challenge project on Microsoft Learn. Then, answer the question below.
+Schließe das <a href="https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/" target="_blank" rel="noreferrer">Erstelle ein Mini-Game</a> Projekt mit Microsoft Learn. Beantworte dann die Frage unten.
 
 # --question--
 
 ## --text--
 
-A developer wants to create a method that returns a value in an array. Which of the following options would be a good choice for a method signature?
+Ein Entwickler möchte eine Methode erstellen, die einen Wert in einem Array zurückgibt. Welche der folgenden Optionen wäre eine gute Wahl für eine Methodensignatur?
 
 ## --answers--
 

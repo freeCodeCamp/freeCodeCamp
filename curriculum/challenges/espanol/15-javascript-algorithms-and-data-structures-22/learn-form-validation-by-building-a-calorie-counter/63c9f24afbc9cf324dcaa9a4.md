@@ -1,8 +1,8 @@
 ---
 id: 63c9f24afbc9cf324dcaa9a4
-title: Paso 92
+title: Step 94
 challengeType: 0
-dashedName: step-92
+dashedName: step-94
 ---
 
 # --description--

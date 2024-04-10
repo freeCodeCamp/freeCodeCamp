@@ -1,17 +1,17 @@
 ---
 id: 65e9713d484dd50f720e6fe6
-title: Learn Data Types and Conditionals Question A
+title: Вивчіть типи даних та умови. Запитання A
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-question-a
 ---
 
 # --description--
 
-Depending on what kind of work you're doing, you might end up working more with pieces of text rather than numbers. A **string** is a piece of text… and is a fundamental building block of the language.
+Залежно від того, над чим ви працюєте, можливо, частіше зустрічатимуться рядки, а не числа. **Рядок** — це фрагмент тексту… та основний будівельний блок мови.
 
-HTML provides structure and meaning to text, CSS allows us to precisely style it, and JavaScript offers many features for manipulating strings. These include creating custom welcome messages and prompts, showing the right text labels when needed, sorting terms into the desired order, and much more.
+HTML надає структуру та значення тексту, CSS дозволяє стилізувати його, а JavaScript пропонує безліч функцій для маніпулювання рядками. До них відносять створення привітань та підказок, відтворення правильних підписів в разі потреби, сортування термінів в потрібному порядку та багато іншого.
 
-Strings are a fundamental data type in JavaScript. They are used to represent text and are wrapped in either single, double quotes or backticks:
+Рядки — це основний тип даних в JavaScript. Їх використовують, щоб представити текст, та зазвичай вони оточені подвійними, одинарними або зворотними лапками:
 
 ```javascript
 let greeting = "Hello World!";
@@ -21,29 +21,29 @@ let greeting2 = 'I am learning JavaScript!';
 let greeting3 = `with The Odin Project!`;
 ```
 
-Strings declared using single quotes and strings declared using double quotes are the same, and which you use is down to personal preference — although it is good practice to choose one style and use it consistently in your code.
+Рядки, оголошені за допомогою одинарних лапок, та рядки, оголошені за допомогою подвійних лапок, — одинакові, і ви можете використовувати будь-які (хоча краще вибрати один стиль та послідовно використовувати його).
 
 # --assignment--
 
-There are many ways to manipulate strings in JavaScript. Go through points 8 through 12 of our <a href="https://www.freecodecamp.org/news/javascript-string-handbook/" target="_blank">JavaScript String Handbook</a>
+Існує безліч способів маніпулювати рядками в JavaScript. Перегляньте з 8 по 12 пункти <a href="https://www.freecodecamp.org/news/javascript-string-handbook/" target="_blank">нашого посібника з рядків JavaScript</a> (англійською мовою).
 
 # --question--
 
 ## --text--
 
-Which statement accurately describes the versatility and use of strings in JavaScript in conjunction with HTML, CSS, and JavaScript itself?
+Яке твердження точно описує універсальність та використання рядків у JavaScript у поєднанні з HTML, CSS і самим JavaScript?
 
 ## --answers--
 
-Strings in JavaScript can only be manipulated using CSS for web page design.
+Рядками в JavaScript можна керувати лише за допомогою CSS для дизайну вебсторінок.
 
 ---
 
-JavaScript strings are exclusively used for mathematical computations and cannot interact with HTML or CSS.
+Рядки JavaScript використовуються виключно для математичних обчислень і не можуть взаємодіяти з HTML або CSS.
 
 ---
 
-Strings allow for text manipulation in JavaScript, including but not limited to creating custom messages, sorting terms, and dynamically updating HTML content with CSS styling.
+Рядки дозволяють маніпулювати текстом у JavaScript, включаючи, але не обмежуючись, створенням спеціальних повідомлень, сортуванням термінів та динамічним оновленням вмісту HTML за допомогою стилів CSS.
 
 
 ## --video-solution--

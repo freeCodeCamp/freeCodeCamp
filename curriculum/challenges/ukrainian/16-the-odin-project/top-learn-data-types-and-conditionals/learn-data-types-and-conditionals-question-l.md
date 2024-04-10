@@ -1,27 +1,27 @@
 ---
 id: 65e97293484dd50f720e6ff1
-title: Learn Data Types and Conditionals Question L
+title: Вивчіть типи даних та умови. Запитання L
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-question-l
 ---
 
 # --description--
 
-Another way to compare conditional statements would be the ternary operator. The ternary operator is a shorthand way of writing an `if-else` statement. It is used to evaluate a condition and return a value based on the result of the condition. The syntax of the ternary operator is as follows:
+Інший спосіб порівняти умовні інструкції — використати тернарний оператор. Тернарний оператор — це скорочений спосіб написання інструкції `if-else`. Його використовують, щоб оцінити умову та повернути значення на основі результату. Синтаксис тернарного оператора такий:
 
 ```javascript
 let result = condition ? value1 : value2;
 ```
 
-In the above example, if the condition is true, the value of `result` will be `value1`. Otherwise, the value of `result` will be `value2`.
+Якщо умова в прикладі вище істинна, то значенням `result` буде `value1`. В іншому випадку значенням `result` буде `value2`.
 
-Ternary operators are often used to assign a value to a variable based on a condition. They are also used to return a value based on a condition.
+Тернарні оператори часто використовують, щоб призначити значення до змінної на основі умови. Їх також використовують, щоб повернути значення на основі умови.
 
 # --question--
 
 ## --text--
 
-What is the value of the `result` variable if the value of the `condition` variable is `true`?
+Яке значення змінної `result`, якщо значенням змінної `condition` є `true`?
 
 ```javascript
 let condition = true;
