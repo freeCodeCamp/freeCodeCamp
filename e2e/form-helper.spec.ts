@@ -10,7 +10,7 @@ test.describe('Test form with only solution link', () => {
     );
   });
 
-  test('The form is visible and has only solution link input', async ({
+  test('The form is visible and only has solution link input', async ({
     page
   }) => {
     // The solution form should be present and visible
