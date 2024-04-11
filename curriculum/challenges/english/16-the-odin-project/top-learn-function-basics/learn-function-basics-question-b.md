@@ -24,7 +24,7 @@ Here is a diagram to help you visualize how parameters are passed to a function,
 
 <img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/c53dd9a12f0c9afde0d9229f82a176170f12e120/foundations/javascript_basics/function_basics/imgs/00.png" alt="A description of a function with arrows explaining that the values between the parentheses of the function itself are called parameters, and the values which are issued when the function is used are called arguments" style="width:95%;height:auto;">
 
-Make note of the fact that by calling `favoriteAnimal()` inside of `console.log()` with the argument `'Goat'` we get the return value of the function, string of `"Goat is my favorite animal!"`, printed to the console. We’re passing in a function call `favoriteAnimal('Goat')` as an argument in a different function call - log().
+Make note of the fact that by calling `favoriteAnimal()` inside of `console.log()` with the argument `'Goat'` we get the return value of the function, string of `"Goat is my favorite animal!"`, printed to the console. We’re passing in a function call `favoriteAnimal('Goat')` as an argument in a different function call - `log()`.
 
 # --question--
 
@@ -50,4 +50,4 @@ The function will return an error because `"Elephant"` is not a recognized argum
 
 ## --video-solution--
 
-1
+3
