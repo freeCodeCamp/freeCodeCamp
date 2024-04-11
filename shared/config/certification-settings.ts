@@ -261,11 +261,11 @@ export const linkedInCredentialIds = {
   [Certification.LegacyFrontEnd]: 'lfe',
   [Certification.LegacyBackEnd]: 'lbe',
   [Certification.LegacyDataVis]: 'ldv',
-  [Certification.LegacyInfoSecQa]: 'lisqa',
+  [Certification.LegacyInfoSecQa]: 'lisaqa',
   [Certification.LegacyFullStack]: 'lfs',
   [Certification.RespWebDesign]: 'rwd',
   [Certification.FrontEndDevLibs]: 'fedl',
-  [Certification.JsAlgoDataStruct]: 'jads',
+  [Certification.JsAlgoDataStruct]: 'ljaads',
   [Certification.DataVis]: 'dv',
   [Certification.BackEndDevApis]: 'bedaa',
   [Certification.QualityAssurance]: 'qa',
@@ -277,7 +277,7 @@ export const linkedInCredentialIds = {
   [Certification.CollegeAlgebraPy]: 'cawp',
   [Certification.FoundationalCSharp]: 'fcswm',
   [Certification.UpcomingPython]: 'up',
-  [Certification.JsAlgoDataStructNew]: 'jsads',
+  [Certification.JsAlgoDataStructNew]: 'jaads',
   [Certification.A2English]: 'a2efd'
 };
 
