@@ -432,58 +432,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           });
         }
 
-        if (user[certType]) {
-          const { completedChallenges } = user;
-          const certChallenge = find(
-            completedChallenges,
-            ({ id }) => certId === id
-          );
-
-          let { completedDate = Date.now() } = certChallenge || {};
-
-          // the challenge id has been rotated for isDataVisCert
-          if (certType === 'isDataVisCert' && !certChallenge) {
-            const oldDataVisIdChall = find(
-              completedChallenges,
-              ({ id }) => oldDataVizId === id
-            );
-
-            if (oldDataVisIdChall) {
-              completedDate = oldDataVisIdChall.completedDate || completedDate;
-            }
-          }
-
-          // if fullcert is not found, return the latest completedDate
-          if (certType === 'isFullStackCert' && !certChallenge) {
-            completedDate = getFallbackFullStackDate(
-              completedChallenges,
-              completedDate
-            );
-          }
-
-          const { username, name } = user;
-
-          if (!user.profileUI.showName) {
-            void reply.code(200);
-            return reply.send({
-              certSlug,
-              certTitle,
-              username,
-              date: completedDate,
-              completionTime
-            });
-          }
-
-          void reply.code(200);
-          return reply.send({
-            certSlug,
-            certTitle,
-            username,
-            name,
-            date: completedDate,
-            completionTime
-          });
-        } else {
+        if (!user[certType]) {
           return reply.send({
             messages: [
               {
@@ -494,6 +443,57 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
             ]
           });
         }
+
+        const { completedChallenges } = user;
+        const certChallenge = find(
+          completedChallenges,
+          ({ id }) => certId === id
+        );
+
+        let { completedDate = Date.now() } = certChallenge || {};
+
+        // the challenge id has been rotated for isDataVisCert
+        if (certType === 'isDataVisCert' && !certChallenge) {
+          const oldDataVisIdChall = find(
+            completedChallenges,
+            ({ id }) => oldDataVizId === id
+          );
+
+          if (oldDataVisIdChall) {
+            completedDate = oldDataVisIdChall.completedDate || completedDate;
+          }
+        }
+
+        // if fullcert is not found, return the latest completedDate
+        if (certType === 'isFullStackCert' && !certChallenge) {
+          completedDate = getFallbackFullStackDate(
+            completedChallenges,
+            completedDate
+          );
+        }
+
+        const { name } = user;
+
+        if (!user.profileUI.showName) {
+          void reply.code(200);
+          return reply.send({
+            certSlug,
+            certTitle,
+            username,
+            date: completedDate,
+            completionTime
+          });
+        }
+
+        void reply.code(200);
+        return reply.send({
+          certSlug,
+          certTitle,
+          username,
+          name,
+          date: completedDate,
+          completionTime
+        });
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
