@@ -55,7 +55,8 @@ describe('Challenge utils helper scripts', () => {
       );
       process.env.CALLING_DIR = projectPath;
       const step = createStepFile({
-        stepNum: 3
+        stepNum: 3,
+        challengeType: 0
       });
 
       // eslint-disable-next-line @typescript-eslint/no-base-to-string

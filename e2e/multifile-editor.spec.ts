@@ -8,7 +8,8 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('MultifileEditor Component', () => {
   test('Multiple editors should be selected and able to insert text into', async ({
-    page
+    page,
+    isMobile
   }) => {
     // Spawn second editor to test MultifileEditor component
     const stylesEditor = page.getByRole('button', {
@@ -16,15 +17,23 @@ test.describe('MultifileEditor Component', () => {
     });
     await stylesEditor.click();
 
-    // Ensure two editors exist
-    const editors = await page.getByLabel('Editor content').all();
-    expect(editors.length).toBe(2);
+    // Use the `.toHaveCount()` assertion to ensure that the second editor is on the screen
+    // before moving onto other assertions.
+    // Note that using the `.all()` locator here would result a flaky test.
+    // Ref: https://github.com/freeCodeCamp/freeCodeCamp/pull/53031/files#r1500316812
+    const editors = page.getByLabel('Editor content');
+    await expect(editors).toHaveCount(2);
 
-    // Test text insertion works in both editors
     const test_string = 'TestString';
     let index = 0;
-    for (const editor of editors) {
-      await editor.click();
+    for (const editor of await editors.all()) {
+      // For some reason the click event doesn't work on mobile
+      if (isMobile) {
+        await editor.focus();
+      } else {
+        await editor.click();
+      }
+
       await page.keyboard.insertText(test_string + index.toString());
       const text = page.getByText(test_string + index.toString());
       await expect(text).toBeVisible();

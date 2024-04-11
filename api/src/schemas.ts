@@ -1,4 +1,8 @@
 import { Type } from '@fastify/type-provider-typebox';
+import { Certification } from '../../shared/config/certification-settings';
+// import type { certTypes } from '../../shared/config/certification-settings';
+
+// type CertTypes = keyof typeof certTypes;
 
 const generic500 = Type.Object({
   message: Type.Literal(
@@ -53,6 +57,10 @@ const examResults = Type.Object({
   passed: Type.Boolean(),
   examTimeInSeconds: Type.Number()
 });
+
+const surveyTitles = Type.Union([
+  Type.Literal('Foundational C# with Microsoft Survey')
+]);
 
 export const schemas = {
   // Settings:
@@ -293,6 +301,21 @@ export const schemas = {
       })
     }
   },
+  updateMyClassroomMode: {
+    body: Type.Object({
+      isClassroomAccount: Type.Boolean()
+    }),
+    response: {
+      200: Type.Object({
+        message: Type.Literal('flash.classroom-mode-updated'),
+        type: Type.Literal('success')
+      }),
+      403: Type.Object({
+        message: Type.Literal('flash.wrong-updating'),
+        type: Type.Literal('danger')
+      })
+    }
+  },
   // User:
   deleteMyAccount: {
     response: {
@@ -421,7 +444,19 @@ export const schemas = {
               )
             ),
             username: Type.String(),
-            userToken: Type.Optional(Type.String())
+            userToken: Type.Optional(Type.String()),
+            completedSurveys: Type.Array(
+              Type.Object({
+                title: Type.String(),
+                responses: Type.Array(
+                  Type.Object({
+                    question: Type.String(),
+                    response: Type.String()
+                  })
+                )
+              })
+            ),
+            msUsername: Type.Optional(Type.String())
           })
         ),
         result: Type.String()
@@ -496,8 +531,8 @@ export const schemas = {
     body: Type.Object({
       id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
       challengeType: Type.Optional(Type.Number()),
-      solution: Type.String({ format: 'url', maxLength: 1024 }),
-      // TODO(Post-MVP): require format: 'url' for githubLink
+      // The solution must be a valid URL only if it is a `backEndProject`.
+      solution: Type.String({ maxLength: 1024 }),
       githubLink: Type.Optional(Type.String())
     }),
     response: {
@@ -521,9 +556,14 @@ export const schemas = {
       }),
       403: Type.Object({
         type: Type.Literal('error'),
-        message: Type.Literal(
-          'You have to complete the project before you can submit a URL.'
-        )
+        message: Type.Union([
+          Type.Literal(
+            'You have to complete the project before you can submit a URL.'
+          ),
+          Type.Literal(
+            'That does not appear to be a valid challenge submission.'
+          )
+        ])
       }),
       500: Type.Object({
         message: Type.Literal(
@@ -749,6 +789,133 @@ export const schemas = {
       })
     }
   },
+  // certification
+  certSlug: {
+    params: Type.Object({
+      certSlug: Type.String(),
+      username: Type.String()
+    }),
+    response: {
+      // TODO(POST_MVP): Most of these should not be 200s
+      200: Type.Union([
+        Type.Object({
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.username-not-found'),
+              variables: Type.Object({
+                username: Type.String()
+              })
+            })
+          )
+        }),
+        Type.Object({
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.not-eligible')
+            })
+          )
+        }),
+        Type.Object({
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.not-honest'),
+              variables: Type.Object({
+                username: Type.String()
+              })
+            })
+          )
+        }),
+        Type.Object({
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.profile-private'),
+              variables: Type.Object({
+                username: Type.String()
+              })
+            })
+          )
+        }),
+        Type.Object({
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.add-name')
+            })
+          )
+        }),
+        Type.Object({
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.certs-private'),
+              variables: Type.Object({
+                username: Type.String()
+              })
+            })
+          )
+        }),
+        Type.Object({
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.timeline-private'),
+              variables: Type.Object({
+                username: Type.String()
+              })
+            })
+          )
+        }),
+        Type.Object({
+          certSlug: Type.Enum(Certification),
+          certTitle: Type.String(),
+          username: Type.String(),
+          date: Type.Number(),
+          completionTime: Type.Number()
+        }),
+        Type.Object({
+          certSlug: Type.Enum(Certification),
+          certTitle: Type.String(),
+          username: Type.String(),
+          name: Type.String(),
+          date: Type.Number(),
+          completionTime: Type.Number()
+        }),
+        Type.Object({
+          messages: Type.Array(
+            Type.Object({
+              type: Type.Literal('info'),
+              message: Type.Literal('flash.user-not-certified'),
+              variables: Type.Object({
+                username: Type.String(),
+                cert: Type.String()
+              })
+            })
+          )
+        })
+      ]),
+      400: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.String()
+      }),
+      404: Type.Object({
+        message: Type.Literal('flash.cert-not-found'),
+        type: Type.Literal('info'),
+        variables: Type.Object({
+          certSlug: Type.String()
+        })
+      }),
+      500: Type.Object({
+        type: Type.Literal('danger'),
+        message: Type.Literal(
+          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+        )
+      })
+    }
+  },
   postMsUsername: {
     body: Type.Object({
       msTranscriptUrl: Type.String({ maxLength: 1000 })
@@ -779,6 +946,39 @@ export const schemas = {
           message: Type.Literal('flash.ms.transcript.link-err-3')
         })
       ])
+    }
+  },
+  submitSurvey: {
+    body: Type.Object({
+      surveyResults: Type.Object({
+        title: surveyTitles,
+        responses: Type.Array(
+          Type.Object({
+            question: Type.String(),
+            response: Type.String()
+          })
+        )
+      })
+    }),
+    response: {
+      200: Type.Object({
+        type: Type.Literal('success'),
+        message: Type.Literal('flash.survey.success')
+      }),
+      400: Type.Union([
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.survey.err-1')
+        }),
+        Type.Object({
+          type: Type.Literal('error'),
+          message: Type.Literal('flash.survey.err-2')
+        })
+      ]),
+      500: Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal('flash.survey.err-3')
+      })
     }
   },
   // /certificate/

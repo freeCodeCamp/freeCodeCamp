@@ -15,7 +15,7 @@ import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
 import RedirectHome from '../components/redirect-home';
 import { Themes } from '../components/settings/theme';
-import { showCert, executeGA, fetchProfileForUser } from '../redux/actions';
+import { showCert, fetchProfileForUser } from '../redux/actions';
 import {
   showCertSelector,
   showCertFetchStateSelector,
@@ -39,6 +39,7 @@ import {
   certTypeTitleMap
 } from '../../../shared/config/certification-settings';
 import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
+import callGA from '../analytics/call-ga';
 import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;
@@ -57,7 +58,6 @@ interface ShowCertificationProps {
   certDashedName: string;
   certSlug: string;
   createFlashMessage: typeof createFlashMessage;
-  executeGA: (payload: Record<string, unknown>) => void;
   fetchProfileForUser: (username: string) => void;
   fetchState: {
     pending: boolean;
@@ -118,7 +118,7 @@ const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
-    { createFlashMessage, showCert, fetchProfileForUser, executeGA },
+    { createFlashMessage, showCert, fetchProfileForUser },
     dispatch
   );
 
@@ -143,8 +143,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       isDonating,
       cert: { username = '' },
       fetchProfileForUser,
-      user,
-      executeGA
+      user
     } = props;
 
     if (!signedInUserName || signedInUserName !== username) {
@@ -161,7 +160,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       !isDonating
     ) {
       setIsDonationDisplayed(true);
-      executeGA({
+      callGA({
         event: 'donation_view',
         action: 'Displayed Certificate Donation'
       });
@@ -172,8 +171,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     props.userFetchState,
     props.signedInUserName,
     props.isDonating,
-    props.cert,
-    props.executeGA
+    props.cert
   ]);
 
   const hideDonationSection = () => {

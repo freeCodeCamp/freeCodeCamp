@@ -8,8 +8,6 @@ export const tryToShowDonationModal = createAction(
   actionTypes.tryToShowDonationModal
 );
 
-export const executeGA = createAction(actionTypes.executeGA);
-
 export const allowBlockDonationRequests = createAction(
   actionTypes.allowBlockDonationRequests
 );

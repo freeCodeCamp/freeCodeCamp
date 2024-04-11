@@ -177,6 +177,7 @@ const publicUserData = {
     }
   ],
   completedExams: testUserData.completedExams,
+  completedSurveys: [],
   githubProfile: testUserData.githubProfile,
   isApisMicroservicesCert: testUserData.isApisMicroservicesCert,
   isBackEndCert: testUserData.isBackEndCert,
@@ -272,6 +273,21 @@ const tokenData = [
   { created: new Date(), id: '456', ttl: 1000, userId: defaultUserId },
   { created: new Date(), id: '789', ttl: 1000, userId: otherUserId }
 ];
+
+const mockSurveyResults = {
+  title: 'Foundational C# with Microsoft Survey',
+  responses: [
+    {
+      question: 'Please describe your role:',
+      response: 'Beginner developer (less than 2 years experience)'
+    },
+    {
+      question:
+        'Prior to this course, how experienced were you with .NET and C#?',
+      response: 'Novice (no prior experience)'
+    }
+  ]
+};
 
 describe('userRoutes', () => {
   setupServer();
@@ -483,7 +499,7 @@ describe('userRoutes', () => {
       });
     });
 
-    describe('user/get-user-session', () => {
+    describe('/user/get-user-session', () => {
       beforeEach(async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: testUserData.email },
@@ -507,6 +523,14 @@ describe('userRoutes', () => {
 
         expect(response.body).toStrictEqual({ user: {}, result: '' });
         expect(response.statusCode).toBe(500);
+      });
+
+      // This should help debugging, since this the route returns this if
+      // anything throws in the handler.
+      test('GET does not return the error response if the request is valid', async () => {
+        const response = await superGet('/user/get-session-user');
+
+        expect(response.body).not.toEqual({ user: {}, result: '' });
       });
 
       test('GET returns username as the result property', async () => {
@@ -566,6 +590,21 @@ describe('userRoutes', () => {
         expect(tokenData.id).toBe(userToken);
       });
 
+      test('GET returns the msUsername if it exists', async () => {
+        await fastifyTestInstance.prisma.msUsername.create({
+          data: msUsernameData[0] as (typeof msUsernameData)[0]
+        });
+
+        const msUsernames = await fastifyTestInstance.prisma.msUsername.count();
+        expect(msUsernames).toBe(1);
+
+        const response = await superGet('/user/get-session-user');
+
+        const { msUsername } = response.body.user.foobar;
+
+        expect(msUsername).toBe(msUsernameData[0]?.msUsername);
+      });
+
       test('GET returns a minimal user when all optional properties are missing', async () => {
         // To get a minimal test user we first delete the existing one...
         await fastifyTestInstance.prisma.user.deleteMany({
@@ -581,7 +620,7 @@ describe('userRoutes', () => {
         });
 
         // devLogin must not be used here since it overrides the user
-        const res = await superRequest('/auth/dev-callback', { method: 'GET' });
+        const res = await superRequest('/signin', { method: 'GET' });
         const setCookies = res.get('Set-Cookie');
 
         const publicUser = {
@@ -593,6 +632,7 @@ describe('userRoutes', () => {
           // missing in the user document.
           completedChallenges: [],
           completedExams: [],
+          completedSurveys: [],
           partiallyCompletedChallenges: [],
           portfolio: [],
           savedChallenges: [],
@@ -960,6 +1000,56 @@ Thanks and regards,
         });
       });
     });
+
+    describe('/user/submit-survey', () => {
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.survey.deleteMany({
+          where: { userId: defaultUserId }
+        });
+      });
+
+      test('POST returns 400 for invalid survey title', async () => {
+        const response = await superPost('/user/submit-survey').send({
+          surveyResults: { ...mockSurveyResults, title: 'Invalid Survey' }
+        });
+
+        expect(response.statusCode).toBe(400);
+        expect(response.body).toStrictEqual({
+          type: 'error',
+          message: 'flash.survey.err-1'
+        });
+      });
+
+      test('POST returns 400 if user already submitted survey', async () => {
+        // Submit survey for first time
+        await superPost('/user/submit-survey').send({
+          surveyResults: mockSurveyResults
+        });
+
+        // Submit same survey again to get failed response
+        const response = await superPost('/user/submit-survey').send({
+          surveyResults: mockSurveyResults
+        });
+
+        expect(response.statusCode).toBe(400);
+        expect(response.body).toStrictEqual({
+          type: 'error',
+          message: 'flash.survey.err-2'
+        });
+      });
+
+      test('POST returns 200 status code with "success" message', async () => {
+        const response = await superPost('/user/submit-survey').send({
+          surveyResults: mockSurveyResults
+        });
+
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toStrictEqual({
+          type: 'success',
+          message: 'flash.survey.success'
+        });
+      });
+    });
   });
 
   describe('Unauthenticated user', () => {
@@ -978,7 +1068,8 @@ Thanks and regards,
       { path: '/user/user-token', method: 'POST' },
       { path: '/user/ms-username', method: 'DELETE' },
       { path: '/user/report-user', method: 'POST' },
-      { path: '/user/ms-username', method: 'POST' }
+      { path: '/user/ms-username', method: 'POST' },
+      { path: '/user/submit-survey', method: 'POST' }
     ];
 
     endpoints.forEach(({ path, method }) => {

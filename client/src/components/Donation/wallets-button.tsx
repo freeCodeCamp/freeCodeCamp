@@ -72,6 +72,11 @@ const WalletsButton = ({
         checkPaymentPossibility(false);
       }
     });
+
+    return () => {
+      setPaymentRequest(null);
+      checkPaymentPossibility(false);
+    };
   }, [label, amount, stripe, postPayment, handlePaymentButtonLoad]);
 
   const displayRefreshError = (): void => {

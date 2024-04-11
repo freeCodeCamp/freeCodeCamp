@@ -143,20 +143,19 @@ input = __inputGen(${JSON.stringify(input ?? [])})
     runPython(`from ast_helpers import Node as _Node`);
 
     // The tests need the user's code as a string, so we write it to the virtual
-    // filesystem.
+    // filesystem...
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
     pyodide.FS.writeFile('/user_code.py', code, { encoding: 'utf8' });
 
+    // ...and then read it back into a variable so that they can evaluate it.
     runPython(`
 with open("/user_code.py", "r") as f:
-  from ast import parse as _parse
   _code = f.read()
-  _tree = _parse(_code)
 `);
 
-    // Evaluates the learner's code so that any variables they define are
-    // available to the test.
     try {
+      // Evaluates the learner's code so that any variables they define are
+      // available to the test.
       runPython(code);
     } catch (e) {
       const err = e as PythonError;

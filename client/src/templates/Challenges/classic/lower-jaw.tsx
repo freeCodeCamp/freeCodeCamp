@@ -20,6 +20,7 @@ import {
   challengeMetaSelector,
   completedPercentageSelector
 } from '../redux/selectors';
+import callGA from '../../../analytics/call-ga';
 
 interface LowerJawPanelProps extends ShareProps {
   resetButtonText: string;
@@ -284,10 +285,13 @@ const LowerJaw = ({
     testsLength &&
     (currentAttempts >= testsLength || currentAttempts >= 3);
 
-  const showDesktopButton = window.innerWidth > MAX_MOBILE_WIDTH;
+  const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
+  const isMacOS = navigator.userAgent.includes('Mac OS');
 
-  const checkButtonText = showDesktopButton
-    ? t('buttons.check-code')
+  const checkButtonText = isDesktop
+    ? isMacOS
+      ? t('buttons.check-code-3')
+      : t('buttons.check-code')
     : t('buttons.check-code-2');
 
   const showSignInButton = !isSignedIn && challengeIsCompleted;
@@ -298,6 +302,11 @@ const LowerJaw = ({
           data-cy='sign-in-button'
           href={`${apiLocation}/signin`}
           className='btn-cta btn btn-block'
+          onClick={() => {
+            callGA({
+              event: 'sign_in'
+            });
+          }}
         >
           {t('learn.sign-in-save')}
         </a>

@@ -1,5 +1,4 @@
-# bookworm was only released on 10-6-2023, so is a little too new.
-FROM node:18-bullseye AS builder
+FROM node:20-bookworm AS builder
 # global installs need root permissions, so have to happen before we switch to
 # the node user
 RUN npm i -g pnpm@8
@@ -42,7 +41,7 @@ RUN pnpm install -F=shared -F=client -F=ui -F=browser-scripts -F=challenge-parse
   --frozen-lockfile
 RUN pnpm build:client
 
-FROM node:18-alpine
+FROM node:20-alpine
 RUN npm i -g serve@13 pm2@4
 USER node
 WORKDIR /home/node/client

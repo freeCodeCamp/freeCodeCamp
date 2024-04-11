@@ -4,16 +4,6 @@ describe('Username input field', () => {
     cy.goToSettings();
   });
 
-  it('Should be possible to type', () => {
-    cy.typeUsername('twaha').should('have.attr', 'value', 'twaha');
-  });
-
-  it('Should show message when validating name', () => {
-    cy.typeUsername('twaha');
-
-    cy.contains('Validating username...').should('have.attr', 'role', 'alert');
-  });
-
   it('Should show username is available if it is', () => {
     cy.typeUsername('brad');
 
@@ -78,14 +68,6 @@ describe('Username input field', () => {
     cy.get('@usernameForm')
       .contains('Save')
       .should('have.attr', 'aria-disabled', 'true');
-  });
-
-  it('Should show warning if username includes invalid character', () => {
-    cy.typeUsername('Quincy Larson');
-
-    cy.contains('Username "Quincy Larson" contains invalid characters')
-      .should('be.visible')
-      .should('have.attr', 'role', 'alert');
   });
 
   it('Should not be able to click the `Save` button if username includes invalid character', () => {

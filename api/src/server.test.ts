@@ -1,14 +1,6 @@
 import { setupServer, superRequest } from '../jest.utils';
 import { HOME_LOCATION, COOKIE_DOMAIN } from './utils/env';
 
-jest.mock('./utils/env', () => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  return {
-    ...jest.requireActual('./utils/env'),
-    COOKIE_DOMAIN: '.freecodecamp.org'
-  };
-});
-
 describe('server', () => {
   setupServer();
 

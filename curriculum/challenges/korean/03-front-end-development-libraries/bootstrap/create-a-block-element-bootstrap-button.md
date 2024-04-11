@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acef08812
-title: Create a Block Element Bootstrap Button
+title: 부트스트랩 버튼을 블록 레벨 요소로 만들기
 challengeType: 0
 forumTopicId: 16810
 dashedName: create-a-block-element-bootstrap-button
@@ -8,45 +8,45 @@ dashedName: create-a-block-element-bootstrap-button
 
 # --description--
 
-Normally, your `button` elements with the `btn` and `btn-default` classes are only as wide as the text that they contain. For example:
+일반적으로 `btn`클래스와 `btn-default` 클래스가 적용된 `button` 요소는, 버튼 안에 담겨진 텍스트 길이만큼의 너비를 차지합니다. 예를 들어:
 
 ```html
 <button class="btn btn-default">Submit</button>
 ```
 
-This button would only be as wide as the word `Submit`.
+이 버튼은 `Submit`이라는 단어만큼의 너비만을 차지합니다.
 
 <button class='btn btn-default'>Submit</button>
 
-By making them block elements with the additional class of `btn-block`, your button will stretch to fill your page's entire horizontal space and any elements following it will flow onto a "new line" below the block.
+`btn-block`이라는 클래스를 버튼 요소에 추가해줌으로써 버튼을 블록 레벨 요소로 만들 수 있습니다. 버튼은 페이지의 가로 공간을 꽉 채워 차지하게 됩니다. 버튼 뒤에 나오는 요소들은, 버튼 아래의 새로운 줄에 배치됩니다.
 
 ```html
 <button class="btn btn-default btn-block">Submit</button>
 ```
 
-This button would take up 100% of the available width.
+이 버튼은 사용 가능한 너비의 100%를 차지할 것입니다.
 
 <button class='btn btn-default btn-block'>Submit</button>
 
-Note that these buttons still need the `btn` class.
+버튼에는 여전히 `btn` 클래스가 있어야 합니다.
 
-Add Bootstrap's `btn-block` class to your Bootstrap button.
+부트스트랩 버튼에 `btn-block` 클래스를 추가해보세요.
 
 # --hints--
 
-Your button should still have the `btn` and `btn-default` classes.
+버튼에는 여전히 `btn` 클래스와 `btn-default` 클래스가 있어야 합니다.
 
 ```js
 assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
 ```
 
-Your button should have the class `btn-block`.
+버튼에는 `btn-block` 클래스가 있어야 합니다.
 
 ```js
 assert($('button').hasClass('btn-block'));
 ```
 
-All of your `button` elements should have closing tags.
+모든 `button` 요소들에는 닫는 태그가 있어야 합니다.
 
 ```js
 assert(

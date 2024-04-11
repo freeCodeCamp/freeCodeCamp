@@ -13,8 +13,24 @@
   word-spacing: -0.4ch;
 }
 
+.help-form-legend {
+  color: var(--secondary-color);
+  border: 0;
+  font-size: 18px;
+}
+
+.checkbox-container {
+  display: flex;
+  width: 100%;
+  text-align: left;
+}
+
 @media screen and (max-width: 767px) {
   .help-modal .btn-lg {
     font-size: 16px;
   }
+}
+
+.help-text-warning {
+  text-align: left;
 }

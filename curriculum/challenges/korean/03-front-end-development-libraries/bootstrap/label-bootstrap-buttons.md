@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908856
-title: Label Bootstrap Buttons
+title: 부트스트랩 버튼에 라벨 적용하기
 challengeType: 0
 forumTopicId: 18222
 dashedName: label-bootstrap-buttons
@@ -8,43 +8,43 @@ dashedName: label-bootstrap-buttons
 
 # --description--
 
-Just like we labeled our wells, we want to label our buttons.
+부트스트랩 웰에 라벨을 적용했던 것처럼, 버튼에도 라벨을 적용하려 합니다.
 
-Give each of your `button` elements text that corresponds to its id selector.
+각 `button` 요소들에 id 선택자와 동일한 텍스트를 부여해주세요.
 
 # --hints--
 
-Your `button` element with the id `target1` should have the text `#target1`.
+`target1`이라는 id를 가진 `button` 요소는 `#target1`이라는 텍스트를 가져야 합니다.
 
 ```js
 assert(new RegExp('#target1', 'gi').test($('#target1').text()));
 ```
 
-Your `button` element with the id `target2` should have the text `#target2`.
+`target2`이라는 id를 가진 `button` 요소는 `#target2`이라는 텍스트를 가져야 합니다.
 
 ```js
 assert(new RegExp('#target2', 'gi').test($('#target2').text()));
 ```
 
-Your `button` element with the id `target3` should have the text `#target3`.
+`target3`이라는 id를 가진 `button` 요소는 `#target3`이라는 텍스트를 가져야 합니다.
 
 ```js
 assert(new RegExp('#target3', 'gi').test($('#target3').text()));
 ```
 
-Your `button` element with the id `target4` should have the text `#target4`.
+`target4`이라는 id를 가진 `button` 요소는 `#target4`이라는 텍스트를 가져야 합니다.
 
 ```js
 assert(new RegExp('#target4', 'gi').test($('#target4').text()));
 ```
 
-Your `button` element with the id `target5` should have the text `#target5`.
+`target5`이라는 id를 가진 `button` 요소는 `#target5`이라는 텍스트를 가져야 합니다.
 
 ```js
 assert(new RegExp('#target5', 'gi').test($('#target5').text()));
 ```
 
-Your `button` element with the id `target6` should have the text `#target6`.
+`target6`이라는 id를 가진 `button` 요소는 `#target6`이라는 텍스트를 가져야 합니다.
 
 ```js
 assert(new RegExp('#target6', 'gi').test($('#target6').text()));

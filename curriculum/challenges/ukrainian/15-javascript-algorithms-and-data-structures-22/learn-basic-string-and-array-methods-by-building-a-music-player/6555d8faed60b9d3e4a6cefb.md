@@ -1,15 +1,15 @@
 ---
 id: 6555d8faed60b9d3e4a6cefb
-title: Крок 63
+title: Step 72
 challengeType: 0
-dashedName: step-63
+dashedName: step-72
 ---
 
 # --description--
 
-Use `const` and arrow syntax to define a function called `setPlayButtonAccessibleText`.
+To make the application more accessible, it is important that the play button describes the current song or the first song in the playlist.
 
-This function will set the `aria-label` attribute to the current song, or to the first song in the playlist. And if the playlist is empty, it sets the `aria-label` to `"Play"`.
+Start by creating an empty arrow function called `setPlayButtonAccessibleText`.
 
 # --hints--
 
@@ -34,7 +34,7 @@ assert.match(code, /const\s+setPlayButtonAccessibleText\s*=\s*\(\s*\)\s*=>\s*/)
 Your `setPlayButtonAccessibleText` function  should be empty.
 
 ```js
-assert.match(code, /const\s+setPlayButtonAccessibleText\s*=\s*\(\s*\)\s*=>\s*\{\n?\s*?\};?/)
+assert.match(code, /const\s+setPlayButtonAccessibleText\s*=\s*\(\s*\)\s*=>\s*\{\n?\s*?\}\s*;?/)
 ```
 
 # --seed--
@@ -735,17 +735,21 @@ nextButton.addEventListener("click", playNextSong);
 
 previousButton.addEventListener("click", playPreviousSong);
 
-userData?.songs.sort((a,b) => {
-  if (a.title < b.title) {
-    return -1;
-  }
+const sortSongs = () => {
+  userData?.songs.sort((a,b) => {
+    if (a.title < b.title) {
+      return -1;
+    }
 
-  if (a.title > b.title) {
-    return 1;
-  }
+    if (a.title > b.title) {
+      return 1;
+    }
 
-  return 0;
-});
+    return 0;
+  });
 
-renderSongs(userData?.songs);
+  return userData?.songs;
+};
+
+renderSongs(sortSongs());
 ```

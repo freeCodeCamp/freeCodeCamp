@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acef08813
-title: Call out Optional Actions with btn-info
+title: btn-info를 활용하여 선택적인 동작들 호출하기
 challengeType: 0
 forumTopicId: 16770
 dashedName: call-out-optional-actions-with-btn-info
@@ -8,33 +8,33 @@ dashedName: call-out-optional-actions-with-btn-info
 
 # --description--
 
-Bootstrap comes with several pre-defined colors for buttons. The `btn-info` class is used to call attention to optional actions that the user can take.
+부트스트랩에는 버튼을 위한 여러 사전에 정의된 색상들이 포함되어 있습니다. `btn-info` 클래스는 사용자가 수행할 수 있는 선택적인 동작에 주의를 환기시키기 위해 사용됩니다.
 
-Create a new block-level Bootstrap button below your `Like` button with the text `Info`, and add Bootstrap's `btn-info` class to it.
+`Like` 버튼 아래에 새로운 블록 레벨의 부트스트랩 버튼과 `Info` 텍스트를 만들고`btn-info` 클래스를 추가하세요.
 
-Note that these buttons still need the `btn` and `btn-block` classes.
+버튼들에는 여전히 `btn`와 `btn-block` 클래스들이 있어야 합니다.
 
 # --hints--
 
-You should create a new `button` element with the text `Info`.
+`button` 요소와 `Info` 텍스트를 새로 만들어야 합니다.
 
 ```js
 assert(new RegExp('info', 'gi').test($('button').text()));
 ```
 
-Both of your Bootstrap buttons should have the `btn` and `btn-block` classes.
+부트스트랩 버튼들에는 `btn`와 `btn-block` 클래스들이 있어야 합니다.
 
 ```js
 assert($('button.btn-block.btn').length > 1);
 ```
 
-Your new button should have the class `btn-info`.
+새 버튼에는 `btn-info` 클래스가 있어야 합니다.
 
 ```js
 assert($('button').hasClass('btn-info'));
 ```
 
-All of your `button` elements should have closing tags.
+모든 `button` 요소들에는 닫는 태그가 있어야 합니다.
 
 ```js
 assert(

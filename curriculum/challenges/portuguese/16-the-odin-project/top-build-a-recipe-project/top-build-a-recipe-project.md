@@ -24,7 +24,7 @@ O site consistirá em uma página index principal com links para algumas receita
 1. Você deve ver uma lista ordenada com alguns passos necessários para completar a receita.
 1. Abaixo dos passos, deve haver um elemento `h2` com o texto `More Recipes`.
 1. Você deve ver alguns links para outras receitas dentro de uma lista não ordenada com alguns itens na lista com elementos de âncora dentro deles.
-1. O elemento de âncora (a) deve ter o atributo `href` com o valor definido como `#`.
+1. These anchor elements should have an `href` attribute with the value set to `#`.
 
 # --hints--
 
@@ -34,7 +34,7 @@ Você deve ter uma tag `DOCTYPE`.
 assert(code.match(/<!DOCTYPE\s+?html\s*?>/gi));
 ```
 
-Você precisa de um elemento `html` e, dentro dele, um elemento `head` e um elemento `body`.
+You should have an `html` element with `head` and `body` element.
 
 ```js
 const html = document.querySelectorAll('html')[0];
@@ -105,7 +105,7 @@ const h2 = document.querySelectorAll('H2')[2];
 assert(h2.innerText == 'Steps');
 ```
 
-You should have a `<ol>` with the steps as the list items `<li>`.
+You should have an `<ol>` with the steps as the list items `<li>`.
 
 ```js
 const orderedList = document.querySelectorAll('OL')[0];
@@ -137,7 +137,7 @@ const containsAnchors =  [...listItems].every(function(listItem) {
 assert(unorderedList && allAreListItems && containsAnchors && listItems.length > 1);
 ```
 
-Os elementos de âncora (a) que estiverem associados a receitas devem ter o atributo `href` com o valor `#`.
+Your anchor tags linking to the recipes should have an `href` attribute with the value set to `#`.
 
 ```js
 const anchorTags = document.querySelectorAll("a");
@@ -171,7 +171,7 @@ assert(allAnchorsHaveHrefHash && anchorTags.length > 0);
   </head>
   <body>
     <h1>Creamy Chocolate Fudge</h1>
-    <img src="https://i.imgur.com/p0J5baJ.jpg" alt="A delicious chocolate fudge dessert">
+    <img src="https://cdn.freecodecamp.org/curriculum/odin-project/build-a-recipe-page/build-a-recipe-page-01.jpg" alt="A delicious chocolate fudge dessert">
     <h2>Description</h2>
     <p>This recipe is for a rich and creamy chocolate fudge that is sure to satisfy your sweet tooth. It's perfect for a special occasion or as a tasty treat for any time of the year.</p>
     <p>This recipe is easy to follow and only requires a few simple ingredients. With just a few steps, you'll be able to create a delicious dessert that everyone will love.</p>

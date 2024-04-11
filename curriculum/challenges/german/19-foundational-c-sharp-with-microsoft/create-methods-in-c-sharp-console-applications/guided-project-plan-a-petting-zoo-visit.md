@@ -1,38 +1,38 @@
 ---
 id: 647e225e8acb466c97ccbef0
-title: Guided Project - Plan a Petting Zoo Visit
+title: Geführtes Projekt - Einen Besuch im Streichelzoo planen
 challengeType: 19
 dashedName: guided-project-plan-a-petting-zoo-visit
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/</a> and complete all the tasks for the "Guided Project - Plan a Petting Zoo Visit" module. This is **required** to earn the "Create Methods in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. Gehe zu <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/</a> und löse alle Aufgaben für das Modul "Geführtes Projekt - Einen Besuch im Streichelzoo planen". This is **required** to earn the "Create Methods in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">Plan a Petting Zoo Visit</a> guided project on Microsoft Learn. Then, answer the question below.
+Schließe das geführte Projekt <a href="https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/" target="_blank" rel="noreferrer">Einen Besuch im Streichelzoo planen</a> auf Microsoft Learn ab. Beantworte dann die Frage unten.
 
 # --question--
 
 ## --text--
 
-What is the purpose of defining an optional parameter in a method?
+Was ist der Zweck eines optionalen Parameters in einer Methode?
 
 ## --answers--
 
-To cause a method to perform a different task.
+Um eine Methode zu veranlassen, eine andere Aufgabe auszuführen.
 
 ---
 
-To overload a method.
+Eine Methode zu überladen.
 
 ---
 
-To simplify the required parameters when a parameter isn't significant to the result.
+Um die erforderlichen Parameter zu vereinfachen, wenn ein Parameter für das Ergebnis nicht signifikant ist.
 
 ## --video-solution--
 

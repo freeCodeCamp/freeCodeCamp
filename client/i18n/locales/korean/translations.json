@@ -57,6 +57,7 @@
     "run-test": "Run the Tests (Ctrl + Enter)",
     "check-code": "Check Your Code (Ctrl + Enter)",
     "check-code-2": "Check Your Code",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "Reset",
     "reset-step": "Reset This Step",
     "help": "Help",
@@ -383,8 +384,14 @@
     "percent-complete": "{{percent}}% complete",
     "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
     "tried-rsa": "If you've already tried the <0>Read-Search-Ask</0> method, then you can ask for help on the freeCodeCamp forum.",
+    "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
+    "similar-questions-checkbox": "I have searched for <0>similar questions that have already been answered on the forum</0>",
+    "minimum-characters": "Add a minimum of {{characters}} characters",
+    "characters-left": "{{characters}} characters left",
+    "must-confirm-statements": "You must confirm the following statements before you can submit your post to the forum.",
+    "min-50-max-500": "50 character minimum, 500 character maximum",
     "rsa": "Read, search, ask",
-    "rsa-forum": "<strong>Before making a new post</strong> please see if your question has <0>already been answered on the forum</0>.",
+    "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Reset this lesson?",
     "reset-warn": "Are you sure you wish to reset this lesson? The editors and tests will be reset.",
     "reset-warn-2": "This cannot be undone",
@@ -448,8 +455,8 @@
     "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed",
     "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
     "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our charity's mission.",
-    "building-a-university": "We're Building a Free Computer Science University Degree Program",
-    "if-help-university": "We've already made a ton of progress. Support our charity with the long road ahead.",
+    "building-a-university": "We're Building a Free Computer Science University Degree Program 🎉",
+    "if-help-university": "We've already made a ton of progress. Donate now to help our charity with the road ahead.",
     "preview-external-window": "Preview currently showing in external window.",
     "fill-in-the-blank": "Fill in the blank",
     "blank": "blank",
@@ -721,7 +728,9 @@
     "task": "Task",
     "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} code example",
-    "opens-new-window": "Opens in new window"
+    "opens-new-window": "Opens in new window",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
@@ -969,16 +978,16 @@
       "A2 English for Developers": "A2 English for Developers",
       "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "Legacy Front End",
-      "legacy-front-end": "Front End Certification",
+      "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "Legacy Back End",
-      "legacy-back-end": "Back End Certification",
+      "legacy-back-end": "Legacy Back End Certification",
       "Legacy Data Visualization": "Legacy Data Visualization",
-      "legacy-data-visualization": "Data Visualization Certification",
+      "legacy-data-visualization": "Legacy Data Visualization Certification",
       "Legacy Information Security and Quality Assurance": "Legacy Information Security and Quality Assurance",
-      "information-security-and-quality-assurance": "Information Security and Quality Assurance Certification",
+      "information-security-and-quality-assurance": "Legacy Information Security and Quality Assurance Certification",
       "Legacy Full Stack Certification": "Legacy Full Stack Certification",
       "Legacy Full Stack": "Legacy Full Stack",
-      "full-stack": "Full Stack Certification"
+      "full-stack": "Legacy Full Stack Certification"
     }
   },
   "certification-card": {
@@ -1028,8 +1037,9 @@
     "execute-challenge": "Execute Challenge",
     "focus-editor": "Focus Editor",
     "focus-instructions-panel": "Focus Instructions Panel",
-    "navigate-previous": "Navigate Previous Exercise",
-    "navigate-next": "Navigate Next Exercise"
+    "navigate-previous": "Navigate To Previous Exercise",
+    "navigate-next": "Navigate To Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "Sign out of your account",

@@ -5,6 +5,7 @@ export const savedChallengesSelector = state =>
   userSelector(state).savedChallenges || [];
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
+export const userIdSelector = state => userSelector(state).id;
 export const partiallyCompletedChallengesSelector = state =>
   userSelector(state).partiallyCompletedChallenges || [];
 export const currentChallengeIdSelector = state =>
@@ -42,7 +43,6 @@ export const shouldRequestDonationSelector = state => {
   const progressDonationModalShown = progressDonationModalShownSelector(state);
   const isDonating = isDonatingSelector(state);
   const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
-  const showMultipleProgressModals = showMultipleProgressModalsSelector(state);
 
   // don't request donation if already donating
   if (isDonating) return false;
@@ -51,15 +51,9 @@ export const shouldRequestDonationSelector = state => {
   if (recentlyClaimedBlock) return true;
 
   /*
-  When AB testing for showing multiple progress modals is active,
-  show a donation modal every 30 challenges after the first 50
+    Different intervals need to be tested for optimization.
    */
-  if (
-    showMultipleProgressModals &&
-    progressDonationModalShown &&
-    completedChallengesLength > 50 &&
-    completionCount - lastCompletionCount >= 30
-  )
+  if (progressDonationModalShown && completionCount - lastCompletionCount >= 20)
     return true;
 
   // a donation has already been requested

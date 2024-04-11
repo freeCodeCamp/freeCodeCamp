@@ -1,17 +1,17 @@
 ---
 id: 6568bc85c5beadca3e0f6eb1
-title: Step 27
+title: Крок 27
 challengeType: 20
 dashedName: step-27
 ---
 
 # --description--
 
-After the outer loop completes for all rows, return the final `board_string`. This string contains the complete visual representation of the sudoku board in ASCII art style, including borders and separators.
+Як тільки зовнішній цикл буде завершено для всіх рядів, поверніть кінцевий `board_string`. Цей рядок містить повне візуальне представлення сітки в стилі ASCII, включно з краями та перетинами.
 
 # --hints--
 
-You should return the `board_string` variable at the end of the outer `for` loop.
+Поверніть змінну `board_string` в кінці зовнішнього циклу `for`.
 
 ```js
 const tCode = code.replace(/\r/g, '');

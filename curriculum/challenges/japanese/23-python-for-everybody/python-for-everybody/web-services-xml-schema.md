@@ -14,7 +14,7 @@ dashedName: web-services-xml-schema
 
 ## --text--
 
-What is XSD?
+XSD とは何ですか？
 
 ## --answers--
 

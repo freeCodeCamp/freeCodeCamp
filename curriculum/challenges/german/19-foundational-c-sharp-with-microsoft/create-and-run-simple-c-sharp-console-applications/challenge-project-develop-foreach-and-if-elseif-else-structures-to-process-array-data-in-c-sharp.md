@@ -1,38 +1,38 @@
 ---
 id: 647e21d08acb466c97ccbee8
-title: 'Challenge Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#'
+title: 'Challenge Projekt - Entwickle foreach- und if-elseif-else-Strukturen zur Verarbeitung von Array-Daten in C#'
 challengeType: 19
 dashedName: challenge-project-develop-foreach-and-if-elseif-else-structures-to-process-array-data-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/challenge-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-arrays-iteration-selection/</a> and complete all the tasks for the "Challenge Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#" module. This is **required** to earn the "Create and Run Simple C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. Go to <a href="https://learn.microsoft.com/training/modules/challenge-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-arrays-iteration-selection/</a> and complete all the tasks for the "Challenge Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#" module. Dies ist **erforderlich**, um die "Create und Run Simple C# Console Applicaions"-Trophäe auf Microsoft Learn zu erwerben und sich für die Zertifizierungsprüfung zu qualifizieren.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">Develop `foreach` and `if`-`elseif`-`else` Structures to Process Array Data in C#</a> challenge project on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">Develop `foreach` and `if`-`elseif`-`else` Structures to Process Array Data in C#</a> challenge project on Microsoft Learn. Beantworte dann die Frage unten.
 
 # --question--
 
 ## --text--
 
-A developer is working with two other developers to update a collection of applications. The developers will use code comments during the update process. Which of the following describes an appropriate use of code comments?
+Ein Entwickler arbeitet mit zwei anderen Entwicklern an der Aktualisierung einer Sammlung von Anwendungen. Die Entwickler werden während des Aktualisierungsprozesses Codekommentare verwenden. Welche der folgenden beschreibt eine angemessene Verwendung von Code-Kommentare?
 
 ## --answers--
 
-When updates are made, the developers use line and block comments to identify each individual code update.
+Wenn Aktualisierungen vorgenommen werden, verwenden Entwickler Zeilen- und Blockkommentare, um jede einzelne Codeaktualisierung zu kennzeichnen.
 
 ---
 
-When updates are made, the developers leave all existing code comments intact. New comments are added to indicate when old comments no longer apply.
+Bei Aktualisierungen lassen die Entwickler alle vorhandenen Codekommentare unberührt. Neue Kommentare werden hinzugefügt, um anzuzeigen, wann alte Kommentare nicht mehr zutreffen.
 
 ---
 
-When updates are made, the developers summarize changes using block comments.
+Wenn Aktualisierungen vorgenommen werden, fassen die Entwickler die Änderungen in Blockkommentaren zusammen.
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 6489cf6782cf2e4f86f03ae7
-title: The Cascade of CSS Question F
+title: Die CSS-Kaskade Frage F
 challengeType: 15
 dashedName: the-cascade-of-css-question-f
 ---
@@ -19,7 +19,7 @@ dashedName: the-cascade-of-css-question-f
 }
 ```
 
-Here both rule 1 and rule 2 have the same specificity. Rule 1 uses a chaining selector (no space) and rule 2 uses a descendant combinator (the empty space). But both rules have two classes and the combinator symbol itself does not add to the specificity.
+Hier haben die Regeln 1 und 2 die gleiche Spezifizität. Regel 1 verwendet einen Kettenselektor (kein Leerzeichen) und Regel 2 verwendet einen Nachkommen-Kombinator (das Leerzeichen). Aber beide Regeln haben zwei Klassen, und das Symbol des Kombinators selbst trägt nicht zur Spezifität bei.
 
 ```css
 /* rule 1 */
@@ -32,7 +32,7 @@ Here both rule 1 and rule 2 have the same specificity. Rule 1 uses a chaining se
 }
 ```
 
-This example shows the same thing. Even though rule 2 is using a child combinator (`>`), this does not change the specificity value. Both rules still have two classes so they have the same specificity values.
+Dieses Beispiel zeigt das Gleiche. Even though rule 2 is using a child combinator (`>`), this does not change the specificity value. Beide Regeln haben nach wie vor zwei Klassen, so dass sie die gleichen Spezifitätswerte haben.
 
 *Note:* Not everything adds to specificity When comparing selectors, you may come across special symbols for the universal selector (`*`) as well as combinators (`+`, `~`, `>`, and an empty space). These symbols do not add any specificity in and of themselves.
 
@@ -40,7 +40,7 @@ This example shows the same thing. Even though rule 2 is using a child combinato
 
 ## --text--
 
-Based on the given CSS code, which font size would be applied to elements with the class "class second-class"?
+Auf der Grundlage des angegebenen CSS-Codes, welche Schriftgröße würde auf Elemente mit der Klasse "Klasse zweiter Klasse" angewendet werden?
 
 ## --answers--
 

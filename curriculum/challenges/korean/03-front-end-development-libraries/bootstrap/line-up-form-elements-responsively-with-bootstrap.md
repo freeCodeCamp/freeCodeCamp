@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908845
-title: Line up Form Elements Responsively with Bootstrap
+title: 부트스트랩을 사용해 폼 요소를 반응형으로 정렬하기
 challengeType: 0
 forumTopicId: 18225
 required:
@@ -13,15 +13,15 @@ dashedName: line-up-form-elements-responsively-with-bootstrap
 
 # --description--
 
-Now let's get your form `input` and your submission `button` on the same line. We'll do this the same way we have previously: by using a `div` element with the class `row`, and other `div` elements within it using the `col-xs-*` class.
+이제 `input`폼과 제출 `button`을 같은 줄에 배치하려고 합니다. 이전과 동일한 방식을 사용하면 됩니다. 즉, `row` 클래스를 가진 `div` 요소와, 그 안에 들어있는 `col-xs-*` 클래스를 가진 `div` 요소들을 사용할 것입니다.
 
-Nest both your form's text `input` and submit `button` within a `div` with the class `row`. Nest your form's text `input` within a div with the class of `col-xs-7`. Nest your form's submit `button` in a `div` with the class `col-xs-5`.
+`row`라는 클래스를 가진 `div` 요소 하위에, 폼 요소의 텍스트 `input`과 제출 `button`을 배치해주세요. 그 텍스트 `input`을 `col-xs-7`라는 클래스를 가진 `div` 요소로 감싸주세요. 제출 `button`은 `col-xs-5`라는 클래스를 가진 `div` 요소로 감싸주세요.
 
-This is the last challenge we'll do for our Cat Photo App for now. We hope you've enjoyed learning Font Awesome, Bootstrap, and responsive design!
+이것이 우리의 Cat Photo App에 대한 마지막 도전 과제입니다. Font Awesome, 부트스트랩, 반응형 디자인에 대한 학습이 즐거우셨길 바랍니다!
 
 # --hints--
 
-Your form submission button and text input should be nested in a div with class `row`.
+폼 제출 버튼과 텍스트 입력란 요소는 `row` 클래스를 가진 div 하위에 있어야 합니다.
 
 ```js
 assert(
@@ -30,19 +30,19 @@ assert(
 );
 ```
 
-Your form text input should be nested in a div with the class `col-xs-7`.
+텍스트 입력란 요소는 `col-xs-7` 클래스가 있는 div 내에 들어있어야 합니다.
 
 ```js
 assert($('div.col-xs-7:has(input[type="text"])').length > 0);
 ```
 
-Your form submission button should be nested in a div with the class `col-xs-5`.
+폼 제출 버튼은 `col-xs-5` 클래스가 있는 div 내에 들어있어야 합니다.
 
 ```js
 assert($('div.col-xs-5:has(button[type="submit"])').length > 0);
 ```
 
-All of your `div` elements should have closing tags.
+모든 `div` 요소는 닫는 태그를 가져야 합니다.
 
 ```js
 assert(

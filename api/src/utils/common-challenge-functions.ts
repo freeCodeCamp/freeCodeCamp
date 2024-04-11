@@ -16,6 +16,10 @@ export const multifileCertProjectIds = getChallenges()
   .filter(c => c.challengeType === challengeTypes.multifileCertProject)
   .map(c => c.id);
 
+export const multifilePythonCertProjectIds = getChallenges()
+  .filter(c => c.challengeType === challengeTypes.multifilePythonCertProject)
+  .map(c => c.id);
+
 export const msTrophyChallenges = getChallenges()
   .filter(challenge => challenge.challengeType === challengeTypes.msTrophy)
   .map(({ id, msTrophyId }) => ({ id, msTrophyId }));
@@ -55,6 +59,7 @@ type CompletedChallengeFile = {
   path?: string | null;
 };
 
+// TODO: Should probably prefer `import{CompletedChallenge}from'@prisma/client'` instead of defining it here
 export type CompletedChallenge = {
   id: string;
   solution?: string | null;
@@ -124,7 +129,8 @@ export async function updateUserChallengeData(
 
   if (
     jsCertProjectIds.includes(challengeId) ||
-    multifileCertProjectIds.includes(challengeId)
+    multifileCertProjectIds.includes(challengeId) ||
+    multifilePythonCertProjectIds.includes(challengeId)
   ) {
     completedChallenge = {
       ..._completedChallenge,
@@ -186,7 +192,10 @@ export async function updateUserChallengeData(
     userCompletedChallenges.push(finalChallenge);
   }
 
-  if (multifileCertProjectIds.includes(challengeId)) {
+  if (
+    multifileCertProjectIds.includes(challengeId) ||
+    multifilePythonCertProjectIds.includes(challengeId)
+  ) {
     const challengeToSave: SavedChallenge = {
       id: challengeId,
       lastSavedDate: newProgressTimeStamp,

@@ -1,6 +1,6 @@
 ---
 id: 6363d2429078df117ce4c400
-title: "Quadratics"
+title: "Quadratische Gleichungen"
 challengeType: 15
 videoId: pPLBL3L0OGg
 dashedName: quadratics
@@ -8,15 +8,15 @@ dashedName: quadratics
 
 # --description--
 
-This video show you how to solve quadratic equations, and explain the coefficients ("A," "B," and "C") in the standard form and how to use them to find the roots and vertex.
+In diesem Video wird gezeigt, wie man quadratische Gleichungen löst und und es werden die Koeffizienten ("A", "B" und "C") in der Standardform erklärt und wie man sie verwendet, um die Wurzeln und den Scheitelpunkt zu finden.
 
-Here is the <a href="https://colab.research.google.com/drive/1jr_k4awSSW1CBs9ma9oS_WnDblDjX3pc?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+Hier ist das <a href="https://colab.research.google.com/drive/1jr_k4awSSW1CBs9ma9oS_WnDblDjX3pc?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab-Notizbuch zu diesem Video.</a>
 
 # --question--
 
 ## --text--
 
-In Python code, what is the formula for the x value of the vertex?
+Wie lautet die Formel für den x-Wert des Scheitelpunkts im Python-Code?
 
 ## --answers--
 

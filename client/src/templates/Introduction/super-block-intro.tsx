@@ -16,7 +16,8 @@ import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';
-import { tryToShowDonationModal, executeGA } from '../../redux/actions';
+import callGA from '../../analytics/call-ga';
+import { tryToShowDonationModal } from '../../redux/actions';
 import {
   isSignedInSelector,
   userSelector,
@@ -25,7 +26,6 @@ import {
   signInLoadingSelector
 } from '../../redux/selectors';
 import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
-import { defaultDonation } from '../../../../shared/config/donation-settings';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
@@ -58,7 +58,6 @@ type SuperBlockProp = {
   toggleBlock: (arg0: string) => void;
   tryToShowDonationModal: () => void;
   user: User;
-  executeGA: (payload: Record<string, unknown>) => void;
 };
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
@@ -89,7 +88,6 @@ const mapStateToProps = (state: Record<string, unknown>) => {
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
-      executeGA,
       tryToShowDonationModal,
       resetExpansion,
       toggleBlock: b => toggleBlock(b)
@@ -195,11 +193,9 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   ];
 
   const onCertificationDonationAlertClick = () => {
-    props.executeGA({
+    callGA({
       event: 'donation_related',
-      action: `Certification Donation Alert Click`,
-      duration: defaultDonation.donationDuration,
-      amount: defaultDonation.donationAmount
+      action: `Certification Donation Alert Click`
     });
   };
 

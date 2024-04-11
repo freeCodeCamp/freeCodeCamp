@@ -73,10 +73,46 @@ export function insertEditableRegions(challengeFiles = []) {
   return challengeFiles;
 }
 
+function editableRegionsToMarkdown(challengeFiles = []) {
+  const moreThanOneFile = challengeFiles?.length > 1;
+  return challengeFiles.reduce((fileString, challengeFile) => {
+    if (!challengeFile) {
+      return fileString;
+    }
+
+    const fileExtension = challengeFile.ext;
+    const fileName = challengeFile.name;
+    const fileType = fileExtension === 'js' ? 'javascript' : fileExtension;
+    let fileDescription;
+
+    if (!moreThanOneFile) {
+      fileDescription = '';
+    } else if (fileExtension === 'html') {
+      fileDescription = `<!-- file: ${fileName}.${fileExtension} -->\n`;
+    } else {
+      fileDescription = `/* file: ${fileName}.${fileExtension} */\n`;
+    }
+
+    const [start, end] = challengeFile.editableRegionBoundaries;
+    const lines = challengeFile.contents.split('\n');
+    const editableRegion = lines.slice(start + 1, end + 4).join('\n');
+
+    return `${fileString}\`\`\`${fileType}\n${fileDescription}${editableRegion}\n\`\`\`\n\n`;
+  }, '\n');
+}
+
+function linksOrMarkdown(projectFormValues, markdown) {
+  return (
+    projectFormValues
+      ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n\n`)
+      ?.join('') || markdown
+  );
+}
+
 function createQuestionEpic(action$, state$, { window }) {
   return action$.pipe(
     ofType(actionTypes.createQuestion),
-    tap(() => {
+    tap(({ payload: describe }) => {
       const state = state$.value;
       let challengeFiles = challengeFilesSelector(state);
       const {
@@ -122,15 +158,21 @@ function createQuestionEpic(action$, state$, { window }) {
         : '### ' + i18next.t('forum-help.camper-code') + '\n\n';
 
       const whatsHappeningHeading = i18next.t('forum-help.whats-happening');
-      const describe = i18next.t('forum-help.describe');
       const projectOrCodeHeading = projectFormValues.length
         ? `###${i18next.t('forum-help.camper-project')}\n\n`
         : camperCodeHeading;
-      const markdownCodeOrLinks =
-        projectFormValues
-          ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n\n`)
-          ?.join('') || filesToMarkdown(challengeFiles);
-      const textMessage = `### ${whatsHappeningHeading}\n${describe}\n\n${projectOrCodeHeading}${markdownCodeOrLinks}${endingText}`;
+
+      const fullCode = filesToMarkdown(challengeFiles);
+      const fullCodeOrLinks = linksOrMarkdown(projectFormValues, fullCode);
+
+      const onlyEditableRegion = editableRegionsToMarkdown(challengeFiles);
+      const editableRegionOrLinks = linksOrMarkdown(
+        projectFormValues,
+        onlyEditableRegion
+      );
+
+      const textMessage = `### ${whatsHappeningHeading}\n${describe}\n\n${projectOrCodeHeading}${fullCodeOrLinks}${endingText}`;
+      const textMessageOnlyEditableRegion = `### ${whatsHappeningHeading}\n${describe}\n\n${projectOrCodeHeading}${editableRegionOrLinks}${endingText}`;
 
       const warning = i18next.t('forum-help.warning');
       const tooLongOne = i18next.t('forum-help.too-long-one');
@@ -139,7 +181,7 @@ function createQuestionEpic(action$, state$, { window }) {
       const addCodeOne = i18next.t('forum-help.add-code-one');
       const addCodeTwo = i18next.t('forum-help.add-code-two');
       const addCodeThree = i18next.t('forum-help.add-code-three');
-      const altTextMessage = `### ${whatsHappeningHeading}\n\n${camperCodeHeading}\n\n${warning}\n\n${tooLongOne}\n\n${tooLongTwo}\n\n${tooLongThree}\n\n\`\`\`text\n${addCodeOne}\n${addCodeTwo}\n${addCodeThree}\n\`\`\`\n\n${endingText}`;
+      const altTextMessage = `### ${whatsHappeningHeading}\n${describe}\n\n${camperCodeHeading}\n\n${warning}\n\n${tooLongOne}\n\n${tooLongTwo}\n\n${tooLongThree}\n\n\`\`\`text\n${addCodeOne}\n${addCodeTwo}\n${addCodeThree}\n\`\`\`\n\n${endingText}`;
 
       const titleText = window.encodeURIComponent(
         `${i18next.t(
@@ -152,13 +194,25 @@ function createQuestionEpic(action$, state$, { window }) {
       );
 
       const studentCode = window.encodeURIComponent(textMessage);
+      const editableRegionCode = window.encodeURIComponent(
+        textMessageOnlyEditableRegion
+      );
       const altStudentCode = window.encodeURIComponent(altTextMessage);
 
       const baseURI = `${forumLocation}/new-topic?category=${category}&title=${titleText}&body=`;
       const defaultURI = `${baseURI}${studentCode}`;
+      const onlyEditableRegionURI = `${baseURI}${editableRegionCode}`;
       const altURI = `${baseURI}${altStudentCode}`;
 
-      window.open(defaultURI.length < 8000 ? defaultURI : altURI, '_blank');
+      let URIToOpen = defaultURI;
+      if (defaultURI.length > 8000) {
+        URIToOpen = onlyEditableRegionURI;
+      }
+      if (onlyEditableRegionURI.length > 8000) {
+        URIToOpen = altURI;
+      }
+
+      window.open(URIToOpen, '_blank');
     }),
     mapTo(closeModal('help'))
   );

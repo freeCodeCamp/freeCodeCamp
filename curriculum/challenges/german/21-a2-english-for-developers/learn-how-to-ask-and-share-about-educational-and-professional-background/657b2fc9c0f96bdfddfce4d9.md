@@ -1,19 +1,15 @@
 ---
 id: 657b2fc9c0f96bdfddfce4d9
-title: Task 70
+title: Task 86
 challengeType: 22
-dashedName: task-70
-audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+dashedName: task-86
 ---
 
-<!--
-AUDIO REFERENCE:
-Anna: I took a course in organizational psychology, and it piqued my interest in the workplace and employee dynamics.
--->
+<!-- (Audio) Anna: I took a course in organizational psychology, and it piqued my interest in the workplace and employee dynamics. -->
 
 # --description--
 
-In this exercise, you will explore the phrase `pique one's interest`. This phrase means to stimulate or arouse someone's curiosity or interest in something. It's often used when something catches your attention and makes you want to learn more about it. Alongside this phrase, you will fill in the blanks with familiar words that you've already learned.
+In this exercise, you will explore the phrase `pique one's interest`. This phrase means to stimulate or arouse someone's curiosity or interest in something. Es wird oft verwendet, wenn etwas deine Aufmerksamkeit erregt und du mehr darüber lernen möchtest. Neben dieser Phrase, wirst du die Lehrzeichen mit vertrauten Wörtern ausfüllen, die du bereits gelernt hast.
 
 # --fillInTheBlank--
 
@@ -27,7 +23,7 @@ In this exercise, you will explore the phrase `pique one's interest`. This phras
 
 ### --Feedback--
 
-This word refers to the action of participating in or completing a course.
+Dieses Wort bezieht sich auf die Teilnahme an einem Kurs oder der Beendigung eines Kurses.
 
 ---
 
@@ -35,7 +31,7 @@ This word refers to the action of participating in or completing a course.
 
 ### --Feedback--
 
-This word describes the study of the mind and behavior, particularly in a workplace setting in this context.
+Dieses Wort beschreibt in diesem Kontext die Untersuchung des Geistes und des Verhaltens, insbesondere an einem Arbeitsplatz.
 
 ---
 
@@ -43,4 +39,48 @@ This word describes the study of the mind and behavior, particularly in a workpl
 
 ### --feedback--
 
-This word means to arouse or stimulate interest or curiosity. You should correctly use its simple past tense.
+Dieses Wort bedeutet, Interesse oder Neugierde zu wecken oder zu stimulieren. Du solltest die korrekte einfache Vergangenheitsform verwenden.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-parking.png",
+    "characters": [
+      {
+        "character": "Anna",
+        "position": {"x":50,"y":15,"z":1.2},
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "3.1-5.mp3",
+      "startTime": 1,
+      "startTimestamp": 13.14,
+      "finishTimestamp": 18.62
+    }
+  },
+  "commands": [
+    {
+      "character": "Anna",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Anna",
+      "startTime": 1,
+      "finishTime": 6.48,
+      "dialogue": {
+        "text": "I took a course in organizational psychology and it piqued my interest in the workplace and employee dynamics.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Anna",
+      "opacity": 0,
+      "startTime": 6.98
+    }
+  ]
+}
+```

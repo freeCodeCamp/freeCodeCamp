@@ -8,7 +8,7 @@ dashedName: problem-87-prime-power-triples
 
 # --description--
 
-The smallest number expressible as the sum of a prime square, prime cube, and prime fourth power is `28`. In fact, there are exactly four numbers below fifty that can be expressed in such a way:
+Die kleinste Zahl, die sich als Summe aus einem Primzahlquadrat, einem Primzahlwürfel und einer vierten Potenz der Primzahl ausdrücken lässt, ist `28`. In der Tat gibt es genau vier Zahlen unter fünfzig, die sich auf diese Weise ausdrücken lassen:
 
 <div style='margin-left: 4em;'>
   28 = 2<sup>2</sup> + 2<sup>3</sup> + 2<sup>4</sup><br>
@@ -17,41 +17,41 @@ The smallest number expressible as the sum of a prime square, prime cube, and pr
   47 = 2<sup>2</sup> + 3<sup>3</sup> + 2<sup>4</sup>
 </div><br>
 
-How many numbers below `n` can be expressed as the sum of a prime square, prime cube, and prime fourth power?
+Wie viele Zahlen unter `n` lassen sich als Summe eines Primzahlquadrats, eines Primzahlwürfels und einer vierten Primzahlpotenz ausdrücken?
 
 # --hints--
 
-`primePowerTriples(50)` should return a number.
+`primePowerTriples(50)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof primePowerTriples(50) === 'number');
 ```
 
-`primePowerTriples(50)` should return `4`.
+`primePowerTriples(50)` sollte `4` zurückgeben.
 
 ```js
 assert.strictEqual(primePowerTriples(50), 4);
 ```
 
-`primePowerTriples(10035)` should return `684`.
+`primePowerTriples(10035)` sollte `684` zurückgeben.
 
 ```js
 assert.strictEqual(primePowerTriples(10035), 684);
 ```
 
-`primePowerTriples(500000)` should return `18899`.
+`primePowerTriples(500000)` sollte `18899` zurückgeben.
 
 ```js
 assert.strictEqual(primePowerTriples(500000), 18899);
 ```
 
-`primePowerTriples(5000000)` should return `138932`.
+`primePowerTriples(5000000)` sollte `138932` zurückgeben.
 
 ```js
 assert.strictEqual(primePowerTriples(5000000), 138932);
 ```
 
-`primePowerTriples(50000000)` should return `1097343`.
+`primePowerTriples(50000000)` sollte `1097343` zurückgeben.
 
 ```js
 assert.strictEqual(primePowerTriples(50000000), 1097343);
