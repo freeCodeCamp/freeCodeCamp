@@ -197,10 +197,7 @@ function HelpModal({
               componentClass='textarea'
               rows={5}
               value={description}
-              placeholder={`${t('forum-help.describe')}
-- ${t('forum-help.describe-details-line-1')}
-- ${t('forum-help.describe-details-line-2')}
-              `}
+              placeholder={t('forum-help.describe')}
               minLength={DESCRIPTION_MIN_CHARS}
               maxLength={DESCRIPTION_MAX_CHARS}
               required
