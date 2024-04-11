@@ -87,10 +87,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       const { certSlug } = req.body;
 
-      if (
-        !assertCertSlugIsKeyofCertSlugTypeMap(certSlug) ||
-        !isCertAllowed(certSlug)
-      ) {
+      if (!isKnownCertSlug(certSlug) || !isCertAllowed(certSlug)) {
         void reply.code(400);
         return {
           response: {
@@ -308,7 +305,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         username = username.toLowerCase();
         fastify.log.info(`certSlug: ${certSlug}`);
 
-        if (!assertCertSlugIsKeyofCertSlugTypeMap(certSlug)) {
+        if (!isKnownCertSlug(certSlug)) {
           void reply.code(404);
           return reply.send({
             type: 'info',
@@ -562,7 +559,7 @@ function hasCompletedTests(
   );
 }
 
-function assertCertSlugIsKeyofCertSlugTypeMap(
+function isKnownCertSlug(
   certSlug: string
 ): certSlug is keyof typeof certSlugTypeMap {
   return certSlug in certSlugTypeMap;
