@@ -707,8 +707,15 @@ function getUserIsCertMap(user: CertI) {
   };
 }
 
-function getFallbackFullStackDate(
-  completedChallenges: CompletedChallenge[],
+/**
+ * Retrieves the completion date for the full stack certification, if it exists.
+ *
+ * @param completedChallenges - The array of completed challenges.
+ * @param completedDate - The fallback completed date.
+ * @returns The latest certification date or the completed date if no certification is found.
+ */
+export function getFallbackFullStackDate(
+  completedChallenges: { id: string; completedDate: number }[],
   completedDate: number
 ) {
   const chalIds = [
@@ -724,5 +731,5 @@ function getFallbackFullStackDate(
     .filter(chal => chalIds.includes(chal.id))
     .sort((a, b) => b.completedDate - a.completedDate)[0]?.completedDate;
 
-  return latestCertDate ? latestCertDate : completedDate;
+  return latestCertDate ?? completedDate;
 }
