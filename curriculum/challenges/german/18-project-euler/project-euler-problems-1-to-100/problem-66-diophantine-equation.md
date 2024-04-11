@@ -1,6 +1,6 @@
 ---
 id: 5900f3ae1000cf542c50fec1
-title: 'Problem 66: Diophantine equation'
+title: 'Problem 66: Diophantische Gleichung'
 challengeType: 1
 forumTopicId: 302178
 dashedName: problem-66-diophantine-equation
@@ -8,15 +8,15 @@ dashedName: problem-66-diophantine-equation
 
 # --description--
 
-Consider quadratic Diophantine equations of the form:
+Betrachte quadratische diophantische Gleichungen der folgenden Form:
 
 <div style='text-align: center;'>x<sup>2</sup> – Dy<sup>2</sup> = 1</div>
 
-For example, when D=13, the minimal solution in x is 649<sup>2</sup> – 13×180<sup>2</sup> = 1.
+Zum Beispiel, wenn D=13 ist, liegt die minimale Lösung in x bei 649<sup>2</sup> – 13×180<sup>2</sup> = 1.
 
-It can be assumed that there are no solutions in positive integers when D is square.
+Es kann davon ausgegangen werden, dass es keine Lösungen mit positiven ganzen Zahlen gibt, wenn D quadratisch ist.
 
-By finding minimal solutions in x for D = {2, 3, 5, 6, 7}, we obtain the following:
+Durch das Finden von minimalen Lösungen in x für D = {2, 3, 5, 6, 7} erhalten wir das Folgende:
 
 <div style='margin-left: 2em;'>
   3<sup>2</sup> – 2×2<sup>2</sup> = 1<br>
@@ -26,43 +26,43 @@ By finding minimal solutions in x for D = {2, 3, 5, 6, 7}, we obtain the followi
   8<sup>2</sup> – 7×3<sup>2</sup> = 1<br>
 </div>
 
-Hence, by considering minimal solutions in `x` for D ≤ 7, the largest `x` is obtained when D=5.
+Daher wird durch die Berücksichtigung von Minimallösungen in `x` für D ≤ 7 das größte `x` erreicht, während D = 5 gilt.
 
-Find the value of D ≤ `n` in minimal solutions of `x` for which the largest value of `x` is obtained.
+Finde den Wert von D ≤ `n` in minimalen Lösungen von `x`, für den der größte Wert von `x` erreicht wird.
 
 # --hints--
 
-`diophantineEquation(7)` should return a number.
+`diophantineEquation(7)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof diophantineEquation(7) === 'number');
 ```
 
-`diophantineEquation(7)` should return `5`.
+`diophantineEquation(7)` sollte `5` zurückgeben.
 
 ```js
 assert.strictEqual(diophantineEquation(7), 5);
 ```
 
-`diophantineEquation(100)` should return `61`.
+`diophantineEquation(100)` sollte `61` zurückgeben.
 
 ```js
 assert.strictEqual(diophantineEquation(100), 61);
 ```
 
-`diophantineEquation(409)` should return `409`.
+`diophantineEquation(409)` sollte `409` zurückgeben.
 
 ```js
 assert.strictEqual(diophantineEquation(409), 409);
 ```
 
-`diophantineEquation(500)` should return `421`.
+`diophantineEquation(500)` sollte `421` zurückgeben.
 
 ```js
 assert.strictEqual(diophantineEquation(500), 421);
 ```
 
-`diophantineEquation(1000)` should return `661`.
+`diophantineEquation(1000)` sollte `661` zurückgeben.
 
 ```js
 assert.strictEqual(diophantineEquation(1000), 661);

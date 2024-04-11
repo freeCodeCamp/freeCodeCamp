@@ -1,25 +1,25 @@
 ---
 id: 657ce0bbf16c312c8dcc8dff
-title: Task 61
+title: Aufgabe 61
 challengeType: 19
 dashedName: task-61
 ---
 
 # --description--
 
-There are some words you can use in your sentence to express how often something happens. They are called `adverbs of frequency`.
+There are some words you can use in your sentence to express how often something happens. Sie werden `adverbs of frequency` genannt.
 
 `Usually` is a word that suggests that something happens more often than not but is not constant.
 
-When `usually` is used with the verb `to be,` it is placed after the verb. `She is usually on time for meetings.`
+Wenn `usually` mit dem Verb `to be,` verwendet wird, wird es nach dem Verb plaziert. `She is usually on time for meetings.`
 
-With other verbs, `usually` comes before the main verb, for example: `He usually works late.`
+Bei anderen Verben kommt `usually` vor dem Hauptverb, zum Beispiel: `He usually works late.`
 
 # --question--
 
 ## --text--
 
-Choose the sentence that correctly uses the adverb `usually.`
+Wähle den Satz, der das Adverb `usually.` korrekt verwendet
 
 ## --answers--
 
@@ -27,7 +27,7 @@ Choose the sentence that correctly uses the adverb `usually.`
 
 ### --Feedback--
 
-`Usually` should come before the main verb when not using `to be.` The correct sentence is `She is usually very careful with her work.`
+`Usually` sollte vor dem Hauptverb kommen, wenn nicht `to be.` verwendet wird. Der korrekte Satz ist `She is usually very careful with her work.`
 
 ---
 
@@ -39,7 +39,7 @@ Choose the sentence that correctly uses the adverb `usually.`
 
 ### --Feedback--
 
-`Usually` should come before the main verb in standard sentences. The correct sentence is `They usually play together on weekends.`
+`Usually` sollte in Standartsätzen vor dem Hauptverb stehen. Der korrekte Satz ist `They usually play together on weekends.`
 
 ---
 

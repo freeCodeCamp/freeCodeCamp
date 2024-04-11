@@ -1,6 +1,6 @@
 ---
 id: 657ddcd61f516cacdc7a04ca
-title: Task 124
+title: Aufgabe 124
 challengeType: 19
 dashedName: task-124
 ---
@@ -23,7 +23,7 @@ What does Maria say stops two blocks away?
 
 ## --answers--
 
-A taxi.
+Ein Taxi.
 
 ### --Feedback--
 

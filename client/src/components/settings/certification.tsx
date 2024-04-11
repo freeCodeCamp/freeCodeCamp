@@ -334,26 +334,30 @@ function CertificationSettings(props: CertificationSettingsProps) {
   }) => {
     const { certSlug } = certsToProjects[certName][0];
     return (
-      <FullWidthRow>
-        <Spacer size='medium' />
-        <h3 className='text-center' id={`cert-${certSlug}`}>
-          {t(`certification.title.${certName}`, certName)}
-        </h3>
-        <Table>
-          <thead>
-            <tr>
-              <th>{t('settings.labels.project-name')}</th>
-              <th>{t('settings.labels.solution')}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <ProjectsFor
-              certName={certName}
-              isCert={getUserIsCertMap()[certName]}
-            />
-          </tbody>
-        </Table>
-      </FullWidthRow>
+      <ScrollableAnchor id={`cert-${certSlug}`}>
+        <section>
+          <FullWidthRow>
+            <Spacer size='medium' />
+            <h3 className='text-center'>
+              {t(`certification.title.${certName}`, certName)}
+            </h3>
+            <Table>
+              <thead>
+                <tr>
+                  <th>{t('settings.labels.project-name')}</th>
+                  <th>{t('settings.labels.solution')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <ProjectsFor
+                  certName={certName}
+                  isCert={getUserIsCertMap()[certName]}
+                />
+              </tbody>
+            </Table>
+          </FullWidthRow>
+        </section>
+      </ScrollableAnchor>
     );
   };
 
@@ -413,43 +417,38 @@ function CertificationSettings(props: CertificationSettingsProps) {
   const { t } = props;
 
   return (
-    <ScrollableAnchor id='certification-settings'>
-      <section className='certification-settings'>
-        <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
-        {currentCertTitles.map(title => (
+    <section className='certification-settings'>
+      <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
+      {currentCertTitles.map(title => (
+        <Certification key={title} certName={title} t={t} />
+      ))}
+      <Spacer size='medium' />
+      <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
+      <LegacyFullStack {...props} />
+      {legacyCertTitles.map(title => (
+        <Certification key={title} certName={title} t={t} />
+      ))}
+      {showUpcomingChanges &&
+        upcomingCertTitles.map(title => (
           <Certification key={title} certName={title} t={t} />
         ))}
-        <Spacer size='medium' />
-        <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
-        <LegacyFullStack {...props} />
-        {legacyCertTitles.map(title => (
-          <Certification key={title} certName={title} t={t} />
-        ))}
-        {showUpcomingChanges &&
-          upcomingCertTitles.map(title => (
-            <Certification key={title} certName={title} t={t} />
-          ))}
-        <ProjectModal
-          {...{
-            projectTitle,
-            challengeFiles,
-            solution: solution ?? undefined,
-            isOpen
-          }}
-          handleSolutionModalHide={handleSolutionModalHide}
-        />
-        <ProjectPreviewModal
-          challengeData={challengeData}
-          previewTitle={projectTitle}
-          closeText={t('buttons.close')}
-          showProjectPreview={true}
-        />
-        <ExamResultsModal
-          projectTitle={projectTitle}
-          examResults={examResults}
-        />
-      </section>
-    </ScrollableAnchor>
+      <ProjectModal
+        {...{
+          projectTitle,
+          challengeFiles,
+          solution: solution ?? undefined,
+          isOpen
+        }}
+        handleSolutionModalHide={handleSolutionModalHide}
+      />
+      <ProjectPreviewModal
+        challengeData={challengeData}
+        previewTitle={projectTitle}
+        closeText={t('buttons.close')}
+        showProjectPreview={true}
+      />
+      <ExamResultsModal projectTitle={projectTitle} examResults={examResults} />
+    </section>
   );
 }
 

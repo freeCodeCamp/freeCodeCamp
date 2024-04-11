@@ -1,27 +1,27 @@
 ---
 id: 65e1985e500d930ce8ed90a7
-title: Learn Variables and Operators Question D
+title: Вивчіть змінні та оператори. Запитання D
 challengeType: 15
 dashedName: learn-variables-and-operators-question-d
 ---
 
 # --description--
 
-There are two limitations on variable names in JavaScript:
+Для назв змінних в JavaScript існує два обмеження:
 
-1. The name must contain only letters, digits, or the symbols `$` and `_`.
-1. The first character must not be a digit.
+1. Назва має складатись лише з літер, цифр або символів `$` та `_`.
+1. Перший символ не може бути цифрою.
 
-Examples of valid names:
+Приклади дійсних назв:
 
 ```js
 let userName;
 let test123;
 ```
 
-What’s interesting – the dollar sign `'$'` and the underscore `'_'` can also be used in names. They are regular symbols, just like letters, without any special meaning.
+Що цікаво, символ долара `'$'` та знак підкреслення `'_'` також можна використовувати в назві. Це такі ж регулярні символи, як і літери, без особливого значення.
 
-These names are valid:
+Ці назви є дійсними:
 
 ```js
 let $ = 1; // declared a variable with the name "$"
@@ -30,7 +30,7 @@ let _ = 2; // and now a variable with the name "_"
 console.log($ + _); // 3
 ```
 
-Examples of incorrect variable names:
+Приклади неправильних назв змінних:
 
 ```js
 let 1a; // cannot start with a digit
@@ -42,7 +42,7 @@ let my-name; // hyphens '-' aren't allowed in the name
 
 ## --text--
 
-Which of the following is a valid JavaScript variable name?
+Що з переліченого є правильною назвою змінної в JavaScript?
 
 ## --answers--
 

@@ -16,19 +16,16 @@ test.describe('Help Modal component', () => {
       .click();
 
     await expect(
-      page.getByRole('heading', {
-        name: translations.buttons['ask-for-help'],
-        exact: true
-      })
-    ).toBeVisible();
-    await expect(
-      page.getByRole('heading', {
-        name: `If you've already tried the Read-Search-Ask method, then you can ask for help on the freeCodeCamp forum.`
-      })
+      page.getByRole('dialog', { name: translations.buttons['ask-for-help'] })
     ).toBeVisible();
     await expect(
       page.getByText(
-        `Before making a new post please see if your question has already been answered on the forum.`
+        `If you've already tried the Read-Search-Ask method, then you can ask for help on the freeCodeCamp forum.`
+      )
+    ).toBeVisible();
+    await expect(
+      page.getByText(
+        `Before making a new post please check if your question has already been answered on the forum.`
       )
     ).toBeVisible();
 
@@ -43,15 +40,12 @@ test.describe('Help Modal component', () => {
     ).toBeVisible();
   });
 
-  test('Create Post button closes help modal and creates new page with forum url', async ({
-    context,
+  test('should disable the submit button if the checboxes are not checked', async ({
     page
   }) => {
     await page
       .getByRole('button', { name: translations.buttons['ask-for-help'] })
       .click();
-
-    const newPagePromise = context.waitForEvent('page');
 
     await page
       .getByRole('button', {
@@ -60,11 +54,130 @@ test.describe('Help Modal component', () => {
       .click();
 
     await expect(
-      page.getByRole('heading', {
-        name: translations.buttons['ask-for-help'],
-        exact: true
+      page.getByRole('dialog', { name: translations.buttons['ask-for-help'] })
+    ).toBeVisible();
+
+    const rsaCheckbox = page.getByRole('checkbox', {
+      name: 'I have tried the Read-Search-Ask method'
+    });
+
+    const similarQuestionsCheckbox = page.getByRole('checkbox', {
+      name: 'I have searched for similar questions that have already been answered on the forum'
+    });
+
+    const descriptionInput = page.getByRole('textbox', {
+      name: translations['forum-help']['whats-happening']
+    });
+
+    const submitButton = page.getByRole('button', {
+      name: translations.buttons['submit']
+    });
+
+    await descriptionInput.fill(
+      'Example text with a 100 characters to validate if the rules applied to block users from spamming help forum are working.'
+    );
+
+    await expect(submitButton).toBeDisabled();
+
+    await rsaCheckbox.check();
+    await similarQuestionsCheckbox.uncheck();
+
+    await expect(submitButton).toBeDisabled();
+
+    await rsaCheckbox.uncheck();
+    await similarQuestionsCheckbox.check();
+
+    await expect(submitButton).toBeDisabled();
+  });
+
+  test('should disable the submit button if the description contains less than 50 characters', async ({
+    page
+  }) => {
+    await page
+      .getByRole('button', { name: translations.buttons['ask-for-help'] })
+      .click();
+
+    await page
+      .getByRole('button', {
+        name: translations.buttons['create-post']
       })
-    ).not.toBeVisible();
+      .click();
+
+    await expect(
+      page.getByRole('dialog', { name: translations.buttons['ask-for-help'] })
+    ).toBeVisible();
+
+    const rsaCheckbox = page.getByRole('checkbox', {
+      name: 'I have tried the Read-Search-Ask method'
+    });
+
+    const similarQuestionsCheckbox = page.getByRole('checkbox', {
+      name: 'I have searched for similar questions that have already been answered on the forum'
+    });
+
+    const descriptionInput = page.getByRole('textbox', {
+      name: translations['forum-help']['whats-happening']
+    });
+
+    const submitButton = page.getByRole('button', {
+      name: translations.buttons['submit']
+    });
+
+    await rsaCheckbox.check();
+    await similarQuestionsCheckbox.check();
+    await descriptionInput.fill('Example text');
+
+    await expect(submitButton).toBeDisabled();
+  });
+
+  test('should ask the user to fill in the help form and create a forum page', async ({
+    context,
+    page
+  }) => {
+    await page
+      .getByRole('button', { name: translations.buttons['ask-for-help'] })
+      .click();
+
+    await page
+      .getByRole('button', {
+        name: translations.buttons['create-post']
+      })
+      .click();
+
+    await expect(
+      page.getByRole('dialog', { name: translations.buttons['ask-for-help'] })
+    ).toBeVisible();
+
+    const rsaCheckbox = page.getByRole('checkbox', {
+      name: 'I have tried the Read-Search-Ask method'
+    });
+
+    const similarQuestionsCheckbox = page.getByRole('checkbox', {
+      name: 'I have searched for similar questions that have already been answered on the forum'
+    });
+
+    const descriptionInput = page.getByRole('textbox', {
+      name: translations['forum-help']['whats-happening']
+    });
+
+    const submitButton = page.getByRole('button', {
+      name: translations.buttons['submit']
+    });
+
+    await expect(rsaCheckbox).toBeVisible();
+    await expect(similarQuestionsCheckbox).toBeVisible();
+    await expect(descriptionInput).toBeVisible();
+
+    await rsaCheckbox.check();
+    await similarQuestionsCheckbox.check();
+    await descriptionInput.fill(
+      'Example text with a 100 characters to validate if the rules applied to block users from spamming help forum are working.'
+    );
+
+    await expect(submitButton).toBeEnabled();
+    await submitButton.click();
+
+    const newPagePromise = context.waitForEvent('page');
 
     const newPage = await newPagePromise;
     await newPage.waitForLoadState();
@@ -77,16 +190,17 @@ test.describe('Help Modal component', () => {
       .getByRole('button', { name: translations.buttons['ask-for-help'] })
       .click();
 
+    const dialog = page.getByRole('dialog', {
+      name: translations.buttons['ask-for-help']
+    });
+
+    await expect(dialog).toBeVisible();
+
     await page
       .getByRole('button', { name: translations.buttons.cancel })
       .click();
 
-    await expect(
-      page.getByRole('heading', {
-        name: translations.buttons['ask-for-help'],
-        exact: true
-      })
-    ).not.toBeVisible();
+    await expect(dialog).not.toBeVisible();
   });
 
   test('Close button closes the modal', async ({ page }) => {
@@ -94,16 +208,17 @@ test.describe('Help Modal component', () => {
       .getByRole('button', { name: translations.buttons['ask-for-help'] })
       .click();
 
+    const dialog = page.getByRole('dialog', {
+      name: translations.buttons['ask-for-help']
+    });
+
+    await expect(dialog).toBeVisible();
+
     await page
       .getByRole('button', { name: translations.buttons.close })
       .click();
 
-    await expect(
-      page.getByRole('heading', {
-        name: translations.buttons['ask-for-help'],
-        exact: true
-      })
-    ).not.toBeVisible();
+    await expect(dialog).not.toBeVisible();
   });
 
   test('Read-Search-Ask link', async ({ page }) => {

@@ -34,6 +34,6 @@ describe('Donate page', () => {
     projects.forEach(project => submitProject(project));
 
     // pop up modal
-    cy.get("[data-cy='donation-modal']");
+    cy.get("div[role='dialog'] img#donation-animation").should('be.visible');
   });
 });

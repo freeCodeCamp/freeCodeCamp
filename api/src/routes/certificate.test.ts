@@ -434,4 +434,198 @@ describe('certificate routes', () => {
       });
     });
   });
+
+  describe('Unauthenticated user', () => {
+    describe('GET /certificate/showCert/:username/:certSlug', () => {
+      beforeEach(async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: defaultUserEmail },
+          data: {
+            username: 'foobar',
+            name: 'foobar',
+            isHonest: true,
+            isBanned: false,
+            isCheater: false,
+            profileUI: { isLocked: false, showCerts: true, showTimeLine: true }
+          }
+        });
+      });
+      test('should return user not found if the user cannot be found', async () => {
+        const response = await superRequest(
+          '/certificate/showCert/not-a-valid-user-name/javascript-algorithms-and-data-structures',
+          {
+            method: 'GET'
+          }
+        );
+        expect(response.body).toEqual({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.username-not-found',
+              variables: { username: 'not-a-valid-user-name' }
+            }
+          ]
+        });
+        expect(response.status).toBe(200);
+      });
+      test('should ask user to add name if there is no name', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: { name: null }
+        });
+        const response = await superRequest(
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
+          {
+            method: 'GET'
+          }
+        );
+        expect(response.body).toEqual({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.add-name'
+            }
+          ]
+        });
+        expect(response.status).toBe(200);
+      });
+      test('should return not eligible if user is banned', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: { isBanned: true }
+        });
+        const response = await superRequest(
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
+          {
+            method: 'GET'
+          }
+        );
+        expect(response.body).toEqual({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.not-eligible'
+            }
+          ]
+        });
+        expect(response.status).toBe(200);
+      });
+      test('should return not eligible if user is cheater', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: { isCheater: true }
+        });
+        const response = await superRequest(
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
+          {
+            method: 'GET'
+          }
+        );
+        expect(response.body).toEqual({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.not-eligible'
+            }
+          ]
+        });
+        expect(response.status).toBe(200);
+      });
+      test('should return not honest if user is not honest', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: { isHonest: false }
+        });
+        const response = await superRequest(
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
+          {
+            method: 'GET'
+          }
+        );
+        expect(response.body).toEqual({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.not-honest',
+              variables: { username: 'foobar' }
+            }
+          ]
+        });
+        expect(response.status).toBe(200);
+      });
+      test('should return profile private if profile is private', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            // All properties need to be defined, as this op SETs `profileUI`
+            profileUI: { isLocked: true, showTimeLine: true, showCerts: true }
+          }
+        });
+        const response = await superRequest(
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
+          {
+            method: 'GET'
+          }
+        );
+        expect(response.body).toEqual({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.profile-private',
+              variables: { username: 'foobar' }
+            }
+          ]
+        });
+        expect(response.status).toBe(200);
+      });
+      test('should return certs private if certs are private', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            profileUI: { showCerts: false, showTimeLine: true, isLocked: false }
+          }
+        });
+        const response = await superRequest(
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
+          {
+            method: 'GET'
+          }
+        );
+        expect(response.body).toEqual({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.certs-private',
+              variables: { username: 'foobar' }
+            }
+          ]
+        });
+        expect(response.status).toBe(200);
+      });
+      test('should return timeline private if timeline is private', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            profileUI: { showTimeLine: false, showCerts: true, isLocked: false }
+          }
+        });
+        const response = await superRequest(
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
+          {
+            method: 'GET'
+          }
+        );
+        expect(response.body).toEqual({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.timeline-private',
+              variables: { username: 'foobar' }
+            }
+          ]
+        });
+        expect(response.status).toBe(200);
+      });
+    });
+  });
 });

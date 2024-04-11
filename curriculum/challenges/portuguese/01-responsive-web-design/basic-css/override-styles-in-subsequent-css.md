@@ -19,7 +19,7 @@ Crie uma classe CSS adicional chamada `blue-text` que dá a um elemento a cor az
 
 Além de classe `pink-text`, aplique a classe `blue-text` ao elemento `h1`, e vamos ver qual tem maior prioridade.
 
-A aplicação de várias classes a um mesmo elemento HTML é feita com um espaço entre cada uma, assim:
+Aplicar múltiplas classes de atributos em um elemento HTML é feito com um espaço entre eles, deste jeito:
 
 ```html
 class="class1 class2"

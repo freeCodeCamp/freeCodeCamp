@@ -11,7 +11,7 @@ dashedName: introduction-flexbox-question-b
 
 Гнучкий контейнер — це будь-який елемент, який має `display: flex`. Гнучкий предмет — це будь-який елемент, який живе в гнучкому контейнері.
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/flex-box/flexbox-01.png" style="width: 95%; height: 95%;" alt="An outer rectangle representing a flex container encompassing three smaller inner rectangles lined up side by side, each representing a flex item." />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/flex-box/flexbox-01.png" style="width: 95%; height: 95%;" alt="Зовнішній прямокутник, що представляє гнучкий контейнер, який охоплює три менші внутрішні прямокутники, розташовані поруч, кожен з яких представляє гнучкий предмет." />
 
 # --question--
 

@@ -69,10 +69,26 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
     await expect(page.getByTestId('completion-success-icon')).not.toBeVisible();
   });
 
-  test('should redirect to next challenge', async ({ page }) => {
+  test('should submit and go to the next challenge when the user clicks the submit button', async ({
+    page
+  }) => {
     await page
       .getByRole('button', { name: translations.buttons['submit-and-go'] })
       .click();
+    await expect(page).toHaveURL(nextChallengeURL);
+  });
+
+  test('should submit and go to the next challenge when the user presses Ctrl + Enter', async ({
+    page
+  }) => {
+    await page.keyboard.press('Control+Enter');
+    await expect(page).toHaveURL(nextChallengeURL);
+  });
+
+  test('should submit and go to the next challenge when the user presses Command + Enter', async ({
+    page
+  }) => {
+    await page.keyboard.press('Meta+Enter');
     await expect(page).toHaveURL(nextChallengeURL);
   });
 });

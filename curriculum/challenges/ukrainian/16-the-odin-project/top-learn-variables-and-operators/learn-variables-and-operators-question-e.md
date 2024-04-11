@@ -1,49 +1,49 @@
 ---
 id: 65e19bc3500d930ce8ed90a8
-title: Learn Variables and Operators Question E
+title: Вивчіть змінні та оператори. Запитання E
 challengeType: 15
 dashedName: learn-variables-and-operators-question-e
 ---
 
 # --description--
 
-Numbers are the building blocks of programming logic! In fact, it’s hard to think of any useful programming task that doesn’t involve at least a little basic math… so knowing how numbers work is obviously quite important. Luckily, it’s also fairly straightforward.
+Числа — це будівельні блоки логіки програмування! Насправді важко придумати будь-яке корисне завдання програмування, яке не передбачає хоча б деякої базової математики… Тому дуже важливо знати, як працюють числа. На щастя, це досить просто.
 
-| Operator | Description    | Example      |
-| -------- | -------------- | ------------ |
-| +        | Addition       | 5 + 3 = 8    |
-| -        | Subtraction    | 5 - 3 = 2    |
-| *        | Multiplication | 5 * 3 = 15   |
-| **       | Exponentiation | 5 ** 3 = 125 |
-| /        | Division       | 6 / 3 = 2    |
-| %        | Modulus        | 5 % 3 = 2    |
+| Оператор | Опис                  | Приклад      |
+| -------- | --------------------- | ------------ |
+| +        | Додавання             | 5 + 3 = 8    |
+| -        | Віднімання            | 5 - 3 = 2    |
+| *        | Множення              | 5 * 3 = 15   |
+| **       | Піднесення до степеня | 5 ** 3 = 125 |
+| /        | Ділення               | 6 / 3 = 2    |
+| %        | Ділення з остачею     | 5 % 3 = 2    |
 
 
 # --assignment--
 
-Given the table of operators above, write a simple program snippet that demonstrates the use of each operator with the variable `x` initialized to `10`.
+Враховуючи таблицю операторів вище, напишіть простий фрагмент програми, який продемонструє використання всіх операторів зі змінною `x`, ініціалізованою `10`.
 
 # --question--
 
 ## --text--
 
-What is the result of applying the modulus operator to `x` where `x = 10`?
+Який результат застосування оператора ділення з остачею до `x`, де `x = 10`?
 
 ## --answers--
 
-`x % 3` results in `1`
+Результатом `x % 3` є `1`
 
 ---
 
-`x % 3` results in `3`
+Результатом `x % 3` є `3`
 
 ---
 
-`x % 3` results in `0`
+Результатом `x % 3` є `0`
 
 ---
 
-`x % 3` results in `2`
+Результатом `x % 3` є `2`
 
 
 ## --video-solution--

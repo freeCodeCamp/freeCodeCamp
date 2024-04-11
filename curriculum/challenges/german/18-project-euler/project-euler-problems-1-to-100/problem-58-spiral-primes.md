@@ -1,6 +1,6 @@
 ---
 id: 5900f3a61000cf542c50feb9
-title: 'Problem 58: Spiral primes'
+title: 'Problem 58: Spiralförmige Primzahlen'
 challengeType: 1
 forumTopicId: 302169
 dashedName: problem-58-spiral-primes
@@ -8,7 +8,7 @@ dashedName: problem-58-spiral-primes
 
 # --description--
 
-Starting with 1 and spiralling anticlockwise in the following way, a square spiral with side length 7 is formed.
+Beginnend mit 1 und gegen den Uhrzeigersinn spiralförmig verlaufend, entsteht eine quadratische Spirale mit der Seitenlänge 7.
 
 <div style='text-align: center;'>
   <strong><span style='color: red;'>37</span></strong> 36 35 34 33 32 <strong><span style='color: red;'>31</span></strong><br>
@@ -20,31 +20,31 @@ Starting with 1 and spiralling anticlockwise in the following way, a square spir
   <strong><span style='color: red;'>43</span></strong> 44 45 46 47 48 49<br>
 </div>
 
-It is interesting to note that the odd squares lie along the bottom right diagonal, but what is more interesting is that 8 out of the 13 numbers lying along both diagonals are prime; that is, a ratio of 8/13 ≈ 62%.
+Interessant ist, dass die ungeraden Quadrate auf der rechten unteren Diagonale liegen, aber noch interessanter ist, dass 8 der 13 Zahlen, die auf beiden Diagonalen liegen, Primzahlen sind, d. h. ein Verhältnis von 8/13 ≈ 62 %.
 
-If one complete new layer is wrapped around the spiral above, a square spiral with side length 9 will be formed. If this process is continued, what is the side length of the square spiral for which the percent of primes along both diagonals first falls below `percent`?
+Wird eine komplette neue Lage um die obige Spirale gewickelt, entsteht eine quadratische Spirale mit der Seitenlänge 9. Wenn dieser Prozess fortgesetzt wird, wie groß ist die Seitenlänge der quadratischen Spirale, für die der Prozentsatz der Primzahlen entlang beider Diagonalen zuerst unter `percent` fällt?
 
 # --hints--
 
-`spiralPrimes(50)` should return a number.
+`spiralPrimes(50)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof spiralPrimes(50) === 'number');
 ```
 
-`spiralPrimes(50)` should return `11`.
+`spiralPrimes(50)` sollte `11` zurückgeben.
 
 ```js
 assert.strictEqual(spiralPrimes(50), 11);
 ```
 
-`spiralPrimes(15)` should return `981`.
+`spiralPrimes(15)` sollte `981` zurückgeben.
 
 ```js
 assert.strictEqual(spiralPrimes(15), 981);
 ```
 
-`spiralPrimes(10)` should return `26241`.
+`spiralPrimes(10)` sollte `26241` zurückgeben.
 
 ```js
 assert.strictEqual(spiralPrimes(10), 26241);
