@@ -299,10 +299,9 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        let username = req.params.username;
+        const username = req.params.username.toLowerCase();
         const certSlug = req.params.certSlug;
 
-        username = username.toLowerCase();
         fastify.log.info(`certSlug: ${certSlug}`);
 
         if (!isKnownCertSlug(certSlug)) {
