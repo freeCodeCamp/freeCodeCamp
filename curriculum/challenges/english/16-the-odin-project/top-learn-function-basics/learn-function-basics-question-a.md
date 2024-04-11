@@ -1,37 +1,47 @@
 ---
 id: 6617a128e90de1b3fd10bd4d
-videoId: LGQuIIv2RVA
 title: Learn Function Basics Questions A
 challengeType: 15
 dashedName: learn-function-basics-questions-a
 ---
 # --description--
 
-description
+Let’s discuss parameters and arguments in the context of the following example function:
 
-# --assignment--
+```js
+function favoriteAnimal(animal) {
+    return animal + " is my favorite animal!"
+}
 
-assignment
+console.log(favoriteAnimal('Goat'))
+```
+
+In JavaScript, parameters are the items listed between the parentheses `()` in the function declaration. Function arguments are the actual values we decide to pass to the function.
+
+In the example above, the function definition is written on the first line: `function favoriteAnimal(animal)`. The parameter, `animal`, is found inside the parentheses. We could just as easily replace `animal` with `pet`, `x`, or `blah`. But in this case, naming the parameter `animal` gives someone reading our code a bit of context so that they don’t have to guess what `animal` may eventually contain.
 
 # --question--
 
 ## --text--
 
-question
+What does the parameter in the function `favoriteAnimal` represent in the context of JavaScript functions?
 
 ## --answers--
 
-answer 1
+The actual value that is used when calling the function.
 
 ---
 
-answer 2
+A placeholder for the value that will be passed to the function when it is called.
 
 ---
 
-answer 3
+The name of the function.
 
+---
+
+The result of the function execution.
 
 ## --video-solution--
 
-1
+2

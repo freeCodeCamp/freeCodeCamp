@@ -1,13 +1,28 @@
 ---
 id: 6617a1fce90de1b3fd10bd4e
-videoId: LGQuIIv2RVA
 title: Learn Function Basics Questions B
 challengeType: 15
 dashedName: learn-function-basics-questions-b
 ---
 # --description--
 
-description
+```js
+
+function favoriteAnimal(animal) {
+    return animal + " is my favorite animal!"
+}
+
+console.log(favoriteAnimal('Goat'))
+
+```
+
+By putting `animal` inside the parentheses of the `favoriteAnimal()` function, we are telling JavaScript that we will send some value to our `favoriteAnimal` function. This means that animal is just a placeholder for some future value. But what value are we sending?
+
+The last line, `favoriteAnimal('Goat')`, is where we are calling our `favoriteAnimal` function and passing the value `'Goat'` inside that function. Here, `'Goat'` is our argument. We are telling the `favoriteAnimal` function, “Please send `'Goat'` to the `favoriteAnimal` function and use `'Goat'` wherever the `‘animal’` placeholder is.” Because of the flexibility that using a parameter provides, we can declare any animal to be our favorite.
+
+Here is a diagram to help you visualize how parameters are passed to a function, and how values get returned from it.
+
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/c53dd9a12f0c9afde0d9229f82a176170f12e120/foundations/javascript_basics/function_basics/imgs/00.png" alt="A description of a function with arrows explaining that the values between the parentheses of the function itself are called parameters, and the values which are issued when the function is used are called arguments" style="width:95%;height:auto;">
 
 # --assignment--
 
