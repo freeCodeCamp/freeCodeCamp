@@ -10,8 +10,44 @@
   "isBeta": true,
   "challengeOrder": [
     {
-      "id": "655cd3f2c726838f49106971",
-      "title": "Dialogue: Placeholder"
+      "id": "661750f15f41cc866197183d",
+      "title": "Dialogue 1: Reviewing An App Design"
+    },
+    {
+      "id": "6617513e3855718810b088d0",
+      "title": "Task 1"
+    },
+    {
+      "id": "6617528c1b07688acdfea4e9",
+      "title": "Task 2"
+    },
+    {
+      "id": "661752fbc765ec8c13f96616",
+      "title": "Task 3"
+    },
+    {
+      "id": "66175386c145ea8d96b0adf9",
+      "title": "Task 4"
+    },
+    {
+      "id": "6617562f72eb2a9387252430",
+      "title": "Task 5"
+    },
+    {
+      "id": "6617569f81323494d7c80fa4",
+      "title": "Task 6"
+    },
+    {
+      "id": "661757150c7a75961a574a39",
+      "title": "Task 7"
+    },
+    {
+      "id": "66175792ec93b19771c55c62",
+      "title": "Task 8"
+    },
+    {
+      "id": "661757e285095e986fed9c27",
+      "title": "Task 9"
     }
   ],
   "helpCategory": "English"
