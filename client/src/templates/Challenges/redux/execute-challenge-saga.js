@@ -127,7 +127,7 @@ export function* executeChallengeSaga({ payload }) {
     const testRunner = yield call(
       getTestRunner,
       buildData,
-      { proxyLogger, removeComments: challengeMeta.removeComments },
+      { proxyLogger },
       document
     );
     const testResults = yield executeTests(testRunner, tests);
@@ -290,8 +290,7 @@ export function* previewChallengeSaga(action) {
         }
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = getTestRunner(buildData, {
-          proxyLogger,
-          removeComments: challengeMeta.removeComments
+          proxyLogger
         });
         // without a testString the testRunner just evaluates the user's code
         yield call(runUserCode, null, previewTimeout);

@@ -334,10 +334,6 @@ ${getFullPath('english', filePath)}
       // can sort them correctly.
       challenge.solutions = challenge.solutions.map(challengeFilesToPolys);
     }
-    // if removeComments is not explicitly set, default to true
-    if (typeof challenge.removeComments === 'undefined') {
-      challenge.removeComments = true;
-    }
   }
 
   async function createChallenge(filePath, maybeMeta) {
