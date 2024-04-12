@@ -94,7 +94,7 @@ assert(sequentialSizes(9) === 'High');
 You should not use any `if` or `else` statements
 
 ```js
-assert(!/else/g.test(code) || !/if/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 You should have nine `case` statements

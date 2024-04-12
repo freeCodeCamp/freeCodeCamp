@@ -34,7 +34,7 @@ assert(code.match(/if/g).length === 1);
 You should use an `else` statement
 
 ```js
-assert(/else/g.test(code));
+assert(/else/g.test(__helpers.removeJSComments(code)));
 ```
 
 `testElse(4)` should return the string `5 or Smaller`
@@ -64,7 +64,7 @@ assert(testElse(10) === 'Bigger than 5');
 You should not change the code above or below the specified comments.
 
 ```js
-assert(/let result = "";/.test(code) && /return result;/.test(code));
+assert(/let result = "";/.test(__helpers.removeJSComments(code)) && /return result;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

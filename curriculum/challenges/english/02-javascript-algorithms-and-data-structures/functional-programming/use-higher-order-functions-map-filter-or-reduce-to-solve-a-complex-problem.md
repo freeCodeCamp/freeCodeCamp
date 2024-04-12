@@ -36,7 +36,7 @@ assert(!code.match(/for|while|forEach/g));
 ```js
 assert(
   __helpers
-    .removeWhiteSpace(code)
+    .removeWhiteSpace(__helpers.removeJSComments(code))
     .match(/\.(map|filter|reduce)\(/g)
 );
 ```

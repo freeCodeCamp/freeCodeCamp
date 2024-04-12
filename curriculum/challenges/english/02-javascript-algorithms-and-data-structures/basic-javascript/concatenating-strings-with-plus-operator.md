@@ -53,13 +53,13 @@ assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 `myStr` should be created using the `const` keyword.
 
 ```js
-assert(/const\s+myStr/.test(code));
+assert(/const\s+myStr/.test(__helpers.removeJSComments(code)));
 ```
 
 You should assign the result to the `myStr` variable.
 
 ```js
-assert(/myStr\s*=/.test(code));
+assert(/myStr\s*=/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

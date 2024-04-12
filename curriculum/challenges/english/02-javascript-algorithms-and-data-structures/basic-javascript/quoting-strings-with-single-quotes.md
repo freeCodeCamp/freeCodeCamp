@@ -47,7 +47,7 @@ You should remove all the backslashes (`\`).
 
 ```js
 assert(
-  !/\\/g.test(code) &&
+  !/\\/g.test(__helpers.removeJSComments(code)) &&
     myStr.match(
       '\\s*<a href\\s*=\\s*"http://www.example.com"\\s*target\\s*=\\s*"_blank">\\s*Link\\s*</a>\\s*'
     )

@@ -48,7 +48,7 @@ You should add a local `myVar` variable.
 ```js
 assert(
   /functionmyLocalScope\(\)\{.*(var|let|const)myVar[\s\S]*}/.test(
-    __helpers.removeWhiteSpace(code)
+    __helpers.removeWhiteSpace(__helpers.removeJSComments(code))
   )
 );
 ```

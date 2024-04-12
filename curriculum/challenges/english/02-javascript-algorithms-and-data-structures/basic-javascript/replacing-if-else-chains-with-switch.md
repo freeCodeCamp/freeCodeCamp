@@ -45,13 +45,13 @@ Change the chained `if`/`else if` statements into a `switch` statement.
 You should not use any `else` statements anywhere in the editor
 
 ```js
-assert(!/else/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)));
 ```
 
 You should not use any `if` statements anywhere in the editor
 
 ```js
-assert(!/if/g.test(code));
+assert(!/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 You should have at least four `break` statements

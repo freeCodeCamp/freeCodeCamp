@@ -26,7 +26,7 @@ assert(quotient === 2.2);
 You should use the `/` operator to divide 4.4 by 2
 
 ```js
-assert(/4\.40*\s*\/\s*2\.*0*/.test(code));
+assert(/4\.40*\s*\/\s*2\.*0*/.test(__helpers.removeJSComments(code)));
 ```
 
 The quotient variable should only be assigned once

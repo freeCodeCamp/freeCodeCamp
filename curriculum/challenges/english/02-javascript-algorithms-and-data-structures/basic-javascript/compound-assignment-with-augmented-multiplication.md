@@ -55,9 +55,9 @@ You should not modify the code above the specified comment.
 
 ```js
 assert(
-  /let a = 5;/.test(code) &&
-    /let b = 12;/.test(code) &&
-    /let c = 4\.6;/.test(code)
+  /let a = 5;/.test(__helpers.removeJSComments(code)) &&
+    /let b = 12;/.test(__helpers.removeJSComments(code)) &&
+    /let c = 4\.6;/.test(__helpers.removeJSComments(code))
 );
 ```
 

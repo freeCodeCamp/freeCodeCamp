@@ -50,13 +50,13 @@ assert(!code.match(/myVar\s*=\s*10.*?;?/));
 You should use the `--` operator on `myVar`.
 
 ```js
-assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
+assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(__helpers.removeJSComments(code)));
 ```
 
 You should not change code above the specified comment.
 
 ```js
-assert(/let myVar = 11;/.test(code));
+assert(/let myVar = 11;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--
