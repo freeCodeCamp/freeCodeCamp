@@ -57,6 +57,7 @@
     "run-test": "テスト実行 (Ctrl + Enter)",
     "check-code": "コードをチェック (Ctrl + Enter)",
     "check-code-2": "コードをチェック",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "リセット",
     "reset-step": "ステップをリセット",
     "help": "ヘルプ",
@@ -727,7 +728,9 @@
     "task": "タスク",
     "dialogues-and-tasks-for": "「{{blockTitle}}」のダイアログとタスク",
     "code-example": "{{codeName}} のコード例",
-    "opens-new-window": "新しいウィンドウで開く"
+    "opens-new-window": "新しいウィンドウで開く",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "認定証を獲得するには、まず学問的誠実性ポリシーに同意する必要があります。",
@@ -1034,8 +1037,9 @@
     "execute-challenge": "チャレンジを実行",
     "focus-editor": "エディターにフォーカス",
     "focus-instructions-panel": "手順書パネルにフォーカス",
-    "navigate-previous": "前の課題へ移動",
-    "navigate-next": "次の課題へ移動"
+    "navigate-previous": "Navigate To Previous Exercise",
+    "navigate-next": "Navigate To Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "アカウントからサインアウト",

@@ -1,41 +1,41 @@
 ---
 id: 65e97251484dd50f720e6fe8
-title: Learn Data Types and Conditionals Question C
+title: Вивчіть типи даних та умови. Запитання C
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-question-c
 ---
 
 # --description--
 
-Seeing the example below, You want to make sure the word `loves` is present in the string.
+Дано приклад нижче. Потрібно перевірити, чи слово `loves` наявне в рядку.
 
 ```javascript
 let sentence = "freeCodeCamp loves The Odin Project!";
 ```
 
-<a href="https://www.freecodecamp.org/news/javascript-string-handbook" target="_blank"> Link to Guide </a>
+<a href="https://www.freecodecamp.org/news/javascript-string-handbook" target="_blank"> Посилання на інструкцію </a>
 
 # --question--
 
 ## --text--
 
-Which method should be used to check if the word `loves` is present in the string?
+Який метод потрібно використати, щоб перевірити, чи слово `loves` наявне в рядку?
 
 ## --answers--
 
-The `includes()` method should be used to check if the word `loves` is present in the string.
+Щоб перевірити, чи слово `loves` наявне в рядку, потрібно використати метод `includes()`.
 
 ---
 
-The `indexOf()` method should be used to check if the word `loves` is present in the string.
+Щоб перевірити, чи слово `loves` наявне в рядку, потрібно використати метод `indexOf()`.
 
 ---
 
-The `search()` method should be used to check if the word `loves` is present in the string.
+Щоб перевірити, чи слово `loves` наявне в рядку, потрібно використати метод `search()`.
 
 ---
 
-The `toUpperCase()` method should be used to check if the word `loves` is present in the string.
+Щоб перевірити, чи слово `loves` наявне в рядку, потрібно використати метод `toUpperCase()`.
 
 ## --video-solution--
 
